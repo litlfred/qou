@@ -15,7 +15,7 @@ The knot $4_1$ is amphichiral: $4_1 \cong \overline{4_1}$. Its dominant cell in 
 
 ## A chiral example: trefoil
 
-The knot $3_1$ is chiral: $3_1 \neq \overline{3_1}$. Its dominant cell $\lambda = (3)$ pairs with $\lambda' = (1, 1, 1)$ under the bar involution: $*(e_{(3)}) = e_{(1, 1, 1)}$. The volume vanishes (the trefoil is not hyperbolic), but the Chern–Simons invariant $\mathrm{CS}(3_1) = ± \pi^2 / 6$ flips sign under the bar involution. This yields the chirality-twisted depth-$3$ period in $\mathcal{P}_3 / \mathcal{P}_2$. It manifests the exact same chirality structure at depth $3$. See [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness) for a Bring-natural depth-$3$ witness.
+The knot $3_1$ is chiral: $3_1 \neq \overline{3_1}$. Its dominant cell $\lambda = (3)$ pairs with $\lambda' = (1, 1, 1)$ under the bar involution: $*(e_{(3)}) = e_{(1, 1, 1)}$. The volume vanishes (the trefoil is not hyperbolic), but the Chern–Simons invariant $\mathrm{CS}(3_1) = \pm \pi^2 / 6$ flips sign under the bar involution. This yields the chirality-twisted depth-$3$ period in $\mathcal{P}_3 / \mathcal{P}_2$. It manifests the exact same chirality structure at depth $3$. See [`conj:bring-trilog-depth-3-witness`](#conj:bring-trilog-depth-3-witness) for a Bring-natural depth-$3$ witness.
 
 ## Compatibility with the depth filtration
 
@@ -25,7 +25,7 @@ $$
   G^{(n)}(\mathcal{H}_q) \;=\; G^{(n), +} \;\oplus\; G^{(n), -},
 $$
 
-where $G^{(n), ±}$ are the $± 1$ eigenspaces of $*$. Under the archimedean completion $\tau_{\mathrm{arch}}$:
+where $G^{(n), \pm}$ are the $\pm 1$ eigenspaces of $*$. Under the archimedean completion $\tau_{\mathrm{arch}}$:
 
 - $G^{(n), +} \to \mathcal{P}_n(\mathbb{R})$ produces real periods.
 - $G^{(n), -} \to i \cdot \mathcal{P}_n(\mathbb{R})$ produces imaginary periods. Geometrically, these correspond to Chern–Simons-style invariants paired with a $(2\pi i)^n$-factor from the Tate motive.

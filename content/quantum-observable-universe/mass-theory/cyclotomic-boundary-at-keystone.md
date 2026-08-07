@@ -64,7 +64,7 @@ $$
 \dim_q(3,1,1)=[5]_q+1,
 $$
 
-because $A_5 \cong 2I/\{± 1\}$ is the **icosahedral** group and $2I
+because $A_5 \cong 2I/\{\pm 1\}$ is the **icosahedral** group and $2I
 \leftrightarrow \widehat{E}_8$ (McKay). The McKay–ADE ladder of alternating
 groups is finite: $A_4 \cong$ tetrahedral ($2T \leftrightarrow
 \widehat{E}_6$), $A_5 \cong$ icosahedral ($2I \leftrightarrow

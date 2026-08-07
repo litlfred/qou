@@ -9,8 +9,8 @@ $$
 The transfer matrix $T(c, d)$ at each crossing has eigenvalues
 
 $$
-  \lambda_{±} = 
-  \frac{\mathrm{tr}T ± \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2},
+  \lambda_{\pm} = 
+  \frac{\mathrm{tr}T \pm \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2},
 $$
 
 which are real and opposite in sign because $\det T < 0$ for all three crossing types.
@@ -23,7 +23,7 @@ $$
   \hat{V}_i =  c_+\lambda_+^k +  c_-\lambda_-^k
 $$
 
-where $c_{±}$ depend on $z$ and the crossing coefficients. Since $\lambda_- < 0$, the term $c_- \lambda_-^k$ alternates in sign with $k$.
+where $c_{\pm}$ depend on $z$ and the crossing coefficients. Since $\lambda_- < 0$, the term $c_- \lambda_-^k$ alternates in sign with $k$.
 
 ## The generator bound
 
