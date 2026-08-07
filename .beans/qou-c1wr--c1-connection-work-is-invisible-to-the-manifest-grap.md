@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-07T22:20:00Z
+updated_at: 2026-08-08T00:20:00Z
 ---
 
 **Corpus-grep result (2026-08-07).** The entire C1 connection arc lives in
@@ -36,4 +36,33 @@ invisible.
 2. **Owner decision:** does anything downstream actually consume C1 connection
    data? If not, say so explicitly in the block rather than leaving it implied.
 
-Relates: `qou-wgnx`, `qou-7ylg`.
+## 2026-08-07 — action 2 answered for the *divisor*: nothing consumes it
+
+Owner asked directly ("settle (5) — does anything consume this?"). Re-grepped
+`content/**/*.ts` for connection matrix / pole divisor / theta-canonical /
+connection invariant / `C1ConnectionPoles`:
+
+* **One** block mentions the arc: `conj:qdifference-kernel-prolongation-symbol`.
+* It is consumed by `predicted-spectra/schwinger-measure-computational-time.ts`
+  (`uses[]`) and listed in `mass-theory/mass-theory.ts` — so it is **not** a leaf
+  after all; the earlier note above is wrong on that point and is corrected here.
+* But what that block consumes from C1 is route **(B) "numeric
+  connection-matrix theta-growth `q^{m²/4}`"** — a *growth rate* — plus the
+  isoclinicity result. **Not** the pole divisor, not `χ`, not the closed form,
+  not `α = t₂/T`.
+
+So the answer splits:
+
+| C1 result | consumed? |
+|---|---|
+| theta-growth `q^{m²/4}`, isoclinicity | **yes**, via `conj:qdifference-kernel-prolongation-symbol` → schwinger-measure block |
+| connection matrix, pole divisor, `χ` closed form, `α = t₂/T`, order 2 | **no**, by anything |
+
+That makes the divisor and the invariant closed form genuinely orphaned work,
+not merely unwired work. Recorded in `qou-c1ln` as the reason not to spend the
+argument principle on row 5. Action 1 (authoring a block) is still worth doing
+for the *record* — the results are correct and expensive to re-derive — but it
+should say plainly that nothing downstream consumes them, rather than implying
+a dependency that does not exist.
+
+Relates: `qou-wgnx`, `qou-7ylg`, `qou-c1ln`.

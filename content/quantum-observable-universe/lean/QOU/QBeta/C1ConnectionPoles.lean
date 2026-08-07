@@ -4,6 +4,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.Complex.LocallyUniformLimit
+import Mathlib.MeasureTheory.Integral.CircleIntegral
 
 /-!
 # The q-theta zero locus — where the C1 connection matrix has its poles
@@ -40,6 +41,23 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   `qou-c1ln` step 1): Weierstrass M-test on annuli plus
   `TendstoLocallyUniformlyOn.differentiableOn`. Makes `θ_P` a genuine analytic
   object, the prerequisite for it having a divisor at all.
+* `qThetaC_functional_equation` / `deriv_qThetaC_functional_equation` /
+  `logDeriv_qThetaC_functional_equation` — the functional equation over `ℂ`,
+  differentiated, and in logarithmic-derivative form
+  `p·θ'(pw)/θ(pw) = 1/w + θ'(w)/θ(w)`. That last one is the **`+1` per
+  period**: it is the entire zero-counting mechanism, and it is what leaves the
+  argument principle as the *only* missing ingredient for the converse zero
+  locus (see below).
+* `circleIntegral_scale` / `winding_step` / `qTheta_winding_step` — the same
+  `+1`, carried up to the **contour** level:
+
+      ∮_{|z| = pρ} θ'/θ dz  =  2πi  +  ∮_{|z| = ρ} θ'/θ dz
+
+  for any `ρ > 0` on whose circle `θ_P` does not vanish. This is the form the
+  argument principle consumes, and it is the last step Mathlib supports.
+  `circleIntegral_scale` (change of variables for `circleIntegral`, absent from
+  Mathlib) and `winding_step` (`1/w` in the integrand ⇒ `2πi` in the integral)
+  are stated `θ`-free and are reusable.
 * `qTheta_inversion` — `θ_P(1/w) = w·θ_P(w)`, Morita's inversion formula
   (arXiv:1105.1998 §2.1) in our normalisation.
 * `thetaRatio_multiplier` — `θ_P(cz)/θ_P(z)` is a q-character with multiplier
@@ -90,20 +108,41 @@ nothing mathematical turns on it.
   zero-locus or vanishing results for theta at all**.
 
   What Mathlib *does* have, and what a future attempt should build on:
-  `HasProd`/`Multipliable`/`tprod` (full infinite-product infrastructure) and
-  `Analysis/Meromorphic/{Divisor, IsolatedZeros, Order}`. It does **not** have
-  the argument principle, which rules out the cheap zero-counting route
-  ("`θ_p` is holomorphic on `ℂ*` and `θ_p(pw) = wθ_p(w)` forces exactly one
-  zero per fundamental annulus; `−1` is one; done"). So the two viable routes
-  are (a) prove the argument principle, or (b) prove JTP via the product side
-  — define `∏(1−xᵐ)(1+xᵐw)(1+xᵐ⁻¹w⁻¹)`, show it satisfies the same functional
-  equation, and conclude the ratio is elliptic and bounded hence constant. Both
-  are substantial; (b) additionally needs Liouville on `ℂ*/p^ℤ`. Neither is a
-  small job, and the three analytic lemmas above (summability, holomorphy,
-  functional equation) are the shared prefix of both — with holomorphy the
-  hypothesis route (a) would otherwise have to assume. Recorded so this is not
-  re-scoped as cheap: what is missing is the argument principle itself, not the
-  analytic setup for it.
+  `HasProd`/`Multipliable`/`tprod` (full infinite-product infrastructure),
+  `Analysis/Meromorphic/{Divisor, IsolatedZeros, Order}`, and the full
+  `circleIntegral` API including
+  `Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable`. It
+  does **not** have the argument principle, a winding number, or a complex
+  residue (name scan at HEAD, 2026-08-07: zero hits for `argumentPrinciple`,
+  `windingNumber`, `countZeros`; every `residue` hit is `IsLocalRing`).
+
+  **But JTP is not on the critical path**, and that is worth stating plainly
+  because this file previously implied it was. The two routes are not equally
+  costly:
+
+  (a) *zero-counting.* `θ_p` holomorphic on `ℂ*` + `θ_p(pw) = wθ_p(w)` forces
+      the winding number on `|w| = pρ` to exceed the one on `|w| = ρ` by
+      **exactly one**. That is no longer a sketch: it is
+      `qTheta_winding_step` below, proved. The argument principle then reads
+      the difference off as *exactly one zero, with multiplicity, in
+      `ρ < |z| < pρ`*, which combined with `qTheta_neg_zpow_eq_zero` pins it at
+      `−p^k`, makes it simple, and excludes any other. **Every input to (a)
+      other than the argument principle itself is now proved in this file**,
+      up to and including the contour identity it would be applied to.
+  (b) *JTP via the product side* — define `∏(1−xᵐ)(1+xᵐw)(1+xᵐ⁻¹w⁻¹)`, show it
+      satisfies the same functional equation, conclude the ratio is elliptic
+      and bounded hence constant. This additionally needs Liouville on
+      `ℂ*/p^ℤ`, i.e. strictly more than (a).
+
+  So the honest remaining gap is **one named Mathlib-scale lemma**, the
+  argument principle on an annulus, not a theory build-out. That is still not a
+  small job — but it is a different size of job than "formalise JTP", and the
+  distinction was being lost. Recorded so this is neither re-scoped as cheap
+  nor written off as hopeless.
+
+  Independently: the statement itself is checked to hold at our substrate in
+  `computations/qbeta/c3_w2_c1_theta_zero_count.py`, so what is missing is a
+  formalisation gap and not a mathematical doubt.
 * **That these zeros are poles of `P`.** That needs the analytic construction
   — convergent `0`-side series, entire `∞`-side series, the matrix inverse and
   its meromorphy — none of which is formalised.
@@ -544,5 +583,206 @@ theorem differentiableOn_qThetaC (P : ℝ) (hP : 1 < P) :
     htu.tendstoLocallyUniformlyOn.differentiableOn
       (Filter.Eventually.of_forall hdiff) hUopen
   exact ((hres.differentiableAt (hUopen.mem_nhds hw₀U))).differentiableWithinAt
+
+/-! ### The `+1` per period — the mechanism that counts the zeros
+
+The three results below are the **entire** input to "exactly one zero per
+fundamental annulus" other than the argument principle itself. See the
+`## What this file does NOT prove` note above for why that matters: it is what
+takes the Jacobi triple product off the critical path. -/
+
+/-- **The functional equation over `ℂ`**, `θ_P(P²w) = w·θ_P(w)`.
+
+Same proof as the real `qTheta_functional_equation`, re-run over `ℂ` because
+everything analytic downstream (`deriv`, contour integrals) needs the complex
+argument. -/
+theorem qThetaC_functional_equation (P : ℝ) (hP : 0 < P) (w : ℂ) (hw : w ≠ 0) :
+    qThetaC P ((P : ℂ) ^ (2:ℤ) * w) = w * qThetaC P w := by
+  have hP0 : ((P : ℂ)) ≠ 0 := by exact_mod_cast hP.ne'
+  have hleft : ∀ n : ℤ,
+      qThetaCTerm P ((P : ℂ) ^ (2:ℤ) * w) n = (P : ℂ) ^ (-(n * (n - 1))) * w ^ n := by
+    intro n
+    rw [qThetaCTerm, mul_zpow, ← zpow_mul, ← mul_assoc, ← zpow_add₀ hP0]
+    congr 2
+    ring
+  have hright : ∀ n : ℤ,
+      w * qThetaCTerm P w (n - 1) = (P : ℂ) ^ (-(n * (n - 1))) * w ^ n := by
+    intro n
+    have hww : w * w ^ (n - 1) = w ^ n := by
+      have h := zpow_add₀ hw 1 (n - 1)
+      rw [zpow_one, show (1:ℤ) + (n - 1) = n by ring] at h
+      exact h.symm
+    rw [qThetaCTerm, show -((n - 1) * ((n - 1) + 1)) = -(n * (n - 1)) by ring,
+        ← mul_assoc, mul_comm w _, mul_assoc, hww]
+  calc qThetaC P ((P : ℂ) ^ (2:ℤ) * w)
+      = ∑' n : ℤ, (P : ℂ) ^ (-(n * (n - 1))) * w ^ n := by
+        rw [qThetaC_eq_tsum]; exact tsum_congr hleft
+    _ = ∑' n : ℤ, w * qThetaCTerm P w (n - 1) := (tsum_congr hright).symm
+    _ = w * ∑' n : ℤ, qThetaCTerm P w (n - 1) := by rw [tsum_mul_left]
+    _ = w * qThetaC P w := by
+        rw [qThetaC_eq_tsum]
+        congr 1
+        exact (Equiv.subRight (1:ℤ)).tsum_eq (fun n => qThetaCTerm P w n)
+
+/-- **The functional equation, differentiated**: `p·θ'(pw) = θ(w) + w·θ'(w)`
+(with `p = P²`).
+
+Legitimate only because `differentiableOn_qThetaC` is available: the identity
+`θ_P(P²w) = w·θ_P(w)` holds on `ℂ*`, which is open, so the two sides agree on a
+neighbourhood of every `w ≠ 0` and their derivatives agree there. Without
+holomorphy there is nothing to differentiate. -/
+theorem deriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ) (hw : w ≠ 0) :
+    (P : ℂ) ^ (2:ℤ) * deriv (qThetaC P) ((P : ℂ) ^ (2:ℤ) * w)
+      = qThetaC P w + w * deriv (qThetaC P) w := by
+  have hP0 : (0:ℝ) < P := lt_trans zero_lt_one hP
+  have hPc : ((P : ℂ)) ≠ 0 := by exact_mod_cast hP0.ne'
+  set c : ℂ := (P : ℂ) ^ (2:ℤ) with hcdef
+  have hc : c ≠ 0 := zpow_ne_zero _ hPc
+  have hcw : c * w ≠ 0 := mul_ne_zero hc hw
+  have hdiff : ∀ z : ℂ, z ≠ 0 → DifferentiableAt ℂ (qThetaC P) z := fun z hz =>
+    (differentiableOn_qThetaC P hP).differentiableAt
+      (isOpen_compl_singleton.mem_nhds (by simpa using hz))
+  have hlin : HasDerivAt (fun z : ℂ => c * z) c w := by
+    simpa using (hasDerivAt_id w).const_mul c
+  have h1 : HasDerivAt (fun z : ℂ => qThetaC P (c * z))
+      (c * deriv (qThetaC P) (c * w)) w := by
+    have h := ((hdiff (c * w) hcw).hasDerivAt).comp w hlin
+    simp only [Function.comp_def] at h
+    rwa [mul_comm (deriv (qThetaC P) (c * w)) c] at h
+  have h2 : HasDerivAt (fun z : ℂ => z * qThetaC P z)
+      (qThetaC P w + w * deriv (qThetaC P) w) w := by
+    simpa using (hasDerivAt_id w).mul ((hdiff w hw).hasDerivAt)
+  have hEq : (fun z : ℂ => z * qThetaC P z) =ᶠ[nhds w] (fun z : ℂ => qThetaC P (c * z)) := by
+    filter_upwards [isOpen_compl_singleton.mem_nhds (show w ∈ ({(0:ℂ)}ᶜ) by simpa using hw)]
+      with z hz
+    exact (qThetaC_functional_equation P hP0 z (by simpa using hz)).symm
+  exact (h1.congr_of_eventuallyEq hEq).unique h2
+
+/-- **The `+1`.** The logarithmic derivative gains exactly `1/w` per period:
+
+    p·θ'(pw)/θ(pw)  =  1/w + θ'(w)/θ(w),   p = P².
+
+This is the whole zero-counting mechanism in one line. Integrating over
+`|w| = ρ` and substituting `w ↦ pw` turns the `1/w` into `2πi`, so the winding
+number of `θ_p` on `|w| = pρ` is exactly **one more** than on `|w| = ρ`.
+The argument principle would then read that off as *exactly one zero, counted
+with multiplicity, in every fundamental annulus* — which with
+`qTheta_neg_zpow_eq_zero` pins that zero at `−p^k` and makes it simple, i.e.
+gives the converse zero locus outright.
+
+Mathlib has no argument principle, so the last step is not taken here. What is
+established is that **everything else it needs is proved**. -/
+theorem logDeriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ)
+    (hw : w ≠ 0) (hθ : qThetaC P w ≠ 0) :
+    (P : ℂ) ^ (2:ℤ) * deriv (qThetaC P) ((P : ℂ) ^ (2:ℤ) * w)
+        / qThetaC P ((P : ℂ) ^ (2:ℤ) * w)
+      = 1 / w + deriv (qThetaC P) w / qThetaC P w := by
+  have hP0 : (0:ℝ) < P := lt_trans zero_lt_one hP
+  rw [qThetaC_functional_equation P hP0 w hw,
+      deriv_qThetaC_functional_equation P hP w hw]
+  field_simp
+
+/-! ### The `+1`, at the level of contours
+
+`logDeriv_qThetaC_functional_equation` says the *integrand* gains `1/w` per
+period. These three turn that into a statement about the *integral*, which is
+the form the argument principle consumes. -/
+
+/-- **Scaling a circle contour.** `∮_{|z| = aR} f = ∮_{|z| = R} a·f(a·z)`.
+
+Immediate from the definition — `circleMap 0 (aR) θ = a · circleMap 0 R θ` —
+but Mathlib has no change-of-variables for `circleIntegral`, so it is proved
+here. Stated for its own sake: nothing about `θ_P` enters. -/
+theorem circleIntegral_scale (f : ℂ → ℂ) (a R : ℝ) :
+    (∮ z in C((0:ℂ), a * R), f z)
+      = ∮ z in C((0:ℂ), R), (a : ℂ) * f ((a : ℂ) * z) := by
+  simp only [circleIntegral, deriv_circleMap, circleMap, zero_add, smul_eq_mul,
+             Complex.ofReal_mul]
+  refine intervalIntegral.integral_congr fun θ _ => ?_
+  ring_nf
+
+/-- **A `1/w` in the integrand is a `2πi` in the integral.**
+
+Abstracted away from `θ_P`: any `g` that is circle-integrable on `|z| = R` and
+satisfies `a·g(a z) = 1/z + g(z)` on that circle has
+`∮_{|z| = aR} g = 2πi + ∮_{|z| = R} g`. The `2πi` is
+`circleIntegral.integral_sub_center_inv`; the hypothesis `hstep` is exactly
+what the logarithmic-derivative functional equation supplies. -/
+theorem winding_step (g : ℂ → ℂ) (a R : ℝ) (hR : 0 < R)
+    (hint : CircleIntegrable g 0 R)
+    (hstep : ∀ z : ℂ, ‖z‖ = R → (a : ℂ) * g ((a : ℂ) * z) = z⁻¹ + g z) :
+    (∮ z in C((0:ℂ), a * R), g z)
+      = 2 * Real.pi * Complex.I + ∮ z in C((0:ℂ), R), g z := by
+  rw [circleIntegral_scale]
+  have hRne : R ≠ 0 := ne_of_gt hR
+  have hcongr : (∮ z in C((0:ℂ), R), (a : ℂ) * g ((a : ℂ) * z))
+      = ∮ z in C((0:ℂ), R), (z⁻¹ + g z) := by
+    refine circleIntegral.integral_congr hR.le fun z hz => ?_
+    exact hstep z (by simpa [Complex.dist_eq] using hz)
+  rw [hcongr]
+  have h0 : (0:ℂ) ∉ Metric.sphere (0:ℂ) |R| := by
+    simp only [Metric.mem_sphere, dist_self]
+    exact fun h => hRne (abs_eq_zero.mp h.symm)
+  have hinv : CircleIntegrable (fun z : ℂ => z⁻¹) 0 R := by
+    simpa using
+      (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := (0:ℂ)) (R := R) (n := -1)).2
+        (Or.inr (Or.inr h0))
+  rw [circleIntegral.integral_add hinv hint]
+  congr 1
+  simpa using circleIntegral.integral_sub_center_inv (0:ℂ) hRne
+
+/-- **The winding number of `θ_P` rises by exactly one per period.**
+
+    ∮_{|z| = pρ} θ'/θ dz  =  2πi  +  ∮_{|z| = ρ} θ'/θ dz,     p = P².
+
+The only hypothesis beyond `ρ > 0` is that `θ_P` has no zero on `|z| = ρ` —
+unavoidable, since otherwise the integrand is not defined there, and harmless,
+since the radius is ours to choose.
+
+**This is as far as Mathlib allows.** The argument principle would now read the
+left-hand side minus the right as *the number of zeros, with multiplicity, in
+the annulus `ρ < |z| < pρ`*, hence exactly one; `qTheta_neg_zpow_eq_zero`
+supplies that zero at `−p^k`, making it simple and the only one, so the zero
+set is exactly `−p^ℤ` and the C1 pole divisor is exact rather than `⊇`.
+
+Mathlib has no argument principle, no winding number and no complex residue, so
+that last inference is not taken here. Everything it consumes is proved above.
+Checked numerically at our substrate in
+`computations/qbeta/c3_w2_c1_theta_zero_count.py`. -/
+theorem qTheta_winding_step (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
+    (hne : ∀ z : ℂ, ‖z‖ = ρ → qThetaC P z ≠ 0) :
+    (∮ z in C((0:ℂ), P ^ 2 * ρ), deriv (qThetaC P) z / qThetaC P z)
+      = 2 * Real.pi * Complex.I
+        + ∮ z in C((0:ℂ), ρ), deriv (qThetaC P) z / qThetaC P z := by
+  have hop : IsOpen ({(0:ℂ)}ᶜ) := isOpen_compl_singleton
+  have hA : AnalyticOnNhd ℂ (qThetaC P) {(0:ℂ)}ᶜ :=
+    (differentiableOn_qThetaC P hP).analyticOnNhd hop
+  have hdD : DifferentiableOn ℂ (deriv (qThetaC P)) {(0:ℂ)}ᶜ :=
+    (hA.deriv).differentiableOn
+  have hsub : Metric.sphere (0:ℂ) ρ ⊆ {(0:ℂ)}ᶜ := by
+    intro z hz
+    simp only [Metric.mem_sphere, dist_zero_right] at hz
+    simp only [Set.mem_compl_iff, Set.mem_singleton_iff]
+    intro h
+    rw [h] at hz
+    simp only [norm_zero] at hz
+    exact (ne_of_gt hρ) hz.symm
+  have hnesph : ∀ z ∈ Metric.sphere (0:ℂ) ρ, qThetaC P z ≠ 0 := fun z hz =>
+    hne z (by simpa [dist_zero_right] using hz)
+  have hcont : ContinuousOn (fun z : ℂ => deriv (qThetaC P) z / qThetaC P z)
+      (Metric.sphere (0:ℂ) ρ) :=
+    ((hdD.continuousOn).mono hsub).div
+      ((hA.differentiableOn.continuousOn).mono hsub) hnesph
+  have hint : CircleIntegrable (fun z : ℂ => deriv (qThetaC P) z / qThetaC P z) 0 ρ :=
+    hcont.circleIntegrable hρ.le
+  have hcast : ((P ^ 2 : ℝ) : ℂ) = (P : ℂ) ^ (2:ℤ) := by
+    rw [zpow_two]; push_cast; ring
+  refine winding_step _ (P ^ 2) ρ hρ hint ?_
+  intro z hz
+  have hz0 : z ≠ 0 := by
+    intro h; rw [h] at hz; simp at hz; exact (ne_of_gt hρ) hz.symm
+  have h := logDeriv_qThetaC_functional_equation P hP z hz0 (hne z hz)
+  rw [hcast]
+  rw [← mul_div_assoc, h, one_div]
 
 end QOU.QBeta.C1Poles
