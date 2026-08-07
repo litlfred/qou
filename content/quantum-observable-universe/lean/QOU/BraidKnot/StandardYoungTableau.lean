@@ -95,8 +95,10 @@ the diagram, so an SYT is determined by its finitely many on-cell values).
 Noncomputable: it counts an unbundled structure via `Nat.card`, which is a genuine count
 here because `StandardYoungTableau.instFinite` (above) proves the type finite.
 
-Remaining brick-1 target: the FRT identity `numSYT_mul_hookProduct` below. (The `Finite`
-instance and the base case `numSYT ⊥ = 1` — `numSYT_bot` — are proved.) -/
+The brick-1 FRT identity is **proved** downstream as
+`QOU.BraidKnot.HookProductHLF.numSYT_mul_hookProduct` (see the note at the end of this
+file for why it cannot be stated here). The `Finite` instance and the base case
+`numSYT ⊥ = 1` — `numSYT_bot` — are proved here. -/
 noncomputable def numSYT (μ : YoungDiagram) : ℕ := Nat.card (StandardYoungTableau μ)
 
 /-- Base case: the empty diagram has a single standard tableau (the empty filling),
@@ -137,19 +139,19 @@ def hookProduct (μ : YoungDiagram) : ℕ :=
 
 /-- The hook-length product is positive (a product of positive hook lengths). This makes the
 FRT formula's division form `f^μ = |μ|! / ∏ h_c` well-posed and is what the multiplicative
-statement `numSYT_mul_hookProduct` will be divided through by. -/
+statement `HookProductHLF.numSYT_mul_hookProduct` is divided through by. -/
 theorem hookProduct_pos (μ : YoungDiagram) : 0 < hookProduct μ :=
   Finset.prod_induction _ (0 < ·) (fun _ _ ha hb => Nat.mul_pos ha hb) Nat.one_pos
     (fun c _ => hookLength_pos μ c.1 c.2)
 
-/-- **Frame–Robinson–Thrall hook-length formula** (the brick-1 target):
-`#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!`, i.e. `f^μ = |μ|! / ∏ h(c)`. Stated here as the
-multiplicative (division-free) identity so it lives over `ℕ`; the proof is the
-genuine formalisation target of this brick and is deferred. -/
-theorem numSYT_mul_hookProduct (μ : YoungDiagram) :
-    numSYT μ * hookProduct μ = (μ.card).factorial := by
-  -- Ref: [sagan2001] §3.10 (hook-length formula); brick-1 target, see
-  -- docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (P2).
-  sorry
+/-! ### The FRT hook-length formula
+
+The brick-1 target `#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!` — i.e. `f^μ = |μ|! / ∏ h(c)` — is
+**proved** (sorry-free) as `QOU.BraidKnot.HookProductHLF.numSYT_mul_hookProduct`.
+
+It cannot be stated here: its proof needs `QOU.Mathlib.HookLengthFormula`, which
+transitively imports *this* module (via `QOU.BraidKnot.SpechtClassification → Specht →
+StandardYoungTableau`). The statement therefore lives one level downstream, in the leaf
+module `QOU.BraidKnot.HookProductHLF`, where the import is legal. -/
 
 end QOU.BraidKnot
