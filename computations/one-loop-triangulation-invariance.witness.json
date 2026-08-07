@@ -1,0 +1,251 @@
+{
+  "description": "Triangulation-invariance test of the 1-loop determinant |det J| used by whitehead_c_sigma_torsion.py. The DG 1-loop invariant is conjecturally topological; this retriangulates the same manifold (Pachner moves via randomize(), verified by is_isometric_to and by 212-bit volume) and recomputes. Invariant at c=1; NOT invariant at c>=2, where observed values form a sqrt(2) ladder of the same magnitude as the claimed per-cusp factor 2^{(c-1)/2}.",
+  "computation": "one_loop_triangulation_invariance_probe",
+  "audit_only": true,
+  "bits_prec": 212,
+  "trials_per_manifold": 25,
+  "status": "REFUTED_AS_INVARIANT",
+  "results": {
+    "4_1": {
+      "cusps": 1,
+      "tetrahedra": 2,
+      "volume": "2.02988321281930725004240510854904057188337861506059958403498",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "1.73205080756887729352744634150587236694280525381038062805581",
+      "det_j_distinct_values": 1,
+      "det_j_observed": {
+        "1.7320508075688772935": 25
+      },
+      "log2_ladder_doubled": [
+        "1.5849625"
+      ],
+      "triangulation_invariant": true
+    },
+    "m003": {
+      "cusps": 1,
+      "tetrahedra": 2,
+      "volume": "2.02988321281930725004240510854904057188337861506059958403498",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "3.46410161513775458705489268301174473388561050762076125611161",
+      "det_j_distinct_values": 1,
+      "det_j_observed": {
+        "3.4641016151377545871": 25
+      },
+      "log2_ladder_doubled": [
+        "3.5849625"
+      ],
+      "triangulation_invariant": true
+    },
+    "m004": {
+      "cusps": 1,
+      "tetrahedra": 2,
+      "volume": "2.02988321281930725004240510854904057188337861506059958403498",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "1.73205080756887729352744634150587236694280525381038062805581",
+      "det_j_distinct_values": 1,
+      "det_j_observed": {
+        "1.7320508075688772935": 25
+      },
+      "log2_ladder_doubled": [
+        "1.5849625"
+      ],
+      "triangulation_invariant": true
+    },
+    "5_2": {
+      "cusps": 1,
+      "tetrahedra": 3,
+      "volume": "2.82812208833078316276389880927663494277098131730064947704352",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "2.01772221118723250387947641224051346219036616010446706974366",
+      "det_j_distinct_values": 8,
+      "det_j_observed": {
+        "2.6729128458913026797": 11,
+        "2.3223254762678201463": 5,
+        "4.0753971120581114906": 2,
+        "3.0764262609789386203": 2,
+        "1.7530716357902913444": 2,
+        "3.5408556451023671267": 1,
+        "1.5231334339151346228": 1,
+        "2.0177222111872325039": 1
+      },
+      "log2_ladder_doubled": [
+        "1.2140847",
+        "1.6197699",
+        "2.0254551",
+        "2.4311404",
+        "2.8368256",
+        "3.2425108",
+        "3.6481961",
+        "4.0538813"
+      ],
+      "triangulation_invariant": false
+    },
+    "6_1": {
+      "cusps": 1,
+      "tetrahedra": 4,
+      "volume": "3.16396322888314398399101471597315448481278767151811526658292",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "2.32014848724003851180922331384658989794253210915501114482382",
+      "det_j_distinct_values": 2,
+      "det_j_observed": {
+        "2.3201484872400385118": 22,
+        "4.5034237005777161378": 3
+      },
+      "log2_ladder_doubled": [
+        "2.4284343",
+        "4.3420444"
+      ],
+      "triangulation_invariant": false
+    },
+    "6_2": {
+      "cusps": 1,
+      "tetrahedra": 5,
+      "volume": "4.40083251612304610144120386564092803398348541851646545852175",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "16.8386778300093342003622171994162962994355671979539847282740",
+      "det_j_distinct_values": 15,
+      "det_j_observed": {
+        "6.3643237951602534802": 3,
+        "3.4532932630074733906": 3,
+        "8.3869875423974457398": 3,
+        "15.057503157303590156": 2,
+        "10.48856436506934675": 2,
+        "4.9575873685823021752": 2,
+        "6.7065002976567873408": 2,
+        "11.729272403111092122": 1,
+        "9.1366961487006409741": 1,
+        "5.8421012931883114288": 1,
+        "5.691113435815094644": 1,
+        "3.0880081402924153249": 1,
+        "8.1702276446669917305": 1,
+        "10.472654839654264356": 1,
+        "5.2241309891146972134": 1
+      },
+      "log2_ladder_doubled": [
+        "3.2533531",
+        "3.5759457",
+        "4.6192764",
+        "4.7703821",
+        "5.0174219",
+        "5.0929747",
+        "5.3400145",
+        "5.4911202",
+        "6.0607526",
+        "6.1363054",
+        "6.3833452",
+        "6.7771106",
+        "6.7814906",
+        "7.1040832",
+        "7.8248213"
+      ],
+      "triangulation_invariant": false
+    },
+    "L5a1": {
+      "cusps": 2,
+      "tetrahedra": 4,
+      "volume": "3.66386237670887606021841405972953644309659749712668853706599",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "5.65685424949238019520675489683879231427868750150779229270672",
+      "det_j_distinct_values": 4,
+      "det_j_observed": {
+        "4.0": 8,
+        "2.8284271247461900976": 8,
+        "5.6568542494923801952": 6,
+        "2.0": 3
+      },
+      "log2_ladder_doubled": [
+        "2.0",
+        "3.0",
+        "4.0",
+        "5.0"
+      ],
+      "triangulation_invariant": false
+    },
+    "L6a4": {
+      "cusps": 3,
+      "tetrahedra": 8,
+      "volume": "7.32772475341775212043682811945907288619319499425337707413198",
+      "control_same_manifold": true,
+      "control_distinct_volumes": 1,
+      "geometric_trials": 25,
+      "skipped_non_geometric": 0,
+      "control_all_isometric": [
+        "True"
+      ],
+      "det_j_default": "64.0000000000000000000000000000000000000000000000000000000000",
+      "det_j_distinct_values": 8,
+      "det_j_observed": {
+        "32.0": 7,
+        "64.0": 4,
+        "22.627416997969520781": 4,
+        "45.254833995939041562": 3,
+        "11.31370849898476039": 3,
+        "16.0": 2,
+        "8.0": 1,
+        "90.509667991878083123": 1
+      },
+      "log2_ladder_doubled": [
+        "10.0",
+        "11.0",
+        "12.0",
+        "13.0",
+        "6.0",
+        "7.0",
+        "8.0",
+        "9.0"
+      ],
+      "triangulation_invariant": false
+    }
+  },
+  "bears_on": [
+    "PR #4571 / #4671 — c_sigma = 2^{-3/4} DERIVED via |tau(L5a1)|=2^{5/2}",
+    "computations/whitehead_c_sigma_torsion.py",
+    "bean qou-pn5j (anti-circularity requirement)"
+  ],
+  "does_not_bear_on": "The NUMERICAL VALUE c_sigma = 2^{-3/4}, which is pinned to 20 digits by the independent Jones-side extrapolation in whitehead_c_sigma_hiprec.py (pure mpmath, no SnapPy, no det J). That result is unaffected; only the torsion-side DERIVATION of it is.",
+  "diagnosis": "whitehead_c_sigma_torsion.py drops the DG flattening monomial and the global 1/2, justified by a single c=1 calibration reproducing |tau(4_1)|=sqrt(3). The flattening is what makes the expression triangulation-invariant; a c=1 check cannot detect its absence.",
+  "secondary_finding": "whitehead_c_sigma_torsion.py reads shapes via mp.mpc(complex(s)) — complex() is float64 — so it is capped near 16 digits despite mp.mp.dps=40. A float64 entry point of the class PR #4677 tracks.",
+  "timestamp": "2026-08-07T17:15:23+00:00"
+}
