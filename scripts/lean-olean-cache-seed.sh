@@ -154,6 +154,38 @@ if [ "$n_ml" -gt 0 ]; then
   fi
 fi
 
+# GUARD: refuse to seed a payload with no mathlib.
+#
+# $BUILT_FILE absent or empty used to fall straight through to `n_ml=0`,
+# and the seed carried on and built a tarball of nothing but the ~278
+# rev-independent dep oleans. With --push that FORCE-PUSHES a
+# mathlib-less branch over a good one; the next agent's restore then
+# counts 0 < 2000 mathlib oleans, exits non-zero, and concludes "Lean is
+# unavailable in the sandbox" — the failure AGENTS.md tells agents not to
+# accept, manufactured by our own tooling. Nothing produced $BUILT_FILE
+# until build-missing-mathlib-oleans.sh was taught to (same change), so
+# this path was reachable by simply running the two scripts in order.
+#
+# A paper-only reseed (SEED_PAPER=1 right after `lake build QOU`) is the
+# one legitimate mathlib-less case; SEED_ALLOW_NO_MATHLIB=1 is the
+# explicit override for anything else.
+if [ "$n_ml" -eq 0 ] && [ "${SEED_PAPER:-0}" != "1" ] && [ "${SEED_ALLOW_NO_MATHLIB:-0}" != "1" ]; then
+  echo "lean-olean-cache-seed: REFUSING to seed — 0 fresh mathlib oleans." >&2
+  if [ ! -f "$BUILT_FILE" ]; then
+    echo "  \$BUILT_FILE does not exist: $BUILT_FILE" >&2
+    echo "  Run a build first; it writes that list:" >&2
+    echo "    scripts/build-missing-mathlib-oleans.sh <Mathlib.Module ...>" >&2
+  else
+    echo "  \$BUILT_FILE is empty: $BUILT_FILE" >&2
+    echo "  Nothing was rebuilt this session, so there is nothing clean to seed." >&2
+  fi
+  echo "  Seeding anyway would push a cache branch with no mathlib and break" >&2
+  echo "  every restoring agent. Override only if you mean it:" >&2
+  echo "    SEED_PAPER=1 ...              # paper-only reseed after \`lake build QOU\`" >&2
+  echo "    SEED_ALLOW_NO_MATHLIB=1 ...   # explicit escape hatch" >&2
+  exit 1
+fi
+
 # 2. non-mathlib package oleans (rev-independent).
 #    NOTE: qou/ugb/fred2005 PAPER oleans are intentionally EXCLUDED — they are
 #    only rebuilt when the paper lib itself is compiled with `-o`, which a
