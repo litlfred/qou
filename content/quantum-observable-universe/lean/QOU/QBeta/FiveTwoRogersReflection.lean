@@ -1,4 +1,4 @@
-/-!
+/-
 # ⚠ NOT YET BUILT — DO NOT TREAT AS VERIFIED
 
 This file has **never successfully compiled** in the environment it was written

@@ -371,6 +371,12 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape
+-- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
+-- library root: `lake build` only builds `QOU.lean`'s import closure, so a
+-- module nothing imports is never compiled. See bean qou-orph.
+import QOU.QBeta.FiveTwoCyclotomicBloch
+import QOU.QBeta.FiveTwoLevelSevenLadder
+import QOU.QBeta.FiveTwoRogersExtend
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge

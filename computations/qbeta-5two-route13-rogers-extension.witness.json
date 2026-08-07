@@ -1,0 +1,128 @@
+{
+  "probe": "qbeta_5two_route13_rogers_extension",
+  "bean": "qou-rhyp",
+  "parent_bean": "qou-0yqu",
+  "dps": 60,
+  "lean_file": "QOU/QBeta/FiveTwoRogersExtend.lean",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "roots of w^3-2w^2-w+1; exactly w1 and -w1 leave [-1,1]",
+      "w1": "2.24697960371746706105001",
+      "w2": "0.554958132087371191422195",
+      "w3": "-0.801937735804838252472205",
+      "outside_unit_interval": [
+        "w1",
+        "-w1"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the LiTwo power series diverges at w1, so Lean's tsum returns 0",
+      "partial_sums_at_w1_n20_n40_n80": [
+        "53430.78",
+        "1.3631093e+11",
+        "3.8597176e+24"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "REFUTATION: hinv1 and hlan1 are FALSE for a Rogers L built on the corpus LiTwo",
+      "hinv1_residual": "-2.45432734397",
+      "hlan1_residual": "1.56924578594",
+      "note": "gate passes when both failures are confirmed, i.e. residuals are NOT small",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the failure is localised: every hypothesis whose arguments stay in [-1,1] holds",
+      "residuals": {
+        "hlan2": "7.7787691e-62",
+        "hlan3": "0.0",
+        "refl_w2": "1.5557538e-61",
+        "refl_q": "3.1115076e-61",
+        "refl_r": "3.1115076e-61",
+        "refl_s": "4.6672615e-61"
+      },
+      "worst": "4.6672615e-61",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "under `extend` all four reduction hypotheses hold -- by construction, not by analysis",
+      "residuals": {
+        "hinv1": "-3.1115076e-61",
+        "hlan1": "0.0",
+        "hlan2": "0.0",
+        "hlan3": "0.0"
+      },
+      "worst": "3.1115076e-61",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "reflection is unchanged by the extension (both arguments stay in the middle branch)",
+      "residuals": {
+        "w2": "1.5557538e-61",
+        "q": "3.1115076e-61",
+        "r": "3.1115076e-61",
+        "s": "4.6672615e-61"
+      },
+      "worst": "4.6672615e-61",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "the piecewise extension agrees with Re of the principal-branch analytic Rogers L at all six points -- EVIDENCE that the repair is the right one, not a proof",
+      "residuals": {
+        "w1": "-6.2230153e-61",
+        "-w1": "0.0",
+        "w2": "0.0",
+        "-w2": "-7.7787691e-62",
+        "w3": "0.0",
+        "-w3": "0.0"
+      },
+      "worst": "6.2230153e-61",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "from `extend` alone the numerators are (17,5,-1)/7 and the sum is 3*L1 = pi^2/2",
+      "per_k": [
+        {
+          "k": 1,
+          "value": "3.99483987663140706000444",
+          "m": 17,
+          "abs_err": "9.3345229e-61"
+        },
+        {
+          "k": 2,
+          "value": "1.17495290489159031176601",
+          "m": 5,
+          "abs_err": "1.5557538e-61"
+        },
+        {
+          "k": 3,
+          "value": "-0.234990580978318062353202",
+          "m": -1,
+          "abs_err": "9.7234614e-62"
+        }
+      ],
+      "sum": "4.93480220054467930941725",
+      "sum_target": "4.93480220054467930941725",
+      "sum_abs_err": "6.2230153e-61",
+      "worst": "9.3345229e-61",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "correction": "qou-rhyp graded inversion and Landen as hard-but-provable analysis. Two of them (hinv1, hlan1) are instead FALSE for a Rogers L built on the corpus's LiTwo, because their arguments w1 = 2.2469796... and -w1 leave the disc of convergence, where Lean's tsum is the junk value 0 and Real.log is even.",
+    "repair": "definitional, not analytic: extend by inversion above 1 and Landen below 0 (Zagier SS I.3). All four reduction hypotheses then hold by construction. Formalised sorry-free in QOU/QBeta/FiveTwoRogersExtend.lean, generic in f and c, axioms [propext, Classical.choice, Quot.sound].",
+    "what_the_repair_costs": "the Lean object is a piecewise function, NOT proved equal to the analytic continuation of Li_2. G7 checks they agree at the six points in play. Agreement is evidence, not identification.",
+    "net_effect": "of the twelve hypotheses numerators_original_form takes, four reduction ones are now discharged for any f, and reflection transports through the extension. The genuinely open input is exactly the three five-term instances hA, hB, hC.",
+    "why_missed": "route11's probe used mpmath polylog -- the true analytic continuation -- so it was testing the mathematics, not the Lean semantics. Both were right on their own terms; the gap was between them.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}
