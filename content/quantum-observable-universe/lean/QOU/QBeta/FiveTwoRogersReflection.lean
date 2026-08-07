@@ -1,3 +1,19 @@
+/-!
+# ⚠ NOT YET BUILT — DO NOT TREAT AS VERIFIED
+
+This file has **never successfully compiled** in the environment it was written
+in. The build reached 1126/1156 of `DilogReflection`'s Mathlib dependency cone
+and was killed — no error, no completion line, zero `lean` workers afterwards.
+
+It contains **no `sorry`**, and the mathematics is a one-line `linear_combination`
+off an existing sorry-free theorem, so it is *expected* to compile. But expected
+is not verified, and every other Lean file in this lane was built and had its
+axioms audited before landing. **Build it before relying on it, and delete this
+header when you do.**
+
+Tracked in `qou-rhyp`.
+-/
+
 import QOU.Archimedean.DilogReflection
 
 /-!
