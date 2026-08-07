@@ -52,9 +52,31 @@ stabilizer shows the enhancement is \emph{available}, not that it
 curve whose automorphism group is exactly $S_4$, or any other group
 containing $S_4$.  An earlier draft called the enhancement ``the unique
 maximal option'' and treated maximality as selection; that inference is
-withdrawn.  Identifying the normalization requires exhibiting the curve
---- for instance by computing the pinched surface's period matrix and
-matching it against the Klein quartic --- which has not been done.
+withdrawn.
+
+\textbf{The $S_4$ bridge cannot select the Klein quartic.}
+A stronger negative than the Hurwitz error: the $S_4$ datum has no
+separating power at all.  The Fermat quartic $x^4 + y^4 + z^4 = 0$ is a
+genus-3 curve whose automorphism group $(\mathbb{Z}/4)^2 \rtimes S_3$ of
+order $96$ \emph{also} contains $S_4$ --- exhibited as $V_4 \rtimes S_3$
+and machine-verified in exact $\mathbb{Z}[i]$ arithmetic
+(\texttt{s4\_genus3\_competitor\_fermat.py}: element-order profile
+$\{1{:}1,\, 2{:}9,\, 3{:}8,\, 4{:}6\}$, $V_4$ normal, $S_3$ inducing the
+full symmetric action on $V_4 \setminus \{1\}$).  So even a fully correct
+argument that the normalization has genus $3$ and inherits $S_4$ stops
+short of the Klein quartic, because at least one other genus-3 curve
+satisfies both conditions.
+
+Identifying the normalization therefore requires a \emph{separating}
+invariant --- one that distinguishes Klein from Fermat (and from any
+further $S_4$-admitting genus-3 curve).  The separator must be computable
+from the degeneration data; a separator computed only from the two
+candidate curves does not constrain which of them the pinch produces.  The
+decisive version is the period matrix; discrete candidates (full
+automorphism-group order, bitangent structure, Weierstrass gap sequences,
+quotient-genus signature) are cheaper and may suffice.  None has been
+computed.  This is a scope-(a) negative: the degeneration itself is not
+refuted, only the argument offered for it.
 
 \textbf{Status:} the $S_4$ bridge mechanism is computationally verified
 (\texttt{s4\_bridge\_verification.py}, \texttt{s4\_fano\_action.py}).

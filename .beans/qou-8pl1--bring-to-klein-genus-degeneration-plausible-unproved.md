@@ -7,7 +7,41 @@ created_at: 2026-08-06T00:00:00Z
 updated_at: 2026-08-06T00:00:00Z
 ---
 
-## Claim (plausible, not proved)
+## UPDATE 2026-08-07 — the S_4 bridge is REFUTED as an argument
+
+`computations/s4_genus3_competitor_fermat.py` (exact Z[i], no floats):
+
+The **Fermat quartic** `x^4 + y^4 + z^4 = 0` is a genus-3 curve whose
+automorphism group `(Z/4)^2 : S_3` (order 96, every element machine-verified to
+preserve the form) **contains S_4** — exhibited as `V_4 : S_3` and confirmed by
+element-order profile `{1:1, 2:9, 3:8, 4:6}`, `V_4` normal, and `S_3` inducing
+the full symmetric action on `V_4\{1}`.
+
+So at least TWO distinct genus-3 curves admit `S_4`: Klein (|Aut| = 168) and
+Fermat (|Aut| = 96). **The S_4 datum has no separating power.**
+
+This is strictly stronger than the Hurwitz error already recorded below. That
+error was "an upper bound is not a selection principle". This one is that even a
+*fully correct* "the normalization has genus 3 and inherits S_4" argument still
+does not reach the Klein quartic, because a second curve satisfies both
+conditions.
+
+**Scope-(a).** The Bring -> Klein degeneration is NOT refuted. What is refuted
+is the S_4 bridge as an argument for it. The conjecture now needs a *separating
+invariant*.
+
+## Broken into sub-beans
+
+* `qou-8p1a` — enumerate ALL genus-3 curves admitting S_4 (classification is
+  known and finite; no heavy infra). **Start here** — it bounds the problem.
+* `qou-8p1b` — find an invariant separating Klein from the competitor set, with
+  the constraint that it must be computable from the *degeneration data*, not
+  just from the candidate curves.
+* `qou-8p1c` — the decisive period-matrix route. **BLOCKED on infra**: numpy,
+  scipy, sage all absent here and `abelfunctions` is not on PyPI at all. Only
+  `sympy` installs. Requirements and three unblock paths recorded.
+
+## Original claim (retained)
 
 Pinching an `S_4`-invariant 1-cycle on the Bring surface `Σ_4` (genus 4,
 `Aut = S_5`) yields, after normalisation, the Klein quartic `Σ_3` (genus 3,
