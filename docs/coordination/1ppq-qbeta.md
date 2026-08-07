@@ -2878,3 +2878,33 @@ not close; the identified route for the second is the Kubert/distribution
 relation applied to `Li₂(y²) = Li₂((1−y)³)`. Bloch-group work, left OPEN.
 
 auditOnly; nothing wired; no fit.
+
+**2026-08-07 (coordination, PR #4658 ↔ #4666) — the same identity, two routes.**
+`/coordinate` sweep. PR **#4666** ("C1 ramified leading blocks + the general
+Bloch–Wigner D, reaching 5₂") independently derived **`D(y₊) = Vol(5₂)/3`** —
+the identical identity #4658 verified hours earlier by a different route.
+
+| | #4666 | #4658 |
+|---|---|---|
+| route | dihedral angles, `D = Λ(α)+Λ(β)+Λ(γ)` | Broadhurst eq (73), `vol(5₂) = 3·Z₂₃,₃` |
+| digits | 20 (capped by their `Vol(5₂)` *literal*) | 31 (computed from the saddle roots) |
+
+Two independent confirmations of an open result — deliberate parallel work per
+the measured-research-overlap relaxation, not duplication.
+
+**Independently converged negative.** #4666 states these `D` values "contribute
+nothing" to the saddle sum rule, being the imaginary part. That is Route 2 of
+`qou-0yqu` reached from the other side; `qou-0yqu` adds that `Σⱼ D(yⱼ) = 0`
+holds **automatically** for any cubic with one real + one conjugate pair
+(control-verified), so the Bloch–Wigner side is information-free here, not
+merely unhelpful.
+
+**Offered to #4666:** `fivetwo_saddle_values.py::volume()` computes `Vol(5₂)`
+from the roots at arbitrary `dps` — removes their stated precision ceiling;
+Broadhurst's published eq (73); and `disc = −23`, now Lean-proved
+(`disc_eq_neg_23`). **Wanted from them:** `summable_clausen` (the filler
+defines `Cl_2` as a `tsum` proving nothing about convergence — everything
+downstream rested on that), `tetAngles_sum_eq_pi`.
+
+**No file conflict** — disjoint Lean files. No review comments on #4658 to
+triage. Comment: https://github.com/litlfred/qou/pull/4666#issuecomment-5215109956

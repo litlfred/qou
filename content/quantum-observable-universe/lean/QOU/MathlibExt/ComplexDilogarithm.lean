@@ -59,6 +59,7 @@ that was never created — corrected 2026-08-06.)
 -/
 import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
+import Mathlib.Analysis.Analytic.OfScalars
 
 namespace QOU.MathlibExt
 
@@ -149,5 +150,32 @@ theorem cLiTwo_eq_tsum_coeff {z : ℂ} (hz : ‖z‖ < 1) :
   unfold cLiTwo
   refine tsum_congr fun k => ?_
   rw [div_eq_inv_mul]
+
+/-- Every coefficient has norm `≤ 1`: `c₀ = 0` and `‖1/n²‖ = 1/n² ≤ 1`. -/
+theorem cLiTwoCoeff_norm_le_one (n : ℕ) : ‖cLiTwoCoeff n‖ ≤ 1 := by
+  rcases Nat.eq_zero_or_pos n with rfl | hn
+  · simp
+  · have h1 : (1 : ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+    have hk : (1 : ℝ) ≤ ‖(n : ℂ)‖ ^ 2 := by
+      rw [Complex.norm_natCast]; nlinarith
+    simp only [cLiTwoCoeff, hn.ne', if_false, norm_inv, norm_pow]
+    exact inv_le_one_of_one_le₀ hk
+
+/-- **Step 2 of the analyticity route (bean `qou-gkco`): radius `≥ 1`.**
+
+Immediate from `cLiTwoCoeff_norm_le_one` via `le_radius_of_bound` at `r = 1`,
+with no ratio test needed. Combined with `cLiTwo_eq_tsum_coeff`, this says the
+defining series of `cLiTwo` is a genuine power series on the open unit disc.
+
+Step 3 — upgrading this to `AnalyticOnNhd ℂ cLiTwo (Metric.ball 0 1)`, which
+is what the identity theorem needs — is **not** done here. -/
+theorem cLiTwo_radius_ge_one :
+    1 ≤ (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).radius := by
+  have h : ∀ n : ℕ,
+      ‖FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff n‖ * ((1 : NNReal) : ℝ) ^ n ≤ 1 := by
+    intro n
+    rw [FormalMultilinearSeries.ofScalars_norm]
+    simpa using cLiTwoCoeff_norm_le_one n
+  simpa using FormalMultilinearSeries.le_radius_of_bound _ 1 h
 
 end QOU.MathlibExt
