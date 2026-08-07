@@ -227,3 +227,30 @@ upstream and ordering matters. That is the one place the original "upstream
 propagation" reading was pointing at something real.
 
 Caught before any of the four was fixed on the strength of the wrong label.
+
+## 242 fields done; the rule now has one home
+
+v_hat_to_delta_lambda_bridge (6) and xi_ell_phi_q_probe (5) fixed — both take
+their value from an in-memory float64 helper (wedderburn_pair_volumes imports
+numpy and computes 1.0/(q0**0.5+...); per_generator_V_hat_general is driven by
+float braid words), NOT from JSON as the earlier grouping claimed.
+
+Fourth/fifth use of the same rule, so it is now
+`qou_substrate.precision.str_at_true_precision`, with 6 unit tests covering
+BOTH inverse defects (don't print 50 dps of a 53-bit value; don't shorten a
+real full-precision one). The three earlier producers are retrofitted onto it.
+
+TRAP worth remembering: it is a drop-in for `str(<mpf>)` and NOT for
+`fmt(<mpf>)`. fmt serializes at OUTPUT_DPS, str at the live mp.dps, and
+producers set them differently (compute_dps 70 / output_dps 60 is typical), so
+the wrong fallback silently rewrites the digit count of every value the helper
+is not meant to affect. A test pins it.
+
+Verified per producer in a detached worktree, every numeric field compared:
+xi_ell 40 fields 5->0, v_hat 71 fields 6->0, and the retrofit 201/53 fields
+with 0 moved. rho_k's substitution checked by direct equivalence (9 values,
+0 disagreements) rather than a 25-minute re-run.
+
+Remaining: su4 (10, floor), binding_factor_f_sequence (2),
+bring_homology_pairing_integration (2 real + 2 tolerances that must NOT move),
+and the two upstream-sourced ones where the fix belongs upstream.

@@ -704,12 +704,19 @@ where this document said the non-mechanizable part lived all along.
   `rho_k_co_casimir_extended` (148). Neither touches the shared helper: both
   fix serialization in the producer, which is why `hoefsmit_numpy.py:161`
   can stay as it is for its other callers.
-  **231 fields are done** — `chirality_avg_content_atomic` (71),
-  `rho_k_co_casimir_extended` (148), `chirality_avg_content_chiral` (12).
+  **242 fields are done** — `chirality_avg_content_atomic` (71),
+  `rho_k_co_casimir_extended` (148), `chirality_avg_content_chiral` (12),
+  `v_hat_to_delta_lambda_bridge` (6), `xi_ell_phi_q_probe` (5). The rule they
+  share is `qou_substrate.precision.str_at_true_precision` — an mpf equal to
+  its own float64 holds 53 bits and nothing more. It is a drop-in for
+  `str(<mpf>)` and **not** for `fmt(<mpf>)`: those serialize at `mp.dps` and
+  `OUTPUT_DPS` respectively, which producers set differently, so the wrong
+  fallback silently rewrites every value it was not meant to touch.
   Remaining: `su4_1111_markov_trace_probe` (10, floor — its measured runs
-  timed out) on the `hecke_characters.py:214` root; the two in-memory
-  `mpf(<float-valued dict entry>)` producers; and the two that read the value
-  from a committed witness, where the fix is upstream and ordering matters.
+  timed out) on the `hecke_characters.py:214` root; `binding_factor_f_sequence`
+  (2); `bring_homology_pairing_integration` (2 real, 2 tolerances that must
+  not move); and the two that read the value from a committed witness, where
+  the fix is upstream and ordering matters.
   Counts for the producers that exit non-zero or time out are floors.
 - **Class B — 9 producers, 39 fields — needs no producer fix.** The values are
   genuine; the *detector* calls them padding. Either it learns to tell a
