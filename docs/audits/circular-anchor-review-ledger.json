@@ -7,10 +7,10 @@
       "criterion": "circ-anchor-inverted-roundtrip",
       "symbol": "VOL_41",
       "line": 43,
-      "verdict": "genuine",
+      "verdict": "legit",
       "file_sha": "ccfdb5964627",
       "evidence": "constant `VOL_41` (line 43) is inverted to define `q0` (line 48); the file then reports a confirmation at line 199: \"print(f\"    VERIFY: Σ coefficients (net) = {sum(float(cancel(nf.get(w,sp.Integer(0))).subs(q,q0)) for w in bas\". Recovering `VOL_41` from `q0` is a round-trip, not evidence",
-      "agent_note": "REAL inversion: VOL_41 is inverted to obtain q0 and the file then reports a VERIFY line. This is the one true positive among the anchor-inverted candidates. Mitigating: the file is in computations/_deprecated/, so it is not live; priority low, but the pattern is exactly the T4 round-trip this axis exists to catch.",
+      "agent_note": "CORRECTION of my own 2026-08-07 verdict, which said 'genuine'. Reading the actual dataflow rather than the detector's evidence string: VOL_41 -> hbar_q = sqrt(VOL_41/MU_E) -> q0 = 1/(1-hbar_q). That is a FORWARD derivation from a tagged observational input ([OBS-1] SnapPy) — it is the calibration chain, which is exactly how q0 is supposed to be pinned. Nothing anywhere recovers VOL_41 from q0, and the quoted 'VERIFY' lines at 199 are about Hecke-relation coefficients, unrelated to VOL_41. Not a round-trip. I was misled by the detector's evidence string, which asserts 'is inverted to define' for what is plain forward dataflow — the same defect logged in qou-yfsp. This makes circ-anchor-inverted-roundtrip 6/6 false positives.",
       "adjudicated_at": "2026-08-07"
     },
     {
