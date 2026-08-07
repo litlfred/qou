@@ -48,6 +48,8 @@ G3  Is ``Σⱼ Re D̃`` (principal branches) an exact rational multiple of ``π�
     This is the mod-``π²/2`` vanishing statement, tested directly and
     independently of whether G1 succeeds.
 
+G4  What the residual actually is, in closed form — and why the reading fails.
+
 No fitting: the branch scan ranges over integers only, every candidate is
 reported, and a MISS is reported as a MISS.
 
@@ -176,23 +178,86 @@ def gate3_mod_pi_sq(ys):
     }
 
 
+def gate4_residual_closed_form(ys):
+    """The residual is NOT noise -- it is exactly computable, and that is what
+    kills the pure-rationality reading.
+
+    On the branch locus ``2u = 3v + 2πi·k`` one gets ``(3/2)uv = u² − πi·k·u``,
+    so at the principal branch
+
+        V − 3·D̃ = (u + bπi)² − u² + πi·k·u = πi(2b + k)·u − b²π²
+
+    with ``u = Log y``.  Per root, with ``(b,k) = (−1,1), (1,−1), (1,0)``:
+
+        y₁:  −πi·u − π²   ⟹  Re = π·arg(y₁) − π²
+        y₂:  conjugate    ⟹  Re = π·arg(y₁) − π²
+        y₃:  −π²          ⟹  Re = −π²         (u real, and 2u = 3v exactly)
+
+    Summing and imposing the sum rule ``Σ Re V = −3π²/2`` gives the exact
+    restatement
+
+        Σⱼ Re D̃(yⱼ) = π²/2 − (2/3)·π·θ,      θ = arg y₁.
+
+    **This is the negative result.**  The ``π·θ`` term is not in ``π²ℚ``, so the
+    sum rule does NOT reduce to "a class in ℝ/(π²/2)ℤ vanishes" under this
+    identification.  Scope-(a): this particular set-up does not close.  It does
+    NOT exclude an enhanced-dilogarithm formulation on a different covering
+    point or a different Bloch element.
+    """
+    y1, _y2, _y3 = ys
+    theta = mp.arg(y1)
+    pi = mp.pi
+    predicted = [pi * theta - pi**2, pi * theta - pi**2, -(pi**2)]
+    actual = []
+    for y, b in zip(ys, B_CORPUS):
+        d = enhanced(y, 0, 0)
+        actual.append(mp.re(V(y, b) - 3 * d))
+    worst = max(abs(a - p) for a, p in zip(actual, predicted))
+    lhs = sum(mp.re(enhanced(y, 0, 0)) for y in ys)
+    rhs = pi**2 / 2 - mp.mpf(2) / 3 * pi * theta
+    return {
+        "gate": "G4",
+        "claim": "the residual V - 3*Dtilde has an exact closed form: pi i (2b+k) u - b^2 pi^2",
+        "predicted_residual_re": [mp.nstr(p, 15) for p in predicted],
+        "actual_residual_re": [mp.nstr(a, 15) for a in actual],
+        "worst_abs_error": mp.nstr(worst, 8),
+        "closed_form_verified": bool(worst < mp.mpf(10) ** -25),
+        "exact_restatement": "sum_j Re Dtilde(y_j) == pi^2/2 - (2/3) pi theta,  theta = arg y_1",
+        "restatement_lhs": mp.nstr(lhs, 25),
+        "restatement_rhs": mp.nstr(rhs, 25),
+        "restatement_abs_error": mp.nstr(abs(lhs - rhs), 8),
+        "restatement_holds": bool(abs(lhs - rhs) < mp.mpf(10) ** -20),
+        "negative_result": (
+            "The pi*theta term is NOT in pi^2 Q, so the sum rule does NOT reduce "
+            "to the vanishing of a class in R/(pi^2/2)Z under this identification. "
+            "SCOPE-(a): this set-up does not close. It does NOT exclude an "
+            "enhanced-dilogarithm formulation at a different covering point or on "
+            "a different Bloch element -- no invariant forbids that, so no "
+            "scope-(b) claim is made."
+        ),
+    }
+
+
 def main() -> None:
     ys = roots()
     g1 = gate1_match(ys)
     g2 = gate2_residual(ys)
     g3 = gate3_mod_pi_sq(ys)
+    g4 = gate4_residual_closed_form(ys)
     verdict = (
         "IDENTIFIED: the sum rule is a mod-pi^2/2 statement about the enhanced "
         "dilogarithm"
         if g1["pass"] and g3.get("is_integer_multiple")
-        else "NOT IDENTIFIED: see per-gate detail; the enhanced-dilogarithm "
-        "reading does not close as stated"
+        else "REFUTED (scope-a): V is NOT 3*Dtilde at any integer branch offset; "
+        "the residual is exactly pi i (2b+k) u - b^2 pi^2 (G4), leaving a "
+        "pi*arg(y_1) term outside pi^2 Q. The sum rule does not reduce to a "
+        "mod-pi^2/2 rationality statement under this identification."
     )
     result = {
         "probe": "qbeta_5two_enhanced_dilog_probe",
         "dps": mp.mp.dps,
         "source": "uploads/fulltext.pdf = Zagier, The Dilogarithm Function (2007), II.1 B",
-        "gates": [g1, g2, g3],
+        "gates": [g1, g2, g3, g4],
         "verdict": verdict,
         "scope": (
             "Numerical only. A positive result would REFRAME the open problem "
