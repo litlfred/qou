@@ -64,6 +64,11 @@ except ImportError:
     sys.exit(1)
 
 # Established empirical c_3 at each anchor (PR #1609 cross-anchor infra).
+
+# Constants below are built at module scope. set_compute_dps() must run
+# FIRST: at import time mp.dps is still mpmath's default 15 (~binary64),
+# and a literal rounded there cannot be recovered by raising dps later.
+set_compute_dps()
 EMPIRICAL_C3_PROTON = mpf("-2.0693")
 EMPIRICAL_C3_MUON = mpf("-2.0097")
 

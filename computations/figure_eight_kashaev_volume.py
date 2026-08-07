@@ -30,6 +30,11 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+mp.mp.dps = 60
+
 VOL_4_1 = mp.mpf("2.029883212819307250011597804990447526446605015756")  # 2·Im Li₂(e^{iπ/3})·… = 6·Λ(π/3)
 
 
