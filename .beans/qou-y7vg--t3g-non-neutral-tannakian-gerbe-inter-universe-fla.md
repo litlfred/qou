@@ -19,9 +19,12 @@ Formal home for 'flavour SU(3) is an inter-universe phenomenon'. Deligne: a Tann
 `docs/audits/2026-08-07-eightfold-live-surface-collapse.md`.
 
 Three independent threads now terminate on the **same** requirement:
-* the Sym^2-gate result — no summand of any `V^{tensor n}` passes, since all
-  SU(2) reps are self-dual, so "inequivalent fibre objects" must mean genuinely
-  non-isomorphic fibres;
+* the Sym^2-gate result — no **odd-dimensional** summand of any
+  `V^{tensor n}` passes (Frobenius–Schur parity: odd-dim SU(2) irreps are
+  orthogonal, so their singlet lands in `Sym^2`), so "inequivalent fibre
+  objects" must mean genuinely non-isomorphic fibres. *Corrected 2026-08-07:
+  self-duality alone does NOT decide the gate — even-dimensional summands are
+  symplectic and do pass it, they are just the wrong dimension;*
 * the Ocneanu result — an N = 3 channel must be the categorical trace on a
   genuinely 3-dimensional object, since the parameter is the fibre's quantum
   dimension;

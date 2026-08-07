@@ -39,7 +39,7 @@ moved.
 | S₄ / Fano bridge to Klein (T3h) | **excluded**, scope-(b) — marked-pair obstruction |
 | "4-form degenerates" → Spin(7) → G₂ → SU(3) | **excluded**, scope-(b) — no open GL(8)-orbit on Λ⁴(ℝ⁸); Cayley locus is codim 27 |
 | Re-tune the Ocneanu parameter to N = 3 | **excluded**, scope-(b) — the N=2 and N=3 traces are not proportional |
-| Some summand of `V^⊗n` as the triplet | **excluded**, scope-(b) — every SU(2) rep is self-dual, so none passes the Sym² gate |
+| Some **odd-dimensional** summand of `V^⊗n` as the triplet | **excluded**, scope-(b) — Frobenius–Schur parity: odd-dim SU(2) irreps are orthogonal, so their singlet lands in Sym². (Corrected 2026-08-07: self-duality *alone* does not decide the gate — even-dim summands are symplectic and do pass it. See §6.) |
 | Tetraplectic / quaternionic | supplies **SU(2)**, already spent on electroweak; vacuous at `m = 1` |
 | Octonionic G₂ (status quo) | works, but **unearned** — empty `uses[]`, no `def:octonion-algebra` in the corpus (`qou-8fl1`) |
 | **Non-neutral Tannakian gerbe (T3g)** | **the surviving direction** — see §3 |
@@ -50,11 +50,13 @@ moved.
 `qou-y7vg` (T3g) asks whether QOU's braided category admits *inequivalent fibre
 functors*, i.e. a non-neutral Tannakian gerbe.
 
-Today's Sym²-gate result forces them together. Since **no summand of any tensor
-power of the 2-dimensional fibre can pass the gate** — all SU(2)
-representations are self-dual — T3b's "inequivalent fibre objects" *cannot* mean
-"different summands of `V^⊗n`". It must mean genuinely non-isomorphic fibres.
-That is exactly T3g's question.
+Today's Sym²-gate result forces them together. Since **no odd-dimensional
+summand of any tensor power of the 2-dimensional fibre can pass the gate** —
+odd-dimensional SU(2) irreps are orthogonal, so their invariant form is
+symmetric and the singlet lands in `Sym²` — T3b's "inequivalent fibre objects"
+*cannot* mean "a 3-dimensional summand of `V^⊗n`". It must mean genuinely
+non-isomorphic fibres. That is exactly T3g's question. (See §6 for a correction
+to how this was first stated.)
 
 Likewise the Ocneanu result: an N = 3 flavour channel cannot be the same trace
 re-tuned, and since the Ocneanu parameter is the fibre's quantum dimension
@@ -117,3 +119,31 @@ the band's outer automorphism would close the last live route, at which point
 the honest corpus position is that colour and flavour SU(3) are **imported**
 symmetries, and the chapter should say so plainly rather than leave several
 dead routes reading as live.
+
+
+---
+
+## 6. Correction (2026-08-07, same day) — the Sym² obstruction is a PARITY fact, not a self-duality fact
+
+As first written, §2 and §3 of this note said the Sym²-gate exclusion followed
+because *"every SU(2) rep is self-dual, so none passes the gate."* **That
+inference is invalid**, and `state_space_natural_three_sym2_gate.py` contained
+the counterexample to it in its own C3: the 2-dimensional fundamental is
+self-dual with Frobenius–Schur `−1`, its singlet sits in `Λ²`, and it
+**passes** the gate.
+
+Self-duality splits:
+
+| SU(2) irrep dim `d` | spin | FS | invariant form | singlet lives in | Sym² gate |
+|---|---|---|---|---|---|
+| odd | integer | `+1` | symmetric (orthogonal) | `Sym²` | **fails** |
+| even | half-integer | `−1` | antisymmetric (symplectic) | `Λ²` | **passes** |
+
+The exclusion therefore rests on **Frobenius–Schur parity**, verified as C6 of
+that module for `d = 2..9`, not on self-duality.
+
+**The downstream conclusion is unaffected.** Colour needs `dim 3`, which is odd,
+hence orthogonal, hence fails — so a triplet still cannot be found among the
+summands of `V^⊗n`, and §3's collapse argument stands. What was wrong was only
+the stated generality. Even-dimensional summands do pass the gate; they are
+simply the wrong dimension.
