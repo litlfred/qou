@@ -10,7 +10,7 @@ tags:
     - whitehead
     - refuted-needs-repair
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T21:20:00Z
+updated_at: 2026-08-07T21:45:00Z
 ---
 
 ## Why
@@ -111,3 +111,65 @@ Restore the flattening monomial + the 1/2 and re-run
 `L5a1`, `L6a4` must each collapse to ONE value. `5_2` is now the sharpest
 single test — its ambiguity group is rank 1 with a known generator, so a
 correct flattening must kill exactly the sqrt(rho) freedom.
+
+---
+
+## 2026-08-07 (later) — repair attempt: two results, one of them inconclusive. Bean STAYS OPEN.
+
+### DECISIVE: no uniform shape monomial repairs it
+
+Tested `|det J| / m` for ten uniform candidates `m` — `prod|z|`, `prod|1-z|`,
+`prod|z'|`, `prod|z''|`, `prod|z(1-z)|`, `prod|z/(1-z)|`, `prod|z''/z'|`, and
+squares — over ~31 geometric retriangulations each of `5_2`, `L5a1`, `6_2`.
+**None reaches a single value.** Best partial: `prod|1-z|` takes `5_2` from
+8 distinct to 3; on `L5a1`/`6_2` most candidates make it WORSE (up to 20).
+
+So the correction is not a fixed formula in the shapes. It requires genuine
+per-tetrahedron integer exponents that vary with the triangulation — i.e. an
+actual Neumann combinatorial flattening. That rules out the cheap fix and is
+worth not re-trying.
+
+### USEFUL: the flattening conditions are solvable from SnapPy, and the
+### convention is now pinned
+
+`M.gluing_equations_pgl()` returns `NeumannZagierTypeEquations` with
+`.matrix` in `(z, z', z'')` form — columns `z_XXXX_i / zp_XXXX_i / zpp_XXXX_i`,
+rows `edge_*` then `meridian_*` / `longitude_*`. So the flattening is an
+integer linear system, no paper needed to set it up.
+
+**Consistent convention, found by search rather than asserted:**
+
+    edge rows   = 2
+    cusp rows   = 0
+    f + f' + f'' = +1   per tetrahedron
+
+For `5_2` this admits e.g. `(-2,2,1, 2,1,-2, -2,2,1)`. Note the per-tetrahedron
+sum is **+1, not -1** — the -1 that `zz'z'' = -1` naively suggests is
+INCONSISTENT (no integer solution). Worth recording: I asserted -1 first and
+the search corrected me.
+
+### INCONCLUSIVE: the correction convention is not yet identified
+
+With those flattenings, tested six placements of the monomial
+(`detJ / prod z''^f'' z'^f'`, with `z'^-f'`, the full `z^f z'^f' z''^f''`,
+each single factor, and the reciprocal) across 22 three-tetrahedron
+retriangulations of `5_2`. **No placement yielded a value common to all
+triangulations.**
+
+**This is NOT a refutation of the flattening repair**, and must not be read as
+one. The search was bounded: exponents restricted to `[-2,2]` and at most 3
+flattenings kept per triangulation. The true flattening may lie outside that
+box, or be a specific one among many that the truncation discarded. A proper
+attempt needs a real integer solver (Smith normal form / HNF — `sympy` is not
+installed in this container) enumerating the full solution coset, not a
+bounded product search.
+
+### Next step for whoever takes this
+
+1. Install `sympy` (or implement HNF) and enumerate the flattening coset
+   properly instead of brute-forcing a box.
+2. Re-run the six placements. `5_2` remains the sharpest test: rank-1
+   ambiguity, generator `sqrt(rho)`, so a correct correction must kill exactly
+   that freedom and nothing else.
+3. Only then re-derive the per-cusp factor — which the ambiguity-group result
+   already shows is unidentifiable in its current form.
