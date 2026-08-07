@@ -1,7 +1,7 @@
 ---
 # qou-odh5
 title: 'C1 infinity: extract the TWO Stokes multipliers via q-Borel/theta resummation (leading blocks now known)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-06T23:30:00Z
@@ -82,3 +82,54 @@ is only a sensible target now that the unknown is finite-dimensional.
   `docs/coordination/2026-07-17-1ppq-program-ownership-map.md`. Post intent
   and name the distinct angle before attacking; measured research overlap is
   permitted per AGENTS.md but must be deliberate and visible.
+
+
+---
+
+## STEP 2 LANDED (PR #4647) — the singularities are located
+
+`computations/qbeta/c3_w2_c1_qborel_singularity.py` + witness, 4/4 assertions.
+
+**q-Gevrey order = Newton slope = ½.** Fit `-log_q|b_m| = A m² + Bm + C` on
+m ∈ {600,700,800} at 500 dps gives **A = 0.25 exactly**. The slope is an
+algebraic invariant of the operator; the Gevrey order is the measured decay of
+its solutions. They agree — an independent cross-check of step 1.
+
+(Subtlety: the naive reading gives ½ not ¼. One expects
+`b_{m+2} ≈ K q^{−m} b_{m+1}`. But `b_{m+1}/b_m ~ q^{−m/2} → 0`, so
+`b_{m+1}+b_m ≈ b_m` and the recurrence is effectively **two-step**,
+`b_{m+2} ≈ K q^{−m} b_m`, halving the exponent.)
+
+**Two nearby singularities — the sector structure is visible.** With
+`c_m = b_m q^{m(m−1)/4}` the level-½ q-Borel transform converges. Within a
+branch `c_{m+1}/c_m` settles to ~1e-10 by m=400 and holds to m=900. But the
+limit **differs between branches at 3.7e-4**:
+
+    b^(1) (1,0)   ξ_s = 2.36571876588619
+    b^(2) (0,1)   ξ_s = 2.36485280484881
+    mix   (1,1)   ξ_s = 2.36515076658802
+
+A single simple pole would be branch-independent. Branch-dependence is the
+signature of **two nearby singularities**, each branch a different linear
+combination — exactly what `B₁,₂ = ±√(q−1)/q` predicts. `q^{33/4} = 2.36507786`
+sits inside the spread.
+
+## REMAINING — this is now the whole task
+
+Turn "two singularities are there" into **two complex numbers**:
+
+1. **Resolve the pair.** They are ~3.7e-4 apart, so the plain ratio test
+   returns a blend. Use a two-pole Padé (or a 2×2 Hankel/Prony fit on the
+   `c_m`) to separate `ξ_s^{(1)}, ξ_s^{(2)}` individually.
+2. **Match to sectors.** Check the separated pair against the exponentials
+   indexed by `B₁,₂ = ±√(q−1)/q`, i.e. verify each singularity sits on the
+   q-spiral `ξ q^ℤ` attached to its leading block.
+3. **Take residues.** The Stokes multipliers are the connection data — the
+   jump between the two Borel sums across the singular direction, i.e. the
+   residues at the separated singularities.
+4. **Cross-check** against `qou-105e` (completed): FW eq(73) gives the `4₁`
+   Stokes integer q-series as the divisor-function Lambert series with
+   constant term `−1/4`. Independent handle; use it.
+
+Anti-fit gate unchanged: a multiplier obtained by inverting `c₃` against its
+measured value is a fit, must be labelled one, and may not be wired.
