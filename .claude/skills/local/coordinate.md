@@ -85,8 +85,9 @@ commit.
 - **When `main` lands new commits** during your session — if any
   touch the same content blocks, conjectures, or compute scripts you
   are editing, treat as a sibling PR for §3 classification purposes.
-- **When a code-review comment lands on your own PR** (gemini-code-
-  assist, copilot-pull-request-reviewer, codex, or human reviewers)
+- **When a code-review comment lands on your own PR**
+  (copilot-pull-request-reviewer, codex, or human reviewers;
+  gemini-code-assist is sunset)
   — see §5 *Responding to review comments*.
 - When you encounter a **finding that contradicts another PR's
   framing** — write the disagreement up explicitly, post it to both
@@ -207,8 +208,8 @@ agent should be able to copy/cite without reading your whole diff.
 
 ### 5.  Responding to review comments on your own PR
 
-Code-review tools (`gemini-code-assist[bot]`,
-`copilot-pull-request-reviewer[bot]`, `codex[bot]`) and human
+Code-review tools (`copilot-pull-request-reviewer[bot]`,
+`codex[bot]`; `gemini-code-assist[bot]` is sunset) and human
 reviewers leave comments on your PR.  **Do not silently accept or
 silently dismiss.**  The same rules that govern cross-PR
 inconsistencies (§6) govern review feedback.
