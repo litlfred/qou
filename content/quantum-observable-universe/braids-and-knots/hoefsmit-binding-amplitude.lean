@@ -5,25 +5,35 @@
   the standard representation (2,1) of H₃(q). This controls the
   entanglement between the two lepton channels inside the meson.
 
+  Base ring (CLAUDE.md §7c): generic `{R : Type*} [Field R]`. Every
+  declaration below is q-deformation combinatorics — `q ± q⁻¹`, the
+  quantum integers `[2]_q` / `[3]_q`, and three identities discharged
+  by `field_simp` + `ring`. Nothing here uses an ordering, a radical,
+  or any other archimedean construct, so the statements live strictly
+  on the substrate side of the wall; the `.md` records the same fact
+  ("exact in q, independent of the substrate parameter"). Specialise
+  with `(R := ℝ)` at the archimedean evaluation site if a numerical
+  value is ever needed.
+
   -- Ref: [wenzl1988c] https://doi.org/10.1007/BF01388470
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
 namespace QOU.BraidsAndKnots
 
-variable (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1) (hq_inv : q⁻¹ ≠ 0)
+variable {R : Type*} [Field R] (q : R)
 
 /-- The Hecke deformation parameter h = q - q⁻¹. -/
-noncomputable def hecke_h := q - q⁻¹
+def hecke_h : R := q - q⁻¹
 
 /-- The quantum integer [2]_q = q + q⁻¹. -/
-noncomputable def qInt2 := q + q⁻¹
+def qInt2 : R := q + q⁻¹
 
 /-- The quantum integer [3]_q = q² + 1 + q⁻². -/
-noncomputable def qInt3 := q^2 + 1 + q⁻¹^2
+def qInt3 : R := q^2 + 1 + q⁻¹^2
 
 /-- Key identity: [2]_q² = h² + 4.
   Proof: (q+q⁻¹)² = q² + 2 + q⁻² = (q-q⁻¹)² + 4 = h² + 4. -/
