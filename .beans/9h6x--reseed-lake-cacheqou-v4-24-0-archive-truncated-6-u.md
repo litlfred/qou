@@ -103,9 +103,15 @@ while the old set rebuilds.
 **Still open:** the live branch itself is unchanged. Reseeding it needs a real
 `lake build` of mathlib at the pinned rev (30–60 min) — the guard now makes a
 bad reseed fail loudly instead of publishing silently-useless oleans, but it
-does not fix the already-published branch. Note also that the restored tree
-carries **no mathlib sources at all** (0 `.lean` outside `build/`), only
-`.lake/build/lib`, which is a separate gap from the artifact-set one.
+does not fix the already-published branch.
+
+**Not a gap — corrected.** An earlier revision of this note called the restored
+tree's lack of sources (0 `.lean` outside `build/`, no `.git`, every package)
+a second defect. It is not: `folio-assistant/scripts/lake-cache.sh`'s header
+states the cache restores *prebuilt `.lake/` artifacts* only, and lake fetches
+package sources itself from the manifest. A restore is meant to overlay a tree
+where that fetch has already happened. Retracted so the next reader does not
+chase it.
 
 ## Trap: `lake build QOU` PRUNES `lake-manifest.json` — do not commit it
 
