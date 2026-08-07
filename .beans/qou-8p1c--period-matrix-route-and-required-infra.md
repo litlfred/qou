@@ -65,3 +65,20 @@ two hand-picked curves cannot close an argument whose organising datum is this
 weak.  Deprioritise until `qou-8p1b` has been re-scoped to an invariant the
 pinch determines; the infra requirements below stay recorded for whenever the
 route is genuinely needed.
+
+## Infra blocker is STALE — numpy/scipy/sympy do install (2026-08-07)
+
+Correcting the recorded requirement, not reviving the route. In this
+sandbox `pip install mpmath numpy scipy sympy` all succeed (numpy 2.4.6,
+scipy 1.17.1, sympy 1.14.0); `litlfred/folio-assistant` also clones and
+`bun install`s cleanly. So the "numpy, scipy, sage all absent" note above
+is no longer accurate for the first two.
+
+This does **not** change the deprioritisation. qou-8p1a's infinite-pencil
+result is the reason this is parked, and that is unaffected by tooling.
+`sage` and `abelfunctions` remain genuinely unavailable (abelfunctions is
+GitHub-only and needs Cython).
+
+Recorded so the next agent re-tests rather than inheriting a stale blocker
+— the same trap that had `rho_k_co_casimir_extended` written off as
+unverifiable for want of scipy when scipy installs fine.
