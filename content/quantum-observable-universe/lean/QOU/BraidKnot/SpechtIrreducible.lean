@@ -1,6 +1,7 @@
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.SpechtStandardBasis
 import QOU.BraidKnot.SpechtDominanceCore
+import QOU.BraidKnot.SpechtTriangularCore
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 import Mathlib.Algebra.Algebra.Bilinear
 import Mathlib.Tactic.Group
@@ -870,6 +871,130 @@ theorem specht_form_nondegenerate_ordered {k : Type} [Field k] [LinearOrder k]
   rw [Submodule.mem_bot]
   rw [mem_spechtPerp_iff] at hxP
   exact (bilinM_self_eq_zero_iff (k := k) μ x).mp (hxP x hxS)
+
+/-! ### 4.3-ter. The diagonal Gram entry, and what it does *not* buy
+
+`⟨e_t, e_t⟩ = |C_t|` is genuine characteristic-zero content — it is the reason
+the form is not identically zero on `S^μ`.  It is restored here (see the
+provenance note on the lemma) because every route to Stage 2 needs it and it
+was lost as collateral damage when a *different*, false, lemma was refuted.
+
+It does **not**, however, close Stage 2, and the reason is worth recording so
+the route is not re-attempted.  One might hope to feed
+`R := S^μ ⊓ (S^μ)ᗮ` — which is `S_n`-stable — into the already-proved
+`specht_submodule_dichotomy`, getting `S^μ ≤ R` or `R ≤ (S^μ)ᗮ`:
+
+* the first branch **is** killed by the lemma below (it would force
+  `⟨e_t, e_t⟩ = 0`, i.e. `|C_t| = 0`, false in char 0);
+* but the second branch is **vacuous** — `R ≤ (S^μ)ᗮ` holds by construction, so
+  it yields nothing.
+
+And the vacuity is not an artifact of how the dichotomy is stated.  Unfolding
+the `κ` side: by `kapL_mem_line`, `κ_t x = λ_t(x) · e_t` for a scalar `λ_t(x)`,
+and by `kapL_selfadjoint` together with `⟨{t}, e_t⟩ = 1`,
+`⟨e_t, x⟩ = ⟨κ_t {t}, x⟩ = ⟨{t}, κ_t x⟩ = λ_t(x)`.  So the dichotomy's
+"`κ_t x = 0` for all `t`" branch says exactly `x ∈ (S^μ)ᗮ` — literally the
+hypothesis one already has.  The dichotomy therefore *cannot* separate `R = ⊥`
+from `R ≠ ⊥`, in any characteristic.  Stage 2 needs the rank/base-change input
+described at the `sorry`, not another pass through James's theorem.
+-/
+
+/-- **Diagonal Gram entry:** `⟨e_t, e_t⟩ = |C_t|`, the order of the column
+stabilizer — for *any* tableau `t`; standardness is not used.
+
+The `|C_t|` tabloids `{π • t}` for `π ∈ C_t` are pairwise distinct, because
+`{π • t} = {σ • t}` forces `σ⁻¹π ∈ R_t ⊓ C_t = {1}`
+(`SpechtTriangularCore.colStab_inf_rowStab_eq_one`).  So the double sum
+collapses onto its diagonal, where each term contributes `sgn(π)^2 = 1`.
+
+**Provenance.**  Proved sorry-free in commit `2815c29a1` as a `private` lemma
+about *standard* polytabloids, then removed when the neighbouring
+`specht_gram_orthogonal` was refuted — the module docstring's "recover from git
+history" note refers to exactly this.  The refutation concerned the
+*off-diagonal* entries only; this diagonal computation was always correct.  It
+is restored here for a general tableau, since the proof never used
+standardness, and made public because both stages of the non-degeneracy plan
+consume it. -/
+theorem bilinM_polytabloid_self {k : Type} [CommRing k] (μ : YoungDiagram)
+    (t : Tableau μ) :
+    bilinM (k := k) μ (polytabloid (k := k) t) (polytabloid (k := k) t)
+      = (Fintype.card (colStab t) : k) := by
+  classical
+  rw [polytabloid]
+  simp_rw [map_sum, LinearMap.sum_apply, bilinM_zsmul_left, bilinM_zsmul_right,
+    Mtab.of, bilinM_single_single, mul_one]
+  have hmk_iff : ∀ (π σ : colStab t),
+      (Tabloid.mk ((π : Equiv.Perm (Fin (nOf μ))) • t) =
+       Tabloid.mk ((σ : Equiv.Perm (Fin (nOf μ))) • t)) ↔ π = σ := by
+    intro π σ
+    constructor
+    · intro heq
+      rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff,
+          rowPattern_smul, rowPattern_smul] at heq
+      have hrow : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))
+          ∈ rowStab t := by
+        rw [mem_rowStab]
+        calc ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))) • rowPattern t
+            = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((π : Equiv.Perm (Fin (nOf μ))) • rowPattern t) :=
+                mul_smul _ _ _
+          _ = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((σ : Equiv.Perm (Fin (nOf μ))) • rowPattern t) := by
+                rw [heq]
+          _ = ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (σ : Equiv.Perm (Fin (nOf μ)))) • rowPattern t :=
+                (mul_smul _ _ _).symm
+          _ = rowPattern t := by rw [inv_mul_cancel, one_smul]
+      have hcol : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))
+          ∈ colStab t :=
+        (colStab t).mul_mem (Subgroup.inv_mem _ σ.2) π.2
+      have h1 : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) = 1 :=
+        SpechtTriangularCore.colStab_inf_rowStab_eq_one t hcol hrow
+      apply Subtype.ext
+      exact mul_left_cancel (a := (σ : Equiv.Perm (Fin (nOf μ)))⁻¹)
+        (h1.trans (inv_mul_cancel (σ : Equiv.Perm (Fin (nOf μ)))).symm)
+    · intro heq
+      rw [heq]
+  -- Collapse each inner sum onto its diagonal term.  `hmk_iff` is applied as a
+  -- function rather than used as a rewrite rule: the `if`-condition carries a
+  -- subtype coercion that `simp_rw` does not match against syntactically.
+  have hcard : (∑ _x : colStab t, (1 : k)) = (Fintype.card (colStab t) : k) := by
+    rw [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one]
+  rw [← hcard]
+  refine Finset.sum_congr rfl (fun x _ => ?_)
+  rw [Finset.sum_eq_single x]
+  · rw [if_pos rfl]
+    have hunit : (Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ)))) *
+                 (Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ)))) = 1 :=
+      Int.units_mul_self _
+    have hval : ((Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) *
+                ((Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) = (1 : ℤ) := by
+      rw [← Units.val_mul, hunit, Units.val_one]
+    simp only [smul_smul, hval, one_smul]
+  · intro b _ hb
+    rw [if_neg (fun h => hb ((hmk_iff b x).mp h)), smul_zero, smul_zero]
+  · intro h
+    exact absurd (Finset.mem_univ x) h
+
+/-- **In characteristic zero the form does not vanish on `S^μ`.**  Immediate
+from `bilinM_polytabloid_self`: `⟨e_t, e_t⟩ = |C_t|`, and `|C_t| ≥ 1` is a
+positive natural number, hence nonzero in a `CharZero` field.
+
+This rules out the `S^μ ≤ R` branch when `specht_submodule_dichotomy` is
+applied to the radical `R = S^μ ⊓ (S^μ)ᗮ`.  As the section note above explains,
+the surviving branch is vacuous, so this is *not* a route to
+`specht_form_nondegenerate` — it is the honest statement of how much the
+diagonal Gram entry buys on its own. -/
+theorem specht_not_le_perp {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
+    (t : Tableau μ) :
+    ¬ (SpechtSubmodule (k := k) μ ≤ spechtPerp (k := k) μ) := by
+  intro hle
+  have hmem : polytabloid (k := k) t ∈ SpechtSubmodule (k := k) μ :=
+    polytabloid_mem_specht (k := k) t
+  have h0 : bilinM (k := k) μ (polytabloid (k := k) t) (polytabloid (k := k) t) = 0 := by
+    have hperp := hle hmem
+    rw [mem_spechtPerp_iff] at hperp
+    exact hperp _ hmem
+  rw [bilinM_polytabloid_self] at h0
+  haveI : Nonempty (colStab t) := ⟨1⟩
+  exact (Nat.cast_ne_zero.mpr Fintype.card_ne_zero) h0
 
 /-- **Core 2 — non-degeneracy of the form on `S^μ` (char 0).** Over a field of
 characteristic zero the Gram matrix of the form restricted to `S^μ` is nonzero
