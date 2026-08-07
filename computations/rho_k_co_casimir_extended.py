@@ -56,6 +56,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV_MP  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
@@ -293,6 +294,21 @@ def compute_co_casimir_for_atom(
         # χ^λ(β_atom) at q_0 — from parallel pool result.
         chi_q0 = chi_values[i]
 
+        # Serialize χ at the precision it actually carries. `_chi_worker`
+        # returns the numpy f64 kernel's result when numpy is importable
+        # (hoefsmit_numpy.chi_numpy ends in `mp.mpf(float(np.trace(M)))`) and
+        # the full-precision mpmath result otherwise, so neither form can be
+        # assumed: writing 50 dps of the f64 value prints the binary64
+        # expansion as if measured, while shortening the mpmath value would
+        # discard real digits.
+        #
+        # An mpf that equals its own float64 holds 53 bits and nothing more,
+        # which decides it exactly and per value. A genuinely high-precision
+        # result that happens to be representable loses nothing either, since
+        # the short form is then exact.
+        chi_is_f64 = chi_q0 == mp.mpf(float(chi_q0))
+        chi_str = fmt(float(chi_q0)) if chi_is_f64 else str(chi_q0)
+
         y_chi = y_q0 * chi_q0
         contribution = y_chi * delta_B
         sum_contributions += contribution
@@ -303,7 +319,7 @@ def compute_co_casimir_for_atom(
             "dim_q_at_q0": str(d_q_q0),
             "Delta_lambda_co_casimir": str(delta_B),
             "y_lambda_at_q0": str(y_q0),
-            "chi_lambda_at_q0": str(chi_q0),
+            "chi_lambda_at_q0": chi_str,
             "y_chi_product_signed": str(y_chi),
             "contribution_y_chi_Delta": str(contribution),
         })
