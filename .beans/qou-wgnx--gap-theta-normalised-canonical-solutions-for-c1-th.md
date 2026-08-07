@@ -440,3 +440,50 @@ detects a weak pole regardless of residue size. Until then:
 - χ's divisor and closed form: **OPEN**
 - the bounded/elliptic/non-constant tension: **OPEN, and now precisely stated**
 - Stokes multipliers: **OPEN**
+
+## 2026-08-07 (tenth) — χ is NOT a cross-ratio in modulus; divisor still unlocated
+
+Two structural gains, one negative. Divisor **not** found; stopping the search
+here rather than half-running a wider sweep.
+
+**χ's modulus is a simple ratio, not a cross-ratio.** Working with
+`N = adj(Y₀)·Y_∞` (no inverse, no `det Y₀` division — the `det` cancels in the
+cross-ratio anyway):
+
+    |N₀₀| / |N₁₀| = 1.0   exactly, at every point tested
+
+and `N₀₀/N₁₀` is a **pure phase** that varies with `arg z`
+(`−0.820+0.572i` at `0.31π`, `0.931+0.364i` at `0.77π`). Hence
+
+    |χ| = |N₁₁| / |N₀₁|
+
+Verified against the tent directly: `log10|N₁₁| − log10|N₀₁|` gives
+`0, −27.39, −54.77, −73.45` at `arg/π = 0, 1/6, 1/3, 1/2` — reproducing the
+measured profile **including the apex** that broke linearity. So the apex is
+just where those two entries' magnitudes cross over; nothing singular about it,
+consistent with the dense sweep finding no divisor there.
+
+`N₀₀ = W[y₂, yi₁]` and `N₁₀ = −W[y₁, yi₁]` are Casoratians of each 0-solution
+against the *same* ∞-solution. At **real** `z` the conjugate structure forces
+`N₀₀ = −conj(N₁₀)`, hence equal moduli — but this is measured at **complex** `z`
+too, where that argument does not apply. **Why `|N₀₀| = |N₁₀|` off the real axis
+is not explained**, and it is worth understanding: it may be the structural fact
+that makes the whole invariant tractable.
+
+**Negative: the divisor is not where the entry minima suggested.** `N₀₁` and
+`N₁₁` range over ~92 orders of magnitude with minima near `arg/π ≈ 1.333` and
+`0.667`, so I zoomed there (`arg/π ∈ [1.25, 1.45]`, four radii over a
+`p`-period). `log10|N₀₁|` sits smoothly around `−37 … −38` and decreases
+monotonically with radius — **no zero**. A zero needs `→ −∞`; nothing like it.
+
+So: not at the apex, not at the entry minima I checked. Combined with the
+earlier weak-residue argument, a targeted 2D sweep over the **whole**
+fundamental annulus at `DPS ≥ 200` is what is left — or an argument-principle
+count on small contours, which finds a weak pole regardless of residue.
+
+**Cheapest next probe, for whoever picks this up:** work with `N₁₁/N₀₁`
+directly rather than χ. It has the same divisor, needs half the evaluations, and
+its two factors are individually smooth and easy to scan for `→ −∞`.
+
+χ's divisor, the bounded/elliptic tension, and the Stokes multipliers all remain
+**OPEN**.
