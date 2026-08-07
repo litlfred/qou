@@ -36,7 +36,7 @@ notation "τ(" r "," s ")" => TorusKnotLabel.mk r s (by omega) (by omega) (by de
 /-- The Seifert genus of a torus knot: `g(T_{r,s}) = (r−1)(s−1)/2`.
     Returns the Seifert rank (numerator); the actual genus is this
     divided by 2 (which is always an integer for coprime r, s). -/
-def seifertRank (τ : TorusKnotLabel) : ℕ :=
+def TorusKnotLabel.seifertRank (τ : TorusKnotLabel) : ℕ :=
   (τ.r - 1) * (τ.s - 1) / 2
 
 /-- The number of crossings of `τ(r,s)`: `min(r(s−1), s(r−1))`. -/
@@ -50,7 +50,7 @@ def product (τ : TorusKnotLabel) : ℕ := τ.r * τ.s
 
 /-- A torus knot `τ(r,s)` is embeddable on a genus-`g` surface iff
     its Seifert rank fits: `(r−1)(s−1)/2 ≤ g`. -/
-def embeddableOn (τ : TorusKnotLabel) (g : ℕ) : Prop :=
+def TorusKnotLabel.embeddableOn (τ : TorusKnotLabel) (g : ℕ) : Prop :=
   τ.seifertRank ≤ g
 
 instance (τ : TorusKnotLabel) (g : ℕ) : Decidable (τ.embeddableOn g) :=

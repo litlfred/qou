@@ -248,7 +248,7 @@ The 2-strand case is fully discharged by `Braid2 ≃ ℤ` (via
 
     Conventional: positive `n : ℤ` produces `n` positive crossings of
     the single generator σ_0 in `Fin (2 − 1) = Fin 1`. -/
-def toBraidWord : Braid2 → BraidWord 2
+def Braid2.toBraidWord : Braid2 → BraidWord 2
   | (Int.ofNat k) => List.replicate k ⟨(0 : Fin 1), true⟩
   | (Int.negSucc k) => List.replicate (k + 1) ⟨(0 : Fin 1), false⟩
 

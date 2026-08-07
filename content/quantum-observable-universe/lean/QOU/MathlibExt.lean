@@ -54,7 +54,7 @@ theorem prod_insertionSort_eq {α : Type*} [CommMonoid α]
     TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
     Mathlib has `List.foldl_assoc` for `init = 1`; this is the
     `init ≠ 1` generalisation. -/
-theorem foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
+theorem List.foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldl (· * ·) init = init * xs.prod := by
   induction xs generalizing init with
@@ -182,7 +182,7 @@ where Mathlib's existing `Real.sqrt`-based numerics apply. -/
     (present in the pinned v4.24).  A named `Real.rpow_one_div_two` is
     **not** in the pinned Mathlib (probed 2026-06-26 — `unknown constant`),
     so this local convenience wrapper stays until/unless one lands upstream. -/
-theorem rpow_half_eq_sqrt (x : ℝ) :
+theorem Real.rpow_half_eq_sqrt (x : ℝ) :
     x ^ (1/2 : ℝ) = Real.sqrt x :=
   (Real.sqrt_eq_rpow x).symm
 
