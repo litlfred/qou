@@ -342,3 +342,27 @@ exhaustively for the first and never for the second. WORTH A GATE — the
 detector is static and cheap (see the audit doc for the regex). Match indented
 imports, and skip docstrings (qbeta_5two_phi_series_engine_probe mentions
 "mp.dps = 60" in prose).
+
+## END-TO-END RE-MEASUREMENT (same tool that set the baseline)
+
+  RE_PADS      19 -> 12
+  CLEAN        26 -> 32
+  padded      228 -> 57
+
+The 7 producers that left the list are exactly the 7 witness-emitting fixes.
+Nothing claimed is missing; nothing untouched regressed.
+
+Arithmetic note: sweep says 171 drained, per-producer runs say 248. The gap is
+rho_k_co_casimir_extended — the sweep only ever credited it 71 (a 150s-timeout
+partial); a complete run writes 148. The sweep's baseline was a floor, so its
+delta is one too. TIMEOUT 0 -> 1 for the same reason: rho_k still exceeds 150s
+but now writes no padding, so RE_PADS no longer outranks its verdict.
+
+REMAINING 57 fields / 12 producers:
+  Class B  9 producers, 39 fields  -> NO producer fix. Detector false
+           positives (near-integers). Needs a decision about the DETECTOR.
+  Class A  3 producers, 18 fields:
+      su4_1111_markov_trace_probe   (+10)  hecke_characters.py:214; count is a
+                                           FLOOR (both measured runs timed out)
+      phi_q_spectral_combiner_probe (+6)   reads upstream witness -> fix UPSTREAM
+      rho_k_h3a_lp_dual             (+2)   reads occam JSON      -> fix UPSTREAM

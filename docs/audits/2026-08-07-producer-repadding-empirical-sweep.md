@@ -849,6 +849,60 @@ Re-running chirality now keeps `q0Anchor`/`q0Value`, and its diff reduces to
 only, nothing substantive, so the witness stays uncommitted. **Regeneration is
 no longer lossy**, which unblocks the drain plan's second half.
 
+## End-to-end re-measurement — same tool, same method
+
+Everything above was verified per producer. This is the corpus-level check
+with `producer_repad_sweep.py`, the tool that set the baseline:
+
+| | baseline (`14865d3d`) | now |
+|---|---:|---:|
+| `RE_PADS` | 19 | **12** |
+| `CLEAN` | 26 | **32** |
+| padded fields regenerated | 228 | **57** |
+
+The seven producers that left the list are exactly the seven witness-emitting
+fixes — `binding_factor_f_sequence`, `bring_homology_pairing_integration`,
+both `chirality_avg_content_*`, `rho_k_co_casimir_extended`,
+`v_hat_to_delta_lambda_bridge`, `xi_ell_phi_q_probe`. Nothing claimed is
+missing and nothing untouched regressed.
+
+**The arithmetic needs one note.** The sweep shows 171 fields drained, the
+per-producer runs 248. The difference is `rho_k_co_casimir_extended`: the
+sweep only ever credited it with 71, the count from a run that hit the 150 s
+wall, while a complete run writes 148. Both numbers are right about what they
+measure — 171 is the drain *as this tool scores it*, 248 is the drain in
+fields that actually exist. The sweep's own baseline was a floor, so its delta
+is one too.
+
+(`TIMEOUT` moves 0 → 1 for the same reason: `rho_k` still exceeds 150 s, but
+now writes no padding, so its verdict falls through to `TIMEOUT` instead of
+being outranked by `RE_PADS`.)
+
+### The remaining 57 split cleanly
+
+| | producers | fields | needs a producer fix? |
+|---|---:|---:|---|
+| **Class B** — no float64 enters | 9 | **39** | **no** |
+| **Class A** — real float64 entry | 3 | **18** | yes |
+
+Class B is the detector's near-integer false positives — `gap_a4_*`,
+`markov_stab`, `qbeta_markov_trace_*`, `habiro_*`, `verify_c_color_swap`.
+Hunting for a float64 entry in them is looking for something that is not
+there; what they need is a decision about the *detector*, not the producers.
+
+Class A is three files and 18 fields:
+
+```
+su4_1111_markov_trace_probe.py   (+10)   hecke_characters.py:214 root
+phi_q_spectral_combiner_probe.py (+6)    reads an upstream witness — fix upstream
+rho_k_h3a_lp_dual.py             (+2)    reads an occam JSON blob — fix upstream
+```
+
+Two of the three take their value from a **committed witness**, so the
+precision was lost when that witness was written: the fix is upstream and the
+ordering matters. Only `su4` is fixable in place, and its count is a floor —
+both runs that measured it timed out.
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field
