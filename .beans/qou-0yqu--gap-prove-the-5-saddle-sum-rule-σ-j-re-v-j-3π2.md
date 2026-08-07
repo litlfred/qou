@@ -283,3 +283,35 @@ realistic sources are **GGM (2012.00062) and GGMW (2111.04763)**, already in
 in the Neumann line (`uploads/2304.12545v1.pdf`, not yet mined).
 
 Still **verified to 80 dps, unproved.**
+
+## 2026-08-07 — Route 5 gains a real Lean spine (4 theorems, sorry-free)
+
+Route 5 was a restatement with no formal content behind it. It now has:
+
+| theorem | file | what it buys |
+|---|---|---|
+| `prod_one_sub_mul_eq` | `QBeta/FiveTwoSumRuleIntegrand` | `∏ⱼ(1 − yⱼz) = 1 − 2z + 3z² − z³` (was already there) |
+| `abs_log_recipCubic_le` | same | `\|log P(z)\| ≤ 4z` on `[0,1]` — the `z = 0` singularity is removable |
+| `intervalIntegrable_log_recipCubic_div` | same | **the integral converges** — Route 5's RHS is a real number, not a formal expression |
+| `LiTwo_eq_integral_unit` | `Archimedean/DilogReflection` | `Li₂(y) = −∫₀¹ log(1−yz)/z dz` — the argument moves from the endpoint into the integrand, which is what lets the product over roots collapse |
+
+All axioms `[propext, Classical.choice, Quot.sound]`.
+
+**Why this is the interesting direction.** The complex-continuation route
+(`qou-gkco`) hits a hard wall at `|y₁| = 1.52`: `cLiTwo` is junk-valued outside
+the closed disc, so the inversion formula is not even *stateable* for it
+without redefining `Li₂` by an integral on `ℂ ∖ [1,∞)`. Route 5 sidesteps that
+entirely for the **sum**: `∏ⱼ(1 − yⱼz)` is a *real* polynomial *positive on
+`[0,1]`*, so `Σⱼ Li₂(yⱼ)` is one convergent real integral and no complex root
+ever appears.
+
+**The remaining gap, stated precisely.** Three things, in increasing size:
+
+1. `Σⱼ Li₂(yⱼ) = −∫₀¹ log P(z)/z dz`. `LiTwo_eq_integral_unit` gives the `y₃`
+   term. The other two need the complex `Log`, and `log ∏ = Σ log` holds only
+   up to `2πik` — **the branch data `b = (−1,+1,+1)` in `Vⱼ` is exactly that
+   correction.** That is a concrete, checkable conjecture, not a vague hope; it
+   is the cheapest next thing to test numerically.
+2. The closed-form evaluation of `−∫₀¹ log P(z)/z dz`, i.e. the sum rule.
+3. Nothing here weakens the standing status: **verified to 80 dps, unproved.**
+   Routes 1–4 remain dead.
