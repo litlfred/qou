@@ -32,7 +32,13 @@ regular, so it converges anyway. No complex dilogarithm, no branch cut.
 * `recipCubic_eq` — `1 − 2z + 3z² − z³ = (1−z)³ + z`;
 * `recipCubic_pos` — hence `0 < 1 − 2z + 3z² − z³` on `[0,1]` (over `ℝ`);
 * `pow_succ_rec` / `powerSum_rec` — the power sums obey the cubic's recurrence,
-  which is why `pₙ ∈ ℤ` and the generating function is the reciprocal cubic.
+  which is why `pₙ ∈ ℤ` and the generating function is the reciprocal cubic;
+* `recipCubic_ge_half` / `recipCubic_le_one` / `abs_log_recipCubic_le` —
+  `|log P(z)| ≤ 4z`, so the apparent singularity of `log P(z)/z` at `z = 0` is
+  removable;
+* `intervalIntegrable_log_recipCubic_div` — hence **the integral on the right
+  of the displayed identity converges**. Route 5 is now a statement about a
+  well-defined real number, not a formal expression.
 
 **NOT proved here** (and not stubbed — no `sorry`, no axiom):
 
@@ -44,6 +50,7 @@ regular, so it converges anyway. No complex dilogarithm, no branch cut.
 -- Ref: [manuscript] bean qou-0yqu Route 5; docs/coordination/1ppq-qbeta.md
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
+import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
 namespace QOU.QBeta.FiveTwo
 
@@ -262,5 +269,84 @@ theorem landen_cube {R : Type*} [Field R] {y : R} (hy : y - 1 ≠ 0)
   rw [hsplit, hsq]
   field_simp
   ring
+
+/-! ### The integrand is bounded: `|log P(z)/z| ≤ 4` on `(0,1]`
+
+Route 5's integral `−∫₀¹ log P(z)/z dz` is over an interval containing the
+apparent singularity at `z = 0`. It is only apparent: `P(z) = 1 − 2z + O(z²)`,
+so `log P(z) ∼ −2z` and the quotient extends continuously with value `−2`.
+
+The quantitative form is `|log P(z)| ≤ 4z`, proved below from two elementary
+bounds sandwiching `log`:
+
+    log P ≤ P − 1        (`Real.log_le_sub_one_of_pos`)
+    log P ≥ 1 − 1/P      (`Real.one_sub_inv_le_log_of_pos`)
+
+together with `P ≥ 1/2` on `[0,1]`, which converts the second into a linear
+bound. `4` is not tight — the true sup of `|log P(z)/z|` is `2`, attained in
+the limit `z → 0` — but a non-tight constant is all an integrability argument
+needs, and the slack keeps the polynomial certificates small. -/
+
+/-- `P(z) ≥ 1/2` on `[0,1]`.
+
+Certificate: `z³ ≤ z²` there, so `P − 1/2 ≥ 2z² − 2z + 1/2 = 2(z − ½)²`.
+(The true minimum is `0.6151…` at `z = 1 − 1/√3`; `1/2` is the round number
+below it that makes the certificate a single square.) -/
+theorem recipCubic_ge_half {z : ℝ} (h0 : 0 ≤ z) (h1 : z ≤ 1) :
+    1 / 2 ≤ 1 - 2 * z + 3 * z ^ 2 - z ^ 3 := by
+  nlinarith [sq_nonneg (z - 1 / 2), mul_nonneg (mul_nonneg h0 h0) (sub_nonneg.2 h1)]
+
+/-- `P(z) ≤ 1` on `[0,1]`: `1 − P = z(1−z)(2−z) ≥ 0`. -/
+theorem recipCubic_le_one {z : ℝ} (h0 : 0 ≤ z) (h1 : z ≤ 1) :
+    1 - 2 * z + 3 * z ^ 2 - z ^ 3 ≤ 1 := by
+  nlinarith [mul_nonneg (mul_nonneg h0 (sub_nonneg.2 h1)) (by linarith : (0 : ℝ) ≤ 2 - z)]
+
+/-- **The integrand's numerator vanishes linearly at `0`**: `|log P(z)| ≤ 4z`
+on `[0,1]`.
+
+This is what removes the apparent singularity of `log P(z)/z` at the left
+endpoint of Route 5's integral. -/
+theorem abs_log_recipCubic_le {z : ℝ} (h0 : 0 ≤ z) (h1 : z ≤ 1) :
+    |Real.log (1 - 2 * z + 3 * z ^ 2 - z ^ 3)| ≤ 4 * z := by
+  have hpos : 0 < 1 - 2 * z + 3 * z ^ 2 - z ^ 3 := recipCubic_pos h0 h1
+  have hle : 1 - 2 * z + 3 * z ^ 2 - z ^ 3 ≤ 1 := recipCubic_le_one h0 h1
+  have hhalf : 1 / 2 ≤ 1 - 2 * z + 3 * z ^ 2 - z ^ 3 := recipCubic_ge_half h0 h1
+  rw [abs_le]
+  constructor
+  · -- lower: `log P ≥ 1 − 1/P ≥ −4z`
+    refine le_trans ?_ (Real.one_sub_inv_le_log_of_pos hpos)
+    have hid : (1 : ℝ) - (1 - 2 * z + 3 * z ^ 2 - z ^ 3)⁻¹
+        = ((1 - 2 * z + 3 * z ^ 2 - z ^ 3) - 1) / (1 - 2 * z + 3 * z ^ 2 - z ^ 3) := by
+      rw [sub_div, div_self hpos.ne', one_div]
+    rw [hid, le_div_iff₀ hpos]
+    nlinarith [mul_nonneg h0 (sub_nonneg.2 h1), sq_nonneg z, sq_nonneg (z - 1 / 2),
+      mul_nonneg (mul_nonneg h0 h0) (sub_nonneg.2 h1)]
+  · -- upper: `log P ≤ P − 1 ≤ 0 ≤ 4z`
+    refine le_trans (Real.log_le_sub_one_of_pos hpos) ?_
+    nlinarith [mul_nonneg (mul_nonneg h0 (sub_nonneg.2 h1)) (by linarith : (0 : ℝ) ≤ 2 - z)]
+
+/-- **Route 5's integral converges.**
+
+`|log P(z)/z| ≤ 4` on `(0,1]`, immediately from `abs_log_recipCubic_le`, so the
+integrand is a bounded measurable function on a set of finite measure. This is
+what makes `−∫₀¹ log(1 − 2z + 3z² − z³)/z dz` a well-defined real number, and
+hence what makes Route 5 a statement rather than a formal expression.
+
+Contrast the series side: `Σₙ pₙ/n²` **diverges** (`|y₁| = 1.52 > 1`). The
+restatement's whole value is that it moves the identity to a place where
+convergence is elementary. -/
+theorem intervalIntegrable_log_recipCubic_div :
+    IntervalIntegrable (fun z : ℝ => Real.log (1 - 2 * z + 3 * z ^ 2 - z ^ 3) / z)
+      MeasureTheory.volume 0 1 := by
+  rw [intervalIntegrable_iff, Set.uIoc_of_le (by norm_num : (0 : ℝ) ≤ 1)]
+  refine MeasureTheory.Measure.integrableOn_of_bounded (M := 4) (by simp) ?_ ?_
+  · exact ((Real.measurable_log.comp (by fun_prop)).div measurable_id).aestronglyMeasurable
+  · refine (MeasureTheory.ae_restrict_iff' measurableSet_Ioc).2
+      (Filter.Eventually.of_forall fun z hz => ?_)
+    have h0 : 0 < z := hz.1
+    have h1 : z ≤ 1 := hz.2
+    rw [Real.norm_eq_abs, abs_div, abs_of_pos h0, div_le_iff₀ h0]
+    have hb := abs_log_recipCubic_le h0.le h1
+    linarith
 
 end QOU.QBeta.FiveTwo
