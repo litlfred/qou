@@ -69,9 +69,17 @@ hypothesis. Worth recording as a small instance of a general point — a
 multiplicative defining relation often carries its own non-degeneracy, and
 adding the side condition by reflex hides that.
 
-**Not proved: the five-term relation itself.** That is classical (Abel) and
-remains the one open analytic input to the level-7 numerators. This file shows
-the three hypotheses are instances *of* it; it does not show it holds.
+Also proved, at the end of the file: the **implication**. `hA_of_five_term`,
+`hB_of_five_term`, `hC_of_five_term` each take the five-term relation with its
+own arguments spelled out — no identification smuggled into the statement — and
+deliver the ladder's hypothesis verbatim. With those, the twelve hypotheses of
+`FiveTwoLevelSevenLadder.numerators_original_form` rest on exactly **one**
+unproved input.
+
+**Not proved: the five-term relation itself.** That is classical (Abel) and is
+now the sole open analytic input to the level-7 numerators. This file shows the
+three hypotheses are instances *of* it, and that they follow *from* it; it does
+not show it holds.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -186,5 +194,79 @@ cubic. Identical to `FiveTwoCyclotomicBloch.bloch_key`; restated here so the
 connection to `arg_C2` is a `linear_combination` and not a comment. -/
 theorem bloch_key' (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) :
     (1 - x) ^ 2 * (1 + x) = x ^ 2 := by linear_combination hx
+
+/-! ### Wiring: the five-term relation *implies* `hA`, `hB`, `hC`
+
+The identifications above are only worth having if they close the gap between
+"the five-term relation holds at these three `(x,y)` pairs" and the ladder's
+hypotheses verbatim. These three theorems do that. After them, the twelve
+hypotheses of `FiveTwoLevelSevenLadder.numerators_original_form` rest on exactly
+**one** unproved input: Abel's relation.
+
+Each hypothesis is the relation with its own arguments written out — no
+identification is smuggled into the statement, which is the point. -/
+
+/-- `q = 1/(2-x)` forces `q` to be a unit: at `q = 0` the relation reads `0 = 1`. -/
+theorem q_ne_zero (hq : q * (2 - x) = 1) : q ≠ 0 := by
+  intro h
+  rw [h, zero_mul] at hq
+  exact zero_ne_one hq
+
+/-- **`hA` from the diagonal five-term instance** `x = y = w₂`. -/
+theorem hA_of_five_term (L : K → K)
+    (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hq : q * (2 - x) = 1) (hr : r * (x + 1) = x)
+    (hne : 1 - x * x ≠ 0)
+    (five : L x + L x - L (x * x) - L (x * (1 - x) / (1 - x * x))
+              - L (x * (1 - x) / (1 - x * x)) = 0) :
+    2 * L x - L (1 - q) - 2 * L r = 0 := by
+  have h1 : x * x = 1 - q := arg_A1 hx hq
+  have h2 : x * (1 - x) / (1 - x * x) = r := by
+    rw [div_eq_iff hne]
+    linear_combination -arg_A2 hr
+  rw [h2, h1] at five
+  linear_combination five
+
+/-- **`hB` from the five-term instance** `x = 1 - w₂`, `y = q`.
+
+Its denominator `1 - (1-x)·q` collapses to `q` (`hB_denom`), which is why the
+fifth argument reduces to `x` outright. -/
+theorem hB_of_five_term (L : K → K)
+    (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hq : q * (2 - x) = 1) (hs : s * x = 1 - x)
+    (five : L (1 - x) + L q - L ((1 - x) * q)
+              - L ((1 - x) * (1 - q) / (1 - (1 - x) * q))
+              - L (q * (1 - (1 - x)) / (1 - (1 - x) * q)) = 0) :
+    L (1 - x) + L q - L (1 - q) - L (1 - s) - L x = 0 := by
+  have hq0 := q_ne_zero hq
+  have hd : 1 - (1 - x) * q = q := hB_denom hq
+  have h1 : (1 - x) * q = 1 - q := arg_B1 hq
+  have h2 : (1 - x) * (1 - q) / (1 - (1 - x) * q) = 1 - s := by
+    rw [hd, div_eq_iff hq0]
+    linear_combination -arg_B2 hx hq hs
+  have h3 : q * (1 - (1 - x)) / (1 - (1 - x) * q) = x := by
+    rw [hd, div_eq_iff hq0]
+    ring
+  rw [h2, h3, h1] at five
+  linear_combination five
+
+/-- **`hC` from the five-term instance** `x = w₂`, `y = s`.
+
+Its denominator `1 - x·s` collapses to `x` (`hC_denom`), which is why the fourth
+argument reduces to `1 - s` outright. -/
+theorem hC_of_five_term (L : K → K)
+    (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hr : r * (x + 1) = x) (hs : s * x = 1 - x)
+    (five : L x + L s - L (x * s) - L (x * (1 - s) / (1 - x * s))
+              - L (s * (1 - x) / (1 - x * s)) = 0) :
+    L x + L s - L (1 - x) - L (1 - s) - L (1 - r) = 0 := by
+  have hx0 := ne_zero_of_hs hs
+  have hd : 1 - x * s = x := hC_denom hs
+  have h1 : x * s = 1 - x := arg_C1 hs
+  have h2 : x * (1 - s) / (1 - x * s) = 1 - s := by
+    rw [hd, div_eq_iff hx0]
+    ring
+  have h3 : s * (1 - x) / (1 - x * s) = 1 - r := by
+    rw [hd, div_eq_iff hx0]
+    linear_combination -arg_C2 hx hr hs
+  rw [h2, h3, h1] at five
+  linear_combination five
 
 end QOU.QBeta.FiveTwoFiveTermArguments
