@@ -22,6 +22,15 @@ conjugate-partition matching) is now discharged (§4.x) from four elementary
 single remaining core** `specht_form_nondegenerate` (the char-0 Gram
 non-degeneracy).
 
+**Over an ordered field there is no residual core at all.**  §4.3-bis discharges
+Stage 1 of that core sorry-free — over `[Field k] [LinearOrder k]
+[IsStrictOrderedRing k]` the form is positive definite on all of `M^μ`, being a
+sum of squares in the orthonormal tabloid basis — so
+`specht_isSimple_ordered` (§5) is **fully sorry-free**, covering `ℚ` and `ℝ`,
+the archimedean evaluation the framework actually uses.  Only the general
+`CharZero` case (`ℂ`, where the bilinear form has isotropic vectors) still owes
+Stage 2.
+
 The column-clash lemma `kap_of_mem_line` (`κ_t {s} ∈ span {e_t}`) is now **fully
 sorry-free**: its two legs — the clash cancellation (`kap_of_mem_line_clash`, a
 sign-reversing involution ⇒ `κ_t{s} = 0`) and the no-clash reindexing
@@ -45,8 +54,11 @@ consume is now proved (§4.x), so the lemma carries no residual `sorry`.
 | `kap_of_mem_line` (column-clash lemma) | **sorry-free** (was: full stub) |
 | `kapL_mem_line` (from the core) | **sorry-free** |
 | `specht_submodule_dichotomy` (James §8) | **sorry-free** (was: full stub) |
-| `specht_form_nondegenerate` (char-0 Gram) | **STUB** `sorry` — see the corrected two-stage plan in its docstring |
-| `specht_isSimple` (the reduction) | **sorry-free MODULO the single remaining core** |
+| `bilinM_self_eq_zero_iff` (positive definiteness, ordered field) | **sorry-free** |
+| `specht_form_nondegenerate_ordered` (Stage 1: `ℚ`, `ℝ`) | **sorry-free** |
+| `specht_form_nondegenerate` (char-0 Gram, Stage 2: `ℂ`) | **STUB** `sorry` — Stage 1 is now done; only the general `CharZero` case remains, see its docstring |
+| `specht_isSimple` (the reduction, general `CharZero`) | **sorry-free MODULO the single remaining core** |
+| `specht_isSimple_ordered` (the reduction, ordered field) | **sorry-free — no residual core** |
 | ~~`specht_gram_orthogonal`~~ | **REFUTED — false, do not restate.** `μ=(2,1)` Gram is `[[2,1],[1,2]]` |
 | ~~`specht_gram_diag`~~, ~~`kap_of_clash_eq_zero`~~, ~~`sagan_row_col_clash`~~ | **removed** — true statements, but orphaned by the refutation and left non-typechecking; recover from git history |
 
@@ -55,14 +67,26 @@ remaining core (`specht_form_nondegenerate`); the entire invariant-form + `κ_t`
 layer, both legs of the column-clash lemma (`kap_of_mem_line_clash`,
 `kap_of_mem_line_match`), **and** the Gale–Ryser matching (`noclash_match_exists`,
 hence `specht_submodule_dichotomy`) are `[propext, Classical.choice, Quot.sound]`.
+The §4.3-bis Stage-1 trio (`bilinM_self_eq_zero_iff`,
+`specht_form_nondegenerate_ordered`, `specht_isSimple_ordered`) is likewise
+`[propext, Classical.choice, Quot.sound]` — verified, no `sorryAx`.
 
 The form and `κ_t` live over a generic `[CommRing k]` (§7c clean — no `ℝ`, no
 ordering, no `Real.*`); only `specht_submodule_dichotomy` and the final theorems
 add `[Field k]` (submodule lattice / `c⁻¹`) and `[CharZero k]` (non-degeneracy of
 the Gram form).
 
-This module carries 1 honest `sorry` target (`specht_form_nondegenerate`), so —
-like brick 2 itself — it is
+**§7c note on the ordered-field additions.**  `bilinM_self_eq_zero_iff` and its
+two consumers carry `[LinearOrder k] [IsStrictOrderedRing k]`.  That ordering is
+*load-bearing, not gratuitous*: positive definiteness is exactly an archimedean
+statement (`Σ (x d)^2 = 0 ⇒ x = 0` is false over `ℂ`), so these three
+declarations sit deliberately on the archimedean side of the wall.  They are
+additive — no existing generic-`R` or `CommRing` declaration was specialised,
+and the substrate-side layer above is untouched.  `ℝ` itself is still never
+mentioned: the statements stay over an abstract ordered field.
+
+This module carries 1 honest `sorry` target (`specht_form_nondegenerate`, now
+only its Stage 2 / general-`CharZero` half), so — like brick 2 itself — it is
 intentionally **not** imported by the `QOU.BraidKnot` umbrella. It reproduces the
 brick-2 `specht_isSimple` statement as a separate, reduction-bearing theorem (brick 2
 cannot import this file — the standard one-way dependency).
@@ -799,6 +823,54 @@ replaced.  See the corrected plan in that theorem's docstring.
 -/
 -- Ref: [sagan2001] §2.4 (triangularity, NOT orthogonality — see above)
 
+/-! ## 4.3-bis. Stage 1 of the corrected plan: ordered fields, no Gram theory
+
+The `sorry` in `specht_form_nondegenerate` below now owes only **Stage 2** (a
+general characteristic-zero field, e.g. `ℂ`).  **Stage 1 — every ordered field,
+so in particular `ℚ` and `ℝ`, which is the archimedean evaluation the framework
+actually uses — is discharged here, sorry-free.**  It needs neither standard
+tableaux nor the James–Specht Gram determinant: only orthonormality of the
+tabloid basis together with `a * a ≥ 0`.
+-/
+
+/-- **The form is positive definite over an ordered field.**  In the tabloid
+basis `⟨x, x⟩ = Σ_d (x d)^2` is a sum of squares, so it vanishes exactly at
+`x = 0`.  No Specht theory enters — this is a statement about `M^μ`. -/
+theorem bilinM_self_eq_zero_iff {k : Type} [Field k] [LinearOrder k]
+    [IsStrictOrderedRing k] (μ : YoungDiagram) (x : Mtab (k := k) μ) :
+    bilinM (k := k) μ x x = 0 ↔ x = 0 := by
+  constructor
+  · intro h
+    have hsum : ∑ d ∈ x.support, x d * x d = 0 := by
+      rw [← h, bilinM_apply]
+      rfl
+    have hnn : ∀ d ∈ x.support, 0 ≤ x d * x d := fun d _ => mul_self_nonneg _
+    have hz := (Finset.sum_eq_zero_iff_of_nonneg hnn).mp hsum
+    ext d
+    by_cases hd : d ∈ x.support
+    · simpa using mul_self_eq_zero.mp (hz d hd)
+    · simpa using Finsupp.notMem_support_iff.mp hd
+  · rintro rfl
+    simp
+
+/-- **Stage 1 of the corrected plan for `specht_form_nondegenerate`.**  Over an
+ordered field the form is positive definite on *all* of `M^μ`
+(`bilinM_self_eq_zero_iff`), so `S^μ ⊓ (S^μ)ᗮ = ⊥` is immediate: an element of
+the intersection is orthogonal to itself, hence zero.
+
+Note this needs **no** `μ.card ≠ 0` hypothesis and no standard-basis or Gram
+input, so on the fields it covers it is strictly stronger than the `CharZero`
+statement below. -/
+theorem specht_form_nondegenerate_ordered {k : Type} [Field k] [LinearOrder k]
+    [IsStrictOrderedRing k] (μ : YoungDiagram) :
+    SpechtSubmodule (k := k) μ ⊓ spechtPerp (k := k) μ = ⊥ := by
+  rw [eq_bot_iff]
+  rintro x ⟨hxS, hxP⟩
+  simp only [SetLike.mem_coe] at hxS hxP
+  rw [Submodule.mem_bot]
+  rw [mem_spechtPerp_iff] at hxP
+  exact (bilinM_self_eq_zero_iff (k := k) μ x).mp (hxP x hxS)
+
 /-- **Core 2 — non-degeneracy of the form on `S^μ` (char 0).** Over a field of
 characteristic zero the Gram matrix of the form restricted to `S^μ` is nonzero
 (its determinant is the James–Specht Gram determinant, a product of hook lengths
@@ -822,9 +894,11 @@ reach every characteristic-zero field.
 `LinearOrderedField` it is therefore positive definite on **all** of `M^μ` —
 `⟨x, x⟩ = Σ_d (x d)^2 = 0` forces every coordinate to vanish — hence
 definite on any submodule.  So `x ∈ S^μ ⊓ (S^μ)ᗮ` gives `⟨x, x⟩ = 0` and
-`x = 0` immediately, with no reference to standard tableaux.  This is the
-route to formalise first; it is short and it covers the archimedean
-evaluation the framework actually uses.
+`x = 0` immediately, with no reference to standard tableaux.  **This stage is
+now formalised and sorry-free** — see `specht_form_nondegenerate_ordered` in
+§4.3-bis, and `specht_isSimple_ordered` in §5 for the resulting unconditional
+irreducibility over `ℚ` and `ℝ`, the archimedean evaluation the framework
+actually uses.
 
 *Stage 2 — general `CharZero` (e.g. `ℂ`), where Stage 1 fails.*  The form is
 bilinear, not sesquilinear, so `⟨x, x⟩ = 0` no longer forces `x = 0` over `ℂ`
@@ -850,9 +924,30 @@ theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungD
   -- false (see the refutation block above). A proof resting on a false lemma
   -- is not partial progress toward this theorem, so nothing of it is retained.
   --
-  -- GAP: Stage 1 (LinearOrderedField, positive definiteness — short, and the
-  -- case the framework actually evaluates at) is not yet stated separately;
-  -- Stage 2 needs the standard-basis linear independence plus ℤ→k base change.
+  -- Stage 1 is now DONE and sorry-free, one section up: see
+  -- `specht_form_nondegenerate_ordered` (§4.3-bis), which proves exactly this
+  -- statement for `[Field k] [LinearOrder k] [IsStrictOrderedRing k]` — hence
+  -- for ℚ and ℝ — via positive definiteness (`bilinM_self_eq_zero_iff`).
+  -- Downstream, `specht_isSimple_ordered` (§5) is fully sorry-free.
+  --
+  -- GAP (Stage 2 only): the general `CharZero` case, i.e. fields with no
+  -- compatible order — `ℂ` being the one that matters. Stage 1 provably cannot
+  -- reach it: over `ℂ` the form is bilinear rather than sesquilinear and has
+  -- isotropic vectors (`x = (1, i)` gives `⟨x, x⟩ = 0` with `x ≠ 0`), so
+  -- `⟨x, x⟩ = 0` no longer forces `x = 0`.
+  --
+  -- What Stage 2 needs is NOT a further literature result — the ℤ-Gram /
+  -- hook-length determinant of James is sufficient but not necessary. The
+  -- lighter route is rationality plus rank invariance:
+  --   (i)  S^μ is spanned by polytabloids, whose tabloid coordinates are 0, ±1,
+  --        so S^μ over k is the base change of S^μ over ℚ;
+  --   (ii) over ℚ the restricted form is positive definite by Stage 1, so a
+  --        Gram matrix of a ℚ-basis has full rank;
+  --   (iii) rank of a fixed ℚ-matrix is invariant under field extension ℚ → k,
+  --        so the restricted form stays nondegenerate over k.
+  -- The missing pieces are Lean/Mathlib infrastructure — a base-change lemma
+  -- identifying `SpechtSubmodule (k := k)` with `SpechtSubmodule (k := ℚ) ⊗ k`,
+  -- and rank invariance transported onto that span — not a missing citation.
   sorry
 
 /-! ## 4.5. James's submodule theorem — proved from the single core -/
@@ -922,6 +1017,31 @@ theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
   · -- N ≤ S^μ and N ≤ (S^μ)ᗮ  ⇒  N ≤ S^μ ⊓ (S^μ)ᗮ = ⊥  ⇒  N = ⊥
     left
     rw [eq_bot_iff, ← specht_form_nondegenerate (k := k) μ hμ]
+    exact le_inf hN_le hperp
+
+/-- **Irreducibility of `S^μ` over an ordered field — fully `sorry`-free.**
+
+The same reduction as `specht_isSimple`, but routed through
+`specht_form_nondegenerate_ordered` (Stage 1) instead of the `CharZero` core,
+so it carries **no** `sorry` at all: `specht_submodule_dichotomy` is sorry-free
+and needs only `Field k`, and Stage 1 supplies the non-degeneracy outright.
+
+This covers `ℚ` and `ℝ` — the archimedean evaluation the framework actually
+uses.  It also needs no `μ.card ≠ 0` hypothesis.  The general `CharZero`
+statement `specht_isSimple` remains the broader one and is still `sorry`-bearing
+through Stage 2 (the `ℂ` case, which genuinely needs the ℤ-Gram base change —
+over `ℂ` the bilinear form has isotropic vectors, so Stage 1 cannot reach it). -/
+theorem specht_isSimple_ordered {k : Type} [Field k] [LinearOrder k]
+    [IsStrictOrderedRing k] (μ : YoungDiagram) :
+    ∀ N : Submodule k (Mtab (k := k) μ),
+      N ≤ SpechtSubmodule (k := k) μ →
+      (∀ σ : Equiv.Perm (Fin (nOf μ)), ∀ x ∈ N, Mtab.rep μ σ x ∈ N) →
+      N = ⊥ ∨ N = SpechtSubmodule (k := k) μ := by
+  intro N hN_le hN_stable
+  rcases specht_submodule_dichotomy (k := k) μ N hN_stable with hsub | hperp
+  · exact Or.inr (le_antisymm hN_le hsub)
+  · left
+    rw [eq_bot_iff, ← specht_form_nondegenerate_ordered (k := k) μ]
     exact le_inf hN_le hperp
 
 end QOU.BraidKnot.SpechtIrreducible
