@@ -286,6 +286,13 @@ theorem Lob_neg (t : ℝ) : Lob (-t) = -Lob t := by
   rw [show 2 * (Real.pi / 2) = Real.pi by ring, Cl_2_pi]
   norm_num
 
+/-- `Λ(π) = 0`, since `Cl₂(2π) = 0`. Together with `Lob_zero` this is what makes
+`D` vanish on degenerate (real-shape) tetrahedra. -/
+@[simp] theorem Lob_pi : Lob Real.pi = 0 := by
+  unfold Lob
+  rw [Cl_2_two_pi]
+  norm_num
+
 /-! ## Part 2 — the ideal-tetrahedron angles
 
 This is the substantive part. The three expressions below are *defined* as
@@ -414,6 +421,55 @@ This extends `BlochWigner_unit_circle` past `|z| = 1`. -/
 -- Ref: [thurston1978], [milnor1982], [zagier1986]
 noncomputable def BlochWigner_lob (z : ℂ) : ℝ :=
   Lob (tetAngle₁ z) + Lob (tetAngle₂ z) + Lob (tetAngle₃ z)
+
+/-- **`D` vanishes on a degenerate tetrahedron.** If every dihedral angle
+collapses to `0` or `π` — which is exactly what a shape parameter off the upper
+half plane does — then `D = 0`, because `Λ` vanishes at both.
+
+This is the honest form of a fact the corpus previously recorded by *defining*
+a symbol named `blochWignerD` to be the constant `0`
+(`QOU/Machinery/QDilogarithm.lean`, removed 2026-08-07, bean `qou-ir1l`). Here
+it is derived from `Lob_zero` and `Lob_pi` instead of asserted, and it says what
+is actually true: the vanishing is a property of degenerate *shapes*, not a
+statement that Bloch–Wigner is trivial on the substrate. -/
+theorem BlochWigner_lob_eq_zero_of_angles (z : ℂ)
+    (h₁ : tetAngle₁ z = 0 ∨ tetAngle₁ z = Real.pi)
+    (h₂ : tetAngle₂ z = 0 ∨ tetAngle₂ z = Real.pi)
+    (h₃ : tetAngle₃ z = 0 ∨ tetAngle₃ z = Real.pi) :
+    BlochWigner_lob z = 0 := by
+  unfold BlochWigner_lob
+  rcases h₁ with h | h <;> rw [h] <;>
+    rcases h₂ with h' | h' <;> rw [h'] <;>
+      rcases h₃ with h'' | h'' <;> rw [h''] <;>
+        simp
+
+/-- **`D` vanishes at a real shape parameter in `(0,1)`.**
+
+The concrete case behind the removed stub: a real `x` gives a flat tetrahedron,
+`arg x = 0`, `arg(1/(1−x)) = 0` and `arg(1 − 1/x) = π`, so all three Lobachevsky
+terms vanish. Note this is a fact about `D` on the *reals* — it says nothing
+about `D` in general, and in particular does not conflict with the sharp
+non-zero value `D(y₊) = Vol(5₂)/3` at the complex `5₂` shape. -/
+theorem BlochWigner_lob_real_eq_zero (x : ℝ) (hx0 : 0 < x) (hx1 : x < 1) :
+    BlochWigner_lob (x : ℂ) = 0 := by
+  have hsub : (1 : ℂ) - (x : ℂ) = ((1 - x : ℝ) : ℂ) := by push_cast; ring
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  refine BlochWigner_lob_eq_zero_of_angles _ (Or.inl ?_) (Or.inl ?_) (Or.inr ?_)
+  · exact Complex.arg_ofReal_of_nonneg hx0.le
+  · unfold tetAngle₂
+    rw [hsub, ← Complex.ofReal_one, ← Complex.ofReal_div]
+    exact Complex.arg_ofReal_of_nonneg (by positivity)
+  · unfold tetAngle₃
+    have hx : (x : ℂ) ≠ 0 := by
+      simpa using ne_of_gt hx0
+    have hrw : (1 : ℂ) - 1 / (x : ℂ) = ((1 - 1 / x : ℝ) : ℂ) := by
+      push_cast; ring
+    rw [hrw]
+    have hneg : 1 - 1 / x < 0 := by
+      rw [sub_neg]
+      rw [lt_div_iff₀ hx0]
+      linarith
+    exact Complex.arg_ofReal_of_neg hneg
 
 /-- The **regular** ideal tetrahedron `z = e^{iπ/3}` has all three angles equal
 to `π/3` — the degenerate case where the general formula must reproduce the

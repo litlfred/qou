@@ -36,10 +36,20 @@ halves the exponent. The numerics confirm ¼, not ½.
 the series has finite nonzero radius: `|c_m|^{−1/m} → q^{8.2526…}`, close to
 `q^{33/4} = q^{8.25}` (the value predicted by `A = 1/4`, `B = 8`).
 
-**3. Evidence of TWO nearby singularities — the expected sector structure.**
-Within a single branch the ratio `c_{m+1}/c_m` converges to **10 digits** by
-`m = 400` and is stable through `m = 900`. But the limit **differs between
-branches** at the `3.7e-4` level:
+**3. A branch-dependent ratio at the `3.7e-4` level — RE-SCOPED 2026-08-07.**
+
+*This section originally read "Evidence of TWO nearby singularities — the
+expected sector structure". That inference is **refuted** (bean `qou-64jx`,
+`c3_w2_c1_parity_artifact.py`).* The ratio `1/(c_{m+1}/c_m)` is **exactly
+2-periodic in m**, so the single-point estimator below samples one phase of a
+2-cycle, and the `m=400` vs `m=900` stability check compares two *even*
+indices. The parity-free estimator gives `xi_s = 2.3651035824525764564` for all
+three branches, agreeing to `3.1e-25`. There is **one** radius.
+
+The measurement itself stands and is reported unchanged below; only the reading
+of it was wrong. Within a single branch the ratio is stable by `m = 400` and
+through `m = 900`, and the single-parity value **differs between branches** at
+the `3.7e-4` level:
 
     b^(1) (1,0):  ξ_s = 2.36571876…
     b^(2) (0,1):  ξ_s = 2.36485280…
@@ -120,18 +130,21 @@ def main() -> None:
     spread = max(abs(a - c_) / a for a in vals for c_ in vals)
     print()
     print(f"    branch spread = {mp.nstr(spread, 6)}")
-    print("    within-branch convergence is ~1e-10, but the branches DISAGREE at ~4e-4.")
-    print("    A single simple pole would be branch-independent => TWO nearby")
-    print("    singularities, each branch a different combination. This is the")
-    print("    sector structure the two leading blocks B_{1,2} predict.")
+    print("    single-parity samples DISAGREE at ~4e-4 across branches.")
+    print("    RE-SCOPED 2026-08-07 (bean qou-64jx): this is NOT two singularities.")
+    print("    1/(c_{m+1}/c_m) is exactly 2-periodic in m, so this estimator samples")
+    print("    one phase of a 2-cycle (and the m=400 check is also even). The")
+    print("    parity-free radius is 2.3651035824525764564 for ALL branches, to")
+    print("    3.1e-25. See c3_w2_c1_parity_artifact.py.")
     print()
     q33_4 = q**mp.mpf("8.25")
     print(f"    q^(33/4)          = {mp.nstr(q33_4, 12)}")
     print(f"    sits inside the branch spread: "
           f"{all(min(vals) - abs(spread * v) <= q33_4 <= max(vals) + abs(spread * v) for v in vals[:1])}")
     print()
-    print("  SCOPE: singularity structure only. The two Stokes multipliers")
-    print("  require resolving the pair and taking residues — still open.")
+    print("  SCOPE: q-Gevrey order and radius only — both unaffected by the")
+    print("  re-scoping. The Stokes multipliers are still open; the route is the")
+    print("  theta-normalised canonical solutions (bean qou-wgnx), not this.")
 
     script_path = Path(__file__).resolve()
     try:
@@ -149,10 +162,15 @@ def main() -> None:
             "C1 infinity step 2 (bean qou-odh5). q-Gevrey order of the C1 solutions "
             "is 1/2, matching the Newton-polygon slope 1/2 found independently in "
             "step 1. The level-1/2 q-Borel transform has finite radius ~ q^8.2526. "
-            "Ratio-test limits converge to 10 digits within a branch but differ "
-            "between branches at 3.7e-4, indicating TWO nearby singularities — the "
-            "sector structure predicted by the leading blocks B = +/- sqrt(q-1)/q. "
-            "Stokes multipliers NOT extracted."
+            "The ratio estimator below differs between branches at 3.7e-4. "
+            "RE-SCOPED 2026-08-07 (bean qou-64jx): that spread is an ARTIFACT of "
+            "sampling at a single parity, NOT two singularities. The estimator "
+            "1/(c[901]/c[900]) is a single-point ratio and 1/(c_{m+1}/c_m) is exactly "
+            "2-periodic in m; the stability check compares m=400 with m=900, both "
+            "even. The parity-free estimator gives xi_s = 2.3651035824525764564 for "
+            "ALL branches, agreeing to 3.1e-25. See "
+            "computations/qbeta/c3_w2_c1_parity_artifact.py. The q-Gevrey and radius "
+            "results here are UNAFFECTED. Stokes multipliers NOT extracted."
         ),
         "computation": {
             "script": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
@@ -173,8 +191,17 @@ def main() -> None:
             "branch_spread_relative": str(mp.nstr(spread, 6)),
             "within_branch_convergence": "~1e-10 by m=400, stable to m=900",
             "interpretation": (
-                "branch-dependent ratio limit => two nearby singularities, not one "
-                "simple pole; consistent with the two sectors from B = +/- sqrt(q-1)/q"
+                "RE-SCOPED 2026-08-07 (bean qou-64jx). The original reading here was "
+                "'branch-dependent ratio limit => two nearby singularities, consistent "
+                "with the two sectors from B = +/- sqrt(q-1)/q'. That is REFUTED. The "
+                "ratio 1/(c_{m+1}/c_m) is exactly 2-periodic in m, so a single-point "
+                "estimator at even m samples one phase of a 2-cycle; the parity-free "
+                "estimator is branch-independent to 3.1e-25. The radius is ONE number. "
+                "The surviving 2-cycle is the two-step decoupling of the recurrence, "
+                "which step 3 (PR #4656) classified as NOT Stokes sectors."
+            ),
+            "interpretation_superseded_by": (
+                "computations/qbeta/c3-w2-c1-parity-artifact.witness.json"
             ),
         },
         "assertions": [
@@ -186,16 +213,28 @@ def main() -> None:
             {"name": "qborel_radius_finite_nonzero",
              "computed": str(mp.nstr(vals[0], 8)), "expected": ">1",
              "passed": vals[0] > 1},
-            {"name": "branches_disagree_two_singularities",
+            # Renamed 2026-08-07: the measurement stands, the name asserted a
+            # conclusion (two singularities) that qou-64jx refuted. What the
+            # number actually shows is that single-parity samples disagree.
+            {"name": "single_parity_samples_disagree_across_branches",
              "computed": str(mp.nstr(spread, 4)), "expected": ">1e-5",
              "passed": spread > mp.mpf("1e-5")},
         ],
         "verdict": (
-            "CONFIRMED: q-Gevrey order = Newton slope = 1/2 (independent cross-check "
-            "of step 1). The level-1/2 q-Borel transform converges, and its dominant "
-            "singularity is branch-dependent at 3.7e-4 while converging to 1e-10 "
-            "within each branch -- evidence for TWO nearby singularities, i.e. the "
-            "two-sector structure. Multipliers remain open."
+            "CONFIRMED, and PARTLY RE-SCOPED 2026-08-07 (bean qou-64jx). "
+            "STANDS: q-Gevrey order = Newton slope = 1/2 (independent cross-check of "
+            "step 1), and the level-1/2 q-Borel transform converges with finite "
+            "radius. Those results are unaffected. "
+            "RETRACTED: the inference from the 3.7e-4 branch spread to 'TWO nearby "
+            "singularities, i.e. the two-sector structure'. The ratio estimator is "
+            "exactly 2-periodic in m and was sampled at a single parity (m=900, and "
+            "the m=400 stability check is also even). The parity-free estimator gives "
+            "xi_s = 2.3651035824525764564 for all three branches to 3.1e-25 -- one "
+            "radius, not two -- and log_q(xi_s) matches the q-Gevrey fit B + 1/4 "
+            "exactly. What survives is a stable 2-cycle whose amplitude is "
+            "branch-dependent; that is the recurrence's two-step decoupling, which "
+            "step 3 (PR #4656) already classified as NOT Stokes sectors. "
+            "Multipliers remain open; qou-wgnx is the route."
         ),
         "scope": (
             "Singularity structure only. Does NOT extract the Stokes multipliers. "

@@ -12,7 +12,6 @@ Faddeev / Bloch-Wigner family of categorical attacks on Q_β residue A
 | Symbol | Definition | Notes |
 |--------|-----------|-------|
 | `qDilogPartial q N` | `∑_{n=1}^N q^n / (n · (1 - q^n))` | Truncated compact q-dilog (finite version; legacy "Faddeev" naming) |
-| `blochWignerD q n` | `0` for real `q > 0` (Bloch-Wigner vanishes on real positive axis) | Per Chain 1 β NEGATIVE result (PR #1768) |
 
 ## Why this matters
 
@@ -25,7 +24,38 @@ expansion. This file provides the symbolic primitives.
 
 - `qDilogPartial_zero`: `qDilogPartial q 0 = 0` (empty sum)
 - `qDilogPartial_at_q_zero`: `qDilogPartial 0 N = 0` (all terms vanish)
-- `blochWignerD_real_pos`: `blochWignerD q n = 0` for `0 < q` (Chain 1 β verdict)
+
+## Removed 2026-08-07 — the `blochWignerD` stub (bean `qou-ir1l`)
+
+This file used to carry
+
+    noncomputable def blochWignerD (_q : ℝ) (_n : ℕ) : ℝ := 0
+    theorem blochWignerD_real_pos (q n) (_hq : 0 < q) : blochWignerD q n = 0 := rfl
+
+which is the banned tautology pattern (AGENTS.md §Strict Lean Discipline 5):
+the conclusion is `rfl` on a definitional `0` and the hypothesis `0 < q` is
+never used, so the "theorem" asserts nothing falsifiable.
+
+It was also misleading. The name `blochWignerD` reads as *the* Bloch–Wigner
+function while being bound to the constant `0`, encoding a special-case
+vanishing as if it were the function. The Chain 1 β NEGATIVE verdict
+(PR #1768) it recorded is about `D(qⁿ)` for **real positive** `q`, where `D`
+vanishes for the trivial reason that `D` vanishes on the whole real axis —
+not because Bloch–Wigner is degenerate on the substrate.
+
+The real Bloch–Wigner function now lives in
+[`QOU/Archimedean/BlochWignerLobachevsky.lean`](../Archimedean/BlochWignerLobachevsky.lean)
+as `BlochWigner_lob`, defined through the ideal-tetrahedron dihedral angles and
+therefore valid off the unit circle. The genuine vanishing statement is
+`BlochWigner_lob_real_eq_zero` there: it is *proved* from `Λ(0) = Λ(π/2) = 0`
+rather than asserted by definition, and it makes the actual content visible —
+`D` vanishes on the reals because a real shape parameter degenerates the
+tetrahedron, which is a fact about `D`, not about the substrate.
+
+That the corpus carries a sharp non-zero Bloch–Wigner value elsewhere
+(`D(y₊) = Vol(5₂)/3`, published as Broadhurst eq (73)) is the practical reason
+the old stub had to go: a reader meeting `blochWignerD := 0` would conclude the
+opposite.
 
 ## Cross-refs
 
@@ -65,23 +95,13 @@ theorem qDilogPartial_at_q_zero (N : ℕ) : qDilogPartial 0 N = 0 := by
   -- signature drift across Mathlib versions.
   rw [pow_succ, mul_zero, zero_div]
 
-/-! ## Bloch-Wigner D function
+/-! ## Bloch-Wigner D function — moved
 
-For real `q > 0`, `D(q^n)` vanishes identically — this is the
-NEGATIVE Chain 1 β verdict from PR #1768 (Bloch-Wigner does not
-transfer to the substrate). Formalised here for completeness. -/
-
-/-- Bloch-Wigner D function placeholder at real-positive q.
-By the categorical evaluation, this vanishes for all `0 < q` and `n`.
-Recorded as a definitional 0 (the categorical content beyond the
-vanishing is the open work). -/
-noncomputable def blochWignerD (_q : ℝ) (_n : ℕ) : ℝ := 0
-
-/-- **Vanishing of Bloch-Wigner D on real positive q** (Chain 1 β
-NEGATIVE per PR #1768). Trivially true at the definitional level
-recorded here. -/
-theorem blochWignerD_real_pos (q : ℝ) (n : ℕ) (_hq : 0 < q) :
-    blochWignerD q n = 0 := rfl
+The `blochWignerD := 0` stub that lived here was removed 2026-08-07
+(bean `qou-ir1l`); see the file header for why. The real function is
+`QOU.Archimedean.BlochWigner_lob`, and the vanishing on the real axis is
+`QOU.Archimedean.BlochWigner_lob_real_eq_zero` — proved rather than
+definitional. Nothing referenced the stub. -/
 
 /-! ## Conditional class for compact-q-dilog / Φ_q context
 
