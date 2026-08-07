@@ -47,11 +47,19 @@ nothing mathematical turns on it.
 ## What this file does NOT prove — stated so it is not read for more
 
 * **The converse.** That `−p^ℤ` are the *only* zeros of `θ_p` is the **Jacobi
-  triple product**, which is not proved here. (Whether Mathlib carries JTP was
-  not established — the environment available when this was written had only a
-  partial olean cache and no Mathlib source, so its absence there is not
-  evidence.) Without the converse one gets "these points *are* zeros", not
-  "there are no others".
+  triple product**, which is not proved here. Without it one gets "these points
+  *are* zeros", not "there are no others".
+
+  **Mathlib cannot supply it** (source inspected at HEAD, 2026-08-07):
+  `Mathlib/NumberTheory/ModularForms/JacobiTheta/` has `OneVariable`,
+  `TwoVariable`, `Bounds`, `Manifold`, defining the *additive* two-variable
+  theta `jacobiTheta₂ z τ = ∑' n : ℤ, …` — but there is **no Jacobi triple
+  product** anywhere (the "triple product" matches are Jordan algebras, the
+  Hermitian functional calculus, and the vector cross product) and **no
+  zero-locus or vanishing results for theta at all**. So closing the converse
+  means proving JTP from scratch, and additionally bridging the additive theta
+  to the multiplicative `θ_p` used here. Recorded so this is not re-scoped as
+  cheap.
 * **That these zeros are poles of `P`.** That needs the analytic construction
   — convergent `0`-side series, entire `∞`-side series, the matrix inverse and
   its meromorphy — none of which is formalised.

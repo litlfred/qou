@@ -192,3 +192,46 @@ absence there is not evidence either way. Worth checking before anyone scopes it
 
 **Stokes multipliers: STILL OPEN.** Unchanged. The divisor is now known
 symbolically, which is the natural input to extracting them.
+
+## 2026-08-07 (fourth) — the INVARIANT `χ`; `[−1]` is unremovable but invisible; Mathlib has no JTP
+
+`computations/qbeta/c3_w2_c1_connection_invariant.py`, witness
+`c3-w2-c1-connection-invariant.witness.json` (5/5).
+
+**The basis-invariant connection datum is the cross-ratio**
+
+    χ(z) = P₀₀ P₁₁ / (P₀₁ P₁₀)
+
+0-side rebasing scales `P`'s **rows** by elliptic functions; ∞-side rescaling
+scales its **columns**; the cross-ratio is invariant under both. On the real
+axis, where `P = [[c₊, c₋], [c̄₊, c̄₋]]`,
+
+    χ = exp(2i (arg c₊ − arg c₋)),    |χ| = 1 **exactly**
+
+matching the phase formula to `1e-121`, elliptic to `4.8e-26`.
+
+**`[−1]` cannot be removed — the obvious fix is impossible.** Any character
+with multiplier `t` must be `e_t(z) = θ_p(cz)/θ_p(cz/t)` (the numerator has to
+carry multiplier `cz`), so its zeros sit at `z ∈ −c⁻¹p^ℤ`: varying `c` **moves**
+the artifact pole to `[−1/c]` but never deletes it. Worse, the rebasing ratio
+`r_t = e^{(c)}_t/e^{(1)}_t` drags in a further pole at `[−t]`. So "re-normalise
+the 0-side character to kill `[−1]`" does not work as stated.
+
+**It does not need to.** `[−1]` is common to a **row** of `P`, so it appears
+once in χ's numerator and once in its denominator and **cancels**. Confirmed
+both ways: at the artifact pole `|P₀₀|` diverges to `1e73` while `|χ|` stays
+exactly `1`; and χ is numerically **identical** across `c ∈ {1, 1.7, 0.43, 2.9}`
+(dev `1e-109`). The artifact pole's location is a basis choice the invariant
+does not see.
+
+**Mathlib has NO Jacobi triple product** (source inspected at HEAD). It has
+`NumberTheory/ModularForms/JacobiTheta/{OneVariable,TwoVariable,Bounds,Manifold}`
+defining the *additive* `jacobiTheta₂ z τ = ∑' n : ℤ, …`, but no triple product
+(the "triple product" matches are Jordan algebras, Hermitian functional
+calculus, vector cross product) and **no theta zero-locus/vanishing results at
+all**. So the converse of `qTheta_neg_zpow_eq_zero` cannot be closed by reuse —
+it needs JTP from scratch *plus* a bridge from the additive theta to the
+multiplicative `θ_p`. Recorded so it is not re-scoped as cheap.
+
+**Stokes multipliers: STILL OPEN.** χ is the invariant they must be functions
+of, not the multipliers themselves. That remains the work.
