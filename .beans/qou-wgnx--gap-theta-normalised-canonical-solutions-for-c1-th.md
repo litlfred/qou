@@ -993,3 +993,62 @@ q-Pochhammer constants. That is the third independent confirmation of the
 presentation (nineteenth entry). Morita obtains his connection formula by
 q-Borel/q-Laplace resummation following Zhang — i.e. exactly route (a). His
 papers are therefore the worked rank-2 template for it, and are now in-repo.
+
+## 2026-08-07 (twenty-first) — the Stokes multipliers are very likely TRIVIAL, and the connection matrix is the whole story
+
+Read RSZ (`uploads/0903.0853v3.pdf`) §5. Their definitions:
+
+- `Λ_I := Iₙ + Matₙ(A₀)`, automorphisms **infinitely tangent to the identity**;
+- `Λ_I(M) ⊂ Λ_I`, those that are automorphisms of `M` — *"this is also called the
+  **Stokes sheaf** of the module `M`"*;
+- *"`Λ_I(M)` is a sheaf of **unipotent (and even triangular)** groups"* —
+  triangular **with respect to the slope filtration**;
+- and the classification: `F(M₀) ≅ H¹(E_q, Λ_I(M₀))`, the analytic isoformal
+  classes inside a formal class. Their formal class is
+  `M₀ = P₁ ⊕ … ⊕ P_k` with **distinct** slopes `μ₁ < … < μ_k`.
+
+**Consequence for a pure isoclinic module (one slope): the slope filtration has
+a single step, the unipotent group is trivial, `H¹` is a point, and the formal
+class contains exactly one analytic class. No Stokes phenomenon.**
+
+**C1 after ramification is pure of a single slope.** The Newton polygon result
+from the top of this arc is *single edge, slope −1/2*, non-integral, ramified to
+`−1` (integral) — one edge, hence one slope, hence pure isoclinic. The two
+canonical solutions `T₊ = +T`, `T₋ = −T` are two *exponents at the same slope*,
+not two slopes.
+
+**So the object this bean has been chasing since its creation very likely does
+not exist as a separate invariant.** All the transcendental data sits in the
+connection matrix between `0` and `∞` — which we now have, in closed form, with
+constant 1:
+
+    χ(z) = θ_p(zT/t₂)·θ_p(−zT/t₁) / [θ_p(−zT/t₂)·θ_p(zT/t₁)]
+
+**Cross-check that this is the right reading, not a convenient one.** Lin–Ma–Xu
+get *nontrivial* q-Stokes matrices because their system
+`D_qF = (E_nn + A/z)F` has `E_nn = diag(0,…,0,1)`: slopes `{0, 1}` — **two**
+of them, so their `Λ_I(M₀)` has genuine off-diagonal blocks
+`Hom(P_0, P_1)`. That is exactly the structural difference, and it explains
+both why they have Stokes data and why we could never extract any.
+
+It also retroactively explains the nineteenth entry: our ∞-side series came out
+**convergent** under theta-normalisation. For a pure module that is not a
+surprise or an artifact of a lucky ansatz — there is nothing to resum, because
+there is no Stokes phenomenon to be summed across.
+
+**Confidence and what would falsify it.** The argument is: (i) single Newton
+edge ⇒ pure isoclinic; (ii) pure ⇒ trivial Stokes sheaf ⇒ `H¹` a point. Step
+(ii) is RSZ's own framework read directly. Step (i) rests on this arc's Newton
+polygon computation, which is independently checked and was never disturbed by
+any of the corrections. **Caveat worth stating:** RSZ's explicit constructions
+are developed for *integral* slopes; ours is integral only after ramification,
+and the non-integral case is van der Put–Reversat [56]. Someone who owns the
+domain should confirm that the ramified module is the right object to apply the
+triviality to — I am reading a framework, not deriving it.
+
+**Recommended status change:** this bean's stated goal ("the genuine untried
+route to the Stokes multipliers") is arguably **achieved by dissolution** — the
+route was built, and it showed the target is trivial. The deliverable is the
+connection matrix and its invariant, both in closed form, plus nine sorry-free
+Lean theorems. Leaving `in-progress` for the owner to decide, since retiring a
+long-standing target is not mine to call unilaterally.
