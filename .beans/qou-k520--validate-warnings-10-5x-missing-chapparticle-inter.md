@@ -78,3 +78,39 @@ G1 first (5-for-1 payoff), then G4 (same shape), then G3 (needs a judgement call
 
 `run-validate` warning count 10 → 0, or each survivor explicitly justified in this bean as
 intentional.
+
+
+## PROGRESS (2026-08-07): 10 warnings → 3
+
+**G1 (5 warnings) — DONE.** Root cause found: `chap:particle-interactions` was **split** into
+`knots-particles-confinement` + `nuclear-interactions`; the old chapter directory survived but
+is **not registered** in the paper manifest (only a comment mentions it), so its label exists
+yet cannot resolve. Section headers made the split boundary unambiguous — the orphan's §1/§2 and
+§4–§9 went to `nuclear-interactions`, its §3 to `knots-particles-confinement`. Retargeted per
+reference, not globally:
+
+| block | now points at | why |
+|---|---|---|
+| `approach-to-exceptional-divisor` | `chap:nuclear-interactions` | SDP/LP machinery = orphan §2 |
+| `thurston-relaxation` | `chap:nuclear-interactions` | algebraic SDP solver = orphan §2 |
+| `observations-intro` | `chap:nuclear-interactions` | GS engine + Wedderburn mass = orphan §1, §8 |
+| `ns-blowup-physical-evidence` | `chap:knots-particles-confinement` | knot-braid particle model |
+| `chapter-overview` | rewritten — see below | described a chapter that no longer exists |
+
+**Bigger finding inside G1.** The introduction's chapter tour did not merely have a stale link
+— it was **missing three real content chapters**: `knots-particles-confinement`,
+`eightfold-way`, and `nuclear-interactions` (0 mentions each). Two are the split successors;
+`eightfold-way` is an independent gap. The defunct paragraph was replaced with three, in
+reading order, matching each chapter's actual section content.
+
+**G3 (1) — DONE.** `rem:einstein-ether-substrate` now `interprets:
+prop:calibration-cohomology-alignment`. Chose `interprets` over demotion-to-`prose` because
+the remark does lean on a provable statement — "q₀ is fixed by the cohomological structure of
+`H¹(Bring) = 2W`" is what carries the Einstein analogy.
+
+**G4 (1) — DONE.** Filename-vs-label mismatch: the block file is `fine-structure-data.ts` but
+its label is `rem:fine-structure-observation`. Reference retargeted.
+
+**G2 (3) — REMAINS.** Three propositions with no Lean declaration:
+`prop:meson-octet-decomposition`, `prop:borromean-decuplet`, `prop:tm-gs-normal-form`. Honest
+warnings; three separate formalization tasks. Do not bundle.
