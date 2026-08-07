@@ -1,11 +1,11 @@
 ---
 # qou-skum
 title: Extend the no-free-parameter certificate to the theta channel
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-07T15:16:34Z
-updated_at: 2026-08-07T15:16:34Z
+updated_at: 2026-08-07T20:45:29Z
 ---
 
 The T5 no-free-parameter certificate (`computations/no_free_parameter_certificate.py`,
@@ -47,3 +47,44 @@ Caveat to carry: the certificate is a high-recall STATIC detector, not a proof
 Cross-refs: PR #4513; docs/scope/2026-08-01-t4-anchor-circularity.md;
 docs/scope/2026-08-01-theta-independent-routes.md; beans qou-qnnq, qou-offl,
 qou-i3yg, qou-s16e.
+
+
+---
+
+## 2026-08-07 DONE — and the extension found a detector bug worth more than the extension
+
+Certificate now covers the theta channel. It flags all four literals:
+`q0 = 1.11020`, `A_omega = 3`, `S_muon`, `S_proton`. Mass-path entry points
+stay at 0 untraceable; self-test passes (14 synthetic cases).
+
+**BUG FOUND — bare numeric assignments were invisible.** The classifier's own
+comment said a literal counts as arithmetic if it is "operand of a BinOp, OR a
+bare module-level constant assignment", but NO code path implemented the second
+case. Consequence:
+
+    S_muon = +0.00968298   -> UnaryOp -> CAUGHT
+    q0     =  1.11020      -> bare Constant -> INVISIBLE
+
+Identical values, opposite verdicts, purely on a redundant leading sign — and
+the bare form is the commonest way to type a magic number. Demonstrated with a
+minimal AST test, then fixed.
+
+Closing it took untraceable from 2 to 72. Nearly all of the new hits were
+`experimental_constants.py`, a tagged CODATA/PDG/SnapPy reference module with
+per-entry uncertainties — the same "calibration by construction" category as the
+already-whitelisted `codata_*` modules; it had simply never been added, because
+every entry in it is a plain `NAME = <literal>` and so was invisible. Added.
+Back to 4, all in the theta channel.
+
+**SECOND GAP — `A_omega = 3` was waved through as `structural`** because
+3 is in STRUCTURAL_INTS. That whitelist is for rep dimensions, group orders,
+exponents and indices; a physical channel coefficient is none of those. Added an
+`ADJUDICATED_FREE` mechanism (keyed by assigned name, each entry stating why)
+that overrides the small-int whitelist. A_omega is now correctly UNTRACEABLE,
+citing the Lean proof that it is a genuine free parameter.
+
+NET EFFECT: the circularity is now CI-visible. `--strict` would fail on the
+theta channel until A_omega is either derived or explicitly tagged.
+
+Note `q0 = 1.11020` is untraceable AND wrong — canonical is ~1.1099786. That
+belongs with the other hardcoded-literal issues in qou-i3yg.
