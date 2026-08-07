@@ -84,6 +84,7 @@ import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
