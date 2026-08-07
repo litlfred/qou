@@ -1,0 +1,167 @@
+{
+  "schema": "witness/v1",
+  "name": "mpf-float-source-audit",
+  "description": "Source-level mpf(<float>) detection. DEFECT = the literal is not exactly a binary64, so precision is lost before mpmath sees it. Complements the witness-level float64-padding audit by catching the defect at authoring time.",
+  "data": {
+    "counts": {
+      "benign": 13,
+      "advisory-cast": 5,
+      "marked-cast": 1
+    },
+    "defects": [],
+    "rows": [
+      {
+        "file": "computations/audits/e0_calibration_audit.py",
+        "line": 292,
+        "class": "benign",
+        "arg": "1000000000.0",
+        "source": "Q_BETA_N_REL * mpf(1e9)",
+        "fix": "mpf(\"1000000000.0\")"
+      },
+      {
+        "file": "computations/audits/e0_calibration_audit.py",
+        "line": 278,
+        "class": "benign",
+        "arg": "1000000000.0",
+        "source": "\"rel_err_ppb\": str(Q_BETA_N_REL * mpf(1e9)),",
+        "fix": "mpf(\"1000000000.0\")"
+      },
+      {
+        "file": "computations/audits/e0_calibration_audit.py",
+        "line": 225,
+        "class": "benign",
+        "arg": "1000000000.0",
+        "source": "f\"({mp.nstr(Q_BETA_N_REL * mpf(1e9), 3)} ppb)\")",
+        "fix": "mpf(\"1000000000.0\")"
+      },
+      {
+        "file": "computations/audits/e0_calibration_audit.py",
+        "line": 283,
+        "class": "benign",
+        "arg": "1000000000.0",
+        "source": "f\"(~{mp.nstr(Q_BETA_N_REL * mpf(1e9), 3)} ppb). 1 ppb is \"",
+        "fix": "mpf(\"1000000000.0\")"
+      },
+      {
+        "file": "computations/deltalambda/he4_binding_k_presentation_correction_probe.py",
+        "line": 131,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "delta = mp.mpf(float(_avg_color_delta()))",
+        "fix": null
+      },
+      {
+        "file": "computations/deltalambda/he4_binding_k_stage2_probe.py",
+        "line": 136,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "delta = mp.mpf(float(_avg_color_delta()))",
+        "fix": null
+      },
+      {
+        "file": "computations/deltalambda/he4_stage2_ranking_seminormal_xcheck.py",
+        "line": 91,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "delta = mp.mpf(float(_avg_color_delta()))",
+        "fix": null
+      },
+      {
+        "file": "computations/flavor_split_xq_refinement.py",
+        "line": 189,
+        "class": "benign",
+        "arg": "100000.0",
+        "source": "elif abs(best[2]) < mp.mpf(1e5):",
+        "fix": "mpf(\"100000.0\")"
+      },
+      {
+        "file": "computations/habiro/habiro_h9_spectral_decomposition.py",
+        "line": 292,
+        "class": "benign",
+        "arg": "10000000000.0",
+        "source": "best_miss = mp.mpf(1e10)",
+        "fix": "mpf(\"10000000000.0\")"
+      },
+      {
+        "file": "computations/hoefsmit_numpy.py",
+        "line": 161,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return mp.mpf(float(np.trace(M)))",
+        "fix": null
+      },
+      {
+        "file": "computations/nuclide_braid_pipeline.py",
+        "line": 183,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "chi_re = mp.mpf(float(chi_lambda_fast(shape, word, q_val=q0_chi,",
+        "fix": null
+      },
+      {
+        "file": "computations/probes/strong_unified_binding_probe.py",
+        "line": 20,
+        "class": "benign",
+        "arg": "2.5",
+        "source": "na_stokes_residual = mp.mpf(2.5)",
+        "fix": "mpf(\"2.5\")"
+      },
+      {
+        "file": "computations/substrate/lever1_color_eq_intrinsic_tau_rapidity.py",
+        "line": 31,
+        "class": "benign",
+        "arg": "1.5",
+        "source": "r = (20*(q - 1)**3/(27*q**mp.mpf(1.5)) + 5*(q - 1)**2/(9*q)",
+        "fix": "mpf(\"1.5\")"
+      },
+      {
+        "file": "computations/witness_float64_padding_audit.py",
+        "line": 90,
+        "class": "marked-cast",
+        "arg": "float(...)",
+        "source": "return abs(x - mpf(float(x))) / abs(x) < F64_GAP",
+        "fix": null
+      },
+      {
+        "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
+        "line": 92,
+        "class": "benign",
+        "arg": "1.0",
+        "source": "qi = mp.mpf(1.0) / q",
+        "fix": "mpf(\"1.0\")"
+      },
+      {
+        "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
+        "line": 94,
+        "class": "benign",
+        "arg": "1.0",
+        "source": "z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))",
+        "fix": "mpf(\"1.0\")"
+      },
+      {
+        "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
+        "line": 95,
+        "class": "benign",
+        "arg": "0.0",
+        "source": "ai, bi = mp.mpf(0.0), mp.mpf(1.0)",
+        "fix": "mpf(\"0.0\")"
+      },
+      {
+        "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
+        "line": 95,
+        "class": "benign",
+        "arg": "1.0",
+        "source": "ai, bi = mp.mpf(0.0), mp.mpf(1.0)",
+        "fix": "mpf(\"1.0\")"
+      },
+      {
+        "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
+        "line": 102,
+        "class": "benign",
+        "arg": "1.0",
+        "source": "qi = mp.mpf(1.0) / q",
+        "fix": "mpf(\"1.0\")"
+      }
+    ]
+  }
+}
