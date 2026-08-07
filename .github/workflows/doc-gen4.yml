@@ -38,13 +38,27 @@ jobs:
           ./scripts/lean-cache-restore.sh || true
 
       - name: Enable doc-gen4 in lakefile.toml
-        # Un-comment the doc-gen4 dependency block that is CI-only
+        # Un-comment ONLY the doc-gen4 block, delimited by its sentinels.
+        #
+        # The previous version ran four file-wide seds, the first being
+        # `s/# \[\[require\]\]/[[require]]/`. That also matched the commented-out
+        # `checkdecls` block's `# [[require]]` while leaving its `# name`/`# git`/
+        # `# rev` commented, producing a `[[require]]` table with no fields. It
+        # also silently no-opped when the block was already active, which is how
+        # the lakefile drifted out of sync with its own comment.
         run: |
           cd content/quantum-observable-universe/lean
-          sed -i 's/# \[\[require\]\]/[[require]]/' lakefile.toml
-          sed -i 's/# name = "doc-gen4"/name = "doc-gen4"/' lakefile.toml
-          sed -i 's|# git = "https://github.com/leanprover/doc-gen4"|git = "https://github.com/leanprover/doc-gen4"|' lakefile.toml
-          sed -i 's/# rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"/rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"/' lakefile.toml
+          sed -i '/--- BEGIN doc-gen4 (CI-only) ---/,/--- END doc-gen4 (CI-only) ---/ {
+            /^# \(\[\[require\]\]\|name = \|git = \|rev = \)/ s/^# //
+          }' lakefile.toml
+          # Fail loudly rather than no-op: a silent success is the exact failure
+          # mode this step used to have.
+          grep -q '^name = "doc-gen4"' lakefile.toml \
+            || { echo "::error::doc-gen4 block not enabled - check the sentinels in lakefile.toml"; exit 1; }
+          # Guard the collision that motivated this change: every [[require]]
+          # must be followed by a name field.
+          awk '/^\[\[require\]\]/ { getline nxt; if (nxt !~ /^name = /) {
+                 print "::error::fieldless [[require]] near line " NR; exit 1 } }' lakefile.toml
 
       - name: Build doc-gen4 HTML
         run: |
