@@ -90,6 +90,44 @@ wiring exercise — so it should be attacked as a proof, with the existing brick
 (`starSum_rep_polytabloid`, `colGarnir_fullgroup_sum`,
 `colGarnir_single_column_of_annihilation`, `sameColumn_sum_polytabloid`) as input.
 
+## The collision, decomposed (worked out; step 1 landed)
+
+Per the 2026-07-19 audit's second pass, the single-column relation reduces to the
+**full-group annihilation** `∑_{σ ∈ S_{C∪{s}}} sgn σ · σ·e_t = 0`
+(`colGarnir_single_column_of_annihilation` then divides by `|C|! ≠ 0`). Via
+`sum_sign_rep_polytabloid_eq_zero_of_family` + `mtab_sum_sign_smul_of_eq_zero`
+that is exactly a **row collision**: for every `ρ ∈ colStab t`, two distinct labels
+of `C ∪ {s}` share a row in `ρ • t`.
+
+**The argument is generic in `t`** — it needs only `c < c_s`, *not*
+column-superstandardness. That matters: it can be proved before the
+column-superstandard tableau is constructed.
+
+1. `ρ ∈ colStab t` ⟹ `colPattern (ρ • t) = colPattern t`, so the column-`c`
+   labels of `ρ • t` are still exactly `C`. — **DONE, sorry-free**:
+   `OVBaseSeminormalVector.colPattern_smul_of_mem_colStab` +
+   `colLabels_smul_of_mem_colStab`.
+2. Those `|C|` labels fill column `c` of `ρ • t` entirely, so their rows are
+   exactly `0, …, colLen c − 1`. — *open* (needs: label↦cell is a bijection, so the
+   column-`c` labels biject with the column-`c` cells).
+3. `s` stays in column `c_s`, so its row `r` satisfies `r < colLen c_s`. — *open*
+   (same bijection fact, plus `mem_iff_lt_colLen`).
+4. `colLen` antitone + `c < c_s` ⟹ `colLen c_s ≤ colLen c = |C|`, hence `r < |C|`.
+   — *open* (Mathlib `YoungDiagram.colLen_anti`-style lemma + `|C| = colLen c`).
+5. Combine: the column-`c` label at row `r` collides with `s`; distinct since their
+   columns differ. Feed as `hfam`. — *open* (assembly).
+
+Then (iv) sum the single-column relations over `c < c_s` and combine with brick 3a
+(`sameColumn_sum_polytabloid`, giving the `−row(s)` term) to get the eigen-equation;
+(v) discharge the two side conjuncts (`polytabloid_mem_specht`, `≠ 0` from standard
+-basis independence) and close `seminormalVector_base_exists`.
+
+**Also still needed:** the **column-superstandard tableau itself** does not exist in
+the tree (`grep colSuperstandard` is empty; only `SytRowSuperstandard` exists, and the
+audit shows the *row*-superstandard polytabloid is **not** an eigenvector — building
+toward it would be proving a false statement). Constructing it and proving it standard
+is its own sub-task.
+
 Base ring is genuinely `[Field k] [CharZero k]` — the `[CommRing k]` form is
 **false** (contents collide mod `p`, eigenspaces merge); already documented at the
 decl, do not "generalize" it.
