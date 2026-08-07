@@ -10,7 +10,7 @@ tags:
     - whitehead
     - refuted-needs-repair
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T22:35:00Z
+updated_at: 2026-08-07T23:30:00Z
 ---
 
 ## Why
@@ -296,3 +296,38 @@ And: the sqrt(3) calibration target may itself be wrong. This repo's
 value-validated Porti probe gives |T_mu(4_1)| = 3; DG give sqrt(3)/2. sqrt(3) is
 neither. one_loop_vs_nu_sdp_probe.py explicitly warns "Do NOT read the tau
 values here as the adjoint torsion" — which is what the c_sigma script did.
+
+---
+
+## 2026-08-07 (sixth pass) — CORRECTION: the multi-cusp formula is NOT in DG.
+
+Earlier passes of this bean, and PR #4706's audit, said the multi-cusp case is
+"DG Section 4.5". **Wrong.** Section 4.5 is the CHARACTER-VARIETY
+generalization — still one cusp, deformed representations with meridian
+eigenvalue m. The multi-cusp formula is not in the paper.
+
+DG list it in Section 1.9 among extensions, and say:
+
+    "The generalization to multiple cusps is also quite straightforward, but
+     left out mainly for simplicity of exposition."
+
+So there is nothing to implement from this source. It must be DERIVED, and
+"straightforward" is the authors' judgement, not a recipe. The one-cusped
+derivation uses an identity that is specifically one-cusped:
+
+    "For a one-cusped manifold, every edge begins and ends at the cusp, which
+     implies sum_I G_Ii = sum_I G'_Ii = sum_I G''_Ii = 2"
+
+That fails for c >= 2. It is what makes the N edge equations dependent in the
+way the construction needs, so the extension is not a matter of adding rows.
+
+LEAD. DG identify tau via Yamaguchi [Yam08] as tau_M = (1/c_M) dtau_M(t)/dt|_1
+with c_M the CUSP SHAPE. Dubois-Huynh-Yamaguchi (uploads/0706.2213v3.pdf,
+Sec 5.3) independently express the torsion at holonomy via the cusp shape.
+Cusp shape is per-cusp, so that is where a genuine c-dependence would enter —
+and the place to look before inventing one. Note this is also the honest
+setting in which to ask whether anything like 2^{(c-1)/2} exists at all.
+
+Status unchanged: c=1 is fixed and trusted (computations/one_loop_torsion.py,
+PR #4707). c>=2 is open and now correctly characterised as a derivation task,
+not an implementation task.

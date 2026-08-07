@@ -66,8 +66,27 @@ L6a4  (3 cusp)  |τ| = 0.000000000000
 ```
 
 Degenerate. And DG Definition 1.2 is itself **stated for one-cusped
-manifolds**; the multi-cusp case is their §4.5 ("Invariance of the generalized
-torsion").
+manifolds**.
+
+> **CORRECTION (2026-08-07, later).** An earlier version of this audit said the
+> multi-cusp case "is their §4.5". **That is wrong.** §4.5 is the
+> *character-variety* generalization — still one cusp, but deformed
+> representations with meridian eigenvalue `m`. The multi-cusp formula is **not
+> in the paper at all**. DG list it in §1.9 among extensions, and state plainly:
+> *"The generalization to multiple cusps is also quite straightforward, but
+> left out mainly for simplicity of exposition."*
+>
+> So there is **no published multi-cusp formula to implement** in the source we
+> have — it has to be derived. And "straightforward" is the authors' judgement,
+> not a recipe: the one-cusped derivation uses an identity that is specifically
+> one-cusped —
+>
+> > *"For a one-cusped manifold, every edge begins and ends at the cusp, which
+> > implies `Σ_I G_Ii = Σ_I G'_Ii = Σ_I G''_Ii = 2`"*
+>
+> — and that fails for `c ≥ 2`. It is what makes the `N` edge equations
+> dependent in the way the construction needs, so the extension is not a matter
+> of adding rows.
 
 **So the `c_σ` arc — L5a1 (c=2) and L6a4 (c=3) — sits entirely in the regime
 where the correct formula, as implemented here, does not apply at all.** That,
@@ -77,8 +96,8 @@ not the missing flattening, is the real size of the job.
 
 | # | file | change | blocked on |
 |---|---|---|---|
-| 1 | `whitehead_c_sigma_torsion.py` | replace determinant, restore ½ + flattening monomial | **DG §4.5** (targets L5a1, c=2) |
-| 2 | `probes/borromean_nz_adjoint_torsion.py` | same wrong form `a − b·z/(1−z)`; source of `\|det\| = 64` | **DG §4.5** (L6a4, c=3) |
+| 1 | `whitehead_c_sigma_torsion.py` | replace determinant, restore ½ + flattening monomial | **multi-cusp derivation** (targets L5a1, c=2) |
+| 2 | `probes/borromean_nz_adjoint_torsion.py` | same wrong form `a − b·z/(1−z)`; source of `\|det\| = 64` | **multi-cusp derivation** (L6a4, c=3) |
 | 3 | `probes/borromean_cusp_framing_factor.py` | its premise is superseded — see below | ditto |
 | 4 | `probes/jones_1loop_c0_calibration_fig8.py`, `probes/borromean_jones_1loop_torsion.py` | the `exp(2c₀) = 1/\|det J\|` calibration chain | recheck against corrected `\|τ\|` |
 | 5 | both 1-loop probes | `np.linalg.det` and `complex(s['rect'])` are float64 | independent of the above |
@@ -151,8 +170,20 @@ docstring notes is normalization-robust.
    construction is correct and invariant — promote it to a shared helper and
    point `borromean_nz_adjoint_torsion.py`'s 4₁ calibration at it. Cheap,
    and it establishes a trusted base.
-2. **Then implement DG §4.5** for `c ≥ 2`. This is the real work and the only
-   route to L5a1/L6a4. Do not attempt the `c_σ` repair before it.
+2. **Then DERIVE the multi-cusp extension** for `c ≥ 2`. Not "implement §4.5" —
+   see the correction above; it is not in the paper. DG call it
+   "straightforward" but omit it, and the one-cusped derivation leans on
+   `Σ_I G_Ii = 2`, which holds only because every edge begins and ends at the
+   single cusp. This is the real work and the only route to L5a1/L6a4. Do not
+   attempt the `c_σ` repair before it.
+
+   **Lead worth following:** DG identify τ with Yamaguchi's theorem [Yam08] as
+   `τ_M = (1/c_M)·dτ_M(t)/dt|_{t=1}` where `c_M` is the **cusp shape**. The
+   Dubois–Huynh–Yamaguchi twist-knot paper (`uploads/0706.2213v3.pdf`, §5.3)
+   independently expresses the torsion at the holonomy representation via the
+   cusp shape. Since cusp shape is a *per-cusp* quantity, that is the natural
+   place a genuine `c`-dependence would enter — and the honest place to look
+   before inventing one.
 3. **Then** revisit the per-cusp factor — noting it may not survive, since its
    apparent origin (the `2^c` framing count) is one of the explanations the DG
    formula displaces.
