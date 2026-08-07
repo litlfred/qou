@@ -254,3 +254,48 @@ independent equations.
 
 **Next, and it is now the only mathematical gap:** make Route 8's transport
 rigorous — see `qou-8v3k`.
+
+---
+
+## ✅ 2026-08-07 — Route 11's certificate is now LEAN-PROVED, sorry-free
+
+`QOU/QBeta/FiveTwoLevelSevenLadder.lean`, built in-tree (707 jobs), axioms
+`[propext, Classical.choice, Quot.sound]`, zero `sorry`:
+
+| theorem | content |
+|---|---|
+| `numerators_of_five_term` | the three targets, from three five-term instances + reflection |
+| `sum_of_numerators` | their sum, `21·L1` — Route 8's target, hence the sum rule |
+
+`L` is **abstract** and reflection is an explicit hypothesis — the same style as
+the corpus's `FiveTwoSaddleSumRule.lean`. So this depends on **no** dilogarithm
+implementation, not on `qou-clx8`, and not on the Bloch group.
+
+### Two corrections the formalisation forced
+
+**1. My R-labels were permuted against the certificate coefficients.** The
+`span.py` search returned rows in the order `[R₃, R₂, R₁]` relative to the labels
+used in the write-up, so the published triples `(2,−4,1)/7` etc. were attached to
+the wrong instances. Re-derived against the labels:
+
+    7·T₁ =   hA − 4·hB + 2·hC
+    7·T₂ = 4·hA − 2·hB +   hC
+    7·T₃ = 2·hA −   hB + 4·hC
+
+Still cyclic shifts of `(1,2,4)`, the quadratic residues mod 7 — the structural
+claim survives; only the assignment was wrong. **Lean caught this**, because a
+permuted certificate simply does not typecheck.
+
+**2. The divided form is FALSE in characteristic 7.** Stating the targets as
+`Tₖ = mₖ/7·L1` over a general `Field` fails — `ring` correctly refuses, since
+`7 = 0` there. Clearing the `7` gives **integer** coefficients and the result
+holds over any `CommRing`. A `Field` + `CharZero` version would also work, but the
+cleared form is strictly more general and needs no typeclass at all.
+
+That second point is worth keeping: the `/7` that looked like the interesting
+arithmetic content is exactly the part that must be cleared to state the theorem
+correctly.
+
+**Still not proved:** the five-term relation itself, the inversion/Landen
+extensions, and Route 8's transport (`qou-trns`). **Sum rule: verified to 80 dps,
+unproved.**
