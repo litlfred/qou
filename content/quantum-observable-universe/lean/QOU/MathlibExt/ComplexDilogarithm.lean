@@ -465,4 +465,71 @@ theorem cLiTwoExt_eq_cLiTwo {y : ℂ} (hy : ‖y‖ < 1) : cLiTwoExt y = cLiTwo 
 @[simp] theorem cLiTwoExt_zero : cLiTwoExt 0 = 0 := by
   rw [cLiTwoExt_eq_cLiTwo (by norm_num), cLiTwo_zero]
 
+/-! ### Integrability of the `cLiTwoExt` integrand
+
+`log(1 − yz)/z` looks singular at `z = 0` and is not: `log(1 − yz) ∼ −yz`, so
+the quotient extends continuously with value `−y`. Formally that value is the
+*slope* of `z ↦ log(1 − yz)` at `0`, whose derivative there is `−y`.
+
+The hypothesis `Re(1 − yz) > 0` on `[0,1]` is not cosmetic: it keeps `1 − yz`
+inside `slitPlane`, without which `Complex.log` is discontinuous and the
+integral representation is simply wrong. It holds for the 5₂ saddle roots —
+`Re(1 − y₁z) = 1 − 0.785z` and `Re(1 − y₃z) = 1 − 0.430z`, both positive on
+`[0,1]`. -/
+
+open MeasureTheory in
+/-- **The `cLiTwoExt` integrand is interval-integrable on `[0,1]`** when
+`1 − yz` stays in the open right half-plane there. -/
+theorem intervalIntegrable_log_one_sub_div {y : ℂ}
+    (hre : ∀ z : ℝ, 0 ≤ z → z ≤ 1 → 0 < (1 - y * (z : ℂ)).re) :
+    IntervalIntegrable (fun z : ℝ => Complex.log (1 - y * (z : ℂ)) / (z : ℂ))
+      MeasureTheory.volume 0 1 := by
+  have hbase : Continuous fun w : ℝ => 1 - y * (w : ℂ) :=
+    continuous_const.sub (continuous_const.mul Complex.continuous_ofReal)
+  -- derivative of `z ↦ log (1 − yz)` at `0` is `−y`: the removable value
+  have hg : HasDerivAt (fun w : ℝ => 1 - y * (w : ℂ)) (-y) 0 := by
+    simpa using (Complex.ofRealCLM.hasDerivAt (x := (0 : ℝ))).const_mul y |>.const_sub 1
+  have hslit0 : (fun w : ℝ => 1 - y * (w : ℂ)) 0 ∈ slitPlane := by
+    simp
+  have hderiv : HasDerivAt (fun w : ℝ => Complex.log (1 - y * (w : ℂ))) (-y) 0 := by
+    simpa using hg.clog_real hslit0
+  -- the continuous extension
+  set G : ℝ → ℂ :=
+    fun z => if z = 0 then -y else Complex.log (1 - y * (z : ℂ)) / (z : ℂ) with hGdef
+  have hcont : ContinuousOn G (Set.Icc (0 : ℝ) 1) := by
+    intro z hz
+    rcases eq_or_ne z 0 with rfl | hz0
+    · refine continuousWithinAt_diff_self.mp ?_
+      have hslope := hasDerivAt_iff_tendsto_slope.mp hderiv
+      have hmono : nhdsWithin (0 : ℝ) (Set.Icc (0 : ℝ) 1 \ {0})
+          ≤ nhdsWithin (0 : ℝ) ({(0 : ℝ)}ᶜ) := nhdsWithin_mono _ fun w hw => hw.2
+      have htend : Filter.Tendsto G (nhdsWithin (0 : ℝ) (Set.Icc (0 : ℝ) 1 \ {0}))
+          (nhds (-y)) := by
+        refine (hslope.mono_left hmono).congr' ?_
+        refine Filter.eventuallyEq_of_mem self_mem_nhdsWithin fun w hw => ?_
+        have hw0 : w ≠ 0 := hw.2
+        simp only [hGdef, if_neg hw0, slope]
+        rw [div_eq_inv_mul]
+        simp [Complex.ofReal_inv]
+      have hG0 : G 0 = -y := by simp [hGdef]
+      rw [ContinuousWithinAt, hG0]
+      exact htend
+    · have hslit : (1 - y * (z : ℂ)) ∈ slitPlane :=
+        mem_slitPlane_iff.2 (Or.inl (hre z hz.1 hz.2))
+      have hcz : ContinuousWithinAt
+          (fun w : ℝ => Complex.log (1 - y * (w : ℂ)) / (w : ℂ)) (Set.Icc (0 : ℝ) 1) z := by
+        refine ContinuousWithinAt.div ?_ ?_ (by simpa using hz0)
+        · exact ContinuousAt.comp_continuousWithinAt (g := Complex.log)
+            (f := fun w : ℝ => 1 - y * (w : ℂ)) (continuousAt_clog hslit)
+            hbase.continuousWithinAt
+        · exact Complex.continuous_ofReal.continuousWithinAt
+      refine hcz.congr_of_eventuallyEq ?_ (by simp [hGdef, hz0])
+      filter_upwards [(eventually_ne_nhds hz0).filter_mono nhdsWithin_le_nhds] with w hw
+      simp [hGdef, hw]
+  have hGint : IntervalIntegrable G MeasureTheory.volume 0 1 :=
+    (hcont.mono (by rw [Set.uIcc_of_le (by norm_num : (0:ℝ) ≤ 1)])).intervalIntegrable
+  rw [intervalIntegrable_iff_integrableOn_Ioc_of_le (by norm_num : (0:ℝ) ≤ 1)] at hGint ⊢
+  refine hGint.congr_fun (fun w hw => ?_) measurableSet_Ioc
+  simp [hGdef, ne_of_gt hw.1]
+
 end QOU.MathlibExt
