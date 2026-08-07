@@ -1,0 +1,71 @@
+import QOU.BraidKnot.SYTEncodingBridgeTwo
+import QOU.BraidKnot.OVTopAssembly
+import QOU.Mathlib.RSKBurnsideTarget
+
+/-!
+# Discharging `RSKBurnsideHolds`
+
+`QOU.Mathlib.RSKBurnsideHolds n` — `∑_{p ⊢ n} dimSYT p ² = n!` — was introduced as a *target*: a
+well-typed `Prop` whose docstring records it as **"not yet a theorem"**, its proof "the RSK
+correspondence … which the pinned Mathlib lacks and which is the multi-session next step".
+
+It is now a theorem. Two ingredients that landed independently make it a reindexing:
+
+* `OVTopAssembly.sum_numSYT_sq_eq_factorial` — `∑ i : PartitionIndex n, numSYT i.diagram ² = n!`,
+  obtained by specialising the Wedderburn block-trace identity to the assembled `snSpectralData ℚ n`;
+* `SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux` — the bridge between the corpus' two
+  standard-tableau encodings, which is what let the RSK statement (phrased with `numSYT`) reach
+  `dimSYT` (phrased with `numStandardYoungTableaux`).
+
+The remaining glue is `partitionEquivYoungIndex`, whose forward map sends `p` to the diagram
+`YoungDiagram.ofRowLens (p.parts.sort (· ≥ ·)) _` — definitionally `RSKBurnsideTarget.partitionShape p`,
+the shape `dimSYT` counts. So `Equiv.sum_comp` transports the `PartitionIndex` sum to the
+`Nat.Partition` sum.
+
+Note this does **not** discharge `DeltaLambdaSignRule.burnside` (`∑_λ (dimIrrep λ)² = n!` over the
+custom `Partition` encoding): that still needs the roadmap's bridge (1), the hook-length identity
+`dimIrrep = numSYT` (`numSYT_mul_hookProduct`, still a `sorry`). The difference is exactly the
+encoding: `dimSYT` is defined as an SYT *count*, while `dimIrrep` is defined by hook-length
+division.
+
+-- Ref: [sagan2001] Sagan, The Symmetric Group §3.10 (RSK; ∑ (f^λ)² = n!)
+-/
+
+namespace QOU.BraidKnot.RSKBurnsideDischarge
+
+open QOU.BraidKnot
+
+/-- The index equiv's forward map produces exactly the shape `dimSYT` counts. -/
+theorem diagram_partitionEquiv (n : ℕ) (p : Nat.Partition n) :
+    (SpechtClassification.partitionEquivYoungIndex n p).diagram
+      = QOU.Mathlib.partitionShape p := rfl
+
+/-- `dimSYT` in the 0-indexed count, via the encoding bridge. -/
+theorem dimSYT_eq_numSYT (n : ℕ) (p : Nat.Partition n) :
+    QOU.Mathlib.dimSYT p = numSYT (QOU.Mathlib.partitionShape p) := by
+  unfold QOU.Mathlib.dimSYT
+  exact (SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux _).symm
+
+/-- **`RSKBurnsideHolds` is a theorem**: `∑_{p ⊢ n} dimSYT p ² = n!`.
+
+Reindex the (proved) `PartitionIndex` form of the RSK sum-of-squares along
+`partitionEquivYoungIndex`, converting each summand with the SYT-encoding bridge. -/
+theorem rskBurnsideHolds (n : ℕ) : QOU.Mathlib.RSKBurnsideHolds n := by
+  unfold QOU.Mathlib.RSKBurnsideHolds
+  have hstep : ∑ p : Nat.Partition n, (QOU.Mathlib.dimSYT p) ^ 2
+      = ∑ p : Nat.Partition n,
+          (numSYT ((SpechtClassification.partitionEquivYoungIndex n p).diagram)) ^ 2 := by
+    refine Finset.sum_congr rfl fun p _ => ?_
+    rw [dimSYT_eq_numSYT n p, diagram_partitionEquiv n p]
+  rw [hstep,
+    Equiv.sum_comp (SpechtClassification.partitionEquivYoungIndex n)
+      (fun i => (numSYT i.diagram) ^ 2)]
+  exact OVTopAssembly.sum_numSYT_sq_eq_factorial n
+
+/-- The concrete witness the abstract substrate axiom asked for, now unconditional
+(`RSKBurnsideTarget.rskBurnside_imp_substrate` applied to the theorem above). -/
+theorem substrate_witness (n : ℕ) :
+    ∃ dimFn : Nat.Partition n → ℕ, ∑ p : Nat.Partition n, (dimFn p) ^ 2 = n.factorial :=
+  ⟨QOU.Mathlib.dimSYT, rskBurnsideHolds n⟩
+
+end QOU.BraidKnot.RSKBurnsideDischarge
