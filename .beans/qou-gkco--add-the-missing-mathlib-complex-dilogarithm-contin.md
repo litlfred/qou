@@ -289,3 +289,37 @@ It does **not** reach `y₁` (`|y₁| = 1.52 > 1`). That still needs the inversi
 formula `Li₂ z + Li₂(1/z) = −π²/6 − ½log²(−z)` to cross `|z| = 1`. And the
 priority caveat stands: Route 5 of `qou-0yqu` took all of this off the critical
 path for the 5₂ sum rule.
+
+## 2026-08-07 — step 4 domain: `ball(1/2, 1/2)`, not the unit ball
+
+I had called "connect analyticity to the reflection identity" a
+connect-the-pieces step. That was wrong: **the naive unit-ball statement is
+ill-posed.**
+
+* For `z ∈ ball(0,1)`, `|1 − z|` reaches 2, so `cLiTwo (1 − z)` is *not*
+  given by its power series there.
+* `Complex.log z` has its branch cut running straight through `ball(0,1)`.
+
+The natural domain is `Metric.ball (1/2 : ℂ) (1/2)` — the disc on `[0,1]` as
+diameter. Three lemmas (landed, `lean-direct exit 0`, commit `1030d7daa2`,
+PR #4658) are exactly the three facts that make the reflection statement
+well-posed there:
+
+| lemma | why it is needed |
+|---|---|
+| `norm_lt_one_of_mem_ball_half` | ball ⊆ unit disc ⇒ both `cLiTwo z`, `cLiTwo (1−z)` are their series |
+| `one_sub_mem_ball_half` | `z ↦ 1−z` is reflection through the ball's centre ⇒ the reflected argument stays in range |
+| `re_pos_of_mem_ball_half` | `Re z > 0` on the ball ⇒ `log z`, `log (1−z)` both off the branch cut |
+
+Numerically pre-checked with 200 000 random samples in the ball: 0 violations.
+
+The real segment `(0,1)` lies in this ball, so it is an accumulation set —
+that is the route from the *real* `QOU.Archimedean.LiTwo_reflection'` to the
+complex statement, via
+`AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`.
+
+**Next:** state the reflection identity on `ball(1/2,1/2)` and discharge it by
+the identity theorem. Blockers to expect: assembling `AnalyticOnNhd` for the
+composite `z ↦ cLiTwo z + cLiTwo (1−z) + log z * log (1−z)` (the `log` factors
+need `Complex.analyticAt_log` off the cut), and supplying `IsPreconnected` for
+the ball.
