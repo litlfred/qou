@@ -34,16 +34,40 @@ there was the single-pole ratio test blending an antipodal pair in
 branch-dependent proportions, not two genuinely different singularities per
 branch. There is one pair, shared.
 
-**This is the ± of the leading blocks.** Step 1 found
-`B₁,₂ = ±√(q−1)/q` from the ramified edge polynomial. The sign-symmetry of
-the leading blocks propagates exactly to the sign-symmetry of the Borel
-singularities — as it must, since the ramification `x = z²` is what
-introduced the square root in the first place.
+## CORRECTION (added after the diagnostic below): the pair is NOT two Stokes sectors
+
+An earlier revision of this docstring read the antipodality as the two-sector
+structure, "the ± of the leading blocks propagating into the Borel plane".
+**That reading is withdrawn.** It was circular, and the diagnostic added at the
+end of `main()` shows why.
+
+The asymptotic recurrence is `b_{m+2} ≈ K q^{−m} b_m` because
+`b_{m+1}/b_m → 0` — measured at **9.3e-24 by m = 1000**. A two-step recurrence
+`c_{m+2} = λ c_m` has characteristic roots `±√λ`, so it **manufactures an
+antipodal pair by construction**. The exactness of `ξ₂/ξ₁ = −1` (21 digits) and
+its branch-independence (2.2e-29) are precisely what that mechanism predicts —
+a genuine two-sector Stokes structure would not generically give ratio exactly
+−1 to 21 digits.
+
+The even/odd decoupling and the ramification index 2 are the *same* structure
+seen at two levels of description, so "the ± matches the leading blocks" is not
+independent evidence of anything. The match was guaranteed.
+
+**Consequence for the multipliers: this route does not reach them.** The
+Prony pair resolves the even/odd split, not the connection data between Stokes
+sectors. The alternating component is suppressed by ~1e-24 in the asymptotic
+regime, so the sector information the multipliers encode is not visible in the
+raw `b_m` at all. Extracting them needs the theta-normalised canonical
+solutions inside the ramified single-slope picture — which this method does not
+construct.
+
+Scope-(a) negative on the Prony/ratio route. The numbers below stand; only the
+sector interpretation is withdrawn.
 
 ## What is and is not canonical here
 
-`ξ₂/ξ₁ = −1` is **convention-independent** and is the Stokes-relevant datum
-at this level: the two singular directions are antipodal.
+`ξ₂/ξ₁ = −1` is **convention-independent**, but per the correction above it is
+*not* a Stokes datum — it is the signature of the even/odd decoupling.
 
 `|ξ| = 2.36510358…` is **not** canonical — it depends on the normalisation
 chosen for the q-Borel transform (here `c_m = b_m q^{m(m−1)/4}`; another
@@ -136,13 +160,30 @@ def main() -> None:
     print()
     B = mp.sqrt(q - 1) / q
     print(f"    leading blocks B_1,2 = +/- {mp.nstr(B, 16)}")
-    print("    the +/- of the blocks propagates to the +/- of the singularities,")
-    print("    as it must: the ramification x = z^2 introduced the square root.")
+    print()
+    print("=" * 70)
+    print("  DIAGNOSTIC: is the pair Stokes structure, or two-step decoupling?")
+    print("=" * 70)
+    print("  b_{m+2} ~ K q^{-m} b_m holds when b_{m+1}/b_m -> 0. A two-step")
+    print("  recurrence c_{m+2} = lam c_m has char roots +/- sqrt(lam) --")
+    print("  it MANUFACTURES an antipodal pair with no Stokes content.")
+    bb = _solutions(1, 0, q, N)
+    ratios = []
+    for m in (200, 600, 1000):
+        rr = bb[m + 1] / bb[m]
+        ratios.append((m, rr))
+        print(f"    m={m:5d}   b_(m+1)/b_m = {mp.nstr(rr, 6)}")
+    two_step = abs(ratios[-1][1]) < mp.mpf("1e-15")
+    print()
+    print(f"  two-step regime dominant: {two_step}")
+    print("  => the antipodality is EXPLAINED by the decoupling. The sector")
+    print("     reading is withdrawn; this route does not reach the multipliers.")
     print()
     print(f"    |xi| = {mp.nstr(v1, 20)}   (log_q = {mp.nstr(mp.log(v1) / lq, 16)})")
     print("    NOT canonical: |xi| depends on the q-Borel normalisation")
     print("    (here c_m = b_m q^{m(m-1)/4}). No identification attempted.")
-    print("    xi_2/xi_1 = -1 IS canonical and is the Stokes-relevant datum.")
+    print("    xi_2/xi_1 = -1 is convention-independent but, per the diagnostic")
+    print("    above, is the two-step decoupling signature -- NOT a Stokes datum.")
 
     script_path = Path(__file__).resolve()
     try:
@@ -199,11 +240,24 @@ def main() -> None:
              "passed": branch_agree < mp.mpf("1e-20")},
         ],
         "verdict": (
-            "CONFIRMED: the q-Borel singularities of C1 form an exact antipodal pair, "
-            "branch-independent to 2.2e-29, mirroring the +/- of the leading blocks "
-            "B = +/- sqrt(q-1)/q. Supersedes step 2's 'two nearby singularities' reading. "
-            "The Stokes multipliers (residues at the pair) remain open."
+            "MIXED. CONFIRMED numerically: the q-Borel singularities form an exact "
+            "antipodal pair, branch-independent to 2.2e-29 -- superseding step 2's "
+            "'two nearby singularities' reading. WITHDRAWN: the interpretation of that "
+            "pair as the two Stokes sectors. The diagnostic shows b_(m+1)/b_m -> 9.3e-24, "
+            "so the recurrence is effectively two-step, and a two-step recurrence has "
+            "characteristic roots +/- sqrt(lam) -- it manufactures an antipodal pair with "
+            "no Stokes content. The match to the +/- of the leading blocks was circular "
+            "(even/odd decoupling and ramification index 2 are the same structure). "
+            "SCOPE-(a) NEGATIVE on the Prony/ratio route to the multipliers: the "
+            "alternating component is suppressed by ~1e-24, so sector information is not "
+            "visible in the raw b_m. Reaching the multipliers needs theta-normalised "
+            "canonical solutions in the ramified picture, which this method does not build."
         ),
+        "two_step_diagnostic": {
+            "b_ratio_by_m": [{"m": int(m), "b_m1_over_b_m": str(mp.nstr(r, 8))} for m, r in ratios],
+            "two_step_regime_dominant": bool(two_step),
+            "sector_interpretation_withdrawn": True,
+        },
         "scope": (
             "Separates and characterises the singularity pair. Does NOT extract the "
             "Stokes multipliers. |xi| deliberately not identified (normalisation-dependent). "
