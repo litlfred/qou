@@ -1,10 +1,10 @@
 ---
 # qou-0yqu
 title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-08-03T14:28:26Z
+updated_at: 2026-08-07T15:12:04Z
 ---
 
 
@@ -507,3 +507,41 @@ the obvious next thing to try.
 
 **Route count is now 6 tried, 6 not closing. Status unchanged: verified to
 80 dps, unproved.**
+
+## 2026-08-07T15:12Z — TAKEOVER of the stalled PR #4658. Claimed, nothing new proved.
+
+Bean was still `status: todo` while PR #4658 (branch
+`claude/fivetwo-disc-23-lit-2026-08-07`, 39 commits) carried all the work — an
+unclaimed-but-active state a sibling could have collided with. Now claimed.
+
+*Verified, not assumed, at takeover:*
+
+* PR #4658 is `mergeable_state: clean` against `main` — the stall is **not** a
+  conflict and not a failing gate. There are **zero** check runs on the head
+  commit; nothing was ever red.
+* The **sorry-free claim holds.** All ten `sorry` tokens across
+  `FiveTwoSumRuleIntegrand.lean`, `FiveTwoSaddleSumRule.lean`,
+  `ComplexDilogarithm.lean`, `BlochFiveTerm.lean` are inside docstrings
+  asserting sorry-freeness; **zero** are `sorry` tactics, and there are no
+  `axiom` declarations. Nothing was stubbed to fake progress.
+
+*What did NOT change.* No new mathematics. The sum rule is **verified to 80 dps,
+unproved**, exactly as the outgoing agent left it. The two open links are
+untouched and unstubbed:
+
+1. `cLiTwoExt` analytic on `ℂ ∖ [1,∞)` — needs differentiation under the
+   integral sign. Plumbing: it *identifies* `cLiTwoExt(y₁)` with the sum rule's
+   `Li₂(y₁)`, and closes `qou-ph1k`/`qou-gkco` too. One brick, two gaps.
+2. **Evaluating `−∫₀¹ log P(z)/z dz` in closed form.** The actual hard part.
+   Untouched by all eleven of the outgoing session's theorems.
+
+*One correction carried in from #4666 (merged), which the PR body predates.*
+The PR body says the Bloch–Wigner invariant "carries **no** information about
+our identity". Over-stated: the *vanishing of the sum* is automatic
+(`D(z̄) = −D(z)`, `D` real-vanishing), but the *individual value* is sharp and
+5₂-specific — `3·D(y₊) = Vol(5₂)`, agreeing to 20 digits. The cancellation
+destroys the information; it does not show there was none. The Route-2
+conclusion **for the sum rule** stands unchanged; only the general clause is
+wrong. Left as-is in the PR body pending owner steer on which vector to push.
+
+**Route count still 6 tried, 6 not closing.**
