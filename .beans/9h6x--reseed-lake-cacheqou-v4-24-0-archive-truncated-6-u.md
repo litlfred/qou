@@ -35,3 +35,43 @@ items). **Not fixed by this reseed:** the archive carries **0 `.trace` files**
 against 6990 oleans — measured in this container — so `lake` still treats every
 restored olean as stale and evicts it on build. That is bean `02kc`, which
 remains the live defect; this bean's truncation premise is resolved.
+
+## Root cause of the trace deficit (`02kc`) — TWO independent blockers
+
+Traced to code on 2026-08-07. Neither blocker alone explains it; both must be
+fixed, and fixing only one changes nothing observable.
+
+**Blocker 1 — the artifacts never exist.** `.trace` files are a *lake*
+bookkeeping artifact; only `lake build` writes them. The live branch was
+hand-seeded from a **lean-direct** (`lean -o`) build, which never produces
+them — so there was nothing to seed. `.github/workflows/lake-cache-refresh.yml`
+:114 states this outright: *"the live branches were seeded by hand instead"*
+(the workflow path itself does run `lake build` at :94–97, so it would have
+them). Measured here: `find .lake -name '*.trace'` → **0**, against 6990 oleans.
+
+**Blocker 2 — the seeder drops them anyway.** `scripts/lean-olean-cache-seed.sh`
+enumerates artifacts by extension and `trace` is absent from all three sites:
+
+| Line | Code | Missing |
+|---|---|---|
+| :38 | `for ext in olean ilean; do` | `trace` |
+| :57 | `find "$d" -name '*.olean' -o -name '*.ilean'` | `-o -name '*.trace'` |
+| :61 | same, under `SEED_PAPER=1` | same |
+
+So even seeding from a real `lake build`, traces would be filtered out.
+
+**Where the fix goes — NOT this repo.** As of `lake-cache-refresh.yml`:120–124
+the workflow no longer calls `lean-olean-cache-seed.sh`; it resolves `SVC` from
+`scripts/lake-cache.sh` → `folio-assistant/scripts/lake-cache.sh`. The first
+does not exist in qou, so **the authoritative seeder lives in
+`litlfred/folio-assistant`** and must be fixed there. `lean-olean-cache-seed.sh`
+is now a secondary/legacy path.
+
+**Explicitly NOT done here, and why.** No glob was added. Whether lake writes
+traces beside the olean in `.lake/build/lib/lean/` or elsewhere under
+`.lake/build/` could not be verified — this container has zero traces to
+inspect, and the authoritative seeder is in a repo not checked out here. A
+guessed `-name '*.trace'` under the wrong directory would silently seed nothing
+while *appearing* to fix the bug, which is the failure mode this bean already
+cost a month to. Validation needs one `lake build` → seed → restore →
+`lake build` cycle to confirm oleans survive.
