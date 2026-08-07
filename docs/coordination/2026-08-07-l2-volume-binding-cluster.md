@@ -92,7 +92,35 @@ flattening.
 
 ---
 
-## 3. New result, derived from #4610's own data (cherry-pick candidate)
+## 3. 🛑 RETRACTION — §3 below is NOT a new result; it re-derives an existing corpus law
+
+**Corpus-grep failure, mine.** Before claiming §3 I did not grep for an existing
+volume–binding law. There is one:
+
+- [`computations/a3_mirror_residual_reconciliation.py`](../../computations/a3_mirror_residual_reconciliation.py) L59–64:
+  `B_T_bc = M_E * 2 * VOL_8_11`, `B_He3_bc = M_E * 2 * VOL_L6a4` — i.e. the corpus
+  already carries **`B = 2·m_e·Vol(K)`** as the *bond-count* binding law.
+- [`computations/b_over_a_v5_unified.py`](../../computations/b_over_a_v5_unified.py) L327:
+  *"Kashaev law `B = ρ_F · m_e · Vol_hyp(K)`; historical knot IDs (6₂, 8₁₁, L6a4)."*
+
+My `E₀·Vol/B ≈ 3.97–4.09` is **algebraically the same statement**: `E₀ = m_e/(q₀(q₀−1))
+= 8.1918·m_e`, so `E₀·Vol/B ≈ 4` ⟺ `B ≈ 2.05·m_e·Vol` — the existing factor-2 law with a
+2.4 % offset. The mirror-pair ratio observation then follows trivially from it.
+
+**What actually survives as mine:** only the narrower observation that #4610's
+refutation is of **`tr_M` specifically**, and that the *already-existing* pure-`Vol`
+law does better on the mirror pair than `Vol·tr_M` does. That is a useful pointer for
+#4610, and it is much smaller than §3 as first written.
+
+This is the AGENTS.md #1515/#1532/#1543 pattern (declare-new-against-corpus) committed
+by the agent who quoted the rule two documents ago. Recorded, not buried.
+
+**The corpus also already recorded the honest negative I was walking toward**
+([`binding_link_volumes.py`](../../computations/binding_link_volumes.py) header):
+`B = m_e·Vol(K_bind)·Δtr` gives **−60 % for both ³H and ³He**, and *"the A-dependence
+cannot live in a single binding-link volume."*
+
+## 3b. The original §3 text (retained for the record, now downgraded)
 
 #4610 concludes *"`ρ = tr_M` radial handle refuted under every volume reading."*
 Correct — but their data also shows **what to drop**. Testing the A=3 mirror pair with
@@ -135,3 +163,52 @@ Recompute the volume-binding relation across **all four** L2 binding targets
 (`D`, `T`, `³He`, `⁴He`) under Reading 2, ratio-only, zero free parameters — the two-point
 `≈4` constant is not evidence until it survives four points. Blocked on the author's
 Reading-1-vs-Reading-2 ruling (§2.2).
+
+---
+
+## 6. Reading 1 vs Reading 2 — full pros/cons (author asked for context before ruling)
+
+**Key fact settled by grep:** Reading 2's link assignment is **SDP-derived, not
+chosen**. [`binding_link_volumes.py`](../../computations/binding_link_volumes.py)
+header: *"BINDING LINKS (from `binding-k-solver.witness.json` **SDP registry**)"* and,
+of the ³He→Borromean identification, *"**This is an identification, not a fit.**"*
+So the "Reading 2 is a lookup table someone tuned" worry is **unfounded**.
+
+| | **Reading 1** — literal mass-braid `H₉` closures | **Reading 2** — SDP-registry binding links |
+|---|---|---|
+| **Derivation status** | The framework's **own canonical construction** (`atom_braid_word_3A`). No assignment step to justify. | **SDP solver output**, explicitly "an identification, not a fit." |
+| **Hyperbolic?** | **No** — Vol ≡ 0 under all 3 crossing conventions (torus/satellite signature) | `T`→8₁₁ ✓, `³He`→L6a4 ✓ … **but `²H`→Hopf L2a1 is Seifert-fibred, Vol = 0** |
+| **Internal check** | — | L6a4 **is** the Borromean link = the per-nucleon braid `𝓑₃`. Non-trivial coincidence. |
+| **Consequence for the extended-Bloch route** | **Fatal.** No hyperbolic structure ⇒ no ideal triangulation ⇒ no flattening ⇒ no `β̂`. | Live for `A=3`, **dead for the deuteron**. |
+| **Known corpus negative** | — | `B = m_e·Vol·Δtr` gives **−60 % at both ³H and ³He**; *"the A-dependence cannot live in a single binding-link volume."* |
+| **Hidden cost** | none — it is what it is | binding link ≠ mass braid, so **"why does binding see the SDP link?"** becomes its own open derivation |
+
+### The problem neither reading escapes
+
+**The deuteron has `Vol = 0` under both.** Reading 1: everything is Vol 0. Reading 2:
+`²H → Hopf`, Seifert-fibred, Vol 0. The corpus's +0.2 % deuteron match was obtained by
+**substituting `Vol(𝓑₃)` for `Vol(Hopf)`** — an unjustified substitution, and precisely
+the move that needs a derivation rather than a convention.
+
+Since `B_D` is the **loosest** of the four L2 binding targets (4.5 ppb), a route that
+cannot reach the deuteron at all is not a route to the L2 binding targets.
+
+### Assessment
+
+- **Reading 1** is the *honest* reading (no assignment step) and gives a clean
+  **negative**: the mass-braid closure is Gromov-norm 0, so binding is **not** a
+  hyperbolic volume of the mass braid. That is a real, publishable structural result
+  and it closes the extended-Bloch route for light nuclei.
+- **Reading 2** is *also* derivation-legal (SDP output), keeps `A=3` alive, and has the
+  L6a4 = `𝓑₃` coincidence in its favour — but inherits the deuteron `Vol=0` hole and a
+  recorded −60 % negative at `A=3`.
+- **"Both, different objects"** is the most defensible and the corpus's implicit
+  position — but it owes a derivation of *why binding sees the SDP link and mass sees
+  the `H₉` closure*. That derivation does not exist. Until it does, picking Reading 2
+  because it keeps a route alive is a choice, not a result.
+
+**Recommendation:** rule **Reading 2** for `A ≥ 3` work *and* open the deuteron
+`Vol(Hopf)=0` substitution as an explicit blocker bean — do **not** let the `𝓑₃`
+substitution stand unexamined. Expect the honest outcome to be that volume alone
+carries the *ratio* structure (mirror pair, 2.9 %) but **not** the `A`-dependence,
+exactly as `binding_link_volumes.py` already found.
