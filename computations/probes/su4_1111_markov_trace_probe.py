@@ -73,6 +73,7 @@ import math  # noqa: E402
 from hecke_characters import partitions_of, standard_young_tableaux  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import str_at_true_precision  # noqa: E402
 import mass_at_3A_proper as m3  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 
@@ -382,7 +383,12 @@ def main() -> int:
                 "closed_form_rel_err": str(abs(he4["full_trM"] - cf) / abs(cf)),
                 "per_partition": [
                     {"lambda": list(r["lam"]), "m": r["m"], "f": r["f"],
-                     "y_lambda": str(r["y"]), "chi": str(r["chi"]),
+                     "y_lambda": str(r["y"]),
+                     # chi comes from _chi(), which ends in
+                     # mp.mpf(m3.chi_lambda_of_word(...)) — the f64
+                     # seminormal kernel — so str(<mpf>) would print
+                     # 50 dps of a 53-bit value.
+                     "chi": str_at_true_precision(r["chi"]),
                      "contrib": str(r["contrib"])} for r in he4["proj_rows"]],
             },
             "deuteron": {
