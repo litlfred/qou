@@ -325,6 +325,7 @@ export default chapter({
             "bond-order-eq-jet-degree-context",
             "bond-order-eq-jet-degree-proof",
             "binding-manybody-jet-filtration",
+            "delta-lambda-dt-index-unification",
             "cyclotomic-boundary-at-keystone",
             "bk-coordination-multiplicity",
             "jet-filtration-binding-extensive",
