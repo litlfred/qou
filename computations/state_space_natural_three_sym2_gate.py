@@ -85,11 +85,42 @@ What is verified here (exact integer arithmetic)
       spins 1/2 through 6.
   C5  The `SU(3)` contrast: `3 tensor 3 = 6 + 3bar` carries no singlet, since
       `3` is not self-dual -- its weight multiset is NOT negation-symmetric.
+  C6  **The parity split** (added 2026-08-07 as a correction, see below):
+      self-duality alone does NOT decide the gate.  For the `SU(2)` irrep of
+      dimension `d = 2j+1` the Frobenius-Schur indicator is `(-1)^{2j}
+      = (-1)^{d-1}`, so the invariant form is symmetric for odd `d` and
+      antisymmetric for even `d`.  The singlet therefore sits in `Sym^2` only
+      when `d` is odd.  Checked for `d = 2..9`.
+
+CORRECTION (2026-08-07)
+-----------------------
+An earlier version of this module inferred from C4 that "EVERY summand of every
+`V^{tensor n}` is self-dual, so none of them can pass the gate".  **That
+inference is invalid.**  Self-duality splits by Frobenius-Schur:
+
+  * `FS = +1` (orthogonal): the invariant form is symmetric, lives in `Sym^2`,
+    so `Sym^2(W)` carries a singlet -- gate FAILS;
+  * `FS = -1` (symplectic): the invariant form is antisymmetric, lives in
+    `Lambda^2`, so `Sym^2(W)` has NO singlet -- gate PASSES.
+
+C3 of this very module is a counterexample to the generalisation it was used to
+support: the 2-dimensional fundamental is self-dual with `FS = -1`, its singlet
+sits in `Lambda^2`, and it **passes** the `Sym^2` gate.
+
+What survives is the odd-dimensional case, which is the one the colour question
+actually needs: **no odd-dimensional `SU(2)` irrep passes the gate, in
+particular none of dimension 3.**  The conclusion drawn downstream is therefore
+unaffected -- a 3-dimensional triplet cannot be found among the summands of
+`V^{tensor n}` -- but the stated generality was wrong and is corrected here.
 
 Scope
 -----
-**scope-(b)** for the claim "some summand of `V^{tensor n}`, `dim V = 2`, passes
-the Sym^2 gate" -- excluded by self-duality of all `SU(2)` representations.
+**scope-(b)** for the claim "some **odd-dimensional** summand of
+`V^{tensor n}`, `dim V = 2`, passes the Sym^2 gate" -- excluded by the
+Frobenius-Schur parity computation (C6), *not* by self-duality alone.
+
+**NOT excluded:** even-dimensional summands, which are symplectic and do pass
+the gate.  They are simply the wrong dimension for a colour triplet.
 
 NOT claimed: that no 3-dimensional fibre exists anywhere in the framework; only
 that it cannot be found inside the tensor powers of the existing 2-dimensional
@@ -181,7 +212,8 @@ def main() -> int:
     checks["C4_all_su2_irreps_self_dual"] = c4
     print(f"\nC4  every SU(2) irrep has a negation-symmetric weight multiset")
     print(f"    (i.e. is self-dual), dims 2..13 : {c4}")
-    print("    => EVERY summand of every V^(tensor n) is self-dual")
+    print("    => every summand of every V^(tensor n) is self-dual")
+    print("    NOTE: self-duality alone does NOT decide the gate -- see C6.")
 
     # -- C5 : the SU(3) contrast ------------------------------------------
     # Fundamental 3 of SU(3): weights in the standard basis, as integer
@@ -199,6 +231,34 @@ def main() -> int:
     print(f"    zero-weight multiplicity in 3 (x) 3 : {zero_wt}  (want 0)")
     print("    => no singlet in 3 (x) 3; Sym^2(3) = 6 irreducible, GATE PASSED")
 
+    # -- C6 : the parity split (CORRECTION, 2026-08-07) --------------------
+    # Self-duality alone does not decide the gate.  For the SU(2) irrep of
+    # dimension d = 2j+1 the singlet in W (x) W sits in Sym^2 iff 2j is even,
+    # i.e. iff d is odd.  Verified by dimension bookkeeping, independent of
+    # the Frobenius-Schur formula it confirms.
+    print("\nC6  parity split -- does self-duality decide the gate?  NO")
+    print("    %-4s %-6s %-10s %-12s %s" % ("d", "2j", "dimSym^2", "singlet in", "gate"))
+    c6 = True
+    parity_rows = []
+    for d in range(2, 10):
+        twoj = d - 1
+        # W (x) W = sum_{k=0}^{2j} V_k ; Sym^2 collects k = 2j, 2j-2, ...
+        sym_ks = list(range(twoj, -1, -2))
+        dsym_from_ks = sum(2 * k + 1 for k in sym_ks)
+        c6 &= (dsym_from_ks == d * (d + 1) // 2)          # bookkeeping check
+        singlet_in_sym = (0 in sym_ks)
+        c6 &= (singlet_in_sym == (d % 2 == 1))            # odd d <=> singlet in Sym^2
+        gate = "FAILS" if singlet_in_sym else "PASSES"
+        print("    %-4d %-6d %-10d %-12s %s" % (d, twoj, dsym_from_ks,
+                                                "Sym^2" if singlet_in_sym else "Lambda^2",
+                                                gate))
+        parity_rows.append({"d": d, "singlet_in": "Sym^2" if singlet_in_sym else "Lambda^2",
+                            "gate": gate})
+    checks["C6_parity_decides_gate_not_self_duality"] = c6
+    print("    => odd d (integer spin, FS=+1)  : singlet in Sym^2   -> FAILS")
+    print("    => even d (half-int spin, FS=-1): singlet in Lambda^2 -> PASSES")
+    print("    The 2-dim fundamental PASSES. Self-duality does NOT imply failure.")
+
     all_ok = all(checks.values())
     print("\n" + "=" * 74)
     print(f"ALL CHECKS PASS : {all_ok}")
@@ -213,11 +273,25 @@ a singlet because the SU(2) adjoint is self-dual (it has an invariant symmetric
 form), whereas the SU(3) fundamental has Sym^2(3) = 6 irreducible because 3bar
 is a different representation.
 
-AND THE OBSTRUCTION GENERALISES. Every SU(2) representation is self-dual (C4),
-so EVERY summand of EVERY tensor power of a 2-dimensional fibre is self-dual,
-so none of them can pass the gate. scope-(b).
+HOW FAR THE OBSTRUCTION GENERALISES -- CORRECTED 2026-08-07. An earlier version
+of this verdict said: "every SU(2) rep is self-dual (C4), so EVERY summand of
+EVERY tensor power is self-dual, so none of them can pass the gate". That
+inference is INVALID, and C3 of this same module is the counterexample: the
+2-dimensional fundamental is self-dual with FS = -1, its singlet sits in
+Lambda^2, and it PASSES the gate.
 
-CONSEQUENCE: T3b's "inequivalent fibre objects" cannot mean "different summands
+Self-duality splits (C6). For the SU(2) irrep of dimension d the invariant form
+is symmetric when d is odd (FS = +1, singlet in Sym^2, gate FAILS) and
+antisymmetric when d is even (FS = -1, singlet in Lambda^2, gate PASSES).
+
+What survives is the odd-dimensional case -- which is the one the colour
+question needs: NO ODD-DIMENSIONAL SU(2) IRREP PASSES THE GATE, in particular
+none of dimension 3. scope-(b) for that statement, on the parity computation,
+not on self-duality alone. Even-dimensional summands are symplectic and do pass
+the gate; they are simply the wrong dimension for a triplet.
+
+CONSEQUENCE (unaffected by the correction): T3b's "inequivalent fibre objects"
+cannot mean "different summands
 of V^(tensor n)". It must mean genuinely non-isomorphic fibres -- a Tannakian
 gerbe / multi-fibre-functor situation, which is what qou-dwsh section 2b was
 reaching for and what remains unconstructed. The state space being "made of
@@ -250,14 +324,28 @@ and the gate sees through that.
                 "Sym^2(3) = 6 is irreducible"
             ),
             "generalisation": (
-                "every SU(2) representation is self-dual, so every summand of "
-                "every tensor power of a 2-dimensional fibre is self-dual and "
-                "none can pass the gate"
+                "CORRECTED 2026-08-07. Self-duality alone does NOT decide the "
+                "gate: for the SU(2) irrep of dimension d the invariant form is "
+                "symmetric when d is odd (singlet in Sym^2, gate fails) and "
+                "antisymmetric when d is even (singlet in Lambda^2, gate "
+                "passes). What holds is: no ODD-dimensional SU(2) irrep passes "
+                "the gate, in particular none of dimension 3"
+            ),
+            "parity_split": parity_rows,
+            "superseded_claim": (
+                "an earlier version asserted 'every summand of every tensor "
+                "power is self-dual, so none can pass the gate'. That is FALSE "
+                "-- the 2-dimensional fundamental is self-dual with FS = -1 and "
+                "PASSES the gate (C3 of this module is the counterexample to "
+                "the generalisation it was used to support). The downstream "
+                "conclusion is unaffected because it only needs dimension 3"
             ),
             "scope": (
-                "scope-(b) for 'some summand of V^(tensor n) with dim V = 2 "
-                "passes the Sym^2 gate', excluded by self-duality of all SU(2) "
-                "representations"
+                "scope-(b) for 'some ODD-DIMENSIONAL summand of V^(tensor n) "
+                "with dim V = 2 passes the Sym^2 gate', excluded by the "
+                "Frobenius-Schur parity computation (C6), NOT by self-duality "
+                "alone. Even-dimensional summands are symplectic and do pass "
+                "the gate; they are the wrong dimension for a triplet"
             ),
             "consequence_for_T3b": (
                 "'inequivalent fibre objects' cannot mean different summands of "
