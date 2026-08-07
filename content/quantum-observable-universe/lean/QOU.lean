@@ -378,6 +378,7 @@ import QOU.QBeta.FiveTwoCyclotomicBloch
 import QOU.QBeta.FiveTwoLevelSevenLadder
 import QOU.QBeta.FiveTwoRogersExtend
 import QOU.QBeta.FiveTwoFiveTermArguments
+import QOU.QBeta.FiveTwoRogersReflection
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge

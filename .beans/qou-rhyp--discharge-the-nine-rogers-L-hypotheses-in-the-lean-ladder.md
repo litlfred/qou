@@ -260,3 +260,66 @@ failing theorem until you have checked the gate.**
 
 **The one open analytic input to the numerators is Abel's five-term relation.**
 **Standing status unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-07 (end of session) — reflection BUILT; only Abel's relation is left
+
+`FiveTwoRogersReflection.lean` has compiled. The `⚠ NOT YET BUILT` header it
+carried is gone, and its theorems are audited:
+
+```
+rogersL_reflection    [propext, Classical.choice, Quot.sound]
+rogersL_one_sub       [propext, Classical.choice, Quot.sound]
+hasDerivAt_rogersL    [propext, Classical.choice, Quot.sound]
+rogersL_deriv_symm    [propext, Classical.choice, Quot.sound]
+```
+
+No `sorryAx` anywhere in the chain, which also certifies `LiTwo_reflection'`
+beneath it.
+
+**What killed the first two build attempts was not the mathematics.** The file
+failed at job 3177/3177 with `Unknown identifier 'LiTwo_reflection''` — a
+**namespace error**. `LiTwo` is declared in `QOU.QPochhammer`, but
+`LiTwo_reflection'` and the `hasDerivAt_*` lemmas are in `QOU.Archimedean`
+(`DilogReflection.lean` itself does `open QOU.QPochhammer`). The file's own
+comment said "note `LiTwo` lives in `QOU.QPochhammer`, not `QOU.Archimedean`" —
+correct about `LiTwo`, and exactly the wrong lesson to draw about the theorem.
+Both `open`s are needed; that is now in the file.
+
+Cost: two ~45-minute builds of a 3177-job Mathlib cone to surface a one-line
+fix. **When a file's only novel content is a `linear_combination` off an existing
+lemma, check the identifier resolves before starting the cone.**
+
+### New: `hasDerivAt_rogersL`
+
+    L'(x) = -(log(1-x)/x + log x/(1-x))/2   on (0,1)
+
+A product rule off `hasDerivAt_LiTwo` and `hasDerivAt_log_mul_log_one_sub`, both
+already sorry-free. This is the analytic ingredient any proof of the five-term
+relation starts from, so it is the first real step toward the one remaining gap.
+`rogersL_deriv_symm` records that the derivative is symmetric under `x ↦ 1 - x`
+— which is *why* reflection holds. It needs no hypotheses at all; the first draft
+carried `0 < x < 1` by reflex and the linter caught them unused. **Second time
+this session a side condition was added by reflex and turned out unnecessary**
+(the first was `x ≠ 1` in `FiveTwoFiveTermArguments`).
+
+### The twelve hypotheses, final state
+
+| group | count | status |
+|---|---|---|
+| inversion + Landen | 4 | ✅ by construction (`FiveTwoRogersExtend`) |
+| renaming `hsw3` | 1 | ✅ trivial |
+| reflection | 4 | ✅ **proved and built** (`FiveTwoRogersReflection`) |
+| five-term `hA`,`hB`,`hC` | 3 | ✅ **proved to follow from Abel** (`FiveTwoFiveTermArguments`) |
+
+**Eleven of twelve are discharged. The level-7 numerators now rest on exactly one
+unproved input: Abel's five-term relation on `(0,1)`.**
+
+That is the whole remaining gap on this branch of the chain. It does not close
+the sum rule — `qou-trns`'s transport is still unformalized, and `extend` is
+still not identified with the analytic continuation in Lean (`qou-rstq` item 4,
+closed on paper by Route 15 but not in Lean).
+
+**Standing status, unchanged all session: the 5₂ sum rule is verified to 80 dps,
+unproved.**
