@@ -390,3 +390,53 @@ principle gives zeros − poles directly), and test single-valuedness by
 continuing `arg χ` around a full circle rather than sampling principal values.
 Until that is done, **χ's divisor and closed form stay open**, and so do the
 Stokes multipliers.
+
+## 2026-08-07 (ninth) — contradiction SHARPENED, and the search re-aimed
+
+Ran the two tests the previous entry named. Both came back clean, which rules
+out the easy escapes and leaves one concrete possibility.
+
+**Single-valued.** Continuous unwrap of `arg χ` around the full circle
+`|z| = 0.41`, 48 points: total change `8.2e-202`, **winding number 0**. So χ is
+single-valued — the tent plus sign-flip is *not* branch structure, and suspect
+(2) of the previous entry is dead.
+
+**No divisor at the apex.** Dense sweep across `arg = π/2`: `|χ|` saturates
+smoothly at `−73.446816124` and `arg χ` passes through zero *antisymmetrically*
+(`−8.05e-10` at `0.499π`, `+8.05e-10` at `0.501π`, `−4.8e-129` at `0.5π`). No
+zero, no pole, nothing singular there.
+
+**So the contradiction stands** — bounded + p-periodic + non-constant +
+meromorphic. But one measurement I had been treating as exact turns out not to
+be, and it is the way out.
+
+**The `|z|`-independence is NOT exact.** At `arg = π/2` across a full
+`p`-period: `−73.44681612731, −73.44681612555, −73.44681612442,
+−73.44681612731`. That wiggle is ~`3e-9` in `log10` and **returns exactly at
+the period** — so it is real structure, not noise.
+
+This matters because a non-constant meromorphic `f` **cannot** have `|f|`
+depending on `arg z` alone: `log|f|` would be harmonic and therefore linear in
+`θ`, contradicting the measured tent. So the near-`|z|`-independence is an
+approximation, and the true function is (linear in `θ`) + (small periodic in
+`ln|z|`) — exactly how elliptic functions look on a **thin** torus, which
+`ℂ*/p^ℤ` is here: `log p = 0.0522` is small, so one period is far longer than
+the other and everything is dominated by a single term with exponentially small
+corrections.
+
+**Re-aimed search.** The divisor is a discrete set of *points*, and I was
+scanning one circle assuming `|z|`-independence made that sufficient. It does
+not. Near a simple pole `|χ| ~ A/|z−z₀|`; with angular spacing `~0.05` at
+`r = 0.41`, a pole with residue `A ≲ 1e72` never lifts a neighbouring sample
+above the observed `1e73.4` ceiling. **A weak-residue pole is entirely
+consistent with everything measured** — which on a thin torus is exactly what
+to expect.
+
+So: do **not** conclude χ is pole-free from a bounded scan. The next step is a
+targeted 2D search over the fundamental annulus at `DPS ≥ 200`, or better, an
+argument-principle count on a *small* contour swept over the annulus, which
+detects a weak pole regardless of residue size. Until then:
+
+- χ's divisor and closed form: **OPEN**
+- the bounded/elliptic/non-constant tension: **OPEN, and now precisely stated**
+- Stokes multipliers: **OPEN**
