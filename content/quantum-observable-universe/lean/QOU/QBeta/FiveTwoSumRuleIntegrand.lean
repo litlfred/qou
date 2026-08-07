@@ -51,6 +51,7 @@ regular, so it converges anyway. No complex dilogarithm, no branch cut.
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
+import QOU.MathlibExt.ComplexDilogarithm
 
 namespace QOU.QBeta.FiveTwo
 
@@ -409,5 +410,76 @@ theorem sum_re_log_one_sub_eq_log_recipCubic {y₁ y₂ y₃ : ℂ}
   congr 1
   rw [← norm_mul, ← norm_mul, hprod, Complex.norm_real, Real.norm_eq_abs,
     abs_of_pos hP]
+
+/-! ### The three-root sum collapses to ONE real integral
+
+The assembly step. With the pointwise identity above, plus linearity of the
+integral and the fact that `Re` commutes with it, the three separate
+dilogarithm-integrals over the roots become a single integral of a real
+polynomial's logarithm:
+
+    Σⱼ Re Li₂(yⱼ) = −∫₀¹ log(1 − 2z + 3z² − z³)/z dz
+
+with `Li₂` the integral-defined `QOU.MathlibExt.cLiTwoExt`, which is the object
+that makes sense at `‖y₁‖ = 1.52` where the series does not.
+
+The integrability side conditions are hypotheses rather than derived: for the
+5₂ roots they are discharged by
+`QOU.MathlibExt.intervalIntegrable_log_one_sub_div` (which needs
+`Re(1 − yz) > 0` on `[0,1]`, true for all three roots) together with the fact
+that `Complex.reCLM` preserves interval-integrability.
+
+**This does not prove the sum rule.** It makes Route 5's identity a theorem
+about `cLiTwoExt`; what remains is (i) identifying `cLiTwoExt` with the `Li₂` of
+the sum rule off the disc — i.e. proving it is the analytic continuation, still
+open — and (ii) evaluating the resulting real integral in closed form, which is
+untouched. Bean `qou-0yqu`. -/
+
+open MeasureTheory in
+/-- **`Σⱼ Re cLiTwoExt(yⱼ) = −∫₀¹ log P(z)/z dz`.** -/
+theorem sum_re_cLiTwoExt_eq_integral {y₁ y₂ y₃ : ℂ}
+    (e1 : y₁ + y₂ + y₃ = 2) (e2 : y₁ * y₂ + y₁ * y₃ + y₂ * y₃ = 3)
+    (e3 : y₁ * y₂ * y₃ = 1)
+    (h₁ : IntervalIntegrable (fun z : ℝ => Complex.log (1 - y₁ * (z : ℂ)) / (z : ℂ))
+      volume 0 1)
+    (h₂ : IntervalIntegrable (fun z : ℝ => Complex.log (1 - y₂ * (z : ℂ)) / (z : ℂ))
+      volume 0 1)
+    (h₃ : IntervalIntegrable (fun z : ℝ => Complex.log (1 - y₃ * (z : ℂ)) / (z : ℂ))
+      volume 0 1)
+    (r₁ : IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y₁ * (z : ℂ))).re / z)
+      volume 0 1)
+    (r₂ : IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y₂ * (z : ℂ))).re / z)
+      volume 0 1)
+    (r₃ : IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y₃ * (z : ℂ))).re / z)
+      volume 0 1) :
+    (QOU.MathlibExt.cLiTwoExt y₁).re + (QOU.MathlibExt.cLiTwoExt y₂).re
+        + (QOU.MathlibExt.cLiTwoExt y₃).re
+      = -∫ z in (0 : ℝ)..1, Real.log (1 - 2 * z + 3 * z ^ 2 - z ^ 3) / z := by
+  have hdiv : ∀ (w : ℂ) (r : ℝ), (w / (r : ℂ)).re = w.re / r := by
+    intro w r
+    rw [div_eq_mul_inv, ← Complex.ofReal_inv, Complex.mul_re, Complex.ofReal_re,
+      Complex.ofReal_im, mul_zero, sub_zero, div_eq_mul_inv]
+  have key : ∀ (y : ℂ),
+      IntervalIntegrable (fun z : ℝ => Complex.log (1 - y * (z : ℂ)) / (z : ℂ)) volume 0 1 →
+      (QOU.MathlibExt.cLiTwoExt y).re
+        = -∫ z in (0 : ℝ)..1, (Complex.log (1 - y * (z : ℂ))).re / z := by
+    intro y h
+    rw [QOU.MathlibExt.cLiTwoExt, Complex.neg_re]
+    congr 1
+    have hcomm := Complex.reCLM.intervalIntegral_comp_comm
+      (μ := volume) (a := (0 : ℝ)) (b := 1) h
+    rw [show ((∫ z in (0 : ℝ)..1, Complex.log (1 - y * (z : ℂ)) / (z : ℂ)).re)
+        = Complex.reCLM (∫ z in (0 : ℝ)..1, Complex.log (1 - y * (z : ℂ)) / (z : ℂ))
+      from rfl, ← hcomm]
+    refine intervalIntegral.integral_congr fun z _ => ?_
+    exact hdiv (Complex.log (1 - y * (z : ℂ))) z
+  rw [key y₁ h₁, key y₂ h₂, key y₃ h₃, ← neg_add, ← neg_add,
+    ← intervalIntegral.integral_add r₁ r₂,
+    ← intervalIntegral.integral_add (r₁.add r₂) r₃]
+  congr 1
+  refine intervalIntegral.integral_congr fun z hz => ?_
+  rw [Set.uIcc_of_le (by norm_num : (0 : ℝ) ≤ 1)] at hz
+  rw [← add_div, ← add_div,
+    sum_re_log_one_sub_eq_log_recipCubic e1 e2 e3 hz.1 hz.2]
 
 end QOU.QBeta.FiveTwo
