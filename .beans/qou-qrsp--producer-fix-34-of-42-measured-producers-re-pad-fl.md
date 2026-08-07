@@ -76,3 +76,30 @@ biased toward LOCAL by construction.
 Next: measure rho_k_co_casimir_extended; re-measure LOCAL vs propagated with a
 committed tool; fix the two library-level Class A idioms (source fix and
 witness regeneration as separate commits — they change numbers).
+
+## CORRECTION to the section above: `propagated = 0` was NOT refuted
+
+The claim above that `propagated = 0` is refuted was **wrong** and is retracted.
+It rested on grepping a worktree this session had itself been running producers
+in — the "upstream" witness holding the padded string was this session's own
+regenerated output, not the committed corpus. `git show HEAD:` shows only the
+short form. That is the failure `producer_repad_sweep.py` warns about in
+capitals, committed while cataloguing the same habit in others.
+
+Measured properly with a committed tool
+(`computations/witness_padding_provenance.py`, indexes the COMMITTED corpus
+before anything runs, excludes the producer's own fresh output), over all 19
+re-padders / 218 padded fields:
+
+  VERBATIM_UPSTREAM        0   <- the exact-string result is CONFIRMED
+  VALUE_UPSTREAM          37   <- distinctive value upstream, invisible to it
+  VALUE_UPSTREAM_ROUND    15   <- matched 1.0/6.0; vacuous, not propagation
+  LOCAL                  166
+
+So `propagated = 0` is right about strings and 17% short about values. The
+round-number split is load-bearing: without it the gap_a4 near-integers read as
+inherited only because `1.0` is everywhere.
+
+The two tools agree and were built independently: where the tracer finds a
+local float64 entry, provenance says LOCAL (chirality 71/71); where it finds
+none, the value is upstream (qbeta diagnostic 7/7).
