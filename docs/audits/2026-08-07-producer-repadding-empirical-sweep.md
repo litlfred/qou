@@ -173,3 +173,87 @@ float64-precision (in which case promoting it to `mpf` and serializing at
 *downcast upstream* from a full-precision value (in which case the padding
 is a symptom and the real defect is the lost precision). Picking wrong
 either fakes precision or conceals a real loss, so it is not mechanizable.
+
+---
+
+# Root cause found (same day): constants built at import time
+
+The per-file judgment the sweep deferred turned out to have a single
+systematic answer for the largest class, and it is **not** the mechanism
+anyone was looking for.
+
+A module-level constant
+
+```python
+B_AME = {"D": mp.mpf("2.22456607"), ...}
+```
+
+is constructed at **import time**, when `mp.dps` is still mpmath's default
+**15** — about binary64. The value is rounded to ~53 bits *before*
+`set_compute_dps()` ever runs, and raising dps afterwards cannot recover
+what was already discarded. Serialized at 50 dps it prints the binary64
+expansion:
+
+```
+2.2245660699999998399789546965621411800384521484375000000...
+                    ^^^ dyadic tail — this IS float64 padding
+```
+
+**String-sourcing is necessary but not sufficient; the timing matters too.**
+That is why `mpf_float_source_audit.py` passes these lines — `mpf("...")` is
+precisely the compliant form it asks for — while they produce exactly the
+defect the gate exists to prevent. It also explains why 5661 "compliant"
+call sites were not the reassurance they looked like.
+
+Reproduction:
+
+| built | serialized at 50 dps | padded? |
+|---|---|---|
+| at `dps=15` (module import) | `2.224566069999999839978954696562141180038452148437500…` | **yes** |
+| after `set_compute_dps()` | `2.224566070000000000000000000000000000000000000000000` | no |
+| inside `workdps(50)` | `2.224566070000000000000000000000000000000000000000000…` | no |
+
+The corpus already contains both correct forms — `codata_constants.
+_ame_binding_mev` wraps construction in `workdps(max(50, dps))`, and 152
+producers call `set_compute_dps()` at module level before their constants.
+The clean sibling `binding_depth_stratified.py` reads `B_AME` from the
+registry; the three that re-padded hand-typed the same numbers.
+
+## The second defect this exposed: drifted experimental constants
+
+The hand-typed values do not agree with the vendored AME2020 registry:
+
+| isotope | hand-typed | AME2020 registry | rel. diff |
+|---|---|---|---|
+| D | 2.22456607 | 2.2245662 | 5.8e-08 |
+| ³He | 7.7180428 | 7.71804132 | 1.9e-07 |
+| ⁴He | 28.295674 | 28.2956624 | 4.1e-07 |
+
+and the corpus carries **four mutually inconsistent hardcoded sets**
+(`2.22456607` / `2.224566` / `2.22452` / registry) across 14 producers.
+Same class as the CODATA-2018 `U_MEV` literal fixed in #4653: a constant
+typed by hand once and left to drift while the registry moved.
+
+Routing to the registry fixes both at once — four producers done
+(`binding_depth_stratified_{lr,rust,knot_weighted,selfconj}`), verified
+0 padded fields where there were 3/3/9. It **changes those probes' numbers
+by up to 410 ppb**: a correction, not a regression, but a real behavioural
+change, so witnesses are regenerated separately from the source fix.
+
+## The gate — and why it is not CI-enabled yet
+
+[`computations/mpf_import_time_dps_audit.py`](../../computations/mpf_import_time_dps_audit.py)
+detects the class directly: build each module-level literal at `dps=15` and
+again at `dps=60`; if they differ, precision was lost. Exactly-representable
+values (`mpf(0)`, `mpf("0.5")`, dyadic tolerances) are not flagged.
+
+Current count: **1485 sites across 497 witness-emitting scripts** (1570 / 520
+including scripts that emit nothing, `--all`).
+
+That count is **candidates, not confirmed defects** — a lossy `mpf('0.3')`
+used as a plot bound or grid step misrepresents nothing; it is only a defect
+when the constant reaches a witness as a claimed high-precision datum. So
+`--strict` is deliberately **not** wired into CI: at 1485 findings it would
+be a gate everyone learns to ignore, which is exactly the failure #4653
+avoided by fixing its own findings outright to keep that gate at baseline
+zero. Draining precedes enforcement.
