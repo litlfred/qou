@@ -1,0 +1,88 @@
+{
+  "engine": "scipy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-07T17:15:21.558743+00:00",
+  "commitSha": "19ac3e0a2c53c4485c16bf7d5a694ccb2c89afb6",
+  "assertions": [
+    {
+      "name": "confinement_lp_is_homogeneous",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.5,
+      "source": "x*(n) = (n/n0) x*(n0) and ||offset||/n constant across the tested net values — the cone-slice structure of G x >= 0"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 28,
+  "computation": "qbeta-confinement-sdp-offset-homogeneity",
+  "scriptFile": "qbeta_confinement_sdp_offset_homogeneity_probe.py",
+  "scriptHash": "9aaf640dc868",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Tests whether the confinement operator-selection LP's solution offset can carry theta_K. The Frobenius constraint Gx >= 0 is a homogeneous cone, so the feasible set at net n_target is n_target times a fixed polytope; with t and G knot-independent (pyhecke.gram) and only n_target = |tr_M(K)| varying, the optimum and hence the offset scale exactly. Verified numerically. Consequence: two knots give PARALLEL offsets — the angle is knot-independent and the magnitude is proportional to tr_M(K), so the pair supplies one number, not two, and is ratio-shaped. AfreeThetaConstraint.ratio_attained proves such a candidate unfalsifiable. Escape: a formulation with knot-dependent t or G is not homogeneous and is not excluded. Nothing fitted.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "program": "min t.x s.t. 1^T x = n_target, G x >= 0 (prop:operator-selection-lp)",
+    "knot_independent_inputs": {
+      "t": "tr_M(b_i) from pyhecke.gram",
+      "G": "tr_M(b_i b_j)",
+      "basis": [
+        "γ",
+        "σ₀",
+        "σ₁",
+        "L₊",
+        "L₋",
+        "e⁻"
+      ]
+    },
+    "knot_dependent_input": "n_target = |tr_M(K)| only",
+    "scaling_table": [
+      {
+        "n_target": "1.0",
+        "offset_norm": 136.36523131115678,
+        "offset_norm_over_n": 136.36523131115678,
+        "max_dev_from_scaled": 0.0,
+        "angle_dev_from_base_rad": 0.0
+      },
+      {
+        "n_target": "2.0",
+        "offset_norm": 272.73046262231355,
+        "offset_norm_over_n": 136.36523131115678,
+        "max_dev_from_scaled": 0.0,
+        "angle_dev_from_base_rad": 0.0
+      },
+      {
+        "n_target": "3.7067",
+        "offset_norm": 505.46500290106485,
+        "offset_norm_over_n": 136.36523131115678,
+        "max_dev_from_scaled": 5.684341886080802e-14,
+        "angle_dev_from_base_rad": 0.0
+      },
+      {
+        "n_target": "100.0",
+        "offset_norm": 13636.523131115684,
+        "offset_norm_over_n": 136.36523131115683,
+        "max_dev_from_scaled": 4.547473508864641e-12,
+        "angle_dev_from_base_rad": 0.0
+      }
+    ],
+    "homogeneous": true,
+    "why_it_matters": "homogeneity makes the offset direction knot-independent and the magnitude proportional to tr_M(K); the pair is therefore ratio-shaped and unfalsifiable by ratio_attained",
+    "the_only_escape": "put the braid's operator content into the OBJECTIVE t or the GRAM G, not merely the net constraint n_target; that breaks homogeneity and is not excluded here",
+    "verdict": "THE CONFINEMENT LP IS HOMOGENEOUS, SO ITS OFFSET CANNOT CARRY ϑ_K — a structural exclusion of the canonical formulation, established before any fitting. The Frobenius constraint G x >= 0 is a CONE, so the feasible set at net n_target is exactly n_target times the fixed polytope at 1. Measured: x*(n) = (n/n0) x*(n0) to 4.5e-12 and the offset direction is constant to 0 rad, with ||offset||/n constant. Since t and G are knot-INDEPENDENT (properties of the H_3 basis at q0) and only n_target = |tr_M(K)| varies, two knots produce PARALLEL offsets: the ANGLE carries zero knot information — it is literally the same number for every knot — and the MAGNITUDE is a fixed constant times tr_M(K). So the pair (magnitude, angle) supplies ONE knot-dependent number, not two, and its knot-to-knot content is the ratio tr_M(K1)/tr_M(K2). AfreeThetaConstraint.ratio_attained proves a ratio-shaped candidate is unfalsifiable — it names an A_omega rather than testing one. This route, in this formulation, therefore cannot clear the falsifiability bar. THE ESCAPE, and it is the only one: a formulation whose t or G is itself knot-dependent is NOT homogeneous and is NOT excluded. That means the braid's own operator content must enter the OBJECTIVE or the GRAM, not merely the net constraint. SCOPE (a): this excludes the canonical scalar-net formulation as the corpus builds it, not the proposal. Nothing fitted; nothing wired."
+  }
+}
