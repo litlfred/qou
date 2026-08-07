@@ -37,6 +37,11 @@ from mpmath import mpf, mp, fabs, acos
 
 # Cheat-sheet derived μ₀ = m_e / (3(q-q⁻¹)/2)
 # Compute symbolically from q_0
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+mp.dps = 50
 M_E_MEV = mpf("0.51099895069")
 Q_0 = mpf("1.1097090249") # from substrate calibration
 

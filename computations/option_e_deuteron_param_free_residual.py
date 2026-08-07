@@ -27,6 +27,11 @@ from pathlib import Path
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+mp.dps = 50
+
 
 M_E_MEV = mpf("0.51099895069")
 B_D_AME_MEV = mpf("2.224566")  # deuteron binding (AME), as used in v6/v7

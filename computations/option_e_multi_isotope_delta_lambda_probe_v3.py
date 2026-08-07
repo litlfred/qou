@@ -67,6 +67,11 @@ def parse_rows(chi_data):
 
 # AME binding energies (MeV)
 AME_MeV = {
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+mp.dps = 50
     "deuteron":  mpf("2.224566"),
     "tritium":   mpf("8.481798"),
     "helium-3":  mpf("7.71806"),

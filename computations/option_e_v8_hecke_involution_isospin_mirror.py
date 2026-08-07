@@ -32,6 +32,11 @@ from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+mp.dps = 50
+
 
 M_E_MEV = mpf("0.51099895069")
 M_PI_MEV = mpf("139.57039")  # standalone probe: no substrate import (intentional)

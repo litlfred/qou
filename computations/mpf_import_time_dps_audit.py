@@ -104,15 +104,45 @@ def _is_mpf(call: ast.Call) -> bool:
     return name == "mpf"
 
 
+def _raises_dps(stmt: ast.stmt) -> bool:
+    """Does this module-scope statement raise working precision?
+
+    Three idioms are in use here and all three count:
+      set_compute_dps()          — 152 producers
+      mp.dps = 50 / mp.mp.dps    — the option_e and probe families
+      with mp.workdps(...)       — codata_constants
+    """
+    if isinstance(stmt, ast.Expr) and isinstance(stmt.value, ast.Call):
+        f = stmt.value.func
+        name = (f.attr if isinstance(f, ast.Attribute)
+                else f.id if isinstance(f, ast.Name) else None)
+        if name in {"set_compute_dps", "workdps"}:
+            return True
+    if isinstance(stmt, ast.Assign):
+        for t in stmt.targets:
+            if isinstance(t, ast.Attribute) and t.attr == "dps":
+                return True
+    return False
+
+
 def scan_file(path: Path) -> list[dict]:
+    """Module-scope mpf literals built BEFORE precision is raised.
+
+    Position matters: a constant appearing after a module-level
+    `set_compute_dps()` / `mp.dps = 50` is built at full precision and is
+    correct. Only what precedes the raise is lossy — so this walks module
+    statements in order and stops flagging once precision has been set.
+    """
     try:
         tree = ast.parse(path.read_text(encoding="utf-8"))
     except Exception:
         return []
     out: list[dict] = []
-    for stmt in tree.body:                      # module scope only
+    for stmt in tree.body:                      # module scope only, in order
         if isinstance(stmt, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
             continue
+        if _raises_dps(stmt):
+            break                               # everything after is fine
         # `with mp.workdps(...)` at module scope is the correct pattern
         if isinstance(stmt, ast.With) and "workdps" in ast.dump(stmt):
             continue
@@ -123,8 +153,11 @@ def scan_file(path: Path) -> list[dict]:
             if lit is None:                     # mpf(<expr>) — not a literal
                 continue
             if loses_precision(lit):
-                out.append({"file": path.relative_to(ROOT).as_posix(),
-                            "line": node.lineno, "literal": lit})
+                try:
+                    rel = path.relative_to(ROOT).as_posix()
+                except ValueError:
+                    rel = path.as_posix()
+                out.append({"file": rel, "line": node.lineno, "literal": lit})
     return out
 
 
