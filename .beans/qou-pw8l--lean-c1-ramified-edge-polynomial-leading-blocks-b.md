@@ -1,11 +1,11 @@
 ---
 # qou-pw8l
 title: 'Lean: C1 ramified edge polynomial + leading blocks B = ±sqrt(q-1)/q'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-07T08:44:24Z
-updated_at: 2026-08-07T08:44:24Z
+updated_at: 2026-08-07T09:11:28Z
 ---
 
 Formalise the two results of agent 4656 that SURVIVED (both algebraic, which is why they held while the numerical readings failed):
