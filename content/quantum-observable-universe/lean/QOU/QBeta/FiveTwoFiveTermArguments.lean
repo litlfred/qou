@@ -1,6 +1,7 @@
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Algebra.Field.Basic
+import QOU.QBeta.FiveTwoLevelSevenLadder
 
 /-!
 # `hA`, `hB`, `hC` are genuine five-term instances — the argument matching, proved
@@ -268,5 +269,51 @@ theorem hC_of_five_term (L : K → K)
     linear_combination -arg_C2 hx hr hs
   rw [h2, h3, h1] at five
   linear_combination five
+
+/-! ### Capstone: Abel's relation ⟹ the level-7 numerators
+
+Everything in this lane composes into one statement. Its hypotheses are exactly
+two things — the five-term relation at three points, and reflection at four —
+and its conclusion is the three numerators `(17, 5, -1)`.
+
+Read the hypothesis list as the honest bill: that is *all* that is still assumed
+about `L`. The inversion and Landen hypotheses the ladder used to take are gone,
+discharged by construction in `FiveTwoRogersExtend`; the argument identifications
+are gone, proved above; the `hsw3` renaming is gone. What remains is Abel, and
+reflection — and reflection is itself proved for the corpus's real `LiTwo` in
+`FiveTwoRogersReflection`.
+
+So on this branch of the chain there is **one** open input, and it is classical.
+That is not the sum rule: the transport `x = 1 → x = -1` is still unformalized
+(`qou-trns`), and `extend` is still not identified with the analytic
+continuation in Lean (`qou-rstq` item 4). -/
+
+/-- **Abel's five-term relation at three points, plus reflection at four, gives
+the level-7 numerators `(17, 5, -1)`.**
+
+The five-term hypotheses carry their own arguments — `x * (1 - y) / (1 - x * y)`
+and the rest — so nothing about which instance is which is assumed here; that is
+what `arg_A1` … `arg_C2` prove. -/
+theorem numerators_of_abel (L : K → K) (L1 : K)
+    (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hq : q * (2 - x) = 1)
+    (hr : r * (x + 1) = x) (hs : s * x = 1 - x) (hne : 1 - x * x ≠ 0)
+    -- reflection, at the four points of `(0,1)` in play
+    (hrw : L (1 - x) = L1 - L x) (hrq : L (1 - q) = L1 - L q)
+    (hrr : L (1 - r) = L1 - L r) (hrs : L (1 - s) = L1 - L s)
+    -- Abel, at the three points -- with the relation's own arguments
+    (fiveA : L x + L x - L (x * x) - L (x * (1 - x) / (1 - x * x))
+               - L (x * (1 - x) / (1 - x * x)) = 0)
+    (fiveB : L (1 - x) + L q - L ((1 - x) * q)
+               - L ((1 - x) * (1 - q) / (1 - (1 - x) * q))
+               - L (q * (1 - (1 - x)) / (1 - (1 - x) * q)) = 0)
+    (fiveC : L x + L s - L (x * s) - L (x * (1 - s) / (1 - x * s))
+               - L (s * (1 - x) / (1 - x * s)) = 0) :
+    (7 * (2 * L1 + 2 * L x - L q) = 17 * L1)
+      ∧ (7 * (2 * L x - L r) = 5 * L1)
+      ∧ (7 * (-(2 * L1) + 2 * L x + L s) = -L1) :=
+  FiveTwoLevelSevenLadder.numerators_of_five_term L L1 x q r s hrw hrq hrr hrs
+    (hA_of_five_term L hx hq hr hne fiveA)
+    (hB_of_five_term L hx hq hs fiveB)
+    (hC_of_five_term L hx hr hs fiveC)
 
 end QOU.QBeta.FiveTwoFiveTermArguments
