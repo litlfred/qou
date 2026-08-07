@@ -114,6 +114,46 @@ This repository is a formal mathematics paper with:
 - **LaTeX** as a rendering target (generated from content objects)
 - **Lean 4** formalization linked to content objects
 
+## The paper is a MATHEMATICAL MODEL by default (owner ruling, 2026-08-07)
+
+**Every object in this paper is a mathematical object unless it is being compared
+to measurement.** This is the default reading for readers and agents alike, and it
+governs how claims should be stated, criticised, and defended.
+
+- **Named terms are model terms.** `electron`, `proton`, `neutron`, `mass`,
+  `binding energy`, `decay width` are *names of constructions inside the model* —
+  `m_e` is a defined quantity in the framework, not an assertion about the physical
+  electron. Naming a construction after a particle is expository convention, exactly
+  as a topologist calls a knot "the trefoil".
+- **Physics enters only at the comparison boundary.** The empirical content of the
+  framework is located precisely where a model quantity is set against an
+  experimental one — AME2020, CODATA, PDG. Those comparisons are the physical
+  claims. Everything upstream of them is mathematics.
+- **Therefore an incomplete physical derivation is not a reason to abandon the
+  physics.** A mathematical model with an honest empirical-comparison section is a
+  legitimate object, and the work must stand up in a **physics** venue as well as a
+  mathematics one. Do **not** propose "split the math off and drop the physics" as a
+  resolution to a derivation gap — the owner has ruled against that framing.
+
+### What this does NOT license
+
+The ruling narrows where the physical claims live; it does not weaken them.
+
+- **The comparison points carry the full burden.** Because physics enters *only*
+  at comparison, the honesty of the comparison is the whole empirical case. A
+  systematic that moves a compared quantity is therefore *more* consequential under
+  this framing, not less — it is attacking the one place the physics lives.
+- **"It's just a model term" is not a defence of a wrong number.** If `m_p` in the
+  model is compared to CODATA `m_p`, the comparison is a physical claim and is
+  judged as one.
+- **The anti-fit discipline is untouched.** A fitted quantity is still a fit whether
+  its name is mathematical or physical.
+
+Practical consequence for agents: when writing or reviewing, keep the register
+straight — state model results as mathematics, and mark the comparison points
+explicitly as where the empirical claim is being made. When criticising, aim at the
+comparisons and at the systematics on them, not at the naming.
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
