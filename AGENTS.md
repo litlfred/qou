@@ -986,6 +986,42 @@ Do not regress either.
 
 ### q₀ anchor convention — ideal CAL-2 (muon) vs experimental anchor (proton) (STRICT)
 
+> **🟧 OWNER DIRECTIVE (2026-08-07) — ALL AGENTS AND ALL PRODUCTION CODE
+> DEFAULT TO THE EXPERIMENTAL (PROTON) ANCHOR.** When any code, probe,
+> witness, dashboard, or agent needs a numerical `q₀`, the default is the
+> **experimental / Physical-Observations** pin — proton, `m_p/m_e`,
+> `q₀ ≈ 1.1099785827513808`, i.e. `q_parameter.Q` /
+> `tools/qou-substrate/.../constants.py::Q`. **Do not read a muon-pinned
+> value into new compute.** This supersedes the previous default in which
+> the `computations/` layer silently supplied the muon pin.
+>
+> **What this does NOT change.** The *ideal mathematical* canonical is
+> still CAL-2 = `𝔇_β` with proxy `m_μ/m_e` — that is the **definition** of
+> the calibration and is unaffected. The directive is about which
+> **numerical evaluation** code defaults to, not about redefining the
+> 3-CAL triple. Prose describing the canonical derivation chain keeps the
+> ideal framing; *compute* uses the experimental pin.
+>
+> **Never straddle the two layers inside one quantity.** Mixing an
+> ideal-layer input with an experimental-layer input in a single computed
+> number is a defect regardless of its size. Worked example + measurement:
+> the μ₃ Fréchet probe took `y_λ` from the muon-built cache while
+> evaluating `χ_λ` at the proton `q₀` — an 11.54 ppb layer separation (=
+> the μ–p substrate tension itself), ~1e-7 relative on the result. See
+> [`computations/deltalambda/mu3_anchor_consistency_probe.py`](computations/deltalambda/mu3_anchor_consistency_probe.py)
+> and [`docs/audits/2026-08-07-mu3-door-status-consolidated.md` §4ter](docs/audits/2026-08-07-mu3-door-status-consolidated.md).
+>
+> **The specific trap that caused it (check your call sites).**
+> `wedderburn_jones_markov.y_lambda_at(n, q)` returns the cached
+> **muon-built** `y-lambda-at-q0.witness.json` whenever
+> `|q − q_parameter.Q| < 1e-12` — a gate satisfied **trivially** when the
+> caller passes `q_parameter.Q` itself. So the ideal-layer cache reaches an
+> experimental-layer caller with **no signal that a layer boundary was
+> crossed**. For experimental-anchor compute call
+> `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)` (live closed form)
+> instead. Audit any other cached-witness accessor with the same
+> "matches the package constant ⇒ serve the cache" shape.
+
 The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
 [`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
@@ -1016,14 +1052,20 @@ muon; muon-anchor → ~4000σ on proton).
    The canonical L2 count is **2/7** (m_e, m_K/m_π) since 2026-07-04
    (m_p dropped when its fitted Habiro tower was removed — de-fitted
    round-trip +1.35 ppb, ~437× miss); **not** 3/7 or 4/7.
-2. **Two q₀ live in the repo; do not conflate them:**
+2. **Two q₀ live in the repo; do not conflate them, and default to the
+   proton one (owner directive above):**
    - **Package layer** `tools/qou-substrate/.../constants.py` (`Q`,
      `q_at()`, `Q_50_DIGIT_STR`) is **proton-pinned**
-     (`_solve_q_proton_f64`), q₀ ≈ 1.10998 — use for precision/prediction.
-   - **`computations/` layer** is currently **muon-q₀ canonical**:
-     `…/q-pinning-50-digit.witness.json` carries the muon value
+     (`_solve_q_proton_f64`), q₀ ≈ 1.1099785827513808 — **this is the
+     DEFAULT for all new compute and all production code**, not merely
+     "for precision/prediction".
+   - **`computations/` layer** historically carries **muon-q₀**
+     witnesses: `…/q-pinning-50-digit.witness.json` holds the muon value
      `1.10997859555733471…` (−11.5 ppb), feeding ~72 producers /
      ~840 witnesses — the canonical 3-CAL (muon) derivation witnesses.
+     These remain **valid as recorded** (they are what they say they are)
+     but are **no longer the default an agent should reach for**; see
+     rule 4 for the migration posture.
 3. **Recurring bug to watch (bean `tnjb`):** a dashboard/witness that
    reads a **muon-q₀** `muon_check.m_mu_pred_MeV` (≈ CODATA, ~0 ppb)
    and scores it as the m_μ *prediction* silently flips m_μ FAIL→MET.
@@ -1031,10 +1073,23 @@ muon; muon-anchor → ~4000σ on proton).
    (m_μ ≈ 105.6583978, 963.6×) is the **canonical** value; a fresh run
    that reads the muon-q₀ Borromean witness (≈ 105.6583756, 1.36 ppb)
    is the symptom.
-4. **Do NOT migrate the ~840 muon-q₀ `computations/` witnesses to proton
-   without explicit owner sign-off** — large, gated (bean `tnjb`), not
-   an idle-drain. The convention is enforced at the *reporting/precision*
-   layer, not by rewriting the canonical 3-CAL derivation witnesses.
+4. **Migration posture for the ~840 muon-q₀ `computations/` witnesses
+   (updated 2026-08-07).** The owner directive above sets the *target end
+   state*: experimental (proton) everywhere in compute. It does **not**
+   authorise a bulk rewrite as an idle-drain — that sweep is large, is
+   tracked under bean `tnjb`, and still needs scoped sign-off before it
+   runs. Concretely:
+   - **New / touched code: use proton.** Any probe, producer, or witness
+     you write or modify defaults to the experimental pin. No sign-off
+     needed — that is the standing directive.
+   - **Untouched muon witnesses: leave them.** Do not mass-regenerate.
+     They stay valid as recorded until the tracked migration runs.
+   - **Never mix.** If you touch a producer that consumes a muon-built
+     cache, move the *whole* quantity to proton rather than leaving one
+     input on each layer (see the straddling hazard above).
+   - **Say which pin you used.** Any new witness must record its q₀ so a
+     later reader can tell which layer it belongs to without inferring it
+     from a call site.
 
 
 ## CRITICAL: Protected Files — DO NOT MODIFY
