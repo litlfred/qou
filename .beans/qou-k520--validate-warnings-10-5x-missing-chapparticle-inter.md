@@ -4,7 +4,7 @@ title: 'VALIDATE WARNINGS (10): 5x missing chap:particle-interactions, 3x no Lea
 status: completed
 type: task
 created_at: 2026-08-07T10:42:40Z
-updated_at: 2026-08-07T15:05:00Z
+updated_at: 2026-08-07T15:35:00Z
 ---
 
 
@@ -170,3 +170,34 @@ Both are why `check-sidecars.sh` cannot be driven to silence here.
 - authors-note Lean coverage was stale at HEAD independently of this work:
   a refresh on a clean HEAD gives 690/704 (98.0%) against the committed
   654/698 (93.7%). This branch's own contribution is +1 (→ 691/704, 98.2%).
+
+## Platform defects: FIXED upstream (not yet merged)
+
+Do not re-do these — folio-assistant branch `claude/agent-4673-validation-9hffrd`,
+three commits, no PR opened yet.
+
+- `ca574e0` — `depends_on` conflated *applicability* with *freshness*. Added
+  `also_invalidated_by` (freshness only) + `freshnessKeys()`; wired the four
+  `entryIsFresh` call sites; `voice-scholarly-default` now invalidates on
+  `lean` without gating on it. The naive fix (adding `lean` to `depends_on`)
+  would have `n/a`-ed every prose-only block — tested against.
+- `1b82747` — `q-usage-audit.ts` now resolves the CONTENT repo via the
+  existing `repo-root.ts` helpers instead of its own file location, drops the
+  hardcoded paper name (`--paper`, else `findPapers()`), and EXITS 2 on a
+  zero-block sweep instead of 0. Verified on qou: 0 blocks → 3017 across 40
+  chapters, surfacing 8 fails / 729 warns invisible since the split.
+- `753bdba` — third defect, found via the dirty-tree symptom: `qa-sweep`
+  stamped the CONTENT repo's HEAD into the PLATFORM's script sidecars
+  (`gitHeadSha()` has no `-C`), and rewrote all 76 unconditionally because
+  `last_run_at` is a fresh timestamp. Both fixed; carries the overdue
+  one-time refresh of 66 sidecars last stamped 2026-06-15.
+
+Once merged, the residual `q-usage-*` staleness on this paper's sidecars
+becomes refreshable and `check-sidecars` can be driven to silence again.
+`one-voice-audit` will still be listed — that one is an agent-run skill, not
+a script criterion, so no sweep refreshes it.
+
+Suite there: 228 pass / 29 fail against a 201/29 baseline (+27 new tests,
+identical failure set). Those 29 are the SAME split-repo defect class —
+platform tests looking for content-repo files (`proof-objects.json`,
+`lean-toolchain`, `lakefile.toml`) at the platform root. Unclaimed.
