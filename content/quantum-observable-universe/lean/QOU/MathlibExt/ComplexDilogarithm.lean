@@ -31,7 +31,12 @@ Defines `cLiTwo` by its defining power series and proves, all sorry-free:
   `one_sub_mem_ball_half`, `re_pos_of_mem_ball_half`,
   `mem_slitPlane_of_mem_ball_half`, and the four `…_ball_half` analyticity
   lemmas: on `Metric.ball (1/2) (1/2)` all four ingredients of the reflection
-  identity are simultaneously analytic.
+  identity are simultaneously analytic;
+* **the integral representation** — `cLiTwo_eq_intervalIntegral`:
+  `Li₂(y) = −∫₀¹ log(1 − yz)/z dz` on the disc, by termwise integration
+  (dominated convergence with the geometric bound `‖y‖^(k+1)`). This is the
+  form that continues past `‖y‖ = 1`, since the integral converges for every
+  `y ∉ [1,∞)` while the series does not.
 
 This is a foundation, not a usable dilogarithm yet. It does **not** provide:
 
@@ -70,6 +75,9 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.Analytic.OfScalars
 import Mathlib.Analysis.Analytic.Basic
 import Mathlib.Analysis.Analytic.ChangeOrigin
+import Mathlib.MeasureTheory.Integral.DominatedConvergence
+import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.LogBounds
 
 namespace QOU.MathlibExt
 
@@ -301,5 +309,118 @@ theorem log_mul_log_one_sub_analyticOnNhd_ball_half :
   (analyticAt_clog (mem_slitPlane_of_mem_ball_half hz)).mul
     (AnalyticAt.clog (analyticAt_const.sub analyticAt_id)
       (mem_slitPlane_of_mem_ball_half (one_sub_mem_ball_half hz)))
+
+/-! ### The integral representation `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`
+
+This is the identity Route 5 of the 5₂ saddle sum rule needs (bean `qou-0yqu`),
+and it is also the door out of the unit disc: **the integral converges for every
+`y ∉ [1,∞)` regardless of `‖y‖`**, unlike the defining series, so it *is* the
+analytic continuation.
+
+Proved here on the disc, by termwise integration. Writing `k = n − 1`, the
+`k`-th term is `y^(k+1)·z^k/(k+1)`, whose integral over `[0,1]` is
+`y^(k+1)/(k+1)²` — exactly the `k`-th term of `cLiTwo`'s defining series, with
+no reindexing needed. The swap is
+`intervalIntegral.hasSum_integral_of_dominated_convergence` with the constant
+dominating bound `‖y‖^(k+1)` (using `z^k ≤ 1` and `1/(k+1) ≤ 1` on `[0,1]`),
+which is geometric and hence summable.
+
+The `y` with `‖y‖ ≥ 1` case — needed for the 5₂ root `y₁`, `‖y₁‖ = 1.52` — is
+**not** here: it requires taking the right-hand side as the *definition* past
+the disc and is tracked in `qou-gkco`. -/
+
+open MeasureTheory in
+/-- **The integral representation on the open unit disc.** -/
+theorem cLiTwo_eq_intervalIntegral {y : ℂ} (hy : ‖y‖ < 1) :
+    cLiTwo y = -∫ z in (0 : ℝ)..1, Complex.log (1 - y * (z : ℂ)) / (z : ℂ) := by
+  set F : ℕ → ℝ → ℂ :=
+    fun k z => y ^ (k + 1) * (z : ℂ) ^ k / ((k : ℂ) + 1) with hFdef
+  -- (1) each term integrates to the corresponding coefficient of `cLiTwo`
+  have hterm : ∀ k : ℕ,
+      (∫ z in (0 : ℝ)..1, F k z) = y ^ (k + 1) / ((k : ℂ) + 1) ^ 2 := by
+    intro k
+    have hfun : (fun z : ℝ => F k z)
+        = fun z : ℝ => (y ^ (k + 1) / ((k : ℂ) + 1)) * (((z ^ k : ℝ)) : ℂ) := by
+      funext z
+      simp only [hFdef]
+      push_cast
+      ring
+    rw [hfun, intervalIntegral.integral_const_mul, intervalIntegral.integral_ofReal,
+      integral_pow]
+    have hk : ((k : ℂ) + 1) ≠ 0 := by
+      have hcast : ((k : ℂ) + 1) = ((k + 1 : ℕ) : ℂ) := by push_cast; ring
+      rw [hcast, Ne, Nat.cast_eq_zero]
+      exact Nat.succ_ne_zero k
+    push_cast
+    field_simp
+    ring
+  -- (2) pointwise, the series sums to the integrand on `(0,1]`
+  have hlim : ∀ t : ℝ, t ∈ Set.uIoc (0 : ℝ) 1 →
+      HasSum (fun k => F k t) (-(Complex.log (1 - y * (t : ℂ)) / (t : ℂ))) := by
+    intro t ht
+    rw [Set.uIoc_of_le (by norm_num : (0 : ℝ) ≤ 1)] at ht
+    have ht0 : (0 : ℝ) < t := ht.1
+    have ht1 : t ≤ 1 := ht.2
+    have htne : ((t : ℂ)) ≠ 0 := by
+      simpa using ne_of_gt ht0
+    have hyt : ‖y * (t : ℂ)‖ < 1 := by
+      rw [norm_mul, Complex.norm_real, Real.norm_eq_abs, abs_of_pos ht0]
+      calc ‖y‖ * t ≤ ‖y‖ * 1 := by nlinarith [norm_nonneg y]
+        _ = ‖y‖ := mul_one _
+        _ < 1 := hy
+    have hbase := Complex.hasSum_taylorSeries_neg_log hyt
+    have hshift := (hasSum_nat_add_iff' 1).mpr hbase
+    simp only [Finset.sum_range_one, pow_zero, Nat.cast_zero, div_zero, sub_zero] at hshift
+    have hres := hshift.div_const ((t : ℂ))
+    rw [neg_div] at hres
+    have hfe : (fun k : ℕ => F k t)
+        = fun n : ℕ => (y * (t : ℂ)) ^ (n + 1) / (((n + 1 : ℕ)) : ℂ) / (t : ℂ) := by
+      funext k
+      simp only [hFdef]
+      have hcast : (((k + 1 : ℕ)) : ℂ) = (k : ℂ) + 1 := by push_cast; ring
+      rw [hcast]
+      field_simp
+      ring
+    rw [hfe]
+    exact hres
+  -- (3) dominated convergence
+  have hmeas : ∀ k : ℕ, AEStronglyMeasurable (F k)
+      (MeasureTheory.volume.restrict (Set.uIoc (0 : ℝ) 1)) := by
+    intro k
+    refine Continuous.aestronglyMeasurable ?_
+    simp only [hFdef]
+    fun_prop
+  have hbound : ∀ k : ℕ, ∀ᵐ t ∂(MeasureTheory.volume : Measure ℝ),
+      t ∈ Set.uIoc (0 : ℝ) 1 → ‖F k t‖ ≤ ‖y‖ ^ (k + 1) := by
+    intro k
+    refine Filter.Eventually.of_forall fun t ht => ?_
+    rw [Set.uIoc_of_le (by norm_num : (0 : ℝ) ≤ 1)] at ht
+    have ht0 : (0 : ℝ) < t := ht.1
+    have ht1 : t ≤ 1 := ht.2
+    have hzk : |t| ^ k ≤ 1 := by
+      rw [abs_of_pos ht0]
+      exact pow_le_one₀ ht0.le ht1
+    have hk1 : (1 : ℝ) ≤ ‖((k : ℂ) + 1)‖ := by
+      have : ((k : ℂ) + 1) = ((k + 1 : ℕ) : ℂ) := by push_cast; ring
+      rw [this, Complex.norm_natCast]
+      exact_mod_cast Nat.one_le_iff_ne_zero.mpr (Nat.succ_ne_zero k)
+    have hkpos : (0 : ℝ) < ‖((k : ℂ) + 1)‖ := by linarith
+    simp only [hFdef, norm_div, norm_mul, norm_pow, Complex.norm_real, Real.norm_eq_abs]
+    rw [div_le_iff₀ hkpos]
+    nlinarith [pow_nonneg (norm_nonneg y) (k + 1), hzk, hk1,
+      pow_nonneg (abs_nonneg t) k]
+  have hsummable : Summable fun k : ℕ => ‖y‖ ^ (k + 1) := by
+    simpa [pow_succ'] using (summable_geometric_of_lt_one (norm_nonneg y) hy).mul_left ‖y‖
+  have hswap := intervalIntegral.hasSum_integral_of_dominated_convergence
+    (bound := fun (k : ℕ) (_ : ℝ) => ‖y‖ ^ (k + 1)) (μ := MeasureTheory.volume)
+    (a := (0 : ℝ)) (b := 1) hmeas hbound
+    (Filter.Eventually.of_forall fun _ _ => hsummable)
+    (intervalIntegrable_const)
+    (Filter.Eventually.of_forall hlim)
+  -- (4) match the two HasSum statements
+  simp only [hterm] at hswap
+  have hcli : HasSum (fun k : ℕ => y ^ (k + 1) / ((k : ℂ) + 1) ^ 2) (cLiTwo y) :=
+    (cLiTwo_summable hy).hasSum
+  rw [hcli.unique hswap, intervalIntegral.integral_neg]
 
 end QOU.MathlibExt
