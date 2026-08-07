@@ -40,6 +40,21 @@ The two defects are near-orthogonal:
 | float64 padding | value asserts **more** precision than it has | the padding audit |
 | this | value silently carries **less** than was asked for | this gate |
 
+## It fabricates results, not just short digits
+
+`scratch/pslq_wq.py` asked for 45 digits and ran at 15. PSLQ does not fail
+loudly at insufficient precision — it invents relations:
+
+```
+15 digits:  Integer relation for rational function of y: [60, -407, 54, -68, 58, 195]
+45 digits:  Integer relation for rational function of y: None
+```
+
+Spurious, with the large-coefficient signature that is the classic tell. The
+other relation that script finds, `[0, -1, 1, -2, 0, 0]`, survives both because
+it is the genuine identity h² = y − 2. That one did not propagate past
+`scratch/`, but nothing about the defect guaranteed it wouldn't.
+
 Full history: `docs/audits/2026-08-07-producer-repadding-empirical-sweep.md`.
 
 ## AST, not regex
