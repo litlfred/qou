@@ -388,4 +388,56 @@ theorem sum_re_log_neg_sq {y₁ : ℂ} {y₃ : ℝ} (h₁ : 0 < y₁.im) (h₃ :
     re_log_neg_sq_of_pos_real h₃, hlog']
   ring
 
+/-! ### The real root's contribution is a ROGERS dilogarithm
+
+Zagier's *The Dilogarithm Function* §II.1 A defines the Rogers dilogarithm on
+`(0,1)` as
+
+    L(x) = Li₂(x) + ½·log(x)·log(1 − x)
+
+which takes its values most naturally in `ℝ/(π²/2)ℤ`. The 5₂ saddle's real
+root contributes to the sum rule exactly
+
+    Re V₃ = 3·L(y₃) − π²
+
+— verified to 40 dps with difference `0.0`, and proved below. The whole content
+is the branch relation `2·log y₃ = 3·log(1 − y₃)` (the real-root case `k = 0` of
+`y² = (1−y)³`), which turns `Re Log(−y₃)² = log²y₃ − π²` into
+`(3/2)·log y₃·log(1−y₃) − π²`, i.e. into Rogers' correction term.
+
+**Why record it.** It identifies one of the three summands as a standard object
+with a known functional-equation theory, rather than an ad-hoc combination. It
+does **not** evaluate anything: `L(y₃)/(π²/6) = 0.441033…` is not rational, as
+expected for a cubic-field argument, so no ladder value drops out. The sum rule
+remains a statement about the *combination*, which is exactly what one expects
+if only the Bloch-group class is well defined.
+
+Stated with the dilogarithm value as a free real `L₂`, so the file stays
+Mathlib-only: the identity is purely about the logarithmic terms. Bean
+`qou-0yqu`. -/
+
+/-- **The branch relation converts `Re Log(−y)²` into Rogers' correction.**
+
+Given `2·log y = 3·log(1 − y)` — the real-root case of `y² = (1−y)³` — the
+`Log²` term of `V` is `(3/2)·log y·log(1−y) − π²`. -/
+theorem re_log_neg_sq_of_branch_relation {y : ℝ} (hy : 0 < y)
+    (hrel : 2 * Real.log y = 3 * Real.log (1 - y)) :
+    (Complex.log (-(y : ℂ)) ^ 2).re
+      = 3 / 2 * (Real.log y * Real.log (1 - y)) - Real.pi ^ 2 := by
+  rw [re_log_neg_sq_of_pos_real hy]
+  linear_combination (Real.log y / 2) * hrel
+
+/-- **`Re V₃ = 3·L(y₃) − π²`**, with `L` the Rogers dilogarithm.
+
+`L₂` stands for `Li₂(y)`; the identity is about the logarithmic terms only, so
+no dilogarithm theory is needed and this file stays Mathlib-only. -/
+theorem re_V_real_root_eq_rogers {y L₂ : ℝ} (hy : 0 < y)
+    (hrel : 2 * Real.log y = 3 * Real.log (1 - y)) :
+    (3 * (L₂ : ℂ) + Complex.log (-(y : ℂ)) ^ 2).re
+      = 3 * (L₂ + Real.log y * Real.log (1 - y) / 2) - Real.pi ^ 2 := by
+  rw [Complex.add_re, re_log_neg_sq_of_branch_relation hy hrel]
+  simp only [Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im]
+  norm_num
+  ring
+
 end QOU.QBeta.FiveTwo
