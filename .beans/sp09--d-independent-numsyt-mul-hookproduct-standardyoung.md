@@ -1,12 +1,12 @@
 ---
 # sp09
 title: 'D [independent]: numSYT_mul_hookProduct (StandardYoungTableau.lean:113) — FRT hook-length'
-status: todo
+status: completed
 type: task
 priority: low
-parent: sp00
 created_at: 2026-07-05T16:30:00Z
-updated_at: 2026-07-05T16:30:00Z
+updated_at: 2026-08-07T17:21:58Z
+parent: sp00
 ---
 
 Frame-Robinson-Thrall: numSYT(lam).prod(hooks)=n!. Needs NPS hook-walk (probability layer) or RSK. Famous, absent.
@@ -91,3 +91,25 @@ REMAINING (mechanical, ~1 short session):
    (the sorried QOU.BraidKnot.numSYT_mul_hookProduct in StandardYoungTableau.lean
     stays as the honest cited sorry, OR is re-pointed once the downstream lands.)
    Needs the full HookLengthFormula cone built to verify (~40 modules).
+
+## CLOSED 2026-08-07 (PR #4692) — sorry-free
+
+Closed exactly per the 2026-08-01 scope above. Bridge (1)
+`hookProduct μ = QOU.Mathlib.hookLengthProduct μ` proved via `PieceA.armZ_eq_card` /
+`legZ_eq_card` (which identify the filter-arm/leg with `Finset.Ioo` images), then
+composed with `SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux` and the
+already-proved `QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct`.
+
+Statement lives at `QOU.BraidKnot.HookProductHLF.numSYT_mul_hookProduct` — a NEW leaf
+module, not the original site: `QOU.Mathlib.HookLengthFormula` transitively imports
+`QOU.BraidKnot.StandardYoungTableau` (via `SpechtClassification → Specht`), so the HLF
+is unavailable where the theorem was originally stated. The `sorry` at
+StandardYoungTableau.lean:149 is DELETED (replaced by a pointer note); nothing consumed
+it (all other corpus occurrences were docstring mentions).
+
+Verification: clean rebuild of the 32-module cone, 32/32, exit 0, no sorry warning.
+
+Side fix: `SYTEnumerationFintype:710` called `StandardYoungTableau.ext_toSsyt`, which
+resolved through the file's `open` to a nonexistent constant (the decl is in namespace
+`QOU.Mathlib.SYTEnum`). This blocked the entire HookLengthFormula cone from compiling
+on main.

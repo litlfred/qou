@@ -1,6 +1,6 @@
 ---
 # qou-8p1f
-title: 'qou-8p1x/f: 'perhaps the 4-form degenerates' -> SU(3) — EXCLUDED by dimension count'
+title: "qou-8p1x/f: 'perhaps the 4-form degenerates' -> SU(3) — EXCLUDED by dimension count"
 status: completed
 type: task
 created_at: 2026-08-07T12:40:00Z
