@@ -1,6 +1,6 @@
 ## The $W$ vs $Z$ slot assignment is a free label
 
-The sector membership $A_+ / A_-$ of each carrier is forced by its spin. A charged carrier must be a bar-odd $A_-$ doublet. What is not forced is which of the two vector slots — $\sigma_1^4$ or $\sigma_3^6$ — hosts the charged $W^±$ versus the neutral $Z$. The corpus crossing$\to$charge map $Q = \tfrac12\,\mathrm{writhe}$ on the all-positive braid $\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for every carrier. It cannot single out the neutral slot. The surviving $\mathrm{writhe} \to I_3$ map assigns $2 I_3 = 2k$, nonzero on both vector slots. No proved crossing$\to$charge principle selects the $W$ slot: both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$ satisfy every proved constraint.
+The sector membership $A_+ / A_-$ of each carrier is forced by its spin. A charged carrier must be a bar-odd $A_-$ doublet. What is not forced is which of the two vector slots — $\sigma_1^4$ or $\sigma_3^6$ — hosts the charged $W^\pm$ versus the neutral $Z$. The corpus crossing$\to$charge map $Q = \tfrac12\,\mathrm{writhe}$ on the all-positive braid $\sigma_1^{2k}$ gives $Q(T(2,2k)) = k > 0$ for every carrier. It cannot single out the neutral slot. The surviving $\mathrm{writhe} \to I_3$ map assigns $2 I_3 = 2k$, nonzero on both vector slots. No proved crossing$\to$charge principle selects the $W$ slot: both $W = \sigma_1^4$ and the mirror $W = \sigma_3^6$ satisfy every proved constraint.
 
 ## The signed charge-conjugation test
 
