@@ -113,7 +113,13 @@ column-superstandard tableau is constructed.
 3. `s` stays in column `c_s`, so its row `r` satisfies `r < colLen c_s`. — *open*
    (same bijection fact, plus `mem_iff_lt_colLen`).
 4. `colLen` antitone + `c < c_s` ⟹ `colLen c_s ≤ colLen c = |C|`, hence `r < |C|`.
-   — *open* (Mathlib `YoungDiagram.colLen_anti`-style lemma + `|C| = colLen c`).
+   — *open*, but the Mathlib half is **confirmed present** in the pinned toolchain:
+
+       YoungDiagram.colLen_anti : ∀ (μ : YoungDiagram) (j1 j2 : ℕ),
+         j1 ≤ j2 → μ.colLen j2 ≤ μ.colLen j1
+
+   (verified by `#check` against the restored v4.24.0 oleans). So step 4 needs only
+   `|C| = colLen c` on top of it — which is step 2's bijection again.
 5. Combine: the column-`c` label at row `r` collides with `s`; distinct since their
    columns differ. Feed as `hfam`. — *open* (assembly).
 
