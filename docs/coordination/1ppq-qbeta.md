@@ -3036,3 +3036,41 @@ Probe + witness:
 (8 gates, 60 dps). Beans `qou-r7ml` (completed/refuted), parent `qou-0yqu`.
 **Route count 7 tried, 7 not closing. Sum-rule status unchanged: verified to
 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — GGM/GGMW READ IN FULL. They do not contain
+the sum rule. The literature lead is closed.**
+
+`qou-0yqu` named GGM (2012.00062) / GGMW (2111.04763) twice as "the realistic
+direct sources" and neither had been opened. Both now swept end to end
+(bean `qou-g2wr`).
+
+**Negative:** `Σⱼ Vⱼ` appears nowhere in either paper; no `−3π²/2`. **"real
+part" occurs exactly once in GGM and zero times in GGMW** — the single hit is
+the §6.1 σ₃ branch prescription already ledgered 2026-07-26, not a statement
+about `Re V`. No `Bloch`, no `regulator` in either. GGMW's `Rogers` hits are
+**Rogers–Ramanujan**, not the Rogers dilogarithm — flagged as a false lead.
+With the disc −23 ladder literature being the volume side, **there is now no
+known published source for this identity.**
+
+**Positives worth carrying:**
+
+1. GGM eq (234) is the source of the `ℂ/2π²ℤ` modulus, confirmed verbatim; at
+   `x = 1` it is the corpus's `V`, reproducing the sum rule to 50 dps.
+2. `b = (−1,+1,+1)` is **exactly** principal `Log(−yⱼ)` (exact zero at all three
+   roots) — independent confirmation of `branch_shift_eq_log_neg`. GGM writes
+   `(log(−y))²` directly.
+3. **`Re Vⱼ` is only defined mod `2π²`** (the modulus is real). In GGM's own
+   quotient the sum rule reads `Σⱼ Re Vⱼ ≡ π²/2 (mod 2π²)`, so the exact
+   `−3π²/2` is a statement about chosen representatives. **Any proof routed
+   through GGM's `V` alone can only deliver the mod-`2π²` statement** — pinning
+   the representative is exactly `branch_shift_eq_log_neg`, which makes that
+   theorem load-bearing rather than bookkeeping. Consistency: GGMW's
+   `+2π²/3` per root shifts the sum by exactly one lattice step `2π²`, giving
+   `Σⱼ Re V_GGMW = π²/2` exactly; the two published conventions are adjacent
+   representatives.
+4. GGMW §4.1 **states disc −23 outright**, and identifies `σ₁,σ₂,σ₃` with the
+   three embeddings of the trace field. So `Σⱼ Re Vⱼ` is a **trace over all
+   embeddings** — the structural reason the power sums `pₙ` are rational
+   integers and Route 5's integrand is a ℤ-coefficient polynomial.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
