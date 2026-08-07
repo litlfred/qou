@@ -39,7 +39,7 @@ def q_int(k, q):
     return (q**k - q**(-k)) / (q - 1/q)
 
 
-def _alpha_em_inv_derived(q, order=2):
+def _alpha_em_inv_derived(q, order=None):
     """Framework-derived α_em⁻¹ — the bare force-carrier coupling dressed by
     the Chern–Simons tower, computed at full working precision.
 
@@ -52,6 +52,11 @@ def _alpha_em_inv_derived(q, order=2):
       order 1 → bare·(1 + c₁)
       order 2 → bare·(1 + c₁ + c₁²·κ_gram)          [canonical / shipped]
       order n → adds c₁ⁿ·κ_gram^{n−1}                (geometric continuation)
+      order None → EXACT resummation 1 + c₁/(1 − c₁κ)  [default]
+
+    The tower is geometric with ratio c₁·κ, so it sums in closed form and
+    needs no truncation at all. `order` is retained only so the sweep below
+    can show that the truncated values converge onto the exact one.
     """
     pi = mp.pi
     qi = 1 / q
@@ -84,9 +89,12 @@ def _alpha_em_inv_derived(q, order=2):
 
     kappa_gram = det_cl / det_q
 
-    tower = mp.mpf(1)
-    for k in range(1, order + 1):
-        tower += c1**k * kappa_gram**(k - 1)
+    if order is None:
+        tower = 1 + c1 / (1 - c1 * kappa_gram)      # exact, all orders
+    else:
+        tower = mp.mpf(1)
+        for k in range(1, order + 1):
+            tower += c1**k * kappa_gram**(k - 1)
     return bare * tower
 
 
@@ -140,14 +148,18 @@ def main():
     #   bare      = q·[9]_q·[10]_q                      (force-carrier crossings)
     #   c₁        = (CS(T₂,₉)+CS(T₃,₅))·([2]_q/2)·ℏ_q²/bare
     #   κ_gram    = det G_classical / det G_q-deformed
-    #   α_em⁻¹    = bare·(1 + c₁ + c₁²·κ_gram)
+    #   α_em⁻¹    = bare·(1 + c₁/(1 − c₁·κ_gram))      EXACT, all orders
     #
-    # NOTE ON ORDER (see the audit): this is a *second-order* truncation of a
-    # geometric tower with ratio ≈ c₁·κ_gram ≈ 2.67e-3. The tower CONVERGES,
-    # but not to CODATA — resummed it sits ≈ −388 ppb off, versus −399.5 ppb
-    # at the shipped order 2. Adding orders does not close the gap; the
-    # residual is structural, not a truncation artifact.
-    alpha_em_inv = _alpha_em_inv_derived(q)
+    # NOTE ON ORDER: the correction tower Σ_{j≥1} c₁ʲκ^{j−1} is geometric with
+    # ratio c₁·κ ≈ 2.7e-3, so it sums in closed form — there is no truncation
+    # and no order parameter to get wrong. `pyhecke` historically shipped the
+    # order-2 Taylor polynomial `1 + c₁ + c₁²κ`; that cost 11.06 ppb and is
+    # now fixed there too.
+    #
+    # The residual that survives exact resummation is ≈ −467.6 ppb against
+    # CODATA 137.035999177. That is STRUCTURAL — no further orders exist to
+    # add. The order sweep below exhibits the convergence onto the exact value.
+    alpha_em_inv = _alpha_em_inv_derived(q)          # exact resummation
     alpha_em = 1 / alpha_em_inv
     m_pi = mp.mpf(M_PI_PM_MEV_VALIDATION)
     m_K  = mp.mpf(M_K_PM_MEV_VALIDATION)
@@ -159,7 +171,7 @@ def main():
 
     print(f"  m_K²/m_π² = [3]_q · [4]_q  +  (α_em / π) · (3q² − 1)/(2q²)")
     print()
-    print(f"    α_em⁻¹ (DERIVED, order 2) = {mp.nstr(alpha_em_inv, 12)}")
+    print(f"    α_em⁻¹ (DERIVED, exact resummation) = {mp.nstr(alpha_em_inv, 15)}")
     print(f"    [3]_q · [4]_q         = {float(prod_34):.6f}")
     print(f"    (α_em / π) · em_factor = {float(alpha_em/mp.pi * em_factor):.6f}")
     print(f"    prediction             = {float(prediction):.6f}")
@@ -176,13 +188,15 @@ def main():
     print("-" * 70)
     print()
     order_rows = []
-    for k in (0, 1, 2, 3, 6, 12):
+    for k in (0, 1, 2, 3, 6, 12, None):
         a_inv_k = _alpha_em_inv_derived(q, order=k)
         pred_k = prod_34 + (1 / a_inv_k) / mp.pi * em_factor
         ppb_k = float((pred_k - measured) / measured) * 1e9
         order_rows.append((k, float(a_inv_k), ppb_k))
-        tag = "  <-- canonical" if k == 2 else ""
-        print(f"    order {k:2d}:  α_em⁻¹ = {float(a_inv_k):.9f}   "
+        tag = ("  <-- EXACT (canonical)" if k is None
+               else "  <-- old truncation" if k == 2 else "")
+        label = "exact" if k is None else f"{k:5d}"
+        print(f"    order {label:>5s}:  α_em⁻¹ = {float(a_inv_k):.9f}   "
               f"m_K²/m_π² miss = {ppb_k:+10.1f} ppb{tag}")
     print()
     print("    The tower is geometric with ratio c₁·κ_gram ≈ 2.7e-3, so it")
@@ -229,11 +243,12 @@ def main():
     w.add_data("closed_form_at_q0", str(mp.nstr(closed_form_3, 20)))
     w.add_data("ring_identity_residual", float(diff_3))
     w.add_data("full_meson_miss_ppm", miss_ppm)
-    w.add_data("alpha_em_inv_derived_order2", str(mp.nstr(alpha_em_inv, 15)))
+    w.add_data("alpha_em_inv_derived_exact", str(mp.nstr(alpha_em_inv, 15)))
     w.add_data("alpha_em_source", "derived (q·[9]_q·[10]_q dressed by the CS "
                                   "tower); NOT the experimental value")
     w.add_data("cs_tower_order_sweep",
-               [{"order": k, "alpha_em_inv": a, "meson_miss_ppb": p}
+               [{"order": ("exact" if k is None else k),
+                 "alpha_em_inv": a, "meson_miss_ppb": p}
                 for k, a, p in order_rows])
     w.add_data("cs_tower_converges_but_not_to_measurement", True)
     w.add_assertion("closed_form_ring_identity",
