@@ -129,3 +129,26 @@ changes numbers: source fix and witness regeneration stay separate commits.
 
 Class B needs NO producer fix — the values are genuine, the detector is
 wrong about them. Do not go hunting for a float64 entry there.
+
+## First Class A fix landed — and a BLOCKER for the regeneration half
+
+`chirality_avg_content_atomic`, the corpus's largest re-padder: all 71 fields
+were `per_partition[].chi_lambda_beta` written as `str(<mpf>)` — 50 dps of a
+53-bit kernel value. Fixed to `fmt(float(chi_val))`, which is the convention
+`fmt()` already documents ("no spurious mpf-promotion noise on a 0.1-style
+float"). mpf(float) is exact, so nothing moves.
+
+Verified before/after in a detached worktree: 71 padded -> 0, 0 values moved.
+71 of the residual 228 fields, fixed durably at the producer.
+
+**BLOCKER — do not regenerate witnesses yet.** Re-running the producer drops
+`q0Anchor` + `q0Value` from the witness. Every number is byte-identical; only
+the q0 pin disappears. That pin exists so a muon/proton value can never be
+silently misread (bean tnjb), audits/q0_anchor_consistency_audit.py enforces
+it, and WitnessBuilder.build() sets q0Anchor unconditionally with a "proton"
+fallback — yet this path does not reach it. Reproduced twice; cause NOT pinned.
+
+This bean's plan ends in "re-run the producers". Doing that naively strips q0
+provenance from every witness it touches — value-preserving, and silently
+removing the guard against the exact misreading it was added to prevent.
+Diagnose that first. The chirality fix is therefore source-only.

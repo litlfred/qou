@@ -548,19 +548,76 @@ which is consistent with their carrying no float64 entry to mint it with.
 that result remains unreproducible; the tool above is committed so this one
 does not repeat that.
 
+## First Class A fix: the 71-field producer
+
+`chirality_avg_content_atomic` is the largest re-padder in the corpus and all
+71 of its fields are the same one, `per_partition[].chi_lambda_beta`, written
+as `str(<mpf>)`. The mpf promotion is correct — the downstream arithmetic needs
+it — but serializing *that* prints 50 dps of a 53-bit number.
+
+The repo already had the convention. `fmt()`'s own docstring calls out "no
+spurious mpf-promotion noise on a 0.1-style float" and short-circuits floats to
+their natural repr, so the fix is `fmt(float(chi_val))`. `mpf(float)` is exact,
+so `float()` recovers the kernel's own value — value-preserving by
+construction, not by assertion.
+
+Measured before and after in a detached worktree:
+
+| | before | after |
+|---|---:|---:|
+| chi fields | 71 | 71 |
+| **values moved** | — | **0** |
+| **padded fields** | **71** | **0** |
+
+```
+1.2320524541667656759358351337141357362270355224609375
+                              -> 1.2320524541667657        (float-equal)
+```
+
+This is the durable form of what the strip did by hand: 71 of the residual 228
+fields, fixed at the producer.
+
+## Regenerating a witness silently drops its q₀ provenance
+
+**Source fix committed, witness NOT regenerated — and the reason generalises
+well beyond this producer.** Re-running `chirality_avg_content_atomic` and
+diffing against the committed witness:
+
+```diff
+-  "q0Anchor": "proton",
+-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+```
+
+Every chi value is byte-identical and no number moves; the run just **loses
+both q₀-pin fields**. That pin exists so a muon/proton value "can never be
+silently misread" (bean `tnjb`), `computations/audits/q0_anchor_consistency_
+audit.py` enforces it, and `WitnessBuilder.build()` contains code that sets
+`q0Anchor` unconditionally with `"proton"` as the fallback — yet this path
+does not reach it. Reproduced twice; the cause is **not** pinned down here.
+
+The consequence is the load-bearing part: **the drain plan for this bean ends
+in "re-run the producers", and doing that naively strips q₀ provenance from
+every witness it touches** — a value-preserving change that silently removes
+the guard against the exact misreading it was added to prevent. That has to be
+diagnosed before any witness is regenerated, and it is why this fix is
+source-only.
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field
 has a named source line. What is left is the per-file *judgment*, which is
 where this document said the non-mechanizable part lived all along.
 
+- **Blocking everything below: witness regeneration loses the q₀ pin.** See the
+  section above. No witness should be regenerated until that is diagnosed.
 - **Class A — 10 producers, 189 fields, three library-level entry points.**
   `hecke_characters.py:214`, `hoefsmit_numpy.py:161`, and the
   `mpf(<float out of JSON>)` idiom. All three are deliberate f64 kernels, so
-  the fix is "serialize at true precision", not "recover lost precision" —
-  which changes numbers, so source fix and witness regeneration stay separate
-  commits. `chirality_avg_content_atomic` (71) and `rho_k_co_casimir_extended`
-  (71) are 74 % of the class between them and share that one shape.
+  the fix is "serialize at true precision", not "recover lost precision".
+  **71 of the 189 are done** (`chirality_avg_content_atomic`, above).
+  `rho_k_co_casimir_extended` (71) is the same shape one level down, in
+  `hoefsmit_numpy.py:161` — a shared helper, so unlike the chirality fix it
+  needs its callers checked before the return type is touched.
 - **Class B — 9 producers, 39 fields — needs no producer fix.** The values are
   genuine; the *detector* calls them padding. Either it learns to tell a
   computed near-integer from a truncated double (it cannot, from the string
