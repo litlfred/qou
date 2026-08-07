@@ -76,3 +76,37 @@ of the discharge. Fixing `specht_finrank_eq_numSYT` is the next unit of work her
 `PartitionHookProductBridge`, `PartitionReindex`, `PartitionNatBridge`,
 `SYTHookFormula`, `IdentityIHLFBridge`, `SytSmallShapeCountsLarger`,
 `StandardYoungTableau` (now sorry-free) and their full cones.
+
+## 2026-08-08 (later) — Specht cluster CLEARED; the blocker was not a sweep casualty
+
+`qou-0sc0` closed. `SpechtStandardBasis.lean` carried `omit [CharZero k] in` on
+`specht_finrank_eq_numSYT` while its proof applies `standardBasis`, which genuinely
+takes the instance — so `CharZero k` was unsynthesizable at the application and the
+file did not compile. **Different bug class from the sweep**, so the LWC-2 casualty
+count stays at 12.
+
+Tried preserving the generality first (`omit` on `standardBasis` too) — does not
+work, the def really needs it. Dropped the omit; that is what the existing proof
+supports. Removing the hypothesis on the merits is still open (the
+standard-polytabloid basis exists over any field) but needs the `CharZero` uses
+inside `standardBasis`'s inputs traced, not an annotation change.
+
+**Unblocked 5 modules** that were failing only transitively: `SpechtFinrankWired`,
+`JucysMurphy`, `SnWedderburnPartitionBridge`, `OVTopAssembly`, and
+`RSKBurnsideDischarge` — the RSK side of the burnside discharge.
+
+### Sorry-provenance correction (verified, not inferred)
+
+`SpechtFinrankWired.specht_finrank_eq_numSYT_wired` and
+`SpechtStandardBasis.specht_finrank_eq_numSYT` are **axiom-clean**
+(`[propext, Classical.choice, Quot.sound]`). `OVTopAssembly`'s table was blaming
+its `rank` row's `sorryAx` on that brick with "sorry-path = spanning/straightening
+only" — false, and corrected. `OVTopAssembly.sum_numSYT_sq_eq_factorial` does still
+carry `sorryAx`, from the two live sorries the other rows already name correctly:
+`SnWedderburnPartitionBridge:234` (`sn_rational_specht_split`) and
+`JucysMurphy:840` (`centralC2_acts_by_contentSqSum`).
+
+So the burnside chain's remaining sorry-debt is those two — **not** the
+spanning/straightening stub, which is not load-bearing for the rank input.
+
+### Cone status: 55 modules, `FAILED: none`
