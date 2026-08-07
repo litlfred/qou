@@ -42,9 +42,13 @@ instead the **compiler's own** `declaration uses 'sorry'` output — the only au
 | `spechtIso_imp_dom_both` | `SpechtClassification`:449 | iso ⇒ mutual dominance |
 | `specht_exhausts_irreducibles` | `SpechtClassification`:485 | Specht modules exhaust the irreducibles |
 
-**6 confirmed sorry-carrying declarations.** `JucysMurphy` could not be measured — it needs
-`QOU.BraidKnot.SytAdjacentSwap`'s olean built first; a regex suggested 2 there
-(`rep_mem_spechtSubmodule`, `seminormalVector_base_exists`), unconfirmed. `RegularRepBlockTrace` and
+| `seminormalVector_base_exists` | `JucysMurphy`:840 | seminormal base vector; sibling intent recorded (#3799 — reuse Hoefsmit) |
+
+**7 confirmed sorry-carrying declarations.** `JucysMurphy` was measured after building its dep chain
+(`SytAdjacentSwap`, `SytEntryMono`, `SytRowSuperstandard`, `SytMathlibBridge`, `Mathlib.PermInversion`):
+it carries **exactly one** sorry, at line 840. A regex had suggested two there — `rep_mem_spechtSubmodule`
+is in fact **complete**, so the "one bounded, startable item" named in the first version of this audit
+was already proved and needs no work. That is a fourth grep miss; the compiler was right again. `RegularRepBlockTrace` and
 `OVTopAssembly` carry **none**. `Specht.polytabloid_mem_specht`, which a regex flagged, is
 **complete** — the compiler does not warn on it.
 
