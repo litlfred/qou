@@ -201,3 +201,29 @@ Verified before/after, BOTH runs to completion (rc=0): 148 padded -> 0,
 Running total: 219 of the Class A fields fixed at the producer.
 Next: su4_1111_markov_trace_probe (10, hecke_characters.py:214 root) and the
 four mpf(<float out of JSON>) producers.
+
+## Third fix (231 done) — and the "JSON idiom" label was wrong
+
+chirality_avg_content_chiral: 12 fields, same per-value fix as rho_k. It
+already records the kernel tag (mpfr_50dps vs f64_numeric_fallback) after a
+review caught it claiming precision_dps: 50 on fallback runs — the same
+overstatement survived one level down in the serialized value. Verified
+before/after, both rc=0: 12 padded -> 0, 0 of 53 numeric fields moved.
+
+Running total fixed at the producer: 231 (71 + 148 + 12).
+
+**Correction:** I grouped four producers as `mpf(<float out of JSON>)`. Only
+TWO read JSON. The call sites look alike; the float's ORIGIN differs, and that
+decides where the fix belongs:
+
+  phi_q_spectral_combiner_probe   upstream witness (add_upstream)   -> UPSTREAM
+  rho_k_h3a_lp_dual               json.loads (occam blob)           -> UPSTREAM
+  v_hat_to_delta_lambda_bridge    wedderburn_pair_volumes(), in-mem -> here
+  xi_ell_phi_q_probe              per_generator_V_hat_general()     -> here
+
+For the two upstream ones the precision was lost when THAT witness was
+written — promoting it here only makes the loss visible, so the fix is
+upstream and ordering matters. That is the one place the original "upstream
+propagation" reading was pointing at something real.
+
+Caught before any of the four was fixed on the strength of the wrong label.

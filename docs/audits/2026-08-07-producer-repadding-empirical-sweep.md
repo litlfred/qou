@@ -383,10 +383,33 @@ reached **527 310** times by `su4_1111_markov_trace_probe`, 11 868 by
 `chirality_avg_content_atomic`, 4 by `chirality_avg_content_chiral`. One line,
 three producers.
 
-**`mpf(<float out of JSON>)`** — `json.load` yields Python floats, and wrapping
-one in `mpf` promotes 53 bits to 50 dps:
+**`mpf(<float-valued dict entry>)`** — four producers promote a float pulled
+out of a dict:
 `v_hat_to_delta_lambda_bridge.py:125-127,152-153`, `xi_ell_phi_q_probe.py:181`,
 `phi_q_spectral_combiner_probe.py:107,109`, `rho_k_h3a_lp_dual.py:403,420`.
+
+**Correction — these were called "`mpf(<float out of JSON>)`" here, and only
+half of them are.** The line shape is the same, but the float's *origin*
+differs, and that decides the fix:
+
+| producer | where the float comes from | fix belongs |
+|---|---|---|
+| `phi_q_spectral_combiner_probe` | upstream witness via `builder.add_upstream()` | **upstream** |
+| `rho_k_h3a_lp_dual` | `json.loads` of an occam blob | **upstream** |
+| `v_hat_to_delta_lambda_bridge` | `wedderburn_pair_volumes()`, in-memory | here |
+| `xi_ell_phi_q_probe` | `per_generator_V_hat_general()`, in-memory | here |
+
+Where the value arrives from a **committed witness**, the precision was lost
+when *that* witness was written, and promoting it here only makes the loss
+visible — the fix is upstream and the ordering matters, which is the one place
+the original "upstream propagation" reading was pointing at something real.
+Where it comes from an **in-memory helper**, the helper computes in float and
+the choice is the usual one: make it compute in mpmath, or accept that the
+quantity is f64 and serialize it as such.
+
+Grouping them by the look of the call site rather than by the origin of the
+value is the same shortcut this document keeps recording. It was caught here
+before any of the four was "fixed" on the strength of it.
 
 **`mpf(<float-valued name>)`** — including
 `binding_factor_f_sequence.py:76`, the instance this document already
@@ -681,9 +704,13 @@ where this document said the non-mechanizable part lived all along.
   `rho_k_co_casimir_extended` (148). Neither touches the shared helper: both
   fix serialization in the producer, which is why `hoefsmit_numpy.py:161`
   can stay as it is for its other callers.
-  Remaining: `su4_1111_markov_trace_probe` (10) on the same
-  `hecke_characters.py:214` root, and the four `mpf(<float out of JSON>)`
-  producers. Counts for the two producers that exit non-zero are floors.
+  **231 fields are done** — `chirality_avg_content_atomic` (71),
+  `rho_k_co_casimir_extended` (148), `chirality_avg_content_chiral` (12).
+  Remaining: `su4_1111_markov_trace_probe` (10, floor — its measured runs
+  timed out) on the `hecke_characters.py:214` root; the two in-memory
+  `mpf(<float-valued dict entry>)` producers; and the two that read the value
+  from a committed witness, where the fix is upstream and ordering matters.
+  Counts for the producers that exit non-zero or time out are floors.
 - **Class B — 9 producers, 39 fields — needs no producer fix.** The values are
   genuine; the *detector* calls them padding. Either it learns to tell a
   computed near-integer from a truncated double (it cannot, from the string
