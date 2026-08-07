@@ -16,6 +16,10 @@ export default remark({
   title: "Meson mass splitting from q-deformed dynamics",
   md: "meson-mass-splitting.md",
   interprets: "prop:meson-octet-decomposition",
+  // Lean backs the NEGATIVE result: GMO is an identity of the first-order
+  // octet ansatz and therefore cannot discriminate between mechanisms. It does
+  // NOT back any derivation of the splitting — see bean qou-8pl2.
+  lean: { ref: "qou:QOU.Eightfold.GellMannOkuboIdentity" },
   uses: [
     "prop:a2-from-three-strands",
     "rem:q-deformation-weight-lattice",
