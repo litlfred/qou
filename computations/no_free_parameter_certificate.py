@@ -55,6 +55,14 @@ ENTRY_POINTS = {
     "per_observable_100x_status": "the L2 dashboard — all seven scored observables",
     "meson_mass_from_hecke":      "meson ratios (m_K/m_pi)",
     "binding_K_direct":           "per-isotope binding",
+    # theta/Q_beta channel (bean qou-skum). The T4/T5 channel
+    # S_K = A_omega * kappa * (ln^2 q0 - theta_K^2) is a prediction path that
+    # the mass-path-only scope did not reach, and PR #4513 proves in Lean
+    # (AfreeThetaConstraint.ratio_attained, sorry-free) that A_omega is a
+    # genuine FREE PARAMETER there: two anchor equations in three unknowns,
+    # pinned only by a one-sided A >= 2.05. Every corpus theta is inverted
+    # through it. Bringing it in scope is the point of qou-skum.
+    "qbeta_t4_stokes3_crux_probe": "theta channel — the T4 inversion",
 }
 ENTRY_MODULES = sorted(ENTRY_POINTS)
 
@@ -63,12 +71,36 @@ CALIBRATION_MODULES = {
     "codata_constants",
     "codata_2022_source",
     "codata_masses",
+    # A tagged reference-constants module (CODATA / PDG / SnapPy values, each
+    # carrying its uncertainty) — calibration inputs by construction, exactly
+    # like the codata_* modules. It was never added; it only became visible
+    # once the bare-assignment gap below was closed, since every entry in it is
+    # a plain `NAME = <literal>`.
+    "experimental_constants",
 }
 
 # Integers with a stated structural identification in the canonical formula
 # (see canonical_mass.__doc__ and docs/canonical-mass-formula-guardrail.md).
 STRUCTURAL_INTS = {
     0, 1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 24, 50, 65, 100, 1000,
+}
+
+# Literals that LOOK structural (small ints inside STRUCTURAL_INTS) but are
+# adjudicated FREE PARAMETERS: a value imported from the literature or fitted,
+# carrying no structural identification. The STRUCTURAL_INTS whitelist exists
+# for rep dimensions, group orders, exponents and indices; a physical channel
+# coefficient is none of those, so the whitelist must not cover it.
+#
+# Keyed by the assigned name (lowercased). Each entry states WHY.
+ADJUDICATED_FREE = {
+    "a_omega": (
+        "A_omega = 3 is the GGM literature value of a Stokes datum, imported "
+        "rather than derived. QOU/QBeta/AfreeThetaConstraint.lean proves "
+        "(sorry-free) that the T4/T5 channel has two anchor equations in three "
+        "unknowns, so A_omega is a genuine free parameter pinned only by a "
+        "one-sided A >= 2.05; ratio_attained constructs an admissible A for "
+        "every target ratio. It is NOT a rep dimension, group order, exponent "
+        "or index, so the small-int whitelist must not wave it through."),
 }
 
 # Bare integers beyond this are no longer waved through as "an index or
@@ -87,6 +119,7 @@ PRECISION_NAMES = (
 # `import q_parameter` resolves into the substrate package.
 SEARCH_ROOTS = [
     HERE,
+    HERE / "qbeta",
     HERE / "substrate",
     HERE.parent / "tools" / "qou-substrate" / "python" / "qou_substrate",
 ]
@@ -263,6 +296,18 @@ def audit_module(mod: str) -> list[dict]:
                 for a in n.args:
                     if isinstance(a, ast.Constant) and isinstance(a.value, (int, float)):
                         precision_arg.add(id(a))
+        # A bare numeric assignment `X = 1.234` IS a value in arithmetic
+        # position — it is the commonest way to type a magic constant, and it
+        # flows into every downstream use of `X`. The comment above always
+        # claimed this case was covered; no code path implemented it, so
+        # `q0 = 1.11020` was invisible while `S = +0.00968298` (a UnaryOp) was
+        # caught. Identical values, opposite verdicts, purely on a redundant
+        # leading sign.
+        if isinstance(n, (ast.Assign, ast.AnnAssign)):
+            v = n.value
+            if isinstance(v, ast.Constant) and isinstance(v.value, (int, float)) \
+                    and not isinstance(v.value, bool):
+                arith.add(id(v))
         if isinstance(n, (ast.BinOp, ast.UnaryOp)):
             # `"=" * 92` is a BinOp but it is string repetition, not
             # arithmetic on a physical value. Skip when a side is a string.
@@ -297,6 +342,10 @@ def audit_module(mod: str) -> list[dict]:
             # string repetition): cannot flow into a predicted value, so its
             # magnitude is irrelevant. This MUST precede the magnitude rules.
             cls = "non_arithmetic"
+        elif lo in ADJUDICATED_FREE:
+            # adjudicated a free parameter — the small-int whitelist below
+            # would otherwise hide it
+            cls = "UNTRACEABLE"
         elif isinstance(val, int) and val in STRUCTURAL_INTS:
             cls = "structural"
         elif isinstance(val, int):

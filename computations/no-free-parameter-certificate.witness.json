@@ -7,7 +7,8 @@
       "binding_K_direct",
       "canonical_mass",
       "meson_mass_from_hecke",
-      "per_observable_100x_status"
+      "per_observable_100x_status",
+      "qbeta_t4_stokes3_crux_probe"
     ],
     "modules_in_closure": [
       "_path_bridge",
@@ -22,6 +23,7 @@
       "meson_mass_from_hecke",
       "per_observable_100x_status",
       "q_parameter",
+      "qbeta_t4_stokes3_crux_probe",
       "qou_substrate",
       "witness_base"
     ],
@@ -50,16 +52,96 @@
         "modules": 8,
         "unresolved": [],
         "untraceable": []
+      },
+      "qbeta_t4_stokes3_crux_probe": {
+        "description": "theta channel \u2014 the T4 inversion",
+        "modules": 1,
+        "unresolved": [],
+        "untraceable": [
+          {
+            "module": "qbeta_t4_stokes3_crux_probe",
+            "line": 15,
+            "value": 1.1102,
+            "assigned_to": "q0",
+            "class": "UNTRACEABLE",
+            "verdict": null,
+            "source": "q0 = 1.11020  # from NZ probe: u_test = 0.209 = 2\u00b7ln(q\u2080)"
+          },
+          {
+            "module": "qbeta_t4_stokes3_crux_probe",
+            "line": 23,
+            "value": 3,
+            "assigned_to": "A_omega",
+            "class": "UNTRACEABLE",
+            "verdict": null,
+            "source": "A_omega = 3"
+          },
+          {
+            "module": "qbeta_t4_stokes3_crux_probe",
+            "line": 19,
+            "value": 0.00968298,
+            "assigned_to": "S_muon",
+            "class": "UNTRACEABLE",
+            "verdict": null,
+            "source": "S_muon = +0.00968298"
+          },
+          {
+            "module": "qbeta_t4_stokes3_crux_probe",
+            "line": 20,
+            "value": 0.03945936,
+            "assigned_to": "S_proton",
+            "class": "UNTRACEABLE",
+            "verdict": null,
+            "source": "S_proton = -0.03945936"
+          }
+        ]
       }
     },
     "counts": {
-      "modules": 14,
+      "modules": 15,
       "unresolved_imports": 0,
-      "unit_or_structural_floats": 25,
+      "unit_or_structural_floats": 23,
       "adjudicated_legit": 0,
-      "untraceable": 0
+      "untraceable": 4
     },
-    "untraceable": [],
+    "untraceable": [
+      {
+        "module": "qbeta_t4_stokes3_crux_probe",
+        "line": 15,
+        "value": 1.1102,
+        "assigned_to": "q0",
+        "class": "UNTRACEABLE",
+        "verdict": null,
+        "source": "q0 = 1.11020  # from NZ probe: u_test = 0.209 = 2\u00b7ln(q\u2080)"
+      },
+      {
+        "module": "qbeta_t4_stokes3_crux_probe",
+        "line": 23,
+        "value": 3,
+        "assigned_to": "A_omega",
+        "class": "UNTRACEABLE",
+        "verdict": null,
+        "source": "A_omega = 3"
+      },
+      {
+        "module": "qbeta_t4_stokes3_crux_probe",
+        "line": 19,
+        "value": 0.00968298,
+        "assigned_to": "S_muon",
+        "class": "UNTRACEABLE",
+        "verdict": null,
+        "source": "S_muon = +0.00968298"
+      },
+      {
+        "module": "qbeta_t4_stokes3_crux_probe",
+        "line": 20,
+        "value": 0.03945936,
+        "assigned_to": "S_proton",
+        "class": "UNTRACEABLE",
+        "verdict": null,
+        "source": "S_proton = -0.03945936"
+      }
+    ],
     "adjudicated": []
   }
 }
