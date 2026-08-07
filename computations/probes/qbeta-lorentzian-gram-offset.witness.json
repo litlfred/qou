@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke+numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T17:33:27.656550+00:00",
-  "commitSha": "bf61f718bd4699663d48e7928f85dab75faf6928",
+  "computedAt": "2026-08-07T20:36:57.188049+00:00",
+  "commitSha": "9fe53dd6b53856be7e9c3dcd2476a0ba77127495",
   "assertions": [
     {
       "name": "gram_is_lorentzian_at_q0",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 9,
   "computation": "qbeta-lorentzian-gram-offset",
   "scriptFile": "qbeta_lorentzian_gram_offset_probe.py",
-  "scriptHash": "4f4038a34d8d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f147041a2d1d",
+  "scriptCommitSha": "9fe53dd6b53856be7e9c3dcd2476a0ba77127495",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -116,7 +116,8 @@
         "minkowski_is_timelike": false,
         "timelike_part": 0.8631037233042368,
         "spacelike_part": 4.665625218148655,
-        "rapidity": null
+        "rapidity": null,
+        "inverse_rapidity": 0.18714677166113264
       },
       "proton (𝔹₃)": {
         "minkowski_norm_sq_signed": 2.9961499488144776,
@@ -124,7 +125,8 @@
         "minkowski_is_timelike": false,
         "timelike_part": 0.07386629582781268,
         "spacelike_part": 4.733420854012169,
-        "rapidity": null
+        "rapidity": null,
+        "inverse_rapidity": 0.015606533850070695
       }
     },
     "readings_declared_together": [
@@ -151,6 +153,22 @@
       },
       "rapidity": {
         "defined": false
+      },
+      "inverse_rapidity": {
+        "defined": true,
+        "theta_mu": "0.18714677166113",
+        "theta_p": "0.015606533850071",
+        "straddles_lnq0": false,
+        "ratio": null,
+        "matches_r": false,
+        "order_inverted_vs_assignment": true,
+        "swap_would_be_a_fit": true,
+        "swap_does_not_rescue": {
+          "target_theta_mu": "0.05894648",
+          "value_that_would_take_it": "0.01560653385",
+          "factor_off": "3.77704",
+          "note": "even under the impermissible swap the smaller value misses its target by ~3.8x, so this is a genuine miss and NOT a signal suppressed by the anchor assignment"
+        }
       }
     },
     "a_free_target_r": "-0.2453912075613999",
@@ -159,6 +177,6 @@
       "offset components in the Wedderburn block basis rather than the Gram eigenframe",
       "a reading built from the +/-0.855067 hyperbolic plane alone"
     ],
-    "verdict": "THE FROBENIUS GRAM OF H_3 AT q0 IS LORENTZIAN — signature (5, 1), exactly one negative direction, with a +/-0.855067 hyperbolic pair. THE SIGNATURE IS STABLE AROUND q0, NOT A SINGLE-POINT ACCIDENT: (5,1) holds at every tested q from 1.05 to 2.5, an interval containing q0 = 1.1102. It changes to (4,2) only near the classical limit, and the transition — where an eigenvalue of the Markov-trace Gram crosses ZERO — is at q_c = 1.0328057731. So this is a structural feature of the Hecke Gram with a genuine q threshold below the substrate point, not a coincidence. That matters because the T4/T5 channel S = A*kappa*(ln^2 q0 - theta^2) has exactly that signature, the T4 probe's own vocabulary is boost/spin-dominated, and CuspShapeBarParity independently puts q on a boost hyperbola — three places describing a Lorentzian structure the Gram supplies. NONE OF THE THREE DECLARED READINGS SUPPLIES theta: all fail the A-free curve's necessary straddling condition. The signature match is therefore a STRUCTURAL observation and NOT a determination of theta_K — precisely the distinction this arc keeps having to enforce. A SECOND, INDEPENDENT STRUCTURAL FACT: the unique timelike (negative-norm) direction is EXACTLY the bar-odd combination (L- - L+)/sqrt(2) of L+ = s0s1 and L- = s1s0 — every other component vanishes to 1e-9. CuspShapeBarParity independently states that the meridian is the bar-odd (boost) cycle, so two unrelated corpus objects agree on which direction is the boost. That is corroboration, not a fit — nothing was tuned to produce it. SCOPE (a): three readings of the Lorentzian decomposition were tested (signed Minkowski norm, timelike component, rapidity), all declared before evaluation. Untried and not excluded: the offset's components in the WEDDERBURN block basis rather than the eigenframe, and a reading built from the +/-0.855067 hyperbolic plane alone rather than the full 6-dim decomposition. Nothing fitted; nothing wired."
+    "verdict": "THE FROBENIUS GRAM OF H_3 AT q0 IS LORENTZIAN — signature (5, 1), exactly one negative direction, with a +/-0.855067 hyperbolic pair. THE SIGNATURE IS STABLE AROUND q0, NOT A SINGLE-POINT ACCIDENT: (5,1) holds at every tested q from 1.05 to 2.5, an interval containing q0 = 1.1102. It changes to (4,2) only near the classical limit, and the transition — where an eigenvalue of the Markov-trace Gram crosses ZERO — is at q_c = 1.0328057731. So this is a structural feature of the Hecke Gram with a genuine q threshold below the substrate point, not a coincidence. That matters because the T4/T5 channel S = A*kappa*(ln^2 q0 - theta^2) has exactly that signature, the T4 probe's own vocabulary is boost/spin-dominated, and CuspShapeBarParity independently puts q on a boost hyperbola — three places describing a Lorentzian structure the Gram supplies. NONE OF THE FOUR DECLARED READINGS SUPPLIES theta: all fail the A-free curve's necessary straddling condition. The signature match is therefore a STRUCTURAL observation and NOT a determination of theta_K — precisely the distinction this arc keeps having to enforce. A SECOND, INDEPENDENT STRUCTURAL FACT: the unique timelike (negative-norm) direction is EXACTLY the bar-odd combination (L- - L+)/sqrt(2) of L+ = s0s1 and L- = s1s0 — every other component vanishes to 1e-9. CuspShapeBarParity independently states that the meridian is the bar-odd (boost) cycle, so two unrelated corpus objects agree on which direction is the boost. That is corroboration, not a fit — nothing was tuned to produce it. THE SCALE FILTER, which is the arc-level lesson: the A-free curve forces both theta to be O(ln q0) ~ 0.1, so theta is a LOGARITHMIC quantity. Every reading tried across this whole SDP sweep except the last produced O(1)-O(5) numbers and was excluded BY SCALE ALONE, without needing the straddling test. Candidates should be filtered by scale BEFORE being measured. The one reading with the right scale, inverse_rapidity = artanh(timelike/spacelike) (the defined companion for a SPACELIKE offset, which both turn out to be), gives 0.18715 and 0.01561 against targets 0.05895 and 0.20324 — the right order of magnitude but with the anchors in the OPPOSITE order. Swapping them would be a FIT and is not permitted; decisively, the swap would not rescue it either (the smaller value misses its target by ~3.8x), so this is a genuine miss and NOT a signal suppressed by the anchor assignment. SCOPE (a): four readings of the Lorentzian decomposition, all declared before evaluation and all reported. Untried and not excluded: the offset's components in the WEDDERBURN block basis rather than the eigenframe, and a reading built from the +/-0.855067 hyperbolic plane alone. Nothing fitted; nothing wired."
   }
 }

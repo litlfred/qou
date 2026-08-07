@@ -40,6 +40,17 @@ decompose it in the Gram's eigenframe and read:
   R2  `timelike_part`   — |component along the unique negative eigenvector|.
   R3  `rapidity`        — `artanh(spacelike / timelike)` when < 1, the boost
                           angle of the offset in the Lorentzian frame.
+  R4  `inverse_rapidity`— `artanh(timelike / spacelike)`, the defined companion
+                          when the offset is SPACELIKE (which both turn out to
+                          be, making R3 undefined).
+
+THE SCALE FILTER (a prune that should have come first). The A-free curve forces
+ϑ_μ < ln q₀ < ϑ_p with ln q₀ ≈ 0.1045, so BOTH ϑ are O(ln q₀) ≈ 0.1 — ϑ is a
+LOGARITHMIC quantity. Every reading tried across this arc before R4 produced
+O(1)–O(5) numbers and was therefore excluded BY SCALE ALONE, without needing the
+straddling test. Only a logarithmic/rapidity-shaped reading can be in the running.
+This is the formalize-first lesson of the whole SDP sweep: filter candidates by
+scale before measuring them.
 
 THE TEST. The A-free curve (PR #4513) requires
     (L − ϑ_μ²)/(L − ϑ_p²) = S_μ/S_p = r < 0,  L = ln²q₀,
@@ -198,12 +209,19 @@ def main() -> int:
         spacelike = float(np.sqrt(space2))
         rap = (float(np.arctanh(spacelike / timelike))
                if timelike > EPS and spacelike < timelike else None)
+        # Both anchors turn out SPACELIKE, so artanh(space/time) is undefined.
+        # The defined companion for a spacelike vector is artanh(time/space) —
+        # the hyperbolic angle measured from the spacelike side. This is the
+        # ONLY reading tried in this arc with the right SCALE (see the scale
+        # filter in the module docstring).
+        inv_rap = (float(np.arctanh(timelike / spacelike))
+                   if spacelike > EPS and timelike < spacelike else None)
         res[name] = {
             "minkowski_norm_sq_signed": mink,
             "minkowski_norm": float(np.sqrt(abs(mink))),
             "minkowski_is_timelike": bool(mink < 0),
             "timelike_part": timelike, "spacelike_part": spacelike,
-            "rapidity": rap,
+            "rapidity": rap, "inverse_rapidity": inv_rap,
         }
         print(f"    {name:<12} ⟨off,off⟩_G = {mink:+.10g} "
               f"({'timelike' if mink < 0 else 'spacelike'})")
@@ -218,7 +236,8 @@ def main() -> int:
     print(f"\n[T1] A-free test (r = {mp.nstr(r_target, 10)} < 0 ⇒ pair must "
           f"straddle ln q₀ = {mp.nstr(lnq, 8)}):")
     verdicts = {}
-    for label in ("minkowski_norm", "timelike_part", "rapidity"):
+    for label in ("minkowski_norm", "timelike_part", "rapidity",
+                  "inverse_rapidity"):
         a = res["muon (4₁)"][label]
         b = res["proton (𝔹₃)"][label]
         if a is None or b is None:
@@ -242,6 +261,28 @@ def main() -> int:
               + (f"   ratio = {mp.nstr(rr, 10)} vs r = {mp.nstr(r_target, 10)}"
                  if rr is not None else ""))
 
+    # The inverse-rapidity reading is the first with the right SCALE. Record
+    # explicitly that its anchors come out in the OPPOSITE order, that swapping
+    # them would be a FIT and is not permitted, and — decisively — that the swap
+    # would not rescue it numerically either.
+    ir = verdicts.get("inverse_rapidity", {})
+    if ir.get("defined"):
+        a_ = mp.mpf(ir["theta_mu"]); b_ = mp.mpf(ir["theta_p"])
+        ir["order_inverted_vs_assignment"] = bool(b_ < lnq < a_)
+        ir["swap_would_be_a_fit"] = True
+        ir["swap_does_not_rescue"] = {
+            "target_theta_mu": "0.05894648", "value_that_would_take_it":
+                mp.nstr(b_, 10),
+            "factor_off": mp.nstr(mp.mpf("0.05894648") / b_, 6),
+            "note": "even under the impermissible swap the smaller value misses "
+                    "its target by ~3.8x, so this is a genuine miss and NOT a "
+                    "signal suppressed by the anchor assignment"}
+        print(f"     NOTE 'inverse_rapidity' is the first reading with the right "
+              f"SCALE (both O(ln q₀)), but its anchors come out in the OPPOSITE "
+              f"order. Swapping them would be a FIT and is not permitted — and "
+              f"it would not rescue the match anyway "
+              f"({mp.nstr(b_, 6)} vs target 0.0589, ~"
+              f"{mp.nstr(mp.mpf('0.05894648') / b_, 4)}x off).")
     hit = any(v.get("matches_r") for v in verdicts.values())
     any_straddle = any(v.get("straddles_lnq0") for v in verdicts.values())
 
@@ -264,7 +305,7 @@ def main() -> int:
         "boost/spin-dominated, and CuspShapeBarParity independently puts q on a "
         "boost hyperbola — three places describing a Lorentzian structure the "
         "Gram supplies. "
-        + ("NONE OF THE THREE DECLARED READINGS SUPPLIES theta: all fail the "
+        + ("NONE OF THE FOUR DECLARED READINGS SUPPLIES theta: all fail the "
            "A-free curve's necessary straddling condition. The signature match "
            "is therefore a STRUCTURAL observation and NOT a determination of "
            "theta_K — precisely the distinction this arc keeps having to "
@@ -280,12 +321,25 @@ def main() -> int:
            "unrelated corpus objects agree on which direction is the boost. "
            "That is corroboration, not a fit — nothing was tuned to produce "
            "it. " if antisym else "")
-        + "SCOPE (a): three readings of the Lorentzian decomposition were "
-        "tested (signed Minkowski norm, timelike component, rapidity), all "
-        "declared before evaluation. Untried and not excluded: the offset's "
-        "components in the WEDDERBURN block basis rather than the eigenframe, "
-        "and a reading built from the +/-0.855067 hyperbolic plane alone rather "
-        "than the full 6-dim decomposition. Nothing fitted; nothing wired."
+        + "THE SCALE FILTER, which is the arc-level lesson: the A-free curve "
+        "forces both theta to be O(ln q0) ~ 0.1, so theta is a LOGARITHMIC "
+        "quantity. Every reading tried across this whole SDP sweep except the "
+        "last produced O(1)-O(5) numbers and was excluded BY SCALE ALONE, "
+        "without needing the straddling test. Candidates should be filtered by "
+        "scale BEFORE being measured. "
+        "The one reading with the right scale, inverse_rapidity = "
+        "artanh(timelike/spacelike) (the defined companion for a SPACELIKE "
+        "offset, which both turn out to be), gives 0.18715 and 0.01561 against "
+        "targets 0.05895 and 0.20324 — the right order of magnitude but with "
+        "the anchors in the OPPOSITE order. Swapping them would be a FIT and is "
+        "not permitted; decisively, the swap would not rescue it either (the "
+        "smaller value misses its target by ~3.8x), so this is a genuine miss "
+        "and NOT a signal suppressed by the anchor assignment. "
+        "SCOPE (a): four readings of the Lorentzian decomposition, all declared "
+        "before evaluation and all reported. Untried and not excluded: the "
+        "offset's components in the WEDDERBURN block basis rather than the "
+        "eigenframe, and a reading built from the +/-0.855067 hyperbolic plane "
+        "alone. Nothing fitted; nothing wired."
     )
     print("\nVERDICT:", verdict)
 
