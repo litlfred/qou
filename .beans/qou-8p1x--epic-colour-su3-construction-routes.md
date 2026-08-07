@@ -4,7 +4,7 @@ title: 'EPIC: routes to a 3-dimensional fibre / colour SU(3) — assessed and ro
 status: in-progress
 type: milestone
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T13:50:00Z
+updated_at: 2026-08-07T14:30:00Z
 ---
 
 Umbrella for every proposed route to colour `SU(3)`, old and new, after the
@@ -183,3 +183,49 @@ the N = 2 one**", which is open and is the honest successor to T3f.
 
 Colour routes are unaffected: still `qou-8p1h`/`qou-8p1j` (Bruhat, gated) and
 the unearned octonionic status quo (`qou-8fl1`).
+
+
+---
+
+## T3f's "Unknown" RESOLVED for the mass channel (2026-08-07)
+
+`computations/ocneanu_parameter_is_fibre_qdim.py`, exact arithmetic, all checks
+pass.
+
+T3f's §1 table records the Ocneanu parameter's constraint as **"Unknown"**, on
+the grounds that "the Ocneanu trace is defined on `H_n(q)` **abstractly** — it
+does not require a specific `V` to exist." That is right for the *abstract*
+trace. **The mass pipeline does not use the abstract trace.**
+
+`feynman-eigenbasis.md` defines the mass as the **categorical trace**, summed
+"over the finitely many irreducible summands of `V^{tensor n}`", and quotes the
+skein relation `q m(L+) - q^{-1} m(L-) = (q^{1/2}-q^{-1/2}) m(L0)` — HOMFLY at
+`a = q`, i.e. `a = q^{N-1}` with `N = 2` already baked in.
+
+**The identity that closes it** (dual Cauchy, at the principal specialisation):
+
+    sum_{lambda |- n}  f^lambda * s_lambda(1, q, ..., q^{N-1})  =  [N]_q^n
+
+verified for `n = 1..5`, `N = 2..4`, five rational `q`. The right side is the
+categorical trace of the identity on `V^{tensor n}` when `dim_q V = [N]_q`. So
+the total Ocneanu weight at parameter `N` **is** the categorical trace of an
+`N`-dimensional fibre:
+
+> **`N` is the quantum dimension of the fibre. Choosing `N` IS choosing `V`.**
+
+Descartes fixes `dim V = 2`, hence `N = 2`, hence `a = q` — exactly the skein
+the mass block quotes. Not a knob.
+
+## And it collapses the board
+
+An `N = 3` flavour channel cannot be the same trace re-tuned (excluded by
+`ocneanu_N_lockin_probe.py`). By this identity it must be the categorical trace
+on a **genuinely 3-dimensional object** — which is precisely the missing
+3-dimensional fibre `qou-8p1x` identifies as the real gap.
+
+**So the Ocneanu route does not avoid needing a 3-dim fibre; it restates the
+need for one. The two open threads are one thread.**
+
+NOT claimed: that the Descartes condition is derived (input here); that no
+other trace could serve the mass pipeline (the claim is conditional on the
+corpus's own definition of mass as a categorical trace); anything about colour.
