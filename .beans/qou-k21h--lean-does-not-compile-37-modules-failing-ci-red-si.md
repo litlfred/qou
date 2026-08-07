@@ -5,65 +5,100 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-07T20:43:08Z
-updated_at: 2026-08-07T20:43:08Z
+updated_at: 2026-08-07T21:03:41Z
 ---
 
-A complete `lake build` of the QOU package — the first in months — fails on
+A complete `lake build` of the QOU package — the first in months — failed on
 **37 modules**. `lean_ci.yml` last ran **2026-04-25** and failed on `main`;
 nothing has run a full Lean build since, so this accumulated unseen.
 
-Found while reseeding the Lean olean cache (folio-assistant side). Bean
-`5d7z` there recorded the symptom — "16 of 28 blocks failed to elaborate" —
-and attributed it entirely to a cache missing own-package oleans. That was
-only half of it: the code also does not build.
+Found while reseeding the Lean olean cache (folio-assistant side).
 
-Build outcome: **4026 targets OK, 37 modules failing**, plus 9 `sorry`
-warnings. The whole Mathlib closure (3214 oleans) built clean, so this is
-QOU's own code, not a dependency problem.
+## Status: all 37 now build (37 -> 17 -> 5 -> 1 -> 0)
 
-## Error classes
+`lake build` over all 37: **exit 0, 3238 jobs, zero errors.**
 
-**1. Declaration outside the namespace its dot-notation needs — dominant.**
-A `def`/`theorem` meant to be `Type.member` is declared at namespace top
-level, so it becomes `Namespace.member`. Call sites using `x.member` then
-fail; because the carrier is often a `def ... : Prop`, Lean unfolds the type
-and reports the confusing `Function.<member>` instead. Affects at least:
-QCharacter (`IsQChar.mul`), TorusKnot (`TorusKnotLabel.seifertRank`,
-`.embeddableOn`), DeltaLambdaSignRule (`Partition.dimIrrep` ×9, `.nStat`,
-`.conjugate`, `.armLength`, `.legLength`, `.hookLength`, `.hookProduct`),
-TypeBFoldedCrystalCombinatorics, LightNucleus, KnotRegistry, Brunnian,
-EigenbasisStructuralLemmas, JointGaloisBraidFigure8, PathIntegrals,
-PhysicalIntractability, LRFusion, BringShellBinding, Wedderburn.
-
-**2. Parse errors — these files have NEVER compiled.** 5 sites:
-ConfinementLevel (`exists` used as an identifier — reserved keyword),
-MarkovAxiomsPrimitive, HoefsmitV21CosSymmetrization (×3),
-BraidGroupNStrand.
-
-**3. References to Mathlib constants that do not exist** in the pinned
-revision (verified absent by grepping Mathlib): `List.foldl_mul_eq_mul_prod`,
-`Real.rpow_half_eq_sqrt`, `Matrix.frobeniusInner`,
-`Matrix.PosSemidef.entry_sq_le_diag_mul`,
-`Matrix.PosSemidef.entry_zero_of_diag_zero`. These need real replacements,
-not renames.
-
-**4. Duplicate / clashing declarations.** `QOU.IsSelfDual` and
-`TypeBCrystal.transpose` declared twice; AppendixSurreals/Basic declares
-`SurrealField.neg/add/mul/sub` colliding with structure fields of the same
-name (7 sites).
-
-**5. Tactic failures** downstream of the above (`rewrite` pattern not found,
-`decide` failed, `introN`, `cases` eliminating into non-`Prop`).
-
-## Plan
-
-- [ ] Class 1 (mechanical, unambiguous — intended name is stated in each file)
-- [ ] Class 2 parse errors
-- [ ] Class 4 duplicate/clashing declarations
-- [ ] Class 3 nonexistent Mathlib constants — needs real substitutions
-- [ ] Class 5 residual tactic failures
-- [ ] Full `lake build` green
+- [x] Class 1 — declaration outside the namespace its dot-notation needs
+- [x] Class 2 — parse errors
+- [x] Class 4 — duplicate / clashing declarations
+- [x] Class 3 — "nonexistent Mathlib constants" (see correction below)
+- [x] Class 5 — residual tactic failures
+- [ ] Full `lake build` of the whole package — NOT yet proven (see Caveat)
 - [ ] Re-enable / verify `lean_ci.yml`
 
-Classes 3 and 5 may need decisions about the mathematics; those get raised
-rather than guessed.
+## What it actually was
+
+Nearly all of it was **one bug repeated**: a `def`/`theorem` meant to be
+`Type.member` declared at namespace top level, so it became
+`Namespace.member` and every `x.member` call site failed. 57 declarations
+in the first sweep, more after.
+
+Lean's error hid it. When the carrier is a `def ... : Prop`, dot-notation
+resolution unfolds the type, reaches a Pi type, and reports
+**`Function.member`** — a name nobody wrote and which greps find nowhere.
+
+**No call site was changed for these.** `TorusKnot.lean` and
+`BetaDecay.lean` already wrote `TorusKnotLabel.seifertRank`;
+`QCollatz.lean` already wrote `QCollatz.inDomain`. Only the declarations
+sat in the wrong place, which is what makes the rename the fix rather
+than a guess.
+
+### Correction to this bean's original Class 3
+
+`List.foldl_mul_eq_mul_prod`, `Real.rpow_half_eq_sqrt`,
+`Matrix.frobeniusInner`, `Matrix.PosSemidef.entry_*`,
+`List.commute_init_prod` were recorded here as "references to Mathlib
+constants that do not exist". Wrong. They are **defined locally** in
+`MathlibExt.lean`, `FrobeniusInnerProduct.lean` and
+`PosSemidefDiagZero.lean`, merely declared outside the namespace they are
+called in. Mathlib genuinely lacks them; the inference that the code was
+inventing upstream lemmas did not follow.
+
+`algebraMap_self_apply` likewise DOES exist, at
+`Mathlib/Algebra/Algebra/Defs.lean:395` — the earlier "not declared
+anywhere" came from a grep that excluded `.lake`. It needed the `Algebra`
+prefix.
+
+### The genuinely distinct ones
+
+- **Parse errors (files that had never compiled).** Three wrote
+  `@[deprecated (since := "...") "msg"]`; the message comes first, per
+  Mathlib's own usage. One declared `theorem exists` — a reserved keyword.
+- **Two notions sharing a name.** `IsSelfDual` was declared twice for a
+  categorical and a concrete involution; each now sits under its own type.
+- **A misnamed legacy definition.** `hoefsmit_sigma1_gen` was declared
+  twice; the second is the legacy archimedean form — its own docstring
+  says so, and its deprecation message points callers *at* the generic, so
+  it cannot be the generic. Renamed `hoefsmit_sigma1_legacy`, matching
+  `markovZax_legacy` / `markovZN_legacy` in sibling files. That also
+  cleared 5 "failed to synthesize" errors: the elaborator was matching a
+  single real argument against the generic's `(d1 d2 b : R)`.
+- **Structure-field collisions.** `AppendixSurreals/Basic` declared
+  `neg/add/mul/sub` inside `namespace SurrealField`, which extends `Field`
+  — those are inherited fields, so the declarations were rejected. They
+  are lemmas about `IsInfinitesimal` / `IsFinite` and now sit under the
+  predicate in each signature.
+- **Two redundant rewrites.** `List.get?_eq_getElem?` led two chains whose
+  goals were already in `l[i]?` form, so it matched nothing.
+
+### A regression I introduced and fixed
+
+The first sweep was scripted, and when one file needed two different
+owners for the same bare name it applied whichever error came first —
+turning `def transpose (P : PartitionWithCells)` into `Cell.transpose`,
+colliding with the real one. Same for `A5Irrep.dim` vs `PartitionOf5.dim`
+and three `allList` definitions sharing a namespace. The owner is the
+declaration's own argument type; fixed on that rule.
+
+## Caveat — this does NOT mean the package builds
+
+The 37 are the modules that *failed*. The build that found them was killed
+by a container reclaim at **625 of 1592** QOU modules, so roughly 950 were
+never reached and have never been compiled in this cycle. Expect more
+failures there. A full `lake build` is the only thing that settles it.
+
+## Also fixed here
+
+The `beans` CLI was down for the whole repo: `qou-8p1f`'s front matter had
+unescaped single quotes inside a single-quoted YAML title, so every
+command failed to parse it. 16857 beans load now.
