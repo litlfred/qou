@@ -487,3 +487,55 @@ its two factors are individually smooth and easy to scan for `→ −∞`.
 
 χ's divisor, the bounded/elliptic tension, and the Stokes multipliers all remain
 **OPEN**.
+
+## 2026-08-07 (eleventh) — χ = (A₁B₂)/(A₂B₁); winding flat but NOT decisive
+
+Real structural progress, divisor still unlocated, and one of my own tests
+correctly diagnosed as inconclusive.
+
+**The entries are Casoratians.** Writing `yi_j = A_j y₁ + B_j y₂`:
+
+    N₀₀ = W[y₂,yi₁] = −A₁W,   N₁₀ = −B₁W,   N₀₁ = −A₂W,   N₁₁ = −B₂W
+
+with `W = W[y₁,y₂]`. So `χ = (A₁B₂)/(A₂B₁)`, and the earlier `|N₀₀| = |N₁₀|`
+says **`|A₁| = |B₁|`** — the first ∞-solution has equal-modulus components in
+the 0-basis. Still unexplained off the real axis.
+
+**Why the previous entry's zoom was looking for the wrong thing.** Every `N`
+obeys the Casoratian equation `W(pz) = −(q−1)W(z)/(p⁴z²−1)`. Verified: at
+`arg = 0.25π` that predicts `−0.967` decades per `p`-step; measured `−0.967`.
+So `N₀₁` decreasing steadily is **quasi-periodicity, not a zero** — it never
+dives to `−∞` because it isn't supposed to. Only the elliptic *ratio*
+`N₁₁/N₀₁` can show the divisor.
+
+**`|χ|` is bounded, and now quantitatively so.** Spread of `log10|χ|` over a
+`p`-period, by angle: `1.5e-60, 7.2e-47, 3.5e-33, 1.7e-19, 8.6e-6` at
+`arg/π = 1/12 … 5/12` — **exactly geometric**, ratio `4.9e13` per step, i.e.
+`log10(spread) = −log10|χ| − 73.4`. Max spread `8.6e-6`: `|χ|` varies by a
+factor `1.00002` across a full period. So `|χ| ∈ [1e−73.4, 1e73.4]` really is
+bounded, and the bounded/elliptic/non-constant tension is **sharp**, not an
+artifact of coarse sampling.
+
+**Winding vs radius: flat — and NOT decisive.** `W(r)` at 7 radii spanning a
+`p`-period: all `~1e-202`, i.e. **0** throughout. I ran this expecting it to
+localise the divisor by jumping. It cannot: the winding around `|z| = r` counts
+zeros *minus* poles inside the disc, so a zero and a pole at the **same
+modulus, different angles** enter together and cancel `(+1) + (−1) = 0`,
+leaving `W(r)` flat. Recording this so nobody reads the flat result as "χ has
+no divisor" — it is consistent with a zero/pole pair at equal radius, which is
+exactly what the reflection law `χ(z̄) = 1/conj χ(z)` **predicts**: a zero at
+`z₀` forces a pole at `conj z₀`, same modulus, mirrored angle.
+
+**That is the strongest lead in this arc.** The reflection law makes zero/pole
+pairs conjugate, hence equal-modulus, hence invisible to every radius-based
+test I have run — which explains why the apex sweep, the entry-minimum zoom,
+and the winding scan all came back clean.
+
+**Next probe (specified, not run):** an argument-principle count over a
+**half-annulus** — `r ≤ |z| ≤ pr` restricted to `Im z > 0` — whose boundary
+separates a conjugate pair. Non-zero count localises the zero; its conjugate is
+the pole. Needs `DPS ≥ 200` and care with the contour along the real axis,
+where `|χ| = 1` exactly and `arg χ` is well-behaved.
+
+χ's divisor, the bounded/elliptic tension, and the Stokes multipliers remain
+**OPEN**.
