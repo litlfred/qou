@@ -48,6 +48,9 @@ G7  If G6 holds, the inversion formula eliminates the ``Log²`` term entirely an
     the sum rule becomes a statement about ``Li₂`` at the roots AND at their
     reciprocals.  The conclusion holds; the per-root derivation does not.
 
+G9  Cross-check of the Lean lemma ``sum_re_log_neg_sq``: the ``Log²`` half of
+    the sum rule in closed form, and hence Route 5's recorded constant.
+
 G8  Why: the per-root inversion defect is nonzero at ``y₃ ∈ (0,1)`` but is
     **purely imaginary** -- ``Re Dⱼ = 0`` for every root separately. The sum rule
     uses only real parts, so G7's rewrite is derived, not merely observed.
@@ -275,6 +278,50 @@ def gate8_defect_cancellation(y1, y2, y3):
     }
 
 
+def gate9_log_sq_closed_form(y1, y2, y3):
+    """The Log^2 half of the sum rule, in closed form -- and Route 5's constant.
+
+    Cross-check of ``QOU.QBeta.FiveTwo.sum_re_log_neg_sq`` (Lean, sorry-free):
+
+        sum_j Re Log(-y_j)^2 = (3/2) log^2 y_3 - 2 (theta - pi)^2 - pi^2
+
+    with ``theta = arg y_1``.  The Lean proof is unconditional, so this gate is
+    guarding against a mis-transcribed STATEMENT, not against the proof.
+
+    Subtracting from the sum rule ``sum_j Re V_j = -3 pi^2 / 2`` then predicts
+
+        A := sum_j Re Li2(y_j) = -pi^2/6 - log^2(y_3)/2 + (2/3)(theta - pi)^2
+
+    which is Route 5's recorded closed form.  ``A`` is also the integral
+    (gate G2), so this closes the loop between the two statements.
+    """
+    theta = mp.arg(y1)
+    lhs = sum(mp.re(mp.log(-y) ** 2) for y in (y1, y2, mp.mpc(y3)))
+    rhs = mp.mpf(3) / 2 * mp.log(y3) ** 2 - 2 * (theta - mp.pi) ** 2 - mp.pi**2
+    a_pred = (-mp.pi**2 / 6 - mp.log(y3) ** 2 / 2
+              + mp.mpf(2) / 3 * (theta - mp.pi) ** 2)
+    a_int = -mp.quad(lambda z: mp.log(recip_cubic(z)) / z, [0, 1])
+    return {
+        "gate": "G9",
+        "claim": "sum_j Re Log(-y_j)^2 == (3/2)log^2 y_3 - 2(theta-pi)^2 - pi^2",
+        "theta_arg_y1": mp.nstr(theta, 20),
+        "lhs": mp.nstr(lhs, 25),
+        "rhs_closed_form": mp.nstr(rhs, 25),
+        "abs_difference": mp.nstr(abs(lhs - rhs), 8),
+        "route5_A_from_closed_form": mp.nstr(a_pred, 25),
+        "route5_A_from_integral": mp.nstr(a_int, 25),
+        "route5_abs_difference": mp.nstr(abs(a_pred - a_int), 8),
+        "pass": bool(abs(lhs - rhs) < mp.mpf(10) ** -40
+                     and abs(a_pred - a_int) < mp.mpf(10) ** -20),
+        "consequence_if_pass": (
+            "The Log^2 half of the sum rule is elementary and now Lean-proved, so "
+            "the entire remaining content sits in the dilogarithm half. Route 5's "
+            "restatement is EQUIVALENT to the sum rule given the one open link "
+            "sum_j Re Li2(y_j) = -int_0^1 log P(z)/z dz (gate G2)."
+        ),
+    }
+
+
 def gate5_sum_rule_cross_check(y1, y2, y3):
     """Reproduce Σⱼ Re Vⱼ = -3π²/2 from the corpus b. Cross-check only."""
     total = mp.mpf(0)
@@ -304,6 +351,7 @@ def main() -> None:
     g6 = gate6_b_is_principal_log_of_neg(y1, y2, y3)
     g7 = gate7_inversion_rewrite(y1, y2, y3)
     g8 = gate8_defect_cancellation(y1, y2, y3)
+    g9 = gate9_log_sq_closed_form(y1, y2, y3)
 
     # G3 is a verdict on a prior claim, decided by G1.
     g3 = {
@@ -334,7 +382,7 @@ def main() -> None:
             "y3": mp.nstr(y3, 20),
             "abs_y1": mp.nstr(abs(y1), 20),
         },
-        "gates": [g1, g2, g3, g4, g5, g6, g7, g8],
+        "gates": [g1, g2, g3, g4, g5, g6, g7, g8, g9],
         "scope": (
             "Numerical verification only. Nothing here proves the sum rule, which "
             "remains verified-to-80-dps and unproved. Scope-(a) throughout: no "
