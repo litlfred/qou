@@ -62,3 +62,45 @@ have tolerances tighter than ~1e-7 before assuming it survives the move.
 4. The cached-accessor trap above is closed — the cache gate must distinguish
    *which* q₀ the cache was built at, not just whether the caller passed the
    package constant.
+
+
+## Surveyed scope (2026-08-07) — supersedes the "~840" estimate
+
+`_deprecated/` **excluded per owner instruction**; it turned out to contain **0**
+affected witnesses, so the exclusion costs nothing.
+
+| | count |
+|---|---|
+| producers importing `y_lambda_at` | 145 |
+| producers referencing the muon `q-pinning-50-digit` | 122 |
+| witnesses carrying the **muon** q₀ | 481 |
+| witnesses carrying the **proton** q₀ | 416 |
+| total witnesses | 2383 |
+
+## Step 1 — DONE (PR #4665): root cause closed
+
+`y_lambda_at`'s cache gate now keys on the **witness's own recorded q₀** rather
+than on `q_parameter.Q`. This corrects ~145 call sites **without editing any of
+them**: a proton-anchored caller falls through to the live closed form at the
+anchor it asked for, while a muon-anchored caller still hits the cache (fast path
+re-gated, not lost). Regression test `computations/q0_anchor_gate_test.py`, exit 0.
+
+## Step 2 — NEXT: regenerate the 481 muon witnesses
+
+Deliberately **not** bundled with step 1 — mixing "fix the mechanism" with
+"regenerate 481 files" makes both unreviewable, and several producers are 18-min
+long-computes (AGENTS.md long-compute logging discipline applies: `-u` + `tee`).
+
+Sequencing that keeps it reviewable:
+1. Classify the 481 by producer; find the ~122 that read `q-pinning-50-digit`.
+2. **Re-verify tolerances first.** Measured anchor impact is ~1e-7 relative, so any
+   witness whose assertions are tighter than that may legitimately fail after the
+   move. Those are findings, not breakage — triage before regenerating en masse.
+3. Batch by producer, ≤ 49 files per PR (Gemini review limit).
+4. Long-computes get their own PRs with logged wall times.
+
+## Step 3 — audit the other cached accessors
+
+`y_lambda_at` is unlikely to be the only accessor with the "matches the package
+constant ⇒ serve the cache" shape. Grep for other witness caches gated on
+`q_parameter.Q` and apply the same fix (gate on the artifact's own recorded q₀).
