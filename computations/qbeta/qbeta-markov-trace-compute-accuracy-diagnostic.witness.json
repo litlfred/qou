@@ -59,14 +59,14 @@
   "description": "PR #1750 compute-accuracy diagnostic answering the user's question 'impact on compute accuracy?'. The Markov-trace SHAPE collapse changes T_β-as-operator (from 6-channel SHAPE × S to scalar × identity) but does NOT change any observable derived from τ_M(T_β) = S (the SDP constraint). All four canonical observables — τ_M(T_β), Q_β, c_k Taylor coefficients, m_n / Δ_pn downstream — are L2/Markov-INVARIANT. The 'compute accuracy' question therefore has a clean answer: ZERO impact.",
   "data": {
     "per_channel_NF_coordinate_deltas": {
-      "γ": "0.089909500604593697858923917465290287509560585021973",
-      "σ₀": "0.048426178786698637068752759660128504037857055664063",
-      "σ₁": "0.048426178786698637068752759660128504037857055664063",
-      "L₊": "0.024180175767745112208606528270138369407504796981812",
-      "L₋": "0.024180175767745112208606528270138369407504796981812",
-      "e⁻": "0.053481294118475318499772441782624810002744197845459"
+      "γ": "0.0899095006045937",
+      "σ₀": "0.04842617878669864",
+      "σ₁": "0.04842617878669864",
+      "L₊": "0.024180175767745112",
+      "L₋": "0.024180175767745112",
+      "e⁻": "0.05348129411847532"
     },
-    "max_per_channel_delta": "0.089909500604593697858923917465290287509560585021973",
+    "max_per_channel_delta": "0.0899095006045937",
     "compute_accuracy_verdict": {
       "observable_impact": "zero",
       "per_channel_NF_impact": "non-zero (basis-dep, no observable)",

@@ -41,7 +41,7 @@
     "direction_obstruction_note": "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
     "M1_identity_trace": {
       "verdict": "REFUTED",
-      "tr_M_identity_H4_at_q0": "0.99999999999999999999999999999999999999999999999999863",
+      "tr_M_identity_H4_at_q0": "1.0",
       "linking_weight_at_q0": "2.5327796636746759826636838141577022737497563139135",
       "relative_error": "0.6051768677938795044326435331368505471707764945991363920690542334611462",
       "tr_M_identity_is_one": true,

@@ -1,6 +1,6 @@
 {
   "computation": "habiro-coefficients-atomic",
-  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n (default), D (HABIRO_WITH_DEUTERON=1), and T / \u00b3He (HABIRO_WITH_A3=1). Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
+  "description": "Habiro / cyclotomic expansion tr_M(T_w, q) = Σ_m a_m·(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n (default), D (HABIRO_WITH_DEUTERON=1), and T / ³He (HABIRO_WITH_A3=1). Verifies the integrality and termination properties of the Habiro coefficients claimed in habiro-ring.md and full-pole-structure-mass-trace.md.",
   "reference_blocks": [
     "def:habiro-ring",
     "prop:full-pole-structure-mass-trace",
@@ -167,7 +167,7 @@
       ],
       "all_integral": true,
       "reconstruction_matches": true,
-      "tr_M_at_q0": "0.923233229911637143239033775899"
+      "tr_M_at_q0": "0.9232332299116371"
     },
     "D (deuteron, A=2)": {
       "Z": 1,

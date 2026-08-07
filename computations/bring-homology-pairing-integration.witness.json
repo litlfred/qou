@@ -37,9 +37,9 @@
   "description": "Numerical integration of the continuous Euler class over the fundamental 2-cycle of the Bring curve (genus 4). The Bring curve is tiled by 240 hyperbolic triangles of angles (π/2, π/4, π/5). The integral yields the Gauss-Bonnet area 12π. The pairing ratio 2g / Area naturally produces the 2/(3π) Bring zero-mode shift, escaping the pointwise Bloch-Wigner transcendence obstruction.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
-    "computed_triangle_area": "0.1570796326794901554002592547476524487138",
-    "computed_total_area": "37.69911184307763818424064083956182003021",
-    "pairing_ratio": "0.2122065907891931002549057438955060206354",
-    "target_ratio": "0.2122065907891937941442961346183437854052"
+    "computed_triangle_area": "0.15707963267949016",
+    "computed_total_area": "37.69911184307764",
+    "pairing_ratio": "0.2122065907891931",
+    "target_ratio": "0.2122065907891938"
   }
 }

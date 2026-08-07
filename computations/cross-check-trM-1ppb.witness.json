@@ -41,8 +41,8 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
     "description": "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. 1 ppQ (1e-15) certification rests on the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) agreeing at q_0 (~1e-50); peel evaluates its exact-in-q trace at the full 50-digit q_0 (the float64 q_0 leak was fixed 2026-06-29). The Hoefsmit (mpfr 50-dps) and Habiro legs are color-blind (sign-only) cross-checks: they diverge ~1.8e-4 at A≥2 by the color-weighting (informational, not gated). An atom with only one color-weighted method (⁴He: partial chi-cache, bean b0vf) is reported UNCERTIFIED, not divergent.",
-    "tolerance_1ppQ_exact_methods": "0.000000000000001000000000000000077705399876661079238307185601195",
-    "tolerance_peel_float_check": "0.00000000000099999999999999997988664762925561536725284350612952",
+    "tolerance_1ppQ_exact_methods": "1e-15",
+    "tolerance_peel_float_check": "1e-12",
     "working_precision_dps": 50
   },
   "data": {
