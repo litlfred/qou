@@ -4,7 +4,7 @@ title: 'PLAUSIBLE-NOT-PROVED: Bring → Klein quartic genus degeneration'
 status: todo
 type: task
 created_at: 2026-08-06T00:00:00Z
-updated_at: 2026-08-06T00:00:00Z
+updated_at: 2026-08-07T14:20:00Z
 ---
 
 ## UPDATE 2026-08-07 — the S_4 bridge is REFUTED as an argument
@@ -84,3 +84,30 @@ content — a refutation would kill the octonionic colour route's geometric leg.
 This is a scope-(a) "not established" item, NOT a scope-(b) structural
 exclusion. Nothing proved forbids the degeneration; only the offered argument
 fails.
+
+
+---
+
+## STALE HEADER — the degeneration is now EXCLUDED, not "plausible-not-proved" (2026-08-07)
+
+This bean's **title and status were never updated** after the marked-pair
+result. The most recent entry above records only the *Fermat* finding ("refuted
+as an argument"). Since then:
+
+* `s4_genus3_pencil_infinite_family.py` — the S_4-invariant quartics form a
+  **pencil**, so infinitely many genus-3 curves admit `S_4`. The bridge is not
+  merely non-selective, it is near-vacuous.
+* `s4_marked_pair_obstruction.py` — **scope-(b) STRUCTURAL EXCLUSION.** The
+  pinch supplies an `S_4`-stable pair of marked points, and `S_4` has *no orbit
+  of size <= 2* on `P^2` (the 3-dim rep and its restriction to `A_4` are both
+  absolutely irreducible). No smooth plane quartic carries such a pair, and
+  Klein is not hyperelliptic.
+
+**So the title is wrong.** This is no longer "PLAUSIBLE-NOT-PROVED": under the
+chapter's own three premises (one non-separating `S_4`-invariant cycle; `S_4`
+faithful on the normalization; non-hyperelliptic normalization) the degeneration
+**cannot happen**. Rescue requires explicitly dropping one premise — see
+`qou-8p1e`.
+
+Left as `todo` deliberately: the *conjecture* is not dead, only this route to
+it. Renaming is the owner's call.

@@ -1,10 +1,10 @@
 ---
 # qou-8p1i
 title: 'qou-8p1x/i: multi-fibre groupoid (T3b) — the only untouched native route'
-status: todo
+status: scrapped
 type: task
 created_at: 2026-08-07T12:40:00Z
-updated_at: 2026-08-07T13:55:00Z
+updated_at: 2026-08-07T14:20:00Z
 ---
 
 Parent: `qou-8p1x`. Direction 1 of the two construction directions already
@@ -125,3 +125,25 @@ Before any gerbe construction: **promote or refute the existence claim.** Is
 "five topologically distinct embeddings of a fibre functor" a theorem, or a
 picture? That is prior to asking what band the gerbe has, and it is the honest
 first move on the merged `qou-8p1i`/`qou-y7vg` scope.
+
+
+---
+
+## SCRAPPED as a DUPLICATE (2026-08-07) — my bean-hygiene failure
+
+This bean duplicates **`qou-dwsh`** ("T3b: distinct-fibre groupoid -- does a
+non-self-dual 3-object exist?", `parent: qou-8lxd`, priority high), which
+existed since 2026-08-03 and which I did not grep for before creating this one.
+`qou-dwsh` even states the same conclusion my Sym^2 probe later re-derived:
+*"the representation must NOT be a tensor power of one V"*.
+
+The state was incoherent — the same question sitting **completed** on
+`qou-dwsh` and **todo** here.
+
+**Live carrier is `qou-y7vg` (T3g).** Everything of value from this bean has
+been folded there: the merged T3b/T3g scope, the `rem:fivefold-affine-charts-generations`
+finding, and the corrected Frobenius-Schur parity statement.
+
+What this bean *did* add over `qou-dwsh`, and which survives on `qou-y7vg`: the
+**reason** the tensor-power route fails (FS parity, not self-duality) and its
+Lean formalization in `QOU/Eightfold/Sym2GateParity.lean`.
