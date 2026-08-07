@@ -10,7 +10,7 @@ tags:
     - whitehead
     - refuted-needs-repair
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T21:45:00Z
+updated_at: 2026-08-07T22:20:00Z
 ---
 
 ## Why
@@ -173,3 +173,84 @@ bounded product search.
    that freedom and nothing else.
 3. Only then re-derive the per-cusp factor — which the ambiguity-group result
    already shows is unidentifiable in its current form.
+
+---
+
+## 2026-08-07 (fourth pass) — DG 1202.6268 obtained. The formula is in hand and the root cause is confirmed.
+
+`uploads/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
+gluing equations"). Four results, all from the source rather than inference.
+
+### 1. My searched flattening convention was RIGHT — Definition 2.1
+
+    f_i + f'_i + f''_i = 1                    (2.10a)
+    sum_i (G_Ii f_i + G'_Ii f'_i + G''_Ii f''_i) = 2  for edges I = 1..N
+                                              = 0  for the cusp row I = N+1   (2.10b)
+
+Exactly the convention I found by search after reasoning my way to the wrong
+`-1`. Eliminating `f'` gives the clean form used below:
+
+    A f + B f'' = nu                          (2.11)
+
+a linear Diophantine system. Neumann [Neu92, Lem 6.1] proves every ideal
+triangulation has a flattening.
+
+### 2. The repo's determinant is THE WRONG MATRIX — this is the root cause
+
+Definition 1.2 / eq (3.1):
+
+    tau := -+ (1/2) det( A Delta_z'' + B Delta_z^{-1} ) * z^{f''} * z''^{-f}
+
+Entry-wise that is `A_kj z''_j + B_kj / z_j`.
+`whitehead_c_sigma_torsion.py` builds `A_kj - B_kj z_j/(1-z_j)`. **Different
+matrix**, not a normalisation of the same one. This is exactly the bound I
+flagged as untested in PR #4700: searching *corrections* could never have found
+it, because the object being corrected was wrong.
+
+Note also DG's `A`, `B` are exponents of `(z, z'')` — their gluing equations are
+`z^A z''^B = (-1)^nu` — whereas SnapPy's `gluing_equations('rect')` is in
+`(z, 1-z)`. `gluing_equations_pgl()` gives the `(z, z', z'')` form and is the
+right entry point.
+
+### 3. The monomial is a CROSS pairing — none of my six placements tested it
+
+    z^{f''} * z''^{-f}
+
+i.e. `z` carries `f''` and `z''` carries `-f`. I tested `z''^f'' z'^f'`,
+`z''^f'' z'^-f'`, `z^f z'^f' z''^f''`, and the three single factors. The actual
+pairing is not among them. The negative in PR #4700 is therefore explained, not
+merely bounded.
+
+### 4. The factor of 2 the script dropped is real — DG's worked 4_1 example
+
+Section 3.1 computes the figure-eight directly and gets
+
+    tau_{4_1} = (1/2)(z'' - w''^{-1}) = (1/2) sqrt(-3)      (3.2)
+
+so `|tau(4_1)| = sqrt(3)/2`. The repo's `|det J| = sqrt(3)` is **exactly twice**
+that — precisely the `1/2` its docstring claims is "NOT needed for the MODULUS,
+because the calibration below reproduces the known figure-eight value sqrt(3)".
+The calibration matched a number that differs from DG's normalisation by the
+very factor being dropped.
+
+### 5. And DG PROVE topological invariance — including under 2-3 moves
+
+Section 3: independence of quad type, of edge choice, of meridian path, of the
+flattening, and invariance under 2-3 moves (3.6). So the correct object IS
+invariant. That vindicates the whole line of attack: the non-invariance measured
+in PR #4691 is a property of the implementation, not of the invariant, and
+"restore the flattening" was too weak a diagnosis — the determinant needs
+rebuilding too.
+
+### Next — now a bounded implementation task, not a search
+
+1. Build `A`, `B` in DG's `(z, z'')` convention from `gluing_equations_pgl()`.
+2. Solve `A f + B f'' = nu` over Z (sympy is now installed).
+3. Form `-+ (1/2) det(A Delta_z'' + B Delta_z^{-1}) z^{f''} z''^{-f}`.
+4. Gate: `4_1` must give `sqrt(3)/2`, and `5_2`, `6_2`, `L5a1`, `L6a4` must each
+   collapse to ONE value under retriangulation. DG's own 4_1 worked example is
+   the unit test.
+5. Only then revisit the per-cusp factor. Note Definition 1.2 is stated for
+   ONE-cusped manifolds; the multi-cusp generalisation is Section 4.5
+   ("Invariance of the generalized torsion"), which is where any genuine
+   c-dependence would actually live.
