@@ -36,11 +36,11 @@ def symbolMap
 
 /-- The Markov trace on the associated graded algebra.  Concrete
     model: returns 0. -/
-def gradedTrace
+def GradedTraceResidueSplit.gradedTrace
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The total residue contribution.  Concrete model: returns 0. -/
-def gbResidue
+def GradedTraceResidueSplit.gbResidue
     {R : Type u} [CommRing R] (_q : R) (_x : Unit) : R := 0
 
 /-- The full Markov trace.  Concrete model: returns 0. -/

@@ -190,14 +190,14 @@ theorem Matrix.PosSemidef.entry_zero_of_diag_zero
 
 /-- **PSD row-zero from diagonal-zero**: if `C_ii = 0` and `C` is
     PSD, then the i-th row is zero. -/
-theorem PosSemidef.row_zero_of_diag_zero
+theorem Matrix.PosSemidef.row_zero_of_diag_zero
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     {i : Fin n} (h_diag : C i i = 0) : ∀ j : Fin n, C i j = 0 :=
   fun j => Matrix.PosSemidef.entry_zero_of_diag_zero hC h_diag j
 
 /-- **PSD col-zero from diagonal-zero**: by symmetry of PSD
     matrices, the i-th column is also zero. -/
-theorem PosSemidef.col_zero_of_diag_zero
+theorem Matrix.PosSemidef.col_zero_of_diag_zero
     {C : Matrix (Fin n) (Fin n) ℝ} (hC : C.PosSemidef)
     {i : Fin n} (h_diag : C i i = 0) : ∀ j : Fin n, C j i = 0 := by
   intro j
