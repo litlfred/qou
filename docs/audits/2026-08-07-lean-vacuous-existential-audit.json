@@ -1,7 +1,7 @@
 {
   "schema": "lean-vacuous-existential/v1",
   "scanned_files": 2588,
-  "count": 17,
+  "count": 13,
   "findings": [
     {
       "file": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean",
@@ -74,16 +74,6 @@
       "rfl_witness": true
     },
     {
-      "file": "content/quantum-observable-universe/mass-theory/knot-factor-shell-closed.lean",
-      "line": 62,
-      "kind": "theorem",
-      "name": "knot_factor_shell_closed_value",
-      "bound_var": "a",
-      "rhs": "1",
-      "proof": "⟨1, rfl⟩",
-      "rfl_witness": true
-    },
-    {
       "file": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean",
       "line": 83,
       "kind": "theorem",
@@ -94,16 +84,6 @@
       "rfl_witness": true
     },
     {
-      "file": "content/quantum-observable-universe/mass-theory/mass-tower-coefficient-stratification.lean",
-      "line": 48,
-      "kind": "theorem",
-      "name": "mass_tower_coefficient_stratification",
-      "bound_var": "depth",
-      "rhs": "stratumDepth term",
-      "proof": "⟨stratumDepth term, rfl⟩",
-      "rfl_witness": true
-    },
-    {
       "file": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean",
       "line": 33,
       "kind": "theorem",
@@ -111,16 +91,6 @@
       "bound_var": "K",
       "rhs": ".borromean",
       "proof": "by exact ⟨.borromean, rfl⟩",
-      "rfl_witness": true
-    },
-    {
-      "file": "content/quantum-observable-universe/mass-theory/pauli-factor-wedderburn.lean",
-      "line": 35,
-      "kind": "theorem",
-      "name": "pauli_factor_wedderburn",
-      "bound_var": "F",
-      "rhs": "W.trAlt / W.trSym",
-      "proof": "⟨W.trAlt / W.trSym, rfl⟩",
       "rfl_witness": true
     },
     {
@@ -161,16 +131,6 @@
       "bound_var": "S",
       "rhs": "categoricalAction Φ swap",
       "proof": "⟨categoricalAction Φ swap, rfl⟩",
-      "rfl_witness": true
-    },
-    {
-      "file": "content/quantum-observable-universe/quantum-observable-universes/q-jacobiator.lean",
-      "line": 83,
-      "kind": "theorem",
-      "name": "leibniz_coeff_exists",
-      "bound_var": "c",
-      "rhs": "j.q⁻¹ * (1 - j.q⁻¹)",
-      "proof": "⟨j.q⁻¹ * (1 - j.q⁻¹), rfl⟩",
       "rfl_witness": true
     }
   ]

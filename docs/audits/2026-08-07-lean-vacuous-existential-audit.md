@@ -1,9 +1,9 @@
-# Vacuous existentials — a third vacuity shape, 17 live
+# Vacuous existentials — a third vacuity shape (17 found, 4 drained, 13 live)
 
 Date: 2026-08-07. Detector:
 [`scripts/lean-vacuous-existential-audit.py`](../../scripts/lean-vacuous-existential-audit.py).
-Scanned 2588 `.lean` files under `content/`; **17 candidates in 15 files**,
-**17/17** discharged by handing the right-hand side straight back.
+Scanned 2588 `.lean` files under `content/`. **Originally 17 candidates in 15 files**,
+**17/17** discharged by handing the right-hand side straight back. **4 are now drained; 13 remain** — see Disposition below.
 
 Found while triaging the `wall-side-correct` shortlist (PR #4693 item 3):
 several files flagged for a gratuitous `ℝ` turned out to carry a much
@@ -42,7 +42,7 @@ constructor rather than a bare hypothesis identifier, so it falls
 between the two. The tactic form `by exact ⟨e, rfl⟩` is classified
 identically — the wrapper is not evidence of content.
 
-## The 17
+## The 17 as first found (4 since drained — see Disposition)
 
 | file:line | declaration | conclusion |
 |---|---|---|
@@ -98,14 +98,51 @@ that the intended mathematics is false. `knotFactor`, `regimeSwitchedBinding`,
 and `stratumDepth` are real definitions doing real work; only the
 theorems purporting to state something *about* them are empty.
 
-## Disposition
+## Disposition — 4 drained, 13 remain
 
-Not drained in this pass. Per AGENTS.md honest dispositions, each needs
-one of: (1) the real equation against an independently-defined quantity,
-(2) the real proposition with `sorry` + `-- Ref:`, or (3) demotion to
-`conjecture`. Which applies is a per-file judgement — for several the
-honest statement requires a second definition that does not yet exist,
-so restating them is authoring work, not a mechanical rewrite.
+**17 → 13 (15 → 11 files).** Every replacement is verified `lean`-direct
+against the restored olean cache (exit 0, sorry-free); none is asserted.
 
-Filed as a bean; the detector is committed so the count is reproducible
-and cannot silently regrow.
+| was | now | note |
+|---|---|---|
+| `leibniz_coeff_exists : ∃ c, c = q⁻¹(1-q⁻¹)` | `leibniz_coeff_eq_zero_iff : q⁻¹(1-q⁻¹) = 0 ↔ q = 1` | the coefficient-level partner of `jacobiator_classical`/`jacobiator_nonzero`, already in the same file |
+| `pauli_factor_wedderburn : ∃ F, F = trAlt/trSym` | `pauliFactor W * W.trSym = W.trAlt` | genuinely uses `sym_nonzero`; name kept (it is a `lean.ref` target) |
+| `mass_tower_coefficient_stratification : ∃ depth, depth = stratumDepth term` | `stratumDepth term ≤ 4` | falsifiable, by exhaustion; name kept (`lean.ref` target) |
+| `knot_factor_shell_closed_value : ∃ a, a = 1` | *(deleted)* | no external references; `knot_factor_shell_closed` above already proves the real statement |
+
+Two notes on the replacements, so the weakening is visible rather than
+buried:
+
+- `stratumDepth term ≤ 4` is the **well-definedness half** of what the
+  block claims. The full narrative claim — each prefactor *equals* the
+  Plancherel-weighted Frobenius integral over its stratum — needs
+  Frobenius-integral machinery not yet in Lean, and is **not** proved.
+  The docstring now says so. The depth map is also deliberately
+  non-injective (`.pair`/`.knotFactor` both at 2), so no uniqueness
+  claim is available.
+- `knot_factor_shell_closed`'s docstring says the knot factor "equals
+  one exactly", but the theorem concludes `= β.weight trivialPartition`.
+  Closing that gap needs `weight trivialPartition = 1`, which is not
+  established here. Left as-is and flagged.
+
+**Pre-existing breakage fixed in passing:** `knot-factor-shell-closed.lean`
+did not compile at the branch base either — `field_simp` is not in its
+import cone (which stops at `Mathlib.Data.Real.Basic`), so
+`knot_factor_shell_closed` had an unknown-tactic error and an unsolved
+goal. Verified red at baseline before the change, green after; the
+cancellation is now done explicitly via
+`mul_div_assoc` + `div_self (pow_ne_zero 2 triv_nz)`.
+
+## The remaining 13
+
+Each still needs one of: (1) the real equation against an
+independently-defined quantity, (2) the real proposition with `sorry` +
+`-- Ref:`, or (3) demotion to `conjecture`. Which applies is a per-file
+judgement — for several the honest statement requires a second
+definition that does not yet exist, so restating them is authoring work,
+not a mechanical rewrite. The three called out above
+(`nuclear_knot_classification`, `q_0_well_defined`, `wenzl_annihilator`)
+are the ones whose docstrings most overclaim relative to what they prove.
+
+The detector is committed so the count is reproducible and cannot
+silently regrow.
