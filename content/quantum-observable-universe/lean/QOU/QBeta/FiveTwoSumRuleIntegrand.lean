@@ -349,4 +349,65 @@ theorem intervalIntegrable_log_recipCubic_div :
     have hb := abs_log_recipCubic_le h0.le h1
     linarith
 
+/-! ### The integrand identity: `Σⱼ Re Log(1 − yⱼz) = log P(z)` on `[0,1]`
+
+This is the pointwise half of the one link still separating Route 5 from the
+sum rule, namely
+
+    Σⱼ Re Li₂(yⱼ) = −∫₀¹ log P(z)/z dz.
+
+The other half is the complex integral representation
+`Li₂(y) = −∫₀¹ Log(1 − yz)/z dz`, which for `|y| > 1` *is* the analytic
+continuation (the integral converges for any `y ∉ [1,∞)` regardless of `|y|`,
+unlike the series). That half is still open — see bean `qou-gkco`.
+
+The pointwise identity below needs no dilogarithm and no continuation. It works
+because the **real part** of a complex log is a genuine norm-log, and norms
+multiply:
+
+    Σⱼ Re Log(1 − yⱼz) = Σⱼ log‖1 − yⱼz‖ = log ∏ⱼ‖1 − yⱼz‖
+                       = log‖∏ⱼ(1 − yⱼz)‖ = log|P(z)| = log P(z)
+
+the last step by `recipCubic_pos`. **No `2πik` correction appears anywhere** —
+taking real parts discards exactly the branch ambiguity. (Probe
+`qbeta_5two_route5_branch_data_probe` gate G1 saw this numerically: the
+correction is identically zero, `3.1e-61` over 40 sample points. It is not a
+numerical accident; it is what this proof says.) -/
+
+/-- **`Σⱼ Re Log(1 − yⱼz) = log P(z)` for `z ∈ [0,1]`.**
+
+Real parts, so no branch data enters. `y₁, y₂, y₃` are any three complex
+numbers with the 5₂ cubic's elementary symmetric functions. -/
+theorem sum_re_log_one_sub_eq_log_recipCubic {y₁ y₂ y₃ : ℂ}
+    (e1 : y₁ + y₂ + y₃ = 2) (e2 : y₁ * y₂ + y₁ * y₃ + y₂ * y₃ = 3)
+    (e3 : y₁ * y₂ * y₃ = 1) {z : ℝ} (hz0 : 0 ≤ z) (hz1 : z ≤ 1) :
+    (Complex.log (1 - y₁ * (z : ℂ))).re + (Complex.log (1 - y₂ * (z : ℂ))).re
+        + (Complex.log (1 - y₃ * (z : ℂ))).re
+      = Real.log (1 - 2 * z + 3 * z ^ 2 - z ^ 3) := by
+  have hP : (0 : ℝ) < 1 - 2 * z + 3 * z ^ 2 - z ^ 3 := recipCubic_pos hz0 hz1
+  have hprod : (1 - y₁ * (z : ℂ)) * (1 - y₂ * (z : ℂ)) * (1 - y₃ * (z : ℂ))
+      = ((1 - 2 * z + 3 * z ^ 2 - z ^ 3 : ℝ) : ℂ) := by
+    rw [prod_one_sub_mul_eq e1 e2 e3 (z : ℂ)]
+    push_cast
+    ring
+  -- each factor is nonzero, since the product is a nonzero real
+  have hne : ∀ w : ℂ, w = 1 - y₁ * (z : ℂ) ∨ w = 1 - y₂ * (z : ℂ)
+      ∨ w = 1 - y₃ * (z : ℂ) → w ≠ 0 := by
+    rintro w (rfl | rfl | rfl) h <;>
+      · apply absurd hprod
+        rw [h]
+        simp only [zero_mul, mul_zero]
+        exact fun hc => absurd (Complex.ofReal_eq_zero.mp hc.symm) (ne_of_gt hP)
+  have h1 : (1 - y₁ * (z : ℂ)) ≠ 0 := hne _ (Or.inl rfl)
+  have h2 : (1 - y₂ * (z : ℂ)) ≠ 0 := hne _ (Or.inr (Or.inl rfl))
+  have h3 : (1 - y₃ * (z : ℂ)) ≠ 0 := hne _ (Or.inr (Or.inr rfl))
+  -- real part of a complex log is the log of the norm
+  rw [Complex.log_re, Complex.log_re, Complex.log_re,
+    ← Real.log_mul (norm_ne_zero_iff.mpr h1) (norm_ne_zero_iff.mpr h2),
+    ← Real.log_mul (mul_ne_zero (norm_ne_zero_iff.mpr h1) (norm_ne_zero_iff.mpr h2))
+      (norm_ne_zero_iff.mpr h3)]
+  congr 1
+  rw [← norm_mul, ← norm_mul, hprod, Complex.norm_real, Real.norm_eq_abs,
+    abs_of_pos hP]
+
 end QOU.QBeta.FiveTwo
