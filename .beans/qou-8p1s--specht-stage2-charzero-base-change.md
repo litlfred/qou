@@ -51,3 +51,31 @@ Lean/Mathlib infrastructure, not a citation:
 Check first whether any downstream consumer needs `C` at all.  If the framework
 only ever evaluates over `R`, `specht_isSimple_ordered` already discharges the
 obligation and this bean is documentation-only.
+
+---
+
+## Route ELIMINATED (2026-08-07): James's dichotomy cannot close this
+
+`bilinM_polytabloid_self` (`<e_t, e_t> = |C_t|`) is now recovered and sorry-free,
+along with `specht_not_le_perp` (in char 0 the form does not vanish on `S^mu`).
+That was the natural next hope, so record what it does and does not buy.
+
+Feeding the radical `R = S^mu inf (S^mu)-perp` — which IS `S_n`-stable — into
+the already-proved `specht_submodule_dichotomy` gives
+`S^mu <= R` **or** `R <= (S^mu)-perp`:
+
+* the first branch **is now killed** by `specht_not_le_perp` (it would force
+  `|C_t| = 0`, false in char 0);
+* the second branch is **vacuous** — it holds by construction.
+
+And the vacuity is structural, not a phrasing artifact. By `kapL_mem_line`,
+`kappa_t x = lambda_t(x) . e_t`; by `kapL_selfadjoint` with `<{t}, e_t> = 1`,
+
+    <e_t, x> = <kappa_t {t}, x> = <{t}, kappa_t x> = lambda_t(x)
+
+so the dichotomy's "`kappa_t x = 0` for all `t`" branch says **exactly**
+`x in (S^mu)-perp` — literally the hypothesis one already has. **The dichotomy
+cannot separate `R = bot` from `R /= bot`, in any characteristic.**
+
+Do not re-attempt a James-theorem route. Stage 2 needs the rank / base-change
+input described above and at the `sorry`.
