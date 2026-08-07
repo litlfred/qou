@@ -57,7 +57,7 @@ The :refterm[descent]{#descent} involution at level $n$ kills elements of degree
 $\leq (n-1) \bmod 3$, so the transient contribution at level
 $n$ lives in degree $(n \bmod 3)$ elements.  The tower cycles
 through degrees $1 \to 2 \to 3 \to 1 \to 2 \to 3 \to \cdots$,
-accumulating contributions to $\sigma_i$, then $L_±$, then
+accumulating contributions to $\sigma_i$, then $L_\pm$, then
 $e^-$, repeating.
 
 ## Explicit NF for the electron
