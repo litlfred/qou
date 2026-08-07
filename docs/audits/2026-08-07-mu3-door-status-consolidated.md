@@ -193,8 +193,10 @@ reading. In particular the §4.1 finding that the negative-weight mechanism domi
 9 (³He) of the submodular pushes — is **conditional on `|χ|`** and should not be quoted as a
 reading of the bare Markov trace.
 
-Neither result derives which operator is correct. The `|χ|` choice remains underived; this
-section bounds the damage, it does not resolve it.
+Neither result derives which operator is correct for *this* context — but the choice is **not**
+unexamined: see §4quater for the corpus prior art (the non-cyclic perblock is a named object,
+and the signed convention is corpus-canonical for binding). This section bounds the damage; §4quater
+locates the open question precisely.
 
 ## 4ter. The calibration-layer crossing (and the anchor now used)
 
@@ -235,6 +237,60 @@ question. **No conclusion in §2–§4 changes.** The §4.2 sign rule is *anchor
 evaluated live at the proton q₀; the muon cache is no longer read by them. This is **scoped to
 these probes** and is *not* a migration of the ~840 muon-q₀ `computations/` witnesses, which
 remain canonical.
+
+## 4quater. The μ₃ arc runs on the NON-CYCLIC perblock, not the canonical trace
+
+§4bis measured that the door verdict survives dropping `abs()`. A corpus-grep afterwards found
+this is not a fresh question — it has substantial prior art, and an earlier draft of this
+document understated that. Correcting it here:
+
+**`Σ_λ y_λ |χ_λ|` is a named object.** It is the **non-cyclic perblock** `g`, explicitly
+distinguished in the corpus from the **cyclic Markov trace** `tr_M = Σ_λ y_λ χ_λ`
+([`2026-08-01-deltalambda-milnor-exact-coefficient.md`](2026-08-01-deltalambda-milnor-exact-coefficient.md),
+#4364 / #4378). The modulus is what breaks cyclicity — that is the whole content of the name.
+
+**The corpus has already ruled on the sibling question.** For binding, the *signed* convention
+is canonical and the modulus form is not:
+
+> The signed-trace convention (`tr_free − tr_atom`, **not** `|tr_free| − |tr_atom|`) is
+> canonical […]; the double-modulus form was a **non-archimedean misuse**.
+> — [`2026-06-13-binding-method-reconciliation-and-defit-program.md`](2026-06-13-binding-method-reconciliation-and-defit-program.md) §1
+
+and `hecke_core.atom_markov_trace` / `binding_from_frobenius_pairing` are **DEPRECATED**
+on exactly that ground.
+
+**The canonical trace is pinned.** `computations/markov/markov_trace_canonical.py::tr_M_element`
+— the Jones–Markov trace with `z = 1/(√q + 1/√q)`, **forced** by the four Jones/Wenzl axioms
+(`prop:categorical-mass-markov`, `markov-axioms-primitive.md`). Established in
+[`2026-06-09-binding-trace-convention-split.md`](2026-06-09-binding-trace-convention-split.md),
+which found binding scattered across **≥3 incompatible `(tr_M, χ^λ)` conventions disagreeing by
+factors of ~7 in χ**, and identified reconciliation — not compute — as the real blocker.
+
+### So what is actually open
+
+Not *"why `|χ|`"*. The narrower, sharper question:
+
+> **The μ₃ arc (#4404 → #4657) is built on the non-cyclic perblock, while the corpus canonical
+> is the signed cyclic Jones–Markov trace. That reconciliation has not been done for this
+> context.**
+
+Both readings are already measured (§4bis) — the door is closed either way, ~5–8 % apart — so
+this is **not** a threat to the §2 exclusions or the §4.2 sign rule. What it does affect is
+*which* `c₃` is the canonical published number:
+
+| reading | c₃ (T) | c₃ (³He) |
+|---|---|---|
+| non-cyclic perblock `Σ y_λ\|χ_λ\|` — as published in #4404 | −1.7688 | −1.4054 |
+| signed cyclic `Σ y_λ χ_λ` — the corpus-canonical convention | −1.6325 | −1.3288 |
+
+**Not resolved here, deliberately.** Re-designating the canonical `c₃` is an owner call with
+downstream reach, and the 2026-06-09 audit is explicit that convention reconciliation is its own
+blocker — doing it as a side effect of a robustness probe is exactly the kind of silent
+convention drift that audit was written to stop. Flagged, measured, and left to the owner.
+
+One genuine mitigation: on the Brunnian family the cyclic and non-cyclic forms **coincide to
+machine precision** (`milnor-exact-coefficient`), so the divergence is not universal — it is
+specific to the non-Brunnian A=3 words used here.
 
 ## 5. Scope discipline
 
