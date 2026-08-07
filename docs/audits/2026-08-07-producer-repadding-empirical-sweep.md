@@ -643,6 +643,44 @@ that direction.
 Both runs completed (`rc=0`, no timeout), so unlike the sweep's figures these
 counts are complete. **219 fields now fixed at the producer** across the two.
 
+## The `mpf(<float-valued name>)` instance — and it goes the other way
+
+`binding_factor_f_sequence.py:76` is the case this document names above as the
+detector's live blind spot. Closing it turns out to need the **opposite** fix
+from the six before it.
+
+Those found a value that genuinely held 53 bits and stopped printing 50 dps of
+it. Here the input is a decimal **string** from `binding_canonical`, written
+with `mp.nstr(..., mp.dps)`, and builtin `complex()` reads it as binary64 —
+wrong in both regimes the field appears in:
+
+- a 16-digit string becomes the double whose exact value is
+  `0.98352601518469637…`; subtracting two of those and printing at 50 dps gives
+  `0.595239597908215012367350027489` for a datum that is `0.595239597908215` —
+  the number named above;
+- some producers write ~30 digits into `tr_M_free`, and `complex()` discards
+  everything past the 17th. The corpus carries **both** populations.
+
+`mpmathify` parses a decimal as a decimal, faithful in both. The expectation
+going in was that it would *recover* precision; measured, the runtime string is
+16 digits and there is none to recover. Right fix, wrong reason — worth
+recording, because "downcast upstream" and "genuinely f64" are the two branches
+the scope note above says must not be confused, and this case reads like the
+first while behaving like neither.
+
+**This one moves a number**, unlike the six before it:
+
+| | |
+|---|---|
+| padded | 2 → **0** |
+| values moved | **1 of 34** compared |
+| `rows[4].delta_tr` | `1.00105419197756849783442767432` → `1.00105419197756854` |
+| | 4.2e-17 relative — **exactly 1 ulp** |
+
+One ulp is the width of the binary64 rounding that should never have been
+introduced, so it is a correction. Source only; the witness is regenerated
+separately *because* a number moves.
+
 ## Regenerating a witness silently drops its q₀ provenance
 
 **Source fix committed, witness NOT regenerated — and the reason generalises
@@ -713,8 +751,7 @@ where this document said the non-mechanizable part lived all along.
   `OUTPUT_DPS` respectively, which producers set differently, so the wrong
   fallback silently rewrites every value it was not meant to touch.
   Remaining: `su4_1111_markov_trace_probe` (10, floor — its measured runs
-  timed out) on the `hecke_characters.py:214` root; `binding_factor_f_sequence`
-  (2); `bring_homology_pairing_integration` (2 real, 2 tolerances that must
+  timed out) on the `hecke_characters.py:214` root; `bring_homology_pairing_integration` (2 real, 2 tolerances that must
   not move); and the two that read the value from a committed witness, where
   the fix is upstream and ordering matters.
   Counts for the producers that exit non-zero or time out are floors.

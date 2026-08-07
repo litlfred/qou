@@ -254,3 +254,20 @@ with 0 moved. rho_k's substitution checked by direct equivalence (9 values,
 Remaining: su4 (10, floor), binding_factor_f_sequence (2),
 bring_homology_pairing_integration (2 real + 2 tolerances that must NOT move),
 and the two upstream-sourced ones where the fix belongs upstream.
+
+## binding_factor_f_sequence — the documented blind spot, fixed the OTHER way
+
+The `mpf(<float-valued name>)` instance this bean names. Needs the opposite fix
+from the previous six: the input is a decimal STRING from binding_canonical
+(mp.nstr at mp.dps) and builtin complex() reads it as binary64. Wrong in both
+regimes — a 16-digit string becomes a double whose 50-dps expansion is the
+padding, and where a producer writes ~30 digits complex() truncates them. The
+corpus carries both populations. mpmathify parses a decimal as a decimal.
+
+I expected it to RECOVER precision and measured instead: the runtime string is
+16 digits, so there is none. Right fix, wrong reason.
+
+NOT value-preserving — the first one that isn't. padded 2 -> 0; 1 of 34 fields
+moved, rows[4].delta_tr by 4.2e-17 relative = exactly 1 ulp, the width of the
+binary64 rounding that should never have been there. Source only; witness
+regeneration is separate BECAUSE a number moves.
