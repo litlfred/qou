@@ -24,7 +24,8 @@ object precisely.
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **open**: used throughout \S\ref{sec:color-algebra} but **never defined as a content block** — there is no `def:octonion-algebra` in the corpus | bean `qou-8fl1` |
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item 3 below |
 | Flavour vs. colour $\mathrm{SU}(3)$ | **open**: whether same, different, or groupoid-dual | item 4 below |
-| Meson mass splitting; Gell-Mann–Okubo | **open**: not derived; $\approx 6\%$ (experiment) vs $\approx 3.3\%$ ($q$-deformation) is an unexplained coincidence of scale | item 6 below |
+| Gell-Mann–Okubo has no discriminating power | **proved** (Lean, sorry-free): $4m_K^2 - 3m_\eta^2 - m_\pi^2 = 0$ identically for *any* first-order octet breaking | `GellMannOkuboIdentity.lean` |
+| Meson mass splitting; the GMO **deviation** | **open**: the $\approx 6\%$ deviation is the only testable content; no second-order term derived, so the framework predicts $0$ | item 6 below |
 | Spin–flavour–colour selection of the Young symmetriser | **open**: decuplet identification currently matches dimensions and weights only | item 5 below |
 | Truncation ("freeze-out") mechanism | **open**: heuristic, no derivation | item 7 below |
 | Three generations | **open**: not addressed here | item 9 below |
@@ -116,15 +117,20 @@ Gell-Mann--Nishijima relation cannot be closed.
   determine the Young symmetriser.  Compatibility with it is what the
   chapter currently establishes.
 
-\item \textbf{Gell-Mann--Okubo.}
-  The meson mass relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is not
-  derived (Remark~\ref{rem:meson-mass-splitting}).  The experimental
-  deviation ($\approx 6\%$) and the $q$-deformation of the adjoint
-  quantum dimension at $q_0$ ($\approx 3.3\%$) agree in order of
-  magnitude and differ by a factor $\approx 2$, with no mechanism
-  linking them.  \emph{Open:} either derive the splitting pattern from
-  the crossing energy, or record the numerical proximity as
-  coincidence.  It is currently the latter.
+\item \textbf{The Gell-Mann--Okubo deviation.}
+  The relation $4m_K^2 = 3m_\eta^2 + m_\pi^2$ is \emph{not} a target
+  for derivation: it holds identically for any first-order octet
+  breaking, whatever the mechanism, proved sorry-free in
+  \texttt{GellMannOkuboIdentity.lean}.  Reproducing it would therefore
+  be no evidence for the framework.  \emph{Open:} the $\approx 6\%$
+  \emph{deviation}, which measures the failure of first-order breaking
+  (second-order terms plus $\eta$--$\eta'$ singlet mixing).  The
+  framework has derived no second-order term and so predicts deviation
+  $0$; a derivation that produced $\approx 6\%$ would be a genuine
+  prediction, and one that produced a different value would falsify the
+  mechanism.  The former $\approx 3.3\%$ comparison against
+  $\dim_q(\text{adjoint})$ is withdrawn as a category error
+  (a dimension is not a mass splitting).
 
 \item \textbf{Ocneanu/Markov trace parameter.}
   The Markov trace $\tau$ on $H_n(q)$ involves a second parameter

@@ -1,5 +1,41 @@
 #!/usr/bin/env python3
-"""Cross-check: Gell-Mann-Okubo mass relation from q-deformed crossing energy.
+"""SUPERSEDED 2026-08-07 — the comparison this script set up is a category error.
+
+DO NOT cite the ~3.3% figure below as a QOU prediction for the Gell-Mann-Okubo
+deviation, and do not compare it against the ~6% experimental deviation.
+
+Two independent reasons, the first now machine-checked:
+
+1. GMO HAS NO DISCRIMINATING POWER. For first-order SU(3) breaking,
+   m^2(I,Y) = a + b*Y + c*(I(I+1) - Y^2/4), the combination
+   4 m_K^2 - 3 m_eta^2 - m_pi^2 vanishes IDENTICALLY in a, b, c. Proved
+   sorry-free over any commutative ring in
+   QOU/Eightfold/GellMannOkuboIdentity.lean (`gmo_identity`), together with
+   `gmo_cannot_discriminate` (two arbitrarily different breaking patterns give
+   the same value, zero) and `gmo_independent_of_breaking_strength` (the
+   hypercharge coefficient b cancels exactly). So reproducing GMO is not
+   evidence for ANY mechanism, QOU's included.
+
+2. THE 3.3% IS THE WRONG KIND OF QUANTITY. It is the q-deformation of
+   dim_q(adjoint) — a DIMENSION, not a mass splitting. It cannot appear on
+   either side of GMO.
+
+What survives: the quantum-dimension arithmetic below is correct and is kept
+for reference. What is withdrawn: the framing that it bears on GMO.
+
+The reframed open question is the ~6% DEVIATION, which measures the failure of
+first-order breaking (second-order terms plus eta-eta' singlet mixing). The
+framework has derived no second-order term, so it currently predicts deviation
+0. Bean qou-8pl2. Note the eta-eta' mixing route is downstream of the singlet
+channel, which at N=2 does not exist at all (RowCapObstruction.lean).
+
+Additional hygiene defect, unfixed: q0 is hardcoded to 1.11 below rather than
+read from the q-pinning witness (a canonical-watcher violation). Not corrected
+here because the script is no longer load-bearing.
+
+--- original docstring follows ---
+
+Cross-check: Gell-Mann-Okubo mass relation from q-deformed crossing energy.
 
 The GMO relation for the pseudoscalar meson octet is:
   4 m²_K = 3 m²_η + m²_π
@@ -22,8 +58,7 @@ But the actual mass formula involves the Wedderburn partition channels
 and the crossing energy, not just the quantum dimensions.
 
 This script computes the meson-octet quantum dimensions as functions
-of q and checks the GMO relation at q = q₀ ≈ 1.11.
-"""
+of q and checks the GMO relation at q = q₀ ≈ 1.11."""
 
 from fractions import Fraction
 import math

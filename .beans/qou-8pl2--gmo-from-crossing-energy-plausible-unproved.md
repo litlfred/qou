@@ -7,7 +7,43 @@ created_at: 2026-08-06T00:00:00Z
 updated_at: 2026-08-06T00:00:00Z
 ---
 
-## Claim (plausible, not proved)
+## UPDATE 2026-08-07 — the question was MIS-POSED; reframed
+
+`QOU/Eightfold/GellMannOkuboIdentity.lean` (sorry-free, generic `[CommRing R]`):
+
+* `gmo_identity` : for the first-order octet ansatz
+  `m²(I,Y) = a + b·Y + c·(I(I+1) − Y²/4)`, the combination
+  `4m_K² − 3m_η² − m_π²` vanishes **for all a, b, c**.
+* `gmo_cannot_discriminate` : two arbitrarily different breaking patterns give
+  the SAME value of the combination (zero).
+* `gmo_independent_of_breaking_strength` : `b` — the entire hypercharge
+  dependence, i.e. the whole content of a breaking mechanism — cancels exactly.
+
+**So GMO has no discriminating power.** If the QOU crossing-energy splitting is
+first-order octet it reproduces GMO automatically, and doing so is NOT evidence
+for the framework — every first-order octet model does equally well. The
+original bean framing ("derive the splitting pattern from the crossing energy")
+was asking for something that would prove nothing.
+
+**Both numbers in the old comparison were wrong to compare.** The ~3.3% is the
+q-deformation of `dim_q(adjoint)` — a *dimension*, not a mass splitting, and not
+a quantity that can appear on either side of GMO. Category error; withdrawn.
+
+## The reframed open question
+
+The only testable content is the **~6% deviation**, which measures the failure
+of first-order breaking: second-order terms in the mass operator, plus η–η′
+singlet mixing. The framework has derived no second-order term, so it currently
+predicts deviation **0**, not 3.3%.
+
+* A derived second-order term giving ≈6% would be a genuine prediction.
+* A derived second-order term giving a different value would **falsify** the
+  crossing-energy mechanism. That is a real falsification test and it is worth
+  running.
+* Note η–η′ mixing is entangled with the singlet channel, which at N=2 does not
+  exist at all (`RowCapObstruction.lean`) — so this is downstream of `qou-8pl3`.
+
+## Original claim (retained)
 
 The meson mass relation `4 m_K² = 3 m_η² + m_π²` should follow from the
 crossing-energy splitting pattern on the `A_2` weight lattice, the kaon

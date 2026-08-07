@@ -43,18 +43,48 @@ Gell-Mann--Okubo relation
 $$
   4 m_K^2 = 3 m_\eta^2 + m_\pi^2.
 $$
-Within QOU this relation is \emph{not} derived.  The conjecture on offer
-is that it should follow from the crossing-energy splitting pattern on
-the $A_2$ weight lattice, the kaon involving a strange-quark braid word
-of different writhe than the pion; but no such derivation exists, and the
-one numerical cross-check run so far does not support it.  Measured
-against experiment the Gell-Mann--Okubo relation is satisfied to
-$\approx 6\%$, whereas the $q$-deformation of the adjoint quantum
-dimension at $q_0 \approx 1.11$ is $\approx 3.3\%$
-(\texttt{gmo\_meson\_crosscheck.py}).  Same order of magnitude, factor
-$\approx 2$ apart, with no mechanism connecting the two numbers.  This is
-an unexplained coincidence of scale, recorded as such; it is neither a
-derivation nor evidence for one, and it must not be cited as agreement.
+\textbf{Gell-Mann--Okubo cannot test this, and the question was
+mis-posed.}
+Earlier drafts treated the relation as something the framework should
+\emph{derive}, and compared its $\approx 6\%$ experimental deviation
+against a $\approx 3.3\%$ figure from the $q$-deformation of the adjoint
+quantum dimension.  Both moves are withdrawn.
+
+First-order $\mathrm{SU}(3)$ breaking means the mass operator is a
+singlet plus an octet piece transforming like $\lambda_8$, so that
+$$
+  m^2(I, Y) \;=\; a \;+\; b\,Y \;+\; c\left(I(I+1) - \tfrac{Y^2}{4}\right)
+$$
+for \emph{some} constants $a, b, c$.  Evaluated on the pseudoscalar octet
+--- $\pi$ at $(I,Y) = (1,0)$, $K$ at $(\tfrac12, \pm 1)$, $\eta$ at
+$(0,0)$ --- the Gell-Mann--Okubo combination collapses identically:
+$$
+  4m_K^2 - 3m_\eta^2 - m_\pi^2 \;=\; 0
+  \qquad\text{for \emph{all} } a, b, c .
+$$
+This is proved sorry-free over any commutative ring in
+\texttt{QOU/Eightfold/GellMannOkuboIdentity.lean}
+(\texttt{gmo\_identity}), together with the sharper consequence
+\texttt{gmo\_cannot\_discriminate}: two arbitrarily different breaking
+patterns give the \emph{same} value of the combination, namely zero.  In
+particular $b$ --- the entire hypercharge dependence, which is the whole
+content of a breaking mechanism --- cancels
+(\texttt{gmo\_independent\_of\_breaking\_strength}).
+
+Two consequences.  First, if the QOU crossing-energy splitting is
+first-order octet then it reproduces Gell-Mann--Okubo automatically and
+exactly, and doing so is \textbf{not evidence} for the framework: every
+first-order octet model reproduces it equally well.  Second, the only
+testable content is the $\approx 6\%$ \emph{deviation}, which measures
+the failure of first-order breaking --- second-order terms and
+$\eta$--$\eta'$ singlet mixing.  The framework has derived no
+second-order term, so it currently predicts deviation $0$.
+
+The $\approx 3.3\%$ figure is not a competing prediction.  It is the
+$q$-deformation of $\dim_q$ of the adjoint, a \emph{dimension} rather
+than a mass splitting, and not a quantity that can appear on either side
+of the relation.  Comparing the two numbers was a category error, and the
+comparison is withdrawn.
 
 **Conditional on $N = 3$ and on $Y$.**
 Mass splittings between isospin multiplets (e.g.\ $\pi$ vs.\ $K$)
