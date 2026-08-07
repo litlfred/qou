@@ -60,6 +60,8 @@ that was never created — corrected 2026-08-06.)
 import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Analysis.Analytic.OfScalars
+import Mathlib.Analysis.Analytic.Basic
+import Mathlib.Analysis.Analytic.ChangeOrigin
 
 namespace QOU.MathlibExt
 
@@ -177,5 +179,36 @@ theorem cLiTwo_radius_ge_one :
     rw [FormalMultilinearSeries.ofScalars_norm]
     simpa using cLiTwoCoeff_norm_le_one n
   simpa using FormalMultilinearSeries.le_radius_of_bound _ 1 h
+
+/-- **Step 3: `cLiTwo` is represented by its power series on the unit ball.** -/
+theorem cLiTwo_hasFPowerSeriesOnBall :
+    HasFPowerSeriesOnBall cLiTwo
+      (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff) 0 1 := by
+  have hrad : 0 < (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).radius :=
+    lt_of_lt_of_le (by norm_num) cLiTwo_radius_ge_one
+  refine (((FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).hasFPowerSeriesOnBall
+    hrad).mono (by norm_num) cLiTwo_radius_ge_one).congr ?_
+  intro z hz
+  rw [mem_emetric_ball_zero_iff] at hz
+  have hz' : ‖z‖ < 1 := by
+    rw [show (1 : ENNReal) = ((1 : NNReal) : ENNReal) by simp, enorm_lt_coe] at hz
+    exact_mod_cast hz
+  have hsum : (FormalMultilinearSeries.ofScalars ℂ cLiTwoCoeff).sum z
+      = ∑' n : ℕ, cLiTwoCoeff n * z ^ n := by
+    simpa [smul_eq_mul] using
+      congrFun (FormalMultilinearSeries.ofScalarsSum_eq_tsum cLiTwoCoeff) z
+  rw [hsum, ← cLiTwo_eq_tsum_coeff hz']
+
+/-- **`cLiTwo` is analytic on the open unit disc.**
+
+The hypothesis the identity theorem needs. With
+`QOU.Archimedean.cLiTwo_reflection_ofReal` (the reflection identity already
+proved on the real segment `(0,1)` — a set with an accumulation point), this is
+what would give the complex reflection identity on the disc. That continuation
+step is **not** taken here; extending past `|z| = 1` needs the inversion
+formula on top. Bean `qou-gkco`. -/
+theorem cLiTwo_analyticOnNhd :
+    AnalyticOnNhd ℂ cLiTwo (EMetric.ball (0 : ℂ) 1) :=
+  cLiTwo_hasFPowerSeriesOnBall.analyticOnNhd
 
 end QOU.MathlibExt

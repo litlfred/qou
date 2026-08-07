@@ -223,8 +223,9 @@ not because the sum rule is waiting on it.
 New imports required: `Mathlib.Analysis.Analytic.OfScalars` **and**
 `Mathlib.Analysis.Analytic.Basic` (the former does not pull in the latter).
 
-**Step 3 attempted, reverted — two concrete blockers, both API-shape, neither
-mathematical:**
+**Step 3: LANDED 2026-08-07 (b, later same day).** The two blockers below were
+both wrong-file / wrong-notation, not mathematical — resolved by grepping
+instead of guessing. Kept here as the record of what they were:
 
 1. **`HasFPowerSeriesOnBall.analyticOnNhd` does not exist** in this Mathlib.
    `HasFPowerSeriesOnBall.analyticAt` *does* (`Analytic/Basic.lean:135`), so
@@ -254,3 +255,37 @@ theorem cLiTwo_hasFPowerSeriesOnBall :
 present with those signatures — the structure is right, only the two coercion
 steps are missing. Backed out rather than left broken; the file on `main` is
 green at steps 1–2.
+
+## STEP 3 LANDED — `cLiTwo` is analytic on the open unit disc
+
+`cLiTwo_hasFPowerSeriesOnBall`, `cLiTwo_analyticOnNhd` — sorry-free,
+lean-direct exit 0, bridge re-verified.
+
+Both earlier blockers were lookup failures, not mathematics:
+
+1. **`HasFPowerSeriesOnBall.analyticOnNhd` does exist** — in
+   `Mathlib/Analysis/Analytic/ChangeOrigin.lean:362`, *not* `Basic.lean`, which
+   is where I looked. Requires `import Mathlib.Analysis.Analytic.ChangeOrigin`.
+2. **`‖z‖ < 1` from `z ∈ EMetric.ball 0 1`**: `mem_emetric_ball_zero_iff`
+   (additive form of `Normed/Group/Basic.lean:934`) gives `‖z‖ₑ < 1`, then
+   `enorm_lt_coe` (`Basic.lean:88`, `‖x‖ₑ < r ↔ ‖x‖₊ < r`, `r : ℝ≥0`) after
+   recasting the `1`, then `exact_mod_cast`.
+   **Trap:** write `(1 : ENNReal)`, *not* `(1 : ℝ≥0∞)` — the `ℝ≥0∞` form is
+   scoped notation and this file opens only `Complex`, so it fails with a bare
+   "expected token" that looks like a Unicode problem and is not one.
+
+Required imports, in full: `Analytic.OfScalars`, `Analytic.Basic`,
+`Analytic.ChangeOrigin` (none pulls in the next).
+
+### What this unlocks, and what it does not
+
+`AnalyticOnNhd ℂ cLiTwo (EMetric.ball 0 1)` is the hypothesis the identity
+theorem `AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq` needs. With
+`cLiTwo_reflection_ofReal` (reflection already proved on the real segment
+`(0,1)` — a set with an accumulation point) the **complex reflection identity
+on the disc** is now a connect-the-pieces step rather than an open one.
+
+It does **not** reach `y₁` (`|y₁| = 1.52 > 1`). That still needs the inversion
+formula `Li₂ z + Li₂(1/z) = −π²/6 − ½log²(−z)` to cross `|z| = 1`. And the
+priority caveat stands: Route 5 of `qou-0yqu` took all of this off the critical
+path for the 5₂ sum rule.
