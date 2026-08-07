@@ -217,7 +217,15 @@ def main():
                 "is_self_conjugate": tuple(shape) == transpose(shape),
                 "content_c_lambda": c_lam,
                 "wedderburn_weight": str(w_lam),
-                "chi_lambda_beta": str(chi_val),
+                # chi came out of the f64 kernel above (see the
+                # kernel_precision parameter) and carries 53 bits. It is
+                # promoted to mpf for the downstream arithmetic, but
+                # str(<mpf>) then prints 50 dps of a 53-bit number — the
+                # binary64 expansion, reading as if it had been measured.
+                # fmt() on a float writes its true precision instead;
+                # mpf(float) is exact, so float() recovers the kernel's own
+                # value and nothing moves.
+                "chi_lambda_beta": fmt(float(chi_val)),
             })
 
         # Per-pair-symmetric form (sanity check; should equal direct).
