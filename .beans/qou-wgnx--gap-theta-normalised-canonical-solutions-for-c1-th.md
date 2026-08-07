@@ -901,3 +901,53 @@ needs the analytic construction.
 What remains is the (convention-dependent) step from χ to the multipliers
 proper — and the literature to lean on is arXiv:2412.02281, still unread here
 (arxiv is egress-blocked from this sandbox).
+
+## 2026-08-07 (nineteenth) — WHY the multipliers never fell out: they need the DIVERGENT presentation
+
+Read Lin–Ma–Xu §3.1 (`uploads/2412.02281v1.pdf`, uploaded by the owner). Their
+**Definition 3.3**:
+
+    connection matrix:  F_q^(∞)(z,λ) · U_q(z,λ) = F_q^(0)(z)
+    q-Stokes matrix:    F_q^(∞)(z,μ) = F_q^(∞)(z,λ) · S_q(z,λ,μ)
+
+so `S_q(λ,μ) = U_q(λ)·U_q(μ)⁻¹`. The Stokes matrix compares **two q-Borel
+resummations in different directions `λ, μ`** of the *same* formal solution.
+Their `Ĥ_q` is genuinely **divergent** (their Prop 3.1: only the last column
+converges), and `[λ;q]`-summability is what produces the `λ`-dependence.
+
+**Our ∞-side series is CONVERGENT.** The theta normalisation
+`y = θ_p(z/T)⁻¹h(z)` absorbs the q-Gevrey divergence completely — `h` is entire
+in `1/z` (first entry of this bean). So our construction has **no `λ` at all**,
+no direction-dependence, and therefore the q-Stokes matrix in the Lin–Ma–Xu
+sense **cannot be read off what we built**, and is plausibly trivial in this
+normalisation.
+
+**This explains the whole arc's residual puzzle.** Every time the connection
+matrix got sharper, the "Stokes multipliers" did not follow — because they are
+not a function of the connection matrix in the theta-normalised presentation.
+They live in the *summation-direction* dependence, which theta-normalisation
+removes by construction. The trade is real, not a loss: the divergence went
+into the theta factor, so the Stokes data now sits in the **choice of theta**
+(the theta torsor / Stokes sheaf of Ramis–Sauloy–Zhang), not in `λ`.
+
+**So the remaining work is one of two concrete routes:**
+
+(a) **Redo the ∞-side without theta-normalisation.** Keep the divergent formal
+    series, q-Borel–Laplace resum it in two directions `λ ≠ μ` avoiding the
+    singular set, and form `S_q = U_q(λ)U_q(μ)⁻¹` directly. This is Lin–Ma–Xu's
+    route and is fully explicit for their family; our operator must first be
+    matched to their normal form (their Fuchsian point is at `∞`, ours at `0`,
+    and their convention is `0 < q < 1` vs our `p > 1` — a reciprocal-and-swap
+    away).
+
+(b) **Stay theta-normalised and use the theta torsor.** Compare normalisations
+    `θ_p(cz/T)` across `c`; the transition cocycle is the Stokes data in the RSZ
+    picture. Note we already proved χ is invariant under the *0-side* rebasing
+    `c` — the ∞-side analogue is exactly the untested direction, and is the
+    cheap next probe.
+
+Route (b) is closer to what is already built and reuses the existing machinery;
+route (a) is the one with a ready-made explicit answer in the literature.
+
+**Nothing here retracts the closed form** — χ and its divisor stand. What is
+corrected is the expectation that the multipliers follow from them directly.
