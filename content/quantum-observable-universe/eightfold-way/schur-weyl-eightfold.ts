@@ -22,10 +22,12 @@ export default proposition({
     "rem:hecke-algebra-from-braiding",
     "prop:a2-from-three-strands",
   ],
-  // No Lean sibling: quantum Schur-Weyl duality at (n=3, N=3) is not
-  // formalised in this corpus, and the N=3 hypothesis it needs is the
-  // chapter's principal open problem. The previous ref pointed at
-  // WeylInvarianceQDeformation, which proves q-independence of the A₂ root
-  // datum -- a different statement -- and is removed rather than left to
-  // imply machine-checked backing this block does not have.
+  // Lean backs the OBSTRUCTION half of this block, not the affirmative half.
+  // RowCapObstruction proves sorry-free that the alternating channel (1³)
+  // vanishes iff N < 3, that the decuplet dimension forces N = 3, and the
+  // channel arithmetic at N = 2 (8 = 4+4+0) and N = 3 (27 = 10+16+1).
+  // What it does NOT formalise is quantum Schur-Weyl duality itself, nor any
+  // construction supplying N = 3 -- that remains the chapter's principal open
+  // problem (bean qou-8pl3).
+  lean: { ref: "qou:QOU.Eightfold.RowCapObstruction" },
 });

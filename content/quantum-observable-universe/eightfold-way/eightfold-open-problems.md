@@ -11,9 +11,10 @@ object precisely.
 | $H_3(q)$ has Coxeter type $A_2$; $W(A_2) \cong S_3$ | standard, and true by construction ($B_n$ has type $A_{n-1}$) | [$A_2$ from three strands](#prop:a2-from-three-strands) |
 | $A_2$ Cartan matrix is fixed integer data, independent of $q$; Serre exponent; root-angle ratio; the "two $2$s" separation | proved (Lean, sorry-free) | `WeylInvarianceQDeformation.lean` |
 | Root/weight lattices, Weyl group, Kazhdan–Lusztig multiplicities are $q$-independent | standard (Drinfeld–Jimbo), not formalised here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
-| Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; no Lean sibling | [Schur–Weyl](#prop:schur-weyl-eightfold) |
+| Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is not formalised, only its row-cap consequence | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; decuplet dimension $\binom{5}{3} = 10$; weight tables | standard $\mathrm{SU}(3)$ representation theory, **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
-| $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap | item 1 below |
+| $N = 2$ cannot host the eightfold-way decomposition | **proved** (Lean, sorry-free): $\dim V_{(1^3)} = \binom{N}{3} = 0 \iff N < 3$; decuplet dimension forces $N = 3$ | `RowCapObstruction.lean` |
+| $\dim V = N = 3$ for the flavour fundamental | **open**: framework supplies $\dim V = 2$; no $q$ raises the row cap. The *obstruction* is proved; the *construction* is missing | item 1 below |
 | Writhe-to-isospin map $w \mapsto I_3$ on the nucleon doublet | derived, scale-free, no fitted parameters | [flavour charges](#rem:flavor-charge-assignments) |
 | Hypercharge $Y$ | **open**: writhe map falsified ($p$, $n$ share $Y = +1$, writhes differ); missing a second crossing invariant | item 2 below |
 | $\mathrm{PSL}(2,7) \cong \mathrm{GL}(3,\mathbb{F}_2)$, order $168$, irreps $\{1,3,\bar 3,6,7,8\}$ | standard; machine-verified numerically (`psl27_irrep_verification.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
@@ -44,7 +45,12 @@ Gell-Mann--Nishijima relation cannot be closed.
   requires the fundamental representation to be $3$-dimensional.  The
   single-fibre tower has $\dim V = 2$ (the standard single-fibre
   construction; the Descartes condition $\chi(\mathcal{A}) = -6$ is
-  compatible with but does not uniquely force $N = 2$).  \emph{Open:} construct a
+  compatible with but does not uniquely force $N = 2$).  That $N = 2$
+  \emph{cannot} host the decomposition is now proved sorry-free
+  (\texttt{RowCapObstruction.lean}: the alternating channel
+  $\binom{N}{3}$ vanishes iff $N < 3$, and the decuplet dimension forces
+  $N = 3$) --- so the obstruction is settled and only the construction is
+  missing.  \emph{Open:} construct a
   three-dimensional object $W$ in the multi-fibre groupoid whose
   symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
   The octonion $G_2$ route provides a colour $\mathrm{SU}(3)$ candidate

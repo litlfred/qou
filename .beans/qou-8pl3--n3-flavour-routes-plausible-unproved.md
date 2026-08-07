@@ -7,6 +7,26 @@ created_at: 2026-08-06T00:00:00Z
 updated_at: 2026-08-06T00:00:00Z
 ---
 
+## UPDATE 2026-08-07 — the obstruction half is now PROVED
+
+`QOU/Eightfold/RowCapObstruction.lean` (sorry-free, lean-direct exit 0):
+
+* `weyl_dim_alt_eq_zero_iff` : `dim V_{(1³)} = C(N,3) = 0  ↔  N < 3`
+* `decuplet_forces_three`    : `dim V_{(3)} = 10  →  N = 3`
+* `singlet_forces_three`     : `dim V_{(1³)} = 1  →  N = 3`
+* `schur_weyl_cube_split_two_three` : `8 = 4+4+0` at N=2, `27 = 10+16+1` at N=3
+
+So `N = 2` is a **scope-(b) structural exclusion** from carrying the
+eightfold-way decomposition, with the justifying invariant cited (the
+Schur-Weyl row cap `ℓ(λ) ≤ N`). The chapter previously stated this; it is now
+a theorem. Wired as the `lean:` sibling of `prop:schur-weyl-eightfold`.
+
+**This does not narrow the search.** It excludes N=2 from *hosting* the
+decomposition; it says nothing against any route below that produces N=3.
+If anything it raises the value of Route A/B, because the target is now
+sharply characterised: produce `dim V = 3`, and the decuplet/octet/singlet
+structure follows by the arithmetic already proved.
+
 ## The blocker
 
 Quantum Schur-Weyl duality gives the eightfold-way multiplets only when the

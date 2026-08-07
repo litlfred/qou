@@ -69,7 +69,31 @@ $$
 $$
 The antisymmetric partition $(1^3)$ is \emph{absent} (three rows exceed
 $N = 2$).  No choice of $q$ restores it: the row cap is
-$\ell(\lambda) \leq \dim V$, which the single-fibre construction fixes at $2$.
+$\ell(\lambda) \leq \dim V$, which the single-fibre construction fixes at $2$,
+and the Drinfeld--Jimbo quantisation does not change dimensions.
+
+\textbf{The obstruction is proved.}
+This is not an observation but a theorem, machine-checked sorry-free in
+\texttt{QOU/Eightfold/RowCapObstruction.lean}:
+\begin{itemize}
+\item \texttt{weyl\_dim\_alt\_eq\_zero\_iff} --- the alternating channel
+  $\dim V_{(1^3)} = \binom{N}{3}$ vanishes \emph{if and only if} $N < 3$.
+  This is the obstruction in one line.
+\item \texttt{decuplet\_forces\_three} --- if the symmetric channel has
+  dimension $10$ then $N = 3$.  The implication runs from the decuplet
+  dimension to the flavour dimension, in that direction.
+\item \texttt{singlet\_forces\_three} --- a one-dimensional alternating
+  channel likewise pins $N = 3$.
+\item \texttt{schur\_weyl\_cube\_split\_two\_three} --- the channel
+  arithmetic closes at both values ($8 = 4 + 4 + 0$ at $N = 2$;
+  $27 = 10 + 16 + 1$ at $N = 3$), so the $N = 2$ deficit sits precisely in the
+  vanishing alternating channel and not in some unaccounted-for piece.
+\end{itemize}
+The eightfold-way classification is therefore not ``approximately available''
+at $N = 2$ --- it is structurally unavailable.  This is a scope-(b)
+exclusion, and the invariant justifying it is the Schur--Weyl row cap.
+What remains open is the affirmative half: no construction in the framework
+supplies $N = 3$.
 
 Therefore, realising the full eightfold way requires $N = 3$.  Within
 QOU, this $N = 3$ cannot arise from a single fibre.  The remaining
