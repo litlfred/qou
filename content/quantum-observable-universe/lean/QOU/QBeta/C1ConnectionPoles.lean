@@ -3,6 +3,7 @@ import Mathlib.Topology.Algebra.InfiniteSum.Ring
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
+import Mathlib.Analysis.Complex.LocallyUniformLimit
 
 /-!
 # The q-theta zero locus — where the C1 connection matrix has its poles
@@ -35,6 +36,10 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   on the real axis. This is the formal core of the refutation the whole C1 arc
   restarted from: a basis putting them "~17 orders of magnitude apart" is
   impossible, not merely unobserved.
+* `differentiableOn_qThetaC` — **`θ_P` is holomorphic on `ℂ*`** (bean
+  `qou-c1ln` step 1): Weierstrass M-test on annuli plus
+  `TendstoLocallyUniformlyOn.differentiableOn`. Makes `θ_P` a genuine analytic
+  object, the prerequisite for it having a divisor at all.
 * `qTheta_inversion` — `θ_P(1/w) = w·θ_P(w)`, Morita's inversion formula
   (arXiv:1105.1998 §2.1) in our normalisation.
 * `thetaRatio_multiplier` — `θ_P(cz)/θ_P(z)` is a q-character with multiplier
@@ -46,11 +51,12 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   (a ratio of four `θ_p`'s) is `p`-elliptic, straight from the functional
   equation. Proves the *shape* is right; not that χ equals it.
 
-`summable_qThetaTerm` and `qTheta_functional_equation` are the **analytic
-foundation for the converse**. The vanishing
-theorem itself needs neither (see below), but every route to "these are the
-*only* zeros" needs `θ_p` to be a genuine analytic object, and the functional
-equation is what forces the zero set to be a union of `p`-orbits.
+`summable_qThetaTerm`, `differentiableOn_qThetaC` and
+`qTheta_functional_equation` are the **analytic foundation for the converse**.
+The vanishing theorem itself needs none of them (see below), but every route to
+"these are the *only* zeros" needs `θ_p` to be a genuine analytic object —
+which is now proved, not assumed — and the functional equation is what forces
+the zero set to be a union of `p`-orbits.
 
 The proof is an **involution**, and needs no analysis at all. For each `k`, the
 map `n ↦ 2k−1−n` on `ℤ`
@@ -93,8 +99,11 @@ nothing mathematical turns on it.
   — define `∏(1−xᵐ)(1+xᵐw)(1+xᵐ⁻¹w⁻¹)`, show it satisfies the same functional
   equation, and conclude the ratio is elliptic and bounded hence constant. Both
   are substantial; (b) additionally needs Liouville on `ℂ*/p^ℤ`. Neither is a
-  small job, and this file's two analytic lemmas above are the shared prefix of
-  both. Recorded so this is not re-scoped as cheap.
+  small job, and the three analytic lemmas above (summability, holomorphy,
+  functional equation) are the shared prefix of both — with holomorphy the
+  hypothesis route (a) would otherwise have to assume. Recorded so this is not
+  re-scoped as cheap: what is missing is the argument principle itself, not the
+  analytic setup for it.
 * **That these zeros are poles of `P`.** That needs the analytic construction
   — convergent `0`-side series, entire `∞`-side series, the matrix inverse and
   its meromorphy — none of which is formalised.
@@ -445,5 +454,95 @@ theorem qTheta_inversion (P w : ℝ) (hw : w ≠ 0) :
     _ = w * qTheta P w := by
         rw [qTheta]; congr 1
         exact (Equiv.subRight (1:ℤ)).tsum_eq (fun n => qThetaTerm P w n)
+
+/-! ### Holomorphy on `ℂ*` — the first analytic infrastructure step
+
+Bean `qou-c1ln` step 1. Needed by every route to the converse of the zero
+locus, and by any statement that `θ_p` has a *divisor* at all. -/
+
+/-- One term of the complex-argument series. -/
+noncomputable def qThetaCTerm (P : ℝ) (w : ℂ) (n : ℤ) : ℂ :=
+  (P : ℂ) ^ (-(n * (n + 1))) * w ^ n
+
+lemma qThetaC_eq_tsum (P : ℝ) (w : ℂ) : qThetaC P w = ∑' n : ℤ, qThetaCTerm P w n := rfl
+
+lemma norm_qThetaCTerm (P : ℝ) (hP : 0 < P) (w : ℂ) (n : ℤ) :
+    ‖qThetaCTerm P w n‖ = qThetaTerm P ‖w‖ n := by
+  rw [qThetaCTerm, qThetaTerm, norm_mul, norm_zpow, norm_zpow, Complex.norm_real,
+      Real.norm_eq_abs, abs_of_pos hP]
+
+/-- On `r ≤ ‖w‖ ≤ R` the terms are dominated by `qThetaTerm P R n + qThetaTerm P r n`,
+which is summable — the Weierstrass majorant. -/
+lemma norm_le_annulus (P r R : ℝ) (hP : 0 < P) (hr : 0 < r) (w : ℂ)
+    (hw1 : r ≤ ‖w‖) (hw2 : ‖w‖ ≤ R) (n : ℤ) :
+    ‖qThetaCTerm P w n‖ ≤ qThetaTerm P R n + qThetaTerm P r n := by
+  have hw0 : (0:ℝ) < ‖w‖ := lt_of_lt_of_le hr hw1
+  have hR : (0:ℝ) < R := lt_of_lt_of_le hw0 hw2
+  have key : ‖w‖ ^ n ≤ R ^ n + r ^ n := by
+    rw [zpow_eq_exp _ hw0, zpow_eq_exp _ hR, zpow_eq_exp _ hr]
+    have hlr : Real.log r ≤ Real.log ‖w‖ := Real.log_le_log hr hw1
+    have hlR : Real.log ‖w‖ ≤ Real.log R := Real.log_le_log hw0 hw2
+    rcases le_or_gt 0 n with hn | hn
+    · have hcast : (0:ℝ) ≤ (n : ℝ) := by exact_mod_cast hn
+      have h1 : Real.log ‖w‖ * (n:ℝ) ≤ Real.log R * (n:ℝ) := by nlinarith
+      have h2 := Real.exp_le_exp.mpr h1
+      nlinarith [Real.exp_pos (Real.log r * (n:ℝ))]
+    · have hcast : ((n : ℝ)) ≤ 0 := by exact_mod_cast hn.le
+      have h1 : Real.log ‖w‖ * (n:ℝ) ≤ Real.log r * (n:ℝ) := by nlinarith
+      have h2 := Real.exp_le_exp.mpr h1
+      nlinarith [Real.exp_pos (Real.log R * (n:ℝ))]
+  rw [norm_qThetaCTerm P hP w n, qThetaTerm, qThetaTerm, qThetaTerm]
+  have hPpos : (0:ℝ) < P ^ (-(n * (n + 1))) := zpow_pos hP _
+  nlinarith [key, hPpos]
+
+/-- **`θ_P` is holomorphic on `ℂ*`.**
+
+Partial sums are finite sums of `c·wⁿ`, differentiable off `0`; on any annulus
+`r < ‖w‖ < R` the Weierstrass M-test gives locally uniform convergence, and
+`TendstoLocallyUniformlyOn.differentiableOn` transfers differentiability to the
+limit. This is what makes `θ_P` a genuine analytic object rather than a formal
+`tsum`, and it is the prerequisite for talking about its divisor at all. -/
+theorem differentiableOn_qThetaC (P : ℝ) (hP : 1 < P) :
+    DifferentiableOn ℂ (qThetaC P) {(0:ℂ)}ᶜ := by
+  have hP0 : (0:ℝ) < P := lt_trans zero_lt_one hP
+  intro w₀ hw₀
+  have hw₀0 : w₀ ≠ 0 := hw₀
+  have hn0 : (0:ℝ) < ‖w₀‖ := norm_pos_iff.mpr hw₀0
+  set r := ‖w₀‖ / 2 with hrdef
+  set R := 2 * ‖w₀‖ with hRdef
+  have hr : (0:ℝ) < r := by positivity
+  set U : Set ℂ := {w : ℂ | r < ‖w‖ ∧ ‖w‖ < R} with hUdef
+  have hUopen : IsOpen U := by
+    have : U = (fun w : ℂ => ‖w‖) ⁻¹' (Set.Ioo r R) := by
+      ext w; simp [hUdef, Set.mem_Ioo]
+    rw [this]; exact isOpen_Ioo.preimage continuous_norm
+  have hw₀U : w₀ ∈ U := by
+    constructor
+    · simp only [hrdef]; linarith
+    · simp only [hRdef]; linarith
+  have hsum : Summable (fun n : ℤ => qThetaTerm P R n + qThetaTerm P r n) :=
+    (summable_qThetaTerm P R hP (by positivity)).add
+      (summable_qThetaTerm P r hP (by positivity))
+  have hbound : ∀ (n : ℤ), ∀ w ∈ U, ‖qThetaCTerm P w n‖
+      ≤ qThetaTerm P R n + qThetaTerm P r n := by
+    intro n w hw
+    exact norm_le_annulus P r R hP0 hr w hw.1.le hw.2.le n
+  have htu := tendstoUniformlyOn_tsum hsum hbound
+  have hdiff : ∀ (t : Finset ℤ),
+      DifferentiableOn ℂ (fun w : ℂ => ∑ n ∈ t, qThetaCTerm P w n) U := by
+    intro t
+    have : (fun w : ℂ => ∑ n ∈ t, qThetaCTerm P w n)
+        = ∑ n ∈ t, (fun w : ℂ => qThetaCTerm P w n) := by funext w; simp
+    rw [this]
+    refine DifferentiableOn.sum ?_
+    intro n _ w hw
+    have hwne : w ≠ 0 := by
+      intro h; rw [h] at hw; simp [hUdef] at hw; linarith [hw.1]
+    exact DifferentiableAt.differentiableWithinAt
+      ((differentiableAt_zpow.mpr (Or.inl hwne)).const_mul _)
+  have hres : DifferentiableOn ℂ (qThetaC P) U :=
+    htu.tendstoLocallyUniformlyOn.differentiableOn
+      (Filter.Eventually.of_forall hdiff) hUopen
+  exact ((hres.differentiableAt (hUopen.mem_nhds hw₀U))).differentiableWithinAt
 
 end QOU.QBeta.C1Poles
