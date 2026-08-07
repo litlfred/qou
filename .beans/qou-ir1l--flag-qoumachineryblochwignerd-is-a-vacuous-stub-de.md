@@ -1,11 +1,11 @@
 ---
 # qou-ir1l
 title: 'FLAG: QOU.Machinery.blochWignerD is a vacuous stub — def := 0 with a rfl ''theorem'' and an unused hypothesis'
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-07T08:45:09Z
-updated_at: 2026-08-07T08:45:09Z
+updated_at: 2026-08-07T09:56:04Z
 ---
 
 content/quantum-observable-universe/lean/QOU/Machinery/QDilogarithm.lean:78
