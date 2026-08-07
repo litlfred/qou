@@ -67,7 +67,7 @@ mass formula), grouping the $\mathrm{Li}_2$ series by
 $n \bmod 3$:
 
 $$
-  S_k = \sum_{\substack{n \geq 1 \\ n \equiv k ±od{3}}}
+  S_k = \sum_{\substack{n \geq 1 \\ n \equiv k \pmod{3}}}
   \frac{q^{-2n}}{n^2},
   \qquad k \in \{1, 2, 0\}
 $$
