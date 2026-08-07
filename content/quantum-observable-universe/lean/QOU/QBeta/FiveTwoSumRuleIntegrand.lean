@@ -423,11 +423,11 @@ polynomial's logarithm:
 with `Li₂` the integral-defined `QOU.MathlibExt.cLiTwoExt`, which is the object
 that makes sense at `‖y₁‖ = 1.52` where the series does not.
 
-The integrability side conditions are hypotheses rather than derived: for the
-5₂ roots they are discharged by
-`QOU.MathlibExt.intervalIntegrable_log_one_sub_div` (which needs
-`Re(1 − yz) > 0` on `[0,1]`, true for all three roots) together with the fact
-that `Complex.reCLM` preserves interval-integrability.
+One integrability hypothesis per root, and only for the complex-valued
+integrand — the real-part versions are derived (`Integrable.re`). For the 5₂
+roots the three hypotheses are discharged by
+`QOU.MathlibExt.intervalIntegrable_log_one_sub_div`, which needs
+`Re(1 − yz) > 0` on `[0,1]` — true for all three.
 
 **This does not prove the sum rule.** It makes Route 5's identity a theorem
 about `cLiTwoExt`; what remains is (i) identifying `cLiTwoExt` with the `Li₂` of
@@ -445,12 +445,6 @@ theorem sum_re_cLiTwoExt_eq_integral {y₁ y₂ y₃ : ℂ}
     (h₂ : IntervalIntegrable (fun z : ℝ => Complex.log (1 - y₂ * (z : ℂ)) / (z : ℂ))
       volume 0 1)
     (h₃ : IntervalIntegrable (fun z : ℝ => Complex.log (1 - y₃ * (z : ℂ)) / (z : ℂ))
-      volume 0 1)
-    (r₁ : IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y₁ * (z : ℂ))).re / z)
-      volume 0 1)
-    (r₂ : IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y₂ * (z : ℂ))).re / z)
-      volume 0 1)
-    (r₃ : IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y₃ * (z : ℂ))).re / z)
       volume 0 1) :
     (QOU.MathlibExt.cLiTwoExt y₁).re + (QOU.MathlibExt.cLiTwoExt y₂).re
         + (QOU.MathlibExt.cLiTwoExt y₃).re
@@ -459,6 +453,21 @@ theorem sum_re_cLiTwoExt_eq_integral {y₁ y₂ y₃ : ℂ}
     intro w r
     rw [div_eq_mul_inv, ← Complex.ofReal_inv, Complex.mul_re, Complex.ofReal_re,
       Complex.ofReal_im, mul_zero, sub_zero, div_eq_mul_inv]
+  have hre : ∀ y : ℂ,
+      IntervalIntegrable (fun z : ℝ => Complex.log (1 - y * (z : ℂ)) / (z : ℂ)) volume 0 1 →
+      IntervalIntegrable (fun z : ℝ => (Complex.log (1 - y * (z : ℂ))).re / z) volume 0 1 := by
+    intro y h
+    have hb : IntervalIntegrable
+        (fun z : ℝ => (Complex.log (1 - y * (z : ℂ)) / (z : ℂ)).re) volume 0 1 :=
+      ⟨h.1.re, h.2.re⟩
+    have heq : (fun z : ℝ => (Complex.log (1 - y * (z : ℂ)) / (z : ℂ)).re)
+        = fun z : ℝ => (Complex.log (1 - y * (z : ℂ))).re / z := by
+      funext z
+      exact hdiv (Complex.log (1 - y * (z : ℂ))) z
+    rwa [heq] at hb
+  have r₁ := hre y₁ h₁
+  have r₂ := hre y₂ h₂
+  have r₃ := hre y₃ h₃
   have key : ∀ (y : ℂ),
       IntervalIntegrable (fun z : ℝ => Complex.log (1 - y * (z : ℂ)) / (z : ℂ)) volume 0 1 →
       (QOU.MathlibExt.cLiTwoExt y).re
