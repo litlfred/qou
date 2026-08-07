@@ -270,3 +270,44 @@ residue is expected. So `--strict` stays out of CI until the real defects
 are drained; a gate with a standing backlog is one everyone learns to
 ignore, which is exactly the failure #4653 avoided by holding its own gate
 at baseline zero. Draining precedes enforcement.
+
+## Drain result (qou-qrsp)
+
+Measured with the same tool, same worktree method, before and after:
+
+| | before | after |
+|---|---:|---:|
+| `RE_PADS` | 38 | **20** |
+| `CLEAN` | 8 | **25** |
+| padded fields regenerated in one pass | 307 | **229** |
+
+**18 producers fixed** — the whole import-time class. Two idioms were in
+play and each file kept its own: nine `option_e`/probe files set
+`mp.dps = 50` inside `main()`; three called `set_compute_dps()` there; four
+`binding_depth_stratified_*` hand-typed AME constants now read from the
+registry. In every case the module-scope constants above the raise were
+being built at dps=15.
+
+### What the residual 20 are — and why they are NOT the same bug
+
+Every remaining re-padder **reads an upstream witness**
+(`_pb.witness_path(...)`) and faithfully reproduces what it finds there:
+
+```
+rho_k_co_casimir_extended        +71   reads y-lambda-wenzl-bridge-symbolic
+chirality_avg_content_atomic     +71   reads term7-alpha5-crystal-derivation
+qbeta_markov_trace_norm_probe     +8   reads y-lambda-cyclotomic-factor
+phi_q_spectral_combiner_probe     +6   reads qbeta-per-block-paper-closed-forms
+…
+```
+
+Two of them account for 142 of the 229 remaining fields. `mpf(str(x))` on a
+value read from a padded witness is *correct behaviour* — it reproduces the
+input exactly. The defect is upstream, so these cannot be fixed in place:
+the fix has to walk the witness dependency graph **upstream-first**, and
+re-running a consumer before its producer is fixed just re-imports the
+padding.
+
+That ordering is the next tranche, and it is genuinely different work from
+this one — dependency-ordered regeneration rather than a source edit. It is
+also why the count will not reach zero by editing producers alone.
