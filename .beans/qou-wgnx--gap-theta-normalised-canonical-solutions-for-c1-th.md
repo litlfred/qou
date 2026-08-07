@@ -235,3 +235,41 @@ multiplicative `θ_p`. Recorded so it is not re-scoped as cheap.
 
 **Stokes multipliers: STILL OPEN.** χ is the invariant they must be functions
 of, not the multipliers themselves. That remains the work.
+
+## 2026-08-07 (fifth) — JTP infrastructure: summability + functional equation, both proved
+
+`QOU/QBeta/C1ConnectionPoles.lean` extended; `lean-verify` exit 0, all
+`#print axioms` = `[propext, Classical.choice, Quot.sound]` (no `sorryAx`).
+
+Two new sorry-free theorems, the **shared prefix of every route to the
+converse**:
+
+- `summable_qThetaTerm` — the bilateral series converges for `P > 1`, `w ≠ 0`.
+  `|term n| = exp(−L n² + (M−L)n)` with `L = log P > 0`, `M = log|w|`; one
+  completed square gives `−L t² + B t ≤ B²/(4L)`, so it is dominated by
+  `C·e^{−|n|}` with `B = |M−L|+1`, `C = exp(B²/(4L))`. Built from
+  `Summable.of_nat_of_neg` + `summable_geometric_of_lt_one` — Mathlib's own
+  `jacobiTheta₂` bound is not importable here (partial olean cache).
+- `qTheta_functional_equation` — `θ_P(P²w) = w·θ_P(w)`, i.e. `θ_p(pw) = wθ_p(w)`.
+  Both sides are `∑ P^{−n(n−1)}wⁿ`; reindex by `Equiv.subRight 1`.
+  Unconditional.
+
+**Why these and not JTP itself.** The vanishing theorem needs neither (the
+involution is unconditional), but *any* converse route needs `θ_p` to be a
+genuine analytic object, and the functional equation is what forces the zero set
+to be a union of `p`-orbits.
+
+**Scoping the rest, from the Mathlib source.** Mathlib **has**
+`HasProd`/`Multipliable`/`tprod` and `Analysis/Meromorphic/{Divisor,
+IsolatedZeros, Order}`. It **lacks the argument principle** — which kills the
+cheap route ("`θ_p` holomorphic on `ℂ*` plus `θ_p(pw) = wθ_p(w)` forces exactly
+one zero per fundamental annulus; `−1` is one; done"). So the two viable routes:
+
+  (a) prove the argument principle, then zero-count; or
+  (b) prove JTP via the product side — define `∏(1−xᵐ)(1+xᵐw)(1+xᵐ⁻¹w⁻¹)`,
+      show it satisfies the same functional equation, conclude the ratio is
+      elliptic and bounded hence constant.
+
+Both are substantial multi-session jobs; (b) additionally needs Liouville on
+`ℂ*/p^ℤ`. **Not** a small job — do not re-scope it as one. The two lemmas above
+are the shared prefix either way, and are now done.
