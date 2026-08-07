@@ -54,7 +54,7 @@ import mpmath as mp  # noqa: E402
 import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -65,8 +65,14 @@ q0 = mp.mpf(str(Q0))
 q0f = float(Q0)
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
 H = float(q0 - 1 / q0)
-_Y9 = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
-       for k, v in y_lambda_at(9, q0).items()}
+# EXPERIMENTAL-LAYER ANCHOR (owner directive 2026-08-07).  y_lambda is computed LIVE at the
+# proton-pinned q0 rather than read from `y-lambda-at-q0.witness.json`, which is built at the
+# IDEAL 3-CAL muon pin.  Mixing the two layers inside one Delta^2 g was a real defect --
+# quantified in `mu3_anchor_consistency_probe.py` (11.54 ppb apart = the mu-p substrate
+# tension; ~1e-7 relative on Delta^2 g, no conclusion changed).  Both y_lambda and chi are now
+# evaluated at the SAME experimental anchor.  Scoped to this probe: this is NOT a migration of
+# the ~840 muon-q0 computations/ witnesses, which stay canonical per AGENTS.md.
+_Y9 = y_lambda_at_q0_mpmath(9, q0)
 
 TOL = mp.mpf("1e-20")
 

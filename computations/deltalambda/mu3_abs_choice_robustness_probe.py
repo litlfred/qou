@@ -34,7 +34,7 @@ import mpmath as mp  # noqa: E402
 import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -44,7 +44,9 @@ set_compute_dps(30)
 q0 = mp.mpf(str(Q0))
 q0f = float(Q0)
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
-_Y9 = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(9, q0).items()}
+# EXPERIMENTAL-LAYER ANCHOR (owner directive 2026-08-07) — see the note in
+# mu3_frechet_perblock_probe.py.  y_lambda live at the proton q0, matching chi's anchor.
+_Y9 = y_lambda_at_q0_mpmath(9, q0)
 EXPECT = {"T": -1.769, "3He": -1.405}
 
 

@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T01:21:50.128328+00:00",
-  "commitSha": "c56a040efe92e63b8e94214bfe3a382f91f2baa0",
+  "computedAt": "2026-08-07T08:32:29.870955+00:00",
+  "commitSha": "df5a49f952e7da0b4f41739f84c60f518bf08229",
   "assertions": [
     {
       "name": "baseline_gate_vs_4404",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 10,
   "computation": "mu3-abs-choice-robustness",
   "scriptFile": "mu3_abs_choice_robustness_probe.py",
-  "scriptHash": "477b6492f6db",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ca5270ffac78",
+  "scriptCommitSha": "df5a49f952e7da0b4f41739f84c60f518bf08229",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,33 +47,33 @@
         "n_blocks": 30,
         "n_negative_raw_chi": 8,
         "abs": {
-          "d2": "0.42254733975683442923",
-          "c3_MeV": "-1.7687752893317680137",
+          "d2": "0.42254733638246947998",
+          "c3_MeV": "-1.7687752752067392232",
           "submodular": false
         },
         "raw": {
-          "d2": "0.38998770546870446414",
-          "c3_MeV": "-1.6324812670059721699",
+          "d2": "0.38998770125163146434",
+          "c3_MeV": "-1.632481249353383185",
           "submodular": false
         },
         "baseline_gate_ok": true,
-        "relative_shift": "0.07705558934"
+        "relative_shift": "0.07705559195"
       },
       "3He": {
         "n_blocks": 30,
         "n_negative_raw_chi": 8,
         "abs": {
-          "d2": "0.33574551326177634289",
-          "c3_MeV": "-1.4054244613235341794",
+          "d2": "0.33574550659882493483",
+          "c3_MeV": "-1.4054244334325437607",
           "submodular": false
         },
         "raw": {
-          "d2": "0.31744947719536258526",
-          "c3_MeV": "-1.3288375953273626123",
+          "d2": "0.31744947166322583716",
+          "c3_MeV": "-1.3288375721699412855",
           "submodular": false
         },
         "baseline_gate_ok": true,
-        "relative_shift": "0.05449376192"
+        "relative_shift": "0.05449375964"
       }
     }
   },

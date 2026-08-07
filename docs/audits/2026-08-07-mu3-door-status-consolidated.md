@@ -196,6 +196,46 @@ reading of the bare Markov trace.
 Neither result derives which operator is correct. The `|χ|` choice remains underived; this
 section bounds the damage, it does not resolve it.
 
+## 4ter. The calibration-layer crossing (and the anchor now used)
+
+A second robustness check found that the μ₃ probes **straddled the two q₀ calibration layers**.
+This is not a cache-staleness bug — it is the documented ideal-vs-experimental convention
+(AGENTS.md §"q₀ anchor convention") leaking into a single `Δ²g`:
+
+| layer | pin | q₀ | where it lives |
+|---|---|---|---|
+| **Ideal / canonical 3-CAL** | CAL-2 = `𝔇_β`, via proxy `m_μ/m_e` | 1.10997859555733471989… | `y-lambda-at-q0.witness.json`, the ~840 `computations/` witnesses |
+| **Experimental / Physical-Observations** | `m_p/m_e` (0.06 ppb; re-pin 2026-05-28) | 1.1099785827513808 | `q_parameter.Q`, the package layer |
+
+Separation: **11.54 ppb** — precisely the μ–p substrate tension (AGENTS.md quotes the
+unavoidable theory residual as ~11.5 ppb).
+
+[#4657] as merged took `y_λ` from the *ideal* layer (the muon-built cache) while evaluating
+`χ_λ` at the *experimental* proton q₀. The mechanism: `y_lambda_at(n, q)` serves the cached
+witness whenever `|q − q_parameter.Q| < 1e-12` — a gate satisfied *trivially* when the caller
+passes `q_parameter.Q` itself, so an ideal-layer cache reaches an experimental-layer caller
+with no signal that a layer boundary was crossed. This is the recurring class flagged as bean
+`tnjb`.
+
+**Size, measured** (`mu3_anchor_consistency_probe.py`, `Δ²g` recomputed three ways on identical
+braid words):
+
+| reading | T | ³He | door |
+|---|---|---|---|
+| mixed (as merged) | +0.422547340 | +0.335745513 | closed |
+| pure proton | +0.422547336 | +0.335745507 | closed |
+| pure muon | +0.422547472 | +0.335745612 | closed |
+
+Relative shift ~1e-7 — four orders below the §4bis `|χ|` effect and far below any sign
+question. **No conclusion in §2–§4 changes.** The §4.2 sign rule is *anchor-independent*: all
+30 signs agree across both pins.
+
+**Anchor now used: EXPERIMENTAL (proton), consistently** — owner directive, 2026-08-07. Both
+`y_λ` and `χ` in `mu3_frechet_perblock_probe.py` and `mu3_abs_choice_robustness_probe.py` are
+evaluated live at the proton q₀; the muon cache is no longer read by them. This is **scoped to
+these probes** and is *not* a migration of the ~840 muon-q₀ `computations/` witnesses, which
+remain canonical.
+
 ## 5. Scope discipline
 
 Per AGENTS.md §"Before declaring refuted / ruled out / dead end":
