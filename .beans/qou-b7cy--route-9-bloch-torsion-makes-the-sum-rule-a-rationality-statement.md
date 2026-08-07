@@ -154,3 +154,42 @@ property of the specific combination `2[w] + [−w]`, i.e. of the Bloch element,
 which is exactly what the torsion argument predicts.
 
 **Status: verified to 80 dps, unproved.** Nothing stubbed.
+
+---
+
+## ✅ 2026-08-07 — the algebraic core is now LEAN-PROVED, sorry-free
+
+`QOU/QBeta/FiveTwoCyclotomicBloch.lean`, compiled against Mathlib
+`f897ebcf72cd16f89ab4577d0c826cd14afaafc7` on Lean 4.24.0 (toolchain obtained via
+the github mirror — see `qou-clx8`). **Six theorems, zero `sorry`, zero `axiom`:**
+
+| theorem | content |
+|---|---|
+| `bloch_poly` | `(1−w)²(1+w) − w² = w³ − 2w² − w + 1` **as polynomials** — `ring` |
+| `bloch_key` | hence `(1−w)²(1+w) = w²` at any root — `linear_combination hw` |
+| `minpoly_one_sub` | `1−w` satisfies `u³ − u² − 2u + 1` |
+| `minpoly_one_add` | `1+w` satisfies `v³ − 5v² + 6v − 1` |
+| `prod_one_sub_x_mul` | Route 8: `∏ⱼ(1 − x·yⱼ) = x` |
+| `prod_x_sub` | Route 8: `∏ⱼ(x − yⱼ) = x²` |
+
+`#print axioms` gives `[propext, Classical.choice, Quot.sound]` — the corpus's
+standard set; `prod_one_sub_x_mul` and `prod_x_sub` do not even need
+`Classical.choice`.
+
+All are stated over an arbitrary `CommRing`, with the deformed-curve Vieta
+hypotheses **denominator-cleared**, so no field or `x ≠ 0` assumption is needed.
+
+**This does not shrink what is open.** It formalizes exactly the steps that need
+no dilogarithm. The rationality argument (Bloch group + Borel) is **not**
+formalizable — see `qou-mlbg` for the measured Mathlib survey — and the three
+numerators remain unproved. See `qou-fivt` for the route that avoids Borel.
+
+## ✅ End-to-end composition verified (gate G8)
+
+Every other gate checks one link. G8 reconstructs the **original** sum rule from
+the three numerators alone, back through both reductions:
+
+    (Σ mₖ)·π²/42 − π² [Rogers→V] − π² [transport back] = 21/42 − 1 − 1 = −3/2
+
+giving `−3π²/2` with **residual 0.0**. The two reductions compose; nothing was
+fudged at a seam.

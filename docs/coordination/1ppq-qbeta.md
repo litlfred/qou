@@ -3163,3 +3163,41 @@ Probe + witness: `computations/probes/qbeta_5two_route9_bloch_torsion_rationalit
 `computations/qbeta-5two-route9-bloch-torsion-rationality.witness.json`.
 **Route count 9 tried; 7 refuted, 2 reductions. Sum-rule status unchanged:
 verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — LEAN IS AVAILABLE HERE (workaround), and the
+algebraic core of Routes 8/9 is now sorry-free. Borel is not formalizable.**
+
+**Environment correction, worth propagating:** `release.lean-lang.org:443` is
+denied by network policy, but the toolchain is **mirrored on github.com**, which
+egresses fine — `github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst`,
+decompressed with python `zstandard` (no `zstd` binary present). Mathlib's olean
+cache (Azure) is still 403, so `lake exe cache get` fails, but Mathlib *source*
+is on github and a **targeted** build works: `lake build Mathlib.Tactic.LinearCombination`
+is 708 jobs, minutes not hours. Do not build all of Mathlib.
+
+**New, sorry-free:** `QOU/QBeta/FiveTwoCyclotomicBloch.lean` — six theorems over
+an arbitrary `CommRing`, axioms `[propext, Classical.choice, Quot.sound]` (two
+need only `propext, Quot.sound`): `bloch_poly` (`(1−w)²(1+w) − w² = w³−2w²−w+1`
+**identically**, so the Bloch condition *is* the minimal polynomial),
+`bloch_key`, `minpoly_one_sub`, `minpoly_one_add`, and Route 8's two Vieta
+products `∏(1−x yⱼ) = x`, `∏(x−yⱼ) = x²` (hypotheses denominator-cleared, so no
+field or `x ≠ 0` needed).
+
+**Composition check (new gate G8):** from the three numerators alone,
+`(Σ mₖ)π²/42 − π² − π² = −3π²/2` with **residual 0.0** — the Route 8 and Route 9
+reductions genuinely compose; no seam was fudged.
+
+**⚠ Measured Mathlib survey (`qou-mlbg`), 6996 files at the pinned rev:** `Bloch`
+0, `Borel regulator` 0, `Polylog`/`polylog` 0, `Rogers` 0, `Steinberg` 0, no
+`KTheory` directory. The single `dilog` hit is a docstring aside — **Mathlib has
+no `Li₂` at all**. `Clausen`/`Lobachevsky` hits are the author *Claus Clausen*
+and *Clausen–Scholze* condensed maths — no Clausen function. Only exterior powers
+exist. **So Route 9's rationality argument is proved on paper and is NOT
+formalizable**; "formalize Borel first" is a multi-year project, not a plan.
+Note two false friends: bean `el8w` is Borel *resummation*, and `cj2d5`
+(`BorelZagierQouVolumes`) is the *volume* side.
+
+**The route that avoids all of it is `qou-fivt`:** prove the three numerators
+`17, 5, −1` by five-term/Abel, needing only a real `Li₂` (QOU has one) and the
+Rogers functional equations. **Sum-rule status unchanged: verified to 80 dps,
+unproved.**

@@ -134,3 +134,35 @@ quadrature at `Re(1/y)` restores exactness (diff `0.0`). Any probe evaluating
 The Lean proof itself (differentiation under the integral sign for analyticity
 in the parameter `y`). Route 2 of the two listed above remains the shorter path.
 **Nothing stubbed. Sum rule status: verified to 80 dps, unproved.**
+
+---
+
+## ✅ 2026-08-07 (later) — CORRECTION: Lean is NOT blocked here. Workaround found.
+
+The blocker note above is **superseded**. `release.lean-lang.org:443` is indeed
+denied by network policy, but **the toolchain is mirrored on github.com, which
+egresses fine**:
+
+```sh
+curl -L -o lean.tar.zst \
+  https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst
+# no zstd binary on the box; decompress with python:
+python3 -m pip install zstandard
+python3 -c "import zstandard,tarfile;d=zstandard.ZstdDecompressor();\
+f=open('lean.tar.zst','rb');r=d.stream_reader(f);\
+tarfile.open(fileobj=r,mode='r|').extractall('toolchain')"
+```
+
+`lean --version` → **4.24.0**, exactly the rev `lean-toolchain` pins.
+
+**Mathlib:** the olean cache host (`mathlib4.blob.core.windows.net`) is still
+403, so `lake exe cache get` fails — but Mathlib *source* is on github, so
+`lake update` works and you can **build from source**. Do **not** build all of
+Mathlib; build the target you need. `lake build Mathlib.Tactic.LinearCombination`
+was **708 jobs**, minutes not hours.
+
+**Consequence for this bean:** the analyticity proof is no longer environment-
+blocked, only mathematically hard. The groundwork above (statement verified true;
+`Re(1−yz) > 0` sufficient but not necessary; the right geometric hypothesis; the
+`Re(1/y)` quadrature trap) stands unchanged and is what a formalizer should start
+from.

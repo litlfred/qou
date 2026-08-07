@@ -160,6 +160,21 @@ def main():
                           "numerators 17, 5, -1 are verified, not derived.",
                   "pass": bool(w7 < TOL and dens == [42, 42, 42])})
 
+    # G8 -- END-TO-END composition. Every other gate checks one link in isolation;
+    # this one reconstructs the ORIGINAL sum rule from the three numerators alone,
+    # back through Route 9 (Rogers -> V, -pi^2) and Route 8 (x = -1 -> x = 1, -pi^2).
+    recon = sum(mpf(m) * pi ** 2 / 42 for m in ms) - pi ** 2 - pi ** 2
+    e8 = fabs(recon - (-3 * pi ** 2 / 2))
+    gates.append({"gate": "G8",
+                  "claim": "END-TO-END: (sum m_k) pi^2/42 - pi^2 [Rogers->V] - pi^2 [transport back] "
+                           "= -3 pi^2/2, the original sum rule at x = 1",
+                  "reconstructed": nstr(recon, 26),
+                  "original_target": nstr(-3 * pi ** 2 / 2, 26),
+                  "abs_err": nstr(e8, 6),
+                  "note": "the other gates each check one link; this checks that the two reductions "
+                          "COMPOSE. 21/42 = 1/2, then 1/2 - 1 - 1 = -3/2.",
+                  "pass": bool(e8 < TOL)})
+
     out = {
         "probe": "qbeta_5two_route9_bloch_torsion_rationality",
         "bean": "qou-b7cy",
