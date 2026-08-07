@@ -223,4 +223,71 @@ class FiveTwoDilogLadder (Li : ℂ → ℂ) (y : Fin 3 → ℂ) : Prop where
     (α : ℂ) * (∑ j, Li (y j)) + (β : ℂ) * (∑ j, Li (1 - y j))
       = (γ : ℂ) * (Real.pi : ℂ) ^ 2
 
+/-! ### The branch data `b = (−1, +1, +1)` is not free data
+
+The sum rule is stated with `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` and a
+hand-supplied `b = (−1, +1, +1)`, which reads like three fitted signs. It is
+not: probe `qbeta_5two_route5_branch_data_probe` (gate G6, error `0.0` at
+60 dps) found
+
+    log yⱼ + bⱼπi = Log(−yⱼ)      (principal branch)
+
+and the three lemmas below are the proof. `arg(−z) = arg z − π` above the real
+axis, `arg z + π` below it, and `= π` on the positive real axis — so for a
+cubic with one positive real root and one conjugate pair, `b` is *forced* to be
+`(−1, +1, +1)` with no freedom whatsoever.
+
+Consequence: `Vⱼ = 3·Li₂(yⱼ) + Log(−yⱼ)²`, and `Log(−z)²` is precisely the term
+in the dilogarithm inversion formula `Li₂ z + Li₂ (1/z) = −π²/6 − ½·Log(−z)²`.
+That is what makes the inversion route to the sum rule natural rather than
+opportunistic. See bean `qou-0yqu`.
+-/
+
+/-- Above the real axis, negation *subtracts* `πi` from the principal log. -/
+theorem log_neg_of_im_pos {z : ℂ} (hz : 0 < z.im) :
+    Complex.log (-z) = Complex.log z - (Real.pi : ℂ) * Complex.I := by
+  simp only [Complex.log, norm_neg, Complex.arg_neg_eq_arg_sub_pi_of_im_pos hz]
+  push_cast
+  ring
+
+/-- Below the real axis, negation *adds* `πi`. -/
+theorem log_neg_of_im_neg {z : ℂ} (hz : z.im < 0) :
+    Complex.log (-z) = Complex.log z + (Real.pi : ℂ) * Complex.I := by
+  simp only [Complex.log, norm_neg, Complex.arg_neg_eq_arg_add_pi_of_im_neg hz]
+  push_cast
+  ring
+
+/-- On the positive real axis, negation adds `πi` (`arg` of a negative real is
+`π`, not `−π`: the principal branch is closed from above). -/
+theorem log_neg_of_pos_real {x : ℝ} (hx : 0 < x) :
+    Complex.log (-(x : ℂ)) = Complex.log (x : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  have hneg : ((-x : ℝ) : ℂ) = -(x : ℂ) := by push_cast; ring
+  rw [← hneg]
+  simp only [Complex.log, Complex.norm_real, Complex.arg_ofReal_of_neg (by linarith : (-x : ℝ) < 0),
+    Complex.arg_ofReal_of_nonneg hx.le]
+  rw [norm_neg]
+  push_cast
+  ring
+
+/-- **The three branch shifts at once.** For a positive real `y₃` and a
+conjugate pair `y₁` (upper half-plane), `y₂ = conj y₁`, the shifts
+`(−1, +1, +1)` are exactly `Log(−yⱼ)`.
+
+This is the formal statement that the sum rule's `b` carries no free
+parameters. -/
+theorem branch_shift_eq_log_neg {y₁ y₃ : ℂ} (h₁ : 0 < y₁.im) (h₃im : y₃.im = 0)
+    (h₃re : 0 < y₃.re) :
+    Complex.log y₁ + (-1 : ℤ) * (Real.pi : ℂ) * Complex.I = Complex.log (-y₁)
+      ∧ Complex.log (starRingEnd ℂ y₁) + (1 : ℤ) * (Real.pi : ℂ) * Complex.I
+          = Complex.log (-(starRingEnd ℂ y₁))
+      ∧ Complex.log y₃ + (1 : ℤ) * (Real.pi : ℂ) * Complex.I = Complex.log (-y₃) := by
+  refine ⟨?_, ?_, ?_⟩
+  · rw [log_neg_of_im_pos h₁]; push_cast; ring
+  · rw [log_neg_of_im_neg (by simpa using h₁)]; push_cast; ring
+  · have hy₃ : y₃ = ((y₃.re : ℝ) : ℂ) := by
+      apply Complex.ext <;> simp [h₃im]
+    rw [hy₃, log_neg_of_pos_real h₃re]
+    push_cast
+    ring
+
 end QOU.QBeta.FiveTwo
