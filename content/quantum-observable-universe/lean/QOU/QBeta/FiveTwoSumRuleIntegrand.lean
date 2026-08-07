@@ -142,4 +142,63 @@ theorem two_mul_re_eq {y₁ y₃ : ℂ}
     rw [Complex.add_conj]; push_cast; ring
   linear_combination e1 - h
 
+/-! ### Route 3, formalized: the Landen image cubic
+
+Numerically (bean `qou-0yqu`, Route 3) the Landen substitution `z = y/(y−1)`
+maps the three 5₂ roots exactly onto the roots of `z³ − z² + 1` — residual
+`0.0` at all three. That is pure algebra, so it is proved here rather than
+left as an observation.
+
+The route is still a dead end for the sum rule: it relates `Σ Li₂(yⱼ)` to a
+sum over a *different* algebraic set, giving one new equation and one new
+unknown. Proving where Landen lands is not proving that it helps. -/
+
+/-- **The Landen image of a 5₂ saddle root is a root of `z³ − z² + 1`.**
+
+From `y² = (1−y)³` one gets `z² = 1−y` and `z³ = −y` for `z = y/(y−1)`, whence
+`z³ = z² − 1`. -/
+theorem landen_image_cubic {R : Type*} [Field R] {y : R} (hy : y - 1 ≠ 0)
+    (h : y ^ 2 = (1 - y) ^ 3) :
+    (y / (y - 1)) ^ 3 - (y / (y - 1)) ^ 2 + 1 = 0 := by
+  field_simp
+  linear_combination h
+
+/-! ### The power sums are integers
+
+`powerSum_rec` gives the recurrence; with the three base cases it identifies
+`pₙ = Σⱼ yⱼⁿ` with an explicitly integer sequence. This is the formal content
+of the observed table `3, 2, −2, −7, −6, 7, 25, 23, −22, …`. -/
+
+/-- The integer sequence `3, 2, −2, …` obeying the 5₂ cubic's recurrence. -/
+def pSeq : ℕ → ℤ
+  | 0 => 3
+  | 1 => 2
+  | 2 => -2
+  | (n + 3) => 2 * pSeq (n + 2) - 3 * pSeq (n + 1) + pSeq n
+
+/-- **`Σⱼ yⱼⁿ = pSeq n`, an integer**, for any three elements with the 5₂
+cubic's `e₁ = 2`, `e₂ = 3` each satisfying the cubic.
+
+Base cases: `p₀ = 3`, `p₁ = e₁ = 2`, `p₂ = e₁² − 2e₂ = 4 − 6 = −2`. -/
+theorem powerSum_eq_pSeq {R : Type*} [CommRing R] {y₁ y₂ y₃ : R}
+    (e1 : y₁ + y₂ + y₃ = 2) (e2 : y₁ * y₂ + y₁ * y₃ + y₂ * y₃ = 3)
+    (h1 : y₁ ^ 3 = 2 * y₁ ^ 2 - 3 * y₁ + 1)
+    (h2 : y₂ ^ 3 = 2 * y₂ ^ 2 - 3 * y₂ + 1)
+    (h3 : y₃ ^ 3 = 2 * y₃ ^ 2 - 3 * y₃ + 1) :
+    ∀ n : ℕ, y₁ ^ n + y₂ ^ n + y₃ ^ n = (pSeq n : R)
+  | 0 => by norm_num [pSeq]
+  | 1 => by simpa [pSeq] using e1
+  | 2 => by
+      have : y₁ ^ 2 + y₂ ^ 2 + y₃ ^ 2 = (y₁ + y₂ + y₃) ^ 2
+          - 2 * (y₁ * y₂ + y₁ * y₃ + y₂ * y₃) := by ring
+      rw [this, e1, e2]; simp [pSeq]; norm_num
+  | (n + 3) => by
+      have ih0 := powerSum_eq_pSeq e1 e2 h1 h2 h3 n
+      have ih1 := powerSum_eq_pSeq e1 e2 h1 h2 h3 (n + 1)
+      have ih2 := powerSum_eq_pSeq e1 e2 h1 h2 h3 (n + 2)
+      rw [powerSum_rec h1 h2 h3 n, ih0, ih1, ih2]
+      show _ = ((2 * pSeq (n + 2) - 3 * pSeq (n + 1) + pSeq n : ℤ) : R)
+      push_cast
+      ring
+
 end QOU.QBeta.FiveTwo
