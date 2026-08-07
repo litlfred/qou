@@ -539,3 +539,48 @@ where `|χ| = 1` exactly and `arg χ` is well-behaved.
 
 χ's divisor, the bounded/elliptic tension, and the Stokes multipliers remain
 **OPEN**.
+
+## 2026-08-07 (twelfth) — CONTRADICTION RESOLVED: χ is an order-2 elliptic function
+
+The half-annulus count specified in the previous entry works, and it is **cheap**
+— which I should have seen sooner. By `p`-periodicity the two arcs of the
+half-annulus boundary cancel (`χ(pz) = χ(z)`, traversed in opposite directions),
+so the count reduces to tracking `arg χ` along the **two real segments**, where
+`|χ| = 1` exactly.
+
+    Δarg(χ) along [r, pr]     = 6.28318530718   = exactly 1 turn
+    Δarg(χ) along [−pr, −r]   = 6.28318530718   = exactly 1 turn
+    ---------------------------------------------------------------
+    zeros − poles in the UPPER half-annulus  =  2.0     (exact integer)
+
+**So χ is a genuine elliptic function of order 2**: two zeros in the upper
+half-annulus, and by the reflection law `χ(z̄) = 1/conj χ(z)` two poles at their
+conjugates in the lower half. Over the full torus zeros = poles, which is why
+every full-circle winding came back 0.
+
+**Why every earlier scan came back clean — and it was not a weak residue.**
+`log|χ|` is linear in `arg z` with slope `164.3` per unit `arg/π`, and my
+angular sampling was `π/12`. So `log|χ|` moves **13.7 decades between adjacent
+samples**. A pole sitting between two samples is completely masked by that
+variation. The "`|χ|` is bounded by `1e±73.4`" reading was therefore a
+**sampling artifact**, not a fact — the poles are there, my grid straddled them.
+The weak-residue hypothesis from the ninth entry was not needed.
+
+**Standalone fact worth keeping:** along each real ray, `arg χ` winds **exactly
+once per `p`-period** while `|χ| = 1` identically. So χ restricted to `ℝ*`
+traverses the unit circle once per period — a clean normalisation-free statement
+of the connection data.
+
+**Status of the four-way tension (eighth entry).** Resolved: (3) was the false
+one. χ is *not* bounded; it is p-elliptic, non-constant, meromorphic and of
+order 2, with all four now consistent.
+
+**Next, and now well-posed:** locate the two zeros in the upper half-annulus by
+bisecting on the half-annulus count over angular sub-sectors (the same cheap
+real-segment trick does not apply to sub-sectors, so this needs arc
+contributions — but the count is small and the bisection is short). Their
+conjugates are the poles. With the divisor in hand, χ follows in closed form as
+a ratio of `θ_p`'s up to a constant, which is what the Stokes multipliers need.
+
+Stokes multipliers: still open, but the obstruction is now a bounded search, not
+a contradiction.
