@@ -152,3 +152,27 @@ This bean's plan ends in "re-run the producers". Doing that naively strips q0
 provenance from every witness it touches — value-preserving, and silently
 removing the guard against the exact misreading it was added to prevent.
 Diagnose that first. The chirality fix is therefore source-only.
+
+## BLOCKER RESOLVED — regeneration no longer drops the q0 pin
+
+Diagnosed: not a bug in WitnessBuilder.build(). The q0Anchor code lives in
+`stamp_staleness_metadata()`, a SEPARATE method a producer must call
+explicitly; build() never touches the pin. Measured over the corpus:
+
+  no pin at all                    2104
+  pin + producer stamps it (safe)    36
+  pin + producer does NOT stamp     557   <- lost it on every re-run
+  unresolved                          3
+
+557 of 596 pinned witnesses (93%) carried a pin their own producer cannot
+reproduce. Five of the 19 re-padders are in that set, including both
+71-field producers.
+
+Fixed in save(), which already loads the on-disk witness for its drift check:
+carry a recorded pin forward. PRESERVE ONLY — a witness with no pin still gets
+none, since inventing "proton" for the 2104 would assert a pin no producer
+established (Q0_ANCHOR_MISSING is tolerated). Two regression tests; the first
+was checked to FAIL without the fix, not merely pass with it.
+
+So "re-run the producers" is now safe to do. That was the last thing blocking
+the second half of this bean.

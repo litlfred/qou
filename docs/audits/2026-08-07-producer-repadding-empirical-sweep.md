@@ -590,17 +590,36 @@ diffing against the committed witness:
 
 Every chi value is byte-identical and no number moves; the run just **loses
 both q₀-pin fields**. That pin exists so a muon/proton value "can never be
-silently misread" (bean `tnjb`), `computations/audits/q0_anchor_consistency_
-audit.py` enforces it, and `WitnessBuilder.build()` contains code that sets
-`q0Anchor` unconditionally with `"proton"` as the fallback — yet this path
-does not reach it. Reproduced twice; the cause is **not** pinned down here.
+silently misread" (bean `tnjb`), and
+`computations/audits/q0_anchor_consistency_audit.py` enforces it.
 
-The consequence is the load-bearing part: **the drain plan for this bean ends
-in "re-run the producers", and doing that naively strips q₀ provenance from
-every witness it touches** — a value-preserving change that silently removes
-the guard against the exact misreading it was added to prevent. That has to be
-diagnosed before any witness is regenerated, and it is why this fix is
-source-only.
+**Diagnosed — and it is not a bug in `build()`.** The `q0Anchor` code is inside
+`stamp_staleness_metadata()`, a **separate method a producer must call
+explicitly**. `build()` never touches the pin. Across the corpus:
+
+| | witnesses |
+|---|---:|
+| no q₀ pin at all | 2104 |
+| pin + producer stamps it (safe) | 36 |
+| **pin + producer does NOT stamp** | **557** |
+| unresolved | 3 |
+
+**557 of the 596 pinned witnesses (93 %) carry a pin their own producer cannot
+reproduce** — backfilled once, and dropped by the next re-run. Five of the 19
+re-padders are in that set, including `chirality_avg_content_atomic` and
+`rho_k_co_casimir_extended`, the two 71-field producers.
+
+`save()` already loads the on-disk witness for its drift check, so the fix
+carries a recorded pin forward there — **preserve only**. A witness with no pin
+still gets none: inventing `"proton"` for the 2104 unpinned would assert a pin
+no producer established, and `Q0_ANCHOR_MISSING` is a tolerated state. Two
+regression tests, the first checked to *fail* without the fix rather than only
+to pass with it.
+
+Re-running chirality now keeps `q0Anchor`/`q0Value`, and its diff reduces to
+`commitSha`/`computedAt`/`durationMs`/`scriptHash`/`scriptCommitSha` — ephemeral
+only, nothing substantive, so the witness stays uncommitted. **Regeneration is
+no longer lossy**, which unblocks the drain plan's second half.
 
 ## What remains
 
@@ -608,8 +627,9 @@ Localization is done: all 19 re-padders are measured and every Class A field
 has a named source line. What is left is the per-file *judgment*, which is
 where this document said the non-mechanizable part lived all along.
 
-- **Blocking everything below: witness regeneration loses the q₀ pin.** See the
-  section above. No witness should be regenerated until that is diagnosed.
+- **Regeneration is no longer lossy** — the q₀-pin drop is diagnosed and fixed
+  (section above), so the drain plan's "re-run the producers" half is unblocked.
+  557 witnesses were exposed to it.
 - **Class A — 10 producers, 189 fields, three library-level entry points.**
   `hecke_characters.py:214`, `hoefsmit_numpy.py:161`, and the
   `mpf(<float out of JSON>)` idiom. All three are deliberate f64 kernels, so
