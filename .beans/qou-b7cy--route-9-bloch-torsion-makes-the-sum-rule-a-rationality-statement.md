@@ -193,3 +193,13 @@ the three numerators alone, back through both reductions:
 
 giving `−3π²/2` with **residual 0.0**. The two reductions compose; nothing was
 fudged at a seam.
+
+### ✅ Verified IN-TREE (not just in a scratch project)
+
+The six theorems were first compiled in a standalone project; that is not the
+same as compiling in this repo. Now done properly:
+`lake build QOU.QBeta.FiveTwoCyclotomicBloch` in
+`content/quantum-observable-universe/lean` → **707 jobs, success**, olean at
+`.lake/build/lib/lean/QOU/QBeta/FiveTwoCyclotomicBloch.olean`, and `#print axioms`
+in-tree reproduces `[propext, Classical.choice, Quot.sound]` (and
+`[propext, Quot.sound]` for the two Vieta products). Recipe: `qou-lnbk`.
