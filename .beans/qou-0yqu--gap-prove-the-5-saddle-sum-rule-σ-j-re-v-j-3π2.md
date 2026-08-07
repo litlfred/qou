@@ -414,3 +414,45 @@ but its one missing input is not a Mathlib one-liner. **Not started; not
 stubbed.**
 
 **Status unchanged: verified to 80 dps, unproved.**
+
+## 2026-08-07 (late) — the integral representation is proved on the disc
+
+`QOU.MathlibExt.cLiTwo_eq_intervalIntegral`, sorry-free:
+
+    Li₂(y) = −∫₀¹ log(1 − yz)/z dz      for ‖y‖ < 1
+
+by termwise integration
+(`intervalIntegral.hasSum_integral_of_dominated_convergence`, geometric bound
+`‖y‖^(k+1)`). The indexing needed no reindexing: the `k`-th term
+`y^(k+1)z^k/(k+1)` integrates to `y^(k+1)/(k+1)²`, which *is* the `k`-th term
+of `cLiTwo`'s defining series, so the two `HasSum`s match on the nose.
+
+Past the disc, `cLiTwoExt y := −∫₀¹ log(1 − yz)/z dz` is now defined and proved
+to agree with `cLiTwo` on the disc (`cLiTwoExt_eq_cLiTwo`).
+
+### ⚠ What this does NOT do — read before celebrating
+
+**The sum rule is no closer to being proved.** Route 5 is a *restatement*, and
+every brick so far makes the restatement rigorous rather than proving anything
+about the number. Even with the whole chain closed, what one gets is
+
+    Σⱼ Re Vⱼ = −3π²/2   ⟺   −∫₀¹ log P(z)/z dz = −π²/6 − ½log²y₃ + (2/3)(θ−π)²
+
+and the right-hand side is an unevaluated real integral. **Evaluating it in
+closed form is exactly as hard as it was this morning.** What the bricks bought
+is real but narrower: the restatement is now a theorem rather than a numerical
+observation, and `b` is demystified.
+
+### Two links still open (neither started, nothing stubbed)
+
+1. **`cLiTwoExt` is analytic on `ℂ ∖ [1,∞)`.** Without it, "continuation" is a
+   name, not a theorem, and `cLiTwoExt(y₁)` is not yet *identified* with the
+   `Li₂(y₁)` the sum rule refers to. Needs differentiation under the integral
+   sign.
+2. **Integrability of `z ↦ Re log(1 − yⱼz)/z` on `[0,1]`, per root.** Needed to
+   split `Σⱼ Re cLiTwoExt(yⱼ)` into three integrals before applying the
+   pointwise identity `sum_re_log_one_sub_eq_log_recipCubic`. Should follow the
+   shape of `abs_log_recipCubic_le` — a `|log‖1 − yz‖| ≤ Cz` bound — but with
+   case analysis on a general complex `y`.
+
+**Status unchanged: verified to 80 dps, unproved.**
