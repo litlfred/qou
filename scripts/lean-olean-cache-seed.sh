@@ -14,6 +14,29 @@
 # Usage: scripts/lean-olean-cache-seed.sh [--push]
 #   (dry by default: builds the tarball + parts, prints size; --push commits
 #    the orphan branch and force-pushes it)
+#
+# LEGACY PATH. `.github/workflows/lake-cache-refresh.yml` seeds through
+# folio-assistant/scripts/lake-cache.sh, which tars the whole `.lake` tree and
+# so cannot miss an artifact class. This script hand-picks files by extension
+# and is kept only for manual reseeds; prefer the service script.
+#
+# ARTIFACT SET (measured 2026-08-07, lib-only package, olean mtime as the
+# oracle — a library is what mathlib/QOU are, and it behaves differently from
+# an exe-coupled package, so do not "simplify" this list from intuition):
+#
+#   restored content                      -> `lake build` result
+#   lib + ir, everything                     no-op   (cache honoured)
+#   lib + ir, .trace deleted                 REBUILT  <- .trace REQUIRED
+#   lib + ir, .hash deleted                  no-op    (.hash not needed)
+#   lib + ir/*.setup.json but no ir/*.c      REBUILT  <- ir/*.c REQUIRED
+#   lib only, no ir/                         REBUILT
+#   lib only, olean+ilean only (was this)    REBUILT  <- the old bug
+#
+# So the minimal honoured set is: .olean, .ilean, .trace, and ir/ (.c +
+# .setup.json). Seeding oleans without their .trace siblings produces a cache
+# that Lake treats as entirely stale: it rebuilds, and rebuilding EVICTS the
+# untraced oleans. That is the defect this script used to ship (bean 02kc);
+# such a cache only ever worked for direct `lean` + LEAN_PATH invocations.
 set -euo pipefail
 ROOT="$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel)"
 cd "$ROOT"
@@ -28,20 +51,45 @@ PUSH=0; [ "${1:-}" = "--push" ] && PUSH=1
 echo "seed branch: $BR"
 : > "$LIST"
 
-# 1. freshly-rebuilt mathlib oleans (+ sibling .ilean if present)
-MLLIB=".lake/packages/mathlib/.lake/build/lib/lean"
-n_ml=0
+# 1. freshly-rebuilt mathlib oleans (+ .ilean, + the .trace that makes Lake
+#    honour them, + the ir/ C outputs the module job records as its "c" output)
+MLBUILD=".lake/packages/mathlib/.lake/build"
+MLLIB="$MLBUILD/lib/lean"
+MLIR="$MLBUILD/ir"
+n_ml=0; n_tr=0
 if [ -f "$BUILT_FILE" ]; then
   while IFS= read -r mod; do
     [ -z "$mod" ] && continue
     rel="${mod//.//}"
-    for ext in olean ilean; do
+    for ext in olean ilean trace; do
       f="$MLLIB/$rel.$ext"
-      [ -f "$f" ] && { echo "$f" >> "$LIST"; [ "$ext" = olean ] && n_ml=$((n_ml+1)); }
+      [ -f "$f" ] || continue
+      echo "$f" >> "$LIST"
+      [ "$ext" = olean ] && n_ml=$((n_ml+1))
+      [ "$ext" = trace ] && n_tr=$((n_tr+1))
+    done
+    for ext in c setup.json; do
+      f="$MLIR/$rel.$ext"
+      [ -f "$f" ] && echo "$f" >> "$LIST"
     done
   done < "$BUILT_FILE"
 fi
-echo "  fresh mathlib oleans: $n_ml"
+echo "  fresh mathlib oleans: $n_ml  (traces: $n_tr)"
+
+# A cache whose oleans lack traces is worse than no cache: Lake rebuilds and
+# evicts them. Refuse to seed one rather than publish a silently-useless
+# branch. Mirrors the 90% guard in folio-assistant/scripts/lake-cache.sh.
+if [ "$n_ml" -gt 0 ]; then
+  cov=$(( n_tr * 100 / n_ml ))
+  echo "  trace coverage: ${cov}%"
+  if [ "$cov" -lt 90 ]; then
+    echo "REFUSING to seed: trace coverage ${cov}% ($n_tr traces for $n_ml oleans)." >&2
+    echo "Lake reads .trace to decide staleness, so it would rebuild — and evict —" >&2
+    echo "everything untraced. Seed from a tree where a real \`lake build\` (not a" >&2
+    echo "lean-direct \`lean -o\` pass) produced the traces alongside the oleans." >&2
+    exit 1
+  fi
+fi
 
 # 2. non-mathlib package oleans (rev-independent).
 #    NOTE: qou/ugb/fred2005 PAPER oleans are intentionally EXCLUDED — they are
@@ -53,12 +101,20 @@ echo "  fresh mathlib oleans: $n_ml"
 #    paper libs rebuild fast against the restored mathlib.  (Set SEED_PAPER=1 to
 #    include them, e.g. right after a full `lake build QOU` at the pinned rev.)
 for pkg in batteries aesop Qq plausible importGraph LeanSearchClient proofwidgets; do
-  d=".lake/packages/$pkg/.lake/build/lib/lean"
-  [ -d "$d" ] && find "$d" -name '*.olean' -o -name '*.ilean' 2>/dev/null | sed 's#^\./##' >> "$LIST" || true
+  d=".lake/packages/$pkg/.lake/build"
+  [ -d "$d" ] || continue
+  # NB: the -o alternatives must be parenthesised, else -type f binds to the
+  # last -name only and the other branches emit directories too.
+  find "$d" \( -name '*.olean' -o -name '*.ilean' -o -name '*.trace' \
+            -o -name '*.c' -o -name '*.setup.json' \) -type f 2>/dev/null \
+    | sed 's#^\./##' >> "$LIST" || true
 done
 if [ "${SEED_PAPER:-0}" = "1" ]; then
-  for paperlib in content/*/lean/.lake/build/lib/lean; do
-    [ -d "$paperlib" ] && find "$paperlib" -name '*.olean' -o -name '*.ilean' 2>/dev/null >> "$LIST" || true
+  for paperbuild in content/*/lean/.lake/build; do
+    [ -d "$paperbuild" ] || continue
+    find "$paperbuild" \( -name '*.olean' -o -name '*.ilean' -o -name '*.trace' \
+                       -o -name '*.c' -o -name '*.setup.json' \) -type f 2>/dev/null \
+      >> "$LIST" || true
   done
 fi
 total=$(wc -l < "$LIST")
