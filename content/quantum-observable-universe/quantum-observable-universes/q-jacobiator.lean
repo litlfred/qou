@@ -78,10 +78,26 @@ theorem jacobiator_nonzero {R : Type*} [Field R] (j : QJacobiator R)
     exact hq (by rw [← inv_inv j.q, ← h, inv_one])
   · exact h_cyclic
 
-/-- The Leibniz coefficient `q⁻¹(1 - q⁻¹)` of the q-bracket exists in
-    the ground field. -/
-theorem leibniz_coeff_exists {R : Type*} [Field R] (j : QJacobiator R) :
-    ∃ c : R, c = j.q⁻¹ * (1 - j.q⁻¹) :=
-  ⟨j.q⁻¹ * (1 - j.q⁻¹), rfl⟩
+/-- The Leibniz coefficient `q⁻¹(1 - q⁻¹)` of the q-bracket vanishes
+    **exactly** at the classical limit `q = 1`.
+
+    This is the coefficient-level counterpart of `jacobiator_classical`
+    and `jacobiator_nonzero` above: those locate the vanishing of the
+    Jacobiator itself, this one locates the vanishing of the prefactor
+    that carries it, and shows `q = 1` is the only place it can vanish
+    (so the non-vanishing direction needs no extra hypothesis beyond
+    `q ≠ 0`). -/
+theorem leibniz_coeff_eq_zero_iff {R : Type*} [Field R] (j : QJacobiator R)
+    (hq0 : j.q ≠ 0) :
+    j.q⁻¹ * (1 - j.q⁻¹) = 0 ↔ j.q = 1 := by
+  rw [mul_eq_zero]
+  constructor
+  · rintro (h | h)
+    · exact absurd h (inv_ne_zero hq0)
+    · rw [sub_eq_zero] at h
+      rw [← inv_inv j.q, ← h, inv_one]
+  · intro h
+    right
+    rw [h, inv_one, sub_self]
 
 end QOU
