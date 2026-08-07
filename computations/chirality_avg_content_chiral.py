@@ -41,7 +41,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 import mpmath
 from mpmath import mp, mpf
 
@@ -195,23 +195,14 @@ def main():
             chi_val = mp.re(chi_raw)
             num += w_lam * chi_val * c_lam
             den += w_lam * chi_val
-            # Serialize χ at the precision it actually carries. The comment
-            # above keeps the MPFR path from being downcast, but on the
-            # f64 fallback `chi_raw` arrives as a builtin complex and χ holds
-            # 53 bits however carefully it is handled afterwards — writing it
-            # at 50 dps then prints the binary64 expansion as if measured,
-            # the same overstatement `chi_precision` was added to stop
-            # (Copilot r3213243720/r3213426355) but at the value level.
-            #
-            # An mpf equal to its own float64 holds 53 bits and nothing more,
-            # which decides it per value and agrees with `chi_precision` by
-            # construction rather than by being kept in sync with it.
-            chi_is_f64 = chi_val == mpf(float(chi_val))
+            # On the f64 fallback `chi_raw` arrives as a builtin complex, so χ
+            # holds 53 bits however carefully it is handled afterwards — the
+            # same overstatement `chi_precision` records, one level down.
             per_lam.append({
                 "shape": list(shape),
                 "content_c_lambda": c_lam,
                 "wedderburn_weight": str(w_lam),
-                "chi_lambda_beta": fmt(float(chi_val)) if chi_is_f64 else str(chi_val),
+                "chi_lambda_beta": str_at_true_precision(chi_val),
                 "weighted_chi_c": str(w_lam * chi_val * c_lam),
             })
         # Tolerance tied to working precision (per Gemini review).
