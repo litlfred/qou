@@ -320,3 +320,19 @@ is fixed by its divisor up to a constant; the sector data constrains it but does
 not supply it. That is the concrete next step, and it needs `DPS ≥ 200` throughout.
 
 **Stokes multipliers: STILL OPEN.**
+
+## 2026-08-07 (seventh) — conjugation, now in Lean
+
+**Now in Lean (2026-08-07, seventh):** the reflection law's core is formalised.
+`qThetaC_conj` — `θ_P` has real coefficients so it commutes with conjugation —
+and `norm_qThetaC_conj_pair` — for **real** `z`, `z/conj t = conj(z/t)`, so the
+two conjugate `0`-side exponents give **exactly equal** magnitudes. Both
+sorry-free (`[propext, Classical.choice, Quot.sound]`). That is the formal core
+of the refutation this whole arc restarted from: a basis putting the two
+exponents "~17 orders of magnitude apart" is **impossible**, not merely
+unobserved. No hypothesis on `t` needed.
+
+The χ-level reflection law `χ(conj z) = 1/conj(χ(z))` itself stays numerical —
+it needs the full analytic construction (`Y₀`, `Y_∞`, matrix inverse), which is
+not formalised.
+

@@ -2,6 +2,7 @@ import Mathlib.Tactic
 import Mathlib.Topology.Algebra.InfiniteSum.Ring
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecificLimits.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
 /-!
 # The q-theta zero locus — where the C1 connection matrix has its poles
@@ -29,8 +30,14 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   direction of the zero locus, which is exactly what places the poles above.
 * `summable_qThetaTerm` — the series converges for `P > 1`, `w ≠ 0`.
 * `qTheta_functional_equation` — `θ_P(P²w) = w·θ_P(w)`, i.e. `θ_p(pw) = w θ_p(w)`.
+* `qThetaC_conj` / `norm_qThetaC_conj_pair` — `θ_P` commutes with conjugation,
+  so the two **conjugate** `0`-side exponents give **exactly equal** magnitudes
+  on the real axis. This is the formal core of the refutation the whole C1 arc
+  restarted from: a basis putting them "~17 orders of magnitude apart" is
+  impossible, not merely unobserved.
 
-The last two are the **analytic foundation for the converse**. The vanishing
+`summable_qThetaTerm` and `qTheta_functional_equation` are the **analytic
+foundation for the converse**. The vanishing
 theorem itself needs neither (see below), but every route to "these are the
 *only* zeros" needs `θ_p` to be a genuine analytic object, and the functional
 equation is what forces the zero set to be a union of `p`-orbits.
@@ -296,5 +303,41 @@ theorem qTheta_div_eq_zero_on_orbit (P T : ℝ) (hP : 0 < P) (hT : T ≠ 0) (k :
     field_simp
   rw [h]
   exact qTheta_neg_zpow_eq_zero P hP k
+
+/-! ### Conjugation — the formal core of the refutation
+
+The whole C1 arc restarted from refuting a "the `0`-side basis is degenerate,
+the two conjugate exponents sit ~17 orders of magnitude apart" negative. The
+reason that is *impossible* is one line of algebra, and it formalises cheaply. -/
+
+/-- The q-theta with a COMPLEX argument (the base `P` stays real). -/
+noncomputable def qThetaC (P : ℝ) (w : ℂ) : ℂ :=
+  ∑' n : ℤ, (P : ℂ) ^ (-(n * (n + 1))) * w ^ n
+
+/-- **`θ_P` has real coefficients, so it commutes with conjugation.** -/
+theorem qThetaC_conj (P : ℝ) (w : ℂ) :
+    qThetaC P ((starRingEnd ℂ) w) = (starRingEnd ℂ) (qThetaC P w) := by
+  rw [qThetaC, qThetaC, Complex.conj_tsum]
+  refine tsum_congr fun n => ?_
+  rw [map_mul, map_zpow₀, map_zpow₀, Complex.conj_ofReal]
+
+/-- **The magnitudes at a conjugate pair of exponents agree EXACTLY.**
+
+The `0`-side exponents are a conjugate pair `t`, `conj t`
+(`C1ZeroSideExponents.conjugate_pair_iff`). For **real** `z`,
+`z / conj t = conj (z / t)`, so by `qThetaC_conj` the two theta values are
+conjugates and their magnitudes are equal — hence so are `|e_t(z)|` for the two
+exponents, since they share the numerator `θ_p(z)`.
+
+A construction placing the two conjugate exponents "~17 orders of magnitude
+apart" is therefore **impossible**, which is exactly what the numerics found
+(measured ratio `1.0`, deviation `0.0`) and what
+`computations/qbeta/c3_w2_c1_connection_matrix.py` records. No hypothesis on `t`
+is needed: at `t = 0` both sides are `θ_P(0)`. -/
+theorem norm_qThetaC_conj_pair (P : ℝ) (z : ℝ) (t : ℂ) :
+    ‖qThetaC P ((z : ℂ) / (starRingEnd ℂ) t)‖ = ‖qThetaC P ((z : ℂ) / t)‖ := by
+  have hz : ((z : ℂ)) / (starRingEnd ℂ) t = (starRingEnd ℂ) ((z : ℂ) / t) := by
+    rw [map_div₀, Complex.conj_ofReal]
+  rw [hz, qThetaC_conj, RCLike.norm_conj]
 
 end QOU.QBeta.C1Poles
