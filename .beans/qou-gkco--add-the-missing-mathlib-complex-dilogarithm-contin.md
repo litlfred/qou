@@ -323,3 +323,36 @@ the identity theorem. Blockers to expect: assembling `AnalyticOnNhd` for the
 composite `z ↦ cLiTwo z + cLiTwo (1−z) + log z * log (1−z)` (the `log` factors
 need `Complex.analyticAt_log` off the cut), and supplying `IsPreconnected` for
 the ball.
+
+## 2026-08-07 — CONTINUATION STEP CLOSED; the gap moved
+
+**`QOU.Archimedean.cLiTwo_reflection` is proved**, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+    Li₂ z + Li₂ (1 − z) = π²/6 − log z · log (1 − z)    for z ∈ ball(½, ½)
+
+by `AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`, with the accumulation
+supplied by the real segment `(0,1)` through `cLiTwo_reflection_ofReal` — itself
+a transport of the sorry-free real `LiTwo_reflection'`.
+
+The only genuinely fiddly piece was `tendsto_ofReal_nhdsNE_half`: the identity
+theorem wants accumulation in the **punctured** neighbourhood of `½` in ℂ, so
+`ℝ → ℂ` has to carry `𝓝[≠]` to `𝓝[≠]` — continuity gives the `𝓝` half,
+injectivity of `ofReal` the puncture.
+
+**This does not reach `y₁`.** `|y₁| = 1.52` and `ball(½,½) ⊂ ball(0,1)`. The
+next brick would be the inversion formula
+`Li₂ z + Li₂ (1/z) = −π²/6 − ½ log(−z)²`, which is what crosses `|z| = 1` — and
+it is **not** provable for `cLiTwo` as currently defined, because outside the
+closed disc the `tsum` is junk-valued `0`. Crossing `|z| = 1` requires
+redefining `Li₂` by its integral `−∫₀¹ log(1−tz)/t dt` on `ℂ ∖ [1,∞)` and
+proving it agrees with the series on the disc.
+
+### Route 5 may make that unnecessary — see `qou-0yqu`
+
+The real integral route does not need the continuation at all for the **sum**:
+`∏ⱼ(1 − yⱼz) = 1 − 2z + 3z² − z³` is a *real polynomial, positive on `[0,1]`*,
+so `Σⱼ Li₂(yⱼ)` collapses to one real convergent integral. Three bricks of that
+landed the same day (`intervalIntegrable_log_recipCubic_div`,
+`LiTwo_eq_integral_unit`). Weigh that against the ℂ∖[1,∞) integral definition
+before picking the next step here.
