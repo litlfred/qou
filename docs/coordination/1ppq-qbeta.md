@@ -3008,3 +3008,31 @@ rigorous and demystify the branch data `b` (= `Log(−y)`, forced, not fitted).
 
 **Six routes tried, six not closing. Status unchanged: verified to 80 dps,
 unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 7 REFUTED scope-(a): the defect in
+Route 6 was branch freedom, not the modulus.**
+
+Route 7 asked whether the corpus's own `ℂ/2π²ℤ` valuedness for these `Vⱼ`
+(2026-07-18 GGM §6.1 port) rescues the enhanced-dilogarithm reading that Route 6
+killed under Zagier's `ℂ/(π²/2)ℤ`. **It does not, and the modulus was never the
+issue** — the branch shift contributes `−2π²aⱼbⱼ`, a multiple of both moduli.
+
+What the probe did find: Route 6's witness gate G3 evaluated `Σⱼ Re D̃` at the
+**principal branch only**. With `u = log y + 2πia`, `v = log(1−y) + 2πib` there
+are two free integers per root and the `θ` obstruction cancels iff
+`3(b₁−b₂) + 2(a₁−a₂) = −2`; Route 6's implicit `a = 0` makes that `3(b₁−b₂) = −2`,
+insoluble over `ℤ` — exactly its reported "no integer branch offset matches".
+With `a` free, exact rationality **is** reachable, so Route 6's conclusion stood
+for the wrong reason.
+
+It is still worthless: reachable set is exactly `Σⱼ Re D̃/π² ∈ 11/6 + 2ℤ`, every
+control `y^p = (1−y)^q` lands in its own `π²ℚ` coset (including `y³−y²+2y−1`,
+which *is* `y³=(1−y)²`), and neither `−1/2` nor `−3/2` is in the coset. Generic
+bookkeeping — the Route-2 failure mode.
+
+Probe + witness:
+`computations/probes/qbeta_5two_route7_enhanced_dilog_branch_freedom_probe.py`,
+`computations/qbeta-5two-route7-enhanced-dilog-branch-freedom.witness.json`
+(8 gates, 60 dps). Beans `qou-r7ml` (completed/refuted), parent `qou-0yqu`.
+**Route count 7 tried, 7 not closing. Sum-rule status unchanged: verified to
+80 dps, unproved.**

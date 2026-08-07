@@ -582,3 +582,39 @@ mechanism or nothing.
 **Not attempted, not stubbed, no claim made.** Recording the seam so the next
 session starts here rather than re-deriving disc −23 a third time. Route count
 unchanged: **6 tried, 6 not closing; status verified to 80 dps, unproved.**
+
+## 2026-08-07 — Route 7 tried and REFUTED (scope-a): branch freedom, not the modulus
+
+Full record in child bean **`qou-r7ml`**. Probe
+`computations/probes/qbeta_5two_route7_enhanced_dilog_branch_freedom_probe.py`,
+witness `qbeta-5two-route7-enhanced-dilog-branch-freedom.witness.json`, 8 gates,
+60 dps, all pass.
+
+**The hypothesis that motivated it was wrong.** The corpus's `ℂ/2π²ℤ` modulus vs
+Zagier's `ℂ/(π²/2)ℤ` is **irrelevant** to this setup: the branch shift
+contributes `−2π²aⱼbⱼ`, a multiple of both. The quarter-lattice coincidence
+`−3π²/2 = −(3/4)·2π²` is not a mechanism. Do not re-run this hunch.
+
+**But it exposed a real defect in Route 6's stated reason.** Route 6's witness
+gate G3 evaluated `Σⱼ Re D̃` at the **principal branch only** and never varied the
+branch integers *for the sum*. With `u = log y + 2πia`, `v = log(1−y) + 2πib`
+there are **two** free integers per root, and the `θ` obstruction cancels iff
+
+    3(b₁ − b₂) + 2(a₁ − a₂) = −2
+
+Route 6's implicit `a = 0` reduces this to `3(b₁−b₂) = −2` — insoluble over `ℤ`,
+which is *precisely* why it reported "no integer branch offset matches". With
+`a` free it is soluble and **exact rationality IS reachable**. Route 6's
+conclusion stands; its reason does not.
+
+**Why the rationality is worthless.** Reachable set is exactly
+`Σⱼ Re D̃(yⱼ)/π² ∈ 11/6 + 2ℤ` (derived and brute-forced), and **every control
+cubic `y^p = (1−y)^q` lands in its own `π²ℚ` coset too** — including this bean's
+named control `y³−y²+2y−1`, which *is* `y³ = (1−y)²`. Generic to the shape, not
+5₂ arithmetic: **the Route-2 trap again.** Separately, neither `−1/2` (the
+`V = 3·D̃` target) nor `−3/2` lies in the reachable coset.
+
+**Route count now 7 tried, 7 not closing. Status unchanged: verified to 80 dps,
+unproved.** Remaining live work is unchanged and untouched by this: `qou-clx8`
+(`cLiTwoExt` analytic on `ℂ∖[1,∞)`) and the closed-form evaluation of
+`−∫₀¹ log P(z)/z dz`, which is still the actual hard part.

@@ -1,18 +1,25 @@
 ---
 # qou-r7ml
 title: 'Route 7: retry the enhanced-dilogarithm reading at the corpus modulus ℂ/2π²ℤ'
-status: in-progress
+status: completed
 type: task
 priority: normal
 tags:
     - qbeta
     - dilogarithm
     - 5two
+    - refuted
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-08-07T15:20:00Z
+updated_at: 2026-08-07T15:58:00Z
 parent: 0yqu
 ---
 
+
+## ✅ RESOLVED 2026-08-07 — Route 7 REFUTED scope-(a). See "Verdict" at the bottom.
+
+**The motivating hypothesis (the modulus) was wrong, and the probe found a real
+defect in Route 6's stated reasoning anyway.** Read the verdict section before
+the framing below it, which is preserved as written *before* the computation.
 
 ## What is open
 
@@ -74,3 +81,68 @@ Kill it fast on the controls if it does not separate 5₂ from them.
 * `QOU/QBeta/FiveTwoSaddleCurve.lean` — `u0_cubic_discriminant`, sorry-free
 * Zagier, *The Dilogarithm Function* §II.1 B — `uploads/fulltext.pdf`
 * PR #4658
+
+---
+
+## Verdict (2026-08-07) — REFUTED scope-(a), and the stated motivation was wrong
+
+Probe `computations/probes/qbeta_5two_route7_enhanced_dilog_branch_freedom_probe.py`,
+witness `computations/qbeta-5two-route7-enhanced-dilog-branch-freedom.witness.json`,
+8 gates, 60 dps, all pass.
+
+### 1. The modulus hypothesis is WRONG — `2π²` vs `π²/2` is irrelevant
+
+The branch shift contributes `−2π²·aⱼbⱼ`, which is a multiple of `2π²` **and**
+of `π²/2` alike. No statement in this setup can distinguish the two moduli.
+The quarter-lattice coincidence `−3π²/2 = −(3/4)·2π²` that motivated this bean
+**was not the mechanism.** Recorded so nobody re-runs it on the same hunch.
+
+### 2. But Route 6's *stated reason* is incomplete — a real defect
+
+Route 6's witness gate G3 ("`Σⱼ Re D̃` is an exact rational multiple of `π²/2`")
+was evaluated at the **principal branch only** — one number,
+`2.777534425978115064062537`, ratio `0.5628…`, not an integer, refuted. **It
+never varied the branch integers for the sum.** (Its G1 does scan `(n,m) ∈
+[−2,2]²`, but for the different per-root claim `Vⱼ = 3·D̃`.)
+
+With `u = log y + 2πia`, `v = log(1−y) + 2πib`, the shift adds
+`−π·bⱼ·arg(yⱼ) − π·aⱼ·arg(1−yⱼ) − 2π²·aⱼbⱼ` — **two** free integers per root.
+Using `Σⱼ Re L = π²/2 − (2/3)πθ` and `arg(1−y₁) = (2/3)(θ−π)` (both verified to
+61 digits), the `θ` term cancels iff
+
+    3(b₁ − b₂) + 2(a₁ − a₂) = −2
+
+**Route 6's `a = 0` reduces this to `3(b₁−b₂) = −2`, insoluble over `ℤ`** — which
+is exactly why it saw "no integer branch offset matches". With `a` free it *is*
+soluble, and exact rationality *is* reachable. So the refutation held for the
+wrong reason.
+
+### 3. The rationality is worthless — it is generic bookkeeping
+
+The reachable set is exactly
+
+    Σⱼ Re D̃(yⱼ) / π²  ∈  11/6 + 2ℤ
+
+derived (`1/2 + (2/3)k − 2m`, `k = a₁−a₂ ≡ 2 mod 3`, `m = Σaⱼbⱼ`) and
+brute-forced over `a,b ∈ [−4,4]` (64 values, all `≡ 11/6 mod 2`).
+
+**The kill:** every control cubic `y^p = (1−y)^q` lands in its own `π²ℚ` coset
+with the same modal spacing 2 — including the bean's named control
+`y³−y²+2y−1`, which *is* `y³ = (1−y)²`. Rationality separates nothing. **Same
+failure mode as Route 2:** the property is generic to the shape, not arithmetic
+of the 5₂ trace field.
+
+### 4. And both targets are excluded anyway
+
+Neither `−1/2` (the Route-6 witness's own target, from `V = 3·D̃`) nor `−3/2`
+(the raw sum-rule constant) lies in `11/6 + 2ℤ`.
+
+### Scope
+
+**scope-(a).** This formulation fails, now with an *exact reachable set* rather
+than a failed search — strictly sharper than Route 6. It does **not** exclude a
+formulation at a different covering point or Bloch element; no such invariant is
+claimed.
+
+**Route count now 7 tried, 7 not closing. Sum rule: verified to 80 dps,
+unproved — UNCHANGED.**
