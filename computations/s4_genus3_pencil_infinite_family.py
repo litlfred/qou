@@ -36,6 +36,12 @@ form a 2-dimensional vector space -- i.e. a PENCIL of plane curves
 for every lambda except the three values {2, -2, -1}, plus the degenerate
 member at lambda = infinity.  The Fermat quartic is the member lambda = 0.
 
+NAMING.  This module calls the pencil parameter `L` (Python reserves the word
+`lambda`).  The eightfold-way chapter calls it **`t`**, deliberately NOT
+`lambda`, because throughout that chapter `lambda` denotes a partition
+(`lambda = (3)`, `lambda = (2,1)`, ...) and reusing the glyph for a pencil
+coordinate would be a silent notation collision.  `L` here == `t` in the prose.
+
 So "genus 3 and admits S_4" is satisfied by a whole P^1 of curves, not by two.
 
 What is machine-verified here (exact arithmetic, no floating point)
@@ -629,6 +635,11 @@ SCOPE: scope-(a).  The BRIDGE ARGUMENT is refuted, not the degeneration.
                 "invariant_quartic_space_dim": inv_dim,
                 "basis": ["x^4 + y^4 + z^4", "x^2y^2 + y^2z^2 + z^2x^2"],
                 "family": "C_L : x^4+y^4+z^4 + L*(x^2y^2+y^2z^2+z^2x^2) = 0",
+                "parameter_name_note": (
+                    "this module calls the pencil parameter L (Python reserves "
+                    "'lambda'); the eightfold-way chapter calls it t, "
+                    "deliberately not lambda, which denotes a partition there"
+                ),
                 "singular_parameters": ["2", "-2", "-1"],
                 "singular_point_witnesses": witnesses,
                 "degenerate_member": "L = infinity (the form q1 alone)",

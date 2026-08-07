@@ -28,6 +28,7 @@
         "x^2y^2 + y^2z^2 + z^2x^2"
       ],
       "family": "C_L : x^4+y^4+z^4 + L*(x^2y^2+y^2z^2+z^2x^2) = 0",
+      "parameter_name_note": "this module calls the pencil parameter L (Python reserves 'lambda'); the eightfold-way chapter calls it t, deliberately not lambda, which denotes a partition there",
       "singular_parameters": [
         "2",
         "-2",
