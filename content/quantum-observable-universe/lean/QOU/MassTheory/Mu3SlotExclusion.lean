@@ -157,12 +157,56 @@ difference is non-negative (each block Fréchet-obeying, per
 `Mu3BlockwiseExclusion.frechet_lower_bound_supermodular`), then *any* non-negative
 re-weighting `w_λ ≥ 0` of the blocks is still supermodular.
 
-This forecloses the natural escape "keep the operator, change the Wedderburn weights": the
-weights `y_λ` are non-negative, so no choice of them can turn a blockwise-Fréchet-obeying
-trace submodular.  Opening the door requires changing the *blocks*, not their weights. -/
+**The hypothesis `0 ≤ w` is the whole content, and it FAILS on the physical spectrum.**  The
+Jones–Markov central coefficients `y_λ` are *sign-indefinite for n ≥ 4*
+(`docs/audits/2026-05-19-weight-factor-audit.md` §W3, Wenzl hook–content formula); measured at
+`n = 9, q₀`, **10 of the 30 weights are negative**
+(`computations/deltalambda/mu3-frechet-perblock.witness.json`).  So this lemma does **not**
+foreclose the escape "keep the operator, change the Wedderburn weights" for the actual trace —
+`door_needs_one_of_two_mechanisms` below is the statement that does apply there. -/
 theorem reweight_cannot_open_door (B : Finset ι) (w d₂ : ι → ℝ)
     (hw : ∀ l ∈ B, 0 ≤ w l) (hd : ∀ l ∈ B, 0 ≤ d₂ l) :
     0 ≤ ∑ l ∈ B, w l * d₂ l :=
   Finset.sum_nonneg (fun l hl => mul_nonneg (hw l hl) (hd l hl))
+
+/-! ### Mixed-sign weights: the exhaustive door-mechanism dichotomy -/
+
+/-- **The Fréchet slack IS the normalized second difference.**  In damping coordinates
+`Δ² = c·(r_ab − (r_a + r_b − 1))`, i.e. the baseline times the Fréchet–Hoeffding slack.  This
+is what makes the slack the weight-independent invariant: the block weight `y_λ` cancels out of
+every ratio `r`, so the slack is a statement about the *character* alone, and the weight enters
+only as the outer factor. -/
+theorem secondDiff_eq_baseline_mul_slack (c rₐ r_b rₐᵦ : ℝ) :
+    secondDiff c (c * rₐ) (c * r_b) (c * rₐᵦ) = c * (rₐᵦ - (rₐ + r_b - 1)) := by
+  unfold secondDiff; ring
+
+/-- **Exhaustive dichotomy of the two door mechanisms.**  A block can only push the total
+submodular in one of exactly two structurally distinct ways:
+
+* `0 < w ∧ d < 0` — **submodular geometry carried by a positive weight**: a genuine
+  Fréchet–Hoeffding violation (the block's joint damping falls below `r_a + r_b − 1`);
+* `w < 0 ∧ 0 < d` — **supermodular geometry carried by a negative weight**: no Fréchet
+  violation at all, just a sign-indefinite Wedderburn coefficient.
+
+Conflating these reports a bookkeeping sign as a geometric fact.  They are measured
+separately by `mu3_frechet_perblock_probe.py`. -/
+theorem door_mechanism_dichotomy {w d : ℝ} (h : w * d < 0) :
+    (0 < w ∧ d < 0) ∨ (w < 0 ∧ 0 < d) := by
+  rcases lt_trichotomy w 0 with hw | hw | hw
+  · exact Or.inr ⟨hw, by nlinarith⟩
+  · exact absurd h (by simp [hw])
+  · exact Or.inl ⟨hw, by nlinarith⟩
+
+/-- **A submodular total needs a block realising one of the two mechanisms.**  This is the
+mixed-sign replacement for `reweight_cannot_open_door`: dropping the `0 ≤ w` hypothesis, one
+cannot conclude supermodularity, but one *can* still name where the door must come from.  It
+strictly refines `Mu3BlockwiseExclusion.submodular_needs_interfering_block`, which only asserts
+the existence of a block with negative contribution — here that block is classified. -/
+theorem door_needs_one_of_two_mechanisms (B : Finset ι) (w d : ι → ℝ)
+    (h : ∑ l ∈ B, w l * d l < 0) :
+    ∃ l ∈ B, (0 < w l ∧ d l < 0) ∨ (w l < 0 ∧ 0 < d l) := by
+  have hlt : ∑ l ∈ B, w l * d l < ∑ _l ∈ B, (0 : ℝ) := by simpa using h
+  obtain ⟨l, hl, hlt'⟩ := Finset.exists_lt_of_sum_lt hlt
+  exact ⟨l, hl, door_mechanism_dichotomy hlt'⟩
 
 end QOU.MassTheory.Mu3SlotExclusion
