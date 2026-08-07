@@ -64,7 +64,7 @@ theorem List.foldl_mul_eq_mul_prod {α : Type*} [Monoid α]
 
 /-- Companion for `foldr`: `List.foldr (· * ·) init xs = xs.prod * init`.
     Also `Monoid`-level — no commutativity required. -/
-theorem foldr_mul_eq_prod_mul {α : Type*} [Monoid α]
+theorem List.foldr_mul_eq_prod_mul {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldr (· * ·) init = xs.prod * init := by
   induction xs with
@@ -187,7 +187,7 @@ theorem Real.rpow_half_eq_sqrt (x : ℝ) :
   (Real.sqrt_eq_rpow x).symm
 
 /-- For `x > 0`, `x^(-(1/2) : ℝ) = 1 / Real.sqrt x`. -/
-theorem rpow_neg_half_eq (x : ℝ) (hx : 0 < x) :
+theorem Real.rpow_neg_half_eq (x : ℝ) (hx : 0 < x) :
     x ^ (-(1/2 : ℝ)) = 1 / Real.sqrt x := by
   rw [Real.rpow_neg hx.le, Real.rpow_half_eq_sqrt x, one_div]
 

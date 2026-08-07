@@ -44,7 +44,7 @@ inductive PartitionOf5 where
   deriving DecidableEq, Repr
 
 /-- Explicit list of all 7 partitions of 5. -/
-def allList : List PartitionOf5 :=
+def PartitionOf5.allList : List PartitionOf5 :=
   [.five, .fourOne, .threeTwo, .threeOneOne, .twoTwoOne, .twoOneOneOne, .onesFive]
 
 /-- Dimension of the S_5 irrep V_λ for each partition λ ⊢ 5
@@ -129,7 +129,7 @@ inductive A5Irrep where
   deriving DecidableEq, Repr
 
 /-- All five A₅ irreps. -/
-def allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
+def A5Irrep.allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
 
 /-- Dimension of each A₅ irrep. -/
 def A5Irrep.dim : A5Irrep → ℕ
@@ -757,7 +757,7 @@ inductive A5ConjClass where
   deriving DecidableEq, Repr
 
 /-- All five A₅ conjugacy classes. -/
-def allList : List A5ConjClass :=
+def A5ConjClass.allList : List A5ConjClass :=
   [.id, .doubleTransp, .threeCycle, .fiveCycleA, .fiveCycleB]
 
 /-- Size of each A₅ conjugacy class. -/

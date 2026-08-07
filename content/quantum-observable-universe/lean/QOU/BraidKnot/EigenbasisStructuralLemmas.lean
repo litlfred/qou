@@ -166,7 +166,7 @@ def ParityHom (ε : ZMod 2) (p : AddMonoidAlgebra ℝ ℤ) : Prop :=
 
 /-- Parity adds under multiplication of Laurent polynomials (the exponent of a
 product term is the sum of the factor exponents). -/
-theorem mul {a b : ZMod 2} {p r : AddMonoidAlgebra ℝ ℤ}
+theorem ParityHom.mul {a b : ZMod 2} {p r : AddMonoidAlgebra ℝ ℤ}
     (hp : ParityHom a p) (hr : ParityHom b r) : ParityHom (a + b) (p * r) := by
   intro k hk
   obtain ⟨i, hi, j, hj, rfl⟩ := Finset.mem_add.mp (AddMonoidAlgebra.support_mul p r hk)

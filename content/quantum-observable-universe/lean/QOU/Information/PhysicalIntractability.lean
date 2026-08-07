@@ -123,7 +123,7 @@ theorem no_poly_bandwidth_decider (B : ℕ) (hB : 0 < B) (info steps : ℕ → �
 
 /-- **Super-polynomiality lifts through a lower bound (sorry-free).**  If
     `g ≤ f` pointwise and `g` is super-polynomial, so is `f`. -/
-theorem of_le {f g : ℕ → ℕ} (hg : SuperPolynomial g)
+theorem SuperPolynomial.of_le {f g : ℕ → ℕ} (hg : SuperPolynomial g)
     (hle : ∀ n, g n ≤ f n) : SuperPolynomial f := fun c k =>
   (hg c k).imp fun n hn => ⟨hn.1, lt_of_lt_of_le hn.2 (hle n)⟩
 

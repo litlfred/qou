@@ -77,7 +77,7 @@ def PartitionWithCells.content_sum (P : PartitionWithCells) : ℤ :=
   (P.cells.map Cell.content).sum
 
 /-- The **transpose** of a partition: transpose every cell. -/
-def Cell.transpose (P : PartitionWithCells) :
+def PartitionWithCells.transpose (P : PartitionWithCells) :
     PartitionWithCells :=
   ⟨P.cells.map Cell.transpose⟩
 
@@ -92,7 +92,7 @@ def Cell.transpose (P : PartitionWithCells) :
 theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     (P : PartitionWithCells) :
     P.content_sum + P.transpose.content_sum = 0 := by
-  unfold content_sum transpose
+  unfold PartitionWithCells.content_sum PartitionWithCells.transpose
   rw [List.map_map]
   rw [show (Cell.content ∘ Cell.transpose) =
         (fun x => -x.content) by

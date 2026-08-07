@@ -79,7 +79,7 @@ theorem Matrix.frobeniusInner_self_nonneg (A : Matrix (Fin n) (Fin n) ℝ) :
   exact mul_self_nonneg (A k i)
 
 /-- **Non-degeneracy**: `⟨A, A⟩_F = 0` iff `A = 0`. -/
-theorem frobeniusInner_self_eq_zero_iff
+theorem Matrix.frobeniusInner_self_eq_zero_iff
     (A : Matrix (Fin n) (Fin n) ℝ) :
     Matrix.frobeniusInner A A = 0 ↔ A = 0 := by
   refine ⟨?_, ?_⟩
