@@ -1,11 +1,11 @@
 ---
 # qou-40r8
 title: 'ROAST-M1: does binding accuracy even touch the Class III L2 misses?'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-07T08:37:55Z
-updated_at: 2026-08-07T08:39:56Z
+updated_at: 2026-08-07T08:53:01Z
 parent: qou-kemt
 blocking:
     - qou-ubsl
