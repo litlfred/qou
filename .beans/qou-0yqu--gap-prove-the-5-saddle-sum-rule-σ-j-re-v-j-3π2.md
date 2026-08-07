@@ -365,3 +365,52 @@ branch structure lives, and it is the honest location of the remaining
 difficulty.
 
 **Status unchanged: verified to 80 dps, unproved.** Nothing above is a proof.
+
+## 2026-08-07 (evening) — the gap is now ONE statement
+
+Everything else in the chain is Lean-proved, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. Reading the sum rule as
+`Σⱼ Re Vⱼ = 3·Σⱼ Re Li₂(yⱼ) + Σⱼ Re Log(−yⱼ)²`:
+
+| piece | status | where |
+|---|---|---|
+| `b` is `Log(−yⱼ)`, not fitted | **proved** | `branch_shift_eq_log_neg` |
+| `Σⱼ Re Log(−yⱼ)² = (3/2)log²y₃ − 2(θ−π)² − π²` | **proved** | `sum_re_log_neg_sq` |
+| `∏ⱼ(1 − yⱼz) = 1 − 2z + 3z² − z³` | **proved** | `prod_one_sub_mul_eq` |
+| `Σⱼ Re Log(1 − yⱼz) = log P(z)` on `[0,1]` | **proved** | `sum_re_log_one_sub_eq_log_recipCubic` |
+| `−∫₀¹ log P(z)/z dz` converges | **proved** | `intervalIntegrable_log_recipCubic_div` |
+| `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`, **real** `y ∈ (0,1)` | **proved** | `LiTwo_eq_integral_unit` |
+| **`Li₂(y) = −∫₀¹ Log(1 − yz)/z dz`, complex `y ∉ [1,∞)`** | **OPEN** | — |
+
+**That last row is the whole gap.** Everything above it composes: with it, the
+sum rule and Route 5's closed form
+`A = −π²/6 − ½log²y₃ + (2/3)(θ−π)²` are equivalent, and the `Log²` half is
+already evaluated, so the sum rule reduces to evaluating one real integral of a
+cubic's logarithm.
+
+### Why that row is the right thing to attack
+
+For `|y| > 1` the integral **is** the analytic continuation: it converges for
+every `y ∉ [1,∞)` regardless of `|y|`, unlike the series. So proving it both
+defines `Li₂` past `|z| = 1` (which `qou-gkco` needs for `y₁`, `|y₁| = 1.52`)
+and closes this bean. One brick, two gaps.
+
+### Two routes, both non-trivial — neither started
+
+1. **Termwise integration.** `−Log(1−w) = Σₙ wⁿ/n`
+   (`Complex.hasSum_taylorSeries_neg_log`, `‖w‖ < 1`), so
+   `−Log(1−yz)/z = Σₙ yⁿzⁿ⁻¹/n` and `∫₀¹ zⁿ⁻¹dz = 1/n` gives `Σₙ yⁿ/n²`.
+   Needs a sum/integral swap. Establishes the disc case only; `|y| > 1` then
+   needs a separate continuation argument.
+2. **Identity theorem in `y`.** `cLiTwo` is already proved analytic on the unit
+   ball (`cLiTwo_analyticOnNhd`), and the real case is already proved on
+   `(0,1)` (`LiTwo_eq_integral_unit`), so the real segment is again an
+   accumulation set — the same shape that worked for `cLiTwo_reflection`. The
+   missing input is **analyticity of the right-hand side in the parameter `y`**,
+   i.e. differentiation under the integral sign.
+
+Route 2 reuses machinery already built on this branch and is probably shorter,
+but its one missing input is not a Mathlib one-liner. **Not started; not
+stubbed.**
+
+**Status unchanged: verified to 80 dps, unproved.**
