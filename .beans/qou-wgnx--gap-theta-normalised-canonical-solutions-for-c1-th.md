@@ -273,3 +273,50 @@ one zero per fundamental annulus; `−1` is one; done"). So the two viable route
 Both are substantial multi-session jobs; (b) additionally needs Liouville on
 `ℂ*/p^ℤ`. **Not** a small job — do not re-scope it as one. The two lemmas above
 are the shared prefix either way, and are now done.
+
+## 2026-08-07 (sixth) — χ off-axis; TWO CORRECTIONS; precision warning
+
+`computations/qbeta/c3_w2_c1_invariant_structure.py`, witness
+`c3-w2-c1-invariant-structure.witness.json` (4/4).
+
+**⚠ PRECISION WARNING — the sibling scripts have NO off-axis signal.** They run
+at `DPS=120, NG=500, NH=60`, ample on the real axis but not off it: the ∞-side
+truncation `|hₖz^{-k}| ~ |T/z|^k p^{-k(k-1)/2}` is ~`1e-48` at `|z|=0.42, k=60`,
+the same size as the quantities measured there. At `z = 0.42i` those settings
+report `log10|χ| = −45.80`; the **converged value is −73.4468**. The first
+number is pure truncation noise, and I nearly read a divisor off it.
+
+The diagnostic that catches it: **`P(pz) = P(z)` is an algebraic identity**
+(both `Y₀`, `Y_∞` satisfy `Y(pz) = A(z)Y(z)`, so `A` cancels), so any measured
+deviation is error and nothing else — a free error meter. It is `1.1` at the
+coarse settings (no signal), `3.7e-66` at `DPS=200/NG=800/NH=110`, `5.9e-230`
+at `DPS=300`. **Check it before believing any off-axis number.**
+
+**CORRECTION: `|χ| = 1` on the real axis is automatic, not a finding.** The
+operator has real coefficients, so conjugation swaps the two 0-side solutions
+(a conjugate pair) while fixing the ∞-side ones (real), hence swaps `P`'s rows:
+
+    χ(conj z) = 1 / conj(χ(z))          (verified to 1e-268)
+
+On the real axis `z = conj z`, so `|χ|² = 1` identically. The earlier entry
+reported `|χ| = 1` as characterising χ; it is a consequence of this symmetry.
+What the real axis genuinely carries is `arg χ = 2(arg c₊ − arg c₋)`.
+
+**Off-axis structure.** `|χ|` is independent of `|z|` (spread `3.1e-9` over a
+full `p`-period at `arg = π/2`), and `log|χ|` is **exactly linear in `arg z`**
+out to `arg/π ≈ 0.4`, slope `−52.3046553508` per radian —
+`−2π/(log p · ln 10)` to `2.4e-65`. So χ behaves like `z^{i·2π/log p}` in that
+sector. It cannot *be* that (`z^{iλ}` is not single-valued on `ℂ*`). It then
+**saturates** at `−73.4468`, bend near `arg/π = 0.447` — and
+`arg(−t₂)/π = 0.446975`, a **0-side exponent direction**.
+
+Power-like behaviour in sectors, switching across rays fixed by the exponents,
+is the signature of a **theta quotient**: which term dominates the θ series
+changes across those rays. So χ is presumably a ratio of `θ_p`'s in the
+exponents and `T`.
+
+**NOT determined: χ's divisor, hence not its closed form.** An elliptic function
+is fixed by its divisor up to a constant; the sector data constrains it but does
+not supply it. That is the concrete next step, and it needs `DPS ≥ 200` throughout.
+
+**Stokes multipliers: STILL OPEN.**
