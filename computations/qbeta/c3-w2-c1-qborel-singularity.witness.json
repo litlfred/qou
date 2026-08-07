@@ -1,0 +1,60 @@
+{
+ "schema": "witness/v1",
+ "engine": "mpmath",
+ "scriptFile": "c3_w2_c1_qborel_singularity.py",
+ "commitSha": "unknown",
+ "description": "C1 infinity step 2 (bean qou-odh5). q-Gevrey order of the C1 solutions is 1/2, matching the Newton-polygon slope 1/2 found independently in step 1. The level-1/2 q-Borel transform has finite radius ~ q^8.2526. Ratio-test limits converge to 10 digits within a branch but differ between branches at 3.7e-4, indicating TWO nearby singularities \u2014 the sector structure predicted by the leading blocks B = +/- sqrt(q-1)/q. Stokes multipliers NOT extracted.",
+ "computation": {
+  "script": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
+  "scriptCommitSha": "unknown",
+  "scriptHash": "461f13220b23"
+ },
+ "results": {
+  "recurrence": "[m+2]_q b_{m+2} = b_{m+1} + b_m",
+  "dps": 500,
+  "n_terms": 1000,
+  "gevrey_fit_A": "0.25",
+  "gevrey_fit_B": "8.00010423951",
+  "gevrey_order": "0.5",
+  "newton_slope_from_step1": "1/2",
+  "gevrey_order_equals_slope": true,
+  "qborel_level": "1/2",
+  "xi_s_by_branch": {
+   "b^(1) (1,0)": "2.36571876588619",
+   "b^(2) (0,1)": "2.36485280484881",
+   "mix   (1,1)": "2.36515076658802"
+  },
+  "branch_spread_relative": "0.00036618",
+  "within_branch_convergence": "~1e-10 by m=400, stable to m=900",
+  "interpretation": "branch-dependent ratio limit => two nearby singularities, not one simple pole; consistent with the two sectors from B = +/- sqrt(q-1)/q"
+ },
+ "assertions": [
+  {
+   "name": "gevrey_order_is_one_half",
+   "computed": "0.5",
+   "expected": "0.5",
+   "passed": true
+  },
+  {
+   "name": "gevrey_order_matches_newton_slope",
+   "computed": "1/2",
+   "expected": "1/2",
+   "passed": true
+  },
+  {
+   "name": "qborel_radius_finite_nonzero",
+   "computed": "2.3657188",
+   "expected": ">1",
+   "passed": true
+  },
+  {
+   "name": "branches_disagree_two_singularities",
+   "computed": "0.0003662",
+   "expected": ">1e-5",
+   "passed": true
+  }
+ ],
+ "verdict": "CONFIRMED: q-Gevrey order = Newton slope = 1/2 (independent cross-check of step 1). The level-1/2 q-Borel transform converges, and its dominant singularity is branch-dependent at 3.7e-4 while converging to 1e-10 within each branch -- evidence for TWO nearby singularities, i.e. the two-sector structure. Multipliers remain open.",
+ "scope": "Singularity structure only. Does NOT extract the Stokes multipliers. Numerical, no fit, nothing wired.",
+ "durationMs": 2105
+}
