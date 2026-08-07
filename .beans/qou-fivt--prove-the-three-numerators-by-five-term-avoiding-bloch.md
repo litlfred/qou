@@ -185,3 +185,72 @@ three `k` (it is one orbit) and is **irrational** — `0.27318…·π²`. So the
 probably load-bearing, but it is not by itself the proof.
 
 **Still: verified to 80 dps, unproved.** The derivation is not done.
+
+---
+
+## ✅ 2026-08-07 — DERIVED. The three numerators follow from the five-term relation.
+
+Probe `computations/probes/qbeta_5two_route11_fiveterm_certificate_probe.py`,
+witness `computations/qbeta-5two-route11-fiveterm-certificate.witness.json`,
+6 gates, all pass. **This bean's stated goal is met.**
+
+### Step 1 — reduce to `(0,1)`
+
+Only `w₂` lies in `(0,1)`. Using the three standard extensions of the real
+Rogers dilogarithm — each **verified on generic points, not just our `w`s**:
+
+    reflection  L(x) + L(1−x)     = L(1) = π²/6     (0 < x < 1)
+    inversion   L(x) + L(1/x)     = 2·L(1)          (x > 1)
+    Landen      L(x) + L(x/(x−1)) = 0               (x < 0)
+
+everything reduces. With `a = L(w₂)`, `q = w₁/(1+w₁)`, `r = w₂/(1+w₂)`, `s = −w₃`
+(and the pleasant accident `1/w₁ = w₃/(w₃−1) = 1−w₂`), the targets become, in the
+basis `[L(1), a, L(q), L(r), L(s)]`:
+
+    T₁ = (−3/7,  2, −1,  0, 0)      T₂ = (−5/7, 2, 0, −1, 0)      T₃ = (−13/7, 2, 0, 0, 1)
+
+### Step 2 — the argument set is CLOSED under the five-term relation
+
+`{w₂, q, r, s}` plus reflections is closed; **15** closed instances exist, of
+which three are independent:
+
+    R₁ (x=y=w₂)      : 2L(w₂) − L(1−q) − 2L(r)                  = 0
+    R₂ (x=1−w₂, y=q) : L(1−w₂) + L(q) − L(1−q) − L(1−s) − L(w₂) = 0
+    R₃ (x=w₂,  y=s)  : L(w₂) + L(s) − L(1−w₂) − L(1−s) − L(1−r) = 0
+
+### Step 3 — the certificate (exact `Fraction` arithmetic)
+
+    T₁ = (2·R₁ − 4·R₂ + 1·R₃)/7
+    T₂ = (1·R₁ − 2·R₂ + 4·R₃)/7
+    T₃ = (4·R₁ − 1·R₂ + 2·R₃)/7
+
+`rank(R) = rank(R ∪ T) = 3`. The coefficient triples are cyclic shifts of
+**`(1, 2, 4)` — the quadratic residues mod 7 — and that `1/7` is exactly where
+the `mₖ/7` denominators come from.** The level-7 structure is visible in the
+certificate itself.
+
+### ⚠ What this does and does not settle
+
+**Derived:** the three numerators `17, 5, −1`. Not fitted, not verified-only.
+
+**NOT thereby proved: the sum rule.** The chain still runs through **Route 8's
+analytic transport** — the envelope theorem along GGM's deformation plus the
+branch integer `k = 0` on `|x| = 1`, which is *argued* (integrality + local
+constancy on a collision-free arc) but **not proved**. **That is now the weakest
+link, and it is analytic rather than arithmetic** — a different kind of gap from
+the one this bean opened against.
+
+Also: the three extension formulas are verified on generic points here, not
+derived. They are standard, but this probe does not prove them.
+
+### A dead end worth recording
+
+Before finding the certificate, PSLQ over `[L1, a, L(q), L(r), L(s)]` returned
+`[−4, 4, −3, 4, 3]`. **That relation is a linear consequence of the three targets
+and carries no new information** — the `a` coefficient cancels (`4−6+8−6 = 0`) and
+the remainder is `−4L(1) + 28π²/42 ≡ 0`. Numerical relation-hunting on this basis
+will keep rediscovering it. The five-term closure is what actually supplies
+independent equations.
+
+**Next, and it is now the only mathematical gap:** make Route 8's transport
+rigorous — see `qou-8v3k`.
