@@ -751,3 +751,61 @@ arc keeps having to retract. Tighten the bracket first.
 (each step halves it, ~10 steps gets `|α|` to `1e-6`), then identify `α` against
 `T`, `t_j`, `q` and their `p`-powers, then fit `C` and verify the closed form at
 a dozen independent points.
+
+## 2026-08-07 (sixteenth) — |α| IN CLOSED FORM: `q^{3/4}`; and my angular "exclusion" retracted
+
+**`|α|` is identified.** Four rounds of winding-concentration refinement on the
+radial bracket:
+
+    |z₀| = 0.4013259652699224 ± 1.6e-9
+
+and then
+
+    |α|/q = p^(−22.4999999639)      →   |α| = q · p^(−22.5)
+
+`p^{−22.5}` to `3.6e-8`, comfortably inside the `4.8e-9` relative uncertainty on
+`|α|`. Reducing mod `p^ℤ` (α is only defined up to that):
+
+    **|α| ≡ q^{3/4}**          (measured/q^{3/4} = p^(−22.00), exact)
+
+`|α| = 0.3431826791252214`, `q^{3/4} = 1.0813989643155`, ratio `p^{−22}` on the
+nose. This is a genuine closed form, not a fit: the exponent lands on an integer
+to 8 digits.
+
+**And `q^{3/4} = |t|/T` identically** (since `T = √(q−1)/q^{3/4}` and
+`|t| = √(q−1)`). So `|t₂/T| = q^{3/4}` matches the measured `|α|` **exactly**,
+making
+
+    **α = t₂ / T**      (mod p^ℤ)
+
+the natural candidate — right modulus exactly, and right angle to `~2e-6`.
+
+### RETRACTION: the angular exclusion of `α = t₂` was not established
+
+The fifteenth entry claimed `α ≠ t₂` partly on an angular step sitting `1.85e-6`
+below `arg(−t₂)`, and defended it by noting the answer was **identical at radial
+resolution `N = 16, 32, 64`**. That defence is void.
+
+The zero sits within `~1e-6` of the probing ray, so `arg χ` executes its fast
+swing over a radial width `~1e-6`. Radial spacing at `N = 64` is `3.3e-4`. **All
+three resolutions step clean over the swing in exactly the same way** — their
+agreement is not evidence of convergence, it is evidence that none of them
+resolves the feature. I read insensitivity as robustness. Same error class as
+the `|χ|`-is-bounded reading: a null result from a probe that could not have
+detected the thing.
+
+**What survives.** `α ≠ t₂` still holds, but on the *modulus*, which is solid
+and independent: `|z₀|/|t₂| = p^3.65675`, not an integer power, whereas
+`|z₀|/q^{3/4} = p^{−19}`… i.e. `|α| ≡ q^{3/4} ≠ |t₂|`. So `t₂` itself is out;
+`t₂/T` is not, and is now the leading candidate.
+
+**Next:** test `α = t₂/T` directly — predict the zero at `z = −(t₂/T)p^k`,
+choose `k` putting it in the working annulus, and check the winding
+concentration lands there. If it does, fit `C` and verify
+
+    χ(z) = C · θ_p(z/α)·θ_p(−z/ᾱ) / [θ_p(−z/α)·θ_p(z/ᾱ)]
+
+at a dozen independent points. Note `α = t₂/T` is *dimensionally* the natural
+object: it is the 0-side exponent measured in units of the ∞-side scale, which
+is exactly what a connection coefficient between those two singularities should
+depend on.
