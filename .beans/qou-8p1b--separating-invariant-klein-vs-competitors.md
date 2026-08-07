@@ -4,7 +4,7 @@ title: 'qou-8pl1/b: find an invariant separating Klein from the other S_4-admitt
 status: todo
 type: task
 created_at: 2026-08-07T00:00:00Z
-updated_at: 2026-08-07T00:00:00Z
+updated_at: 2026-08-07T09:20:00Z
 ---
 
 Parent: `qou-8pl1`. Depends on `qou-8p1a` (know the competitor set first).
@@ -43,3 +43,21 @@ data**, not just from the two candidate curves. Knowing that Klein and Fermat
 differ in bitangent structure is useless unless the pinched Bring surface
 determines its normalization's bitangent structure. State that link explicitly
 before investing in any separator.
+
+
+---
+
+## RE-SCOPE REQUIRED (2026-08-07, from `qou-8p1a`)
+
+`qou-8p1a` closed: the S_4-admitting genus-3 curves are an **infinite pencil**,
+not `{Klein, Fermat}`.  **This bean as written is therefore no longer
+sufficient to settle `qou-8pl1`.**  An invariant that separates Klein from
+Fermat says nothing about the rest of the family -- and worse, an invariant
+computed only from two hand-picked curves does not constrain which member the
+pinch produces.
+
+Re-scope to: find an invariant **the pinch itself determines**.  The question
+is no longer "what tells Klein and Fermat apart" (many things do -- `|Aut|`
+alone, 168 vs 96) but "what does the Bring degeneration actually pin down about
+the normalization".  Until that is posed, computing invariants is measuring the
+wrong thing.
