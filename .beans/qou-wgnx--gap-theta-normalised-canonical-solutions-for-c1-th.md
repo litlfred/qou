@@ -70,3 +70,56 @@ Stokes multipliers stay open.
 content, and the first where the agent nearly committed the error rather than
 finding it — the check that caught it was looking at the *conditioning* of a
 matrix whose ellipticity had already "passed".
+
+## 2026-08-07 (later) — THE NEGATIVE ABOVE IS REFUTED; connection matrix OBTAINED
+
+Everything under "NOT obtained" is wrong, and none of the three proposed
+repairs was needed. `computations/qbeta/c3_w2_c1_connection_matrix.py`,
+witness `c3-w2-c1-connection-matrix.witness.json`, 7/7 checks.
+
+**The basis was never degenerate — it cannot be.** `p = √q` is real, so `θ_p`
+has real coefficients and `θ_p(conj w) = conj θ_p(w)`. The exponents are a
+conjugate pair, so for real `z`, `|e_{t₁}(z)| = |e_{t₂}(z)|` **exactly**.
+Measured ratio `1.0`; max deviation `0.0`. The "~17 orders of magnitude apart"
+diagnosis describes something that cannot happen. Scale-invariant conditioning
+`|det|/(‖col₀‖‖col₁‖)` is **0.59 … 0.72** across the disc, not `1e-18`.
+
+**Three premises, all wrong:**
+
+1. *"|det|/max² ≈ 2.4e-18 means rank collapse."* `|det|/max²` is not
+   conditioning — it is not invariant under rescaling one column. The
+   Casoratian obeys `W(pz) = −(q−1)W(z)/(p⁴z²−1)` **exactly** (verified to
+   `1e-150`), so it decays under outward propagation analytically, columns
+   staying independent. The decay that looked like collapse is a theorem.
+2. *"The two bases share no domain."* `h` **entire in 1/z** means `Σ hₖz^{-k}`
+   converges for *every* `z ≠ 0`. With the 0-side radius 1 they overlap on the
+   whole punctured disc and match directly. The propagation that lost the
+   conditioning was never required.
+3. *"`P(pz) = P(z)` passed, but vacuously."* It is **automatic** — for any two
+   fundamental matrices, `Y₀(pz) = A(z)Y₀(z)` and `Y_∞(pz) = A(z)Y_∞(z)`, so
+   `A` cancels. Never evidence, at any conditioning. Correctness check only.
+
+Most likely origin of the original numbers: a fixed symmetric truncation of
+`θ_p`. Its dominant term sits at `n* = log|w|/log p − 1/2`, already `~96` at
+`|w| ~ 150`, so a window like `n ∈ [−50, 50]` misses the peak entirely. This
+script uses an adaptive window centred on `n*`.
+
+**Result.** `P = [[c₊, c₋], [conj c₊, conj c₋]]` — conjugate structure exact
+(dev `0.0`), elliptic per entry `1e-27 … 1e-55`, converged in (dps, NG, NH) to
+`1.4e-38`. `c₋` has **simple poles exactly at `z ∈ T·p^ℤ`** (zeros of
+`θ_p(−z/T)`); `|c₋·θ_p(−z/T)| → 1.1846e-18`, finite.
+
+**NOT claimed — flagging before it becomes the fifth instance.** `c₊` looks
+constant at the substrate (`z`-spread `2.0e-27`, `arg c₊ =
+1.26603946254300268722`) and I was about to call it *the connection constant*
+on Liouville grounds. It is **not** an exact constant: the `z`-variation is real
+and grows with `q` — `3.1e-23` at `q=1.35`, `1.2e-10` at `1.8`, `6.9e-6` at
+`2.5`, `2.5e-3` at `3.4`, `0.72` at `4.8` — and is **identical across dps
+140→320, NG 800→2200**, so it is not a precision artifact. "Connection constant"
+is a `q → 1` statement only. The law behind it is unidentified: fitting
+`ln(variation)` vs `1/log p` gives local slopes bouncing over `8.0 … 10.5`, and
+the small-`q` points go non-monotonic at the numerical floor. `π² = 9.8696` (the
+q-modular scale) sits in that band — **observation, not identification**.
+
+**Stokes multipliers: STILL OPEN.** The connection matrix is a prerequisite for
+them, not the same thing. That is the remaining work on this bean.

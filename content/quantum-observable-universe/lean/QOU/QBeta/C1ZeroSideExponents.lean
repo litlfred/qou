@@ -32,23 +32,56 @@ indicial equation is
 ## Why this is the whole of it
 
 The point of the `0`-side is to supply one half of the **connection matrix**
-`P = Y₀⁻¹ Y_∞`, whose ellipticity `P(pz) = P(z)` would give the Stokes
-multipliers. **That is not done, and this file does not pretend otherwise.**
+`P = Y₀⁻¹ Y_∞`. That matrix is now **obtained**
+(`computations/qbeta/c3_w2_c1_connection_matrix.py`), though the Stokes
+multipliers still are not — see below.
 
-A first numerical attempt (2026-08-07) built both bases and found the
-propagated `0`-side basis degenerate: normalised determinant `|det|/max²`
-already `2.4e-18` at the matching point and falling to `8.5e-23` after
-propagation, i.e. the two solutions are near-parallel as constructed. The
-`P(pz) = P(z)` agreement it produced was therefore **vacuous** — a
-rank-collapsed matrix satisfies it trivially — and is recorded as a negative,
-not a result (bean `qou-wgnx`). The cause is the normalisation
-`e_t(z) = θ_p(z)/θ_p(z/t)` placing the two conjugate exponents ~17 orders of
-magnitude apart; a stable construction is the open work.
+### Correction (2026-08-07): the "degenerate basis" negative was WRONG
 
-So: the exponents below are solid and the geometry of the indicial equation is
-settled. The connection matrix is open.
+An earlier revision of this file recorded that a first numerical attempt found
+the `0`-side basis degenerate — normalised determinant `|det|/max²` of `2.4e-18`
+at the matching point — and blamed the normalisation `e_t(z) = θ_p(z)/θ_p(z/t)`
+for "placing the two conjugate exponents ~17 orders of magnitude apart". **That
+diagnosis is impossible, and has been refuted.** Three separate errors:
+
+* `p = √q` is **real**, so `θ_p` has real coefficients and
+  `θ_p(conj w) = conj θ_p(w)`. The exponents are a **conjugate pair**
+  (`conjugate_pair_iff` below), so for real `z`,
+  `|θ_p(z/t₂)| = |θ_p(conj(z/t₁))| = |θ_p(z/t₁)|`, hence
+  `|e_{t₁}(z)| = |e_{t₂}(z)|` **exactly**. Measured ratio is `1.0`. A `1e17`
+  disparity between the two columns cannot occur.
+* **`|det|/max²` is not a conditioning measure.** The Casoratian satisfies
+  `W(pz) = −(q−1)·W(z)/(p⁴z²−1)` exactly (verified to `1e-150`), so it decays
+  under outward propagation for purely analytic reasons while the columns stay
+  independent. The scale-invariant measure `|det|/(‖col₀‖·‖col₁‖) = |sin∠|`
+  comes out `0.59 … 0.72` across the disc.
+* **The bases do share a domain.** `h` being *entire in `1/z`* means it converges
+  for every `z ≠ 0`; with the `0`-side radius `1` the two overlap on the whole
+  punctured disc and match directly. The propagation that lost the conditioning
+  was never required.
+
+Also worth recording: `P(pz) = P(z)` is **automatic** for any two fundamental
+matrices of one system (`Y₀(pz) = A(z)Y₀(z)` and `Y_∞(pz) = A(z)Y_∞(z)`, so `A`
+cancels). It is a correctness check on the numerics and was never evidence of
+anything — including in the attempt that read its "passing" as meaningful.
+
+### What the connection matrix looks like
+
+`P = [[c₊, c₋], [conj c₊, conj c₋]]`, elliptic per entry to `1e-27 … 1e-55`,
+with `c₋` carrying **simple poles exactly on `z ∈ T·p^ℤ`** (the zeros of
+`θ_p(−z/T)`).
+
+**Still open, and not claimed:** `c₊` is *not* an exact constant — its
+`z`-variation is precision-independent and grows with `q`, so "connection
+constant" is a `q → 1` statement only; the law behind that variation is
+unidentified; and the **Stokes multipliers are still not extracted**. Having the
+connection matrix is a prerequisite for them, not the same thing.
+
+So: the exponents below are solid, the geometry of the indicial equation is
+settled, and the connection matrix exists. The multipliers are the open work.
 
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_theta_canonical.py
+-- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_matrix.py
 -- Ref: [rsz2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 
