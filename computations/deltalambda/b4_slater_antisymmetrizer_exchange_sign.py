@@ -176,7 +176,12 @@ def main() -> int:
             "z_naive_excluded_above_ceiling": bool(z_excluded),
             "g_reeb_physical_below_ceiling": bool(g_physical),
             "negative_eigenvalue_always_present": all(r["has_negative_eigenvalue"] for r in rows.values()),
-            "attractive_channel_confirmed": True,
+            # Was the literal `True` — a vacuous check flagged by
+            # circ-vacuous-check. The genuine computation is the line above
+            # (and is asserted at the bottom of this file), so bind to it
+            # rather than assert the conclusion.
+            "attractive_channel_confirmed":
+                all(r["has_negative_eigenvalue"] for r in rows.values()),
             "rows": rows,
             "verdict": "DERIVED (parameter-free, no fit): a negative eigenvalue (-sqrt5*mag) is always "
                        "present so the dictionary's net-attractive branch (s=-1, B=-ln det(I+G)) is "

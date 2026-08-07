@@ -179,8 +179,19 @@ function detect(file: string, src: string): Finding[] {
       symbol: key.replace(/["']/g, ""),
       evidence:
         `check-shaped key bound to the literal ${m[2]}: \`${line.trim()}\` — ` +
-        `the reported check cannot fail, so it certifies nothing`,
-      severity: "critical",
+        `the reported check cannot fail, so it certifies nothing` +
+        (m[2] === "False"
+          ? `. NOTE: a literal False is CONSERVATIVE — it cannot manufacture a `
+            + `passing claim, and is often a legitimate recording of a negative `
+            + `result. Severity is reduced accordingly.`
+          : ``),
+      // Direction matters. The hazard this criterion exists to catch is a check
+      // that always PASSES (the T4 `"diagonal_crossed": True` case). A literal
+      // False always fails, so it can never launder a success — it is usually a
+      // recorded negative. Measured on the 2026-08-07 ledger drain: 2 of the 5
+      // vacuous-check candidates were literal-False recordings of genuine
+      // negative results, and both adjudicated `legit`.
+      severity: m[2] === "False" ? "advisory" : "critical",
     });
   });
 
