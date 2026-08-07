@@ -38,8 +38,15 @@ G3  RETRACTION TEST for a claim this agent wrote into bean qou-0yqu on
 G4  ALTERNATIVE identification of b.  Each root satisfies y² = (1-y)³, so
     2·Log y - 3·Log(1-y) = 2πi·kⱼ for an integer kⱼ.  Is b that k?
 
-G5  Does the sum rule itself reproduce, at working precision, from the
-    integral?  Reported as a cross-check, not as a proof.
+G5  Does the sum rule itself reproduce, at working precision?  Cross-check
+    only, not a proof.
+
+G6  Is ``log yⱼ + bⱼπi`` simply ``Log(-yⱼ)``?  Suggested by G4's ``k``.  If so,
+    ``b`` is not free data at all and ``Vⱼ = 3·Li₂(yⱼ) + Log(-yⱼ)²``.
+
+G7  If G6 holds, the inversion formula eliminates the ``Log²`` term entirely and
+    the sum rule becomes a statement about ``Li₂`` at the roots AND at their
+    reciprocals.
 
 No fitting: every quantity is parameter-free.  All near-misses are reported.
 
@@ -139,6 +146,80 @@ def gate4_branch_defect(y1, y2, y3):
     }
 
 
+def gate6_b_is_principal_log_of_neg(y1, y2, y3):
+    """Is ``log yⱼ + bⱼπi`` simply ``Log(-yⱼ)``, principal branch?
+
+    Suggested by G4's ``k = (1, -1, 0)`` vs ``b = (-1, +1, +1)``: for a root in
+    the upper half-plane ``arg(-y) = arg y - π``, in the lower half-plane
+    ``arg(-y) = arg y + π``, and for ``y > 0`` real ``arg(-y) = π``.  That
+    predicts exactly ``b = (-1, +1, +1)`` with no freedom at all.
+    """
+    out = []
+    worst = mp.mpf(0)
+    for name, y, b in (("y1", y1, B_CORPUS[0]), ("y2", y2, B_CORPUS[1]),
+                       ("y3", mp.mpc(y3), B_CORPUS[2])):
+        lhs = mp.log(y) + b * mp.pi * 1j
+        rhs = mp.log(-y)
+        err = abs(lhs - rhs)
+        worst = max(worst, err)
+        out.append({"root": name, "b": b, "abs_difference": mp.nstr(err, 8)})
+    return {
+        "gate": "G6",
+        "claim": "log y_j + b_j pi i == Log(-y_j), principal branch",
+        "per_root": out,
+        "worst_abs_difference": mp.nstr(worst, 8),
+        "pass": bool(worst < mp.mpf(10) ** -45),
+        "consequence_if_pass": (
+            "b is not free data: V_j = 3 Li2(y_j) + Log(-y_j)^2. And Log(-z)^2 is "
+            "precisely the object in the dilogarithm inversion formula "
+            "Li2(z) + Li2(1/z) = -pi^2/6 - Log(-z)^2/2."
+        ),
+    }
+
+
+def gate7_inversion_rewrite(y1, y2, y3):
+    """If G6 holds, inversion rewrites the sum rule with no Log² at all.
+
+    ``V_j = 3 Li2(y) + Log(-y)^2`` and ``Log(-y)^2 = -2(Li2(y) + Li2(1/y) + pi^2/6)``
+    give ``V_j = Li2(y) - 2 Li2(1/y) - pi^2/3``, so the sum rule
+    ``Σ Re V_j = -3pi^2/2`` becomes
+
+        Σ_j Re Li2(y_j) - 2 Σ_j Re Li2(1/y_j) = -pi^2/2.
+
+    Both sides are evaluated independently here.
+    """
+    ys = (y1, y2, mp.mpc(y3))
+    s_y = sum(mp.re(mp.polylog(2, y)) for y in ys)
+    s_inv = sum(mp.re(mp.polylog(2, 1 / y)) for y in ys)
+    lhs = s_y - 2 * s_inv
+    rhs = -mp.pi**2 / 2
+    # independent check that the inversion rewrite of V_j is itself right
+    worst = mp.mpf(0)
+    for y in ys:
+        v_direct = 3 * mp.polylog(2, y) + mp.log(-y) ** 2
+        v_rewrit = mp.polylog(2, y) - 2 * mp.polylog(2, 1 / y) - mp.pi**2 / 3
+        worst = max(worst, abs(v_direct - v_rewrit))
+    return {
+        "gate": "G7",
+        "claim": "sum rule <=> sum_j Re Li2(y_j) - 2 sum_j Re Li2(1/y_j) == -pi^2/2",
+        "sum_re_li2_roots": mp.nstr(s_y, 25),
+        "sum_re_li2_reciprocals": mp.nstr(s_inv, 25),
+        "lhs": mp.nstr(lhs, 25),
+        "rhs_neg_pi_sq_over_2": mp.nstr(rhs, 25),
+        "abs_difference": mp.nstr(abs(lhs - rhs), 8),
+        "inversion_rewrite_of_V_worst_error": mp.nstr(worst, 8),
+        "pass": bool(abs(lhs - rhs) < mp.mpf(10) ** -20
+                     and worst < mp.mpf(10) ** -40),
+        "note": (
+            "The reciprocals are NOT a second copy of the same integral: "
+            "prod_j (1 - z/y_j) = 1 - 3z + 2z^2 - z^3 changes sign on [0,1] "
+            "(it is -1 at z = 1), because 1/y_3 = 2.325 > 1. That sign change is "
+            "where genuine branch structure enters, and it is why the reciprocal "
+            "sum is not handed to us by the same positivity argument."
+        ),
+    }
+
+
 def gate5_sum_rule_cross_check(y1, y2, y3):
     """Reproduce Σⱼ Re Vⱼ = -3π²/2 from the corpus b. Cross-check only."""
     total = mp.mpf(0)
@@ -165,6 +246,8 @@ def main() -> None:
     g2 = gate2_integral_equals_sum(y1, y2, y3)
     g4 = gate4_branch_defect(y1, y2, y3)
     g5 = gate5_sum_rule_cross_check(y1, y2, y3)
+    g6 = gate6_b_is_principal_log_of_neg(y1, y2, y3)
+    g7 = gate7_inversion_rewrite(y1, y2, y3)
 
     # G3 is a verdict on a prior claim, decided by G1.
     g3 = {
@@ -195,7 +278,7 @@ def main() -> None:
             "y3": mp.nstr(y3, 20),
             "abs_y1": mp.nstr(abs(y1), 20),
         },
-        "gates": [g1, g2, g3, g4, g5],
+        "gates": [g1, g2, g3, g4, g5, g6, g7],
         "scope": (
             "Numerical verification only. Nothing here proves the sum rule, which "
             "remains verified-to-80-dps and unproved. Scope-(a) throughout: no "
