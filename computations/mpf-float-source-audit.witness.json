@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "benign": 13,
-      "advisory-cast": 5,
+      "advisory-cast": 6,
       "marked-cast": 1
     },
     "defects": [],
@@ -105,6 +105,14 @@
         "arg": "2.5",
         "source": "na_stokes_residual = mp.mpf(2.5)",
         "fix": "mpf(\"2.5\")"
+      },
+      {
+        "file": "computations/strip_float64_padding.py",
+        "line": 73,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return x != 0 and abs(x - mpf(float(x))) / abs(x) < F64_GAP",
+        "fix": null
       },
       {
         "file": "computations/substrate/lever1_color_eq_intrinsic_tau_rapidity.py",

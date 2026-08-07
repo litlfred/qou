@@ -1,14 +1,14 @@
 {
-  "description": "Figure-eight (4\u2081=Higgs) Kashaev invariant: root-of-unity (\u03a6_q) saddle reproduces Vol(4\u2081) [volume conjecture], keystone part (a)",
+  "description": "Figure-eight (4₁=Higgs) Kashaev invariant: root-of-unity (Φ_q) saddle reproduces Vol(4₁) [volume conjecture], keystone part (a)",
   "computation": "figure_eight_kashaev_volume",
   "audit_only": true,
   "precision_dps": 60,
   "context": {
-    "tests": "phi-q-aj-machinery-identification.md \u2014 \u03a6_q saddle of \u00c2_{4_1} = Vol(4_1)",
+    "tests": "phi-q-aj-machinery-identification.md — Φ_q saddle of Â_{4_1} = Vol(4_1)",
     "ties_to": "CAL-2 = V(4_1): Re=Vol(4_1)->m_mu/m_e (this); Im=CS(4_1)->D_beta (next)",
     "formula": "<4_1>_N = sum_{k=0}^{N-1} prod_{j=1}^k (2 - 2 cos(2 pi j / N)); (2pi/N) log -> Vol(4_1)"
   },
-  "vol_4_1_target": "2.029883212819307392038581383530981838703155517578125",
+  "vol_4_1_target": "2.0298832128193074",
   "estimates": {
     "50": {
       "raw": "2.73420087281797394629666951016896182141999125090704602322382",

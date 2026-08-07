@@ -38,8 +38,8 @@
   "description": "Constrain + refute sub-classes of the open Q_β c_k-recursion kernel (prop:q-beta-c-k-recursion-from-habiro-q-difference) using the cos(Φ(u)) reframe (#1887) and anchors c_1=0, c_2=-1. Pins the constant depth-2 kernel (a_1=-c_3, a_2=-1) from the c_2/c_3 anchors, records a_1=-c_3=√2·Φ_2 (kernel leading coeff = #1887 Φ_2 target), and REFUTES the constant depth-2 kernel: it predicts c_4=1-c_3² (~-3.2) vs fitted c_4≈-0.972 (~3.4× miss) ⇒ kernel is depth≥3 or non-constant (Habiro basis). Companion to Lean QBetaCKRecursionKernelConstraints. No fits; closure stays GAP-A.",
   "contentBlock": "conj:qbeta-precision-ladder",
   "data": {
-    "c_4_fitted": "-0.971570000000000044693138079310301691293716430664062500000000",
-    "c_4_floor": "0.00100000000000000002081668171172168513294309377670288085937500",
+    "c_4_fitted": "-0.97157",
+    "c_4_floor": "0.001",
     "refute_rel_miss_gate": "2.00000000000000000000000000000000000000000000000000000000000",
     "anchors": [
       {
@@ -53,7 +53,7 @@
         "bridge_err_a1_vs_sqrt2phi2": "0.0",
         "c_4_predicted_constant_depth2": "-3.08116007308361300297737515096653848209165146133959032007729",
         "c_4_predicted_closed_form_1_minus_c3sq": "-3.08116007308361300297737515096653848209165146133959032007729",
-        "c_4_fitted": "-0.971570000000000044693138079310301691293716430664062500000000",
+        "c_4_fitted": "-0.97157",
         "sign_match": true,
         "rel_miss_to_fit": "2.17132072118695807943956715952519538509351240031288431782041",
         "constant_depth2_refuted": true
@@ -69,7 +69,7 @@
         "bridge_err_a1_vs_sqrt2phi2": "0.0",
         "c_4_predicted_constant_depth2": "-3.08120898957993462944353533224249940971983555523610087455049",
         "c_4_predicted_closed_form_1_minus_c3sq": "-3.08120898957993462944353533224249940971983555523610087455049",
-        "c_4_fitted": "-0.971570000000000044693138079310301691293716430664062500000000",
+        "c_4_fitted": "-0.97157",
         "sign_match": true,
         "rel_miss_to_fit": "2.17137106907369977222949477793849856996680129558612878419713",
         "constant_depth2_refuted": true
