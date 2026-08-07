@@ -3235,3 +3235,37 @@ roots of unity are the natural arguments.
 `qbeta-5two-route10-kubert-distribution.witness.json` (6 gates, 60 dps).
 **Route count 10 tried; 7 refuted, 3 reductions. Sum-rule status unchanged:
 verified to 80 dps, unproved.**
+
+**2026-08-07 (post-#4658) — Routes 11–12: the numerators are DERIVED, and the
+transport's branch integer is PINNED. One analytic gap left.**
+
+**Route 11 (`qou-fivt`) — the three numerators `17, 5, −1` are derived**, not
+fitted. Reduce to `(0,1)` by reflection / inversion `L(x)+L(1/x)=2L(1)` / Landen
+`L(x)+L(x/(x−1))=0`; the argument set `{w₂, q, r, s}` plus reflections is **closed
+under the five-term relation** (15 instances, 3 independent); exact certificate
+
+    T₁ = (2R₁ − 4R₂ + R₃)/7    T₂ = (R₁ − 2R₂ + 4R₃)/7    T₃ = (4R₁ − R₂ + 2R₃)/7
+
+with `rank(R) = rank(R ∪ T) = 3`, in exact `Fraction` arithmetic. The coefficient
+triples are cyclic shifts of `(1,2,4)` — **the quadratic residues mod 7** — which
+is where the `/7` in `mₖ/7` comes from. *Dead end recorded:* PSLQ over
+`[L1, a, L(q), L(r), L(s)]` returns `[−4,4,−3,4,3]`, a linear consequence of the
+targets carrying no information; the five-term closure is what supplies
+independent equations.
+
+**Route 12 (`qou-trns`) — `k = 0` pinned by the base point.** Previously argued
+from integrality + local constancy, which gives *constant* but not *which*
+constant. Now: `exp(g) = ∏ⱼ[(1−yⱼ/x)/(1−xyⱼ)] = 1/x²` (exact Vieta, Lean-proved),
+`g` continuous on a collision-free arc, so `g + 2log x` is constant; **at `x = 1`
+every factor is exactly 1, so `g(1) = 0`** and the constant is 0. Verified at 2000
+points, worst `1.6e-30`. Hence `S(−1) = S(1) + π²`.
+
+⚠ Two probe errors recorded in `qou-trns`: a script that hard-coded "no jump"
+while its own output showed `2π`, and a comparison against mpmath's *principal*
+`log x` (which jumps at `φ = π`) rather than the continuous branch `iφ`.
+
+**The one remaining gap is the envelope theorem** — differentiability of `V` along
+the path plus the implicit function theorem for `yⱼ(x)` (discriminant bounded away
+from zero, so the hypothesis holds). Ordinary analysis, not a research problem,
+but not done. **Sum rule: verified to 80 dps, numerators derived, transport
+branch-pinned, still not proved.**
