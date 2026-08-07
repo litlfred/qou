@@ -1,0 +1,165 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-07T01:00:06.599014+00:00",
+  "commitSha": "b8df74f94a247770ef3bdc3a3cc0283bec03f11c",
+  "assertions": [
+    {
+      "name": "rule_holds_all_partitions",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "no_threshold_degeneracy",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "ylambda-sign-content-threshold",
+  "scriptFile": "ylambda_sign_content_threshold_probe.py",
+  "scriptHash": "db54170d6c7f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Verifies that sign(y_λ) equals sign(Z)·(−1)^P(λ), where P(λ) counts cells of λ whose content lies below c* = −log_Q(Q^r). Derived from the Wenzl principal specialisation: for Q>1 every hook factor 1−Q^h is negative (fixed sign (−1)^|λ|), and a numerator factor 1−Q^r·Q^c is negative exactly above the threshold. Swept over every partition for n=2..12. Replaces the qualitative 'sign-indefinite for n≥4' of weight-factor-audit §W3 with a combinatorial rule, which is what makes the μ₃ door budget of PR #4657 computable.",
+  "parameters": {
+    "q0": "1.1099785827513808",
+    "Q": "1.23205245416676391441662430661",
+    "QR": "1.72025175121384485372937276144",
+    "c_star": "-2.59951553640017695890186155174"
+  },
+  "data": {
+    "by_n": [
+      {
+        "n": 2,
+        "n_partitions": 2,
+        "n_matches": 2,
+        "n_negative_y": 0,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.39624879232698719142",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 3,
+        "n_partitions": 3,
+        "n_matches": 3,
+        "n_negative_y": 0,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.13327057432085481188",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 4,
+        "n_partitions": 5,
+        "n_matches": 5,
+        "n_negative_y": 1,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 5,
+        "n_partitions": 7,
+        "n_matches": 7,
+        "n_negative_y": 1,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 6,
+        "n_partitions": 11,
+        "n_matches": 11,
+        "n_negative_y": 3,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 7,
+        "n_partitions": 15,
+        "n_matches": 15,
+        "n_negative_y": 4,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 8,
+        "n_partitions": 22,
+        "n_matches": 22,
+        "n_negative_y": 8,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 9,
+        "n_partitions": 30,
+        "n_matches": 30,
+        "n_negative_y": 10,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 10,
+        "n_partitions": 42,
+        "n_matches": 42,
+        "n_negative_y": 18,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 11,
+        "n_partitions": 56,
+        "n_matches": 56,
+        "n_negative_y": 22,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      },
+      {
+        "n": 12,
+        "n_partitions": 77,
+        "n_matches": 77,
+        "n_negative_y": 36,
+        "sign_Z": 1,
+        "min_threshold_margin": "0.080176683640239334262",
+        "all_match": true,
+        "mismatches": []
+      }
+    ]
+  },
+  "caveats": [
+    "The threshold c* = −log_Q(Q^r) is q-dependent; the concrete cut 'content ≤ −3' is specific to q₀. The PARITY RULE itself is q-independent for q > 1 — only the location of the cut moves.",
+    "sign(Z) is inferred per n from one block and then required to be consistent across all blocks; the probe verifies consistency, it does not independently derive sign(Z)."
+  ]
+}
