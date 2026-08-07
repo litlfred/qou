@@ -654,3 +654,58 @@ suggestive but is equally explained by the basis singularity sitting there.
 
 Stokes multipliers: still open, but the target is now a two-parameter fit
 (`α`, `C`) against a known functional form, not an open-ended search.
+
+## 2026-08-07 (fourteenth) — zeros LOCALISED by bisection; `α = t₂` excluded by a hair
+
+The `D(θ)` sector count works and is fast (~15 s per angle at `DPS=200`,
+`N=16`). Recall `count[θ₁,θ₂] = (D(θ₁) − D(θ₂))/2π` with the arcs cancelling by
+periodicity, so `D(θ)/2π` steps **down by 1** at each zero's angle.
+
+    θ/π   ≤ 0.44        D/2π = +1
+    θ/π ∈ [0.46, 0.54]  D/2π =  0
+    θ/π   ≥ 0.56        D/2π = −1
+
+So the two upper-half zeros sit at `θ/π ∈ (0.44, 0.46)` and `(0.54, 0.56)`,
+symmetric about `π/2` — as the reflection law requires. Twelve bisection steps
+on the first:
+
+    zero angle / π  ∈  [0.4469677734375, 0.44697265625]      (width 4.9e-6)
+    arg(−t₂)/π      =   0.4469745097210151
+
+**`arg(−t₂)/π` lies OUTSIDE that bracket**, above it by `≈1.85e-6`.
+
+**This survived the obvious objection.** The bisection's worst discretisation is
+exactly at the step, where `arg χ` turns fastest, so I re-ran with radial
+resolution `N = 16, 32, 64`. The verdict is **identical at every N**:
+`D(tgt−1e-5) = 1.0` while `D(tgt−1e-7) = 0`, i.e. the step sits strictly *below*
+`arg(−t₂)`. Not a sampling artifact.
+
+So the zero angle agrees with `arg(−t₂)` to about **five significant figures**
+and is **not equal to it**. `α = t₂` is excluded — another instance of this
+arc's signature pattern, an object that almost carries the name.
+
+**Caveat, stated because the margin is thin.** The discrepancy is `~1.4e-5`
+radians. χ is accurate to `~1e-66` relative there (the entrywise ellipticity
+check at `DPS=200`), and the step is sharp (`D` reads `1.0` vs `2.3e-60`, never
+anything between), so the localisation should be trustworthy — but **one
+confirmation at `DPS ≥ 300` is worth doing before treating the exclusion as
+final**, since a `4e-6` relative near-miss is precisely the size where I would
+want a second precision to agree.
+
+### Where this leaves the symbolic form
+
+The predicted shape from the literature stands:
+
+    χ(z) = C · θ_p(z/α)·θ_p(−z/ᾱ) / [ θ_p(−z/α)·θ_p(z/ᾱ) ]
+
+order 2, zeros at `−α p^ℤ` and `ᾱ p^ℤ`, poles at the conjugates — all
+consistent with the measured count and symmetry. What is now pinned is
+`arg(−α)/π ∈ [0.44696777, 0.44697266]`, and `|α|` is **not yet measured** (the
+`D(θ)` method sees only angles). Getting `|α|` needs a radial locator: fix
+`θ = θ₀` and find where `|χ|` actually vanishes along that ray — now feasible
+because the angle is known to `5e-6`, so the ray passes essentially through the
+zero.
+
+**Next:** (i) re-confirm the exclusion at `DPS = 300`; (ii) locate `|α|` by a
+radial scan at `θ₀`; (iii) with `α` in hand, fit `C` and verify the closed form
+against χ at a dozen independent points. Then the Stokes multipliers follow.
