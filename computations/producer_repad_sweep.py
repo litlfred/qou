@@ -44,6 +44,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import subprocess
 import sys
 import time
@@ -80,6 +81,17 @@ def padded_fields(path: Path) -> list[str]:
     out: list[str] = []
     _walk(d, "", out)
     return out
+
+
+GIT_DRIVER = re.compile(r'subprocess\.run\(\s*\[\s*["\']git["\']|\bgit\(\s*["\'](?:commit|push|add)')
+
+
+def is_git_driver(path: Path) -> bool:
+    """True for batch drivers that commit/push — never safe to execute here."""
+    try:
+        return bool(GIT_DRIVER.search(path.read_text(encoding="utf-8")))
+    except Exception:
+        return False
 
 
 def producers_for(worktree: Path, rev: str) -> dict[str, list[str]]:
@@ -152,6 +164,17 @@ def main() -> int:
               flush=True)
         if src is None:
             results.append({"producer": prod, "verdict": "NOT_FOUND"})
+            continue
+
+        # Some scripts in computations/ are batch DRIVERS, not producers: they
+        # re-run other producers and commit + push per witness. Executing one
+        # from a sweep makes commits and attempts a push. q0_repin_regen_batch
+        # did exactly that during this tool's own development — the throwaway
+        # worktree contained it, but nothing should rely on that alone.
+        if is_git_driver(src):
+            print("        -> SKIPPED_DRIVER (invokes git; would commit/push)",
+                  flush=True)
+            results.append({"producer": prod, "verdict": "SKIPPED_DRIVER"})
             continue
 
         pristine()
