@@ -173,6 +173,62 @@ with the discarded object now canonically defined rather than convention-depende
 
 ---
 
+## 5b. First forward result (hyperbolicity granted per owner) — the volume term lands within a factor of ~2, with **zero** fitting
+
+Owner ruled caveat 1 granted ("assume it is there and work from there"), so the
+A-scaling test runs. **The prediction was stated before evaluating**, precisely to
+avoid repeating the ROAST §R0.1 convention-shopping:
+
+> `B_volume(A) = E₀ · Vol_per-nucleon · A`, with `Vol_per-nucleon` a **derived**
+> hyperbolic volume and `E₀ = m_e/(q₀(q₀−1))` the canonical scale. The framework's
+> nucleon **is** the Borromean link `𝓑₃`, so the canonical, no-choice reading is
+> `Vol_per-nucleon = Vol(𝓑₃)`.
+
+Scratch float64, **not witness-grade** (repo NO-FLOAT64 rule); `E₀ = 4.185981 MeV`.
+
+| reading | `E₀ · Vol` (MeV/nucleon) | vs `a_V ≈ 15.6` |
+|---|---:|---:|
+| **canonical — `Vol(𝓑₃) = 7.32772`** | **30.674** | **1.966×** |
+| `Vol(𝓑₃)/2 = V_oct = 3.66386` | 15.337 | 0.983× |
+| `Vol(4₁) = 2.02988` | 8.497 | 0.545× |
+| `v₃` (regular ideal tetrahedron) | 4.249 | 0.272× |
+
+**What is genuinely good here.** The *shape* works with **no free parameter**: the
+term is extensive `∝ A` by construction, knot-dependent, built from a derived
+hyperbolic volume and the derived scale `E₀`. Nothing was tuned. Contrast the trace
+route, which saturates at 3–4 MeV *total* and provably cannot grow (1.65× vs 12.72×
+needed). This is the first object in the arc that grows `∝A` **and** lands within a
+small factor of `a_V`.
+
+**What is not established, stated plainly.** The canonical reading **misses by
+1.966×**. Selecting the `V_oct` row because it reads 0.983 would be exactly the
+convention-shopping the ROAST caught — **I did not predict `/2` in advance and I am
+rationalising after seeing the number.** Recorded as such.
+
+**Why the miss is nonetheless interesting.** The discrepancy is a **discrete
+structural factor ≈ 2, not a continuous knob** — which makes it a *well-posed
+question with a derivable answer* rather than a tuning opportunity. Two independent
+readings would give exactly 2:
+
+- The Borromean complement decomposes into **exactly two regular ideal octahedra**
+  (`Vol(𝓑₃) = 2·V_oct`), so "half a Borromean" is a *geometric cell*, not an
+  arbitrary halving.
+- Summing a per-**bond** volume over **sites** double-counts every shared interface —
+  the standard factor-2 of any site-vs-bond sum.
+
+Either would predict **exactly** 2, against the measured **1.966** — leaving a
+**1.7 % residual** that is then a real, quantified discrepancy rather than a fitted
+agreement. That residual is the honest deliverable.
+
+**Caveat on the target.** `a_V` is itself a *fitted* liquid-drop coefficient varying
+~15.5–15.8 across SEMF parametrisations (~2 % spread). So a 1.7 % agreement is **not
+strong evidence** in either direction; the four L2 binding targets (`B_D`…`B_⁴He`)
+are the real test, not `a_V`.
+
+**Next, in order:** (i) derive the site-vs-bond factor from the atomic-braid
+combinatorics — it must come out *exactly* 2 or exactly `(A−1)/A`-like, never 1.966;
+(ii) then evaluate against `B_D / B_T / B_³He / B_⁴He` rather than against `a_V`.
+
 ## 6. Revised next actions
 
 | # | Action | Bean | Why |
