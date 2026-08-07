@@ -84,6 +84,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 _TOOLS = Path(__file__).resolve().parent.parent.parent / "tools" / "pyhecke" / "python"
 if _TOOLS.is_dir() and str(_TOOLS) not in sys.path:
@@ -95,7 +96,10 @@ set_compute_dps()
 
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
-Q0_T4 = mp.mpf("1.11020")
+# Canonical proton-pinned substrate modulus, READ not typed. The T4 probe's old
+# literal 1.11020 was a unit conflation (it solved 2*ln q = h instead of using
+# q0); fixed 2026-08-07, which moved the derived theta by -0.60% / -0.05%.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 IDENT = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 
@@ -180,7 +184,7 @@ def main() -> int:
               "direction carries no knot information. **")
 
     # ---- the readings, tested against the A-free curve ----
-    lnq = mp.log(Q0_T4)
+    lnq = mp.log(Q0)
     L = lnq**2
     r_target = S_MUON / S_PROTON
     print(f"\n[T1] A-free test (r = {mp.nstr(r_target, 10)} < 0 ⇒ the pair must "

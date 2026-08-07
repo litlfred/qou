@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-07T22:02:31Z
-updated_at: 2026-08-07T22:02:31Z
+updated_at: 2026-08-07T22:11:34Z
 ---
 
 The T4 crux probe's q0 was fixed (PR #4513) from the hardcoded 1.11020 to the
@@ -56,3 +56,42 @@ targets quoted in comparison tables.
 SUGGESTED FIX SHAPE: have consumers import the theta values (or recompute them
 from the canonical q0) rather than typing them, so the next q0 change does not
 require a seven-file sweep.
+
+
+---
+
+## 2026-08-07 PARTIAL — my 6 probes refreshed; 4 other-agent files remain
+
+Refreshed and re-verified (all 7 probes exit 0, assertions pass):
+  qbeta_rdmr_rademacher_winding_probe.py         theta targets -> corrected
+  qbeta_qnnq_afree_theta_constraint_probe.py     two grids collapsed to one
+  qbeta_offl_ratio_candidates_unfalsifiable_probe.py   + A-grid fix, see below
+  qbeta_sdp_angle_offset_theta_probe.py          q0 read, not typed
+  qbeta_braid_nf_sdp_offset_probe.py             q0 read, not typed
+  qbeta_lorentzian_gram_offset_probe.py          q0 read + q-scan grid point
+
+All now read `qou_substrate.constants.Q_50_DIGIT_STR` rather than typing a
+literal — the "suggested fix shape" from this bean, applied.
+
+**TWO THINGS THE REFRESH SURFACED, both worth more than the refresh:**
+
+1. **A control got 10 orders of magnitude tighter.** The qnnq C0 residual (does
+   the T4 pair lie on the A-free curve?) went 1.3e-8 -> **5.9e-18**. The old
+   value was the 8-digit rounding of the theta literals; with 17-digit theta at
+   the corrected q0 it is machine-exact. Independent confirmation the fix is
+   right.
+
+2. **A hidden hardcode-to-a-superseded-grid, caught by the refresh.** The offl
+   probe's A-sample grid began "2.0462", "2.05" — tuned just above the OLD
+   A_crit = 2.046. The corrected A_crit = 2.054 made both infeasible, so they
+   were silently skipped, max rho fell to 8.5, and the exhaustiveness assertion
+   failed. The MATHEMATICS was unchanged; only the sampling was stale. Fixed by
+   deriving the samples from A_crit, so the probe is now correct under any q0.
+   This is exactly the failure mode this bean exists to prevent, and it was in
+   my own probe.
+
+STILL OPEN — four files, other agents' work, deliberately untouched:
+    computations/qbeta/qbeta_t3_multiknot_binding_probe.py
+    computations/probes/qbeta_3bp8_w2_direct_sheet_probe.py
+    computations/probes/qbeta_3bp8_annihilator_continuation_probe.py
+    computations/probes/qbeta_awpk_perwinding_stokes_41_probe.py

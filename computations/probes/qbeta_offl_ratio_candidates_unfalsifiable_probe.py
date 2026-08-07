@@ -59,13 +59,17 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 
 set_compute_dps()
 
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 KAPPA = mp.sqrt(3) / 4
-Q0_T4 = mp.mpf("1.11020")      # the grid the T4 inversion used
+# Canonical proton-pinned substrate modulus, READ not typed. The T4 probe's old
+# literal 1.11020 was a unit conflation (it solved 2*ln q = h instead of using
+# q0); fixed 2026-08-07, which moved the derived theta by -0.60% / -0.05%.
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 VOL_41 = mp.mpf("2.029883212819307")     # figure-eight
 VOL_BOR = mp.mpf("7.327724753")          # Borromean rings
@@ -95,24 +99,31 @@ def main() -> int:
     print(" qou-offl — why a RATIO candidate cannot be tested, and what can")
     print("=" * 78)
 
-    L = mp.log(Q0_T4) ** 2
+    L = mp.log(Q0) ** 2
     A_crit = S_MUON / (KAPPA * L)
     print(f"\n  L = ln²q₀ = {mp.nstr(L, 12)}     A_crit = {mp.nstr(A_crit, 10)}")
 
     # ---- U1: is ρ(A) a monotone bijection onto (1, ∞)? ----
     print("\n[U1] EXHAUSTIVENESS — traverse A and watch the induced ratio:")
-    As = ["2.0462", "2.05", "2.2", "2.6", "3.0", "4.0", "8.0", "50.0", "1000.0"]
+    # Sample points DERIVED from A_crit, not hardcoded. The first two used to
+    # be the literals "2.0462"/"2.05", tuned to the A_crit of a superseded q0;
+    # when q0 was corrected (A_crit 2.046 -> 2.054) they fell BELOW the critical
+    # value, were skipped as infeasible, and the exhaustiveness check failed on
+    # a sampling artifact rather than on any change to the mathematics. Deriving
+    # them keeps the probe correct under any q0.
+    As = [A_crit * (1 + mp.mpf("1e-6")), A_crit * (1 + mp.mpf("2e-3"))] + \
+         [mp.mpf(x) for x in ("2.2", "2.6", "3.0", "4.0", "8.0", "50.0", "1000.0")]
     prev, monotone, rows = None, True, []
     exact = []           # full-precision (A, rho) pairs for the round-trip
-    for a in As:
-        A = mp.mpf(a)
+    for A in As:
+        a = mp.nstr(A, 8)
         pair = theta_pair(A, L)
         if pair is None:
             continue
         tm, tp = pair
         rho = tp / tm
         exact.append((A, rho))
-        rows.append({"A": a, "rho": mp.nstr(rho, 10)})
+        rows.append({"A": mp.nstr(A, 10), "rho": mp.nstr(rho, 10)})
         print(f"    A = {a:>9}   ρ = ϑ_p/ϑ_μ = {mp.nstr(rho, 12):>16}")
         if prev is not None and rho >= prev:
             monotone = False

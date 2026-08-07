@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T22:02:48.177762+00:00",
-  "commitSha": "c2612eb5873db51b482c72d3d0f019cf33ba19bc",
+  "computedAt": "2026-08-07T22:08:33.884367+00:00",
+  "commitSha": "5f56a66402e3d982c838d3ce68ed06cbe0cd4979",
   "assertions": [
     {
       "name": "C0_T4_pair_lies_on_curve",
@@ -18,15 +18,15 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "at theta_mu = 0 the curve forces theta_p = 0.23550853, not 0 — A-free refutation of the Rademacher route"
+      "source": "at theta_mu = 0 the curve forces theta_p = 0.23505919, not 0 — A-free refutation of the Rademacher route"
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 13,
   "computation": "qbeta-qnnq-afree-theta-constraint",
   "scriptFile": "qbeta_qnnq_afree_theta_constraint_probe.py",
-  "scriptHash": "028eecd512be",
-  "scriptCommitSha": "61c95a82d5c42f49ea7fc540234c5287d47248d9",
+  "scriptHash": "0f6d2599d01f",
+  "scriptCommitSha": "94dc5ad58bf9c0306822eaa5386264e4ae146be2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,64 +52,58 @@
     "constraint_curve": "theta_p^2 = L - (L - theta_mu^2)/r,  L = ln^2 q0",
     "A_determination_if_on_curve": "A_omega = S_mu / (kappa * (L - theta_mu^2))",
     "grids": {
-      "T4 hardcoded q₀=1.11020": {
-        "L": "0.01092864908262414",
-        "A_crit": "2.04617096488",
-        "curve_residual_at_T4_pair": "1.2578025e-8",
-        "theta_p_forced_at_theta_mu_zero": "0.235508528702"
-      },
       "canonical q₀=1.1099786": {
         "L": "0.01088698591679619",
         "A_crit": "2.05400141133",
-        "curve_residual_at_T4_pair": "0.0017058132",
+        "curve_residual_at_T4_pair": "5.9490807e-18",
         "theta_p_forced_at_theta_mu_zero": "0.235059186782"
       }
     },
     "admissible_family_sample": [
       {
         "A": "2.10",
-        "theta_mu": "0.016737164738",
-        "theta_p": "0.233072287525",
-        "ratio": "13.92543428"
+        "theta_mu": "0.0154424582771",
+        "theta_p": "0.232982892175",
+        "ratio": "15.08716346"
       },
       {
         "A": "2.50",
-        "theta_mu": "0.0445409396772",
-        "theta_p": "0.217668657531",
-        "ratio": "4.886934562"
+        "theta_mu": "0.0440707628877",
+        "theta_p": "0.217572933302",
+        "ratio": "4.936899637"
       },
       {
         "A": "3.00",
-        "theta_mu": "0.0589464808382",
-        "theta_p": "0.20323503284",
-        "ratio": "3.447789078"
+        "theta_mu": "0.0585920168401",
+        "theta_p": "0.203132507018",
+        "ratio": "3.466897335"
       },
       {
         "A": "4.00",
-        "theta_mu": "0.0730628357858",
-        "theta_p": "0.183604251587",
-        "ratio": "2.512963665"
+        "theta_mu": "0.0727771585543",
+        "theta_p": "0.183490757355",
+        "ratio": "2.5212685"
       },
       {
         "A": "6.00",
-        "theta_mu": "0.0848626439779",
-        "theta_p": "0.161606199844",
-        "ratio": "1.904326713"
+        "theta_mu": "0.0846168137966",
+        "theta_p": "0.161477245029",
+        "ratio": "1.908335209"
       },
       {
         "A": "10.00",
-        "theta_mu": "0.093233366553",
-        "theta_p": "0.141567644361",
-        "ratio": "1.51842253"
+        "theta_mu": "0.0930096633311",
+        "theta_p": "0.141420418483",
+        "ratio": "1.520491672"
       }
     ],
     "T1_rdmr_on_curve": false,
-    "q0_note": "the T4 probe hardcodes q0 = 1.11020 while the canonical substrate value is ~1.10998; r is q0-free but the curve is not, so both grids are reported",
+    "q0_note": "RESOLVED 2026-08-07: the T4 probe used to hardcode q0 = 1.11020 vs canonical substrate value is ~1.10998; r is q0-free but the curve is not, so both grids are reported",
     "inputs_taken_as_given": {
       "S_muon": "0.00968298",
       "S_proton": "-0.03945936",
       "source": "bar-odd leak measurement via qbeta_t4_stokes3_crux_probe.py"
     },
-    "verdict": "THE T4 CHAIN DOES CARRY ONE FALSIFIABLE, A-FREE STATEMENT. Eliminating A_ω between the two anchor equations leaves (ln²q₀ − ϑ_μ²)/(ln²q₀ − ϑ_p²) = S_μ/S_p = -0.2453912076, an invariant built from measured S values alone — no A_ω, no q₀. Any route supplying BOTH ϑ values is testable against this curve with no conditioning inherited, and a route that lands on it DETERMINES A_ω = S_μ/(κ(ln²q₀ − ϑ_μ²)) — which would be the arc's first genuine determination rather than a literature import. Control C0 passes (the T4 pair lies on the curve, as it must by construction). First application, T1: qou-rdmr's Rademacher prediction ϑ_μ = ϑ_p = 0 is OFF the curve — at ϑ_μ = 0 the curve forces ϑ_p = 0.23550853, so the Rademacher symbol is refuted WITHOUT assuming A_ω = 3, upgrading that scope-(a) result from a comparison against conditioned targets to an A-free one. SCOPE: this fixes no value of A_ω and wires nothing; it states in falsifiable form what an independent route (qou-offl, or any successor to qou-rdmr) must reproduce. The measured S values are taken as given."
+    "verdict": "THE T4 CHAIN DOES CARRY ONE FALSIFIABLE, A-FREE STATEMENT. Eliminating A_ω between the two anchor equations leaves (ln²q₀ − ϑ_μ²)/(ln²q₀ − ϑ_p²) = S_μ/S_p = -0.2453912076, an invariant built from measured S values alone — no A_ω, no q₀. Any route supplying BOTH ϑ values is testable against this curve with no conditioning inherited, and a route that lands on it DETERMINES A_ω = S_μ/(κ(ln²q₀ − ϑ_μ²)) — which would be the arc's first genuine determination rather than a literature import. Control C0 passes (the T4 pair lies on the curve, as it must by construction). First application, T1: qou-rdmr's Rademacher prediction ϑ_μ = ϑ_p = 0 is OFF the curve — at ϑ_μ = 0 the curve forces ϑ_p = 0.23505919, so the Rademacher symbol is refuted WITHOUT assuming A_ω = 3, upgrading that scope-(a) result from a comparison against conditioned targets to an A-free one. SCOPE: this fixes no value of A_ω and wires nothing; it states in falsifiable form what an independent route (qou-offl, or any successor to qou-rdmr) must reproduce. The measured S values are taken as given."
   }
 }
