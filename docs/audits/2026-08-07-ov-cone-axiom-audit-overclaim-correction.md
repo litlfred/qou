@@ -28,15 +28,27 @@ correct**, and my discharge of it did not change that. It moved the dependency, 
 
 ## Why file-level counting was not enough, and why it was still the tell
 
-The import cone of `OVTopAssembly` contains 23 QOU modules, **16 of which contain `sorry`** (377
-occurrences; largest: `SpechtStandardBasisCore` 107, `SpechtDominanceCore` 50, `JucysMurphy` 42,
-`SpechtTriangularCore` 35, `IdentityIContentDecomposition` 33, `OVTopAssembly` itself 28,
-`RegularRepBlockTrace` 1 — the last being the module `sum_numSYT_sq_eq_factorial` specialises).
+**A first count of this cone, reported earlier the same day, was wrong** — the regex matched the
+phrase "sorry-free" in docstrings, inflating the figures roughly fifty-fold and inventing a `sorry`
+in `RegularRepBlockTrace` that does not exist. Corrected count (comments and docstrings stripped,
+`sorry` not followed by `-`):
 
-File-level counts are not decisive on their own (a file may carry sorries in declarations a given
-result never touches), which is why the axiom check was needed. But with `RegularRepBlockTrace`
-carrying a `sorry` on the very lemma being specialised, the count was a strong signal that should
-have prompted the axiom check **before** the merges, not after.
+| module | real `sorry` |
+|---|---|
+| `QOU.BraidKnot.Specht` | 2 |
+| `QOU.BraidKnot.SpechtClassification` | 2 |
+| `QOU.BraidKnot.JucysMurphy` | 1 |
+| `QOU.BraidKnot.SnWedderburnPartitionBridge` | 1 |
+| `QOU.BraidKnot.StandardYoungTableau` | 1 (`numSYT_mul_hookProduct`, the known HLF gap) |
+
+**7 sorries across 5 of the 23 cone modules** — not 377 across 16. `RegularRepBlockTrace` and
+`OVTopAssembly` contain **no** real `sorry`; the modules named earlier as the largest offenders
+(`SpechtStandardBasisCore` 107, `SpechtDominanceCore` 50, `JucysMurphy` 42) carry 0, 0 and 1.
+
+This materially changes the strategic read: closing the RSK identity is plausibly **a handful of
+named lemmas**, not a multi-session march through a sorry swamp. It also reinforces the process
+point below in both directions — a bad screen can overstate difficulty as easily as understate it,
+and only the axiom check is load-bearing.
 
 ## What survives
 
@@ -61,7 +73,10 @@ What does **not** survive: `RSKBurnsideHolds` as "discharged", and the *exact* `
    should be renamed — "unconditional" is true only of its *hypothesis list*, not its proof term.
 2. **Do not cite** either as settled. In particular `RSKBurnsideTarget`'s "not yet a theorem"
    docstring should stay as-is.
-3. **The real gap** is upstream: `RegularRepBlockTrace`'s sorry (and the Specht-core cone). Closing
-   the RSK identity means closing those, not reindexing around them.
-4. **Process fix:** run `#print axioms` on any keystone before claiming a discharge. File-level
-   `grep sorry` is a screen, not a verdict; the proof term is the verdict.
+3. **The real gap** is upstream, and is now enumerated: the 7 sorries in the five modules tabled
+   above. Closing the RSK identity means closing those, not reindexing around them. Do **not** use
+   the retracted 377/16 figures for triage.
+4. **Process fix:** run `#print axioms` on any keystone before claiming a discharge
+   (`scripts/lean-axiom-guard.py`). File-level `grep sorry` is a screen, not a verdict; the proof
+   term is the verdict. And when screening, strip comments first — an unstripped count of this cone
+   was off by ~50x.
