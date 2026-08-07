@@ -145,3 +145,54 @@ identity for this field. Still **verified to 80 dps, unproved**.
 Lean status unchanged: the algebraic skeleton and the reflection reduction are
 sorry-free; `hrefl` remains undischarged at the complex roots pending
 `qou-gkco`. Nothing was stubbed to fake progress.
+
+## Route 5 (2026-08-06) — RESTATEMENT: the dilogarithms cancel. START HERE.
+
+Not a proof. But it changes what has to be proved, and it **bypasses the
+complex-`Li₂` blocker** (`qou-gkco`) for this purpose.
+
+### The chain
+
+1. The power sums `pₙ = Σⱼ yⱼⁿ` are **integers** — `3, 2, −2, −7, −6, 7, 25,
+   23, −22, …` — obeying the cubic's recurrence `pₙ = 2pₙ₋₁ − 3pₙ₋₂ + pₙ₋₃`.
+2. Hence `∏ⱼ(1 − yⱼ z) = 1 − 2z + 3z² − z³` and `Σₙ pₙzⁿ/n = −log(1−2z+3z²−z³)`.
+3. Therefore, exactly (residual `0.0`):
+
+       A = Σⱼ Li₂(yⱼ) = −∫₀¹ log(1 − 2z + 3z² − z³) / z  dz
+
+   The integrand is **regular on [0,1]** — the cubic has no root there (min
+   `0.615`, both endpoints `1`) — so this converges even though `|y₁| = 1.52`
+   makes the defining series diverge. That divergence was the whole reason the
+   complex continuation looked necessary.
+4. With `y₁y₂y₃ = 1` (so `log r = −½ log y₃`) and `y₁+y₂ = 2−y₃`, the angle is
+   `θ = arccos((2−y₃)√y₃/2)` and `Re e₂(L) = −3log²r + (θ−π)²`.
+
+### The sum rule, with no dilogarithm and no complex numbers
+
+    −∫₀¹ log(1−2z+3z²−z³)/z dz
+        =  −½·log²(y₃) + (2/3)·(θ−π)² − π²/6,
+      θ = arccos( (2−y₃)·√y₃ / 2 ),   y₃ = 0.430159709… the real root
+
+Verified to `1.1e-40`. **Control**: the same expression on `y³−y²+2y−1` fails
+by `0.15`, so it is specific to this cubic, not an identity of the shape.
+
+### What this buys
+
+* **The Lean route no longer goes through `qou-gkco`.** No complex `Li₂`, no
+  analytic continuation, no branch cuts — only `intervalIntegral`, `Real.log`,
+  `Real.arccos`, all in Mathlib. QOU precedent for the integral style:
+  `LiTwo_eq_integral`, `integral_zero_one_eq_LiTwo` (both sorry-free).
+* **It is checkable by a referee** without Bloch-group machinery.
+
+### What it does NOT buy
+
+It is *equivalent* to the ladder, not a solution to it — a closed-form
+evaluation of this integral is itself substantial. Routes 1–4 above remain
+dead. Still **verified, unproved**.
+
+### Suggested next step
+
+Attack the integral directly: `∫₀¹ log P(z)/z dz` for `P` an integer cubic
+with no root in `[0,1]`. Either a parametrised-family/differentiation
+argument, or recognise it as a known ladder for this field. Do **not** expand
+`log P = Σ log(1−yⱼz)` — that just returns `−Σ Li₂(yⱼ)` and is circular.
