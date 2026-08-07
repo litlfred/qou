@@ -28,27 +28,32 @@ correct**, and my discharge of it did not change that. It moved the dependency, 
 
 ## Why file-level counting was not enough, and why it was still the tell
 
-**A first count of this cone, reported earlier the same day, was wrong** — the regex matched the
-phrase "sorry-free" in docstrings, inflating the figures roughly fifty-fold and inventing a `sorry`
-in `RegularRepBlockTrace` that does not exist. Corrected count (comments and docstrings stripped,
-`sorry` not followed by `-`):
+**Two hand-rolled `grep sorry` counts of this cone gave two different answers (377/16, then 7/5), so
+neither is used here.** The first matched the phrase "sorry-free" in docstrings, inflating figures
+~50x and inventing a `sorry` in `RegularRepBlockTrace` that does not exist. The table below is
+instead the **compiler's own** `declaration uses 'sorry'` output — the only authoritative screen.
 
-| module | real `sorry` |
-|---|---|
-| `QOU.BraidKnot.Specht` | 2 |
-| `QOU.BraidKnot.SpechtClassification` | 2 |
-| `QOU.BraidKnot.JucysMurphy` | 1 |
-| `QOU.BraidKnot.SnWedderburnPartitionBridge` | 1 |
-| `QOU.BraidKnot.StandardYoungTableau` | 1 (`numSYT_mul_hookProduct`, the known HLF gap) |
+| declaration | module:line | what it is |
+|---|---|---|
+| `sn_isotypic_specht_split` | `SnWedderburnPartitionBridge`:234 | **the Wedderburn split** — what `OVTopAssembly` actually consumes |
+| `numSYT_mul_hookProduct` | `StandardYoungTableau`:149 | the hook-length formula (the corpus' named "brick-1" target) |
+| `specht_finrank_eq_numSYT` | `Specht`:309 | `dim S^μ = #SYT` (Sagan 2.5.2; needs the standard-polytabloid basis) |
+| `specht_isSimple` | `Specht`:320 | Specht modules are irreducible |
+| `spechtIso_imp_dom_both` | `SpechtClassification`:449 | iso ⇒ mutual dominance |
+| `specht_exhausts_irreducibles` | `SpechtClassification`:485 | Specht modules exhaust the irreducibles |
 
-**7 sorries across 5 of the 23 cone modules** — not 377 across 16. `RegularRepBlockTrace` and
-`OVTopAssembly` contain **no** real `sorry`; the modules named earlier as the largest offenders
-(`SpechtStandardBasisCore` 107, `SpechtDominanceCore` 50, `JucysMurphy` 42) carry 0, 0 and 1.
+**6 confirmed sorry-carrying declarations.** `JucysMurphy` could not be measured — it needs
+`QOU.BraidKnot.SytAdjacentSwap`'s olean built first; a regex suggested 2 there
+(`rep_mem_spechtSubmodule`, `seminormalVector_base_exists`), unconfirmed. `RegularRepBlockTrace` and
+`OVTopAssembly` carry **none**. `Specht.polytabloid_mem_specht`, which a regex flagged, is
+**complete** — the compiler does not warn on it.
 
-This materially changes the strategic read: closing the RSK identity is plausibly **a handful of
-named lemmas**, not a multi-session march through a sorry swamp. It also reinforces the process
-point below in both directions — a bad screen can overstate difficulty as easily as understate it,
-and only the axiom check is load-bearing.
+**Honest read of difficulty.** This is neither the 377-sorry swamp of the first count nor "a handful
+of easy lemmas" of the second: it is the standard Specht-module development — basis, simplicity,
+classification, Wedderburn split. Textbook-known, genuinely multi-session in Lean. The one bounded,
+startable item is `JucysMurphy.rep_mem_spechtSubmodule` if it is real (Sₙ-stability of the Specht
+submodule: `σ·polytabloid t = polytabloid (σ·t)`, so `Submodule.span_le` on generators);
+`seminormalVector_base_exists` has sibling intent recorded (#3799 — reuse Hoefsmit, don't duplicate).
 
 ## What survives
 
@@ -73,10 +78,11 @@ What does **not** survive: `RSKBurnsideHolds` as "discharged", and the *exact* `
    should be renamed — "unconditional" is true only of its *hypothesis list*, not its proof term.
 2. **Do not cite** either as settled. In particular `RSKBurnsideTarget`'s "not yet a theorem"
    docstring should stay as-is.
-3. **The real gap** is upstream, and is now enumerated: the 7 sorries in the five modules tabled
-   above. Closing the RSK identity means closing those, not reindexing around them. Do **not** use
-   the retracted 377/16 figures for triage.
+3. **The real gap** is upstream and is enumerated above (6 confirmed + `JucysMurphy` pending).
+   Closing the RSK identity means closing those, not reindexing around them. Do **not** triage from
+   either retracted grep count (377/16 or 7/5).
 4. **Process fix:** run `#print axioms` on any keystone before claiming a discharge
    (`scripts/lean-axiom-guard.py`). File-level `grep sorry` is a screen, not a verdict; the proof
-   term is the verdict. And when screening, strip comments first — an unstripped count of this cone
-   was off by ~50x.
+   term is the verdict. And do not screen with hand-rolled `grep sorry` at all — two attempts here
+   disagreed with each other and both disagreed with the compiler. Use `lean`'s own
+   `declaration uses 'sorry'` warnings.
