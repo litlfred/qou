@@ -132,4 +132,46 @@ theorem ratio_unconstrained {κ lnq S₁ S₂ : ℝ} (hκ : 0 < κ) (hlnq : 0 < 
       thetaSq A κ lnq S₂ = y * thetaSq A κ lnq S₁ :=
   fun _ hy => ratio_attained hκ hlnq hS₁ hS₂ hy
 
+
+section AnchorCount
+variable {n : ℕ}
+
+/-- **Adding anchors never helps: the system is underdetermined by exactly one
+at EVERY anchor count.**
+
+Each new anchor contributes one equation `S_i = A·κ·(ln²q₀ − ϑ_i²)` *and* one
+new unknown `ϑ_i`. So `n` anchors give `n` equations in `n + 1` unknowns
+(`A` together with the `n` angles) — a deficit of one, independent of `n`.
+
+This states the consequence constructively: for **every** admissible `A` there
+is a complete angle assignment solving all `n` equations simultaneously. `A` is
+therefore never pinned, no matter how many anchors are collected. The
+underdetermination is STRUCTURAL, not a shortage of data.
+
+The only escape is an anchor whose `ϑ` is fixed *independently* — an equation
+carrying no new unknown. The corpus's one candidate, the electron/trefoil `3₁`
+with `Vol = 0`, is closed on its own terms: a torus knot's Kashaev invariant
+grows polynomially rather than exponentially, so it has no Stokes constant to
+supply an `S` at all. -/
+theorem exists_angle_assignment (S : Fin n → ℝ) (κ lnq A : ℝ)
+    (hadm : ∀ i, S i / (A * κ) ≤ lnq ^ 2) :
+    ∃ θ : Fin n → ℝ, ∀ i, (θ i) ^ 2 = thetaSq A κ lnq (S i) := by
+  refine ⟨fun i => Real.sqrt (thetaSq A κ lnq (S i)), fun i => ?_⟩
+  refine Real.sq_sqrt ?_
+  have := hadm i
+  unfold thetaSq
+  linarith
+
+/-- The admissibility hypothesis holds for every sufficiently large `A`, so the
+family of solutions above is a genuine continuum rather than an isolated point:
+raising `A` only ever makes more assignments available
+(`thetaSq_nonneg_mono` is the two-anchor form of the same monotonicity). -/
+theorem admissible_of_le {S : Fin n → ℝ} {κ lnq A : ℝ} (hκ : 0 < κ) (hA : 0 < A)
+    (h : ∀ i, S i ≤ A * κ * lnq ^ 2) : ∀ i, S i / (A * κ) ≤ lnq ^ 2 := by
+  intro i
+  rw [div_le_iff₀ (mul_pos hA hκ)]
+  linarith [h i]
+
+end AnchorCount
+
 end QOU.QBeta.AfreeThetaConstraint
