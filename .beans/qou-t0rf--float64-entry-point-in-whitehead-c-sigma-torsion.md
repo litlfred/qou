@@ -1,7 +1,7 @@
 ---
 # qou-t0rf
 title: 'float64 entry point: whitehead_c_sigma_torsion.py reads shapes via mp.mpc(complex(s)) — capped at ~16 digits despite dps=40'
-status: todo
+status: completed
 type: task
 priority: normal
 tags:
@@ -9,7 +9,7 @@ tags:
     - float64
     - precision
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T18:40:00Z
+updated_at: 2026-08-07T21:20:00Z
 ---
 
 ## The defect
@@ -39,3 +39,22 @@ it correctly and is the worked example.
 This is an instance of the class PR #4677 tracks; it does NOT cause the
 triangulation-dependence in bean `qou-fl4t` (that reproduces at 212 bits).
 Fixing it will change the reported digit counts, not the conclusions.
+
+<!-- 2026-08-07T21:05:00Z branch claude/beans-fl4t-t0rf — claimed: high-precision shape read -->
+
+---
+
+## 2026-08-07 — DONE.
+
+`whitehead_c_sigma_torsion.py` now reads shapes at `bits_prec` derived from
+`mp.mp.dps`, converting through decimal strings instead of `complex()`.
+
+Effect is larger than expected. The `4_1` calibration went from
+`1.73205080756887777` — wobbling at digit 16 across runs — to
+`1.732050807568877293527446`, i.e. sqrt(3) exactly at the working precision
+(relative difference 0, so the script's digit counter saturates at its 999
+sentinel). float64 was the binding limiter on every digit count that file
+reported.
+
+Does NOT change any conclusion: the triangulation-dependence in `qou-fl4t`
+reproduces at 212 bits and is unrelated.
