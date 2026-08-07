@@ -46,7 +46,10 @@ G6  Is ``log yⱼ + bⱼπi`` simply ``Log(-yⱼ)``?  Suggested by G4's ``k``.  
 
 G7  If G6 holds, the inversion formula eliminates the ``Log²`` term entirely and
     the sum rule becomes a statement about ``Li₂`` at the roots AND at their
-    reciprocals.
+    reciprocals.  The conclusion holds; the per-root derivation does not.
+
+G8  Why: the per-root inversion defect is nonzero (``y₃ ∈ (0,1)``) but its real
+    part sums to zero over the three roots.
 
 No fitting: every quantity is parameter-free.  All near-misses are reported.
 
@@ -207,15 +210,61 @@ def gate7_inversion_rewrite(y1, y2, y3):
         "lhs": mp.nstr(lhs, 25),
         "rhs_neg_pi_sq_over_2": mp.nstr(rhs, 25),
         "abs_difference": mp.nstr(abs(lhs - rhs), 8),
-        "inversion_rewrite_of_V_worst_error": mp.nstr(worst, 8),
-        "pass": bool(abs(lhs - rhs) < mp.mpf(10) ** -20
-                     and worst < mp.mpf(10) ** -40),
+        "identity_holds": bool(abs(lhs - rhs) < mp.mpf(10) ** -20),
+        "per_root_inversion_rewrite_worst_error": mp.nstr(worst, 8),
+        "per_root_rewrite_valid": bool(worst < mp.mpf(10) ** -40),
+        "pass": bool(abs(lhs - rhs) < mp.mpf(10) ** -20),
+        "honesty": (
+            "The CONCLUSION holds and the DERIVATION does not. The per-root "
+            "inversion rewrite fails (worst error above), because "
+            "Li2(z) + Li2(1/z) = -pi^2/6 - Log(-z)^2/2 requires z not in [0,1] and "
+            "y_3 = 0.4302 is in (0,1). So this identity is NOT derived here -- it "
+            "is an independently verified restatement whose proof still needs the "
+            "y_3 branch handled separately. See G8 for what actually happens."
+        ),
         "note": (
             "The reciprocals are NOT a second copy of the same integral: "
             "prod_j (1 - z/y_j) = 1 - 3z + 2z^2 - z^3 changes sign on [0,1] "
             "(it is -1 at z = 1), because 1/y_3 = 2.325 > 1. That sign change is "
             "where genuine branch structure enters, and it is why the reciprocal "
             "sum is not handed to us by the same positivity argument."
+        ),
+    }
+
+
+def gate8_defect_cancellation(y1, y2, y3):
+    """The per-root inversion defect is nonzero but its REAL PART SUMS TO ZERO.
+
+    G7 shows the rewritten identity holds while the per-root rewrite that
+    "derives" it does not.  The resolution: define the per-root defect
+
+        D_j = Log(-y_j)^2 + 2*(Li2(y_j) + Li2(1/y_j)) + pi^2/3
+
+    which the inversion formula would make zero.  It is not zero -- ``y_3`` is
+    in ``(0,1)`` where that form of inversion does not apply.  This gate asks
+    whether ``sum_j Re D_j = 0`` anyway, which is exactly what would make the
+    sum-level rewrite legitimate while the per-root one is not.
+    """
+    ys = (("y1", y1), ("y2", y2), ("y3", mp.mpc(y3)))
+    per = []
+    total = mp.mpc(0)
+    for name, y in ys:
+        d = mp.log(-y) ** 2 + 2 * (mp.polylog(2, y) + mp.polylog(2, 1 / y)) + mp.pi**2 / 3
+        per.append({"root": name, "Re_D": mp.nstr(mp.re(d), 20),
+                    "Im_D": mp.nstr(mp.im(d), 20)})
+        total += d
+    return {
+        "gate": "G8",
+        "claim": "per-root inversion defects are nonzero but sum to zero in real part",
+        "per_root_defect": per,
+        "sum_Re_D": mp.nstr(mp.re(total), 12),
+        "sum_Im_D": mp.nstr(mp.im(total), 12),
+        "pass": bool(abs(mp.re(total)) < mp.mpf(10) ** -20),
+        "consequence_if_pass": (
+            "The sum-level rewrite in G7 is legitimate even though the per-root one "
+            "is not: the y_3 branch defect is cancelled by the conjugate pair. A "
+            "proof of the sum rule via inversion therefore needs this cancellation "
+            "as a lemma, not the per-root inversion formula."
         ),
     }
 
@@ -248,6 +297,7 @@ def main() -> None:
     g5 = gate5_sum_rule_cross_check(y1, y2, y3)
     g6 = gate6_b_is_principal_log_of_neg(y1, y2, y3)
     g7 = gate7_inversion_rewrite(y1, y2, y3)
+    g8 = gate8_defect_cancellation(y1, y2, y3)
 
     # G3 is a verdict on a prior claim, decided by G1.
     g3 = {
@@ -278,7 +328,7 @@ def main() -> None:
             "y3": mp.nstr(y3, 20),
             "abs_y1": mp.nstr(abs(y1), 20),
         },
-        "gates": [g1, g2, g3, g4, g5, g6, g7],
+        "gates": [g1, g2, g3, g4, g5, g6, g7, g8],
         "scope": (
             "Numerical verification only. Nothing here proves the sum rule, which "
             "remains verified-to-80-dps and unproved. Scope-(a) throughout: no "
