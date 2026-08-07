@@ -192,6 +192,15 @@
       "pass": true
     },
     {
+      "gate": "G6b",
+      "claim": "k = 0 on the whole arc: no root collision (disc bounded away from 0), so the integer k is locally constant hence constant, and k -> 0 as phi -> 0",
+      "n_samples": 200,
+      "max_implied_k": "1.8609762e-39",
+      "min_abs_discriminant_on_arc": "0.34808803",
+      "note": "this upgrades step (4) from 'measured at 8 points' to 'constant by local-constancy on a collision-free arc' -- an argument, not a sample",
+      "pass": true
+    },
+    {
       "gate": "G7",
       "claim": "x=-1: disc 49 (Q(zeta_7)+), roots = -1-2cos(2 pi k/7), and the reduced identity sum_k Re[Li2(y)+2Li2(-y)+(log(-y))^2] = -pi^2/2",
       "discriminant": "49.0",

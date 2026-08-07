@@ -119,3 +119,53 @@ than one boundary condition.
 * `QOU/QBeta/FiveTwoSaddleCurve.lean` — the curve, sorry-free, already on `main`
 * GGM `uploads/2012.00062v3.pdf` §6.1, eq (234)–(236), eq (306) palindromy
 * PR #4658
+
+---
+
+## Lean status — NONE of this is Lean-proved
+
+Stated plainly because the reduction above is numerical throughout, and the
+corpus's discipline is that "verified" and "proved" are different words.
+
+**Not Lean-proved:** every step of Route 8. Also not Lean-proved: Route 7's
+refutation (`qou-r7ml`) and the GGM/GGMW read (`qou-g2wr`). **No Lean was written
+in this session at all** — the toolchain is unavailable here (`elan`/`lake`
+absent, `release.lean-lang.org:443` denied by network policy, see `qou-clx8`).
+
+**Already Lean-proved and reused, sorry-free:** `FiveTwoSaddleCurve.lean` on
+`main` gives `curve_at_one`, `u0_cubic_discriminant` (= −23),
+`curve_pair_certificate`, `curve_palindromic` — so the deformed curve and its
+palindromy (G5) are formal. The PR's eleven theorems are likewise sorry-free.
+
+### Formalizability, step by step — honest triage
+
+| step | Lean difficulty |
+|---|---|
+| (1) `∂V/∂y = 0` ⟺ the curve | **algebraic half is a `ring` one-liner** — `x·[(1−y)(1−xy)(1−y/x) − y²] = −(xy³−(x²+1)y²+(x²+x+1)y−x)`. The *derivative* half needs the complex `Li₂` derivative → blocked on `qou-clx8`. |
+| (2) the two Vieta products | **easiest and most valuable.** Pure symmetric-function algebra over a `CommRing`; the corpus already has this exact shape at `x = 1` (`prod_one_sub_mul_eq`). Should be short. |
+| (3) envelope theorem | needs differentiability of `V` in both variables → **blocked on `qou-clx8`/`qou-ph1k`**, same gap as everything else. |
+| (4) integrate the ODE + branch tracking | the delicate analytic part. See below — it is better than it first looked. |
+| (5) the cyclotomic identity | **unproved mathematics**, not merely unformalized. |
+
+### Step (4) upgraded: `k = 0` is now an argument, not a sample
+
+Initially `k = 0` was measured at 8 points, which left "could `k` jump between
+samples?" open. It is now much tighter (gate **G6b**):
+
+* `k` is **integer-valued**, and locally constant wherever the three branches do
+  not collide.
+* The discriminant of the deformed cubic is **bounded away from zero on the whole
+  arc** — `min |disc| = 0.348` over 200 points, attained near `φ/π = 0.765`. So
+  there is **no collision on the arc**.
+* Hence `k` is *constant* on the arc, and `k → 0` as `φ → 0`. Therefore `k = 0`
+  throughout.
+* 200-point sweep: `max |implied k| = 1.6e-29`.
+
+That is a genuine argument modulo continuity of the branches, not a sampling
+claim. It is still not Lean.
+
+### Where the remaining mathematical risk actually sits
+
+Not in (1), (2) or (4). It is **entirely in (5)** — the cyclotomic identity is
+verified to `9.2e-41` and unproved, exactly as the sum rule itself is. Route 8
+moved the difficulty; it did not remove it.

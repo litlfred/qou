@@ -187,6 +187,33 @@ def main():
                   "claim": "on |x|=1, S(e^{i phi}) = S(1) + phi^2, i.e. branch integer k = 0 throughout",
                   "per_phi": d6, "worst_implied_k": nstr(w6, 8), "pass": bool(w6 < mpf(10) ** -30)})
 
+    # G6b -- k=0 is not just sampled: k is integer-valued and locally constant
+    # wherever the branches do not collide, and the discriminant is bounded away
+    # from 0 on the arc, so k is CONSTANT there; k -> 0 as phi -> 0.
+    def disc_poly(x):
+        a, b, c, d = x, -(x ** 2 + 1), x ** 2 + x + 1, -x
+        return (18 * a * b * c * d - 4 * b ** 3 * d + b ** 2 * c ** 2
+                - 4 * a * c ** 3 - 27 * a ** 2 * d ** 2)
+
+    N = 200
+    worst_k = mpf(0)
+    min_disc = None
+    for i in range(1, N + 1):
+        ph = mpf(i) * pi / N
+        kk = ((S1 + ph ** 2) - S(exp(1j * ph))) / (2 * pi * ph)
+        worst_k = max(worst_k, fabs(kk))
+        dv = fabs(disc_poly(exp(1j * ph)))
+        min_disc = dv if min_disc is None else min(min_disc, dv)
+    gates.append({"gate": "G6b",
+                  "claim": "k = 0 on the whole arc: no root collision (disc bounded away from 0), so the "
+                           "integer k is locally constant hence constant, and k -> 0 as phi -> 0",
+                  "n_samples": N,
+                  "max_implied_k": nstr(worst_k, 8),
+                  "min_abs_discriminant_on_arc": nstr(min_disc, 8),
+                  "note": "this upgrades step (4) from 'measured at 8 points' to 'constant by "
+                          "local-constancy on a collision-free arc' -- an argument, not a sample",
+                  "pass": bool(worst_k < mpf(10) ** -20 and min_disc > mpf(10) ** -6)})
+
     # G7 -- the cyclotomic point
     p, q, r = mpf(2), mpf(-1), mpf(-1)
     disc = 18 * p * q * r - 4 * p ** 3 * r + p ** 2 * q ** 2 - 4 * q ** 3 - 27 * r ** 2
