@@ -560,6 +560,52 @@ def alpha_em_inv_sym(pi_sym: sp.Symbol | None = None) -> sp.Expr:
     return bare_inv * (1 + c1 + c1**2 * kappa)
 
 
+def alpha_em_inv_sym_exact(pi_sym: sp.Symbol | None = None) -> sp.Expr:
+    """Symbolic 1/α_EM with the CS tower summed EXACTLY (all orders).
+
+    `alpha_em_inv_sym` above truncates the correction tower at order 2
+    (``1 + c1 + c1²κ``). That tower is geometric —
+
+        1 + Σ_{j≥1} c₁^j κ^{j−1}  =  1 + c₁/(1 − c₁κ)
+
+    — so it admits a closed form with no order parameter at all. Expanding
+    the closed form in ``c₁`` reproduces ``1 + c₁ + c₁²κ + c₁³κ² + …``, so
+    the truncated version is its 3-term Taylor polynomial.
+
+    At the substrate anchor ``c₁·κ ≈ 2.7e-3``, so the truncation costs
+    ≈ 11.06 ppb. Prefer this function wherever the result feeds a ppb- or
+    ppq-level claim. Lives in ℚ(q, π) exactly as the truncated form does.
+    """
+    pi = pi_sym if pi_sym is not None else sp.pi
+    bare_inv = q * q_int_sym(9) * q_int_sym(10)
+    CS_T29 = pi**2 * sp.Rational(10, 9)
+    CS_T35 = pi**2 * sp.Rational(16, 15)
+    hbar_q2 = (1 - q_inv) ** 2
+    n2 = q_int_sym(2)
+    c1 = (CS_T29 + CS_T35) * (n2 / 2) * hbar_q2 / bare_inv
+
+    sl = sp.Integer(8)
+    linking = sp.Integer(17)
+    G_cl_11 = CS_T29 + pi**2 * sl**2 / sp.Integer(18) ** 2
+    G_cl_22 = CS_T35 + pi**2 * sl**2 / sp.Integer(15) ** 2
+    G_cl_12 = pi**2 * linking**2 / (sp.Integer(18) * sp.Integer(15))
+    det_G_cl = G_cl_11 * G_cl_22 - G_cl_12**2
+
+    qi9, qi5, qi3 = q_int_sym(9), q_int_sym(5), q_int_sym(3)
+    linking_q = sp.Abs(n2 * qi5 - qi3 * qi9)
+    CS_q_29 = pi**2 * (n2**2 - 1) * (qi9**2 - 1) / (12 * n2 * qi9)
+    CS_q_35 = pi**2 * (qi3**2 - 1) * (qi5**2 - 1) / (12 * qi3 * qi5)
+    sl_q_29 = (n2 - 1) * (qi9 - 1)
+    sl_q_35 = (qi3 - 1) * (qi5 - 1)
+    G_q_11 = CS_q_29 + pi**2 * sl_q_29**2 / (n2 * qi9) ** 2
+    G_q_22 = CS_q_35 + pi**2 * sl_q_35**2 / (qi3 * qi5) ** 2
+    G_q_12 = pi**2 * linking_q**2 / (n2 * qi9 * qi3 * qi5)
+    det_G_q = G_q_11 * G_q_22 - G_q_12**2
+
+    kappa = det_G_cl / det_G_q
+    return bare_inv * (1 + c1 / (1 - c1 * kappa))
+
+
 # ══════════════════════════════════════════════════════════════
 # Module self-test
 # ══════════════════════════════════════════════════════════════

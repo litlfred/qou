@@ -146,8 +146,87 @@ _det_G_q = _G_q_11 * _G_q_22 - _G_q_12**2
 
 _kappa_gram = _det_G_cl / _det_G_q  # J² self-dual damping factor
 
-ALPHA_EM_INV_DERIVED = _bare_alpha_inv * (1.0 + _c1 + _c1**2 * _kappa_gram)
-# = 137.035944 (55 ppb, 0.00004% error)
+# ── The CS tower is geometric — sum it exactly, do not truncate ──────
+#
+# The correction tower is  Σ_{j≥1} c₁^j κ^{j−1}, i.e. c₁ times a geometric
+# series of ratio c₁·κ. It therefore has a closed form:
+#
+#     1 + Σ_{j≥1} c₁^j κ^{j−1}  =  1 + c₁/(1 − c₁κ)
+#
+# whose expansion is 1 + c₁ + c₁²κ + c₁³κ² + …, reproducing the previous
+# order-2 truncation as its first three terms.
+#
+# This file previously shipped that order-2 truncation
+# (`1 + _c1 + _c1**2 * _kappa_gram`). At the substrate anchor the ratio is
+# c₁·κ ≈ 2.7e-3, so truncating cost **11.06 ppb** — significant for a
+# constant consumed by ppb-level claims. The exact form is no more
+# expensive to evaluate and has no order parameter to get wrong.
+def _alpha_em_tower(c1, kappa):
+    """Exact resummation of the CS correction tower (all orders)."""
+    return 1.0 + c1 / (1.0 - c1 * kappa)
+
+
+ALPHA_EM_INV_DERIVED = _bare_alpha_inv * _alpha_em_tower(_c1, _kappa_gram)
+# ≈ 137.0359350940 at the proton-pinned substrate anchor.
+#
+# NOTE ON THE ANCHOR: this is proton-pinned (`Q` from qou-substrate is
+# `_solve_q_proton_f64`, re-pinned 2026-05-28). A stale comment here used to
+# read "= 137.035944 (55 ppb, 0.00004% error)"; that value is the MUON-anchor
+# evaluation from before the re-pin — the two anchors differ by 11.5 ppb in q,
+# which is ~200 ppb in α_em⁻¹ because bare ~ q·[9]_q·[10]_q is high degree.
+# The "55 ppb" was additionally inconsistent with the "0.00004%" in the same
+# comment (0.00004% is 400 ppb). Against CODATA 137.035999177 the current
+# value sits at ≈ −468 ppb, and that residual is STRUCTURAL: the tower is
+# converged, so no further orders can close it.
+
+
+def alpha_em_inv_mp(dps: int = 50):
+    """Arbitrary-precision α_EM⁻¹ via mpmath, exactly resummed.
+
+    The float64 path above is accurate for this constant (it agrees with
+    this function to ~13 digits — the arithmetic is short and well
+    conditioned). This exists so callers making ppb- or ppq-level claims
+    need not rely on that agreement holding, per the repo's precision
+    discipline.
+    """
+    import mpmath as _mp
+    with _mp.workdps(dps):
+        try:
+            from q_parameter import Q_50_DIGIT_STR as _qs
+        except ImportError:
+            from qou_substrate.constants import Q_50_DIGIT_STR as _qs
+        q = _mp.mpf(_qs)
+        qi_ = 1 / q
+
+        def _qint(k):
+            return (q**k - q**(-k)) / (q - 1 / q)
+
+        pi = _mp.pi
+        bare = q * _qint(9) * _qint(10)
+        cs29 = pi**2 * _mp.mpf(10) / 9
+        cs35 = pi**2 * _mp.mpf(16) / 15
+        n2 = _qint(2)
+        c1 = (cs29 + cs35) * (n2 / 2) * (1 - qi_)**2 / bare
+
+        g_cl_11 = cs29 + pi**2 * 64 / _mp.mpf(18)**2
+        g_cl_22 = cs35 + pi**2 * 64 / _mp.mpf(15)**2
+        g_cl_12 = pi**2 * 289 / (_mp.mpf(18) * 15)
+        det_cl = g_cl_11 * g_cl_22 - g_cl_12**2
+
+        lk_q = abs(n2 * _qint(5) - _qint(3) * _qint(9))
+        cs_q_29 = pi**2 * (n2**2 - 1) * (_qint(9)**2 - 1) / (12 * n2 * _qint(9))
+        cs_q_35 = (pi**2 * (_qint(3)**2 - 1) * (_qint(5)**2 - 1)
+                   / (12 * _qint(3) * _qint(5)))
+        sl_q_29 = (n2 - 1) * (_qint(9) - 1)
+        sl_q_35 = (_qint(3) - 1) * (_qint(5) - 1)
+        g_q_11 = cs_q_29 + pi**2 * sl_q_29**2 / (n2 * _qint(9))**2
+        g_q_22 = cs_q_35 + pi**2 * sl_q_35**2 / (_qint(3) * _qint(5))**2
+        g_q_12 = pi**2 * lk_q**2 / (n2 * _qint(9) * _qint(3) * _qint(5))
+        det_q = g_q_11 * g_q_22 - g_q_12**2
+
+        kappa = det_cl / det_q
+        return +(bare * (1 + c1 / (1 - c1 * kappa)))
+
 
 # Canonical α_EM: the CS-corrected value is physical
 alpha_em = 1.0 / ALPHA_EM_INV_DERIVED
