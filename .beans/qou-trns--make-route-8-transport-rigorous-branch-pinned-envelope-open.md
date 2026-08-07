@@ -100,3 +100,51 @@ Envelope theorem open. Still not proved.**
 
 * `qou-8v3k` (Route 8), `qou-fivt` (Routes 10–11), `qou-b7cy` (Route 9)
 * `QOU/QBeta/FiveTwoCyclotomicBloch.lean` — the Vieta products this argument uses
+
+---
+
+## ✅ 2026-08-07 (later) — the envelope step is CONFIRMED TRUE. The gap is purely formalization.
+
+Before treating the envelope theorem as a formalization task, it was worth
+checking it is actually *true*. It is.
+
+**(A) Real `x`, real parts, all three branches.** Finite-difference total
+derivative `d/dx Re V(x, yⱼ(x))` (with the branch tracked) against
+`Re ∂V/∂x = Re[(1/x)log((1−yⱼ/x)/(1−x·yⱼ))]`, at `x = 0.7, 1.3, 2.0`:
+**agreement to `3.4e-24`** across all nine (x, branch) pairs.
+
+**(C) On the arc, the cleanest check — it involves no logarithm at all.**
+Finite-difference `d/dφ S(e^{iφ})` against the predicted `2φ` (which is what
+`S = S(1) + φ²` asserts), at `φ/π = 0.25, 0.5, 0.75, 0.9`:
+**agreement to `1.7e-28` at every point.** This is branch-free — no `Log` is
+evaluated — so it confirms the transport independently of any branch convention.
+
+### The third instance of the same trap
+
+Check **(B)** compared `d/dφ S` against `Re[Σⱼ (∂V/∂x)·i·x]` and matched to
+`1e-28` at `φ/π = 0.25, 0.5, 0.75` — then differed by exactly `6.2832 = 2π` at
+`φ/π = 0.9`. Cause: **principal `Log` inside my evaluation of `∂V/∂x` wraps**;
+the mathematics is unaffected, as (C) shows.
+
+That is the **third** time in this bean's history that a principal-vs-continuous
+`Log` has produced a spurious `2π`. It is now the single most reliable source of
+false alarms in this work. **Any probe here that evaluates `log` of a
+root-dependent ratio must use a continued branch, or compare against a
+log-free quantity as in (C).**
+
+### Status of the envelope gap
+
+**Mathematically: confirmed.** The step is true, to `1e-24`–`1e-28`, on real `x`
+per branch and on the arc.
+
+**Formally: still open**, and now precisely scoped:
+
+* `d/dz Li₂(z) = −log(1−z)/z` for complex `z` along the path — this is the
+  *defining* derivative, much weaker than the full continuation `qou-clx8` needs;
+* the implicit function theorem for `yⱼ(x)`, whose hypothesis **holds**
+  (`min |disc| = 0.348` on the arc);
+* `∂V/∂y = 0` at `yⱼ` — **already Lean-proved algebraically**.
+
+So the last mathematical gap in the whole 5₂ chain is **not a mathematical doubt**
+— it is ordinary analysis awaiting formalization, and it needs strictly less than
+the complex-`Li₂` continuation that has blocked `qou-clx8` all along.
