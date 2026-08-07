@@ -681,6 +681,68 @@ One ulp is the width of the binary64 rounding that should never have been
 introduced, so it is a correction. Source only; the witness is regenerated
 separately *because* a number moves.
 
+## A fourth mechanism: `mp.dps = 50` that does nothing
+
+`bring_homology_pairing_integration.py` was flagged for 4 padded fields. All
+three sites the tracer reported there are red herrings — `1e-45` and `1e-10`
+are comparison tolerances that must not be touched, and the third is a float
+mpmath computes inside `mp.quad`, which the lexical origin rule files as repo
+because it is not a literal in mpmath's source. The defect was on **line 7**:
+
+```python
+import mpmath as mp
+mp.dps = 50          # sets an attribute on the MODULE — a no-op
+```
+
+Precision lives on the *context*, so under this alias the line has to read
+`mp.mp.dps = 50`. The no-op had been silently in effect: everything was
+computed at mpmath's default ~53 bits and written with `mp.nstr(..., 40)`, so
+the witness claimed 40 digits and carried 16.
+
+This is a **fourth distinct mechanism** — not a serialization choice like the
+six before it, and not a bad parse like `binding_factor`: the precision was
+never raised at all.
+
+It is worth more than its 4 fields. The producer integrates the Euler class
+over the Bring fundamental cycle and asserts the result matches the closed
+forms. At 15 digits it agreed to ~15; at 50, all four match to every digit
+written:
+
+| field | value | equals |
+|---|---|---|
+| `computed_triangle_area` | `0.1570796326794896619231321691639751442099` | π/20 |
+| `computed_total_area` | `37.69911184307751886155172059935403461037` | 12π |
+| `pairing_ratio` | `0.2122065907891937810251783511633524827126` | 2/(3π) |
+| `target_ratio` | same | 2/(3π) |
+
+`|ratio − target|` goes from 6.94e-16 to **exactly 0** at 40 digits, against an
+assertion tolerance of `1e-10` — loose enough to have hidden the shortfall
+indefinitely. Values move ~3.2e-15 relative, which is the 15-vs-50 digit gap:
+a correction.
+
+### The same no-op is in four more producers — unfixed, and NOT verified here
+
+Swept the corpus for `import mpmath as <alias>` paired with a bare
+`<alias>.dps =`:
+
+```
+computations/qbeta/h5_wedderburn_tension_hp.py:11
+computations/qbeta/qbeta_h4_em_normalization_probe.py:11
+computations/qbeta/qbeta_h4_sign_block_exact.py:11
+computations/qbeta/qbeta_h4_sign_block_proof_search.py:11
+```
+
+All four say `mp.dps = 50` and run at 15. **None is in the 19 re-padders** —
+they were never in the stripped-witness cohort, so the padding sweep never
+reached them, and their witnesses have not been checked at all.
+
+They were patched and then **reverted**: none can run in this container
+(`ModuleNotFoundError: qou_substrate` — they lack the `_path_bridge` import),
+so the change could not be verified, and a value-changing edit that has not
+been run is exactly what this document argues against everywhere else. The
+fix is one line each and the finding is certain; the verification is what is
+missing.
+
 ## Regenerating a witness silently drops its q₀ provenance
 
 **Source fix committed, witness NOT regenerated — and the reason generalises

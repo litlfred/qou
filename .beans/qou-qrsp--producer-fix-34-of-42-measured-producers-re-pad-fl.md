@@ -271,3 +271,31 @@ NOT value-preserving — the first one that isn't. padded 2 -> 0; 1 of 34 fields
 moved, rows[4].delta_tr by 4.2e-17 relative = exactly 1 ulp, the width of the
 binary64 rounding that should never have been there. Source only; witness
 regeneration is separate BECAUSE a number moves.
+
+## FOURTH mechanism: `mp.dps = 50` that is a no-op
+
+bring_homology_pairing_integration.py line 7: `import mpmath as mp` then
+`mp.dps = 50` sets an attribute on the MODULE. Precision lives on the context
+— `mp.mp.dps`. The whole file ran at mpmath's default 15 and printed 40 digits.
+Not a serialization choice, not a bad parse: precision never raised.
+
+Fixed and verified: padded 4 -> 0, and all four fields now match their closed
+forms to every digit written (pi/20, 12pi, 2/(3pi)). |ratio - target| goes
+6.94e-16 -> exactly 0 at 40 digits, against a 1e-10 assertion tolerance loose
+enough to hide it indefinitely. Values move ~3.2e-15 = the 15-vs-50 gap.
+
+All three tracer sites in that file were red herrings (two comparison
+tolerances, one float mpmath computes inside mp.quad).
+
+**FOUR MORE PRODUCERS HAVE THE SAME NO-OP — unfixed:**
+  computations/qbeta/h5_wedderburn_tension_hp.py:11
+  computations/qbeta/qbeta_h4_em_normalization_probe.py:11
+  computations/qbeta/qbeta_h4_sign_block_exact.py:11
+  computations/qbeta/qbeta_h4_sign_block_proof_search.py:11
+
+None is among the 19 re-padders — they were never in the stripped-witness
+cohort, so the sweep never reached them and their witnesses are unchecked.
+Patched then REVERTED: none runs in this container (ModuleNotFoundError:
+qou_substrate — they lack _path_bridge), so the change could not be verified,
+and an unverified value-changing edit is what this bean argues against.
+One line each; the finding is certain, the verification is what is missing.
