@@ -49,7 +49,7 @@ def PartitionOf5.allList : List PartitionOf5 :=
 
 /-- Dimension of the S_5 irrep V_λ for each partition λ ⊢ 5
     (standard hook-length formula values; cf. James 1984 §2). -/
-def A5Irrep.dim : PartitionOf5 → ℕ
+def PartitionOf5.dim : PartitionOf5 → ℕ
   | .five          => 1
   | .fourOne       => 4
   | .threeTwo      => 5

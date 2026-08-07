@@ -98,7 +98,7 @@ Under those hypotheses, foldl and foldr agree. -/
 
 /-- `Commute init xs.prod` follows from `init` commuting with
     every element of `xs`. -/
-theorem commute_init_prod {α : Type*} [Monoid α]
+theorem List.commute_init_prod {α : Type*} [Monoid α]
     (init : α) (xs : List α) (h : ∀ x ∈ xs, Commute init x) :
     Commute init xs.prod := by
   induction xs with
