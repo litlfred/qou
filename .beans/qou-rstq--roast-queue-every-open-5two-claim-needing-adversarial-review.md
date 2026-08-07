@@ -123,3 +123,80 @@ extensions were called "not in Mathlib" on the same reasoning that just failed
 once. That reasoning is now suspect. Mathlib genuinely has no `Li₂`, so those two
 probably *are* absent — but "probably" is exactly the word the earlier survey did
 not use, and should have.
+
+---
+
+## 2026-08-07 — ROAST ITEM 1 DISCHARGED, and two new items
+
+### Item 1 (the five-term instances) — closed
+
+> "If any of `hA`, `hB`, `hC` is not a genuine five-term instance — wrong
+> argument, wrong branch — the whole derivation collapses. They were checked
+> numerically to `1e-40`; **check the *algebra* of the arguments independently**."
+
+Done, twice and independently:
+
+* `computations/probes/qbeta_5two_route14_fiveterm_arguments_exact_probe.py` —
+  **exact arithmetic** in `ℚ(w)`, `w³ = 2w² + w − 1`, `fractions.Fraction` in the
+  power basis. No floating point anywhere in the argument matching, so a
+  near-miss cannot pass. 6 gates, all pass.
+* `QOU/QBeta/FiveTwoFiveTermArguments.lean` — the same six identities in Lean,
+  over any `Field`, sorry-free, axioms `[propext, Classical.choice, Quot.sound]`
+  (three need only `propext, Quot.sound`; `ne_zero_of_hs` only `propext`).
+
+**All three are genuine.** The relation's last three arguments are determined as
+rational functions of `(x,y)`, and they match the hypotheses' arguments
+identically:
+
+| | instance | last three arguments |
+|---|---|---|
+| `hA` | **diagonal**, `x = y = w₂` | `{1−q, r, r}` |
+| `hB` | `x = 1−w₂`, `y = q` | `{1−q, 1−s, w₂}` |
+| `hC` | `x = w₂`, `y = s` | `{1−w₂, 1−s, 1−r}` |
+
+Three findings worth keeping:
+
+1. **`hA` is the diagonal instance**, which is why it has coefficients `(2,−1,−2)`
+   rather than the five-term's `(1,1,−1,−1,−1)` — two arguments coincide. Its
+   identification `w₂² = 1−q` is **exactly `bloch_key`**, already sorry-free in
+   `FiveTwoCyclotomicBloch.lean`.
+2. **`bloch_key` appears twice.** It also fixes `hC`'s last argument (`arg_C2`).
+   The identity that made the Bloch element `2[w] + [−w]` work is the same one
+   that makes the five-term arguments close up. Stated as `bloch_key'` so the
+   connection is a `linear_combination`, not a comment.
+3. **Three of the six identities need nothing at all** — `arg_A2`, `arg_B1`,
+   `arg_C1` hold for every `x`. Only `arg_A1`, `arg_B2`, `arg_C2` use the cubic.
+   The denominators `1 − xy` collapse (to `q` for `hB`, to `x` for `hC`), which is
+   why two of the five arguments come out with no denominator left.
+
+In the generator `x = w₂` the whole dictionary is `q = 1/(2−x)`, `r = x/(x+1)`,
+`s = (1−x)/x` — worth knowing, since `w₂ = σ(w₁)` is also a root of the same
+cubic and everything is simpler there.
+
+### 🔥 New roast items
+
+4. **The extended Rogers `L` is a *choice*.** `qou-rhyp` now shows `hinv1` and
+   `hlan1` were **false** for a Rogers `L` built on the corpus `LiTwo` (junk
+   values off `[−1,1]`), and repairs them by *defining* the extension. The
+   piecewise function is **not proved equal** to the analytic continuation of
+   `Li₂`; agreement is checked at six points. Attack that gap — it is the one
+   this lane created rather than inherited.
+5. **48% of the QOU Lean library is never compiled** (`qou-orph`, measured:
+   761/1598). Every "sorry-free, axioms audited" claim in this lane — including
+   the file merged in #4658 — rested on hand-run targeted builds, not on
+   anything the repo maintains. Three modules are now wired into `QOU.lean`;
+   758 are not. **Do not read any axiom audit in this repo as a maintained
+   property until that is fixed.**
+
+### Where the chain now stands
+
+| link | status |
+|---|---|
+| five-term **instances** | ✅ **proved genuine**, exactly + in Lean |
+| five-term **relation** (Abel) | ❌ the one open analytic input to the numerators |
+| inversion / Landen | ✅ by construction (`FiveTwoRogersExtend`) |
+| reflection | proof written, build unfinished |
+| transport `x=1 → x=−1` | envelope true but unformalized (`qou-trns`) |
+| extension = analytic continuation | ❌ **new gap**, item 4 above |
+
+**Standing status, unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
