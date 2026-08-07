@@ -155,3 +155,33 @@ be attacked first, in `Cl₂` terms, since it is both the easier half and the on
 already supported in the corpus. The remaining step then relates `L` at the real
 unit `ζ₇^k + ζₜ^{−k} + 1` to `Li₂` at `ζ₇^k` — which is where the actual
 multiplication relation lives.
+
+### 2026-08-07 (later) — two structural facts for the derivation, and one honest negative
+
+Gates **G7**, **G8** added to the Route-10 probe.
+
+**G7 — the cyclotomic dictionary.** Every object a derivation needs, in `ζ = ζ₇`:
+
+    w   = 1 + ζ^k + ζ^{−k}  =  ζ^{−k}·(1 − ζ^{3k})/(1 − ζ^k)  =  sin(3πk/7)/sin(πk/7)
+    w²  = (1 + ζ^k + ζ^{2k})(1 + ζ^{−k} + ζ^{−2k})
+    1−w = −(ζ^k + ζ^{−k})
+    1+w = 4cos²(πk/7)
+
+So `w` is a **ratio of cyclotomic numbers** and `w²` is a norm — which is why
+`w`, `1−w`, `1+w` are units, and why the distribution relation is the right
+frame.
+
+**G8 — the Galois action is an order-3 Möbius map.** `1/wₖ = 1 − w_{k+1}`
+cyclically, i.e. `w_{k+1} = 1 − 1/wₖ = T(wₖ)` with `T(x) = (x−1)/x`, `T³ = id`
+(all verified to `~1e-61`). **The three embeddings are a single `T`-orbit**, so
+the cyclic Galois group of ℚ(ζ₇)⁺ acts as the classical order-3 map whose Rogers
+cocycle is the Landen/inversion relation.
+
+**⚠ The honest negative, recorded so nobody mistakes the coincidence for a
+derivation:** the `T`-orbit sum `Re[L(w) + L(Tw) + L(T²w)]` is the *same* for all
+three `k` (it is one orbit) and is **irrational** — `0.27318…·π²`. So the 3-cycle
+**alone does not produce the rational value**. The rational combination is
+`2[w] + [−w]`, which is *not* the orbit sum. The Möbius structure is real and
+probably load-bearing, but it is not by itself the proof.
+
+**Still: verified to 80 dps, unproved.** The derivation is not done.

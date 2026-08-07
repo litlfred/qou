@@ -95,6 +95,23 @@
       "target_pi2_over_2": "4.93480220054467930941725",
       "worst": "6.2230153e-61",
       "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "cyclotomic dictionary: w = 1+z^k+z^-k = z^-k (1-z^3k)/(1-z^k); w^2 = (1+z^k+z^2k)(1+z^-k+z^-2k); 1-w = -(z^k+z^-k); 1+w = 4cos^2(pi k/7)",
+      "worst": "3.4140492e-61",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "1/w_k = 1 - w_{k+1}: the three embeddings are ONE orbit of T(x) = 1 - 1/x, so the Galois action coincides with the order-3 Mobius map",
+      "cyclic_relation_worst": "3.1115076e-61",
+      "T_has_order_3_worst": "3.1115076e-61",
+      "orbit_sum": "2.696223101860109601665",
+      "orbit_sum_over_pi_sq": "0.273184516044281744",
+      "orbit_sums_agree_worst": "3.1115076e-61",
+      "note": "STRUCTURE, NOT A PROOF: the T-orbit sum is IRRATIONAL (0.27318.../pi^2), so the 3-cycle alone does not produce the rational value. The rational combination is 2[w] + [-w], which is not the orbit sum. Recorded so nobody mistakes the Galois/Mobius coincidence for a derivation.",
+      "pass": true
     }
   ],
   "verdict": {

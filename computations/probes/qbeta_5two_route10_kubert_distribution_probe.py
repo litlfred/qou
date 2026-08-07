@@ -139,6 +139,43 @@ def main():
                   "target_pi2_over_2": nstr(pi ** 2 / 2, 24),
                   "worst": nstr(e6, 8), "pass": bool(e6 < TOL)})
 
+    # G7 -- the cyclotomic dictionary a derivation has to work in
+    w7 = mpf(0)
+    for k, w in zip(ks, W):
+        zk = z7 ** k
+        w7 = max(w7,
+                 fabs(w - (1 + zk + zk ** -1)),
+                 fabs(w - zk ** -1 * (1 - zk ** 3) / (1 - zk)),
+                 fabs(w ** 2 - (1 + zk + zk ** 2) * (1 + zk ** -1 + zk ** -2)),
+                 fabs((1 - w) + (zk + zk ** -1)),
+                 fabs((1 + w) - 4 * cos(pi * k / 7) ** 2))
+    gates.append({"gate": "G7",
+                  "claim": "cyclotomic dictionary: w = 1+z^k+z^-k = z^-k (1-z^3k)/(1-z^k); "
+                           "w^2 = (1+z^k+z^2k)(1+z^-k+z^-2k); 1-w = -(z^k+z^-k); 1+w = 4cos^2(pi k/7)",
+                  "worst": nstr(w7, 8), "pass": bool(w7 < TOL)})
+
+    # G8 -- the Galois orbit IS the orbit of the order-3 Mobius map T(x) = 1 - 1/x
+    def T(x):
+        return (x - 1) / x
+
+    cyc = max(fabs(1 / W[i] - (1 - W[(i + 1) % 3])) for i in range(3))
+    per = max(fabs(T(T(T(w))) - w) for w in W)
+    orbit_sums = [re(rogers(w) + rogers(T(w)) + rogers(T(T(w)))) for w in W]
+    spread = max(fabs(orbit_sums[i] - orbit_sums[0]) for i in range(3))
+    gates.append({"gate": "G8",
+                  "claim": "1/w_k = 1 - w_{k+1}: the three embeddings are ONE orbit of T(x) = 1 - 1/x, "
+                           "so the Galois action coincides with the order-3 Mobius map",
+                  "cyclic_relation_worst": nstr(cyc, 8),
+                  "T_has_order_3_worst": nstr(per, 8),
+                  "orbit_sum": nstr(orbit_sums[0], 22),
+                  "orbit_sum_over_pi_sq": nstr(orbit_sums[0] / pi ** 2, 18),
+                  "orbit_sums_agree_worst": nstr(spread, 8),
+                  "note": "STRUCTURE, NOT A PROOF: the T-orbit sum is IRRATIONAL (0.27318.../pi^2), so the "
+                          "3-cycle alone does not produce the rational value. The rational combination is "
+                          "2[w] + [-w], which is not the orbit sum. Recorded so nobody mistakes the "
+                          "Galois/Mobius coincidence for a derivation.",
+                  "pass": bool(cyc < TOL and per < TOL and spread < TOL)})
+
     out = {
         "probe": "qbeta_5two_route10_kubert_distribution",
         "bean": "qou-fivt",
