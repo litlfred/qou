@@ -20,21 +20,28 @@ so exactly one of the three is in reach of the existing real theory. See bean
 
 ## Scope of THIS file — honest
 
-Defines `cLiTwo` by its defining power series and proves exactly three things,
-all sorry-free:
+Defines `cLiTwo` by its defining power series and proves, all sorry-free:
 
-* `cLiTwo_zero` — the value at the origin;
-* `cLiTwo_term_norm_le` — the term bound `‖zᵏ⁺¹/(k+1)²‖ ≤ ‖z‖ᵏ⁺¹`;
-* `cLiTwo_summable` — convergence on the **open unit disc**.
+* **convergence** — `cLiTwo_term_norm_le`, `cLiTwo_summable`: the series
+  converges on the open unit disc;
+* **analyticity** — `cLiTwo_radius_ge_one`, `cLiTwo_hasFPowerSeriesOnBall`,
+  `cLiTwo_analyticOnNhd`: it *is* a power series there, so `cLiTwo` is
+  analytic on the open unit disc;
+* **the reflection identity's domain** — `norm_lt_one_of_mem_ball_half`,
+  `one_sub_mem_ball_half`, `re_pos_of_mem_ball_half`,
+  `mem_slitPlane_of_mem_ball_half`, and the four `…_ball_half` analyticity
+  lemmas: on `Metric.ball (1/2) (1/2)` all four ingredients of the reflection
+  identity are simultaneously analytic.
 
-That is the whole of it. This is a foundation, not a usable dilogarithm yet.
-
-It does **not** provide:
+This is a foundation, not a usable dilogarithm yet. It does **not** provide:
 
 * agreement with the real `QOU.QPochhammer.LiTwo` on ℝ (deliberately: that
-  import would tie this file to QOU and defeat the upstreaming goal below);
+  import would tie this file to QOU and defeat the upstreaming goal below —
+  it lives in `QOU.Archimedean.ComplexDilogBridge` instead);
 * analytic continuation past `|z| = 1` — needed for `y₁` (`|y₁| = 1.52`);
-* the complex Euler reflection `Li₂ z + Li₂ (1−z) = π²/6 − log z · log(1−z)`;
+* the complex Euler reflection `Li₂ z + Li₂ (1−z) = π²/6 − log z · log(1−z)`
+  itself — only the analyticity hypotheses an identity-theorem proof of it
+  would consume;
 * the inversion formula `Li₂ z + Li₂ (1/z) = −π²/6 − ½·log(−z)²`, the standard
   route to `|z| > 1`.
 
@@ -59,6 +66,7 @@ that was never created — corrected 2026-08-06.)
 -/
 import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.Analytic.OfScalars
 import Mathlib.Analysis.Analytic.Basic
 import Mathlib.Analysis.Analytic.ChangeOrigin
@@ -252,5 +260,46 @@ theorem re_pos_of_mem_ball_half {z : ℂ}
   have hlt : |z.re - 1 / 2| < 1 / 2 := lt_of_le_of_lt h hz
   have := (abs_lt.mp hlt).1
   linarith
+
+/-- `ball(½,½) ⊆ slitPlane` — immediate from `Re z > 0`. -/
+theorem mem_slitPlane_of_mem_ball_half {z : ℂ}
+    (hz : z ∈ Metric.ball (1 / 2 : ℂ) (1 / 2)) : z ∈ slitPlane :=
+  mem_slitPlane_iff.2 (Or.inl (re_pos_of_mem_ball_half hz))
+
+/-! ### All four ingredients are analytic on `ball(½, ½)`
+
+`cLiTwo z`, `cLiTwo (1−z)`, `log z`, `log (1−z)` — the pointwise form of the
+three domain facts above. Together these make the reflection identity's two
+sides analytic on the ball, which is the hypothesis the identity theorem
+(`AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`) consumes. -/
+
+/-- `cLiTwo` is analytic at each point of the open unit disc. -/
+theorem cLiTwo_analyticAt {z : ℂ} (hz : ‖z‖ < 1) : AnalyticAt ℂ cLiTwo z := by
+  refine cLiTwo_analyticOnNhd z ?_
+  rw [mem_emetric_ball_zero_iff,
+    show (1 : ENNReal) = ((1 : NNReal) : ENNReal) by simp, enorm_lt_coe]
+  exact_mod_cast hz
+
+theorem cLiTwo_analyticOnNhd_ball_half :
+    AnalyticOnNhd ℂ cLiTwo (Metric.ball (1 / 2 : ℂ) (1 / 2)) :=
+  fun _ hz => cLiTwo_analyticAt (norm_lt_one_of_mem_ball_half hz)
+
+/-- The reflected summand. Uses `one_sub_mem_ball_half` — this is where the
+self-mapping of the ball under `z ↦ 1−z` earns its keep. -/
+theorem cLiTwo_one_sub_analyticOnNhd_ball_half :
+    AnalyticOnNhd ℂ (fun z => cLiTwo (1 - z)) (Metric.ball (1 / 2 : ℂ) (1 / 2)) :=
+  fun _ hz =>
+    AnalyticAt.comp
+      (cLiTwo_analyticAt (norm_lt_one_of_mem_ball_half (one_sub_mem_ball_half hz)))
+      (analyticAt_const.sub analyticAt_id)
+
+/-- The `log`-product term. Uses `mem_slitPlane_of_mem_ball_half` on both
+factors — this is where `Re z > 0` earns its keep. -/
+theorem log_mul_log_one_sub_analyticOnNhd_ball_half :
+    AnalyticOnNhd ℂ (fun z => Complex.log z * Complex.log (1 - z))
+      (Metric.ball (1 / 2 : ℂ) (1 / 2)) := fun _ hz =>
+  (analyticAt_clog (mem_slitPlane_of_mem_ball_half hz)).mul
+    (AnalyticAt.clog (analyticAt_const.sub analyticAt_id)
+      (mem_slitPlane_of_mem_ball_half (one_sub_mem_ball_half hz)))
 
 end QOU.MathlibExt
