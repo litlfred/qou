@@ -60,18 +60,49 @@ enumerates artifacts by extension and `trace` is absent from all three sites:
 
 So even seeding from a real `lake build`, traces would be filtered out.
 
-**Where the fix goes — NOT this repo.** As of `lake-cache-refresh.yml`:120–124
-the workflow no longer calls `lean-olean-cache-seed.sh`; it resolves `SVC` from
-`scripts/lake-cache.sh` → `folio-assistant/scripts/lake-cache.sh`. The first
-does not exist in qou, so **the authoritative seeder lives in
-`litlfred/folio-assistant`** and must be fixed there. `lean-olean-cache-seed.sh`
-is now a secondary/legacy path.
+### Measured artifact set (2026-08-07) — it is bigger than `.trace`
 
-**Explicitly NOT done here, and why.** No glob was added. Whether lake writes
-traces beside the olean in `.lake/build/lib/lean/` or elsewhere under
-`.lake/build/` could not be verified — this container has zero traces to
-inspect, and the authoritative seeder is in a repo not checked out here. A
-guessed `-name '*.trace'` under the wrong directory would silently seed nothing
-while *appearing* to fix the bug, which is the failure mode this bean already
-cost a month to. Validation needs one `lake build` → seed → restore →
-`lake build` cycle to confirm oleans survive.
+Resolved empirically with two throwaway `lake init` projects at the pinned
+`v4.24.0`, using **olean mtime** as the oracle (the `✔`-line heuristic is
+unreliable). A **library-only** package is the right model — mathlib and QOU
+are libraries, and an exe-coupled package behaves differently (there,
+deleting traces was still a no-op, which is how a first pass mis-concluded
+that traces do not matter):
+
+| restored content (lib-only) | `lake build` |
+|---|---|
+| `lib` + `ir`, everything | **no-op** |
+| `lib` + `ir`, `.trace` deleted | REBUILT ← `.trace` **required** |
+| `lib` + `ir`, `.hash` deleted | no-op — `.hash` not needed |
+| `lib` + `ir/*.setup.json`, no `ir/*.c` | REBUILT ← `ir/*.c` **required** |
+| `lib` only, no `ir/` | REBUILT |
+| `lib` only, olean+ilean (the old seeder) | REBUILT |
+
+Minimal honoured set: **`.olean`, `.ilean`, `.trace`, `ir/*.c`,
+`ir/*.setup.json`.** The `.trace` framing in `02kc` is correct but incomplete —
+each module job records three outputs (`o`, `i`, **`c`**), so dropping the `ir/`
+C output invalidates the module just as dropping the trace does.
+
+### Where the fix went
+
+**Not** folio-assistant. `folio-assistant/scripts/lake-cache.sh` (`:520`) seeds
+with `tar czf - -C "$root" .lake` — the **whole** `.lake` tree — so it cannot
+miss an artifact class, and it already refuses to seed below 90% trace
+coverage. It is correct as written, and it is what
+`lake-cache-refresh.yml`:120–124 actually invokes.
+
+The defect was the qou-local legacy seeder `scripts/lean-olean-cache-seed.sh`,
+which hand-picks by extension. Fixed in this branch: `trace` added to the
+mathlib ext loop, `ir/{*.c,*.setup.json}` collected, package/paper `find`
+expressions widened (and their `-o` alternatives parenthesised — unparenthesised,
+`-type f` bound to the last `-name` only), plus a trace-coverage guard mirroring
+the service script's. Verified: `bash -n` clean; the guard refuses this
+container's 0%-trace tree; and the new set restores to a **no-op** end-to-end
+while the old set rebuilds.
+
+**Still open:** the live branch itself is unchanged. Reseeding it needs a real
+`lake build` of mathlib at the pinned rev (30–60 min) — the guard now makes a
+bad reseed fail loudly instead of publishing silently-useless oleans, but it
+does not fix the already-published branch. Note also that the restored tree
+carries **no mathlib sources at all** (0 `.lean` outside `build/`), only
+`.lake/build/lib`, which is a separate gap from the artifact-set one.
