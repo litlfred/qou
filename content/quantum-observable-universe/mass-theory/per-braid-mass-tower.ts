@@ -27,4 +27,20 @@ export default proposition({
     status: "verified",
   },
   lean: { ref: "qou:QOU.BraidKnot.perBraidMassTower" },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** The " +
+        "`PerBraidMassTower` class types `trM`, `phiQ`, `mark_z` and `mass` " +
+        "over `ℝ`. Three constructs force it and none has a generic-`CommRing` " +
+        "form: the absolute values $|\\mathrm{tr}_M(\\xi)|$ in every summand " +
+        "(an order-theoretic operation), the quantum dilogarithm $\\Phi_q$ " +
+        "(transcendental), and the Markov weight " +
+        "$z = 1/(q^{1/2} + q^{-1/2})$ (a real square root). The tower is a " +
+        "statement about evaluated MeV masses, so it sits on the archimedean " +
+        "side of the wall by construction.",
+    },
+  ],
 });
