@@ -106,3 +106,20 @@ bad reseed fail loudly instead of publishing silently-useless oleans, but it
 does not fix the already-published branch. Note also that the restored tree
 carries **no mathlib sources at all** (0 `.lean` outside `build/`), only
 `.lake/build/lib`, which is a separate gap from the artifact-set one.
+
+## Trap: `lake build QOU` PRUNES `lake-manifest.json` — do not commit it
+
+Observed 2026-08-07 while running the reseed build. `lake build QOU` resolves
+only the `QOU` target's dependency cone, then **rewrites**
+`content/quantum-observable-universe/lean/lake-manifest.json` with the
+unvisited packages removed — here `doc-gen4`, `Cli`, `UnicodeBasic`,
+`BibtexQuery`, `MD4Lean` (11 insertions, **51 deletions** of pinned revisions).
+
+Committing that would drop the pins the blueprint / doc-gen4 workflows build
+from. It shows up as an innocuous single-file `M` in `git status` after any
+targeted build, so the stop-hook "commit your changes" prompt points the wrong
+way here. **Revert it** (`git checkout -- <path>`), do not commit, and re-check
+after a build finishes — lake may rewrite it again on completion.
+
+Build a superset target (or plain `lake build`) if the manifest must stay
+intact.
