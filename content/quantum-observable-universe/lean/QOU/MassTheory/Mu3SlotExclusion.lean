@@ -1,0 +1,168 @@
+import QOU.MassTheory.Mu3BlockwiseExclusion
+
+/-!
+# The exclusion survives the GAP-7 slot correction: `∑Δ²g + Δ³g ≥ 0` on the whole class
+
+`Mu3BlockwiseExclusion` (merged) shows that a per-block multiplicatively-damped Wedderburn
+trace has `Δ²g ≥ 0`, closing the μ₃ door for that class **at the level of the pair term**.
+But the merged GAP-7 work (`UrsellSlotAlignment.triangle_moment_decomp`) established that the
+moments and the differences are indexed differently — `μₖ` by *particle* count, `Δᵐg` by
+*bond* count — so the triangle's correct assembly is
+
+    μ₃-slot  =  ∑_{pairs} Δ²g  +  Δ³g .
+
+That correction is **not** a formality here, because the third difference of a multiplicative
+block has the **opposite sign**:
+
+    Δ³ = −c(1−r_a)(1−r_b)(1−r_c)  ≤ 0     (`thirdDiff_multiplicative`)
+
+so the triple term pushes *toward* the door and could in principle overturn the pair-term
+exclusion.  This file proves it does not.
+
+## The result
+
+With damping factors in `[0, 1]`, writing `u = 1−r_a`, `v = 1−r_b`, `w = 1−r_c ∈ [0,1]`:
+
+    ∑Δ² + Δ³  =  c·(uv + uw + vw − uvw)  ≥  0
+
+because `uvw ≤ uv` (as `w ≤ 1`) while `uw, vw ≥ 0`.  Hence
+`slot_nonneg_multiplicative` and, by block-linearity of both differences,
+`mu3_slot_ne_blockwise_multiplicative` — **`μ₃ > 0` is unreachable by a per-block
+multiplicatively-damped trace even under the corrected slot assembly.**
+
+This is the structural counterpart of the numerical observation reported when GAP-7 landed
+(the correction "roughly doubles the magnitude but preserves the sign"): here the
+sign-preservation is proved for the entire class, not measured on two isotopes.
+
+## Honest scope
+
+Unchanged from `Mu3BlockwiseExclusion`: this excludes the per-block multiplicatively-damped
+class.  It does **not** show the H₉ `|χ|` joint traces lie in that class.  Note also that the
+triple result needs, beyond the pair result's `r ≤ 1`, only a **single** extra lower bound
+`0 ≤ r_c` (used for `uv(1−w) ≥ 0`) — not `0 ≤ r` on all three.  The formalization found this:
+`nlinarith` closed the goal without the other two, so they were dropped rather than left in as
+decorative hypotheses.
+
+Verified `lean`-direct exit 0, sorry-free.
+
+-- Ref: [manuscript] docs/audits/2026-07-26-deltalambda-mu4-rhoF-cluster.md
+-/
+
+namespace QOU.MassTheory.Mu3SlotExclusion
+
+open QOU.MassTheory.Mu3ClusterModularity QOU.MassTheory.Mu3BlockwiseExclusion
+
+variable {ι : Type*}
+
+/-! ### The third mixed difference -/
+
+/-- The **third mixed finite difference** on the three-bond Boolean lattice:
+`Δ³g = g_abc − g_ab − g_ac − g_bc + g_a + g_b + g_c − g_∅`. -/
+def thirdDiff (g₀ gₐ g_b g_c gₐᵦ gₐ_c g_bc gₐᵦ_c : ℝ) : ℝ :=
+  gₐᵦ_c - gₐᵦ - gₐ_c - g_bc + gₐ + g_b + g_c - g₀
+
+/-- **`Δ³` commutes with finite sums** — the three-bond analogue of `secondDiff_sum`. -/
+theorem thirdDiff_sum (B : Finset ι) (g₀ gₐ g_b g_c gₐᵦ gₐ_c g_bc gₐᵦ_c : ι → ℝ) :
+    thirdDiff (∑ l ∈ B, g₀ l) (∑ l ∈ B, gₐ l) (∑ l ∈ B, g_b l) (∑ l ∈ B, g_c l)
+              (∑ l ∈ B, gₐᵦ l) (∑ l ∈ B, gₐ_c l) (∑ l ∈ B, g_bc l) (∑ l ∈ B, gₐᵦ_c l)
+      = ∑ l ∈ B, thirdDiff (g₀ l) (gₐ l) (g_b l) (g_c l)
+                           (gₐᵦ l) (gₐ_c l) (g_bc l) (gₐᵦ_c l) := by
+  unfold thirdDiff
+  rw [Finset.sum_sub_distrib, Finset.sum_add_distrib, Finset.sum_add_distrib,
+    Finset.sum_add_distrib, Finset.sum_sub_distrib, Finset.sum_sub_distrib,
+    Finset.sum_sub_distrib]
+
+/-- **The third difference of a multiplicative block flips sign.**
+`Δ³ = −c(1−r_a)(1−r_b)(1−r_c)`, non-positive for damping factors `≤ 1` — the opposite sign
+to `Δ² = +c(1−r_a)(1−r_b)`.  So the triple term pushes *toward* the μ₃ door. -/
+theorem thirdDiff_multiplicative (c rₐ r_b r_c : ℝ) :
+    thirdDiff c (c * rₐ) (c * r_b) (c * r_c)
+              (c * rₐ * r_b) (c * rₐ * r_c) (c * r_b * r_c) (c * rₐ * r_b * r_c)
+      = -(c * (1 - rₐ) * (1 - r_b) * (1 - r_c)) := by
+  unfold thirdDiff; ring
+
+/-! ### The corrected slot is still non-negative -/
+
+/-- **The slot sum of a single multiplicative block is non-negative.**
+`∑_{pairs}Δ² + Δ³ = c(uv + uw + vw − uvw)` with `u = 1−r_a`, `v = 1−r_b`, `w = 1−r_c`.
+Factoring as `uv(1−w) + uw + vw` shows it is `≥ 0`: the triple term never outweighs the three
+pair terms.
+
+**Sharp hypotheses.**  This needs `u, v, w ≥ 0` (i.e. all three `r ≤ 1`, each bond damps) but
+only the *single* extra bound `w ≤ 1` (i.e. `0 ≤ r_c`), which is what makes `uv(1−w) ≥ 0`.
+The lower bounds on `r_a, r_b` are **not** needed — the factoring singles out one bond, and by
+symmetry it suffices that *some* one of the three has `r ≥ 0`. -/
+theorem slot_nonneg_multiplicative {c rₐ r_b r_c : ℝ} (hc : 0 ≤ c)
+    (ha1 : rₐ ≤ 1) (hb1 : r_b ≤ 1) (hc0 : 0 ≤ r_c) (hc1 : r_c ≤ 1) :
+    0 ≤ secondDiff c (c * rₐ) (c * r_b) (c * rₐ * r_b)
+      + secondDiff c (c * rₐ) (c * r_c) (c * rₐ * r_c)
+      + secondDiff c (c * r_b) (c * r_c) (c * r_b * r_c)
+      + thirdDiff c (c * rₐ) (c * r_b) (c * r_c)
+                  (c * rₐ * r_b) (c * rₐ * r_c) (c * r_b * r_c) (c * rₐ * r_b * r_c) := by
+  rw [multiplicative_second_diff, multiplicative_second_diff, multiplicative_second_diff,
+    thirdDiff_multiplicative]
+  have hu : 0 ≤ 1 - rₐ := by linarith
+  have hv : 0 ≤ 1 - r_b := by linarith
+  have hw : 0 ≤ 1 - r_c := by linarith
+  have hw1 : 1 - r_c ≤ 1 := by linarith
+  -- uv + uw + vw − uvw ≥ 0 : uvw ≤ uv since w ≤ 1, and uw, vw ≥ 0
+  nlinarith [mul_nonneg (mul_nonneg hc hu) hv, mul_nonneg (mul_nonneg hc hu) hw,
+    mul_nonneg (mul_nonneg hc hv) hw,
+    mul_nonneg (mul_nonneg (mul_nonneg hc hu) hv) (sub_nonneg.mpr hw1)]
+
+/-- **The exclusion survives the slot correction, blockwise.**  If every Wedderburn block is
+multiplicatively damped by the three bonds (factors in `[0,1]`, non-negative bases), the
+corrected slot `∑_{pairs}Δ²g + Δ³g` is non-negative — so a **positive** `μ₃` cannot equal it.
+
+Together with `Mu3BlockwiseExclusion.mu3_ne_blockwise_multiplicative_cluster` this closes the
+per-block multiplicative class against **both** the raw pair reading and the GAP-7-corrected
+slot reading of the μ₃ residual. -/
+theorem slot_nonneg_blockwise_multiplicative (B : Finset ι) (c rₐ r_b r_c : ι → ℝ)
+    (hc : ∀ l ∈ B, 0 ≤ c l)
+    (ha1 : ∀ l ∈ B, rₐ l ≤ 1) (hb1 : ∀ l ∈ B, r_b l ≤ 1)
+    (hc0 : ∀ l ∈ B, 0 ≤ r_c l) (hc1 : ∀ l ∈ B, r_c l ≤ 1) :
+    0 ≤ ∑ l ∈ B,
+        (secondDiff (c l) (c l * rₐ l) (c l * r_b l) (c l * rₐ l * r_b l)
+        + secondDiff (c l) (c l * rₐ l) (c l * r_c l) (c l * rₐ l * r_c l)
+        + secondDiff (c l) (c l * r_b l) (c l * r_c l) (c l * r_b l * r_c l)
+        + thirdDiff (c l) (c l * rₐ l) (c l * r_b l) (c l * r_c l)
+            (c l * rₐ l * r_b l) (c l * rₐ l * r_c l) (c l * r_b l * r_c l)
+            (c l * rₐ l * r_b l * r_c l)) :=
+  Finset.sum_nonneg (fun l hl =>
+    slot_nonneg_multiplicative (hc l hl) (ha1 l hl) (hb1 l hl) (hc0 l hl) (hc1 l hl))
+
+/-- **`μ₃ > 0` is unreachable under the corrected slot assembly**, for any per-block
+multiplicatively-damped trace. -/
+theorem mu3_slot_ne_blockwise_multiplicative (B : Finset ι) (c rₐ r_b r_c : ι → ℝ)
+    {μ₃ : ℝ} (hμ : 0 < μ₃)
+    (hc : ∀ l ∈ B, 0 ≤ c l)
+    (ha1 : ∀ l ∈ B, rₐ l ≤ 1) (hb1 : ∀ l ∈ B, r_b l ≤ 1)
+    (hc0 : ∀ l ∈ B, 0 ≤ r_c l) (hc1 : ∀ l ∈ B, r_c l ≤ 1) :
+    μ₃ ≠ -(∑ l ∈ B,
+        (secondDiff (c l) (c l * rₐ l) (c l * r_b l) (c l * rₐ l * r_b l)
+        + secondDiff (c l) (c l * rₐ l) (c l * r_c l) (c l * rₐ l * r_c l)
+        + secondDiff (c l) (c l * r_b l) (c l * r_c l) (c l * r_b l * r_c l)
+        + thirdDiff (c l) (c l * rₐ l) (c l * r_b l) (c l * r_c l)
+            (c l * rₐ l * r_b l) (c l * rₐ l * r_c l) (c l * r_b l * r_c l)
+            (c l * rₐ l * r_b l * r_c l))) := by
+  have h := slot_nonneg_blockwise_multiplicative B c rₐ r_b r_c hc ha1 hb1 hc0 hc1
+  intro hEq
+  rw [hEq] at hμ
+  linarith
+
+/-! ### No non-negative re-weighting of Fréchet-obeying blocks can open the door -/
+
+/-- **Re-weighting cannot rescue a Fréchet-obeying spectrum.**  If every block's own second
+difference is non-negative (each block Fréchet-obeying, per
+`Mu3BlockwiseExclusion.frechet_lower_bound_supermodular`), then *any* non-negative
+re-weighting `w_λ ≥ 0` of the blocks is still supermodular.
+
+This forecloses the natural escape "keep the operator, change the Wedderburn weights": the
+weights `y_λ` are non-negative, so no choice of them can turn a blockwise-Fréchet-obeying
+trace submodular.  Opening the door requires changing the *blocks*, not their weights. -/
+theorem reweight_cannot_open_door (B : Finset ι) (w d₂ : ι → ℝ)
+    (hw : ∀ l ∈ B, 0 ≤ w l) (hd : ∀ l ∈ B, 0 ≤ d₂ l) :
+    0 ≤ ∑ l ∈ B, w l * d₂ l :=
+  Finset.sum_nonneg (fun l hl => mul_nonneg (hw l hl) (hd l hl))
+
+end QOU.MassTheory.Mu3SlotExclusion
