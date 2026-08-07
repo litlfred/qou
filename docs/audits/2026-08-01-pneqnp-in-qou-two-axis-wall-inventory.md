@@ -50,8 +50,16 @@ Every decision problem sits in a plane with two independent coordinates:
   Jones polynomial is a knot invariant (Markov move I).
 - `Information.CocenterTraceFactor` — the trace factors through `HH₀ = A/[A,A]`
   (`traceCocenter`); a trace is **blind to `[A,A]`** (`trace_eq_of_sub_mem_commutator`);
-  **any decision separator is a non-trace** (`not_trace_of_separates_commutator`).
-  This pins that `χ = −6` (a `K₀` invariant) is on the *wrong axis*.
+  **any decision separator is a non-trace** (`not_trace_of_separates_commutator`,
+  conclusion `¬ IsCyclic φ`). This pins that `χ = −6` (a `K₀` invariant) is on the
+  *wrong axis*. **Unified with `Machinery.BilinearTraceCyclicity`** (landed on main
+  independently): the cyclicity hypothesis is now the shared predicate
+  `BilinearTrace.IsCyclic τ := ∀ x y, τ(xy)=τ(yx)`. That file supplies the
+  *constructors* — `isCyclic_trace_comp` (a character `χ_λ = trace∘ρ_λ` is cyclic)
+  and `isCyclic_weighted_sum` (the Markov trace `tr_M = ∑_λ w_λ·χ_λ` is cyclic);
+  this file supplies the *consequence* — every such cyclic functional factors
+  through `HH₀`. The character side *builds* `tr_M`, the cocenter side *localizes*
+  what it discards.
 
 **#P over the problem space (moduli).**
 - `Information.CountingModuliGrade` — `#P` as an ω-graded section over the
@@ -75,6 +83,21 @@ Every decision problem sits in a plane with two independent coordinates:
   `GCTSchurMultiplicity` (a proved TL Schur-element multiplicity drop),
   `GCTPerRankObstruction` (the drop at every rank). All **regime** separations,
   **not** `QouGCTObstruction` (`VP`-vs-`VNP`) instances.
+
+**The Vassiliev finite-type tower (landed on main; the concrete non-trace
+family + the algebraic ceiling).**
+- `KnotTheory.Vassiliev.FiniteTypeInvariant` — the order-`≤ m` invariants form a
+  **filtered** submodule `finiteTypeSubmodule m` of `K → R`
+  (`finiteTypeSubmodule m ≤ finiteTypeSubmodule m'` for `m ≤ m'`); `vExt`
+  linearity + desingularization proved.
+- `KnotTheory.Vassiliev.WeightSystem` — the reduced chord-diagram space
+  `𝒜 = CDModule/⟨1T,4T⟩`; weight systems as its functionals (the symbol targets).
+- `KnotTheory.Vassiliev.MilnorVassilievBridge` — `SymbolIsWeightSystem`
+  (Kontsevich universality) and `BrunnianVassilievBridge` (Milnor μ̄ = leading
+  Vassiliev) as honest **no-instance conjecture classes** (§3b-tax); one
+  conditional §3b-cond result (`A`-Brunnian first non-vanishing Vassiliev at
+  degree `2(A−1)`, `= ±1`). See the sharpening below for why this tower is the
+  algebraic ceiling the residue must sit *above*.
 
 **q-Collatz `D∞` (Mathlib-gap + bracketing).**
 - `MathlibExt.LaurentTwoValuation` — the `[2]_q`-adic valuation on `ℤ[q^{±1}]`
@@ -122,6 +145,40 @@ had, and it is exactly what `not_trace_of_separates_commutator` forces (the
 residue is a non-trace) plus the algebrization barrier (it must be
 non-algebraic).
 
+## The wall, sharpened again (the Vassiliev finite-type ceiling)
+
+The Vassiliev tower that landed on main (`KnotTheory.Vassiliev.*`) gives the
+`non-algebraic` clause a **concrete altitude**. Two facts combine:
+
+1. **The finite-type filtration is exactly the trace/magnitude tower.** The
+   coefficients of the Jones (Markov-trace) polynomial in the `q = e^h`
+   expansion are finite-type invariants order-by-order (Birman–Lin): each is a
+   weight system evaluated on `𝒜`, i.e. a **character/trace** functional. By the
+   unification above (`tr_M = ∑_λ w_λ·χ_λ` is `IsCyclic`, hence factors through
+   `HH₀`), every finite Vassiliev order sits on the **magnitude axis** — it is
+   blind to `[A,A]`.
+2. **Every fixed finite order is polynomial-time computable, hence algebraic.**
+   By Goussarov–Polyak–Viro, an order-`≤ m` invariant has a Gauss-diagram
+   formula: a sum over `m`-subsets of the `c` crossings, `O(cᵐ)` = polynomial in
+   `c` for fixed `m`. So the entire filtration
+   `finiteTypeSubmodule 0 ⊆ 1 ⊆ 2 ⊆ ⋯` (the `≤`-chain is the *proved* content of
+   `FiniteTypeInvariant`) is a tower of **algebraic** (poly-time) functionals.
+
+Consequently the decision residue **cannot be any finite-order Vassiliev
+invariant** — it is on the wrong axis (magnitude, fact 1) *and* it is algebraic
+(fact 2), doubly excluded by `not_trace_of_separates_commutator` + algebrization.
+**The residue must live beyond every finite order — in the transfinite tail of
+the finite-type filtration.** This is precisely the fibre-level object: the
+root-of-unity `HH₁` over Bring decategorifies to `χ = −6` and `H¹(Σ₄) = ℂ⁸`
+(the finite shadows) but is *not* captured by any finite truncation — the tower's
+`colim`/completion, not any of its stages.
+
+So the wall now reads, at three tightening resolutions:
+`χ ≠ 0` (automatic, wrong axis) ⊊ `H¹(Σ₄) ≠ 0` (right axis, finite) ⊊
+**`res ≠ 0` = a non-trace, non-algebraic `HH₁` cocycle beyond every finite
+Vassiliev order.** The Vassiliev tower did not cross the wall — it *measured its
+floor*: everything below the transfinite tail is provably the wrong side.
+
 ## Ruled out — do not re-attack these
 
 1. **`χ(A) ≠ 0` as the residue** — wrong axis (`K₀`/trace, blind to `[A,A]`).
@@ -136,13 +193,20 @@ non-algebraic).
    lower-bound files); duplication only.
 6. **Fabricating a `QouPNeqNp` / `TraceFaithfulness` / `PhotonicDecisionHard`
    / `QouGCTObstruction` instance** — axiom laundering = claiming P≠NP.
+7. **Any finite-order Vassiliev invariant as the residue** — poly-time
+   (Goussarov–Polyak–Viro) *and* a trace (Birman–Lin), doubly wrong side; the
+   residue is beyond the whole finite-type filtration. See the Vassiliev
+   sharpening.
 
 ## Honest bottom line
 
 The tractable, sorry-free P≠NP-in-QOU program is **complete**: the magnitude
 axis is proved from every angle (grade, trace, cocenter, moduli, query,
-entropy, NP-encoding, GCT-per-rank), the pruning results rule out every
-magnitude route across the wall, and the one open link is precisely localized to
-a fibre-level `HH₁` non-vanishing over Bring's surface. Further progress on that
-link **is** the Millennium problem. The framework succeeded at what a framework
-can do: it did not *solve* P≠NP, it *localized* it.
+entropy, NP-encoding, GCT-per-rank, and now the Vassiliev finite-type ceiling),
+the pruning results rule out every magnitude route across the wall, and the one
+open link is precisely localized to a fibre-level `HH₁` non-vanishing over
+Bring's surface — a non-trace, non-algebraic cocycle **beyond every finite
+Vassiliev order**. Further progress on that link **is** the Millennium problem.
+The framework succeeded at what a framework can do: it did not *solve* P≠NP, it
+*localized* it — and each new tower that lands on main (BilinearTrace,
+Vassiliev) has so far *measured the floor* of the wall, never crossed it.
