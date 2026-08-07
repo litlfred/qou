@@ -55,15 +55,44 @@ the session's Lean work went into repairing `SpechtStandardBasis` (PR #4702),
 which is what made it possible to see that brick-4 was already done and that
 brick-5 reduces to this single lemma.
 
-## Next honest step
+## Next honest step — now reduced to ONE identity
 
-Formalize Young's seminormal base vector: for a shape `μ` over a char-0 field,
-exhibit a nonzero `v ∈ S^μ` that is a simultaneous eigenvector of the JM elements
-`X_s` with the prescribed content tuple. Standard route is the superstandard /
-row-reading tableau `T₀` and its polytabloid, with the eigenvalue computation
-from the JM action on polytabloids. Note the base ring is genuinely
-`[Field k] [CharZero k]` — the `[CommRing k]` form is **false** (contents collide
-mod `p`, eigenspaces merge), and that is already documented at the decl.
+Two findings sharpen this considerably.
+
+**(a) The stated blocker was stale.** The decl's docstring said the construction
+"needs the polytabloid straightening machinery not yet built here". False:
+`JucysMurphy.lean` imports `QOU.BraidKnot.SpechtStandardBasis`, and after #4702
+that machinery (`standardPolytabloid_straightening`, `standardPolytabloid_span`,
+Garnir core `straightening_step_colMax`) is **proved sorry-free**. Docstring
+corrected. What remains is the eigen-computation, not missing infrastructure.
+
+**(b) The reduction is already built and sorry-free.**
+[`OVBaseSeminormalVector.lean`](../content/quantum-observable-universe/lean/QOU/BraidKnot/OVBaseSeminormalVector.lean)
+(0 sorries; imports `JucysMurphy`, so the residual must land there or in a leaf —
+the same import-direction constraint that forced #4692's `HookProductHLF` layout).
+Its `jm_polytabloid_split` gives, for any tableau `t`:
+
+    X_s · e_t = #{j < s : (j s) ∈ colStab t} · (−e_t)
+                + Σ_{j < s, (j s) ∉ colStab t} e_{(j s)·t}
+
+For the column-superstandard `T₀` with `s` at cell `(i, j)`, the same-column count
+is `i`, giving `−i · e_{T₀}`; since `content(i,j) = j − i`, the **sole remaining
+obligation** is the off-column (Garnir) collapse:
+
+    Σ_{j' < s, (j' s) ∉ colStab T₀} e_{(j' s)·T₀} = j · e_{T₀}
+
+i.e. the off-column sum contributes exactly the count of cells strictly left of
+`s` in its row. Numerically confirmed for the column-superstandard choice in
+[`2026-07-19-ov-base-vector-column-superstandard-verification.md`](../docs/audits/2026-07-19-ov-base-vector-column-superstandard-verification.md).
+
+That single identity is the whole gap. It is real Garnir combinatorics — not a
+wiring exercise — so it should be attacked as a proof, with the existing bricks
+(`starSum_rep_polytabloid`, `colGarnir_fullgroup_sum`,
+`colGarnir_single_column_of_annihilation`, `sameColumn_sum_polytabloid`) as input.
+
+Base ring is genuinely `[Field k] [CharZero k]` — the `[CommRing k]` form is
+**false** (contents collide mod `p`, eigenspaces merge); already documented at the
+decl, do not "generalize" it.
 
 ## Caveat for whoever picks this up
 
