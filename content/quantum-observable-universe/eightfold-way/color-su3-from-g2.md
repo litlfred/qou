@@ -67,16 +67,50 @@ argument that the normalization has genus $3$ and inherits $S_4$ stops
 short of the Klein quartic, because at least one other genus-3 curve
 satisfies both conditions.
 
-Identifying the normalization therefore requires a \emph{separating}
-invariant --- one that distinguishes Klein from Fermat (and from any
-further $S_4$-admitting genus-3 curve).  The separator must be computable
-from the degeneration data; a separator computed only from the two
-candidate curves does not constrain which of them the pinch produces.  The
-decisive version is the period matrix; discrete candidates (full
-automorphism-group order, bitangent structure, Weierstrass gap sequences,
-quotient-genus signature) are cheaper and may suffice.  None has been
-computed.  This is a scope-(a) negative: the degeneration itself is not
-refuted, only the argument offered for it.
+\textbf{The competitor set is in fact infinite.}  Fermat is not an
+isolated coincidence.  The $S_4$-invariant ternary quartics form a
+two-dimensional space, so the genus-3 curves admitting $S_4$ contain an
+entire \emph{pencil}
+
+$$
+C_t : x^4 + y^4 + z^4 + t\,(x^2 y^2 + y^2 z^2 + z^2 x^2) = 0 ,
+$$
+
+with parameter $t$ (not $\lambda$, which throughout this chapter denotes a
+partition), smooth --- hence of genus $3$ --- for every $t$ outside
+$\{2,\, -2,\, -1\}$, with Fermat the single member $t = 0$.  The
+fibres of $t \mapsto [C_t]$ in moduli are finite, so
+infinitely many pairwise non-isomorphic genus-3 curves carry a faithful
+$S_4$ action.  All of this is machine-verified in exact rational
+arithmetic (\texttt{s4\_genus3\_pencil\_infinite\_family.py}), and only
+\emph{finiteness} of the automorphism group is used --- the sharp Hurwitz
+bound is deliberately avoided here, for the reason given above.  The
+$S_4$ bridge therefore does not merely fail to choose between two
+candidates: it fails to cut a $\mathbb{P}^1$ down at all.
+
+Identifying the normalization therefore cannot be reduced to telling
+Klein and Fermat apart.  Many invariants do that --- the
+automorphism-group order alone separates them, $168$ against $96$ ---
+while saying nothing about the rest of the family, and nothing whatever
+about which member the pinch produces.  What is required is an invariant
+that the \emph{degeneration itself determines}: read off the pinched
+cycle and the nodal curve, rather than computed from a shortlist of
+candidate targets.  The decisive version is the period matrix.  None has
+been computed.  This is a scope-(a) negative: the degeneration itself is
+not refuted, only the argument offered for it.
+
+One sharpening is available immediately, and it may carry much of the
+weight.  Pinching a single \emph{non-separating} cycle on a genus-4 curve
+yields a one-node curve of arithmetic genus $4$ whose normalization has
+genus $3$ \emph{together with two marked points} --- the two preimages of
+the node, consistent with $3 + 1 = 4$.  The object the degeneration
+produces is therefore not a bare genus-3 curve but a pair
+$(\Sigma_3, \{p, q\})$ carrying an $S_4$-stable point pair.  That is
+strictly more data than "genus $3$ and admits $S_4$", and unlike an
+invariant chosen after the fact it is supplied by the pinch.  Whether
+requiring an $S_4$-stable pair cuts the pencil down to a finite set ---
+ideally to the Klein quartic alone --- has not been computed, and is the
+natural next probe.
 
 \textbf{Status:} the $S_4$ bridge mechanism is computationally verified
 (\texttt{s4\_bridge\_verification.py}, \texttt{s4\_fano\_action.py}).

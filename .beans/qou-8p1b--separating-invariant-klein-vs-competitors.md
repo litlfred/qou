@@ -47,17 +47,58 @@ before investing in any separator.
 
 ---
 
-## RE-SCOPE REQUIRED (2026-08-07, from `qou-8p1a`)
+## RE-SCOPE (2026-08-07, from `qou-8p1a`) — the task has changed
 
-`qou-8p1a` closed: the S_4-admitting genus-3 curves are an **infinite pencil**,
-not `{Klein, Fermat}`.  **This bean as written is therefore no longer
-sufficient to settle `qou-8pl1`.**  An invariant that separates Klein from
-Fermat says nothing about the rest of the family -- and worse, an invariant
-computed only from two hand-picked curves does not constrain which member the
-pinch produces.
+`qou-8p1a` closed: the S_4-admitting genus-3 curves are an infinite **pencil**
+`C_t : x^4+y^4+z^4 + t(x^2y^2+y^2z^2+z^2x^2)`, smooth for all `t` outside
+`{2,-2,-1}`, Fermat being `t = 0`.  (`t`, not `lambda` — `lambda` is the
+partition symbol in that chapter.)
 
-Re-scope to: find an invariant **the pinch itself determines**.  The question
-is no longer "what tells Klein and Fermat apart" (many things do -- `|Aut|`
-alone, 168 vs 96) but "what does the Bring degeneration actually pin down about
-the normalization".  Until that is posed, computing invariants is measuring the
-wrong thing.
+**This bean as written is void.**  "Find an invariant separating Klein from
+Fermat" is trivially satisfiable — `|Aut|` alone does it, 168 against 96 — and
+settles nothing: it says nothing about the rest of the pencil, and nothing
+whatever about which member the pinch produces.  Any invariant computed from a
+shortlist of candidate targets has this defect.
+
+## The correct task: an invariant the DEGENERATION determines
+
+Read the invariant off the pinch data — the cycle being pinched and the nodal
+curve — not off candidate answers.
+
+## A sharpening that may do most of the work
+
+The chain in the chapter is written
+
+    Bring Sigma_4 (genus 4)  --pinch-->  nodal, geometric genus 3  --normalize-->  Sigma_3
+
+and then asks "is `Sigma_3` the Klein quartic?".  But pinching **one
+non-separating** cycle on a genus-4 curve yields a one-node curve of arithmetic
+genus 4 whose normalization has genus 3 **with two marked points** — the two
+preimages of the node (arithmetic genus `3 + 1 = 4`, consistent).  So the object
+the degeneration actually produces is not a bare genus-3 curve but a
+
+    genus-3 curve together with an S_4-stable unordered pair of points  (Sigma_3, {p,q}).
+
+That is strictly more data, hence strictly more rigid, and it is determined by
+the degeneration rather than chosen after the fact.
+
+**Concrete probe (unverified — this is the proposal, not a result):** compute
+the S_4-orbit structure on the pencil members and ask which `C_t` admit an
+S_4-stable pair of points at all.  If that condition cuts the pencil down to a
+finite set — ideally to Klein — it is exactly the separator this bean was
+looking for, and it comes from the right side of the problem.  If it does not
+cut it down, that is also informative: it says the marked points carry no
+selecting power either, and the pinch must be pinned by the cycle class itself.
+
+## Then, and only then
+
+Only after the target class is genuinely narrowed does a period-matrix
+computation (`qou-8p1c`) become the decisive step rather than an expensive way
+to compare two curves nobody has shown are the candidates.
+
+## Prerequisite for the probe
+
+Classify the S_4-invariant 1-cycles on the Bring surface up to the S_5 action
+(`H_1(Sigma_4, Z)` has rank 8, `S_5` acts).  Different invariant cycles may
+pinch to different members — in which case the chain as written is
+under-determined and needs to say WHICH cycle.
