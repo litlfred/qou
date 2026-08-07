@@ -336,3 +336,140 @@ sample, 3 from the one clean family), the "upstream propagation" claim
 and this one. The fix each time was the same — build the discriminator and
 run it over the whole set.
 
+---
+
+# The residual measured at the source — and it is three classes, not one
+
+**Tool:** [`computations/float64_entry_tracer.py`](../../computations/float64_entry_tracer.py)
+(12-case `--self-test`)
+
+The section above closed by declaring the residual "genuine per-file work
+and … not mechanizable", on the strength of **one** example
+(`markov_stab_trace_axis_probe`). That is the same one-example generalisation
+the paragraph directly above it warns about — the fourth in the arc. Measured,
+it is wrong twice over: the localization **is** mechanizable, and the residual
+is not one class.
+
+mpmath funnels every `float -> mpf` conversion through `from_float` /
+`from_npfloat`. Patching those records the source line where a float64 enters,
+so the entry point is *read off* rather than reasoned about.
+
+## Re-measurement first
+
+Re-running the sweep at `14865d3d`: **`RE_PADS` 19, `CLEAN` 26, 228 fields** —
+the previous 20/229 minus exactly the one `gt_matrix_pslq_probe` fix, which
+independently confirms that fix landed. ("The other 18" was arithmetic
+slippage; 20 − 1 = 19.)
+
+Of the 19: **18 traced, 1 not measured** — `rho_k_co_casimir_extended` (+71)
+exceeds a 900 s budget, as it exceeded the sweep's. Untested is not clean.
+
+| class | producers | fields | mechanism |
+|---|---:|---:|---|
+| **A — float64 genuinely enters** | 9 | 118 | a located source line |
+| **B — no float64 enters at all** | 9 | 39 | see below; not one thing |
+| unmeasured | 1 | 71 | `rho_k_co_casimir_extended` |
+
+## Class A: located, and it clusters
+
+Not nine independent investigations — three idioms:
+
+**A shared downcast in a library**, `computations/hecke/hecke_characters.py:214`:
+
+```python
+b = float(mp.sqrt(abs(b_sq)))
+```
+
+reached **527 310** times by `su4_1111_markov_trace_probe`, 11 868 by
+`chirality_avg_content_atomic`, 4 by `chirality_avg_content_chiral`. One line,
+three producers.
+
+**`mpf(<float out of JSON>)`** — `json.load` yields Python floats, and wrapping
+one in `mpf` promotes 53 bits to 50 dps:
+`v_hat_to_delta_lambda_bridge.py:125-127,152-153`, `xi_ell_phi_q_probe.py:181`,
+`phi_q_spectral_combiner_probe.py:107,109`, `rho_k_h3a_lp_dual.py:403,420`.
+
+**`mpf(<float-valued name>)`** — including
+`binding_factor_f_sequence.py:76`, the instance this document already
+documented as live and unreachable by the static detector. It is reachable
+here, which is the tracer's calibration case.
+
+**The largest is deliberate, and the fix is the other one.** The 71 fields of
+`chirality_avg_content_atomic` all come from line 201, `mpf(chi_val_f64)`,
+fed by a Rust kernel invoked as `precision="f64"` under a comment reading
+*"53-bit precision still"* — and the witness itself records
+`"kernel_precision": "f64"`. The quantity **is** float64. So the defect is not
+lost precision to recover; it is serializing 53 bits at 50 dps, contradicting
+the witness's own declaration. Per the scope note above, that is the
+"genuinely float64 ⇒ stop promoting / serialize at true precision" branch.
+
+**Expected residue, not a defect:** `bring_homology_pairing_integration.py:89`
+and `:122` are the comparison tolerances `1e-45` and `1e-10`. Like
+`AGREEMENT_RTOL`, they must not be "fixed".
+
+## Class B: no float64 enters — and the detector cannot see this
+
+Nine producers convert no repo float64 at all; their only padding-prone
+conversions are mpmath's own heuristic constants (`functions/zeta.py:483`,
+`if abs(z) >= 1.4`, reached through `clsin`).
+
+Their flagged values are genuine high-precision computations of quantities
+that are **exactly integers**:
+
+| producer | field | value | truth |
+|---|---|---|---|
+| `markov_stab_trace_axis_probe` | `tr_M_identity_H4_at_q0` | `0.999…99863` | 1 |
+| `gap_a4_T11_klein_J_invariant_probe` | `f_leading_ratio` | `1.000…0001` | 1 |
+| `gap_a4_T6_q_deformed_icosahedral_probe` | `…[4].h2` | `10.000…000323` | 10 |
+
+`is_f64_padded` flags a string whose relative distance to the nearest binary64
+is under `1e-30`. A value that is *mathematically* 1 and lands 1.4e-51 short
+by rounding sits that close to `1.0` — so it is flagged, though no float64 was
+ever involved. **The threshold cannot separate the two cases**, because a
+padded value truncated at 50 dps is also non-zero distance:
+
+| string | rel. distance to nearest f64 | flagged |
+|---|---|---|
+| `mpf(0.1)` printed at 55 dps | `0.0` | yes — really is padding |
+| `mpf(0.1)` printed at 50 dps | `1.56e-50` | yes — really is padding |
+| `tr_M(1)`, genuinely computed | `1.37e-51` | yes — **not** padding |
+
+This is a limit of any *static* test, not a bug in the detector: the string
+genuinely does not carry the answer. Only the source does. So some fraction of
+the residual is **not the defect** — and hunting for a float64 entry in those
+producers is looking for something that is not there.
+
+## And `propagated = 0` is wrong
+
+The section above claims, from the classifier that was never committed with
+it, that "not one padded value exists anywhere else in the corpus". A direct
+check refutes it. `qbeta_markov_trace_compute_accuracy_diagnostic` regenerates
+
+```
+0.024180175767745112208606528270138369407504796981812
+```
+
+and that exact string is already committed in
+`computations/qbeta/qbeta-markov-trace-norm-probe.witness.json` — itself one
+of the 19 re-padders. The padding is inherited, and the original "upstream
+propagation" reading was right for at least part of the set.
+
+Two things follow. The `LOCAL` verdict was reported for a producer whose value
+is verbatim upstream, so the classifier's discriminator was not doing what the
+prose says. And **that classifier is not in the repository** — neither it nor
+`repad_result.json` was ever committed, so the claim was never reproducible.
+The scale of the propagated class is therefore **unmeasured**; it is not
+`0`, and this document should not be read as saying how large it is.
+
+## What remains
+
+- `rho_k_co_casimir_extended` (+71) — never yet measured by any tool here.
+- Re-measure LOCAL vs propagated with a committed tool. The strip removed the
+  padding from upstream witnesses, so an exact-string search run against the
+  post-strip corpus is biased toward `LOCAL` by construction.
+- Class A is nine producers but three idioms; the two library-level ones
+  (`hecke_characters.py:214`, the JSON-read idiom) change numbers where they
+  are fixed, so source fix and witness regeneration stay separate commits.
+- Class B needs no producer fix. It needs the *detector* to stop claiming
+  these are float64 padding — or the producers to recognise an exact integer.
+
