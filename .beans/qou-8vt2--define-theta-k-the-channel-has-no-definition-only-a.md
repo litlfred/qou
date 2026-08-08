@@ -174,3 +174,93 @@ filter was used.
 A `u` obtained by inverting the anchors is a fit, is covered by
 `ratio_attained`, and does not close this bean. Per `qou-qmnb`, any candidate
 must yield theta ABSOLUTELY, per knot — not as a ratio.
+
+---
+
+# AV1 RESOLVED — NEGATIVE. And the corpus already had the answer. (2026-08-08)
+
+**AV1's premise was WRONG, and I nearly re-derived an established result.**
+Recording it in full because the failure mode is the one this bean exists to
+police, and it caught me.
+
+## There is no glyph collision
+
+`conj:binding-qbeta-complex-volume` §"The S channel through Phi_b" states it
+outright:
+
+> "the conjecture's decay side takes the concrete form
+>  `S(q_0) = Im frakV(u(q_0))`: the Chern-Simons part of the **deformed**
+>  complex volume at the substrate deformation u(q_0). The deformed volume
+>  itself is a theorem for 4_1 and explicitly computable via Neumann-Zagier"
+
+So the corpus PROSE already commits the S-channel `frakV` to the GEOMETRIC NZ
+object. The ambiguity I posited exists only in the Lean class field (`V : C -> C`
+is unconstrained, per this bean's headline finding), not in the conjecture. The
+"categorical reading gives no theta" alternative is not live.
+
+## What is actually true, and was already in the corpus
+
+`S` is not an abstract leak. It is
+
+    S_leak(q_0) := c_3(q_0) + Vol(4_1)
+
+— the **bar-odd residual of the Q_beta c_3 coefficient** after removing the
+bar-even amphichiral `-Vol(4_1)` face. `QOU/QBeta/SLeakZeroCrossing.lean`
+already carries the exact table:
+
+    | anchor | c_3          | S_leak = c_3 + Vol(4_1) |
+    | muon   | -2.02020024  | +0.00968298             |
+    | proton | -2.06934258  | -0.03945936             |
+
+I recomputed both from `S - Vol(4_1)` and got exactly these, then found the file.
+That is a corpus-grep miss on my part: the identity was Lean-side the whole time,
+and `SLeakZeroCrossing` even carries an explicit notation-collision guard warning
+against conflating this `S` with `SRigidity.S = Q_beta/E_0`.
+
+## AV5 (supersedes AV1) — theta_K and c_3 ARE THE SAME OPEN QUESTION
+
+Under `S = c_3 + Vol(4_1)` and `S = A_omega * kappa * (ln^2 q_0 - theta^2)`,
+
+    **theta_K is an affine reparametrisation of c_3.**
+
+"Derive theta_K" and "derive c_3" are one question. And the two arcs have been
+running on SEPARATE bean/doc trails without citing each other — which is why
+this bean was posed as if theta were a fresh unknown. It is not: the c_3 arc is
+substantially further along and carries structure this bean should inherit
+before proposing anything new:
+
+  * `docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`
+    — the CANONICAL framing. AGENTS.md says read it before any c_3 decision.
+  * The 6-entry flip-flop history in `docs/coordination/1ppq-qbeta.md`.
+  * AGENTS.md's own numbers corroborate the identification: it states c_3
+    "swings up to 3.47% at m_p-pin q_0". My computed proton deviation from -2 is
+    3.467%. Same quantity.
+  * `docs/audits/2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`
+    reports **c_3 = -2.069348 vs target -2.069343, 2.65 ppm** at proton-pinned
+    q_0. If that holds up it is far closer to a c_3 closure than anything the
+    theta arc produced in nine readings.
+  * AGENTS.md names the intended permanent fix: the **Q_beta Habiro element**
+    (parallel to alpha_EM's `[2]_q(1 - h^2 alpha)`).
+
+## THE ACTIONABLE REORIENTATION
+
+Stop searching for theta. **Read the c_3 arc first**, and specifically:
+
+  1. Check whether the 2.65 ppm Habiro-template c_3 result is live or was
+     retracted (the c_3 arc has a documented flip-flop history — do NOT assume).
+  2. If live, push it through `theta^2 = ln^2 q_0 - (c_3 + Vol(4_1))/(A_omega*kappa)`
+     and see what theta it implies — that would be a DERIVED theta, from the c_3
+     side, not an anchor inversion.
+  3. Carry this bean's exclusions across as filters on any such theta: it must
+     put the anchors on opposite sides of |Re u| = |Im u|
+     (`CompleteStructureExclusion.opposite_sides_of_diagonal`), and must not be
+     the anchor's own NZ deformation (`u_ne_zero_of_S_ne_zero`) nor the
+     substrate-matched Murakami meridian (`ChannelMeridianIdentification`).
+
+## Lesson recorded
+
+This bean's own headline is "theta_K has no definition". That remains true of the
+Lean class. But the QUESTION it names was already posed, better, elsewhere. The
+corpus-grep checklist (AGENTS.md) is meant to catch exactly this and I ran it
+against "theta", not against "S" or "c_3". Grep the OBJECT's aliases, not the
+symbol you happen to be holding.
