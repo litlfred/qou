@@ -73,9 +73,52 @@ not a cusp law either — a systematic `c`-dependence would have shown at `c = 2
 and does not, to 17 digits. More likely specific to that computation, as its own
 witness already says.
 
-Derives nothing. Reports two measured exponents, one textbook count that is an
-inference rather than a DGLZ statement, the size of the gap, and a bound on what
-could close it.
+RESOLVED 2026-08-08, BY A THEOREM IN A LOCAL FILE — AND AGAINST MY INFERENCE.
+`uploads/0611181v2.pdf` is van der Veen, "Proof of the volume conjecture for
+Whitehead chains", which the corpus already uses for the colored Jones values
+themselves. Its Main theorem reads
+
+    J_N(W_{a,b,c,d})(e^{2 pi i/N}) ~ exp{ (1/2 pi)[ (Vol + i CS) N
+                                                    + D log(N) + E ] }
+
+with "**If b = 1 we have D = 3 pi**". The N-power is therefore
+`N^{D/(2 pi)} = N^{3/2}`, and **D does not depend on c or d** — i.e. not on the
+number of components. The two manifolds at issue are both b = 1:
+
+    Whitehead link   = W_{0,1,1,0}   2 components -> N^{3/2}
+    Borromean rings  = W_{0,1,1,1}   3 components -> N^{3/2}
+
+So the corpus's cusp-independent `N^{3/2}` is THEOREM-BACKED at c = 2 and c = 3,
+not merely fitted, and the wrong step was mine: the naive `delta = c` reading of
+DGLZ eq (2.2) does not transfer to the colored-Jones observable. The Lemma 4
+route shows why — `J_N ~ C N^{(c+d+3)/2} S~_N^{c+d}`, and `S~_N` carries its own
+`N^{-1/2}` per factor, so the `(c+d)`-dependence cancels out of the net power.
+
+The probe is kept because the arithmetic below is still the right check and the
+bound on `g(c)` still holds; only the "unexplained" framing is retired.
+
+AND THE SAME PAPER CARRIES A LEAD ON THE CONSTANT. Van der Veen's `E` — the
+constant this corpus measures as `c_sigma` — is given EXPLICITLY in the proof of
+Lemma 4 (Steps 5-6) as a `(c+d+1)`-dimensional Gaussian integral,
+
+    Q_inf = psi * INT exp( -pi[ (c+d-(4a+c-d)i)|w|^2/2
+                                + 2 sum_j (|z_j| + |w|/2)^2 ] ) dw dz
+
+for the whole family. He evaluates it only far enough to show it is NONZERO. And
+his closing paragraph cites Gukov-Murakami conjecturing that "the number E is
+determined by the Ray-Singer torsion of the complement twisted by the holonomy
+representation", adding "We hope to investigate these conjectures for the
+Whitehead chains in a subsequent publication."
+
+That is this corpus's `c_sigma <-> torsion` question, named as an open problem at
+the end of the paper the corpus already reads its Jones values from. Connecting
+`Q_inf` to `c_sigma` needs Lemma 3's constant for `S~_N` and the J-vs-J'
+normalisation, neither done here — a direct evaluation gives
+`|Q_inf| / 2^{-3/4} = 0.8109`, which is not a recognisable constant and is what a
+missing normalisation factor looks like. Recorded as a route, not a result.
+
+Derives nothing. Reports two measured exponents, the size of a gap that a local
+theorem then closed, a bound on what could have closed it, and a lead.
 """
 
 from __future__ import annotations

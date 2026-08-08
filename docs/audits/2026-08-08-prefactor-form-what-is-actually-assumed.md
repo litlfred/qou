@@ -322,6 +322,64 @@ The `c = 3` deviation (L6a4, 0.35%) does not change that and is not a cusp law
 either: a systematic `c`-dependence would have shown at `c = 2` and does not, to
 17 digits. More likely specific to that computation, as its own witness says.
 
+### RESOLVED — by a theorem in `uploads/`, and against my inference
+
+The N-power tension does not survive a search. `uploads/0611181v2.pdf` is van der
+Veen, *Proof of the volume conjecture for Whitehead chains* — **the paper this
+corpus already reads its Whitehead colored-Jones values from**. Its Main theorem:
+
+```
+J_N(W_{a,b,c,d})(e^{2πi/N}) ~ exp{ (1/2π)[ (Vol + iCS)·N + D·log N + E ] }
+```
+
+> "If `b = 1` we have `D = 3π`"
+
+so the power is `N^{D/2π} = N^{3/2}`, and **`D` does not depend on `c` or `d`** —
+i.e. not on the number of components. Both manifolds at issue have `b = 1`:
+
+| link | Whitehead-chain label | components | power |
+|---|---|---|---|
+| Whitehead | `W_{0,1,1,0}` | 2 | `N^{3/2}` |
+| Borromean | `W_{0,1,1,1}` | 3 | `N^{3/2}` |
+
+So the corpus's cusp-independent `N^{3/2}` is **theorem-backed at `c = 2` and
+`c = 3`**, not merely fitted — and **the wrong step was mine**. The naive
+`δ = c` reading of DGLZ (2.2) does not transfer to the colored-Jones observable.
+Lemma 4 shows the mechanism: `J_N ~ C·N^{(c+d+3)/2}·S̃_N^{c+d}`, and `S̃_N`
+carries its own `N^{−1/2}` per factor, so the component-dependence cancels out of
+the net power.
+
+That also retires the "most plausibly the colored-Jones normalisation for a link"
+guess above: the link normalisation is exactly where it happens, and it is
+already worked out — in a file we had.
+
+### The same paper carries a live lead on the CONSTANT
+
+Van der Veen's `E` is the constant this corpus measures as `c_σ`, and he gives it
+**explicitly** in the proof of Lemma 4 (Steps 5–6) as a `(c+d+1)`-dimensional
+Gaussian integral, for the whole family:
+
+```
+Q_∞ = ψ ∫ exp( −π[ (c+d−(4a+c−d)i)|w|²/2 + 2 Σ_j (|z_j| + |w|/2)² ] ) dw dz
+```
+
+He evaluates it only far enough to prove it is **nonzero**. And his closing
+paragraph is this corpus's own open question, verbatim:
+
+> "In the same paper it is also conjectured that the number `E` is determined by
+> the Ray-Singer torsion of the complement twisted by the holonomy
+> representation. We hope to investigate these conjectures for the Whitehead
+> chains in a subsequent publication."
+
+So `c_σ ↔ torsion` is named as an open problem at the end of the paper the corpus
+reads its Jones values from, and nobody here connected the two.
+
+**Not banked.** Connecting `Q_∞` to `c_σ` needs Lemma 3's constant for `S̃_N` and
+the `J` vs `J'` normalisation, neither of which is done. A direct evaluation for
+the Whitehead link gives `|Q_∞| / 2^{−3/4} = 0.8109`, not a recognisable
+constant — which is what a missing normalisation factor looks like, not what a
+dead lead looks like. Route, not result.
+
 Machine-checked in
 `computations/probes/one_loop_cusp_normalisation_tension_probe.py`.
 

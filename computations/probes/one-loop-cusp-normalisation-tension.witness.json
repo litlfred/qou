@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T12:43:24.986515+00:00",
-  "commitSha": "6268b69950fabbad3f8806216d147edbd6e37a04",
+  "computedAt": "2026-08-08T12:59:59.673499+00:00",
+  "commitSha": "c8bdca83b37aee0dedcbe65caf24d687b0bf2650",
   "assertions": [
     {
       "name": "measured_N_power_is_cusp_independent",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 33,
   "computation": "one-loop-cusp-normalisation-tension",
   "scriptFile": "one_loop_cusp_normalisation_tension_probe.py",
-  "scriptHash": "d14dcd6561e4",
-  "scriptCommitSha": "6268b69950fabbad3f8806216d147edbd6e37a04",
+  "scriptHash": "a13c2ded717e",
+  "scriptCommitSha": "c8bdca83b37aee0dedcbe65caf24d687b0bf2650",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
