@@ -66,3 +66,35 @@ The broader 436 mostly carry no pin at all, which is a tolerated state — they 
 not need converting unless and until someone wants them audited. Do **not** bulk-
 convert: the point is that a pin should be *produced* by whatever writes it, not
 that every witness needs a pin.
+
+
+## CONFIRMED IN THE WILD 2026-08-08 — `zhabiro_phiq_production_crosscheck`
+
+This bean predicted that a backfilled pin dies on the first regeneration. Here
+is the second instance, caught before it was committed.
+
+Regenerating that producer drops the **entire** top-level provenance block:
+
+    lost: commitSha, computedAt, durationMs, engineVersion,
+          q0Anchor, q0Value, scriptCommitSha, scriptFile, scriptHash
+
+It writes its own `_provenance` key with a raw `json.dump` and never calls
+`WitnessBuilder.save()`, so every one of those top-level keys was **backfilled
+by a sweep**. Exactly the mechanism this bean describes, now observed on a
+second producer.
+
+Extra finding, and the sharper one: its committed `q0Value` is
+`1.109978595557334719899763…` — the **MUON** literal — while its `q0_source`
+labels a proton accessor. That witness was therefore generated through the
+cross-layer `except`-handler fallback that was removed corpus-wide on
+2026-08-08 (`q0_cross_layer_fallback_fix.py`). It is a preserved artifact of the
+defect class, not merely an unmaintained pin.
+
+Consequence: it must NOT be declared in `q0_anchor_manifest.json` until the
+producer stamps its own pin. Declaring first would turn an UNDETERMINED pin into
+a DECL_MISMATCH the next regeneration cannot clear. Held out mechanically in
+`computations/audits/q0_undetermined_triage.py` (`HOLD_OUT`).
+
+Order of operations for this one: give it the `stamp_staleness_metadata` fix
+this bean prescribes → regenerate (its q₀ becomes proton, honestly) → then
+declare `physical_proton`.

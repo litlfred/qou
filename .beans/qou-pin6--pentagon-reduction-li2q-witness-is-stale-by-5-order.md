@@ -63,3 +63,34 @@ Only then regenerate, as its own change with its own justification.
 `HOLD_OUT = {"pentagon_reduction_li2q"}` with this evidence inline, and the
 hold-out gates both `--apply` and `--audit-only`. Re-running the migration will
 not silently pick it back up.
+
+
+## SECOND INSTANCE 2026-08-08 — `probe_9b_gate_interface_algebra`
+
+Found the same way, during the UNDETERMINED-pin triage. Its witness records
+`muon` while the code resolves proton (tnjb class), so it was a declaration
+candidate — but regenerating it flips `allPassed` True → False on two
+assertions, both **cross-witness comparisons**:
+
+    structural_constants_match_probe1     0.0      -> 7.330992e-07  (tol 1e-09)
+    m3_residuals_match_hpower_witness     5.82e-15 -> 2.894e-06     (tol 1e-09)
+
+**Proven pre-existing, not caused by the 2026-08-08 anchor work.** Ran the
+producer from a `git worktree` at the base commit `d8d22890` — before any of
+that day's changes — and it emits **bit-identical** failing values. So the
+committed witness is stale and the producer has been unable to reproduce it
+since before this branch existed.
+
+Not declared, deliberately. Declaring it would convert an UNDETERMINED pin into
+a **DECL_MISMATCH**, which is worse: the declaration only pays off once the
+witness matches, and it cannot be regenerated without committing an assertion
+failure.
+
+Next step is the same shape as pentagon's: find what moved
+`structural_constants_match_probe1` away from its comparison target, decide
+whether the current code or the committed witness is right, then regenerate as
+its own change. Both comparison targets are other witnesses, so the answer may
+be that one of THEM is the stale side.
+
+Held out mechanically in `computations/audits/q0_undetermined_triage.py`
+(`HOLD_OUT`), with this evidence inline.

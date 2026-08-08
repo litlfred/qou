@@ -1,8 +1,8 @@
 {
   "engine": "numpy+scipy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T22:53:08.662767+00:00",
-  "commitSha": "bf41341cf6e27b7e01a52e5a46f5fc3f5f6e3475",
+  "computedAt": "2026-08-08T23:10:11.484346+00:00",
+  "commitSha": "ede32934b0888b364b0403e2b327d048ceebf8c0",
   "assertions": [
     {
       "name": "lp_feasibility_at_q0_two_row",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1888,
+  "durationMs": 3140,
   "computation": "alpha-5-lp-dual-crystal",
   "scriptFile": "alpha_5_lp_dual_crystal.py",
   "scriptHash": "fd7e3120a62d",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptCommitSha": "ede32934b0888b364b0403e2b327d048ceebf8c0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -612,6 +612,6 @@
       "ht6"
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
