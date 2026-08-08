@@ -128,6 +128,29 @@ rather than adding a ninth q-integer. **`lean`-direct exit 0.**
 > against this target. The number is used only as a **fingerprint** to recover
 > which function the author meant. The conjecture stays a conjecture.
 
+## (D2) is now Lean-proved
+
+[`QOU/Mass/QIntegerBarParity.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/QIntegerBarParity.lean)
+— sorry-free, `lean`-direct exit 0, `#print axioms` clean on all four
+(`propext, Classical.choice, Quot.sound`; no `sorryAx`). Generic `Field R`, §7c:
+no ordering, no `Real.sqrt`, nothing archimedean.
+
+| theorem | statement |
+|---|---|
+| `qIntBal_bar_even` | `[n]_{q⁻¹} = [n]_q` — **no hypothesis at all** (`inv_inv` is unconditional in a field) |
+| `qIntPoly_bar_covariant` | `qIntPoly q⁻¹ n = q⁻¹^(n−1)·qIntPoly q n`, needing only `q ≠ 0` |
+| `qIntPoly_bar_even_forces_degenerate` | bar-evenness of the geometric form forces `(q⁻¹^(n−1) − 1)·qIntPoly q n = 0` |
+| `bar_distinguishes_at_two` | smallest concrete witness: balanced fixed, geometric scaled by `q⁻¹` |
+
+The covariance proof goes through `Finset.sum_range_reflect` — `∑ q^{−i}` is the
+same sum read backwards — so it needs no closed form and no `q ≠ 1`.
+
+**Found on the way:** `QOU.Mass.QHookDimensionBalanced` was **not registered in
+`QOU.lean`** at all, which is why its olean was absent from the `lake-cache` and
+the first build attempt failed. Same class as the 213 library modules with no
+olean (bean `qou-k448`): with CI auto-triggers off, an unregistered module is
+built by nothing and read by nothing.
+
 ## Not done here
 
 The rename/reconcile sweep. Eight definitions across eight files, each with
