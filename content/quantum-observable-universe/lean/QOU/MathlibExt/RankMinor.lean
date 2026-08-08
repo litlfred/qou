@@ -155,4 +155,44 @@ theorem det_gram_map_ne_zero_of_linearIndependent {r n : ℕ} {k : Type*}
   rw [hcast, ← hdet, hz]
   simp
 
+/-! ## The same, over arbitrary finite index types
+
+`Selector r n` is `Fin`-indexed by construction (`StrictMono` needs an order),
+so everything above is stated for `Matrix (Fin r) (Fin n)`. A caller's matrix
+is usually indexed by whatever its data is indexed by — a set of tableaux, a
+quotient — so it has to be reindexed through `Fintype.equivFin` first. That is
+pure bookkeeping and belongs here, not at each call site. -/
+
+/-- **Index-type-agnostic form.** Same statement as
+`det_gram_map_ne_zero_of_linearIndependent`, with the row and column indices
+arbitrary finite types. -/
+theorem det_gram_map_ne_zero_of_linearIndependent' {ι κ : Type*} [Fintype ι] [Fintype κ]
+    [DecidableEq ι] {k : Type*} [Field k] [CharZero k] (M : Matrix ι κ ℤ)
+    (hM : LinearIndependent ℚ (M.map (Int.cast : ℤ → ℚ)).row) :
+    ((M.map (Int.cast : ℤ → k)) * (M.map (Int.cast : ℤ → k))ᵀ).det ≠ 0 := by
+  classical
+  set eι := Fintype.equivFin ι with heι
+  set eκ := Fintype.equivFin κ with heκ
+  -- transport `M` to `Fin`-indices
+  set M' : Matrix (Fin (Fintype.card ι)) (Fin (Fintype.card κ)) ℤ :=
+    M.submatrix eι.symm eκ.symm with hM'
+  -- independence survives: the rows are reindexed by a bijection *and* have
+  -- their entries permuted, the latter being a linear equivalence of `κ → ℚ`
+  have hM'ind : LinearIndependent ℚ (M'.map (Int.cast : ℤ → ℚ)).row := by
+    have hrow : (M'.map (Int.cast : ℤ → ℚ)).row
+        = (LinearEquiv.funCongrLeft ℚ ℚ eκ.symm) ∘
+            ((M.map (Int.cast : ℤ → ℚ)).row ∘ eι.symm) := rfl
+    rw [hrow]
+    refine (hM.comp _ eι.symm.injective).map' _ (LinearMap.ker_eq_bot.mpr ?_)
+    exact (LinearEquiv.funCongrLeft ℚ ℚ eκ.symm).injective
+  have key := det_gram_map_ne_zero_of_linearIndependent (k := k) M' hM'ind
+  -- and the Gram determinant is unchanged: the two reindexings cancel
+  have hgram : (M'.map (Int.cast : ℤ → k)) * (M'.map (Int.cast : ℤ → k))ᵀ
+      = ((M.map (Int.cast : ℤ → k)) * (M.map (Int.cast : ℤ → k))ᵀ).submatrix
+          eι.symm eι.symm := by
+    show ((M.map (Int.cast : ℤ → k)).submatrix eι.symm eκ.symm)
+        * ((M.map (Int.cast : ℤ → k)).submatrix eι.symm eκ.symm)ᵀ = _
+    rw [Matrix.transpose_submatrix, Matrix.submatrix_mul_equiv]
+  rwa [hgram, Matrix.det_submatrix_equiv_self] at key
+
 end QOU.MathlibExt.RankMinor

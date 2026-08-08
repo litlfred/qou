@@ -37,6 +37,20 @@ remaining honest brick-4 stub is the spanning / straightening core
 `SpechtStandardBasis.standardPolytabloid_straightening` (in
 `SpechtStandardBasisCore`).
 
+## ⚠ Status note (2026-08-08) — the table below is STALE
+
+`#print axioms` on this module today reports `[propext, Classical.choice,
+Quot.sound]` for `standardBasis`, `standardPolytabloid_span` **and**
+`specht_finrank_eq_numSYT`. There is no `sorry` tactic left in
+`SpechtStandardBasisCore`, `SpechtDominanceCore` or `SpechtTriangularCore` —
+`grep -E '^\s+sorry\s*$'` finds none. Both the straightening/spanning stub and
+the dominance core have been closed since this docstring was written.
+
+The table is kept as written because it records which obligation each
+declaration *depends on*, which is still accurate; only the **Status** column's
+"STUB" / "MODULO" claims are out of date. Verify with `#print axioms` before
+citing any of them as open.
+
 ## sorry-free ↔ stubbed map
 
 | Declaration | Status |

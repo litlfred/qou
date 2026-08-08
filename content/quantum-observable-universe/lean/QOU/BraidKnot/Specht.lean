@@ -316,15 +316,28 @@ theorem specht_finrank_eq_numSYT {k : Type} [Field k] (μ : YoungDiagram) :
 module `S^μ` is a simple `MonoidAlgebra k (Perm (Fin n))`-module — the
 irreducible representation of `S_n` indexed by `μ`.  We phrase simplicity as: the
 only `S_n`-stable `k`-submodules of `S^μ` are `0` and `S^μ` (stated here at the
-level of the representation `Mtab.rep` restricted to `S^μ`). -/
+level of the representation `Mtab.rep` restricted to `S^μ`).
+
+**This statement is PROVED — cite
+`QOU.BraidKnot.SpechtIrreducible.specht_isSimple`, which is verbatim this one
+and reports `[propext, Classical.choice, Quot.sound]` under `#print axioms`.**
+
+The `sorry` below survives only because of the import direction: the proof runs
+through the `M^μ` bilinear form and James's submodule theorem, which live in
+`SpechtIrreducible`, and that module imports *this* one.  Brick 2 cannot import
+its own consumer.  The repo's convention for exactly this situation is the
+`…Wired` pattern (cf. `SpechtFinrankWired`); here the proved theorem already
+carries the identical signature, so no wrapper is needed — just do not treat
+this declaration as an open problem.  Nothing consumes it. -/
 theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
     (hμ : μ.card ≠ 0) :  -- nonempty diagram; ℕ-nonemptiness, not ring ordering (§7c-clean)
     ∀ N : Submodule k (Mtab (k := k) μ),
       N ≤ SpechtSubmodule (k := k) μ →
       (∀ σ : Equiv.Perm (Fin (nOf μ)), ∀ x ∈ N, Mtab.rep μ σ x ∈ N) →
       N = ⊥ ∨ N = SpechtSubmodule (k := k) μ := by
-  -- Ref: [james1984representation] (Specht modules are irreducible in char 0,
-  -- via the standard-basis / Garnir / James submodule theorem); brick-2 target.
+  -- Ref: [james1984representation] (Specht modules are irreducible in char 0).
+  -- NOT an open target: proved as `SpechtIrreducible.specht_isSimple`; this
+  -- copy is unprovable *here* only because brick 2 cannot import that module.
   sorry
 
 end QOU.BraidKnot.Specht
