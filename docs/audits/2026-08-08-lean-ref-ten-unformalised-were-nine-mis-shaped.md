@@ -145,6 +145,28 @@ the comparison is like-for-like.
 Never `lake build` — restored oleans plus `lean`-direct, per the standing
 warning in `lean-environment-setup.md`.
 
+### The authors-note preflight ⚠ is not this branch's
+
+`scripts/check-sidecars.sh` flags *"authors-note Lean-coverage stats STALE
+(proved-counts drifted)"* on this branch. It is **not** caused by these changes,
+and this branch deliberately does **not** carry the refresh.
+
+Running `scripts/refresh-authors-note.ts` on a **clean, detached
+`origin/main`** in the same environment produces the identical result —
+`684/704 (97.2%)` against the committed `688/704 (97.7%)`, plus two new
+`lean-coverage.json` conjecture fields. So the drift is upstream: `main`'s most
+recent commit at the time of writing was itself
+`chore(authors-note): refresh stale Lean-coverage stats`, and the stat had gone
+stale again by the next platform-script version.
+
+Left alone on purpose. Folding it in would (a) make a `lean.ref` PR appear to
+move a headline statistic it has nothing to do with, and (b) collide with
+whoever is already running that refresh on `main` — doc currency is mechanical
+work with one owner, which AGENTS.md says not to overlap.
+
+**Anyone reading the preflight ⚠ on this PR should re-run the check against a
+clean `main` before attributing the drift.**
+
 ## 7. Follow-ups not taken here
 
 - **A resolved-file-contains-the-declaration check.** §2's mis-resolution is
