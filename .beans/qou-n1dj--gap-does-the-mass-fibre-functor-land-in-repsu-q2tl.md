@@ -181,6 +181,51 @@ not faithful on TL₃), and `z = q³/(q²+1)`, which **is** convention D. So:
 4. **Do not re-open the 6.7 %** — `qou-3qrv` settled it: `tr_M_atomic(1,0)`
    traces a different (11-crossing atomic) braid word, not `β_Bor`.
 
+## Progress 2026-08-08 — the conditional is formalized (bean stays OPEN)
+
+Branch `claude/n1dj-conditional-tl-forces-d-2026-08-08`; audit
+[`docs/audits/2026-08-08-n1dj-conditional-tl-forces-jones.md`](../docs/audits/2026-08-08-n1dj-conditional-tl-forces-jones.md);
+Lean
+[`QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)
+(sorry-free, no `sorryAx`, `lean`-direct exit 0).
+
+**What it buys.** The open question is now **one named premise** instead of a
+chain, with every other link machine-checked:
+
+> The mass channel's trace is the **categorical trace of the fibre action** on
+> `V^{⊗3}`, rather than an abstract Ocneanu trace posited on all of `H₃(q)`.
+
+Axiomatised as the §3b-cond class `MassTraceIsFibreCategorical R N` (row-cap
+support `dim V_λ = 0 → y_λ = 0`, plus non-degeneracy of the surviving mixed
+channel = faithfulness on `TL₃`). Granting it, plus `dim V = 2` from
+`thm:su2-emergence` as an explicit hypothesis,
+`markovWeights_eq_jones_of_fibre_categorical` **derives**
+`[2]_q² y_(2,1) = 1 ∧ y_(3) = 1 − 2y_(2,1) ∧ z·[2]_q = q²` — convention **D** —
+via the already-proved row-cap obstruction and Markov-trace uniqueness.
+`ocneanu_eq_jones_of_fibre_categorical` excludes **C** under the same premise.
+
+The class mentions neither `q`, nor `z`, nor the Jones vector, nor D, so this is
+a derivation and not a self-assuming projection. Magnitudes are deliberately
+*not* assumed (at `q ≠ 1` the weights are quantum, not classical, Weyl
+dimensions — `y_(3)/y_(2,1) = 2.0437 ≠ 2` at `q₀`), which makes the conditional
+stronger, not weaker.
+
+Three anti-vacuity lemmas: `exists_fibre_categorical_markov_trace` (the
+antecedent **has** a model at `N = 2` satisfying all three Markov equations —
+D itself, at `z = q − t`, `t = [2]_q⁻¹`, so the conditional is not vacuous);
+`weightAlt_ne_zero_at_three` (the class **alone** does not give Temperley–Lieb —
+at `N = 3` it admits a nonzero `(1³)` weight, so `dim V = 2` is load-bearing);
+`fibre_ne_zero_of_zero_dimensional` (premise + normalisation is refutable at
+`N = 0`, so the row-cap fields have real content).
+
+**What remains open — the bean is NOT closed.** The premise itself. Nothing
+here shows the mass channel *satisfies* `MassTraceIsFibreCategorical R 2`;
+"conditional-proved ≠ premise-established". Sub-tasks 1 (find the independent
+argument for the 2-dimensional mass fibre), 2 (reconcile the two corpus
+statements) and 3 (the false sensitivity claim) are all untouched. Sub-task 1 is
+now sharply posed: exhibit an instance of the class for the mass channel, or
+show the mass trace is not of that form.
+
 ## Scope
 
 Honest-gap bean per AGENTS §"When you can't close it". This is **not** a claim
