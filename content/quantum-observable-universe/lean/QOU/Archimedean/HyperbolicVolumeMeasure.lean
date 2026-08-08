@@ -22,9 +22,10 @@
   a measure that turned out to be zero, or to charge the boundary, would make
   every later statement meaningless.
 
-  ⚠ THE CARRIER HERE IS THE WRONG ONE FOR H2 -- READ BEFORE BUILDING ON THIS.
-  This file uses `ℝ × ℝ × ℝ`.  Everything proved below is correct on it, but the
-  representation is a dead end for the rest of the series, measured 2026-08-08:
+  THE CARRIER IS `Fin 3 → ℝ`, AND THE CHOICE IS LOAD-BEARING.  An earlier
+  revision of this file used `ℝ × ℝ × ℝ`; that was migrated here because the
+  Prod carrier cannot support H2 at all.  Measured 2026-08-08, each row an
+  `infer_instance` run against the restored cache:
 
       volume on `ℝ × ℝ × ℝ`  : `IsAddHaarMeasure` FAILS to synthesize, as does
                                `IsAddRightInvariant`; `Measure.Haar.Prod` does
@@ -32,23 +33,25 @@
       volume on `Fin 3 → ℝ`  : `IsAddHaarMeasure`, `IsAddRightInvariant`,
                                `finrank = 3`, `addHaar_smul` ALL available; and
                                Fubini still works, via
-                               `measurePreserving_piFinSuccAbove`.
+                               `measurePreserving_piFinSuccAbove`, which splits
+                               one coordinate off measure-preservingly.
 
-  H2's dilation invariance needs `addHaar_smul`, so it cannot be done on this
-  carrier at all.  I chose `Prod` optimizing for the Fubini step without
-  checking the Haar side -- the honest fix is to migrate this file to
-  `Fin 3 → ℝ` (mechanically `p.2.2 ↦ p 2`) before attempting H2 or H4-2.
-  Tracked in bean `qou-5gai`.
+  So Pi has BOTH and Prod has only Fubini.  H2's dilation invariance needs
+  `addHaar_smul` (Lebesgue's `λ³` against the density's `1/λ³`), so on Prod it
+  was not merely awkward but unavailable.  **Do not "simplify" this back to
+  `ℝ × ℝ × ℝ`** -- that is the trap this migration exists to close.  Tracked in
+  bean `qou-5gai`.
 
   WHAT IS *NOT* HERE -- read before citing.
 
-  * **No metric, no isometries, no geodesics.**  This is the volume MEASURE
-    only.  H2 (`qou-5gai`) is the invariance package -- horizontal translation
-    and, the substantive one, dilation `(x,y,z) ↦ (λx,λy,λz)`, under which
-    Lebesgue scales by `λ³` and the density by `1/λ³` so the two cancel.  Until
-    H2 is proved, NOTHING here justifies calling this measure "the hyperbolic
-    volume" beyond the name: it is `dx dy dz / z³`, and its claim to be
-    hyperbolic rests on invariances not yet established.
+  * **H2 is PARTLY done: dilation invariance is proved** (`hypVolume_smul`),
+    which is the substantive half -- `λ³` from Lebesgue against `1/λ³` from the
+    density, cancelling exactly, with the exponent forced by
+    `finrank ℝ (Fin 3 → ℝ) = 3` rather than chosen.  **Still missing from H2:**
+    horizontal translation, and the full isometry group of `H³` (the Möbius
+    action of `PSL₂(ℂ)` on the boundary).  So the measure is not yet known to be
+    invariant under all hyperbolic isometries, only under dilation.  **No
+    metric, no geodesics, no isometry group** is defined here at all.
   * **No ideal tetrahedron** (H3), and **no `Vol = Λ-sum`** (H4 = `qou-idvt`
     T2).  In particular this file does NOT connect to
     `IdealTetrahedronVolumeConcavity.volChart`, which remains DEFINED as the
@@ -77,20 +80,21 @@
   -- Ref: [manuscript] beans qou-5gai (H1), qou-idvt (T2), qou-7y3g
 -/
 
-import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 import Mathlib.MeasureTheory.Measure.WithDensity
 import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
 namespace QOU.Archimedean.HyperbolicVolume
 
 open MeasureTheory Set
+open scoped Pointwise
 
 /-- **Upper half-space**, the domain of the `H³` model: points of `ℝ³` with
 positive last coordinate. -/
-def upperHalfSpace : Set (ℝ × ℝ × ℝ) := {p | 0 < p.2.2}
+def upperHalfSpace : Set (Fin 3 → ℝ) := {p | 0 < p 2}
 
 theorem isOpen_upperHalfSpace : IsOpen upperHalfSpace :=
-  isOpen_lt continuous_const (continuous_snd.comp continuous_snd)
+  isOpen_lt continuous_const (continuous_apply 2)
 
 theorem measurableSet_upperHalfSpace : MeasurableSet upperHalfSpace :=
   isOpen_upperHalfSpace.measurableSet
@@ -98,23 +102,23 @@ theorem measurableSet_upperHalfSpace : MeasurableSet upperHalfSpace :=
 /-- The hyperbolic density `1/z³`.  Outside the upper half-space `z ≤ 0`, where
 `ENNReal.ofReal` sends the (non-positive) value to `0` -- so the measure below
 is automatically supported on `H³` rather than needing a cutoff. -/
-noncomputable def hypDensity (p : ℝ × ℝ × ℝ) : ENNReal :=
-  ENNReal.ofReal (1 / p.2.2 ^ 3)
+noncomputable def hypDensity (p : Fin 3 → ℝ) : ENNReal :=
+  ENNReal.ofReal (1 / p 2 ^ 3)
 
 theorem measurable_hypDensity : Measurable hypDensity := by
   unfold hypDensity
   exact ENNReal.measurable_ofReal.comp
-    ((measurable_const.div ((measurable_snd.comp measurable_snd).pow_const 3)))
+    (measurable_const.div ((measurable_pi_apply 2).pow_const 3))
 
 /-- **The hyperbolic volume measure** `dV = dx dy dz / z³` on the upper
 half-space model.
 
 The name records the intent; the JUSTIFICATION that this is the hyperbolic
 volume is the invariance package H2 (`qou-5gai`), not proved here. -/
-noncomputable def hypVolume : Measure (ℝ × ℝ × ℝ) :=
+noncomputable def hypVolume : Measure (Fin 3 → ℝ) :=
   volume.withDensity hypDensity
 
-theorem hypVolume_apply {s : Set (ℝ × ℝ × ℝ)} (hs : MeasurableSet s) :
+theorem hypVolume_apply {s : Set (Fin 3 → ℝ)} (hs : MeasurableSet s) :
     hypVolume s = ∫⁻ p in s, hypDensity p :=
   withDensity_apply hypDensity hs
 
@@ -125,21 +129,21 @@ Without these the object could be the zero measure, or could charge the
 boundary, and every later statement built on it would be meaningless. -/
 
 /-- The density is strictly positive on the upper half-space. -/
-theorem hypDensity_pos {p : ℝ × ℝ × ℝ} (hp : p ∈ upperHalfSpace) : 0 < hypDensity p := by
-  have hz : 0 < p.2.2 := hp
+theorem hypDensity_pos {p : Fin 3 → ℝ} (hp : p ∈ upperHalfSpace) : 0 < hypDensity p := by
+  have hz : 0 < p 2 := hp
   unfold hypDensity
   rw [ENNReal.ofReal_pos]
   positivity
 
 /-- The density vanishes off the upper half-space, so `hypVolume` is supported
 on `H³` with no cutoff needed. -/
-theorem hypDensity_eq_zero {p : ℝ × ℝ × ℝ} (hp : p ∉ upperHalfSpace) : hypDensity p = 0 := by
-  have hz : p.2.2 ≤ 0 := not_lt.mp hp
+theorem hypDensity_eq_zero {p : Fin 3 → ℝ} (hp : p ∉ upperHalfSpace) : hypDensity p = 0 := by
+  have hz : p 2 ≤ 0 := not_lt.mp hp
   unfold hypDensity
   rw [ENNReal.ofReal_eq_zero]
   rcases lt_or_eq_of_le hz with h | h
   · have h3 : Odd 3 := ⟨1, by norm_num⟩
-    have hcube : p.2.2 ^ 3 < 0 := h3.pow_neg h
+    have hcube : p 2 ^ 3 < 0 := h3.pow_neg h
     exact le_of_lt (div_neg_of_pos_of_neg one_pos hcube)
   · rw [h]; norm_num
 
@@ -149,6 +153,79 @@ theorem hypVolume_compl_eq_zero : hypVolume upperHalfSpaceᶜ = 0 := by
   rw [hypVolume_apply measurableSet_upperHalfSpace.compl,
     setLIntegral_eq_zero_iff measurableSet_upperHalfSpace.compl measurable_hypDensity]
   filter_upwards with p hp using hypDensity_eq_zero hp
+
+/-! ### H2 — dilation invariance
+
+**This is what earns the measure its name.**  `dx dy dz / z³` is not
+distinguished among densities by anything above; what makes it *hyperbolic* is
+that it is invariant under the isometries of `H³`.  Dilation is the substantive
+one: Lebesgue scales by `λ³`, the density `1/z³` by `1/λ³`, and the two cancel
+EXACTLY.  Nothing about the exponent `3` is chosen for convenience -- it is
+forced by `finrank ℝ (Fin 3 → ℝ) = 3`, which is precisely why the Prod carrier
+could not host this proof. -/
+
+/-- Scaling pulls a clean factor out of the density: `1/(λz)³ = (1/λ³)·(1/z³)`. -/
+theorem hypDensity_smul {r : ℝ} (hr : 0 < r) (p : Fin 3 → ℝ) :
+    hypDensity (r • p) = ENNReal.ofReal (1 / r ^ 3) * hypDensity p := by
+  unfold hypDensity
+  have hsmul : (r • p) 2 = r * p 2 := by simp
+  rw [hsmul, ← ENNReal.ofReal_mul (by positivity)]
+  congr 1
+  field_simp
+
+/-- **H2 (dilation) — `hypVolume` is invariant under `p ↦ r • p` for `r > 0`.**
+
+The `λ³` from Lebesgue and the `1/λ³` from the density cancel. Proved by
+transporting the integral along `Measure.map_addHaar_smul`, which is available
+only because the carrier is `Fin 3 → ℝ`. -/
+theorem hypVolume_smul {r : ℝ} (hr : 0 < r) {s : Set (Fin 3 → ℝ)}
+    (hs : MeasurableSet s) : hypVolume (r • s) = hypVolume s := by
+  have hr0 : r ≠ 0 := ne_of_gt hr
+  have hD : Measurable (fun p : Fin 3 → ℝ => r • p) := measurable_id.const_smul r
+  have hrs : MeasurableSet (r • s) := by
+    rw [show r • s = (fun p : Fin 3 → ℝ => r⁻¹ • p) ⁻¹' s by
+      ext p
+      simp only [Set.mem_smul_set, Set.mem_preimage]
+      constructor
+      · rintro ⟨y, hy, rfl⟩; rwa [inv_smul_smul₀ hr0]
+      · exact fun h => ⟨r⁻¹ • p, h, by rw [smul_inv_smul₀ hr0]⟩]
+    exact hs.preimage (measurable_id.const_smul r⁻¹)
+  -- the constant Lebesgue contributes under scaling
+  set c : ENNReal := ENNReal.ofReal |((r : ℝ) ^ Module.finrank ℝ (Fin 3 → ℝ))⁻¹| with hc
+  have hmap : Measure.map (fun p : Fin 3 → ℝ => r • p) volume = c • volume :=
+    Measure.map_addHaar_smul volume hr0
+  -- transport the integral along the map
+  have key : ∫⁻ y in r • s, hypDensity y ∂(Measure.map (fun p : Fin 3 → ℝ => r • p) volume)
+      = ∫⁻ x in (fun p : Fin 3 → ℝ => r • p) ⁻¹' (r • s), hypDensity (r • x) ∂volume :=
+    setLIntegral_map hrs measurable_hypDensity hD
+  have hpre : (fun p : Fin 3 → ℝ => r • p) ⁻¹' (r • s) = s := by
+    ext p
+    simp only [Set.mem_preimage, Set.mem_smul_set]
+    constructor
+    · rintro ⟨q, hq, hqe⟩
+      rwa [smul_right_injective _ hr0 hqe] at hq
+    · exact fun hp => ⟨p, hp, rfl⟩
+  rw [hpre, hmap] at key
+  -- left side: pull the constant out of the scaled measure
+  rw [Measure.restrict_smul, lintegral_smul_measure] at key
+  -- right side: pull the constant out of the density
+  have hrhs : ∫⁻ x in s, hypDensity (r • x) ∂volume
+      = ENNReal.ofReal (1 / r ^ 3) * ∫⁻ x in s, hypDensity x ∂volume := by
+    rw [← lintegral_const_mul _ measurable_hypDensity]
+    exact lintegral_congr fun x => hypDensity_smul hr x
+  rw [hrhs] at key
+  -- the two constants are equal, and finite-nonzero, so they cancel
+  have hceq : c = ENNReal.ofReal (1 / r ^ 3) := by
+    rw [hc]
+    congr 1
+    rw [show Module.finrank ℝ (Fin 3 → ℝ) = 3 by simp, abs_of_pos (by positivity)]
+    field_simp
+  rw [hceq, smul_eq_mul] at key
+  have hne : ENNReal.ofReal (1 / r ^ 3) ≠ 0 := by
+    simp [ENNReal.ofReal_eq_zero]; positivity
+  have htop : ENNReal.ofReal (1 / r ^ 3) ≠ ⊤ := ENNReal.ofReal_ne_top
+  rw [hypVolume_apply hrs, hypVolume_apply hs]
+  exact (ENNReal.mul_right_inj hne htop).mp key
 
 /-! ### H4 step 1 — the vertical integral
 
