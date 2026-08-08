@@ -65,14 +65,6 @@ class LpDualStabilityContext where
   x_partial : Fin channels → ℝ
   /-- The `σ₀` channel index. -/
   σ_0_idx : Fin channels
-  /-- The LP dual stability claim (conclusion). -/
-  lp_dual_stability_claim : (∀ i : Fin channels,
-      0 ≤ (Finset.univ.sum fun j : Fin channels =>
-        G i j * x_star j)) ∧
-    (∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm) ∧
-    (Finset.univ.sum fun j : Fin channels =>
-      G σ_0_idx j * x_partial j) < 0 ∧
-    tr_M_x_star = y_0_star * (n_target : ℝ)
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
 
@@ -94,6 +86,6 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
   -- strong-duality theorem, and the κ(G)·‖t‖ dual-perturbation bound.
   -- Not yet formalised in QOU/Mathlib.
   -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  exact ctx.lp_dual_stability_claim
+  sorry
 
 end QOU.ParticleInteractions
