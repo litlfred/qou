@@ -150,9 +150,7 @@ def main() -> int:
     builder.add_data("jsj_volumes", vols)
 
     # 3. Load empirical |Δ_λ*| from tabulation
-    emp = json.loads(
-        (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
-    )["data"]["per_atom"]
+    emp = builder.add_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE))["data"]["per_atom"]
     empirical_delta = {a: float(mp.mpf(emp[a]["a_single_block"]["best_abs_delta"]))
                        for a in ("D", "T", "3He", "4He")}
     builder.add_data("empirical_best_abs_delta", empirical_delta)

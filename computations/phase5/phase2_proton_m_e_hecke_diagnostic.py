@@ -138,7 +138,7 @@ def main() -> int:
         print(f"missing input: {SIX_TERM_WITNESS}")
         return 1
 
-    six_term = json.loads(SIX_TERM_WITNESS.read_text())
+    six_term = w.add_upstream(SIX_TERM_WITNESS)
     atoms = six_term["data"]["results"]
 
     print("=" * 90)

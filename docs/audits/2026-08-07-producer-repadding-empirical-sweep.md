@@ -1526,3 +1526,95 @@ symbols — silent cross-contamination of provenance metadata, which is the
 precise failure this whole audit arc exists to prevent. It needs an ownership
 rule (drain-on-construct vs. explicit scope), and that is a substrate design
 decision, not a side effect of a porting pass.
+
+## P37 — `record_upstream`, 21 producers ported, and two corrections
+
+### The API: the list belongs to the caller
+
+P36 measured that 290 of 330 witness-consuming producers read their upstreams
+*before* constructing a builder, so `add_upstream` — a method — could not reach
+them. `record_upstream(path, into)` closes that without a restructure:
+
+```python
+_UP: list = []
+q0 = mpf(record_upstream(Q_PIN, _UP)["derived_50_digit"]["q"])
+...
+w = WitnessBuilder("my-witness").add_upstream_records(_UP)
+```
+
+The obvious alternative was a module-level accumulator drained on builder
+construction — one edit per producer instead of two. **Rejected, and the
+rejection is the design.** It breaks in two ordinary situations: producer P
+imports Q, and Q recorded upstreams at *its* import, so P's builder drains and
+claims Q's records; or a test imports a producer for its symbols and any later
+builder inherits them. Both silently attach the wrong provenance — the precise
+failure this metadata exists to detect. An explicit list makes that class of
+bug unrepresentable: a record can only reach the witness whose author named the
+list. `test_lists_do_not_leak` pins it, and `add_upstream_records` is
+idempotent by `(path, sha256)` so recording early and declaring late cannot
+double an edge. 7 tests, all passing.
+
+### 21 producers ported, by a rewriter that only touches what it can prove
+
+Hand-editing 40 files of varied shape is the blind-regex hazard this document
+has already paid for once. Instead an AST rewriter replaced only reads it could
+prove: the whole read is **one expression** (`json.loads(X.read_text())` or
+`json.load(X.open())`), `X` resolves via the audit's own resolver to a witness
+the module does not itself write, and a `WitnessBuilder` is assigned to a plain
+name **in the same function, strictly before** the read. Everything else was
+left alone.
+
+Verification was external to the rewriter, which is the point:
+
+- 23 files changed, 25 reads rewritten; **all 23 compile**.
+- The audit — which knows nothing about the rewriter — moves from 330/409 to
+  **309 producers / 384 edges**, and declared from 24 to 45. The edge count
+  fell by exactly 25, matching the rewriter's own report.
+- Sampled runs: 3 of 4 exit 0 and emit the declaration, including a two-edge
+  case (`delta-lambda-z4N-phase4` → `delta-lambda-jsj-phase3` +
+  `delta-lambda-empirical-tabulation`). The fourth,
+  `delta_lambda_jsj_phase3`, fails on a missing `probe_he4_jsj_topology` —
+  **identical before and after the port**, so pre-existing.
+
+Source only again: this container drops `pyhecke_native` and `clarabel`, so the
+witnesses must be regenerated where those exist.
+
+### Correction: the `chi-helium-4-h12-numeric` readers cannot be repointed
+
+The previous pass proposed repointing its three readers at
+`chi-helium-4-h12.witness.json` and retiring the variant. **That was wrong**,
+and reading the two files settles it: the `-numeric` witness carries
+`per_partition` (with `y_at_q0`, `chi_q_at_q0`) and `abs_tr_M`, while
+`chi-helium-4-h12` carries `chi_lambda_symbolic`. They are a numeric result and
+a symbolic cache — not two spellings of one thing, and
+`delta_lambda_2row_stratum_analysis.py:177` reads `cached["per_partition"]`,
+which the symbolic file does not have.
+
+Its producer is gone from the tree entirely — every script emitting `abs_tr_M`
+is under `_deprecated/`, and none of them writes this filename. So it is an
+**un-reproducible live input**, and its `scriptFile` was the same false claim
+the five `chi-*` witnesses carried: `delta_lambda_empirical_tabulation.py`,
+which only reads it. Repaired to the corpus's existing convention for this
+situation — a parenthesized prose value, as used by 6 other witnesses
+("(legacy orphan — no current producer; …)"), naming the confusion so the next
+reader does not repeat it. No `scriptHash` was present, so nothing desynced.
+`UNCONFIRMED` 21 → **20**.
+
+### Triage: `PADDING_RISK` needs no bulk fix, and that is now demonstrated
+
+Of the 133, roughly 95 are measured physical constants (CODATA/AME/PDG) and 38
+are tolerances. In both, the value survives 53 bits — six significant digits is
+all `1776.86` *has*. Harm only reaches a witness by serializing at compute
+precision, and that path is already gated: build each at 15 dps, `str()` at 70,
+and `is_f64_padded` flags **every one**, including `1e-25`. The padding audit
+sits at zero under `--strict`, and it is exactly how the two `m_tau` producers
+were caught. Gating this tier would add 133 obligations against a failure
+another gate already stops.
+
+### Recorded, not fixed
+
+`tools/qou-substrate/tests/test_smoke.py::test_substrate_constants_have_expected_values`
+fails on clean `main` (verified by stash): `HBAR_Q_SQ` disagrees with
+`VOL_FIGURE_EIGHT / MASS_RATIO_MU_E` by 2.06e-09 against a 1e-15 tolerance.
+A substrate-constants inconsistency, unrelated to anything here, and not
+something to silently adjust.

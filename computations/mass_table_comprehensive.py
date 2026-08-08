@@ -375,7 +375,7 @@ def main() -> int:
     mt_ppb_data = None
     if mt_ppb_path.exists():
         import json as _json
-        mt_ppb_data = _json.load(mt_ppb_path.open())
+        mt_ppb_data = builder.add_upstream(mt_ppb_path)
 
     for i, (name, Z, N) in enumerate(ISOTOPES):
         A = Z + N

@@ -179,7 +179,7 @@ def main() -> int:
                "whether the plain ¼Σβ_σ average is the q-correct q-Young "
                "projection, or whether q-weighted symmetrizers shift the number.")
     # VALID assertion: the id trace = binding_canonical's averaged ⁴He tr_M.
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text(encoding="utf-8"))
+    bc = w.add_upstream(HERE / "binding-canonical.witness.json")
     r = next(x for x in bc["data"]["results"] if (x["Z"], x["N"]) == (2, 2))
     tr_canon = mp.mpf(str(r["tr_M_atom"]).strip("()").split("+")[0])
     w.add_assertion(

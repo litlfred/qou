@@ -89,7 +89,7 @@ def main() -> int:
     print()
 
     # Read exact symbolic tr_M for proton and neutron
-    hab = json.loads((_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    hab = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     tr_p_str = hab["results"]["p (proton, A=1)"]["tr_M_in_q"]
     tr_n_str = hab["results"]["n (neutron, A=1)"]["tr_M_in_q"]
 
