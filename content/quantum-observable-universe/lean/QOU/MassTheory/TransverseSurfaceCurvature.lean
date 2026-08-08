@@ -117,12 +117,14 @@ variable {R : Type*} [Ring R]
 def curvComm (a b : R) : R := a * b - b * a
 
 @[simp] theorem curvComm_self (a : R) : curvComm a a = 0 := by
-  unfold curvComm; ring
+  simp only [curvComm, sub_self]
 
 /-- The germ curvature is a genuine antisymmetric 2-form: swapping the two
-    observers negates it (`germ-commutator-q-curvature.md` consequence 2). -/
+    observers negates it (`germ-commutator-q-curvature.md` consequence 2).
+    `R` is a generic (possibly non-commutative) ring, so `noncomm_ring`
+    rather than `ring`. -/
 theorem curvComm_antisymm (a b : R) : curvComm a b = - curvComm b a := by
-  unfold curvComm; ring
+  rw [curvComm, curvComm, neg_sub]
 
 /-- Row contribution: the ordered commutators of every *later* cell curvature
     `y ∈ ys` with a fixed *earlier* one `c`. -/
