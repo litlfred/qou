@@ -3,6 +3,7 @@ import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Order.Interval.Finset.Nat
+import Mathlib.Data.List.GetD
 
 /-!
 # QOU.BraidKnot.StandardYoungTableau — brick 1 of the Identity-I S_n rep-theory program
@@ -187,6 +188,83 @@ statement `numSYT_mul_hookProduct` will be divided through by. -/
 theorem hookProduct_pos (μ : YoungDiagram) : 0 < hookProduct μ :=
   Finset.prod_induction _ (0 < ·) (fun _ _ ha hb => Nat.mul_pos ha hb) Nat.one_pos
     (fun c _ => hookLength_pos μ c.1 c.2)
+
+/-- **Row decomposition of the cells.** Every cell lies in row `i` for some
+`i < μ.colLen 0`, and the rows are pairwise disjoint. Mathlib has `row_eq_prod`
+but no cells-as-union-of-rows lemma, so it is proved here. -/
+theorem cells_eq_biUnion (μ : YoungDiagram) :
+    μ.cells = (Finset.range (μ.colLen 0)).biUnion (fun i => μ.row i) := by
+  ext ⟨a, b⟩
+  simp only [Finset.mem_biUnion, Finset.mem_range, YoungDiagram.mem_row_iff,
+    YoungDiagram.mem_cells]
+  constructor
+  · intro h
+    exact ⟨a, YoungDiagram.mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl a) (Nat.zero_le b) h), h, rfl⟩
+  · rintro ⟨i, _, hmem, rfl⟩
+    exact hmem
+
+/-- **`hookProduct` as a nested product over rows and columns.** This is the
+indexing half of the bridge to the list-based `prodHooks`: the `Finset` product
+over `μ.cells` becomes `∏_i ∏_{j < rowLen i}`, with the hook already in
+`rowLen`/`colLen` form via `hookLength_eq_rowLen_add_colLen`. -/
+theorem hookProduct_eq_nested (μ : YoungDiagram) :
+    hookProduct μ
+      = ∏ i ∈ Finset.range (μ.colLen 0),
+          ∏ j ∈ Finset.range (μ.rowLen i),
+            ((μ.rowLen i - j) + (μ.colLen j - i) - 1) := by
+  unfold hookProduct
+  rw [cells_eq_biUnion, Finset.prod_biUnion]
+  · refine Finset.prod_congr rfl (fun i _ => ?_)
+    rw [YoungDiagram.row_eq_prod, Finset.prod_product]
+    simp only [Finset.prod_singleton]
+    refine Finset.prod_congr rfl (fun j hj => ?_)
+    exact hookLength_eq_rowLen_add_colLen μ
+      (YoungDiagram.mem_iff_lt_rowLen.mpr (Finset.mem_range.mp hj))
+  · intro x _ y _ hxy
+    simp only [Finset.disjoint_left, YoungDiagram.mem_row_iff]
+    rintro ⟨a, b⟩ ⟨_, rfl⟩ ⟨_, h⟩
+    exact hxy h
+
+/-- `μ.rowLens.getD i 0 = μ.rowLen i`, for EVERY `i` — past the last row both
+sides are `0`, since `i ≥ μ.colLen 0` forces `(i, 0) ∉ μ`. -/
+theorem rowLens_getD (μ : YoungDiagram) (i : ℕ) :
+    μ.rowLens.getD i 0 = μ.rowLen i := by
+  by_cases h : i < μ.rowLens.length
+  · rw [List.getD_eq_getElem _ _ h, YoungDiagram.get_rowLens]
+  · rw [List.getD_eq_default _ _ (Nat.not_lt.mp h)]
+    rw [YoungDiagram.length_rowLens] at h
+    by_contra hne
+    exact h (YoungDiagram.mem_iff_lt_colLen.mp
+      (YoungDiagram.mem_iff_lt_rowLen.mpr (Nat.pos_of_ne_zero (Ne.symm hne))))
+
+/-- Counting `i < m` over `range n`. No such lemma exists upstream, so it is
+proved here by induction on `n`. -/
+private theorem countP_range_lt (m n : ℕ) :
+    (List.range n).countP (fun i => decide (i < m)) = min m n := by
+  induction n with
+  | zero => simp
+  | succ k ih =>
+      rw [List.range_succ, List.countP_append, ih, List.countP_cons, List.countP_nil]
+      by_cases hk : k < m
+      · rw [if_pos (decide_eq_true hk)]; omega
+      · rw [if_neg (by simp [hk])]; omega
+
+/-- **The list-side column length agrees with the diagram's.** Counting rows
+longer than `j` in `μ.rowLens` gives `μ.colLen j` — this is what lets the
+list-based `prodHooks` see the same hooks as `hookProduct`. -/
+theorem length_filter_rowLens (μ : YoungDiagram) (j : ℕ) :
+    (μ.rowLens.filter (fun p => j < p)).length = μ.colLen j := by
+  have hle : μ.colLen j ≤ μ.colLen 0 := μ.colLen_anti 0 j (Nat.zero_le j)
+  rw [← List.countP_eq_length_filter, YoungDiagram.rowLens, List.countP_map]
+  rw [show ((fun p => decide (j < p)) ∘ μ.rowLen)
+        = (fun i => decide (i < μ.colLen j)) by
+    funext i
+    simp only [Function.comp_apply, decide_eq_decide]
+    exact ⟨fun h => YoungDiagram.mem_iff_lt_colLen.mp
+             (YoungDiagram.mem_iff_lt_rowLen.mpr h),
+           fun h => YoungDiagram.mem_iff_lt_rowLen.mp
+             (YoungDiagram.mem_iff_lt_colLen.mpr h)⟩]
+  rw [countP_range_lt, Nat.min_eq_left hle]
 
 /-- **Frame–Robinson–Thrall hook-length formula** (the brick-1 target):
 `#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!`, i.e. `f^μ = |μ|! / ∏ h(c)`. Stated here as the

@@ -43,3 +43,39 @@ The pointwise identity is done; what is left is the *indexing* half —
 
 None of these needs FRT itself — this bean stays strictly below the
 hook-length theorem.
+
+## Progress 2026-08-08 (cont) — indexing half proved
+
+Four more lemmas, all **axiom-clean** (`#print axioms` → propext /
+Classical.choice / Quot.sound only, no `sorryAx`):
+
+- `cells_eq_biUnion` — `μ.cells = ⋃_{i < μ.colLen 0} μ.row i`, with the
+  rows pairwise disjoint. Mathlib has `row_eq_prod` but **no**
+  cells-as-union-of-rows lemma, so this is new.
+- `hookProduct_eq_nested` — **the indexing half of this bean**:
+  `hookProduct μ = ∏_{i < colLen 0} ∏_{j < rowLen i} ((rowLen i − j) + (colLen j − i) − 1)`.
+  The `Finset` product over cells is now a nested product with the hook
+  already in `prodHooks` form.
+- `rowLens_getD` — `μ.rowLens.getD i 0 = μ.rowLen i` for every `i`,
+  including past the last row where both sides are 0.
+- `length_filter_rowLens` — counting rows longer than `j` in `μ.rowLens`
+  gives `μ.colLen j`. This is the list-side `colLen` of
+  `IdentityIContentDecomposition` matching the diagram's.
+
+Needed one small counting fact absent upstream, proved by induction:
+`countP_range_lt : (List.range n).countP (· < m) = min m n`.
+
+Imports added: `Mathlib.Order.Interval.Finset.Nat` (`Nat.card_Ioo`),
+`Mathlib.Data.List.GetD` (`getD_eq_getElem` / `getD_eq_default`).
+
+### What remains
+
+Every mathematical ingredient this bean names is now proved. What is left
+is mechanical: converting the nested **Finset** product of
+`hookProduct_eq_nested` into the nested **List** product of `prodHooks`,
+and choosing where that statement lives — `prodHooks` sits in
+`IdentityIContentDecomposition`, so stating `hookProduct μ =
+prodHooks μ.rowLens` needs either a new bridge module importing both or
+moving `prodHooks`. That is a placement decision, not a proof gap.
+
+The FRT `sorry` is untouched — this bean stays strictly below it.
