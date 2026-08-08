@@ -1,5 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.SpecificLimits.Normed
+import QOU.MathlibExt.QIntegerCanonical
 
 
 /-!
@@ -37,6 +38,22 @@ open scoped Classical
 def jacksonInt (q : ℝ) (n : ℕ) : ℝ :=
   if q = 1 then (n : ℝ)
   else (1 - q^n) / (1 - q)
+
+/-- **Bridge to the canonical guarded geometric bracket.**
+
+`jacksonInt` is kept rather than aliased: downstream proofs rewrite with the
+closed form `(1−qⁿ)/(1−q)` syntactically, and swapping the body for
+`qIntGeoCl`'s `Finset.sum` breaks them. The two orientations differ only by
+negating numerator and denominator, so the definitions agree — proved here
+rather than asserted. -/
+theorem jacksonInt_eq_canonical (q : ℝ) (n : ℕ) :
+    jacksonInt q n = QOU.QInteger.qIntGeoCl q n := by
+  unfold jacksonInt
+  by_cases h : q = 1
+  · simp [h]
+  · rw [if_neg h, QOU.QInteger.qIntGeoCl_eq_closed_form h,
+      show (1 - q ^ n) = -(q ^ n - 1) by ring, show (1 - q) = -(q - 1) by ring,
+      neg_div_neg_eq]
 
 /-- Jackson factorial [n]_q! = ∏_{k=1}^n [k]_q. -/
 -- Ref: [manuscript] §9
