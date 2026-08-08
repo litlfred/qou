@@ -244,7 +244,65 @@ content** — the part that distinguishes `K` from its mirror. So the c₃ resid
 lives in the chirality channel, which is the same channel the `Δ_λ` sign
 (`(−1)^{n(λ)}·dim`) and the KL-positivity prune already live in.
 
-## Composing with `S_leak` — a filter on c₃ candidates (cross-arc, from #4725)
+## ⚠ RETRACTED — the `S_leak` filter below does not hold
+
+**Retraction (same day, prompted by the author's question "this is not
+derived? `S_leak := c₃ + Vol(4₁)`").** The section that follows built a
+candidate filter on `S_leak`. That was an over-reach on my part and is
+withdrawn. The `:=` is a **definition**, and it is only a *bar-decomposition*
+of c₃ if `c₃`'s bar-even part is **derived** to equal `−Vol(4₁)`. I did not
+establish that before using it. Three findings, in increasing severity:
+
+**(1) The bar-decomposition of c₃ is not empirically accessible.** For a
+function of real `q`, `c₃^even(q) = (c₃(q) + c₃(1/q))/2`. Both substrate
+anchors sit at `q ≈ 1.10998`; computing the even part needs `c₃` at
+`q ≈ 0.901`, which no anchor supplies. **Any** even/odd split of c₃ therefore
+rests on an assumed structural form, never on the anchor data.
+
+**(2) The sign flip is offset-generic — it is not evidence about `Vol(4₁)`.**
+`S_leak(μ) > 0 > S_leak(p)` holds for *any* constant `V` strictly between
+`−c₃(μ) = 2.02020024` and `−c₃(p) = 2.06934258` — a window of width **0.0491**.
+Verified: `Vol(4₁) = 2.029883`, `2 + 1/36`, `2 + 1/30`, `2 + 1/25`, `2 + 1/24`,
+`63/31`, `e^{0.708}` all lie in it and all produce the same "genuine sign
+change". The flip is a restatement of *c₃ differing between the two anchors*,
+not a property of `Vol(4₁)`.
+
+**(3) The corpus carries two inequivalent "bar-even part of c₃" claims.**
+[`2026-07-07-c3-even-solved-s-complex-volume-rigidity.md`](2026-07-07-c3-even-solved-s-complex-volume-rigidity.md)
+— the audit cited for "c₃^even is solved" — identifies the bar-even channel as
+an exact `ℚ(√3)` ũ-ladder (`e₁ = 3√3/4`, projection rung `≈ +86.66`) and the
+bar-odd scalar as `S = Q_β/E₀ ≈ 908`, which **does not** sign-flip
+(`S_p/S_μ ≈ 1.024`). The `S_leak` framing instead takes the even part to be
+`−Vol(4₁) ≈ −2.03` with an odd residual `≈ 0.0097`. These are **not the same
+decomposition**. `SLeakZeroCrossing.lean` is aware of the symbol clash and
+guards it ("Do not conflate the two symbols"), but the guard separates the two
+`S`s — it does not reconcile the two *even* parts. And that same 2026-07-07
+audit tiers the `𝔙` identification **`exploratory`** in its own header.
+
+**What this does and does not touch.** The Lean theorems in
+`SLeakZeroCrossing.lean` are stated for a *generic* continuous function with
+the anchor signs as hypotheses, and they are fine as stated — this is not a
+claim that they are wrong. What is unsupported is the *interpretive* step that
+`S_leak` is c₃'s bar-odd part, and everything I derived from it.
+
+**Still standing, independent of `S_leak`:** the R-matrix decomposition
+(`σ − σ⁻¹ = a·1` bar-odd and central; `σ + σ⁻¹` bar-even), the
+Skein-generation of the bar-odd channel (`odd = a ×` even), the amphichirality
+corollary (`4₁` amphichiral ⇒ its invariant is bar-even), and the qb8b/qb8d
+results. None of those used `S_leak`.
+
+**Withdrawn:** "the entire bar-odd content of c₃ *is* `S_leak`", and the
+consequent exclusion of `−[2]_q` and the `q→1` shadow `−2` as candidates. Those
+required `c₃^even = −Vol(4₁)` exactly. Whether that identification is in fact
+derived is a question for the c₃ owners (#4725), not something this audit
+adjudicates — flagged, not settled.
+
+The original section is kept below **struck through in intent** for the record,
+per the corpus convention of not deleting a finding that was published.
+
+---
+
+## ~~Composing with `S_leak` — a filter on c₃ candidates (cross-arc, from #4725)~~ [RETRACTED — see above]
 
 Sibling #4725 flagged that ϑ_K and c₃ are the same open question, related
 affinely, and pointed at `conj:binding-qbeta-complex-volume`. Verified against
