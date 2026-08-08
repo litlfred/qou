@@ -41,6 +41,10 @@ IMPORT_RE = re.compile(r"^import\s+(QOU(?:\.[A-Za-z0-9_'À-￿]+)*)", re.M)
 # Extra `lean` flags, e.g. the package's `moreLeanArgs = ["-s", "65536"]`.
 EXTRA_ARGS = os.environ.get("LEAN_CONE_EXTRA_ARGS", "").split()
 
+# Per-module failure logs are capped: the error shape lives in the first few
+# errors, and 1622 uncapped logs is what filled the disk on the first attempt.
+LOG_MAX_LINES = int(os.environ.get("LEAN_CONE_LOG_MAX_LINES", "60"))
+
 
 def module_of(leandir: Path, path: Path) -> str:
     rel = path.relative_to(leandir).with_suffix("")
@@ -182,8 +186,14 @@ def main() -> int:
         )
         outtxt = (proc.stdout or "") + (proc.stderr or "")
         if proc.returncode != 0:
+            # Logs are written for FAILURES ONLY, and capped: classifying an
+            # error shape needs the first errors, not a module's entire output.
+            lines = outtxt.splitlines()
+            capped = "\n".join(lines[:LOG_MAX_LINES])
+            if len(lines) > LOG_MAX_LINES:
+                capped += f"\n[... {len(lines) - LOG_MAX_LINES} more lines truncated]"
             try:
-                (logdir / (m + ".log")).write_text(outtxt, encoding="utf-8")
+                (logdir / (m + ".log")).write_text(capped, encoding="utf-8")
             except OSError as e:  # e.g. ENOSPC — never let logging kill the sweep
                 outtxt += f"\n[log write failed: {e}]"
             # a failed lean run can leave a truncated olean behind
@@ -194,8 +204,24 @@ def main() -> int:
                     pass
         return m, proc.returncode, outtxt, time.time() - t
 
+    # Incremental report: a row is appended the moment a module settles, so a
+    # crash at 90% leaves 90% of the data rather than nothing (the first
+    # full-corpus attempt died mid-run and produced no report at all).
+    live = None
+    if args.report:
+        live = open(str(args.report) + ".partial", "w", encoding="utf-8")
+        live.write("module\tstatus\tseconds\tblocker\terror_head\n")
+
+    def emit(m: str, st: str) -> None:
+        if live is None:
+            return
+        live.write(f"{m}\t{st}\t{secs.get(m, 0):.1f}\t"
+                   f"{blocker.get(m, '')}\t{errhead.get(m, '')}\n")
+        live.flush()
+
     def settle(m: str, st: str) -> None:
         status[m] = st
+        emit(m, st)
         if st in ("ok", "up-to-date"):
             for r in rdeps[m]:
                 remaining[r] -= 1
@@ -216,6 +242,7 @@ def main() -> int:
                 if status.get(r) is None:
                     status[r] = "blocked"
                     blocker[r] = root
+                    emit(r, "blocked")
                     stack.append(r)
 
     last_report = time.time()
@@ -286,6 +313,8 @@ def main() -> int:
     print("done:", ", ".join(f"{k}={v}" for k, v in sorted(counts.items())),
           f"in {time.time() - t0:.0f}s", flush=True)
 
+    if live is not None:
+        live.close()
     if args.report:
         rp = Path(args.report)
         with rp.open("w", encoding="utf-8") as fh:
