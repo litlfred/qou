@@ -346,3 +346,76 @@ all pass.
     untouched. `hasSum_gaussian_theta` is one-dimensional and real-`a`.
 
 Status: (B) done, (C) was already done in-repo, (A) and (D) open.
+
+## (D) BUILT, and the higher remainder answered
+
+**(D) — the multivariate complex-covariance Gaussian.**
+`QOU/MathlibExt/GaussianShearIntegral.lean`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:337`:
+
+    integral_cexp_two_pi_sq_shift     int_R e^{-2pi(v+s)^2} dv = 2^{-1/2}, any s
+    integral_cexp_neg_pi_mul_div_two  int_R e^{-pi A u^2/2} du = (2/A)^{1/2}, Re A > 0
+    integral_vdv_step4                2^{-n/2} (2/A)^{1/2}, every n
+
+This was the last HYPOTHESIS under the link-side closed form. Everything in
+`QOU/OneLoopPrefactorInvariance.lean` — `vdv_c_sigma_iff_tau`, `vdv_tau_sq`,
+`vdv_radical_is_gaussian_norm` — is algebra downstream of this one integral,
+and it is now proved rather than assumed.
+
+Mathlib supplied both analytic inputs, so this was assembly:
+`integral_gaussian_complex` (complex covariance, `0 < re b`) and
+`integral_fintype_prod_volume_eq_pow`. The shift-independence of the transverse
+integrals is the structural point — it is why the `n` transverse directions
+contribute a bare `2^{-n/2}` and leave the `u`-integral one-dimensional.
+
+**SCOPE, stated because the header does too.** The theorem is the ITERATED
+integral `int_R du (int_{R^n} dv ...)`. Identifying it with the Bochner
+integral over `R^{n+1}` is Fubini and needs joint integrability on the product
+measure. NOT done. `volume_preserving_piFinSuccAbove` + `integral_prod` are the
+pieces; the integrability proof is the work. Do not let a downstream header
+claim the `R^{n+1}` form.
+
+**THE HIGHER REMAINDER.** `GaussianThetaSum.lean` gained
+`hasSum_gaussian_theta_tilt`:
+
+    sum_k e^{-a(k-c)^2 + t(k-c)} = e^{t^2/4a} . sqrt(pi/a) . theta_2(-(c+t/2a), i pi/a)
+
+Completing the square is a shift of `c`, so this is (B) with NO new analytic
+input — and `e^{t^2/4a} sqrt(pi/a)` is exactly the continuum generating
+function `int_R e^{-ax^2+tx} dx`. So the entire discrete-vs-continuum
+discrepancy, at EVERY moment simultaneously, is the one factor
+`theta_2 = 1 + O(e^{-pi^2/a})`, uniformly in `c` and `t`. Since the
+cubic-and-higher remainder `R` enters only through moments (expand `e^R`), the
+sum and the integral have the SAME asymptotic expansion at every order in
+`1/N`. The worry that discretisation and the remainder could interact to make a
+`1/N` term the continuum calculation misses is answered: they cannot.
+
+**A NUMBER THAT MUST NOT BE MISQUOTED.** The `e^{-pi^2/a}` rate belongs to the
+EXACT Gaussian. Measured on the real `4_1` cubic and quartic, the remainder
+roughly HALVES the exponential rate:
+
+    d(-log deviation)/dN  measured  0.8102     (model with real b3, b4)
+    pure Gaussian pi/sqrt3          1.8138
+
+still exponential — the only thing the one-loop constant needs — but not the
+same constant. Recorded in the Lean header and in the probe.
+
+Probe: `computations/probes/laplace_higher_remainder_probe.py`, 4 assertions,
+all pass. Notable: `b3 sigma^3 ~ 0.04-0.11` and `b4 sigma^4 ~ 0.003-0.025` at
+the tested `N`, so the remainder is NOT pointwise negligible and a `1/N`
+sum-vs-integral difference was a live possibility a priori. On the real `4_1`
+potential the residual is dominated by the ENDPOINT half-term, not the saddle:
+`deviation / e^{-Vol N/2pi}` sits in `(1.60, 2.58)` across four doublings.
+
+## Where the bean stands
+
+  (A) OPEN. Euler-Maclaurin for `s_k` WITH its constant. Singular integrand at
+      the `j = 0` endpoint, corrections genuinely polynomial (`O(log N)`).
+      Exact endpoint constraint: `QOU/Knot/KashaevProdEndpoint.lean`.
+  (B) DONE. `GaussianThetaSum.lean`.
+  (C) was already done in-repo before this bean was written.
+  (D) DONE. `GaussianShearIntegral.lean`, modulo the Fubini identification.
+
+Still assumed downstream, and NOT covered by any of the above: a bound on the
+actual sums rather than on their expansions (window + tail control), and the
+integral's own `1/N` corrections.

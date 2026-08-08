@@ -32,9 +32,27 @@
   lattice — enters only inside a `cos` multiplying an already exponentially
   small factor, so it is uniformly harmless.  It was never the obstacle.
 
-  WHAT THIS DOES NOT COVER.  The sum here is of an EXACT Gaussian.  The
-  cubic-and-higher remainder of `φ` about the saddle is a separate estimate and
-  is still assumed downstream.
+  ALL THE MOMENTS AT ONCE, AND THE HIGHER REMAINDER.  Replacing `c` by
+  `c + t/2a` and completing the square gives `hasSum_gaussian_theta_tilt` below,
+  the exponentially-tilted sum — the moment generating function of the discrete
+  Gaussian.  Differentiating it `m` times in `t` at `t = 0` gives
+  `∑_k (k−c)^m e^{−a(k−c)²}`, and since `θ₂(−c′, iπ/a) = 1 + O(e^{−π²/a})`
+  UNIFORMLY in the shift `c′`, every discrete Gaussian moment equals its
+  continuum value to that order.  So expanding `e^R` against the Gaussian —
+  which is how the cubic-and-higher remainder `R` of `φ` enters — produces for
+  the SUM exactly the series it produces for the INTEGRAL: the two asymptotic
+  expansions agree at every order in `1/N`, not merely at leading order.
+
+  WHAT THIS DOES NOT COVER, STATED CAREFULLY.  The `e^{−π²/a}` rate above is for
+  an EXACT Gaussian and must not be quoted for the full potential.  Measured on
+  the real `4₁` cubic and quartic (`laplace_higher_remainder_probe.py`), the
+  cubic/quartic terms move the relevant complex saddle and roughly HALVE the
+  rate: `d(−log deviation)/dN ≈ 0.81` against the pure-Gaussian `π/√3 ≈ 1.814`.
+  It stays exponential — which is the only thing the one-loop constant needs —
+  but it is not the same constant.  Separately, all of this concerns the
+  agreement of EXPANSIONS; a bound on the actual sums still needs the usual
+  window-plus-tail control, and the integral's own `1/N` corrections are a
+  different question again.
 
   This is the exact complement of `qou-mlgp` (A).  There the sum is
   `s_k = −∑_{j≤k} log(2 sin(jπ/N))`, whose integrand is SINGULAR at the `j = 0`
@@ -65,6 +83,7 @@
   -- Ref: [manuscript] QOU/MathlibExt/RootsOfUnityProduct.lean
   -- Ref: [manuscript] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
   -- Ref: [manuscript] computations/probes/laplace_sum_theta_exactness_probe.py
+  -- Ref: [manuscript] computations/probes/laplace_higher_remainder_probe.py
 -/
 import Mathlib.NumberTheory.ModularForms.JacobiTheta.TwoVariable
 
@@ -152,6 +171,41 @@ theorem hasSum_gaussian_theta (a c : ℝ) (ha : 0 < a) :
     field_simp
   rw [hR] at h
   simpa only [hL] using h
+
+/-- **The tilted sum — every Gaussian moment at once.**
+
+`∑_{n∈ℤ} e^{−a(n−c)² + t(n−c)} = e^{t²/4a}·√(π/a)·θ₂(−(c + t/2a), iπ/a)`.
+
+Completing the square is a shift of `c` by `t/2a`, so this is `hasSum_gaussian_theta`
+with no new analytic input.  It is the moment generating function of the discrete
+Gaussian: the `m`-th `t`-derivative at `0` is `∑_k (k−c)^m e^{−a(k−c)²}`, and the
+`e^{t²/4a}·√(π/a)` prefactor is exactly the CONTINUUM generating function
+`∫_ℝ e^{−ax²+tx} dx`.  The entire discrete-vs-continuum discrepancy, at every
+moment, is therefore the single factor `θ₂(−(c + t/2a), iπ/a) = 1 + O(e^{−π²/a})`,
+uniformly in `c` and `t`.
+
+That is the sense in which the cubic-and-higher remainder of a Laplace potential
+cannot produce a polynomial correction: it enters only through moments, and the
+moments are exponentially faithful.  (The differentiation step itself is not
+formalised here — see the file header.) -/
+theorem hasSum_gaussian_theta_tilt (a c t : ℝ) (ha : 0 < a) :
+    HasSum (fun n : ℤ => Complex.exp (-(a : ℂ) * ((n : ℂ) - c) ^ 2
+        + (t : ℂ) * ((n : ℂ) - c)))
+      (Complex.exp ((t : ℂ) ^ 2 / (4 * a)) * ((π / a : ℝ) : ℂ) ^ ((1 : ℂ) / 2)
+        * jacobiTheta₂ (-((c + t / (2 * a) : ℝ) : ℂ)) (Complex.I * π / a)) := by
+  have haC : (a : ℂ) ≠ 0 := by exact_mod_cast ha.ne'
+  have h := (hasSum_gaussian_theta a (c + t / (2 * a)) ha).mul_left
+    (Complex.exp ((t : ℂ) ^ 2 / (4 * a)))
+  have hsq : ∀ n : ℤ, Complex.exp ((t : ℂ) ^ 2 / (4 * a)) *
+      Complex.exp (-(a : ℂ) * ((n : ℂ) - ((c + t / (2 * a) : ℝ) : ℂ)) ^ 2)
+        = Complex.exp (-(a : ℂ) * ((n : ℂ) - c) ^ 2 + (t : ℂ) * ((n : ℂ) - c)) := by
+    intro n
+    rw [← Complex.exp_add]
+    congr 1
+    push_cast
+    field_simp
+    ring
+  simpa only [hsq, mul_assoc] using h
 
 /-- The `tsum` form of `hasSum_gaussian_theta`. -/
 theorem tsum_gaussian_theta (a c : ℝ) (ha : 0 < a) :

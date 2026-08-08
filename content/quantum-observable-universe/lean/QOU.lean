@@ -334,6 +334,7 @@ import QOU.Observations.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
 import QOU.MathlibExt.RootsOfUnityProduct
 import QOU.MathlibExt.GaussianThetaSum
+import QOU.MathlibExt.GaussianShearIntegral
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm
