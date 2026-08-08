@@ -3,6 +3,8 @@
 
 import Mathlib.Tactic.NormNum.Basic
 
+namespace QOU.Molecular
+
 /-- **Hydrogen molecule H₂** as a molecular braid in H₄(q).
 
     H₂ consists of two hydrogen atoms sharing one electron pair.
@@ -23,3 +25,5 @@ structure H2Braid where
 
 /-- H₂ has 4 strands. -/
 theorem h2_strands : (4 : Nat) = 2 + 2 := by norm_num
+
+end QOU.Molecular

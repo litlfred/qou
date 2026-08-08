@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Recursive atom-knot atlas at $q_0$ — particles to atoms via Markov-NF braids and hyperbolic-knot closures",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.recursive_atom_knot_atlas",
+    ref: "qou:QOU.BraidsAndKnots.atomKnotAtlas",
     validation: "not_checked",
   },
   uses: [
