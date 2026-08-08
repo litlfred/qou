@@ -264,6 +264,86 @@ theorem euler_weight_additive_qweight_multiplicative
       ∧ (qEulerSystem σ E hσt hcomm).weight n = c ^ n :=
   ⟨rfl, rfl, rfl⟩
 
+/-! #### A concrete q-difference witness for the semisimple case
+
+    `qEulerSystem` and the additive-vs-multiplicative theorem are so far
+    hypothetical: no actual dilation has been exhibited.  This section supplies
+    one — `R[X]` with the genuine q-dilation `X ↦ c·X` and the Euler operator
+    `X·d/dX` — so that `euler_weight_additive_qweight_multiplicative` has a model
+    in which *both* of its hypotheses hold simultaneously. -/
+
+/-- The dilation automorphism `X ↦ c·X` of `R[X]`, for a unit `c`.  This is the
+    algebraic q-dilation `σ_q`. -/
+noncomputable def dilateAlgEquiv (R : Type*) [CommRing R] (c : Rˣ) :
+    Polynomial R ≃ₐ[R] Polynomial R :=
+  AlgEquiv.ofAlgHom
+    (Polynomial.aeval (Polynomial.C (c : R) * Polynomial.X))
+    (Polynomial.aeval (Polynomial.C ((c⁻¹ : Rˣ) : R) * Polynomial.X))
+    (by
+      apply Polynomial.algHom_ext
+      simp only [AlgHom.coe_comp, Function.comp_apply, Polynomial.aeval_X,
+        AlgHom.coe_id, id_eq, Polynomial.aeval_mul, Polynomial.aeval_C,
+        Polynomial.algebraMap_eq]
+      rw [← mul_assoc, ← Polynomial.C_mul, Units.inv_mul, map_one, one_mul])
+    (by
+      apply Polynomial.algHom_ext
+      simp only [AlgHom.coe_comp, Function.comp_apply, Polynomial.aeval_X,
+        AlgHom.coe_id, id_eq, Polynomial.aeval_mul, Polynomial.aeval_C,
+        Polynomial.algebraMap_eq]
+      rw [← mul_assoc, ← Polynomial.C_mul, Units.mul_inv, map_one, one_mul])
+
+theorem dilateAlgEquiv_apply (R : Type*) [CommRing R] (c : Rˣ) (p : Polynomial R) :
+    dilateAlgEquiv R c p = p.comp (Polynomial.C (c : R) * Polynomial.X) := rfl
+
+/-- The **Euler operator** `X·d/dX` on `R[X]`. -/
+noncomputable def polyEuler (R : Type*) [CommRing R] :
+    Derivation R (Polynomial R) (Polynomial R) :=
+  (Polynomial.X : Polynomial R) • AlienBridge.polyDerivation R
+
+theorem polyEuler_apply (R : Type*) [CommRing R] (p : Polynomial R) :
+    polyEuler R p = Polynomial.X * Polynomial.derivative p := rfl
+
+/-- `X` is an Euler coordinate: `E X = X`.  Supplies `AlienBridge.eulerSystem`'s
+    hypothesis. -/
+theorem polyEuler_X (R : Type*) [CommRing R] :
+    polyEuler R Polynomial.X = (Polynomial.X : Polynomial R) := by
+  rw [polyEuler_apply, Polynomial.derivative_X, mul_one]
+
+/-- The dilation scales `X` by `c`.  Supplies `qEulerSystem`'s first hypothesis. -/
+theorem dilateAlgEquiv_X (R : Type*) [CommRing R] (c : Rˣ) :
+    dilateAlgEquiv R c Polynomial.X = (c : R) • (Polynomial.X : Polynomial R) := by
+  rw [dilateAlgEquiv_apply, Polynomial.X_comp, Polynomial.smul_eq_C_mul]
+
+/-- The dilation commutes with the Euler operator — both are degree operators.
+    Supplies `qEulerSystem`'s second hypothesis. -/
+theorem dilate_comm_polyEuler (R : Type*) [CommRing R] (c : Rˣ) (p : Polynomial R) :
+    dilateAlgEquiv R c (polyEuler R p) = polyEuler R (dilateAlgEquiv R c p) := by
+  simp only [polyEuler_apply, dilateAlgEquiv_apply, Polynomial.mul_comp,
+    Polynomial.X_comp, Polynomial.derivative_comp, Polynomial.derivative_mul,
+    Polynomial.derivative_C, Polynomial.derivative_X, zero_mul, mul_one, zero_add]
+  ring
+
+/-- **The concrete q-difference bridge system**: `R[X]`, dilation `X ↦ c·X`,
+    `Δ_n := Xⁿ·(X·d/dX)`, multiplicative weight `cⁿ`. -/
+noncomputable def polyQEulerSystem (R : Type*) [CommRing R] (c : Rˣ) :
+    QBridgeSystem R (Polynomial R) ℕ :=
+  qEulerSystem (dilateAlgEquiv R c) (polyEuler R) (dilateAlgEquiv_X R c)
+    (dilate_comm_polyEuler R c)
+
+/-- **The additive-vs-multiplicative theorem, concretely witnessed.**  On `R[X]`
+    the same family `Δ_n = Xⁿ·(X·d/dX)`, on the same index `n`, has classical
+    weight `n` against the Euler *derivation* and q-weight `cⁿ` against the
+    *dilation*.  Both hypotheses of
+    `euler_weight_additive_qweight_multiplicative` hold here simultaneously, so
+    that theorem is not vacuous. -/
+theorem polyQEuler_weights (R : Type*) [CommRing R] (c : Rˣ) (n : ℕ) :
+    (polyQEulerSystem R c).alien n
+        = (AlienBridge.eulerSystem (polyEuler R) (polyEuler_X R)).alien n
+      ∧ (AlienBridge.eulerSystem (polyEuler R) (polyEuler_X R)).weight n = (n : R)
+      ∧ (polyQEulerSystem R c).weight n = (c : R) ^ n :=
+  euler_weight_additive_qweight_multiplicative (dilateAlgEquiv R c) (polyEuler R)
+    (polyEuler_X R) (dilateAlgEquiv_X R c) (dilate_comm_polyEuler R c) n
+
 /-! ### A genuinely MIXED model — the unipotent block
 
     Both models above are semisimple, which would leave `QBridgeSystem`'s
