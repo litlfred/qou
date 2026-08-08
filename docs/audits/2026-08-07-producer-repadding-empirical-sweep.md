@@ -1008,6 +1008,60 @@ not an edit. Recorded with the discriminator so it can be scoped:
 # one, but never calls add_upstream
 ```
 
+## P30 — the missing `scriptHash` was concealing real staleness
+
+`compute_audit_scan` reports witnesses lacking `scriptHash` + `scriptFile`,
+without which `run_pipeline.py` treats a witness as current and skips
+regeneration. Scoped, **excluding `_deprecated/`** (a first count said 448 and
+had swept deprecated witnesses in — that number was wrong):
+
+| | witnesses |
+|---|---:|
+| live, carry both fields | 2166 |
+| **no `scriptFile` at all** | **173** |
+| `scriptFile`, no `scriptHash` | **78** — 12 use `WitnessBuilder`, 66 hand-written |
+| `scriptFile` naming a producer that no longer exists | 8 |
+
+**`scriptHash` cannot be backfilled**, which is the first thing to establish
+because it looks like it can: the field hashes the *script*, so it is
+computable without running anything — and stamping the current hash onto a
+witness that may be stale would assert a freshness nobody checked. That is
+precisely the failure the field exists to catch. Only a real re-run produces a
+witness and a hash that agree.
+
+**Re-running is also not enough for most of them.** Of the 12 whose producer
+does use `WitnessBuilder` (7 distinct scripts), re-running gave:
+
+| | |
+|---|---:|
+| gained a `scriptHash` | **5 / 7** |
+| …of those, with **no** value change | **1 / 5** |
+
+The other four moved a large fraction of their numbers:
+
+```
+entanglement-orders                38 of 83 numeric fields changed
+inverse-markov-qvalues             33 of 53
+nf-qvalues                         32 of 43
+markov-free-energy-qvalues         26 of 51
+```
+
+**That is the finding.** These are not cosmetic metadata gaps: 45–77 % of the
+numbers in those four witnesses are stale, and the missing `scriptHash` is
+exactly why nobody noticed — `run_pipeline.py` had no way to know they needed
+re-running. P30's one-line description ("hand-written witnesses are treated as
+current and silently skip regeneration") is understated; the consequence is a
+corpus of committed numbers that no longer match their own producers.
+
+The 66 hand-written ones cannot be fixed by re-running at all — they need
+porting to `WitnessBuilder` first, and a first batch of 12 arbitrary targets
+confirmed it: **0 of 12 gained a hash**, including one that exited 0.
+
+Not regenerated here. Committing those four witnesses changes hundreds of
+published numbers, which is a decision about the corpus rather than a cleanup,
+and it should be made deliberately with the staleness quantified per witness —
+which the table above now makes possible.
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field
