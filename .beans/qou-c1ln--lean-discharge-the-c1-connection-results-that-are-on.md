@@ -1,11 +1,11 @@
 ---
 # qou-c1ln
 title: 'LEAN: discharge the C1 connection results that are only numerical'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-08T01:10:00Z
+updated_at: 2026-08-08T13:00:00Z
 ---
 
 **Claimed** by session on branch `pr4672` → `claude/c1-theta-canonical-solutions-2026-08-07`.
@@ -224,3 +224,13 @@ See `qou-c1wr` for the separate question of whether any of this should become
 authored content in the first place.
 
 Blocks/relates: `qou-wgnx`, `qou-c1wr`.
+
+## 2026-08-08 — claim released; rows 4 and 6 still open
+
+The claim line above names branch `pr4672` →
+`claude/c1-theta-canonical-solutions-2026-08-07`, which merged as #4672. Rows
+1, 2, 3 and 5 are settled there. **Rows 4 and 6 were deliberately not started**
+— `Y_0`/`Y_∞` meromorphy and the closed form for `χ` — on the ground recorded in
+`qou-c1wr` that nothing downstream consumes the divisor.
+
+Unclaimed. Status moved `in-progress` → `todo`; the claim is stale, not active.

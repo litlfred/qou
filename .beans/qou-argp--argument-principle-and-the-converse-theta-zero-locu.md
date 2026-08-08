@@ -1,11 +1,11 @@
 ---
 # qou-argp
 title: 'Argument principle on an annulus — the single missing lemma for the converse theta zero locus'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T10:00:00Z
+updated_at: 2026-08-08T13:00:00Z
 ---
 
 Split out of `qou-c1ln` row 2, which is otherwise closed. Everything the
@@ -162,3 +162,15 @@ these — revise to one session, contingent on that check.
 Unchanged: `qou-c1wr` established that nothing downstream consumes the divisor.
 This is worth doing to close a named gap honestly, not because a number depends
 on it. Do not let it displace consumed work.
+
+## 2026-08-08 — claim released; still open
+
+The branch that held this (`claude/c1-theta-canonical-solutions-2026-08-07`)
+merged as #4672. Step 1 is landed and sorry-free; **step 2 is unstarted**, and
+the correction above stands: Mathlib appears to carry the factorisation already
+under names the original scan never searched for. Whether the *pinned* revision
+has them is still unverified — that check is the first thing to do, and it is
+cheap.
+
+Unclaimed. Status moved `in-progress` → `todo` so a sibling does not read it as
+actively held.
