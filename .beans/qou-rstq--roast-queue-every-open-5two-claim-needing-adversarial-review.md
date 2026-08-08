@@ -384,3 +384,41 @@ regime (`w₁ = 2.24698`, the same value that falsified `hinv1`), and it cannot 
 avoided.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+### 2026-08-08 (later) — the Landen base value, and a Mathlib gap filled
+
+`QOU/MathlibExt/AlternatingZetaTwo.lean` + `QOU/Archimedean/LiTwoNegOne.lean`
+(3 theorems, sorry-free, lake green).
+
+Route 33 G4 named `Li₂(−1) = −π²/12` as the single value standing between
+`hasDerivAt_landenCombo` and Landen. It is now proved.
+
+**The Mathlib gap.** Mathlib has `hasSum_zeta_two` (`Σ 1/n² = π²/6`) but **no
+alternating analogue**. `hasSum_alternating_zeta_two` supplies it, by splitting
+the index into even and odd:
+
+* odd index gives `Σ 1/(2k+2)² = ¼·Σ 1/(k+1)² = π²/24`;
+* hence even index gives `Σ 1/(2k+1)² = π²/6 − π²/24 = π²/8`;
+* the alternating series has the same two pieces with the even one negated, so
+  it sums to `−π²/8 + π²/24 = −π²/12`.
+
+That file imports **only Mathlib**, so it can go upstream unchanged — the same
+discipline `ComplexDilogarithm.lean` follows. `LiTwo_neg_one` and
+`cLiTwo_neg_one` are the corpus-side corollaries, the latter through
+`cLiTwo_ofReal`.
+
+**Two probe claims corrected in the same commit.** Route 33's G4 said "Lean does
+NOT have this yet" and G5 said the Landen leg still needed the base value. Both
+became false the moment this landed, and both are now rewritten to say so
+explicitly rather than quietly. That is the third time in this branch a probe
+claim has had to be corrected because the work moved past it.
+
+**Item 4 status now:**
+
+| regime | status |
+|---|---|
+| `0 ≤ x ≤ 1` | done (`cLiTwo_ofReal`) |
+| `x < 0` (Landen) | analytic core **proved**, base value **proved**; remaining: only the zero-derivative-to-identity connectedness step |
+| `x > 1` (inversion) | **the real obstacle** — on `cLiTwoExt`'s cut, needs boundary values, new infrastructure |
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

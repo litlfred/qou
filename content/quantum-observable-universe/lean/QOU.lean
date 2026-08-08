@@ -385,6 +385,8 @@ import QOU.MathlibExt.ComplexDilogarithm
 import QOU.MathlibExt.ComplexDilogarithmSlit
 import QOU.MathlibExt.ComplexDilogarithmDeriv
 import QOU.MathlibExt.ComplexDilogarithmLanden
+import QOU.MathlibExt.AlternatingZetaTwo
+import QOU.Archimedean.LiTwoNegOne
 import QOU.MathlibExt.ComplexDilogarithmUnique
 import QOU.MathlibExt.ImplicitScalar
 import QOU.QBeta.FiveTwoDiscriminant

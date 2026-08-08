@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Route 33 -- `extend` IS Re of the analytic Rogers L, and what Lean still needs.
 
-Bean `qou-rstq` item 4 (cross-referenced from `qou-trns`). Pairs with
-`QOU/MathlibExt/ComplexDilogarithmLanden.lean` (4 theorems, sorry-free, `lake
-build QOU.MathlibExt.ComplexDilogarithmLanden` green).
+Bean `qou-rstq` item 4 (cross-referenced from `qou-trns`). Pairs with three Lean
+modules, all sorry-free and lake green:
+  QOU/MathlibExt/ComplexDilogarithmLanden.lean  (4)  Landen's analytic core
+  QOU/MathlibExt/AlternatingZetaTwo.lean        (1)  the alternating zeta(2)
+  QOU/Archimedean/LiTwoNegOne.lean              (2)  Li2(-1) = -pi^2/12
 
 WHY THIS ITEM
 -------------
@@ -19,8 +21,9 @@ actually uses and across all three regimes of `extend`.
 
 G3/G4: the Landen leg, which is what the x < 0 regime needs. Lean now has its
 ANALYTIC CORE -- the combination Li2(z) + Li2(z/(z-1)) + (1/2) log(1-z)^2 has
-zero derivative (`hasDerivAt_landenCombo`) -- and G4 checks the constant it is
-locally equal to is 0.
+zero derivative (`hasDerivAt_landenCombo`) -- AND its base value,
+Li2(-1) = -pi^2/12 (`LiTwo_neg_one`, from `hasSum_alternating_zeta_two`, a
+Mathlib gap filled here). G4 checks the constant is 0.
 
 G5 NAMES WHAT IS STILL MISSING, per regime, rather than leaving it in prose.
 G6 is adversarial on the branch hypothesis of the Lean theorem.
@@ -133,10 +136,12 @@ def main() -> int:
     gates.append({
         "gate": "G4",
         "claim": "the constant that zero derivative leaves undetermined is 0 -- i.e. Landen holds "
-                 "outright. Lean does NOT have this yet: pinning it needs one special value, "
-                 "Li2(-1) = -pi^2/12 at the natural base point z = -1, where the corpus's "
-                 "`rogersL_reflection` already gives the partner rogersL(1/2) = pi^2/12. Mathlib "
-                 "has hasSum_zeta_two (pi^2/6) but no alternating analogue",
+                 "outright. Pinning it needs one special value, Li2(-1) = -pi^2/12 at the base "
+                 "point z = -1. AN EARLIER DRAFT OF THIS GATE SAID LEAN DID NOT HAVE IT; that is "
+                 "now false and is corrected: `QOU.Archimedean.LiTwo_neg_one` and `cLiTwo_neg_one` "
+                 "prove it, from `hasSum_alternating_zeta_two` -- a Mathlib gap filled here, since "
+                 "Mathlib has hasSum_zeta_two (pi^2/6) but no alternating analogue. What remains "
+                 "for Landen is only the connectedness step from zero derivative to the identity",
         "n_points": 39, "worst_abs_value": nstr(worst4, 10),
         "value_at_z_eq_minus_1": nstr(val_at_neg_one, 10),
         "LiTwo_minus_one": nstr(polylog(2, mpf(-1)), 20),
@@ -150,14 +155,16 @@ def main() -> int:
         "gate": "G5",
         "claim": "WHAT LEAN STILL NEEDS, named per regime rather than left in prose. (0,1): "
                  "nothing -- `cLiTwo_ofReal` already bridges the corpus's LiTwo to cLiTwo. "
-                 "x < 0 (Landen): the analytic core is now proved; what remains is the base "
-                 "value Li2(-1) = -pi^2/12. x > 1 (inversion): HARDER, and not attempted -- x > 1 "
+                 "x < 0 (Landen): the analytic core AND the base value Li2(-1) = -pi^2/12 are "
+                 "both proved; what remains is only the connectedness step from zero derivative "
+                 "to the identity. x > 1 (inversion): HARDER, and not attempted -- x > 1 "
                  "lies ON cLiTwoExt's cut (notCut excludes real x >= 1), so it needs a BOUNDARY "
                  "value from off the cut, not merely a constant of integration. Exactly one of "
                  "the six arguments is in that regime, and it is unavoidable: it is w_1 = 2.24698",
         "arguments_needing_the_cut_regime": on_cut,
         "notCut_definition": "{w : Im w != 0 or Re w < 1}",
-        "landen_remaining": "the base value Li2(-1) = -pi^2/12",
+        "landen_remaining": "only the zero-derivative-to-identity connectedness step; the "
+                            "analytic core and the base value Li2(-1) = -pi^2/12 are both proved",
         "inversion_remaining": "boundary values of Li2 on [1, inf) -- new analytic infrastructure",
         "pass": bool(len(on_cut) == 1),
     })
@@ -184,7 +191,9 @@ def main() -> int:
     out = {
         "probe": "qbeta_5two_route33_extend_identification",
         "bean": "qou-rstq", "cross_ref": "qou-trns", "dps": mp.dps,
-        "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmLanden.lean",
+        "pairs_with_lean": ["QOU/MathlibExt/ComplexDilogarithmLanden.lean",
+                            "QOU/MathlibExt/AlternatingZetaTwo.lean",
+                            "QOU/Archimedean/LiTwoNegOne.lean"],
         "gates": gates,
         "verdict": {
             "measured": "extend(pi^2/6, rogersL) = Re of the analytic Rogers L, to 1e-50, at the "
@@ -192,7 +201,8 @@ def main() -> int:
             "proved_this_round": "the analytic core of the Landen leg -- the combination "
                                  "Li2(z) + Li2(z/(z-1)) + (1/2) log(1-z)^2 has zero derivative, "
                                  "with the branch condition isolated and shown load-bearing.",
-            "still_open": "(a) the Landen base value Li2(-1) = -pi^2/12; (b) the INVERSION leg "
+            "still_open": "(a) for Landen, only the connectedness step -- its analytic core AND "
+                          "its base value Li2(-1) = -pi^2/12 are both now proved; (b) the INVERSION leg "
                           "for x > 1, which needs boundary values of Li2 ON its cut -- new "
                           "analytic infrastructure, and the sharper of the two. Exactly one of "
                           "the six arguments needs it, w_1 = 2.24698, and it cannot be avoided.",

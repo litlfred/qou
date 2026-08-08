@@ -3,7 +3,11 @@
   "bean": "qou-rstq",
   "cross_ref": "qou-trns",
   "dps": 50,
-  "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmLanden.lean",
+  "pairs_with_lean": [
+    "QOU/MathlibExt/ComplexDilogarithmLanden.lean",
+    "QOU/MathlibExt/AlternatingZetaTwo.lean",
+    "QOU/Archimedean/LiTwoNegOne.lean"
+  ],
   "gates": [
     {
       "gate": "G1",
@@ -81,7 +85,7 @@
     },
     {
       "gate": "G4",
-      "claim": "the constant that zero derivative leaves undetermined is 0 -- i.e. Landen holds outright. Lean does NOT have this yet: pinning it needs one special value, Li2(-1) = -pi^2/12 at the natural base point z = -1, where the corpus's `rogersL_reflection` already gives the partner rogersL(1/2) = pi^2/12. Mathlib has hasSum_zeta_two (pi^2/6) but no alternating analogue",
+      "claim": "the constant that zero derivative leaves undetermined is 0 -- i.e. Landen holds outright. Pinning it needs one special value, Li2(-1) = -pi^2/12 at the base point z = -1. AN EARLIER DRAFT OF THIS GATE SAID LEAN DID NOT HAVE IT; that is now false and is corrected: `QOU.Archimedean.LiTwo_neg_one` and `cLiTwo_neg_one` prove it, from `hasSum_alternating_zeta_two` -- a Mathlib gap filled here, since Mathlib has hasSum_zeta_two (pi^2/6) but no alternating analogue. What remains for Landen is only the connectedness step from zero derivative to the identity",
       "n_points": 39,
       "worst_abs_value": "1.0774259e-50",
       "value_at_z_eq_minus_1": "0.0",
@@ -91,12 +95,12 @@
     },
     {
       "gate": "G5",
-      "claim": "WHAT LEAN STILL NEEDS, named per regime rather than left in prose. (0,1): nothing -- `cLiTwo_ofReal` already bridges the corpus's LiTwo to cLiTwo. x < 0 (Landen): the analytic core is now proved; what remains is the base value Li2(-1) = -pi^2/12. x > 1 (inversion): HARDER, and not attempted -- x > 1 lies ON cLiTwoExt's cut (notCut excludes real x >= 1), so it needs a BOUNDARY value from off the cut, not merely a constant of integration. Exactly one of the six arguments is in that regime, and it is unavoidable: it is w_1 = 2.24698",
+      "claim": "WHAT LEAN STILL NEEDS, named per regime rather than left in prose. (0,1): nothing -- `cLiTwo_ofReal` already bridges the corpus's LiTwo to cLiTwo. x < 0 (Landen): the analytic core AND the base value Li2(-1) = -pi^2/12 are both proved; what remains is only the connectedness step from zero derivative to the identity. x > 1 (inversion): HARDER, and not attempted -- x > 1 lies ON cLiTwoExt's cut (notCut excludes real x >= 1), so it needs a BOUNDARY value from off the cut, not merely a constant of integration. Exactly one of the six arguments is in that regime, and it is unavoidable: it is w_1 = 2.24698",
       "arguments_needing_the_cut_regime": [
         "2.24697960371746706"
       ],
       "notCut_definition": "{w : Im w != 0 or Re w < 1}",
-      "landen_remaining": "the base value Li2(-1) = -pi^2/12",
+      "landen_remaining": "only the zero-derivative-to-identity connectedness step; the analytic core and the base value Li2(-1) = -pi^2/12 are both proved",
       "inversion_remaining": "boundary values of Li2 on [1, inf) -- new analytic infrastructure",
       "pass": true
     },
@@ -115,7 +119,7 @@
   "verdict": {
     "measured": "extend(pi^2/6, rogersL) = Re of the analytic Rogers L, to 1e-50, at the six arguments `extended_sum` uses and across all three regimes.",
     "proved_this_round": "the analytic core of the Landen leg -- the combination Li2(z) + Li2(z/(z-1)) + (1/2) log(1-z)^2 has zero derivative, with the branch condition isolated and shown load-bearing.",
-    "still_open": "(a) the Landen base value Li2(-1) = -pi^2/12; (b) the INVERSION leg for x > 1, which needs boundary values of Li2 ON its cut -- new analytic infrastructure, and the sharper of the two. Exactly one of the six arguments needs it, w_1 = 2.24698, and it cannot be avoided.",
+    "still_open": "(a) for Landen, only the connectedness step -- its analytic core AND its base value Li2(-1) = -pi^2/12 are both now proved; (b) the INVERSION leg for x > 1, which needs boundary values of Li2 ON its cut -- new analytic infrastructure, and the sharper of the two. Exactly one of the six arguments needs it, w_1 = 2.24698, and it cannot be avoided.",
     "sum_rule_status": "verified to 80 dps, unproved"
   }
 }
