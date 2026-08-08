@@ -1126,3 +1126,55 @@ induction with `abs_corrected_trapezoid_sub_integral_le_osc` in place of the
 `g''''` bound, and sum the per-cell oscillations of a monotone `g''` by
 `Finset.sum_range_sub` telescoping to `|g''(b) - g''(a)|`. Structurally
 identical to the induction already proved; not yet written.
+
+## Both named bookkeeping pieces are now DONE
+
+`QOU/MathlibExt/CompositeEulerMaclaurin.lean`:
+
+    abs_integral_sub_composite_le_osc
+      | int_a^{a+kh} g - [ h sum_{j=0}^{k} g(a+jh) - (h/2)(g a + g(a+kh))
+                           - (h^2/12)(g1(a+kh) - g1 a) ] |
+        <= (h^3/12) (g2 a - g2(a+kh))     for g2 = g'' ANTITONE
+
+sorry-free on `[propext, Classical.choice, Quot.sound]`.
+
+**THE RIGHT-HAND SIDE DOES NOT GROW WITH k.** Against the `g''''` version's
+`k h^5 sup|g''''|/720`, this is `h^3 TV(g'')/12` with no factor of `k` at all.
+On the sum (divide by `h`) that is `O(h^2) = O(1/N^2)`, below the `O(1/N)` term
+(A) extracts — and it needs only `logSinc''`, which is bounded AND monotone
+(`mul_cube_cos_lt_sin_cube`), instead of `logSinc''''`.
+
+**THE TELESCOPING NEEDED NO SUMMATION LEMMA.** For antitone `g''` the per-cell
+oscillation on `[A,B]` is exactly `g''(A) - g''(B)`, and the induction's
+arithmetic does the rest: the inductive `h^3/12 (g'' a - g'' A)` plus the new
+cell's `h^3/12 (g'' A - g'' B)` add to `h^3/12 (g'' a - g'' B)`. The
+`Finset.sum_range_sub` step anticipated in the previous entry turned out to be
+unnecessary.
+
+## (A) — every general piece exists; what is left is the instantiation
+
+    all analytic requirements                              PROVED
+    oscillation cell bound                                 PROVED
+    composite rule with oscillation + telescoping          PROVED  <- this commit
+
+What remains is ONE instantiation, with no general lemma missing:
+
+  * apply `abs_integral_sub_composite_le_osc` at `g = logSinc`, `a = h`,
+    `k-1` cells, using `mul_cube_cos_lt_sin_cube` for `AntitoneOn logSinc''`
+    and `hasDerivAt_logSinc` / `hasDerivAt_logSinc_deriv` for the derivative
+    hypotheses (the `g3`, `g4` hypotheses are still required by the statement
+    even though the BOUND no longer mentions them — supplying them for logSinc
+    on the interior is routine but not yet written);
+  * add `sum_log_two_sin_split` and the Robbins bounds for `log(k!)`;
+  * collect the three `h`-endpoint terms via `abs_logSinc_le` and
+    `abs_logSinc_deriv_le`;
+  * conclude
+    `s_k = (N/pi)Lambda(th) - (1/2)log(2N sin th) - (pi/12N)cot(th) + O(1/N^2)`.
+
+One wrinkle worth naming: `abs_integral_sub_composite_le_osc` still takes `g3`
+and `g4` derivative hypotheses, inherited from the cell rule's proof even though
+its conclusion no longer mentions them. For `logSinc` those are
+`logSinc'''` and `logSinc''''` — which exist and are smooth on the interior
+`[h, theta]`, so this is not the eighth-order cancellation problem returning; it
+is just more derivative bookkeeping than the statement suggests. A cleaner
+version would weaken the hypotheses to `C^2` plus integrability.
