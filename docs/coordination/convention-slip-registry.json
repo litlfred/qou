@@ -33,6 +33,31 @@
       "symbols": ["q", "p", "m"],
       "expect": "pass",
       "comment": "The canonical side. Machine-checked in Lean by crossingEnergy_split."
+    },
+    {
+      "id": "R1-em-strangelet-q-zero-bar-odd",
+      "channel": "EM",
+      "doc": "content/quantum-observable-universe/observations/strangelet-crossing-energy.md:12-19",
+      "names": "strangelet crossing energy at Q = 0 (per baryon unit, N = 1)",
+      "whole": "p*q - m/q",
+      "parts": ["((p-m)/2)*(q + 1/q)", "((p+m)/2)*(q - 1/q)"],
+      "symbols": ["q", "p", "m"],
+      "expect": "pass",
+      "correct_doc": "content/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
+      "lean_witness": "QOU.Braiding.crossingEnergy_split (crossing-energy-decomposition.lean, sorry-free)",
+      "comment": "CORRECTED 2026-08-08 (downstream propagation of R1-em-coulomb-decomposition). The block previously stated E_cross = N*(p+m)/2*(q + 1/q), i.e. it read Q = 0 as leaving the crossing energy in the BAR-EVEN channel with the GROSS multiplicity. Both were wrong: Q = (p-m)/2 is the bar-even coefficient, so Q = 0 annihilates that channel and forces p = m, leaving the bar-odd channel alone -- E_cross = ((p+m)/2)*(q - 1/q) = p*(q - 1/q). Pinned as the general split so the fixture is independent of the Q = 0 specialisation; substituting p = m then gives the block's displayed form. The Lean sibling QOU.Observations.strangelet_crossing_energy carried the same inverted claim as class field claim_ii and was corrected in the same commit (field renamed claim_ii_bar_odd_crossing_energy)."
+    },
+    {
+      "id": "R1-em-qenergy-signed-per-crossing-weights",
+      "channel": "EM/mass",
+      "doc": "content/quantum-observable-universe/climax-volume-mass/q-energy-terms-and-limits.md:27-35",
+      "names": "action term as the sum of signed per-crossing weights (def:crossing-energy)",
+      "whole": "p*q - m/q",
+      "parts": ["p*q", "-m/q"],
+      "symbols": ["q", "p", "m"],
+      "expect": "pass",
+      "correct_doc": "content/quantum-observable-universe/climax-volume-mass/crossing-energy.md:3-11",
+      "comment": "CORRECTED 2026-08-08 (defect 2 of the same sweep). The block gave the negative-crossing weight as q^-1 rather than -q^-1, so its stated sum reconstructed p*q + m/q -- the identical dropped-sign error as R1-em-coulomb-decomposition, one level down at the per-crossing weights. It also reused the symbol E_x for two different quantities: the sign-blind bar-odd weight (q - 1/q)/2 ~ 0.1045 (the canonical E_x of building-block-knots-table6-data.md:4 and knot-periodic-table.md:118) and the signed per-crossing weights. The collision is resolved by keeping E_x for the bar-odd weight and naming the signed total E_cross."
     }
   ],
 
