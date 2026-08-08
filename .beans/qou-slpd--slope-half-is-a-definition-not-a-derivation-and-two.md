@@ -1,11 +1,11 @@
 ---
 # qou-slpd
 title: 'ROAST: slope ½ is a definition, not a derivation — and the two ½s are order vs level'
-status: in-progress
+status: todo
 type: task
 priority: high
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T07:30:00Z
+updated_at: 2026-08-08T13:00:00Z
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.
@@ -268,3 +268,10 @@ answerable in one `grep` of a PDF already sitting in `uploads/`
 (`0903.0853v3.pdf`, RSZ Astérisque 355 §1.3.2). **Read the cited source before
 escalating a citation question to the owner** — the same lesson as the
 2026-08-07 corpus-grep miss, in a different drawer.
+
+## 2026-08-08 — claim released
+
+Landed with #4672. What remains open here is recorded in the sections above and
+is not being worked on.
+
+Unclaimed. Status moved `in-progress` → `todo`.

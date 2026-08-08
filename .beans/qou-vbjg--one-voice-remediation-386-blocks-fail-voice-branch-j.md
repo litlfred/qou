@@ -1,11 +1,11 @@
 ---
 # qou-vbjg
 title: 'One-voice remediation: 386 blocks fail voice-branch-jargon'
-status: in-progress
+status: done
 type: task
 priority: high
 created_at: 2026-08-08T12:00:00Z
-updated_at: 2026-08-08T12:00:00Z
+updated_at: 2026-08-08T13:00:00Z
 ---
 
 Owner: *"` the binding module C1` is audit/agent-author-dicussion language...
@@ -361,3 +361,27 @@ refs from `brings-surface/`, plus the `SUPERSEDED` notice's wrong directory in
 jargon, but underdefined. Separate.
 
 Relates: `qou-kyst` (the F1/F3 statements this started from).
+
+## CLOSED 2026-08-08 — merged as #4672 (`4f2f03cc`)
+
+The axis reads **3367 pass, 0 fail** on `main`, from 2976 / 386 when the sweep
+landed. Every verdict that moved was re-read by an agent against the current
+text; the shortcut of flipping on "the quoted span is gone" was tried and thrown
+out, because measured against the pre-remediation text only 19% of those spans
+matched literally.
+
+What the exercise was actually about, in one line: the test is not *is this
+jargon* but **is the referent something the paper contains**. Both failure modes
+reduce to it — `C1` and `D6` name nothing a reader can look up, and "open — no
+corpus content" describes a repository the reader cannot see.
+
+Follow-ups that outlived this bean, all recorded and none silently dropped:
+
+* the `-1/12` coefficient in `proton-mass-substrate-identity-derivation` wants a
+  real witness — the obvious substitute is a *failing* scaffold, so the prose
+  states what the number rests on instead;
+* `run-validate.ts` checks `#label` cross-references only, so a wrong relative
+  path passes silently — several dead links surfaced by hand during this work;
+* `substrate wall`, 108 uses and defined nowhere. Manuscript voice, not branch
+  jargon, so out of scope here — but underdefined.
+
