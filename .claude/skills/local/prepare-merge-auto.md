@@ -41,8 +41,15 @@ before proceeding.
 
 ### Phase 1b: Wait for reviews + status briefing
 
-**Wait for Copilot and Gemini reviews to land** before proceeding.
-Do NOT skip ahead — the reviews are the input to Phase 2.
+**Wait for the Copilot review to land** before proceeding.
+Do NOT skip ahead — the review is the input to Phase 2.
+
+> **Gemini is sunset — never wait on it (2026-08-07).** The consumer
+> Gemini Code Assist GitHub integration has ceased all code-review
+> activity; a `/gemini review` comment is answered only by a
+> `[!CAUTION]` sunset notice, or by nothing at all. **Copilot is the
+> only live external reviewer.** Waiting for a Gemini review that can
+> never arrive is the documented stall mode (PR #4456).
 
 **Wait protocol (15-minute window — extended 2026-05-31 per author):**
 
@@ -59,13 +66,13 @@ Do NOT skip ahead — the reviews are the input to Phase 2.
      this file type (e.g. skill-only PRs with no code); proceed
      with 0 comments
 
-2. For Gemini: check PR issue comments via
-   `mcp__github__pull_request_read(method="get_comments", ...)`.
-   If a `gemini-code-assist[bot]` comment contains "daily quota
-   limit", note "Gemini: quota exhausted" and proceed without
-   waiting further.
+2. **Check that Copilot reviewed the CURRENT head.** A review whose
+   `commit_id` is an earlier commit is stale and does not count —
+   re-request with `mcp__github__request_copilot_review` and keep
+   polling. (PR #4456 carried a 13-file review against an 85-file
+   head.)
 
-3. **15-minute hard cap**: if neither reviewer has completed after
+3. **15-minute hard cap**: if Copilot has not completed after
    15 minutes, proceed with whatever comments have landed. Note
    "Copilot: timed out (15 min)" in the briefing.
 
@@ -78,12 +85,10 @@ user a concise **status briefing**:
 4. **Review comments received**: total count, by reviewer, with
    1-line summary of each thread:
    ```
-   Review comments (5 total — Copilot: 3, Gemini: 2):
+   Review comments (3 total — Copilot: 3):
      1. [Copilot] line 42 engine.py — threshold mismatch
      2. [Copilot] line 98 engine.py — unused variable
      3. [Copilot] line 173 engine.py — spelling fix
-     4. [Gemini] line 15 table.md — missing citation
-     5. [Gemini] line 88 table.md — ambiguous wording
    ```
 5. **Disposition plan**: for each comment, state the planned
    action (accept / modify / reject / escalate) BEFORE making
@@ -138,8 +143,9 @@ all escalated questions):
 1. Run `bun run scripts/run-validate.ts content/<paper>` one final time.
 2. Check CI status via `mcp__github__pull_request_read get_check_runs`.
 3. If all green: merge via `mcp__github__merge_pull_request` with
-   `merge_method: "merge"` (default per AGENTS.md — preserves
-   structured commits).
+   `merge_method: "rebase"` (default per AGENTS.md §"Branch + PR
+   workflow" rule 8 — replays the structured commits onto `main`
+   linearly, no merge commit). Rule 8 is authoritative.
 4. **CRITICAL:** DO NOT DELETE THE BRANCH EVER! If using the GitHub CLI, DO NOT pass `--delete-branch`. If using the GitHub API, ensure the branch is preserved.
 5. Report the merge SHA + URL.
 
@@ -164,7 +170,8 @@ After merge:
 ## Anti-patterns
 
 - Do NOT merge without resolving review comments (even if CI is green).
-- Do NOT squash unless the user explicitly says "squash".
+- Do NOT squash unless the user explicitly says "squash" on this PR.
+- Do NOT wait on a Gemini review — Gemini Code Assist is sunset.
 - Do NOT skip sibling coordination — it prevents post-merge conflicts.
 - Do NOT ask trivial questions in Phase 3 — only genuinely ambiguous
   decisions warrant user input.

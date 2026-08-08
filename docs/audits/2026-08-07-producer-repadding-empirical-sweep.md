@@ -903,6 +903,111 @@ precision was lost when that witness was written: the fix is upstream and the
 ordering matters. Only `su4` is fixable in place, and its count is a floor —
 both runs that measured it timed out.
 
+## The last 47 fields, mapped
+
+`su4_1111_markov_trace_probe` (10) is fixed, which exhausts the Class A cases
+fixable in place. Its count was recorded as a floor because both runs that
+measured it timed out; given a longer budget it completes at exactly the 10 the
+sweep saw — a floor that happened to be tight.
+
+### 8 fields: a real upstream downcast, and it needs the chain
+
+`phi_q_spectral_combiner_probe` (6) and `rho_k_h3a_lp_dual` (2) read their
+values from a **committed witness**, so nothing they do locally can help. The
+loss is in `qbeta_per_block_paper_closed_forms.py`, and it is not subtle:
+
+```python
+q_0 = sp.Float(q_0_str, 30)                          # 30 digits available
+val = float(expr.subs(q, q_0))                       # -> 53 bits
+y_lam[label] = float(entry["y_at_q0_50dps"])         # 50 digits available -> 53 bits
+tau_diff  = sum(y_lam[s] * chi_at_q0[s] ...)         # float arithmetic
+```
+
+The second line is the clearest statement of the defect anywhere in this
+corpus: **the field is named `y_at_q0_50dps` and the code takes a `float` of
+it**, discarding 33 digits that are sitting right there. The witness then
+stores the results as JSON *numbers*, so `mpf(v)` downstream faithfully
+reproduces 53 bits and the consumer looks like the culprit.
+
+This is the "downcast upstream" branch of the judgment the scope note sets out,
+and it is where the original **"upstream propagation"** reading — retracted as a
+general claim about all 20 — was pointing at something real. It is true here,
+for these two, and the fix has the ordering that claim asserted: repair
+`qbeta_per_block_paper_closed_forms`, regenerate its witness, then re-run both
+consumers. Fixing the source without the regeneration changes nothing
+downstream; regenerating without the source fix re-imports the same 53 bits.
+**Not attempted here** — a three-step chain across two witnesses deserves its
+own change, not the tail of this one.
+
+### 39 fields: the detector, not the producers
+
+Nine producers — `gap_a4_*`, `markov_stab`, `qbeta_markov_trace_*`, `habiro_*`,
+`verify_c_color_swap`. Verified to convert **no repo float64 at all**; their
+flagged values are genuine computations of quantities that are exactly integers
+(`tr_M(1) = 1 − 1.4e-51`, `h2 = 10 + 3.2e-47`). No producer fix exists, because
+there is no defect in the producer.
+
+`is_f64_padded` flags anything within `1e-30` of a double, and a value that *is*
+1 sits that close to `1.0` — as does a genuine padded value truncated at 50 dps
+(`1.56e-50`). **No test on the string can separate them**, so the choice is
+between two things, and it belongs to whoever owns the ratchet:
+
+1. **Baseline them** as known false positives, with the reason recorded, so the
+   gate reads a true zero for the real defect.
+2. **Give the producers the knowledge** — a quantity known to be an exact
+   integer can be emitted as one, which removes the value from the detector's
+   reach honestly rather than by exception.
+
+Option 2 is better where the exactness is actually known (an identity trace, a
+representation-theoretic multiplicity) and unavailable where it is not. What
+must **not** happen is a further search for a float64 entry in them: #4677
+established there is none, and the next agent to go looking will spend the same
+day rediscovering it.
+
+## Why the per-block witness went stale — 122 producers are invisible to the drift detector
+
+Regenerating `qbeta-per-block-paper-closed-forms.witness.json` moved two values
+at the 8th digit *before any source change*: the committed numbers did not match
+`float()` of their own upstream `y-lambda-at-q0.witness.json`. That witness had
+moved and this one was never regenerated.
+
+The repo has a detector for exactly this — `computations/witness_dependency_drift.py`,
+which sees a dependency only when the producer declares it:
+
+```python
+per_block_witness = builder.add_upstream(upstream_path)   # phi_q — declared
+y_data = json.load(open(_pb.witness_path("y-lambda-at-q0.witness.json", HERE)))
+                                                          # per-block — invisible
+```
+
+`phi_q_spectral_combiner_probe` has a comment saying it uses `add_upstream`
+*"so the drift detector sees the upstream hash"*. The per-block producer reads
+two witnesses (`q-pinning-50-digit`, `y-lambda-at-q0`) with a plain
+`json.load`, so neither edge exists as far as the detector is concerned.
+
+**Swept:**
+
+| | producers |
+|---|---:|
+| read a committed witness via plain `json.load`, **no** `add_upstream` | **122** |
+| declare the dependency with `add_upstream` | 32 |
+
+So roughly four in five witness-consuming producers are outside the drift
+detector's reach, and any of them can go stale exactly the way this one did —
+silently, with the gate green. That is the same shape as the two other gaps this
+document records: the padding audit cannot see the `mp.dps` no-op, and the
+staleness detector cannot see an undeclared dependency. Each gate is sound
+about what it looks at; the misses are all in what never reaches it.
+
+Not fixed here — 122 producers is its own change, and `add_upstream` alters
+witness content (it records the upstream hash), so it is a regeneration wave,
+not an edit. Recorded with the discriminator so it can be scoped:
+
+```python
+# a producer is invisible if it mentions ".witness.json" and json.load(s)
+# one, but never calls add_upstream
+```
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field

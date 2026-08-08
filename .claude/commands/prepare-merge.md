@@ -1,5 +1,5 @@
 ---
-description: Full pre-merge workflow — rebase onto upstream, integrate new content, one-voice review, 100% Lean, then request Gemini + Copilot reviews
+description: Full pre-merge workflow — rebase onto upstream, integrate new content, one-voice review, 100% Lean, then request a Copilot review
 ---
 
 Prepare the current branch's PR for merge. Execute the steps **in order**,
@@ -218,9 +218,8 @@ computation the branch added or modified:
 
 The reuse pass is **not optional** — duplicating content that main
 already carries is the most common source of post-merge review
-churn. Running this audit now (rather than waiting for Gemini /
-Copilot to surface the duplicates in step 6) saves a full review
-cycle.
+churn. Running this audit now (rather than waiting for Copilot to
+surface the duplicates in step 6) saves a full review cycle.
 
 ## 3. One-voice review
 
@@ -256,12 +255,17 @@ cycle.
 - Find the open PR for the current branch in `litlfred/qou` using
   `mcp__github__list_pull_requests`. If none exists, tell the user
   and stop.
-- Post a `/gemini review` comment on the PR using
-  `mcp__github__add_issue_comment`.
 - Request a Copilot review using `mcp__github__request_copilot_review`.
+  **Copilot is the only live external reviewer.**
+- **Do NOT post `/gemini review`.** Gemini Code Assist is **sunset** —
+  the consumer GitHub integration has ceased all code-review activity
+  and answers every request with a `[!CAUTION]` sunset notice. Posting
+  it and waiting is the documented way to stall a session
+  (PR #4456, 2026-08-07). If an old `gemini-code-assist[bot]` sunset
+  comment is already on the PR, record "Gemini: sunset" and move on.
 - Subscribe to PR activity with `mcp__github__subscribe_pr_activity`
   so CI failures and review comments are delivered to this session.
-- Report the PR URL and confirm both review requests posted.
+- Report the PR URL and confirm the Copilot review request posted.
 
 Note: You do not need to wait for `lake build` (Step 4) to finish before
 doing this step. You can fire off the review requests while the build runs.
@@ -270,24 +274,22 @@ doing this step. You can fire off the review requests while the build runs.
 
 - After all review comments are disposed of, resolve conflicts so that a merge can be performed.
 - Ask the user if they are ready to proceed with the merge (provide PR # and URL).  If confirmed, perform merge.
-- **Merge method: ALWAYS `merge` (merge-commit), NEVER `squash`, unless
-  the user EXPLICITLY requests squash on the merge command itself.**
-  Small structured commits are a deliberate authoring discipline in this
-  repo (AGENTS.md §"Branch + PR workflow" rule 4) — they exist so
-  cherry-pick, `git bisect`, focused review attention, and granular
-  rollback all work. Squashing destroys that record. The default for
-  `mcp__github__merge_pull_request` must be `merge_method: "merge"`.
-  Treat squash as a destructive operation: do not infer it from "merge",
-  "ship", "land", or any other generic verb — only from the explicit
-  word "squash" in the user's instruction.
-  - `merge` (default) — preserves every commit on the branch
-  - `rebase` — only if the user explicitly says "rebase-merge"
-  - `squash` — only if the user explicitly says "squash"
+- **Merge method: see AGENTS.md §"Branch + PR workflow" rule 8 — that
+  rule is authoritative and explicitly supersedes this skill doc.**
+  The default is **`merge_method: "rebase"`** (rebase-and-merge), which
+  applies the branch's structured commits to `main` as a linear
+  sequence. Do not restate the policy here; read rule 8.
+  - `rebase` (**default**) — keeps every commit, no merge commit
+  - `merge` — only for a sub-merge of already-merged sibling branches,
+    where the merge commit is a useful boundary marker
+  - `squash` — **never** without explicit per-PR permission
+    ("squash this one" / "squash OK"). Treat it as destructive: do not
+    infer it from "merge", "ship", "land", or any generic verb.
 
 ## Failure handling
 
 If any step 1–5 fails and cannot be resolved automatically, **stop**
-and report the blocker to the user. If you already requested Gemini or
-Copilot reviews in parallel, warn the user that those reviewers might be
+and report the blocker to the user. If you already requested the Copilot
+review in parallel, warn the user that the reviewer might be
 looking at a broken branch, and proceed to fix the issues so you can push
 a green build as quickly as possible.

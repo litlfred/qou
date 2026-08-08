@@ -1056,16 +1056,17 @@ Per prepared PR:
 1. **Subscribe.** Right after `create_pull_request`, call
    `mcp__github__subscribe_pr_activity` with the new PR number.
    Add to the ledger under "watching".
-2. **Request automated reviews from both bots.** Call
+2. **Request the automated review.** Call
    `mcp__github__request_copilot_review` to surface
    `copilot-pull-request-reviewer` feedback as actionable threads.
-   `gemini-code-assist` runs separately (automatic on PR open in
-   this repo); if it doesn't post within a few minutes, check
-   for a quota-limit comment ("you have reached your daily
-   quota") and document in the ledger. The two bots find
-   different classes of issue (copilot — style + small bugs;
-   gemini — semantic correctness, cross-file conventions),
-   so request **both**. Don't wait for human review.
+   **Copilot is the only live external reviewer** — Gemini Code
+   Assist is sunset (2026-08-07) and answers nothing; never wait on
+   it. Verify the review landed against the **current head** (a
+   review whose `commit_id` is an earlier commit is stale). Note the
+   consequence: Copilot finds style + small bugs, so the class Gemini
+   used to cover — semantic correctness and cross-file conventions —
+   now has **no bot backstop** and falls to the agent's own audit.
+   Don't wait for human review.
 3. **Triage every review event** per coordinate §5a:
    - `accept` → fix the small thing, push
    - `accept-with-modification` → fix differently, reply
