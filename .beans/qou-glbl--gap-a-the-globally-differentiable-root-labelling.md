@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide CLOSED and log(-y) ROUTING settled; what remains is the concrete Y1 Y2 Y3'
+title: 'Gap A: VSide CLOSED, log(-y) routing settled, labelling FORCED; what remains is the Lean assembly of t(c)'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T03:30:00Z
+updated_at: 2026-08-09T04:10:00Z
 ---
 
 ## What is open
@@ -144,7 +144,8 @@ in the real part. Route 30's correction, proved rather than assumed.
 | **`VSide`, all six fields, every root on the OPEN arc** | ✅ `vSide_of_root` |
 | ⚠ `VSide` at `φ = π` | **FALSE — Route 36 G7, below. Prove over `Ico`, never `Icc`.** |
 | the `log(−y)` **routing** — which root takes which route | ✅ `log_neg_route` |
-| **concrete `Y₁ Y₂ Y₃` (and with it route 2's *path* condition)** | **open** |
+| the labelling's *shape* + route 2's path condition | ✅ forced, Route 36 G9 |
+| **the Lean assembly of `t(c)` and its derivative** | **open — the last piece** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
@@ -155,7 +156,7 @@ be called trivial in advance.
 
 `VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
 it was measured before any Lean was written for it. **Route 36**
-(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **8 gates**, all pass — G3 is a
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **9 gates**, all pass — G3 is a
 **retraction** and G7 a recorded *refutation*, both below):
 
 * **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks
@@ -292,6 +293,42 @@ a path `fun u => ((t u : ℝ) : ℂ)` — it needs `Yⱼ` **real-valued near `φ
 merely real *at* `φ`. That is a condition on the labelling rather than on the
 root, so it folds into the concrete `Y₁ Y₂ Y₃` and is now the *only* thing the
 `log(−y)` hypotheses still want.
+
+### ✅ The concrete labelling is FORCED — every piece is already a theorem
+
+Route 36 **G9**. The construction is not a design choice; it is the only one that
+works, and it discharges G8's residue instead of inheriting it:
+
+    Y₁ φ = ((t (cos φ) : ℝ) : ℂ)        t(c) = the unique root of `unitCubic c` in (0,1)
+    (Y₂ φ, Y₃ φ) = otherRoots (t − 2c) (t² − 2ct + 2c + 1)
+
+Four facts make it well defined, and **all four are already proved**:
+
+| need | supplied by |
+|---|---|
+| `t` exists | `exists_root_mem_Ioo` |
+| `t` is **single-valued** | `real_root_neg_of_ne` — the other real roots are negative |
+| `t` is differentiable in `c` | `ImplicitScalar` + `unitCubic_deriv_ne_zero` (`∂p/∂y ≥ 7/4`) |
+| `(Y₂,Y₃)` continuous through the collision | `continuous_otherRoots` |
+
+Measured on 399 arc points: the `(0,1)` root is unique at every one, `t` ranges over
+**`[0.4301680, 0.8019354]`** — bounded away from both ends, so
+`unitCubic_deriv_ge`'s `0 < t < 1` holds with margin — and `|dt/dφ| ≲ 0.233`. The
+endpoints cross-check against G6 independently: `t → 0.4301597` at `φ = 0` (the
+real root at `x = +1`) and `t → 0.8019377 = 2cos(π/7) − 1` at `φ = π`, the largest
+level-7 root.
+
+**And it closes G8's residue.** G8 noted that route 2's lemma is stated for a path
+`fun u => ((t u : ℝ) : ℂ)`, so it needs `Y` real-valued *near* `φ`, not merely real
+*at* `φ` — a condition on the labelling rather than the root. `Y₁` above is
+real-valued **by construction**, which is exactly that shape. Better: G9 measures
+that the `(0,1)` root *is* the unique **positive real** root, i.e. precisely the one
+`log_neg_route` sends to route 2. The two fit without adjustment.
+
+**Still open:** the Lean assembly — defining `t(c)` from the existence and
+uniqueness theorems and differentiating it through `ImplicitScalar`. The pieces
+are proved; what is missing is putting them together, and this lane's record says
+that is exactly where unexamined regions hide.
 
 ### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 

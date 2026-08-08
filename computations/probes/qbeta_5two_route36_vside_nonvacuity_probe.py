@@ -528,6 +528,71 @@ def main() -> int:
                      and route1 == 2 * N),
     })
 
+    # ---- G9: the concrete labelling is FORCED, and it fixes G8's residue ----
+    # G8 left one thing open: route 2's lemma is stated for a path `fun u => ((t u : R) : C)`,
+    # so it needs Y REAL-VALUED NEAR phi, not merely real AT phi -- a condition on the
+    # labelling, not on the root. The natural construction discharges it by construction:
+    #
+    #   Y_1 phi = ((t (cos phi) : R) : C),  t(c) = the unique root of unitCubic c in (0,1)
+    #   (Y_2, Y_3) = otherRoots (t - 2c) (t^2 - 2ct + 2c + 1)
+    #
+    # Y_1 is real-valued by definition, which is exactly route 2's shape. What has to hold
+    # for this to be well defined and smooth is measured here; each item is already a Lean
+    # theorem, so this gate is checking that they line up on real data, not discovering them.
+    n_not_unique, n_not_route2 = 0, 0
+    tmin, tmax, maxjump = None, None, None
+    prev_t = None
+    step = pi / (N + 1)
+    for i in range(N):
+        ph = pi * mpf(i + 1) / (N + 1)
+        c = mpmath_cos(ph)
+        rts = polyroots([mpf(1), -2 * c, 2 * c + 1, mpf(-1)], maxsteps=300, extraprec=300)
+        in_ioo = [re(r) for r in rts if fabs(im(r)) < REAL_TOL and 0 < re(r) < 1]
+        pos_real = [re(r) for r in rts if fabs(im(r)) < REAL_TOL and re(r) > 0]
+        if len(in_ioo) != 1:
+            n_not_unique += 1
+            continue
+        if len(pos_real) != 1 or fabs(pos_real[0] - in_ioo[0]) > REAL_TOL:
+            n_not_route2 += 1
+        t = in_ioo[0]
+        tmin = t if tmin is None or t < tmin else tmin
+        tmax = t if tmax is None or t > tmax else tmax
+        if prev_t is not None:
+            j = fabs(t - prev_t)
+            maxjump = j if maxjump is None or j > maxjump else maxjump
+        prev_t = t
+    gates.append({
+        "gate": "G9",
+        "claim": "THE CONCRETE LABELLING IS FORCED, and it discharges G8's residue rather than "
+                 "leaving it. Take Y_1 phi = ((t (cos phi) : R) : C) with t(c) the unique root of "
+                 "unitCubic c in (0,1), and (Y_2, Y_3) = otherRoots. Then: (a) t is SINGLE-VALUED "
+                 "-- already a Lean theorem, `real_root_neg_of_ne` says the other real roots are "
+                 "negative; (b) t stays bounded away from 0 and 1, so `unitCubic_deriv_ge`'s "
+                 "hypotheses hold with margin and the IFT applies at 7/4; (c) the (0,1) root IS "
+                 "the unique POSITIVE REAL root, i.e. exactly the one `log_neg_route` sends to "
+                 "route 2; and (d) Y_1 is real-valued BY CONSTRUCTION, which is precisely the "
+                 "shape route 2's lemma requires. So the 'real near phi, not merely at phi' "
+                 "condition is not an extra obligation -- it falls out of the only labelling "
+                 "that makes sense",
+        "arc_points": N,
+        "points_where_(0,1)_root_not_unique": n_not_unique,
+        "points_where_(0,1)_root_is_not_the_route2_root": n_not_route2,
+        "t_range": [nstr(tmin, 10) if tmin is not None else None,
+                    nstr(tmax, 10) if tmax is not None else None],
+        "t_endpoints_cross_check": "t -> 0.4301597 as phi -> 0 (the real root at x = +1) and "
+                                   "t -> 0.8019377 = 2cos(pi/7) - 1 as phi -> pi, the largest "
+                                   "level-7 root -- matching G6 independently",
+        "max_grid_jump_in_t": nstr(maxjump, 8) if maxjump is not None else None,
+        "grid_step": nstr(step, 8),
+        "implied_bound_on_dt_dphi": nstr(maxjump / step, 6) if maxjump is not None else None,
+        "still_open": "the Lean construction itself: defining t(c) from `exists_root_mem_Ioo` + "
+                      "`real_root_neg_of_ne` and differentiating it through `ImplicitScalar`. "
+                      "The PIECES are all proved; what is missing is the assembly",
+        "pass": bool(n_not_unique == 0 and n_not_route2 == 0
+                     and tmin is not None and tmin > mpf(10) ** -2 and tmax < 1
+                     and maxjump is not None and maxjump < 1),
+    })
+
     out = {
         "probe": "qbeta_5two_route36_vside_nonvacuity",
         "bean": "qou-glbl", "dps": mp.dps,

@@ -123,6 +123,23 @@
       "lean": "log_neg_route (hx0 : x != 0) (hc : curve x y = 0) : -y in slitPlane or (0 < y.re and y.im = 0)",
       "still_open": "route 2's lemma is stated for a path `fun u => ((t u : R) : C)`, so it needs Y real-valued NEAR phi, not merely real AT phi. That is a condition on the labelling, not on the root -- it belongs to the concrete Y1 Y2 Y3",
       "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "THE CONCRETE LABELLING IS FORCED, and it discharges G8's residue rather than leaving it. Take Y_1 phi = ((t (cos phi) : R) : C) with t(c) the unique root of unitCubic c in (0,1), and (Y_2, Y_3) = otherRoots. Then: (a) t is SINGLE-VALUED -- already a Lean theorem, `real_root_neg_of_ne` says the other real roots are negative; (b) t stays bounded away from 0 and 1, so `unitCubic_deriv_ge`'s hypotheses hold with margin and the IFT applies at 7/4; (c) the (0,1) root IS the unique POSITIVE REAL root, i.e. exactly the one `log_neg_route` sends to route 2; and (d) Y_1 is real-valued BY CONSTRUCTION, which is precisely the shape route 2's lemma requires. So the 'real near phi, not merely at phi' condition is not an extra obligation -- it falls out of the only labelling that makes sense",
+      "arc_points": 199,
+      "points_where_(0,1)_root_not_unique": 0,
+      "points_where_(0,1)_root_is_not_the_route2_root": 0,
+      "t_range": [
+        "0.4301926788",
+        "0.8019282625"
+      ],
+      "t_endpoints_cross_check": "t -> 0.4301597 as phi -> 0 (the real root at x = +1) and t -> 0.8019377 = 2cos(pi/7) - 1 as phi -> pi, the largest level-7 root -- matching G6 independently",
+      "max_grid_jump_in_t": "0.0036469176",
+      "grid_step": "0.015707963",
+      "implied_bound_on_dt_dphi": "0.23217",
+      "still_open": "the Lean construction itself: defining t(c) from `exists_root_mem_Ioo` + `real_root_neg_of_ne` and differentiating it through `ImplicitScalar`. The PIECES are all proved; what is missing is the assembly",
+      "pass": true
     }
   ],
   "verdict": {
