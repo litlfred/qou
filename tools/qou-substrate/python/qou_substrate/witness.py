@@ -329,9 +329,28 @@ def _raw_float_paths(obj, path=""):
 
 
 def _check_raw_float64(witness: dict, name: str) -> None:
-    mode = os.environ.get("QOU_WITNESS_STRICT_FLOAT64", "").strip().lower()
-    if mode in ("", "0", "off", "false"):
+    """Guard the single point where a witness is written.
+
+    DEFAULT IS NOW `warn`, not off. The ratchet backlog it was staged behind
+    has cleared — `witness_raw_float64_audit.py --strict` reports 0 NEW and 0
+    REGRESSED and exits 0 — so a producer that starts emitting raw float64
+    should say so at the moment it does it, not a CI run later.
+
+    `warn` and not `raise`, deliberately: ~1580 baseline witnesses still carry
+    float64 from before the ratchet, and defaulting to `raise` would break
+    every one of their producers on re-run for a debt they are not adding to.
+    The audit gate is what ENFORCES (it fails CI on any new or regressed file);
+    this is what LOCATES, printing the exact JSON paths at the producer.
+
+      QOU_WITNESS_STRICT_FLOAT64=1     raise — use in CI and when draining
+      QOU_WITNESS_STRICT_FLOAT64=warn  print to stderr (the default)
+      QOU_WITNESS_STRICT_FLOAT64=0     silence entirely
+    """
+    mode = os.environ.get("QOU_WITNESS_STRICT_FLOAT64", "warn").strip().lower()
+    if mode in ("0", "off", "false"):
         return
+    if mode == "":
+        mode = "warn"
     paths = list(_raw_float_paths(witness))
     if not paths:
         return
