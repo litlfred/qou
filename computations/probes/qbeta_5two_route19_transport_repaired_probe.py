@@ -59,7 +59,8 @@ it is **not written**.
 import json
 import pathlib
 
-from mpmath import acos, exp, fabs, im, log, mp, mpf, nstr, pi, polylog, polyroots, re
+from mpmath import (acos, exp, fabs, im, log, mp, mpc, mpf, nint, nstr, pi, polylog,
+                    polyroots, re)
 
 def phi_branch_point():
     """The branch point, computed at working precision rather than hardcoded.
@@ -82,11 +83,12 @@ def sum_log_cont(phis, f):
     """Sum of per-root logs, with the SUM unwrapped by 2*pi*i step to step."""
     prev, out = None, []
     for ph in phis:
-        z = exp(1j * ph)
+        z = exp(mpc(0, 1) * ph)
         vals = sorted((f(z, y) for y in roots_x(z)), key=lambda w: (re(w), im(w)))
         s = sum(log(v) for v in vals)
         if prev is not None:
-            s = s + 2j * pi * round(float(im(prev - s) / (2 * pi)))
+            k = int(nint(im(prev - s) / (2 * pi)))
+            s = s + mpc(0, 2 * pi * k)
         prev = s
         out.append(s)
     return out
@@ -100,7 +102,7 @@ def main() -> int:
     # ---- G1: the two symmetric products, at several points on the arc -------
     worst = mpf(0)
     for t in ["0.4", "1.3", "2.9", "-1.1"]:
-        z = exp(1j * (ph0 + mpf(t)))
+        z = exp(mpc(0, 1) * (ph0 + mpf(t)))
         ys = roots_x(z)
         worst = max(worst,
                     fabs((1 - z * ys[0]) * (1 - z * ys[1]) * (1 - z * ys[2]) - z),
@@ -117,7 +119,7 @@ def main() -> int:
     phis = [ph0 - mpf("0.05") + mpf("0.1") * i / (N - 1) for i in range(N)]
     A = sum_log_cont(phis, lambda z, y: 1 - z * y)
     steps = [fabs(A[i + 1] - A[i]) for i in range(len(A) - 1)]
-    devA = [fabs(A[i] - log(exp(1j * phis[i]))) for i in range(len(A))]
+    devA = [fabs(A[i] - log(exp(mpc(0, 1) * phis[i]))) for i in range(len(A))]
     gates.append({
         "gate": "G2",
         "claim": "Sum_j log(1 - x*y_j) is CONTINUOUS through the branch point and equals the "
@@ -132,7 +134,7 @@ def main() -> int:
     # ---- G3: the same for the other product --------------------------------
     B = sum_log_cont(phis, lambda z, y: 1 - y / z)
     stepsB = [fabs(B[i + 1] - B[i]) for i in range(len(B) - 1)]
-    devB = [fabs(B[i] + log(exp(1j * phis[i]))) for i in range(len(B))]
+    devB = [fabs(B[i] + log(exp(mpc(0, 1) * phis[i]))) for i in range(len(B))]
     gates.append({
         "gate": "G3",
         "claim": "Sum_j log(1 - y_j/x) likewise equals -log x, continuously through the "
@@ -142,9 +144,9 @@ def main() -> int:
     })
 
     # ---- G4: WHY -- the colliding terms are equal --------------------------
-    ys0 = roots_x(exp(1j * ph0))
+    ys0 = roots_x(exp(mpc(0, 1) * ph0))
     seps = sorted(fabs(p - q) for i, p in enumerate(ys0) for q in ys0[i + 1:])
-    z0 = exp(1j * ph0)
+    z0 = exp(mpc(0, 1) * ph0)
     tvals = sorted((1 - z0 * y for y in ys0), key=lambda w: (re(w), im(w)))
     tsep = min(fabs(tvals[i] - tvals[j]) for i in range(3) for j in range(i + 1, 3))
     gates.append({
@@ -171,7 +173,7 @@ def main() -> int:
     worst5 = mpf(0)
     for i in range(0, 61):
         ph = pi * i / 60
-        worst5 = max(worst5, fabs(S(exp(1j * ph)) - s1 - ph ** 2))
+        worst5 = max(worst5, fabs(S(exp(mpc(0, 1) * ph)) - s1 - ph ** 2))
     gates.append({
         "gate": "G5",
         "claim": "with both sums pinned, Sum_j dV/dx = -2 log(x)/x, and integrating along "
