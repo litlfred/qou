@@ -2021,3 +2021,66 @@ Two smaller notes worth recording: the round-to-9-decimals snap in that
 below ~1e-9 (they differ by ~7e-5 today, so it is safe now but fragile); and
 the first-build path prints no progress, which is why the earlier run looked
 hung when it was simply silent.
+
+## P45 — the second gate, and what a clean deuteron rebuild revealed
+
+`tr_m_wenzl_bridge_mpfr.py:393` is now ported too: `_translate` returns
+`(sign, gen1, shift_str)` and the caller passes a per-position `avg_shifts`
+list. The round-to-9 comparison survives only for the two *exact* classes (σ,
+σ⁻¹), where it never has to separate two averaged variants — it could not,
+since colour-blind and colour-weighted `d` differ by ~7e-5 today and nothing
+pins δ above 1e-9.
+
+**The fix works.** A clean deuteron rebuild (cache deleted, no resume) now
+completes in **0.01 s** with no bypass warning, where before it raised
+`unrecognised d` and dropped to the pure-mpmath loop. On the real ⁴He word the
+native path likewise accepts it — 47 crossings, 9 averaged, **2 distinct
+shifts**, confirming directly that an atomic braid mixes conventions.
+
+**⁴He is still not rebuilt, and it is not a bug.** The native call runs rather
+than raising, but H_12 at 50 dps is genuinely expensive: dim reaches ~7700, so
+O(dim²·word_len) per partition over 77 partitions is hours. The
+"sub-millisecond" figure in the source docstring compares direct substitution
+against the 2^k expansion, not against zero. The legacy `-numeric` witness
+records `compute_time_sec: 1033`, which is the right order.
+
+### The committed caches are colour-weighted after all
+
+I suspected they had been built colour-blind and labelled otherwise. Testing it
+refuted that. Computing χ^λ(β_D) both ways at H_6 and comparing against the
+committed cache:
+
+| computed as | Σ\|diff\| vs committed |
+|---|---|
+| colour-blind | 3.13e-03 |
+| colour-weighted | **4.23e-06** |
+
+So the `colour-weighted-averaged-crossing` label is honest. The residual 4e-6
+is the anchor: the committed cache is colour-weighted at the **muon** q₀, the
+rebuild colour-weighted at **proton**. That also settles the earlier worry that
+a mislabelled convention was lurking — it was not.
+
+### Two classifier defects the rebuild exposed
+
+Neither would have been found by a synthetic test; both came from classifying a
+real regeneration.
+
+1. **`engine` vetoed a genuine migration.** The deuteron rebuild's numerics were
+   inside the bound and the q₀ flip was present, but `engine` changed from the
+   fallback label to the native one and the classifier rejected on "a
+   non-numeric field moved". `engine`, `_provenance` and
+   `convention_inferred_by` are now metadata. `convention` deliberately is
+   **not** — a colour-blind/colour-weighted change is worth 182 ppm in
+   tr_M(4He) and must surface as `VALUES`.
+2. **Anchor *labels* were not read as evidence.** `q0Anchor` carries "muon" /
+   "proton" directly, which is stronger evidence than a numeric prefix, yet a
+   change there was treated as a disqualifying string move. Now recognised
+   (including `ideal_muon`), with reverse flips still rejected.
+
+13 self-tests.
+
+**The deuteron rebuild is still not committed**, and correctly so: its
+`q0Anchor` goes `"ambiguous"` → *absent*. That is not a value change but it is
+a provenance *loss*, and the classifier refusing it is the desired behaviour
+rather than another special case to carve out. Why the rebuild drops the field
+is the next thing to look at — not more classifier exceptions.

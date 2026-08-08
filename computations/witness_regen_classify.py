@@ -55,11 +55,23 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
 # Stamped every run; never evidence of a real change.
+#
+# `engine`, `_provenance` and `convention_inferred_by` are here because they
+# record *how* a value was produced, not the value. Leaving `engine` out made
+# the classifier reject a genuine deuteron ANCHOR_MIGRATION on the grounds that
+# a string field moved — the numerics were within bound and the q₀ flip was
+# present, but the engine label changed from the fallback path to the native
+# one. That is exactly the kind of provenance churn a regeneration is expected
+# to produce.
+#
+# `convention` is deliberately NOT here: colour-blind versus colour-weighted
+# crossings is a physics choice worth 182 ppm in tr_M(4He), and a run that
+# changes it must surface as VALUES rather than slip through as metadata.
 META = {
     "computedAt", "commitSha", "scriptHash", "scriptCommitSha", "durationMs",
-    "engineVersion", "environment", "generatedAt", "timestamp",
+    "engineVersion", "engine", "environment", "generatedAt", "timestamp",
     "upstream_witness_hashes", "precisionMetadata", "compute_time_sec",
-    "compute_time_sec_so_far",
+    "compute_time_sec_so_far", "_provenance", "convention_inferred_by",
 }
 
 MUON_PREFIX = "1.109978595"
@@ -94,8 +106,21 @@ def _num(v):
         return None
 
 
+# Literal anchor labels. `q0Anchor` carries these directly, and a witness
+# saying "muon" -> "proton" is the strongest evidence of a migration there is —
+# stronger than inferring it from a numeric prefix. Rejecting it as "a
+# non-numeric field moved" is exactly backwards, and did reject a genuine
+# deuteron migration until this was added.
+_MUON_LABELS = {"muon", "ideal_muon", "ideal-muon"}
+_PROTON_LABELS = {"proton"}
+
+
 def _anchor_of(v) -> str | None:
     s = str(v).strip()
+    if s in _MUON_LABELS:
+        return "muon"
+    if s in _PROTON_LABELS:
+        return "proton"
     if s.startswith(MUON_PREFIX):
         return "muon"
     if s.startswith(PROTON_PREFIX):
@@ -168,6 +193,23 @@ CASES = [
     ("string field changing alongside a flip is rejected",
      {"q0": "1.1099785955573347", "note": "a"},
      {"q0": "1.1099785827513808", "note": "b"}, False, "VALUES"),
+    # The deuteron case: a real anchor migration that the classifier rejected
+    # because `engine` moved from the fallback label to the native one.
+    ("engine label moving does not veto an anchor migration",
+     {"q0": "1.1099785955573347", "engine": "python", "x": 0.20906032199559366},
+     {"q0": "1.1099785827513808", "engine": "pyhecke_native",
+      "x": 0.20906029879563937}, False, "ANCHOR_MIGRATION"),
+    # ...but a convention change still must not.
+    ("convention change is never an anchor migration",
+     {"q0": "1.1099785955573347", "convention": "averaged-crossings"},
+     {"q0": "1.1099785827513808",
+      "convention": "colour-weighted-averaged-crossing"}, False, "VALUES"),
+    ("q0Anchor label muon -> proton is evidence, not a veto",
+     {"q0Anchor": "muon", "x": 0.20906032199559366},
+     {"q0Anchor": "proton", "x": 0.20906029879563937}, False,
+     "ANCHOR_MIGRATION"),
+    ("q0Anchor proton -> muon is a reverse flip",
+     {"q0Anchor": "proton"}, {"q0Anchor": "muon"}, False, "VALUES"),
     ("metadata-only churn is not movement",
      {"computedAt": "x", "durationMs": 1, "v": 2},
      {"computedAt": "y", "durationMs": 9, "v": 2}, False, "NOCHANGE"),
