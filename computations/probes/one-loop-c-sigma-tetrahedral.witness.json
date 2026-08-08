@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T16:18:28.702156+00:00",
-  "commitSha": "256b33da2ebfe0d71b9ee0b4d1bf2334b6774f96",
+  "computedAt": "2026-08-08T17:00:17.197952+00:00",
+  "commitSha": "e33b84aefecd547ea97391d00939fcaf1e00c2c2",
   "assertions": [
     {
       "name": "c_sigma_4_1_derived_equals_3_pow_minus_quarter",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "one-loop-c-sigma-tetrahedral",
   "scriptFile": "one_loop_c_sigma_tetrahedral_probe.py",
-  "scriptHash": "d26594348aa7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "cf8809d8185b",
+  "scriptCommitSha": "e33b84aefecd547ea97391d00939fcaf1e00c2c2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -98,7 +98,8 @@
         "tau": "2^{2n-2} |A|, A = n - m i in Z[i]",
         "example": "W_{a,1,c,d}"
       },
-      "why_no_third": "those are the two imaginary quadratic fields with extra units — the two Bianchi cases. Q(zeta_5) is degree 4 and not imaginary quadratic, so there is no 5-fold regular ideal polyhedron tiling by the same route; see bean qou-dodK for the one candidate that does carry sqrt5, the Aitchison-Rubinstein dodecahedral knots"
+      "why_no_third": "those are the two imaginary quadratic fields with extra units — the two Bianchi cases. Q(zeta_5) is degree 4, so no 5-fold regular ideal polyhedron arises by this route",
+      "but_the_pattern_is_norms_not_polyhedra": "the polyhedra are how a Z[zeta] norm shows up HERE; they are not the general mechanism. |H_1(Sigma_d(K))| = |Res(Delta, (t^d-1)/(t-1))| is a norm from Z[zeta_d] too, and it needs no polyhedron: Sigma_5(trefoil) is the Poincare sphere Sigma(2,3,5) and Sigma_2(cinquefoil) is L(5,q) with |H_1| = 5, whose WRT invariant is the Gauss sum sum_k zeta_5^{k^2} = sqrt5. That is where a sqrt5 lives. It is NOT a c_sigma: Sigma(2,3,5) is Seifert-fibred with Vol = 0 and there is no Lobachevsky saddle at all, so the constant there is a different object reached by a different mechanism (Lawrence-Zagier 1999). See bean qou-lz235; do not conflate the two sqrt5's"
     },
     "upstream_witness_hashes": [
       {

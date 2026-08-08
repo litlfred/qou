@@ -415,6 +415,23 @@ export const references: CSLData[] = [
     note: "Independent prior art for the QOU torus-knot particle skeleton: $(2,n)$ torus knots model fermions and bosons, leptons and hadrons, with spin/isospin/charge/CPT, and — notably — the conjecture that the knot HYPERBOLIC-VOLUME hierarchy controls the physical mass hierarchy (the QOU Higgs$=4_1$ / $\\mathrm{Vol}(4_1)$ mass mechanism). QOU's Hecke / Markov-trace + complex-volume ($\\mathfrak{V}$) + Askey-scheme formalization is the novel content; the torus-knot generational skeleton has precedent here.",
   }),
 
+  // ── Lawrence–Zagier 1999 — WRT of the Poincaré sphere ─────────
+  ref({
+    id: "lawrence-zagier-1999",
+    type: "article-journal",
+    title: "Modular forms and quantum invariants of 3-manifolds",
+    author: [
+      { family: "Lawrence", given: "Ruth" },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Asian Journal of Mathematics",
+    volume: "3",
+    issue: "1",
+    page: "93-107",
+    issued: { "date-parts": [[1999]] },
+    note: "NOT YET READ AT FULL TEXT — registered from the abstract and secondary sources; the author's own page is blocked by this environment's egress policy, and no arXiv copy was located. Computes the asymptotic expansion of the WRT invariant of the POINCARÉ HOMOLOGY SPHERE $\\Sigma(2,3,5)$, realising it as the radial limit of an Eichler integral of a half-integral-weight modular form (a false theta function). First proof of Witten's asymptotic expansion conjecture in a case, and the motivating example for `zagier2010`'s quantum modular forms. WHY THIS CORPUS WANTS IT: it is the non-hyperbolic analogue of the $Q_\\infty$ computation in `one_loop_vdv_constant_closed_form_probe.py` and `one_loop_c_sigma_tetrahedral_probe.py`. Those close because the Laplace saddle sits at a regular ideal polyhedron, whose trace field is one of the two exceptional imaginary quadratics — a route that cannot produce a $\\sqrt5$. The $\\sqrt5$ the `brings-surface` chapter carries arrives instead by CYCLIC BRANCHED COVER: $\\Sigma_5$(trefoil) is the Poincaré sphere, $\\Sigma_2$(cinquefoil) is $L(5,q)$ with $|H_1| = 5$, and $|H_1(\\Sigma_d(K))| = |\\mathrm{Res}(\\Delta, (t^d-1)/(t-1))|$ is a norm from $\\mathbb{Z}[\\zeta_d]$ — the same arithmetic shape as the $\\mathbb{Z}[i]$ norm $\\sqrt{n^2+m^2}$ in the octahedral case. $\\Sigma(2,3,5)$ is Seifert-fibred, not hyperbolic, so this paper rather than the volume conjecture is where its one-loop constant lives. See bean qou-lz235.",
+  }),
+
   // ── Zagier 2010 — Quantum modular forms ───────────────────────
   ref({
     id: "zagier2010",

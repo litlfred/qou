@@ -1,7 +1,7 @@
 ---
 # qou-dodK
 title: 'The sqrt5 slot: do the Aitchison-Rubinstein dodecahedral knots carry a closed-form c_sigma?'
-status: todo
+status: scrapped
 type: task
 priority: normal
 tags:
@@ -76,3 +76,40 @@ polynomial numerically with PARI/LLL).
 `|tau_DG|` for at least one dodecahedral knot, with its minimal polynomial
 identified, and a written verdict on whether the two-closed-form-families claim
 in `qou-vdvK` survives.
+
+## Scrapped — the question was right, the target was wrong
+
+This bean asked where a `sqrt5` could enter by the same route as `sqrt3`
+(tetrahedral) and `sqrt2` (octahedral), and guessed the regular ideal
+DODECAHEDRON / Aitchison-Rubinstein knots, on the reasoning that the pattern is
+"regular ideal polyhedra".
+
+That reading was too narrow. The pattern is not polyhedra, it is **norms from
+cyclotomic rings**:
+
+    octahedral   norm from Z[i]       sqrt(n^2+m^2)   |A| for A = n - m i
+    tetrahedral  norm from Z[zeta_3]  sqrt3
+
+and a norm from `Z[zeta_5]` does not need a 5-fold polyhedron. It arises from a
+**cyclic branched cover**, via the classical
+
+    |H_1(Sigma_d(K))| = prod_{j=1}^{d-1} |Delta_K(zeta_d^j)|
+                      = |Res(Delta_K, (t^d - 1)/(t - 1))|
+
+which is exactly a norm from `Z[zeta_d]`. Computed for the two torus knots the
+`brings-surface` chapter actually names:
+
+    T_{2,3} trefoil    d=5:  |H_1| = 1   -> the POINCARE HOMOLOGY SPHERE Sigma(2,3,5)
+    T_{2,5} cinquefoil d=2:  |H_1| = 5   -> the lens space L(5,q)
+
+and the WRT invariant of `L(5,q)` is a Gauss sum, with
+`sum_k zeta_5^{k^2} = sqrt5` — the corpus's Bring constant, verified.
+
+The corpus already had half of this: `klein-bring-icosahedral-bridge` states
+`P(V)/A_5 = S^2(2,3,5)`, the base of the Seifert fibration `S^3/2I ->
+S^2(2,3,5)` of the Poincare sphere. What was missing is that the trefoil the
+same chapter calls the electron IS the branch locus: `Sigma_5(3_1) = S^3/2I`.
+And `|2I| = 120 = |S_5| = |Aut(Bring)|`.
+
+Superseded by `qou-lz235`. The dodecahedral knots remain a fine curiosity but
+are not the `sqrt5` slot and are much harder to get hold of (no SnapPy census).

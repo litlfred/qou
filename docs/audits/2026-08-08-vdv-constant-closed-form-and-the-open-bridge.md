@@ -346,11 +346,47 @@ Bianchi cases. For a general knot the trace field is a general number field and
 expression. **The obstruction to extending the method is arithmetic, not
 analytic.**
 
-The one place a `√5` could enter the same way is the regular ideal
-**dodecahedron** — the Aitchison–Rubinstein dodecahedral knots, two of them
-glued from regular ideal dodecahedra. `Q(ζ₅)` is degree 4 and not imaginary
-quadratic, so this is *not* a third Bianchi case and the parallel may well fail;
-that is exactly why it is worth testing. Beaned as `qou-dodK`.
+### Where the `√5` actually is — and it is not a third polyhedron
+
+The first draft of this section guessed that a `√5` would need a regular ideal
+**dodecahedron** (the Aitchison–Rubinstein knots) and beaned that. **That was
+too narrow a reading of the pattern.** The polyhedra are how a `Z[ζ]` norm shows
+up *here*; they are not the mechanism.
+
+The mechanism is the norm. And a norm from `Z[ζ₅]` needs no 5-fold polyhedron —
+it arises from a **cyclic branched cover**, through the classical
+
+```
+|H₁(Σ_d(K))| = ∏_{j=1}^{d−1} |Δ_K(ζ_d^j)| = |Res(Δ_K, (t^d−1)/(t−1))|
+```
+
+which is a norm from `Z[ζ_d]` in exactly the way `|A| = √(n²+m²)` is a norm from
+`Z[i]`. Computed for the two torus knots the `brings-surface` chapter names:
+
+| knot | `d` | `\|H₁(Σ_d)\|` | manifold |
+|---|---:|---:|---|
+| `T_{2,3}` trefoil | 5 | 1 | **Poincaré homology sphere** `Σ(2,3,5) = S³/2I` |
+| `T_{2,5}` cinquefoil | 2 | 5 | lens space `L(5,q)` |
+
+and the WRT invariant of `L(5,q)` is a Gauss sum, with `Σ_k ζ₅^{k²} = √5` — the
+corpus's Bring constant, verified rather than asserted.
+
+The corpus already had half of this. `klein-bring-icosahedral-bridge` states
+`P(V)/A₅ ≅ S²(2,3,5)`, the base of the Seifert fibration `S³/2I → S²(2,3,5)`.
+What was missing is that the trefoil the *same chapter* calls the electron is the
+**branch locus** of that cover, and that `|2I| = 120 = |S₅| = |Aut(Bring)|`.
+
+**The trap, stated before anyone writes it into the paper.** `Σ(2,3,5)` is
+spherical and `T_{2,3}`, `T_{2,5}` have zero simplicial volume — the colored
+Jones grows polynomially, and `c_σ` as this corpus defines it is not the same
+object. So this `√5` is *not* a `c_σ`, and there is no Lobachevsky saddle
+anywhere near it. Two `√5`s of cyclotomic origin are not automatically the same
+`√5`. The right analogue of `Q_∞` in that world is Lawrence–Zagier's asymptotic
+expansion of the WRT invariant of `Σ(2,3,5)` as an Eichler integral of a
+half-integral-weight modular form — registered as `lawrence-zagier-1999`, **not
+yet read at full text**, and beaned as `qou-lz235`. The likely outcome is that
+the two constants are different objects that merely share the field `Q(ζ₅)`,
+and establishing that cleanly is worth as much as a connection would be.
 
 ## Literature status — recorded so it is not re-searched
 

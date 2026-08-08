@@ -11,7 +11,7 @@ tags:
     - c-sigma
     - snappy
 created_at: 2026-08-08T18:40:00Z
-updated_at: 2026-08-08T18:40:00Z
+updated_at: 2026-08-08T19:55:00Z
 ---
 
 ## The ask
@@ -58,3 +58,30 @@ General `(p,q)` curves supported, the existing `self_test()` still green, and
 `|tau_DG|` computed for at least two `a != 0` chains and compared against
 `2^{2n-2} sqrt(n^2+m^2)`. A negative result is worth as much as a positive one
 and must be reported as loudly.
+
+## The cheap route is closed — checked 2026-08-08
+
+Hoped: since `Vol(W_{a,1,c,d})` is independent of `a`, the twisted chains must be
+2-cusped manifolds of octahedral volume, so maybe they can be FOUND rather than
+built, and `|tau_DG|` read off with the existing meridian-only code.
+
+They cannot. Scanning `OrientableCuspedCensus(cusps=2)` for volume
+3.663862376708876 returns exactly two manifolds:
+
+    m129 (= L5a1, the Whitehead link)   |tau| = sqrt2   = W_{0,1,1,0}
+    m125 (the Whitehead sister)          |tau| = sqrt8
+
+The prediction for `W_{a,1,1,0}` is `|tau| = sqrt(1 + (4a-1)^2)`: sqrt2, sqrt10,
+sqrt26, sqrt50, ... Neither census manifold carries sqrt10, and `sqrt8` needs
+`m^2 = 7`, not a square, so `m125` is not `W_{a,1,c,d}` for any integer `a`
+either (it is a census manifold, not necessarily a link in S^3).
+
+**This does not refute the prediction — it confirms the framing reading.** The
+`a`-twisted chains are the SAME complement with a different peripheral framing,
+exactly as the volume-independence argument said, so `one_loop(M)` on the
+default meridians can only ever return the `a = 0` value. There is no
+alternative manifold carrying the `a != 0` values, so if the law holds at
+`a != 0` it MUST hold through the change-of-curve law.
+
+So general `(p,q)` peripheral curves are not a convenience here, they are the
+only access. This bean stands, better motivated.

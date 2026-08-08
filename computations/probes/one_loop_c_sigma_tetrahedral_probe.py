@@ -265,11 +265,20 @@ def main() -> int:
                        "example": "W_{a,1,c,d}"},
         "why_no_third": ("those are the two imaginary quadratic fields with "
                          "extra units — the two Bianchi cases. Q(zeta_5) is "
-                         "degree 4 and not imaginary quadratic, so there is no "
-                         "5-fold regular ideal polyhedron tiling by the same "
-                         "route; see bean qou-dodK for the one candidate that "
-                         "does carry sqrt5, the Aitchison-Rubinstein "
-                         "dodecahedral knots"),
+                         "degree 4, so no 5-fold regular ideal polyhedron "
+                         "arises by this route"),
+        "but_the_pattern_is_norms_not_polyhedra": (
+            "the polyhedra are how a Z[zeta] norm shows up HERE; they are not "
+            "the general mechanism. |H_1(Sigma_d(K))| = "
+            "|Res(Delta, (t^d-1)/(t-1))| is a norm from Z[zeta_d] too, and it "
+            "needs no polyhedron: Sigma_5(trefoil) is the Poincare sphere "
+            "Sigma(2,3,5) and Sigma_2(cinquefoil) is L(5,q) with |H_1| = 5, "
+            "whose WRT invariant is the Gauss sum sum_k zeta_5^{k^2} = sqrt5. "
+            "That is where a sqrt5 lives. It is NOT a c_sigma: Sigma(2,3,5) is "
+            "Seifert-fibred with Vol = 0 and there is no Lobachevsky saddle at "
+            "all, so the constant there is a different object reached by a "
+            "different mechanism (Lawrence-Zagier 1999). See bean qou-lz235; "
+            "do not conflate the two sqrt5's"),
     })
     wb.add_assertion(
         "c_sigma_4_1_derived_equals_3_pow_minus_quarter",
