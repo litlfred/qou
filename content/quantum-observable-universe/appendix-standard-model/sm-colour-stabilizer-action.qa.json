@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:sm-colour-stabilizer-action",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-standard-model/sm-colour-stabilizer-action.ts",
+    "md": "content/quantum-observable-universe/appendix-standard-model/sm-colour-stabilizer-action.md"
+  },
+  "source_hashes": {
+    "md": "207ed4e7a20e",
+    "ts": "ecf9eed9e406"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch-local deictics: \"the Günaydin–Gürsey colour subalgebra, which **the corpus** carries with the proved gate\" and \"What remains conjectural — and is the intended content of **this block** — is the action on the framework's *own* three-strand ...\". \"the corpus\" and \"this block\" address a maintainer of the repository, not a reader; the sentence should name the paper or the specific construction.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

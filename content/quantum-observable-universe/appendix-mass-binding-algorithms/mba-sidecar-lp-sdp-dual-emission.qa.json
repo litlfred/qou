@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Repository CI and agent policy in published prose: the section heading \"### CI enforcement\", \"runs in CI: warn-only by default\", and \"*Cross-reference: AGENTS.md §\\\"LP / SDP duals — first-class infra\\\". Active baseline of missing-dual witnesses: run the ...*\". \"Active baseline ... run the\" is an instruction to a maintainer, not to a reader.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "02ec71a515f1",

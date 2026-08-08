@@ -11,6 +11,18 @@
     "ts": "0e6f03cea54e"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "internal coordination ledger under `docs/coordination/` ('docs/coordination/1ppq-qbeta.md') in body prose: \"- **Higher-order Taylor coefficients of $\\Delta\\mathrm{tr}_M^{\\text{can}}$.** Vanishing at $q = 1$ (order-0) is an immediate consequence. Higher orders depend on the specific behaviour of $y_\\lambda(q)$ at $q = 1$, which the dimension-normalisation axiom does not uniquely determine. - **Bridge to th\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

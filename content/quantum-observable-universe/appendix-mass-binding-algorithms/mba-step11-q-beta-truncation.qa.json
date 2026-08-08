@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Bean id, PR number, keystone nickname and superseded-status narration all in body prose: \"TIER: **near-match**; exact closure gated on the s5-so3 / Habiro keystone (`conj:s5-so3-fiber-action`, bean s5bb). Supersedes the earlier \\\"164.0× as of 2026-05-31 ...\\\"\" and \"*L2 status (live, PR #2723): $\\mathfrak{Q}_\\beta$ at $\\sim 160\\times$ miss*\". \"bean s5bb\" is a work-plan item id; \"live, PR #2723\" is branch state. Also AGENTS.md quoted as authority and a dated `docs/audits/2026-05-31-...` memo cited.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "810fe82b4304",

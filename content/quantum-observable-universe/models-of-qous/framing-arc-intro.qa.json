@@ -11,6 +11,18 @@
     "ts": "3ebad3b1e365"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] 'the arc' / 'this arc' as a working unit — \"the arc\". 'the arc' is the working name for a run of blocks; a reader sees a section | Verbatim: \"…$ at $q = q_0$. The non-abelian Stokes mass identity closes the arc. 5. **Physical step.** Predicted spectra and observations. This chapter outlines each step, fixes the standard terminology, and catalogues alternati…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

@@ -11,7 +11,19 @@
     "ts": "da134280c0f0"
   },
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "The worst offender in this pass: the chapter is written as a branch-governance record. Body prose carries owner rulings with dates — \"**Owner ruling (2026-07-12) — $\\mathcal{M}$ = endomorphism ...**\", \"(terminology ruling **2026-07-06**, ...)\", \"## Photon $\\gamma$ vs the unknot $0_1$ (**STRICT — recurring-mistake rule, 2026-08-01**)\" — and an explicit work-plan block quoting the agent todo store and the PR: \"> **Corpus migration — tracked follow-up.** The functional-sense $\\mathcal{M}\\to\\mathfrak{m}$ rename touches ~14 further blocks (`brings-surface/`, `observations/`, `mass-theory/`) and must be done **per file** ... This authoritative ruling **lands now**; the mechanical-but-judged **sweep** is a **follow-up (bean, not this PR)** to keep the rename reviewable ...\". Also \"**Residual collision — follow-up cleanup:**\", \"raises a registered **audit flag**\", \"Where **the corpus** writes $\\tau$ into a *different* target\", a link out to \"[AGENTS.md §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention...)\", and three dated `docs/audits/2026-*` memos. Directory slugs, bean/PR vocabulary, rulings and dates are all branch state.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.452359Z"
 }

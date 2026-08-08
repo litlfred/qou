@@ -13,6 +13,18 @@
     "lean": "89b36154e42f"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"*where $\\mathrm{tr}_M$ provides the canonical Jones–Markov trace ([categorical mass = Markov](#prop:categorical-mass-markov)) and $\\rho_K$ provides a positive scalar—the **categorical density** of the atomic braid class.* **Archimedean specialisation (§7c).** This block operates on the archimedean s\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

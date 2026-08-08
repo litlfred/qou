@@ -1393,6 +1393,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). internal skill/hook file — '.claude/', 'Slot J', 'canonical-watcher', 'skills/local/'; e.g. \"...t), - $r_2^{(k)}$ at higher orders — the full Markov-trace closed form. ## Diagnostics Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J...\". audit / coordination doc path — 'docs/audits/', 'duality-tracker'; e.g. \"...ding $r_2$ regulator. Equivalently: $r_2^{(2)}[\\mathcal{B}_3] = -6G$. ## Significance Per [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md) §3...\". D## duality-tracker label — 'D15', 'D16', 'D18'; e.g. \"**Conjecture (D16 K-theoretic / Bloch-group closure).** *The Borromean rings complement $\\mathbf{S}^3 \\setminus...\". R# roadmap/rung label — 'R&D'; e.g. \"...ient_from_regulator : markov_trace_h4_coefficient borromean_complement = -3/4 ``` ## Open R&D 1. **Compute prototype**: at $q = q_0$, canonical evaluate both sides of the conjectural i...\". 'sibling' (branch/session) reference — 'sibling'; e.g. \"...agon state-sum** — [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15, sibling) 3. **K-theoretic / Bloch group regulator** (this conjecture, D16) 4. **DIM-master Pentagon**...\". What these actually are: `.claude/skills/local/canonical-watcher.md` is an agent hook spec and '§Slot J' is a slot in that spec; audit and coordination docs are internal working records; D## are row numbers in `docs/duality-tracker.md`; R2/R3/R4/R5-full/R5-minimal are rungs of an internal tooling roadmap. Also flagged: process heading (Status / Open R&D / Diagnostics) (## Diagnostics, ## Open R&D); work-status marker (research-grade); repo/graph-hygiene vocabulary (Cluster C).",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

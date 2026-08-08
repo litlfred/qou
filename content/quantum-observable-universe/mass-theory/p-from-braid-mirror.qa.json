@@ -1393,6 +1393,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). internal skill/hook file — '.claude/', 'Slot J', 'canonical-watcher', 'skills/local/'; e.g. \"...rs the diagram. Composed with C and T, it recovers the bar-involution. ## Diagnostics Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J...\". audit / coordination doc path — 'duality-tracker'; e.g. \"...stating bar = P $\\cdot$ C $\\cdot$ T as a derivable identity. ## Cross-references - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D7 + §2 Cluster A (CPT decomposition D5 $\\to$ D6 + D7...\". D## duality-tracker label — 'D7'; e.g. \"**Conjecture (D7 parity closure).** *Within the QOU framework, parity $P$ acts as the **mirror reflection of th...\". R# roadmap/rung label — 'R&D'; e.g. \"...e: chirality measures the P-anti-symmetric part of a knot, separately from C and T. ## Open R&D 1. **Verify canonical** that the Hecke quadratic preserves under P (since both $\\sigma_i$...\". process heading (Status / Open R&D / Diagnostics) — '## Diagnostics', '## Open R&D'; e.g. \"...clicity; it only mirrors the diagram. Composed with C and T, it recovers the bar-involution. ## Diagnostics Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-wat...\". What these actually are: `.claude/skills/local/canonical-watcher.md` is an agent hook spec and '§Slot J' is a slot in that spec; audit and coordination docs are internal working records; D## are row numbers in `docs/duality-tracker.md`; R2/R3/R4/R5-full/R5-minimal are rungs of an internal tooling roadmap. Also flagged: repo/graph-hygiene vocabulary (Cluster A); follow-up / next-steps narration (follow-up).",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

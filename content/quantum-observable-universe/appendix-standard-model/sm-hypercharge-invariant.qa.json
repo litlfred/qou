@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:sm-hypercharge-invariant",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.ts",
+    "md": "content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.md"
+  },
+  "source_hashes": {
+    "md": "056aed0bf0e6",
+    "ts": "8fc792506040"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Points at an unnamed internal audit as the record of a scientific result: \"this is the falsification recorded in **the hypercharge audit**\". The reader has no way to reach that audit; the falsification should be stated or cited.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

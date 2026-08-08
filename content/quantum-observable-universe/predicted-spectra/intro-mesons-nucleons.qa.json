@@ -11,6 +11,18 @@
     "ts": "de6a7eda4354"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[pipeline structural term, ts title] 'section lead' (pipeline slot name) used as a published title — \"section lead\". 'section lead' is the pipeline's slot name for a section-opening prose block, not a title a reader should see | Verbatim: \"Mesons and nucleons — section lead\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {

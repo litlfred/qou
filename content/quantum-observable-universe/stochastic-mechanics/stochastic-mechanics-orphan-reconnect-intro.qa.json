@@ -1117,6 +1117,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "The entire block is agent work narration; there is no mathematical content: \"Blocks in this section were **reconnected during the Phase 7 orphan audit**. They address supplementary stochastic-mechanics content **awaiting thematic placement**.\" \"orphan\", \"reconnect\", \"Phase 7\" and \"audit\" are folio-assistant pipeline terms and a work-plan phase number. The section title this block leads, defined in `stochastic-mechanics/stochastic-mechanics.ts`, is likewise published and likewise leaked: \"**Reconnected orphan blocks (Phase 7)**\".",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

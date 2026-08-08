@@ -1546,6 +1546,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": ".ts title leaks two branch labels: \"B1 keystone is theorem-level at the figure-8 row (Bloch--Suslin + Murakami--Murakami)\". \"B1\" is the branch shorthand for `conj:gb-depth-period-correspondence` (the graded-Mikusiński depth/period correspondence) and \"the keystone\" is a working nickname; neither is defined for a reader at the point of use.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

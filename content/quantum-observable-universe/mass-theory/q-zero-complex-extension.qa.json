@@ -1911,6 +1911,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). audit / coordination doc path — 'docs/audits/'; e.g. \"...\\\\neq 0$ is uninstantiated infrastructure (audit: [`2026-05-24-q-zero-reality-audit`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).\". time-stamped note — '2026-05-24'; e.g. \"...0$ with $|q_0| > 1$ and $\\\\mathrm{Im}(q_0) \\\\neq 0$ is uninstantiated infrastructure (audit: [`2026-05-24-q-zero-reality-audit`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).\". the word 'audit' in body prose — 'audit'; e.g. \"...mplex $q_0$ with $|q_0| > 1$ and $\\\\mathrm{Im}(q_0) \\\\neq 0$ is uninstantiated infrastructure (audit: [`2026-05-24-q-zero-reality-audit`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md))...\". What these actually are: audit and coordination docs are internal working records.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

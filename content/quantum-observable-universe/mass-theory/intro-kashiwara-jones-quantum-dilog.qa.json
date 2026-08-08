@@ -126,7 +126,19 @@
         "evidence": "content/quantum-observable-universe/mass-theory/intro-kashiwara-jones-quantum-dilog.md:1 \u2014 detected regime [symbolic] is disjoint from chapter 'mass-theory' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). repo/graph-hygiene vocabulary \u2014 'section lead'; e.g. \"Kashiwara\u2013Jones and quantum dilogarithm \u2014 section lead\". What these actually are: pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.930390Z"
 }

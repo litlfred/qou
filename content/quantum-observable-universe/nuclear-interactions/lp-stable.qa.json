@@ -13,6 +13,18 @@
     "lean": "478c74a97b7e"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"*An element $x \\in H_3(q)$ with NF decomposition $x = \\sum_{i=1}^{6} x_i b_i$ is **LP-stable** if $Gx \\geq 0$ (component-wise), where $G$ is the Gram matrix $G_{ij} = \\mathrm{tr}_M(b_i \\cdot b_j)$.* **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. \"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

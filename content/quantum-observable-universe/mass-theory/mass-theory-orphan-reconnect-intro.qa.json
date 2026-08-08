@@ -1312,6 +1312,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). the word 'audit' in body prose — 'audit'; e.g. \"We consolidate structural results reconnected during the orphan audit. These blocks address phenomena at the boundary of the mass theory. We outline the categorical...\". repo/graph-hygiene vocabulary — 'orphan audit'; e.g. \"We consolidate structural results reconnected during the orphan audit. These blocks address phenomena at the boundary of the mass theory. We outline the categorical...\". What these actually are: pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

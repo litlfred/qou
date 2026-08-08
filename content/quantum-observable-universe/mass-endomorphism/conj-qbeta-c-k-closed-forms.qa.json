@@ -13,6 +13,18 @@
     "lean": "96e85eeba56c"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§3b') in body prose: \"**Closed-form conjectures for the $\\mathfrak{Q}_\\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.** We formalize these coefficients as conjectures. This permits downstream claims to use the §3b conditional-class exception, as implemented in [`prop:q-beta-categorical-precision-ladder`](#prop\" -- internal branch audit document under `docs/audits/` ('docs/audits/-qbeta-ladder-closure-path.md') in body prose: \"Match quality degrades at higher $k$. For $c_7$, the signed relative error is approximately $114\\%$ (magnitude error $86\\%$). We retain the conjecture because the $N=7$ correction's leverage on the cumulative $\\mathfrak{Q}_\\beta$ residual operates at the $10^{-13}$ scale. Any $c_7 \\in [-100, +100]$ \" -- internal project layer id (L1/L2/L3) ('L2 target') in body prose: \"The baseline $\\mathfrak{Q}_\\beta$ categorical prediction already achieves a $+6.02$ ppb residual at $N=3$, satisfying the 7.8 ppb L2 target. The higher-order corrections ($c_4$ to $c_7$) drive the residual below $1$ ppb. This pushes precision into the research-grade regime, exceeding experimental re\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

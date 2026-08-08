@@ -1280,6 +1280,18 @@
         "reviewed_at": "2026-07-12T00:35:12.823Z",
         "reviewed_sha": "7ce779451a64f4672236947e05a34674d5fd0fc5"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Agent instruction file cited as a mathematical authority, with a link that leaves the manuscript: \"Compliant with the invariant. See [AGENTS.md §7c \\\"Base ring convention\\\"](../../../AGENTS.md).\" The base-ring convention should be stated in the notation chapter, not delegated to AGENTS.md.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

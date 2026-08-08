@@ -1695,6 +1695,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Internal duality-tracker row ids used as names for mathematical objects: \"**D24** ties **D12** (Kashiwara) to **D1** (bar) via the decategorification functor\", and the table column \"| ... | **D12** | | (reverse) | bar-image of Kashiwara | **D13** |\". D-numbers are rows of `docs/duality-tracker.md`; the reader needs the maps named, not indexed.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

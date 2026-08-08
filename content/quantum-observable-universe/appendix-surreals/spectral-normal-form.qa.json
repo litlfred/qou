@@ -1661,6 +1661,18 @@
         "reviewed_at": "2026-07-12T00:35:02.628Z",
         "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Bare status markers used as list items: \"- Hahn-series substrate (**pending**). - Normal-form computation for eigenvalues (**pending**).\" and \"in Lean at ... (**partial**)\". These are work-tracker states, not statements about the mathematics.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

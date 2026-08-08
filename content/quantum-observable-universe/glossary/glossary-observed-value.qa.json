@@ -1217,6 +1217,18 @@
         "reviewed_at": "2026-07-12T00:35:17.358Z",
         "reviewed_sha": "f461bf0d4b3ab76dd71a1f92135d7a8063c44da2"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Policy-section tag in the standing boilerplate: \"**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.\" §7c is a section of AGENTS.md, not a glossary symbol. (The rest of the glossary chapter legitimately defines symbols; this tag is the only leak here.)",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

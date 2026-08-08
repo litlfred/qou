@@ -13,6 +13,18 @@
     "lean": "c1a935594445"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"The Type-B Cartan datum is obtained by folding. The KLR canonical basis is bar-invariant. The bar involution matches the chirality-reversal. Thus, $\\sigma$ is the intrinsic fold. **Archimedean specialisation (§7c).** This block invokes real- or complex-analytic constructs. Categorical identities rem\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

@@ -13,6 +13,18 @@
     "lean": "0193f1de0d11"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Internal layer id in the published TITLE: \"Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3)\". L3 is a project layer label, not a physics label. Body carries repo bug-tracker framing: \"The framework's L3 nuclear-shell-binding relies on a hard-coded `magic A\\cdot 8G` rule\".",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

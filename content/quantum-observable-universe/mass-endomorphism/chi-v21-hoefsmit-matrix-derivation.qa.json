@@ -13,6 +13,18 @@
     "lean": "4cfff0dfdb1b"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Session narration and a status heading in published prose. Heading: \"## Deferred to follow-up PR\" - a branch scheduling decision, not a section of a paper. Provenance given as chat history: \"This matches the observed asymptotic $\\sim k(k+3)/2$ for the V_(2,1) coefficients (proved earlier in the conversation).\" A reader has no conversation. Build-state narration too: \"(currently chapter-block isolated --- Lake module doesn't yet expose them)\".",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

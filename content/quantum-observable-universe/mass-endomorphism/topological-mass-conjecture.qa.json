@@ -13,6 +13,18 @@
     "lean": "8968424e99b6"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"The present conjecture concerns the vortex case: $\\varrho$ forms a closed cycle whose support does not necessarily factor through a finite brane-tower extension. The holonomy $\\mathrm{Hol}_{\\nabla_A}$ along $\\varrho_0$ (the flat gauge-field holonomy of the base-level connection) replaces the :refter\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

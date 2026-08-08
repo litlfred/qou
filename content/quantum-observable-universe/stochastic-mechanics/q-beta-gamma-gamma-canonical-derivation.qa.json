@@ -1153,6 +1153,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch decision labels throughout, including the .ts title: \"**Story B** selected as canonical $\\mathfrak{Q}_\\beta$ interpretation by tracing the cat-action → Frobenius → Wedderburn → Wenzl bridge\". Body: \"settling the **Story A vs Story B** ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](...)\", the section heading \"## Story A vs Story B resolution\", and \"## **Track-B** open question / Once **Track C** settles the structural identification, **Track B** extends to higher orders\". \"Story A/B\" and \"Track B/C\" are branch decision and lane labels; the two interpretations should be named for what they are (the fitted-$c_2$ reading vs the Kashiwara/Hopf categorical reading).",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

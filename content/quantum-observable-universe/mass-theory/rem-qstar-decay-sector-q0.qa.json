@@ -870,6 +870,18 @@
         "reviewed_sha": "b2834b4d4edcab4937511e16a21d477fcd3032e8",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"..../computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json)); full context in [`docs/audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md`](../../../docs/audits/2026-07-12-c3-hype...\". time-stamped note — '2026-07-12'; e.g. \"...ns/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json)); full context in [`docs/audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md`](../../../docs/audits/2026-07-12-c3-hypersensitivi...\". What these actually are: audit and coordination docs are internal working records.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T15:40:13.621Z"

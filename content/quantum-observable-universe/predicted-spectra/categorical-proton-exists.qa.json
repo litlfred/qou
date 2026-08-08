@@ -13,6 +13,18 @@
     "lean": "77c0d28b93c5"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§7c\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"This block\"; \"The block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"…unique) up to braid isotopy. **Archimedean specialisation (§7c).** The underlying categorical identities hold over an abstract coefficient ring. Their archimedean realisation requires real- or complex-analytic co…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

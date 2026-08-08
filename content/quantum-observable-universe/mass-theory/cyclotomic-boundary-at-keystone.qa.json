@@ -885,6 +885,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body and the .ts title (published)). 'the keystone' used as a known referent — 'keystone'; e.g. \"**Conjecture (cyclotomic boundary at the keystone order).** The binding $q$-deformation of the na-Stokes period $S(n) = \\sum_{\\lambda \\vdash n}...\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

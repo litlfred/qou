@@ -11,6 +11,18 @@
     "ts": "7faa2d860619"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] dated audit filename cited in body prose — \"2026-05-02-alpha-fit-NOT-derivation-retraction.md\" (+1 more). dated audit note under docs/audits/ — an internal working document | [branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\". docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] status / lifecycle banner — \"as of now\". lifecycle/status banner belonging to the working channel | Verbatim: \"…026-05-02-alpha-fit-NOT-derivation-retraction.md`](../../../docs/audits/2026-05-02-alpha-fit-NOT-derivation-retraction.md)). Instead of mapping empirical BW coefficients to specific algebraic strata (a numerological exerc…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:c1-theta-zero-locus-and-pole-divisor",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/c1-theta-zero-locus-and-pole-divisor.ts",
+    "md": "content/quantum-observable-universe/mass-theory/c1-theta-zero-locus-and-pole-divisor.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body and the .ts title (published)). 'C1' as a bare module label — 'C1'; e.g. \"The C1 connection matrix is p-elliptic and its poles are theta zeros; the q-theta vanishes on −p^ℤ\". branch-local deictic ('this arc', 'the corpus', 'this block') — 'this arc'; e.g. \"...Liouville on $\\mathbb{C}^{*}/p^{\\mathbb{Z}}$ and is strictly more work. **Everything else in this arc is numerical.** The pole divisor and its residue-theorem completeness check, the connection in...\". repo/graph-hygiene vocabulary — 'Nothing consumes this', 'expensive-to-re-derive', 'should not be cited'; e.g. \"..., that $P=Y_0^{-1}Y_\\infty$ is meromorphic, and that the divisor is complete, are all open. **Nothing consumes this.** The only outputs of this construction with a downstream consumer are the theta growth $q^{m...\". What these actually are: 'C1' is a branch label; the object is the rank-2 q-difference module of [m+2]_q b_{m+2} = b_{m+1} + b_m; pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

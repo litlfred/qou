@@ -11,7 +11,19 @@
     "ts": "da134280c0f0"
   },
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "The paper-wide base-ring convention is delegated to the agent instruction file with an external link: \"This convention applies to every file in the paper. It mirrors [**AGENTS.md §7c**](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-...)\". \"every **file** in the paper\" is also repository vocabulary.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.453558Z"
 }

@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:diagrammatic-double-magic-lr-fusion-context",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion-context.ts",
+    "md": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion-context.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] GitHub URL pinned to a working branch — \"blob/claude/\". URL pinned to a working branch (claude/...), which will rot; should cite the artifact, not the branch | Verbatim: \"…_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py)) finds the dominant $\\nu$ is non-self-conjugate at every tested $(Z, N)$. The c…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

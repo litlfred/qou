@@ -1926,6 +1926,18 @@
         "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
         "evidence": "term marked via \"flavor dressing functor\""
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§7c'; e.g. \"...l transformations of functors rather than ad-hoc weighted sums. **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-08-03T19:38:33.694Z"

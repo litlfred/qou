@@ -13,6 +13,18 @@
     "lean": "9da15eb5ac8e"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md') in body prose: \"**Proved (algebraic engine).** The reduction $(\\sigma^{-1})^Z = c_Z\\sigma + d_Z$ with these closed forms, and the sign-alternation $c_Z<0$ (even $Z$) / $c_Z>0$ (odd $Z$) with $|c_Z|$ strictly increasing for $q>1$, is established rigorously by diagonalising $\\sigma$ in the two-dimensional $H_2(q)$ (e\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

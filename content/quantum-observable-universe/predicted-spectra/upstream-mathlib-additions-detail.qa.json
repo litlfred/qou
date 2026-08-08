@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:upstream-mathlib-additions-detail",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§3b-cond\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [branch/audit label, md] branch workstream label — \"3b-cond\". branch workstream label (R2-core, ksel1/2/3, Task P0.1/P1.5, §3b-cond) naming an agent work item, not a mathematical object | Verbatim: \"…ch as `Cl_2(θ + 2π) = Cl_2(θ)`. ## Target translation The §3b-cond chain provides unconditional functional identities (`Cl_2_neg`, `complexLiTwo_zero`, `blochWigner_zero`) alongside concrete Lean definitions for `com…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

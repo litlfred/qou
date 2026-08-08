@@ -1972,6 +1972,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...ta_q$-trace identity into the same combinatorial universe as the w3-w4 atomic-shift formula ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)).\". repo/graph-hygiene vocabulary — 'unblocked'; e.g. \"...to the same combinatorial universe as the w3-w4 atomic-shift formula ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)).\". What these actually are: audit and coordination docs are internal working records; pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

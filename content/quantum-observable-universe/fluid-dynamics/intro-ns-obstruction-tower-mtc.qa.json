@@ -142,7 +142,19 @@
     "wall-side-proof": [],
     "voice-statement-no-interpretation": [],
     "proof-narrative-lean-equiv": [],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch decision label used to organise published prose: \"The final two blocks (**Track B**) extract the observable modular tensor category and ...\". \"Track B\" is a work-plan lane; the section-lead should describe what the blocks do, not which lane produced them. \"The final two blocks\" is also repository structure rather than reader-facing narrative.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.236451Z"
 }

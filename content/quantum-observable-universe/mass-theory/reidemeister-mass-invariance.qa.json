@@ -1679,6 +1679,18 @@
         "reviewed_at": "2026-07-12T10:57:06.434Z",
         "reviewed_sha": "f67226fd9d495d89555d04ba33509f2c3d5fa41e"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§7c'; e.g. \"...ent (embedding changed by R-I), and the binding energy differs. **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

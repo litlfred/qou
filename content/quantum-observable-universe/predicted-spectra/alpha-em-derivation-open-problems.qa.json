@@ -11,6 +11,18 @@
     "ts": "e3841b8feb15"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"Audit\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Audit\". process heading describing the work item rather than the mathematics | Verbatim: \"…gorously derived; disagrees with Form A at $q\\ne q_0$ | ## Audit failure of both prior attempts **Form A's $\\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\\kappa \\approx 1.722$. Mat…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

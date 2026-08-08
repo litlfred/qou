@@ -13,6 +13,18 @@
     "lean": "e598742379dc"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Repo-internal apparatus cited as if it were literature. Three PR references: \"PR [#1089](https://github.com/litlfred/qou/pull/1089)\", and twice \"(PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3)\" - a PR number plus a branch task number. The promotion rule is quoted from the agent instruction file: \"The conjecture will then promote to a `proposition` block under the AGENTS.md §3b-cond conditional-class convention.\" Cross-references point at branch audits rather than content: \"Parent sign-flip audit: [`docs/audits/-sign-flip-interpretation.md`]\", \"[`docs/audits/-4he-magic-shell-color-tube-audit.md`]\", \"[`docs/audits/-lambda-scale-canonical-unification.md`]\", and a \"cheat-sheet entry: [`docs/canonical-derivation-cheat-sheet.md`]\". The reader cannot follow any of these; none is published.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

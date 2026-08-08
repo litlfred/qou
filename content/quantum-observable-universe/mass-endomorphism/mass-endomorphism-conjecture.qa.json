@@ -13,6 +13,18 @@
     "lean": "f8545ec8a6eb"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/conjecture-cones.md') in body prose: \"If this conjecture fails (no closed-form $\\Phi_{\\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\\Phi_{\\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate th\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

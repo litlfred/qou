@@ -1890,6 +1890,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — 'AGENTS.md', '§3b-cond', '§7c'; e.g. \"...proof, conditional on [`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md) per AGENTS.md §3b-cond).** *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...block-decomposition of $\\rho_\\lambda(I)$ — scalar form proved in [scalar audit](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md); operator-valued form closed conditional on [`conj:c...\". the word 'audit' in body prose — 'audit'; e.g. \"...Hecke-branching block-decomposition of $\\rho_\\lambda(I)$ — scalar form proved in [scalar audit](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md); operator-valued form closed con...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript; audit and coordination docs are internal working records.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

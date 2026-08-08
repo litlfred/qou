@@ -11,6 +11,18 @@
     "ts": "705252da6082"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\"; \"Audit\" (+1 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Audit\". process heading describing the work item rather than the mathematics | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"This block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"This block audits the tritium $Q$-value derivation. ## Derivation chain **Step 0: Substrate parameter**. Fixes $q_0$ from $m_\\mu/m_e$. **Step 1: Typed crossing oper…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

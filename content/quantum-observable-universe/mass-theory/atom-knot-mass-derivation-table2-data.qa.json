@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "tbl:atom-knot-mass-derivation-table2-data",
+  "kind": "table",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-table2-data.ts",
+    "md": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-table2-data.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). git branch name — 'blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json'; e.g. \"...7 (methodology tag) | [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json) | ✓ | | 8 (post-Archimedean naming via volume conjecture) | borrowed; not in QOU derivation |...\". R# roadmap/rung label — 'R2', 'R3', 'R4', 'R5-full', 'R5-minimal'; e.g. \"...tation | Status | |---|---|---| | 1a (canonical $T_w$ — joint-tower SDP for *unknown* $T_w$) | R5-full pending — research-grade | ✗ | | 1b (GB-filtration certificate) | Python the formal derivation...\". work-status marker — 'research-grade'; e.g. \"...|---|---|---| | 1a (canonical $T_w$ — joint-tower SDP for *unknown* $T_w$) | R5-full pending — research-grade | ✗ | | 1b (GB-filtration certificate) | Python the formal derivation (PoC) + Rust `gb_nf_redu...\". follow-up / next-steps narration — 'followups'; e.g. \"...ology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json) | ✓ | | 8 (post-Archimedean naming via volu...\". What these actually are: a git working branch, not a stable reference; R2/R3/R4/R5-full/R5-minimal are rungs of an internal tooling roadmap.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

@@ -1198,6 +1198,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body and the .ts title (published)). AGENTS.md policy-section label — '§3b-cond'; e.g. \"Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl...\". follow-up / next-steps narration — 'fillers'; e.g. \"**Remark (deeper Mathlib fillers).** *We consolidate the five required Mathlib extensions into a single synthesis class.* We r...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

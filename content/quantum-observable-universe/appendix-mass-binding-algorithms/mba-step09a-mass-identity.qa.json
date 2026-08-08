@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Heavy branch-governance leak. Repeated \"owner ruling\" date stamps standing in for mathematical justification: \"(owner ruling 2026-06-24)\", \"(owner ruling 2026-07-03, which stripped an earlier fitted Habiro 4-loop dressing from the pin)\", \"*`canonical_mass.py` is the SINGLE facade (owner ruling ...)*\". Plus a PR pointer, \"The reconcile (relabel / revert / > drop) is owner-gated — see > [PR #3280](https://github.com/litlfred/qou/pull/3280)\"; a bean id, \"the $c_4$ pin-vs-producer 46 vs $4143/90$ reconcile is owner-gated, bean `2i8g`\"; and the branch-local deictic \"neither ... has a > derivation trail in the corpus\".",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "dbec153a9b94",

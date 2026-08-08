@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:three-calibration-discipline-discussion",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/observations/three-calibration-discipline-discussion.ts",
+    "md": "content/quantum-observable-universe/observations/three-calibration-discipline-discussion.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\". docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [branch/audit label, md] branch workstream label — \"Task P1.5\"; \"Task P0.1\". branch workstream label (R2-core, ksel1/2/3, Task P0.1/P1.5, §3b-cond) naming an agent work item, not a mathematical object | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audit\"; \"audits\" (+5 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] pointer to an investigation log / handoff / workplan — \"workplan\" (+1 more). pointer to an internal investigation log / handoff / workplan | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Audit\". process heading describing the work item rather than the mathematics | Verbatim: \"…audits. Task P1.5 in the [math-framework workplan](../../../docs/audits/-math-framework-workplan.md) sweeps the paper for discipline violations. Task P0.1 sweeps proof blocks for Archimedean-side derivation inputs. The $\\m…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

@@ -11,6 +11,18 @@
     "ts": "9bd52f3f442a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[pipeline structural term, md] future-work status banner / session narration — \"**Outline (future work).**\". future-work status banner / session narration | Verbatim: \"**Outline (future work).** This section outlines the quantum deformation of the commutator relations on Bring's surface. The classical commutator $[e_a, e_b] = \\epsilon_{abc}\\,…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

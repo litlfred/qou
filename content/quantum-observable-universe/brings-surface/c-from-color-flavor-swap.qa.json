@@ -13,6 +13,18 @@
     "lean": "90163d0b08f9"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Worst case in the sweep: the block is largely a branch work-plan rather than prose. The conjecture STATEMENT itself is titled by a tracker id — \"**Conjecture (D6 charge-conjugation closure, ...)**\" — and D6/D7/D8/D22 recur as bare node ids: \"once D6, D7, D8 close\", \"**D22** in the duality tracker\", \"§1 D6 (this conjecture) + §2 Cluster A (CPT decomposition D5 $\\to$ D6 + D7 + D8)\". D5-D8 are rows of `docs/duality-tracker.md`; the objects are the charge-conjugation, parity and time-reversal factors of the CPT composite and should be named as such. A whole \"## Diagnostics\" stanza is agent scaffolding addressed to a skill: \"Per [`.claude/skills/local/canonical-watcher.md`](...) §Slot J: - **GB filtration level**: N/A---claim addresses a Z/2 categorical symmetry...\". Two PR numbers appear as citations: \"(PR [#1081](https://github.com/litlfred/qou/pull/1081) supplier)\" and \"(PR [#1111](https://github.com/litlfred/qou/pull/1111) merged)\". A numbered list gives orders to a future agent: \"2. **Close D7 and D8**---author `conj:p-from-braid-mirror` and `conj:t-from-trace-cyclicity` to complete the CPT decomposition. 3. **Promote to proposition** once ... resolve.\" Also \"AGENTS.md §7b\".",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

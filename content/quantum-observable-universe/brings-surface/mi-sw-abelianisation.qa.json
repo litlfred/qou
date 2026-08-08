@@ -13,6 +13,18 @@
     "lean": "3b32effef2f7"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"where $\\lVert\\cdot\\rVert_{J^n}$ denotes the Killing-form norm projected onto the $n$-th jet component, and $\\lambda_{\\mathrm{SW}}^{(n)}$ is the $n$-th prolonged Seiberg--Witten differential. **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invok\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

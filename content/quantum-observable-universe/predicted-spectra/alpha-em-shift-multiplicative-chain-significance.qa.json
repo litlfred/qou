@@ -11,6 +11,18 @@
     "ts": "57f75cce353a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\" (+1 more). docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\" (+1 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | Verbatim: \"…^{2A+1} \\cdot u^{\\mathrm{shift}} \\cdot (1 + u^2)^{3A-1}$ ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)) | | Torus knot $T_{p,k}$ on $V_{(1^p)}$ | $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

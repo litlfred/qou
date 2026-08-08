@@ -1699,6 +1699,18 @@
         "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
         "evidence": "title is descriptive (5 principal tokens) — principal defined term ambiguous"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Policy-section tag in the standing boilerplate: \"**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.\" §7c is a section of the agent instruction file AGENTS.md (base-ring convention), unresolvable for a reader. Same defect class as \"§3b-tax\".",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-08-03T19:38:33.685Z"

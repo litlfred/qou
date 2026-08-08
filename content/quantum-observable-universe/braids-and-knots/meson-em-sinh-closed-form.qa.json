@@ -13,6 +13,18 @@
     "lean": "104caf098b6b"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Cites an internal audit and its joke-named section as the reason for a caveat's wording: \"An earlier version of this caveat, following [`docs/audits/2026-08-02-ppq-attack-vectors-roast.md`](...) §Roast 1, stated that ...\". \"§Roast 1\" and a dated audit filename are branch artifacts; \"an earlier version of this caveat\" narrates the block's own edit history.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

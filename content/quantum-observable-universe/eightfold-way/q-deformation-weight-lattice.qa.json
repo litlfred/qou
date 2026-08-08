@@ -11,6 +11,18 @@
     "ts": "cf24a00c0c82"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "\"the corpus\" used to mean this repository ('this corpus') in body prose: \"**What is $q$-independent — standard, but not formalised here.** These follow from the Drinfeld--Jimbo construction and are cited, not machine-checked in this corpus: \\begin{itemize} \\item The root lattice $\\Lambda_R = \\mathbb{Z}\\alpha_1 \\oplus \\mathbb{Z}\\alpha_2$ and the weight lattice $\\Lambda_W =\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

@@ -11,6 +11,18 @@
     "ts": "7d43cabb524d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§3b-cond') in body prose: \"The per-block characters $\\chi_\\lambda(\\Delta_{T_\\beta})(q)$ over $H_3(q)$ admit closed forms and vanish at the classical point $q = 1$ ([`prop:qbeta-per-block-chi-closed-forms`](#prop:qbeta-per-block-chi-closed-forms)). Once the Markov weights take their canonical values, this vanishing forces the \"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

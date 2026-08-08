@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "q-beta-c3-continuum-geometry",
+  "kind": "prose",
+  "paths": {
+    "md": "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md",
+    "lean": "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.lean"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). PR / issue number — '#3501', '#3503'; e.g. \"...7-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md); > companion keystone re-scope: `#3501`/`#3503`. The third topological mass gap observable $c_3$ was initially measured via empirica...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...measurement: > [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../../../docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md); > companion keystone re-sc...\". work-status marker — 're-scope'; e.g. \"...dits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md); > companion keystone re-scope: `#3501`/`#3503`. The third topological mass gap observable $c_3$ was initially measured via...\". time-stamped note — '(2026-07-11)', '2026-07-11'; e.g. \"...perbolic-volume\", \"faddeev\"] --- # The Geometric Origin of the c_3 Mass Gap > **⚠ CORRECTION (2026-07-11) — the `c_3 → −Vol(4₁)` identification is over-scoped.** > `−Vol(4₁) ≈ −2.02988` is **anchor-bl...\". the word 'audit' in body prose — 'audit'; e.g. \"...rrected. Re-scope + measurement: > [`2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`](../../../docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md);...\". What these actually are: a GitHub pull-request / issue number; audit and coordination docs are internal working records. Also flagged: 'the keystone' used as a known referent (keystone).",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

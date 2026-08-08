@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Names an internal watcher tool as if it were part of the mathematics: \"*Every witness is audited by: [`lp_dual_witness_validator.py`](...) (LP/SDP duals), `q-usage-watcher` (q-regime declarations), and the $q_0$ staleness ...*\". `q-usage-watcher` is repository tooling. The surrounding \"Witness contract (meta)\" text is maintenance instruction addressed to the pipeline, not exposition.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "0df33c4055e5",

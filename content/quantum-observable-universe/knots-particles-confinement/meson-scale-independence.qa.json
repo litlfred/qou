@@ -13,6 +13,18 @@
     "lean": "a6d255d37038"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"*The pion mass $m_\\pi$ cannot be derived from the substrate parameters $(m_\\mathfrak{e}, q_0)$ alone. The Hecke algebra determines the relative meson mass spectrum (character ratios between mesons) but not the absolute scale $m_\\pi$.* **Archimedean specialisation (§7c).** The scale statement is eval\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

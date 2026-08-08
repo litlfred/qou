@@ -13,6 +13,18 @@
     "lean": "ab9055da485d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Reads as a fix-up changelog: \"(see audit log [`docs/audits/-p3-h-3a-divergence.md`](...))\" then \"Both underlying bugs are now fixed: 1. **Weight layer:** `schur_weyl_symbolic.schur_weyl_weight` incorrectly used ...\". \"audit log\", \"both underlying bugs are now fixed\" and the script-internal function name are branch remediation notes, not results. Two further `docs/audits/-q-hecke-character-gap-closure.md` references.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

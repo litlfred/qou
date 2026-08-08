@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "PR number and a dated work note in the body: \"Permanent fix path is the Habiro element $\\Lambda$ parallel to $\\mathfrak{Q}_\\beta$'s (PR #1511). The reversal history (six entries as of 2026-05-31) is the canonical example of why tiered classification is mandatory.\" Also quotes AGENTS.md as authority (\"*Per AGENTS.md \\\"$c_k$ is a TRUNCATION ORDER, not an inclusion/exclusion gate\\\"*\") and sends the reader to a coordination ledger, \"The subdir ledger ([`docs/coordination/1ppq-qbeta.md`](...)) maintains the reversal-history table\".",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "2a1c2c904a1b",

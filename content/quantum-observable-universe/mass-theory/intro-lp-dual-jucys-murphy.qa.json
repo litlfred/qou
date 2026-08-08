@@ -124,7 +124,19 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). repo/graph-hygiene vocabulary — 'section lead'; e.g. \"LP-dual and Jucys-Murphy central elements — section lead\". What these actually are: pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.937671Z"
 }

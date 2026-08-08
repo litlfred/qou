@@ -11,6 +11,18 @@
     "ts": "93d3df457476"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Published TITLE opens with a branch work-plan coordinate: \"Track C Step A: concrete Lean Braid/Link types; the 2-strand case fully discharges Atom 1 of `rem:markov-closure-map-axiomatic` ...\". \"Track C Step A\" is a branch route/step label and \"Atom 1\" an item number inside another block's checklist; neither means anything to a reader. The title's actual content - concrete Lean Braid/Link types, and the 2-strand case giving $\\widehat{\\sigma^2} = $ Hopf link - stands on its own without them.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

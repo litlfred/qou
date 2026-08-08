@@ -11,6 +11,18 @@
     "ts": "aa2b2e7d2eff"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "The block's entire body is agent housekeeping: \"These blocks were reconnected during the Phase 7 orphan audit. They address supplementary Bring's-surface results awaiting thematic placement.\" \"Phase 7\", \"orphan audit\" and \"reconnected\" describe a content-graph repair operation; a reader is being told about the repository's maintenance, not about Bring's surface. The sibling section TITLE is the same leak: \"Reconnected orphan blocks (Phase 7)\".",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

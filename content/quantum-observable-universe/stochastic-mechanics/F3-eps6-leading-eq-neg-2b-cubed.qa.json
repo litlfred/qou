@@ -1153,6 +1153,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "The block's own identifier is a branch decision code, and it surfaces in published prose and in the Lean pointer: \"verified at sympy precision in [`probe_q_beta_cat_per_factor_decomposition.py`](...) and in Lean [`F3-eps6-leading-eq-neg-2b-cubed.lean`](F3-eps6-leading-eq-neg-2b-cubed.lean)\". \"F3\" is one of the F1/F2/F3 branch labels; the object is the $\\varepsilon^6$ leading coefficient identity $= -2b^3$, which is what the label should say. The body also carries the formalisation-status marker \"The Lean **stub** proves all steps directly.\"; other blocks reference this one by its F3 id (see markov-closure-map-axiomatic.md).",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

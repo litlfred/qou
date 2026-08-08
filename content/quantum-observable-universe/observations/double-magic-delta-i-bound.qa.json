@@ -13,6 +13,18 @@
     "lean": "681cdaedc498"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] reference to AGENTS.md (the agent instruction file) — \"AGENTS.md\". AGENTS.md is the agent-instruction file, not a manuscript reference | [branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§3b\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [branch/audit label, md] GitHub URL pinned to a working branch — \"blob/claude/\". URL pinned to a working branch (claude/...), which will rot; should cite the artifact, not the branch | Verbatim: \"…ween Bring shells. ## Discussion We conjecture (AGENTS.md §3b axiom-class): - **Forward direction** ($\\Delta i \\leq 1 \\Rightarrow$ LR-fusion compatible): Relies on the LR-rigidity of adjacent Bring shells. - **…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

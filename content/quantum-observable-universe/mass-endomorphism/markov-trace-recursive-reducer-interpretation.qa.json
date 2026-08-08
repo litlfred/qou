@@ -11,6 +11,18 @@
     "ts": "d54d59bfe097"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Repo bug-tracker language presented as a mathematical caveat: \"The axiomatic route avoids reliance on Hoefsmit matrix elements, which exhibited a known [`IndexError`](https://github.com/litlfred/qou/pull/546) bug on $\\sigma_2$ acting on shape $(3)$.\" A Python exception type linked to a pull request is not a citation; if the numerical route was unreliable, say so mathematically.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

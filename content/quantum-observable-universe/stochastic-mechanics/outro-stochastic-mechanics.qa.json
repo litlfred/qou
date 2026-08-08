@@ -124,7 +124,19 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Chapter outro narrates the repository operation rather than the mathematics: \"The **reconnected orphan blocks** land the bridge between the Markov closure map and the classical-limit construction explicitly, closing the stochastic-mechanics **narrative arc**.\" \"Reconnected orphan blocks\" is pipeline vocabulary and \"this arc\" / \"narrative arc\" is the branch's own framing.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.022979Z"
 }

@@ -1660,6 +1660,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§7c'; e.g. \"...e, closing every β-decay half-life prediction simultaneously. **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...2(q)$-only > formulation (six rank-1 projectors cannot fit in a 2-dim > algebra; see audit > [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-a...\". process heading (Status / Open R&D / Diagnostics) — '### Audit'; e.g. \"...earlier Plancherel-weight basis $\\{[2k]_q^2/[2]_q, \\mathcal{N}_{\\rm sym}\\}$ is **superseded**. ### Audit-flag impact If this conjecture closes: - **NV-1**: hard flag closed via constrained PSLQ on t...\". the word 'audit' in body prose — 'audit'; e.g. \"...lapsed $H_2(q)$-only > formulation (six rank-1 projectors cannot fit in a 2-dim > algebra; see audit > [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/do...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript; audit and coordination docs are internal working records.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

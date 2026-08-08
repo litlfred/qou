@@ -11,6 +11,18 @@
     "ts": "35e148aec96d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] 'open content' (audit bookkeeping phrase) — \"open content\". 'open content' is audit bookkeeping for unfinished work items | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Closed content\"; \"## Remaining content\". process heading describing the work item rather than the mathematics | Verbatim: \"…ero`, a boundary theorem holding by definition at $x = 0$. ## Closed content The three class hooks provide named carrier infrastructure. The synthesis class `HasAllSubstantiveFillers F` provides a single hypothesis for downst…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

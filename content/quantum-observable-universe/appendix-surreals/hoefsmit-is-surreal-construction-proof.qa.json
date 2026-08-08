@@ -1280,6 +1280,18 @@
         "reviewed_at": "2026-07-12T10:57:05.514Z",
         "reviewed_sha": "f67226fd9d495d89555d04ba33509f2c3d5fa41e"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Formalisation-status marker in published prose: \"The Lean **stub** axiomatises the embedding ([sign sequence functor](#def:sign-sequence-of-braid)) **pending** these prerequisites.\" \"stub\" and \"pending\" describe the state of the branch's Lean development, not the mathematics.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

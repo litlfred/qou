@@ -13,6 +13,18 @@
     "lean": "a92ff39633a2"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Duality-tracker node ids carry the whole published TITLE: \"CPT closure: D6 + D7 + D8 jointly imply $C \\cdot P \\cdot T$ preserves the Markov trace\". D6/D7/D8 are rows of `docs/duality-tracker.md`; the objects are the three component conjectures the block itself states - $C$ the color-sheet flavor swap, $P$ the braid-diagram mirror, $T$ the Markov-trace word reversal - so the title can name them directly. The ids have also been frozen into the file name and into the class hypothesis quoted in the body: \"Downstream blocks that require CPT closure as an explicit hypothesis take `[CPTD6D7D8Closure]` as a class hypothesis.\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

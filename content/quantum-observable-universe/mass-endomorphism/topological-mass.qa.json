@@ -13,6 +13,18 @@
     "lean": "f12841405b84"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"For the archimedean realisation---where the descended trace yields the holonomy $\\mathrm{Hol}_{\\nabla_A}$ and each transient trace yields the quantum dilogarithm $\\Phi_q(z_i)$---see [archimedean proof](#prf:topological-mass). **Archimedean specialisation (§7c).** The categorical mass $\\mathrm{catego\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

@@ -11,6 +11,18 @@
     "ts": "dba478b6bd2a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "A subsection has been replaced by a note about the branch's own editing: \"*Subsection content pending restoration (prior text was AI-generated filler removed under bean 6fib).*\" - bean id, draft-status marker and a confession about provenance, all in the manuscript. Also a PR citation \"We refute the real-$x$ archimedean closure of $c_3$ (PR #2300)\", and the in-group shorthand \"the rungs stay cal-anchored pending the keystone\" with no antecedent for \"the keystone\" in that sentence.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

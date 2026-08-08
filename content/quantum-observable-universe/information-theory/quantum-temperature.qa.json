@@ -13,6 +13,18 @@
     "lean": "ef590789a3a6"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] status / lifecycle banner — \"SUPERSEDED\". lifecycle/status banner belonging to the working channel | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"this block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"> **SUPERSEDED-$\\rho_q$ note.** Any use of the scalar substrate density $\\rho_q = 1/\\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz; the can…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

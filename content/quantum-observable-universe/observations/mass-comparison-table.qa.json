@@ -11,6 +11,18 @@
     "ts": "891070eea4ae"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\". docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] pointer to an investigation log / handoff / workplan — \"handoff\"; \"workplan\" (+1 more). pointer to an internal investigation log / handoff / workplan | [process/status leak, md] 'wired' (pipeline wiring) in prose — \"rewire\". 'wired' is pipeline vocabulary for hooking a block into the build | Verbatim: \"…not yet extend to the nucleon scale (see [handoff](../../../docs/audits/-workplan-0b-script-rewire-handoff.md)). The $n$–$p$ splitting emerges as a consequence of the FULL $\\mathfrak{Q}_\\beta$ chain ($\\mathfrak{Q}_\\beta +…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

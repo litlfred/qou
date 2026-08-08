@@ -1599,6 +1599,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...sum to $A$; the na-Stokes period remains the correct *light*-nucleus ($A\\leq 4$) kernel. See [`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2...\". time-stamped note — '2026-07-11'; e.g. \"...the na-Stokes period remains the correct *light*-nucleus ($A\\leq 4$) kernel. See [`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2026-07-11-...\". What these actually are: audit and coordination docs are internal working records.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

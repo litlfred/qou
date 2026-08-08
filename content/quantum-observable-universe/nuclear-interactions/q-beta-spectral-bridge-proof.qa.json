@@ -11,6 +11,18 @@
     "ts": "ab4b8f89b7e3"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "A \"## Provenance\" section narrates branch history: \"We derived this proposition during the cycle-6/7 audit ([`docs/audits/-q-beta-form-A-vs-form-B-canonical-choice.md`](...))\". \"cycle-6/7\" is a branch work-cycle number and the linked file is an internal audit; neither is published. The mathematics (Form A / Form B, both defined in place) is fine.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

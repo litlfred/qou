@@ -13,6 +13,18 @@
     "lean": "525231f8dbee"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/-w3-habiro-unblocked.md') in body prose: \"where $\\ell(\\mathcal{B}_K)$ is the parity of crossings under the Hecke-algebra antipode action. The $\\mathrm{shift}(K)$ is the GS-filtration shift exponent ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)). It equals $18Z + 21N + 1$ for atomic braids per the intege\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

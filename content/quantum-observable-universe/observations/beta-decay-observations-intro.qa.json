@@ -11,6 +11,18 @@
     "ts": "d77c738515c6"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audit\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | Verbatim: \"…and the interpretation of $[A\\!-\\!1]_q! > [2]_q^{A-1}$. We audit the tritium $Q$-value derivation. We explain the half-life difference between $A = 14$ isobars by comparing the ${}^{14}\\mathrm{N}$ maximal braid sho…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

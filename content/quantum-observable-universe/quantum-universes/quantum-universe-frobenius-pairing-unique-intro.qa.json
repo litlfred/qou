@@ -11,6 +11,18 @@
     "ts": "160a501666c0"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[process/status leak, md] 'the arc' / 'this arc' as a working unit — \"The arc\". 'the arc' is the working name for a run of blocks; a reader sees a section | Verbatim: \"…iring unique and exhibits the $\\mathrm{SU}(2)$ realisation. The arc proceeds through: 1. The uniqueness proof for the pairing on $A$. 2. The explicit $\\mathrm{SU}(2)$ pairing realisation. 3. The geometric role of the…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

@@ -13,6 +13,18 @@
     "lean": "09d2631df968"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Bare branch label used as the block's punchline: \"This forms the mathematical core of the electroweak selection principle C1.\" C1 is a branch conjecture-lattice node, not a mathematical symbol - the object is the selection postulate itself, which the sentence already describes and does not need to label.",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",

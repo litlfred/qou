@@ -13,6 +13,18 @@
     "lean": "011b477d8d9d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§7c\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"This block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"…ion spaces by Schur's lemma. **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Any categorical identities remain…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

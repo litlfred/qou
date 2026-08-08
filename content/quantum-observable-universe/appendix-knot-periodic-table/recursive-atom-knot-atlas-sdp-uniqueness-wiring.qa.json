@@ -1335,6 +1335,18 @@
         "reviewed_at": "2026-07-12T00:34:54.917Z",
         "reviewed_sha": "7858cbecd61d9f31c04141201716db2615ab765b"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Published prose points the reader at an internal coordination memo: \"see [`docs/coordination/2026-05-30-sdp-uniqueness-status.md`](...) for the gating analysis\". Date-stamped coordination docs are the working channel, not manuscript apparatus; the gating analysis should be stated in the block. The .ts title \"Lean SDP-uniqueness **wiring** for the atlas entries\" also uses pipeline-plumbing vocabulary (\"wiring\") rather than describing the mathematics.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

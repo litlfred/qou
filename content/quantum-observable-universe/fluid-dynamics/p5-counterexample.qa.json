@@ -1412,6 +1412,18 @@
         "reviewed_at": "2026-07-12T00:35:14.445Z",
         "reviewed_sha": "d6e797a4b6b1341624cbda6774c27cdde79c449a"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Policy-section tag in the standing boilerplate: \"**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.\" §7c is an AGENTS.md section id. (Note: the \"**Phase 1: q-deformed evolution**\" / \"**Phase 2: the limit**\" / \"**Phase 3: the blowup**\" headings are legitimate — they are physical phases of the vortex evolution, not branch decision labels.)",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

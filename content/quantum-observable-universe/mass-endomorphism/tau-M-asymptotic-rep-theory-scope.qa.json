@@ -1,0 +1,28 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:tau-M-asymptotic-rep-theory-scope",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-scope.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-scope.md"
+  },
+  "source_hashes": {
+    "ts": "b7faf5380b35",
+    "md": "45a32f10bff6"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "internal precision-target id (1ppQ) ('1\\\\,\\\\mathrm{ppQ') in body prose: \"For the production mass formula ($\\mathfrak{m}_{\\mathfrak{n}} = \\mathfrak{m}_{\\mathfrak{p}} + \\mathfrak{Q}_\\beta + \\mathfrak{m}_{\\mathfrak{e}}$), only the $N=1$ envelope and the proved seed $c_2 = -1$ are used (`derived_masses.q_beta_kashiwara_n2_mev`). The higher rungs matter only for the $1\\,\\math\"",
+        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  },
+  "updated_at": "2026-08-08T08:22:35.606Z"
+}

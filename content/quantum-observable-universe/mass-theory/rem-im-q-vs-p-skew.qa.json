@@ -1407,6 +1407,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Branch/audit working labels leaking into published prose (the .md body). PR / issue number — 'PR [#1153]', 'pull/1153'; e.g. \"...on definition - [`bar-involution.md`](bar-involution.md) — bar projection definition - Sibling PR [#1153](https://github.com/litlfred/qou/pull/1153) — explicit P_skew = sinh formula for torus knots -...\". workplan / phase / tranche item label — 'Phase 3'; e.g. \"...ederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) §Implications — Phase 3 finding distinguishing the two mechanisms - [`crossing-energy-interpretation.md`](../observati...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...ducing complex tr_M whose modulus closes the residual. - Per [Phase A v2 audit](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md) §Path D + the audit at [`m-mu-over-m-e-operato...\". 'sibling' (branch/session) reference — 'sibling'; e.g. \".... 3. **Physical interpretation**: $P_{\\mathrm{skew}} = $ EM/charge-distinguishing channel (sibling documents this for torus knots). $\\mathrm{Im}(q) = $ a substrate moduli parameter (not dir...\". the word 'audit' in body prose — 'audit'; e.g. \"...m(q) $\\ne$ 0 producing complex tr_M whose modulus closes the residual. - Per [Phase A v2 audit](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md) §Path D + the audit at...\". What these actually are: a GitHub pull-request / issue number; P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids; audit and coordination docs are internal working records.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

@@ -3,6 +3,18 @@
   "label": "def:schwinger-measure-unit",
   "kind": "definition",
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "[branch/audit label, md] 'owner' as a role / owner-authorised decision label — \"owner premise\". 'owner' is the repo role that authorises decisions; premises should be stated on their own authority, not attributed to a role | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audit\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] 'exploration probe/witness' (agent scratch artifact) — \"exploration probe\". 'exploration probe/witness' is an agent scratch artifact | [process/status leak, md] 'the keystone' used as a named object the reader is assumed to know — \"the keystone\". 'the keystone' is a branch label for the Lean-proved normalizer identity n·N(n) = n! with N(n) = (n-1)!; it should be named by its statement | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"this block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"…for the binding normalizer $N(n)$, and, separately, by the owner premises P1 (substrate scale-freedom) and P2 (proper time as computational time) stated there. Unconditionally it remains a unit convention of the same speci…\"",
+        "reviewed_at": "2026-08-08T08:22:01Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "clarity-defterm-bold": [
       {
         "field_hash": {

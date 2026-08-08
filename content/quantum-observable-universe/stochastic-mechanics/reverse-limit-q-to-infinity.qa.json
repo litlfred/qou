@@ -1412,6 +1412,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "fail",
+        "notes": "Same duality-tracker ids leaking into prose: \"related to the $q \\to 0$ limit by the bar involution ([`def:bar-involution`](#def:bar-involution), **D1**)\" and \"orthogonal to the color-tube C action of [**D6**](c-from-color-flavor-swap.md)\". \"D1\"/\"D6\" are tracker rows, not mathematical labels.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"
