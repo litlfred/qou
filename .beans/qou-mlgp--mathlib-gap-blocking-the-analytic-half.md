@@ -547,3 +547,62 @@ That is a materially different bean from the one written at the top of this
 file, which said (A) needed "a structurally different comparison" and was
 "multi-day, no handle". The comparison is identified, the singularity is gone,
 and what is left is two standard library lemmas.
+
+## Gap 2 of (A): Robbins' upper bound BUILT
+
+`QOU/MathlibExt/StirlingRobbins.lean`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:340`:
+
+    log_stirlingSeq_diff_le_robbins       log s(n+1) - log s(n+2) <= 1/(12(n+1)) - 1/(12(n+2))
+    log_stirlingSeq_sub_le_robbins        the telescoped form, any n <= m
+    log_stirlingSeq_sub_log_sqrt_pi_le    log s(n) - log sqrt(pi) <= 1/(12n)
+    log_factorial_le_stirling_robbins     log n! <= n log n - n + (log n)/2
+                                                    + log(2 pi)/2 + 1/(12n)
+
+This is the term Mathlib's own docstring on `Stirling.le_log_factorial_stirling`
+records as missing: "Sharper bounds due to Robbins are available, but are not
+yet formalised. These would add lower order terms (beginning with `(12 * n)^-1`)
+to the left hand side." The last theorem is the exact upper counterpart of that
+lower bound.
+
+**WHY IT COMES OUT WITH NO SLACK.** Mathlib already proves the series
+
+    log s(n) - log s(n+1) = sum_{k>=0} (1/(2k+3)) x^{k+1},   x = 1/(2n+1)^2
+
+Its existing consequence `log_stirlingSeq_diff_le_geo_sum` bounds every
+coefficient by `1`. But the series starts at `k = 0` with coefficient `1/3`, so
+every coefficient is `<= 1/3`, and
+
+    (1/3) x/(1-x) = (1/3)/((2n+1)^2 - 1) = 1/(12n(n+1)) = 1/(12n) - 1/(12(n+1))
+
+is an EQUALITY. The telescoping bound Robbins needs is not an estimate — it is
+what the sharper coefficient bound gives directly. Then sum from `n` to infinity
+against `tendsto_stirlingSeq_sqrt_pi`. Verified numerically: `(1/3)x/(1-x)`
+against `1/(12n) - 1/(12(n+1))` agrees to |diff| = 0.0 at `n = 1`, and
+`log n! - main` sits inside `(1/(12n+1), 1/(12n))` at every `n` tested.
+
+**NOT A DUPLICATE** of `QOU/Mathlib/StirlingUpperBound.lean` (bean `el8w`),
+which proves the CRUDE `n! <= e sqrt(n) (n/e)^n` by monotonicity from
+`stirlingSeq 1`, for the Watson-uniqueness optimisation. Different constant,
+different purpose; left in place, cross-referenced from the new file. Found by
+grepping the repo before writing — the guard is working.
+
+**WHAT IS STILL MISSING FROM GAP 2.** Robbins' matching LOWER refinement
+`1/(12n+1) <= log s(n) - log sqrt(pi)`. Mathlib's `sqrt_pi_le_stirlingSeq` gives
+only `0 <=`. Combined with the new upper bound that pins `log n!` to within
+`1/(12n)` — enough for the `O(1/N)` form of (A), NOT enough for the
+`-(pi/12N) cot theta` refinement, which needs both Robbins bounds (their gap is
+`O(1/n^2) = o(1/N)`, which is why both are needed and neither alone suffices).
+
+## (A) — where it stands now
+
+    (i)   the exact reflection                       PROVED
+    (ii)  symmetric half = trapezoid remainder       PROVED
+    (iii) the j=0 singularity                        REMOVED (exact split)
+    (iv)  Stirling, upper with Robbins' 1/(12n)      PROVED  <- this commit
+    (v)   Stirling, lower with Robbins' 1/(12n+1)    open
+    (vi)  Euler-Maclaurin for a smooth function      open
+
+(vi) is the larger of the two remaining. (v) is a bounded follow-on to this
+commit — the same series, minorised instead of majorised, which needs a
+geometric lower bound on `1/(2k+3)` rather than the constant `1/3`.
