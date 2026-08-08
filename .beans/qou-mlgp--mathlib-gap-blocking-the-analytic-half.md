@@ -186,3 +186,35 @@ Laplace's method for a sum. Mathlib has nothing (0 modules). Note it is needed
 only through the specific `phi'' = -2 pi sqrt3 / N` at the figure-eight saddle,
 so a bespoke version may be far cheaper than the general theorem — worth
 scoping before attempting the general one.
+
+
+## (B) SCOPED — Mathlib's Jacobi theta is the way in
+
+(B) is needed only through one Gaussian sum. At the figure-eight saddle
+`phi'' = -2 pi sqrt3 / N`, so what must be shown is
+
+    sum_k exp(-a (k - c)^2) ~ sqrt(pi/a),      a = pi sqrt3 / N -> 0
+
+Mathlib does NOT have this as such (`gaussianSum`, `tsum_exp_neg_mul_sq`:
+absent from all 6990 oleans). But it HAS the object that gives it:
+
+    NumberTheory/ModularForms/JacobiTheta/
+      jacobiTheta              theta(tau) = sum_{n in Z} exp(pi i n^2 tau)
+      jacobiTheta_S_smul       the S-transformation, theta(-1/tau) = sqrt(-i tau) theta(tau)
+      jacobiTheta_eq_tsum_nat
+      jacobiTheta_two_add
+
+`jacobiTheta_S_smul` IS the Gaussian-sum asymptotic in disguise: along
+`tau = i t`, `theta(i t) ~ 1/sqrt(t)` as `t -> 0+`, which is exactly
+`sum_n exp(-pi n^2 t) ~ sqrt(pi/(pi t))`. So the `c = 0` (centred) case is
+reachable from the modular transformation rather than from scratch.
+
+**The offset is the open bit.** Our saddle sits at `k* = 5N/6`, not generally an
+integer, so the sum is `sum_k exp(-a(k - c)^2)` with `c` non-integral — that is
+the two-variable theta `theta_2(z, tau)`, and `jacobiTheta_two_add` suggests
+some two-variable API exists. Scope that before writing anything: if the
+characteristic version is present, (B) may be mostly assembly; if not, the
+offset case has to be built.
+
+This is materially cheaper than formalising general Laplace, which is what the
+bean originally implied was needed. Nothing is built yet.

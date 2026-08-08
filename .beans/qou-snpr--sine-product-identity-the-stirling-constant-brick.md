@@ -226,3 +226,37 @@ is a prerequisite for (A), not a substitute.
 
 Worth contributing upstream: Mathlib has neither this nor
 `∏ sin(kπ/n) = n/2^{n-1}`, confirmed across all 6990 modules.
+
+
+## CORRECTION 2026-08-08 — the `.ilean` technique covers only 42% of Mathlib
+
+The search technique recorded above is useful but I OVERSTATED it, and the
+overstatement propagated into two commit messages ("confirmed across all 6990
+modules"). It is not true.
+
+    .olean files : 6990
+    .ilean files : 2946      = 42.1%
+
+`.ilean` index files are NOT emitted for every module — e.g.
+`Analysis/SpecialFunctions/Gaussian/PoissonSummation.ilean` does not exist while
+its `.olean` does. **A negative result from an `.ilean` grep is therefore not
+evidence of absence.** It searches under half the library.
+
+### The reliable method: grep the `.olean` binaries
+
+Declaration names appear as plain strings inside the compiled `.olean` files, so
+
+    cd .lake/packages/mathlib/.lake/build/lib/lean/Mathlib
+    grep -rla "<name-fragment>" --include=*.olean .
+    strings <Module>.olean | grep -E '^[a-zA-Z][A-Za-z_.0-9]*$' | sort -u
+
+covers 100% of modules. Sanity-checked: it finds `sin_pos_of_pos_of_lt_pi`
+where it should. Use `.ilean` for fast positive hits, `.olean` before ever
+claiming absence.
+
+### The conclusion itself survives — re-checked at full coverage
+
+`prod_two_sin`, `prod_sin_pi_div`, `gaussianSum`, `tsum_exp_neg_mul_sq`: all
+absent from all 6990 `.olean` files. So Mathlib really does lack the
+sine-product formula and this really is an upstream contribution target. The
+claim was right; the evidence I cited for it was not.
