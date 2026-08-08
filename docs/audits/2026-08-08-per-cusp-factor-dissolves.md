@@ -173,8 +173,29 @@ prefactor form.
 offset"* against the one-cusped anchor, and its extraction returns `p = 1.4993`
 against the exact `3/2`. It is not a third independent pin.
 
+## The cancellation is a theorem, and is now proved as one
+
+`QOU/OneLoopEdgeLattice.percusp_factor_absorbs` — sorry-free,
+`[propext, Classical.choice, Quot.sound]`:
+
+```lean
+theorem percusp_factor_absorbs {t c : ℝ} (ht : 0 < t) :
+    (2 : ℝ) ^ ((c - 1) / 2) * ((2 : ℝ) ^ c * t) ^ (-(1 : ℝ) / 2)
+      = (2 : ℝ) ^ (-(1 : ℝ) / 2) * t ^ (-(1 : ℝ) / 2)
+```
+
+Everything else in this document is measurement; this one is not. It says the
+two laws are the **same function** on any data satisfying `|τ_old| = 2^c|τ|`,
+for every real `c` — so agreement at `c = 1, 2, 3` on such data confirms
+nothing, and the "per-cusp Gaussian-integration factor" reading was never
+distinguishable from its absence there. The content of §"The test" is that
+`k_1 = k_2` holds against the *corrected* invariant, where that identity does
+not apply.
+
 ## Reproduce
 
 ```sh
 python3 computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
+scripts/verify-lean-direct.sh \
+  content/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean
 ```

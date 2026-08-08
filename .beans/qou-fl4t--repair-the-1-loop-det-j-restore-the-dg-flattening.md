@@ -436,3 +436,40 @@ Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md
 Probe: computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
 
 <!-- 2026-08-08T00:40:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 (ninth pass) — the algebra is now Lean, sorry-free.
+
+`content/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean`.
+Nine theorems, `#print axioms` = [propext, Classical.choice, Quot.sound] on every
+one, zero sorries, wired into QOU.lean.
+
+  zeta_sum_eq_zero              zeta + zeta' + zeta'' = 0
+  zetaPP_eq                     zeta'' = -zeta - zeta'
+  nz_pair_reduction             the row depends only on (G-G'', G'-G'')
+  edge_rows_sum_zero            column sums 2  =>  specialised edge rows sum to 0
+  edge_rows_hypotheses_satisfiable   non-vacuity witness
+  det_basis_change              det(U B) = det(U) det(B) over Z -> C
+  det_basis_change_unimodular   unimodular change fixes det up to sign
+  det_sublattice_index          index-k sublattice scales det by k
+  percusp_factor_absorbs        2^{(c-1)/2}(2^c t)^{-1/2} = 2^{-1/2} t^{-1/2}
+
+WHY THESE. Almost all the evidence for the multi-cusp derivation is measurement.
+These four steps were not measurements — they were algebra asserted in prose, and
+one of them (the cusp-freeness of the edge-row degeneracy) is exactly where the
+sixth pass went wrong by reading a quoted sentence as a hypothesis.
+`edge_rows_sum_zero` has NO cusp number in its statement or proof, which makes
+that claim checkable rather than asserted.
+
+`percusp_factor_absorbs` is the sharpest of them: it proves the two c_sigma laws
+are the SAME FUNCTION wherever |tau_old| = 2^c|tau|, so agreement at c = 1,2,3 on
+that data confirmed nothing. The dissolution result is that k_1 = k_2 against the
+CORRECTED invariant, where the identity does not apply.
+
+NOT formalised: that the construction computes the adjoint torsion, or that it is
+a topological invariant. Shapes are free complex numbers in the Lean file; no
+gluing equation is imposed. Those stay numerical (and at c=1 a Garoufalidis-Yoon
+theorem).
+
+<!-- 2026-08-08T01:20:00Z branch claude/dg-scope-correction -->

@@ -30,6 +30,11 @@ import QOU.MathlibExt.SDPRealUniqueness
 -- Sorry-free, so it is wired here for CI type-checking (unlike
 -- HadamardFactorization itself, which still carries PI-3 / the full theorem).
 import QOU.Mathlib.WeierstrassFactorEstimate
+-- Algebraic skeleton of the Dimofte-Garoufalidis 1-loop invariant: the shape
+-- identity ζ+ζ'+ζ''=0, the CUSP-NUMBER-FREE degeneracy of the edge rows, the
+-- lattice-basis determinant lemmas, and the proof that the per-cusp factor
+-- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
+import QOU.OneLoopEdgeLattice
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker

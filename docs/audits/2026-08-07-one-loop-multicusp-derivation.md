@@ -166,9 +166,34 @@ old values were `2^{5/2}` and `2^6`; the invariant ones are `√2` and `8`.
 Doing that repair is separate work and does not, by itself, resolve `c_σ` —
 see the section above.
 
+## Formalized in Lean
+
+`QOU/OneLoopEdgeLattice.lean` — sorry-free, `[propext, Classical.choice,
+Quot.sound]` only. It proves the parts of this argument that are algebra rather
+than measurement:
+
+* `zeta_sum_eq_zero` — `ζ + ζ' + ζ'' = 0`.
+* `nz_pair_reduction` — the specialised row depends only on `(G − G'', G' − G'')`.
+* `edge_rows_sum_zero` — column sums `2` ⟹ the specialised edge rows sum to
+  zero. **There is no cusp number in the statement or the proof.** That is step 1
+  above, and the formal statement is what makes "the identity is not a
+  one-cusped hypothesis" checkable rather than asserted.
+* `det_basis_change`, `det_basis_change_unimodular`, `det_sublattice_index` —
+  a unimodular change of the row lattice fixes the determinant up to sign, and
+  rows generating an index-`k` sublattice scale it by `k`. That is step 3, and
+  the observed `k` was 2.
+* `edge_rows_hypotheses_satisfiable` — non-vacuity witness.
+
+What is *not* formalized: that the construction computes the adjoint torsion, or
+that it is a topological invariant. Those stay numerical (and, at `c = 1`, a
+theorem of Garoufalidis–Yoon). The shapes are free complex numbers in the Lean
+file; no gluing equation is imposed.
+
 ## Reproduce
 
 ```sh
 python3 computations/one_loop_torsion.py                                  # self-test
 python3 computations/probes/one_loop_multicusp_derivation_probe.py        # full evidence
+scripts/verify-lean-direct.sh \
+  content/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean     # Lean
 ```
