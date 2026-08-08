@@ -1,4 +1,6 @@
 import Mathlib.RepresentationTheory.Invariants
+import Mathlib.RepresentationTheory.Submodule
+import Mathlib.RingTheory.SimpleModule.Basic
 import Mathlib.RepresentationTheory.Character
 import Mathlib.LinearAlgebra.Contraction
 import Mathlib.LinearAlgebra.Trace
@@ -182,5 +184,71 @@ theorem charPairing_eq_finrank_homG [Fintype G] [Invertible (Fintype.card G : k)
   rw [← average_charOf (linHom ρV ρW)]
   congr 1
   exact Finset.sum_congr rfl (fun g _ => (charOf_linHom ρV ρW g).symm)
+
+/-! ## 4. Schur, at the `Representation` level
+
+Stated with simplicity in **stable-subspace** form rather than as
+`IsSimpleModule … asModule`, because that is the form the Specht cluster proves
+(`SpechtIrreducible.specht_isSimple`) and it keeps the proof free of any
+`asModule` transport. `stable_eq_bot_or_top` below converts the module form into
+it for callers that have the other one. -/
+
+/-- **Schur's lemma.** If every `G`-stable subspace of `V` and of `W` is trivial
+and the two are not isomorphic as representations, there is no nonzero
+equivariant map `V → W`. -/
+theorem homG_eq_bot {ρV : Representation k G V} {ρW : Representation k G W}
+    (hV : ∀ p : Submodule k V, (∀ g v, v ∈ p → ρV g v ∈ p) → p = ⊥ ∨ p = ⊤)
+    (hW : ∀ p : Submodule k W, (∀ g w, w ∈ p → ρW g w ∈ p) → p = ⊥ ∨ p = ⊤)
+    (hno : ∀ e : V ≃ₗ[k] W, ¬ ∀ (g : G) (v : V), e (ρV g v) = ρW g (e v)) :
+    homG ρV ρW = ⊥ := by
+  refine (Submodule.eq_bot_iff _).mpr (fun f hf => ?_)
+  by_contra hfne
+  rw [mem_homG_iff] at hf
+  -- the kernel is stable, so it is `⊥` (it cannot be everything: `f ≠ 0`)
+  have hker : LinearMap.ker f = ⊥ := by
+    refine (hV _ (fun g v hv => ?_)).resolve_right (fun h => hfne ?_)
+    · simp only [LinearMap.mem_ker] at hv ⊢
+      rw [hf g v, hv, map_zero]
+    · exact LinearMap.ker_eq_top.mp h
+  -- the range is stable, so it is `⊤` (it cannot be zero: `f ≠ 0`)
+  have hrange : LinearMap.range f = ⊤ := by
+    refine (hW _ (fun g w hw => ?_)).resolve_left (fun h => hfne ?_)
+    · obtain ⟨v, rfl⟩ := hw
+      exact ⟨ρV g v, hf g v⟩
+    · exact LinearMap.range_eq_bot.mp h
+  -- bijective, hence an isomorphism of representations
+  exact hno (LinearEquiv.ofBijective f
+    ⟨LinearMap.ker_eq_bot.mp hker, LinearMap.range_eq_top.mp hrange⟩) (fun g v => hf g v)
+
+/-- The identity is always an equivariant self-map, so `Hom_G(V, V)` is nonzero
+whenever `V` is. -/
+theorem one_le_finrank_homG_self (ρ : Representation k G V) [Nontrivial V]
+    [Module.Finite k V] : 1 ≤ finrank k (homG ρ ρ) := by
+  have hid : LinearMap.id ∈ homG ρ ρ := mem_homG_iff.mpr (fun _ _ => rfl)
+  have hne : (⟨LinearMap.id, hid⟩ : homG ρ ρ) ≠ 0 := by
+    intro h
+    obtain ⟨x, hx⟩ := exists_ne (0 : V)
+    have hzero : (LinearMap.id : V →ₗ[k] V) = 0 := congrArg Subtype.val h
+    exact hx (by simpa using congrArg (fun m : V →ₗ[k] V => m x) hzero)
+  haveI : Nontrivial (homG ρ ρ) := ⟨⟨⟨LinearMap.id, hid⟩, 0, hne⟩⟩
+  exact Module.finrank_pos_iff.mpr inferInstance
+
+/-- **`IsSimpleModule` over `k[G]` gives the stable-subspace form.**  Mathlib's
+`Representation.mapSubmodule` is an order isomorphism between the invariant
+`k`-submodules and the `k[G]`-submodules, so simplicity transports. -/
+theorem stable_eq_bot_or_top (ρ : Representation k G V)
+    [IsSimpleModule (MonoidAlgebra k G) ρ.asModule]
+    (p : Submodule k V) (hp : ∀ g v, v ∈ p → ρ g v ∈ p) : p = ⊥ ∨ p = ⊤ := by
+  have hmem : p ∈ ρ.invtSubmodule := by
+    rw [Representation.mem_invtSubmodule]
+    exact fun g => (Module.End.mem_invtSubmodule (ρ g)).mpr (fun v hv => hp g v hv)
+  -- transport `p` to a `k[G]`-submodule through Mathlib's order isomorphism
+  rcases IsSimpleOrder.eq_bot_or_eq_top (ρ.mapSubmodule ⟨p, hmem⟩) with h | h
+  · refine Or.inl (congrArg Subtype.val (show (⟨p, hmem⟩ : ρ.invtSubmodule) = ⊥ from ?_))
+    rw [← ρ.mapSubmodule.symm_apply_apply ⟨p, hmem⟩, h]
+    exact ρ.mapSubmodule.symm.map_bot
+  · refine Or.inr (congrArg Subtype.val (show (⟨p, hmem⟩ : ρ.invtSubmodule) = ⊤ from ?_))
+    rw [← ρ.mapSubmodule.symm_apply_apply ⟨p, hmem⟩, h]
+    exact ρ.mapSubmodule.symm.map_top
 
 end QOU.MathlibExt.RepresentationCharacter

@@ -205,3 +205,59 @@ plumbing fought back for a dozen compiles:
 
 Steps 1–2 are short. Step 3 is the assembly. The mathematics is finished; what
 remains is bookkeeping of the same kind as above.
+
+## Progress 2026-08-08 (cont 3) — every ingredient of the count is now proved
+
+Added, all sorry-free and axiom-clean:
+
+    GramNondegenerate.linearIndependent_of_gram_diagonal
+    GroupAlgebraCenter.classFunctions / finrank_classFunctions_le
+    RepresentationCharacter.homG_eq_bot              (Schur)
+    RepresentationCharacter.one_le_finrank_homG_self (nonzero diagonal)
+    RepresentationCharacter.stable_eq_bot_or_top     (IsSimpleModule bridge)
+
+### The chain, with every link proved
+
+| Link | Lemma |
+|---|---|
+| non-isomorphic simples ⇒ `Hom_G = ⊥` | `homG_eq_bot` |
+| ⇒ off-diagonal character pairing `= 0` | `charPairing_eq_finrank_homG` |
+| `Hom_G(V,V) ≠ 0`, so diagonal `≠ 0` in char 0 | `one_le_finrank_homG_self` |
+| diagonal Gram ⇒ characters independent | `linearIndependent_of_gram_diagonal` |
+| characters are class functions | `charOf_conj` |
+| `dim {class functions} ≤ #conj classes` | `finrank_classFunctions_le` |
+| `#conj classes ≤ #partitions` | `card_conjClasses_perm_fin_le` |
+| Specht modules pairwise non-isomorphic | `specht_pairwise_noniso` |
+
+### Two design notes worth keeping
+
+**Schur is stated in stable-subspace form**, not as `IsSimpleModule … asModule`.
+That is the form `SpechtIrreducible.specht_isSimple` proves, and it keeps the
+proof free of `asModule` transport — kernel and range of an equivariant map are
+visibly stable, and simplicity is applied to them directly.
+`stable_eq_bot_or_top` converts the module form for callers that have that one;
+it goes through Mathlib's `Representation.mapSubmodule`, an *order isomorphism*
+between invariant `k`-submodules and `k[G]`-submodules, so simplicity transports
+by `OrderIso.map_bot` / `map_top`. Mathlib has no `OrderIso.isSimpleOrder`, so
+the transport is done concretely rather than abstractly.
+
+**Everything is a bound.** No equality in the chain, and no `IsAlgClosed`
+anywhere. That is what kept the whole route cheap.
+
+### What is left: the assembly only
+
+Instantiate the count at `ι := PartitionIndex n ⊕ Unit` — the Specht modules
+plus the hypothetical extra simple `W` — and derive `#partitions + 1 ≤
+#partitions`. Concretely:
+
+- [ ] a character family on `ι`, from `spechtRep μ` and `ρ`;
+- [ ] pairwise non-isomorphism across the sum: `specht_pairwise_noniso` on the
+      left block, the `specht_exhausts_irreducibles` hypothesis (`W` not
+      isomorphic to any `S^μ` — this is the `by_contra`) on the cross terms;
+- [ ] `Fintype.card (PartitionIndex n) = Fintype.card (Nat.Partition n)` via the
+      repo's `partitionEquivYoungIndex`;
+- [ ] `Module.Finite k (SpechtSubmodule μ)` and `Nontrivial` for each block;
+- [ ] chain the inequalities and close.
+
+No new mathematics and no new Mathlib gaps — bookkeeping against the table
+above. Estimate: one focused session.
