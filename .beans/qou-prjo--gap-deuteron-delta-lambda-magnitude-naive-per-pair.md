@@ -41,7 +41,22 @@ Yekutieli surface 2-form on the trefoil Seifert surface — data the corpus lack
 that discretization (genus-1 trefoil Seifert surface, Seifert form) is the named next unit;
 until it exists the deuteron magnitude stays open.
 
+### Result (2026-08-08) — the named discretization BUILT; transverse route resolves NEGATIVE (scope-a)
+
+`nastokes_surface_curvature_trefoil_probe.py` + `docs/audits/2026-08-08-nastokes-surface-curvature-trefoil-negative.md`
+build the wall's "missing data": trefoil Seifert `V=[[-1,1],[0,-1]]`, `J=[[0,1],[-1,0]]`,
+germ q-curvature `F_q=[δq₁,δq₂]` (log AND q-derivative germ), surface-ordered
+`½∮∮[𝓕,𝓕]=J_{ab}[𝓕_a,𝓕_b]`. The transverse term IS nonzero on σ₁³ (off-axis handles) — it
+survives — BUT `c₂=‖Ω₂^⊥‖/h²` ranges **0 … 897** across natural germ/handle choices, **never
+≈1**: q-deriv germ + on-axis handle → 0 (germ commutes with the along-word holonomy);
+log/mixed → 250–900×. The surface→scalar map has O(100×) gauge freedom the corpus does not
+fix, so the pairing does NOT supply `g₂`. Route joins the walled set; deuteron magnitude
+stays open. Reviving it needs an independent principle fixing (i) germ normalization + (ii)
+the two H₁ handle holonomies.
+
 ### Do NOT redo
 
 Any single-scale / per-pair / level / edge / dimension / writhe / DT-count closure — all
-walled. A `Δ_λ` fitted to `B(D)` is the forbidden 7th ansatz.
+walled. A `Δ_λ` fitted to `B(D)` is the forbidden 7th ansatz. The transverse NA-Stokes
+surface-curvature pairing is now BUILT and under-determined (2026-08-08) — do not re-pitch it
+as "promising pending data"; it needs a NEW principle fixing the germ + handle choices.
