@@ -136,15 +136,16 @@ connected open set.**
 form; the identity theorem upgrades the equality and
 `finprod_zpow_eq_finset_prod_npow` normalises the shape.
 
-The multiplicities are strictly positive, so `S` is *exactly* the zero set of
-`f` on `V` — without that, `a ∈ S` would carry no information and the
-factorisation could not be read backwards. -/
+The multiplicities are strictly positive and `S ⊆ V`, so `S` is *exactly* the
+zero set of `f` on `V` — without those, `a ∈ S` would carry no information and
+the factorisation could not be read backwards. -/
 theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
     (hVconn : IsPreconnected V) (hVne : V.Nonempty) (hK : IsCompact K) (hVK : V ⊆ K)
     {f : ℂ → ℂ} (hf : AnalyticOnNhd ℂ f K)
     (hord : ∀ u : V, meromorphicOrderAt f u ≠ ⊤) :
     ∃ (S : Finset ℂ) (m : ℂ → ℕ) (g : ℂ → ℂ),
       AnalyticOnNhd ℂ g V ∧ (∀ u : V, g u ≠ 0) ∧ (∀ a ∈ S, 0 < m a) ∧
+      (∀ a ∈ S, a ∈ V) ∧
       Set.EqOn f (fun z => (∏ a ∈ S, (z - a) ^ (m a)) * g z) V := by
   classical
   have hfV : AnalyticOnNhd ℂ f V := hf.mono hVK
@@ -155,7 +156,7 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
   obtain ⟨g, hg, hgne, hEq⟩ := hmV.extract_zeros_poles hord hfinite
   -- the divisor is `≥ 0` because `f` is analytic
   have hDnn : ∀ x, 0 ≤ (divisor f V) x := fun x => hfV.divisor_nonneg x
-  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_, ?_⟩
+  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_, ?_, ?_⟩
   · -- a point of the support has a nonzero, hence positive, divisor value
     intro a ha
     have hne0 : (divisor f V) a ≠ 0 := by
@@ -165,6 +166,9 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
     -- `show` first: the goal is a beta-redex, which `omega` treats as opaque
     show 0 < ((divisor f V) a).toNat
     omega
+  · -- a divisor is supported inside its domain
+    exact fun a ha =>
+      (divisor f V).supportWithinDomain ((Set.Finite.mem_toFinset hfinite).1 ha)
   -- upgrade the codiscrete equality to genuine equality
   haveI : NeBot (codiscreteWithin V) := QOU.Mathlib.codiscreteWithin_neBot hV hVne
   refine QOU.Mathlib.eqOn_of_eventuallyEq_codiscreteWithin hfV ?_ hVconn ?_
