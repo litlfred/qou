@@ -66,7 +66,7 @@ structure ObservationGrading (A k : Type*) [Add k] where
     `NP`-verifiable, the degree-0 answer being blocked obstructs `P` —
     and derive the QOU separation.  **No instance is declared**: this map
     is the irreducible conjectural input (anti-laundering). -/
-class ComplexityDictionary where
+class ComplexityDictionary {M : Type*} (decisionCost : M → ℕ → ℕ) where
   /-- The decision answer (degree-0) is poly-time inaccessible when the
       obstruction blocks it. -/
   answerBlocked : Prop
@@ -75,7 +75,7 @@ class ComplexityDictionary where
   /-- **The conjectural transfer**: a blocked degree-0 answer with
       verifiable degree-≥1 witnesses is exactly the `P ≠ NP` separation
       in the QOU. -/
-  separation_of_blocked : answerBlocked → witnessVerifiable → PNeqNPInQOU
+  separation_of_blocked : answerBlocked → witnessVerifiable → PNeqNPInQOU decisionCost
   /-- Degree-≥1 witnesses are always available (they leak across 𝓗). -/
   witnesses_leak : witnessVerifiable
 
@@ -86,9 +86,10 @@ class ComplexityDictionary where
     dictionary — it does not prove the dictionary (which has no instance).
     It shows the transfer's open content is exactly the degree↔complexity
     identification, nothing more. -/
-noncomputable def jetHorizonTransfer_of_dictionary (chi : ℤ)
-    [D : ComplexityDictionary]
-    (opacity : chi ≠ 0 → D.answerBlocked) : JetHorizonTransfer chi where
+noncomputable def jetHorizonTransfer_of_dictionary {M : Type*}
+    (decisionCost : M → ℕ → ℕ) (chi : ℤ)
+    [D : ComplexityDictionary decisionCost]
+    (opacity : chi ≠ 0 → D.answerBlocked) : JetHorizonTransfer decisionCost chi where
   degreeZeroBlocked := D.answerBlocked
   opacity_of_obstruction := opacity
   transfer := fun hb => D.separation_of_blocked hb D.witnesses_leak
