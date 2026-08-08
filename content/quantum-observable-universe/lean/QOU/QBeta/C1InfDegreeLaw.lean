@@ -33,6 +33,7 @@ crossed here).
 import Mathlib.Algebra.Polynomial.Degree.Lemmas
 import Mathlib.Tactic.ComputeDegree
 import QOU.Mass.C1FormalSolutionGrowth
+import QOU.MathlibExt.QBorelKernelLevel
 
 namespace QOU.QBeta
 
@@ -130,5 +131,32 @@ theorem cCoeff_natDegree_step (n : ℕ) :
     (cCoeff (n + 1)).natDegree = (cCoeff n).natDegree + (2 * n + 1) := by
   rw [cCoeff_natDegree, cCoeff_natDegree]
   ring
+
+/-!
+### S1: the ramified q-Borel growth budget
+
+Stage S1 of `docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md`. The
+*unramified* level-`d` q-Borel kernel cannot absorb `deg_q(cₙ) = n²` for any `d`
+(budget `+n²/2` at `d=1`, worse for larger `d`). Ramifying first — `z = ζ²`, the
+pullback forced by the non-integral slope ½ — puts the coefficient `cₘ` at index
+`N = 2m`, against the **level-2** kernel exponent there.
+
+The result is exact and *linear*: the leftover exponent is exactly `m`. Linear
+(sub-quadratic) leftover is precisely the convergence condition, so this pairing
+— ramification **then** level 2 — is the critical matching. That is the
+quantitative reason RSZ's square roots `B₁,B₂` are forced rather than cosmetic.
+-/
+
+/-- **S1 budget, exactly.** At the ramified index `N = 2m`, the C1 coefficient
+exponent exceeds the level-2 q-Borel kernel exponent by exactly `m`:
+`m² = m(m−1) + m`. Linear leftover ⇒ the ramified transform converges, whereas
+no unramified level absorbs the quadratic growth. -/
+theorem ramified_qBorel_budget (m : ℕ) :
+    (cCoeff m).natDegree
+      = QOU.MathlibExt.QBorelKernel.qBorelExp 2 (2 * m) + m := by
+  rw [cCoeff_natDegree, QOU.MathlibExt.QBorelKernel.qBorelExp_two_even]
+  cases m with
+  | zero => simp
+  | succ k => simp only [Nat.succ_sub_one]; ring
 
 end QOU.QBeta
