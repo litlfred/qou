@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T08:40:17.986986+00:00",
-  "commitSha": "d6b17ab658666691318b2ae4b378c583988a4896",
+  "computedAt": "2026-08-08T11:16:56.916165+00:00",
+  "commitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "assertions": [
     {
       "name": "extracted_theta_all_real",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 11,
   "computation": "em-linking-sk-theta-extraction",
   "scriptFile": "em_linking_sk_form_theta_extraction.py",
-  "scriptHash": "36124e7de108",
-  "scriptCommitSha": "2c17845a8fe041134253c1cdcee96e275b7dd3f7",
+  "scriptHash": "a300dc21a067",
+  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -539,6 +539,16 @@
       "verdict": "The S_K form itself is NOT falsified: theta stays real, stays boost-dominated, stays monotone within tolerance, and the A^(1/6) description IMPROVED (2.80% -> 2.33%). What is falsified is my claim that this was a sharp discriminator. Under theta ~ A^(1/6), reaching the wall needs A ~ (1/0.75)^6 * 63 ~ 350 -- far beyond the last bound mirror pair. The wall is UNREACHABLE in this series, so the test cannot discriminate, and the two readings are degenerate over the whole accessible range. I proposed it as cheap and decisive; it is cheap and indecisive, and that is recorded rather than restated as a success.",
       "what_the_extension_DID_settle": "Not this, but something else: H_coth's scatter IMPROVED with the extension (4.25% -> 3.50% on bound pairs) while its rivals did not (H_FH_Z 4.52% -> 4.39%, H_FH_A 5.50%). The three are no longer statistically tied. Combined with the round-5 withdrawal of the H_FH warrant, coth-saturation is now the only reading with both the best fit and a structural story -- though 'best of three' is not the same as derived."
     },
-    "honest_scope": "This is a CONSISTENCY test, not a derivation. theta_K remains the open G3 datum (bean qou-qnnq); nothing here computes it from the categorical drivers. The normalisation theta_3 is a free choice, and the reported power-law scan is descriptive -- with one free scale it cannot confirm a law, only reveal gross misbehaviour. What the probe establishes is narrower and real: the S_K form is not excluded, and it converts the held-fixed-unit confound into a specific open quantity that the corpus is already trying to derive."
+    "honest_scope": "This is a CONSISTENCY test, not a derivation. theta_K remains the open G3 datum (bean qou-qnnq); nothing here computes it from the categorical drivers. The normalisation theta_3 is a free choice, and the reported power-law scan is descriptive -- with one free scale it cannot confirm a law, only reveal gross misbehaviour. What the probe establishes is narrower and real: the S_K form is not excluded, and it converts the held-fixed-unit confound into a specific open quantity that the corpus is already trying to derive.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "2f63bcf2281c7d9c3977c6cc427071c931dc978c8fef05490c8eeaf138322b8a",
+        "size_bytes": 10565,
+        "commitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-08T11:16:56.186917+00:00"
+      }
+    ]
   }
 }
