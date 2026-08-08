@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T16:50:00Z
+updated_at: 2026-08-08T17:40:00Z
 parent: 0yqu
 ---
 
@@ -879,5 +879,82 @@ and `∏(1−yⱼ/x) = 1/x`.
 
 Item 2 shrank today: the pinning lemma's *algebraic* inputs are all proved, and
 what remains is exactly `hcont`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — items 1, 2, 3 all joined. `hcont` is now the ONLY open input
+
+`QOU/QBeta/FiveTwoEnvelopeAssembly.lean`, sorry-free, no warnings, `lake` green
+(2058 jobs), axioms `[propext, Classical.choice, Quot.sound]`. The three tasks
+the previous entry listed are each one section.
+
+### 1. The envelope theorem, in general
+
+```lean
+theorem hasDerivAt_of_partial_y_eq_zero
+    (hF : HasFDerivAt F F' (x t, y t))
+    (hx : HasDerivAt x x' t) (hy : HasDerivAt y y' t)
+    (hzero : F' (0, 1) = 0) :
+    HasDerivAt (fun s => F (x s, y s)) (F' (1, 0) * x') t
+```
+
+`y′` never appears in the conclusion — that is the whole reason the envelope
+argument needs only *existence* of `dyⱼ/dx`, which `exists_hasDerivAt_root`
+supplies. Stated for a general `F`; nothing about the dilogarithm enters. And
+`hzero` is free for `V`, because `deformed_saddle_iff_curve` says the saddle
+condition **is** the curve.
+
+One trap: `F'` is ℂ-linear while the path is ℝ-parameterised, so the composition
+needs `HasFDerivAt.restrictScalars ℝ`. Without it the elaborator stalls on
+`NormedSpace ℝ ?m`.
+
+### 2. The pinning, with its algebra fully discharged
+
+```lean
+exp_logSumA_sub_log_eq_one : exp(Σⱼ log(1 − x·yⱼ) − log x) = 1   -- from Vieta
+exp_logSumB_add_log_eq_one : exp(Σⱼ log(1 − yⱼ/x) + log x) = 1   -- from Vieta
+branchDiff_eq_zero_of_continuousOn : … continuity + base point ⟹ ≡ 0
+```
+
+The `hexp` hypothesis of `eq_zero_of_continuousOn_of_exp_eq_one` is now
+**discharged from the Vieta products**. Nothing algebraic is left in the pinning:
+what remains is exactly continuity.
+
+### 3. The gluing
+
+```lean
+theorem envelope_integrate
+    (hcont : ContinuousOn S (Icc 0 b))
+    (hderiv : ∀ φ ∈ Ico 0 b, φ ≠ c → HasDerivWithinAt S (2 * φ) (Ici φ) φ) :
+    ∀ φ ∈ Icc 0 b, S φ = S 0 + φ ^ 2
+```
+
+`constant_of_hasDerivWithinAt_zero_off_point` applied to `φ ↦ S φ − φ²`. At
+`b = π` this is **`S(π) − S(0) = π²`** — the transport's conclusion — with the
+one exceptional point `c` being `φ₀`, where the discriminant vanishes.
+
+### Where the envelope step now stands
+
+| input | status |
+|---|---|
+| roots differentiable off the discriminant locus | **proved** (`exists_hasDerivAt_root`) |
+| `∂V/∂y = 0` on the curve | **proved** (`deformed_saddle_iff_curve`) |
+| the `y′` terms cancel | **proved** (§1) |
+| `Σⱼ ∂V/∂x = −2 log x / x` given pinning | **proved** (`sum_dVdx_of_pinned`) |
+| `exp(·) = 1` for the pinning | **proved** (§2, from Vieta) |
+| `(−2 log x / x)·(i x) = 2φ` | **proved** (`envelope_value`) |
+| glue across `φ₀` | **proved** (§3) |
+| **`hcont`** | **OPEN** |
+| `d/dz Li₂` on the arc | **proved** (`qou-clx8`, closed today) |
+
+**`hcont` is the only open input.** Everything else the envelope step needs is a
+theorem. What is *not* done is the final wiring — instantiating §1 at `V` with
+its three `Li₂` terms and the `log(−y)²` term, and summing over the three roots.
+That is assembly of proved parts, not new mathematics, and it is not written.
+
+Route 26 G6 checks the collapse numerically to **1e-31**, so the wiring has a
+target to hit.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
