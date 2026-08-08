@@ -1,11 +1,11 @@
 ---
 # qou-slpd
 title: 'ROAST: slope ½ is a definition, not a derivation — and the two ½s are order vs level'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T04:30:00Z
+updated_at: 2026-08-08T05:30:00Z
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.
@@ -121,14 +121,50 @@ In increasing cost:
    — "what remains probe-only is that the kernel's actual coefficient sequence
    realises order ½". It is now closed for one actual sequence, and the answer
    is **2**.
-4. **Derive the recursion itself** from `L1 = (q²x−1)σ² − (q−1)σ − (q−1)`.
-   Currently from a witness. This is the real bottom of the stack.
+4. **PARTLY DONE 2026-08-08 — the Newton polygons are computed.**
+   `ThetaSlopeArithmetic` now derives both slope multisets from the operators
+   instead of stipulating them:
 
-**Where this leaves it.** (1), (2) and (3) are done. On the `∞`-side the chain
-now reads: *recursion* (still from a witness) ⟹ *ratio degree `2m+1`* ✅ ⟹
-*`deg_q cₙ = n²`* ✅ ⟹ *order 2 / level ½* ✅. Only **(4)** remains, and it has
-been promoted: it is no longer "derive the recursion for completeness", it is
-"compute the Newton polygon of `L1` and settle which quantity `c1Slope` is".
+   | | operator at `∞` (RSZ frame `w = 1/x`) | valuations | slopes |
+   |---|---|---|---|
+   | C1 | `−(q−1)w·σ̃² − (q−1)w·σ̃ + (1−w)` | `(0,1,1)` | `{½, ½}` mult 2, pure isoclinic |
+   | GGM | `qw·σ̃² + (1−2qw)·σ̃ + qw` | `(1,0,1)` | `{−1, +1}` mult 1 each |
+
+   The valuations are **proved** from the coefficient polynomials
+   (`c1_valuations`, `ggm_valuations`, via `natTrailingDegree`), not read off by
+   eye; `newtonSlopes` is RSZ §2.2.1's lower hull for order 2. Then
+   `c1Slope_eq_newton`, `ggmSlopes_eq_newton` connect them to the two `def`s,
+   `c1_isoclinic_of_newton` gives purity, and **`newtonSlopes_c1_ne_ggm` gives
+   Door-i straight off the two polygons** — so `pullback_cannot_reach_ggm` is no
+   longer ℚ arithmetic over hand-entered constants. All sorry-free,
+   `[propext, Classical.choice, Quot.sound]`.
+
+   The routeA audit called this "exact hand algebra" and asked for
+   formalize-first; this is that, a year of prose later.
+
+   **Still open in item 4**: deriving the `∞`-side *recursion*
+   `c_{m+1} = c_m(1 + (q−1)qᵐ + (q−1)q^{2m})` from `L1`. That is a different
+   object from the polygon — the polygon needs only the coefficient valuations,
+   the recursion needs the actual series solution — and it remains
+   witness-sourced.
+
+5. **The one premise the polygon does NOT settle.** Computing the polygon pins
+   the NUMBER `½`. It does not say whether that number is the q-Gevrey *order*
+   or the *level* of any particular solution sequence, and §2 showed the corpus
+   has one `½` of each kind. Closing it means a slope↔growth theorem (RSZ ch. 5
+   territory), or at minimum locating RSZ's statement of it verbatim rather than
+   inferring from §2.3.2 + Ex. 3.3.3.
+
+**Where this leaves it.** (1), (2), (3) done; (4) half done. Two independent
+strands now reach the same `½` from opposite ends:
+
+* *polygon strand* — `L1` coefficients ⟹ valuations `(0,1,1)` ⟹ slopes `{½,½}` ✅
+* *growth strand* — recursion (witness) ⟹ ratio degree `2m+1` ✅ ⟹ `deg_q cₙ = n²`
+  ✅ ⟹ order 2 / level ½ ✅
+
+What is missing is the **bridge between them** (item 5): which growth quantity
+the polygon slope is. Both strands are now machine-checked, so the bridge is the
+only prose left in the load-bearing path.
 
 `ThetaSlopeArithmetic` now says in its docstring that `c1Slope` and `ggmSlopes`
 are stipulated and that the order/level identification is a premise, so nothing
