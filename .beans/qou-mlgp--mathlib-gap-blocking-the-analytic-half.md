@@ -1234,3 +1234,44 @@ the sign of `logSinc'''` via `antitoneOn_of_deriv_nonpos`, which requires
 `HasDerivAt logSinc'' (logSinc''' x) x` — the ONE derivative statement still
 unwritten, and it is a routine quotient-rule computation on `1/x^2 - 1/sin^2 x`,
 not a cancellation estimate.
+
+## `AntitoneOn logSinc''` — the composite rule's last hypothesis, discharged
+
+`QOU/Knot/LogSincNearZero.lean`, two more, sorry-free on
+`[propext, Classical.choice, Quot.sound]`:
+
+    hasDerivAt_logSinc_deriv2   logSinc''' x = -2/x^3 + 2 cos x/sin^3 x   on (0,pi)
+    antitoneOn_logSinc_deriv    AntitoneOn logSinc'' (Icc c d)  for 0 < c, d < pi
+
+The derivative is the quotient rule twice (`(1/x^2)' = -2/x^3` and
+`(1/sin^2 x)' = -2 cos x/sin^3 x`, both via `HasDerivAt.inv`). Antitonicity is
+`antitoneOn_of_deriv_nonpos`, whose derivative condition
+`2 cos x/sin^3 x <= 2/x^3` is exactly `x^3 cos x <= sin^3 x` after
+`div_le_div_iff` — i.e. `mul_cube_cos_lt_sin_cube` from the previous round.
+
+**EVERY HYPOTHESIS of `abs_integral_sub_composite_le_osc` is now available for
+`logSinc` on any `[c,d]` inside `(0, pi)`:**
+
+    HasDerivAt logSinc  (logSinc' x)  x    hasDerivAt_logSinc
+    HasDerivAt logSinc' (logSinc'' x) x    hasDerivAt_logSinc_deriv
+    ContinuousOn logSinc''                 from hasDerivAt_logSinc_deriv2
+    AntitoneOn   logSinc''                 antitoneOn_logSinc_deriv
+
+## (A) — what is genuinely left
+
+Only the assembly, and it is now a matter of plugging in:
+
+  1. `abs_integral_sub_composite_le_osc` at `g = logSinc`, `a = h`, `k-1` cells
+     -> `sum_{j=1}^{k} logSinc(jh)` against `(1/h) int_h^theta logSinc` plus the
+     `B_2` term, with error `<= (h^3/12)(logSinc''(h) - logSinc''(theta))`,
+     which is `O(h^3)` and so `O(1/N^2)` on the sum;
+  2. `sum_log_two_sin_split` to convert that into `s_k`;
+  3. the Robbins bounds for `log(k!)`;
+  4. `abs_logSinc_le` and `abs_logSinc_deriv_le` for the three `h`-endpoint
+     terms, all `O(h^2)`;
+  5. conclude
+     `s_k = (N/pi)Lambda(th) - (1/2)log(2N sin th) - (pi/12N)cot(th) + O(1/N^2)`.
+
+Steps 1-4 all cite theorems that exist and are sorry-free. Step 5 is arithmetic
+over them. Nothing in the chain is now an open mathematical question -- which is
+a different claim from "it is done", and the assembly is still unwritten.

@@ -56,6 +56,7 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.MeanValue
 import QOU.MathlibExt.TrapezoidRule
+import QOU.MathlibExt.SinCubeBounds
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -282,5 +283,71 @@ theorem abs_logSinc_deriv2_le {x : ℝ} (hx : 0 < x) (hx1 : x ≤ 1) :
   have hden : 9 * x ^ 4 / 16 ≤ x ^ 2 * Real.sin x ^ 2 := by
     nlinarith [hsin2, sq_nonneg x, hx]
   linarith [pow_nonneg hx.le 4]
+
+/-! ### `logSinc″` is antitone — the last hypothesis the composite rule needs -/
+
+/-- `logSinc‴ x = −2/x³ + 2·cos x/sin³x` on `(0, π)`. -/
+theorem hasDerivAt_logSinc_deriv2 {x : ℝ} (hx : 0 < x) (hxpi : x < π) :
+    HasDerivAt (fun y : ℝ => 1 / y ^ 2 - 1 / Real.sin y ^ 2)
+      (-(2 / x ^ 3) + 2 * Real.cos x / Real.sin x ^ 3) x := by
+  have hsin : 0 < Real.sin x := Real.sin_pos_of_pos_of_lt_pi hx hxpi
+  have h1 : HasDerivAt (fun y : ℝ => 1 / y ^ 2) (-(2 / x ^ 3)) x := by
+    have hx2 : HasDerivAt (fun y : ℝ => y ^ 2) (2 * x) x := by
+      have h := (hasDerivAt_id x).pow 2; norm_num at h; convert h using 1
+    have h := hx2.inv (by positivity)
+    simp only [one_div]
+    convert h using 1
+    field_simp
+  have h2 : HasDerivAt (fun y : ℝ => 1 / Real.sin y ^ 2)
+      (-(2 * Real.cos x / Real.sin x ^ 3)) x := by
+    have hs2 : HasDerivAt (fun y : ℝ => Real.sin y ^ 2)
+        (2 * Real.sin x * Real.cos x) x := by
+      have h := (Real.hasDerivAt_sin x).pow 2
+      norm_num at h
+      convert h using 1
+    have h := hs2.inv (by positivity)
+    simp only [one_div]
+    convert h using 1
+    field_simp
+  have h := h1.sub h2
+  convert h using 1
+  ring
+
+/-- **`logSinc″` is antitone on any `[c,d] ⊆ (0, π)`.**
+
+`logSinc‴ ≤ 0` there, because `2cos x/sin³x ≤ 2/x³` is exactly
+`x³·cos x ≤ sin³x` — `QOU.MathlibExt.mul_cube_cos_lt_sin_cube`.
+
+This is the final hypothesis of
+`QOU.MathlibExt.abs_integral_sub_composite_le_osc`; with it, every input that
+composite rule asks for is available for `logSinc` on `[h, θ]`. -/
+theorem antitoneOn_logSinc_deriv {c d : ℝ} (hc : 0 < c) (hd : d < π) :
+    AntitoneOn (fun y : ℝ => 1 / y ^ 2 - 1 / Real.sin y ^ 2) (Set.Icc c d) := by
+  have hmem : ∀ x ∈ Set.Icc c d, 0 < x ∧ x < π := by
+    intro x hx
+    rw [Set.mem_Icc] at hx
+    exact ⟨lt_of_lt_of_le hc hx.1, lt_of_le_of_lt hx.2 hd⟩
+  refine antitoneOn_of_deriv_nonpos (convex_Icc c d) ?_ ?_ ?_
+  · intro x hx
+    obtain ⟨h0, hpi⟩ := hmem x hx
+    exact ((hasDerivAt_logSinc_deriv2 h0 hpi).continuousAt).continuousWithinAt
+  · intro x hx
+    rw [interior_Icc, Set.mem_Ioo] at hx
+    have h0 : 0 < x := lt_trans hc hx.1
+    have hpi : x < π := lt_trans hx.2 hd
+    exact ((hasDerivAt_logSinc_deriv2 h0 hpi).differentiableAt).differentiableWithinAt
+  · intro x hx
+    rw [interior_Icc, Set.mem_Ioo] at hx
+    have h0 : 0 < x := lt_trans hc hx.1
+    have hpi : x < π := lt_trans hx.2 hd
+    have hsin : 0 < Real.sin x := Real.sin_pos_of_pos_of_lt_pi h0 hpi
+    rw [(hasDerivAt_logSinc_deriv2 h0 hpi).deriv]
+    have hx3 : (0 : ℝ) < x ^ 3 := pow_pos h0 3
+    have hs3 : (0 : ℝ) < Real.sin x ^ 3 := pow_pos hsin 3
+    have hkey := QOU.MathlibExt.mul_cube_cos_lt_sin_cube h0 hpi
+    have hle : 2 * Real.cos x / Real.sin x ^ 3 ≤ 2 / x ^ 3 := by
+      rw [div_le_div_iff₀ hs3 hx3]
+      nlinarith [hkey]
+    linarith
 
 end QOU.Knot.FigureEightVolume
