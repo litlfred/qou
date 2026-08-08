@@ -3,14 +3,15 @@
   "label": "conj:cpt-d6-d7-d8-closure",
   "kind": "conjecture",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean"
+    "ts": "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.ts",
+    "md": "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.md",
+    "lean": "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean"
   },
   "source_hashes": {
-    "md": "8124b533fec7",
-    "ts": "c5cc8e3d4151",
-    "lean": "a92ff39633a2"
+    "md": "81aa80c75463",
+    "ts": "4c9bffd647d6",
+    "lean": "b71d3d944478",
+    "lean_statement": "953b67daaec8"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -288,22 +289,21 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "8124b533fec7",
-          "ts": "c5cc8e3d4151",
-          "lean": "a92ff39633a2"
+          "md": "81aa80c75463",
+          "ts": "4c9bffd647d6",
+          "lean": "b71d3d944478",
+          "lean_statement": "953b67daaec8"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/particle-interactions/cpt-d6-d7-d8-closure.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-08-08T12:33:11.440Z",
+        "reviewed_sha": "e1030e83b6be3605e2a08b5e19a35e20c6d6d2a7"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1528,5 +1528,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-08T12:33:11.440Z"
 }
