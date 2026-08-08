@@ -725,4 +725,46 @@ theorem re_inversion_identity {x : ℝ} (hx : 1 ≤ x) :
     ring
   exact hconst.trans hG1
 
+/-! ## The Li₂ integrand, approached from below — Route 36 G11
+
+`hcont` in the transport wants `cLiTwoExt` continuous at a point of the cut
+`[1,∞)`, reached along a path with `Im < 0`. That splits into a pointwise part
+and a dominated-convergence part; this section closes the pointwise one, and it
+turns out to cost nothing.
+
+The reason is a Mathlib theorem that is exactly the right shape:
+`Complex.continuousWithinAt_log_of_re_neg_of_im_zero` gives `log` continuous at a
+**negative real** when restricted to the **upper** half plane `{0 ≤ z.im}`. And
+`w ↦ 1 − w·t` carries `{Im w ≤ 0}` into `{0 ≤ Im z}` for `t > 0`, because
+`Im(1 − w·t) = −t·Im w`. So approaching the cut *from below in `w`* is
+approaching `log`'s cut *from above in `1 − w·t`* — the two conventions agree,
+and Lean's principal branch already sits on that side (`arg_one_sub_mul_ofReal`).
+
+⚠ The value of this section is mostly negative information: it says the branch
+analysis is **not** where the remaining difficulty is. What is left of G11 is a
+dominated-convergence argument on `∫₀¹ log(1−wt)/t dt`, not anything about which
+side of the cut Lean picks. -/
+
+/-- **`w ↦ log(1 − w·t)` is continuous at a cut crossing, restricted to
+`Im w ≤ 0`.** -/
+theorem continuousWithinAt_clog_one_sub_mul {w₀ : ℂ} {t : ℝ} (ht : 0 < t)
+    (hre : ((1 : ℂ) - w₀ * (t : ℂ)).re < 0) (him : ((1 : ℂ) - w₀ * (t : ℂ)).im = 0) :
+    ContinuousWithinAt (fun w : ℂ => Complex.log (1 - w * (t : ℂ)))
+      {w : ℂ | w.im ≤ 0} w₀ := by
+  have hmaps : Set.MapsTo (fun w : ℂ => (1 : ℂ) - w * (t : ℂ))
+      {w : ℂ | w.im ≤ 0} {z : ℂ | 0 ≤ z.im} := by
+    intro w hw
+    simp only [Set.mem_setOf_eq] at hw ⊢
+    have hz : ((1 : ℂ) - w * (t : ℂ)).im = -(w.im * t) := by
+      simp [Complex.sub_im, Complex.mul_im]
+    rw [hz]
+    nlinarith
+  have hf : ContinuousWithinAt (fun w : ℂ => (1 : ℂ) - w * (t : ℂ))
+      {w : ℂ | w.im ≤ 0} w₀ :=
+    (continuous_const.sub (continuous_id.mul continuous_const)).continuousWithinAt
+  -- pin `g` and `f`: bare `.comp` lets unification pick `HSub.hSub 1` as the outer map
+  exact ContinuousWithinAt.comp (g := Complex.log)
+    (f := fun w : ℂ => (1 : ℂ) - w * (t : ℂ))
+    (Complex.continuousWithinAt_log_of_re_neg_of_im_zero hre him) hf hmaps
+
 end QOU.MathlibExt
