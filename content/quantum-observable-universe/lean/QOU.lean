@@ -674,6 +674,11 @@ import QOU.MassTheory.VolTHe3RadialHandle
 -- re-derives μ₂=0 combinatorially (0-fit match) but gives the (−,+) sign order vs
 -- the derived (+,−) window and ratio 2 vs ~9.75. Scope-(a) negative, q₀-free.
 import QOU.MassTheory.ThreeRowExtensiveCumulant
+-- qou-prjo LEAD-2 (geometric route): transverse NA-Stokes surface-curvature
+-- structure + THE WALL (nonzero pairing needs position-dependent transport =
+-- the missing surface-2-form data). Forward geometric, sorry-free, magnitude
+-- NOT derived.
+import QOU.MassTheory.TransverseSurfaceCurvature
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
