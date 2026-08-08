@@ -76,6 +76,26 @@ Schur–Weyl normalisation `Σ_λ dim_q(V_λ)·dim(S_λ) = [4]_q + 2[2]_q = [2]_
 probe below: normalisation `= 1` to 50 digits, agreement with
 `([4]/[2]³, 1/[2]², 0)` to `3.3e-52`, Markov residual at `z_D` `1.1e-50`.
 
+**One factor in that quoted formula is misplaced, and saying so is part of the
+finding rather than a caveat on it.** Taken literally, `w_λ` includes
+`dim(S_λ)`, so `Σ_λ w_λ = 1` — a probability weight over blocks. But the
+Frobenius weights of `tr_M = Σ_λ y_λ χ^λ` are normalised by
+`Σ_λ y_λ d_λ = 1` (since `χ^λ(1) = d_λ = dim S_λ`), and pairing the literal
+`w_λ` against an *unnormalised* `tr_{S_λ} = χ^λ` double-counts the multiplicity:
+it gives `tr_M(1) = Σ_λ w_λ d_λ ≠ 1`. The reading that normalises correctly is
+
+  `y_λ = w_λ / dim(S_λ) = dim_q(V_λ) / dim_q(V^{⊗n})`,
+
+whose `Σ_λ y_λ d_λ = Σ_λ dim_q(V_λ)dim(S_λ)/dim_q(V^{⊗n}) = 1` is exactly the
+Schur–Weyl identity — which is presumably where the stray `dim(S_λ)` came from.
+So the `dim(S_λ)` belongs in the normalisation identity, not in the weight.
+Errata, filed as follow-up 4.
+
+This does not soften the conclusion: the parts that identify the trace — the row
+cap `ℓ(λ) ≤ 2` in the index set, the name *Jones*–Markov, and the `dim_q(V_λ)`
+numerator over `dim_q(V^{⊗n})` — are unambiguous, and the only normalisation of
+them that is a trace at all is D's.
+
 So the corpus's own definition of the mass trace *already computes D*. The
 "full-Hecke Ocneanu" Scope note is not describing a second option the mass
 channel might take; it contradicts the definition two blocks earlier.
@@ -314,9 +334,15 @@ Correction to a claim made mid-session: `references.ts` does **not** lack Wenzl.
    lines 8–24: mass/binding use the **Jones/TL (`N = 2`)** trace, and the
    "insensitive to the distinction" sentence is false on `β_Bor`. Own commit,
    `.qa.json` sidecar refreshed, render-QA gate (the file is math-bearing).
-2. **Add `ref()` entries for Ocneanu and FYHLMO** when metadata can be verified
+2. **Errata in `feynman-markov-identification.md`**: the quoted
+   `w_λ = dim_q(V_λ)·dim(S_λ)/dim_q(V^{⊗n})` has `dim(S_λ)` in the weight rather
+   than in the normalisation identity, so pairing it with an unnormalised
+   `tr_{S_λ}` gives `tr_M(1) ≠ 1`. The Frobenius weight is
+   `y_λ = dim_q(V_λ)/dim_q(V^{⊗n})`. Same commit as follow-up 1 (adjacent block,
+   same reviewer context).
+3. **Add `ref()` entries for Ocneanu and FYHLMO** when metadata can be verified
    — the corpus names both throughout and cites neither.
-3. Consider hanging the new Lean off a content block so it is covered by the
+4. Consider hanging the new Lean off a content block so it is covered by the
    per-block checkers (a standalone library file under `lean/QOU/**` has no
    `.qa.json` sidecar and is checked by nothing but the authoring agent, per
    AGENTS §"QA is agent-owned").
