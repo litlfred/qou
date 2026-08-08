@@ -1276,3 +1276,94 @@ audit that was given no knowledge of the fix.
 sites — was added to the tracer as a fifth idiom. It moved only 2 witnesses:
 those call sites are overwhelmingly reads. **`UNCONFIRMED` now stands at 25**,
 `NOT_A_PRODUCER` still the same three by name.
+
+## P34 — Class B closed: the digits decide what the distance cannot
+
+The Class B verdict above was **"needs a decision about the detector, not the
+producers"**, and reasoned that no static test could separate a genuine
+near-integer from a truncated double, because the two overlap on distance:
+
+    mpf(0.1) printed at 50 dps   rel. distance 1.56e-50   IS padding
+    tr_M(1), genuinely computed  rel. distance 1.37e-51   is NOT
+
+That is correct **about a threshold** — and the detector was a threshold
+(`abs(x - mpf(float(x))) / abs(x) < 1e-30`). It is not correct about static
+tests in general, and the difference is worth stating precisely, because the
+earlier conclusion generalised one to the other.
+
+Padding is not "close to a double". Padding is *printing a double's own
+digits*. `mpf(0.1)` at 50 dps emits
+`0.10000000000000000555111512312578270211815834045410` — the exact expansion of
+the binary64, truncated. `tr_M(1)` emits `0.999…99863`, and the nearest double
+is `1.0`, whose exact expansion is `1`. Those are different digit strings, and
+proximity does not make them the same one. `Decimal(<float>)` gives the double's
+exact value, so the comparison is available and cheap.
+
+`is_double_expansion` asks that question, with a tolerance of exactly one
+half-ulp **of the shown precision** — mpmath rounds the last digit it prints,
+and a first draft that demanded exact string equality wrongly cleared the
+expansion of `1e-09` for precisely that reason. The place value is read from
+`Decimal.as_tuple().exponent`, not by counting characters after the `.`, so
+exponent-notation strings get the right ulp. The old threshold is kept as a
+cheap pre-filter and is no longer the discriminator.
+
+### Validated in both directions, because this change can only *remove* flags
+
+The dangerous direction here is the opposite of the provenance work: an
+over-eager discriminator hides real padding instead of inventing it.
+
+- **Nothing real was cleared.** All 15 flags in the committed corpus survive;
+  the audit reports the same 14 occurrences / 7 files / 1 NEW as before.
+- **The false positives clear.** Three of the nine Class B producers were
+  re-run in a throwaway worktree — never the live checkout — and their fresh
+  output carries 15 flagged fields under the old test and **0** under the new
+  one, including `tr_M_identity_H4_at_q0`, `f_leading_ratio`, `H_leading_ratio`
+  and the `h_expansion` table. The remaining six producers were not re-run;
+  their share of the 39 is expected to clear on the same grounds but is **not
+  measured**, and should not be reported as if it were.
+- Seven self-test cases were added, four of them the values those producers
+  actually emit and three the padding shapes that must still be caught —
+  including the `1e-09` expansion that broke the first draft.
+
+### A sixth padding mechanism, found on the way
+
+The audit reported 2 NEW padded fields, both `m_tau/m_e = 3477.23`, in
+producers that already do the right thing (`mpf("3477.23")`, a string, never a
+float). The constant is built at **module scope**, and `set_compute_dps()` is
+called inside `main()` — so the constant is constructed at import time at
+mpmath's default 15 dps, frozen at 53 bits, and serialized later at compute
+precision, printing the binary64 tail. Confirmed directly:
+
+    early = mpf('3477.23')   # at 15 dps      -> 3477.23000000000001818989403545856475830078125
+    mp.dps = 70
+    late  = mpf('3477.23')   # after the raise -> 3477.23
+    early == late            -> False
+
+Not a formatting artifact: the values genuinely differ.
+`m_tau_hecke_energy_route.py` is worse than the literals suggest — it also
+*divides* at 15 dps (`mpf("1776.86") / mpf("105.6583755")`).
+
+Both now call the idempotent `set_compute_dps()` at module scope before any
+constant. `m_tau_hecke_energy_route` is fixed and regenerated: the padding is
+gone and `abs_rel_error_pct` shifts in the ~14th digit, which is the fix
+working rather than drift.
+
+**The class is larger than the two.** An AST sweep finds **170 module-level
+`mpf("…")` constants across 63 files** built before precision is raised. Most
+are harmless — tolerances (`mpf('1e-25')`) and constants with fewer
+significant digits than 53 bits carries (`mpf('0.51099895069')`, 11 digits) —
+so this is a *potential*, not a backlog of 170 defects. It deserves its own
+gate on the same argument that justified `mpf_context_dps_audit.py`: neither
+existing gate can see it, because a value that is merely *wrong* past digit 16
+is not padded and carries no float64 marker. Not built here.
+
+### Left un-regenerated, deliberately
+
+`m_tau_census_sweep.py` has the same fix, but its witness cannot be
+regenerated in this container. SnapPy installs, but this build lacks the large
+census databases the committed witness was made against: a re-run searches
+180,511 manifolds where the committed record has 433,804, and moves
+`volume_ceiling` from 33.31 to 30.19. That is a smaller search, not a better
+one. The source fix is committed and the witness is not, so the audit still
+reports it as 1 NEW — an honest red rather than a green bought with a
+degraded environment.
