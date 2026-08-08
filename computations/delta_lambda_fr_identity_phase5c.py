@@ -57,12 +57,16 @@ from witness_base import WitnessBuilder, record_upstream
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q as Q0_FLOAT
+# 50-dps source. `set_q` does `mp.mpf(str(...))` internally, so a STRING
+# input gives the full 50 digits where the f64 `Q` gave 17. Alias renamed
+# from Q0_STR: it is no longer a float, and a name that says otherwise is
+# the label problem this sweep exists to remove.
+from q_parameter import Q_50_DIGIT_STR as Q0_STR
 from q_mpmath import set_q, qint
-set_q(Q0_FLOAT)
+set_q(Q0_STR)
 
 mp.mp.dps = 50
-Q0 = mp.mpf(str(Q0_FLOAT))
+Q0 = mp.mpf(str(Q0_STR))
 
 # Per-(Z, N) atoms to test
 ATOMS = [

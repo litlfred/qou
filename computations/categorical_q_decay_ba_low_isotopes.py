@@ -66,7 +66,9 @@ from experimental_constants import (
     Q_TRITIUM_MEV,
     Q_TRITIUM_MEV_ERR,
 )
-from q_parameter import Q as Q_0
+# 50-dps source; all uses below are mpmath arithmetic, where mpf is exact
+# and mixes with the float literals unchanged.
+from q_parameter import Q_MP as Q_0
 from q_parameter import Q_ERR as Q_0_ERR
 from witness_base import WitnessBuilder
 
@@ -218,7 +220,7 @@ def load_canonical_b(sym: str):
         # Derivation + probe: docs/audits/2026-07-06-reeb-flow-pn-magnitude-
         # provenance-and-1four-extension.md §2b; probes/reeb_g_structural_identity_probe.py.
         import mpmath as mp
-        from q_parameter import Q as Q0_val
+        from q_parameter import Q_MP as Q0_val
         q0 = mp.mpf(str(Q0_val))
         v = mp.sqrt(q0)
         z_bond = mp.mpf(1) / (v + 1 / v)

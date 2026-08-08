@@ -91,8 +91,11 @@ def _color_delta():
         # 2026-06-29-color-weighting-coverage-and-flavor-split-closed-form.md).
         # Re-wire to the derived 3-strand correction once it lands.
         from _li_2_q_util import flavor_split_leading
-        from q_parameter import Q as _Q0
-        d_num = float(flavor_split_leading(mp.mpf(str(_Q0))))
+        # 50-dps source: the f64 `Q` gave delta at ~17 digits. `d_num` is
+        # deliberately a float (it pairs with the symbolic `d_sym`), but it
+        # should be the correctly-rounded one.
+        from q_parameter import Q_MP as _Q0
+        d_num = float(flavor_split_leading(_Q0))
         # symbolic mirror of flavor_split_leading(q) = (q−1)²·(1−q⁻⁴)/3:
         d_sym = (q_sym - 1) ** 2 * (1 - q_sym ** (-4)) / 3
         _COLOR_DELTA = (d_num, d_sym)
@@ -469,7 +472,11 @@ def tr_M_atomic(
 # ── Quick smoke test (deuteron cross-check) ─────────────────────────
 
 if __name__ == "__main__":
-    from q_parameter import Q as Q0
+    # 50-dps source. Substituting the f64 `Q` into a symbolic expression and
+    # then calling .evalf(50) yields 17 good digits dressed as 50 — the exact
+    # pattern this file's own "float64 is EVIL" note and the
+    # `compute_no_mpf_to_float_cast` QA criterion are aimed at.
+    from q_parameter import Q_MP as Q0
 
     print("Markov-axiom recursive ascent — smoke test")
     print("=" * 60)

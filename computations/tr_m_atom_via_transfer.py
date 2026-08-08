@@ -50,7 +50,17 @@ from reduced_block_kernel import chi_all_lambda_reduced_block
 from chi_free_via_lr import chi_free_lr  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+# 50-dps source (NO FLOAT64). Behaviour is unchanged: Q_MP differs from the
+# f64 Q by ~1e-17, far inside the 1e-12 cache tolerance either way.
+#
+# NOT a layer straddle, though it looks like one: `y-lambda-at-q0.witness.json`
+# is muon-built, but the cache gate compares the caller's q against the
+# WITNESS's own recorded q0, not against q_parameter.Q. |q_muon - q_proton| =
+# 1.28e-8 is 12810x the 1e-12 tolerance, so a proton-q0 caller misses the
+# muon cache and falls through to the live closed form at the q it asked for.
+# (The 1e-12 sits between float64 ulp at q~1.11, 2.46e-16, and that anchor gap.)
+# AGENTS.md still describes the older, broken gate -- the code is ahead of it.
+from q_parameter import Q_MP as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from host_info import host_info  # noqa: E402
 
