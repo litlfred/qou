@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide CLOSED on the open arc (and FALSE at phi=pi); what remains is the concrete labelling + log(-y)'
+title: 'Gap A: VSide CLOSED and log(-y) ROUTING settled; what remains is the concrete Y1 Y2 Y3'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T02:55:00Z
+updated_at: 2026-08-09T03:30:00Z
 ---
 
 ## What is open
@@ -143,7 +143,8 @@ in the real part. Route 30's correction, proved rather than assumed.
 | one-exceptional-point glue | ✅ `envelopeS_total` (pre-existing) |
 | **`VSide`, all six fields, every root on the OPEN arc** | ✅ `vSide_of_root` |
 | ⚠ `VSide` at `φ = π` | **FALSE — Route 36 G7, below. Prove over `Ico`, never `Icc`.** |
-| **concrete `Y₁ Y₂ Y₃` + the two `log(−y)` routes** | **open** |
+| the `log(−y)` **routing** — which root takes which route | ✅ `log_neg_route` |
+| **concrete `Y₁ Y₂ Y₃` (and with it route 2's *path* condition)** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
@@ -154,7 +155,7 @@ be called trivial in advance.
 
 `VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
 it was measured before any Lean was written for it. **Route 36**
-(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **7 gates**, all pass — G3 is a
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **8 gates**, all pass — G3 is a
 **retraction** and G7 a recorded *refutation*, both below):
 
 * **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks
@@ -272,6 +273,25 @@ and `curve_eq_unitCubic` now uses it — one line instead of a repeated `nlinari
 on `|x| = 1` differs only by the sign of `Im x`. `hc₃` needs no argument of its
 own, and this also **explains** G3's observation that the two crossings sit at the
 same `φ` with the same value: they are the same crossing.
+
+### ✅ The `log(−y)` routing is settled — `log_neg_route`
+
+    log_neg_route (hx0 : x ≠ 0) (hc : curve x y = 0) :
+      −y ∈ slitPlane ∨ (0 < y.re ∧ y.im = 0)
+
+`−y ∈ slitPlane` unfolds to `Re y < 0 ∨ Im y ≠ 0`, so it fails **precisely** at a
+positive real `y`. Route 36 **G8** measures that neither route is droppable:
+exactly **one** root per arc point is positive real (199 of 597 — route 2), and
+the other 398 take route 1, either as a genuine complex pair (153 points) or, past
+the discriminant flip, as *negative* reals (46 points). Dropping route 2 would
+repeat correction 6 in a new place — a statement carrying only `slitPlane` is
+vacuous at that root.
+
+⚠ **This settles the routing, not the derivative.** Route 2's lemma is stated for
+a path `fun u => ((t u : ℝ) : ℂ)` — it needs `Yⱼ` **real-valued near `φ`**, not
+merely real *at* `φ`. That is a condition on the labelling rather than on the
+root, so it folds into the concrete `Y₁ Y₂ Y₃` and is now the *only* thing the
+`log(−y)` hypotheses still want.
 
 ### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 

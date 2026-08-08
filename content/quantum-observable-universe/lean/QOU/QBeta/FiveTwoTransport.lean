@@ -152,16 +152,19 @@ structure VSide (x y : ℂ) : Prop where
   hn₂ : x * y ≠ 0
   hn₃ : y / x ≠ 0
 
-/-! ### 2b. Four of `VSide`'s six fields, discharged from the curve alone
+/-! ### 2b. `VSide`, discharged from the curve alone
 
-`VSide` is the hypothesis that was once **vacuous**, so the order of work here is
+`VSide` is the hypothesis that was once **vacuous**, so the order of work here was
 deliberate: Route 36 measured it *before* any of this was written, and found all
-six conditions holding simultaneously at all 597 checks (199 arc points × 3
-roots). Only then is proving them worth anything.
+six conditions holding simultaneously at all 597 interior checks (199 arc points
+× 3 roots) — and **failing at `φ = π`**, which is why every statement below
+carries `x.im ≠ 0`. Only then was proving them worth anything.
 
-Four fall out of `curve x y = 0` and `|x| = 1` with no root structure at all.
-The remaining two — `x·y ∈ notCut` and `y/x ∈ notCut` — need the root labelling,
-and are noted at the end of this section. -/
+Four fields fall out of `curve x y = 0` and `|x| = 1` with no root structure at
+all; the other two follow in §2c. The bean expected those two to need the
+labelling and a case analysis over `y₂`, `y₃` and the sign of `c`. They did not —
+the route through the crossing is uniform in the root, so `hc₂` is one theorem
+and `hc₃` is an involution. -/
 
 /-- **No root of the curve vanishes**, for `x ≠ 0`: `curve x 0 = −x`. -/
 theorem root_ne_zero {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) : y ≠ 0 := by
@@ -408,6 +411,37 @@ theorem vSide_of_root {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hxim : x.im �
     (hc : curve x y = 0) : VSide x y :=
   vSide_of_notCut_mul_div hx (fun h => hxim (by rw [h]; simp)) hc
     (mul_mem_notCut hx hxim hc) (div_mem_notCut hx hxim hc)
+
+/-- **Every root takes exactly one of the two `log(−y)` routes, and which one is
+decided by the root alone.**
+
+`hasDerivAt_envelopeS` needs `d/du log(−Yⱼ u)` and offers two ways to get it:
+`hasDerivAt_log_neg_of_slitPlane` when `−y` is off `log`'s cut, and
+`hasDerivAt_log_neg_ofReal` when it is on it. `−y ∈ slitPlane` unfolds to
+`Re y < 0 ∨ Im y ≠ 0`, so it fails **precisely** at a positive real `y`.
+
+Neither route is redundant. On this arc exactly one root is positive real at
+every `φ` (`exists_root_mem_Ioo` puts it in `(0,1)`), so route 2 is needed
+everywhere and route 1 is impossible there — that is correction 6's fact, in the
+form a caller can use. The other two roots take route 1 either because they are
+genuinely complex or, at the 46 arc points where all three roots are real,
+because they are negative (`real_root_neg_of_ne`).
+
+⚠ **This settles the routing, not the derivative.** Route 2's lemma is stated
+for a path of the form `fun u => ((t u : ℝ) : ℂ)` — it needs `Y` to be
+*real-valued near `φ`*, not merely real *at* `φ`. That is a condition on the
+labelling rather than on the root, so it belongs to the concrete `Y₁ Y₂ Y₃` still
+open in `qou-glbl`. Stating the dichotomy here makes that the only thing left to
+supply, instead of leaving both the routing and the path condition implicit. -/
+theorem log_neg_route {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) :
+    -y ∈ Complex.slitPlane ∨ (0 < y.re ∧ y.im = 0) := by
+  rcases eq_or_ne y.im 0 with him | him
+  · have hy0 : y ≠ 0 := root_ne_zero hx0 hc
+    have hre : y.re ≠ 0 := fun h => hy0 (Complex.ext (by simpa using h) (by simpa using him))
+    rcases hre.lt_or_gt with hneg | hpos
+    · exact Or.inl (Or.inl (by simpa using hneg))
+    · exact Or.inr ⟨hpos, him⟩
+  · exact Or.inl (Or.inr (by simpa using him))
 
 /-! ### 3. `S′(φ) = 2φ` -/
 

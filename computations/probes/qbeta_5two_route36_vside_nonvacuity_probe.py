@@ -478,6 +478,56 @@ def main() -> int:
         "pass": bool(len(bad) == 1 and zero_ok and naive_says_ok),
     })
 
+    # ---- G8: BOTH `log(-y)` routes are needed, at every arc point ------------
+    # `hasDerivAt_envelopeS` gets `d/du log(-Y_j u)` from one of two lemmas:
+    # `hasDerivAt_log_neg_of_slitPlane` when -y is off log's cut, and
+    # `hasDerivAt_log_neg_ofReal` when it is on it. `-y in slitPlane` unfolds to
+    # `Re y < 0 or Im y != 0`, so it fails PRECISELY at a positive real y.
+    #
+    # This gate exists because dropping route 2 is exactly correction 6's mistake in a new
+    # place: a statement carrying only `slitPlane` is VACUOUS at the positive real root,
+    # and there is one at every arc point. Measured, not assumed.
+    route1, route2 = 0, 0
+    pts_without_route2 = 0
+    pts_with_two_route2 = 0
+    for i in range(N):
+        ph = pi * mpf(i + 1) / (N + 1)
+        n2 = 0
+        for y in roots_at(ph):
+            is_real = fabs(im(y)) < REAL_TOL
+            if is_real and re(y) > 0:
+                route2 += 1
+                n2 += 1
+            else:
+                route1 += 1
+        if n2 == 0:
+            pts_without_route2 += 1
+        if n2 > 1:
+            pts_with_two_route2 += 1
+    gates.append({
+        "gate": "G8",
+        "claim": "BOTH `log(-y)` ROUTES ARE NEEDED. `-y in slitPlane` is `Re y < 0 or Im y != 0`, "
+                 "so it fails precisely at a POSITIVE REAL root -- and there is exactly one at "
+                 "every arc point (`exists_root_mem_Ioo` puts it in (0,1)). So route 2 "
+                 "(`hasDerivAt_log_neg_ofReal`) can never be dropped, and route 1 is impossible "
+                 "there. Dropping route 2 is correction 6's mistake in a new place: a statement "
+                 "carrying only `slitPlane` would be VACUOUS at that root. The other two roots "
+                 "take route 1 either as a genuine complex pair (153 points) or, where the "
+                 "discriminant has flipped, as NEGATIVE reals (46 points, G5)",
+        "roots_taking_route1_slitPlane": route1,
+        "roots_taking_route2_positive_real": route2,
+        "arc_points_with_no_route2_root": pts_without_route2,
+        "arc_points_with_more_than_one_route2_root": pts_with_two_route2,
+        "lean": "log_neg_route (hx0 : x != 0) (hc : curve x y = 0) : "
+                "-y in slitPlane or (0 < y.re and y.im = 0)",
+        "still_open": "route 2's lemma is stated for a path `fun u => ((t u : R) : C)`, so it "
+                      "needs Y real-valued NEAR phi, not merely real AT phi. That is a condition "
+                      "on the labelling, not on the root -- it belongs to the concrete Y1 Y2 Y3",
+        # exactly one route-2 root per arc point, and route 1 non-empty
+        "pass": bool(route2 == N and pts_without_route2 == 0 and pts_with_two_route2 == 0
+                     and route1 == 2 * N),
+    })
+
     out = {
         "probe": "qbeta_5two_route36_vside_nonvacuity",
         "bean": "qou-glbl", "dps": mp.dps,

@@ -112,6 +112,17 @@
       "why_naive_is_wrong": "exp(i*pi) returns -1 + 4.1e-43j, and that spurious Im satisfies the first disjunct -- the same trap as G2, in a new place. x must be built exactly as mpc(-1, 0)",
       "consequence": "any attempt to prove VSide for phi in Icc 0 pi is attempting something FALSE; the provable statement is over Ico 0 pi",
       "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "BOTH `log(-y)` ROUTES ARE NEEDED. `-y in slitPlane` is `Re y < 0 or Im y != 0`, so it fails precisely at a POSITIVE REAL root -- and there is exactly one at every arc point (`exists_root_mem_Ioo` puts it in (0,1)). So route 2 (`hasDerivAt_log_neg_ofReal`) can never be dropped, and route 1 is impossible there. Dropping route 2 is correction 6's mistake in a new place: a statement carrying only `slitPlane` would be VACUOUS at that root. The other two roots take route 1 either as a genuine complex pair (153 points) or, where the discriminant has flipped, as NEGATIVE reals (46 points, G5)",
+      "roots_taking_route1_slitPlane": 398,
+      "roots_taking_route2_positive_real": 199,
+      "arc_points_with_no_route2_root": 0,
+      "arc_points_with_more_than_one_route2_root": 0,
+      "lean": "log_neg_route (hx0 : x != 0) (hc : curve x y = 0) : -y in slitPlane or (0 < y.re and y.im = 0)",
+      "still_open": "route 2's lemma is stated for a path `fun u => ((t u : R) : C)`, so it needs Y real-valued NEAR phi, not merely real AT phi. That is a condition on the labelling, not on the root -- it belongs to the concrete Y1 Y2 Y3",
+      "pass": true
     }
   ],
   "verdict": {
