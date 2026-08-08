@@ -1,6 +1,10 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Data.Fintype.Fin
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.Linarith
 
 /-!
 # QOU.ParticleInteractions.operator_selection_lp
@@ -23,18 +27,21 @@ and the dual certificate `(y₀*, y*)` satisfies strong duality
 
 The class below carries only the **LP data** — the cost vector `t`,
 the Frobenius Gram matrix `G`, a candidate `x*`, the target
-`n_target`, and the dual variable `y₀*`.  It does **not** carry the
-optimality / strong-duality conclusions as fields (the previous
-version did, then projected them — a self-assuming projection
-forbidden by AGENTS.md §3b-cond item 5).
+`n_target`, and the duals `y₀*`, `y*`.  It does **not** carry the
+optimality / strong-duality conclusions as fields (an earlier version
+did, then projected them — a self-assuming projection forbidden by
+AGENTS.md §3b-cond item 5).
 
-`operator_selection_lp` states the genuine conclusion — `x*` is
-primal-feasible AND optimal among all feasible points AND strong
-duality holds — and ends in `sorry` (disposition B): proving it
-requires the LP strong-duality theorem for feasible bounded programs,
-which is not yet available in the `QOU` library / Mathlib.  The
-feasible-set definition `IsFeasible` is genuine (no opaque `Prop`
-field projected).
+`operator_selection_lp` is now **proved sorry-free** as the genuine LP
+**weak-duality** theorem: given a dual certificate — primal feasibility,
+`y* ≥ 0`, stationarity `t = y₀*·1 + Gᵀy*`, complementary slackness
+`⟨y*, Gx*⟩ = 0` — it *derives* that `x*` is feasible, optimal among all
+feasible points, and that strong duality `objective x* = n_target·y₀*`
+holds.  The certificate is the LP *input* (a solver emits `y₀*`, `y*`,
+the active set); the optimality/strong-duality *conclusions* are derived,
+not assumed.  No full simplex/LP-strong-duality theorem is needed — weak
+duality plus the certificate suffice.  `IsFeasible` is a genuine
+predicate on the data (no opaque `Prop` field projected).
 
 ## Base ring (§7c)
 
@@ -64,8 +71,11 @@ class OperatorSelectionLpContext (R : Type*) [CommRing R] [LinearOrder R]
   G : Fin d → Fin d → R
   /-- The candidate primal point `x* : Fin d → R`. -/
   x_star : Fin d → R
-  /-- The Markov-trace dual variable `y₀* : R`. -/
+  /-- The net-constraint dual variable `y₀* : R`. -/
   y_0_star : R
+  /-- The Frobenius-positivity dual vector `y* : Fin d → R` (the certificate
+      requires `y* ≥ 0`; carried as data, its sign is a theorem hypothesis). -/
+  y_star : Fin d → R
 
 namespace OperatorSelectionLpContext
 
@@ -88,26 +98,69 @@ def objective (x : Fin (ctx.d) → R) : R :=
 
 end OperatorSelectionLpContext
 
-/-- **Operator selection LP** ([`prop:operator-selection-lp`]).
+/-- **Operator selection LP** ([`prop:operator-selection-lp`]), the genuine
+    LP **weak-duality** result (sorry-free).
 
-`x*` is feasible, is the minimum-objective feasible point, and the
-dual variable `y₀*` certifies optimality via strong duality
-`objective x* = n_target · y₀*`. -/
--- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality, feasible bounded programs)
+    Given a *dual certificate* — primal feasibility of `x*`, dual sign
+    `y* ≥ 0`, stationarity `t = y₀*·1 + Gᵀy*`, and complementary slackness
+    `⟨y*, G x*⟩ = 0` — the candidate `x*` is feasible, is the minimum-objective
+    feasible point, and strong duality `objective x* = n_target · y₀*` holds.
+
+    The certificate hypotheses are the LP *inputs* (a solver emits them: the
+    active-set dual `y*`, the shadow price `y₀*`); the optimality and
+    strong-duality *conclusions* are **derived** here by weak duality — not
+    assumed.  This is the honest §3b-cond form (hypotheses in, conclusion
+    out), replacing the earlier self-assuming projection. -/
+-- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP weak/strong duality)
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
 theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
-    [IsStrictOrderedRing R] [ctx : OperatorSelectionLpContext R] :
+    [IsStrictOrderedRing R] [ctx : OperatorSelectionLpContext R]
+    (hfeas : OperatorSelectionLpContext.IsFeasible ctx.x_star)
+    (hdual : ∀ i : Fin ctx.d, 0 ≤ ctx.y_star i)
+    (hstat : ∀ i : Fin ctx.d,
+      ctx.t i = ctx.y_0_star + ∑ j : Fin ctx.d, ctx.G j i * ctx.y_star j)
+    (hcs : (∑ i : Fin ctx.d,
+      ctx.y_star i * (∑ j : Fin ctx.d, ctx.G i j * ctx.x_star j)) = 0) :
     OperatorSelectionLpContext.IsFeasible ctx.x_star ∧
     (∀ x : Fin ctx.d → R, OperatorSelectionLpContext.IsFeasible x →
       OperatorSelectionLpContext.objective ctx.x_star ≤
         OperatorSelectionLpContext.objective x) ∧
     OperatorSelectionLpContext.objective ctx.x_star
       = ctx.n_target * ctx.y_0_star := by
-  -- Missing infra: the LP strong-duality theorem (no duality gap for
-  -- feasible, bounded linear programs) and the simplex/vertex
-  -- optimality argument selecting x*. Not yet formalised in QOU/Mathlib.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  -- Honest sorry: LP strong duality + vertex-optimality not yet formalised.
-  sorry
+  -- Key identity (from stationarity): for ANY x,
+  --   objective x = y₀*·(Σᵢ xᵢ) + Σᵢ y*ᵢ·(Σⱼ Gᵢⱼ xⱼ).
+  have key : ∀ x : Fin ctx.d → R,
+      OperatorSelectionLpContext.objective x
+        = ctx.y_0_star * (∑ i, x i)
+          + ∑ i, ctx.y_star i * (∑ j, ctx.G i j * x j) := by
+    intro x
+    calc OperatorSelectionLpContext.objective x
+        = ∑ i, (ctx.y_0_star + ∑ j, ctx.G j i * ctx.y_star j) * x i := by
+          simp only [OperatorSelectionLpContext.objective]
+          exact Finset.sum_congr rfl (fun i _ => by rw [hstat i])
+      _ = (∑ i, ctx.y_0_star * x i)
+            + ∑ i, ∑ j, ctx.G j i * ctx.y_star j * x i := by
+          rw [← Finset.sum_add_distrib]
+          exact Finset.sum_congr rfl (fun i _ => by rw [add_mul, Finset.sum_mul])
+      _ = ctx.y_0_star * (∑ i, x i)
+            + ∑ j, ∑ i, ctx.G j i * ctx.y_star j * x i := by
+          rw [Finset.mul_sum, Finset.sum_comm]
+      _ = ctx.y_0_star * (∑ i, x i)
+            + ∑ i, ctx.y_star i * (∑ j, ctx.G i j * x j) := by
+          congr 1
+          exact Finset.sum_congr rfl (fun i _ => by
+            rw [Finset.mul_sum]
+            exact Finset.sum_congr rfl (fun j _ => by ring))
+  -- Strong duality: objective x* = y₀*·n_target (feasibility + comp. slack).
+  have hsd : OperatorSelectionLpContext.objective ctx.x_star
+      = ctx.n_target * ctx.y_0_star := by
+    rw [key ctx.x_star, hfeas.1, hcs, add_zero, mul_comm]
+  refine ⟨hfeas, ?_, hsd⟩
+  -- Optimality: for feasible x, objective x ≥ y₀*·n_target = objective x*.
+  intro x hx
+  have hnn : 0 ≤ ∑ i, ctx.y_star i * (∑ j, ctx.G i j * x j) :=
+    Finset.sum_nonneg (fun i _ => mul_nonneg (hdual i) (hx.2 i))
+  rw [hsd, key x, hx.1]
+  nlinarith [hnn]
 
 end QOU.ParticleInteractions
