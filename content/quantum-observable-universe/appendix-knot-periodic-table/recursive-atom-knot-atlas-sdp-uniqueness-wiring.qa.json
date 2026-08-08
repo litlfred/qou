@@ -1335,6 +1335,18 @@
         "reviewed_at": "2026-07-12T00:34:54.917Z",
         "reviewed_sha": "7858cbecd61d9f31c04141201716db2615ab765b"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The pipeline-plumbing vocabulary is gone: the published .ts title \"Lean SDP-uniqueness wiring for the atlas entries\" is now \"SDP uniqueness for the atlas entries, certified in Lean\", the heading \"## SDP-uniqueness wiring (Lean side)\" is now \"## SDP uniqueness, Lean side\", and \"**What this wiring certifies**\" is now \"**What is certified**\". The scope caveat is untouched: only the empty-constraint SDP demonstration is certified, and the real per-nucleus SDP with non-empty constraints remains substantive open work.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

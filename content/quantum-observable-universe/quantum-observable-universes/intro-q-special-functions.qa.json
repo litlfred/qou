@@ -11,6 +11,18 @@
     "ts": "72bde0591953"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"$q$-exponential / logarithm / dilogarithm — section lead\" title is gone; the sibling .ts now carries no title at all.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {

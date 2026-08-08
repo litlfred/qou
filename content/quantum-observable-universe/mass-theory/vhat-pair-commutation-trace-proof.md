@@ -54,7 +54,7 @@ Markov-trace factorization
    an explicit $q$-grading separating levels).
 
 Step 4 is the categorical content of "ascension". The operator
-pentagon was a heuristic prompt; the rigorous version uses the
+pentagon is a heuristic; the rigorous version uses the
 brane-tower's $q$-graded jet ascension, not a non-commutative
 operator identity on $\hat V$'s.
 
@@ -82,7 +82,7 @@ $\widehat V_j$ onto a single level (level $n$, say); in this
 projection the q-grading collapses, the operators become scalars,
 and the pentagon collapses to a tautology.
 
-The audit gap is therefore resolved as follows: the pentagon
+The apparent tension is therefore resolved as follows: the pentagon
 identity is a feature of the **operator lift** (between adjacent
 jet levels), not of the scalar $\hat V_i$'s within a single jet
 level. The level-internal pair commutation is trivial; the

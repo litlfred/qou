@@ -11,6 +11,18 @@
     "ts": "2f94a96b8da1"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: \"This remains conjectural under AGENTS.md §3b\" is now simply \"This remains conjectural\", and the `docs/audits/-self-conj-support-reframing.md` reframing-memo link was removed from the operator-level clarification.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

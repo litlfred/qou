@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:upstream-mathlib-additions-detail",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-detail.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The AGENTS.md section id is gone: \"The §3b-cond chain provides unconditional functional identities\" now reads \"The conditional-class chain provides unconditional functional identities.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

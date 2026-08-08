@@ -3,9 +3,9 @@
   "label": "thm:groebner-shirshov-energy",
   "kind": "theorem",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/groebner-shirshov-energy.lean"
+    "ts": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.ts",
+    "md": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.md",
+    "lean": "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean"
   },
   "source_hashes": {
     "md": "e4b1a5db3f0c",
@@ -13,6 +13,18 @@
     "lean": "497df1c0b6e2"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"(§7c)\" tag is gone from the archimedean specialisation sentence, which now reads \"The energy $|c|\\,(q - q^{-1})$ and its positivity for $q > 1$ are stated over $\\mathbb{R}$.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

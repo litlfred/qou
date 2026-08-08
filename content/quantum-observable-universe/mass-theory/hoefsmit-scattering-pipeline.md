@@ -77,4 +77,4 @@ Each stage proves separately:
 
 *Formal asymptotic content. The truncation $\mathrm{MAE}(k) \leq C_0 \cdot [2]_q^{-2(k-3)}$ has $\mathrm{ordw}\bigl(\mathrm{MAE}(k)\bigr) = -2(k-3)\,\mathrm{ordw}([2]_q)$; see Big-O via $\mathrm{ordw}$ and the body asymptotics catalog.*
 
-**Archimedean specialisation (§7c).** The scattering-amplitude vanishing test is stated over real inputs $v_1,v_2,v_3 : \mathbb{R}$ with real coefficients. These form the archimedean evaluations of the generic Hoefsmit pipeline over $[\mathrm{Field}\ R]$.
+**Archimedean specialisation.** The scattering-amplitude vanishing test is stated over real inputs $v_1,v_2,v_3 : \mathbb{R}$ with real coefficients. These form the archimedean evaluations of the generic Hoefsmit pipeline over $[\mathrm{Field}\ R]$.

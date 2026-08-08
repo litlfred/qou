@@ -312,3 +312,81 @@ imaginary so it contributes to CS — but the exact relation between NZ's potent
 and the corpus's complex-volume Taylor coefficient was NOT verified. If a
 candidate leans on `a_2`, verify that first. The OCR also mangled the displayed
 formulae in Theorem 1A, so the constants there were not readable.
+
+---
+
+# THE c₃ ARC CHECKED — 2.65 ppm is NOT live, and the arc hands ϑ a hard filter (2026-08-08)
+
+Ran the reorientation this bean recommended. Both halves answered.
+
+## 1. The 2.65 ppm Habiro result is FALSIFIED, not live
+
+The bean said "check whether it is live or was retracted; the c_3 arc has a
+flip-flop history — do NOT assume." Correct caution: it was falsified **the next
+day**. `docs/coordination/ck-dk-canonical-registry.md` §c_3 records:
+
+  c_3 | EMPIRICAL — near-match, **REFUTED as real-q fibre element**
+      | 2.65 ppm (`[3]_q/25` at proton **ONLY**)
+      | cross-anchor: **NO** — swings −2.88% to muon; `dc_3/dq ≈ 4.6e6`
+      | falsification: `2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`
+
+The 06-03 audit that reported 2.65 ppm itself says the `[3]_q/25` factor is
+"empirically discovered, not predicted". It is a single-anchor fit. Registry also
+notes a B1 re-run with the canonical GGM V₃ = −7.693 gives **0 assembly hits in
+180 candidates** — the old near-misses were artifacts of a wrong V₃.
+
+**So there is no closer-to-closure c_3 result to inherit.** The real-q family is
+dead on both sides.
+
+## 2. But the c_3 arc's OBSTRUCTION transfers to ϑ, and it is a strong filter
+
+`dc_3/dq ≈ 4.6e6` was the thing that killed the real-q c_3 family ("impossible
+for smooth real f"). Via `S_leak = c_3 + Vol(4_1)` and
+`S = A_ω·κ·(ln²q_0 − ϑ²)`, it lands directly on ϑ:
+
+    anchors apart          1.28e-8   (11.54 ppb — the muon/proton PINS)
+    dS/dq = dc_3/dq        3.84e6    (recomputed; registry quotes ~4.6e6)
+    dϑ/dq                  −2.5e7 (muon)   −7.3e6 (proton)
+    smooth geometric qty   d(ln q_0)/dq = 0.90  — O(1)
+
+Seven orders of magnitude. **Lean-proved sorry-free** in
+`QOU/QBeta/ThetaLipschitzObstruction.lean`, as a Lipschitz bound needing no
+differentiability:
+
+    |S₁ − S₂| ≤ A·κ·( |L₁ − L₂| + K·|Δq|·(|ϑ₁| + |ϑ₂|) )
+
+with the numeric bite bracketed: every `K ≤ 1e7` is EXCLUDED, `K = 1.1e7` clears.
+So the forced Lipschitz constant is in `[1e7, 1.1e7]`.
+
+## 3. THIS IS A NEW UP-FRONT FILTER — use it like the scale filter
+
+The scale filter (ϑ is `O(ln q_0) ≈ 0.1`) prunes by MAGNITUDE and excluded 8 of 9
+readings before measuring. This one prunes by DERIVATIVE and is **orthogonal**:
+it kills candidates the scale filter passes. Any ϑ of the right size that also
+varies smoothly in q_0 is dead, whatever its value.
+
+Apply it first, alongside the two exclusions already on main:
+  * `opposite_sides_of_diagonal` — anchors on opposite sides of |Re u| = |Im u|
+  * `u_ne_zero_of_S_ne_zero` — u is not the anchor's own NZ deformation
+  * `ChannelMeridianIdentification` — u is not the substrate-matched Murakami meridian
+  * **NEW: `ThetaLipschitzObstruction`** — ϑ is not Lipschitz-in-q_0 below ~1e7
+
+## 4. Where that leaves the bean
+
+The live reading is AGENTS.md's fibre-vs-observable distinction: c_3 (hence ϑ) is
+**not a real function of q_0 at all**. Each anchor is a different archimedean
+evaluation of one fibre-level object. So:
+
+  ✗ do NOT look for a real formula ϑ(q_0) — the Lipschitz result now makes that
+    a proved exclusion for the ϑ side too, not just a c_3 heuristic
+  ✓ DO look for a fibre-level element whose evaluation at each anchor gives that
+    anchor's ϑ
+
+That is the same conclusion the c_3 arc reached, now inherited rather than
+rediscovered — which was the point of noticing the two arcs are one question.
+
+## Correction recorded
+
+A first draft of the Lean asserted `K = 1e7` would clear the bound. It does not —
+the threshold is `1.07e7`. The guess was wrong by that factor and `norm_num`
+caught it; the file now brackets the threshold rather than asserting one side.

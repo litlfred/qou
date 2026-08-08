@@ -280,7 +280,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Bring fibres, the inter-nucleon channel, and charge conjugation",
       label: "sec:brings-surface-orphan-reconnect",
       blocks: [
         "brings-surface-orphan-reconnect-intro",

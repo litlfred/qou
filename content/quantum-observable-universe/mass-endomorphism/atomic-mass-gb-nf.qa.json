@@ -13,6 +13,18 @@
     "lean": "89b36154e42f"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: \"**Archimedean specialisation (§7c).** This block operates on\" is now \"**Archimedean specialisation.** What follows operates on\", dropping both the AGENTS.md section id and the pipeline's word for the block itself.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

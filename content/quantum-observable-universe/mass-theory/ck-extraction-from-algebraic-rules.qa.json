@@ -1671,6 +1671,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"(the Hoefsmit matrix theorems in this branch)\" -> \"by the Hoefsmit matrix theorems\"; \"per the open R&D in [`prop:q-beta-categorical-precision-ladder`]\" -> \"an open point recorded in [`prop:q-beta-categorical-precision-ladder`]\"; \"which is auditable per rule\" -> \"which is checkable rule by rule\". The per-rule discharge status and the open items are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

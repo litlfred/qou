@@ -27,6 +27,5 @@ export default conjecture({
     "tqft",
     "axiom-class",
     "open-problem",
-    "non-scholarly-voice-exception",
   ],
 });

@@ -1280,6 +1280,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The heading \"**Coordinating note for sibling computations.**\" and the sentence stump the earlier branch-name removal left behind (\"The two parallel computational efforts / are independently / verifying ...\") are rebuilt as \"**Note on the ${}^4\\mathrm{He}$ gap.** Whether the spectral-derived coefficients close the ${}^4\\mathrm{He}$ binding-energy gap is still under independent numerical verification.\" The forcing-structure claim and the fit-replaced-by-derivation conclusion are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

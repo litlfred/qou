@@ -11,6 +11,18 @@
     "ts": "9bd52f3f442a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The work-status banner and the pipeline's manifest are gone. \"**Outline (future work).** This section outlines the quantum deformation ...\" -> \"The quantum deformation ... is described here in outline\", and \"The detailed content is deferred to a follow-up paper. Its inclusion in the manifest preserves the structural scope without claiming a finished exposition.\" -> \"The details are not developed here. What this section fixes is the structural scope of the deformation, not a finished exposition of it.\" The admission that no finished exposition is claimed survives; the $U_q(\\mathfrak{su}(2))$ deformation, Bring's defining equations and the $q \\to 1$ limit are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

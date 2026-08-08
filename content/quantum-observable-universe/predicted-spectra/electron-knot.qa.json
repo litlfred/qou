@@ -13,6 +13,18 @@
     "lean": "fe5a7fc69a90"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The pipeline deictic is gone: \"This block fixes only the knot identification\" no longer appears, and nothing in the current prose or title names an authoring unit.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

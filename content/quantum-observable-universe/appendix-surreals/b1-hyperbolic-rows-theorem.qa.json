@@ -1393,6 +1393,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The pointer to the `audit/b1-hyperbolic-rows-theorem-audit` directory path is gone; the sentence now states the mathematics it was standing in for: over $F = \\mathbb{Q}(i)$ the dominant cell pairs by Markov trace with $\\mathrm{Li}_2^q(i)$, giving $\\mathrm{Vol}(L_{6a4}) = 8G$ and $\\mathrm{Vol}(L5a1) = 4G$, and van der Veen's coloured-Jones asymptotics discharge the Volume Conjecture at both links. Nothing is now routed through a repository path.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

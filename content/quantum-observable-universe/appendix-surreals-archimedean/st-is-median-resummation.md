@@ -33,7 +33,7 @@ Three consequences worth recording:
 
 1. **Directionality of the citation graph.** Resurgence-side blocks and
    witnesses (the alien datum, Borel-singularity probes, saddle
-   transseries) may cite this block when they take a real value of a
+   transseries) may cite this result when they take a real value of a
    resummed series; the surreal appendix no longer needs to restate the
    analytic machinery.
 2. **The Kashaev application.** In the

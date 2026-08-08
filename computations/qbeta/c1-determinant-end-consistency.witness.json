@@ -1,0 +1,111 @@
+{
+  "schema": "witness/v1",
+  "description": "C1's det A = a0/a2 reproduces BOTH independently-computed local exponent pairs: the Fuchsian indicial roots at x=0 (product q-1) and the Newton-edge roots at x=inf (product -(q-1)/q^2). Cross-check for QOU/QBeta/C1DeterminantRelation.lean.",
+  "computation": {
+    "script": "qbeta/c1_determinant_end_consistency_probe.py"
+  },
+  "witness": {
+    "scriptCommitSha": "uncommitted"
+  },
+  "setup": {
+    "operator": "L1 = (q^2 x - 1) s^2 - (q-1) s - (q-1)",
+    "detA": "a0/a2 = -(q-1)/(q^2 x - 1)",
+    "indicial_at_0_monic": "t^2 + (q-1) t + (q-1)",
+    "newton_edge_at_infinity": "q^2 t^2 = q - 1",
+    "q_values": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      -3
+    ],
+    "arithmetic": "exact Fraction; no floats"
+  },
+  "results": {
+    "all_consistent": true,
+    "rows": [
+      {
+        "q": 2,
+        "detA_at_0": "1",
+        "indicial_root_product": "1",
+        "indicial_root_sum": "-1",
+        "fuchsian_end_agrees": true,
+        "sum_is_minus_q_minus_1": true,
+        "edge_root_product": "-1/4",
+        "detA_leading_at_infinity": "-1/4",
+        "irregular_end_agrees": true,
+        "indicial_discriminant": -3,
+        "discriminant_matches_q2_6q_5": true
+      },
+      {
+        "q": 3,
+        "detA_at_0": "2",
+        "indicial_root_product": "2",
+        "indicial_root_sum": "-2",
+        "fuchsian_end_agrees": true,
+        "sum_is_minus_q_minus_1": true,
+        "edge_root_product": "-2/9",
+        "detA_leading_at_infinity": "-2/9",
+        "irregular_end_agrees": true,
+        "indicial_discriminant": -4,
+        "discriminant_matches_q2_6q_5": true
+      },
+      {
+        "q": 5,
+        "detA_at_0": "4",
+        "indicial_root_product": "4",
+        "indicial_root_sum": "-4",
+        "fuchsian_end_agrees": true,
+        "sum_is_minus_q_minus_1": true,
+        "edge_root_product": "-4/25",
+        "detA_leading_at_infinity": "-4/25",
+        "irregular_end_agrees": true,
+        "indicial_discriminant": 0,
+        "discriminant_matches_q2_6q_5": true
+      },
+      {
+        "q": 7,
+        "detA_at_0": "6",
+        "indicial_root_product": "6",
+        "indicial_root_sum": "-6",
+        "fuchsian_end_agrees": true,
+        "sum_is_minus_q_minus_1": true,
+        "edge_root_product": "-6/49",
+        "detA_leading_at_infinity": "-6/49",
+        "irregular_end_agrees": true,
+        "indicial_discriminant": 12,
+        "discriminant_matches_q2_6q_5": true
+      },
+      {
+        "q": 11,
+        "detA_at_0": "10",
+        "indicial_root_product": "10",
+        "indicial_root_sum": "-10",
+        "fuchsian_end_agrees": true,
+        "sum_is_minus_q_minus_1": true,
+        "edge_root_product": "-10/121",
+        "detA_leading_at_infinity": "-10/121",
+        "irregular_end_agrees": true,
+        "indicial_discriminant": 60,
+        "discriminant_matches_q2_6q_5": true
+      },
+      {
+        "q": -3,
+        "detA_at_0": "-4",
+        "indicial_root_product": "-4",
+        "indicial_root_sum": "4",
+        "fuchsian_end_agrees": true,
+        "sum_is_minus_q_minus_1": true,
+        "edge_root_product": "4/9",
+        "detA_leading_at_infinity": "4/9",
+        "irregular_end_agrees": true,
+        "indicial_discriminant": 32,
+        "discriminant_matches_q2_6q_5": true
+      }
+    ]
+  },
+  "verdict": "Both ends agree with det A at every tested q, including q<0. The two exponent pairs were computed from different data (coefficients at x=0 versus the Newton polygon at infinity), so this is a genuine consistency check, not a restatement. It settles that C1's infinity EXPONENT data is fully determined (+-sqrt(q-1)/q). It does NOT compute the Stokes multiplier, which is off-diagonal connection data and invisible to any determinant or Vieta relation.",
+  "wired_to_production": false,
+  "is_fit": false
+}

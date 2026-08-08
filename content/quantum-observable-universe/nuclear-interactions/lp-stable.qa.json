@@ -3,9 +3,9 @@
   "label": "def:lp-stable",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/lp-stable.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/lp-stable.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/lp-stable.lean"
+    "ts": "content/quantum-observable-universe/nuclear-interactions/lp-stable.ts",
+    "md": "content/quantum-observable-universe/nuclear-interactions/lp-stable.md",
+    "lean": "content/quantum-observable-universe/nuclear-interactions/lp-stable.lean"
   },
   "source_hashes": {
     "md": "a9ba92821c4f",
@@ -13,6 +13,18 @@
     "lean": "478c74a97b7e"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Both the \"(§7c)\" tag and \"This block\" are gone from the archimedean boilerplate, which now reads \"What follows sits on the archimedean side of the substrate wall\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

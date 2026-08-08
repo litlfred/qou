@@ -1552,6 +1552,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed, keeping the caveat and stating it mathematically. \"**Proposition (stale symbolic entries — see Markov-bug note).**\" -> \"**Proposition (symbolic entries, with the $z^3$ substitution still to be propagated).**\", and the body now says the $z^3$-and-higher entries are written using the naive length rule $\\mathrm{tr}_M(T_w) = z^{\\ell(w)}$, which fails on adjacent triples, so the correction $z^3 \\mapsto hz^2 + z$ has still to be propagated through them; \"*where (STALE — pending recomputation):*\" -> \"*where (subject to the same uncorrected $z^3$ entries):*\". No matrix entry was recomputed, changed or removed.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

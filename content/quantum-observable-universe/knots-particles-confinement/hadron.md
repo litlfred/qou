@@ -14,4 +14,4 @@ $$
 
 The subscript $p$ specifies the localization point. The operator $\oplus$ denotes linking.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. Categorical identities hold over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. Categorical identities hold over an abstract coefficient ring; only their archimedean realisation is specialised here.

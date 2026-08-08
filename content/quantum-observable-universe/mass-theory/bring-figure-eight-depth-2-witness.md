@@ -68,7 +68,7 @@ the paper are consistent with the depth-2 reading:
   parameter — exactly the depth-2 grouplike of $\mathcal{H}_q$.
 ### Cross-reference: deeper-depth Bring instances (open)
 
-The keystone predicts analogous canonical witnesses at every depth:
+The depth correspondence predicts analogous canonical witnesses at every depth:
 
 | Depth | Bring object | Predicted std-image |
 |---|---|---|

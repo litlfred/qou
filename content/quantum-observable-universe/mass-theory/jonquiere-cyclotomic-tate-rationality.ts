@@ -28,4 +28,18 @@ export default proposition({
     "theorem-level",
   ],
   uses: ["prop:cyclotomic-trilog-imaginary-closed-form"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The `B : ℝ` of " +
+        "`lean/QOU/BraidKnot/JonquiereCyclotomicTateRationality.lean` is the " +
+        "Bernoulli value fed to `QOU.Infra.Clausen.jonquiereWrongParity`, " +
+        "whose closed form is `-((2·Real.pi)^n / n!) · B`. The `Real.pi` in " +
+        "the consumed definition is archimedean, so the block sits on the " +
+        "archimedean side of the §7c wall by construction.",
+    },
+  ],
 });

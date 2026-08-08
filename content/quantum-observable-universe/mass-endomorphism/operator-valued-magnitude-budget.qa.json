@@ -11,6 +11,18 @@
     "ts": "0d31d1ef2c91"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/-structural-diagnosis-operator-valued.md` link and the phrase \"the ... audit's conclusion\" were replaced by \"This quantitative magnitude budget forces the structural conclusion.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

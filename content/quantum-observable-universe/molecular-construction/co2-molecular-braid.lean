@@ -1,6 +1,8 @@
 -- Ref: [manuscript] Ch. 10, §co2-molecular-braid
 -- Carbon dioxide CO₂ as a molecular braid
 
+namespace QOU.Molecular
+
 /-- **Carbon dioxide CO₂** as a molecular braid with 66 strands.
 
     Carbon with two oxygens, two double bonds.
@@ -19,3 +21,5 @@ structure CO2Braid where
 
 /-- CO₂ strand count: carbon(18) + 2 × oxygen(24). -/
 theorem co2_strands : 18 + 2 * 24 = 66 := by decide
+
+end QOU.Molecular

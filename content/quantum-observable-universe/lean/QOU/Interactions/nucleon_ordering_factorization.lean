@@ -37,10 +37,15 @@ namespace QOU.Interactions
     `ds`/`ds'` are the per-nucleon channel data and `f` is the scalar map
     (`f d = q + d` for `S`, `f d = −q⁻¹ + d` for `A`).
 
-    Proved by `List.Perm.prod_eq` — real content, not a projection. -/
+    Proved by `List.Perm.prod_eq` — real content, not a projection.
+
+    §7c: stated over a generic commutative monoid.  Permutation-invariance of a
+    product uses no ordering, no radical and no `Real.*` construct, so `ℝ` bought
+    nothing here; the channel data and the scalar map may even live in different
+    types.  The archimedean instance is recovered at `α := ℝ`, `M := ℝ`. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/nucleon-ordering-factorization.md
-theorem scalar_channel_ordering_independent
-    (f : ℝ → ℝ) (ds ds' : List ℝ) (hperm : ds.Perm ds') :
+theorem scalar_channel_ordering_independent {α : Type*} {M : Type*} [CommMonoid M]
+    (f : α → M) (ds ds' : List α) (hperm : ds.Perm ds') :
     (ds.map f).prod = (ds'.map f).prod :=
   (hperm.map f).prod_eq
 

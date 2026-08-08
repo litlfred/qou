@@ -15,7 +15,7 @@ This agrees with the CODATA value $137.035999084(21)$ to within $-0.155\%$. The 
 | Form A (CS) | $\cdot(1+\delta_{CS}+\kappa\,\delta_{CS}^2)$ with $\kappa=1.722$ | $-4.0\times 10^{-7}$ | Conj.; $\kappa$ unproved (Lean `sorry`); $\kappa \approx 1.888$ needed for exact match |
 | Form B (gluon-octet) | $45[3]_q\,(1+\hbar_q^4[5]_q+8q(\hbar_q^4[5]_q)^2)$ | $+6.7\times 10^{-9}$ | Conj.; only $45$ rigorously derived; disagrees with Form A at $q\ne q_0$ |
 
-## Audit failure of both prior attempts
+## Why both prior attempts fail
 
 **Form A's $\kappa$ is incorrect.** The Witten-1988 Gram-determinant identification gives $\kappa \approx 1.722$. Matching CODATA at $q_0$ requires $\kappa \approx 1.8878$. The discrepancy is $\sim 10\%$ and cannot be quadrature error. The Lean formalisation (`em-coupling-chern-simons.lean`) carried this as `sorry` from the start.
 

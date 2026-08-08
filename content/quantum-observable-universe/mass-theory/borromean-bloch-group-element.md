@@ -1,4 +1,4 @@
-**Conjecture (D16 K-theoretic / Bloch-group closure).**
+**Conjecture (K-theoretic / Bloch-group closure).**
 *The Borromean rings complement $\mathbf{S}^3 \setminus \mathcal{B}_3$
 defines a non-trivial element $[\mathcal{B}_3] \in K_3(\mathbb{C})$
 (equivalently, an element of the Bloch group $B(\mathbb{C})$) whose
@@ -94,18 +94,16 @@ $r_2$ regulator.  Equivalently: $r_2^{(2)}[\mathcal{B}_3] = -6G$.
 
 ## Significance
 
-Per
-[`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
-§3 (Cluster C of the duality tracker), four candidate routes for
-deriving $h^4 = -3/4$ categorically:
+Four candidate routes are open for deriving $h^4 = -3/4$
+categorically:
 
 1. **Direct Borromean Markov trace** — already done
 2. **Pachner-Pentagon state-sum** —
-   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15, sibling)
-3. **K-theoretic / Bloch group regulator** (this conjecture, D16)
+   [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
+3. **K-theoretic / Bloch group regulator** (this conjecture)
 4. **DIM-master Pentagon** — research-grade
 
-Closing D16 ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
+Closing this conjecture ties $h^4$ to the K-theoretic structure of $K_3(\mathbb{C})$
 — the deepest connection to motivic / arithmetic structure.  It
 also closes the loop:
 
@@ -114,9 +112,8 @@ also closes the loop:
 - $r_2^{(2)}$ at order $h^4$ = $-6G$ (the Markov-trace coefficient),
 - $r_2^{(k)}$ at higher orders — the full Markov-trace closed form.
 
-## Diagnostics
+## Structural invariants
 
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
 
 - **GB filtration level**: N/A — the Bloch group lives at the
   decategorified level (image of $K_3(\mathbb{C})$ in $\mathbb{R}$);
@@ -149,7 +146,7 @@ class BorromeanBlochGroupElement
     markov_trace_h4_coefficient borromean_complement = -3/4
 ```
 
-## Open R&D
+## What remains open
 
 1. **Compute prototype**: at $q = q_0$, canonical evaluate both
    sides of the conjectural identity
@@ -157,23 +154,19 @@ class BorromeanBlochGroupElement
    extending the Bloch-Wigner regulator to order $h^2$ via the
    $\Phi_q$ formal expansion; the right side is already in
    [`borromean-markov-trace-closed-form.md`](#prop:borromean-markov-trace-closed-form).
-2. **D16 to closed** requires the Lean class instance + the
+2. Closing the conjecture needs an instance of the class above, and the
    `borromean_h4_coefficient_from_regulator` proof (which would
    import a Bloch-Suslin lemma from Mathlib once available; per
    `lean_loogle` search, $K_3$ formalisation is currently partial in
    Mathlib).
-3. **Cross-validate against D15**: the Pachner-Pentagon state-sum
+3. **Cross-validation.** The Pachner–Pentagon state-sum
    and the K-theoretic regulator should both give $h^4 = -3/4$ —
    a triple cross-validation of the topological coefficient.
 
 ## Cross-references
 
-- [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D16
-  + §2 Cluster C (Pentagon validation D15-D18)
-- [`docs/audits/-pentagon-identity-broad-context.md`](../../docs/audits/-pentagon-identity-broad-context.md)
-  — Pentagon literatures + 4 candidate routes for $h^4 = -3/4$
-- Sibling Cluster C item:
-  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md) (D15)
+- The sibling pentagon-validation conjecture:
+  [`conj:pachner-pentagon-borromean`](pachner-pentagon-borromean.md)
 - The quantum Bloch group:
   [`def:quantum-bloch-group`](#def:quantum-bloch-group)
 - The motivic-period framing:

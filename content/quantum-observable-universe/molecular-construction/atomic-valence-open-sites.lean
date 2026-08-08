@@ -1,9 +1,12 @@
 -- Ref: [manuscript] Ch. 12, §atomic-valence-open-sites
 -- Valence and lone pairs as open bonding sites
 
+namespace QOU.Molecular
+
 /-- The **valence** of an atom: the number of open bonding sites available
     for covalent bonds, `v(Z) = min(Z_val, 2·n_val² − Z_val)`, where `Z_val`
     is the number of valence electrons and `n_val` the outermost shell level. -/
+
 def atomicValence (zVal nVal : Nat) : Nat :=
   min zVal (2 * nVal * nVal - zVal)
 
@@ -27,3 +30,5 @@ theorem valence_oxygen : atomicValence 6 2 = 2 := by
 theorem valence_le_zVal (zVal nVal : Nat) : atomicValence zVal nVal ≤ zVal := by
   unfold atomicValence
   omega
+
+end QOU.Molecular

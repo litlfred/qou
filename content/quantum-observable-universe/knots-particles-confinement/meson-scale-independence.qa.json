@@ -3,9 +3,9 @@
   "label": "prop:meson-scale-independence",
   "kind": "proposition",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/meson-scale-independence.lean"
+    "ts": "content/quantum-observable-universe/knots-particles-confinement/meson-scale-independence.ts",
+    "md": "content/quantum-observable-universe/knots-particles-confinement/meson-scale-independence.md",
+    "lean": "content/quantum-observable-universe/knots-particles-confinement/meson-scale-independence.lean"
   },
   "source_hashes": {
     "md": "315c72deb059",
@@ -13,6 +13,18 @@
     "lean": "a6d255d37038"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"(§7c)\" tag is gone from the archimedean specialisation sentence; the remaining \"CAL-3\" is one of the manuscript's own calibration anchors.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

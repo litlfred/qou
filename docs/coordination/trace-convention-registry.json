@@ -1,0 +1,303 @@
+{
+  "schema": "trace-convention-registry/v1",
+  "updated": "2026-08-08",
+  "authoritative_markdown": "docs/coordination/trace-convention-registry.md",
+  "bean": "qou-n1dj",
+  "meta": {
+    "purpose": "Single machine-readable source of truth for WHICH Markov trace on H_3(q) a given corpus artifact uses. Added after a content block named convention C for the mass channel while production supplied convention D (195.8 ppm on beta_Bor, -197 ppm on m_p).",
+    "q0": {
+      "pin": "proton",
+      "value": "1.1099785827513808",
+      "source": "tools/qou-substrate/python/qou_substrate/constants.py::Q",
+      "note": "AGENTS.md owner directive 2026-08-07: all new compute defaults to the experimental (proton) pin."
+    },
+    "beta_bor": {
+      "word": "(sigma_0 sigma_1^-1)^3",
+      "crossings": 6,
+      "writhe": 0,
+      "permutation": "id in S_3",
+      "chi_2_1": "2 - 3h^4 - h^6, h = q - q^-1"
+    },
+    "forcing_status_values": {
+      "forced-given-premise": "uniquely determined by a proved argument whose premise is NOT established (name the premise)",
+      "pinned-by-definition": "the value of z is written down in a corpus definition block; no derivation, no free parameter",
+      "not-a-z-trace": "the object is not a normalised Markov trace parametrised by an Ocneanu z (different construction entirely)",
+      "deprecated": "explicitly retired in-repo"
+    },
+    "channel_status_values": {
+      "agreed": "definitional_convention == production_convention",
+      "disputed": "they differ; an open_item is REQUIRED"
+    },
+    "writhe0_lemma": {
+      "statement": "For any normalised Markov trace on H_3(q) (sum_lambda y_lambda d_lambda = 1, d = (1,2,1)) and any braid beta in B_3 with writhe 0 and pi(beta) = id: tr_M(beta) = 1 + y_(2,1) * (chi^(2,1)(beta) - 2).",
+      "consequence_true": "the SPLIT between y_(3) and y_(1^3) is invisible on such braids (only their normalisation-pinned sum enters).",
+      "consequence_false": "y_(2,1) is NOT invisible. Two conventions agree on such a braid iff they share y_(2,1) or chi^(2,1)(beta) = 2.",
+      "verified_by": "computations/probes/probe_writhe0_trace_insensitivity.py",
+      "lean": null
+    },
+    "rule": "Any tau / tr_M value quoted below 0.1 % precision, and any cross-method comparison of trace values, must name its convention id from this registry with the script or Lean decl cited. Convention-silent trace values are not comparable.",
+    "supersedes": "docs/audits/2026-06-09-binding-trace-convention-split.md (the de-facto registry; retained as the historical record)"
+  },
+  "conventions": [
+    {
+      "id": "A",
+      "name": "matrix-M parabolic",
+      "z": null,
+      "z_at_q0": null,
+      "weights_lambda3": null,
+      "weights_at_q0": null,
+      "value_at_beta_bor": null,
+      "value_note": "never evaluated on beta_Bor in-repo; the A infrastructure is an A>=4 chi encoding, not an H_3 z-trace",
+      "implementations": ["computations/chi_via_matrix_m_mpfr (native bindings)"],
+      "lean": null,
+      "forcing_status": "not-a-z-trace",
+      "verify": null,
+      "source": "docs/audits/2026-06-09-binding-trace-convention-split.md"
+    },
+    {
+      "id": "B",
+      "name": "Plancherel d_q^2/[3A]_q! with averaged crossings",
+      "z": null,
+      "z_at_q0": null,
+      "weights_lambda3": null,
+      "weights_at_q0": null,
+      "value_at_beta_bor": null,
+      "value_note": "deprecated before any beta_Bor evaluation",
+      "implementations": ["computations/mass_at_3A_proper.py::markov_trace_3A"],
+      "lean": null,
+      "forcing_status": "deprecated",
+      "verify": null,
+      "source": "computations/mass_at_3A_proper.py docstring ('Do not use for new binding calculations')"
+    },
+    {
+      "id": "C",
+      "name": "full-Hecke Ocneanu / Wenzl z-trace",
+      "z": "1/(q^(1/2) + q^(-1/2))",
+      "z_at_q0": "0.49932033418369445250",
+      "weights_lambda3": {
+        "(3)": "solve of tr(1)=1, tr(s0)=z, tr(s0s1)=z^2 at z = z_C",
+        "(2,1)": "!= 1/[2]_q^2",
+        "(1^3)": "!= 0"
+      },
+      "weights_at_q0": {
+        "(3)": "0.415395795360613407",
+        "(2,1)": "0.280929631031019706",
+        "(1^3)": "0.0227449425773471813"
+      },
+      "value_at_beta_bor": "0.998366622585715967",
+      "value_note": "exactly equal to the Wenzl-bridge trace (proved as a rational-function identity, probe_convention_d_vs_c_borromean.py route 3) -- C and the Wenzl z-trace are ONE convention, not two",
+      "implementations": [
+        "computations/markov/markov_trace_canonical.py::tr_M_element",
+        "computations/closed_form_tau_M.py::markov_z + y_lambda_wenzl_bridge_numeric",
+        "computations/binding_canonical.py"
+      ],
+      "lean": "QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.trC_borromean_derived",
+      "forcing_status": "pinned-by-definition",
+      "forcing_note": "z is written down, not derived: rem:markov-axioms-primitive (content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md line 5) states axioms 1-3 with z = 1/(q^{1/2}+q^{-1/2}) as a given. No free parameter and no derivation of that value.",
+      "verify": "probe_writhe0",
+      "source": "docs/audits/2026-06-09-binding-trace-convention-split.md; docs/audits/2026-08-08-borromean-trace-convention-forcing.md"
+    },
+    {
+      "id": "D",
+      "name": "SU(2)/Temperley-Lieb (Jones) decomposition",
+      "z": "q^3/(q^2 + 1)",
+      "z_at_q0": "0.61268803714646524365",
+      "weights_lambda3": {
+        "(3)": "[4]_q/[2]_q^3",
+        "(2,1)": "1/[2]_q^2",
+        "(1^3)": "0"
+      },
+      "weights_at_q0": {
+        "(3)": "0.505404226503930803",
+        "(2,1)": "0.247297886748034599",
+        "(1^3)": "0"
+      },
+      "value_at_beta_bor": "0.998562163836787266",
+      "value_note": "equals the Lean closed form (4 + h^2 - 3h^4 - h^6)/(h^2 + 4) exactly",
+      "implementations": [
+        "computations/m_p_substrate_identity_50dps.py::trM_borromean",
+        "computations/m_p_substrate_identity_50dps.py::F_Bor",
+        "computations/borromean_binding_recompute.py::borromean_binding"
+      ],
+      "lean": "QOU.BraidsAndKnots.BorromeanMarkovTrace",
+      "forcing_status": "forced-given-premise",
+      "forcing_premise": "the mass fibre functor lands in Rep(SU_q(2)) ~ TL_3 rather than in the full H_3(q)",
+      "forcing_note": "TL => D is proved, sorry-free, uniquely (QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero; computations/probe3qrv_zpin.py): y_(1^3)(z) = 0 has exactly two roots, z = q (degenerate) and z = q^3/(q^2+1) (= D). The PREMISE is not established, and the corpus definition chain (prop:categorical-mass-markov + rem:markov-axioms-primitive) points the other way.",
+      "verify": "trM_borromean",
+      "source": "docs/audits/2026-06-09-binding-trace-convention-split.md addendum; docs/audits/2026-08-08-borromean-trace-convention-forcing.md"
+    }
+  ],
+  "gaps": [
+    {
+      "pair": ["D", "C"],
+      "at": "beta_Bor, proton-pin q0",
+      "absolute": "0.000195541251071",
+      "relative_ppm": "195.82281",
+      "exact_form": "(y_(2,1)(D) - y_(2,1)(C)) * (chi^(2,1)(beta_Bor) - 2)",
+      "exact_form_verified": "computations/probes/probe_writhe0_trace_insensitivity.py (symbolic, cancels to 0)",
+      "lean_nonequality": "QOU.BraidsAndKnots.BorromeanTraceConventionSplit.conventionD_ne_conventionC",
+      "downstream": "switching the mass channel from D to C moves m_p by -197 ppm (probes/probe_trace_convention_production_impact.py)"
+    }
+  ],
+  "channels": [
+    {
+      "id": "mass",
+      "description": "absolute nucleon / atom mass via the muon-anchored Hecke energy",
+      "definitional_convention": "C",
+      "definitional_source": "prop:categorical-mass-markov (content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.md line 13: 'the Jones-Markov trace, functioning as the Frobenius integral on A' with A = H_n(R,q)) + rem:markov-axioms-primitive line 5 (z = 1/(q^{1/2}+q^{-1/2}))",
+      "production_convention": "D",
+      "production_source": "computations/m_p_substrate_identity_50dps.py::trM_borromean -> F_Bor -> m-p-substrate-identity-50dps.witness.json -> computations/canonical_mass.py",
+      "status": "disputed",
+      "open_item": {
+        "bean": "qou-3qrv",
+        "audit": "docs/audits/2026-08-08-borromean-trace-convention-forcing.md",
+        "blast_radius": "~30 F_Bor consumers; -197 ppm on m_p",
+        "note": "OWNER DECISION. No agent may switch the production trace to close this. D is the value that lands on CODATA, which is exactly why deciding by match is forbidden here."
+      }
+    },
+    {
+      "id": "binding",
+      "description": "per-isotope binding via the free-minus-bound trace difference",
+      "definitional_convention": "C",
+      "definitional_source": "rem:markov-axioms-primitive line 5",
+      "production_convention": "C",
+      "production_source": "computations/binding_canonical.py -> closed_form_tau_M.py::markov_z (= 1/(sqrt(q)+1/sqrt(q))) + y_lambda_wenzl_bridge_numeric",
+      "status": "agreed",
+      "open_item": null
+    },
+    {
+      "id": "borromean-binding-single-pipeline",
+      "description": "the Borromean single-pipeline binding tau",
+      "definitional_convention": "D",
+      "definitional_source": "docs/audits/2026-06-09-binding-trace-convention-split.md addendum (PROBE 4, derived exactly to 9.1e-72)",
+      "production_convention": "D",
+      "production_source": "computations/borromean_binding_recompute.py::borromean_binding",
+      "status": "agreed",
+      "open_item": null
+    }
+  ],
+  "excluded_tracers": [
+    {
+      "symbol": "tr_M_atomic",
+      "file": "computations/markov/markov_peel.py",
+      "line": 310,
+      "reason": "NOT a Borromean trace and NOT a trace convention. It traces atom_braid_word_3A (computations/mass_at_3A_proper.py:256), which for (Z,N)=(1,0) is an 11-crossing word whose core is sigma_0^3 sigma_1^-3 -- a different braid closure from the 6-crossing interleaved beta_Bor = (sigma_0 sigma_1^-1)^3. Comparing it to a beta_Bor value measures a braid-word difference, not a convention difference.",
+      "incident": "produced a false 6.7 % 'fifth convention' alarm on 2026-08-08 (bean qou-3qrv section 1)",
+      "aliases": ["tr_M_atomic_fast", "tr_M_atomic_rust", "tr_M_atomic_at_q0", "tr_M_atomic_lq"]
+    }
+  ],
+  "entry_points": [
+    {
+      "file": "computations/m_p_substrate_identity_50dps.py",
+      "symbol": "trM_borromean",
+      "convention": "D",
+      "channel": "mass",
+      "production": true
+    },
+    {
+      "file": "computations/borromean_binding_recompute.py",
+      "symbol": "borromean_binding",
+      "convention": "D",
+      "channel": "borromean-binding-single-pipeline",
+      "production": true
+    },
+    {
+      "file": "computations/closed_form_tau_M.py",
+      "symbol": "closed_form_tau_M",
+      "convention": "C",
+      "channel": "binding",
+      "production": true
+    },
+    {
+      "file": "computations/markov/markov_trace_canonical.py",
+      "symbol": "tr_M_element",
+      "convention": "C",
+      "channel": "binding",
+      "production": true
+    }
+  ],
+  "doc_claims": [
+    {
+      "file": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+      "quote": "the production mass channel uses convention D",
+      "about_channel": "mass",
+      "layer": "production",
+      "names_convention": "D",
+      "note": "corrected 2026-08-08 (bean qou-n1dj). The prior wording claimed the mass computations use the full-Hecke Ocneanu trace (C) and that the two traces coincide on writhe-0 pi=id braids; both were false. See regression_cases below."
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+      "quote": "binding channel uses the full-Hecke Ocneanu",
+      "about_channel": "binding",
+      "layer": "production",
+      "names_convention": "C",
+      "note": "binding_canonical.py -> closed_form_tau_M is genuinely on C"
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md",
+      "quote": "z = 1/(q^{1/2} + q^{-1/2})",
+      "about_channel": "mass",
+      "layer": "definition",
+      "names_convention": "C",
+      "note": "this block IS the definitional pin; it is the reason the mass channel's definitional_convention is C"
+    }
+  ],
+  "production_files": [
+    "computations/m_p_substrate_identity_50dps.py",
+    "computations/borromean_binding_recompute.py",
+    "computations/closed_form_tau_M.py",
+    "computations/markov/markov_trace_canonical.py",
+    "computations/canonical_mass.py"
+  ],
+  "discovery": {
+    "note": "Every function in computations/ that computes a Borromean Markov trace must declare its convention in its own source (a case-insensitive 'convention X' with X in A-D, within the def's leading window). Errors inside production_files; warnings elsewhere (a tracked backlog, not a silent pass).",
+    "def_pattern": "^def\\s+(\\w*(?:tr_?M|trM|markov_trace|tau_M)\\w*)\\s*\\(",
+    "name_must_contain": "borromean",
+    "window_lines": 45,
+    "exempt": [
+      {
+        "file": "computations/probes/probe_writhe0_trace_insensitivity.py",
+        "reason": "the registry's own verifier; declares C and D side by side"
+      },
+      {
+        "file": "computations/probes/probe_convention_d_vs_c_borromean.py",
+        "reason": "the D != C proof; declares both by construction"
+      }
+    ]
+  },
+  "regression_cases": [
+    {
+      "id": "RC1",
+      "description": "the historical defect: a doc naming convention C for a channel whose production code supplies D",
+      "doc_claim": {
+        "file": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
+        "quote": "",
+        "about_channel": "mass",
+        "layer": "production",
+        "names_convention": "C"
+      },
+      "must_error_with": "names convention C"
+    },
+    {
+      "id": "RC2",
+      "description": "the mislabel that produced the false 6.7 % alarm: listing tr_M_atomic as a Borromean trace convention",
+      "convention_row": {
+        "id": "X",
+        "implementations": ["computations/markov/markov_peel.py::tr_M_atomic"]
+      },
+      "must_error_with": "excluded tracer"
+    },
+    {
+      "id": "RC3",
+      "description": "a disputed channel with no open item recorded",
+      "channel": {
+        "id": "mass",
+        "definitional_convention": "C",
+        "production_convention": "D",
+        "status": "disputed",
+        "open_item": null
+      },
+      "must_error_with": "open_item"
+    }
+  ]
+}

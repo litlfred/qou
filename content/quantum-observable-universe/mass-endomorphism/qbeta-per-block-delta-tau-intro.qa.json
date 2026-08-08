@@ -11,6 +11,18 @@
     "ts": "7d43cabb524d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the bare `§3b-cond` AGENTS.md tag was removed; the intro now runs from the per-block closed forms to the canonical-weight vanishing with no branch tag.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

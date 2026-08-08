@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
@@ -30,30 +30,39 @@ rigorous derivation of the truncation order from first principles.
 
 namespace QOU.BraidKnot
 
+/-! §7c: the identities below are **exact in `q`** and need only that the base
+ring is a field of characteristic `≠ 2` (they halve the EM self-energy). Division
+by `2` is a characteristic condition, not an archimedean one — no ordering,
+radical or `Real.*` construct appears — so the statements are stated generically
+and the archimedean evaluation at the substrate `q_0` happens downstream. -/
+
+variable {R : Type*} [Field R] [CharZero R]
+
 /-- The substrate Planck quantum `ℏ_q = (q − 1)/q = 1 − q⁻¹`.
 
-    Stated over `ℝ`: the closed-form identities below halve the
-    EM self-energy (division by the literal `2`), which requires a
-    base ring of characteristic `≠ 2`.  These are the physical meson
-    EM correction factors evaluated at the substrate `q_0`
-    (archimedean side of the substrate→archimedean wall, §7c). -/
-noncomputable def hbarQ (q : ℝ) : ℝ := (q - 1) / q
+    The closed-form identities below halve the EM self-energy (division by the
+    literal `2`), so the base ring must have characteristic `≠ 2` — hence
+    `[CharZero R]`.  That is a *characteristic* condition, not an archimedean
+    one, so the statements stay generic (§7c); the physical meson EM correction
+    factors are obtained by evaluating them at the substrate `q_0` downstream,
+    on the archimedean side of the wall. -/
+noncomputable def hbarQ (q : R) : R := (q - 1) / q
 
 /-- The sinh-channel EM correction factor in closed form:
     `1 + ℏ_q − ℏ_q²/2 = (3q² − 1)/(2q²)`. -/
-theorem meson_EM_closed_form (q : ℝ) (hq : q ≠ 0) :
+theorem meson_EM_closed_form (q : R) (hq : q ≠ 0) :
     1 + hbarQ q - (hbarQ q)^2 / 2 = (3 * q^2 - 1) / (2 * q^2) := by
   unfold hbarQ
   field_simp
   ring
 
 /-- Equivalent form: `(3q² − 1)/(2q²) = (3 − q⁻²)/2`. -/
-theorem meson_EM_closed_form_inverse (q : ℝ) (hq : q ≠ 0) :
+theorem meson_EM_closed_form_inverse (q : R) (hq : q ≠ 0) :
     (3 * q^2 - 1) / (2 * q^2) = (3 - q⁻¹^2) / 2 := by
   field_simp
 
 /-- Equivalent form: `1 + ℏ_q − ℏ_q²/2 = 1 + (1 − q⁻²)/2`. -/
-theorem meson_EM_closed_form_planck (q : ℝ) (hq : q ≠ 0) :
+theorem meson_EM_closed_form_planck (q : R) (hq : q ≠ 0) :
     1 + hbarQ q - (hbarQ q)^2 / 2 = 1 + (1 - q⁻¹^2) / 2 := by
   unfold hbarQ
   field_simp

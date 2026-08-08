@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:ns-obstruction-computation-asymptotic",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.ts",
+    "md": "content/quantum-observable-universe/fluid-dynamics/ns-obstruction-computation-asymptotic.md"
+  },
+  "source_hashes": {
+    "md": "666e56482cb4",
+    "ts": "6d8bca5043b5"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

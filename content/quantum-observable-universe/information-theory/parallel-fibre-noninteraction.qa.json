@@ -13,6 +13,18 @@
     "lean": "fd76a7ccaa89"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"(AGENTS.md §7c)\" tag is gone; the Lean-sibling line now reads \"*Lean sibling: structural, over a generic commutative ring $R$.*\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

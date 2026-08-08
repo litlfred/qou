@@ -1,4 +1,3 @@
-import Mathlib.Data.Real.Basic
 import QOU.MathlibExt.QPlancherel
 
 /-!
@@ -31,32 +30,39 @@ namespace QOU.BraidKnot
 
 open QOU.MathlibExt.QPlancherel
 
+variable (R : Type*) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
 /-- The per-jet-level **Wedderburn weight** $w_\lambda = d_q(\lambda)^2 /
     Z_q(k)$ feeding the established per-level invariant $a_k$ (manuscript
-    Part 1), realised as the canonical $q$-Plancherel measure. -/
-noncomputable def jetWedderburnWeight (Λ : Type) [QDimension Λ ℝ]
-    [HasPartitionFunction Λ ℝ] (lam : Λ) (k : ℕ) : ℝ :=
-  measure (R := ℝ) (Λ := Λ) lam k
+    Part 1), realised as the canonical $q$-Plancherel measure.
+
+    §7c: stated over a generic ordered field `R`; the `q`-Plancherel measure
+    it wraps is itself generic (`QOU.MathlibExt.QPlancherel.measure`), so
+    nothing here is archimedean. The archimedean evaluation is the
+    instantiation `R := ℝ` at the substrate. -/
+noncomputable def jetWedderburnWeight (Λ : Type) [QDimension Λ R]
+    [HasPartitionFunction Λ R] (lam : Λ) (k : ℕ) : R :=
+  measure (R := R) (Λ := Λ) lam k
 
 /-- The jet Wedderburn weights are non-negative — a **proved** (sorry-free)
     consequence of $q$-Plancherel positivity. -/
-theorem jetWedderburnWeight_nonneg (Λ : Type) [QDimension Λ ℝ]
-    [HasPartitionFunction Λ ℝ] (lam : Λ) (k : ℕ) :
-    0 ≤ jetWedderburnWeight Λ lam k :=
-  measure_nonneg (R := ℝ) (Λ := Λ) lam k
+theorem jetWedderburnWeight_nonneg (Λ : Type) [QDimension Λ R]
+    [HasPartitionFunction Λ R] (lam : Λ) (k : ℕ) :
+    0 ≤ jetWedderburnWeight R Λ lam k :=
+  measure_nonneg (R := R) (Λ := Λ) lam k
 
 /-- **Jet-filtered knot factor** $a(Z, N) = J_{\bar\beta}(q)$.
 
     Conjectural class — see
     [`conj:jet-filtered-knot-factor`](../../../quantum-observable-universe/mass-theory/jet-filtered-knot-factor.md). -/
-class jet_filtered_knot_factor where
+class jet_filtered_knot_factor (R : Type*) where
   /-- The Bethe–Weizsäcker knot factor $a(Z, N)$ multiplying the bulk
       binding (the $q$-Plancherel-weighted per-level invariant of Part 1,
       with weights `jetWedderburnWeight`). -/
-  knotFactor : ℕ → ℕ → ℝ
+  knotFactor : ℕ → ℕ → R
   /-- The Jones polynomial $J_{\bar\beta}(q)$ of the nuclear quotient
       braid (each nucleon collapsed to one effective crossing). -/
-  jonesQuotient : ℕ → ℕ → ℝ
+  jonesQuotient : ℕ → ℕ → R
   /-- **The conjecture** (Part 4): the BW knot factor equals the Jones
       polynomial of the nuclear quotient braid, for every $(Z, N)$. -/
   factor_is_jones : ∀ Z N : ℕ, knotFactor Z N = jonesQuotient Z N

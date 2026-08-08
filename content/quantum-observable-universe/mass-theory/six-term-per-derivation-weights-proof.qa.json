@@ -1280,6 +1280,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The link text \"[the divergence-audit branch's reconciliation](#prop:mass-endomorphism-tower)\" -> \"[the mass-endomorphism tower](#prop:mass-endomorphism-tower)\", naming the proposition the link already pointed at and matching the citation style used elsewhere in the same list. The $\\alpha \\ln|V|$ leading-order-expansion claim is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

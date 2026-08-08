@@ -33,7 +33,7 @@ open QOU.AppendixSurreals
     identity (`skein_divisibility`, `contraction_gap`, `coprime`,
     `fundamental_odd_step`) therefore holds for the substrate value, by
     construction. -/
-def toSkeinCollatzArith {M : Type*}
+def SubstrateParameter.toSkeinCollatzArith {M : Type*}
     (sp : SubstrateParameter M) (p : M) : SkeinCollatzArith ℝ where
   q := sp.field p
 

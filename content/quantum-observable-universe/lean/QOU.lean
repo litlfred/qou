@@ -286,6 +286,8 @@ import QOU.ChannelSeparation
 import QOU.Archimedean
 import QOU.Archimedean.DilogReflection
 import QOU.Archimedean.IdealTetrahedronConcavity
+import QOU.Archimedean.LobachevskyDerivative
+import QOU.Archimedean.IdealTetrahedronShapeBridge
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
@@ -423,6 +425,7 @@ import QOU.QBeta.ThetaRealityBound
 import QOU.QBeta.AfreeThetaConstraint
 import QOU.QBeta.ChannelMeridianIdentification
 import QOU.QBeta.CompleteStructureExclusion
+import QOU.QBeta.ThetaLipschitzObstruction
 import QOU.QBeta.StokesSymmetryConstant
 import QOU.QBeta.StokesQZeroDTCount
 import QOU.QBeta.StokesSymmetryConstantQZero

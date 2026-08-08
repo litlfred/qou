@@ -72,7 +72,31 @@ the closed form as a Lean-level statement; what is missing is the bridge from
 "the closed form" to "the hyperbolic volume of the manifold". Name that bridge
 precisely — it is a smaller target than "hyperbolic volume theory".
 
+## AV4 — an EXACT appearance of the octahedral shape (added 2026-08-08, PR #4769)
+
+Relevant to the `Vol(B_3) = 2 x V_oct` half, and NOT numerical. The Descartes
+cubic at the classical point `q = 1` factors over Q:
+
+    27x^3 + 18x + 20 = (3x + 2)(9x^2 - 6x + 10)   -> roots -2/3, 1/3 +- i
+
+so the Legendre invariant is `z_1 = (1+i)/(1-i) = i` EXACTLY — the shape of the
+ideal tetrahedron whose angle triple is `(pi/2, pi/4, pi/4)` and whose volume is
+`D(i) = Catalan G`, one quarter of the regular ideal octahedron (`4G`), i.e.
+`Vol(B_3)/8`. Machine-checked over `fractions.Fraction` in
+[`computations/qbeta/xi_classical_limit_probe.py`](../computations/qbeta/xi_classical_limit_probe.py)
+(`q1_exact()`).
+
+**WHAT THIS DOES AND DOES NOT GIVE YOU.** It does NOT close this bean and does
+NOT prove `Vol(B_3) = 8G`. The gap this bean names is the GEOMETRIC bridge —
+"this closed form" -> "the hyperbolic volume of that manifold" — and an exact
+shape parameter supplies no part of it. What it does give: the octahedral shape
+now appears in the corpus by **exact algebra** rather than only by SnapPy
+numerics, so a future closure has an anchor-free starting point on the shape
+side. Treat as a lead, not as progress on the volume identification.
+
 ## GUARD (unchanged, and it is the point of this bean)
 
 Do NOT axiomatise the volume identity as a Lean class and consume it downstream.
 That is the laundering AGENTS.md forbids. Leave numerical, labelled numerical.
+AV4 above is an exact fact about a SHAPE PARAMETER; it is not the volume
+identity and must not be cited as if it were.

@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:lepton-bring-surface-h3-3channel",
   lean: {
-    ref: "qou:QOU.BraidKnot.LeptonBringSurfaceH3.lepton_v_hat_h3_3channel",
+    ref: "qou:QOU.BraidKnot.LeptonBringSurfaceH3.lepton_V_hat_h3_3channel",
     validation: "not_checked",
   },
   title:

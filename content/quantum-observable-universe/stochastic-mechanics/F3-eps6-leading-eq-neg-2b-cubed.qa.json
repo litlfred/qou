@@ -1153,6 +1153,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The branch decision code is now a defined mathematical object: the body states \"For the $F_3 = 1 - 2 b^3 \\hbar_q^6$ factor in the [`prop:q-beta-categorical-precision-ladder`] precision ladder\", and the .ts title names the identity itself (\"the $\\varepsilon^6$ leading coefficient of $(F_3 - 1)$ at $q = 1 + \\varepsilon$ equals exactly $-2 \\cdot b(1)^3 = -3\\sqrt{3}/4$\"). The remaining \"Lean stub\" refers to the sibling `.lean` file cited on the line above.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

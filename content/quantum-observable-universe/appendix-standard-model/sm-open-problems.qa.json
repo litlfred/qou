@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prose:sm-open-problems",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-standard-model/sm-open-problems.ts",
+    "md": "content/quantum-observable-universe/appendix-standard-model/sm-open-problems.md"
+  },
+  "source_hashes": {
+    "md": "7260286331d2",
+    "ts": "27018f5c8c9e"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"none of them is discharged elsewhere in the corpus\" is now \"elsewhere in this paper\". The provenance column no longer cites internal audits: the writhe-to-isospin row points at the gauge-truncation conjecture, the Z_6 row at the hypercharge-invariant conjecture, the 2-group row drops the dated audit memo for the strand-twist datum, and \"canonical mass facade\" is now the mass-identity algorithm. All four targets are existing labels and resolve. Every status verdict, including the open and falsified ones, is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

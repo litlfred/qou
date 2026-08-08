@@ -1,0 +1,28 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:winding-lattice-norm-form",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/braids-and-knots/winding-lattice-norm-form.ts",
+    "md": "content/quantum-observable-universe/braids-and-knots/winding-lattice-norm-form.md"
+  },
+  "source_hashes": {
+    "ts": "d13101ef95b8",
+    "md": "03a5ff99fdaa"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"§7c:\" prefix is gone from the Lean parenthesis, which now reads \"(no ordering, no $\\mathbb{R}$, $s$ entering only through $s^2 = 3$)\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  },
+  "updated_at": "2026-08-08T08:22:35.606Z"
+}

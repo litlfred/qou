@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prose:sm-params-theta-qcd",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-standard-model/sm-params-theta-qcd.ts",
+    "md": "content/quantum-observable-universe/appendix-standard-model/sm-params-theta-qcd.md"
+  },
+  "source_hashes": {
+    "md": "e1c19aa35f03",
+    "ts": "8b2f3f25e0b0"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The table cell \"open — no corpus content\" is now \"open — no construction offered here\"; \"no block, computation, or audit in the corpus addresses\" is now \"nothing in this paper addresses\"; \"nothing in the corpus develops it\" is now \"nothing here develops it\". The strong-CP angle is still stated as entirely open and the framing-sector direction still carries its explicit non-endorsement.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

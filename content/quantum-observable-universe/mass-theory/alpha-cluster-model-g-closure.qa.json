@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:alpha-cluster-model-g-closure",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/alpha-cluster-model-g-closure.ts",
+    "md": "content/quantum-observable-universe/mass-theory/alpha-cluster-model-g-closure.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"recorded here for its structural content and its audit trail\" -> \"for its structural content alone\"; the evidence heading \"Witnesses (audit-only, not wired to any production dashboard)\" -> \"Numerical verification (checks only; no result elsewhere in this paper depends on them)\", which keeps the caveat that nothing downstream consumes these witnesses without the pipeline's vocabulary. Every epistemic tier, residual and the anti-laundering hedge are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

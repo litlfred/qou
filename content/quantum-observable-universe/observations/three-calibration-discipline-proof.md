@@ -1,10 +1,6 @@
 ## Proof sketch
 
-Induction along the 19-link derivation chain (compiled in
-[derivation-audit-](../../../docs/derivation-audit-.md)
-and refreshed in
-[-math-framework-deep-audit](../../../docs/audits/-math-framework-deep-audit.md)).
-At each step:
+Induction along the 19-link derivation chain. At each step:
 
 * **Base.** The categorical action $\mathfrak{S} = \mathrm{tr}(\Phi)$
   is a $\mathbb{Q}(q)$-valued endomorphism trace

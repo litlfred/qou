@@ -4,7 +4,7 @@ export default remark({
   label: "rem:hecke-algebra-type-scaffold",
   interprets: "rem:braid-group-n-strand",
   title:
-    "Iwahori-Hecke algebra $H_n(R, q)$ type scaffold (forward-reference to WIP-scaffolding audit)",
+    "Iwahori-Hecke algebra $H_n(R, q)$: the Lean type and its defining relations",
   uses: ["rem:h3-hecke-idempotents"],
   cites: [
     "kassel1995",

@@ -1,6 +1,23 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note.** The Lean sibling's `ℝ` are SDP solver data: " +
+        "`duality_gap_le : |primal_obj - dual_obj| ≤ (1e-6 : ℝ)` is a " +
+        "**numerical tolerance** on an absolute value, and `min_block_eig`, " +
+        "`min_dual_y_on_active`, `max_inactive_dual`, `alpha_gap` are " +
+        "eigenvalue / shadow-price magnitudes. The uniqueness statement also " +
+        "quantifies over `SDPPrimal (heckeDim n) ℝ Empty` and a " +
+        "`Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ` — positive-" +
+        "semidefiniteness is an ordering notion with no generic-ring " +
+        "counterpart. Both the `≤ 1e-6` decimal and the PSD cone require " +
+        "`ℝ`; this is the archimedean realisation, not a stray specialisation.",
+    },
+  ],
   label: "conj:canonical-knot-id-sdp",
   title:
     "Canonical knot identification for ${}^2$H, ${}^3$H, ${}^3$He from the confinement SDP",
@@ -26,6 +43,6 @@ export default conjecture({
     // currently delegates to `strict_complementarity_unique` which
     // still has a sorry for the general kernel-uniqueness step;
     // this manifest cites the proven concrete instance instead.
-    ref: "qou:QOU.BraidKnot.helium3_uniqueness_closed",
+    ref: "qou:QOU.BraidKnot.CanonicalKnotIdSDP",
   },
 });

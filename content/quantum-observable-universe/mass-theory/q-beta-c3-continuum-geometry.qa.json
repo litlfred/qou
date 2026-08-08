@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "q-beta-c3-continuum-geometry",
+  "kind": "prose",
+  "paths": {
+    "md": "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.md",
+    "lean": "content/quantum-observable-universe/mass-theory/q-beta-c3-continuum-geometry.lean"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The closing \"Companion keystone re-scope: `#3501`/`#3503`.\" is deleted — a pure tracker pointer; \"(Combinatorial constraints proposed over $S_5$ cells did not survive audit.)\" -> \"... did not survive scrutiny.\"; and the three bare \"keystone\" references -> \"the precision ladder\", which the manuscript defines at `prop:q-beta-categorical-precision-ladder`. The whole correction banner survives intact: both anchor deviations (muon +0.479%, proton -1.907%), the 2.43% cross-anchor swing, the 6.9x comparison at the CAL-2 pin, and the \"scope-limited, not exact\" verdict.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

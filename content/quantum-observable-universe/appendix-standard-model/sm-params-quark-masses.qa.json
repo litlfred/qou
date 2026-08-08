@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prose:sm-params-quark-masses",
+  "kind": "prose",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-standard-model/sm-params-quark-masses.ts",
+    "md": "content/quantum-observable-universe/appendix-standard-model/sm-params-quark-masses.md"
+  },
+  "source_hashes": {
+    "md": "de3d286bea72",
+    "ts": "39cb3185d492"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"nothing in the corpus addresses the heavy flavours\" is now \"the heavy flavours are untouched here\". The two admissions survive verbatim in substance: no construction extracts the individual current-quark masses, and no knot or braid identification exists for s, c, b or t.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

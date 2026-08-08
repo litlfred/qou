@@ -1,4 +1,4 @@
-# Audit Probe: LP Numeric Target Fits and Vertex Values
+# Numerical probe: LP target fits and vertex values
 
 **Target:** `prop:confinement-lp`
 

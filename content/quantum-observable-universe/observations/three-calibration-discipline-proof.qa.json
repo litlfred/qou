@@ -11,6 +11,18 @@
     "ts": "e662ad62df43"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The dated audit filenames (\"-math-framework-deep-audit\", \"derivation-audit-...\") and the QA-process uses of \"audit\" are gone; the proof now argues the three-calibration bound on its own terms.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "fit-section-chapter": [
       {
         "field_hash": {

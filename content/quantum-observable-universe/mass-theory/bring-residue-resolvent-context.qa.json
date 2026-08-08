@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:bring-residue-resolvent-context",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.ts",
+    "md": "content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"collapses an \\\"open audit finding\\\" or \\\"residue normalisation\\\" gap\" -> \"collapses a separate residue-normalisation gap\"; the table column headed \"consumer block\" -> \"where used\"; \"across all three consumers\" -> \"in all three cases\". The three specialisations, their pole orders and the shared-open-class claim are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

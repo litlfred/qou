@@ -13,6 +13,18 @@
     "lean": "4cfff0dfdb1b"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The repository build-state narration is gone: the \"(currently chapter-block isolated -- Lake module doesn't yet expose them)\" parenthetical and the `rem:post-pr665-open-rd-inventory` PR-numbered referent have both been removed, leaving \"## Not yet formalised\" over a list of the specific Lean imports and lemmas still required; \"sorry\" is Lean's own term for an unproved step.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

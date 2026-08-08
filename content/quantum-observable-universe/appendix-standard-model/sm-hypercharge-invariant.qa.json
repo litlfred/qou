@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:sm-hypercharge-invariant",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.ts",
+    "md": "content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.md"
+  },
+  "source_hashes": {
+    "md": "056aed0bf0e6",
+    "ts": "8fc792506040"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The internal QA pointer is gone: \"this is the falsification recorded in the hypercharge audit\" is now \"which falsifies the writhe as a hypercharge assignment\". The falsification itself is stated in the paper's voice and the proton/neutron Y = +1 evidence is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

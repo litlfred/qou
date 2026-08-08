@@ -4,5 +4,5 @@ $$
 $$
 represents the abstract grouplike $\exp_q \in G(\mathcal{H}_q)$.
 
-**Archimedean specialisation (§7c).**
-This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, bounds, transcendental constants, or numerical evaluation at $q_0$. Categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is strictly specialised here.
+**Archimedean specialisation.**
+What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, bounds, transcendental constants, or numerical evaluation at $q_0$. Categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is strictly specialised here.

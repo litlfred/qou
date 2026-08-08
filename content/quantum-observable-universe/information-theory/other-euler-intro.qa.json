@@ -11,6 +11,18 @@
     "ts": "270d8c8a7ff1"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The banner and the manifest are gone. \"**Outline (future work).** We will investigate Bring's surface and its analogues ...\" -> \"Bring's surface has analogues at Euler characteristics other than $\\chi = -6$\", with the three goals restated in the present tense, and \"We leave the detailed classification to a follow-up. We include this section in the manifest solely to preserve the chapter's structural scope.\" -> \"None of the three is settled here. This section states the programme and fixes its scope; the classification itself is open.\" The admission that the classification is not done is kept explicit.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

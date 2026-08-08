@@ -17,7 +17,7 @@ Quantitative prediction: Along the Leray self-similar profile ([Leray profile](#
 
 ### B. High-energy astrophysical matter creation
 
-In the knot-braid particle model ([particle interactions](#chap:particle-interactions)), particles are closed braids. Matter creation corresponds to braid composition. A near-blow-up event concentrates enough crossing energy to braid vacuum modes into matter. For gamma-ray bursts (GRBs), the matter density in the prompt phase exceeds classical dissipation limits. This corresponds to the surreal-squeeze regime where $\mathcal{Z}_q > \Delta_q$. The substrate momentarily re-braids vacuum photons into pair-production channels. This manifests as a characteristic hadron/lepton yield whose ratio tracks the $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding).
+In the knot-braid particle model ([nuclear interactions](#chap:nuclear-interactions)), particles are closed braids. Matter creation corresponds to braid composition. A near-blow-up event concentrates enough crossing energy to braid vacuum modes into matter. For gamma-ray bursts (GRBs), the matter density in the prompt phase exceeds classical dissipation limits. This corresponds to the surreal-squeeze regime where $\mathcal{Z}_q > \Delta_q$. The substrate momentarily re-braids vacuum photons into pair-production channels. This manifests as a characteristic hadron/lepton yield whose ratio tracks the $q$-Hecke branching of [Hecke algebra from braiding](#rem:hecke-algebra-from-braiding).
 
 ### C. CMB non-Gaussianities
 

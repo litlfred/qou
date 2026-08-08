@@ -9,6 +9,6 @@ Therefore, the Volume Conjecture's archimedean asymptotic regime exactly traces 
 
 This co-location is not coincidental. It forms the Hecke-algebra face of the phenomenon that forces hyperbolic $3$-manifold volumes to appear at depth $2$ in the period filtration. The radical at the failure locus produces the period-class-non-trivial elements upon archimedean specialisation. See [`rem:vc-as-depth-2-instance`](#rem:vc-as-depth-2-instance) for the depth-$2$ reading.
 
-### Significance for B1
+### Significance for the depth correspondence
 
 Combined with [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence), the projections $\{e_\lambda\}$ become explicit witnesses for Goncharov period classes. Under $\tau_{\mathrm{arch}}$, $e_{\lambda_K} \cdot \mathrm{Li}_2^q(z_K)$ generates the period class $[\mathrm{Vol}(K)] \in \mathcal{P}_2 / \mathcal{P}_1$ for any hyperbolic knot $K$ with dominant cell $\lambda_K$ and shape parameter $z_K$. The figure-$8$ instance evaluates as $e_{(2,2)} \cdot \mathrm{Li}_2^q(\zeta_6)$.

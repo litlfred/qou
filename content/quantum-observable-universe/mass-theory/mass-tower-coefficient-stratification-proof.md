@@ -36,13 +36,10 @@ For each partition $\lambda$ the witness records:
 
 See [Table 2](#tbl:mass-tower-coefficient-stratification-table2-data).
 
-**Coordinating note for sibling computations.**
+**Note on the ${}^4\mathrm{He}$ gap.**
 
-The two parallel computational efforts
-(`claude/verify-mass-computation-k0DaZ`,
-`claude/phase-b-heavy-rust-character-kernel`) are independently
-verifying that the spectral-derived coefficients close the
-${}^4\mathrm{He}$ binding-energy gap.  This proposition supplies the
+Whether the spectral-derived coefficients close the ${}^4\mathrm{He}$
+binding-energy gap is still under independent numerical verification.  This proposition supplies the
 forcing structure: each Bethe--Weizsäcker coefficient is a specific
 Plancherel-weighted projection.  Combined with
 ([Plancherel boundedness](#prop:plancherel-weight-boundedness)) the
