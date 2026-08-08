@@ -246,26 +246,229 @@ theorem cauchyMul_norm_le_sum (a b : ℕ → K) (n : ℕ) :
   intro k _
   exact (norm_mul (a k) (b (n - k))).le
 
-/-- **[MI-2, analytic — residual cited `sorry`] Convolution order = envelope.**
-    Under the Cauchy product the q-Gevrey order is the dominant-balance ENVELOPE
-    `cauchyEnvelope s t` (`= max s t` when not both `≤ 0`; `= s·t/(s+t)` when
-    both `≤ 0`), NOT the additive `s + t` of the MI-1 stub.
+/-- **[MI-2, sorry-free] Envelope shift bound.**  Raising both slopes by the same
+    `δ ≥ 0` raises the envelope by at most `δ`.
 
-    The `≤` direction reduces to the two sorry-free lemmas above
-    (`cauchyMul_norm_le_sum` + `exponent_le_envelope`) plus an `ε`-`δ`
-    assembly extracting `‖a_k‖ ≤ q^{(s+ε)k²/2}` (resp. `b`) from the defining
-    limits and absorbing the `(n+1)` prefactor.  The `≥` direction additionally
-    needs a non-cancellation hypothesis on the leading coefficients (in a general
-    normed field the boundary/saddle term may cancel).  Both are the deferred
-    analytic content. -/
+    This is the algebraic core of the `ε`-`δ` step: passing from the limit form
+    to a bound costs an `ε` in each slope, and this lemma says that costs at most
+    `ε` in the envelope — so the two forms have the same envelope in the limit.
+    Conceptually it is `sup_θ((s+δ)θ² + (t+δ)(1−θ)²) ≤ sup_θ(sθ² + t(1−θ)²) + δ`,
+    since `θ² + (1−θ)² ≤ 1` on `[0,1]`; proved here directly from the closed
+    form, which is why it is a four-way case split rather than one line. -/
+theorem envelope_shift_le (s t δ : ℝ) (hδ : 0 ≤ δ) :
+    cauchyEnvelope (s + δ) (t + δ) ≤ cauchyEnvelope s t + δ := by
+  unfold cauchyEnvelope
+  split_ifs with h1 h2 h2
+  · -- both shifted ≤ 0 and both unshifted ≤ 0: harmonic vs harmonic
+    obtain ⟨hu, hv⟩ := h1
+    obtain ⟨hs, ht⟩ := h2
+    rcases (add_nonpos hs ht).lt_or_eq with hd1 | hd1
+    · -- s + t < 0
+      rcases (by linarith : s + δ + (t + δ) ≤ 0).lt_or_eq with hd2 | hd2
+      · have hne : s + t ≠ 0 := ne_of_lt hd1
+        have hA : s * t / (s + t) * (s + t) = s * t := div_mul_cancel₀ _ hne
+        rw [div_le_iff_of_neg (by linarith : s + δ + (t + δ) < 0)]
+        nlinarith [mul_nonneg (neg_nonneg.mpr hv) (neg_nonneg.mpr hs),
+                   mul_nonneg (neg_nonneg.mpr hu) (neg_nonneg.mpr ht), hA, hδ]
+      · -- the shifted slopes sum to 0, so both are 0 and the LHS is 0/0 = 0
+        have hu0 : s + δ = 0 := le_antisymm hu (by linarith)
+        have hv0 : t + δ = 0 := le_antisymm hv (by linarith)
+        have hδ0 : 0 < δ := by linarith
+        have hst : s * t / (s + t) = -(δ / 2) := by
+          have hs' : s = -δ := by linarith
+          have ht' : t = -δ := by linarith
+          rw [hs', ht', show (-δ) * (-δ) = δ * δ by ring,
+            show (-δ) + (-δ) = -(2 * δ) by ring]
+          field_simp
+        rw [hu0, hv0, hst]
+        norm_num
+        linarith
+    · -- s + t = 0 with s, t ≤ 0 forces s = t = 0, hence δ = 0
+      have hs0 : s = 0 := by linarith
+      have ht0 : t = 0 := by linarith
+      have hδ0 : δ = 0 := by rw [hs0] at hu; linarith
+      subst hs0; subst ht0; subst hδ0; simp
+  · -- shifted both ≤ 0 but unshifted not: impossible, since δ ≥ 0
+    exact absurd ⟨by linarith [h1.1], by linarith [h1.2]⟩ h2
+  · -- shifted not both ≤ 0, unshifted both ≤ 0: max ≤ harmonic + δ
+    obtain ⟨hs, ht⟩ := h2
+    rcases (add_nonpos hs ht).lt_or_eq with hd1 | hd1
+    · have hne : s + t ≠ 0 := ne_of_lt hd1
+      have hA : s * t / (s + t) * (s + t) = s * t := div_mul_cancel₀ _ hne
+      -- `s ≤ st/(s+t)`: multiplying by `s + t < 0` reduces it to `0 ≤ s²`.
+      have hsA : s ≤ s * t / (s + t) := by nlinarith [hA, hd1, sq_nonneg s]
+      have htA : t ≤ s * t / (s + t) := by nlinarith [hA, hd1, sq_nonneg t]
+      rw [max_add_add_right]
+      have := max_le hsA htA
+      linarith
+    · have hs0 : s = 0 := by linarith
+      have ht0 : t = 0 := by linarith
+      subst hs0; subst ht0; simp
+  · -- neither both ≤ 0: max shifts by exactly δ
+    rw [max_add_add_right]
+
+/-- **Bound form of q-Gevrey growth.**  `‖a n‖ ≤ C·Aⁿ·q^{s n²/2}` — the
+    "ALTERNATIVE (bound form)" of the header, made a definition.  Unlike
+    `IsQGevreyOrder` this is finitary (no filter, no `log`), which is exactly why
+    the `≤` half of the convolution law is provable outright in this form. -/
+def QGevreyBound (q s : ℝ) (a : ℕ → K) : Prop :=
+  ∃ C A : ℝ, 0 < C ∧ 0 < A ∧ ∀ n : ℕ, ‖a n‖ ≤ C * A ^ n * q ^ (s * (n : ℝ) ^ 2 / 2)
+
+/-- **[MI-2, sorry-free] The `≤` direction of the convolution law.**  In bound
+    form the upper half of `cauchyMul_order` holds **unconditionally** — no
+    non-cancellation hypothesis, because bounding a sum of norms never needs to
+    know that the terms fail to cancel.
+
+    This is the half that survives the counterexample: only the `≥` direction
+    was false. The proof is the docstring's own recipe with nothing deferred —
+    `cauchyMul_norm_le_sum` for the triangle bound, `exponent_le_envelope` on
+    each summand's Gaussian exponent, and the `(n+1)` term count absorbed into
+    the geometric factor via `n + 1 ≤ 2ⁿ`. -/
+theorem cauchyMul_bound {q s t : ℝ} {a b : ℕ → K} (hq : 1 < q)
+    (ha : QGevreyBound q s a) (hb : QGevreyBound q t b) :
+    QGevreyBound q (cauchyEnvelope s t) (cauchyMul a b) := by
+  obtain ⟨Ca, Aa, hCa, hAa, ha⟩ := ha
+  obtain ⟨Cb, Ab, hCb, hAb, hb⟩ := hb
+  have hq0 : (0 : ℝ) < q := lt_trans zero_lt_one hq
+  have hq1 : (1 : ℝ) ≤ q := le_of_lt hq
+  set M := max Aa Ab with hMdef
+  have hM0 : 0 < M := lt_of_lt_of_le hAa (le_max_left _ _)
+  refine ⟨Ca * Cb, 2 * M, by positivity, by positivity, ?_⟩
+  intro n
+  -- Each summand is bounded by the same envelope-exponent expression.
+  have hterm : ∀ k ∈ Finset.range (n + 1),
+      ‖a k‖ * ‖b (n - k)‖
+        ≤ Ca * Cb * M ^ n * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2) := by
+    intro k hk
+    have hkn : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+    have hcast : ((n - k : ℕ) : ℝ) = (n : ℝ) - (k : ℝ) := by
+      rw [Nat.cast_sub hkn]
+    -- Gaussian exponents: dominant balance.
+    have hexp : s * (k : ℝ) ^ 2 / 2 + t * ((n - k : ℕ) : ℝ) ^ 2 / 2
+        ≤ cauchyEnvelope s t * (n : ℝ) ^ 2 / 2 := by
+      have hle := exponent_le_envelope s t (k := (k : ℝ)) (j := ((n - k : ℕ) : ℝ))
+        (Nat.cast_nonneg k) (Nat.cast_nonneg _)
+      have hsum : (k : ℝ) + ((n - k : ℕ) : ℝ) = (n : ℝ) := by rw [hcast]; ring
+      rw [hsum] at hle
+      linarith
+    -- Geometric factors: both bounded by the common ratio M.
+    have hgeo : Aa ^ k * Ab ^ (n - k) ≤ M ^ n := by
+      calc Aa ^ k * Ab ^ (n - k)
+          ≤ M ^ k * M ^ (n - k) :=
+            mul_le_mul (pow_le_pow_left₀ hAa.le (le_max_left _ _) k)
+              (pow_le_pow_left₀ hAb.le (le_max_right _ _) _) (by positivity) (by positivity)
+        _ = M ^ n := by rw [← pow_add, Nat.add_sub_cancel' hkn]
+    calc ‖a k‖ * ‖b (n - k)‖
+        ≤ (Ca * Aa ^ k * q ^ (s * (k : ℝ) ^ 2 / 2))
+            * (Cb * Ab ^ (n - k) * q ^ (t * ((n - k : ℕ) : ℝ) ^ 2 / 2)) :=
+          mul_le_mul (ha k) (hb (n - k)) (norm_nonneg _) (by positivity)
+      _ = (Ca * Cb) * (Aa ^ k * Ab ^ (n - k))
+            * q ^ (s * (k : ℝ) ^ 2 / 2 + t * ((n - k : ℕ) : ℝ) ^ 2 / 2) := by
+          rw [Real.rpow_add hq0]; ring
+      _ ≤ (Ca * Cb) * M ^ n * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2) := by
+          have h1 : q ^ (s * (k : ℝ) ^ 2 / 2 + t * ((n - k : ℕ) : ℝ) ^ 2 / 2)
+              ≤ q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2) :=
+            Real.rpow_le_rpow_of_exponent_le hq1 hexp
+          have h2 : (0 : ℝ) ≤ Ca * Cb := by positivity
+          have h3 : (0 : ℝ) ≤ q ^ (s * (k : ℝ) ^ 2 / 2 + t * ((n - k : ℕ) : ℝ) ^ 2 / 2) :=
+            Real.rpow_nonneg hq0.le _
+          exact mul_le_mul (mul_le_mul_of_nonneg_left hgeo h2) h1 h3 (by positivity)
+  -- The term count `n + 1 ≤ 2ⁿ` is absorbed into the geometric factor.
+  have hcount : ((n : ℝ) + 1) ≤ (2 : ℝ) ^ n := by
+    have := Nat.lt_two_pow_self (n := n)
+    have : (n : ℝ) + 1 ≤ ((2 ^ n : ℕ) : ℝ) := by exact_mod_cast this
+    simpa using this
+  calc ‖cauchyMul a b n‖
+      ≤ ∑ k ∈ Finset.range (n + 1), ‖a k‖ * ‖b (n - k)‖ := cauchyMul_norm_le_sum a b n
+    _ ≤ ∑ _k ∈ Finset.range (n + 1),
+          Ca * Cb * M ^ n * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2) :=
+        Finset.sum_le_sum hterm
+    _ = ((n : ℝ) + 1) * (Ca * Cb * M ^ n * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2)) := by
+        rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]; push_cast; ring
+    _ ≤ Ca * Cb * (2 * M) ^ n * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2) := by
+        have hbase : (0 : ℝ) ≤ Ca * Cb * M ^ n
+            * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2) := by
+          have := Real.rpow_nonneg hq0.le (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2)
+          positivity
+        rw [mul_pow]
+        have hrw : Ca * Cb * ((2 : ℝ) ^ n * M ^ n)
+            * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2)
+            = (2 : ℝ) ^ n * (Ca * Cb * M ^ n
+                * q ^ (cauchyEnvelope s t * (n : ℝ) ^ 2 / 2)) := by ring
+        rw [hrw]
+        exact mul_le_mul_of_nonneg_right hcount hbase
+
+/-- **Non-cancellation of the dominant convolution term.**  There is a fixed
+    `c > 0` such that, eventually, the convolution dominates *every* one of its
+    own summands: `c·‖a_k‖·‖b_{n−k}‖ ≤ ‖(a⋆b)_n‖` for all `k ≤ n`.
+
+    This is the hypothesis the `≥` direction of the order law needs, and it is a
+    genuine hypothesis, not bookkeeping: it constrains only the *norm* of the
+    product against the norms of its summands, saying nothing about the product's
+    order, so assuming it does not assume the conclusion.  In a general normed
+    field the summands can cancel; `not_noCancellation_of_cauchyMul_eventually_zero`
+    below is the extreme case, and `q^{n²} ⋆ (q^{n²})⁻¹` realises it. -/
+def NoCancellation (a b : ℕ → K) : Prop :=
+  ∃ c > 0, ∀ᶠ n in atTop, ∀ k ∈ Finset.range (n + 1),
+    c * (‖a k‖ * ‖b (n - k)‖) ≤ ‖cauchyMul a b n‖
+
+/-- **The non-cancellation hypothesis has teeth.**  If the convolution
+    eventually vanishes while some summand does not, `NoCancellation` fails —
+    so it is not satisfied automatically, and the `≥` direction genuinely
+    depends on it.
+
+    This is the shape of the counterexample recorded in
+    `computations/qbeta/cauchymul_order_cancellation_witness.py`: taking
+    `a n = q^{n²}` (positive order) and `b` its formal inverse (the computation
+    shows `log_q‖b n‖/n² → 1`, so `b` carries the SAME positive order), the
+    Cauchy product is the unit sequence `(1,0,0,…)` — order `0`, while
+    `cauchyEnvelope s t > 0` for `s, t > 0`.  Two factors of equal positive
+    order whose product has order `0`. -/
+theorem not_noCancellation_of_cauchyMul_eventually_zero {a b : ℕ → K}
+    (hz : ∀ᶠ n in atTop, cauchyMul a b n = 0)
+    (hne : ∀ᶠ n in atTop, ∃ k ∈ Finset.range (n + 1), a k * b (n - k) ≠ 0) :
+    ¬ NoCancellation a b := by
+  rintro ⟨c, hc, hbound⟩
+  obtain ⟨n, ⟨hzn, hnen⟩, hbn⟩ := ((hz.and hne).and hbound).exists
+  obtain ⟨k, hk, hkne⟩ := hnen
+  have hpos : 0 < ‖a k‖ * ‖b (n - k)‖ := by
+    rw [← norm_mul]; exact norm_pos_iff.mpr hkne
+  have := hbn k hk
+  rw [hzn, norm_zero] at this
+  exact absurd this (not_le.mpr (mul_pos hc hpos))
+
+/-- **[MI-2, analytic — residual cited `sorry`] Convolution order = envelope,
+    given non-cancellation.**  Under the Cauchy product the q-Gevrey order is the
+    dominant-balance ENVELOPE `cauchyEnvelope s t` (`= max s t` when not both
+    `≤ 0`; `= s·t/(s+t)` when both `≤ 0`), NOT the additive `s + t` of the MI-1
+    stub.
+
+    **`hnc` is load-bearing and was added 2026-08-08 to repair a FALSE
+    statement.**  This theorem previously carried no such hypothesis, and in that
+    form it is refuted by `a n = q^{n²}` together with its formal inverse: both
+    have the same positive order, yet `a ⋆ b` is the unit sequence, of order `0`.
+    The refutation is normalization-robust — whatever positive order the
+    convention assigns `a`, it assigns the same to `b`, and `cauchyEnvelope` is
+    positive on `s, t > 0` — so no rescaling of the definition rescues it.
+    Witness: `computations/qbeta/cauchymul_order_cancellation_witness.py`;
+    the failure of `hnc` on that pair is
+    `not_noCancellation_of_cauchyMul_eventually_zero`.
+
+    What remains deferred is analytic, not a question of what is true.  The `≤`
+    direction is unconditional and now proved sorry-free, in bound form, as
+    `cauchyMul_bound` above; `envelope_shift_le` is the algebraic step that
+    carries a bound back to the limit form.  The residual is the `≥` half: pick
+    `k ≈ θ*·n` attaining the envelope, then apply `hnc` to transfer that single
+    summand's growth to the convolution. -/
 theorem cauchyMul_order {q s t : ℝ} {a b : ℕ → K}
     (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
-    (hq : 1 < q) :
+    (hq : 1 < q) (hnc : NoCancellation a b) :
     IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
   -- Ref: [ramis-sauloy-zhang2013] Newton-polygon / dominant-balance slopes of
-  --      q-difference systems.  Upper bound: cauchyMul_norm_le_sum +
-  --      exponent_le_envelope + ε-δ; lower bound: + non-cancellation.
-  -- SORRY: needs dominant balance / Laplace method for discrete convolutions with q-Gevrey bounds
+  --      q-difference systems.  Upper: cauchyMul_order_le (sorry-free).
+  --      Lower: hnc applied at k ≈ θ*·n, where θ* attains the envelope.
+  -- SORRY: needs the ≥ half — attainment of the sup at a near-optimal index,
+  --        then hnc to transfer that summand's growth to the convolution.
   sorry
 
 /-! ### MI-3 — bound-form extraction and the θ = ½·C(m,2) payoff bridge
