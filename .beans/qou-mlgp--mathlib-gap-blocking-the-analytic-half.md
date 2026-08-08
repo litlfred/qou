@@ -765,3 +765,57 @@ and the Robbins bounds, and read off
 Every piece that assembly needs now exists in this corpus. That is a different
 statement from "(A) is closed" — the assembly is real work and is not done — but
 no missing lemma stands in front of it.
+
+## Composite order-2 Euler-Maclaurin BUILT — and the one real gap left, named
+
+`QOU/MathlibExt/CompositeEulerMaclaurin.lean`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:343`:
+
+    abs_integral_sub_composite_le
+      | int_a^{a+kh} g - [ h sum_{j=0}^{k} g(a+jh) - (h/2)(g a + g(a+kh))
+                           - (h^2/12)(g'(a+kh) - g' a) ] |  <=  k h^5 M/720
+
+Induction on `k`: the one-cell rule on `[a+kh, a+(k+1)h]` plus
+`integral_add_adjacent_intervals`, with the residual at `k+1` splitting as
+(inductive residual) + (cell residual) by a `ring` identity.
+
+**THE POINT IS WHAT TELESCOPES.** `k` cells contribute `k` remainders but only
+ONE correction term: the interior `B_2` terms cancel in pairs and only the two
+endpoints survive. That is exactly why (A)'s expansion carries a lone
+`-(pi/12N) cot theta` and nothing else below `O(1/N^3)`.
+
+Verified numerically on `logSinc` over a uniform grid away from 0: residual
+inside the bound at `k = 4, 8, 16, 32`, decaying like `h^4` (divides by 16 per
+doubling).
+
+## THE ONE REMAINING GAP, NAMED PRECISELY
+
+Applying the composite rule to `logSinc x = log(sin x) - log x` on `[0, theta]`
+needs `logSinc` to be `C^4` AT `x = 0`, and **it is not, as literally defined**.
+Each of `log(sin x)` and `log x` is separately non-differentiable at `0`, even
+though the difference extends analytically (`logSinc x = -x^2/6 + O(x^4)`).
+Mathlib's convention `log 0 = 0` gives the right VALUE at `0`
+(`logSinc_zero`) but NOT differentiability.
+
+So the remaining step is: exhibit the analytic extension of `logSinc` at `0`,
+and prove it agrees with `logSinc` on `(0, theta]`. Concretely one wants
+`log (sin x / x)` with `sin x / x` extended by `1` at `0` — i.e. Mathlib's
+`Real.sinc`-style construction, or a power-series argument.
+
+That is a real piece of work and it is NOT done. It is, as far as this bean can
+determine, the only thing left between this corpus and (A).
+
+## (A) — the full ledger
+
+    (i)   the exact reflection                       PROVED
+    (ii)  symmetric half = trapezoid remainder       PROVED (identity)
+    (ii') symmetric half is O(h^2)                   PROVED (bound)
+    (iii) the j=0 singularity, subtracted            PROVED (exact split)
+    (iv)  Stirling upper, Robbins 1/(12n)            PROVED
+    (v)   Stirling lower, Robbins 1/(12n+1)          PROVED
+    (vi)  order-2 Euler-Maclaurin, one cell          PROVED
+    (vii) order-2 Euler-Maclaurin, composite         PROVED  <- this commit
+    (viii) logSinc is C^4 at 0 (analytic extension)  OPEN    <- the only one
+
+Note (viii) is a REGULARITY fact about one explicit function, not a missing
+piece of general analysis. Every general tool the argument needs now exists.
