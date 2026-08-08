@@ -142,19 +142,23 @@ column-superstandard tableau is constructed.
    labels of `ρ • t` are still exactly `C`. — **DONE, sorry-free**:
    `OVBaseSeminormalVector.colPattern_smul_of_mem_colStab` +
    `colLabels_smul_of_mem_colStab`.
-2. Those `|C|` labels fill column `c` of `ρ • t` entirely, so their rows are
-   exactly `0, …, colLen c − 1`. — *open* (needs: label↦cell is a bijection, so the
-   column-`c` labels biject with the column-`c` cells).
-3. `s` stays in column `c_s`, so its row `r` satisfies `r < colLen c_s`. — *open*
-   (same bijection fact, plus `mem_iff_lt_colLen`).
-4. `colLen` antitone + `c < c_s` ⟹ `colLen c_s ≤ colLen c = |C|`, hence `r < |C|`.
-   — *open*, but the Mathlib half is **confirmed present** in the pinned toolchain:
+2–4. **DONE, sorry-free — and the plan below was more than the argument needs.**
+   `OVBaseSeminormalVector.exists_sameRow_earlier_col` /
+   `exists_collision_earlier_col`. A tableau is an **`Equiv`** onto `μ.cells`, so the
+   colliding label is produced by exhibiting its *cell* and pulling back through
+   `t.symm`. There is no need to show the column-`c` labels occupy rows
+   `0 … colLen c − 1`, no counting, and `|C| = colLen c` is never required. With
+   `r = row s`: `(r,c') ∈ μ` ⟹ `r < colLen c'`; `colLen_anti` ⟹ `colLen c' ≤ colLen c`;
+   so `(r,c) ∈ μ`; take `x = t.symm ⟨(r,c), _⟩`. Strict `c < c'` additionally gives
+   `x ≠ s`. Generic in `t`.
 
-       YoungDiagram.colLen_anti : ∀ (μ : YoungDiagram) (j1 j2 : ℕ),
-         j1 ≤ j2 → μ.colLen j2 ≤ μ.colLen j1
+   *Superseded plan (kept for the record):* (2) the column-`c` labels fill column `c`,
+   occupying rows `0 … colLen c − 1`; (3) `s` at row `< colLen c_s`; (4) the `colLen`
+   comparison. Steps 2 and 3 were never needed as separate facts.
+   The Mathlib ingredient used is
+   `YoungDiagram.colLen_anti : ∀ μ j1 j2, j1 ≤ j2 → μ.colLen j2 ≤ μ.colLen j1`
+   (present in the pinned v4.24.0).
 
-   (verified by `#check` against the restored v4.24.0 oleans). So step 4 needs only
-   `|C| = colLen c` on top of it — which is step 2's bijection again.
 5. Combine: the column-`c` label at row `r` collides with `s`; distinct since their
    columns differ. Feed as `hfam`. — *open* (assembly).
 
