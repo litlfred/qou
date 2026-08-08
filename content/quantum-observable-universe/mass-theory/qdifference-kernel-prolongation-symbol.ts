@@ -6,7 +6,9 @@ export default conjecture({
     ref: "qou:QOU.Mass.QDifferenceKernelIsProlongationSymbol",
     validation: "validated",
   },
-  title: "The q-difference kernel R is the jet-prolongation operator symbol",
+  title:
+    "The q-difference kernel R is the jet-prolongation symbol, carried by the " +
+    "binding module C1",
   authorNotes: [
     {
       kind: "status",
@@ -58,6 +60,32 @@ export default conjecture({
         "block split (F3). Recorded so the refuted clause is not re-litigated " +
         "and not silently carried as open.",
       see: "docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md",
+    },
+    {
+      kind: "status",
+      date: "2026-08-08",
+      body:
+        "**F3 taken (owner-confirmed): this block is now the R1 half of a " +
+        "split.** The statement's `equivalently, the monodromy/Stokes data of " +
+        "the prolonged SW connection` clause has been REMOVED — that is the " +
+        "clause `newtonSlopes_c1_ne_ggm` refutes at module level, and keeping " +
+        "it as an equivalence asserted something the corpus has disproved. What " +
+        "remains is the well-posed R1 claim: R is the jet-prolongation symbol " +
+        "and its carrier is the pure-isoclinic slope-1/2 module C1 " +
+        "(`qlift_normalized_kernel_exists`). Consequences (1) and (2) and the " +
+        "keystone role are untouched — neither ever used the GGM clause, and " +
+        "`conj:schwinger-measure-computational-time`, the only block that " +
+        "`uses[]` this one, depends on the prolongation-symbol claim alone. The " +
+        "label is unchanged so no dependency edge moves.\n\n" +
+        "The C1<->GGM relationship is NOT dropped: it moves to " +
+        "`conj:c1-ggm-bar-parity-faces`, where the Door-iv/v terminus can be " +
+        "stated as its own falsifiable claim (C1(x)C1 and GGM agree as graded + " +
+        "Stokes modules, differing by exactly the diagonal Z/2 (-1)^m " +
+        "bar-parity character) instead of surviving as prose. F1 would have " +
+        "demoted that measured residual to a remark; F3 keeps it as content. " +
+        "Still open and unchanged: the class " +
+        "`QDifferenceKernelIsProlongationSymbol` has no instance.",
+      see: "docs/audits/2026-07-20-qlift-doorV-stokes.md",
     },
   ],
   uses: [

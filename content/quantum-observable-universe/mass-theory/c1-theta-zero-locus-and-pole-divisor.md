@@ -1,10 +1,10 @@
-**Proposition (the C1 $q$-theta vanishes on the orbit $-p^{\mathbb{Z}}$; the connection matrix's poles are theta zeros).**
+**Proposition (the $q$-theta of the ramified binding module vanishes on the orbit $-p^{\mathbb{Z}}$; the connection matrix's poles are theta zeros).**
 
 Let $p>1$ and let
 $$
 \theta_p(w) \;=\; \sum_{n\in\mathbb{Z}} p^{-n(n+1)/2}\,w^{n},
 $$
-the $q$-theta attached to the ramified C1 operator
+the $q$-theta attached to the ramified binding operator
 $$
 L \;=\; (p^{4}z^{2}-1)\,\tau^{2} \;-\; (p^{2}-1)\,\tau \;-\; (p^{2}-1),
 \qquad \tau F(z)=F(pz),\qquad q=p^{2}.
@@ -54,8 +54,8 @@ derivations. That $Y_0$ and $Y_\infty$ are the *canonical* solutions, that
 $P=Y_0^{-1}Y_\infty$ is meromorphic, and that the divisor is complete, are all
 open.
 
-**Nothing consumes this.** The only C1 outputs with a downstream consumer are the
-theta-growth $q^{m^{2}/4}$ and the isoclinicity obstruction, both cited by
+**Nothing consumes this.** The only outputs of this construction with a downstream
+consumer are the theta growth $q^{m^{2}/4}$ and the isoclinicity obstruction, both cited by
 [`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
 This proposition records correct, expensive-to-re-derive work; it is not a
 load-bearing step, and it should not be cited as one.

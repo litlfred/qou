@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: medium
 created_at: 2026-08-08T08:10:00Z
-updated_at: 2026-08-08T10:00:00Z
+updated_at: 2026-08-08T11:00:00Z
 ---
 
 The two things above the C1 chain that are open by nature rather than by
@@ -90,3 +90,46 @@ Mathlib still cannot support a real instance (principal bundles over `S²`,
 nonabelian gauge theory, Yekutieli multiplicative integration), so no-instance
 is expected to persist. What changed is that it is stated rather than disguised
 — which was the actual defect.
+
+## 2026-08-08 — F3 confirmed by the owner and implemented
+
+**Block A** `conj:qdifference-kernel-prolongation-symbol` — retitled, and the
+`equivalently, the monodromy/Stokes data …` clause **removed** from the
+statement. Label unchanged, so no `uses[]` edge moved;
+`conj:schwinger-measure-computational-time` depends on the prolongation-symbol
+claim alone and is unaffected. Consequences (1)/(2) and the keystone paragraph
+never used the refuted clause and are untouched.
+
+**Block B** `conj:c1-ggm-bar-parity-faces` — new, carrying the Door-iv/v
+terminus as its own falsifiable claim: the tensor square is anisoclinic with
+slopes `{+1,0,−1} ⊃ {+1,−1}`, agrees with the Stokes carrier as a graded module
+with its Stokes data, and the sole residual is the diagonal `ℤ/2` character
+`(−1)^m`. It gives `doorV_parity_no_identity` its **first content-block home** —
+that theorem is real (a non-negative-cone argument, not a near-match) and had
+no block referencing it.
+
+### One-voice fix, owner-flagged mid-implementation
+
+The first draft of both blocks used branch jargon — "the binding module C1",
+"GGM eq-49" — in the **paper** prose. That is audit/agent vocabulary and does
+not belong in the manuscript voice. Rewritten to define the objects instead of
+labelling them:
+
+* `𝒦` — the rank-2 module of the binding q-lift recurrence
+  `[m+2]_q b_{m+2} = b_{m+1} + b_m`, i.e. of
+  `L_𝒦 = (q²x−1)σ² − (q−1)σ − (q−1)` with `x = q^m`, pure isoclinic of slope ½.
+* `𝒢` — the module of `y_{m+2} − (2−q^{m+1})y_{m+1} + y_m = 0`, the Stokes
+  carrier of the resurgent colored-Jones series, cited to
+  `[garoufalidis-gu-marino2021]` rather than to "GGM eq-49".
+
+Same treatment applied to `prop:c1-theta-zero-locus-and-pole-divisor`, which had
+inherited "the ramified C1 operator". **Rule going forward: `.md` is the
+manuscript and carries no branch labels (C1, C2, GGM, Door-i…, Route A…);
+`authorNotes` is the working channel and they are fine there.**
+
+### Still open, unchanged
+
+`QDifferenceKernelIsProlongationSymbol` has no instance — the honest state for
+the surviving claim. `MISWAbelianisation` likewise. Neither F1 nor F3 was ever
+going to change that; the split only stops the block asserting something the
+corpus has refuted.
