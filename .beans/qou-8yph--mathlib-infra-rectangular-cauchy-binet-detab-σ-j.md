@@ -175,3 +175,48 @@ proof obligation is discharged by `.strictMono` on the embedding.
 
 The injectivity/non-injectivity split is now fully covered on both sides —
 step 3 kills the non-injective half, step 4 parameterizes the injective half.
+
+## Progress 2026-08-08 (cont) — steps 3b, 5, and both round trips
+
+Still ONE `sorry` (the target). All of the following axiom-clean.
+
+**Step 3b — drop the injectivity hypothesis.** The factoring never needed it:
+for *every* `φ`, the `σ`-sum is `det (A.submatrix id φ)` times the
+`σ`-independent `B` product. `sum_over_perms_eq` states that, and
+`det_mul_eq_sum_det_submatrix` gives
+
+    det (A * B) = ∑_φ det (A.submatrix id φ) * ∏_i B (φ i) i
+
+which is the form assembly consumes. Step 3 is now the special case where the
+determinant is zero.
+
+**Step 5 — sign bookkeeping.** `det_submatrix_comp_perm`:
+`det (A.submatrix id (f ∘ π)) = sign π * det (A.submatrix id f)`. One line
+once spotted: `A.submatrix id (f ∘ π)` is *definitionally*
+`(A.submatrix id f).submatrix id π`, so Mathlib's `det_permute'` applies
+directly. No sign lemma had to be built.
+
+**Both round trips** for the `(f, π) ↦ f ∘ π` bijection:
+- `sortSelector_comp` — sorting `f ∘ π` recovers `f`. `f` is already the
+  increasing enumeration of that image, and `Finset.orderEmbOfFin_unique`
+  says there is only one such map.
+- `sortPerm_comp` — sorting `f ∘ π` recovers `π`, since the factorization
+  pins it and `f` is injective.
+
+Note: `ext` on an `Equiv.Perm (Fin r)` goal unfolds to `Fin.val` equality,
+which does not match a proof of the `Fin` equality itself; `Equiv.ext` is the
+right entry point.
+
+### What is left
+
+Only the assembly. Every ingredient exists:
+
+- non-injective `φ` ⇒ term is 0 (`det_submatrix_eq_zero_of_not_injective`);
+- injective `φ` ⇔ a unique `(f, π)` (`sortSelector_comp` + `sortPerm_comp`
+  give both round trips, `comp_perm_injective` the forward direction);
+- the sign (`det_submatrix_comp_perm`);
+- `det (minorB B f) = ∑_π sign π ∏_i B (f (π i)) i` is `Matrix.det_apply`.
+
+Remaining work is a `Finset.sum_nbij'` (or an `Equiv` between injective `φ`
+and `Selector × Perm`) plus the arithmetic regrouping — bookkeeping, not new
+mathematics.

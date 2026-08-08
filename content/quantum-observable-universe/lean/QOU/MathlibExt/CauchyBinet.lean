@@ -170,6 +170,37 @@ theorem sum_over_perms_eq_zero_of_not_injective {r n : ℕ}
     sum_perm_eq_det_submatrix, det_submatrix_eq_zero_of_not_injective A hφ,
     zero_mul]
 
+/-! ## Step 3b — the same factoring, without the injectivity hypothesis
+
+The split used above never needed `φ` injective: for *every* `φ`, the
+`σ`-sum is `det (A.submatrix id φ)` times the `σ`-independent `B` product.
+Stating it that way subsumes step 3 (the non-injective case is then just
+`det = 0`) and is the form the assembly actually consumes. -/
+
+/-- For every `φ`, the inner `σ`-sum factors as a determinant times the
+`σ`-independent `B` product. -/
+theorem sum_over_perms_eq {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (B : Matrix (Fin n) (Fin r) R) (φ : Fin r → Fin n) :
+    (∑ σ : Equiv.Perm (Fin r),
+        Equiv.Perm.sign σ • ∏ i, A (σ i) (φ i) * B (φ i) i)
+      = (A.submatrix id φ).det * ∏ i, B (φ i) i := by
+  have key : ∀ σ : Equiv.Perm (Fin r),
+      Equiv.Perm.sign σ • ∏ i, A (σ i) (φ i) * B (φ i) i
+        = (Equiv.Perm.sign σ • ∏ i, A (σ i) (φ i)) * ∏ i, B (φ i) i := by
+    intro σ
+    rw [Finset.prod_mul_distrib, smul_mul_assoc]
+  rw [Finset.sum_congr rfl (fun σ _ => key σ), ← Finset.sum_mul,
+    sum_perm_eq_det_submatrix]
+
+/-- **`det (A * B)` as a sum of minors-times-products over all `φ`.** The
+non-injective terms are already zero by `det_submatrix_eq_zero_of_not_injective`. -/
+theorem det_mul_eq_sum_det_submatrix {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (B : Matrix (Fin n) (Fin r) R) :
+    (A * B).det
+      = ∑ φ : Fin r → Fin n, (A.submatrix id φ).det * ∏ i, B (φ i) i := by
+  rw [det_mul_eq_sum_over_functions]
+  exact Finset.sum_congr rfl (fun φ _ => sum_over_perms_eq A B φ)
+
 /-! ## Step 4 — an injective `φ` sorts into `Selector ∘ permutation`
 
 This is the piece with no Mathlib support. An injective `φ : Fin r → Fin n`
@@ -232,6 +263,41 @@ theorem sortSelector_comp_sortPerm {r n : ℕ} {φ : Fin r → Fin n}
   show ((imageFinset φ).orderEmbOfFin (card_imageFinset hφ)) (sortPerm hφ i) = φ i
   rw [← Finset.coe_orderIsoOfFin_apply, hround]
   rfl
+
+/-- A selector composed with a permutation is injective. -/
+theorem comp_perm_injective {r n : ℕ} (f : Selector r n) (π : Equiv.Perm (Fin r)) :
+    Function.Injective (f.1 ∘ π) :=
+  f.2.injective.comp π.injective
+
+/-- **Round trip, selector half.** Sorting `f ∘ π` recovers `f` — because `f`
+is already the increasing enumeration of that image, and
+`Finset.orderEmbOfFin_unique` says there is only one. -/
+theorem sortSelector_comp {r n : ℕ} (f : Selector r n) (π : Equiv.Perm (Fin r)) :
+    (sortSelector (comp_perm_injective f π)).1 = f.1 := by
+  symm
+  refine Finset.orderEmbOfFin_unique (card_imageFinset (comp_perm_injective f π)) ?_ f.2
+  intro x
+  have hx : f.1 x = (f.1 ∘ π) (π.symm x) := by simp
+  rw [hx]
+  exact mem_imageFinset _ _
+
+/-- **Round trip, permutation half.** Sorting `f ∘ π` recovers `π`, since the
+factorization pins it and `f` is injective. -/
+theorem sortPerm_comp {r n : ℕ} (f : Selector r n) (π : Equiv.Perm (Fin r)) :
+    sortPerm (comp_perm_injective f π) = π := by
+  refine Equiv.ext (fun i => ?_)
+  have hfac := sortSelector_comp_sortPerm (comp_perm_injective f π) i
+  rw [sortSelector_comp f π] at hfac
+  exact f.2.injective hfac
+
+/-- **Permuting the columns.** `A.submatrix id (f ∘ π)` is `A.submatrix id f`
+with its columns shuffled by `π`, so the determinants differ by `sign π`. -/
+theorem det_submatrix_comp_perm {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (f : Fin r → Fin n) (π : Equiv.Perm (Fin r)) :
+    (A.submatrix id (f ∘ π)).det
+      = Equiv.Perm.sign π * (A.submatrix id f).det := by
+  have : A.submatrix id (f ∘ π) = (A.submatrix id f).submatrix id π := rfl
+  rw [this, Matrix.det_permute']
 
 /-! ## Frontier
 
