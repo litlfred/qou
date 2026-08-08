@@ -74,12 +74,39 @@ conditions — it was a `rw [one_div]` in the goal that `hcomp` did not carry, s
 that one rewrite made it instant. **An elaboration timeout is not evidence that
 a step is hard.**
 
+## And the derivative ON the cut, which step (2) turns on
+
+    hasDerivAt_cLiTwoExt_ofReal (hx : 0 < x) (hx1 : x ≠ 1) :
+      HasDerivAt (fun s : ℝ => cLiTwoExt s) (−log(1 − x)/x) x
+
+Verified at `x = 2.24698`, i.e. **strictly on the cut**.
+
+`qou-invr` recorded a subtlety here: `hasDerivAt_cLiTwoExt_radial` differentiates
+in the **parameter `s` along a fixed ray**, while the constancy argument needs the
+derivative in **`x`, which moves the ray** — and converting one to the other
+seemed to presuppose the differentiability being established.
+
+**That dissolves.** The cap `t ≤ 1` in the original existed only because
+integrability was known on `[0,1]`; `intervalIntegrable_clog_one_sub_div_ofReal'`
+removes it. With the cap gone, take the **ray direction to be `1`** — then the
+radial parameter *is* `x`, and the radial derivative *is* the `x`-derivative. No
+chain rule run backwards, no circularity.
+
+⚠ `x ≠ 1` is load-bearing and is what replaces `notCut`: at `x = 1` the kernel
+genuinely diverges. A version admitting it would be false.
+
 ## What remains for `qou-invr`
 
-Step (2) only: the real identity `Re Li₂(x) + Li₂(1/x) = π²/3 − ½·log²x` for
-`x > 1` (Route 35 G3, measured at 1e-25). Step (1) no longer blocks it — and
-because of it, `cLiTwoExt x` for `x > 1` is now a **provably real object** in
-Lean rather than an integral that might be the junk value `0`.
+Step (2)'s constancy argument, now with all three derivatives available:
+
+| term | derivative on `x > 1` | source |
+|---|---|---|
+| `Re cLiTwoExt(x)` | `−log(x−1)/x` | **`hasDerivAt_cLiTwoExt_ofReal` + `re_log_ofReal`** |
+| `LiTwo(1/x)` | `(log(x−1) − log x)/x` | off the cut, routine |
+| `½·log²x` | `log x / x` | routine |
+
+They cancel identically, so `G' = 0` on `(1,∞)`; pinning `G ≡ π²/3` at `x → 1⁺`
+is what is left.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -241,5 +268,178 @@ theorem intervalIntegrable_clog_one_sub_div_ofReal {x : ℝ} (hx : 0 < x) :
       MeasureTheory.volume 0 1 :=
   (intervalIntegrable_integrand_left hx).trans
     (intervalIntegrable_integrand_right (by positivity))
+
+/-! ## Continuity on the cut, along the real ray
+
+`continuousAt_liTwoKernel` asks for `1 − y·t ∈ slitPlane`, which real `x > 1`
+fails for `t > 1/x`. That hypothesis is **sufficient, not necessary**: along the
+real ray `1 − x·u` stays on the real axis, so it *leaves* the slit plane but
+never *crosses* the cut, and `log(1 − x·u) = log|1 − x·u| + iπ` is continuous
+there for every `u ≠ 1/x`.
+
+Same phenomenon as `hasDerivAt_log_neg_ofReal` in the transport lane: smooth
+along a real path though the complex derivative does not exist. -/
+
+/-- The `arg` step is **locally constant** away from the sign change. -/
+theorem continuousAt_arg_step {x u : ℝ} (hxu : 1 - x * u ≠ 0) :
+    ContinuousAt (fun v : ℝ => if 1 - x * v < 0 then Real.pi else 0) u := by
+  have hc : ContinuousAt (fun v : ℝ => 1 - x * v) u := by fun_prop
+  rcases lt_or_gt_of_ne hxu with h | h
+  · have hev : (fun v : ℝ => if 1 - x * v < 0 then Real.pi else 0)
+        =ᶠ[nhds u] (fun _ : ℝ => Real.pi) := by
+      filter_upwards [hc.eventually (eventually_lt_nhds h)] with v hv
+      rw [if_pos hv]
+    exact continuousAt_const.congr hev.symm
+  · have hev : (fun v : ℝ => if 1 - x * v < 0 then Real.pi else 0)
+        =ᶠ[nhds u] (fun _ : ℝ => (0 : ℝ)) := by
+      filter_upwards [hc.eventually (eventually_gt_nhds h)] with v hv
+      rw [if_neg (not_lt.mpr hv.le)]
+    exact continuousAt_const.congr hev.symm
+
+/-- **The kernel is continuous at real `u`, on the cut**, provided only
+`u ≠ 0` and `1 − x·u ≠ 0`. No `slitPlane` hypothesis. -/
+theorem continuousAt_liTwoKernel_ofReal {x u : ℝ} (hu : u ≠ 0) (hxu : 1 - x * u ≠ 0) :
+    ContinuousAt (liTwoKernel ((x : ℝ) : ℂ)) u := by
+  have heq : (fun v : ℝ => Complex.log ((1 : ℂ) - ((x : ℝ) : ℂ) * (v : ℂ)))
+      = fun v : ℝ => ((Real.log (1 - x * v) : ℝ) : ℂ)
+          + ((if 1 - x * v < 0 then Real.pi else 0 : ℝ) : ℂ) * Complex.I := by
+    funext v
+    have hcast : (1 : ℂ) - ((x : ℝ) : ℂ) * (v : ℂ) = (((1 - x * v : ℝ)) : ℂ) := by
+      push_cast; ring
+    rw [hcast, log_ofReal_eq, arg_one_sub_mul_ofReal, Real.log_abs]
+  have hlog : ContinuousAt
+      (fun v : ℝ => Complex.log ((1 : ℂ) - ((x : ℝ) : ℂ) * (v : ℂ))) u := by
+    rw [heq]
+    refine ContinuousAt.add ?_ ?_
+    · refine ContinuousAt.comp (g := fun r : ℝ => ((r : ℝ) : ℂ))
+        (f := fun v : ℝ => Real.log (1 - x * v)) Complex.continuous_ofReal.continuousAt ?_
+      exact ContinuousAt.comp (g := Real.log) (f := fun v : ℝ => 1 - x * v)
+        (Real.continuousAt_log hxu) (by fun_prop)
+    · refine ContinuousAt.mul ?_ continuousAt_const
+      exact ContinuousAt.comp (g := fun r : ℝ => ((r : ℝ) : ℂ))
+        (f := fun v : ℝ => if 1 - x * v < 0 then Real.pi else 0)
+        Complex.continuous_ofReal.continuousAt (continuousAt_arg_step hxu)
+  exact hlog.div Complex.continuous_ofReal.continuousAt (Complex.ofReal_ne_zero.mpr hu)
+
+/-- **The radial derivative, generalised to real `x > 0` — including on the cut.**
+
+`hasDerivAt_cLiTwoExt_radial` requires `y ∈ notCut`, which real `x > 1` fails.
+That hypothesis was doing three jobs: integrability on `[0,t]`, continuity of the
+kernel at `t`, and measurability near `t`. All three now hold for real `x`
+without it — the first by `intervalIntegrable_clog_one_sub_div_ofReal`, the other
+two by `continuousAt_liTwoKernel_ofReal`.
+
+⚠ `hxt : 1 − x·t ≠ 0` is **load-bearing and replaces `notCut`**: at `t = 1/x` the
+kernel genuinely diverges. The original excluded that point implicitly via
+`slitPlane`; a version admitting it would be false. -/
+theorem hasDerivAt_cLiTwoExt_radial_ofReal {x : ℝ} (hx : 0 < x) {t : ℝ}
+    (ht0 : 0 < t) (ht1 : t ≤ 1) (hxt : 1 - x * t ≠ 0) :
+    HasDerivAt (fun s : ℝ => cLiTwoExt ((s : ℂ) * ((x : ℝ) : ℂ)))
+      (-(Complex.log (1 - ((x : ℝ) : ℂ) * (t : ℂ)) / (t : ℂ))) t := by
+  have htne : t ≠ 0 := ne_of_gt ht0
+  -- integrability: step (1), restricted from `[0,1]` to `[0,t]`
+  have hint : IntervalIntegrable (liTwoKernel ((x : ℝ) : ℂ)) MeasureTheory.volume 0 t := by
+    have h1 : IntervalIntegrable (liTwoKernel ((x : ℝ) : ℂ)) MeasureTheory.volume 0 1 := by
+      have := intervalIntegrable_clog_one_sub_div_ofReal hx
+      simpa [liTwoKernel] using this
+    exact h1.mono_set (by
+      rw [Set.uIcc_of_le ht0.le, Set.uIcc_of_le (by norm_num : (0:ℝ) ≤ 1)]
+      exact Set.Icc_subset_Icc le_rfl ht1)
+  -- continuity at `t`, with NO slitPlane hypothesis
+  have hcont : ContinuousAt (liTwoKernel ((x : ℝ) : ℂ)) t :=
+    continuousAt_liTwoKernel_ofReal htne hxt
+  -- measurability near `t`: the kernel is continuous on the open set off `0`
+  -- and off the single bad point `1/x`
+  have hUopen : IsOpen ({u : ℝ | u ≠ 0} ∩ {u : ℝ | 1 - x * u ≠ 0}) := by
+    refine isOpen_ne.inter ?_
+    exact isOpen_ne.preimage (by fun_prop)
+  have htU : t ∈ ({u : ℝ | u ≠ 0} ∩ {u : ℝ | 1 - x * u ≠ 0}) := ⟨htne, hxt⟩
+  have hUcont : ContinuousOn (liTwoKernel ((x : ℝ) : ℂ))
+      ({u : ℝ | u ≠ 0} ∩ {u : ℝ | 1 - x * u ≠ 0}) :=
+    fun u hu => (continuousAt_liTwoKernel_ofReal hu.1 hu.2).continuousWithinAt
+  have hmeas : StronglyMeasurableAtFilter (liTwoKernel ((x : ℝ) : ℂ)) (nhds t) :=
+    hUcont.stronglyMeasurableAtFilter hUopen t htU
+  -- FTC-1, then transport across the substitution
+  have hftc : HasDerivAt (fun u : ℝ => ∫ z in (0 : ℝ)..u, liTwoKernel ((x : ℝ) : ℂ) z)
+      (liTwoKernel ((x : ℝ) : ℂ) t) t := intervalIntegral.integral_hasDerivAt_right hint hmeas hcont
+  have hneg := hftc.neg
+  refine hneg.congr_of_eventuallyEq ?_
+  filter_upwards [eventually_ne_nhds htne] with s hs
+  exact (cLiTwoExt_ofReal_mul (y := ((x : ℝ) : ℂ)) hs)
+
+/-! ## Dropping the right-endpoint cap, and the `x`-derivative that follows
+
+The radial lemma caps `t ≤ 1` only because integrability was established on
+`[0,1]`. Generalising the right endpoint removes the cap — and then taking the
+**ray direction to be `1`** makes the parameter `s` *be* `x`, so the radial
+derivative becomes the `x`-derivative the constancy argument needs. That is what
+resolves the "s-derivative vs x-derivative" subtlety recorded in `qou-invr`. -/
+
+/-- Integrability on `0..b` for any `b > 0`, not just `b = 1`. -/
+theorem intervalIntegrable_clog_one_sub_div_ofReal' {x b : ℝ} (hx : 0 < x) (hb : 0 < b) :
+    IntervalIntegrable (fun t : ℝ => Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      MeasureTheory.volume 0 b := by
+  set c : ℝ := min (1 / (2 * x)) (b / 2) with hc
+  have h2x : (0 : ℝ) < 2 * x := by linarith
+  have hcpos : 0 < c := lt_min (by positivity) (by positivity)
+  have hcb : c < b := lt_of_le_of_lt (min_le_right _ _) (by linarith)
+  -- near 0: the existing slitPlane lemma, rescaled (as before)
+  have hleft : IntervalIntegrable
+      (fun t : ℝ => Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      MeasureTheory.volume 0 c := by
+    refine (intervalIntegrable_integrand_left hx).mono_set ?_
+    rw [Set.uIcc_of_le hcpos.le, Set.uIcc_of_le (by positivity : (0:ℝ) ≤ 1 / (2 * x))]
+    exact Set.Icc_subset_Icc le_rfl (by rw [hc]; exact min_le_left _ _)
+  -- away from 0: `1/t` is continuous, so it peels off
+  have hright : IntervalIntegrable
+      (fun t : ℝ => Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      MeasureTheory.volume c b := by
+    have hcont : ContinuousOn (fun t : ℝ => ((t : ℂ))⁻¹) (Set.uIcc c b) := by
+      refine ContinuousOn.inv₀ (Complex.continuous_ofReal.continuousOn) ?_
+      intro t ht
+      have ht0 : t ≠ 0 := by
+        rcases Set.mem_uIcc.mp ht with h | h
+        · exact ne_of_gt (lt_of_lt_of_le hcpos h.1)
+        · exact ne_of_gt (lt_of_lt_of_le hcpos (le_trans (le_of_lt hcb) h.1))
+      simpa using ht0
+    have h := (intervalIntegrable_clog_one_sub_mul x c b).mul_continuousOn hcont
+    simpa [div_eq_mul_inv] using h
+  exact hleft.trans hright
+
+/-- The radial derivative with the right-endpoint cap removed. -/
+theorem hasDerivAt_cLiTwoExt_radial_ofReal' {x : ℝ} (hx : 0 < x) {t : ℝ}
+    (ht0 : 0 < t) (hxt : 1 - x * t ≠ 0) :
+    HasDerivAt (fun s : ℝ => cLiTwoExt ((s : ℂ) * ((x : ℝ) : ℂ)))
+      (-(Complex.log (1 - ((x : ℝ) : ℂ) * (t : ℂ)) / (t : ℂ))) t := by
+  have htne : t ≠ 0 := ne_of_gt ht0
+  have hint : IntervalIntegrable (liTwoKernel ((x : ℝ) : ℂ)) MeasureTheory.volume 0 t := by
+    have := intervalIntegrable_clog_one_sub_div_ofReal' hx ht0
+    simpa [liTwoKernel] using this
+  have hcont : ContinuousAt (liTwoKernel ((x : ℝ) : ℂ)) t :=
+    continuousAt_liTwoKernel_ofReal htne hxt
+  have hUopen : IsOpen ({u : ℝ | u ≠ 0} ∩ {u : ℝ | 1 - x * u ≠ 0}) := by
+    refine isOpen_ne.inter ?_
+    exact isOpen_ne.preimage (by fun_prop)
+  have htU : t ∈ ({u : ℝ | u ≠ 0} ∩ {u : ℝ | 1 - x * u ≠ 0}) := ⟨htne, hxt⟩
+  have hUcont : ContinuousOn (liTwoKernel ((x : ℝ) : ℂ))
+      ({u : ℝ | u ≠ 0} ∩ {u : ℝ | 1 - x * u ≠ 0}) :=
+    fun u hu => (continuousAt_liTwoKernel_ofReal hu.1 hu.2).continuousWithinAt
+  have hmeas : StronglyMeasurableAtFilter (liTwoKernel ((x : ℝ) : ℂ)) (nhds t) :=
+    hUcont.stronglyMeasurableAtFilter hUopen t htU
+  have hftc : HasDerivAt (fun u : ℝ => ∫ z in (0 : ℝ)..u, liTwoKernel ((x : ℝ) : ℂ) z)
+      (liTwoKernel ((x : ℝ) : ℂ) t) t := intervalIntegral.integral_hasDerivAt_right hint hmeas hcont
+  have hneg := hftc.neg
+  refine hneg.congr_of_eventuallyEq ?_
+  filter_upwards [eventually_ne_nhds htne] with s hs
+  exact (cLiTwoExt_ofReal_mul (y := ((x : ℝ) : ℂ)) hs)
+
+/-- **`d/dx cLiTwoExt(x) = −log(1−x)/x` for real `x > 0`, `x ≠ 1` — including on
+the cut.** Ray direction `1`, so the radial parameter *is* `x`. -/
+theorem hasDerivAt_cLiTwoExt_ofReal {x : ℝ} (hx : 0 < x) (hx1 : x ≠ 1) :
+    HasDerivAt (fun s : ℝ => cLiTwoExt ((s : ℝ) : ℂ))
+      (-(Complex.log (1 - ((x : ℝ) : ℂ)) / ((x : ℝ) : ℂ))) x := by
+  have h := hasDerivAt_cLiTwoExt_radial_ofReal' (x := 1) one_pos (t := x) hx
+    (by simpa using sub_ne_zero.mpr (Ne.symm hx1))
+  simpa using h
 
 end QOU.MathlibExt
