@@ -1,11 +1,11 @@
 ---
 # qou-qbg9
 title: 'Attack vectors for the resurgence-arc Lean gaps, TIERED by kind (not by file)'
-status: todo
+status: scrapped
 type: task
 priority: high
 created_at: 2026-08-08T12:05:00Z
-updated_at: 2026-08-08T12:25:00Z
+updated_at: 2026-08-08T12:55:00Z
 ---
 
 Survey 2026-08-08 of real `sorry`s in the resurgence arc (grep corrected to
@@ -148,3 +148,27 @@ closing a backlog that is mostly imaginary.
 in place (preserving line alignment) rather than deleting them -- an earlier draft
 deleted them, which desynchronised the line mapping and double-counted every hit
 (reported 36 instead of 18). Use it instead of grep.
+
+## ⚠ SUPERSEDED 2026-08-08 — this bean DUPLICATED existing coverage
+
+Rebasing onto main (153 commits) revealed the corpus already had a bean for every
+gap tiered here, several with more analysis than I wrote:
+
+    qou-6e88 [todo]      cauchyMul_order -- statement may need strengthening
+                         (= my "Tier 4"; now SETTLED, see that bean)
+    qou-dgtf [todo]      elliptic_divisor_degree_zero -- blocked on the argument
+                         principle (= my "Tier 1", same diagnosis)
+    qou-c3if [todo]      exponent of convergence <= order (Hadamard PI-4)
+    qou-bp5n [todo]      Jensen + Nevanlinna are ALREADY in Mathlib -- wire, do
+                         not reprove
+    qou-8cwi [completed] Borel-Caratheodory inequality
+    qou-7y3g [todo]      Vol(4_1), Vol(B_3) numerical only
+
+**Use those, not this.** They are better scoped and already carry the per-gap
+detail. This bean is kept only for the two things it contributed that are not in
+them: the corrected sorry census (18 real, vs 2193 by naive grep) and
+`scripts/real-sorry-scan.py`. Both are recorded in the correction section above.
+
+**Method note.** I ran the corpus-grep for RSZ/alien-calculus content but not for
+"is there already a bean for this Lean gap" before tiering. That is the same
+checklist, skipped one step earlier. Grep the beans too.
