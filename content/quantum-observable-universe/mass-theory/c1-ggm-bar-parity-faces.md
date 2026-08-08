@@ -41,3 +41,18 @@ without a sign twist, and the twist is forced rather than fitted.
 the agreement is *exact*, so that the parity is the whole difference and not
 merely a difference. Items 1--3 are established at probe level; the
 exact-coefficient identity is open.
+
+**One reading of the positive half is excluded.** The twist inverts *every*
+consecutive-pair sign, $z_mz_{m+1}=-y_my_{m+1}$ with $z_m=(-1)^my_m$, not only
+the alternating ones. It can therefore clear the non-negativity obstruction only
+for a target that alternates at *every* consecutive pair, and the solution of
+$\mathcal{G}$ does not: for $m+1<\log 2/\log q$ the coefficient $2-q^{m+1}$ is
+positive and no sign change occurs. So the twisted sequence acquires flips
+exactly where the untwisted one had none, and the obstruction fires on it too.
+
+Consequently the residual claim must be read **at the level of modules**, up to
+a gauge transformation over the $q$-difference field — not as the assertion that
+$(-1)^{m}z$ is a non-negative combination of $f_+^{2}$ and $f_-^{2}$. That
+scalar reading is excluded by the same non-negativity invariant that supplies
+the obstruction. The module-level statement is untouched by this and remains
+what is conjectured.

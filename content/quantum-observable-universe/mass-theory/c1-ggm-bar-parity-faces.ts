@@ -49,7 +49,28 @@ export default conjecture({
         "WHOLE difference and not merely a difference. The graded and Stokes " +
         "comparisons are probe-level (docs/audits/2026-07-20-qlift-doorIV-matrix.md, " +
         "2026-07-20-qlift-doorV-stokes.md); the exact-coefficient identity is " +
-        "the Door-iii target, bean qou-ceg6. Nothing is wired on this block.",
+        "the Door-iii target, bean qou-ceg6. Nothing is wired on this block.\n\n" +
+        "**Update, same day: one reading of the positive half is now EXCLUDED.** " +
+        "The twist inverts EVERY consecutive-pair sign, not only the " +
+        "alternating ones (`barTwist_consecutive_product`), so it can clear the " +
+        "non-negativity obstruction only for a target alternating at every pair " +
+        "— and the Stokes carrier's solution is flip-free below " +
+        "m+1 = log2/log q, where 2 - q^{m+1} > 0. Hence the twisted sequence " +
+        "acquires flips exactly where the untwisted one had none and " +
+        "`doorV_parity_no_identity` fires on it too: the twist RELOCATES the " +
+        "obstruction rather than removing it. Proved as " +
+        "`obstruction_fires_on_one_of` and " +
+        "`twist_clears_only_if_everywhere_alternating`; measured in " +
+        "`computations/qbeta/c3_w2_bar_parity_twist_probe.py` (4/4), which " +
+        "records the twisted flip positions. So the residual claim must be read " +
+        "at MODULE level, up to a gauge over the q-difference field — not as " +
+        "'(-1)^m z is a non-negative combination of the squares'. That scalar " +
+        "reading is excluded by the very invariant that supplies the " +
+        "obstruction. The module reading is untouched and is what the block " +
+        "conjectures. A scalar least-squares fit against a prose-reconstructed " +
+        "f_+/f_- was run and is deliberately NOT reported: the reconstruction " +
+        "is not trustworthy enough to carry a negative result, and the finding " +
+        "above needs only the carrier's own recurrence.",
       see: "docs/audits/2026-07-20-qlift-doorV-stokes.md",
     },
   ],
