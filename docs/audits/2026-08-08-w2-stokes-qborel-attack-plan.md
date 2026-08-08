@@ -68,6 +68,42 @@ unramified transform — that is exactly the wasted-search the formalize-first
 rule targets. Note the cost asymmetry: this prune took minutes; the analytic
 route it guards is multi-session.
 
+## S0 + S1 RESOLVED (2026-08-08, same day)
+
+**S0 — done, sorry-free.** `QOU/MathlibExt/QBorelKernelLevel.lean`: closed form
+`qBorelExp d n = (n/d)(n%d) + d·C(n/d,2)`, RSZ recurrence *proved* from it,
+level 1 shown to reproduce the existing `qBorelKernel` on the nose, degree law
+`qBorelExp d (d·m) = d·C(m,2)` (the `q^{n²/2d}` growth), and the concrete
+`qBorelExp 2 (2m) = m(m−1)`. Axioms `[propext, Quot.sound]` — no `Classical.choice`.
+
+**S1 — resolved to candidate (1): ramification is FORCED.** Extending the budget
+table to the ramified variable settles it:
+
+| input | `d=1` kernel | `d=2` kernel |
+|---|---|---|
+| unramified, `deg = n²` | +0.50 | +0.75 |
+| **ramified** `z = ζ²`, `deg = N²/4` | −0.25 | **+0.0006 → 0** |
+
+Under `z = ζ²` the coefficient `cₘ` sits at index `N = 2m`. Against the
+**level-2** kernel the match is critical — and the leftover is not merely small
+but **exactly linear**:
+
+```
+deg cₘ = m²,    qBorelExp 2 (2m) = m(m−1),    difference = m   exactly.
+```
+
+Sub-quadratic leftover is precisely the convergence condition, so the resolving
+transform is **ramify, then level 2**. This is the quantitative reason RSZ's
+square roots `B₁,B₂` are forced rather than cosmetic. The `d=1` ramified pairing
+over-converges (−0.25) and is not canonical.
+
+**Proved in Lean, sorry-free:** `QOU.QBeta.ramified_qBorel_budget` — `m² = m(m−1) + m`,
+composing `cCoeff_natDegree` with `qBorelExp_two_even`.
+
+*Caveat retained:* a degree-budget determination, not a theorem about RSZ's
+analytic construction. It fixes which pairing *can* converge; it does not build
+the transform. **S2 is unblocked and its target confirmed.**
+
 ## Stages
 
 Each stage is a bean. Deliverables are stated so failure is visible.
