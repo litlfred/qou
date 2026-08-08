@@ -68,16 +68,41 @@ resolution is that S's parity is not independent data: with `S := -c_3/kappa`,
 S's parity is whatever makes the identity hold.  So the tension is not a
 contradiction, but it does confirm that no parity information is carried.
 
-WHAT SURVIVES UNCHANGED (verified below, independent of the withdrawn claim):
+*** SECOND CORRECTION, same day.  "(H1) is UNDERIVED — no derivation exists in
+    the corpus" IS ALSO WRONG, in the opposite direction.  I missed the
+    coordination ledger.  See [5]. ***
+
+WHAT SURVIVES (verified below):
 
   A. The bar-split is not accessible from anchors at q ~ 1.10998.
   B. S_leak is a 98-99.5% CANCELLATION of c_3, amplifying c_3's real 2.43%
      anchor swing to 507.5% — a factor of ~209 that is arithmetic, not
-     structure.  Any argument reading S_leak's RELATIVE swing as structural
-     sensitivity is reading the cancellation.
-  C. (H1) remains UNDERIVED: no derivation of c_3^even = -Vol(4_1) exists in
-     the corpus (searched docs/, content/, computations/).  Absence of a
-     derivation — NOT, as first claimed, a contradiction with one.
+     structure.  *** NOT NEW: this is the corpus's known `1/u^3` ladder
+     artifact — the extractor is c_3 = (Q_beta/Q_N2 - 1)/u^3 with u ~ 0.0085,
+     and S'(q*) = 2.37 x (1/u^3) is a SMOOTH O(1) prefactor over a tiny u^3
+     (2026-07-12 capstone result 3; registry KC21).  Independently
+     re-derived here, not discovered. ***
+
+WHAT IS WITHDRAWN A SECOND TIME:
+
+  C. "(H1) is UNDERIVED."  WRONG.  The Phi_b state-integral saddle supplies the
+     |S| scale from geometry, no fit and anchor-blind: at the real substrate
+     meridian m = q_0 the saddle gives Im V = 0 EXACTLY (amphichirality) and a
+     volume deficit 0.0094 ~ |S(muon)| = 0.00968 (PR #3654; capstone result 5;
+     registry KC21, tier symbolic-exact).  That is a genuine geometric
+     motivation for subtracting a 4_1 volume, which I asserted did not exist.
+
+     What IS still open is narrower and must be stated precisely: the match is
+     a ~2.9% SCALE agreement, not an exact identity; the exact normalisation is
+     open; and `conj:im-q-physical-role` remains a CONJECTURE.  So (H1) as an
+     EXACT identity is not established — but "no derivation in the corpus" was
+     false.
+
+     Root cause of the miss: AGENTS.md's corpus-grep checklist item 4 is "check
+     the relevant coordination ledger".  I grepped docs/, content/ and
+     computations/ for the strings `S_leak` and `c_3^even` and skipped the
+     ledger.  KC21 is indexed under Phi_b / volume-deficit / ladder vocabulary,
+     so a string search for my own framing could never have found it.
 
 SCOPE.  (a) throughout.  Nothing here refutes Vol(4_1) as an ingredient, 4_1's
 amphichirality, or ANY theorem in SLeakZeroCrossing.lean /
@@ -208,16 +233,42 @@ def main():
     print("\n    (verified: c_3 is recovered EXACTLY from either, both ways --")
     print("     the hallmark of a reparametrisation, which adds no information)")
 
+    # ---------------------------------------------------------------- [5]
+    print("\n[5] THE TWO-S COLLISION -- the one finding here that is actually new.\n")
+    print("    Two distinct objects are both called 'the c_3 bar-odd S':")
+    print(f"      S_leak = c_3 + Vol(4_1)      -> muon {mp.nstr(C3_MUON + VOL_41, 6)}")
+    print(f"      S      = -c_3 / kappa_(2,1)  -> muon {mp.nstr(-C3_MUON / kappa_21(Q_MUON), 6)}")
+    sep = (-C3_MUON / kappa_21(Q_MUON)) / (C3_MUON + VOL_41)
+    print(f"    ratio between them: {mp.nstr(sep, 6)}  (~5 orders of magnitude)")
+    assert sep > mpf("1e4"), "the two S's should differ by orders of magnitude"
+
+    print(
+        "\n    The 2026-07-12 capstone straddles them: its header and numbers\n"
+        "    (S(muon)=+0.00968, S(proton)=-0.03946) are S_leak, while its\n"
+        "    result 1 states 'the c_3 bar-odd S = Q_beta/E_0' (~886.8).\n"
+        "\n    This matters because the two have DIFFERENT epistemic status:\n"
+        "      * S_leak has geometric backing (Phi_b saddle, [5] above);\n"
+        "      * S := -c_3/kappa is a DEFINITION carrying no information ([1]).\n"
+        "    Conflating them transfers unearned credibility from the first to\n"
+        "    the second.  SLeakZeroCrossing.lean carries a symbol-collision\n"
+        "    guard, so the collision is known -- but the capstone still crosses\n"
+        "    it, and the registry's KC21 row inherits the same vocabulary."
+    )
+
     print("\n" + "=" * 74)
-    print("VERDICT (scope-(a)).  (H1) c_3^even = -Vol(4_1) is UNDERIVED -- no")
-    print("derivation exists in the corpus.  It is NOT, as this probe first")
-    print("claimed, contradicted by the kappa*S split: that split is itself a")
-    print("definition and carries no independent information.  The bar-parity")
-    print("of c_3 is undetermined by the present corpus.")
+    print("VERDICT (scope-(a)), after TWO self-corrections.")
+    print("  * (H1) as an EXACT identity: not established (the geometric match")
+    print("    is a ~2.9% scale agreement; exact normalisation open;")
+    print("    conj:im-q-physical-role still a conjecture).")
+    print("  * (H1) as UNMOTIVATED: FALSE -- the Phi_b saddle volume deficit")
+    print("    0.0094 ~ |S(muon)| 0.00968 is fit-free and anchor-blind (KC21).")
+    print("  * The kappa*S split is definitional and adjudicates nothing.")
+    print("  * NEW: the two-S collision is live in the capstone, and the two")
+    print("    S's do NOT share epistemic status.")
     print("Unaffected: Vol(4_1) elsewhere, 4_1's amphichirality, and every")
     print("theorem in SLeakZeroCrossing/SLeakMagnitude*.lean.")
     print("=" * 74)
-    print("\n11/11 assertions passed.")
+    print("\n12/12 assertions passed.")
 
 
 if __name__ == "__main__":
