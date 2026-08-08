@@ -75,11 +75,6 @@ def sRow3 : ℕ → ℤ
   | 5 => 4
   | _ => 0
 
-@[simp] theorem sRow3_one   : sRow3 1 = 0  := rfl
-@[simp] theorem sRow3_two   : sRow3 2 = 0  := rfl
-@[simp] theorem sRow3_three : sRow3 3 = -1 := rfl
-@[simp] theorem sRow3_four  : sRow3 4 = -2 := rfl
-
 /-! ### Irreducibly ≥3-body: the general cluster functional and its deuteron zero -/
 
 /-- The extensive (size-consistent) cluster functional over a nucleon set `S`,
@@ -107,15 +102,20 @@ theorem clusterF_eq_zero_of_card_le_two {ι : Type*} [DecidableEq ι]
 `Bext A = Σ_k C(A,k)·s_k` (terms with `k < 3` vanish since `s_k = 0` there). -/
 def Bext (A : ℕ) : ℤ := ∑ k ∈ Finset.range (A + 1), (A.choose k : ℤ) * sRow3 k
 
-@[simp] theorem Bext_two   : Bext 2 = 0  := by decide
-@[simp] theorem Bext_three : Bext 3 = -1 := by decide
-@[simp] theorem Bext_four  : Bext 4 = -6 := by decide
+theorem Bext_two   : Bext 2 = 0  := by
+  norm_num [Bext, Finset.sum_range_succ, Finset.sum_range_zero, sRow3, Nat.choose]
+theorem Bext_three : Bext 3 = -1 := by
+  norm_num [Bext, Finset.sum_range_succ, Finset.sum_range_zero, sRow3, Nat.choose]
+theorem Bext_four  : Bext 4 = -6 := by
+  norm_num [Bext, Finset.sum_range_succ, Finset.sum_range_zero, sRow3, Nat.choose]
 
 /-- **The extensive `A=4 / A=3` ratio identity is exactly `6`** (⁴He / ³H skeleton):
 `Bext 4 = 6 · Bext 3`.  Contrast the AME ratio `B(⁴He)/B(³H) ≈ 3.336` (probe): the
 extensive reading overshoots by `+80 %`, 0-fit. -/
 theorem Bext_ratio_four_three : Bext 4 = 6 * Bext 3 := by
-  rw [Bext_four, Bext_three]
+  have h4 : Bext 4 = -6 := Bext_four
+  have h3 : Bext 3 = -1 := Bext_three
+  omega
 
 /-- The deuteron extensive value is `0`: consistent with the general
 `clusterF_eq_zero_of_card_le_two`.  The deuteron binding is a separate 2-body
