@@ -235,3 +235,60 @@ open, and the per-root `g(x) = Σⱼ Log[…]` formulation is actively misleadin
 it presumes a branch labelling that does not survive the arc.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the refutation is now a LEAN THEOREM, and the conclusion is SAFE
+
+### Lean
+
+`QOU/QBeta/FiveTwoDiscriminant.lean`, sorry-free, `lake` green:
+
+```lean
+theorem exists_unit_circle_disc_zero : ∃ x : ℂ, ‖x‖ = 1 ∧ disc x = 0
+```
+
+Ingredients, all small: `disc_eq_cubic_formula` (`ring` — `disc` *is* the standard
+cubic discriminant of the GGM curve), `disc_eq_Q` (`field_simp; ring` — the
+palindromic reduction `disc x = x⁴·Q(x + 1/x)`), `Q_neg_two`/`Q_neg_one`
+(`norm_num` — `49` and `−23`), `exists_root_Q` (IVT), and `onCircle` with
+`norm_onCircle`, `onCircle_add_inv` (the `u ↦ x` bridge: `u ∈ [−2,2]` gives
+`x = u/2 + i√(1 − u²/4)` on the unit circle with `x + 1/x = u`).
+
+So the refutation is not merely measured — it is **proved**.
+
+### And the conclusion survives — Route 17
+
+`computations/probes/qbeta_5two_route17_symmetric_transport_probe.py`, 5 gates.
+
+**`S(e^{iφ}) − S(1) = φ²` holds to `4e-40` across the whole arc, INCLUDING at the
+branch point** — residual `0.0` at `φ₀` and at `φ₀ ± 1e-5`, and `0.0` at the
+endpoint `S(−1) − S(1) = π²`. There is no feature there at all.
+
+The reason is structural and was worth finding: **`S(x) = Σⱼ Re V(x, yⱼ)` sums
+over all roots, so it is symmetric in them.** A collision *permutes* roots; a
+symmetric function cannot notice a permutation. Only the per-root labelling
+dies — and only the argument used labels.
+
+### Where that leaves this bean
+
+| | |
+|---|---|
+| the transport **conclusion** `S(−1) = S(1) + π²` | ✅ not in danger |
+| the transport **argument** (`k = 0` via per-root `g`) | ❌ **dead** — it presumes a labelling that does not survive the arc |
+| a symmetric replacement | ❌ **not written** |
+
+**Do not repair the `g(x) = Σⱼ Log[…]` formulation.** It is the wrong object.
+The right ones are the elementary symmetric functions, which Vieta makes
+*rational* in `x` —
+
+    e₁ = (x²+1)/x,  e₂ = (x²+x+1)/x,  e₃ = 1
+
+(Route 17 gate G5) — hence analytic on the whole arc, branch point included. And
+their two products are **already Lean-proved**: `prod_one_sub_x_mul`,
+`prod_x_sub` in `FiveTwoCyclotomicBloch.lean`.
+
+That is the concrete next step: derive `S′(x) = −2 log x / x` from the symmetric
+functions alone, never naming a branch.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
