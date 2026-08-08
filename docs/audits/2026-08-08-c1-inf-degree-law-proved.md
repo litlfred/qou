@@ -80,12 +80,46 @@ is recorded here so nobody re-derives it.
 - **It does not compute a Stokes multiplier.** Those remain the residual of
   W2 / the ∞-side of the C1 module, exactly as the 08-01 audit states. This
   strengthens the *premise* of the q-Borel route, not its conclusion.
-- **It is not Lean-formalized.** The natural target is a `Polynomial ℤ`
-  statement over the product form — `natDegree` of a product plus a
-  no-cancellation argument on the top term. Named as the next step, not
-  claimed as done.
+- ~~It is not Lean-formalized.~~ **It is now Lean-proved, sorry-free** —
+  see §Lean below.
 - **Nothing is wired and nothing is fitted.** The recurrence is exact and
   parameter-free; there is no free constant anywhere in the above.
+
+## Lean
+
+[`QOU/QBeta/C1InfDegreeLaw.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/C1InfDegreeLaw.lean)
+— **sorry-free**, over `Polynomial ℤ` (§7c: pure algebra over a domain; no
+ordering, no `Real.*`, the archimedean wall is not crossed).
+
+| declaration | statement |
+|---|---|
+| `cFactor m` | `1 + (X−1)Xᵐ + (X−1)X^{2m}` |
+| `cCoeff n` | `∏_{m<n} cFactor m` |
+| `cCoeff_succ` | `c_{n+1} = cₙ · f_n` — the audit's recurrence |
+| `cFactor_ne_zero` | each factor is nonzero |
+| `cFactor_natDegree` | `natDegree (f_m) = 2m+1`, **including** `m = 0` |
+| `cCoeff_ne_zero` | `cₙ ≠ 0` (product of nonzeros in a domain) |
+| **`cCoeff_natDegree`** | **`natDegree (cₙ) = n²`** |
+
+Verified with `lean`-direct (`LEAN_PATH` against the restored oleans, **exit
+0**) rather than `lake build`, per the repo's verify recipe. Axiom audit:
+
+```
+'QOU.QBeta.cCoeff_natDegree' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+— the three standard Mathlib axioms, **no `sorryAx`**; likewise for the other
+three declarations. Zero `sorry` / `admit` / `native_decide` in the file.
+
+**Where the mathematical content actually sits, in the Lean.** The two
+disequalities `2m ≠ m` and `2m+1 ≠ m` are discharged from `m > 0` and are
+exactly the no-cancellation fact; they are what the `m = 0` branch cannot
+supply, which is why that case is split off and closed separately on
+`f₀ = 2X − 1`. Additivity of `natDegree` is `natDegree_mul` applied with both
+non-vanishing hypotheses — i.e. the domain structure of `ℤ[X]` is used, not
+assumed away. A file proving only `Σ_{m<n}(2m+1) = n²` would have been pure
+`Nat` arithmetic asserting nothing about polynomials; that is the easy half and
+is deliberately not what is formalized here.
 
 ## Coordination
 
