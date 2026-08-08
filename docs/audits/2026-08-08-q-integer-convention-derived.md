@@ -1,0 +1,139 @@
+# The `[k]_q` convention is derivable — and `qInt` currently names two of them
+
+**Date:** 2026-08-08 · **Beans:** `qou-pjfu` (closed), `qou-qint` (filed)
+· **Tier:** symbolic-exact (the derivation) + scope-(a) (the inventory)
+· **Discipline:** no fit, no wiring, no value changed.
+
+Asked directly: *where do the `[k]_q` conventions come from? they should be
+derivable.* They are. This records the derivation, validates it symbolically,
+and inventories what the corpus actually does.
+
+## The two forms
+
+```
+GEOMETRIC   [k]_q^geo = (q^k − 1)/(q − 1)        = 1 + q + … + q^{k−1}
+BALANCED    [k]_q^bal = (q^k − q^{−k})/(q − q^{−1}) = q^{k−1} + q^{k−3} + … + q^{−(k−1)}
+```
+
+Probe: [`computations/q_integer_convention_derivation.py`](../../computations/q_integer_convention_derivation.py)
+— every identity below is an **exact sympy residual-zero check for k = 1..12**,
+symbolic in q. No anchor, no fit.
+
+## Four derivations; the canonical form is forced, not chosen
+
+**(D1) They are one object, reparametrised.** `[k]_q^bal = q^{−(k−1)}·[k]_{q²}^geo`.
+So geometric-in-`Q` and balanced-in-`q` agree exactly when `Q = q²`. A geometric
+`[k]` is wrong **only** if its variable is the balanced `q`.
+
+> **Already in Lean — cited, not claimed.** This is exactly
+> `QOU.Mass.QHookDimensionBalanced.qIntBal_eq_twist`
+> (`qIntBal q n = q⁻¹^(n−1) * qIntPoly (q^2) n`), and that file's docstring
+> already states the corpus canon is balanced. Re-derived here only so the later
+> steps stand on a self-contained chain.
+
+**(D2) Balanced is bar-EVEN; geometric is not.** Under `σ: q ↦ 1/q`:
+
+```
+[k]_{1/q}^bal = [k]_q^bal                 INVARIANT
+[k]_{1/q}^geo = q^{−(k−1)}·[k]_q^geo      COVARIANT, weight −(k−1)
+```
+
+**This is the sharpest reason and the one that appears to be unrecorded.** The
+whole corpus runs on the bar involution — the sinh/cosh split, bar-even vs
+bar-odd channels, the c₃ parity bookkeeping. Any quantity required to be
+bar-even (every cosh-channel / mass-side object) **must** use the balanced form;
+a geometric `[k]` inside one silently breaks the parity bookkeeping without
+changing anything visible at a single anchor.
+
+**(D3) The Hecke relation already chose.** AGENTS.md §7a adopts
+`(σ−q)(σ+q⁻¹) = 0`, i.e. `σ² = (q−q⁻¹)σ + 1`, whose structure constant is
+**`q − q⁻¹`** — the denominator of the balanced form. The unbalanced
+normalisation `(σ−q)(σ+1) = 0` has structure constant `q − 1`, the geometric
+denominator. So the q-integer convention is **downstream of a choice AGENTS.md
+has already made**, not an independent one.
+
+**(D4) It is the quantum dimension.** The k-dimensional `U_q(sl₂)` irrep has
+weight string `k−1, k−3, …, −(k−1)` — **symmetric about 0** — and summing `q^w`
+over it gives `[k]_q^bal` exactly. Geometric sums the *non-symmetric* string
+`0,1,…,k−1`: the lowest-weight-shifted, unnormalised version. Weight-string
+symmetry is the structural reason, not an aesthetic one.
+
+## The hazard, sized
+
+Using geometric where balanced is meant is a multiplicative error growing with k
+(at the proton anchor):
+
+| k | balanced | geometric | ratio |
+|---|---|---|---|
+| 2 | 2.010896867 | 2.109978583 | 1.049 |
+| 3 | 3.043706209 | 3.342031037 | **1.098** |
+| 5 | 5.220441275 | 6.227536124 | **1.193** |
+| 7 | 7.625342037 | 9.782629747 | **1.283** |
+
+Large enough to break any precision claim; small enough to survive a rough
+eyeball. That is the dangerous size.
+
+## Corpus inventory — `qInt` names two different objects
+
+| convention | signature | file |
+|---|---|---|
+| **GEOMETRIC** | `qInt (q) (n)` | `MathlibExt/QIntegerFactorial` |
+| balanced | `qBracket (q) (n)` | `MathlibExt/QPartitionCombinatorics` |
+| **GEOMETRIC** | `qInt (q) (k)` | `FluidDynamics/surreal_enstrophy_finite_modes` |
+| balanced | `qInt (k)` | `FluidDynamics/q_turbulence_spectrum` |
+| **GEOMETRIC** | `qInt (q) (n)` | `Resurgence/StokesConstantQDimCategoricity` |
+| **GEOMETRIC** | `qIntPoly (q) (n)` | `Mass/QHookDimension` |
+| balanced | `qIntBal (q) (n)` | `Mass/QHookDimensionBalanced` |
+| balanced | `qBracket (R) (q) (k:ℤ)` | `IwahoriHecke/Hoefsmit` |
+
+4 geometric, 4 balanced. **The bare name `qInt` is geometric in three files and
+balanced in a fourth** (`q_turbulence_spectrum`). Same glyph, two conventions —
+the overloaded-symbol trap AGENTS.md warns about. *Reading a call site does not
+tell you which object you have.*
+
+## Checked, and NOT defects
+
+Two files were checked directly rather than assumed guilty:
+
+* **`Resurgence/StokesConstantQDimCategoricity`** uses the geometric form in a
+  file about *quantum dimensions*, which looked wrong. It is **not**: its result
+  is an honest negative (the `3 = [3]_{q=1}` match is vacuous because
+  `[n]_q|_{q=1} = n` for every n, and `1+X+X² ≠ 3` as a polynomial). Both facts
+  hold in either convention — balanced `[3]_q = q²+1+q⁻²` is equally ≠ 3, and
+  its `q→1` limit is equally 3. Conclusion robust.
+* **`Mass/QHookDimension`** (geometric) vs **`QHookDimensionBalanced`**
+  (balanced) are a deliberate pair, not a contradiction: the second exists
+  precisely to prove the twist relating them.
+
+## What was fixed here
+
+`content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean`
+was **red on `main`** — `qInt` neither defined nor imported. Bean `qou-pjfu`
+correctly declined to guess the convention, calling it "a maths convention call".
+
+It is **decidable**, because the file computes `α_EM⁻¹`, a measured constant:
+
+| convention | `α_EM⁻¹` | vs CODATA 137.035999177 |
+|---|---|---|
+| geometric | 150.4821415 | **9.8 % off** |
+| **balanced** | **137.0359995** | **2.6 ppb** |
+
+So the intended object is balanced, and the file now uses the existing `qIntBal`
+rather than adding a ninth q-integer. **`lean`-direct exit 0.**
+
+> **Scope of that determination.** It fixes the *identification of a symbol*, not
+> the physics. The 2.6 ppb agreement carries **no** evidential weight for the
+> formula — the file itself calls `κ = 8q` empirical with *"no structural
+> derivation linking su(3) gluon dimension to α_EM"*, so the form was shaped
+> against this target. The number is used only as a **fingerprint** to recover
+> which function the author meant. The conjecture stays a conjecture.
+
+## Not done here
+
+The rename/reconcile sweep. Eight definitions across eight files, each with
+downstream consumers that must be checked individually against (D1) — a
+geometric site is fine if its variable means `q²`. That is a scoped pass of its
+own, filed as `qou-qint`, not something to blanket-apply.
+
+-- Ref: [manuscript] AGENTS.md §7a (Hecke–Skein convention)
+-- Ref: [manuscript] `QOU.Mass.QHookDimensionBalanced.qIntBal_eq_twist`
