@@ -1,51 +1,72 @@
 #!/usr/bin/env python3
-"""Detect the "∀-bound constant" vacuity class.
+"""Detect statements that quantify over what was meant to be a fixed constant.
 
+Two signals, of very different severity.
+
+UNSOUND — a whole side of an ORDER relation is a bare, unconstrained binder
+----------------------------------------------------------------------------
+    axiom f (n : ℕ) (p q : Prop) : p → q → 3 ≤ n
+
+`n` is universally quantified, so this asserts `3 ≤ n` for **every** `n`.
+Instantiate at `n = 0` with both `Prop`s taken to be `True` and you have
+`3 ≤ 0`, hence `False`. This does not merely say nothing — it makes the whole
+import cone unsound.
+
+Live case, fixed 2026-08-08:
+`QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean::b1_hyperbolic_rows`, which
+was verbatim the shape above. `False` was provable anywhere downstream of
+`QOU.AppendixSurreals`, with `#print axioms` naming it as the sole culprit.
+
+COLLAPSE — a short-named binder on one side of an `=`
+-----------------------------------------------------
     axiom f : ∀ … (z : T) …, LHS = RHS
 
-where `z` occurs on exactly one side of the equation and is otherwise
-unconstrained (does not appear in any hypothesis). Such a statement forces the
-*other* side to be independent of `z` — and when that side is a product
-containing `z`, it forces it to zero.
+with `z` on exactly one side and unconstrained elsewhere. This forces the
+other side to be independent of `z` — and when that side is a product
+containing `z`, it forces it to zero. Live cases, both fixed 2026-08-08 in
+`QOU/HeckeAlgebra/MarkovTrace.lean`:
 
-Why this class needs its own detector
--------------------------------------
-It is invisible to every existing audit: there is no `sorry`, no `True`
-conclusion, no `native_decide`, and `#print axioms` looks completely normal.
-The declaration is well-typed and reads like a real theorem. Two live instances
-were found on 2026-08-08 by reading a single file:
+  MarkovTrace_markov_axiom — `markovTrace (n+1) (heckeStab x) = z * markovTrace n x`
+    with `z` bound. `z := 0` and `z := 1` together give `markovTrace n x = 0`
+    for every `x`: the Markov trace, the central object of the mass chain, was
+    pinned to the zero function.
 
-  QOU/HeckeAlgebra/MarkovTrace.lean
-    MarkovTrace_markov_axiom : ∀ … (z : ℝ), markovTrace (n+1) (heckeStab x)
-                                              = z * markovTrace n x
-      z := 0 and z := 1 together give `markovTrace n x = 0` for every x, i.e.
-      the Markov trace — the central object of the mass chain — was pinned to
-      the zero function.
+  wenzlBridge — the left side does not mention `q`, so the weighted block-sum
+    was provably `q`-independent, which is the negation of what the Wenzl
+    bridge exists to say.
 
-    wenzlBridge : ∀ … (q : ℝ) …, markovTraceOnWedderburn x = ∑ … y_λ(q) · …
-      the left side does not mention q, so the weighted block-sum was provably
-      q-independent — the negation of what the Wenzl bridge exists to say.
-
-  QOU/Archimedean/WeierstrassProjection.lean
-    weierstrass_diff_eq_axiom — a variant of the same failure: an existential
-      over free complex numbers that never mentions `weierstrassProjection`,
-      making the "axiom" a provable triviality of ℂ.
+Why these need their own detector
+---------------------------------
+They are invisible to every existing audit: no `sorry`, no `True` conclusion,
+no `native_decide`, and `#print axioms` looks entirely normal. The declaration
+is well-typed and reads like a real theorem.
 
 Reading the output
 ------------------
-This is a HIGH-RECALL candidate detector, agent-confirmed like the other
-vacuity classes. Triage rules:
+HIGH-RECALL candidates, agent-confirmed like the other vacuity classes:
 
-  * RHS-only is the dangerous direction. LHS-only is usually fine — `f n = 1`
-    genuinely depends on n and equals 1 for each n.
-  * A *proved* theorem cannot collapse anything: it is true. Only `axiom`s and
-    `sorry`-ed theorems can assert a falsehood, so those are reported first.
-  * A variable that also appears in a hypothesis is constrained and is normally
-    a false positive; those are filtered out by default (--include-constrained
-    to see them).
+  * UNSOUND hits are not candidates — fix them immediately.
+  * For COLLAPSE, RHS-only is the dangerous direction. LHS-only is usually
+    fine: `f n = 1` genuinely depends on `n` and equals `1` for each.
+  * A *proved* theorem cannot collapse anything — it is true. Only `axiom`s and
+    `sorry`-ed theorems can assert a falsehood.
+  * A binder appearing in a hypothesis is constrained, and normally a false
+    positive; filtered out by default (`--include-constrained` to see them).
+
+Three parsing details that each hid a real defect until fixed, worth
+preserving if this is ever rewritten:
+
+  1. Comments must be stripped first, or a docstring quoting a declaration —
+     including this repo's own write-up of the B1 fix — is read as source.
+  2. Both binder forms must be handled: `axiom f : ∀ (n : ℕ), …` *and*
+     `axiom f (n : ℕ) : …`. B1 used the second, so a `∀`-only regex skipped
+     the only unsound file in the corpus.
+  3. The length cap on binder names applies to COLLAPSE only. The unsound
+     binder was `n_hyperbolic_rows_verified`; a cap tuned for `z`/`q` hid it.
 
 Usage:
     scripts/lean-one-sided-binder-audit.py [ROOT] [--include-constrained] [--all-kinds]
+    scripts/lean-one-sided-binder-audit.py --self-test
 """
 from __future__ import annotations
 
@@ -70,18 +91,88 @@ def occurs(var: str, text: str) -> bool:
     return re.search(rf"(?<![A-Za-z0-9_'])" + re.escape(var) + r"(?![A-Za-z0-9_'])", text) is not None
 
 
+# Order-relation glyphs are as dangerous as `=` here, and in a nastier way: a
+# one-sided `=` collapses the other side to a constant, but a one-sided `≤`
+# over an unconstrained numeric binder is outright INCONSISTENT. Live case
+# (fixed 2026-08-08, `QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean`):
+#
+#     axiom b1_hyperbolic_rows (n : ℕ) (bloch_suslin van_der_veen : Prop) :
+#         bloch_suslin → van_der_veen → 3 ≤ n
+#
+# `n` is universally quantified, so this asserts `3 ≤ n` for every `n`.
+# Instantiating at `n = 0` with both Props `True` proves `3 ≤ 0`, hence `False`
+# — the whole import cone of `QOU.AppendixSurreals` was unsound.
+RELATIONS = ["≤", "≥", "<", ">", "="]
+
+
 def split_top_level_eq(body: str):
-    """Split on the top-level '=', skipping '==', '=>', '<=', '>=', ':='."""
+    """Split on the first top-level relation, skipping '==', '=>', ':=', '<='/'>='
+    written ASCII-style (those are single glyphs in Lean, handled separately)."""
     depth = 0
     for i, c in enumerate(body):
         if c in "([{":
             depth += 1
         elif c in ")]}":
             depth -= 1
-        elif c == "=" and depth == 0:
-            if body[i - 1:i] in ("<", ">", "!", ":", "=") or body[i + 1:i + 2] in ("=", ">"):
+        elif depth == 0 and c in RELATIONS:
+            if c == "=":
+                if body[i - 1:i] in ("<", ">", "!", ":", "=") or body[i + 1:i + 2] in ("=", ">"):
+                    continue
+            # `<`/`>` are also used in Lean for universe/instance brackets and
+            # anonymous constructors; require surrounding whitespace so `⟨a, b⟩`
+            # and `Foo<T>`-style noise do not split.
+            elif c in ("<", ">") and not (
+                body[i - 1:i].isspace() and body[i + 1:i + 2].isspace()
+            ):
                 continue
-            return body[:i], body[i + 1:]
+            return body[:i], body[i + 1:], c
+    return None
+
+
+def strip_comments(src: str) -> str:
+    """Blank out `/- … -/` blocks and `--` line comments, preserving line count.
+
+    Without this the scanner reads *prose* as source. Two ways that bites:
+    a module docstring quoting a declaration in a ```lean fence (this file's
+    own B1 write-up quotes the very axiom it documents fixing), and ordinary
+    paragraph text that happens to wrap onto a line starting with `axiom`.
+    Both produce confident false positives.
+    """
+    out, i, depth = [], 0, 0
+    while i < len(src):
+        if src.startswith("/-", i):
+            depth += 1
+            i += 2
+            continue
+        if src.startswith("-/", i) and depth:
+            depth -= 1
+            i += 2
+            continue
+        if depth == 0 and src.startswith("--", i):
+            j = src.find("\n", i)
+            i = len(src) if j < 0 else j
+            continue
+        ch = src[i]
+        out.append(ch if depth == 0 else ("\n" if ch == "\n" else " "))
+        i += 1
+    return "".join(out)
+
+
+def split_on_top_level_colon(stmt: str):
+    """Split `(binders…) : body` on the top-level `:` (depth 0, not `:=`).
+
+    For the binders-before-the-colon declaration form. Returns None if there
+    is no top-level colon (a declaration with no explicit binders)."""
+    depth = 0
+    for i, c in enumerate(stmt):
+        if c in "([{⦃":
+            depth += 1
+        elif c in ")]}⦄":
+            depth -= 1
+        elif c == ":" and depth == 0:
+            if stmt[i + 1:i + 2] in ("=", ":") or stmt[i - 1:i] == ":":
+                continue
+            return stmt[:i], stmt[i + 1:]
     return None
 
 
@@ -109,7 +200,7 @@ def split_hypotheses(body: str):
 def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
     findings = []
     for p in sorted(root.rglob("*.lean")):
-        src = p.read_text(encoding="utf-8", errors="replace")
+        src = strip_comments(p.read_text(encoding="utf-8", errors="replace"))
         for m in re.finditer(
             r"^(axiom|theorem|lemma)\s+([A-Za-z0-9_.']+)\s*((?:[^\n]|\n[ \t]+)*)", src, re.M
         ):
@@ -123,15 +214,28 @@ def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
             if not all_kinds and not unproved:
                 continue
             stmt = rest.split(":=")[0]
+            # Two binder forms, and missing the second one hid the only UNSOUND
+            # case in the corpus. Lean lets you write either
+            #
+            #     axiom f : ∀ (n : ℕ), 3 ≤ n          -- ∀ form
+            #     axiom f (n : ℕ) : 3 ≤ n             -- binders before the colon
+            #
+            # and `b1_hyperbolic_rows` used the latter, so a `∀`-only regex
+            # skipped the file outright. Both are universally quantified and
+            # both are equally dangerous.
             mm = re.search(r"∀([^,]*),(.*)", stmt, re.S)
-            if not mm:
-                continue
-            binders, body = mm.group(1), mm.group(2)
+            if mm:
+                binders, body = mm.group(1), mm.group(2)
+            else:
+                split = split_on_top_level_colon(stmt)
+                if not split:
+                    continue
+                binders, body = split
             hyps, concl = split_hypotheses(body)
             eq = split_top_level_eq(concl)
             if not eq:
                 continue
-            lhs, rhs = eq
+            lhs, rhs = eq[0], eq[1]
             # A variable is "constrained" if it appears anywhere other than the
             # conclusion's two sides: in a `→` antecedent, OR in the *type* of
             # another binder (the `(_h : … sc.Φstar)` shape, which is how most
@@ -142,8 +246,9 @@ def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
                 m.group(1) for m in re.finditer(r"[(\[{][^:()\[\]{}]*:([^)\]}]*)[)\]}]", binders)
             )
             hyp_text = " ".join(hyps) + " " + binder_types
+            rel = eq[2] if len(eq) > 2 else "="
             for var, implicit in binder_names(binders):
-                if implicit or len(var) > 3:
+                if implicit:
                     continue
                 in_l, in_r = occurs(var, lhs), occurs(var, rhs)
                 if in_l == in_r:
@@ -151,17 +256,37 @@ def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
                 constrained = occurs(var, hyp_text)
                 if constrained and not include_constrained:
                     continue
-                findings.append(
-                    {
-                        "file": str(p),
-                        "kind": kind,
-                        "name": name,
-                        "var": var,
-                        "side": "RHS only" if in_r else "LHS only",
-                        "unproved": unproved,
-                        "constrained": constrained,
-                    }
-                )
+
+                # Signal B — UNSOUND. One whole side of an ORDER relation is a
+                # bare unconstrained variable (`3 ≤ n`), so the statement is
+                # asserted for every value of it, including ones that falsify
+                # it. This proves `False`, not merely nothing. Any identifier
+                # length; the live case was `n_hyperbolic_rows_verified`.
+                bare_side = (rhs if in_r else lhs).strip()
+                if rel in ("≤", "≥", "<", ">") and bare_side == var:
+                    findings.append({
+                        "file": str(p), "kind": kind, "name": name, "var": var,
+                        "side": f"whole {'RHS' if in_r else 'LHS'} of `{rel}`",
+                        "unproved": unproved, "constrained": constrained,
+                        "signal": "unsound-order-bound",
+                    })
+                    continue
+
+                # Signal A — COLLAPSE. A variable on one side of an `=` forces
+                # the other side to be independent of it. Restricted to short
+                # names: a long descriptive identifier on one side of an
+                # equation is usually the subject of a real definition, whereas
+                # the collapse cases are scalar constants (`z`, `q`). Order
+                # relations are handled by signal B above; `0 < f lam` is a
+                # perfectly normal statement and must not be reported here.
+                if rel != "=" or len(var) > 3:
+                    continue
+                findings.append({
+                    "file": str(p), "kind": kind, "name": name, "var": var,
+                    "side": "RHS only" if in_r else "LHS only",
+                    "unproved": unproved, "constrained": constrained,
+                    "signal": "one-sided-constant",
+                })
     return findings
 
 
@@ -193,6 +318,14 @@ axiom JonesMarkovCoefficient_sum_eq_one :
     ∀ (n : ℕ) (q : ℝ),
     (∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q) = 1
 """,
+    # The inconsistency case: a one-sided `≤` over an unconstrained numeric
+    # binder is not merely vacuous, it proves `False`.
+    "must_flag_b1_inequality": """
+axiom b1_hyperbolic_rows
+    (n_hyperbolic_rows_verified : ℕ)
+    (bloch_suslin van_der_veen : Prop) :
+    bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified
+""",
 }
 
 
@@ -205,7 +338,11 @@ def self_test() -> int:
             d = pathlib.Path(td) / label
             d.mkdir()
             (d / "T.lean").write_text(src, encoding="utf-8")
-            hits = [f for f in scan(d, False, False) if f["side"] == "RHS only" and f["unproved"]]
+            hits = [
+                f for f in scan(d, False, False)
+                if f["unproved"]
+                and (f["signal"] == "unsound-order-bound" or f["side"] == "RHS only")
+            ]
             want = label.startswith("must_flag")
             got = bool(hits)
             status = "ok" if got == want else "FAIL"
@@ -232,11 +369,21 @@ def main() -> int:
         return 2
 
     findings = scan(root, include_constrained, all_kinds)
-    hi = [f for f in findings if f["side"] == "RHS only" and f["unproved"]]
-    lo = [f for f in findings if f not in hi]
+    unsound = [f for f in findings if f["signal"] == "unsound-order-bound"]
+    hi = [f for f in findings
+          if f["signal"] == "one-sided-constant" and f["side"] == "RHS only" and f["unproved"]]
+    lo = [f for f in findings if f not in hi and f not in unsound]
 
     print(f"one-sided-binder candidates: {len(findings)}  "
-          f"({len(hi)} high-priority, {len(lo)} lower)\n")
+          f"({len(unsound)} UNSOUND, {len(hi)} high-priority, {len(lo)} lower)\n")
+
+    if unsound:
+        print("UNSOUND — a whole side of an order relation is a bare, unconstrained")
+        print("          binder. This proves False, not merely nothing. FIX IMMEDIATELY.\n")
+        for f in unsound:
+            print(f"  {f['file']}")
+            print(f"      {f['kind']} {f['name']}  --  '{f['var']}' is the {f['side']}")
+        print()
 
     if hi:
         print("HIGH — unproved, variable on RHS only, unconstrained by hypotheses")
