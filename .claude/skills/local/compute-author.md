@@ -531,8 +531,9 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 - **Combine related PRs** per AGENTS.md "minimize PR creation".
 - **Branch naming:** `claude/<theme>-<utc-ymd>`. Pattern is load-bearing
   for `coordinate.md` + upload-branch idempotency.
-- **/prepare-merge** at the end. Address Gemini + Copilot review
-  comments mechanically; don't argue cosmetic findings.
+- **/prepare-merge** at the end. Address Copilot review comments
+  mechanically (Gemini is sunset — do not wait on it); don't argue
+  cosmetic findings.
 - **Cross-check tolerance 1e-25 at 50-dps.** Never claim "passes at 1e-15".
 
 ## §7. Quick gotchas table
