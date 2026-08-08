@@ -172,10 +172,28 @@ def sigma_rel_ppb(codata: mpf, sigma: mpf) -> mpf:
 
 
 def load_witness(name: str) -> dict:
+    """Load a witness by basename.
+
+    Resolution is flat-first (``computations/<name>``), then a one-level
+    scan of the ``computations/`` subdirectories.  The subdirectory leg
+    matters: ``qbeta-ck-cache.witness.json`` lives under
+    ``computations/qbeta/``, so a flat-only lookup silently returned ``{}``
+    and sent the Q_β row down the legacy ``Q_N2`` fallback branch.  That
+    made the c_k *tier* auto-promotion mechanism dead code — a future agent
+    who proved a higher c_k Taylor-exact and set ``tier='derived'`` would
+    have seen the dashboard ignore it.  (Numerically a no-op at the time of
+    the fix: both branches yield the same Q_N2 value, because k=2 is the
+    only ``derived``-tier rung.)
+    """
     p = COMPUTE_DIR / name
-    if not p.exists():
-        return {}
-    return json.loads(p.read_text())
+    if p.exists():
+        return json.loads(p.read_text())
+    for sub in sorted(COMPUTE_DIR.iterdir()):
+        if sub.is_dir() and not sub.name.startswith((".", "_")):
+            cand = sub / name
+            if cand.exists():
+                return json.loads(cand.read_text())
+    return {}
 
 
 def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
