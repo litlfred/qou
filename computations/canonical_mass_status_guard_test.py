@@ -121,6 +121,31 @@ CASES: list[tuple[str, str, bool]] = [
 ]
 
 
+def check_line_exemptions() -> list[str]:
+    """A LINE_EXEMPTIONS entry must clear its line AND lapse when it is edited.
+
+    The whole point of hashing the content rather than the path is that an
+    exemption cannot outlive the sentence it was granted for.
+    """
+    problems: list[str] = []
+    md = (Path(__file__).resolve().parent.parent / "docs" / "precision-goals.md")
+    if not md.exists():
+        return problems
+    live = {G.hashlib.sha256(l.strip().encode()).hexdigest()[:12]
+            for l in md.read_text(encoding="utf-8").splitlines()}
+    for h, why in G.LINE_EXEMPTIONS.items():
+        if h not in live:
+            problems.append(f"exemption {h} ({why}) matches no line — the text changed; re-review it")
+    for h in list(G.LINE_EXEMPTIONS)[:1]:
+        sample = next(l for l in md.read_text(encoding="utf-8").splitlines()
+                      if G.hashlib.sha256(l.strip().encode()).hexdigest()[:12] == h)
+        if not G.is_exempt_line(sample):
+            problems.append(f"exemption {h} does not clear its own line")
+        if G.is_exempt_line(sample + " (edited)"):
+            problems.append(f"exemption {h} survived an edit to its line — not content-addressed")
+    return problems
+
+
 def main() -> int:
     failures = 0
     for name, doc, want_hit in CASES:
@@ -142,8 +167,23 @@ def main() -> int:
             failures += 1
             print(f"        got {live_hits}")
 
+    exempt_problems = check_line_exemptions()
+    print(f"  {'PASS' if not exempt_problems else 'FAIL'}  LINE_EXEMPTIONS are live and content-addressed")
+    for p in exempt_problems:
+        failures += 1
+        print(f"        {p}")
+
+    # --strict must be green: the guard is only usable as a gate if it is.
+    strict_hits = G.scan(scan_py=True)
+    ok = not strict_hits
+    print(f"  {'PASS' if ok else 'FAIL'}  --strict is green on the live tree")
+    if not ok:
+        failures += 1
+        for h in strict_hits:
+            print(f"        {h[0]}:{h[1]}")
+
     print(f"\n{'OK' if not failures else str(failures) + ' FAILURE(S)'} — "
-          f"{len(CASES) + 1} checks")
+          f"{len(CASES) + 3} checks")
     return 1 if failures else 0
 
 
