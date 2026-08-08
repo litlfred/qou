@@ -151,9 +151,19 @@ same sum read backwards — so it needs no closed form and no `q ≠ 1`.
 
 **Found on the way:** `QOU.Mass.QHookDimensionBalanced` was **not registered in
 `QOU.lean`** at all, which is why its olean was absent from the `lake-cache` and
-the first build attempt failed. Same class as the 213 library modules with no
-olean (bean `qou-k448`): with CI auto-triggers off, an unregistered module is
-built by nothing and read by nothing.
+the first build attempt failed.
+
+That is one instance of a measured class. Sibling PR #4777 (bean `qou-orph`)
+counts **761 of 1598 `QOU` modules never built by `lake build`** — a fuller
+number than my own olean-side lower bound of 213 (I counted cached oleans; they
+counted `lake build` reachability). With CI auto-triggers off, an unregistered
+module is built by nothing and read by nothing.
+
+The failure mode is worth naming because it is **transitively contagious**: a
+*registered* file that imports an orphan cannot build either, until someone
+builds the orphan by hand. An orphan is not merely unverified — it is a latent
+build failure for every future consumer. Coordinated on #4777; this PR registers
+one of them.
 
 ## Not done here
 
