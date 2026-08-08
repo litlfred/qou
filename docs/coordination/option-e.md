@@ -1161,3 +1161,50 @@ not proved (no concrete `σ` on `P` yet). Lean `QOU/QBeta/BirkhoffAmplitudeWellP
 (lean-direct exit 0, no native_decide/trivial-true/axiom). Nothing fitted, nothing wired;
 `r*`/`μ₃`/`c₃`/AME/CODATA/`q₀` never inverted; `q₀`-derivation not routed through. Audit:
 [`docs/audits/2026-08-08-birkhoff-amplitude-e-well-posedness.md`](../audits/2026-08-08-birkhoff-amplitude-e-well-posedness.md).
+
+## 2026-08-08 · A=3 amplitude ROUTE 2-c-BIRKHOFF — CONSTRUCTING the C1 cross-ratio: `E = χ(P)` (frame-free), the WALL is its VALUE; scope-(a), converges with the well-posedness sibling
+
+**Branch** `claude/deltalambda-birkhoff-amplitude-e-2026-08-08` · **bean `qou-wiub`** ·
+**Lean** `QOU/QBeta/BirkhoffAmplitudeE.lean` (sorry-free, lean-direct exit 0, axioms
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`; 0 native_decide / 0 trivial-true /
+0 axiom).
+
+Assigned the **connection-matrix CONSTRUCTION** angle on the open keystone `E` (the single
+free DOF ROUTE 2-c isolated; LOCAL Stokes walled #4811, DT-index bar-excluded #4810 — both
+hand `E` to the GLOBAL `0↔∞` Birkhoff matrix `P = (X^{(∞)})⁻¹ X^{(0)}` of C1). Built `P`'s
+structural content from the q-character infra (`QCharacter.IsQChar`) and located the precise
+next wall.
+
+**Convergence (not contradiction) with the well-posedness sibling
+`BirkhoffAmplitudeWellPosed.lean`.** Mid-task the sibling proved (sorry-free) that `E`, being
+frame-free (`A3AntiSelfAdjointLift.amplitude_injective`), **must be the gauge-invariant
+CROSS-RATIO `χ(P) = P₀₁P₁₀/(P₀₀P₁₁)`, not a single matrix entry** (a bare entry moves under
+the elliptic diagonal normalization gauge → ill-posed; 4 entries − 3 gauge dims = 1
+invariant). This file **independently confirms** it — `crossRatio_gauge_invariant` (the
+cross-ratio is gauge-invariant) + `entry_gauge_movable` (a bare entry is movable to any
+nonzero value under a χ-preserving gauge) + `distinct_entries_share_crossRatio` — and takes
+the construction angle on the corrected object.
+
+**Genuinely new construction result — `crossRatio_conn_qInvariant`.** Straight from
+`IsQChar`: the cross-ratio of the four connection entries is σ_q-invariant (elliptic)
+**because the exponent multipliers cancel exactly** — each entry `P_{ij}` has multiplier
+`c_{0,j}/c_{∞,i}`, and `(c₀₁/c∞₀)(c₀₀/c∞₁) = (c₀₀/c∞₀)(c₀₁/c∞₁)` (`connMultiplier_balance`).
+This *constructs* the frame-free object's ellipticity from the q-character algebra — the
+abstract reason `χ(P)` is theta-valued and `C1ConnectionPoles.connRatio_elliptic` holds —
+and singles out `χ(P)` (not any entry) as the well-posed `E`-carrier. Bridge to A3
+(`lift_injective_in_crossRatio` + `lift_reachable_by_crossRatio`): since `E = χ(P)` is
+frame-free and `E ↦ factor` is a bijection, **deriving `χ(P)` DOES pin the A=3 lift** — no
+gauge ambiguity remains; only the cross-ratio's *value* is open.
+
+**Net verdict — WALL (scope-(a)), sharpened + well-posed.** The wall is no longer "which
+functional of `P` is `E`" (answered: the cross-ratio) but the **VALUE of `χ(P)`**: its
+closed form is the open bean `qou-wgnx` (`χ = closed form` proved-elliptic but unproved),
+and its `∞`-input is C1's slope-`½` wild normalization (open bean `qou-vkg5`; the 0-side
+Fuchsian exponent IS determined, `C1FuchsianExponents`). Open successor recorded as §3b
+dependent class `BirkhoffCrossRatioSuppliesAmplitude` (content-bearing: 0-exponent
+determined + ∞-exponent open + `E = χ(P)` + bar-odd consistency + lift; **NO instance**),
+correcting `StokesAmplitudeE.GlobalBirkhoffSuppliesAmplitude` (whose `multislope` condition
+is C1-inapplicable — C1's ∞ is single-slope, `rszIsoformalDim = 0`) and aligned with the
+sibling's `AmplitudeIsGaugeInvariantCrossRatio`. Nothing fitted, nothing wired;
+`r*`/`μ₃`/`c₃`/AME/`q₀` never inverted; `q₀`-derivation not routed through. Audit
+[`docs/audits/2026-08-08-birkhoff-amplitude-e-crossratio-construction.md`](../audits/2026-08-08-birkhoff-amplitude-e-crossratio-construction.md).
