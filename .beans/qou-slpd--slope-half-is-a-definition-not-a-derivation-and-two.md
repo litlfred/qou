@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T02:00:00Z
+updated_at: 2026-08-08T02:40:00Z
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.
@@ -64,13 +64,15 @@ In increasing cost:
 
 1. **Owner decision**: which convention is the paper's? One line, unblocks the
    rest.
-2. **Derive the ratio degree.** `1 + (q−1)qᵐ + (q−1)q^{2m}` as a `Polynomial ℤ`
-   has `natDegree = 2m+1` (leading term `(q−1)q^{2m}`; the `m = 0` case has
-   leading coefficient `2` rather than `1`, so it needs its own branch). Then
-   define the coefficients by the polynomial recursion and get
-   `natDegree (cₙ) = n²` from `natDegree_mul` instead of from an asserted
-   ratio degree. Small — a few dozen lines — and it makes `c1FormalDeg_eq_sq`
-   load-bearing rather than decorative.
+2. ~~**Derive the ratio degree.**~~ ✅ **DONE 2026-08-08.**
+   `natDegree_c1MultPoly` — the multiplier `1 + (q−1)qᵐ + (q−1)q^{2m}` read as a
+   `Polynomial ℤ` in `q` has degree exactly `2m+1`; `natDegree_c1CoeffPoly`
+   chains it through `natDegree_mul` to `natDegree cₙ = n²`. So `n²` now comes
+   from the recursion rather than from a docstring. Both sorry-free,
+   `[propext, Classical.choice, Quot.sound]`, in
+   `QOU/Mass/C1FormalSolutionGrowth.lean`. The `m = 0` branch is the only
+   wrinkle: there `(q−1)qᵐ` and `(q−1)q^{2m}` coincide, so the leading
+   coefficient is `2` rather than `1` (degree unchanged).
 3. **`IsQGevreyOrder` for the actual sequence.** Currently the order theorems
    are about the explicit functions `q^{m²/4}` and `q^{n²}`, not about C1's
    `cₙ`. With `(q−1)q^{2m} ≤ M_m ≤ (2q−1)q^{2m}` and a squeeze on
@@ -80,8 +82,9 @@ In increasing cost:
 4. **Derive the recursion itself** from `L1 = (q²x−1)σ² − (q−1)σ − (q−1)`.
    Currently from a witness. This is the real bottom of the stack.
 
-(3) is the one that changes the epistemic status of the consumed conclusion.
-(2) is cheap and worth doing regardless.
+(3) is the one that changes the epistemic status of the consumed conclusion —
+it is now the **cheapest remaining** step, since (2) is done. (4) is the real
+bottom of the stack and is a much bigger job.
 
 ## Why this matters more than `qou-c1ln` rows 4–6
 
