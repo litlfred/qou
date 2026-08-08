@@ -1,11 +1,11 @@
 ---
 # 4f2d
 title: 'λ_A excision: per-knot Hecke density across QOU'
-status: in-progress
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-06-24T01:21:09Z
-updated_at: 2026-06-24T01:21:59Z
+updated_at: 2026-08-08T22:13:01Z
 ---
 
 
@@ -45,3 +45,10 @@ Fourth instance of the stale-summary pattern, and one the proposed `status:`
 check would miss: this bean's own status is `in-progress`; it is the **parent**
 that is stale relative to its children. Suggested extra rule — *a milestone with
 no open children and no body is a candidate stale parent.*
+
+## 2026-08-08 — closed by the owner
+
+Owner authorised the close against the #4822 evidence above. Status
+`in-progress` → `completed`. The axis is done: the compute carries the
+2026-06-24 canonical-mass ruling, the last stale prose is fixed, and the
+remaining untriaged guard hits are tracked separately as `qou-efcv`.
