@@ -7,6 +7,50 @@ created_at: 2026-08-08T16:59:17Z
 updated_at: 2026-08-08T16:59:17Z
 ---
 
+## Progress log (2026-08-08)
+
+The wave is **three deep, not two**. `markov_peel_atomic_witness.py` reads
+`atomic-tr-m-mpfr-50dps.witness.json` (the Hoefsmit+Wenzl bridge, produced by
+`atomic_tr_m_mpfr_50dps.py`), which is muon-pinned too. Correct order:
+
+    regenerate_y_lambda_mpfr.py  ->  atomic_tr_m_mpfr_50dps.py
+                                 ->  markov/markov_peel_atomic_witness.py
+
+Three driver defects had to be fixed first (all landed in 9e03e5ee):
+
+1. **12 witnesses were invisible.** They are named `<stem>-witness.json` with a
+   HYPHEN, and `dirty_witnesses()` matched only `<stem>.witness.json`. The whole
+   y-lambda family is in that set — the base of this very chain. Measured: y_λ
+   re-anchored muon→proton and the driver logged `touched: []`, recorded
+   NOCHANGE, and left it dirty and UNJUDGED.
+2. **Dependency ordering existed but was inert**, and its tests passed anyway
+   (fixtures wrote via `write_text`; the corpus writes via `WitnessBuilder`).
+3. `dirty_witnesses()` read a failed git call as a clean tree. Defensive fix
+   only — not the cause of (1).
+
+### Expect the peel to be rejected again, and do not loosen the bound for it
+
+Its `abs_diff_vs_bridge` is a **residual** — true value near zero — and the
+classifier's `ANCHOR_COLLATERAL_MAX` is *relative*. A perfect re-anchor taking
+that field from ~1e-7 to ~1e-19 is a 100% relative move and reads as VALUES.
+The first run already rejected it at 6.73e-4.
+
+That is the classifier being right for the wrong reason, and the fix is NOT to
+widen the tolerance: a bound relaxed to admit one known-good diff stops
+constraining every unknown one. Review the peel diff by hand and, if the
+residual collapsed as predicted, commit it deliberately by explicit path with
+that reasoning recorded.
+
+### Ordering caveat for the 32 downstream consumers
+
+`dependency_order` only sees witnesses named as literal filenames. Producers
+reading y_λ through the `_load_y_lambda` helper have no filename in their
+source and so get no edge — `chi_at_q0_via_hoefsmit_mpfr.py` sorts ahead of
+y_λ for exactly that reason. Verify the order by reading the code before
+trusting it on the full set, or teach the analysis the known accessors.
+
+---
+
 Not claimed. Left open deliberately: this is a migration wave, not a
 follow-up, and it should be planned rather than picked up mid-session.
 
