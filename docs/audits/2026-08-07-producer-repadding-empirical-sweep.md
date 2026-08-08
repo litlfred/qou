@@ -1753,3 +1753,55 @@ adoption tracking the 44% producer-side figure. The three precision gates
 (`mpf_context_dps`, `module_const_precision`, `witness_float64_padding`) are
 already `--strict` and already green; the staleness validator is the only step
 still carrying `|| true`.
+
+## P40 — I committed drift I had built a harness to prevent
+
+Three witnesses reached a commit here with moved values and no review:
+`braid-encoding-audit` (87 fields), `c3-hopf-habiro-analysis` (9),
+`binding-energy-categorical-deuteron` (1). They came from **manual sample
+runs** of the ported producers, swept up by `git add -A` — the regeneration
+harness, which exists precisely to revert anything that is not a clean
+declaration landing, was never involved. A fourth, the 4He chi cache, was
+committed **13/77 complete** because a background rebuild was mid-flight when
+the same `git add -A` ran. All four are reverted to `origin/main`.
+
+The lesson is not "be careful with `git add -A`" but that the discipline has to
+be *in the tooling path*: I ran producers outside the harness and then staged
+everything, so the harness's guarantees did not apply to the thing being
+committed.
+
+### What the reverted diff shows, though, is the migration answering itself
+
+`braid-encoding-audit`'s 87 moved fields are all one substitution:
+
+    old  -0.10453016099779683   = -h/2 at the MUON anchor
+    new  -0.10453014939781968   = -h/2 at the PROTON anchor
+
+The producer reads `Q` from `q_parameter`, which is proton-anchored, so
+**re-running it re-anchors it automatically**. That generalises: the 650
+muon-anchored witnesses are not a separate migration project — they re-anchor
+as a side effect of being regenerated, and they stay muon-anchored precisely
+because nothing has re-run them.
+
+**This breaks my regeneration harness's classification.** It keeps `DECLARED`
+(hashes appeared, nothing else moved) and reverts `VALUES`. But a producer that
+both declares an upstream *and* re-anchors will be classified `VALUES` and
+reverted — the harness would discard a correct migration as drift. It needs a
+third verdict that recognises a muon→proton anchor substitution as intended,
+rather than lumping it with unexplained movement.
+
+### The 4He native path is bypassed for an unrelated reason
+
+Forcing the rebuild reveals `chi_at_q0_via_hoefsmit_mpfr` falling back off
+`pyhecke_native` to the pure-mpmath loop, which is far too slow for n=12:
+
+    native chi path bypassed (ValueError: unrecognised d=-0.10445824776972628903…
+    expected 0, -h, or -h/2)
+
+That `d` matches `-h/2` under **neither** anchor — proton gives
+`-0.1045301493978196`, muon `-0.1045301609977968`, and the value seen is
+`-0.1044582477697262`, differing at the 4th significant digit. So this is not
+an anchor artifact and not caused by the re-anchoring; it is a pre-existing
+incompatibility between the word encoding and the native path's expectations,
+surfacing only because the resume logic normally skips the computation
+entirely. Re-anchoring 4He is blocked behind it. Not diagnosed here.
