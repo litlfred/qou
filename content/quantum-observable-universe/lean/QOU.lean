@@ -512,6 +512,10 @@ import QOU.QBeta.StokesAmplitudeE
 -- P₀₁P₁₀/(P₀₀P₁₁) is the UNIQUE gauge-invariant (frame-free target); (b) a single entry is
 -- gauge-dependent (residual elliptic-unit freedom), so E = the cross-ratio, not an entry.
 import QOU.QBeta.BirkhoffAmplitudeWellPosed
+-- CONSTRUCTION: the A=3 amplitude E is the frame-free Birkhoff CROSS-RATIO χ(P)
+-- (not a bare entry — gauge-movable, ill-posed); cross-ratio elliptic because the exponent
+-- multipliers cancel; the WALL is χ(P)'s VALUE (0-exp determined, ∞-exp/closed-form open).
+import QOU.QBeta.BirkhoffAmplitudeE
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
