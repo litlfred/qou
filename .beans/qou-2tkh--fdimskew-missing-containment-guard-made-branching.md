@@ -110,3 +110,35 @@ What remains, and why:
 | `BraidsAndKnots/YoungDiagramKernel.lean` | 1 | OPEN CONJECTURE (Biane–Śniady / Kerov CLT) |
 
 All ten now stand in front of statements checked at a small instance.
+
+## Sweep extended to the integrated tree (2026-08-08, after merging `main`)
+
+Branch integrated `main` (274 commits) and `lake build` is **green, 0 errors** —
+worth noting against sibling bean `qou-lkrd` ("default target red on main"),
+which is either already fixed or fixed by the integration.
+
+Census on the integrated tree: **6** in-closure, **18** tree-wide. Seven of those
+arrived with `main` and had never had the §8 small-instance check:
+
+| file | count | verdict |
+|---|---|---|
+| `TopologicalMass/cat_transient_localises_blowup.lean` | 1 | `opaque` primitives |
+| `LiftingDescent/tm_dilogarithm_evaluation.lean` | 1 | `opaque` primitives |
+| `LiftingDescent/tm_transient_localisation.lean` | 2 | `opaque` primitives |
+| `LiftingDescent/tm_descended_is_holonomy.lean` | 3 | `opaque` primitives |
+
+**All seven are in the same class as `cat_descended_is_base_mass`**: every
+constant they quantify over is `opaque`, so there is no definitional content for
+a small instance to bite on. Neither provable nor refutable as stated — nothing
+to fix, and nothing false. Each file already documents that disposition in its
+header, and `cat_transient_localises_blowup` in particular is well-structured:
+the opaque input is isolated as `transient_decomposition` and the headline
+theorem *derives* from it via `map_sum`, rather than assuming its own conclusion.
+
+One thing checked rather than assumed: `trFrob` there is an `ℝ →+ ℝ`, so it
+carries real content (additivity) — worth confirming the `sorry` was not sitting
+on something additivity alone discharges. It is not; the sorried statement is
+about `alpha`, `tauHat` and `localComponent`, all opaque.
+
+**Running total: 19 cited sorries examined, 3 false (all fixed), 0 false among
+the 7 new ones.**
