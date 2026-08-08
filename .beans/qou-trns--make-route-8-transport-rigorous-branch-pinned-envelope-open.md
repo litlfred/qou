@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T08:20:00Z
+updated_at: 2026-08-08T09:15:00Z
 parent: 0yqu
 ---
 
@@ -599,5 +599,77 @@ lists ordered by `(re, im)` puts a conjugate pair in different orders when the
 real parts differ in the last bits. Replaced with a nearest-match multiset
 distance; worst is now `< 1e-30`. A root-list comparison must never be done by
 sorting on floating-point keys.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later still) — the DEFORMED saddle condition is the curve, and its branch data
+
+`QOU/QBeta/FiveTwoDeformedSaddle.lean`, sorry-free, `lake` green (1893 jobs).
+Route 22, 7 gates, exit 0. The purely algebraic theorems need only
+`[propext, Quot.sound]` — not even `Classical.choice`.
+
+`FiveTwoSaddleSumRule.lean` had the **base point** versions —
+`cubic_iff_sq_eq_cube` and `branch_data_of_cubic`, the latter described there as
+"the sole source of the `π²` in the sum rule". The **deformed** versions, the
+ones the transport travels along, were missing.
+
+### The saddle condition is free
+
+`y·∂V/∂y = 2log(−y) − log(1−y) − log(1−xy) − log(1−y/x)`. Exponentiating turns
+`∂V/∂y = 0` into `y² = (1−y)(1−xy)(1−y/x)`, and cleared of the `1/x`:
+
+    x·y² = (1−y)(1−x·y)(x−y)   ⟺   curve(x,y) = 0
+
+**identically**, over any commutative ring (`deformed_saddle_iff_curve`, checked
+at generic off-curve points in G2 so it is the ring identity and not an
+equivalence-at-roots). At `x = 1` it collapses to `y² = (1−y)³`.
+
+This matters for scoping the envelope: the saddle hypothesis is not a thing to
+be established, it **is** the curve the roots were defined by. What the envelope
+still needs is `dyⱼ/dx` and `d/dz Li₂` along a path.
+
+### The third Vieta product
+
+`prod_one_sub`: `∏ⱼ(1 − yⱼ) = 1`, joining `prod_one_sub_x_mul` (`= x`) and
+`prod_x_sub` (`= x²`) from #4658. Together they give
+`exp(Σⱼ branchTerm) = 1` **from Vieta alone** — the saddle condition is not
+needed for the sum, only for the individual terms. That is exactly the `hexp`
+hypothesis of `BranchIntegerPinning`, so the same lemma pins this sum too.
+
+### Two things measured rather than assumed
+
+**The corpus's `k = (+1,−1,0)` is CORRECT** (G5) — checked, not taken on trust.
+
+**But the convention matters and was unstated.** The corpus uses `log(y)`;
+`branchTerm` must use `log(−y)`, forced by the `log(−y)²` term in `V`. The two
+differ by `2(log(−y) − log y) = ±2πi` per root. Measured: corpus `(−1,0,+1)`,
+sum `0`; `branchTerm` `(0,1,0)`, sum **1**. Same mathematics, different integers.
+
+**And the principal-branch sum jumps at the endpoint** (G7): it is constant `= 1`
+on `[0,π)` and drops to `0` at `φ = π`. A **fourth** independent way the endpoint
+sits on the cut — at `x = −1` the factors `−y` (at the positive root) and `1+y`
+(at `y = −w₁`, twice over) are all real negative. Note `hexp` is blind to this,
+because `exp` sees no branch; `hcont` is precisely what it violates.
+
+### What this does NOT close
+
+The envelope derivative. `Li₂` outside the unit disc is needed and the corpus's
+`cLiTwo` is analytic only on `‖z‖ < 1` (`cLiTwo_analyticOnNhd`), while the arc's
+roots reach `|y| = w₁ = 2.247`. That is `qou-clx8`, untouched.
+
+### ⚠ A float64 defect in my own probe, and the gate that now exists
+
+Route 22's first run failed G1/G4 at exactly `4.3e-16` — float64 epsilon. Cause:
+an off-arc test point written `1 + 0.4j`, a Python complex literal, instead of
+`mpf(1) + 1j*mpf("0.4")`. The same probe also used `round(float(...))` three
+times to pull integers out of mpfs (`int(nint(...))` is the correct form).
+
+There were already **four** beans about exactly this failure (`j0th`,
+`qou-gqt5`, `qou-ny4j`, `qou-t0rf`) and no gate. There is one now:
+`scripts/probe-float64-guard.py` + `.github/workflows/probe-float64-gate.yml`,
+bean **`qou-f64g`**, with the backlog measured (17546 hits / 2184 files) and the
+12 sharpest named.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
