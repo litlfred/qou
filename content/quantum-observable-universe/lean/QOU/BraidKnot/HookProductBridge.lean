@@ -1,6 +1,7 @@
 import QOU.BraidKnot.StandardYoungTableau
 import QOU.BraidKnot.IdentityIContentDecomposition
 import QOU.Mathlib.HookLengthFormula
+import QOU.BraidKnot.SytCountBridge
 
 /-!
 # Reconciling the two hook-length products
@@ -75,5 +76,17 @@ theorem hookProduct_eq_hookLengthProduct (μ : YoungDiagram) :
   obtain ⟨i, j⟩ := c
   have hmem : (i, j) ∈ μ := (YoungDiagram.mem_cells _).mp hc
   rw [hookLength_eq_rowLen_add_colLen μ hmem, YoungDiagram.hookLength_eq_of_mem μ hmem]
+
+/-- **Frame–Robinson–Thrall hook-length formula**, in the `QOU.BraidKnot`
+encoding: `#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!`.
+
+Not a fresh proof of FRT. `QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct`
+is already sorry-free; this transports it across the two bridges of `sp09` —
+`numSYT_eq_numStandardYoungTableaux` for the count and
+`hookProduct_eq_hookLengthProduct` for the hook product. -/
+theorem numSYT_mul_hookProduct (μ : YoungDiagram) :
+    numSYT μ * hookProduct μ = (μ.card).factorial := by
+  rw [numSYT_eq_numStandardYoungTableaux, hookProduct_eq_hookLengthProduct]
+  exact QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct μ
 
 end QOU.BraidKnot

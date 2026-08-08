@@ -1,5 +1,4 @@
-import QOU.BraidKnot.StandardYoungTableau
-import QOU.Mathlib.StandardYoungTableau
+import QOU.BraidKnot.SYTEncodingBridge
 
 /-!
 # The two standard-Young-tableau encodings agree
@@ -21,6 +20,8 @@ The two directions are not symmetric:
 -/
 
 namespace QOU.BraidKnot
+
+open QOU.BraidKnot.SYTEncodingBridge
 
 variable {μ : YoungDiagram}
 
@@ -87,5 +88,51 @@ theorem toSsyt_bijOn (T : StandardYoungTableau μ) :
 def toMathlibSyt (T : StandardYoungTableau μ) : QOU.Mathlib.StandardYoungTableau μ where
   toSsyt := toSsyt T
   bijOn := toSsyt_bijOn T
+
+/-! ## The equivalence, and bridge (2) -/
+
+/-- Extensionality for the 1-based encoding: `bijOn` is a `Prop`, so two such
+tableaux agree as soon as their entries do. `QOU.Mathlib.StandardYoungTableau`
+carries no `@[ext]`, so it is supplied here. -/
+theorem mathlibSyt_ext {S S' : QOU.Mathlib.StandardYoungTableau μ}
+    (h : ∀ i j, S.toSsyt.entry i j = S'.toSsyt.entry i j) : S = S' := by
+  obtain ⟨s, hs⟩ := S
+  obtain ⟨s', hs'⟩ := S'
+  have hss : s = s' := SemistandardYoungTableau.ext h
+  subst hss
+  rfl
+
+
+/-- **The two SYT encodings are equivalent.** Shifting by one is a bijection:
+the 0-based entries are `{0,…,n−1}` and the 1-based ones `{1,…,n}`. -/
+noncomputable def sytEquiv (μ : YoungDiagram) :
+    StandardYoungTableau μ ≃ QOU.Mathlib.StandardYoungTableau μ where
+  toFun := toMathlibSyt
+  invFun := toBraidKnot
+  left_inv := by
+    intro T
+    ext i j
+    by_cases h : (i, j) ∈ μ
+    · simp only [toBraidKnot, toMathlibSyt, QOU.Mathlib.StandardYoungTableau.entry,
+        toSsyt, shiftUp_of_mem T h, Nat.add_sub_cancel]
+    · simp only [toBraidKnot, toMathlibSyt, QOU.Mathlib.StandardYoungTableau.entry,
+        toSsyt, shiftUp_of_notMem T h, T.zero_off i j h]
+  right_inv := by
+    intro S
+    refine mathlibSyt_ext (fun i j => ?_)
+    by_cases h : (i, j) ∈ μ
+    · have h1 := one_le_entry S h
+      have hent : S.entry i j = S.toSsyt.entry i j := rfl
+      simp only [toMathlibSyt, toSsyt, shiftUp_of_mem _ h, toBraidKnot,
+        QOU.Mathlib.StandardYoungTableau.entry]
+      omega
+    · simp only [toMathlibSyt, toSsyt, shiftUp, h, if_false]
+      exact (S.toSsyt.zeros' h).symm
+
+/-- **Bridge (2) of sp09.** The two SYT counts agree. -/
+theorem numSYT_eq_numStandardYoungTableaux (μ : YoungDiagram) :
+    numSYT μ = QOU.Mathlib.numStandardYoungTableaux μ := by
+  unfold numSYT QOU.Mathlib.numStandardYoungTableaux
+  exact Nat.card_congr (sytEquiv μ)
 
 end QOU.BraidKnot

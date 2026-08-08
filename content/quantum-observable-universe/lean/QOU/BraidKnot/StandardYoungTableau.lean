@@ -291,14 +291,16 @@ theorem length_filter_rowLens (μ : YoungDiagram) (j : ℕ) :
              (YoungDiagram.mem_iff_lt_colLen.mpr h)⟩]
   rw [countP_range_lt, Nat.min_eq_left hle]
 
-/-- **Frame–Robinson–Thrall hook-length formula** (the brick-1 target):
-`#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!`, i.e. `f^μ = |μ|! / ∏ h(c)`. Stated here as the
-multiplicative (division-free) identity so it lives over `ℕ`; the proof is the
-genuine formalisation target of this brick and is deferred. -/
-theorem numSYT_mul_hookProduct (μ : YoungDiagram) :
-    numSYT μ * hookProduct μ = (μ.card).factorial := by
-  -- Ref: [sagan2001] §3.10 (hook-length formula); brick-1 target, see
-  -- docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md (P2).
-  sorry
+/-! ### The hook-length formula lives downstream
+
+**Frame–Robinson–Thrall** — `#SYT(μ) · ∏_{c ∈ μ} h(c) = |μ|!` — is proved in
+`QOU/BraidKnot/HookProductBridge.lean` as `QOU.BraidKnot.numSYT_mul_hookProduct`,
+not here.
+
+The proof transports the already-sorry-free
+`QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct` across the two
+encodings. `QOU.Mathlib.HookLengthFormula`'s cone transitively imports THIS
+file, so the theorem cannot be stated here without an import cycle; it lives
+downstream of both instead. -/
 
 end QOU.BraidKnot
