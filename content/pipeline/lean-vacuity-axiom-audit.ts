@@ -799,13 +799,31 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
 // missed by a `;`-only pattern.
 const RFL_BODY =
   /^(?:rfl|by\s+rfl|by\s+(?:unfold|delta|show|simp\s+only|with_unfolding_all)\b[^;\n]*[;\n]\s*rfl)\s*$/;
+/**
+ * The same blindness, wearing an existential.
+ *
+ * `∃ a, a = e` proved `⟨_, rfl⟩` consults no hypothesis either — the witness
+ * is handed over and `rfl` closes the equation. `RFL_BODY` never matched it
+ * because the body is an anonymous constructor rather than the token `rfl`,
+ * so a statement could bind any number of decorative hypotheses and stay
+ * invisible to this detector. Ten such declarations sat in
+ * `docs/audits/2026-08-07-lean-vacuous-existential-audit.json` — found by the
+ * standalone `scripts/lean-vacuous-existential-audit.py`, flagged by nothing
+ * that gates.
+ *
+ * Whitespace is collapsed before matching, so the `by`-block form
+ * (`by\n  exact ⟨.borromean, rfl⟩`) is covered by the same pattern.
+ */
+const ANON_RFL_BODY = /^(?:by\s+exact\s+)?⟨[^⟨⟩]*,\s*rfl⟩$/;
 /** A binder type that looks like a proposition rather than data. */
 const PROP_SHAPED = /[=≤<≥>≠∈∣]|↔|→|∧|∨|¬|Odd\b|Even\b|Prime\b/;
 
 function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body.trim();
-  if (!RFL_BODY.test(body)) return undefined;
+  const collapsed = body.replace(/\s+/g, " ").trim();
+  const anon = ANON_RFL_BODY.test(collapsed);
+  if (!RFL_BODY.test(body) && !anon) return undefined;
   const concl = conclusionTypeAscription(d.sig);
   if (!concl) return undefined;
 
@@ -820,15 +838,24 @@ function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
       if (!/^_?[a-zA-Z_][\w']*$/.test(n)) continue;
       // Used by the statement itself? then it is not decoration.
       if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(concl)) continue;
+      // Used by the PROOF? A bare `rfl` mentions nothing, but an anonymous
+      // constructor supplies a witness that can be built from a hypothesis
+      // (`⟨h.choose, rfl⟩`), and then the binder is load-bearing. Checking
+      // the body is a no-op for the `rfl` shapes and required for this one.
+      if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(body)) continue;
       unused.push(n);
     }
   }
   if (unused.length === 0) return undefined;
   // `_`-prefixed names are the author explicitly recording non-use — the
   // strongest form of the signal, and worth distinguishing in the witness.
-  const pat = unused.every((n) => n.startsWith("_"))
-    ? "rfl-with-underscored-hypothesis"
-    : "rfl-with-unused-hypothesis";
+  const pat = anon
+    ? unused.every((n) => n.startsWith("_"))
+      ? "rfl-witness-with-underscored-hypothesis"
+      : "rfl-witness-with-unused-hypothesis"
+    : unused.every((n) => n.startsWith("_"))
+      ? "rfl-with-underscored-hypothesis"
+      : "rfl-with-unused-hypothesis";
   const h = mk(d, "proof-no-unused-hypothesis-rfl", pat, false);
   h.detail =
     `proof is \`${body}\`, which uses no hypothesis, yet the statement binds ` +
