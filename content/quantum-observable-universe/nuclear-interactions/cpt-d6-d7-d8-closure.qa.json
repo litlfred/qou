@@ -13,6 +13,18 @@
     "lean": "a92ff39633a2"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The tracker ids are out of the published title, now \"CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace\", and the class hypothesis quoted in the body is `[CPTClosure]`; the three components are named as $C$, $P$, $T$ in the statement.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

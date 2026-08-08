@@ -11,6 +11,18 @@
     "ts": "705252da6082"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "All three flagged prose items are gone: \"This block audits the tritium $Q$-value derivation\" now reads \"We re-derive and cross-check the tritium $Q$-value\", and the \"## Audit\" heading is now \"## Findings\". The surviving .ts title \"Audit of tritium $Q$-value derivation\" uses \"audit\" in its mathematical sense -- a step-by-step verification of a derivation against experiment -- which the body then carries out.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

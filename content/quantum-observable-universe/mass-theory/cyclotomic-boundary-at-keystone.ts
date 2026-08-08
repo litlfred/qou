@@ -41,7 +41,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:cyclotomic-boundary-at-keystone",
   title:
-    "The Habiro-tail cyclotomic boundary sits at the keystone order: $D(n)$ is cyclotomic $\\iff n \\leq 5$",
+    "The Habiro-tail cyclotomic boundary sits at the quintic order: $D(n)$ is cyclotomic $\\iff n \\leq 5$",
   uses: [
     "conj:binding-manybody-eq-jet-filtration",
     "prop:sw-period-residue-sum",

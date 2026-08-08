@@ -3,6 +3,18 @@
   "label": "def:schwinger-measure-unit",
   "kind": "definition",
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed, all three leaks. \"the owner premises P1 ... and P2\" -> \"the framework premises P1 ... and P2\", matching the sibling conjecture. \"Empirical support: the exploration probe's exact checks\" -> \"Empirical support is exact rather than numerical\", keeping the moment identity at orders 1 through 6 and the pin-invariance falsifier. \"so content blocks use $\\varsigma$\" -> \"so this paper uses $\\varsigma$\". The concession that canonicity is not proved is untouched.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "clarity-defterm-bold": [
       {
         "field_hash": {

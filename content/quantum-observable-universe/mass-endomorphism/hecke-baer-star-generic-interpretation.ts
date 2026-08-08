@@ -4,7 +4,7 @@ export default remark({
   interprets: "prop:hecke-baer-star-generic",
   label: "rem:hecke-baer-star-generic-interpretation",
   title:
-    "Co-location with the volume conjecture and significance for B1 period witnesses",
+    "Co-location with the volume conjecture and significance for the depth correspondence's period witnesses",
   tags: [
     "baer-star",
     "hecke-algebra",

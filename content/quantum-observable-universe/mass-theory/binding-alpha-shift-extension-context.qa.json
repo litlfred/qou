@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:binding-alpha-shift-extension-context",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension-context.ts",
+    "md": "content/quantum-observable-universe/mass-theory/binding-alpha-shift-extension-context.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"rather than four separate sibling blocks — addresses the inefficiency ... a single block now carries the full candidate table\" -> \"All four nuclei are carried by this single instance rather than by four per-nucleus instances, so the identification pattern is stated once and the full candidate table is discharged in one place\"; \"the meson force-carrier derivation queued at `prop:meson-color-tube-uniqueness`\" -> \"the still-open meson force-carrier derivation at ...\"; \"The merged α_shift universal chain\" -> \"The α_shift universal chain\". The candidate table, its \"open\" statuses and the ρ_0 calibration discussion are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

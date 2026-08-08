@@ -355,6 +355,105 @@ theorem routeB_gaussian_order_half (q : ℝ) (hq : 1 < q) :
   rw [hfun]
   exact order_of_rpow_gaussian q (1 / 2) hq
 
+/-! ### q-Gevrey LEVEL — the reciprocal notion, and the one RSZ ties to slopes
+
+Ramis–Sauloy–Zhang, Astérisque 355 §1.3.2, verbatim:
+
+> we introduce the space of formal series of q-Gevrey **order** `s`:
+> `C[[z]]_{q;s} := { Σ aₙzⁿ | ∃A > 0 : aₙ = O(Aⁿ q^{s n²/2}) }`.
+> We also say that `f ∈ C[[z]]_{q;s}` is of q-Gevrey **level** `1/s`.
+
+So `IsQGevreyOrder` above **is** RSZ's *order*, on the nose. The *level* is its
+reciprocal, and the level is what RSZ attaches to the Newton polygon: §2.3.2
+calls the two-slope case the *"one level case, because the q-Gevrey level
+`µ₂ − µ₁` is the fundamental parameter"*, and Example 3.3.3 writes
+`d := µ₂ − µ₁` for *"the level"*, with the q-Borel kernel `tₙ` of *"order of
+growth `q^{n²/2d}`"* — which is exactly order `1/d`.
+
+Both words are therefore in play, they are reciprocal, and the corpus has used
+"q-Gevrey ½" for both. This section makes the level a definition so the two
+numbers stop travelling as prose. -/
+
+/-- **q-Gevrey level** (RSZ §1.3.2): level `d` means order `1/d`. -/
+def IsQGevreyLevel (q : ℝ) (d : ℝ) (a : ℕ → K) : Prop := IsQGevreyOrder q d⁻¹ a
+
+/-- Level and order are reciprocal, by definition. -/
+theorem isQGevreyLevel_iff_order {q d : ℝ} {a : ℕ → K} :
+    IsQGevreyLevel q d a ↔ IsQGevreyOrder q d⁻¹ a := Iff.rfl
+
+/-- A sequence of order `s ≠ 0` has level `1/s`. -/
+theorem isQGevreyLevel_of_order {q s : ℝ} {a : ℕ → K} (hs : s ≠ 0)
+    (h : IsQGevreyOrder q s a) : IsQGevreyLevel q s⁻¹ a := by
+  rw [IsQGevreyLevel, inv_inv]
+  exact h
+
+/-- **Level is a well-defined invariant** for nonzero levels, from `order_unique`. -/
+theorem level_unique {q d e : ℝ} {a : ℕ → K} (hd : d ≠ 0) (he : e ≠ 0)
+    (hdl : IsQGevreyLevel q d a) (hel : IsQGevreyLevel q e a) : d = e := by
+  have := order_unique hdl hel
+  field_simp at this
+  linarith
+
+/-- **`q^{n²}` has q-Gevrey order 2** (and hence level `½`).
+
+Stated because two files in this corpus attach the number `½` to `q^{m²/4}` and
+to `q^{n²}`, which are reciprocal:
+
+* `routeB_gaussian_order_half` (above) — growth `q^{m²/4}`, **order** `½`.
+* `QOU.Mass.C1FormalSolutionGrowth` — growth `q^{n²}` for the C1 `∞`-side
+  formal solution, docstring "the q-Gevrey-½ divergence" — that `½` is the
+  **level** (RSZ §1.3.2), i.e. order `2`.
+
+`IsQGevreyOrder q s a` is `‖aₙ‖ ∼ Cⁿ q^{s n²/2}`, which is RSZ's *order*
+verbatim, so `q^{n²}` forces `s = 2`. Neither file wrote a wrong number; they
+wrote **different quantities** under one word. See
+`routeB_and_c1Inf_are_reciprocal` for what that leaves open, and the
+level section above for the RSZ citations. -/
+theorem qSquare_gaussian_order_two (q : ℝ) (hq : 1 < q) :
+    IsQGevreyOrder q 2 (fun n : ℕ => q ^ ((n : ℝ) ^ 2)) := by
+  have hfun : (fun n : ℕ => q ^ ((n : ℝ) ^ 2))
+      = (fun n : ℕ => q ^ ((2 : ℝ) * (n : ℝ) ^ 2 / 2)) := by
+    funext n; congr 1; ring
+  rw [hfun]
+  exact order_of_rpow_gaussian q 2 hq
+
+/-- **`q^{n²}` has q-Gevrey LEVEL ½.** Same fact as
+`qSquare_gaussian_order_two`, said in RSZ's other word. So
+`QOU.Mass.C1FormalSolutionGrowth`'s "q-Gevrey-½ divergence" **is correct RSZ
+terminology** — it is the *level*. It is simply not the quantity
+`IsQGevreyOrder` measures. -/
+theorem qSquare_gaussian_level_half (q : ℝ) (hq : 1 < q) :
+    IsQGevreyLevel q (1 / 2) (fun n : ℕ => q ^ ((n : ℝ) ^ 2)) := by
+  rw [IsQGevreyLevel, show ((1:ℝ) / 2)⁻¹ = 2 by norm_num]
+  exact qSquare_gaussian_order_two q hq
+
+/-- **`q^{m²/4}` has q-Gevrey LEVEL 2.** The Route-B kernel's `½` is an
+*order*; its level is `2`. -/
+theorem routeB_gaussian_level_two (q : ℝ) (hq : 1 < q) :
+    IsQGevreyLevel q 2 (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4)) := by
+  rw [IsQGevreyLevel, show (2:ℝ)⁻¹ = 1 / 2 by norm_num]
+  exact routeB_gaussian_order_half q hq
+
+/-- **The two `½`s in this corpus are `½` in reciprocal senses.**
+
+* Route-B kernel `q^{m²/4}`: order `½`, level `2`.
+* C1 `∞`-side `q^{n²}`: order `2`, level `½`.
+
+Neither file was writing a wrong number; they were writing *different
+quantities* under one word. `½ ≠ 2`, so with `order_unique` / `level_unique` no
+single sequence carries both, and "the C1 slope is ½" is ambiguous until one
+says *order* or *level*.
+
+**Which one is the Newton-polygon slope is NOT settled here.** RSZ attaches the
+**level** to the slope (§2.3.2, Ex. 3.3.3), which would favour the C1 `∞`-side
+reading; but `theta_eq_half_gs_bridge` below grounds
+`ThetaSlopeArithmetic.c1Slope = ½` through `routeB_gaussian_order_half`, an
+**order**. Those cannot both be the slope. Deciding it needs the Newton polygon
+of `L1` computed directly — bean `qou-slpd` item 4 — not a relabelling. -/
+theorem routeB_and_c1Inf_are_reciprocal :
+    ((1 : ℝ) / 2 ≠ 2) ∧ ((2 : ℝ)⁻¹ = 1 / 2) ∧ (((1 : ℝ) / 2)⁻¹ = 2) := by
+  refine ⟨by norm_num, by norm_num, by norm_num⟩
+
 /-- **[MI-3(b), sorry-free] GS cumulative degree has leading coefficient ½.**
     The Gröbner–Shirshov cumulative q-degree `C(m,2) = m(m−1)/2` (corpus
     `QOU.Mass.ThetaSlopeArithmetic.gs_cumulative_degree`) has leading Gaussian
@@ -382,14 +481,362 @@ theorem gs_degree_leading_coeff_half :
     and (ii) the leading Gaussian coefficient of the GS cumulative degree
     `C(m,2)` (`gs_degree_leading_coeff_half`).  Hence the θ-coefficient of the
     kernel exponent `q^{m²/4}` is `½·s = ½·½ = ¼`, i.e. `θ = ½·C(m,2)` at leading
-    order — the compiled half of the numerical probe.  What remains probe-only
-    (NOT asserted here) is that the kernel's actual coefficient sequence realises
-    order ½ (the RSZ slope=order theorem). -/
+    order — the compiled half of the numerical probe.
+
+    **CORRECTED 2026-08-08 (bean `qou-slpd` item 5).** This theorem's `s = ½` is
+    the Route-B kernel's q-Gevrey **order**, and the docstring used to call the
+    missing piece "the RSZ slope=order theorem". There is no such theorem: the
+    Newton slope is the **level** (see §MI-3(d) below — the slope-`k` family
+    separates order from level, and the level tracks the slope). So this bridge
+    reaches the right *number* `½` by the wrong route. The correct grounding of
+    `ThetaSlopeArithmetic.c1Slope = ½` is the C1 `∞`-side **level**, which is
+    `c1InfCoeff_order_two` restated via `isQGevreyLevel_of_order`. Nothing
+    downstream changes — Door-i needs only that the two slope multisets differ
+    (`ThetaSlopeArithmetic.newtonSlopes_c1_ne_ggm`) — but the statement below
+    should be read as a numerical coincidence of two `½`s, not as a slope
+    identification. -/
 theorem theta_eq_half_gs_bridge :
     ∃ s : ℝ,
       (∀ q : ℝ, 1 < q → IsQGevreyOrder q s (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4)))
       ∧ Tendsto (fun m : ℕ => ((m : ℝ) * ((m : ℝ) - 1) / 2) / (m : ℝ) ^ 2)
           atTop (𝓝 s) :=
   ⟨1 / 2, fun q hq => routeB_gaussian_order_half q hq, gs_degree_leading_coeff_half⟩
+
+/-! ## MI-3(c): the order of an ACTUAL C1 coefficient sequence
+
+`routeB_gaussian_order_half` and `qSquare_gaussian_order_two` are about the
+explicit functions `q^{m²/4}` and `q^{n²}`. `theta_eq_half_gs_bridge` above
+already flags what that leaves open — *"what remains probe-only is that the
+kernel's actual coefficient sequence realises order ½"*. This section closes
+that for one actual sequence: the C1 `∞`-side coefficients
+
+    c₀ = 1,   c_{m+1} = cₘ·(1 + (q−1)qᵐ + (q−1)q^{2m})
+
+(`QOU.Mass.C1FormalSolutionGrowth`, whose `natDegree_c1CoeffPoly` gives the
+same `n²` on the polynomial side). The answer is **2**, not ½ — under the
+definition at the top of this file. The sandwich
+
+    (q−1)ⁿ q^{n²}  ≤  cₙ qⁿ  ≤  (2q−1)ⁿ q^{n²}
+
+is proved by induction from `(q−1)q^{2m} ≤ M_m ≤ (2q−1)q^{2m}`, and both sides
+of the resulting bound on `2 log_q cₙ / n²` are `2 log_q(const)/n + 2 − 2/n → 2`.
+
+This does **not** settle which convention the manuscript intends — see the note
+on `qSquare_gaussian_order_two`. It settles that, under the formalised one, an
+actual C1 sequence gives `2`. -/
+
+section C1InfOrder
+
+variable {q : ℝ}
+
+/-- The C1 `∞`-side per-step multiplier. -/
+noncomputable def c1InfMult (q : ℝ) (m : ℕ) : ℝ :=
+  1 + (q - 1) * q ^ m + (q - 1) * q ^ (2 * m)
+
+/-- The C1 `∞`-side coefficients themselves. -/
+noncomputable def c1InfCoeff (q : ℝ) : ℕ → ℝ
+  | 0 => 1
+  | (m + 1) => c1InfCoeff q m * c1InfMult q m
+
+variable {q : ℝ}
+
+private lemma c1q_pos (hq : 1 < q) : 0 < q := lt_trans zero_lt_one hq
+
+private lemma c1_one_le_qpow (hq : 1 < q) (m : ℕ) : (1:ℝ) ≤ q ^ m := one_le_pow₀ hq.le
+
+lemma c1InfMult_lower (hq : 1 < q) (m : ℕ) : (q - 1) * q ^ (2 * m) ≤ c1InfMult q m := by
+  have h1 : (0:ℝ) ≤ (q - 1) * q ^ m := by
+    have := (c1_one_le_qpow hq m); nlinarith [c1q_pos hq]
+  rw [c1InfMult]; linarith
+
+lemma c1InfMult_upper (hq : 1 < q) (m : ℕ) : c1InfMult q m ≤ (2 * q - 1) * q ^ (2 * m) := by
+  have hm : q ^ m ≤ q ^ (2 * m) := pow_le_pow_right₀ hq.le (by omega)
+  have h1 : (1:ℝ) ≤ q ^ (2 * m) := c1_one_le_qpow hq _
+  have hq1 : (0:ℝ) ≤ q - 1 := by linarith
+  rw [c1InfMult]
+  nlinarith [mul_le_mul_of_nonneg_left hm hq1]
+
+lemma c1InfCoeff_pos (hq : 1 < q) (n : ℕ) : 0 < c1InfCoeff q n := by
+  induction n with
+  | zero => rw [c1InfCoeff]; norm_num
+  | succ k ih =>
+    have h := c1InfMult_lower hq k
+    have h2 : (0:ℝ) < (q - 1) * q ^ (2 * k) := by
+      have := c1_one_le_qpow hq (2 * k); nlinarith
+    rw [c1InfCoeff]
+    exact mul_pos ih (lt_of_lt_of_le h2 h)
+
+private lemma pow_sq_succ (hq : 1 < q) (k : ℕ) :
+    q ^ ((k + 1) * (k + 1)) = q ^ (k * k) * q ^ (2 * k) * q := by
+  rw [← pow_add, ← pow_succ]
+  congr 1
+  ring
+
+/-- `(q−1)ⁿ q^{n²} ≤ cₙ qⁿ`. -/
+lemma c1InfCoeff_lower (hq : 1 < q) (n : ℕ) :
+    (q - 1) ^ n * q ^ (n * n) ≤ c1InfCoeff q n * q ^ n := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hA : (0:ℝ) < q - 1 := by linarith
+  induction n with
+  | zero => rw [c1InfCoeff]; norm_num
+  | succ k ih =>
+    have hmul : (q - 1) * q ^ (2 * k) ≤ c1InfMult q k := c1InfMult_lower hq k
+    have hnn1 : (0:ℝ) ≤ (q - 1) * q ^ (2 * k) * q :=
+      mul_nonneg (mul_nonneg hA.le (pow_nonneg hqp.le _)) hqp.le
+    have hnn2 : (0:ℝ) ≤ c1InfCoeff q k * q ^ k :=
+      mul_nonneg (c1InfCoeff_pos hq k).le (pow_nonneg hqp.le _)
+    calc (q - 1) ^ (k + 1) * q ^ ((k + 1) * (k + 1))
+        = ((q - 1) ^ k * q ^ (k * k)) * ((q - 1) * q ^ (2 * k) * q) := by
+          rw [pow_sq_succ hq k]; ring
+      _ ≤ (c1InfCoeff q k * q ^ k) * ((q - 1) * q ^ (2 * k) * q) :=
+          mul_le_mul_of_nonneg_right ih hnn1
+      _ ≤ (c1InfCoeff q k * q ^ k) * (c1InfMult q k * q) :=
+          mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_right hmul hqp.le) hnn2
+      _ = c1InfCoeff q (k + 1) * q ^ (k + 1) := by
+          rw [show c1InfCoeff q (k + 1) = c1InfCoeff q k * c1InfMult q k from rfl,
+              pow_succ]
+          ring
+
+/-- `cₙ qⁿ ≤ (2q−1)ⁿ q^{n²}`. -/
+lemma c1InfCoeff_upper (hq : 1 < q) (n : ℕ) :
+    c1InfCoeff q n * q ^ n ≤ (2 * q - 1) ^ n * q ^ (n * n) := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hB : (0:ℝ) < 2 * q - 1 := by linarith
+  induction n with
+  | zero => rw [c1InfCoeff]; norm_num
+  | succ k ih =>
+    have hmul : c1InfMult q k ≤ (2 * q - 1) * q ^ (2 * k) := c1InfMult_upper hq k
+    have hnn1 : (0:ℝ) ≤ (2 * q - 1) * q ^ (2 * k) * q :=
+      mul_nonneg (mul_nonneg hB.le (pow_nonneg hqp.le _)) hqp.le
+    have hnn2 : (0:ℝ) ≤ c1InfCoeff q k * q ^ k :=
+      mul_nonneg (c1InfCoeff_pos hq k).le (pow_nonneg hqp.le _)
+    calc c1InfCoeff q (k + 1) * q ^ (k + 1)
+        = (c1InfCoeff q k * q ^ k) * (c1InfMult q k * q) := by
+          rw [show c1InfCoeff q (k + 1) = c1InfCoeff q k * c1InfMult q k from rfl,
+              pow_succ]
+          ring
+      _ ≤ (c1InfCoeff q k * q ^ k) * ((2 * q - 1) * q ^ (2 * k) * q) :=
+          mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_right hmul hqp.le) hnn2
+      _ ≤ ((2 * q - 1) ^ k * q ^ (k * k)) * ((2 * q - 1) * q ^ (2 * k) * q) :=
+          mul_le_mul_of_nonneg_right ih hnn1
+      _ = (2 * q - 1) ^ (k + 1) * q ^ ((k + 1) * (k + 1)) := by
+          rw [pow_sq_succ hq k]; ring
+
+private lemma log_bounds (hq : 1 < q) (n : ℕ) :
+    (n:ℝ) * Real.log (q - 1) + ((n:ℝ) * (n:ℝ) - (n:ℝ)) * Real.log q
+      ≤ Real.log (c1InfCoeff q n)
+    ∧ Real.log (c1InfCoeff q n)
+      ≤ (n:ℝ) * Real.log (2 * q - 1) + ((n:ℝ) * (n:ℝ) - (n:ℝ)) * Real.log q := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hA : (0:ℝ) < q - 1 := by linarith
+  have hB : (0:ℝ) < 2 * q - 1 := by linarith
+  have hc : 0 < c1InfCoeff q n := c1InfCoeff_pos hq n
+  have hqn : (0:ℝ) < q ^ n := pow_pos hqp n
+  have hqnn : (0:ℝ) < q ^ (n * n) := pow_pos hqp _
+  have hposL : (0:ℝ) < (q - 1) ^ n * q ^ (n * n) := mul_pos (pow_pos hA n) hqnn
+  have hposM : (0:ℝ) < c1InfCoeff q n * q ^ n := mul_pos hc hqn
+  have h1 := Real.log_le_log hposL (c1InfCoeff_lower hq n)
+  have h2 := Real.log_le_log hposM (c1InfCoeff_upper hq n)
+  have e1 : Real.log ((q - 1) ^ n * q ^ (n * n))
+      = (n:ℝ) * Real.log (q - 1) + ((n:ℝ) * (n:ℝ)) * Real.log q := by
+    rw [Real.log_mul (ne_of_gt (pow_pos hA n)) (ne_of_gt hqnn), Real.log_pow, Real.log_pow]
+    push_cast
+    ring
+  have e2 : Real.log (c1InfCoeff q n * q ^ n)
+      = Real.log (c1InfCoeff q n) + (n:ℝ) * Real.log q := by
+    rw [Real.log_mul (ne_of_gt hc) (ne_of_gt hqn), Real.log_pow]
+  have e3 : Real.log ((2 * q - 1) ^ n * q ^ (n * n))
+      = (n:ℝ) * Real.log (2 * q - 1) + ((n:ℝ) * (n:ℝ)) * Real.log q := by
+    rw [Real.log_mul (ne_of_gt (pow_pos hB n)) (ne_of_gt hqnn), Real.log_pow, Real.log_pow]
+    push_cast
+    ring
+  rw [e1, e2] at h1
+  rw [e2, e3] at h2
+  constructor <;> nlinarith [h1, h2]
+
+/-- **The C1 `∞`-side coefficient sequence has q-Gevrey order 2.**
+
+Not the explicit function `q^{n²}` — the actual sequence defined by the
+recursion. Squeeze on `2 log_q cₙ / n²` between the two bounds
+`(q−1)ⁿ q^{n²} ≤ cₙ qⁿ ≤ (2q−1)ⁿ q^{n²}`; both sides are
+`2 log_q(const)/n + 2 − 2/n → 2`. -/
+theorem c1InfCoeff_order_two (hq : 1 < q) : IsQGevreyOrder q 2 (c1InfCoeff q) := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  set a : ℝ := Real.log (q - 1) / Real.log q with ha
+  set b : ℝ := Real.log (2 * q - 1) / Real.log q with hb
+  have hlim : ∀ c : ℝ,
+      Tendsto (fun n : ℕ => 2 * c / (n:ℝ) + 2 - 2 / (n:ℝ)) atTop (𝓝 2) := by
+    intro c
+    have h1 : Tendsto (fun n : ℕ => 2 * c / (n:ℝ)) atTop (𝓝 0) :=
+      tendsto_const_div_atTop_nhds_zero_nat (2 * c)
+    have h2 : Tendsto (fun n : ℕ => 2 / (n:ℝ)) atTop (𝓝 0) :=
+      tendsto_const_div_atTop_nhds_zero_nat 2
+    simpa using ((h1.add tendsto_const_nhds).sub h2)
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' (hlim a) (hlim b) ?_ ?_
+  · filter_upwards [eventually_gt_atTop 0] with n hn
+    have hn0 : (0:ℝ) < (n:ℝ) := by exact_mod_cast hn
+    have hn2 : (0:ℝ) < (n:ℝ) ^ 2 := by positivity
+    have hc : 0 < c1InfCoeff q n := c1InfCoeff_pos hq n
+    have hnorm : ‖c1InfCoeff q n‖ = c1InfCoeff q n := by
+      rw [Real.norm_eq_abs, abs_of_pos hc]
+    obtain ⟨hlo, -⟩ := log_bounds hq n
+    have hlog : Real.log (q - 1) = a * Real.log q := by rw [ha]; field_simp
+    rw [hlog] at hlo
+    have hdiv : (n:ℝ) * a + ((n:ℝ) * (n:ℝ) - (n:ℝ))
+        ≤ Real.log (c1InfCoeff q n) / Real.log q := by
+      rw [le_div_iff₀ hlogq]; nlinarith [hlo]
+    rw [hnorm, logb, le_div_iff₀ hn2]
+    have hexp : (2 * a / (n:ℝ) + 2 - 2 / (n:ℝ)) * (n:ℝ) ^ 2
+        = 2 * ((n:ℝ) * a + ((n:ℝ) * (n:ℝ) - (n:ℝ))) := by
+      field_simp; ring
+    rw [hexp]
+    linarith [hdiv]
+  · filter_upwards [eventually_gt_atTop 0] with n hn
+    have hn0 : (0:ℝ) < (n:ℝ) := by exact_mod_cast hn
+    have hn2 : (0:ℝ) < (n:ℝ) ^ 2 := by positivity
+    have hc : 0 < c1InfCoeff q n := c1InfCoeff_pos hq n
+    have hnorm : ‖c1InfCoeff q n‖ = c1InfCoeff q n := by
+      rw [Real.norm_eq_abs, abs_of_pos hc]
+    obtain ⟨-, hup⟩ := log_bounds hq n
+    have hlog : Real.log (2 * q - 1) = b * Real.log q := by rw [hb]; field_simp
+    rw [hlog] at hup
+    have hdiv : Real.log (c1InfCoeff q n) / Real.log q
+        ≤ (n:ℝ) * b + ((n:ℝ) * (n:ℝ) - (n:ℝ)) := by
+      rw [div_le_iff₀ hlogq]; nlinarith [hup]
+    rw [hnorm, logb, div_le_iff₀ hn2]
+    have hexp : (2 * b / (n:ℝ) + 2 - 2 / (n:ℝ)) * (n:ℝ) ^ 2
+        = 2 * ((n:ℝ) * b + ((n:ℝ) * (n:ℝ) - (n:ℝ))) := by
+      field_simp; ring
+    rw [hexp]
+    linarith [hdiv]
+
+end C1InfOrder
+
+/-! ## MI-3(d): the Newton slope is the q-Gevrey LEVEL, not the order
+
+Bean `qou-slpd` item 5. `IsQGevreyOrder` and `IsQGevreyLevel` are reciprocal
+(RSZ §1.3.2), and this corpus carries one `½` of each kind — the Route-B
+kernel's *order* and the C1 `∞`-side's *level*. Which one the Newton polygon
+attaches to was the last step in the C1 chain carried by prose.
+
+**RSZ's own touchstone cannot settle it.** The q-Euler / Tshakaloff equation
+`zσf = f` has Newton slope `1` and solution `c_m = q^{m(m-1)/2}`, i.e. order `1`
+**and** level `1`. At slope 1 the two readings agree, which is exactly why a `½`
+could sit unexamined here: the one example everyone checks against is the one
+case that cannot tell them apart. `slopeKCoeff_order_one` below is that case.
+
+**The slope-`k` family separates them.** `L_k = z^kσ − 1` has Newton points
+`(0,0)`, `(1,k)`, hence slope `k`; recursion `c_m = q^{m−k}c_{m−k}`; nonzero
+coefficients `c_{jk} = q^{k j(j−1)/2}`; and therefore order `1/k`, level `k`. It
+is the **level** that tracks the slope, and `slopeKCoeff_order` proves this for
+**every** `k ≥ 1`, not just for sampled instances. `slopeKCoeff_order_half`
+(`k = 2`) is the first case where the two readings differ.
+`computations/qbeta/c3_w2_newton_slope_is_qgevrey_level.py` (4/4) additionally
+checks the polygon and the recursion symbolically for `k = 1, 2, 3` — the two
+inputs the Lean takes as given.
+
+**Consequence for C1, and it is forced rather than chosen.** The computed Newton
+slope at `∞` is `½` (`ThetaSlopeArithmetic.newtonSlopes_c1`). Read as a *level*
+it predicts order `2`, i.e. growth `q^{n²}` — which is exactly
+`c1InfCoeff_order_two` and `C1FormalSolutionGrowth.natDegree_c1CoeffPoly`. Read
+as an *order* it would predict `q^{n²/4}`, off by a factor 4 in the exponent and
+inconsistent with the corpus's own measured growth. So
+`theta_eq_half_gs_bridge` below reaches the right **number** by the wrong route:
+it grounds `c1Slope = ½` in the Route-B *order*, where the correct grounding is
+the `∞`-side *level*. The number, and every downstream conclusion, is unchanged
+— Door-i needs only that the two slope multisets differ, which is
+`ThetaSlopeArithmetic.newtonSlopes_c1_ne_ggm`. -/
+
+/-- Solution coefficients of the slope-`k` model `z^k σ f = f`, on the indices
+`m = jk` where they are nonzero: `d_j := c_{jk}`, from `c_m = q^{m-k}c_{m-k}`. -/
+noncomputable def slopeKCoeff (q : ℝ) (k : ℕ) : ℕ → ℝ
+  | 0 => 1
+  | (j + 1) => q ^ (k * j) * slopeKCoeff q k j
+
+theorem slopeKCoeff_sq_mul (q : ℝ) (k j : ℕ) :
+    slopeKCoeff q k j * slopeKCoeff q k j * q ^ (k * j) = q ^ (k * (j * j)) := by
+  induction j with
+  | zero => simp [slopeKCoeff]
+  | succ i ih =>
+    have hexp : q ^ (k * ((i + 1) * (i + 1))) = q ^ (2 * (k * i)) * q ^ (k * (i * i)) * q ^ k := by
+      rw [← pow_add, ← pow_add]; congr 1; ring
+    calc slopeKCoeff q k (i + 1) * slopeKCoeff q k (i + 1) * q ^ (k * (i + 1))
+        = q ^ (2 * (k * i)) * (slopeKCoeff q k i * slopeKCoeff q k i * q ^ (k * i)) * q ^ k := by
+          rw [show slopeKCoeff q k (i + 1) = q ^ (k * i) * slopeKCoeff q k i from rfl,
+              show k * (i + 1) = k * i + k by ring, pow_add, two_mul, pow_add]
+          ring
+      _ = q ^ (2 * (k * i)) * q ^ (k * (i * i)) * q ^ k := by rw [ih]
+      _ = q ^ (k * ((i + 1) * (i + 1))) := hexp.symm
+
+theorem slopeKCoeff_pos (q : ℝ) (hq : 0 < q) (k j : ℕ) : 0 < slopeKCoeff q k j := by
+  induction j with
+  | zero => rw [slopeKCoeff]; norm_num
+  | succ i ih =>
+    rw [show slopeKCoeff q k (i + 1) = q ^ (k * i) * slopeKCoeff q k i from rfl]
+    exact mul_pos (pow_pos hq _) ih
+
+theorem logb_slopeKCoeff (q : ℝ) (hq : 1 < q) (k j : ℕ) :
+    logb q (slopeKCoeff q k j) = (k : ℝ) * ((j : ℝ) * j - j) / 2 := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  have hlq : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hd : 0 < slopeKCoeff q k j := slopeKCoeff_pos q hq0 k j
+  have h := slopeKCoeff_sq_mul q k j
+  have hlog : Real.log (slopeKCoeff q k j) + Real.log (slopeKCoeff q k j)
+      + ((k : ℝ) * j) * Real.log q = ((k : ℝ) * ((j : ℝ) * j)) * Real.log q := by
+    have := congrArg Real.log h
+    rwa [Real.log_mul (mul_ne_zero (ne_of_gt hd) (ne_of_gt hd)) (ne_of_gt (pow_pos hq0 _)),
+         Real.log_mul (ne_of_gt hd) (ne_of_gt hd), Real.log_pow, Real.log_pow,
+         Nat.cast_mul, Nat.cast_mul, Nat.cast_mul] at this
+  rw [logb, div_eq_iff hlq]
+  linarith
+
+/-- **The slope-`k` model has q-Gevrey order `1/k`, hence LEVEL `k` = its slope.**
+
+`L_k = z^kσ − 1` has Newton points `(0,0)`, `(1,k)`, so slope `k`. Its formal
+solution satisfies `c_m = q^{m−k}c_{m−k}`, so `c_{jk} = q^{k j(j−1)/2}` and along
+the nonzero subsequence `m = jk`
+
+    2·log_q c_m / m²  =  (j − 1)/(k j)  →  1/k.
+
+Order `1/k`, level `k`. The slope is `k`. **The Newton slope is the LEVEL**, for
+every `k ≥ 1` — not just the two instances checked before. At `k = 1` order and
+level coincide, which is why RSZ's own touchstone cannot see the distinction. -/
+theorem slopeKCoeff_order (q : ℝ) (hq : 1 < q) (k : ℕ) (hk : 1 ≤ k) :
+    Tendsto (fun j : ℕ => 2 * logb q (slopeKCoeff q k j) / (((k : ℝ) * j) ^ 2))
+      atTop (𝓝 (1 / (k : ℝ))) := by
+  have hk0 : (0:ℝ) < (k : ℝ) := by exact_mod_cast hk
+  have heq : ∀ j : ℕ, 1 ≤ j →
+      2 * logb q (slopeKCoeff q k j) / (((k : ℝ) * j) ^ 2)
+        = 1 / (k : ℝ) - 1 / ((k : ℝ) * j) := by
+    intro j hj
+    have hj0 : (0:ℝ) < (j : ℝ) := by exact_mod_cast hj
+    rw [logb_slopeKCoeff q hq k j]
+    field_simp
+  have hlim : Tendsto (fun j : ℕ => 1 / (k : ℝ) - 1 / ((k : ℝ) * j)) atTop (𝓝 (1 / (k : ℝ))) := by
+    have h : Tendsto (fun j : ℕ => ((k : ℝ))⁻¹ * (1 / (j : ℝ))) atTop (𝓝 0) := by
+      simpa using (tendsto_const_div_atTop_nhds_zero_nat (1 : ℝ)).const_mul ((k : ℝ))⁻¹
+    have h2 : Tendsto (fun j : ℕ => 1 / ((k : ℝ) * j)) atTop (𝓝 0) := by
+      refine h.congr fun j => ?_
+      rw [one_div, one_div, mul_inv_rev]
+      ring
+    simpa using (tendsto_const_nhds (x := (1 / (k : ℝ)))).sub h2
+  refine hlim.congr' ?_
+  filter_upwards [eventually_ge_atTop 1] with j hj
+  exact (heq j hj).symm
+
+/-- **The slope-1 (q-Euler / Tshakaloff) case**, `k = 1`: order `1`, level `1`.
+The two readings agree here — this is the degenerate touchstone. -/
+theorem slopeKCoeff_order_one (q : ℝ) (hq : 1 < q) :
+    Tendsto (fun j : ℕ => 2 * logb q (slopeKCoeff q 1 j) / (((1 : ℝ) * j) ^ 2))
+      atTop (𝓝 1) := by
+  simpa using slopeKCoeff_order q hq 1 le_rfl
+
+/-- **The slope-2 case**, `k = 2`: order `½`, level `2`. The first `k` where the
+two readings separate, and the level is the one that tracks the slope. -/
+theorem slopeKCoeff_order_half (q : ℝ) (hq : 1 < q) :
+    Tendsto (fun j : ℕ => 2 * logb q (slopeKCoeff q 2 j) / (((2 : ℝ) * j) ^ 2))
+      atTop (𝓝 (1 / 2)) := by
+  simpa using slopeKCoeff_order q hq 2 (by norm_num)
 
 end QOU.Mathlib.QGevreyOrder

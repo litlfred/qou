@@ -1280,6 +1280,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Pass. The flagged attribution of the compound-shift theorem to `claude/w3-w4-followups` had already been removed, and the sentence reads cleanly as \"... from the compound-shift theorem. This matches [`prop:alpha-shift-torus-knot`]'s simplest interface case\". Re-read in full for residual branch, tracker or workplan vocabulary; none found.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

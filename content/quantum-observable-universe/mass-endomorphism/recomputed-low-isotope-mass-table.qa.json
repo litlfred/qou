@@ -11,6 +11,18 @@
     "ts": "2dd37ba2ba1f"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the \"Path A\" branch route label is gone from the heading and body, along with the \"(tracked under Workplan 0b)\" note and all four `docs/audits/*` cross-references.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

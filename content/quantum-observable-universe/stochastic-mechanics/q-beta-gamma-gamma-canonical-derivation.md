@@ -1,6 +1,6 @@
-**$\mathfrak{Q}_\beta$ γγ canonical derivation: Story B selected by the cat-action / Frobenius / Wenzl chain.**
+**$\mathfrak{Q}_\beta$ γγ canonical derivation: the categorical-chain reading, selected by the cat-action / Frobenius / Wenzl chain.**
 
-This content captures the understanding of the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_k$, settling the Story A vs Story B ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](../../computations/probe_q_beta_high_precision_ck.py).
+The $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_k$ admit two readings: one in which $c_2$ is fitted, and one in which it is derived from the categorical chain. The ambiguity, left open by [`probe_q_beta_high_precision_ck.py`](../../computations/probe_q_beta_high_precision_ck.py), is settled here in favour of the second.
 
 ## The chain
 
@@ -47,18 +47,18 @@ Categorical-chain reading of the $c_k$ coefficients from [`prop:q-beta-categoric
 | 3 | $-2 = J_{\text{Hopf}}(q{=}1)$ | classical-limit Jones polynomial of the Hopf-link substructure |
 | 4 | $b^2 + \tfrac{1}{2}$ | Kashiwara + half-Hopf mixed |
 
-## Story A vs Story B resolution
+## Resolving the ambiguity: fitted versus categorical reading
 
 [`probe_q_beta_gamma_gamma_derivation.py`](../../computations/probe_q_beta_gamma_gamma_derivation.py) runs the categorical-derivation chain end-to-end. The N=2 $\to$ N=3 transition reduces the residual against CODATA by 112$\times$. This reduction is observable above CODATA's 0.4 ppm measurement floor. The categorical identification $c_3 = J_{\text{Hopf}}(q{=}1) = -2$ is empirically validated, not just an empirical fit.
 
-Story A (fitting $c_2$) provides no structural derivation of the 1.7% deviation. Story B (Kashiwara $c_2 = b^2$ + Hopf $c_3 = -2$) provides structural content: each rung's coefficient is derived from substrate-only data via the categorical chain.
+The fitted reading, in which $c_2$ is chosen to match the data, provides no structural derivation of the 1.7% deviation. The categorical reading — Kashiwara $c_2 = b^2$ together with Hopf $c_3 = -2$ — provides structural content: each rung's coefficient is derived from substrate-only data via the categorical chain.
 
-Selection rule: when two interpretations match the data equally, the categorical-chain interpretation (Story B) is canonical because it traces back to substrate principles.
+Selection rule: when two readings match the data equally, the categorical-chain reading is canonical because it traces back to substrate principles.
 
-## Track-C open question
+## Open question: a rigorous $c_3 = -2$
 
 Can the $c_3 = -2$ Hopf assignment be proved rigorously? A Lean-level proof requires formalising the 3-fold Markov closure $\to$ Hopf-link substructure identification at the categorical level.
 
-## Track-B open question
+## Open question: higher orders
 
-Once Track C settles the structural identification, Track B extends to higher orders where the simple Kashiwara + Jones alternation breaks down. The empirical $c_5, c_6$ remain unidentified pending a refined mathematical framing.
+Once the structural identification is settled, the construction extends to higher orders where the simple Kashiwara + Jones alternation breaks down. The empirical $c_5, c_6$ remain unidentified pending a refined mathematical framing.

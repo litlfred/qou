@@ -513,7 +513,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Discrete symmetries, spin, and the electroweak angle",
       label: "sec:particle-interactions-orphan-reconnect",
       blocks: [
         "particle-interactions-orphan-reconnect-intro",

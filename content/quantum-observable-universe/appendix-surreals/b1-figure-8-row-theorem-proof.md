@@ -37,7 +37,7 @@ expansion + saddle-point analysis. **Theorem (published proof).**
 \mathrm{Li}_2^q(\zeta_6)) = 2\,\mathrm{Cl}_2(\pi/3)$ matches the
 Bloch–Suslin regulator image. Step 4 confirms this is precisely
 $\mathrm{Vol}(4_1)$, the geometric invariant the Volume
-Conjecture predicts. So B1 at this row is fully discharged:
+Conjecture predicts. So the depth correspondence at this row is fully discharged:
 
 - Depth match (yes, by construction): $\mathrm{Li}_2^q$ at depth 2,
   $\mathrm{Vol}(4_1)$ at Goncharov depth 2.

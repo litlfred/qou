@@ -124,7 +124,19 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"Orphan reconnect — section lead\" title is gone; the sibling .ts now carries no title, and the .md body was already clean prose.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.161454Z"
 }

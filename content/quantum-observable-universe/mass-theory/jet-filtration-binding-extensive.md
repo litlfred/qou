@@ -37,8 +37,8 @@ this proposition:
    $a_D^{(n)} = \oint_{\mathcal{S}_c}\lambda_{\mathrm{SW}}^{(n)}$ (the $\surd$-branch
    falling-factorial growth) — the *quantitative* extensive channel;
 2. the **non-abelian-Stokes identity** $a_D^{(n)} = \mathrm{lw}(n-1)$ (the mean
-   quantum dimension; the keystone conjecture, whose residue-sum
-   form is `prop:sw-period-residue-sum`);
+   quantum dimension; conjectural, with residue-sum
+   form `prop:sw-period-residue-sum`);
 3. the per-atom **residue weight** $w_n(K)$ (the open $\rho\cdot A$ scale rule, a
    $q$-difference recursion output).
 

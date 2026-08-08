@@ -13,6 +13,18 @@
     "lean": "0440169118f6"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Both the \"(§7c)\" tag and \"This block\" are gone from the archimedean boilerplate, which now opens \"What follows treats $q$ as a real physical scale near $q = 1$\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

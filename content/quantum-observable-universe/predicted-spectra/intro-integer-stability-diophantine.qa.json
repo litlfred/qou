@@ -11,6 +11,18 @@
     "ts": "356ac20e73a7"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"section lead\" pipeline label is gone from the .ts, which now carries no title field, and the prose describes the integer-stability and Diophantine content directly.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {

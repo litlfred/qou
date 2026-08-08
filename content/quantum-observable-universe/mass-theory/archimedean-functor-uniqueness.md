@@ -52,6 +52,6 @@ $$
 > The Lean theorem
 > [`QOU.Archimedean.archimedean_functor_uniqueness`](archimedean-functor-uniqueness.lean)
 > takes both classes as `[Instance]` hypotheses and is proved
-> **without `sorry`**; the block therefore qualifies as a *rigorous
-> conditional result* in the §3b-cond sense rather than an unproved
+> **without `sorry`**; the uniqueness statement therefore qualifies as a
+> *rigorous conditional result* rather than an unproved
 > conjecture.

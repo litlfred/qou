@@ -69,5 +69,4 @@ amplifying body-order weight overshoots ($\sim{+}920\%$ at ${}^{6}$Li,
 $\sim{+}2\times10^{6}\%$ at ${}^{12}$C). The series must therefore be a **few-body
 truncation** (fixed small $n_{\max}$, a $2$–$3$-body cluster count $\times$
 A-multiplicity, matching nuclear $2$-/$3$-body force dominance), not a sum to $A$;
-the na-Stokes period remains the correct *light*-nucleus ($A\leq 4$) kernel. See
-[`docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md`](../../../docs/audits/2026-07-11-eigenfunction-weight-kernel-link-and-wn-derive-or-refute.md).
+the na-Stokes period remains the correct *light*-nucleus ($A\leq 4$) kernel.

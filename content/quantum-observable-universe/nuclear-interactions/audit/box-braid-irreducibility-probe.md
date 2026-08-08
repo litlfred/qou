@@ -1,4 +1,4 @@
-**Audit Probe: Numerological time bound claims for $T_{3,5}$**
+**Probe: numerological time-bound claims for $T_{3,5}$**
 
 *We initially claimed that the $T_{3,5}$ crossing number corresponds to physical time: each crossing represents one $R$-matrix application and one Planck step.*
 

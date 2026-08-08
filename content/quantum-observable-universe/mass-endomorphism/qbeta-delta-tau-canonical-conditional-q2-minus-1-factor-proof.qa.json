@@ -11,6 +11,18 @@
     "ts": "0e6f03cea54e"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `docs/coordination/1ppq-qbeta.md` ledger reference is gone; the limitation now reads \"The $f$-map keystone remains open\", naming the open object in place.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

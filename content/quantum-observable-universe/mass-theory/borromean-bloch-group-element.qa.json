@@ -1393,6 +1393,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `.claude/skills/local/canonical-watcher.md` hook reference and its §Slot J, the docs/audits and duality-tracker paths, the D15/D16/D18 tracker labels and the \"## Diagnostics\" / \"## Open R&D\" process headings are all gone; what remains (\"the sibling pentagon-validation conjecture\", \"research-grade\") is a linked companion conjecture and an ordinary maturity hedge.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

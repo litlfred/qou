@@ -58,8 +58,8 @@ to the machine-checked list above.  What is machine-checked is the
 statement and should not be cited for the stronger one.
 
 **What is $q$-independent — standard, but not formalised here.**
-These follow from the Drinfeld--Jimbo construction and are cited, not
-machine-checked in this corpus:
+These follow from the Drinfeld--Jimbo construction and are cited here, not
+machine-checked:
 \begin{itemize}
 \item The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
   \mathbb{Z}\alpha_2$ and the weight lattice $\Lambda_W =

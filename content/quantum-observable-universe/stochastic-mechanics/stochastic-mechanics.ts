@@ -123,7 +123,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "Classical and reverse limits of the $q$-machinery",
       label: "sec:stochastic-mechanics-orphan-reconnect",
       blocks: [
         "stochastic-mechanics-orphan-reconnect-intro",

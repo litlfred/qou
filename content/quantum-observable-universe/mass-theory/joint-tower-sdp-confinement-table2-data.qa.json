@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "tbl:joint-tower-sdp-confinement-table2-data",
+  "kind": "table",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/joint-tower-sdp-confinement-table2-data.ts",
+    "md": "content/quantum-observable-universe/mass-theory/joint-tower-sdp-confinement-table2-data.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean: the table now carries no workplan, branch or tracker labels; \"research-grade\" and \"deprecated volume-match\" are ordinary maturity and supersession hedges.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

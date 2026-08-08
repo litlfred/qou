@@ -8,4 +8,4 @@ It shares this knot type with the up quark. Environment distinguishes them: the 
 
 We draw both the electron and the up quark as a solid trefoil to denote the forward time direction. Context separates the lepton from the quark.
 
-This block fixes only the knot identification. The numerical value of $m_e$ is CAL-1, the leptonic mass-scale input used to normalize the observable tower; it is not derived here from a standalone trefoil formula.
+We fix only the knot identification. The numerical value of $m_e$ is CAL-1, the leptonic mass-scale input used to normalize the observable tower; it is not derived here from a standalone trefoil formula.

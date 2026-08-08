@@ -13,6 +13,18 @@
     "lean": "907b301144c4"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the \"1ppQ-Q$_\\beta$ coordination ledger\" line pointing at `docs/coordination/1ppq-qbeta.md` was removed; the cross-references now list only the parent block and the witness JSON.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

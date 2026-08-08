@@ -1568,6 +1568,18 @@
         "reviewed_at": "2026-07-12T00:35:12.823Z",
         "reviewed_sha": "7ce779451a64f4672236947e05a34674d5fd0fc5"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

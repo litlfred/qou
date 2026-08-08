@@ -107,4 +107,110 @@ theorem doorV_parity_no_identity_forall
     ¬ (∀ n, α * p n + β * q n = y n) :=
   doorV_parity_no_identity p q y hp hq α β hα hβ 0 (hy 0)
 
+/-! ## The bar-parity twist — what it does and does not do
+
+Added 2026-08-08 for `conj:c1-ggm-bar-parity-faces`. The obstruction above says
+no non-negative-cone combination can equal a target with a consecutive sign
+flip. The conjecture's open half asks whether the diagonal `ℤ/2` character
+`(−1)^m` is the *whole* difference. These lemmas settle the scalar-combination
+reading of that question, in the negative, and say why the module-level reading
+is untouched.
+
+The twist inverts **every** consecutive-pair sign, not only the alternating
+ones. So it can clear the obstruction only for a target that alternates at
+*every* pair — and the Stokes carrier's solution does not, since `2 − q^{m+1}`
+is positive below `m + 1 = log 2 / log q`. Measured in
+`computations/qbeta/c3_w2_bar_parity_twist_probe.py` (4/4): the twisted sequence
+still flips, at exactly the indices where the untwisted one did not.
+
+**Consequence.** "The diagonal `ℤ/2` character is the sole residual" cannot mean
+that applying the character makes the target a non-negative combination of the
+squares — that reading is excluded by the same non-negativity invariant that
+produced the obstruction. It must be read at the **module** level, up to a
+genuine gauge. Nothing here bears on that, and nothing here refutes the
+conjecture; one reading of it is removed. -/
+
+section BarTwist
+
+variable {K : Type*} [Field K]
+
+/-- The bar-parity twist `z_m = (−1)^m y_m`. -/
+noncomputable def barTwist (y : ℕ → K) (m : ℕ) : K := (-1) ^ m * y m
+
+/-- **The twist carries the Stokes carrier's recurrence to a sign-flipped one.**
+`y_{m+2} − (2−q^{m+1})y_{m+1} + y_m = 0` becomes
+`z_{m+2} + (2−q^{m+1})z_{m+1} + z_m = 0`. -/
+theorem barTwist_recursion (q : K) (y : ℕ → K) (m : ℕ)
+    (h : y (m + 2) - (2 - q ^ (m + 1)) * y (m + 1) + y m = 0) :
+    barTwist y (m + 2) + (2 - q ^ (m + 1)) * barTwist y (m + 1) + barTwist y m = 0 := by
+  simp only [barTwist, pow_succ, pow_add]
+  linear_combination ((-1 : K)) ^ m * h
+
+/-- Conversely: the sign-flipped recurrence twists back to the original. -/
+theorem barTwist_recursion_inv (q : K) (z : ℕ → K) (m : ℕ)
+    (h : z (m + 2) + (2 - q ^ (m + 1)) * z (m + 1) + z m = 0) :
+    barTwist z (m + 2) - (2 - q ^ (m + 1)) * barTwist z (m + 1) + barTwist z m = 0 := by
+  simp only [barTwist, pow_succ, pow_add]
+  linear_combination ((-1 : K)) ^ m * h
+
+end BarTwist
+
+section BarTwistReal
+
+/-- **The twist inverts consecutive-pair signs.** -/
+theorem barTwist_consecutive_product (y : ℕ → ℝ) (m : ℕ) :
+    barTwist y m * barTwist y (m + 1) = - (y m * y (m + 1)) := by
+  have h : ((-1 : ℝ)) ^ m * (-1 : ℝ) ^ m = 1 := by
+    rw [← pow_add, ← two_mul, pow_mul]; norm_num
+  simp only [barTwist, pow_succ]
+  linear_combination (-(y m * y (m + 1))) * h
+
+/-- **The twist removes exactly the parity obstruction.**
+
+`doorV_parity_no_identity` excludes a non-negative-cone identity precisely when
+the target has a consecutive sign flip, `y_m · y_{m+1} < 0`. After the twist that
+product is strictly positive, so the obstruction does not apply to the twisted
+sequence — and it is removed for *every* `m` at which it fired, with nothing
+else about the hypothesis changed. -/
+theorem barTwist_removes_obstruction (y : ℕ → ℝ) (m : ℕ) (h : y m * y (m + 1) < 0) :
+    0 < barTwist y m * barTwist y (m + 1) := by
+  rw [barTwist_consecutive_product]
+  linarith
+
+/-- And it removes it *only* there: if the target had no flip at `m`, the twist
+introduces one. The twist is therefore exactly the parity, not a weakening. -/
+theorem barTwist_creates_obstruction (y : ℕ → ℝ) (m : ℕ) (h : 0 < y m * y (m + 1)) :
+    barTwist y m * barTwist y (m + 1) < 0 := by
+  rw [barTwist_consecutive_product]
+  linarith
+
+/-- **The parity twist RELOCATES the obstruction; it cannot remove it.**
+
+`doorV_parity_no_identity` fires as soon as the target has one consecutive sign
+flip. The twist inverts *every* consecutive-pair sign
+(`barTwist_consecutive_product`), so at each `m` where the product is nonzero
+the obstruction fires on `y` or on its twist — never on neither. -/
+theorem obstruction_fires_on_one_of (y : ℕ → ℝ) (m : ℕ) (h : y m * y (m + 1) ≠ 0) :
+    y m * y (m + 1) < 0 ∨ barTwist y m * barTwist y (m + 1) < 0 := by
+  rw [barTwist_consecutive_product]
+  rcases lt_trichotomy (y m * y (m + 1)) 0 with hlt | heq | hgt
+  · exact Or.inl hlt
+  · exact absurd heq h
+  · exact Or.inr (by linarith)
+
+/-- **Consequence: the twist clears the obstruction only for a target that
+alternates at *every* consecutive pair.**
+
+If some pair of the twisted sequence still flips, no non-negative-cone
+combination can equal it either — so exhibiting the twist does not by itself
+make the target reachable. -/
+theorem twist_clears_only_if_everywhere_alternating (y : ℕ → ℝ)
+    (hclear : ∀ m, 0 < barTwist y m * barTwist y (m + 1)) (m : ℕ) :
+    y m * y (m + 1) < 0 := by
+  have := hclear m
+  rw [barTwist_consecutive_product] at this
+  linarith
+
+end BarTwistReal
+
 end QOU.Mass.DoorVParityNoIdentity

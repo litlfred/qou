@@ -10,4 +10,4 @@ Computations up to $h^8$ resolve the structure. The algebraic series truncates p
 
 Furthermore, simple per-row linear fitting trivially solves any target sequence because higher-order algebraic terms vanish. To be meaningful, an order-mixing relation must follow a single, rigidly banded convolution kernel. The absence of a constant kernel (failing at $h^4$) isolates the open question: does a wider, fixed-band finite convolution successfully bridge the complete series?
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

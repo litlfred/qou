@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "thm:aomega-fourone-dt-count",
+  "kind": "theorem",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/aomega-fourone-dt-count.ts",
+    "md": "content/quantum-observable-universe/mass-theory/aomega-fourone-dt-count.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The Scope sentence, which the earlier edit had also left garbled, is rebuilt as \"is **not** carried downstream: no mass prediction and no rung of the $Q_\\beta$ ladder depends on it\". \"wired to production\" and \"the accuracy dashboard\" are gone; the conditionality on the adopted bridge and the fact that nothing downstream uses the result both survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

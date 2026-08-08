@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "tbl:atom-knot-mass-derivation-table2-data",
+  "kind": "table",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-table2-data.ts",
+    "md": "content/quantum-observable-universe/mass-theory/atom-knot-mass-derivation-table2-data.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The tooling-roadmap rungs are out of the table: \"R5-full pending — research-grade\" -> \"not implemented — needs the full joint-tower SDP solver (research-grade)\"; the \"(R2;\", \"(R3;\", \"(R4;\" tags dropped from the three Rust entries; \"R5-minimal\" -> \"reduced form\", which keeps the reduced/full distinction the two rungs encoded. Row 7's branch URL had already been made repo-relative. Every unit-test count, scaling note and the ✓/✗/partial column are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

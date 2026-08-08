@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The duality-tracker row ids are gone: the self-duality step no longer points at \"dualities D3 and D23 in the canonical-derivation tracker\" and states the Frobenius self-duality condition directly.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "84537b7ce97a",

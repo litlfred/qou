@@ -1,6 +1,6 @@
 **All three $V_\lambda$ per-irrep character-difference closed forms — cyclotomic-factor pattern.**
 
-This block extends [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof) to all three Wedderburn blocks of $H_3(q)$, exposing the unified cyclotomic-factor pattern.
+We extend [`rem:chi-v3-closed-form-proof`](#rem:chi-v3-closed-form-proof) to all three Wedderburn blocks of $H_3(q)$, exposing the unified cyclotomic-factor pattern.
 
 ## Three closed forms
 

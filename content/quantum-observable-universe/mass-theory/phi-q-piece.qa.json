@@ -1700,6 +1700,18 @@
         "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
         "evidence": "title is descriptive (5 principal tokens) — principal defined term ambiguous"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "No branch/audit working labels, bean ids, PR/branch references, audit-doc pointers, or agent work-narration found in the .md body or the .ts title.",
+        "reviewed_at": "2026-08-08T08:19:18Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-08-03T19:38:33.697Z"

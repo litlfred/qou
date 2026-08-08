@@ -1,0 +1,22 @@
+{
+  "$schema": "block-qa/v1",
+  "kind": "table",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-table2-data.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/upstream-mathlib-additions-table2-data.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"Open content\" column header now sits over a table naming each unproved Lean statement and the specific Mathlib work it needs, so it reads as a list of open problems rather than work-tracker bookkeeping.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"Status (live)\" is now \"Status\". The supersession sentence citing the pre-re-pin \"164.0x as of 2026-05-31 / Habiro-exact 5.7 ppb\" note is removed from the published prose and moved verbatim into authorNotes in the .ts, since those figures describe a former pin rather than the current construction. \"exact closure gated on the s5-so3 / Habiro keystone\" is now \"exact closure depends on the s5-so3 fibre action (conj:s5-so3-fiber-action), which is unproved\" — same dependency, no programme ranking. Two workplan gates (\"a wire/un-wire gate\", \"an inclusion/exclusion gate\") become \"criterion\". The live figures (160x, 1248 ppb, 1.25 ppm, 181x, 1.04 ppb, 1690x) and the near-match tier are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "810fe82b4304",

@@ -1347,6 +1347,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The transcribed session turn \"**Remark.** *User question: where does the Gram matrix fit in the spectral-sequence / Frobenius framework?*\" -> \"**Remark (where the Gram matrix fits in the spectral-sequence / Frobenius framework).**\", keeping the subject and dropping the conversation; \"are stale per the Markov-bug fix and should read $hz^2 + z$\" -> \"are uncorrected: by the recursion just quoted they should read $hz^2 + z$\", which now points at the Ocneanu–Wenzl recursion stated immediately above. The correction itself survives.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

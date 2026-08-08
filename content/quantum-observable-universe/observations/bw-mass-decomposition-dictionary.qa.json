@@ -11,6 +11,18 @@
     "ts": "7faa2d860619"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The docs/audits link and the dated retraction-memo filename are gone, and no use of \"audit\" remains; the surviving \"as of now\" reports the current empirical state of the Bethe-Weizsäcker coefficients (\"still AME least-squares fits -- a fit, not a derivation\"), not a branch lifecycle.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

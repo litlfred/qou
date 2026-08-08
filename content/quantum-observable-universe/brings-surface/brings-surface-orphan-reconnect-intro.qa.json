@@ -11,6 +11,18 @@
     "ts": "aa2b2e7d2eff"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"Phase 7 orphan audit\" / \"reconnected\" sentence and the \"Reconnected orphan blocks (Phase 7)\" title are both gone; the block now introduces the two views of the Bring fibre directly and the sibling .ts carries no title.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

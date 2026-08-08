@@ -1311,6 +1311,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The sentence \"This appendix serves as raw material for future work rather than a completed extension of the theory\" is an ordinary scope disclaimer to the reader about how far the appendix goes; it names no branch, work item or pipeline object.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

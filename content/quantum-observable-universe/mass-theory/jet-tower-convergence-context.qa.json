@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:jet-tower-convergence-context",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/jet-tower-convergence-context.ts",
+    "md": "content/quantum-observable-universe/mass-theory/jet-tower-convergence-context.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"(workplan **P3.4** path (b))\" deleted. The named conjecture link, the empirical per-level bound, the `uniform_bound_pass` witness citation and the open status of the uniform-$\\Delta_{\\max}$ subconjecture are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

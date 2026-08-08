@@ -1153,6 +1153,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"The probe **is queued in** [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`]\" -> \"The extraction is set up in [`computations/qbeta/qbeta_decay_sdp_extended_ck.py`]\". The script citation stays; the work-queue report is gone, and the preceding sentence still says the claim is testable rather than tested. Separately in this block, \"its full proof is gated on the order-by-order Hecke expansion machinery\" -> \"requires\" it.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

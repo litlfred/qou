@@ -1566,6 +1566,18 @@
         "reviewed_at": "2026-07-12T00:35:12.823Z",
         "reviewed_sha": "7ce779451a64f4672236947e05a34674d5fd0fc5"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Both leaks are gone: the \"It is AGENTS.md §7c-compliant\" claim and the `docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md` cross-reference no longer appear. (The C1/C3 of the title are the selection rule's component counts $c=1$, $c=3$, defined in the block.)",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

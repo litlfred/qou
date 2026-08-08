@@ -3,7 +3,7 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:b1-hyperbolic-rows-theorem",
   title:
-    "B1 conditionally reduces to Volume Conjecture at Borromean rings, Whitehead link, and twist knots",
+    "The depth correspondence conditionally reduces to the Volume Conjecture at Borromean rings, the Whitehead link, and twist knots",
   lean: {
     ref: "qou:QOU.AppendixSurreals.B1HyperbolicRowsTheorem.b1_hyperbolic_rows",
     validation: "not_checked",

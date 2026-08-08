@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:proton-mass-substrate-identity-derivation",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.ts",
+    "md": "content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity-derivation.md"
+  },
+  "source_hashes": {
+    "md": "57f46c264ed2",
+    "ts": "4af67c282372"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The `docs/audits/` memos are gone from the cross-reference list, which now points only to the companion definition, the flavor-split proposition and the compute script.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

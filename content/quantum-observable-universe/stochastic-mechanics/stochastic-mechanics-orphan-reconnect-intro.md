@@ -1,1 +1,1 @@
-Blocks in this section were reconnected during the Phase 7 orphan audit. They address supplementary stochastic-mechanics content awaiting thematic placement.
+The $q$-machinery has two degenerate limits, and this section takes both. At $q \to 1$ the Lusztig canonical basis recovers the classical basis; at $q \to \infty$ the reverse limit strips the deformation from the other side. The $\Phi_q$ / $A_J$ identification is what connects the two, and is treated between them.

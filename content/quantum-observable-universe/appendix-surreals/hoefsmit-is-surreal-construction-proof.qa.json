@@ -1280,6 +1280,18 @@
         "reviewed_at": "2026-07-12T10:57:05.514Z",
         "reviewed_sha": "f67226fd9d495d89555d04ba33509f2c3d5fa41e"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The two markers now attach to named mathematical prerequisites rather than to branch state: the sentence reads \"The Lean stub axiomatises the embedding ([sign sequence functor](#def:sign-sequence-of-braid)) pending these prerequisites\", where the prerequisites are the Mathlib `SetTheory.Game.Surreal` development and the eigenvalue-convention check enumerated immediately above.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

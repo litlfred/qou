@@ -4,9 +4,36 @@ The $q$-difference kernel $R(q,x)$ of the binding generating function
 ([`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)) **is
 the symbol of the jet-prolongation operator** $J^{n}E\to J^{n+1}E$ of the
 Seiberg--Witten connection
-([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)) — equivalently, the
-monodromy/Stokes data of the prolonged SW connection at the branch-point poles
-of $\lambda_{\mathrm{SW}}^{(n)}$ on $\mathcal{S}_c\cong\mathbb{P}^1$.
+([`prop:mi-sw-abelianisation`](#prop:mi-sw-abelianisation)).
+
+Its carrier is the rank-$2$ $q$-difference module $\mathcal{K}$ of the
+**binding $q$-lift recurrence**
+$$
+[m+2]_q\,b_{m+2} \;=\; b_{m+1} + b_m ,
+$$
+equivalently, writing $x=q^{m}$ and $\sigma:x\mapsto qx$, the module of
+$$
+L_{\mathcal{K}} \;=\; (q^{2}x-1)\,\sigma^{2}\;-\;(q-1)\,\sigma\;-\;(q-1).
+$$
+At $x=\infty$ the Newton polygon of $L_{\mathcal{K}}$ has the single slope
+$\tfrac12$ with multiplicity $2$: $\mathcal{K}$ is **pure isoclinic** of slope
+$\tfrac12$.
+
+> **Scope note.** This conjecture previously continued
+> "*— equivalently, the monodromy/Stokes data of the prolonged SW connection at
+> the branch-point poles of $\lambda_{\mathrm{SW}}^{(n)}$*", identifying
+> $\mathcal{K}$ with the Stokes carrier of the resurgent colored-Jones series
+> of [garoufalidis-gu-marino2021]. That equivalence is **false as an
+> identification of $q$-difference modules**, and the clause has been removed.
+> The Stokes carrier is the module $\mathcal{G}$ of
+> $y_{m+2}-(2-q^{m+1})\,y_{m+1}+y_m=0$, whose Newton polygon at $x=\infty$ has
+> the two slopes $\{-1,+1\}$; $\mathcal{K}$'s is $\{\tfrac12,\tfrac12\}$. Since
+> the Newton polygon is a module invariant and its slope multiset is preserved
+> by every gauge transformation ([rsz2013] Thm 2.2.1(i), Thm 2.2.4), no
+> isomorphism of $q$-difference modules $\mathcal{K}\cong\mathcal{G}$ exists.
+> The surviving — and genuinely non-trivial — relationship between the two is
+> stated separately as
+> [`conj:c1-ggm-bar-parity-faces`](#conj:c1-ggm-bar-parity-faces).
 
 Two consequences follow:
 
@@ -19,16 +46,15 @@ Two consequences follow:
 2. **It closes the binding program.** Given $R$, the recurrence of
    [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)
    determines every body term from the deuteron base case (fixing the
-   $\rho\cdot A$ growth law), which is precisely the per-term mass identity
-   (B). Feeding (B) into
+   $\rho\cdot A$ growth law), which is precisely the per-term mass identity. Feeding it into
    [`thm:binding-closure-conditional`](#thm:binding-closure-conditional)
    discharges its one conditional input, promoting
    [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
-This conjecture is therefore the **single keystone** of the step-9b binding
-closure: the residue form (D), the body-order = jet-degree coincidence (C), and
-the recurrence machinery (L3) are all proved; only the identification of $R$
+This conjecture is therefore the **single remaining input** to the binding
+closure: the residue form, the body-order = jet-degree coincidence, and the
+recurrence machinery are all proved; only the identification of $R$
 with the prolongation symbol remains. It is stated here as a precise,
 falsifiable structural claim — to be *derived* from the prolonged connection's
-local monodromy, not searched canonical.
+local monodromy, not fitted numerically.

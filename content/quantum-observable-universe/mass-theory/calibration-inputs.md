@@ -18,7 +18,8 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 
 The first input is a **dimensionless ratio** — it fixes $q_0$
 via the **leading-order substrate-truncation** of the canonical
-operator-valued mass formula (see SUPERSEDED-$\rho_q$ note below):
+operator-valued mass formula (see the note on the superseded scalar density
+below):
 
 $$
 \frac{m_\mu}{m_e} \;\stackrel{\text{LO}}{=}\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2}

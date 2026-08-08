@@ -1881,6 +1881,18 @@
         "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
         "evidence": "term marked via \"Pauli witness\""
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean. \"witness\" is the quantum-information sense (Pauli witness), not a pipeline artefact.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-08-03T19:38:33.692Z"

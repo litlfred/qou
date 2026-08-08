@@ -13,6 +13,18 @@
     "lean": "303dc63a85a3"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The two bean ids are gone: \"**Constraint on the open assembly (the 5nx8 gap):**\" and \"**Constraint on the lift (the 1jrh gap):**\" now read \"**Constraint on the open assembly:**\" and \"**Constraint on the lift:**\". The remaining \"fibre-branch $\\Phi_b$\" is a branch of a multivalued function.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

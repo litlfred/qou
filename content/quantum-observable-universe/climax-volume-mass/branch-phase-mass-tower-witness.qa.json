@@ -1153,6 +1153,18 @@
         "reviewed_at": "2026-07-12T00:35:12.823Z",
         "reviewed_sha": "7ce779451a64f4672236947e05a34674d5fd0fc5"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"**Caveat (updated).** We have now categorically derived ...\" -> \"**Caveat.** We have categorically derived ...\", and the sentence deprecating `computations/_deprecated/rho-k-pair-gen-v2-wedderburn.witness.json` is removed. The negative result stands untouched: the Wedderburn pair-generator extension was tested and **rejected** (it worsens the fit to ~4.7% MAE), as do the $\\leq 0.30\\%$ agreement and the $18Z + 21N + 1$ pole-order verification. The deprecated-witness pointer was moved to `authorNotes` in the .ts.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

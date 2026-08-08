@@ -1661,6 +1661,18 @@
         "reviewed_at": "2026-07-12T00:35:02.628Z",
         "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The bare markers now sit under a \"**Required infrastructure**\" list whose items name the specific missing mathematics (rational-function arithmetic at $q = 1 + \\varepsilon$, a Hahn-series substrate, the normal-form eigenvalue computation), so \"pending\" reads as \"not yet available\" rather than as a work-tracker state.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

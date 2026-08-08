@@ -66,10 +66,9 @@ proved" downstream.
    *witnessed near-match*, not a Lean equality — the witness JSON is the
    evidence, the Lean file proves only the two underlying identities.
 
-**Base-ring note (§7c).** The Lean sibling is stated over a generic
+**Base-ring note.** The Lean sibling is stated over a generic
 `[Field R]` (no archimedean `$\mathbb{R}$` dependence). `chi_21_odd` is
 unconditional; `seifert_ratio_T25_T23` carries explicit `$2,3,5\neq 0$`
 hypotheses — the invertibility the rational identity genuinely needs,
 vacuous in any characteristic-0 specialisation. This avoids `CharZero`
-entirely (so it stays inside the sandbox cache cone) and is verified
-sorry-free (`lake env lean`).
+entirely and is verified sorry-free (`lake env lean`).

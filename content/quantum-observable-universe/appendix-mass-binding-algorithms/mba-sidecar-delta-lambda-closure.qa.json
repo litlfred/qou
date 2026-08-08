@@ -15,7 +15,19 @@
     "da-false-claim": [],
     "da-reproducibility": [],
     "da-referee-verdict": [],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The dated branch-status heading \"### Status (2026-08-02) — value proved; magnitude external\" is now \"### Status: value proved, magnitude external\". The work-plan lane in the refuted-ansatz table, \"Track-A early proposals\", is now \"early Frobenius-pairing proposals\". The workplan phrase \"The earlier \\\"six-ansatz gate\\\"\" is now \"The six ansätze recorded below\", which keeps the count. Both legs of the result are unchanged: the per-partition value is proved, the many-body magnitude is open and irreducibly super-pairwise, and all six refuted ansätze remain listed with the deuteron as the refuting case and the r* ~ 1.585 deficit intact.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.220553Z"
 }

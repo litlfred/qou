@@ -1647,6 +1647,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the `.claude/skills/local/` hook reference and its §Slot, the `docs/duality-tracker.md` row labels (D##), the internal tooling-roadmap rungs (R2–R5 / Open R&D) and the process headings (Status / Open R&D / Diagnostics) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

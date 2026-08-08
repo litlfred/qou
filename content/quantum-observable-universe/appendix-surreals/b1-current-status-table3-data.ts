@@ -1,7 +1,0 @@
-import { table } from "../../schema/builders";
-export default table({
-  label: "tbl:b1-current-status-table3-data",
-  title: "Data table 3 from rem:b1-current-status",
-  uses: ["rem:b1-current-status"],
-  tags: ["extracted-table"],
-});
