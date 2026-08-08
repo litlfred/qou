@@ -183,7 +183,7 @@ def main() -> int:
         return 1
 
     # M_E_MEV for binding energy scale
-    M_E_MEV = 0.51099894999999995182093925905064679682254791259766
+    M_E_MEV = 0.51099895
     builder.add_parameter("M_E_MEV", str(M_E_MEV))
 
     # For each (K_1*, K_2*) pair, compute predicted B and variance
