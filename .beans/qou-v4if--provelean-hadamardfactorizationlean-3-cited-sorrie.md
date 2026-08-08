@@ -12,7 +12,7 @@ tags:
     - repo-infra
     - tractable
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-08T03:10:00Z
+updated_at: 2026-08-08T03:35:00Z
 parent: qou-k1mq
 ---
 
@@ -113,3 +113,45 @@ growth machinery, none of which Mathlib v4.24.0 has in usable form. That is a
 multi-week build, not a session. Not attempted here, and not faked.
 
 <!-- 2026-08-08T03:10:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 (later) — THE REMAINING SORRY SAT ON A FALSE STATEMENT.
+
+Roasting the PI-5 statement instead of the proof turned up something worse than
+difficulty. `hadamard_factorization` enumerated the zeros as `a : N -> C` with
+`forall n, f (a n) = 0`. That statement is **FALSE**, and the refutation is now
+in the file, sorry-free and machine-checked:
+
+    isEntireOfOrderLE_exp                    -- exp has order 1, exp 0 = 1 /= 0
+    no_nat_indexed_zero_enumeration_for_exp  -- exp has no zeros at all
+
+`Complex.exp` satisfies every hypothesis and cannot satisfy the conclusion,
+because an `N`-indexed enumeration cannot express "finitely many zeros", let
+alone none. So the sorry could never have been closed. It could only ever have
+been used to derive anything at all — and it was wired into QOU.lean's transitive
+imports, so anything downstream that touched it inherited that.
+
+REPAIRED. The index type is now existentially quantified,
+`exists (iota : Type) (_ : Countable iota) (a : iota -> C)`, so `iota = Empty`
+covers the zero-free case. `hadamard_factorization_statement_satisfiable_for_exp`
+checks — sorry-free — that the repaired statement IS satisfiable in exactly the
+case that refuted the old one. That is a regression test, not a restatement.
+
+The sorry remains, on a statement that is now at least true.
+
+WHY THIS WENT UNNOTICED. The file's own docstring argued, correctly, that the
+product equation forces the enumeration to be COMPLETE (no zero of f can be
+missing, and multiplicities must match). That defence survives the roast. What
+nobody checked was the opposite direction: whether the enumeration could be
+forced to be NON-EMPTY when f has no zeros. The docstring's "honest,
+non-vacuous" note reasoned about one failure mode and read as if it had covered
+both.
+
+LESSON, and it is the same one twice in this session: a statement can be
+carefully defended against the failure mode you thought of and still be false.
+The cheap check is to instantiate at the simplest object in scope — here `exp`,
+which took two lines.
+
+Sorry accounting for this file: 3 -> 2 (PI-2, 2026-08-07) -> 1 (PI-3,
+2026-08-08) -> 1, but now on a TRUE statement.

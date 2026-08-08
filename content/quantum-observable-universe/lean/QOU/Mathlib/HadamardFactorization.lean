@@ -190,6 +190,49 @@ theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     Summable.of_norm_bounded_eventually_nat (hsum.mul_left _) hev
   simpa using Complex.multipliable_one_add_of_summable key
 
+/-! ### The `ℕ`-indexed statement was FALSE — refuted, then repaired
+
+An earlier version of `hadamard_factorization` enumerated the zeros as
+`a : ℕ → ℂ` with `∀ n, f (a n) = 0`. That is not merely hard to prove; it is
+**false**, and the two theorems below are a sorry-free refutation.
+
+`Complex.exp` has order `1` and `exp 0 = 1 ≠ 0`, so it satisfies every
+hypothesis — but it has NO zeros at all, so no `a : ℕ → ℂ` can satisfy
+`∀ n, f (a n) = 0`. A `ℕ`-indexed enumeration cannot express "finitely many
+zeros", let alone none. The sorry on that statement could never have been
+closed; it could only ever have been used to derive anything at all.
+
+The repair existentially quantifies the index type, so `ι = Empty` covers the
+zero-free case. `hadamard_factorization_statement_satisfiable_for_exp` checks
+that the repaired statement really is satisfiable in exactly the case that
+refuted the old one — a regression test, not a restatement. -/
+
+theorem isEntireOfOrderLE_exp : IsEntireOfOrderLE Complex.exp 1 := by
+  refine ⟨Complex.differentiable_exp, 1, 1, one_pos, fun z => ?_⟩
+  rw [Complex.norm_exp]
+  simp only [one_mul, Real.rpow_one]
+  exact Real.exp_le_exp.mpr (Complex.re_le_norm z)
+
+/-- The refutation: for `f = exp`, no `ℕ`-indexed zero enumeration exists. -/
+theorem no_nat_indexed_zero_enumeration_for_exp :
+    ¬ ∃ (a : ℕ → ℂ), ∀ n, Complex.exp (a n) = 0 := by
+  rintro ⟨a, hz⟩
+  exact Complex.exp_ne_zero (a 0) (hz 0)
+
+/-- The repair is satisfiable exactly where the old statement failed. -/
+theorem hadamard_factorization_statement_satisfiable_for_exp :
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+      (p : ℝ) ≤ 1 ∧ (g.natDegree : ℝ) ≤ 1 ∧
+      (∀ i, a i ≠ 0) ∧ (∀ i, Complex.exp (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            Complex.exp z
+              = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
+  refine ⟨0, Polynomial.X, Empty, inferInstance, Empty.elim, by norm_num, ?_,
+    fun i => i.elim, fun i => i.elim, fun z => ⟨?_, ?_⟩⟩
+  · simp [Polynomial.natDegree_X]
+  · exact multipliable_empty
+  · simp
+
 /-- **Hadamard factorization theorem** (the stated-open core, PI-5). An entire
     function `f` of finite order `ρ` with `f(0) ≠ 0` factors as
     `f(z) = exp(g(z)) · ∏ₙ Eₚ(z/aₙ)`, where `(aₙ)` enumerates the zeros of `f`
@@ -205,13 +248,13 @@ theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     side), so the theorem is stated in full strength, not weakened. -/
 theorem hadamard_factorization {f : ℂ → ℂ} {ρ : ℝ}
     (hf : IsEntireOfOrderLE f ρ) (hf0 : f 0 ≠ 0) :
-    ∃ (p : ℕ) (g : Polynomial ℂ) (a : ℕ → ℂ),
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
       (p : ℝ) ≤ ρ ∧
       (g.natDegree : ℝ) ≤ ρ ∧
-      (∀ n, a n ≠ 0) ∧
-      (∀ n, f (a n) = 0) ∧
-      (∀ z, Multipliable (fun n => weierstrassFactor p (z / a n)) ∧
-            f z = Complex.exp (g.eval z) * ∏' n, weierstrassFactor p (z / a n)) := by
+      (∀ i, a i ≠ 0) ∧
+      (∀ i, f (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
   -- Ref: [manuscript] Ahlfors §5.3.2, Hadamard's Theorem; Conway XI.§3,
   --      Theorem 3.4 (Hadamard's factorization theorem).
   -- SORRY: needs full Hadamard factorization theorem (Jensen formula, counting zeros, Weierstrass canonical product)

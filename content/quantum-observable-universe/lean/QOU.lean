@@ -35,6 +35,10 @@ import QOU.Mathlib.WeierstrassFactorEstimate
 -- lattice-basis determinant lemmas, and the proof that the per-cusp factor
 -- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
 import QOU.OneLoopEdgeLattice
+-- Borel-Carathéodory inequality: a one-sided bound on Re f gives a two-sided
+-- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
+-- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
+import QOU.Mathlib.BorelCaratheodory
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
