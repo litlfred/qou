@@ -494,12 +494,37 @@ function detectTrivialTrue(
   // inhabited). They are NOT scanned for the reflexive-tautology case (a
   // real def legitimately reduces to a value).
   const isDodge = DODGE_KINDS.test(d.kind);
-  if (!isProvable && !isDodge) return undefined;
-  const concl = conclusionOf(d.sig);
+  // `axiom X : True` was invisible here until 2026-08-08: `axiom` is neither
+  // a PROVABLE_KIND nor a DODGE_KIND, so the guard below dropped it before any
+  // pattern ran. It is the purest form of the anti-pattern — an axiom whose
+  // conclusion is `True` asserts nothing, has no body to inspect, and (unlike
+  // a `theorem`) is not even *provable*-looking, so no reader thinks to check
+  // it. Live instance that motivated this: `QOU.Eightfold.Sym2Gate`'s
+  // `su3_sym2_irreducible`, an `axiom … : True` standing in for "the SU(3)
+  // fundamental has irreducible Sym²" (drain: bean `qou-8fl1` item 3).
+  const isAxiom = /^axiom\b/.test(d.kind);
+  if (!isProvable && !isDodge && !isAxiom) return undefined;
+  // Strip `--` line comments from the conclusion before pattern-matching.
+  // A commented-out explanation sitting between the `:` and the actual
+  // conclusion hides the conclusion from every test below — which is exactly
+  // how `su3_sym2_irreducible` evaded this detector even after `axiom` was
+  // admitted above:
+  //
+  //     axiom su3_sym2_irreducible :
+  //       -- "For V = the SU(3) fundamental (dim 3), Sym²(V) is irreducible."
+  //       True
+  //
+  // The prose is where the real claim lives; `True` is what is asserted.
+  const concl = conclusionOf(d.sig)
+    .replace(/--[^\n]*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   const body = d.body.trim();
   let pattern: string | undefined;
-  if (/^True\b/.test(concl) || concl === "True") pattern = "conclusion-True";
-  else if (/^True(\s*[∧×]\s*True)+$/.test(concl)) pattern = "conclusion-True-conj";
+  if (/^True\b/.test(concl) || concl === "True")
+    pattern = isAxiom ? "axiom-true" : "conclusion-True";
+  else if (/^True(\s*[∧×]\s*True)+$/.test(concl))
+    pattern = isAxiom ? "axiom-true" : "conclusion-True-conj";
   else {
     // Tautological conclusions — provable kinds only. The STATEMENT asserts
     // nothing, so the body is irrelevant (rfl, sorry, simp, decide all
