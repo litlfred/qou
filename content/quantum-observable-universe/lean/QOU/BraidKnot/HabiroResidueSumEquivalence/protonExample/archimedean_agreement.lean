@@ -6,10 +6,10 @@ import Mathlib.Tactic
 **§3b-cond class axiomatisation** for content block
 [`conj:gs-archimedean-agreement-residue`](../../../quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-residue.md): *Archimedean agreement (proton instance): degree-48 Habiro trace at $u_0$*.
 
-This is a **conjecture**: the class `archimedean_agreement` carries a placeholder
-field; the `noncomputable instance` is the conjectural witness whose
-`sorry` represents the open conjecture itself (per AGENTS.md §3b),
-NOT a missing proof.  Downstream theorems may take
+This is a **conjecture**: the class `archimedean_agreement` is a primary conjecture
+carrier with **no instance** — the honest open state per AGENTS.md §3b-tax.
+(The field schema is still a structural placeholder; see the note at the
+bottom of the file and bean `qou-ffwk`.)  Downstream theorems may take
 `[archimedean_agreement]` as an explicit `[Instance]` hypothesis to derive
 unconditional Lean theorems modulo this single conjectural input
 (per §3b-cond).
@@ -33,10 +33,21 @@ class archimedean_agreement where
       this holds). -/
   residual_eq_zero : residual = 0
 
-axiom conj_archimedean_agreement : archimedean_agreement
-
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-residue.ts
-noncomputable instance : archimedean_agreement := conj_archimedean_agreement
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  History: this file previously carried
+--     axiom conj_archimedean_agreement : archimedean_agreement
+--     noncomputable instance : archimedean_agreement := conj_archimedean_agreement
+-- so every downstream `[archimedean_agreement]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  (The removed comment
+-- called it a `sorry` representing the open conjecture; it was an `axiom`,
+-- which is strictly stronger — a `sorry` at least surfaces as `sorryAx`.)
+-- Removed, not completed.
+--
+-- SEPARATE OPEN DEFECT (bean `qou-ffwk`): the field schema above is still the
+-- placeholder `residual : ℝ` + `residual_eq_zero : residual = 0`, which is
+-- inhabited by `⟨0, rfl⟩`.  Removing the axiom restores the no-instance state
+-- but does not make the class assert anything, so a downstream
+-- `[archimedean_agreement]` hypothesis is not yet a meaningful conditional.
+-- The fields must be refined to the actual claim (the Habiro polynomial trace
+-- evaluating to the GB mass) first.
 end QOU.BraidKnot.HabiroResidueSumEquivalence.protonExample
