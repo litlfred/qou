@@ -89,6 +89,43 @@ def hook_lengths(lam):
             hooks.append(h)
     return hooks
 
+# ── DEPRECATED 2026-08-08: B_gate / B_vol / E_gate / c_λ ─────────────────────
+#
+# Removed from the dashboard. They have no basis in the derivation chain.
+#
+# The chain is
+#     q0 -> categorical action -> Yekutieli non-abelian Stokes -> H_n(q)
+#        -> Wedderburn (lambda |- n) -> Frobenius pairing tr_M = SUM_lambda y_lambda chi_lambda
+#        -> confinement SDP -> canonical T_w -> Archimedean functor -> MeV
+#
+# and its terminal object at that stage is tr_M. Everything downstream must be
+# a function of tr_M. `B_sym = alpha*ln(tr_free/tr_atom)` is; `B_gate =
+# alpha*ln(1/W_lambda)` is NOT. It takes ONE partition's Plancherel weight --
+# no character, no sum -- and never touches the braid word at all, so it
+# cannot distinguish two nuclei with the same (Z,N,S) and different topology.
+# It is a Wedderburn-layer side-channel around the pairing. `B_vol = A*a_V`
+# with `a_V = E0*ln(1/W_free)` is the same construct with one partition fixed.
+#
+# Measured on the way out, and worth keeping in the record:
+#
+#   * SUM_lambda W_lambda is NOT 1 at q0 -- it is 1.517 at n=12 and 26.28 at
+#     n=21. So -ln W_lambda was never a surprisal; the construct treated an
+#     unnormalised weight as a probability. The repo already knew:
+#     `normalized_plancherel_weights_3A` exists and its docstring says the
+#     naive weights "do NOT sum to 1" at q > 1.
+#   * Normalising would have moved err gate at 7Li from 1.46 to 0.97 and at
+#     6Li from 1.09 to 0.85 -- i.e. most of the heavy-end drift WAS the missing
+#     normalisation. Recorded because it is evidence about the construct, not
+#     a reason to keep it: fixing the normalisation would not make it licensed.
+#   * B_gate and B_vol both reported 7.58 MeV of BINDING for a free nucleon,
+#     where B_AME = 0 by definition, making `err gate` read 0.00 as though it
+#     were a perfect score.
+#
+# The SU(4) ground-state partition itself is fine -- it is a genuine lambda |- 3A
+# (4 parts, the spin-isospin classes) and a legitimate Wedderburn label. The
+# defect is using its weight INSTEAD of the pairing, not the label.
+
+
 def W_lambda_float(q, lam):
     n = sum(lam)
     hooks = hook_lengths(lam)
@@ -459,7 +496,7 @@ def _print_provenance() -> None:
     print("| `CAL`       | one of the three calibrations: m_e (CAL-1), q₀ via "
           "CAL-2, m_π (CAL-3). Inputs BY CONSTRUCTION — not successes. |")
     print("| `DERIVED`   | parameter-free from (q₀, m_e) through the Markov "
-          "trace: B_sym, B_qCLT_fac, B_gate, B_vol, m_can, F_Bor. No fit, no "
+          "trace: B_sym, B_qCLT_fac, m_can, F_Bor. No fit, no "
           "AME beyond the comparison. |")
     print("| `EXPLORATORY` | shown for comparison, NOT production-wired: "
           "B_lin, B_tetra, m_can⁰, m_tetra. |")
@@ -471,7 +508,6 @@ def _print_provenance() -> None:
         ("m_e, q₀, m_π", "CAL", "the 3 calibrations; q₀ on the PROTON pin"),
         ("B_sym", "DERIVED", "exact log-ratio α·ln(tr_free/tr_atom)"),
         ("B_qCLT_fac", "DERIVED", "colour-weighted q-CLT (A→∞ approximation)"),
-        ("B_gate / B_vol", "DERIVED", "SU(4) occupancy surprisal; a_V derived"),
         ("m_can", "DERIVED", "Borromean brane tower; m_n is a PREDICTION"),
         ("E_C", "DERIVED", "standard uniform-sphere Coulomb, r₀=1.2 fm"),
         ("B_lin / B_tetra / m_can⁰", "EXPLORATORY", "comparison only"),
@@ -808,31 +844,21 @@ def main(argv=None) -> int:
     # 2. BINDING + error  (B_AME ± exp 1σ from AME2020; err X = B_AME/B_X)
     print("### Binding  B + error (MeV)   "
           "[σ_exp = AME2020 1σ; err X = B_AME/B_X (1.00 = perfect, >1 under-binds)]")
-    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_tetra | B_qCLT_fac | B_gate | B_vol "
-          "| E_C | err can⁰ | err sym | err tetra | err qCLT_fac | err gate | err vol |")
-    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    print("| iso | A | B_AME | σ_exp (ppb) | B_can⁰ | B_sym | B_tetra | B_qCLT_fac "
+          "| E_C | err can⁰ | err sym | err tetra | err qCLT_fac |")
+    print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         s = r["sigma_AME"]
         s_ppb = (s / r["B_AME"] * 1e9) if (s and r["B_AME"]) else None
         e_can0 = _err(r["B_AME"], r["B_can0"])
         e_sym = _err(r["B_AME"], r["B_sym"])
         e_qclt_fac = _err(r["B_AME"], r["B_qCLT_fac"])
-        # B_gate = E₀·ln(1/W_λ): the SU(4)-occupancy (entanglement-surprisal) binding.
-        # Dominant at the magic/closed-shell config (fixes ⁴He err 2.36→0.94); over-
-        # binds the loosely-bound light nuclei. VALID only while W_λ<1 (positive
-        # surprisal): heavy nuclei (A≳24) have W_λ≥1 ⇒ E_gate≤0/NaN — shown as — (the
-        # occupancy reading breaks down; probes/su4_occupancy_binding_probe.py --group sweep).
-        eg = r.get("E_gate")
-        eg = eg if (eg is not None and math.isfinite(eg) and eg > 0) else None
-        e_gate = _err(r["B_AME"], eg)
-        # B_vol = A·a_V (all-knots volume term) — valid for ALL A.
-        e_vol = _err(r["B_AME"], r.get("B_vol"))
         e_tetra = _err(r["B_AME"], r.get("B_tetra"))
         print(f"| {r['name']} | {r['A']} | {_fmt(r['B_AME'])} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(r['B_can0'])} | {_fmt(r['B_sym'])} | {_fmt(r.get('B_tetra'))} | {_fmt(r['B_qCLT_fac'])} "
-              f"| {_fmt(eg)} | {_fmt(r.get('B_vol'))} | {_fmt(r.get('E_C'))} "
+              f"| {_fmt(r.get('E_C'))} "
               f"| {_fmt(e_can0,6)} | {_fmt(e_sym,6)} | {_fmt(e_tetra,6)} | {_fmt(e_qclt_fac,6)} "
-              f"| {_fmt(e_gate,6)} | {_fmt(e_vol,6)} |")
+              f"|")
 
     # chain ≡ exact-trace validation (rows where the p(3A) trace is feasible)
     val = [(r["name"], r["chain_resid"]) for r in rows
@@ -890,24 +916,10 @@ def main(argv=None) -> int:
 
 
     # 6. SU(4) DYNAMIC OCCUPANCY
-    print("\n### SU(4) Dynamic Occupancy  (E_gate = E₀·ln(1/W_λ), c_λ = B_AME/E_gate)")
-    print("| iso | A | S | partition λ | W_λ | E_gate (MeV) | B_AME (MeV) | c_λ | err gate (%) |")
-    print("|---|--:|--:|:--|--:|--:|--:|--:|--:|")
-    for r in rows:
-        if r['su4_partition']:
-            lam_str = str(r['su4_partition']).replace(" ", "")
-            S_val = NUCLEAR_SPINS.get(r['name'], 0.0)
-            # signed % by which the gate capacity over(+)/under(−)-states the
-            # actual binding: (E_gate − B_AME)/B_AME × 100. Complements c_λ
-            # (= B_AME/E_gate); err = (1/c_λ − 1)·100. ±0 = gate exactly = B_AME.
-            err_gate = (((r['E_gate'] - r['B_AME']) / r['B_AME'] * 100.0)
-                        if r['B_AME'] else None)
-            print(f"| {r['name']} | {r['A']} | {S_val} | {lam_str} "
-                  f"| {_fmt(r['W_lam'],8,6)} | {_fmt(r['E_gate'],8,2)} "
-                  f"| {_fmt(r['B_AME'],8,2)} | {_fmt(r['c_lam'],6,4)} "
-                  f"| {_fmt(err_gate,8,1) if err_gate is not None else '—':>8} |")
-        else:
-            print(f"| {r['name']} | {r['A']} | {NUCLEAR_SPINS.get(r['name'], 0.0)} | — | — | — | {_fmt(r['B_AME'],8,2)} | — | — |")
+    # SU(4) Dynamic Occupancy table REMOVED — see the deprecation note on
+    # E_gate above. It reported E_gate / c_lambda / W_lambda, all of which are
+    # the same unlicensed construct.
+
 
     _print_provenance()
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
