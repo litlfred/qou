@@ -48,6 +48,10 @@ import QOU.Mathlib.HadamardApplicability
 -- complement of the prefactor zeros to everywhere. Collapses the open input
 -- `hibinv` (qou-rp5f) into `hratio` (qou-cons). Sorry-free.
 import QOU.Mathlib.FaddeevRatioPeriodic
+-- The FaddeevPhi class has NO regularity field, so its solution set absorbs any
+-- doubly-periodic factor (lattice indicator included). Hence `hratio` (qou-cons)
+-- is not derivable from the class — it is a fact about the analytic Phi_b.
+import QOU.Mathlib.FaddeevSolutionSet
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
