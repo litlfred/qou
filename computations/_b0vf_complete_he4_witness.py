@@ -18,6 +18,27 @@ GATES (principled — both blocking, else NO write):
      produced by the same kernel + the same {σ,drop} decomposition.
 
   B. MARKOV-PEEL CROSS-CHECK, scoped to the intrinsic dual-path gap.
+
+     SUPERSEDED — read `chi_dual_path_xref_audit.py` before trusting the
+     paragraph below. This script is a one-off at the muon pin; ⁴He was
+     since rebuilt proton-anchored (4fb4ac54) and the corpus-wide,
+     read-only version of this cross-check lives in that audit.
+
+     Two claims here are now known to be wrong:
+
+       - The "~4.8e-8 intrinsic gap on the complete deuteron" is not
+         intrinsic. It is the deuteron's own anchor mismatch. Three
+         complete same-pin atoms (tritium, helium-3, and THIS ⁴He table
+         before its rebuild) agree to 9.111e-20, and the peel producer's
+         own header independently claims ~1e-19.
+       - Because B_D is measured off that cross-pinned deuteron, the
+         tolerance 10·B_D inflates with the contamination it exists to
+         detect. Re-run today, GATE B PASSES ⁴He's 3.261e-07 against a
+         1.7e-06 bound. It does not go red; it stops discriminating.
+
+     A tolerance derived from a measured witness gap will always track
+     that witness's defects. The replacement audit fixes its bound as a
+     constant for exactly this reason.
      Σ_λ y_λ χ_λ (Wenzl Frobenius pairing) and the markov-peel scalar
      (Markov-axiom recursive ascent) are two *implementations* of the
      SAME canonical Markov trace.  They are not bit-identical: on the
