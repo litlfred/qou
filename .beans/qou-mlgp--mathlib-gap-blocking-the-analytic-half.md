@@ -709,3 +709,59 @@ machinery; the order-2 case adds the `(h/12)(f'(b) - f'(a))` correction with an
 `O(h^5)` per-cell remainder, and the natural next step is the same Peano-kernel
 argument one degree higher (kernel `(x-a)^2(b-x)^2`, four integrations by parts
 or one FTC against a quartic `F`).
+
+## Gap 1 CLOSED at the level (A) needs: the CORRECTED trapezoid rule
+
+`QOU/MathlibExt/CorrectedTrapezoid.lean`, three declarations, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:342`:
+
+    integral_weight_sq                        int (x-a)^2(b-x)^2 = (b-a)^5/30
+    integral_eq_corrected_trapezoid_sub       the EXACT order-2 identity
+    abs_corrected_trapezoid_sub_integral_le   |.| <= h^5 M/720 for |f''''| <= M
+
+    int_a^b f = (h/2)(f a + f b) - (h^2/12)(f' b - f' a)
+                  + (1/24) int_a^b (x-a)^2(b-x)^2 f''''(x) dx
+
+exact for every `f` in `C^4`. The `-(h^2/12)(f' b - f' a)` term IS the
+Euler-Maclaurin `B_2` correction, and it TELESCOPES on summing the cells — which
+is precisely why (A)'s expansion has a `-(pi/12N) cot theta` term and nothing
+else below `O(1/N^3)`.
+
+**SAME ONE-FTC TRICK, ONE DEGREE UP.** Kernel `w = u^2(u-h)^2` (double roots at
+both ends kill the first two boundary terms), and
+
+    F := w f''' - w' f'' + w'' f' - w''' f     satisfies     F' = w f'''' - 24 f
+
+every cross term cancelling against its neighbour. One FTC application gives
+`F(b) - F(a) = 2h^2(f' b - f' a) - 12h(f a + f b)`; divide by 24. NO integration
+by parts is performed, let alone four times. The textbook route is four
+integrations by parts; this is one line of cancellation.
+
+Verified numerically: identity to 1e-33 on `log(2 sin)` cells; the bound holds
+with the right constant at three cells; `int (x-a)^2(b-x)^2 = h^5/30` exact.
+
+**LEAN GOTCHA WORTH RECORDING.** `HasDerivAt.pow` returns a `Pi`-power
+(`(fun y => y - a) ^ 2`), not a lambda, and `ring` cannot beta-reduce it —
+`convert` then fails with an unsolved goal full of `((fun y => b - y) ^ 2) x`.
+The fix is to ascribe each power to its lambda form in an intermediate `have`
+before combining with `.mul`. Same trap will hit any future Peano-kernel work.
+
+## (A) — every named analytic ingredient is now built
+
+    (i)   the exact reflection                       PROVED
+    (ii)  symmetric half = trapezoid remainder       PROVED (identity)
+    (ii') symmetric half is O(h^2)                   PROVED (bound)
+    (iii) the j=0 singularity                        REMOVED (exact split)
+    (iv)  Stirling upper, Robbins 1/(12n)            PROVED
+    (v)   Stirling lower, Robbins 1/(12n+1)          PROVED
+    (vi)  order-2 Euler-Maclaurin cell rule          PROVED  <- this commit
+
+What is left is ASSEMBLY, not analysis: sum the order-2 rule over the `k` cells
+of `logSinc` (the `B_2` terms telescope), combine with `sum_log_two_sin_split`
+and the Robbins bounds, and read off
+
+    s_k = (N/pi) Lambda(th) - (1/2) log(2N sin th) - (pi/12N) cot(th) + O(1/N^3)
+
+Every piece that assembly needs now exists in this corpus. That is a different
+statement from "(A) is closed" — the assembly is real work and is not done — but
+no missing lemma stands in front of it.

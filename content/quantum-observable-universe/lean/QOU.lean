@@ -339,6 +339,7 @@ import QOU.MathlibExt.GaussianThetaSum
 import QOU.MathlibExt.GaussianShearIntegral
 import QOU.MathlibExt.StirlingRobbins
 import QOU.MathlibExt.TrapezoidRule
+import QOU.MathlibExt.CorrectedTrapezoid
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm
