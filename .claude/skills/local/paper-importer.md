@@ -20,6 +20,14 @@ allowed-tools: Read Write Edit Bash Grep Glob Agent WebFetch
 > source-match + bib validation). The on-photo automation lives in
 > [`local/bib-photo-ingestion-watcher`](bib-photo-ingestion-watcher.md).
 
+> **Triage first (2026-08-08).** Most uploads should not become content
+> blocks. Before importing, run
+> [`local/paper-relevance-triage`](paper-relevance-triage.md) to decide
+> whether the paper is worth importing at all and what it would attach to.
+> Import is the action a triage *proposes* (`new-block`), not the default
+> disposition of an upload. The triage's verdict and proposed actions live in
+> the source ledger, `content/bib-qa-verifications.json`.
+
 ## Overview
 
 This skill imports external mathematical papers into the content object
