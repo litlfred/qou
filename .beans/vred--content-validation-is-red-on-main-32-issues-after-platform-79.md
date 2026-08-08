@@ -85,3 +85,60 @@ editorial edge). These want per-case triage, not a sweep.
 Found while measuring an unrelated detector change (`vrfw`). Neither the 10 nor
 the 22 were swept into that PR — a content fix inside a detector PR is exactly
 the side-effect commit this repo has been cleaning up after.
+
+---
+
+## 2026-08-08 — RESOLVED. `✗ Invalid — 32` → `✓ Valid — 13`
+
+All nine hard failures triaged and fixed. Seven were label repairs where the
+target exists; two named a block that does not.
+
+### Seven repairs — the target exists, the prefix or spelling was wrong
+
+Each was determined from evidence in the corpus, not chosen:
+
+| block | was | is | how it was determined |
+|---|---|---|---|
+| `term6-binding-density-table{1,2}-data` | `prop:term6-binding-density` | `rem:…` | only `rem:` exists |
+| `cyclotomic-strand-doubling-proof` | `lemma:cyclotomic-strand-doubling` | `prop:…` | the proof block is `prf:…`; its statement is `prop:…` |
+| `six-term-per-derivation-weights-table3-data` | `rem:six-term-per-derivation-weights` | `prop:…` | **siblings table1 and table2 already use `prop:` and resolve** |
+| `beta-decay-simulator-table-data` | `sim:beta-decay-half-life` | `sim:beta-decay-halflife` | one hyphen; the simulator's own label |
+| `tm-inductive-construction`, `tm-heavy-atom-examples` | `rem:generator-volume-decomposition` | `prop:…` | only `prop:` and `prf:` exist |
+
+The table3 case is the cleanest evidence in the set: two sibling tables
+extracted from the same source already point at `prop:`, so the third is a
+straightforward copy defect rather than a judgement call.
+
+Where a wrong label also appeared in the **title** — the generator wrote raw
+labels into published prose, e.g. `"Table 3 from rem:six-term-per-derivation-weights"`
+— it was corrected in the same edit. Fixing a label in one field and leaving the
+same wrong label in another would be incoherent.
+
+### Two drops — the target does not exist
+
+`tbl:hecke-log-decomposition-table-data` → `prop:hecke-log-decomposition` and
+`tbl:q-beta-form-a-n1-symbolic-table-data` → `prop:q-beta-form-a-n1-symbolic`.
+Neither label exists anywhere in the corpus; the chapter manifests list only the
+extracted tables.
+
+The references were **dropped, not re-pointed.** `uses[]` is the editorial
+relation — what a reader must have read — so guessing a plausible parent would
+fabricate exactly the edge every ordering metric is computed from. A missing
+parent is better recorded as missing.
+
+So it *is* recorded: each block now carries an `authorNotes` caveat naming the
+absent source, why the reference was dropped rather than redirected, and that
+what is actually missing is the proposition the table was extracted from. The
+debt is in the block, not only in this bean.
+
+### Remaining — 13 warnings, none of them failures
+
+Five `chap:particle-interactions` (a chapter not yet written), three "no Lean
+declaration yet", one dangling remark, and four `.md` cross-references. These
+predate the platform change; two surfaced with it
+(`def:simple-objects-V`, `def:conway-normal-form`). They are `⚠`, so the gate is
+green and *"validate unchanged from baseline"* is sayable again.
+
+The truncated `"Data table N from "` titles on the ten `notation-register`
+tables remain — the generator defect that produced them is still unfixed, and
+is the one item from this bean's original list not closed.
