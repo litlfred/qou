@@ -75,7 +75,7 @@ theorem qSerre_neq_cartan_diag (R : Type*) [CommRing R] (q : R)
     This numerical accident is the source of the confusion. -/
 theorem qSerre_eq_cartan_at_classical :
     gaussianBinomial2Framed ℤ 1 = 2 * 1 := by
-  simp [gaussianBinomial2Framed]; ring
+  simp [gaussianBinomial2Framed]
 
 -- § 4. Root angle is q-independent
 
@@ -84,4 +84,3 @@ theorem qSerre_eq_cartan_at_classical :
 theorem root_angle_ratio_A2 :
     (cartanMatrix_A2 0 1 : ℚ) / (cartanMatrix_A2 0 0 : ℚ) = -1 / 2 := by
   simp [cartanMatrix_A2]
-  native_decide

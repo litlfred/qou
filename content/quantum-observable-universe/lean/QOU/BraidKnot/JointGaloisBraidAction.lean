@@ -54,9 +54,18 @@ class JointGaloisBraidAction (n : ℕ) where
   equivariance : ∀ (g : GMot) (b : Equiv.Perm (Fin n)) (a : BiFiltration),
     galAct g (braidAct b a) = braidAct b (galAct g a)
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply `equivariance`, which *is* the
+-- conjecture; fabricating one is the audit-dodge recorded as bean `cj317`.
+-- Downstream results must take `[JointGaloisBraidAction n]` as an explicit
+-- hypothesis so the assumption stays visible in every signature.
+--
+-- History: this file previously carried
+--   `noncomputable instance (n : ℕ) : JointGaloisBraidAction n := ⟨fun _ => 0, fun _ => rfl⟩`
+-- described in a comment as "the `sorry` … the open conjecture". It was
+-- neither a `sorry` nor a valid instance: the class has five fields and the
+-- anonymous constructor supplied two, so the file did not compile at all.
+-- Removed rather than completed — completing it would assert the conjecture.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/joint-galois-braid-action.ts
-noncomputable instance (n : ℕ) : JointGaloisBraidAction n := ⟨fun _ => 0, fun _ => rfl⟩
 
 end QOU.BraidKnot
