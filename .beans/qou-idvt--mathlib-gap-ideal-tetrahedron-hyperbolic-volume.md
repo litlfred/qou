@@ -1,7 +1,7 @@
 ---
 # qou-idvt
 title: 'MATHLIB GAP: ideal-tetrahedron hyperbolic volume theory (blocks qou-krvm (iv) + qou-7y3g)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
@@ -69,3 +69,56 @@ labelled. `qou-7y3g` carries the same guard for the volume identity.
 This is infra-scale, not session-scale, as `qou-7y3g` says. But T3 alone may be
 session-scale, and it is the piece that actually unblocks a downstream result.
 Attack T3 first; do not start by building hyperbolic geometry.
+
+---
+
+## 2026-08-08 — T3's MATHEMATICAL CORE IS PROVED (sorry-free). Λ not needed.
+
+`QOU/Archimedean/IdealTetrahedronConcavity.lean`. This bean assumed T3 needed
+T1-T2 first (build Lobachevsky, then ideal-simplex volume, then concavity). **It
+does not.** The concavity reduces to two trigonometric identities, and `Λ` does
+not appear in the file at all.
+
+Writing `f(α,β) = Λ(α)+Λ(β)+Λ(π−α−β)` with `Λ'' = −cot`, the Hessian is
+
+    f_αα = −(cot α + cot γ)    f_αβ = −cot γ    f_ββ = −(cot β + cot γ)
+
+and everything follows from:
+
+  * `cot_cyclic_sum_eq_one` — `cot α cot β + cot β cot γ + cot γ cot α = 1`
+    whenever `α+β+γ = π`. Hence `det H = 1` **exactly** (`hessian_det_eq_one`),
+    not merely positive.
+  * `cot_add_cot_pos` — `cot α + cot γ = sin β/(sin α sin γ) > 0`, so `f_αα < 0`.
+  * `hessian_neg_definite` — negative definite at EVERY interior point.
+
+Both identities are elementary (sine addition formula after clearing
+denominators). No geometry, no manifold theory, no Rivin paper — the literature
+was not needed.
+
+**The awkward point is handled.** At `(π/4, π/4, π/2)` — L6a4's unique symmetric
+point (`L6a4AngleStructure.unique_symmetric_point`) — `cot γ = 0`, the
+off-diagonal vanishes, and the matrix looks degenerate. `det_eq_one_at_octahedron`
+shows the determinant is still exactly 1 there. Since that is precisely the point
+`qou-krvm` cares about, it is the case that had to work.
+
+**Non-vacuity proved**: `regularTetrahedron` (m004's optimum) and
+`regularOctahedron` (L6a4's) are exhibited, so `AngleTriple` is inhabited and the
+universally-quantified theorems are not empty.
+
+## WHAT THIS DOES NOT DO — read before citing
+
+It does **not** close `qou-krvm` (iv), and the file says so. What is missing:
+
+  1. `Λ` itself (T1) and `Vol = Λ(α)+Λ(β)+Λ(γ)` (T2). The corpus has `Cl_2` in
+     `ClausenFunctionMathlibFiller` but no Lobachevsky function.
+  2. `Λ'' = −cot`, which needs T1.
+  3. The second-derivative test: "Hessian negative definite ⇒ strictly concave"
+     needs Mathlib's `ContDiff`/`C²` machinery. Standard, but not free.
+
+So the honest status is: **the part everyone assumed was hard is done; the
+remaining part is plumbing.** T3 was mis-scoped in this bean as depending on
+T1-T2 — it is the other way round for the *core*, though the plumbing does need
+them.
+
+Revised tiering: T1 (Lobachevsky on top of `Cl_2`) → T2 (`Vol` as the sum) →
+**T3-core DONE** → T3-plumbing (second-derivative test) ⇒ `qou-krvm` (iv).
