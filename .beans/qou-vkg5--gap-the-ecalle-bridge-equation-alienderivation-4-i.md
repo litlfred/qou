@@ -168,3 +168,66 @@ degenerate value is `c_ω = 1`, not `0`).
    the additive-vs-multiplicative ambiguity that blocked it is gone.
 
 Closing is a human action — leaving status as-is.
+
+## 2026-08-08 (later) — the twist, E_q proved forced, and where the gap now sits
+
+Three further commits on PR #4771, all sorry-free.
+
+### A correction to my own structure
+
+`QBridgeSystem` (committed an hour earlier) assumed `σ ∘ Δ_ω ∘ σ⁻¹` is a multiple
+of **`Δ_ω` itself** — the same index. For q-difference equations that is an
+over-restriction: the dilation acts on the Borel plane too, so it moves a
+singularity at `ω` to `qω`. `TwistedQBridgeSystem` carries the shift;
+`QBridgeSystem` is exactly the `shift = id` case (`toTwisted` / `untwist`), so
+nothing proved earlier is lost.
+
+### What was prose is now theorems
+
+The earlier commit *asserted* in a docstring that `E_q` is the right base. Proved,
+in three pieces:
+
+| theorem | content |
+|---|---|
+| `QGevreyTaming.qBorelCoeff_dilate` | the q-Borel transform intertwines the two dilations, `B(qⁿ·aₙ) = qⁿ·B(aₙ)` — the one step of the argument that is a computation, and the reason the singularity moves at all |
+| `shift_mul_eq_id_iff` | with `shift ω = q·ω`, the shift is the identity **iff `q = 1`** — so on `ℂ*` the untwisted form is simply unavailable for a genuine dilation |
+| `untwist` | the twist vanishes exactly when the alien family is shift-invariant, i.e. constant along q-spirals, i.e. factors through `ℂ*/q^ℤ` |
+
+Together: **`E_q` is not a convenient base, it is the unique quotient on which the
+bridge relation can be index-preserving.** Independent corroboration of the
+corpus's `E_q` framing (`qou-qbe9x`, where `x = q⁻²` was found to be the identity
+orbit `[q⁻²] = [1]`).
+
+`conjDeriv_iterate` is the content of the twist when it is *not* removed:
+`σⁿΔ_ωσ⁻ⁿ = (∏_{k<n} c_{shiftᵏω})·Δ_{shiftⁿω}` — weights accumulate along the
+orbit.
+
+### Every field now has a concrete witness
+
+`polyQEulerSystem` — `R[X]` with a genuine q-dilation `X ↦ c·X` (an `AlgEquiv`,
+which is the whole point) and the Euler operator. `polyQEuler_weights`
+instantiates the punchline concretely: same family, same index `n`, classical
+weight `n`, q-weight `cⁿ`. Combined with the unipotent model, the semisimple
+weight, the unipotent part, and the classical/q contrast all have models.
+
+### Where the gap is now
+
+**Narrowed twice, not closed.**
+
+1. ~~additive or multiplicative~~ — **answered**: multiplicative, forced, mixed in
+   general.
+2. ~~which index set~~ — **answered**: `E_q`, proved forced.
+3. **Open: C1's actual weights.** No analytic q-difference module is exhibited
+   satisfying the relation. This needs the q-Borel/Laplace construction
+   (sector-dependent summation, the theta-function jump) — the old S3, correctly
+   flagged then as "genuinely multi-session; not a session brick". It has not
+   become cheaper.
+
+A **prune** narrowing where to look: `monomial_eigenvalue_mem_zpowers` — the
+dilation's monomial eigenvalues `qⁿ` all lie in the identity class of `E_q`, so
+the monomial grading cannot exhibit a weight at all. Scope-(a): for C1's `∞` the
+weight would have to come from the *quadratic* factor certified by
+`deg_q(cₙ) = n²`, not from the powers of `x`. This says where not to look; it does
+not say C1's weight is trivial.
+
+Closing is a human action — leaving status as-is.

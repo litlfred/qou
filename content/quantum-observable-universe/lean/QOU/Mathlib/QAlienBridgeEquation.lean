@@ -573,4 +573,22 @@ theorem shift_mul_eq_id_iff {G : Type*} [Group G] (q : G) :
     funext ω
     simp [h]
 
+/-- **A prune: the monomial grading carries no q-bridge weight.**
+
+    The dilation acts on the monomial `x^{n}` with eigenvalue `qⁿ`, and every
+    `qⁿ` lies in `q^ℤ` — the *identity* class of `E_q = ℂ*/q^ℤ`.  So on the index
+    set of monomial `σ`-eigenvalue **classes** there is only one class: the shift
+    is trivially the identity, `untwist` applies for an empty reason, and no
+    weight distinguishes anything.
+
+    **Reading — scope-(a), a where-not-to-look result, not a computation.**
+    Whatever q-bridge weight a q-difference module carries, it is not visible in
+    the monomial grading of its formal solution.  For C1's `∞` side the weight
+    would have to come from the *quadratic* factor certified by
+    `deg_q(cₙ) = n²` (`QOU.QBeta.cCoeff_natDegree`), not from the powers of `x`.
+    Nothing here says the weight is trivial, or that C1 has no weight; it says
+    this particular grading cannot exhibit one. -/
+theorem monomial_eigenvalue_mem_zpowers {G : Type*} [Group G] (q : G) (n : ℤ) :
+    q ^ n ∈ Subgroup.zpowers q := Subgroup.mem_zpowers_iff.mpr ⟨n, rfl⟩
+
 end QOU.Mathlib.QAlienBridge
