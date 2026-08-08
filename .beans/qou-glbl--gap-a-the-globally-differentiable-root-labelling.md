@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide is FALSE at phi=pi (prove over Ico, never Icc); proved in full at every real root'
+title: 'Gap A: VSide FALSE at phi=pi; G3 retracted (x*y IS real once, at a root of r^5-r^3+1); proved at every real root'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T01:15:00Z
+updated_at: 2026-08-09T02:05:00Z
 ---
 
 ## What is open
@@ -154,8 +154,8 @@ be called trivial in advance.
 
 `VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
 it was measured before any Lean was written for it. **Route 36**
-(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **7 gates**, all pass — G7 is a
-recorded *refutation*, see below):
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **7 gates**, all pass — G3 is a
+**retraction** and G7 a recorded *refutation*, both below):
 
 * **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks
   (199 **interior** arc points × 3 roots; the endpoints are not sampled — G7). The correction-6 version scores 199 failures under
@@ -241,15 +241,53 @@ discriminant and all three roots are real at 46 of the 199 points.
 `hxim` is load-bearing, not decorative — at `φ = π` it is exactly what fails, and
 `VSide` fails with it. The lemma and the refutation are the same fact.
 
-**Still open in `VSide`:** `x·y ∈ notCut` and `y/x ∈ notCut` at the **complex
-pair**, on the open arc. G3 measured both — carried by `Im ≠ 0` at all 597 checks
-with `min |Im| = 0.00676`. `exists_pinning_data` already gives `(x·y₃).im < 0`
-and `(x·y₂).im < 0` once `c < 0`; the remaining gap is `y₂` for `c ≥ 0`.
+### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 
-⚠ And note what G3's margin actually was: `min |Im(x·y)| = 0.00676` at
-`φ = 0.0157` belongs to the **real** root (`t·sin φ → 0` as `φ → 0`), not to the
-pair — the pair's own minimum is `0.00587`. The real root's margin closing at
-`φ = 0` is harmless, because `Re(x·t) = t·cos φ < 1` carries it there. It is the
+The original G3 claimed `x·y` and `y/x` are **never** real on the arc, so their
+`notCut` membership "needs no case split at all". **False.** The gate passed on a
+grid minimum of `|Im(x·y)|` tested against `1e-6` — and a grid minimum is not a
+lower bound. Refining the grid shrank it like `1/N` (`0.00587` at N = 399,
+`0.00215` at N = 999), which is the signature of a simple **zero crossing**.
+
+There is exactly one on `(0,π)`, found by bisecting the *symmetric*
+`∏ⱼ Im(x·yⱼ)` so the search needs no branch tracking. At it `x·y` is real with
+
+    r = −1.2365057033914990243   the unique real root of   r⁵ − r³ + 1 = 0
+
+and `c = r(1+r)/2`, `t = 1/r²` — all three matching to **20 digits**. Vieta gives
+it: `x·y₂ = r` real with `|x| = 1` forces `y₂ = r·conj x`, hence `y₃ = r·x`, and
+substituting into the curve makes `x` a root of a cubic with **real**
+coefficients; `x` is non-real on the open arc, so `conj x` is a root too and the
+third is `−r²`. (`x·y₂` and `y₃/x` are the *same* real number there, which is why
+both crossings coincide.)
+
+`notCut` still holds — **via `Re < 1`, not via `Im ≠ 0`.** So the proof obligation
+is the *opposite* of what the retracted claim said, and the disjunction is
+genuinely needed.
+
+✅ The Lean consequence that makes it benign is proved:
+
+    quintic_root_lt_one (h : r⁵ − r³ + 1 = 0) : r < 1
+
+because `r ≥ 1` forces `r⁵ − r³ + 1 = r³(r²−1) + 1 ≥ 1 > 0`.
+
+**Both retractions this session share one shape:** a *negative* claim ("never
+real", "holds everywhere") backed by *positive samples on a grid*. Neither can be
+established that way. Where Route 36 now asserts a "never" it evaluates an exact
+endpoint or bisects a symmetric function — not a denser grid.
+
+**Still open in `VSide`:** `x·y ∈ notCut` and `y/x ∈ notCut` at the **complex
+pair**, on the open arc. `exists_pinning_data` gives `(x·y₃).im < 0` and
+`(x·y₂).im < 0` once `c < 0`; the remaining gap is `y₂` for `c ≥ 0`, and it now
+has to route through the crossing rather than around it — away from `φ*` by
+`Im ≠ 0`, at `φ*` by `quintic_root_lt_one`. The missing step is deriving
+`r⁵ − r³ + 1 = 0` in Lean from `curve x y = 0` ∧ `|x| = 1` ∧ `Im(x·y) = 0`; the
+Vieta route above is the one to follow, and its only real content is that a
+non-real root of a real cubic brings its conjugate.
+
+⚠ Note also what G3's *other* number meant: `min |Im(x·y)| = 0.00676` at
+`φ = 0.0157` belongs to the **real** root (`t·sin φ → 0` as `φ → 0`), not the
+pair. That one is harmless — `Re(x·t) = t·cos φ < 1` carries it — but it is the
 *same* degeneration that is fatal at `φ = π`, where `Re` does not.
 
 ### The original "what remains: (a) only" note, superseded

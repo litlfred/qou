@@ -8,8 +8,31 @@ at ALL 199 arc points because exactly one root is real and positive at every
 phi. A theorem carrying it was true and about nothing.
 
 So the first question about the corrected `VSide` is not "can I prove it" but
-"is it satisfiable at all". It is: all six conditions hold SIMULTANEOUSLY at
-every one of the 597 checks.
+"is it satisfiable at all". It is, ON THE OPEN ARC: all six conditions hold
+SIMULTANEOUSLY at every one of the 597 interior checks.
+
+TWO THINGS THIS PROBE GOT WRONG AND THEN CAUGHT
+-----------------------------------------------
+Both were claims about "never", established from a grid. A grid cannot support
+one, and both were false.
+
+1. **`VSide` is FALSE at `phi = pi`** (G7). G1 samples `pi*(i+1)/(N+1)` -- the
+   OPEN interval -- so "holds at all 597 checks" was being read as covering a
+   point it never tested. At the endpoint all three roots are real and
+   `Im(x*y) = y*sin(phi)` vanishes for all of them at once; the root
+   `y = -2.2469796` then has `x*y = +2.2469796` on Li2's cut.
+
+2. **`x*y` DOES become real on the open arc** (G3, retracted and replaced). The
+   original G3 claimed it never does and that `notCut` needed "no case split at
+   all". It passed on a grid minimum of `|Im|`, which is not a lower bound.
+   Refining the grid shrank that minimum like `1/N`, which is a zero crossing.
+   There is exactly one, at the unique real root of `r^5 - r^3 + 1`, and `notCut`
+   survives there via `Re < 1` -- the opposite disjunct from the one claimed.
+
+The pattern is the same both times: a *negative* claim ("never real", "holds
+everywhere") backed by *positive* samples. Where this probe now asserts a
+"never", it either checks an exact endpoint or bisects a symmetric function for
+crossings -- not a denser grid.
 
 ⚠ A TRAP THIS PROBE ALMOST FELL INTO
 ------------------------------------
@@ -41,7 +64,8 @@ import json
 import pathlib
 
 from mpmath import cos as mpmath_cos
-from mpmath import exp, fabs, im, mp, mpc, mpf, nstr, pi, polyroots, re, sqrt
+from mpmath import (exp, fabs, findroot, im, mp, mpc, mpf, nstr, pi, polyroots, re,
+                    sqrt)
 
 
 def roots_at(ph):
@@ -150,30 +174,97 @@ def main() -> int:
                      and cplx_via_im == n_cplx and n_real + n_cplx == total),
     })
 
-    # ---- G3: x*y and y/x are NEVER real on the arc -------------------------
-    worst_xy, worst_ydx = None, None
-    at_xy = None
-    for i in range(N):
-        ph = pi * mpf(i + 1) / (N + 1)
+    # ---- G3: x*y and y/x DO become real -- once, exactly, and Re < 1 saves it ----
+    #
+    # ⚠ RETRACTION. The first version of this gate claimed "x*y and y/x are NEVER real on
+    # the arc -- both carried by Im != 0 at every one of the 597 checks, with a genuine
+    # margin rather than a near-miss", and passed on `min |Im| > 1e-6`. That claim is
+    # FALSE, and the gate's own design hid it: a grid minimum is not a lower bound.
+    #
+    # Refining the grid shrinks the complex-pair minimum like 1/N -- 0.00587 at N = 399,
+    # 0.00215 at N = 999 -- which is the signature of a simple ZERO CROSSING, not a margin.
+    # There is exactly one on (0, pi), located here by bisecting the SYMMETRIC function
+    # prod_j Im(x*y_j) so the search is branch-independent.
+    #
+    # The crossing value is exact: r = -1.2365057033914990243, the unique real root of
+    #
+    #     r^5 - r^3 + 1 = 0
+    #
+    # with c = r(1+r)/2 and t = 1/r^2 -- all three confirmed to 20 digits below. It falls
+    # out of Vieta: if x*y_2 = r is real with |x| = 1 then y_2 = r*conj(x), so y_3 = r*x,
+    # and substituting into the curve makes x a root of a cubic with REAL coefficients.
+    # x is non-real on the open arc, so conj(x) is a root too and the third root is -r^2;
+    # the two Vieta relations then give c = r(1+r)/2 and the quintic.
+    #
+    # notCut still holds -- via `Re < 1`, NOT via `Im != 0`. So `x*y in notCut` genuinely
+    # needs the disjunction, and the retracted claim ("needs no case split at all") had the
+    # proof obligation exactly backwards.
+    #
+    # The Lean consequence is cheap and is what makes this benign: r >= 1 forces
+    # r^5 - r^3 + 1 = r^3(r^2 - 1) + 1 >= 1 > 0, so NO real root of the quintic reaches 1.
+    def prod_im_xy(ph, use_div=False):
+        """prod_j Im(x*y_j) -- symmetric in the roots, so it needs no branch tracking."""
         x = exp(mpc(0, 1) * ph)
+        p = mpf(1)
         for y in roots_at(ph):
-            a, b = fabs(im(x * y)), fabs(im(y / x))
-            if worst_xy is None or a < worst_xy:
-                worst_xy, at_xy = a, ph
-            if worst_ydx is None or b < worst_ydx:
-                worst_ydx = b
+            p *= im(y / x) if use_div else im(x * y)
+        return p
+
+    crossings = {}
+    for use_div in (False, True):
+        found, prev = [], None
+        M = 600
+        for i in range(1, M):
+            ph = pi * mpf(i) / M
+            v = prod_im_xy(ph, use_div)
+            if prev is not None and prev[1] * v < 0:
+                found.append(findroot(lambda u: prod_im_xy(u, use_div), (prev[0], ph),
+                                      solver='bisect', tol=mpf(10) ** -30))
+            prev = (ph, v)
+        crossings['y_over_x' if use_div else 'x_times_y'] = found
+    zs = crossings['x_times_y']
+    rvals, res_ok = [], True
+    for z in zs:
+        x = exp(mpc(0, 1) * z)
+        ws = [x * y for y in roots_at(z)]
+        w = min(ws, key=lambda u: fabs(im(u)))
+        rvals.append(re(w))
+        if not (re(w) < 1):
+            res_ok = False
+    rq = findroot(lambda u: u ** 5 - u ** 3 + 1, mpf("-1.2365057033914990243"),
+                  tol=mpf(10) ** -35)
+    cq = mpmath_cos(zs[0]) if zs else None
     gates.append({
         "gate": "G3",
-        "claim": "x*y and y/x are NEVER real on the arc -- both are carried by Im != 0 at every "
-                 "one of the 597 checks, with a genuine margin rather than a near-miss. So their "
-                 "notCut membership needs no case split at all, unlike `y`'s. This is the cheapest "
-                 "part of VSide to prove and `exists_pinning_data` already supplies part of it: "
-                 "it gives (x*y_3).im < 0, and (x*y_2).im < 0 when c < 0",
-        "min_abs_Im_x_times_y": nstr(worst_xy, 10) if worst_xy is not None else None,
-        "at_phi": nstr(at_xy, 10) if at_xy is not None else None,
-        "min_abs_Im_y_over_x": nstr(worst_ydx, 10) if worst_ydx is not None else None,
-        "margin_is_genuine_not_noise": bool(worst_xy is not None and worst_xy > mpf(10) ** -6),
-        "pass": bool(worst_xy is not None and worst_xy > mpf(10) ** -6),
+        "claim": "RETRACTED AND REPLACED. The first version claimed `x*y and y/x are NEVER real on "
+                 "the arc ... so their notCut membership needs no case split at all`. FALSE, and "
+                 "the gate hid it by passing on a grid minimum, which is not a lower bound: refine "
+                 "the grid and the complex-pair minimum shrinks like 1/N (0.00587 at N=399, "
+                 "0.00215 at N=999) -- a simple ZERO CROSSING. There is exactly one on (0,pi), "
+                 "found by bisecting the SYMMETRIC prod_j Im(x*y_j) so no branch tracking is "
+                 "needed. At it, x*y is real and notCut holds via `Re < 1`, so the obligation is "
+                 "the OPPOSITE of what was claimed. The crossing is exact: r is the unique real "
+                 "root of r^5 - r^3 + 1, with c = r(1+r)/2 and t = 1/r^2, all to 20 digits. "
+                 "Benign in Lean: r >= 1 gives r^5 - r^3 + 1 = r^3(r^2-1) + 1 >= 1 > 0, so no real "
+                 "root of the quintic reaches 1",
+        "crossings_of_x_times_y_on_open_arc": len(crossings['x_times_y']),
+        "crossings_of_y_over_x_on_open_arc": len(crossings['y_over_x']),
+        "crossing_phi": [nstr(z, 20) for z in zs],
+        "crossing_value_r": [nstr(v, 20) for v in rvals],
+        "r_as_root_of_quintic_r5_minus_r3_plus_1": nstr(rq, 20),
+        "agreement_with_quintic_root": nstr(fabs(rvals[0] - rq), 5) if rvals else None,
+        "c_predicted_r_times_1_plus_r_over_2": nstr(rq * (1 + rq) / 2, 20),
+        "c_measured_at_crossing": nstr(cq, 20) if cq is not None else None,
+        "t_predicted_one_over_r_squared": nstr(1 / rq ** 2, 20),
+        "Re_lt_1_at_every_crossing": bool(res_ok),
+        "retracted_claim": "x*y and y/x are NEVER real on the arc; no case split needed",
+        "why_the_old_gate_passed": "it tested a grid minimum against 1e-6; a grid minimum "
+                                   "cannot certify a lower bound, and the zero sat between "
+                                   "sample points",
+        # the crossing must exist (refuting the old claim), be unique, and be survivable
+        "pass": bool(len(zs) == 1 and res_ok
+                     and fabs(rvals[0] - rq) < mpf(10) ** -25
+                     and cq is not None and fabs(cq - rq * (1 + rq) / 2) < mpf(10) ** -25),
     })
 
     # ---- G4: the route a Lean proof takes, MEASURED not asserted -------------

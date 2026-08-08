@@ -248,6 +248,31 @@ theorem div_mem_notCut_of_real {x y : ℂ} (hx0 : x ≠ 0) (hxim : x.im ≠ 0) (
   rw [hval]
   exact div_ne_zero (neg_ne_zero.mpr (mul_ne_zero hre hxim)) hns
 
+/-- **No real root of `r⁵ − r³ + 1` reaches `1`** — because `r ≥ 1` forces
+`r⁵ − r³ + 1 = r³(r² − 1) + 1 ≥ 1 > 0`.
+
+This quintic is not decoration. Route 36 G3 originally claimed that `x·y` is
+*never* real on the arc, so that `x·y ∈ notCut` would need no case split. That
+was **false**, and the gate hid it by testing a grid minimum of `|Im(x·y)|`,
+which is not a lower bound: refining the grid shrank the minimum like `1/N`,
+the signature of a zero crossing. There is exactly one crossing on `(0,π)`.
+
+At it, `x·y` is real with value `r = −1.2365057033914990243`, and `r` is exactly
+the unique real root of this quintic — with `c = r(1+r)/2` and `t = 1/r²`,
+matching to 20 digits. It falls out of Vieta: if `x·y₂ = r` is real with
+`|x| = 1` then `y₂ = r·conj x`, so `y₃ = r·x`, and substituting into the curve
+makes `x` a root of a cubic with **real** coefficients; `x` is non-real on the
+open arc, so `conj x` is a root too and the third is `−r²`.
+
+So `x·y ∈ notCut` at the crossing holds via `Re < 1` — the *opposite* disjunct
+from the retracted claim — and this lemma is what supplies it. -/
+theorem quintic_root_lt_one {r : ℝ} (h : r ^ 5 - r ^ 3 + 1 = 0) : r < 1 := by
+  by_contra hle
+  push_neg at hle
+  have h3 : (1 : ℝ) ≤ r ^ 3 := one_le_pow₀ hle
+  have h2 : (0 : ℝ) ≤ r ^ 2 - 1 := by nlinarith
+  nlinarith [mul_nonneg (by linarith : (0:ℝ) ≤ r ^ 3) h2]
+
 /-- **`VSide` reduced to its two genuinely root-dependent fields.**
 
 Given the two `notCut` memberships that need the labelling, the other four are

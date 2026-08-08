@@ -39,11 +39,23 @@
     },
     {
       "gate": "G3",
-      "claim": "x*y and y/x are NEVER real on the arc -- both are carried by Im != 0 at every one of the 597 checks, with a genuine margin rather than a near-miss. So their notCut membership needs no case split at all, unlike `y`'s. This is the cheapest part of VSide to prove and `exists_pinning_data` already supplies part of it: it gives (x*y_3).im < 0, and (x*y_2).im < 0 when c < 0",
-      "min_abs_Im_x_times_y": "0.006757172911",
-      "at_phi": "0.01570796327",
-      "min_abs_Im_y_over_x": "0.006757172911",
-      "margin_is_genuine_not_noise": true,
+      "claim": "RETRACTED AND REPLACED. The first version claimed `x*y and y/x are NEVER real on the arc ... so their notCut membership needs no case split at all`. FALSE, and the gate hid it by passing on a grid minimum, which is not a lower bound: refine the grid and the complex-pair minimum shrinks like 1/N (0.00587 at N=399, 0.00215 at N=999) -- a simple ZERO CROSSING. There is exactly one on (0,pi), found by bisecting the SYMMETRIC prod_j Im(x*y_j) so no branch tracking is needed. At it, x*y is real and notCut holds via `Re < 1`, so the obligation is the OPPOSITE of what was claimed. The crossing is exact: r is the unique real root of r^5 - r^3 + 1, with c = r(1+r)/2 and t = 1/r^2, all to 20 digits. Benign in Lean: r >= 1 gives r^5 - r^3 + 1 = r^3(r^2-1) + 1 >= 1 > 0, so no real root of the quintic reaches 1",
+      "crossings_of_x_times_y_on_open_arc": 1,
+      "crossings_of_y_over_x_on_open_arc": 1,
+      "crossing_phi": [
+        "1.4240498823546710303"
+      ],
+      "crossing_value_r": [
+        "-1.2365057033914990243"
+      ],
+      "r_as_root_of_quintic_r5_minus_r3_plus_1": "-1.2365057033914990243",
+      "agreement_with_quintic_root": "5.5778e-32",
+      "c_predicted_r_times_1_plus_r_over_2": "0.14622032556410336872",
+      "c_measured_at_crossing": "0.14622032556410336872",
+      "t_predicted_one_over_r_squared": "0.65404518415175798204",
+      "Re_lt_1_at_every_crossing": true,
+      "retracted_claim": "x*y and y/x are NEVER real on the arc; no case split needed",
+      "why_the_old_gate_passed": "it tested a grid minimum against 1e-6; a grid minimum cannot certify a lower bound, and the zero sat between sample points",
       "pass": true
     },
     {
