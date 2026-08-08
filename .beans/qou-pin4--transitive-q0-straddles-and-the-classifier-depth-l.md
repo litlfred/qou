@@ -56,14 +56,17 @@ Worth adding a depth-1 transitive pass so `none` means what a reader assumes.
 
 ## 3. 27 remaining cross-layer fallbacks
 
-`computations/audits/q0_cross_layer_fallback_scan.py` (new) finds **29** files
-where a **muon literal sits inside an `except` handler** in a file that also
-reaches for a proton accessor — so on any import hiccup the producer computes at
+`computations/audits/q0_cross_layer_fallback_scan.py` (new) finds **31** files
+(pre-fix) where a **muon literal sits inside an `except` handler** in a file
+that also reaches for a proton accessor — so on any import hiccup the producer computes at
 the ideal pin under proton labelling, with nothing signalling the switch.
 
 Two were fixed (`t25_cinquefoil_deltalambda_sign_probe`, `zhabiro_phiq_wiring`)
-by raising instead of substituting. **27 remain.** Each needs a one-line
-judgement — is the bare-environment path load-bearing? — so they were not swept.
+by raising instead of substituting, and the scan confirms neither is still
+flagged. **29 remain.** (An earlier note here said 27 — that was a miscount: the
+29 was measured *after* the two fixes had already landed, so the pre-fix total
+was 31, not 29.) Each needs a one-line judgement — is the bare-environment path
+load-bearing? — so they were not swept.
 
 The scan deliberately requires the literal to be *in a handler* **and** a proton
 accessor to be present: ~315 files contain the muon literal and most are
