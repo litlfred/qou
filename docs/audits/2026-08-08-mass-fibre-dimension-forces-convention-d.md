@@ -46,6 +46,40 @@ Feeding it into `markovWeights_eq_jones_of_threeRow_eq_zero`
 ([`MarkovTraceTLUniqueness.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean),
 sorry-free on `main`) yields convention D uniquely.
 
+### And the next block does not merely imply D — it *is* D, in closed form
+
+The decomposition block could be read as describing the ambient
+representation-theoretic setting rather than the trace. The block that defines
+the trace removes that reading.
+[`feynman-markov-identification.md`](../../content/quantum-observable-universe/mass-theory/feynman-markov-identification.md):
+
+> $$\langle\psi_f|\psi_i\rangle_{\mathrm{eigenbasis}} := \sum_{\substack{\lambda \vdash n \\ \ell(\lambda) \leq 2}} w_\lambda \cdot \mathrm{tr}_{S_\lambda}\bigl(\rho_n(\beta)\bigr).$$
+>
+> *This equals the Jones–Markov trace $\mathrm{tr}_M\bigl(\rho(\beta)\bigr)$ on
+> $H_n(R,q)$, where the Markov weights are
+> $w_\lambda = \dim_q(V_\lambda)\cdot\dim(S_\lambda)/\dim_q(V^{\otimes n})$.*
+
+Three things at once: the row cap `ℓ(λ) ≤ 2` sits **inside `tr_M` itself**; the
+result is named the **Jones**–Markov trace; and the weights are given in **closed
+form**. Evaluating that closed form at `N = 2` — `dim_q V_λ = [2j+1]_q` for
+spin `j = (λ₁−λ₂)/2`, `dim_q V^{⊗n} = [2]_q^n` — at `n = 3`:
+
+| `λ` | `ℓ(λ)` | spin `j` | `dim_q V_λ` | `dim S_λ` | `y_λ = dim_q V_λ / [2]_q³` |
+|---|---|---|---|---|---|
+| `(3)` | 2 | `3/2` | `[4]_q` | 1 | `[4]_q/[2]_q³ = 0.50540422650393080` |
+| `(2,1)` | 2 | `1/2` | `[2]_q` | 2 | `[2]_q/[2]_q³ = 1/[2]_q² = 0.24729788674803460` |
+| `(1³)` | **3** | — | — | — | **absent from the index set** |
+
+That is **convention D's weight vector, all three components**, and the
+Schur–Weyl normalisation `Σ_λ dim_q(V_λ)·dim(S_λ) = [4]_q + 2[2]_q = [2]_q³`
+(i.e. the corpus's `Σ_λ y_λ d_λ = 1`) holds exactly. Machine-checked as C6 of the
+probe below: normalisation `= 1` to 50 digits, agreement with
+`([4]/[2]³, 1/[2]², 0)` to `3.3e-52`, Markov residual at `z_D` `1.1e-50`.
+
+So the corpus's own definition of the mass trace *already computes D*. The
+"full-Hecke Ocneanu" Scope note is not describing a second option the mass
+channel might take; it contradicts the definition two blocks earlier.
+
 **The CODATA match played no part.** D is the convention that lands on
 CODATA; that is exactly why the number cannot arbitrate, and it was not used.
 The argument runs fibre → row cap → `y_(1³) = 0` → D. The new probe
@@ -71,6 +105,7 @@ value). Three independent corpus facts agree against it:
 | Source | Says |
 |---|---|
 | `lem:feynman-eigenbasis-decomposition` | `ℓ(λ) ≤ 2`, `V` = fundamental of `SU_q(2)`, `⌊n/2⌋+1` summands |
+| `feynman-markov-identification` | `tr_M` **is** the `ℓ(λ) ≤ 2` sum; calls it the **Jones**–Markov trace; its closed-form `w_λ` evaluates to D's vector exactly |
 | `qou-w5fw` closure (2026-08-07) | `N` is the quantum dimension of the fibre; Descartes gives `dim V = 2`; `N = 2` |
 | `qou-fvzm` closure, main commit `f92a8b15` | "`N = 2` is LOCKED IN for the mass pipeline" |
 
@@ -151,7 +186,7 @@ declarations gives `[propext, (Classical.choice,) Quot.sound]` — **no
 [`computations/ocneanu_param_from_fibre_dimension.py`](../../computations/ocneanu_param_from_fibre_dimension.py)
 → [`ocneanu-param-from-fibre-dimension.witness.json`](../../computations/ocneanu-param-from-fibre-dimension.witness.json),
 50 dps, `q₀ = 1.1099785827513808` (**experimental / proton pin**, per the
-AGENTS 2026-08-07 owner directive; recorded in the witness), 5/5 checks pass:
+AGENTS 2026-08-07 owner directive; recorded in the witness), 6/6 checks pass:
 
 | | `z` | `N_eff` |
 |---|---|---|
