@@ -106,11 +106,11 @@ imports. Classification:
 
 | block | class | evidence |
 |---|---|---|
-| `meson-em-sinh-closed-form` | **NEEDS-PORT** | `(q-1)/q`, `q ≠ 0`, `field_simp; ring` — but see §6 |
-| `confined_knot_binding` | **NEEDS-PORT** | `q - q⁻¹`, `c*q + d`, `q ≠ 0` — same failure |
-| `confinementUniversality` | GENUINE | `N_F : ℝ→ℝ→ℝ→ℝ` with a constancy claim; no arithmetic at all — a bare type variable suffices |
-| `fermion-boson-decomposition` | GENUINE | `total/horizontal/vertical : M → ℝ` and an additive decomposition — any `AddCommGroup` |
-| `fai_projector_coadjoint_orbit` | GENUINE | `Matrix (Fin 2) (Fin 2) ℝ` with `ρ * ρ = ρ` — idempotence is `CommRing` content |
+| `meson-em-sinh-closed-form` | **PORTED** | `(q-1)/q`, `q ≠ 0` — now `[Field R] [CharZero R]`, see §6 |
+| `confined_knot_binding` | **PORTED** | `q - q⁻¹`, `c*q + d`, `q ≠ 0` — now `[Field R] [CharZero R]` |
+| `confinementUniversality` | LEGIT ⚠ | the `ℝ` are **photon polarisation coefficients** `(φ₀, φ₁, φ₀₁)` — physical continuous parameters. Structurally the constancy claim needs no arithmetic, but generalising a physics-parameter type to an arbitrary `Type*` weakens the meaning. |
+| `fermion-boson-decomposition` | LEGIT ⚠ | imports `Analysis.SpecialFunctions.Pow.Real` + `Topology.*` — genuinely analytic |
+| `fai_projector_coadjoint_orbit` | LEGIT ⚠ | imports `LinearAlgebra.Matrix.Spectrum`; docstring: *"the proof runs Mathlib's spectral theorem"* — archimedean |
 | `four_term_pair_nucleon` | LEGIT | `protonNetTarget : ℝ := 0.999` — measured net values (§7c "experimental value → `ℝ`") |
 | `derived-mass-formula-light-isotopes` | LEGIT | `m_e, m_p, m_n, α : ℝ` — physical masses |
 | `skein_mass_from_linking` | LEGIT | `Vol_K : ℕ → ℝ` hyperbolic volume (transcendental) + physical masses |
@@ -119,7 +119,21 @@ imports. Classification:
 | `collatz_contact_boundary` | **not touched** | **sibling PR #4722 is editing this file** — left alone to avoid a conflict |
 | remaining 21 | unread | signatures not yet dumped |
 
-## 6. The two NEEDS-PORT blocks — and why forcing them would have been wrong
+> ⚠ **All three rows marked ⚠ were first classified GENUINE and are corrected
+> here.** The first-pass call was made from the `ℝ`-bearing *signature lines*
+> alone. Reading the **imports** and the semantic role of each `ℝ` refutes all
+> three: a `Matrix (Fin 2) (Fin 2) ℝ` whose only visible statement is
+> idempotence still needs `ℝ` if the proof runs the spectral theorem, and a
+> `M → ℝ` decomposition still needs `ℝ` if the file is doing analysis.
+>
+> This reproduces #4709's own warning — *"absence of an archimedean token is
+> evidence, not proof… the earlier 17-file read found the heuristic
+> false-positives often"* — and sharpens it: **the decisive evidence is the
+> import list and the meaning of the quantity, not the signature.** A triage
+> that reads only signatures over-calls GENUINE. Confirmed GENUINE count among
+> the 11 read so far: **zero**.
+
+## 6. The two NEEDS-PORT blocks — diagnosed, then ported
 
 `meson-em-sinh-closed-form` and `confined_knot_binding` look like textbook
 gratuitous-`ℝ`: a quotient, `q ≠ 0`, `field_simp; ring`, no ordering. Both were
@@ -134,8 +148,15 @@ The reason is stated in `meson-em-sinh-closed-form`'s own docstring:
 2. The correct target is `[Field R] [CharZero R]` (or an explicit
 `(2 : R) ≠ 0`), not plain `Field`.
 
-Recorded rather than forced. A regenericisation that leaves `sorry` or a broken
-proof behind would be strictly worse than the `ℝ` it replaced.
+**Both are now ported** to `{R : Type*} [Field R] [CharZero R]` and verified
+`lean`-direct exit 0; `meson-em-sinh-closed-form` also passes
+`check-wall-side --block`. The first attempt failed only because it used plain
+`[Field R]`; the file's own docstring named the missing condition and the second
+attempt honoured it.
+
+The sequence is the point: *diagnose from the file's own words, then port* — not
+*force the port and leave a broken proof*. A regenericisation that leaves `sorry`
+or an unsolved goal behind is strictly worse than the `ℝ` it replaced.
 
 ## Remaining
 
@@ -143,7 +164,7 @@ proof behind would be strictly worse than the `ℝ` it replaced.
 |---|---|
 | `lean.ref` — no formalisation at all | 10 (formalise or demote) |
 | `lean.ref` — target weaker than the block claims | 2 (§3) |
-| wall-side WEAK — read, needs a Lean change | 3 GENUINE + 2 NEEDS-PORT |
-| wall-side WEAK — read, needs a §7c note | 4 LEGIT |
+| wall-side WEAK — **ported this pass** | 2 (done) |
+| wall-side WEAK — read, LEGIT, needs a §7c note on the block | 7 |
 | wall-side WEAK — unread | 22 (+1 blocked on #4722) |
 | wall-side MED | 65 (unchanged) |
