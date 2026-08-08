@@ -59,7 +59,12 @@ sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from qou_substrate.constants import q_at  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
@@ -80,8 +85,7 @@ T0 = time.monotonic()
 
 
 def load_phi_basis():
-    w = json.loads((_HERE / "qbeta-5two-phi-series-engine.witness.json")
-                   .read_text())
+    w = record_upstream(_HERE / "qbeta-5two-phi-series-engine.witness.json", _UPSTREAM_RECORDS)
     P = {0: mp.mpc(1)}
     for k, v in w["data"]["P_coefficients"].items():
         m = re.match(r"\(?\s*([-\d.e]+)\s*([+-])\s*([\d.e]+)j\)?", v)
@@ -206,6 +210,7 @@ def main() -> int:
 
     wb = WitnessBuilder("qbeta-5two-odd-two-route-confrontation",
                         engine="mpmath", _script_path=__file__)
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "A6.2: the two independent 5₂ odd-channel routes confronted at the "
         "substrate with NO scheme constant. A: the saddle-side σ-pair odd "

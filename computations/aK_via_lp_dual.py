@@ -46,14 +46,19 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
 # ── Canonical q_0 at 50 dps ──────────────────────────────────────
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 
 
@@ -196,6 +201,7 @@ def a_K_dual_decomposition(atom: str) -> tuple[mp.mpf, mp.mpf, dict]:
 
 def main() -> int:
     w = WitnessBuilder("a-K-via-lp-dual", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Item B (B.1a) — a_K candidate values via SDP shadow-price "
         "decomposition. Compares four a_K definitions (Ratio R, "

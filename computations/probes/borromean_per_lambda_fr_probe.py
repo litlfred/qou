@@ -74,7 +74,12 @@ import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q as Q0  # noqa: E402
 from codata_constants import M_E_MEV as M_E  # noqa: E402
 from _li_2_q_util import li_2_q  # noqa: E402
@@ -97,7 +102,7 @@ def params():
 def channel_fractions(h):
     """p_λ = normalized per-λ contribution to τ from the Wedderburn re-lift
     (y-lambda-at-q0 witness × proved χ^λ(β_Bor) closed forms)."""
-    w = json.loads((ROOT / "y-lambda-at-q0.witness.json").read_text())
+    w = record_upstream(ROOT / "y-lambda-at-q0.witness.json", _UPSTREAM_RECORDS)
     d = w.get("data", w)
     ys = {tuple(p["partition"]): mp.mpf(p["y_at_q0_50dps"]) for p in d["by_n"]["3"]}
     chi = {(3,): mp.mpf(1), (1, 1, 1): mp.mpf(1),
@@ -209,6 +214,7 @@ def main() -> int:
     print(f"\nOVERALL: {overall}")
 
     b = WitnessBuilder("borromean-per-lambda-fr-probe", output_dir=HERE)
+    b.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     b.set_description(
         "H_3-level probe of the FR-restricted knot-ideal projector weight "
         "(K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ "

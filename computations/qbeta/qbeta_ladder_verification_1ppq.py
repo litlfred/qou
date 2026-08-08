@@ -51,7 +51,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
@@ -61,7 +66,7 @@ def main():
     q = mpf(Q_50_DIGIT_STR)
     hbar = 1 - 1 / q
 
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     d = w["data"]
 
     Q_A = mpf(d["Q_A"])
@@ -88,6 +93,7 @@ def main():
     c3_err_pct = float((c3_model - c3) / c3 * 100)
 
     wb = WitnessBuilder("qbeta-ladder-verification-1ppq", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Independent verification of Q_beta precision-ladder structure. "
         "Levels N=1,2,3 exact to ppb. Finding: c_3 = J - hbar_q^2 at "

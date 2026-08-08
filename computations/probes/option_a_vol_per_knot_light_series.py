@@ -82,7 +82,12 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from _li_2_q_util import (  # noqa: E402
     vol_density_borromean,
@@ -126,7 +131,7 @@ def _load_chi_cache(atom: str, n_strands: int) -> dict:
     path = CHI_CACHE_DIR / f"chi-{atom}-h{n_strands}-at-q0-50dps.witness.json"
     if not path.exists():
         raise FileNotFoundError(f"chi-cache missing: {path}")
-    return json.loads(path.read_text())
+    return record_upstream(path, _UPSTREAM_RECORDS)
 
 
 def _load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
@@ -138,7 +143,7 @@ def _load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
     path = CHI_CACHE_DIR / "y-lambda-at-q0.witness.json"
     if not path.exists():
         raise FileNotFoundError(f"y-lambda table missing: {path}")
-    raw = json.loads(path.read_text())["data"]["by_n"]
+    raw = record_upstream(path, _UPSTREAM_RECORDS)["data"]["by_n"]
     out: dict[int, dict[tuple, mp.mpf]] = {}
     for n_str, rows in raw.items():
         out[int(n_str)] = {
@@ -284,6 +289,7 @@ def _fmt(x: mp.mpf, sig: int = 50) -> str:
 
 def main() -> int:
     w = WitnessBuilder("option-a-vol-per-knot-light-series", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only("docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md")
     w.set_description(
         "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the "

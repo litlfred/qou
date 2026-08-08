@@ -52,7 +52,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def _constants():
@@ -75,7 +80,7 @@ def main() -> int:
     f = {"pp": z, "nn": z - h, "pn": z - h * (0.5 - delta / 4.0)}
     lg = {k: math.log(1.0 / v) for k, v in f.items()}  # per-bond log
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = {(r["Z"], r["N"]): r for r in bc["data"]["results"]
            if r.get("status") == "solved"}
 
@@ -121,6 +126,7 @@ def main() -> int:
 
     w = WitnessBuilder("bond-edge-set-selection", engine="python",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Edge-set selection refutation: with the DERIVED per-bond energies "
         "(f_bond = c·z+d; pp 2.907 / pn 3.890 / nn 5.178 MeV), EXACT "

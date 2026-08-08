@@ -57,12 +57,17 @@ from pyhecke_jones_markov_atlas import (  # noqa: E402
     solve_jones_markov_h_n,
     tr_M_via_atlas,
 )
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 30
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_mpf = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 q0_f64 = float(q0_mpf)
 h_mpf = q0_mpf - 1 / q0_mpf
 h_f64 = float(h_mpf)
@@ -225,6 +230,7 @@ def main() -> int:
 
     # Witness
     w = WitnessBuilder("jones-markov-atlas-all-atoms", engine="python+pyhecke-native+numpy")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Jones-Markov y_λ atlas computed for all atoms A ≤ 8 (n = 3A ≤ 24 "
         "strands). Uses pyhecke_jones_markov_atlas.solve_jones_markov_h_n "

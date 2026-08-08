@@ -63,7 +63,12 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 sys.path.insert(0, str(HERE / "hecke"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def _constants():
@@ -108,7 +113,7 @@ def main() -> int:
     f_norm = {k: f[k] * f_bar[k] for k in f}
     e_bond_bar = {k: 0.5 * E0 * math.log(1.0 / v) for k, v in f_norm.items()}
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = {(r["Z"], r["N"]): r for r in bc["data"]["results"]
            if r.get("status") == "solved"}
 
@@ -177,6 +182,7 @@ def main() -> int:
 
     w = WitnessBuilder("derived-bond-graph-binding", engine="python",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional "
         "expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, "

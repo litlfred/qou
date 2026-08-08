@@ -48,7 +48,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from pn_alpha_lp_dual import build_gram, TR_M_BASIS, NF_NAMES  # noqa: E402
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 try:
@@ -89,7 +94,7 @@ def main() -> int:
     t = np.asarray(TR_M_BASIS, dtype=float)
     detG = float(np.linalg.det(G))
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = {(r["Z"], r["N"]): r for r in bc["data"]["results"]
            if r.get("status") == "solved"}
 
@@ -128,6 +133,7 @@ def main() -> int:
 
     w = WitnessBuilder("nucleus-operator-selection-sdp", engine="python",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Per-nucleus operator-selection LP/SDP dual on the canonical H₃ 6-basis "
         "(γ,σ₀,σ₁,L₊,L₋,e⁻; non-diagonal Frobenius Gram) with n_target = "

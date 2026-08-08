@@ -51,7 +51,12 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q as Q0_FLOAT
 from q_mpmath import set_q, qint
 set_q(Q0_FLOAT)
@@ -71,7 +76,7 @@ ATOMS = [
 def load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
     """Load cached Jones-Markov weights y_λ at q_0 from the canonical witness."""
     path = _pb.witness_path("y-lambda-at-q0.witness.json", HERE)
-    w = json.loads(path.read_text())
+    w = record_upstream(path, _UPSTREAM_RECORDS)
     by_n = {}
     for n_str, entries in w["data"]["by_n"].items():
         n = int(n_str)
@@ -150,6 +155,7 @@ def compute_tr_M_decomposition(Z: int, N: int, include_inter: bool,
 
 def main() -> int:
     builder = WitnessBuilder("delta-lambda-fr-identity-phase5c")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Phase 5c.1 of the Δ_λ thread: numerical test of the "
         "Frobenius-reciprocity identity predicted by the Phase 5b "

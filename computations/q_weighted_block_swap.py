@@ -40,7 +40,12 @@ sys.path.insert(0, str(HERE / "substrate"))
 
 mp.mp.dps = 50
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP as Q0  # noqa: E402
 
 
@@ -53,8 +58,7 @@ def _S(traces: dict, wid, wp, wn, wpn) -> mp.mpf:
 
 def main() -> int:
     t0 = time.monotonic()
-    src = json.loads(
-        (HERE / "averaged-block-swap-binding.witness.json").read_text(encoding="utf-8"))
+    src = record_upstream(HERE / "averaged-block-swap-binding.witness.json", _UPSTREAM_RECORDS)
     at = {k: mp.mpf(str(v)) for k, v in src["data"]["atom_traces"].items()}
     fr = {k: mp.mpf(str(v)) for k, v in src["data"]["free_traces"].items()}
     q = Q0
@@ -97,6 +101,7 @@ def main() -> int:
     print(f"\n VERDICT: {verdict}")
 
     w = WitnessBuilder("q-weighted-block-swap", engine="python", start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "q-weighted Young symmetrizer for the ⁴He block-swap binding signal. The "
         "Hecke q-symmetrizer E_±=(β±…)/(q+q⁻¹) is a reweighting of the four "

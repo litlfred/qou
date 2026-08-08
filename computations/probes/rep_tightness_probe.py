@@ -97,7 +97,12 @@ from mpmath import mp, mpf, sqrt as mpsqrt, exp as mpexp, erfc as mperfc  # noqa
 from mpmath import log as mplog  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0        # sympy exact comparisons
 TOL_50 = 1e-30       # 60-dps kernel-identity cross-checks
@@ -109,7 +114,7 @@ TAIL_DPS = 34        # truncation depth for kernel grids (tails compared at 1e-3
 # q₀ pins (50-digit strings with provenance), as in the Attack-B probe.
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 # tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR
 # (proton re-pin 2026-05-28):
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
@@ -384,6 +389,7 @@ def block_t5_moment_convergence(wb: WitnessBuilder) -> None:
 def main() -> int:
     set_compute_dps(60)
     wb = WitnessBuilder("rep-tightness", engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "REP attack 2 — tightness of the balanced q-Borel kernel family "
         "(bean qou-ry7x, epic qou-q04o; audit-only, scope-(a), NO FIT, "

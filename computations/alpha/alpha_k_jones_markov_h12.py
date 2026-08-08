@@ -66,11 +66,16 @@ from sympy.utilities.iterables import partitions
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 mp.mp.dps = 30
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_mpf = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
 z_mark = 1 / (mp.sqrt(q0_mpf) + 1 / mp.sqrt(q0_mpf))
@@ -222,6 +227,7 @@ def main() -> int:
 
     # Witness
     w = WitnessBuilder("alpha-k-jones-markov-h12", engine="python+pyhecke-native+numpy")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Jones-Markov weights y_λ at H_12(q) — full 77-partition atlas. "
         "Extends sibling alpha_k_jones_markov_h4.py to the algebra needed "

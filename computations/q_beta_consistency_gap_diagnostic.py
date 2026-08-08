@@ -29,7 +29,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -40,7 +45,7 @@ from codata_constants import (  # noqa: E402
 
 def _load_Q_beta_N3() -> mpf:
     """Load the N=3 categorical Q_β from its witness."""
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     return mpf(str(w["data"]["Q_AME"]))
 
 
@@ -98,6 +103,7 @@ def main():
     X_codata = (m_n_codata - m_p_codata) / ((m_n_codata + m_p_codata) / 2)
 
     wb = WitnessBuilder("q-beta-consistency-gap-diagnostic", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Decompose the gap between mass-derived Q_beta (Path A: "
         "flavor-split) and N=3 categorical Q_beta (Path B: precision "

@@ -95,7 +95,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -240,9 +245,7 @@ def main():
     Q_beta_ame = None
     m_n_roundtrip = None
     try:
-        qb_witness = json.loads(
-            (COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json").read_text()
-        )
+        qb_witness = record_upstream(COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
         qb_val = qb_witness.get("data", {}).get("Q_AME")
         if qb_val is not None:
             Q_beta_ame = mpf(str(qb_val))
@@ -303,6 +306,7 @@ def main():
 
     # ── BUILD WITNESS ──────────────────────────────────────────────
     w = WitnessBuilder("m-p-substrate-identity-50dps", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Production substrate-categorical prediction of m_p and m_n from "
         "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "

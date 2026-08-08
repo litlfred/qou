@@ -46,7 +46,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def _energy_scales():
@@ -64,7 +69,7 @@ def main() -> int:
     t0 = time.time()
     me, Qb, E0 = _energy_scales()
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = [r for r in bc["data"]["results"] if r.get("status") == "solved"]
 
     rows = []
@@ -112,6 +117,7 @@ def main() -> int:
 
     w = WitnessBuilder("log-ratio-binding-prototype", engine="python",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Prototype extensive binding B = E_0·log(tr_free/tr_atom). The GS "
         "finding (tr_atom ≈ tr_free·f^bonds) makes the linear Δtr intensive/"

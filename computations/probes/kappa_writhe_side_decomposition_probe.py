@@ -48,7 +48,12 @@ import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q as Q0  # noqa: E402
 
 
@@ -62,7 +67,7 @@ def main() -> int:
     rows = []
 
     # --- triplets (A = 6, 8, 10, 12): members keyed by T3 = -1, 0, +1 ---
-    trip = json.loads((ROOT / "delta-lambda-imme-triplet.witness.json").read_text())
+    trip = record_upstream(ROOT / "delta-lambda-imme-triplet.witness.json", _UPSTREAM_RECORDS)
     tdata = trip.get("data", trip)
     for r in tdata["triplets"]:
         A = r["A"]
@@ -77,7 +82,7 @@ def main() -> int:
                      "b_AME_experimental": round(b_ame, 4)})
 
     # --- quartet (A = 9): inner members T3 = ±1/2, same-T corrected ---
-    quar = json.loads((ROOT / "delta-lambda-imme-quartet.witness.json").read_text())
+    quar = record_upstream(ROOT / "delta-lambda-imme-quartet.witness.json", _UPSTREAM_RECORDS)
     qdata = quar.get("data", quar)
     qq = qdata["quartet"]
     bp_m, bp_p = qq["-0.5"]["B_pred"], qq["0.5"]["B_pred"]
@@ -121,6 +126,7 @@ def main() -> int:
     print(f"\n  LOCATION: {location}")
 
     b = WitnessBuilder("kappa-writhe-side-decomposition-probe", output_dir=HERE)
+    b.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     b.set_description(
         "Location probe for the writhe coefficient κ = b/4 of the "
         "canonical residual's bar-odd term: exact decomposition "
