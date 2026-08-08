@@ -8,6 +8,20 @@ created_at: 2026-08-08T19:30:00Z
 updated_at: 2026-08-08T19:30:00Z
 ---
 
+> **🟧 OWNER RULING 2026-08-08 — explicit comparison probes are OK.** A producer
+> that imports `q_muon_at` alongside `q_at` is reaching for the ideal layer
+> **deliberately**, and the crossing is visible by construction. Those are
+> legitimate cross-anchor comparisons, NOT straddles, and must not be
+> "fixed". The classifier now scores `q_muon_at`/`Q_MUON` as muon evidence so
+> they classify as BOTH and are excluded from any migration batch — without
+> that, ~8 of them would have been swept into the tnjb regeneration.
+>
+> **The remaining hazard is the IMPLICIT crossing**: a hardcoded muon 50-digit
+> literal, or a read of a cached muon witness, inside a producer computing at
+> the proton pin. There the layer boundary is crossed with no signal — exactly
+> what AGENTS.md §q₀-anchor describes for the `y_lambda_at` accessor. Triage
+> below is re-scoped to those.
+
 Surfaced by `computations/audits/q0_producer_pin_classifier.py`. Each of these
 reads a **stem-resolved** `q₀` (via `q_parameter` / `qou_substrate.constants`)
 **and** a muon-layer artifact in the same producer — the straddling hazard
@@ -33,7 +47,8 @@ can be made once per producer.
 | `lever1_binding_core_characterization.py` | `.Q_MP` + hardcoded muon 50-digit | muon |
 | `lever1_binding_habiro_single_element_test.py` | `.Q_MP` + hardcoded muon 50-digit | muon |
 
-**Start with the three stamped `proton`** — those read muon-layer data under a
+**Per the owner ruling, start with the three IMPLICIT crossings stamped
+`proton`** — these read muon-layer data with no explicit accessor to signal it — those read muon-layer data under a
 proton label, which is the `qbeta-ck-cache` shape exactly.
 `delta_lambda_fr_identity_phase5c` is the sharpest: it reads
 `y-lambda-at-q0.witness.json`, which is precisely the accessor AGENTS.md §q₀-anchor

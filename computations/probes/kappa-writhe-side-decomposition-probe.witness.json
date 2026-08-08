@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T16:45:53.136152+00:00",
-  "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
+  "computedAt": "2026-08-08T19:39:37.730700+00:00",
+  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
   "assertions": [
     {
       "name": "b_total_consistent_with_synthesis_band",
@@ -18,8 +18,8 @@
   "durationMs": 11,
   "computation": "kappa-writhe-side-decomposition-probe",
   "scriptFile": "kappa_writhe_side_decomposition_probe.py",
-  "scriptHash": "aa923c445740",
-  "scriptCommitSha": "1f56defc5fda3d6617c4525dff39d60610912f12",
+  "scriptHash": "d3be22a39993",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,8 +34,8 @@
   },
   "description": "Location probe for the writhe coefficient κ = b/4 of the canonical residual's bar-odd term: exact decomposition b_total = b_AME − b_pred using the per-member B_pred/B_AME already recorded in the IMME triplet (A=6,8,10,12) and quartet (A=9, same-T) witnesses. Answers WHERE κ lives (framework interface asymmetry z vs z−h, or experimental Coulomb) before any derivation attempt — the bar-odd analogue of the 2026-06-13 H1 location refutation. Post-processing only; no fit; not wired.",
   "parameters": {
-    "q0": "1.10997859555733470000000000000000000000000000000000000000000",
-    "swap_exponent_log_q0_z_over_z_minus_h": "5.19903126604131553217020575171854940870671368212222335208229"
+    "q0": "1.10997858275138080000000000000000000000000000000000000000000",
+    "swap_exponent_log_q0_z_over_z_minus_h": "5.19903107280035391780372310348099680353890329956297904671765"
   },
   "data": {
     "rows": [
@@ -87,8 +87,26 @@
       -0.7938,
       -0.7989
     ],
-    "location_verdict": "FRAMEWORK-SIDE: the interface asymmetry in B_pred carries |b| — κ is derivable from the canonical trace."
+    "location_verdict": "FRAMEWORK-SIDE: the interface asymmetry in B_pred carries |b| — κ is derivable from the canonical trace.",
+    "upstream_witness_hashes": [
+      {
+        "path": "delta-lambda-imme-triplet.witness.json",
+        "sha256": "e7c8435c8a849d016f5a0a1e31e9626fa2107090220563c04c594406029623bb",
+        "size_bytes": 7601,
+        "commitSha": "c3bcf8b27872da46181a55b4c11a458d82b1db09",
+        "scriptCommitSha": "c3bcf8b27872da46181a55b4c11a458d82b1db09",
+        "computedAt": "2026-06-29T17:30:28.608480+00:00"
+      },
+      {
+        "path": "delta-lambda-imme-quartet.witness.json",
+        "sha256": "52ab9680ccfb1d15795a0280619af81a6cb1b09f963ed8b431dd19796e9a2e5c",
+        "size_bytes": 4018,
+        "commitSha": "dbe953a9e4005a3820a802f3c8c0c2b813687d5c",
+        "scriptCommitSha": "9a36dce996508a31051bd964096af2d749a67172",
+        "computedAt": "2026-07-02T16:45:44.847377+00:00"
+      }
+    ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
