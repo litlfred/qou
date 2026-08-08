@@ -35,9 +35,24 @@ reachable from QOU.lean        854
 ORPHANED                       767   (47.3%)
 ```
 
-The ratio is stable; the library grew and the orphan set grew with it. Largest
-orphan directories: `QOU.BraidKnot` 152, `QOU.QBeta` 84, `QOU.Archimedean` 64,
-`QOU.MassTheory` 46, `QOU.Mathlib` 37, `QOU.MathlibExt` 11.
+Re-measured again at `origin/main` = `ee66f30102` (same day, later):
+
+```
+modules under lean/QOU/       1644
+reachable from QOU.lean        858
+ORPHANED                       786   (47.8%)
+```
+
+The ratio is stable across all three measurements; the library grows and the
+orphan set grows with it. Largest orphan directories: `QOU.BraidKnot` 152,
+`QOU.QBeta` 84, `QOU.Archimedean` 64, `QOU.MassTheory` 46, `QOU.Mathlib` 37,
+`QOU.MathlibExt` 11.
+
+**Every count above names the `origin/main` sha it was taken at.** That is the
+format fix this bean's sibling `qou-mfst` argued for after two beans shipped
+stale claims about main: a measurement without its base is a claim that ages
+silently into a false one. Quote the sha with the number or do not quote the
+number.
 
 ## Why
 
