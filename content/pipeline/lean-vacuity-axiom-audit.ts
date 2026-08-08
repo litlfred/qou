@@ -140,7 +140,11 @@ type Category =
   // term to inspect. These four close that gap.
   | "proof-no-empty-prop-carrier"
   | "proof-claims-unencoded"
-  | "proof-dependent-conjecture-not-conditional";
+  | "proof-dependent-conjecture-not-conditional"
+  // A `rfl`-proved statement binding an explicit hypothesis it cannot use.
+  // `rfl` consults no hypothesis, so the claim holds for every value of it.
+  // Not reachable by the projection detector (the body is not `ctx.field`).
+  | "proof-no-unused-hypothesis-rfl";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -154,6 +158,7 @@ const ALL_CATEGORIES: Category[] = [
   "proof-no-empty-prop-carrier",
   "proof-claims-unencoded",
   "proof-dependent-conjecture-not-conditional",
+  "proof-no-unused-hypothesis-rfl",
 ];
 
 const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
@@ -176,6 +181,11 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   "proof-no-empty-prop-carrier": "critical",
   "proof-claims-unencoded": "major",
   "proof-dependent-conjecture-not-conditional": "critical",
+  // High-recall candidate, agent-confirmed like the conjecture-discipline
+  // classes: a `rfl` proof with a decorative hypothesis is usually a
+  // definitional restatement (should be a `def`), occasionally a real signal
+  // that the underlying definition ignores an argument. Major, not critical.
+  "proof-no-unused-hypothesis-rfl": "major",
 };
 
 interface Hit {
@@ -711,6 +721,84 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
   return mk(d, "proof-no-self-assuming-projection", pat, false);
 }
 
+/**
+ * A `rfl`-proved statement carrying an explicit hypothesis it cannot use.
+ *
+ * `rfl` consults NO hypothesis — it proves the conclusion by definitional
+ * unfolding alone. So a provable declaration whose body reduces to `rfl`,
+ * and which binds an explicit `(h : …)` that does not occur in its own
+ * conclusion, proves that conclusion for EVERY value of that hypothesis. The
+ * hypothesis is decoration, and the statement is definitionally true rather
+ * than a theorem (§Strict Lean Discipline item 8: it should be a `def`).
+ *
+ * The sharper consequence is about the DEFINITION, not the theorem: if
+ * `f a = f b := rfl` holds with the relating hypothesis unused, then `f`
+ * does not depend on that argument at all.
+ *
+ * Worked instance — `LevelSufficiency`
+ * (`knots-particles-confinement/level-sufficiency.lean:72`): both hypotheses
+ * are `_`-prefixed and the body is `rfl`, so `markovTrace P q = markovTrace
+ * P' q` holds for ANY two particles and the covering condition is decoration.
+ *
+ * Why the existing detectors structurally miss it: there is no `sorry`, no
+ * `axiom`, no `True` conclusion, and the body is not a `ctx.field`
+ * projection, so `proof-no-self-assuming-projection` cannot match it however
+ * its regexes are tuned.
+ *
+ * PRECISION (this is a high-recall candidate class, agent-confirmed like the
+ * others, hence `major` rather than `critical`):
+ *  - Only EXPLICIT `( … : … )` binders count. Instance `[…]`, implicit `{…}`
+ *    and strict-implicit `⦃…⦄` binders can be load-bearing for elaboration
+ *    even when the proof is `rfl`.
+ *  - A binder whose name OCCURS IN THE CONCLUSION is used by the statement
+ *    (e.g. `(h : P) : Q h = …`), so it is not decoration — skipped.
+ *  - Binders that look like DATA rather than hypotheses (`(n : ℕ)`,
+ *    `(q : ℝ)`) are skipped; a `rfl` over data is ordinary computation. Only
+ *    Prop-shaped types (carrying a relation/connective) count.
+ */
+// Tactic separators in Lean 4 are `;` OR a newline, so both must be accepted:
+// `strangelet_double_beta` writes `by\n  unfold double_beta_rate\n  rfl` and was
+// missed by a `;`-only pattern.
+const RFL_BODY =
+  /^(?:rfl|by\s+rfl|by\s+(?:unfold|delta|show|simp\s+only|with_unfolding_all)\b[^;\n]*[;\n]\s*rfl)\s*$/;
+/** A binder type that looks like a proposition rather than data. */
+const PROP_SHAPED = /[=≤<≥>≠∈∣]|↔|→|∧|∨|¬|Odd\b|Even\b|Prime\b/;
+
+function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
+  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const body = d.body.trim();
+  if (!RFL_BODY.test(body)) return undefined;
+  const concl = conclusionTypeAscription(d.sig);
+  if (!concl) return undefined;
+
+  // Explicit binders only, from the head up to the conclusion `:`.
+  const head = d.sig.slice(0, d.sig.length - concl.length);
+  const unused: string[] = [];
+  for (const m of head.matchAll(/\(\s*([^():]+?)\s*:\s*([^()]*(?:\([^()]*\)[^()]*)*)\)/g)) {
+    const names = m[1].trim().split(/\s+/);
+    const ty = m[2].trim();
+    if (!PROP_SHAPED.test(ty)) continue; // data binder, not a hypothesis
+    for (const n of names) {
+      if (!/^_?[a-zA-Z_][\w']*$/.test(n)) continue;
+      // Used by the statement itself? then it is not decoration.
+      if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(concl)) continue;
+      unused.push(n);
+    }
+  }
+  if (unused.length === 0) return undefined;
+  // `_`-prefixed names are the author explicitly recording non-use — the
+  // strongest form of the signal, and worth distinguishing in the witness.
+  const pat = unused.every((n) => n.startsWith("_"))
+    ? "rfl-with-underscored-hypothesis"
+    : "rfl-with-unused-hypothesis";
+  const h = mk(d, "proof-no-unused-hypothesis-rfl", pat, false);
+  h.detail =
+    `proof is \`${body}\`, which uses no hypothesis, yet the statement binds ` +
+    `${unused.map((n) => `\`${n}\``).join(", ")} — absent from the conclusion, so ` +
+    `the claim holds for every value of ${unused.length > 1 ? "them" : "it"}`;
+  return h;
+}
+
 function detectDecideMasking(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   // Only `native_decide` is flagged: it adds `Lean.ofReduceBool` to the
@@ -1239,6 +1327,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     }
     push(tt);
     push(detectSelfAssuming(d));
+    push(detectUnusedHypothesisRfl(d));
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));
     push(detectProvableAxiom(d, origLines));
