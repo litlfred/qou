@@ -10,7 +10,7 @@ tags:
     - qou-rstq
     - 5two
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T19:55:00Z
+updated_at: 2026-08-08T20:10:00Z
 ---
 
 ## What is open, stated as narrowly as it now can be
@@ -194,14 +194,48 @@ They cancel identically. The middle and last are routine — `1/x ∈ (0,1)` is 
 the cut. **The first is the whole problem**, because `cLiTwoExt` is not
 complex-differentiable on the cut.
 
-**`hasDerivAt_cLiTwoExt_radial` is the right tool, and step (1) is what unblocks
-it.** Its hypothesis is `hy : y.im ≠ 0 ∨ y.re < 1` (i.e. `y ∈ notCut`), which
-real `x > 1` fails — but that hypothesis is used **only to get the kernel
-integrable on `[0,t]`**, and that is exactly what
-`intervalIntegrable_clog_one_sub_div_ofReal` now supplies. So the radial lemma
-should generalize to real `x > 0` by swapping which integrability lemma it
-cites. **Check that before anything else** — if the `notCut` hypothesis is load
-bearing somewhere else in that proof, this route changes shape.
+**`hasDerivAt_cLiTwoExt_radial` is the right tool. CHECKED 2026-08-08 — and the
+answer is more interesting than expected.**
+
+I had guessed `hy : y ∈ notCut` was used only for integrability. **Wrong.**
+Reading the proof, it is used in **three** places:
+
+| use | what it gives | survives for real `x > 1`? |
+|---|---|---|
+| `hint` | kernel integrable on `[0,t]` | **yes** — step (1) supplies it |
+| `hcont` | kernel `ContinuousAt t`, via `1 − y·t ∈ slitPlane` | **hypothesis fails** |
+| `hmeas` / `htU` | measurability near `t`, same `slitPlane` preimage | **hypothesis fails** |
+
+So my recorded guess was wrong and the swap-one-lemma plan does not work as
+stated. But the two failures are **failures of a sufficient condition, not of
+the conclusion**, and that distinction is the whole finding:
+
+> For real `x > 1` and real `u`, `1 − x·u` stays on the **real axis**. It leaves
+> `slitPlane` once `u > 1/x`, but it never *crosses* the cut — it sits on one
+> side of it. So `log(1 − x·u) = log|1 − x·u| + iπ` there, and that is
+> **continuous in `u`** for every `u ≠ 1/x`, even though `slitPlane` (and hence
+> `continuousAt_liTwoKernel`) does not apply.
+
+This is **exactly** the phenomenon already isolated in the transport lane as
+`hasDerivAt_log_neg_ofReal`: `log(−t) = log t + iπ` is smooth *along a real path*
+though the complex derivative does not exist. Third appearance of the same
+structure; the first two were corrections 5 and 6 on #4701.
+
+**Revised first action.** Not "swap the integrability lemma", but: prove a
+real-argument continuity lemma for the kernel —
+
+    ContinuousAt (liTwoKernel (x : ℂ)) u,  for real x > 0 and real u with
+    u ≠ 0 and 1 − x·u ≠ 0
+
+using `arg_one_sub_mul_ofReal` (already proved, in `ComplexDilogarithmOnCut`):
+the `arg` term is the step function `if 1 − x·u < 0 then π else 0`, which is
+**locally constant away from `u = 1/x`**, so the whole kernel is continuous
+there. Then `hcont` and `hmeas` both follow, and with step (1) for `hint` the
+radial lemma generalizes to real `x > 0` at every `t ≠ 1/x`.
+
+Note the generalized lemma must **exclude `t = 1/x`**, where the kernel genuinely
+blows up — the original's `slitPlane` hypothesis excluded it implicitly, and a
+generalization that silently admits it would be false.
 
 Granting the generalisation, the radial lemma at `t = 1` gives
 
