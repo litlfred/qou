@@ -296,14 +296,49 @@ def _bond_type_L():
     off by a constant 1.6561 MeV for every isotope.
 
     Bean qou-xzda.
-    """
-    from tr_m_atom_via_transfer import tr_m_atom_zn
 
-    out = {}
-    for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
-        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        out[key] = math.log(float(tf) / float(ta))
-    return out
+    CLOSED FORM (2026-08-08, bean qou-c6gx). These no longer need the transfer.
+    sigma_2 -- the sole generator joining strand 2 (nucleon k's last quark) to
+    strand 3 (nucleon k+1's first) -- generates a TWO-dimensional subalgebra,
+    since sigma^2 = h*sigma + 1 gives span{1, sigma_2}. So every interface
+    element is a*sigma_2 + b*I, and with the Markov property
+    tr_M(W . sigma_2) = z * tr_M(W),
+
+        tr_atom = tr_free * (a*z + b)        L = -ln(a*z + b)
+
+    Each bond type is the a = 1 case at its own d, so
+
+        L_XY = -ln(z + d_XY),   z = 1/(sqrt(q0) + 1/sqrt(q0))
+
+    Agrees with the transfer kernel to 4.489e-32 at all three bond types (that
+    residual is the shared tr_free floor, not a per-case error). Two things are
+    gained besides speed: the values are now mpmath end to end -- the old body
+    did `math.log(float(tf)/float(ta))`, an f64 collapse the owner directive
+    forbids -- and L_pp is exhibited as ln(1/z) EXACTLY, a derived constant of
+    the framework with no freedom in it at all.
+
+    WHAT THE CLOSED FORM ALSO EXPOSES. B over the ENTIRE admissible interface
+    family (d from 0 at sigma to -h at sigma^-1) spans [2.907195, 5.177967] MeV
+    for a single bond. AME(2H) = 2.2245662 is 30.69% BELOW that minimum, so no
+    crossing sign, colour weight, or crossing multiplicity can reach the
+    deuteron -- the miss is not localisable in the interface. Stacking is worse
+    than useless: m = 2 gives mu = 1.1044, i.e. B = -0.416 MeV.
+    """
+    import mpmath as _mp
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    from _li_2_q_util import flavor_split_leading
+
+    # Built inside one guard: an mpf carries the precision of the OPERATION,
+    # so forming these at the caller's ambient dps would silently re-cap them.
+    with _mp.workdps(max(_mp.mp.dps, 60)):
+        q0x = _mp.mpf(str(_Q50))
+        hx = q0x - 1 / q0x
+        zx = 1 / (_mp.sqrt(q0x) + 1 / _mp.sqrt(q0x))
+        dx = flavor_split_leading(q0x)
+        d = {"pp": _mp.mpf(0),                                  # sigma
+             "pn": -hx * (_mp.mpf(1) / 2 - dx / 4),             # colour-weighted
+             "nn": -hx}                                         # sigma^-1
+        return {k: float(-_mp.log(zx + v)) for k, v in d.items()}
 
 
 def _nucleon_msym(alpha):

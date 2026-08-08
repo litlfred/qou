@@ -98,6 +98,75 @@ Check the A-scaling first: with B = −α·Σ_bonds ln μ_k the model is exactly
 additive per bond, so compare the required per-bond correction at 3H/3He/4He
 against 2H's. If it is constant per bond, (a); if it scales, (b).
 
+## A-scaling: BOTH candidates above are now REFUTED
+
+Ran it. Under B = −α·Σ_bonds ln μ_k the model is exactly additive, so the
+deficit's A-dependence discriminates. It does — decisively, against both.
+
+Chain topology (what `atom_braid_word_3A` actually builds, A−1 bonds):
+
+    atom  nb   B_pred    B_AME    err %    per-bond deficit   B/AME
+    2H     1   3.8897    2.2246   +74.85      +1.6651         1.7485
+    3H     2   9.0677    8.4818    +6.91      +0.2929         1.0691
+    3He    2   6.7969    7.7180   −11.94      −0.4606         0.8806
+    4He    3  11.9749   28.2957   −57.68      −5.4403         0.4232
+    6Li    5  20.0600   31.9946   −37.30      −2.3869         0.6270
+    7Li    6  25.2380   39.2445   −35.69      −2.3344         0.6431
+
+The per-bond deficit CHANGES SIGN, spread 7.105 MeV/bond. Full pairing
+(A(A−1)/2 bonds) also changes sign, spread 3.024. So (a) is dead: no rescaling
+of α can fix a residual that is positive at A=2 and negative at A=4. Best-fit α
+leaves a 178% worst residual under chain, 56.5% under full pairing — quoted only
+to kill the hypothesis, NOT as a proposal.
+
+Neither topology works either: chain has 4He at 0.42×, full pairing fixes 4He
+(0.84×) but blows 6Li/7Li to 1.85×/2.20×. Small A wants fewer bonds than full
+pairing, 4He wants more than chain. That is saturation plus an α-particle
+enhancement, and a per-bond additive log-trace model cannot produce either.
+
+## WORSE: the bond multiset is not well defined
+
+`atom_braid_word_3A` hard-codes `ordering = ['p']*Z + ['n']*N`. B depends on it:
+
+    atom   canonical   B_canon    B_min     B_max    spread   B_AME
+    3He    ppn          6.7969    6.7969    7.7794   0.9825   7.7180
+    4He    ppnn        11.9749   10.6866   12.9574   2.2708  28.2957
+    6Li    pppnnn      20.0600   18.4660   21.0425   2.5766  31.9946
+    7Li    pppnnnn     25.2380   23.3382   26.2205   2.8823  39.2445
+
+A nucleus has no ordering — so up to 2.88 MeV here is a non-physical degree of
+freedom, and the chain bond-multiset is a CHOICE, not a derivation. The
+convention is not even the good choice: `3He = pnp` gives 7.7794 (+0.79% of AME)
+where canonical `ppn` gives −11.9%. The mirror pair is decided by it outright:
+`pnn`/`ppn` splits 2.271 MeV, `npn`/`pnp` splits EXACTLY 0 (nature 0.764).
+(2H and 3H show a nonzero best/canonical difference only as a tie — reversal
+gives the same multiset and the same B.)
+
+Recorded as a correction on bean qou-h7mh, whose "bond ENERGIES are right, the
+deuteron is exact" premise was measured under the since-removed Reeb override
+and is now false.
+
+## Lean status of the assertions here — NOT proved
+
+Asked and checked, rather than assumed:
+
+  * `σ² = h·σ + 1` (Hecke quadratic) — a STRUCTURE FIELD (`quadratic`) in
+    `knot-eigenbasis-complete.lean:88`, i.e. a hypothesis, not a theorem.
+  * Markov property `tr(x·T_last) = z·tr x` — a structure field
+    (`markov_stab`, same file:246) and, in `jones-markov-trace.lean`, an
+    `axiom jones_markov_trace_exists` carrying the file's single `sorry`,
+    explicitly marking where Jones (1987) would go.
+  * Writhe normalisation `Ŝ = S·(1−h)^((e−n)/2)`, `A² = 1−h` —
+    `QOU/QBeta/WritheNormalisation.lean`, **0 sorries, 0 axioms**: genuinely
+    proved. It is also the one piece measured to be negligible (3.2e-4 MeV).
+
+So the closed form is conditional on an axiomatised Markov trace. That is
+standard practice (Jones is a real published theorem) but "Lean proved" is the
+wrong label for it, and the only fully proved ingredient is the one that does
+not matter.
+
 Repro (read-only, writes no witness):
   /tmp/.../scratchpad/interface_closed_form.py
   /tmp/.../scratchpad/attack_2h.py
+  /tmp/.../scratchpad/a_scaling.py
+  /tmp/.../scratchpad/ordering_dep.py

@@ -21,6 +21,49 @@ THE DEFECT IS TOPOLOGICAL, NOT ENERGETIC.
 
 Isospin/8-fold-way content is ALREADY present — L_pp=0.6945, L_pn=0.5336, L_nn=1.237 are distinct, so asymmetry is built in. What is missing is geometry, not flavour.
 
+> **CORRECTION 2026-08-08 (bean qou-c6gx) — the block above is STALE and its
+> headline claim is now FALSE.** It was measured while the Reeb override was
+> still in place, i.e. with `L_pn = 5*g_reeb/alpha = 0.5336` substituted for the
+> trace value. That override was removed the same day (bean qou-xzda, commit
+> 5e0c874b) because `B = 5g` is dimensionally impossible: `g` depends only on
+> q0, a mass RATIO, so `5g = 2.2336` is a pure number declared to be MeV.
+>
+> With the trace value `L_pn = 0.929219`:
+>   * "bond ENERGIES are right / deuteron exact" — **NO.** The deuteron
+>     over-binds by +74.85% (3.8897 vs 2.2246). Its exactness was a property of
+>     the override, not of the Frobenius pairing.
+>   * the ordering is `L_nn (1.2370) > L_pn (0.9292) > L_pp (0.6945)`, so the
+>     p-n bond is the MIDDLE one. The puzzle recorded below ("makes the p-n bond
+>     the WEAKEST") dissolves; what remains anomalous is that L_nn is LARGEST,
+>     i.e. the model binds the dineutron hardest of the three.
+>   * "the defect is topological, NOT energetic" — **too strong; it is both.**
+>     The single-bond case has no topology left to get wrong and still misses by
+>     75%, so an energetic defect exists independently of coordination.
+>
+> The A-ratio table above still stands as a measurement; only its interpretation
+> moves, since the denominator B_sym_chain shifted.
+>
+> **NEW, and it bears directly on "derive the bond count":** the chain
+> bond-multiset is not merely under-derived, it is not well defined.
+> `atom_braid_word_3A` hard-codes `ordering = ['p']*Z + ['n']*N`, and B depends
+> on that arbitrary order:
+>
+>       atom   canonical    B_canon     B_min      B_max     spread    B_AME
+>       3He    ppn          6.7969      6.7969     7.7794    0.9825    7.7180
+>       4He    ppnn        11.9749     10.6866    12.9574    2.2708   28.2957
+>       6Li    pppnnn      20.0600     18.4660    21.0425    2.5766   31.9946
+>       7Li    pppnnnn     25.2380     23.3382    26.2205    2.8823   39.2445
+>
+> A nucleus has no ordering, so up to 2.88 MeV is a non-physical degree of
+> freedom. The convention is not even the good choice: `3He = pnp` gives 7.7794
+> (+0.79% of AME) where canonical `ppn` gives -11.9%. The mirror pair is decided
+> by it too — `pnn`/`ppn` splits 2.271 MeV, `npn`/`pnp` splits EXACTLY 0
+> (nature: 0.764).
+>
+> So whatever derives the coordination must also make the answer
+> order-independent. A bond COUNT alone will not: these orderings all have the
+> same count and differ only in the multiset.
+
 THE LEVER ALREADY EXISTS: atom_braid_word_3A(Z, N, *, m_pp=1, m_pn=1, m_nn=1, ...). The chain is the m=1 special case.
 
 DO NOT JUST FIT m_*. Tuning them to reproduce 2.15 buys a good table and costs the parameter-free claim, which is the point of the framework (cf. the dashboard header: 'lambda_A fit + naive Vol*tr_M both EXCISED').
