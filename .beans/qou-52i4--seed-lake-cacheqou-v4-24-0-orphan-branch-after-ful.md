@@ -42,3 +42,43 @@ and wrong here — it would block the fix for the defect it was written to catch
 because it counts oleans without asking whether Lake will trust them. Resolving
 that (a `--force` with the reasoning recorded, or a guard that weights traced
 oleans) is the decision this bean now turns on; not forcing it silently.
+
+## Guard verdict + a reordering (2026-08-08)
+
+`lake-cache.sh seed` **succeeded** — `would_shrink()` did not trip, because the
+incumbent branch carries no recorded counts (hand-seeded, so `branch_counts`
+returns nothing and the guard is skipped). So the 4459-vs-7268 obstacle predicted
+above is not actually enforced. The script stops short of pushing by design:
+
+> Manual by default: seeding force-pushes an orphan branch, which is
+> destructive and should be a deliberate act.
+
+**Incumbent backed up before anything destructive:**
+`lake-cache/qou-v4-24-0-pre-2026-08-08` → `3068be7b23` (2026-08-07 00:11,
+18 parts). The reseed is now reversible with a single `git push -f` back.
+
+### Why I did NOT push yet — a loss the "reseed" framing hides
+
+Seeding from the tree as it stood would have shrunk mathlib **6990 → 3312**
+oleans. For `lake build` consumers that costs nothing (untraced oleans are
+evicted anyway, so the incumbent's extra 3678 are dead weight). But the
+**sibling verifier does not use `lake`** — `scripts/lean-verify-siblings.sh`
+runs `lean` directly against a LEAN_PATH into the restored oleans, and `lean`
+does not check traces. For *that* consumer the incumbent's untraced mathlib
+oleans are perfectly usable, and shrinking the cone would turn working
+verifications into "cache-cone miss" neutral-skips (bean 2ti7 documents that
+skip path).
+
+So the naive reseed trades one consumer's breakage for another's.
+
+### The fix: drain first, seed second
+
+The wide-glob build (bean qou-rc7b) compiles 785 previously-unbuilt QOU modules,
+and their mathlib dependencies come along with it — with traces, since it is a
+real `lake build`. Sequencing the drain before the seed produces a cache that is
+better on **both** axes (more mathlib *and* more QOU *and* 100% traced) instead
+of trading one for the other.
+
+Drain build started; seed to be re-run from the enriched tree afterwards. Note
+the seeder deletes its `mktemp -d` on exit, so the parts do not survive the run —
+the final seed must be the one that pushes.
