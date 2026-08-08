@@ -143,23 +143,27 @@
     {
       "id": "mass",
       "description": "absolute nucleon / atom mass via the muon-anchored Hecke energy",
-      "definitional_convention": "C",
-      "definitional_source": "prop:categorical-mass-markov (content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.md line 13: 'the Jones-Markov trace, functioning as the Frobenius integral on A' with A = H_n(R,q)) + rem:markov-axioms-primitive line 5 (z = 1/(q^{1/2}+q^{-1/2}))",
+      "definitional_convention": "D",
+      "definitional_source": "rem:markov-axioms-primitive line 5 (z = q^3/(q^2+1)) + prop:categorical-mass-markov (content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.md line 13: 'the Jones-Markov trace, functioning as the Frobenius integral on A'). Re-pinned C -> D on 2026-08-08 by owner ruling, closing the qou-3qrv dispute. The categorical-mass-markov line needed no edit: 'the Jones-Markov trace' names D unambiguously once the definitional pin is D.",
       "production_convention": "D",
       "production_source": "computations/m_p_substrate_identity_50dps.py::trM_borromean -> F_Bor -> m-p-substrate-identity-50dps.witness.json -> computations/canonical_mass.py",
-      "status": "disputed",
-      "open_item": {
+      "status": "agreed",
+      "open_item": null,
+      "resolution": {
+        "date": "2026-08-08",
+        "decided_by": "owner",
         "bean": "qou-3qrv",
-        "audit": "docs/audits/2026-08-08-borromean-trace-convention-forcing.md",
-        "blast_radius": "~30 F_Bor consumers; -197 ppm on m_p",
-        "note": "OWNER DECISION. No agent may switch the production trace to close this. D is the value that lands on CODATA, which is exactly why deciding by match is forbidden here."
+        "audit": "docs/audits/2026-08-08-markov-z-convention-d-ruling.md",
+        "direction": "definition moved to production, NOT production to definition",
+        "production_delta": "none - the mass channel already ran D; no F_Bor consumer and no m_p value changes",
+        "forcing": "two independent steps, neither consulting a measured value: (1) bar-covariance of M3 excludes C and every bar-even z - QOU.BraidKnot.zD_bar_sub / zC_ne_bar_sub, with QOU.BraidKnot.bar_sub_of_bar_even recording that this step alone does NOT select D; (2) TL_3 factorisation + faithfulness picks D out of the remaining solution set - QOU.BraidsAndKnots.MarkovTraceTLUniqueness."
       }
     },
     {
       "id": "binding",
       "description": "per-isotope binding via the free-minus-bound trace difference",
       "definitional_convention": "C",
-      "definitional_source": "rem:markov-axioms-primitive line 5",
+      "definitional_source": "rem:markov-axioms-primitive, closing paragraph ('the trace the binding channel runs, and continues to run') + h3-markov-wenzl-weights-context.md ('binding channel uses the full-Hecke Ocneanu'). Re-pointed 2026-08-08: this channel previously inherited C from the block's line-5 pin, which now reads D. Binding's C is a channel-local selection stated in its own right, so the mass re-pin does not drag binding into a dispute. No binding production value changed.",
       "production_convention": "C",
       "production_source": "computations/binding_canonical.py -> closed_form_tau_M.py::markov_z (= 1/(sqrt(q)+1/sqrt(q))) + y_lambda_wenzl_bridge_numeric",
       "status": "agreed",
@@ -235,11 +239,19 @@
     },
     {
       "file": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md",
-      "quote": "z = 1/(q^{1/2} + q^{-1/2})",
-      "about_channel": "mass",
+      "quote": "the **binding** channel runs, and continues to run",
+      "about_channel": "binding",
       "layer": "definition",
       "names_convention": "C",
-      "note": "this block IS the definitional pin; it is the reason the mass channel's definitional_convention is C"
+      "note": "added 2026-08-08 with the C -> D mass re-pin. Binding's C now has its own definitional statement instead of inheriting the block's line-5 pin, which moved to D."
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md",
+      "quote": "z = q^3/(q^2 + 1)",
+      "about_channel": "mass",
+      "layer": "definition",
+      "names_convention": "D",
+      "note": "this block IS the definitional pin; it is the reason the mass channel's definitional_convention is D. Re-pinned from C on 2026-08-08 (owner ruling on qou-3qrv). The block now carries the two-step forcing argument in prose."
     }
   ],
   "production_files": [

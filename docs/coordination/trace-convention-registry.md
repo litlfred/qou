@@ -74,20 +74,52 @@ because those can differ, and the mass channel is the case where they do.
 
 | channel | definitional | production | status |
 |---|---|---|---|
-| `mass` | **C** — `prop:categorical-mass-markov` names the trace on the full $\mathrm{H}_n(R,q)$; `rem:markov-axioms-primitive` pins $z = 1/(q^{1/2}+q^{-1/2})$ | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | **disputed** (bean `qou-3qrv`) |
-| `binding` | C | C — `binding_canonical.py` → `closed_form_tau_M` → `markov_z` | agreed |
+| `mass` | **D** — `rem:markov-axioms-primitive` pins $z = q^3/(q^2+1)$; `prop:categorical-mass-markov` names the Jones–Markov trace | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | **agreed** (re-pinned 2026-08-08) |
+| `binding` | C — `rem:markov-axioms-primitive` closing paragraph, stated in its own right | C — `binding_canonical.py` → `closed_form_tau_M` → `markov_z` | agreed |
 | `borromean-binding-single-pipeline` | D | D — `borromean_binding_recompute.py` | agreed |
 
 A channel whose two conventions differ **must** carry `status: "disputed"` and a
 non-null `open_item` naming a bean and an audit. R8 of the validator enforces
 this: a convention disagreement may not be recorded silently.
 
-> **The `mass` dispute is an owner decision.** Blast radius: ~30 `F_Bor`
-> consumers and −197 ppm on $m_p$. No agent may switch the production trace to
-> close it. D is the value that lands on CODATA, which is precisely why
-> deciding by match is forbidden here. Full analysis:
-> [`2026-08-08-borromean-trace-convention-forcing.md`](../audits/2026-08-08-borromean-trace-convention-forcing.md)
-> and [`2026-08-08-trace-convention-registry-and-doc-fix.md`](../audits/2026-08-08-trace-convention-registry-and-doc-fix.md).
+### The `mass` dispute — resolved 2026-08-08, in favour of D
+
+The owner ruled **D**, and the resolution moved the **definition** to meet
+production, not the other way round. **No production value changed:** the mass
+channel already ran D, so no `F_Bor` consumer and no $m_p$ value moves. The
+−197 ppm figure quoted below and in the audits was always the cost of the
+*opposite* move (production → C); it was never incurred.
+
+The forcing argument is **two independent steps, neither of which consults a
+measured value** — the constraint bean `qou-3qrv` imposed:
+
+1. **Bar-covariance of M3 excludes C.** M3 contains $\sigma_n$, which the bar
+   involution inverts alongside $q$, so the bar-partner of $z$ is the
+   negative-stabilisation value $z - h$, not $z$. D satisfies
+   $\overline{z} = z - h$; C, being invariant under the coefficient half alone,
+   violates it by exactly $h$. Sorry-free:
+   `QOU.BraidKnot.zD_bar_sub`, `QOU.BraidKnot.zC_ne_bar_sub`.
+   **This step alone does not select D** — `QOU.BraidKnot.bar_sub_of_bar_even`
+   records that the law's solution set is D plus any bar-even function.
+2. **TL faithfulness picks D out of what remains.** D is the unique normalised
+   Markov trace on $\mathrm{H}_3(q)$ factoring through $\mathrm{TL}_3$ and
+   faithful on it — `QOU.BraidsAndKnots.MarkovTraceTLUniqueness`, sorry-free,
+   proved earlier under `qou-3qrv` §3.
+
+Step 2 was already proved; what was missing was an independent reason to
+prefer D over C, since step 2's premise ("the mass fibre functor lands in TL")
+was the disputed half. Step 1 supplies one, from the algebra alone.
+
+Binding keeps **C** and keeps running it. The bar argument says C is not the
+bar-covariant *stabilisation parameter*; it does not say the binding channel is
+wrong to use the full-Hecke trace. Binding's definitional row is now stated in
+its own right rather than inherited from the block's line-5 pin, so the mass
+re-pin does not drag binding into a fresh dispute.
+
+Full analysis:
+[`2026-08-08-markov-z-convention-d-ruling.md`](../audits/2026-08-08-markov-z-convention-d-ruling.md),
+[`2026-08-08-borromean-trace-convention-forcing.md`](../audits/2026-08-08-borromean-trace-convention-forcing.md)
+and [`2026-08-08-trace-convention-registry-and-doc-fix.md`](../audits/2026-08-08-trace-convention-registry-and-doc-fix.md).
 
 ## The writhe-$0$ lemma — what it does and does not buy
 
