@@ -264,3 +264,51 @@ Lean class. But the QUESTION it names was already posed, better, elsewhere. The
 corpus-grep checklist (AGENTS.md) is meant to catch exactly this and I ran it
 against "theta", not against "S" or "c_3". Grep the OBJECT's aliases, not the
 symbol you happen to be holding.
+
+---
+
+# LITERATURE CHECK DONE — NZ 1985 read; AV2's premise is SOURCED (2026-08-08)
+
+The owner uploaded the papers (commit abb217cb / c055a0f5). Read
+`uploads/1-s2.0-0040938385900047-main.pdf` = Neumann-Zagier, "Volumes of
+hyperbolic three-manifolds", Topology 24 (1985) 307-332. Three results, all from
+§1:
+
+## 1. `u = 0 <=> complete structure` — CONFIRMED, and it is an IFF
+
+    "Let u_i = 1/2 log(lambda(m_i)) where m_i is the chosen meridian at the i-th
+     cusp. Since lambda(m_i) = 1 for the complete hyperbolic structure on M, we
+     may choose the branch of logarithm so (u_1,...,u_h) = 0 for this structure."
+
+    "The hyperbolic structure M_u is complete at the i-th end of M (i.e. this end
+     is still a true cusp) IF AND ONLY IF u_i = 0."
+
+So `CompleteStructureExclusion`'s premise is NOT an inference from
+`V_41(0) = Vol(4_1)` being real — it is NZ's definition, and the iff is stronger
+than the exclusion needs. The exclusion stands, now sourced.
+
+## 2. The half-factor sharpens AV3
+
+`u = 1/2 log lambda(m)`, so the T5 hypothesis `hRe : Re u = ln q_0` is the
+condition **|lambda(meridian)| = q_0^2**, NOT `= q_0`. Any candidate bridge owes
+that factor of 2. Nothing in the corpus states it; a candidate that pins
+`|lambda(m)| = q_0` would be off by a square and would look like a near-miss.
+
+## 3. Two corroborations of surrounding machinery
+
+  * NZ prove the cusp shape `tau_i(u)` is an EVEN function of each `u_i` — the
+    source of the corpus's `V_41_even` and `no_cubic_rung`. Those are faithful.
+  * `u` is a local coordinate valid only "in a neighborhood of 0 in C^h", and
+    deformations are parametrized `2^h : 1`. That is exactly why the Murakami
+    substrate-matched meridian at `|u| >= 2*pi` is off the controlled
+    neighbourhood, independently confirming `FigureEightDeformedMeridianWinding`.
+
+## NOT checked
+
+NZ Theorem 1A/1B (`Vol(M_u) = Vol(M) - (1/2) sum L_i(u) + eps(u)`, `eps = O(|u|^4)`)
+vs the corpus's quadratic `V_41(u) = Vol + a_2 u^2`. These are consistent in
+principle — NZ's statement is about the REAL volume, the corpus's `a_2` is purely
+imaginary so it contributes to CS — but the exact relation between NZ's potential
+and the corpus's complex-volume Taylor coefficient was NOT verified. If a
+candidate leans on `a_2`, verify that first. The OCR also mangled the displayed
+formulae in Theorem 1A, so the constants there were not readable.
