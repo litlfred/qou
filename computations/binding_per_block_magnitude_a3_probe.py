@@ -49,12 +49,21 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))      # 𝔈₀ ≈ 4.186 MeV (CAL-3)
 ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
 
 
+def _mpf(v):
+    """Witness numerics are a 50-dps STRING post-migration, a float before it.
+    `mp.mpf(repr(v))` is right for a float — repr round-trips all 17 digits —
+    but on a string it yields `mpf("\'155…\'")`, quotes included, which mpmath
+    rejects outright. Reading the string directly is also strictly better: it
+    carries 50 digits where the float carried 17."""
+    return mp.mpf(v) if isinstance(v, str) else mp.mpf(repr(v))
+
+
 def _read_chi(iso: str):
     """{cfg: [(partition_tuple, χ^λ), ...]} for free and atom from the cached
     Rust-kernel witness."""
     with open(HERE / f"atom-chi-rust-{iso}.witness.json") as _fh:
         dat = json.load(_fh)["data"]
-    return {cfg: [(tuple(e["partition"]), mp.mpf(repr(e["chi_lambda"])))
+    return {cfg: [(tuple(e["partition"]), _mpf(e["chi_lambda"]))
                   for e in dat[cfg]["by_partition"]]
             for cfg in ("free", "atom")}
 

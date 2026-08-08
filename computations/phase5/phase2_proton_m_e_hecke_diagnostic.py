@@ -71,7 +71,13 @@ from derivation_chain import M_HECKE_PIPELINE_AT_Q0, TR_M_AT_Q0
 from witness_base import WitnessBuilder
 
 ASSEMBLY_DIR = Path(__file__).parent
-SIX_TERM_WITNESS = ASSEMBLY_DIR / "mass-formula-6term-mpfr-50dps.witness.json"
+# `witness_path` and not `ASSEMBLY_DIR / ...`: the six-term witness is emitted
+# into `computations/`, not into this cluster, so the bare-join looked for it
+# beside this script and reported "missing input" on a file that exists. That
+# is the idiom the Phase-6 helper exists to replace (see its docstring).
+import _path_bridge as _pb  # noqa: E402
+SIX_TERM_WITNESS = _pb.witness_path(
+    "mass-formula-6term-mpfr-50dps.witness.json", ASSEMBLY_DIR)
 
 
 def six_term_sum(atom_record: dict) -> tuple[mp.mpf, dict[str, mp.mpf]]:
