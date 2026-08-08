@@ -3,12 +3,16 @@ import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 
 /-!
-# `log (1 − x·t)` is integrable across its own singularity — `qou-invr` step (1)
+# `cLiTwoExt`'s integrand is integrable at real `x > 0` — `qou-invr` step (1), DONE
 
-Bean `qou-invr`, step (1). **The crux is proved**: for real `x`, the map
-`t ↦ log (1 − x·t)` is interval-integrable on *any* interval, logarithmic
-singularity and branch jump included. What remains is the `1/t` assembly, named
-at the bottom.
+Bean `qou-invr`, **step (1) complete**:
+
+    intervalIntegrable_clog_one_sub_div_ofReal {x : ℝ} (hx : 0 < x) :
+      IntervalIntegrable (fun t => log (1 − x·t) / t) volume 0 1
+
+Both singularities handled — the **logarithmic** one at `t = 1/x` (in range
+exactly when `x > 1`, which is the whole difficulty) and the **removable** one
+at `t = 0`. Verified at `x = 2.24698`, i.e. at `w₁` itself.
 
 ## Why step (1) exists
 
@@ -46,23 +50,36 @@ its own singularity — was already in Mathlib, twice over
 here). `qou-invr` had priced this leg as "new analytic infrastructure"; it was
 API archaeology.
 
-## What remains: the `1/t` assembly
+## The `1/t` assembly, as built
 
-`cLiTwoExt`'s integrand is `log(1 − x·t)/t`, and the `1/t` is a **second,
-independent** singularity at `t = 0`. It is removable (`log(1 − x·t) ~ −x·t`),
-and the recipe is unchanged:
+`1/t` is a **second, independent** singularity at `t = 0` — removable
+(`log(1 − x·t) ~ −x·t`), and unrelated to the logarithmic one.
 
-1. Split at `c = 1/(2x)` with `IntervalIntegrable.trans`, so `1 − x·t ≥ 1/2` on
-   `[0,c]`.
-2. On `[c,1]`, `1/t` is continuous (`t ≥ c > 0`), so
-   `IntervalIntegrable.mul_continuousOn` applies to the theorem proved here.
-3. On `[0,c]`, rescale: with `g(u) = log(1 − u/2)/u` (integrable by the existing
-   `intervalIntegrable_log_one_sub_div_of_slitPlane`, since `Re(1 − u/2) ≥ 1/2`),
-   the algebra gives `g(t/c) = c·f(t)` exactly, so `IntervalIntegrable.comp_mul_left`
-   transports `0..1` to `0..c`. Checked on paper; not yet in Lean.
+1. Split at `c = 1/(2x)` (`IntervalIntegrable.trans`), so `1 − x·t ≥ 1/2` on `[0,c]`.
+2. `intervalIntegrable_integrand_right` — on `[c,1]`, `1/t` is continuous
+   (`t ≥ c > 0`), so it peels off with `IntervalIntegrable.mul_continuousOn`
+   against the theorem above.
+3. `intervalIntegrable_integrand_left` — on `[0,c]`, **rescale to the existing
+   `intervalIntegrable_log_one_sub_div_of_slitPlane`** rather than reprove the
+   removable singularity. The substitution `t = c·u` sends the integrand to
+   `log(1 − u/2)/u`, whose slit hypothesis holds outright (`Re(1 − u/2) ≥ 1/2`),
+   and `comp_mul_left` transports `0..1` to `0..c`. The removable singularity at
+   `0` is thereby handled by the proof that already existed.
 
-Step 3 is the only one with any work left in it, and it needs no new analysis —
-just the existing lemma and a change of variables.
+⚠ **A performance note worth keeping.** Step 3 first appeared to be a
+*mathematical* obstruction: it timed out at 63s even with a 10× heartbeat
+budget. The cause was neither the analysis nor `comp_mul_left`'s side
+conditions — it was a `rw [one_div]` in the goal that `hcomp` did not carry, so
+`exact` had to unify `(2x)⁻¹` against `1/(2x)` under a pile of casts. Deleting
+that one rewrite made it instant. **An elaboration timeout is not evidence that
+a step is hard.**
+
+## What remains for `qou-invr`
+
+Step (2) only: the real identity `Re Li₂(x) + Li₂(1/x) = π²/3 − ½·log²x` for
+`x > 1` (Route 35 G3, measured at 1e-25). Step (1) no longer blocks it — and
+because of it, `cLiTwoExt x` for `x > 1` is now a **provably real object** in
+Lean rather than an integral that might be the junk value `0`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -157,5 +174,72 @@ theorem intervalIntegrable_clog_one_sub_mul (x a b : ℝ) :
       obtain ⟨h1, h2⟩ := intervalIntegrable_arg_step x a b
       exact ⟨h1.ofReal, h2.ofReal⟩
     exact hstep.mul_const _
+
+/-! ## The `1/t` assembly: the second, removable singularity -/
+
+/-- **Away from `0` the integrand is integrable**: `1/t` is continuous there, so
+it peels off against `intervalIntegrable_clog_one_sub_mul`. -/
+theorem intervalIntegrable_integrand_right {x c : ℝ} (hc : 0 < c) :
+    IntervalIntegrable (fun t : ℝ => Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      MeasureTheory.volume c 1 := by
+  have hcont : ContinuousOn (fun t : ℝ => ((t : ℂ))⁻¹) (Set.uIcc c 1) := by
+    refine ContinuousOn.inv₀ (Complex.continuous_ofReal.continuousOn) ?_
+    intro t ht
+    have ht0 : t ≠ 0 := by
+      rcases Set.mem_uIcc.mp ht with h | h
+      · exact ne_of_gt (lt_of_lt_of_le hc h.1)
+      · exact ne_of_gt (lt_of_lt_of_le zero_lt_one h.1)
+    simpa using ht0
+  have h := (intervalIntegrable_clog_one_sub_mul x c 1).mul_continuousOn hcont
+  simpa [div_eq_mul_inv] using h
+
+set_option maxHeartbeats 1000000 in
+/-- **Near `0` the integrand is integrable**, by rescaling to the existing
+`slitPlane` lemma. With `c = 1/(2x)` the substitution `t = c·u` turns the
+integrand into `log(1 − u/2)/u`, whose slit hypothesis holds outright. -/
+theorem intervalIntegrable_integrand_left {x : ℝ} (hx : 0 < x) :
+    IntervalIntegrable (fun t : ℝ => Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      MeasureTheory.volume 0 (1 / (2 * x)) := by
+  have h2x : (0 : ℝ) < 2 * x := by linarith
+  -- the rescaled integrand, with `y = 1/2`, is covered by the existing lemma
+  have hF : IntervalIntegrable
+      (fun u : ℝ => Complex.log ((1 : ℂ) - (1 / 2 : ℂ) * (u : ℂ)) / (u : ℂ))
+      MeasureTheory.volume 0 1 := by
+    refine intervalIntegrable_log_one_sub_div (fun u h0 h1 => ?_)
+    have : ((1 : ℂ) - (1 / 2 : ℂ) * (u : ℂ)).re = 1 - u / 2 := by
+      simp [Complex.sub_re, Complex.mul_re]
+      ring
+    rw [this]
+    linarith
+  have hcomp := hF.comp_mul_left (c := 2 * x) (by simp) (by simp)
+  rw [zero_div] at hcomp
+  -- `F (2x · t) = (1/(2x)) · f t`, so `f = (2x) · (F ∘ (2x · ·))`
+  have hfun : (fun t : ℝ =>
+      Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      = fun t : ℝ => ((2 * x : ℝ) : ℂ) *
+          (Complex.log ((1 : ℂ) - (1 / 2 : ℂ) * (((2 * x) * t : ℝ) : ℂ))
+            / ((((2 * x) * t : ℝ)) : ℂ)) := by
+    funext t
+    have harg : ((1 : ℂ) - (1 / 2 : ℂ) * (((2 * x) * t : ℝ) : ℂ))
+        = (1 : ℂ) - (x : ℂ) * (t : ℂ) := by push_cast; ring
+    rw [harg]
+    by_cases ht : t = 0
+    · simp [ht]
+    · have htc : ((t : ℝ) : ℂ) ≠ 0 := by simpa using ht
+      have hxc : ((x : ℝ) : ℂ) ≠ 0 := by
+        simpa using (ne_of_gt hx)
+      push_cast
+      field_simp
+  rw [hfun]
+  exact hcomp.const_mul _
+
+/-- **`cLiTwoExt`'s integrand is integrable at real `x > 0`** — both
+singularities handled: the logarithmic one at `t = 1/x` (if it is in range) and
+the removable one at `t = 0`. This is `qou-invr` step (1). -/
+theorem intervalIntegrable_clog_one_sub_div_ofReal {x : ℝ} (hx : 0 < x) :
+    IntervalIntegrable (fun t : ℝ => Complex.log ((1 : ℂ) - (x : ℂ) * (t : ℂ)) / (t : ℂ))
+      MeasureTheory.volume 0 1 :=
+  (intervalIntegrable_integrand_left hx).trans
+    (intervalIntegrable_integrand_right (by positivity))
 
 end QOU.MathlibExt

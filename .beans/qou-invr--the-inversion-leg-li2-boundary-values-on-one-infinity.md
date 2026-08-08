@@ -10,7 +10,7 @@ tags:
     - qou-rstq
     - 5two
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T19:05:00Z
+updated_at: 2026-08-08T19:35:00Z
 ---
 
 ## What is open, stated as narrowly as it now can be
@@ -138,24 +138,46 @@ so the composition never has to happen. The lesson is narrow but repeatable —
 *when a composition fights you, look for the lemma that takes the inner function
 as a hypothesis.*
 
-### What remains in step (1): the `1/t` assembly
+### ✅ STEP (1) IS COMPLETE — 2026-08-08
 
-`cLiTwoExt`'s integrand is `log(1−x·t)/t`, and the `1/t` is a **second,
-independent** singularity at `t = 0` — removable, and *not* the one just handled.
+    intervalIntegrable_clog_one_sub_div_ofReal {x : ℝ} (hx : 0 < x) :
+      IntervalIntegrable (fun t => log (1 − x·t) / t) volume 0 1
 
-1. Split at `c = 1/(2x)` with `IntervalIntegrable.trans` (`1 − x·t ≥ 1/2` on `[0,c]`).
-2. On `[c,1]`: `1/t` is continuous (`t ≥ c > 0`), so
-   `IntervalIntegrable.mul_continuousOn` applies to the theorem above.
-3. On `[0,c]`: rescale to the **existing** `intervalIntegrable_log_one_sub_div_of_slitPlane`
-   — with `g(u) = log(1 − u/2)/u` (its hypothesis holds, `Re(1 − u/2) ≥ 1/2`),
-   the algebra gives `g(t/c) = c·f(t)` exactly, so `IntervalIntegrable.comp_mul_left`
-   transports `0..1` to `0..c`. **Checked on paper; not in Lean.**
+Sorry-free, `lake`-verified, axioms `[propext, Classical.choice, Quot.sound]`.
+**Verified at `x = 2.24698` — at `w₁` itself**, the one argument this bean is
+about.
 
-Step 3 is the only one with work left, and it needs no new analysis — the
-existing lemma plus a change of variables.
+Both singularities are handled: the **logarithmic** one at `t = 1/x` (in range
+exactly when `x > 1`, the whole difficulty) and the **removable** one at
+`t = 0`. The second was not reproved — the `[0,c]` piece *rescales to the
+existing* `intervalIntegrable_log_one_sub_div_of_slitPlane`, so the removable
+singularity is handled by the proof that already existed.
 
-**Then step (2)**, the real identity `Re Li₂(x) + Li₂(1/x) = π²/3 − ½·log²x`,
-is still untouched.
+**Consequence, and the reason step (1) mattered at all:** `cLiTwoExt x` for
+`x > 1` is now a **provably real object** in Lean. Before this, it was an
+`∫` with no integrability proof — hence the junk value `0` — so every statement
+about it was vacuously true and useless.
+
+### ⚠ A false alarm worth recording
+
+The `[0,c]` rescaling first appeared to be a *mathematical* obstruction: it
+timed out at 63 s even with a 10× heartbeat budget, twice. The cause was neither
+the analysis nor `comp_mul_left`'s `finiteness` side conditions — it was a stray
+`rw [one_div]` in the goal that the hypothesis did not carry, forcing `exact` to
+unify `(2x)⁻¹` against `1/(2x)` under a pile of casts. Deleting that one rewrite
+made it instant.
+
+**An elaboration timeout is not evidence that a step is hard.** Given this
+lane's record of mispricing steps in both directions, that is worth stating as
+flatly as the mathematical findings.
+
+### What remains: step (2) ONLY
+
+    Re Li₂(x) + Li₂(1/x) = π²/3 − ½·log²x        for real x > 1
+
+Route 35 G3, measured at 1e-25 over 200 points. Its partner argument `1/x` lies
+in `(0,1)`, where the series converges and `cLiTwo_ofReal` bridges. Nothing
+blocks it now.
 
 ## Attack vectors (A1 and A3 are now SUPERSEDED by A2's result)
 
