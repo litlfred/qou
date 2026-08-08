@@ -4,7 +4,7 @@ title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
 status: in-progress
 type: task
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-08-08T13:10:00Z
+updated_at: 2026-08-08T13:55:00Z
 ---
 
 
@@ -863,5 +863,72 @@ already has `rogersL_fiveTerm` as a sorry-free Lean theorem. The level-7 ladder
 was found exactly that way. Note the level-7 cubic lives in a *different* field
 (disc 49, totally real), so the proved ladder cannot supply this one — but the
 method transfers.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later) — the sum rule as ONE trace equal to π²/2
+
+Route 25, 6 gates, exit 0, 120 dps. Following Route 24's own pointer at
+five-term equations, this reformulates the target into the shape they act on.
+**Nothing is proved.**
+
+### The reformulation
+
+The saddle condition `(1−y)³ = y²` is already Lean (`cubic_iff_sq_eq_cube`), so
+`log(1−y) = (2/3)log y + (2πi/3)m` per embedding. Feed that into Rogers `L` and
+trace over the three embeddings. At `m = −2`:
+
+    Σ_σ [ Li₂(σy) + ½ log(σy) · log(ω_σ(1 − σy)) ]  =  π²/2
+
+exactly — difference `0.0` at 120 dps, PSLQ `[−2, 1]`, and unique in `m` (the
+trace moves by `(2/3)πθ` per step). **One equation where Route 24's `Li₂` form
+needed four terms**: `π²`, `L²`, `θ²`, `πθ` all vanish into the trace.
+
+### ⚠ What the object is, and is not
+
+**It is not Rogers `L`.** The principal branch of `log(1−y₁)` has `m = −1`, so
+legitimate branches are `m = −1 + 3k` — and `−2` is not of that form. Measured:
+at `m = −2`, `exp(lg)/(1−y₁)` is a primitive **cube root of unity**, `arg = −2π/3`.
+
+So this is Rogers `L` with `1−y` twisted by `ω`. The twist is not arbitrary —
+solving `(1−y)³ = y²` for `1−y` determines it only up to a cube root of unity,
+and the clean value picks one of the three. But it must be named honestly:
+*"the Rogers-L trace is π²/2" would be FALSE*. With genuine Rogers `L` the trace
+is `π²/2 − (2/3)πθ` (G2) — already a simplification from four terms to two, but
+still θ-dependent.
+
+### Why a trace at all — the negative result that forces it
+
+**The identity does not split.** At the real root alone, `L(y₃)` is *not* a
+rational multiple of `π²` (PSLQ to coefficient 1e10 at 120 dps finds nothing),
+and `Li₂(y₃) ∉ span_ℚ{π², L²}`. So there is no root-by-root ladder; the identity
+is irreducibly a sum over embeddings. `L(y₃)/π² = 0.073505600048…`, not a
+low-height rational.
+
+### What this does NOT do
+
+G5: expanding the trace in the `{π², L², θ², πθ}` basis returns Route 24's
+`6I = 3π² − 3L² + 4θ² − 8πθ` **identically**. It is a repackaging and proves
+nothing. Its value is the *shape*: a single trace equal to `π²/2` is what
+five-term functional equations produce, and `rogersL_fiveTerm` is already
+sorry-free Lean on this branch.
+
+### A coincidence, flagged and not claimed
+
+`π²/2` is exactly the value of the corpus's **proved** level-7 identity
+`extended_sum` (`Σₖ(2L(wₖ) + L(−wₖ)) = π²/2`). The fields differ — disc `−23`
+here, disc `49` (totally real, cyclotomic) there — so it cannot be the same
+identity and the proved one cannot supply this one. Recorded because a shared
+constant is worth a look, not because it is evidence.
+
+### Suggested next step
+
+Search for an explicit ℚ-combination of five-term relations whose arguments are
+built from the `yⱼ` and that reduces `Σ_σ [yⱼ]` to torsion. That is how the
+level-7 numerators `(17, 5, −1)` were found on this branch, and the machinery
+is already Lean-proved. The cube-root twist says the search should probably run
+in the field `F(ω)`, not `F`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
