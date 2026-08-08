@@ -269,6 +269,75 @@ So the closed form is conditional on an axiomatised Markov trace. That is
 standard practice, but "Lean proved" is the wrong label, and the only fully
 proved ingredient does not matter numerically.
 
+## §10a. The functional is DERIVED, not chosen — and it is the log form
+
+The choice between `B = −α·ln μ` and `B = α·(tr_free − tr_atom)` is not a
+preference. Two facts force it, one checked here and one physical.
+
+1. **tr_M is multiplicative** over independent subsystems — the Markov trace's
+   behaviour on a split braid — and the atom word inherits it:
+   `tr_atom = tr_free · Π_bonds μ_k`. Verified: the factorisation to 7.9e-31,
+   the bond product to 1.2e-31.
+2. **Energy is extensive**: for non-interacting `A`, `B`, `m(A ⊔ B) = m(A) + m(B)`.
+
+A map from a multiplicative trace to an additive energy must satisfy
+`f(xy) = f(x) + f(y)` — the Cauchy functional equation on `(ℝ₊, ×)` — whose only
+continuous solutions are `f(x) = c·ln x`. **The log form is forced.**
+
+Measured, on `x = μ_pp`, `y = μ_nn`:
+
+```
+f = −α·ln t     |f(xy) − f(x) − f(y)| = 0            EXTENSIVE
+f = α·(1 − t)   |f(xy) − f(x) − f(y)| = 1.4875       NOT EXTENSIVE
+```
+
+The linear form's failure is not marginal — it carries a **hard ceiling**.
+Since `tr_atom > 0`, `B_lin ≤ α·tr_free`, and `tr_M(nucleon) ≈ 1` makes
+`tr_free ≈ 1` at every A:
+
+```
+atom   tr_free   ceiling    B_AME    exceeds ceiling?
+2H     0.9835    4.1170     2.2246   no
+3H     0.9080    3.8010     8.4818   YES — impossible
+4He    0.9673    4.0492    28.2957   YES — impossible
+7Li    0.8784    3.6768    39.2445   YES — impossible
+```
+
+The linear form cannot produce binding above ~4.2 MeV for **any** nucleus. The
+dashboard's `B_can⁰` column is exactly this saturation in the open —
+2.49, 3.37, 3.52, 3.82, 3.95, 3.67, all pinned under α. Its better ²H agreement
+(+12.0% vs +74.9%) is the linearisation error partly cancelling the model's
+over-binding, not a better functional.
+
+## §10b. ²H is a zero-freedom prediction of q₀
+
+With the functional derived, A = 2 has exactly one bond and therefore
+
+```
+B(²H) = −α·ln μ_pn,   α = m_e/(q₀(q₀−1)),   μ_pn = z − h(½ − δ/4),
+z = 1/(√q₀ + 1/√q₀),  h = q₀ − 1/q₀,  δ = flavor_split_leading(q₀)
+```
+
+Every symbol is a function of `q₀` and `m_e`. No free parameter, no topology,
+no coordination, no crossing count. It predicts **3.88969 MeV** against AME
+**2.224566** — **+74.85%**.
+
+So the gap is cornered. It is not:
+
+| route | why not |
+|---|---|
+| the functional | derived above; the alternative is non-extensive and capped |
+| the interface | Lean `mu_unreachable`: AME is 30.69% below the *whole* admissible family |
+| coordination | one bond has no topology to get wrong |
+| the anchor | making ²H exact needs q₀ = 1.23194 vs 1.10998, a **11%** shift — 9.5×10⁶ times the μ–p tension of 1.15e-8 |
+
+What remains is narrow and specific: either the derivation of `z` (the Markov
+parameter, which fixes the bond scalar) is wrong, or `α = m_e/(q₀(q₀−1))` — an
+electron-scale quantity — is not the right scale for the *nucleon–nucleon*
+interface. The second is worth stating plainly because the framework applies one
+α to leptons, nucleon masses, and nuclear binding alike, and only the first two
+are calibrated.
+
 ## §11. What this leaves
 
 The chain is coherent from q₀ through tr_M — one anchor, exact arithmetic, and a
