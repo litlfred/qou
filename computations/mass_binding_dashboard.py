@@ -203,10 +203,17 @@ def _electron_binding_mev(Z):
 
 
 def _constants():
-    from q_parameter import Q as q0
+    # NO FLOAT64 (owner directive): source the 50-dps q0, form E0 exactly,
+    # and cast ONCE at the boundary. `q_parameter.Q` is the f64 value; doing
+    # `me / (q0 * (q0 - 1))` in f64 threw away digits E0 is entitled to.
+    import mpmath as _mp
+    from q_parameter import Q_50_DIGIT_STR as _Q50
     from codata_constants import M_E_MEV as me
-    me, q0 = float(me), float(q0)
-    return me, q0, me / (q0 * (q0 - 1.0))            # me, q0, E0
+    with _mp.workdps(60):
+        q0x = _mp.mpf(str(_Q50))
+        mex = _mp.mpf(str(me))
+        e0x = mex / (q0x * (q0x - 1))
+    return float(mex), float(q0x), float(e0x)        # me, q0, E0
 
 
 def _bond_type_L():
@@ -215,10 +222,12 @@ def _bond_type_L():
     The V_i of the factorized q-CLT, computed once."""
     from tr_m_atom_via_transfer import tr_m_atom_zn
     import mpmath as mp
-    from q_parameter import Q as Q0_val
+    from q_parameter import Q_50_DIGIT_STR as _Q50
     import codata_constants as _codata
-    
-    q0 = mp.mpf(str(Q0_val))
+
+    # `mp.mpf(str(q_parameter.Q))` was here: a high-precision TYPE holding 17
+    # real digits, which capped g_true below. The 50-dps string is the value.
+    q0 = mp.mpf(str(_Q50))
     # g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²): the Markov-peel bond factor z
     # arc-length-normalized ≡ the q-deformed [1⁴] ss-ceiling (2 → [2]_v).
     # Identity 5+(q−1)²/q = 1+[2]_v² is exact; see
@@ -266,8 +275,8 @@ def _nucleon_mass_canonical(me, q0):
 
 
 def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
-    from q_parameter import Q as _global_q0
-    q0 = float(_global_q0)
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    q0 = float(_Q50)   # f64 only at this display/scalar boundary
     A = Z + N
     n = 3 * A
     bame_t = ame.get((Z, A))
@@ -383,7 +392,6 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     if n <= max_strands:
         from tr_m_atom_via_transfer import tr_m_atom_zn
         import mpmath as _mp
-        from q_parameter import Q as _Q0
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
         B_sym_exact = alpha * math.log(tf / ta)
@@ -393,7 +401,12 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         # EMITTED/radiated (Chern–Simons / γγ̄). E_multilink = bar-odd of the
         # inter-nucleon binding defect (tr_free−tr_atom); B_sym_ent augments the
         # chain binding with the radiated inter-nucleon energy.
-        ta_i, tf_i, _, _ = tr_m_atom_zn(Z, N, q=_mp.mpf(1) / _mp.mpf(str(_Q0)), dps=50)
+        # q0^-1 leg, built from the 50-dps string. It used to divide into
+        # `_mp.mpf(str(q_parameter.Q))` — the f64 — so the inverse-anchor leg
+        # was capped at ~17 digits while the forward leg was not.
+        from q_parameter import Q_50_DIGIT_STR as _Q50i
+        ta_i, tf_i, _, _ = tr_m_atom_zn(
+            Z, N, q=_mp.mpf(1) / _mp.mpf(str(_Q50i)), dps=50)
         ta_i, tf_i = float(ta_i), float(tf_i)
         E_retained = alpha * (ta + ta_i) / 2.0
         E_emitted = alpha * abs(ta - ta_i) / 2.0

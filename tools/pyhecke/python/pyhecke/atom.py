@@ -284,7 +284,67 @@ def vertex_volume(chain):
 
 
 
-def nucleon_gen_chains(quarks, *, q=None):
+
+def reject_float64_q(q, *, allow_float64: bool = False, where: str = "") -> None:
+    """Refuse a float64 q. Owner directive: NO FLOAT64.
+
+    Two shapes, both of which silently cap an otherwise-exact braid word at
+    ~17 good digits:
+
+      * a plain Python / numpy float;
+      * an mpf whose VALUE is a float64's decimal expansion — the
+        `mp.mpf(str(q_parameter.Q))` idiom, which looks like high precision
+        and is not. `mass_binding_dashboard` and
+        `probes/gram_qtrace_hutchinson_probe` both do exactly that.
+
+    The source now builds crossings exactly when `q is None`, but an explicit
+    `q` is used as given, so a caller can undo the whole fix from outside. That
+    has to be an error rather than a quiet downgrade.
+
+    `allow_float64=True` is the escape for paths that are legitimately f64 (the
+    numpy validation kernels), so the loss is declared at the call site instead
+    of hidden.
+    """
+    if q is None or allow_float64:
+        return
+    if isinstance(q, float):
+        raise TypeError(
+            f"{where or 'braid word'}: q is a Python float ({q!r}) — this caps "
+            f"every crossing at ~17 digits. Pass the 50-dps value "
+            f"(`q_parameter.Q_50_DIGIT_STR` via mpf), not `q_parameter.Q`. "
+            f"Use allow_float64=True only if f64 is genuinely intended.")
+    try:
+        import numpy as _np
+        if isinstance(q, _np.floating):
+            raise TypeError(
+                f"{where or 'braid word'}: q is a numpy float ({q!r}); see "
+                f"q_parameter.Q_50_DIGIT_STR. allow_float64=True to override.")
+    except ImportError:
+        pass
+    # An mpf carrying no more information than a float64.
+    #
+    # `mp.mpf(str(q_parameter.Q))` is the idiom: a high-precision TYPE holding
+    # 17 good digits. Detected by round-trip — if the value is reproduced
+    # exactly from its own float64, it holds nothing a float64 did not.
+    #
+    # This also rejects deliberately simple sweep values (q = 1.1 and the
+    # like), which are exactly representable from their float64 too. That is
+    # the intended trade: `allow_float64=True` declares such a sweep at the
+    # call site, and a silent 1e-17 cap in a 50-dps pipeline is the thing this
+    # is here to stop.
+    try:
+        import mpmath as _mp
+        if isinstance(q, _mp.mpf) and _mp.mpf(repr(float(q))) == q:
+            raise TypeError(
+                f"{where or 'braid word'}: q is an mpf holding only float64 "
+                f"information (the `mpf(str(q_parameter.Q))` idiom) — ~17 real "
+                f"digits in a 50-dps path. Pass q_parameter.Q_50_DIGIT_STR. "
+                f"allow_float64=True to declare a deliberately f64 sweep.")
+    except ImportError:
+        pass
+
+
+def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     """Per-generator crossing chains for one nucleon.
 
     Derives chains from the quark content, matching build_nucleon_nf:
@@ -302,23 +362,58 @@ def nucleon_gen_chains(quarks, *, q=None):
     that omits `q` is unaffected. (q-parameterised-braid-word core refactor;
     docs/workplans/2026-06-17-q-parameterised-braid-word-core.md.)
     """
-    h_loc = h if q is None else (q - 1 / q)
+    # NO FLOAT64 (owner directive). `pyhecke.gram.h` is a Python float —
+    # 2.61e-16 relative against the 50-dps closed form — and using it here put
+    # every INTRA-nucleon crossing into the braid word at ~17 good digits.
+    # This sits upstream of `atom_braid_word_3A`, so fixing only the
+    # inter-nucleon crossings there still left d = -0.10453014939781968 (−h/2)
+    # arriving from these chains.
+    #
+    # Built at >= 60 dps whatever the caller's ambient precision: an mpf keeps
+    # the precision it was CREATED at, and `_PROTON_G0` and friends below are
+    # module-level constants materialised at import, when nothing has raised
+    # mpmath's default of 15.
+    #
+    # This breaks the "byte-identical to the historical output" property the
+    # docstring claims for `q=None`. That output was the f64-contaminated one.
+    # Consumers that genuinely need f64 (the numpy paths) cast at their own
+    # boundary, where the loss is visible rather than baked in here.
+    reject_float64_q(q, allow_float64=allow_float64, where="nucleon_gen_chains")
+    # The three crossing templates, all built inside ONE precision context.
+    #
+    # Raising the precision only around `h_loc` is not enough: an mpf carries
+    # the precision of the OPERATION, not just of its operands, so `-h_loc / 2`
+    # evaluated outside the context is rounded to the ambient dps. These
+    # constants are materialised at import, when that is mpmath's default of
+    # 15 — which is how `-h/2` still arrived at -0.104530149397819654977…
+    # against an exact -0.104530149397819657715…, wrong from digit 18, even
+    # after h_loc itself was exact.
+    if q is None:
+        import mpmath as _mpm
+        with _mpm.workdps(max(_mpm.mp.dps, 60)):
+            from q_parameter import Q_50_DIGIT_STR as _Q50
+            _qx = _mpm.mpf(str(_Q50))
+            h_loc = _qx - _mpm.mpf(1) / _qx
+            _d_sigma, _d_inv, _d_avg = 0, -h_loc, -h_loc / 2
+    else:
+        h_loc = q - 1 / q
+        _d_sigma, _d_inv, _d_avg = 0, -h_loc, -h_loc / 2
     # B₃ confinement: (σ₀·σ₁⁻¹)³
     # gen 0 gets 3× σ₀ = (1, 0)
     # gen 1 gets 3× σ₁⁻¹ = (1, -h)
-    g0 = [(1, 0)] * 3
-    g1 = [(1, -h_loc)] * 3
+    g0 = [(1, _d_sigma)] * 3
+    g1 = [(1, _d_inv)] * 3
 
     # Quark pairwise crossings
     pairs = [(0, 1, 0), (0, 2, 0), (1, 2, 1)]  # (qi, qj, gen)
     for i, j, gen in pairs:
         qi_f, qj_f = quarks[i], quarks[j]
         if qi_f == qj_f == 'u':
-            cd = (1, 0)           # σ
+            cd = (1, _d_sigma)    # σ
         elif qi_f == qj_f == 'd':
-            cd = (1, -h_loc)      # σ⁻¹
+            cd = (1, _d_inv)      # σ⁻¹
         else:
-            cd = (1, -h_loc / 2)  # mixed
+            cd = (1, _d_avg)      # mixed
         if gen == 0:
             g0.append(cd)
         else:

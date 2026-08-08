@@ -101,15 +101,61 @@ def build_chi_cache_at_q0(
     # no inter-nucleon crossing → no match → word unchanged.
     n_colour_weighted = 0
     try:
-        from canonical_braid_crossings import _avg_color_delta
+        # δ from the closed form at THIS q₀, not from `_avg_color_delta()`.
+        #
+        # That accessor evaluates δ at the float64 `q_parameter.Q`, so it
+        # reaches only ~5e-16 relative — its own docstring says so, and
+        # AGENTS.md §"q₀ anchor convention" directs deep-1ppQ callers to
+        # `flavor_split_leading(local_q0_50dps)` instead, the same closed form
+        # taking q as an argument.
+        #
+        # It is a small term and it still dominated the floor: δ enters as
+        # −h·(½ − δ/4), so the δ/4 piece is ~6.9e-4 of the offset and a 1e-16
+        # error in δ lands at ~7e-20 on the result. Measured — with exact
+        # crossings but this accessor still in place, deuteron, tritium and
+        # helium-3 all sat at exactly 3.476e-20, the same value for three
+        # different atoms, which is the signature of a shared input rather
+        # than anything atom-specific. A=1 atoms have no p-n crossing, never
+        # touch δ, and reached ~1e-50 in the same run.
+        from _li_2_q_util import flavor_split_leading
         _qm = mp.mpf(q_str)
         _hm = _qm - mp.mpf(1) / _qm
-        _cw_d = -_hm * (mp.mpf(1) / 2 - _avg_color_delta() / 4)
+        _cw_d = -_hm * (mp.mpf(1) / 2 - flavor_split_leading(_qm) / 4)
         _cw_f64 = float(_cw_d)
         n_colour_weighted = sum(1 for (_, d, _) in word
                                 if abs(float(d) - _cw_f64) < 1e-9)
-        word = [(c, _cw_d if abs(float(d) - _cw_f64) < 1e-9 else d, g)
-                for (c, d, g) in word]
+
+        # Upgrade EVERY crossing offset to exact mpf, not just the
+        # colour-weighted one.
+        #
+        # `atom_braid_word_3A` returns `d` as a Python float, so each offset
+        # carries ~17 good digits into a 50-dps computation. This block used to
+        # replace only the colour-weighted p-n crossing, leaving the plain
+        # averaged (-h/2) and inverse (-h) crossings at float64 — and A=1 atoms,
+        # which have no p-n crossing at all, kept a wholly float64 word.
+        #
+        # That is the ~1e-16 floor (bean qou-gpwk). Measured on the proton:
+        # the word carries d = -0.10453014939781968 where -h/2 is
+        # -0.10453014939781965771542310656…, and the stored χ then sat
+        # 4.976e-17 off a native recompute that passes exact crossing codes.
+        # The dual-path cross-check bottomed out at ~1e-16 for every atom
+        # instead of the ~1e-19 the muon layer reached.
+        #
+        # Matched by nearest float64 rather than by index: the word's own
+        # values are the only statement of which crossing is which, and the
+        # three exact candidates are ~7e-5 apart, so a 1e-9 window is
+        # unambiguous. Anything unrecognised is left alone rather than snapped
+        # to a guess.
+        _exact = [(mp.mpf(0), 0.0), (-_hm, float(-_hm)),
+                  (-_hm / 2, float(-_hm / 2)), (_cw_d, _cw_f64)]
+
+        def _upgrade(d):
+            for exact, approx in _exact:
+                if abs(float(d) - approx) < 1e-9:
+                    return exact
+            return d
+
+        word = [(c, _upgrade(d), g) for (c, d, g) in word]
     except Exception:
         pass  # import miss / unexpected shape → leave word as-is
     # Derive the convention label from the word instead of asserting it. Both
