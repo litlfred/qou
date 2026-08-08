@@ -52,20 +52,40 @@ Both had the same shape: **a cited `sorry` whose statement was never checked at 
 small instance.** Sweep every remaining cited `sorry` the same way — evaluate the
 claim at the smallest nontrivial parameter and check it by hand:
 
-- [x] `QGevreyOrder.cauchyMul_order` — was false (qou-0z7n), fixed
-- [x] `YoungTableauStandard.branching_two_one` — was false, fixed
-- [ ] `YoungTableauStandard.skew_le_straight` — checked by hand at k = 3 (raw
-      `3 ≤ 4` ✓, guarded `1 ≤ 4` ✓); no small-instance failure found, but not
-      swept systematically
-- [ ] `YoungTableauStandard.sum_dimSYT_eq_involution` — checked at k = 3
-      (`1+2+1 = 4 = I(3)` ✓)
-- [ ] `SnWedderburnPartitionBridge.sn_isotypic_specht_split`
-- [ ] `JucysMurphy.seminormalVector_base_exists`
-- [ ] `Mathlib/EllipticDivisorDegree.elliptic_divisor_degree_zero`
-- [ ] `Mathlib/HadamardFactorization` (PI-3)
-- [ ] `TopologicalMass/cat_descended_is_base_mass` ×2 — over `opaque` constants,
+- [x] `QGevreyOrder.cauchyMul_order` — **was false** (qou-0z7n). No
+      non-cancellation hypothesis; `b = 0` breaks it. Fixed + `≤` half proved.
+- [x] `YoungTableauStandard.branching_two_one` — **was false**. Unguarded
+      `fDimSkew`. Fixed.
+- [x] `HadamardFactorization.hadamard_factorization` — **was false**.
+      `IsEntireOfOrderLE f ρ` is satisfiable at `ρ < 0` (the constant `1`;
+      `‖z‖^ρ` is bounded on `‖z‖ ≥ 1` and `rpow` sends `0^ρ ↦ 0`), while the
+      conclusion needs `(p : ℝ) ≤ ρ` for `p : ℕ`. Fixed by adding `0 ≤ ρ`;
+      `hadamard_factorization_needs_nonneg_order` machine-proves the necessity.
+- [x] `YoungTableauStandard.skew_le_straight` — checked at k = 3 (raw `3 ≤ 4` ✓,
+      guarded `1 ≤ 4` ✓). Sound.
+- [x] `YoungTableauStandard.sum_dimSYT_eq_involution` — checked at k = 3
+      (`1+2+1 = 4 = I(3)` ✓). Sound.
+- [x] `Mathlib/EllipticDivisorDegree.elliptic_divisor_degree_zero` — the cell is
+      **half-open** (`Ico 0 1` in both coordinates), so no boundary
+      double-counting; nonconstancy and rank-2 independence are both hypotheses;
+      `hS` pins `S` exactly. Sound.
+- [x] `SnWedderburnPartitionBridge.sn_isotypic_specht_split` — dimension count
+      checks at n ≤ 3 (`1`; `1+1`; `1+4+1 = 6 = 3!`) and the `C₂` eigenvalue at
+      n = 2 (`contentSqSum (2) = contentSqSum (1,1) = 1`, matching
+      `centralC2_coeff_one`). Sound.
+- [x] `JucysMurphy.seminormalVector_base_exists` — existential over `T₀`, and
+      `StandardYoungTableau μ` / `S^μ` are nonempty/nonzero for every diagram
+      including `⊥`. Sound.
+- [x] `TopologicalMass/cat_descended_is_base_mass` ×2 — over `opaque` constants,
       so neither provable nor refutable as stated; documented as such in-file,
-      left alone deliberately
-- [ ] `Archimedean/HyperbolicVolumeIndependence`,
+      left alone deliberately.
+- [x] `Archimedean/HyperbolicVolumeIndependence`,
       `BraidsAndKnots/YoungDiagramKernel.covariance_kernel_conjecture` — both
-      correctly marked OPEN CONJECTURE; nothing to do
+      correctly marked OPEN CONJECTURE; nothing to do.
+
+**Sweep result: 3 of 12 cited `sorry`s stood in front of false propositions.**
+All three had the same shape — a statement never evaluated at its smallest
+instance — and all three failed on a *degenerate* input the informal theorem
+silently excludes (the zero sequence; a non-containing shape; a negative order).
+Worth making the small-instance check part of the recipe for planting a cited
+`sorry` at all.
