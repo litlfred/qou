@@ -40,6 +40,7 @@ from math import comb
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
@@ -441,6 +442,117 @@ def _sci(v, w=11, p=2):
     return f"{v:>{w}.{p}e}" if v is not None else f"{'—':>{w}}"
 
 
+def _print_provenance() -> None:
+    """What each quantity IS, epistemically. Printed, not left to prose.
+
+    The dashboard mixes three very different kinds of number in adjacent
+    columns — a CODATA input, a parameter-free substrate derivation, and an
+    exploratory extrapolation — and nothing in the table said which was which.
+    A reader comparing `m_can` to `M_meas` is comparing a prediction against a
+    measurement; a reader comparing `B_AME` to `σ_exp` is not.
+    """
+    print("\n#### Provenance — what kind of number each column is")
+    print("| tag | meaning |")
+    print("| --- | --- |")
+    print("| `MEASURED`  | experimental input/target: B_AME, M_meas, σ_exp "
+          "(AME2020), m_e (CODATA). Not predicted by anything here. |")
+    print("| `CAL`       | one of the three calibrations: m_e (CAL-1), q₀ via "
+          "CAL-2, m_π (CAL-3). Inputs BY CONSTRUCTION — not successes. |")
+    print("| `DERIVED`   | parameter-free from (q₀, m_e) through the Markov "
+          "trace: B_sym, B_qCLT_fac, B_gate, B_vol, m_can, F_Bor. No fit, no "
+          "AME beyond the comparison. |")
+    print("| `EXPLORATORY` | shown for comparison, NOT production-wired: "
+          "B_lin, B_tetra, m_can⁰, m_tetra. |")
+    print()
+    print("| column | tag | note |")
+    print("| --- | --- | --- |")
+    for col, tag, note in (
+        ("B_AME / M_meas / σ_exp", "MEASURED", "AME2020 — the target"),
+        ("m_e, q₀, m_π", "CAL", "the 3 calibrations; q₀ on the PROTON pin"),
+        ("B_sym", "DERIVED", "exact log-ratio α·ln(tr_free/tr_atom)"),
+        ("B_qCLT_fac", "DERIVED", "colour-weighted q-CLT (A→∞ approximation)"),
+        ("B_gate / B_vol", "DERIVED", "SU(4) occupancy surprisal; a_V derived"),
+        ("m_can", "DERIVED", "Borromean brane tower; m_n is a PREDICTION"),
+        ("E_C", "DERIVED", "standard uniform-sphere Coulomb, r₀=1.2 fm"),
+        ("B_lin / B_tetra / m_can⁰", "EXPLORATORY", "comparison only"),
+    ):
+        print(f"| `{col}` | `{tag}` | {note} |")
+    print("\n" + _lean_status())
+
+
+def _relerr(v, w=13):
+    """A RELATIVE error in whichever unit makes it readable, unit in the cell.
+
+    One fixed unit cannot serve this table. The proton anchor agrees at ~1e-9
+    relative while ⁴He's binding-dominated mass error is ~6e-3, and forcing
+    both into ppb prints `1.351e+00` beside `5.878e+06` — the reader has to
+    count zeroes to see that one is a part-per-billion agreement and the other
+    is over half a percent.
+
+        >= 0.1%  -> %       >= 1 ppm -> ppm
+        >= 1 ppb -> ppb     else     -> ppq  (parts per 10^15)
+
+    Thresholds are decades, so a column stays in one unit across a row group
+    unless a value genuinely crosses one. Sign is kept: it distinguishes over-
+    from under-binding, which the magnitude alone does not.
+    """
+    if v is None:
+        return f"{'—':>{w}}"
+    a = abs(v)
+    if a == 0:
+        s = "0"
+    elif a >= 1e-3:
+        s = f"{v * 100:+.3f}%"
+    elif a >= 1e-6:
+        s = f"{v * 1e6:+.3f}ppm"
+    elif a >= 1e-9:
+        s = f"{v * 1e9:+.3f}ppb"
+    else:
+        s = f"{v * 1e15:+.3f}ppq"
+    return f"{s:>{w}}"
+
+
+def _lean_status() -> str:
+    """The REAL Lean build status, read from build-logs/lean-build-status.json.
+
+    Deliberately not a per-quantity "Lean-proved" badge. That file records one
+    status per PAPER, not per formula, so a per-row green tick would be an
+    assertion nothing in the repo backs. And the status it does record is not
+    green: the QOU target last built with 357 errors across 89 modules plus 7
+    `sorry`s. Printing "Lean-proved 100%" over that would be the same
+    label-contradicts-numbers defect this dashboard was just corrected for.
+
+    Staleness is printed too — a months-old build status read as current is its
+    own way of overclaiming.
+    """
+    import json as _json
+    from datetime import datetime, timezone
+    f = ROOT / "build-logs" / "lean-build-status.json"
+    if not f.exists():
+        return "Lean: no build-status file — status unknown, NOT assumed green."
+    try:
+        d = _json.loads(f.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001
+        return "Lean: build-status file unreadable — status unknown."
+    gen = str(d.get("generatedAt", "?"))
+    try:
+        age = (datetime.now(timezone.utc)
+               - datetime.fromisoformat(gen.replace("Z", "+00:00"))).days
+        age_s = f", {age}d old" if age > 7 else ""
+    except Exception:  # noqa: BLE001
+        age_s = ""
+    parts = []
+    for r in d.get("results", []):
+        n_s, n_e = len(r.get("sorries") or []), len(r.get("errors") or [])
+        mark = "ok" if r.get("status") == "ok" and not n_s else "FAIL"
+        parts.append(f"{r.get('paper')}={mark}"
+                     + (f"({n_e}err/{n_s}sorry)" if (n_e or n_s) else ""))
+    return (f"Lean build [{gen}{age_s}]: " + "  ".join(parts)
+            + "\n  No quantity in this dashboard carries a per-formula Lean "
+              "proof. The status above is per PAPER, and the QOU target does "
+              "not currently build.")
+
+
 def _err(bame, b):
     return (bame / b) if (bame is not None and b is not None and b > 0) else None
 
@@ -637,7 +749,7 @@ def main(argv=None) -> int:
     #    columns were removed 2026-06-24 — redundant now that m_unbnd,can ≈ CODATA.)
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
-    print("### Mass  M + error (MeV; err in ppb)   "
+    print("### Mass  M + error (MeV; err auto-scaled %/ppm/ppb/ppq)   "
           "[canonical = Hecke energy 2(m_μ·F_Bor−6m_e) at the PROTON pin; "
           "m_μ there is derived from q₀, not an anchor; m_X = m_unbnd,can − B_X]")
     print(f"  canonical constituents (λ_A fit + naive Vol·tr_M both EXCISED): "
@@ -646,7 +758,7 @@ def main(argv=None) -> int:
           f"F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ at the proton pin (matches CODATA; m_n the "
           f"genuine prediction).")
     print("| iso | A | M_meas | σ_exp (ppb) | m_can | m_can⁰ | m_tetra | m_qCLT | "
-          "err m_can (ppb) | err m_qCLT (ppb) |")
+          "err m_can | err m_qCLT |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     for r in rows:
         mu = r["Z"] * mp_ + r["N"] * mn_                 # measured constituent sum
@@ -660,13 +772,13 @@ def main(argv=None) -> int:
             b = r[bkey]
             return (mu_can - b) if b is not None else None
         # mass error (ppb): (m_X − M_meas)/M_meas · 10⁹
-        def _err_ppb(bkey):
+        def _err_rel(bkey):
             b = r[bkey]
-            return ((mu_can - b) - m_meas) / m_meas * 1e9 if b is not None else None
+            return ((mu_can - b) - m_meas) / m_meas if b is not None else None
         print(f"| {r['name']} | {r['A']} | {_fmt(m_meas,9,1)} | {_sci(s_ppb,11,2)} "
               f"| {_fmt(_can('B_can_bor'),9,1)} | {_fmt(_can('B_can0'),9,1)} "
               f"| {_fmt(r.get('m_tetra'),9,1)} | {_fmt(_can('B_qCLT_fac'),9,1)} "
-              f"| {_sci(_err_ppb('B_can_bor'),13,3)} | {_sci(_err_ppb('B_qCLT_fac'),14,3)} |")
+              f"| {_relerr(_err_rel('B_can_bor'),15)} | {_relerr(_err_rel('B_qCLT_fac'),16)} |")
 
     # 1c. ATOMIC mass comparison — the framework predicts NUCLEAR masses; add the
     #   electron shell (Z·m_e − B_el(Z)) to compare against the RAW AME neutral-
@@ -797,6 +909,7 @@ def main(argv=None) -> int:
         else:
             print(f"| {r['name']} | {r['A']} | {NUCLEAR_SPINS.get(r['name'], 0.0)} | — | — | — | {_fmt(r['B_AME'],8,2)} | — | — |")
 
+    _print_provenance()
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
           "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩. "
