@@ -145,7 +145,38 @@ def main() -> int:
     print(f"\n    Fibonacci global dimension D^2 = 1 + phi^2 = 2 + phi : {fib_ok}"
           f"  = {float(sp.N(D2)):.12f}")
 
-    all_ok = bool(gold_ok) and n_bad == 0 and bool(fib_ok)
+    # -- the bridge to the in-repo Sigma(2,3,5) keystone -------------------
+    print("\n  BRIDGE to the keystone dimension tower"
+          " (lr_modulus_identification_sigma235.py):\n")
+    qi = lambda n: sp.simplify(sp.sin(n * sp.pi / 5) / sp.sin(sp.pi / 5))  # noqa: E731
+    MARKS = [1, 2, 3, 4, 5, 6, 4, 2, 3]          # affine E8-hat McKay marks
+    D_su = sp.radsimp(sp.simplify(sum(qi(n) ** 2 for n in range(1, 5))))
+    D_e8 = sp.radsimp(sp.simplify(sum(qi(m) ** 2 for m in MARKS)))
+    tower = {
+        "D_Fib_squared": sp.sstr(sp.radsimp(D2)),
+        "D_SU2_level3_squared": sp.sstr(D_su),
+        "D_E8hat_squared": sp.sstr(D_e8),
+        "sum_marks_squared": sum(m * m for m in MARKS),
+        "ratios": {"E8hat_over_SU2": sp.sstr(sp.simplify(D_e8 / D_su)),
+                   "SU2_over_Fib": sp.sstr(sp.simplify(D_su / D2)),
+                   "E8hat_over_Fib": sp.sstr(sp.simplify(D_e8 / D2))},
+        "core_identity": sp.sstr(sp.expand((10 - 2 * sp.sqrt(5))
+                                           * (10 + 2 * sp.sqrt(5)))),
+    }
+    print(f"    D_Fib^2       = {D2 and sp.radsimp(D2)}   = {float(sp.N(D2)):.12f}")
+    print(f"    D_SU(2)_3^2   = {D_su}   = {float(sp.N(D_su)):.12f}")
+    print(f"    D_E8hat^2     = {D_e8}   = {float(sp.N(D_e8)):.12f}"
+          f"    (sum marks^2 = {sum(m*m for m in MARKS)} = |2I|)")
+    print(f"    ratios: E8hat/SU2 = {sp.simplify(D_e8/D_su)},  "
+          f"SU2/Fib = {sp.simplify(D_su/D2)},  E8hat/Fib = {sp.simplify(D_e8/D2)}")
+    Vc = EXPECT[("T_{2,5} (cinquefoil)", 10)][0]
+    bridge_ok = all(sp.simplify(Vc - d) == 0 for d in (D2, D_su / 2, D_e8 / 4))
+    print(f"\n    |V(T_{{2,5}})(zeta_10)|^2 = D_Fib^2 = D_SU(2)_3^2/2 "
+          f"= D_E8hat^2/4 : {bridge_ok}")
+    print("    -> the Bring chapter's zeta_5 carrier evaluates to exactly the")
+    print("       bottom of the keystone's own dimension tower.")
+
+    all_ok = bool(gold_ok) and n_bad == 0 and bool(fib_ok) and bool(bridge_ok)
     verdict = (
         "THE BRING sqrt5 AND THE JONES sqrt5 ARE THE SAME sqrt5. At r = 5 the "
         "quantum dimension [2] is the golden ratio phi = (1+sqrt5)/2, and the "
@@ -159,9 +190,25 @@ def main() -> int:
         "simplicial volume, polynomial colored-Jones growth, no Lobachevsky "
         "saddle. The hyperbolic closed forms live in Q(i) and Q(sqrt-3), the "
         "two exceptional IMAGINARY quadratic fields; Q(sqrt5) is real and "
-        "cannot appear there. The third proposed mechanism — Sigma_5(trefoil) "
-        "= the Poincare sphere, via Lawrence-Zagier — remains open and is "
-        "blocked on reading in this environment; see qou-lz235."
+        "cannot appear there. "
+        "AND IT JOINS THE KEYSTONE. |V(T_{2,5})(zeta_10)|^2 = D_Fib^2 = "
+        "D_SU(2)_3^2/2 = D_E8hat^2/4, so the Bring chapter's zeta_5 carrier "
+        "sits exactly on the dimension tower that "
+        "lr_modulus_identification_sigma235.py already builds for Sigma(2,3,5) "
+        "(D_E8hat^2 = 2 D_MTC^2 = 10 + 2 sqrt5, sum marks^2 = 120 = |2I|). "
+        "Mechanism (2), the branched cover to Sigma(2,3,5), is NOT blocked "
+        "after all: hikami2005brieskorn is already in uploads/ and restates "
+        "Lawrence-Zagier's Poincare-sphere theorem (his Thm 10) plus the "
+        "general Brieskorn case, with the S-matrix identified as the "
+        "Reidemeister torsion in his section 6. VERDICT ON THE THREE "
+        "MECHANISMS: (1) and (3) are the same sqrt5; (2) is a PARALLEL "
+        "structure, not the same law — different invariant (WRT of a closed "
+        "manifold vs colored Jones of a cusped one), different N-power "
+        "(sqrt N vs N^{3/2}), exponential a phase rather than a volume. Both "
+        "carry a forced constant, but by different mechanisms: k = 2^{-1/2} by "
+        "the Gaussian saddle, the keystone's sqrt2 by the 2:1 fold "
+        "D_E8hat^2 = 2 D_MTC^2. They share Q(sqrt5) by cyclotomy, not by "
+        "mechanism."
         if all_ok else
         "A CHECK FAILED — inspect before citing.")
     print("\nVERDICT:", verdict)
@@ -226,6 +273,34 @@ def main() -> int:
         "cinquefoil_golden_value_is_fibonacci_global_dimension",
         computed="1" if fib_ok else "0", expected="1", tolerance="0.5",
         source="|V(T_{2,5})(zeta_10)|^2 = 2 + phi = 1 + phi^2 = D^2_{Fib}")
+    wb.add_data("bridge_to_sigma235_keystone", {
+        "tower": tower,
+        "identification": ("|V(T_{2,5})(zeta_10)|^2 = D_Fib^2 = D_SU(2)_3^2/2 "
+                           "= D_E8hat^2/4 = (5+sqrt5)/2"),
+        "why_it_matters": ("lr_modulus_identification_sigma235.py carries "
+                           "D_E8hat^2 = 2 D_MTC^2 = 10 +/- 2 sqrt5 and the flat "
+                           "amplitudes A_m(alpha) = +/-(2/sqrt5) sin(alpha m pi/5) "
+                           "for Sigma(2,3,5). The Bring chapter's zeta_5 carrier "
+                           "lands on the bottom of that same tower, which links "
+                           "the torus-knot Jones values to the keystone rather "
+                           "than leaving them a separate coincidence"),
+        "parallel_not_identical": (
+            "this is NOT the c_sigma law. c_sigma is the asymptotic constant of "
+            "the colored Jones of a CUSPED complement with Vol > 0, power "
+            "N^{3/2}, growth e^{Vol N/2pi}. Hikami's S_l is a flat-connection "
+            "amplitude in the WRT invariant of a CLOSED manifold with Vol = 0, "
+            "power sqrt(N), exponential a pure phase. Both constants are "
+            "FORCED, by different mechanisms: k = 2^{-1/2} by the Gaussian "
+            "saddle (the Hessian cancels before evaluation, "
+            "k_sq_eq_half_of_saddle), and the keystone's sqrt2 by the 2:1 fold "
+            "D_E8hat^2 = 2 D_MTC^2, a covering multiplicity. They share "
+            "Q(sqrt5) by cyclotomy, not by mechanism"),
+    })
+    wb.add_assertion(
+        "cinquefoil_value_sits_on_the_keystone_dimension_tower",
+        computed="1" if bridge_ok else "0", expected="1", tolerance="0.5",
+        source=("|V(T_{2,5})(zeta_10)|^2 against D_Fib^2, D_SU(2)_3^2/2 and "
+                "D_E8hat^2/4, exact Q(sqrt5) arithmetic"))
     out = wb.save()
     print(f"\n  witness -> {out.name}")
     return 0 if all_ok else 1

@@ -211,6 +211,78 @@ theorem vdv_c_sigma_iff_tau {t : ℝ} (ht : 0 < t) (n : ℕ) (m : ℝ)
     norm_num
   rw [law_inverts ht hc, hsq, hval]
 
+/-! ### The `Σ(2,3,5)` keystone dimension tower is exact `φ`-algebra
+
+Separate arc, same file because it is the same question asked on the other side
+of the hyperbolic/Seifert divide. At `r = 5` the quantum dimensions are
+`[1] = [4] = 1`, `[2] = [3] = φ`, `[5] = 0`, `[6] = −1`, and the corpus's
+`Σ(2,3,5)` keystone (`lr_modulus_identification_sigma235.py`) builds a tower of
+global dimensions on them. The ratios in that tower are **not** numerical
+coincidences — they are forced by the affine `Ê₈` McKay marks, and that is what
+is proved here.
+
+`golden_quantum_dimension` grounds it: `[2] = 2cos(π/5) = φ`, from Mathlib's
+`Real.cos_pi_div_five`, so the tower's input is a theorem rather than a table.
+
+The payoff is that the cinquefoil — the `brings-surface` chapter's `ζ₅` carrier —
+has `|V(T_{2,5})(ζ₁₀)|² = 1 + φ² = D²_Fib`, and hence sits exactly at the bottom
+of that tower.
+
+WHAT THIS DOES NOT SAY. This is *not* the `c_σ` law. `c_σ` is the asymptotic
+constant of the colored Jones of a **cusped** complement with `Vol > 0`, power
+`N^{3/2}`, growth `e^{Vol·N/2π}`; the keystone's `S_ℓ` is a flat-connection
+amplitude in the WRT invariant of a **closed** manifold with `Vol = 0`, power
+`√N`, exponential a pure phase. Both carry a forced constant, by different
+mechanisms — `k = 2^{−1/2}` by the Gaussian saddle above, the keystone's `√2` by
+the 2:1 fold `D²_{Ê₈} = 2 D²_MTC` proved below. They share `ℚ(√5)` by cyclotomy,
+not by mechanism.
+
+-- Ref: [hikami2005brieskorn] math-ph/0405028, uploads/0405028v2.pdf
+-- Ref: [manuscript] computations/lr_modulus_identification_sigma235.py
+-- Ref: [manuscript] computations/probes/bring_golden_jones_probe.py
+-/
+
+/-- Quantum dimensions at `r = 5`, on the affine `Ê₈` McKay marks. -/
+noncomputable def qdim5 (φ : ℝ) : ℕ → ℝ
+  | 1 => 1
+  | 2 => φ
+  | 3 => φ
+  | 4 => 1
+  | 5 => 0
+  | 6 => -1
+  | _ => 0
+
+/-- **`[2] = 2cos(π/5) = φ`.**  The tower's input is a theorem, not a table. -/
+theorem golden_quantum_dimension :
+    2 * Real.cos (π / 5) = (1 + Real.sqrt 5) / 2 := by
+  rw [Real.cos_pi_div_five]; ring
+
+/-- **The keystone tower.**  `D²_{SU(2)₃} = 2 D²_Fib` and `D²_{Ê₈} = 4 D²_Fib`,
+for every `φ` — the ratios come from the mark multiset, not from `√5`. -/
+theorem keystone_dimension_tower (φ : ℝ) :
+    (qdim5 φ 1 ^ 2 + qdim5 φ 2 ^ 2 + qdim5 φ 3 ^ 2 + qdim5 φ 4 ^ 2)
+        = 2 * (1 + φ ^ 2)
+      ∧ (([1, 2, 3, 4, 5, 6, 4, 2, 3] : List ℕ).map (fun m => qdim5 φ m ^ 2)).sum
+        = 4 * (1 + φ ^ 2) := by
+  constructor <;> · simp [qdim5]; ring
+
+/-- **`Σ marks² = 120 = |2I|`** — the binary icosahedral group's order, and
+`|S₅|`, and `|Aut(Bring)|`. -/
+theorem marks_sq_sum_eq_120 :
+    (([1, 2, 3, 4, 5, 6, 4, 2, 3] : List ℕ).map (fun m => m ^ 2)).sum = 120 := by
+  decide
+
+/-- The keystone's core `ℚ(√5)` identity, `(10 − 2√5)(10 + 2√5) = 80`. -/
+theorem keystone_core_identity :
+    (10 - 2 * Real.sqrt 5) * (10 + 2 * Real.sqrt 5) = 80 := by
+  have h : Real.sqrt 5 ^ 2 = 5 := Real.sq_sqrt (by norm_num)
+  nlinarith [h]
+
+/-- **The cinquefoil sits at the bottom of the tower.**  With `φ² = φ + 1`, the
+Bring `ζ₅` carrier's Jones value `2 + φ` is `1 + φ² = D²_Fib`. -/
+theorem cinquefoil_value_is_fib_dimension {φ : ℝ} (hφ : φ ^ 2 = φ + 1) :
+    1 + φ ^ 2 = 2 + φ := by rw [hφ]; ring
+
 /-! ### `τ²` is an integer, and it is a Gaussian norm
 
 The closed form `|τ_DG| = 2^{2n−2}√(n²+m²)` (`n = c+d`, `m = 4a−c+d`) squares to

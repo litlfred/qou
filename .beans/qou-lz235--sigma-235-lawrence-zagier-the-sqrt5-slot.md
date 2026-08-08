@@ -1,7 +1,7 @@
 ---
 # qou-lz235
 title: 'The sqrt5 slot is Sigma(2,3,5): read Lawrence-Zagier and place the Bring constant'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
@@ -186,3 +186,47 @@ a parallel structure sharing only the field?** The N-powers differ
 `Q(sqrt5)` is REAL where the hyperbolic closed forms live in the imaginary
 quadratics `Q(i)` and `Q(sqrt-3)`. Expect a separation. Before any further work,
 READ the five in-repo files above — the answer may already be there.
+
+## Resolution — the three mechanisms are separated, and the verdict is PARALLEL
+
+(1) Gauss sum and (3) quantum dimension are the SAME sqrt5: both are
+`Q(sqrt5) = Q(zeta_5)^+` entering through `2 cos(pi/5) = phi`.
+
+(2) The branched cover to `Sigma(2,3,5)` is a **parallel structure, not the same
+law**, and it was never blocked — `hikami2005brieskorn` was already in
+`uploads/`. His Corollary 11 gives
+
+    tau_N(Sigma(p)) ~ sqrt(N/i) sum_l S_l e^{-(i/2) pi P N (1+sum l_j/p_j)^2} + tail
+
+with `S_l` the Reidemeister torsion (his section 6). Compare:
+
+                  c_sigma (hyperbolic)          S_l (Seifert)
+    manifold      cusped complement, Vol > 0    closed, Vol = 0
+    invariant     colored Jones of a knot       WRT of a 3-manifold
+    N-power       N^{3/2}                       sqrt(N)
+    exponential   growth e^{Vol N/2pi}          pure phase
+    field         Q(i), Q(sqrt-3)  (imaginary)  Q(sqrt5)  (real)
+    constant      k = 2^{-1/2}                  sqrt2 (folded-MTC normalizer)
+    forced by     the Gaussian saddle           the 2:1 fold D_E8^2 = 2 D_MTC^2
+
+Both constants are FORCED, by different mechanisms. They share `Q(sqrt5)` by
+cyclotomy, not by mechanism. Expect no unification, and do not write one.
+
+## The one new thing: the cinquefoil joins the keystone tower
+
+    |V(T_{2,5})(zeta_10)|^2 = D_Fib^2 = D_SU(2)_3^2 / 2 = D_E8hat^2 / 4 = (5+sqrt5)/2
+
+so the Bring chapter's `zeta_5` carrier sits exactly at the bottom of the
+dimension tower `lr_modulus_identification_sigma235.py` already builds. That
+links the torus-knot Jones values to the keystone instead of leaving them a
+separate coincidence.
+
+Lean, sorry-free: `golden_quantum_dimension` ([2] = 2cos(pi/5) = phi, from
+Mathlib's `Real.cos_pi_div_five` — the tower's input is a theorem, not a table),
+`keystone_dimension_tower` (D_SU2^2 = 2 D_Fib^2 and D_E8hat^2 = 4 D_Fib^2, for
+EVERY phi — the ratios come from the mark multiset, not from sqrt5),
+`marks_sq_sum_eq_120` (by `decide`, axioms [propext] only),
+`keystone_core_identity` ((10-2sqrt5)(10+2sqrt5) = 80),
+`cinquefoil_value_is_fib_dimension`.
+
+Probe: `bring_golden_jones_probe.py`, 4/4.
