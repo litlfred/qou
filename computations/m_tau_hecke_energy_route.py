@@ -43,6 +43,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 from mpmath import mp, mpf, pi as mppi, fabs  # noqa: E402
 
+# Raise precision BEFORE building any module-level mpf. `set_compute_dps()` is
+# also called in main(), but that runs long after import — a constant built
+# here at mpmath's default 15 dps is frozen at 53 bits, and serializing it
+# later at compute precision prints the binary64 tail (3477.23 came out as
+# 3477.23000000000001818989403545856475830078125). The division below is worse
+# than the literals: it rounds to 53 bits too. Idempotent, so main() is
+# unaffected.
+set_compute_dps()
+
 # CODATA ratios (targets, never inputs to a construction).
 M_TAU_OVER_M_MU = mpf("1776.86") / mpf("105.6583755")
 M_TAU_OVER_M_E = mpf("3477.23")

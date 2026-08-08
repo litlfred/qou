@@ -176,6 +176,72 @@ bounded product search.
 
 ---
 
+## 2026-08-07 (third pass) — full coset enumerated. A candidate appeared, then died.
+
+The previous pass was inconclusive because the flattening search was a box on
+the exponents. That is now fixed: `sympy` installed, and the coset is
+enumerated properly as *particular solution + integer kernel* via
+`gauss_jordan_solve`, keeping only integral members. That yields **12-25
+genuine flattenings per triangulation** (params in `[-2,2]`), not a truncated
+box.
+
+### Result: no placement is invariant
+
+Six placements of the monomial tested over **26** three-tetrahedron geometric
+retriangulations of `5_2` (controls as before). All give `common = 0` — i.e.
+no value is reachable in every triangulation:
+
+    detJ / prod z''^f'' z'^f'      union=71  common=0
+    detJ / prod z''^f'' z'^-f'     union=50  common=0
+    detJ / prod z^f z'^f' z''^f''  union=60  common=0
+    detJ / prod z''^f''            union=49  common=0
+    detJ / prod z'^f'              union=45  common=0
+    detJ / prod z^f                union=51  common=0
+
+### The candidate that had to be killed — and how
+
+`detJ / prod z'^f'` looked like a HIT at 14 triangulations: `common = 2`, then
+`common = 1` on a re-run, with the surviving value `1.753071635790291`.
+
+It passed a **null control** — replacing the flattenings with random integer
+vectors of the same count and range gave a nonempty common set in **0/12**
+trials, so it was not an artifact of set size.
+
+It failed the **sample-size check**: at 26 triangulations `common = 0`.
+
+Two things worth carrying forward:
+
+1. The `common` statistic ("some flattening in each triangulation agrees") is
+   WEAK, because each triangulation offers ~25 choices. A null control is
+   necessary but NOT sufficient to validate it — the drift `2 -> 1 -> 0` as
+   triangulations were added is what actually exposed it. Any future candidate
+   must be re-tested at increasing sample size, not just against a null.
+2. The value it converged on, `1.7530716357902911`, is exactly the SMALLEST
+   observed `|det J|` rung for `5_2` — not an independent quantity. That
+   should have raised suspicion immediately. (It is close to but distinct from
+   `rho^2 = 1.7548776662`, so the plastic connection does not extend here.)
+
+### Where this leaves the repair
+
+Stronger negative than before, but STILL not a proof that no flattening-based
+correction exists. Remaining bounds, stated honestly:
+
+  * coset params restricted to `[-2,2]`;
+  * only 3-tetrahedron triangulations of `5_2`;
+  * only six placements, all of the form `prod (shape)^(flattening)`.
+
+The DG 1-loop invariant also carries a global `1/2` and a SIGN that this test
+ignores by taking `abs`. If the correct correction involves the flattening
+non-monomially, or the determinant itself needs the `A D_z'' + B D_z'` form
+rather than the `A - B z/(1-z)` form used by
+`whitehead_c_sigma_torsion.py`, none of these placements would find it.
+
+**Next: stop searching placements and get the DG formula itself right** — the
+determinant's construction, not just its correction. That is a literature task
+(Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253), not a search task.
+
+---
+
 ## 2026-08-07 (fourth pass) — DG 1202.6268 obtained. The formula is in hand and the root cause is confirmed.
 
 `uploads/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
