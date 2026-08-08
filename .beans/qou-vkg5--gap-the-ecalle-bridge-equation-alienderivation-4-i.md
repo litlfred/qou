@@ -508,3 +508,45 @@ one is `pure isoclinic`; the phrase that would have caught the `q^{1/4}` is
 
 **This bean is subordinate to `qou-wgnx` on the C1 `∞` axis.** Anyone picking up
 C1 connection/Stokes work should start there, not here.
+
+## 2026-08-08 — #4790's second row was wrong too; and the triviality is now 4×-confirmed
+
+Read `qou-wgnx` properly (1179 lines). Two things.
+
+**1. My #4790 "read this first" table has a wrong status.** It says the
+connection-matrix Stokes multipliers are *"OPEN and live"*. They are not — they
+are **trivial**, by the same pure-isoclinic argument, and `qou-wgnx` entries 21,
+22 and 23 all say so. I read that bean's **top summary**, which was headed "read
+this first" and was itself stale from entry ~18, listing them as open item #1.
+
+The *distinction* #4790 draws is real — local isoformal moduli at `∞` and
+connection-matrix data are genuinely different objects. What is wrong there is
+the second one's **status**.
+
+**2. The triviality now has four independent confirmations**, and mine adds one
+genuinely distinct route:
+
+| route | source |
+|---|---|
+| isoclinicity invariant, RSZ Thms 2.2.1 / 2.2.4 / 5.5.7 cited by number | corpus, **2026-07-20**, `conj:qdifference-kernel-prolongation-symbol` author notes |
+| `Λ_I(M)` trivial ⇒ `H¹(E_q, Λ_I(M₀))` a point (RSZ §5) | `qou-wgnx` entry 21 |
+| DVRSZ survey: *pur ⟺ une seule pente*; `T±` are two **exponents at one slope** | `qou-wgnx` entry 22 |
+| **RSZ Thm 3.3.5's dimension formula**, `Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ)` empty at `k = 1` | this bean / PR #4790, Lean `c1_infinity_isoformalDim_eq_zero` |
+
+The fourth is a *different theorem* from the first three, so it is corroboration
+rather than repetition — but it is corroboration of something already settled,
+not a new result, and #4790 should not have presented it as resolving anything.
+
+**3. The same process failure, twice, one day apart.** `qou-wgnx` entry 23 is the
+prior agent owning this exact miss and writing the standing lesson: *"grep the
+corpus first, especially when the target is phrased as 'open'."* I then repeated
+it — and missed the bean containing the lesson.
+
+That lesson has a hole, now patched: it is defeated when the **summary at the top
+of the bean is itself the stale thing**. `qou-wgnx`'s "read this first" block said
+the multipliers were open while its own entries 21–23 said the opposite. Fixed
+there, with the staleness recorded rather than silently overwritten.
+
+**This bean is subordinate to `qou-wgnx`.** Live follow-ons there are `qou-c1ln`
+(discharge the numerics in Lean) and `qou-c1wr` (the C1 work is invisible to the
+manifest graph; its natural home is a leaf block). Neither is a Stokes multiplier.
