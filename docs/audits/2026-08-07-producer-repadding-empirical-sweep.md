@@ -2132,3 +2132,65 @@ clobbered by a concurrent wave earlier in this arc.
 
 6 self-tests, covering the two structural properties rather than the verdict
 policy — that lives in `witness_regen_classify` with its own 13.
+
+## P47 — the dropped `q0Anchor`, and why the convention labels cannot be trusted
+
+### The producer never stamped its own provenance
+
+`chi_at_q0_via_hoefsmit_mpfr` imports `WitnessBuilder` and never used it:
+`save_witness` hand-built a payload dict. So a rebuild wrote no `scriptHash`,
+no `scriptFile` and **no `q0Anchor`** — the committed file's
+`q0Anchor: "ambiguous"` had come from a one-off `chi_convention_audit --fix`,
+and regenerating silently dropped it. Losing an anchor label is worse than the
+stale one it replaced, and it is exactly what the classifier refused the
+rebuild for.
+
+Now stamped. `resolve_q0_anchor` reports **"proton"** for this script, so the
+rebuild carries a correct anchor where the committed file had only
+"ambiguous" — a strict provenance gain.
+
+Three more classifier refinements, each forced by a real regeneration rather
+than invented:
+
+- **`ambiguous` → `proton` is a resolution, not movement**, accepted only when
+  a numeric q₀ flip is independently present. The reverse (definite → unknown)
+  is a loss and stays rejected.
+- **`scriptFile` is metadata here** by separation of concerns, not
+  indifference: `witness_provenance_audit` is what polices whether a
+  scriptFile claim is *true* (it found five false ones); this classifier only
+  answers "did a VALUE move", and a stamp adding the field must not veto an
+  otherwise-clean run.
+- With those, the deuteron rebuild classifies **`ANCHOR_MIGRATION`**: 37 fields
+  moved, one flip, `tr_M` shifting 2.18e-07 — the muon→proton amplification,
+  comfortably inside the 1e-5 bound. 15 self-tests.
+
+### The `convention` labels are wrong, which changes the 4He question
+
+I previously reported that only 1 witness of 28 uses
+`colour-weighted-averaged-crossing`, and framed repointing 4He as moving it
+onto a one-off. **That framing was built on labels, and the labels are not
+reliable.**
+
+The `-at-q0-50dps` family declares:
+
+| count | `convention` |
+|---:|---|
+| 11 | `averaged-crossings` |
+| 8 | `sign-only-crossings` |
+| 1 | `colour-weighted-averaged-crossing` |
+| 1 | `bring_color_weighted-averaged-crossings` |
+
+But the deuteron witness in that family declares `averaged-crossings` while its
+**values are colour-weighted** — computing χ^λ(β_D) both ways against it gives
+4.23e-06 for colour-weighted against 3.13e-03 for colour-blind. The label says
+one thing and the numbers say another, and the numbers are what the pipeline
+actually computes: `_avg_color_delta` has 16 live consumers and installs the
+colour-weighted crossing wherever it imports.
+
+So the open question is **not** "should 4He be colour-weighted like the rest of
+the corpus" — the corpus already *is* colour-weighted where it matters, and its
+`convention` strings simply lag the code. The real defect is that a field
+intended to record the convention does not, which makes every survey over it —
+including mine — worthless until the labels are re-derived from the values
+rather than trusted. That is a labelling repair, not a physics decision, and it
+should be settled before anyone reads those strings again.

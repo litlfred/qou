@@ -361,6 +361,16 @@ def save_witness(record: dict) -> Path:
         "tr_M_at_q0": record["tr_M_at_q0"],
         "by_partition": record["by_partition"],
     }
+    # Stamp provenance rather than hand-rolling it. `WitnessBuilder` was
+    # already imported here and never used, so a rebuild wrote no `scriptHash`
+    # and no `q0Anchor` at all — the committed file carried
+    # `q0Anchor: "ambiguous"` from a one-off audit fix, and regenerating
+    # silently DROPPED it. Losing the anchor label is worse than the stale one
+    # it replaced, and it is precisely what `witness_regen_classify` refused
+    # the rebuild for. `resolve_q0_anchor` reports "proton" for this script,
+    # which is both correct and an improvement on "ambiguous".
+    WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=__file__, engine="python+mpmath")
     out.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
     return out
 

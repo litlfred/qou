@@ -64,11 +64,18 @@ ROOT = HERE.parent
 # one. That is exactly the kind of provenance churn a regeneration is expected
 # to produce.
 #
+# `scriptFile` is metadata here by separation of concerns, not by indifference:
+# `witness_provenance_audit` is the tool that polices whether a scriptFile
+# claim is true (it found five false ones), while this classifier answers only
+# "did a VALUE move". A stamp adding the field where none existed is a
+# provenance gain and must not veto an otherwise-clean regeneration.
+#
 # `convention` is deliberately NOT here: colour-blind versus colour-weighted
 # crossings is a physics choice worth 182 ppm in tr_M(4He), and a run that
 # changes it must surface as VALUES rather than slip through as metadata.
 META = {
-    "computedAt", "commitSha", "scriptHash", "scriptCommitSha", "durationMs",
+    "computedAt", "commitSha", "scriptHash", "scriptCommitSha", "scriptFile",
+    "durationMs",
     "engineVersion", "engine", "environment", "generatedAt", "timestamp",
     "upstream_witness_hashes", "precisionMetadata", "compute_time_sec",
     "compute_time_sec_so_far", "_provenance", "convention_inferred_by",
@@ -113,6 +120,16 @@ def _num(v):
 # deuteron migration until this was added.
 _MUON_LABELS = {"muon", "ideal_muon", "ideal-muon"}
 _PROTON_LABELS = {"proton"}
+# Labels meaning "not established". A witness moving from one of these TO a
+# definite anchor is a provenance *resolution*, not a value change — and it is
+# what stamping `q0Anchor` properly produces where the old file only ever had
+# "ambiguous". Accepted only when a numeric q₀ flip is independently present;
+# the reverse (definite -> unknown) is a loss and stays rejected.
+_UNKNOWN_LABELS = {"ambiguous", "unknown", "none", ""}
+
+
+def _is_unknown_label(v) -> bool:
+    return str(v).strip().lower() in _UNKNOWN_LABELS or v is None
 
 
 def _anchor_of(v) -> str | None:
@@ -150,6 +167,13 @@ def classify(old: dict, new: dict) -> dict:
         if _anchor_of(a.get(k)) == "proton" and _anchor_of(b.get(k)) == "muon":
             return {"verdict": "VALUES", "moved": len(moved), "flips": len(flips),
                     "reason": f"reverse flip at {k}", "sample": [k]}
+        # A label resolving from "ambiguous"/absent to the proton anchor is a
+        # provenance gain, not movement. Only in this direction.
+        if _is_unknown_label(a.get(k)) and _anchor_of(b.get(k)) == "proton":
+            continue
+        if _anchor_of(a.get(k)) == "proton" and _is_unknown_label(b.get(k)):
+            return {"verdict": "VALUES", "moved": len(moved), "flips": len(flips),
+                    "reason": f"anchor label lost at {k}", "sample": [k]}
         x, y = _num(a.get(k)), _num(b.get(k))
         if x is None or y is None:
             if a.get(k) != b.get(k) and k not in flips:
@@ -210,6 +234,14 @@ CASES = [
      "ANCHOR_MIGRATION"),
     ("q0Anchor proton -> muon is a reverse flip",
      {"q0Anchor": "proton"}, {"q0Anchor": "muon"}, False, "VALUES"),
+    ("q0Anchor resolving ambiguous -> proton is a gain, not movement",
+     {"q0": "1.1099785955573347", "q0Anchor": "ambiguous",
+      "x": 0.20906032199559366},
+     {"q0": "1.1099785827513808", "q0Anchor": "proton",
+      "x": 0.20906029879563937}, False, "ANCHOR_MIGRATION"),
+    ("losing a definite anchor label is rejected",
+     {"q0": "1.1099785955573347", "q0Anchor": "proton"},
+     {"q0": "1.1099785827513808", "q0Anchor": "ambiguous"}, False, "VALUES"),
     ("metadata-only churn is not movement",
      {"computedAt": "x", "durationMs": 1, "v": 2},
      {"computedAt": "y", "durationMs": 9, "v": 2}, False, "NOCHANGE"),
