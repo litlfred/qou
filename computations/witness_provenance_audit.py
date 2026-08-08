@@ -75,6 +75,30 @@ None can be regenerated, and `run_pipeline` treats all three as current.
 Deleting or re-attributing them is a corpus decision, not a tool fix, so this
 records rather than acts.
 
+## The 466 UNCONFIRMED, triaged — and why the obvious upgrade is unsafe
+
+| | witnesses | shape |
+|---:|---|---|
+| **250** | no `WitnessBuilder` at all | hand-rolled `json.dump` / `write_text` |
+| **197** | imports it, no resolvable constructor | `WitnessBuilder.stamp_staleness_metadata(...)` — 185 call sites |
+| 15 | a builder exists, but no name matches | |
+| 2 | name from a variable | |
+| 2 | syntax error | |
+
+The 197 are a **fourth** builder shape, found the same way as `wrap_legacy`:
+`adjacent_vs_full_probe.py` assembles the payload by hand, writes it to
+`Path(__file__).parent / "adjacent-vs-full-probe.witness.json"`, then calls
+`stamp_staleness_metadata` for the metadata. They genuinely do produce their
+witness, and the concrete filename is right there as a literal.
+
+**The tempting upgrade — "literal filename present + the file writes something
+⇒ WRITES" — is exactly the original bug.** `delta_lambda_empirical_tabulation`
+contains the literal `"chi-proton-h3.witness.json"` *and* writes a witness of
+its own; that rule would call it the producer of six witnesses it only reads,
+which is the error this tool exists to catch. Upgrading these needs real
+dataflow — the literal must reach a write, not merely coexist with one — so
+they stay `UNCONFIRMED` until someone does that properly.
+
 Usage:
     python3 computations/witness_provenance_audit.py
     python3 computations/witness_provenance_audit.py --strict     # exit 1 on NOT_A_PRODUCER
