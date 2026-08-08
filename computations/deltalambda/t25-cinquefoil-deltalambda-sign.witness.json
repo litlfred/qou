@@ -3,12 +3,12 @@
   "description": "Formalize-first parameter-free test: does the chiral cinquefoil T(2,5)=(\u03c31\u03c32\u03c33\u03c34)^2 Hecke character reproduce the mixed-sign \u0394_\u03bb chirality target sgn(w_0^{S_{\u03bb'}}) over \u03bb\u22a25? Seminormal reps self-validated via Hecke+braid relations. No fit; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "symbolic-exact reps (sympy, self-validated) + q_0 sign eval",
-  "computedAt": "2026-08-08T20:29:13.041722+00:00",
-  "commitSha": "099933d2c4b0311aa90bcb2380a9e5023fac6c58",
-  "engine": "sympy",
-  "engineVersion": "1.14.0",
+  "computedAt": "2026-08-08T21:37:15.419214+00:00",
+  "commitSha": "805af289643924a1ef42919e65274edb0ebd0d53",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
   "scriptFile": "t25_cinquefoil_deltalambda_sign_probe.py",
-  "scriptHash": "2d86d5905cc6",
+  "scriptHash": "c1eb315999ea",
   "q0_source": "qou_substrate.q_at(40)",
   "q0": "1.1099785827513808076",
   "assertions": [
@@ -188,5 +188,9 @@
     "framing_prune": "\u03b8_\u03bb=q^{2(n(\u03bb')-n(\u03bb))}>0 at real q_0 => framing power positive => sign-preserving; canonical-framed sign = raw sign",
     "next_lead": "chiral character at q=root of unity (fibre level, Im(q)\u22600), not real-q re-framing",
     "gate": "\u0394_\u03bb gate -- parameter-free probe, not a fit; nothing wired"
-  }
+  },
+  "scriptCommitSha": "79fbbb3c0b0175a0e915cefb999a8c7d7e34390d",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
