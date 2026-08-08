@@ -4,9 +4,7 @@
 of $T_w$ uniqueness at the empty-constraint SDP for a nucleus's
 strand count. The **real per-nucleus SDP** (with non-empty
 constraints from the mass formula and multi-term cost) is
-per-nucleus substantive open work — see
-[`docs/coordination/2026-05-30-sdp-uniqueness-status.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/2026-05-30-sdp-uniqueness-status.md)
-for the gating analysis.
+per-nucleus substantive open work.
 
 Within that scope, each atlas entry has a corresponding sorry-free
 SDP-uniqueness theorem on the Lean side. Take $^4$He: with mass

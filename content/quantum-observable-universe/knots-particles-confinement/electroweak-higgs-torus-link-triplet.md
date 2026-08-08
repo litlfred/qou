@@ -9,9 +9,9 @@ $$
   H \;\longleftrightarrow\; T(2,8).
 $$
 
-This is the top node of the electroweak conjecture lattice. Its provable base — that these three links exist, have Seifert genera $1, 2, 3$, co-embed in Bring's genus-$4$ fiber alongside the saturating carriers, and fit minimally in $B_6$ at the far-commuting triple $(1,3,5)$ — is proved. What remains conjectural is the identification itself. Charge and spin are proved consequences of a single sector postulate.
+This is the top of the electroweak chain of conjectures. Its provable base — that these three links exist, have Seifert genera $1, 2, 3$, co-embed in Bring's genus-$4$ fiber alongside the saturating carriers, and fit minimally in $B_6$ at the far-commuting triple $(1,3,5)$ — is proved. What remains conjectural is the identification itself. Charge and spin are proved consequences of a single sector postulate.
 
-**The conjecture lattice (narrowed).**
+**The chain of conjectures (narrowed).**
 
 | Node | Kind | Rests on | Content |
 |------|------|----------|---------|

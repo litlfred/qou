@@ -56,15 +56,12 @@ Higher-precision regenerations use
 
 *Canonical witness:
 [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
-**Must** record each $c_k$ alongside its tier. The $\mathfrak{Q}_\beta$ subdir
-ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
-maintains the reversal-history table; any inclusion/exclusion decision
-must update both.*
+**Must** record each $c_k$ alongside its tier.*
 
 ### Notes
 
 *Permanent fix path is the $\mathfrak{Q}_\beta$ Habiro element parallel to
 $\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
-(PR #1511). The $c_3$ reversal history (six entries as of
+The $c_3$ reversal history (six entries as of
 2026-05-31) is the canonical example of why tiered classification
 is mandatory.*

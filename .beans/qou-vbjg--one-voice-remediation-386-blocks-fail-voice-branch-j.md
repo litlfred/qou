@@ -216,6 +216,34 @@ narration). Those need the re-review pass, not a flip.
 uses "**Phase 1:** $q$-deformed evolution" / "**Phase 2:** the $q \to 1$ limit"
 — phases of a physical argument, not branch phases.
 
+## OWNER DECISION NEEDED — 18 blocks carry an opt-out from this very rule
+
+`tags: ["non-scholarly-voice-exception"]` is, per
+`.claude/skills/local/one-voice-audit.md`, an **explicit author marker** that
+exempts a block from the scholarly-voice default. Eighteen blocks carry it:
+
+`brings-surface/{inter-nucleon-channel-color-tube,c-from-color-flavor-swap}`,
+`stochastic-mechanics/lusztig-canonical-basis-q-eq-1`,
+`mass-theory/{pachner-pentagon-borromean,p-from-braid-mirror,
+borromean-bloch-group-element,kashaev-density-equals-sdp-multiplicity,
+poincare-lefschetz-borromean,stokes-dt-bps-bridge,isospin-from-canonical-bowtie,
+dim-master-pentagon}`,
+`q-geometric-langlands/{quantum-langlands-dual,modular-s-transform-q-q-tilde,
+mirror-3d-3d-correspondence}`,
+`nuclear-interactions/{wigner-su4-from-spin-isospin,spin-from-so3-fiber,
+t-from-trace-cyclicity,type-b-folding-cpt}`.
+
+**Fourteen of them are blocks this bean has now cleaned.** They satisfy the
+rule they are exempted from, so the tag is stale — and worse, it is load-bearing
+in the wrong direction: a future sweep honouring the opt-out will skip them, and
+they can drift straight back to where they started.
+
+Not removed. The tag is an author marker and taking it off is the owner's call,
+not a remediation agent's. But it should be taken off these fourteen, and the
+remaining four (`isospin-from-canonical-bowtie`, `quantum-langlands-dual`,
+`spin-from-so3-fiber`, `t-from-trace-cyclicity`) should be checked to see
+whether they still need it.
+
 ## Out of scope, noted here so it is not lost
 
 `content/schema/references.ts` carries the project's own pull requests as
@@ -229,6 +257,26 @@ is a different surface from prose and titles. Not touched.
 channel than the manuscript is, and 461 files is a decision, not a cleanup. Left
 alone deliberately — do not chip at it file by file. If it is ever done it
 should be one pass with one rule, the way §7c was.
+
+**A claim that lost its only support.** `proton-mass-substrate-identity-derivation.md`
+asserted the universal $-1/12$ leading-pole coefficient on the strength of an
+audit document and nothing else. Substituting the obvious witness was checked
+and rejected — `ocneanu-cancellation-derivation.witness.json` is a *failing*
+symbolic scaffold (`allPassed: false`) whose own description names the audit as
+the verification path. The prose now says plainly that the coefficient rests on
+200-dps numerical pole detection and is not symbolically derived. That is honest
+but the block wants a real witness.
+
+**A stale Lean sketch**, `c-from-color-flavor-swap.md`: it lists a
+`cpt_factorisation` field that `CFromColorFlavorSwap.lean` says is deliberately
+omitted because the parity and time-reversal carriers do not exist. They now do.
+Left verbatim — reconciling it is a mathematics change, not a voice change.
+
+**The validator does not check relative links.** Three dead relative paths were
+found by hand in the course of this work (`bar-involution.md` and two table
+refs from `brings-surface/`, plus the `SUPERSEDED` notice's wrong directory in
+12 blocks). `run-validate.ts` checks `#label` cross-references only, so a
+`[text](../wrong/path.md)` passes silently. Worth a checker.
 
 `substrate wall` — 108 uses, defined nowhere. Manuscript voice, so not branch
 jargon, but underdefined. Separate.

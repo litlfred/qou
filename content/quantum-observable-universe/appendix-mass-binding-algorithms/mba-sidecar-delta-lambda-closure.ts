@@ -1,6 +1,18 @@
 import { algorithm } from "../../schema/builders";
 
 export default algorithm({
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "Working-channel pointers pulled out of the published prose: the " +
+        "cross-PR maintenance contract for this appendix is " +
+        "`docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md`, " +
+        "and the candidate super-pairwise extensive-magnitude terms are " +
+        "collected in `docs/coordination/option-e.md`.",
+    },
+  ],
   label: "alg:delta-lambda-closure",
   title: "$\\Delta_\\lambda$ per-partition value (PROVED $(-1)^{n(\\lambda)}\\dim V_\\lambda$); many-body magnitude open",
   uses: [

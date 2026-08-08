@@ -1,4 +1,4 @@
-**Track C Step B: axiomatic Markov-closure map**, reducing the open content to two atomic axioms.
+**Axiomatic Markov-closure map**, reducing the open content to two atomic axioms.
 
 Per the Track-C plan in [`rem:F3-eps6-leading-eq-neg-2b-cubed`](#rem:F3-eps6-leading-eq-neg-2b-cubed), the substantive open content of $c_3 = J_{\text{Hopf}}(q=1) = -2$ lives in the 3-fold Markov closure $\to$ Hopf-link substructure identification.
 
@@ -29,4 +29,4 @@ The previous `ThreeFoldMarkovHopfExtraction` class had a single broad axiomatic 
 
 The eventual full Track-A formalisation targets only the first atom; the second is already closed.
 
-**Archimedean specialisation.** This block invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -1,6 +1,6 @@
 **Remark (per-observable $100\times$ experimental status — dashboard).**
 
-*This block designates the live per-observable accuracy dashboard at `computations/per-observable-100x-status.witness.json` — emitted by `per_observable_100x_status.py` — as a first-class, auto-regenerated artifact. Headline counts remain current without manual maintenance. The witness reports the precision-goal **L2 leg**: for each predicted observable, whether it meets its $100\times$ accuracy target. Its `summary` field carries the headline (`total`, `beats_1x_count`, `beats_100x_count`). The `beats_100x_count` identifies how many of the seven observables currently pass and which still gate L2 closure.*
+*We designate the live per-observable accuracy dashboard at `computations/per-observable-100x-status.witness.json` — emitted by `per_observable_100x_status.py` — as a first-class, auto-regenerated artifact. Headline counts remain current without manual maintenance. The witness reports the precision-goal **L2 leg**: for each predicted observable, whether it meets its $100\times$ accuracy target. Its `summary` field carries the headline (`total`, `beats_1x_count`, `beats_100x_count`). The `beats_100x_count` identifies how many of the seven observables currently pass and which still gate L2 closure.*
 
 **Target.** For each predicted observable $O$ with experimental
 uncertainty $\sigma_{\mathrm{exp}}(O)$, the $100\times$ target is
@@ -17,9 +17,7 @@ witness for the current per-row `pred_err`, `100x_target`, and
 `run_pipeline.py` whenever its upstream inputs change (the
 per-observable comparison values are read from the production
 witnesses for each anchor), so it is included in auto-regeneration
-sweeps and does not go stale silently — closing the systemic
-paper$\leftrightarrow$compute wiring gap documented in
-[`docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md`](../../../docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md).
+sweeps and does not go stale silently.
 
 **Authoritative reference.** For the precision-goal definition (L1 vs
 L2, Subgoal-1 vs Subgoal-2, CAL-2 floor), see

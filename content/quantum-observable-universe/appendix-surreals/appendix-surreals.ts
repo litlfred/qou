@@ -76,7 +76,6 @@ export default chapter({
             "b1-current-status",
             "b1-current-status-table1-data",
             "b1-current-status-table2-data",
-            "b1-current-status-table3-data",
             "calculus-up-to-epsilon",
             "calculus-up-to-epsilon-table-data",
           ],

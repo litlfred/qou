@@ -1,4 +1,4 @@
-This block details the epistemic status of the $\mathfrak{Q}_\beta$ truncation coefficients. It designates which rung is proved, near-matched, or calibration-anchored, ensuring their open status is explicit and auditable.
+We set out the epistemic status of the $\mathfrak{Q}_\beta$ truncation coefficients. It designates which rung is proved, near-matched, or calibration-anchored, ensuring their open status is explicit and checkable.
 
 The $\mathfrak{Q}_\beta$ categorical precision ladder expresses the neutron $\beta$-decay $Q$-value substrate prediction as a convergent product of correction rungs around a Form-A baseline:
 

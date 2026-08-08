@@ -39,4 +39,3 @@ This holds over real $q > 0$ (substrate-anchor regime). The closed form $(q+1)^2
 ## Cross-references
 
 - [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) — the two known anchors that establish the rule's existence.
-- Derivation audit: [`docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`](../../../docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md).

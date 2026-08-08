@@ -9,12 +9,12 @@ is auto-rendered by
 
 1. [`confined-particle.md`](#def:confined-particle) — GB-NF particle registry (canonical $T_w$).
 2. [`mass-table-ppb.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/mass-table-ppb.witness.json) — D..${}^{40}$Ca (manual-historical, recursive, magic-A).
-3. [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json) — per-particle methodology audit.
+3. [`methodology-deprecation.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json) — per-particle methodology record.
 4. [`hp_volume.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/hp_volume.py) — $\geq 50$-digit symbolic-$q$ Markov-closure $\to$ $\mathrm{Vol}_{\mathrm{hyp}}$.
 5. [`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py) — symbolic-$q$ Wenzl bridge for $y_\lambda$.
 
 These compose in that order: the particle registry fixes the canonical $T_w$,
-the mass-table witness supplies the tabulated masses, the methodology audit
+the mass-table witness supplies the tabulated masses, the methodology record
 tags each particle's derivation method, `hp_volume.py` supplies
 $\mathrm{Vol}_{\mathrm{hyp}}$, and the Wenzl bridge supplies $y_\lambda$.
 

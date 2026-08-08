@@ -61,4 +61,4 @@ Can the $c_3 = -2$ Hopf assignment be proved rigorously? A Lean-level proof requ
 
 ## Track-B open question
 
-Once Track C settles the structural identification, Track B extends to higher orders where the simple Kashiwara + Jones alternation breaks down. The empirical $c_5, c_6$ remain unidentified pending a refined mathematical framing.
+Once the structural identification is settled, the construction extends to higher orders where the simple Kashiwara + Jones alternation breaks down. The empirical $c_5, c_6$ remain unidentified pending a refined mathematical framing.

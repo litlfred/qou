@@ -31,9 +31,9 @@ where:
 
 ## Color-tube weighting as the load-bearing missing structure
 
-The low-isotope sign-flip diagnostic ([`low-isotope-sign-flip-diagnostic.witness.json`](../../computations/low-isotope-sign-flip-diagnostic.witness.json), PR [#1089](https://github.com/litlfred/qou/pull/1089)) shows that the per-isotope error correlates with inter-nucleon arc **count** at $R^2 = 0.83$, not with the signed-h weight ($R^2 = 0.26$). This indicates the **uniform-flavor projection** is missing a per-arc structural detail. The color-pair weight $W_{c_1 c_2}$ encodes exactly this detail.
+The low-isotope sign-flip diagnostic ([`low-isotope-sign-flip-diagnostic.witness.json`](../../computations/low-isotope-sign-flip-diagnostic.witness.json)) shows that the per-isotope error correlates with inter-nucleon arc **count** at $R^2 = 0.83$, not with the signed-h weight ($R^2 = 0.26$). This indicates the **uniform-flavor projection** is missing a per-arc structural detail. The color-pair weight $W_{c_1 c_2}$ encodes exactly this detail.
 
-The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$ literal $2.4599527869$ and the color-tube Faddeev resummation $1/(1 - h_q \cdot q_0^{10}) \approx 2.450$ (per [`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)) provides independent evidence that 10-fold color-tube averaging is the categorical structure behind the historical numerology.
+The empirical match between the (now-purged) $\lambda_{\mathrm{scale}}$ literal $2.4599527869$ and the color-tube Faddeev resummation $1/(1 - h_q \cdot q_0^{10}) \approx 2.450$ provides independent evidence that 10-fold color-tube averaging is the categorical structure behind the historical numerology.
 
 Probe scripts [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py) and [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py) report that Scheme 4 (per-sheet PL integration on Bring's surface with quark-content weighting) reproduces $\Delta m_{n-p}$ to ${\sim}0.14\%$. This dramatically improves on the uniform-flavor projection's ${\sim}305\,\mathrm{ppm}$ flavor split ratio.
 
@@ -41,7 +41,7 @@ The **gg-production collapse** isolates the cost of the projection directly. Dec
 
 ## Conditional structure
 
-This conjecture remains conditional on `conj:s5-so3-fiber-action` (PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3) being formalised as a Lean class. Once available, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The conjecture will then promote to a `proposition` block under the AGENTS.md §3b-cond conditional-class convention.
+This conjecture remains conditional on `conj:s5-so3-fiber-action` being formalised as a Lean class. Once available, the weight matrix $W_{c_1 c_2}$ derives as a tensor in the SO(3)-fiber data over Bring, with no remaining degrees of freedom. The statement then becomes unconditional: it is a conjecture only for as long as that upstream class is uninhabited.
 
 ## Lean axiomatisation (sketch)
 
@@ -92,10 +92,7 @@ formalised as `so3_adjoint_eq_chebyshev` in [`MassVolDensity.lean`](../lean/QOU/
 
 ## Cross-references
 
-- Parent sign-flip audit: [`docs/audits/-sign-flip-interpretation.md`](../../docs/audits/-sign-flip-interpretation.md)
-- ${}^{4}\mathrm{He}$ magic-shell color-tube reading: [`docs/audits/-4he-magic-shell-color-tube-audit.md`](../../docs/audits/-4he-magic-shell-color-tube-audit.md)
-- Bring color-tube weighted averaging cheat-sheet entry: [`docs/canonical-derivation-cheat-sheet.md` §"Bring color-tube weighted averaging"](../../docs/canonical-derivation-cheat-sheet.md)
 - Existing color-tube infrastructure: [`color-tube-coordinates.md`](../archimedean-universe/color-tube-coordinates.md), [`color-tube-fibers.md`](../archimedean-universe/color-tube-fibers.md), [`color-tube-cubic.md`](../archimedean-universe/color-tube-cubic.md)
-- Supplier class (PR [#1081](https://github.com/litlfred/qou/pull/1081) Task 3): `conj:s5-so3-fiber-action`
+- Supplier class: `conj:s5-so3-fiber-action`
 - $\mathrm{SO}(3)_q = \mathrm{SU}(2)_q/\mathbb{Z}_2$ level structure: [`MassVolDensity.lean`](../lean/QOU/Mass/MassVolDensity.lean) §6 (`so3_adjoint_eq_chebyshev`)
 - Empirical probe scripts: [`probe_pn_flavor_asymmetry.py`](../../computations/probe_pn_flavor_asymmetry.py), [`probe_per_sheet_flavor_nonin.py`](../../computations/probe_per_sheet_flavor_nonin.py)

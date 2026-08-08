@@ -57,7 +57,7 @@ scheduled to be migrated to it — see *Migration status* below).*
 *Every per-partition computation (Step 5 and downstream Step 9b)
 must record the partition tag $\lambda$ alongside each value via
 `builder.add_data(...)`, so the witness is partition-respecting
-and reviewers can audit the isotypic structure.*
+and reviewers can check the isotypic structure.*
 
 ### Algorithm
 
@@ -100,7 +100,7 @@ w.save()
 ```
 ### Witness contract (meta)
 
-*Every `*.witness.json` is audited by:
+*Every `*.witness.json` is validated by:
 [`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
 (LP/SDP duals), `q-usage-watcher` (q-regime declarations), and
 the q₀ staleness detector. Stale or schema-violating witnesses

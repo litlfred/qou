@@ -49,7 +49,7 @@ from pyhecke import check_frobenius
 ok = check_frobenius(x)
 ```
 
-*The canonical audit script is
+*The canonical verification script is
 [`computations/audit_frobenius_pairing.py`](../../../computations/audit_frobenius_pairing.py);
 the Gram matrix `G` and the Markov-trace vector `TR_M` are
 exposed as constants by `pyhecke`.*

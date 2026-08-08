@@ -25,10 +25,7 @@ predictions.*
 > $\mu$–$p$ tension), and neither $c_4 = 46$ nor $c_4 = 4143/90$ has a
 > derivation trail in the corpus. Applied at the raw pin it *overshoots*
 > CODATA $m_p$ by $\approx 242$ ppb. The reconcile (relabel / revert /
-> drop) is owner-gated — see
-> [PR #3280](https://github.com/litlfred/qou/pull/3280) and the
-> [deuteron ledger](../../../docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md)
-> finding 5.
+> drop) is owner-gated.
 
 ### Input
 
@@ -108,10 +105,8 @@ $\Delta_\lambda$ frontier.*
 *Anchor bookkeeping: at the proton-pinned $q_0$ the $m_p$ value is an
 anchor round-trip (exact in ratio space), $m_\mu$ and $m_n$ are the
 predictions; the pin's Habiro dressing reconciles the muon identity to
-$\approx 1.4$ ppb (per-stage attribution in the
-[2026-07-03 deuteron ledger](../../../docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md);
-the $c_4$ pin-vs-producer 46 vs $4143/90$ reconcile is owner-gated,
-bean `2i8g`).*
+$\approx 1.4$ ppb (the $c_4$ pin-vs-producer 46 vs $4143/90$ reconcile
+is owner-gated).*
 
 *Linking-weight selection rule (binding-side, retained for Step 9b):
 the factor

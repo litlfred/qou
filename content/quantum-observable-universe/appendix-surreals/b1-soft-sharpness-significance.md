@@ -1,4 +1,4 @@
-The keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) ("B1") asserts an inclusion $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$ plus a sharpness condition. The sharpness condition admits two formulations:
+The keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) asserts an inclusion $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$ plus a sharpness condition. The sharpness condition admits two formulations:
 
 | Version | Statement | What it says |
 |---|---|---|
@@ -11,8 +11,8 @@ Soft sharpness elevates the following keystone-derived claims to theorems:
 
 | Claim | Status before | Status after this prop |
 |---|---|---|
-| Each Bring-natural row of B1 lands non-by definition at its depth | conjectural | **theorem** |
-| Per-knot $\mathrm{Vol}(K) \neq 0$ in $\mathcal{P}_2/\mathcal{P}_1$ for hyperbolic Bring-embeddable $K$ | conjectural (within B1) | **theorem** (Bloch–Wigner non-vanishing) |
+| Each Bring-natural row of the depth correspondence lands non-by definition at its depth | conjectural | **theorem** |
+| Per-knot $\mathrm{Vol}(K) \neq 0$ in $\mathcal{P}_2/\mathcal{P}_1$ for hyperbolic Bring-embeddable $K$ | conjectural (within the depth correspondence) | **theorem** (Bloch–Wigner non-vanishing) |
 | $\mathrm{Cl}_3(2\pi/5)$ lives non-by definition in $\mathcal{P}_3/\mathcal{P}_2$ | conjectural | **theorem** (Borel + Lewin) |
 | Each numerical witness in [`rem:transcendental-accounting`](#rem:transcendental-accounting) row lands at the predicted depth | partly conjectural | **theorem** for non-triviality; depth-match is structural |
 

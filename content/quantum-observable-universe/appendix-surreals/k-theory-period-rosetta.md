@@ -42,4 +42,4 @@ The keystone's discharge targets in K-theoretic language:
 1. **Inclusion target**: $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$. We identify $G^{(n)}$ with a subspace of $K_{2n-1}^{\mathrm{ind}}(\mathbb{Q}(z_K)) \otimes \mathbb{Q}$ so that $\tau_{\mathrm{arch}}$ is the Beilinson regulator. The content is this identification.
 2. **Sharpness target**: The image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$. Borel's theorem (1977) proves $K_{2n-1}^{\mathrm{ind}}(F) \otimes \mathbb{Q}$ has known explicit rank for $n \geq 2$. Beilinson's conjecture asserts this image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$.
 
-The K-theoretic language partially reduces B1's discharge. Borel pins down dimensions; Beilinson remains the open piece.
+The K-theoretic language partially reduces the correspondence's discharge. Borel pins down dimensions; Beilinson remains the open piece.

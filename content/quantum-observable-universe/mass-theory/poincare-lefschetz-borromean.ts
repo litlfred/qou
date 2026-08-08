@@ -25,6 +25,5 @@ export default conjecture({
     "cohomology-homology",
     "axiom-class",
     "open-problem",
-    "non-scholarly-voice-exception",
   ],
 });
