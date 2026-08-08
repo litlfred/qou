@@ -72,6 +72,7 @@ import QOU.MathlibExt.CauchyBinet
 import QOU.MathlibExt.RankMinor
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.GroupAlgebraCenter
+import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal

@@ -148,3 +148,60 @@ formula, whose risky step is `trace (linHom ρV ρW) g = χ_V(g⁻¹) · χ_W(g)
 
 Either way ~300–500 lines. The mathematics is settled; what remains is a
 formulation bridge.
+
+## Progress 2026-08-08 (cont 2) — the character API, on `Representation`
+
+`QOU/MathlibExt/RepresentationCharacter.lean`, sorry-free and axiom-clean. The
+character route of the previous section, redeveloped off the category layer:
+
+    charOf                      χ_ρ(g) = tr (ρ g)
+    charOf_conj                 characters are class functions
+    linHom_comp                 dualTensorHom intertwines dual ρV ⊗ ρW with linHom
+    charOf_linHom               χ_{Hom(V,W)}(g) = χ_V(g⁻¹) · χ_W(g)
+    average_charOf              ⅟|G| • Σ_g χ_ρ(g) = dim_k ρ^G
+    homG / mem_homG_iff         Hom_G(V,W) as invariants (linHom ρV ρW)
+    charPairing_eq_finrank_homG ⅟|G| • Σ_g χ_V(g⁻¹)·χ_W(g) = dim_k Hom_G(V,W)
+
+**No `IsAlgClosed`** anywhere, and no `FDRep`/`Rep` object. That removes the
+bridge listed as the blocker in the previous section: the Specht cluster carries
+bare `Representation`s and can now use the pairing directly.
+
+### Friction worth recording — all instance-level, none mathematical
+
+Every proof is Mathlib's `FDRep` proof with the category layer stripped, but the
+plumbing fought back for a dozen compiles:
+
+- `LinearMap.trace_conj'` sends `isDefEq` into `dualTensorHomEquiv`'s definition
+  trying to unify `Module.End k (V* ⊗ W)` with `(V* ⊗ W) →ₗ[k] (V* ⊗ W)`. It does
+  not terminate in a **million** heartbeats (78 s of `exact`). Replaced by
+  `trace_comp_comm'` on composites, which keeps everything at the `→ₗ` level.
+- `trace_comp_comm'` then leaves `M`, `N` as metavariables and the elaborator
+  gets stuck on `Module.Finite k ?m`. Passing `(R := k) (M := …) (N := …)`
+  explicitly is what finally lands it. This was the single blocking step.
+- Type-ascribing `Module.Dual k V ⊗[k] W →ₗ[k] X` in a `set` picks
+  `TensorProduct.addCommMonoid`, which will not `rw`-unify against
+  `AddCommGroup.toAddCommMonoid` in Mathlib's `CommRing`-based trace section.
+  Use `(…).toLinearMap` and let the instances be inferred.
+- Stating the file over `[Field k]` vs `[CommRing k]` matters: `Field` gives the
+  `Field → Semifield → DivisionSemiring → Semiring` path, the trace lemmas carry
+  `CommRing → CommSemiring → Semiring`, and `rw` cannot bridge them. `Field`
+  wins overall because `Module.Free`/`Module.Finite` on submodules
+  (`invariants`, `ker averageMap`) are then automatic; over `CommRing` they must
+  be carried as hypotheses.
+
+### What is left
+
+1. **Schur, at this level.** Non-isomorphic simple `k[G]`-modules have
+   `homG ρV ρW = ⊥`, hence `finrank = 0`, hence the pairing vanishes. Needs the
+   bridge `homG ↔ Hom_{k[G]}(asModule, asModule)` — `mem_homG_iff` is one half —
+   plus `LinearMap.bijective_or_eq_zero`.
+2. **Diagonal nonzero.** `id ∈ homG ρV ρV` and `ρV ≠ 0`, so `finrank ≥ 1`, and
+   `(finrank : k) ≠ 0` in char 0.
+3. **Independence ⇒ count.** A diagonal Gram matrix with nonzero entries gives
+   linear independence of the `χ_i` inside class functions; class functions inject
+   into `ConjClasses G → k`, so `#simples ≤ #conj classes`. Then chain with
+   `GroupAlgebraCenter.card_conjClasses_perm_fin_le` and
+   `specht_pairwise_noniso`.
+
+Steps 1–2 are short. Step 3 is the assembly. The mathematics is finished; what
+remains is bookkeeping of the same kind as above.
