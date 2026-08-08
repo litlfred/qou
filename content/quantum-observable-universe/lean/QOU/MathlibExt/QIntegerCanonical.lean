@@ -233,6 +233,18 @@ to `0` (Lean's `x / 0 = 0`), not to `n`.  This is the lemma that makes
 theorem qIntBal_one_eq_zero (n : ℕ) : qIntBal (1 : R) n = 0 := by
   simp [qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
 
+/-- **Closed form of the guarded geometric bracket.**
+
+`qIntGeo` is the `Finset.sum`, but every guarded-geometric site in the corpus
+writes the closed form `(qⁿ − 1)/(q − 1)`.  Migrating such a site onto
+`qIntGeoCl` therefore replaces the body by a *propositionally* — not
+definitionally — equal one, and a clean compile does **not** by itself witness
+that: it only shows nothing downstream constrained the body.  This lemma is the
+missing witness, so the substitution is checked rather than assumed. -/
+theorem qIntGeoCl_eq_closed_form {q : R} (h : q ≠ 1) (n : ℕ) :
+    qIntGeoCl q n = (q ^ n - 1) / (q - 1) := by
+  rw [qIntGeoCl_of_ne_one h, qIntGeo_def, geom_sum_eq h]
+
 end ClassicalExtended
 
 end QOU.QInteger
