@@ -427,4 +427,215 @@ theorem theta_eq_half_gs_bridge :
           atTop (𝓝 s) :=
   ⟨1 / 2, fun q hq => routeB_gaussian_order_half q hq, gs_degree_leading_coeff_half⟩
 
+/-! ## MI-3(c): the order of an ACTUAL C1 coefficient sequence
+
+`routeB_gaussian_order_half` and `qSquare_gaussian_order_two` are about the
+explicit functions `q^{m²/4}` and `q^{n²}`. `theta_eq_half_gs_bridge` above
+already flags what that leaves open — *"what remains probe-only is that the
+kernel's actual coefficient sequence realises order ½"*. This section closes
+that for one actual sequence: the C1 `∞`-side coefficients
+
+    c₀ = 1,   c_{m+1} = cₘ·(1 + (q−1)qᵐ + (q−1)q^{2m})
+
+(`QOU.Mass.C1FormalSolutionGrowth`, whose `natDegree_c1CoeffPoly` gives the
+same `n²` on the polynomial side). The answer is **2**, not ½ — under the
+definition at the top of this file. The sandwich
+
+    (q−1)ⁿ q^{n²}  ≤  cₙ qⁿ  ≤  (2q−1)ⁿ q^{n²}
+
+is proved by induction from `(q−1)q^{2m} ≤ M_m ≤ (2q−1)q^{2m}`, and both sides
+of the resulting bound on `2 log_q cₙ / n²` are `2 log_q(const)/n + 2 − 2/n → 2`.
+
+This does **not** settle which convention the manuscript intends — see the note
+on `qSquare_gaussian_order_two`. It settles that, under the formalised one, an
+actual C1 sequence gives `2`. -/
+
+section C1InfOrder
+
+variable {q : ℝ}
+
+/-- The C1 `∞`-side per-step multiplier. -/
+noncomputable def c1InfMult (q : ℝ) (m : ℕ) : ℝ :=
+  1 + (q - 1) * q ^ m + (q - 1) * q ^ (2 * m)
+
+/-- The C1 `∞`-side coefficients themselves. -/
+noncomputable def c1InfCoeff (q : ℝ) : ℕ → ℝ
+  | 0 => 1
+  | (m + 1) => c1InfCoeff q m * c1InfMult q m
+
+variable {q : ℝ}
+
+private lemma c1q_pos (hq : 1 < q) : 0 < q := lt_trans zero_lt_one hq
+
+private lemma c1_one_le_qpow (hq : 1 < q) (m : ℕ) : (1:ℝ) ≤ q ^ m := one_le_pow₀ hq.le
+
+lemma c1InfMult_lower (hq : 1 < q) (m : ℕ) : (q - 1) * q ^ (2 * m) ≤ c1InfMult q m := by
+  have h1 : (0:ℝ) ≤ (q - 1) * q ^ m := by
+    have := (c1_one_le_qpow hq m); nlinarith [c1q_pos hq]
+  rw [c1InfMult]; linarith
+
+lemma c1InfMult_upper (hq : 1 < q) (m : ℕ) : c1InfMult q m ≤ (2 * q - 1) * q ^ (2 * m) := by
+  have hm : q ^ m ≤ q ^ (2 * m) := pow_le_pow_right₀ hq.le (by omega)
+  have h1 : (1:ℝ) ≤ q ^ (2 * m) := c1_one_le_qpow hq _
+  have hq1 : (0:ℝ) ≤ q - 1 := by linarith
+  rw [c1InfMult]
+  nlinarith [mul_le_mul_of_nonneg_left hm hq1]
+
+lemma c1InfCoeff_pos (hq : 1 < q) (n : ℕ) : 0 < c1InfCoeff q n := by
+  induction n with
+  | zero => rw [c1InfCoeff]; norm_num
+  | succ k ih =>
+    have h := c1InfMult_lower hq k
+    have h2 : (0:ℝ) < (q - 1) * q ^ (2 * k) := by
+      have := c1_one_le_qpow hq (2 * k); nlinarith
+    rw [c1InfCoeff]
+    exact mul_pos ih (lt_of_lt_of_le h2 h)
+
+private lemma pow_sq_succ (hq : 1 < q) (k : ℕ) :
+    q ^ ((k + 1) * (k + 1)) = q ^ (k * k) * q ^ (2 * k) * q := by
+  rw [← pow_add, ← pow_succ]
+  congr 1
+  ring
+
+/-- `(q−1)ⁿ q^{n²} ≤ cₙ qⁿ`. -/
+lemma c1InfCoeff_lower (hq : 1 < q) (n : ℕ) :
+    (q - 1) ^ n * q ^ (n * n) ≤ c1InfCoeff q n * q ^ n := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hA : (0:ℝ) < q - 1 := by linarith
+  induction n with
+  | zero => rw [c1InfCoeff]; norm_num
+  | succ k ih =>
+    have hmul : (q - 1) * q ^ (2 * k) ≤ c1InfMult q k := c1InfMult_lower hq k
+    have hnn1 : (0:ℝ) ≤ (q - 1) * q ^ (2 * k) * q :=
+      mul_nonneg (mul_nonneg hA.le (pow_nonneg hqp.le _)) hqp.le
+    have hnn2 : (0:ℝ) ≤ c1InfCoeff q k * q ^ k :=
+      mul_nonneg (c1InfCoeff_pos hq k).le (pow_nonneg hqp.le _)
+    calc (q - 1) ^ (k + 1) * q ^ ((k + 1) * (k + 1))
+        = ((q - 1) ^ k * q ^ (k * k)) * ((q - 1) * q ^ (2 * k) * q) := by
+          rw [pow_sq_succ hq k]; ring
+      _ ≤ (c1InfCoeff q k * q ^ k) * ((q - 1) * q ^ (2 * k) * q) :=
+          mul_le_mul_of_nonneg_right ih hnn1
+      _ ≤ (c1InfCoeff q k * q ^ k) * (c1InfMult q k * q) :=
+          mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_right hmul hqp.le) hnn2
+      _ = c1InfCoeff q (k + 1) * q ^ (k + 1) := by
+          rw [show c1InfCoeff q (k + 1) = c1InfCoeff q k * c1InfMult q k from rfl,
+              pow_succ]
+          ring
+
+/-- `cₙ qⁿ ≤ (2q−1)ⁿ q^{n²}`. -/
+lemma c1InfCoeff_upper (hq : 1 < q) (n : ℕ) :
+    c1InfCoeff q n * q ^ n ≤ (2 * q - 1) ^ n * q ^ (n * n) := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hB : (0:ℝ) < 2 * q - 1 := by linarith
+  induction n with
+  | zero => rw [c1InfCoeff]; norm_num
+  | succ k ih =>
+    have hmul : c1InfMult q k ≤ (2 * q - 1) * q ^ (2 * k) := c1InfMult_upper hq k
+    have hnn1 : (0:ℝ) ≤ (2 * q - 1) * q ^ (2 * k) * q :=
+      mul_nonneg (mul_nonneg hB.le (pow_nonneg hqp.le _)) hqp.le
+    have hnn2 : (0:ℝ) ≤ c1InfCoeff q k * q ^ k :=
+      mul_nonneg (c1InfCoeff_pos hq k).le (pow_nonneg hqp.le _)
+    calc c1InfCoeff q (k + 1) * q ^ (k + 1)
+        = (c1InfCoeff q k * q ^ k) * (c1InfMult q k * q) := by
+          rw [show c1InfCoeff q (k + 1) = c1InfCoeff q k * c1InfMult q k from rfl,
+              pow_succ]
+          ring
+      _ ≤ (c1InfCoeff q k * q ^ k) * ((2 * q - 1) * q ^ (2 * k) * q) :=
+          mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_right hmul hqp.le) hnn2
+      _ ≤ ((2 * q - 1) ^ k * q ^ (k * k)) * ((2 * q - 1) * q ^ (2 * k) * q) :=
+          mul_le_mul_of_nonneg_right ih hnn1
+      _ = (2 * q - 1) ^ (k + 1) * q ^ ((k + 1) * (k + 1)) := by
+          rw [pow_sq_succ hq k]; ring
+
+private lemma log_bounds (hq : 1 < q) (n : ℕ) :
+    (n:ℝ) * Real.log (q - 1) + ((n:ℝ) * (n:ℝ) - (n:ℝ)) * Real.log q
+      ≤ Real.log (c1InfCoeff q n)
+    ∧ Real.log (c1InfCoeff q n)
+      ≤ (n:ℝ) * Real.log (2 * q - 1) + ((n:ℝ) * (n:ℝ) - (n:ℝ)) * Real.log q := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hA : (0:ℝ) < q - 1 := by linarith
+  have hB : (0:ℝ) < 2 * q - 1 := by linarith
+  have hc : 0 < c1InfCoeff q n := c1InfCoeff_pos hq n
+  have hqn : (0:ℝ) < q ^ n := pow_pos hqp n
+  have hqnn : (0:ℝ) < q ^ (n * n) := pow_pos hqp _
+  have hposL : (0:ℝ) < (q - 1) ^ n * q ^ (n * n) := mul_pos (pow_pos hA n) hqnn
+  have hposM : (0:ℝ) < c1InfCoeff q n * q ^ n := mul_pos hc hqn
+  have h1 := Real.log_le_log hposL (c1InfCoeff_lower hq n)
+  have h2 := Real.log_le_log hposM (c1InfCoeff_upper hq n)
+  have e1 : Real.log ((q - 1) ^ n * q ^ (n * n))
+      = (n:ℝ) * Real.log (q - 1) + ((n:ℝ) * (n:ℝ)) * Real.log q := by
+    rw [Real.log_mul (ne_of_gt (pow_pos hA n)) (ne_of_gt hqnn), Real.log_pow, Real.log_pow]
+    push_cast
+    ring
+  have e2 : Real.log (c1InfCoeff q n * q ^ n)
+      = Real.log (c1InfCoeff q n) + (n:ℝ) * Real.log q := by
+    rw [Real.log_mul (ne_of_gt hc) (ne_of_gt hqn), Real.log_pow]
+  have e3 : Real.log ((2 * q - 1) ^ n * q ^ (n * n))
+      = (n:ℝ) * Real.log (2 * q - 1) + ((n:ℝ) * (n:ℝ)) * Real.log q := by
+    rw [Real.log_mul (ne_of_gt (pow_pos hB n)) (ne_of_gt hqnn), Real.log_pow, Real.log_pow]
+    push_cast
+    ring
+  rw [e1, e2] at h1
+  rw [e2, e3] at h2
+  constructor <;> nlinarith [h1, h2]
+
+/-- **The C1 `∞`-side coefficient sequence has q-Gevrey order 2.**
+
+Not the explicit function `q^{n²}` — the actual sequence defined by the
+recursion. Squeeze on `2 log_q cₙ / n²` between the two bounds
+`(q−1)ⁿ q^{n²} ≤ cₙ qⁿ ≤ (2q−1)ⁿ q^{n²}`; both sides are
+`2 log_q(const)/n + 2 − 2/n → 2`. -/
+theorem c1InfCoeff_order_two (hq : 1 < q) : IsQGevreyOrder q 2 (c1InfCoeff q) := by
+  have hqp : (0:ℝ) < q := c1q_pos hq
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  set a : ℝ := Real.log (q - 1) / Real.log q with ha
+  set b : ℝ := Real.log (2 * q - 1) / Real.log q with hb
+  have hlim : ∀ c : ℝ,
+      Tendsto (fun n : ℕ => 2 * c / (n:ℝ) + 2 - 2 / (n:ℝ)) atTop (𝓝 2) := by
+    intro c
+    have h1 : Tendsto (fun n : ℕ => 2 * c / (n:ℝ)) atTop (𝓝 0) :=
+      tendsto_const_div_atTop_nhds_zero_nat (2 * c)
+    have h2 : Tendsto (fun n : ℕ => 2 / (n:ℝ)) atTop (𝓝 0) :=
+      tendsto_const_div_atTop_nhds_zero_nat 2
+    simpa using ((h1.add tendsto_const_nhds).sub h2)
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' (hlim a) (hlim b) ?_ ?_
+  · filter_upwards [eventually_gt_atTop 0] with n hn
+    have hn0 : (0:ℝ) < (n:ℝ) := by exact_mod_cast hn
+    have hn2 : (0:ℝ) < (n:ℝ) ^ 2 := by positivity
+    have hc : 0 < c1InfCoeff q n := c1InfCoeff_pos hq n
+    have hnorm : ‖c1InfCoeff q n‖ = c1InfCoeff q n := by
+      rw [Real.norm_eq_abs, abs_of_pos hc]
+    obtain ⟨hlo, -⟩ := log_bounds hq n
+    have hlog : Real.log (q - 1) = a * Real.log q := by rw [ha]; field_simp
+    rw [hlog] at hlo
+    have hdiv : (n:ℝ) * a + ((n:ℝ) * (n:ℝ) - (n:ℝ))
+        ≤ Real.log (c1InfCoeff q n) / Real.log q := by
+      rw [le_div_iff₀ hlogq]; nlinarith [hlo]
+    rw [hnorm, logb, le_div_iff₀ hn2]
+    have hexp : (2 * a / (n:ℝ) + 2 - 2 / (n:ℝ)) * (n:ℝ) ^ 2
+        = 2 * ((n:ℝ) * a + ((n:ℝ) * (n:ℝ) - (n:ℝ))) := by
+      field_simp; ring
+    rw [hexp]
+    linarith [hdiv]
+  · filter_upwards [eventually_gt_atTop 0] with n hn
+    have hn0 : (0:ℝ) < (n:ℝ) := by exact_mod_cast hn
+    have hn2 : (0:ℝ) < (n:ℝ) ^ 2 := by positivity
+    have hc : 0 < c1InfCoeff q n := c1InfCoeff_pos hq n
+    have hnorm : ‖c1InfCoeff q n‖ = c1InfCoeff q n := by
+      rw [Real.norm_eq_abs, abs_of_pos hc]
+    obtain ⟨-, hup⟩ := log_bounds hq n
+    have hlog : Real.log (2 * q - 1) = b * Real.log q := by rw [hb]; field_simp
+    rw [hlog] at hup
+    have hdiv : Real.log (c1InfCoeff q n) / Real.log q
+        ≤ (n:ℝ) * b + ((n:ℝ) * (n:ℝ) - (n:ℝ)) := by
+      rw [div_le_iff₀ hlogq]; nlinarith [hup]
+    rw [hnorm, logb, div_le_iff₀ hn2]
+    have hexp : (2 * b / (n:ℝ) + 2 - 2 / (n:ℝ)) * (n:ℝ) ^ 2
+        = 2 * ((n:ℝ) * b + ((n:ℝ) * (n:ℝ) - (n:ℝ))) := by
+      field_simp; ring
+    rw [hexp]
+    linarith [hdiv]
+
+end C1InfOrder
+
 end QOU.Mathlib.QGevreyOrder

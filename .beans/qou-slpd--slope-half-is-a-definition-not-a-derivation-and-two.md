@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T02:40:00Z
+updated_at: 2026-08-08T03:30:00Z
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.
@@ -73,18 +73,34 @@ In increasing cost:
    `QOU/Mass/C1FormalSolutionGrowth.lean`. The `m = 0` branch is the only
    wrinkle: there `(q−1)qᵐ` and `(q−1)q^{2m}` coincide, so the leading
    coefficient is `2` rather than `1` (degree unchanged).
-3. **`IsQGevreyOrder` for the actual sequence.** Currently the order theorems
-   are about the explicit functions `q^{m²/4}` and `q^{n²}`, not about C1's
-   `cₙ`. With `(q−1)q^{2m} ≤ M_m ≤ (2q−1)q^{2m}` and a squeeze on
-   `2 log_q cₙ / n²`, `IsQGevreyOrder q 2 (c1InfCoeff q)` is provable — ~100
-   lines. This is what would let `c1Slope` be a **theorem** about the C1
-   sequence rather than a stipulation.
+3. ~~**`IsQGevreyOrder` for the actual sequence.**~~ ✅ **DONE 2026-08-08.**
+   `c1InfCoeff_order_two : IsQGevreyOrder q 2 (c1InfCoeff q)` — not the explicit
+   function `q^{n²}`, the **actual sequence** defined by the recursion. Sandwich
+   `(q−1)ⁿ q^{n²} ≤ cₙ qⁿ ≤ (2q−1)ⁿ q^{n²}` by induction from
+   `(q−1)q^{2m} ≤ M_m ≤ (2q−1)q^{2m}`, then squeeze: both sides of the bound on
+   `2 log_q cₙ / n²` are `2 log_q(const)/n + 2 − 2/n → 2`. Sorry-free,
+   `[propext, Classical.choice, Quot.sound]`, in `QOU/Mathlib/QGevreyOrder.lean`
+   §MI-3(c), together with `c1InfCoeff_lower` / `c1InfCoeff_upper`.
+
+   Note `theta_eq_half_gs_bridge` in that same file *already* flagged this gap
+   — "what remains probe-only is that the kernel's actual coefficient sequence
+   realises order ½". It is now closed for one actual sequence, and the answer
+   is **2**.
 4. **Derive the recursion itself** from `L1 = (q²x−1)σ² − (q−1)σ − (q−1)`.
    Currently from a witness. This is the real bottom of the stack.
 
-(3) is the one that changes the epistemic status of the consumed conclusion —
-it is now the **cheapest remaining** step, since (2) is done. (4) is the real
-bottom of the stack and is a much bigger job.
+**Where this leaves it.** (2) and (3) are done, so on the `∞`-side the chain now
+reads: *recursion* (still from a witness) ⟹ *ratio degree `2m+1`* ✅ ⟹
+*`deg_q cₙ = n²`* ✅ ⟹ *q-Gevrey order* ✅ **= 2**. Only (1), the owner's
+convention call, and (4), deriving the recursion from `L1`, remain — and (1) is
+now the blocker, because until it is answered we have a machine-checked `2`
+sitting next to a stipulated `c1Slope := 1/2` with no stated relation between
+them. That is a better place to be than before (the number is no longer purely
+asserted anywhere), but it is not resolved.
+
+Note the two are not *necessarily* in conflict: under the reciprocal convention
+`2` and `½` are the same statement. That is exactly why (1) has to be answered
+by someone who knows which the manuscript means.
 
 ## Why this matters more than `qou-c1ln` rows 4–6
 
