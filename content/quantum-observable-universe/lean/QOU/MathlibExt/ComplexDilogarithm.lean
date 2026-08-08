@@ -480,8 +480,8 @@ integral representation is simply wrong. It holds for the 5₂ saddle roots —
 open MeasureTheory in
 /-- **The `cLiTwoExt` integrand is interval-integrable on `[0,1]`** when
 `1 − yz` stays in the open right half-plane there. -/
-theorem intervalIntegrable_log_one_sub_div {y : ℂ}
-    (hre : ∀ z : ℝ, 0 ≤ z → z ≤ 1 → 0 < (1 - y * (z : ℂ)).re) :
+theorem intervalIntegrable_log_one_sub_div_of_slitPlane {y : ℂ}
+    (hslit : ∀ z : ℝ, 0 ≤ z → z ≤ 1 → (1 - y * (z : ℂ)) ∈ slitPlane) :
     IntervalIntegrable (fun z : ℝ => Complex.log (1 - y * (z : ℂ)) / (z : ℂ))
       MeasureTheory.volume 0 1 := by
   have hbase : Continuous fun w : ℝ => 1 - y * (w : ℂ) :=
@@ -514,13 +514,12 @@ theorem intervalIntegrable_log_one_sub_div {y : ℂ}
       have hG0 : G 0 = -y := by simp [hGdef]
       rw [ContinuousWithinAt, hG0]
       exact htend
-    · have hslit : (1 - y * (z : ℂ)) ∈ slitPlane :=
-        mem_slitPlane_iff.2 (Or.inl (hre z hz.1 hz.2))
+    · have hslitz : (1 - y * (z : ℂ)) ∈ slitPlane := hslit z hz.1 hz.2
       have hcz : ContinuousWithinAt
           (fun w : ℝ => Complex.log (1 - y * (w : ℂ)) / (w : ℂ)) (Set.Icc (0 : ℝ) 1) z := by
         refine ContinuousWithinAt.div ?_ ?_ (by simpa using hz0)
         · exact ContinuousAt.comp_continuousWithinAt (g := Complex.log)
-            (f := fun w : ℝ => 1 - y * (w : ℂ)) (continuousAt_clog hslit)
+            (f := fun w : ℝ => 1 - y * (w : ℂ)) (continuousAt_clog hslitz)
             hbase.continuousWithinAt
         · exact Complex.continuous_ofReal.continuousWithinAt
       refine hcz.congr_of_eventuallyEq ?_ (by simp [hGdef, hz0])
@@ -531,5 +530,16 @@ theorem intervalIntegrable_log_one_sub_div {y : ℂ}
   rw [intervalIntegrable_iff_integrableOn_Ioc_of_le (by norm_num : (0:ℝ) ≤ 1)] at hGint ⊢
   refine hGint.congr_fun (fun w hw => ?_) measurableSet_Ioc
   simp [hGdef, ne_of_gt hw.1]
+
+/-- The original right-half-plane form, now a corollary. `Re(1 − yz) > 0` is
+**sufficient but not necessary** — it excludes most of `ℂ ∖ [1,∞)`, e.g.
+`y = 1.5 + 0.3i`. See `QOU/MathlibExt/ComplexDilogarithmSlit.lean` for the sharp
+hypothesis. Kept because `FiveTwoSumRuleIntegrand` documents this name. -/
+theorem intervalIntegrable_log_one_sub_div {y : ℂ}
+    (hre : ∀ z : ℝ, 0 ≤ z → z ≤ 1 → 0 < (1 - y * (z : ℂ)).re) :
+    IntervalIntegrable (fun z : ℝ => Complex.log (1 - y * (z : ℂ)) / (z : ℂ))
+      MeasureTheory.volume 0 1 :=
+  intervalIntegrable_log_one_sub_div_of_slitPlane
+    (fun z h0 h1 => mem_slitPlane_iff.2 (Or.inl (hre z h0 h1)))
 
 end QOU.MathlibExt

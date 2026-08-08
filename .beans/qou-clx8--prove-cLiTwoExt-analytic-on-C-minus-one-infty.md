@@ -1,7 +1,7 @@
 ---
 # qou-clx8
 title: 'Prove cLiTwoExt analytic on ℂ ∖ [1,∞) — closes the last Route 5 plumbing link'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-08-07T15:20:00Z
+updated_at: 2026-08-08T10:45:00Z
 parent: 0yqu
 ---
 
@@ -166,3 +166,92 @@ blocked, only mathematically hard. The groundwork above (statement verified true
 `Re(1−yz) > 0` sufficient but not necessary; the right geometric hypothesis; the
 `Re(1/y)` quadrature trap) stands unchanged and is what a formalizer should start
 from.
+
+---
+
+## 2026-08-08 — the sharp domain is PROVED, and the radial derivative with it
+
+`QOU/MathlibExt/ComplexDilogarithmSlit.lean`, sorry-free, `lake` green (2575
+jobs), axioms `[propext, Classical.choice, Quot.sound]`. Route 23, 7 gates,
+exit 0.
+
+### 1. The "sufficient but not necessary" side condition is fixed
+
+This bean said: *"Do not formalize `Re(1−y) > 0` as if it were the real
+hypothesis — it needlessly excludes most of `ℂ ∖ [1,∞)`."* Done.
+
+```lean
+theorem mem_slitPlane_one_sub_mul {y : ℂ} (hy : y.im ≠ 0 ∨ y.re < 1)
+    {z : ℝ} (hz0 : 0 ≤ z) (hz1 : z ≤ 1) : 1 - y * (z : ℂ) ∈ slitPlane
+```
+
+`y.im ≠ 0 ∨ y.re < 1` **is** `ℂ ∖ [1,∞)`, since the cut is
+`{y : y.im = 0 ∧ 1 ≤ y.re}`. Two disjointly easy cases, exactly as this bean
+prescribed: off the real axis `Im(1 − yz) = −z·Im y ≠ 0` for `z > 0` and the
+point is `1` at `z = 0`; on the axis below `1` the real part does it.
+
+`ComplexDilogarithm.intervalIntegrable_log_one_sub_div` is **generalised in
+place** to take `slitPlane` membership (it consumed `hre` at exactly one line,
+to build that membership), with the old right-half-plane form kept as a
+corollary so the `FiveTwoSumRuleIntegrand` docstring stays accurate. Then
+`intervalIntegrable_log_one_sub_div_of_notCut` gives integrability on all of
+`ℂ ∖ [1,∞)`, `‖y‖` irrelevant — including `‖y₁‖ = 1.52`.
+
+**How much this actually widened, stated exactly.** `Re(1 − yz) > 0` on `[0,1]`
+is *equivalent* to `Re y < 1` (the minimum over `[0,1]` is at `z = 1` when
+`Re y > 0`). So the region gained is the **whole half-plane `Re y ≥ 1`**, minus
+the cut. Route 23 G1 checks the identity holds across it — both examples this
+bean names, plus `1.0001 − 2i` and `40 + 0.5i` — all `0.0` at 30 dps.
+
+### 2. The remaining obstruction, attacked from a third direction
+
+This bean lists two routes, both needing **differentiation under the integral
+sign** ("not a Mathlib one-liner"). There is a third, for the radial direction:
+substitute `u = t·z` and the parameter moves out of the integrand and into the
+**limit of integration**, where FTC reaches it.
+
+```lean
+theorem cLiTwoExt_ofReal_mul {y : ℂ} {t : ℝ} (ht : t ≠ 0) :
+    cLiTwoExt ((t : ℂ) * y) = -∫ u in (0:ℝ)..t, liTwoKernel y u
+
+theorem hasDerivAt_cLiTwoExt_radial {y : ℂ} {t : ℝ}
+    (hy : y.im ≠ 0 ∨ y.re < 1) (ht0 : 0 < t) (ht1 : t ≤ 1) :
+    HasDerivAt (fun s : ℝ => cLiTwoExt ((s : ℂ) * y))
+      (-(Complex.log (1 - y * (t : ℂ)) / (t : ℂ))) t
+```
+
+The substitution is Mathlib's `integral_comp_mul_left`; the derivative is
+`intervalIntegral.integral_hasDerivAt_right`. **No differentiation under an
+integral sign anywhere.** Read through the chain rule it says
+`cLiTwoExt'(ty)·y = −log(1−ty)/t`, i.e. `d/dw Li₂(w) = −log(1−w)/w` along the
+ray through `y` (G6 checks that reading is an identity, not a weaker claim).
+
+### What is still open — this does NOT close the bean
+
+Full analyticity needs the derivative in **every** direction; this gives rays
+only. The natural next route is primitive-of-a-holomorphic-function on the
+simply connected slit plane, and **Mathlib has the machinery**:
+`Mathlib/Analysis/Complex/HasPrimitives.lean` — `DifferentiableOn.isConservativeOn`,
+`IsConservativeOn.hasDerivAt_wedgeIntegral`, `wedgeIntegral`. Not written here.
+So "the analytic continuation" remains a name plus agreement-on-the-disc plus
+this radial derivative.
+
+### Two notes on method
+
+**The quadrature trap is demonstrated, not asserted** (G7). This bean records
+that plain `quad([0,1])` is silently wrong at `y = 3 + 0.001i`; the probe splits
+at `Re(1/y)` everywhere and G7 exhibits both the failure and the fix, so the
+other gates' method is visible rather than trusted.
+
+**A test-design error worth recording.** G1's first draft used `−4 + 3i` as a
+"large modulus" witness to the widening. It witnesses nothing: `Re y = −4 < 1`,
+so the *old* condition accepts it. **Large modulus is not the criterion —
+`Re y` is.** The gate correctly failed and the point was replaced. This is the
+same shape as the other four defects found this session: a check testing
+something adjacent to what it claimed.
+
+**Status of the bean's own caveat, unchanged:** closing this does not move the
+sum rule. Route 5 is a restatement and even the full chain leaves an unevaluated
+real integral. Taken for the Mathlib gap, as instructed.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
