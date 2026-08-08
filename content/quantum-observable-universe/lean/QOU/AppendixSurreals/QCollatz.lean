@@ -453,6 +453,8 @@ theorem reaches_of_descent_of_forward {α : Type*} (f : α → α) (target : α)
       obtain ⟨k, hk⟩ := IH (μ (f x)) hlt (f x) rfl (hfwd x hx hc)
       exact ⟨k + 1, by rw [Function.iterate_succ_apply]; exact hk⟩
 
+namespace QCollatz
+
 /-- The domain of the (partial) Skein-Collatz map: `P` is `q`-even (`[2]_q ∣ P`)
     or `q`-odd (`[2]_q ∣ P + 1`). -/
 def inDomain {Skein : Type u} [CommRing Skein] [QCollatz Skein]
@@ -475,6 +477,8 @@ theorem domainStable_forward {Skein : Type u} [CommRing Skein]
   intro k
   rw [← Function.iterate_succ_apply]
   exact h (k + 1)
+
+end QCollatz
 
 /-- **Convergence over the domain-stable cone reduces to a descent measure
     alone.** Because `D∞` is forward-invariant, the `hclosed` hypothesis of
