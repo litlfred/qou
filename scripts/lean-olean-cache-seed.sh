@@ -110,7 +110,14 @@ echo "  fresh mathlib oleans: $n_ml  (traces: $n_tr)"
 # ever wrote $BUILT_FILE: build-missing-mathlib-oleans.sh recorded builds as
 # decorated `BUILT(n) <mod>` lines in its own $LOG — a different path in a
 # different format — so producer and consumer never connected.
-if [ "$n_ml" -eq 0 ]; then
+#
+# TWO LEGITIMATE MATHLESS CASES are exempted (both from #4705's version of this
+# guard; an earlier absorption here dropped them and wrongly blocked the first):
+#   SEED_PAPER=1            a paper-only reseed right after `lake build QOU`
+#                           has no fresh mathlib BY DESIGN — that is the whole
+#                           point of the flag, so refusing it is a regression.
+#   SEED_ALLOW_NO_MATHLIB=1 explicit escape hatch for anything else.
+if [ "$n_ml" -eq 0 ] && [ "${SEED_PAPER:-0}" != "1" ] && [ "${SEED_ALLOW_NO_MATHLIB:-0}" != "1" ]; then
   echo "REFUSING to seed '$BR': no mathlib modules collected (n_ml=0)." >&2
   if [ ! -f "$BUILT_FILE" ]; then
     echo "\$BUILT_FILE does not exist: $BUILT_FILE" >&2
@@ -122,6 +129,13 @@ if [ "$n_ml" -eq 0 ]; then
   fi
   echo "Seeding now would publish only the rev-independent dependency oleans," >&2
   echo "with none of the pinned-rev mathlib set the cache exists to carry." >&2
+  echo "With --push that FORCE-PUSHES a mathlib-less branch over a good one;" >&2
+  echo "the next agent's restore then counts ~0 mathlib oleans and concludes" >&2
+  echo "\"Lean is unavailable in the sandbox\" — the failure AGENTS.md tells" >&2
+  echo "agents not to accept, manufactured by our own tooling. Override only" >&2
+  echo "if you mean it:" >&2
+  echo "  SEED_PAPER=1 ...              # paper-only reseed after \`lake build QOU\`" >&2
+  echo "  SEED_ALLOW_NO_MATHLIB=1 ...   # explicit escape hatch" >&2
   exit 1
 fi
 
