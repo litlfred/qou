@@ -230,8 +230,10 @@ import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
--- Sorry-free P-vs-NP information-theoretic bricks (the counting/decision
--- carrier `QouPNeqNp` stays orphaned — it holds the one intentional `sorry`).
+-- Sorry-free P-vs-NP information-theoretic bricks.  The counting/decision
+-- carrier `QouPNeqNp` is itself sorry-free and axiom-free: its open content
+-- is the `faithful` class field, and **no instance is provided**, so every
+-- downstream use carries `[QouPNeqNp …]` visibly in its signature.
 import QOU.Information.SurrealBudgetGrade
 import QOU.Information.GCTMultiplicityObstruction
 import QOU.Information.MagnitudeAxisBoundary
