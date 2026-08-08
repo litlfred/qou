@@ -1,6 +1,6 @@
 ---
 # qou-pin2
-title: '13 producers read BOTH q0 layers — mixed-layer straddle candidates (8 with hard code evidence)'
+title: 'Producers reading BOTH q0 layers: 3 IMPLICIT crossings stamped proton are the real hazard (explicit q_muon_at probes ruled OK)'
 status: todo
 type: task
 priority: normal
@@ -48,8 +48,8 @@ can be made once per producer.
 | `lever1_binding_habiro_single_element_test.py` | `.Q_MP` + hardcoded muon 50-digit | muon |
 
 **Per the owner ruling, start with the three IMPLICIT crossings stamped
-`proton`** — these read muon-layer data with no explicit accessor to signal it — those read muon-layer data under a
-proton label, which is the `qbeta-ck-cache` shape exactly.
+`proton`** — they read muon-layer data under a proton label with no explicit
+accessor to signal it, which is the `qbeta-ck-cache` shape exactly.
 `delta_lambda_fr_identity_phase5c` is the sharpest: it reads
 `y-lambda-at-q0.witness.json`, which is precisely the accessor AGENTS.md §q₀-anchor
 flags as reaching an experimental-layer caller **with no signal that a layer
