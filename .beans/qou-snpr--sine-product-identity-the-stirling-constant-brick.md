@@ -1,7 +1,7 @@
 ---
 # qou-snpr
 title: 'The brick that supplies the Stirling constant: prod_{j=1}^{N-1} 2 sin(j pi/N) = N'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -142,3 +142,45 @@ The theorem above, sorry-free, in `QOU/MathlibExt/` or beside
 `QOU/Knot/Clausen.lean`, wired into `QOU.lean`. It does NOT by itself close
 (A) — the refined Euler-Maclaurin still has to be done — but it is the piece
 that makes the constant determinate rather than free.
+
+## Progress 2026-08-08 — the hard half is BUILT
+
+`QOU/MathlibExt/RootsOfUnityProduct.lean`, sorry-free on the three standard
+axioms, wired into `QOU.lean`:
+
+```lean
+theorem prod_one_sub_nthRoots_erase_one {n : ℕ} (hn : n ≠ 0) :
+    (Multiset.map (fun a : ℂ => 1 - a)
+        ((Polynomial.nthRoots n (1 : ℂ)).erase 1)).prod = (n : ℂ)
+```
+
+This is the whole difficulty. The `nthRootsFinset` surgery the bean warned
+about is AVOIDED entirely by the classical derivative trick:
+differentiate `X^n - 1 = ∏(X - ζ)` and evaluate at the root `1`, which kills
+every factor except those with `ζ ≠ 1`. `eval 1 (d/dX (X^n - 1)) = n`.
+
+The step that made it work is `Polynomial.eval_multiset_prod_X_sub_C_derivative`,
+found by the `.ilean` grep rather than by guessing — it is stated over
+MULTISETS, so no finset bijection is ever needed.
+
+Assembled from: `Complex.isPrimitiveRoot_exp`, `monic_X_pow_sub_C`,
+`natDegree_X_pow_sub_C` (parameter is `r`, not `a`),
+`IsPrimitiveRoot.card_nthRoots_one`,
+`prod_multiset_X_sub_C_of_monic_of_roots_card_eq`, `mem_nthRoots`,
+`eval_multiset_prod_X_sub_C_derivative`, `derivative_X_pow`.
+`p.roots = nthRoots n 1` holds by `rfl`.
+
+## What is left — the bookkeeping half
+
+Converting the multiset product to the real sine form:
+
+```lean
+theorem prod_two_sin_pi_div (N : ℕ) (hN : 2 ≤ N) :
+    ∏ j ∈ Finset.Icc 1 (N - 1), (2 * Real.sin ((j : ℝ) * Real.pi / N)) = N
+```
+
+needs (i) `(nthRoots N 1).erase 1 = Multiset.map (ζ ^ ·) (range N |>.erase 0)`
+via `IsPrimitiveRoot.nthRoots_eq`, and (ii) `|1 - e^{iθ}| = 2 sin(θ/2)` from
+`Complex.normSq_apply` + `Real.sin_sq_eq_half_sub`, then `Complex.abs` of the
+identity above. Both are routine; neither is the difficulty that stalled this
+bean.
