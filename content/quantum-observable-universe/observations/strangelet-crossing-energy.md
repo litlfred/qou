@@ -9,14 +9,14 @@ $$
 $$
 *The strangelet is electromagnetically neutral for all $q > 0$. This topological invariant depends only on the crossing orientation partition within the Borromean structure.*
 
-*2. Purely strong crossing energy.*
-*With $Q = 0$, the [crossing energy](#def:crossing-energy) reduces to:*
+*2. Crossing energy is purely bar-odd.*
+*The Coulomb charge is the coefficient of the bar-even channel in the crossing-energy split ([decomposition](#prop:crossing-energy-decomposition)), so $Q = 0$ says $n_+ = n_-$ and annihilates that channel. What survives is the bar-odd channel alone:*
 $$
   \mathfrak{E}_{\mathrm{cross}}(\mathcal{S}_N)
-  = 
-  N \cdot \tfrac{1}{2}(n_+ + n_-)(q + q^{-1}).
+  =  N \cdot \tfrac{1}{2}(n_+ + n_-)(q - q^{-1})
+  =  N \, n_+ \,(q - q^{-1}).
 $$
-*There is no Coulomb correction. The entire crossing energy lies in the symmetric (strong) channel ([decomposition](#prop:crossing-energy-decomposition)).*
+*The bar-odd coefficient $\tfrac{1}{2}(n_+ + n_-)$ is a crossing count, hence non-negative, so the surviving energy is strictly positive for $q > 1$ whenever a unit carries a crossing. Which physical channel the bar-odd term realises is not settled by the decomposition ([Coulomb charge](#def:coulomb-charge)); what is established here is $Q = 0$ and the vanishing of the bar-even channel.*
 
 *3. Enhanced binding per baryon.*
 *The strange quark $\mathfrak{s} = T_{2,5}^{\sigma}$ contributes $5$ negative crossings to the Borromean braid word, versus $3$ for the down quark $\mathfrak{d} = T_{2,3}^{\sigma}$. For each baryon unit:*

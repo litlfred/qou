@@ -38,11 +38,18 @@ class StrangeletCrossingEnergyConjecture (ctx : StrangeletCrossingEnergyContext)
   /-- Manuscript sub-claim (i) — Electromagnetic neutrality:
       `Q(𝓑₃(u, d, s)) = 0`. -/
   claim_i_electromagnetic_neutrality : ctx.Q_uds = 0
-  /-- Manuscript sub-claim (ii) — Purely strong crossing energy:
-      `E_cross = N · ½(n₊ + n₋)·(q + q⁻¹)`. -/
-  claim_ii_purely_strong_crossing :
+  /-- Manuscript sub-claim (ii) — the crossing energy is purely **bar-odd**:
+      `E_cross = N · ½(n₊ + n₋)·(q − q⁻¹)`.
+
+      Corrected 2026-08-08. This field previously carried the `(q + q⁻¹)`
+      (bar-even) combination, inheriting the exchanged multiplicities corrected
+      upstream in `def:coulomb-charge`. Per
+      `QOU.Braiding.crossingEnergy_split`, `Q = ½(n₊ − n₋)` is the coefficient of
+      the bar-EVEN channel, so `Q_uds = 0` annihilates that channel; what
+      survives is `½(n₊ + n₋)(q − q⁻¹)`, and `n₊ = n₋` makes it `n₊(q − q⁻¹)`. -/
+  claim_ii_bar_odd_crossing_energy :
     ctx.E_cross = (ctx.N_baryon : ℝ) * ((ctx.n_plus + ctx.n_minus : ℕ) : ℝ) / 2 *
-      (ctx.q_real + ctx.q_real⁻¹)
+      (ctx.q_real - ctx.q_real⁻¹)
   /-- Formula for binding energy of uds. -/
   uds_binding : 0 < ctx.q_real → ctx.E_bind_uds = 8 * ctx.q_real⁻¹
   /-- Formula for binding energy of udd. -/
@@ -64,12 +71,12 @@ theorem strangelet_crossing_energy (ctx : StrangeletCrossingEnergyContext)
     ctx.Q_uds = 0 ∧
     ctx.E_cross =
       (ctx.N_baryon : ℝ) * ((ctx.n_plus + ctx.n_minus : ℕ) : ℝ) / 2 *
-        (ctx.q_real + ctx.q_real⁻¹) ∧
+        (ctx.q_real - ctx.q_real⁻¹) ∧
     (0 < ctx.q_real →
       ctx.E_bind_uds = 8 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd = 6 * ctx.q_real⁻¹ ∧
       ctx.E_bind_udd < ctx.E_bind_uds) := by
-  refine ⟨hc.claim_i_electromagnetic_neutrality, hc.claim_ii_purely_strong_crossing, ?_⟩
+  refine ⟨hc.claim_i_electromagnetic_neutrality, hc.claim_ii_bar_odd_crossing_energy, ?_⟩
   intro hq
   have huds := hc.uds_binding hq
   have hudd := hc.udd_binding hq
