@@ -964,6 +964,50 @@ must **not** happen is a further search for a float64 entry in them: #4677
 established there is none, and the next agent to go looking will spend the same
 day rediscovering it.
 
+## Why the per-block witness went stale — 122 producers are invisible to the drift detector
+
+Regenerating `qbeta-per-block-paper-closed-forms.witness.json` moved two values
+at the 8th digit *before any source change*: the committed numbers did not match
+`float()` of their own upstream `y-lambda-at-q0.witness.json`. That witness had
+moved and this one was never regenerated.
+
+The repo has a detector for exactly this — `computations/witness_dependency_drift.py`,
+which sees a dependency only when the producer declares it:
+
+```python
+per_block_witness = builder.add_upstream(upstream_path)   # phi_q — declared
+y_data = json.load(open(_pb.witness_path("y-lambda-at-q0.witness.json", HERE)))
+                                                          # per-block — invisible
+```
+
+`phi_q_spectral_combiner_probe` has a comment saying it uses `add_upstream`
+*"so the drift detector sees the upstream hash"*. The per-block producer reads
+two witnesses (`q-pinning-50-digit`, `y-lambda-at-q0`) with a plain
+`json.load`, so neither edge exists as far as the detector is concerned.
+
+**Swept:**
+
+| | producers |
+|---|---:|
+| read a committed witness via plain `json.load`, **no** `add_upstream` | **122** |
+| declare the dependency with `add_upstream` | 32 |
+
+So roughly four in five witness-consuming producers are outside the drift
+detector's reach, and any of them can go stale exactly the way this one did —
+silently, with the gate green. That is the same shape as the two other gaps this
+document records: the padding audit cannot see the `mp.dps` no-op, and the
+staleness detector cannot see an undeclared dependency. Each gate is sound
+about what it looks at; the misses are all in what never reaches it.
+
+Not fixed here — 122 producers is its own change, and `add_upstream` alters
+witness content (it records the upstream hash), so it is a regeneration wave,
+not an edit. Recorded with the discriminator so it can be scoped:
+
+```python
+# a producer is invisible if it mentions ".witness.json" and json.load(s)
+# one, but never calls add_upstream
+```
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:26:49.163979+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-08T00:00:27.787203+00:00",
+  "commitSha": "53a910996c4fcd0f3ed9dfbb550be9a89fea2cdf",
   "assertions": [
     {
       "name": "li_2_q_measure_normalized_at_proton",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 25,
   "computation": "phi-q-spectral-combiner-probe",
   "scriptFile": "phi_q_spectral_combiner_probe.py",
   "scriptHash": "3f2297a73e94",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,6 +28,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -36,40 +37,40 @@
     "EMPIRICAL_C3_PROTON": "-2.06930000000000000000000000000000000000000000000000000000000",
     "EMPIRICAL_C3_MUON": "-2.00970000000000000000000000000000000000000000000000000000000",
     "anchor_q_proton": {
-      "q_at_this_anchor": "1.10997859555733471989976322048322502665620840878015368660798",
-      "Σ_y_λ_(should_be_1_but_isnt)": "0.719070368968980268981061598765336384531110525131225585937500",
+      "q_at_this_anchor": "1.10997858275138080759166909561076887987449912187357873607281",
+      "Σ_y_λ_(should_be_1_but_isnt)": "0.719070366019409424517762013540984398131063140741747000000000",
       "Σ_μ_λ_(should_be_1_by_construction)": "1.00000000000000000000000000000000000000000000000000000000000",
       "Σ_μ_λ_deviation_from_1": "0.0",
       "per_block_χ_λ": {
-        "(3)": "-0.2603876417901208",
-        "(2,1)": "-0.10681445765157804",
-        "(1,1,1)": "-0.1715386437765995"
+        "(3)": "-0.260387677318887540967829938402105158571369497547500000000000",
+        "(2,1)": "-0.106814470012041848311037637321916957580111668236190000000000",
+        "(1,1,1)": "-0.171538659266057845939797749060093957599128651475830000000000"
       },
       "per_block_y_λ": {
-        "(3)": "0.4153957953606134",
-        "(2,1)": "0.2809296310310197",
-        "(1,1,1)": "0.022744942577347185"
+        "(3)": "0.415395786332342853967755797388464036265007717992360000000000",
+        "(2,1)": "0.280929633980590575482237986459015601868936859258260000000000",
+        "(1,1,1)": "0.0227449457064759950677682296935047599971185634911270000000000"
       },
       "per_block_Li_2_q_neg_chi": {
-        "(3)": "-0.245221884433802893862690867237511421467775550720368214799909",
-        "(2,1)": "-0.104103624733654387496406300946395342570684441059960105977628",
-        "(1,1,1)": "-0.164727349142867625955273318264564823196597721100671671855770"
+        "(3)": "-0.245221916011263053300335709493753530305605470702432126849020",
+        "(2,1)": "-0.104103636477488764326993514953901298904734369289607914439886",
+        "(1,1,1)": "-0.164727363436699902077785325960306828931095152492089025627364"
       },
       "per_block_μ_λ_(Li_2_q_measure)": {
-        "(3)": "0.477036321206031776792185032291566971607924436895485414734361",
-        "(2,1)": "0.202515408776909887422471812838609047944397609292687381891347",
-        "(1,1,1)": "0.320448270017058335785343154869823980447677953811827203374292"
+        "(3)": "0.477036329168153753412433662733431909721049143174073500349193",
+        "(2,1)": "0.202515408924527800549491600796743320287058088922970714585182",
+        "(1,1,1)": "0.320448261907318446038074736469824769991892767902955785065624"
       },
-      "c3_candidate_Li_2_q_measure": "-1.79748459122309011257752818716139095205560239070731261810865",
+      "c3_candidate_Li_2_q_measure": "-1.79748459107547219945050839920325667971294191107702928541482",
       "c3_baseline_uniform_sum_(mech_5)": "-5.00000000000000000000000000000000000000000000000000000000000",
-      "c3_baseline_y_lambda_weighted_(mech_6)": "-1.15721110690694083816820736387853685300797224044799804687500"
+      "c3_baseline_y_lambda_weighted_(mech_6)": "-1.15721109805822827355328604062295319439318942222523400000000"
     },
     "anchor_q_muon": {
       "note": "DEFERRED — q_muon cross-anchor evaluation requires Hoefsmit χ_λ(q) closed-form re-evaluation infrastructure not yet wired. Single-anchor refutation at q_proton is decisive (13% off empirical c_3 = -2.07). The fibre/observable distinction (user 2026-05-31) would matter here: a TRULY q-independent Li_2^q × spectral mechanism would close at both anchors; an empirical near-match would swing. Deferred to a future session that wires the Hoefsmit evaluator."
     },
     "single_anchor_summary": {
-      "c3_candidate_at_q_proton": "-1.79748459122309011257752818716139095205560239070731261810865",
-      "err_pct_vs_empirical_at_q_proton": "13.1356211654622281651994303792881190713960087610635181893080",
+      "c3_candidate_at_q_proton": "-1.79748459107547219945050839920325667971294191107702928541482",
+      "err_pct_vs_empirical_at_q_proton": "13.1356211725959406828150389405472053490097177269110672490784",
       "cross_anchor_status": "DEFERRED — Hoefsmit χ_λ(q) evaluator not wired; single-anchor refutation at q_proton is decisive without it"
     },
     "verdict": "REFUTED — candidate misses empirical c_3 at q_proton by +13.14% (> 5% threshold); decisive single-anchor refutation; q_muon adds no information",
@@ -77,11 +78,11 @@
     "upstream_witness_hashes": [
       {
         "path": "qbeta-per-block-paper-closed-forms.witness.json",
-        "sha256": "ade7228b078f970780b54f587449fbd8764609ae533e6e7219a4d802163dce00",
-        "size_bytes": 2924,
-        "commitSha": "18e46c1c0c0ad4b7f0327c7f4783a0ec73fb8448",
-        "scriptCommitSha": "cf3b3f758b936fc3a9bdd2cf38089bbb628ac50e",
-        "computedAt": "2026-05-31T04:44:06.333077+00:00"
+        "sha256": "d45627bdcdf09fee7e55e7e5795cf05434ad842bcaa50b296620d1f432f330d3",
+        "size_bytes": 3191,
+        "commitSha": "53a910996c4fcd0f3ed9dfbb550be9a89fea2cdf",
+        "scriptCommitSha": "2228cc3d85583f6db342665c72c8181494a29ab6",
+        "computedAt": "2026-08-08T00:00:27.324582+00:00"
       }
     ]
   }
