@@ -2577,3 +2577,40 @@ carry zero colour-weighted crossings, so the conventions coincide
 noise — those caches still store the muon-pinned q₀ while the audit recomputes
 at the proton pin. The convention signal is ~500× larger, so the verdicts
 survive it comfortably.
+
+## P55 — ⁴He lands proton-anchored, and a classifier gap worth naming
+
+Rebuilt against the fixed producer: 77/77, `convention`
+**`colour-weighted-averaged-crossing`** restored *by derivation* rather than by
+hand, `q0Anchor: proton`, `q_0_50dps` on the proton prefix, `scriptHash`
+stamped. `chi_convention_audit` holds at `mismatch (CRITICAL): 0`.
+
+Verified key-matched against HEAD rather than positionally:
+
+| | |
+|---|---|
+| partitions | 77 → 77, identical set |
+| largest per-λ relative move | 1.99e-06 at λ=(7,4,1) — inside the 1e-5 bound |
+| `tr_M` relative change | 3.26e-07 |
+| convention | unchanged (the regression never reached a commit) |
+
+A clean anchor migration.
+
+### The classifier still calls it VALUES, and that is a real gap
+
+`reason: non-numeric change at by_partition[0].dim`. The rebuild reorders
+partitions and each entry gains `dim` and `compute_time_sec`; `flatten` walks
+lists **positionally**, so a reorder alone misaligns all 77 entries and one
+added key is enough to veto. Peeling it back — sort `by_partition` by λ, drop
+the added keys — yields `ANCHOR_MIGRATION`.
+
+So the verdict is honest about what it saw and wrong about what happened. The
+fix is to key list-of-record fields by their natural identity (here
+`partition`) instead of by index, which would also stop a producer that merely
+reorders its output from reading as 561 moved fields. **Not done here** — it
+changes what the guard accepts, and doing that at the end of a long pass
+without before/after counts across the corpus is the move this document keeps
+recording the cost of.
+
+Committed on the key-matched evidence above, with the limitation stated, rather
+than by relaxing the guard to make a green light appear.
