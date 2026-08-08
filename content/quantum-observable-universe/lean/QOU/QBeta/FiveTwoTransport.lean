@@ -126,6 +126,97 @@ structure VSide (x y : ℂ) : Prop where
   hn₂ : x * y ≠ 0
   hn₃ : y / x ≠ 0
 
+/-! ### 2b. Four of `VSide`'s six fields, discharged from the curve alone
+
+`VSide` is the hypothesis that was once **vacuous**, so the order of work here is
+deliberate: Route 36 measured it *before* any of this was written, and found all
+six conditions holding simultaneously at all 597 checks (199 arc points × 3
+roots). Only then is proving them worth anything.
+
+Four fall out of `curve x y = 0` and `|x| = 1` with no root structure at all.
+The remaining two — `x·y ∈ notCut` and `y/x ∈ notCut` — need the root labelling,
+and are noted at the end of this section. -/
+
+/-- **No root of the curve vanishes**, for `x ≠ 0`: `curve x 0 = −x`. -/
+theorem root_ne_zero {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) : y ≠ 0 := by
+  rintro rfl
+  refine hx0 (neg_eq_zero.mp ?_)
+  rw [← hc]; unfold curve; ring
+
+/-- **Every root of the curve on `|x| = 1` lies in `notCut`** — the real/complex
+case split, discharged.
+
+`notCut = {w | Im w ≠ 0 ∨ Re w < 1}`. A root with `Im ≠ 0` takes the first
+disjunct outright. A **real** root takes the second: on `|x| = 1` the `y`-cubic
+is `unitCubic (Re x)` with real coefficients, and no real root of that reaches
+`1` when `Re x ≤ 1` (`unitCubic_root_lt_one`).
+
+⚠ Both branches are live on the arc, so neither is defensive. Route 36 G5: the
+arc crosses the discriminant at `c* = −0.74221766588`, giving **three** real
+roots at 46 of 199 sampled points and one real plus a conjugate pair at the other
+153. That is also why the real branch leans on `unitCubic_root_lt_one` — which
+bounds *every* real root — rather than on `exists_pinning_data`'s distinguished
+`t ∈ (0,1)`, which would leave two of the three unhandled at those 46 points.
+
+⚠ And the disjunct attribution here is the *exact* one, not the numerical one.
+`polyroots` returns `|Im| ~ 2.6e-41` for the real root at one arc point, so a
+split driven by a floating `Im ≠ 0` test would route that root through the first
+disjunct — which is false in exact arithmetic, and is the branch this proof
+cannot take. Route 36 G2 classifies by root type for that reason.
+
+⚠ **`hx` is load-bearing — do not weaken it.** The statement reads as though it
+might hold for general `x`, and it does not. The curve is *quadratic* in `x`, so
+fixing a bad `y` and solving produces a counterexample outright: at `y = 2` it is
+`2x² − 9x + 2 = 0`, giving `x = (9 ± √65)/4`, both real and neither on the unit
+circle, with `y = 2` real and `Re y ≥ 1` — so `y ∉ notCut`. Route 36 G6 carries
+it exactly. `hx` is used twice and essentially: once for `curve_eq_unitCubic`,
+once for `Re x ≤ 1`. -/
+theorem root_mem_notCut {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hx0 : x ≠ 0)
+    (hc : curve x y = 0) : y ∈ notCut := by
+  rcases eq_or_ne y.im 0 with him | him
+  · -- a REAL root: `Im = 0`, so only `Re < 1` can carry it
+    refine Or.inr ?_
+    have hy : y = ((y.re : ℝ) : ℂ) := by
+      apply Complex.ext <;> simp [him]
+    have hcu : x * (y ^ 3 - 2 * (x.re : ℂ) * y ^ 2 + (2 * (x.re : ℂ) + 1) * y - 1) = 0 := by
+      rw [← curve_eq_unitCubic hx y]; unfold curve at hc; exact hc
+    have hbr : y ^ 3 - 2 * (x.re : ℂ) * y ^ 2 + (2 * (x.re : ℂ) + 1) * y - 1 = 0 :=
+      (mul_eq_zero.mp hcu).resolve_left hx0
+    rw [hy] at hbr
+    have hreal : unitCubic x.re y.re = 0 := by
+      have hcast : ((unitCubic x.re y.re : ℝ) : ℂ) = 0 := by
+        rw [← hbr]; unfold unitCubic; push_cast; ring
+      exact_mod_cast hcast
+    exact unitCubic_root_lt_one (re_le_one_of_normSq_eq_one hx) hreal
+  · exact Or.inl him
+
+/-- `x·y ≠ 0` at a root — `VSide.hn₂`. -/
+theorem mul_root_ne_zero {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) : x * y ≠ 0 :=
+  mul_ne_zero hx0 (root_ne_zero hx0 hc)
+
+/-- `y/x ≠ 0` at a root — `VSide.hn₃`. -/
+theorem div_root_ne_zero {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) : y / x ≠ 0 :=
+  div_ne_zero (root_ne_zero hx0 hc) hx0
+
+/-- **`VSide` reduced to its two genuinely root-dependent fields.**
+
+Given the two `notCut` memberships that need the labelling, the other four are
+supplied. Stated this way so the residue is visible in a signature rather than in
+prose: what is left of `VSide` is `x·y` and `y/x` off the cut, nothing else.
+
+Route 36 G3 measured both — they are carried by `Im ≠ 0` at every one of the 597
+checks with `min |Im| = 0.00676`, a genuine margin and never a near-miss, so
+neither needs a case split of its own. `exists_pinning_data` already supplies
+part: `(x·y₃).im < 0`, and `(x·y₂).im < 0` once `c < 0`. -/
+theorem vSide_of_notCut_mul_div {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hx0 : x ≠ 0)
+    (hc : curve x y = 0) (h₂ : x * y ∈ notCut) (h₃ : y / x ∈ notCut) : VSide x y :=
+  { hy0 := root_ne_zero hx0 hc
+    hc₁ := root_mem_notCut hx hx0 hc
+    hc₂ := h₂
+    hc₃ := h₃
+    hn₂ := mul_root_ne_zero hx0 hc
+    hn₃ := div_root_ne_zero hx0 hc }
+
 /-! ### 3. `S′(φ) = 2φ` -/
 
 /-- **The transport's derivative.**

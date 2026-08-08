@@ -70,6 +70,20 @@
       "shift_certificate_error_off_root_locus": "1.102e-39",
       "max_real_root_over_arc": "0.80192826251",
       "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "IS `|x| = 1` LOAD-BEARING IN `root_mem_notCut`, OR DECORATION? Load-bearing, and the counterexample is exact rather than sampled: the curve is quadratic in x, so fixing y = 2 and solving gives 2x^2 - 9x + 2 = 0, x = (9 +- sqrt 65)/4 -- both real, neither on the unit circle, and y = 2 is real with Re >= 1 so it is NOT in notCut. Drop the hypothesis and the theorem is FALSE. Checked here because a hypothesis that is never tested off its own configuration is indistinguishable from one that does nothing. SEPARATELY: the arc's real roots climb to the largest LEVEL-7 root 2cos(pi/7) - 1 as phi -> pi, which is the configuration `sum_re_deformedV_at_neg_one` evaluates -- so the transport's endpoint is the level-7 point, not merely near it",
+      "counterexample_x": "0.23443556292536258691",
+      "counterexample_x_closed_form": "(9 - sqrt 65)/4",
+      "counterexample_y": "2",
+      "counterexample_abs_x": "0.23443556292536258691",
+      "counterexample_curve_residual": "1.3775e-40",
+      "counterexample_y_in_notCut": false,
+      "sup_of_real_roots_is_largest_level7_root": "0.80193773580483825247",
+      "level7_root_closed_form_2cos_pi_over_7_minus_1": "0.80193773580483825247",
+      "sampled_max_over_arc": "0.80192826251",
+      "pass": true
     }
   ],
   "verdict": {

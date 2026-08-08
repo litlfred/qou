@@ -122,7 +122,7 @@ theorem log_neg_ofReal {r : ℝ} (hr : 0 < r) :
     Complex.log (-(r : ℂ)) = ((Real.log r : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I := by
   have hneg : -(r : ℂ) = ((-r : ℝ) : ℂ) := by push_cast; ring
   rw [hneg, Complex.log, Complex.arg_ofReal_of_neg (by linarith : -r < 0)]
-  simp [Complex.norm_real, abs_of_neg (show -r < 0 by linarith)]
+  simp [abs_of_pos hr]
 
 /-- Route 1: `−y` off the cut. The generic case. -/
 theorem hasDerivAt_log_neg_of_slitPlane {Y : ℝ → ℂ} {Y' : ℂ} {s : ℝ}

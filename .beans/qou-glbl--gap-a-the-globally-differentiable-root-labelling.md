@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: (b) continuity PROVED, and (a)\'s non-degeneracy PROVED (∂p/∂y ≥ 7/4) — what remains is assembly'
+title: 'Gap A: continuity, non-degeneracy and 4/6 of VSide PROVED — what remains is the concrete labelling'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T23:35:00Z
+updated_at: 2026-08-09T00:40:00Z
 ---
 
 ## What is open
@@ -141,14 +141,62 @@ in the real part. Route 30's correction, proved rather than assumed.
 | the envelope condition `heⱼ` | ✅ `re_dVdy_mul_eq_zero_of_real` / `exists_int_dVdy_mul` |
 | the log-sum conditions `hA`, `hB` | ✅ `logSumA_eq_log`, `logSumB_eq_neg_log` (pre-existing) |
 | one-exceptional-point glue | ✅ `envelopeS_total` (pre-existing) |
-| **concrete `Y₁ Y₂ Y₃` + `VSide` + the two `log(−y)` routes** | **open** |
+| `VSide` — 4 of its 6 fields | ✅ `vSide_of_notCut_mul_div` (2026-08-08, below) |
+| **concrete `Y₁ Y₂ Y₃` + `VSide`'s last two fields + the two `log(−y)` routes** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
 lane's record says is *exactly* where unexamined regions hide, so it should not
-be called trivial in advance. Note in particular that `VSide` is the hypothesis
-that was once **vacuous** (correction 6 on #4701); whatever discharges it must
-be checked against real arc data, not merely type-checked.
+be called trivial in advance.
+
+### 2026-08-08 — `VSide` measured first, then 4 of 6 fields proved
+
+`VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
+it was measured before any Lean was written for it. **Route 36**
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, 6 gates, all pass):
+
+* **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks
+  (199 arc points × 3 roots). The correction-6 version scores 199 failures under
+  the same gate, so the gate is falsifiable rather than decorative.
+* **G2 a trap** — `polyroots` returns `|Im| ~ 2.6e-41` for the real root at **one**
+  arc point, so a naive `Im ≠ 0` disjunct test misattributes it. It bites 1 time
+  in 597: rare enough that a spot check sees a clean split and concludes the
+  naive test is fine. Classified by root type instead.
+* **G5, unanticipated** — there are **291** real roots over 199 arc points, not
+  199. On `|x| = 1` the cubic has real coefficients, the arc crosses the
+  discriminant (`16c⁴−48c³+28c²+12c−31`, unique root in `[−1,1]` at
+  `c* = −0.74221766588`), and at **46** of the points *all three* roots are real.
+  Two consequences: `continuous_otherRoots`' collision branch is **live**, not
+  defensive; and the real branch of `y ∈ notCut` must cover three roots there.
+* **G6** — the arc's real roots climb to `2cos(π/7) − 1`, the largest level-7
+  root, as `φ → π`. The transport's endpoint **is** the level-7 configuration
+  `sum_re_deformedV_at_neg_one` evaluates, not merely near it.
+
+Proved on the back of that (`FiveTwoRootStructure`, `FiveTwoTransport`, both
+`lake`-verified per module, sorry-free, axioms `[propext, Classical.choice,
+Quot.sound]`):
+
+* `unitCubic_shift` / `unitCubic_pos_of_one_le` / `unitCubic_root_lt_one` —
+  expanding about `t = 1` gives `1 + (4−2c)s + (3−2c)s² + s³`, **all coefficients
+  positive for `c ≤ 1`**, so no real root reaches 1. This bounds *every* real
+  root, which G5 says is required: `exists_pinning_data`'s distinguished
+  `t ∈ (0,1)` would leave two of three unhandled at those 46 points.
+* `root_mem_notCut` — the real/complex case split, discharged.
+* `root_ne_zero`, `mul_root_ne_zero`, `div_root_ne_zero`, and
+  `vSide_of_notCut_mul_div`, which reduces `VSide` to exactly its two
+  root-dependent fields — the residue is now in a **signature**, not in prose.
+
+⚠ **`|x| = 1` in `root_mem_notCut` is load-bearing, and G6 proves it exactly.**
+The curve is quadratic in `x`, so fixing a bad `y` and solving gives a
+counterexample outright: at `y = 2`, `2x² − 9x + 2 = 0` gives `x = (9±√65)/4`,
+both real, neither on the unit circle, with `y = 2 ∉ notCut`. Drop the hypothesis
+and the theorem is false. Recorded in the docstring so it is not later "simplified".
+
+**Still open in `VSide`:** `x·y ∈ notCut` and `y/x ∈ notCut`. G3 measured both —
+carried by `Im ≠ 0` at all 597 checks with `min |Im| = 0.00676`, a genuine margin,
+so neither needs a case split. `exists_pinning_data` already gives `(x·y₃).im < 0`
+and `(x·y₂).im < 0` once `c < 0`; the gap is `y₂` when `c ≥ 0`, plus the real
+root, where `Im(x·t) = t·sin φ > 0` should be cheap.
 
 ### The original "what remains: (a) only" note, superseded
 

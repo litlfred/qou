@@ -40,7 +40,8 @@ and that was contaminated.
 import json
 import pathlib
 
-from mpmath import exp, fabs, im, mp, mpc, mpf, nstr, pi, polyroots, re
+from mpmath import cos as mpmath_cos
+from mpmath import exp, fabs, im, mp, mpc, mpf, nstr, pi, polyroots, re, sqrt
 
 
 def roots_at(ph):
@@ -282,6 +283,56 @@ def main() -> int:
         "pass": bool(len(cstar) == 1 and 0 < n_all_real < N
                      and disc_id_err < mpf(10) ** -35 and shift_err < mpf(10) ** -35
                      and max_real_root is not None and max_real_root < 1),
+    })
+
+    # ---- G6: is `|x| = 1` load-bearing, or decoration? ----------------------
+    # `root_mem_notCut` reads as though it might hold generally. It does not, and the
+    # counterexample is exact: the curve is QUADRATIC in x, so fixing a bad y and solving
+    # for x produces one directly. x^2*y(1-y) + x(y^3+y-1) + y(1-y) = 0; at y = 2 that is
+    # 2x^2 - 9x + 2 = 0, giving x = (9 +- sqrt 65)/4, both real, neither on the unit circle.
+    # y = 2 is real with Re >= 1, so y is NOT in notCut. The hypothesis carries the theorem.
+    ybad = mpf(2)
+    xbad = (9 - sqrt(65)) / 4
+
+    def curve_val(xv, yv):
+        return xv * yv ** 3 - (xv ** 2 + 1) * yv ** 2 + (xv ** 2 + xv + 1) * yv - xv
+
+    # and the arc's real roots climb to the largest LEVEL-7 root as phi -> pi
+    lvl7 = max(re(r) for r in polyroots([mpf(1), mpf(2), mpf(-1), mpf(-1)],
+                                        maxsteps=300, extraprec=300)
+               if fabs(im(r)) < mpf(10) ** -35)
+    lvl7_closed = 2 * mpmath_cos(pi / 7) - 1
+    gates.append({
+        "gate": "G6",
+        "claim": "IS `|x| = 1` LOAD-BEARING IN `root_mem_notCut`, OR DECORATION? Load-bearing, and "
+                 "the counterexample is exact rather than sampled: the curve is quadratic in x, so "
+                 "fixing y = 2 and solving gives 2x^2 - 9x + 2 = 0, x = (9 +- sqrt 65)/4 -- both "
+                 "real, neither on the unit circle, and y = 2 is real with Re >= 1 so it is NOT in "
+                 "notCut. Drop the hypothesis and the theorem is FALSE. Checked here because a "
+                 "hypothesis that is never tested off its own configuration is indistinguishable "
+                 "from one that does nothing. SEPARATELY: the arc's real roots climb to the largest "
+                 "LEVEL-7 root 2cos(pi/7) - 1 as phi -> pi, which is the configuration "
+                 "`sum_re_deformedV_at_neg_one` evaluates -- so the transport's endpoint is the "
+                 "level-7 point, not merely near it",
+        "counterexample_x": nstr(xbad, 20),
+        "counterexample_x_closed_form": "(9 - sqrt 65)/4",
+        "counterexample_y": "2",
+        "counterexample_abs_x": nstr(fabs(xbad), 20),
+        "counterexample_curve_residual": nstr(fabs(curve_val(xbad, ybad)), 5),
+        "counterexample_y_in_notCut": bool(in_not_cut(mpc(ybad, 0))),
+        "sup_of_real_roots_is_largest_level7_root": nstr(lvl7, 20),
+        "level7_root_closed_form_2cos_pi_over_7_minus_1": nstr(lvl7_closed, 20),
+        "sampled_max_over_arc": nstr(max_real_root, 12) if max_real_root is not None else None,
+        # the counterexample must be a genuine root, off the circle, with y outside notCut;
+        # and the sampled max must approach the level-7 root from below without reaching it
+        # residual tolerance is set from the WORKING PRECISION (dps 40), not guessed: the
+        # first draft used 1e-40, which sits at the last digit and failed on 1.4e-40.
+        "pass": bool(fabs(curve_val(xbad, ybad)) < mpf(10) ** -(mp.dps - 5)
+                     and fabs(fabs(xbad) - 1) > mpf(10) ** -6
+                     and not in_not_cut(mpc(ybad, 0))
+                     and fabs(lvl7 - lvl7_closed) < mpf(10) ** -35
+                     and max_real_root is not None
+                     and max_real_root < lvl7 and lvl7 - max_real_root < mpf(10) ** -4),
     })
 
     out = {

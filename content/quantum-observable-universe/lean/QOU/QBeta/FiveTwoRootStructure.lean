@@ -98,6 +98,56 @@ theorem exists_root_mem_Ioo (c : ℝ) : ∃ t ∈ Ioo (0 : ℝ) 1, unitCubic c t
   obtain ⟨t, ht, hft⟩ := intermediate_value_Ioo (by norm_num : (0 : ℝ) ≤ 1) hcont hmem
   exact ⟨t, ht, hft⟩
 
+/-! ### 1b. No real root reaches `1` — a uniform `Re < 1`
+
+`real_root_neg_of_ne` already says the roots *other* than a distinguished
+`t ∈ (0,1)` are negative, which bounds them below `1` — but only once such a `t`
+is in hand. The lemmas here bound **every** real root below `1` directly from
+`c ≤ 1`, with no distinguished root and no case analysis, which is what `notCut`
+membership wants: `notCut = {w | Im w ≠ 0 ∨ Re w < 1}`, and a real root has to
+take the second disjunct.
+
+Route 36 G5 is why this is stated for all roots rather than for one. On the arc
+there are **291** real roots over 199 points, not 199: the cubic has real
+coefficients, the arc crosses the discriminant at `c* = −0.74221766588`, and at
+46 of those points all three roots are real. A bound covering one distinguished
+root would leave two thirds of the real roots there unhandled. -/
+
+/-- **`p(1+s) = 1 + (4−2c)s + (3−2c)s² + s³`** — an identity in `c` and `s`.
+
+The whole content of this subsection. Expanded about `t = 1` every coefficient is
+positive as soon as `c ≤ 1`, so positivity for `s ≥ 0` is immediate; expanded
+about `t = 0` the signs are mixed and nothing is immediate. -/
+theorem unitCubic_shift (c s : ℝ) :
+    unitCubic c (1 + s) = 1 + (4 - 2 * c) * s + (3 - 2 * c) * s ^ 2 + s ^ 3 := by
+  unfold unitCubic; ring
+
+/-- **`p(t) > 0` for every `t ≥ 1`, whenever `c ≤ 1`** — at least `1`, in fact. -/
+theorem unitCubic_pos_of_one_le {c t : ℝ} (hc : c ≤ 1) (ht : 1 ≤ t) : 0 < unitCubic c t := by
+  have hs : 0 ≤ t - 1 := by linarith
+  have hid : unitCubic c t
+      = 1 + (4 - 2 * c) * (t - 1) + (3 - 2 * c) * (t - 1) ^ 2 + (t - 1) ^ 3 := by
+    unfold unitCubic; ring
+  have h1 : 0 ≤ (4 - 2 * c) * (t - 1) := mul_nonneg (by linarith) hs
+  have h2 : 0 ≤ (3 - 2 * c) * (t - 1) ^ 2 := mul_nonneg (by linarith) (sq_nonneg _)
+  have h3 : 0 ≤ (t - 1) ^ 3 := pow_nonneg hs 3
+  rw [hid]; linarith
+
+/-- **No real root of `unitCubic c` reaches `1`**, for every `c ≤ 1`.
+
+The measured max over the arc is `0.80193` (Route 36 G5), so the bound is true
+but not tight. It does not need to be — `notCut` only asks for `< 1`. -/
+theorem unitCubic_root_lt_one {c t : ℝ} (hc : c ≤ 1) (hp : unitCubic c t = 0) : t < 1 := by
+  by_contra h
+  push_neg at h
+  have hpos := unitCubic_pos_of_one_le hc h
+  rw [hp] at hpos
+  exact lt_irrefl 0 hpos
+
+/-- **`|x| = 1 → Re x ≤ 1`** — the hypothesis `c ≤ 1` above, supplied on the arc. -/
+theorem re_le_one_of_normSq_eq_one {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) : x.re ≤ 1 := by
+  nlinarith [sq_nonneg x.im, sq_nonneg (x.re - 1)]
+
 /-! ### 2. The two relations that carry the argument -/
 
 /-- `2c·t(t−1) = t³ + t − 1`, i.e. `p(t) = 0` solved for the `c`-terms. -/
