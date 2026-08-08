@@ -23,14 +23,24 @@ from witness_base import WitnessBuilder
 
 Q_PINNING = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 
-def _load_q_0() -> mp.mpf:
-    with Q_PINNING.open() as fh:
-        return mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+def _load_q_0(w: WitnessBuilder) -> mp.mpf:
+    """Load q_0, declaring q-pinning-50-digit as an upstream.
+
+    `add_upstream` records the upstream's sha256 + commitSha + computedAt under
+    `data.upstream_witness_hashes`, which is the only thing
+    `witness_dependency_drift.py` walks. Read with a plain `json.load`, the
+    edge does not exist as far as that validator is concerned, and this witness
+    can go stale behind a green gate — which is exactly how
+    `qbeta-per-block-paper-closed-forms` moved at the 8th digit with no source
+    change at all. The builder is threaded in because the record needs
+    somewhere to land.
+    """
+    return mp.mpf(w.add_upstream(Q_PINNING)["derived_50_digit"]["q"])
 
 def main():
     w = WitnessBuilder("inter-knot-decoupling", engine="sympy+mpmath")
-    
-    q_0 = _load_q_0()
+
+    q_0 = _load_q_0(w)
     
     # In Hecke algebras, the Markov trace normalization z is given by
     # z = (q - 1) / (q + 1) or similar. Let's see what z_markov_norm was.
