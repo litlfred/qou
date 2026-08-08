@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T12:30:00Z
+updated_at: 2026-08-09T13:05:00Z
 ---
 
 ## What is open
@@ -441,6 +441,28 @@ term, not three**: at `φ = π` the branches are `Yreal = 0.8019377`,
 needed statement is `cLiTwoExt` continuous at a cut point restricted to
 `{w | w.im ≤ 0}` — one-sided, and a dominated-convergence argument on the
 defining integral rather than a two-dimensional continuity theorem about `Re Li₂`.
+
+✅ **And the pointwise half is now proved, for free.** Mathlib already has
+`Complex.continuousWithinAt_log_of_re_neg_of_im_zero`: `log` is continuous at a
+*negative real* restricted to the **upper** half plane `{0 ≤ z.im}`. And
+`w ↦ 1 − w·t` carries `{Im w ≤ 0}` into `{0 ≤ Im z}` for `t > 0`, since
+`Im(1 − w·t) = −t·Im w`. So approaching the cut *from below in `w`* is
+approaching `log`'s cut *from above in `1 − w·t`* — the conventions agree, and
+Lean's principal branch already sits there (`arg_one_sub_mul_ofReal`):
+
+    continuousWithinAt_clog_one_sub_mul (ht : 0 < t)
+      (hre : (1 − w₀·t).re < 0) (him : (1 − w₀·t).im = 0) :
+      ContinuousWithinAt (fun w => log (1 − w·t)) {w | w.im ≤ 0} w₀
+
+`ComplexDilogarithmOnCut.lean`, `lake`-verified (2709 jobs), sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`.
+
+**What is left of G11 is dominated convergence alone** — a uniform integrable
+bound for `‖log(1−wt)/t‖` near `w₀`. The branch analysis, which is where I
+expected the difficulty, costs nothing. That is the **third** downward revision of
+this obligation in one session: "2-D continuity of `Re Li₂`" → "one-sided" →
+"one-sided minus what Mathlib supplies". Every revision came from looking rather
+than estimating.
 
 ⚠ G11's *first* version asked for the harder thing (`Re Li₂` continuous across
 the cut). That was my over-statement, corrected in place. Recording the
