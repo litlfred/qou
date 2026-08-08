@@ -32,7 +32,6 @@ export default conjecture({
     "conditional-adoption",
     "axiom-class",
     "open-problem",
-    "non-scholarly-voice-exception",
   ],
   authorNotes: [
     {

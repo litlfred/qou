@@ -13,6 +13,18 @@
     "lean": "89c323a45829"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Both leaks are gone: \"the corpus spin involution\" is now \"the spin involution\", and \"collapsing the former C3 (charge) and C4 (spin)\" is now \"so charge and spin are proved consequences rather than separate postulates\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "proof-narrative-lean-equiv": [],
     "milnor-amalgamated-flow": [
       {

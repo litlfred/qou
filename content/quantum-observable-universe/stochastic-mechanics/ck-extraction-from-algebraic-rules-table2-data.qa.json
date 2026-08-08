@@ -1,0 +1,25 @@
+{
+  "$schema": "block-qa/v1",
+  "paths": {
+    "ts": "content/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.ts",
+    "md": "content/quantum-observable-universe/stochastic-mechanics/ck-extraction-from-algebraic-rules-table2-data.md"
+  },
+  "source_hashes": {
+    "md": "ff9ad656879f",
+    "ts": "80a409bb3cd0"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The review-process pointer is gone and the reason is now stated: \"superseded per audit\" was replaced by \"the old $b^2 + 1/2$ value belongs at $k = 5$ with a sign flip; superseded\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

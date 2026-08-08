@@ -313,6 +313,14 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
                   simplify: bool = True):
     """Canonical Markov trace of a SymbolicHeckeElement.
 
+    TRACE CONVENTION: **convention C** — the full-Hecke Ocneanu trace with the
+    axiom-pinned z = 1/(q^{1/2}+q^{-1/2}) of `rem:markov-axioms-primitive`
+    (y_(1^3) != 0, so this is NOT the trace whose closure is the Jones
+    polynomial, despite the "Jones-Markov" name). Convention D
+    (SU(2)/Temperley-Lieb, z = q^3/(q^2+1)) is a different trace and differs by
+    195.8 ppm on beta_Bor. Registry:
+    docs/coordination/trace-convention-registry.md.
+
     Uses the recursive Markov-axiom reduction tr_M_word.  For braid
     words that the recursion cannot handle directly (e.g., multiple
     top-1 occurrences in both alpha and beta segments around a top

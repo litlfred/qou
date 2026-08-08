@@ -1,0 +1,28 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:tau-M-asymptotic-rep-theory-scope",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-scope.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/tau-M-asymptotic-rep-theory-scope.md"
+  },
+  "source_hashes": {
+    "ts": "b7faf5380b35",
+    "md": "45a32f10bff6"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Cleared on re-review rather than by an edit: \"$1\\,\\mathrm{ppQ}$\" is the manuscript's own precision unit (1 part per quadrillion, $10^{-15}$, tabulated as \"$1$ ppQ ($10^{-15}$)\" in `q-beta-categorical-precision-ladder-context`), not an internal tracker id.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  },
+  "updated_at": "2026-08-08T08:22:35.606Z"
+}

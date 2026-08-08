@@ -1153,6 +1153,18 @@
         "reviewed_at": "2026-07-12T15:48:49.078Z",
         "reviewed_sha": "ee3aeeb2e5f1cd08c1df5b66d052a2a1f418fe66"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "\"the content objects\" (the authoring platform's name for a block) replaced by \"this paper\" in both places; the \"audit\" uses were checked and kept — they mean a systematic mathematical verification of which analytic structures lift.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

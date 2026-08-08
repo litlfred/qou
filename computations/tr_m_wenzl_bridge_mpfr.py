@@ -372,31 +372,51 @@ def tr_M_via_wenzl_bridge_mpfr(
             from pyhecke_native import (
                 chi_lambda_all_partitions_mpfr as _rust_chi_all,
             )
-            # Build the sign-from-d map at the active dps so the
-            # round(d, 9) lookup is stable.
+            # σ and σ⁻¹ are exact classes; anything else is an averaged
+            # crossing whose SHIFT (= −d) is carried through to Rust rather
+            # than quantised away.
+            #
+            # The predecessor mapped `round(float(d), 9)` against three keys
+            # {0, −h, −h/2} and raised otherwise. That refused the
+            # colour-weighted p−n crossing `d = −h·(1/2 − δ/4)` this pipeline
+            # emits, and since an atomic braid mixes colour-blind (p−p, n−n)
+            # with colour-weighted (p−n) crossings, no single class could have
+            # covered it. `chi_lambda_all_partitions_mpfr` now takes a
+            # per-position shift list, so the affine coefficient survives.
+            #
+            # The round-to-9 comparison is kept ONLY for the two exact classes,
+            # where it is safe: it never has to separate two averaged variants.
+            # (It could not — colour-blind and colour-weighted d differ by
+            # ~7e-5 today, but nothing pins δ above 1e-9.)
             h_f64 = float(q - mp.mpf(1) / q)
-            sign_map = {
-                round(0.0, 9): 1,       # σ_g
-                round(-h_f64, 9): -1,    # σ_g^{-1} = σ_g - h
-                round(-h_f64 / 2, 9): 0,  # averaged = σ_g - h/2
-            }
 
             def _translate(factor: tuple[float, float, int]):
+                """-> (sign, gen1, shift_str). shift_str is "" unless averaged."""
                 c, d, g = factor
                 if abs(float(c) - 1.0) > 1e-9:
                     raise ValueError(
                         f"Rust path requires c == 1.0; got c={c}"
                     )
-                sign = sign_map.get(round(float(d), 9))
-                if sign is None:
-                    raise ValueError(
-                        f"unrecognised d={d}; expected one of "
-                        f"{{0.0, -h, -h/2}} with h={h_f64}"
-                    )
-                return (sign, int(g) + 1)
+                d_f = float(d)
+                if abs(d_f) < 1e-9:
+                    return (1, int(g) + 1, "")
+                if abs(d_f + h_f64) < 1e-9:
+                    return (-1, int(g) + 1, "")
+                # Serialise from the mpf, never the f64: the shift carries δ
+                # and must reach Rust at working precision or χ is capped near
+                # 1e-16 whatever `dps` asks for.
+                return (0, int(g) + 1,
+                        mp.nstr(-mp.mpf(d), dps + 10, strip_zeros=False))
 
-            word_signed = [_translate(factor) for factor in word]
-            rust_results = _rust_chi_all(n, word_signed, q_str, dps)
+            _translated = [_translate(factor) for factor in word]
+            word_signed = [(sgn, g1) for sgn, g1, _ in _translated]
+            avg_shifts = [sh for _, _, sh in _translated]
+            # All-empty => the native default h/2 everywhere, bit-identical to
+            # the previous four-argument call.
+            rust_results = _rust_chi_all(
+                n, word_signed, q_str, dps,
+                None if not any(avg_shifts) else avg_shifts,
+            )
             rust_chi_by_partition = {
                 tuple(lam): mp.mpf(chi_str)
                 for lam, chi_str in rust_results

@@ -43,8 +43,7 @@ entry `2·m_e·4·Vol(L6a4)`. The categorical derivation of the integer
 $2$ — vs. $[2]_q$, $2\cos(\pi/3)$, or another natural candidate — is
 not closed in this proposition; the value is consumed as an input
 hypothesis on the
-[`MagicABindingFormula`](#prop:magic-A-binding-formula) instance per
-AGENTS.md §3b-cond.
+[`MagicABindingFormula`](#prop:magic-A-binding-formula) instance.
 ## canonical witness
 
 the canonical formalism

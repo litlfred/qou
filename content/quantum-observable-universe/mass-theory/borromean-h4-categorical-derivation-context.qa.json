@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:borromean-h4-categorical-derivation-context",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-context.ts",
+    "md": "content/quantum-observable-universe/mass-theory/borromean-h4-categorical-derivation-context.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. Heading \"## Connection to the wider framework on `main`\" -> \"## Connection to the wider framework\"; \"each have a categorical home that landed on `main` after the initial derivation\" -> \"each acquired a categorical home elsewhere in the framework after the initial derivation\"; \"that was the original GAP-A-4 question (`conj:s5-so3-fiber-action`) and remains open\" -> \"that is the question posed by (`conj:s5-so3-fiber-action`), and it remains open\". The open cross-algebra obstruction and the eight refuted candidate functors survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

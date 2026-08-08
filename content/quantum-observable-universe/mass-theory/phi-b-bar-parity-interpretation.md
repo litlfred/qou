@@ -33,5 +33,4 @@ $c_2=-1$ (bar-even) is Taylor-exact, $c_3$ (bar-odd) swings $\approx 2.375\%$
 between the proton and muon anchors — so the ladder element factors as
 $F(q)=F_{\text{even}}(q)\cdot F_{\text{odd}}(q)$ with $F_{\text{odd}}$ the
 modular-double ($\Phi_b$) factor. (Scan:
-`computations/qbeta/qbeta_fmap_parity_stability_probe.py`; accuracy audit:
-`docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.)
+`computations/qbeta/qbeta_fmap_parity_stability_probe.py`.)

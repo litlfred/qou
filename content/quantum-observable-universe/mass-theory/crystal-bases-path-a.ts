@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:crystal-bases-path-a",
   title:
-    "Crystal-bases Path A: GS-reduction-free pole-order verification of $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_K) = 18Z + 21N + 1$",
+    "Crystal bases: GS-reduction-free pole-order verification of $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_K) = 18Z + 21N + 1$",
   interprets: "prop:per-nucleon-shift-additive-linearity",
   uses: [
     "prop:per-nucleon-shift-additive-linearity",

@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:stokes-dt-bps-bridge",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/stokes-dt-bps-bridge.ts",
+    "md": "content/quantum-observable-universe/mass-theory/stokes-dt-bps-bridge.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean: \"GGM Conj 3(d)\" is a literature citation, spelled out as Garoufalidis--Gu--Mariño and keyed to [`garoufalidis-gu-marino2023peacock`] in the same block — not a branch or tracker label.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

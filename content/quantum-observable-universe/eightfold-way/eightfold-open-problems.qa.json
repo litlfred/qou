@@ -11,6 +11,18 @@
     "ts": "ab0d3f67f4de"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The bean ids (`qou-8p1b`, `qou-8p1c`, `qou-sym2`, `qou-8fl1`) are gone from the evidence column and the \"no `def:octonion-algebra` in the corpus\" phrasing no longer appears; the one remaining \"audit\" is \"The obstruction audit (\\S\\ref{sec:color-algebra})\", a pointer to a section of the paper.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

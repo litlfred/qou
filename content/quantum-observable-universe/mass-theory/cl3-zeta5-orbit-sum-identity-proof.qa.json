@@ -1280,6 +1280,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The work-round numbering is gone: \"Combining round 10 + this round\" -> \"Combining the reflection-formula reductions with the identity above\"; \"Reflection-formula reductions (round 10) and multiplication-formula reductions (this prop.)\" -> the two reduction families named directly, with \"(the present proposition)\"; the table header \"Status before round 11 | Status after round 11\" -> \"Status before this proposition | Status after\"; \"Tate-rational (round 10)\" -> \"Tate-rational (reflection formula)\". All 50-dps values, the residual and every open/theorem/candidate status are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

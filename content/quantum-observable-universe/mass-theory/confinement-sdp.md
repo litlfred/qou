@@ -25,4 +25,4 @@ $$
 
 *At the generic $q$ optimum, strong duality holds and complementary slackness applies as a matrix equation.*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

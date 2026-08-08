@@ -11,6 +11,18 @@
     "ts": "e3841b8feb15"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The QA-process heading is gone: \"## Audit failure of both prior attempts\" now reads \"## Why both prior attempts fail\", and no other use of \"audit\" remains in the prose or title.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

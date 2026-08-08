@@ -1,4 +1,4 @@
-# Structural f-map Derivation Strategy
+# Structural form of the f-map
 
 The f-map $\mathcal{F}$ structurally connects the exact Habiro trace difference $\Delta\text{tr}_M$ to the categorical precision ladder $c_k(q)$.
 
@@ -10,9 +10,9 @@ $$ \frac{\Delta(\text{net})}{\Delta\text{tr}_M(q)} = \frac{8}{5w} - \frac{12}{25
 
 Since the precision ladder variable $u = b\hbar_q^2$ scales as $\mathcal{O}(w^2)$, it is impossible to express this scalar ratio as a formal power series in $u$. **Conclusion: The f-map cannot be a scalar operator.** It must be a structured transformation on the operator spectrum.
 
-## 2. Derivation Pathways (The 13-Driver Options)
+## 2. Derivation pathways
 
-Based on the scoping, we will pursue the formalized f-map via the non-scalar categorical drivers:
+A formalised f-map must therefore be sought among the non-scalar categorical routes:
 
 ### A. Faddeev Recursion (Modular limit)
 The Habiro coefficients $a_m \in \mathbb{Z}[u]$ inherently encode the cyclotomic completion. The Faddeev $\Phi_q$ function relates the $q$-difference of the Markov parameter $z(q)$ directly to the modular dual expansion. This bypasses the $1/w$ pole by evaluating the trace at the operator level before taking the classical trace.
@@ -25,5 +25,6 @@ While also singular as a scalar, the Hexagon equations apply $\mathcal{F}$ as a 
 ### C. Direct Cyclotomic Polynomial Map
 The exact integer sequence $a_m$ from the witness can be algorithmically mapped to the $c_k$ sequence by matching the cyclotomic poles of the Habiro expansion to the roots of the $q$-Pochhammer symbols in the ladder. 
 
-## Next Steps
-We will begin formally scaffolding the **Direct Cyclotomic Map** (Option 3) alongside the **Hexagon Equations** (Option 2) in Lean to rigorously define the functor mapping the Habiro coefficients $a_m$ to the precision ladder $c_k$.
+## What remains open
+
+The functor mapping the Habiro coefficients $a_m$ to the precision ladder $c_k$ is not yet defined. The direct cyclotomic map (C) and the hexagon equations (B) are the two candidate routes to it.

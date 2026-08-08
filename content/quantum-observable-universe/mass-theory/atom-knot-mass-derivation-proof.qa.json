@@ -1337,6 +1337,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Pass. The flagged witness citation under `blob/claude/mass-units-bridge-followups/` had already been rewritten to the repo-relative path `../../../computations/gb-filtration-jet-order.witness.json`. Re-read in full; additionally repaired one sentence an earlier link removal had left ungrammatical — \"(renamed from $\\rho$ in to disambiguate from ...)\" now reads \"(renamed from $\\rho$ to disambiguate from ...)\". No other branch, tracker or workplan reference remains.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

@@ -32,7 +32,7 @@ export default proposition({
   title:
     "Elementary symmetric polynomials in Jucys–Murphy elements are central in $H_n(q)$ with closed-form spectrum on each Wedderburn block",
   lean: {
-    ref: "qou:QOU.BraidKnot.JucysMurphyCentralElementsQOU",
+    ref: "qou:QOU.BraidKnot.jm_esymm_central",
     validation: "not_checked",
   },
   uses: ["prop:frobenius-self-duality-forces-lp-dual-extraction"],

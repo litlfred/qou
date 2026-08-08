@@ -64,7 +64,7 @@ The open requirement is the functional form $f_2$. The naive logarithmic form $\
 
 ## Dependencies
 
-- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md): The lepton-sector variant. It gates on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
+- [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md): The lepton-sector variant. It depends on the graded-expansion formalism but evaluates at $Z = N = 0$, nullifying the atomic LO piece. It requires its own dimensional factor $\xi_\ell(q)$.
 - [`conj:mass-endomorphism`](mass-endomorphism-conjecture.md): The unifying closed-form mass element $\Phi_{\text{mass}}(W) \in H_{3A}(q)$. The present conjecture restricts this to the pair level.
 
 ## Lean formalization
@@ -94,7 +94,7 @@ end QOU.BraidKnot.RhoKPairGenCanonicalForm
 Deriving the canonical $f_2$ yields four consequences:
 1. This conjecture elevates to a theorem.
 2. The open status of [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md) §pair-gen resolves to proved.
-3. Downstream conjectures unblock, specifically [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md).
+3. Downstream conjectures become reachable, specifically [`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md).
 4. The $\mathfrak{Q}_\beta$ residual closure direction becomes tractable.
 
 ## Archimedean specialization

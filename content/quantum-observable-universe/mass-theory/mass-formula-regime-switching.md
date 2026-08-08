@@ -15,4 +15,4 @@ $$
 
 The Schur-Weyl evaluation applies directly to the light satellite topology of the deuteron. For the Borromean topologies at $A \ge 3$, collective Wedderburn states dominate the mass formula. This is not double counting. Each regime merely selects the convergent limits of the exact unified mass functional.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

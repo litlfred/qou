@@ -99,7 +99,7 @@ $m_{\mathfrak{p}} = 2(m_\mu \cdot F_{\mathrm{Bor}} - 6 m_e)$, which establishes 
 mass scale natively without empirical proton calibration fits.
 
 **Connection to the $\alpha_{\mathrm{shift}}$ framework.**
-The Habiro denominator factorisation ([w3 audit](../../docs/audits/-w3-habiro-unblocked.md)) provides the exact structure for $D(u)$:
+The Habiro denominator factorisation provides the exact structure for $D(u)$:
 
 $$
   D(u) \;=\; 2^{2A+1} \cdot u^{\mathrm{shift}} \cdot (1 + u^2)^{3A-1}.

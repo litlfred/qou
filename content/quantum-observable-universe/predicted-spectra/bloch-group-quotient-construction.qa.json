@@ -13,6 +13,18 @@
     "lean": "54f4c0126d5a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The AGENTS.md section ids are gone: \"The §3b-cond chain anchored by `prop:archimedean-functor-uniqueness`\" now reads \"The conditional-class chain anchored by ...\", and the surrounding \"remaining work\" list names ordinary open mathematical problems (pentagon identity, regulator injectivity, the Suslin map).",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

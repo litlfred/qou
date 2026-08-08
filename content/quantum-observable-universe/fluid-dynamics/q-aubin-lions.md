@@ -26,4 +26,4 @@ The anti-parallel vortex pair initial data causes the filaments to approach at r
 **Conjecture (q-Aubin--Lions).**
 Under the hypotheses above, there exists a subsequence $q_n \to 1$ such that $v_{q_n} \to v^*$ weakly in $L^2$. $v^*$ is a weak solution of the Navier--Stokes equation, satisfies the energy inequality, and is smooth off a singular set of Hausdorff dimension $\leq 1$.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -13,6 +13,18 @@
     "lean": "9da15eb5ac8e"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The `docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md` citation is gone; the proved-engine paragraph now cites the `chebyshev-pairing-engine.witness.json` witness instead.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

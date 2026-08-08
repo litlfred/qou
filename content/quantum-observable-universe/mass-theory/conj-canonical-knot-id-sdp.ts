@@ -26,6 +26,6 @@ export default conjecture({
     // currently delegates to `strict_complementarity_unique` which
     // still has a sorry for the general kernel-uniqueness step;
     // this manifest cites the proven concrete instance instead.
-    ref: "qou:QOU.BraidKnot.helium3_uniqueness_closed",
+    ref: "qou:QOU.BraidKnot.CanonicalKnotIdSDP",
   },
 });

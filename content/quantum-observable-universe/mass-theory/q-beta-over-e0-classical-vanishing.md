@@ -14,7 +14,7 @@ $$
 
 *satisfies $S(q = 1) = 0$ as an algebraic identity over any commutative ring.*
 
-The shape-collapse audit states that $c_k$ comes from the $u_{\text{ladder}}$ Taylor expansion of $S(q) = \mathfrak{Q}_\beta(q)/E_0(q)$. Taken literally, this is degenerate. The Taylor expansion of $S/S(1)$ around $q = 1$ is $0/0$. The proved $c_2 = -1$ cannot be recovered this way.
+One reading has $c_k$ coming from the $u_{\text{ladder}}$ Taylor expansion of $S(q) = \mathfrak{Q}_\beta(q)/E_0(q)$. Taken literally, this is degenerate. The Taylor expansion of $S/S(1)$ around $q = 1$ is $0/0$. The proved $c_2 = -1$ cannot be recovered this way.
 
 The term $S = \mathfrak{Q}_\beta / E_0$ is the SDP-constraint scalar (canonical at $q_0$, matching the affine target $n_{\text{target}} = S(q_0) \approx 0.18689$). The $c_k$ ladder normalization is $\mathfrak{Q}_\beta / [Q_A \cdot \cos(\alpha_{\text{eff}})]$, with $Q_A$ and $\alpha$ read from the operator-valued $N{=}3$ witness. This proposition exposes the algebraic obstruction that identifies the missing categorical input ($Q_A(q)$ and $\alpha(q)$).
 

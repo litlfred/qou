@@ -48,9 +48,9 @@ Bloch–Wigner regulator lives. Predicted at every depth $n$ is an
 analogous statement: *colored quantum invariants built from
 $\mathrm{Li}_n^q$ asymptote to weight-$n$ Goncharov periods.*
 
-### Implications of accepting the keystone
+### Implications of accepting the depth correspondence
 
-The keystone correspondence does **not** prove the Volume Conjecture.
+The depth correspondence does **not** prove the Volume Conjecture.
 What it does is reduce the conjecture to two structurally smaller
 claims:
 

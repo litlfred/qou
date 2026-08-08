@@ -13,6 +13,18 @@
     "lean": "3b32effef2f7"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The boilerplate now reads \"**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall\", dropping both the \"(§7c)\" tag and \"This block\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

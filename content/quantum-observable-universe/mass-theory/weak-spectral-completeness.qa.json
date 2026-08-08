@@ -1660,6 +1660,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"strictly smaller than the brute-force monomial basis of the impasse audit\" -> \"... used previously\"; the heading \"### Downstream consequence — closes NV-1\" -> \"### Downstream consequence — the weak-scale crossing count\"; \"### Audit-flag impact\" -> \"### Consequences\", and \"**NV-1**: hard flag closed via constrained PSLQ on the extended basis\" -> \"**the weak-scale crossing count $N_v$**: pinned by constrained PSLQ on the extended basis\". The conditional \"If this conjecture closes\" framing, the $G_F$ consequence and the superseded-Plancherel-basis note are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

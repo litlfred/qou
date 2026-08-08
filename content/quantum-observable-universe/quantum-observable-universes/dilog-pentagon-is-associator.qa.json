@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:dilog-pentagon-is-associator",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator.ts",
+    "md": "content/quantum-observable-universe/quantum-observable-universes/dilog-pentagon-is-associator.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"The same Mac Lane coherence already appears in the corpus in two formalized guises\" is now \"has already appeared above in two formalized guises\". Both guises, their Lean names and the sorry-free status are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

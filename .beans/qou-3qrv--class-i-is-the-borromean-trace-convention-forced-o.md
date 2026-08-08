@@ -4,8 +4,66 @@ title: 'Class I: is the Borromean trace CONVENTION forced, or selected because i
 status: todo
 type: task
 created_at: 2026-08-08T09:02:45Z
-updated_at: 2026-08-08T09:02:45Z
+updated_at: 2026-08-08T12:40:00Z
 ---
+
+> ## ANSWERED 2026-08-08 — `claude/3qrv-borromean-trace-convention-2026-08-08`
+>
+> Full write-up:
+> [`docs/audits/2026-08-08-borromean-trace-convention-forcing.md`](../docs/audits/2026-08-08-borromean-trace-convention-forcing.md).
+>
+> **1. The 6.7 % below is a FALSE ALARM — retract it.** It is not a trace
+> convention at all. `tr_M_atomic(1,0)` traces a **different braid word**: an
+> 11-crossing atomic word (confinement core *grouped* as `σ₀³σ₁⁻³`, plus 3
+> quark-pair and 2 gluon crossings), not the 6-letter `β_Bor`. Tracing the
+> **pure** `(σ₀σ₁⁻¹)³` through the *same* machinery gives
+> **0.998366622585716 = convention C exactly** (195.8 ppm from D), reproducing
+> the registry's documented D−C gap. The bean's phrase *"convention D for the
+> same braid"* is the error — the braids differ. `tr_M_atomic` is not a fifth
+> convention; it answers a different question.
+> (`computations/probe3qrv.py`)
+>
+> **2. Verdict on (a) vs (b): (a) for the mathematics, (b) for the premise.**
+>
+> *(a) — the forcing argument now exists and is proved.* A normalised Markov
+> trace on H₃(q) is fixed by `(tr 1, tr σ₀, tr σ₀σ₁) = (1, z, z²)`, so the
+> weights are a 3×3 solve in the Ocneanu parameter `z`. The Temperley–Lieb
+> condition `y_(1³)(z) = 0` has exactly **two** roots: `z = q`, degenerate
+> (weights `(1,0,0)` — it kills the 2-row block too, so it is not faithful on
+> TL₃), and `z = q³/(q²+1)`, whose weight vector is exactly
+> `([4]_q/[2]_q³, 1/[2]_q², 0)` = **convention D**. So **D is the unique Markov
+> trace factoring through TL₃ and faithful on it** — no residual freedom, no
+> CODATA anywhere in the chain. Sorry-free in
+> [`MarkovTraceTLUniqueness.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)
+> (`lean`-direct exit 0; `#print axioms` → `[propext, Classical.choice,
+> Quot.sound]`, no `sorryAx`). Now written into the `trM_borromean` docstring,
+> which previously asserted the convention with no justification.
+>
+> *(b) — the premise is NOT established, and the corpus contradicts itself.*
+> **This is the headline finding.** The scope note of
+> `prop:h3-markov-wenzl-weights`
+> ([`h3-markov-wenzl-weights-context.md`](../content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md))
+> says verbatim that the **mass and binding computations use the full-Hecke
+> Ocneanu trace** — convention **C** — while production uses **D**
+> (`canonical_mass.py:108` → `F_Bor` → `trM_borromean`). Switching to the trace
+> the paper names moves m_p by **−197 ppm**. The same note also claims the two
+> traces coincide on writhe-0/π=id braids so "every physical mass prediction is
+> insensitive to the distinction"; `β_Bor` **is** such a braid and `D−C =
+> 1.9554e-4` there exactly, so that sentence is false.
+>
+> **3. What is actually open** — one categorical fact, not a numerical
+> question: *does the mass fibre functor land in `Rep(SU_q(2)) ≃ TL₃` or in
+> full `H₃(q)`?* If TL, D is forced and the scope note needs correcting. If
+> full H₃, production is on the wrong trace by 197 ppm. **The answer must not
+> be read off which value matches CODATA.**
+>
+> **4. Also superseded:** `h3-markov-wenzl-weights-proof.md` §Step 3 derives
+> `y_(2,1) = 1/[2]_q²` *by comparing against the Borromean closed form* — fine
+> for its own purpose, but it cannot serve as a forcing argument because it
+> inputs the answer. The derivation above uses only the Markov axioms, the
+> character table, and TL.
+>
+> Nothing wired, no tier changed, no production value altered.
 
 Surfaced 2026-08-08 (PR #4727) while scoping Class I (the μ–p tension) per the
 owner's "attack options class 1?". **Flag, not a refutation** — raised under the

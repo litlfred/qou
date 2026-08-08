@@ -1347,6 +1347,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The bare nickname is resolved -- \"The graded-Mikusiński keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) predicts the origin of each relation by depth\" -- and \"ledger\" is used mathematically and explained in place (\"We provide the dual ledger to [`rem:algebraic-core-survives`]. That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals\"), i.e. an accounting of periods, not the project tracking surface.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

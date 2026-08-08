@@ -34,5 +34,15 @@ export default proposition({
         "therefore sits on the archimedean side of the §7c wall by " +
         "construction.",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "Moved out of the published prose (one-voice sweep): the closing line " +
+        "used to read \"The full brick-by-brick chain is recorded in the " +
+        "keystone arc map.\" That pointer belongs here \u2014 the arc map is a " +
+        "planning record, not part of the manuscript \u2014 and the prose now " +
+        "ends on the mathematical hedge it already carried.",
+    },
   ],
 });

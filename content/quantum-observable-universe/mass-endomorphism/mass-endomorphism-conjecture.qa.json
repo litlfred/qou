@@ -13,6 +13,18 @@
     "lean": "f8545ec8a6eb"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The pipeline unit is gone: \"Every algebraic downstream block that relies on the mass tower routes through this infinite series\" no longer appears. The surviving \"Markov-trace audit on ${}^3\\mathrm{He}$\" is a mathematical verification, as its own next sentence says (\"Verify $|\\mathrm{tr}_M(\\beta_{{}^3\\mathrm{He}})|$ at $q_0$ against the canonical reducer\").",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

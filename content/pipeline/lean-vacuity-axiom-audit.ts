@@ -494,12 +494,37 @@ function detectTrivialTrue(
   // inhabited). They are NOT scanned for the reflexive-tautology case (a
   // real def legitimately reduces to a value).
   const isDodge = DODGE_KINDS.test(d.kind);
-  if (!isProvable && !isDodge) return undefined;
-  const concl = conclusionOf(d.sig);
+  // `axiom X : True` was invisible here until 2026-08-08: `axiom` is neither
+  // a PROVABLE_KIND nor a DODGE_KIND, so the guard below dropped it before any
+  // pattern ran. It is the purest form of the anti-pattern — an axiom whose
+  // conclusion is `True` asserts nothing, has no body to inspect, and (unlike
+  // a `theorem`) is not even *provable*-looking, so no reader thinks to check
+  // it. Live instance that motivated this: `QOU.Eightfold.Sym2Gate`'s
+  // `su3_sym2_irreducible`, an `axiom … : True` standing in for "the SU(3)
+  // fundamental has irreducible Sym²" (drain: bean `qou-8fl1` item 3).
+  const isAxiom = /^axiom\b/.test(d.kind);
+  if (!isProvable && !isDodge && !isAxiom) return undefined;
+  // Strip `--` line comments from the conclusion before pattern-matching.
+  // A commented-out explanation sitting between the `:` and the actual
+  // conclusion hides the conclusion from every test below — which is exactly
+  // how `su3_sym2_irreducible` evaded this detector even after `axiom` was
+  // admitted above:
+  //
+  //     axiom su3_sym2_irreducible :
+  //       -- "For V = the SU(3) fundamental (dim 3), Sym²(V) is irreducible."
+  //       True
+  //
+  // The prose is where the real claim lives; `True` is what is asserted.
+  const concl = conclusionOf(d.sig)
+    .replace(/--[^\n]*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   const body = d.body.trim();
   let pattern: string | undefined;
-  if (/^True\b/.test(concl) || concl === "True") pattern = "conclusion-True";
-  else if (/^True(\s*[∧×]\s*True)+$/.test(concl)) pattern = "conclusion-True-conj";
+  if (/^True\b/.test(concl) || concl === "True")
+    pattern = isAxiom ? "axiom-true" : "conclusion-True";
+  else if (/^True(\s*[∧×]\s*True)+$/.test(concl))
+    pattern = isAxiom ? "axiom-true" : "conclusion-True-conj";
   else {
     // Tautological conclusions — provable kinds only. The STATEMENT asserts
     // nothing, so the body is irrelevant (rfl, sorry, simp, decide all
@@ -799,13 +824,31 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
 // missed by a `;`-only pattern.
 const RFL_BODY =
   /^(?:rfl|by\s+rfl|by\s+(?:unfold|delta|show|simp\s+only|with_unfolding_all)\b[^;\n]*[;\n]\s*rfl)\s*$/;
+/**
+ * The same blindness, wearing an existential.
+ *
+ * `∃ a, a = e` proved `⟨_, rfl⟩` consults no hypothesis either — the witness
+ * is handed over and `rfl` closes the equation. `RFL_BODY` never matched it
+ * because the body is an anonymous constructor rather than the token `rfl`,
+ * so a statement could bind any number of decorative hypotheses and stay
+ * invisible to this detector. Ten such declarations sat in
+ * `docs/audits/2026-08-07-lean-vacuous-existential-audit.json` — found by the
+ * standalone `scripts/lean-vacuous-existential-audit.py`, flagged by nothing
+ * that gates.
+ *
+ * Whitespace is collapsed before matching, so the `by`-block form
+ * (`by\n  exact ⟨.borromean, rfl⟩`) is covered by the same pattern.
+ */
+const ANON_RFL_BODY = /^(?:by\s+exact\s+)?⟨[^⟨⟩]*,\s*rfl⟩$/;
 /** A binder type that looks like a proposition rather than data. */
 const PROP_SHAPED = /[=≤<≥>≠∈∣]|↔|→|∧|∨|¬|Odd\b|Even\b|Prime\b/;
 
 function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body.trim();
-  if (!RFL_BODY.test(body)) return undefined;
+  const collapsed = body.replace(/\s+/g, " ").trim();
+  const anon = ANON_RFL_BODY.test(collapsed);
+  if (!RFL_BODY.test(body) && !anon) return undefined;
   const concl = conclusionTypeAscription(d.sig);
   if (!concl) return undefined;
 
@@ -820,15 +863,24 @@ function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
       if (!/^_?[a-zA-Z_][\w']*$/.test(n)) continue;
       // Used by the statement itself? then it is not decoration.
       if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(concl)) continue;
+      // Used by the PROOF? A bare `rfl` mentions nothing, but an anonymous
+      // constructor supplies a witness that can be built from a hypothesis
+      // (`⟨h.choose, rfl⟩`), and then the binder is load-bearing. Checking
+      // the body is a no-op for the `rfl` shapes and required for this one.
+      if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(body)) continue;
       unused.push(n);
     }
   }
   if (unused.length === 0) return undefined;
   // `_`-prefixed names are the author explicitly recording non-use — the
   // strongest form of the signal, and worth distinguishing in the witness.
-  const pat = unused.every((n) => n.startsWith("_"))
-    ? "rfl-with-underscored-hypothesis"
-    : "rfl-with-unused-hypothesis";
+  const pat = anon
+    ? unused.every((n) => n.startsWith("_"))
+      ? "rfl-witness-with-underscored-hypothesis"
+      : "rfl-witness-with-unused-hypothesis"
+    : unused.every((n) => n.startsWith("_"))
+      ? "rfl-with-underscored-hypothesis"
+      : "rfl-with-unused-hypothesis";
   const h = mk(d, "proof-no-unused-hypothesis-rfl", pat, false);
   h.detail =
     `proof is \`${body}\`, which uses no hypothesis, yet the statement binds ` +

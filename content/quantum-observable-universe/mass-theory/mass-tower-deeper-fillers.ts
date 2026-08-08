@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:mass-tower-deeper-fillers",
   title:
-    "Deeper §3b-cond fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon",
+    "Deeper conditional-class fillers: Term-7 enumeration, Demazure sub-crystals, KL classical limit, BlochGroup carrier, Cl_2 pentagon",
   interprets: "prop:crystal-basis-resolves-mass-tower-open-problems",
   uses: [
     "prop:type-b-folded-crystal-combinatorics",

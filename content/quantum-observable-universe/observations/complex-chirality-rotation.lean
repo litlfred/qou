@@ -48,17 +48,18 @@ class ComplexChiralityRotation : Prop where
   chirality_interpolation : ∀ (phi : ℝ), ChiralityInterpolationHolds phi
   cpt_quotient : CPTAsQuotientHolds
 
-axiom complex_chirality_rotation_crossing_energy_phase : ∀ (n_c : ℤ), CrossingEnergyPhaseFactorHolds n_c
-axiom complex_chirality_rotation_chirality_interpolation : ∀ (phi : ℝ), ChiralityInterpolationHolds phi
-axiom complex_chirality_rotation_cpt_quotient : CPTAsQuotientHolds
-
--- Ref: [manuscript] conj:complex-chirality-rotation
-instance complex_chirality_rotation_conjecture : ComplexChiralityRotation where
-  -- Witness: computations/none
-  crossing_energy_phase := complex_chirality_rotation_crossing_energy_phase
-  -- Ref: [manuscript]
-  chirality_interpolation := complex_chirality_rotation_chirality_interpolation
-  -- Ref: [manuscript]
-  cpt_quotient := complex_chirality_rotation_cpt_quotient
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance complex_chirality_rotation_conjecture : ComplexChiralityRotation where
+--     axiom complex_chirality_rotation_crossing_energy_phase : ∀ (n_c : ℤ), CrossingEnergyPhaseFactorH
+--     axiom complex_chirality_rotation_chirality_interpolation : ∀ (phi : ℝ), ChiralityInterpolationHo
+--     axiom complex_chirality_rotation_cpt_quotient : CPTAsQuotientHolds
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[ComplexChiralityRotation]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[ComplexChiralityRotation]` as an explicit hypothesis.
 
 end QOU.ComplexChiralityRotation

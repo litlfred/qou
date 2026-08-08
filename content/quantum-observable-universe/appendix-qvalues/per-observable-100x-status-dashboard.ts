@@ -17,7 +17,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:per-observable-100x-status-dashboard",
   title:
-    "Per-observable 100× experimental status dashboard (L2 precision-goal)",
+    "Per-observable 100× experimental accuracy status",
   // Tagged as a glossary-style status block: it does not interpret a
   // specific provable claim; it surfaces the live L2 dashboard so the
   // witness is auto-regenerated. Avoids the `interprets:` field (per

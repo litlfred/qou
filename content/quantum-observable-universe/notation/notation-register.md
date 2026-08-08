@@ -1,4 +1,4 @@
-Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where we first introduce each. Within a chapter, we sort entries alphabetically by concept name. This block is authoritative. We refer to it in `AGENTS.md` §7aa.
+Every mathematical symbol used in this paper belongs to exactly one register. The tables below group symbols by the chapter where we first introduce each. Within a chapter, we sort entries alphabetically by concept name.
 
 ### Quantum universes (Chapter 1)
 
@@ -38,6 +38,6 @@ See [Table 10](#tbl:notation-register-table10-data).
 
 ### Lean source convention (cross-chapter)
 
-This convention applies to every `.lean` file in the paper. It mirrors [`AGENTS.md` §7c](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-generic-r-vs-archimedean-r-strict).
+This convention applies to every `.lean` file in the paper.
 
 See [Table 9](#tbl:notation-register-table9-data).

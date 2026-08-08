@@ -50,6 +50,11 @@ export default proposition({
   },
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-08",
+      body: "Provenance dropped from the published prose of the $T_2$ item: the operator-valued form of Sub-lemma 2.1 is closed conditional on `conj:crystal-graph-realization` via the combinatorial $R$-matrix on $B_\\mu \\otimes B_\\nu$ at $q \\to 0$, written up in [`docs/audits/-crystal-r-matrix-sublemma-2-1.md`](../../../docs/audits/-crystal-r-matrix-sublemma-2-1.md). The scalar-form audit is already linked in the note below.",
+    },
+    {
       kind: "status",
       body: "- **Sub-lemma 2.1** is established categorically in [`docs/audits/-sub-lemma-2-1-categorical-proof.md`](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md). The block decomposition of $\\rho_\\lambda(I)$ uses standard branching (Macdonald §I.5) + Hoefsmit seminormal form, with off-diagonal Case-B contributions shown to vanish in the trace.\n- **Lean formalisation of $T_1$ and $T_3$**: see [`confinement-nf-partial-proof.lean`](#) — currently `sorry`-stubs against an LP-duality library; routine integration with Mathlib's LP infrastructure once it lands.\n- The atomic n-context shifts $\\mathrm{shift}_{\\mathrm{NF}}(\\mathcal{B}_p) = 18$ and $\\mathrm{shift}_{\\mathrm{NF}}(\\mathcal{B}_n) = 21$ are derived in commit [`2f186ebc9`](https://github.com/litlfred/qou/commit/2f186ebc9) on `claude/improve-charge-precision-AXKIA`. The coefficients emerge as **per-NEW-nucleon additive contributions**:\n\n| Per new nucleon | $\\Delta\\sigma$ | $\\Delta\\sigma^{-1}$ | $\\Delta$avg | $\\Delta$total generators | $\\Delta$pole order | $\\Delta$cancellation | **$\\Delta$shift** |\n|---|---:|---:|---:|---:|---:|---:|---:|\n| +proton | +7 | +3 | +2 | +12 | +9.0 | +3.0 | **+18** |\n| +neutron | +5 | +5 | +2 | +12 | +10.5 | +1.5 | **+21** |\n\n   Verified at all 6 atomic transitions D$\\to$T, D$\\to$${}^{3}$He, T$\\to$${}^{4}$He, ${}^{3}$He$\\to$${}^{4}$He, ${}^{4}$He$\\to$${}^{5}$Li, ${}^{5}$Li$\\to$${}^{6}$Li. Per-new-proton = 18 and per-new-neutron = 21 hold **independent of the host nucleus**, giving the additive linearity in (Z, N) that the empirical formula encodes.",
     },

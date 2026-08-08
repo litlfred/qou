@@ -13,6 +13,18 @@
     "lean": "d210f24ba2a7"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the published title is now plain \"Markov-trace operator construction\", and the body's \"**Archimedean specialisation (§7c).** This block sits\" became \"**Archimedean specialisation.** What follows sits\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {
