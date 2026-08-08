@@ -1,6 +1,6 @@
 ---
 # qou-z3k1
-title: 'GAP: tactic-ladder oracle finds 4 vacuous decls no static detector catches (+2 definitional restatements)'
+title: 'GAP: tactic-ladder oracle finds 3 vacuous decls the vacuity audit misses (+2 definitional restatements)'
 status: todo
 type: task
 priority: high
@@ -23,26 +23,43 @@ because the vacuity is semantic rather than syntactic.
 
 ## Corpus-grep (AGENTS.md "Before declaring open")
 
-Checked all six against `docs/audits/2026-08-07-lean-vacuous-existential-audit.json`
-on main (the sibling 17-item audit, 4 drained as of 402240a1b6): **none of the
-six appear in it**. The grep hits under `docs/audits/` were all
-`lean-atlas-deps.json`, which mechanically indexes every declaration and carries
-no verdict. So these extend that audit rather than duplicate it — coordinate
-with whoever owns it before draining.
+**Two passes, and the first was not enough — recorded because the gap is the
+reusable lesson.**
 
-## GENUINE — assert nothing
+Pass 1 (audit *docs*): checked all six against
+`docs/audits/2026-08-07-lean-vacuous-existential-audit.json` on main (the sibling
+17-item audit, 4 drained as of 402240a1b6) — none present. The other
+`docs/audits/` hits were all `lean-atlas-deps.json`, which mechanically indexes
+every declaration and carries no verdict.
 
-1. `delta_max_numerical_scale` — `lean/QOU/Appendix/DeltaMaxNumericalScale.lean:9`
+Pass 2 (live *detector*): ran
+`bun run content/pipeline/lean-vacuity-axiom-audit.ts content` — 120 defects, 81
+exempt. **This retracted one of the six.** Grepping audit prose is not the same
+as running the gate; a detector can already cover a case that no audit doc
+mentions. Run the checker, not just `grep`.
 
-       theorem delta_max_numerical_scale [ctx : DeltaMaxNumericalScaleContext] :
-           (1 : ℝ) = 1 := ctx.holds
+### RETRACTED — already a counted defect
 
-   Conclusion is literally `1 = 1`. Banned twice over: AGENTS.md §Strict Lean
-   Discipline item 5 (tautological conclusion) and §3b-cond item 5 (the class is
-   consumed as a bare projection, so the theorem derives nothing). Named as if it
-   establishes a numerical scale for Δ_max.
+`delta_max_numerical_scale` (`lean/QOU/Appendix/DeltaMaxNumericalScale.lean:9`)
+is **already flagged critical and NOT exempt** by
+`proof-no-self-assuming-projection` / `field-projection`, at exactly the line
+reported. It is a re-discovery, not a finding. It remains a real defect —
+`theorem … [ctx : DeltaMaxNumericalScaleContext] : (1 : ℝ) = 1 := ctx.holds`,
+banned by both §Strict Lean Discipline item 5 and §3b-cond item 5 — but it is
+already in the queue and belongs to whoever drains that category.
 
-2. `LevelSufficiency` — `knots-particles-confinement/level-sufficiency.lean:72`
+## GENUINE — assert nothing, and the audit does not flag them
+
+1. `LevelSufficiency` — `knots-particles-confinement/level-sufficiency.lean:72`
+
+   **Name-collision caveat (checked).** The audit *does* flag a
+   `LevelSufficiency` — but a DIFFERENT declaration: a `def` in the library tree
+   at `lean/QOU/BraidKnot/LevelSufficiency.lean:104`, and flagged **exempt**
+   ("canonical §3b placeholder projection"). The content-block file
+   `knots-particles-confinement/level-sufficiency.lean` is **not flagged at
+   all**. Two objects sharing a glyph, per the registry §2 rule that attributes
+   do not transfer across overloaded symbols — do not let the exempt library
+   `def` launder the unflagged content-block `theorem`.
 
        theorem LevelSufficiency (P P' : ConfinedParticleTy) (q : ℝ)
            (_h_unfold : unfolds P P') (_h_cover : kMax P q ≤ coarseStrands P) :
@@ -54,35 +71,51 @@ with whoever owns it before draining.
    its particle argument, which is a defect in the definition, not just the
    theorem.
 
-3. `hadron_operations_closure` — `knots-particles-confinement/hadron-operations-closure.lean:35`
+2. `hadron_operations_closure` — `knots-particles-confinement/hadron-operations-closure.lean:35`
 
    Four conjuncts of the form `∀ n, ∀ h : Hadron n, ∃ h' : Hadron n, h' = op n h`.
    Vacuously true for any total function (take `h' := op n h`). Asserts nothing
    about closure beyond well-typedness.
 
-4. `cp_violation_spectral_form` — `observations/cp-violation-spectral-form.lean:48`
+3. `cp_violation_spectral_form` — `observations/cp-violation-spectral-form.lean:48`
 
        ∃ δ : ℝ, δ = (W.chiAlt / W.chiSym).im := ⟨(W.chiAlt / W.chiSym).im, rfl⟩
 
    "There exists a real equal to this real."
 
-Items 3–4 are the vacuous-existential class of the sibling audit; items 1–2 are
-not (1 is a tautology, 2 is an unused-hypothesis `rfl`).
+Items 2–3 are the vacuous-existential class of the sibling audit; item 1 is not
+(it is an unused-hypothesis `rfl`).
+
+All three verified absent from the live detector by FILE path, not by name
+substring — `hadron-operations-closure`, `cp-violation-spectral-form` and
+`level-sufficiency` are each `NOT FLAGGED`.
 
 ## DEFINITIONAL RESTATEMENT — `rfl` + unused hypothesis, restates its own `def`
 
-5. `strangelet_double_beta` — `observations/strangelet-double-beta.lean:65` —
+4. `strangelet_double_beta` — `observations/strangelet-double-beta.lean:65` —
    `unfold double_beta_rate; rfl`, with `(hq : 1 < q)` unused.
-6. `borel_partial` — `lean/QOU/AppendixSurreals/BorelPartialResolution.lean:19` —
+5. `borel_partial` — `lean/QOU/AppendixSurreals/BorelPartialResolution.lean:19` —
    `rfl`, with `(_ : 2 ≤ n)` unused.
+
+Both verified `NOT FLAGGED` by file path.
 
 Per AGENTS.md §Strict Lean Discipline item 8 these are notation, not theorems,
 and should be `def`/`abbrev` or dropped.
 
 ## Scope
 
-Scope-**(a)** per AGENTS.md §"Before declaring refuted": the *Lean* for these six
-carries no content. NOT a claim the underlying mathematics is wrong.
+Scope-**(a)** per AGENTS.md §"Before declaring refuted": the *Lean* for these
+five carries no content. NOT a claim the underlying mathematics is wrong.
+
+## Why the ladder oracle still earns its cost
+
+The retraction narrows the claim but does not void it. Of six candidates, one
+was already gated and five were not — and the five are invisible to the static
+detectors *by construction*: `proof-no-self-assuming-projection` matches bodies
+shaped like `ctx.field`, so an unused-hypothesis `rfl` (item 1), a vacuous
+existential discharged by `⟨x, rfl⟩` (items 2–3), and a `def`-restating `rfl`
+(items 4–5) cannot match it however the regexes are tuned. Semantic vacuity
+needs an oracle that runs the elaborator.
 
 ## Not edited
 
