@@ -1,11 +1,11 @@
 ---
 # qou-qbg2
 title: 'S1: settle the q-Borel growth budget — no unramified level d absorbs deg_q(c_n)=n^2 (do BEFORE S2/S3)'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-08-08T08:30:00Z
+updated_at: 2026-08-08T09:25:00Z
 ---
 
 **A formalize-first prune already bites here.** With `deg_q(c_n) = n^2` now
@@ -71,3 +71,26 @@ Caveat retained: this is a DEGREE-budget determination, not a theorem about RSZ'
 analytic construction. It fixes which pairing can converge; it does not by itself
 construct the transform. S2 (`qou-qbr3`) is now unblocked and its target is
 confirmed: the square roots of the slope blocks.
+
+## INTERPRETATION WITHDRAWN 2026-08-08 (same day) — see qou-qbp5
+
+The arithmetic here is fine and the Lean theorem stands:
+`QOU.QBeta.ramified_qBorel_budget : m^2 = m(m-1) + m`, sorry-free.
+
+What is withdrawn is the **reading** of it. This bean concluded "ramification is
+forced, and level 2 is the matching kernel" for C1. That used `d = 2` on the
+strength of the 08-01 audit's "slope 1/2 => level d = 2 (denominator)". RSZ p.38
+in fact defines `d := mu_2 - mu_1 in N` -- the **difference between two
+consecutive slopes** -- and §3.3 is titled "in the case of INTEGRAL slopes".
+
+C1 has ONE slope, and it is not integral. So there is no RSZ level `d` for C1's
+infinity in this sense, and "the level-2 kernel is the resolving transform for
+C1" is not supported.
+
+**Honest residue.** What survives is a statement about the two functions, with no
+claim that either is C1's resolving transform: the exponent sequence `m^2` sits
+exactly `m` above the sequence `qBorelExp 2 (2m) = m(m-1)`. That is a true and
+mildly interesting numerical fact; it is NOT evidence that `B_{q,2}` resolves C1.
+
+Do not cite this bean as establishing the transform. Re-open only if `qou-qbp5`
+resolves in a way that restores a level to C1's infinity.

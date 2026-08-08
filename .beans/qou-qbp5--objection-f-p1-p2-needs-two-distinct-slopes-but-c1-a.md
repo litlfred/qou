@@ -1,11 +1,11 @@
 ---
 # qou-qbp5
 title: 'OBJECTION: F(P1,P2) needs TWO distinct slopes, but C1 at infinity has ONE - is the ''two Stokes multipliers'' target well-posed?'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T09:05:00Z
-updated_at: 2026-08-08T09:05:00Z
+updated_at: 2026-08-08T09:25:00Z
 ---
 
 **Raised 2026-08-08 while doing S2. This may invalidate the S3 target as framed;
@@ -71,3 +71,57 @@ Do NOT write "refuted" anywhere on the basis of this bean. What is warranted is:
 - **van der Put-Reversat [56]** (pure-module classification; NOT in `uploads/`) --
   needed to confirm the irreducibility claim for slope `d/r` coprime. This is the
   one genuine external ask.
+
+## CONFIRMED 2026-08-08 by RSZ's own text — and it is worse than the objection
+
+Read §3.3 in full. Three direct quotes settle it.
+
+**1. §3.3 is only about INTEGRAL slopes.** Its title:
+
+    "3.3. EXPLICIT DESCRIPTION OF F(P1,...,Pk) IN THE CASE OF INTEGRAL SLOPES"
+
+C1's slope is 1/2. Not integral. §3.3 does not apply to it at all.
+
+**2. The "level d" is the SLOPE DIFFERENCE, not a denominator.** RSZ p.38,
+Example 3.3.3, deriving the very recurrence we formalized:
+
+    "... where we denoted d := mu_2 - mu_1 in N the level of the above
+     inhomogeneous equation."
+
+So `d` is the gap between two consecutive slopes of the filtration, and it is a
+NATURAL NUMBER because §3.3 assumes integral slopes. The 08-01 audit's
+"slope 1/2 => level d = 2 (the denominator of the slope)" is a **misreading**.
+There is no level without two slopes.
+
+**3. Dimension count confirms k=1 is trivial.** Theorem 3.3.5: `F(P1,...,Pk)` is
+an affine space of dimension `sum_{i<j} r_i r_j (mu_j - mu_i)`. With `k = 1` the
+sum is empty: **dimension 0**. A single-slope module has no isoformal moduli.
+
+**4. The correct reference for non-integral slopes exists and is NOT in uploads:**
+
+    "A generalisation of Birkhoff-Guenther normal form to the case of arbitrary
+     slopes has recently been obtained by Virginie Bugeaud [14]."
+
+## Consequence
+
+The chain "C1 has slope 1/2 => level d=2 => q-Borel B_{q,2} => F(P1,P2) = C^2 =>
+two Stokes multipliers" is **not RSZ's**. Each link misreads a §3.3 that is
+explicitly restricted to integral slopes, and the pivotal one (`d` = denominator
+vs `d` = slope difference) inverts the meaning of the central parameter.
+
+**This is a mis-citation, not a mathematical refutation.** C1's infinity residual
+may well be genuinely wild and interesting; what is wrong is the mapping onto
+§3.3. The right frame for a single non-integral slope is Bugeaud [14], or the
+global 0-vs-infinity Birkhoff connection problem (rescue 1, still live and now
+the most likely home of any C^2).
+
+## What this does NOT invalidate
+
+- **S0** (`qou-qbk1`): the level-`d` kernel is correctly formalized for arbitrary
+  `d` from the recurrence RSZ states. The math stands; only the claim that
+  `d = 2` is C1's level is withdrawn.
+- **S2's Newton work** (`qou-qbr3`): the polygon, the edge, the characteristic
+  equation and the proved non-removability of `sqrt(q-1)` are computed from the
+  operator itself and are independent of RSZ's framing.
+- **S1's arithmetic** (`qou-qbg2`): `ramified_qBorel_budget` (m^2 = m(m-1) + m)
+  is a true theorem. But **its INTERPRETATION is withdrawn** -- see that bean.
