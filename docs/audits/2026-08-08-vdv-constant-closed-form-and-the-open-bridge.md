@@ -1,7 +1,7 @@
 # Van der Veen's constant, evaluated — and the bridge to `c_σ` closed
 
 **Date:** 2026-08-08 (rewritten same day; see *Retraction* below) · **Beans:**
-`qou-fl4t`, `qou-pn5j`, `qou-vdvS`, `qou-vdvE`
+`qou-fl4t`, `qou-pn5j`, `qou-vdvS`, `qou-vdvP`, `qou-vdvE`
 **Probe:** `computations/probes/one_loop_vdv_constant_closed_form_probe.py`
 **Lean:** `QOU/OneLoopPrefactorInvariance.lean` · **Paper:** `prop:one-loop-prefactor-provenance`
 **Follows:** `docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md`
@@ -117,12 +117,35 @@ and is a plain Gaussian — elementary for every `n`, with no orthant ceiling at
 `n = 2`. The claim that the method "closes only for the two links this corpus
 uses" was an artifact of an error, and the truth is far better.
 
-**2. The Gaussian coefficient `A` has a sign slip.** Step 3 defines
-`A = (c+d) − (4a+c−d)i`. It should be `(c+d) − (4a−c+d)i`, matching the exponent
-of `χ` in his own Lemma 1. (`4a+c−d` is the coefficient in his `CS` for the
-`c+d = 1` case; the two agree mod 8, which is enough for a phase and not enough
-for `|A|`.) Of the 20 chains swept, the six with `|4a+c−d| ≠ |4a−c+d|`
-discriminate, and all six land on `4a−c+d`.
+**2. The expression `4a+c−d` should be `4a−c+d`, in two places.** Step 3 defines
+the Gaussian coefficient `A = (c+d) − (4a+c−d)i`; it should be
+`(c+d) − (4a−c+d)i`, matching the exponent of `χ` in his own Lemma 1. Of the 20
+chains swept, the six with `|4a+c−d| ≠ |4a−c+d|` discriminate, and all six land
+on `4a−c+d`.
+
+`4a+c−d` is not an arbitrary wrong expression: it is what the main theorem gives
+for `CS` when `c+d = 1`, and **that is wrong too, by the same flip.** Measuring
+the N-linear phase directly — `arg(R_{N+1}/R_N) → −qπ/8`, where `CS = −q/8·2π²`:
+
+| chain | `q` measured | derived | main theorem |
+|---|---:|---:|---:|
+| `W_{0,1,1,0}` | −1.00001 | −1 | **+1** |
+| `W_{0,1,0,1}` | +1.00001 | +1 | **−1** |
+| `W_{1,1,1,0}` | 2.99999 | 3 | **5** |
+| `W_{0,1,2,0}` | −2.00000 | 14 ≡ −2 | **−14 ≡ 2** |
+| `W_{0,1,2,1}` | 7.00000 | 7 | **−7** |
+| `W_{0,1,3,0}` | 5.00000 | 21 ≡ 5 | **−21 ≡ 11** |
+| `W_{1,1,0,2}` | 6.00000 | −10 ≡ 6 | **18 ≡ 2** |
+
+(compared mod 16, since the phase is `e^{−iqπN/8}`). The correct `q` is `4a−c+d`
+at `c+d = 1` and `4a+7c−7d` at `c+d ≥ 2`; the main theorem states `4a+c−d` and
+`4a−7c+7d`. Same sign flip on `(c−d)` in both branches. The branch difference is
+only `φ_N`, which he defines differently in the two cases and which contributes a
+linear phase `−8(c−d)` in the second.
+
+So slips in `A` and in `CS` have **one root cause**, not two. His Lemma-4 *proof*
+uses the correct `(4a+7c−7d)` when it defines `Q_N`, which is why `Q_∞` is
+well defined despite the main theorem's statement.
 
 **3. The `b ≥ 2` constant has the wrong sign in the Main theorem.** It states
 `E = 2π(c+d)log 2 + …`, but his own Lemma 5 gives the constant as
@@ -162,10 +185,37 @@ c_σ = |Q_∞| · 2^{−n/2} = 2^{1/2−n} (n² + m²)^{−1/4}
 Re E = 2π[ (1/2 − n)·log 2 − ¼·log(n² + m²) ]
 ```
 
-**Scope: moduli only.** The phase of `E` is *not* checked — `ψ` appears with
-opposite signs in Lemma 5 and in the retracted probe, and nothing here would
-detect it. `c_σ` is a modulus, so this is the half the corpus needs; the phase
-is open and beaned (`qou-vdvP`).
+## The phase, resolved
+
+`ψ` appears with opposite signs in Lemma 5 and in the retracted probe, and the
+modulus verification above cannot tell them apart. It is settled by measuring
+the **complex** `Q_N` at `N ≡ 0 (mod 16)` — where van der Veen's CS factor
+`e^{(4a+7c−7d)Nπi/8}` is exactly `1`, so nothing is imported:
+
+```
+Q_∞ = exp(+i π (4a+3c−3d)/4) · 2^{−n/2} · √(2/A)
+```
+
+The `+` sign — Lemma 5's, not the retracted probe's. Across 12 chains the error
+against `ψ = exp(+…)` is `4e−7` to `1.1e−6` and falls as `O(1/N)`; against
+`ψ = exp(−…)` it is `0.34` to `1.19` on the 9 chains where the two differ
+(`ψ` and its conjugate coincide exactly when `4a+3c−3d ≡ 0 mod 4`).
+
+It is independently corroborated by van der Veen himself: his `b ≥ 2` constant
+in the main theorem is `E = 2π(c+d)log 2 + (4a+3c−3d)/4·2π²i`, whose **imaginary
+part agrees exactly** with the `ψ` above. That is the same formula whose *real*
+part is sign-wrong (slip 3) — so the `b ≥ 2` line is right about the phase and
+wrong about the logarithm, which is a coherent single-typo story.
+
+So `E` is now complete:
+
+```
+Re E = 2π[ (1/2 − n)·log 2 − ¼·log(n² + m²) ]
+Im E = π·arctan(m/n) + π²(4a+3c−3d)/2
+```
+
+`c_σ` depends on `|Q_∞|` alone, so none of the corpus results above move; the
+phase **completes** `E` rather than correcting anything.
 
 ## Verification
 
@@ -270,10 +320,9 @@ than required. What is **not** established:
    `a`-dependence of `|τ_DG| = 2^{2n−2}√(n²+m²)` is a sharp, cheap test of the
    change-of-curve law — but `one_loop(M, curves=…)` currently accepts only
    meridian or longitude, not `μ + aλ`.
-2. **`qou-vdvP` — the phase of `E`.** Everything here is moduli. `ψ` appears
-   with opposite signs in Lemma 5 and in the retracted probe and neither was
-   checked; `CS` is the observable that would settle it.
-3. **`qou-vdvE` — report the corrections upstream.** Three slips in a published
+2. **`qou-vdvE` — report the corrections upstream.** Three slips in a published
    AGT paper, none affecting its theorem, all affecting the constant that a
-   named open conjecture is about. This is worth writing to the author.
-4. Do **not** treat the `4_1` leg as covered. The derivation is link-side only.
+   named open conjecture is about — and one of them (the `(c−d)` flip) also
+   misstates `CS` in both branches of the main theorem. This is worth writing
+   to the author.
+3. Do **not** treat the `4_1` leg as covered. The derivation is link-side only.

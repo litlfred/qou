@@ -68,11 +68,27 @@ constant, which is exactly the part he did not evaluate.
      (iv) computes `|J_N| N^{-b} e^{-Vol N/2pi}` from Lemma 1 and gets
      `2^{-(c+d)}`, not `2^{+(c+d)}`.
 
-SCOPE — MODULI ONLY.  Everything here is verified in absolute value.  The
-phase of `E` is NOT checked (`psi` appears with opposite signs in his Lemma 5
-and in the retracted version of this probe, and nothing below would detect
-that).  `c_sigma` is a modulus, so this is the part the corpus needs; the
-phase is left open and beaned.
+THE PHASE IS NOW RESOLVED TOO (section vi), so `Q_inf` is complete:
+
+    Q_inf = exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)
+
+    Re E = 2 pi [ (1/2 - n) log 2 - (1/4) log(n^2 + m^2) ]
+    Im E = pi * arctan(m/n) + pi^2 (4a+3c-3d)/2
+
+The `psi` sign is the one in his Lemma 5, NOT the one the retracted version of
+this probe used.  Two independent confirmations: the measured phase of `Q_N` on
+eight chains, and his own `b >= 2` main-theorem constant, whose imaginary part
+`(4a+3c-3d)/4 * 2 pi^2 i` agrees exactly.
+
+  4. AND THE SAME `(c-d)` SIGN FLIP IS IN `CS`.  Slip 2 is not isolated: the
+     wrong expression `(4a+c-d)` is what the main theorem gives for `CS` when
+     `c+d = 1`, and Step 3 reuses it for `A`.  Measuring the N-linear phase
+     directly (section vi) gives `4a-c+d` at `c+d = 1` and `4a+7c-7d` at
+     `c+d >= 2`, against his `4a+c-d` and `4a-7c+7d` — the same flip in both
+     branches.  (The branch difference is only `phi_N`, which is defined
+     differently in the two cases and contributes a linear phase `-8(c-d)` in
+     the second.)  His Lemma-4 PROOF uses the correct `(4a+7c-7d)`, which is
+     why `Q_inf` is well defined despite the main theorem's statement.
 
 Nothing is fitted.  The `tau_DG` comparisons at L8n5, L10n100 and L10n103 were
 PRE-REGISTERED: the closed form was written down first, the predicted values
@@ -95,8 +111,11 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 _UPSTREAM_RECORDS: list = []
 
+import cmath  # noqa: E402
 import numpy as np  # noqa: E402
-from mpmath import mp, mpf, sqrt, log, catalan, fabs, hypot  # noqa: E402
+from mpmath import (  # noqa: E402
+    mp, mpf, mpc, sqrt, log, catalan, fabs, hypot, exp, pi, atan,
+)
 
 HERE = pathlib.Path(__file__).resolve().parent
 COMP = HERE.parent
@@ -131,12 +150,17 @@ def log_S(s: np.ndarray, n: int, k: int) -> float:
     return -2 * s[k + n] + 2 * s[k] + s[n]
 
 
-def Q_N(N: int, a: int, c: int, d: int) -> float:
-    """|Q_N| = |J_N| N^{-(c+d+3)/2} S~_N^{-(c+d)}, from Lemma 1, in log space.
+def R_N(N: int, a: int, c: int, d: int) -> complex:
+    """J_N N^{-(c+d+3)/2} S~_N^{-(c+d)}, COMPLEX, from Lemma 1, in log space.
 
-    This is the object van der Veen's Lemma 4 says converges to `C`.  float64
-    suffices because every term is normalised by S~_N and is O(1); this is a
-    VERIFICATION of a closed form, and only its verdict reaches the witness.
+    No Chern-Simons factor is stripped, so this imports no convention at all.
+    Van der Veen's `Q_N` differs from it only by `e^{(4a+7c-7d) N pi i/8}`,
+    which is exactly 1 when `N = 0 mod 16` — so along multiples of 16 this IS
+    his `Q_N`, and section (vi) uses that.  Away from those `N` its phase
+    carries the N-linear term, which is what measures `CS`.
+
+    float64 suffices because every term is normalised by S~_N and is O(1); this
+    is a VERIFICATION of a closed form, and only its verdict reaches the witness.
     """
     s = s_prefix(N)
     logSt = log_S(s, N // 2, N // 4)
@@ -146,8 +170,35 @@ def Q_N(N: int, a: int, c: int, d: int) -> float:
         ratio[n] = np.exp(-2 * s[k + n] + 2 * s[k] + s[n] - logSt).sum()
     n = np.arange(N)
     chi = np.exp(1j * (4 * a - c + d) * n * (n + 1 - N) / (2 * N) * math.pi)
-    return (abs(np.sum((2 * n + 1) * chi * ratio ** (c + d)))
+    phi = (cmath.exp(1j * math.pi * (N - 1) * (c - d) / N) if c + d == 1
+           else complex((-1) ** ((N - 1) * (c - d))))
+    return (phi * np.sum((2 * n + 1) * chi * ratio ** (c + d))
             * N ** (-(c + d + 3) / 2.0))
+
+
+def Q_N(N: int, a: int, c: int, d: int) -> float:
+    """|Q_N|.  `phi_N` and the CS factor are phases, so they drop."""
+    return abs(R_N(N, a, c, d))
+
+
+def Q_inf_closed(a: int, c: int, d: int):
+    """Q_inf = exp(+i pi(4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A),  A = n - m i."""
+    n, m = c + d, 4 * a - c + d
+    psi = exp(mpc(0, 1) * pi * (4 * a + 3 * c - 3 * d) / 4)
+    return psi * mpf(2) ** (-mpf(n) / 2) * sqrt(2 / mpc(n, -m))
+
+
+def cs_coefficient(a: int, c: int, d: int) -> int:
+    """The `q` in `CS = -q/8 * 2 pi^2`, as measured.  Van der Veen states
+    `4a+c-d` at `c+d = 1` and `4a-7c+7d` otherwise; both flip the sign of
+    `(c-d)`.  The branch difference is `phi_N`, defined differently in the
+    two cases and contributing a linear phase `-8(c-d)` in the second."""
+    return (4 * a - c + d) if c + d == 1 else (4 * a + 7 * c - 7 * d)
+
+
+def cs_coefficient_vdv(a: int, c: int, d: int) -> int:
+    """What the main theorem states."""
+    return (4 * a + c - d) if c + d == 1 else (4 * a - 7 * c + 7 * d)
 
 
 def abs_Q_inf(a: int, c: int, d: int):
@@ -329,18 +380,80 @@ def main() -> int:  # noqa: C901
               "predictions recorded without recomputation")
         prereg_ok = None
 
+    # -- (vi) the phase: Q_inf resolved completely --------------------------
+    print("\n(vi) THE PHASE — Q_inf resolved, and the (c-d) sign in CS\n")
+    print("    Q_N at N = 0 mod 16, where van der Veen's CS factor is exactly 1,")
+    print("    so this imports no convention.  psi = exp(s * i pi(4a+3c-3d)/4):\n")
+    print(f"    {'(a,c,d)':>9} {'|err| s=+1':>12} {'|err| s=-1':>12}  "
+          f"{'4a+3c-3d':>9}  discriminates?")
+    phase_rows, phase_ok, n_disc = {}, True, 0
+    for (a, c, d) in CHAINS[:12]:
+        R = 2 * R_N(3200, a, c, d) - R_N(1600, a, c, d)   # 1600, 3200 = 0 mod 16
+        Rc = mpc(R.real, R.imag)
+        qp = Q_inf_closed(a, c, d)
+        qm = qp / exp(mpc(0, 2) * pi * (4 * a + 3 * c - 3 * d) / 4)  # psi -> conj
+        ep, em = fabs(Rc - qp), fabs(Rc - qm)
+        # psi and its conjugate coincide iff (4a+3c-3d)pi/4 = 0 mod pi.
+        disc = (4 * a + 3 * c - 3 * d) % 4 != 0
+        n_disc += disc
+        ok = bool(ep < mpf("1e-4") and (not disc or ep < em / 10))
+        phase_ok &= ok
+        phase_rows[f"W_{{{a},1,{c},{d}}}"] = {
+            "err_psi_plus": mp.nstr(ep, 4), "err_psi_minus": mp.nstr(em, 4),
+            "discriminates_psi_sign": bool(disc), "ok": ok}
+        print(f"    {str((a, c, d)):>9} {mp.nstr(ep, 4):>12} {mp.nstr(em, 4):>12}  "
+              f"{4*a+3*c-3*d:>9}  {'YES' if disc else '-'}")
+    print(f"\n    psi = exp(+ i pi(4a+3c-3d)/4) on every chain: {phase_ok}"
+          f"   ({n_disc} of {len(CHAINS[:12])} discriminate the sign)")
+    print("    Independently corroborated by his own b>=2 main-theorem constant,")
+    print("    whose imaginary part (4a+3c-3d)/4 * 2 pi^2 i agrees exactly.")
+
+    print("\n    The N-linear phase — arg(R_{N+1}/R_N) -> -q pi/8 — measures CS:\n")
+    print(f"    {'(a,c,d)':>9} {'q measured':>11} {'q derived':>10} "
+          f"{'q stated':>9}   agrees with")
+    cs_rows, cs_ok = {}, True
+    for (a, c, d) in [(0, 1, 0), (0, 0, 1), (1, 1, 0), (0, 2, 0), (0, 2, 1),
+                      (0, 3, 0), (1, 0, 2)]:
+        ph = [cmath.phase(R_N(1200 + i, a, c, d)) for i in range(4)]
+        inc = [((ph[i + 1] - ph[i] + math.pi) % (2 * math.pi)) - math.pi
+               for i in range(3)]
+        qm_meas = sum(-x * 8 / math.pi for x in inc) / len(inc)
+        qd, qv = cs_coefficient(a, c, d), cs_coefficient_vdv(a, c, d)
+        near = lambda q: abs((((qm_meas - q) * math.pi / 8 + math.pi)  # noqa: E731
+                              % (2 * math.pi)) - math.pi) < 2e-3
+        okd, okv = near(qd), near(qv)
+        cs_ok &= okd and not okv
+        cs_rows[f"W_{{{a},1,{c},{d}}}"] = {
+            "q_measured": f"{qm_meas:.4f}", "q_derived": qd, "q_stated": qv,
+            "derived_agrees": bool(okd), "stated_agrees": bool(okv)}
+        print(f"    {str((a, c, d)):>9} {qm_meas:11.5f} {qd:10d} {qv:9d}   "
+              f"{'derived' if okd else ''}{' + stated' if okv else ''}")
+    print(f"\n    derived agrees and stated does not, on every chain: {cs_ok}")
+    print("    -> the same (c-d) sign flip as slip 2, in BOTH branches of CS.")
+    print("       His Lemma-4 proof uses the correct (4a+7c-7d), which is why")
+    print("       Q_inf is well defined despite the main theorem's statement.")
+
     all_ok = (signed_wins and n_bad == 0 and lemma3_ok and b_ok
-              and exact_l5 and tau_exact and prereg_ok is not False)
+              and exact_l5 and tau_exact and prereg_ok is not False
+              and phase_ok and cs_ok)
 
     verdict = (
         "THE BRIDGE IS CLOSED. c_sigma for the b=1 Whitehead chains is now a "
         "closed form, c_sigma = 2^{1/2-n} (n^2+m^2)^{-1/4} with n = c+d and "
         "m = 4a-c+d, derived from van der Veen's Lemmas 1-4 after correcting "
         "three slips in the published proof (Lemma 2a stated with absolute "
-        "values where its own Taylor expansion is signed; the Step-3 "
-        "coefficient A carrying 4a+c-d where Lemma 1 gives 4a-c+d; and the "
-        "main theorem's b>=2 constant carrying the wrong sign against its own "
-        "Lemma 5). None of the three touches the volume conjecture. Verified "
+        "values where its own Taylor expansion is signed; the expression "
+        "4a+c-d, which should be 4a-c+d, reused for the Step-3 coefficient A "
+        "and appearing again in both branches of the main theorem's CS; and "
+        "the main theorem's b>=2 constant carrying the wrong sign against its "
+        "own Lemma 5). None of the three touches the volume conjecture, and "
+        "his Lemma-4 proof uses the correct CS, so Q_inf is well defined. "
+        "Q_inf IS RESOLVED COMPLETELY, modulus and phase: "
+        "Q_inf = exp(+i pi(4a+3c-3d)/4) 2^{-n/2} sqrt(2/A), the psi sign being "
+        "the one in his Lemma 5 and not the one this probe's retracted version "
+        "used - measured at N = 0 mod 16 where the CS factor is exactly 1, and "
+        "corroborated by the imaginary part of his own b>=2 constant. Hence "
+        "Im E = pi arctan(m/n) + pi^2 (4a+3c-3d)/2. Verified "
         f"against Q_N computed directly from Lemma 1 on {len(CHAINS)} chains. "
         "WHAT THIS DOES TO THE CORPUS: the constant k = 2^{-1/2} in "
         "c_sigma = k |tau_DG|^{-1/2} was CALIBRATED on 4_1 and is now DERIVED "
@@ -350,8 +463,9 @@ def main() -> int:  # noqa: C901
         "PRE-REGISTERED and then confirmed to 18 digits at three further "
         "manifolds - L8n5 (3 cusps), L10n100 and L10n103 (4 cusps) - none of "
         "which the corpus had tested. The law now holds at 2, 3 and 4 cusps "
-        "against independently computed 1-loop invariants. "
-        "SCOPE: moduli only. The phase of E is not checked here."
+        "against independently computed 1-loop invariants. c_sigma depends on "
+        "|Q_inf| only, so the phase result changes none of that - it completes "
+        "E rather than correcting it."
         if all_ok else
         "A CHECK FAILED — inspect before citing. The closed form, the Lemma-2a "
         "sign demonstration, the Lemma-3 constant, the b>=2 sign and the "
@@ -436,8 +550,12 @@ def main() -> int:  # noqa: C901
         "Q_inf": "psi * 2^{-n/2} * sqrt(2/A)",
         "c_sigma": "2^{1/2-n} * (n^2 + m^2)^{-1/4}",
         "tau_dg_implied": "2^{2n-2} * sqrt(n^2 + m^2)",
+        "Q_inf_resolved": "exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)",
         "Re_E": "2 pi [ (1/2 - n) log 2 - (1/4) log(n^2 + m^2) ]",
-        "scope": "moduli only; the phase of E is not checked here",
+        "Im_E": "pi * arctan(m/n) + pi^2 (4a+3c-3d)/2",
+        "scope": ("modulus AND phase; see the phase_resolution block. c_sigma "
+                  "depends on the modulus only, so the corpus's results are "
+                  "unaffected by the phase either way"),
         "chains": rows,
         "chains_tested": len(CHAINS),
         "mismatches": int(n_bad),
@@ -450,6 +568,31 @@ def main() -> int:  # noqa: C901
     })
     wb.add_data("bridge_to_c_sigma", bridge)
     wb.add_data("tau_dg_preregistered_predictions", prereg)
+    wb.add_data("phase_resolution", {
+        "Q_inf": "exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)",
+        "psi_sign": ("+, i.e. the sign in his Lemma 5, NOT the one this probe's "
+                     "retracted version used"),
+        "measured_at": ("N = 0 mod 16, where his CS factor e^{(4a+7c-7d)N pi i/8} "
+                        "is exactly 1, so no convention is imported"),
+        "corroboration": ("his own b>=2 main-theorem constant has imaginary part "
+                          "(4a+3c-3d)/4 * 2 pi^2 i, agreeing exactly"),
+        "chains": phase_rows,
+        "Im_E": "pi * arctan(m/n) + pi^2 (4a+3c-3d)/2",
+        "cs_coefficient": {
+            "note": ("q in CS = -q/8 * 2 pi^2, measured from the N-linear phase "
+                     "arg(R_{N+1}/R_N) -> -q pi/8"),
+            "derived": "4a-c+d if c+d=1 else 4a+7c-7d",
+            "stated_in_main_theorem": "4a+c-d if c+d=1 else 4a-7c+7d",
+            "relation": ("the same (c-d) sign flip as slip 2 — indeed (4a+c-d) "
+                         "IS the expression Step 3 reuses for A. The branch "
+                         "difference is phi_N, defined differently in the two "
+                         "cases and contributing a linear phase -8(c-d) in the "
+                         "second"),
+            "lemma4_proof_is_correct": ("his Q_N definition uses (4a+7c-7d), the "
+                                        "right one, so Q_inf is well defined"),
+            "chains": cs_rows,
+        },
+    })
     wb.add_assertion(
         "closed_form_matches_Q_N_on_every_chain",
         computed=str(len(CHAINS) - n_bad), expected=str(len(CHAINS)),
@@ -466,6 +609,16 @@ def main() -> int:  # noqa: C901
         computed="1" if tau_exact else "0", expected="1", tolerance="0.5",
         source=("|tau_DG| = 2^{2n-2} sqrt(n^2+m^2) against the corpus's "
                 "independently computed values at L5a1 and L6a4"))
+    wb.add_assertion(
+        "Q_inf_phase_is_psi_plus",
+        computed="1" if phase_ok else "0", expected="1", tolerance="0.5",
+        source=("complex Q_N at N = 0 mod 16 against "
+                "exp(+i pi(4a+3c-3d)/4) 2^{-n/2} sqrt(2/A), on 12 chains"))
+    wb.add_assertion(
+        "cs_coefficient_flips_c_minus_d",
+        computed="1" if cs_ok else "0", expected="1", tolerance="0.5",
+        source=("the N-linear phase arg(R_{N+1}/R_N) against the main theorem's "
+                "stated CS and the derived one, on 7 chains"))
     if prereg_ok is not None:
         wb.add_assertion(
             "tau_dg_preregistered_predictions_confirmed",

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T15:22:07.428967+00:00",
-  "commitSha": "e4f9b2618d9d4736067448f319083031df752875",
+  "computedAt": "2026-08-08T15:53:07.257952+00:00",
+  "commitSha": "5518a024e5f7fec88f742faadc60263c48dd8f19",
   "assertions": [
     {
       "name": "closed_form_matches_Q_N_on_every_chain",
@@ -29,6 +29,22 @@
       "source": "|tau_DG| = 2^{2n-2} sqrt(n^2+m^2) against the corpus's independently computed values at L5a1 and L6a4"
     },
     {
+      "name": "Q_inf_phase_is_psi_plus",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "complex Q_N at N = 0 mod 16 against exp(+i pi(4a+3c-3d)/4) 2^{-n/2} sqrt(2/A), on 12 chains"
+    },
+    {
+      "name": "cs_coefficient_flips_c_minus_d",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the N-linear phase arg(R_{N+1}/R_N) against the main theorem's stated CS and the derived one, on 7 chains"
+    },
+    {
       "name": "tau_dg_preregistered_predictions_confirmed",
       "computed": "1",
       "expected": "1",
@@ -38,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 47,
+  "durationMs": 43,
   "computation": "one-loop-vdv-constant-closed-form",
   "scriptFile": "one_loop_vdv_constant_closed_form_probe.py",
-  "scriptHash": "100fa4039e5a",
-  "scriptCommitSha": "c884382397307024a656cfe9910d6c7e8ef176c2",
+  "scriptHash": "a94eb8c8b602",
+  "scriptCommitSha": "5518a024e5f7fec88f742faadc60263c48dd8f19",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -121,8 +137,10 @@
       "Q_inf": "psi * 2^{-n/2} * sqrt(2/A)",
       "c_sigma": "2^{1/2-n} * (n^2 + m^2)^{-1/4}",
       "tau_dg_implied": "2^{2n-2} * sqrt(n^2 + m^2)",
+      "Q_inf_resolved": "exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)",
       "Re_E": "2 pi [ (1/2 - n) log 2 - (1/4) log(n^2 + m^2) ]",
-      "scope": "moduli only; the phase of E is not checked here",
+      "Im_E": "pi * arctan(m/n) + pi^2 (4a+3c-3d)/2",
+      "scope": "modulus AND phase; see the phase_resolution block. c_sigma depends on the modulus only, so the corpus's results are unaffected by the phase either way",
       "chains": {
         "W_{0,1,1,0}": {
           "n_eq_c_plus_d": 1,
@@ -333,6 +351,145 @@
         "tau_dg_predicted": "67.88225099390856234248106",
         "tau_dg_computed": "67.88225099390856234248106",
         "rel_diff": "1.81114e-71"
+      }
+    },
+    "phase_resolution": {
+      "Q_inf": "exp(+i pi (4a+3c-3d)/4) * 2^{-n/2} * sqrt(2/A)",
+      "psi_sign": "+, i.e. the sign in his Lemma 5, NOT the one this probe's retracted version used",
+      "measured_at": "N = 0 mod 16, where his CS factor e^{(4a+7c-7d)N pi i/8} is exactly 1, so no convention is imported",
+      "corroboration": "his own b>=2 main-theorem constant has imaginary part (4a+3c-3d)/4 * 2 pi^2 i, agreeing exactly",
+      "chains": {
+        "W_{0,1,1,0}": {
+          "err_psi_plus": "1.111e-6",
+          "err_psi_minus": "1.189",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,0,1}": {
+          "err_psi_plus": "1.111e-6",
+          "err_psi_minus": "1.189",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,1,1}": {
+          "err_psi_plus": "8.166e-7",
+          "err_psi_minus": "8.166e-7",
+          "discriminates_psi_sign": false,
+          "ok": true
+        },
+        "W_{0,1,2,0}": {
+          "err_psi_plus": "5.563e-7",
+          "err_psi_minus": "0.8409",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,0,2}": {
+          "err_psi_plus": "5.563e-7",
+          "err_psi_minus": "0.8409",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,2,1}": {
+          "err_psi_plus": "8.482e-7",
+          "err_psi_minus": "0.3976",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,1,2}": {
+          "err_psi_plus": "8.482e-7",
+          "err_psi_minus": "0.3976",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{1,1,1,0}": {
+          "err_psi_plus": "1.053e-6",
+          "err_psi_minus": "0.7953",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{1,1,1,1}": {
+          "err_psi_plus": "3.97e-7",
+          "err_psi_minus": "3.97e-7",
+          "discriminates_psi_sign": false,
+          "ok": true
+        },
+        "W_{1,1,2,1}": {
+          "err_psi_plus": "6.486e-7",
+          "err_psi_minus": "0.3433",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,3,0}": {
+          "err_psi_plus": "6.486e-7",
+          "err_psi_minus": "0.3433",
+          "discriminates_psi_sign": true,
+          "ok": true
+        },
+        "W_{0,1,2,2}": {
+          "err_psi_plus": "8.902e-7",
+          "err_psi_minus": "8.902e-7",
+          "discriminates_psi_sign": false,
+          "ok": true
+        }
+      },
+      "Im_E": "pi * arctan(m/n) + pi^2 (4a+3c-3d)/2",
+      "cs_coefficient": {
+        "note": "q in CS = -q/8 * 2 pi^2, measured from the N-linear phase arg(R_{N+1}/R_N) -> -q pi/8",
+        "derived": "4a-c+d if c+d=1 else 4a+7c-7d",
+        "stated_in_main_theorem": "4a+c-d if c+d=1 else 4a-7c+7d",
+        "relation": "the same (c-d) sign flip as slip 2 — indeed (4a+c-d) IS the expression Step 3 reuses for A. The branch difference is phi_N, defined differently in the two cases and contributing a linear phase -8(c-d) in the second",
+        "lemma4_proof_is_correct": "his Q_N definition uses (4a+7c-7d), the right one, so Q_inf is well defined",
+        "chains": {
+          "W_{0,1,1,0}": {
+            "q_measured": "-1.0000",
+            "q_derived": -1,
+            "q_stated": 1,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,0,1}": {
+            "q_measured": "1.0000",
+            "q_derived": 1,
+            "q_stated": -1,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{1,1,1,0}": {
+            "q_measured": "3.0000",
+            "q_derived": 3,
+            "q_stated": 5,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,2,0}": {
+            "q_measured": "-2.0000",
+            "q_derived": 14,
+            "q_stated": -14,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,2,1}": {
+            "q_measured": "7.0000",
+            "q_derived": 7,
+            "q_stated": -7,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{0,1,3,0}": {
+            "q_measured": "5.0000",
+            "q_derived": 21,
+            "q_stated": -21,
+            "derived_agrees": true,
+            "stated_agrees": false
+          },
+          "W_{1,1,0,2}": {
+            "q_measured": "6.0000",
+            "q_derived": -10,
+            "q_stated": 18,
+            "derived_agrees": true,
+            "stated_agrees": false
+          }
+        }
       }
     },
     "upstream_witness_hashes": [
