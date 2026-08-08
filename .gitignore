@@ -169,3 +169,7 @@ computations/deltalambda/.he4_stage2_legB_progress.jsonl
 # work branch.
 lake-oleans.tgz.part*
 lake-oleans.tgz
+
+# qou-vbw1 A2 verification aid (resumable I-cache + log); see qbeta_3bp8_a2_sample_point_delta_check.py
+.a2_icache.json
+.a2_run.log
