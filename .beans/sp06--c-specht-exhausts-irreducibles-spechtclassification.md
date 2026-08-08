@@ -1,3 +1,12 @@
+---
+# sp06
+title: ""
+status: completed
+type: task
+priority: normal
+created_at: 2026-08-08T13:23:20Z
+updated_at: 2026-08-08T13:23:22Z
+---
 
 ## Assessment 2026-08-08 — NOT closed, and here is exactly why
 
@@ -250,14 +259,79 @@ Instantiate the count at `ι := PartitionIndex n ⊕ Unit` — the Specht module
 plus the hypothetical extra simple `W` — and derive `#partitions + 1 ≤
 #partitions`. Concretely:
 
-- [ ] a character family on `ι`, from `spechtRep μ` and `ρ`;
-- [ ] pairwise non-isomorphism across the sum: `specht_pairwise_noniso` on the
+- [x] a character family on `ι`, from `spechtRep μ` and `ρ`;
+- [x] pairwise non-isomorphism across the sum: `specht_pairwise_noniso` on the
       left block, the `specht_exhausts_irreducibles` hypothesis (`W` not
       isomorphic to any `S^μ` — this is the `by_contra`) on the cross terms;
-- [ ] `Fintype.card (PartitionIndex n) = Fintype.card (Nat.Partition n)` via the
+- [x] `Fintype.card (PartitionIndex n) = Fintype.card (Nat.Partition n)` via the
       repo's `partitionEquivYoungIndex`;
-- [ ] `Module.Finite k (SpechtSubmodule μ)` and `Nontrivial` for each block;
-- [ ] chain the inequalities and close.
+- [x] `Module.Finite k (SpechtSubmodule μ)` and `Nontrivial` for each block;
+- [x] chain the inequalities and close.
 
 No new mathematics and no new Mathlib gaps — bookkeeping against the table
 above. Estimate: one focused session.
+
+## CLOSED 2026-08-08 — `specht_exhausts_irreducibles` is proved
+
+`#print axioms` reports `[propext, Classical.choice, Quot.sound]`.
+`SpechtClassification.lean` is now sorry-free, and with it the whole Specht
+cluster.
+
+## Summary of Changes
+
+The completeness half is a **count**, every step of it a bound:
+
+    #{pairwise non-isomorphic simples}
+      ≤ dim_k {class functions on Sₙ}
+      ≤ #conj classes of Sₙ
+      ≤ #partitions of n
+
+Assuming an extra simple `W` isomorphic to no `S^μ` produces `#partitions + 1`
+pairwise non-isomorphic simples, contradicting the chain.
+
+New this session, all sorry-free:
+
+| Module | Contents |
+|---|---|
+| `MathlibExt.RepresentationCharacter` | `charOf`, `charOf_conj`, `charOf_linHom`, `average_charOf`, `homG`, `charPairing_eq_finrank_homG`, `homG_eq_bot` (Schur), `one_le_finrank_homG_self`, `stable_eq_bot_or_top`, `charForm`, `card_le_card_conjClasses_of_orthogonal` |
+| `MathlibExt.GroupAlgebraCenter` | `card_conjClasses_perm_fin_le`, `classSum`, `center_le_span_classSum`, `finrank_center_le_card_conjClasses`, `classFunctions`, `finrank_classFunctions_le` |
+| `MathlibExt.GramNondegenerate` | `linearIndependent_of_gram_diagonal` |
+| `SpechtClassification` | `spechtSubmodule_finite/_nontrivial`, `spechtRep_stable_eq_bot_or_top`, `transportPermHom_surjective`, `spechtRepAt`, `spechtRepAt_stable`, `spechtRepAt_noniso` |
+
+## What made this tractable, against the earlier estimate of 2–3 sessions
+
+**Estimate the bound, not the theorem it comes from.** Every step above is `≤`,
+and in each case the expensive half of the corresponding equality is the half
+the bound does not need:
+
+- `#conj classes ≤ #partitions` needs `Equiv.Perm.partition` to *separate*
+  classes, not to be surjective (surjectivity is true, is not in Mathlib, and
+  would have been the bulk of the work).
+- `dim Z ≤ #conj classes` needs class sums to *span*, not to be a basis.
+- Character independence needs the Gram matrix *diagonal with nonzero diagonal*,
+  not orthonormal. This is the one that mattered most:
+  `FDRep.char_orthonormal` carries `[IsAlgClosed k]` purely to normalise the
+  diagonal to `1`. Its parent
+  `scalar_product_char_eq_finrank_equivariant` carries no such hypothesis. So
+  the whole argument runs over an arbitrary characteristic-zero field.
+
+**Two dead ends worth not repeating.** The Wedderburn route
+(`#simples ≤ dim Z(A)` via identifying `WedderburnSn`'s abstract block count)
+was planned and is unnecessary — `finrank_center_le_card_conjClasses` is proved
+but off the critical path. And the `FDRep`/`Rep ≌ ModuleCat` bridge was
+identified as the blocker; redeveloping the character theory directly on
+`Representation` was cheaper, because every ingredient
+(`dualTensorHom_comm`, `isProj_averageMap`, the `trace_*` lemmas) is already at
+that level.
+
+## Follow-ups
+
+Non-urgent, worth beans if anyone wants them:
+
+- `Equiv.Perm.partition` is surjective ⇒ upgrade `card_conjClasses_perm_fin_le`
+  to an equality; then `#irreducibles = #partitions` becomes unconditional
+  rather than resting on `card_partitionIndex`.
+- The class sums are a *basis* of the centre ⇒ upgrade
+  `finrank_center_le_card_conjClasses` to an equality.
+- `RepresentationCharacter` is a plausible Mathlib PR: character theory stated
+  for `Representation` rather than `FDRep`, with no `IsAlgClosed`.

@@ -693,6 +693,49 @@ theorem spechtRep_stable_eq_bot_or_top (μ : YoungDiagram)
   · refine Or.inr (Submodule.map_injective_of_injective hinj ?_)
     rw [h, Submodule.map_subtype_top]
 
+/-! ### Transporting the acting group
+
+The count runs over representations of the *same* group `Perm (Fin n)`, while
+`spechtRep μ` acts through `Perm (Fin (nOf μ))`. `spechtRepAt` is the composite
+appearing in `specht_exhausts_irreducibles`'s own statement; the two lemmas
+below move simplicity and non-isomorphism across it, using only that the
+transport is bijective. -/
+
+theorem transportPermHom_surjective {a b : ℕ} (h : a = b) :
+    Function.Surjective (transportPermHom h) := fun τ =>
+  ⟨transportPermHom h.symm τ, Equiv.ext (fun _ => Fin.ext rfl)⟩
+
+/-- `S^μ` as a representation of `Perm (Fin n)`, for `h : nOf μ = n`.  This is
+the composite that `specht_exhausts_irreducibles` compares against. -/
+noncomputable def spechtRepAt {n : ℕ} {μ : YoungDiagram} (h : Specht.nOf μ = n) :
+    Representation k (Perm (Fin n)) (Specht.SpechtSubmodule (k := k) μ) :=
+  (spechtRep (k := k) μ).comp (transportPermHom h.symm)
+
+theorem spechtRepAt_stable {n : ℕ} {μ : YoungDiagram} (h : Specht.nOf μ = n)
+    (p : Submodule k (Specht.SpechtSubmodule (k := k) μ))
+    (hp : ∀ (g : Perm (Fin n)) v, v ∈ p → spechtRepAt (k := k) h g v ∈ p) :
+    p = ⊥ ∨ p = ⊤ := by
+  refine spechtRep_stable_eq_bot_or_top μ p (fun τ v hv => ?_)
+  obtain ⟨g, rfl⟩ := transportPermHom_surjective h.symm τ
+  exact hp g v hv
+
+/-- Distinct shapes stay non-isomorphic after the transport. -/
+theorem spechtRepAt_noniso {n : ℕ} {μ ν : YoungDiagram} (hμ : Specht.nOf μ = n)
+    (hν : Specht.nOf ν = n) (hne : μ ≠ ν)
+    (e : Specht.SpechtSubmodule (k := k) μ ≃ₗ[k] Specht.SpechtSubmodule (k := k) ν) :
+    ¬ ∀ (g : Perm (Fin n)) (v : Specht.SpechtSubmodule (k := k) μ),
+        e (spechtRepAt (k := k) hμ g v) = spechtRepAt (k := k) hν g (e v) := by
+  intro he
+  refine specht_pairwise_noniso (k := k) (hμ.trans hν.symm) hne ⟨e, fun τ x => ?_⟩
+  obtain ⟨g, rfl⟩ := transportPermHom_surjective hμ.symm τ
+  have hround : transportPermHom (hμ.trans hν.symm) (transportPermHom hμ.symm g)
+      = transportPermHom hν.symm g := Equiv.ext (fun _ => Fin.ext rfl)
+  show e (spechtRep (k := k) μ (transportPermHom hμ.symm g) x)
+      = spechtRep (k := k) ν (transportPermHom (hμ.trans hν.symm)
+          (transportPermHom hμ.symm g)) (e x)
+  rw [hround]
+  exact he g x
+
 /-- **Completeness.**  Every simple `k[S_n]`-module is isomorphic to some Specht
 module.  Phrased: for any representation `ρ : Representation k (Perm (Fin n)) W`
 that is simple as a `k[S_n]`-module — stated as
@@ -705,61 +748,146 @@ along `nOf μ = n`).
 This is the half of the classification that says the Specht modules **exhaust** the
 irreducibles.
 
-## Status: the last open target of this file, and it is not close
+## Proved
 
-Everything else in the Specht cluster is now proved: `specht_isSimple`
-(`SpechtIrreducible`), `specht_pairwise_noniso` above, and the cross-shape
-dominance theorem `dom_of_nonzero_hom` in its general **hom** form
-(`Hom_{k[S_n]}(S^μ, M^ν) ≠ 0 ⇒ μ ⊵ ν`). So the Specht modules are known to be
-`#partitions` many pairwise non-isomorphic simples. What is missing is that
-there are **no others**, and that is a genuinely different theorem.
+The Specht modules are `#partitions` many pairwise non-isomorphic simples
+(`specht_isSimple` + `specht_pairwise_noniso`), and there are no others. The
+"no others" half is a **count**, every step of it a bound:
 
-### Why the machinery above does not reach it
+    #{pairwise non-isomorphic simples}
+      ≤ dim_k {class functions on Sₙ}      characters are independent class functions
+      ≤ #conj classes of Sₙ                a class function is its values on classes
+      ≤ #partitions of n                   cycle type separates conjugacy classes
 
-The natural attempt: `W` simple is a quotient of the regular module, hence (by
-semisimplicity, Maschke in char 0) a submodule of it; identify the regular
-module with `M^{(1ⁿ)}`; pick `ν` extremal in dominance with `W ↪ M^ν`; and apply
-James's dichotomy `specht_submodule_dichotomy`, which gives `S^ν ≤ W` — hence
-`W = S^ν` by simplicity — **or** `W ≤ (S^ν)ᗮ`.
+Assuming an extra simple `W` isomorphic to no `S^μ` gives `#partitions + 1`
+pairwise non-isomorphic simples, contradicting the chain.
 
-The second branch is the whole problem. Excluding it needs to know where the
-composition factors of `(S^ν)ᗮ` live, i.e. **Young's rule** (the factors of
-`M^ν` are `S^ρ` with `ρ ⊵ ν`, and `S^ν` occurs once). `dom_of_nonzero_hom` gives
-the dominance *bound* on such a factor but not its existence, so the extremality
-argument has nothing to contradict. Adding a hypothesis to dodge this would be
-assuming the theorem.
+Independence of the characters comes from the pairing
 
-### The two honest routes, and what each still costs
+    ⅟|G| • Σ_g χ_V(g⁻¹)·χ_W(g) = dim_k Hom_G(V, W)
 
-**(a) Counting.** `#{simple k[S_n]-modules} = dim_k Z(k[S_n]) = #conj classes of
-S_n = #partitions of n`, then pigeonhole against the `#partitions` pairwise
-non-isomorphic Specht modules. Three genuine Mathlib gaps:
+(`RepresentationCharacter.charPairing_eq_finrank_homG`), which is **diagonal**
+by Schur and has **nonzero diagonal** because the identity is equivariant. Note
+what is *not* needed: `FDRep.char_orthonormal` normalises that diagonal to `1`
+and carries `[IsAlgClosed k]` to do it, but a bound only needs the diagonal
+nonzero — so the whole argument runs over an arbitrary characteristic-zero
+field, `ℚ` included.
 
-* `dim_k Z(k[G]) = #conj classes` — the class sums are a basis of the centre.
-  Mathlib has no centre-of-group-algebra API at the pinned revision.
-* `#conj classes of Perm (Fin n) = #partitions n` — the closest Mathlib gets is
-  `Equiv.Perm.partition` and `partition_eq_of_isConj`; the induced bijection
-  `ConjClasses (Perm (Fin n)) ≃ Nat.Partition n` is not there.
-* `#{iso-classes of simple modules} = #Wedderburn blocks ≤ dim_k Z(A)` for a
-  semisimple `A`. `WedderburnSn` supplies the decomposition with an **abstract**
-  block count; identifying it is exactly the gap.
+`#print axioms` reports `[propext, Classical.choice, Quot.sound]`.
 
-**(b) Young's rule / Specht filtration** of the permutation modules. Larger, and
-it subsumes far more than is needed here.
+## Supporting modules
 
-Route (a) is the more mechanical of the two and is the recommended one.
-Tracked as bean sp06. -/
+| Module | Role |
+|---|---|
+| `QOU.MathlibExt.RepresentationCharacter` | character theory on `Representation`, off Mathlib's `FDRep` category layer; Schur; the count |
+| `QOU.MathlibExt.GroupAlgebraCenter` | class functions and their dimension; conjugacy classes inject into partitions |
+| `QOU.MathlibExt.GramNondegenerate` | a diagonal Gram matrix with nonzero diagonal gives linear independence |
+
+Closes bean sp06. -/
 theorem specht_exhausts_irreducibles {n : ℕ} {W : Type} [AddCommGroup W] [Module k W]
     (ρ : Representation k (Perm (Fin n)) W)
-    (_hsimple : IsSimpleModule (MonoidAlgebra k (Perm (Fin n))) ρ.asModule) :
+    (hsimple : IsSimpleModule (MonoidAlgebra k (Perm (Fin n))) ρ.asModule) :
     ∃ (μ : YoungDiagram) (h : Specht.nOf μ = n),
       IsRepIso (k := k) ρ
         ((spechtRep (k := k) μ).comp (transportPermHom h.symm)) := by
-  -- Ref: [sagan2001] §2.4. NOT reachable from the cross-shape machinery in this
-  -- file — see the docstring: the missing input is Young's rule, or the counting
-  -- chain #simples = dim Z(k[S_n]) = #conj classes = #partitions, which needs
-  -- three Mathlib gaps. Do not weaken the statement to close it.
-  sorry
+  classical
+  by_contra hcon
+  push_neg at hcon
+  haveI := hsimple
+  -- `W` is nonzero …
+  haveI hWnt : Nontrivial W := by
+    have hnt : Nontrivial ρ.asModule :=
+      (Submodule.nontrivial_iff (MonoidAlgebra k (Perm (Fin n)))).mp inferInstance
+    exact hnt
+  obtain ⟨w, hw⟩ := exists_ne (0 : W)
+  -- … and finite-dimensional: it is a quotient of the group algebra
+  haveI hAfin : Module.Finite k (MonoidAlgebra k (Perm (Fin n))) := by
+    unfold MonoidAlgebra; infer_instance
+  haveI hWfin : Module.Finite k W := by
+    refine Module.Finite.of_surjective
+      ((LinearMap.applyₗ w).comp ρ.asAlgebraHom.toLinearMap) ?_
+    refine LinearMap.range_eq_top.mp ?_
+    refine (QOU.MathlibExt.RepresentationCharacter.stable_eq_bot_or_top ρ _ ?_).resolve_left ?_
+    · rintro g _ ⟨r, rfl⟩
+      refine ⟨MonoidAlgebra.single g 1 * r, ?_⟩
+      show ρ.asAlgebraHom (MonoidAlgebra.single g 1 * r) w = ρ g (ρ.asAlgebraHom r w)
+      rw [map_mul, Representation.asAlgebraHom_single_one]
+      rfl
+    · intro hbot
+      refine hw ?_
+      have : ((LinearMap.applyₗ w).comp ρ.asAlgebraHom.toLinearMap) 1 = 0 := by
+        rw [← Submodule.mem_bot (R := k), ← hbot]
+        exact LinearMap.mem_range_self _ _
+      simpa using this
+  haveI : Invertible ((Fintype.card (Perm (Fin n)) : k)) :=
+    invertibleOfNonzero (Nat.cast_ne_zero.mpr Fintype.card_ne_zero)
+  -- the characters of the Specht modules together with that of `ρ`
+  set χ : Option (PartitionIndex n) → (Perm (Fin n) → k) := fun o =>
+    Option.rec (QOU.MathlibExt.RepresentationCharacter.charOf ρ)
+      (fun i => QOU.MathlibExt.RepresentationCharacter.charOf (spechtRepAt (k := k) i.property)) o with hχ
+  -- simplicity, in the stable-subspace form Schur wants
+  have hsimpW : ∀ p : Submodule k W, (∀ g v, v ∈ p → ρ g v ∈ p) → p = ⊥ ∨ p = ⊤ :=
+    QOU.MathlibExt.RepresentationCharacter.stable_eq_bot_or_top ρ
+  have hsimpS : ∀ i : PartitionIndex n,
+      ∀ p : Submodule k (Specht.SpechtSubmodule (k := k) i.diagram),
+        (∀ g v, v ∈ p → spechtRepAt (k := k) i.property g v ∈ p) → p = ⊥ ∨ p = ⊤ :=
+    fun i => spechtRepAt_stable i.property
+  -- off-diagonal: non-isomorphic simples have orthogonal characters
+  have hoff : ∀ a b, a ≠ b →
+      QOU.MathlibExt.RepresentationCharacter.charForm k (Perm (Fin n)) (χ a) (χ b) = 0 := by
+    intro a b hab
+    have key : ∀ {V₁ V₂ : Type} [AddCommGroup V₁] [Module k V₁] [Module.Finite k V₁]
+        [AddCommGroup V₂] [Module k V₂] [Module.Finite k V₂]
+        (ρ₁ : Representation k (Perm (Fin n)) V₁) (ρ₂ : Representation k (Perm (Fin n)) V₂),
+        (∀ p : Submodule k V₁, (∀ g v, v ∈ p → ρ₁ g v ∈ p) → p = ⊥ ∨ p = ⊤) →
+        (∀ p : Submodule k V₂, (∀ g v, v ∈ p → ρ₂ g v ∈ p) → p = ⊥ ∨ p = ⊤) →
+        (∀ e : V₁ ≃ₗ[k] V₂, ¬ ∀ (g : Perm (Fin n)) (v : V₁), e (ρ₁ g v) = ρ₂ g (e v)) →
+        QOU.MathlibExt.RepresentationCharacter.charForm k (Perm (Fin n))
+          (QOU.MathlibExt.RepresentationCharacter.charOf ρ₁) (QOU.MathlibExt.RepresentationCharacter.charOf ρ₂) = 0 := by
+      intro V₁ _ _ _ V₂ _ _ _ ρ₁ ρ₂ h₁ h₂ hno
+      rw [QOU.MathlibExt.RepresentationCharacter.charForm_charOf,
+        QOU.MathlibExt.RepresentationCharacter.homG_eq_bot h₁ h₂ hno]
+      simp
+    match a, b with
+    | none, none => exact absurd rfl hab
+    | none, some i =>
+        exact key ρ _ hsimpW (hsimpS i)
+          (fun e he => hcon i.diagram i.property ⟨e, fun g x => he g x⟩)
+    | some i, none =>
+        refine key _ ρ (hsimpS i) hsimpW (fun e he => ?_)
+        refine hcon i.diagram i.property ⟨e.symm, fun g x => ?_⟩
+        have := he g (e.symm x)
+        rw [e.apply_symm_apply] at this
+        exact (e.symm_apply_eq).mpr this.symm
+    | some i, some j =>
+        refine key _ _ (hsimpS i) (hsimpS j) (fun e => ?_)
+        exact spechtRepAt_noniso i.property j.property
+          (fun hd => hab (congrArg some (Subtype.ext hd))) e
+  -- diagonal: the identity is equivariant, so `dim Hom_G ≥ 1`, nonzero in char 0
+  have hdiag : ∀ a, QOU.MathlibExt.RepresentationCharacter.charForm k (Perm (Fin n)) (χ a) (χ a) ≠ 0 := by
+    have key : ∀ {V₁ : Type} [AddCommGroup V₁] [Module k V₁] [Module.Finite k V₁]
+        [Nontrivial V₁] (ρ₁ : Representation k (Perm (Fin n)) V₁),
+        QOU.MathlibExt.RepresentationCharacter.charForm k (Perm (Fin n))
+          (QOU.MathlibExt.RepresentationCharacter.charOf ρ₁) (QOU.MathlibExt.RepresentationCharacter.charOf ρ₁) ≠ 0 := by
+      intro V₁ _ _ _ _ ρ₁
+      rw [QOU.MathlibExt.RepresentationCharacter.charForm_charOf]
+      exact Nat.cast_ne_zero.mpr
+        (Nat.one_le_iff_ne_zero.mp
+          (QOU.MathlibExt.RepresentationCharacter.one_le_finrank_homG_self ρ₁))
+    intro a
+    match a with
+    | none => exact key ρ
+    | some i => exact key _
+  -- the count, against the number of partitions
+  have hcard := QOU.MathlibExt.RepresentationCharacter.card_le_card_conjClasses_of_orthogonal χ
+    (fun a => by
+      match a with
+      | none => exact fun g h => QOU.MathlibExt.RepresentationCharacter.charOf_conj ρ g h
+      | some i => exact fun g h => QOU.MathlibExt.RepresentationCharacter.charOf_conj _ g h)
+    hoff hdiag
+  rw [Fintype.card_option, card_partitionIndex] at hcard
+  have hle := QOU.MathlibExt.GroupAlgebraCenter.card_conjClasses_perm_fin_le n
+  omega
 
 /-- **The count corollary (the punchline).**  The number of iso-classes of
 irreducible `k[S_n]`-modules equals the number of partitions of `n`.
