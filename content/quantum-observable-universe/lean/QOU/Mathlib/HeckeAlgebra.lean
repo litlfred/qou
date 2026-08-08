@@ -362,30 +362,30 @@ theorem blockSum_eq_one (q : ℝ) (hne : q + q⁻¹ ≠ 0) :
 abbrev H3Carrier (R : Type u) := R × R × R × R × R × R
 
 /-- The unit `1 ∈ H_3(q)`. -/
-def one (R : Type u) [CommRing R] : H3Carrier R := (1, 0, 0, 0, 0, 0)
+def H3.one (R : Type u) [CommRing R] : H3Carrier R := (1, 0, 0, 0, 0, 0)
 
 /-- The generator `σ_1 ∈ H_3(q)`. -/
-def sigma1 (R : Type u) [CommRing R] : H3Carrier R := (0, 1, 0, 0, 0, 0)
+def H3.sigma1 (R : Type u) [CommRing R] : H3Carrier R := (0, 1, 0, 0, 0, 0)
 
 /-- The generator `σ_2 ∈ H_3(q)`. -/
-def sigma2 (R : Type u) [CommRing R] : H3Carrier R := (0, 0, 1, 0, 0, 0)
+def H3.sigma2 (R : Type u) [CommRing R] : H3Carrier R := (0, 0, 1, 0, 0, 0)
 
 /-- The basis element `σ_1 σ_2`. -/
-def sigma1Sigma2 (R : Type u) [CommRing R] : H3Carrier R :=
+def H3.sigma1Sigma2 (R : Type u) [CommRing R] : H3Carrier R :=
   (0, 0, 0, 1, 0, 0)
 
 /-- The basis element `σ_2 σ_1`. -/
-def sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
+def H3.sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
   (0, 0, 0, 0, 1, 0)
 
 /-- The basis element `σ_1 σ_2 σ_1 = σ_2 σ_1 σ_2` (longest
     element of `S_3`). -/
-def sigma1Sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
+def H3.sigma1Sigma2Sigma1 (R : Type u) [CommRing R] : H3Carrier R :=
   (0, 0, 0, 0, 0, 1)
 
 /-- The 6 basis elements of `H_3(q)` are pairwise distinct
     (each has a single non-zero coordinate at a unique position). -/
-theorem basis_distinct (R : Type u) [CommRing R] [Nontrivial R] :
+theorem H3.basis_distinct (R : Type u) [CommRing R] [Nontrivial R] :
     H3.one R ≠ H3.sigma1 R ∧
     H3.sigma1 R ≠ H3.sigma2 R ∧
     H3.sigma2 R ≠ H3.sigma1Sigma2 R ∧
@@ -408,14 +408,14 @@ noncomputable def H3.markovTrace (q : ℝ) (x : H3Carrier ℝ) : ℝ :=
   + x.2.2.2.2.2 * z ^ 3
 
 /-- Markov-trace normalisation on `H_3(q)`: `tr_M(1) = 1`. -/
-theorem markovTrace_one (q : ℝ) :
+theorem H3.markovTrace_one (q : ℝ) :
     H3.markovTrace q (H3.one ℝ) = 1 := by
   show 1 + (0 + 0) * (1 / (q + q⁻¹))
     + (0 + 0) * (1 / (q + q⁻¹)) ^ 2 + 0 * (1 / (q + q⁻¹)) ^ 3 = 1
   ring
 
 /-- Markov-trace on `σ_1`: `tr_M(σ_1) = z`. -/
-theorem markovTrace_sigma1 (q : ℝ) :
+theorem H3.markovTrace_sigma1 (q : ℝ) :
     H3.markovTrace q (H3.sigma1 ℝ) = 1 / (q + q⁻¹) := by
   show 0 + (1 + 0) * (1 / (q + q⁻¹))
     + (0 + 0) * (1 / (q + q⁻¹)) ^ 2 + 0 * (1 / (q + q⁻¹)) ^ 3
@@ -439,13 +439,13 @@ theorem markovTrace_sigma1 (q : ℝ) :
     + a₆·σ_1σ_2σ_1` and `y` arbitrary. -/
 
 /-- Componentwise addition on `H3Carrier R`. -/
-def add {R : Type u} [CommRing R] (x y : H3Carrier R) : H3Carrier R :=
+def H3.add {R : Type u} [CommRing R] (x y : H3Carrier R) : H3Carrier R :=
   (x.1 + y.1, x.2.1 + y.2.1, x.2.2.1 + y.2.2.1,
    x.2.2.2.1 + y.2.2.2.1, x.2.2.2.2.1 + y.2.2.2.2.1,
    x.2.2.2.2.2 + y.2.2.2.2.2)
 
 /-- Scalar multiplication on `H3Carrier R`. -/
-def smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
+def H3.smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
   (a * x.1, a * x.2.1, a * x.2.2.1,
    a * x.2.2.2.1, a * x.2.2.2.2.1, a * x.2.2.2.2.2)
 
@@ -458,7 +458,7 @@ def smul {R : Type u} [CommRing R] (a : R) (x : H3Carrier R) : H3Carrier R :=
     - `σ_1 · σ_2 σ_1 = σ_1 σ_2 σ_1` (basis position 6).
     - `σ_1 · σ_1 σ_2 σ_1 = (q-q⁻¹) σ_1 σ_2 σ_1 + σ_2 σ_1`
       (positions 5, 6). -/
-def mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
+def H3.mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     H3Carrier R :=
   (x.2.1,
    x.1 + x.2.1 * (q - q⁻¹),
@@ -477,7 +477,7 @@ def mulSigma1 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     - `σ_2 · σ_2 σ_1 = (q-q⁻¹) σ_2 σ_1 + σ_1` (positions 2, 5).
     - `σ_2 · σ_1 σ_2 σ_1 = (q-q⁻¹) σ_1 σ_2 σ_1 + σ_1 σ_2`
       (positions 4, 6). -/
-def mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
+def H3.mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
     H3Carrier R :=
   (x.2.2.1,
    x.2.2.2.2.1,
@@ -490,21 +490,21 @@ def mulSigma2 {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
 
     Concrete carrier form: `σ_1² = (q - q⁻¹) σ_1 + 1` translates
     to position values `(1, q - q⁻¹, 0, 0, 0, 0)`. -/
-theorem sigma1_sq_eq (q : ℝ) :
+theorem H3.sigma1_sq_eq (q : ℝ) :
     H3.mulSigma1 q (H3.sigma1 ℝ) = (1, q - q⁻¹, 0, 0, 0, 0) := by
   unfold H3.mulSigma1 H3.sigma1
   simp
 
 /-- **Hecke relation on σ_2**: `H3.mulSigma2 σ_2 = (q - q⁻¹) · σ_2 + 1`.
     Carrier form: positions `(1, 0, q - q⁻¹, 0, 0, 0)`. -/
-theorem sigma2_sq_eq (q : ℝ) :
+theorem H3.sigma2_sq_eq (q : ℝ) :
     H3.mulSigma2 q (H3.sigma2 ℝ) = (1, 0, q - q⁻¹, 0, 0, 0) := by
   unfold H3.mulSigma2 H3.sigma2
   simp
 
 /-- **Braid relation**: `σ_1 σ_2 σ_1 = σ_2 σ_1 σ_2`.  Both sides
     reduce to basis position 6 (the longest element of `S_3`). -/
-theorem braid_relation (q : ℝ) :
+theorem H3.braid_relation (q : ℝ) :
     H3.mulSigma1 q (H3.mulSigma2 q (H3.sigma1 ℝ))
       = H3.mulSigma2 q (H3.mulSigma1 q (H3.sigma2 ℝ)) := by
   unfold H3.mulSigma1 H3.mulSigma2 H3.sigma1 H3.sigma2
@@ -515,7 +515,7 @@ theorem braid_relation (q : ℝ) :
     + a₃·σ_2 + a₄·σ_1σ_2 + a₅·σ_2σ_1 + a₆·σ_1σ_2σ_1`, with
     each basis-element-times-y computed by iterated generator
     action. -/
-def mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
+def H3.mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
     H3Carrier R :=
   let c1 := H3.smul x.1 y                                    -- 1 · y
   let c2 := H3.smul x.2.1 (H3.mulSigma1 q y)                 -- σ_1 · y
@@ -530,7 +530,7 @@ def mul {R : Type u} [Field R] (q : R) (x y : H3Carrier R) :
   H3.add c1 (H3.add c2 (H3.add c3 (H3.add c4 (H3.add c5 c6))))
 
 /-- Identity law: `1 · y = y`. -/
-theorem one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
+theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
     H3.mul q (H3.one R) y = y := by
   unfold H3.mul H3.one H3.smul H3.add
   obtain ⟨_, _, _, _, _, _⟩ := y
@@ -578,12 +578,12 @@ noncomputable def H3.poincare (q : ℝ) : ℝ :=
 /-- `P(q) ≥ 1 > 0` for every real `q` (even powers, positive
     coefficients): the Poincaré normalizer is unconditionally
     non-zero — no genericity hypothesis needed. -/
-theorem poincare_pos (q : ℝ) : 0 < H3.poincare q := by
+theorem H3.poincare_pos (q : ℝ) : 0 < H3.poincare q := by
   unfold H3.poincare
   nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)]
 
 /-- The Poincaré normalizer never vanishes (any real `q`). -/
-theorem poincare_ne_zero (q : ℝ) : H3.poincare q ≠ 0 :=
+theorem H3.poincare_ne_zero (q : ℝ) : H3.poincare q ≠ 0 :=
   ne_of_gt (H3.poincare_pos q)
 
 /-- The symmetric Wedderburn projector `e_[3]` for `H_3(q)`
@@ -616,7 +616,7 @@ noncomputable def H3.blockMixed21 (q : ℝ) : H3Carrier ℝ :=
     componentwise.  Stated as the **first-component** version
     for demonstration; the analogous componentwise theorems
     follow by parallel `ring` arguments. -/
-theorem blockSum_first_component (q : ℝ) :
+theorem H3.blockSum_first_component (q : ℝ) :
     (H3.blockSym3 q).1 + (H3.blockAlt3 q).1 + (H3.blockMixed21 q).1
       = (H3.one ℝ).1 := by
   -- `e_[2,1]`'s first component is definitionally
@@ -646,16 +646,16 @@ abbrev H4Carrier (R : Type u) := Fin 24 → R
 
 /-- The unit element `1 ∈ H_4(q)` as a function-valued carrier:
     coefficient `1` at the identity (index 0), `0` elsewhere. -/
-def one (R : Type u) [CommRing R] : H4Carrier R :=
+def H4.one (R : Type u) [CommRing R] : H4Carrier R :=
   fun i => if i = 0 then 1 else 0
 
 /-- Basis-element accessor: `H4.basis i` is the coefficient
     function with `1` at position `i` and `0` elsewhere. -/
-def basis {R : Type u} [CommRing R] (i : Fin 24) : H4Carrier R :=
+def H4.basis {R : Type u} [CommRing R] (i : Fin 24) : H4Carrier R :=
   fun j => if j = i then 1 else 0
 
 /-- The basis has exactly 24 elements. -/
-theorem basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
+theorem H4.basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
   rw [Finset.card_univ, Fintype.card_fin]
 
 /-! ### H_4 Wedderburn projector definitions
@@ -695,13 +695,13 @@ noncomputable def H4.poincare (q : ℝ) : ℝ :=
 
 /-- `P₄(q) ≥ 1 > 0` for every real `q` (even powers, positive
     coefficients) — unconditionally non-zero, like `H3.poincare_pos`. -/
-theorem poincare_pos (q : ℝ) : 0 < H4.poincare q := by
+theorem H4.poincare_pos (q : ℝ) : 0 < H4.poincare q := by
   unfold H4.poincare
   nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3),
              sq_nonneg (q ^ 4), sq_nonneg (q ^ 5), sq_nonneg (q ^ 6)]
 
 /-- The `S_4` Poincaré normalizer never vanishes (any real `q`). -/
-theorem poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
+theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
   ne_of_gt (H4.poincare_pos q)
 
 open QOU.Mathlib.PermutationEnumeration in
@@ -731,7 +731,7 @@ open QOU.Mathlib.PermutationEnumeration in
     Coxeter length `0,…,6` is `1, 3, 5, 6, 5, 3, 1` (the
     coefficient row of `P₄`; total `24 = 4!`).  Evaluated by
     `decide` over the 24 permutations. -/
-theorem s4_length_card :
+theorem H4.s4_length_card :
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
       (fun w => coxeterLength w = 0)).card = 1) ∧
     (((Finset.univ : Finset (Equiv.Perm (Fin 4))).filter
@@ -757,7 +757,7 @@ open QOU.Mathlib.PermutationEnumeration in
     Enumeration-independent: the sum transports along
     `permutationEnumeration 4`, then evaluates fiberwise over the
     `S_4` length distribution. -/
-theorem sum_q_sq_length_eq_poincare (q : ℝ) :
+theorem H4.sum_q_sq_length_eq_poincare (q : ℝ) :
     ∑ i : Fin (Nat.factorial 4), q ^ (2 * lengthFn 4 i)
       = H4.poincare q := by
   have h1 : ∑ i : Fin (Nat.factorial 4), q ^ (2 * lengthFn 4 i)
@@ -834,7 +834,7 @@ noncomputable def H4.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 24 → ℕ)
 
 /-- Markov-trace normalisation `tr_M(1) = 1` requires the
     length function to assign `0` to the identity (basis 0). -/
-theorem markovTraceOnBasis_one (q : ℝ) (lengthFn : Fin 24 → ℕ)
+theorem H4.markovTraceOnBasis_one (q : ℝ) (lengthFn : Fin 24 → ℕ)
     (h_id : lengthFn 0 = 0) :
     H4.markovTraceOnBasis q lengthFn (H4.one ℝ) = 1 := by
   unfold H4.markovTraceOnBasis H4.one
@@ -855,15 +855,15 @@ theorem markovTraceOnBasis_one (q : ℝ) (lengthFn : Fin 24 → ℕ)
 abbrev H5Carrier (R : Type u) := Fin 120 → R
 
 /-- The unit `1 ∈ H_5(q)`. -/
-def one (R : Type u) [CommRing R] : H5Carrier R :=
+def H5.one (R : Type u) [CommRing R] : H5Carrier R :=
   fun i => if i = 0 then 1 else 0
 
 /-- Basis-element accessor. -/
-def basis {R : Type u} [CommRing R] (i : Fin 120) : H5Carrier R :=
+def H5.basis {R : Type u} [CommRing R] (i : Fin 120) : H5Carrier R :=
   fun j => if j = i then 1 else 0
 
 /-- The basis has exactly 120 elements (= |S_5| = 5!). -/
-theorem basis_count : (Finset.univ : Finset (Fin 120)).card = 120 := by
+theorem H5.basis_count : (Finset.univ : Finset (Fin 120)).card = 120 := by
   rw [Finset.card_univ, Fintype.card_fin]
 
 /-- Markov trace on `H_5(q)` over `ℝ`. -/
@@ -877,15 +877,15 @@ noncomputable def H5.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 120 → ℕ)
 abbrev H6Carrier (R : Type u) := Fin 720 → R
 
 /-- The unit `1 ∈ H_6(q)`. -/
-def one (R : Type u) [CommRing R] : H6Carrier R :=
+def H6.one (R : Type u) [CommRing R] : H6Carrier R :=
   fun i => if i = 0 then 1 else 0
 
 /-- Basis-element accessor. -/
-def basis {R : Type u} [CommRing R] (i : Fin 720) : H6Carrier R :=
+def H6.basis {R : Type u} [CommRing R] (i : Fin 720) : H6Carrier R :=
   fun j => if j = i then 1 else 0
 
 /-- The basis has exactly 720 elements (= |S_6| = 6!). -/
-theorem basis_count : (Finset.univ : Finset (Fin 720)).card = 720 := by
+theorem H6.basis_count : (Finset.univ : Finset (Fin 720)).card = 720 := by
   rw [Finset.card_univ, Fintype.card_fin]
 
 /-- Markov trace on `H_6(q)` over `ℝ`. -/
@@ -909,16 +909,16 @@ noncomputable def H6.markovTraceOnBasis (q : ℝ) (lengthFn : Fin 720 → ℕ)
 abbrev HnCarrier (n : ℕ) (R : Type u) := Fin n.factorial → R
 
 /-- The unit `1 ∈ H_n(q)`. -/
-def one (n : ℕ) (R : Type u) [CommRing R] : HnCarrier n R :=
+def Hn.one (n : ℕ) (R : Type u) [CommRing R] : HnCarrier n R :=
   fun i => if i.val = 0 then 1 else 0
 
 /-- Basis-element accessor at position `i`. -/
-def basis {n : ℕ} {R : Type u} [CommRing R]
+def Hn.basis {n : ℕ} {R : Type u} [CommRing R]
     (i : Fin n.factorial) : HnCarrier n R :=
   fun j => if j = i then 1 else 0
 
 /-- The generic basis has `n!` elements. -/
-theorem basis_count (n : ℕ) :
+theorem Hn.basis_count (n : ℕ) :
     (Finset.univ : Finset (Fin n.factorial)).card = n.factorial := by
   exact Finset.card_univ.trans (Fintype.card_fin n.factorial)
 
@@ -1058,17 +1058,17 @@ theorem markovTraceGeneric_one {n : ℕ} (z : ℝ)
 
 /-- Abstract `mulSigma_i` for `H_4(q)`: caller supplies the
     24-tuple of action-results indexed by basis position.  -/
-def mulSigmaAbstract (table : Fin 24 → H4Carrier ℝ)
+def H4.mulSigmaAbstract (table : Fin 24 → H4Carrier ℝ)
     (x : H4Carrier ℝ) : H4Carrier ℝ :=
   fun j => ∑ i : Fin 24, x i * table i j
 
 /-- Abstract `mulSigma_i` for `H_5(q)`. -/
-def mulSigmaAbstract (table : Fin 120 → H5Carrier ℝ)
+def H5.mulSigmaAbstract (table : Fin 120 → H5Carrier ℝ)
     (x : H5Carrier ℝ) : H5Carrier ℝ :=
   fun j => ∑ i : Fin 120, x i * table i j
 
 /-- Abstract `mulSigma_i` for `H_6(q)`. -/
-def mulSigmaAbstract (table : Fin 720 → H6Carrier ℝ)
+def H6.mulSigmaAbstract (table : Fin 720 → H6Carrier ℝ)
     (x : H6Carrier ℝ) : H6Carrier ℝ :=
   fun j => ∑ i : Fin 720, x i * table i j
 
@@ -1930,7 +1930,7 @@ set_option maxHeartbeats 2000000 in
     (the normalizer is unconditionally non-zero; `q ≠ 0` clears the
     `q - q⁻¹` structure constants) and closes by `ring` against the
     Poincaré identity `Σ_w q^{2ℓ(w)} = P(q)`. -/
-theorem blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockSym3 q) (H3.blockSym3 q) = H3.blockSym3 q := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
     H3.poincare_ne_zero q
@@ -1945,7 +1945,7 @@ theorem blockSym3_sq (q : ℝ) (hq : q ≠ 0) :
 set_option maxHeartbeats 2000000 in
 /-- **Full idempotency of `e_[1,1,1]`** (all six carrier
     components), with the sign block's `P(q⁻¹)` normalizer. -/
-theorem blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockAlt3_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockAlt3 q) (H3.blockAlt3 q) = H3.blockAlt3 q := by
   have hPd : ((q : ℝ) ^ 6 + 2 * q ^ 4 + 2 * q ^ 2 + 1) ≠ 0 := fun h =>
     H3.poincare_ne_zero q (by unfold H3.poincare; linarith)
@@ -1961,7 +1961,7 @@ set_option maxHeartbeats 4000000 in
 /-- **Full idempotency of `e_[2,1]`** (all six carrier components).
     The largest expansion of the four (three blocks plus the unit);
     heartbeats raised accordingly. -/
-theorem blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockMixed21_sq (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockMixed21 q) (H3.blockMixed21 q) = H3.blockMixed21 q := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
     H3.poincare_ne_zero q
@@ -1982,7 +1982,7 @@ set_option maxHeartbeats 2000000 in
 /-- **Full orthogonality `e_[3] · e_[1,1,1] = 0`** (all six carrier
     components).  Componentwise, the alternating-sign cancellation
     `Σ_w (-1)^{ℓ(w)} = 0` over `S_3` after `q · q⁻¹ = 1`. -/
-theorem blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
+theorem H3.blockSym3_blockAlt3_orthogonal (q : ℝ) (hq : q ≠ 0) :
     H3.mul q (H3.blockSym3 q) (H3.blockAlt3 q) = (0, 0, 0, 0, 0, 0) := by
   have hP : ((1 : ℝ) + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6) ≠ 0 :=
     H3.poincare_ne_zero q

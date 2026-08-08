@@ -167,7 +167,8 @@ def scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :
     ratio equals cos θ_W exactly (CONDITIONAL, derived from
     CategoricalHiggsIdempotent.m_W_over_m_Z_eq_cos_theta_W). -/
 theorem corollary_W_Z_ratio_eq_cos_theta_W :
-    m_W_GeV / m_Z_GeV = cos_theta_W :=
+    CategoricalHiggsIdempotent.m_W_GeV / CategoricalHiggsIdempotent.m_Z_GeV =
+      CategoricalHiggsIdempotent.cos_theta_W :=
   CategoricalHiggsIdempotent.m_W_over_m_Z_eq_cos_theta_W
 
 /-- Explicit numerical reduction: 6/5 = 1.2. -/

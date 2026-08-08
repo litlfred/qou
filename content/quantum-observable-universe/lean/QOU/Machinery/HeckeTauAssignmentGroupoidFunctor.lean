@@ -138,7 +138,7 @@ structure MarkedPairHom (p p' : MarkedPair cs) where
   map_i : hom (cs.simple p.i) = cs.simple p'.i
   map_j : hom (cs.simple p.j) = cs.simple p'.j
 
-lemma ext' {p p' : MarkedPair cs}
+lemma MarkedPairHom.ext' {p p' : MarkedPair cs}
     {f g : MarkedPairHom cs p p'} (h : f.hom = g.hom) : f = g := by
   cases f
   cases g
