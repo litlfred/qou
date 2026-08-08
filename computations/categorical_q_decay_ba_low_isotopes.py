@@ -106,10 +106,25 @@ SIX_TERM_WITNESS = _pb.witness_path("mass-formula-6term.witness.json", HERE)
 # Tier selection per isotope
 TIER_BY_SYM = {
     "1H":  "trivial (A=1, B=0 by convention; m_atom = m_p + m_e)",
-    # Owner ruling 2026-07-07 (PR #3448 §3f, option a): tier kept, labeled
-    # NEAR-MATCH — dimensionless structure Lean-proved, MeV unit anchor OPEN,
-    # +0.41% residual real. See 2026-07-06 reeb-flow audit §2e/§2f.
-    "D":   "reeb-flow (pn-bond sub-ceiling magnitude; NEAR-MATCH: unit anchor open, +0.41%)",
+    # SUPERSEDED 2026-08-08 by owner instruction ("get rid of B=5g ... replace
+    # with correct object"). The prior ruling is kept here because it was a
+    # deliberate decision, not an oversight, and the record should show what
+    # changed and why:
+    #
+    #   Owner ruling 2026-07-07 (PR #3448 §3f, option a): tier kept, labeled
+    #   NEAR-MATCH — dimensionless structure Lean-proved, MeV unit anchor OPEN,
+    #   +0.41% residual real. See 2026-07-06 reeb-flow audit §2e/§2f.
+    #
+    # That ruling already identified the MeV unit anchor as OPEN. What is new
+    # is that it cannot be closed: `5g` depends only on the dimensionless q0,
+    # so it carries no m_e and cannot be an energy in a framework where every
+    # energy is alpha x dimensionless. The +0.41% held in MeV and no other
+    # unit. So the tier is removed rather than left pending.
+    #
+    # The Lean-proved DIMENSIONLESS STRUCTURE is untouched by this — the
+    # identity 5 + (v-1/v)^2 = 1 + (v+1/v)^2 and the ss-ceiling g < 1/sqrt5
+    # stand. Only the assertion that 5g IS a binding energy is withdrawn.
+    "D":   "trace-log-ratio alpha*ln(tr_free/tr_atom) (+74.9%; the reeb-flow 5g tier was removed as dimensionally underivable)",
     # NOTE: kashaev-with-inter-correction gives D to 23 ppb but is
     # documented in d_inter_correction_test.py as 'numerical coincidence'
     # — NO paper proposition derives it. Reverted to Reeb-flow derivation.
@@ -212,23 +227,34 @@ def load_canonical_b(sym: str):
             "tier": tier,
         }
 
-    if "reeb-flow" in tier:
-        # Reeb-flow magnitude for the pn bond:
-        #   g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²)  (= 1/sqrt(5+(q−1)²/q), exact identity)
-        # — the Markov-peel bond factor z = 1/(√q+1/√q) arc-length-normalized,
-        # equivalently the q-deformed [1⁴] ss-ceiling with pn-degree 2 → [2]_v.
-        # Derivation + probe: docs/audits/2026-07-06-reeb-flow-pn-magnitude-
-        # provenance-and-1four-extension.md §2b; probes/reeb_g_structural_identity_probe.py.
+    if "trace-log-ratio" in tier:
+        # DEUTERON BINDING FROM THE TRACE, alpha * ln(tr_free / tr_atom).
+        #
+        # This replaces the "reeb-flow" tier, which returned `B_pred = 5*g`
+        # with `g = 1/sqrt(5 + (q0-1)^2/q0)` and the comment "Binding is
+        # strictly 5*g". That law is not derivable in this framework, and the
+        # tier's own label already conceded it -- "unit anchor open".
+        #
+        # `g` depends only on q0, a mass RATIO and therefore dimensionless, so
+        # `5g = 2.2336` was a PURE NUMBER declared to be MeV. It does not scale
+        # with m_e, the CAL-1 unit: in keV it would be wrong by 1000x. Every
+        # energy here is alpha x dimensionless and alpha carries m_e, so no
+        # derivation of `5g` as an energy can exist. Its +0.41% agreement with
+        # AME held in MeV specifically and nowhere else.
+        #
+        # The trace log-ratio is the same object the pp and nn bonds already
+        # use, is dimensionless, and carries its energy through alpha.
+        #
+        # IT IS MUCH LESS ACCURATE, and that is the point: +74.9% against AME
+        # rather than +0.41%. The old agreement was bought by an object that
+        # could not be an energy. This is the theory's actual state at A=2.
         import mpmath as mp
+        from tr_m_atom_via_transfer import tr_m_atom_zn
         from q_parameter import Q_MP as Q0_val
-        q0 = mp.mpf(str(Q0_val))
-        v = mp.sqrt(q0)
-        z_bond = mp.mpf(1) / (v + 1 / v)
-        g_true = float(z_bond / mp.sqrt(1 + z_bond ** 2))
-        # Binding is strictly 5*g
-        B_pred = 5.0 * g_true
-        # This tier applies only to D; err vs AME(²H) is +0.41 %, not 0
-        # (B_pred ≈ 2.2336 vs 2.22457).
+        _q0 = mp.mpf(str(Q0_val))
+        _alpha = float(mp.mpf(str(M_E_MEV)) / (_q0 * (_q0 - 1)))
+        ta, tf, _, _ = tr_m_atom_zn(1, 1, dps=50)
+        B_pred = _alpha * float(mp.log(mp.mpf(tf) / mp.mpf(ta)))
         b_ame = float(AME_B_DEUTERON_MEV_VALIDATION)
         return {
             "B_pred_MeV": B_pred,

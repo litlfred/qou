@@ -255,34 +255,54 @@ def _constants():
 
 
 def _bond_type_L():
-    """Per-bond-type 2-nucleon sub-braid log-suppression: p-p (2,0),
-    p-n (1,1) (overridden by exact Reeb-flow bound), n-n (0,2).
-    The V_i of the factorized q-CLT, computed once."""
-    from tr_m_atom_via_transfer import tr_m_atom_zn
-    import mpmath as mp
-    from q_parameter import Q_50_DIGIT_STR as _Q50
-    import codata_constants as _codata
+    """Per-bond-type 2-nucleon sub-braid log-suppression, ALL THREE from the
+    trace: p-p (2,0), p-n (1,1), n-n (0,2). The V_i of the factorized q-CLT.
 
-    # `mp.mpf(str(q_parameter.Q))` was here: a high-precision TYPE holding 17
-    # real digits, which capped g_true below. The 50-dps string is the value.
-    q0 = mp.mpf(str(_Q50))
-    # g = z/sqrt(1+z²) = 1/sqrt(1+[2]_v²): the Markov-peel bond factor z
-    # arc-length-normalized ≡ the q-deformed [1⁴] ss-ceiling (2 → [2]_v).
-    # Identity 5+(q−1)²/q = 1+[2]_v² is exact; see
-    # docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md §2b
-    # + probes/reeb_g_structural_identity_probe.py (4/4 assertions).
-    v = mp.sqrt(q0)
-    z_bond = mp.mpf(1) / (v + 1 / v)
-    g_true = float(z_bond / mp.sqrt(1 + z_bond ** 2))
-    _, _, alpha = _constants()
+    THE REEB OVERRIDE IS GONE (2026-08-08). `pn` used to be replaced by
+    `5*g_reeb/alpha` with `g_reeb = 1/sqrt(5 + (q0-1)^2/q0)`, while pp and nn
+    came from `ln(tr_free/tr_atom)`. Three bond constants, two derivations.
+
+    It was removed because the linear law B = 5g is not derivable in this
+    framework, not merely unproven. `g` depends only on q0, which is a mass
+    RATIO and therefore dimensionless, so `5g = 2.2336` is a PURE NUMBER
+    declared to be MeV. It does not scale with m_e:
+
+        alpha = m_e/(q0(q0-1))  ->  4.185981 MeV == 4185.981 keV   consistent
+        5g                      ->  2.2336 "MeV" != 2.2336 "keV"   off by 1000x
+
+    Every energy here is alpha x dimensionless and alpha carries the CAL-1 unit
+    m_e; a quantity with no m_e in it cannot be an energy. Its +0.41% agreement
+    with AME was a coincidence in MeV specifically. The 2026-07-06 provenance
+    audit already graded the linear law ASSERTED and "dimensionally implicit";
+    this is the stronger statement that no derivation can exist for it as
+    written.
+
+    It also made the chain sum incoherent term-by-term: L_pn carried m_e (via
+    the 1/alpha) while L_pp and L_nn were pure q0 functions, so alpha cancelled
+    for one term of `alpha[(Z-1)L_pp + L_pn + (N-1)L_nn]` and not the others.
+
+    WHAT THIS COSTS, stated plainly. The override was what made the deuteron
+    come out exact:
+
+        B_AME(2H)                      2.2246 MeV
+        with the Reeb override         2.2336 MeV   err 0.996
+        with the trace (now)           3.8897 MeV   err 0.572
+
+    So the flagship "err sym = 1.00" was a property of the override, not of the
+    Frobenius pairing. Removing it makes the deuteron over-bind by 1.75x, which
+    is the theory's actual state. What is gained is that B_sym is now genuinely
+    `alpha*ln(tr_free/tr_atom)` -- the docstring's claim that the chain closed
+    form reproduces the exact p(3A) trace to ~1e-13 becomes TRUE, where it was
+    off by a constant 1.6561 MeV for every isotope.
+
+    Bean qou-xzda.
+    """
+    from tr_m_atom_via_transfer import tr_m_atom_zn
 
     out = {}
     for key, (Z, N) in (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2))):
-        if key == "pn":
-            out[key] = (5.0 * g_true) / alpha
-        else:
-            ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-            out[key] = math.log(float(tf) / float(ta))
+        ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
+        out[key] = math.log(float(tf) / float(ta))
     return out
 
 
