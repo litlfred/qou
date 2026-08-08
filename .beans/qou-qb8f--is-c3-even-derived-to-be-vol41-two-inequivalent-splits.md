@@ -1,7 +1,7 @@
 ---
 # qou-qb8f
 title: 'Is c_3^even DERIVED to be -Vol(4_1)? Two inequivalent splits live in the corpus'
-status: completed
+status: todo
 type: task
 priority: high
 created_at: 2026-08-08T10:45:00Z
@@ -125,3 +125,63 @@ No Lean edited; the docstring fix belongs to those files' owners (#4734 notified
 c_3^even ~ 0, if right, is itself a structural claim worth PROVING rather than
 inferring from a 1e-5 two-anchor cross-check. Filed as a note here, not a bean,
 pending the owners' read.
+
+
+---
+
+# *** CORRECTION (2026-08-08, same day) — the verdict above is PARTLY WITHDRAWN ***
+
+The claim "(H1) CONTRADICTS the canonical kappa*S split" was CIRCULAR. Withdrawn.
+
+S is DEFINED as S := a_1/kappa_(2,1) with a_1 = -c_3:
+  - qbeta_s_complex_volume_rigidity_probe.py:69
+      "# S = a_1/kappa_(2,1) = Q_beta/E_0 at the two anchors"
+  - 2026-06-13-qbeta-root-of-unity-residue-program.md:177
+      "| bar-ODD a_1 = -c_3 | live | carrier kappa_(2,1) = (q-1)^3(q+1)/q^2 |"
+
+So "reconstructing" S = -c_3/kappa and recovering 908.4 / 886.8 is an IDENTITY.
+The tell: agreement 4.1e-5 / 1.1e-5 sits INSIDE the 4-s.f. rounding window
+(5.5e-5 / 5.6e-5) of the quoted values. Agreement at exactly the quoted
+precision = the same number, not confirmation.
+
+Root cause: treated "quoted in a different audit" as "independently derived",
+without tracing the cross-check target's provenance. Same error class as the
+subject under audit.
+
+## CORRECTED VERDICT (stronger)
+
+BOTH named splits are DEFINITIONS:
+    S_leak := c_3 + Vol(4_1)
+    S      := -c_3 / kappa_(2,1)
+c_3 is recovered EXACTLY from either, both ways (<1e-40) -- reparametrisations,
+adding no information. Therefore:
+  - the kappa*S split does NOT refute (H1); it says nothing about it
+  - the kappa*S split is NOT itself a derived decomposition
+  - THE BAR-PARITY OF c_3 IS UNDETERMINED BY THE PRESENT CORPUS
+
+(H1) status: UNDERIVED (no derivation found in docs/, content/, computations/)
+-- absence of a derivation, NOT a contradiction with one.
+
+## PARITY TENSION (recorded, not resolved)
+
+kappa_(2,1) is verifiably bar-ODD. The 2026-07-07 audit says S "inherits bar-odd
+from Q_beta". odd x odd = EVEN, which would make c_3 = -kappa*S bar-EVEN and
+"c_3^odd" a misnomer. Resolution: with S := -c_3/kappa, S's parity is whatever
+makes the identity hold -- so no parity information is carried. Second route to
+the same corrected conclusion.
+
+## STILL STANDS (unaffected by the withdrawal)
+
+  A. bar-split inaccessible from anchors (needs q ~ 0.901; both at ~1.10998)
+  B. S_leak is a 98-99.5% cancellation; 2.4325% -> 507.51% swing, 208.63x, and
+     that amplification is ARITHMETIC. (Arguments using the ABSOLUTE difference
+     |S_1 - S_2| are unaffected -- the offset cancels there identically. So
+     sibling #4734's Lipschitz bound is untouched, as told to them.)
+  C. Every theorem in SLeakZeroCrossing / SLeakMagnitude{Offset,Taylor}Ratio
+     stands -- generic, hypothesis-carrying. No Lean edited.
+
+## Status: reopened -> the real question moves to qou-qb8g
+
+qb8g is no longer "prove c_3^even = 0" (that premise came from the withdrawn
+argument). It is now: NEITHER split is derived, so c_3's bar-parity needs a
+genuinely derived decomposition before any bar-parity claim can be made.

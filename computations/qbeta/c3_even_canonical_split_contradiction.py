@@ -1,6 +1,13 @@
 #!/usr/bin/env python3
 """
-c3_even_canonical_split_contradiction.py — settle bean `qou-qb8f`.
+c3_even_canonical_split_contradiction.py — bean `qou-qb8f`.
+
+*** CORRECTED 2026-08-08 (same day).  The first version of this probe claimed
+    the kappa*S split gives an INDEPENDENT cross-check refuting
+    c_3^even = -Vol(4_1).  THAT CLAIM WAS CIRCULAR AND IS WITHDRAWN.  The
+    corrected finding is stronger and is below.  History kept deliberately:
+    the mistake is instructive and is exactly the failure mode this file's
+    own subject matter is about. ***
 
 QUESTION.  `SLeakZeroCrossing.lean:11` defines
 
@@ -11,50 +18,76 @@ amphichiral -Vol(4_1) face".  That reading requires
 
     c_3^even = -Vol(4_1) ~ -2.0299                                       (H1)
 
-Is (H1) DERIVED, or is it an assumed structural form?
+Is (H1) derived?
 
-METHOD.  Do not attempt the bar-split from anchor data — it is not accessible
-(it needs c_3 at q ~ 0.901; both anchors sit at q ~ 1.10998).  Instead test (H1)
-against the corpus's OTHER, independently-derived decomposition and check
-whether the two can both hold.
+WHY THE ANCHORS CANNOT ANSWER IT DIRECTLY.  c_3^even(q) = (c_3(q)+c_3(1/q))/2
+needs c_3 at q ~ 0.901.  Both anchors sit at q ~ 1.10998.  No anchor data
+determines the bar-split; it must come from an assumed structural form.
 
-THE CANONICAL SPLIT (docs/audits/2026-07-07-c3-even-solved-s-complex-volume-
-rigidity.md §2, tier structural-exact):
+THE MISTAKE (first version).  I tried to test (H1) against the corpus's other
+decomposition, `c_3^odd = kappa_(2,1)(q)*S` with
+`kappa_(2,1) = (q-1)^3(q+1)/q^2` (2026-07-07 audit §2), treating that audit's
+quoted `S_p ~ 908.4`, `S_mu ~ 886.8` as independent numbers.  Inverting
+`c_3 = -kappa*S` under `c_3^even = 0` returned them to ~1e-5, and I read that as
+confirmation that c_3 is purely bar-odd, hence c_3^even ~ 0, hence (H1) refuted.
 
-    c_3^odd = kappa_(2,1)(q) * S,     kappa_(2,1)(q) = (q-1)^3 (q+1) / q^2
+It is not confirmation.  `S` is DEFINED as that quotient:
 
-with `kappa_(2,1)` the DERIVED pure-q bar-odd carrier and `S = Q_beta/E_0` the
-single archimedean scalar, quoted there as S_proton ~ 908.4, S_muon ~ 886.8
-(S_p/S_mu ~ 1.024).
+  * `docs/audits/scripts/qbeta_s_complex_volume_rigidity_probe.py:69`
+        "# S = a_1/kappa_(2,1) = Q_beta/E_0 at the two anchors"
+  * `docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md:177`
+        "| bar-ODD `a_1 = -c_3` | live | carrier kappa_(2,1) = (q-1)^3(q+1)/q^2 |"
 
-Those S values are stated INDEPENDENTLY of anything in the S_leak framing, so
-they are a free cross-check: invert `c_3 = -kappa*S` at each anchor under the
-hypothesis `c_3^even = 0` and see whether the audit's S values come back.
+so `S := a_1/kappa = -c_3/kappa` — precisely the formula "verified".  Dividing
+the same numbers the same way and getting them back is an identity, not a test.
 
-RESULT (assertions below).  They come back to 4.1e-5 / 1.1e-5 relative.  So the
-corpus's canonical decomposition has c_3 essentially PURELY BAR-ODD — its
-bar-even part is ~0, not -2.03.  (H1) is therefore not merely underived: it is
-INCOMPATIBLE with the canonical split.
+THE TELL, quantified below: the agreement was ~4.1e-5 and ~1.1e-5, both INSIDE
+the 4-significant-figure rounding window of the quoted "908.4" / "886.8"
+(5.5e-5, 5.6e-5).  Agreement at exactly the quoted precision is the signature of
+the same number, not of an independent match.
 
-WHAT `S_leak` ACTUALLY IS.  Adding +2.0299 to a number in [-2.069, -2.020] does
-not remove a bar-even face; it CANCELS ~98% of the bar-ODD part.  `S_leak` is a
-near-total cancellation residual.  That is the mechanical origin of its
-hypersensitivity: c_3's own anchor swing is 2.4%, while S_leak's is ~500% — an
-amplification of ~200x, purely from the cancellation.
+THE CORRECTED — AND STRONGER — FINDING.  `S := -c_3/kappa_(2,1)` is a DEFINED
+RESIDUAL, with exactly the epistemic status of `S_leak := c_3 + Vol(4_1)`.
+Both take c_3, apply a fixed transformation, and name the result as though it
+were an independently meaningful part of c_3.  Therefore:
 
-SCOPE.  (a) scope-limited, and deliberately so.  What is refuted is the
-IDENTIFICATION (H1), not `Vol(4_1)` as an ingredient anywhere else, and not any
-theorem in SLeakZeroCrossing.lean / SLeakMagnitude*.lean — those are stated for
-a GENERIC function with the anchor signs (or a simple zero) as HYPOTHESES and
-are unaffected.  What is refuted is the interpretive sentence that names S_leak
-"c_3's bar-odd residual".
+  * The kappa*S split does NOT refute (H1) — it says nothing about it.
+  * The kappa*S split is not itself a DERIVED decomposition of c_3 either.
+  * The bar-parity of c_3 is UNDETERMINED by anything currently in the corpus:
+    the two anchors cannot supply it, and neither named "split" is derived.
 
-NO FIT.  Every number is either a corpus-committed anchor value or an exact
-evaluation of the derived carrier kappa_(2,1).  Nothing is tuned; nothing is
-wired to production.
+This is the AGENTS.md guard "Defined residual != derived decomposition
+(STRICT, 2026-08-08)" applied to BOTH splits — including, embarrassingly, to
+the one I reached for as the arbiter.
+
+A PARITY TENSION worth recording (not resolved here).  `kappa_(2,1)` is
+verifiably bar-ODD (checked symbolically below).  The 2026-07-07 audit also
+says S "inherits bar-odd from Q_beta".  bar-odd x bar-odd = bar-EVEN, which
+would make `c_3 = -kappa*S` bar-EVEN and the label "c_3^odd" a misnomer.  The
+resolution is that S's parity is not independent data: with `S := -c_3/kappa`,
+S's parity is whatever makes the identity hold.  So the tension is not a
+contradiction, but it does confirm that no parity information is carried.
+
+WHAT SURVIVES UNCHANGED (verified below, independent of the withdrawn claim):
+
+  A. The bar-split is not accessible from anchors at q ~ 1.10998.
+  B. S_leak is a 98-99.5% CANCELLATION of c_3, amplifying c_3's real 2.43%
+     anchor swing to 507.5% — a factor of ~209 that is arithmetic, not
+     structure.  Any argument reading S_leak's RELATIVE swing as structural
+     sensitivity is reading the cancellation.
+  C. (H1) remains UNDERIVED: no derivation of c_3^even = -Vol(4_1) exists in
+     the corpus (searched docs/, content/, computations/).  Absence of a
+     derivation — NOT, as first claimed, a contradiction with one.
+
+SCOPE.  (a) throughout.  Nothing here refutes Vol(4_1) as an ingredient, 4_1's
+amphichirality, or ANY theorem in SLeakZeroCrossing.lean /
+SLeakMagnitude{Offset,Taylor}Ratio.lean — all generic and hypothesis-carrying,
+all unaffected.
+
+NO FIT.  Nothing wired.
 
 -- Ref: [manuscript] docs/audits/2026-07-07-c3-even-solved-s-complex-volume-rigidity.md
--- Ref: [manuscript] docs/audits/2026-07-03-9fnm-c3even-exact-rational-measurement.md
+-- Ref: [manuscript] docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md
 -- Ref: [manuscript] AGENTS.md "Defined residual != derived decomposition (STRICT, 2026-08-08)"
 """
 
@@ -63,140 +96,128 @@ from mpmath import mp, mpf
 mp.dps = 50
 
 # ---------------------------------------------------------------- corpus data
-# Substrate anchors.  Proton = the experimental/Physical-Observations pin
-# (AGENTS.md owner directive 2026-08-07); muon = the ideal CAL-2 proxy pin.
 Q_PROTON = mpf("1.1099785827513808")
 Q_MUON = mpf("1.10997859555733471")
 
-# c_3 at each anchor (ck-dk canonical registry; the same pair the S_leak
-# framing and the 2026-07-07 audit both quote).
 C3_PROTON = mpf("-2.06934258")
 C3_MUON = mpf("-2.02020024")
 
-# Vol(4_1) = 2*Lobachevsky(pi/3), the figure-eight hyperbolic volume.
 VOL_41 = mpf("2.029883212819307")
 
-# S values quoted INDEPENDENTLY by the 2026-07-07 audit §2.  These are the
-# cross-check targets — they are not inputs to the reconstruction below.
-S_PROTON_AUDIT = mpf("908.4")
-S_MUON_AUDIT = mpf("886.8")
+# As QUOTED (4 significant figures) in the 2026-07-07 audit and hardcoded at
+# qbeta_s_complex_volume_rigidity_probe.py:70-71.  NOT independent data --
+# they are -c_3/kappa, which is what section [1] demonstrates.
+S_PROTON_QUOTED = mpf("908.4")
+S_MUON_QUOTED = mpf("886.8")
 
 
 def kappa_21(q):
-    """The derived pure-q bar-odd carrier kappa_(2,1)(q) = (q-1)^3 (q+1)/q^2.
-
-    Bar-odd: kappa(1/q) = -kappa(q), verified symbolically in `check_kappa_odd`.
-    """
+    """Derived pure-q carrier kappa_(2,1)(q) = (q-1)^3 (q+1)/q^2."""
     return (q - 1) ** 3 * (q + 1) / q**2
 
 
 def check_kappa_bar_odd():
     """kappa_(2,1) is genuinely bar-ODD: kappa(1/q) = -kappa(q)."""
     for q in (mpf("1.3"), mpf("2"), Q_PROTON, mpf("1.05")):
-        lhs = kappa_21(1 / q)
-        rhs = -kappa_21(q)
-        assert abs(lhs - rhs) < mpf("1e-40"), (q, lhs, rhs)
+        assert abs(kappa_21(1 / q) - (-kappa_21(q))) < mpf("1e-40"), q
     return True
-
-
-def reconstruct_S(q, c3):
-    """Invert c_3 = -kappa_(2,1)(q) * S under the hypothesis c_3^even = 0."""
-    return -c3 / kappa_21(q)
 
 
 def main():
     print("=" * 74)
-    print("c_3^even: is it -Vol(4_1)?  Testing (H1) against the canonical split")
+    print("qou-qb8f — is c_3^even = -Vol(4_1) derived?   [CORRECTED probe]")
     print("=" * 74)
 
     assert check_kappa_bar_odd()
-    print("\n[0] carrier check: kappa_(2,1)(1/q) = -kappa_(2,1)(q)  -> bar-ODD  OK")
+    print("\n[0] kappa_(2,1)(1/q) = -kappa_(2,1)(q)  -> genuinely bar-ODD.  OK")
 
-    print("\n[1] The canonical split (2026-07-07 audit §2), tested at both anchors.")
-    print("    Hypothesis: c_3 is purely bar-ODD, c_3 = -kappa_(2,1)(q)*S.")
-    print("    Invert for S and compare to the audit's INDEPENDENT S values.\n")
+    # ---------------------------------------------------------------- [1]
+    print("\n[1] THE WITHDRAWN CROSS-CHECK, shown to be an identity.\n")
+    print("    S is DEFINED as S := a_1/kappa_(2,1) with a_1 = -c_3")
+    print("      (qbeta_s_complex_volume_rigidity_probe.py:69;")
+    print("       2026-06-13-qbeta-root-of-unity-residue-program.md:177)")
+    print("    so 'reconstructing' S = -c_3/kappa returns the SAME number.\n")
 
-    rows = []
-    for name, q, c3, s_audit in (
-        ("proton", Q_PROTON, C3_PROTON, S_PROTON_AUDIT),
-        ("muon", Q_MUON, C3_MUON, S_MUON_AUDIT),
+    max_dev = mpf("0")
+    for name, q, c3, quoted in (
+        ("proton", Q_PROTON, C3_PROTON, S_PROTON_QUOTED),
+        ("muon", Q_MUON, C3_MUON, S_MUON_QUOTED),
     ):
-        k = kappa_21(q)
-        s = reconstruct_S(q, c3)
-        rel = abs(s - s_audit) / s_audit
-        rows.append((name, q, c3, k, s, s_audit, rel))
+        recon = -c3 / kappa_21(q)
+        dev = abs(recon - quoted) / quoted
+        # widest relative error possible when rounding to 4 significant figures
+        round_win = mpf("0.05") / quoted
+        max_dev = max(max_dev, dev)
+        verdict = "INSIDE rounding window" if dev < round_win else "exceeds rounding"
         print(
-            f"    {name:7s} kappa = {mp.nstr(k, 10):>14s}   "
-            f"S_recon = {mp.nstr(s, 10):>12s}   audit = {s_audit}   "
-            f"rel dev = {mp.nstr(rel, 3)}"
+            f"    {name:7s} recon = {mp.nstr(recon, 10):>12s}   quoted = {quoted}   "
+            f"rel dev = {mp.nstr(dev, 3)}   4-s.f. window = {mp.nstr(round_win, 3)}   "
+            f"-> {verdict}"
         )
-
-    for _, _, _, _, s, s_audit, rel in rows:
-        assert rel < mpf("1e-4"), f"S reconstruction missed the audit value: {s} vs {s_audit}"
-
-    ratio = rows[0][4] / rows[1][4]
-    print(f"\n    S_p/S_mu = {mp.nstr(ratio, 10)}   (audit quotes ~1.024)")
-    assert abs(ratio - mpf("1.024")) < mpf("5e-4"), ratio
+        assert dev < round_win, "would indicate genuinely independent data"
 
     print(
-        "\n    => Assuming c_3^even = 0 REPRODUCES both independently-quoted S\n"
-        "       values to ~1e-5.  The canonical decomposition therefore has\n"
-        "       c_3 essentially PURELY BAR-ODD."
+        "\n    Both deviations lie INSIDE the rounding window of the quoted\n"
+        "    4-significant-figure values.  That is what identical numbers look\n"
+        "    like.  The 'agreement' carried no information; the claim built on\n"
+        "    it is WITHDRAWN."
     )
 
-    print("\n[2] The contradiction with (H1).\n")
-    print(f"    (H1) claims        c_3^even = -Vol(4_1) = {mp.nstr(-VOL_41, 10)}")
-    print("    canonical split    c_3^even ~ 0")
-    print(
-        f"    separation         {mp.nstr(VOL_41, 10)}  "
-        f"-- ~{mp.nstr(VOL_41 / abs(C3_PROTON) * 100, 4)}% of |c_3| itself"
-    )
-    assert abs(VOL_41) > mpf("2"), "sanity"
+    # ---------------------------------------------------------------- [2]
+    print("\n[2] SURVIVES (A): the bar-split is not accessible from the anchors.\n")
+    print("    c_3^even(q) = (c_3(q) + c_3(1/q))/2 needs c_3 at q ~ 0.901.")
+    print(f"    bar-partner of q_proton = 1/q = {mp.nstr(1 / Q_PROTON, 12)}")
+    print("    Neither anchor is near it, so no anchor data determines the split.")
+    assert abs(1 / Q_PROTON - mpf("0.9009")) < mpf("1e-3")
 
-    print("\n[3] What S_leak actually is: a near-total cancellation.\n")
-    for name, _, c3, _, _, _, _ in rows:
+    # ---------------------------------------------------------------- [3]
+    print("\n[3] SURVIVES (B): S_leak is a cancellation artifact.\n")
+    for name, c3 in (("proton", C3_PROTON), ("muon", C3_MUON)):
         leak = c3 + VOL_41
         cancel = (1 - abs(leak) / abs(c3)) * 100
         print(
-            f"    {name:7s} c_3 = {mp.nstr(c3, 10):>13s}  + Vol(4_1)  ->  "
-            f"S_leak = {mp.nstr(leak, 8):>12s}   ({mp.nstr(cancel, 5)}% cancelled)"
+            f"    {name:7s} c_3 = {mp.nstr(c3, 10):>13s}  + Vol(4_1) -> "
+            f"{mp.nstr(leak, 8):>12s}   ({mp.nstr(cancel, 5)}% cancelled)"
         )
 
     swing_c3 = abs(C3_PROTON - C3_MUON) / abs(C3_MUON) * 100
-    leak_mu = C3_MUON + VOL_41
-    leak_p = C3_PROTON + VOL_41
+    leak_mu, leak_p = C3_MUON + VOL_41, C3_PROTON + VOL_41
     swing_leak = abs(leak_p - leak_mu) / abs(leak_mu) * 100
     amp = swing_leak / swing_c3
-
-    print(f"\n    anchor swing of c_3    : {mp.nstr(swing_c3, 5)}%")
+    print(f"\n    anchor swing of c_3    : {mp.nstr(swing_c3, 5)}%   (real)")
     print(f"    anchor swing of S_leak : {mp.nstr(swing_leak, 5)}%")
-    print(f"    amplification          : {mp.nstr(amp, 5)}x  <- cancellation artifact")
-    assert amp > 100, amp
+    print(f"    amplification          : {mp.nstr(amp, 5)}x   (arithmetic)")
+    assert amp > 100
 
+    # ---------------------------------------------------------------- [4]
+    print("\n[4] THE CORRECTED FINDING: both 'splits' are DEFINED residuals.\n")
+    print("      S_leak := c_3 + Vol(4_1)          <- definition")
+    print("      S      := -c_3 / kappa_(2,1)      <- definition")
     print(
-        "\n    The 'hypersensitivity of S_leak' is therefore ~200x cancellation\n"
-        "    amplification on top of c_3's own (real, 2.4%) anchor swing."
+        "\n    Each takes c_3, applies a fixed transformation, and names the\n"
+        "    result as if it were an independently meaningful part of c_3.\n"
+        "    Neither is a DERIVED decomposition, so neither can adjudicate the\n"
+        "    other, and the bar-parity of c_3 is undetermined by both."
     )
-
-    print("\n[4] Why the anchors cannot settle the bar-split directly.\n")
-    print(
-        "    c_3^even(q) = (c_3(q) + c_3(1/q))/2 needs c_3 at q ~ 0.901.\n"
-        "    Both anchors sit at q ~ 1.10998, so NO anchor data determines the\n"
-        "    split; it must come from an assumed structural form.  That is why\n"
-        "    this probe tests (H1) for CONSISTENCY against a derived split\n"
-        "    rather than trying to measure the split."
-    )
-    print(f"    bar-partner of q_proton would be 1/q = {mp.nstr(1 / Q_PROTON, 12)}")
+    # A definition cannot constrain: recovering c_3 from either is exact.
+    for name, q, c3 in (("proton", Q_PROTON, C3_PROTON), ("muon", Q_MUON, C3_MUON)):
+        back_leak = (c3 + VOL_41) - VOL_41
+        back_kappa = -(-c3 / kappa_21(q)) * kappa_21(q)
+        assert abs(back_leak - c3) < mpf("1e-40")
+        assert abs(back_kappa - c3) < mpf("1e-40")
+    print("\n    (verified: c_3 is recovered EXACTLY from either, both ways --")
+    print("     the hallmark of a reparametrisation, which adds no information)")
 
     print("\n" + "=" * 74)
-    print("VERDICT (scope-(a)): (H1) c_3^even = -Vol(4_1) is NOT derived, and is")
-    print("INCOMPATIBLE with the canonical kappa_(2,1)*S split, which reproduces")
-    print("two independently-quoted S values to ~1e-5 with c_3^even ~ 0.")
-    print("Unaffected: every theorem in SLeakZeroCrossing/SLeakMagnitude*.lean")
-    print("(generic, hypothesis-carrying).  Affected: the interpretive sentence")
-    print("naming S_leak 'c_3's bar-odd residual'.")
+    print("VERDICT (scope-(a)).  (H1) c_3^even = -Vol(4_1) is UNDERIVED -- no")
+    print("derivation exists in the corpus.  It is NOT, as this probe first")
+    print("claimed, contradicted by the kappa*S split: that split is itself a")
+    print("definition and carries no independent information.  The bar-parity")
+    print("of c_3 is undetermined by the present corpus.")
+    print("Unaffected: Vol(4_1) elsewhere, 4_1's amphichirality, and every")
+    print("theorem in SLeakZeroCrossing/SLeakMagnitude*.lean.")
     print("=" * 74)
-    print("\n7/7 assertions passed.")
+    print("\n11/11 assertions passed.")
 
 
 if __name__ == "__main__":
