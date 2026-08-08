@@ -508,6 +508,10 @@ import QOU.QBeta.DTIndexAmplitudeE
 -- single-slope carrier ⇒ RSZ isoformal dim 0 ⇒ E=0 (no lift, scope-(b)); multi-slope
 -- leaves E free ⇒ value lives in the GLOBAL Birkhoff matrix (open successor, no instance).
 import QOU.QBeta.StokesAmplitudeE
+-- WELL-POSEDNESS of E as a functional of the GLOBAL Birkhoff matrix: (a) the cross-ratio
+-- P₀₁P₁₀/(P₀₀P₁₁) is the UNIQUE gauge-invariant (frame-free target); (b) a single entry is
+-- gauge-dependent (residual elliptic-unit freedom), so E = the cross-ratio, not an entry.
+import QOU.QBeta.BirkhoffAmplitudeWellPosed
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).

@@ -1133,3 +1133,31 @@ Lean `QOU/QBeta/DTIndexAmplitudeE.lean` sorry-free (lean-direct exit 0, 0 real s
 native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted, nothing wired;
 `r*`/`μ₃`/`c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`. Audit:
 [`docs/audits/2026-08-08-dtindex-amplitude-e-bar-parity-exclusion.md`](../audits/2026-08-08-dtindex-amplitude-e-bar-parity-exclusion.md).
+
+## 2026-08-08 · A=3 magnitude ROUTE 2-c (amplitude E) — WELL-POSEDNESS: E is the gauge-invariant CROSS-RATIO of the Birkhoff matrix, NOT a single (frame-dependent) entry
+
+(Branch `claude/deltalambda-birkhoff-wellposed-2026-08-08`, bean `qou-wiub`/`qou-jqof`.) Red-team /
+well-posedness mirror of the μ₃-target-robustness audits, complementary to the sibling constructing
+the connection matrix explicitly (they own `BirkhoffAmplitudeE.lean`; this owns
+`BirkhoffAmplitudeWellPosed.lean`). Two merged results (`DTIndexAmplitudeE` #4810, `StokesAmplitudeE`
+#4811) pinned the anti-self-adjoint amplitude `E := C+σB` to the GLOBAL `0↔∞` Birkhoff connection
+matrix `P=(X^∞)⁻¹X^0` of C1. **Before a value is extracted: is `E` a single entry of `P`, or a
+gauge-dependent combination requiring the full monodromy?** By `QCharacter.IsQChar.ratio_qInvariant`,
+the local solution bases are unique only up to a `q`-invariant (elliptic) normalisation, so `P` carries
+a residual gauge `P ↦ D_∞⁻¹ P D_0`, entrywise `P_{ij} ↦ (d_∞,i)⁻¹ P_{ij} (d_0,j)`. **Verdict — MIXED,
+both branches proved sorry-free: (a)** the cross-ratio `crossRatio P := P₀₁·P₁₀/(P₀₀·P₁₁)` is
+gauge-invariant (`crossRatio_gauge_invariant` — the four gauge units cancel) and is the UNIQUE invariant
+(`gauge_fixes_all_iff`: the gauge stabiliser of a generic 2×2 `P` is the 1-parameter global scale, so
+`4−3=1` invariant); **(b)** a single entry is NOT invariant — it carries a full elliptic-unit gauge
+freedom (`entry_gauge_orbit_surjective`: any `u·P₀₁` reachable; `entry_not_gauge_invariant`: a nontrivial
+gauge moves it), so reading `E` off one entry is **ill-posed**, needing an extra normalisation datum.
+**Consequence:** `E` is a frame-free physical amplitude (`A3AntiSelfAdjointLift.amplitude_injective`), so
+it must equal the gauge-invariant cross-ratio, not a matrix element — **the sibling should target
+`crossRatio(P)`.** Recorded as the OPEN §3b carrier `AmplitudeIsGaugeInvariantCrossRatio`
+(`E = crossRatio P ∧ E ≠ 0`), NO instance; choosing the cross-ratio to hit `r*` (`amplitude_surjective`)
+would be the forbidden fit and is not done. Bar-oddness of `crossRatio(P)`
+(`DTIndexAmplitudeE.amplitude_barOdd`) is a consistency check the concrete `P` must satisfy — noted,
+not proved (no concrete `σ` on `P` yet). Lean `QOU/QBeta/BirkhoffAmplitudeWellPosed.lean` sorry-free
+(lean-direct exit 0, no native_decide/trivial-true/axiom). Nothing fitted, nothing wired;
+`r*`/`μ₃`/`c₃`/AME/CODATA/`q₀` never inverted; `q₀`-derivation not routed through. Audit:
+[`docs/audits/2026-08-08-birkhoff-amplitude-e-well-posedness.md`](../audits/2026-08-08-birkhoff-amplitude-e-well-posedness.md).
