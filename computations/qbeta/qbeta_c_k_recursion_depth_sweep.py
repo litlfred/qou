@@ -64,7 +64,12 @@ set_compute_dps(65)
 import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 Q_0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
 HBAR_Q = (Q_0 - 1) / Q_0
@@ -74,7 +79,7 @@ INV_HBAR_Q_SQ = 1 / HBAR_Q_SQ  # ≈ 117.4
 
 def load_c_k() -> dict:
     p = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
-    w = json.loads(p.read_text())
+    w = record_upstream(p, _UPSTREAM_RECORDS)
     raw = w["data"]["c_k_extracted_50dps"]
     return {int(k.split("_")[1]): mp.mpf(v) for k, v in raw.items()}
 
@@ -145,6 +150,7 @@ def main() -> int:
         engine="python+mpmath",
         start_time=t0,
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Depth-d sweep on the Q_β c_k constant-kernel recurrence "
         "test. Extends qbeta_habiro_q_difference_recurrence_probe "

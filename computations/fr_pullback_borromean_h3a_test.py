@@ -80,7 +80,12 @@ import mpmath as mp  # noqa: E402
 import pyhecke_native as pn  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from _li_2_q_util import load_q_50dps, flavor_split_leading  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from hecke_core import h as H_BAKED_F64  # noqa: E402 — template classifier only
@@ -313,8 +318,7 @@ def main() -> int:
     # ── Prereq-1 provenance check (D, cheap): the committed atom-chi
     #    witnesses reproduce EXACTLY at the runtime proton q, and
     #    drift at the witness q₀ ──
-    committed_d = json.loads(
-        (HERE / "atom-chi-rust-d.witness.json").read_text())
+    committed_d = record_upstream(HERE / "atom-chi-rust-d.witness.json", _UPSTREAM_RECORDS)
     comm_free = {tuple(p["partition"]): mp.mpf(p["chi_lambda"])
                  for p in committed_d["data"]["free"]["by_partition"]}
     word_free_d = atom_braid_word_3A(1, 1, include_inter=False)
@@ -453,6 +457,7 @@ def main() -> int:
 
     # ── witness ──
     wb = WitnessBuilder("fr-pullback-borromean-h3a-test", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "H_{3A} Borromean FR-projector driver (bean yfvb): tests the "
         "FR-restricted knot-ideal projector candidate χ^λ·χ^λ(e_{K*}) "

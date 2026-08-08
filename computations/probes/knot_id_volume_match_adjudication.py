@@ -58,7 +58,12 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 HERE = Path(__file__).resolve().parent
 COMPUTATIONS = HERE.parent
@@ -77,9 +82,7 @@ B_HELIUM3_FALLBACK_MEV = "7.718043"
 def b_ame() -> dict[str, mp.mpf]:
     """Per-nucleus AME binding energies, from the AME witness where
     available (D, T), literature AME2020 fallback for ³He."""
-    data = json.loads(
-        (COMPUTATIONS / "ame-2020-binding-energies.witness.json").read_text()
-    )["data"]
+    data = record_upstream(COMPUTATIONS / "ame-2020-binding-energies.witness.json", _UPSTREAM_RECORDS)["data"]
     out = {
         "2H": mp.mpf(data["B_deuteron_MeV"]),
         "3H": mp.mpf(data["B_tritium_MeV"]),
@@ -105,6 +108,7 @@ def main() -> int:
     B = b_ame()
 
     w = WitnessBuilder("knot-id-volume-match-adjudication", engine="snappea")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Adjudicates the conj:canonical-knot-id-sdp volume fork: scores "
         "BOTH knot sets (named {6_2, 8_11, L6a4} vs orphan {6_1, 8_1, "

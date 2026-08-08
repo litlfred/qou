@@ -69,7 +69,12 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Paper-canonical "low-isotope" set per content block
 #   `rem:recomputed-low-isotope-mass-table`
@@ -109,7 +114,7 @@ def project_to_low_isotope() -> dict:
             f"canonical witness missing: {CANONICAL_WITNESS}. "
             f"Did canonical_mass_table_extended.py write it?"
         )
-    src = json.loads(CANONICAL_WITNESS.read_text())
+    src = record_upstream(CANONICAL_WITNESS, _UPSTREAM_RECORDS)
     rows = src["data"]["rows"]
     low_rows = [r for r in rows if r.get("A", 99) <= LOW_ISOTOPE_A_MAX]
     return {
@@ -175,6 +180,7 @@ def main() -> int:
         engine="python+mpmath",
         start_time=t0,
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     (
         builder
         .set_description(

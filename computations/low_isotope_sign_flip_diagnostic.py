@@ -65,7 +65,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 
@@ -124,9 +129,9 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    src = json.loads(INPUT_WITNESS.read_text())
+    src = record_upstream(INPUT_WITNESS, _UPSTREAM_RECORDS)
     rows_in = src["data"]["rows"]
-    q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+    q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
     h_q0 = float(q - 1 / q)  # h = q − q⁻¹ at substrate
 
     # Per-isotope rows
@@ -205,6 +210,7 @@ def main() -> int:
     ]
 
     w = WitnessBuilder("low-isotope-sign-flip-diagnostic", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Per-isotope diagnostic correlating B_E (or mass) error against "
         "inter-nucleon channel counts (pp / pn / nn) and the signed "

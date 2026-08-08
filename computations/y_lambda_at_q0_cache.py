@@ -141,7 +141,7 @@ def main() -> int:
         "deuteron": ("chi-deuteron-h6.witness.json", 6),
         "tritium": ("chi-tritium-h9.witness.json", 9),
         "helium-3": ("chi-helium-3-h9.witness.json", 9),
-        "helium-4": ("chi-helium-4-h12-numeric.witness.json", 12),
+        "helium-4": ("chi-helium-4-h12-at-q0-50dps.witness.json", 12),
     }
     for atom, (fname, n) in spot_files.items():
         path = HERE / fname
@@ -149,15 +149,24 @@ def main() -> int:
             continue
         try:
             ad = json.loads(path.read_text())
-            # 4He has per_partition with y_at_q0; others don't (chi only)
+            # 4He carries a per-λ y table; the others are chi-only. Two
+            # spellings exist: the legacy `per_partition`/`y_at_q0`, and the
+            # `-at-q0-50dps` family's `by_partition`/`y_lambda`, which 4He now
+            # uses since chi-helium-4-h12-numeric had no producer and sat at
+            # the superseded muon-anchored q_0.
             ref = None
-            if "per_partition" in ad:
+            for key, yfield in (("per_partition", "y_at_q0"),
+                                ("by_partition", "y_lambda")):
+                if key not in ad:
+                    continue
                 # take the first non-zero contribution
-                for entry in ad["per_partition"]:
-                    if abs(float(entry.get("y_at_q0", "0"))) > 1e-30:
+                for entry in ad[key]:
+                    if abs(float(entry.get(yfield, "0"))) > 1e-30:
                         ref = (tuple(entry["partition"]),
-                               mp.mpf(entry["y_at_q0"]))
+                               mp.mpf(entry[yfield]))
                         break
+                if ref is not None:
+                    break
             if ref is None:
                 continue
             ref_lam, ref_val = ref

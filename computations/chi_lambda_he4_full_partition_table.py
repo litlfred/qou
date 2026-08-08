@@ -59,11 +59,16 @@ from sympy.utilities.iterables import partitions
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 mp.mp.dps = 50
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_mpf = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
 h_sq_f64 = h_f64 * h_f64
@@ -201,6 +206,7 @@ def main() -> int:
 
     # Witness
     w = WitnessBuilder("chi-lambda-he4-full-partition-table", engine="python+pyhecke-native")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Full χ_λ(β_⁴He) table — all 77 partitions of 12 evaluated on "
         "the heuristic 4·Borromean tensor at q_0. Structural template "

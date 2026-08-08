@@ -33,7 +33,12 @@ for p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, p)
 
 import _path_bridge  # noqa: F401, E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 AME = _COMP / "ame-2020-binding-energies.witness.json"
 
@@ -52,7 +57,7 @@ ISO = {
 
 
 def main() -> int:
-    ame = json.loads(AME.read_text())
+    ame = record_upstream(AME, _UPSTREAM_RECORDS)
     data = ame.get("data", ame)
 
     def getB(key: str) -> float | None:
@@ -98,6 +103,7 @@ def main() -> int:
     cv_pertriple = cv([r["B_per_triple"] for r in sat])
 
     w = WitnessBuilder("binding-multibody-scaling", engine="exact")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "0-fit multi-body scaling test for the missing extensive binding term. "
         "Which combinatorial count (A, C(A,2), C(A,3)) does AME B(A) track with a "

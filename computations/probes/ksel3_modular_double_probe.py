@@ -126,7 +126,12 @@ import sympy as sp  # noqa: E402
 from mpmath import jtheta, mp, mpc, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0        # sympy exact comparisons
 TOL_40 = 1e-40       # 80-dps Poisson / moment identities
@@ -139,7 +144,7 @@ U_GENERIC = "1.3"    # generic translate parameter (matches rep probe R4)
 # witness; proton from qou_substrate.constants Q_50_DIGIT_STR).
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 # tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR
 # (proton re-pin 2026-05-28; _solve_q_proton_f64 + mpmath refine):
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
@@ -480,6 +485,7 @@ def block_m6_regime_and_scales(wb: WitnessBuilder, q_name: str,
 def main() -> int:
     set_compute_dps(80)
     wb = WitnessBuilder("ksel3-modular-double", engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Kernel selection principle 3 — Faddeev modular-double covariance "
         "of the (REP) kernel family (bean qou-q5zq; audit-only, scope-(a), "

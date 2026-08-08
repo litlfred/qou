@@ -1618,3 +1618,190 @@ fails on clean `main` (verified by stash): `HBAR_Q_SQ` disagrees with
 `VOL_FIGURE_EIGHT / MASS_RATIO_MU_E` by 2.06e-09 against a 1e-15 tolerance.
 A substrate-constants inconsistency, unrelated to anything here, and not
 something to silently adjust.
+
+## P38 — the reference environment was reachable after all; 4He leaves a dead anchor
+
+### Three "environment blockers" were two installs and a misreading
+
+P36/P37 held witnesses back because this container could not reproduce the
+reference environment. Pushing on that dissolved most of it:
+
+| gap | resolution |
+|---|---|
+| mpmath 1.3.0 vs 1.4.1 | `pip install mpmath==1.4.1` |
+| SnapPy census: 180,511 vs 433,804 manifolds | `pip install snappy_15_knots` → `len(HTLinkExteriors)` = 433,804, matching the committed witness exactly |
+| `clarabel` absent | `pip install clarabel` → 0.11.1, the recorded version |
+| `pyhecke_native` absent | built from `tools/pyhecke-native` with maturin + `libgmp-dev`/`libmpfr-dev` → **0.9.0**, the recorded version |
+| "Python 3.12/3.13 vs this container's 3.11.15" | **a misreading.** 1463 of 1680 witnesses already record 3.11.15; 3.13.12 accounts for 141 and 3.12.3 for 65. This container *is* the corpus norm — regenerating here converges rather than downgrades. |
+
+The last one is worth naming as an error rather than a discovery: two witnesses
+that happened to be built elsewhere were generalised into a blanket rule, and
+that rule then blocked ~130 regenerations for two passes. The check that
+settled it — count what the corpus actually records — cost one command.
+
+### Regeneration: mechanism proven, wave not finished
+
+A harness runs every producer that declares an upstream, then classifies:
+`DECLARED` (the hashes appeared and nothing but metadata moved) is kept;
+`VALUES`, `NOCHANGE` and `FAILED` are reverted, so a drift cannot be committed
+by accident. It reverts *only* dirty `*.witness.json` paths — a blanket
+`git checkout -- computations/` would have undone the ported sources, which is
+why the ports are committed first.
+
+163 producers now declare an upstream. The run is slow (many are minutes each)
+and was stopped early; the two that completed are both clean `DECLARED` —
+declaration present, **zero** non-metadata fields changed — and are committed.
+The remaining 161 are a long run, not an unsolved problem.
+
+### 4He was reading a superseded q₀, and that is a content change
+
+`chi-helium-4-h12-numeric.witness.json` has no producer anywhere in the tree,
+and reading it explains why that matters: its `q_0_float` is
+**1.1099785955541805** — the *muon-anchored* q₀ — against the current
+proton-anchored 1.1099785827513808. Three live producers were consuming
+numbers computed at an anchor the repo deliberately retired.
+
+The successor is already in the corpus:
+`chi-helium-4-h12-at-q0-50dps.witness.json` carries the same 77 partitions of
+12, at 50 dps instead of float64, with a live producer
+(`chi_at_q0_via_hoefsmit_mpfr.py`). Two independent signs it was always the
+intended replacement: `delta_lambda_empirical_tabulation.load_chi_per_lambda`
+*already* normalises its `by_partition` / `y_lambda` / `chi_lambda` shape, and
+the 5Li row beside 4He was migrated to this family earlier. 4He was the
+straggler.
+
+All three readers now point at it. **This moves a published number:**
+
+    tr_M(4He), legacy   (muon-anchored q0) = 0.05534834587669884
+    tr_M(4He), successor (proton anchor)   = 0.055358426266783106465
+    relative change                        = 182 ppm
+
+182 ppm is not a rounding artifact; it propagates into the helium-4 binding
+prediction. It is a *correction* — the old value is anchored to a q₀ this repo
+no longer uses — but accepting a 182 ppm move in a published quantity is a
+content decision, so it is stated here in full rather than folded into an
+infrastructure change. Nothing else in the repoint alters a value: the readers
+downcast to float in any case, and `delta_lambda_2row_stratum_analysis`
+computes `dim` itself rather than reading the field the successor lacks.
+
+## P39 — two corrections, and why `--strict` must wait
+
+### The 4He successor is muon-anchored too; the 182 ppm is not an anchor change
+
+P38 said the repoint moved 4He "to the proton anchor". **It did not.**
+`chi-helium-4-h12-at-q0-50dps.witness.json` carries
+`q_0_50dps = 1.1099785955573347…` — the **muon** prefix. The repoint moved 4He
+from one muon-anchored value to another.
+
+The arithmetic should have caught this before the claim was made. The two q₀
+values differ at the **12th** significant digit (`1.10997859555_41805` vs
+`1.10997859555_73347`, ~3e-12 relative). A 3e-12 perturbation cannot move χ at
+the 5th digit. So the 182 ppm was never the anchor: it is a *methodological*
+gap between two computations of the same quantity — the successor via
+`pyhecke_native 0.9.0` `chi_lambda_all_partitions_mpfr` (branch decomposition,
+50 dps), the legacy one by another route at float64. **Two computations of
+tr_M(4He) disagreeing by 182 ppm is an open question, not a resolved one.**
+
+### 4He was not a straggler — the muon anchor is the majority
+
+| | witnesses |
+|---|---:|
+| muon-anchored q₀ only | **650** |
+| proton-anchored q₀ only | 379 |
+| both | 60 |
+| `q0Anchor` field: muon / proton / ambiguous | 344 / 232 / 23 |
+
+The migration to the proton anchor is roughly **37% done**. Calling 4He "the
+straggler" inverted the picture; it sits with the majority.
+
+What actually re-anchors it: `chi_at_q0_via_hoefsmit_mpfr.py` imports `Q` from
+`q_parameter` (`1.1099785827513808…`, proton), so the committed cache is simply
+stale — written before the re-anchoring — and the producer's resume logic skips
+recomputation whenever a complete cache exists, which is why re-running it
+changed nothing. Forced to rebuild it writes
+`q_0_50dps = 1.10997858275138080759166909561076`, correct. That rebuild is 77
+partitions through `pyhecke_native` and is slow (~13 partitions per 10 min);
+it is incremental and SIGTERM-safe, so it resumes.
+
+### `--strict` cannot be turned on yet, and the porting made that worse
+
+`witness_dependency_drift.py` runs warn-mode (`|| true`) pending a drained
+backlog. It is not drained:
+
+|  | before this session's ports | now |
+|---|---:|---:|
+| self-stale (`scriptHash` ≠ producer) | 479 | **567** |
+| drift records | 633 | 634 |
+| witnesses carrying `upstream_witness_hashes` | 155 | 161 |
+
+**The +88 is mine.** Porting a producer changes its source, hence its
+`scriptHash`, while its witness stays unregenerated — so every source-only port
+converts an *undeclared-edge* problem into a *self-staleness* problem until the
+witness is re-run. Producer-side declaration is now at 44%, but witness-side
+adoption is still 5.9%, and only regeneration closes that gap.
+
+That is an argument for **finishing the regeneration wave before porting the
+remaining 197**, not for porting more: each additional port raises the very
+backlog that keeps `--strict` off. The residual 197 break down as 91 with no
+plain-`Name` builder assignment (they use `wrap_legacy` /
+`stamp_staleness_metadata`, so `add_upstream_records` has nowhere to attach),
+88 with an unhandled read shape, and 18 using `with X.open() as fh`.
+
+Precondition for escalation, stated so it can be checked rather than judged:
+self-staleness back to its pre-port level or below, and witness-side upstream
+adoption tracking the 44% producer-side figure. The three precision gates
+(`mpf_context_dps`, `module_const_precision`, `witness_float64_padding`) are
+already `--strict` and already green; the staleness validator is the only step
+still carrying `|| true`.
+
+## P40 — I committed drift I had built a harness to prevent
+
+Three witnesses reached a commit here with moved values and no review:
+`braid-encoding-audit` (87 fields), `c3-hopf-habiro-analysis` (9),
+`binding-energy-categorical-deuteron` (1). They came from **manual sample
+runs** of the ported producers, swept up by `git add -A` — the regeneration
+harness, which exists precisely to revert anything that is not a clean
+declaration landing, was never involved. A fourth, the 4He chi cache, was
+committed **13/77 complete** because a background rebuild was mid-flight when
+the same `git add -A` ran. All four are reverted to `origin/main`.
+
+The lesson is not "be careful with `git add -A`" but that the discipline has to
+be *in the tooling path*: I ran producers outside the harness and then staged
+everything, so the harness's guarantees did not apply to the thing being
+committed.
+
+### What the reverted diff shows, though, is the migration answering itself
+
+`braid-encoding-audit`'s 87 moved fields are all one substitution:
+
+    old  -0.10453016099779683   = -h/2 at the MUON anchor
+    new  -0.10453014939781968   = -h/2 at the PROTON anchor
+
+The producer reads `Q` from `q_parameter`, which is proton-anchored, so
+**re-running it re-anchors it automatically**. That generalises: the 650
+muon-anchored witnesses are not a separate migration project — they re-anchor
+as a side effect of being regenerated, and they stay muon-anchored precisely
+because nothing has re-run them.
+
+**This breaks my regeneration harness's classification.** It keeps `DECLARED`
+(hashes appeared, nothing else moved) and reverts `VALUES`. But a producer that
+both declares an upstream *and* re-anchors will be classified `VALUES` and
+reverted — the harness would discard a correct migration as drift. It needs a
+third verdict that recognises a muon→proton anchor substitution as intended,
+rather than lumping it with unexplained movement.
+
+### The 4He native path is bypassed for an unrelated reason
+
+Forcing the rebuild reveals `chi_at_q0_via_hoefsmit_mpfr` falling back off
+`pyhecke_native` to the pure-mpmath loop, which is far too slow for n=12:
+
+    native chi path bypassed (ValueError: unrecognised d=-0.10445824776972628903…
+    expected 0, -h, or -h/2)
+
+That `d` matches `-h/2` under **neither** anchor — proton gives
+`-0.1045301493978196`, muon `-0.1045301609977968`, and the value seen is
+`-0.1044582477697262`, differing at the 4th significant digit. So this is not
+an anchor artifact and not caused by the re-anchoring; it is a pre-existing
+incompatibility between the word encoding and the native path's expectations,
+surfacing only because the resume logic normally skips the computation
+entirely. Re-anchoring 4He is blocked behind it. Not diagnosed here.

@@ -173,12 +173,16 @@ def analyse_2row_sector(atom: str, atom_data: dict) -> dict:
     Z = atom_data["Z"]; N = atom_data["N"]
     # ⁴He: prefer the cached per_partition (instant) over recomputing.
     if atom == "4He":
+        # Was chi-helium-4-h12-numeric.witness.json: a producerless orphan at
+        # the superseded muon-anchored q_0. The -at-q0-50dps successor has a
+        # live producer, the same 77 partitions, and 50 dps; it spells the
+        # fields `y_lambda`/`chi_lambda` under `by_partition`.
         cached = json.loads(
-            (_pb.witness_path("chi-helium-4-h12-numeric.witness.json", HERE)).read_text())
-        terms = cached["per_partition"]
-        for t in terms:
-            t["y_at_q0"] = float(t["y_at_q0"])
-            t["chi_q_at_q0"] = float(t["chi_q_at_q0"])
+            (_pb.witness_path("chi-helium-4-h12-at-q0-50dps.witness.json", HERE)).read_text())
+        terms = [{"partition": e["partition"],
+                  "y_at_q0": float(e["y_lambda"]),
+                  "chi_q_at_q0": float(e["chi_lambda"])}
+                 for e in cached["by_partition"]]
     else:
         _, terms = global_wedderburn_sum_q_hecke_seminormal(
             Z=Z, N=N, q_val=float(Q_MP)

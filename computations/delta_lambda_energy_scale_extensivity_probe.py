@@ -73,7 +73,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Lossless matrix-M caches (sign-only convention) for the active-set view.
 CHI_CACHE = {
@@ -128,7 +133,7 @@ def main() -> int:
     me, Qb, E0 = _energy_scales()
     scale = E0 / Qb
 
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     res = [r for r in bc["data"]["results"] if r.get("status") == "solved"]
 
     rows = []
@@ -174,6 +179,7 @@ def main() -> int:
 
     w = WitnessBuilder("delta-lambda-energy-scale-extensivity",
                        engine="python", start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Δ_λ(K) attack: splits the canonical binding residual into "
         "Δ_λ = (E_0/Q_β)·r(K). Finding 1 — the DEUTERON gap is the energy "

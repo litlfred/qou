@@ -47,7 +47,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
@@ -57,7 +62,7 @@ def main():
     q = mpf(Q_50_DIGIT_STR)
     hbar = 1 - 1 / q
 
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     d = w["data"]
 
     Q_A = mpf(d["Q_A"])
@@ -89,6 +94,7 @@ def main():
     c3_model = J - hbar ** 2
 
     wb = WitnessBuilder("qbeta-transfer-eigenvalue-proof", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "PROOF: Q_beta ladder has eigenvalue b*hbar_q^2 with "
         "topologically-modulated coefficients. "
@@ -188,7 +194,7 @@ def derive_b_closed_form():
     h = q - 1 / q
     hbar = 1 - 1 / q
 
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     b_witness = mpf(w["data"]["hoefsmit_b"])
 
     b_sq_derived = (h ** 2 + 3) / (h ** 2 + 4)

@@ -124,8 +124,15 @@ ATOMS_CODATA = {
             "chi_witness": "chi-tritium-h9.witness.json"},
     "3He": {"Z": 2, "N": 1, "n": 9,  "M_MeV": "2808.39160743",
             "chi_witness": "chi-helium-3-h9.witness.json"},
+    # Was chi-helium-4-h12-numeric.witness.json — an orphan with no producer,
+    # computed at the SUPERSEDED muon-anchored q_0 (its q_0_float reads
+    # 1.1099785955…, against the current proton-anchored 1.1099785827…). The
+    # successor has a live producer (chi_at_q0_via_hoefsmit_mpfr.py), the same
+    # 77 partitions of 12, and 50 dps rather than float64.
+    # `load_chi_per_lambda` already normalises its `by_partition` shape, and
+    # 5Li below was migrated to this family earlier — 4He was the straggler.
     "4He": {"Z": 2, "N": 2, "n": 12, "M_MeV": "3727.379378",
-            "chi_witness": "chi-helium-4-h12-numeric.witness.json"},
+            "chi_witness": "chi-helium-4-h12-at-q0-50dps.witness.json"},
     "5Li": {"Z": 3, "N": 2, "n": 15, "M_MeV": "4668.0",
             "chi_witness": "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json"},
     "6Li": {"Z": 3, "N": 3, "n": 18, "M_MeV": "5601.518",

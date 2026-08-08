@@ -107,7 +107,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def _constants():
@@ -126,7 +131,7 @@ def _load_canonical_traces():
     `binding-canonical.witness.json` (D / T / ³He / ⁴He) — the SINGLE recorded
     trace source for every trace-based model here.
     """
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text())
+    bc = record_upstream(HERE / "binding-canonical.witness.json", _UPSTREAM_RECORDS)
     # Tolerate schema variants: canonical `data.results`, `data.rows`, or a
     # legacy top-level `rows` key.
     data = bc.get("data") or {}
@@ -148,8 +153,7 @@ def _load_canonical_traces():
 
 def _ame_binding():
     """AME-2020 binding energies (registry — NOT hardcoded)."""
-    return json.loads(
-        (HERE / "ame-2020-binding-energies.witness.json").read_text())["data"]
+    return record_upstream(HERE / "ame-2020-binding-energies.witness.json", _UPSTREAM_RECORDS)["data"]
 
 
 # AME witness keys for the extended (A≥4, beyond ⁴He) nuclei computed live.
@@ -440,6 +444,7 @@ def main() -> int:
 
     w = WitnessBuilder("binding-single-pipeline-comparison", engine="python",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Single-pipeline binding comparison: B_lin (linear), B_sym (exact "
         "log-trace), B_qCLT (A→∞ per-bond limit; uniform AND bond-type "
