@@ -31,7 +31,11 @@ probe's shape-hint translates into a canonical refinement. If NOT,
 the candidate must be escalated to the author for explicit
 authorisation before production adoption.
 
-Until that closure: framework canonical predictions are
+Until that closure, the Vol·ρ-era predictions were
+(all three DEPRECATED for absolute mass by the 2026-06-24 ruling, which
+makes the muon-anchored m_p = 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV via
+`canonical_mass.py` the canonical route; they are kept here because the
+shape-hint below is stated relative to them):
   (a) canonical Wedderburn alone:         m_p ≈ 965 MeV  (+2.89%)
   (b) canonical + Yekutieli additive:     m_p ≈ 950 MeV  (+1.26%)
   (c) Bring color-tube (n=10 substrate):  m_p ≈ 938 MeV  (−670 ppm)

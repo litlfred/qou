@@ -10,9 +10,15 @@ formula.md)):
 
     m_p = m_e · [Vol(𝓑₃)/ℏ_q² · λ_p_scale + S(p)]
 
-The production script `m_p_borromean_verification_50dps.py` ASSUMES
-S(p) = 0 (no compute artifact). This script provides three
-independent Skein evaluations:
+⚠ That absolute-mass form is DEPRECATED (owner ruling 2026-06-24): the
+canonical route is the muon-anchored m_p = 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV
+via `canonical_mass.py`. What this script settles — whether the Skein
+correction S(p) vanishes — is a question about the braid evaluation and is
+unaffected by which absolute-mass assembly consumes it.
+
+`m_p_borromean_verification_50dps.py` (itself deprecated for absolute mass,
+and imported by nothing) ASSUMES S(p) = 0 (no compute artifact). This script
+provides three independent Skein evaluations:
 
   1. V(𝓑₃, t) — closed-form Jones polynomial of the topological
      Borromean rings, V(t) = -t⁻³ + 3t⁻² - 2t⁻¹ + 4 - 2t + 3t² - t³
