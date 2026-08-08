@@ -97,8 +97,20 @@ closed forms asserted before evaluation.
 **Mechanism (2) is BLOCKED ON READING in this environment — do not re-attempt
 the same way.** `lawrence-zagier-1999` is unavailable:
 
-  * `www.math.huji.ac.il` (the author's own page)  -> EGRESS_BLOCKED
-  * `arxiv.org` (for the papers that restate it)   -> EGRESS_BLOCKED
+  * `www.math.huji.ac.il/~ruthel/papers/99mfqinv.html`  -> EGRESS_BLOCKED
+  * `people.mpim-bonn.mpg.de/zagier/`                   -> EGRESS_BLOCKED
+  * `arxiv.org` (papers that restate the result)        -> EGRESS_BLOCKED
+
+The proxy is an allowlist (`selective: false`, but academic hosts are not in
+`noProxy`); `pypi.org` and `registry.npmjs.org` are reachable, journals are not.
+WebSearch (Anthropic-side) works and was used to confirm the citation; WebFetch
+to these hosts does not. Correct citation, verified by search:
+
+    Lawrence, R. and Zagier, D., "Modular forms and quantum invariants of
+    3-manifolds", Asian J. Math. 3 (1999), no. 1, 93-108.
+    DOI 10.4310/AJM.1999.v3.n1.a5
+
+(the first registration of this ref said 93-107; corrected to 93-108)
 
 Both are network-policy denials of the remote execution environment, not
 transient failures, and must not be routed around. Either run from an
