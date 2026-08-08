@@ -3067,6 +3067,28 @@ export const references: CSLData[] = [
     DOI: "10.1016/S0550-3213(98)00668-3",
   }),
 
+  // ── Milnor 1982 ────────────────────────────────────────────────
+  ref({
+    id: "milnor1982",
+    type: "article-journal",
+    title: "Hyperbolic geometry: The first 150 years",
+    author: [{ family: "Milnor", given: "John W." }],
+    "container-title": "Bulletin of the American Mathematical Society",
+    volume: "6",
+    issue: "1",
+    page: "9-24",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1090/S0273-0979-1982-14958-8",
+    note:
+      "Source for the Lobachevsky function $\\Lambda$ and the ideal-simplex " +
+      "volume $\\mathrm{Vol}(\\alpha,\\beta,\\gamma) = \\Lambda(\\alpha) + " +
+      "\\Lambda(\\beta) + \\Lambda(\\gamma)$, together with the theorem that " +
+      "the regular ideal simplex is the unique volume maximiser. The " +
+      "analytic half of the latter is formalized in " +
+      "`QOU.Archimedean.IdealTetrahedronConcavity.volChart_isMaxOn_regular`; " +
+      "the volume identification itself is bean qou-5gai H4 (open).",
+  }),
+
   // ── Thurston 1978 ──────────────────────────────────────────────
   ref({
     id: "thurston1978",
