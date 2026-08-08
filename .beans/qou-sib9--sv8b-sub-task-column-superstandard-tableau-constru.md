@@ -1,10 +1,11 @@
 ---
 # qou-sib9
 title: 'sv8b sub-task: column-superstandard tableau — construction FOUND (orderIsoOfFin on col-then-row lex), but blocked by a Prod LinearOrder instance diamond'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T00:29:51Z
-updated_at: 2026-08-08T00:29:51Z
+updated_at: 2026-08-08T00:47:43Z
 ---
 
 
