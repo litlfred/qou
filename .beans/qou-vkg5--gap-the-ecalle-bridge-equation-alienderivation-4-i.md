@@ -342,3 +342,62 @@ candidate from A or B.
    (`not_isSquare_newtonEdgeConstant`)
 
 A candidate failing any of these is wrong before any further computation.
+
+## 2026-08-08 (later) — the determinant ties both ends; the ∞ EXPONENTS are settled
+
+`QOU/QBeta/C1DeterminantRelation.lean` + `computations/qbeta/c1_determinant_end_consistency_probe.py`
+(PR #4783), sorry-free.
+
+The `0`-side exponents and the `∞`-side edge equation came from *different data*
+— coefficients at `x = 0` versus the Newton polygon. Nothing said they were
+mutually consistent. `det A = a₀/a₂ = −(q−1)/(q²x−1)` is the multiplier of the
+rank-one determinant equation, so at each singular point the **product** of the
+local exponents equals the local `det A`. One equation per end, both check:
+
+| end | pair | product | `det A` | ✓ |
+|---|---|---|---|---|
+| `0` | roots of `t²+(q−1)t+(q−1)` | `q−1` (Vieta) | `q−1` | ✔ |
+| `∞` | roots of `q²t² = q−1` | `q²(ts) = −(q−1)` | `−(q−1)/q²` | ✔ |
+
+The `∞` check is sharper than it looks: the edge equation only constrains each
+root's *square*; the *product* being `−(q−1)/q²` uses `s = −t`, and the
+determinant predicts that independently. A Newton-polygon sign error or a wrong
+`a₀` breaks it.
+
+**Cross-checked numerically** at `q = 2,3,5,7,11,−3` in exact `Fraction`
+arithmetic — Lean proves the statements as written and cannot check that they
+model C1. The negative-`q` row is deliberate, to catch sign errors a
+positive-only sweep hides.
+
+### SETTLED: C1's `∞` exponent data
+
+**The pair is `±√(q−1)/q`, fully determined.** Edge equation fixes `t²`;
+determinant fixes the product; `dilationLift_unique_up_to_sign` fixes the rest as
+exactly the deck sign. Nothing left to choose.
+
+### The gap, restated at its now-much-narrower size
+
+**Only the Stokes multiplier remains.** It is *not* exponent data: local
+exponents are the **diagonal** of the local structure, the multiplier is
+**off-diagonal** connection data between sectors — invisible to any determinant
+or Vieta relation. No amount of further local algebra will produce it.
+
+Scoreboard for `qou-vkg5`:
+
+| item | state |
+|---|---|
+| additive or multiplicative | **multiplicative**, forced; mixed in general |
+| index set | **`E_q`**, proved forced |
+| multiplicative group | **`q^{½ℤ}`** up to deck sign |
+| `0`-side exponents | **computed** (roots of `t²+(q−1)t+(q−1)`, irrational over `ℚ(q)`) |
+| `∞`-side exponents | **computed** (`±√(q−1)/q`) |
+| both ends mutually consistent | **verified** via `det A` |
+| **Stokes multiplier** | **OPEN — the only remaining item** |
+
+Next step is unchanged in kind but now unambiguous in target: the analytic
+q-Borel/Laplace construction (sector-dependent summation + the theta jump), with
+Option B's second half — build the connection matrix from the explicit `0`-side
+basis and read its quasi-periodicity. The `0`-side recurrence is explicit:
+`bₙ[q^{2n} + (q−1)qⁿ + (q−1)] = q^{2n}b_{n−1}`.
+
+Closing is a human action — leaving status as-is.
