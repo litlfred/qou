@@ -294,7 +294,11 @@ def main() -> int:
     dps = 50
 
     # ── Prereq 1: q₀ from the canonical pinning witness ──
-    q_w, qi_w, _z = load_q_50dps()
+    # layer="muon": this probe MEASURES the canonical-vs-runtime drift (the
+    # q_drift line below), so it must hold the canonical pin regardless of how
+    # its own stem resolves. An explicit cross-anchor comparison — the class the
+    # owner ruled legitimate on 2026-08-08 — not a straddle.
+    q_w, qi_w, _z = load_q_50dps(layer="muon")
     q_w_str = mp.nstr(q_w, dps, strip_zeros=False)
     h_w = q_w - qi_w
     delta_w = flavor_split_leading(q_w)

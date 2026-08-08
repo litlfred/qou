@@ -112,18 +112,67 @@ def li_2_q(
 _Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
 
 
-def load_q_50dps(path: Path | None = None) -> tuple[mpf, mpf, mpf]:
-    """Load q_0, q_0^{-1}, and z = 1/(q^{1/2}+q^{-1/2}) at full
-    ``mp.dps`` precision from the canonical pinning witness.
+def load_q_50dps(path: Path | None = None, *,
+                 layer: str | None = None) -> tuple[mpf, mpf, mpf]:
+    """Return ``(q_0, q_0^{-1}, z)`` at full ``mp.dps``, z = 1/(q^{1/2}+q^{-1/2}).
 
-    Returns ``(q, q_inv, z)``.  Shared by every script that ingests
-    per-generator Wedderburn volumes — centralized per gemini #687.
+    🛑 **The default is now the CALLER's own resolved q_0**, not the muon
+    witness (owner decision 2026-08-08).
+
+    It used to default to ``q-pinning-50-digit.witness.json`` — the **muon**
+    pin — regardless of who called it. Measured at the time: 30 no-arg calls
+    across 27 files and **zero** callers passing an explicit path. So a helper
+    silently handed the ideal layer to whatever asked, in a corpus whose
+    production default is proton (AGENTS.md §q₀-anchor, 2026-08-07).
+
+    That is not a hypothetical: it is the mechanism behind two live straddles
+    fixed on 2026-08-08 —
+    ``delta_lambda_fr_identity_phase5c`` (muon ``y_λ`` against proton ``χ_λ``,
+    which pushed an *exact* Markov identity's residual from 1e-15 to 9e-8) and
+    ``delta_lambda_v_hat_z_transfer_phase5d_4`` (muon ``q,h,z`` applied to
+    proton-computed ``V̂``).
+
+    Resolving the *caller's* pin makes the helper layer-consistent with its
+    consumer **by construction**, which is what both defects needed. Because
+    ``q_parameter`` resolves by the running producer's stem, a producer declared
+    ``ideal_muon`` still gets muon here — the declaration and the helper now
+    agree instead of racing.
+
+    Parameters
+    ----------
+    path
+        Read q_0 from this pinning witness explicitly. Unchanged behaviour.
+    layer
+        ``"muon"`` to demand the ideal-layer witness regardless of the caller's
+        own pin — for deliberate cross-anchor comparison probes, which the owner
+        ruled legitimate on 2026-08-08. ``"caller"`` (or omitted) resolves the
+        caller's pin.
     """
-    if path is None:
+    if path is not None and layer is not None:
+        raise TypeError("pass either path= or layer=, not both")
+    if layer is not None and layer not in ("muon", "caller"):
+        raise ValueError(f"layer must be 'muon' or 'caller', got {layer!r}")
+
+    if path is None and layer == "muon":
         path = _Q_WITNESS_DEFAULT
-    with path.open() as fh:
-        d = _json.load(fh)
-    q = mpf(d["derived_50_digit"]["q"])
+
+    if path is None:
+        # Caller's own resolved pin (env var > manifest stem > proton default).
+        #
+        # `Q_50_DIGIT_STR`, NOT `Q`: this helper's contract is 50 dps, and
+        # `q_parameter.Q` is an f64 (17 digits). Going through `Q` would have
+        # silently cut ~33 digits off every caller — a far larger error than
+        # the 11.5 ppb layer separation this flip is about. Under the muon
+        # anchor `q_parameter` sets `Q_50_DIGIT_STR` from that same pinning
+        # witness, so a muon-declared caller is byte-identical to the old
+        # default path.
+        from q_parameter import Q_50_DIGIT_STR as _Q_CALLER  # noqa: E402
+        q = mpf(_Q_CALLER)
+    else:
+        with path.open() as fh:
+            d = _json.load(fh)
+        q = mpf(d["derived_50_digit"]["q"])
+
     qi = mpf(1) / q
     z = mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
     return q, qi, z

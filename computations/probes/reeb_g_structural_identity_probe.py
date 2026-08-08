@@ -144,10 +144,33 @@ def main() -> int:
         script_path=__file__, engine="python+mpmath",
         output_dir=os.path.join(COMP, "probes"), start_time=t0,
     )
-    wb.add_assertion("I1_polynomial_identity", computed=mp.nstr(i1_lhs - i1_rhs, 5),
-                     expected="0.0")
+    # I1/I2 are EXACT identities, proven in Lean for every q — so their
+    # residual is a pure floating-point artifact and must be compared against a
+    # tolerance, the way I3 below already is.
+    #
+    #   QOU.MassTheory.ReebPnMagnitude.deformation_eq_ceiling
+    #       5 + (v − v⁻¹)² = 1 + (v + v⁻¹)²   for every v ≠ 0 in a field  → I1
+    #   QOU.MassTheory.ReebPnMagnitude.ss_matrix_sq
+    #       ssMatrix b * ssMatrix b = (1 + b²) • 1                        → I2,
+    #       since M² = (1+b²)·I forces μ² = 1+b² for every eigenvalue, hence
+    #       |μ_max| = √(1+b²) and 1/μ_max = 1/√(1+[2]_v²) = g_landed.
+    #
+    # Both are sorry-free and quantified over ALL v/b, so neither residual can
+    # depend on q₀. Previously these compared `mp.nstr(…, 5)` against the string
+    # "0.0" with NO tolerance, which tested whether `mp.eig` happened to land on
+    # bitwise zero: at the muon q₀ it did, at the proton q₀ it returns 1.36e-71
+    # and the assertion flipped to FAIL. That flip was an eigensolver artifact,
+    # not a mathematical one. Tolerance 1e-45 matches I3 and sits ~26 orders
+    # above the observed residual.
+    _EXACT_TOL = mp.mpf(10) ** (-45)
+    wb.add_assertion("I1_polynomial_identity",
+                     computed=mp.nstr(abs(i1_lhs - i1_rhs), 5), expected="0.0",
+                     tolerance=float(_EXACT_TOL),
+                     source="QOU.MassTheory.ReebPnMagnitude.deformation_eq_ceiling")
     wb.add_assertion("I2_g_equals_inverse_deformed_eig",
-                     computed=mp.nstr(abs(g_landed - 1 / mu_max), 5), expected="0.0")
+                     computed=mp.nstr(abs(g_landed - 1 / mu_max), 5), expected="0.0",
+                     tolerance=float(_EXACT_TOL),
+                     source="QOU.MassTheory.ReebPnMagnitude.ss_matrix_sq")
     wb.add_assertion("I3_g_equals_sin_arctan_z",
                      computed=str(bool(abs(g_landed - g_i3) < mp.mpf(10) ** (-45))),
                      expected="True")
