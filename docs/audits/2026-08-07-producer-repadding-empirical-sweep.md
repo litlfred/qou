@@ -1140,3 +1140,71 @@ where this document said the non-mechanizable part lived all along.
   (`habiro_interpolate_cross_validator`, `rho_k_h3a_lp_dual`, both exit 2), so
   their traces are partial — sites found are real, absence is not evidence.
 
+
+## P32 — `UNCONFIRMED` triage: follow the filename to the write sink
+
+`witness_provenance_audit.py` shipped (#4717) recognising exactly one way to
+write a witness: `WitnessBuilder`. That is not how most of this corpus writes
+one. 250 producers assemble the payload by hand, write it to an explicit path,
+and stamp the staleness metadata afterwards (`stamp_staleness_metadata`, 185
+call sites). All of them read as non-writers, which is why `UNCONFIRMED` stood
+at **466 of 2250** — a number large enough to make the verdict useless.
+
+The upgrade traces a filename from a literal to a **write sink**. Sinks are
+asymmetric on purpose: `write_text` / `write_bytes` and `open(…, "w"|"a"|"x")`
+count; `read_text` and a bare `open()` do not. That asymmetry is the whole
+safeguard, and it is the difference between this and the "mentions it" test
+that produced the original mis-attribution.
+
+Three path idioms, found by reading what was left after each pass rather than
+by guessing up front:
+
+| idiom | example | after |
+|---|---|---|
+| `Path(x)`, `HERE / x`, via a variable | `out = HERE / "…"; out.write_text(…)` | 466 → 198 |
+| `os.path.join(…, x)` | the whole `alpha_em` probe family | 198 → 53 |
+| `p.with_name(x)` | the `borromean` cluster | 53 → **32** |
+
+Each idiom landed with a **paired negative test** — the same construct reaching
+a read instead of a write, which must stay `UNCONFIRMED`.
+
+### What was checked, given this arc's history
+
+Three earlier cuts of this tool were wrong by ~10× each (324 → 189 → 28 → 3),
+so a clean-looking jump is precisely when to stop and verify:
+
+- **`NOT_A_PRODUCER` held at 3 across all three extensions — by name, not by
+  count.** This is structural, not luck: the verdict is reached only when the
+  source mentions no witness at all, and finding *more* writes cannot create
+  that condition. The upgrade can only move `UNCONFIRMED → WRITES`.
+- **The regression is pinned on real corpus data, not only in a unit test.**
+  All six `chi-*.witness.json` that name `delta_lambda_empirical_tabulation.py`
+  remain `UNCONFIRMED`: that script contains their filenames, hands them to a
+  read, and writes a different witness. This is the exact shape the tool exists
+  to reject, and it survives the upgrade.
+- **Five newly-promoted witnesses were read by hand**, all confirmed genuine
+  writers. One was worth the trip: `chi_at_q0_via_hoefsmit_mpfr.py` was cited in
+  the tool's own docstring as unresolvable ("writes via a helper"). It does have
+  an atomic-save helper — and also writes `out.write_text(...)` directly at line
+  341, so the f-string pattern resolves it correctly. The docstring's example
+  was stale and has been replaced with one that is still true
+  (`binding_canonical.py`, whose builder name is not a literal).
+- **A self-test case had to be retired, not satisfied.** `"hand-rolled write"`
+  asserted `UNCONFIRMED` for `Path("out.witness.json").write_text(j)` — the
+  documented limitation this change removes. Replaced by the identical source
+  expecting `WRITES`, with a comment recording the swap so it does not read as
+  a silently loosened test. 25/25 pass.
+
+### Two findings recorded, not fixed here
+
+- **Six `chi-*` witnesses are mis-attributed.** Their `scriptFile` names a
+  script that reads them. `UNCONFIRMED` is the honest verdict — the tool cannot
+  prove no unseen path writes them — but the correct producer should be
+  identified and the claim repaired.
+- **`computations/computations/` exists and is committed** (3 duplicate
+  witnesses, commit `e5dcd8f5`), the signature of a producer run from the wrong
+  working directory. Checked specifically because this arc has already been
+  burned once by mistaking self-inflicted contamination for a finding
+  (`/tmp/trace-wt`); `git ls-files` confirms these are tracked and pre-existing.
+  Shadow copies of files that also exist at the correct path — a corpus
+  decision, not a tool fix.
