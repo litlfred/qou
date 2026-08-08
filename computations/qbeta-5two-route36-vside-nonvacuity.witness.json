@@ -1,0 +1,82 @@
+{
+  "probe": "qbeta_5two_route36_vside_nonvacuity",
+  "bean": "qou-glbl",
+  "dps": 40,
+  "pairs_with_lean": [
+    "QOU/QBeta/FiveTwoTransport.lean (VSide)",
+    "QOU/QBeta/FiveTwoRootStructure.lean (exists_pinning_data)"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "NON-VACUITY, the gate class that caught correction 6: all SIX VSide conditions hold SIMULTANEOUSLY at every root at every arc point. The earlier version of this hypothesis carried `-y in slitPlane` and failed at ALL 199 points, making its theorem true and about nothing. Checking conditions one at a time would not have caught that; checking them together is the whole point",
+      "arc_points": 199,
+      "checks": 597,
+      "all_six_hold": 597,
+      "per_condition_failures": {
+        "y_ne_0": 0,
+        "y_notCut": 0,
+        "xy_notCut": 0,
+        "y_div_x_notCut": 0,
+        "xy_ne_0": 0,
+        "y_div_x_ne_0": 0
+      },
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "WHICH DISJUNCT carries `y in notCut`, classified by ROOT TYPE rather than by `Im != 0`. This matters: polyroots returns |Im| ~ 1e-41 for the REAL root, so a naive `Im != 0` test attributes it to the wrong disjunct. In exact arithmetic the real root is carried by Re < 1 and the complex pair by Im != 0 -- and a Lean proof must follow the exact split, not the numerical one",
+      "real_roots": 291,
+      "real_roots_carried_by_Re_lt_1": 291,
+      "real_roots_where_naive_Im_test_would_misattribute": 1,
+      "worst_spurious_Im_magnitude": "2.5545753e-41",
+      "misattribution_rate": "1 of 291 real roots (1 of 597 checks) -- rare enough that a spot check would miss it entirely",
+      "min_margin_1_minus_Re_at_real_roots": "0.1980717375",
+      "complex_roots": 306,
+      "complex_roots_carried_by_Im_ne_0": 306,
+      "min_abs_Im_at_complex_roots": "0.08077403422",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "x*y and y/x are NEVER real on the arc -- both are carried by Im != 0 at every one of the 597 checks, with a genuine margin rather than a near-miss. So their notCut membership needs no case split at all, unlike `y`'s. This is the cheapest part of VSide to prove and `exists_pinning_data` already supplies part of it: it gives (x*y_3).im < 0, and (x*y_2).im < 0 when c < 0",
+      "min_abs_Im_x_times_y": "0.006757172911",
+      "at_phi": "0.01570796327",
+      "min_abs_Im_y_over_x": "0.006757172911",
+      "margin_is_genuine_not_noise": true,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "WHAT A LEAN PROOF NEEDS, per condition -- with every clause MEASURED. (1) y != 0, x*y != 0, y/x != 0: the product of the three roots is -d/a = 1 identically in x, so no root can vanish; measured below as |y1*y2*y3 - 1| and as a lower bound on |y|. (2) x*y and y/x in notCut: via Im != 0, no case split (G3), and exists_pinning_data already supplies a sign -- measured below as the per-arc-point count of roots with (x*y).im < 0. (3) y in notCut: THE ONLY ONE NEEDING A CASE SPLIT -- real root via Re = t < 1, complex pair via Im != 0 (G2)",
+      "hardest_condition": "y in notCut -- the only one needing a real/complex case split",
+      "min_abs_y_over_all_checks": "0.4301926788",
+      "worst_abs_root_product_minus_one": "2.4420184e-41",
+      "min_roots_per_arc_point_with_Im_xy_neg": 1,
+      "already_available": [
+        "exists_pinning_data: 0 < t < 1, (x*y_3).im < 0, c < 0 -> (x*y_2).im < 0",
+        "gamma_rel: t*(t^2 - 2ct + 2c + 1) = 1, so no root is 0"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "THE ARC CROSSES THE DISCRIMINANT, and no real root reaches 1. On |x| = 1 the y-cubic is `unitCubic (Re x)` with REAL coefficients, so the roots are all-real or one-real-plus-conjugate-pair. Both regimes occur on the arc -- so `continuous_otherRoots`'s collision branch is exercised, not defensive, and the real branch of `y in notCut` must cover three roots at some arc points. Separately: shifting t = 1 + s gives unitCubic c (1+s) = 1 + (4-2c)s + (3-2c)s^2 + s^3, whose coefficients are ALL POSITIVE for c <= 1, so no root reaches 1 -- a uniform Re < 1 needing no `exists_pinning_data`",
+      "arc_points_with_three_real_roots": 46,
+      "arc_points_with_one_real_root": 153,
+      "discriminant_as_quartic_in_c": "16c^4 - 48c^3 + 28c^2 + 12c - 31",
+      "discriminant_identity_error_checked_off_arc": "0.0",
+      "c_star_the_only_transition_in_[-1,1]": "-0.7422176658829284376",
+      "shift_certificate_error_off_root_locus": "1.102e-39",
+      "max_real_root_over_arc": "0.80192826251",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "VSide is NON-VACUOUS: all six conditions hold simultaneously at all 597 checks (199 arc points x 3 roots).",
+    "trap_avoided": "a naive `Im != 0` disjunct attribution counts the REAL root as complex, because polyroots returns |Im| ~ 1e-41 for it. Classified by root type instead. The non-vacuity conclusion is unaffected; the REASON it holds -- which is what a proof needs -- was contaminated.",
+    "structural_surprise": "291 real roots over 199 arc points, not 199 -- at 46 of them ALL THREE roots are real. The arc crosses the discriminant at c* = -0.74221766588, so `continuous_otherRoots`'s collision branch is live, and the real branch of `y in notCut` must cover three roots at some points. G5.",
+    "still_open": "the Lean proof of VSide, plus concrete Y_1 Y_2 Y_3 and the two log(-y) routes. Everything else in Gap A is proved.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}
