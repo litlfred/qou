@@ -164,12 +164,88 @@ the `1/√torsion` one-loop term — the thing the audits gesture at when they s
 τ-alone dependence as a research problem, read the paper the form is
 attributed to and find out what it actually derives and under what hypotheses.
 
+## ADDENDUM — DGLZ was read, and it settles more than expected
+
+Recommendation 1 below was "read `uploads/0903.2472v1.pdf`". Done. It answers
+both findings above, and it means this audit's own framing understated what is
+known.
+
+**DGLZ eq (2.1)/(2.3).** They expand the perturbative Chern–Simons partition
+function as
+
+```
+Z^(ρ)(M; ħ) = exp( S₀/ħ − ½ δ log ħ + Σ_{n≥0} S_{n+1} ħⁿ )        (2.1)
+```
+
+and identify the one-loop coefficient with the Ray–Singer torsion of `M` twisted
+by the flat bundle `E_ρ`:
+
+```
+S₁^(ρ) = ½ log( T(M; E_ρ) / 2 )                                    (2.3)
+```
+
+so the one-loop factor is `exp(S₁) = (T/2)^{1/2} = 2^{−1/2}·T^{1/2}`.
+
+**The "calibrated" constant is the `/2` in their logarithm.** `k = 2^{−1/2}` is
+not a fit and never was; it is written down in the paper the form was already
+attributed to.
+
+**The exponent sign was a variable choice.** DGLZ carry `T^{+1/2}`, the corpus
+`|τ_DG|^{−1/2}`. They agree exactly when `T = 1/|τ_DG|`, verified numerically:
+
+| manifold | rel. deviation of `(c_σ√2)² ` from `1/|τ_DG|` | role |
+|---|---|---|
+| 4_1 | 9.1e−18 | calibration point — **not** evidence |
+| 5_2 | 1.3e−10 | independent (Ohtsuki's theorem) |
+| L5a1 | 6.2e−21 | independent (20-digit measurement) |
+| L6a4 | 7.0e−3 | supporting only (known offset) |
+
+With *nothing* calibrated, `c_σ = (1/(2|τ_DG|))^{1/2}` straight from eq (2.3) is
+a zero-parameter prediction, matching the independently measured `c_σ` to
+6.5e−11 on `5_2` and 3.1e−21 on `L5a1`.
+
+This also **dissolves the Ohtsuki–Takata discrepancy** raised above: both DGLZ
+and that registration carry `+1/2` in the torsion. The corpus simply works in
+the reciprocal variable. No sign disagreement exists.
+
+**And the corpus had already written eq (2.3) down.**
+`jones_1loop_c0_calibration_fig8.py` states `exp(2c₀) = 1/(2|τ_DG|)`. DGLZ (2.3)
+is `exp(2S₁) = T/2`. Under `T = 1/|τ_DG|` these are the same equation and
+`c₀ = S₁` identically — derived independently, never connected to the source.
+
+### What this does to Finding 1
+
+Finding 1 concluded that the load-bearing assumption is "`c_σ` depends on `τ`
+alone". **Eq (2.3) states exactly that dependence, for a general 3-manifold `M`
+with a flat `G_C` bundle** — no restriction to knots, two-bridge knots, or cusp
+number. So that is not an open assumption either; it is the content of a cited
+result.
+
+### What is actually left
+
+**Rigour, and only rigour.** Eq (2.3) is a one-loop saddle-point / Feynman-diagram
+derivation citing Witten (1989), Bar-Natan–Witten (1991) and Gukov–Murakami
+(2006). It is not a theorem, and nothing here makes it one.
+
+But the gap is not shaped the way the corpus describes it. The repeated line
+*"no theorem covers the link case"* is about **proof status**, not about the
+formula's reach — the formula covers links already, and the missing rigour is
+missing for knots too (`4_1` included). Anywhere that line appears it should say
+so, otherwise it reads as though the link case needs a new formula when it needs
+a proof of an existing one.
+
+Machine-checked in `computations/probes/one_loop_dglz_prefactor_identification_probe.py`.
+
 ## Recommended action, in cost order
 
-1. **Read `uploads/0903.2472v1.pdf` (DGLZ).** Already local, never opened, and
-   it is the stated origin of the form. Nothing else on this list is cheaper.
-2. **Resolve the Ohtsuki–Takata exponent convention** (`τ^{+1/2}` vs
-   `|τ|^{−1/2}`) and, if it holds, mark the `c = 1` leg theorem-backed.
+1. ~~**Read `uploads/0903.2472v1.pdf` (DGLZ).**~~ **DONE** — see the addendum
+   above. It supplied the form, the constant, and the generality, and it
+   dissolved item 2 below as well.
+2. ~~**Resolve the Ohtsuki–Takata exponent convention.**~~ **RESOLVED by the
+   addendum** — DGLZ carry `+1/2` too; the corpus works in the reciprocal
+   variable, so there was never a disagreement. Obtaining the paper is still
+   worthwhile for the separate question of whether it makes the `c = 1` leg
+   *rigorous*, which DGLZ does not.
 3. **Reconcile Pandey–Wong** with the "no theorem covers links" line in the two
    audits that assert it — one sentence, in both places.
 4. **Amend the assumption ledger** in `2026-08-08-c-sigma-derivation-status.md`

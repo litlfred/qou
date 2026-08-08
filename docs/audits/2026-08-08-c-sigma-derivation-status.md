@@ -89,14 +89,40 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 >   `c_σ = k·|τ|^p·f(M)` with `f` weakly varying fits the four points equally
 >   well, and nothing in the corpus excludes it. That is the load-bearing part.
 >
-> Two cheaper moves than the research problem, both from the reference ledger:
-> `uploads/0903.2472v1.pdf` (DGLZ), the stated origin of the form, is downloaded
-> and cited **nowhere** in the repository; and `ohtsuki-takata-2015` is
-> registered with a paraphrase that may already prove the form for two-bridge
-> knots — modulo a `τ^{+1/2}` vs `|τ|^{−1/2}` discrepancy in that paraphrase and
-> the registration's own note that the PDF was never read.
+> **AMENDED AGAIN, same day — the form is in the literature, constant and all.**
+> `uploads/0903.2472v1.pdf` (Dimofte–Gukov–Lenells–Zagier) was sitting
+> downloaded and cited nowhere in the repository. Read. Its eq (2.3) is
 >
-> The text below stands as written; read it with that split in mind.
+> ```
+> S₁^(ρ) = ½ log( T(M; E_ρ) / 2 )      ⇒   one-loop factor = 2^{−1/2}·T^{1/2}
+> ```
+>
+> * **`k = 2^{−1/2}` is not "calibrated on `4_1`" — it is the `/2` inside their
+>   logarithm.**
+> * The `T^{+1/2}` vs `|τ|^{−1/2}` sign is a choice of variable: the two agree
+>   when `T = 1/|τ_DG|`, verified to 1.3e−10 on `5_2` and 6.2e−21 on `L5a1` (the
+>   two that did **not** fix the constant). With nothing calibrated,
+>   `c_σ = (1/(2|τ_DG|))^{1/2}` is a zero-parameter prediction.
+> * That also dissolves the Ohtsuki–Takata discrepancy noted a moment ago — DGLZ
+>   carry `+1/2` in the torsion too.
+> * Eq (2.3) is stated for a **general** 3-manifold `M` with a flat `G_C` bundle,
+>   with **no** restriction to knots, two-bridge knots or cusp number. So even
+>   the "`c_σ` depends on `τ` alone" part above is not an open assumption.
+> * `jones_1loop_c0_calibration_fig8.py`'s `exp(2c₀) = 1/(2|τ_DG|)` **is** eq
+>   (2.3) rearranged. The corpus wrote it down independently and never connected
+>   it to the source.
+>
+> **What is actually left is RIGOUR.** Eq (2.3) is a one-loop saddle-point /
+> Feynman-diagram derivation (Witten 1989, Bar-Natan–Witten 1991,
+> Gukov–Murakami 2006), not a theorem. And the gap is not link-shaped: the
+> formula already covers links, and the missing proof is missing for `4_1` too.
+> Wherever this document says "no theorem covers the link case", read it as a
+> statement about proof status, not about the formula's reach.
+>
+> Machine-checked:
+> `computations/probes/one_loop_dglz_prefactor_identification_probe.py`.
+>
+> The text below stands as written; read it with all of the above in mind.
 
 The chain assumes the **1-loop prefactor form**
 
