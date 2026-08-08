@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-08T12:05:00Z
-updated_at: 2026-08-08T12:05:00Z
+updated_at: 2026-08-08T12:25:00Z
 ---
 
 Survey 2026-08-08 of real `sorry`s in the resurgence arc (grep corrected to
@@ -86,3 +86,65 @@ investment, it is this one.
 3. Anything Tier 1 that is attempted must go through `qou-08a2`, and must record
    which Mathlib theorem is missing rather than working around it with an axiom
    (§"Axiomatization is NOT a Proof").
+
+## ⚠ CORRECTION 2026-08-08 (same session): the survey above was WRONG
+
+The counts that produced the tiering were **false positives**. Docstrings in this
+corpus say the word constantly -- "sorry-free", "no `sorry`, no axiom",
+"a cited `sorry`", "-- SORRY: needs ..." -- and every grep refinement I tried
+still matched them (`-w` matches inside "sorry-free" because `-` is a word
+boundary; excluding "sorry-free" still matches the backticked forms; excluding
+backticks still matches the `-- SORRY:` markers).
+
+Re-measured by stripping Lean comments first (`scripts/real-sorry-scan.py`):
+
+| file | tiering above claimed | ACTUAL |
+|---|---|---|
+| `Mathlib/ArgumentPrinciple` | 2 | **0** |
+| `Mathlib/BorelResummation` | 4 | **0** |
+| `Resurgence/StokesMatrixDescent` | 1 | **0** |
+| `Mathlib/SYTBranchingRecursion` | 3 | **0** |
+| `Mathlib/SYTHookGNW` | 3 | **0** |
+| `Mathlib/RSKBridge` | 1 | **0** |
+| `Mathlib/IdentityIHLFBridge` | 1 | **0** |
+| `Mathlib/EllipticDivisorDegree` | 2 | 1 |
+| `Mathlib/HadamardFactorization` | 4 | 2 |
+| `Mathlib/QGevreyOrder` | 4 | 1 |
+
+**Whole QOU tree: 18 real sorries across 1611 files.** Naive `grep -c sorry` over
+the same tree reports **2193** -- a 60x overcount.
+
+### What this does to the tiering
+
+* **TIER 2 does not exist.** `StokesMatrixDescent` is already sorry-free; its
+  block-diagonalisation is proved. So is every other file I called "plausibly
+  closeable". There is **no cheap algebraic sorry to close in the resurgence arc.**
+* **TIER 3 does not exist.** The SYT files are clean.
+* **TIER 1 shrinks** to `EllipticDivisorDegree` (1) + `HadamardFactorization` (2),
+  and `ArgumentPrinciple`/`BorelResummation` are already clean.
+* **TIER 4 is one sorry**, `QGevreyOrder.lean:269` -- verified a genuine bare
+  `sorry` (the `-- SORRY:` marker on the line above is a comment and is correctly
+  ignored).
+
+### The honest answer to "what can be closed in the arc"
+
+**Almost nothing, because the arc is already essentially clean.** The resurgence
+arc carries **3** real sorries, all genuinely hard analysis:
+
+1. `EllipticDivisorDegree` -- needs the argument principle, absent from Mathlib
+   v4.24.0.
+2. `HadamardFactorization` (2) -- Hadamard factorization.
+3. `QGevreyOrder:269` -- the Cauchy-convolution order law: dominant balance /
+   Laplace method for discrete convolutions with q-Gevrey bounds.
+
+That is a good-news finding, not a bad one -- but it means the right move is
+**not** to hunt for cheap sorries here. Effort should go to the analytic gaps via
+`qou-08a2`, or to new content (as `QGevreyTaming.lean` did) rather than to
+closing a backlog that is mostly imaginary.
+
+### Tooling
+
+`scripts/real-sorry-scan.py` now exists so this cannot recur. It blanks comments
+in place (preserving line alignment) rather than deleting them -- an earlier draft
+deleted them, which desynchronised the line mapping and double-counted every hit
+(reported 36 instead of 18). Use it instead of grep.
