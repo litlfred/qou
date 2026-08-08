@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T18:49:41.326981+00:00",
-  "commitSha": "8fd25cd5b01b192444ddebef487647a4c53ee52c",
+  "computedAt": "2026-08-08T19:16:25.220797+00:00",
+  "commitSha": "ce3c9e175c2262a0324f9711641668413b2af8bf",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -34,9 +34,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 567,
+      "Q0_OK": 566,
       "Q0_AMBIGUOUS": 23,
-      "Q0_ANCHOR_MISSING": 1807,
+      "Q0_ANCHOR_MISSING": 1808,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 65,
       "Q0_PARSE_ERROR": 1,
@@ -1047,6 +1047,10 @@
         },
         {
           "witness": "chi-deuteron-free-h6-at-qinv-50dps.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "chi-deuteron-h6.witness.json",
           "detail": ""
         },
         {
@@ -8057,10 +8061,6 @@
         },
         {
           "witness": "charge-slambda-reeb-phase-crack.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "chi-deuteron-h6.witness.json",
           "detail": ""
         },
         {
