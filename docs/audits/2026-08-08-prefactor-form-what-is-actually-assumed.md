@@ -164,11 +164,15 @@ the `1/√torsion` one-loop term — the thing the audits gesture at when they s
 τ-alone dependence as a research problem, read the paper the form is
 attributed to and find out what it actually derives and under what hypotheses.
 
-## ADDENDUM — DGLZ was read, and it settles more than expected
+## ADDENDUM — DGLZ was read: it supplies the form, not the constant
 
-Recommendation 1 below was "read `uploads/0903.2472v1.pdf`". Done. It answers
-both findings above, and it means this audit's own framing understated what is
-known.
+Recommendation 1 below was "read `uploads/0903.2472v1.pdf`". Done.
+
+Read it in two passes and the two passes disagreed, so the order matters here.
+The first pass produced the paragraph immediately below and a claim that the
+constant came free with it; the second pass, prompted by the question *"do we
+want that `/2` for arbitrary characteristic?"*, showed the constant is
+convention. Both are kept, in that order, because the correction is the point.
 
 **DGLZ eq (2.1)/(2.3).** They expand the perturbative Chern–Simons partition
 function as
@@ -251,6 +255,47 @@ knots, two-bridge knots, or cusp number — while the prefactor does not.
 
 That still answers Finding 1's "does `c_σ` depend on `τ` alone": the dependence is
 a cited result. It does **not** hand over the constant.
+
+### The c ≥ 2 risk, made concrete — and it is an exponent, not a constant
+
+Following that up produced something sharper than a worry. DGLZ eq (2.1) carries
+an explicit `ħ`-power, `Z ~ ħ^{−δ/2} ~ N^{δ/2}`, with `δ = h¹ − h⁰` (eq 2.2).
+For a hyperbolic manifold with `c` cusps at the geometric representation with
+adjoint coefficients the standard count is `h⁰ = 0`, `h¹ = c`, so **`δ = c` and
+the power is cusp-dependent**. (That count is my inference — DGLZ state (2.2) but
+never evaluate `h¹` for a cusped manifold.)
+
+The corpus extracts `c_σ` with a **cusp-independent** `N^{−3/2}`, and the
+exponent is *fitted*, not assumed:
+
+| manifold | cusps | p measured | naive `δ/2 + 1` |
+|---|---|---|---|
+| `4_1` | 1 | 1.49999998391397 | 1.5 |
+| `L5a1` | 2 | 1.499999207860905 | 2.0 |
+
+Whatever `c`-independent offset reproduces `3/2` at `c = 1` demands `2` at
+`c = 2`. The measured value is `3/2`.
+
+**The measurement is the solid side of this.** A wrong exponent does not bias
+`c_σ` by a constant — the discrepancy is a positive power of `N → ∞`, so the
+limit diverges or vanishes instead of converging. At `N = 10⁴` the alternative
+power differs by a factor of 100, and `c_σ(L5a1)` converges to 20 digits anyway.
+So `p = 3/2` is correct at `c = 2` as a matter of measurement, and the naive
+`δ = c` reading does not reach the observable.
+
+**So a `c`-dependent step is missing from the dictionary** between the corpus's
+`c_σ` normalisation and DGLZ's `S₁`/`s₁` — most plausibly in the colored-Jones
+normalisation for a *link* (`c` components each coloured by `N`, and the eq (4.4)
+ratio against the solid torus), which differs from the knot case in ways this
+corpus has never worked out.
+
+That is an independent reason the retraction above was necessary: constants
+cannot be transported between the two while an unaccounted `c`-dependent power
+sits in the dictionary. It also puts the `c ≥ 2` risk in one identified place —
+the same place the retracted `2^{(c−1)/2}` and L6a4's 0.35% both live.
+
+Machine-checked in
+`computations/probes/one_loop_cusp_normalisation_tension_probe.py`.
 
 ### And it sharpens where the c ≥ 2 risk actually is
 
