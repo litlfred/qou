@@ -165,6 +165,86 @@ or an unsolved goal behind is strictly worse than the `ℝ` it replaced.
 | `lean.ref` — no formalisation at all | 10 (formalise or demote) |
 | `lean.ref` — target weaker than the block claims | 2 (§3) |
 | wall-side WEAK — **ported this pass** | 2 (done) |
-| wall-side WEAK — read, LEGIT, needs a §7c note on the block | 7 |
-| wall-side WEAK — unread | 22 (+1 blocked on #4722) |
+| wall-side WEAK — LEGIT, needs a §7c note on the block | 23 |
+| wall-side WEAK — GENUINE candidate, needs a compile test | 5 |
+| wall-side WEAK — reclassified to MED (ordering) | 2 |
 | wall-side MED | 65 (unchanged) |
+
+## 7. The WEAK-33 read to completion (2026-08-08, second sitting)
+
+All 33 now read under the corrected protocol from §5 — **imports and the semantic
+role of the `ℝ`, not the signature**. Final tally:
+
+| outcome | n | blocks |
+|---|---|---|
+| **ported** | 3 | `macdonald-hook-telescope` (`[Field R]`), `meson-em-sinh-closed-form`, `confined_knot_binding` (both `[Field R] [CharZero R]`) |
+| **misclassified — belongs in MED, not WEAK** | 2 | `demazure-fiber-markov-trace`, `mass-endomorphism-tower` |
+| **GENUINE candidate — needs a compile test** | 5 | `qmn_recursive_memoized`, `q_gl_classical_limit`, `markov_identification`, `cpt-d6-d7-d8-closure`, `nucleon_ordering_factorization` |
+| **LEGIT — `ℝ` load-bearing by meaning** | 23 | see below |
+
+### The 2 misclassified: the classifier misses `>` and `<`
+
+Both carry `q > 1` **in code**, so they have an ordering hypothesis and are MED by
+#4709's own definition:
+
+- `demazure-fiber-markov-trace` — `∀ (lam) (q : ℝ), q > 1 → …`, four occurrences
+- `mass-endomorphism-tower` — `q > 1 → Pre.massPoly … > 0 := sorry`
+
+#4709's ordering regex matched `0 <`, `≤`, `abs`, `linarith`, `positivity` — and
+**not bare `>` / `<`**. My own re-check in §5 inherited the same omission. A
+re-scan of all 33 with `>`/`<` included finds exactly these two and no others, so
+the defect is contained: the queue is **WEAK-31 + 2 MED**.
+
+(`mass-endomorphism-tower` additionally carries a `sorry` on that line — a matter
+for the proof queue, not this one.)
+
+### The 5 GENUINE candidates — stated as candidates, deliberately
+
+Each looks structurally independent of `ℝ`:
+
+| block | why |
+|---|---|
+| `qmn_recursive_memoized` | the claim is **cache correctness** — `cache_get λ ρ = some v → v = chi λ ρ`. The stored value's type is irrelevant to it. |
+| `q_gl_classical_limit` | `heckeEigenvalue : ℝ → ℝ → Prop` with `∀ T, heckeEigenvalue 1 T → (T = 1 ∨ T = -1)` — no arithmetic, no ordering |
+| `markov_identification` | a finite sum of `markovWeight × spechtPartialTrace` — Hecke-algebra objects; needs `AddCommMonoid` |
+| `cpt-d6-d7-d8-closure` | `markovTrace : ClosedBraid → ℝ` — the Markov trace is algebraic (`ℤ[q, q⁻¹]`), not archimedean |
+| `nucleon_ordering_factorization` | the core lemma is **permutation invariance** over `List ℝ` (`ds.Perm ds' → …`) — purely structural |
+
+**They are not being called GENUINE, and none is being ported here.** This session
+made three GENUINE calls from surface reading and **retracted all three** on a
+closer look (§5). The only reliable adjudicator is the compiler: a port that
+compiles is a GENUINE confirmation, one that does not is a `CharZero`-style
+diagnosis or a refutation. Until each has been attempted, "candidate" is the
+honest label.
+
+### The 23 LEGIT
+
+Grouped by what makes `ℝ` load-bearing:
+
+- **Physical / measured quantities** — `four_term_pair_nucleon` (`0.999` net
+  targets), `derived-mass-formula-light-isotopes`, `mass_categorical_descent`,
+  `positron_correction`, `binding_assembly`, `ch4_lp_dual_binding`,
+  `mass-volume-factorization`, `skein_mass_from_linking`,
+  `q-beta-radius-of-convergence-gate` (a decimal substrate literal and a
+  convergence radius).
+- **Hyperbolic volumes / transcendence** — `BorelZagierQouVolumes` (ℚ-linear
+  independence of `vol(4₁), vol(5₂), vol(𝓑)`), `SingleVolumeIrrationality`,
+  `QouInfraDischargesGoncharovZeta5`, `DiophantineBirthday`.
+- **Analysis in the proof, not the statement** — `fai_projector_coadjoint_orbit`
+  (spectral theorem), `fermion-boson-decomposition` (`Pow.Real` + `Topology`).
+- **A continuous physical parameter** — `confinementUniversality` (photon
+  polarisation), `q-heat-equation` (time).
+- **Mass / holonomy / norm cluster** — `cat_eigenspace_decomposition`,
+  `cat_descended_is_base_mass`, `cat_transient_localises_blowup`,
+  `tm_descended_is_holonomy`, `tm_transient_localisation` (a `nrm : ℝ → ℝ` is a
+  norm; the rest are masses and a holonomy).
+
+> **Flag for the vacuity queue, not this one.** Three of the mass/holonomy
+> cluster define their content trivially — `cat_transient_localises_blowup` has
+> `alpha := 0`, `tauHat := fun x => x`, `trFrob := 0`, `localComponent _ := 0`;
+> `tm_transient_localisation` has `transientMItotal := 0`;
+> `tm_descended_is_holonomy` has `descendedMIdisc _ := 1`. Whatever the `ℝ`
+> question, a lemma whose every input is `0` or the identity is a §1a matter.
+> Not touched here.
+
+`collatz_contact_boundary` remains untouched — sibling #4722 is editing it.
