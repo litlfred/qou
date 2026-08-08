@@ -231,3 +231,53 @@ weight would have to come from the *quadratic* factor certified by
 not say C1's weight is trivial.
 
 Closing is a human action — leaving status as-is.
+
+## 2026-08-08 (later still) — the weight LATTICE is pinned; the weight is not
+
+`QOU/QBeta/C1NewtonRamification.lean`, sorry-free.
+
+Three of the four sub-questions are now answered:
+
+| question | state |
+|---|---|
+| additive or multiplicative? | **multiplicative**, forced; mixed in general |
+| which index set? | **`E_q`**, proved forced |
+| which multiplicative group? | **`q^{½ℤ}`, up to the deck sign** — below |
+| the actual weight? | **OPEN** |
+
+**The lattice.** Chain, with its one non-Lean step named:
+
+1. *[standard q-difference theory, not proved here]* slope denominator `s` ⇒
+   ramification index `s`; C1 at `∞` has `s = 2`, so `ζ² = x`. Not a fresh
+   assumption — PR #4721's degree budget independently found ramify-then-level-2
+   is the only pairing with sub-quadratic leftover (`ramified_qBorel_budget`,
+   `m² = m(m−1) + m`).
+2. *[proved]* the dilation lifts to `ζ ↦ c·ζ` with `c² = q`, and `q` is **not a
+   square** in `ℚ[q]` (degree parity, same argument as the existing
+   `not_isSquare_newtonEdgeConstant`) — so no lift over the base field.
+3. *[proved]* two lifts differ by exactly a sign: the deck group `ℤ/2` is the
+   whole ambiguity.
+4. *[proved]* `c^{2k} = q^k` but `c^{2k+1} = c·q^k` — the group generated is
+   `q^ℤ ⊔ c·q^ℤ`, index 2 over `q^ℤ`.
+
+Reading, scope-(a): **the weight lies in `q^{½ℤ}`, determined up to the deck
+sign.** The half-integrality is forced by the slope being `½`; the sign ambiguity
+*is* the ramification.
+
+## The one remaining item
+
+**Compute C1's actual weight.** Needs the analytic q-Borel/Laplace construction —
+sector-dependent summation and the theta-function jump. This is the old S3,
+flagged when the plan was written as "genuinely multi-session; not a session
+brick", and nothing since has made it cheaper. Everything landed on this branch
+constrains that computation rather than performing it.
+
+Two prunes now bound the search for it:
+
+* `monomial_eigenvalue_mem_zpowers` — the monomial grading cannot exhibit a
+  weight at all (its eigenvalues `qⁿ` are all the identity class of `E_q`), so the
+  weight must come from the quadratic factor certified by `deg_q(cₙ) = n²`.
+* the lattice above — whatever it is, it is a half-integral power of `q` up to
+  sign. A candidate outside `q^{½ℤ}` is wrong without further computation.
+
+Closing is a human action — leaving status as-is.
