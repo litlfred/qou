@@ -113,6 +113,14 @@ ROOT = HERE.parent
 
 # Stamped every run; never evidence of a real change.
 #
+# THE PRINCIPLE, so this stays a rule and not a list that grows until the
+# light turns green: a field belongs here when it describes *how, when or by
+# what* the computation ran — never *what it computed*. `description` is prose
+# about the method; `engine`, `scriptFile`, `_provenance` are provenance;
+# `computedAt` is a timestamp. None of them can make a number right or wrong.
+# `convention` fails the test and is deliberately excluded: it changes what the
+# numbers MEAN, worth 182 ppm in tr_M(4He).
+#
 # `engine`, `_provenance` and `convention_inferred_by` are here because they
 # record *how* a value was produced, not the value. Leaving `engine` out made
 # the classifier reject a genuine deuteron ANCHOR_MIGRATION on the grounds that
@@ -132,7 +140,7 @@ ROOT = HERE.parent
 # changes it must surface as VALUES rather than slip through as metadata.
 META = {
     "computedAt", "commitSha", "scriptHash", "scriptCommitSha", "scriptFile",
-    "durationMs",
+    "durationMs", "description",
     "engineVersion", "engine", "environment", "generatedAt", "timestamp",
     "upstream_witness_hashes", "precisionMetadata", "compute_time_sec",
     "compute_time_sec_so_far", "_provenance", "convention_inferred_by",
@@ -148,7 +156,42 @@ PROTON_PREFIX = "1.109978582"
 ANCHOR_COLLATERAL_MAX = 1e-5
 
 
+# Keys that identify a record within a list, tried in order. A list of dicts
+# each carrying one of these is addressed by identity rather than position.
+IDENTITY_KEYS = ("partition", "lambda", "name", "id", "atom", "key", "label")
+
+
+def _identity(v) -> str | None:
+    """Stable identity for a record in a list, or None to fall back to index."""
+    if not isinstance(v, dict):
+        return None
+    for k in IDENTITY_KEYS:
+        if k in v:
+            iv = v[k]
+            return f"{k}={iv}" if not isinstance(iv, list) else f"{k}={tuple(iv)}"
+    return None
+
+
 def flatten(obj, path="", out=None) -> dict:
+    """Flatten a witness to path -> scalar, addressing list records by identity.
+
+    **Index addressing was a real defect, not a nicety.** The ⁴He rebuild
+    reorders `by_partition` and gives each entry a new `dim` key. Under
+    positional addressing that misaligns all 77 entries at once, so a clean
+    anchor migration reported 560 moved fields and was rejected on
+    `by_partition[0].dim` — the verdict honest about what it saw and wrong
+    about what happened. Any producer that merely reorders its output would
+    read the same way.
+
+    So a list whose records carry an identity key is keyed by it:
+    `by_partition[partition=(7, 4, 1)].chi_lambda` compares like with like
+    however the list is ordered. Lists without one keep index addressing, which
+    is correct for genuinely positional data.
+
+    Falls back to index if identities are not unique — a repeated identity
+    would silently collapse entries, and losing a field is worse than
+    misaligning one.
+    """
     out = {} if out is None else out
     if isinstance(obj, dict):
         for k, v in obj.items():
@@ -156,8 +199,10 @@ def flatten(obj, path="", out=None) -> dict:
                 continue
             flatten(v, f"{path}.{k}" if path else k, out)
     elif isinstance(obj, list):
+        ids = [_identity(v) for v in obj]
+        keyed = all(i is not None for i in ids) and len(set(ids)) == len(ids)
         for i, v in enumerate(obj):
-            flatten(v, f"{path}[{i}]", out)
+            flatten(v, f"{path}[{ids[i] if keyed else i}]", out)
     else:
         out[path] = obj
     return out
@@ -337,6 +382,19 @@ def classify(old: dict, new: dict, script=None, resolve=None) -> dict:
         return {"verdict": "DECLARED" if gained else "NOCHANGE",
                 "moved": 0, "flips": 0}
 
+    # A diff that only ADDS fields moved no value — nothing that existed
+    # changed. This is what restoring the fields a rebuild used to drop looks
+    # like (`producer`, `n_partitions_total`, `partial`), and lumping it in
+    # with VALUES would report a strict provenance gain as drift.
+    #
+    # Reported, not auto-kept: an added field could still carry a wrong new
+    # value, and this verdict only certifies that nothing OLD moved. Removals
+    # are not covered — those stay rejections, since losing a field is the
+    # defect this pair of rules exists to tell apart from gaining one.
+    if all(k not in a for k in moved):
+        return {"verdict": "SCHEMA_GAIN", "moved": len(moved), "flips": 0,
+                "added": sorted(moved)[:8]}
+
     # Positive evidence: a q0-valued field flipped muon -> proton.
     flips = [k for k in moved
              if _anchor_of(a.get(k)) == "muon" and _anchor_of(b.get(k)) == "proton"]
@@ -359,6 +417,18 @@ def classify(old: dict, new: dict, script=None, resolve=None) -> dict:
         if _anchor_of(a.get(k)) == "proton" and _is_unknown_label(b.get(k)):
             return {"verdict": "VALUES", "moved": len(moved), "flips": len(flips),
                     "reason": f"anchor label lost at {k}", "sample": [k]}
+        # A field that did not exist cannot have MOVED. Adding one is a schema
+        # gain — `by_partition[…].dim` on the 4He rebuild — and vetoing on it
+        # rejects clean migrations for enriching their own output.
+        if k not in a:
+            continue
+        # Removing one is the opposite: a loss, and losses are never waved
+        # through. The 4He rebuild drops `producer`, `tr_M_markov_peel_xref`,
+        # `tr_M_dual_path_rel_gap`, `n_partitions_total` and `partial` that
+        # HEAD carried, and that should surface rather than pass as churn.
+        if k not in b:
+            return {"verdict": "VALUES", "moved": len(moved), "flips": len(flips),
+                    "reason": f"field removed at {k}", "sample": [k]}
         x, y = _num(a.get(k)), _num(b.get(k))
         if x is None or y is None:
             if a.get(k) != b.get(k) and k not in flips:
@@ -427,6 +497,49 @@ CASES = [
     ("losing a definite anchor label is rejected",
      {"q0": "1.1099785955573347", "q0Anchor": "proton"},
      {"q0": "1.1099785827513808", "q0Anchor": "ambiguous"}, False, "VALUES"),
+    # The 4He shape: by_partition reordered and each entry gains `dim`.
+    # Positional addressing misaligned all entries and vetoed on
+    # by_partition[0].dim; identity addressing compares like with like.
+    ("reordered list of records is not movement",
+     {"q0": "1.1099785955573347",
+      "by_partition": [{"partition": [2], "chi": 1.0},
+                       {"partition": [1, 1], "chi": 2.0}]},
+     {"q0": "1.1099785827513808",
+      "by_partition": [{"partition": [1, 1], "chi": 2.0, "dim": 1},
+                       {"partition": [2], "chi": 1.0, "dim": 1}]},
+     False, "ANCHOR_MIGRATION"),
+    # ...but a real move inside a reordered list must still be caught.
+    ("reordered list hiding a real move is still caught",
+     {"q0": "1.1099785955573347",
+      "by_partition": [{"partition": [2], "chi": 1.0},
+                       {"partition": [1, 1], "chi": 2.0}]},
+     {"q0": "1.1099785827513808",
+      "by_partition": [{"partition": [1, 1], "chi": 2.5},
+                       {"partition": [2], "chi": 1.0}]},
+     False, "VALUES"),
+    # Duplicate identities fall back to index: collapsing entries would lose a
+    # field, which is worse than misaligning one.
+    ("pure additions are a schema gain, not movement",
+     {"x": 1.0}, {"x": 1.0, "producer": "p.py", "n_partitions_total": 11},
+     False, "SCHEMA_GAIN"),
+    ("an addition alongside a real move is still VALUES",
+     {"x": 1.0}, {"x": 2.0, "producer": "p.py"}, False, "VALUES"),
+    ("prose changing is not a value change",
+     {"q0": "1.1099785955573347", "description": "old prose",
+      "x": 0.20906032199559366},
+     {"q0": "1.1099785827513808", "description": "new prose",
+      "x": 0.20906029879563937}, False, "ANCHOR_MIGRATION"),
+    ("but convention changing still is",
+     {"q0": "1.1099785955573347", "convention": "averaged-crossings"},
+     {"q0": "1.1099785827513808",
+      "convention": "colour-weighted-averaged-crossing"}, False, "VALUES"),
+    ("a removed field is a loss, not churn",
+     {"q0": "1.1099785955573347", "producer": "p.py", "x": 0.20906032199559366},
+     {"q0": "1.1099785827513808", "x": 0.20906029879563937}, False, "VALUES"),
+    ("duplicate identities fall back to index addressing",
+     {"rows": [{"name": "a", "v": 1}, {"name": "a", "v": 2}]},
+     {"rows": [{"name": "a", "v": 1}, {"name": "a", "v": 2}]},
+     False, "NOCHANGE"),
     ("metadata-only churn is not movement",
      {"computedAt": "x", "durationMs": 1, "v": 2},
      {"computedAt": "y", "durationMs": 9, "v": 2}, False, "NOCHANGE"),

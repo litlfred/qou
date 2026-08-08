@@ -2614,3 +2614,68 @@ recording the cost of.
 
 Committed on the key-matched evidence above, with the limitation stated, rather
 than by relaxing the guard to make a green light appear.
+
+## P56 — the guard walks down to the real defect
+
+Three fixes, and the order they surfaced in is the point: each cleared a layer
+of schema churn and exposed the next, until what was left was a genuine data
+loss.
+
+### 1. Lists were addressed by position
+
+`flatten` walked lists by index, so the ⁴He rebuild — which reorders
+`by_partition` and gives each entry a `dim` — misaligned all 77 entries at
+once and reported **560 moved fields**, rejecting on `by_partition[0].dim`. The
+verdict was honest about what it saw and wrong about what happened; any
+producer that merely reorders its output would read the same way.
+
+Records carrying an identity key are now addressed by it —
+`by_partition[partition=(7, 4, 1)].chi_lambda` compares like with like whatever
+the order. Lists without one keep index addressing, which is right for
+genuinely positional data, and duplicate identities fall back to index, since
+collapsing two entries loses a field and that is worse than misaligning one.
+560 → 241.
+
+### 2. An added field is not a moved field
+
+`dim` did not exist before, so it cannot have *moved*. Vetoing on it rejects a
+clean migration for enriching its own output. Additions are now skipped on the
+anchor path — and removals are the opposite, a rejection, which is what
+surfaced the actual bug:
+
+    VALUES  field removed at n_partitions_total
+
+`description` also went to `META`, and the list now carries **the principle**
+rather than growing until the light turns green: *a field belongs in META when
+it describes how, when or by what the computation ran — never what it
+computed.* `convention` fails that test and stays out; it changes what the
+numbers mean, worth 182 ppm.
+
+### 3. The rebuild was shrinking its own witness
+
+`save_witness` dropped seven fields HEAD carried. Two (`scriptFile`,
+`_provenance`) are metadata. Three — `producer`, `n_partitions_total`,
+`partial` — are real and now restored: the last two are how a consumer tells a
+complete cache from a resumed one, and `producer` is the first thing
+`chi_convention_audit._producer_field` reads, which is why that gate had been
+falling through to a computation-id pattern.
+
+**Two are not restored, and must not be faked.** `tr_M_markov_peel_xref` and
+`tr_M_dual_path_rel_gap` came from a cross-check the current producer does not
+compute — `tr_M_via_wenzl_bridge_mpfr` returns no such values. Inventing them
+to make a diff clean would be fabricating a cross-check that never ran. That is
+a genuine capability regression in the producer, recorded here rather than
+papered over.
+
+### A fourth verdict: `SCHEMA_GAIN`
+
+A diff that only *adds* fields moved no value. Restoring the three above
+produces exactly that shape, and calling it `VALUES` would report a strict
+provenance gain as drift. **Reported, not auto-kept** — an added field could
+still carry a wrong new value, and this verdict certifies only that nothing old
+moved. `KEEP` is unchanged, so the driver still reverts it for a human to look
+at.
+
+40 self-tests (was 32), including the negatives that keep each rule honest: an
+addition *alongside* a real move is still `VALUES`, a reordered list hiding a
+real move is still caught, and a removed field is still a loss.

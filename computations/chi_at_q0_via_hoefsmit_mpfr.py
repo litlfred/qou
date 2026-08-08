@@ -137,6 +137,8 @@ def build_chi_cache_at_q0(
             "Z": Z, "N": N,
             "n_strands": n,
             "n_partitions": result["n_partitions_used"],
+            "n_partitions_total": len(list(parts_of(n))),
+            "partial": result["n_partitions_used"] < len(list(parts_of(n))),
             "convention": convention,
             "compute_time_sec": round(elapsed, 2),
             "tr_M_at_q0": result["tr_M"],
@@ -343,6 +345,8 @@ def build_chi_cache_at_q0(
         "Z": Z, "N": N,
         "n_strands": n,
         "n_partitions": len(per_partition),
+        "n_partitions_total": len(shapes),
+        "partial": len(per_partition) < len(shapes),
         "convention": convention,
         "compute_time_sec": round(elapsed, 2),
         "tr_M_at_q0": str(running_total),
@@ -372,6 +376,16 @@ def save_witness(record: dict) -> Path:
         # From the record, not recomputed: `save_witness` is a different
         # scope and must not re-derive a label the build already established.
         "convention": record["convention"],
+        # Restored. A rebuild used to DROP these, so regenerating a witness
+        # silently shrank it — `n_partitions_total` and `partial` are how a
+        # consumer tells a complete cache from a resumed one, and `producer`
+        # is what `chi_convention_audit._producer_field` reads first. The
+        # classifier surfaced it as `field removed at n_partitions_total`
+        # rather than as churn, which is the whole reason a removal is a
+        # rejection and an addition is not.
+        "producer": Path(__file__).name,
+        "n_partitions_total": record["n_partitions_total"],
+        "partial": record["partial"],
         "q_0_50dps": Q_50_DIGIT_STR,
         "dps": 50,
         "n_strands": n,
