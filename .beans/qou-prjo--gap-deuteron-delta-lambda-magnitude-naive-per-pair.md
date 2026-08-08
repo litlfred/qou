@@ -114,4 +114,3 @@ the magnitude (scope-(a)); localizes it and Lean-proves a diagonal dead-end.
   braid word (corpus lacks it; only the deuteron trefoil is pinned).
 
 Audit: docs/audits/2026-08-08-nastokes-transverse-surface-curvature-geometric-route.md
->>>>>>> 9d3805271e (bean qou-prjo: record LEAD-2 geometric route (scope-a non-closure + wall))

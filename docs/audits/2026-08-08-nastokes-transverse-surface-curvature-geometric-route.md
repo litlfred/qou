@@ -27,7 +27,30 @@ AME:
    na-Stokes `ℏ⁰`(diverge)/`ℏ²`(undershoot) leg.
 3. **sorry-free ≠ derived.** The magnitude is *not* derived: the interpolating
    weight between the two envelopes is the transport `U(x,O)` across the Seifert
-   surface, which is the missing canonical discretization (the wall stands).
+   surface.
+
+**Convergence with concurrent siblings (corpus-grep, 2026-08-08).** Two sibling
+PRs attacked the *deuteron* end of this object the same day and reached
+**consistent negatives** — this route is now triply-confirmed:
+- **#4798** (`nastokes-surface-curvature-deuteron`) **built** the trefoil Seifert
+  discretization (`V=[[-1,1],[0,-1]]`, `J=V−Vᵀ`) and the explicit surface-ordered
+  `½∮∮[𝓕,𝓕]`. Result: the transverse term **is nonzero** on `σ₁³` (confirms
+  survival), but the scalar coefficient `c₂=‖Ω₂^⊥‖/h²` ranges **0…897** across
+  natural germ/handle gauge choices — never ≈1 (the `g₂` that would close the
+  deuteron). O(100×) gauge freedom the corpus does not fix.
+- **#4619** (`sigma1cubed-seifert-tessellation`) showed the state-sum is
+  **tessellation-independent** (`5e-51`, a topological invariant, *not* a fit)
+  but **q₀-degenerate** (`σ₁³` is a torus knot, `Vol=0`, pinched octahedron;
+  `value/target=0.136`), and **proved the scalar/character channel null**
+  (`χ^λ` annihilates the commutator product, `tr[A,B]=0` at 40 dps).
+
+So the earlier framing "the corpus lacks the discretization" is now **corrected**:
+for the *deuteron trefoil* the discretization was built (#4798/#4619); it does
+**not** close the magnitude because the surface→scalar map is gauge-
+underdetermined (#4798) and trace-null / q₀-degenerate (#4619). What this LEAD-2
+route adds is the **Lean formalization** of the pairing structure + the wall +
+the **trace-null theorem**, and the **multi-isotope Betti bracketing** (below)
+that #4798/#4619 (deuteron-only) did not compute.
 
 ## 1. The forward geometric definition (committed before matching)
 
@@ -66,6 +89,7 @@ Quot.sound` only — no `sorryAx`):
 | `curvComm`, `curvComm_antisymm` | `⟦a,b⟧=a·b−b·a`, antisymmetric 2-form (generic `Ring`) |
 | `listPairing` | discrete ordered `½P∮∮[𝓕,𝓕]` |
 | `listPairing_eq_zero_of_all_comm`, `listPairing_const` | flat / commuting surface ⇒ pairing `= 0` |
+| **`listPairing_trace_zero`** | **trace/character-null** — any cyclic `τ` (Markov trace / `χ^λ`) kills the pairing ⇒ invisible to the scalar trace; formalizes #4619's `tr[A,B]=0` |
 | **`transverse_nonzero_needs_noncommuting_curvature`** | **THE WALL** — nonzero pairing forces position-dependent transported curvature |
 | `transverseMagnitudeDiagonal` (+ trefoil/flat/link-additive) | `½·b₁·κ²` diagonal envelope |
 
@@ -126,30 +150,50 @@ inter-nucleon Hecke generators"); `b₁(A) = 2(A−1)`. AME as **fixed ratios on
 
 ## 5. Precise surviving sub-question (the next honest unit)
 
-> **Compute the surface-ordered transport `U(x,O)` on the trefoil (genus-1)
-> Seifert surface and evaluate the off-diagonal cross-handle pairing
-> `Σ_{i<j} [U_i⁻¹ F_q U_i, U_j⁻¹ F_q U_j]`.** The forward probe shows the true
-> magnitude lands between `b₁·κ²` (diagonal) and `C(b₁,2)·κ²` (all handle-pairs);
-> the transport twists select the interpolation. Two concrete inputs are still
-> missing: (i) the Seifert-surface cell complex + a canonical band-transport for
-> `σ₁³` (deuteron) and for the multi-nucleon channels — **the corpus has no
-> canonical multi-nucleon Seifert braid word** (only the deuteron trefoil is
-> pinned); (ii) whether the cross-handle term is genuinely non-additive over
-> links (super-pairwise) — required to escape the diagonal pairwise cap.
+> **Find the principle that fixes the germ + handle gauge, in an operator-valued
+> (non-trace) channel, across the multi-nucleon tower.** #4798 already built the
+> deuteron trefoil transport and got `c₂ ∈ 0…897` (O(100×) gauge freedom);
+> #4619 proved the *scalar/character* channel is null. So the three concrete
+> open inputs are:
+> (i) a **new principle fixing the germ normalization + the two H₁ handle
+>     holonomies** (the O(100× freedom #4798 exposed) — without it the surface→
+>     scalar map is unpinned between the `b₁·κ²` and `C(b₁,2)·κ²` envelopes;
+> (ii) an **operator-valued / eigenphase-weighted** readout (the scalar Markov
+>     trace is provably null — `listPairing_trace_zero` here, `tr[A,B]=0` in
+>     #4619; the surviving non-trace channel is the one both #4619 and
+>     `2026-07-24-eunit-magnus-order2.md` §2 name);
+> (iii) the **canonical multi-nucleon Seifert braid word** — the corpus pins only
+>     the deuteron trefoil, so the isotope Betti numbers `b₁(A)` above use the
+>     minimal spanning-tree model, not a corpus-canonical multi-nucleon surface.
 
-Until (i) and (ii) exist the deuteron magnitude stays open. This route
-**localizes** the missing physics to the off-diagonal transport weighting, and
-proves (Lean) that the diagonal Betti-count reading is a dead end for the
-≥3-body term.
+Until (i)–(iii) exist the deuteron magnitude stays open. This route **localizes**
+the missing physics to the off-diagonal, operator-valued, gauge-fixed transport
+weighting, and **proves (Lean)** two dead ends: the diagonal Betti-count reading
+is pairwise-capped (link-additive) and the scalar-trace channel is null.
 
 ## 6. Coordination
 
-LEAD-1 attacks `qou-prjo` via the **algebraic ≥3-body cumulant** route; this is
-the **geometric surface-curvature** route. Convergence test: if the
-off-diagonal cross-handle pairing (this route) is genuinely non-additive over
-links, it *is* a ≥3-body cumulant (LEAD-1's object) — the two routes should meet
-at the same super-pairwise term. Do NOT redo any diagonal/additive/Betti-count
-closure — Lean-proved pairwise-capped here.
+Four concurrent `qou-prjo`/Δ_λ-magnitude fronts (2026-08-08):
+
+- **#4817** (LEAD-1) — algebraic **q₀-free ≥3-row extensive cumulant**, scope-(a).
+  Convergence test: if the off-diagonal cross-handle pairing (this route) is
+  genuinely non-additive over links, it *is* a ≥3-body cumulant (LEAD-1's
+  object) — the two routes meet at the same super-pairwise term.
+- **#4798** — built the deuteron trefoil discretization; found the surface→scalar
+  map has O(100×) germ/handle gauge freedom (`c₂∈0…897`). This LEAD-2 Lean
+  `transverse_nonzero_needs_noncommuting_curvature` + envelope bracketing is the
+  *structural* statement of that same unpinning.
+- **#4619** — tessellation-independence + **scalar/character channel provably
+  null** (`tr[A,B]=0`); this route formalizes that as `listPairing_trace_zero`.
+- This PR (**#4818**, LEAD-2) — Lean structure + wall + trace-null + the
+  **multi-isotope** Betti bracketing + the **pairwise-cap** proof
+  (`seifertBettiOne_link_additive`).
+
+**Do NOT redo:** any diagonal/additive/Betti-count closure (Lean-proved
+pairwise-capped here), any scalar-trace/character closure (Lean-proved null here
++ #4619), or the deuteron-only germ/handle scan (#4798 did it → gauge-
+underdetermined). The live frontier is the **operator-valued, gauge-fixed,
+multi-nucleon** transport — items (i)–(iii) in §5.
 
 ## Files
 - Lean: [`content/quantum-observable-universe/lean/QOU/MassTheory/TransverseSurfaceCurvature.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TransverseSurfaceCurvature.lean)
