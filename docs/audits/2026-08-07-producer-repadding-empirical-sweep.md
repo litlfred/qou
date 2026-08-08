@@ -1618,3 +1618,68 @@ fails on clean `main` (verified by stash): `HBAR_Q_SQ` disagrees with
 `VOL_FIGURE_EIGHT / MASS_RATIO_MU_E` by 2.06e-09 against a 1e-15 tolerance.
 A substrate-constants inconsistency, unrelated to anything here, and not
 something to silently adjust.
+
+## P38 — the reference environment was reachable after all; 4He leaves a dead anchor
+
+### Three "environment blockers" were two installs and a misreading
+
+P36/P37 held witnesses back because this container could not reproduce the
+reference environment. Pushing on that dissolved most of it:
+
+| gap | resolution |
+|---|---|
+| mpmath 1.3.0 vs 1.4.1 | `pip install mpmath==1.4.1` |
+| SnapPy census: 180,511 vs 433,804 manifolds | `pip install snappy_15_knots` → `len(HTLinkExteriors)` = 433,804, matching the committed witness exactly |
+| `clarabel` absent | `pip install clarabel` → 0.11.1, the recorded version |
+| `pyhecke_native` absent | built from `tools/pyhecke-native` with maturin + `libgmp-dev`/`libmpfr-dev` → **0.9.0**, the recorded version |
+| "Python 3.12/3.13 vs this container's 3.11.15" | **a misreading.** 1463 of 1680 witnesses already record 3.11.15; 3.13.12 accounts for 141 and 3.12.3 for 65. This container *is* the corpus norm — regenerating here converges rather than downgrades. |
+
+The last one is worth naming as an error rather than a discovery: two witnesses
+that happened to be built elsewhere were generalised into a blanket rule, and
+that rule then blocked ~130 regenerations for two passes. The check that
+settled it — count what the corpus actually records — cost one command.
+
+### Regeneration: mechanism proven, wave not finished
+
+A harness runs every producer that declares an upstream, then classifies:
+`DECLARED` (the hashes appeared and nothing but metadata moved) is kept;
+`VALUES`, `NOCHANGE` and `FAILED` are reverted, so a drift cannot be committed
+by accident. It reverts *only* dirty `*.witness.json` paths — a blanket
+`git checkout -- computations/` would have undone the ported sources, which is
+why the ports are committed first.
+
+163 producers now declare an upstream. The run is slow (many are minutes each)
+and was stopped early; the two that completed are both clean `DECLARED` —
+declaration present, **zero** non-metadata fields changed — and are committed.
+The remaining 161 are a long run, not an unsolved problem.
+
+### 4He was reading a superseded q₀, and that is a content change
+
+`chi-helium-4-h12-numeric.witness.json` has no producer anywhere in the tree,
+and reading it explains why that matters: its `q_0_float` is
+**1.1099785955541805** — the *muon-anchored* q₀ — against the current
+proton-anchored 1.1099785827513808. Three live producers were consuming
+numbers computed at an anchor the repo deliberately retired.
+
+The successor is already in the corpus:
+`chi-helium-4-h12-at-q0-50dps.witness.json` carries the same 77 partitions of
+12, at 50 dps instead of float64, with a live producer
+(`chi_at_q0_via_hoefsmit_mpfr.py`). Two independent signs it was always the
+intended replacement: `delta_lambda_empirical_tabulation.load_chi_per_lambda`
+*already* normalises its `by_partition` / `y_lambda` / `chi_lambda` shape, and
+the 5Li row beside 4He was migrated to this family earlier. 4He was the
+straggler.
+
+All three readers now point at it. **This moves a published number:**
+
+    tr_M(4He), legacy   (muon-anchored q0) = 0.05534834587669884
+    tr_M(4He), successor (proton anchor)   = 0.055358426266783106465
+    relative change                        = 182 ppm
+
+182 ppm is not a rounding artifact; it propagates into the helium-4 binding
+prediction. It is a *correction* — the old value is anchored to a q₀ this repo
+no longer uses — but accepting a 182 ppm move in a published quantity is a
+content decision, so it is stated here in full rather than folded into an
+infrastructure change. Nothing else in the repoint alters a value: the readers
+downcast to float in any case, and `delta_lambda_2row_stratum_analysis`
+computes `dim` itself rather than reading the field the successor lacks.
