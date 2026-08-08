@@ -75,12 +75,12 @@ Cauchy), `circleIntegral.integral_sub_center_inv` (`∮ (z−c)⁻¹ = 2πi`),
    fundamental annulus is **simple**, and with `qTheta_neg_zpow_eq_zero` it is
    `−p^k` and there is no other. The converse zero locus now hangs on step 2 and
    on nothing else.
-2. **Existence of the factorisation** — the real work. Zeros of a non-identically-zero
-   holomorphic function on a compact annulus are finite (`AnalyticOnNhd` +
-   isolated zeros + compactness), each has a finite order (`AnalyticAt.order`),
-   and dividing them out leaves a non-vanishing holomorphic factor. Mathlib has
-   the single-point factorisation; the global-on-a-compact-set version is the
-   gap.
+2. **Existence of the factorisation** — *see the 2026-08-08 revision below;
+   Mathlib appears to have this already and my earlier scan missed it.* Zeros of
+   a non-identically-zero holomorphic function on a compact annulus are finite
+   (`AnalyticOnNhd` + isolated zeros + compactness), each has a finite order
+   (`AnalyticAt.order`), and dividing them out leaves a non-vanishing
+   holomorphic factor.
 3. **Assemble** into the annulus argument principle, then apply to `θ_p`.
 
 ## Honest cost — revised after doing (1)
@@ -106,3 +106,59 @@ the Mathlib contribution and for closing a named gap honestly, not because a
 downstream number depends on it. Do not let it displace work that is consumed.
 
 Relates: `qou-c1ln` (row 2), `qou-c1wr`, `qou-wgnx`.
+
+## 2026-08-08 — step 2 is probably NOT a gap; my scan was looking for the wrong names
+
+Reading the Mathlib source on disk (`/workspace/leanprover-community/mathlib4`,
+rev `ac10dc7`) turns up all three of the things this bean calls missing:
+
+| what step 2/3 needs | Mathlib declaration |
+|---|---|
+| finitely many zeros on a compact set | `MeromorphicOn.divisor_support_finite_of_subset (hf : MeromorphicOn f U) (hU : IsCompact U) (hV : V ⊆ U) : (divisor f V).support.Finite` |
+| **the global factorisation** | `MeromorphicOn.extract_zeros_poles` — `f =ᶠ[codiscreteWithin U] (∏ᶠ u, (· - u) ^ divisor f U u) • g` with `g` analytic and nowhere zero on `U` |
+| finset linearity of the circle integral | `circleIntegral.integral_fun_sum` |
+
+`Mathlib/Analysis/Meromorphic/FactorizedRational.lean` is the file, and
+`Mathlib/Topology/LocallyFinsupp.lean` carries the `finiteSupport`-on-compact
+lemma underneath it.
+
+**This is a correction, not a Mathlib update.** The scan recorded above searched
+for `argumentPrinciple`, `windingNumber`, `residue`, `countZeros` — and
+`extract_zeros_poles` is none of those. The negative result was real for the
+*argument principle*; it was never evidence about the *factorisation*. I should
+have searched by what the statement says, not by what the theorem is called.
+
+I could not verify whether the pinned revision has them: the checkout on disk is
+shallow, `f897ebcf` (the `lakefile.toml` pin) is not among its objects, and the
+`.lake/packages/mathlib` directory is empty in this container, so nothing Lean
+can be compiled here to check. **Confirm against the pin before planning around
+this.** If the pin predates them, this becomes a version-bump question, which is
+a corpus-wide re-verification and a much bigger decision than one lemma.
+
+## The route, if step 2 is available
+
+1. `K := closedBall 0 R' \ ball 0 r'` with `0 < r' < r < R < R'` — compact, and
+   contained in `ℂ*`, so `θ_P` is analytic hence `MeromorphicOn` on it.
+2. `V := ball 0 R' \ closedBall 0 r'` — open, connected, `V ⊆ K`, contains the
+   closed annulus between `r` and `R`.
+3. `divisor_support_finite_of_subset` gives `(divisor θ V).support.Finite`.
+4. `extract_zeros_poles` gives `θ =ᶠ[codiscreteWithin V] (∏ᶠ u, (·-u)^m_u) • g`.
+5. **Upgrade the codiscrete equality to genuine equality on `V`.** Both sides are
+   analytic there — `θ` by hypothesis, the RHS because `θ` has no poles so the
+   divisor is `≥ 0` — and `V` is connected, so the identity theorem applies.
+   *This is the step to cost first; it is the one that is not a citation.*
+6. `logDeriv_prod` + `circleIntegral.integral_fun_sum` + the existing
+   `integral_inv_sub_inside` / `integral_inv_sub_outside` / annulus-Cauchy
+   lemmas turn (4) into `Σ_u m_u` over the zeros between the two circles.
+7. `qTheta_winding_step` says that sum is `1`. Since `qTheta_neg_zpow_eq_zero`
+   puts `−p^k` in the annulus with `m ≥ 1`, the sum being `1` forces: exactly one
+   zero, simple, equal to `−p^k`. **That is the converse zero locus.**
+
+Steps 1–4 and 6 are citations. Step 5 is the only real work, and it is a
+standard identity-theorem argument rather than a new theory. So the honest cost
+above ("multi-session, upstreamable") is **too pessimistic** if the pin carries
+these — revise to one session, contingent on that check.
+
+Unchanged: `qou-c1wr` established that nothing downstream consumes the divisor.
+This is worth doing to close a named gap honestly, not because a number depends
+on it. Do not let it displace consumed work.
