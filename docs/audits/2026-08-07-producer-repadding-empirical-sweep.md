@@ -1367,3 +1367,79 @@ census databases the committed witness was made against: a re-run searches
 one. The source fix is committed and the witness is not, so the audit still
 reports it as 1 NEW — an honest red rather than a green bought with a
 degraded environment.
+
+## P35 — undeclared upstreams: the count was 122 because the sweep was a grep
+
+`witness_upstream_declaration_audit.py` replaces the ad-hoc sweep that produced
+the 122 figure above. It shares its path resolver with
+`witness_provenance_audit` — same idioms (`Path(x)`, `HERE / x`,
+`os.path.join`, `p.with_name`, `_pb.witness_path`, and values reached through
+a variable), with the read/write sinks **inverted**: here `read_text`,
+`json.load(open(p))` and a bare `open(p)` are what count, and a write is not.
+
+| | producers | edges |
+|---|---:|---:|
+| undeclared upstream (invisible to drift) | **331** | **410** |
+| fully declared via `add_upstream` | 23 | |
+| declares, but via a computed path — not counted either way | 7 | |
+
+The earlier 122 was a grep for `json.load` adjacent to a literal filename, so
+it saw only the plainest spelling. Every path that reaches a read through a
+variable, a helper, or `os.path.join` was invisible to it — the same
+undercount, in the same direction, that recognising only `WitnessBuilder` made
+in P32. **331 is not a correction of a wrong method; it is the same question
+asked with a resolver instead of a regex.**
+
+Three flagged producers were read by hand and all three are real:
+`aK_via_lp_dual.py:56` (`json.load(Q_PIN.open())`),
+`alpha_star_vs_binding_gap.py:68-72` (three witnesses opened directly), and
+`_habiro_coefficient_extract.py:136`. The last one is worth naming as a
+limitation rather than a win: it resolves because a module-level variable and
+a function parameter share the name `habiro_path`, and here they do denote the
+same file. A different file passed under a reused name would resolve wrongly.
+
+**Bounding the noise:** 21 of the 410 edges (5%) name a witness that does not
+exist in the corpus — dangling reads, or name-collision artifacts of exactly
+the kind above. The count is a floor with ~5% noise, not a precise inventory,
+and reading it as either would be a mistake.
+
+The useful structure is the ranking, not the total:
+
+| undeclared dependents | upstream |
+|---:|---|
+| 71 | `q-pinning-50-digit.witness.json` |
+| 31 | `y-lambda-at-q0.witness.json` |
+| 30 | `habiro-coefficients-atomic.witness.json` |
+| 18 | `q-beta-operator-valued-N3.witness.json` |
+
+`q-pinning-50-digit` moving silently invalidates 71 producers. That is where a
+port earns the most, and it is a far better unit of work than "331 producers".
+
+**Report-only, not wired into CI.** Every other gate in this arc was
+introduced at baseline zero so it could fail the build. This one starts at 331,
+so gating it would install a standing red — the failure mode #4653 avoided.
+
+### Why no producer was ported here
+
+`add_upstream` rewrites the witness (it records the upstream's hash), so a port
+is a re-run, not an edit — and **this container cannot faithfully re-run these
+producers**. Four candidates were screened in a throwaway worktree:
+
+| producer | what a re-run here would record |
+|---|---|
+| `alpha_star_vs_binding_gap` | already broken: reads `base / "joint-tower-sdp-rust.witness.json"` where `base` is its own directory and the upstream is not there |
+| `alpha_k_jones_markov_h12` | exits 1 |
+| `aK_via_lp_dual` | `python 3.13.12 → 3.11.15`, drops `pyhecke_native 0.9.0` |
+| `a3_mirror_residual_reconciliation` | drops `clarabel 0.11.1` |
+| `alpha_em_shift_chain` | drops `pyhecke_native`, and **loses `q0`, `inv_alpha_chain`, `inv_alpha_bare`** — the computation degrades without the native module |
+
+That is the third environment mismatch this session, after mpmath 1.3.0 vs
+1.4.1 (resolved by installing 1.4.1) and SnapPy's missing census databases (not
+resolved). A port committed from here would record a degraded environment as
+though it were the reference one. The detector is committed and the work is
+scoped; the regeneration wave needs the reference environment — Python 3.13,
+`pyhecke_native`, `clarabel`, the full SnapPy census, mpmath 1.4.1.
+
+`alpha_star_vs_binding_gap.py` reading an upstream from a directory that does
+not contain it is a live bug found on the way, not a consequence of anything
+here. Recorded, not fixed.
