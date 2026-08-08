@@ -19,7 +19,7 @@ stale (qou-oacr).
 - [x] `Specht.specht_isSimple` — brick-2 duplicate of a proved theorem
 - [x] Prerequisite for the third: `M^μ = S^μ ⊕ (S^μ)ᗮ` and stability of `ᗮ`
 - [x] Combinatorial core of the third: Sagan Lemma 2.2.6
-- [ ] `SpechtClassification.spechtIso_imp_dom_both` — module-theoretic half
+- [x] `SpechtClassification.spechtIso_imp_dom_both` — module-theoretic half
 - [ ] `SpechtClassification.specht_exhausts_irreducibles` — completeness
 
 ## Summary of Changes
@@ -103,3 +103,62 @@ classes = #partitions — which over an arbitrary characteristic-zero field need
 Wedderburn–Artin for `k[S_n]` but its block count `N` is abstract, not
 identified with the partition count; closing that identification is the work.
 Not attempted. Its own bean is sp06.
+
+## Update — `spechtIso_imp_dom_both` is PROVED (3 of 4 done)
+
+`SpechtClassification.spechtIso_imp_dom_both` and `specht_pairwise_noniso` both
+report `[propext, Classical.choice, Quot.sound]`. Sagan Thm 2.4.4 in full.
+
+New module `QOU/BraidKnot/SpechtCrossKappa.lean`, sorry-free:
+
+- `transportPerm` — permutations along `nOf μ = nOf ν`; definitionally the same
+  term as `SpechtClassification.transportPermHom`, which is downstream and so
+  cannot be imported.
+- `kapCross` — `κ_t = Σ_{π ∈ C_t} sgn(π)·π` for a **μ**-tableau `t` acting on
+  **M^ν**. With `ν = μ`, `h = rfl` it is `SpechtIrreducible.kapL`.
+- `kapCross_of_eq_zero_of_clash` — the sign-reversing involution, cross-shape.
+- `dominance_of_kapCross_ne_zero` — its contrapositive composed with Lemma 2.2.6.
+- `kapL_kapL`, `kapL_polytabloid`, `polytabloid_ne_zero`.
+
+Assembly is `SpechtClassification.dom_of_intertwiner`.
+
+### The plan in this bean was wrong about the hard part
+
+It said the remaining work was "extend `θ : S^μ → M^ν` to `M^μ` along
+`isCompl_specht_perp`" — the textbook step, and the reason the orthogonal
+decomposition was proved first. **That step is not needed.**
+
+The textbook writes `θ(e_t) = θ(κ_t {t}) = κ_t θ({t})`, which requires `θ` at
+the tabloid `{t} ∉ S^μ`, hence requires `M^μ = S^μ ⊕ (S^μ)ᗮ`. But
+
+    κ_t e_t = |C_t| · e_t          (`kapL_polytabloid`)
+
+stays **inside** `S^μ`. So equivariance of `θ` on `S^μ` alone already gives
+
+    κ_t (θ e_t) = |C_t| · θ(e_t) ≠ 0
+
+which is everything the dominance argument consumes. No extension, no
+projection, no equivariance-of-the-projection lemma.
+
+`isCompl_specht_perp` and `spechtPerp_stable` are therefore **not** on the
+critical path. They stay as the honest orthogonal decomposition — worth having,
+and they cost little — but the bean's sizing (250–400 lines, dominated by the
+extension) mis-attributed the difficulty. Actual cost was ~200 lines, dominated
+by the `nOf μ = nOf ν` transport.
+
+### Friction worth recording
+
+- `map_smul` does not fire on a `ℤ`-scalar against a `k`-linear map; `map_zsmul`
+  does. Cost two compiles.
+- `Quotient.exists_rep` returns `⟦s⟧`, which `rw` will not match against
+  `Tabloid.mk s` even though they are definitionally equal. `show` bridges it.
+- `Nat.cast_smul_eq_nsmul` is stated `(n : R) • b = n • b`, so converting an
+  `ℕ`-smul goal into a `k`-smul one needs `←`.
+- `Subtype.ext h` with `h : ↑x = 0` elaborates to a metavariable equation unless
+  the expected type is given; bind it with `have h0 : e y = 0 := Subtype.ext hzero`.
+
+### Remaining
+
+Only `specht_exhausts_irreducibles` (bean sp06). Genuinely separate: it needs
+#simple `k[S_n]`-modules = #partitions, i.e. `WedderburnSn`'s abstract block
+count identified with the partition count. Not reachable from this chain.

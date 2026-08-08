@@ -314,6 +314,7 @@ import QOU.BraidKnot
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
 import QOU.BraidKnot.SpechtCrossDominance
+import QOU.BraidKnot.SpechtCrossKappa
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain

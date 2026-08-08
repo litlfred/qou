@@ -6,6 +6,7 @@ import Mathlib.Algebra.MonoidAlgebra.Basic
 import Mathlib.RepresentationTheory.Basic
 import Mathlib.RingTheory.SimpleModule.Basic
 import QOU.BraidKnot.Specht
+import QOU.BraidKnot.SpechtCrossKappa
 
 /-!
 # QOU.BraidKnot.SpechtClassification — brick 3 of the Okounkov–Vershik tower
@@ -434,24 +435,149 @@ theorem partitionDom_antisymm (μ ν : YoungDiagram)
 
 /-! ## 4. The classification theorems -/
 
-/-- **James cross-shape dominance core** (the genuine `S_n`-rep-theory gap for
-pairwise non-isomorphism).  A representation isomorphism `S^μ ≅ S^ν` (over the
-shared group via `h`) forces dominance both ways:
+/-! ### The cross-shape dominance argument (Sagan Thm 2.4.4)
+
+An intertwiner `S^μ ≃ S^ν` forces `μ ⊵ ν`.  All the machinery is upstream:
+
+* `SpechtCrossKappa.kapL_polytabloid` — `κ_t e_t = |C_t| · e_t`, which keeps the
+  argument inside `S^μ` and so avoids extending the intertwiner to `M^μ`;
+* `SpechtCrossKappa.kapCross` — `κ_t` acting on `M^ν`, and its vanishing on a
+  clash;
+* `SpechtCrossDominance.dominance_of_tableau_noclash` — Sagan Lemma 2.2.6.
+-/
+
+/-- Every diagram admits a tableau: `nOf μ` is by definition the number of
+cells. -/
+theorem nonempty_tableau (μ : YoungDiagram) : Nonempty (Specht.Tableau μ) :=
+  ⟨(Fintype.equivFinOfCardEq (Fintype.card_coe μ.cells)).symm⟩
+
+open scoped BigOperators in
+/-- **Sagan Thm 2.4.4.** A `k`-linear intertwiner `S^μ ≃ S^ν` (for the group
+`Perm (Fin (nOf μ))` acting on `S^ν` through `h`) forces `μ` to dominate `ν`.
+
+The proof applies `κ_t` to `e (e_t)`.  Because `κ_t e_t = |C_t| e_t` stays inside
+`S^μ`, equivariance of `e` on `S^μ` alone gives `κ_t (e e_t) = |C_t| · e e_t ≠ 0`
+— no extension of `e` to `M^μ` is needed, which is where the textbook proof uses
+`M^μ = S^μ ⊕ (S^μ)ᗮ`.  Expanding `e e_t` in the `ν`-tabloid basis then produces a
+tabloid with `κ_t {s} ≠ 0`, and Lemma 2.2.6 converts that into dominance. -/
+theorem dom_of_intertwiner {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (e : Specht.SpechtSubmodule (k := k) μ ≃ₗ[k] Specht.SpechtSubmodule (k := k) ν)
+    (he : ∀ (σ : Perm (Fin (Specht.nOf μ))) (x : Specht.SpechtSubmodule (k := k) μ),
+      e (spechtRep (k := k) μ σ x) = spechtRepOn (k := k) h σ (e x)) :
+    partitionDom μ ν := by
+  classical
+  obtain ⟨t⟩ := nonempty_tableau μ
+  set y : Specht.SpechtSubmodule (k := k) μ :=
+    ⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t⟩ with hy
+  -- 1. `e y` is a nonzero element of `M^ν`
+  have hyne : y ≠ 0 := fun hzero =>
+    SpechtCrossKappa.polytabloid_ne_zero (K := k) μ t (congrArg Subtype.val hzero)
+  have heyne : ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) ≠ 0 := by
+    intro hzero
+    refine hyne ?_
+    have h0 : e y = 0 := Subtype.ext hzero
+    have hb := congrArg e.symm h0
+    rwa [e.symm_apply_apply, map_zero] at hb
+  -- 2. inside `S^μ`, the `C_t`-sum is `|C_t| • y`  (`κ_t e_t = |C_t| e_t`)
+  have hsum : (∑ π : Specht.colStab t,
+        (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
+          spechtRep (k := k) μ (π : Perm (Fin (Specht.nOf μ))) y)
+      = (Fintype.card (Specht.colStab t)) • y := by
+    refine Subtype.ext ?_
+    have hL : (((∑ π : Specht.colStab t,
+          (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
+            spechtRep (k := k) μ (π : Perm (Fin (Specht.nOf μ))) y) :
+              Specht.SpechtSubmodule (k := k) μ) : Specht.Mtab (k := k) μ)
+        = ∑ π : Specht.colStab t,
+            (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
+              Specht.Mtab.rep μ (π : Perm (Fin (Specht.nOf μ)))
+                (Specht.polytabloid (k := k) t) := by
+      rw [Submodule.coe_sum]
+      exact Finset.sum_congr rfl (fun π _ => rfl)
+    rw [hL, ← SpechtIrreducible.kapL_apply, SpechtCrossKappa.kapL_polytabloid]
+    simp [hy]
+  -- 3. therefore `κ_t (e y) = |C_t| • e y`
+  have hkap : SpechtCrossKappa.kapCross (k := k) h t
+        ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν)
+      = (Fintype.card (Specht.colStab t)) •
+          ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) := by
+    rw [SpechtCrossKappa.kapCross_apply]
+    have hterm : ∀ π : Specht.colStab t,
+        (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
+            Specht.Mtab.rep ν (SpechtCrossKappa.transportPerm h
+              (π : Perm (Fin (Specht.nOf μ))))
+              ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν)
+          = ((e ((Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
+              spechtRep (k := k) μ (π : Perm (Fin (Specht.nOf μ))) y) :
+                Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) := by
+      intro π
+      rw [map_zsmul, he]
+      rfl
+    rw [Finset.sum_congr rfl (fun π _ => hterm π), ← Submodule.coe_sum, ← map_sum, hsum,
+      map_nsmul]
+    simp
+  -- 4. `|C_t| ≠ 0` in char 0, so `κ_t` does not kill `e y`
+  have hne : SpechtCrossKappa.kapCross (k := k) h t
+      ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) ≠ 0 := by
+    rw [hkap]
+    haveI : Nonempty (Specht.colStab t) := ⟨1⟩
+    intro hzero
+    rw [← Nat.cast_smul_eq_nsmul (R := k)] at hzero
+    rcases smul_eq_zero.mp hzero with hc | hv
+    · exact (Nat.cast_ne_zero.mpr Fintype.card_ne_zero) hc
+    · exact heyne hv
+  -- 5. so some `ν`-tabloid survives `κ_t`; Lemma 2.2.6 turns that into dominance
+  by_contra hdom
+  refine hne ?_
+  have hall : ∀ s : Specht.Tableau ν,
+      SpechtCrossKappa.kapCross (k := k) h t (Specht.Mtab.of s) = 0 := by
+    intro s
+    by_contra hs
+    exact hdom (SpechtCrossKappa.dominance_of_kapCross_ne_zero (k := k) h t s hs)
+  have hzeroMap : SpechtCrossKappa.kapCross (k := k) h t = 0 := by
+    refine Finsupp.lhom_ext (fun d c => ?_)
+    obtain ⟨s, rfl⟩ := Quotient.exists_rep d
+    show SpechtCrossKappa.kapCross (k := k) h t
+        (Finsupp.single (Specht.Tabloid.mk s) c) = (0 : Specht.Mtab (k := k) ν →ₗ[k] _) _
+    have hsingle : (Finsupp.single (Specht.Tabloid.mk s) c : Specht.Mtab (k := k) ν)
+        = c • Specht.Mtab.of s := by
+      rw [Specht.Mtab.of, Finsupp.smul_single, smul_eq_mul, mul_one]
+    rw [hsingle, map_smul, hall s, smul_zero, LinearMap.zero_apply]
+  rw [hzeroMap, LinearMap.zero_apply]
+
+/-- **James/Sagan cross-shape dominance — PROVED.**  A representation isomorphism
+`S^μ ≅ S^ν` (over the shared group via `h`) forces dominance both ways:
 `partitionDom μ ν ∧ partitionDom ν μ`.
 
-This is James's submodule / multiplicity theorem: a nonzero `S_n`-homomorphism
-`S^μ → M^ν` forces `μ ⊵ ν`, and an isomorphism supplies nonzero homs in both
-directions.  Mathlib does not package the cross-shape version (the within-shape
-bilinear-form / `κ_t` apparatus of `SpechtIrreducible` gives the *dichotomy*, not
-the cross-shape dominance bound), so it remains the single cited `sorry` here —
-but the antisymmetry reduction to `specht_pairwise_noniso` below is now
-sorry-free. `-- Ref: [james1984representation]`. -/
+Sagan Thm 2.4.4.  Each direction is `dom_of_intertwiner` above; the reverse one
+re-indexes the acting group through `transportPermHom h.symm`, using that the two
+transports are mutually inverse.
+
+Mathlib packages neither the cross-shape dominance bound nor the tableau
+combinatorics it rests on; the ingredients are built in
+`QOU.BraidKnot.SpechtCrossDominance` (Sagan Lemma 2.2.6) and
+`QOU.BraidKnot.SpechtCrossKappa` (the cross-shape `κ_t`).
+
+`#print axioms` reports `[propext, Classical.choice, Quot.sound]`. -/
 theorem spechtIso_imp_dom_both {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
-    (_hiso : IsRepIso (k := k) (spechtRep (k := k) μ) (spechtRepOn (k := k) h)) :
+    (hiso : IsRepIso (k := k) (spechtRep (k := k) μ) (spechtRepOn (k := k) h)) :
     partitionDom μ ν ∧ partitionDom ν μ := by
-  -- Ref: [james1984representation] §II — the cross-shape dominance / multiplicity
-  -- theorem (Hom(S^μ, M^ν) ≠ 0 ⟹ μ ⊵ ν; an iso gives it both ways). Not in Mathlib.
-  sorry
+  -- Ref: [sagan2001] Thm 2.4.4 / [james1984representation] §II.
+  obtain ⟨e, he⟩ := hiso.exists_intertwiner
+  refine ⟨dom_of_intertwiner h e he, ?_⟩
+  -- the reverse direction: invert the intertwiner and re-index the acting group
+  refine dom_of_intertwiner h.symm e.symm (fun τ y => ?_)
+  have hround : transportPermHom h (transportPermHom h.symm τ) = τ :=
+    Equiv.ext (fun _ => Fin.ext rfl)
+  have hkey := he (transportPermHom h.symm τ) (e.symm y)
+  rw [e.apply_symm_apply] at hkey
+  show e.symm (spechtRep (k := k) ν τ y)
+      = spechtRep (k := k) μ (transportPermHom h.symm τ) (e.symm y)
+  have : spechtRep (k := k) ν τ y
+      = spechtRepOn (k := k) h (transportPermHom h.symm τ) y := by
+    show _ = spechtRep (k := k) ν (transportPermHom h (transportPermHom h.symm τ)) y
+    rw [hround]
+  rw [this, ← hkey, e.symm_apply_apply]
 
 /-- **Pairwise non-isomorphism.**  Distinct shapes give non-isomorphic Specht
 modules: if `μ ≠ ν` (with the same number of cells, so they index the *same*
