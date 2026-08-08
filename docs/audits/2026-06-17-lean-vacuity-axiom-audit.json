@@ -1,8 +1,8 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-08T16:59:42.809Z",
+  "generated": "2026-08-08T17:49:57.499Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 2637,
+  "scanned_files": 2651,
   "files_flagged": 157,
   "total_defects": 127,
   "total_exempt": 81,
@@ -867,7 +867,7 @@
       {
         "name": "QIntegerMassFormula",
         "file": "content/quantum-observable-universe/mass-theory/wigner-coefficient-derivation.lean",
-        "line": 66
+        "line": 70
       },
       {
         "name": "QOneShadowGateClass",
@@ -1798,7 +1798,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean": [
       {
-        "line": 122,
+        "line": 124,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "@[simp] theorem diagram_card {n : ℕ} (i : PartitionIndex n) : i.diagram.card = n := i.property",
