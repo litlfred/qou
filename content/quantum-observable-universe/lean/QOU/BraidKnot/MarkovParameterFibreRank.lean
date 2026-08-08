@@ -64,9 +64,30 @@ rank `N`, written without natural-number subtraction.
   rank.  Stated against functional equality (`∀ v`), because a *pointwise*
   solve for `N` at a single `q₀` always succeeds and is not a rank.
 
-Scope: this settles which convention the *bar law* selects — D.  It is not a
-claim that any particular downstream numeric value is thereby correct;
-migrating the corpus' hard-coded C is separate work with its own arithmetic.
+## Scope — what the bar law does and does not settle
+
+**Does:** it *excludes* C.  C is coefficient-half invariant, so it violates
+`bar(z) = z - h` by exactly `h`, at every `q` with `h ≠ 0`.  That exclusion
+uses no experimental input at all, which is what makes it usable where a
+match-the-number argument is forbidden (bean `qou-3qrv`).
+
+**Does not:** single out D on its own.  The law is one equation, and
+`bar_sub_of_bar_even` below shows its solution set is `zD +` (*any* bar-even
+function) — the whole fibre family lies inside it, and so does more.  D is
+pinned *within* that set by a separate, already-proved fact: it is the unique
+normalised Markov trace on `H₃(q)` factoring through `TL₃` and faithful on it
+(`QOU.BraidsAndKnots.MarkovTraceTLUniqueness`).
+
+So the forcing argument for D is **two** independent steps, and this file
+supplies only the first:
+
+| step | excludes | proved in |
+|---|---|---|
+| bar-covariance of M3 | C (and every bar-even `z`) | here |
+| TL₃ + faithfulness | every rank `N ≠ 2` | `MarkovTraceTLUniqueness` |
+
+Neither step consults a measured value.  Nothing here claims a downstream
+numeric value is correct.
 
 Base ring: a general `Field R` per AGENTS §7c — the argument is purely
 algebraic, needing only inverses.  No ordering, no `Real.sqrt`, no archimedean
@@ -208,6 +229,20 @@ theorem zD_bar_sub (q : R) (hq : q ≠ 0) (hp : q ^ 2 + 1 ≠ 0) :
     rw [e] at h
     exact (div_eq_zero_iff.mp h).resolve_right (pow_ne_zero 2 hq)
   field_simp
+  ring
+
+/-- **The bar law does not pin `z` on its own.**  If `g` is bar-even
+(`g q⁻¹ = g q`) then `zD + g` satisfies `bar(z) = z - h` too, so the law's
+solution set is `zD +` (bar-even functions) — a whole affine family, of which
+the fibre family `zRank N` is only part.
+
+Recorded to bound the claim: the law **excludes** C, it does not by itself
+select D.  Selecting D within this set is what `MarkovTraceTLUniqueness`
+does. -/
+theorem bar_sub_of_bar_even (g : R → R) (q : R) (hq : q ≠ 0) (hp : q ^ 2 + 1 ≠ 0)
+    (hg : g q⁻¹ = g q) :
+    zD q⁻¹ + g q⁻¹ = (zD q + g q) - (q - q⁻¹) := by
+  rw [hg, zD_bar_sub q hq hp]
   ring
 
 /-- Convention C is invariant under the **coefficient half** alone. -/
