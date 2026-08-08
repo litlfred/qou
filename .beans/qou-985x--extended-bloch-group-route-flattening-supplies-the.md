@@ -59,3 +59,25 @@ NEW surviving item (replaces the c₂ item): compute the parameter-free
 the §2 volume ratio, on the canonically-flattened object. τ_DG(8₁₁) needs a
 SnapPy run (unavailable in the current sandbox — BLOCKED here). Carry the §3
 CS-calibration caveat.
+
+## Update 3 (2026-08-08, PR #4824, audit §7) — canonical τ_DG ratio RUN: no improvement
+
+Installed SnapPy in-session and ran the redirected probe
+(`computations/probes/dg_torsion_binding_ratio_a3_probe.py`). Calibration
+passes (τ_DG(4₁)=√3 classical adjoint torsion; τ_DG(L6a4)=64 corpus).
+
+  τ_DG(8₁₁)/τ_DG(L6a4) = 1.13466  (+3.25% vs B(³H)/B(³He)=1.09895)
+  Vol(8₁₁)/Vol(L6a4)   = 1.13082  (+2.90%)
+
+Honest NEGATIVE (scope-a): the canonical DG-torsion ratio is essentially
+identical to the volume ratio — canonicalising the object does NOT improve the
+A=3 binding mirror-pair. The ~3% miss is shared by both hyperbolic invariants.
+Caveat: |det J| is triangulation-representative (full flattening-monomial
+repair = qou-fl4t).
+
+STATUS of qou-985x: the hyperbolic-invariant leg (Vol and canonical torsion
+alike) tops out at ~3% on the A=3 ratio and carries no A-dependence. Remaining
+live angles are NOT more hyperbolic-invariant ratios: (i) the iCS leg — but it
+is muon-uncalibrated (#4591, audit §3); (ii) a genuinely additive ≥3-body
+extensive term (qou-0c19), which is a different object class from any per-link
+invariant. No fit; nothing wired.

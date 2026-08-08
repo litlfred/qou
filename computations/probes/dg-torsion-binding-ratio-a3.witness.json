@@ -1,0 +1,28 @@
+{
+  "schema": "witness/v1",
+  "computation": "dg_torsion_binding_ratio_a3_probe",
+  "description": "Canonical DG 1-loop torsion ratio vs volume ratio vs binding ratio for the A=3 mirror pair (\u00b3H\u21928\u2081\u2081, \u00b3He\u2192L6a4). Zero-parameter.",
+  "dps": 40,
+  "tau_DG": {
+    "4_1": "1.732050807568877293527446",
+    "8_11": "72.61816509335142349160629",
+    "L6a4": "64.0"
+  },
+  "calibration": {
+    "tau_4_1_eq_sqrt3": true,
+    "tau_L6a4_eq_64": true
+  },
+  "ratios": {
+    "tau_8_11_over_L6a4": "1.13465882958362",
+    "vol_8_11_over_L6a4": "1.13081714947503",
+    "binding_3H_over_3He": "1.09895494436554"
+  },
+  "misses_pct": {
+    "tau_ratio_vs_binding": "3.24889",
+    "vol_ratio_vs_binding": "2.89932"
+  },
+  "verdict": "honest-negative (scope-a): the canonical DG torsion ratio (+3.2%) is essentially identical to the volume ratio (+2.9%) and does not improve the A=3 binding mirror-pair. Caveat: |det J| is triangulation-representative (flattening-monomial repair = qou-fl4t).",
+  "anti_fit": "zero free parameters; overall constant cancels in the ratio",
+  "wired_to_production": false,
+  "q0_pin": "n/a (topological invariants, q0-independent)"
+}

@@ -87,16 +87,23 @@ Pursuing §4 (2026-08-08, same PR), an already-landed proved result sharpens it 
 
 Conclusion (scope-(a)): the §4 hypothesis *as stated* — "the flattening pins #4798's `c₂` parameter-free" — is **unsupported**. The flattening's action is understood on the **DG 1-loop torsion** (discrete shape-unit ambiguity + geometric selection ⇒ canonical `τ_DG`), which is the object to use. Do **not** try to flatten #4798's surface-curvature term; compute the canonical `τ_DG` directly. The corpus already has `|τ_DG|`: 4₁ = √3/2, L5a1 = √2, L6a4 = 8 (multicusp probe).
 
-**Concrete next probe (blocked here on SnapPy; beaned).** Form the parameter-free canonical ratio using the flattened `τ_DG` for the A=3 carriers and compare to the binding ratio — the `τ_DG` analogue of the §2 volume ratio, but on the object the flattening actually canonicalises:
+## 7. The canonical `τ_DG` ratio does NOT beat volume — honest negative (probe run)
 
-```
-τ_DG(8₁₁) / τ_DG(L6a4)   vs   B(³H)/B(³He) = 1.0990
-```
+Ran the redirected probe (`computations/probes/dg_torsion_binding_ratio_a3_probe.py`, witness `dg-torsion-binding-ratio-a3.witness.json`), reusing `whitehead_c_sigma_torsion.one_loop_torsion` (|det J| of the NZ gluing-equation Jacobian, dps 40). Zero free parameters (overall constant cancels).
 
-`τ_DG(L6a4) = 8` is in corpus; `τ_DG(8₁₁)` needs a SnapPy run (unavailable in this sandbox). This stays on hyperbolic carriers, is zero-parameter, and — unlike #4798's `c₂` — uses the canonically-flattened object.
+**Calibration (non-circular, both pass):** `τ_DG(4₁) = √3` (classical adjoint Reidemeister torsion), `τ_DG(L6a4) = 64` (corpus).
+
+| ratio | value | miss vs B(³H)/B(³He) = 1.09895 |
+|---|---|---|
+| `τ_DG(8₁₁)/τ_DG(L6a4)` = 72.618/64 | **1.13466** | **+3.25%** |
+| `Vol(8₁₁)/Vol(L6a4)` (§2) | 1.13082 | +2.90% |
+
+**Verdict (scope-a negative):** the canonical DG-torsion ratio (+3.25%) is essentially identical to the volume ratio (+2.90%) — the flattening's canonical object does **not** improve the A=3 binding mirror-pair over plain volume. Both hyperbolic invariants track each other across these arithmetic links and neither reaches the binding ratio to better than ~3%. Caveat: `|det J|` is triangulation-*representative* (the full flattening-monomial repair that makes it retriangulation-invariant is the open `qou-fl4t` item); values are on SnapPy's geometric triangulation, where the calibration `τ_DG(4₁)=√3` holds.
+
+So across §2 (volume) and §7 (canonical torsion), the extended-Bloch hyperbolic-invariant leg gives the A=3 mirror-pair ratio only to ~3% — no improvement from canonicalising the object. Consistent with the standing finding that the volume carries the *ratio* to a few %, not the *A-dependence* (`binding_link_volumes.py`).
 
 ## 5. Disposition
 
 - No production wiring; no fit; no anchor inverted. Deuteron leg stays on the `Re Φ_q` / bar-even `s(z₀)` route (Vol=0), not a hyperbolic volume.
-- `qou-985x` re-scoped: the §4 framing ("flatten #4798's `c₂`") is **unsupported** (§6 — the flattening's ambiguity is discrete, `c₂` is continuous). The surviving concrete item is the **canonical `τ_DG` ratio** for the A=3 carriers (§6), blocked here on SnapPy. CS-calibration caveat (§3) attached.
+- `qou-985x` re-scoped: the §4 framing ("flatten #4798's `c₂`") is **unsupported** (§6 — the flattening's ambiguity is discrete, `c₂` is continuous). The canonical `τ_DG` ratio (§7, run) gives +3.25% — **no improvement over volume** (+2.90%). So the extended-Bloch hyperbolic-invariant leg does not advance the A=3 binding mirror-pair; the ~3% miss is a property of both invariants. CS-calibration caveat (§3) stands.
 - Sibling coordination: #4591 (CS-blindness, the constraining sibling), #4610 (SnapPy volumes), #4798 (the na-Stokes `c₂` construction this redirects away from), `qou-fl4t` / PR #4691 (the ambiguity-group result §6 rests on).
