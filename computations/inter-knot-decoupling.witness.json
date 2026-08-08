@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
-  "engineVersion": "python 3.11.2",
-  "computedAt": "2026-06-16T01:25:21.591808+00:00",
-  "commitSha": "25068b63f82d9f1e3179c27c11e89bdb25462f2e",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T13:11:47.712553+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 298,
+  "durationMs": 6,
   "computation": "inter-knot-decoupling",
   "scriptFile": "probe_inter_knot_decoupling.py",
-  "scriptHash": "ba813c809f5f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "071c89a4939a",
+  "scriptCommitSha": "17c9d83431fb4c20c36d1b97a4f4e6b9827e1a3d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,11 +17,11 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.2",
-    "numpy": "1.26.4",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.11.1",
-    "mpmath": "0.0.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
@@ -39,6 +39,16 @@
     "predicted_joint_via_M3_factorisation": "-0.093128498614094617969884554982395707414295262041364",
     "factorisation_formula": "τ_M(K_1 ⊔ K_2 in B_{n_1 + n_2}) = τ_M(K_1) · τ_M(K_2) · z^k where k = strands added by disjoint stabilisation",
     "structural_origin": "Markov axiom M3 (Jones 1985)",
-    "empirical_verification_status": "Direct B_6 verification awaits y_λ for n=6 in wedderburn_markov.wenzl_y_lambda. The factorisation property is THEORETICALLY axiomatic from Markov M3."
+    "empirical_verification_status": "Direct B_6 verification awaits y_λ for n=6 in wedderburn_markov.wenzl_y_lambda. The factorisation property is THEORETICALLY axiomatic from Markov M3.",
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+        "size_bytes": 5551,
+        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+      }
+    ]
   }
 }

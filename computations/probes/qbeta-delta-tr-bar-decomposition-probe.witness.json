@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:26:50.204197+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-08T13:21:55.117298+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "bar_decomposition_sums_to_total_at_q_proton",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 196,
+  "durationMs": 319,
   "computation": "qbeta-delta-tr-bar-decomposition-probe",
   "scriptFile": "qbeta_delta_tr_bar_decomposition_probe.py",
   "scriptHash": "6a03209557e4",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,8 +28,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Structural observation: Δtr_M(q) bar-decomposition under q → 1/q. Records the closed forms of the symmetric and antisymmetric components without proposing a c_k closure candidate (per AGENTS.md no-7th-ansatz discipline).",
   "auditOnly": "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md",
@@ -47,11 +50,11 @@
       "antisymmetric_part_q": "(-q**5 - q**4 - 2*q**3 + 2*q**2 + q + 1)/(4*q**3 + 4*q**2)"
     },
     "at_q_proton_numerical": {
-      "q_proton": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-      "symmetric_value": -0.010911701743698004,
-      "antisymmetric_value": -0.1311612296833155,
-      "sum_check": -0.14207293142701352,
-      "delta_tr_full": -0.1420729314270135,
+      "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+      "symmetric_value": -0.010911699325180558,
+      "antisymmetric_value": -0.13116121501763223,
+      "sum_check": -0.14207291434281277,
+      "delta_tr_full": -0.1420729143428128,
       "match": true
     },
     "structural_finding": "Δtr_M(q) decomposes in t = q^(1/2) as sym(t) + antisym(t) under t ↔ 1/t. The symmetric part has a clean closed form (see sym_part_t_factored); the antisymmetric part is more intricate. This decomposition is the natural projection onto bar-eigenspaces of the Hecke bar-involution.",
@@ -60,11 +63,11 @@
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "d352e0e53a1106a5adde6571a6772a1c8c94d0f85b059f456b7236c8d705cedd",
-        "size_bytes": 6293,
-        "commitSha": null,
-        "scriptCommitSha": null,
-        "computedAt": null
+        "sha256": "640903ed5f8137e42b5e2581b7bd3a80bc313755b9e923c1ff4b4746d55d468a",
+        "size_bytes": 12671,
+        "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:55:54.718701+00:00"
       }
     ]
   }

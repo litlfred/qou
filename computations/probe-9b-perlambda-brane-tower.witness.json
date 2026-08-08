@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-02T17:10:00.785730+00:00",
-  "commitSha": "e827d406047b31d2f88aab3dee73d5f659ae2f19",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T13:11:45.440868+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
@@ -78,11 +78,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 21,
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
-  "scriptHash": "e38e67e31b99",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a9914c5b1270",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,8 +92,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "PROBE 4 (bean v292): per-λ collapse-last rerun of the single-pipeline Borromean brane tower. Structural: the pipeline τ is EXACTLY the SU(2)/TL (Jones) Markov decomposition y₃ᴶ=[4]/[2]³, y₂₁ᴶ=1/[2]², y_{1³}ᴶ=0 with χ^{(2,1)}=2−3h⁴−h⁶; the corpus Wenzl z-trace differs by 1.96e-4 (convention gap, recorded). RAW per-block tower (arguments χ_λχ_μ) DIVERGES — χ^{(2,1)}² ≈ 3.98 > q₀ exceeds the proved Li₂^q radius |z| < q. NORMALIZED collapse-last towers (W_λ = y_λd_λ, r_λ = χ^λ/d_λ; Jones, Wenzl, and ambient-H_6 per-ν via exact LR/MN branching) all converge ∀Z and reproduce the scalar tower to ≤ ~1e-4 — the Jensen gap of g over the block spread is negligible, so carrying (y_λ, χ^λ) through g per block does NOT close the ¹⁶O 2.3× normalization (scope-(a): this un-collapsed weighting alone, as-is). Shape and ∀Z convergence preserved. No new constants (Δ_λ gate respected).",
   "auditOnly": "docs/audits/2026-07-02-9b-probes-alphak-perlambda-tower.md",
@@ -427,7 +430,17 @@
       "perl_jones": 6.591906859254593e-07,
       "perl_wenzl": 6.492991287965211e-07,
       "ambient_h6": 2.0499624431291608e-07
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "borromean-binding-recompute.witness.json",
+        "sha256": "b3bef86693685ddff6520d61f4131657eaa305b1a67be317c6edf0c2efa6060e",
+        "size_bytes": 2636,
+        "commitSha": "338abede1b2cd79fbafe55497d5d6f8c896d6b55",
+        "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+        "computedAt": "2026-07-03T00:37:41.084749+00:00"
+      }
+    ]
   },
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
