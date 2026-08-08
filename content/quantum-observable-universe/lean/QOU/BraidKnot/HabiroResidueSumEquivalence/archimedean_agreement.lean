@@ -1,37 +1,53 @@
 import Mathlib.Tactic
 
 /-!
-# QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement — conjectural class (placeholder)
+# QOU.BraidKnot.HabiroResidueSumEquivalence.archimedean_agreement — conjectural class
 
 **§3b-cond class axiomatisation** for content block
-[`conj:gs-archimedean-agreement-trace`](../../../quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-trace.md): *Archimedean agreement: Habiro polynomial trace evaluates to GB mass*.
+[`conj:gs-archimedean-agreement-trace`](../../../../mass-theory/gs-archimedean-agreement-trace.md):
+*Archimedean agreement: Habiro polynomial trace evaluates to GB mass*.
 
-This is a **conjecture**: the class `archimedean_agreement` is a primary conjecture
-carrier with **no instance** — the honest open state per AGENTS.md §3b-tax.
-(The field schema is still a structural placeholder; see the note at the
-bottom of the file and bean `qou-ffwk`.)  Downstream theorems may take
-`[archimedean_agreement]` as an explicit `[Instance]` hypothesis to derive
-unconditional Lean theorems modulo this single conjectural input
-(per §3b-cond).
+This is a **primary conjecture** (§3b-tax) carrier with **no instance** — the
+honest open state.  Downstream theorems may take
+`[archimedean_agreement traceEval gbMass ε]` as an explicit `[Instance]`
+hypothesis to derive unconditional Lean theorems modulo this single
+conjectural input (per §3b-cond).
 
-The field schema below is a structural placeholder; refine the
-fields to match the conjecture's actual content as the
-formalisation matures.
+## Field schema — content-bearing (bean `qou-ffwk`)
+
+The conjecture is the scalar agreement, for a closed braid `K` with Habiro
+polynomial trace `T_K(u) ∈ ℤ[u]` and Gröbner–Shirshov mass
+`𝔪_GB(K, q₀)`,
+
+$$ T_K(\sqrt{q_0}) \;\approx\; \mathfrak{m}_{\mathrm{GB}}(K, q_0), $$
+
+i.e. `|traceEval − gbMass| ≤ ε` at a tolerance `ε ≥ 0`.  The class is
+parameterised by the three reals `(traceEval, gbMass, ε)` and asserts that
+bound in the *shape of the claim* (the Round-11 pattern of
+`QOU.AlgebraicSubstrate.ConditionalClasses`).  This is **falsifiable** — e.g.
+`archimedean_agreement 0 1 0` is uninhabited (`|0 − 1| ≤ 0` is false) — so
+the fields carry the conjecture's content and are *not* trivially inhabited
+by a constant (the `residual = 0` placeholder they replace was).
+
+§7c: `ℝ` is genuinely required — the claim is about the archimedean
+evaluation `T_K(√q₀)` past the substrate→archimedean wall.
 -/
 
 namespace QOU.BraidKnot.HabiroResidueSumEquivalence
 
-/-- Archimedean agreement: Habiro polynomial trace evaluates to GB mass
+/-- **§3b-cond hypothesis class** for `conj:gs-archimedean-agreement-trace`.
 
-    Conjectural class — see [`conj:gs-archimedean-agreement-trace`](../../../quantum-observable-universe/braids-and-knots/gs-archimedean-agreement-trace.md). -/
-class archimedean_agreement where
-  -- Witness: computations/none
-  /-- Scalar residual encoding the conjecture's content (placeholder
-      shape: refine to match the actual claim). -/
-  residual : ℝ
-  /-- The residual vanishes (the conjecture is the assertion that
-      this holds). -/
-  residual_eq_zero : residual = 0
+    Archimedean agreement: for a closed braid `K`, the Habiro polynomial
+    trace evaluated at `√q₀` (`traceEval`) agrees with the Gröbner–Shirshov
+    mass `𝔪_GB(K, q₀)` (`gbMass`) to within a tolerance `ε ≥ 0`.
+
+    Conjectural class — see
+    [`conj:gs-archimedean-agreement-trace`](../../../../mass-theory/gs-archimedean-agreement-trace.md). -/
+class archimedean_agreement (traceEval gbMass ε : ℝ) : Prop where
+  /-- The tolerance is non-negative. -/
+  tol_nonneg : 0 ≤ ε
+  /-- The archimedean Habiro trace agrees with the GB mass within `ε`. -/
+  agree : |traceEval - gbMass| ≤ ε
 
 -- **No instance is provided — that is the honest open state** (AGENTS.md
 -- §3b-tax).  History: this file previously carried
@@ -41,13 +57,10 @@ class archimedean_agreement where
 -- assumption was invisible outside `#print axioms`.  (The removed comment
 -- called it a `sorry` representing the open conjecture; it was an `axiom`,
 -- which is strictly stronger — a `sorry` at least surfaces as `sorryAx`.)
--- Removed, not completed.
---
--- SEPARATE OPEN DEFECT (bean `qou-ffwk`): the field schema above is still the
--- placeholder `residual : ℝ` + `residual_eq_zero : residual = 0`, which is
--- inhabited by `⟨0, rfl⟩`.  Removing the axiom restores the no-instance state
--- but does not make the class assert anything, so a downstream
--- `[archimedean_agreement]` hypothesis is not yet a meaningful conditional.
--- The fields must be refined to the actual claim (the Habiro polynomial trace
--- evaluating to the GB mass) first.
+-- The axiom was removed (PR #3793); the field schema is now refined from the
+-- trivially-inhabited `residual = 0` placeholder to the parameter-quantified
+-- agreement bound above (bean `qou-ffwk`), so a downstream
+-- `[archimedean_agreement traceEval gbMass ε]` hypothesis is now a meaningful
+-- conditional.  A genuine instance still requires a derivation or a certified
+-- archimedean evaluation, never `⟨0, rfl⟩`.
 end QOU.BraidKnot.HabiroResidueSumEquivalence
