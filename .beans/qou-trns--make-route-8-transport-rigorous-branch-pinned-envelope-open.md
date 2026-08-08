@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T11:40:00Z
+updated_at: 2026-08-08T12:40:00Z
 parent: 0yqu
 ---
 
@@ -1098,5 +1098,67 @@ The bridge from "three complex roots satisfying the Vieta relations" to "a real
 root in `(0,1)` plus a conjugate pair (or three reals)". That is algebra, not
 analysis, and it is stated as hypotheses in `FiveTwoArgSector` rather than
 assumed silently. **`hcont`'s consumer is not closed by this file.**
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later) — the root structure is proved; the pinning is closed
+
+Route 29 (`qbeta_5two_route29_root_structure_probe.py`, 8 gates) +
+`QOU/QBeta/FiveTwoRootStructure.lean` (16 theorems, sorry-free, `lake build
+QOU.QBeta.FiveTwoRootStructure` green, axioms `[propext, Classical.choice,
+Quot.sound]`).
+
+`FiveTwoArgSector` left two hypotheses about the roots. Both are now theorems,
+and the cost is **one IVT plus real algebra** — no continuity in `φ`, no root
+tracking, no base point.
+
+### The chain
+
+| step | how |
+|---|---|
+| the curve's cubic **is** `Y³ − 2cY² + (2c+1)Y − 1` on `\|x\| = 1` | `curve_eq_unitCubic`, from `2·Re(x)·x = x² + 1` |
+| a real root `t ∈ (0,1)` | `p(0) = −1 < 0 < 1 = p(1)`, IVT. `p(1) = 1` **identically in `c`** — the `2c` terms cancel |
+| factor `(Y−t)` out | `Y² + βY + γ`, `β = t−2c`, `γ = t²−2ct+2c+1`, and `t·γ = 1` *is* `p(t) = 0` |
+| `β` and `W = t²+t−1` share a sign | `β·t(1−t) = W`, and `t(1−t) > 0` on `(0,1)` |
+| `c ≤ 1 ⟹ t > 2/5` | `c ≤ 1` gives `t³−2t²+3t−1 ≥ 0`; that cubic is strictly increasing with value `−7/125` at `2/5` |
+| quadratic real ⟹ `W ≥ 0` | `disc ≥ 0` rearranges to `W² ≥ 4t(1−t)²`, which `W < 0` and `t > 2/5` contradict |
+| ⟹ **both extra roots negative** | `β > 0`, `γ = 1/t > 0` |
+| quadratic complex ⟹ `s·a < c·b` | Route 28's `sa_lt_cb`; `h1` is an identity given `t·γ = 1`, `h2` is `beta_rel` |
+
+`exists_pinning_data` assembles it and returns the factorisation
+`p(Y) = (Y−t)(Y−y₂)(Y−y₃)`, so a consumer holding only Vieta data can match its
+roots against these.
+
+### Measured
+
+| quantity | value |
+|---|---|
+| `min t` over `c ≤ 1` | `0.43015970900194673` at `c = 1` — margin `0.0302` above `2/5` |
+| branch split | at `φ₀/π = 0.76623`, the **same** point where the full discriminant vanishes (Route 16) |
+| `max Im(x·y₃)` on the arc | `−0.01008` (shrinks to `0` at `φ = π`, as it must) |
+| `max Im(x·y₂)` where `c < 0` | `−0.00249` |
+
+### The `c ≤ 1` hypothesis is load-bearing (G7, adversarial)
+
+At `c = 5`: `t = 0.09989 < 2/5`, `W = −0.890 < 0`, `disc = +57.97 ≥ 0` — so
+`W_nonneg_of_disc_nonneg` is **false** there — and the two other roots are
+`8.757` and `1.143`, both **positive**, which flips the sign of `Im(x·y)` and
+breaks the pinning. Dropping `c ≤ 1` does not weaken the theorem, it falsifies
+it.
+
+### G1 is the gate that mattered
+
+That the real cubic **is** the curve's cubic. Nine defects in this lane were
+checks that tested something adjacent to what they claimed; a correct theorem
+about the wrong polynomial would have been the tenth. Checked at 701 × 7 points
+to `7.4e-40`, and proved in Lean.
+
+### What is left in this bean
+
+The envelope wiring above the pinning: instantiate `hasDerivAt_of_partial_y_eq_zero`
+at `V` and sum over the three roots. Assembly of proved parts — Route 26 G6
+checks the collapse numerically to `1e-31` — but not written.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**

@@ -64,11 +64,12 @@ known.
 ## Status
 
 This turns Route 27's three measured obligations into theorems, and removes the
-margins from the argument entirely. It does **not** close `hcont`'s consumer:
-what is still unwritten is the bridge from "three complex roots satisfying the
-Vieta relations" to "a real root in `(0,1)` plus a conjugate pair (or three
-reals)". That is algebra rather than analysis, and it is stated as hypotheses
-below rather than assumed silently.
+margins from the argument entirely.
+
+The remaining inputs — a real root in `(0,1)`, and the sign of `Im(x·yⱼ)` for the
+other two — are stated as hypotheses here rather than assumed silently. They are
+**proved** in `FiveTwoRootStructure` (`exists_pinning_data`), by IVT plus real
+algebra; this file does not depend on that one, so the factoring stays honest.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
