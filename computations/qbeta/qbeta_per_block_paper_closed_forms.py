@@ -86,14 +86,22 @@ def main() -> None:
 
     # Numerical at q_0
     q_0_str = json.load(open(_pb.witness_path("q-pinning-50-digit.witness.json", HERE)))["derived_50_digit"]["q"]
-    q_0 = sp.Float(q_0_str, 30)
+    # 50, not 30: the pin string carries 50 digits and the consumers of this
+    # witness work at 50 dps, so evaluating at 30 discards precision that is
+    # present in the input.
+    q_0 = sp.Float(q_0_str, 50)
 
     print("Per-block χ_λ(β_n - β_p) at q_0:")
     chi_at_q0 = {}
     for shape, expr in chi_diff_paper.items():
-        val = float(expr.subs(q, q_0))
+        # Keep the sympy evaluation at full precision. `float()` here threw
+        # away everything past the 17th digit, and the witness then stored a
+        # JSON *number*, so every downstream consumer faithfully reproduced 53
+        # bits and looked like the culprit (see the phi_q / rho_k_h3a entries
+        # in docs/audits/2026-08-07-producer-repadding-empirical-sweep.md).
+        val = mp.mpf(str(sp.N(expr.subs(q, q_0), 50)))
         chi_at_q0[shape] = val
-        print(f"  χ_{shape} = {val:.10f}")
+        print(f"  χ_{shape} = {float(val):.10f}")
     print()
 
     # Verify Σ y_λ · χ_λ = τ_M(β_n - β_p) = -0.14207
@@ -109,12 +117,15 @@ def main() -> None:
             label = "(1,1,1)"
         else:
             continue
-        y_lam[label] = float(entry["y_at_q0_50dps"])
+        # The field is NAMED y_at_q0_50dps. float() discarded 33 of those
+        # digits; parse the decimal as a decimal instead.
+        y_lam[label] = mp.mpf(entry["y_at_q0_50dps"])
 
     tau_diff = sum(y_lam[s] * chi_at_q0[s] for s in chi_at_q0)
-    print(f"τ_M(β_n - β_p) via Σ y_λ · χ_λ = {tau_diff:.10f}")
+    PAPER_TAU = mp.mpf("-0.14207293")
+    print(f"τ_M(β_n - β_p) via Σ y_λ · χ_λ = {float(tau_diff):.10f}")
     print(f"Direct compute (independent): -0.1420729314")
-    print(f"Diff: {tau_diff - (-0.14207293):.2e}")
+    print(f"Diff: {float(tau_diff - PAPER_TAU):.2e}")
     print()
 
     # Taylor expansion in (q-1) = ε around q=1
@@ -148,7 +159,7 @@ def main() -> None:
         # Symbolic form
         sym_ratio = sp.simplify(chi_diff_paper[shape] / hbar)
         sym_at_q0 = float(sym_ratio.subs(q, q_0))
-        print(f"  χ_{shape}/ℏ_q = {ratio:.6f} (at q_0); symbolic: {sym_ratio}")
+        print(f"  χ_{shape}/ℏ_q = {float(ratio):.6f} (at q_0); symbolic: {sym_ratio}")
     print()
 
     # Emit witness
@@ -167,9 +178,11 @@ def main() -> None:
     w.add_data("cleaner_hbar_q_forms", {
         s: str(chi_diff_clean[s]) for s in chi_diff_clean
     })
-    w.add_data("chi_at_q_0", chi_at_q0)
-    w.add_data("y_lambda_at_q_0", y_lam)
-    w.add_data("tau_M_diff_at_q_0", tau_diff)
+    # Stored as STRINGS. As JSON numbers these round-tripped through binary64
+    # and handed consumers 53 bits no matter what precision was computed here.
+    w.add_data("chi_at_q_0", {k: str(v) for k, v in chi_at_q0.items()})
+    w.add_data("y_lambda_at_q_0", {k: str(v) for k, v in y_lam.items()})
+    w.add_data("tau_M_diff_at_q_0", str(tau_diff))
     w.add_data("taylor_coefficients_per_block_ε_order", {
         s: [str(c) for c in taylor_coeffs[s]] for s in taylor_coeffs
     })

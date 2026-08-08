@@ -10,7 +10,7 @@ tags:
     - whitehead
     - refuted-needs-repair
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T22:05:00Z
+updated_at: 2026-08-07T22:35:00Z
 ---
 
 ## Why
@@ -239,3 +239,126 @@ rather than the `A - B z/(1-z)` form used by
 **Next: stop searching placements and get the DG formula itself right** — the
 determinant's construction, not just its correction. That is a literature task
 (Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253), not a search task.
+
+---
+
+## 2026-08-07 (fourth pass) — DG 1202.6268 obtained. The formula is in hand and the root cause is confirmed.
+
+`uploads/1202.6268v2.pdf` (Dimofte-Garoufalidis, "The quantum content of the
+gluing equations"). Four results, all from the source rather than inference.
+
+### 1. My searched flattening convention was RIGHT — Definition 2.1
+
+    f_i + f'_i + f''_i = 1                    (2.10a)
+    sum_i (G_Ii f_i + G'_Ii f'_i + G''_Ii f''_i) = 2  for edges I = 1..N
+                                              = 0  for the cusp row I = N+1   (2.10b)
+
+Exactly the convention I found by search after reasoning my way to the wrong
+`-1`. Eliminating `f'` gives the clean form used below:
+
+    A f + B f'' = nu                          (2.11)
+
+a linear Diophantine system. Neumann [Neu92, Lem 6.1] proves every ideal
+triangulation has a flattening.
+
+### 2. The repo's determinant is THE WRONG MATRIX — this is the root cause
+
+Definition 1.2 / eq (3.1):
+
+    tau := -+ (1/2) det( A Delta_z'' + B Delta_z^{-1} ) * z^{f''} * z''^{-f}
+
+Entry-wise that is `A_kj z''_j + B_kj / z_j`.
+`whitehead_c_sigma_torsion.py` builds `A_kj - B_kj z_j/(1-z_j)`. **Different
+matrix**, not a normalisation of the same one. This is exactly the bound I
+flagged as untested in PR #4700: searching *corrections* could never have found
+it, because the object being corrected was wrong.
+
+Note also DG's `A`, `B` are exponents of `(z, z'')` — their gluing equations are
+`z^A z''^B = (-1)^nu` — whereas SnapPy's `gluing_equations('rect')` is in
+`(z, 1-z)`. `gluing_equations_pgl()` gives the `(z, z', z'')` form and is the
+right entry point.
+
+### 3. The monomial is a CROSS pairing — none of my six placements tested it
+
+    z^{f''} * z''^{-f}
+
+i.e. `z` carries `f''` and `z''` carries `-f`. I tested `z''^f'' z'^f'`,
+`z''^f'' z'^-f'`, `z^f z'^f' z''^f''`, and the three single factors. The actual
+pairing is not among them. The negative in PR #4700 is therefore explained, not
+merely bounded.
+
+### 4. The factor of 2 the script dropped is real — DG's worked 4_1 example
+
+Section 3.1 computes the figure-eight directly and gets
+
+    tau_{4_1} = (1/2)(z'' - w''^{-1}) = (1/2) sqrt(-3)      (3.2)
+
+so `|tau(4_1)| = sqrt(3)/2`. The repo's `|det J| = sqrt(3)` is **exactly twice**
+that — precisely the `1/2` its docstring claims is "NOT needed for the MODULUS,
+because the calibration below reproduces the known figure-eight value sqrt(3)".
+The calibration matched a number that differs from DG's normalisation by the
+very factor being dropped.
+
+### 5. And DG PROVE topological invariance — including under 2-3 moves
+
+Section 3: independence of quad type, of edge choice, of meridian path, of the
+flattening, and invariance under 2-3 moves (3.6). So the correct object IS
+invariant. That vindicates the whole line of attack: the non-invariance measured
+in PR #4691 is a property of the implementation, not of the invariant, and
+"restore the flattening" was too weak a diagnosis — the determinant needs
+rebuilding too.
+
+### Next — now a bounded implementation task, not a search
+
+1. Build `A`, `B` in DG's `(z, z'')` convention from `gluing_equations_pgl()`.
+2. Solve `A f + B f'' = nu` over Z (sympy is now installed).
+3. Form `-+ (1/2) det(A Delta_z'' + B Delta_z^{-1}) z^{f''} z''^{-f}`.
+4. Gate: `4_1` must give `sqrt(3)/2`, and `5_2`, `6_2`, `L5a1`, `L6a4` must each
+   collapse to ONE value under retriangulation. DG's own 4_1 worked example is
+   the unit test.
+5. Only then revisit the per-cusp factor. Note Definition 1.2 is stated for
+   ONE-cusped manifolds; the multi-cusp generalisation is Section 4.5
+   ("Invariance of the generalized torsion"), which is where any genuine
+   c-dependence would actually live.
+
+---
+
+## 2026-08-07 (fifth pass) — impact analysis. A CORRECT implementation is already in-repo.
+
+Full analysis: `docs/audits/2026-08-07-one-loop-fix-impact-analysis.md`.
+
+`computations/probes/one_loop_vs_nu_sdp_probe.py` (bean qou-r307) already
+implements DG/GY Def 2.1 — with the 1/2, the flattening (f+f'+f''=1, edges=2:
+the convention this bean recorded), and the monomial. Tested here over ~19
+retriangulations each:
+
+    4_1  |tau| = 0.866025403784 = sqrt(3)/2   INVARIANT   (= DG's eq 3.2)
+    5_2  |tau| = 1.161162738134               INVARIANT
+    6_2  |tau| = 2.216589930891               INVARIANT
+
+versus 8 and 17 distinct values under the broken construction. So the repair is
+identified and verified — for ONE-CUSPED manifolds.
+
+**The blocker moved.** That implementation swaps ONE edge row for ONE meridian
+row, correct only at c=1. On the links it degenerates: |tau(L5a1)| = 0,
+|tau(L6a4)| = 0. DG Definition 1.2 is itself stated for one-cusped manifolds;
+multi-cusp is their Section 4.5. The whole c_sigma arc is c=2 and c=3, i.e.
+entirely in the regime the correct formula (as implemented) does not cover.
+
+So this is NOT a copy-paste fix. Revised plan on the audit doc; short version:
+fix c=1 first (cheap, gives a trusted base), then implement DG Sec 4.5, and only
+then touch c_sigma.
+
+Blast radius checked, not assumed: no content .ts, no Lean, no production. 5
+probes + 3 audits + 4 beans. #4671's "audit-only" claim HOLDS.
+
+Also surfaced: `borromean_cusp_framing_factor.py` already recorded |det| varying
+over framings ({64,128,256,512}); PR #4691 found the same object varying over
+retriangulations. Two explanations for one phenomenon, and DG says neither is
+the cause. That script is also where the 2^c framing count — the apparent origin
+of the per-cusp factor — comes from.
+
+And: the sqrt(3) calibration target may itself be wrong. This repo's
+value-validated Porti probe gives |T_mu(4_1)| = 3; DG give sqrt(3)/2. sqrt(3) is
+neither. one_loop_vs_nu_sdp_probe.py explicitly warns "Do NOT read the tau
+values here as the adjoint torsion" — which is what the c_sigma script did.

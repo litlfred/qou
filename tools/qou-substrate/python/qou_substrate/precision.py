@@ -126,6 +126,44 @@ def set_compute_dps(dps: int | None = None) -> int:
     return mp.dps
 
 
+def str_at_true_precision(value: Any) -> str:
+    """``str(value)``, except that a 53-bit value is not printed as if measured.
+
+    **A drop-in for ``str(<mpf>)``, deliberately not for ``fmt(<mpf>)``.** The
+    two disagree: ``fmt`` serializes at ``OUTPUT_DPS`` while ``str`` uses the
+    live ``mp.dps``, and producers routinely set them to different values
+    (``compute_dps: 70, output_dps: 60`` is typical). Routing the untouched
+    path through ``fmt`` would quietly change the digit count of every value
+    this helper is *not* meant to affect, so the fallback is ``str``.
+
+    ``fmt`` writes every ``mpf`` at ``OUTPUT_DPS``. That is right for a value
+    computed at full working precision and wrong for one that reached ``mpf``
+    from a 53-bit source — an f64 kernel, a numpy trace, a float-valued dict
+    entry. Printing *that* at 50 dps emits the binary64 expansion: 30+ digits
+    of dyadic tail carrying no information and reading as measured.
+
+        1.559758658103424178165141711360774934291839599609375
+        vs the 1.5597586581034242 the kernel actually produced
+
+    **The test is exact and per value: an mpf equal to its own float64 holds
+    53 bits and nothing more.** No tolerance, and no flag that has to be kept
+    in sync with the code. Per value matters because several producers can
+    take either path at runtime — ``chi_numeric`` vs the numpy kernel, mpfr vs
+    the f64 fallback — so a whole-producer decision is wrong for half the runs,
+    and shortening a value that *did* carry more than 53 bits destroys real
+    digits.
+
+    A genuinely high-precision result that happens to be representable is not
+    harmed: the short form is then exact, so the check cannot misfire in the
+    direction of losing information.
+
+    See ``docs/audits/2026-08-07-producer-repadding-empirical-sweep.md``.
+    """
+    if isinstance(value, mpf) and value == mpf(float(value)):
+        return fmt(float(value))   # float branch of fmt == natural repr
+    return str(value)
+
+
 def fmt(value: Any, dps: int | None = None, strip_zeros: bool = False) -> str:
     """Serialize an mpmath value to its output-precision string form.
 

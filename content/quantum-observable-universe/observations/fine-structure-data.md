@@ -39,7 +39,7 @@ The residual $-0.468\;\mathrm{ppm}$ survives exact resummation and is therefore 
 
 **Sensitivity to $q$.**
 
-The prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ depends steeply on $q$. Matching the CODATA central value requires $q \approx 1.11023 ± 0.00002$. We extract $q$ independently from two other observables:
+The prediction $\alpha^{-1}(q) = [9]_q [10]_q / q^{-1}$ depends steeply on $q$. Matching the CODATA central value requires $q \approx 1.11023 \pm 0.00002$. We extract $q$ independently from two other observables:
 
 * **Neutron-to-proton mass ratio**: $q \approx q_0$ (via the Skein mass formula).
 * **Tritium half-life**: $q \approx 1.109$--$1.112$ (via the transfer matrix calculation).
@@ -51,7 +51,7 @@ The consistency window $q \in [1.109, 1.112]$ accommodates all three determinati
 | Energy scale           | $\alpha^{-1}$ (experiment) | $q$ (inverted) |
 | ---------------------- | -------------------------- | -------------- |
 | $0$ (Thomson limit)    | $137.036$                  | $1.11023$      |
-| $m_Z \approx 91.2$ GeV | $127.95 ± 0.02$          | $1.1003$       |
+| $m_Z \approx 91.2$ GeV | $127.95 \pm 0.02$          | $1.1003$       |
 | $m_W \approx 80.4$ GeV | $\sim 128.0$               | $\sim 1.1005$  |
 
 The running of $\alpha^{-1}$ from $137$ to $128$ corresponds to a $\sim 1\%$ decrease in $q$. The Reeb flow on the Bring's surface drives this running. At higher energies (shorter distances), the effective $q$ decreases toward the classical limit $q = 1$.

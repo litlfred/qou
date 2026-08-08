@@ -772,24 +772,46 @@ class WitnessBuilder:
 
         out_path = self._output_dir / f"{self.name}.witness.json"
 
-        # If an existing witness is substantively identical (ignoring
-        # ephemeral meta fields), preserve it — avoids CI drift loops
-        # when only commitSha/computedAt/durationMs would change.
+        existing = None
         if out_path.exists():
             try:
                 with open(out_path, "r", encoding="utf-8") as f:
                     existing = json.load(f)
-                if _witnesses_substantively_equal(existing, witness):
-                    # Re-print the assertion summary for the validator runner
-                    # without re-writing the file.
-                    print(f"✓ Witness: {out_path.name}  "
-                          f"({len(self.assertions)} assertions, "
-                          f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
-                          f"[unchanged — kept on-disk commitSha for staleness]")
-                    return out_path
             except (json.JSONDecodeError, OSError):
                 # On-disk file unreadable: fall through and overwrite.
-                pass
+                existing = None
+
+        # Carry a recorded q₀ pin forward.
+        #
+        # `q0Anchor`/`q0Value` are written by `stamp_staleness_metadata`, which
+        # a producer has to call explicitly — 184 do, while 596 witnesses carry
+        # the pin, most of it backfilled. So rebuilding a witness whose
+        # producer does not stamp DROPS the pin, and 557 of those 596 are in
+        # exactly that position: a value-preserving re-run that silently
+        # removes the guard against reading a muon value as a proton one
+        # (bean tnjb), which `audits/q0_anchor_consistency_audit.py` exists to
+        # enforce.
+        #
+        # Preserve only. A witness with no recorded pin still gets none —
+        # inventing one would assert a pin the producer never established, and
+        # Q0_ANCHOR_MISSING is a tolerated state.
+        if isinstance(existing, dict):
+            for _k in ("q0Anchor", "q0Value"):
+                if _k not in witness and _k in existing:
+                    witness[_k] = existing[_k]
+
+        # If an existing witness is substantively identical (ignoring
+        # ephemeral meta fields), preserve it — avoids CI drift loops
+        # when only commitSha/computedAt/durationMs would change.
+        if isinstance(existing, dict) and _witnesses_substantively_equal(
+                existing, witness):
+            # Re-print the assertion summary for the validator runner
+            # without re-writing the file.
+            print(f"✓ Witness: {out_path.name}  "
+                  f"({len(self.assertions)} assertions, "
+                  f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
+                  f"[unchanged — kept on-disk commitSha for staleness]")
+            return out_path
 
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(witness, f, indent=2, ensure_ascii=False, default=str)

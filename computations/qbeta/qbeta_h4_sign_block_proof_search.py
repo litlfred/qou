@@ -8,7 +8,10 @@ sys.path.insert(0, str(repo_root / "tools" / "qou-substrate" / "python"))
 
 from qou_substrate.constants import q_at, vol_4_1_at, MASS_RATIO_P_E_STR, MASS_RATIO_MU_E_STR, M_P_MEV, M_N_MEV, M_E_MEV
 
-mp.dps = 50
+# `mp` is the mpmath MODULE here, so a bare `mp.dps = ...` sets a stray
+# attribute and leaves the working context at the default 15. Precision
+# lives on the context: `mp.mp.dps`.
+mp.mp.dps = 50
 q0 = q_at(50)
 vol_4_1 = vol_4_1_at(50)
 

@@ -2,7 +2,7 @@ import sympy as sp
 from decimal import Decimal as D, getcontext
 import mpmath as mp
 
-mp.dps = 45
+mp.mp.dps = 45
 
 q = mp.mpf("1.1099785827513808075916690956107688798744991")
 c3 = mp.mpf("-2.06934257711516784") # Wait, is c3 known to more precision?

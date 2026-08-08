@@ -7,7 +7,7 @@ $$
   \qquad (k = 1,\; p \to pp)
 $$
 
-*(Regime II — Magic shell closure.) At and immediately after a magic number, the optimal operator is a Hopf link $L_±$:*
+*(Regime II — Magic shell closure.) At and immediately after a magic number, the optimal operator is a Hopf link $L_\pm$:*
 
 $$
   \Phi_k \in \{L_+ = \sigma_0\sigma_1,\; L_- = \sigma_1\sigma_0\}

@@ -44,6 +44,7 @@ from pathlib import Path
 import mpmath as mp
 
 from per_generator_V_hat_general import per_generator_V_hat_general  # noqa: E402
+from _precision import str_at_true_precision  # noqa: E402
 
 
 def li2q_sym(z_arg: mp.mpf, q: mp.mpf, max_terms: int = 600) -> mp.mpf:
@@ -234,7 +235,10 @@ def main() -> int:
                       "inv_hbar_q_sq": str(1 / hbar_q_sq), "z": str(z)},
         "leptons": {
             name: {
-                "V_hat": [str(v) for v in b["V"]],
+                # V̂ comes from per_generator_V_hat_general, which computes in
+                # float (the braid words above carry float literals), so each
+                # entry is a 53-bit value promoted by mpf(d["full"]).
+                "V_hat": [str_at_true_precision(v) for v in b["V"]],
                 "max_abs_V": b["maxV"],
                 "m_li2q_sym": str(b["m_li2q"]),
                 "m_phi_direct": str(b["m_phi"]),

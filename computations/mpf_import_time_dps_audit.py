@@ -149,15 +149,25 @@ def scan_file(path: Path) -> list[dict]:
         for node in ast.walk(stmt):
             if not (isinstance(node, ast.Call) and _is_mpf(node)):
                 continue
+            try:
+                rel = path.relative_to(ROOT).as_posix()
+            except ValueError:
+                rel = path.as_posix()
             lit = _literal_of(node)
-            if lit is None:                     # mpf(<expr>) — not a literal
+            if lit is None:
+                # mpf(<expression>) — e.g. mpf(str(G_A_PDG_ERR)). Lossiness
+                # cannot be proved statically because the value is not in the
+                # source, but the POSITION carries the same risk: built here it
+                # is built at dps=15. Reported as `expr`, not as proven.
+                # Skipping these was a real miss — gt_matrix_pslq_probe's
+                # `PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))` emits
+                # 0.00129999999999999994032551242639… for a datum of 0.0013.
+                out.append({"file": rel, "line": node.lineno,
+                            "literal": None, "kind": "expr"})
                 continue
             if loses_precision(lit):
-                try:
-                    rel = path.relative_to(ROOT).as_posix()
-                except ValueError:
-                    rel = path.as_posix()
-                out.append({"file": rel, "line": node.lineno, "literal": lit})
+                out.append({"file": rel, "line": node.lineno,
+                            "literal": lit, "kind": "literal"})
     return out
 
 
@@ -232,12 +242,18 @@ def main() -> int:
         by_file.setdefault(r["file"], []).append(r)
 
     scope = "all scripts" if a.all else "witness-emitting scripts"
-    print(f"module-level mpf constants that lose precision at import: {len(rows)}  [{scope}]")
+    lit = sum(1 for r in rows if r.get("kind") == "literal")
+    exp = sum(1 for r in rows if r.get("kind") == "expr")
+    print(f"module-scope mpf built before precision is raised: {len(rows)}  [{scope}]")
+    print(f"   proven lossy (literal arg): {lit}")
+    print(f"   position-risky (expr arg, not statically provable): {exp}")
     print(f"files affected: {len(by_file)}\n")
     for f in sorted(by_file, key=lambda k: -len(by_file[k]))[:25]:
         print(f"  {f}  ({len(by_file[f])})")
         for r in by_file[f][:3]:
-            print(f"      L{r['line']}: mpf({r['literal']!r})")
+            k = r.get("kind", "literal")
+            arg = repr(r['literal']) if r.get('literal') is not None else '<expr>'
+            print(f"      L{r['line']}: mpf({arg})  [{k}]")
 
     if rows:
         print("\nFix: build the constant at compute precision — either call "
