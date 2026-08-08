@@ -30,6 +30,32 @@ import QOU.MathlibExt.SDPRealUniqueness
 -- Sorry-free, so it is wired here for CI type-checking (unlike
 -- HadamardFactorization itself, which still carries PI-3 / the full theorem).
 import QOU.Mathlib.WeierstrassFactorEstimate
+-- Algebraic skeleton of the Dimofte-Garoufalidis 1-loop invariant: the shape
+-- identity ζ+ζ'+ζ''=0, the CUSP-NUMBER-FREE degeneracy of the edge rows, the
+-- lattice-basis determinant lemmas, and the proof that the per-cusp factor
+-- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
+import QOU.OneLoopEdgeLattice
+-- Borel-Carathéodory inequality: a one-sided bound on Re f gives a two-sided
+-- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
+-- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
+import QOU.Mathlib.BorelCaratheodory
+-- Scoping check for the Hadamard chain: phiBProd is a RATIO whose denominator
+-- factor vanishes at an explicit point for every b /= 0, so it is not entire and
+-- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
+import QOU.Mathlib.HadamardApplicability
+-- Faddeev rigidity: the ratio of two FaddeevPhi solutions is ib- and i/b-periodic
+-- (the prefactor cancels), and given an entire ratio that extends from the dense
+-- complement of the prefactor zeros to everywhere. Collapses the open input
+-- `hibinv` (qou-rp5f) into `hratio` (qou-cons). Sorry-free.
+import QOU.Mathlib.FaddeevRatioPeriodic
+-- The FaddeevPhi class has NO regularity field, so its solution set absorbs any
+-- doubly-periodic factor (lattice indicator included). Hence `hratio` (qou-cons)
+-- is not derivable from the class — it is a fact about the analytic Phi_b.
+import QOU.Mathlib.FaddeevSolutionSet
+-- The hratio "reduction" is circular: given double periodicity, "ratio entire"
+-- and "ratio constant" are the same statement. So qou-cons is not a sub-problem
+-- of uniqueUpToScalar — it IS uniqueUpToScalar. Sorry-free.
+import QOU.Mathlib.RigidityReductionScope
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
