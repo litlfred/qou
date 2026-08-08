@@ -109,9 +109,14 @@ structure JonesMarkovTrace (H : HeckeAlgebraData) where
 
   /-- Markov-trace loop value z, determined by q. Numerically (after
       specialisation ι : R_q → ℝ, q ↦ q₀) this is
-      z = 1 / (q^{1/2} + q^{-1/2}) = tr_M(σ_i). Carried as an
-      abstract field since neither square roots nor division exist
-      in R_q. -/
+      z = q³ / (q² + 1) = tr_M(σ_i) — convention D of the
+      trace-convention registry, the parameter whose braid closure is
+      the Jones polynomial. Carried as an abstract field since division
+      does not exist in R_q. (Re-pinned from convention C,
+      1/(q^{1/2} + q^{-1/2}), on 2026-08-08; see
+      `QOU.BraidKnot.zD_bar_sub` and
+      `QOU.BraidsAndKnots.MarkovTraceTLUniqueness`. Under D no square
+      root of q is needed either.) -/
   z : R_q
 
   /-- The Markov parameter is nonzero. -/

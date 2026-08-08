@@ -99,6 +99,46 @@ have resolved it.
 The fibre-functor question itself remains open as a categorical fact. It is no
 longer load-bearing for the convention.
 
+## What was changed, and what was deliberately not
+
+**Changed — the definitional layer.** Three blocks, chosen because each is a
+*pin* rather than a use:
+
+| file | why it was in scope |
+|---|---|
+| [`markov-axioms-primitive.md`](../../content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md) | the registry names this block as the reason the mass channel read C. Now pins D, and carries the two-step forcing argument. |
+| [`jones-markov-trace.md`](../../content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md) (+ `.lean` docstring) | stated `z = 1/(q^{1/2}+q^{-1/2})` **and** that the trace computes the Jones polynomial. Those are inconsistent — the Jones-polynomial trace is D. Flipping `z` makes the block internally consistent, and the closing clause now says why `z` is forced. |
+| [`notation-register-table3-data.md`](../../content/quantum-observable-universe/notation/notation-register-table3-data.md) | the symbol table, highest-visibility. Now gives D as the Markov parameter and names C as the binding channel's member, with the "convention-silent trace values are not comparable" rule attached. |
+
+**Not changed — 68 further files carrying the C form.** By chapter:
+`mass-theory` 26, `lean/QOU` 21, `mass-endomorphism` 7, `braids-and-knots` 4,
+`appendix-transfer-matrices` 4, `observations` 3, `stochastic-mechanics` 1,
+`predicted-spectra` 1, `content/values/registry.ts` 1.
+
+These are **not** a mechanical find-and-replace, and treating them as one would
+be a defect. The C form appears in at least three distinct roles:
+
+1. **Genuinely C-specific and load-bearing on binding** — the Wenzl bridge
+   (`y-lambda-closed-form-wenzl-bridge*`), `centered-hecke-variance-positive*`
+   (whose whole statement is the Wenzl positivity regime
+   $q^{1/2}+q^{-1/2} > 2$), `h3-markov-wenzl-weights*`. These **must stay C**.
+   Flipping them would change binding numbers.
+2. **Mass-channel definitional, should follow the pin to D** — e.g.
+   `markov-trace-factorization`, `markov-trace-frobenius-selection`,
+   `mass-endomorphism-tower`.
+3. **Convention-neutral, needs a label not a value** — blocks that use `z`
+   symbolically and merely illustrate it with the C form.
+
+Each file needs a per-file channel call, and the registry's own discipline
+(*"convention-silent trace values are not comparable"*) means the right output
+for many of them is an explicit convention label rather than a changed formula.
+Tracked as bean `qou-ql2a`. Doing this blind in one sweep is precisely the
+failure mode the registry was built to catch.
+
+The 21 open R5 validator warnings — Borromean tracers in `computations/` that
+declare no convention — are the compute-side twin of the same backlog and were
+already tracked before this ruling.
+
 ## Scope
 
 - Scope **(a)** on everything downstream: no numeric conclusion changes,

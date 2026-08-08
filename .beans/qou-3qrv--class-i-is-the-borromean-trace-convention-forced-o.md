@@ -1,10 +1,11 @@
 ---
 # qou-3qrv
 title: 'Class I: is the Borromean trace CONVENTION forced, or selected because it lands on CODATA?'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T09:02:45Z
-updated_at: 2026-08-08T12:40:00Z
+updated_at: 2026-08-08T23:53:24Z
 ---
 
 > ## ANSWERED 2026-08-08 — `claude/3qrv-borromean-trace-convention-2026-08-08`
@@ -148,3 +149,38 @@ print(sp.N(e.subs(q, sp.Float(str(Q), 50)), 30))   # 1.06530614425444993...
 
 Convention D for the same braid at the same q₀:
 `trM_borromean(q) = |(4+h²−3h⁴−h⁶)/(h²+4)|`, `h = q − 1/q` → `0.998562163836787`.
+
+---
+
+## CLOSED 2026-08-08 — owner ruled **D** (PR #4834)
+
+Audit: [`2026-08-08-markov-z-convention-d-ruling.md`](../docs/audits/2026-08-08-markov-z-convention-d-ruling.md).
+
+The `mass` channel leaves `disputed`. The **definition** moved to meet
+production, not the reverse — the channel already ran D, so **no production
+value changed** (no `F_Bor` consumer, no `m_p`). The −197 ppm was always the
+cost of the opposite move, which was never made.
+
+The bean's constraint — *"the answer must not be read off which value matches
+CODATA"* — is met by two independent steps, neither touching a measured value:
+
+1. **Bar-covariance of M3 excludes C** (new). M3 contains `σ_n`, which bar
+   inverts, so the bar-partner of `z` is `z − h`. D satisfies `bar(z) = z − h`;
+   C violates it by exactly `h`. Sorry-free: `QOU.BraidKnot.zD_bar_sub`,
+   `zC_ne_bar_sub`, `hecke_inv_eq_sub`. **This step alone does not select D** —
+   `bar_sub_of_bar_even` proves the solution set is D plus any bar-even
+   function.
+2. **TL faithfulness picks D out of the rest** — `MarkovTraceTLUniqueness`,
+   already proved under §3 above.
+
+Why the pair settles what step 2 alone did not: step 2's weak half was always
+its **premise** (does the mass fibre functor land in TL₃ or full H₃?). Step 1
+does not answer that either — it makes the answer *unnecessary for excluding
+C*, since whatever the functor lands in, the stabilisation parameter must be
+bar-covariant under the involution M3 lives under.
+
+**Still open, but no longer load-bearing:** the fibre-functor question itself,
+as a categorical fact.
+
+Follow-up: `qou-ql2a` — the 68 remaining C-form sites (a per-file channel call,
+explicitly *not* a sweep).
