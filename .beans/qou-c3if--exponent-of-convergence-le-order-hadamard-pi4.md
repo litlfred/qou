@@ -113,3 +113,33 @@ are fine theorems about entire functions — but the MOTIVATION stated at the to
 of HadamardFactorization.lean does not connect them to phiBProd. Anyone
 resuming should fix the motivation (or the target) BEFORE proving more of the
 chain, or the chain will be finished and still not apply.
+
+---
+
+## 2026-08-08 (later) — the repair is PROVED, not just recorded.
+
+The previous entry named the likely repair (Hadamard applies to the numerator
+and denominator separately, each entire, never to their quotient). That is now
+discharged in `QOU/Mathlib/HadamardApplicability.lean`, sorry-free:
+
+    differentiable_tprod_one_add   entire factors + summable domination on every
+                                   ball  ==>  z |-> prod' (1 + f n z) is entire
+    differentiable_numProd         the numerator half is entire
+    differentiable_denProd         the denominator half is entire
+
+The general lemma stitches two Mathlib pieces that do not meet on their own:
+`Summable.hasProdLocallyUniformlyOn_nat_one_add` (locally uniform multipliability
+from a summable dominant) and `TendstoLocallyUniformlyOn.differentiableOn`
+(holomorphy of locally uniform limits), then passes from "on every ball" to
+entire, differentiability being local.
+
+CONVERGENCE INPUT is carried as an explicit hypothesis rather than discharged.
+That is not a dodge: PhiBProd.lean states the same discipline for its own
+`Multipliable` inputs ("carried as explicit named hypotheses, not axiomatized and
+not sorry'd") because they are the analytic geometric-bound facts for
+Im b^2 > 0. The STRUCTURAL claim — that the halves are entire and the quotient is
+not — is what was missing, and it is discharged.
+
+STILL OPEN, and it is not a translation: whether the minimality principle that
+motivated the chain survives being restated about the two halves instead of the
+quotient. Nothing here implies it does.
