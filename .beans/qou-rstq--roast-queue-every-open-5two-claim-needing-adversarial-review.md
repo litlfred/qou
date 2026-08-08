@@ -298,3 +298,32 @@ was obtained, so the next reader can see what would falsify it.
 **Every remaining numerically-obtained constant in this lane is suspect until
 its procedure is stated.** In particular `qou-8v3k` and `qou-trns` both quote
 `min |disc| = 0.348`; both are now wrong. Sweep for others.
+
+---
+
+## 2026-08-08 — a claim of mine, corrected by the literature
+
+I wrote, in the item-4 refinement above, that the purely-imaginary jump of `Li₂`
+across the cut `[1,∞)` "underpins this lane's whole 'take real parts' convention
+and **is written down nowhere**."
+
+**It is written down.** Zagier, *The Dilogarithm Function*, Ch. I §3:
+
+> "The function `Li₂(z)`, extended as above to `ℂ ∖ [1,∞)`, **jumps by
+> `2πi·log|z|`** as `z` crosses the cut."
+
+Standard, and the lane should cite it rather than treat it as folklore. The
+*refinement* stands — item 4's two halves really are unequal, and the inversion
+half really does need the boundary value — but the missing ingredient is a
+citation, not a discovery.
+
+**And the bigger one:** the level-7 ladder is **Watson (1937)** (Kirillov §1.2.2).
+`qou-fivt` and `qou-abel` are annotated. The Lean work is a formalization of a
+classical identity family; the derivation route (five-term rather than
+duplication) and the formalization itself are what is new. Presenting the
+numerators as "DERIVED" carried an implication of novelty that is withdrawn.
+
+**Roast target added:** sweep this lane for other claims of the form "not in the
+literature" / "written down nowhere" / "new". Two have now failed —
+`hasSum_one_div_nat_pow_mul_cos` in Mathlib (`qou-mlbg`), and this. The lane has
+a pattern of asserting absence without searching.

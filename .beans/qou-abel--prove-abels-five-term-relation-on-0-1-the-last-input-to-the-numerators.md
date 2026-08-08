@@ -231,3 +231,50 @@ where predicted (`s = (1-x)/x < 1` fails without it).
 
 **Nothing here is left open.** What the chain still needs is in `qou-trns` and
 `qou-rstq` item 4, neither of which is about the five-term relation.
+
+---
+
+## ⚠ 2026-08-08 — the level-7 ladder is CLASSICAL. Watson (1937).
+
+Literature arrived (`uploads/9408113v2.pdf` — Kirillov, *Dilogarithm identities*,
+hep-th/9408113). **§1.2.2 gives Watson's relations**, and they are this lane's.
+
+Kirillov: let `α, −β, −1/γ` be the roots of `x³ + 2x² − x − 1 = 0`, with
+`α = ½sec(2π/7)`, `β = ½sec(π/7)`, `γ = 2cos(3π/7)`. Then
+
+    L(α) − L(α²) = (1/7)·L(1)
+    2L(β) + L(β²) = (10/7)·L(1)
+    2L(γ) + L(γ²) = (8/7)·L(1)
+
+Under `x ↦ −x` his cubic **is** `x³ − 2x² − x + 1`, ours, and
+
+    α = −w₃,   β = w₂,   γ = 1/w₁
+
+verified to `1e-30` (`qbeta_5two_route18_watson_classical_probe.py`, 6 gates).
+
+**So `numerators_of_root` formalizes a known identity family.** The
+`(17, 5, −1)/7` are different combinations of the same `L`-values in the same
+field `ℚ(ζ₇)⁺`, with the same denominator 7. This bean, and the commits behind
+it, presented the numerators as "DERIVED" with a tacit implication of novelty.
+**That implication was wrong and is withdrawn.**
+
+### What remains this lane's
+
+* **The route.** Kirillov proves accessibility from the **duplication formula**;
+  this lane derived it from the **five-term relation**. Genuinely different.
+* **The formalization.** Watson, Loxton, Lewin, Kirillov and Zagier all work on
+  paper. `rogersL_fiveTerm`, `numerators_of_root`, `extended_sum` are sorry-free
+  Lean, which the literature does not provide.
+
+Both are worth having. Neither is a new theorem.
+
+### Two further confirmations from Zagier (`uploads/the-dilogarithm-function-*.pdf`)
+
+* **`FiveTwoRogersExtend.extend` is Zagier's definition verbatim** — `L(0)=0`,
+  `L(1)=π²/6`, `L(x)=2L(1)−L(1/x)` for `x>1`, `L(x)=−L(x/(x−1))` for `x<0`.
+  Route 13's repair was the standard one; now checked against the source rather
+  than from memory.
+* **`hasDerivAt_rogersL` is Zagier's `L′(x)` verbatim**, and he names exactly
+  that formula as the route to "these and all other functional equations" —
+  which is how Abel was proved here. The method was right for the documented
+  reason.
