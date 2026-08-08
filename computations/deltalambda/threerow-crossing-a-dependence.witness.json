@@ -1,0 +1,685 @@
+{
+  "engine": "mpmath+f64-seminormal",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T22:46:38.100907+00:00",
+  "commitSha": "2965d82b1f450e3e234d9ea9fd3b714ea22dae2f",
+  "assertions": [
+    {
+      "name": "D_sign_at_q0",
+      "computed": -1,
+      "expected": -1,
+      "passed": true
+    },
+    {
+      "name": "D_sign_at_qlo",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "T_sign_at_q0",
+      "computed": -1,
+      "expected": -1,
+      "passed": true
+    },
+    {
+      "name": "T_sign_at_qlo",
+      "computed": -1,
+      "expected": -1,
+      "passed": true
+    },
+    {
+      "name": "3He_sign_at_q0",
+      "computed": -1,
+      "expected": -1,
+      "passed": true
+    },
+    {
+      "name": "3He_sign_at_qlo",
+      "computed": -1,
+      "expected": -1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "threerow-crossing-a-dependence",
+  "scriptFile": "threerow_crossing_a_dependence_probe.py",
+  "scriptHash": "245de588c10d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "UNIT 2 of bean qou-prjo follow-up to #4829. Determines whether the deuteron ≥3-row sign crossing of F_K(q)=Σ_{λ⊢3A,ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ is SPECIAL to n=6 or A-DEPENDENT with the n=9 crossing lying ABOVE the substrate q₀. Sweeps a DIAGNOSTIC RAY q ∈ (1, 4.0]; every q > q₀ field is prefixed 'diagnostic_' and is a STRUCTURAL diagnostic of the analytic object, NOT a physical claim (the substrate modulus is q₀ ≈ 1.10998, experimental proton anchor). Δ_λ=(−1)^{n(λ)}·dim (PROVED value-only); y_λ via live schur_principal_mpmath (proton anchor, NOT the muon cache); χ^λ via the q-running color-weighted nuclide braid + f64 Hoefsmit seminormal. Layer-pure. 0 free parameters; AME not used.",
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
+    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_λ",
+    "q_lo_combinatorial_surrogate": "1.0001",
+    "diagnostic_ray_max_q": "4.0",
+    "diagnostic_ray_npts": 25,
+    "free_parameters": 0,
+    "chi_precision": "f64 Hoefsmit seminormal (no mpfr kernel in sandbox)"
+  },
+  "data": {
+    "delta_stratum_ordering": {
+      "6": {
+        "count_l_ge_3": 7,
+        "max_abs_delta": 16,
+        "top5": [
+          {
+            "partition": [
+              3,
+              2,
+              1
+            ],
+            "delta": 16
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1
+            ],
+            "delta": -10
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1
+            ],
+            "delta": 10
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1
+            ],
+            "delta": -9
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2
+            ],
+            "delta": 5
+          }
+        ],
+        "top_abs_multiplicity": 1,
+        "top_is_signed_cancelling_pair": false
+      },
+      "9": {
+        "count_l_ge_3": 25,
+        "max_abs_delta": 216,
+        "top5": [
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1
+            ],
+            "delta": 216
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1
+            ],
+            "delta": -216
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1
+            ],
+            "delta": -189
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1
+            ],
+            "delta": -189
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2
+            ],
+            "delta": -168
+          }
+        ],
+        "top_abs_multiplicity": 2,
+        "top_is_signed_cancelling_pair": true
+      }
+    },
+    "isotopes": {
+      "D": {
+        "n_strands": 6,
+        "F_at_qlo": 8.052912522722037e-05,
+        "F_at_q0": -0.1949663511459454,
+        "sign_qlo": 1,
+        "sign_q0": -1,
+        "crossings_below_or_at_q0": [
+          1.0536500613654245
+        ],
+        "diagnostic_crossings_above_q0": [
+          3.4101000856954258
+        ],
+        "diagnostic_first_crossing_above_q0": 3.4101000856954258,
+        "diagnostic_ray_max_q": 4.0,
+        "diagnostic_n_crossings_on_ray": 2
+      },
+      "T": {
+        "n_strands": 9,
+        "F_at_qlo": -0.00040591927367555485,
+        "F_at_q0": -2.3181589081699396,
+        "sign_qlo": -1,
+        "sign_q0": -1,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          1.4616970872075747
+        ],
+        "diagnostic_first_crossing_above_q0": 1.4616970872075747,
+        "diagnostic_ray_max_q": 4.0,
+        "diagnostic_n_crossings_on_ray": 1
+      },
+      "3He": {
+        "n_strands": 9,
+        "F_at_qlo": -0.000405907139436435,
+        "F_at_q0": -2.8064582609621747,
+        "sign_qlo": -1,
+        "sign_q0": -1,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          1.4285174677509977,
+          3.2163332967667735
+        ],
+        "diagnostic_first_crossing_above_q0": 1.4285174677509977,
+        "diagnostic_ray_max_q": 4.0,
+        "diagnostic_n_crossings_on_ray": 2
+      }
+    },
+    "n9_per_partition_decomposition": {
+      "T": {
+        "q_lo": {
+          "q": 1.0001,
+          "dominant_partition": [
+            6,
+            2,
+            1
+          ],
+          "dominant_delta": 105,
+          "dominant_term": -0.00023982436452163778,
+          "total": -0.00040591927367555485,
+          "top4": [
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": -0.00023982436452163778
+            },
+            {
+              "partition": [
+                4,
+                3,
+                2
+              ],
+              "delta": -168,
+              "term": -8.752877219082266e-05
+            },
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": 6.80771187532933e-05
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": -6.797852368561624e-05
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "q0": {
+          "q": 1.1099785827513808,
+          "dominant_partition": [
+            6,
+            2,
+            1
+          ],
+          "dominant_delta": 105,
+          "dominant_term": -1.0516317200132759,
+          "total": -2.3181589081699396,
+          "top4": [
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": -1.0516317200132759
+            },
+            {
+              "partition": [
+                5,
+                2,
+                2
+              ],
+              "delta": 120,
+              "term": -0.40419058208517383
+            },
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": -0.37392316960412453
+            },
+            {
+              "partition": [
+                4,
+                3,
+                2
+              ],
+              "delta": -168,
+              "term": -0.3150061477346157
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "diag_below_cross": {
+          "q": 1.4178461745913475,
+          "dominant_partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "dominant_delta": -189,
+          "dominant_term": 1297.9618083984024,
+          "total": -152.19422656786864,
+          "top4": [
+            {
+              "partition": [
+                5,
+                2,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": 1297.9618083984024
+            },
+            {
+              "partition": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "delta": 216,
+              "term": -951.6407023276972
+            },
+            {
+              "partition": [
+                3,
+                2,
+                2,
+                1,
+                1
+              ],
+              "delta": -162,
+              "term": -371.12808906261165
+            },
+            {
+              "partition": [
+                5,
+                2,
+                2
+              ],
+              "delta": 120,
+              "term": -329.6096737556337
+            }
+          ],
+          "beyond_substrate": true
+        },
+        "diag_above_cross": {
+          "q": 1.505547999823802,
+          "dominant_partition": [
+            5,
+            2,
+            1,
+            1
+          ],
+          "dominant_delta": -189,
+          "dominant_term": 8874.545775381423,
+          "total": 799.7937632878954,
+          "top4": [
+            {
+              "partition": [
+                5,
+                2,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": 8874.545775381423
+            },
+            {
+              "partition": [
+                4,
+                3,
+                1,
+                1
+              ],
+              "delta": 216,
+              "term": -6658.292112547424
+            },
+            {
+              "partition": [
+                3,
+                2,
+                2,
+                1,
+                1
+              ],
+              "delta": -162,
+              "term": -4308.305874930984
+            },
+            {
+              "partition": [
+                4,
+                2,
+                2,
+                1
+              ],
+              "delta": -216,
+              "term": 1991.3999887867815
+            }
+          ],
+          "beyond_substrate": true
+        }
+      },
+      "3He": {
+        "q_lo": {
+          "q": 1.0001,
+          "dominant_partition": [
+            6,
+            2,
+            1
+          ],
+          "dominant_delta": 105,
+          "dominant_term": -0.00023987232890051432,
+          "total": -0.000405907139436435,
+          "top4": [
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": -0.00023987232890051432
+            },
+            {
+              "partition": [
+                4,
+                3,
+                2
+              ],
+              "delta": -168,
+              "term": -8.754190062341023e-05
+            },
+            {
+              "partition": [
+                7,
+                1,
+                1
+              ],
+              "delta": -28,
+              "term": 6.81246914345319e-05
+            },
+            {
+              "partition": [
+                6,
+                1,
+                1,
+                1
+              ],
+              "delta": 56,
+              "term": -6.796828085046369e-05
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "q0": {
+          "q": 1.1099785827513808,
+          "dominant_partition": [
+            5,
+            3,
+            1
+          ],
+          "dominant_delta": -162,
+          "dominant_term": -1.2225744798401583,
+          "total": -2.8064582609621747,
+          "top4": [
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": -1.2225744798401583
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": -0.4802144188184874
+            },
+            {
+              "partition": [
+                5,
+                2,
+                2
+              ],
+              "delta": 120,
+              "term": -0.4310261259052516
+            },
+            {
+              "partition": [
+                4,
+                3,
+                2
+              ],
+              "delta": -168,
+              "term": -0.38779365373231445
+            }
+          ],
+          "beyond_substrate": false
+        },
+        "diag_below_cross": {
+          "q": 1.3856619437184678,
+          "dominant_partition": [
+            5,
+            3,
+            1
+          ],
+          "dominant_delta": -162,
+          "dominant_term": -1090.610253824516,
+          "total": -236.77246491546384,
+          "top4": [
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": -1090.610253824516
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": 489.62916746484296
+            },
+            {
+              "partition": [
+                4,
+                2,
+                2,
+                1
+              ],
+              "delta": -216,
+              "term": 408.101504890901
+            },
+            {
+              "partition": [
+                5,
+                2,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": 308.1742956962874
+            }
+          ],
+          "beyond_substrate": true
+        },
+        "diag_above_cross": {
+          "q": 1.4713729917835277,
+          "dominant_partition": [
+            5,
+            3,
+            1
+          ],
+          "dominant_delta": -162,
+          "dominant_term": -5341.865687386438,
+          "total": 1330.7899698548454,
+          "top4": [
+            {
+              "partition": [
+                5,
+                3,
+                1
+              ],
+              "delta": -162,
+              "term": -5341.865687386438
+            },
+            {
+              "partition": [
+                4,
+                2,
+                2,
+                1
+              ],
+              "delta": -216,
+              "term": 3096.055565982648
+            },
+            {
+              "partition": [
+                6,
+                2,
+                1
+              ],
+              "delta": 105,
+              "term": 2580.5146069126895
+            },
+            {
+              "partition": [
+                4,
+                2,
+                1,
+                1,
+                1
+              ],
+              "delta": -189,
+              "term": 2316.5331615271316
+            }
+          ],
+          "beyond_substrate": true
+        }
+      }
+    },
+    "character_free_companion": {
+      "6": {
+        "G_at_qlo": -4.564532067371244e-06,
+        "G_at_q0": 0.016357557243199133,
+        "crossings_below_or_at_q0": [
+          1.0244472398757907
+        ],
+        "diagnostic_crossings_above_q0": []
+      },
+      "9": {
+        "G_at_qlo": -3.0739207709852205e-05,
+        "G_at_q0": -0.022912412753569797,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          2.108906010059004
+        ]
+      },
+      "12": {
+        "G_at_qlo": 8.052390188525581e-05,
+        "G_at_q0": 0.018010744723102993,
+        "crossings_below_or_at_q0": [],
+        "diagnostic_crossings_above_q0": [
+          1.5974231842569155
+        ]
+      }
+    },
+    "verdict": "A_DEPENDENT_crossing_above_q0",
+    "verdict_text": "A-DEPENDENT. The n=9 crossing EXISTS but lies ABOVE q₀ — the deuteron is NOT special; q₀ sits between the n=6 and n=9 crossings."
+  },
+  "caveats": [
+    "BEYOND-SUBSTRATE DIAGNOSTIC. Every 'diagnostic_' field reports F_K at q > q₀. The substrate modulus is q₀ ≈ 1.10998 (experimental proton anchor); q > q₀ is NOT a physical regime and no value on the ray is a prediction. The ray exists solely to distinguish 'the object has no zero' from 'the zero is above q₀', which are different structural statements about the same analytic function.",
+    "χ^λ(β_K;q) is f64-precision (pure-Python Hoefsmit seminormal; no mpfr Rust kernel in this sandbox — disk quota, documented, not a proof gap). y_λ(q) is full 50-dps mpmath. Decisive for a SIGN question away from a crossing (|F| = O(1)–O(10¹) at the sampled points); a located crossing q carries only f64 resolution.",
+    "value_only object: F_K is NOT a binding energy (Δ_λ is value-only). This probe tests only the SIGN structure of the ≥3-row trace weighting. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo).",
+    "Scope: a LOCATED crossing is a positive existence statement (bracketed sign change of a continuous function). 'No crossing' statements are scope-(a) — about the swept interval only — never scope-(b); no invariant is proved to forbid a zero anywhere."
+  ]
+}
