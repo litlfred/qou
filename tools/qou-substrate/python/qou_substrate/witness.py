@@ -254,7 +254,7 @@ class Assertion:
         name: str,
         computed: Union[float, str],
         expected: Union[float, str],
-        tolerance: Optional[float] = None,
+        tolerance: Union[float, str, None] = None,
         unit: Optional[str] = None,
         source: Optional[str] = None,
     ):
@@ -490,11 +490,13 @@ class WitnessBuilder:
         name: str,
         computed: Union[float, str],
         expected: Union[float, str],
-        tolerance: Optional[float] = None,
+        tolerance: Union[float, str, None] = None,
         unit: Optional[str] = None,
         source: Optional[str] = None,
     ) -> "WitnessBuilder":
-        """Add a named assertion."""
+        """Add a named assertion. Pass `computed`/`expected`/`tolerance` as
+        STRINGS to keep a value out of float64 — that is the drained convention
+        (qou-t0rf); `passed` coerces with `float()` either way."""
         self.assertions.append(
             Assertion(name, computed, expected, tolerance, unit, source)
         )

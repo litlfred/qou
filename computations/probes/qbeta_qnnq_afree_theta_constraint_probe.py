@@ -225,12 +225,12 @@ def main() -> int:
                            "qbeta_t4_stokes3_crux_probe.py"})
     wb.add_data("verdict", verdict)
     wb.add_assertion("C0_T4_pair_lies_on_curve",
-                     computed=1.0 if c0_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed="1" if c0_ok else "0", expected="1", tolerance="0.5",
                      source="control: the T4 inversion must satisfy the A-free "
                             "relation by construction")
     wb.add_assertion("T1_rdmr_off_curve",
-                     computed=1.0 if not rdmr_on_curve else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="1" if not rdmr_on_curve else "0", expected="1",
+                     tolerance="0.5",
                      source=f"at theta_mu = 0 the curve forces theta_p = "
                             f"{mp.nstr(tp_forced, 8)}, not 0 — A-free refutation "
                             f"of the Rademacher route")
