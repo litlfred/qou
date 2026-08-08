@@ -174,3 +174,61 @@ cheap.
 
 Unclaimed. Status moved `in-progress` → `todo` so a sibling does not read it as
 actively held.
+
+## 2026-08-08 — TWO corrections. The gap was smaller than this bean has ever said.
+
+Both are the same error: recording something as missing without checking whether
+it already exists, then planning around the record.
+
+**1. The pinned Mathlib carries what the previous entry hoped it might.**
+Verified directly against `.lake/packages/mathlib` at `f897ebcf`, not against a
+newer checkout:
+
+| | at the pin |
+|---|---|
+| `MeromorphicOn.extract_zeros_poles` | **present** |
+| `Function.locallyFinsuppWithin.finiteSupport` (compact ⇒ finite support) | **present** |
+| `intervalIntegral.integral_finset_sum` | **present** |
+| `CircleIntegrable.sum`, `circleIntegral.integral_add`, `integral_sub_inv_of_mem_ball`, annulus Cauchy, `AnalyticOnNhd.deriv` | **present** |
+| `MeromorphicOn.divisor_support_finite_of_subset` | absent — *four-line wrapper*, now proved |
+| `circleIntegral.integral_fun_sum` | absent — *four-line proof*, now proved |
+
+Both absentees are in `QOU/Mathlib/CircleIntegralFinsetSum.lean`, sorry-free,
+stated in Mathlib's own shape so a pin bump deletes the file rather than
+requiring a rewrite. The earlier note guessed `finiteSupport` was missing; the
+grep failed only because it is declared inside a namespace.
+
+**2. The corpus already has a sorry-free argument principle.**
+`QOU/Mathlib/ArgumentPrinciple.lean` — 687 lines, bean `qou-bmyx`, verified
+`exit 0` — proves `argument_principle` on a **closed disc**, global, via
+Weierstrass factorization, plus `entire_zero_count`. This bean has said "Mathlib
+has no argument principle" since it was opened. True, and irrelevant: the
+*corpus* has one, in a file of that name, from a bean that appears in the same
+`beans list` output this one does.
+
+**What is actually left**, and it is not step 2:
+
+`argument_principle` is on a disc. `θ_p` is holomorphic on `ℂ*` but has an
+essential singularity at `0`, so the disc form does not apply to it — the
+annulus form does, and that is `argumentPrinciple_annulus_single` in
+`C1ConnectionPoles.lean`, which is proved *for a single factor*. The remaining
+work is therefore:
+
+1. **`Finset`-index the annulus statement** — now unblocked: `integral_fun_sum`
+   splits the contour integral over the factors, `divisor_support_finite_of_subset`
+   makes the index set a `Finset`, `logDeriv_prod` splits the integrand.
+2. **Upgrade `extract_zeros_poles`'s codiscrete equality to genuine equality** on
+   the annulus. Both sides are analytic there (`θ_p` has no poles, so the divisor
+   is `≥ 0`) and the annulus is connected, so this is the identity theorem. *This
+   is the one step that is not a citation.*
+3. Apply to `θ_p` with `qTheta_winding_step`, which already gives winding
+   difference `= 1`, forcing exactly one simple zero per fundamental annulus.
+
+Revised cost: **one session**, not multi-session, and not blocked on Mathlib.
+
+**Method note.** Twice now the fix was to search by what the statement *says*
+rather than what the theorem is *called* — `extract_zeros_poles` is not named
+"factorisation", and the corpus's own argument principle was never going to
+answer a grep for `windingNumber`. Before recording anything as missing here,
+grep the corpus as well as Mathlib.
+
