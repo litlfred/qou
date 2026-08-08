@@ -7,6 +7,7 @@ import Mathlib.RepresentationTheory.Basic
 import Mathlib.RingTheory.SimpleModule.Basic
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.SpechtCrossKappa
+import QOU.MathlibExt.RepresentationCharacter
 
 /-!
 # QOU.BraidKnot.SpechtClassification — brick 3 of the Okounkov–Vershik tower
@@ -650,6 +651,47 @@ theorem specht_pairwise_noniso {μ ν : YoungDiagram} (h : Specht.nOf μ = Spech
   intro hiso
   obtain ⟨hd1, hd2⟩ := spechtIso_imp_dom_both (k := k) h hiso
   exact hμν (partitionDom_antisymm μ ν hd1 hd2)
+
+/-! ### Finiteness and simplicity of `S^μ`, in the form the character count wants
+
+`RepresentationCharacter` states Schur with simplicity as "every stable subspace
+is `⊥` or `⊤`" of the *carrier*, whereas `specht_isSimple` speaks of submodules
+of `M^μ` contained in `S^μ`. These three lemmas bridge that and supply the
+finiteness the character pairing needs. -/
+
+instance spechtSubmodule_finite (μ : YoungDiagram) :
+    Module.Finite k (Specht.SpechtSubmodule (k := k) μ) := by
+  haveI : Module.Finite k (Specht.Mtab (k := k) μ) := by
+    unfold Specht.Mtab; infer_instance
+  infer_instance
+
+instance spechtSubmodule_nontrivial (μ : YoungDiagram) :
+    Nontrivial (Specht.SpechtSubmodule (k := k) μ) := by
+  obtain ⟨t⟩ := nonempty_tableau μ
+  exact ⟨⟨⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t⟩, 0, fun h =>
+    SpechtCrossKappa.polytabloid_ne_zero (K := k) μ t (congrArg Subtype.val h)⟩⟩
+
+/-- `specht_isSimple`, transported from submodules of `M^μ` inside `S^μ` to
+submodules of the carrier `S^μ` itself. -/
+theorem spechtRep_stable_eq_bot_or_top (μ : YoungDiagram)
+    (p : Submodule k (Specht.SpechtSubmodule (k := k) μ))
+    (hp : ∀ (g : Perm (Fin (Specht.nOf μ))) v, v ∈ p → spechtRep (k := k) μ g v ∈ p) :
+    p = ⊥ ∨ p = ⊤ := by
+  have hinj : Function.Injective (Specht.SpechtSubmodule (k := k) μ).subtype :=
+    Submodule.subtype_injective _
+  have hle : p.map (Specht.SpechtSubmodule (k := k) μ).subtype
+      ≤ Specht.SpechtSubmodule (k := k) μ := by
+    rintro _ ⟨x, -, rfl⟩; exact x.2
+  have hstable : ∀ (σ : Perm (Fin (Specht.nOf μ))) x,
+      x ∈ p.map (Specht.SpechtSubmodule (k := k) μ).subtype →
+      Specht.Mtab.rep μ σ x ∈ p.map (Specht.SpechtSubmodule (k := k) μ).subtype := by
+    rintro σ _ ⟨x, hx, rfl⟩
+    exact ⟨spechtRep (k := k) μ σ x, hp σ x hx, rfl⟩
+  rcases SpechtIrreducible.specht_isSimple (k := k) μ _ hle hstable with h | h
+  · refine Or.inl (Submodule.map_injective_of_injective hinj ?_)
+    rw [h, Submodule.map_bot]
+  · refine Or.inr (Submodule.map_injective_of_injective hinj ?_)
+    rw [h, Submodule.map_subtype_top]
 
 /-- **Completeness.**  Every simple `k[S_n]`-module is isomorphic to some Specht
 module.  Phrased: for any representation `ρ : Representation k (Perm (Fin n)) W`

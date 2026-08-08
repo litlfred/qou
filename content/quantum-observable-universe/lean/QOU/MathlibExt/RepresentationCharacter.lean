@@ -1,6 +1,8 @@
 import Mathlib.RepresentationTheory.Invariants
 import Mathlib.RepresentationTheory.Submodule
 import Mathlib.RingTheory.SimpleModule.Basic
+import QOU.MathlibExt.GroupAlgebraCenter
+import QOU.MathlibExt.GramNondegenerate
 import Mathlib.RepresentationTheory.Character
 import Mathlib.LinearAlgebra.Contraction
 import Mathlib.LinearAlgebra.Trace
@@ -250,5 +252,76 @@ theorem stable_eq_bot_or_top (ρ : Representation k G V)
   · refine Or.inr (congrArg Subtype.val (show (⟨p, hmem⟩ : ρ.invtSubmodule) = ⊤ from ?_))
     rw [← ρ.mapSubmodule.symm_apply_apply ⟨p, hmem⟩, h]
     exact ρ.mapSubmodule.symm.map_top
+
+/-! ## 5. The count
+
+Pairwise non-isomorphic simples have orthogonal characters, characters are class
+functions, and class functions are at most `#conj classes`-dimensional.
+
+Stated for a family of **characters as functions** rather than a dependent
+family of carrier types: the caller usually wants to mix representations living
+in different modules (here, Specht modules of various shapes plus one unknown),
+and a `ι → Type*` family with per-index instances is far more painful to
+assemble than a `ι → (G → k)`. -/
+
+section Count
+
+variable (k G) [Fintype G] [Invertible (Fintype.card G : k)]
+
+/-- The character pairing as a bilinear form on all of `G → k`. -/
+noncomputable def charForm : (G → k) →ₗ[k] (G → k) →ₗ[k] k :=
+  LinearMap.mk₂ k (fun f₁ f₂ => ⅟(Fintype.card G : k) • ∑ g : G, f₁ g⁻¹ * f₂ g)
+    (fun f₁ f₂ f₃ => by
+      simp only [Pi.add_apply, add_mul, Finset.sum_add_distrib, smul_add])
+    (fun c f₁ f₂ => by
+      simp only [Pi.smul_apply, smul_eq_mul, Finset.mul_sum]
+      exact Finset.sum_congr rfl (fun x _ => by ring))
+    (fun f₁ f₂ f₃ => by
+      simp only [Pi.add_apply, mul_add, Finset.sum_add_distrib, smul_add])
+    (fun f₁ c f₂ => by
+      simp only [Pi.smul_apply, smul_eq_mul, Finset.mul_sum]
+      exact Finset.sum_congr rfl (fun x _ => by ring))
+
+@[simp] theorem charForm_apply (f₁ f₂ : G → k) :
+    charForm k G f₁ f₂ = ⅟(Fintype.card G : k) • ∑ g : G, f₁ g⁻¹ * f₂ g := rfl
+
+variable {k G}
+
+/-- `charForm` computes `dim Hom_G` on characters — `charPairing_eq_finrank_homG`
+restated for the bilinear form. -/
+theorem charForm_charOf [Module.Free k V] [Module.Finite k V]
+    [Module.Free k W] [Module.Finite k W]
+    (ρV : Representation k G V) (ρW : Representation k G W) :
+    charForm k G (charOf ρV) (charOf ρW) = finrank k (homG ρV ρW) :=
+  charPairing_eq_finrank_homG ρV ρW
+
+variable [DecidableRel (IsConj : G → G → Prop)]
+
+/-- **The count.**  A family of class functions that is orthogonal with nonzero
+diagonal for `charForm` is no larger than the number of conjugacy classes.
+
+Applied to the characters of pairwise non-isomorphic simple modules, this is
+`#simples ≤ #conj classes`. -/
+theorem card_le_card_conjClasses_of_orthogonal {ι : Type*} [Fintype ι]
+    (χ : ι → (G → k))
+    (hcf : ∀ i, χ i ∈ GroupAlgebraCenter.classFunctions k G)
+    (hoff : ∀ i j, i ≠ j → charForm k G (χ i) (χ j) = 0)
+    (hdiag : ∀ i, charForm k G (χ i) (χ i) ≠ 0) :
+    Fintype.card ι ≤ Fintype.card (ConjClasses G) := by
+  classical
+  haveI : Module.Finite k (G → k) := Module.Finite.pi
+  -- the characters are independent in `G → k` …
+  have hind : LinearIndependent k χ :=
+    GramNondegenerate.linearIndependent_of_gram_diagonal (charForm k G) χ hoff hdiag
+  -- … hence independent inside the class functions …
+  have hind' : LinearIndependent k (fun i => (⟨χ i, hcf i⟩ :
+      GroupAlgebraCenter.classFunctions k G)) := by
+    refine LinearIndependent.of_comp (GroupAlgebraCenter.classFunctions k G).subtype ?_
+    exact hind
+  -- … so there are at most `dim {class functions}` of them
+  have hcard := hind'.fintype_card_le_finrank
+  exact hcard.trans GroupAlgebraCenter.finrank_classFunctions_le
+
+end Count
 
 end QOU.MathlibExt.RepresentationCharacter
