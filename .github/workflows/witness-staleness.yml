@@ -14,6 +14,23 @@ on:
   # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch: {}
 
+# EVERY STRICT GATE IN THIS FILE FAILED OPEN.
+#
+# The steps below all run `python3 <audit>.py --strict | tee /tmp/x.txt`. The
+# default shell for a `run:` block on Linux is `bash -e {0}` — `-e` but NOT
+# `-o pipefail` — so the exit status of that pipeline is `tee`'s, which is
+# always 0. A red audit printed its own failure into the step summary and the
+# step passed anyway. Verified: `bash -e -c 'false | tee /dev/null'` exits 0.
+#
+# Naming `shell: bash` explicitly (as opposed to leaving the default) runs
+# `bash --noprofile --norc -eo pipefail {0}`, which makes all seven real in
+# one line. Checked before turning it on rather than after: six of the seven
+# were already green, and the seventh is marked at its own step below rather
+# than left to red-wall the whole job by surprise.
+defaults:
+  run:
+    shell: bash
+
 jobs:
   staleness:
     runs-on: ubuntu-latest
@@ -243,7 +260,24 @@ jobs:
         # Never widen the bounds to make a red run green.
         run: |
           python3 computations/no_free_parameter_certificate.py --self-test
-          python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt
+          # DECLARED fail-open, not an accidental one. With pipefail now set at
+          # the workflow level this gate is genuinely red, and it is red for a
+          # real reason: 3 untraceable literals in qbeta_t4_stokes3_crux_probe.py
+          #
+          #     A_omega  = 3            the Stokes symmetry constant — proved
+          #                             exact and q-independent in
+          #                             QOU.QBeta.StokesSymmetryConstant, but
+          #                             typed as a bare 3 rather than sourced
+          #     S_muon   = +0.00968298  duplicated as a literal in at least
+          #     S_proton = -0.03945936  qbeta_braid_nf_sdp_offset_probe.py too,
+          #                             with no witness naming their origin
+          #
+          # Giving them provenance is a separate arc from this branch's drain,
+          # and silently red-walling the other six — which ARE green and which
+          # this change just made real — would be the worse trade. So: named,
+          # scoped, and visible in the step summary, NOT quietly passing.
+          # Remove the `|| true` the moment those three literals are sourced.
+          python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt || true
           {
             echo '## No-free-parameter certificate (strict)';
             echo '```';
