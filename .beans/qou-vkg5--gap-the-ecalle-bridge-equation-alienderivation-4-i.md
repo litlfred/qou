@@ -59,3 +59,55 @@ Also unresolved and prior to all of this: the q-native question. C1 **cannot**
 be confluenced to the classical setting (`L1 → (x−1)σ²`, not rank 2 —
 [`2026-08-08-rsz-c1-infinity-route-closed.md`](../docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md)),
 so a classical bridge equation would not transfer to it even once proved.
+
+## LANDED 2026-08-08 — the relation is encoded, with a model that makes it bite
+
+`QOU/Mathlib/AlienBridgeEquation.lean`, sorry-free (PR #4771).
+
+Done exactly as this bean specified — as a **field** on a bundled `BridgeSystem`
+(`ord`, `alien : Ω → Derivation`, `weight : Ω → R`, `bridge`), not an `axiom`,
+not an unconditional theorem about the existing `AlienDerivationSystem`.
+
+**Derived from the field** (each would fail without it):
+
+| result | content |
+|---|---|
+| `weight_shift` | `Δ_ω` moves an `∂`-eigenvector of eigenvalue `λ` to one of eigenvalue `λ + ω` — why alien derivatives detect instanton sectors |
+| `weight_add_of_comp` | weights **add** under composition: the `Δ_ω` generate a weight-graded algebra |
+| `ord_dotted_comm` | the dotted `Δ̇_ω := e_ω·Δ_ω` **commutes with `∂`** — the bridge proper |
+| `ord_comm_of_weight_zero` | at weight 0 the relation *is* commutation (sign/placement check) |
+
+**Two checks that it is not decoration**, since a field every system satisfies
+would leave the above true but empty:
+
+* `alien_eq_zero_of_ord_comm` — the relation is *incompatible* with `∂`
+  commuting with `Δ_ω` at nonzero weight; commutation forces `Δ_ω = 0`.
+* A concrete model. Any `(A, D, t)` with `D t = t` gives one on `Ω = ℕ` via
+  `Δ_n := tⁿ·D`, weight `n` — the bridge holds *because* `D` scales `tⁿ` by `n`.
+  Witnessed by `R[X]` with the Euler operator `X·d/dX`, `t = X`, where
+  `Δ₁X = X² ≠ 0`. So: inhabited at **nonzero** weight by a **nonzero** alien
+  family, precisely the regime commutation forbids.
+
+Incidental: Mathlib has `Polynomial.derivative` as a linear map and
+`derivative_mul` as Leibniz but does not package them as a `Derivation`;
+`polyDerivation` does.
+
+## What is still open
+
+1. **`ord_dotted_comm`'s hypothesis is not witnessed concretely.** The Euler
+   operator's eigenvalues on `R[X]` are the degrees `≥ 0`, so `R[X]` has no
+   element of eigenvalue `−n`. A witness needs Laurent polynomials `R[t,t⁻¹]`
+   with `e = t^{−n}`. The theorem is proved; only its hypothesis is so far
+   abstract.
+2. **The q-native form — the actual blocker for C1.** Everything above is the
+   *classical* relation. C1 cannot be confluenced to the classical setting
+   (`L1 → (x−1)σ²`, not rank 2), so this does not transfer to it. The q-analogue
+   would replace `∂` by the dilation `σ_q : x ↦ qx` and the commutator by a
+   q-commutator; what `weight` means there — and whether the eigenvalue shift is
+   additive or multiplicative — is not settled.
+3. **No analytic construction is claimed to satisfy the relation.** The structure
+   says what a system *with* the bridge equation looks like; exhibiting one from
+   a resurgent function is untouched.
+
+Item 2 is the one that matters for the C1 residual. Closing is a human action —
+leaving status as-is.
