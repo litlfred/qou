@@ -248,3 +248,38 @@ Grouped by what makes `ℝ` load-bearing:
 > Not touched here.
 
 `collatz_contact_boundary` remains untouched — sibling #4722 is editing it.
+
+## 8. The 5 candidates, compile-tested — 1 confirmed, 4 refuted or blocked
+
+Per §7 the compiler was made the adjudicator. Result: **1 of 5** is a genuine
+portable case. The other four are refuted or blocked for reasons a read could
+not have settled.
+
+| block | verdict | what the test showed |
+|---|---|---|
+| `nucleon_ordering_factorization` | **GENUINE — ported** | `scalar_channel_ordering_independent` now `{α M : Type*} [CommMonoid M] (f : α → M) (ds ds' : List α)`. `lean`-direct **exit 0**. |
+| `qmn_recursive_memoized` | **BLOCKED** | its class `extends QOU.Shared.MarkovTraceContext`; the `ℝ` cannot be parameterised without threading a type through that shared parent — which **16 classes extend**. Cross-cutting refactor, not a per-block fix. |
+| `markov_identification` | **REFUTED** | the `ℝ` live in module-level `opaque` constants (`opaque markovTrace : ℝ`, `markovWeight`, `spechtPartialTrace`). A polymorphic `opaque` is a *family of unrelated constants*, which misrepresents the specific objects being named. |
+| `q_gl_classical_limit` | not attempted | §3b conjecture class; parameterising it rewrites every downstream instance binder |
+| `cpt-d6-d7-d8-closure` | not attempted | same — §3b conjecture class |
+
+### What the confirmed one generalised to
+
+More than expected. The lemma is permutation-invariance of `(ds.map f).prod`, so
+the channel data and the scalar map need not even share a type: `f : α → M` over
+any `[CommMonoid M]`. `ℝ` bought nothing at either position. The archimedean
+instance is `α := ℝ`, `M := ℝ`.
+
+### The methodological point
+
+The §7 read predicted 5 GENUINE. The compiler confirmed **1**, refuted 1 on a
+ground no read would surface (`opaque` semantics), and blocked 1 on an `extends`
+edge that the consumer count — *"appears in 1 `.lean` file"* — actively hid.
+
+That consumer count is the fifth confident-wrong-answer of this drain. A file
+count does not measure blast radius when the dependency runs through class
+inheritance rather than through imports.
+
+**Standing rule for the remaining queue:** a GENUINE verdict is a *compile
+result*, never a read. Read to choose what to try; let the compiler decide.
+
