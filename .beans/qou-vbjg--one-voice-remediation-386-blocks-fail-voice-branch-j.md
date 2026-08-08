@@ -244,6 +244,39 @@ remaining four (`isospin-from-canonical-bowtie`, `quantum-langlands-dual`,
 `spin-from-so3-fiber`, `t-from-trace-cyclicity`) should be checked to see
 whether they still need it.
 
+## The class the detectors could not see
+
+Re-review of every flagged block (3313 pass / 48 fail, from 2976 / 386) turned
+up a defect class no regex in this bean would have caught, and that the original
+sweep's buckets did not isolate: **the manuscript describing its own repository
+instead of its mathematics.**
+
+| what | example |
+|---|---|
+| "the corpus" as the paper's name for itself | "nothing in the corpus addresses the heavy flavour masses"; "open — no corpus content" |
+| "block" as the pipeline's unit of content | "**The block** therefore qualifies as…"; a table column headed "consumer block" |
+| owner governance as warrant | `**(owner ruling 2026-06-24)**`, three times in one block; "owner authorised" |
+| the build system addressed directly | a `### CI enforcement` heading; "gates this on every continuous integration run" |
+| work-status banners | "**Outline (future work).** We will investigate…"; "deferred to a follow-up paper" |
+| dated rename history inside symbol definitions | "**Canonized 2026-07-12** from the former $\beta_K$…" in the notation register |
+| effort estimates and workstream labels | "~1-2 weeks" in a published table; `Story B`, `R2-c`, `w3-w4` |
+| editing to-dos | "several existing blocks should be refactored…", keyed to source paths |
+
+This is a **different failure from the one the bean opened on**. `C1`, `D6`,
+`§3b-cond` were labels a reader could not resolve. These are sentences a reader
+*can* parse and that are simply not about the paper — the difference between
+"open" and "open — no corpus content" is that the second tells the reader about
+a repository they cannot see.
+
+Worth keeping as the axis's definition going forward: the test is not "is this
+jargon" but **"is the referent something the paper contains".**
+
+Two findings from the reviewers were checked and are correctly *not* defects:
+`analytic-obstructions.md`'s "we audit which analytic structures lift" is
+ordinary English for a systematic verification, and
+`electroweak-higgs-torus-link-triplet`'s `C1`/`C2` now read as hypothesis
+labels because the block defines them in its own table.
+
 ## Out of scope, noted here so it is not lost
 
 `content/schema/references.ts` carries the project's own pull requests as
