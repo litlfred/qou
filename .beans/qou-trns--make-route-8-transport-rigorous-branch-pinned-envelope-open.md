@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T16:05:00Z
+updated_at: 2026-08-08T16:50:00Z
 parent: 0yqu
 ---
 
@@ -816,5 +816,68 @@ the derivative exists — but a wrong value would mean a wrong partial.
 3. Glue `[0,π] ∖ {φ₀}` → `[0,π]` with `constant_of_hasDerivWithinAt_zero_off_point`.
 
 Each is now a named, bounded task with its inputs in hand. None is written.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later still) — the envelope's second ingredient, and the endpoint bites again
+
+`QOU/QBeta/FiveTwoEnvelopeSum.lean`, sorry-free, no warnings, `lake` green (1894
+jobs). Route 26 extended to 8 gates, exit 0.
+
+```lean
+exp_sum_log_one_sub_x_mul : exp(Σⱼ log(1 − x·yⱼ)) = x        -- from Vieta alone
+exp_sum_log_one_sub_div   : exp(Σⱼ log(1 − yⱼ/x)) = x⁻¹      -- from Vieta alone
+sum_div_of_pinned         : the assembly, pure algebra
+sum_dVdx_of_pinned        : Σⱼ ∂V/∂x = −2·log x / x, given the pinned sums
+envelope_value            : (−2 log x / x)·(i·x) = 2φ when log x = iφ
+```
+
+The first two are the `hexp` inputs the pinning lemma consumes; they need **no
+analysis**. The last three are algebra. The *pinning* is taken as a hypothesis —
+it needs `hcont`, still open — which is the honest factoring: analysis separated
+from algebra, and only the algebra done here.
+
+### ⚠ A finding: the pinned identity FAILS at the endpoint, and it is forced
+
+G8 measures the branch integers with **principal** branches rather than assuming
+them:
+
+    k_A = 0  everywhere on the arc
+    k_B = 0  on [0, π)   and   **1 at φ = π**
+
+So `sum_dVdx_of_pinned`'s hypothesis is **false at the endpoint**. And it is
+forced, not accidental: at `x = −1` the two expressions `1 − x·y` and `1 − y/x`
+are *literally the same*, `1 + y`, so `Σ_A = Σ_B` — while the two identities
+demand `+log x` and `−log x`, which differ by `2πi` when `log(−1) = +iπ`. Hence
+`k_B − k_A = 1` there necessarily.
+
+**Harmless, for a reason worth stating precisely.** `π` is an **endpoint**:
+`S(π) − S(0)` needs the derivative only on the *open* interval plus continuity on
+the closed one. So the identity holding on `[0,π)` rather than `[0,π]` costs
+nothing, and **`φ₀` remains the only interior exceptional point** — which is what
+`constant_of_hasDerivWithinAt_zero_off_point` is shaped for.
+
+This is a **fifth** independent way this arc's endpoint sits on the branch cut,
+after: `1 − x·y₁ = 1 − w₁` on the cut; `x = −1` itself on the cut; the
+principal-branch saddle sum jumping there (Route 22 G7); and cut-avoidance
+holding only on the *open* arc (Route 21 G7).
+
+### Also measured
+
+G7: both Vieta products hold along the whole arc to `7.2e-51` — `∏(1−x·yⱼ) = x`
+and `∏(1−yⱼ/x) = 1/x`.
+
+### What is left for `dS/dφ = 2φ`
+
+1. Assemble the collapse over the three roots **in Lean** — G6 checks it
+   numerically (to 1e-31); the Lean chain rule is not written.
+2. Discharge the branch pinning from `hcont` — the `hexp` inputs are now proved,
+   the continuity is not.
+3. Glue across `φ₀` with `constant_of_hasDerivWithinAt_zero_off_point`.
+
+Item 2 shrank today: the pinning lemma's *algebraic* inputs are all proved, and
+what remains is exactly `hcont`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**

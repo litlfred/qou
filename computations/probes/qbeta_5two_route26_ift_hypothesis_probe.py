@@ -35,7 +35,7 @@ the envelope step; it verifies the hypotheses and the collapse it rests on.
 import json
 import pathlib
 
-from mpmath import (acos, exp, fabs, im, log, mp, mpc, mpf, nstr, pi, polylog,
+from mpmath import (acos, exp, fabs, im, log, mp, mpf, nint, nstr, pi, polylog,
                     polyroots, re)
 
 
@@ -206,6 +206,54 @@ def main() -> int:
         "rows": rows6, "worst": nstr(worst6, 8), "pass": bool(worst6 < mpf(10) ** -10),
     })
 
+    # ---- G7: the two Vieta products that pin the log-sums -------------------
+    worst7 = mpf(0)
+    for i in range(0, 21):
+        ph = pi * i / 20
+        x = exp(1j * ph)
+        rs = roots_at(x)
+        pA = (1 - x * rs[0]) * (1 - x * rs[1]) * (1 - x * rs[2])
+        pB = (1 - rs[0] / x) * (1 - rs[1] / x) * (1 - rs[2] / x)
+        worst7 = max(worst7, fabs(pA - x), fabs(pB - 1 / x))
+    gates.append({
+        "gate": "G7",
+        "claim": "the two Vieta products FiveTwoEnvelopeSum exponentiates to: prod_j (1 - x y_j) "
+                 "= x and prod_j (1 - y_j/x) = 1/x, along the whole arc. These are the hexp "
+                 "inputs the branch-pinning lemma consumes, and they hold from Vieta alone",
+        "n_points": 21, "worst": nstr(worst7, 8), "pass": bool(worst7 < TOL),
+    })
+
+    # ---- G8: are the branch integers actually ZERO with principal branches? --
+    kA, kB = [], []
+    for i in range(0, 21):
+        ph = pi * i / 20
+        x = mpf(-1) if i == 20 else exp(1j * ph)
+        rs = roots_at(x)
+        sA = sum(log(1 - x * r) for r in rs)
+        sB = sum(log(1 - r / x) for r in rs)
+        kA.append(int(nint(re((sA - log(x)) / (2j * pi)))))
+        kB.append(int(nint(re((sB + log(x)) / (2j * pi)))))
+    gates.append({
+        "gate": "G8",
+        "claim": "MEASURED, not assumed. k_A = 0 everywhere on the arc; k_B = 0 on [0,pi) and "
+                 "**1 AT THE ENDPOINT**. So sum_dVdx_of_pinned's hypothesis is FALSE at phi = pi "
+                 "for principal branches. It is FORCED, not an accident: at x = -1 the two "
+                 "expressions 1 - x*y and 1 - y/x are literally the same (1 + y), so Sum_A = "
+                 "Sum_B; but the two identities demand +log x and -log x, which differ by 2 pi i "
+                 "when log(-1) = +i pi. Hence k_B - k_A = 1 there necessarily. Harmless for the "
+                 "envelope because pi is an ENDPOINT -- S(pi) - S(0) needs the derivative only "
+                 "on the open interval plus continuity on the closed one -- but it means the "
+                 "identity holds on [0,pi), not [0,pi], and phi_0 remains the only INTERIOR "
+                 "exceptional point. A fifth independent way this arc's endpoint sits on the cut",
+        "k_A_along_arc": kA, "k_B_along_arc": kB,
+        "k_A_all_zero": bool(all(k == 0 for k in kA)),
+        "k_B_zero_on_interior": bool(all(k == 0 for k in kB[:-1])),
+        "k_B_at_endpoint": kB[-1],
+        "difference_forced_at_x_eq_-1": kB[-1] - kA[-1],
+        "pass": bool(all(k == 0 for k in kA) and all(k == 0 for k in kB[:-1])
+                     and kB[-1] - kA[-1] == 1),
+    })
+
     out = {
         "probe": "qbeta_5two_route26_ift_hypothesis",
         "bean": "qou-trns", "dps": mp.dps,
@@ -221,9 +269,11 @@ def main() -> int:
                                           "dx/dphi to better than 1e-10 by finite differences. "
                                           "The dy/dphi term drops because partial V/partial y = 0 "
                                           "on the curve.",
-            "what_remains": "assembling the collapse over the three roots in Lean, the Vieta sum "
-                            "giving sum_j partial V/partial x = -2 log x / x, and gluing across "
-                            "phi_0 with ConstantOffOnePoint. None of that is written.",
+            "what_remains": "assembling the collapse over the three roots in Lean (G6 is "
+                            "numerical), and gluing across phi_0 with ConstantOffOnePoint. The "
+                            "Vieta sum is now Lean-proved in FiveTwoEnvelopeSum, conditional on "
+                            "the branch pinning, which G8 shows holds on [0,pi) and FAILS at the "
+                            "endpoint -- forced, and harmless because pi is an endpoint.",
             "sum_rule_status": "verified to 80 dps, unproved",
         },
     }

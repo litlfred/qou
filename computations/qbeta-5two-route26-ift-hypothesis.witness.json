@@ -72,12 +72,74 @@
       ],
       "worst": "3.4696637e-31",
       "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "the two Vieta products FiveTwoEnvelopeSum exponentiates to: prod_j (1 - x y_j) = x and prod_j (1 - y_j/x) = 1/x, along the whole arc. These are the hexp inputs the branch-pinning lemma consumes, and they hold from Vieta alone",
+      "n_points": 21,
+      "worst": "7.1966392e-51",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "MEASURED, not assumed. k_A = 0 everywhere on the arc; k_B = 0 on [0,pi) and **1 AT THE ENDPOINT**. So sum_dVdx_of_pinned's hypothesis is FALSE at phi = pi for principal branches. It is FORCED, not an accident: at x = -1 the two expressions 1 - x*y and 1 - y/x are literally the same (1 + y), so Sum_A = Sum_B; but the two identities demand +log x and -log x, which differ by 2 pi i when log(-1) = +i pi. Hence k_B - k_A = 1 there necessarily. Harmless for the envelope because pi is an ENDPOINT -- S(pi) - S(0) needs the derivative only on the open interval plus continuity on the closed one -- but it means the identity holds on [0,pi), not [0,pi], and phi_0 remains the only INTERIOR exceptional point. A fifth independent way this arc's endpoint sits on the cut",
+      "k_A_along_arc": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "k_B_along_arc": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "k_A_all_zero": true,
+      "k_B_zero_on_interior": true,
+      "k_B_at_endpoint": 1,
+      "difference_forced_at_x_eq_-1": 1,
+      "pass": true
     }
   ],
   "verdict": {
     "hypothesis_holds_where_it_must": "min_j |curveDy| along the arc is bounded away from zero except at phi_0/pi ~ 0.7662, where refinement drives it to zero -- exactly the branch point exists_unit_circle_disc_zero proves. So the IFT covers [0,pi] minus one point.",
     "envelope_collapse_verified": "G6: d/dphi V(x, y(phi)) = (partial V/partial x) * dx/dphi to better than 1e-10 by finite differences. The dy/dphi term drops because partial V/partial y = 0 on the curve.",
-    "what_remains": "assembling the collapse over the three roots in Lean, the Vieta sum giving sum_j partial V/partial x = -2 log x / x, and gluing across phi_0 with ConstantOffOnePoint. None of that is written.",
+    "what_remains": "assembling the collapse over the three roots in Lean (G6 is numerical), and gluing across phi_0 with ConstantOffOnePoint. The Vieta sum is now Lean-proved in FiveTwoEnvelopeSum, conditional on the branch pinning, which G8 shows holds on [0,pi) and FAILS at the endpoint -- forced, and harmless because pi is an endpoint.",
     "sum_rule_status": "verified to 80 dps, unproved"
   }
 }
