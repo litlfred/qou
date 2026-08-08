@@ -37,6 +37,15 @@
 # that Lake treats as entirely stale: it rebuilds, and rebuilding EVICTS the
 # untraced oleans. That is the defect this script used to ship (bean 02kc);
 # such a cache only ever worked for direct `lean` + LEAN_PATH invocations.
+#
+# CONSEQUENCE — `build-missing-mathlib-oleans.sh` CANNOT feed this script.
+# That producer compiles with `lean -o` (lean-direct), and `.trace` is a Lake
+# bookkeeping artifact that only `lake build` writes. So the documented
+# "build-missing → seed" flow now populates $BUILT_FILE and then *correctly*
+# trips the 90% trace guard below. That refusal is the right answer, NOT a bug:
+# a lean-direct tree has no traces to seed, so the cache it would publish is
+# the useless kind. The only escape hatch is seeding from a real `lake build`
+# tree. (Flagged by the sibling agent on PR #4705, who wired that producer up.)
 set -euo pipefail
 ROOT="$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel)"
 cd "$ROOT"
@@ -88,6 +97,33 @@ if [ -f "$BUILT_FILE" ]; then
   done < "$BUILT_FILE"
 fi
 echo "  fresh mathlib oleans: $n_ml  (traces: $n_tr)"
+
+# No mathlib modules collected at all. The `n_ml > 0` wrapper on the coverage
+# check below is load-bearing (div-by-zero), so without this an absent or empty
+# $BUILT_FILE falls straight through it and seeds only the rev-independent dep
+# oleans. The own-package guard further down does happen to stop the default
+# mathlib branch, but it reports the wrong cause ("zero belong to mathlib",
+# pointing at SEED_PAPER) when the real fault is that $BUILT_FILE was never
+# written. Diagnose it here, where the cause is knowable.
+#
+# Raised by the sibling agent on PR #4705, which found that nothing in the repo
+# ever wrote $BUILT_FILE: build-missing-mathlib-oleans.sh recorded builds as
+# decorated `BUILT(n) <mod>` lines in its own $LOG — a different path in a
+# different format — so producer and consumer never connected.
+if [ "$n_ml" -eq 0 ]; then
+  echo "REFUSING to seed '$BR': no mathlib modules collected (n_ml=0)." >&2
+  if [ ! -f "$BUILT_FILE" ]; then
+    echo "\$BUILT_FILE does not exist: $BUILT_FILE" >&2
+  else
+    echo "\$BUILT_FILE exists but yielded no modules: $BUILT_FILE" >&2
+    echo "Expected one bare module name per line (e.g. Mathlib.Init), NOT the" >&2
+    echo "decorated 'BUILT(n) <mod>' lines that build-missing-mathlib-oleans.sh" >&2
+    echo "writes to its own log — that format will not parse here." >&2
+  fi
+  echo "Seeding now would publish only the rev-independent dependency oleans," >&2
+  echo "with none of the pinned-rev mathlib set the cache exists to carry." >&2
+  exit 1
+fi
 
 # A cache whose oleans lack traces is worse than no cache: Lake rebuilds and
 # evicts them. Refuse to seed one rather than publish a silently-useless
