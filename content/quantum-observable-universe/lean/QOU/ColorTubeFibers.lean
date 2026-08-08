@@ -38,7 +38,7 @@ structure ColorTubeFibers (R : Type*) [CommRing R] where
 /-- The shift `𝐫 = X − z` (the map `X = 𝐜 + z` to the color elliptic fiber
     `𝓔_z`) turns the color-tube cubic into the monic cubic
     `X³ + (z+1)X² + (z²+z+1)X + (z³+z²+z+1)`. -/
-theorem shift_to_elliptic {R : Type*} [CommRing R]
+theorem ColorTubeFibers.shift_to_elliptic {R : Type*} [CommRing R]
     (C : ColorTubeFibers R) (X : R) :
     C.cubic (X - C.z) =
       X ^ 3 + (C.z + 1) * X ^ 2 + (C.z ^ 2 + C.z + 1) * X

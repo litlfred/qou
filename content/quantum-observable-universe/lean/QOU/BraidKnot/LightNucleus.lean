@@ -26,7 +26,7 @@ inductive LightNucleus : Type where
 deriving DecidableEq, Repr
 
 /-- The atomic mass number `A` of a `LightNucleus`. -/
-def A : LightNucleus → ℕ
+def LightNucleus.A : LightNucleus → ℕ
   | .deuterium => 2
   | .tritium   => 3
   | .helium3   => 3

@@ -43,7 +43,7 @@ structure NucleusDatum where
   N : ℕ
 
 /-- Mass number A = Z + N. -/
-def A (d : NucleusDatum) : ℕ := d.Z + d.N
+def NucleusDatum.A (d : NucleusDatum) : ℕ := d.Z + d.N
 
 /-- The seven nuclear magic numbers. -/
 def MAGIC_LADDER : Finset ℕ := {2, 8, 20, 28, 50, 82, 126}

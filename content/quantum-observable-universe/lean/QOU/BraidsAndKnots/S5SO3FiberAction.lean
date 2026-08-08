@@ -60,7 +60,7 @@ def dim : PartitionOf5 → ℕ
 
 /-- Conjugate partition (transpose Young diagram).  Pairs:
     (5) ↔ (1¹¹¹¹¹), (4,1) ↔ (2,1¹¹¹), (3,2) ↔ (2,2,1), (3,1,1) self-conjugate. -/
-def conjugate : PartitionOf5 → PartitionOf5
+def PartitionOf5.conjugate : PartitionOf5 → PartitionOf5
   | .five          => .onesFive
   | .fourOne       => .twoOneOneOne
   | .threeTwo      => .twoTwoOne

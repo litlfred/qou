@@ -43,7 +43,7 @@ structure Cell where
 deriving DecidableEq, Repr
 
 /-- Cell content `c(r, col) = col - r ∈ ℤ`. -/
-def content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
+def Cell.content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
 
 /-- The transpose of a cell: swap row and column. -/
 def transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
