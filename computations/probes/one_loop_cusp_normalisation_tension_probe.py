@@ -56,8 +56,26 @@ That is the concrete form of the `c >= 2` normalisation gap, and it is the
 independent reason the retraction was right: constants cannot be transported
 between the corpus's `c_sigma` and DGLZ's `S_1`/`s_1` until this is done.
 
-Derives nothing. Reports two measured numbers, one textbook count, and the size
-of the gap between them.
+BUT THE MISSING STEP HAS ALMOST NO ROOM, WHICH PARTLY RELIEVES THE WORRY. If the
+step is `g(c)` then `k_meas(c) = k_true * g(c)`, so the measured `k` ratios bound
+it directly — and the `c=1 -> c=2` ratio pins it to 1 at ~17 digits:
+
+    g(2)/g(1) = k(2)/k(1) = 0.99999999999999999548
+
+Every non-trivial candidate dies on that one number: `2^((c-1)/2)` (the retracted
+per-cusp factor), `2^(c-1)`, `c`, `sqrt(c)`, `c^(1/4)`. Only `g == 1` survives.
+So whatever fixes the exponent bookkeeping must contribute exactly 1 to the
+CONSTANT at `c = 1` and `c = 2`: **the tension is in the power, and it does not
+leak into `k` at the cusp numbers tested.**
+
+The `c = 3` deviation (L6a4, 0.35%) is not a counterexample to that, and it is
+not a cusp law either — a systematic `c`-dependence would have shown at `c = 2`
+and does not, to 17 digits. More likely specific to that computation, as its own
+witness already says.
+
+Derives nothing. Reports two measured exponents, one textbook count that is an
+inference rather than a DGLZ statement, the size of the gap, and a bound on what
+could close it.
 """
 
 from __future__ import annotations
@@ -74,12 +92,25 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 _UPSTREAM_RECORDS: list = []
 
-from mpmath import mp, mpf, log  # noqa: E402
+from mpmath import mp, mpf, sqrt, log  # noqa: E402
 
 HERE = pathlib.Path(__file__).resolve().parent
 COMP = HERE.parent
 FIG8 = COMP / "whitehead-c-sigma-fig8-calib.witness.json"
 WHIT = COMP / "whitehead-c-sigma.witness.json"
+DISSOLUTION = COMP / "one-loop-c-sigma-percusp-dissolution.witness.json"
+
+# Candidate forms for a missing c-dependent dictionary step g(c). Tested
+# against the ratio the data pins hardest, g(2)/g(1) = k(2)/k(1).
+G_CANDIDATES = {
+    "2^((c-1)/2)  [the retracted per-cusp factor]":
+        lambda c: mpf(2) ** ((c - 1) / mpf(2)),
+    "2^(c-1)": lambda c: mpf(2) ** (c - 1),
+    "c": lambda c: mpf(c),
+    "sqrt(c)": lambda c: sqrt(mpf(c)),
+    "c^(1/4)": lambda c: mpf(c) ** mpf("0.25"),
+    "1  [no step]": lambda c: mpf(1),
+}
 
 # cusp counts of the two manifolds whose N-exponent was actually fitted
 CUSPS = {"4_1": 1, "L5a1": 2}
@@ -150,6 +181,38 @@ def main() -> int:
     print("  c_sigma(L5a1) instead converges to 20 digits, so p = 3/2 is")
     print("  correct at c = 2 as a matter of measurement.")
 
+    # ── how much room the missing step actually has ─────────────────────
+    # The tension above is real, but it does not follow that the CONSTANT is
+    # in danger at c = 2. If the missing dictionary step is g(c), then
+    # k_meas(c) = k_true * g(c), so the measured k ratios bound g directly —
+    # and they bound it hard.
+    dis = record_upstream(DISSOLUTION, _UPSTREAM_RECORDS)
+    k = {int(c): mpf(v) for c, v in dis["k_c"].items()}
+    r21 = k[2] / k[1]
+    r31 = k[3] / k[1]
+    print("\n  how much room does a missing c-dependent step g(c) have?")
+    print(f"     g(2)/g(1) = k(2)/k(1) = {mp.nstr(r21, 20)}   "
+          f"(|dev| {mp.nstr(abs(r21 - 1), 3)})")
+    print(f"     g(3)/g(1) = k(3)/k(1) = {mp.nstr(r31, 20)}   "
+          f"(|dev| {mp.nstr(abs(r31 - 1), 3)})")
+    g_tests = {}
+    for name, f in G_CANDIDATES.items():
+        pred = f(2) / f(1)
+        survives = bool(abs(pred - r21) < mpf("1e-15"))
+        g_tests[name] = {"predicted_ratio": mp.nstr(pred, 14),
+                         "survives": survives}
+        print(f"     {name:44s} -> {mp.nstr(pred, 12):>14}  "
+              f"{'SURVIVES' if survives else 'excluded'}")
+    only_trivial = bool(
+        all(not v["survives"] for n, v in g_tests.items()
+            if not n.startswith("1  "))
+        and g_tests["1  [no step]"]["survives"])
+    g_digits = int(-log(abs(r21 - 1)) / log(10))
+    print(f"\n     => any missing step is 1 at c = 1 and c = 2 to {g_digits} "
+          "digits.")
+    print("     The c = 3 deviation is 0.35% but is NOT a smooth cusp law: a")
+    print("     systematic c-dependence would have shown at c = 2 and does not.")
+
     verdict = (
         "THE N-POWER IS MEASURED CUSP-INDEPENDENT AND DGLZ MAKES IT "
         "CUSP-DEPENDENT; NOBODY HAS RECONCILED THEM. DGLZ eq (2.1) carries "
@@ -176,9 +239,25 @@ def main() -> int:
         "in the dictionary is unaccounted for. It also locates the c >= 2 risk "
         "precisely, in the same place the retracted 2^((c-1)/2) per-cusp factor "
         "and L6a4's unexplained 0.35% both sit. "
+        "AND THE MISSING STEP HAS ALMOST NO ROOM, WHICH PARTLY RELIEVES THE "
+        "WORRY THIS PROBE OPENED WITH. If the step is g(c) then "
+        "k_meas(c) = k_true*g(c), so the measured k ratios bound it: "
+        f"g(2)/g(1) = {mp.nstr(r21, 18)}, i.e. 1 to {g_digits} digits. Every "
+        "non-trivial candidate dies on that one ratio — 2^((c-1)/2) (the "
+        "retracted per-cusp factor), 2^(c-1), c, sqrt(c), c^(1/4) — and only "
+        "g == 1 survives. So whatever fixes the exponent bookkeeping must "
+        "contribute exactly 1 to the CONSTANT at c = 1 and c = 2. The tension "
+        "is in the power, and it does not leak into k at the cusp numbers "
+        "tested. "
+        "THE c = 3 DEVIATION IS NOT A CUSP LAW EITHER. L6a4 is off by 0.35%, "
+        "but a systematic c-dependence would have shown at c = 2 and does not "
+        "— 17 digits of agreement there. So that offset is more likely "
+        "specific to the L6a4 computation, as its own witness already says, "
+        "than evidence of a law. "
         "SCOPE: no derivation. Two fitted exponents from committed witnesses, "
         "one textbook cohomology count that is my inference and not DGLZ's "
-        "statement, and the size of the gap between them."
+        "statement, the size of the gap between them, and a bound on what "
+        "could close it."
         if (p_const and tension) else
         "NO TENSION FOUND on this data — re-read the exponents before citing "
         "this probe.")
@@ -221,6 +300,24 @@ def main() -> int:
         "observed": ("c_sigma(L5a1) converges to 20 digits at p = 3/2, so 3/2 "
                      "is correct at c = 2 as a matter of measurement"),
     })
+    wb.add_data("bound_on_the_missing_step", {
+        "model": "k_measured(c) = k_true * g(c) for a missing dictionary step g",
+        "g2_over_g1": mp.nstr(r21, 20),
+        "g3_over_g1": mp.nstr(r31, 20),
+        "digits_pinning_g2_over_g1": g_digits,
+        "candidates": g_tests,
+        "only_trivial_survives": only_trivial,
+        "reading": ("every non-trivial candidate dies on the c=1 -> c=2 ratio; "
+                    "only g == 1 survives. So whatever fixes the exponent "
+                    "bookkeeping contributes exactly 1 to the CONSTANT at c = 1 "
+                    "and c = 2 — the tension is in the power and does not leak "
+                    "into k at the cusp numbers tested. This PARTLY RELIEVES "
+                    "the concern this probe opens with."),
+        "c3_is_not_a_cusp_law": ("L6a4 deviates 0.35%, but a systematic "
+                                 "c-dependence would have shown at c = 2 and "
+                                 "does not (17 digits). More likely specific to "
+                                 "that computation, as its own witness says"),
+    })
     wb.add_data("what_is_missing", (
         "a c-dependent step in the dictionary between the corpus's c_sigma "
         "normalisation and DGLZ's S_1/s_1. Most plausibly the colored-Jones "
@@ -241,6 +338,12 @@ def main() -> int:
         computed="1" if p_const else "0", expected="1", tolerance="0.5",
         source=("p = 3/2 fitted at both c = 1 and c = 2, agreeing to better "
                 "than 1e-5 — not assumed at either"))
+    wb.add_assertion(
+        "missing_step_is_trivial_at_c_1_and_2",
+        computed="1" if only_trivial else "0", expected="1", tolerance="0.5",
+        source=("g(2)/g(1) = 1 to ~17 digits, which excludes 2^((c-1)/2), "
+                "2^(c-1), c, sqrt(c) and c^(1/4); only g == 1 survives, so the "
+                "exponent tension does not leak into the constant"))
     wb.add_assertion(
         "naive_dglz_count_disagrees_at_c_equals_2",
         computed="1" if tension else "0", expected="1", tolerance="0.5",

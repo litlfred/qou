@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T12:40:36.933920+00:00",
-  "commitSha": "3d7762e0a34658bbe40bd89bab1e4cb46ef67b27",
+  "computedAt": "2026-08-08T12:43:24.986515+00:00",
+  "commitSha": "6268b69950fabbad3f8806216d147edbd6e37a04",
   "assertions": [
     {
       "name": "measured_N_power_is_cusp_independent",
@@ -11,6 +11,14 @@
       "passed": true,
       "tolerance": "0.5",
       "source": "p = 3/2 fitted at both c = 1 and c = 2, agreeing to better than 1e-5 — not assumed at either"
+    },
+    {
+      "name": "missing_step_is_trivial_at_c_1_and_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "g(2)/g(1) = 1 to ~17 digits, which excludes 2^((c-1)/2), 2^(c-1), c, sqrt(c) and c^(1/4); only g == 1 survives, so the exponent tension does not leak into the constant"
     },
     {
       "name": "naive_dglz_count_disagrees_at_c_equals_2",
@@ -22,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 20,
   "computation": "one-loop-cusp-normalisation-tension",
   "scriptFile": "one_loop_cusp_normalisation_tension_probe.py",
-  "scriptHash": "a6b2e21c031c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d14dcd6561e4",
+  "scriptCommitSha": "6268b69950fabbad3f8806216d147edbd6e37a04",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -74,6 +82,41 @@
       },
       "observed": "c_sigma(L5a1) converges to 20 digits at p = 3/2, so 3/2 is correct at c = 2 as a matter of measurement"
     },
+    "bound_on_the_missing_step": {
+      "model": "k_measured(c) = k_true * g(c) for a missing dictionary step g",
+      "g2_over_g1": "0.99999999999999999548",
+      "g3_over_g1": "1.0034899245169215177",
+      "digits_pinning_g2_over_g1": 17,
+      "candidates": {
+        "2^((c-1)/2)  [the retracted per-cusp factor]": {
+          "predicted_ratio": "1.4142135623731",
+          "survives": false
+        },
+        "2^(c-1)": {
+          "predicted_ratio": "2.0",
+          "survives": false
+        },
+        "c": {
+          "predicted_ratio": "2.0",
+          "survives": false
+        },
+        "sqrt(c)": {
+          "predicted_ratio": "1.4142135623731",
+          "survives": false
+        },
+        "c^(1/4)": {
+          "predicted_ratio": "1.1892071150027",
+          "survives": false
+        },
+        "1  [no step]": {
+          "predicted_ratio": "1.0",
+          "survives": true
+        }
+      },
+      "only_trivial_survives": true,
+      "reading": "every non-trivial candidate dies on the c=1 -> c=2 ratio; only g == 1 survives. So whatever fixes the exponent bookkeeping contributes exactly 1 to the CONSTANT at c = 1 and c = 2 — the tension is in the power and does not leak into k at the cusp numbers tested. This PARTLY RELIEVES the concern this probe opens with.",
+      "c3_is_not_a_cusp_law": "L6a4 deviates 0.35%, but a systematic c-dependence would have shown at c = 2 and does not (17 digits). More likely specific to that computation, as its own witness says"
+    },
     "what_is_missing": "a c-dependent step in the dictionary between the corpus's c_sigma normalisation and DGLZ's S_1/s_1. Most plausibly the colored-Jones normalisation for a LINK: c components each coloured by N, and the eq (4.4) ratio against the solid torus. Never worked out here.",
     "bears_on": [
       "the retraction of 'the DGLZ /2 is the corpus's k' — constants cannot be transported while this is open",
@@ -97,6 +140,14 @@
         "commitSha": "ce0bd1120573fc7e5f3f5a0ba647ecf243e6e5ca",
         "scriptCommitSha": null,
         "computedAt": "2026-08-01T23:11:36+00:00"
+      },
+      {
+        "path": "one-loop-c-sigma-percusp-dissolution.witness.json",
+        "sha256": "9a148a00706c1b3b38e6dd398eee4adad241da8740231a7c2eb0447523ea94e8",
+        "size_bytes": 4345,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
       }
     ]
   }

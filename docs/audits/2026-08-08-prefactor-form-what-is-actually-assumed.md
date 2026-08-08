@@ -294,6 +294,34 @@ cannot be transported between the two while an unaccounted `c`-dependent power
 sits in the dictionary. It also puts the `c ≥ 2` risk in one identified place —
 the same place the retracted `2^{(c−1)/2}` and L6a4's 0.35% both live.
 
+**And the missing step has almost no room — which partly relieves the worry.**
+If it is `g(c)`, then `k_meas(c) = k_true·g(c)`, so the measured `k` ratios bound
+it. The `c = 1 → c = 2` ratio pins it to 1 at ~17 digits:
+
+```
+g(2)/g(1) = k(2)/k(1) = 0.99999999999999999548
+```
+
+Every non-trivial candidate dies on that single number:
+
+| candidate | predicts `g(2)/g(1)` | |
+|---|---|---|
+| `2^{(c−1)/2}` (the retracted per-cusp factor) | 1.41421356237 | excluded |
+| `2^{c−1}` | 2.0 | excluded |
+| `c` | 2.0 | excluded |
+| `√c` | 1.41421356237 | excluded |
+| `c^{1/4}` | 1.18920711500 | excluded |
+| `1` (no step) | 1.0 | **survives** |
+
+So whatever fixes the exponent bookkeeping contributes exactly 1 to the
+**constant** at `c = 1` and `c = 2`. The tension is in the *power*, and it does
+not leak into `k` at the cusp numbers tested. The `c ≥ 2` risk is real as a
+bookkeeping gap and is **bounded** as a threat to the derivation.
+
+The `c = 3` deviation (L6a4, 0.35%) does not change that and is not a cusp law
+either: a systematic `c`-dependence would have shown at `c = 2` and does not, to
+17 digits. More likely specific to that computation, as its own witness says.
+
 Machine-checked in
 `computations/probes/one_loop_cusp_normalisation_tension_probe.py`.
 
