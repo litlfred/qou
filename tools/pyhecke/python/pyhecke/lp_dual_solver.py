@@ -57,6 +57,19 @@ class LpDualResult:
     dual_obj: float
     duality_gap: float
     feasible: bool
+    # Full-precision decimal strings, populated ONLY by the clarabel-MPFR
+    # backend. The solver already works at `prec_bits` (~50 dps) and already
+    # returns its answer as decimal strings; until now `_lp_result_from_dict`
+    # ran them through `float()` and threw ~35 digits away at the very last
+    # step, so no caller could get a float64-free result no matter how the
+    # inputs were supplied (bean qou-t0rf). `None` on the scipy path, which
+    # genuinely has nothing beyond f64 to report.
+    x_star_str: Optional[list] = None
+    y0_star_str: Optional[str] = None
+    y_star_str: Optional[list] = None
+    primal_obj_str: Optional[str] = None
+    dual_obj_str: Optional[str] = None
+    duality_gap_str: Optional[str] = None
 
     def to_dict(self) -> dict:
         return {
@@ -194,6 +207,13 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
         dual_obj=float(out["dual_obj"]),
         duality_gap=float(out["duality_gap"]),
         feasible=True,
+        # keep what the solver actually computed, alongside the f64 view
+        x_star_str=[str(v) for v in out["x_star"]],
+        y0_star_str=str(out["y0_star"]),
+        y_star_str=[str(v) for v in out["y_star"]],
+        primal_obj_str=str(out["primal_obj"]),
+        dual_obj_str=str(out["dual_obj"]),
+        duality_gap_str=str(out["duality_gap"]),
     )
 
 
@@ -221,15 +241,29 @@ def _solve_operator_selection_lp_clarabel(
     scipy+numpy environment.  The scipy backend therefore remains the
     default; this path is opt-in via ``backend="clarabel"``.
     """
-    t = np.asarray(t, dtype=float)
-    G = np.asarray(G, dtype=float)
-    d = len(t)
-    assert G.shape == (d, d), f"Gram matrix shape {G.shape} ≠ ({d},{d})"
+    # STRINGS IN, not just strings out. Callers may pass decimal strings (or
+    # mpmath mpf) for `t`, `G` and `n_target` — e.g. from
+    # `gram.gram_matrix_mp_strings()` / `gram.tr_m_mp_strings()`, which exist
+    # for precisely this boundary — and they now reach the MPFR solver intact.
+    # Passing np.ndarray still works and still enters as f64, as before.
+    def _s(x) -> str:
+        return x if isinstance(x, str) else repr(float(x))
 
-    # Decimal-string marshalling (carries full precision across the boundary).
-    t_str = [repr(float(x)) for x in t]
-    G_str = [[repr(float(G[i, j])) for j in range(d)] for i in range(d)]
-    n_str = repr(float(n_target))
+    if isinstance(t, np.ndarray) or not isinstance(t[0], str):
+        t = np.asarray(t, dtype=float)
+        G = np.asarray(G, dtype=float)
+        d = len(t)
+        assert G.shape == (d, d), f"Gram matrix shape {G.shape} ≠ ({d},{d})"
+        t_str = [repr(float(x)) for x in t]
+        G_str = [[repr(float(G[i, j])) for j in range(d)] for i in range(d)]
+    else:
+        d = len(t)
+        assert len(G) == d and all(len(r) == d for r in G), \
+            f"Gram matrix shape ≠ ({d},{d})"
+        t_str = [_s(x) for x in t]
+        G_str = [[_s(G[i][j]) for j in range(d)] for i in range(d)]
+
+    n_str = _s(n_target)
     m_str = repr(float(M_bound))
     dt_str = repr(float(dual_tol))
 
