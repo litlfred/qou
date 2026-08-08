@@ -67,11 +67,11 @@ structure OperatorNormBound (ρ : Type*) where
 
 /-- The closed-form `Δ_max(ρ) := 2 · L(β) · ‖ρ(β)‖_op² ·
     𝔪⁽⁰⁾(ρ_free)`. -/
-def deltaMax {ρ : Type*}
+def OperatorNormBound.deltaMax {ρ : Type*}
     (b : OperatorNormBound ρ) : ℝ :=
   2 * (b.braidLength : ℝ) * b.opNorm ^ 2 * b.freeMassLevel0
 
-theorem deltaMax_nonneg {ρ : Type*}
+theorem OperatorNormBound.deltaMax_nonneg {ρ : Type*}
     (b : OperatorNormBound ρ) :
     0 ≤ b.deltaMax := by
   unfold OperatorNormBound.deltaMax

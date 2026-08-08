@@ -156,7 +156,7 @@ structure CategoricalTransferMatrix where
 
 /-- A transfer matrix has a **mass gap** if the first excited state
     has strictly positive eigenvalue. -/
-def hasMassGap (tm : CategoricalTransferMatrix) : Prop :=
+def CategoricalTransferMatrix.hasMassGap (tm : CategoricalTransferMatrix) : Prop :=
   0 < tm.eigenvalues 1
 
 /-- The mass gap value (first non-zero eigenvalue). -/

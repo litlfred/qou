@@ -53,12 +53,12 @@ noncomputable def CategoricalQExtDeriv.dq {C : Type u}
   (cqd.q⁻¹) • cqd.d_classical + (1 - cqd.q⁻¹) • (cqd.proj_V ≫ cqd.d_classical)
 
 /-- When `q = 1`, `d_q` reduces to `d`. -/
-theorem dq_classical {C : Type u}
+theorem CategoricalQExtDeriv.dq_classical {C : Type u}
     [CategoryTheory.Category.{v} C] [CategoryTheory.MonoidalCategory C]
     [CategoryTheory.Preadditive C] [CategoryTheory.Linear ℝ C]
     (cqd : CategoricalQExtDeriv C) (hq : cqd.q = 1) :
     cqd.dq = cqd.d_classical := by
-  unfold dq
+  unfold CategoricalQExtDeriv.dq
   simp [hq, inv_one, sub_self, zero_smul, one_smul, add_zero]
 
 /-- **Categorical instanton**: a connection whose curvature is self-dual

@@ -112,11 +112,11 @@ noncomputable def SpectralSequence.einf (S : SpectralSequence)
   S.size (S.converges p q).choose p q
 
 /-- `E_∞^{p, q} = 0` iff the eventual stable size at `(p, q)` is zero. -/
-def vanishesAt (S : SpectralSequence) (p q : ℕ) : Prop :=
+def SpectralSequence.vanishesAt (S : SpectralSequence) (p q : ℕ) : Prop :=
   S.einf p q = 0
 
 /-- "Vanishes in positive q": `E_∞^{p, q} = 0` for all `q > 0`. -/
-def vanishesInPositiveQ (S : SpectralSequence) : Prop :=
+def SpectralSequence.vanishesInPositiveQ (S : SpectralSequence) : Prop :=
   ∀ p q, 0 < q → S.vanishesAt p q
 
 /-! ## §3  BB-spectral-sequence connection -/

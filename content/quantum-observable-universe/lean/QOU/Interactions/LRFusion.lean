@@ -71,7 +71,7 @@ class ContentAdditive (C : Composite) : Prop where
     Existence of this composite, together with the proved instance
     `contentAdditive_fromUnion`, shows that `ContentAdditive` is a
     consistent typeclass (non-vacuous). -/
-def fromUnion (ydZ ydN : YoungDiagram) : Composite where
+def Composite.fromUnion (ydZ ydN : YoungDiagram) : Composite where
   ydZ := ydZ
   ydN := ydN
   ydA := unionDiagram ydZ ydN

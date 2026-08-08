@@ -106,7 +106,7 @@ theorem add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y) :
     _ = 1 := by norm_num
 
 /-- An infinitesimal times a finite element is infinitesimal. -/
-theorem mul_finite {x y : K} (hx : Infinitesimal x)
+theorem Infinitesimal.mul_finite {x y : K} (hx : Infinitesimal x)
     (hy : IsFinite y) : Infinitesimal (x * y) := by
   intro n
   obtain ⟨m, hm⟩ := hy
@@ -135,7 +135,7 @@ theorem isFinite_one : IsFinite (1 : K) := by
   simpa using isFinite_natCast (K := K) 1
 
 /-- Every infinitesimal is finite. -/
-theorem isFinite {x : K} (h : Infinitesimal x) : IsFinite x := by
+theorem Infinitesimal.isFinite {x : K} (h : Infinitesimal x) : IsFinite x := by
   refine ⟨1, ?_⟩
   have := h 1
   simpa using this

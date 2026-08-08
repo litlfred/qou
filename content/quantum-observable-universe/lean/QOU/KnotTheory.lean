@@ -62,7 +62,7 @@ structure BraidWord where
   deriving Repr
 
 /-- Number of crossings = length of the braid word. -/
-def crossingCount (β : BraidWord) : ℕ :=
+def BraidWord.crossingCount (β : BraidWord) : ℕ :=
   β.letters.length
 
 /-! ## Hyperbolic Volume -/
