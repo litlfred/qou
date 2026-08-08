@@ -190,6 +190,38 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
     rw [finprod_apply hms z]
     exact finprod_zpow_eq_finset_prod_npow hDnn hfinite z
 
+/-- **In a `Finset` factorisation the exponent at a factor is the order of
+vanishing there.**
+
+Splitting `(· − a)^{m a}` off the product leaves an analytic function that does
+not vanish at `a` — the two remaining kinds of factor, `(· − b)^{m b}` for
+`b ≠ a` and the cofactor `g`, are both nonzero there — and that is exactly what
+`analyticOrderAt f a = m a` says. -/
+theorem analyticOrderAt_eq_of_finset_factorisation {V : Set ℂ} (hV : IsOpen V)
+    {S : Finset ℂ} {m : ℂ → ℕ} {f g : ℂ → ℂ}
+    (hg : AnalyticOnNhd ℂ g V) (hgne : ∀ z ∈ V, g z ≠ 0) (hSV : ∀ a ∈ S, a ∈ V)
+    (hEq : Set.EqOn f (fun z => (∏ a ∈ S, (z - a) ^ (m a)) * g z) V)
+    {a : ℂ} (ha : a ∈ S) : analyticOrderAt f a = m a := by
+  classical
+  have haV : a ∈ V := hSV a ha
+  have hpow : ∀ T : Finset ℂ,
+      AnalyticOnNhd ℂ (fun z : ℂ => ∏ b ∈ T, (z - b) ^ (m b)) V := fun T =>
+    Finset.analyticOnNhd_fun_prod _ fun b _ => (analyticOnNhd_id.sub analyticOnNhd_const).pow _
+  -- `f` is analytic at `a`, since it agrees with an analytic function near it
+  have hfA : AnalyticAt ℂ f a :=
+    (((hpow S) a haV).mul (hg a haV)).congr
+      (Filter.eventuallyEq_of_mem (hV.mem_nhds haV) hEq).symm
+  rw [hfA.analyticOrderAt_eq_natCast]
+  refine ⟨fun z => (∏ b ∈ S.erase a, (z - b) ^ (m b)) * g z,
+    ((hpow (S.erase a)) a haV).mul (hg a haV), ?_, ?_⟩
+  · refine mul_ne_zero (Finset.prod_ne_zero_iff.2 fun b hb => ?_) (hgne a haV)
+    exact pow_ne_zero _ (sub_ne_zero.2 (Ne.symm (Finset.ne_of_mem_erase hb)))
+  · filter_upwards [hV.mem_nhds haV] with z hz
+    have hval : f z = (∏ b ∈ S, (z - b) ^ (m b)) * g z := hEq hz
+    rw [hval, smul_eq_mul, ← mul_assoc]
+    congr 1
+    exact (Finset.mul_prod_erase S (fun b => (z - b) ^ (m b)) ha).symm
+
 end Factorisation
 
 end QOU.Mathlib

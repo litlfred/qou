@@ -267,6 +267,7 @@ theorem qThetaC_zeros_annulus (P : ℝ) (hP : 1 < P) (r R : ℝ) (hr : 0 < r) (h
     (hnR : ∀ z : ℂ, ‖z‖ = R → qThetaC P z ≠ 0) :
     ∃ (S : Finset ℂ) (m : ℂ → ℕ),
       (∀ a ∈ S, r < ‖a‖ ∧ ‖a‖ < R) ∧ (∀ a ∈ S, 0 < m a) ∧
+      (∀ a ∈ S, analyticOrderAt (qThetaC P) a = m a) ∧
       (∀ z : ℂ, r < ‖z‖ → ‖z‖ < R → (qThetaC P z = 0 ↔ z ∈ S)) ∧
       (∮ z in C((0:ℂ), R), deriv (qThetaC P) z / qThetaC P z)
         - (∮ z in C((0:ℂ), r), deriv (qThetaC P) z / qThetaC P z)
@@ -280,6 +281,8 @@ theorem qThetaC_zeros_annulus (P : ℝ) (hP : 1 < P) (r R : ℝ) (hr : 0 < r) (h
   have hVopen : IsOpen V := isOpen_openAnnulus
   have hgV : ∀ z ∈ V, g z ≠ 0 := by
     intro z hz; rw [hVdef] at hz; exact hgV' z hz.1 hz.2
+  have hSVmem : ∀ a ∈ S, a ∈ V := by
+    intro a ha; rw [hVdef]; exact hSb a ha
   -- every factor is a zero of `θ_P` …
   have hSzero : ∀ a ∈ S, qThetaC P a = 0 := by
     intro a ha
@@ -291,7 +294,9 @@ theorem qThetaC_zeros_annulus (P : ℝ) (hP : 1 < P) (r R : ℝ) (hr : 0 < r) (h
   have hSne : ∀ a ∈ S, ‖a‖ ≠ r ∧ ‖a‖ ≠ R :=
     fun a ha => ⟨fun h => hnr a h (hSzero a ha), fun h => hnR a h (hSzero a ha)⟩
   refine ⟨S.filter (fun a => r < ‖a‖ ∧ ‖a‖ < R), m, fun a ha => (Finset.mem_filter.1 ha).2,
-    fun a ha => hmpos a (Finset.mem_filter.1 ha).1, ?_, ?_⟩
+    fun a ha => hmpos a (Finset.mem_filter.1 ha).1,
+    fun a ha => QOU.Mathlib.analyticOrderAt_eq_of_finset_factorisation hVopen hg hgV hSVmem hEq
+      (Finset.mem_filter.1 ha).1, ?_, ?_⟩
   · -- the zeros in the annulus are exactly the filtered factors
     intro z hz1 hz2
     refine ⟨fun hzero => ?_, fun hzT => hSzero z (Finset.mem_filter.1 hzT).1⟩
@@ -359,12 +364,12 @@ own, and is unavoidable rather than restrictive: the integrand `θ'/θ` is not
 defined on a circle through a zero, and the radius is ours to choose. -/
 theorem qThetaC_unique_zero_fundamental_annulus (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
     (hne : ∀ z : ℂ, ‖z‖ = ρ → qThetaC P z ≠ 0) :
-    ∃ a : ℂ, ρ < ‖a‖ ∧ ‖a‖ < P ^ 2 * ρ ∧
+    ∃ a : ℂ, ρ < ‖a‖ ∧ ‖a‖ < P ^ 2 * ρ ∧ analyticOrderAt (qThetaC P) a = 1 ∧
       ∀ z : ℂ, ρ < ‖z‖ → ‖z‖ < P ^ 2 * ρ → (qThetaC P z = 0 ↔ z = a) := by
   classical
   have hP2 : (1:ℝ) < P ^ 2 := by nlinarith
   have hrR : ρ < P ^ 2 * ρ := by nlinarith
-  obtain ⟨S, m, hSb, hmpos, hSzero, hwind⟩ :=
+  obtain ⟨S, m, hSb, hmpos, hmord, hSzero, hwind⟩ :=
     qThetaC_zeros_annulus P hP ρ (P ^ 2 * ρ) hρ hrR hne (qThetaC_ne_zero_outer P hP ρ hρ hne)
   rw [qTheta_winding_step P hP ρ hρ hne] at hwind
   -- the contour identity pins the count at one
@@ -384,9 +389,11 @@ theorem qThetaC_unique_zero_fundamental_annulus (P : ℝ) (hP : 1 < P) (ρ : ℝ
     · exact h
   have hcard : S.card = 1 := le_antisymm (hsumN ▸ hle) (Finset.card_pos.2 hSne)
   obtain ⟨a, ha⟩ := Finset.card_eq_one.1 hcard
-  refine ⟨a, ?_, ?_, ?_⟩
-  · exact (hSb a (by rw [ha]; exact Finset.mem_singleton_self a)).1
-  · exact (hSb a (by rw [ha]; exact Finset.mem_singleton_self a)).2
+  have haS : a ∈ S := by rw [ha]; exact Finset.mem_singleton_self a
+  refine ⟨a, (hSb a haS).1, (hSb a haS).2, ?_, ?_⟩
+  · -- the single multiplicity carries the whole sum, so it is `1`
+    have hma : m a = 1 := by rw [ha, Finset.sum_singleton] at hsumN; exact hsumN
+    rw [hmord a haS, hma, Nat.cast_one]
   · intro z hz1 hz2
     rw [hSzero z hz1 hz2, ha, Finset.mem_singleton]
 
@@ -403,10 +410,11 @@ falls. -/
 theorem qThetaC_zero_locus_fundamental_annulus (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
     (hne : ∀ z : ℂ, ‖z‖ = ρ → qThetaC P z ≠ 0) (k : ℤ)
     (hk1 : ρ < P ^ (2 * k)) (hk2 : P ^ (2 * k) < P ^ 2 * ρ) :
-    ∀ z : ℂ, ρ < ‖z‖ → ‖z‖ < P ^ 2 * ρ →
-      (qThetaC P z = 0 ↔ z = -((P ^ (2 * k) : ℝ) : ℂ)) := by
+    analyticOrderAt (qThetaC P) (-((P ^ (2 * k) : ℝ) : ℂ)) = 1 ∧
+      ∀ z : ℂ, ρ < ‖z‖ → ‖z‖ < P ^ 2 * ρ →
+        (qThetaC P z = 0 ↔ z = -((P ^ (2 * k) : ℝ) : ℂ)) := by
   have hP0 : (0:ℝ) < P := lt_trans zero_lt_one hP
-  obtain ⟨a, _, _, hchar⟩ := qThetaC_unique_zero_fundamental_annulus P hP ρ hρ hne
+  obtain ⟨a, _, _, haord, hchar⟩ := qThetaC_unique_zero_fundamental_annulus P hP ρ hρ hne
   -- the lattice point is a zero, and it sits in the annulus, so it is *the* zero
   have hlat : ‖(-((P ^ (2 * k) : ℝ) : ℂ))‖ = P ^ (2 * k) := by
     rw [norm_neg, Complex.norm_real, Real.norm_eq_abs, abs_of_pos (zpow_pos hP0 _)]
@@ -415,7 +423,7 @@ theorem qThetaC_zero_locus_fundamental_annulus (P : ℝ) (hP : 1 < P) (ρ : ℝ)
       Complex.ofReal_zero]
   have hlateq : -((P ^ (2 * k) : ℝ) : ℂ) = a :=
     (hchar _ (by rw [hlat]; exact hk1) (by rw [hlat]; exact hk2)).1 hlatzero
-  intro z hz1 hz2
+  refine ⟨by rw [hlateq]; exact haord, fun z hz1 hz2 => ?_⟩
   rw [hchar z hz1 hz2, hlateq]
 
 end FundamentalAnnulus
@@ -478,11 +486,32 @@ theorem qThetaC_eq_zero_iff (P : ℝ) (hP : 1 < P) (w : ℂ) (hw : w ≠ 0) :
         _ < ρ * P ^ 2 := hρ1'
         _ = P ^ 2 * ρ := by ring
     have hw2 : ‖w‖ < P ^ 2 * ρ := by rw [mul_comm]; exact hρ1'
-    exact ⟨k, (qThetaC_zero_locus_fundamental_annulus P hP ρ hρ0 hclean k hρ2 hk2
+    exact ⟨k, ((qThetaC_zero_locus_fundamental_annulus P hP ρ hρ0 hclean k hρ2 hk2).2
       w (lt_of_lt_of_le hρ2 hkle) hw2).1 hzero⟩
   · rintro ⟨k, rfl⟩
     rw [← Complex.ofReal_neg, qThetaC_ofReal, qTheta_neg_zpow_eq_zero P hP0 k,
       Complex.ofReal_zero]
+
+/-- **Every zero of `θ_P` is simple.**
+
+Together with `qThetaC_eq_zero_iff` this is the entire divisor of `θ_P` on
+`ℂ*`: the orbit `−P^{2ℤ}`, reduced. It is what makes the C1 pole divisor
+*determined* rather than merely supported — a containment of zero sets fixes
+where the poles can be, but not with what multiplicity. -/
+theorem qThetaC_analyticOrderAt_neg_zpow (P : ℝ) (hP : 1 < P) (k : ℤ) :
+    analyticOrderAt (qThetaC P) (-((P ^ (2 * k) : ℝ) : ℂ)) = 1 := by
+  have hP0 : (0:ℝ) < P := lt_trans zero_lt_one hP
+  have hP2 : (1:ℝ) < P ^ 2 := by nlinarith
+  have hP2' : (0:ℝ) < P ^ 2 := by positivity
+  have hpos : (0:ℝ) < P ^ (2 * k) := zpow_pos hP0 _
+  obtain ⟨ρ, hρ1, hρ2, hclean⟩ :=
+    exists_clean_radius P hP (P ^ (2 * k) / P ^ 2) (P ^ (2 * k)) (by positivity)
+      (div_lt_self hpos hP2)
+  have hρ0 : 0 < ρ := lt_trans (by positivity) hρ1
+  have hk2 : (P:ℝ) ^ (2 * k) < P ^ 2 * ρ :=
+    calc (P:ℝ) ^ (2 * k) < ρ * P ^ 2 := (div_lt_iff₀ hP2').1 hρ1
+      _ = P ^ 2 * ρ := mul_comm _ _
+  exact (qThetaC_zero_locus_fundamental_annulus P hP ρ hρ0 hclean k hρ2 hk2).1
 
 end Global
 
