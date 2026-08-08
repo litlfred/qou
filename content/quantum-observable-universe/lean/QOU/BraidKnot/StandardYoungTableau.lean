@@ -2,6 +2,7 @@ import Mathlib.Combinatorics.Young.YoungDiagram
 import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Data.Nat.Factorial.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import Mathlib.Order.Interval.Finset.Nat
 
 /-!
 # QOU.BraidKnot.StandardYoungTableau — brick 1 of the Identity-I S_n rep-theory program
@@ -130,6 +131,51 @@ def StandardYoungTableau.hookLength (μ : YoungDiagram) (i j : ℕ) : ℕ :=
 /-- Every hook length is positive: besides its arm and leg it counts the cell itself (`+ 1`). -/
 theorem hookLength_pos (μ : YoungDiagram) (i j : ℕ) : 0 < StandardYoungTableau.hookLength μ i j := by
   unfold StandardYoungTableau.hookLength; omega
+
+/-- **Arm length in closed form.** The cells strictly right of `(i, j)` in row `i`
+are exactly `j < b < μ.rowLen i`, so there are `μ.rowLen i - j - 1` of them. -/
+theorem armCard_eq (μ : YoungDiagram) (i j : ℕ) :
+    (μ.cells.filter (fun c => c.1 = i ∧ j < c.2)).card = μ.rowLen i - j - 1 := by
+  have : (μ.cells.filter (fun c => c.1 = i ∧ j < c.2))
+      = ({i} : Finset ℕ) ×ˢ Finset.Ioo j (μ.rowLen i) := by
+    ext ⟨a, b⟩
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells, Finset.mem_product,
+      Finset.mem_singleton, Finset.mem_Ioo]
+    constructor
+    · rintro ⟨hmem, rfl, hjb⟩
+      exact ⟨rfl, hjb, YoungDiagram.mem_iff_lt_rowLen.mp hmem⟩
+    · rintro ⟨rfl, hjb, hblt⟩
+      exact ⟨YoungDiagram.mem_iff_lt_rowLen.mpr hblt, rfl, hjb⟩
+  rw [this, Finset.card_product, Finset.card_singleton, Nat.card_Ioo, one_mul]
+
+/-- **Leg length in closed form.** Dual to `armCard_eq`, via `colLen`. -/
+theorem legCard_eq (μ : YoungDiagram) (i j : ℕ) :
+    (μ.cells.filter (fun c => c.2 = j ∧ i < c.1)).card = μ.colLen j - i - 1 := by
+  have : (μ.cells.filter (fun c => c.2 = j ∧ i < c.1))
+      = Finset.Ioo i (μ.colLen j) ×ˢ ({j} : Finset ℕ) := by
+    ext ⟨a, b⟩
+    simp only [Finset.mem_filter, YoungDiagram.mem_cells, Finset.mem_product,
+      Finset.mem_singleton, Finset.mem_Ioo]
+    constructor
+    · rintro ⟨hmem, rfl, hia⟩
+      exact ⟨⟨hia, YoungDiagram.mem_iff_lt_colLen.mp hmem⟩, rfl⟩
+    · rintro ⟨⟨hia, halt⟩, rfl⟩
+      exact ⟨YoungDiagram.mem_iff_lt_colLen.mpr halt, rfl, hia⟩
+  rw [this, Finset.card_product, Finset.card_singleton, Nat.card_Ioo, mul_one]
+
+/-- **The hook length in `rowLen`/`colLen` form** — the bridge between the
+`Finset`-of-cells definition used here and the `(λ_i − j) + (colLen j − i) − 1`
+form used by the list-based `prodHooks`. Holds for genuine cells, where both
+subtractions are exact. -/
+theorem hookLength_eq_rowLen_add_colLen (μ : YoungDiagram) {i j : ℕ}
+    (h : (i, j) ∈ μ) :
+    StandardYoungTableau.hookLength μ i j
+      = (μ.rowLen i - j) + (μ.colLen j - i) - 1 := by
+  have hj : j < μ.rowLen i := YoungDiagram.mem_iff_lt_rowLen.mp h
+  have hi : i < μ.colLen j := YoungDiagram.mem_iff_lt_colLen.mp h
+  unfold StandardYoungTableau.hookLength
+  rw [armCard_eq, legCard_eq]
+  omega
 
 /-- The **hook-length product** `∏_{c ∈ μ} h(c)` appearing in the FRT formula. -/
 def hookProduct (μ : YoungDiagram) : ℕ :=
