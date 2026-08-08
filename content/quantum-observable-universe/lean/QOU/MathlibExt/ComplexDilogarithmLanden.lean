@@ -184,8 +184,14 @@ theorem one_sub_ofReal_mem_slitPlane {s : ℝ} (hs : s ≤ 0) :
 /-- **`landenCombo` is continuous along the closed negative axis, up to and
 including `0`.** The endpoint is the point of the lemma: the derivative fails
 there (`z ≠ 0` is one of `hasDerivAt_landenCombo`'s hypotheses), but continuity
-does not, and continuity is all the constancy theorem needs at the endpoint. -/
-theorem continuousOn_landenCombo_ofReal {t : ℝ} (ht : t ≤ 0) :
+does not, and continuity is all the constancy theorem needs at the endpoint.
+
+⚠ No hypothesis on `t`. A first version carried `ht : t ≤ 0` and Lean flagged it
+unused — correctly: continuity is checked pointwise on `Icc t 0`, and each point
+of that set already satisfies `s ≤ 0` from its own membership. For `t > 0` the
+set is empty and the statement is vacuously true, so dropping the bound
+generalises rather than weakens. -/
+theorem continuousOn_landenCombo_ofReal {t : ℝ} :
     ContinuousOn (fun s : ℝ => landenCombo ((s : ℝ) : ℂ)) (Set.Icc t 0) := by
   intro s hs
   have hs0 : (s : ℝ) ≤ 0 := hs.2
@@ -243,7 +249,7 @@ theorem landenCombo_ofReal_eq_zero {t : ℝ} (ht : t < 0) :
     have hC := hasDerivAt_landenCombo (ofReal_mem_notCut_of_nonpos hsneg.le) hz0 hz1
       (landenArg_mem_notCut hsneg.le) hu0 (one_sub_ofReal_mem_slitPlane hsneg.le)
     exact (hC.comp_ofReal).hasDerivWithinAt
-  have := constant_of_has_deriv_right_zero (continuousOn_landenCombo_ofReal ht.le) hderiv
+  have := constant_of_has_deriv_right_zero continuousOn_landenCombo_ofReal hderiv
     0 ⟨ht.le, le_rfl⟩
   rw [hzero] at this
   exact this.symm
