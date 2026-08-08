@@ -206,3 +206,60 @@ photon as its knot identity is a canon violation. Authoritative statements:
 unknot $0_1$ representing the neutrino") and the atlas registry
 ([`recursive-atom-knot-atlas-registry.md`](../appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md):
 "the bare photon (identity $\mathbf{1}$, not the unknot)").
+
+## Bar-even / bar-odd: always the coefficient half
+
+The words **bar-even** and **bar-odd** label four different gradings in this
+paper. They are not four involutions. All four descend from the single
+[`def:bar-involution`](../braids-and-knots/bar-involution.md) on $H_n(q)$,
+
+$$
+  \overline{\sigma_i} = \sigma_i^{-1}, \qquad \overline{q} = q^{-1},
+$$
+
+which has **two halves that blocks apply independently**:
+
+| Half | Acts by | Geometrically |
+|---|---|---|
+| **coefficient half** | $q \mapsto q^{-1}$, diagram fixed | reciprocates the weights |
+| **diagram half** | $\sigma_i \mapsto \sigma_i^{-1}$, coefficients fixed | the **mirror**: exchanges positive and negative crossings, $p \leftrightarrow m$ |
+
+**Convention.** In this paper *bar-even* and *bar-odd* always mean parity
+under the **coefficient half**. A parity taken under the diagram half is
+called **mirror-even** / **mirror-odd**, never "bar-". Which grading is meant:
+
+| | Splits | Graded by | Where |
+|---|---|---|---|
+| **A** | the Laurent scalar $\mathfrak{E}_{\mathrm{cross}}$ into $\cosh\lambda$ / $\sinh\lambda$ | coefficient half | [`obs:crossing-energy-decomposition`](../observations/crossing-energy-decomposition.md) |
+| **B** | the Hecke module into $e_+$ / $e_-$ by eigenvalue $q$ / $-q^{-1}$ | **neither** — the full involution *fixes* both idempotents | [`prop:em-coupling-projection`](../predicted-spectra/em-coupling-projection.md) |
+| **C** | the knot, by the mirror; the channel totals $E_{\mathrm{sym}}$ / $E_{\mathrm{asym}}$ | diagram half | same block as A, item 2 |
+| **D** | the algebra $A = A_+ \oplus A_-$ by the spin involution | coefficient half | [`def:spin-involution`](../mass-theory/spin-involution.md) |
+
+**A and D are the same grading.** On the symmetric/alternating Hecke block the
+spin involution acts as the eigenvalue swap $q^{2k} \leftrightarrow q^{-2k}$,
+which is exactly the coefficient half; its sectors are $A_+ = \cosh(2k\lambda)$
+and $A_- = \sinh(2k\lambda)$. So $A_+$ bar-even and $A_-$ bar-odd agrees with
+$\cosh\lambda$ bar-even and $\sinh\lambda$ bar-odd, and the shared vocabulary
+is consistent rather than colliding.
+
+**C is anti-correlated with A, and this is not an error.** The weight
+$\cosh\lambda$ is bar-even, while its channel total
+$E_{\mathrm{sym}} = (p - m)\cosh\lambda$ is mirror-**odd**, because the mirror
+flips the multiplicity $p - m$ as well as the weight. Both statements hold of
+the same summand; only the half differs. Read a parity claim about a *weight*
+as coefficient-half and a parity claim about a *channel total* as diagram-half
+unless the text says otherwise.
+
+**Never say "bar-even" unqualified of a channel.** Under the full involution
+both crossing-energy channels are negated, and both Hecke idempotents are
+fixed, so the words separate nothing there. They are informative only relative
+to a named half. Proved sorry-free over a general field in
+[`QOU.BraidKnot.CrossingEnergyBarParity`](../lean/QOU/BraidKnot/CrossingEnergyBarParity.lean)
+(`eSym_coef`, `eSym_mirror`, `bar_neg_of_both`); the full atlas including
+gradings B and D is
+[`bar-parity-involution-atlas.witness.json`](../../../computations/bar-parity-involution-atlas.witness.json).
+
+**Three unrelated objects also wear the glyph $\sigma$** — the Hecke generator
+$\sigma_i$, the mirror $K \mapsto K^{\sigma}$, and the spin involution
+$\sigma : A \to A$ — so a bare $\sigma$ never disambiguates a parity claim.
+Name the half instead.
