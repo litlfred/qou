@@ -352,6 +352,23 @@ def main():
     }
     out = os.path.join(_HERE, "t25-cinquefoil-deltalambda-sign.witness.json")
     os.makedirs(_HERE, exist_ok=True)
+    # Stamp the q0 pin from the producer itself. This witness writes with a raw
+    # json.dump rather than WitnessBuilder.save(), so neither build()'s stamping
+    # nor save()'s preserve-forward ever runs -- its previous `q0Anchor: proton`
+    # had been BACKFILLED by a sweep, and the first regeneration silently
+    # dropped it (which is exactly what happened here on 2026-08-08). 436
+    # producers write directly this way; 14 pinned witnesses are one rerun away
+    # from the same loss (bean qou-pin5). stamp_staleness_metadata is the
+    # documented helper for precisely this case.
+    try:
+        # `qou_substrate.witness` directly, not the `witness_base` shim: this
+        # module only puts tools/qou-substrate/python on sys.path, not
+        # computations/, so the shim is not importable from here.
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(witness, script_path=__file__,
+                                     engine="mpmath")
+    except Exception as _exc:  # noqa: BLE001
+        print(f"  [warn] could not stamp staleness/q0 metadata: {_exc!r}")
     with open(out, "w") as f:
         json.dump(witness, f, indent=2)
     print("witness ->", out)
