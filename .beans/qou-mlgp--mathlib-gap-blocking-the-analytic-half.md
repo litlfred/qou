@@ -654,3 +654,58 @@ slacks, and the gap `1/(12n) - 1/(12n+1)` is `O(1/n^2)` as needed.
 problem: a general Euler-Maclaurin summation formula is simply absent from
 Mathlib. What this corpus needs is the order-2 case for a `C^4` function on a
 compact interval, applied to `logSinc`.
+
+## Mathlib infra added: the trapezoid rule (gap 1, first tranche)
+
+`QOU/MathlibExt/TrapezoidRule.lean`, six declarations, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:341`:
+
+    integral_weight                            int_a^b (x-a)(b-x) = (b-a)^3/6
+    integral_eq_trapezoid_sub                  the EXACT error identity
+    abs_trapezoid_sub_integral_le              |trap - int| <= (b-a)^3 M/12
+    hasDerivAt_log_two_sin                     (log(2 sin))' = cos/sin
+    hasDerivAt_cos_div_sin                     (cos/sin)' = -1/sin^2
+    abs_trapezoid_sub_integral_log_two_sin_le  the instance (A) needs
+
+**MATHLIB HAS NO QUADRATURE AT ALL.** Grepping the whole library for
+`trapezoid`, `trapezium`, `quadrature`, Simpson: nothing. It has the FTC,
+integration by parts and `Polynomial.bernoulli`, but no rule for approximating
+an integral by samples and no error estimate for one. This is the first.
+
+The identity:
+
+    int_a^b f = ((b-a)/2)(f a + f b) - (1/2) int_a^b (x-a)(b-x) f''(x) dx
+
+exact for every `f` in `C^2`. Peano-kernel form, kernel `(x-a)(b-x) >= 0`.
+
+**PROVED WITH ONE FTC APPLICATION, not two integrations by parts.** With
+`w = (x-a)(b-x)` (so `w(a) = w(b) = 0`, `w'' = -2`), the function `F := w f' - w' f`
+has `F' = w f'' + 2f` because the two `w' f'` terms cancel. So
+`int (w f'' + 2f) = F(b) - F(a) = (b-a)(f a + f b)`. Rearrange. That is the whole
+proof — much shorter than the textbook route.
+
+**WHAT IT CLOSES IN THIS BEAN.** `KashaevReflectionTrapezoid.lean` proved that
+the reflection collapses `eps_k + eps_{N-1-k}` to exactly the trapezoid remainder
+of `log(2 sin)` on one cell. The resulting `O(h^2)` BOUND was asserted in that
+file's docstring and NOT proved, because nothing in Mathlib bounded a trapezoid
+remainder. It is proved now. So the symmetric half of (A) is complete: identity
+AND bound.
+
+`(log(2 sin))'` and `(cos/sin)'` are also absent from Mathlib in this form;
+both are proved here from the chain and quotient rules.
+
+## (A) — where it stands
+
+    (i)   the exact reflection                       PROVED
+    (ii)  symmetric half = trapezoid remainder       PROVED (identity)
+    (ii') symmetric half is O(h^2)                   PROVED (bound)  <- this commit
+    (iii) the j=0 singularity                        REMOVED (exact split)
+    (iv)  Stirling upper, Robbins 1/(12n)            PROVED
+    (v)   Stirling lower, Robbins 1/(12n+1)          PROVED
+    (vi)  Euler-Maclaurin, order 2, for logSinc      OPEN
+
+(vi) is what remains. The trapezoid rule is the order-1 case of exactly that
+machinery; the order-2 case adds the `(h/12)(f'(b) - f'(a))` correction with an
+`O(h^5)` per-cell remainder, and the natural next step is the same Peano-kernel
+argument one degree higher (kernel `(x-a)^2(b-x)^2`, four integrations by parts
+or one FTC against a quartic `F`).
