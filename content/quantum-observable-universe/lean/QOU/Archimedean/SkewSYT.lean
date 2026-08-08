@@ -48,10 +48,10 @@ structure Partition where
 def size (lam : Partition) : ℕ := lam.parts.sum
 
 /-- The length (number of parts) of a partition. -/
-def length (lam : Partition) : ℕ := lam.parts.length
+def Partition.length (lam : Partition) : ℕ := lam.parts.length
 
 /-- The i-th part of a partition (0 if i ≥ length). -/
-def part (lam : Partition) (i : ℕ) : ℕ :=
+def Partition.part (lam : Partition) (i : ℕ) : ℕ :=
   lam.parts.getD i 0
 
 /-- `List.getD` agrees with `getElem` in range. (Local replacement for
@@ -99,7 +99,7 @@ def cells (lam : Partition) : Finset Cell :=
 
 /-- Containment: μ ⊆ lam iff every part of μ is ≤ the corresponding
     part of lam. This is the partial order on the Young lattice. -/
-def contains (lam μ : Partition) : Prop :=
+def Partition.contains (lam μ : Partition) : Prop :=
   ∀ i, μ.part i ≤ lam.part i
 
 instance : LE Partition where

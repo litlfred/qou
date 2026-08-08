@@ -47,7 +47,7 @@ namespace QOU.BraidsAndKnots
 /-- Charge conjugation on a nucleon's color-sheet content: flavor
     conjugation `u ↔ ū`, `d ↔ d̄` applied independently on each of the three
     color sheets. -/
-def conj : NucleonColorContent → NucleonColorContent
+def QuarkFlavor.conj : NucleonColorContent → NucleonColorContent
   | (f₁, f₂, f₃) => (f₁.conj, f₂.conj, f₃.conj)
 
 /-- Antiproton color content (ū, ū, d̄). -/

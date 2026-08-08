@@ -750,7 +750,7 @@ structure ObservabilityData (C : Type*) where
     section is **not consumed**: `Hom(1, Ad(A))` involves no differential,
     so the assignment is the constant function of `q`.  Generic section
     type `R` per §7c — no `ℝ`, no ordering. -/
-def homRankAt {C R : Type*}
+def ObservabilityData.homRankAt {C R : Type*}
     (obs : ObservabilityData C) (_q : R) : ℕ :=
   obs.hom_rank
 

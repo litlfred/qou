@@ -41,7 +41,7 @@ namespace QOU.BraidsAndKnots.CombinerBranchingCompleteness
 def IsSubPartition (mu lam : Partition) : Prop :=
   ∀ i, mu.getD i 0 ≤ lam.getD i 0
 
-theorem refl (lam : Partition) : IsSubPartition lam lam :=
+theorem IsSubPartition.refl (lam : Partition) : IsSubPartition lam lam :=
   fun _ => le_refl _
 
 theorem trans {a b c : Partition}

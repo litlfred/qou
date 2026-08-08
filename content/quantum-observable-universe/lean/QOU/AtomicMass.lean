@@ -116,7 +116,7 @@ noncomputable def codata_ame_offset_per_N : ℝ :=
 /-- **Structural identity.**  For any element datum the CODATA−AME2020
     mass difference is `Z·offset_Z + N·offset_N`.  The `A·(B/A)`
     binding terms cancel; the proton and neutron offsets do not. -/
-theorem codata_minus_ame_offset (e : ElementDatum) :
+theorem ElementDatum.codata_minus_ame_offset (e : ElementDatum) :
     e.codataMass - e.ameMass
       = (e.Z : ℝ) * codata_ame_offset_per_Z
         + (e.N : ℝ) * codata_ame_offset_per_N := by

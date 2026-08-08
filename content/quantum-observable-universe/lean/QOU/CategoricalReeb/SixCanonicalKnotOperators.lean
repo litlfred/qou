@@ -48,7 +48,7 @@ theorem all_nodup :
 /-- Permutations of the three colour sectors realised on the
     boundary ramified disc.  We encode them as functions
     `ColorSector → ColorSector`. -/
-def boundaryPerm : CanonicalBraid → ColorSector → ColorSector
+def CanonicalBraid.boundaryPerm : CanonicalBraid → ColorSector → ColorSector
   | .identity,        s          => s
   | .sigma1,          red        => green
   | .sigma1,          green      => red

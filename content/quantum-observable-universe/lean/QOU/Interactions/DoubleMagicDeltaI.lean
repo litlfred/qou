@@ -48,7 +48,7 @@ structure DoubleMagicIsotope where
   N_eq : magicAt iN = some N
 
 /-- The empirical Δi for an isotope. -/
-def deltaI (iso : DoubleMagicIsotope) : ℤ :=
+def DoubleMagicIsotope.deltaI (iso : DoubleMagicIsotope) : ℤ :=
   (iso.iN : ℤ) - (iso.iZ : ℤ)
 
 /-- The 9 empirically observed doubly-magic isotopes. -/

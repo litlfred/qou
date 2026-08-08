@@ -88,7 +88,7 @@ structure MFreeQDiffOp (K : Type*) [Field K] where
   rhs : K → K
 
 /-- Convert an m-free operator to the general `QDifferenceOperator`. -/
-def toOp (op : MFreeQDiffOp K) : QDifferenceOperator K where
+def MFreeQDiffOp.toOp (op : MFreeQDiffOp K) : QDifferenceOperator K where
   order := op.order
   coeff j q _m := op.coeff j q
   rhs q _m := op.rhs q
@@ -104,7 +104,7 @@ theorem annihilates_iff (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) :
   simp only [MFreeAnnihilates, Annihilates, MFreeQDiffOp.toOp]
 
 /-- The bar involution of an m-free operator: replace `q` by `q⁻¹`. -/
-def bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
+def MFreeQDiffOp.bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
   order := op.order
   coeff j q := op.coeff j q⁻¹
   rhs q := op.rhs q⁻¹

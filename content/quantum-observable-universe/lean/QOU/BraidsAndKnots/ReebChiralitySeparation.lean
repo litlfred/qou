@@ -32,7 +32,7 @@ namespace QOU.BraidsAndKnots
 
 /-- First angular-momentum level at which each A₅ irrep appears in the SO(3)
     tower, read off `icosBranchingMult` (A@0, T₁@1, H@2, T₂@3, G@3). -/
-def firstEll : A5Irrep → ℕ
+def A5Irrep.firstEll : A5Irrep → ℕ
   | .A => 0 | .T₁ => 1 | .H => 2 | .T₂ => 3 | .G => 3
 
 /-- The `firstEll` value is grounded in `icosBranchingMult`: each irrep's

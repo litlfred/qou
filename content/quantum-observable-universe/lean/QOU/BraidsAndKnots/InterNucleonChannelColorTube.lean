@@ -66,7 +66,7 @@ inductive QuarkFlavor
   deriving DecidableEq, Repr
 
 /-- Flavor conjugation u ↔ ū, d ↔ d̄ (the D6 C-action on a single sheet). -/
-def conj : QuarkFlavor → QuarkFlavor
+def QuarkFlavor.conj : QuarkFlavor → QuarkFlavor
   | .u => .ubar
   | .ubar => .u
   | .d => .dbar

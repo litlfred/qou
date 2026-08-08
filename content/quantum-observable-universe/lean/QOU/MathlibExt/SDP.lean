@@ -62,13 +62,13 @@ structure SDPPrimal (n : ℕ) (R : Type u) [Semiring R] (ι : Type v) where
 variable [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R]
 
 /-- **Feasibility predicate** for an SDP candidate `Φ`. -/
-def IsFeasible (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : Prop :=
+def SDPPrimal.IsFeasible (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : Prop :=
   Φ.PosSemidef ∧ ∀ i : ι, Matrix.trace (sdp.constraint i * Φ) = sdp.rhs i
 
 /-- **Slater-strict feasibility**: there exists a positive-definite
     `Φ ≻ 0` (not just PSD) satisfying every equality constraint. -/
 -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater's condition)
-def IsStrictlyFeasible (sdp : SDPPrimal n R ι) : Prop :=
+def SDPPrimal.IsStrictlyFeasible (sdp : SDPPrimal n R ι) : Prop :=
   ∃ Φ : Matrix (Fin n) (Fin n) R,
     Φ.PosDef ∧ ∀ i : ι, Matrix.trace (sdp.constraint i * Φ) = sdp.rhs i
 

@@ -601,7 +601,7 @@ theorem qou_real_inhabited
     every archimedean QOU has an explicit surreal lift; in particular
     the surreal QOU type is inhabited whenever the archimedean one
     is. -/
-theorem qou_surreal_of_qou_real
+theorem ArchimedeanIsStandardPart.qou_surreal_of_qou_real
     [ctx : ArchimedeanIsStandardPart K] :
     Nonempty QOU_Real.{u} → Nonempty (QOU_Surreal K) := by
   rintro ⟨Q⟩
