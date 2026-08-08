@@ -83,11 +83,31 @@ function sweep(dir: string) {
   }
 }
 
+/** A flag whose required argument is missing must say so, not crash.
+ *
+ * `--sweep` and `--block` each consume the next argv entry. When it is absent,
+ * `undefined` reached `readdirSync`/`readFileSync` and the script died with a
+ * bare `ERR_INVALID_ARG_TYPE` stack trace naming an internal line — which reads
+ * as "the checker is broken", not "you forgot the path". That is the same
+ * failure shape this batch keeps finding: a tool reporting its own misuse as a
+ * result. Cf. the unknown-option guard added to
+ * `content/pipeline/lean-vacuity-axiom-audit.ts` (#4712). */
+function requireArg(flag: string, value: string | undefined): string {
+  if (value === undefined || value.startsWith("-")) {
+    console.error(`check-wall-side: ${flag} requires a path argument.\n`);
+    console.error("usage: bun run scripts/check-wall-side.ts [options]");
+    console.error("  --sweep <dir>       check every block manifest under <dir>");
+    console.error("  --block <file.ts>   check a single block manifest");
+    process.exit(2);
+  }
+  return value;
+}
+
 for (let i = 0; i < argv.length; i++) {
   if (argv[i] === "--sweep") {
-    sweep(argv[++i]);
+    sweep(requireArg("--sweep", argv[++i]));
   } else if (argv[i] === "--block") {
-    const tsPath = argv[++i];
+    const tsPath = requireArg("--block", argv[++i]);
     const lean = resolveLeanFromManifest(tsPath);
     if (!lean) {
       console.log(`SKIP  [unresolved lean.ref]  ${tsPath}`);
