@@ -107,16 +107,66 @@ The L2 count stays **2/7**. No prediction, no error, and no verdict changed —
 the diff is the diagnostic itself. Q_β already misses by ~160×, so the
 suppression clause is inert; it arms correctly for the promotion event.
 
-## 6. Scope
+## 6. Resolved same day — the cache is now proton-pinned
 
-**Not a precision claim.** Nothing here improves or degrades any prediction, and
-the 1248 ppb residual is untouched — it remains the c₃ truncation.
+The scoped half of bean `tnjb` was run for this one chain: `qbeta_ck_cache.py`
+regenerated at the proton pin. Two things came out of it.
 
-**Not a closure of bean `tnjb`.** The muon cache is still muon. What changed is
-that consuming it across a layer boundary is now loud and cannot silently
-produce a pass. When `tnjb` runs and the cache is rebuilt at the proton pin, the
-guard reports `status: "matched"` and the suppression clause stops applying, with
-no further edit needed.
+**The numbers moved by exactly the predicted amount.**
+
+```
+Q_beta   1248.2 -> 1278.6 ppb   (+30.4 ppb; predicted anchor swing 29.96 ppb)
+c_3      -2.0202 -> -2.0693     (2.4% cross-anchor swing, cal-anchored tier)
+m_n      2.389 -> 2.414 ppb     (rides on Q_beta)
+Delta_pn 755.6 -> 773.9 ppb
+```
+
+The L2 count is unchanged at **2/7**. And the corrected Q_β figure —
+**1279 ppb, 164.0× miss** — is exactly what `docs/precision-goals.md`
+§"Key distinctions" already quoted. The committed witness had been carrying the
+straddled value while the prose carried the layer-consistent one; they now
+agree. The per-observable table there is corrected to match.
+
+**A second defect surfaced: the anchor stamp lied.** After regenerating at the
+proton pin the witness *still* read `q0Anchor: "muon"`. Cause: `q0Anchor` is
+written only by `stamp_staleness_metadata`, which a producer must call
+explicitly (184 of ~780 do); `qbeta_ck_cache` does not. So `save()` fell to its
+preserve-forward branch and copied the pre-re-pin stamp onto a freshly
+proton-computed value. The Q_β prediction had moved 30.4 ppb under a label
+saying it had not — the stamp AGENTS.md rule 4 relies on ("say which pin you
+used") was not derived from the pin actually used.
+
+Fixed in `qou_substrate/witness.py`:
+
+1. `build()` now stamps the pin whenever it is **positively declared** for the
+   producer, so the manifest is load-bearing at write time rather than only at
+   audit time.
+2. preserve-forward no longer carries a pin that a positive declaration
+   contradicts; on contradiction it **drops** rather than corrects, since
+   writing in a resolved pin would assert a stamp the producer never
+   established and `Q0_ANCHOR_MISSING` is a tolerated state.
+3. `q0_anchor_is_declared()` is the new gate. This distinction is load-bearing:
+   `resolve_q0_anchor` returns `"proton"` for every stem **absent** from the
+   manifest — ~470 producers — so gating on it directly would have stripped
+   legitimate `muon` labels wholesale. The repo's own
+   `tests/test_q0_anchor.py::test_save_carries_forward_a_recorded_pin` caught
+   that on the first attempt.
+
+`qbeta_ck_cache` and `per_observable_100x_status` are added to the manifest's
+`physical_proton` list, so both now carry a stamp that reflects reality. Full
+substrate suite: 33 passed.
+
+## 7. Scope
+
+**Not a precision claim.** No prediction improved or degraded. The residual is
+now correctly stated as 1279 ppb rather than 1248 ppb; that 30 ppb is a
+mislabelling being corrected, not physics moving. It remains, entirely, the c₃
+truncation.
+
+**Not a closure of bean `tnjb`.** Only the Q_β chain was migrated — one cache,
+not the ~840-witness sweep, which still needs its scoped sign-off. The guard now
+reports `status: "matched"` for this row and its suppression clause has stood
+down on its own, exactly as designed.
 
 **Consequence for any future "Q_β meets L2" claim.** Per the pin-discipline rule
 (`docs/precision-goals.md` §"Pin discipline", bean `qou-qb8c`), such a claim must
