@@ -2,11 +2,26 @@
   ϑ_K cannot be Lipschitz-in-q₀ with a moderate constant (bean `qou-8vt2`).
   The `dc₃/dq` obstruction, transferred to ϑ.
 
-  THE TRANSFER.  `conj:binding-qbeta-complex-volume` defines the bar-odd
-  observable as `S_leak(q₀) = c₃(q₀) + Vol(4₁)` (tabulated in
-  `QOU.QBeta.SLeakZeroCrossing`), and the T5 channel reads
-  `S = A_ω·κ·(ln²q₀ − ϑ²)`.  Composing, **ϑ_K is an affine reparametrisation of
-  c₃** — "derive ϑ_K" and "derive c₃" are one question.
+  THE TRANSFER.  `conj:binding-qbeta-complex-volume` sets
+  `S_leak(q₀) := c₃(q₀) + Vol(4₁)` (tabulated in `QOU.QBeta.SLeakZeroCrossing`),
+  and the T5 channel reads `S = A_ω·κ·(ln²q₀ − ϑ²)`.  Composing, **ϑ_K is an
+  affine reparametrisation of c₃** — "derive ϑ_K" and "derive c₃" are one
+  question.
+
+  NOTE THE OFFSET IS INERT HERE.  `S_leak` is a DEFINITION, not a derived
+  decomposition: calling `−Vol(4₁)` the bar-even part of c₃ would need a
+  derivation nobody has (AGENTS.md §"Defined residual ≠ derived
+  decomposition"; the identification is disputed — see
+  `docs/audits/2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md`
+  §RETRACTED).  Nothing below rests on it.  The bound uses only the DIFFERENCE
+  `|S₁ − S₂|`, in which the additive constant cancels identically:
+
+      |S₁ − S₂| = |(c₃(p) + V) − (c₃(μ) + V)| = |c₃(p) − c₃(μ)|
+
+  Checked across `V ∈ {Vol(4₁), 2 + 1/36, 63/31, 0, 1000}` — all give
+  `0.04914234`, the `0.049` used below.  So the forced `K ∈ [10⁷, 1.1×10⁷]` is a
+  fact about c₃'s anchor-to-anchor variation ALONE, and the obstruction holds
+  whether or not `−Vol(4₁)` is c₃'s bar-even part.
 
   That matters because the c₃ arc already carries a structural obstruction the ϑ
   arc never had.  The ck-dk canonical registry records c₃ as
