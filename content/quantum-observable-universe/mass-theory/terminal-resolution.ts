@@ -5,7 +5,7 @@ export default proposition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "prop:terminal-resolution",
-  lean: { ref: "qou:QOU.Experimental.terminal_resolution",
+  lean: { ref: "qou:QOU.Experimental.TerminalResolution",
     validation: "not_checked",
   },
   title: "Terminal Resolution of Hadronic Mass",

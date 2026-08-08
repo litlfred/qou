@@ -1,6 +1,8 @@
 -- Ref: [manuscript] Ch. 10, §ch4-molecular-braid
 -- Methane CH₄ as a molecular braid
 
+namespace QOU.Molecular
+
 /-- **Methane CH₄** as a molecular braid with 26 strands.
 
     One carbon (6p + 6n + 6e = 18 strands) sharing 4 single C-H
@@ -19,3 +21,5 @@ structure CH4Braid where
 
 /-- CH₄ strand count: carbon(18) + 4 × hydrogen(2). -/
 theorem ch4_strands : 18 + 4 * 2 = 26 := by decide
+
+end QOU.Molecular
