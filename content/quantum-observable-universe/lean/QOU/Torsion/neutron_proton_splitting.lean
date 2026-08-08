@@ -64,10 +64,6 @@ class NeutronProtonSplittingContext where
   m_p : ℝ
   /-- Neutron rest mass (MeV). -/
   m_n : ℝ
-  /-- The neutron-proton mass splitting claim (conclusion). -/
-  neutron_proton_splitting_claim : (m_n - m_p = α * |Φ_udd - Φ_uud|) ∧
-    (|m_n - m_p - codataNeutronProtonSplittingMeV|
-      ≤ 0.01 * codataNeutronProtonSplittingMeV)
 
 /-- The framework-predicted neutron-proton mass difference in MeV
     (`α · |Φ(udd) − Φ(uud)|` per the manuscript). -/
@@ -97,6 +93,6 @@ theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :
   -- Missing infra: compact quantum dilogarithm phi_q on the proton (uud) /
   -- neutron (udd) braid words at q₀, and the binding scale α = m_e·8G.
   -- Not yet in Lean (compute: dilog-volume pipeline in computations/).
-  exact ctx.neutron_proton_splitting_claim
+  sorry
 
 end QOU.Torsion
