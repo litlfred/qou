@@ -1,7 +1,7 @@
 ---
 # qou-fivt
 title: 'Prove the three numerators 17, 5, −1 by five-term/Abel — the route that AVOIDS the Bloch group'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -344,3 +344,26 @@ and the statement has content.
 Four theorems now, all sorry-free, axioms `[propext, Classical.choice, Quot.sound]`:
 `numerators_of_five_term`, `numerators_original_form`, `sum_of_numerators`,
 `char_seven_forces`.
+
+---
+
+## 2026-08-08 — CLOSED: the numerators are proved in Lean, unconditionally
+
+This bean's route — derive `17, 5, -1` from five-term/Abel, avoiding the Bloch
+group — is complete, and it did avoid the Bloch group entirely. `qou-mlbg` was
+right that Borel is out of reach; this route never needed it.
+
+```lean
+numerators_of_root : x^3 - 2x^2 - x + 1 = 0 → 1/2 < x → x < 1 →
+  7*(2*(π²/6) + 2*L x - L (1/(2-x))) = 17*(π²/6) ∧ … ∧ …
+extended_sum      : … = π²/2
+```
+
+sorry-free, `lake` green, cross-checked numerically (residuals `< 5e-40`).
+
+Two corrections to this bean's own record, both recorded in `qou-rstq`:
+
+* the PSLQ dead end and the Galois 3-cycle dead end stand;
+* but its advice "derive the `Re Li₂(ζ₇^k)` half first" was already superseded
+  by Route 11 and is now definitively moot — the numerators were derived without
+  ever evaluating `Li₂` at a root of unity.

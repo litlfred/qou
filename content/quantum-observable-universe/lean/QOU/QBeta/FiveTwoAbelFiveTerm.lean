@@ -1,5 +1,6 @@
 import QOU.QBeta.FiveTwoRogersReflection
 import QOU.QBeta.FiveTwoFiveTermArguments
+import QOU.QBeta.FiveTwoRogersExtend
 
 /-!
 # Abel's five-term relation for the Rogers dilogarithm on `(0,1)`
@@ -375,5 +376,117 @@ theorem exists_root_in_Ioo :
       ((1 / 2 : ℝ) ^ 3 - 2 * (1 / 2) ^ 2 - 1 / 2 + 1) := by norm_num
   obtain ⟨c, hc, hfc⟩ := intermediate_value_Ioo' (by norm_num : (1 / 2 : ℝ) ≤ 1) hcont hmem
   exact ⟨c, hfc, hc.1, hc.2⟩
+
+/-! ### The Galois orbit, and the targets in their original form
+
+`numerators_of_root` states the numerators *after* reduction to `(0,1)`. The
+quantities the 5₂ sum rule is actually about are `2·L(wₖ) + L(−wₖ)` at the three
+roots, two of which lie outside `[0,1]` — so they are values of the extended
+`L` of `FiveTwoRogersExtend`, not of `rogersL`.
+
+This section closes that last gap of *statement*: the three targets in their
+original form, unconditionally. -/
+
+/-- `σ z = (z-1)/z` is an order-3 automorphism of the splitting field, so all
+three roots are `x`, `1/(1-x)` and `(x-1)/x`. Here is the first. -/
+theorem root_inv_one_sub {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hhi : x < 1) :
+    (1 / (1 - x)) ^ 3 - 2 * (1 / (1 - x)) ^ 2 - (1 / (1 - x)) + 1 = 0 := by
+  have h : (1 : ℝ) - x ≠ 0 := by intro h; apply absurd hhi; push_neg; linarith [sub_eq_zero.mp h]
+  field_simp
+  linear_combination -hx
+
+/-- …and the third root. -/
+theorem root_sub_div {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) (hlo : 1 / 2 < x) :
+    ((x - 1) / x) ^ 3 - 2 * ((x - 1) / x) ^ 2 - ((x - 1) / x) + 1 = 0 := by
+  have h : x ≠ 0 := by intro h; rw [h] at hlo; norm_num at hlo
+  field_simp
+  linear_combination -hx
+
+open FiveTwoRogersExtend in
+/-- **The three level-7 targets, in the form the 5₂ sum rule states them.**
+
+`E = extend (π²/6) rogersL` is the Rogers dilogarithm extended off `[0,1]` by
+inversion and Landen. The first and third roots lie outside `[0,1]`, so `E` — not
+`rogersL` — is the function these are values of.
+
+Nothing about `E` is assumed: the branches unfold definitionally, and what they
+unfold to is `numerators_of_root`. -/
+theorem extended_targets {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hlo : 1 / 2 < x) (hhi : x < 1) :
+    (7 * (2 * extend (Real.pi ^ 2 / 6) rogersL (1 / (1 - x))
+            + extend (Real.pi ^ 2 / 6) rogersL (-(1 / (1 - x))))
+        = 17 * (Real.pi ^ 2 / 6))
+      ∧ (7 * (2 * extend (Real.pi ^ 2 / 6) rogersL x
+            + extend (Real.pi ^ 2 / 6) rogersL (-x)) = 5 * (Real.pi ^ 2 / 6))
+      ∧ (7 * (2 * extend (Real.pi ^ 2 / 6) rogersL ((x - 1) / x)
+            + extend (Real.pi ^ 2 / 6) rogersL (-((x - 1) / x)))
+        = -(Real.pi ^ 2 / 6)) := by
+  obtain ⟨n1, n2, n3⟩ := numerators_of_root hx hlo hhi
+  have hx0 : (0 : ℝ) < x := by linarith
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have h1xne : (1 : ℝ) - x ≠ 0 := ne_of_gt h1x
+  have hxne : x ≠ 0 := ne_of_gt hx0
+  have h2x : (0 : ℝ) < 2 - x := by linarith
+  set L1 : ℝ := Real.pi ^ 2 / 6 with hL1
+  -- w₁ = 1/(1-x) > 1, so the inversion branch fires
+  have hw1 : (1 : ℝ) < 1 / (1 - x) := by rw [lt_div_iff₀ h1x]; linarith
+  have hw1inv : 1 / (1 / (1 - x)) = 1 - x := one_div_one_div _
+  have e1 : extend L1 rogersL (1 / (1 - x)) = 2 * L1 - rogersL (1 - x) := by
+    rw [extend_of_one_lt L1 rogersL hw1, hw1inv]
+  -- -w₁ < 0, so the Landen branch fires, and it lands on q = 1/(2-x)
+  have hnw1 : -(1 / (1 - x)) < 0 := by linarith
+  have hq : -(1 / (1 - x)) / (-(1 / (1 - x)) - 1) = 1 / (2 - x) := by
+    rw [div_eq_div_iff (ne_of_lt (show -(1 / (1 - x)) - 1 < 0 by linarith)) (ne_of_gt h2x)]
+    field_simp
+    ring
+  have e2 : extend L1 rogersL (-(1 / (1 - x))) = -rogersL (1 / (2 - x)) := by
+    rw [extend_of_neg L1 rogersL hnw1, hq]
+  -- x itself is in [0,1]
+  have e3 : extend L1 rogersL x = rogersL x :=
+    extend_of_mem L1 rogersL (le_of_lt hx0) (le_of_lt hhi)
+  -- -x < 0, landing on r = x/(x+1)
+  have hr : -x / (-x - 1) = x / (x + 1) := by
+    rw [div_eq_div_iff (by intro h; nlinarith) (by intro h; nlinarith)]
+    ring
+  have e4 : extend L1 rogersL (-x) = -rogersL (x / (x + 1)) := by
+    rw [extend_of_neg L1 rogersL (by linarith), hr]
+  -- w₃ = (x-1)/x < 0, landing on 1-x
+  have hw3 : (x - 1) / x < 0 := div_neg_of_neg_of_pos (by linarith) hx0
+  have hw3' : (x - 1) / x / ((x - 1) / x - 1) = 1 - x := by
+    field_simp
+    ring
+  have e5 : extend L1 rogersL ((x - 1) / x) = -rogersL (1 - x) := by
+    rw [extend_of_neg L1 rogersL hw3, hw3']
+  -- -w₃ = (1-x)/x = s, and 1/2 < x puts it in (0,1)
+  have hsval : -((x - 1) / x) = (1 - x) / x := by
+    field_simp
+    ring
+  have hs0 : (0 : ℝ) ≤ -((x - 1) / x) := by rw [hsval]; positivity
+  have hs1 : -((x - 1) / x) ≤ 1 := by rw [hsval, div_le_one hx0]; linarith
+  have e6 : extend L1 rogersL (-((x - 1) / x)) = rogersL ((1 - x) / x) := by
+    rw [extend_of_mem L1 rogersL hs0 hs1, hsval]
+  -- reflection turns `rogersL (1-x)` into `L1 - rogersL x`
+  have hrefl : rogersL (1 - x) = L1 - rogersL x := rogersL_one_sub hx0 hhi
+  rw [e1, e2, e3, e4, e5, e6, hrefl]
+  refine ⟨by linarith [n1], by linarith [n2], by linarith [n3]⟩
+
+open FiveTwoRogersExtend in
+/-- **The level-7 sum: `Σₖ (2·L(wₖ) + L(−wₖ)) = π²/2`.**
+
+`17 + 5 - 1 = 21 = 3·7`, so the sevens cancel and the sum is `3·L(1) = π²/2`.
+
+This is the cyclotomic-side identity the 5₂ saddle sum rule reduces to — now a
+theorem about the corpus's own dilogarithm, given only that `x` is the root of
+`x³ - 2x² - x + 1` in `(1/2, 1)`. -/
+theorem extended_sum {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hlo : 1 / 2 < x) (hhi : x < 1) :
+    (2 * extend (Real.pi ^ 2 / 6) rogersL (1 / (1 - x))
+        + extend (Real.pi ^ 2 / 6) rogersL (-(1 / (1 - x))))
+      + (2 * extend (Real.pi ^ 2 / 6) rogersL x + extend (Real.pi ^ 2 / 6) rogersL (-x))
+      + (2 * extend (Real.pi ^ 2 / 6) rogersL ((x - 1) / x)
+        + extend (Real.pi ^ 2 / 6) rogersL (-((x - 1) / x)))
+      = Real.pi ^ 2 / 2 := by
+  obtain ⟨h1, h2, h3⟩ := extended_targets hx hlo hhi
+  linarith
 
 end QOU.QBeta.FiveTwoAbelFiveTerm

@@ -1,7 +1,7 @@
 ---
 # qou-abel
 title: "Prove Abel's five-term relation on (0,1) — the LAST open input to the level-7 numerators"
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -215,3 +215,19 @@ That is one link. The 5₂ sum rule needs two more, both still open:
   Lean* (closed on paper by Route 15; needs `Li₂` inversion and `Li₂` Landen).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — CLOSED
+
+`rogersL_fiveTerm` (Abel on `(0,1)`), `numerators_of_root` (the numerators,
+unconditional), `exists_root_in_Ioo` (non-vacuity), `extended_targets` and
+`extended_sum` — all in `QOU/QBeta/FiveTwoAbelFiveTerm.lean`, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`, `lake build` green.
+
+The sub-gap this bean flagged in advance — the `(0,1)` membership of the three
+instances' arguments — is closed too, and `1/2 < x` earned its place exactly
+where predicted (`s = (1-x)/x < 1` fails without it).
+
+**Nothing here is left open.** What the chain still needs is in `qou-trns` and
+`qou-rstq` item 4, neither of which is about the five-term relation.

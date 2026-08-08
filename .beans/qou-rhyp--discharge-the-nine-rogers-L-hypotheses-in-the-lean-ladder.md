@@ -1,7 +1,7 @@
 ---
 # qou-rhyp
 title: 'Discharge the nine Rogers-L hypotheses in FiveTwoLevelSevenLadder (reflection / inversion / Landen / five-term)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -323,3 +323,23 @@ closed on paper by Route 15 but not in Lean).
 
 **Standing status, unchanged all session: the 5₂ sum rule is verified to 80 dps,
 unproved.**
+
+---
+
+## 2026-08-08 — CLOSED: all twelve discharged
+
+| group | count | where |
+|---|---|---|
+| inversion + Landen | 4 | `FiveTwoRogersExtend` — by construction |
+| renaming `hsw3` | 1 | trivial |
+| reflection | 4 | `FiveTwoRogersReflection.rogersL_reflection` |
+| five-term `hA`,`hB`,`hC` | 3 | `FiveTwoFiveTermArguments` + `FiveTwoAbelFiveTerm` |
+
+`numerators_of_abel` is unconditional as `numerators_of_root`. The bean's
+original framing — "nine hypotheses, reflection nearly free, inversion/Landen
+standard analysis, five-term the real work" — was wrong in two places, both
+recorded above: there are **twelve**, and two of the inversion/Landen four were
+**false**, not hard.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** This bean was never
+the sum rule; it was the ladder's hypotheses, and those are done.

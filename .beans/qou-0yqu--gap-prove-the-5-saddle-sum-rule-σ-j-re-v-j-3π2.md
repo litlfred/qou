@@ -692,3 +692,57 @@ question, not a transcendence question.**
 
 **Route count 9 tried; 7 refuted, 2 reductions. Status: verified to 80 dps,
 unproved.**
+
+---
+
+## 2026-08-08 — the cyclotomic side is CLOSED in Lean. Two links remain.
+
+`Σₖ (2·L(wₖ) + L(−wₖ)) = π²/2` is now a **theorem** about the corpus's own
+dilogarithm, not a numerical observation:
+
+```lean
+QOU/QBeta/FiveTwoAbelFiveTerm.extended_sum
+  {x : ℝ} (hx : x^3 - 2x^2 - x + 1 = 0) (hlo : 1/2 < x) (hhi : x < 1) :
+    (2*E (1/(1-x)) + E (-(1/(1-x)))) + (2*E x + E (-x))
+      + (2*E ((x-1)/x) + E (-((x-1)/x))) = Real.pi^2/2
+```
+
+`E = extend (π²/6) rogersL`, the Rogers dilogarithm extended off `[0,1]`.
+Sorry-free, `[propext, Classical.choice, Quot.sound]`, `lake build` green,
+and `exists_root_in_Ioo` shows the hypothesis is satisfiable.
+
+The chain of Lean files, bottom to top:
+
+| file | content |
+|---|---|
+| `FiveTwoCyclotomicBloch` | Vieta products, `bloch_key` |
+| `FiveTwoRogersReflection` | `rogersL`, reflection, **`hasDerivAt_rogersL`** |
+| `FiveTwoRogersExtend` | the extension; inversion + Landen by construction |
+| `FiveTwoAbelFiveTerm` | **Abel's five-term relation**, the numerators, the sum |
+| `FiveTwoFiveTermArguments` | `hA/hB/hC` are five-term instances, and follow from Abel |
+| `FiveTwoLevelSevenLadder` | the `(17,5,−1)` certificate |
+
+Five beans closed by this: `qou-abel`, `qou-rhyp`, `qou-fivt`, and earlier
+`qou-r7ml`, `qou-g2wr`.
+
+### What is still missing — and it is NOT the dilogarithm any more
+
+**The 5₂ sum rule is `Σⱼ Re Vⱼ = −3π²/2`. What is proved is `Σₖ (2L(wₖ)+L(−wₖ))
+= +π²/2`.** Those are different statements, and the two links between them are
+both open:
+
+1. **`qou-trns` — the transport `x = 1 → x = −1`.** The branch integer is pinned
+   by the base point; the **envelope theorem is confirmed numerically and not
+   formalized**. This is the weakest link and it is analytic, not arithmetic.
+2. **`qou-rstq` item 4 — `E` is not identified with `Re` of the analytic Rogers
+   `L` in Lean.** Route 15 closed this **on paper** and showed it reduces to
+   `Li₂` inversion and `Li₂` Landen; neither is in Mathlib, and the corpus has no
+   `Li₂` off `[−1,1]` (`qou-ph1k`, `qou-gkco`, `qou-clx8`).
+
+Link 2 matters more than it looks. `E` is *defined* piecewise, so `extended_sum`
+is a theorem about a piecewise function that **provably agrees** with the Rogers
+dilogarithm at every point checked and is **not proved to be it**. Anyone
+quoting `extended_sum` as "the cyclotomic identity is proved" should say which
+of those two they mean.
+
+**Standing status, unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
