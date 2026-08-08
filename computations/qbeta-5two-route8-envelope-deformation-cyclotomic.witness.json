@@ -1,0 +1,221 @@
+{
+  "probe": "qbeta_5two_route8_envelope_deformation_cyclotomic",
+  "bean": "qou-8v3k",
+  "parent_bean": "qou-0yqu",
+  "dps": 40,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "dV/dy = 0  <=>  GGM deformed curve x y^3 -(x^2+1)y^2 +(x^2+x+1)y - x = 0",
+      "worst_abs_error": "1.8367099e-40",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "prod(1 - x y_j) = x  and  prod(1 - y_j/x) = 1/x",
+      "per_x": [
+        {
+          "x": "0.5",
+          "err_prod_1_minus_xy": "5.73972e-42",
+          "err_prod_1_minus_y_over_x": "0.0"
+        },
+        {
+          "x": "0.7",
+          "err_prod_1_minus_xy": "1.14794e-41",
+          "err_prod_1_minus_y_over_x": "4.59177e-41"
+        },
+        {
+          "x": "1.3",
+          "err_prod_1_minus_xy": "6.88766e-41",
+          "err_prod_1_minus_y_over_x": "0.0"
+        },
+        {
+          "x": "2.0",
+          "err_prod_1_minus_xy": "0.0",
+          "err_prod_1_minus_y_over_x": "5.73972e-42"
+        },
+        {
+          "x": "3.7",
+          "err_prod_1_minus_xy": "2.75506e-40",
+          "err_prod_1_minus_y_over_x": "0.0"
+        }
+      ],
+      "worst": "2.7550649e-40",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "S'(x) = -2 log(x)/x  (envelope theorem + Vieta)",
+      "per_x": [
+        {
+          "x": "0.6",
+          "numeric": "1.70275207922",
+          "analytic": "1.70275207922",
+          "abs_err": "6.20633e-24"
+        },
+        {
+          "x": "0.9",
+          "numeric": "0.23413447923961",
+          "analytic": "0.23413447923961",
+          "abs_err": "1.46807e-24"
+        },
+        {
+          "x": "1.4",
+          "numeric": "-0.48067462374459",
+          "analytic": "-0.48067462374459",
+          "abs_err": "2.82375e-25"
+        },
+        {
+          "x": "2.2",
+          "numeric": "-0.71677941851297",
+          "analytic": "-0.71677941851297",
+          "abs_err": "4.44968e-26"
+        }
+      ],
+      "worst": "6.2063278e-24",
+      "note": "central differences at h=1e-12, so ~1e-20 agreement is the ceiling",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "S(x) = S(1) - log^2 x  on real x > 0",
+      "per_x": [
+        {
+          "x": "0.2",
+          "S_minus_S1": "-2.5902903939802349452",
+          "abs_err": "4.59177e-41"
+        },
+        {
+          "x": "0.5",
+          "S_minus_S1": "-0.48045301391820142467",
+          "abs_err": "2.0089e-40"
+        },
+        {
+          "x": "0.7",
+          "S_minus_S1": "-0.12721701563369788536",
+          "abs_err": "2.69767e-40"
+        },
+        {
+          "x": "0.9",
+          "S_minus_S1": "-0.011100838259683061188",
+          "abs_err": "2.44297e-40"
+        },
+        {
+          "x": "1.1",
+          "S_minus_S1": "-0.0090840303743327344168",
+          "abs_err": "1.6143e-42"
+        },
+        {
+          "x": "1.4",
+          "S_minus_S1": "-0.1132135660168815039",
+          "abs_err": "5.73972e-42"
+        },
+        {
+          "x": "2.0",
+          "S_minus_S1": "-0.48045301391820142467",
+          "abs_err": "2.0089e-40"
+        },
+        {
+          "x": "3.0",
+          "S_minus_S1": "-1.2069489608125819778",
+          "abs_err": "9.18355e-41"
+        },
+        {
+          "x": "5.0",
+          "S_minus_S1": "-2.5902903939802349452",
+          "abs_err": "4.59177e-41"
+        }
+      ],
+      "worst": "2.6976677e-40",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "S(x) = S(1/x)  (GGM eq 306 / curve_palindromic)",
+      "worst": "3.6734198e-40",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "on |x|=1, S(e^{i phi}) = S(1) + phi^2, i.e. branch integer k = 0 throughout",
+      "per_phi": [
+        {
+          "phi_over_pi": "0.125",
+          "S": "-14.6501940328670167",
+          "S1_plus_phi2": "-14.6501940328670167",
+          "implied_k": "0.0"
+        },
+        {
+          "phi_over_pi": "0.25",
+          "S": "-14.187556326565953",
+          "S1_plus_phi2": "-14.187556326565953",
+          "implied_k": "3.7219525e-41"
+        },
+        {
+          "phi_over_pi": "0.375",
+          "S": "-13.4164934827308469",
+          "S1_plus_phi2": "-13.4164934827308469",
+          "implied_k": "2.4813016e-41"
+        },
+        {
+          "phi_over_pi": "0.5",
+          "S": "-12.3370055013616983",
+          "S1_plus_phi2": "-12.3370055013616983",
+          "implied_k": "0.0"
+        },
+        {
+          "phi_over_pi": "0.625",
+          "S": "-10.9490923824585072",
+          "S1_plus_phi2": "-10.9490923824585072",
+          "implied_k": "1.488781e-41"
+        },
+        {
+          "phi_over_pi": "0.75",
+          "S": "-9.25275412602127371",
+          "S1_plus_phi2": "-9.25275412602127371",
+          "implied_k": "0.0"
+        },
+        {
+          "phi_over_pi": "0.875",
+          "S": "-7.24799073204999774",
+          "S1_plus_phi2": "-7.24799073204999774",
+          "implied_k": "5.317075e-42"
+        },
+        {
+          "phi_over_pi": "1.0",
+          "S": "-4.93480220054467931",
+          "S1_plus_phi2": "-4.93480220054467931",
+          "implied_k": "-4.6524406e-42"
+        }
+      ],
+      "worst_implied_k": "3.7219525e-41",
+      "pass": true
+    },
+    {
+      "gate": "G6b",
+      "claim": "k = 0 on the whole arc: no root collision (disc bounded away from 0), so the integer k is locally constant hence constant, and k -> 0 as phi -> 0",
+      "n_samples": 200,
+      "max_implied_k": "1.8609762e-39",
+      "min_abs_discriminant_on_arc": "0.34808803",
+      "note": "this upgrades step (4) from 'measured at 8 points' to 'constant by local-constancy on a collision-free arc' -- an argument, not a sample",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "x=-1: disc 49 (Q(zeta_7)+), roots = -1-2cos(2 pi k/7), and the reduced identity sum_k Re[Li2(y)+2Li2(-y)+(log(-y))^2] = -pi^2/2",
+      "discriminant": "49.0",
+      "root_identification_err": "2.29589e-41",
+      "reduced_sum": "-4.9348022005446793094172455",
+      "target_minus_half_pi_sq": "-4.9348022005446793094172455",
+      "abs_err": "9.18355e-41",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "route8": "REDUCTION ACHIEVED, NOT CLOSED",
+    "what_is_established": "The sum rule sum_j Re V_j = -3pi^2/2 at x=1 is EQUIVALENT, by an elementary and formalizable mechanism (critical-point identification + two Vieta products + envelope theorem + integration + continuation with measured branch integer k=0), to the cyclotomic identity sum_k Re[Li2(y_k)+2Li2(-y_k)+(log(-y_k))^2] = -pi^2/2 at y_k = -1-2cos(2 pi k/7), the totally real field Q(zeta_7)+ of disc 49.",
+    "what_is_NOT_established": "The cyclotomic identity itself. S(1) is the constant of integration, so this transports the unknown rather than evaluating it.",
+    "why_the_transport_is_worth_it": "At x=1 the field is the COMPLEX cubic of disc -23, where Bloch-Wigner D != 0 and the classical ladder literature computes the volume/imaginary side -- the caveat that blocked every literature route. At x=-1 the field is TOTALLY REAL and abelian, so D == 0 identically and Rogers-type sums are expected in pi^2 Q. That is the one regime where -pi^2/2 is the natural kind of answer.",
+    "sum_rule_status": "verified to 80 dps, unproved -- UNCHANGED"
+  }
+}

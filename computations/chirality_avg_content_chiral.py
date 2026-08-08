@@ -41,7 +41,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 import mpmath
 from mpmath import mp, mpf
 
@@ -195,11 +195,14 @@ def main():
             chi_val = mp.re(chi_raw)
             num += w_lam * chi_val * c_lam
             den += w_lam * chi_val
+            # On the f64 fallback `chi_raw` arrives as a builtin complex, so χ
+            # holds 53 bits however carefully it is handled afterwards — the
+            # same overstatement `chi_precision` records, one level down.
             per_lam.append({
                 "shape": list(shape),
                 "content_c_lambda": c_lam,
                 "wedderburn_weight": str(w_lam),
-                "chi_lambda_beta": str(chi_val),
+                "chi_lambda_beta": str_at_true_precision(chi_val),
                 "weighted_chi_c": str(w_lam * chi_val * c_lam),
             })
         # Tolerance tied to working precision (per Gemini review).

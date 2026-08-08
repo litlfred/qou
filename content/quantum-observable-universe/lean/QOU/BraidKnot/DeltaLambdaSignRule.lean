@@ -49,15 +49,29 @@ structure Partition (n : ℕ) where
   sum_eq : parts.sum = n
   sorted : parts.Pairwise (· ≥ ·)
 
+/-- **Extensionality.** `parts` is the only data field — `pos`, `sum_eq` and `sorted`
+are `Prop`s — so two partitions of `n` agree as soon as their part lists do.
+
+`QOU.BraidKnot.PartitionNatBridge` has always called this as `Partition.ext'`, but
+no such declaration existed anywhere in the file's history: `Partition` carries no
+`@[ext]` attribute, so nothing generated one. That call site could never have
+elaborated; it went unnoticed only because this module already failed to compile
+(the LWC-2 namespace sweep, repaired in the preceding commit), so nothing
+downstream was ever reached. Declared here under the idiomatic `@[ext]` name, with
+the call site updated to match. -/
+@[ext] theorem Partition.ext {n : ℕ} {Λ Λ' : Partition n}
+    (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
+  cases Λ; cases Λ'; cases h; rfl
+
 /-- The empty partition of 0. -/
-def empty : Partition 0 where
+def Partition.empty : Partition 0 where
   parts := []
   pos := by simp
   sum_eq := by simp
   sorted := List.Pairwise.nil
 
 /-- Number of parts (length of the partition). -/
-def length {n : ℕ} (Λ : Partition n) : ℕ := Λ.parts.length
+def Partition.length {n : ℕ} (Λ : Partition n) : ℕ := Λ.parts.length
 
 /-- `n(λ) = Σ_i i × λ_i` — the weighted sum of parts (0-indexed); equivalently the
 sum of row indices of all cells in the Young diagram. -/
@@ -305,12 +319,14 @@ theorem burnside [ctx : BurnsideContext] (n : ℕ) (partitions : List (Partition
   --     `∑ i : PartitionIndex n, numSYT i.diagram ^ 2 = n!`
   -- (specialising `RegularRepBlockTrace.sumSq_dim_eq` to the assembled
   -- `snSpectralData ℚ n`). Discharging `burnside` from it needs two further
-  -- bridges, both genuine formalisation work (not yet in Mathlib or the corpus):
-  --   (1) `dimIrrep Λ = numSYT (youngDiagramOf Λ)` — the hook-length formula
-  --       `QOU.BraidKnot.numSYT_mul_hookProduct` (a still-open sorry)
-  --       PLUS `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct
-  --       (youngDiagramOf Λ)` (the custom list-based hookProduct = the cell-based
-  --       one), with `Nat`-division care (`hookProduct ∣ n!`);
+  -- bridges. **Bridge (1) is now PROVED**; bridge (2) remains:
+  --   (1) PROVED — `dimIrrep Λ = numSYT (toYoungDiagram Λ)` is
+  --       `QOU.BraidKnot.dimIrrep_eq_numSYT` (`PartitionHookProductBridge`),
+  --       assembled from the hook-length formula
+  --       `QOU.BraidKnot.HookProductHLF.numSYT_mul_hookProduct` and
+  --       `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct (toYoungDiagram Λ)`
+  --       (`hookProduct_eq_cell`), with the `Nat` division witnessed exactly by
+  --       the FRT product identity (`hookProduct_ne_zero`), not assumed;
   --   (2) the reindexing `List (Partition n)` (complete + `Nodup`) sum ↔
   --       `Finset.univ (PartitionIndex n)` sum, via a custom-`Partition n` ↔
   --       `Nat.Partition n` ↔ `PartitionIndex n` bijection

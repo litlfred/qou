@@ -3,7 +3,7 @@
 | Generation | $n$ | Lepton ($H_2$) | Quark flavor ($H_3$) | Meson ($q\bar{q}$) |
 |---|---|---|---|---|
 | 1st | 3 | $\mathfrak{e}$ (electron) | $u, d$ | $\pi$ (pion) |
-| 2nd | 5 | $\mu$ (muon) | $s$ (strange) | $K$ (kaon) |
-| 3rd | 7 | $\tau$ (tau) | $s$ (heavy-strange) | $\eta, \phi$ |
+| 2nd | 5 | $\mu$ (muon) | $\mathfrak{c}, s$ (charm, strange) | $K$ (kaon) |
+| 3rd | 7 | $\tau$ (tau) | $\mathfrak{t}, \mathfrak{b}$ (top, bottom) | $\eta, \phi$ |
 
 *The lepton at generation $k$ is the closure of $\sigma_1^{2k+1}$ in $H_2(q)$. The meson at the same generation is the Hopf-bound pair of quarks whose flavor content involves $T(2, 2k+1)$ crossing structure in $H_3(q)$.*

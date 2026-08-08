@@ -1,5 +1,27 @@
 #!/usr/bin/env python3
 """W1 — the independent Neumann–Zagier adjoint torsion τ(𝓑₃), closing the
+
+⚠ CORRECTED 2026-08-07 — this file's determinant is the WRONG construction.
+
+It builds `J_ij = a_ij − b_ij·z_j/(1−z_j)`. Dimofte-Garoufalidis (arXiv:1202.6268,
+Defn 1.2) is `det(A·Δ_z'' + B·Δ_z^{-1})` with a global 1/2 and a flattening
+monomial — a different matrix, not a normalisation of this one. Consequences:
+
+  * The 4_1 calibration here, |det J_NZ(4_1)| = √3, is exactly TWICE the correct
+    value. DG's own worked example (their eq. 3.2) gives τ(4_1) = ½√−3, i.e.
+    |τ| = √3/2. `computations/one_loop_torsion.py` reproduces that to rel 1e-71.
+  * |det J_NZ(𝓑₃)| = 64 is not an invariant: the same quantity takes 2^{3..6}
+    under retriangulation at fixed framing (PR #4691) and 2^{6..9} across
+    framings (borromean_cusp_framing_factor.py). Neither is the cause — the
+    object simply is not the invariant.
+  * The exp(2c₀) = 1/|det J_NZ| relation calibrated on 4_1 inherits the factor 2.
+
+USE `computations/one_loop_torsion.py` instead. It is triangulation-invariant
+(verified to 30 digits over ~20 retriangulations of 4_1, 5_2, 6_2) and carries
+the DG unit test. It is ONE-CUSPED ONLY and raises for c ≥ 2, so it cannot yet
+replace the 𝓑₃ (c=3) computation here — that needs DG Sec 4.5.
+
+Bean qou-fl4t; audit docs/audits/2026-08-07-one-loop-fix-impact-analysis.md.
 Jones-side 1-loop measurement.
 
 Chain of the three W1 Jones-side probes:

@@ -5,11 +5,11 @@ The even-twist carrier $T(2,2k)$ occupies the two-dimensional sym/alt Hecke bloc
 1. **bar-even part** $a_+ \in A_+$, $\sigma$-fixed, with neutral (Markov-trace) value $q^{2k} + q^{-2k}$.
 2. **bar-odd part** $a_- \in A_-$, $\sigma$-negated, traceless with nonzero skew value $q^{2k} - q^{-2k}$.
 
-The Higgs is the bar-even / self-dual / real-volume carrier. The $W^±, Z$ are bar-odd.
+The Higgs is the bar-even / self-dual / real-volume carrier. The $W^\pm, Z$ are bar-odd.
 
 ## The forced quantum numbers
 
-Given the sector assignment, spin is defined by $2s(c) = 0$ if $c$ is a singlet and $2s(c) = 2$ if $c$ is a doublet. Then $\mathrm{spin}(H) = 0$ (scalar) and $\mathrm{spin}(W^±) = \mathrm{spin}(Z) = 1$ (vector) are theorems. Neutrality is forced by bar-parity: a singlet carrier realises the bar-even part, a doublet the bar-odd part.
+Given the sector assignment, spin is defined by $2s(c) = 0$ if $c$ is a singlet and $2s(c) = 2$ if $c$ is a doublet. Then $\mathrm{spin}(H) = 0$ (scalar) and $\mathrm{spin}(W^\pm) = \mathrm{spin}(Z) = 1$ (vector) are theorems. Neutrality is forced by bar-parity: a singlet carrier realises the bar-even part, a doublet the bar-odd part.
 
 The genuinely postulated data are the sector map itself and the $T_3$ label. In particular $Z$ is a doublet (vector) yet neutral ($T_3 = 0$). Its neutrality is not bar-even membership but the $(W^3, B) \mapsto (Z, \gamma)$ Weinberg mixing.
 

@@ -44,6 +44,11 @@ DPS = 1000
 # Format with up to 5 decimal places to match the original 5-figure literal,
 # strip trailing zeros to keep the witness JSON readable.
 PDG_G_A_STR = (f"{G_A_PDG:.6f}").rstrip("0").rstrip(".")
+
+# Precision must be raised BEFORE the module-scope mpf constants below:
+# at import time mp.dps is still mpmath's default 15 (~binary64), and a
+# value built there cannot be recovered by raising dps afterwards.
+mp.mp.dps = DPS
 PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))
 
 

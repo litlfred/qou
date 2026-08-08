@@ -39,15 +39,28 @@ def stratumDepth : MassTowerTerm → ℕ
   | .knotFactor => 2
   | .pauli => 0         -- representative; uses both sym (Λ_0) and alt (Λ_{n-1})
 
-/-- **Proposition (QOU mass-tower coefficients are stratum projections)**.
+/-- **Proposition (mass-tower strata are exhausted by depths 0–4).**
 
-    Each QOU mass-tower prefactor is the Plancherel-weighted
-    Frobenius integral over partitions in its stratum, with
-    convergence guaranteed by Plancherel boundedness. -/
+    Every `MassTowerTerm` is assigned a stratum depth in the range
+    `0 … 4`; no term escapes the finite stratification the mass tower
+    is built on.
+
+    **Scope.** This is the well-definedness half of
+    `prop:mass-tower-coefficient-stratification`. The full narrative
+    claim — that each prefactor *equals* the Plancherel-weighted
+    Frobenius integral over the partitions of its stratum — is not
+    formalised here; it needs the Frobenius-integral machinery, which
+    is not yet available in Lean. What is proved is falsifiable (it
+    would fail if any constructor were assigned a depth above 4) and
+    is checked by exhaustion over the constructors.
+
+    Note the depth map is deliberately **not** injective: `.pair` and
+    `.knotFactor` both sit at depth 2, and `.volume` and `.pauli` both
+    at depth 0, so no uniqueness claim is available or intended. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Mass tower coefficients
 theorem mass_tower_coefficient_stratification
     (term : MassTowerTerm) :
-    ∃ depth : ℕ, depth = stratumDepth term :=
-  ⟨stratumDepth term, rfl⟩
+    stratumDepth term ≤ 4 := by
+  cases term <;> decide
 
 end QOU.BraidKnot

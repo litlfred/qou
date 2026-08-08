@@ -1,0 +1,34 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "PROBE-A: HH^1(H_n(q)) outer-derivation count",
+  "description": "dim HH^1(H_3(q)) = dim Der - dim Inn via direct Leibniz linear algebra over Q(q). Confirms HH^1=0 at generic/semisimple q and HH^1=1 at roots of unity ([2]_q=0, [3]_q=0). Necessary (not sufficient) for the P-vs-NP residue's home.",
+  "algebra": "H_3(q) Iwahori-Hecke, dim 6",
+  "method": "Der = nullspace of Leibniz constraints on 36 entries; Inn = 6 - dim Z(A); no fit, parameter-free dimension count.",
+  "results": {
+    "generic_symbolic": {
+      "dim_Der": 3,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 0
+    },
+    "q_eq_i_[2]=0": {
+      "dim_Der": 4,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 1
+    },
+    "q_eq_zeta6_[3]=0": {
+      "dim_Der": 4,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 1
+    },
+    "q_eq_2_semisimple": {
+      "dim_Der": 3,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 0
+    }
+  },
+  "verdict": "scope-(a): mechanism confirmed \u2014 outer derivations appear at roots of unity, absent at generic q. Bring-relevant case is H_5 at a 5th root (next step). HH^1>0 is necessary, not sufficient, for res!=0 (algebrization + decision-content clauses remain open)."
+}

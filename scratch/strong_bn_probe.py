@@ -4,7 +4,7 @@ sys.path.insert(0, "computations")
 from binding_manybody_jet_filtration import a_D, AME_B, M_E
 import mpmath as mp
 
-mp.dps = 50
+mp.mp.dps = 50
 q0 = mp.mpf("1.1099793132717013149866657930777598687799017684617")
 def qbracket(k):
     return (q0**k - q0**(-k)) / (q0 - 1/q0)

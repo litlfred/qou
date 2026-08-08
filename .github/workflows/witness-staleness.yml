@@ -109,6 +109,68 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: mp.dps no-op gate (strict — starts at ZERO)
+        # Sibling of the step above, catching the OPPOSITE defect.
+        #
+        #     import mpmath as mp
+        #     mp.dps = 50        # sets an attribute on the MODULE — a no-op
+        #
+        # Precision lives on the context, `mpmath.mp`, so under this alias the
+        # line has to read `mp.mp.dps`. As written the file runs at mpmath's
+        # default 15 digits while its author believes it is at 50. The
+        # `from mpmath import mp` form, where `mp.dps` IS correct, looks
+        # almost identical — which is why it survives review.
+        #
+        # The padding gate cannot see this: at dps=15 str(<mpf>) prints ~15
+        # digits and is_f64_padded needs >=20 before it looks at all. Of the
+        # seven instances found in this corpus, exactly ONE produced padding.
+        # Padding claims MORE precision than a value has; this carries LESS
+        # than was asked for.
+        #
+        # Not a ratchet — no baseline, no backlog. #4677 fixed every instance
+        # in gated paths, so this starts green and any regression fails.
+        # scratch/ is reported but not gated, so exploratory work cannot put a
+        # standing backlog in front of it.
+        run: |
+          python3 computations/mpf_context_dps_audit.py --self-test
+          python3 computations/mpf_context_dps_audit.py --strict | tee /tmp/dps.txt
+          {
+            echo '## mp.dps no-op gate';
+            echo '```';
+            head -20 /tmp/dps.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: raw-float64 ratchet (strict on NEW dirty witnesses)
+        # The step above gates FAKE precision — float64 padded past ~17 digits.
+        # It does NOT gate the rule AGENTS.md actually states: "NO-FLOAT64
+        # means none may enter a witness." A witness storing float64 AT
+        # float64 width is honest about being f64 and passes that gate while
+        # still breaking the rule.
+        #
+        # Not hypothetical: jpsi-boundstate-mass.witness.json reached main
+        # with 30 raw float64 fields and the padding gate green (13/13,
+        # NEW 0). Two of them were wrong about what they WERE — a
+        # Chern-Simons value that is exactly -1/12 stored as
+        # -0.08333333333333312, and one that is exactly 0 (amphichirality, a
+        # structural fact) stored as 8.324194211187791e-16.
+        #
+        # Ratchet ONLY. Draining the 1585-file backlog at the producer is
+        # PR #4677's work; this stops the class GROWING while that runs.
+        # Fails on a witness not in the baseline, or a baselined count that
+        # goes UP. Fix at the producer (mpmath.mpf from source, serialize
+        # with _precision.fmt) — never hand-edit, and never add a file to
+        # the baseline to go green.
+        run: |
+          python3 computations/witness_raw_float64_audit.py --self-test
+          python3 computations/witness_raw_float64_audit.py --strict | tee /tmp/rawf64.txt
+          {
+            echo '## raw-float64 ratchet';
+            echo '```';
+            head -14 /tmp/rawf64.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: q0-value drift ratchet (strict on NEW staleness)
         # A witness that embeds q_0 freezes whatever value its producer had.
         # When the canonical pinning is re-solved, every frozen copy silently

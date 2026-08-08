@@ -15,15 +15,28 @@ standard route is analytic continuation from the real segment via the identity
 theorem (`AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq`), which needs
 the identity to hold on a set with an accumulation point.
 
-`cLiTwo_reflection_ofReal` below supplies exactly that set — the real interval
-`(0,1)` — by transporting the already-proved `LiTwo_reflection'`. It is the
-input to the continuation argument, not the continuation itself.
+`cLiTwo_reflection_ofReal` supplies exactly that set — the real interval
+`(0,1)` — by transporting the already-proved `LiTwo_reflection'`, and
+`cLiTwo_reflection` runs the continuation:
+
+    Li₂ z + Li₂ (1 − z) = π²/6 − log z · log (1 − z)   for z ∈ ball(½, ½)
+
+sorry-free, on axioms `[propext, Classical.choice, Quot.sound]` only.
 
 ## What is NOT here
 
-The continuation argument itself, and hence the complex reflection identity at
-non-real arguments. `cLiTwo` is only known to converge on the open unit disc
-(`cLiTwo_summable`), so analyticity off the real axis is not yet established.
+**The identity at the 5₂ saddle root `y₁`.** `ball(½,½)` sits inside the unit
+disc, and `|y₁| = 1.52`; reaching it needs the *inversion* formula
+`Li₂ z + Li₂ (1/z) = −π²/6 − ½ log(−z)²` on top of this. So this file does not
+yet discharge `hrefl` in `QOU.QBeta.FiveTwo.sum_reflection_of_branch`, and the
+5₂ saddle sum rule (`qou-0yqu`) remains unproved.
+
+`ball(½,½)` rather than the unit ball is forced, not a convenience: for `z` in
+the unit ball `|1−z|` reaches 2, so `cLiTwo (1−z)` is outside the region where
+the series converges, and `Complex.log`'s branch cut runs through it. The
+analyticity hypotheses live in `QOU.MathlibExt.ComplexDilogarithm` (the
+`…_ball_half` block).
+
 Nothing is stubbed: no `sorry`, no axiom. Tracked in `qou-gkco`.
 
 -- Ref: [manuscript] beans qou-gkco, qou-ph1k
@@ -77,5 +90,70 @@ theorem cLiTwo_reflection_ofReal {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
     exact_mod_cast congrArg (fun r : ℝ => (r : ℂ)) hr
   push_cast at this ⊢
   linear_combination this
+
+/-! ### The continuation: the reflection identity on all of `ball(½, ½)`
+
+The identity theorem, applied on the ball whose analyticity hypotheses are
+assembled in `QOU.MathlibExt`. The accumulation set is the real segment
+`(0,1)`, transported by `cLiTwo_reflection_ofReal` above.
+
+Why `ball(½,½)` and not the unit ball: for `z` in the unit ball `|1−z|` reaches
+2, so `cLiTwo (1−z)` is not given by its series, and `Complex.log` has its
+branch cut running through it. See the `…_ball_half` block in
+`QOU.MathlibExt.ComplexDilogarithm`. -/
+
+open Filter Topology
+
+/-- `ℝ → ℂ` carries the punctured neighbourhood of `½` in ℝ into the punctured
+neighbourhood of `½` in ℂ. This is what makes the real segment an accumulation
+set for the identity theorem. -/
+theorem tendsto_ofReal_nhdsNE_half :
+    Filter.Tendsto (fun x : ℝ => (x : ℂ)) (𝓝[≠] (1 / 2 : ℝ)) (𝓝[≠] (1 / 2 : ℂ)) := by
+  have hcast : ((1 / 2 : ℝ) : ℂ) = (1 / 2 : ℂ) := by push_cast; ring
+  refine tendsto_nhdsWithin_of_tendsto_nhds_of_eventually_within _ ?_ ?_
+  · have h := (Complex.continuous_ofReal.tendsto (1 / 2 : ℝ)).mono_left
+      (nhdsWithin_le_nhds (s := ({(1 / 2 : ℝ)}ᶜ : Set ℝ)))
+    rwa [hcast] at h
+  · filter_upwards [self_mem_nhdsWithin] with x hx
+    simp only [Set.mem_compl_iff, Set.mem_singleton_iff] at hx ⊢
+    rw [← hcast]
+    exact fun h => hx (Complex.ofReal_inj.mp h)
+
+/-- **The complex Euler reflection identity, on `ball(½, ½)`.**
+
+    Li₂ z + Li₂ (1 − z) = π²/6 − log z · log (1 − z)
+
+Proved by analytic continuation from the real segment `(0,1)`, where it is
+`cLiTwo_reflection_ofReal` — itself a transport of the sorry-free real
+`LiTwo_reflection'`. This discharges the continuation step recorded as the
+remaining work in bean `qou-gkco`.
+
+**Scope.** `|z| < 1` throughout the ball, so this does *not* by itself reach
+the 5₂ saddle root `y₁` (`|y₁| = 1.52`); that still needs the inversion
+formula. -/
+theorem cLiTwo_reflection {z : ℂ} (hz : z ∈ Metric.ball (1 / 2 : ℂ) (1 / 2)) :
+    cLiTwo z + cLiTwo (1 - z)
+      = (Real.pi : ℂ) ^ 2 / 6 - Complex.log z * Complex.log (1 - z) := by
+  set U : Set ℂ := Metric.ball (1 / 2 : ℂ) (1 / 2) with hUdef
+  set f : ℂ → ℂ :=
+    fun w => cLiTwo w + cLiTwo (1 - w) + Complex.log w * Complex.log (1 - w) with hfdef
+  set g : ℂ → ℂ := fun _ => (Real.pi : ℂ) ^ 2 / 6 with hgdef
+  have hf : AnalyticOnNhd ℂ f U :=
+    (cLiTwo_analyticOnNhd_ball_half.add cLiTwo_one_sub_analyticOnNhd_ball_half).add
+      log_mul_log_one_sub_analyticOnNhd_ball_half
+  have hg : AnalyticOnNhd ℂ g U := fun _ _ => analyticAt_const
+  have hc : (1 / 2 : ℂ) ∈ U := Metric.mem_ball_self (by norm_num)
+  have hfreq : ∃ᶠ w in 𝓝[≠] (1 / 2 : ℂ), f w = g w := by
+    refine tendsto_ofReal_nhdsNE_half.frequently (Filter.Eventually.frequently ?_)
+    have hIoo : Set.Ioo (0 : ℝ) 1 ∈ 𝓝 (1 / 2 : ℝ) :=
+      Ioo_mem_nhds (by norm_num) (by norm_num)
+    filter_upwards [nhdsWithin_le_nhds hIoo] with x hx
+    have hr := cLiTwo_reflection_ofReal hx.1 hx.2
+    simp only [hfdef, hgdef]
+    linear_combination hr
+  have heq := hf.eqOn_of_preconnected_of_frequently_eq hg
+    ((convex_ball (1 / 2 : ℂ) (1 / 2)).isPreconnected) hc hfreq hz
+  simp only [hfdef, hgdef] at heq
+  linear_combination heq
 
 end QOU.Archimedean

@@ -11,9 +11,10 @@ exactly 1 ⇒ corpus sheet outside the annulus" reading was a pre-asymptotic
 artifact (e ≤ 28 window) — no analytic continuation is needed: the corpus
 sheet w = e^𝔲 is reached by DIRECT two-sided summation.
 
-This probe computes, at the T4 sheets ϑ_muon = 0.05894648,
-ϑ_proton = 0.20323503 (8-digit T4-inverted values, fixed inputs, NOT
-re-fitted), under the two radial sheet conventions of #4433
+This probe computes, at the T4 sheets ϑ_muon ≈ 0.0585920, ϑ_proton ≈ 0.2031325
+(T4-inverted, DERIVED from the canonical q₀ via `qbeta_t4_anchors` rather than
+typed — bean qou-vbw1; fixed inputs, NOT re-fitted), under the two radial sheet
+conventions of #4433
 (w = q₀·e^{iϑ} and w = q₀²·e^{2iϑ}, u = 2 log m convention):
 
   W2a  A_eff(𝔲) = Σ_{|e| ≤ E} I(0,e)(q̃)·wᵉ with per-e internal-order
@@ -53,6 +54,7 @@ from qou_substrate.precision import set_compute_dps  # noqa: E402
 
 from _awpk_fast_index import eval_I41_at  # noqa: E402
 from qbeta_g3_fourone_index_assembly_corrected import e2_window_for  # noqa: E402
+from qbeta_t4_anchors import theta_t4, S_ANCHORS  # noqa: E402
 
 set_compute_dps()
 
@@ -60,10 +62,13 @@ E_SUM = 64            # winding window: at |w| = q₀² the terms peak O(30)
                       # near e ≈ 30–40 and fall below 1e-10 by e ≈ 55–60
                       # (I(0,60)·q₀^{120} ≈ 5.6e-11); E = 64 adds margin.
 TOWER_REF = mp.mpf("0.42764420131745803633")   # honest w=1 tower (13d, #4433/g3)
-THETA_MUON = mp.mpf("0.05894648")
-THETA_PROTON = mp.mpf("0.20323503")
-S_MUON = mp.mpf("0.00968298")
-S_PROTON = mp.mpf("-0.03945936")
+# T4 sheets — DERIVED from the canonical q₀ (bean qou-vbw1), not typed. The
+# former 8-digit literals 0.05894648 / 0.20323503 were inverted at a q₀ that
+# was a unit conflation (h = q₀ − 1/q₀ read as 2·ln q₀). Still A_ω-conditioned.
+THETA_MUON = theta_t4("muon")
+THETA_PROTON = theta_t4("proton")
+S_MUON = mp.mpf(S_ANCHORS["muon"])
+S_PROTON = mp.mpf(S_ANCHORS["proton"])
 
 
 def ord_for(e: int) -> int:

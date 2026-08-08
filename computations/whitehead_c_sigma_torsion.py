@@ -40,6 +40,24 @@ two known cases (c = 1, 2); its general-c form is a smaller open sub-item (it
 matches the standard per-cusp Gaussian-integration factor in the GGMW/Ohtsuki
 saddle asymptotic).
 
+⚠ REFUTED 2026-08-07 (PR #4691, bean qou-fl4t).  |det J| as computed here is
+NOT a topological invariant: retriangulating the same manifold gives 8 distinct
+values for 5_2 (a ONE-cusped knot), 17 for 6_2, 6 for L5a1, 7 for L6a4.  The
+calibration on 4_1 cannot detect this — 4_1 has two tetrahedra, the one class
+with no room to vary under Pachner moves.
+
+The ambiguity group has since been identified (one_loop_ambiguity_group_probe.py):
+it is the UNIT GROUP OF THE TRACE FIELD — sqrt(2) for L5a1/L6a4, sqrt(plastic)
+for 5_2 (disc(x^3-x-1) = -23, the 5_2 trace field, ~30 digits).  That is exactly
+where the dropped DG flattening monomial prod z''^f'' z'^f' lives, confirming the
+diagnosis.  So the per-cusp factor 2^{(c-1)/2} below is not merely unproved, it
+is UNIDENTIFIABLE: no universal constant absorbs a manifold-dependent unit group.
+
+c_sigma = 2^{-3/4} therefore reverts to IDENTIFICATION (bean qou-pn5j, reopened).
+Its NUMERICAL VALUE is unaffected — whitehead_c_sigma_hiprec.py pins it to ~20
+digits independently, with no SnapPy and no det J.  Repair = restore the
+flattening + the 1/2, then re-run the invariance probe.
+
 Audit-only; the derived tau is NOT wired to any production dashboard.
 -- Ref: Dimofte-Garoufalidis, "The quantum content of the gluing equations",
         Geom. Topol. 17 (2013) 1253-1315 (1-loop invariant).
@@ -77,7 +95,14 @@ def one_loop_torsion(name: str):
     M = snappy.Manifold(name)
     N = M.num_tetrahedra()
     ncusps = M.num_cusps()
-    z = [mp.mpc(complex(s)) for s in M.tetrahedra_shapes('rect')]
+    # High-precision shape read (bean qou-t0rf).  `complex(s)` is float64, so
+    # the previous `mp.mpc(complex(s))` capped this computation near 16 digits
+    # regardless of `mp.mp.dps`, and made its own 4_1 values wobble at digit 16
+    # across runs.  Both halves are needed: asking SnapPy for `bits_prec` is
+    # useless if the value is then routed through a double.
+    _bits = int(mp.mp.dps * 3.3219) + 16
+    z = [mp.mpc(mp.mpf(str(s.real())), mp.mpf(str(s.imag())))
+         for s in M.tetrahedra_shapes('rect', bits_prec=_bits)]
     t = [z[j] / (1 - z[j]) for j in range(N)]           # z_j/(1-z_j)
 
     ge = M.gluing_equations('rect')                     # list of (A, B, c)

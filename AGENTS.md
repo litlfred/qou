@@ -424,16 +424,51 @@ ephemeral.
 
     - **Phase 0:** sibling coordination (notify overlapping PRs)
     - **Phase 1:** rebase onto main, build, push
-    - **Phase 1b:** wait for Copilot + Gemini reviews (up to 15 min)
+    - **Phase 1b:** request review; wait for **Copilot** (up to 15 min)
     - **Phase 2:** resolve review comments
     - **Phase 3:** escalate to user if blocked
-    - **Phase 4:** merge only after all reviews resolved + CI green
+    - **Phase 4:** merge only after reviews resolved + the
+      **verification gate** below is satisfied
+
+    > **🛑 Two of the three original gates no longer exist — do NOT
+    > block on them (recorded 2026-08-07).** An agent following the
+    > older wording waits forever on reviewers and a CI run that can
+    > never arrive:
+    >
+    > | Original gate | Actual state |
+    > |---|---|
+    > | CI green | **Unavailable.** Auto-triggers are disabled repo-wide — [`build.yml`](.github/workflows/build.yml) is `workflow_dispatch`-only ("CI auto-triggers disabled (owner directive 2026-06-30)": Actions billing). There is **no** `lean_ci.yml` in the tree. Feature branches routinely show **zero** workflow runs / zero check runs. |
+    > | Gemini review | **Gone.** "The consumer version of Gemini Code Assist on GitHub has been sunset. All code review activity has officially ceased." (bot notice, PR #4514, 2026-08-01). |
+    > | Copilot review | Still expected — this is the one review to wait on. |
+    >
+    > **Phase-4 verification gate (replaces "CI green").** Because CI
+    > is unavailable, the agent's own verification *is* the gate — this
+    > is the merge-time application of §"QA is agent-owned; CI is a
+    > backup". Before merging, state the evidence explicitly in the PR:
+    >
+    > - **Lean changed** → `lean`-direct **exit 0** on every changed
+    >   file, built against its **real import cone** (not a stubbed
+    >   harness), plus `#print axioms` on the new declarations showing
+    >   no `sorryAx`. Note that a **library** file under
+    >   `content/<paper>/lean/QOU/**` has no `.qa.json` sidecar and is
+    >   **not** covered by `lean-content-siblings.yml` (which gates
+    >   content-block siblings only) — nothing but the agent checks it.
+    > - **Content blocks changed** → [`scripts/check-sidecars.sh`](scripts/check-sidecars.sh)
+    >   clean + `qa-sweep` on the touched criteria; math-bearing `.md`
+    >   also needs the render-QA gate.
+    > - **Compute changed** → the producer re-run + witness refreshed.
+    >
+    > Do **not** write "CI green" in a PR or merge rationale unless a
+    > run actually exists — say which verification you ran instead.
+    > If a workflow *is* wanted for a specific PR, it must be kicked
+    > manually (`workflow_dispatch`).
 
     **No shortcuts.** Do NOT `gh pr merge` immediately after
     creating a PR. Do NOT skip reviews because "the change is
-    trivial". Do NOT merge without checking CI. The pipeline
-    exists to catch mistakes that the author's own session missed
-    — skipping it defeats its purpose.
+    trivial". Do NOT merge on an *unverified* branch — the pipeline
+    exists to catch mistakes that the author's own session missed,
+    and with CI down the verification gate above is the only thing
+    standing in for it, so skipping it defeats the purpose entirely.
 
     The only exception is if the user explicitly says "merge now,
     skip reviews" on the specific PR.

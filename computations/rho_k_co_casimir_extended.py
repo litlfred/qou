@@ -56,6 +56,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import str_at_true_precision  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV as _M_E_MEV_MP  # noqa: E402
 from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
@@ -293,6 +294,11 @@ def compute_co_casimir_for_atom(
         # χ^λ(β_atom) at q_0 — from parallel pool result.
         chi_q0 = chi_values[i]
 
+        # _chi_worker returns the numpy f64 kernel's result when numpy is
+        # importable and the full-precision mpmath result otherwise, so
+        # neither form can be assumed here.
+        chi_str = str_at_true_precision(chi_q0)
+
         y_chi = y_q0 * chi_q0
         contribution = y_chi * delta_B
         sum_contributions += contribution
@@ -303,7 +309,7 @@ def compute_co_casimir_for_atom(
             "dim_q_at_q0": str(d_q_q0),
             "Delta_lambda_co_casimir": str(delta_B),
             "y_lambda_at_q0": str(y_q0),
-            "chi_lambda_at_q0": str(chi_q0),
+            "chi_lambda_at_q0": chi_str,
             "y_chi_product_signed": str(y_chi),
             "contribution_y_chi_Delta": str(contribution),
         })

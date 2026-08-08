@@ -42,10 +42,17 @@ path = "../../unital-groebner-bases/lean"
 # metaprogramming modules into every local `lake build`, which can hang
 # on resource-constrained machines.  Un-comment if you need local docs.
 #
-[[require]]
-name = "doc-gen4"
-git = "https://github.com/leanprover/doc-gen4"
-rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"
+# KEEP COMMENTED ON `main`.  `.github/workflows/doc-gen4.yml` un-comments the
+# block between the sentinels below before building docs, by stripping the
+# leading `# ` from lines starting `# [[require]]` / `# name` / `# git` /
+# `# rev` *within that range only*.  Do not remove the sentinels, and do not
+# reflow these four lines.
+# --- BEGIN doc-gen4 (CI-only) ---
+# [[require]]
+# name = "doc-gen4"
+# git = "https://github.com/leanprover/doc-gen4"
+# rev = "1cd7a1113090e216703e323e8fdcdf099f0a9c8a"
+# --- END doc-gen4 (CI-only) ---
 
 # [[require]]
 # name = "checkdecls"

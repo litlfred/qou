@@ -2,7 +2,7 @@ This note expands [`prop:phi-q-aj-machinery-identification`](#prop:phi-q-aj-mach
 
 ## Statement
 
-Let $K$ be a hyperbolic knot complement and $J_N(K; q) \in \mathbb{Z}[q^{± 1}]$ its $N$-colored Jones polynomial. The AJ Conjecture asserts the existence of a non-trivial $q$-difference operator $\hat{A}_K \in \mathcal{A}_q$ such that:
+Let $K$ be a hyperbolic knot complement and $J_N(K; q) \in \mathbb{Z}[q^{\pm 1}]$ its $N$-colored Jones polynomial. The AJ Conjecture asserts the existence of a non-trivial $q$-difference operator $\hat{A}_K \in \mathcal{A}_q$ such that:
 
 $$\hat{A}_K(\hat{L}, \hat{M}; q) \cdot J_N(K; q) \;=\; 0$$
 
@@ -18,7 +18,7 @@ The two regimes are related by the modular S-transform $q \leftrightarrow \tilde
 
 ## Significance
 
-The framework previously distinguished $\Phi_q$ vs $\mathrm{Li}_2^q$ contexts pragmatically. Per the AJ identification, both are the same algebraic object ($\hat{A}_K$) viewed through different archimedean lenses. Wiring this explicitly unifies the context-sorting into a single algebraic statement. It provides the categorical-derivation target for the Path B closure question. The AJ identity holds over $\mathbb{Z}[q^{± 1}]$; the framework's Pre-Archimedean / Archimedean split passes through this algebraic gate. The concrete root-of-unity saddle for the figure-eight knot — the $\theta = \pi/3$ critical point of $\mathrm{Im}\,\mathrm{Li}_2(e^{i\theta})$, evaluating to $\mathrm{Vol}(4_1)$ — is computed once in [the dilog saddle regime](#rem:dilog-saddle-regime).
+The framework previously distinguished $\Phi_q$ vs $\mathrm{Li}_2^q$ contexts pragmatically. Per the AJ identification, both are the same algebraic object ($\hat{A}_K$) viewed through different archimedean lenses. Wiring this explicitly unifies the context-sorting into a single algebraic statement. It provides the categorical-derivation target for the Path B closure question. The AJ identity holds over $\mathbb{Z}[q^{\pm 1}]$; the framework's Pre-Archimedean / Archimedean split passes through this algebraic gate. The concrete root-of-unity saddle for the figure-eight knot — the $\theta = \pi/3$ critical point of $\mathrm{Im}\,\mathrm{Li}_2(e^{i\theta})$, evaluating to $\mathrm{Vol}(4_1)$ — is computed once in [the dilog saddle regime](#rem:dilog-saddle-regime).
 
 ## Lean structure
 

@@ -1,0 +1,171 @@
+{
+  "probe": "qbeta_5two_route5_branch_data_probe",
+  "dps": 60,
+  "roots": {
+    "y1": [
+      "0.78492014549902663296",
+      "1.3071412786820454805"
+    ],
+    "y3": "0.43015970900194673409",
+    "abs_y1": "1.5247025799298517702"
+  },
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "sum of principal Logs equals log P with NO 2pi i correction",
+      "worst_abs_deviation": "3.1115076e-61",
+      "worst_at_z": "0.95",
+      "integer_corrections_seen": [
+        0
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "sum_j Li2(y_j) == -int_0^1 log P(z)/z dz",
+      "lhs_re": "0.9717306814686482591277742",
+      "lhs_im": "0.0",
+      "rhs": "0.9717306814686482591277742",
+      "abs_difference": "7.7787691e-62",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "prior_claim_under_test": "bean qou-0yqu, 2026-08-07, written by this agent: 'the branch data b = (-1,+1,+1) is exactly the 2 pi i k correction in log prod = sum log'",
+      "verdict": "REFUTED",
+      "reason": "G1 finds no 2 pi i correction at all in the integrand identity: the conjugate pair's arguments cancel and the real root contributes a positive real, so every principal branch is already correct. b therefore cannot be that correction.",
+      "action_required": "strike the claim from bean qou-0yqu"
+    },
+    {
+      "gate": "G4",
+      "claim": "b == k, the branch defect of 2 Log y = 3 Log(1-y)",
+      "per_root": [
+        {
+          "root": "y1",
+          "k_re": "1.0",
+          "k_im": "0.0",
+          "k_is_integer": true,
+          "k_rounded": 1
+        },
+        {
+          "root": "y2",
+          "k_re": "-1.0",
+          "k_im": "0.0",
+          "k_is_integer": true,
+          "k_rounded": -1
+        },
+        {
+          "root": "y3",
+          "k_re": "0.0",
+          "k_im": "-2.4760591e-62",
+          "k_is_integer": true,
+          "k_rounded": 0
+        }
+      ],
+      "k_tuple": [
+        1,
+        -1,
+        0
+      ],
+      "b_corpus": [
+        -1,
+        1,
+        1
+      ],
+      "matches_b": false,
+      "matches_b_up_to_sign": false
+    },
+    {
+      "gate": "G5",
+      "claim": "sum_j Re(V_j) == -3 pi^2 / 2 (verified, UNPROVED)",
+      "per_root_re_V": [
+        "-3.5556078908836040862",
+        "-3.5556078908836040862",
+        "-7.6931908198668297559"
+      ],
+      "total": "-14.8044066016340379282517364998",
+      "target": "-14.8044066016340379282517364998",
+      "abs_difference": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "log y_j + b_j pi i == Log(-y_j), principal branch",
+      "per_root": [
+        {
+          "root": "y1",
+          "b": -1,
+          "abs_difference": "0.0"
+        },
+        {
+          "root": "y2",
+          "b": 1,
+          "abs_difference": "0.0"
+        },
+        {
+          "root": "y3",
+          "b": 1,
+          "abs_difference": "0.0"
+        }
+      ],
+      "worst_abs_difference": "0.0",
+      "pass": true,
+      "consequence_if_pass": "b is not free data: V_j = 3 Li2(y_j) + Log(-y_j)^2. And Log(-z)^2 is precisely the object in the dilogarithm inversion formula Li2(z) + Li2(1/z) = -pi^2/6 - Log(-z)^2/2."
+    },
+    {
+      "gate": "G7",
+      "claim": "sum rule <=> sum_j Re Li2(y_j) - 2 sum_j Re Li2(1/y_j) == -pi^2/2",
+      "sum_re_li2_roots": "0.9717306814686482591277742",
+      "sum_re_li2_reciprocals": "2.95326644100666378427251",
+      "lhs": "-4.934802200544679309417245",
+      "rhs_neg_pi_sq_over_2": "-4.934802200544679309417245",
+      "abs_difference": "0.0",
+      "identity_holds": true,
+      "per_root_inversion_rewrite_worst_error": "10.600974",
+      "per_root_rewrite_valid": false,
+      "pass": true,
+      "honesty": "The per-root rewrite fails as a COMPLEX identity -- Li2(z) + Li2(1/z) = -pi^2/6 - Log(-z)^2/2 requires z not in [0,1] and y_3 = 0.4302 is in (0,1). But G8 shows the whole defect is IMAGINARY: Re D_j = 0 for every root separately. Since the sum rule only ever uses real parts, the rewrite IS valid for this purpose. Read 'per_root_rewrite_valid: false' as 'not valid as a complex identity', not as 'the derivation is broken'.",
+      "note": "The reciprocals are NOT a second copy of the same integral: prod_j (1 - z/y_j) = 1 - 3z + 2z^2 - z^3 changes sign on [0,1] (it is -1 at z = 1), because 1/y_3 = 2.325 > 1. That sign change is where genuine branch structure enters, and it is why the reciprocal sum is not handed to us by the same positivity argument."
+    },
+    {
+      "gate": "G8",
+      "claim": "per-root inversion defects are nonzero but sum to zero in real part",
+      "per_root_defect": [
+        {
+          "root": "y1",
+          "Re_D": "0.0",
+          "Im_D": "-1.5557538194652854268e-61"
+        },
+        {
+          "root": "y2",
+          "Re_D": "0.0",
+          "Im_D": "1.5557538194652854268e-61"
+        },
+        {
+          "root": "y3",
+          "Re_D": "3.1115076389305708536e-61",
+          "Im_D": "-10.600974202627127926"
+        }
+      ],
+      "sum_Re_D": "3.11150763893e-61",
+      "sum_Im_D": "-10.6009742026",
+      "pass": true,
+      "defect_is_purely_imaginary": true,
+      "consequence_if_pass": "Stronger than anticipated: Re D_j = 0 for EVERY root separately, not merely in the sum. The entire inversion defect at y_3 is imaginary (Im D_3 = -10.6009742). Since the sum rule involves only real parts, the per-root inversion rewrite is legitimate for it, and G7's restatement is DERIVED rather than merely observed. What a Lean proof needs is therefore the REAL PART of the inversion formula on (0,1) -- a weaker and more tractable statement than the complex identity."
+    },
+    {
+      "gate": "G9",
+      "claim": "sum_j Re Log(-y_j)^2 == (3/2)log^2 y_3 - 2(theta-pi)^2 - pi^2",
+      "theta_arg_y1": "1.030019489685363686",
+      "lhs": "-17.71959864603998270563506",
+      "rhs_closed_form": "-17.71959864603998270563506",
+      "abs_difference": "0.0",
+      "route5_A_from_closed_form": "0.9717306814686482591277742",
+      "route5_A_from_integral": "0.9717306814686482591277742",
+      "route5_abs_difference": "2.3336307e-61",
+      "pass": true,
+      "consequence_if_pass": "The Log^2 half of the sum rule is elementary and now Lean-proved, so the entire remaining content sits in the dilogarithm half. Route 5's restatement is EQUIVALENT to the sum rule given the one open link sum_j Re Li2(y_j) = -int_0^1 log P(z)/z dz (gate G2)."
+    }
+  ],
+  "scope": "Numerical verification only. Nothing here proves the sum rule, which remains verified-to-80-dps and unproved. Scope-(a) throughout: no ingredient is structurally excluded by any gate below."
+}
