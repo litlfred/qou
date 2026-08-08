@@ -8,6 +8,41 @@ created_at: 2026-08-07T22:10:00Z
 updated_at: 2026-08-07T22:10:00Z
 ---
 
+## Priority escalation (2026-08-08) — this blocks BOTH PlancherelSnData axioms
+
+Originally filed as the blocker on axiom (ii) (the `ω = Σ c²` labelling). #4710
+(merged, `b10c689e`) landed `BurnsideDischarge.lean`, deriving `Σ_λ (f^λ)² = n!`
+from the roadmap bridges and replacing the `BurnsideContext` self-assuming
+projection with a real instance. Its `burnside_proved` carries a residual
+`sorryAx` tracing to exactly two lemmas: `SnWedderburnPartitionBridge:234` and
+**`JucysMurphy:840` — this one**.
+
+So axiom (i) `Σ_λ dim² = n!` lands on this lemma too, once the labelling bridges
+are in place. **This is now the single highest-value open lemma in the Identity-I
+chain**, not merely the `ω`-side blocker.
+
+## Inputs that landed since this bean was filed
+
+- **The column-superstandard tableau now exists** (#4716, 10 decls, sorry-free) —
+  the sub-task this bean flagged as missing (`grep colSuperstandard` was empty).
+  It is `Finset.orderIsoOfFin` for the column-then-row lex order, since
+  `Specht.Tableau μ` is definitionally `Fin (nOf μ) ≃ μ.cells`.
+  - **Trap recorded there:** applying `orderIsoOfFin` under a bespoke
+    `LinearOrder (ℕ × ℕ)` *appears* to elaborate, but `ℕ × ℕ` already carries
+    Mathlib's componentwise `Prod.instLE_mathlib`, so type-annotated downstream
+    lemmas resolve `LE` to the ambient instance and mismatch. Instance-level —
+    `show`/`unfold` do not fix it. Route through `ℕ ×ₗ ℕ` and transport back.
+- **`sameColumn_count`** — for the column-superstandard tableau,
+  `#{j < s : (j s) ∈ colStab T₀} = row index of s`. So the first summand of
+  `jm_polytabloid_split` is exactly `−i · e_{T₀}`: **the `−i` of
+  `content (i,j) = j − i` is settled.**
+- **`swap_mem_colStab_iff`** — the converse of `colStab_swap_mem` (which gave only
+  same-column ⟹ in `colStab`). This is what turned the count into an exact equality.
+
+Division of labour (agreed on PR #4702, per the measured-research-overlap rule):
+the sibling took the tableau construction and the `−i` half and is deliberately
+staying off steps 2–5 below; **steps 2–5 are this bean's**.
+
 ## The gap
 
 `QOU.BraidKnot.JucysMurphy.seminormalVector_base_exists`
