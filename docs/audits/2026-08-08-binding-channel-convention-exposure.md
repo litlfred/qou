@@ -426,17 +426,18 @@ Beaned as follow-up 6.
    `z_C` is *"the canonical mass/binding convention"*; the mass half is now
    wrong. Same class as the `prop:h3-markov-wenzl-weights` Scope-note correction
    already filed as follow-up 1 of the mass-fibre audit.
-3. **`docs/coordination/trace-convention-registry.json` does not exist.** Six
-   corpus sites reference "the trace-convention registry" narratively
-   (`m_p_substrate_identity_50dps.py:131`,
-   `canonical-derivation-cheat-sheet.md:648`,
-   `deuteron_from_scratch_ledger.py:292`,
-   `probe_convention_d_vs_c_borromean.py:4,157`,
-   `deuteron-from-scratch-ledger.witness.json:142`) but there is no JSON and no
-   `trace_convention_registry_validate.py`. This audit did **not** fabricate a
-   schema and validator to fill the gap. If the registry is wanted, it should be
-   created deliberately, with the `binding` channel carrying the §1 finding and
-   an `n`-coverage field (currently `n = 3` only).
+3. ~~`docs/coordination/trace-convention-registry.json` does not exist.~~
+   **Corrected — the registry DOES exist and has been updated by this audit.**
+   Recorded because the mistake is instructive: the branch was cut from a
+   `origin/main` ref that a timed-out `git fetch` had left stale, and the
+   registry (plus `trace-convention-registry.md` and
+   `trace_convention_registry_validate.py`, 526 lines) landed on `main`
+   *afterwards* via `2026-08-08-trace-convention-registry-and-doc-fix.md`. An
+   earlier draft of this audit asserted the registry was absent — exactly the
+   corpus-status over-claim the AGENTS §"Before declaring open" checklist
+   exists to catch, produced here by a stale ref rather than a missing grep.
+   **Re-fetch before asserting a file's absence.** See §7a below for what was
+   actually changed.
 4. **Re-scope `r* ≈ 1.585`** wherever it appears as a target
    (`vassiliev_magnitude_a3_probe.py`, the A=3 magnitude audits) to note it is
    a C-convention value that would read `2.04–2.16` under D.
@@ -447,3 +448,31 @@ Beaned as follow-up 6.
    full sum is ever wanted at that pin (needs the `pyhecke_native` Rust wheel,
    unavailable in this sandbox — `ImportError: No module named 'pyhecke_native'`,
    so the pure-Python Hoefsmit path was used throughout).
+
+---
+
+## 7a. Registry update
+
+[`docs/coordination/trace-convention-registry.json`](../coordination/trace-convention-registry.json)
+`channels[binding]` now carries:
+
+- an **`open_item`** (bean `qou-rm47`, this audit) with the measured blast
+  radius and the ~15 live `markov_z` / `y_lambda_wenzl_bridge` consumers;
+- an **`n_coverage`** field recording that the registry's conventions were
+  stated at `n = 3` and that `n > 3` is first covered here, with the
+  block-annihilation counts (1/3, 7/11, 25/30, 70/77) and the verifying probe.
+
+**`status` deliberately stays `"agreed"`.** In this schema `status` means
+`definitional_convention == production_convention`, and for binding both are C
+— there is no definitional-vs-production mismatch, which is what `"disputed"`
+denotes (R8). What this audit opens is the *definitional choice itself*, which
+the schema expresses through `open_item`, not through `status`. Setting
+`"disputed"` would have been the more dramatic edit and the wrong one: R8 emits
+a warning for a `"disputed"` channel whose two conventions agree, and it would
+have misrepresented the finding as a wiring inconsistency rather than a
+question about which fibre binding traces.
+
+`trace_convention_registry_validate.py --lint-docs --selftest` → **PASS
+(0 errors, 21 warnings)**; all 21 warnings are pre-existing R5
+undeclared-convention notices on unrelated Borromean tracers, and all three
+selftest regression cases (RC1–RC3) are caught.
