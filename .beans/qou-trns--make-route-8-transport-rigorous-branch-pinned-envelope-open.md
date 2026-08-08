@@ -292,3 +292,69 @@ That is the concrete next step: derive `S′(x) = −2 log x / x` from the symme
 functions alone, never naming a branch.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the transport argument is REPAIRED. One analytic step left.
+
+`qbeta_5two_route19_transport_repaired_probe.py`, 5 gates.
+
+### The repair
+
+The dead argument tracked `g(x) = Σⱼ Log[(1 − yⱼ/x)/(1 − x·yⱼ)]` with **per-root
+continuous logs** — a branch *labelling*, which is exactly what a collision
+destroys. Work instead with the two symmetric Vieta products, **both already
+sorry-free in Lean** since #4658:
+
+    ∏ⱼ (1 − x·yⱼ) = x        (`prod_one_sub_x_mul`)
+    ∏ⱼ (x − yⱼ)   = x²        (`prod_x_sub`)  ⟹  ∏ⱼ (1 − yⱼ/x) = 1/x
+
+Neither vanishes on `|x| = 1`, so each has an unambiguous continuous log there.
+Measured over 4001 points spanning the branch point:
+
+| | |
+|---|---|
+| max step in `Σⱼ log(1 − x·yⱼ)` | **2.5e-5** (a `2π` jump would be `6.28`) |
+| `max \| Σⱼ log(1 − x·yⱼ) − log x \|` | **9.7e-41** |
+| same for `Σⱼ log(1 − yⱼ/x)` vs `−log x` | same order |
+
+So the sum of per-root logs **is** the continuous log of the symmetric product,
+branch integer **0**, straight through the collision.
+
+### Why — and this is the point the old argument was missing
+
+**At the collision the two colliding roots are `y₂ = y₃` exactly.** So the two
+log-terms being permuted are **identical**, and a sum cannot notice a
+relabelling of equal terms. The monodromy acts on labels; the sum has none.
+
+With both sums pinned,
+
+    Σⱼ ∂V/∂x = (1/x)·( Σⱼ log(1 − yⱼ/x) − Σⱼ log(1 − x·yⱼ) ) = −2·log(x)/x
+
+and integrating along `x = e^{iφ}` gives `S(e^{iφ}) − S(1) = φ²`, hence
+**`S(−1) = S(1) + π²`**.
+
+### What is still missing — now one named step, not a hole
+
+The envelope theorem needs `dyⱼ/dx`, which **does not exist at the branch
+point**. The fix is removability:
+
+* off the branch point the discriminant is non-zero, so the IFT applies and the
+  envelope argument is valid;
+* `S` is continuous at the branch point (Route 17, residual `0.0` there);
+* an analytic function on a punctured neighbourhood, continuous at the puncture,
+  extends analytically (Riemann).
+
+So `S′(x) = −2 log x / x` holds on the whole arc. **That is ordinary analysis and
+it is not written.** It is now the only gap in the transport.
+
+### A measurement note worth keeping
+
+G4 first failed because `φ₀` was a hardcoded 25-digit constant. This is a
+**square-root** branch point, so root separation near it grows like `√|Δφ|` — a
+25-digit `φ₀` leaves the roots `~1e-12` apart, not `~1e-25`. The constant is now
+computed at working precision inside the probe. **A truncated constant is not a
+neutral convenience near a square-root singularity**, which is of a piece with
+the `0.348` lesson: it was the same failure to state how a number was obtained.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
