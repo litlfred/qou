@@ -168,4 +168,93 @@ theorem jm_eigen_colSuperstandard (μ : YoungDiagram) (s : Fin (Specht.nOf μ))
   rw [smul_neg]
   abel
 
+/-! ### The per-column Garnir annihilation — the last debt
+
+Everything above carries the annihilation as an explicit hypothesis. This section
+discharges it, so the eigen-equation becomes unconditional.
+
+The route is the one recorded on bean `sv8b`: reduce to a **row collision** via
+`sum_sign_rep_polytabloid_eq_zero_of_family`, produce the colliding label with
+`OVBaseSeminormalVector.exists_collision_earlier_col`, and kill the tabloid sum with
+`mtab_sum_sign_smul_of_eq_zero` at the transposition `swap x s`.
+
+The step that makes it work is that the collision is needed in `ρ • T₀` for **every**
+`ρ ∈ colStab T₀`, not just in `T₀` — and `colPattern_smul_of_mem_colStab` says the column
+pattern is `colStab`-invariant, so the collision lemma applies to `ρ • T₀` with the *same*
+column data. That is why the generic-in-`t` form of the collision (rather than a
+`colSuperstandard`-specialised one) is what the assembly needs. -/
+
+/-- **The per-column Garnir annihilation for `T₀` (sorry-free).**
+
+For a column `c` strictly left of `s`'s column, the signed sum over `S_{{s} ∪ C_c}`
+annihilates the polytabloid of the column-superstandard tableau.
+
+Proof: `sum_sign_rep_polytabloid_eq_zero_of_family` reduces the goal to a tabloid-level
+sum over `ρ • T₀` for each `ρ ∈ colStab T₀`. Since `ρ` preserves the column pattern, `s`
+still sits in column `c_s` of `ρ • T₀`, so `exists_collision_earlier_col` supplies a label
+`x ≠ s` in column `c` sharing `s`'s **row**. Then `swap x s` is a sign-reversing involution
+lying in `rowStab (ρ • T₀)`, and the group is closed under right-multiplication by it
+because both `x` and `s` lie in `{s} ∪ C_c` — so `mtab_sum_sign_smul_of_eq_zero` applies. -/
+theorem colGarnir_annihilation (μ : YoungDiagram) (s : Fin (Specht.nOf μ)) (c : ℕ)
+    (hc : c < (colSuperstandard μ s : ℕ × ℕ).2) :
+    ∑ σ ∈ OVBaseSeminormalVector.permFixingOutside (μ := μ) (insert s (colLabels μ c)),
+        (Equiv.Perm.sign σ : ℤ) •
+          Specht.Mtab.rep (k := k) μ σ (Specht.polytabloid (k := k) (colSuperstandard μ))
+      = 0 := by
+  classical
+  refine SpechtStandardBasis.sum_sign_rep_polytabloid_eq_zero_of_family
+    (k := k) (colSuperstandard μ) _ (fun ρ => ?_)
+  -- The column pattern is `colStab`-invariant, so `s` keeps its column in `ρ • T₀`.
+  have hcol : Specht.colPattern ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • colSuperstandard μ)
+      = Specht.colPattern (colSuperstandard μ) :=
+    OVBaseSeminormalVector.colPattern_smul_of_mem_colStab ρ.2
+  have hs : Specht.colPattern ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • colSuperstandard μ) s
+      = (colSuperstandard μ s : ℕ × ℕ).2 := by rw [hcol]; rfl
+  obtain ⟨x, hxs, hxc, hxr⟩ :=
+    OVBaseSeminormalVector.exists_collision_earlier_col
+      ((ρ : Equiv.Perm (Fin (Specht.nOf μ))) • colSuperstandard μ) hc hs
+  -- `x` lies in column `c` of `T₀` itself, hence in the Garnir set.
+  have hxmem : x ∈ insert s (colLabels μ c) := by
+    refine Finset.mem_insert_of_mem ?_
+    rw [mem_colLabels]
+    have : Specht.colPattern (colSuperstandard μ) x = c := by rw [← hcol]; exact hxc
+    exact this
+  have hsmem : s ∈ insert s (colLabels μ c) := Finset.mem_insert_self _ _
+  refine SpechtStandardBasis.mtab_sum_sign_smul_of_eq_zero
+    (k := k) _ _ (Equiv.swap x s) (Equiv.swap_mul_self x s)
+    (Equiv.Perm.sign_swap hxs) ?_ ?_
+  · -- `swap x s` fixes the row pattern of `ρ • T₀`: it swaps two labels in the same row.
+    rw [Specht.mem_rowStab]
+    funext l
+    rw [Specht.arrow_smul_apply, Equiv.symm_swap]
+    rcases eq_or_ne l x with rfl | hlx
+    · rw [Equiv.swap_apply_left]; exact hxr.symm
+    · rcases eq_or_ne l s with rfl | hls
+      · rw [Equiv.swap_apply_right]; exact hxr
+      · rw [Equiv.swap_apply_of_ne_of_ne hlx hls]
+  · -- Closed under right-multiplication: `swap x s` fixes everything outside the set.
+    intro g hg
+    rw [OVBaseSeminormalVector.mem_permFixingOutside] at hg ⊢
+    intro l hl
+    have hlx : l ≠ x := fun h => hl (h ▸ hxmem)
+    have hls : l ≠ s := fun h => hl (h ▸ hsmem)
+    rw [Equiv.Perm.mul_apply, Equiv.swap_apply_of_ne_of_ne hlx hls]
+    exact hg l hl
+
+/-- **The Okounkov–Vershik eigen-equation for `T₀`, unconditional.**
+
+    `X_s · e_{T₀} = col(s) · e_{T₀} − row(s) · e_{T₀}`
+
+with no remaining hypothesis: `colGarnir_annihilation` discharges the debt that
+`jm_eigen_colSuperstandard` carried. `col − row` is the content of `s`'s cell, so this is
+the OV eigenvalue. -/
+theorem jm_eigen_colSuperstandard' (μ : YoungDiagram) (s : Fin (Specht.nOf μ)) :
+    (Specht.Mtab.rep (k := k) μ).asAlgebraHom
+        (QOU.BraidKnot.JucysMurphy.jucysMurphy (k := k) (Specht.nOf μ) s)
+        (Specht.polytabloid (k := k) (colSuperstandard μ))
+      = ((colSuperstandard μ s : ℕ × ℕ).2) • Specht.polytabloid (k := k) (colSuperstandard μ)
+        - ((colSuperstandard μ s : ℕ × ℕ).1)
+            • Specht.polytabloid (k := k) (colSuperstandard μ) :=
+  jm_eigen_colSuperstandard μ s (fun c hc => colGarnir_annihilation μ s c hc)
+
 end QOU.BraidKnot.ColSuperstandardEigen
