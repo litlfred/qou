@@ -76,3 +76,55 @@ matching, split the result into (a) confirmed drift, (b) mis-resolved producer,
 (c) no-hash, and size each. Do NOT mass-regenerate: that is a large compute
 sweep and needs scoped sign-off, and some producers are hours-long (see
 `qou-p2ka`).
+
+---
+
+# ATTACK VECTORS (2026-08-08)
+
+## Where it sits in the chain
+
+Not on the derivation chain at all — this is the **provenance layer** that
+guards every step of it. A witness is the serialized output of one chain step;
+`scriptHash` is the only mechanism asserting that the recorded numbers came from
+the code currently in the tree. It intervenes between **a compute step and every
+downstream consumer of its numbers**.
+
+That placement is why 18% drift matters more than it looks: a stale witness does
+not announce itself, and consumers read numbers, not provenance.
+
+## AV1 — confirm the count with the P30 oracle, do not re-measure with mine
+
+My resolver used `scriptFile` when present, else stem matching. #4715/#4717
+built an actual producer/consumer discriminator ("does the claimed producer
+actually write the witness? 3, not 324"). Re-run the scan with THAT as the
+resolver and split into: confirmed drift / mis-resolved producer / no-hash.
+Only the first bucket is real work. Do this before anything else — the 508 may
+shrink a lot.
+
+## AV2 — the 427 no-hash witnesses are the more dangerous class
+
+A witness with a drifted hash is at least VISIBLE to the discipline. A witness
+with NO `scriptHash` is invisible: it can never be flagged stale, so it silently
+passes every freshness check forever. This is the same shape as the
+phantom-citation class (#4513) and the vacuity-audit gaps (#4712): **a check
+that does not apply is indistinguishable from a check that passed.**
+Prioritise backfilling `scriptHash` over regenerating drifted ones.
+
+## AV3 — rank by blast radius, not by count
+
+A drifted witness that nothing consumes is bookkeeping. One consumed by the mass
+path or a dashboard is a live wrong-number risk. Cross-reference the drift list
+against the no-free-parameter certificate's consumer set and the L2 dashboards,
+and drain that intersection first.
+
+## AV4 — make the gate mechanical
+
+Once confirmed, a `--check-witness-freshness` mode that exits non-zero belongs
+in the same place `check-sidecars.sh` runs, so this cannot re-accumulate. That
+is the durable fix; regeneration alone just resets the clock.
+
+## GUARD
+
+Do NOT mass-regenerate. Some producers run for hours (see `qou-p2ka`, where A2
+exceeded the container restart interval twice). Regeneration is a scoped compute
+sweep needing sign-off, not an idle-time drain.

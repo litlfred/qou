@@ -105,7 +105,7 @@ def main() -> int:
     print()
 
     # --- exact Habiro Δtr_M from the witness ---
-    hab = json.loads((_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    hab = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     tr_p_str = hab["results"]["p (proton, A=1)"]["tr_M_in_q"]
     tr_n_str = hab["results"]["n (neutron, A=1)"]["tr_M_in_q"]
     tr_p_sym = sp.sympify(tr_p_str, locals={"q": q})

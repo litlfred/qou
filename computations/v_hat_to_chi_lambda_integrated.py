@@ -61,7 +61,12 @@ if str(HERE) not in sys.path:
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def load_a_operator_witness() -> dict | None:
@@ -69,7 +74,7 @@ def load_a_operator_witness() -> dict | None:
     f = HERE / "sublemma-2-1-A-operator-extract.witness.json"
     if not f.exists():
         return None
-    return json.loads(f.read_text())
+    return record_upstream(f, _UPSTREAM_RECORDS)
 
 
 def main() -> int:
@@ -79,6 +84,7 @@ def main() -> int:
     print()
 
     w = WitnessBuilder("v-hat-to-chi-lambda-integrated", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Unified V̂_i → χ^λ predictor combining the 1-dim product formula "
         "(this PR) with the multi-dim operator-valued A^λ_{μν}(I) "

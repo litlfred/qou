@@ -18,7 +18,7 @@ export default proposition({
     "3b-cond",
   ],
   lean: {
-    ref: "qou:QOU.BraidKnot.QBetaCanonicalMarkovWeightsInstance.explicitInstance",
+    ref: "qou:QOU.BraidKnot.CanonicalMarkovWeightsH3.explicitInstance",
   },
   authorNotes: [
     {

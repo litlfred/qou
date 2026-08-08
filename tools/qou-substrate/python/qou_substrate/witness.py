@@ -244,6 +244,41 @@ def load_and_hash_upstream(path: Union[str, Path]) -> tuple[dict, dict]:
     }
 
 
+def record_upstream(path: Union[str, Path], into: list) -> dict:
+    """Load an upstream witness and append its hash record to ``into``.
+
+    ``WitnessBuilder.add_upstream`` is a *method*, so it can only be used once
+    a builder exists. A survey of this corpus found that 290 of 330 producers
+    that consume a witness read it **before** constructing their builder — the
+    prevailing shape is "read the inputs at the top, build the witness at the
+    bottom". That ordering, not oversight, is why ``add_upstream`` adoption sat
+    at 5.7%: the API asked for a structure most producers do not have.
+
+    This function closes that gap without a restructure::
+
+        _UP: list = []
+        q0 = mpf(record_upstream(Q_PIN, _UP)["derived_50_digit"]["q"])
+        ...
+        w = WitnessBuilder("my-witness").add_upstream_records(_UP)
+
+    **The list is the caller's, deliberately.** The obvious alternative — a
+    module-level accumulator that ``WitnessBuilder`` drains on construction —
+    is unsafe in two entirely ordinary situations: producer P imports Q, and
+    Q recorded upstreams at *its* import time, so P's builder drains and
+    claims Q's records; or a test imports a producer for its symbols and any
+    later builder inherits them. Both silently attach the wrong provenance,
+    which is the precise failure this metadata exists to detect. Passing an
+    explicit list makes that class of bug unrepresentable: a record can only
+    reach the witness whose author named the list.
+
+    Returns the parsed body, so it is a drop-in for
+    ``json.loads(path.read_text())`` at the call site.
+    """
+    body, hash_record = load_and_hash_upstream(path)
+    into.append(hash_record)
+    return body
+
+
 # ── Assertion type ───────────────────────────────────────────────
 
 class Assertion:
@@ -551,6 +586,25 @@ class WitnessBuilder:
         body, hash_record = load_and_hash_upstream(path)
         self._upstream_hashes.append(hash_record)
         return body
+
+    def add_upstream_records(self, records: list) -> "WitnessBuilder":
+        """Attach upstream hash records captured before this builder existed.
+
+        The companion to the module-level ``record_upstream`` below. See its
+        docstring for why the pair exists.
+
+        Idempotent by ``(path, sha256)``: re-attaching the same list, or a list
+        that overlaps with upstreams already declared through ``add_upstream``,
+        cannot duplicate an edge. Producers that both record early and declare
+        late therefore stay correct.
+        """
+        seen = {(r.get("path"), r.get("sha256")) for r in self._upstream_hashes}
+        for r in records or []:
+            key = (r.get("path"), r.get("sha256"))
+            if key not in seen:
+                seen.add(key)
+                self._upstream_hashes.append(r)
+        return self
 
     # ── Reserved structured keys used by ``wrap_legacy`` ─────────
     # Keys that are routed to dedicated WitnessBuilder slots rather

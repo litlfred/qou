@@ -50,7 +50,12 @@ sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402
 
 mp.mp.dps = 60
@@ -96,8 +101,7 @@ def main() -> int:
 
     # ---- consistency gate: Sp/Sm reproduce the committed A2 matrices ----
     import json
-    sw = json.loads((_HERE / "qbeta-5two-stokes-barodd-index.witness.json")
-                    .read_text())
+    sw = record_upstream(_HERE / "qbeta-5two-stokes-barodd-index.witness.json", _UPSTREAM_RECORDS)
     d_ = sw.get("witness", sw)["data"]
     Sp_ref = [[mp.mpf(v) for v in row] for row in d_["S_plus_at_substrate_muon"]]
     dev_s = max(abs(Sp[i, j] - Sp_ref[i][j]) /
@@ -162,6 +166,7 @@ def main() -> int:
 
     wb = WitnessBuilder("qbeta-5two-gk-bilinear-pairing", engine="mpmath",
                         _script_path=__file__)
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "B1.2 (bean qou-9s8k): the GK bilinear block pairing confronted "
         "with the Habiro-face targets. Both sides of the substrate "

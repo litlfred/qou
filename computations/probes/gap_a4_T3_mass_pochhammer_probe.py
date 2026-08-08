@@ -61,7 +61,12 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -156,7 +161,7 @@ def _load_chi_cache_tr_M(atom: str, n_strands: int) -> mp.mpf:
     y_path = COMPUTE_DIR / "y-lambda-at-q0.witness.json"
     if not y_path.exists():
         return None
-    y_raw = json.loads(y_path.read_text())["data"]["by_n"]
+    y_raw = record_upstream(y_path, _UPSTREAM_RECORDS)["data"]["by_n"]
     y_by_part = {
         tuple(row["partition"]): mp.mpf(row["y_at_q0_50dps"])
         for row in y_raw[str(n_strands)]
@@ -201,6 +206,7 @@ def _verdict(rel_err: mp.mpf) -> str:
 
 def main() -> int:
     w = WitnessBuilder("gap-a4-T3-mass-pochhammer-probe", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only("docs/audits/2026-06-05-gap-a4-T3-path-b-lambda-formulation-scope.md")
     w.set_description(
         "GAP-A-4 T3 probe: test bar-symmetric q-Pochhammer "

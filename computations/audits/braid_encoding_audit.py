@@ -71,7 +71,12 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q as Q0_FLOAT, HA as HA_FLOAT
 
 
@@ -390,12 +395,12 @@ def cross_check_tr_M() -> dict:
     out = {}
     # Strategy-3 (atomic-braid-mass-table.witness.json)
     s3_path = _pb.witness_path("atomic-braid-mass-table.witness.json", HERE)
-    s3 = json.loads(s3_path.read_text()) if s3_path.exists() else {"data": {"rows": []}}
+    s3 = record_upstream(s3_path, _UPSTREAM_RECORDS) if s3_path.exists() else {"data": {"rows": []}}
     s3_rows = {r["atom"]: r for r in s3.get("data", {}).get("rows", [])}
 
     # Phase 1.6 closed-form (option-b-proton-mass-full-chain.witness.json)
     ob_path = _pb.witness_path("option-b-proton-mass-full-chain.witness.json", HERE)
-    ob = json.loads(ob_path.read_text()) if ob_path.exists() else {}
+    ob = record_upstream(ob_path, _UPSTREAM_RECORDS) if ob_path.exists() else {}
     ob_at_q0 = ob.get("data", {}).get("tr_M_at_q0", {})
 
     # Markov-trace assembly chain (markov-trace-assembly-proton.derivation.json)
@@ -507,6 +512,7 @@ def main() -> int:
 
     # Witness
     w = WitnessBuilder("braid-encoding-audit", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Phase 1.8 audit per user directive: validate braid encodings of p "
         "and n, classify all knot operations (SDP / Lean / fitted / fallback "

@@ -304,7 +304,7 @@ structure VolumeTowerDecomposition where
 
 /-- The level contributions tend to zero.
     Proved: summable ⟹ terms → 0. -/
-theorem tendsto_zero
+theorem VolumeTowerDecomposition.tendsto_zero
     (vtd : VolumeTowerDecomposition) :
     Filter.Tendsto vtd.levelContribution Filter.atTop (nhds 0) :=
   vtd.sum_eq.summable.tendsto_atTop_zero
@@ -351,8 +351,8 @@ noncomputable def baselineDecomposition
     rw [heq]
     exact (hasSum_ite_eq 0 vol).summable
   sum_eq := by
-    apply hasSum_ite_eq
-  baseline_dominant := by simp
+    exact hasSum_ite_eq 0 vol
+  baseline_dominant := by simpa using hvol
 
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010

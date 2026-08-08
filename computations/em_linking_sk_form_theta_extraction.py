@@ -53,7 +53,12 @@ import pathlib
 import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
 
@@ -76,7 +81,7 @@ def main() -> None:
     ln_q0 = log(Q_MP)
     ln2 = ln_q0 ** 2
 
-    w = json.loads(SERIES.read_text())
+    w = record_upstream(SERIES, _UPSTREAM_RECORDS)
     rows = [{"A": r["A"], "Z": r["Z"], "kappa": mpf(str(r["kappa"]))}
             for r in w["data"]["series"] if r["A"] not in UNBOUND_A]
     k3 = next(r["kappa"] for r in rows if r["A"] == 3)
@@ -129,6 +134,7 @@ def main() -> None:
     wall_frac = th_max / ln_q0
 
     wb = WitnessBuilder("em-linking-sk-theta-extraction", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "EXPLORATORY test of the owner's lead (bean qou-ed61): is the "
         "per-pair Coulomb unit S_K-shaped, S_K = A_omega * cuspModulus "

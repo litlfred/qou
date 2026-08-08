@@ -33,13 +33,18 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 mp.mp.dps = 100
 
 # ── Substrate ─────────────────────────────────────────────────
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 HBAR_Q = (Q - mp.mpf(1)) / Q
 G = mp.catalan
@@ -212,6 +217,7 @@ def probe_3_vol_B3_vs_8G():
 
 def main() -> int:
     w = WitnessBuilder("lambda-scale-derivation-probes-123", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Probes 1-3 on the substrate derivation of the Borromean baryon "
         "λ_scale. Builds on the H_4-conjugate-pair-counting derivation of "

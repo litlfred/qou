@@ -141,8 +141,7 @@ def main() -> int:
     print("=" * 78)
     print()
 
-    wit = json.loads(
-        (_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    wit = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     p_atom = wit["results"]["p (proton, A=1)"]
     n_atom = wit["results"]["n (neutron, A=1)"]
     M = max(int(c["m"]) for c in p_atom["habiro_coefficients"])

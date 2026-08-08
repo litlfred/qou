@@ -53,14 +53,19 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder       # noqa: E402
+from witness_base import WitnessBuilder, record_upstream       # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from lr_coefficients import lr_coef, partitions_of  # noqa: E402
 
 set_compute_dps()  # 50 dps compute, 40 dps output
 
 # ── q_0 ──────────────────────────────────────────────────────────
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q0 = mp.mpf(json.loads(Q_PIN.read_text())["derived_50_digit"]["q"])
+Q0 = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 
 
 # ── Chi-cache helpers ─────────────────────────────────────────────
@@ -157,7 +162,7 @@ def lr_character_sum(
 def load_y_lambda_h3() -> dict[tuple[int, ...], mp.mpf]:
     """Jones-Markov weights y_λ at H_3 from the proton chi-cache
     (y_λ is atom-independent — it depends only on the algebra H_3)."""
-    data = json.loads((_pb.witness_path("chi-proton-h3-at-q0-50dps.witness.json", HERE)).read_text())
+    data = record_upstream(_pb.witness_path("chi-proton-h3-at-q0-50dps.witness.json", HERE), _UPSTREAM_RECORDS)
     return {tuple(e["partition"]): mp.mpf(e["y_lambda"]) for e in data["by_partition"]}
 
 
@@ -186,6 +191,7 @@ def markov_trace_lr_sum(
 
 def main() -> None:
     w = WitnessBuilder("lr-hecke-character-probe", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Numerical probe of the LR disjoint-product character identity "
         "prop:free-config-chi-lr-equivalence: "

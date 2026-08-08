@@ -4341,6 +4341,62 @@ export const references: CSLData[] = [
     DOI: "10.1007/BF02392716",
   }),
 
+  // ── Ghys 2007 — Knots and dynamics (ICM) ────────────────────────
+  // Registered 2026-08-08 alongside garoufalidis2012 / murakami2004: same
+  // defect class. Cited by QOU/Knot/RademacherReversible.lean for the
+  // Rademacher function as a homogeneous quasimorphism and the RL word count
+  // on hyperbolic conjugacy classes.
+  ref({
+    id: "ghys2007",
+    type: "paper-conference",
+    title: "Knots and dynamics",
+    author: [{ family: "Ghys", given: "\u00c9tienne" }],
+    "container-title":
+      "Proceedings of the International Congress of Mathematicians (Madrid, 2006), Vol. I",
+    page: "247-277",
+    issued: { "date-parts": [[2007]] },
+    note: "Bibliographic details recorded from the standard citation; NOT "
+      + "independently verified against the published volume - doi.org and "
+      + "arxiv.org are egress-blocked from the agent sandbox. Confirm page "
+      + "range before relying on it.",
+  }),
+
+  // ── Garoufalidis 2012 — 3D index & generalised angle structures ──
+  // Registered 2026-08-08: the key `garoufalidis2012` was already cited in
+  // 3 Lean files (SymmetricOptimum, M004AngleStructure, L6a4AngleStructure)
+  // with NO registry entry — an unregistered `-- Ref:` key, which AGENTS.md §1
+  // forbids. Source of the generalised-angle convention those files encode:
+  // per-tetrahedron angle sums = 1, per-edge sums = 2 (§2.2-2.3).
+  ref({
+    id: "garoufalidis2012",
+    type: "article",
+    title:
+      "The 3D index of an ideal triangulation and angle structures",
+    author: [{ family: "Garoufalidis", given: "Stavros" }],
+    issued: { "date-parts": [[2012]] },
+    URL: "https://arxiv.org/abs/1208.1663",
+    note: "arXiv:1208.1663",
+  }),
+
+  // ── Murakami 2004 — figure-eight & Dehn surgery spaces ───────────
+  // Registered 2026-08-08: same defect class — cited in 3 Lean files
+  // (FigureEightDeformedMeridianWinding, ChannelMeridianIdentification,
+  // CompleteStructureExclusion) with no registry entry.
+  ref({
+    id: "murakami2004",
+    type: "article",
+    title:
+      "Some limits of the colored Jones polynomials of the figure-eight knot",
+    author: [{ family: "Murakami", given: "Hitoshi" }],
+    issued: { "date-parts": [[2004]] },
+    URL: "https://arxiv.org/abs/math/0401084",
+    note: "arXiv:math/0401084. Title recorded from the arXiv listing; the "
+      + "corpus cites it for the deformed volume-conjecture normalisation "
+      + "q_eval = exp((u + 2*pi*i)/N). NOT independently verified against the "
+      + "published text - arxiv.org is egress-blocked from the agent sandbox, "
+      + "so a reader should confirm before relying on the exact wording.",
+  }),
+
   // ── Champanerkar 2003 — A-polynomial & Bloch invariants (thesis) ─
   ref({
     id: "champanerkar2003",

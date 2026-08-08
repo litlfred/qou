@@ -55,7 +55,12 @@ import pathlib
 
 import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from mpmath import mp, mpf, sqrt  # noqa: E402
 
@@ -68,7 +73,7 @@ Z_OF_A = {3: 2, 7: 4, 11: 6, 13: 7}
 
 
 def load_rows() -> list[dict]:
-    w = json.loads(SCOPING.read_text())
+    w = record_upstream(SCOPING, _UPSTREAM_RECORDS)
     return [{"A": int(r["A"]), "pair": r["pair"],
              "n_pairs": int(r["delta_proton_pairs"]),
              "kappa": mpf(str(r["residual_factor_kappa"]))}
@@ -129,6 +134,7 @@ def main() -> None:
     locality_ok = abs(r_pairs) < mpf("0.95")
 
     wb = WitnessBuilder("em-linking-crossing-number", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "EXPLORATORY test of the Freedman-He asymptotic-crossing-number "
         "template for the open two-like-charge EM-linking invariant "

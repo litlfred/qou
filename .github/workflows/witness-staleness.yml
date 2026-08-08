@@ -141,6 +141,31 @@ jobs:
             echo '```';
           } >> "$GITHUB_STEP_SUMMARY"
 
+      - name: module-const precision gate (strict on LOSSY)
+        # Third member of the precision family, and it catches what the other
+        # two cannot: a single `mpf("…")` built at MODULE scope, before
+        # set_compute_dps() runs inside main(). The file is otherwise correct,
+        # so the mp.dps gate sees nothing; the constant is frozen at 53 bits
+        # and merely inaccurate rather than long, so the padding gate sees
+        # nothing either — unless it happens to be serialized, which is how
+        # the two m_tau producers were finally caught.
+        #
+        # Gated on LOSSY only (>15 significant digits — the literal is
+        # truncated the moment it is built). PADDING_RISK is reported and not
+        # gated: a tolerance like mpf("1e-25") is affected but harmless, and
+        # that is a judgement about USE which no static test can make.
+        # LOSSY was 11 and is now 0, so this starts green like its siblings.
+        run: |
+          python3 computations/module_const_precision_audit.py --self-test
+          python3 computations/module_const_precision_audit.py --strict \
+            | tee /tmp/mconst.txt
+          {
+            echo '## module-const precision gate';
+            echo '```';
+            head -24 /tmp/mconst.txt;
+            echo '```';
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: raw-float64 ratchet (strict on NEW dirty witnesses)
         # The step above gates FAKE precision — float64 padded past ~17 digits.
         # It does NOT gate the rule AGENTS.md actually states: "NO-FLOAT64

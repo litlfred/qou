@@ -46,7 +46,12 @@ import pathlib
 
 import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from mpmath import mp, mpf, log, acoth, sqrt  # noqa: E402
 
@@ -55,7 +60,7 @@ SCOPING = HERE / "em-linking-invariant-scoping.witness.json"
 
 
 def load_kappa() -> list[dict]:
-    w = json.loads(SCOPING.read_text())
+    w = record_upstream(SCOPING, _UPSTREAM_RECORDS)
     rows = w["data"]["per_pair_residual_factors"]
     return [{"A": int(r["A"]), "pair": r["pair"],
              "kappa": mpf(str(r["residual_factor_kappa"]))} for r in rows]
@@ -114,6 +119,7 @@ def main() -> None:
                         for i in range(len(alphas) - 1))
 
     wb = WitnessBuilder("em-linking-coth-separation", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "EXPLORATORY geometry-first test of the open two-like-charge "
         "EM-linking invariant (bean qou-zp6a). Hypothesis H_coth: the "

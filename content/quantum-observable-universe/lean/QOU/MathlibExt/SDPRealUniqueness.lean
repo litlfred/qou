@@ -91,7 +91,7 @@ structure RealStrictComplementarityPair (sdp : SDPPrimal n ℝ ι)
                      = objAt Φstar - dualObjAt y*  (by h_obj)
                      = 0                          (by obj_eq_dualObj)
 -/
-theorem trace_dualSlack_eq_zero
+theorem RealStrongDualityPair.trace_dualSlack_eq_zero
     {sdp : SDPPrimal n ℝ ι} (rs : RealStrongDualityPair sdp)
     {Φ : Matrix (Fin n) (Fin n) ℝ}
     (h_feas : sdp.IsFeasible Φ)
@@ -105,7 +105,7 @@ theorem trace_dualSlack_eq_zero
 /-- **Dual-slack times feasible-optimum equals zero** —
     composition of `trace_dualSlack_eq_zero` with
     `complementary_slackness`. -/
-theorem dualSlack_mul_feasible_eq_zero
+theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
     {sdp : SDPPrimal n ℝ ι} (rs : RealStrongDualityPair sdp)
     {Φ : Matrix (Fin n) (Fin n) ℝ}
     (h_feas : sdp.IsFeasible Φ)

@@ -118,7 +118,7 @@ structure DisjointTensorCell where
   kappa_commutes_bar_field : ∀ p, (barF (kappa p).1, barF (kappa p).2) = kappa (barF p.1, barF p.2)
 
 /-- Diagonal bar on the tensor cell. -/
-def barTensor (D : DisjointTensorCell) :
+def DisjointTensorCell.barTensor (D : DisjointTensorCell) :
     D.Factor × D.Factor → D.Factor × D.Factor :=
   fun p => (D.barF p.1, D.barF p.2)
 

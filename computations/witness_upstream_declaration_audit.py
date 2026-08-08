@@ -122,8 +122,15 @@ def declared_upstreams(tree: ast.AST) -> set:
     assigns = _assignments(tree)
     out: set = set()
     for n in ast.walk(tree):
-        if isinstance(n, ast.Call) and isinstance(n.func, ast.Attribute) \
-                and n.func.attr == "add_upstream" and n.args:
+        if not isinstance(n, ast.Call) or not n.args:
+            continue
+        fname = (n.func.attr if isinstance(n.func, ast.Attribute)
+                 else getattr(n.func, "id", ""))
+        # `record_upstream(path, into)` is the module-level form, for the 290
+        # producers that read their upstreams before a builder exists. It
+        # declares just as much as the method does — the record simply lands in
+        # a caller-owned list first.
+        if fname in {"add_upstream", "record_upstream"}:
             for lit in _resolve(n.args[0], assigns):
                 out.add(lit)
             # A non-literal argument means the module DOES declare upstreams,
@@ -185,6 +192,18 @@ CASES = [
      'b = WitnessBuilder("mine")\n'
      'y = b.add_upstream(HERE / "y-lambda-at-q0.witness.json")',
      []),
+    # The module-level form, for producers that read before a builder exists.
+    ("declared via record_upstream into a caller-owned list",
+     '_UP = []\n'
+     'y = record_upstream(HERE / "y-lambda-at-q0.witness.json", _UP)\n'
+     'w = WitnessBuilder("mine").add_upstream_records(_UP)',
+     []),
+    ("record_upstream declares one, plain read leaves the other undeclared",
+     '_UP = []\n'
+     'a = record_upstream(HERE / "a.witness.json", _UP)\n'
+     'b = json.loads((HERE / "b.witness.json").read_text())\n'
+     'w = WitnessBuilder("mine").add_upstream_records(_UP)',
+     ["b.witness.json"]),
     ("one declared, one not — the per-block shape exactly",
      'b = WitnessBuilder("mine")\n'
      'p = b.add_upstream(HERE / "q-pinning-50-digit.witness.json")\n'

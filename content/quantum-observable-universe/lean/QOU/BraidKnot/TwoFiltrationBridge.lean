@@ -32,7 +32,7 @@ open YoungDiagram
 /-- **Hook length** of cell `c = (i, j)` in a Young diagram `μ`:
     arm `(rowLen i - j)` + leg `(colLen j - i)` − 1. For a cell of `μ`
     this is `≥ 1` (truncated ℕ subtraction is exact there). -/
-def hookLength (μ : YoungDiagram) (c : ℕ × ℕ) : ℕ :=
+def TwoFiltrationBridge.hookLength (μ : YoungDiagram) (c : ℕ × ℕ) : ℕ :=
   (μ.rowLen c.1 - c.2) + (μ.colLen c.2 - c.1) - 1
 
 /-- **Partition-cellular GB-depth** $\mathrm{depth}_{\mathrm{GB}}(\lambda)
@@ -40,7 +40,7 @@ def hookLength (μ : YoungDiagram) (c : ℕ × ℕ) : ℕ :=
     (the centre $Z(H_n(q))$ side of the bridge). The empty diagram has
     depth `0`. -/
 def gbDepth (μ : YoungDiagram) : ℕ :=
-  μ.cells.sup fun c => hookLength μ c
+  μ.cells.sup fun c => TwoFiltrationBridge.hookLength μ c
 
 /-- **Two-filtration bridge** (iterated-integral depth $\leftrightarrow$
     partition-cellular GB-depth via $e_\lambda$).

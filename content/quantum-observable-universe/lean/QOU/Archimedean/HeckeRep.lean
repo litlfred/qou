@@ -74,18 +74,18 @@ noncomputable def HeckeRep.genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
 
 /-- `σ_i · σ_i⁻¹ = I`: the generator inverse is a right inverse. -/
 -- Ref: [iwahori1964]
-theorem gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
+theorem HeckeRep.gen_mul_genInv (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.gen i * ρ.genInv i = 1 := by
-  unfold genInv
+  unfold HeckeRep.genInv
   rw [mul_sub, mul_smul_comm, mul_one, ρ.hecke_rel i]
   -- goal: HA_t • gen i + 1 - HA_t • gen i = 1
   abel
 
 /-- `σ_i⁻¹ · σ_i = I`: the generator inverse is a left inverse. -/
 -- Ref: [iwahori1964]
-theorem genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
+theorem HeckeRep.genInv_mul_gen (ρ : HeckeRep n d) (i : Fin (n - 1)) :
     ρ.genInv i * ρ.gen i = 1 := by
-  unfold genInv
+  unfold HeckeRep.genInv
   rw [sub_mul, smul_mul_assoc, one_mul, ρ.hecke_rel i]
   abel
 
@@ -185,7 +185,7 @@ noncomputable def HeckeRep.halfBorromeanMat (ρ : HeckeRep n d)
 theorem halfBorromeanMat_eq_eval (ρ : HeckeRep n d)
     (i j : Fin (n - 1)) :
     ρ.halfBorromeanMat i j = ρ.eval (halfBorromeanWord i j) := by
-  simp [halfBorromeanMat, halfBorromeanWord, eval, Matrix.mul_assoc]
+  simp [HeckeRep.halfBorromeanMat, halfBorromeanWord, HeckeRep.eval, Matrix.mul_assoc]
 
 /-- The conjugated half-Borromean `h'_{ij} = σ_i⁻¹ σ_j⁻¹ σ_i σ_j`.
 

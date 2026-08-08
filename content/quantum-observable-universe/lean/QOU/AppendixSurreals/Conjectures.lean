@@ -583,7 +583,7 @@ theorem VacuumEpsilon'.vacuum_energy_isInfinitesimal [VacuumEpsilon' K] :
 /-- **Conditional consequence of `BigBangHeatDeath`.** If the
     conjectural surreal-QOU substrate is inhabited, then so is the
     archimedean QOU type — the standard-part lands somewhere. -/
-theorem qou_real_inhabited
+theorem BigBangHeatDeath.qou_real_inhabited
     [BigBangHeatDeath K] : Nonempty QOU_Real := by
   obtain ⟨SQ⟩ := BigBangHeatDeath.qou_surreal_inhabited (K := K)
   exact ⟨QOU_StandardPart K SQ⟩
@@ -591,7 +591,7 @@ theorem qou_real_inhabited
 /-- **Conditional consequence of `HahnSubstrate`.** Same content as
     `BigBangHeatDeath.qou_real_inhabited`, but routed through the
     Hahn-substrate hypothesis: an archimedean QOU exists. -/
-theorem qou_real_inhabited
+theorem HahnSubstrate.qou_real_inhabited
     [HahnSubstrate K] : Nonempty QOU_Real := by
   obtain ⟨SQ⟩ := HahnSubstrate.qou_surreal_inhabited (K := K)
   exact ⟨QOU_StandardPart K SQ⟩
@@ -601,7 +601,7 @@ theorem qou_real_inhabited
     every archimedean QOU has an explicit surreal lift; in particular
     the surreal QOU type is inhabited whenever the archimedean one
     is. -/
-theorem qou_surreal_of_qou_real
+theorem ArchimedeanIsStandardPart.qou_surreal_of_qou_real
     [ctx : ArchimedeanIsStandardPart K] :
     Nonempty QOU_Real.{u} → Nonempty (QOU_Surreal K) := by
   rintro ⟨Q⟩
@@ -670,13 +670,13 @@ theorem cells_equiv_nimbers
 
     The deep mathematical content (that the bijection respects KL/Nim
     *structure*) is what `OnPModularHecke` actually asserts. -/
-theorem card_eq_pow (p n : ℕ) :
+theorem KazhdanLusztigCells.card_eq_pow (p n : ℕ) :
     Fintype.card (KazhdanLusztigCells p n) = p ^ n :=
   Fintype.card_fin _
 
 /-- **Unconditional cardinality equality.**  See
     `KazhdanLusztigCells.card_eq_pow` for context. -/
-theorem card_eq_pow (p n : ℕ) :
+theorem Nimbers.card_eq_pow (p n : ℕ) :
     Fintype.card (Nimbers p n) = p ^ n :=
   Fintype.card_fin _
 
@@ -885,11 +885,11 @@ the end of the file. -/
 
 /-- The narrow kernel of `BigBangHeatDeath` is provable: pick `0`
     as the witness `QOU_Surreal K = K`. -/
-instance instProvable : BigBangHeatDeath K :=
+instance BigBangHeatDeath.instProvable : BigBangHeatDeath K :=
   ⟨⟨(0 : K)⟩⟩
 
 /-- Same as above for `HahnSubstrate`. -/
-instance instProvable : HahnSubstrate K :=
+instance HahnSubstrate.instProvable : HahnSubstrate K :=
   ⟨⟨(0 : K)⟩⟩
 
 /-- The narrow kernel of `VacuumEpsilon'` is provable: pick `ε`
@@ -901,7 +901,7 @@ instance VacuumEpsilon'.instProvable : VacuumEpsilon' K :=
     `1 + ε` as the witness `QOU_Surreal K`.  Then
     `QOU_FrobeniusPairing (1 + ε) = 1 + ε ≠ 1` (since `ε ≠ 0`) and
     `(1 + ε) - 1 = ε` is infinitesimal. -/
-instance instProvable : InfinitesimalFrobenius K := by
+instance InfinitesimalFrobenius.instProvable : InfinitesimalFrobenius K := by
   refine ⟨⟨1 + epsilonSurreal K, ?_, ?_⟩⟩
   · -- 1 + ε ≠ 1 because ε ≠ 0.
     intro h
@@ -917,7 +917,7 @@ instance instProvable : InfinitesimalFrobenius K := by
 /-- The narrow kernel of `InfinitesimalObservability` is provable:
     pick `ε` as the witness; observability norm `= ε ≠ 0` and
     infinitesimal. -/
-instance instProvable :
+instance InfinitesimalObservability.instProvable :
     InfinitesimalObservability K := by
   refine ⟨⟨epsilonSurreal K, ?_, ?_⟩⟩
   · -- ε ≠ 0
@@ -929,13 +929,13 @@ instance instProvable :
     every `Q : PUnit` is the standard-part of `(0 : K)` (in fact,
     of every element, since the placeholder standard-part is the
     constant projection to `PUnit.unit`). -/
-instance instProvable :
+instance ArchimedeanIsStandardPart.instProvable :
     ArchimedeanIsStandardPart K :=
   ⟨fun Q => ⟨(0 : K), Subsingleton.elim _ Q⟩⟩
 
 /-- The narrow kernel of `JonesBirthday` is provable: `Knot = ℕ`
     is inhabited. -/
-instance instProvable : JonesBirthday K :=
+instance JonesBirthday.instProvable : JonesBirthday K :=
   ⟨⟨(0 : Knot)⟩⟩
 
 /-- The narrow kernel of `KashaevSurreal` is provable in the
@@ -950,7 +950,7 @@ instance instProvable : JonesBirthday K :=
 
     So the conjectured equality holds as `0 = 0` for any knot and
     any choice of `ζ_ω`; we pick `ζ_ω := (0, 0)` as the witness. -/
-instance instProvable : KashaevSurreal K := by
+instance KashaevSurreal.instProvable : KashaevSurreal K := by
   refine ⟨fun K_knot => ⟨((0, 0) : KComplex K), ?_⟩⟩
   -- ColoredJones returns the constant complex surreal `(0, 0)`.
   have hCJ : ColoredJones K K_knot ((0, 0) : KComplex K) (omegaSurreal K)
@@ -973,7 +973,7 @@ instance instProvable : KashaevSurreal K := by
     `Nimbers p n` realised as `Fin (p^n)`, the identity function on
     `Fin (p^n)`, viewed via the trivial `def`-unfolding, is a
     bijection from one to the other. -/
-instance instProvable
+instance OnPModularHecke.instProvable
     {p : ℕ} [Fact (Nat.Prime p)] : OnPModularHecke p :=
   ⟨fun _ => ⟨id, Function.bijective_id⟩⟩
 
@@ -989,7 +989,7 @@ instance instProvable
     3. `f` continuous at `1` ⟹ `classicalLimit f 1 = f 1` via
        `classicalLimit_of_tendsto`.
     4. Combine. -/
-instance instProvable :
+instance ClassicalLimitIsStandardPart.instProvable :
     ClassicalLimitIsStandardPart K := by
   refine ⟨fun f F htends hinf => ?_⟩
   -- F(1+ε) is finite via the decomposition `ofReal(f 1) + infinitesimal`.

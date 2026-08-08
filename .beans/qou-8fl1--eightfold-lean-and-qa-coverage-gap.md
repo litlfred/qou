@@ -62,3 +62,30 @@ inference withdrawn. What remains is coverage, not accuracy.
    spin–flavour–colour selection rule (the decuplet identification currently
    matches dimensions and weights only), and Gell-Mann–Okubo (asserted as a
    consequence, not derived; the one cross-check gives ≈6% vs ≈3.3%).
+
+---
+
+**2026-08-08 update (PR #4727).** Item 4 is **discharged**, and it was the
+smallest of four defects in that file. Opening it to fix the `native_decide`
+found three more that this bean did not catch:
+
+- **The file did not compile.** Two `error: No goals to be solved` (dead `ring`
+  and dead `native_decide` after a closing `simp`) — red on `main` since it
+  landed.
+- **`cartanMatrix_A2_q_independent` was `cartanMatrix_A2 = cartanMatrix_A2 :=
+  rfl`** — a tautology with unused `R, q₁, q₂` binders, cited in three `.md`
+  places as proving q-independence. AGENTS.md §"Strict Lean Discipline" item 5.
+- **`qSerre_neq_cartan_diag` assumed its conclusion** — hypothesis `q² + 1 ≠ 2q`
+  is definitionally the conclusion.
+
+All four repaired: `lean`-direct **exit 0**, sorry-free, axioms
+`{propext, Quot.sound, Classical.choice}`. The contentful half of the
+separation (`qSerre_not_constant`, witnessed at q = 2) was added, since
+constancy of the Cartan datum is true by construction and carries nothing
+alone. The `.md`/`.ts` over-claims were corrected to say the q-independence is
+**standard** (Lusztig/Kashiwara), cited and not formalised here. Audit:
+`docs/audits/2026-08-08-weyl-invariance-file-repair.md`.
+
+Item 3 (`Sym2Gate.lean` vacuous) still stands — it compiles, and the chapter
+prose already labels it honestly, so it is correctly-labelled rather than
+misleading. The generalised sweep is bean `qou-k448`.

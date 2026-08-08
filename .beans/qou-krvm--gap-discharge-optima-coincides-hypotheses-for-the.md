@@ -101,3 +101,50 @@ rather than being a formality any linear system would satisfy.
 **REMAINING FOR THIS BEAN:** L6a4 (i)-(iii) via combinatorial symmetry rather
 than brute force; (iv) the volume functional, which is the Mathlib gap and
 overlaps the sibling bean.
+
+---
+
+## 2026-08-08 — L6a4 (i)+(ii) DONE in Lean (PR #4725); the pair is complete
+
+`QOU/Knot/L6a4AngleStructure.lean`, sorry-free, over the real 24-variable
+system. Hypothesis (ii) is now settled for BOTH anchors, in opposite directions:
+
+    m004  (muon)   |Sym| = 4    fixed locus a LINE   -> (ii) FALSE
+    L6a4 (proton)  |Sym| = 16   fixed locus a POINT  -> (ii) TRUE
+
+For L6a4 both (i) and (ii) hold, so `symmetric_point_optimal` applies DIRECTLY:
+the proton anchor's vanishing offset is forced by symmetry alone, with no appeal
+to the Casson-Rivin objective. For m004 it is not, and the objective finishes on
+the fixed line.
+
+Proved: `GA.gen0/1/2` (generators preserve the system), `fixed_orbitA` /
+`fixed_orbitB` (constant on each orbit, sizes 16 and 8, by explicit generator
+chains), `unique_symmetric_point` (the regular ideal octahedron: 1/4 on the
+16-orbit, 1/2 on the 8-orbit).
+
+NON-VACUITY PROVED, not assumed: `GA_regularOctahedron` +
+`Fixed_regularOctahedron` + `symmetric_point_exists_unique`. Uniqueness alone
+would hold vacuously if no such point existed. The check earned its keep — a
+first attempt encoded the witness's index test with a conjunction instead of a
+disjunction, collapsing every coordinate to 1/4 and failing four edge equations.
+
+Why uniqueness is immediate: on an orbit-constant point the 16 constraints
+collapse to three distinct equations — 2a+b=1 (x8), 8a=2 (x4), 4b=2 (x4). The
+edge families pin a and b outright; the tet equation is then a compatibility
+check. Every tetrahedron carries exactly one 8-orbit and two 16-orbit
+coordinates: the (pi/4, pi/4, pi/2) octahedron.
+
+The file is GENERATED from SnapPy via the corpus's own gluing/ga_equalities
+(generator committed at `computations/probes/gen_l6a4_angle_structure_lean.py`),
+so the constraint matrix and orbit chains cannot drift from the measurement.
+
+## WHAT REMAINS ON THIS BEAN
+
+Only hypothesis **(iv)**: the hyperbolic volume functional is concave and
+invariant (Rivin). Untouched, and it is a genuine Mathlib gap — there is no
+ideal-tetrahedron volume theory to build on. This is the hard half and it is
+now the ONLY thing between this bean and closure.
+
+Also still true, and stated in both files: what is proved is that the regular
+point is AN optimum / THE symmetric point, not that the LP optimum is unique.
+The min-angle objective is a min of linear forms — concave, not strictly.

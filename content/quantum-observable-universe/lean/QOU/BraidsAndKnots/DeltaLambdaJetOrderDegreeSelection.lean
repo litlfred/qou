@@ -136,13 +136,13 @@ def valuation : List ℕ → ℕ
     jet-order VALUATION `n(λ)`.  Hence adding the a-function/jet-order valuation to
     the SDP's ungraded data (#4570) still does not separate them. -/
 
-theorem single_valuation_eq_nStat (p : PartitionOf5) :
+theorem PartitionOf5.single_valuation_eq_nStat (p : PartitionOf5) :
     valuation p.singleCoeffs = p.nStat := by cases p <;> decide
 
-theorem fake_valuation_eq_nStat (p : PartitionOf5) :
+theorem PartitionOf5.fake_valuation_eq_nStat (p : PartitionOf5) :
     valuation p.fakeCoeffs = p.nStat := by cases p <;> decide
 
-theorem same_valuation (p : PartitionOf5) :
+theorem PartitionOf5.same_valuation (p : PartitionOf5) :
     valuation p.singleCoeffs = valuation p.fakeCoeffs := by
   rw [p.single_valuation_eq_nStat, p.fake_valuation_eq_nStat]
 
@@ -157,11 +157,11 @@ theorem same_valuation (p : PartitionOf5) :
 
 /-- `H_λ` carries coefficient `1` at the valuation degree `n(λ)` — the monic
     leading term of the fake-degree polynomial. -/
-theorem fakeCoeff_at_valuation_eq_one (p : PartitionOf5) :
+theorem PartitionOf5.fakeCoeff_at_valuation_eq_one (p : PartitionOf5) :
     (p.fakeCoeffs).getD p.nStat 0 = 1 := by cases p <;> decide
 
 /-- `G_λ` carries coefficient `dim V_λ` at the valuation degree `n(λ)`. -/
-theorem singleCoeff_at_valuation_eq_dim (p : PartitionOf5) :
+theorem PartitionOf5.singleCoeff_at_valuation_eq_dim (p : PartitionOf5) :
     (p.singleCoeffs).getD p.nStat 0 = p.dim := by cases p <;> decide
 
 /-- On every non-trivial block the two objects DIFFER at the valuation grade

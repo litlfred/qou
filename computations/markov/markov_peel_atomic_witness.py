@@ -59,7 +59,12 @@ from mass_at_3A_proper import atom_braid_word_3A     # noqa: E402
 from markov_trace_canonical import tr_M_element       # noqa: E402
 from hecke_symbolic import q as q_sym                  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR                 # noqa: E402  (50-digit q₀, NOT float64 Q)
-from witness_base import WitnessBuilder                # noqa: E402
+from witness_base import WitnessBuilder, record_upstream                # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Per AGENTS.md / Gemini-flagged precision policy: pin a high-precision
 # floor at the module level so all symbolic→numeric casts respect it.
@@ -104,7 +109,7 @@ def _load_bridge_witness() -> dict[str, str]:
     f = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
     if not f.exists():
         return {}
-    data = json.loads(f.read_text())
+    data = record_upstream(f, _UPSTREAM_RECORDS)
     return {e["atom"]: e["tr_M_at_q0_50dps"] for e in data["results"]}
 
 
@@ -251,6 +256,7 @@ def main() -> int:
     )
 
     w = WitnessBuilder("markov-peel-atomic-tr-m", engine="sympy")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Production atomic Markov trace tr_M(β_atom) at q = q₀ via the "
         "Markov-axiom recursive-ascent path (markov_peel + "

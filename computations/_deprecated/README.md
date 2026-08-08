@@ -86,3 +86,28 @@ appears to grow:
     python3 computations/cleanup_legacy_witnesses.py            # dry run
     python3 computations/cleanup_legacy_witnesses.py --apply --git
 
+
+## Orphan witnesses kept in place (2026-08-08)
+
+`witness_provenance_audit.py` names witnesses whose `scriptFile` provably
+cannot produce them. Four were triaged; only one met the criteria at the top of
+this file, and the reasons the other three did not are worth recording, because
+"orphan" and "movable" turn out to be different questions.
+
+| witness | moved? | why |
+|---|---|---|
+| `kite_tail_reconciliation.witness.json` | **yes** | rename residue — the producer writes the hyphenated `kite-tail-reconciliation`; 0 assertions, no `docs/audits/*.md` citation, no live reader |
+| `psl27-irrep-verification.witness.json` | no | carries **4 assertions**; moving it would bury four falsifiable claims |
+| `sigma-all-evaluator.witness.json` | no | cited by `docs/audits/2026-05-03-frob-filter-evaluator-wired.md` |
+| `chi-helium-4-h12-numeric.witness.json` | no | **three live readers** — `delta_lambda_empirical_tabulation.py`, `y_lambda_at_q0_cache.py`, and `delta_lambda_2row_stratum_analysis.py:177` (a real `read_text()`) |
+
+The last one is the serious case and is mis-filed as an orphan: it is a **live
+input with no producer**. Nothing in the corpus can regenerate it, yet three
+producers depend on it. Its live counterpart `chi-helium-4-h12.witness.json`
+*does* have a producer (`per_irrep_pole_atom.py`, 8/8 payload-key match), so
+the resolution is to repoint those three readers and then retire the `-numeric`
+variant — a content decision, not a file move.
+
+This mirrors the "kept in place with a `DEPRECATION-CANDIDATE` header"
+convention already used above for the 23 scripts that live importers still
+need. Witnesses have no comment syntax, so the marker lives here instead.

@@ -48,7 +48,12 @@ sys.path.insert(0, str(HERE / "substrate"))
 
 mp.mp.dps = 50
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from block_swap_binding import block_swap_word  # verified S_Z block-swap braid  # noqa: E402
@@ -132,8 +137,7 @@ def main() -> int:
     signal = mp.log(S_free / S_atom)
 
     # Scalar-vs-exact: the scalar Frobenius bosonic h₂(p)h₂(n)/(τ_p²τ_n²).
-    sym = json.loads(
-        (HERE / "symmetrized-constituent-general.witness.json").read_text(encoding="utf-8"))
+    sym = record_upstream(HERE / "symmetrized-constituent-general.witness.json", _UPSTREAM_RECORDS)
     pp = {int(k): mp.mpf(v) for k, v in sym["data"]["proton_power_sums"].items()}
     pn = {int(k): mp.mpf(v) for k, v in sym["data"]["neutron_power_sums"].items()}
     def _h2(p1, p2):
@@ -155,6 +159,7 @@ def main() -> int:
 
     w = WitnessBuilder("averaged-block-swap-binding", engine="python+rust",
                        start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Averaged-convention (production) block-swapped S_atom for ⁴He via "
         "pyhecke_native.chi_q_atomic (Rust q-character on averaged Hecke factors "
@@ -179,7 +184,7 @@ def main() -> int:
                "whether the plain ¼Σβ_σ average is the q-correct q-Young "
                "projection, or whether q-weighted symmetrizers shift the number.")
     # VALID assertion: the id trace = binding_canonical's averaged ⁴He tr_M.
-    bc = json.loads((HERE / "binding-canonical.witness.json").read_text(encoding="utf-8"))
+    bc = w.add_upstream(HERE / "binding-canonical.witness.json")
     r = next(x for x in bc["data"]["results"] if (x["Z"], x["N"]) == (2, 2))
     tr_canon = mp.mpf(str(r["tr_M_atom"]).strip("()").split("+")[0])
     w.add_assertion(

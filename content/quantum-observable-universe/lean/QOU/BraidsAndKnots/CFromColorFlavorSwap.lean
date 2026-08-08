@@ -47,7 +47,7 @@ namespace QOU.BraidsAndKnots
 /-- Charge conjugation on a nucleon's color-sheet content: flavor
     conjugation `u ↔ ū`, `d ↔ d̄` applied independently on each of the three
     color sheets. -/
-def conj : NucleonColorContent → NucleonColorContent
+def NucleonColorContent.conj : NucleonColorContent → NucleonColorContent
   | (f₁, f₂, f₃) => (f₁.conj, f₂.conj, f₃.conj)
 
 /-- Antiproton color content (ū, ū, d̄). -/
@@ -64,13 +64,13 @@ theorem conj_proton_neutron :
   ⟨rfl, rfl⟩
 
 /-- **C² = id** on nucleon color content (the involution claim, proved). -/
-theorem conj_involutive (F : NucleonColorContent) :
+theorem NucleonColorContent.conj_involutive (F : NucleonColorContent) :
     F.conj.conj = F := by
   obtain ⟨f₁, f₂, f₃⟩ := F
   simp [NucleonColorContent.conj, QuarkFlavor.conj_involutive]
 
 /-- Conjugation commutes with reading off the flavor at a sheet. -/
-theorem flavorAt_conj (F : NucleonColorContent)
+theorem NucleonColorContent.flavorAt_conj (F : NucleonColorContent)
     (c : ColorSheet) : F.conj.flavorAt c = (F.flavorAt c).conj := by
   obtain ⟨f₁, f₂, f₃⟩ := F
   cases c <;> rfl
