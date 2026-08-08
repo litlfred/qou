@@ -501,6 +501,9 @@ import QOU.QBeta.A3OffBlockDerivation
 -- _injective) ⇒ scope-(a), one real DOF. Deriving E from the DM q-cubic prolongation symbol
 -- is the open keystone (DerivedAmplitudeGivesLift, no instance).
 import QOU.QBeta.A3AntiSelfAdjointLift
+-- DT-index / 3d-index / graded-Euler route is BAR-PARITY excluded from supplying the
+-- anti-self-adjoint amplitude E (DT values bar-even integers; E bar-odd) — scope-(b).
+import QOU.QBeta.DTIndexAmplitudeE
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
