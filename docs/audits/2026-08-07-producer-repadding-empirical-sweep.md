@@ -2334,3 +2334,64 @@ it reports counts but not *which* witnesses were rejected or why, which is what
 made a 45% rejection rate uninvestigable without this separate measurement; and
 witness-to-producer matching is by stem, so the 48 producers whose witness name
 does not derive from the script name were not measurable here at all.
+
+## P51 — the driver now keeps its evidence, and P50 survives a fuller measurement
+
+### 95 rejections that could not be investigated
+
+The first full wave reported `DECLARED 37 / ANCHOR_MIGRATION 5 / VALUES 59 /
+FAILED 36 / NOCHANGE 26` and nothing else. Those 95 rejections were
+**uninvestigable**: the witness is reverted moments later, so no artefact
+survives, and the counters recorded neither which producer nor which field
+triggered the verdict. Answering "why is the VALUES rate 45%" needed a separate
+measurement pass — for evidence the driver had held in its hand and discarded.
+
+Every producer now yields a record: verdict, the witnesses it touched, the
+classifier's own `reason`/`sample` per rejection, and for a failure the exit
+code (or `timeout`) with the last line of stderr. That last field is not
+incidental — the dominant failure in the first wave was
+`ModuleNotFoundError: No module named 'pyhecke'`, pure harness error, and the
+counts alone could not tell it from 36 real defects.
+
+Two details worth recording because they are easy to get wrong:
+
+- **`TimeoutExpired.stderr` is raw bytes even under `text=True`**, because the
+  exception is raised inside `_communicate` before the decode step. Assuming
+  `str` loses the stderr of exactly the runs that hung — the ones hardest to
+  diagnose afterwards.
+- **The report is rewritten after every producer**, atomically. A 163-producer
+  wave runs for hours; a report that only exists on clean exit is missing
+  precisely when something went wrong enough to interrupt it.
+
+The `VALUES` histogram keys on the *cause* rather than the field, so the P50
+finding surfaces as one line instead of hiding behind 59 distinct field names.
+21 self-tests (was 6), including the pure `roll_up` partition and a stubbed
+end-to-end `main()` that spawns no producer.
+
+### P50 re-measured over the fuller producer set
+
+P50's denominator came from matching witnesses to producers by filename stem,
+which missed 48 producers. All 48 are now resolvable — reusing the existing
+machinery rather than a new resolver: `builder_names` (including f-string
+patterns), the `written_filenames` dataflow resolver, and the `scriptFile`
+back-reference filtered through `classify(...) == "WRITES"`. 44 have a committed
+witness; the other 4 resolve cleanly by name but their witness has **never been
+committed**, which is a finding rather than a resolver failure. Recovery was two
+independent routes agreeing, with **zero witnesses claimed by more than one
+producer** across all 278 — the check against f-string over-matching.
+
+Measured pinned at `13ff8207`, never the working tree:
+
+| | producers | q₀ field | none |
+|---|---:|---:|---:|
+| stem only (P50 baseline, reproduced exactly) | 115 | 56 | **59** |
+| newly recovered | 44 | 25 | **19** |
+| **fuller set** | **159** | **81** | **78** |
+
+**78 of 159 (49%) against the reported 59 of 115 (51%).** The evidence gate's
+inability to fire for roughly half the corpus was *not* an artefact of the
+incomplete sample — a stronger statement than the original, and the figure any
+`ANCHOR_MIGRATION_INFERRED` sizing should quote. The per-witness view (278, 79
+without) is skewed by `canonical_isotope_witness.py`, a genuine per-Z shard
+producer emitting 120 witnesses; excluding it gives 158 with 78 lacking a q₀
+field, matching the per-producer figure.
