@@ -121,6 +121,66 @@ none attempted here:
 Route (2) is the closest to what the c₃ front actually needs, since it is the
 only one that produces a scalar comparable to `S`.
 
+## Successor result (same session) — the pinned test, run
+
+Bean `qou-qb8d` was filed for route (2) above and then run:
+[`hh1_outer_class_trace_paired_parity.py`](../../computations/hh1_outer_class_trace_paired_parity.py),
+witness `hh1-outer-class-trace-paired-parity.witness.json`.
+
+**Both pins are structural, not chosen:**
+
+- **Generator** — He–Nie: `HH₀(H_n)` has a basis indexed by conjugacy classes
+  of `S_n`, represented by **minimal-length** elements; for n=3 those are
+  `e` (ℓ=0), `s₁` (ℓ=1), `s₁s₂` (ℓ=2). *Asserted* to project to a basis of HH₀.
+- **Trace** — Ocneanu/Markov, Jones specialization per the corpus. `z` held
+  **symbolic and bar-even**, which avoids a `q^{1/2}` branch choice at the root
+  of unity *and* makes the conclusion independent of the Ocneanu-parameter
+  question that [`2026-08-04-ocneanu-trace-parameter-audit.md`](2026-08-04-ocneanu-trace-parameter-audit.md)
+  records as genuinely open. *Asserted*: `tr_M` kills all 36 commutators
+  `[Bᵢ,Bⱼ]`, which validates both the recursion and the descent to HH₀.
+
+### Result: not trace-blind, and the paired number is MIXED with a nonzero bar-ODD part
+
+| point | x | `S_x = tr_M(Δ(x))` | `S_even` | `S_odd` | parity |
+|---|---|---|---|---|---|
+| `q = i` | `s₁` | `z/3 − i/3` | `z/3` | `−i/3` | **MIXED** |
+| `q = i` | `s₁s₂` | `2iz/3 + 2/3` | `2/3` | `2iz/3` | **MIXED** |
+| `q = ζ₆` | `s₁s₂` | *(see witness)* | `−z` | `√3·i(1−z²)/3` | **MIXED** |
+
+Cross-checked against the **specialized** Jones `z` (guarding against the
+verdict being an artifact of holding `z` formal): `z = √2/2` at `q = i` and
+`z = √3/3` at `q = ζ₆` — both **real**, which independently verifies the
+bar-evenness hypothesis on `z`. The bar-odd parts survive: `−i/3`,
+`√2·i/3`, and `2√3·i/9` respectively, all nonzero (asserted).
+
+### Reading
+
+1. **The clean scale-invariant prune does not occur.** `tr_M ∘ Δ ≠ 0`, so the
+   outer class is **not** trace-blind on the cocenter. Had it been zero, that
+   would have been independent of both pins and a genuine kill; it is not.
+2. **The pairing carries a nonzero bar-ODD component** — precisely the parity
+   the c₃ swing `S` requires. So the bar-parity obstruction that closed every
+   real route does **not** close this one. Consistent with, and now
+   quantitative about, the §"why the real prune worked" argument above.
+3. **Asymmetry worth noting:** at `q = ζ₆` the unit group of `ℤ[ζ₆]` contains
+   **no** element with `bar(c)/c = −1`, so an integrality pin *would* fix the
+   parity there; at `q = i` the units `±i` flip it. Integrality is therefore a
+   point-dependent pin, not a general one.
+
+### What this does NOT establish
+
+Necessary, not sufficient — and the gap is wide:
+
+- A nonzero bar-odd **component** is not a bar-odd **eigenvector**. The number
+  is MIXED; isolating the odd part is a further structural choice that has not
+  been justified.
+- **Magnitude is completely untouched.** Nothing here reproduces c₃'s value or
+  its anchor-swing; only the parity channel was tested.
+- n=3 is the **mechanism**; the Bring fibre is H₅ at ζ₅.
+
+**Net:** the HH¹ carrier survives the bar-parity screen with a positive
+indication. It is not confirmed, and the c₃/Q_β derivation gap is unchanged.
+
 ## Discipline
 
 Nothing wired. No fit. The `cal-anchored` c₃ is untouched. Per AGENTS.md
