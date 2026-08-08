@@ -333,3 +333,20 @@ cross it — the bridges are an explicit `funext` for `Finset`, and
 often ships both forms, e.g. `DifferentiableAt.finset_prod` versus
 `DifferentiableAt.fun_finset_prod`; reach for the `fun_` variant first.
 
+
+## 2026-08-08 — claimed for the θ-specific instantiation
+
+Branch `claude/c1-theta-zero-locus-instantiation-2026-08-08`. Working the last
+item: instantiate the general chain for `θ_P`.
+
+One thing the plan above glosses. `exists_finset_factorisation` produces `g`
+analytic on the **open** `V`, but `argumentPrinciple_annulus_finset` wants `u`
+non-vanishing on an open set containing the **closed** contour annulus — so `V`
+must be strictly larger than the contours, and then `S` can contain zeros in the
+two collars, which violates that theorem's `∀ a ∈ S, r < ‖a‖ < R`.
+
+Two ways out: prove no zeros sit in a thin enough collar (needs a
+positive-distance argument against a finite set), or drop the hypothesis to
+`‖a‖ ≠ r, R` and count with a filter. The second is strictly more general, is
+the honest statement of the argument principle, and needs no collar at all —
+taking it.
