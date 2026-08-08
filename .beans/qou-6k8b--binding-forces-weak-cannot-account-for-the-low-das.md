@@ -39,3 +39,74 @@ WHAT THE BRAID ACTUALLY CONTAINS (surveyed, for the record):
   torus operators: nothing outside _deprecated/
 
 Acceptance: the mirror splitting 3H-3He comes out near 0.764 MeV, from Coulomb rather than from L_nn - L_pp.
+
+
+## DERIVATION ATTEMPT (same session) — resolved down to one line
+
+### 1. The linear law B = 5g is not merely ASSERTED, it is UNDERIVABLE as stated
+
+`g = 1/sqrt(5 + (q0-1)^2/q0)` depends only on q0, which is a mass RATIO and
+therefore dimensionless. So `5g = 2.23363534` is a PURE NUMBER declared to be
+MeV. It does not scale with m_e:
+
+    alpha = m_e/(q0(q0-1))  ->  4.185981 MeV = 4185.981 keV     scales correctly
+    5g                      ->  2.2336 "MeV" != 2.2336 "keV"    off by 1000x
+
+Every energy in this framework is alpha x dimensionless, and alpha carries the
+CAL-1 unit m_e. A quantity with no m_e in it cannot be an energy here. The
++0.41% agreement with AME is a numerical coincidence IN MeV SPECIFICALLY.
+
+Corollary: the three bond constants are not the same kind of object. L_pp and
+L_nn are pure functions of q0 (`ln(tr_free/tr_atom)`); L_pn = 5g/alpha carries
+m_e. Term-by-term, `alpha[(Z-1)L_pp + L_pn + (N-1)L_nn]` is dimensionally
+incoherent -- the alpha cancels for the pn term and not for the others.
+
+This cannot be repaired by tuning. It is the wrong kind of object.
+
+### 2. A tempting deuteron coincidence, TESTED AND KILLED
+
+The det form's 2-body shortfall is 1.292767 MeV; m_n - m_p = 1.293333 MeV,
+agreeing to 0.044%. It does not survive contact with A>2:
+
+    iso   shortfall/(m_n-m_p)
+    2H    0.9996
+    3H    1.7014
+    3He   4.2023
+    4He   1.3145
+
+No pattern, not 1, not n_pn. Recorded as a disproved lead so nobody spends a
+day rediscovering it.
+
+### 3. WHAT IS ACTUALLY DERIVABLE: the mirror error is one line
+
+Mirror splitting B(3H) - B(3He) from the determinant form, by sign pattern
+(nature: +0.764 MeV, essentially pure Coulomb):
+
+    pp=+1, nn=-1 (as landed)   3.99831 MeV   5.23x nature
+    pp=+1, nn=+1               0.00000 MeV   exactly zero
+    pp=-1, nn=-1               0.00000 MeV   exactly zero
+
+ANY charge-symmetric pattern gives IDENTICALLY zero strong mirror splitting.
+The whole 3.998 MeV comes from pp != nn -- and the same defect drives B_sym's
+2.97x overshoot via L_nn - L_pp.
+
+Root cause, `mass_at_3A_proper.py:337-338`:
+
+    _X_PP = (mpf(1), mpf(0))      # sigma
+    _X_NN = (mpf(1), -h_loc)      # sigma^-1
+
+pp is assigned sigma and nn sigma^-1. The strong force is charge-symmetric to
+~1%; this assignment breaks it at the braid level, and everything downstream
+(L_pp != L_nn, the [1^4] sign pattern read off as pp=+1/nn=-1, both forms'
+mirror failures) inherits it from these two lines.
+
+PROPOSED, and parameter-free because charge symmetry is a symmetry and not a
+fit: make the pp and nn inter-nucleon crossings identical, and let E_C supply
+the physical mirror splitting. The framework already computes E_C = 1.00 MeV
+for 3He against nature's 0.764 -- the right scale, ~30% high, consistent with
+r0 = 1.2 fm being approximate.
+
+CAUTION before acting: the pp/nn sign asymmetry is what produces mu_min = -sqrt5
+and hence the DERIVED "5" in g_reeb. Imposing charge symmetry changes that
+spectrum, so the 5 must be re-derived under the symmetric pattern rather than
+carried over. The two findings are coupled and must move together.
