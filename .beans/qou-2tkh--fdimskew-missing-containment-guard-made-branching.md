@@ -1,7 +1,7 @@
 ---
 # qou-2tkh
 title: 'fDimSkew missing containment guard made branching_two_one FALSE — fixed; sweep the other cited sorries for falsity'
-status: in-progress
+status: completed
 type: task
 created_at: 2026-08-08T16:20:00Z
 updated_at: 2026-08-08T16:20:00Z

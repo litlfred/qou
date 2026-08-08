@@ -1,7 +1,7 @@
 ---
 # qou-0z7n
 title: 'MI-2: cauchyMul_order is FALSE as stated — refute, restate, prove the envelope upper bound'
-status: in-progress
+status: completed
 type: task
 created_at: 2026-08-08T15:44:37Z
 updated_at: 2026-08-08T15:44:37Z
