@@ -1,0 +1,19 @@
+---
+# qou-z2bq
+title: Add reference for 1912.13486v2.pdf at conj:mirror-3d-3d-correspondence
+status: todo
+type: task
+created_at: 2026-08-08T23:36:49Z
+updated_at: 2026-08-08T23:36:49Z
+---
+
+The corpus carries several 3d-3d references but none covering the non-hyperbolic/plumbed branch, which is a named risk in the current volume-route attack.
+
+**From the source**
+- Sec. 3 (index for an effective description of T[M_3]) + Sec. 3.1 — For a plumbed 3-manifold the homological block determines an effective 3d N=2 theory whose S^2 x_q S^1 supersymmetric index is invariant under the 3d Kirby moves, giving a topologically well-defined index outside the hyperbolic setting.
+  Use here: The fallback machinery for the non-hyperbolic branch of the volume-route caveat, where the corpus's Vol-based invariants degenerate to zero.
+
+Source: `uploads/1912.13486v2.pdf` — no `references.ts` entry yet
+Relevance: **supporting** — agent assessment, not yet adjudicated.
+
+Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
