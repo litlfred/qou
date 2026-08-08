@@ -217,6 +217,47 @@ def per_atom_lp(atom_label: str, q_val: float, *,
         return None
 
     res = solve_operator_selection_lp(t, G, n_target)
+    lp = res.to_dict()
+
+    # ── take the dual from the CLOSED FORM, not from the solver (bean qou-pin3)
+    # `G` is diagonal here by construction (τ-orthogonal Wedderburn blocks), so
+    # the LP is `min t·x  s.t.  Σx = n_target, x ≥ 0` and stationarity
+    # `t = y0·1 + G y` determines the dual outright:
+    #
+    #     y0* = min_λ t_λ ,     y_λ* = (t_λ − y0*) / |w_λ| .
+    #
+    # This is not a tie-break -- there is no tie to break. It removes the solver
+    # from an answer the data already fixes, which matters because `y_star` is
+    # ill-conditioned by 1/|w| ≈ 3e5 at these weights (~1e-6): an interior-point
+    # method that stops at a 1e-12 duality gap lands ~1e-7 off in `y0` and
+    # ~2e-2 off in `y_star`. Measured, not feared -- regenerating this witness
+    # after clarabel's MPFR IPM backend became installable moved `y_star[2]`
+    # from exactly 0.0 to 0.0207, which is exactly |Δy0| / min|w|
+    # (7.229e-08 / 3.4837e-06). HiGHS simplex had been landing on the vertex
+    # exactly (duality gap 0.0), so the witness was right and the "better"
+    # solver made it worse.
+    #
+    # The solver's own dual is kept alongside as a diagnostic, so the deviation
+    # stays visible instead of being quietly replaced.
+    w_abs = np.abs(weights)
+    if lp.get("feasible") and (w_abs > 1e-14).all():
+        y0_cf = float(t.min())
+        y_cf = ((t - y0_cf) / w_abs).tolist()
+        y_solver = list(lp.get("y_star") or [])
+        scale = np.maximum(1.0, np.maximum(np.abs(y_cf), np.abs(y_solver)))
+        dev = (float(np.max(np.abs(np.asarray(y_cf) - np.asarray(y_solver)) / scale))
+               if y_solver else float("nan"))
+        lp["y_star_solver"] = y_solver
+        lp["y0_star_solver"] = lp.get("y0_star")
+        lp["dual_source"] = "closed_form (G diagonal)"
+        lp["dual_solver_deviation_rel"] = dev
+        lp["dual_conditioning"] = float(1.0 / w_abs.min())
+        lp["y0_star"] = y0_cf
+        lp["y_star"] = [float(v) for v in y_cf]
+        lp["active_set"] = [i for i, v in enumerate(y_cf) if v > 1e-9]
+    else:
+        lp["dual_source"] = "solver (G not diagonal-positive)"
+
     return {
         "atom": atom_label,
         "n": n,
@@ -227,7 +268,7 @@ def per_atom_lp(atom_label: str, q_val: float, *,
         "t_cost": [float(x) for x in t.tolist()],
         "weights": [float(x) for x in weights.tolist()],
         "n_target": float(n_target),
-        "lp": res.to_dict(),
+        "lp": lp,
     }
 
 
@@ -415,6 +456,50 @@ def main() -> int:
         float(crystal_mirror_max),
         0.0,
         tolerance=1e-6,
+    )
+
+    # ── dual stationarity guard (bean qou-pin3) ──────────────────────────
+    # `G` here is DIAGONAL — Wedderburn blocks are τ-orthogonal, so
+    # `per_atom_lp` builds `G = diag(|weight_λ|)`. That makes this LP
+    # `min t·x  s.t.  Σx = n_target, x ≥ 0`, whose dual is a CLOSED FORM:
+    #
+    #     y0* = min_λ t_λ ,      y_λ* = (t_λ − y0*) / |w_λ| .
+    #
+    # There is nothing for a solver to choose. But the weights run at ~1e-6, so
+    # `y_star` is ill-conditioned by 1/|w| ≈ 3e5: a 1e-12 dual residual in `y0`
+    # lands as ~1e-7 in `y_star`. Not hypothetical — regenerating this witness
+    # after clarabel's MPFR INTERIOR-POINT backend became installable moved
+    # `y_star[2]` from exactly 0.0 to 0.0207, and 0.0207 is precisely
+    # |Δy0| / min|w| for that run (7.229e-08 / 3.4837e-06). The committed
+    # witness came from HiGHS SIMPLEX, which lands on the vertex exactly:
+    # duality gap 0.0, `y0 == min(t)` to the last bit. An interior-point method
+    # converges toward that vertex and stops at 4e-12 — a fine primal answer and
+    # a 20,000x-amplified dual one.
+    #
+    # So this asserts against the closed form rather than against a solver, and
+    # fails loudly if any backend returns a dual the data does not support.
+    _cf_worst = 0.0
+    for _bucket in all_results.values():
+        for _rec in _bucket.get("per_atom", []):
+            _lp = _rec.get("lp") or {}
+            if not _lp.get("feasible"):
+                continue
+            _t = np.asarray(_rec["t_cost"], dtype=float)
+            _w = np.abs(np.asarray(_rec["weights"], dtype=float))
+            if not (_w > 1e-14).all():
+                continue                  # zero-weight channel: dual undetermined
+            _y_cf = (_t - _t.min()) / _w
+            _y = np.asarray(_lp["y_star"], dtype=float)
+            _scale = np.maximum(1.0, np.maximum(np.abs(_y_cf), np.abs(_y)))
+            _cf_worst = max(_cf_worst,
+                            float(np.max(np.abs(_y_cf - _y) / _scale)))
+    print(f"\n  LP dual vs closed form: max |Δrel| = {_cf_worst:.3e}")
+    wb.add_assertion(
+        "lp_dual_matches_closed_form",
+        float(_cf_worst),
+        0.0,
+        tolerance=1e-9,
+        source="G diagonal => y_lambda = (t_lambda - min t)/|w_lambda|",
     )
 
     out = wb.save()
