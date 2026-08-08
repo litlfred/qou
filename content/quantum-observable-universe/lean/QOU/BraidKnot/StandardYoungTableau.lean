@@ -122,18 +122,18 @@ theorem numSYT_bot : numSYT (⊥ : YoungDiagram) = 1 := by
 
 /-- The **hook length** of cell `(i, j)` in `μ`: arm (cells strictly to the right in
 row `i`) + leg (cells strictly below in column `j`) + the cell itself. -/
-def hookLength (μ : YoungDiagram) (i j : ℕ) : ℕ :=
+def StandardYoungTableau.hookLength (μ : YoungDiagram) (i j : ℕ) : ℕ :=
   (μ.cells.filter (fun c => c.1 = i ∧ j < c.2)).card
     + (μ.cells.filter (fun c => c.2 = j ∧ i < c.1)).card
     + 1
 
 /-- Every hook length is positive: besides its arm and leg it counts the cell itself (`+ 1`). -/
-theorem hookLength_pos (μ : YoungDiagram) (i j : ℕ) : 0 < hookLength μ i j := by
-  unfold hookLength; omega
+theorem hookLength_pos (μ : YoungDiagram) (i j : ℕ) : 0 < StandardYoungTableau.hookLength μ i j := by
+  unfold StandardYoungTableau.hookLength; omega
 
 /-- The **hook-length product** `∏_{c ∈ μ} h(c)` appearing in the FRT formula. -/
 def hookProduct (μ : YoungDiagram) : ℕ :=
-  ∏ c ∈ μ.cells, hookLength μ c.1 c.2
+  ∏ c ∈ μ.cells, StandardYoungTableau.hookLength μ c.1 c.2
 
 /-- The hook-length product is positive (a product of positive hook lengths). This makes the
 FRT formula's division form `f^μ = |μ|! / ∏ h_c` well-posed and is what the multiplicative
