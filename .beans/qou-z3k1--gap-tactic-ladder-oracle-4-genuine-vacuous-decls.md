@@ -124,14 +124,31 @@ the honest disposition (prove / state with `sorry` + `-- Ref:` / demote to
 `conjecture`, per §1a) is a per-item judgement. `LevelSufficiency` in particular
 needs the `markovTrace` definition looked at, not just the theorem.
 
-## Provenance / caveat
+## Sweep COMPLETE (2026-08-08) — full results
 
-From a PARTIAL sweep — 251 of ~1189 blocks (21%) at time of filing, 18 closed
-hits, of which 6 reproduce `qou-q407` verdicts and 10 were newly read. At the
-observed ~13% close rate the full corpus should yield 100–150 candidates; most
-will be legit (concrete `decide`/`omega`/`simp` where content lives in the
-definitions — 4 of the first 6 were). Sweep resumable via
-`--shard I/N --checkpoint N --resume`, shards under `/tmp/triv/`.
+802 probed, **74 closed (9%)**, 133 skipped. Full write-up:
+`docs/audits/2026-08-08-triviality-sweep-corpus-wide.md`.
+
+Headline additions beyond the five above:
+
+- **12 vacuous existentials** (`∃ x, x = e := ⟨e, rfl⟩`), of which **8 are NOT**
+  in main's `2026-08-07-lean-vacuous-existential-audit` — mass_tower_coefficient_stratification,
+  habiro_integral, residue_isRingHom_of_residueAtRoot, hadron_operations_closure,
+  pauli_factor_wedderburn, explicit_alpha_k_h3, optimal_nf_is_standard_basis,
+  cp_violation_spectral_form. The other 4 ARE in it — independent confirmation,
+  no action. Coordinate with that audit's owner before draining.
+- **2 quantified tautologies** — `orbit_sum_general`, `closed_form_holds`
+  (`∀ n, 2 ≤ n → f n = f n := rfl`). Now statically caught.
+- **34 broken `lean.ref`** — 31 naming a declaration that exists nowhere, plus
+  3 NAMESPACE MISMATCHES where the name exists in a different namespace
+  (`QOU.BraidKnot.AtomKnot.unique` vs declared `ConfinementLevel.unique`).
+
+Static coverage now catches 8 of the 74; the rest need the elaborating oracle.
+
+Two detector gaps closed from these findings: `proof-no-unused-hypothesis-rfl`
+(15 hits) and ascribed-literal tautologies (12 hits — `colour_sector_count :
+(3 : ℕ) = 3 := rfl` and friends, numeric claims whose content lives only in the
+declaration name).
 
 ## Follow-up
 
