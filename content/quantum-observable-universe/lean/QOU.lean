@@ -391,6 +391,7 @@ import QOU.Archimedean.ConstantOffOnePoint
 import QOU.Archimedean.BranchIntegerPinning
 import QOU.QBeta.FiveTwoCutAvoidance
 import QOU.QBeta.FiveTwoDeformedSaddle
+import QOU.QBeta.FiveTwoCurveDeriv
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge

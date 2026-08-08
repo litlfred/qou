@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T15:20:00Z
+updated_at: 2026-08-08T16:05:00Z
 parent: 0yqu
 ---
 
@@ -749,5 +749,72 @@ reckoning, and only now meet.
 
 Note the envelope never needs the *value* of `dyⱼ/dx` — only that it exists,
 because `∂V/∂y = 0` annihilates it. The IFT is used for existence alone.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later) — the IFT is plugged in, and the envelope collapse is measured
+
+`QOU/QBeta/FiveTwoCurveDeriv.lean`, sorry-free, no warnings, `lake` green (2039
+jobs). Route 26, 6 gates, exit 0.
+
+```lean
+theorem hasStrictFDerivAt_curve (x₀ y₀ : ℂ) :
+    HasStrictFDerivAt (fun q : ℂ × ℂ => curve q.1 q.2)
+      (curveDx x₀ y₀ • fst + curveDy x₀ y₀ • snd) (x₀, y₀)
+
+theorem exists_hasDerivAt_root (hc : curve x₀ y₀ = 0) (hdy : curveDy x₀ y₀ ≠ 0) :
+    ∃ g, g x₀ = y₀ ∧ (∀ᶠ x in 𝓝 x₀, curve x (g x) = 0) ∧
+      HasDerivAt g (-(curveDx x₀ y₀) / curveDy x₀ y₀) x₀
+```
+
+with `∂ₓc = y³ − 2xy² + (2x+1)y − 1` and `∂_yc = 3xy² − 2(x²+1)y + (x²+x+1)`.
+`∂_yc ≠ 0` is exactly "`y` is a **simple** root".
+
+### The hypothesis holds where it must, and fails only where it must
+
+`min_j |curveDy| ≥ 1.6158` everywhere on `|x| = 1` away from the branch point,
+and **vanishes at `φ₀`**. Crucially, `φ₀` is **solved for, not sampled**: the
+lane's own proved characterisation gives `Q(2cos φ₀) = 0` with
+`Q(u) = u⁴ − 6u³ + 7u² + 6u − 31`, so
+
+    φ₀/π = 0.76622594937757503001,   u₀ = −1.4844353317658568752
+
+and `min|curveDy|` there is `1.8e-25` — the square-root accuracy floor for a
+**double** root at 50 dps, which is exactly what it is.
+
+**A near-miss worth recording.** G3's first draft quoted a refinement sequence
+`0.695 → 0.133 → 0.0449 → 0.0177 → 0.0249`. That last value goes back *up*: the
+samples were **bracketing** `φ₀`, not converging to it. Quoting a grid value as a
+minimum is precisely the defect this lane already found once, in
+`min|disc| = 0.348`. Caught and replaced with the exact solve. Also: the gate's
+*claim text* still described the old method after the code changed — corrected,
+because a claim that misdescribes its own gate is the same failure one level up.
+
+### ⚠ The payoff, measured
+
+**The envelope collapse holds to 1e-31.** G6 tracks a root along the arc by
+continuity and checks
+
+    d/dφ V(x, y(φ))  =  (∂V/∂x)·dx/dφ
+
+by finite differences — worst deviation `3.5e-31` at `φ/π ∈ {0.2, 0.45}`. The
+`dy/dφ` term drops out because `∂V/∂y = 0` on the curve, which
+`deformed_saddle_iff_curve` already makes free. This is the identity the whole
+IFT brick exists to license, and it is now checked directly rather than assumed.
+
+G4 also confirms the IFT *value*: `dy/dφ` from finite differences matches
+`−(∂ₓc/∂_yc)·dx/dφ` to 1e-12. The envelope does not need that value — only that
+the derivative exists — but a wrong value would mean a wrong partial.
+
+### What is left for `dS/dφ = 2φ`
+
+1. Assemble the collapse over the three roots **in Lean** (G6 is numerical).
+2. `Σⱼ ∂V/∂x = −2 log x / x` from the Vieta products plus branch pinning — the
+   products are proved, the pinning lemma is proved, the assembly is not.
+3. Glue `[0,π] ∖ {φ₀}` → `[0,π]` with `constant_of_hasDerivWithinAt_zero_off_point`.
+
+Each is now a named, bounded task with its inputs in hand. None is written.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
