@@ -28,7 +28,14 @@ with `Re` of the **analytic** Rogers `L`. As of 2026-08-08 that is proved for
 So the whole of what remains is **one argument, in one regime**. Everything
 else in the level-7 chain is proved around it.
 
-## Why it is genuinely harder than the Landen leg, not just unfinished
+## ⚠ SUPERSEDED SECTION — kept because the reasoning was wrong in an instructive way
+
+> **The paragraph below is refuted by A2 (Route 35), recorded further down.** It
+> is kept rather than deleted because it is a clean example of this lane's
+> commonest error: reasoning about the object (`Li₂`, discontinuous across the
+> cut) instead of the quantity actually needed (`Re L`, which is *continuous*
+> across it). The conclusion "what is needed is a boundary value" was false, and
+> nothing measured it for a full round.
 
 The Landen leg closed because `x < 0` is *off* `cLiTwoExt`'s cut, so a
 vanishing derivative plus one base point sufficed — and the base point could be
@@ -36,9 +43,11 @@ taken at the limit `z → 0⁻`, needing no special value at all.
 
 `x > 1` lies **on** the cut. `notCut = {w | w.im ≠ 0 ∨ w.re < 1}` excludes real
 `x ≥ 1` precisely because `cLiTwoExt` has a genuine discontinuity across
-`[1,∞)`. There is no constant of integration to pin: **the object itself is not
-defined at the point in question.** What is needed is a *boundary value* — the
-limit from one side, which exists and is what `Re L` means there.
+`[1,∞)`. ~~There is no constant of integration to pin: the object itself is not
+defined at the point in question. What is needed is a boundary value — the
+limit from one side, which exists and is what `Re L` means there.~~ **False —
+see A2 below. The real part is continuous across the cut, so there is no limit
+to take.**
 
 `ComplexDilogarithmBoundary` deliberately stops short of this: it reaches the
 closed unit ball *off* the cut, and its docstring says so. Route 34 G5 checks
