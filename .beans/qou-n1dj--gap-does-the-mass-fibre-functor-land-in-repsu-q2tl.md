@@ -25,6 +25,26 @@ two-row count). At `n = 3` the sum is `{(3), (2,1)}`: **`(1³)` is absent**, so
 chapter already uses. Feed it into the sorry-free
 `markovWeights_eq_jones_of_threeRow_eq_zero` ⟹ **convention D, uniquely.**
 
+**And the block that defines the trace does not merely imply D — it IS D, in
+closed form.**
+[`feynman-markov-identification.md`](../content/quantum-observable-universe/mass-theory/feynman-markov-identification.md)
+defines the mass amplitude as `Σ_{λ⊢n, ℓ(λ)≤2} w_λ · tr_{S_λ}(ρ_n(β))`, says
+*"This equals the **Jones**–Markov trace `tr_M`"*, and gives
+`w_λ = dim_q(V_λ)·dim(S_λ)/dim_q(V^{⊗n})`. At `N=2` (`dim_q V_λ = [2j+1]_q`,
+`j = (λ₁−λ₂)/2`, `dim_q V^{⊗n} = [2]_q^n`), `n=3`:
+
+| λ | ℓ(λ) | j | dim_q V_λ | y_λ = dim_q V_λ/[2]_q³ |
+|---|---|---|---|---|
+| (3) | 2 | 3/2 | [4]_q | 0.50540422650393080 |
+| (2,1) | 2 | 1/2 | [2]_q | 1/[2]_q² = 0.24729788674803460 |
+| (1³) | **3** | — | — | **absent from the index set** |
+
+= convention D's vector, all three components, with the Schur–Weyl
+normalisation `[4]_q + 2[2]_q = [2]_q³` exact. Machine-checked (probe C6:
+normalisation = 1 to 50 digits, err vs D `3.3e-52`, Markov residual `1.1e-50`).
+So the corpus's own mass-trace definition **already computes D** — the
+"full-Hecke Ocneanu" Scope note contradicts a definition two blocks earlier.
+
 The CODATA match was not used. Chain: fibre → row cap → `y_(1³)=0` → D.
 
 **Sub-task 1 (find the independent argument) — DONE, plus new Lean.** New

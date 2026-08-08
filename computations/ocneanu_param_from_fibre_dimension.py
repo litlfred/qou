@@ -28,6 +28,12 @@ Checks (all must pass):
   C4  convention C's quoted parameter `z_C = 1/(q^(1/2)+q^(-1/2))` reproduces
       the corpus's C weight vector.
   C5  `N_eff(z_C)`, the fibre dimension C would need, is NOT an integer.
+  C6  the corpus's OWN closed-form mass weights reproduce convention D:
+      `feynman-markov-identification.md` defines tr_M as the sum over
+      `lambda |- n` with `l(lambda) <= 2` of `w_lambda * tr_{S_lambda}`, with
+      `w_lambda = dim_q(V_lambda) * dim(S_lambda) / dim_q(V^(tensor n))`.  At
+      N = 2, `dim_q V_lambda = [2j+1]_q` for spin `j = (l1-l2)/2` and
+      `dim_q V^(tensor n) = [2]_q^n`, giving exactly D.
 
 Nothing here reads a CODATA or AME value, and nothing is compared against one:
 the question "which convention" is settled by which fibre, not by which number
@@ -200,6 +206,55 @@ def check_effective_N(q) -> dict:
             "pass": dist > mpf("0.01")}
 
 
+# ---------------------------------------------------------------- C6
+
+
+def check_corpus_closed_form_weights(q) -> dict:
+    """The corpus's own mass-trace weights, evaluated, are convention D.
+
+    `feynman-markov-identification.md` states
+
+        tr_M = sum_{lambda |- n, l(lambda) <= 2} w_lambda tr_{S_lambda}(rho(beta)),
+        w_lambda = dim_q(V_lambda) * dim(S_lambda) / dim_q(V^(tensor n)),
+
+    and calls the result the *Jones*-Markov trace.  At N = 2, `V_lambda` has
+    spin `j = (lambda_1 - lambda_2)/2`, so `dim_q V_lambda = [2j+1]_q`, and
+    `dim_q V^(tensor n) = [2]_q^n`.  For n = 3 the surviving partitions are
+    `(3)` (j = 3/2, `[4]_q`, `dim S = 1`) and `(2,1)` (j = 1/2, `[2]_q`,
+    `dim S = 2`); `(1^3)` has `l = 3 > 2` and does not appear at all.
+
+    Two things are checked:
+
+      * Schur-Weyl normalisation `sum_lambda dim_q(V_lambda) dim(S_lambda)
+        = [2]_q^n`, i.e. the corpus's `sum_lambda y_lambda d_lambda = 1`;
+      * the per-block weight `y_lambda = dim_q(V_lambda)/[2]_q^n` equals the
+        convention-D vector `([4]/[2]^3, 1/[2]^2, 0)`.
+    """
+    n = 3
+    denom = q_int(2, q) ** n
+    # (partition, 2j+1, dim S_lambda) for lambda |- 3 with l(lambda) <= 2
+    blocks = [("(3)", 4, 1), ("(2,1)", 2, 2)]
+    norm = sum(q_int(twojp1, q) * dimS for _, twojp1, dimS in blocks) / denom
+    y = {name: q_int(twojp1, q) / denom for name, twojp1, dimS in blocks}
+    y["(1^3)"] = mpf(0)  # absent from the index set entirely
+    d_vec = (q_int(4, q) / q_int(2, q) ** 3, 1 / q_int(2, q) ** 2, mpf(0))
+    err = max(abs(a - b) for a, b in
+              zip((y["(3)"], y["(2,1)"], y["(1^3)"]), d_vec))
+    # and it must satisfy the Markov equations at z_D
+    z = q**2 / q_int(2, q)
+    res = residual(q, z, (y["(3)"], y["(2,1)"], y["(1^3)"]))
+    return {"check": ("C6 corpus's own closed-form mass weights "
+                      "(feynman-markov-identification) = convention D"),
+            "schur_weyl_normalisation_sum": str(norm),
+            "y_from_corpus_formula": {k: str(v) for k, v in y.items()},
+            "y_convention_D": [str(v) for v in d_vec],
+            "max_abs_err": str(err),
+            "markov_residual_at_z_D": str(res),
+            "pass": (abs(norm - 1) < mpf(10) ** (-40)
+                     and err < mpf(10) ** (-40)
+                     and res < mpf(10) ** (-40))}
+
+
 # ---------------------------------------------------------------- main
 
 
@@ -211,6 +266,7 @@ def main() -> int:
         check_jones_vector(q),
         check_convention_c(q),
         check_effective_N(q),
+        check_corpus_closed_form_weights(q),
     ]
     all_pass = all(c["pass"] for c in checks)
 
