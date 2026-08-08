@@ -42,6 +42,34 @@ merged-PR rule) and now carries the follow-up lanes below.
    `cscb` content-siblings, bounded slice.
 4. **This workplan doc** — the durable record of the above.
 
+## Lane-1 finding (2026-08-08): `sv8b` blocker is architectural, not mathematical
+
+Investigation of `seminormalVector_base_exists` (JucysMurphy:865, still a `sorry`;
+gates **both** PlancherelSnData axioms + the Burnside Identity-I chain):
+
+- **The math is COMPLETE on main.** The Garnir annihilation I contributed in #4086 is
+  landed and extended: `ColSuperstandardEigen.colGarnir_annihilation` (sorry-free) +
+  `jm_eigen_colSuperstandard'` (the **unconditional** OV eigen-equation
+  `X_s·e_{T₀} = col(s)·e_{T₀} − row(s)·e_{T₀}`). `sv8b-step5`'s stated obligation (the
+  annihilation) is effectively closed.
+- **Two remaining pieces, neither is new math:**
+  1. **Missing bridge** `colSuperstandardSYT : StandardYoungTableau μ` with
+     `sytToTableau = colSuperstandard` — `colSuperstandard` is only a raw `Tableau`.
+     Buildable now (entry = label-of-cell; `row/col_strict` from `lt_iff_colRow`).
+  2. **Layering inversion** (the real blocker): `base_exists` is *consumed* at
+     JucysMurphy:1250 (`seminormalVector_data_exists`), but the eigen machinery
+     (`OVBaseSeminormalVector`, `ColSuperstandardEigen`) is all **downstream** of
+     JucysMurphy — so `base_exists` cannot be closed in place.
+- **Resolution options:**
+  - (a) **Downstream sorry-free proof** — prove the exact statement in a new file
+    importing `ColSuperstandardEigen` (dispatched: branch
+    `claude/ov-base-vector-exists-downstream-2026-08-08`). Demonstrates full closure;
+    the JucysMurphy:865 `sorry` remains until (b).
+  - (b) **File-split** — move `base_exists` + `seminormalVector_data_exists` + the JM
+    eigenvalue theorem out of JucysMurphy into a file downstream of
+    `ColSuperstandardEigen`, updating consumers. **Architecturally significant —
+    owner decision.**
+
 ## folio-assistant
 
 Updated to latest (`/home/user/folio-assistant`, linked into repo). New features
