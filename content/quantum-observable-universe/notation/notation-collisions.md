@@ -259,7 +259,18 @@ to a named half. Proved sorry-free over a general field in
 gradings B and D is
 [`bar-parity-involution-atlas.witness.json`](../../../computations/bar-parity-involution-atlas.witness.json).
 
-**Three unrelated objects also wear the glyph $\sigma$** — the Hecke generator
-$\sigma_i$, the mirror $K \mapsto K^{\sigma}$, and the spin involution
-$\sigma : A \to A$ — so a bare $\sigma$ never disambiguates a parity claim.
-Name the half instead.
+**Four different objects wear the glyph $\sigma$** — the Hecke generator
+$\sigma_i$, the mirror $K \mapsto K^{\sigma}$, the spin involution
+$\sigma : A \to A$, and the bar involution itself, which several blocks write
+as $\sigma \colon q \mapsto q^{-1}$. A bare $\sigma$ therefore never
+disambiguates a parity claim; name the half instead.
+
+That last usage carries its own hazard: writing the bar involution as
+"$\sigma \colon q \mapsto q^{-1}$" states only the **coefficient half**, and a
+reader who takes it as the definition will compute the wrong parity for
+anything living inside $H_n(q)$. Three corpus claims have been corrected for
+exactly this — the crossing-energy channels, the $V_\lambda \leftrightarrow
+V_{\lambda'}$ intertwiner (which is the sign twist $\sigma_i \mapsto
+-\sigma_i^{-1}$, not the bar involution), and the Markov parameter $z$ (whose
+bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$). When the
+object being graded lies in the algebra, use both halves.
