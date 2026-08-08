@@ -1062,6 +1062,40 @@ published numbers, which is a decision about the corpus rather than a cleanup,
 and it should be made deliberately with the staleness quantified per witness —
 which the table above now makes possible.
 
+### Measured, then regenerated — and a fourth sub-class
+
+All 12 unhashed `WitnessBuilder` witnesses (7 scripts) measured before deciding
+what to commit:
+
+| witness | rc | hash | stale |
+|---|---|---|---:|
+| `nf-qvalues` | 0 | ✓ | **32/43 (74 %)** |
+| `inverse-markov-qvalues` | 0 | ✓ | **33/53 (62 %)** |
+| `markov-free-energy-qvalues` | 0 | ✓ | **26/51 (51 %)** |
+| `entanglement-orders` | 0 | ✓ | **38/83 (46 %)** |
+| `qbeta-odd-carrier-sector-decomposition` | 0 | ✓ | 0/35 |
+| `chi-*` ×6 | 0 | ✗ | 0 |
+| `kite_tail_reconciliation` | 1 | ✗ | 0 |
+
+Five regenerated and committed; **129 numbers move**. Nothing in the sources
+changed — each producer run unmodified at HEAD already disagreed with its own
+committed witness. `qbeta-odd-carrier` is included *because* it moved nothing:
+it isolates the metadata change from the value change.
+
+**The fourth sub-class: `scriptFile` naming a consumer.** The six `chi-*`
+witnesses claim `delta_lambda_empirical_tabulation.py`, which **reads** them as
+`chi_witness` inputs and never writes them — as do `mass_vol_density.py` and
+`mass_per_knot_density.py`. Nothing in the corpus writes them. Re-running the
+named "producer" therefore does nothing, which is exactly what was observed
+(rc=0, hash absent, no value moved).
+
+This invalidates an assumption in the counts above: **`scriptFile` was taken as
+truthful**, and at least 6 of the 12 are misattributed. The earlier split (173
+no `scriptFile` / 78 unhashed / 8 orphaned) is a floor on the provenance
+problem, not a description of it — a witness naming a real script is not
+evidence that script produces it. The honest discriminator is whether the
+script *writes* that filename, which none of these do.
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field
