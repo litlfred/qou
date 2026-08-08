@@ -1,11 +1,19 @@
 ---
 # qou-n1dj
 title: 'GAP: does the MASS fibre functor land in Rep(SU_q(2))~TL or full H_3(q)? (corpus self-contradiction, D vs C, 197 ppm on m_p)'
-status: completed
+status: todo
 type: task
 created_at: 2026-08-08T09:50:22Z
 updated_at: 2026-08-08T14:30:00Z
 ---
+
+> **Status reverted to `todo` by the parent session (2026-08-08).** The research
+> question below is **answered** — convention **D**, see the verdict block — but
+> closing a bean is a **human action** (AGENTS.md §4a: agents may move an item to
+> in-progress and may add findings, never to resolved/completed). Both sibling
+> agents on this bean left the status untouched for that reason. The owner closes
+> it. Nothing about the technical verdict is affected by this revert.
+
 
 ## RESOLVED 2026-08-08 — the answer is D, and the premise was already in the mass chapter
 
