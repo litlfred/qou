@@ -1,11 +1,11 @@
 ---
 # qou-pin2
 title: 'Producers reading BOTH q0 layers: 3 IMPLICIT crossings stamped proton are the real hazard (explicit q_muon_at probes ruled OK)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T19:30:00Z
-updated_at: 2026-08-08T19:30:00Z
+updated_at: 2026-08-08T20:45:00Z
 ---
 
 > **🟧 OWNER RULING 2026-08-08 — explicit comparison probes are OK.** A producer
@@ -73,3 +73,41 @@ before acting; do not treat these five as defects on this evidence alone.
 matching does not distinguish a docstring from a live path argument. Tightening
 it (match only strings reaching an `open`/`load_witness` call) is a worthwhile
 follow-up and would cut this false-positive class.
+
+
+## RESOLVED 2026-08-08 — all three IMPLICIT crossings handled
+
+**1. `delta_lambda_fr_identity_phase5c.py` — a LIVE straddle, fixed.**
+It set `q` from `q_parameter.Q` (proton for this stem) and then loaded
+muon-built `y_λ` from `y-lambda-at-q0.witness.json`, forming
+`τ_M(β) = Σ_λ y_λ·χ_λ(β)` -- muon `y_λ` against proton `χ_λ`, inside one
+quantity. Exactly the μ₃ Fréchet defect AGENTS.md documents, and invisible
+because the witness is stamped `proton`.
+
+Fixed with the remedy that section prescribes: `y_lambda_at_q0_mpmath(n, Q0)`
+live at the producer's own q₀ instead of the cached witness.
+
+The proof it was real: the Markov-interface identity `τ_M = z^p (z-h)^n` is
+EXACT algebra, so its residual should be machine zero. It wasn't --
+
+    atom   BEFORE (straddled)   AFTER (single-layer)
+    D      2.39e-08             4.12e-16
+    T      6.65e-08             9.58e-16
+    3He    4.79e-08             6.53e-16
+    4He    9.04e-08             1.19e-15
+
+-- the straddle was injecting ~1e-8 (the 11.5 ppb μ-p separation) into an exact
+identity. Residual improved 7.6 MILLION-fold. Largest substantive field shift
+was 1.402e-07, matching AGENTS.md's ~1e-7 prediction for this separation.
+allPassed True before and after: it was PASSING, 8 orders worse than it should.
+
+**2 + 3. `t25_cinquefoil_deltalambda_sign_probe.py`, `zhabiro_phiq_wiring.py`
+-- a DIFFERENT class: cross-layer FALLBACKS.** Their primary path is proton
+(`q_at`); the `except` handler substituted a hardcoded MUON literal. So on any
+import hiccup they compute at the ideal pin under proton labelling, silently.
+zhabiro's own comment declared the q₀ "proton-pinned" while falling back to a
+muon value labelled only "literal fallback". Both now raise instead.
+
+That class generalises: `q0_cross_layer_fallback_scan.py` (new) finds **29**
+such files. 27 remain -> bean `qou-pin4`, along with 3 TRANSITIVE straddles
+(both layers via different helpers, invisible to a file-local scan).

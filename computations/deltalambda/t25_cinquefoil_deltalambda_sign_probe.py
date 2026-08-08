@@ -203,9 +203,18 @@ def main():
         from qou_substrate.constants import q_at
         q0 = mp.mpf(str(q_at(40)))
         q0_src = "qou_substrate.q_at(40)"
-    except Exception:                              # noqa: BLE001  (substrate optional in sandbox)
-        q0 = mp.mpf("1.10997859555733471")         # canonical muon-q_0 (q-pinning witness)
-        q0_src = "q-pinning-50-digit.witness (muon q_0)"
+    except Exception as _exc:                      # noqa: BLE001
+        # Was: silently fall back to the MUON literal 1.10997859555733471.
+        # That is a CROSS-LAYER fallback -- the primary path is proton
+        # (`q_at`), so on any import hiccup this probe would compute at the
+        # ideal pin while every label around it said proton, with nothing
+        # signalling the switch. AGENTS.md §q0-anchor: "never straddle the two
+        # layers inside one quantity". A fallback to the *other layer* is worse
+        # than no fallback, so this now fails loudly.
+        raise RuntimeError(
+            "q_at unavailable and there is no same-layer fallback; refusing to "
+            "substitute the muon q_0 into a proton-pinned probe "
+            f"(AGENTS.md q0-anchor). Original error: {_exc!r}") from _exc
 
     rows, sign_match = [], True
     for lam in parts:
