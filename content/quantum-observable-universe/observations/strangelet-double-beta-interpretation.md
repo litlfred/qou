@@ -1,21 +1,29 @@
-**The Skein amplitude is the EM/strong ratio.**
+**The Skein amplitude coincides numerically with the per-crossing channel ratio.**
 
 The Skein amplitude $s \approx 0.104$ is numerically
-indistinguishable from the EM/strong ratio
-$\tanh(\ln q) \approx 0.104$
+indistinguishable from the per-crossing bar-odd-to-bar-even
+weight ratio $\tanh(\ln q) \approx 0.104$
 ([crossing energy decomposition](#prop:crossing-energy-decomposition)).
-This is not a coincidence: both measure the **antisymmetric
-channel** of the $R$-matrix braiding.  Each crossing change
-couples the degree-$2$ fiber to the degree-$1$ fiber through
-the antisymmetric (electromagnetic) channel.  The double beta
-decay rate is therefore
+The coincidence is recorded here; it is not explained.  Two
+things block the explanation that both quantities measure the
+same antisymmetric channel.  First, the channel *totals* carry
+the multiplicity factor $(p + m)/(p - m)$, and this block works
+in the $Q = 0$ sector, where $p = m$ and that factor is
+undefined — so $\tanh(\ln q)$ is the per-crossing weight ratio
+here, never the channel ratio.  Second, identifying the bar-odd
+channel as the electromagnetic one is not supplied by the
+decomposition ([Coulomb charge](#def:coulomb-charge)): the
+bar-odd coefficient $\tfrac{1}{2}(p + m)$ is a crossing count,
+hence sign-blind, while $Q = \tfrac{1}{2}(p - m)$ scales the
+bar-even channel.  Taking the numerical value at face value,
+the double beta decay rate scales as
 
 $$
-  \Gamma_{2\beta}
-   \sim 
-  \left(\frac{\text{EM}}{\text{strong}}\right)^4
-   \approx  10^{-4}.
+  \Gamma_{2\beta} \;\sim\; s^4 \;\approx\; 10^{-4},
 $$
+
+with the identification of $s$ with a ratio of named force
+channels left open.
 
 **The intermediate state.**
 
