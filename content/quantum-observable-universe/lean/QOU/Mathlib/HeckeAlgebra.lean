@@ -242,6 +242,14 @@ theorem Hn_basis_dimension_four : Hn_basis_dimension 4 = 24 := rfl
 /-- Concrete `H_2(q)` carrier: pair representing `a · 1 + b · σ_1`. -/
 abbrev H2Carrier (R : Type u) := R × R
 
+-- These three are addressed as `H2.one` / `H2.sigma` / `H2.mul` at every one of
+-- their 9 call sites, but were declared at file scope — so the names did not
+-- exist and this module never compiled. Nothing caught it because `lake build`
+-- only reached the import closure of `QOU.lean`, and this module is outside it
+-- (bean qou-rc7b). The namespace also disambiguates them from the `one` / `mul`
+-- / `sigma` *fields* of the `HeckeAlgebra` class above.
+namespace H2
+
 /-- The unit `1 ∈ H_2(q)` as a concrete element. -/
 def one (R : Type u) [CommRing R] : H2Carrier R := (1, 0)
 
@@ -254,6 +262,8 @@ def mul {R : Type u} [Field R] (q : R)
     (x y : H2Carrier R) : H2Carrier R :=
   (x.1 * y.1 + x.2 * y.2,
    x.1 * y.2 + x.2 * y.1 + x.2 * y.2 * (q - q⁻¹))
+
+end H2
 
 /-- Identity: `1 · σ_1 = σ_1`. -/
 theorem one_mul_sigma {R : Type u} [Field R] (q : R) :
