@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T11:40:00Z
+updated_at: 2026-08-09T12:05:00Z
 ---
 
 ## What is open
@@ -391,6 +391,57 @@ would give a strictly weaker statement that does not prove injectivity.
 
 **Still open:** composing `realRoot` with `cos` to get `Y₁`, building `(Y₂, Y₃)`
 from `otherRoots`, and feeding the three into `hasDerivAt_envelopeS`.
+
+### The last two obligations, stated exactly
+
+Everything else in the transport chain is proved and instantiated at the concrete
+labelling. These two remain, and both now have their dead ends gated rather than
+remembered.
+
+**(1) `heⱼ` at the pair — needs `k = 0` in `dVdy·y ∈ 2πi·ℤ`.**
+
+Equivalent form worth keeping: `Re(dVdy·Y′) = k·2π·Im(Y′/y)` and
+`Im(Y′/y) = d(arg y)/dφ`, so
+
+    heⱼ  ⟺  k · d(arg y)/dφ = 0.
+
+At the *real* root `arg y ≡ 0`, so `k` never matters — which is exactly why
+`re_dVdy_mul_eq_zero_of_real` needs no pinning. At the pair `arg y` is not
+constant, so `k = 0` is unavoidable.
+
+| route | status |
+|---|---|
+| bound the four `arg`s separately | ❌ **closed** — G13: they sum to 11.857 > 2π |
+| saddle identity `(1−xy)(1−y/x) = y²/(1−y)` | ❌ **closed** — G14: leaves `m = ±1`, never 0 |
+| G13's two groupings, each measured < π/2 | ⏳ first half **proved** (`one_sub_Ypair_mem_slitPlane`); second open |
+
+The open half is `|arg(1−xy) + arg(1−y/x) − 2·arg(−y)| < 3π/2`, measured under
+`π/2`, so there is a factor of three in hand — but it is irreducibly a statement
+about three *correlated* arguments, and G13 proves no bound on the individual
+terms can give it.
+
+**(2) `hcont` at `φ = π` — and it is ONE-SIDED, not 2-D (G11, corrected).**
+
+`envelope_integrate` takes `ContinuousOn S (Icc 0 b)` — the **closed** interval —
+so this cannot be dodged by working on `Ico`.
+
+Two thirds of it are already theorems:
+
+* **which side the value sits on** — `arg_one_sub_mul_ofReal` gives `arg = +π` on
+  the negative part of `1 − x·t`, which is precisely the limit from `Im < 0`;
+* **continuity along the real ray**, across the cut —
+  `continuousOn_cLiTwoExt_ofReal_Icc'`, for any `b > 0`.
+
+What is missing is continuity along a **non-real** approach: the arc reaches
+`x·y → 2.2469796` with `Im(x·y) ≈ −r·(π−φ)`, not along the real axis. So the
+needed statement is `cLiTwoExt` continuous at a cut point restricted to
+`{w | w.im ≤ 0}` — one-sided, and a dominated-convergence argument on the
+defining integral rather than a two-dimensional continuity theorem about `Re Li₂`.
+
+⚠ G11's *first* version asked for the harder thing (`Re Li₂` continuous across
+the cut). That was my over-statement, corrected in place. Recording the
+correction because "this needs a 2-D theorem" is the kind of estimate that turns
+a tractable step into a parked one.
 
 ### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 
