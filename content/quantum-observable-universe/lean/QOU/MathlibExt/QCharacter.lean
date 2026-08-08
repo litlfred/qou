@@ -44,7 +44,7 @@ def QInvariant {R : Type*} [Mul R] (q : R) (h : R → R) : Prop := ∀ x, h (q *
 variable {R : Type*} [CommRing R]
 
 /-- **q-characters multiply**: `e_{q,c}·e_{q,d}` is a q-character with multiplier `c·d`. -/
-theorem mul {q c d : R} {f g : R → R} (hf : IsQChar q c f) (hg : IsQChar q d g) :
+theorem IsQChar.mul {q c d : R} {f g : R → R} (hf : IsQChar q c f) (hg : IsQChar q d g) :
     IsQChar q (c * d) (fun x => f x * g x) := by
   intro x
   show f (q * x) * g (q * x) = c * d * (f x * g x)
