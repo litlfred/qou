@@ -26,25 +26,35 @@ Parts 1 (intrinsic curvature nonzero when `κ₀ ≠ 0`, via HKR) and
 2 (q-flatness ↔ vanishing connection-dependent curvature) are genuinely
 geometric and are **not** covered by the arithmetic core; they carry
 honest `sorry`s with the manuscript citation per AGENTS.md §1.
+
+## Base ring (§7c)
+
+The arithmetic core runs in `ℤ` (`χ(A)`, Kummer levels, divisibility). The two
+curvature values `F^{intr}_q` and `R(∇)` are only ever tested against zero
+(`≠ 0`, `= 0`) -- they are never ordered, normed or approximated -- so they take
+values in a generic commutative ring rather than `ℝ`. The archimedean
+realisation is the instantiation `R := ℝ`.
 -/
 
 namespace QOU
 
+variable {R : Type*} [CommRing R]
+
 /-- Abstract context for the `q_gl_obstruction_calc` claim — manuscript-themed
     typed fields standing in for the geometric objects of
     `prop:q-gl-obstruction-calc`. -/
-class QGlObstructionCalcContext where
+class QGlObstructionCalcContext (R : Type*) [CommRing R] where
   /-- The categorical object / monoidal structure. -/
   CategoricalObj : Type
   /-- Euler characteristic `χ(A)`. -/
   chi_A : ℤ
   chi_A_nonzero : chi_A ≠ 0
   /-- Intrinsic q-curvature `F^{intr}_q` of a q-flat connection. -/
-  F_intr : ℝ
+  F_intr : R
   /-- Predicate: `∇_q` is q-flat. -/
   q_flat : Prop
   /-- The connection-dependent curvature `R(∇)`. -/
-  R_connection : ℝ
+  R_connection : R
   /-- Predicate: `κ_0 mod n` vanishes at Kummer level `n`. -/
   kappa_vanishes : ℕ → Prop
   /-- Predicate: the obstruction class `κ₀ = e(ξ) ∈ H²(𝒮, 𝔾_m)` vanishes. -/
@@ -89,7 +99,7 @@ $\kappa_0 = e(\xi) \in H^2(\mathcal{S}, \mathbb{G}_m)$.  Then:
 4. for `χ(A) ≠ 0` the obstruction persists at arbitrarily large Kummer
    levels — **proved** from `obstruction_cofinite_persistence` + (3). -/
 -- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-obstruction-calc.ts
-theorem q_gl_obstruction_calc (ctx : QGlObstructionCalcContext) :
+theorem q_gl_obstruction_calc (ctx : QGlObstructionCalcContext R) :
     (¬ ctx.kappa_zero → ctx.F_intr ≠ 0) ∧
     (ctx.q_flat ↔ ctx.R_connection = 0) ∧
     (∀ n : ℕ, 1 ≤ n → (ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A)) ∧
