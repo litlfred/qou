@@ -64,8 +64,8 @@ import json
 import pathlib
 
 from mpmath import cos as mpmath_cos
-from mpmath import (arg, exp, fabs, findroot, im, log, mp, mpc, mpf, nstr, pi,
-                    polyroots, re, sqrt)
+from mpmath import (arg, exp, fabs, findroot, im, log, mp, mpc, mpf, nint, nstr,
+                    pi, polyroots, re, sqrt)
 
 
 def roots_at(ph):
@@ -815,6 +815,53 @@ def main() -> int:
                      and s_lo is not None and fabs(s_lo) < mpf(10) ** -30
                      and fabs(s_hi) < mpf(10) ** -30
                      and re_y_max is not None and re_y_max < 1),
+    })
+
+    # ---- G14: a SECOND route to k = 0, also closed ---------------------------
+    # G13 closed the term-by-term route. The obvious next idea is to use the saddle
+    # condition itself: on the curve y^2 = (1-y)(1-xy)(1-y/x), so
+    #     (1-xy)(1-y/x) = y^2/(1-y)
+    # and taking args should express G = arg(1-xy)+arg(1-y/x)-2arg(-y) in terms of arg(y)
+    # and arg(1-y) alone -- both of which are boundable. It does, up to an integer:
+    #     arg(1-xy) + arg(1-y/x) = 2 arg(y) - arg(1-y) + 2*pi*m
+    # and the route works only if m is pinned.
+    #
+    # It is not. m takes BOTH values +-1 on the arc (never 0), so the identity trades one
+    # branch-pinning problem for another of the same difficulty. Recorded so the next pass
+    # does not spend the hour rediscovering it.
+    #
+    # One structural crumb worth keeping: m flips sign between the two members of the
+    # conjugate pair, so it CANCELS when the pair is summed. That suggests the sum over
+    # roots may be reachable where the per-root statement is not -- but `he_j` is stated
+    # per-root in `hasDerivAt_envelopeS`, so using that would mean changing the interface,
+    # not just finishing the proof.
+    m_vals = set()
+    for i in range(N):
+        ph = pi * mpf(i + 1) / (N + 1)
+        x = exp(mpc(0, 1) * ph)
+        for y in roots_at(ph):
+            if fabs(im(y)) < REAL_TOL and re(y) > 0:
+                continue
+            lhs = arg(1 - x * y) + arg(1 - y / x)
+            rhs = 2 * arg(y) - arg(1 - y)
+            m_vals.add(int(nint((lhs - rhs) / (2 * pi))))
+    gates.append({
+        "gate": "G14",
+        "claim": "A SECOND ROUTE TO k = 0, ALSO CLOSED. G13 ruled out bounding the four args "
+                 "separately. The next natural idea is the saddle condition itself: on the curve "
+                 "y^2 = (1-y)(1-xy)(1-y/x), so (1-xy)(1-y/x) = y^2/(1-y), and taking args should "
+                 "reduce G to arg(y) and arg(1-y), both boundable. It does -- up to an integer m -- "
+                 "and the route needs m pinned. It is NOT: m takes BOTH values +-1 on the arc and "
+                 "never 0, so this trades one branch-pinning problem for another of the same "
+                 "difficulty. Recorded so the next pass does not rediscover it. One crumb: m flips "
+                 "sign between the conjugate pair, so it CANCELS on the sum over roots -- the sum "
+                 "may be reachable where the per-root statement is not, but `he_j` is stated "
+                 "per-root, so that would mean changing the interface rather than finishing a proof",
+        "m_values_occurring": sorted(m_vals),
+        "m_is_pinned": bool(len(m_vals) == 1),
+        "conclusion": "route closed; m is not constant",
+        # the gate PASSES by confirming the route is closed -- a recorded dead end
+        "pass": bool(len(m_vals) > 1 and 0 not in m_vals),
     })
 
     out = {

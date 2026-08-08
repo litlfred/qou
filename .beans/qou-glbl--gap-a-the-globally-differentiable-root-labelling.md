@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T09:55:00Z
+updated_at: 2026-08-09T10:20:00Z
 ---
 
 ## What is open
@@ -165,7 +165,7 @@ be called trivial in advance.
 
 `VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
 it was measured before any Lean was written for it. **Route 36**
-(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **13 gates**, all pass — G3 is a
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **14 gates**, all pass — G3 is a
 **retraction** and G7 a recorded *refutation*, both below):
 
 * **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks

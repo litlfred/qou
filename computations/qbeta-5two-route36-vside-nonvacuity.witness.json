@@ -195,6 +195,17 @@
       "tight_grouping_2": "arg(1-xy) + arg(1-y/x) - 2 arg(-y) -- the OPEN obligation; measured under pi/2, needs only < 3*pi/2 for the pinning",
       "max_Re_y_at_pair": "0.7847802931",
       "pass": true
+    },
+    {
+      "gate": "G14",
+      "claim": "A SECOND ROUTE TO k = 0, ALSO CLOSED. G13 ruled out bounding the four args separately. The next natural idea is the saddle condition itself: on the curve y^2 = (1-y)(1-xy)(1-y/x), so (1-xy)(1-y/x) = y^2/(1-y), and taking args should reduce G to arg(y) and arg(1-y), both boundable. It does -- up to an integer m -- and the route needs m pinned. It is NOT: m takes BOTH values +-1 on the arc and never 0, so this trades one branch-pinning problem for another of the same difficulty. Recorded so the next pass does not rediscover it. One crumb: m flips sign between the conjugate pair, so it CANCELS on the sum over roots -- the sum may be reachable where the per-root statement is not, but `he_j` is stated per-root, so that would mean changing the interface rather than finishing a proof",
+      "m_values_occurring": [
+        -1,
+        1
+      ],
+      "m_is_pinned": false,
+      "conclusion": "route closed; m is not constant",
+      "pass": true
     }
   ],
   "verdict": {
