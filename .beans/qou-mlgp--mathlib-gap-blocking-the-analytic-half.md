@@ -482,3 +482,68 @@ and both endpoints sit outside that pairing. Next concrete step is the endpoint,
 not the interior.
 
 Probe: `computations/probes/kashaev_reflection_probe.py`, 3 assertions, all pass.
+
+## (A) — the trapezoid collapse PROVED, and the endpoint singularity removed
+
+Two more pieces. (A) is still open, but the reason it is open has changed
+completely: it is no longer blocked on a singularity.
+
+**1. The trapezoid collapse is now a theorem, not a measurement.**
+`QOU/Knot/KashaevReflectionTrapezoid.lean`:
+
+    Lob_pi_sub               Lambda(pi - t) = -Lambda(t), from Cl_2_neg + Cl_2_add_two_pi
+    integral_log_two_sin     int_a^b log(2 sin) = Lambda(a) - Lambda(b)   (FTC on hasDerivAt_Lob)
+    kashaevLogSum / kashaevMainTerm / kashaevErr    the definitions
+    kashaevErr_add_reflect   eps_k + eps_{N-1-k} = trapezoid remainder
+
+The previous commit only MEASURED that the reflection collapses to a trapezoid
+remainder. `kashaevErr_add_reflect` derives it: substitute the conjectured
+expansion into `sum_log_two_sin_reflect`, apply `Lambda(pi-x) = -Lambda(x)` and
+the fundamental theorem of calculus, and everything cancels. All three inputs
+were already in this corpus — that is the point.
+
+**2. The `j = 0` singularity is REMOVED, not estimated.**
+`QOU/Knot/KashaevEndpointSplit.lean`:
+
+    logSinc x := log(sin x) - log x
+    logSinc_zero, logSinc_neg          regular at 0, and EVEN
+    sum_log_two_sin_split
+        sum_{j=1}^k log(2 sin(j pi/N)) = k log(2pi/N) + log(k!)
+                                       + sum_{j=1}^k logSinc(j pi/N)
+
+exact, every `N != 0`, every `k < N`. Subtract the singularity rather than
+estimate it. The left side is singular termwise as `j/N -> 0`; the right side is
+a closed form, a factorial, and a Riemann sum of a function continuous at `0`
+and even (so no `h`-order endpoint term at the left end).
+
+Measured (`kashaev_endpoint_split_probe.py`, 5 assertions, all pass):
+the split is exact to 1e-68; the `logSinc` sum minus its Euler-Maclaurin
+approximant is `O(h^3)` with `|.|.N^3 = 0.0222` flat to **1.0001x** across
+`N = 100..800`; reassembly gives `s_k` to `O(1/N^3)` with `|.|.N^3 = 0.0669`
+flat to 1.007x across `N = 400..1600`.
+
+**THE CANCELLATION, and why Robbins is needed.** In the reassembly, Stirling's
+`+1/(12k)` and the `-(h/12)(1/theta)` coming from `logSinc'(x) = cot x - 1/x`
+cancel identically, leaving exactly the measured `-(pi/12N) cot theta`. Drop
+either half and the residual is exactly `1/(12k)` — the probe exhibits this. So
+the two halves are individually `O(1/N)` and only cancel together.
+
+## The Mathlib gap for (A), now precisely two named items
+
+  1. **Euler-Maclaurin summation** for a smooth function on a compact interval.
+     Mathlib has `Polynomial.bernoulli` and `sum_range_pow_eq_bernoulli` but no
+     summation formula.
+  2. **Robbins' `1/(12n)` term of Stirling.** Mathlib's own docstring on
+     `Real.Stirling.le_log_factorial_stirling` records the gap: "Sharper bounds
+     due to Robbins are available, but are not yet formalised. These would add
+     lower order terms (beginning with `(12 * n)^-1`)." Mathlib does have
+     `le_log_factorial_stirling` (effective, one-sided) and
+     `factorial_isEquivalent_stirling` (asymptotic).
+
+With (1) alone the reassembly proves the `O(1/N)` form of (A). With (1)+(2) it
+proves the `-(pi/12N) cot theta` refinement.
+
+That is a materially different bean from the one written at the top of this
+file, which said (A) needed "a structurally different comparison" and was
+"multi-day, no handle". The comparison is identified, the singularity is gone,
+and what is left is two standard library lemmas.

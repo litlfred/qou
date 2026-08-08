@@ -117,6 +117,8 @@ import QOU.Knot.PerNeutronLadder
 import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.Knot.KashaevProdEndpoint
+import QOU.Knot.KashaevReflectionTrapezoid
+import QOU.Knot.KashaevEndpointSplit
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
