@@ -42,7 +42,20 @@ ROOT="$(git -C "$(dirname "$0")/.." rev-parse --show-toplevel)"
 cd "$ROOT"
 BUILT_FILE="${BUILT_FILE:-/tmp/parbuild_built.txt}"
 SLUG="$(cut -d: -f2 lean-toolchain | tr -d '\r' | tr . -)"      # v4.24.0 -> v4-24-0
-BR="lake-cache/qou-$SLUG"
+# ROOT-vs-BRANCH mismatch (measured 2026-08-07). This script collects from the
+# WORKSPACE ROOT (`cd $ROOT`; `.lake/packages/...`). Per the authoritative
+# roster .github/lake-packages.json, the workspace root is the **mathlib**
+# package (`"package": "mathlib", "lake-root": "."`); `qou`'s lake-root is
+# content/quantum-observable-universe/lean. QOU.* oleans are built into THAT
+# tree — root `.lake/build/lib` holds zero of them (verified: 0 at root vs 942
+# under the paper lean root).
+#
+# So seeding "lake-cache/qou-$SLUG" from here publishes a qou-NAMED branch with
+# zero qou CONTENT — which is precisely the live defect in bean 5d7z
+# ("7268 oleans, every one a dependency, zero QOU.*"). Default to the branch
+# that matches what is actually collected; override with CACHE_BRANCH= when
+# seeding a paper package from its own lake root (with SEED_PAPER=1).
+BR="${CACHE_BRANCH:-lake-cache/mathlib-$SLUG}"
 WORK="$(mktemp -d)"
 LIST="$WORK/files.txt"
 TGZ="$WORK/lake-oleans.tgz"
@@ -119,6 +132,30 @@ if [ "${SEED_PAPER:-0}" = "1" ]; then
 fi
 total=$(wc -l < "$LIST")
 echo "  total files to seed: $total"
+
+# Own-package guard, mirroring folio-assistant/scripts/lake-cache.sh. A cache
+# named for a package but carrying none of that package's oleans looks healthy
+# by total count while being useless for the thing it is named after — the
+# 5d7z defect. Derive the expected own-package prefix from the branch name and
+# refuse to publish a branch that contains none of it.
+own_pkg="${BR##*/}"; own_pkg="${own_pkg%-"$SLUG"}"          # lake-cache/qou-v4-24-0 -> qou
+case "$own_pkg" in
+  mathlib) own_n=$(grep -c '/mathlib/' "$LIST" || true) ;;
+  qou)     own_n=$(grep -c '/lean/QOU/' "$LIST" || true) ;;
+  ugb)     own_n=$(grep -c '/lean/UGB/' "$LIST" || true) ;;
+  fred2005) own_n=$(grep -c '/lean/Fred2005/' "$LIST" || true) ;;
+  *)       own_n=-1 ;;                                      # unknown: skip the check
+esac
+if [ "$own_n" = "0" ]; then
+  echo "REFUSING to seed '$BR': $total files collected but ZERO belong to '$own_pkg'." >&2
+  echo "This script collects from the WORKSPACE ROOT, which per" >&2
+  echo ".github/lake-packages.json is the 'mathlib' package. Seeding a" >&2
+  echo "'$own_pkg'-named branch from here reproduces bean 5d7z. To seed a paper" >&2
+  echo "package, run with SEED_PAPER=1 and CACHE_BRANCH=lake-cache/$own_pkg-$SLUG" >&2
+  echo "from a tree where that paper's lib was actually built." >&2
+  exit 1
+fi
+[ "$own_n" -gt 0 ] 2>/dev/null && echo "  own-package ($own_pkg) files: $own_n"
 
 # 3. tar + split into 90 MB git-blob parts
 tar czf "$TGZ" -T "$LIST"
