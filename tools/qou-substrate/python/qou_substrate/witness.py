@@ -270,7 +270,12 @@ class Assertion:
         if self.tolerance is None:
             return self.computed == self.expected
         try:
-            return abs(float(self.computed) - float(self.expected)) <= self.tolerance
+            # `float()` on the tolerance too: producers draining raw float64
+            # (qou-t0rf) pass computed/expected/tolerance as precision-preserving
+            # STRINGS, and a str tolerance would otherwise make `<=` raise and
+            # silently fall through to string equality — a wrong verdict, not an
+            # error. Coercing here keeps the numeric check numeric.
+            return abs(float(self.computed) - float(self.expected)) <= float(self.tolerance)
         except (ValueError, TypeError):
             return str(self.computed) == str(self.expected)
 

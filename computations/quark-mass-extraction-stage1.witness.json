@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T11:32:42.392881+00:00",
-  "commitSha": "e3fb840bebf0f9e7b8b4a4ffc68e345f0b9f0dde",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T08:20:22.463502+00:00",
+  "commitSha": "b95a8fb32a78886eac9bcfe7c32869281ae78d0a",
   "assertions": [
     {
       "name": "delta_pn_derived_positive",
-      "computed": 1.2933333372081,
-      "expected": 1.29,
+      "computed": "1.2933333372081",
+      "expected": "1.29",
       "passed": true,
-      "tolerance": 0.02,
+      "tolerance": "0.02",
       "unit": "MeV",
       "source": "Framework-derived neutron-proton splitting (canonical facade)."
     },
@@ -18,17 +18,17 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "tolerance": 0,
+      "tolerance": "0",
       "unit": "bool",
       "source": "Sanity: the no-removal lower bound sits below the PDG comparator, consistent with E_EM > 0."
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 17,
   "computation": "quark-mass-extraction-stage1",
   "scriptFile": "quark_mass_extraction_stage1.py",
-  "scriptHash": "13edf211591c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c35c77512760",
+  "scriptCommitSha": "8cabb539d81a3e7b5d926e6dbb1dd09314caddb1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY stage-1 scoping of the operational m_d - m_u extraction (sm-params-quark-masses, bean qou-m3vl): delta_QCD = Delta_pn + E_EM. Finding: the framework derives Delta_pn, but its only derived EM mechanism (tanh(ln q0) x strong bond) is inter-nucleon; the intra-nucleon EM self-energy is the SAME open two-like-charge EM-linking invariant that owns the 3He mirror residual. One invariant blocks both. Lattice/PDG numbers are comparators, not inputs; no fit.",
   "contentBlock": "prose:sm-params-quark-masses",
@@ -54,8 +56,8 @@
       "E_EM = lattice comparator 0.8 MeV (external)": "2.093333337"
     },
     "comparators_external": {
-      "lattice_E_EM_MeV": 0.8,
-      "pdg_md_minus_mu_MeV": 2.5,
+      "lattice_E_EM_MeV": "0.8",
+      "pdg_md_minus_mu_MeV": "2.5",
       "note": "delta_QCD ~ beta*(m_d - m_u) with beta ~ O(1) scheme-dependent; magnitudes agree at the ~2x level under the external comparator, as expected for a scheme quantity — no precision claim is made."
     },
     "honest_gap": "The extraction is well-posed but blocked on ONE corpus object: the intra-nucleon EM self-energy (two-like-charge EM-linking invariant). That is the same open invariant as the remaining 69% of the 3He mirror split (a3-mirror-residual-reconciliation). Deriving it closes both this extraction and the A=3 mirror residual simultaneously. Until then the framework-scheme delta_QCD is bounded below by Delta_pn and no m_d - m_u value is claimed."

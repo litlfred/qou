@@ -87,8 +87,8 @@ def main() -> None:
         k: mp.nstr(v, 10) for k, v in rows.items()
     })
     wb.add_data("comparators_external", {
-        "lattice_E_EM_MeV": LATTICE_E_EM_MEV,
-        "pdg_md_minus_mu_MeV": PDG_MD_MINUS_MU_MEV,
+        "lattice_E_EM_MeV": str(LATTICE_E_EM_MEV),
+        "pdg_md_minus_mu_MeV": str(PDG_MD_MINUS_MU_MEV),
         "note": ("delta_QCD ~ beta*(m_d - m_u) with beta ~ O(1) "
                  "scheme-dependent; magnitudes agree at the ~2x level "
                  "under the external comparator, as expected for a "
@@ -106,13 +106,13 @@ def main() -> None:
     wb.set_content_block("prose:sm-params-quark-masses")
     wb.add_assertion(
         name="delta_pn_derived_positive",
-        computed=float(delta_pn), expected=1.29, tolerance=0.02,
+        computed=mp.nstr(delta_pn, 15), expected="1.29", tolerance="0.02",
         unit="MeV",
         source="Framework-derived neutron-proton splitting (canonical facade).")
     wb.add_assertion(
         name="lower_bound_below_pdg_comparator",
         computed=int(delta_pn < mpf(str(PDG_MD_MINUS_MU_MEV))),
-        expected=1, tolerance=0, unit="bool",
+        expected=1, tolerance="0", unit="bool",
         source=("Sanity: the no-removal lower bound sits below the PDG "
                 "comparator, consistent with E_EM > 0."))
     out = wb.save()
