@@ -1,7 +1,7 @@
 ---
 # qou-0z7n
 title: 'MI-2: cauchyMul_order is FALSE as stated — refute, restate, prove the envelope upper bound'
-status: completed
+status: in-progress
 type: task
 created_at: 2026-08-08T15:44:37Z
 updated_at: 2026-08-08T15:44:37Z
@@ -63,3 +63,52 @@ State the lower bound in *norm* form too, not in `logb` form: `Real.log 0 = 0`
 makes `logb q ‖x‖` return `0` at `x = 0`, which is what lets the refutation
 above go through and would silently poison any `logb`-shaped upper bound when
 `E(s,t) < 0`.
+
+## COLLISION (2026-08-08, on integrating `main`)
+
+A sibling found the **same falsity independently** and landed it first:
+`fd603a0270 lean(MI-2): cauchyMul_order was FALSE -- add the hypothesis, and
+prove the true half`. Merging `origin/main` conflicted on this file. Resolution:
+**take main's version wholesale**, then re-apply only what is genuinely mine.
+
+Their fix is better in two ways and I kept it:
+
+* **Stronger witness.** They refute with `a n = q^{n²}` against its formal
+  inverse — *two factors of equal positive order whose product has order 0*.
+  That is normalization-robust: whatever positive order the convention assigns
+  `a` it assigns the same to `b`, and `cauchyEnvelope` is positive on `s,t > 0`,
+  so no rescaling of the definition rescues the statement. My witness (`b = 0`)
+  leans on the `Real.log 0 = 0` junk value and could be waved away as a
+  convention artefact.
+* **More general repair.** They added a `NoCancellation` predicate and kept the
+  theorem over an arbitrary normed field, rather than restricting to `ℝ` with
+  positive coefficients as I did. Strictly more useful — if it can be proved.
+
+They also already had `envelope_shift_le` (my `cauchyEnvelope_add_le`) and
+`QGevreyBound` + `cauchyMul_bound` (a cleaner bound-form `≤`, absorbing the
+`(n+1)` term count via `n+1 ≤ 2ⁿ`), plus a whole q-Gevrey *level* layer my branch
+never had.
+
+## What survives as mine
+
+Kept, adapted to their names and definitions:
+
+* `cauchyMul_order_of_pos` — the law **proved** for positive real coefficients.
+  Their `cauchyMul_order` is still `sorry`; this is a genuine partial discharge
+  of it, not a parallel statement.
+* `noCancellation_of_pos` — positivity ⇒ their `NoCancellation`, with `c = 1`.
+  Pairs with their `not_noCancellation_of_cauchyMul_eventually_zero` (which shows
+  it can fail) to pin the hypothesis as a real side condition: neither vacuous
+  nor automatic. Neither of us had this.
+* `cauchyMul_order_unhypothesised_false` — a fully machine-checked Lean
+  refutation needing no external witness. Theirs proves the *hypothesis fails* on
+  a pair whose construction lives in a Python file; mine proves the *statement*
+  false inside Lean. Complementary, and both are now in the file with a note
+  saying which is stronger as evidence and which as proof.
+* The MI-4 `≥` machinery, and the two bridges `qGevreyBound_of_isQGevreyOrder` /
+  `coeff_le_of_qGevreyBound` that let the `≥` proof consume *their*
+  `cauchyMul_bound` rather than duplicating the `≤` analysis.
+
+Dropped as duplicates of theirs: `cauchyEnvelope_add_le`,
+`cauchyMul_norm_le_envelope`, `eventually_linear_le_rpow_sq`,
+`cauchyMul_norm_eventually_le`.
