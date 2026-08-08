@@ -91,6 +91,24 @@ theorem qBorelCoeff_compose (q : ℝ) (e f : ℕ → ℕ) (a : ℕ → ℝ) (n :
   unfold qBorelCoeff
   rw [pow_add, div_div]
 
+/-- **The q-Borel transform intertwines the two dilations.**  Dilating the
+    argument by `q` multiplies the `n`-th coefficient by `qⁿ`; the transform
+    divides by a kernel that does not depend on the coefficients, so the
+    transformed sequence is dilated in exactly the same way:
+
+    `B(qⁿ·aₙ) = qⁿ · B(aₙ)`.
+
+    This is the reason the dilation on `x` induces a dilation on the **Borel**
+    variable, hence why a Borel-plane singularity at `ω` moves to `qω` — the
+    `shift` field of `QAlienBridge.TwistedQBridgeSystem`, and in turn why the
+    index set of the q-bridge has to be the spiral quotient `E_q = ℂ*/q^ℤ` rather
+    than `ℂ*`.  Recorded here as a lemma rather than left as prose in that file:
+    it is the one step of that argument that is a computation. -/
+theorem qBorelCoeff_dilate (q : ℝ) (e : ℕ → ℕ) (a : ℕ → ℝ) (n : ℕ) :
+    qBorelCoeff q e (fun k => q ^ k * a k) n = q ^ n * qBorelCoeff q e a n := by
+  unfold qBorelCoeff
+  rw [mul_div_assoc]
+
 /-- **Why the classical lemma does not cover this.** The two divisors are genuinely
 different functions of `n`: at `n = 3` the Gevrey-2 divisor `(n!)²` is `36`, while
 the q-Gevrey divisor `q^{n²}` at `q = 2` is `2⁹ = 512`. Recorded as a concrete

@@ -80,6 +80,12 @@ noncomputable def conjDeriv (σ : A ≃ₐ[R] A) (D : Derivation R A A) :
 theorem conjDeriv_apply (σ : A ≃ₐ[R] A) (D : Derivation R A A) (f : A) :
     conjDeriv σ D f = σ (D (σ.symm f)) := rfl
 
+/-- Conjugation is `R`-linear in the derivation. -/
+theorem conjDeriv_smul (σ : A ≃ₐ[R] A) (c : R) (D : Derivation R A A) :
+    conjDeriv σ (c • D) = c • conjDeriv σ D := by
+  ext f
+  simp [Derivation.smul_apply]
+
 /-! ### The q-bridge system -/
 
 /-- A **q-native bridge system**: a dilation automorphism `σ`, a family of alien
@@ -359,5 +365,132 @@ noncomputable def polyUnipotentSystem (R : Type*) [CommRing R] :
 theorem polyUnipotentSystem_not_isSemisimple (R : Type*) [CommRing R]
     [Nontrivial R] : ¬ (polyUnipotentSystem R).IsSemisimple :=
   unipotentSystem_not_isSemisimple _ _ _ _ (polyDerivation_ne_zero R)
+
+/-! ### The twist: why the index set must be `E_q`, proved rather than asserted
+
+    `QBridgeSystem` above assumes `σ ∘ Δ_ω ∘ σ⁻¹` is a multiple of **`Δ_ω` itself**
+    — the *same* index.  For q-difference equations that is an over-restriction,
+    and the reason is geometric: the dilation acts on the Borel plane too, so it
+    moves a singularity at `ω` to one at `qω`.  The honest general form carries a
+    **shift** on the index set,
+
+    `σ ∘ Δ_ω ∘ σ⁻¹  =  c_ω · Δ_{shift ω}  +  N_ω`,
+
+    and `QBridgeSystem` is the `shift = id` case (`ofUntwisted` / `untwist`).
+
+    Two facts make this precise, and both are theorems here rather than prose:
+
+    * `shift_mul_eq_id_iff` — on a group of singularity locations with
+      `shift ω = q·ω`, the shift is the identity **iff `q = 1`**.  So for a genuine
+      dilation the untwisted form is simply unavailable on `ℂ*`.
+    * `untwist` — the twist disappears exactly when the alien family is invariant
+      under the shift, i.e. **constant along q-spirals**, i.e. factors through
+      `ℂ*/q^ℤ = E_q`.
+
+    Together: `E_q` is not a convenient choice of base, it is forced — it is
+    precisely the quotient on which the bridge relation can be index-preserving.
+    That is independent corroboration of the corpus's `E_q` framing, where the
+    third singular site `x = q⁻²` was found to be the identity orbit `[q⁻²] = [1]`
+    ([`2026-08-08-rsz-c1-infinity-route-closed.md`](../../../../../docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md)).
+
+    `conjDeriv_iterate` is the content of the twist when it is *not* removed:
+    iterating the conjugation walks the orbit and **accumulates the product** of
+    the weights along it. -/
+
+/-- A **twisted** q-bridge system: like `QBridgeSystem`, but the conjugation may
+    move the singularity index by `shift`. -/
+structure TwistedQBridgeSystem (R A Ω : Type*) [CommSemiring R] [CommRing A]
+    [Algebra R A] where
+  /-- The dilation automorphism. -/
+  dil : A ≃ₐ[R] A
+  /-- The alien derivation at `ω`. -/
+  alien : Ω → Derivation R A A
+  /-- The multiplicative weight. -/
+  weight : Ω → R
+  /-- The induced motion of the singularity index (`ω ↦ qω` for a dilation). -/
+  shift : Ω → Ω
+  /-- The nilpotent part. -/
+  unipotent : Ω → Derivation R A A
+  /-- The twisted q-bridge equation. -/
+  bridge : ∀ (ω : Ω) (f : A),
+    conjDeriv dil (alien ω) f
+      = weight ω • alien (shift ω) f + unipotent ω f
+
+namespace TwistedQBridgeSystem
+
+/-- No unipotent part. -/
+def IsSemisimple (S : TwistedQBridgeSystem R A Ω) : Prop := ∀ ω : Ω, S.unipotent ω = 0
+
+/-- The bridge at the level of derivations, in the semisimple case. -/
+theorem bridge_deriv (S : TwistedQBridgeSystem R A Ω) (hss : S.IsSemisimple)
+    (ω : Ω) :
+    conjDeriv S.dil (S.alien ω) = S.weight ω • S.alien (S.shift ω) := by
+  ext f
+  have h := S.bridge ω f
+  rw [hss ω] at h
+  simpa using h
+
+/-- **Weights accumulate along the orbit.**  Conjugating `n` times walks the index
+    along `shift` and multiplies the weights encountered on the way:
+
+    `σⁿ ∘ Δ_ω ∘ σ⁻ⁿ = (∏_{k<n} c_{shiftᵏ ω}) · Δ_{shiftⁿ ω}`.
+
+    This is the content of the twist.  When `shift = id` it collapses to
+    `c_ω ⁿ · Δ_ω`, recovering the untwisted picture; when `shift` is a genuine
+    dilation of the Borel plane the index genuinely moves, and the product is over
+    a whole q-spiral. -/
+theorem conjDeriv_iterate (S : TwistedQBridgeSystem R A Ω) (hss : S.IsSemisimple)
+    (ω : Ω) : ∀ n : ℕ,
+    (conjDeriv S.dil)^[n] (S.alien ω)
+      = (∏ k ∈ Finset.range n, S.weight (S.shift^[k] ω))
+          • S.alien (S.shift^[n] ω) := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+    rw [Function.iterate_succ_apply', ih, conjDeriv_smul,
+      S.bridge_deriv hss (S.shift^[n] ω), smul_smul, Finset.prod_range_succ,
+      ← Function.iterate_succ_apply' S.shift n]
+
+/-- **The twist vanishes exactly when the alien family is shift-invariant.**
+
+    `hinv` says the family is constant along the orbit of `shift` — for the
+    dilation, constant along q-spirals, i.e. factoring through `E_q = ℂ*/q^ℤ`.
+    Under it the twisted system *is* an untwisted `QBridgeSystem`, with the same
+    data. -/
+def untwist (S : TwistedQBridgeSystem R A Ω)
+    (hinv : ∀ ω : Ω, S.alien (S.shift ω) = S.alien ω) : QBridgeSystem R A Ω where
+  dil := S.dil
+  alien := S.alien
+  weight := S.weight
+  unipotent := S.unipotent
+  bridge := fun ω f => by rw [S.bridge ω f, hinv ω]
+
+end TwistedQBridgeSystem
+
+/-- Every untwisted system is a twisted one with `shift = id`, so nothing proved
+    about `QBridgeSystem` is lost. -/
+def QBridgeSystem.toTwisted (S : QBridgeSystem R A Ω) :
+    TwistedQBridgeSystem R A Ω where
+  dil := S.dil
+  alien := S.alien
+  weight := S.weight
+  shift := id
+  unipotent := S.unipotent
+  bridge := S.bridge
+
+/-- **On `ℂ*` the twist is unavoidable.**  For singularity locations forming a
+    group and `shift ω = q·ω`, the shift is the identity **iff `q = 1`**.  So for a
+    genuine dilation (`q ≠ 1`) no untwisted `QBridgeSystem` on that index set
+    exists, and one must pass to the spiral quotient.  This is the precise sense
+    in which `E_q` is forced rather than chosen. -/
+theorem shift_mul_eq_id_iff {G : Type*} [Group G] (q : G) :
+    (fun ω : G => q * ω) = id ↔ q = 1 := by
+  constructor
+  · intro h
+    simpa using congrFun h 1
+  · intro h
+    funext ω
+    simp [h]
 
 end QOU.Mathlib.QAlienBridge
