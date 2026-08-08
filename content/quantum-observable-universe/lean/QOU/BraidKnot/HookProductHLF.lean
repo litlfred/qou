@@ -73,8 +73,8 @@ theorem legCard_eq_legLength (μ : YoungDiagram) {i j : ℕ} (h : (i, j) ∈ μ)
 /-- **The hook bridge, cellwise.** On a genuine cell the two hook-length definitions agree:
 `BraidKnot`'s filter-counted `arm + leg + 1` is the geometric `armLength + legLength + 1`. -/
 theorem hookLength_eq (μ : YoungDiagram) {i j : ℕ} (h : (i, j) ∈ μ) :
-    QOU.BraidKnot.hookLength μ i j = μ.hookLength i j := by
-  rw [QOU.BraidKnot.hookLength, YoungDiagram.hookLength,
+    QOU.BraidKnot.StandardYoungTableau.hookLength μ i j = μ.hookLength i j := by
+  rw [QOU.BraidKnot.StandardYoungTableau.hookLength, YoungDiagram.hookLength,
     armCard_eq_armLength μ h, legCard_eq_legLength μ h]
 
 /-- **The hook bridge.** The two hook-length *products* over `μ`'s cells agree. -/
