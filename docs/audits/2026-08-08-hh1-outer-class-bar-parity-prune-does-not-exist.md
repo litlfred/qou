@@ -244,6 +244,63 @@ content** — the part that distinguishes `K` from its mirror. So the c₃ resid
 lives in the chirality channel, which is the same channel the `Δ_λ` sign
 (`(−1)^{n(λ)}·dim`) and the KL-positivity prune already live in.
 
+## Composing with `S_leak` — a filter on c₃ candidates (cross-arc, from #4725)
+
+Sibling #4725 flagged that ϑ_K and c₃ are the same open question, related
+affinely, and pointed at `conj:binding-qbeta-complex-volume`. Verified against
+the corpus: [`SLeakZeroCrossing.lean:11`](../../content/quantum-observable-universe/lean/QOU/QBeta/SLeakZeroCrossing.lean)
+defines
+
+```
+S_leak(q₀) := c₃(q₀) + Vol(4₁)          -- the BAR-ODD residual of c₃
+```
+
+with `S_leak(muon) = +0.0096830`, `S_leak(proton) = −0.0394594`. Reproduced
+here independently: `S_p/S_μ = −4.075` against the corpus's `−4.08`. ✓
+
+Composing with the amphichirality corollary above: `4₁` is amphichiral, so
+`Vol(4₁)` is bar-**EVEN** and contributes **zero** bar-odd content. Hence
+
+> the entire bar-odd content of c₃ **is** `S_leak`, and by the Skein-generation
+> result it must have the shape `S_leak = (q − q⁻¹) · (bar-even)`.
+
+**The filter this gives.** A candidate for c₃ that is purely **bar-even** has
+zero bar-odd part and therefore *cannot* produce a nonzero `S_leak` — yet
+`S_leak` is measurably nonzero at both anchors. So the bar-even candidates are
+structurally excluded **as the whole of c₃**:
+
+| candidate | parity | verdict |
+|---|---|---|
+| `−[2]_q = −(q + q⁻¹)` | bar-EVEN | can be at most c₃'s bar-even part |
+| `q→1` shadow `G(0,1) = −2` (constant) | bar-EVEN | same |
+
+Each may still be the bar-even *part*; the leak needs a separate `a`-generated
+term. This may also explain the shape of the near-miss history — the recurring
+~0.5–3 % misses look like candidates capturing the bar-even part and missing
+the bar-odd term entirely. *Offered as interpretation, not established.*
+
+**Scope.** A shape constraint, not a value. The `dc₃/dq ≈ 4.6×10⁶` real-q
+exclusion (PR #1821) already stands independently; this constraint bites on the
+**fibre-level** carrier, which is where the surviving route lives.
+
+**Corpus-status check performed on request (#4725).** The `[3]_q/25` 3-rung
+"2.65 ppm" c₃ result is **NOT live**: superseded banner on
+[`2026-06-03-l2-closure-habiro-3-q-25-universal-template.md`](2026-06-03-l2-closure-habiro-3-q-25-universal-template.md),
+falsified one day later by cross-anchor rigidity
+([`2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md`](2026-06-04-c3-habiro-3rung-crossanchor-rigidity-falsification.md)) —
+2.65 ppm at the **proton anchor only**, swinging −2.88 % to muon. Authoritative
+tier in [`ck-dk-canonical-registry.md`](../coordination/ck-dk-canonical-registry.md)
+§3: *"EMPIRICAL — near-match, REFUTED as real-q fibre element."* The same row
+records a 2026-07-30 update: the B1 re-run with the canonical GGM `V₃ = −7.693`
+gives **0 assembly hits in 180 candidates**, the earlier near-misses being
+artifacts of a wrong `V₃`.
+
+*Minor flag for the registry:* that row quotes `−[2]_q` as "0.54 % off at q₀";
+recomputation gives **2.82 %** at the proton pin and ~0.46 % at the muon pin, so
+the figure is anchor-specific and matches neither exactly. Not asserting the
+registry is wrong — flagging that the anchor should be stated, since this is
+exactly a quantity that swings between pins.
+
 ## Discipline
 
 Nothing wired. No fit. The `cal-anchored` c₃ is untouched. Per AGENTS.md
