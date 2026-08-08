@@ -21,4 +21,21 @@ export default conjecture({
     "noncomputable-opaque",
     "audit-flag-13a",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module `lean/QOU/BraidKnot/GBResidueSpectralSum.lean` is a " +
+        "spectral sum of **residues of the quantum dilogarithm at roots of " +
+        "unity**: its `RootOfUnity.value : ℝ` is documented in the file as " +
+        "*\"real part; full Mathlib version uses `Complex`\"*, and " +
+        "`descended`/`residue`/`mass` are the MeV-valued categorical mass and " +
+        "its cyclotomic corrections. Generalising a root-of-unity value or a " +
+        "mass to an arbitrary ordered field would discard the meaning that " +
+        "makes the sum a mass, so the block sits on the archimedean side of " +
+        "the §7c wall by construction.",
+    },
+  ],
 });

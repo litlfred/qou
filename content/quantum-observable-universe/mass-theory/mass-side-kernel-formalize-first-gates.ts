@@ -41,5 +41,18 @@ export default proposition({
         "**§4(c) anchor candidate.** A `Σ f^λ / 4 = 5/2` value for the §4(c) anchor was surfaced by PR #1899's mass-side q=1 anchor hunt; the parametric class admits this via `MassQOneShadowGateClass w (some (5/2))` but does not assert it as the canonical anchor.",
       ].join("\n"),
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The gate constants in `mass-side-kernel-formalize-first-gates.lean` " +
+        "are **substrate and CODATA-implied decimal literals**: `q_substrate " +
+        ": ℝ := 1.10997858275138`, `anchorTolerance := 0.000001` (the 1 ppm " +
+        "fibre-level cross-anchor swing), and `directionTarget := 2.46` (the " +
+        "CODATA-implied near-match of the linking weight at `q₀`). Numerical " +
+        "anchors and tolerances are the §7c \"experimental value → `ℝ`\" row, " +
+        "so the `ℝ` is forced by the statement rather than chosen.",
+    },
   ],
 });
