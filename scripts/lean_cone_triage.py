@@ -21,26 +21,57 @@ from pathlib import Path
 
 # Normalise a lean error line into a coarse "shape" for grouping.
 SHAPES: list[tuple[str, re.Pattern]] = [
-    ("unknown-identifier", re.compile(r"unknown (identifier|constant|declaration)")),
-    ("unknown-namespace-or-attr", re.compile(r"unknown (namespace|attribute|tactic)")),
+    ("invalid-field", re.compile(r"Invalid field .*environment does not contain", re.S)),
+    ("already-declared", re.compile(r"has already been declared")),
+    ("unknown-identifier", re.compile(r"(?i)unknown (identifier|constant|declaration)")),
+    ("unknown-namespace-or-attr", re.compile(r"(?i)unknown (namespace|attribute|tactic)")),
     ("type-mismatch", re.compile(r"type mismatch|has type\b.*but is expected")),
     ("unsolved-goals", re.compile(r"unsolved goals")),
     ("tactic-failed", re.compile(r"tactic '(\w+)' failed|simp made no progress|linarith failed")),
     ("function-expected/app", re.compile(r"function expected|application type mismatch")),
     ("failed-to-synth-instance", re.compile(r"failed to synthesize")),
-    ("elab-motive/universe", re.compile(r"motive is not type correct|universe|maximum recursion")),
-    ("deterministic-timeout", re.compile(r"deterministic timeout|(?i)timeout")),
+    ("motive/recursion", re.compile(r"motive is not type correct|maximum recursion")),
+    ("universe-mismatch", re.compile(r"universe (level )?(mismatch|metavariable)")),
+    ("deterministic-timeout", re.compile(r"deterministic timeout|maximum number of heartbeats")),
     ("missing-olean", re.compile(r"object file .* does not exist")),
     ("syntax-error", re.compile(r"unexpected token|expected .* term|unterminated")),
     ("sorry", re.compile(r"declaration uses 'sorry'")),
 ]
 
 
+# An error of the form "object file '<path>' of module <M> does not exist" where
+# <M> is NOT a QOU module means the *environment* is short an olean (e.g. the
+# restored lake-cache payload has 6990 Mathlib oleans but not the top-level
+# `Mathlib.olean` aggregator). That is an environment gap, not a corpus defect,
+# and must never be counted as a genuine red.
+ENV_GAP_RE = re.compile(r"object file '[^']*' of module ((?!QOU\b)[\w.]+) does not exist")
+
+
+ERR_LINE_RE = re.compile(r"^\S*?:\d+:\d+: error(?:\([^)]*\))?: (.*)$", re.M)
+
+
+def error_lines(text: str) -> list[str]:
+    """Only the compiler's own `error:` payloads — matching against the whole log
+    lets file paths and docstrings ('...ObservableUniverse...') hit the shape
+    patterns and mis-bucket everything."""
+    return ERR_LINE_RE.findall(text)
+
+
 def shape_of(text: str) -> str:
+    """Bucket on the FIRST compiler error. Later errors in the same file are
+    usually knock-ons of the first, so classifying on 'any line matches' would
+    attribute a file to whichever pattern happens to sit earliest in SHAPES."""
+    lines = error_lines(text)
+    payload = lines[0] if lines else text
     for name, rx in SHAPES:
-        if rx.search(text):
+        if rx.search(payload):
             return name
     return "other"
+
+
+def is_env_gap(text: str) -> str | None:
+    m = ENV_GAP_RE.search(text)
+    return m.group(1) if m else None
 
 
 def main() -> None:
@@ -59,27 +90,56 @@ def main() -> None:
                 rows.append(dict(zip(
                     ("module", "status", "seconds", "blocker", "error_head"), parts)))
 
+    logdir = Path(args.log_dir)
+
+    # split `error` into genuine corpus reds vs environment olean gaps
+    env_gap_mods: set[str] = set()
+    for r in rows:
+        if r["status"] != "error":
+            continue
+        lp = logdir / (r["module"] + ".log")
+        text = lp.read_text(encoding="utf-8", errors="replace") if lp.is_file() else r["error_head"]
+        r["_text"] = text
+        g = is_env_gap(text)
+        if g:
+            r["status"] = "env-gap"
+            r["env_missing"] = g
+            env_gap_mods.add(r["module"])
+
     counts = collections.Counter(r["status"] for r in rows)
     total = len(rows)
     ok = counts["ok"] + counts["up-to-date"]
     err = counts["error"]
     blocked = counts["blocked"]
     missing = counts["missing-source"]
+    envgap = counts["env-gap"]
 
-    print(f"total modules            : {total}")
-    print(f"GREEN (compiled clean)   : {ok}")
-    print(f"RED, measured directly   : {err}   <- lower bound on genuine reds")
-    print(f"dangling-import defects  : {missing}")
-    print(f"BLOCKED (never compiled) : {blocked}   <- status unknown")
-    print(f"upper bound on non-green : {err + missing + blocked}")
+    by_blocker = collections.Counter(r["blocker"] for r in rows if r["status"] == "blocked")
+    blocked_env = sum(n for b, n in by_blocker.items() if b in env_gap_mods)
+    blocked_corpus = blocked - blocked_env
+
+    print(f"total modules                  : {total}")
+    print(f"GREEN (compiled clean)         : {ok}")
+    print(f"RED, measured directly         : {err}   <- LOWER bound on genuine reds")
+    print(f"dangling-import defects        : {missing}")
+    print(f"env-gap (missing non-QOU olean): {envgap}   <- environment, NOT a corpus defect")
+    print(f"BLOCKED, upstream red          : {blocked_corpus}   <- unknown; would be compiled once the red is fixed")
+    print(f"BLOCKED, upstream env-gap      : {blocked_env}   <- unknown; environment-limited")
+    print(f"UPPER bound on genuine reds    : {err + missing + blocked_corpus}")
+    print(f"never type-checked at all      : {err + missing + envgap + blocked}")
     print()
 
-    # blocked modules attributed to their ultimate upstream culprit
-    by_blocker = collections.Counter(r["blocker"] for r in rows if r["status"] == "blocked")
+    for r in rows:
+        if r["status"] == "env-gap":
+            print(f"  env-gap: {r['module']}  (missing olean: {r['env_missing']})")
+    if envgap:
+        print()
+
     if by_blocker:
         print(f"blocked attributed to {len(by_blocker)} distinct root culprits; top:")
         for b, n in by_blocker.most_common(args.top):
-            print(f"  {n:5d}  {b}")
+            tag = "env-gap" if b in env_gap_mods else "red"
+            print(f"  {n:5d}  [{tag}] {b}")
         print()
 
     bad = [r for r in rows if r["status"] in ("error", "missing-source")]
@@ -93,11 +153,9 @@ def main() -> None:
         print(f"  {n:5d}  {s}")
     print()
 
-    logdir = Path(args.log_dir)
     shapes = collections.Counter()
     for r in bad:
-        lp = logdir / (r["module"] + ".log")
-        text = lp.read_text(encoding="utf-8", errors="replace") if lp.is_file() else r["error_head"]
+        text = r.get("_text") or r["error_head"]
         r["shape"] = shape_of(text)
         shapes[r["shape"]] += 1
     print("genuine reds by error shape:")
