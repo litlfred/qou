@@ -220,21 +220,30 @@ pub fn chi_lambda_braid_mpfr(
     chi_lambda_braid_mpfr_shift(shape, word, q_str, dps, None)
 }
 
-/// As [`chi_lambda_braid_mpfr`], but with the `sign == 0` crossing shift given
-/// explicitly as a decimal string instead of defaulting to `h/2`.
+/// As [`chi_lambda_braid_mpfr`], but with the `sign == 0` crossing shifts given
+/// explicitly as decimal strings instead of defaulting to `h/2`.
 ///
-/// A crossing is `σ_g + d·I`; `avg_shift` is `-d`. `None` means `h/2`, the
-/// symmetric average, so this is a strict generalisation and the four-argument
-/// form above is unchanged. Pass `h·(1/2 - δ/4)` for the colour-weighted p–n
-/// crossing. The string keeps full precision across the boundary, exactly as
-/// `q_str` does — taking an `f64` here would cap the shift at ~1e-16 and quietly
-/// bound the accuracy of every downstream χ.
+/// A crossing is `σ_g + d·I`; the shift is `-d`. `None` means every averaged
+/// crossing uses `h/2`, the symmetric average, so this is a strict
+/// generalisation and the four-argument form above is unchanged.
+///
+/// **Per crossing, not per word.** An atomic braid mixes conventions: p–p and
+/// n–n crossings are colour-symmetric (`h/2`) while p–n crossings are
+/// colour-weighted (`h·(1/2 - δ/4)`), and ⁴He at H_12 contains both. A single
+/// word-level shift cannot express that, so `avg_shifts` is indexed by word
+/// position; an empty string at position `i` means "use `h/2` there". A length
+/// mismatch is a programming error and panics rather than silently applying
+/// the default.
+///
+/// Strings, not `f64`: the shifts carry the substrate flavour split δ and must
+/// cross the boundary at the same precision as `q_str`, or χ is capped near
+/// 1e-16 however high `dps` is set.
 pub fn chi_lambda_braid_mpfr_shift(
     shape: &[usize],
     word: &[(i32, u32)],
     q_str: &str,
     dps: u32,
-    avg_shift: Option<&str>,
+    avg_shifts: Option<&[String]>,
 ) -> String {
     let prec = dps_to_bits(dps);
     let n: usize = shape.iter().sum();
@@ -257,34 +266,49 @@ pub fn chi_lambda_braid_mpfr_shift(
 
     let h = Float::with_val(prec, &q) - Float::with_val(prec, q.clone().recip());
 
-    // Shift applied for `sign == 0`. Default h/2 (symmetric average); an
+    // Per-position shift for `sign == 0`. Default h/2 (symmetric average); an
     // explicit string carries a colour-weighted crossing at full precision.
     // A malformed string must not silently degrade to the symmetric average —
     // that would return a plausible number for a different physical
     // convention — so it is rejected.
-    let avg_shift_f: Float = match avg_shift {
-        None => Float::with_val(prec, &h) / 2,
-        Some(s) => Float::parse(s)
-            .map(|p| Float::with_val(prec, p))
-            .unwrap_or_else(|_| {
-                panic!(
-                    "chi_lambda_braid_mpfr_shift: avg_shift {:?} is not a \
-                     decimal number",
-                    s
-                )
-            }),
-    };
+    let half_h_default = Float::with_val(prec, &h) / 2;
+    if let Some(sh) = avg_shifts {
+        assert_eq!(
+            sh.len(),
+            word.len(),
+            "chi_lambda_braid_mpfr_shift: avg_shifts has {} entries for a \
+             word of {} crossings",
+            sh.len(),
+            word.len()
+        );
+    }
+    let shifts: Vec<Float> = (0..word.len())
+        .map(|i| match avg_shifts.and_then(|sh| sh.get(i)) {
+            None => Float::with_val(prec, &half_h_default),
+            Some(s) if s.is_empty() => Float::with_val(prec, &half_h_default),
+            Some(s) => Float::parse(s)
+                .map(|pp| Float::with_val(prec, pp))
+                .unwrap_or_else(|_| {
+                    panic!(
+                        "chi_lambda_braid_mpfr_shift: avg_shifts[{}] = {:?} is \
+                         not a decimal number",
+                        i, s
+                    )
+                }),
+        })
+        .collect();
 
-    let resolved: Vec<(i32, &[BlockMpfr])> = word
+    let resolved: Vec<(i32, &[BlockMpfr], &Float)> = word
         .iter()
-        .map(|&(sign, gen)| {
+        .enumerate()
+        .map(|(wi, &(sign, gen))| {
             assert!(
                 gen != 0 && (gen as usize) <= all_blocks.len(),
                 "chi_lambda_braid_mpfr: invalid generator index {} for n = {} (valid range: 1..={})",
                 gen, n, all_blocks.len()
             );
             let idx = gen as usize - 1;
-            (sign, all_blocks[idx].as_slice())
+            (sign, all_blocks[idx].as_slice(), &shifts[wi])
         })
         .collect();
 
@@ -330,13 +354,13 @@ pub fn chi_lambda_braid_mpfr_shift(
                 //   sign < 0  → σ_g - h·I     (σ_g⁻¹ via Hecke relation)
                 //   sign == 0 → σ_g - h/2·I   (averaged crossing, direct
                 //                              substitution, no 2^k expansion)
-                for &(sign, blocks) in resolved.iter().rev() {
+                for &(sign, blocks, shift) in resolved.iter().rev() {
                     if sign > 0 {
                         apply_sigma_mpfr(&mut buf, blocks, prec);
                     } else if sign < 0 {
                         apply_sigma_inv_mpfr(&mut buf, blocks, &h, prec);
                     } else {
-                        apply_sigma_shift_mpfr(&mut buf, blocks, &avg_shift_f, prec);
+                        apply_sigma_shift_mpfr(&mut buf, blocks, shift, prec);
                     }
                 }
                 partial += &buf[i];

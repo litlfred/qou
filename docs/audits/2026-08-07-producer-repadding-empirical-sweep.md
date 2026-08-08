@@ -1965,3 +1965,59 @@ accumulated before it. The run reported `DECLARED 26 / ANCHOR_MIGRATION 4` at
 were right and the retention was not. The classifier
 (`witness_regen_classify`, 9/9) is committed and sound; the *driver* around it
 needs per-witness revert before the wave is worth re-running.
+
+## P44 — the shift is per crossing, and three other call sites share the block
+
+The word-level shift of P43 was not enough, and the guard I added caught why:
+
+    native chi path needs one averaged-crossing shift per word; saw
+    0.10453014939781968273…  (= h/2, colour-blind)
+    0.10445824776972628903…  (= h(1/2 − δ/4), colour-weighted)
+
+**An atomic braid mixes both conventions.** p–p and n–n crossings are
+colour-symmetric, p–n crossings are not, and ⁴He at H_12 contains all three
+kinds. So no single word-level shift can represent it — the first fix was the
+right idea at the wrong granularity, and it is only visible because the guard
+refused rather than quietly picking one.
+
+`avg_shifts` is now indexed by word position, with an empty string meaning
+`h/2` there. `shifts: Vec<Float>` is built once per call and `resolved` carries
+`&Float` per crossing; a length mismatch panics rather than silently defaulting.
+
+Verified on a genuinely **mixed** word (colour-blind averaged + σ +
+colour-weighted averaged) against the independent pure-mpmath reference:
+
+| λ | relative difference |
+|---|---|
+| (3) | 2.1e-50 |
+| (2,1) | 2.2e-50 |
+| (1,1,1) | 2.9e-51 |
+
+and the four-argument call remains bit-identical to all-empty shifts.
+
+### Where else colour weighting belongs
+
+`_avg_color_delta` is consumed by **16 live modules**, so colour weighting is
+pipeline-wide rather than a 4He quirk. Three further call sites carry the same
+three-way `{0, −h, −h/2}` assumption and will refuse a colour-weighted word
+exactly as this one did:
+
+| site | what it is |
+|---|---|
+| `chi_at_q_inv_via_native_mpfr.py:110` | the q⁻¹ counterpart — χ at the Hecke bar image, structurally identical |
+| `tr_m_wenzl_bridge_mpfr.py:393` | gates its **own** `_rust_chi_all` call the same way |
+| `probe_9b_laurent_degree_10a5.py:129` | same assumption in a probe |
+
+The middle one matters most and explains why ⁴He still does not rebuild:
+`tr_m_wenzl_bridge_mpfr` sits **behind** the check just fixed. On a first build
+(no cache to resume) `chi_at_q0_via_hoefsmit_mpfr` goes through
+`tr_M_via_wenzl_bridge_mpfr`, whose `sign_map` snaps `round(float(d), 9)`
+against three keys and raises for anything else. Fixing one gate exposed the
+next; the Rust groundwork now serves both, but the ⁴He rebuild needs that
+second Python gate ported too, and it is not done here.
+
+Two smaller notes worth recording: the round-to-9-decimals snap in that
+`sign_map` would collide colour-blind and colour-weighted `d` if δ ever fell
+below ~1e-9 (they differ by ~7e-5 today, so it is safe now but fragile); and
+the first-build path prints no progress, which is why the earlier run looked
+hung when it was simply silent.

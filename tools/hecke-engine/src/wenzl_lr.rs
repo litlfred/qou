@@ -281,14 +281,15 @@ pub fn chi_lambda_canonical_h_n_mpfr(
 
 /// As [`chi_lambda_canonical_h_n_mpfr`], with the `Averaged` crossing shift
 /// supplied explicitly. `None` reproduces the symmetric `h/2` average; pass
-/// `h·(1/2 - δ/4)` as a decimal string for the colour-weighted p–n crossing.
+/// `h·(1/2 - δ/4)` per position for a colour-weighted p–n crossing; an
+/// empty string means `h/2` there. ⁴He mixes both, so this is per crossing.
 pub fn chi_lambda_canonical_h_n_mpfr_shift(
     lambda: &[usize],
     n_strands: usize,
     word_with_averaged: &[CrossingPair],
     q_str: &str,
     dps: u32,
-    avg_shift: Option<&str>,
+    avg_shifts: Option<&[String]>,
 ) -> String {
     // **Direct averaging path (2026-05-18, PR #682).** See
     // `chi_lambda_canonical_h_n_f64` for the math derivation:
@@ -308,7 +309,7 @@ pub fn chi_lambda_canonical_h_n_mpfr_shift(
         })
         .collect();
     crate::seminormal_mpfr::chi_lambda_braid_mpfr_shift(
-        lambda, &word_signed, q_str, dps, avg_shift,
+        lambda, &word_signed, q_str, dps, avg_shifts,
     )
 }
 
@@ -334,14 +335,14 @@ pub fn chi_lambda_canonical_all_partitions_mpfr_shift(
     word_with_averaged: &[CrossingPair],
     q_str: &str,
     dps: u32,
-    avg_shift: Option<&str>,
+    avg_shifts: Option<&[String]>,
 ) -> Vec<(Vec<usize>, String)> {
     let parts = partitions_of(n_strands);
     parts
         .par_iter()
         .map(|lambda| {
             let chi = chi_lambda_canonical_h_n_mpfr_shift(
-                lambda, n_strands, word_with_averaged, q_str, dps, avg_shift,
+                lambda, n_strands, word_with_averaged, q_str, dps, avg_shifts,
             );
             (lambda.clone(), chi)
         })

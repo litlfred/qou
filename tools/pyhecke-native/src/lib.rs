@@ -1919,10 +1919,13 @@ fn chi_lambda_all_partitions_f64(
 /// recommended; pin to `q_parameter.Q_50_DIGIT_STR` from Python).
 /// `dps` controls the MPFR working precision (50 = production,
 /// 100 = research-grade).
-/// `avg_shift` (optional) overrides the shift applied to `sign == 0`
-/// crossings. Omitted or `None` keeps the symmetric average `h/2`, so existing
-/// four-argument callers are unaffected. Pass `h·(1/2 - δ/4)` as a decimal
-/// string for the **colour-weighted** p–n crossing, which the sign encoding
+/// `avg_shifts` (optional) overrides the shift applied to `sign == 0`
+/// crossings, **indexed by word position** — an atomic braid mixes conventions
+/// (p–p and n–n symmetric at `h/2`, p–n colour-weighted), and ⁴He at H_12
+/// contains both, so one word-level shift cannot express it. An empty string at
+/// a position means `h/2` there. Omitted or `None` keeps `h/2` throughout, so
+/// existing four-argument callers are unaffected. Pass `h·(1/2 - δ/4)` for the
+/// **colour-weighted** p–n crossing, which the sign encoding
 /// alone cannot express: a crossing is `σ_g + d·I`, and quantising `d` to a
 /// sign discards everything but the three symmetric cases. That is why
 /// `chi_at_q0_via_hoefsmit_mpfr` refused the native path with
@@ -1931,13 +1934,13 @@ fn chi_lambda_all_partitions_f64(
 /// A string rather than an `f64`: the shift carries the substrate flavour
 /// split δ and must cross the boundary at the same precision as `q_str`.
 #[pyfunction]
-#[pyo3(signature = (n_strands, word, q_str, dps, avg_shift=None))]
+#[pyo3(signature = (n_strands, word, q_str, dps, avg_shifts=None))]
 fn chi_lambda_all_partitions_mpfr(
     n_strands: usize,
     word: Vec<(i32, u32)>,
     q_str: String,
     dps: u32,
-    avg_shift: Option<String>,
+    avg_shifts: Option<Vec<String>>,
 ) -> Vec<(Vec<usize>, String)> {
     let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
         .iter()
@@ -1960,7 +1963,7 @@ fn chi_lambda_all_partitions_mpfr(
         &word_with_averaged,
         &q_str,
         dps,
-        avg_shift.as_deref(),
+        avg_shifts.as_deref(),
     )
 }
 
