@@ -77,12 +77,12 @@ def _tier1_basis() -> tuple[mpf, ...]:
 # Literature values (KnotInfo, ~15 dps). Production runs should
 # replace with SnapPy-computed 50+ dps values for matched-precision
 # PSLQ. The current script auto-promotes via SnapPy when available.
-TIER2_LITERATURE = {
-
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
 mp.dps = 50
+
+TIER2_LITERATURE = {
     "8_5":  mpf("7.686421374717877"),
     "8_10": mpf("6.488388036445232"),
     "8_15": mpf("9.935434679720660"),
