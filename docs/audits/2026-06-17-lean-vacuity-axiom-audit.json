@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-08T16:26:43.546Z",
+  "generated": "2026-08-08T16:59:42.809Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 2636,
-  "files_flagged": 155,
-  "total_defects": 123,
+  "scanned_files": 2637,
+  "files_flagged": 157,
+  "total_defects": 127,
   "total_exempt": 81,
   "categories": {
     "proof-no-trivial-true": 22,
     "proof-no-provable-axiom": 12,
-    "proof-no-unused-hypothesis-rfl": 15,
+    "proof-no-unused-hypothesis-rfl": 19,
     "proof-no-false-premise": 61,
     "proof-no-self-assuming-projection": 8,
     "proof-claims-unencoded": 3,
@@ -42,7 +42,7 @@
       {
         "name": "AlphaEmGluonOctetConjecture",
         "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
-        "line": 63
+        "line": 102
       },
       {
         "name": "AlphaKCategoricalClosure",
@@ -217,7 +217,7 @@
       {
         "name": "ChernSimonsCorrectionConjecture",
         "file": "content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.lean",
-        "line": 83
+        "line": 122
       },
       {
         "name": "Cl_2_DoubleAngle",
@@ -1716,6 +1716,15 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (markov_trace_origin, cinquefoil_framing_t25_origin) — honestly framed; tracked not counted"
+      },
+      {
+        "line": 480,
+        "category": "proof-no-unused-hypothesis-rfl",
+        "pattern": "rfl-witness-with-unused-hypothesis",
+        "snippet": "theorem universal_habiro_closure",
+        "decl": "universal_habiro_closure",
+        "severity": "major",
+        "detail": "proof is `by\n  exact ⟨rfl, rfl⟩`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/PartitionHookProductBridge.lean": [
@@ -3207,6 +3216,17 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean": [
+      {
+        "line": 33,
+        "category": "proof-no-unused-hypothesis-rfl",
+        "pattern": "rfl-witness-with-unused-hypothesis",
+        "snippet": "theorem nuclear_knot_classification (Z N : ℕ) (hA : Z + N ≥ 4) :",
+        "decl": "nuclear_knot_classification",
+        "severity": "major",
+        "detail": "proof is `by\n  exact ⟨.borromean, rfl⟩`, which uses no hypothesis, yet the statement binds `hA` — absent from the conclusion, so the claim holds for every value of it"
+      }
+    ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
       {
         "line": 115,
@@ -3278,6 +3298,15 @@
         "snippet": "theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by",
         "decl": "qInt_four_eq_zero",
         "severity": "critical"
+      },
+      {
+        "line": 151,
+        "category": "proof-no-unused-hypothesis-rfl",
+        "pattern": "rfl-witness-with-underscored-hypothesis",
+        "snippet": "theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :",
+        "decl": "wenzl_annihilator",
+        "severity": "major",
+        "detail": "proof is `⟨0, rfl⟩`, which uses no hypothesis, yet the statement binds `_h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean": [
@@ -3403,6 +3432,17 @@
         "decl": "quantum_dilogarithm_volume",
         "severity": "major",
         "detail": "proof is `by\n  unfold bindingEnergy\n  rfl`, which uses no hypothesis, yet the statement binds `hq`, `h_parent_len` — absent from the conclusion, so the claim holds for every value of them"
+      }
+    ],
+    "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean": [
+      {
+        "line": 85,
+        "category": "proof-no-unused-hypothesis-rfl",
+        "pattern": "rfl-witness-with-unused-hypothesis",
+        "snippet": "theorem spectral_decomposition_qvalue",
+        "decl": "spectral_decomposition_qvalue",
+        "severity": "major",
+        "detail": "proof is `⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩`, which uses no hypothesis, yet the statement binds `hq`, `hp`, `hd`, `hme` — absent from the conclusion, so the claim holds for every value of them"
       }
     ],
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean": [
