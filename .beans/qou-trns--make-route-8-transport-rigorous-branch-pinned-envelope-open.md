@@ -148,3 +148,90 @@ per branch and on the arc.
 So the last mathematical gap in the whole 5₂ chain is **not a mathematical doubt**
 — it is ordinary analysis awaiting formalization, and it needs strictly less than
 the complex-`Li₂` continuation that has blocked `qou-clx8` all along.
+
+---
+
+## ⚠⚠ 2026-08-08 — REFUTED: `min |disc| = 0.348` IS WRONG. The discriminant VANISHES on the arc.
+
+**Sub-gap 1 is REOPENED.** Probe
+`computations/probes/qbeta_5two_route16_discriminant_vanishes_probe.py`,
+6 gates, all pass.
+
+### The fact
+
+Two of the three `y`-branches **collide exactly** on the transport arc:
+
+| | |
+|---|---|
+| `θ₀` | **137.9206708879635°** |
+| `x₀` | `−0.74221766588 + 0.67015888896i`, `\|x₀\| = 1` |
+| `\|disc(x₀)\|` | `1.1e-49` — zero to 50 dps |
+| colliding roots | `y₂ = y₃ = −1.13224188231190019…`, separation `9.4e-26` |
+
+**`min |disc|` on the arc is `0`, not `0.348`.**
+
+### The proof uses no numerics at all
+
+`disc_y` of the GGM curve `x·y³ − (x²+1)y² + (x²+x+1)y − x` is, exactly in `ℤ[x]`,
+
+    disc(x) = x⁸ − 6x⁷ + 11x⁶ − 12x⁵ − 11x⁴ − 12x³ + 11x² − 6x + 1
+
+which is **palindromic**, so `disc(x)/x⁴ = Q(u)` with `u = x + 1/x` and
+
+    Q(u) = u⁴ − 6u³ + 7u² + 6u − 31
+
+A point of `|x| = 1` is a root of `disc` **iff** `u = 2cos θ` is a real root of
+`Q` in `[−2,2]`. And, in integers,
+
+    Q(−2) = 16 + 48 + 28 − 12 − 31 = **+49**
+    Q(−1) =  1 +  6 +  7 −  6 − 31 = **−23**
+
+IVT gives a root in `(−2,−1) ⊂ [−2,2]`. **That is the whole proof.** Everything
+else in the probe is confirmation.
+
+### Where `0.348` came from — and the lesson
+
+The dip is narrow (`|disc'| ≈ 87` there), so an `N`-point scan of `[0,π]` reports
+roughly `87·π/(2N)`:
+
+| N | grid minimum |
+|---|---|
+| 360 | ≈ 0.38 ← **the 0.348 that was recorded** |
+| 2 000 | 0.068 |
+| 20 000 | 0.0068 |
+| → ∞ | **0** |
+
+**A grid minimum was reported as if it were the true minimum.** The zero was
+always there; the sampling stepped over it. `qou-rstq` roast item 2 said exactly
+this could happen — "measured on a sampled arc; a finer sweep could in principle
+find a near-collision". It is not a near-collision.
+
+### What this breaks
+
+1. **Sub-gap 1's step 2** — "the three branches are continuous and never collide
+   on the arc, so `g` is continuous". False. The `k = 0` pinning argument rests
+   on it, so **`k = 0` is no longer established**. Status reverts to open.
+2. **The envelope theorem's IFT hypothesis** — "follows from the implicit
+   function theorem given non-vanishing discriminant (**have it**)". We do not
+   have it. The IFT does not apply at `x₀`.
+3. Anything downstream that inherited `min |disc| = 0.348` as a fact — see
+   `qou-8v3k`.
+
+### What it does NOT break
+
+The sum rule. This probe says nothing against it, and `S(−1) = S(1) + π²` is
+still numerically solid.
+
+### The likely repair — NOT done, NOT assumed
+
+**`Σⱼ Vⱼ` is a symmetric function of the roots**, and symmetric functions of the
+roots of a polynomial remain analytic across a branch point even though the
+individual branches do not — only the *labelling* breaks. So the transport
+probably survives if it is rewritten to use the symmetric combination
+throughout, or if the path is deformed off `|x| = 1` around `x₀`.
+
+Both are plausible and **neither is written**. Until one is, the transport is
+open, and the per-root `g(x) = Σⱼ Log[…]` formulation is actively misleading —
+it presumes a branch labelling that does not survive the arc.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

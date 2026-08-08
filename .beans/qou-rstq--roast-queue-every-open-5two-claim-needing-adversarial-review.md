@@ -254,3 +254,47 @@ Exactly `qou-orph`'s thesis, in the file this lane most depends on.
 module docstring, in prose asserting the file *is* sorry-free. I nearly recorded
 "3 sorries" as a defect. **A count is not a finding until you have looked at the
 lines.**
+
+---
+
+## 2026-08-08 — ROAST ITEM 2 RESOLVED, and it found a real defect
+
+Item 2 read:
+
+> "`qou-trns`, the envelope step. Confirmed by finite differences, which is
+> evidence, not proof. The IFT hypothesis (`min |disc| = 0.348`) was measured on
+> a sampled arc — **a finer sweep could in principle find a near-collision**."
+
+It is not a near-collision. **The discriminant vanishes exactly on the arc**, at
+`θ = 137.9206708879635°`, where two of the three `y`-branches meet
+(`y₂ = y₃ = −1.13224188…`). `min |disc| = 0`, not `0.348`.
+
+Proof needs no numerics: `disc` is palindromic, so `disc(x)/x⁴ = Q(x + 1/x)` with
+`Q(u) = u⁴ − 6u³ + 7u² + 6u − 31`; points of `|x| = 1` are real `u ∈ [−2,2]`; and
+`Q(−2) = +49`, `Q(−1) = −23` in integers, so IVT gives a root. Full record in
+`qou-trns` and `qbeta_5two_route16_discriminant_vanishes_probe.py`.
+
+**This reopens `qou-trns` sub-gap 1** (`k = 0` was "PINNED"; its continuity step
+is false) and falsifies the envelope theorem's IFT hypothesis.
+
+### The methodological point — this is the fourth of a kind
+
+`0.348` was a **grid minimum reported as a true minimum**. Refining the scan
+gives 0.068, then 0.0068, then 0. Of a piece with the other measurement failures
+this lane has logged:
+
+1. a probe whose printed verdict its own data contradicted;
+2. principal-vs-continuous `log`, **four** times;
+3. `grep -c "sorry"` returning 3 for a file whose three hits were docstring prose
+   asserting it *is* sorry-free;
+4. **this one** — a sampled extremum quoted as an exact one.
+
+All four share a shape: **a number was produced by a procedure, and then quoted
+without the procedure.** When a bean states a constant, it should state how it
+was obtained, so the next reader can see what would falsify it.
+
+### Roast target added
+
+**Every remaining numerically-obtained constant in this lane is suspect until
+its procedure is stated.** In particular `qou-8v3k` and `qou-trns` both quote
+`min |disc| = 0.348`; both are now wrong. Sweep for others.

@@ -746,3 +746,38 @@ quoting `extended_sum` as "the cyclotomic identity is proved" should say which
 of those two they mean.
 
 **Standing status, unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
+
+---
+
+## ⚠ 2026-08-08 (later) — the transport is OPEN again, and worse than recorded
+
+`qou-trns` sub-gap 1 was marked **closed** ("`k = 0` is PINNED by the base
+point"). **It is reopened.** Its step 2 — "the three branches are continuous and
+never collide on the arc, `min |disc| = 0.348`" — is false.
+
+**The discriminant vanishes on the arc**, at `θ = 137.9206708879635°`, where two
+of the three `y`-branches collide exactly. `min |disc| = 0`. The `0.348` was a
+**grid minimum from an ~N=360 scan**, quoted as if it were the true minimum.
+
+Proved without numerics: `disc` is palindromic, `disc(x)/x⁴ = Q(x + 1/x)`,
+`Q(u) = u⁴ − 6u³ + 7u² + 6u − 31`, and `Q(−2) = +49 > 0 > Q(−1) = −23` in
+integers, so IVT gives a root with `u ∈ [−2,2]` — i.e. a point of `|x| = 1`.
+`qbeta_5two_route16_discriminant_vanishes_probe.py`, 6 gates.
+
+### The chain, corrected
+
+| link | status |
+|---|---|
+| cyclotomic identity `Σₖ(2L(wₖ)+L(−wₖ)) = π²/2` | ✅ **proved in Lean**, sorry-free |
+| transport `x = 1 → x = −1` | ❌ **OPEN** — branch point on the arc |
+| `extend` ≡ `Re` analytic Rogers `L` in Lean | ❌ open (`qou-rstq` item 4) |
+
+So the arithmetic half is done and **both remaining links are analytic** — one of
+them harder than this bean previously recorded.
+
+The likely repair: `Σⱼ Vⱼ` is **symmetric** in the roots, and symmetric functions
+stay analytic across a branch point even though the branches do not. Rewriting
+the transport symmetrically, or deforming the path off `|x| = 1` around `x₀`,
+should recover it. **Neither is written, and neither is assumed.**
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
