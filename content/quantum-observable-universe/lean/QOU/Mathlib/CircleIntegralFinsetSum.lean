@@ -127,8 +127,6 @@ theorem finprod_zpow_eq_finset_prod_npow {D : ℂ → ℤ} (hD : ∀ x, 0 ≤ D 
   conv_lhs => rw [show (D a) = ((D a).toNat : ℤ) from (Int.toNat_of_nonneg (hD a)).symm]
   rw [zpow_natCast]
 
-section Factorisation
-
 open Filter Topology MeromorphicOn
 
 /-- **An analytic function factorises over its zeros on a relatively compact,
@@ -136,13 +134,17 @@ connected open set.**
 
 `extract_zeros_poles` gives this modulo a codiscrete set and in `finprod`/`zpow`
 form; the identity theorem upgrades the equality and
-`finprod_zpow_eq_finset_prod_npow` normalises the shape. -/
+`finprod_zpow_eq_finset_prod_npow` normalises the shape.
+
+The multiplicities are strictly positive, so `S` is *exactly* the zero set of
+`f` on `V` — without that, `a ∈ S` would carry no information and the
+factorisation could not be read backwards. -/
 theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
     (hVconn : IsPreconnected V) (hVne : V.Nonempty) (hK : IsCompact K) (hVK : V ⊆ K)
     {f : ℂ → ℂ} (hf : AnalyticOnNhd ℂ f K)
     (hord : ∀ u : V, meromorphicOrderAt f u ≠ ⊤) :
     ∃ (S : Finset ℂ) (m : ℂ → ℕ) (g : ℂ → ℂ),
-      AnalyticOnNhd ℂ g V ∧ (∀ u : V, g u ≠ 0) ∧
+      AnalyticOnNhd ℂ g V ∧ (∀ u : V, g u ≠ 0) ∧ (∀ a ∈ S, 0 < m a) ∧
       Set.EqOn f (fun z => (∏ a ∈ S, (z - a) ^ (m a)) * g z) V := by
   classical
   have hfV : AnalyticOnNhd ℂ f V := hf.mono hVK
@@ -151,9 +153,18 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
   have hfinite : (divisor f V).support.Finite :=
     QOU.Mathlib.divisor_support_finite_of_subset hf.meromorphicOn hK hVK
   obtain ⟨g, hg, hgne, hEq⟩ := hmV.extract_zeros_poles hord hfinite
-  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_⟩
   -- the divisor is `≥ 0` because `f` is analytic
   have hDnn : ∀ x, 0 ≤ (divisor f V) x := fun x => hfV.divisor_nonneg x
+  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_, ?_⟩
+  · -- a point of the support has a nonzero, hence positive, divisor value
+    intro a ha
+    have hne0 : (divisor f V) a ≠ 0 := by
+      have := (Set.Finite.mem_toFinset hfinite).1 ha
+      rwa [Function.mem_support] at this
+    have hnn := hDnn a
+    -- `show` first: the goal is a beta-redex, which `omega` treats as opaque
+    show 0 < ((divisor f V) a).toNat
+    omega
   -- upgrade the codiscrete equality to genuine equality
   haveI : NeBot (codiscreteWithin V) := QOU.Mathlib.codiscreteWithin_neBot hV hVne
   refine QOU.Mathlib.eqOn_of_eventuallyEq_codiscreteWithin hfV ?_ hVconn ?_
@@ -174,8 +185,6 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
       exact hu (by simp [h])
     rw [finprod_apply hms z]
     exact finprod_zpow_eq_finset_prod_npow hDnn hfinite z
-
-end Factorisation
 
 end Factorisation
 
