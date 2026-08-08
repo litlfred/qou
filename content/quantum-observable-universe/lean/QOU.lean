@@ -504,6 +504,10 @@ import QOU.QBeta.A3AntiSelfAdjointLift
 -- DT-index / 3d-index / graded-Euler route is BAR-PARITY excluded from supplying the
 -- anti-self-adjoint amplitude E (DT values bar-even integers; E bar-odd) — scope-(b).
 import QOU.QBeta.DTIndexAmplitudeE
+-- WALL: the LOCAL Stokes/resurgence route cannot supply the A=3 amplitude E —
+-- single-slope carrier ⇒ RSZ isoformal dim 0 ⇒ E=0 (no lift, scope-(b)); multi-slope
+-- leaves E free ⇒ value lives in the GLOBAL Birkhoff matrix (open successor, no instance).
+import QOU.QBeta.StokesAmplitudeE
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).

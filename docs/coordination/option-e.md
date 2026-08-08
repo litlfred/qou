@@ -1022,6 +1022,38 @@ quantifies a bar map `σ : R →+* R` with `C_geom ≠ −(σ B_geom)` (was a fr
 native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted, nothing wired;
 `μ₃/c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`.
 
+## 2026-08-08 · A=3 amplitude ROUTE 2-c-STOKES — the LOCAL Stokes/resurgence route CANNOT supply `E`; a WALL (scope-(a) + scope-(b) sub-exclusion)
+
+(Branch `claude/deltalambda-stokes-amplitude-e-2026-08-08`, bean `qou-jqof`.) Attacks
+`E` (the single free DOF ROUTE 2-c isolated) via the **local Stokes-constant / resurgence /
+Écalle-Borel** angle — distinct from the DT-index route. **Verdict: WALL, not closure** —
+extends PR #4790's retraction (C1's `∞` pure isoclinic ⇒ RSZ isoformal dim 0 ⇒ no local
+Stokes data) to `E`. **The bridge (CITED MODEL, RSZ Thm 5.5.7 unipotency, not a fit):** the
+amplitude a *local* q-Stokes datum supplies is the strictly-off-block part of the unipotent
+q-Stokes matrix, a coordinate sum `∑_{i<d} coeffᵢvᵢ` (`stokesAmplitude`) over the `d =
+rszIsoformalDim k r μ = Σ_{i<j}rᵢrⱼ(μⱼ−μᵢ)` slope-pairing moduli (RSZ Thm 3.3.5). **Two
+branches, both wall the route (Lean `StokesAmplitudeE.lean`, sorry-free, lean-direct exit 0,
+`#print axioms` = the 3 standard axioms, no `sorryAx`):** (i) **single-slope carrier**
+(`k=1`, exactly C1's `∞`): `rszIsoformalDim_one = 0` ⇒ amplitude forced `0`
+(`stokesAmplitude_eq_zero_of_dim_zero`) ⇒ composed with ROUTE 2-c's `amplitude_nonzero`, the
+local Stokes data **cannot lift** (`pureIsoclinic_local_stokes_cannot_lift`, **scope-(b)**,
+cited invariant = RSZ empty slope-pairing at `k=1`); (ii) **multi-slope carrier**: a local
+lift *forces* ≥2 slopes (`local_stokes_lift_forces_positive_dim`), but then the amplitude is
+**surjective onto `R`** (`stokesAmplitude_surjective_of_dim_pos`) ⇒ local Stokes data leaves
+`E` **free**; its value lives in the **GLOBAL** (`0↔∞`) Birkhoff connection matrix
+(theta-valued, un-started — #4790's W2 successor,
+`2026-08-01-branch-selection-birkhoff-connection-matrix.md`), NOT any local Stokes constant.
+So C1 (Fuchsian at 0, pure isoclinic at ∞) has **empty local Stokes data at every local
+point** — the local route is walled either way. **Unifies the sibling Stokes negatives** at
+the amplitude level (large-order `2πP≈1` not GGM `3`; bar-odd ladder anchor-blind/`Im=0` on
+the real meridian; ±i phase not the Δ_λ sign): the carrier's *local* Stokes moduli is simply
+too small to be `E`. Open successor = §3b dependent class `GlobalBirkhoffSuppliesAmplitude`
+(content-bearing, **NO instance**; distinct from ROUTE 2-c's `DerivedAmplitudeGivesLift` — it
+names the **global** Birkhoff datum, not the DM q-cubic). Audit
+[`docs/audits/2026-08-08-stokes-amplitude-e-local-wall.md`](../audits/2026-08-08-stokes-amplitude-e-local-wall.md).
+Nothing fitted, nothing wired; `μ₃/c₃`/AME/`q₀` never inverted; `q₀`-derivation not routed
+through; `free_parameters = 0`.
+
 **2026-08-02 — PROBE 2 (A=4 interface operator): the ≥4-body magnitude wall is a ONE-SCALAR
 gate — the derived `−ln det(I+G)` form is SURJECTIVE onto (0,∞); naive uniform `z` scope-(b)
 excluded — WALL(scope-(a)), sharpened from #4526.** (Branch
