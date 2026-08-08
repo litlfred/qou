@@ -144,9 +144,19 @@ not for c₃; nobody has shown the c₃ swing *is* this class; and the substrate
 Habiro-ring element evaluated at `q₀` rather than anything living at `ζ₅`
 directly. Co-location is still not identification.
 
-## 5. Next honest step
+## 5. Next honest step — DONE, and the gate turned out to be vacuous
 
-Redo §3 over `ℚ(ζ₅)` with the semilinear bar, on the 7-dimensional cocenter only
-(not the full 120-dimensional algebra) — the induced action is what carries the
-parity, and 7 dimensions is small enough for exact cyclotomic arithmetic. That
-settles the gate in one computation, in whichever direction.
+*Superseded same day by
+[`2026-08-08-bar-parity-gate-is-vacuous-on-one-dim-hh1.md`](2026-08-08-bar-parity-gate-is-vacuous-on-one-dim-hh1.md).*
+
+The ℚ(ζ₅) computation was run. The gate does not resolve in either direction,
+because **bar parity is not a property of a one-dimensional class**: with
+`dim_K HH¹ = 1`, `[D^bar] = μ·[D]` forces `μ·σ(μ) = 1`, Hilbert 90 gives
+`μ = ν/σ(ν)`, and since `σ(a) = −a` the generators `ν·D` and `a·ν·D` of the *same
+line* are respectively bar-even and bar-odd. Verified in exact ℚ(i) arithmetic on
+`H₃`.
+
+So §3's caveat was right to refuse the Θ-even reading, but for a stronger reason
+than it knew: there is no bar-parity fact to recover. Free corollary — `im(D₀)`
+and `ker(D₀)` are automatically bar-stable, since `B·D₀·B⁻¹` is a scalar multiple
+of `D₀`.
