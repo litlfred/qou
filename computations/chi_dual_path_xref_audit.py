@@ -81,6 +81,12 @@ wrong — it argues its two upstreams have not caught up. Regenerating them
 should return every atom to ~1e-19, and that is the prediction this audit
 exists to check afterwards.
 
+That regeneration is **bean `qou-n1c4`**, left open rather than done inline:
+14 witnesses name these two as upstream and ~50 producers consume them, so
+re-anchoring the base re-anchors the subtree above it. It is a wave, with the
+same discipline the anchor migration used, and this audit is its acceptance
+test.
+
 Verdicts: `AGREES` (one pin, gap at the intrinsic floor), `DISAGREES` (one pin,
 gap above it — a real χ defect), `ANCHOR_SPLIT` (legs on different pins, so the
 number measures the split and not the χ), `INCOMPLETE` (partial χ table, so Σ
