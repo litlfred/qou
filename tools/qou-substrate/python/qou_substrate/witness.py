@@ -292,6 +292,54 @@ class Assertion:
 
 # ── WitnessBuilder ───────────────────────────────────────────────
 
+# ── Raw-float64 guard (qou-t0rf) ──────────────────────────────────
+#
+# Every witness in this corpus is written through `WitnessBuilder.save`,
+# which makes it the one place a raw Python float can be stopped before
+# it reaches JSON. `computations/witness_raw_float64_audit.py` catches
+# these after the fact and has been red on `main` with a backlog fed by
+# several independent sessions; a check here is what prevents NEW ones.
+#
+# Deliberately OFF by default so this is not a breaking change while the
+# backlog is drained. Flip it on in CI (and eventually by default) once
+# the audit is green:
+#
+#     QOU_WITNESS_STRICT_FLOAT64=warn     report offending paths to stderr
+#     QOU_WITNESS_STRICT_FLOAT64=1        raise ValueError
+#
+# The fix a producer should make is never to stringify the float — that
+# is laundering, and `witness_float64_padding_audit.py` catches it. Carry
+# `mpmath.mpf` from the source and serialize with `_precision.fmt`.
+
+def _raw_float_paths(obj, path=""):
+    """Yield JSON paths of every raw (non-integer-valued) float in `obj`."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            yield from _raw_float_paths(v, f"{path}.{k}")
+    elif isinstance(obj, (list, tuple)):
+        for i, v in enumerate(obj):
+            yield from _raw_float_paths(v, f"{path}[{i}]")
+    elif isinstance(obj, float) and not isinstance(obj, bool):
+        yield path
+
+
+def _check_raw_float64(witness: dict, name: str) -> None:
+    mode = os.environ.get("QOU_WITNESS_STRICT_FLOAT64", "").strip().lower()
+    if mode in ("", "0", "off", "false"):
+        return
+    paths = list(_raw_float_paths(witness))
+    if not paths:
+        return
+    head = ", ".join(paths[:8]) + (" …" if len(paths) > 8 else "")
+    msg = (f"{name}: {len(paths)} raw float64 field(s) would enter the "
+           f"witness — {head}. Carry mpmath.mpf from the source and "
+           f"serialize with _precision.fmt; do NOT stringify the float.")
+    if mode in ("warn", "warning"):
+        print(f"⚠ raw-float64: {msg}", file=sys.stderr)
+    else:
+        raise ValueError(f"raw-float64 guard: {msg}")
+
+
 class WitnessBuilder:
     """
     Build a structured witness JSON conforming to ComputationWitness.
@@ -812,6 +860,8 @@ class WitnessBuilder:
                   f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
                   f"[unchanged — kept on-disk commitSha for staleness]")
             return out_path
+
+        _check_raw_float64(witness, out_path.name)
 
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
