@@ -68,7 +68,7 @@ consume is now proved (§4.x), so the lemma carries no residual `sorry`.
 | `bilinM_zsmul_left/right`, `bilinM_rep_swap`, `rep_mul_apply` | **sorry-free** |
 | `conjEquiv`, `sign_conj`, `polytabloid_rep_equivariant`, `tableau_transitive` | **sorry-free** |
 | `mtab_of_congr`, `kap_of_mem_line_clash` (clash ⇒ `κ_t{s}=0`), `kap_of_mem_line_match` (no-clash ⇒ `±e_t`) | **sorry-free** |
-| `filterCard_reindex`, `colCells_card`, `Col_card`, `row_lt_colLen` (§4.x counting helpers) | **sorry-free** |
+| `filterCard_reindex`, `colCells_card`, `Col_card`, `row_lt_colLen` (§4.x counting helpers) | **sorry-free** — public, consumed by `SpechtCrossDominance` |
 | `noclash_match_exists` (Gale–Ryser / conjugate-partition matching) | **sorry-free** (was: full stub) |
 | `kap_of_mem_line` (column-clash lemma) | **sorry-free** (was: full stub) |
 | `kapL_mem_line` (from the core) | **sorry-free** |
@@ -502,7 +502,7 @@ is a bijection onto `μ.cells`; matching it against `t` produces the column perm
 
 /-- Reindex a label-filter cardinality through a tableau bijection to the corresponding
 cell-filter on `μ.cells`. -/
-private theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ × ℕ → Prop)
+theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ × ℕ → Prop)
     [DecidablePred P] :
     (Finset.univ.filter (fun l => P ((e l : ℕ × ℕ)))).card = (μ.cells.filter P).card := by
   classical
@@ -518,7 +518,7 @@ private theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ
 
 /-- Cells of `μ` in column `c` and rows `< r` number `min r (colLen c)` (columns are
 downward-closed initial segments of rows). -/
-private theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
+theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
     (μ.cells.filter (fun cell => cell.1 < r ∧ cell.2 = c)).card = min r (μ.colLen c) := by
   classical
   rw [← Finset.card_range (min r (μ.colLen c))]
@@ -534,7 +534,7 @@ private theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
   · intro a _; rfl
 
 /-- The labels in column `c` of a tableau `t` number `colLen c`. -/
-private theorem Col_card {μ : YoungDiagram} (t : Tableau μ) (c : ℕ) :
+theorem Col_card {μ : YoungDiagram} (t : Tableau μ) (c : ℕ) :
     (Finset.univ.filter (fun l => colPattern t l = c)).card = μ.colLen c := by
   classical
   have h := filterCard_reindex t (fun cell => cell.2 = c)

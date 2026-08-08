@@ -313,6 +313,7 @@ import QOU.BraidKnot
 -- hidden outside it.
 import QOU.BraidKnot.SpechtBaseChange
 import QOU.BraidKnot.SpechtIrreducible
+import QOU.BraidKnot.SpechtCrossDominance
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
