@@ -1,0 +1,75 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T11:35:22.473880+00:00",
+  "commitSha": "efa610b71f128f10dd5ec5fd61db9b150eee8985",
+  "assertions": [
+    {
+      "name": "S_sign_flips_across_anchors",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "S(muon) > 0 > S(proton) — two measured values, the input to sleak_zero_between_anchors"
+    },
+    {
+      "name": "claim_odd_part_cannot_sign_flip",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the claim formula's odd part is anchor-blind and keeps one sign, which is what excludes it"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "qbeta-c3-barodd-sleak",
+  "scriptFile": "qbeta_c3_barodd_sleak_probe.py",
+  "scriptHash": "b509ccd32803",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "CANONICAL SOURCE for the bar-odd S-leak anchor values S = c_3 + Vol(4_1), which QOU/QBeta/SLeakZeroCrossing.lean, MonodromyDatumRigidity.lean and CompleteStructureExclusion.lean cite and which at least four Python probes had hand-copied as bare 6-digit literals. This probe previously emitted NO witness, so there was nothing to read instead — the copies were the only carrier. It also computed in float64 despite 12-digit string inputs. Both fixed: mpmath throughout, and the values are published here with the digit count the c_3 + Vol(4_1) cancellation actually supports. Derives nothing new; it is the same computation, sourced.",
+  "data": {
+    "upstream": "qbeta-c3-keystone-anchor-blind.witness.json",
+    "Vol_4_1": "2.02988321282",
+    "c3": {
+      "muon": "-2.02020023502",
+      "proton": "-2.06934257712"
+    },
+    "S_leak": {
+      "muon": "0.0096829778",
+      "proton": "-0.0394593643"
+    },
+    "S_leak_claim_odd_part": {
+      "muon": "0.00827542529",
+      "proton": "0.0082754236"
+    },
+    "precision": {
+      "input_sig_digits": 12,
+      "decades_lost_to_cancellation": {
+        "muon": "2.319",
+        "proton": "1.72"
+      },
+      "reported_sig_digits": 9,
+      "why": "S = c_3 + Vol(4_1) subtracts two quantities agreeing to their first two digits, so S carries fewer significant figures than its inputs. Reporting S at the inputs' 12 digits would be fake precision; the 6-digit literal the consumers copied is the opposite error."
+    },
+    "sign_flip": {
+      "S_muon_positive": true,
+      "S_proton_negative": true,
+      "ratio_S_proton_over_S_muon": "-4.07513",
+      "linear_interp_zero_fraction": "0.197039",
+      "scope": "the zero-crossing is an INFERENCE from continuity (IVT), and the fraction is a linear-interpolation estimate of its location, not a computed q*"
+    }
+  }
+}

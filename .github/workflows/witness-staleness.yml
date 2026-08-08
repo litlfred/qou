@@ -260,23 +260,41 @@ jobs:
         # Never widen the bounds to make a red run green.
         run: |
           python3 computations/no_free_parameter_certificate.py --self-test
-          # DECLARED fail-open, not an accidental one. With pipefail now set at
-          # the workflow level this gate is genuinely red, and it is red for a
-          # real reason: 3 untraceable literals in qbeta_t4_stokes3_crux_probe.py
+          # DECLARED fail-open, not an accidental one — and NOT a hygiene
+          # defect. With pipefail set at the workflow level this gate is
+          # genuinely red, on exactly one literal:
           #
-          #     A_omega  = 3            the Stokes symmetry constant — proved
-          #                             exact and q-independent in
-          #                             QOU.QBeta.StokesSymmetryConstant, but
-          #                             typed as a bare 3 rather than sourced
-          #     S_muon   = +0.00968298  duplicated as a literal in at least
-          #     S_proton = -0.03945936  qbeta_braid_nf_sdp_offset_probe.py too,
-          #                             with no witness naming their origin
+          #     qbeta_t4_stokes3_crux_probe.py:  A_omega = 3
           #
-          # Giving them provenance is a separate arc from this branch's drain,
-          # and silently red-walling the other six — which ARE green and which
-          # this change just made real — would be the worse trade. So: named,
-          # scoped, and visible in the step summary, NOT quietly passing.
-          # Remove the `|| true` the moment those three literals are sourced.
+          # It is red BY DESIGN and cannot be fixed by sourcing the value.
+          # `ADJUDICATED_FREE` in no_free_parameter_certificate.py keys on the
+          # assigned NAME and forces `cls = "UNTRACEABLE"` before the
+          # small-integer whitelist can see it, precisely so that A_omega
+          # cannot be waved through as "just a 3". Its ledger entry says why:
+          # AfreeThetaConstraint.lean proves (sorry-free) that the T4/T5
+          # channel has two anchor equations in three unknowns, so A_omega is
+          # a genuine free parameter pinned only by a one-sided A >= 2.05, and
+          # ratio_attained constructs an admissible A for every target ratio.
+          #
+          # StokesSymmetryConstant.lean does NOT contradict that, though it is
+          # easy to read as if it does. It proves a CONDITIONAL: *if* A_omega
+          # is the Stokes symmetry constant then it is exact and q-independent
+          # at every q. Its own Scope paragraph is explicit — "Nothing here
+          # derives the number 3 from the categorical drivers — that remains
+          # open (qou-qnnq lineage)". Exactness of the reading, not derivation
+          # of the value.
+          #
+          # So this gate goes green when qou-qnnq derives A_omega, and not
+          # before. Removing the entry from ADJUDICATED_FREE to get a green
+          # run is the "widen the bounds" move the sibling steps forbid.
+          # Red-walling the six gates this change just made real, over a
+          # standing open research question, is the worse trade — so it is
+          # named, scoped, and visible in the step summary rather than
+          # silently passing.
+          #
+          # The other two literals this step used to flag, S_muon and
+          # S_proton, WERE hygiene and are fixed: they now read from
+          # qbeta-c3-barodd-sleak.witness.json instead of being hand-copied.
           python3 computations/no_free_parameter_certificate.py --strict | tee /tmp/nfp.txt || true
           {
             echo '## No-free-parameter certificate (strict)';
