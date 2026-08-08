@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T13:52:07.467377+00:00",
-  "commitSha": "484c86462f9b238c40449a1835fb39acb1f352a2",
+  "computedAt": "2026-08-08T18:39:33.457719+00:00",
+  "commitSha": "0a00d6ef9208675f5a30cbcef45a9e6b387632be",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 79,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "04904109d041",
-  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
+  "scriptHash": "19daf1b26292",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,10 +81,22 @@
         "miss_factor": "160.1",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 (fallback; qbeta-ck-cache witness not present)",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. ⚠ ANCHOR STRADDLE: this prediction was built at the muon q₀ (1.10997859555733471989…) but the dashboard evaluates at the proton pin (1.10997858275138080759…). Induced Q_β error ≈ 29.96 ppb = 3.84× the L2 target. Immaterial against today's 1248 ppb residual, but it alone exceeds the target — so no 100× PASS can be credited to this row until the layers agree (AGENTS.md §q₀-anchor; migration bean tnjb).",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "1.278e-51",
-        "compute_output_dps": 60
+        "compute_output_dps": 60,
+        "anchor_layer": {
+          "status": "STRADDLE",
+          "cache_anchor": "muon",
+          "cache_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+          "producer_q0": "1.1099785827513808075916690956107688798744991218736",
+          "pin_diff_ppb": "-11.53711788998783148354814970615624081568544450717923778883680477507659",
+          "induced_qbeta_error_ppb": "29.95906951938073496283220434470830627139124333343822418311011496184677",
+          "l2_target_ppb": "7.797",
+          "anchor_error_over_target": "3.842384188711136970992972212993241794458284382895757879070169932261994",
+          "anchor_alone_exceeds_l2_target": true,
+          "material_today": null
+        }
       },
       {
         "obs": "m_n",
@@ -98,7 +110,7 @@
         "miss_factor": "415.7",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-54",
         "compute_output_dps": 60
@@ -115,7 +127,7 @@
         "miss_factor": "159.4",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
         "compute_truncation_ppb": "7.732e-52",
         "compute_output_dps": 60
@@ -159,19 +171,31 @@
       "beats_1x_count": 2,
       "beats_100x_count": 2
     },
+    "anchor_layer_qbeta": {
+      "status": "STRADDLE",
+      "cache_anchor": "muon",
+      "cache_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "producer_q0": "1.1099785827513808075916690956107688798744991218736",
+      "pin_diff_ppb": "-11.53711788998783148354814970615624081568544450717923778883680477507659",
+      "induced_qbeta_error_ppb": "29.95906951938073496283220434470830627139124333343822418311011496184677",
+      "l2_target_ppb": "7.797",
+      "anchor_error_over_target": "3.842384188711136970992972212993241794458284382895757879070169932261994",
+      "anchor_alone_exceeds_l2_target": true,
+      "material_today": null
+    },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "943210f1e2151ca66d52cd1eec506cf29b550b09c94d55086ff70d2896087427",
-        "size_bytes": 5024,
+        "sha256": "b62e3348d05d84ec1b8c905e6b551a2d09cb965710392e925028d0bf15012ad7",
+        "size_bytes": 5116,
         "commitSha": "09145f168191a3607c090e24b554eae32a30f4d9",
         "scriptCommitSha": "633b47159a418d635a114c00146b239e651b8f86",
         "computedAt": "2026-07-07T11:26:15.005428+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "6e8536cef754cbbaecbe12f3610837c293eb83979b279f77316c8230093ac7bc",
-        "size_bytes": 10359,
+        "sha256": "793d0659c1ff79878c288b6a8dcd520b64b091725fc6cf41fe5b9ad7c2d0a99f",
+        "size_bytes": 10468,
         "commitSha": "e309512a690ab453503aad077dba5ed3077cabb1",
         "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
         "computedAt": "2026-07-02T12:20:49.981050+00:00"
@@ -209,5 +233,8 @@
         "computedAt": "2026-07-05T11:19:01.311438+00:00"
       }
     ]
-  }
+  },
+  "caveats": [
+    "Q_β row: the cached prediction is built at the muon q₀ while this dashboard evaluates at the proton pin. Induced error ≈ 29.96 ppb = 3.84× the 7.797 ppb L2 target — immaterial against today's 1248 ppb residual, but it alone exceeds the target, so a 100× PASS is suppressed on this row until the layers agree. Fixing it means regenerating qbeta-ck-cache at the proton pin (tracked migration, bean tnjb) — deliberately NOT done here, per AGENTS.md §q₀-anchor rule 4 'untouched muon witnesses: leave them'."
+  ]
 }
