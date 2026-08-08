@@ -355,6 +355,41 @@ theorem routeB_gaussian_order_half (q : ℝ) (hq : 1 < q) :
   rw [hfun]
   exact order_of_rpow_gaussian q (1 / 2) hq
 
+/-- **`q^{n²}` has q-Gevrey order 2 under this file's definition — not ½.**
+
+Stated because two Lean files in this corpus label the same growth with
+**reciprocal** orders, and nothing flagged it:
+
+* `routeB_gaussian_order_half` (above) — growth `q^{m²/4}`, order `½`.
+* `QOU.Mass.C1FormalSolutionGrowth` — growth `q^{n²}` for the C1 `∞`-side
+  formal solution, its docstring calls this "the q-Gevrey-½ divergence".
+
+`IsQGevreyOrder q s a` is `‖aₙ‖ ∼ Cⁿ q^{s n²/2}`, so `q^{n²}` forces `s = 2`.
+Both conventions exist in the literature — order `s` as `q^{s n²/2}` (used
+here, and by Ramis–Sauloy–Zhang for the Newton-polygon slope) and order `s` as
+`q^{n²/(2s)}` (used elsewhere by Ramis–Zhang) — and they are inverses of each
+other. Under **this file's** definition the C1 `∞`-side order is `2`, and that
+is what this theorem certifies.
+
+This does not by itself say which label is wrong. It says the `½` cannot be
+read off `q^{n²}` under the definition this corpus formalised, so the two files
+cannot both be using it. Relevant because the whole Door-i / route-A
+isoclinicity obstruction is carried across files by the number `½`
+(`ThetaSlopeArithmetic.c1Slope`), which is a **definition** there, not a
+derivation. -/
+theorem qSquare_gaussian_order_two (q : ℝ) (hq : 1 < q) :
+    IsQGevreyOrder q 2 (fun n : ℕ => q ^ ((n : ℝ) ^ 2)) := by
+  have hfun : (fun n : ℕ => q ^ ((n : ℝ) ^ 2))
+      = (fun n : ℕ => q ^ ((2 : ℝ) * (n : ℝ) ^ 2 / 2)) := by
+    funext n; congr 1; ring
+  rw [hfun]
+  exact order_of_rpow_gaussian q 2 hq
+
+/-- **The two labels are genuinely different orders.** `½ ≠ 2`, so
+`routeB_gaussian_order_half` and `qSquare_gaussian_order_two` are not two
+readings of one fact. With `order_unique`, no single sequence carries both. -/
+theorem routeB_order_ne_c1Inf_order : (1 : ℝ) / 2 ≠ 2 := by norm_num
+
 /-- **[MI-3(b), sorry-free] GS cumulative degree has leading coefficient ½.**
     The Gröbner–Shirshov cumulative q-degree `C(m,2) = m(m−1)/2` (corpus
     `QOU.Mass.ThetaSlopeArithmetic.gs_cumulative_degree`) has leading Gaussian
