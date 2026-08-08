@@ -272,6 +272,44 @@ def scan(root: pathlib.Path, include_constrained: bool, all_kinds: bool):
                     })
                     continue
 
+                # Signal C — UNCONSTRAINED PROJECTION. The conclusion relates
+                # field projections of a universally-quantified structure that
+                # no hypothesis constrains. If those fields are independent,
+                # the statement asserts a relation between arbitrary values.
+                #
+                # This is how the SECOND inconsistency got in, and signal B
+                # does not see it (the relation is `=`, and neither side is a
+                # bare variable):
+                #
+                #   structure OperatorSelectionLP where
+                #     primal_obj : ℝ ;  dual_obj : ℝ  -- independent, arbitrary
+                #   def duality_gap lp := |lp.primal_obj - lp.dual_obj|
+                #   axiom schrijver_strong_duality : ∀ lp, lp.duality_gap = 0
+                #
+                # i.e. "any two reals are equal". Live in
+                # QOU/BraidKnot/LpDualityHypothesisClass.lean until 2026-08-08;
+                # its sibling `schrijver_complementary_slackness` was
+                # separately inconsistent the same way.
+                #
+                # Reported as ADVISORY, not UNSOUND: whether it is fatal
+                # depends on whether the projected fields are genuinely
+                # independent, which is a question about the structure and
+                # needs a human. The signal is "an unconditional claim about
+                # an arbitrary structure" — always worth a second look.
+                if (
+                    not hyps
+                    and rel is not None
+                    and occurs(var, lhs + rhs)
+                    and re.search(rf"(?<![A-Za-z0-9_']){re.escape(var)}\.", lhs + rhs)
+                ):
+                    findings.append({
+                        "file": str(p), "kind": kind, "name": name, "var": var,
+                        "side": f"projections of `{var}` related by `{rel}`, no hypotheses",
+                        "unproved": unproved, "constrained": constrained,
+                        "signal": "unconstrained-structure-projection",
+                    })
+                    continue
+
                 # Signal A — COLLAPSE. A variable on one side of an `=` forces
                 # the other side to be independent of it. Restricted to short
                 # names: a long descriptive identifier on one side of an
@@ -326,6 +364,12 @@ axiom b1_hyperbolic_rows
     (bloch_suslin van_der_veen : Prop) :
     bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified
 """,
+    # The second inconsistency: a relation between independent projections of
+    # an unconstrained structure. Signal B cannot see this one.
+    "must_flag_lp_projection": """
+axiom schrijver_strong_duality :
+    ∀ (lp : OperatorSelectionLP), lp.duality_gap = 0
+""",
 }
 
 
@@ -341,7 +385,9 @@ def self_test() -> int:
             hits = [
                 f for f in scan(d, False, False)
                 if f["unproved"]
-                and (f["signal"] == "unsound-order-bound" or f["side"] == "RHS only")
+                and (f["signal"] in ("unsound-order-bound",
+                                     "unconstrained-structure-projection")
+                     or f["side"] == "RHS only")
             ]
             want = label.startswith("must_flag")
             got = bool(hits)
@@ -370,12 +416,15 @@ def main() -> int:
 
     findings = scan(root, include_constrained, all_kinds)
     unsound = [f for f in findings if f["signal"] == "unsound-order-bound"]
+    advisory = [f for f in findings
+                if f["signal"] == "unconstrained-structure-projection"]
     hi = [f for f in findings
           if f["signal"] == "one-sided-constant" and f["side"] == "RHS only" and f["unproved"]]
-    lo = [f for f in findings if f not in hi and f not in unsound]
+    lo = [f for f in findings if f not in hi and f not in unsound and f not in advisory]
 
     print(f"one-sided-binder candidates: {len(findings)}  "
-          f"({len(unsound)} UNSOUND, {len(hi)} high-priority, {len(lo)} lower)\n")
+          f"({len(unsound)} UNSOUND, {len(advisory)} advisory, "
+          f"{len(hi)} high-priority, {len(lo)} lower)\n")
 
     if unsound:
         print("UNSOUND — a whole side of an order relation is a bare, unconstrained")
@@ -391,6 +440,14 @@ def main() -> int:
         for f in hi:
             print(f"  {f['file']}")
             print(f"      {f['kind']} {f['name']}  --  '{f['var']}' {f['side']}")
+        print()
+
+    if advisory:
+        print("ADVISORY — unconditional claim relating projections of an arbitrary")
+        print("           structure. Fatal iff those fields are independent — check.\n")
+        for f in advisory:
+            print(f"  {f['file']}")
+            print(f"      {f['kind']} {f['name']}  --  {f['side']}")
         print()
 
     if lo:
