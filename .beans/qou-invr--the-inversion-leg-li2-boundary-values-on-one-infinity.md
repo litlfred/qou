@@ -10,7 +10,7 @@ tags:
     - qou-rstq
     - 5two
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T18:05:00Z
+updated_at: 2026-08-08T18:40:00Z
 ---
 
 ## What is open, stated as narrowly as it now can be
@@ -103,6 +103,38 @@ Two things, both smaller than a boundary-value theory, neither free:
 **Next action: prove (1).** It is a self-contained Mathlib-flavoured lemma and
 it unblocks everything else here. The vectors below are superseded except where
 noted.
+
+### Step (1): attempted 2026-08-08, NOT landed — exactly where it stopped
+
+`QOU/MathlibExt/ComplexDilogarithmOnCut.lean` carries the proved decomposition
+(`log_ofReal_eq`, `re_log_ofReal`, `abs_im_log_ofReal_le`). The integrability
+statement was **attempted and reverted rather than committed with stubs** — a
+`sorry` asserting integrability would manufacture the junk-value-`0` vacuity the
+lemma exists to prevent, which is the worst possible place for one.
+
+The API is located; what remains is assembly:
+
+* **`arg (1 − x·t)` is an explicit step function** — `if 1 - x*t < 0 then π
+  else 0`, via `Complex.arg_ofReal_of_neg` / `arg_ofReal_of_nonneg`. Bounded and
+  obviously integrable. This part drafted cleanly.
+* **The real part** is `Real.log (1 − x·t)` (`Real.log_abs` makes `|·|` free).
+  `intervalIntegrable_log'` gives `Real.log` unconditionally; what is missing is
+  the **affine composition** — getting from `IntervalIntegrable Real.log` to
+  `IntervalIntegrable (fun t => Real.log (1 - x*t))`. `IntervalIntegrable.comp_mul_left`
+  exists but carries two `enorm ≠ ∞` side conditions, and I did not find the
+  matching `comp_sub_left` form in the time available. **This single step is the
+  blocker.**
+* **Peeling `1/t` off** on `[c,1]` is `IntervalIntegrable.mul_continuousOn`
+  (exists, `t ≥ c > 0` so `1/t` is continuous there).
+* **`[0,c]` by rescaling**, avoiding any edit to the existing slitPlane lemma:
+  with `c = 1/(2x)` and `g(u) = log(1 − u/2)/u` (integrable by the existing
+  lemma, `Re(1 − u/2) ≥ 1/2`), the algebra gives `g(t/c) = c·f(t)` exactly, so
+  `comp_mul_left` with factor `1/c` transports integrability from `0..1` to
+  `0..c`. **Checked on paper; not yet in Lean.**
+
+So the honest state is: three of four sub-steps have their Mathlib lemma named,
+and the fourth (affine composition of `intervalIntegrable_log'`) is the one to
+solve first. Nothing here is deep; it is API archaeology.
 
 ## Attack vectors (A1 and A3 are now SUPERSEDED by A2's result)
 
