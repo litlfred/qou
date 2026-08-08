@@ -16,6 +16,28 @@
   exactly the normalisation `FigureEightComplexVolume` already uses, since
   `V₄₁ 0 = Vol(4₁)` is real (`V₄₁_zero_re`).
 
+  THAT NORMALISATION IS NOT AN INFERENCE — IT IS NEUMANN-ZAGIER'S OWN DEFINITION,
+  checked against the paper (Topology 24 (1985) 307-332, §1):
+
+    "Let `u_i = ½ log(λ(m_i))` where `m_i` is the chosen meridian at the i-th
+     cusp.  Since `λ(m_i) = 1` for the complete hyperbolic structure on M, we may
+     choose the branch of logarithm so `(u_1, …, u_h) = 0` for this structure."
+
+    "The hyperbolic structure `M_u` is complete at the i-th end of M (i.e. this
+     end is still a true cusp) IF AND ONLY IF `u_i = 0`."
+
+  So `u = 0 ⟺ complete structure` is an *iff* in the source, stronger than this
+  file needs.  Two further points from the same section corroborate the corpus's
+  surrounding machinery: the cusp shape `τ_i(u)` is an EVEN function of each `u_i`
+  (the origin of `V₄₁_even` / `no_cubic_rung`), and `u` is a local coordinate
+  valid only "in a neighborhood of `0 ∈ ℂ^h`" — which is why the Murakami
+  substrate-matched meridian, at `|u| ≥ 2π`, is off the controlled neighbourhood
+  (`FigureEightDeformedMeridianWinding`).
+
+  The half-factor is worth carrying: `u = ½ log λ(m)` means the T5 hypothesis
+  `hRe : Re u = ln q₀` is the condition `|λ(meridian)| = q₀²`, not `= q₀`.  Any
+  candidate bridge owes that factor.
+
   THE CONSEQUENCE, PROVED BELOW.  `Im V₄₁` is the harmonic form
   `κ·(Re²u − Im²u)`, so it VANISHES at `u = 0`.  Hence a channel whose
   deformation map sends the substrate to `u = 0` has `S = 0` identically
@@ -44,7 +66,9 @@
     angle-structure half is (see the two files above); the step from "regular
     ideal cell" to "complete hyperbolic structure" is standard hyperbolic
     geometry that Mathlib cannot express (bean `qou-idvt`), and is used as
-    CONTEXT, not as a hypothesis of any theorem below.
+    CONTEXT, not as a hypothesis of any theorem below.  What IS now sourced
+    rather than inferred is the other half — `u = 0 ⟺ complete` — quoted from
+    Neumann-Zagier above.
   * `u = 0` therefore appears as an explicit HYPOTHESIS `hu`, never as an
     established fact about the anchors.  Nothing here silently assumes the
     geometric reading it is testing.
