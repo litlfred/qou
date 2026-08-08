@@ -61,6 +61,21 @@ sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 OPTIONAL_DEPS = ("scipy", "pyhecke_native", "pyhecke", "clarabel", "snappy",
                  "spherogram", "sage", "torch")
 
+# Producers held out by an explicit decision, not by a guard. A held-out stem
+# stays UNDETERMINED rather than becoming a DECL_MISMATCH, because its manifest
+# entry is withheld too.
+HOLD_OUT = {
+    # Regeneration moves LP dual coordinates from exactly 0.0 to 0.0207 etc.
+    # An ~11.5 ppb q0 change cannot do that -- it is a degenerate LP whose
+    # optimal dual vertex is solver-dependent, and this producer only became
+    # runnable here after pyhecke/clarabel/pyhecke-native were installed, so the
+    # committed witness came from a different solver stack. AGENTS.md treats
+    # LP/SDP duals as first-class infra; folding a changed dual vertex into an
+    # ANCHOR migration would bury a substantive change inside a bookkeeping one.
+    # Bean qou-pin3.
+    "alpha_5_lp_dual_crystal",
+}
+
 
 def missing_deps() -> set[str]:
     out = set()
@@ -148,6 +163,8 @@ def candidates() -> list[tuple[str, Path]]:
             continue
         hits.sort(key=lambda p: (0 if "computations" in p.parts else 1,
                                  len(p.parts)))
+        if hits[0].stem in HOLD_OUT:
+            continue  # explicit decision, see HOLD_OUT
         verdict, _ev = classify(hits[0])
         if verdict != "proton":
             continue  # muon evidence, both-layer, or symbolic -> not eligible
