@@ -989,21 +989,32 @@ theorem logDeriv_prod_pow_sub_mul (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ �
   rw [this]
 
 
-/-- **The argument principle on an annulus, `Finset`-indexed.**
+/-- **The argument principle on an annulus, `Finset`-indexed**, with the factors
+allowed to sit anywhere off the two contours.
 
 For `F = (∏ a ∈ S, (·−a)^{m a})·u` with `u` analytic and non-vanishing on a
-neighbourhood of the closed annulus and every `a ∈ S` strictly inside it, the
-winding difference counts the zeros with multiplicity. -/
-theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
+neighbourhood of the closed annulus, the winding difference counts *exactly the
+factors between the two circles*, with multiplicity. A factor inside the inner
+circle contributes `2πi` to both integrals and cancels; one outside the outer
+circle contributes to neither.
+
+The weaker hypothesis is what the θ instantiation needs. A factorisation
+obtained from `MeromorphicOn.extract_zeros_poles` is analytic on an *open* set,
+which must therefore be strictly larger than the closed contour annulus — so its
+zero set can spill into the two collars, and demanding `r < ‖a‖ < R` for every
+`a ∈ S` would be a hypothesis one cannot discharge without first proving the
+collars zero-free. Counting with a filter removes the need entirely. -/
+theorem argumentPrinciple_annulus_filter (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
     {A : Set ℂ} (r R : ℝ) (hr : 0 < r) (hrR : r < R)
     (hAopen : IsOpen A) (hAsub : Metric.closedBall (0:ℂ) R \ Metric.ball (0:ℂ) r ⊆ A)
     (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
-    (hS : ∀ a ∈ S, r < ‖a‖ ∧ ‖a‖ < R) :
+    (hS : ∀ a ∈ S, ‖a‖ ≠ r ∧ ‖a‖ ≠ R) :
     (∮ z in C((0:ℂ), R), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
         / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
       - (∮ z in C((0:ℂ), r), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
         / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
-      = (∑ a ∈ S, (m a : ℂ)) * (2 * Real.pi * Complex.I) := by
+      = (∑ a ∈ S.filter (fun a => r < ‖a‖ ∧ ‖a‖ < R), (m a : ℂ))
+          * (2 * Real.pi * Complex.I) := by
   classical
   set F : ℂ → ℂ := fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w with hF
   set L : ℂ → ℂ := fun z => deriv u z / u z with hL
@@ -1048,8 +1059,8 @@ theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m :
     have := (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := a) (R := ρ) (n := -1)).2
       (Or.inr (Or.inr h0))
     simpa using this.const_mul (m a : ℂ)
-  have hRne : ∀ a ∈ S, R ≠ ‖a‖ := fun a ha => ne_of_gt (hS a ha).2
-  have hrne : ∀ a ∈ S, r ≠ ‖a‖ := fun a ha => ne_of_lt (hS a ha).1
+  have hRne : ∀ a ∈ S, R ≠ ‖a‖ := fun a ha => ((hS a ha).2).symm
+  have hrne : ∀ a ∈ S, r ≠ ‖a‖ := fun a ha => ((hS a ha).1).symm
   have hbig : ∀ ρ : ℝ, 0 ≤ ρ → Metric.sphere (0:ℂ) ρ ⊆ A → (∀ a ∈ S, ρ ≠ ‖a‖) →
       (∮ z in C((0:ℂ), ρ), deriv F z / F z)
         = (∑ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), ρ), (z - a)⁻¹))
@@ -1066,16 +1077,6 @@ theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m :
     congr 1
     exact Finset.sum_congr rfl fun a _ => circleIntegral.integral_const_mul _ _ _ _
   rw [hbig R hR0.le hsphR hRne, hbig r hr.le hsphr hrne]
-  -- each `(z−a)⁻¹` gives `2πi` outside and `0` inside
-  have hInR : ∀ a ∈ S, (∮ z in C((0:ℂ), R), (z - a)⁻¹) = 2 * Real.pi * Complex.I :=
-    fun a ha => QOU.QBeta.C1Poles.integral_inv_sub_inside a R (hS a ha).2
-  have hInr : ∀ a ∈ S, (∮ z in C((0:ℂ), r), (z - a)⁻¹) = 0 :=
-    fun a ha => QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le (hS a ha).1
-  rw [Finset.sum_congr rfl (fun a ha => by rw [hInR a ha] :
-        ∀ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), R), (z - a)⁻¹)
-          = (m a : ℂ) * (2 * Real.pi * Complex.I)),
-      Finset.sum_congr rfl (fun a ha => by rw [hInr a ha] :
-        ∀ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), r), (z - a)⁻¹) = (m a : ℂ) * 0)]
   -- the `u'/u` integrals cancel by the annulus Cauchy theorem
   have hcancel : (∮ z in C((0:ℂ), R), L z) = ∮ z in C((0:ℂ), r), L z := by
     refine Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable
@@ -1085,8 +1086,43 @@ theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m :
       fun h => hz.1.2 (Metric.ball_subset_closedBall h)⟩
     exact ((hdu z hzA).differentiableAt (hAopen.mem_nhds hzA)).div
       ((hu z hzA).differentiableAt) (hune z hzA)
-  rw [hcancel]
-  simp [Finset.sum_mul]
+  rw [hcancel, add_sub_add_right_eq_sub, ← Finset.sum_sub_distrib,
+      Finset.sum_filter, Finset.sum_mul]
+  -- term by term: `2πi − 2πi` inside, `2πi − 0` between, `0 − 0` outside
+  refine Finset.sum_congr rfl fun a ha => ?_
+  rcases lt_trichotomy ‖a‖ r with h | h | h
+  · rw [QOU.QBeta.C1Poles.integral_inv_sub_inside a R (by linarith),
+        QOU.QBeta.C1Poles.integral_inv_sub_inside a r h,
+        if_neg (by rintro ⟨h', -⟩; linarith)]
+    ring
+  · exact absurd h (hS a ha).1
+  · rcases lt_trichotomy ‖a‖ R with h2 | h2 | h2
+    · rw [QOU.QBeta.C1Poles.integral_inv_sub_inside a R h2,
+          QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le h, if_pos ⟨h, h2⟩]
+      ring
+    · exact absurd h2 (hS a ha).2
+    · rw [QOU.QBeta.C1Poles.integral_inv_sub_outside a R (by linarith) h2,
+          QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le h,
+          if_neg (by rintro ⟨-, h'⟩; linarith)]
+      ring
+
+/-- **The argument principle on an annulus, `Finset`-indexed** — the special case
+of `argumentPrinciple_annulus_filter` where every factor already lies strictly
+between the two contours, so the filter is the whole index set. -/
+theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
+    {A : Set ℂ} (r R : ℝ) (hr : 0 < r) (hrR : r < R)
+    (hAopen : IsOpen A) (hAsub : Metric.closedBall (0:ℂ) R \ Metric.ball (0:ℂ) r ⊆ A)
+    (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
+    (hS : ∀ a ∈ S, r < ‖a‖ ∧ ‖a‖ < R) :
+    (∮ z in C((0:ℂ), R), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+        / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
+      - (∮ z in C((0:ℂ), r), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+        / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
+      = (∑ a ∈ S, (m a : ℂ)) * (2 * Real.pi * Complex.I) := by
+  classical
+  rw [argumentPrinciple_annulus_filter u S m r R hr hrR hAopen hAsub hu hune
+        (fun a ha => ⟨(hS a ha).1.ne', (hS a ha).2.ne⟩),
+      Finset.filter_true_of_mem hS]
 
 end ArgumentPrinciple
 
