@@ -134,6 +134,10 @@ TELESCOPE in the induction's arithmetic — no separate summation lemma is neede
 the `h³/12·(g″(a) − g″(A))` of the inductive step plus the
 `h³/12·(g″(A) − g″(B))` of the new cell add to `h³/12·(g″(a) − g″(B))`.
 
+Hypotheses are `C²` ONLY — no `g‴`, no `g⁗`.  That is because
+`integral_eq_corrected_trapezoid_sub_deriv2` derives the order-2 identity from
+the order-1 one by rewriting the kernel, rather than from the quartic kernel.
+
 The payoff: `k` cells give a bound with NO factor of `k`.  Against the `g⁗`
 version's `k·h⁵·sup|g⁗|/720`, this is `h³·TV(g″)/12` — and on the sum (divide by
 `h`) that is `O(h²) = O(1/N²)`, below the `O(1/N)` term `qou-mlgp` (A) extracts,
@@ -150,13 +154,10 @@ while needing only `logSinc″` (bounded, and monotone by
 for `g₂ = g″` ANTITONE on `[a, a+kh]`.  Note the right-hand side does not grow
 with `k`: the per-cell oscillations telescope. -/
 theorem abs_integral_sub_composite_le_osc
-    {g g₁ g₂ g₃ g₄ : ℝ → ℝ} {a h : ℝ} (hh : 0 < h) (k : ℕ)
+    {g g₁ g₂ : ℝ → ℝ} {a h : ℝ} (hh : 0 < h) (k : ℕ)
     (hg : ∀ x ∈ Set.Icc a (a + k * h), HasDerivAt g (g₁ x) x)
     (hg1 : ∀ x ∈ Set.Icc a (a + k * h), HasDerivAt g₁ (g₂ x) x)
-    (hg2 : ∀ x ∈ Set.Icc a (a + k * h), HasDerivAt g₂ (g₃ x) x)
-    (hg3 : ∀ x ∈ Set.Icc a (a + k * h), HasDerivAt g₃ (g₄ x) x)
     (hc2 : ContinuousOn g₂ (Set.Icc a (a + k * h)))
-    (hc4 : ContinuousOn g₄ (Set.Icc a (a + k * h)))
     (hanti : AntitoneOn g₂ (Set.Icc a (a + k * h))) :
     |(∫ x in a..(a + k * h), g x)
         - (h * (∑ j ∈ Finset.range (k + 1), g (a + j * h))
@@ -168,7 +169,7 @@ theorem abs_integral_sub_composite_le_osc
       norm_num
       ring
   | succ n ih =>
-      push_cast at hg hg1 hg2 hg3 hc2 hc4 hanti ⊢
+      push_cast at hg hg1 hc2 hanti ⊢
       set A : ℝ := a + (n : ℝ) * h with hA
       set B : ℝ := a + ((n : ℝ) + 1) * h with hB
       have haA : a ≤ A := by rw [hA]; nlinarith [Nat.cast_nonneg (α := ℝ) n]
@@ -182,8 +183,7 @@ theorem abs_integral_sub_composite_le_osc
         rw [Set.uIcc_of_le haA]
         exact Set.Icc_subset_Icc le_rfl hAB
       have ihb := ih (fun x hx => hg x (hsubA hx)) (fun x hx => hg1 x (hsubA hx))
-        (fun x hx => hg2 x (hsubA hx)) (fun x hx => hg3 x (hsubA hx))
-        (hc2.mono hsubA) (hc4.mono hsubA) (hanti.mono hsubA)
+        (hc2.mono hsubA) (hanti.mono hsubA)
       -- on the new cell the oscillation of an antitone `g₂` is `g₂ A − g₂ B`
       have hD : ∀ x ∈ Set.uIcc A B, |g₂ x - g₂ A| ≤ g₂ A - g₂ B := by
         intro x hx
@@ -197,8 +197,7 @@ theorem abs_integral_sub_composite_le_osc
         linarith
       have hcellrule := abs_corrected_trapezoid_sub_integral_le_osc hAB
         (fun x hx => hg x (hsubcell hx)) (fun x hx => hg1 x (hsubcell hx))
-        (fun x hx => hg2 x (hsubcell hx)) (fun x hx => hg3 x (hsubcell hx))
-        (hc2.mono hsubcell) (hc4.mono hsubcell) hD
+        (hc2.mono hsubcell) hD
       rw [hBA] at hcellrule
       have hgcont : ContinuousOn g (Set.Icc a B) :=
         fun x hx => (hg x hx).continuousAt.continuousWithinAt

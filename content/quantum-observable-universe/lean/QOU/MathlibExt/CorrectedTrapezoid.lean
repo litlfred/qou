@@ -363,6 +363,56 @@ theorem abs_weight_sq_deriv2_le {a b x : ℝ} (_hab : a ≤ b) (hx : x ∈ Set.I
     nlinarith [mul_nonneg (sub_nonneg.mpr hx.1) (sub_nonneg.mpr hx.2),
       sq_nonneg (b - a), sq_nonneg (2 * x - a - b)]
 
+/-- **The order-2 identity from the order-1 one — only `C²` needed.**
+
+    ∫_a^b g = (h/2)(g a + g b) − (h²/12)(g₁ b − g₁ a)
+                + (1/24)·∫_a^b w″·g₂,      h = b−a
+
+with NO `g‴` or `g⁗` hypotheses anywhere.  The order-2 rule was originally
+derived from the quartic kernel, which forced four derivatives; but the kernel
+identity
+
+    w″ = 12(x−a)² − 12(b−a)(x−a) + 2(b−a)² = −12·(x−a)(b−x) + 2(b−a)²
+
+expresses `w″` in terms of the ORDER-1 kernel `(x−a)(b−x)`, so
+
+    (1/24)∫ w″ g₂ = −½∫ (x−a)(b−x) g₂ + ((b−a)²/12)·∫ g₂
+                  = −½∫ (x−a)(b−x) g₂ + ((b−a)²/12)(g₁ b − g₁ a)
+
+by the FTC on `g₂`.  Substituting into `integral_eq_trapezoid_sub` the `B₂`
+terms cancel exactly and the order-1 identity is recovered.  So the order-2
+rule is a REWRITING of the order-1 rule, not a deeper theorem — and it inherits
+the order-1 rule's `C²` hypotheses. -/
+theorem integral_eq_corrected_trapezoid_sub_deriv2 {g g₁ g₂ : ℝ → ℝ} {a b : ℝ}
+    (hg : ∀ x ∈ Set.uIcc a b, HasDerivAt g (g₁ x) x)
+    (hg1 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₁ (g₂ x) x)
+    (hc2 : ContinuousOn g₂ (Set.uIcc a b)) :
+    ∫ x in a..b, g x
+      = (b - a) / 2 * (g a + g b)
+        - (b - a) ^ 2 / 12 * (g₁ b - g₁ a)
+        + 1 / 24 * ∫ x in a..b,
+            (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x := by
+  have hord1 := integral_eq_trapezoid_sub hg hg1 hc2
+  have hg2int := hc2.intervalIntegrable (μ := volume)
+  have hftc : (∫ x in a..b, g₂ x) = g₁ b - g₁ a :=
+    integral_eq_sub_of_hasDerivAt hg1 hg2int
+  have hw1c : ContinuousOn (fun x : ℝ => (x - a) * (b - x)) (Set.uIcc a b) := by fun_prop
+  have hw1g := (hw1c.mul hc2).intervalIntegrable (μ := volume)
+  -- `w″·g₂ = −12·(x−a)(b−x)·g₂ + 2(b−a)²·g₂`
+  have hpt : ∀ x : ℝ,
+      (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x
+        = -12 * ((x - a) * (b - x) * g₂ x) + 2 * (b - a) ^ 2 * g₂ x := by
+    intro x; ring
+  have hsplit : (∫ x in a..b,
+      (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x)
+      = -12 * (∫ x in a..b, (x - a) * (b - x) * g₂ x)
+        + 2 * (b - a) ^ 2 * (g₁ b - g₁ a) := by
+    simp_rw [hpt]
+    rw [integral_add (hw1g.const_mul _) (hg2int.const_mul _),
+      intervalIntegral.integral_const_mul, intervalIntegral.integral_const_mul, hftc]
+  rw [hsplit]
+  linarith [hord1]
+
 /-- **`|∫_a^b w″·g″| ≤ 2(b−a)³·D`** when `|g″ − g″(a)| ≤ D` on the cell.
 
 The point is that `D` is an OSCILLATION, not a supremum: `∫ w″ = 0` lets `g″` be
@@ -430,25 +480,21 @@ Compare `abs_corrected_trapezoid_sub_integral_le`, which needs `sup|g⁗|`.  Thi
 version needs only how much `g″` MOVES across the cell, which is what telescopes
 when `g″` is monotone. -/
 theorem abs_corrected_trapezoid_sub_integral_le_osc
-    {g g₁ g₂ g₃ g₄ : ℝ → ℝ} {a b D : ℝ} (hab : a ≤ b)
+    {g g₁ g₂ : ℝ → ℝ} {a b D : ℝ} (hab : a ≤ b)
     (hg : ∀ x ∈ Set.uIcc a b, HasDerivAt g (g₁ x) x)
     (hg1 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₁ (g₂ x) x)
-    (hg2 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₂ (g₃ x) x)
-    (hg3 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₃ (g₄ x) x)
     (hc2 : ContinuousOn g₂ (Set.uIcc a b))
-    (hc4 : ContinuousOn g₄ (Set.uIcc a b))
     (hD : ∀ x ∈ Set.uIcc a b, |g₂ x - g₂ a| ≤ D) :
     |(b - a) / 2 * (g a + g b) - (b - a) ^ 2 / 12 * (g₁ b - g₁ a)
         - ∫ x in a..b, g x|
       ≤ (b - a) ^ 3 * D / 12 := by
-  have hid := integral_eq_corrected_trapezoid_sub hg hg1 hg2 hg3 hc4
-  have hred := integral_weight_sq_mul_deriv4_eq hg2 hg3 hc2 hc4
+  have hid := integral_eq_corrected_trapezoid_sub_deriv2 hg hg1 hc2
   have hbd := abs_integral_weight_sq_deriv2_mul_le hab hc2 hD
   have hrw : (b - a) / 2 * (g a + g b) - (b - a) ^ 2 / 12 * (g₁ b - g₁ a)
       - ∫ x in a..b, g x
       = -(1 / 24) * ∫ x in a..b,
           (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x := by
-    rw [hid, ← hred]; ring
+    rw [hid]; ring
   rw [hrw, abs_mul]
   have h24 : |-(1 : ℝ) / 24| = 1 / 24 := by norm_num
   rw [show -(1 / 24 : ℝ) = -(1 : ℝ) / 24 by norm_num, h24]

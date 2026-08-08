@@ -1178,3 +1178,59 @@ its conclusion no longer mentions them. For `logSinc` those are
 `[h, theta]`, so this is not the eighth-order cancellation problem returning; it
 is just more derivative bookkeeping than the statement suggests. A cleaner
 version would weaken the hypotheses to `C^2` plus integrability.
+
+## The g3/g4 wrinkle removed: order-2 is a REWRITING of order-1
+
+The previous entry flagged that `abs_integral_sub_composite_le_osc` still
+demanded `g3` and `g4` hypotheses inherited from the quartic-kernel proof, even
+though its conclusion no longer mentioned them — meaning the instantiation at
+`logSinc` would have needed `logSinc'''` and `logSinc''''` after all. That is
+now gone.
+
+`QOU/MathlibExt/CorrectedTrapezoid.lean`:
+
+    integral_eq_corrected_trapezoid_sub_deriv2
+      int_a^b g = (h/2)(g a + g b) - (h^2/12)(g1 b - g1 a) + (1/24) int w'' g2
+
+sorry-free, with NO `g'''` or `g''''` hypotheses. The kernel identity
+
+    w'' = 12(x-a)^2 - 12(b-a)(x-a) + 2(b-a)^2 = -12 (x-a)(b-x) + 2(b-a)^2
+
+expresses `w''` through the ORDER-1 kernel, so
+
+    (1/24) int w'' g2 = -(1/2) int (x-a)(b-x) g2 + ((b-a)^2/12)(g1 b - g1 a)
+
+by the FTC on `g2`; substituting into `integral_eq_trapezoid_sub` the `B_2`
+terms cancel exactly and the order-1 identity is recovered. **The order-2 rule
+is a rewriting of the order-1 rule, not a deeper theorem** — and it inherits the
+order-1 rule's `C^2` hypotheses.
+
+Both `abs_corrected_trapezoid_sub_integral_le_osc` and
+`abs_integral_sub_composite_le_osc` are re-proved on that basis. The composite
+signature is now exactly:
+
+    0 < h -> (k : N)
+      -> (forall x in Icc a (a+kh), HasDerivAt g  (g1 x) x)
+      -> (forall x in Icc a (a+kh), HasDerivAt g1 (g2 x) x)
+      -> ContinuousOn g2 (Icc a (a+kh))
+      -> AntitoneOn   g2 (Icc a (a+kh))
+      -> |int - [composite trapezoid + B_2]| <= (h^3/12)(g2 a - g2 (a+kh))
+
+`C^2` plus monotonicity of `g''`. Nothing else.
+
+## (A) — the instantiation is now exactly discharged by what exists
+
+Every hypothesis of the composite rule is available for `logSinc` on `[h, theta]`:
+
+    HasDerivAt logSinc  (logSinc' x)  x     hasDerivAt_logSinc
+    HasDerivAt logSinc' (logSinc'' x) x     hasDerivAt_logSinc_deriv
+    ContinuousOn logSinc''                  from the above
+    AntitoneOn logSinc''                    mul_cube_cos_lt_sin_cube
+
+Remaining: assemble — apply the composite rule, add `sum_log_two_sin_split` and
+the Robbins bounds, collect the three `h`-endpoint terms with `abs_logSinc_le`
+and `abs_logSinc_deriv_le`. The `AntitoneOn` instance still needs deriving from
+the sign of `logSinc'''` via `antitoneOn_of_deriv_nonpos`, which requires
+`HasDerivAt logSinc'' (logSinc''' x) x` — the ONE derivative statement still
+unwritten, and it is a routine quotient-rule computation on `1/x^2 - 1/sin^2 x`,
+not a cancellation estimate.
