@@ -20,8 +20,21 @@ where `cuspModulus = √3/4` is the proved geometric datum and
   `S_eq` (channel) + `imV₄₁` (cusp geometry).
 
 * `s_channel_at_substrate` — specializes to the substrate meridian: if
-  `Re(u(q₀)) = ln q₀` (proved for real substrates, `meridian_holonomy_boost`),
-  then S(q₀) = A_ω · κ · (ln²q₀ − ϑ_K²) where `ϑ_K = Im(u(q₀))`.
+  `Re(u(q₀)) = ln q₀`, then S(q₀) = A_ω · κ · (ln²q₀ − ϑ_K²) where
+  `ϑ_K = Im(u(q₀))`.
+
+  **`hRe` is an UNDISCHARGED HYPOTHESIS, not a proved fact.** Earlier revisions
+  of this docstring attributed it to a lemma `meridian_holonomy_boost`; no such
+  declaration exists anywhere in the corpus, and the attribution propagated into
+  a bean and a probe docstring before it was caught (PR #4513, bean `qou-5nze`).
+  Nothing below establishes `hRe`; it is assumed wherever it appears.
+
+  The one corpus object that could discharge it does not: the substrate-matched
+  Murakami meridian (`Knot.DeformedMeridianWinding`) has real part `N·ln q₀`,
+  so `hRe` would force the degenerate colour `N = 1`, and the resulting
+  quantization `Im u = −2πk` is refuted by the measured anchor signs. Proved
+  sorry-free in `QOU.QBeta.ChannelMeridianIdentification`; that file also proves
+  the channel class constrains `u` not at all.
 
 ## What is honestly open (beans, not sorries)
 
@@ -57,9 +70,10 @@ theorem s_channel_expanded {S : ℝ → ℝ} [ch : SDeformedVolumeChannel S]
   exact binding_formula_of_imV₄₁ ch.A_ω (ch.u q₀)
 
 /-- **T5 at substrate: S = A_ω · κ · (ln²q₀ − ϑ²).** For a channel whose
-deformation map `u` has `Re(u(q₀)) = ln q₀` (the proved meridian holonomy boost)
-and `Im(u(q₀)) = ϑ` (the open angular deformation), the S-leak becomes the
-explicit two-parameter formula.
+deformation map `u` has `Re(u(q₀)) = ln q₀` (`hRe` — an ASSUMPTION on the
+channel, not a proved fact; see the module docstring) and `Im(u(q₀)) = ϑ` (the
+open angular deformation), the S-leak becomes the explicit two-parameter
+formula.
 
 This is the **derive-then-check target**: everything except A_ω and ϑ_K is
 derived from geometry. The T4 crux probe verified that A_ω = 3 + this formula
