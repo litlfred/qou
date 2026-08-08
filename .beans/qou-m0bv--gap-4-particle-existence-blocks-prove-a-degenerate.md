@@ -28,9 +28,11 @@ that a degenerate witness sits under a headline theorem name —
 ## Why a better witness is not the fix
 
 `CategoricalProton` has four fields (`skein_uu`, `skein_ud`, `mass`,
-`chirality`) and **no properties**. The narrative claims the witness has
-"negative crossing energy and Frobenius stability" — the structure has no
-field for either, so those claims are **unstatable**, not merely unproved.
+`chirality`) and **no properties**. The Lean docstring claims the witness has
+"negative crossing energy and Frobenius stability"; the `.md` claims an
+element of $H_3(q)$ with Frobenius stability $G x[\gamma] \ge 0$. The
+structure has no field for any of it, so those claims are **unstatable**, not
+merely unproved.
 
 So the order is:
 
@@ -48,6 +50,25 @@ not merely undone.
 For what the statements currently say, the proofs are correct. Deleting them
 would misrepresent trivial statements as open conjectures — the mirror of the
 defect fixed in #4797. Same rule as `qou-g4x1`.
+
+## Follow-up pass (2026-08-08, same day) — the narrative side
+
+The pass above compared each proof term to the **Lean docstring** above it,
+not to the `.md` sibling. Reading the four `.md` files changed two things:
+
+- **`quantum-characteristic-classes-exists` is Class A + Class B.** Its `.md`
+  asserts existence *for every $n \ge 0$*; the Lean is `Nonempty` at a single
+  level. Restoring the quantifier is statable (`level : ℕ` exists) and one
+  line, and was **deliberately not done** — every such class has `κ = 0`, so a
+  `∀ n` over them is equally vacuous and would only make the theorem read as
+  stronger.
+- **`hadron-exists` is the sharper worked case**, not the proton: its `.md`
+  asserts $\mathfrak{E}_{\mathrm{cross}} < 0$ flatly, with no hedge, while
+  `Hadron` has no energy field at all.
+
+**Unblocked repair applied:** all four `.ts` manifests now carry an §4d
+`authorNotes` caveat naming the degenerate witness and the blocker. The Lean
+itself remains correctly blocked.
 
 ## Detector note
 
