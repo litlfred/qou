@@ -10,7 +10,9 @@ description: >-
   circular / vacuous / trivially-true proofs, after a batch
   proof-statement-integrity normalization (the batch "wrap the conclusion in a
   structure field and project it" fix produces these), or when a "theorem" looks
-  too easy. Emits per-block QA sidecar params under the `proof-no-*` criteria.
+  too easy. Also covers the mirror-image defect — a cited `sorry` standing in
+  front of a FALSE statement (§8) — so use it when planting or auditing a cited
+  `sorry`. Emits per-block QA sidecar params under the `proof-no-*` criteria.
 roles: [collaborator]
 ---
 
@@ -261,6 +263,71 @@ consistent with the empty-carrier opt-out), never leave a bare un-annotated `: T
 > the heuristic that the 2026-06-26 triage missed on `q_gl_obstruction_calc`,
 > `confinement-categorical`, the fluid-dynamics conditionals, and others.
 
+### 8. Cited `sorry` on a FALSE statement — `proof-no-false-cited-sorry`
+
+The mirror image of everything above. Patterns #1–#7 are proofs that prove
+nothing; this is a **`sorry` in front of a proposition that is not true**. It is
+strictly worse than an open gap: discharging it would discharge `False`, every
+downstream consumer is unsound the moment anyone "closes" it, and the `-- Ref:`
+to a real theorem makes it look audited. The citation is usually correct *about
+the informal theorem* — the defect is in the formalisation's quantifier range,
+where the Lean statement silently admits degenerate inputs the textbook excludes.
+
+**How they arise.** A cited `sorry` is never elaborated against a witness, so
+nothing ever forces the author to look at a small instance. Three found in one
+sweep (2026-08-08), all the same shape — a hypothesis the informal theorem takes
+for granted:
+
+| declaration | admitted degenerate input | consequence |
+|---|---|---|
+| `QGevreyOrder.cauchyMul_order` | `b = 0` (order `0`, since `Real.log 0 = 0`) | `a ⋆ b = 0` has order `0`, but `E(s,0) = max s 0 = s` |
+| `YoungTableauStandard.branching_two_one` | `λ` not containing `μ` | unguarded `fDimSkew` counts `1` where `f^{λ/μ} = 0`; fails at `k = 3` |
+| `HadamardFactorization.hadamard_factorization` | `ρ < 0` (satisfiable: the constant `1`) | conclusion needs `(p : ℝ) ≤ ρ` for `p : ℕ` |
+
+Note how ordinary each admitted input is. Two of the three are junk-value
+artefacts of Mathlib totality conventions (`Real.log 0 = 0`, `Real.rpow 0 ρ = 0`)
+and the third is a definition missing a side condition.
+
+**Detection — the small-instance check.** No regex finds these; the check is
+semantic and cheap:
+
+1. Instantiate the statement at the **smallest nontrivial parameter** (`n = 0,1,2,3`;
+   the empty diagram; the zero sequence; the constant function) and evaluate both
+   sides by hand. Most of the work is arithmetic.
+2. Ask what the **junk values** do. Every Mathlib total function has them —
+   `log 0`, `0⁻¹`, `Nat` subtraction, `Nat.card` of an infinite type, `x ^ (0:ℝ)`,
+   `Finset.sup'` of `∅`. If any appears in the statement, feed it deliberately.
+3. Ask which hypothesis the **informal** theorem assumes without saying so —
+   nonconstancy, non-cancellation, containment, nonnegativity of an order,
+   nonvanishing of a leading coefficient. Then check it is in the Lean binder.
+4. Read the docstring against the signature. All three above were *pre-flagged in
+   prose* ("additionally needs a non-cancellation hypothesis", "positive /
+   no-cancel coefficients") — the hypothesis just never reached the binder. A
+   docstring that names a condition the signature does not carry is a direct hit.
+
+**Fix recipe (in addition to the four above).**
+
+5. **Refute, then restate.** Do not silently patch the binder.
+   a. Add a machine-proved `¬ ∀ …` refutation of the over-general form, named
+      `<thm>_unhypothesised_false` / `<thm>_needs_<hypothesis>`, with the witness
+      spelled out in its docstring. This is the in-repo `freeProjClaim_false`
+      idiom (`SnWedderburnPartitionBridge`), and it is what stops the hypothesis
+      being "simplified away" by a later pass.
+   b. Restate the theorem with the hypothesis the refutation forces, keeping the
+      cited `sorry`.
+   c. Re-run the small-instance check on the restated statement, and record the
+      arithmetic in the docstring so the next reader need not redo it.
+   d. If the defect is in a **definition** rather than the theorem (case #2
+      above), fix the definition — weakening the theorem to dodge a broken
+      definition just moves the bug.
+   e. Prove whatever half is now provable. Splitting `cauchyMul_order` sent its
+      entire `≤` direction sorry-free and left a strictly smaller gap; a false
+      statement often has real content hiding behind it.
+
+**Where this belongs in the workflow.** Run the small-instance check *when
+planting* a cited `sorry`, not only when auditing one — minutes then, a full
+audit later. Record it in the docstring: "checked at `k = 3, 4`".
+
 ## Agent-inspection ledger — making agent confirmation mandatory (2026-06-28)
 
 The detector is **high-recall by design**; the legit-vs-genuine call requires
@@ -313,6 +380,7 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 | `proof-no-unused-hypotheses` | active | #4 weakened statement |
 | `proof-no-decide-masking` | active | #5 evaluator masking (`native_decide`) |
 | `proof-no-provable-axiom` | active | #6 uncited / provable axiom |
+| `proof-no-false-cited-sorry` | active | #8 cited `sorry` on a false statement |
 
 **Minimal wiring (per Agent-A recon):**
 
@@ -335,9 +403,16 @@ marks the entry `needs-agent`; the agent then fills the verdict.
 1. **Audit:** grep candidates across all `.lean` (library trees + content-block
    siblings), agent-confirm, record findings in
    `docs/audits/<date>-lean-vacuous-proof-audit.md`.
-2. **Classify:** assign each confirmed instance a fix from the recipe (1–4).
+2. **Classify:** assign each confirmed instance a fix from the recipe (1–5).
    Recipe-4 (demote to conjecture) items are claim changes — list them for owner
-   sign-off, don't auto-demote.
+   sign-off, don't auto-demote. Recipe-5 (refute + restate) items change a
+   *statement*, so they are claim changes too — but the refutation is machine-
+   proved, so the evidence travels with the fix.
+
+2b. **Sweep the cited sorries too, not just the closed proofs.** `grep -rnE
+   '^\s*sorry\s*$'` the tree and run the §8 small-instance check on every hit.
+   The 2026-08-08 sweep found 3 of 12 standing in front of false propositions —
+   a higher genuine-defect rate than any of the regex-detectable patterns.
 3. **Drain:** fix file-by-file (or small directory batches), microcommit per
    AGENTS.md branch+PR policy, verify each with `lean`-direct against the
    restored `lake-cache/qou-<toolchain-slug>` oleans (per
