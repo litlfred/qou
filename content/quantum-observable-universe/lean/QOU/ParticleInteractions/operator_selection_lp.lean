@@ -66,16 +66,6 @@ class OperatorSelectionLpContext (R : Type*) [CommRing R] [LinearOrder R]
   x_star : Fin d → R
   /-- The Markov-trace dual variable `y₀* : R`. -/
   y_0_star : R
-  /-- The operator selection LP claim (conclusion). -/
-  operator_selection_lp_claim :
-    ((Finset.univ.sum fun i : Fin d => x_star i) = n_target ∧
-     (∀ i : Fin d, 0 ≤ (Finset.univ.sum fun j : Fin d => G i j * x_star j))) ∧
-    (∀ x : Fin d → R,
-      ((Finset.univ.sum fun i : Fin d => x i) = n_target ∧
-       (∀ i : Fin d, 0 ≤ (Finset.univ.sum fun j : Fin d => G i j * x j))) →
-      (Finset.univ.sum fun i : Fin d => t i * x_star i) ≤
-        (Finset.univ.sum fun i : Fin d => t i * x i)) ∧
-    (Finset.univ.sum fun i : Fin d => t i * x_star i) = n_target * y_0_star
 
 namespace OperatorSelectionLpContext
 
@@ -117,6 +107,7 @@ theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
   -- feasible, bounded linear programs) and the simplex/vertex
   -- optimality argument selecting x*. Not yet formalised in QOU/Mathlib.
   -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  exact ctx.operator_selection_lp_claim
+  -- Honest sorry: LP strong duality + vertex-optimality not yet formalised.
+  sorry
 
 end QOU.ParticleInteractions

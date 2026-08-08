@@ -146,13 +146,6 @@ theorem whiteheadInnerSum_pos {N n : ℕ} (hN : 2 ≤ N) (hn : n < N) :
     exact whiteheadS_pos hN hkn
   · exact ⟨0, Finset.mem_range.mpr (by omega)⟩
 
-class WhiteheadVolumeConjectureContext where
-  /-- The Whitehead volume conjecture claim (conclusion). -/
-  whitehead_volume_conjecture_claim (kashaev : ℕ → ℝ)
-    (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) :
-    Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
-      Filter.atTop (nhds (4 * catalanG))
-
 /-- **Lower-envelope brick** (lower half of the E1 log-Σ≈max squeeze).  The
     inner sum dominates any single term `S_{n,k}`, so `log` of the sum is at
     least `log S_{n,k}` for the saddle index — this is the lower bound that,
@@ -295,16 +288,22 @@ theorem whitehead_vc_of_saddle_value
 /-- **The Whitehead Volume Conjecture** (van der Veen's theorem):
     `(2π/N)·log|J_N(W)(e^{2πi/N})| → Vol(Whitehead) = 4G`.
 
-    STATE-AND-QUEUED: proved in van der Veen arXiv:math/0611181; the in-repo
-    Lean squeeze proof is the open follow-up (bean qou-t2sc) — reduce to the
-    landed Clausen/`log(2 sin)` machinery via the positive kernel `whiteheadS`
-    (positivity established above) plus a max-term saddle-location lemma. -/
-theorem whitehead_volume_conjecture [ctx : WhiteheadVolumeConjectureContext]
+    STATE-AND-QUEUED: proved in van der Veen arXiv:math/0611181.  The
+    unconditional in-repo squeeze proof for the `⌊N/2⌋` inner sum is now
+    `QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half` (sorry-free,
+    downstream — it imports the `QOU.Knot.Clausen` machinery that this
+    Mathlib-only base file cannot).  This abstract `kashaev`-linked form with
+    the `(N-1)/2` placeholder index remains the one honest `sorry` here; bean
+    qou-1gkf tracks porting the downstream ⌊N/2⌋ result to this exact form. -/
+theorem whitehead_volume_conjecture
     (kashaev : ℕ → ℝ)
     (hk : ∀ N, kashaev N = whiteheadInnerSum N ((N - 1) / 2)) :   -- placeholder link
     Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log (kashaev N))
       Filter.atTop (nhds (4 * catalanG)) := by
   -- Ref: [vanderveen2008] arXiv:math/0611181 — VC for the Whitehead link.
-  exact ctx.whitehead_volume_conjecture_claim kashaev hk
+  -- Honest sorry: this base file is Mathlib-only and cannot import
+  -- QOU.Knot.Clausen; the genuine unconditional proof (⌊N/2⌋ inner sum) is
+  -- QOU.Knot.WhiteheadSaddle.whitehead_vc_innerSum_half (sorry-free).
+  sorry
 
 end QOU.Knot.WhiteheadVC
