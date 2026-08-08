@@ -26,4 +26,4 @@ The transition at $q = 1$ has the structure of a second-order phase transition. 
 **Relation to the Clay problem.**
 The QOU framework reframes the Clay formulation as a degeneration problem. The $q$-NS equation is globally regular for all $q > 1$, and the Clay question asks whether this regularity survives the limit $q \to 1$. The three obstructions above suggest it does not. The classical Navier--Stokes equation is the critical point of a one-parameter family of well-posed equations. Singularity formation is the mechanism by which infinite-dimensional classical dynamics emerge from finite-dimensional $q$-deformed dynamics.
 
-**Archimedean specialisation (§7c).** This block invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

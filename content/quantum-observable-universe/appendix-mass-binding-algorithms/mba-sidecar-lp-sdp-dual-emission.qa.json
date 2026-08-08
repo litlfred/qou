@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The \"### CI enforcement\" heading is now \"### Validation\" and the warn-only / --strict / --strict-wired CI modes and the witness-pipeline.yml reference are gone; what the validator actually checks (dual fields present on every LP/SDP/operator-selection witness) is kept, as is the validator script citation. \"enforced in CI\" is dropped from the opening. The closing Notes no longer instruct a maintainer to run the validator and no longer call the paper \"the corpus\"; they now state plainly that not every LP/SDP witness yet carries its dual and that no count is quoted because it changes. The 58-of-58 historical figure is untouched.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "02ec71a515f1",

@@ -120,6 +120,10 @@ end TorusKnotMass
 -- A complete instance would supply these specific values + their derivation
 -- from the gauge-coupling chain (g, g', λ).
 -- Ref: [manuscript] docs/audits/2026-05-24-pr1122-retraction-and-existing-canonical-adaptation.md §3.B
-axiom torusKnotMass_conjecture : TorusKnotMass
-noncomputable instance : TorusKnotMass := torusKnotMass_conjecture
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom torusKnotMass_conjecture : TorusKnotMass
+--     noncomputable instance : TorusKnotMass := torusKnotMass_conjecture
+-- Consumers already declare `variable [TorusKnotMass]`, so the global instance
+-- was silently satisfying a hypothesis they had correctly written down.
 end QOU.BraidKnot

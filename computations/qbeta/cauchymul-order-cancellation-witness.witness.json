@@ -1,0 +1,126 @@
+{
+  "schema": "witness/v1",
+  "description": "Explicit counterexample showing the >= direction of cauchyMul_order (QOU/Mathlib/QGevreyOrder.lean residual sorry, bean qou-6e88) is FALSE without a non-cancellation hypothesis: a_n = q^(n^2) and its formal inverse b both carry positive q-Gevrey order, yet a*b is the unit sequence, of order 0.",
+  "computation": {
+    "script": "qbeta/cauchymul_order_cancellation_witness.py"
+  },
+  "witness": {
+    "scriptCommitSha": "uncommitted"
+  },
+  "setup": {
+    "q": 2,
+    "n_max": 14,
+    "a": "a_n = q^(n^2)",
+    "b": "formal inverse of a (a_0 = 1)",
+    "arithmetic": "exact integers; floats used only for the display ratio"
+  },
+  "results": {
+    "product_is_unit_sequence": true,
+    "b_has_positive_order": true,
+    "ratio_increasing": true,
+    "final_ratio_log_q_abs_b_over_n2": 0.9948979591836735,
+    "rows": [
+      {
+        "n": 1,
+        "log_q_abs_a": 1,
+        "n_squared": 1,
+        "log_q_abs_b": 1,
+        "ratio_b_over_n2": 1.0
+      },
+      {
+        "n": 2,
+        "log_q_abs_a": 4,
+        "n_squared": 4,
+        "log_q_abs_b": 3,
+        "ratio_b_over_n2": 0.75
+      },
+      {
+        "n": 3,
+        "log_q_abs_a": 9,
+        "n_squared": 9,
+        "log_q_abs_b": 8,
+        "ratio_b_over_n2": 0.8888888888888888
+      },
+      {
+        "n": 4,
+        "log_q_abs_a": 16,
+        "n_squared": 16,
+        "log_q_abs_b": 15,
+        "ratio_b_over_n2": 0.9375
+      },
+      {
+        "n": 5,
+        "log_q_abs_a": 25,
+        "n_squared": 25,
+        "log_q_abs_b": 24,
+        "ratio_b_over_n2": 0.96
+      },
+      {
+        "n": 6,
+        "log_q_abs_a": 36,
+        "n_squared": 36,
+        "log_q_abs_b": 35,
+        "ratio_b_over_n2": 0.9722222222222222
+      },
+      {
+        "n": 7,
+        "log_q_abs_a": 49,
+        "n_squared": 49,
+        "log_q_abs_b": 48,
+        "ratio_b_over_n2": 0.9795918367346939
+      },
+      {
+        "n": 8,
+        "log_q_abs_a": 64,
+        "n_squared": 64,
+        "log_q_abs_b": 63,
+        "ratio_b_over_n2": 0.984375
+      },
+      {
+        "n": 9,
+        "log_q_abs_a": 81,
+        "n_squared": 81,
+        "log_q_abs_b": 80,
+        "ratio_b_over_n2": 0.9876543209876543
+      },
+      {
+        "n": 10,
+        "log_q_abs_a": 100,
+        "n_squared": 100,
+        "log_q_abs_b": 99,
+        "ratio_b_over_n2": 0.99
+      },
+      {
+        "n": 11,
+        "log_q_abs_a": 121,
+        "n_squared": 121,
+        "log_q_abs_b": 120,
+        "ratio_b_over_n2": 0.9917355371900827
+      },
+      {
+        "n": 12,
+        "log_q_abs_a": 144,
+        "n_squared": 144,
+        "log_q_abs_b": 143,
+        "ratio_b_over_n2": 0.9930555555555556
+      },
+      {
+        "n": 13,
+        "log_q_abs_a": 169,
+        "n_squared": 169,
+        "log_q_abs_b": 168,
+        "ratio_b_over_n2": 0.9940828402366864
+      },
+      {
+        "n": 14,
+        "log_q_abs_a": 196,
+        "n_squared": 196,
+        "log_q_abs_b": 195,
+        "ratio_b_over_n2": 0.9948979591836735
+      }
+    ]
+  },
+  "verdict": "The >= direction is FALSE AS STATED. Both factors have equal positive q-Gevrey order while the product has order 0, so order(a*b) < E(s,t) for any envelope positive on s,t > 0. Normalization-robust: whatever positive order the convention assigns a, it assigns the same to b. The fix is a HYPOTHESIS (non-cancellation on leading coefficients, or a positivity / field restriction), not a cleverer proof. The <= direction is unaffected.",
+  "wired_to_production": false,
+  "is_fit": false
+}

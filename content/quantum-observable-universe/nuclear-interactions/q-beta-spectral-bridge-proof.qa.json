@@ -11,6 +11,18 @@
     "ts": "ab4b8f89b7e3"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"cycle-6/7 audit\" work-cycle number and its `docs/audits/` link are gone; the Provenance section now records only the 50-decimal-place numerical verification and its witness script.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

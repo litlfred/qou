@@ -1153,6 +1153,18 @@
         "reviewed_at": "2026-07-12T00:34:58.684Z",
         "reviewed_sha": "3e35f0fa23a250d8137a2ed3a72366e0af17e3e1"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The block no longer reads as a maintenance dashboard against roadmap tiers. \"dashboard\" is dropped from the remark title and body; \"the live per-observable accuracy dashboard ... first-class, auto-regenerated artifact\" is now a plain statement of what the witness records; the \"**Wiring.**\" paragraph loses run_pipeline.py and the auto-regeneration sweeps, keeping only the fact that the witness is recomputed when its inputs change and so does not go stale silently. The roadmap tiers L1/L2 are gone: \"the precision-goal L2 leg\" is now \"its 100x absolute-accuracy target against experiment\", and the docs/precision-goals.md pointer is replaced by a \"Scope of the target\" paragraph stating the same three things in the paper's voice — two accuracy sub-goals measuring absolute accuracy, distinct from internal compute agreement, both bounded below by the CAL-2 floor. The 100x target formula, the seven observables, the summary field names and the admission that the remainder do not meet the target all survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

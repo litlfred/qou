@@ -47,4 +47,11 @@ export default proposition({
     "brane-tower",
     "wedderburn-coupling",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body: "The open $H_{3A}$ re-weighting correction mentioned in the prose (per-generator volumes currently carry the static $H_3$-weight convention) is scoped in `docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2. That audit is a branch-local working note and is deliberately not cited from the published prose.",
+    },
+  ],
 });

@@ -1,0 +1,28 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:ew-triplet-far-commuting-minimal-scope",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-far-commuting-minimal-scope.ts",
+    "md": "content/quantum-observable-universe/knots-particles-confinement/electroweak-triplet-far-commuting-minimal-scope.md"
+  },
+  "source_hashes": {
+    "ts": "5eb8c0f21168",
+    "md": "ed9a08113138"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The bare \"C1\" is gone: the sentence now reads \"This theorem elevates the mathematical content of the selection principle to a proved statement.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  },
+  "updated_at": "2026-08-08T08:22:35.606Z"
+}

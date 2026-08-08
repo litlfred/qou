@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "conj:schwinger-measure-computational-time",
+  "kind": "conjecture",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/schwinger-measure-computational-time.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The workstream label is gone in all three places: \"the open content of R2-core\" -> \"what remains open\"; \"this closes R2-core's unit\" -> \"this fixes the unit\"; \"a derivation closes R2-core's unit; a refutation removes the lead\" -> \"a derivation would fix the unit; a refutation would rule the identification out\", which also drops the tracked-lead framing and the unresolvable \"of the same species as R2 itself\". The dated heading \"(bar-parity, 2026-07-25)\" -> \"(bar-parity)\". \"enters the corpus only formally\" -> \"enters this paper only formally\". \"recorded ... in the exploration witness\" -> \"verified exactly at orders $n = 1$ through $6$\". Audit-tier vocabulary: \"at measured tier\" -> \"as measured\", and \"promote the $u \\equiv 1$ alignment from measured to derived\" -> \"derive the $u \\equiv 1$ alignment that is at present only measured\", which keeps the admission that it is measured and not derived. \"data-blind on the current corpus\" -> \"data-blind on the data available here\". Separately, the \"keystone\" honorific on the normalizer identity is replaced by plain description. Every number, hedge and open-content statement is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

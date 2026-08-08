@@ -11,6 +11,18 @@
     "ts": "93d3df457476"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The published title no longer opens with \"Track C Step A\", and \"Atom 1\" is now named as \"the Markov-closure axiom of `rem:markov-closure-map-axiomatic`\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

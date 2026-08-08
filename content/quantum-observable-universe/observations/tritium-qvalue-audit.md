@@ -1,4 +1,4 @@
-This block audits the tritium $Q$-value derivation.
+We re-derive and cross-check the tritium $Q$-value.
 
 ## Derivation chain
 
@@ -12,7 +12,7 @@ This block audits the tritium $Q$-value derivation.
 
 **Step 4: Closed form**. Verified. $Q \approx 0.01793 \text{ MeV}$. Experimental: $0.01861$ MeV. Error: $-3.6\%$.
 
-## Audit findings
+## Findings
 
 ### Verified
 Channel sums, branching factorization, and closed-form algebra are verified. Zero continuously-tunable parameters are used.

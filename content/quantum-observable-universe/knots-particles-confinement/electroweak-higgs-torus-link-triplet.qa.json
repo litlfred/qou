@@ -8,6 +8,18 @@
     "lean": "content/quantum-observable-universe/particle-interactions/electroweak-higgs-torus-link-triplet.lean"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed, both leaks. \"The corpus map $Q = \\tfrac12\\,\\mathrm{writhe}$\" -> \"The crossing-to-charge map $Q = \\tfrac12\\,\\mathrm{writhe}$\", and the heading \"**The chain of conjectures (narrowed).**\" -> \"**The chain of conjectures.**\". The under-determination it reports is unchanged: $Q(T(2,2k)) = k > 0$ for all three carriers cannot single out the neutral slot, and both $W = \\sigma_1^4$ and the mirror $W = \\sigma_3^6$ satisfy every proved constraint.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "proof-narrative-lean-equiv": [
       {
         "result": "pass",

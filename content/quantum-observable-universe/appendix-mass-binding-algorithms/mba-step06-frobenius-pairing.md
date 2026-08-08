@@ -2,7 +2,7 @@
 *Compute the symmetric bilinear pairing
 $\langle a, b\rangle_F = \mathrm{tr}_M(a \cdot b)$ on $H_n(q)$ and
 verify the categorical self-duality $\Psi = S^2 = \mathrm{id}$
-(dualities D3 and D23 in the canonical-derivation tracker).*
+(Frobenius pairing and self-duality).*
 
 ### Input
 
@@ -49,7 +49,7 @@ from pyhecke import check_frobenius
 ok = check_frobenius(x)
 ```
 
-*The canonical audit script is
+*The canonical verification script is
 [`computations/audit_frobenius_pairing.py`](../../../computations/audit_frobenius_pairing.py);
 the Gram matrix `G` and the Markov-trace vector `TR_M` are
 exposed as constants by `pyhecke`.*

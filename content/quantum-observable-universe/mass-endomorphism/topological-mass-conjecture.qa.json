@@ -13,6 +13,18 @@
     "lean": "8968424e99b6"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `§7c` AGENTS.md tag was removed from the archimedean-specialisation paragraph, which now opens \"**Archimedean specialisation.** What follows sits on the archimedean side\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

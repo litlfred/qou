@@ -5,4 +5,4 @@ Let $\bar\cdot$ be the bar-involution sending $q \mapsto q^{-1}$. Then:
 2. (**Transpose-pair equality**) $w_\lambda(q) = w_{\lambda^T}(q)$.
 3. (**Type-B-folded normal forms**) Any Hecke normal form produced by the pair-production engine is bar-invariant: $\overline{T_w} = T_w$.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall.

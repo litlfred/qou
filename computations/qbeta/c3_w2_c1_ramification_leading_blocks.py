@@ -120,6 +120,26 @@ def main() -> None:
     # ── 3. Edge polynomial of the integral edge ──────────────────────
     # For the edge (i0,v0)->(i1,v1) the edge polynomial collects the
     # leading z-coefficients of the a_i sitting ON the edge.
+    #
+    # CORRECTED 2026-08-07 (bean qou-wgnx). This previously used the
+    # DIFFERENTIAL-equation convention `sum_i A_i T^i`. For a q-DIFFERENCE
+    # operator that is wrong: the canonical solutions are theta-normalised,
+    # `y = theta_p(z/T)^{-1} h(z)`, and iterating `theta_p(p w) = w theta_p(w)`
+    # gives
+    #                theta_p(p^i w) = p^{i(i-1)/2} w^i theta_p(w)
+    #
+    # a QUADRATIC factor in i. So `a_i(z) tau^i` contributes
+    # `A_i p^{-i(i-1)/2} T^i`, and the edge polynomial carries that twist:
+    #
+    #                sum_i A_i p^{-i(i-1)/2} T^i = 0
+    #
+    # With the twist the edge polynomial IS the indicial equation of the
+    # theta-normalised ansatz. Without it, the i=2 term was too large by p,
+    # which put the roots off by q^{1/4}: the old (untwisted) answer was
+    # `+/- sqrt(q-1)/q`, the correct one is `+/- sqrt(q-1)/q^{3/4}`.
+    # Verified against the explicit canonical solutions in
+    # `c3_w2_c1_theta_canonical.py` (residual ~1e-62), where the untwisted root
+    # provably FAILS the indicial equation (-5.6e-3, not roundoff).
     (i0, v0), (i1, v1) = slopes_r[0][1], slopes_r[0][2]
     edge_poly = 0
     for i in range(i0, i1 + 1):
@@ -127,7 +147,8 @@ def main() -> None:
         poly = sp.Poly(a_ram[i], z)
         if -poly.degree() == v_expected:
             lead = poly.LC()
-            edge_poly += lead * T**(i - i0)
+            twist = p ** (-sp.Rational(i * (i - 1), 2))
+            edge_poly += lead * twist * T**(i - i0)
     edge_poly = sp.expand(edge_poly)
 
     print("=" * 70)

@@ -18,4 +18,4 @@ $$
    - ***Regime switch.** $\mu$ jumps discretely across $q_0$; the active support gains or loses a Wedderburn block; $\sigma_F$ has a non-smooth point.*
    - ***Both.***
 
-**Archimedean specialisation.** This block invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.

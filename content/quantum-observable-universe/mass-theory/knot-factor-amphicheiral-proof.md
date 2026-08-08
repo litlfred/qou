@@ -50,8 +50,5 @@ which is a Cauchy–Schwarz bound, not an identity.  The
 Markov-amphicheirality framework above replaces both defects with
 a single, structural condition (conjugacy of $\beta_K^*$ to
 $\beta_K$ in $H_n$) that $4_1$ in fact satisfies, and gives the
-clean sum-of-positive-squares formula.  See the resolution
-discussion in
-[`docs/coordination/i1-canonical evaluation-author-queue-.md`](../../../../docs/coordination/i1-canonical evaluation-author-queue-.md)
-and the computational verification in
-the canonical formalism.
+clean sum-of-positive-squares formula.  See the computational
+verification in the canonical formalism.

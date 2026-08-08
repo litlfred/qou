@@ -36,6 +36,12 @@ class BringFigureEightDepth2Witness where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/braids-and-knots/bring-figure-eight-depth-2-witness.ts
-axiom bringFigureEightDepth2Witness_conjecture : BringFigureEightDepth2Witness
-noncomputable instance : BringFigureEightDepth2Witness := bringFigureEightDepth2Witness_conjecture
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom bringFigureEightDepth2Witness_conjecture : BringFigureEightDepth2Witness
+--     noncomputable instance : BringFigureEightDepth2Witness := bringFigureEightDepth2Witness_conjectu
+-- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
+-- every downstream `[BringFigureEightDepth2Witness]` resolved for free.  Removed, not completed — downstream
+-- results must take `[BringFigureEightDepth2Witness]` as an explicit hypothesis.
+
 end QOU.BraidKnot

@@ -66,7 +66,10 @@ class TwoFiltrationBridge where
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/two-filtration-bridge.ts
-axiom twoFiltrationBridge_conjecture : TwoFiltrationBridge
-noncomputable instance : TwoFiltrationBridge := twoFiltrationBridge_conjecture
+
+-- **No instance is provided — the honest open state** (AGENTS.md §3b-tax).
+-- Previously: `axiom twoFiltrationBridge_conjecture` plus a global instance discharging `TwoFiltrationBridge` with it.
+-- Consumers already declare `[TwoFiltrationBridge]`, so the global instance was silently
+-- satisfying a hypothesis they had correctly written down.  Removed.
 
 end QOU.BraidKnot

@@ -13,6 +13,18 @@
     "lean": "56557fc5b95f"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the published title dropped \"(forward-reference to WIP-scaffolding audit)\" and is now \"Iwahori-Hecke algebra $H_n(R, q)$: the Lean type and its defining relations\", and the body's \"**Archimedean specialisation (§7c).**\" lost its AGENTS.md tag.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

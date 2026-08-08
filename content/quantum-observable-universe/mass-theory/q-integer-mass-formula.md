@@ -10,4 +10,4 @@
 
 The parameters formerly fit to data are algebraic $q$-rationals. The volume, surface, and Coulomb terms derive from the per-nucleon Wedderburn channel product. The pairing term reflects the Chebyshev sign alternation of iterated Hecke generators, not Pauli exclusion. We predict binding energies without empirical inputs.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

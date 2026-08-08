@@ -11,6 +11,18 @@
     "ts": "57f75cce353a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"**Significance: bridge to the w3-w4 atomic-shift framework.**\" -> \"**Significance: bridge to the atomic-shift framework.**\" The branch workstream id is gone; the claim about the shared combinatorial primitive is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

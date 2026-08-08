@@ -1,6 +1,7 @@
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
+import QOU.HeckeAlgebra.QSubstrate
 import QOU.HeckeAlgebra.Hoefsmit
 import QOU.HeckeAlgebra.Wedderburn
 
@@ -113,15 +114,32 @@ axiom MarkovTrace_cyclic :
 axiom heckeStab : ∀ {n : ℕ}, HeckeElement n → HeckeElement (n + 1)
 
 /-- **Markov axiom** for the Markov trace: stabilisation scales
-    the trace by the Markov parameter `z`.  Concrete formula:
-    `tr_M(stab_n x) = z · tr_M(x)` where
-    `z = 1 / (q_0^{1/2} + q_0^{-1/2})`.  Axiomatised. -/
+    the trace by *the* Markov parameter
+    `z = 1 / (q_0^{1/2} + q_0^{-1/2})` — the single constant
+    `QSubstrate.markovParameter`, not an arbitrary real:
+
+    `tr_M(stab_n x) = z · tr_M(x)`.
+
+    **The `z` used to be a `∀`-bound variable, which made this axiom
+    collapse the Markov trace to zero.**  With `∀ (z : ℝ)` in front,
+    instantiating at `z = 0` and `z = 1` gives
+
+        markovTrace (n+1) (heckeStab x) = 0        (z := 0)
+        markovTrace (n+1) (heckeStab x) = markovTrace n x   (z := 1)
+
+    hence `markovTrace n x = 0` for *every* `n` and *every* `x`.  The
+    corpus stayed consistent — the zero map satisfies
+    `markovTrace_linear`, the only other constraint on `markovTrace` —
+    but `tr_M`, the central object of the mass chain
+    `M = ρ · m_e · |tr_M(T_w)|`, was pinned to the zero function, so
+    every downstream statement about it was vacuously about `0`.
+    The docstring already said "z := QSubstrate.markovParameter"; only
+    the binder was wrong.  Bean `qou-ck1f`. -/
 -- Ref: [jones1985] https://doi.org/10.1090/S0273-0979-1985-15304-2 (Markov axiom: tr(stab x) = z·tr(x))
 axiom MarkovTrace_markov_axiom :
-    ∀ {n : ℕ} (x : HeckeElement n) (z : ℝ),
-    -- z is the Markov parameter; for the QOU substrate
-    -- z := QSubstrate.markovParameter
-    markovTrace (n + 1) (heckeStab x) = z * markovTrace n x
+    ∀ {n : ℕ} (x : HeckeElement n),
+    markovTrace (n + 1) (heckeStab x) =
+      QSubstrate.markovParameter * markovTrace n x
 
 /-- **Categorical Markov trace on a Wedderburn decomposition**
     (axiomatised) — the categorical-level Markov trace `tr_M`
@@ -142,12 +160,26 @@ axiom markovTraceOnWedderburn :
 
     where `tr` is the ordinary matrix trace per block.  This is
     the categorical content that the Python compute layer
-    implements in `wedderburn_jones_markov.py`. -/
+    implements in `wedderburn_jones_markov.py`.
+
+    **The `q` is `QSubstrate.q_0`, not a `∀`-bound variable.**  It used
+    to be universally quantified, which is the same defect as in
+    `MarkovTrace_markov_axiom` above and equally corrosive here:
+    `markovTraceOnWedderburn x` does not mention `q`, so a `∀ q` on the
+    right makes the weighted block-sum *provably independent of `q`*
+    (`wenzlBridge_q_independent_defect` below, which no longer
+    typechecks against this corrected statement).  The `q`-dependence of
+    `y_λ(q)` is the entire content of the Wenzl bridge, so the old form
+    asserted the negation of what it was for.  `WedderburnDecomposition`
+    is defined as the decomposition of `H_n(q_0)` (see
+    `Wedderburn.lean`), so `q_0` is the only `q` the statement can
+    honestly mean.  Bean `qou-ck1f`. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Wenzl bridge: tr_M = Σ_λ y_λ·χ^λ)
 axiom wenzlBridge :
-    ∀ {n : ℕ} (q : ℝ) (x : WedderburnDecomposition n),
+    ∀ {n : ℕ} (x : WedderburnDecomposition n),
     markovTraceOnWedderburn x =
-      ∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q * (x lam).trace
+      ∑ lam ∈ partitions_as_finset n,
+        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
 
 /-- **Trace of an additive sum** distributes.
 
@@ -184,5 +216,33 @@ theorem markovTrace_zero : ∀ (n : ℕ),
   -- 0 = 0 • x for any x, and markovTrace_smul gives markovTrace (0 • x) = 0 * markovTrace x = 0
   have := markovTrace_smul (n := n) (0 : ℝ) (0 : HeckeElement n)
   simpa using this
+
+/-! ### Regression witnesses for the two binder fixes
+
+Both theorems below are **vacuous** against the pre-fix axioms — under
+`∀ (z : ℝ)`, `markovTrace n x = 0` for every `x`, so the hypothesis of
+`markovTrace_stab_pos` is unsatisfiable and its conclusion is `0 < 0`.
+They therefore fail loudly if either binder is ever re-universalised. -/
+
+/-- The Markov parameter `z = 1 / (q_0^{1/2} + q_0^{-1/2})` is strictly
+    positive: `q_0 > 1 > 0`, so both `rpow` terms are positive. -/
+theorem markovParameter_pos : 0 < QSubstrate.markovParameter := by
+  unfold QSubstrate.markovParameter
+  have h0 : (0 : ℝ) < QSubstrate.q_0 :=
+    lt_trans one_pos QSubstrate.q_0_gt_one
+  positivity
+
+/-- **Stabilisation preserves the sign of the Markov trace.**  Scaling
+    by the strictly positive Markov parameter cannot flip or kill a
+    positive trace.
+
+    This is the content the `∀ (z : ℝ)` binder destroyed: with `z`
+    universally quantified the trace was identically zero, so no `x`
+    satisfied the hypothesis and the statement said nothing. -/
+theorem markovTrace_stab_pos {n : ℕ} (x : HeckeElement n)
+    (hx : 0 < markovTrace n x) :
+    0 < markovTrace (n + 1) (heckeStab x) := by
+  rw [MarkovTrace_markov_axiom x]
+  exact mul_pos markovParameter_pos hx
 
 end QOU.HeckeAlgebra.MarkovTrace

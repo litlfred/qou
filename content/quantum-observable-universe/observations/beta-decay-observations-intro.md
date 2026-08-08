@@ -2,7 +2,7 @@ The $\beta$-decay $Q$-value is the imaginary part of the complex volume $\mathfr
 
 We fix the observable. We compare $Q$-value predictions versus experiment, determine the channel decomposition, and compare predicted to measured lifetimes across selected beta emitters. We sort emitters by their regime in the $q$-landscape. We propose a conjectural structure linking the electroweak vacuum scale to the brane tower through the $S_5$ action on $H_n(q)$, the brane-tower depth, and the leading-order count $N_v = 120 \cdot q_0^{90}$.
 
-We develop calculations using shell structure in half-lives (${}^3\mathrm{H}$ and ${}^{14}\mathrm{C}$), precision probes of local $q$-variation, and the interpretation of $[A\!-\!1]_q! > [2]_q^{A-1}$. We audit the tritium $Q$-value derivation. We explain the half-life difference between $A = 14$ isobars by comparing the ${}^{14}\mathrm{N}$ maximal braid shortcut to the ${}^{14}\mathrm{C}$ broken alternation.
+We develop calculations using shell structure in half-lives (${}^3\mathrm{H}$ and ${}^{14}\mathrm{C}$), precision probes of local $q$-variation, and the interpretation of $[A\!-\!1]_q! > [2]_q^{A-1}$. We re-derive and cross-check the tritium $Q$-value. We explain the half-life difference between $A = 14$ isobars by comparing the ${}^{14}\mathrm{N}$ maximal braid shortcut to the ${}^{14}\mathrm{C}$ broken alternation.
 
 We identify the half-life ratio with a ratio of Markov-trace volumes. We capture the LR-fusion rigidity that pins double-magic isotopes. We record the homological shortcut that analytically bypasses the $k \geq 12$ matrix-evaluation barrier. We derive magic numbers directly from the per-partition nuclear character at $q_0$.
 

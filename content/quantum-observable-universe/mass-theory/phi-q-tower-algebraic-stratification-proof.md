@@ -45,7 +45,7 @@ $\Phi_q(|\hat V_S|)$ τ-realising to $\rho_q \cdot \mathrm{Vol}_{\mathrm{hyp}}(S
 That conjecture **interprets** the algebraic stratification on the
 3-manifold side; the algebraic stratification itself is unconditional.
 
-In the language of the audit's strict-Archimedean-wall directive:
+In terms of the strict Archimedean wall:
 
 * The **statement** of the mass formula uses the algebraic
   stratification (this proposition); 3-manifold language does not

@@ -11,6 +11,18 @@
     "ts": "2a8433c70b81"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"Heisenberg commutator — section lead\" title is gone; the sibling .ts now carries no title at all.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "q-usage-regime-detected": [
       {
         "field_hash": {

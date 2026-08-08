@@ -7,9 +7,9 @@ The $\mathfrak{Q}_\beta$ precision ladder ([`prop:q-beta-categorical-precision-l
 | $c_5$ | $\approx -395.4$ | $-J_{\mathrm{Borromean}} = +8$ (50$\times$ off in scale and sign) |
 | $c_6$ | $\approx -45{,}485$ | $J_{\mathrm{Hopf}} \cdot J_{\mathrm{Borromean}} = 16$ (3000$\times$ off) |
 
-## Contents of this block
+## Contents
 
-This block provides **infrastructure, not closure**. The Lean module `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
+What follows is **infrastructure, not closure**. The Lean module `QOU.BraidKnot.multi_link_jones_q1_extension` exports:
 
 1. **Three new `Link` constructors** (extending the `Link` inductive in [`rem:braid-link-types`](#rem:braid-link-types)): `trefoil`, `borromean`, `doubleHopf`.
 2. **Three new `jonesAtOne` cases**, each proved by `rfl`:

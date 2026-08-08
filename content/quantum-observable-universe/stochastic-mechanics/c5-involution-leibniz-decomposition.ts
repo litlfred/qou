@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:c5-involution-leibniz-decomposition",
   lean: {
-    ref: "qou:QOU.BraidKnot.C5InvolutionLeibnizDecomposition",
+    ref: "qou:QOU.BraidKnot.c5_decomposition_via_quantum_two",
     validation: "not_checked",
   },
   title:

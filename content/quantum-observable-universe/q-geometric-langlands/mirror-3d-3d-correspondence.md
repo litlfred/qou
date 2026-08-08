@@ -19,34 +19,30 @@ This is **mirror symmetry** in the sense that the framework's mass
 formula and a quantum-field-theory partition function on a curved
 spacetime are two computations of the same hyperbolic invariant.
 
-## Diagnostics
+## Structural position
 
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
-
-- **GB filtration**: N/A (the duality is at the partition-function
-  / observable level, not at a specific Hecke-element level).
-- **Jet order**: all-orders (partition function has full $q$ /
-  perturbative expansion; the $h^4$ coefficient corresponds to a
-  specific perturbative order in the gauge theory).
-- **Bar-symmetry**: depends on the gauge theory side; for
+- **GB filtration.** None: the duality is at the partition-function
+  / observable level, not at a specific Hecke-element level.
+- **Jet order.** All orders: the partition function has a full $q$ /
+  perturbative expansion, and the $h^4$ coefficient corresponds to a
+  specific perturbative order in the gauge theory.
+- **Bar-symmetry.** Depends on the gauge theory side; for
   $\mathcal{N}{=}2$ theories with a real-mass parameter, the
   bar-symmetry corresponds to the parity-reversal of the squashed
   3-sphere $S^3_b \to S^3_{1/b}$.
 
-## Open R&D
+## Open questions
 
 1. Identify the 3d $\mathcal{N}{=}2$ theory $T[\mathcal{B}_3]$
    explicitly (Dimofte–Gaiotto–Gukov 2014 provides the construction).
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
-3. D18 to closed is a very long horizon — the QFT-side
-   formalisation it would require has not yet been developed.
+3. Closing the conjecture remains distant: the QFT-side
+   formalisation it would require has not been developed.
 
 ## Cross-references
 
-- [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D18
-  + §2 Cluster C (Pentagon validation)
-- D16 [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
+- [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
 - [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
   — Volume Conjecture is the leading-order 3d–3d statement

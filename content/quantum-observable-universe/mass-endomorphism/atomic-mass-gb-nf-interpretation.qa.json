@@ -11,6 +11,18 @@
     "ts": "34a42a94e028"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/-w3-habiro-unblocked.md` audit link was dropped from the Habiro-denominator paragraph, which now attributes the structure of $D(u)$ to the factorisation itself.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

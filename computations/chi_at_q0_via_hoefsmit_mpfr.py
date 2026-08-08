@@ -172,6 +172,18 @@ def build_chi_cache_at_q0(
                 h_f64 = float(q - mp.mpf(1) / q)
                 tol = 1e-12
                 word_signed: list[tuple[int, int]] = []
+                # `sign == 0` carries a SHIFT, not just a class: a crossing
+                # is σ_g + d·I and the native path applies σ_g − shift·I. The
+                # symmetric average is shift = h/2, but this pipeline also
+                # emits the colour-weighted p–n crossing d = −h·(1/2 − δ/4)
+                # (installed above from `_avg_color_delta`), and an atomic
+                # braid contains BOTH — p–p and n–n crossings are
+                # colour-symmetric, p–n ones are not. ⁴He at H_12 carries the
+                # two together, which is why a single word-level shift was not
+                # enough and the first attempt still fell back. So the shift is
+                # per crossing: `avg_shifts[i]` for word position i, empty
+                # string meaning "h/2 here".
+                avg_shifts: list[str] = []
                 for c_, d_, g_ in word:
                     if abs(float(c_) - 1.0) > tol:
                         raise ValueError(
@@ -179,13 +191,17 @@ def build_chi_cache_at_q0(
                     d_val = float(d_)
                     if abs(d_val) < tol:
                         sgn = 1
+                        avg_shifts.append("")
                     elif abs(d_val + h_f64) < tol:
                         sgn = -1
-                    elif abs(d_val + h_f64 / 2) < tol:
-                        sgn = 0
+                        avg_shifts.append("")
                     else:
-                        raise ValueError(
-                            f"unrecognised d={d_} (expected 0, -h, or -h/2)")
+                        sgn = 0
+                        # Serialise from the mpf, never the f64: the shift
+                        # carries δ and must reach Rust at working precision,
+                        # or χ is capped near 1e-16 however high `dps` is set.
+                        avg_shifts.append(
+                            mp.nstr(-mp.mpf(d_), dps + 10, strip_zeros=False))
                     g1 = int(g_) + 1
                     # Pre-FFI validation — Rust panics on out-of-range gen,
                     # and pyo3 PanicException is BaseException (not catchable
@@ -195,7 +211,14 @@ def build_chi_cache_at_q0(
                             f"gen σ_{g1} out of range 1..{n-1} for H_{n}")
                     word_signed.append((sgn, g1))
                 _t0 = time.time()
-                rust_out = _rust_chi_all(n, word_signed, q_str, dps)
+                # None => the native default h/2, bit-identical to the
+                # previous four-argument call.
+                # All-empty => the native default h/2 everywhere, which is
+                # bit-identical to the previous four-argument call.
+                rust_out = _rust_chi_all(
+                    n, word_signed, q_str, dps,
+                    None if not any(avg_shifts) else avg_shifts,
+                )
                 rust_chi = {tuple(lam): mp.mpf(chi_s)
                             for lam, chi_s in rust_out}
                 # Pre-import partition_dimension once for the per-partition

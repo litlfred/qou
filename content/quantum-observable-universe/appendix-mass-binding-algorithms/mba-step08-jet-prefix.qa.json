@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The agent-configuration citation is gone: \"default per AGENTS.md \\\"$c_k$ truncation order\\\"\" now reads \"default $N = \\lceil \\log_{10}(1/\\varepsilon) / 2.07 \\rceil - 1$\", attributing the default to the mathematics. \"The $c_k$ truncation sidecar\" names one of the four sidecar algorithms listed in [`alg:mba-chain-map`].",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "d9d16de4302e",

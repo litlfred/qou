@@ -11,6 +11,18 @@
     "ts": "cf24a00c0c82"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "\"in this corpus\" replaced — the citations now read \"cited here, not machine-checked\", which says the same thing about the mathematics without naming a repository.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

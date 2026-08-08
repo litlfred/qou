@@ -1,10 +1,13 @@
 -- Ref: [manuscript] Ch. 10, §electron-shell-braid-capacity
 -- Electron shell as braid bonding capacity
 
+namespace QOU.Molecular
+
 /-- An **electron shell** at level n has:
     - Maximum capacity: 2n² electrons
     - Bonding capacity: number of open sites available for covalent bonds
     - Valence: determines which electrons participate in bonding vs lone pairs -/
+
 structure ElectronShell where
   /-- Shell level (1, 2, 3, ...). -/
   level : Nat
@@ -23,3 +26,5 @@ theorem shell2_capacity : 2 * 2 * 2 = 8 := by decide
 
 /-- Shell 3 (M shell) holds at most 18 electrons. -/
 theorem shell3_capacity : 2 * 3 * 3 = 18 := by decide
+
+end QOU.Molecular

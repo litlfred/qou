@@ -13,6 +13,18 @@
     "lean": "c5c8ac147b43"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The AGENTS.md section tag is gone from the body; the Gauss-sum paragraph now reads \"We have established that structural scaffold\" with no policy-section reference.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

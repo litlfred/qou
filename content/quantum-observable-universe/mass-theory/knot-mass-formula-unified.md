@@ -20,4 +20,4 @@ The descended piece evaluates the basic topological trace. The brane tower resol
 
 The archimedean specialisation $\Phi_q(|\hat V_i|)$ breaks the exact Markov invariance of the algebraic trace. Replacing it with the rigorous Habiro-coefficient cyclotomic sum eliminates the isospin pathology at $q_0$.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real-analytic constructs. Any generic categorical identities remain valid over an abstract coefficient ring.

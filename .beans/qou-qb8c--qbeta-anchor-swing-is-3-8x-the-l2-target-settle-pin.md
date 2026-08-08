@@ -1,7 +1,7 @@
 ---
 # qou-qb8c
 title: 'Q_beta anchor swing is 3.8x the L2 target -- settle the pin before any L2 claim'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T08:10:00Z
@@ -38,3 +38,27 @@ bulk-regenerated (tracked under bean tnjb). Scope here is narrow:
 3. Record the pin explicitly in the L2 dashboard's Q_beta row source string.
 
 Analysis: docs/audits/2026-08-08-qbeta-l2-assessment-post-week-landings.md §3.
+
+
+---
+
+# DONE (2026-08-08) — pin-discipline section added to docs/precision-goals.md
+
+New STRICT section "Pin discipline — every L2 claim must state its anchor",
+placed immediately before "Where measured" so it sits where an L2 claim is made.
+
+Re-verified at 60 dps before writing:
+    q rel diff (proton-muon)/muon = -11.5371 ppb
+    dlnQ_beta/dlnq                =  -2.5968
+    anchor swing on Q_beta        =  29.9596 ppb
+    L2 target for Q_beta          =   7.797 ppb   -> 3.842x
+    swing as fraction of the 1248 ppb residual = 2.4%
+
+Rule recorded: any "Q_beta meets L2" claim -- witness, dashboard, audit, PR or
+chat -- MUST state which q_0 pin it was evaluated at; a claim holding at only one
+pin must say so. An unqualified "meets L2" is not interpretable when the two
+documented pins differ by 3.84 targets.
+
+Both readings recorded because they cut opposite ways: 2.4% of the residual means
+re-pinning is NOT a closing lever; 3.84x the target means deriving c_3 is
+necessary but NOT sufficient.

@@ -8,7 +8,7 @@ $$
 
 The $\mathfrak{Q}_\beta$ production rule extracts the Taylor coefficients $c_k$ from $\mathrm{tr}_M(T_\beta)(q)$. The constraint $\mathrm{tr}_M(T_\beta) = S = \mathfrak{Q}_\beta / E_0$ is satisfied identically under both the Euclidean $L^2$ coordinate norm and the canonical Markov–Frobenius norm. We have $\mathrm{tr}_M(T_\beta)(q) \equiv S(q)$. The coefficients $c_k$ are invariant:
 $$
-c_k^{\,L2} = c_k^{\,Markov} = c_k\!\!\left(S(q)\right)
+c_k^{\,L^2} = c_k^{\,\mathrm{Markov}} = c_k\!\!\left(S(q)\right)
 \quad\text{for all } k.
 $$
 The observables are extracted from the constraint, not from the operator expansion. The norms only differ in selecting the primal-feasible operator $T_\beta \in H_n(R, q)$.

@@ -1407,6 +1407,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Repaired, not merely trimmed. The three sentences an earlier link removal had left dangling are reconstructed from the surrounding context: \"Sibling makes this explicit for torus knots: $Q_m(\\eta) = ...$\" -> \"For torus knots this is explicit: $Q_m(\\eta) = ...$\"; \"**(a) is open** — accessible via the explicit Q_m P_skew content from .\" -> \"... content given above.\"; \"(sibling  documents this for torus knots)\" -> \"(explicit for torus knots, as above)\". All three now resolve to the $Q_m(\\eta)$ formula stated in Mechanism 1 of this same block. No claim, table row, hedge or open status changed.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

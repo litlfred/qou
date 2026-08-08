@@ -13,6 +13,18 @@
     "lean": "e598742379dc"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The PR #1089 / #1081 citations and \"Task 3\", the AGENTS.md §3b-cond promotion rule, the `docs/audits/` cross-references and the cheat-sheet link are all gone; references now point to blocks, Lean files and computation scripts.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

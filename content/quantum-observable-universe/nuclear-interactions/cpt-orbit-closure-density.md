@@ -26,4 +26,4 @@ For the blocks of $H_3(q)$, the Boolean flag is recovered as the orbit-closure c
 
 The Type-B Cartan datum is obtained by folding. The KLR canonical basis is bar-invariant. The bar involution matches the chirality-reversal. Thus, $\sigma$ is the intrinsic fold.
 
-**Archimedean specialisation (§7c).** This block invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows invokes real- or complex-analytic constructs. Categorical identities remain valid over an abstract coefficient ring; their archimedean realisation is specialised here.

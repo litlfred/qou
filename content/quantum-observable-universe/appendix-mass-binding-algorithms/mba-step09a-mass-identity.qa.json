@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. All five owner-governance markers are gone. The two \"(owner ruling 2026-06-24)\" tags on the mass identity and on canonical_mass.py become, respectively, \"the form adopted here as canonical\" and \"the single entry point\"; \"(owner ruling 2026-07-03, which stripped an earlier fitted Habiro 4-loop dressing from the pin)\" becomes a substantive parenthetical stating that an earlier pin carried such a dressing and this one does not; the \"Deprecation (owner ruling ..., guardrail ...)\" heading with its docs/ link becomes \"Superseded forms\"; and both \"owner-gated\" reconciles become \"is unresolved\". \"neither c_4 = 46 nor c_4 = 4143/90 has a derivation trail in the corpus\" is now \"is derived anywhere in this paper\". \"Dashboard roll-up\" is now a plain statement that residuals are collected in the witness. Every number survives: the 242 ppb overshoot, the 1.4 ppb muon reconcile, both c_4 values, and the fit-tier (not derived) label on the dressing. Note: R_s5bb keeps its subscript, which encodes a bean id, because it is tied to the producer field name habiro_ratio_s5bb.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "dbec153a9b94",

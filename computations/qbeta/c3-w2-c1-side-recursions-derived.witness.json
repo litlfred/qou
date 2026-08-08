@@ -1,0 +1,44 @@
+{
+  "schema": "witness/v1",
+  "engine": "sympy",
+  "scriptFile": "c3_w2_c1_side_recursions_derived.py",
+  "scriptSha256": "d73fc97c6895f31c2920ca3c58ef402fb061247a0914118b56f9ba4f2a74ebc3",
+  "commitSha": "6d89d444a26eaeba532a3e4a113d833e0481d7c7",
+  "description": "Bean qou-slvl item 2. Derives BOTH connection-matrix recursions from the C1 operator L = (p^4z^2-1)tau^2 - (p^2-1)tau - (p^2-1), removing the last defined-to-match inputs in QOU/QBeta/C1SeriesConvergence.lean. Neither side is a bare power series: the 0-side carries e_t = theta_p(z)/theta_p(z/t) with tau e_t = t e_t, the inf-side carries 1/theta_p(z/T) with tau acting by T/z \u2014 both from the theta functional equation \u2014 and after dividing them out the brackets are polynomial. Checks that the coefficient of each power is exactly the four-term collection Lean calls zeroCoeffAt / infCoeffAt, and that solving for the top coefficient returns gc() and hc() of c3_w2_c1_pole_divisor.py verbatim.",
+  "computation": {
+    "operator": "(p^4 z^2 - 1) tau^2 - (p^2-1) tau - (p^2-1), tau F(z) = F(pz)",
+    "zeroSideAnsatz": "y_0 = (theta_p(z)/theta_p(z/t)) * sum_k g_k z^k",
+    "infSideAnsatz": "y_inf = (sum_k h_k z^-k) / theta_p(z/T), worked in u = 1/z",
+    "truncation": 10
+  },
+  "results": {
+    "zeroSideCoeffOK": true,
+    "zeroSideRecursionOK": true,
+    "infSideCoeffOK": true,
+    "infSideRecursionOK": true
+  },
+  "checks": [
+    {
+      "name": "zero_side_coefficient_is_the_four_term_collection",
+      "detail": "coeff(z^(k+2)) of L y_0 / e_t equals zeroCoeffAt for k=0..9, symbolic g_k",
+      "passed": true
+    },
+    {
+      "name": "zero_side_recursion_matches_script_gc",
+      "detail": "solving coeff(z^k)=0 for g_k returns gc()'s recursion (q = p^2) for k=2..9",
+      "passed": true
+    },
+    {
+      "name": "inf_side_coefficient_is_the_four_term_collection",
+      "detail": "coeff(u^(k+2)), u = 1/z, of the inf-side bracket equals infCoeffAt for k=0..9",
+      "passed": true
+    },
+    {
+      "name": "inf_side_recursion_matches_script_hc",
+      "detail": "solving coeff(u^k)=0 for h_k returns hc()'s recursion for k=2..9",
+      "passed": true
+    }
+  ],
+  "verdict": "Both recursions are consequences of the operator, not stipulations. The coefficient collections match Lean's zeroCoeffAt / infCoeffAt exactly, and solving them returns the pole-divisor script's gc() and hc() verbatim. With Lean's zeroCoeffAt_eq_zero_iff and infCoeffAt_eq_zero_iff, summable_zeroSideCoeff and summable_infSideCoeff are now statements about the actual Y_0 and Y_inf series. Still NOT established: that these series, times their theta prefactors, are the canonical solutions at 0 and infinity \u2014 that is qou-c1ln row 4. Nothing wired to production.",
+  "durationMs": 3145
+}

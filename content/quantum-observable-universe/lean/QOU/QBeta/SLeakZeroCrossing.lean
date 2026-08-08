@@ -8,11 +8,33 @@ an anchor-*invariant* datum; this file adds the stronger constraint forced by th
 
 ## The object (notation-collision guard, AGENTS.md §"attributes do not transfer")
 
-`S_leak(q₀) := c₃(q₀) + Vol(4₁)` — the **bar-odd residual** of the Q_β `c₃`
-coefficient after removing the bar-even amphichiral `−Vol(4₁)` (`4₁`) face. This is
-`O(0.01)` and **sign-flips** across anchors. It is **distinct** from
+`S_leak(q₀) := c₃(q₀) + Vol(4₁)` — a **definition**, not a derived decomposition
+(AGENTS.md §"Defined residual ≠ derived decomposition", 2026-08-08). Reading it as
+"the bar-odd residual after removing the bar-even amphichiral `−Vol(4₁)` face"
+asserts `c₃^even = −Vol(4₁)` exactly, which is **not** established:
+
+* the bar-split is **not empirically accessible** here — `c₃^even(q) =
+  (c₃(q) + c₃(1/q))/2` needs `c₃` at `q ≈ 0.901`, and both anchors sit at
+  `q ≈ 1.10998`;
+* the sign flip is **offset-generic** — it holds for any constant in a window of
+  width `0.0491` (`Vol(4₁)`, `2+1/36`, `63/31`, … all flip), so it is not evidence
+  about `Vol(4₁)` (`computations/qbeta/sleak_offset_genericity_check.py`);
+* what **is** established is *motivation, not identity*: the Φ_b state-integral
+  saddle gives `Im 𝔙 = 0` at the real substrate meridian and a volume deficit
+  `0.0094 ≈ |S_leak(muon)| = 0.00968` — fit-free and anchor-blind, but a **~2.9%
+  scale agreement**, with the exact normalisation open and
+  `conj:im-q-physical-role` still a conjecture (PR #3654; KC21).
+
+The theorems below are unaffected: each is stated for a **generic** function with
+the anchor signs as **hypotheses**, so none depends on the identification.
+
+`S_leak` is `O(0.01)` and **sign-flips** across anchors. It is **distinct** from
 `QOU.QBeta.SRigidity.S = Q_β/E₀`, which is `O(900)` and does **not** sign-flip
-(`S_p/S_μ ≈ 1.024 > 0`). Do not conflate the two symbols.
+(`S_p/S_μ ≈ 1.024 > 0`). Do not conflate the two symbols. Note also that `S`
+itself is *defined* as `a₁/κ_(2,1)` with `a₁ = −c₃`, so it too is a
+reparametrisation of `c₃` and carries no independent information about the split.
+
+-- Ref: [manuscript] docs/audits/2026-08-08-c3-even-vol41-contradicts-canonical-split.md
 
 Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_probe.py`;
 `Vol(4₁) = 2.02988321`):

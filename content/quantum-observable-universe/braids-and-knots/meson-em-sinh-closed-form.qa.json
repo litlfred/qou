@@ -13,6 +13,18 @@
     "lean": "104caf098b6b"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The roadmap tier is gone from the withdrawn-caveat paragraph: \"concluded the ratio's L2-100x pass is $\\alpha_{\\mathrm{em}}$-anchored rather than parameter-free\" -> \"concluded the ratio's agreement is ...\", and the closing \"The pass is not $\\alpha_{\\mathrm{em}}$-anchored\" -> \"The agreement is not $\\alpha_{\\mathrm{em}}$-anchored\". The withdrawal, the 47 ppb / 363 ppb figures, the order-sweep finding and the remaining truncation caveat are all unchanged. Note: the \"100x\" in \"L2-100x\" was the roadmap tier's own threshold, not a result of this block, and it goes with the tier name; the block's own precision figures are untouched.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

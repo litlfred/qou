@@ -26,6 +26,6 @@ hyperbolic winding pair $q^{\pm 2k}$ of the $1$-dimensional channels. The
 level-lattice and vortex readings — winding pair $(k,\ k \bmod 3)$ for the
 three-strand (Borromean/nucleon) carrier, and the alternating-word
 deformation of the same rotation — are developed in the channel-
-interpolation audit and its witnesses
+interpolation cross-check and its witnesses
 (`toroidal-level-selection-three-strand-probe`,
 `alternating-tower-borromean-winding-probe`).

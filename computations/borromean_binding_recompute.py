@@ -85,7 +85,13 @@ def borromean_binding(Z: int, N: int, dps: int = 50) -> dict:
     """Canonical single-pipeline binding (MeV) for nucleus (Z, N) — the
     convergent per-knot Borromean brane tower. Reusable production entry point
     (consumed by the dashboard's `m_can`). Returns B_can0 (level-0 E₀·Δtr) and
-    B_tower (+ n=0 Li₂^q pair correction). Pure Markov × m_e; zero AME/CODATA."""
+    B_tower (+ n=0 Li₂^q pair correction). Pure Markov × m_e; zero AME/CODATA.
+
+    TRACE CONVENTION: **convention D** (SU(2)/Temperley-Lieb, Jones weights,
+    y_(1^3) = 0; z = q^3/(q^2+1)); tau(beta_Bor) = 0.998562163836787266 at the
+    proton pin. NOT convention C (the full-Hecke Ocneanu z = 1/(q^1/2+q^-1/2)
+    trace used by `binding_canonical.py`), which differs by 195.8 ppm on
+    beta_Bor. Registry: docs/coordination/trace-convention-registry.md."""
     q, qi, h, E0, z, tau = _params(dps)
     z2 = z * z; f_pp = z; f_pn = z; f_nn = z - h
     A = Z + N

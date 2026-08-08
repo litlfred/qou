@@ -21,5 +21,5 @@ For every $a > 0$:
    $\bigl(\exists q < a,\, q > 0 \land \neg P(q)\bigr) \iff
     \bigl(\exists q > a^{-1},\, \neg P(q)\bigr)$.
 
-**Archimedean specialisation (§7c).**
-This block sits on the archimedean side of the substrate wall. It invokes analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at $q_0$. Categorical or $q$-deformation identities remain valid over an abstract coefficient ring. Only their archimedean realisation requires specialisation here.
+**Archimedean specialisation.**
+What follows sits on the archimedean side of the substrate wall. It invokes analytic constructs: real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at $q_0$. Categorical or $q$-deformation identities remain valid over an abstract coefficient ring. Only their archimedean realisation requires specialisation here.

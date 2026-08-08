@@ -13,6 +13,18 @@
     "lean": "77c0d28b93c5"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"The block therefore sits on the archimedean side of the substrate wall\" -> \"What follows therefore sits on the archimedean side of the substrate wall\", matching the sibling blocks carrying the same standing paragraph. The authoring pipeline's unit no longer appears.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

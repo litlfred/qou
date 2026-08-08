@@ -11,7 +11,19 @@
     "ts": "28799677c020"
   },
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The AGENTS.md section id is gone: the LP strong-duality row no longer carries \"(**§3b-cond**)\", so the index no longer inherits an agent-instruction section number from the definition title.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.098140Z"
 }

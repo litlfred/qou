@@ -1280,6 +1280,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Pass. The flagged \"(cf. 1ppQ-Q$_\\beta$ ledger)\" had already been removed; the sentence now reads \"is conjectured to be expressible in the $z$-basis via the open f-map\". Re-read in full; no ledger, branch, tracker or workplan reference remains, and both \"Claims not established here\" items are intact.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

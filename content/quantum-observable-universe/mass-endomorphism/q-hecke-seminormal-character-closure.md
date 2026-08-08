@@ -12,12 +12,12 @@ This partition-sum form equals the canonical Markov-axiom reducer $\mathrm{tr}_M
 
 The partition-sum form rewrites the Markov trace via the Wedderburn–Artin decomposition $H_n(q) \cong \bigoplus_\lambda M_{f^\lambda}(\mathbb{C})$. The result `prop:hecke-branching-trace-decomposition` relies on this decomposition. Downstream consumers (such as binding-energy analysis via $\rho_K$ refinement and force-carrier saturation identities) require a partition-by-partition decomposition of $\mathrm{tr}_M$ that the recursive reducer does not directly expose.
 
-The recursive Markov-axiom ascent and partition-sum Wedderburn formulas must agree. The agreement was previously broken at $q \ne 1$ due to a character convention error. `schur_weyl_symbolic.specht_character_atomic` incorrectly returned the classical Murnaghan–Nakayama character $\chi^\lambda_{\mathrm{MN}}(\pi(\beta))$ at $q = 1$ instead of the $q$-Hecke character $\chi^\lambda_q(\beta)$ (see audit log [`docs/audits/-p3-h-3a-divergence.md`](../../../docs/audits/-p3-h-3a-divergence.md)).
+The recursive Markov-axiom ascent and partition-sum Wedderburn formulas must agree. The agreement was previously broken at $q \ne 1$ due to a character convention error. `schur_weyl_symbolic.specht_character_atomic` incorrectly returned the classical Murnaghan–Nakayama character $\chi^\lambda_{\mathrm{MN}}(\pi(\beta))$ at $q = 1$ instead of the $q$-Hecke character $\chi^\lambda_q(\beta)$.
 
-Both underlying bugs are now fixed:
+Two layers have to be got right, and each has a natural wrong answer:
 
-1. **Weight layer:** `schur_weyl_symbolic.schur_weyl_weight` incorrectly used the two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$, which vanishes for partitions with three or more rows. It now uses `y_\lambda(q)` via Wenzl Schur principal specialization (`prop:hecke-branching-trace-decomposition`).
-2. **Character layer:** `specht_character_atomic` previously returned the $q = 1$ limit of the Hecke character. It now returns the $q$-Hecke character $\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)$ via Hoefsmit seminormal matrices at $q_0$ ([`docs/audits/-q-hecke-character-gap-closure.md`](../../../docs/audits/-q-hecke-character-gap-closure.md)).
+1. **Weight layer.** The two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$ vanishes for partitions with three or more rows and so cannot serve as the weight. The correct weight is $y_\lambda(q)$, the Wenzl Schur principal specialisation (`prop:hecke-branching-trace-decomposition`).
+2. **Character layer.** The $q = 1$ limit of the Hecke character is not the character required here; the trace must be taken of the $q$-Hecke character $\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)$, via Hoefsmit seminormal matrices at $q_0$.
 
 ## Numerical verification
 
@@ -31,4 +31,4 @@ Both underlying bugs are now fixed:
 
 ## Production paths
 
-The canonical values are rigorously evaluated via formal trace definitions. All three paths agree at the precision floor of their respective layers. The cross-check witness gates this on every continuous integration run.
+The canonical values are rigorously evaluated via formal trace definitions. All three paths agree at the precision floor of their respective layers.

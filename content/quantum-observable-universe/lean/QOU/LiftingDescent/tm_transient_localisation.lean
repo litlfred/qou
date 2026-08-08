@@ -51,43 +51,49 @@ so `ℝ` is the honest carrier per §7c).
 
 namespace QOU.LiftingDescent
 
-/-- Number of blow-up points `N` (centres `p₁, …, p_N`). -/
-def transientBlowupCount : ℕ := 0
-
-/-- The norm of the multiplicative integral of the transient component
-    `α − τ̂ₙ(α)` over the whole surface `Σ`:
-    `‖MI∫_Σ (α − τ̂ₙ(α))‖`. -/
-def transientMItotal : ℝ := 0
-
-/-- The norm of the multiplicative integral of the transient component
-    over the `i`-th disc `Dᵢ` (centred at the blow-up point `pᵢ`):
-    `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`. -/
-def transientMIdisc (i : ℕ) : ℝ := transientMIdiv i
+/-! The four primitives below are `opaque` deliberately.  An earlier revision
+*defined* them (`transientBlowupCount := 0`, `transientMItotal := 0`,
+`transientMIdisc i := transientMIdiv i`), which collapsed both "open inputs"
+into tautologies: the additivity statement became `0 = 0` over an empty range,
+and the per-disc evaluation became `rfl`.  Both then read as proved while
+asserting nothing.  Opacity is what keeps them falsifiable.  Bean `qou-t4cv`. -/
 
 /-- The norm of the multiplicative integral over the `i`-th exceptional
     divisor `Eᵢ`: `‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`. -/
 opaque transientMIdiv : ℕ → ℝ
 
+/-- Number of blow-up points `N` (centres `p₁, …, p_N`). -/
+opaque transientBlowupCount : ℕ
+
+/-- The norm of the multiplicative integral of the transient component
+    `α − τ̂ₙ(α)` over the whole surface `Σ`:
+    `‖MI∫_Σ (α − τ̂ₙ(α))‖`. -/
+opaque transientMItotal : ℝ
+
+/-- The norm of the multiplicative integral of the transient component
+    over the `i`-th disc `Dᵢ` (centred at the blow-up point `pᵢ`):
+    `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`. -/
+opaque transientMIdisc : ℕ → ℝ
+
 /-- **Open input 1 — disjoint-support additivity.**  The transient
     component is supported in the disjoint discs `Dᵢ`, so the MI-norm
     over `Σ` decomposes as the sum of the per-disc MI-norms.  Needs
     the multiplicative-integral / non-abelian-Stokes API (not in
-    Mathlib); body is `sorry`. -/
+    Mathlib). -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 theorem transient_disjoint_disc_additivity :
     transientMItotal
-      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i := by
-  simp [transientMItotal, transientBlowupCount]
+      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i :=
+  sorry
 
 /-- **Open input 2 — per-disc evaluation at the exceptional divisor.**
     Each disc contribution equals the exceptional-divisor integral
     (the disc `Dᵢ` retracts onto `Eᵢ` and the transient integrand
-    restricts to `(∇_A q, L ∧ F⁺)` there); body is `sorry`. -/
+    restricts to `(∇_A q, L ∧ F⁺)` there). -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
 theorem transient_disc_is_divisor_integral :
-    ∀ i : ℕ, transientMIdisc i = transientMIdiv i := by
-  intro i
-  rfl
+    ∀ i : ℕ, transientMIdisc i = transientMIdiv i :=
+  sorry
 
 /-- **Transient-term localisation (norm decomposition)**
     ([`lem:topological-mass-transient-localisation`]).
