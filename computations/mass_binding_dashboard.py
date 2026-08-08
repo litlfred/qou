@@ -265,7 +265,9 @@ def _nucleon_msym(alpha):
 
 def _nucleon_mass_canonical(me, q0):
     """Canonical nucleon rest masses (m_p, m_n) via the single facade
-    `canonical_mass` — the muon-anchored Hecke energy m_p = 2(m_μ·F_Bor − 6m_e)
+    `canonical_mass` — the Hecke energy m_p = 2(m_μ·F_Bor − 6m_e). NB the m_μ
+    here is DERIVED from q₀ (m_e·Vol(4₁)/ℏ_q²), and q₀ is on the proton pin —
+    so this is not a muon anchoring, despite the historical wording.
     (≈ 938.27 / 939.56, matches CODATA). The facade is the ONE entry point for
     absolute nucleon mass; the λ_A (966) and naive Vol(𝓑₃)·tr_M (406) forms are
     deprecated (they apply 1/ℏ_q² to the wrong volume). See
@@ -491,16 +493,28 @@ is what q₀ and the mass scale are actually pinned to here.
 | CAL-2 | W-plane modulus (h²) | 𝔇_β — neutron β-decay width (τ_n=ℏ/𝔇_β) | **m_μ/m_e (22 ppb)** via m_μ/m_e = Vol(4₁)/ℏ_q² (Q_β=ℏ/𝔇_β = decay proxy) |
 | CAL-3 | orthogonal meson (h³) | 𝔇_π — pion decay width (τ_π=ℏ/𝔇_π) | **m_π = 139.57 MeV, PDG** |
 
-This dashboard's q₀ is the **canonical 3-CAL (muon-anchored) value** — the CAL-2
-experimental ideal m_μ/m_e (q₀ ≈ 1.10998), so masses/binding are the
-canonical-derivation numbers. The proton re-pin m_p/m_e (0.06 ppb) is a
-*precision substitution* in the separate Physical-Observations layer — not a 4th
-calibration, not used here. Source:
+This dashboard's q₀ is the **experimental (proton) pin**, m_p/m_e,
+q₀ = 1.1099785827513808… — per the 2026-08-07 owner directive that all compute
+defaults to it, and now declared explicitly as `physical_proton` in
+`q0_anchor_manifest.json` rather than relying on the "not listed ⇒ proton"
+default.
+
+CORRECTED 2026-08-08: this paragraph previously claimed the canonical 3-CAL
+(muon-anchored) value and that the proton re-pin was "not used here". The code
+never matched it — `q_parameter.Q` resolves by manifest stem, this script was
+unlisted, and unlisted means proton. So the numbers had been experimental-layer
+all along while the prose asserted the ideal layer. Nothing about the output
+changed when it was listed; only the claim did.
+
+The *ideal* CAL-2 framing still describes the derivation chain, and `m_μ`
+appears in the canonical mass `m_p = 2(m_μ·F_Bor − 6m_e)` — but with q₀ on the
+proton pin, `m_μ = m_e·Vol(4₁)/ℏ_q²` is a DERIVED prediction there, not an
+anchoring input. Do not read the m_μ in that formula as a muon pin. Source:
 `observations/three-calibration-discipline.md` §3,
 `observations/epistemic-status-of-calibrations.md`.
 
 **Mass constituents (Table 2):** `m_unbnd,can` = framework unbound sum
-Z·m_p,can + N·m_n,can via the canonical muon-anchored Hecke energy
+Z·m_p,can + N·m_n,can via the canonical Hecke energy (proton pin)
 m_p=2(m_μ·F_Bor−6m_e), F_Bor=\\|tr_M(β_Bor)\\|·[3]_q!/q³ (m_p,can≈938.27,
 m_n,can≈939.56, matches CODATA; λ_A fit 966 and naive Vol·tr_M 406 both
 excised). Each bound mass m_X = m_unbnd,can − B_X.
@@ -624,11 +638,12 @@ def main(argv=None) -> int:
     from codata_constants import M_P_MEV_VALIDATION as mp_, M_N_MEV_VALIDATION as mn_
     mp_, mn_ = float(mp_), float(mn_)
     print("### Mass  M + error (MeV; err in ppb)   "
-          "[canonical = muon-anchored Hecke energy 2(m_μ·F_Bor−6m_e); m_X = m_unbnd,can − B_X]")
+          "[canonical = Hecke energy 2(m_μ·F_Bor−6m_e) at the PROTON pin; "
+          "m_μ there is derived from q₀, not an anchor; m_X = m_unbnd,can − B_X]")
     print(f"  canonical constituents (λ_A fit + naive Vol·tr_M both EXCISED): "
           f"m_p,can = {mp_can:.3f} MeV ({(mp_can/mp_-1)*100:+.3f}%), "
           f"m_n,can = {mn_can:.3f} MeV ({(mn_can/mn_-1)*100:+.3f}%) — "
-          f"m_μ-anchored F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ (matches CODATA; m_n the "
+          f"F_Bor = |tr_M(β_Bor)|·[3]_q!/q³ at the proton pin (matches CODATA; m_n the "
           f"genuine prediction).")
     print("| iso | A | M_meas | σ_exp (ppb) | m_can | m_can⁰ | m_tetra | m_qCLT | "
           "err m_can (ppb) | err m_qCLT (ppb) |")
