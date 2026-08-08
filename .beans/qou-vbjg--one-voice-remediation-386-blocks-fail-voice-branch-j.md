@@ -277,6 +277,52 @@ ordinary English for a systematic verification, and
 `electroweak-higgs-torus-link-triplet`'s `C1`/`C2` now read as hypothesis
 labels because the block defines them in its own table.
 
+## Owner ruling, 2026-08-08 — goal language is also out
+
+Owner confirmed the repository-description class, and **added one I had
+explicitly decided to keep**: *"Canonized, keystone, capstone, and other
+audit/discussion goal like language."*
+
+I had reasoned that "keystone" reads as ordinary scholarly English for a
+load-bearing conjecture and left it in. That was wrong, and the reason is worth
+recording: 57 uses, and essentially every one ranks a result against the
+*project's programme* rather than stating a mathematical dependency. "The
+keystone's discharge targets" is a plan. "The depth correspondence, on which the
+four bounds below depend" is mathematics. The words differ; the fact does not.
+
+Out, in published prose and titles:
+
+* **keystone** (57), **capstone** (1) — name the conjecture, or say what rests
+  on it.
+* **canonized / canonised with a date** (4) — dated rename history inside the
+  notation register's symbol definitions.
+* **unblock, roadmap, closure path, discharge plan, workstream, deliverable,
+  milestone** where they describe the plan rather than a dependency.
+* **owner rulings as warrant** — `**(owner ruling 2026-06-24)**`.
+* **the build system addressed directly** — `### CI enforcement`, "gates this on
+  every continuous integration run".
+* **effort estimates in published tables** — "~1-2 weeks".
+
+**Two words split, and the split is the whole job:**
+
+`gate` — 145 hits. **Mathematics, keep:** `Toffoli gate`, `q-AND gate`, `CCNOT`,
+quantum-circuit gates, "this algebraic gate". **Workplan, remove:** "the
+$\Delta_\lambda$ gate remains open", "owner-gated", "wire/un-wire gate",
+"inclusion/exclusion gate", "the six-ansatz gate", "gated on the order-by-order
+expansion". In every workplan case the content is a dependency or an open
+question and survives as one — "six ansätze have failed" keeps its count.
+
+`lands` / `landed` — 24 hits, and mostly the *other* way. **Keep** the ordinary
+mathematical sense: "lands on Wedderburn channel $\lambda$", "lands away from
+$t^{-1}$", "lands in $\mathbb{Z}[q^{\pm 1}]$", "lands non-by definition at its
+depth", "the exact $c_4$ that lands $m_p$ on CODATA". **Remove** only the merge
+sense: "once `conj:s5-so3-fiber-action` lands".
+
+The lesson for the axis: a word is not the unit. `gate` is a defect 40 times and
+a theorem 100 times in the same corpus, and only reading the sentence tells them
+apart. Any future sweep that greps a word list will get this wrong in both
+directions.
+
 ## Out of scope, noted here so it is not lost
 
 `content/schema/references.ts` carries the project's own pull requests as
