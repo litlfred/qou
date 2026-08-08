@@ -1,7 +1,7 @@
 ---
 # qou-lkdf
-title: 'The default-target `lake build` has never been verified end to end — "lake green" still means targeted builds'
-status: todo
+title: 'ANSWERED: the default target BUILDS (4390 jobs, 0 errors) — and its closure still contains 11 sorries'
+status: done
 type: task
 priority: medium
 tags:
@@ -10,8 +10,72 @@ tags:
     - ci
     - qou-lkrd
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T17:30:00Z
+updated_at: 2026-08-09T10:55:00Z
 ---
+
+## ✅ ANSWERED 2026-08-09 — and the green is the less interesting half
+
+Run to completion, in the background, surviving the session. **E1, as written.**
+
+    lake build                    # default target = QOU root's import closure
+    → Build completed successfully (4390 jobs).  exit 0
+
+| measured | value |
+|---|---|
+| branch | `claude/fivetwo-level7-ladder-numerators` @ **`92cba32697`** |
+| `origin/main` at the time | **`d8d22890c7`** |
+| how far behind | **97 commits** |
+| jobs | 4390 |
+| errors | **0** |
+| declarations using `sorry` | **11** |
+| warnings | 394 (167 unused-simp-arg, deprecations, duplicate namespaces) |
+
+⚠ **THIS IS NOT A CLAIM ABOUT `main`.** It is a claim about a branch 97 commits
+behind it. Recording the sha is the whole point of this bean's sibling
+(`qou-mfst`'s format rule), and the reason is `qou-lkrd`: a measured claim on a
+long-lived branch silently ages into a claim about `main` and is then wrong.
+
+### The finding that outlives the green: **green ≠ sorry-free**
+
+The default target exits 0 **while its own import closure contains 11 `sorry`
+declarations**, in 7 modules:
+
+| module | count |
+|---|---|
+| `QOU/BraidKnot/YoungTableauStandard.lean` | 3 |
+| `QOU/BraidKnot/Specht.lean` | 2 |
+| `QOU/BraidKnot/SpechtClassification.lean` | 2 |
+| `QOU/Mathlib/EllipticDivisorDegree.lean` | 1 |
+| `QOU/Mathlib/HadamardFactorization.lean` | 1 |
+| `QOU/Mathlib/QGevreyOrder.lean` | 1 |
+| `QOU/Archimedean/HyperbolicVolumeIndependence.lean` | 1 |
+
+**None is in the 5₂ lane** — no `FiveTwo*`, no `MathlibExt` dilogarithm chain, no
+`ImplicitScalar`. Those remain sorry-free and axiom-audited.
+
+This sharpens what `qou-lkrd` left behind. That bean's surviving content was
+*"'lake green' has usually meant targeted module builds, not the default
+target."* True — and now measured, the default target is green too. But a
+reviewer who hears "lake build passes" and infers "the library is proved" is
+still wrong, for a **different** reason: `sorry` is a warning, not an error, so it
+does not stop the build. Two distinct gaps between "lake green" and "verified",
+and closing the first does not close the second.
+
+⚠ Coordination: three of those files — `QGevreyOrder`, `HadamardFactorization`,
+`YoungTableauStandard` — are exactly what the sibling on **#4785** described
+working on ("3 of the 12 cited sorries in my branch's base"). That lane's gate
+(`proof-no-false-cited-sorry`) is aimed at this class. Worth telling them the
+count is 11 in the *reachable* closure, which is a smaller and sharper number
+than a whole-tree scan.
+
+### What E3 would now be
+
+E3 said "if green, wire it into a gate that says which target it ran". Still
+worth doing, and it should report **both** numbers — job count *and* sorry count
+— because this run shows the first can be clean while the second is not. A gate
+that only checks the exit code would certify a closure containing 11 sorries.
+
+## The original framing (superseded)
 
 ## What is open
 
