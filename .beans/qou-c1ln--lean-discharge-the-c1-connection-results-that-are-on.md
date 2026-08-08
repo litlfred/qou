@@ -8,6 +8,11 @@ created_at: 2026-08-07T22:20:00Z
 updated_at: 2026-08-08T13:00:00Z
 ---
 
+> **⏸ PAUSED by owner, 2026-08-08.** Rows 1–3 are proved; rows 4, 5 and 6 are
+> open but every one of them is explicitly recorded as having **no downstream
+> consumer**. The axis is finished as far as anything needs it. Kept as a bean
+> for the record; do not start rows 4/6 without checking back.
+
 **Claimed** by session on branch `pr4672` → `claude/c1-theta-canonical-solutions-2026-08-07`.
 Rows 1 and **3 done**; row 2 rescoped to one missing lemma; row 5 dropped
 (nothing consumes it); rows 4 and 6 open.
