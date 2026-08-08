@@ -9,7 +9,8 @@ object precisely.
 | Ingredient | Status | Where |
 |---|---|---|
 | $H_3(q)$ has Coxeter type $A_2$; $W(A_2) \cong S_3$ | standard, and true by construction ($B_n$ has type $A_{n-1}$) | [$A_2$ from three strands](#prop:a2-from-three-strands) |
-| $A_2$ Cartan matrix is fixed integer data, independent of $q$; Serre exponent; root-angle ratio; the "two $2$s" separation | proved (Lean, sorry-free) | `WeylInvarianceQDeformation.lean` |
+| $A_2$ Cartan datum is independent of $q$ under Drinfeld--Jimbo quantisation | **standard** (Lusztig/Kashiwara), cited and *not* formalised here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
+| Serre exponent; root-angle ratio; the "two $2$s" separation (the Serre coefficient $[2]_q$ *moves* with $q$ while the Cartan datum does not) | proved (Lean, sorry-free) | `WeylInvarianceQDeformation.lean` |
 | Root/weight lattices, Weyl group, Kazhdan–Lusztig multiplicities are $q$-independent | standard (Drinfeld–Jimbo), not formalised here | [$q$-deformation](#rem:q-deformation-weight-lattice) |
 | Quantum Schur–Weyl duality $\mathcal{U}_q(\mathfrak{gl}_N) \leftrightarrow H_n(q)$ | standard \cite{jimbo1986}; the duality itself is not formalised, only its row-cap consequence | [Schur–Weyl](#prop:schur-weyl-eightfold) |
 | $\mathbf{3} \otimes \bar{\mathbf{3}} = \mathbf{8} \oplus \mathbf{1}$; decuplet dimension $\binom{5}{3} = 10$; weight tables | standard $\mathrm{SU}(3)$ representation theory, **conditional on $N = 3$** | [meson octet](#prop:meson-octet-decomposition), [decuplet](#prop:borromean-decuplet) |
