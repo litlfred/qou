@@ -58,10 +58,13 @@ from zero.
   (`1 − x ≥ exp(−2x)` for `0 ≤ x ≤ ½`, from `exp(2x) ≥ 1 + 2x`), and is not
   taken here. Nothing downstream uses sharpness: the singularity's *location*
   is pinned by the `θ_p` zeros, not by this radius.
-* **That these series solve the q-difference equation.** The recursions are
-  *defined* here to match the computation; that they are the recursions the
-  operator forces is not formalised. So this file certifies convergence of the
-  stated sequences, not that `Y₀` and `Y_∞` are solutions.
+* ~~**That these series solve the q-difference equation.**~~ **Partly closed
+  2026-08-08**: both recursions are now *derived* from the operator — see the
+  section at the bottom of this file (`zeroCoeffAt_eq_zero_iff`,
+  `infCoeffAt_eq_zero_iff`), with the coefficient collections machine-checked
+  symbolically. What is still open is that these series, times their theta
+  prefactors, are the *canonical* solutions at `0` and `∞` — the normalisation
+  and uniqueness, not the recursion. That is row 4.
 * **`Y₀`, `Y_∞`, the inverse, meromorphy** — bean `qou-c1ln` row 4, untouched.
 
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_pole_divisor.py
@@ -501,5 +504,68 @@ theorem summable_infSideCoeff (p T : ℂ) (hp : 1 < ‖p‖) (hp2 : p ^ 2 ≠ 1)
           have : (0:ℝ) ≤ D := by linarith
           positivity
         exact mul_le_mul_of_nonneg_left hdk this
+
+
+/-! ### The two recursions, derived from the operator
+
+Added 2026-08-08 (bean `qou-slvl` item 2). Above, `zeroSideCoeff` and
+`infSideCoeff` were *defined* to match `c3_w2_c1_pole_divisor.py`, so the
+summability theorems certified convergence of stated sequences rather than of
+solutions. Both recursions are now consequences of
+
+    L = (p⁴z² − 1)τ² − (p²−1)τ − (p²−1),   τF(z) = F(pz),  q = p².
+
+Neither side is a bare power series, and the theta prefactors are what make the
+brackets polynomial — via the functional equation `θ_p(pw) = w·θ_p(w)`:
+
+* **0-side** `y₀ = e_t(z)·G(z)`, `e_t = θ_p(z)/θ_p(z/t)`, `G = ∑ g_k z^k`. Then
+  `τe_t = t·e_t`, so `L y₀ / e_t = (p⁴z²−1)t²τ²G − (p²−1)t·τG − (p²−1)G`, whose
+  `z^{k+2}` coefficient is `zeroCoeffAt`.
+* **∞-side** `y_∞ = H(z)/θ_p(z/T)`, `H = ∑ h_k z^{-k}`. Then
+  `τ[1/θ_p(z/T)] = (T/z)/θ_p(z/T)` and `τ²[…] = T²/(pz²)·/θ_p(z/T)`, and in
+  `u = 1/z` the bracket's `u^{k+2}` coefficient is `infCoeffAt`.
+
+That these collections really *are* those coefficients, and that solving them
+returns `gc()` and `hc()` verbatim, is machine-checked symbolically in
+`computations/qbeta/c3_w2_c1_side_recursions_derived.py` (4/4). The two theorems
+below prove, in general, that each collection vanishes iff its recursion holds.
+
+**Still not established**: that these series, times their theta prefactors, are
+the *canonical* solutions at `0` and `∞` — that is `qou-c1ln` row 4. What is
+established is that the recursions are forced by the operator. -/
+
+section Derived
+
+variable {K : Type*} [Field K]
+
+noncomputable def infCoeffAt (p T : K) (h : ℕ → K) (k : ℕ) : K :=
+  T ^ 2 * p ^ 3 * (p⁻¹) ^ (2 * (k + 2)) * h (k + 2)
+    - T ^ 2 / p * (p⁻¹) ^ (2 * k) * h k
+    - (p ^ 2 - 1) * T * (p⁻¹) ^ (k + 1) * h (k + 1)
+    - (p ^ 2 - 1) * h (k + 2)
+
+theorem infCoeffAt_eq_zero_iff (p T : K) (h : ℕ → K) (k : ℕ) :
+    infCoeffAt p T h k = 0
+      ↔ (T ^ 2 * p ^ 3 * (p⁻¹) ^ (2 * (k + 2)) - (p ^ 2 - 1)) * h (k + 2)
+          = (p ^ 2 - 1) * T * (p⁻¹) ^ (k + 1) * h (k + 1)
+            + T ^ 2 / p * (p⁻¹) ^ (2 * k) * h k := by
+  rw [infCoeffAt, ← sub_eq_zero]
+  constructor <;> intro h1 <;> linear_combination h1
+
+noncomputable def zeroCoeffAt (p t : K) (g : ℕ → K) (k : ℕ) : K :=
+  t ^ 2 * p ^ (2 * (k + 2)) * g k
+    - t ^ 2 * p ^ (2 * (k + 2)) * g (k + 2)
+    - (p ^ 2 - 1) * t * p ^ (k + 2) * g (k + 2)
+    - (p ^ 2 - 1) * g (k + 2)
+
+theorem zeroCoeffAt_eq_zero_iff (p t : K) (g : ℕ → K) (k : ℕ) :
+    zeroCoeffAt p t g k = 0
+      ↔ (t ^ 2 * p ^ (2 * (k + 2)) + (p ^ 2 - 1) * t * p ^ (k + 2) + (p ^ 2 - 1))
+            * g (k + 2)
+          = t ^ 2 * p ^ (2 * (k + 2)) * g k := by
+  rw [zeroCoeffAt, ← sub_eq_zero]
+  constructor <;> intro h1 <;> linear_combination -h1
+
+end Derived
 
 end QOU.QBeta.C1Series

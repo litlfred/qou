@@ -1,11 +1,11 @@
 ---
 # qou-c1wr
 title: 'C1 connection work is invisible to the manifest graph and has no consumer'
-status: todo
+status: done
 type: task
 priority: high
 created_at: 2026-08-07T22:20:00Z
-updated_at: 2026-08-08T00:20:00Z
+updated_at: 2026-08-08T09:00:00Z
 ---
 
 **Corpus-grep result (2026-08-07).** The entire C1 connection arc lives in
@@ -66,3 +66,23 @@ should say plainly that nothing downstream consumes them, rather than implying
 a dependency that does not exist.
 
 Relates: `qou-wgnx`, `qou-7ylg`, `qou-c1ln`.
+
+## 2026-08-08 — action 1 done: the arc has a content block
+
+`prop:c1-theta-zero-locus-and-pole-divisor`
+(`mass-theory/c1-theta-zero-locus-and-pole-divisor.{ts,md}`), wired into
+`sec:hoefsmit-qdifference-prolongation` alongside the keystone, with
+`lean.ref` to `QOU.QBeta.C1Poles.qTheta_neg_zpow_eq_zero`.
+
+It `uses[]` exactly one thing — `conj:qdifference-kernel-prolongation-symbol`,
+the arc's actual context — and **says in its own prose that nothing consumes
+it**, per action 2. It claims deliberately less than the computations do: the
+vanishing, holomorphy, functional equation, winding step and series convergence
+are stated as proved; the converse zero locus, the divisor, `χ`, `α = t₂/T` and
+the closed form are stated as numerical or open, with the single missing lemma
+named (argument principle, bean `qou-argp`).
+
+So the arc is no longer invisible to the manifest graph, and it is recorded at
+its true epistemic weight rather than upgraded by being written down. Both
+actions of this bean are now discharged; what remains is not a wiring question
+but the mathematics, tracked in `qou-argp` and `qou-c1ln` rows 4/6.

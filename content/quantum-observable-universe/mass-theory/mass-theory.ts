@@ -334,6 +334,7 @@ export default chapter({
           label: "sec:hoefsmit-qdifference-prolongation",
           blocks: [
             "qdifference-kernel-prolongation-symbol",
+            "c1-theta-zero-locus-and-pole-divisor",
             "prolonged-periods-fixed-depth",
             "prolonged-periods-fixed-depth-proof",
             "sl2-prolongation-recurrence",
