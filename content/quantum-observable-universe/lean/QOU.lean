@@ -394,6 +394,7 @@ import QOU.QBeta.FiveTwoDeformedSaddle
 import QOU.QBeta.FiveTwoCurveDeriv
 import QOU.QBeta.FiveTwoEnvelopeSum
 import QOU.QBeta.FiveTwoEnvelopeAssembly
+import QOU.QBeta.FiveTwoBranchByArgument
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge

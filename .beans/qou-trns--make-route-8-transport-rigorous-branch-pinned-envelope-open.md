@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T17:40:00Z
+updated_at: 2026-08-08T18:30:00Z
 parent: 0yqu
 ---
 
@@ -956,5 +956,78 @@ That is assembly of proved parts, not new mathematics, and it is not written.
 
 Route 26 G6 checks the collapse numerically to **1e-31**, so the wiring has a
 target to hit.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — attack options for `hcont`, and one of them in Lean
+
+`QOU/QBeta/FiveTwoBranchByArgument.lean`, sorry-free, no warnings, `lake` green
+(2059 jobs). Route 27, 6 gates, exit 0.
+
+### What `hcont` is actually for
+
+It is used for **exactly one thing**: forcing `k = 0` in
+`Σⱼ log(1 − x·yⱼ) = log x + 2πi·k`. Nothing else in the envelope step needs it.
+That reframing is what opens the options below.
+
+### Option A — argument count (IMPLEMENTED)
+
+Taking imaginary parts, `Σⱼ arg(1 − x·yⱼ) = φ + 2πk`, so `k` is pinned by
+**bounds**: if the sum lies in `(−π, 2π)` and `φ ∈ [0,π)`, then `|2πk| < 2π` and
+`k = 0`. That is arithmetic — no continuity, no root tracking, no base point.
+Lean-proved: `branchInt_eq_zero_of_arg_structure`.
+
+The bounds follow from three facts, measured on the open arc at 40 dps:
+
+| obligation | measured | margin |
+|---|---|---|
+| every `arg(1 − x·yⱼ) > −π/2` | min `−1.4077` vs `−1.5708` | **10%** |
+| at most **one** exceeds `π/2` | 2nd-largest peaks `1.3099` vs `1.5708` | **17%** |
+| at least one is `≥ 0` | at most two negative | — |
+
+These are real-algebraic statements on `|x| = 1`, the same shape as `xy_neg`,
+which this branch proves by resultant elimination. **They are the new
+obligations; they are not proved.**
+
+⚠ **The margins are not generous.** 10% and 17% are much tighter than `xy_neg`'s
+were, so the eliminations will be harder. Whether the trade is worth making is a
+judgement, not a theorem — the numbers are recorded so it can be made on
+evidence.
+
+### Option B — continuity of the root multiset
+
+`Σⱼ log(1 − x·yⱼ)` depends only on the *multiset*, which is continuous even
+across `φ₀` where individual branches collide. So the symmetric framing dodges
+the branch point. **But Mathlib has nothing on continuity of polynomial roots in
+the coefficients** — checked, no `continuous_roots`, no `tendsto_roots`. That
+route requires building that infrastructure first: a real and reusable Mathlib
+contribution, and a large one.
+
+### Option C — continuous logarithm / winding number
+
+Lift the path directly. Mathlib's winding-number and angle-lifting coverage is
+thin; assessed as worse than A.
+
+### Option D — RULED OUT, recorded so it is not retried
+
+The tempting route "`Re(1 − x·yⱼ) > 0` on the arc, hence every `|arg| < π/2`" is
+**false**: `max Re(x·yⱼ)` reaches `2.2468` already at `φ/π = 0.9975`. That is why
+option A's second obligation has to say *at most one* exceeds `π/2` rather than
+*none does*.
+
+### A structural simplification, either way
+
+On the **open** arc the two log-sums are complex **conjugates** — the roots are
+closed under conjugation (real cubic on `|x| = 1`) and `1/x = conj x`. So
+`k₂ = −k₁`: **there is only one branch integer to pin, not two.** Verified to
+1e-40 (G5). The argument breaks at `φ = π`, exactly where `1 − x·y₁` sits on the
+cut — the sixth independent appearance of that endpoint.
+
+### Recommendation
+
+Option A, with eyes open about the margins. If either elimination proves
+intractable, Option B is the fallback and pays for itself in Mathlib.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
