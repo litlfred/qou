@@ -140,6 +140,28 @@
       "implied_bound_on_dt_dphi": "0.23217",
       "still_open": "the Lean construction itself: defining t(c) from `exists_root_mem_Ioo` + `real_root_neg_of_ne` and differentiating it through `ImplicitScalar`. The PIECES are all proved; what is missing is the assembly",
       "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "THE LEAN LABELLING REPRODUCES THE ACTUAL ROOTS. `FiveTwoRootLabelling` builds Y_1 = realRoot(cos phi) and (Y_2,Y_3) = otherRoots (t-2c) (t^2-2ct+2c+1). That second line is Vieta on the quadratic cofactor and TYPE-CHECKS whether or not it names the right numbers -- exactly the failure mode this lane has hit nine times (a correct theorem about the wrong polynomial). Checked against polyroots: the multiset {Y_1,Y_2,Y_3} must equal the actual root multiset at every arc point. The identity behind it is (Y-t)(Y^2+(t-2c)Y+(t^2-2ct+2c+1)) = unitCubic, whose constant term needs gamma_rel: t*(t^2-2ct+2c+1) = 1",
+      "arc_points": 199,
+      "points_with_no_unique_(0,1)_root": 0,
+      "worst_multiset_mismatch": "4.5917748e-41",
+      "pass": true
+    },
+    {
+      "gate": "G11",
+      "claim": "WHAT `hcont` STILL NEEDS AT THE ENDPOINT, recorded before it is discovered late. `envelopeS_total` asks for continuity on the CLOSED Icc 0 pi. G7 stops the DERIVATIVE at pi; continuity there is a separate obligation and is NOT discharged. Measured: the Li2 argument x*y approaches the cut [1,inf) from Im < 0, linearly in (pi - phi) with slope -> 2.2469796, landing exactly on the cut at the endpoint. Route 35's result -- Re Li2 is continuous ACROSS the cut because the jump 2*pi*i*log(x) is purely imaginary -- is what should make Re V extend continuously. THAT IS A CLAIM HERE, NOT A THEOREM",
+      "Im(x*y)/(phi-pi)_approaching": [
+        "2.24680072914",
+        "2.24697781497",
+        "2.24697958583"
+      ],
+      "limit_slope_is_the_level7_root": "2.246979603717467",
+      "x_times_y_at_pi": "(2.246979603717467 + 0.0j)",
+      "approach_side": "Im < 0, i.e. from below the cut",
+      "still_open": "ContinuousOn (envelopeS Y1 Y2 Y3) (Icc 0 pi) at the endpoint phi = pi, where the Li2 argument sits ON [1,inf). Needs Route 35's continuity of Re Li2 across the cut, in Lean, applied to this argument",
+      "pass": true
     }
   ],
   "verdict": {

@@ -593,6 +593,95 @@ def main() -> int:
                      and maxjump is not None and maxjump < 1),
     })
 
+    # ---- G10: the Lean labelling reproduces the ACTUAL roots -----------------
+    # `FiveTwoRootLabelling` builds the three branches as
+    #     Y_1 = realRoot(cos phi)                            (the (0,1) root)
+    #     (Y_2, Y_3) = otherRoots (t - 2c) (t^2 - 2ct + 2c + 1)
+    # The second line is Vieta on the quadratic cofactor, and it TYPE-CHECKS whether or not
+    # it names the right numbers. So check it against polyroots: the multiset {Y_1,Y_2,Y_3}
+    # must equal the actual root multiset at every arc point.
+    worst_match = None
+    n_bad = 0
+    for i in range(N):
+        ph = pi * mpf(i + 1) / (N + 1)
+        c = mpmath_cos(ph)
+        rts = polyroots([mpf(1), -2 * c, 2 * c + 1, mpf(-1)], maxsteps=300, extraprec=300)
+        tv = [re(r) for r in rts if fabs(im(r)) < REAL_TOL and 0 < re(r) < 1]
+        if len(tv) != 1:
+            n_bad += 1
+            continue
+        t = tv[0]
+        beta = t - 2 * c
+        gamma = t ** 2 - 2 * c * t + 2 * c + 1
+        # otherRoots are the roots of Y^2 + beta*Y + gamma
+        pair = polyroots([mpf(1), beta, gamma], maxsteps=300, extraprec=300)
+        built = sorted([mpc(t, 0)] + list(pair), key=lambda z: (re(z), im(z)))
+        actual = sorted(rts, key=lambda z: (re(z), im(z)))
+        d = max(fabs(a - b) for a, b in zip(built, actual))
+        if worst_match is None or d > worst_match:
+            worst_match = d
+    gates.append({
+        "gate": "G10",
+        "claim": "THE LEAN LABELLING REPRODUCES THE ACTUAL ROOTS. `FiveTwoRootLabelling` builds "
+                 "Y_1 = realRoot(cos phi) and (Y_2,Y_3) = otherRoots (t-2c) (t^2-2ct+2c+1). That "
+                 "second line is Vieta on the quadratic cofactor and TYPE-CHECKS whether or not it "
+                 "names the right numbers -- exactly the failure mode this lane has hit nine times "
+                 "(a correct theorem about the wrong polynomial). Checked against polyroots: the "
+                 "multiset {Y_1,Y_2,Y_3} must equal the actual root multiset at every arc point. "
+                 "The identity behind it is (Y-t)(Y^2+(t-2c)Y+(t^2-2ct+2c+1)) = unitCubic, whose "
+                 "constant term needs gamma_rel: t*(t^2-2ct+2c+1) = 1",
+        "arc_points": N,
+        "points_with_no_unique_(0,1)_root": n_bad,
+        "worst_multiset_mismatch": nstr(worst_match, 8) if worst_match is not None else None,
+        "pass": bool(n_bad == 0 and worst_match is not None
+                     and worst_match < mpf(10) ** -(mp.dps - 8)),
+    })
+
+    # ---- G11: what `hcont` will need at the endpoint -------------------------
+    # `envelopeS_total` asks for ContinuousOn (envelopeS ...) (Icc 0 pi) -- the CLOSED
+    # interval. G7 shows VSide fails at pi, so the DERIVATIVE stops there; but continuity is
+    # still required AT pi, and that is a separate obligation nobody has discharged.
+    #
+    # Measured here so the next pass does not discover it late: the Li2 argument x*y
+    # approaches the cut [1,inf) from Im < 0, linearly in (pi - phi), and lands exactly on
+    # 2.2469796 at the endpoint. Route 35's finding -- Re Li2 is continuous ACROSS the cut,
+    # because the jump 2*pi*i*log(x) is purely imaginary -- is what should make Re V extend
+    # continuously. That is a CLAIM here, not a theorem, and it is the natural next target.
+    slopes = []
+    for d in ["0.01", "0.001", "0.0001"]:
+        ph = pi - mpf(d)
+        x = exp(mpc(0, 1) * ph)
+        w = max((x * y for y in roots_at(ph)), key=lambda u: re(u))
+        slopes.append(im(w) / (-mpf(d)))
+    xpi_e = mpc(-1, 0)
+    w_end = max((xpi_e * y for y in polyroots(
+        [xpi_e, -(xpi_e ** 2 + 1), xpi_e ** 2 + xpi_e + 1, -xpi_e],
+        maxsteps=300, extraprec=300)), key=lambda u: re(u))
+    gates.append({
+        "gate": "G11",
+        "claim": "WHAT `hcont` STILL NEEDS AT THE ENDPOINT, recorded before it is discovered late. "
+                 "`envelopeS_total` asks for continuity on the CLOSED Icc 0 pi. G7 stops the "
+                 "DERIVATIVE at pi; continuity there is a separate obligation and is NOT "
+                 "discharged. Measured: the Li2 argument x*y approaches the cut [1,inf) from "
+                 "Im < 0, linearly in (pi - phi) with slope -> 2.2469796, landing exactly on the "
+                 "cut at the endpoint. Route 35's result -- Re Li2 is continuous ACROSS the cut "
+                 "because the jump 2*pi*i*log(x) is purely imaginary -- is what should make Re V "
+                 "extend continuously. THAT IS A CLAIM HERE, NOT A THEOREM",
+        "Im(x*y)/(phi-pi)_approaching": [nstr(s, 12) for s in slopes],
+        "limit_slope_is_the_level7_root": nstr(re(w_end), 16),
+        "x_times_y_at_pi": nstr(w_end, 16),
+        "approach_side": "Im < 0, i.e. from below the cut",
+        "still_open": "ContinuousOn (envelopeS Y1 Y2 Y3) (Icc 0 pi) at the endpoint phi = pi, "
+                      "where the Li2 argument sits ON [1,inf). Needs Route 35's continuity of "
+                      "Re Li2 across the cut, in Lean, applied to this argument",
+        # this gate PASSES by recording a measured obligation, and asserts only the geometry
+        "pass": bool(all(s < 0 for s in [im(exp(mpc(0, 1) * (pi - mpf(d))) *
+                                            max((y for y in roots_at(pi - mpf(d))),
+                                                key=lambda u: re(exp(mpc(0, 1) * (pi - mpf(d))) * u)))
+                                         for d in ["0.01", "0.001"]])
+                     and re(w_end) > 1 and fabs(im(w_end)) < mpf(10) ** -30),
+    })
+
     out = {
         "probe": "qbeta_5two_route36_vside_nonvacuity",
         "bean": "qou-glbl", "dps": mp.dps,
