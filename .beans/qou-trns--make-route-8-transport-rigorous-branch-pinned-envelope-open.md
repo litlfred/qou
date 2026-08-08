@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T14:05:00Z
+updated_at: 2026-08-08T15:05:00Z
 parent: 0yqu
 ---
 
@@ -1313,5 +1313,69 @@ exceptional point costs nothing.
 - **The sum rule.** `S(π) − S(0) = π²` is the transport's derivative step, not
   the sum rule. Identifying `Σⱼ Re Vⱼ = −3π²/2` with the proved cyclotomic
   `Σₖ(2L+L) = +π²/2` is untouched by any of this.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (late) — the sum rule IS `S(0)`, and the bridge is one `arg`
+
+Route 32 (`qbeta_5two_route32_levelseven_bridge_probe.py`, 9 gates, 50 dps) +
+`QOU/QBeta/FiveTwoLevelSevenBridge.lean` (9 theorems, sorry-free, lake green).
+
+### The map
+
+| | |
+|---|---|
+| `S(0) = −3π²/2` | **this IS the 5₂ sum rule** — residual `1e-30` |
+| `S(π) = −π²/2` | and `S(0) = 3·S(π)` exactly |
+| at `x = −1` the cubic is the **level-7** one, `y³+2y²−y−1` | and `wₖ = −yⱼ` exactly — `w₁ = 2.24698`, the very value that falsified `hinv1` |
+| `Σⱼ Re[2L(−yⱼ) + L(yⱼ)] = +π²/2` | the shape of the proved `extended_sum` |
+| the difference | `−π²`, a **log-bilinear** quantity with no dilogarithms |
+
+So the transport is not a step *towards* the sum rule — it is a reformulation
+*of* it, moving it from `x = 1` to `x = −1` where the proved cyclotomic identity
+lives.
+
+### Why the `−π²` collapses
+
+`corr y = Re[log(−y)² − log(−y)·log(1+y) − ½·log(y)·log(1−y)]`.
+
+* The **log-times-log part vanishes at every root**, because
+  `2log|y| = 2log|1+y| + log(1−y)` ⟺ `y² = (1+y)²(1−y)` ⟺ `y³+2y²−y−1 = 0` —
+  *the cubic itself* (`sq_eq_of_root`, `log_rel_of_root`).
+* The whole `−π²` is the coefficient `−1` at the **unique positive root**, from
+  `arg(−t) = π`.
+
+**One argument, at one root.** That is the same `−t`-on-`log`'s-cut that
+produced corrections 5 and 6 in this branch. Third appearance — and this time it
+is not a defect, it is the answer.
+
+### ⚠ The open link, recorded as a gate (G9)
+
+The numeric bridge uses the **analytic** Rogers `L = Li₂(z) + ½log z log(1−z)`.
+Lean's `extended_sum` is stated for the corpus's **piecewise** `extend`. Those
+agree by Route 15 **on paper only** — `qou-rstq` item 4 — and that
+identification sits *directly* on this bridge. G9 asserts the gap **exists**;
+it is the one gate that would fail if this lane ever quietly closed it without
+saying so.
+
+### Gap A re-priced (G8)
+
+`|∂p/∂y|` at the positive real root never drops below **1.75** on the arc. The
+real root **never collides** — only the other two do, at `φ₀`. So `t(φ)` is
+globally differentiable with *no* exceptional point, and `y₂+y₃ = 2c − t`,
+`y₂y₃ = 1/t` are too. The obstruction is confined to splitting one quadratic
+whose coefficients are smooth.
+
+### On alien calculus
+
+This curve is the GGM deformed 5₂ curve and resurgence is its native frame —
+three saddles, complexified actions, integral Stokes constants. It would explain
+*why* a sum over all saddles is a clean multiple of `π²` (note `S(0) = 3·S(π)`,
+the `3` being the number of saddles). It is **not** an attack route for what
+remains: Gap A is IFT bookkeeping and the bridge just collapsed to the cubic
+plus one argument. Recorded as a separate lane, and as a source of an
+independent check — which this branch's record argues for.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
