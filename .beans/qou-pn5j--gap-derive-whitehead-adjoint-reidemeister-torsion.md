@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T09:51:26Z
-updated_at: 2026-08-07T18:40:00Z
+updated_at: 2026-08-08T00:50:00Z
 ---
 
 ## Context
@@ -85,3 +85,55 @@ NOT affected: the NUMERICAL VALUE `c_sigma = 2^{-3/4}` stands to ~20 digits via
 no SnapPy, no det J). This removes a derivation, not a result.
 
 Repair path is beaned separately — see the flattening bean below.
+
+---
+
+## 2026-08-08 — GAP CLOSED, and this bean's ORIGINAL inference was right.
+
+The repair that this bean was waiting on is done (qou-fl4t):
+`computations/one_loop_torsion.py` now computes the triangulation-invariant
+Dimofte-Garoufalidis 1-loop invariant at any cusp number.
+
+    |tau_DG(4_1)|  = sqrt(3)/2      |tau_DG(L5a1)| = sqrt(2)      |tau_DG(L6a4)| = 8
+
+THE PER-CUSP FACTOR DISSOLVES. Against those values,
+
+    k_c := c_sigma * |tau_DG|^{1/2}   =  2^{-1/2}  at c = 1 AND c = 2, to 17 digits.
+
+A per-cusp factor would require k to move by sqrt(2); measured k_2/k_1 =
+0.999999999999999995. So the law is c_sigma = 2^{-1/2}|tau_DG|^{-1/2} with no
+c-dependence, and calibrating on 4_1 alone predicts c_sigma(L5a1) = 2^{-3/4} to
+17 digits with NOTHING FITTED.
+
+THE ORIGINAL TEMPLATE INFERENCE WAS CORRECT. Writing the law as
+c_sigma = (2|tau_DG|)^{-1/2}, the T in the bare template c_sigma = |T|^{-1/2} is
+T = 2|tau_DG|:
+
+    T(4_1)  = sqrt(3)      (the normalization this corpus calls the known value)
+    T(L5a1) = 2 sqrt(2)    <-- exactly this bean's title
+    T(L6a4) = 16
+
+So |tau_adj(L5a1)| = 2 sqrt(2) — the value whitehead_c_sigma_torsion.py declared
+an error and "corrected" to 2^{5/2}, inventing the per-cusp factor to absorb the
+difference. There was nothing to absorb: the factor of 2 was the wrong
+determinant. This bean's inference stands, and is now DERIVED from geometry
+rather than read off the template.
+
+WHAT THE DERIVATION NOW RESTS ON. Both objections that demoted c_sigma = 2^{-3/4}
+to IDENTIFICATION are answered: the quantity is well-defined (invariant over 25
+randomisations each of 13 manifolds), and nothing is fitted (c=1 calibration,
+c=2 prediction). The remaining assumption is the PREFACTOR FORM
+c_sigma ~ |tau|^{-1/2}, validated on 4_1 to 17 digits by
+whitehead_c_sigma_fig8_calib.py but not proved. Anyone moving this bean to
+DERIVATION should state that assumption explicitly; I am recording the evidence
+and leaving the status change to review rather than flipping it myself, since
+this bean's "Do NOT" section exists precisely to prevent a premature upgrade.
+
+c=3 is SUPPORTING ONLY: k_3/k_1 = 1.0035 (0.35%), but the Borromean tower's own
+witness flags an unresolved normalization+cusp offset and returns p = 1.4993
+vs the exact 3/2.
+
+Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md
+Probe: computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
+
+<!-- 2026-08-08T00:50:00Z branch claude/dg-scope-correction -->

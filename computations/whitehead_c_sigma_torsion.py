@@ -58,6 +58,34 @@ Its NUMERICAL VALUE is unaffected — whitehead_c_sigma_hiprec.py pins it to ~20
 digits independently, with no SnapPy and no det J.  Repair = restore the
 flattening + the 1/2, then re-run the invariance probe.
 
+⚠⚠ SUPERSEDED 2026-08-08 — THE PER-CUSP FACTOR DISSOLVES ENTIRELY.
+(probes/one_loop_c_sigma_percusp_dissolution_probe.py; audit
+docs/audits/2026-08-08-per-cusp-factor-dissolves.md)
+
+The repair is done: `computations/one_loop_torsion.py` now computes the
+triangulation-invariant DG invariant at ANY cusp number, giving
+|tau(4_1)| = sqrt(3)/2, |tau(L5a1)| = sqrt(2), |tau(L6a4)| = 8 — NOT the
+sqrt(3), 2^{5/2}, 64 computed here.  Against those,
+
+    k_c := c_sigma * |tau_DG|^{1/2}   is the SAME constant 2^{-1/2}
+    at c = 1 and c = 2, to 17 digits.
+
+A per-cusp factor would require k to move by sqrt(2) between them; the measured
+ratio is 0.999999999999999995.  So the correct law has NO per-cusp factor:
+
+    c_sigma = 2^{-1/2} |tau_DG|^{-1/2}
+
+and calibrating it on 4_1 ALONE predicts c_sigma(L5a1) = 2^{-3/4} to 17 digits
+with nothing adjustable.
+
+WHY THE FIT ABOVE LOOKED LIKE IT WORKED.  On the DEFAULT triangulations of 4_1,
+L5a1 and L6a4 — and not in general — |tau_old| = 2^c |tau_DG|.  Substituting,
+2^{(c-1)/2} |tau_old|^{-1/2} = 2^{-1/2} |tau_DG|^{-1/2} identically.  The
+"standard per-cusp Gaussian-integration factor" claimed above was exactly the
+c-dependence needed to undo that 2^c.  It is a reparametrization, and the 2^c
+relation fails on 8 of the 13 manifolds tested — including 5_2, 6_2 and 7_4 at
+c = 1, where there is no per-cusp factor to blame.
+
 Audit-only; the derived tau is NOT wired to any production dashboard.
 -- Ref: Dimofte-Garoufalidis, "The quantum content of the gluing equations",
         Geom. Topol. 17 (2013) 1253-1315 (1-loop invariant).

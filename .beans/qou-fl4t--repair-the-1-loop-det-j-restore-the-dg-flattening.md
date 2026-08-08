@@ -392,3 +392,47 @@ still open, and is now open for a sharper reason than when it was written.
 Audit: docs/audits/2026-08-07-one-loop-multicusp-derivation.md
 
 <!-- 2026-08-07T23:55:00Z branch claude/dg-scope-correction — derived, implemented, validated -->
+
+---
+
+## 2026-08-08 (eighth pass) — step 3 done: the per-cusp factor DISSOLVES.
+
+Step 3 of "Do" above said: re-derive the per-cusp factor against the corrected
+torsion; it may survive, vanish, or change form. **It vanishes.**
+
+Against the corrected invariant (|tau(4_1)| = sqrt(3)/2, |tau(L5a1)| = sqrt(2),
+|tau(L6a4)| = 8), the quantity
+
+    k_c := c_sigma * |tau_DG|^{1/2}
+
+is the SAME constant 2^{-1/2} at c = 1 and c = 2, to 17 digits. A per-cusp
+factor would require k to move by sqrt(2); measured k_2/k_1 = 0.999999999999999995.
+So the law is c_sigma = 2^{-1/2} |tau_DG|^{-1/2}, with no c-dependence, and
+calibrating on 4_1 ALONE predicts c_sigma(L5a1) = 2^{-3/4} to 17 digits with
+nothing adjustable.
+
+NOT CIRCULAR: the c_sigma values are colored-Jones/Kashaev extractions with no
+determinant anywhere (whitehead-c-sigma-fig8-calib and -hiprec witnesses), and
+the fig8 witness states they use the same c_sigma definition, so c=1 and c=2 are
+directly comparable.
+
+WHY THE OLD FIT LOOKED RIGHT. On the DEFAULT triangulations of 4_1, L5a1, L6a4 —
+and not in general — |tau_old| = 2^c |tau_DG|, so
+2^{(c-1)/2}|tau_old|^{-1/2} = 2^{-1/2}|tau_DG|^{-1/2} identically. The per-cusp
+factor was exactly the c-dependence needed to undo that 2^c: a reparametrization,
+not a Gaussian-integration factor. Measured over 13 manifolds the 2^c relation
+holds on 5 and fails on 8, including 5_2/6_2/7_4 at c=1 where no per-cusp factor
+could be responsible.
+
+ALSO CLOSES the normalization caveat the seventh pass left open, for c=1 vs 2:
+invariance and the change-of-curve law are blind to a constant depending only on
+c, but the Jones side is not. Under the prefactor form c_sigma ~ |tau|^{-1/2},
+k_1 = k_2 says the DG normalization carries no extra c-dependence.
+
+c=3 is SUPPORTING ONLY: k_3/k_1 = 1.0035 (0.35%), but that tower's witness flags
+an unresolved normalization+cusp offset and returns p = 1.4993 vs 3/2.
+
+Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md
+Probe: computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
+
+<!-- 2026-08-08T00:40:00Z branch claude/dg-scope-correction -->
