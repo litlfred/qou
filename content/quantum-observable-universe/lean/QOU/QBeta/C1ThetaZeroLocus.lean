@@ -246,4 +246,86 @@ theorem qThetaC_zeros_annulus (P : ℝ) (hP : 1 < P) (r R : ℝ) (hr : 0 < r) (h
 
 end ZeroCount
 
+section FundamentalAnnulus
+
+/-- `2πi ≠ 0`, so the winding count can be cancelled. -/
+private theorem two_pi_I_ne_zero : (2 * (Real.pi : ℂ) * Complex.I) ≠ 0 :=
+  mul_ne_zero (mul_ne_zero two_ne_zero (by exact_mod_cast Real.pi_ne_zero)) Complex.I_ne_zero
+
+/-- **`θ_P` has exactly one zero in each fundamental annulus.**
+
+The converse of `qTheta_neg_zpow_eq_zero`, and the statement that makes the C1
+pole divisor exact rather than `⊇`.
+
+`qTheta_winding_step` puts the winding difference across `ρ < ‖z‖ < P²ρ` at
+exactly `2πi`; `qThetaC_zeros_annulus` reads that difference as
+`(∑ m)·2πi`, so `∑ m = 1`; every multiplicity is at least `1`, so the index set
+is a single point.
+
+The one hypothesis — no zero on the inner circle — is `qTheta_winding_step`'s
+own, and is unavoidable rather than restrictive: the integrand `θ'/θ` is not
+defined on a circle through a zero, and the radius is ours to choose. -/
+theorem qThetaC_unique_zero_fundamental_annulus (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
+    (hne : ∀ z : ℂ, ‖z‖ = ρ → qThetaC P z ≠ 0) :
+    ∃ a : ℂ, ρ < ‖a‖ ∧ ‖a‖ < P ^ 2 * ρ ∧
+      ∀ z : ℂ, ρ < ‖z‖ → ‖z‖ < P ^ 2 * ρ → (qThetaC P z = 0 ↔ z = a) := by
+  classical
+  have hP2 : (1:ℝ) < P ^ 2 := by nlinarith
+  have hrR : ρ < P ^ 2 * ρ := by nlinarith
+  obtain ⟨S, m, hSb, hmpos, hSzero, hwind⟩ :=
+    qThetaC_zeros_annulus P hP ρ (P ^ 2 * ρ) hρ hrR hne (qThetaC_ne_zero_outer P hP ρ hρ hne)
+  rw [qTheta_winding_step P hP ρ hρ hne] at hwind
+  -- the contour identity pins the count at one
+  have key : (1 : ℂ) * (2 * (Real.pi : ℂ) * Complex.I)
+      = (∑ a ∈ S, (m a : ℂ)) * (2 * (Real.pi : ℂ) * Complex.I) := by
+    rw [← hwind]; ring
+  have hsum1 : (1 : ℂ) = ∑ a ∈ S, (m a : ℂ) := mul_right_cancel₀ two_pi_I_ne_zero key
+  have hsumN : (∑ a ∈ S, m a) = 1 := by
+    have hcast : ((∑ a ∈ S, m a : ℕ) : ℂ) = 1 := by push_cast; exact hsum1.symm
+    exact_mod_cast hcast
+  -- positive multiplicities summing to one ⇒ a single point
+  have hle : S.card ≤ ∑ a ∈ S, m a := by
+    simpa using Finset.card_nsmul_le_sum S m 1 (fun x hx => hmpos x hx)
+  have hSne : S.Nonempty := by
+    rcases Finset.eq_empty_or_nonempty S with h | h
+    · rw [h] at hsumN; simp at hsumN
+    · exact h
+  have hcard : S.card = 1 := le_antisymm (hsumN ▸ hle) (Finset.card_pos.2 hSne)
+  obtain ⟨a, ha⟩ := Finset.card_eq_one.1 hcard
+  refine ⟨a, ?_, ?_, ?_⟩
+  · exact (hSb a (by rw [ha]; exact Finset.mem_singleton_self a)).1
+  · exact (hSb a (by rw [ha]; exact Finset.mem_singleton_self a)).2
+  · intro z hz1 hz2
+    rw [hSzero z hz1 hz2, ha, Finset.mem_singleton]
+
+/-- **The converse zero locus on a fundamental annulus.**
+
+If a lattice point `−P^{2k}` lies in the annulus, it *is* the unique zero — so
+on that annulus the zero set of `θ_P` is exactly `{−P^{2k}}`, which is the
+converse the C1 pole divisor needs.
+
+Choosing the `k` is arithmetic on `Real.log`, not analysis, and is left to the
+caller: the annulus has ratio `P²` and the lattice spacing is `P²`, so an *open*
+fundamental annulus carries one lattice point or none, depending on where `ρ`
+falls. -/
+theorem qThetaC_zero_locus_fundamental_annulus (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
+    (hne : ∀ z : ℂ, ‖z‖ = ρ → qThetaC P z ≠ 0) (k : ℤ)
+    (hk1 : ρ < P ^ (2 * k)) (hk2 : P ^ (2 * k) < P ^ 2 * ρ) :
+    ∀ z : ℂ, ρ < ‖z‖ → ‖z‖ < P ^ 2 * ρ →
+      (qThetaC P z = 0 ↔ z = -((P ^ (2 * k) : ℝ) : ℂ)) := by
+  have hP0 : (0:ℝ) < P := lt_trans zero_lt_one hP
+  obtain ⟨a, _, _, hchar⟩ := qThetaC_unique_zero_fundamental_annulus P hP ρ hρ hne
+  -- the lattice point is a zero, and it sits in the annulus, so it is *the* zero
+  have hlat : ‖(-((P ^ (2 * k) : ℝ) : ℂ))‖ = P ^ (2 * k) := by
+    rw [norm_neg, Complex.norm_real, Real.norm_eq_abs, abs_of_pos (zpow_pos hP0 _)]
+  have hlatzero : qThetaC P (-((P ^ (2 * k) : ℝ) : ℂ)) = 0 := by
+    rw [← Complex.ofReal_neg, qThetaC_ofReal, qTheta_neg_zpow_eq_zero P hP0 k,
+      Complex.ofReal_zero]
+  have hlateq : -((P ^ (2 * k) : ℝ) : ℂ) = a :=
+    (hchar _ (by rw [hlat]; exact hk1) (by rw [hlat]; exact hk2)).1 hlatzero
+  intro z hz1 hz2
+  rw [hchar z hz1 hz2, hlateq]
+
+end FundamentalAnnulus
+
 end QOU.QBeta.C1Poles

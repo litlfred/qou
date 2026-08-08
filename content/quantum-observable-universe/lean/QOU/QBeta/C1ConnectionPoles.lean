@@ -507,6 +507,19 @@ noncomputable def qThetaCTerm (P : ℝ) (w : ℂ) (n : ℤ) : ℂ :=
 
 lemma qThetaC_eq_tsum (P : ℝ) (w : ℂ) : qThetaC P w = ∑' n : ℤ, qThetaCTerm P w n := rfl
 
+/-- **The complex `θ_P` restricted to real arguments is the real one.**
+
+The bridge every real fact about `θ_P` — the vanishing theorem
+`qTheta_neg_zpow_eq_zero` above all — crosses to reach the complex-analytic
+statements. Unconditional: `Complex.ofReal_tsum` needs no summability, since
+both sides are `0` when the family is not summable. -/
+lemma qThetaC_ofReal (P w : ℝ) : qThetaC P (w : ℂ) = ((qTheta P w : ℝ) : ℂ) := by
+  rw [qThetaC_eq_tsum, qTheta, Complex.ofReal_tsum]
+  refine tsum_congr fun n => ?_
+  rw [qThetaCTerm, qThetaTerm]
+  push_cast
+  ring
+
 lemma norm_qThetaCTerm (P : ℝ) (hP : 0 < P) (w : ℂ) (n : ℤ) :
     ‖qThetaCTerm P w n‖ = qThetaTerm P ‖w‖ n := by
   rw [qThetaCTerm, qThetaTerm, norm_mul, norm_zpow, norm_zpow, Complex.norm_real,
