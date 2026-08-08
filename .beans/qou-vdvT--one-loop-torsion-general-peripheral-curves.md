@@ -1,7 +1,7 @@
 ---
 # qou-vdvT
 title: 'Extend one_loop_torsion.py to general peripheral curves, and test the a-twisted Whitehead chains'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - c-sigma
     - snappy
 created_at: 2026-08-08T18:40:00Z
-updated_at: 2026-08-08T19:55:00Z
+updated_at: 2026-08-08T20:30:00Z
 ---
 
 ## The ask
@@ -85,3 +85,44 @@ alternative manifold carrying the `a != 0` values, so if the law holds at
 
 So general `(p,q)` peripheral curves are not a convenience here, they are the
 only access. This bean stands, better motivated.
+
+## Resolution — done, and the prediction holds
+
+`one_loop_torsion.py` now takes general `(p, q)` peripheral curves via
+`_curve_row`. The log-form gluing equation of a peripheral curve is LINEAR in
+its homology class, so the row of `p*mu + q*lambda` is the integer combination
+`p*mer + q*lon` of the two rows SnapPy already returns, and `nz_pair` stays valid
+because it is linear too. No new geometry, no new normalisation. The legacy
+`0`/`1` spelling still works and is checked to agree; `self_test()` stays green
+including the change-of-curve law at c = 1, 2, 3.
+
+**The a-dependence is confirmed, exactly, at two cusp numbers.** Framing the
+`a = 0` complement by `mu - a*lambda` on one cusp:
+
+    Whitehead  W_{a,1,1,0}  n=1, m=4a-1:  tau^2 = 1 + (4a-1)^2
+        a = 0, 1, -1, 2, -2  ->  2, 10, 26, 50, 82
+    Borromean  W_{a,1,1,1}  n=2, m=4a:    tau^2 = 64 (1 + 4a^2)
+        a = 0, 1, -1, 2, -2  ->  64, 320, 320, 1088, 1088
+
+25 framings, 0 mismatches, on every cusp of both manifolds.
+
+**Why this was the test worth doing.** `a` enters van der Veen's Lemma 1 ONLY
+through the phase `chi^{4a-c+d}`. The modulus of the summand does not know about
+`a` at all — the entire `a`-dependence of `|tau_DG|` is manufactured by
+interference in the `n`-sum. Every earlier confirmation (L5a1, L6a4, L8n5,
+L10n100, L10n103) had `a = 0`, so this is the first test of the phase-driven
+half. Two things came out that were not put in: the Borromean values are
+identical on all three cusps, and symmetric under `a -> -a` — both required by
+`m = 4a` entering as `m^2`.
+
+It also settles what the twisted chains ARE: the same complement with meridian
+`mu - a*lambda`. That is what the `a`-independence of `Vol(W_{a,b,c,d})` forced,
+and what the census scan (only `m129` and `m125` at octahedral volume, neither
+carrying `sqrt10`) had already made unavoidable.
+
+Lean, sorry-free: `vdv_tau_sq` (`tau^2 = 16^{n-1}(n^2+m^2)`, so every b=1 chain
+has INTEGER `tau^2` — which is why the table above is integers rather than
+numerical near-misses) and `vdv_radical_is_gaussian_norm` (`n^2+m^2 =
+normSq(n - mi)`, so the radical is a norm from `Z[i]`, not an accident).
+
+Probe: `computations/probes/one_loop_twisted_framing_probe.py`.

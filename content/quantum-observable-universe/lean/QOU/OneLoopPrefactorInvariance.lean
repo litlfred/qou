@@ -53,6 +53,7 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Data.Complex.Basic
 
 namespace QOU.OneLoopPrefactorInvariance
 
@@ -209,6 +210,53 @@ theorem vdv_c_sigma_iff_tau {t : ℝ} (ht : 0 < t) (n : ℕ) (m : ℝ)
     field_simp
     norm_num
   rw [law_inverts ht hc, hsq, hval]
+
+/-! ### `τ²` is an integer, and it is a Gaussian norm
+
+The closed form `|τ_DG| = 2^{2n−2}√(n²+m²)` (`n = c+d`, `m = 4a−c+d`) squares to
+something with no square root left in it:
+
+    τ²  =  16^{n−1} · (n² + m²)
+
+so **every `b = 1` Whitehead chain has integer `τ²`** — and `n² + m²` is exactly
+`Complex.normSq (n − mi)`, the norm of a Gaussian integer. That is the arithmetic
+content of the closed form, made formal: `τ_DG` lives in `Q(i)`, the trace field
+of the regular ideal octahedron, and the radical is a norm rather than an
+accident.
+
+It is also what the twisted-framing test measured. Reframing the `a = 0`
+complement by `μ − aλ` on one cusp gives, exactly,
+
+    Whitehead  n=1, m=4a−1 :  τ² =  1 + (4a−1)²  =  2, 10, 26, 50, 82
+    Borromean  n=2, m=4a   :  τ² = 64 (1 + 4a²)  =  64, 320, 320, 1088, 1088
+
+on 25 framings with no mismatch — see `one_loop_twisted_framing_probe.py`. The
+integrality below is why those came out as integers rather than as numerical
+near-misses, and the `m²` is why the Borromean row is symmetric under `a ↦ −a`.
+
+-- Ref: [vanderveen2008] arXiv:math/0611181
+-- Ref: [manuscript] computations/probes/one_loop_twisted_framing_probe.py
+-/
+
+/-- **`τ² = 16^{n−1}(n² + m²)`** — no radical survives the squaring. -/
+theorem vdv_tau_sq (n : ℕ) (hn : 1 ≤ n) (m : ℝ) :
+    (4 ^ n * Real.sqrt ((n : ℝ) ^ 2 + m ^ 2) / 4) ^ 2
+      = 16 ^ (n - 1) * ((n : ℝ) ^ 2 + m ^ 2) := by
+  have hS : (0:ℝ) ≤ (n : ℝ) ^ 2 + m ^ 2 := by positivity
+  have h16 : (16:ℝ) ^ n = 16 ^ (n - 1) * 16 := by
+    conv_lhs => rw [← Nat.sub_add_cancel hn]
+    rw [pow_succ]
+  have h4 : ((4:ℝ) ^ n) ^ 2 = 16 ^ n := by
+    rw [← pow_mul, mul_comm, pow_mul]; norm_num
+  rw [div_pow, mul_pow, Real.sq_sqrt hS, h4, h16]
+  ring
+
+/-- **The radical is a Gaussian norm.**  `n² + m²` is `normSq (n − mi)`, so
+`τ²` is `16^{n−1}` times the norm of an element of `ℤ[i]` — the ring of integers
+of `ℚ(i)`, the trace field of the regular ideal octahedron. -/
+theorem vdv_radical_is_gaussian_norm (n : ℕ) (m : ℝ) :
+    Complex.normSq (⟨(n : ℝ), -m⟩ : ℂ) = (n : ℝ) ^ 2 + m ^ 2 := by
+  simp [Complex.normSq_apply]; ring
 
 /-! ### The saddle condition, and what it forces
 

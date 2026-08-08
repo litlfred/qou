@@ -269,6 +269,42 @@ than required. What is **not** established:
   corpus had, and it is not a proof.
 * **The phase of `E`.** Untouched.
 
+## The `a`-dependence, confirmed — the phase-driven half
+
+Every confirmation in the table above has `a = 0`. That matters, because **`a`
+enters van der Veen's Lemma 1 only through the phase `χ^{4a−c+d}`**: the modulus
+of the summand does not know about `a`, and the whole `a`-dependence of
+`|τ_DG|` is manufactured by interference in the `n`-sum. If the closed form were
+right for the wrong reason, this is where it would show.
+
+Testing it needs reframing, not a new manifold. `Vol(W_{a,b,c,d}) = 8(c+d)Λ(π/4)`
+is independent of `a`, so by Thurston–Jørgensen the chains cannot be infinitely
+many distinct manifolds — and scanning `OrientableCuspedCensus(cusps=2)` at
+octahedral volume returns only `m129` (`|τ| = √2`) and `m125` (`|τ| = √8`, and
+`8 = 1+m²` has no integer solution, so it is not in the family). No manifold
+carries the `a ≠ 0` values. They are one complement, reframed.
+
+So `one_loop_torsion.one_loop` was extended to general `(p,q)` peripheral curves
+(`_curve_row`): the log-form gluing equation of a peripheral curve is *linear* in
+its homology class, so the row of `pμ + qλ` is `p·mer + q·lon` of the two rows
+SnapPy returns. Legacy `0`/`1` still agrees; `self_test()` stays green at
+`c = 1, 2, 3`. Framing by `μ − aλ` on one cusp:
+
+| chain | | `τ²` predicted | `a = 0, 1, −1, 2, −2` |
+|---|---|---|---|
+| `W_{a,1,1,0}` | `n=1, m=4a−1` | `1 + (4a−1)²` | 2, 10, 26, 50, 82 |
+| `W_{a,1,1,1}` | `n=2, m=4a` | `64(1 + 4a²)` | 64, 320, 320, 1088, 1088 |
+
+**25 framings, 0 mismatches**, on every cusp of both manifolds. Two things came
+out that were not put in: the Borromean values are identical on all three cusps,
+and symmetric under `a ↦ −a` — both forced by `m = 4a` entering as `m²`.
+
+Formally (`vdv_tau_sq`), `τ² = 16^{n−1}(n² + m²)`, so **every `b = 1` chain has
+integer `τ²`** — which is why that table is integers rather than numerical
+near-misses — and `n² + m² = \mathrm{normSq}(n − mi)`
+(`vdv_radical_is_gaussian_norm`), so the radical is a **norm from `Z[i]`** rather
+than an accident.
+
 ## The knot side, closed — and why the method has exactly two homes
 
 **What made the link case work was not van der Veen.** It was that his critical
