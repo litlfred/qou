@@ -1117,6 +1117,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The pipeline vocabulary and the phase label are gone: \"**Reconnected orphan blocks (Phase 7)**\" no longer appears, and the section lead now describes the two degenerate limits of the $q$-machinery ($q \\to 1$ Lusztig canonical basis, $q \\to \\infty$ reverse limit) and the $\\Phi_q$ / $A_J$ identification connecting them.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

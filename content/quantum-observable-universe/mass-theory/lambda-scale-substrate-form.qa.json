@@ -1568,6 +1568,18 @@
         "reviewed_at": "2026-07-12T02:24:13.638Z",
         "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The published `title:` in the sibling .ts no longer ends \"(acknowledged-CAL-4)\"; it now reads \"Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$\". \"acknowledged-\" was a QA disposition and CAL-4 is defined nowhere in the manuscript; nothing mathematical was carried by either. The .md body was already clean, and the authorNotes and deprecation record are untouched.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

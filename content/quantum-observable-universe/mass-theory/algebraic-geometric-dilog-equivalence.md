@@ -1,10 +1,8 @@
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
+> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used
+> below is the structurally-wrong leading-order ansatz; the operator-valued
+> form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 **Conjecture (Algebraic-geometric dilogarithm equivalence).**
 *The categorical Markov trace of the nonabelian multiplicative integral
@@ -83,7 +81,7 @@ schemes.
 
 ## Conjectural standing
 
-This block is downstream of
+This result is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)), so it is
 necessarily a **conjecture** — propagation of conjectural backing
@@ -103,7 +101,7 @@ The class asserts nothing provable-outright; no instance is fabricated. This
 matches the conjectural-class pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
-## The bar-odd keystone: argument identification to $S$
+## The bar-odd open item: argument identification to $S$
 
 The equivalence above is the **bar-even** face of the correspondence:
 the asymptotic recovers the real volume $D(z) = \mathrm{Vol}_{\mathrm{hyp}}$,
@@ -111,7 +109,7 @@ which for the amphichiral $4_1$ supplies the $-\mathrm{Vol}(4_1)$ part of
 the $Q_\beta$ coefficient $c_3$. Its **bar-odd** companion is the
 anchor-dependent leak $S = c_3 + \mathrm{Vol}(4_1)$, carried not by the
 compact $\Phi_q$ but by the Faddeev non-compact $\Phi_b$
-(modular double). The keystone open item is the
+(modular double). The open item is the
 **argument-identification map**: the structural map $q_0 \mapsto z(q_0)$
 — the substrate-to-meridian-holonomy map supplied by the same
 pole-to-cusp matching as items 1–2 — such that the fibre-branch Faddeev
@@ -173,7 +171,7 @@ $[1, \infty)$) are discharged from Mathlib, not carried. The
 **definition-to-contour identity** — that the real-integral `phiB`
 equals the Faddeev contour integral — remains a numerical pin
 ($8 \times 10^{-29}$ against the validated contour evaluator) and is
-assumed nowhere in the Lean; its honest §3b carrier is
+assumed nowhere in the Lean; its honest carrier is
 `QOU.MathlibExt.PhiBFibreExtension` (the constructed `phiB` extends to a
 full Faddeev $\Phi_b$; no instance).
 
@@ -185,11 +183,11 @@ $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ — and with it any
 on the complex-volume unification
 ([binding–$Q_\beta$ complex volume](#conj:binding-qbeta-complex-volume)).
 $\Phi_b$ touches binding **only** through that unproven channel
-identity; no statement in this block or in the Lean carriers above
+identity; no statement here or in the Lean carriers above
 assumes it. The channel is carried explicitly as the class
 `SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity
 $S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and the composition with the
-keystone is derived, not assumed: `phase_eq_im_deformed_volume`,
+argument-identification map is derived, not assumed: `phase_eq_im_deformed_volume`,
 `phiB_eq_cs_phase`, and `exists_cs_vanishing` (the sign flip of $S$
 forces a substrate point with vanishing deformed Chern–Simons part).
 

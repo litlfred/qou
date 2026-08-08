@@ -19,4 +19,4 @@ The additive-Wedderburn approximation sums the $A=1$ weights over each generator
 
 Schur-Weyl duality isolates the physical origin of each correction into specific partition geometries. The base volume derives from the symmetric partition $(3A)$. The surface correction derives from the boundary partition $(3A-1, 1)$. The pair-crossing interaction derives from the $(3A-2, 2)$ pair partition. Magic shell-closure peaks derive from sharp hook-product factorization at rectangular partitions.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued physical observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued physical observables at $q_0$.

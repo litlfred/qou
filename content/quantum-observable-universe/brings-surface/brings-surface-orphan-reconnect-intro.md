@@ -1,1 +1,1 @@
-These blocks were reconnected during the Phase 7 orphan audit. They address supplementary Bring's-surface results awaiting thematic placement.
+Two views of the Bring fibre — at the substrate parameter $q_0$ and at its square root $q_0^{1/2}$ — set up the geometry that the remaining blocks of this section use. The inter-nucleon channel is then read as a colour tube on that surface, and charge conjugation is identified with the colour-sheet flavour swap.

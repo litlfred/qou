@@ -1,6 +1,18 @@
 {
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The dated branch history \"(six entries as of 2026-05-31)\" is gone; the Notes now say the classification of c_3 has been reversed repeatedly, which keeps the reason tiered classification is mandatory. The pipeline framing \"never as binary wired / dropped\" is now \"never collapsed to a binary keep-or-discard verdict\", and \"inclusion/exclusion gate\" is now \"inclusion/exclusion criterion\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "source_hashes": {
     "md": "2a1c2c904a1b",

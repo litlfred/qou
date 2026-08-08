@@ -11,6 +11,18 @@
     "ts": "8e703673db4d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The QA-process vocabulary is gone: neither \"audit\" nor \"open audit target\" appears; the section lead now names the mass predictions and their derivations directly.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

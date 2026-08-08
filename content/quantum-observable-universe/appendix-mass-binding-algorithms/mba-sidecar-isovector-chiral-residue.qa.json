@@ -1536,6 +1536,28 @@
         "reviewed_at": "2026-07-12T00:34:55.997Z",
         "reviewed_sha": "a390975172b947c0522dda496f17868e5c0a243a"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean. No branch/audit working labels, bean ids, PR or branch names, AGENTS.md / skill-file or audit-memo pointers, dated status notes, or first-person work narration found in the .md body or the published .ts title.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Re-reviewed under the added aspiration-language scope. All seven uses of \"keystone\" are gone: the proposition is now conditional on \"the identification BWVacuumRowIsHecke\" rather than \"the keystone identification\", kappa is \"the single chiral weight\", the Bring datum supplies \"the five-fold chirality\", and the consequence paragraph names the conjecture directly instead of ranking it in a programme. The conditionality, the open status of the conjecture, b = 4*kappa, and the caveat that the measured b ~ -1.75 is the current error rather than a target are all unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

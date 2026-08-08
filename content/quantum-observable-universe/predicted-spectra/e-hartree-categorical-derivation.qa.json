@@ -13,6 +13,18 @@
     "lean": "1c9ecb365563"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed, both round-bookkeeping leaks. \"the source of the **round-21** refutation of the $y_{\\mathrm{cov}}$ form\" -> \"the source of the refutation of the $y_{\\mathrm{cov}}$ form\"; \"Tables 1-9 record **per-round** intermediate data\" -> \"Tables 1-9 record the intermediate data of the successive attempts\". The refutation itself and the unverified-saturation gap are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

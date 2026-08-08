@@ -13,6 +13,18 @@
     "lean": "525231f8dbee"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/-w3-habiro-unblocked.md` link is gone; $\\mathrm{shift}(K)$ is now identified as the GS-filtration shift exponent with its value given by the integer-LP closure.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

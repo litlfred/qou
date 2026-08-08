@@ -24,10 +24,10 @@ $$
 \sum_{\lambda = \lambda'} w_\lambda \cdot \chi^\lambda(\beta_{\mathrm{atom}}).
 $$
 
-The character sum vanishes identically at certain atomic-braid cycle types. The binding-energy enhancement at magic shells derives from the non-vanishing of $\Phi_n$ on the self-conjugate isotypical operator blocks. Empirically, the GS-filtration Term 6 plus an `is_magic_pair` operator-correction captures the magic-shell signal, correlating at $+0.74$ to the AME residual ([reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
+The character sum vanishes identically at certain atomic-braid cycle types. The binding-energy enhancement at magic shells derives from the non-vanishing of $\Phi_n$ on the self-conjugate isotypical operator blocks. Empirically, the GS-filtration Term 6 plus an `is_magic_pair` operator-correction captures the magic-shell signal, correlating at $+0.74$ to the AME residual.
 
 ## Discussion
 
 Numerical witnesses at $k = 3, \dots, 10$ support the saturation condition. The conjecture extends this to all $n \in \mathfrak{M}$, including the high-mass region $\{50, 82, 126\}$.
 
-The downstream cone ([conjecture-cones audit](../../../docs/audits/conjecture-cones.md)) includes [`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.
+The downstream cone includes [`prop:magic-numbers-from-q`](#prop:magic-numbers-from-q) and the shell-closure portion of the BW formula ([`thm:wedderburn-mass-formula`](#thm:wedderburn-mass-formula)). Proving these requires either a derivation of this conjecture or its retention as a class-axiomatised input.

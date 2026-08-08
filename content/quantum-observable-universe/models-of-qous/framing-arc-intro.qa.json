@@ -11,6 +11,18 @@
     "ts": "3ebad3b1e365"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "\"The arc\" is now anchored by the block's opening sentence — \"Five structural steps map the logical arc of this paper\" — so \"The non-abelian Stokes mass identity closes the arc\" resolves to the five-step arc rather than to a run of blocks.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

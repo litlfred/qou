@@ -13,6 +13,18 @@
     "lean": "a6a2977543e6"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "\"the audit probe for this block\" is gone; the scope paragraph now states the criticism directly — the compound-chain extension \"subtracts model-predicted non-magic Q-values — a circular step — and carries an unresolved unit mismatch\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

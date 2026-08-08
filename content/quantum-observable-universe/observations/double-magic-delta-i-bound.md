@@ -39,7 +39,7 @@ The $\Delta i \leq 1$ rule forms the LR-fusion compatibility constraint between 
 
 ## Discussion
 
-We conjecture (AGENTS.md §3b axiom-class):
+We conjecture, axiomatised as a Lean class:
 
 - **Forward direction** ($\Delta i \leq 1 \Rightarrow$ LR-fusion compatible): Relies on the LR-rigidity of adjacent Bring shells.
 - **Reverse direction** ($\Delta i \geq 2 \Rightarrow$ LR-fusion shattered): Relies on a categorical shell-gap argument.
@@ -60,7 +60,7 @@ The $\Delta i \leq 1$ constraint reduces the search space for double-magic LR-fu
 - **With rule**: $19$ pairs ($7$ diagonal + $12$ off-diagonal). A $61\%$ reduction.
 - **With rule + physical convention $i_Z \leq i_N$**: $13$ pairs ($7$ diagonal + $6$ above). A $73\%$ reduction.
 
-This restriction accelerates the algebraic-primality verifier ([`sdp-primality-verifier-spec.md`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/sdp-primality-verifier-spec.md)). The LR-coefficient computation per pair scales as $O(p(n))^2$.
+This restriction accelerates the algebraic-primality verifier ([`sdp-primality-verifier-spec.md`](../../../computations/sdp-primality-verifier-spec.md)). The LR-coefficient computation per pair scales as $O(p(n))^2$.
 
 Empirical tests on small-$n$ pairs via `optimised_magic_verifier.py` measure an approximate $16\times$ speedup on the tractable subset.
 

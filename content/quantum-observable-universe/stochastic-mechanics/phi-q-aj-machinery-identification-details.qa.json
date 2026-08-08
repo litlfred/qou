@@ -1,0 +1,27 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:phi-q-aj-machinery-identification-details",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification-details.ts",
+    "md": "content/quantum-observable-universe/stochastic-mechanics/phi-q-aj-machinery-identification-details.md"
+  },
+  "source_hashes": {
+    "md": "78a3191157e1",
+    "ts": "9a2359790665"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Both flagged items are gone: the \"**Archimedean specialisation (§7c)**\" tag and the \"Path B\" branch decision label no longer appear.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

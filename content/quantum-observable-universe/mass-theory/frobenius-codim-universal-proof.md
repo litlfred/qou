@@ -188,7 +188,7 @@ which reduces to the classical $S_n$-irrep dimension at $q = 1$.
 
 The status table:
 
-| $n$ | $p(n)$ | conj. pairs | self-conj. | Lean theorem | nucleus unblocked |
+| $n$ | $p(n)$ | conj. pairs | self-conj. | Lean theorem | nucleus covered |
 |----:|-------:|------------:|-----------:|-------------|-------------------|
 | $3$ | $3$ | $1$ | $1$ ((2,1)) | inline at $\sigma_w$-trace | $\mathfrak{p}, \mathfrak{n}$ (single-vortex) |
 | $6$ | $11$ | $5$ | $1$ ((3,2,1)) | `hecke_n6_frobenius_codim` | ${}^{4}$He (H_{12} block; ) |

@@ -28,4 +28,18 @@ export default proposition({
     validation: "not_checked",
   },
   uses: ["thm:wedderburn-mass-formula"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module `lean/QOU/ParticleInteractions/mass_categorical_descent.lean` " +
+        "carries binding energies `B`, `B_desc`, `B_trans`, `B_BW` as physical quantities. " +
+        "The `ℝ` is therefore forced by the statement itself rather than " +
+        "chosen, so the block sits on the archimedean side of the §7c wall " +
+        "by construction.",
+    },
+  ],
+
 });

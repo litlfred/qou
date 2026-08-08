@@ -1,11 +1,14 @@
 ## Gram matrix (symbolic in $q$)
 
-**Proposition (stale symbolic entries — see Markov-bug note).**
+**Proposition (symbolic entries, with the $z^3$ substitution still to be
+propagated).**
 *The $6 \times 6$ Gram matrix $G_{ij} = \mathrm{tr}_M(b_i \cdot b_j)$
 over the NF basis $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$
-has the structural form below; the entries containing $z^3$ or
-higher $z^k$ powers from $\mathrm{tr}_M(e^-)$ are stale and need
-the $z^3 \mapsto hz^2 + z$ substitution to be propagated:*
+has the structural form below. The entries containing $z^3$ or
+higher $z^k$ powers from $\mathrm{tr}_M(e^-)$ are written using the naive
+length rule $\mathrm{tr}_M(T_w) = z^{\ell(w)}$, which fails on adjacent
+triples; the correction $z^3 \mapsto hz^2 + z$ has still to be propagated
+through them:*
 
 $$
   G
@@ -20,7 +23,7 @@ $$
   \end{pmatrix}
 $$
 
-*where (STALE — pending recomputation):*
+*where (subject to the same uncorrected $z^3$ entries):*
 - $g_{15} = hz^3 + z^2$ (from $\sigma_0 \cdot e^- = he^- + L_-$)
 - $g_{34} = hz^3 + hz + 1$ (from $L_+ \cdot L_- = he^- + h\sigma_0 + \gamma$)
 - $g_{35} = h^2z^3 + 2hz^2 + z$ (from $L_+ \cdot e^- = h^2e^- + hL_+ + hL_- + \sigma_1$)

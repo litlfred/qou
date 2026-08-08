@@ -1,0 +1,33 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "prop:c1-theta-zero-locus-and-pole-divisor",
+  "kind": "proposition",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-theory/c1-theta-zero-locus-and-pole-divisor.ts",
+    "md": "content/quantum-observable-universe/mass-theory/c1-theta-zero-locus-and-pole-divisor.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the branch-local deictics (\"this arc\" / \"the corpus\" / \"this block\"), the graph-hygiene vocabulary (\"section lead\" / \"orphan block\" / \"wired\") and the bare module label 'C1' no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Re-checked after the body was rewritten for the proved converse zero locus. The new claim (3) and the Scope paragraph name only objects the paper defines — the orbit, the annulus, the order of vanishing, the connection matrix — and state what is open in scholarly terms rather than by reference to the project's own plan. No module labels, no graph-hygiene vocabulary, no deictics pointing outside the manuscript.",
+        "reviewed_at": "2026-08-08T18:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/theta-zero-locus",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

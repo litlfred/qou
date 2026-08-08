@@ -4,7 +4,7 @@ We define the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 
 ## Scope: convenience target, not load-bearing
 
-We clarify the scope of this conjecture after the P3.1 conjectural-propagation audit:
+The scope of this conjecture is as follows:
 
 - **Load-bearing claim** (already proved, not part of this conjecture): The categorical mass equals the infinite-series sum
 
@@ -18,13 +18,13 @@ We clarify the scope of this conjecture after the P3.1 conjectural-propagation a
     \Bigr).
   $$
 
-  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream block that relies on the mass tower routes through this infinite series.
+  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
 
-- **Convenience target** (the conjectural content of this block): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
+- **Convenience target** (the conjectural content here): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 
 If this conjecture fails (no closed-form $\Phi_{\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\Phi_{\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate the infinite sum at $q_0$ (the dominant case) remain unaffected.
 
-The failure consequence column in [`docs/audits/conjecture-cones.md`](../../../docs/audits/conjecture-cones.md) records this scope accurately: "tower formula remains correct as an infinite series; the closed form is a convenience". We specify this distinction here in response to user clarification.
+The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.
 
 ## Statement
 

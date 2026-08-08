@@ -42,7 +42,7 @@ $A_\omega = 3$. Only the **closed**-sector bridge stated above reproduces
 $\{3, 4\}$ (reduced symmetry constant $3$); its $q \to 0$ anchor $S^+(0)_{01} = 3$
 is machine-checked unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
 
-This block therefore adopts the **closed**-sector bridge, and A_ω=3 is made
+We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
 conditional on it downstream
 ([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — a theorem for
 $4_1$, conjectural in general. It is *not* the open-HOMFLY bridge.

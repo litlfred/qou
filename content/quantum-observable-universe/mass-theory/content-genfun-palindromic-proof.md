@@ -27,7 +27,7 @@ is the classical identity counting involutions by RSK shape. $\blacksquare$
 involution for palindromy, and the vanishing first moment for bar-evenness — are proved
 for arbitrary finite index sets in `QOU.AntiInvolutionPalindrome`
 (`palindromic_sum_of_antiInvolution`, `first_moment_zero_of_antiInvolution`), sorry-free.
-The Lean sibling of this block checks the $n=4$ instance concretely
+The Lean sibling checks the $n=4$ instance concretely
 (`C4_palindromic`, `C4_first_moment_zero`). Exact symbolic verification of the closed
 form, palindromy, $C_n(1)=I(n)$ and the second-order rigidity for $n \leq 8$ is recorded
 in `computations/lever1-content-monomial-separation.witness.json`; the parallel result

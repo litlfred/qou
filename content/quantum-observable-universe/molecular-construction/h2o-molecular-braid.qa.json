@@ -13,6 +13,18 @@
     "lean": "5390b24d0f6d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"(AGENTS.md §7c / §8)\" citation is gone; the Lean-sibling line now reads \"*Lean sibling: combinatorial strand-partition datum, self-contained.*\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

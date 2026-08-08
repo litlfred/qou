@@ -98,7 +98,7 @@
 | [def:exceptional-divisor](#def:exceptional-divisor) | Exceptional divisor at $p$ | Ch 2 | `qou:QOU.ExceptionalDivisor` |
 | [def:fermion-boson-decomposition](#def:fermion-boson-decomposition) | Fermion--Boson decomposition | Ch 2 | `qou:QOU.Fermion` |
 | [def:hadron-fibre-embedding](#def:hadron-fibre-embedding) | Fibre-compatible hadron embedding | Ch 8 | `qou:QOU.HadronFibreEmbedding` |
-| [def:lp-duality-hypothesis-class](#def:lp-duality-hypothesis-class) | Finite LP strong-duality + complementary-slackness hypothesis class (§3b-cond) | Ch 10 | `qou:QOU.BraidKnot.HasFiniteLPDuality` |
+| [def:lp-duality-hypothesis-class](#def:lp-duality-hypothesis-class) | Finite LP strong-duality + complementary-slackness hypothesis class | Ch 10 | `qou:QOU.BraidKnot.HasFiniteLPDuality` |
 | [def:flavor-dressing-functor](#def:flavor-dressing-functor) | Flavor dressing functor | Ch 10 | `qou:QOU.FlavorDressing.FlavorDressingFunctor` |
 | [def:frobenius-pairing](#def:frobenius-pairing) | Frobenius pairing | Ch 1 | `qou:QOU.FrobeniusHopfData.frobeniusForm` |
 | [def:gravitational-constant](#def:gravitational-constant) | Gravitational constant from information geometry | Ch 18 | `qou:QOU.Information.gravitationalConstant` |
@@ -294,7 +294,7 @@
 | [prop:binding-scale-catalan](#prop:binding-scale-catalan) | Binding energy scale $\alpha = m_e \times 8G$ | Ch 10 | `qou:QOU.BindingScale.bindingScale_value` |
 | [prop:blowup-yekutieli](#prop:blowup-yekutieli) | Blowup mechanism as lifting obstruction in the brane tower | Ch 4 | `qou:QOU.FluidDynamics.BlowupYekutieli` |
 | [prop:boltzmann-constant](#prop:boltzmann-constant) | Boltzmann constant is unity in QOU natural units | Ch 18 | `qou:QOU.Information.thermalEnergy` |
-| [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ (acknowledged-CAL-4) | Ch 10 | `qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm` |
+| [prop:lambda-scale-substrate-form](#prop:lambda-scale-substrate-form) | Borromean baryon $\lambda_{\text{scale}}$ empirical form $5/2 - h^2 \cdot G$ (an acknowledged calibration input) | Ch 10 | `qou:QOU.BraidKnot.lambdaA_qForm_eq_hForm` |
 | [prop:q-gaussian-obstruction-at-q0](#prop:q-gaussian-obstruction-at-q0) | Bożejko–Speicher $q$-Gaussian obstruction at the substrate $q_0 > 1$ | Ch 10 | `qou:QOU.MassTheory.qGaussianObstructionAtQ0` |
 | [prop:bn-mtc-action](#prop:bn-mtc-action) | Braid group action on $\mathbf{V}^{\otimes n}$ does not factor through $S_n$ | Ch 16 | `qou:QOU.ObservableMTC.bnAction` |
 | [prop:braid-action-tensor](#prop:braid-action-tensor) | Braid-group action on tensor powers | Ch 5 | `qou:QOU.Braiding.braid_action_tensor` |
@@ -778,7 +778,7 @@
 | [conj:rho-k-pair-gen-canonical-form](#conj:rho-k-pair-gen-canonical-form) | Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$ in the graded $\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \hat V_i, \hat V_j)$ such that $\rho_K^{\text{pair-gen}} = \sum_{i<j} f_2(q, \hat V_i^{\text{full}}, \hat V_j^{\text{full}})$ recovering the six-term theorem's Kashaev limit at sub-percent accuracy. | Ch 7 | `qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.pair_gen_kashaev_limit` |
 | [conj:double-magic-delta-i-bound](#conj:double-magic-delta-i-bound) | Conjecture: Empirical double-magic isotopes satisfy $|\Delta i| \leq 1$ across Bring shell indices | Ch 13 | `qou:QOU.Interactions.DoubleMagicDeltaI.DeltaIBoundConjecture` |
 | [conj:e-hartree-categorical-derivation](#conj:e-hartree-categorical-derivation) | Conjectured categorical derivation of $E_h = m_e c_q^2 \alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual | Ch 12 | `qou:QOU.Archimedean.EHartreeCategoricalDerivation` |
-| [conj:cpt-d6-d7-d8-closure](#conj:cpt-d6-d7-d8-closure) | CPT closure: D6 + D7 + D8 jointly imply $C \cdot P \cdot T$ preserves the Markov trace | Ch 8 | `qou:QOU.ParticleInteractions.CPTD6D7D8Closure` |
+| [conj:cpt-d6-d7-d8-closure](#conj:cpt-d6-d7-d8-closure) | CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace | Ch 8 | `qou:QOU.ParticleInteractions.CPTClosure` |
 | [conj:cpt-orbit-closure-density](#conj:cpt-orbit-closure-density) | CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure | Ch 8 | `qou:QOU.ParticleInteractions.cpt_orbit_closure_density` |
 | [conj:crossing-graded-mass-expansion](#conj:crossing-graded-mass-expansion) | Crossing-graded expansion of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.CrossingGradedMassExpansion` |
 | [conj:dim-master-pentagon](#conj:dim-master-pentagon) | Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons | Ch 10 | `qou:QOU.BraidsAndKnots.DIMMasterPentagon` |
@@ -852,7 +852,7 @@
 | [conj:geom-universality](#conj:geom-universality) | Universality of $\mathrm{Geom}(K)$: the categorical volume form yields $\mathrm{Vol}(K)$ and $\mathrm{CS}(K)$ | Ch 8 | `qou:QOU.BraidKnot.geom_universality` |
 | [conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical) | Weinberg angle $\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors | Ch 8 | `qou:QOU.BraidsAndKnots.WeinbergAngleCategorical` |
 | [conj:wenzl-positivity-implies-substrate-positivity](#conj:wenzl-positivity-implies-substrate-positivity) | Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity | Ch 23 | `qou:QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity` |
-| [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3) | Ch 8 | `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` |
+| [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding | Ch 8 | `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` |
 | [conj:yang-mills-mass-gap](#conj:yang-mills-mass-gap) | Yang--Mills Existence and Mass Gap | Ch 3 | `qou:QOU.Torsion.YangMillsMassGap` |
 | [conj:z-eq-n-rho-correction](#conj:z-eq-n-rho-correction) | Z=N substrate-q correction to the Kashaev law: $B = m_e \cdot \mathrm{Vol}_{\rm hyp}(K_A) \cdot (\rho_{\rm struct} + A - [A]_q)$ | Ch 10 | `qou:QOU.BraidKnot.ZeqNRhoCorrection` |
 

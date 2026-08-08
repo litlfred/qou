@@ -142,7 +142,19 @@
     "wall-side-proof": [],
     "voice-statement-no-interpretation": [],
     "proof-narrative-lean-equiv": [],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The work-plan lane label is gone: \"The final two blocks (**Track B**) extract the observable modular tensor category\" now reads \"The argument proceeds in two tracks. ... The second track extracts the observable modular tensor category and its inherent braid-group action.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.236451Z"
 }

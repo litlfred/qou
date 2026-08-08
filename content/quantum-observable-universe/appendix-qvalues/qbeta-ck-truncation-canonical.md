@@ -1,4 +1,4 @@
-This block details the epistemic status of the $\mathfrak{Q}_\beta$ truncation coefficients. It designates which rung is proved, near-matched, or calibration-anchored, ensuring their open status is explicit and auditable.
+We set out the epistemic status of the $\mathfrak{Q}_\beta$ truncation coefficients. It designates which rung is proved, near-matched, or calibration-anchored, ensuring their open status is explicit and checkable.
 
 The $\mathfrak{Q}_\beta$ categorical precision ladder expresses the neutron $\beta$-decay $Q$-value substrate prediction as a convergent product of correction rungs around a Form-A baseline:
 
@@ -7,7 +7,7 @@ $$
   \qquad u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852,
 $$
 
-with $b$ the Hoefsmit off-diagonal coupling on the seminormal $V_{(2,1)}$ representation and $\hbar_q = (q-1)/q$. Because $u \approx 0.00852$, each rung adds roughly $\log_{10}(1/u) \approx 2.07$ decimal digits. The target precision fixes the truncation order $N$: $N \geq \log_{10}(1/\varepsilon)/2.07 - 1$. Target precision, not a canonicity gate, determines $N$.
+with $b$ the Hoefsmit off-diagonal coupling on the seminormal $V_{(2,1)}$ representation and $\hbar_q = (q-1)/q$. Because $u \approx 0.00852$, each rung adds roughly $\log_{10}(1/u) \approx 2.07$ decimal digits. The target precision fixes the truncation order $N$: $N \geq \log_{10}(1/\varepsilon)/2.07 - 1$. Target precision, not a canonicity criterion, determines $N$.
 
 The status of the rung coefficients $c_k$ is **tiered**:
 

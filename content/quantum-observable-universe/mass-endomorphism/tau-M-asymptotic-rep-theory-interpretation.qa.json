@@ -11,6 +11,18 @@
     "ts": "dba478b6bd2a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the \"Subsection content pending restoration ... removed under bean 6fib\" placeholder and the \"(PR #2300)\" citation are both gone, and \"pending the keystone\" now resolves to \"the open $s5$–$so_3$ keystone\" named earlier in the same paragraph.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

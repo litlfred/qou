@@ -11,6 +11,18 @@
     "ts": "b28801b5b345"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/-self-conj-support-reframing.md` and `docs/audits/conjecture-cones.md` links are gone, leaving the character-sum and downstream-cone passages resting on in-paper propositions only.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

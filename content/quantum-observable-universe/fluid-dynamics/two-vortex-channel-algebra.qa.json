@@ -1564,6 +1564,18 @@
         "reviewed_at": "2026-07-12T00:35:14.445Z",
         "reviewed_sha": "d6e797a4b6b1341624cbda6774c27cdde79c449a"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The agent-instruction citation is gone: the Lean-sibling parenthetical no longer reads \"generic commutative ring, no archimedean input (**AGENTS.md §7c**)\", and the base-ring convention is now stated on its own terms.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

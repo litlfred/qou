@@ -1,17 +1,15 @@
 ## Setting — the $A \ge 3$ binding gap
 
-The binding-endomorphism analogy
-([binding-endomorphism analogy audit](../../../docs/audits/2026-05-28-binding-endomorphism-analogy.md))
-closes the deuteron via $B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
+The binding-endomorphism analogy closes the deuteron via
+$B = m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \Delta\mathrm{tr}$
 to **+0.19 %**, but undershoots $A \ge 3$ by 44–72 %.  Diagnosis:
 $\Delta\mathrm{tr}$ is the **linear truncation** of $\log(\mathrm{tr}) \sim \mathrm{Vol}$;
 the extensive observable lives in the **per-rep q-Reeb rotation
 phase** on the column-rich irrep of a substrate-fixed force-carrier
 torus knot.
 
-The merged α_shift universal chain
-([α_shift universal derivation chain audit](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
-proves $\alpha_{\text{shift}}(T_{p, k}) = k \cdot (p - 1)$ — the
+The α_shift universal chain proves
+$\alpha_{\text{shift}}(T_{p, k}) = k \cdot (p - 1)$ — the
 **pole order of σ** on the column-rich irrep, equivalently the
 boundary holonomy of the Yekutieli non-abelian Stokes integral
 around the column cycle.  This is the **same boundary holonomy**
@@ -28,7 +26,7 @@ $$
        = m_e \cdot \rho_0 \cdot k_A \cdot (p_A - 1).
 $$
 
-| nucleus | A | hypothesised T(p, k) | α_shift | Phase-3 status |
+| nucleus | A | hypothesised T(p, k) | α_shift | status |
 |---|---:|---|---:|---|
 | deuteron (D) | 2 | T(2, 3) candidate | 3 | open |
 | tritium (T) | 3 | T(2, 5) candidate | 5 | open |
@@ -37,7 +35,7 @@ $$
 
 The candidate `(p, k)` values are hypothesised; the rigorous
 identification from the substrate's
-Hecke-Wedderburn block structure on $H_{3A}(q)$ is Phase 3 open math.
+Hecke-Wedderburn block structure on $H_{3A}(q)$ is open.
 
 The deuteron candidate $T(2, 3)$ is motivated by the following rationale:
 
@@ -74,7 +72,7 @@ This is the $A\ge3$ analogue of:
 - the T(2, k) tower for lepton + electroweak masses
   (W k=4, Z k=6, τ k=7, H k=8).
 
-## Lean structure (§3b-cond)
+## Lean structure
 
 - `class BindingPerRepReebPhase B m_e ρ_0` — substrate axiom: per-rep
   Reeb phase factorisation, with field `αShiftAt : ℕ → ℕ` recording
@@ -91,7 +89,7 @@ This is the $A\ge3$ analogue of:
 
 ### Concrete light-nuclei candidate instance
 
-The Phase-3 candidate table above is realised as a single Lean
+The candidate table above is realised as a single Lean
 instance covering all four light nuclei $A \in \{2, 3, 4\}$:
 
 - `def lightNucleusP`, `def lightNucleusK` — case-split selectors
@@ -111,14 +109,13 @@ instance covering all four light nuclei $A \in \{2, 3, 4\}$:
   `matches_alpha_shift` definitionally; the instance body is
   `matches_alpha_shift _ := rfl`.  **No `sorry`.**
 
-Consolidating all four nuclei into one instance — rather than four
-separate sibling blocks — addresses the inefficiency of repeating
-the per-nucleus identification pattern: a single block now carries
-the full Phase-3 candidate table.
+All four nuclei are carried by this single instance rather than by four
+per-nucleus instances, so the identification pattern is stated once and
+the full candidate table is discharged in one place.
 
 ## Remaining open math
 
-**Phase 3:** identify the specific $(p_A, k_A)$ for each light
+What is open is to identify the specific $(p_A, k_A)$ for each light
 nucleus A.  The candidate hypotheses in the table above are
 informed by:
 - the deuteron's $\rho_0 \approx 14.7$ MeV/rad calibration from
@@ -131,9 +128,9 @@ informed by:
   open question to the **per-A force-carrier knot choice**, not the
   scale.
 
-Closing Phase 3 — proving why specifically T(2, 5) carries A=3 mirror
+Closing it — proving why specifically T(2, 5) carries A=3 mirror
 binding etc. — requires the per-nucleus minimisation argument on
 H_{3A}(q)'s Wedderburn block at the binding's smallest non-trivial
 irrep.  Lean target: a theorem deriving $(p_A, k_A)$ from a Hecke-
-trace minimisation principle, analogous to the meson force-carrier
-derivation queued at `prop:meson-color-tube-uniqueness`.
+trace minimisation principle, analogous to the still-open meson
+force-carrier derivation at `prop:meson-color-tube-uniqueness`.

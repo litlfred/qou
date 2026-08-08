@@ -1280,6 +1280,18 @@
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The branch name is gone: \"the sibling Rust kernel (`phase-b-heavy-rust-character-kernel`) handles larger $n$\" -> \"larger $n$ needs a compiled character kernel\"; the later \"defer to the Rust kernel for higher-$n$ probes\" -> \"defer to a compiled kernel\". The $n \\leq 5$ tractability bound and all complexity claims are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

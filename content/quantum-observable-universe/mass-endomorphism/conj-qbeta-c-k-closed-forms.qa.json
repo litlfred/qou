@@ -13,6 +13,18 @@
     "lean": "96e85eeba56c"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: the bare `§3b` tag now reads \"the conditional-class exception\", the `docs/audits/-qbeta-ladder-closure-path.md` link is gone, and \"the 7.8 ppb L2 target\" is now \"the 7.8 ppb accuracy target\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

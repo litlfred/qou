@@ -13,6 +13,18 @@
     "lean": "d44acfb69d51"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The flagged pointer is gone; the block now states the conditional $q^2 - 1$ factor and cites [`prop:q-beta-over-e0-classical-vanishing`] as an ordinary in-paper cross-reference.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

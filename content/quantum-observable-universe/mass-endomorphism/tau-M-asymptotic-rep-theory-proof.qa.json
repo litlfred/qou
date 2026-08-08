@@ -11,6 +11,18 @@
     "ts": "a8e8a074c4a9"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: \"(PR #1602)\" was dropped from the bar-even constraint, and \"the open keystone\" is now bound to the named kernel $R(q,\\xi)$ in the preceding clause.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

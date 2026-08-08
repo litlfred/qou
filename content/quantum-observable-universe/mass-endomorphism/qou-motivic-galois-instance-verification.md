@@ -13,7 +13,7 @@ construction.
 
 ## Downstream consumers
 
-This instance discharges audit GAP 5b ([`docs/audits/family-4-motivic-path.md`](../../../docs/audits/family-4-motivic-path.md)). Theorems that previously required [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis can now consume the explicit QOU instance directly. In particular, [`conj:motivic-perpetual-obstruction`](#conj:motivic-perpetual-obstruction) becomes an unconditional theorem for the QOU substrate.
+Theorems that previously required [`def:motivic-galois-character`](#def:motivic-galois-character) as an `[instance]` hypothesis can now consume the explicit QOU instance directly. In particular, [`conj:motivic-perpetual-obstruction`](#conj:motivic-perpetual-obstruction) becomes an unconditional theorem for the QOU substrate.
 
 ## Coherence
 

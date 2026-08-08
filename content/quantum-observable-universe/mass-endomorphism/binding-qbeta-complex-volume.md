@@ -1,4 +1,4 @@
-**Conjecture (complex-volume unification of mass-binding and decay).** [§3b class: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
+**Conjecture (complex-volume unification of mass-binding and decay).** [Lean classes: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
 *Binding and the $\beta$-decay $Q$-value are not two stories. They form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
@@ -23,8 +23,7 @@ Categorically — **no braid words**. For a confined knot $K$:
   forms the mass endomorphism of the object $X_K$ representing $K$ in
   the rigid monoidal category $\mathbf{C}$.
 - $\mathrm{tr}_M : \mathrm{End}_{\mathbf{C}}(X_K) \to k$ provides the
-  categorical Markov trace (the closed/categorical trace; AGENTS.md
-  §7a — the fibre functor $\tau$ is a *different* object, never
+  categorical Markov trace (the closed/categorical trace; the fibre functor $\tau$ is a *different* object, never
   $\mathrm{tr}_M$).
 - $\Pi_{\text{free}} \in \mathrm{End}_{\mathbf{C}}(X_K)$ provides the
   idempotent projector ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
@@ -116,14 +115,14 @@ same $\mathfrak{V}$.
 
 The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **ζ₄-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full ζ₄-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
 
-**Constraint on the open assembly (the 5nx8 gap):** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
+**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
 
 
 ## The open Stage-C $\sigma_3$-lift obligation
 
 The holomorphic tie hypothesis demands that a **single** Askey-Wilson three-term recurrence carries both the binding (bar-even) and $Q_\beta$ (bar-odd) ladders. This implies the Casoratian $W_k$ of the two ladders maintains a constant sign pattern forced by the recurrence parameters.
 
-**Constraint on the lift (the 1jrh gap):** The categorical $\sigma_3$-lift $\Lambda \in H_4(q)$ of the decay operator must supply genuine $c_4$ rungs that satisfy this sign constraint (`QOU.QBeta.StageC.StageCSigma3Lift`). Any valid lift that leads to a sign-incompatible Casoratian $W_3 \le 0$ (given $W_2 > 0$) refutes the one-recurrence identification, serving as a parameter-free kill-test on candidate objects.
+**Constraint on the lift:** The categorical $\sigma_3$-lift $\Lambda \in H_4(q)$ of the decay operator must supply genuine $c_4$ rungs that satisfy this sign constraint (`QOU.QBeta.StageC.StageCSigma3Lift`). Any valid lift that leads to a sign-incompatible Casoratian $W_3 \le 0$ (given $W_2 > 0$) refutes the one-recurrence identification, serving as a parameter-free kill-test on candidate objects.
 
 ## The S channel through $\Phi_b$ (conditional wiring)
 
@@ -135,7 +134,7 @@ $u(q_0)$ (log meridian holonomy). The deformed volume itself is a
 theorem for $4_1$ and explicitly computable via Neumann–Zagier; the two
 open inputs — the map $u(q_0)$ and the channel identity — are carried by
 the class `QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel`.
-Composed with the argument-identification keystone of
+Composed with the argument identification of
 ([algebraic-geometric dilogarithm equivalence](../mass-theory/algebraic-geometric-dilog-equivalence.md)),
 three statements are derived unconditionally from the two classes
 (`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`,
@@ -163,15 +162,14 @@ that $u(q_0)$ must cross the diagonal $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$
 between the anchors; $u(q_0)$ itself stays open. The measured values live in
 the probe witness, never in the Lean.
 
-## Computational corroboration (this PR)
+## Computational corroboration
 
 The two channels really construct distinct real components of one object: the
 $E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
 $E_0\cdot\Delta(\mathrm{tr})$) provides a precision-ladder $c_2 \approx -8.0$,
 whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
 **brane-tower** ladder
-([`docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md`](../../../docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md),
-witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
+(witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
 the two parities perfectly align with Re/Im components of one complex
 $c_2$.
 
@@ -187,7 +185,7 @@ independent open problems.
 
 **Proof economy.** A relation proved for $\mathfrak{V}$ over a commutative
 ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
-*not* $\mathbb{C}$, per AGENTS.md §7c) descends to **both** the bar-even
+*not* $\mathbb{C}$) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
 because the projections $x \mapsto x\pm\sigma x$ act additively. Formalised
 sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
@@ -234,7 +232,7 @@ companion remarks
 [`rem:channel-rotation-askey-lit`](#rem:channel-rotation-askey-lit) and
 [`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).
 
-**Archimedean specialisation (§7c).** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
+**Archimedean specialisation.** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
 
 Two further pieces of the operator picture are proved sorry-free at the free
 endpoint. First, the concrete $AW(3)$ realization: splitting the channel

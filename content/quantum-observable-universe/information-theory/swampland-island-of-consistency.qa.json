@@ -11,6 +11,18 @@
     "ts": "3104ce93ccc5"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"The corpus contains no theorem forcing $q_0$ from $\\chi(A) = -6$.\" -> \"No theorem established here forces $q_0$ from $\\chi(A) = -6$.\" The concession is unchanged in force: calibration against the muon-to-electron mass ratio still fixes $q_0$, the stronger selection reading is still motivational rather than derived, and Mostow rigidity still does not determine the substrate modulus.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

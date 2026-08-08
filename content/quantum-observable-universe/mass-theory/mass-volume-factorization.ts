@@ -27,4 +27,18 @@ export default conjecture({
     witness: "computations/d-density-derivation.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module `mass-theory/mass-volume-factorization.lean` " +
+        "carries `volume : K → ℝ` (a hyperbolic volume) and `mass : K → ℝ` together in one factorisation. " +
+        "The `ℝ` is therefore forced by the statement itself rather than " +
+        "chosen, so the block sits on the archimedean side of the §7c wall " +
+        "by construction.",
+    },
+  ],
+
 });

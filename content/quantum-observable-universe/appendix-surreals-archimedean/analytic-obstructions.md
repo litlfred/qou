@@ -31,7 +31,7 @@ We do **not** postulate a measure on all of $C(\mathbf{No})$. That object does n
 
 ## 1. Lebesgue measure: one genuine use, no others
 
-We evaluate Lebesgue, Haar, and Hausdorff measures across the content objects. Almost all instances are *categorical* or *algebraic* upon inspection:
+We evaluate Lebesgue, Haar, and Hausdorff measures throughout this paper. Almost all instances are *categorical* or *algebraic* upon inspection:
 
 See [Table 1](#tbl:analytic-obstructions-table1-data).
 
@@ -44,7 +44,7 @@ never integrates.
 
 ## 2. Hilbert-space completion: stylistic, not load-bearing
 
-Only one block in the content objects writes down a Hilbert-
+Only one place in this paper writes down a Hilbert-
 space completion: `knot-eigenbasis-complete-proof.md` (part 3 of
 the proof). The passage reads:
 

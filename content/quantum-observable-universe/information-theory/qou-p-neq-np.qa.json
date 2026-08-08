@@ -13,6 +13,18 @@
     "lean": "f25b8235ccb8"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed, both leaks. \"The corpus derives the scalar value $\\chi(A) = -6$\" -> \"The scalar value $\\chi(A) = -6$ is derived from the axioms\"; \"the one front where ordinary (non-millennium) mathematics can still advance the block\" -> \"... can still advance the conjecture\". The eight-step chain, the two open inputs of `faithfulness_of_transfer`, and the statement that the counting/decision transfer is supplied by no known result are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

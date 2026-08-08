@@ -44,22 +44,71 @@ opaque coeffEmbed : R_q → ℂ
 -- Ref: [manuscript] §5/weierstrass-projection
 opaque weierstrassProjection : R_q → R_q → ℂ → ℂ
 
+/-- **Derivative `℘'_q` of the Weierstrass projection.**  Opaque for the
+    same reason as `weierstrassProjection` itself: there is no complex
+    Weierstrass-℘ in Mathlib to differentiate, so `℘'` enters as its own
+    named primitive and the differential equation below is what ties the
+    two together. -/
+-- Ref: [manuscript] §5/weierstrass-projection
+opaque weierstrassProjectionDeriv : R_q → R_q → ℂ → ℂ
+
 /-- **External axiom (Lang, Elliptic Functions Thm VI.3.6):** the
-    Weierstrass differential equation `℘'² = 4℘³ − g₂℘ − g₃`. -/
+    Weierstrass differential equation
+
+      `℘'(z)² = 4℘(z)³ − g₂·℘(z) − g₃`   for `z ≠ 0`.
+
+    **This axiom used to state something else entirely.**  It read
+
+    ```lean
+    ∀ (g2 g3 : R_q) (z : ℂ), z ≠ 0 →
+      ∃ (wp_deriv wp_val : ℂ),
+        wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3
+    ```
+
+    — an existential over two *free* complex numbers that never mentions
+    `weierstrassProjection`.  Over `ℂ` that is a **theorem, not an
+    axiom**: take `wp_val := 0` and `wp_deriv` any square root of
+    `−g₃`, which exists because `ℂ` is algebraically closed.  Verified by
+    proving it outright, `#print axioms` clean
+    (`[propext, Classical.choice, Quot.sound]`).  So the old form
+    asserted nothing about ℘, constrained nothing, and its `z` was bound
+    but unused in the conclusion.
+
+    The corrected statement quantifies over the *named* primitives
+    `weierstrassProjection` and `weierstrassProjectionDeriv`, which is
+    what makes it a genuine (and genuinely unproved) external input.
+    Bean `qou-t7zg`. -/
 -- Ref: [manuscript] §5/weierstrass-projection
 -- Ref: [lang2002algebra] https://doi.org/10.1007/978-0-387-09494-6 Theorem VI.3.6
 axiom weierstrass_diff_eq_axiom :
     ∀ (g2 g3 : R_q) (z : ℂ),
       z ≠ 0 →
-      ∃ (wp_deriv wp_val : ℂ),
-        wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3
+      weierstrassProjectionDeriv g2 g3 z ^ 2
+        = 4 * weierstrassProjection g2 g3 z ^ 3
+            - coeffEmbed g2 * weierstrassProjection g2 g3 z
+            - coeffEmbed g3
 
 /-- The Weierstrass function satisfies the differential equation
-    ℘'(z)² = 4℘(z)³ - g₂℘(z) - g₃. -/
-theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ)
-    (hz : z ≠ 0) :
-    ∃ (wp_deriv wp_val : ℂ),
-      wp_deriv ^ 2 = 4 * wp_val ^ 3 - coeffEmbed g2 * wp_val - coeffEmbed g3 :=
+    `℘'(z)² = 4℘(z)³ − g₂℘(z) − g₃`. -/
+theorem weierstrass_diff_eq (g2 g3 : R_q) (z : ℂ) (hz : z ≠ 0) :
+    weierstrassProjectionDeriv g2 g3 z ^ 2
+      = 4 * weierstrassProjection g2 g3 z ^ 3
+          - coeffEmbed g2 * weierstrassProjection g2 g3 z
+          - coeffEmbed g3 :=
   weierstrass_diff_eq_axiom g2 g3 z hz
+
+/-- **The differential equation exhibits `(℘, ℘')` as a point of the
+    Descartes elliptic curve** `y² = 4x³ − g₂x − g₃`.
+
+    A regression witness for the correction above: this is the content
+    the old existential form *appeared* to provide and did not.  Under
+    that form it was unprovable — `weierstrassProjection` did not occur
+    in the axiom, so nothing connected ℘ to the cubic. -/
+theorem weierstrass_on_curve (g2 g3 : R_q) (z : ℂ) (hz : z ≠ 0) :
+    ∃ x y : ℂ,
+      x = weierstrassProjection g2 g3 z ∧
+      y = weierstrassProjectionDeriv g2 g3 z ∧
+      y ^ 2 = 4 * x ^ 3 - coeffEmbed g2 * x - coeffEmbed g3 :=
+  ⟨_, _, rfl, rfl, weierstrass_diff_eq g2 g3 z hz⟩
 
 end QOU.Archimedean

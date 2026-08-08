@@ -33,9 +33,6 @@ $g^2\,(1 + [2]_v^2) = 1$, equivalently $g^2\,(5 + (v - v^{-1})^2) = 1$.
 ## Scope of the conjecture
 
 It does not supply the MeV unit for the deuteron binding law: the linear
-$B(^2\mathrm{H}) = 5g$ rule remains a near-match with its unit anchor open
-(constraint ledger in
-[`docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md)
-§2e–§2f). No instance of the class is provided; per the corpus discipline,
-axiomatization is not proof and this block does not unblock any production
-wiring.
+$B(^2\mathrm{H}) = 5g$ rule remains a near-match with its unit anchor open. No instance of the class is
+provided, and axiomatisation is not proof, so nothing here is carried
+downstream.

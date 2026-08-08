@@ -13,6 +13,18 @@
     "lean": "f12841405b84"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed: \"**Archimedean specialisation (§7c).**\" lost its AGENTS.md tag and now reads \"**Archimedean specialisation.** The categorical mass ...\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

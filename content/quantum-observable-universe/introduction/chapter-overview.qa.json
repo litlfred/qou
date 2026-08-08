@@ -11,7 +11,19 @@
     "ts": "da134280c0f0"
   },
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean. \"one algebraic skeleton and a single substrate parameter\" uses \"skeleton\" as an ordinary mathematical metaphor, not as a stub/placeholder marker.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:55.459962Z"
 }

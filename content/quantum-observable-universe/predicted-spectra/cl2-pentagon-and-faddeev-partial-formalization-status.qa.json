@@ -1,0 +1,23 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:cl2-pentagon-and-faddeev-partial-formalization-status",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-formalization-status.ts",
+    "md": "content/quantum-observable-universe/predicted-spectra/cl2-pentagon-and-faddeev-partial-formalization-status.md"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The AGENTS.md section id is gone: \"The §3b-cond scaffolding is structurally complete\" now reads \"The conditional-class scaffolding is structurally complete.\" The remaining \"## Closed content\" / \"## Remaining content\" / \"## Status\" headings report which Lean theorems are proved and which are open, which is the mathematics this block is about.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  }
+}

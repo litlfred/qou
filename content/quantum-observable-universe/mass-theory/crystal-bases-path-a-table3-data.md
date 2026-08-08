@@ -1,4 +1,4 @@
-| atom | $n$ | symbolic Path A (existing) | crystal Path A (cache hit) | speedup |
+| atom | $n$ | symbolic (existing) | crystal (cache hit) | speedup |
 |------|----:|---------------------------:|---------------------------:|--------:|
 | proton    | 3  | $\sim 1\;\mathrm{s}$              | $0.00\;\mathrm{s}$  | $\gg 100\times$ |
 | deuteron  | 6  | $\sim 5\;\mathrm{min}$             | $0.00\;\mathrm{s}$  | $\gg 30000\times$ |

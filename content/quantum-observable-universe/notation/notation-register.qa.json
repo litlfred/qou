@@ -11,7 +11,19 @@
     "ts": "da134280c0f0"
   },
   "criteria": {
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The agent-instruction delegation is gone: \"It mirrors [**AGENTS.md §7c**](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-...)\" was removed, and the convention now reads \"This convention applies to every `.lean` file in the paper\", which names artefacts the paper contains.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.453558Z"
 }

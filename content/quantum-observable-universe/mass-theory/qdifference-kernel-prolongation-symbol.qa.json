@@ -1349,6 +1349,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. \"This conjecture is therefore the **single keystone** of the step-9b binding closure\" -> \"... the **single remaining input** to the binding closure\". The two consequences, the Newton-polygon refutation in the scope note and the falsifiability framing are unchanged. The .ts title is a two-line string concatenation that reads correctly end to end (\"... carried by the binding q-lift module\"), so it needed no change.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

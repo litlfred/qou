@@ -55,6 +55,5 @@ $$
   \bigl[\alpha_{\mathrm{shift}}(T_{3,5})\bigr]_q,
 $$
 
-upgrading AXKIA's $\delta_q$-trace identity into the same
-combinatorial universe as the w3-w4 atomic-shift formula
-([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)).
+recasting the $\delta_q$-trace identity in the same combinatorial
+terms as the atomic-shift formula.

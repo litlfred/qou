@@ -20,4 +20,4 @@ $$
 **(iv)** *Independence and factorization.*
 *The product formula factors as independent one-step expectations. Each vertex volume is determined locally without dependence on other generators.*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

@@ -10,12 +10,10 @@ The Python API provides a facade over a layered stack:
 4. **Layer 3 — `qou-mass`** (Python facade): external-researcher API exposing `predict()`, `compute_tr_M()`, and `canonical_braid()`.
 
 **Conventions.**
-*Precision* reports in two legs: L1 (internal compute agreement, target $10^{-15}$) and L2 (per-observable absolute accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$). *Status flags* mirror the canonical derivation table: *proved* (sorry-free Lean), *derived* (categorical, no fit), *conditional* (conjecture-conditional), *open* (open gate). *Witness JSON* paths are relative to `computations/`.
+*Precision* reports in two legs: L1 (internal compute agreement, target $10^{-15}$) and L2 (per-observable absolute accuracy, target $\sigma_{\mathrm{pred}} \leq \sigma_{\mathrm{exp}} / 100$). *Status flags* mirror the canonical derivation table: *proved* (sorry-free Lean), *derived* (categorical, no fit), *conditional* (conjecture-conditional), *open* (open question, no derivation yet). *Witness JSON* paths are relative to `computations/`.
 
 **Reading order.**
 A chain-map table maps each step to its propositions and API call. Subsequent sections expand each step into a per-algorithm block in dependency order. Sidecar algorithms appear after the eleven canonical steps.
 
 **Maintenance contract.**
-This appendix serves as the canonical bridge between theoretical propositions and executable compute. Any modification to a proposition (Steps 9a, 9b, 10, or 11), canonical script, or witness-JSON must include an update to the corresponding algorithm block in the same pull request.
-
-Enforcement points reside in AGENTS.md and relevant agent skills (`local/coordinate.md`, `local/compute-author.md`, `local/compute-audit.md`, `local/proof-editor.md`).
+This appendix is the bridge between the theoretical propositions and the executable compute. A proposition (Steps 9a, 9b, 10, 11), its canonical script, its witness JSON and the algorithm block below are kept in step with one another, so that the algorithm stated here is the algorithm that was run.
