@@ -6,6 +6,7 @@ import QOU.BraidKnot.SpechtBaseChange
 import QOU.MathlibExt.GramNondegenerate
 import QOU.MathlibExt.RankMinor
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
+import Mathlib.LinearAlgebra.BilinearForm.Orthogonal
 import Mathlib.Algebra.Algebra.Bilinear
 import Mathlib.Tactic.Group
 
@@ -1073,14 +1074,14 @@ lines.  It remains as the cheap special case; it provably cannot reach `ℂ`,
 where the form is bilinear rather than sesquilinear and has isotropic vectors
 (`x = (1, i)` gives `⟨x, x⟩ = 0` with `x ≠ 0`).
 
-**On `hμ`.**  The `μ.card ≠ 0` hypothesis is **not used** and is retained only
-so the signature matches `Specht.specht_isSimple`'s contract and the call in
-`specht_isSimple` below.  The theorem holds for the empty diagram too: `S^∅` is
-then spanned by the single polytabloid of the unique tabloid, and the argument
-is indifferent.
+**No `μ.card ≠ 0` hypothesis.**  Earlier versions carried one, to match the
+brick-2 contract in `Specht.specht_isSimple`.  That stub has since been deleted
+(it duplicated a proved theorem), and the proof never used the hypothesis, so it
+is gone: the statement holds for the empty diagram too.  Dropping it matters
+downstream — `isCompl_specht_perp` below could not be stated for every `μ` while
+its input demanded a nonemptiness proof that `μ = ∅` cannot supply.
 -/
-theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
-    (_hμ : μ.card ≠ 0) :
+theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     SpechtSubmodule (k := k) μ ⊓ spechtPerp (k := k) μ = ⊥ := by
   -- Ref: [sagan2001] §2.4 / [james1984representation] — Stage 2 of the corrected
   -- plan in the docstring above (ℤ-Gram determinant nonzero, base-changed to k).
@@ -1165,6 +1166,61 @@ theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungD
   -- 5. invertible Gram ⇒ the radical is trivial
   exact QOU.MathlibExt.GramNondegenerate.inf_orthogonalBilin_eq_bot _ _ _ hspan hdet
 
+/-! ### 4.4-bis. The orthogonal decomposition `M^μ = S^μ ⊕ (S^μ)ᗮ`
+
+An immediate consequence of §4.4, and the reason it is worth stating separately:
+Sagan's **cross-shape** dominance theorem (§2.4.4 — `Hom(S^μ, M^ν) ≠ 0 ⇒ μ ⊵ ν`,
+the open core of `SpechtClassification.spechtIso_imp_dom_both`) needs to extend a
+homomorphism `S^μ → M^ν` to all of `M^μ` by declaring it zero on the complement.
+That extension exists exactly when `S^μ` has an `S_n`-stable complement, which is
+what this section supplies. -/
+
+/-- **`M^μ = S^μ ⊕ (S^μ)ᗮ`.** The Specht module and its form-orthogonal
+complement are complementary submodules of `M^μ`.
+
+Mathlib supplies the implication
+(`LinearMap.BilinForm.isCompl_orthogonal_of_restrict_nondegenerate`); what was
+missing until §4.4 was its hypothesis, non-degeneracy of the form restricted to
+`S^μ`, which over a general characteristic-zero field is exactly
+`specht_form_nondegenerate`. -/
+theorem isCompl_specht_perp {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
+    IsCompl (SpechtSubmodule (k := k) μ) (spechtPerp (k := k) μ) := by
+  -- `BilinForm.orthogonal` and `Submodule.orthogonalBilin` are the same submodule
+  have hrefl : (bilinM (k := k) μ).IsRefl := (bilinM_isSymm (k := k) μ).isRefl
+  have hdisj : Disjoint (SpechtSubmodule (k := k) μ)
+      (LinearMap.BilinForm.orthogonal (bilinM (k := k) μ) (SpechtSubmodule (k := k) μ)) := by
+    rw [disjoint_iff]
+    exact specht_form_nondegenerate (k := k) μ
+  exact LinearMap.BilinForm.isCompl_orthogonal_of_restrict_nondegenerate
+    (B := bilinM (k := k) μ) hrefl
+    (LinearMap.BilinForm.nondegenerate_restrict_of_disjoint_orthogonal
+      (bilinM (k := k) μ) hrefl hdisj)
+
+/-- `(S^μ)ᗮ` is `S_n`-stable — the form is invariant, so the complement supplied
+by `isCompl_specht_perp` is a complement **of representations**, not merely of
+`k`-modules.  This is the half that makes the extension in Sagan §2.4.4 a
+homomorphism of `k[S_n]`-modules. -/
+theorem spechtPerp_stable {k : Type} [Field k] (μ : YoungDiagram)
+    (σ : Equiv.Perm (Fin (nOf μ))) {x : Mtab (k := k) μ}
+    (hx : x ∈ spechtPerp (k := k) μ) :
+    Mtab.rep μ σ x ∈ spechtPerp (k := k) μ := by
+  rw [mem_spechtPerp_iff] at hx ⊢
+  intro y hy
+  -- pull `σ` off both arguments: `⟨y, σ x⟩ = ⟨σ⁻¹ y, x⟩`, and `S^μ` is stable
+  have hy' : Mtab.rep μ σ⁻¹ y ∈ SpechtSubmodule (k := k) μ := by
+    rw [SpechtSubmodule] at hy ⊢
+    induction hy using Submodule.span_induction with
+    | mem z hz =>
+        obtain ⟨t, rfl⟩ := hz
+        rw [polytabloid_rep_equivariant]
+        exact Submodule.subset_span ⟨σ⁻¹ • t, rfl⟩
+    | zero => rw [map_zero]; exact Submodule.zero_mem _
+    | add z w _ _ hz hw => rw [map_add]; exact Submodule.add_mem _ hz hw
+    | smul a z _ hz => rw [map_smul]; exact Submodule.smul_mem _ a hz
+  have hkey := hx (Mtab.rep μ σ⁻¹ y) hy'
+  rwa [← bilinM_rep_invariant (k := k) μ σ, rep_mul_apply, mul_inv_cancel,
+    map_one, Module.End.one_apply] at hkey
+
 /-! ## 4.5. James's submodule theorem — proved from the single core -/
 
 /-- **James's submodule theorem (the dichotomy)** — now proved **sorry-free modulo
@@ -1225,8 +1281,7 @@ Reduces to the two cores above, both of which are now sorry-free:
 
 Reproduces the brick-2 statement `QOU.BraidKnot.Specht.specht_isSimple`
 verbatim; that one is still a stub, because brick 2 cannot import this file. -/
-theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
-    (hμ : μ.card ≠ 0) :
+theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     ∀ N : Submodule k (Mtab (k := k) μ),
       N ≤ SpechtSubmodule (k := k) μ →
       (∀ σ : Equiv.Perm (Fin (nOf μ)), ∀ x ∈ N, Mtab.rep μ σ x ∈ N) →
@@ -1237,7 +1292,7 @@ theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
     exact Or.inr (le_antisymm hN_le hsub)
   · -- N ≤ S^μ and N ≤ (S^μ)ᗮ  ⇒  N ≤ S^μ ⊓ (S^μ)ᗮ = ⊥  ⇒  N = ⊥
     left
-    rw [eq_bot_iff, ← specht_form_nondegenerate (k := k) μ hμ]
+    rw [eq_bot_iff, ← specht_form_nondegenerate (k := k) μ]
     exact le_inf hN_le hperp
 
 /-- **Irreducibility of `S^μ` over an ordered field — fully `sorry`-free.**
