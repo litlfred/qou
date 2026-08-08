@@ -271,3 +271,78 @@ existing Mathlib theorem plus bookkeeping. The bean's original framing ("no
 Mathlib basis at all") was wrong for (B); it was right only for (A).
 
 Not built. Step 3's `cpow` is the likely time sink.
+
+## (B) BUILT — and a correction to this bean's own Mathlib claim
+
+**CORRECTION FIRST.** The section "(B) SCOPED" above says
+
+> Mathlib does NOT have this as such (`gaussianSum`, `tsum_exp_neg_mul_sq`:
+> absent from all 6990 oleans).
+
+That is wrong, and wrong in the way this bean has been wrong three times now: I
+searched for two GUESSED NAMES and reported the absence of the names as the
+absence of the theorem. Mathlib has it, under a name I did not guess:
+
+    Mathlib/Analysis/SpecialFunctions/Gaussian/PoissonSummation.lean
+      Complex.tsum_exp_neg_quadratic (ha : 0 < a.re) (b : C) :
+        sum' n:Z, cexp(-pi a n^2 + 2 pi b n)
+          = 1/a^(1/2) * sum' n:Z, cexp(-pi/a (n + I b)^2)
+      Complex.tsum_exp_neg_mul_int_sq
+      Real.tsum_exp_neg_mul_int_sq
+
+Specialising `a -> a/pi`, `b -> a c/pi` gives the identity below outright. So
+(B) needed NO new analytic input from this repo — the correct statement is that
+Mathlib had the transformation and lacked only the packaging.
+
+**The mechanical guard, restated because it keeps earning its keep:** grep for
+the STATEMENT SHAPE (`exp_neg`, `quadratic`, `PoissonSummation`), not for a
+name you invented; and grep the directory, not the identifier.
+
+**BUILT.** `QOU/MathlibExt/GaussianThetaSum.lean`, sorry-free, all seven
+declarations on `[propext, Classical.choice, Quot.sound]`, wired at
+`QOU.lean:336`:
+
+    jacobiTheta2_term_gaussian                    the term identity
+    im_I_mul_div_pi_pos                           i a/pi in the upper half plane
+    hasSum_gaussian_theta_aux                     transported hasSum_jacobiTheta2_term
+    jacobiTheta2_gaussian_functional_equation     the instantiation + the cpow
+    hasSum_gaussian_theta                         <- the headline, in C
+    tsum_gaussian_theta                           the tsum form
+    hasSum_gaussian_theta_real                    the real form, over Z
+
+        sum_{n in Z} e^{-a(n-c)^2} = sqrt(pi/a) . theta_2(-c, i pi/a)
+
+exact, every `a > 0`, every real offset `c`. Step 3's `cpow` was indeed the
+time sink, and went through `Complex.ofReal_cpow` + `Real.inv_rpow`.
+
+Two things are better than a bare restatement of Mathlib's theorem:
+
+  * it is a `HasSum`, not a `tsum`. Summability is carried rather than
+    assumed, which is what the downstream tail-splitting needs.
+  * it is in the theta normalisation, where `Im(i pi/a) = pi/a` makes the tail
+    bound legible: `theta_2 = 1 + 2 sum_{n>=1} e^{-pi^2 n^2/a} cos(2 pi n c)`.
+
+**WHAT IT CLOSES.** The sum -> integral step in the `c_sigma(4_1) = 3^{-1/4}`
+derivation. `sqrt(pi/a)` IS the continuum integral, so
+`sum/integral = 1 + O(e^{-pi^2/a})` uniformly in `c`. At the `4_1` saddle
+`a = |phi''|/2 = pi sqrt3/N`, giving `sqrt(pi/a) = sqrt(N/sqrt3)` — exactly the
+Laplace factor the tetrahedral probe uses — and error `e^{-pi N/sqrt3}`, about
+`1e-79` at `N = 100`. The `O(1/N)` worry that would have sunk the constant is
+off by an exponential. Measured `d log(deviation)/dN = -pi/sqrt3` to 18 digits.
+
+Probe: `computations/probes/laplace_sum_theta_exactness_probe.py`, 4 assertions,
+all pass.
+
+**WHAT IT DOES NOT CLOSE.**
+
+  * (A) is untouched, and is not reachable this way. `s_k`'s integrand is
+    SINGULAR at the `j = 0` endpoint, Poisson summation does not apply, and
+    the corrections there really are polynomial (`O(log N)`). The exact
+    endpoint constraint is in `QOU/Knot/KashaevProdEndpoint.lean`.
+  * The Gaussian APPROXIMATION of `phi` near the saddle. This file sums an
+    exact Gaussian; the cubic-and-higher remainder of `phi` is a separate
+    estimate and is still assumed.
+  * (D), the multivariate complex-covariance Gaussian for the LINK side, is
+    untouched. `hasSum_gaussian_theta` is one-dimensional and real-`a`.
+
+Status: (B) done, (C) was already done in-repo, (A) and (D) open.
