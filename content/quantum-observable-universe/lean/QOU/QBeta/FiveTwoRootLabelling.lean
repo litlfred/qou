@@ -444,6 +444,69 @@ theorem hasDerivAt_Ypair_fst {φ : ℝ} (h : pairDisc φ < 0) :
     rw [Ypair_of_disc_neg hu]
   exact (hb.add hi).congr_of_eventuallyEq heq
 
+/-! ### 5a'. Vieta for the concrete labelling
+
+`logSumA_eq_log` and `logSumB_eq_neg_log` — the `hA`/`hB` inputs to
+`hasDerivAt_envelopeS` — take the three symmetric functions as hypotheses, in the
+`x`-cleared form `x·e₁ = x²+1`, `x·e₂ = x²+x+1`, `e₃ = 1`. All three are
+available here, and the first two reduce to the *same* fact: `2·(Re x)·x = x²+1`,
+which is `unitCircle_quadratic`. The third is `gamma_rel`. -/
+
+theorem Ypair_sum (φ : ℝ) : (Ypair φ).1 + (Ypair φ).2 = -((pairBeta φ : ℝ) : ℂ) :=
+  otherRoots_sum _ _
+
+theorem Ypair_prod (φ : ℝ) : (Ypair φ).1 * (Ypair φ).2 = ((pairGamma φ : ℝ) : ℂ) :=
+  otherRoots_prod _ _
+
+/-- `e₁ = t + y₂ + y₃ = 2c`. -/
+theorem vieta_e1 (φ : ℝ) :
+    ((realRootPath φ : ℝ) : ℂ) + (Ypair φ).1 + (Ypair φ).2
+      = 2 * ((Real.cos φ : ℝ) : ℂ) := by
+  have h := Ypair_sum φ
+  unfold pairBeta at h
+  push_cast [-Complex.ofReal_cos] at h ⊢
+  linear_combination h
+
+/-- `e₂ = t·y₂ + t·y₃ + y₂y₃ = 2c + 1`. -/
+theorem vieta_e2 (φ : ℝ) :
+    ((realRootPath φ : ℝ) : ℂ) * (Ypair φ).1 + ((realRootPath φ : ℝ) : ℂ) * (Ypair φ).2
+      + (Ypair φ).1 * (Ypair φ).2 = 2 * ((Real.cos φ : ℝ) : ℂ) + 1 := by
+  have hs := Ypair_sum φ
+  have hp := Ypair_prod φ
+  unfold pairBeta at hs
+  unfold pairGamma at hp
+  push_cast [-Complex.ofReal_cos] at hs hp ⊢
+  linear_combination ((realRootPath φ : ℝ) : ℂ) * hs + hp
+
+/-- `e₃ = t·y₂·y₃ = 1` — this is `gamma_rel`, and it is the one with content. -/
+theorem vieta_e3 (φ : ℝ) :
+    ((realRootPath φ : ℝ) : ℂ) * (Ypair φ).1 * (Ypair φ).2 = 1 := by
+  have hp := Ypair_prod φ
+  have hγ : (realRootPath φ : ℝ) * pairGamma φ = 1 := by
+    have := gamma_rel (unitCubic_realRootPath φ)
+    unfold pairGamma
+    linear_combination this
+  have hγc : ((realRootPath φ : ℝ) : ℂ) * ((pairGamma φ : ℝ) : ℂ) = 1 := by
+    exact_mod_cast congrArg (fun r : ℝ => (r : ℂ)) hγ
+  rw [mul_assoc, hp]
+  exact hγc
+
+/-- **`hv₁` in the form `logSumA_eq_log` wants it.** Both this and `hv₂` collapse
+to `unitCircle_quadratic`; the labelling contributes only `e₁ = 2c`. -/
+theorem vieta_hv1 {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) {φ : ℝ}
+    (hre : x.re = Real.cos φ) :
+    x * (((realRootPath φ : ℝ) : ℂ) + (Ypair φ).1 + (Ypair φ).2) = x ^ 2 + 1 := by
+  rw [vieta_e1 φ, ← hre]
+  linear_combination unitCircle_quadratic hx
+
+/-- **`hv₂`.** -/
+theorem vieta_hv2 {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) {φ : ℝ}
+    (hre : x.re = Real.cos φ) :
+    x * (((realRootPath φ : ℝ) : ℂ) * (Ypair φ).1 + ((realRootPath φ : ℝ) : ℂ) * (Ypair φ).2
+      + (Ypair φ).1 * (Ypair φ).2) = x ^ 2 + x + 1 := by
+  rw [vieta_e2 φ, ← hre]
+  linear_combination unitCircle_quadratic hx
+
 /-! ### 5b'. Toward `heⱼ` at the pair — the first tight bound
 
 Route 36 G13. `heⱼ` for the pair needs `k = 0` in `dVdy·y ∈ 2πi·ℤ`
