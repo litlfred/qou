@@ -19,9 +19,18 @@ energy** B(Z, N) (the mass defect = the Δ_λ correction):
 
 ## Two regimes for the nucleon mass (the source of the residual)
 
-The per-nucleon mass `m_e · vol_density_borromean` carries the **+2.89 %
-nucleon-mass gap** in the *production* (proved-only) pipeline, which uses
-only the proved Family-A linking weight (m_avg ≈ 966 MeV).  A **derived,
+The nucleon masses this script reads from `low-isotope-mass-table.witness.json`
+carry the **+2.89 % nucleon-mass gap** (m_p 965.38, m_n 966.71): that table's
+nucleon rows come, via `canonical_mass_table_extended.lookup_nucleon_mass_borromean`,
+from the Family-A `m_e · vol_density_borromean` form (m_avg ≈ 966 MeV).
+
+⚠ That form is DEPRECATED for absolute mass (2026-06-24 ruling) — the canonical
+m_p is the muon-anchored 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV via `canonical_mass.py`,
+so the leading term below is 27 MeV/nucleon high for a reason that is upstream of
+this script and is NOT the q-CLT approximation being studied here. Tracked as a
+compute-wiring defect; the figures below are as-computed from the witness.
+
+A **derived,
 no-fit** spectral-phase correction θ/(8ℏ²) ≈ 0.9711 reduces that gap ~35×
 to −819 ppm (m_avg ≈ 938.15 MeV) — but it is **EXPLORATORY, NOT wired**
 (its "why θ/(8ℏ²)" step is a `True := by trivial` Lean stub), so by the
