@@ -2290,3 +2290,47 @@ rather than by hand, since hand-labelling is how they came to be wrong.
 ⁴He itself is not in the table: at H_12 each measurement is a full 77-partition
 recompute, hours per convention. It is the one atom whose label was never in
 doubt anyway.
+
+## P50 — the evidence gate cannot fire for half the corpus
+
+The wave's early counts showed `VALUES` at 9 of 20 — a rejection rate high
+enough to be suspicious rather than informative. Measuring the cause:
+
+| declaring producers with a locatable witness | 115 |
+|---|---:|
+| witness carries a q₀-valued field | 56 |
+| **carries none** | **59** |
+
+`ANCHOR_MIGRATION` is evidence-gated: it requires seeing a q₀-valued field flip
+muon → proton. **For 59 of 115 witnesses there is no such field to flip**, so a
+genuine re-anchoring can only ever classify `VALUES` and be reverted. The
+verdict added to stop the guard discarding correct migrations still discards
+them for half the corpus.
+
+That gating was a deliberate choice, made because "small movement" alone cannot
+distinguish an anchor shift from a crossing-convention change. But the numbers
+now say the bound does separate them: an anchor migration moves ~1e-7 relative,
+the convention moves 1.8e-4, and the collateral ceiling already sits at 1e-5
+between the two. So for a witness with no q₀ field, the available evidence is:
+
+- `resolve_q0_anchor(producer)` reports **proton**, so a re-anchor is expected
+  on any re-run; and
+- every moved field is inside the 1e-5 bound, which excludes the convention
+  change by an order of magnitude either side.
+
+That is weaker than seeing the flip, and it should not be laundered into the
+same verdict. The right shape is a distinct `ANCHOR_MIGRATION_INFERRED` that is
+**reported but not auto-kept** — surfaced for a human rather than silently
+committed or silently reverted.
+
+**Deliberately not implemented in this pass.** Changing what the guard keeps,
+while a wave is running against it and without measuring the outcome, is the
+same move that produced every self-inflicted problem in this document. The
+finding is the deliverable; the verdict needs its own pass with before/after
+counts.
+
+Two smaller gaps surfaced with it, both in the driver rather than the policy:
+it reports counts but not *which* witnesses were rejected or why, which is what
+made a 45% rejection rate uninvestigable without this separate measurement; and
+witness-to-producer matching is by stem, so the 48 producers whose witness name
+does not derive from the script name were not measurable here at all.
