@@ -148,6 +148,21 @@ PROTON_PREFIX = "1.109978582"
 # convention change can never be mistaken for an anchor migration.
 ANCHOR_COLLATERAL_MAX = 1e-5
 
+# A move at or below this is not physics — it is the float64 -> 50-dps upgrade.
+#
+# Sized by what it must separate, not by taste. An f64 substrate constant
+# carries ~17 significant digits, so replacing it with the exact 50-dps value
+# moves any derived quantity by ~1e-16 relative times its sensitivity. The
+# smallest thing that is a REAL change here is a discrete one — a partition
+# index, an assertion count, an argmax — and those move by O(1) relative when
+# they move at all. Four orders above f64 noise and eleven below a discrete
+# flip leaves no plausible physics in the gap.
+#
+# Deliberately NOT reusing ANCHOR_COLLATERAL_MAX (1e-5): that bound is sized
+# for anchor collateral, which is 1e-7-ish, and would wave through changes
+# nine orders larger than anything this verdict is meant to describe.
+SUBFLOAT_MAX = 1e-12
+
 
 # Keys that identify a record within a list, tried in order. A list of dicts
 # each carrying one of these is addressed by identity rather than position.
@@ -289,6 +304,65 @@ def _anchor_of(v) -> str | None:
     return None
 
 
+def _subfloat_move(a: dict, b: dict, moved: list) -> dict | None:
+    """`SUBFLOAT_MOVE` when every move is below the float64 floor.
+
+    Named for what is MEASURED, not for what is intended. It was
+    `PRECISION_GAIN` until the padding-stripping fixture landed here: that diff
+    goes the other way — "2.029883212819307392038581383530981838703155517578125"
+    (a float64's exact expansion, printed as if it were 50 dps) becoming the
+    honest "2.0298832128193074". Both directions move the stored decimal by
+    ~1e-17 and neither changes any physics, so a bound on magnitude cannot tell
+    them apart and a name claiming "gain" would have been asserting a direction
+    it never checked.
+
+    The float64 sweep (bean qou-tj98) replaced f64 substrate constants with
+    their exact 50-dps partners across ~120 producers. Re-running those
+    producers moves values by ~1e-16 relative — a strict improvement, and not
+    an anchor migration, so without this verdict every one of them classified
+    as VALUES and was REVERTED. The first regeneration wave did exactly that:
+    22 witnesses rejected under "a q0-valued field exists but did not flip",
+    each of them a witness whose q0 had simply gained its missing 33 digits.
+
+    Bounded rather than trusted. A discrete change — a partition index, an
+    argmax, an assertion count — moves by O(1) relative and is excluded, which
+    matters: the same wave surfaced `per_n.13.argmax_shape[1]` flipping, where
+    a near-degenerate tie had been decided by float noise. That is a genuine
+    finding and must stay VALUES for a human to read, not be absorbed as
+    "precision".
+
+    Non-numeric moves are excluded outright: text has no magnitude to bound.
+
+    Compared in `Decimal`, not through `_num`. `_num` goes via `float()`, and
+    the whole point of this diff is digits BEYOND float64 — "1.1099785827513808"
+    and "1.1099785827513808075916690956107688798744991218736" are the same
+    float64, so a float comparison reports the move as exactly zero and the
+    change becomes invisible to the very verdict meant to describe it.
+    Measuring a precision gain with the precision that was gained does not work.
+    """
+    from decimal import Decimal, InvalidOperation, localcontext
+    worst = Decimal(0)
+    with localcontext() as ctx:
+        ctx.prec = 80
+        for k in moved:
+            try:
+                x, y = Decimal(str(a.get(k)).strip()), Decimal(str(b.get(k)).strip())
+            except (InvalidOperation, TypeError, ValueError):
+                return None
+            rel = abs(y - x) / (abs(x) if x else Decimal(1))
+            if rel > Decimal(repr(SUBFLOAT_MAX)):
+                return None
+            worst = max(worst, rel)
+    if worst <= 0:
+        return None
+    worst = float(worst)
+    return {"verdict": "SUBFLOAT_MOVE", "moved": len(moved), "flips": 0,
+            "worst": worst,
+            "reason": (f"every move <= {SUBFLOAT_MAX:g} relative "
+                       f"(worst {worst:.3g}) — the f64 -> 50-dps upgrade"),
+            "sample": moved[:5]}
+
+
 def _infer_migration(a: dict, b: dict, moved: list, old: dict, new: dict,
                      script, resolve) -> dict | None:
     """`ANCHOR_MIGRATION_INFERRED`, or `{"_declined": <why>}` when not that.
@@ -404,6 +478,9 @@ def classify(old: dict, new: dict, script=None, resolve=None) -> dict:
     flips = [k for k in moved
              if _anchor_of(a.get(k)) == "muon" and _anchor_of(b.get(k)) == "proton"]
     if not flips:
+        precise = _subfloat_move(a, b, moved)
+        if precise is not None:
+            return precise
         inferred = _infer_migration(a, b, moved, old, new, script, resolve)
         if "_declined" not in inferred:
             return inferred
@@ -649,10 +726,40 @@ INFERRED_CASES = [
      {"scriptFile": "p.py", "computedAt": "y", "v": 2},
      _anchor_stub("proton"), "NOCHANGE"),
     # The real shape from 0de68792: differs as text, identical as a number.
-    ("stripping float64 padding is not an inferred migration",
+    # Was pinned to VALUES; now SUBFLOAT_MOVE, and the test's actual intent —
+    # "not an inferred migration" — still holds. The diff is a float64's exact
+    # expansion being replaced by the honest 17 digits, which is a sub-float64
+    # move by construction.
+    ("stripping float64 padding is a sub-float64 move, not a migration",
      {"scriptFile": "p.py",
       "v": "2.029883212819307392038581383530981838703155517578125"},
      {"scriptFile": "p.py", "v": "2.0298832128193074"},
+     _anchor_stub("proton"), "SUBFLOAT_MOVE"),
+    # ── PRECISION_GAIN: the f64 -> 50-dps upgrade ───────────────────────────
+    ("q0 gaining its missing digits is a sub-float64 move",
+     {"scriptFile": "p.py", "constants.q_0": "1.1099785827513808"},
+     {"scriptFile": "p.py",
+      "constants.q_0": "1.1099785827513808075916690956107688798744991218736"},
+     _anchor_stub("proton"), "SUBFLOAT_MOVE"),
+    ("a derived value moving at the f64 floor is a sub-float64 move",
+     {"scriptFile": "p.py", "x": 1.0}, {"scriptFile": "p.py", "x": 1.0000000000001},
+     _anchor_stub("proton"), "SUBFLOAT_MOVE"),
+    # The case this bound exists to EXCLUDE. A near-degenerate argmax decided
+    # by float noise flipped when the noise was removed -- a real finding, and
+    # it must reach a human as VALUES rather than be absorbed as "precision".
+    ("an argmax flipping is NOT sub-float64, it is a finding",
+     {"scriptFile": "p.py", "per_n.13.argmax_shape[1]": 3},
+     {"scriptFile": "p.py", "per_n.13.argmax_shape[1]": 4},
+     _anchor_stub("proton"), "VALUES"),
+    ("an anchor-sized move is far too big to be sub-float64",
+     {"scriptFile": "p.py", "q0": "1.1099785827513808", "x": 0.20906032199559366},
+     {"scriptFile": "p.py", "q0": "1.1099785827513808", "x": 0.20906029879563937},
+     _anchor_stub("proton"), "VALUES"),
+    ("a non-numeric move has no magnitude, so never sub-float64",
+     {"scriptFile": "p.py", "note": "a"}, {"scriptFile": "p.py", "note": "b"},
+     _anchor_stub("proton"), "VALUES"),
+    ("text differing with no value moved stays a re-serialisation",
+     {"scriptFile": "p.py", "n": "3"}, {"scriptFile": "p.py", "n": "3.0"},
      _anchor_stub("proton"), "VALUES"),
     ("a reserialised number is not an inferred migration",
      {"scriptFile": "p.py", "n": "3"}, {"scriptFile": "p.py", "n": "3.0"},

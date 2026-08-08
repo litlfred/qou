@@ -81,7 +81,17 @@ sys.path.insert(0, str(HERE))
 from witness_provenance_audit import builder_names, written_filenames  # noqa: E402
 from witness_regen_classify import classify  # noqa: E402
 
-KEEP = {"DECLARED", "ANCHOR_MIGRATION"}
+# `SUBFLOAT_MOVE` is kept because a diff bounded at 1e-12 relative cannot
+# contain a physics change at 50 dps: it is twelve orders below any real
+# quantity here and four above float64 noise. The classifier excludes
+# non-numeric and discrete moves from it outright, so the population that
+# reaches this verdict is exactly "the stored decimal gained or lost digits
+# below the float64 floor" — which is the whole intended output of the NO
+# FLOAT64 sweep (bean qou-tj98).
+#
+# Not a relaxation of the anchor rules: an anchor migration moves ~1e-7, five
+# orders above this bound, and still needs its own evidence-gated verdict.
+KEEP = {"DECLARED", "ANCHOR_MIGRATION", "SUBFLOAT_MOVE"}
 
 # This repo's env-configurable scratch root (same spelling
 # `a4_brunnian_deficit_closed_form` already uses), so the report lands
