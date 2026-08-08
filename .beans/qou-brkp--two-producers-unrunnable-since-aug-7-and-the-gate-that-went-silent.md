@@ -10,7 +10,7 @@ tags:
     - witnesses
     - infra
 created_at: 2026-08-08T09:40:00Z
-updated_at: 2026-08-08T09:40:00Z
+updated_at: 2026-08-08T10:05:00Z
 ---
 
 
@@ -134,3 +134,40 @@ either number as correct.
 * `2bcbefee49` (the breaking commit), `4181efee6d`, `edbf6b3f32`
 * `qou-f64g` (the float64 guard that surfaced this), `j0th`, `qou-gqt5`,
   `qou-ny4j`, `qou-t0rf`
+
+---
+
+## 2026-08-08 — cross-reference: this is an instance of `qou-w3dm`, plus what it adds
+
+`qou-w3dm` landed on main at 07:40Z, from a sibling's #4513 prepare-merge gate:
+**508 of 2749 witnesses (18%) carry a drifted `scriptHash`.** Witness staleness
+is a main-side *class*, not a one-off, and this bean is an instance of it. Do not
+work them separately without checking there.
+
+**What this instance adds that the class scan cannot see.** `qou-w3dm` detects
+drift by comparing `sha256(producer)[:12]` against the recorded `scriptHash` — a
+purely static check. It would flag these two files as drifted, but it could not
+tell you the more serious thing: **the producers could not run at all**, so the
+drift was not merely un-refreshed, it was un-refreshable. A scriptHash scan and
+a "does it parse" scan are different instruments, and this pair needed the
+second. Worth adding a parse check to the `qou-w3dm` sweep — it is one line and
+it separates "stale" from "impossible".
+
+**And a provenance correction that lands on this bean's evidence.** Commit
+`5ec185ed14` (main, 07:27Z) repaired five `chi-*` `scriptFile` claims: they
+recorded `delta_lambda_empirical_tabulation.py` and the real producers are
+`per_irrep_pole_deuteron_h6.py` / `per_irrep_pole_atom.py`. Zero numeric lines
+changed.
+
+That does not disturb the conclusion above — but it does change *why* it holds.
+This bean's "not the inputs" finding must rest on the chi witnesses' **numbers**
+being unchanged, which they are, and **not** on their provenance metadata, which
+was wrong until this morning. Anyone re-deriving the argument from `scriptFile`
+would have been reading a misattribution.
+
+So the tally of what has been eliminated as the cause of the 1e-4 shift is
+unchanged — not precision (A/B, byte-identical), not the inputs (numbers
+unchanged across both touching commits) — and the pre-split-path hypothesis
+remains the only candidate, still untested.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
