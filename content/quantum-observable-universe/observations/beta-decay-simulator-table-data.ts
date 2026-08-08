@@ -8,6 +8,6 @@ export default table({
     "${}^{3}\\mathrm{H}$, ${}^{14}\\mathrm{C}$, ${}^{60}\\mathrm{Co}$, " +
     "${}^{90}\\mathrm{Sr}$, ${}^{137}\\mathrm{Cs}$, ${}^{210}\\mathrm{Bi}$. " +
     "Experimental $Q$-values and observed half-lives from ENSDF.",
-  uses: ["sim:beta-decay-half-life"],
+  uses: ["sim:beta-decay-halflife"],
   tags: ["beta-decay", "half-life", "verification-nuclei", "ensdf"],
 });

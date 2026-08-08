@@ -7534,6 +7534,73 @@ export const references: CSLData[] = [
     note: "arXiv:0903.0853. Local analytic classification of irregular q-difference equations: q-Stokes phenomena, filtration by the slopes of the Newton polygon, and the q-analogue of the Stokes sheaf. The q-Stokes frame behind the GGM Stokes-matrix identification target for the 4₁ descendant equation (q-lift literature check, 2026-07-20).",
   }),
 
+  // ── P¹∖{0,1,∞} motivic side + q-deformed polylogs (uploaded 2026-08-08, commit 9a6d8f4b) ──
+  ref({
+    id: "brown-motivic-p1-three-points",
+    type: "article",
+    title: "Motivic periods and P^1 minus 3 points",
+    author: [{ family: "Brown", given: "Francis" }],
+    URL: "https://arxiv.org/abs/1407.5165",
+    note: "Registered 2026-08-08. PDF uploads/MotivicPeriodsandP1minus3pointsv3.pdf (identified from first-page text). Review of the motivic fundamental groupoid of the projective line minus three points and its relation to multiple zeta values; MSC 11M32, 14C15; keywords Belyi's theorem, MZVs, mixed Tate motives, modular forms. The CLASSICAL side of the {0,1,∞} configuration — iterated integrals of a KZ-type connection with singularities at 0, 1, ∞.",
+  }),
+
+  ref({
+    id: "deligne-goncharov2005",
+    type: "article-journal",
+    title: "Groupes fondamentaux motiviques de Tate mixte",
+    author: [
+      { family: "Deligne", given: "Pierre" },
+      { family: "Goncharov", given: "Alexander B." },
+    ],
+    URL: "https://arxiv.org/abs/math/0302267",
+    note: "Registered 2026-08-08. PDF uploads/0302267v2.pdf. arXiv:math/0302267. Mixed Tate motives over the S-integers of a number field and the (unipotent) motivic fundamental group of a unirational variety. Foundational for the motivic-groupoid side cited in cl3-zeta5-geometric-realization.md Candidate 3.",
+  }),
+
+  ref({
+    id: "schlesinger2001",
+    type: "article",
+    title: "Some remarks on q-deformed multiple polylogarithms",
+    author: [{ family: "Schlesinger", given: "Karl-Georg" }],
+    URL: "https://arxiv.org/abs/math/0111022",
+    note: "Registered 2026-08-08. PDF uploads/0111022v1.pdf. arXiv:math/0111022. Defines q-deformed multiple polylogarithms as q-SERIES, e.g. Li_{1,1}(z1,z2,q) = sum_{0<j<k} z1^j z2^k / ((1-q^j)(1-q^k)), and shows their rational span is an algebra, with a noncommutative/noncocommutative Hopf structure on q-deformed multiple zeta values and a conjectural link to a quantum Grothendieck-Teichmüller group. IMPORTANT SCOPE NOTE for anyone using this to q-deform the {0,1,∞} picture: this paper contains NO q-difference module and NO singular locus. It is a q-series/Hopf-algebra construction, not a q-analogue of the KZ connection on P^1 minus {0,1,∞}. It therefore does not by itself supply a map from a q-difference module with singularities at 0, [1], infinity. See bean qou-qbf0.",
+  }),
+
+  ref({
+    id: "zhao2008-mpl-roots-of-unity",
+    type: "article",
+    title: "Multiple polylogarithm values at roots of unity",
+    author: [{ family: "Zhao", given: "Jianqiang" }],
+    URL: "https://arxiv.org/abs/0810.1064",
+    note: "Registered 2026-08-08. PDF uploads/0810.1064v1.pdf. arXiv:0810.1064. Q-linear relations among multiple polylogarithms evaluated at Nth roots of unity.",
+  }),
+
+  ref({
+    id: "zhao2010-standard-relations",
+    type: "article-journal",
+    title: "Standard Relations of Multiple Polylogarithm Values at Roots of Unity",
+    author: [{ family: "Zhao", given: "Jianqiang" }],
+    "container-title": "Documenta Mathematica",
+    issued: { "date-parts": [[2010]] },
+    note: "Registered 2026-08-08. PDF uploads/Zhao_standard_2010.pdf. Special values of multiple polylogarithms at Nth roots of unity (multiple polylogarithm values). Companion to zhao2008-mpl-roots-of-unity; relevant to the zeta5 / 5th-root-of-unity target of cl3-zeta5-geometric-realization.md.",
+  }),
+
+  // ── Bugeaud 2011 (RSZ's [14]: NON-INTEGRAL slopes — the case §3.3 excludes) ──
+  ref({
+    id: "bugeaud2011",
+    type: "article-journal",
+    title:
+      "Classification analytique et théorie de Galois locales des modules aux q-différences à pentes non entières",
+    author: [{ family: "Bugeaud", given: "Virginie" }],
+    "container-title": "Comptes Rendus Mathématique",
+    volume: "349",
+    issue: "19-20",
+    page: "1037-1039",
+    issued: { "date-parts": [[2011]] },
+    DOI: "10.1016/j.crma.2011.09.002",
+    URL: "https://doi.org/10.1016/j.crma.2011.09.002",
+    note: "Registered 2026-08-08. PDF in uploads/CRMATH_2011__349_19-20_1037_0.pdf (metadata-verified: /Title, /Author and dc:description match). This is reference [14] of ramis-sauloy-zhang2013, cited there as the generalisation of the Birkhoff–Guenther normal form 'to the case of arbitrary slopes' — i.e. the non-integral case that RSZ §3.3 explicitly excludes (that section is titled 'in the case of integral slopes'). IMPORTANT for anyone mapping a q-difference module onto this literature: the section bookmarks of this note read §2 'Classification analytique isoformelle à DEUX pentes', §3 'Opérateurs de Stokes', §4 'Groupe de Galois formel' — so the non-integral generalisation is still a TWO-SLOPE theory. Neither RSZ §3.3 nor this note supplies Stokes data for a module that is pure isoclinic (a single slope) at the point in question; RSZ Thm 3.3.5 gives dim F(P₁,…,P_k) = Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ), which is 0 when k = 1. See docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md and bean qou-qbp5.",
+  }),
+
   // ── Cigler–Zeng 2009 (curious q-analogue of Hermite; crossing-weighted combinatorics) ──
   ref({
     id: "cigler-zeng2009",

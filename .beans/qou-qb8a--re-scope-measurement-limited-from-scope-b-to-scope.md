@@ -1,7 +1,7 @@
 ---
 # qou-qb8a
 title: 'Re-scope "measurement-limited => not framework-closable" from scope-(b) to scope-(a)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T08:10:00Z
@@ -35,3 +35,33 @@ numbers -- they stand; only the scope was wrong. The supporting Lean
 docstring ("Nothing here claims the premise") -- it needs no change.
 
 Analysis: docs/audits/2026-08-08-qbeta-l2-assessment-post-week-landings.md §4.
+
+
+---
+
+# DONE (2026-08-08) — re-scoped in both docs
+
+docs/precision-goals.md "Consequence for the roadmap" (line ~367) and
+docs/coordination/2026-08-02-1ppq-lever-map-post-q0-gate.md (line ~54) both
+re-scoped from (b) to (a). Numbers unchanged; only the scope was wrong, as this
+bean specified.
+
+Both now state: verification below sigma_exp is measurement-limited (TRUE);
+extracting c_3 FROM a measured Q_beta is measurement-limited (TRUE); re-pinning
+q_0 cannot move them (TRUE, swing is 2.4% of the residual) -- BUT the 1248 ppb
+prediction error is the c_3 truncation, a framework quantity, with q_0's
+measurement uncertainty contributing ~0.16 ppb (four orders below), so no proved
+invariant excludes a derived-c_3 route. Plus: a better neutron measurement
+TIGHTENS sigma_exp and makes the target proportionally HARDER.
+
+Extra point found while editing and recorded in precision-goals: the original
+escape clause "unless a substrate-q_0 derivation lands" points at a route the
+owner PERMANENTLY GATED on 2026-08-02 (qou-eic1). With that route forbidden the
+blanket phrasing read as UNFIXABLE -- exactly the over-narrowing the
+refuted-scope discipline exists to prevent.
+
+MeasurementLimitedFloor.lean untouched, as this bean specified -- it is sorry-free
+and honest in its own docstring ("Nothing here claims the premise").
+
+The listed dead ends stay dead, now labelled scope-(a): fixed-order /
+anchor-invariant resummation, geometric q_0, ratio-based W_lambda.

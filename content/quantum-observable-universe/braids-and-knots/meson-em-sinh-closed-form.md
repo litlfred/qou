@@ -20,7 +20,7 @@ $$
 $$
 The strong fusion $[3]_q \cdot [4]_q$ is framework-derived and Lean-proved; it supplies $\approx 99.98\%$ of the ratio (the EM term is a $\approx 203$ ppm correction).
 
-**Scope of the EM term.** The $\alpha_{\mathrm{em}}$ entering the EM correction is the framework's own **derived** value — the bare force-carrier coupling dressed by the Chern--Simons tower, $\alpha_{\mathrm{em}}^{-1} \approx 137.0359351$ ([fine-structure data](#rem:fine-structure-data)). No measured constant is imported.
+**Scope of the EM term.** The $\alpha_{\mathrm{em}}$ entering the EM correction is the framework's own **derived** value — the bare force-carrier coupling dressed by the Chern--Simons tower, $\alpha_{\mathrm{em}}^{-1} \approx 137.0359351$ ([fine-structure data](#sec:fine-structure-data)). No measured constant is imported.
 
 An earlier version of this caveat stated that substituting "the derived $\alpha_{\mathrm{em}}$" degrades $m_K^2/m_\pi^2$ from $\approx 47$ ppb to $\approx 363$ ppb and concluded the ratio's agreement is $\alpha_{\mathrm{em}}$-anchored rather than parameter-free. **That is incorrect and is withdrawn.** The value substituted there, $q\,[9]_q\,[10]_q \approx 136.82$, is the *bare* coupling — the order-zero term — not the derived one. An order sweep reproduces the $363$ ppb figure exactly at order zero and gives $\approx 47$ ppb at every order from one upward, including the exact resummation. The agreement is not $\alpha_{\mathrm{em}}$-anchored.
 

@@ -5,7 +5,7 @@ export default prose({
   title: "Inductive construction ($A \\to A+1$)",
   uses: [
     "prop:shell-closure-stability",
-    "rem:generator-volume-decomposition",
+    "prop:generator-volume-decomposition",
   ],
   tags: [
     "transfer-matrix",

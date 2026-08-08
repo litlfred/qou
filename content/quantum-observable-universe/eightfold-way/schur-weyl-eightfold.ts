@@ -29,5 +29,8 @@ export default proposition({
   // What it does NOT formalise is quantum Schur-Weyl duality itself, nor any
   // construction supplying N = 3 -- that remains the chapter's principal open
   // problem (bean qou-8pl3).
-  lean: { ref: "qou:QOU.Eightfold.RowCapObstruction" },
+  // The ref now names a DECLARATION, not the module. `weyl_dim_alt_eq_zero_iff`
+  // is the row-cap obstruction the module is named for: the alternating
+  // channel (1³) has dimension zero iff N < 3.
+  lean: { ref: "qou:QOU.Eightfold.RowCapObstruction.weyl_dim_alt_eq_zero_iff" },
 });

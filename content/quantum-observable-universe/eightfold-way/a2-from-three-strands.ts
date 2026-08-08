@@ -24,5 +24,13 @@ export default proposition({
   // −1, Serre exponent, root-angle ratio) is machine-checked in
   // WeylInvarianceQDeformation. There is no separate A2FromThreeStrands
   // module — the earlier ref to one did not resolve.
-  lean: { ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation" },
+  //
+  // The ref now names a DECLARATION, not the module: `cartanMatrix_A2` is the
+  // definition packaging the A₂ Cartan datum. Pointing at a theorem would
+  // overstate — no declaration in the corpus states this block's headline
+  // ("H₃(q) has Coxeter type A₂ and its weight lattice supplies (I₃, Y)"),
+  // which the .md itself records as holding by construction. The theorems
+  // built on the datum (`cartan_A2_offdiag`, `serre_exponent_A2`,
+  // `root_angle_ratio_A2`) live in the same module.
+  lean: { ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartanMatrix_A2" },
 });
