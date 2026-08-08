@@ -65,7 +65,7 @@ import pathlib
 
 from mpmath import cos as mpmath_cos
 from mpmath import (arg, exp, fabs, findroot, im, log, mp, mpc, mpf, nint, nstr,
-                    pi, polyroots, re, sqrt)
+                    pi, polyroots, quad, re, sqrt)
 
 
 def roots_at(ph):
@@ -637,49 +637,84 @@ def main() -> int:
                      and worst_match < mpf(10) ** -(mp.dps - 8)),
     })
 
-    # ---- G11: what `hcont` will need at the endpoint -------------------------
-    # `envelopeS_total` asks for ContinuousOn (envelopeS ...) (Icc 0 pi) -- the CLOSED
-    # interval. G7 shows VSide fails at pi, so the DERIVATIVE stops there; but continuity is
-    # still required AT pi, and that is a separate obligation nobody has discharged.
+    # ---- G11: what `hcont` needs at the endpoint -- CHEAPER than first recorded ----
     #
-    # Measured here so the next pass does not discover it late: the Li2 argument x*y
-    # approaches the cut [1,inf) from Im < 0, linearly in (pi - phi), and lands exactly on
-    # 2.2469796 at the endpoint. Route 35's finding -- Re Li2 is continuous ACROSS the cut,
-    # because the jump 2*pi*i*log(x) is purely imaginary -- is what should make Re V extend
-    # continuously. That is a CLAIM here, not a theorem, and it is the natural next target.
+    # ⚠ THIS GATE'S FIRST VERSION OVERSTATED THE OBLIGATION. It said hcont needs "Re Li2
+    # continuous ACROSS the cut", a two-dimensional statement about the real part. It does
+    # not. It needs ONE-SIDED continuity from BELOW, and that is where Lean's principal
+    # Complex.log already puts the integral's value.
+    #
+    # Why: cLiTwoExt w = -int_0^1 log(1 - w t)/t dt. For real w = r > 1 and t > 1/r the
+    # argument 1 - wt is a NEGATIVE REAL, and principal log gives arg = +pi there. That is
+    # the same arg the integrand approaches when w -> r from Im < 0 (then 1 - wt has Im > 0).
+    # From Im > 0 the arg tends to -pi instead, and the value differs by exactly 2*pi*i*log r.
+    #
+    # Measured below: from BELOW the difference falls linearly to ~1e-9; from ABOVE it sits
+    # at 5.0868 = |2*pi*i*log r|. And the arc approaches from Im < 0 -- so it meets the cut
+    # on precisely the continuous side.
+    #
+    # ⚠ A NUMERICAL TRAP, recorded because it produced a wrong value first: integrating
+    # over [0,1] in one piece gives 2.4873 - 2.5226i, which is WRONG. The integrand has a
+    # log singularity at t = 1/r inside the interval. Split at Re(1/w) -- and split on BOTH
+    # sides, not only on the cut, or the off-cut comparisons are silently garbage. Correct
+    # value 2.4543 - 2.5434i, matching mpmath's polylog(2, r) exactly.
+    def cLiTwoExt_num(w):
+        pts = [0, 1]
+        tc = re(1 / w)
+        if 0 < tc < 1:
+            pts = [0, tc, 1]
+        return -quad(lambda t: log(1 - w * t) / t, pts)
+
+    r_cut = mpf("2.246979603717467")
+    v_on = cLiTwoExt_num(mpc(r_cut, 0))
+    below, above = [], []
+    for e in ["1e-3", "1e-5", "1e-7", "1e-9"]:
+        eps = mpf(e)
+        below.append(fabs(cLiTwoExt_num(mpc(r_cut, -eps)) - v_on))
+        above.append(fabs(cLiTwoExt_num(mpc(r_cut, eps)) - v_on))
+    jump = cLiTwoExt_num(mpc(r_cut, mpf("1e-9"))) - cLiTwoExt_num(mpc(r_cut, -mpf("1e-9")))
+    jump_pred = 2 * pi * mpc(0, 1) * log(r_cut)
     slopes = []
     for d in ["0.01", "0.001", "0.0001"]:
         ph = pi - mpf(d)
         x = exp(mpc(0, 1) * ph)
         w = max((x * y for y in roots_at(ph)), key=lambda u: re(u))
         slopes.append(im(w) / (-mpf(d)))
-    xpi_e = mpc(-1, 0)
-    w_end = max((xpi_e * y for y in polyroots(
-        [xpi_e, -(xpi_e ** 2 + 1), xpi_e ** 2 + xpi_e + 1, -xpi_e],
-        maxsteps=300, extraprec=300)), key=lambda u: re(u))
     gates.append({
         "gate": "G11",
-        "claim": "WHAT `hcont` STILL NEEDS AT THE ENDPOINT, recorded before it is discovered late. "
-                 "`envelopeS_total` asks for continuity on the CLOSED Icc 0 pi. G7 stops the "
-                 "DERIVATIVE at pi; continuity there is a separate obligation and is NOT "
-                 "discharged. Measured: the Li2 argument x*y approaches the cut [1,inf) from "
-                 "Im < 0, linearly in (pi - phi) with slope -> 2.2469796, landing exactly on the "
-                 "cut at the endpoint. Route 35's result -- Re Li2 is continuous ACROSS the cut "
-                 "because the jump 2*pi*i*log(x) is purely imaginary -- is what should make Re V "
-                 "extend continuously. THAT IS A CLAIM HERE, NOT A THEOREM",
-        "Im(x*y)/(phi-pi)_approaching": [nstr(s, 12) for s in slopes],
-        "limit_slope_is_the_level7_root": nstr(re(w_end), 16),
-        "x_times_y_at_pi": nstr(w_end, 16),
-        "approach_side": "Im < 0, i.e. from below the cut",
-        "still_open": "ContinuousOn (envelopeS Y1 Y2 Y3) (Icc 0 pi) at the endpoint phi = pi, "
-                      "where the Li2 argument sits ON [1,inf). Needs Route 35's continuity of "
-                      "Re Li2 across the cut, in Lean, applied to this argument",
-        # this gate PASSES by recording a measured obligation, and asserts only the geometry
-        "pass": bool(all(s < 0 for s in [im(exp(mpc(0, 1) * (pi - mpf(d))) *
-                                            max((y for y in roots_at(pi - mpf(d))),
-                                                key=lambda u: re(exp(mpc(0, 1) * (pi - mpf(d))) * u)))
-                                         for d in ["0.01", "0.001"]])
-                     and re(w_end) > 1 and fabs(im(w_end)) < mpf(10) ** -30),
+        "claim": "WHAT `hcont` NEEDS AT phi = pi -- AND IT IS CHEAPER THAN THIS GATE FIRST SAID. "
+                 "The first version claimed hcont needs `Re Li2 continuous ACROSS the cut`, a 2-D "
+                 "statement about the real part. RETRACTED: it needs only ONE-SIDED continuity "
+                 "from BELOW. cLiTwoExt w = -int log(1-wt)/t dt, and for real w > 1 the principal "
+                 "log gives arg = +pi past t = 1/w -- the same limit as approaching from Im < 0. "
+                 "Measured: from below the gap falls linearly to 1.4e-9; from above it sits at "
+                 "5.0868 = |2*pi*i*log r|, matching the predicted jump to 10 digits. And the arc "
+                 "approaches the cut from Im < 0, so it meets it on the CONTINUOUS side. What is "
+                 "still open is the Lean statement, not a 2-D continuity theorem",
+        "cut_point_x_times_y": nstr(r_cut, 16),
+        "cLiTwoExt_on_cut": nstr(v_on, 16),
+        "Im_on_cut_equals_neg_pi_log_r": nstr(fabs(im(v_on) + pi * log(r_cut)), 5),
+        "gap_from_below": [nstr(b, 5) for b in below],
+        "gap_from_above": [nstr(a, 5) for a in above],
+        "jump_measured": nstr(jump, 12),
+        "jump_predicted_2pi_i_log_r": nstr(jump_pred, 12),
+        "arc_approach_slope_Im/(phi-pi)": [nstr(s, 10) for s in slopes],
+        "slope_note": "positive because Im(x*y) < 0 and (phi - pi) < 0; it converges to r "
+                      "itself, i.e. Im(x*y) ~ -r*(pi - phi) -- linear approach from BELOW",
+        "numerical_trap": "integrating [0,1] in ONE piece gives 2.4873 - 2.5226i, which is WRONG "
+                          "-- the integrand has a log singularity at t = 1/r inside. Split at "
+                          "Re(1/w), and split on BOTH sides or the off-cut comparisons are "
+                          "silently garbage. Correct value matches mpmath polylog(2,r) exactly",
+        "still_open": "the Lean statement: cLiTwoExt continuous at a cut point along a path "
+                      "approaching from Im < 0. One-sided, not two-dimensional",
+        "pass": bool(below[-1] < mpf(10) ** -8 and above[-1] > 1
+                     and fabs(im(v_on) + pi * log(r_cut)) < mpf(10) ** -20
+                     and fabs(jump - jump_pred) < mpf(10) ** -8
+                     # slope = Im(x*y)/(phi - pi): POSITIVE, since both factors are negative.
+                     # A first draft tested s < 0 and failed on its own gate -- the sign of a
+                     # ratio is not the sign of its numerator.
+                     and all(s > 0 for s in slopes)
+                     and fabs(slopes[-1] - r_cut) < mpf(10) ** -6),
     })
 
     # ---- G12: `hasDerivAt_Ypair_*`'s hypothesis is satisfiable, and IS the collision ----

@@ -151,16 +151,32 @@
     },
     {
       "gate": "G11",
-      "claim": "WHAT `hcont` STILL NEEDS AT THE ENDPOINT, recorded before it is discovered late. `envelopeS_total` asks for continuity on the CLOSED Icc 0 pi. G7 stops the DERIVATIVE at pi; continuity there is a separate obligation and is NOT discharged. Measured: the Li2 argument x*y approaches the cut [1,inf) from Im < 0, linearly in (pi - phi) with slope -> 2.2469796, landing exactly on the cut at the endpoint. Route 35's result -- Re Li2 is continuous ACROSS the cut because the jump 2*pi*i*log(x) is purely imaginary -- is what should make Re V extend continuously. THAT IS A CLAIM HERE, NOT A THEOREM",
-      "Im(x*y)/(phi-pi)_approaching": [
-        "2.24680072914",
-        "2.24697781497",
-        "2.24697958583"
+      "claim": "WHAT `hcont` NEEDS AT phi = pi -- AND IT IS CHEAPER THAN THIS GATE FIRST SAID. The first version claimed hcont needs `Re Li2 continuous ACROSS the cut`, a 2-D statement about the real part. RETRACTED: it needs only ONE-SIDED continuity from BELOW. cLiTwoExt w = -int log(1-wt)/t dt, and for real w > 1 the principal log gives arg = +pi past t = 1/w -- the same limit as approaching from Im < 0. Measured: from below the gap falls linearly to 1.4e-9; from above it sits at 5.0868 = |2*pi*i*log r|, matching the predicted jump to 10 digits. And the arc approaches the cut from Im < 0, so it meets it on the CONTINUOUS side. What is still open is the Lean statement, not a 2-D continuity theorem",
+      "cut_point_x_times_y": "2.246979603717467",
+      "cLiTwoExt_on_cut": "(2.454327343972528 - 2.543392307888486j)",
+      "Im_on_cut_equals_neg_pi_log_r": "0.0",
+      "gap_from_below": [
+        "0.0014014",
+        "1.4016e-5",
+        "1.4016e-7",
+        "1.4016e-9"
       ],
-      "limit_slope_is_the_level7_root": "2.246979603717467",
-      "x_times_y_at_pi": "(2.246979603717467 + 0.0j)",
-      "approach_side": "Im < 0, i.e. from below the cut",
-      "still_open": "ContinuousOn (envelopeS Y1 Y2 Y3) (Icc 0 pi) at the endpoint phi = pi, where the Li2 argument sits ON [1,inf). Needs Route 35's continuity of Re Li2 across the cut, in Lean, applied to this argument",
+      "gap_from_above": [
+        "5.0867",
+        "5.0868",
+        "5.0868",
+        "5.0868"
+      ],
+      "jump_measured": "(0.0 + 5.08678461558j)",
+      "jump_predicted_2pi_i_log_r": "(0.0 + 5.08678461578j)",
+      "arc_approach_slope_Im/(phi-pi)": [
+        "2.246800729",
+        "2.246977815",
+        "2.246979586"
+      ],
+      "slope_note": "positive because Im(x*y) < 0 and (phi - pi) < 0; it converges to r itself, i.e. Im(x*y) ~ -r*(pi - phi) -- linear approach from BELOW",
+      "numerical_trap": "integrating [0,1] in ONE piece gives 2.4873 - 2.5226i, which is WRONG -- the integrand has a log singularity at t = 1/r inside. Split at Re(1/w), and split on BOTH sides or the off-cut comparisons are silently garbage. Correct value matches mpmath polylog(2,r) exactly",
+      "still_open": "the Lean statement: cLiTwoExt continuous at a cut point along a path approaching from Im < 0. One-sided, not two-dimensional",
       "pass": true
     },
     {

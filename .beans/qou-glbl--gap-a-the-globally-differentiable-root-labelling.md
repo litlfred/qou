@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T10:20:00Z
+updated_at: 2026-08-09T11:40:00Z
 ---
 
 ## What is open
@@ -154,7 +154,8 @@ in the real part. Route 30's correction, proved rather than assumed.
 | Vieta for the labelling (`hA`/`hB`'s `hv₁ hv₂ hv₃`) | ✅ `vieta_hv1/hv2`, `vieta_e3` |
 | the four sign facts `hA`/`hB` need | ✅ `im_mul_Ypair_*`, `im_div_Ypair_*` |
 | `hA` and `hB` at the concrete labelling | ✅ `logSumA_concrete`, `logSumB_concrete` |
-| **`heⱼ`'s second grouping (`k = 0`) and `hcont` at `φ = π`** | **the last two** |
+| **`heⱼ`'s second grouping (`k = 0`)** | **open — two routes gated closed** |
+| **`hcont` at `φ = π`** | **open, but ONE-SIDED — cheaper than G11 first said** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
