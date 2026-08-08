@@ -30,7 +30,8 @@ What this probe does (all exact integer series; mpmath only for evaluation):
   S1  evaluate each I(0,e)(q̃_sub) at the substrate q̃_sub = 1/q₀ with a
       truncation-stability guard (deep order, background-run discipline).
   S2  form A_eff(𝔲) = Σ_e I(0,e)(q̃_sub)·wᵉ at the observed sheets
-      ϑ_muon = 0.0589, ϑ_proton = 0.2032 (T4 back-solved values) under FOUR
+      ϑ_muon ≈ 0.0586, ϑ_proton ≈ 0.2031 (T4 back-solved, now DERIVED from
+      the canonical q₀ via qbeta_t4_anchors — see qou-vbw1) under FOUR
       sheet conventions w ∈ {e^{iϑ}, e^{2iϑ}, q₀e^{iϑ}, q₀²e^{2iϑ}}, and test:
         (i)   does A_eff differ from the u=0 tower value (constant-A_ω check)?
         (ii)  is Im A_eff ≡ 0 on unit-modulus sheets (amphichiral bar-even
@@ -66,6 +67,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qbeta_t4_anchors import theta_t4, S_ANCHORS  # noqa: E402
 
 from qbeta_g3_fourone_index_assembly_corrected import (  # noqa: E402
     assemble_I41, e2_window_for,
@@ -93,13 +95,15 @@ E_SUB = 28            # winding window for substrate A_eff. NOT 8: the winding
                       # truncating at the hump would silently bias A_eff.
                       # Per-sheet last-winding tail magnitudes are recorded.
 
-# T4 back-solved sheet angles (qbeta_t4_stokes3_crux_probe.py, 8-digit
-# T4-inverted values per qbeta_t3_multiknot_binding_probe.py; NOT re-fitted).
-# mp.mpf strings — no float64 literals per the precision discipline.
-THETA_MUON = mp.mpf("0.05894648")
-THETA_PROTON = mp.mpf("0.20323503")
-S_MUON = mp.mpf("0.00968298")
-S_PROTON = mp.mpf("-0.03945936")
+# T4 back-solved sheet angles — now DERIVED from the canonical q₀ rather than
+# typed as 8-digit literals (bean qou-vbw1). The old literals 0.05894648 /
+# 0.20323503 were inverted at a q₀ that turned out to be a unit conflation
+# (h = q₀ − 1/q₀ read as 2·ln q₀); see qbeta_t4_anchors for the full note.
+# These remain A_ω-CONDITIONED readings, not independent determinations.
+THETA_MUON = theta_t4("muon")
+THETA_PROTON = theta_t4("proton")
+S_MUON = mp.mpf(S_ANCHORS["muon"])
+S_PROTON = mp.mpf(S_ANCHORS["proton"])
 
 
 def xser_eval(xser, xval):
