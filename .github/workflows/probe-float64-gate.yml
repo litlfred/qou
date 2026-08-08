@@ -1,0 +1,60 @@
+name: probe-float64-gate
+
+# Fails a PR that introduces a float64 entry point into an mpmath computation
+# under `computations/`.
+#
+# WHY THIS EXISTS
+# There are four separate beans about float64 leaking into high-precision work —
+# `j0th`, `qou-gqt5`, `qou-ny4j`, `qou-t0rf` — and until now no gate. Every one
+# was found by a human noticing a suspicious digit. Noticing does not scale, and
+# the failure is silent: mpmath promotes a float64 operand without complaint and
+# the whole computation quietly runs at ~16 digits while the witness reports 40.
+#
+# WHAT IT CATCHES
+#   - float / complex literals that are NOT exactly representable, in arithmetic
+#     or handed to mpf()/mpc(). `mpf(0.3)` loses the digits before mpf sees them;
+#     `mpf("0.3")` does not. Exact literals (2.5, 0.5, 1e9, 1j) are allowed, and
+#     tolerances in comparisons (`worst < 1e-30`) are not arithmetic.
+#   - float(...) calls — usually `round(float(x))` to pull an integer out of an
+#     mpf; use `int(nint(x))`, which rounds at working precision.
+#   - math / cmath / numpy / scipy / statistics imports.
+#
+# DIFF-SCOPED on purpose, exactly as `lean-orphan-gate.yml` is. Measured
+# 2026-08-08: 17546 hits across 2184 of 3201 files. A whole-tree gate would block
+# every PR on that backlog. This one stops the number GROWING; working the
+# backlog is bean qou-f64g.
+#
+# Escape hatch: `# float64-ok: <reason>` on the offending line.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Runnable on demand, and locally:
+  #   python3 scripts/probe-float64-guard.py --diff <changed .py files>
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compute changed .py files
+        id: changed
+        run: |
+          base="origin/${{ github.base_ref }}"
+          git fetch origin "${{ github.base_ref }}" --depth=1 || true
+          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.py' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "changed .py files: ${files:-<none>}"
+      - name: Fail on new float64 entry points
+        if: steps.changed.outputs.files != ''
+        # Paths outside `computations/` are ignored by the script, so passing the
+        # PR's whole .py diff is safe.
+        run: |
+          python3 scripts/probe-float64-guard.py --diff ${{ steps.changed.outputs.files }}
+      - name: Survey (informational, never fails)
+        run: python3 scripts/probe-float64-guard.py

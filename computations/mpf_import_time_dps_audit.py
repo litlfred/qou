@@ -134,9 +134,23 @@ def scan_file(path: Path) -> list[dict]:
     statements in order and stops flagging once precision has been set.
     """
     try:
-        tree = ast.parse(path.read_text(encoding="utf-8"))
-    except Exception:
-        return []
+        src = path.read_text(encoding="utf-8")
+    except Exception as e:
+        return [{"line": 0, "kind": "unreadable", "text": f"{type(e).__name__}: {e}"}]
+    try:
+        tree = ast.parse(src)
+    except SyntaxError as e:
+        # A file that does not parse must NOT read as clean. `return []` here
+        # made "unparseable" indistinguishable from "no findings" — and the
+        # commit that introduced this audit (2bcbefee49) broke exactly two of
+        # the fourteen files it edited, by inserting `mp.dps = 50` between a
+        # dict's opening brace and its first entry. This audit reported both as
+        # having nothing wrong, because they no longer parsed. A checker that
+        # goes quiet on the files it broke is worse than no checker.
+        return [{"line": e.lineno or 0, "kind": "syntax-error",
+                 "text": f"file does not parse: {e.msg}"}]
+    except Exception as e:
+        return [{"line": 0, "kind": "unparseable", "text": f"{type(e).__name__}: {e}"}]
     out: list[dict] = []
     for stmt in tree.body:                      # module scope only, in order
         if isinstance(stmt, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
