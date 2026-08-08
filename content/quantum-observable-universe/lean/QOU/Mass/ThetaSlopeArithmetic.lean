@@ -27,8 +27,38 @@
   square), i.e. exactly the non-module class Door-i left open. Pure ℚ
   arithmetic on slopes; no archimedean content (§7c: slopes are rationals).
 
+  WHAT IS INPUT AND WHAT IS OUTPUT (added 2026-08-08, bean qou-slpd). Read the
+  theorems below as CONDITIONAL on two stipulations:
+
+    * `c1Slope := 1/2` and `ggmSlopes := (-1, 1)` are DEFINITIONS. They are read
+      off the numerics and the literature; nothing here derives them. So
+      `pullback_cannot_reach_ggm` — genuinely proved — is ℚ arithmetic GIVEN
+      them, and the "permanent invariant" conclusion inherits their status, not
+      a theorem's.
+    * `bar` and `prodSlope` are NOT in that category: `QGevreyOrder.bar_negates`
+      and `QGevreyOrder.prod_adds` derive exactly those two laws from
+      `IsQGevreyOrder`. Only the two slope VALUES are stipulated.
+
+  ORDER vs LEVEL — the `½` is ambiguous as written. Ramis–Sauloy–Zhang §1.3.2
+  define q-Gevrey ORDER `s` by `aₙ = O(Aⁿ q^{s n²/2})` and LEVEL as `1/s`; the
+  two are reciprocal, and RSZ attaches the LEVEL to the Newton polygon (§2.3.2:
+  "the one level case, because the q-Gevrey level `µ₂ − µ₁` is the fundamental
+  parameter"; Ex. 3.3.3: `d := µ₂ − µ₁`, kernel growth `q^{n²/2d}`). In this
+  corpus:
+
+    * Route-B kernel `q^{m²/4}`  — order ½, level 2  (`routeB_gaussian_order_half`)
+    * C1 `∞`-side `q^{n²}`       — order 2, level ½  (`c1InfCoeff_order_two`)
+
+  Both are `½` in reciprocal senses (`routeB_and_c1Inf_are_reciprocal`). The
+  grounding claimed for `c1Slope = ½` runs through the Route-B ORDER
+  (`theta_eq_half_gs_bridge`), while RSZ would tie the slope to the LEVEL. Those
+  cannot both be the Newton slope. This is NOT resolved by relabelling: it needs
+  the Newton polygon of `L1` computed directly (bean `qou-slpd` item 4). Until
+  then `c1Slope` is a stipulated rational whose identification with a Newton
+  slope is a premise.
+
   -- Ref: [manuscript] docs/audits/2026-07-20-qlift-gauge-gap-synthesis.md
-  -- Ref: [ramis-sauloy-zhang2013] q-difference Newton-polygon slopes
+  -- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §1.3.2 (order/level), §2.2 (Newton polygon), §2.3.2 + Ex. 3.3.3 (level = slope difference)
 -/
 
 import Mathlib.Tactic
@@ -46,10 +76,17 @@ def prodSlope (s t : ℚ) : ℚ := s + t
     (RSZ Thm 2.2.1(iv)). -/
 def pullback (l s : ℚ) : ℚ := l * s
 
-/-- C1 — the proved q-lift kernel — is pure isoclinic of slope `½`. -/
+/-- C1 — the proved q-lift kernel — is pure isoclinic of slope `½`.
+
+**STIPULATED, not derived** — see the "what is input and what is output" and
+"order vs level" notes in the module docstring. Every theorem below that
+mentions `c1Slope` is conditional on this value being the Newton-polygon slope,
+which is bean `qou-slpd` item 4. -/
 def c1Slope : ℚ := 1 / 2
 
-/-- GGM eq-49 slope multiset `{−1, +1}`. -/
+/-- GGM eq-49 slope multiset `{−1, +1}`.
+
+**STIPULATED, not derived** — read off GGM eq-49; see the module docstring. -/
 def ggmSlopes : ℚ × ℚ := (-1, 1)
 
 /-- GGM is **anisoclinic**: its two slopes differ. (C1's are equal.) This is

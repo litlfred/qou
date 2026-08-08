@@ -355,28 +355,60 @@ theorem routeB_gaussian_order_half (q : ℝ) (hq : 1 < q) :
   rw [hfun]
   exact order_of_rpow_gaussian q (1 / 2) hq
 
-/-- **`q^{n²}` has q-Gevrey order 2 under this file's definition — not ½.**
+/-! ### q-Gevrey LEVEL — the reciprocal notion, and the one RSZ ties to slopes
 
-Stated because two Lean files in this corpus label the same growth with
-**reciprocal** orders, and nothing flagged it:
+Ramis–Sauloy–Zhang, Astérisque 355 §1.3.2, verbatim:
 
-* `routeB_gaussian_order_half` (above) — growth `q^{m²/4}`, order `½`.
+> we introduce the space of formal series of q-Gevrey **order** `s`:
+> `C[[z]]_{q;s} := { Σ aₙzⁿ | ∃A > 0 : aₙ = O(Aⁿ q^{s n²/2}) }`.
+> We also say that `f ∈ C[[z]]_{q;s}` is of q-Gevrey **level** `1/s`.
+
+So `IsQGevreyOrder` above **is** RSZ's *order*, on the nose. The *level* is its
+reciprocal, and the level is what RSZ attaches to the Newton polygon: §2.3.2
+calls the two-slope case the *"one level case, because the q-Gevrey level
+`µ₂ − µ₁` is the fundamental parameter"*, and Example 3.3.3 writes
+`d := µ₂ − µ₁` for *"the level"*, with the q-Borel kernel `tₙ` of *"order of
+growth `q^{n²/2d}`"* — which is exactly order `1/d`.
+
+Both words are therefore in play, they are reciprocal, and the corpus has used
+"q-Gevrey ½" for both. This section makes the level a definition so the two
+numbers stop travelling as prose. -/
+
+/-- **q-Gevrey level** (RSZ §1.3.2): level `d` means order `1/d`. -/
+def IsQGevreyLevel (q : ℝ) (d : ℝ) (a : ℕ → K) : Prop := IsQGevreyOrder q d⁻¹ a
+
+/-- Level and order are reciprocal, by definition. -/
+theorem isQGevreyLevel_iff_order {q d : ℝ} {a : ℕ → K} :
+    IsQGevreyLevel q d a ↔ IsQGevreyOrder q d⁻¹ a := Iff.rfl
+
+/-- A sequence of order `s ≠ 0` has level `1/s`. -/
+theorem isQGevreyLevel_of_order {q s : ℝ} {a : ℕ → K} (hs : s ≠ 0)
+    (h : IsQGevreyOrder q s a) : IsQGevreyLevel q s⁻¹ a := by
+  rw [IsQGevreyLevel, inv_inv]
+  exact h
+
+/-- **Level is a well-defined invariant** for nonzero levels, from `order_unique`. -/
+theorem level_unique {q d e : ℝ} {a : ℕ → K} (hd : d ≠ 0) (he : e ≠ 0)
+    (hdl : IsQGevreyLevel q d a) (hel : IsQGevreyLevel q e a) : d = e := by
+  have := order_unique hdl hel
+  field_simp at this
+  linarith
+
+/-- **`q^{n²}` has q-Gevrey order 2** (and hence level `½`).
+
+Stated because two files in this corpus attach the number `½` to `q^{m²/4}` and
+to `q^{n²}`, which are reciprocal:
+
+* `routeB_gaussian_order_half` (above) — growth `q^{m²/4}`, **order** `½`.
 * `QOU.Mass.C1FormalSolutionGrowth` — growth `q^{n²}` for the C1 `∞`-side
-  formal solution, its docstring calls this "the q-Gevrey-½ divergence".
+  formal solution, docstring "the q-Gevrey-½ divergence" — that `½` is the
+  **level** (RSZ §1.3.2), i.e. order `2`.
 
-`IsQGevreyOrder q s a` is `‖aₙ‖ ∼ Cⁿ q^{s n²/2}`, so `q^{n²}` forces `s = 2`.
-Both conventions exist in the literature — order `s` as `q^{s n²/2}` (used
-here, and by Ramis–Sauloy–Zhang for the Newton-polygon slope) and order `s` as
-`q^{n²/(2s)}` (used elsewhere by Ramis–Zhang) — and they are inverses of each
-other. Under **this file's** definition the C1 `∞`-side order is `2`, and that
-is what this theorem certifies.
-
-This does not by itself say which label is wrong. It says the `½` cannot be
-read off `q^{n²}` under the definition this corpus formalised, so the two files
-cannot both be using it. Relevant because the whole Door-i / route-A
-isoclinicity obstruction is carried across files by the number `½`
-(`ThetaSlopeArithmetic.c1Slope`), which is a **definition** there, not a
-derivation. -/
+`IsQGevreyOrder q s a` is `‖aₙ‖ ∼ Cⁿ q^{s n²/2}`, which is RSZ's *order*
+verbatim, so `q^{n²}` forces `s = 2`. Neither file wrote a wrong number; they
+wrote **different quantities** under one word. See
+`routeB_and_c1Inf_are_reciprocal` for what that leaves open, and the
+level section above for the RSZ citations. -/
 theorem qSquare_gaussian_order_two (q : ℝ) (hq : 1 < q) :
     IsQGevreyOrder q 2 (fun n : ℕ => q ^ ((n : ℝ) ^ 2)) := by
   have hfun : (fun n : ℕ => q ^ ((n : ℝ) ^ 2))
@@ -385,10 +417,42 @@ theorem qSquare_gaussian_order_two (q : ℝ) (hq : 1 < q) :
   rw [hfun]
   exact order_of_rpow_gaussian q 2 hq
 
-/-- **The two labels are genuinely different orders.** `½ ≠ 2`, so
-`routeB_gaussian_order_half` and `qSquare_gaussian_order_two` are not two
-readings of one fact. With `order_unique`, no single sequence carries both. -/
-theorem routeB_order_ne_c1Inf_order : (1 : ℝ) / 2 ≠ 2 := by norm_num
+/-- **`q^{n²}` has q-Gevrey LEVEL ½.** Same fact as
+`qSquare_gaussian_order_two`, said in RSZ's other word. So
+`QOU.Mass.C1FormalSolutionGrowth`'s "q-Gevrey-½ divergence" **is correct RSZ
+terminology** — it is the *level*. It is simply not the quantity
+`IsQGevreyOrder` measures. -/
+theorem qSquare_gaussian_level_half (q : ℝ) (hq : 1 < q) :
+    IsQGevreyLevel q (1 / 2) (fun n : ℕ => q ^ ((n : ℝ) ^ 2)) := by
+  rw [IsQGevreyLevel, show ((1:ℝ) / 2)⁻¹ = 2 by norm_num]
+  exact qSquare_gaussian_order_two q hq
+
+/-- **`q^{m²/4}` has q-Gevrey LEVEL 2.** The Route-B kernel's `½` is an
+*order*; its level is `2`. -/
+theorem routeB_gaussian_level_two (q : ℝ) (hq : 1 < q) :
+    IsQGevreyLevel q 2 (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4)) := by
+  rw [IsQGevreyLevel, show (2:ℝ)⁻¹ = 1 / 2 by norm_num]
+  exact routeB_gaussian_order_half q hq
+
+/-- **The two `½`s in this corpus are `½` in reciprocal senses.**
+
+* Route-B kernel `q^{m²/4}`: order `½`, level `2`.
+* C1 `∞`-side `q^{n²}`: order `2`, level `½`.
+
+Neither file was writing a wrong number; they were writing *different
+quantities* under one word. `½ ≠ 2`, so with `order_unique` / `level_unique` no
+single sequence carries both, and "the C1 slope is ½" is ambiguous until one
+says *order* or *level*.
+
+**Which one is the Newton-polygon slope is NOT settled here.** RSZ attaches the
+**level** to the slope (§2.3.2, Ex. 3.3.3), which would favour the C1 `∞`-side
+reading; but `theta_eq_half_gs_bridge` below grounds
+`ThetaSlopeArithmetic.c1Slope = ½` through `routeB_gaussian_order_half`, an
+**order**. Those cannot both be the slope. Deciding it needs the Newton polygon
+of `L1` computed directly — bean `qou-slpd` item 4 — not a relabelling. -/
+theorem routeB_and_c1Inf_are_reciprocal :
+    ((1 : ℝ) / 2 ≠ 2) ∧ ((2 : ℝ)⁻¹ = 1 / 2) ∧ (((1 : ℝ) / 2)⁻¹ = 2) := by
+  refine ⟨by norm_num, by norm_num, by norm_num⟩
 
 /-- **[MI-3(b), sorry-free] GS cumulative degree has leading coefficient ½.**
     The Gröbner–Shirshov cumulative q-degree `C(m,2) = m(m−1)/2` (corpus

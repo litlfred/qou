@@ -185,6 +185,13 @@ theorem riemann_hurwitz_check :
     (2) Fake-flatness F_A = B forces 2-form datum into Cartan subalgebra on E_c
     (3) MI integral reduces to classical contour integral of lam_SW^(n)
 
+    **VACUOUS AS STATED (flagged 2026-08-08, bean `qou-slpd`).** The hypothesis
+    `fake_flat_abelian : ∀ k, mi_integral k = sw_period k` IS the conclusion,
+    universally quantified, and the proof is the projection `fake_flat_abelian n`.
+    So none of (1)-(3) above is derived here — they are assumed. Discharging this
+    means proving the abelianisation, not instantiating it. The content block
+    `prop:mi-sw-abelianisation` now carries `validation: "trivial"` to say so.
+
     LaTeX: `\label{prop:mi-sw-abelianisation}` -/
 -- Ref: [yekutieli2015] Amnon Yekutieli, *Nonabelian Multiplicative Integration on Surfaces*, 2015
 theorem mi_sw_abelianisation

@@ -15,17 +15,22 @@ The ratio `c_{m+1}/c_m` has q-degree `2m+1`, so the q-degree of `cₙ` is
 and must be q-Borel/Laplace summed; the sector-difference of the sums is the Stokes
 multiplier datum `U ∈ ℂ²` (the RSZ-wild residual, beaned).
 
-**Order convention — corrected 2026-08-08.** This docstring previously called `q^{n²}`
-"the q-Gevrey-½ divergence". Under the definition this corpus actually formalised,
-`QOU.Mathlib.QGevreyOrder.IsQGevreyOrder q s a` ⟺ `‖aₙ‖ ∼ Cⁿ q^{s n²/2}`, the growth
-`q^{n²}` has order **2**, not ½ — proved there as `qSquare_gaussian_order_two`, sitting
-next to `routeB_gaussian_order_half` (`q^{m²/4}`, order ½) so the two are visible
-together. Both conventions exist in the literature (order `s` as `q^{s n²/2}`, used here
-and by RSZ for the Newton-polygon slope, versus order `s` as `q^{n²/(2s)}`), and they are
-inverses. The `½` cannot be read off `q^{n²}` under the formalised one. Which label is
-*intended* is an owner call — flagged, not silently flipped — and it matters because the
-Door-i / route-A isoclinicity obstruction is carried across files by that number
-(`ThetaSlopeArithmetic.c1Slope`, a **definition** there rather than a derivation).
+**"q-Gevrey ½" here means LEVEL ½ — resolved against RSZ, 2026-08-08.** Ramis–Sauloy–Zhang
+(Astérisque 355 §1.3.2) define *order* `s` by `aₙ = O(Aⁿ q^{s n²/2})` and then say such a
+series has *level* `1/s`. So for `q^{n²}`: **order 2, level ½**. Both are proved in
+`QOU.Mathlib.QGevreyOrder` — `qSquare_gaussian_order_two` and
+`qSquare_gaussian_level_half` — and `IsQGevreyOrder` there is RSZ's *order* on the nose.
+This docstring's "q-Gevrey-½" is therefore **correct RSZ terminology for the level**; it
+was never a wrong number, only an unqualified word. It is qualified now.
+
+**What that leaves genuinely open.** The corpus's other `½` — `routeB_gaussian_order_half`
+for `q^{m²/4}` — is an *order*, so its level is `2`. The two `½`s are reciprocal (see
+`routeB_and_c1Inf_are_reciprocal`). RSZ attaches the **level**, not the order, to the
+Newton polygon (§2.3.2 "the one level case, because the q-Gevrey level `µ₂ − µ₁` is the
+fundamental parameter"; Ex. 3.3.3 `d := µ₂ − µ₁`, kernel growth `q^{n²/2d}`). But
+`theta_eq_half_gs_bridge` grounds `ThetaSlopeArithmetic.c1Slope = ½` through the *order*
+route. Those cannot both be the Newton slope. Settling it needs the Newton polygon of `L1`
+computed directly — bean `qou-slpd` item 4 — not a relabelling.
 
 **Scope.** The growth-degree identity `∑_{m<n}(2m+1) = n²` (= `deg_q cₙ`), plus — added
 2026-08-08 — the *derivation* of the ratio degree it used to assume. `natDegree_c1MultPoly`
@@ -36,7 +41,7 @@ taken from the witness is the recursion itself.
 The Stokes summation is NOT here. §7c: `ℕ` degrees. Sorry-free. No fit; nothing wired.
 
 -- Ref: [manuscript] docs/audits/2026-08-01-c1-inf-slope-half-rsz-stokes.md (W2 ∞)
--- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§4-5, summation/Stokes)
+-- Ref: [ramis-sauloy-zhang-2013] https://arxiv.org/abs/0903.0853 (§1.3.2 order/level; §4-5 summation/Stokes)
 -/
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Tactic
@@ -52,8 +57,8 @@ def c1FormalDeg (n : ℕ) : ℕ := ∑ m ∈ range n, (2 * m + 1)
 
 /-- **Gaussian growth**: `deg_q(cₙ) = n²`. The C1 formal solution at ∞ has coefficients of
 q-degree `n²`, i.e. growth `q^{n²}` — the divergent (q-Gevrey) behaviour that forces Stokes
-summation. Under `QOU.Mathlib.QGevreyOrder.IsQGevreyOrder` that is order **2**; see the
-order-convention note in the module docstring. Proof: the sum of the first `n` odd numbers
+summation. Under `QOU.Mathlib.QGevreyOrder.IsQGevreyOrder` that is order **2**, equivalently RSZ
+level **½**; see the level/order note in the module docstring. Proof: the sum of the first `n` odd numbers
 is `n²`. -/
 theorem c1FormalDeg_eq_sq (n : ℕ) : c1FormalDeg n = n ^ 2 := by
   induction n with
