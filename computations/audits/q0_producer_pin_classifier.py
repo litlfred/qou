@@ -33,7 +33,8 @@ THE EVIDENCE MODEL
               `q_parameter`, stem-resolved, or `qou_substrate.constants`
               directly) and its stem is not under `ideal_muon`. Note this is
               a statement about the CURRENT manifest, not about intent.
-    muon    — reads a known muon-built artifact: the `q-pinning-50-digit`
+    muon    — imports an explicit muon accessor (`q_muon_at`, `Q_MUON`, …) or
+              reads a known muon-built artifact: the `q-pinning-50-digit`
               witness, or the `y-lambda-at-q0` cache (the accessor AGENTS.md
               §q₀-anchor names as the straddle trap), or sets
               `QOU_Q0_ANCHOR` to an ideal/muon value.
@@ -79,6 +80,12 @@ PROTON_MODULES = {"q_parameter", "qou_substrate.constants", "constants"}
 PROTON_NAMES = {"Q_50_DIGIT_STR", "q_at", "Q_MP", "Q_PROTON"}
 MUON_ARTIFACTS = ("q-pinning-50-digit", "y-lambda-at-q0", "y_lambda_at")
 MUON_ENV = ("ideal", "muon", "canonical")
+# Explicit muon ACCESSORS. A producer importing one of these is reaching for the
+# ideal layer on purpose -- typically a cross-anchor comparison probe -- so its
+# muon stamp may be entirely correct. Missing these was a real classifier gap:
+# `q_at, q_muon_at` co-imports were being scored proton-only, which would have
+# put ~8 deliberately dual-layer probes into a tnjb regeneration batch.
+MUON_NAMES = {"q_muon_at", "Q_MUON", "Q_MUON_MP", "q_muon"}
 
 
 def strip_main_block(tree: ast.Module) -> list[ast.stmt]:
@@ -112,6 +119,8 @@ def classify(path: Path) -> tuple[str, list[str]]:
             mod = n.module or ""
             if mod in PROTON_MODULES or mod.endswith(".constants"):
                 names = [a.name for a in n.names]
+                if any(x in MUON_NAMES for x in names):
+                    muon.append(f"imports {[x for x in names if x in MUON_NAMES]}")
                 if any(x == "Q" or x in PROTON_NAMES for x in names):
                     proton.append(f"from {mod} import {', '.join(names)}")
             self.generic_visit(n)
@@ -125,6 +134,8 @@ def classify(path: Path) -> tuple[str, list[str]]:
         def visit_Attribute(self, n):  # noqa: N802
             if n.attr in PROTON_NAMES:
                 proton.append(f".{n.attr}")
+            if n.attr in MUON_NAMES:
+                muon.append(f".{n.attr}")
             self.generic_visit(n)
 
         def visit_Constant(self, n):  # noqa: N802
