@@ -441,13 +441,16 @@ unproved for it, it is **false**. Anything that needs `Li₂` at `‖y‖ > 1` (
 sense for every `y` such that `1 − yz ≠ 0` on `[0,1]` — in particular for all
 `y ∉ [1,∞)` — with no reference to convergence of the series.
 
-**Honest labelling.** `cLiTwoExt` agrees with `cLiTwo` on the open disc
-(`cLiTwoExt_eq_cLiTwo`), which is proved. Calling it *the analytic
-continuation* additionally requires it to be analytic on `ℂ ∖ [1,∞)`, which is
-**not proved here** — that needs differentiation under the integral sign. Until
-then "continuation" is a name backed by agreement-on-the-disc plus the standard
-definition in the literature, not a theorem in this file. Tracked in
-`qou-gkco`. -/
+**Labelling — updated 2026-08-08.** `cLiTwoExt` agrees with `cLiTwo` on the open
+disc (`cLiTwoExt_eq_cLiTwo`), and it is now **proved analytic** on `ℂ ∖ [1,∞)`
+in `QOU/MathlibExt/ComplexDilogarithmDeriv.lean`
+(`analyticOnNhd_cLiTwoExt`), by differentiation under the integral sign. So
+"the analytic continuation" is a theorem, not a name.
+
+This paragraph previously said analyticity was "not proved here … not a theorem
+in this file". That is no longer true and the sentence would now be a false
+claim in the corpus, which is why it is rewritten rather than left standing.
+Bean `qou-clx8`; `qou-gkco` still tracks the downstream identification. -/
 
 /-- The dilogarithm by its integral definition, valid past the unit disc.
 

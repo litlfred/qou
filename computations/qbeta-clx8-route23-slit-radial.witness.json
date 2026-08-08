@@ -3,7 +3,7 @@
   "bean": "qou-clx8",
   "parent_bean": "qou-0yqu",
   "dps": 30,
-  "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmSlit.lean",
+  "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmSlit.lean + QOU/MathlibExt/ComplexDilogarithmDeriv.lean",
   "gates": [
     {
       "gate": "G1",
@@ -148,12 +148,53 @@
       "err_split_at_Re_inv_y": "0.0",
       "split_point": "0.3333332963",
       "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "DIRECTION INDEPENDENCE -- the difference quotient along four distinct complex directions agrees with -log(1-w)/w at every test point. A radial derivative gives one direction; complex differentiability needs all of them, and this is the content ComplexDilogarithmDeriv adds over ComplexDilogarithmSlit",
+      "n_checks": 12,
+      "rows": [
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(1.0 + 0.0j)",
+          "|fd - pred|": "5.98385e-20"
+        },
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(0.0 + 1.0j)",
+          "|fd - pred|": "5.98385e-20"
+        },
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(0.5 + 0.5j)",
+          "|fd - pred|": "5.98385e-20"
+        },
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(-0.6 + 0.4j)",
+          "|fd - pred|": "2.14579e-19"
+        }
+      ],
+      "worst": "4.6594865e-19",
+      "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "the closed form -log(1-w)/w must carry w != 0: Lean's x/0 = 0 makes it 0 at w = 0, while the true derivative there is 1. The INTEGRAL form is correct at 0, which is why the Lean theorem states the integral as primary and the closed form as a corollary. Same junk-value trap that made hinv1/hlan1 false",
+      "limit_of_closed_form_as_w_to_0": [
+        "1.00005000333",
+        "1.000000005",
+        "1.0"
+      ],
+      "integral_form_at_w_eq_0": "1.0",
+      "lean_junk_value_of_closed_form_at_0": "0 (since x/0 = 0)",
+      "pass": true
     }
   ],
   "verdict": {
     "outcome": "cLiTwoExt's integral converges on ALL of C minus [1,inf) -- the geometric hypothesis qou-clx8 asked for, now Lean-proved -- and its derivative ALONG RAYS is proved by FTC rather than by differentiating under the integral sign.",
     "what_widened": "the old side condition Re(1-y)>0 rejects every point in G1, including both examples the bean names, while the identity holds at all of them. ComplexDilogarithm.intervalIntegrable_log_one_sub_div is now stated on slitPlane membership, with the old form kept as a corollary.",
-    "still_open": "full analyticity on C minus [1,inf) needs the derivative in EVERY direction, not just radially. The natural next route is a primitive-of-a-holomorphic-function argument on the simply connected slit plane (Mathlib has Analysis/Complex/HasPrimitives.lean); it is NOT written. So 'the analytic continuation' is still a name plus agreement-on-the-disc plus this radial derivative.",
+    "now_closed": "analyticity on C minus [1,inf) IS proved -- analyticOnNhd_cLiTwoExt in ComplexDilogarithmDeriv.lean, by differentiation under the integral sign. Mathlib supplies the DUI theorem; the piece it does not supply is the uniform lower bound on ||1 - w z|| over a ball times [0,1], proved by compactness. G8 tests direction independence, which the radial derivative could not give.",
     "does_not_move_the_sum_rule": "qou-clx8 is explicit that Route 5 is a restatement; even the whole chain leaves an unevaluated real integral. Taken for the Mathlib gap, as instructed.",
     "sum_rule_status": "verified to 80 dps, unproved"
   }

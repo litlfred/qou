@@ -229,10 +229,57 @@ def main() -> int:
         "pass": bool(err_split < TOL and err_naive > mpf(10) ** -6),
     })
 
+    # ---- G8: DIRECTION INDEPENDENCE -- what the radial derivative cannot show
+    # A radial derivative is one direction. Complex differentiability needs all of
+    # them to agree, and that is exactly what ComplexDilogarithmDeriv proves via
+    # differentiation under the integral sign. Test it: central differences along
+    # several complex directions must all land on -log(1-w)/w.
+    dirs = [mpc(mpf(1), mpf(0)), mpc(mpf(0), mpf(1)),
+            mpc(mpf(1), mpf(1)) / 2, mpc(mpf(-3), mpf(2)) / 5]
+    h8 = mpf(10) ** -12
+    rows8, worst8 = [], mpf(0)
+    for w in [mpc(mpf("1.5"), mpf("0.3")), mpc(mpf("-2"), mpf("1")),
+              mpc(mpf("6"), mpf("2"))]:
+        pred = -log(1 - w) / w
+        for d in dirs:
+            fd = (li2_int(w + h8 * d) - li2_int(w - h8 * d)) / (2 * h8 * d)
+            dd = fabs(fd - pred)
+            worst8 = max(worst8, dd)
+            rows8.append({"w": nstr(w, 8), "direction": nstr(d, 6),
+                          "|fd - pred|": nstr(dd, 6)})
+    gates.append({
+        "gate": "G8",
+        "claim": "DIRECTION INDEPENDENCE -- the difference quotient along four distinct complex "
+                 "directions agrees with -log(1-w)/w at every test point. A radial derivative "
+                 "gives one direction; complex differentiability needs all of them, and this is "
+                 "the content ComplexDilogarithmDeriv adds over ComplexDilogarithmSlit",
+        "n_checks": len(rows8), "rows": rows8[:4], "worst": nstr(worst8, 8),
+        "pass": bool(worst8 < mpf(10) ** -14),
+    })
+
+    # ---- G9: why the closed form must carry w != 0 -------------------------
+    # Lean's x/0 = 0, so -log(1-w)/w evaluates to 0 at w = 0 while the true
+    # derivative there is 1. The INTEGRAL form is right at 0. This is the same
+    # junk-value trap that made hinv1/hlan1 false earlier in this lane.
+    lim_vals = [nstr(-log(1 - mpf(10) ** -k) / mpf(10) ** -k, 12) for k in [4, 8, 12]]
+    at_zero_integral = -quad(lambda z: -1 / (1 - mpf(0) * z), [mpf(0), mpf(1)])
+    gates.append({
+        "gate": "G9",
+        "claim": "the closed form -log(1-w)/w must carry w != 0: Lean's x/0 = 0 makes it 0 at "
+                 "w = 0, while the true derivative there is 1. The INTEGRAL form is correct at "
+                 "0, which is why the Lean theorem states the integral as primary and the "
+                 "closed form as a corollary. Same junk-value trap that made hinv1/hlan1 false",
+        "limit_of_closed_form_as_w_to_0": lim_vals,
+        "integral_form_at_w_eq_0": nstr(at_zero_integral, 12),
+        "lean_junk_value_of_closed_form_at_0": "0 (since x/0 = 0)",
+        "pass": bool(fabs(at_zero_integral - 1) < TOL
+                     and fabs(mpf(lim_vals[-1]) - 1) < mpf(10) ** -10),
+    })
+
     out = {
         "probe": "qbeta_clx8_route23_slit_radial",
         "bean": "qou-clx8", "parent_bean": "qou-0yqu", "dps": mp.dps,
-        "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmSlit.lean",
+        "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmSlit.lean + QOU/MathlibExt/ComplexDilogarithmDeriv.lean",
         "gates": gates,
         "verdict": {
             "outcome": "cLiTwoExt's integral converges on ALL of C minus [1,inf) -- the "
@@ -244,12 +291,12 @@ def main() -> int:
                             "at all of them. ComplexDilogarithm.intervalIntegrable_log_one_sub_"
                             "div is now stated on slitPlane membership, with the old form kept "
                             "as a corollary.",
-            "still_open": "full analyticity on C minus [1,inf) needs the derivative in EVERY "
-                          "direction, not just radially. The natural next route is a "
-                          "primitive-of-a-holomorphic-function argument on the simply connected "
-                          "slit plane (Mathlib has Analysis/Complex/HasPrimitives.lean); it is "
-                          "NOT written. So 'the analytic continuation' is still a name plus "
-                          "agreement-on-the-disc plus this radial derivative.",
+            "now_closed": "analyticity on C minus [1,inf) IS proved -- analyticOnNhd_cLiTwoExt "
+                          "in ComplexDilogarithmDeriv.lean, by differentiation under the "
+                          "integral sign. Mathlib supplies the DUI theorem; the piece it does "
+                          "not supply is the uniform lower bound on ||1 - w z|| over a ball "
+                          "times [0,1], proved by compactness. G8 tests direction independence, "
+                          "which the radial derivative could not give.",
             "does_not_move_the_sum_rule": "qou-clx8 is explicit that Route 5 is a restatement; "
                                           "even the whole chain leaves an unevaluated real "
                                           "integral. Taken for the Mathlib gap, as instructed.",
@@ -262,7 +309,7 @@ def main() -> int:
     for g in gates:
         print(f"  {g['gate']}  pass={g['pass']}  {g['claim'][:86]}")
     print(f"\nwitness -> {dest}")
-    print("VERDICT: the sharp domain is proved; the radial derivative is FTC, not DUI.")
+    print("VERDICT: cLiTwoExt is ANALYTIC on C minus [1,inf) -- the continuation is a theorem.")
     return 0 if all(g["pass"] for g in gates) else 1
 
 
