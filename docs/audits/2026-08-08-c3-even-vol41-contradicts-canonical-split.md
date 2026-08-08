@@ -191,6 +191,17 @@ geometrically-backed object to the definitional one. `SLeakZeroCrossing.lean`
 carries a symbol-collision guard, so the collision is known — but the capstone
 still crosses it, and KC21 inherits the same vocabulary.
 
+> **Partly anticipated — cite, do not claim.** The `S = h·D(ũ)` half of this was
+> already re-scoped by
+> [`qbeta-c3-qstar-k31-repin.witness.json`](../../computations/qbeta/qbeta-c3-qstar-k31-repin.witness.json):
+> *"the carrier is anchor-blind (spread 1.23e-9) and is NOT the swinging
+> empirical S, so `'S=h·D(u)'` is **schematic, not a tight identity** (the swing
+> is the 1/u³ extractor, #3636)."* What appears **not** to be recorded elsewhere
+> is the narrower documentation defect: the capstone's *result 1* states
+> `S = Q_β/E₀` (≈ 887) while its own header and numbers are `S_leak` (≈ 0.0097)
+> — two objects five orders apart inside one document. That, and only that, is
+> this audit's unanticipated part.
+
 That, and the honest record of two wrong turns, is this audit's actual
 contribution. It is smaller than the two claims it replaces.
 
