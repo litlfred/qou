@@ -68,6 +68,7 @@ import QOU.Mathlib.RigidityReductionScope
 import QOU.MathlibExt.PosSemidefTraceZero
 import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
+import QOU.MathlibExt.CauchyBinet
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
