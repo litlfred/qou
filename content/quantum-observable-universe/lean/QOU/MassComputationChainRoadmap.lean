@@ -3,6 +3,7 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.LinearAlgebra.Matrix.Defs
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Mass-computation chain stubs — m_n + higher atoms/isotopes
@@ -288,8 +289,13 @@ with #636 on naming if R1 (rename to `w̃_λ`) is adopted.
 -/
 
 /-- Balanced quantum integer `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`. -/
-noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+-- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
+-- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
+-- call sites are unchanged; the DEFINITION now has a single home.  Proofs that
+-- said `unfold <local>` become `simp only [<local>, ...qIntBal]` -- `unfold`
+-- reduces through the alias and leaves the follow-up tactic nothing to act on.
+-- See QOU/MathlibExt/QIntegerCanonical.lean.
+noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
 
 -- Ref: [manuscript] prop:schur-weyl-mass-decomposition
 -- Ref: [wenzl1988] Hecke algebra Markov trace
@@ -311,7 +317,7 @@ theorem wedderburn_weights_H3 (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
       qInt q 3 * qInt q 2 * qInt q 1 = qInt q 3 * qInt q 2 := by
   -- Ref: [manuscript] prop:schur-weyl-mass-decomposition formulas
   have h1 : qInt q 1 = 1 := by
-    unfold qInt; rw [pow_one, pow_one]; exact div_self hq
+    simp only [qInt, QOU.Mass.QHookDimensionBalanced.qIntBal]; rw [pow_one, pow_one]; exact div_self hq
   exact ⟨h1, by rw [h1, mul_one]⟩
 
 /-! ## Gap 7: Atomic braid word `atom_braid_word_3A(Z, N)` at H_{3A}

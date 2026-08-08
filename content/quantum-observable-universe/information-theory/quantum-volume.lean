@@ -14,17 +14,23 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.Information
 
 /-- The q-integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}). -/
-noncomputable def qInteger (q : ℝ) (n : ℕ) : ℝ :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+-- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
+-- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
+-- call sites are unchanged; the DEFINITION now has a single home.  Proofs that
+-- said `unfold <local>` become `simp only [<local>, ...qIntBal]` -- `unfold`
+-- reduces through the alias and leaves the follow-up tactic nothing to act on.
+-- See QOU/MathlibExt/QIntegerCanonical.lean.
+noncomputable abbrev qInteger (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
 
 /-- [2]_q = q + q⁻¹. -/
 theorem qInteger_two (q : ℝ) (hq : q ≠ 0) (hq1 : q ≠ 1) (hqn1 : q ≠ -1) :
     qInteger q 2 = q + q⁻¹ := by
-  unfold qInteger
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   have hden : q - q⁻¹ ≠ 0 := by
     intro h
     have hqq : q = q⁻¹ := by linarith

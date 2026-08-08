@@ -155,3 +155,34 @@ STILL NOT MIGRATED: ~40 balanced duplicates + the 10 geometric sites.
 
 ALSO DO NOT FORGET (guard, unchanged): Interactions/HeckeEnergyPositivity's
 qIntegerRescaled = sum q^(2j) is geometric IN q^2 and CORRECT. Do not convert.
+
+
+---
+
+# *** SURGERY COST REFINED (2026-08-08) — it is mechanical after all ***
+
+The three files I reverted last round are now MIGRATED. The "~60% need proof
+surgery" figure stands, but the surgery turned out to be a UNIFORM ONE-LINE
+SUBSTITUTION, not per-site reasoning:
+
+    unfold <local>   ->   simp only [<local>, QOU.Mass.QHookDimensionBalanced.qIntBal]
+
+Verified empirically (three candidate tactics tested on the 1-site file; only
+this one and an explicit `show` worked -- `unfold <local> <canonical>` FAILS,
+because unfold reduces through the alias and the canonical name is no longer
+present in the goal).
+
+Applied to 8 sites across 3 files:
+  QOU/MassComputationChainRoadmap.lean    qInt       1 site
+  information-theory/quantum-volume.lean  qInteger   1 site
+  QOU/GaugeFieldFluidDynamics.lean        qInteger   6 sites
+All three lean-direct EXIT 0.
+
+SO THE REVISED BUDGET IS BETTER THAN FEARED: ~60% of migrations need an edit,
+but the edit is the single substitution above. Plan the remaining ~50 sites as
+mechanical, not as per-file proof work.
+
+A TRAP TO AVOID (cost me a cycle): if the migration comment mentions
+"QIntegerCanonical", a naive `if "QIntegerCanonical" not in text` guard will
+think the import is already present and SKIP inserting it. Check for the literal
+import line, not the bare filename.
