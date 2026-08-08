@@ -1683,3 +1683,73 @@ content decision, so it is stated here in full rather than folded into an
 infrastructure change. Nothing else in the repoint alters a value: the readers
 downcast to float in any case, and `delta_lambda_2row_stratum_analysis`
 computes `dim` itself rather than reading the field the successor lacks.
+
+## P39 — two corrections, and why `--strict` must wait
+
+### The 4He successor is muon-anchored too; the 182 ppm is not an anchor change
+
+P38 said the repoint moved 4He "to the proton anchor". **It did not.**
+`chi-helium-4-h12-at-q0-50dps.witness.json` carries
+`q_0_50dps = 1.1099785955573347…` — the **muon** prefix. The repoint moved 4He
+from one muon-anchored value to another.
+
+The arithmetic should have caught this before the claim was made. The two q₀
+values differ at the **12th** significant digit (`1.10997859555_41805` vs
+`1.10997859555_73347`, ~3e-12 relative). A 3e-12 perturbation cannot move χ at
+the 5th digit. So the 182 ppm was never the anchor: it is a *methodological*
+gap between two computations of the same quantity — the successor via
+`pyhecke_native 0.9.0` `chi_lambda_all_partitions_mpfr` (branch decomposition,
+50 dps), the legacy one by another route at float64. **Two computations of
+tr_M(4He) disagreeing by 182 ppm is an open question, not a resolved one.**
+
+### 4He was not a straggler — the muon anchor is the majority
+
+| | witnesses |
+|---|---:|
+| muon-anchored q₀ only | **650** |
+| proton-anchored q₀ only | 379 |
+| both | 60 |
+| `q0Anchor` field: muon / proton / ambiguous | 344 / 232 / 23 |
+
+The migration to the proton anchor is roughly **37% done**. Calling 4He "the
+straggler" inverted the picture; it sits with the majority.
+
+What actually re-anchors it: `chi_at_q0_via_hoefsmit_mpfr.py` imports `Q` from
+`q_parameter` (`1.1099785827513808…`, proton), so the committed cache is simply
+stale — written before the re-anchoring — and the producer's resume logic skips
+recomputation whenever a complete cache exists, which is why re-running it
+changed nothing. Forced to rebuild it writes
+`q_0_50dps = 1.10997858275138080759166909561076`, correct. That rebuild is 77
+partitions through `pyhecke_native` and is slow (~13 partitions per 10 min);
+it is incremental and SIGTERM-safe, so it resumes.
+
+### `--strict` cannot be turned on yet, and the porting made that worse
+
+`witness_dependency_drift.py` runs warn-mode (`|| true`) pending a drained
+backlog. It is not drained:
+
+|  | before this session's ports | now |
+|---|---:|---:|
+| self-stale (`scriptHash` ≠ producer) | 479 | **567** |
+| drift records | 633 | 634 |
+| witnesses carrying `upstream_witness_hashes` | 155 | 161 |
+
+**The +88 is mine.** Porting a producer changes its source, hence its
+`scriptHash`, while its witness stays unregenerated — so every source-only port
+converts an *undeclared-edge* problem into a *self-staleness* problem until the
+witness is re-run. Producer-side declaration is now at 44%, but witness-side
+adoption is still 5.9%, and only regeneration closes that gap.
+
+That is an argument for **finishing the regeneration wave before porting the
+remaining 197**, not for porting more: each additional port raises the very
+backlog that keeps `--strict` off. The residual 197 break down as 91 with no
+plain-`Name` builder assignment (they use `wrap_legacy` /
+`stamp_staleness_metadata`, so `add_upstream_records` has nowhere to attach),
+88 with an unhandled read shape, and 18 using `with X.open() as fh`.
+
+Precondition for escalation, stated so it can be checked rather than judged:
+self-staleness back to its pre-port level or below, and witness-side upstream
+adoption tracking the 44% producer-side figure. The three precision gates
+(`mpf_context_dps`, `module_const_precision`, `witness_float64_padding`) are
+already `--strict` and already green; the staleness validator is the only step
+still carrying `|| true`.
