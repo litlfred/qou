@@ -40,7 +40,7 @@ class CollatzContactBoundaryContext extends QouObstructionReductionContext where
     *vanishes*. This is the manuscript's own identity — *"the obstruction vanishes;
     this means the `[2]_q`-divisor is removable"* — i.e. in Kummer theory the
     obstruction class **is** the removability criterion. -/
-def kummer_obstruction_removable
+def CollatzContactBoundaryContext.kummer_obstruction_removable
     [CollatzContactBoundaryContext] : Prop :=
   QouObstructionReductionContext.kappa_vanishes 2
 
@@ -50,7 +50,7 @@ def kummer_obstruction_removable
     `kappa_vanishes_iff_chi` reduces that vanishing to `2 ∣ χ(A)`. So the parity
     condition now discharges removability through the universal obstruction, with
     no independent assumption. -/
-theorem obstruction_removable_of_even_chi
+theorem CollatzContactBoundaryContext.obstruction_removable_of_even_chi
     [ctx : CollatzContactBoundaryContext] (h : (2 : ℤ) ∣ ctx.chi_A) :
     CollatzContactBoundaryContext.kummer_obstruction_removable := by
   unfold CollatzContactBoundaryContext.kummer_obstruction_removable

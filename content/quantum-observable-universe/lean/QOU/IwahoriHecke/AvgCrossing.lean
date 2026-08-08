@@ -1,3 +1,6 @@
+import QOU.IwahoriHecke.Quotient
+import Mathlib.Tactic.LinearCombination
+
 /-!
 # `QOU.IwahoriHecke.AvgCrossing` — Foundational identity for inter-nucleon Avg crossings
 
@@ -53,8 +56,6 @@ Refs:
 - [manuscript] docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md
 -/
 
-import QOU.IwahoriHecke.Quotient
-import Mathlib.Tactic.LinearCombination
 
 namespace QOU.IwahoriHecke.AvgCrossing
 

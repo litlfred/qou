@@ -49,11 +49,11 @@ inductive PartitionOf5 where
   deriving DecidableEq, Repr
 
 /-- All 7 partitions of 5. -/
-def allList : List PartitionOf5 :=
+def PartitionOf5.allList : List PartitionOf5 :=
   [.five, .fourOne, .threeTwo, .threeOneOne, .twoTwoOne, .twoOneOneOne, .onesFive]
 
 /-- Number of (nonzero) rows of the Young diagram. -/
-def numRows : PartitionOf5 → ℕ
+def PartitionOf5.numRows : PartitionOf5 → ℕ
   | .five => 1
   | .fourOne => 2
   | .threeTwo => 2
@@ -65,7 +65,7 @@ def numRows : PartitionOf5 → ℕ
 /-- A block lies in the **GL₂ (spinor ℂ²) Schur–Weyl image** iff its Young diagram has at
 most two rows — `(ℂ²)^{⊗n} = ⊕_{λ:≤2 rows} S^λ ⊗ V_λ`.  This is the support of the
 SU(2)-side WRT(S³/2I) modular data. -/
-def inGL2SchurWeylImage (p : PartitionOf5) : Prop := p.numRows ≤ 2
+def PartitionOf5.inGL2SchurWeylImage (p : PartitionOf5) : Prop := p.numRows ≤ 2
 
 instance (p : PartitionOf5) : Decidable p.inGL2SchurWeylImage :=
   inferInstanceAs (Decidable (p.numRows ≤ 2))
