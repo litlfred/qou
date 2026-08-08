@@ -124,4 +124,63 @@ theorem swap_mem_colStab_iff {μ : YoungDiagram} (t : Specht.Tableau μ)
 theorem colPattern_colSuperstandard (μ : YoungDiagram) (l : Fin (Specht.nOf μ)) :
     Specht.colPattern (colSuperstandard μ) l = (colSuperstandard μ l : ℕ × ℕ).2 := rfl
 
+/-! ### The same-column count — the first half of the eigen-equation
+
+`OVBaseSeminormalVector.jm_polytabloid_split` writes the JM action on `e_t` as
+
+  `X_s · e_t = (same-column count) · (−e_t) + (off-column Garnir sum)`,
+
+where the same-column count is `#{j < s : (j s) ∈ colStab t}`. For the
+column-superstandard tableau that count is exactly the **row index** of `s`'s cell,
+which is where the `−i` of `content (i,j) = j − i` comes from. -/
+
+/-- The `colStab` filter is exactly a (same column, smaller row) condition. -/
+theorem sameColumn_filter_eq (μ : YoungDiagram) (s : Fin (Specht.nOf μ)) :
+    Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+        j.val < s.val ∧ Equiv.swap j s ∈ Specht.colStab (colSuperstandard μ))
+      = Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+        (colSuperstandard μ j : ℕ × ℕ).2 = (colSuperstandard μ s : ℕ × ℕ).2
+          ∧ (colSuperstandard μ j : ℕ × ℕ).1 < (colSuperstandard μ s : ℕ × ℕ).1) := by
+  ext j
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+  rw [swap_mem_colStab_iff, colPattern_colSuperstandard, colPattern_colSuperstandard]
+  constructor
+  · rintro ⟨hlt, hcol⟩
+    exact ⟨hcol, (lt_iff_row_of_sameCol μ hcol).mp (Fin.lt_def.mpr hlt)⟩
+  · rintro ⟨hcol, hrow⟩
+    exact ⟨Fin.lt_def.mp ((lt_iff_row_of_sameCol μ hcol).mpr hrow), hcol⟩
+
+/-- **The same-column count is the row index.** For the column-superstandard tableau,
+`#{j < s : (j s) ∈ colStab}` equals the row of `s`'s cell.
+
+The bijection sends `j` to its row. It lands in `range (row s)` by
+`sameColumn_filter_eq`; it is injective because a label is determined by its cell and
+the column is pinned; and it is surjective because a Young diagram is down-closed in
+columns (`YoungDiagram.up_left_mem`), so every row below `s`'s in the same column is
+occupied. -/
+theorem sameColumn_count (μ : YoungDiagram) (s : Fin (Specht.nOf μ)) :
+    (Finset.univ.filter (fun j : Fin (Specht.nOf μ) =>
+        j.val < s.val ∧ Equiv.swap j s ∈ Specht.colStab (colSuperstandard μ))).card
+      = (colSuperstandard μ s : ℕ × ℕ).1 := by
+  classical
+  rw [sameColumn_filter_eq]
+  refine Eq.trans ?_ (Finset.card_range ((colSuperstandard μ s : ℕ × ℕ).1))
+  refine Finset.card_bij (fun j _ => (colSuperstandard μ j : ℕ × ℕ).1) ?_ ?_ ?_
+  · intro j hj
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at hj
+    exact Finset.mem_range.mpr hj.2
+  · intro a ha b hb hab
+    simp only [Finset.mem_filter, Finset.mem_univ, true_and] at ha hb
+    exact (colSuperstandard μ).injective
+      (Subtype.ext (Prod.ext hab (ha.1.trans hb.1.symm)))
+  · intro r hr
+    rw [Finset.mem_range] at hr
+    have hs : ((colSuperstandard μ s : ℕ × ℕ)) ∈ μ := (colSuperstandard μ s).2
+    have hmem : ((r, (colSuperstandard μ s : ℕ × ℕ).2) : ℕ × ℕ) ∈ μ.cells :=
+      μ.up_left_mem (le_of_lt hr) (le_refl _) hs
+    refine ⟨(colSuperstandard μ).symm ⟨_, hmem⟩, ?_, ?_⟩
+    · simp only [Finset.mem_filter, Finset.mem_univ, true_and, Equiv.apply_symm_apply]
+      exact hr
+    · simp [Equiv.apply_symm_apply]
+
 end QOU.BraidKnot.ColSuperstandardTableau
