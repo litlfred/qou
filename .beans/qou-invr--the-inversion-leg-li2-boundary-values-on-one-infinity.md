@@ -10,7 +10,7 @@ tags:
     - qou-rstq
     - 5two
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T19:35:00Z
+updated_at: 2026-08-08T19:55:00Z
 ---
 
 ## What is open, stated as narrowly as it now can be
@@ -176,8 +176,62 @@ flatly as the mathematical findings.
     Re Li₂(x) + Li₂(1/x) = π²/3 − ½·log²x        for real x > 1
 
 Route 35 G3, measured at 1e-25 over 200 points. Its partner argument `1/x` lies
-in `(0,1)`, where the series converges and `cLiTwo_ofReal` bridges. Nothing
-blocks it now.
+in `(0,1)`, where the series converges and `cLiTwo_ofReal` bridges.
+
+#### The route, derived 2026-08-08 — a constancy argument, and where its one subtlety is
+
+Set `G(x) := Re cLiTwoExt(x) + LiTwo(1/x) + ½·log²x` on `(1,∞)`. Then `G' = 0`
+and `G ≡ π²/3`, pinned at `x → 1⁺` where `Re Li₂(1) = LiTwo(1) = π²/6` and
+`log 1 = 0`. Term by term:
+
+| term | derivative on `x > 1` |
+|---|---|
+| `Re cLiTwoExt(x)` | `−log(x−1)/x` |
+| `LiTwo(1/x)` | `(log(x−1) − log x)/x` |
+| `½·log²x` | `log x / x` |
+
+They cancel identically. The middle and last are routine — `1/x ∈ (0,1)` is off
+the cut. **The first is the whole problem**, because `cLiTwoExt` is not
+complex-differentiable on the cut.
+
+**`hasDerivAt_cLiTwoExt_radial` is the right tool, and step (1) is what unblocks
+it.** Its hypothesis is `hy : y.im ≠ 0 ∨ y.re < 1` (i.e. `y ∈ notCut`), which
+real `x > 1` fails — but that hypothesis is used **only to get the kernel
+integrable on `[0,t]`**, and that is exactly what
+`intervalIntegrable_clog_one_sub_div_ofReal` now supplies. So the radial lemma
+should generalize to real `x > 0` by swapping which integrability lemma it
+cites. **Check that before anything else** — if the `notCut` hypothesis is load
+bearing somewhere else in that proof, this route changes shape.
+
+Granting the generalisation, the radial lemma at `t = 1` gives
+
+    HasDerivAt (fun s : ℝ => cLiTwoExt (s·x)) (−log(1 − x)) 1
+
+and since `s ↦ cLiTwoExt(s·x)` is `G ∘ (·*x)`, the chain rule reads
+`x·G'(x) = −log(1−x)`, i.e. `G'(x) = −log(1−x)/x` — the derivative wanted, with
+`Re(−log(1−x)/x) = −log(x−1)/x` for `x > 1` by `re_log_ofReal`.
+
+**⚠ THE ONE SUBTLETY, stated so it is not discovered late.** That reading uses
+the chain rule *backwards*: the radial lemma differentiates in the **parameter
+`s` along a fixed ray**, and the constancy argument needs the derivative in
+**`x`, which moves the ray**. Recovering an `x`-derivative from an `s`-derivative
+requires knowing `cLiTwoExt` is differentiable at `x` to begin with — which is
+the thing being established. Options, unpriced:
+
+* reparameterise so the ray direction is fixed at `y = 1` and the parameter *is*
+  `x` — but `y = 1` fails `notCut` for a second reason and the lemma also caps
+  `t ≤ 1`, so it needs extending on two axes;
+* prove the `x`-derivative directly from the integral by differentiation under
+  the integral sign — **note the derivative integrand `1/(1−xt)` has a SIMPLE
+  POLE at `t = 1/x` and is not integrable there**, so naive DUI fails and this
+  needs a principal value. Do not start here without pricing that;
+* differentiate only the **real part** along the real axis, which is what the
+  argument actually needs and which Route 35 G1 shows is continuous across the
+  cut. Probably the most promising, and untried.
+
+So step (2) is a constancy argument whose three derivatives are known and cancel
+on paper; the open question is purely *how to differentiate `Re cLiTwoExt` in
+`x` at a point on the cut*, and the three candidate answers above are unpriced.
 
 ## Attack vectors (A1 and A3 are now SUPERSEDED by A2's result)
 
