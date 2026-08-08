@@ -46,16 +46,9 @@ number, or complex residue. Everything that lemma would consume is proved. This
 is *not* the Jacobi triple product, which additionally needs Liouville on
 $\mathbb{C}^{*}/p^{\mathbb{Z}}$ and is strictly more work.
 
-**Everything else in this arc is numerical.** The pole divisor and its
+**The remaining claims are computational, not derived.** The pole divisor and its
 residue-theorem completeness check, the connection invariant $\chi$ having order
 $2$, the identification $\alpha=t_2/T$, and the closed form for $\chi$ verified
-to $5.3\times10^{-63}$ over twelve points, are computations with witnesses, not
-derivations. That $Y_0$ and $Y_\infty$ are the *canonical* solutions, that
-$P=Y_0^{-1}Y_\infty$ is meromorphic, and that the divisor is complete, are all
-open.
-
-**Nothing consumes this.** The only outputs of this construction with a downstream
-consumer are the theta growth $q^{m^{2}/4}$ and the isoclinicity obstruction, both cited by
-[`conj:qdifference-kernel-prolongation-symbol`](#conj:qdifference-kernel-prolongation-symbol).
-This proposition records correct, expensive-to-re-derive work; it is not a
-load-bearing step, and it should not be cited as one.
+to $5.3\times10^{-63}$ over twelve points, rest on numerical witnesses. That
+$Y_0$ and $Y_\infty$ are the canonical solutions, that $P=Y_0^{-1}Y_\infty$ is
+meromorphic, and that the divisor is complete, are open.

@@ -7,8 +7,8 @@ export default proposition({
     validation: "validated",
   },
   title:
-    "The C1 connection matrix is p-elliptic and its poles are theta zeros; " +
-    "the q-theta vanishes on −p^ℤ",
+    "The connection matrix of the ramified binding operator is p-elliptic and " +
+    "its poles are theta zeros; the q-theta vanishes on −p^ℤ",
   uses: [
     "conj:qdifference-kernel-prolongation-symbol",
   ],
@@ -68,6 +68,25 @@ export default proposition({
         "pretend to feed anything else. It is a record of correct, expensive-to-" +
         "re-derive work, not a load-bearing step.",
       see: "computations/qbeta/c3_w2_c1_theta_zero_count.py",
+    },
+    {
+      kind: "status",
+      date: "2026-08-08",
+      body:
+        "**Voice fix (branch-jargon sweep).** Two defects of my own making, " +
+        "caught by the sweep I dispatched: (a) the TITLE still said `C1` after " +
+        "I had cleaned the .md body — titles are published and I missed them; " +
+        "(b) the .md body carried work narration — `Everything else in this arc " +
+        "is numerical`, `Nothing consumes this`, `records correct, " +
+        "expensive-to-re-derive work; it is not a load-bearing step` — which is " +
+        "this channel's job, not the manuscript's. Both fixed: the title names " +
+        "the ramified binding operator, and the body states the computational " +
+        "status in scholarly voice without narrating the project.\n\n" +
+        "The substance of what was removed, retained here: nothing in the " +
+        "corpus consumes the pole divisor, χ, the closed form, or α = t₂/T " +
+        "(bean qou-c1wr). The only C1-arc outputs with a consumer are the " +
+        "theta growth and the isoclinicity obstruction. This block is a record " +
+        "of correct but orphaned work and should not be cited as load-bearing.",
     },
   ],
   tags: [
