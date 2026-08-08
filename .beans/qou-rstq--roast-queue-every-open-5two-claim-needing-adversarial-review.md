@@ -467,3 +467,66 @@ inversion leg is exactly what needs it.
 | `x > 1` (inversion) | **unchanged — the real obstacle**, and now precisely bounded: it is the one thing the new boundary theorem deliberately cannot reach |
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — ITEM 4: the Landen regime is CLOSED. One argument left, in one regime.
+
+Two theorems, both sorry-free, both `lake`-verified, both axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+```
+QOU/MathlibExt/ComplexDilogarithmLanden.lean   (PR #4776)
+  landenCombo_ofReal_eq_zero : ∀ {t : ℝ}, t < 0 → landenCombo (t : ℂ) = 0
+      i.e.  Li₂(t) + Li₂(t/(t−1)) + ½·log(1−t)² = 0
+
+QOU/QBeta/FiveTwoExtendIdentification.lean     (PR #4701)
+  extend_eq_re_cRogersL_of_neg : ∀ {x : ℝ}, x < 0 →
+      extend (π²/6) rogersL x = (cLiTwoExt x + log x · log(1−x) / 2).re
+```
+
+The second is the one this item actually asked for, in the `x < 0` regime.
+
+### The base point is why this closed now and not earlier
+
+The zero derivative was already proved (Route 33 G3). What was missing was the
+constant, and the obvious base point `z = −1` needs `Li₂(½) = π²/12 − ½·log 2²`
+— **not in Mathlib**. Pinning at the *limit* `z → 0⁻` instead needs no special
+value at all: every term vanishes there. `Ico t 0` already excludes the one
+point where the derivative hypotheses fail, so the endpoint costs only a
+continuity lemma. Route 34 G3 checks the economy is real (each of the three
+pieces at `−1` is individually nonzero), not a stylistic preference.
+
+### Status per argument, which is now the honest unit
+
+`extended_sum` uses six arguments. **Five are proved:**
+
+| arguments | regime | status |
+|---|---|---|
+| two in `[0,1]` | identity | done — `extend` is `f`, `cLiTwo_ofReal` bridges |
+| three negative | Landen | **done, this round** |
+| `w₁ = 2.24698` | inversion | **open — the whole of what remains** |
+
+So item 4 is **not closed**; it is reduced from "two of three regimes open" to
+**one argument in one regime**. That is the right way to state it, and the
+per-argument table should replace the per-regime one in future reports.
+
+### What the inversion leg needs, unchanged
+
+`x > 1` lies **on** `cLiTwoExt`'s cut (`notCut` excludes real `x ≥ 1`), so it
+needs a genuine **boundary value** from off the cut — not a constant of
+integration. `ComplexDilogarithmBoundary` reaches the closed unit ball off the
+cut and deliberately stops short of `[1,∞)`; its docstring says so. Route 34 G5
+checks adversarially that the Landen theorem does **not** silently cover
+`t = 2.24698`: the combination is visibly nonzero there. A proof that appeared
+to reach it would be wrong.
+
+### A fourth sighting of `−t` on log's cut, harmless this time
+
+`log x` carries an `iπ` for `x < 0`, and it drops out of the real part — but
+because its partner factor `log(1−x)` is **real**, not because the cut was
+avoided. Corrections 5 and 6 in #4701 and the level-7 bridge's `arg(−t) = π`
+were the other three. Recorded in the module docstring rather than passed over,
+since the first three were all missed on the way past.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
