@@ -61,35 +61,27 @@ from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 from mpmath import mp, mpf  # noqa: E402
 
-M_E = mpf("0.51099895000")
-M_MU = mpf("105.6583755")
-M_TAU = mpf("1776.86")
+# Shared, unit-tested maths (see test_lepton_tower_bend.py).
+from lepton_tower_core import (  # noqa: E402
+    BEND_TOL as TOL,
+    M_E, M_MU, M_TAU,
+    observed_lepton_bend,
+    two_mode,
+    two_mode_bend,
+)
 
 W = 3   # lepton windings 3, 5, 7
 
-# Rounding headroom: the Lagrange identity is exact, but forming the bend as
-# a quotient rounds, so the degenerate single-mode cases land at 1 +/- eps.
-TOL = mpf("1e-40")
-
-
-def two_mode(c, d, g, h, w):
-    return c * g**w + d * h**w
-
 
 def bend_of(c, d, g, h, w=W):
-    x0 = two_mode(c, d, g, h, w)
-    x2 = two_mode(c, d, g, h, w + 2)
-    x4 = two_mode(c, d, g, h, w + 4)
-    if x0 == 0 or x4 == 0:
-        return None
-    return x2**2 / (x0 * x4)
+    return two_mode_bend(c, d, g, h, w)
 
 
 def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
 
-    obs_bend = M_MU**2 / (M_E * M_TAU)
+    obs_bend = observed_lepton_bend()
 
     # --- (1) the Lagrange identity, verified against direct evaluation ----
     # x(w) x(w+4) - x(w+2)^2 = c d g^w h^w (g^2 - h^2)^2
