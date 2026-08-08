@@ -456,3 +456,55 @@ caused this retraction.
 Landed: `c1_infinity_isoformalDim_eq_zero` (the C1 *instance*, since the general
 lemma was already there and got restated wrongly anyway) + audit
 [`2026-08-08-c1-infinity-has-no-stokes-multiplier.md`](../docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md).
+
+## 2026-08-08 (final) — corpus-grep on the two "questions": BOTH already worked
+
+The owner asked me to check the two items I had recorded as questions. Neither is
+open, and the check turned up three corrections to my own work.
+
+**Q1 — global `0`↔`∞` connection data: NOT open. Built, under bean `qou-wgnx`.**
+Theta-normalised canonical solutions at `∞` (residual `1e-62`); the connection
+matrix `P = Y₀⁻¹Y_∞`; the pole divisor; and the **basis-invariant** cross-ratio
+`χ = P₀₀P₁₁/(P₀₁P₁₀)` in closed form (worst deviation `5.3e-63`), shape confirmed
+against Lin–Ma–Xu arXiv:2412.02281 Thm 1.2. Lean: `C1ConnectionPoles.lean`,
+`C1ZeroSideExponents.lean`, sorry-free. `qou-wgnx`'s open item #1 is the Stokes
+multipliers proper — functions of `χ`, remaining step convention-dependent.
+
+**Q2 — the `q^{½ℤ}` lattice: the gloss was wrong, and the corpus had warned.**
+`c3_w2_c1_theta_canonical.py` carries a section headed *"The convention finding —
+read this before citing `B = ±sqrt(q-1)/q`"*, recorded 2026-08-07:
+
+| object | value | what it is |
+|---|---|---|
+| `T_edge` | `±√(q−1)/q` | Newton **edge polynomial** root |
+| `T_theta` | `±√(q−1)/q^{3/4}` | indexes the canonical solutions, **hence the Stokes sectors** |
+
+They differ by `q^{1/4}`; the edge root **provably does not satisfy the indicial
+equation**. I cited `±√(q−1)/q` as "the ∞ exponent data indexing the sectors" in
+#4783 — the exact string that warning names. So #4771's gloss "C1's `∞` weight
+lies in `q^{½ℤ}`" does not follow (`q^{3/4} ∉ q^{½ℤ}`); the *algebra* about the
+**dilation lift** stands and has been re-scoped in place.
+
+**Q3 (unasked, found anyway) — #4771/#4783 duplicated `C1ZeroSideExponents.lean`.**
+That file already had the indicial polynomial, Vieta as an iff over a generic
+`CommRing`, and the `(q−1)(q−5)` factorisation — plus `conjugate_pair_iff` and
+`|t|² = q−1`, which I do not have. My copies are retired; the results are now
+derived from `C1ZeroSide.vieta`. What survives as genuinely new: the `det A`
+two-end cross-check and the non-square proof.
+
+**And #4790's framing was dangerous.** "There is no Stokes multiplier at C1's ∞"
+would read as voiding `qou-wgnx`'s live open item. Two objects share the name:
+*local isoformal moduli at `∞`* (dim 0, genuinely empty — what #4790 retracts)
+and *the connection-matrix multipliers* (global, open, being worked). #4790 now
+distinguishes them explicitly, in the audit and in the Lean docstring.
+
+### Root cause, same in all three
+
+Not the mathematics — the search. I grepped for names I had invented rather than
+for concepts, so never reached `qou-wgnx`, the `c3_w2_c1_*` scripts, or
+`C1ZeroSideExponents.lean`. The phrase that would have found all of them on day
+one is `pure isoclinic`; the phrase that would have caught the `q^{1/4}` is
+`sqrt(q-1)/q`.
+
+**This bean is subordinate to `qou-wgnx` on the C1 `∞` axis.** Anyone picking up
+C1 connection/Stokes work should start there, not here.

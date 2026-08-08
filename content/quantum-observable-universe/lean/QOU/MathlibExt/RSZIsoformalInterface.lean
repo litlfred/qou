@@ -123,10 +123,21 @@ multiplicity `2`, pure isoclinic.  After the ramified pullback `ζ² = x` — wh
 leftover — the data is `k = 1`, rank `2`, slope `1`.  The isoformal space is a
 **point**.
 
-So there is no local q-Stokes multiplier at C1's `∞` to compute.  Independently:
-RSZ's Stokes matrices are unipotent automorphisms inducing the identity on
-`gr M₀` (§4.4, Thm 5.5.7), and with one slope there is no strictly-upper-
-triangular part — the Stokes group is trivial.
+So there is no **local isoformal** q-Stokes multiplier at C1's `∞` to compute.
+Independently: RSZ's Stokes matrices are unipotent automorphisms inducing the
+identity on `gr M₀` (§4.4, Thm 5.5.7), and with one slope there is no
+strictly-upper-triangular part — the Stokes group is trivial.
+
+**Do not read this as "C1 has no Stokes multipliers".**  Two different objects
+share the name, and only the first is zero-dimensional:
+
+* *local isoformal moduli at `∞`* — `F(P₁,…,P_k)` at a single point.  **This
+  lemma. Dimension 0.**
+* *the connection-matrix Stokes multipliers* — the data in `P = Y₀⁻¹Y_∞` between
+  the theta-normalised solutions at `0` and at `∞`, functions of the invariant
+  `χ = P₀₀P₁₁/(P₀₁P₁₀)`.  **Global, live, and open** (bean `qou-wgnx`; the
+  connection matrix and `χ` are already built).  A dimension count at one point
+  says nothing about it.
 
 **This instance exists because the general lemma above was not enough.**
 `rszIsoformalDim_one`'s docstring already said "no Stokes data to extract", and I
