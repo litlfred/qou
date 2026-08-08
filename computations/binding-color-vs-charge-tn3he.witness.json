@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-29T17:13:45.036336+00:00",
-  "commitSha": "a47a1e7a1abca511f5b43c9d930709397d648845",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T21:31:18.796225+00:00",
+  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
   "assertions": [
     {
       "name": "color_too_small_for_tn3he",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 18,
+  "durationMs": 15,
   "computation": "binding-color-vs-charge-tn3he",
   "scriptFile": "binding_color_vs_charge_tn3he.py",
-  "scriptHash": "e9656255fbc2",
-  "scriptCommitSha": "2af340cde8fe8c31061b1f64ed1cf49d1ee281bb",
+  "scriptHash": "142ebeb961e8",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,16 +27,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "data": {
-    "q_0": "1.1099785955573347",
-    "delta_flavor_split": 0.0013770494097940606,
+    "q_0": "1.10997859555733471989976322048",
+    "delta_flavor_split": 0.0013770494097940613,
     "alpha_em": 0.007297352573756914,
     "B0_bonds_MeV": {
-      "pp": 2.2860876243931454,
+      "pp": 2.286087624393146,
       "pn": 2.304836559563573,
       "nn": 2.249727484827445
     },
@@ -45,9 +47,9 @@
       "pn": 1.0000009481325385,
       "nn": 1.00045985925441
     },
-    "needed_split_MeV": 0.7637962000000016,
-    "color_split_MeV": -0.03427815636976633,
-    "color_fraction_of_needed": -0.04487866838008131,
+    "needed_split_MeV": 0.7637962,
+    "color_split_MeV": -0.034278156369766305,
+    "color_fraction_of_needed": -0.044878668380081366,
     "verdict": "Color-weighting (bring_color_weighted) gives the right SIGN for the bond asymmetry but is ~2 orders too small (Δm_pn scale 0.14%) for the T-vs-³He split (9.5%). That split is CHARGE/Coulomb (α_EM sector). Color averaging must still be wired everywhere for completeness."
   },
   "q0Anchor": "muon",

@@ -1,13 +1,13 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T12:44:59.442701+00:00",
-  "commitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
+  "computedAt": "2026-08-08T21:31:05.735311+00:00",
+  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
   "assertions": [
     {
       "name": "lambda_plus_eq_q",
-      "computed": "1.1099785955573347",
-      "expected": "1.1099785955573347",
+      "computed": "1.1099785955573347199",
+      "expected": "1.1099785955573347199",
       "passed": true,
       "tolerance": 1e-18,
       "source": "roots of x^2-(q-1/q)x-1"
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "aufbau-ell-grading-from-eigensplit",
   "scriptFile": "aufbau_ell_grading_from_eigensplit.py",
-  "scriptHash": "b95994c8ed45",
-  "scriptCommitSha": "3242a1187f8359aa71b237d23f57f8633ec6ba45",
+  "scriptHash": "3f783e15d081",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,14 +34,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Tests whether the lambda_+/lambda_- eigenvalue split that yields the 2(2l+1) shell capacity also supplies the l-graded penetration screening the noble-gas filling order needs. Zero-parameter structural key K(n,l)=n-2l (l-coeff fixed by |lambda_-|/lambda_+=1/q0^2). Formalize-first prediction (wrong-sign l-grading, not noble gases) is CONFIRMED.",
   "parameters": {
-    "q0": "1.1099785955573347",
-    "lambda_plus": "1.1099785955573347",
-    "lambda_minus": "-0.900918273561741057069617740224",
-    "eigenvalue_ratio_abs": "0.811653735637468095332261925782",
+    "q0": "1.10997859555733471989976322048",
+    "lambda_plus": "1.10997859555733471989976322048",
+    "lambda_minus": "-0.900918273561741040917900584017",
+    "eigenvalue_ratio_abs": "0.811653735637468066229507654929",
     "structural_ell_coefficient": -2
   },
   "data": {

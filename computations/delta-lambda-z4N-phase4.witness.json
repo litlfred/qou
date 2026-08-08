@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T12:58:16.222308+00:00",
-  "commitSha": "8e5667911022b907b6935bfc35e06e97204ef51e",
+  "computedAt": "2026-08-08T21:32:02.335562+00:00",
+  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
   "assertions": [
     {
       "name": "alpha_cosh_h_z_step_correction_rel_err",
-      "computed": 0.00028262191057275553,
+      "computed": 0.0002826219105727489,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.001,
@@ -33,7 +33,7 @@
     },
     {
       "name": "zero_param_closure_max_rel_err",
-      "computed": 0.0250568467756833,
+      "computed": 0.02505684677568331,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.03,
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 7,
   "computation": "delta-lambda-z4N-phase4",
   "scriptFile": "delta_lambda_z4N_phase4.py",
-  "scriptHash": "93ba9d62a7df",
-  "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
+  "scriptHash": "257623fcf46b",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,10 +64,10 @@
   },
   "description": "Phase 4 of the closed-forms-first-principles workplan: tests V(K) = Vol_hyp(K) · α^(Z-1) · (q^{1/2}+q^{-1/2})^(4N) as the Δ_λ closure factor. Identifies the per-N step factor as (q^{1/2}+q^{-1/2})^4 = z^(-4) — the 4th power of the quantum dim of spin-½. Empirical T/D = 15.955, ⁴He/³He = 16.358 vs predicted 16.087 (≤ 2% rel. err.). The per-Z step factor α remains empirical-fit at this phase.",
   "parameters": {
-    "q0": "1.1099785827513808",
-    "z": "0.49932033418369445250244513797201775784357572563217",
-    "1_over_z": "2.0027223638605332901508405592159063695764877331578",
-    "inv_z_to_4": "16.08729367536101117694192623063852387464993140393"
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "z": "0.49932033418369445241344268025766630375194816404153",
+    "1_over_z": "2.0027223638605332905078202379916317625341050850907",
+    "inv_z_to_4": "16.08729367536101118841198724804483957332517695465"
   },
   "data": {
     "vol_hyp": {
@@ -184,22 +184,22 @@
         "D": 22.975623004744584,
         "T": 369.6156025744405,
         "3He": 209.15088245776573,
-        "4He": 3364.668907885715
+        "4He": 3364.6689078857144
       },
       "rel_err_per_atom": {
-        "D": 0.0008370509107236566,
-        "T": 0.009094056110650634,
-        "3He": 0.008497605541829,
-        "4He": 0.0250568467756833
+        "D": 0.000837050910723643,
+        "T": 0.009094056110650622,
+        "3He": 0.008497605541829009,
+        "4He": 0.02505684677568331
       },
-      "max_rel_err": 0.0250568467756833
+      "max_rel_err": 0.02505684677568331
     },
     "alpha_cosh_h_refinement": {
       "alpha_empirical": 9.47001197806426,
       "qint_3_sq": 9.26414748385942,
       "cosh_h": 1.0219328133414665,
       "alpha_qint3sq_cosh_h": 9.467336301390725,
-      "rel_err": 0.00028262191057275553
+      "rel_err": 0.0002826219105727489
     },
     "upstream_witness_hashes": [
       {

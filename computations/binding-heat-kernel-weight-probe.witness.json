@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:25:19.571985+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T21:31:19.485993+00:00",
+  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
   "assertions": [
     {
       "name": "derived_heat_kernel_weight_closes_or_refutes_A3plus",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "binding-heat-kernel-weight-probe",
   "scriptFile": "binding_heat_kernel_weight_probe.py",
-  "scriptHash": "a2581c0e8f6d",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "a1fd4a6a7cdf",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,11 +30,13 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "EXPLORATORY de-fit probe: tests the DERIVED q-heat-kernel eigenvalue weight C_λ(q)=Σ_□[c]_q[c+1]_q (prop:q-heat-kernel-peter-weyl, μ_λ shape) as the per-block binding measure B=E·Σ_λ w_λ|Δθ_λ|, replacing the FITTED per-depth α_k assignment. C_λ is parameter-free (ℏ_q² absorbed into E); heat-kernel e^{−C_λ·τ} variants are 1-param and reported tiered (no τ tuned to AME). Active set reported for the weight-form diagnostic; binding sum is FULL p(3A) (no truncation). Asserts the refutation if no zero-fit weight closes A≥3 to 5%.",
   "parameters": {
-    "q0_50dps": "1.1099785827513808",
+    "q0_50dps": "1.109978582751380807591669095610768879874",
     "A_growth_target": 12.719631539848084
   },
   "data": {
@@ -132,47 +134,47 @@
         }
       },
       "heatker_tau_hbar2": {
-        "global_scale": 2.9863904824281056,
-        "worst_err": 3.8136454268943494,
-        "S_4He_over_S_D": 0.21025580018421952,
+        "global_scale": 2.986390482428106,
+        "worst_err": 3.813645426894349,
+        "S_4He_over_S_D": 0.21025580018421947,
         "per_isotope": {
           "D": {
             "B_pred": 10.70827291545374,
-            "err": 3.8136454268943494
+            "err": 3.813645426894349
           },
           "T": {
-            "B_pred": 3.8956494064340395,
-            "err": -0.5407046674342353
+            "B_pred": 3.895649406434039,
+            "err": -0.5407046674342354
           },
           "3He": {
-            "B_pred": 4.600570278670225,
-            "err": -0.4039167817219195
+            "B_pred": 4.600570278670224,
+            "err": -0.40391678172191964
           },
           "4He": {
-            "B_pred": 2.2514764904297313,
+            "B_pred": 2.251476490429731,
             "err": -0.9204303310308887
           }
         }
       },
       "heatker_tau_inv_hbar2": {
-        "global_scale": 1.260194171737039e+40,
+        "global_scale": 1.2601941717370237e+40,
         "worst_err": 1.0,
-        "S_4He_over_S_D": 1.4247674148323245e-163,
+        "S_4He_over_S_D": 1.4247674148323933e-163,
         "per_isotope": {
           "D": {
             "B_pred": 2.2245662,
             "err": -2.1628029659250316e-42
           },
           "T": {
-            "B_pred": 2.8657731483610383e-82,
+            "B_pred": 2.8657731483611074e-82,
             "err": -1.0
           },
           "3He": {
-            "B_pred": 3.3672708437008415e-82,
+            "B_pred": 3.367270843700923e-82,
             "err": -1.0
           },
           "4He": {
-            "B_pred": 3.169489433897368e-163,
+            "B_pred": 3.1694894338975206e-163,
             "err": -1.0
           }
         }

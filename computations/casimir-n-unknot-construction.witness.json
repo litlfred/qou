@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:18:26.715133+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T21:31:27.714070+00:00",
+  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
   "assertions": [
     {
       "name": "prefactor_pi2_over_720_from_disjoint_count",
@@ -33,8 +33,8 @@
   "durationMs": 46,
   "computation": "casimir-n-unknot-construction",
   "scriptFile": "casimir_n_unknot_construction.py",
-  "scriptHash": "dd1a706c7297",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "d8065d2cf27b",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,14 +44,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Sub-problem 1 attempt for conj:casimir-epsilon-vacuum. n-stability selection uniquely picks the bare disjoint-unknot count (no y_λ); the geometric n³ degeneracy + ζ(-3) derives π²/720. Conditional on the free-field ↔ disjoint-unknot identification, ξ_k = 0 at leading order.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
     "substrate_q": 1.1099785955573347,
-    "h2_substrate": 0.043706218232901294,
+    "h2_substrate": 0.04370621823290131,
     "delta_quantum_dim": 2.002722364462702
   },
   "data": {
@@ -62,49 +65,49 @@
           "n": 2,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.031143903233575174,
-          "wenzl_unnorm_relh2": 0.0,
+          "wenzl_unnorm_relh2": -3.057648108387679e-50,
           "normalized_trace": 1.0
         },
         {
           "n": 3,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.0623301989948468,
-          "wenzl_unnorm_relh2": -0.9435616633396198,
+          "wenzl_unnorm_relh2": -0.9435616633396195,
           "normalized_trace": 1.0
         },
         {
           "n": 4,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.09355894498777033,
-          "wenzl_unnorm_relh2": -2.232520905410953,
+          "wenzl_unnorm_relh2": -2.2325209054109525,
           "normalized_trace": 1.0
         },
         {
           "n": 5,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.1248301989948468,
-          "wenzl_unnorm_relh2": -3.787450921721171,
+          "wenzl_unnorm_relh2": -3.7874509217211707,
           "normalized_trace": 1.0
         },
         {
           "n": 6,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.15614401887722976,
-          "wenzl_unnorm_relh2": -5.506072281270487,
+          "wenzl_unnorm_relh2": -5.506072281270486,
           "normalized_trace": 1.0
         },
         {
           "n": 7,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.18750046257483236,
-          "wenzl_unnorm_relh2": -7.202604410842228,
+          "wenzl_unnorm_relh2": -7.202604410842226,
           "normalized_trace": 1.0
         },
         {
           "n": 8,
           "count_relh2": 0.0,
           "jones_unlink_relh2": 0.21889958810643448,
-          "wenzl_unnorm_relh2": -8.909903457782574,
+          "wenzl_unnorm_relh2": -8.909903457782573,
           "normalized_trace": 1.0
         }
       ],
