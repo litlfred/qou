@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Same agent-branch leak: \"The Wenzl bridge ([`y_lambda_wenzl_bridge_extended.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/y_lambda_wenzl_bridge_extended.py))\". Additionally several links resolve through `blob/main/folio-assistant/computations/...`, exposing the authoring-platform repository layout to the reader.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The `claude/mass-units-bridge-followups` branch links are gone, but four citations still resolve through the authoring platform's own directory: \"[`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py)\", the companion `canonical-mass-table-extended.witness.json` and `m-p-borromean-verification-50dps.witness.json` links, and \"[`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_isotope_witness.py)\". The scripts live under `computations/`; the `folio-assistant/` segment names the authoring platform and the path does not resolve.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

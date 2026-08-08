@@ -1567,12 +1567,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Agent instruction file cited inside a published parenthetical about the Lean sibling: \"*Lean sibling: generic commutative ring, no archimedean input (**AGENTS.md §7c**); library module ...*\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The agent-instruction citation is gone: the Lean-sibling parenthetical no longer reads \"generic commutative ring, no archimedean input (**AGENTS.md §7c**)\", and the base-ring convention is now stated on its own terms.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

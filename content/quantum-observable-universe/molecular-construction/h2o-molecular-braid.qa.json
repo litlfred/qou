@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md (the repo's agent-instruction file) cited as if it were a reference ('AGENTS.md §7c') in body prose: \"*Lean sibling: combinatorial strand-partition datum, self-contained per the content-block convention (AGENTS.md §7c / §8).* **Definition.** **Water** *$H_2O$ is the **molecular braid** assembled from three sub-units — one oxygen $O(8,8)$ ($A+Z = 16+8 = 24$ strands, valence $2$ with two lone pairs) a\" -- AGENTS.md section id used as a bare tag ('§7c') in body prose: \"*Lean sibling: combinatorial strand-partition datum, self-contained per the content-block convention (AGENTS.md §7c / §8).* **Definition.** **Water** *$H_2O$ is the **molecular braid** assembled from three sub-units — one oxygen $O(8,8)$ ($A+Z = 16+8 = 24$ strands, valence $2$ with two lone pairs) a\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"(AGENTS.md §7c / §8)\" citation is gone; the Lean-sibling line now reads \"*Lean sibling: combinatorial strand-partition datum, self-contained.*\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "A bare tracker node id used as a noun phrase in body prose: \"The D22 view is more compact but requires more category theory.\" D22 is a row of the internal duality tracker; the object is the Type-B folding realisation described in the same sentence, where the braid mirror is replaced by the Cartan-fold Z/2. \"The Type-B view\" would say it.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The bare tracker id is gone: the sentence now reads \"The Type-B folding view is more compact but requires more category theory.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

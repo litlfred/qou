@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "\"the corpus\" used to mean this repository ('this corpus') in body prose: \"**What is $q$-independent — standard, but not formalised here.** These follow from the Drinfeld--Jimbo construction and are cited, not machine-checked in this corpus: \\begin{itemize} \\item The root lattice $\\Lambda_R = \\mathbb{Z}\\alpha_1 \\oplus \\mathbb{Z}\\alpha_2$ and the weight lattice $\\Lambda_W =\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "notes": "Unchanged: \"a theorem of Lusztig/Kashiwara, cited here and \\emph{not} formalised in this corpus\" and \"These follow from the Drinfeld--Jimbo construction and are cited, not machine-checked in this corpus\". \"This corpus\" is the repository's content set; the reader's object is this paper.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

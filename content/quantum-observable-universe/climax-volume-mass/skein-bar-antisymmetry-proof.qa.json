@@ -1284,11 +1284,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "The block contains a manuscript-refactoring work plan. After \"**Refactoring corollary (case-split collapse).**\" the prose says \"Concretely, several existing case-split arguments in `braids-and-knots/` can be collapsed using this principle:\" followed by a table with the columns \"| Block | Current structure | Simplification |\" listing blocks by slug (`commutative-crossing-energy`, `phase-scoped-applicability`) and how to rewrite them (\"one computation + bar-apply\"). Source-directory names, block slugs and an editing to-do list are branch working material, not exposition; the mathematical content (bar-equivariance transports the proof) is fine and should stand alone.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "Unchanged: the \"**Refactoring corollary (case-split collapse).**\" still carries an editing to-do keyed to source paths and block slugs — \"several existing case-split arguments in `braids-and-knots/` can be collapsed using this principle:\" followed by the table \"| Block | Current structure | Simplification |\" listing \"`commutative-crossing-energy`\" and \"`phase-scoped-applicability`\" against rewrite instructions (\"one computation + bar-apply\"). The mathematics — bar-equivariance transports the proof — needs none of it.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

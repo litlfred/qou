@@ -1352,12 +1352,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "\"The graded-Mikusiński **keystone** ([`conj:gb-depth-period-correspondence`]) identifies ...\" — \"keystone\" is the branch nickname for this conjecture, not a term of art.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare nickname is resolved: \"The graded-Mikusiński keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) identifies these four remarks ...\" names the conjecture on first use.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

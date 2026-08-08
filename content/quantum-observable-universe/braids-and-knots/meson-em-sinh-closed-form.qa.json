@@ -16,11 +16,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Cites an internal audit and its joke-named section as the reason for a caveat's wording: \"An earlier version of this caveat, following [`docs/audits/2026-08-02-ppq-attack-vectors-roast.md`](...) §Roast 1, stated that ...\". \"§Roast 1\" and a dated audit filename are branch artifacts; \"an earlier version of this caveat\" narrates the block's own edit history.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "notes": "The `docs/audits/2026-08-02-ppq-attack-vectors-roast.md` citation and its \"§Roast 1\" are gone, but the withdrawn-caveat paragraph still turns on a project roadmap tier: \"concluded the ratio's L2-100× pass is $\\alpha_{\\mathrm{em}}$-anchored rather than parameter-free\". L2 is the precision-goal tier of the project's roadmap and names nothing the paper defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

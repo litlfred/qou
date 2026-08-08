@@ -1350,12 +1350,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Bare working nickname plus branch label in the first sentence: \"The **keystone** [`conj:gb-depth-period-correspondence`] (\\\"**B1**\\\") asserts an inclusion plus a sharpness ...\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare nickname is resolved: the opening now reads \"The keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) asserts an inclusion ... plus a sharpness condition\", naming the conjecture on first use.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

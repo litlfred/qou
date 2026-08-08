@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Project-management framing of a mathematical remainder: \"The remaining $\\det \\neq 0$ proof reduces the Phase 1 workstream to a symbolic-determinant computation.\" \"Phase 1 workstream\" is branch planning vocabulary; the object is simply the remaining non-vanishing-determinant step.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "\"the Phase 1 workstream\" is gone; the sentence now reads \"The remaining $\\det \\neq 0$ proof reduces what remains to a symbolic-determinant computation.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

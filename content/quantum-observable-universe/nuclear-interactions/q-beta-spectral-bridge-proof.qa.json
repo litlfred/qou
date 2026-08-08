@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "A \"## Provenance\" section narrates branch history: \"We derived this proposition during the cycle-6/7 audit ([`docs/audits/-q-beta-form-A-vs-form-B-canonical-choice.md`](...))\". \"cycle-6/7\" is a branch work-cycle number and the linked file is an internal audit; neither is published. The mathematics (Form A / Form B, both defined in place) is fine.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"cycle-6/7 audit\" work-cycle number and its `docs/audits/` link are gone; the Provenance section now records only the 50-decimal-place numerical verification and its witness script.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

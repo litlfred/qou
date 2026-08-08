@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Same defect: \"# **Piece A**: Specht Module Character Evaluation\" and \"**This file** provides the narrative counterpart to the **representation-theoretic route for Piece A**.\" \"Piece A\" is a branch label and \"route\" a branch decision word; the block is the Specht-module character evaluation of the central Jucys-Murphy element $C_2$. (No .ts sibling exists.)",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The \"Piece A\" label and the \"This file provides the narrative counterpart\" sentence are gone; the block is now headed \"# Character of the central Jucys–Murphy element on Specht modules\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

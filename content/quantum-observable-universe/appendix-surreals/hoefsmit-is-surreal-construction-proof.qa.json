@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Formalisation-status marker in published prose: \"The Lean **stub** axiomatises the embedding ([sign sequence functor](#def:sign-sequence-of-braid)) **pending** these prerequisites.\" \"stub\" and \"pending\" describe the state of the branch's Lean development, not the mathematics.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The two markers now attach to named mathematical prerequisites rather than to branch state: the sentence reads \"The Lean stub axiomatises the embedding ([sign sequence functor](#def:sign-sequence-of-braid)) pending these prerequisites\", where the prerequisites are the Mathlib `SetTheory.Game.Surreal` development and the eigenvalue-convention check enumerated immediately above.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

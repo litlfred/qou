@@ -16,11 +16,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "[branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§SUPERSEDED\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [branch/audit label, md] dated audit filename cited in body prose — \"2026-06-13-e-hartree-investigation-log.md\". dated audit note under docs/audits/ — an internal working document | [branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\" (+2 more). docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\" (+2 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] pointer to an investigation log / handoff / workplan — \"investigation log\"; \"Investigation record\"; \"round-by-round\" (+3 more). pointer to an internal investigation log / handoff / workplan | [process/status leak, md] status / lifecycle banner — \"SUPERSEDED\" (+1 more). lifecycle/status banner belonging to the working channel | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Status\"; \"## Non-claims\". process heading describing the work item rather than the mathematics | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"this block\" (+7 more). 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"…rong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](../braids-and-knots/mass-endomorphism-tower.md). The canonical replacement is the operator-valued $A^\\lambda_{\\mu, \\nu}(I)$ graded expansion [`prop:…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "notes": "The docs/audits links, the \"§SUPERSEDED\" anchor and the investigation-log pointers are gone, but session-round bookkeeping survives in two places: \"It is the source of the **round-21** refutation of the $y_{\\mathrm{cov}}$ form.\" and \"Tables 1-9 record **per-round** intermediate data.\" A reader cannot resolve \"round-21\" or \"per-round\" to anything the paper defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

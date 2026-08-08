@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Build-state narration survives in \"## Not yet formalised\": \"(currently chapter-block isolated — Lake module doesn't yet expose them)\" and \"The proof is the only remaining `sorry` in this chapter-block content\" both report the repo's Lean build state, and \"Resolving the YB cubic anomaly (`d_1 \\leftrightarrow d_2` swap per `rem:post-pr665-open-rd-inventory`)\" carries a PR number in the referent. The earlier defects are fixed: the heading is now \"## Not yet formalised\" rather than \"## Deferred to follow-up PR\", and \"(proved earlier in the conversation)\" is gone.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The repository build-state narration is gone: the \"(currently chapter-block isolated -- Lake module doesn't yet expose them)\" parenthetical and the `rem:post-pr665-open-rd-inventory` PR-numbered referent have both been removed, leaving \"## Not yet formalised\" over a list of the specific Lean imports and lemmas still required; \"sorry\" is Lean's own term for an unproved step.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

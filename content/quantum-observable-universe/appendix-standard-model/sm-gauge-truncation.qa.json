@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch-local deictic used as the subject of a claim: \"For the $\\mathrm{U}(1)$ factor no categorical derivation exists; **the corpus** contains octonion and colour-complex-structure fragments\". \"The corpus\" is agent shorthand for the block store.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "Unchanged: \"For the $\\mathrm{SU}(3)$ factor no categorical derivation exists; the corpus contains octonion and colour-complex-structure fragments\". \"The corpus\" is the repository's block store, not something the reader has.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

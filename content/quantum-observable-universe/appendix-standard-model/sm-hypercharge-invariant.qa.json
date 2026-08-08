@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Points at an unnamed internal audit as the record of a scientific result: \"this is the falsification recorded in **the hypercharge audit**\". The reader has no way to reach that audit; the falsification should be stated or cited.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "Unchanged: \"the proton and neutron share $Y = +1$ while their writhes differ, so any writhe function fails on the nucleon doublet — this is the falsification recorded in the hypercharge audit.\" The hypercharge audit is an internal QA artefact the reader cannot reach, and the falsification is already stated in the same sentence.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

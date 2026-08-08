@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "An internal audit and its date used as a provenance column in a published table: \"| Writhe-to-isospin map | derived (sign and ratio, scale-free) | **hypercharge audit, 2026-06-02** |\". Also \"none of them is discharged elsewhere in **the corpus**\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "Unchanged: the opening still reads \"none of them is discharged elsewhere in the corpus\", and internal audits are used as the provenance column of a published table — \"| Writhe-to-isospin map | derived (sign and ratio, scale-free) | hypercharge audit, 2026-06-02 |\", and twice \"uploads round-2 reads audit, 2026-08-01\". Dated audit memos and \"round-2\" are the working channel.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

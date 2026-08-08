@@ -1569,12 +1569,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Same pair as the sibling anchors block: \"It is **AGENTS.md §7c-compliant**.\" and \"- Derivation **audit**: [`docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`](...)\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "Both leaks are gone: the \"AGENTS.md §7c-compliant\" claim and the `docs/audits/` derivation memo no longer appear; the cross-reference list now points only to the sibling anchors proposition.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

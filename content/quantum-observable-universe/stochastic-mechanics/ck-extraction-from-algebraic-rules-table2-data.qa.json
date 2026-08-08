@@ -11,12 +11,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Review-process reference in a published table cell: \"(the old value belongs at ... with a sign flip; **superseded per audit**)\". \"per audit\" points at an unnamed internal review; the reason for the supersession should be stated.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The review-process pointer is gone and the reason is now stated: \"superseded per audit\" was replaced by \"the old $b^2 + 1/2$ value belongs at $k = 5$ with a sign flip; superseded\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

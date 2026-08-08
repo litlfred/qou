@@ -4,11 +4,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Names an internal watcher tool as if it were part of the mathematics: \"*Every witness is audited by: [`lp_dual_witness_validator.py`](...) (LP/SDP duals), `q-usage-watcher` (q-regime declarations), and the $q_0$ staleness ...*\". `q-usage-watcher` is repository tooling. The surrounding \"Witness contract (meta)\" text is maintenance instruction addressed to the pipeline, not exposition.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The internal watcher is still named as part of the witness contract: \"Every `*.witness.json` is validated by: [`lp_dual_witness_validator.py`](...) (LP/SDP duals), **`q-usage-watcher`** (q-regime declarations), and the q0 staleness detector. Stale or schema-violating witnesses **fail CI in `witness-pipeline.yml`**.\" The opening also forwards to a section that does not exist in the block: \"for **legacy witnesses**, is scheduled to be migrated to it -- see *Migration status* below\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

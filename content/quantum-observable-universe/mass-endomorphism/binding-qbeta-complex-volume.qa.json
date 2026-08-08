@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Bean ids still label two constraints: \"**Constraint on the open assembly (the 5nx8 gap):**\" and \"**Constraint on the lift (the 1jrh gap):**\". `5nx8` and `1jrh` are work-plan bean ids (`.beans/5nx8--conjecture-gap-formalize-conjbinding-qbeta-complex.md`, `.beans/1jrh--complex-volume-holomorphic-tie-test-bindingq-beta.md`); a reader has no way to resolve either. Everything else flagged before is fixed: the `§3b` class tag is now \"[Lean classes: ...]\", the `AGENTS.md §7a`/`§7c` citations are gone, and the `docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md` link was replaced by the witness citation `qbeta-ck-sseries-operator-match`, which does resolve (`computations/qbeta/qbeta-ck-sseries-operator-match.witness.json`).",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The two bean ids are gone: \"**Constraint on the open assembly (the 5nx8 gap):**\" and \"**Constraint on the lift (the 1jrh gap):**\" now read \"**Constraint on the open assembly:**\" and \"**Constraint on the lift:**\". The remaining \"fibre-branch $\\Phi_b$\" is a branch of a multivalued function.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

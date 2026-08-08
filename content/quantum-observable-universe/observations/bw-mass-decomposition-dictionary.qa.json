@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[branch/audit label, md] dated audit filename cited in body prose — \"2026-05-02-alpha-fit-NOT-derivation-retraction.md\" (+1 more). dated audit note under docs/audits/ — an internal working document | [branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\". docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] status / lifecycle banner — \"as of now\". lifecycle/status banner belonging to the working channel | Verbatim: \"…026-05-02-alpha-fit-NOT-derivation-retraction.md`](../../../docs/audits/2026-05-02-alpha-fit-NOT-derivation-retraction.md)). Instead of mapping empirical BW coefficients to specific algebraic strata (a numerological exerc…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The docs/audits link and the dated retraction-memo filename are gone, and no use of \"audit\" remains; the surviving \"as of now\" reports the current empirical state of the Bethe-Weizsäcker coefficients (\"still AME least-squares fits -- a fit, not a derivation\"), not a branch lifecycle.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -4,11 +4,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Bean id, PR number, keystone nickname and superseded-status narration all in body prose: \"TIER: **near-match**; exact closure gated on the s5-so3 / Habiro keystone (`conj:s5-so3-fiber-action`, bean s5bb). Supersedes the earlier \\\"164.0× as of 2026-05-31 ...\\\"\" and \"*L2 status (live, PR #2723): $\\mathfrak{Q}_\\beta$ at $\\sim 160\\times$ miss*\". \"bean s5bb\" is a work-plan item id; \"live, PR #2723\" is branch state. Also AGENTS.md quoted as authority and a dated `docs/audits/2026-05-31-...` memo cited.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The bean id \"s5bb\", the \"PR #2723\" pointer, the AGENTS.md quotation and the dated docs/audits memo are gone, but branch-state narration survives in the Notes: \"*Status (**live**): $\\mathfrak{Q}_\\beta$ at $\\sim 160\\times$ miss ...*\" and \"**Supersedes the earlier \\\"164.0x as of 2026-05-31 / Habiro-exact 5.7 ppb at the pre-re-pin muon anchor\\\" note.**\" A reader has no access to the superseded note and no way to resolve the date or the re-pin it refers to.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1339,11 +1339,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Git branch name leaked into published prose: six source links are pinned to a working branch, e.g. \"The atlas is auto-rendered by [`recursive_atom_knot_atlas_render.py`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/recursive_atom_knot_atlas_render.py)\". `claude/mass-units-bridge-followups` is an agent branch, not a citable location; the reader needs a stable (tagged or `main`) path or a plain script name. Also \"per-particle methodology audit\" names an internal QA artefact.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The agent-branch links are gone, but the block still describes the repository's build machinery rather than mathematics: the published title and the opening heading are both \"Build-pipeline integration\", and the body closes \"Updates to any input propagate via [`witness_staleness_tracker.py`](...) to the rendered appendix on the next `bun run build`.\" `bun run build` is the authoring repository's build command; a reader has no such command to run.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Rename history with branch dates published inside the notation table: \"**Canonized 2026-07-12** from the former split ... (acronym) vs bare ...\" and \"**Renamed from $\\varrho$ on 2026-06-04** (freed for radius / generic-real contexts ...)\". A notation register legitimately states what a symbol means; when it was renamed on the branch is working history. Also \"promotion to a functor ... is aspirational **pending** formalization\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "Unremediated. The register still publishes branch rename history with dates inside the symbol definitions: \"**Canonized 2026-07-12** from the former split \\\"$\\mathrm{HA}$\\\" (acronym) vs bare \\\"$H_A$\\\"\", \"**Renamed from $r$ on 2026-06-04**\", \"**Renamed from $\\kappa$ 2026-07-12** (§6 collision fix)\", \"**Introduced 2026-07-12** (§6 collision fix)\", \"**Renamed from $r_W$** in the May 2026 cleanup\", and \"**Canonized 2026-07-12** (§6) across `particle-interactions/`\". It also counts the repository rather than the paper -- \"**Distinct** from the contact form $\\varTheta$ (upper-case, **443 corpus uses**) and from bare $\\theta$ (261 generic-angle uses)\" -- and keeps the formalisation-status marker \"promotion to a functor (with Reeb source category) is aspirational **pending** formalization of Reeb as a category\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

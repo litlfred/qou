@@ -10,11 +10,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "The block lives in an `audit/` subdirectory of the manuscript and reads as a review record rather than exposition, with a PR number and a dated audit memo in the body: \"See [`docs/audits/2026-07-26-whitehead-vc-verification-and-p-exponent.md`](...) and witnesses ..., ... (**PR #4274**).\"; also \"the one open sub-item\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The \"PR #4274\" pointer and the dated docs/audits memo link are gone, but the repository is still the paper's name for itself: \"This published discharge is now **pinned in-corpus three independent ways**, formula-free\". A reader cannot resolve \"in-corpus\"; the intended object is this paper.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

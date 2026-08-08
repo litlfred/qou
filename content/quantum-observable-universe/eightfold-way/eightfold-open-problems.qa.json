@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Bean ids sit in a published table's evidence column: \"`s4_marked_pair_obstruction.py`; beans `qou-8p1b`, `qou-8p1c`\", \"`Sym2Gate.lean`, bean `qou-sym2`\", and \"bean `qou-8fl1`\". Beans are the agent work-plan store; they are not citable. The same table uses the repo as a referent: \"there is no `def:octonion-algebra` in the corpus\" - meaning this repository, and stating a block-authoring gap rather than a mathematical one.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The bean ids (`qou-8p1b`, `qou-8p1c`, `qou-sym2`, `qou-8fl1`) are gone from the evidence column and the \"no `def:octonion-algebra` in the corpus\" phrasing no longer appears; the one remaining \"audit\" is \"The obstruction audit (\\S\\ref{sec:color-algebra})\", a pointer to a section of the paper.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

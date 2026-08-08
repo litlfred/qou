@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audit\" (+1 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | Verbatim: \"…ithin $1\\%$ of the CODATA value $3477.23$. The census-reach audit quantifies what the identity demands at the canonical $q_0$: for $k_\\tau = 3$ the target volume $\\approx 3.382$ lies inside the searched low-crossing…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The QA-process word is gone; the prose now states the cross-check of the $m_\\tau$ knot assignment directly, with no use of \"audit\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1551,12 +1551,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch labels in both the .ts title and the body. Title: \"Soft sharpness of **the keystone B1** is theorem-level — via Borel + polylog non-vanishing\". Body: \"This is the soft sharpness half of the keystone [`conj:gb-depth-period-correspondence`] (\\\"B1\\\")\". The object is the graded-Mikusiński depth/period correspondence conjecture; \"B1\" and \"keystone\" are agent shorthand.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare \"B1\" label is gone and the nickname is resolved: the body now reads \"This is the soft sharpness half of the keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence).\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audit\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | Verbatim: \"…ife, and what the tritium example reveals about the Q-value audit. We now examine this imaginary part across the nuclear magic numbers. Here the real part ($\\mathfrak{E}_{\\mathrm{bind}}$, binding) is maximal. The ma…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The QA-process word is gone; the section lead now describes the magic-shell reading of the complex-volume defect and what the following results establish, with no use of \"audit\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

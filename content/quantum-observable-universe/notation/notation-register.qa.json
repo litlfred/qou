@@ -14,12 +14,12 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The paper-wide base-ring convention is delegated to the agent instruction file with an external link: \"This convention applies to every file in the paper. It mirrors [**AGENTS.md §7c**](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-...)\". \"every **file** in the paper\" is also repository vocabulary.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The agent-instruction delegation is gone: \"It mirrors [**AGENTS.md §7c**](https://github.com/litlfred/qou/blob/main/AGENTS.md#7c-base-ring-convention-...)\" was removed, and the convention now reads \"This convention applies to every `.lean` file in the paper\", which names artefacts the paper contains.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

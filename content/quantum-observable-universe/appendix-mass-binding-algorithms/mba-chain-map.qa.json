@@ -1303,11 +1303,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Two branch/tracker labels in the chain table. (1) \"**$\\Delta_\\lambda$ closure ansätze** (Option E)\" — \"Option E\" is a branch decision label naming nothing a reader can resolve. (2) \"Frobenius pairing; D3/D23 self-duality\" — D3/D23 are row ids in the internal `docs/duality-tracker.md`, not mathematical objects. The script column also cites `audit_frobenius_pairing.py` by name.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The \"D3/D23\" duality-tracker ids are gone from the Step 6 row, which now reads \"Frobenius pairing $\\langle a,b\\rangle_F$ + self-duality $\\Psi = S^2 = \\mathrm{id}$\". But the branch decision label in the sidecar list remains: \"1. **$\\Delta_\\lambda$ closure ansätze** (**Option E**). The per-partition density at each isotope; currently open.\" \"Option E\" names nothing the paper defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

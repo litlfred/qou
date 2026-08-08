@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"and $(2\\omega - 1)^2 = 4\\omega^2 - 4\\omega + 1 = -3$ using $\\omega^2 = \\omega - 1$. It is formalized sorry-free as `cusp_barParity_split` over a generic `[Field R]` (§7c — no archimedean structure).\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The AGENTS.md section tag is gone: the Lean sentence now reads \"over a generic `[Field R]` (no archimedean structure)\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

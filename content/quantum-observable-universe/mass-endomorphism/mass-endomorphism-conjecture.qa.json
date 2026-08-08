@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The `docs/audits/conjecture-cones.md` link is fixed, but the authoring pipeline's word for the manuscript's own contents remains: \"Every algebraic downstream block that relies on the mass tower routes through this infinite series.\" Here \"block\" is a content unit of the pipeline, not a Wedderburn, Hecke or isotypical block.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The pipeline unit is gone: \"Every algebraic downstream block that relies on the mass tower routes through this infinite series\" no longer appears. The surviving \"Markov-trace audit on ${}^3\\mathrm{He}$\" is a mathematical verification, as its own next sentence says (\"Verify $|\\mathrm{tr}_M(\\beta_{{}^3\\mathrm{He}})|$ at $q_0$ against the canonical reducer\").",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

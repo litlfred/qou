@@ -1302,12 +1302,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Agent-configuration files named in published prose: \"Enforcement points reside in AGENTS.md and relevant agent skills (`local/coordinate.md`, `local/compute-author.md`, `local/compute-audit.md`, `local/proof-editor.md`).\" AGENTS.md is the agent instruction file for the authoring platform and the `local/*` files are agent skills; neither exists for a reader of the paper.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The agent-configuration citation is gone: the enforcement sentence naming \"AGENTS.md and relevant agent skills (`local/coordinate.md`, `local/compute-author.md`, `local/compute-audit.md`, `local/proof-editor.md`)\" was replaced by a \"**Maintenance contract.**\" paragraph that ties a proposition to its canonical script and witness JSON. The \"L1\" / \"L2\" precision legs are defined in place in this same block.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

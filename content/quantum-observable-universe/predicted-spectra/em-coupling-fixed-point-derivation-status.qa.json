@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Status\". process heading describing the work item rather than the mathematics | Verbatim: \"…tency provides the empirical foundation of the conjecture. ## Status The sole open element remains the $B_3(\\mathbb{C})$ $\\mathcal{O}(\\alpha^2)$ normalization. Lean proves the tree/zero-mode assembly of $T$, the algeb…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The \"## Status\" section now states only which parts of the fixed-point equation Lean proves and that the $B_3(\\mathbb{C})$ normalization class remains uninhabited, i.e. the mathematical status the block's own title announces.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

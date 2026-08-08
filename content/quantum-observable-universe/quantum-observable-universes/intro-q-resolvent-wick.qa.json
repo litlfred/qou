@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[pipeline structural term, ts title] 'section lead' (pipeline slot name) used as a published title — \"section lead\". 'section lead' is the pipeline's slot name for a section-opening prose block, not a title a reader should see | Verbatim: \"Resolvent and Wick rotation — section lead\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The \"Resolvent and Wick rotation — section lead\" title is gone; the sibling .ts now carries no title at all.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

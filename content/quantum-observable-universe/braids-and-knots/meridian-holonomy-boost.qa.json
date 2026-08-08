@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"Additive rapidity corresponds to multiplicative holonomy — the boost group law. All three identities are formalized sorry-free over a generic field: `holonomy_hyperbola`, `barEven_mul`, `barOdd_mul` (§7c). At a real substrate $q_0 > 1$ the turn is a genuine boost of rapidity $\\ln q_0$; only at a roo\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"(§7c)\" tag after the Lean lemma names `holonomy_hyperbola`, `barEven_mul`, `barOdd_mul` is gone.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

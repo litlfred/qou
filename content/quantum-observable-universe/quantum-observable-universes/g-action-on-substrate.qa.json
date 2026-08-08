@@ -16,11 +16,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"Audit\". 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"### Audit\". process heading describing the work item rather than the mathematics | Verbatim: \"…quires refining the substrate's categorical structure. ### Audit impact Resolving this residual will systematically clear a significant cluster of structural dependencies. See [Table 3](#tbl:g-action-on-substrate-…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "notes": "Unchanged: the closing section is still headed \"### Audit impact\" — \"Resolving this residual will systematically clear a significant cluster of structural dependencies.\" \"Audit\" here is the project's QA process and \"cluster of structural dependencies\" its dependency graph, not a mathematical verification.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

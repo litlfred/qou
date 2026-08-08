@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "A work-plan effort estimate published in a table cell: \"[`conj:qou-infra-discharges-goncharov-zeta5`](...) (**Avenue A or B, ~1-2 weeks**)\". \"~1-2 weeks\" is a scheduling estimate for the agent, not a mathematical statement. The same table carries \"**partial** (sorry pending Mathlib's IwahoriHecke API) | scaffolding in `qou:` namespace\" — \"scaffolding\" is build vocabulary.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The \"Avenue A or B\" decision label is gone, but the work-plan effort estimate it sat beside is still published in the table cell: \"[`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5) (either route, **~1-2 weeks**)\". \"~1-2 weeks\" is a scheduling estimate for whoever does the work, not a statement about the mathematics.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

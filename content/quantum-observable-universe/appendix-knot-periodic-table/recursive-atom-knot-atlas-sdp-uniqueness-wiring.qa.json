@@ -1339,11 +1339,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Published prose points the reader at an internal coordination memo: \"see [`docs/coordination/2026-05-30-sdp-uniqueness-status.md`](...) for the gating analysis\". Date-stamped coordination docs are the working channel, not manuscript apparatus; the gating analysis should be stated in the block. The .ts title \"Lean SDP-uniqueness **wiring** for the atlas entries\" also uses pipeline-plumbing vocabulary (\"wiring\") rather than describing the mathematics.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The `docs/coordination/` memo link is gone, but the pipeline-plumbing vocabulary is untouched: the published title is still \"Lean SDP-uniqueness wiring for the atlas entries\", and the body opens \"## SDP-uniqueness wiring (Lean side)\" / \"**What this wiring certifies**\". \"Wiring\" names the repository's manuscript-to-Lean plumbing, not a mathematical relation between the atlas entries and the uniqueness theorem.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

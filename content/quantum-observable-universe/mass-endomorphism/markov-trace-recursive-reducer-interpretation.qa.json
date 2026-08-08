@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The pull-request link is gone but the bug report it hung on remains: \"The axiomatic route avoids reliance on Hoefsmit matrix elements, which exhibited a known `IndexError` bug on $\\sigma_2$ acting on shape $(3)$.\" A Python exception raised by the project's own script is still standing in for a mathematical reason to prefer the axiomatic route.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The bug report is gone: \"which exhibited a known `IndexError` bug on $\\sigma_2$ acting on shape $(3)$\" was dropped, leaving the mathematical reason -- \"The axiomatic route avoids reliance on Hoefsmit matrix elements.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

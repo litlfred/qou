@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"This block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"…me direction. Context separates the lepton from the quark. This block fixes only the knot identification. The numerical value of $m_e$ is CAL-1, the leptonic mass-scale input used to normalize the observable tower; it i…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The pipeline deictic is gone: \"This block fixes only the knot identification\" no longer appears, and nothing in the current prose or title names an authoring unit.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

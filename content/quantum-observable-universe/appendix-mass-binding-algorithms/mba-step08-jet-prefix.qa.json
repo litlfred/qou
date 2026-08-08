@@ -3,12 +3,12 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Agent-config file cited as the authority for a mathematical choice: \"*Target jet order (chosen by precision goal — default per AGENTS.md \\\"$c_k$ truncation order\\\").*\" The default belongs in the block, attributed to the mathematics, not to AGENTS.md.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The agent-configuration citation is gone: \"default per AGENTS.md \\\"$c_k$ truncation order\\\"\" now reads \"default $N = \\lceil \\log_{10}(1/\\varepsilon) / 2.07 \\rceil - 1$\", attributing the default to the mathematics. \"The $c_k$ truncation sidecar\" names one of the four sidecar algorithms listed in [`alg:mba-chain-map`].",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

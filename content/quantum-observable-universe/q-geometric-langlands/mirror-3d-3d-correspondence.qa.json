@@ -1585,11 +1585,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "An agent skill file is cited as the source of the published \"Diagnostics\" section: \"## Diagnostics Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) **§Slot J**:\". `.claude/skills/local/*` is agent configuration and \"Slot J\" is a slot id inside it — neither exists for a reader. The cross-reference list also uses internal tracker ids: \"[`docs/duality-tracker.md`](...) **D18 + §2 Cluster C** (Pentagon validation)\" and \"**D16** [`borromean-bloch-group-element.md`](...)\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The `.claude/skills/local/canonical-watcher.md` \"Diagnostics\" stanza and the D16/D18 tracker ids are gone, but the cross-reference list still opens with an orphaned tracker label: \"  + §2 Cluster C (Pentagon validation)\". \"Cluster C\" is a grouping inside the internal duality tracker; stripped of its link it now has no antecedent at all.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

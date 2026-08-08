@@ -14,12 +14,12 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "One inherited policy-section tag in a published index row: \"| Finite LP strong-duality + complementary-slackness hypothesis class (**§3b-cond**) | Ch 10 |\". §3b-cond is an AGENTS.md section id carried in from the definition's own title — the same defect as \"§3b-tax\". Fix belongs upstream at the definition. (Everything else scanned here is legitimate: labels such as `conj:lusztig-canonical-basis-q-eq-1` encode the mathematics $q = 1$, and `prop:q-plancherel-asymptotic-skeleton` uses \"skeleton\" mathematically.)",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The AGENTS.md section id is gone: the LP strong-duality row no longer carries \"(**§3b-cond**)\", so the index no longer inherits an agent-instruction section number from the definition title.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

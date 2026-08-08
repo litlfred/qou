@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Two leaks in one italicised statement sentence: \"*Charge and spin are not independent open conjectures: both follow from the one physics selection postulate through the corpus spin involution, collapsing the former C3 (charge) and C4 (spin) into proved consequences.*\" \"the corpus\" means this repository; the intended referent is the framework's spin involution. \"the former C3 ... and C4\" narrates a branch-side renumbering of a conjecture lattice the reader has never been shown.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Both leaks are gone: \"the corpus spin involution\" is now \"the spin involution\", and \"collapsing the former C3 (charge) and C4 (spin)\" is now \"so charge and spin are proved consequences rather than separate postulates\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

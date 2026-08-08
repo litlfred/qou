@@ -1314,12 +1314,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Work-status framing of the chapter: \"This appendix serves as **raw material for future work** rather than a completed extension of the theory.\" Reads as a note to the authoring team about what is left to do.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The sentence \"This appendix serves as raw material for future work rather than a completed extension of the theory\" is an ordinary scope disclaimer to the reader about how far the appendix goes; it names no branch, work item or pipeline object.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

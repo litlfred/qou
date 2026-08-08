@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Bare branch label with no definition anywhere in the block: \"This theorem elevates the mathematical content of C1 to a proved statement.\" C1 is a conjecture-lattice node defined only in `electroweak-higgs-torus-link-triplet.md`; here it names nothing to a reader. The object is the electroweak selection postulate - that the carriers are the nontrivial, strictly sub-saturating even-twist 2-component torus links with $0<g<4$. Not a $C^1$ smoothness class or a chain group.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The bare \"C1\" is gone: the sentence now reads \"This theorem elevates the mathematical content of the selection principle to a proved statement.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

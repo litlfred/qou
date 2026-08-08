@@ -8,12 +8,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[process/status leak, md] 'open content' (audit bookkeeping phrase) — \"Open content\". 'open content' is audit bookkeeping for unfinished work items | Verbatim: \"| Open content | Substantive work needed | |---|---| | 5-argument pentagon for $\\mathrm{Cl}_2$ on $(0, 2\\pi)$ | Mathlib Fourier-series infrastructure (sine-series r…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The \"Open content\" column header now sits over a two-column table naming the specific unproved statements and the Mathlib infrastructure each needs, so it reads as \"what is still open\" rather than as work-tracker bookkeeping.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

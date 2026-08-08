@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The `docs/audits/-p3-h-3a-divergence.md` and `docs/audits/-q-hecke-character-gap-closure.md` links are gone, but the fix-up changelog they framed is still the body of the section: \"Both underlying bugs are now fixed: 1. **Weight layer:** `schur_weyl_symbolic.schur_weyl_weight` incorrectly used the two-variable Schur function ... It now uses ...\" — remediation notes about the project's own scripts rather than results. \"## Production paths\" also closes on CI narration: \"The cross-check witness gates this on every continuous integration run.\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The fix-up changelog and the CI narration are gone: the two docs/audits links, the per-script bug list and \"The cross-check witness gates this on every continuous integration run\" have all been removed; \"## Production paths\" now introduces the three agreeing evaluation routes for the canonical character values.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

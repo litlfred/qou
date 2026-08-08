@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch bookkeeping survives in \"## Precision\": \"This result has **not** been refreshed since the 2026-05-28 proton-anchor re-pin\" is a staleness note about the repo's own numbers, and the figure is sourced to \"(per the accuracy dashboard)\" — a tracking surface the paper does not contain. The \"L2 convention\" / \"L2 target\" layer labels and the `docs/audits/-qbeta-ladder-closure-path.md` link are fixed.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "notes": "The \"not been refreshed since the 2026-05-28 proton-anchor re-pin\" staleness note, the \"L2 convention\" / \"L2 target\" layer labels and the docs/audits link are gone. But a published figure is still sourced to a tracking surface the paper does not contain: \"$\\mathfrak{Q}_\\beta$ currently **misses the 7.8 ppb accuracy target by $\\approx 164\\times$** (**per the accuracy dashboard**)\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

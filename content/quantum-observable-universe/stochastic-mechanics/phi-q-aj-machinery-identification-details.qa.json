@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch decision label in published prose: \"It provides the categorical-derivation target for the **Path B** closure question.\" \"Path B\" names one of the routes an agent chose between and is not defined anywhere a reader can reach. Also carries the \"**Archimedean specialisation (§7c)**\" AGENTS.md tag.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "Both flagged items are gone: the \"**Archimedean specialisation (§7c)**\" tag and the \"Path B\" branch decision label no longer appear.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

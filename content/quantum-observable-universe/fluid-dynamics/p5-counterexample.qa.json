@@ -1415,12 +1415,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Policy-section tag in the standing boilerplate: \"**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.\" §7c is an AGENTS.md section id. (Note: the \"**Phase 1: q-deformed evolution**\" / \"**Phase 2: the limit**\" / \"**Phase 3: the blowup**\" headings are legitimate — they are physical phases of the vortex evolution, not branch decision labels.)",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "Both flagged items are gone: the AGENTS.md tag \"§7c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\" The \"Phase 1 / Phase 2 / Phase 3\" headings are phases of the vortex evolution, as the original note already recorded.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1549,12 +1549,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": ".ts title: \"B1 keystone is theorem-level at the torus-knot rows (Bloch--Suslin + Garoufalidis--Lê)\". Same \"B1\" / \"keystone\" branch labels standing in for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare \"B1\" branch label is gone from the title and body, which now name the depth correspondence and link [`conj:gb-depth-period-correspondence`] directly.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

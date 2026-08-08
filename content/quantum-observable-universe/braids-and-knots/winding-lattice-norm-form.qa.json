@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"All statements are formalized sorry-free in `QOU.QBeta.WindingLatticeNormForm` — the ring identity over a generic `CommRing` (§7c: no ordering, no $\\mathbb{R}$, $s$ entering only through $s^2 = 3$), the two norm recursions over $\\mathbb{Z}$, and the induction giving $N(\\varphi^n) = (-1)^n$.\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"§7c:\" prefix is gone from the Lean parenthesis, which now reads \"(no ordering, no $\\mathbb{R}$, $s$ entering only through $s^2 = 3$)\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

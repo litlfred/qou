@@ -1664,12 +1664,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Bare status markers used as list items: \"- Hahn-series substrate (**pending**). - Normal-form computation for eigenvalues (**pending**).\" and \"in Lean at ... (**partial**)\". These are work-tracker states, not statements about the mathematics.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare markers now sit under a \"**Required infrastructure**\" list whose items name the specific missing mathematics (rational-function arithmetic at $q = 1 + \\varepsilon$, a Hahn-series substrate, the normal-form eigenvalue computation), so \"pending\" reads as \"not yet available\" rather than as a work-tracker state.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

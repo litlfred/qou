@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"derivation-audit-\"; \"docs/audits/\" (+1 more). docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audit\"; \"audits\" (+3 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | Verbatim: \"…Induction along the 19-link derivation chain (compiled in [derivation-audit-](../../../docs/derivation-audit-.md) and refreshed in [-math-framework-deep-audit](../../../docs/audits/-math-framework-deep-audit.md)). At each step…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The dated audit filenames (\"-math-framework-deep-audit\", \"derivation-audit-...\") and the QA-process uses of \"audit\" are gone; the proof now argues the three-calibration bound on its own terms.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

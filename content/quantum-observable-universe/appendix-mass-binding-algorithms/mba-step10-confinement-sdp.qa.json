@@ -3,12 +3,12 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md policy quoted inside the algorithm and CI named as enforcement: \"4. Emit the LP-dual witness (per AGENTS.md \\\"LP/SDP duals — first-class infra\\\")\" and \"**Must emit all of** ... — enforced in CI by [`lp_dual_witness_validator.py`](...) (see AGENTS.md \\\"LP/SDP duals ...\\\")\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "Both AGENTS.md citations are gone: step 4 of the algorithm now reads simply \"Emit the LP-dual witness.\", and the witness contract cites the validator script by name without quoting the agent instruction file as its authority.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

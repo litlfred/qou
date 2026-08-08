@@ -1397,11 +1397,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": ".ts title opens with the bare branch label: \"**B1** conditionally reduces to Volume Conjecture at Borromean rings, Whitehead link, and twist knots\". \"B1\" is the working id for the graded-Mikusiński depth/period correspondence conjecture and is not defined in the title's own context.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The bare \"B1\" is gone from the .ts title, which now reads \"The depth correspondence conditionally reduces to the Volume Conjecture at Borromean rings, the Whitehead link, and twist knots\". But the body now routes the reader through a repository path instead: \"Explicit cell pairing and Volume Conjecture discharge steps for the Borromean rings and Whitehead link are recorded in the **`audit/b1-hyperbolic-rows-theorem-audit` block**.\" That target is a directory-qualified file path in an `audit/` subdirectory with no `.ts` sibling and no label, so there is nothing for a reader to follow.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

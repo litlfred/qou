@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "[branch/audit label, md] link into docs/audits, docs/workplans or docs/proposals — \"docs/audits/\" (+1 more). docs/audits, docs/workplans and docs/proposals are internal working documents outside the manuscript | [process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\" (+1 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | Verbatim: \"…^{2A+1} \\cdot u^{\\mathrm{shift}} \\cdot (1 + u^2)^{3A-1}$ ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)) | | Torus knot $T_{p,k}$ on $V_{(1^p)}$ | $\\alpha_{\\mathrm{shift}}(T_{p,k}) = k(…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "notes": "The docs/audits link is gone, but the opening sentence still carries an undefined internal label: \"**Significance: bridge to the w3-w4 atomic-shift framework.**\". \"w3-w4\" is a branch workstream id (inherited from the `-w3-habiro-unblocked` audit note that used to be linked here); it occurs nowhere else in the paper and resolves to nothing for a reader.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

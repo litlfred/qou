@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Section headings are branch wiring tasks: \"## Connection to the L3 (nuclear-shell binding) layer\" and \"## Unlocking of L3 wiring\". Cites an internal audit as authority: \"According to [`docs/audits/-magic-shell-gs-filtration-exploitation.md`](...), the framework's L3 nuclear-shell-binding gap relies on the hard-coded `magic A\\cdot 8G` rule\". PR citation: \"(PR [#1162](https://github.com/litlfred/qou/pull/1162))\".",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"L3\" layer headings (\"Connection to the L3 (nuclear-shell binding) layer\", \"Unlocking of L3 wiring\"), the `docs/audits/` citation and the PR #1162 reference are all gone; the section is now headed \"Connection to nuclear-shell binding\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

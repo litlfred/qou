@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"The subscript $p$ specifies the localization point. The operator $\\oplus$ denotes linking. **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. Categorical identities hold over an abstract coefficient ring; only their archimedean realisation is special\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Both the \"(§7c)\" tag and \"This block\" are gone from the archimedean boilerplate, which now opens \"What follows sits on the archimedean side of the substrate wall\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

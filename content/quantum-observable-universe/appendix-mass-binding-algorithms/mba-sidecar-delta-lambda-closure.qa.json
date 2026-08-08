@@ -19,11 +19,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "A dated branch-status heading in the manuscript: \"### Status (2026-08-02) — value proved; magnitude external\", followed by \"PR #4580\". Prose also refers to a superseded branch decision as if the reader tracked it (\"The earlier \\\"six-ansatz gate\\\"...\"), and routes the reader through three internal audit memos and two coordination memos (`docs/audits/2026-06-02-...`, `docs/audits/2026-07-18-...`, `docs/audits/2026-08-02-...`, `docs/coordination/2026-06-02-mba-appendix-maintenance-contract.md`, `docs/coordination/option-e.md`) plus \"*Per AGENTS.md \\\"$\\Delta_\\lambda$ gate\\\" rule*\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The \"PR #4580\" pointer, the three docs/audits memos, the two docs/coordination memos and the \"Per AGENTS.md \\\"$\\Delta_\\lambda$ gate\\\" rule\" attribution are all gone. Two branch artifacts remain: the work-plan lane in the refuted-ansatz table, \"| Frobenius co-Casimir | **Track-A early proposals** | deuteron |\", and the dated branch-status heading, \"### Status (**2026-08-02**) -- value proved; magnitude external\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

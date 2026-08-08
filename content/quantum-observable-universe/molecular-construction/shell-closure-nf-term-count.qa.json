@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md') in body prose: \"**Proved (algebraic engine).** The reduction $(\\sigma^{-1})^Z = c_Z\\sigma + d_Z$ with these closed forms, and the sign-alternation $c_Z<0$ (even $Z$) / $c_Z>0$ (odd $Z$) with $|c_Z|$ strictly increasing for $q>1$, is established rigorously by diagonalising $\\sigma$ in the two-dimensional $H_2(q)$ (e\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The `docs/audits/2026-06-07-chebyshev-pairing-engine-proved.md` citation is gone; the proved-engine paragraph now cites the `chebyshev-pairing-engine.witness.json` witness instead.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

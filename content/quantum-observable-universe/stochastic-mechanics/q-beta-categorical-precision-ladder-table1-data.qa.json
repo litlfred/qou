@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Editing history published in a data-table cell: \"Kashiwara + Hopf-half offset (mixed intra/inter); **previously misattributed as ... in earlier draft**.\" A superseded reading of an earlier draft is branch history. The cell also routes the reader to an internal registry, \"[c_k/d_k registry](../../../docs/coordination/ck-dk-canonical-registry.md)\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The \"$c_k$/$d_k$ registry\" pointer is gone; the table now gives each rung's coefficient, its factor convention and its status without referring to a tracking surface.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

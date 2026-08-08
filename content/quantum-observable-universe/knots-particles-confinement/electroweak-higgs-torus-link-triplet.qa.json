@@ -11,11 +11,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "The branch conjecture lattice is presented to the reader as if C1/C2/C3/C4 were established names: \"**The conjecture lattice (narrowed).**\" then a table keyed \"**C1** selection | primary\", \"**C2** enumeration | dependent (C1) | C1\", \"**C$_{\\text{sector}}$** sector assignment\", \"**C$_{\\text{top}}$** identification | dependent (C1, C$_{\\text{sector}}$)\", and prose \"**C1 --- the selection principle.**\", \"**C2 --- enumeration.** Given C1, ...\", \"The residual to close is C1 (selection) and C$_{\\text{sector}}$ (sector assignment).\" The labels are at least expanded in THIS file, but they are branch bookkeeping, not names: C1 is the postulate that the electroweak carriers are the nontrivial strictly sub-saturating even-twist 2-component torus links ($0<g<4$), C2 the claim that these are exactly $\\{T(2,4),T(2,6),T(2,8)\\}$. \"(narrowed)\" and \"The former C3 (charge) and C4 (spin)\" narrate branch history - the reader never saw a wider lattice or a C3. Sibling blocks then use C1 with no definition at all. Note: C1..C4 here are NOT mathematics (no $C^1$ smoothness, no chain group).",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "notes": "C1/C2/C$_{\\text{sector}}$/C$_{\\text{top}}$ are now defined in the block's own table and expanded in the prose, and \"the former C3 ... and C4\" is gone — those are no longer defects. Two leaks remain: \"The corpus map $Q = \\tfrac12\\,\\mathrm{writhe}$ on the all-positive braid $\\sigma_1^{2k}$ ...\", where \"the corpus\" is the repository; and the heading \"**The chain of conjectures (narrowed).**\", whose \"(narrowed)\" narrates a branch-side revision the reader never saw.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

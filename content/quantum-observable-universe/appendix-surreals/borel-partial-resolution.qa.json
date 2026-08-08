@@ -1549,12 +1549,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Bare working nickname: body opens \"The **keystone conjecture** ([`conj:gb-depth-period-correspondence`]) asserts both an inclusion and a sharpness condition\", and the .ts title says \"Borel's theorem partially discharges **the keystone's** sharpness target — explicit dimensions\". \"The keystone\" is an agent nickname; the object is the graded-Mikusiński depth/period correspondence.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare nickname is resolved: the opening now reads \"The keystone conjecture ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) asserts both an inclusion and a sharpness condition.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

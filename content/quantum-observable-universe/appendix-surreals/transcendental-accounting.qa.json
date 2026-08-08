@@ -1350,12 +1350,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "\"The graded-Mikusiński **keystone** ([`conj:gb-depth-period-correspondence`]) predicts ...\" — same working nickname. The .ts title's \"Transcendental-accounting **ledger**\" also reads as bookkeeping-artefact vocabulary rather than a description of the mathematics.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The bare nickname is resolved -- \"The graded-Mikusiński keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) predicts the origin of each relation by depth\" -- and \"ledger\" is used mathematically and explained in place (\"We provide the dual ledger to [`rem:algebraic-core-survives`]. That ledger enumerates the algebra that survives the archimedean wall; this one enumerates the transcendentals\"), i.e. an accounting of periods, not the project tracking surface.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

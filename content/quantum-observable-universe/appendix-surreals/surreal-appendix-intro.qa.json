@@ -1121,11 +1121,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "QA vocabulary and platform object-names in published prose: \"But an honest **audit** of the **QOU content objects** shows most of these are *never used*\". \"content object\" is the folio-assistant schema term for a block; \"audit\" is the QA process.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The QA-process word was fixed (\"an honest audit\" is now \"an honest survey\"), but the platform schema term survives in the same sentence: \"an honest survey of the **QOU content objects** shows most of these are *never actually used* in a load-bearing way\". \"content object\" is the authoring platform's name for a block; the paper defines no such thing.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

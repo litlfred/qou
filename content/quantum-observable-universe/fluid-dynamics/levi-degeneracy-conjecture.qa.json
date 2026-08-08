@@ -1682,12 +1682,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Policy-section tag in the standing boilerplate: \"**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall.\" §7c is a section of the agent instruction file AGENTS.md (base-ring convention), unresolvable for a reader. Same defect class as \"§3b-tax\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "Both flagged items are gone: the AGENTS.md tag \"§7c\" was dropped and \"This block sits on the archimedean side\" was rewritten to \"What follows sits on the archimedean side of the substrate wall.\" The remaining \"branch (A)\" / \"branch (B)\" are the branches of the stated three-way alternative.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

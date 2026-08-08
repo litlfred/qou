@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[branch/audit label, md] reference to AGENTS.md (the agent instruction file) — \"AGENTS.md\". AGENTS.md is the agent-instruction file, not a manuscript reference | [branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§3b\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [branch/audit label, md] GitHub URL pinned to a working branch — \"blob/claude/\". URL pinned to a working branch (claude/...), which will rot; should cite the artifact, not the branch | Verbatim: \"…ween Bring shells. ## Discussion We conjecture (AGENTS.md §3b axiom-class): - **Forward direction** ($\\Delta i \\leq 1 \\Rightarrow$ LR-fusion compatible): Relies on the LR-rigidity of adjacent Bring shells. - **…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "All three flagged items are gone: the conjecture is no longer attributed to \"AGENTS.md §3b axiom-class\", and the GitHub URL pinned to a `claude/` branch has been removed; \"Forward direction\" / \"Reverse direction\" are the two implications of the stated bound.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

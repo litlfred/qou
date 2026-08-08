@@ -5,11 +5,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Multiple leaks. (1) A branch decision label plus AGENTS.md as gate: \"what remains **open** is the many-body binding **magnitude** — the Track A gate (AGENTS.md §\\\"$\\Delta_\\lambda$ gate\\\"...)\". (2) A bare pointer to another paper's equation number: \"is distinct from the GGM eq-49 carrier up to scalar gauge\" — \"GGM eq-49\" should be a citation (Garoufalidis et al., with the identified object named), not an equation index. (3) Dated status headings: \"**Keystone status (2026-07-20).**\" and \"### Tier note: experimental generating-function model (2026-07-08)\". (4) Pipeline self-reference and work-in-progress marker: \"Lean brick in progress\" and \"the label on this block's manifest is authoritative\".",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The \"Track A gate (AGENTS.md ...)\" attribution and \"the label on this block's manifest is authoritative\" are gone. Four leaks remain: the dated status heading \"**Keystone status (2026-07-20).**\"; the work-in-progress marker in the same sentence, \"($c(q) = 1$, probe-verified; **Lean brick in progress**)\"; the dated tier heading \"### Tier note: experimental generating-function model (**2026-07-08**)\"; and the bare foreign equation index \"is distinct from the **GGM eq-49** carrier up to scalar gauge\", which should name the object and cite the source rather than index another paper's equation.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

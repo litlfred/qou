@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Refers the reader to an unpublished sibling artifact: \"the audit probe for this block shows it subtracts model-predicted non-magic Q-values (a circular step) and carries an unresolved unit mismatch\". \"the audit probe for this block\" is branch QA vocabulary; the criticism itself is legitimate and can be stated directly.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "\"the audit probe for this block\" is gone; the scope paragraph now states the criticism directly — the compound-chain extension \"subtracts model-predicted non-magic Q-values — a circular step — and carries an unresolved unit mismatch\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

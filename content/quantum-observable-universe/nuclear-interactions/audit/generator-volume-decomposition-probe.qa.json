@@ -12,11 +12,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Work-artifact self-reference in prose: \"What survives from this probe is the **shape** of $\\Delta V_i$ across generators and the sign of $\\Delta E$ --- not the magnitude of the totals.\" \"this probe\" names a branch investigation rather than a piece of the argument.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "notes": "Unchanged: \"What survives from this probe is the **shape** of $\\Delta V_i$ across generators and the sign of $\\Delta E$ --- not the magnitude of the totals.\" \"This probe\" names a branch investigation rather than a piece of the argument. The same paragraph also defers to a repository convention: \"which carries the saturation the raw generator sum lacks (per the canonical-mass guardrail)\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

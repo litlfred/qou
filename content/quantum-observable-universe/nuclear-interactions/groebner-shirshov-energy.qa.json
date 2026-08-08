@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"3. **Each Hecke step has a definite energy.** Replacing $\\sigma_i^2$ with $(q - q^{-1})\\sigma_i + 1$ changes energy by $|c| \\cdot |q - q^{-1}|$. Every Hecke step increases the total weight. **Archimedean specialisation (§7c).** The energy $|c|\\,(q - q^{-1})$ and its positivity for $q > 1$ are stated\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"(§7c)\" tag is gone from the archimedean specialisation sentence, which now reads \"The energy $|c|\\,(q - q^{-1})$ and its positivity for $q > 1$ are stated over $\\mathbb{R}$.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

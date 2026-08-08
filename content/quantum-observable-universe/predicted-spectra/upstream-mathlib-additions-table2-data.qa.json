@@ -8,12 +8,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[process/status leak, md] 'open content' (audit bookkeeping phrase) — \"Open content\". 'open content' is audit bookkeeping for unfinished work items | Verbatim: \"| Open content | Substantive work needed | |---|---| | Absolute convergence of `complexLiTwo` on $\\lvert z\\rvert \\leq 1$ | `Summable` proof comparing with $1/k^2$ s…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The \"Open content\" column header now sits over a table naming each unproved Lean statement and the specific Mathlib work it needs, so it reads as a list of open problems rather than work-tracker bookkeeping.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

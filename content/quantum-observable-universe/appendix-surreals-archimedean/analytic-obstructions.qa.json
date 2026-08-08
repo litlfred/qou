@@ -1157,11 +1157,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "QA vocabulary in published prose: \"An honest **audit** of the **actual** QOU content, however, finds that most ...\". Mirrors surreal-appendix-intro.md; \"audit\" is the review process, not an argument.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The uses of \"audit\" here are not the defect -- they mean a systematic mathematical verification of which analytic structures lift (\"Instead, we audit each genuine use of an analytic structure in this paper to determine whether the use lifts to $\\mathbf{No}$\"), which is what the block does. What still fails is the platform schema term, twice: \"We evaluate Lebesgue, Haar, and Hausdorff measures across **the content objects**\" and \"Only one **block in the content objects** writes down a Hilbert-space completion\". \"content object\" is the authoring platform's name for a block.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

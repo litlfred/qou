@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Still sends the reader to a branch-local coordination ledger: \"Identifying the canonical inhabitant remains open (see the 1ppQ-Q$_\\beta$ ledger).\" That ledger is `docs/coordination/1ppq-qbeta.md`, a working note outside the paper; the same citation was removed from `qbeta-canonical-markov-weights-explicit-instance`, `qbeta-delta-tau-canonical-conditional-q2-minus-1-factor` and `qbeta-delta-tau-surrogate-taylor-coefficients`, but this proof was missed.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The branch-local coordination pointer is gone: \"Identifying the canonical inhabitant remains open (see the 1ppQ-Q$_\\beta$ ledger)\" no longer sends the reader to `docs/coordination/1ppq-qbeta.md`.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

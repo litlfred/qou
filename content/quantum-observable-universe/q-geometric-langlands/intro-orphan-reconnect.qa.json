@@ -127,12 +127,12 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The .ts title is pure authoring-workflow vocabulary: \"**Orphan reconnect — section lead**\". \"Orphan\" (a block with no parent section) and \"reconnect\" are folio-assistant pipeline terms, and \"section lead\" is an editorial role name; none describes the mathematics. The .md body itself is clean, well-written prose — only the published title leaks.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "result": "pass",
+        "notes": "The \"Orphan reconnect — section lead\" title is gone; the sibling .ts now carries no title, and the .md body was already clean prose.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

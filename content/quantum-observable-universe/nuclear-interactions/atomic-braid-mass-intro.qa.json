@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"The $q$-density admits a Frobenius-packing interpretation on Wedderburn blocks. Two propositions derive the CPT-saturated density and its bar-involution invariance from the Type-B folded crystal of §7c. The closing block packages the Plancherel-decay scale $\\ell_*(q_0)$, which Section 9 treats as th\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The \"§7c\" tag after \"Type-B folded crystal\" is gone; the only section reference left is the bare \"§7\", the paper's own chapter of transfer matrices.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

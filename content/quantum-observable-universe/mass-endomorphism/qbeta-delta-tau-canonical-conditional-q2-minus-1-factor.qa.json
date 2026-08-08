@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The `§7c` tag and the `docs/coordination/1ppq-qbeta.md` link are fixed, but the cross-reference list still names a git branch: \"- Sibling on main: [`prop:q-beta-over-e0-classical-vanishing`](../mass-theory/q-beta-over-e0-classical-vanishing.md)\". \"on main\" states which branch the sibling block lives on, which no reader can resolve; the link itself is fine.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "The flagged pointer is gone; the block now states the conditional $q^2 - 1$ factor and cites [`prop:q-beta-over-e0-classical-vanishing`] as an ordinary in-paper cross-reference.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

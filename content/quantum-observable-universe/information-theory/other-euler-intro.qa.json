@@ -14,11 +14,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "[pipeline structural term, md] future-work status banner / session narration — \"**Outline (future work).**\". future-work status banner / session narration | Verbatim: \"**Outline (future work).** We will investigate Bring's surface and its analogues for Euler characteristics other than $\\chi = -6$. The classification programme covers $\\chi = -…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "notes": "Unchanged: the block still opens with the work-status banner \"**Outline (future work).** We will investigate Bring's surface and its analogues ...\" and closes \"We leave the detailed classification to a follow-up. We include this section in the manifest solely to preserve the chapter's structural scope.\" The manifest is the authoring pipeline's block index, and the banner is session planning rather than exposition.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[branch/audit label, md] AGENTS.md section-taxonomy pointer — \"§3b-cond\"; \"§7c\". §7c / §3b / §3b-cond / §3b-tax are section numbers inside the repo's AGENTS.md agent-instruction file, not manuscript sections; a reader cannot resolve them | [branch/audit label, md] branch workstream label — \"3b-cond\". branch workstream label (R2-core, ksel1/2/3, Task P0.1/P1.5, §3b-cond) naming an agent work item, not a mathematical object | Verbatim: \"…via the validity predicate and the constrained range. The §3b-cond chain anchored by `prop:archimedean-functor-uniqueness` brings `BlochSuslinUniqueness` closer to unconditional inhabitation. The remaining work inclu…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The AGENTS.md section ids are gone: \"The §3b-cond chain anchored by `prop:archimedean-functor-uniqueness`\" now reads \"The conditional-class chain anchored by ...\", and the surrounding \"remaining work\" list names ordinary open mathematical problems (pentagon identity, regulator injectivity, the Suslin map).",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

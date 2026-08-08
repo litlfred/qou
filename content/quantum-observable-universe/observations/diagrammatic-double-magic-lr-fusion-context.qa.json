@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[branch/audit label, md] GitHub URL pinned to a working branch — \"blob/claude/\". URL pinned to a working branch (claude/...), which will rot; should cite the artifact, not the branch | Verbatim: \"…_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py)) finds the dominant $\\nu$ is non-self-conjugate at every tested $(Z, N)$. The c…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "The GitHub URL pinned to a `claude/` working branch is gone; the block now cites its illustration examples by label ([`ex:single-magic-O18-diagram`], [`ex:double-magic-Ca40-diagram`], [`ex:non-magic-Li6-diagram`]), and the remaining \"$Z$-block\" / \"$N$-block\" uses are the Specht/LR blocks.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

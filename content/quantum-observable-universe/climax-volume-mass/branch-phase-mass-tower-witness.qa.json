@@ -1157,11 +1157,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch decision label and commit pointers in published prose: \"The **Path A pipeline** (commits `...`, `...`, [`per_irrep_pole_atom.py`](...)) verifies ...\". \"Path A\" names one of several routes an agent chose between; commits are branch state. The block also narrates the branch's experiments — \"The probe witness [`_deprecated/rho-k-pair-gen-v2-wedderburn.witness.json`](...) is now **deprecated**. We tested and **rejected** ...\" — including a `_deprecated/` path. (Note: \"Branch-phase\" in the title/label is legitimate mathematics — the branch phase of the covering — not a git branch.)",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "\"Path A\" and the commit pointers are gone, but the caveat still narrates repository housekeeping: \"**Caveat (updated).** ... The probe witness [`rho-k-pair-gen-v2-wedderburn.witness.json`](../../../computations/_deprecated/rho-k-pair-gen-v2-wedderburn.witness.json) is now deprecated.\" A `_deprecated/` path and a file's lifecycle status belong to the working channel; the negative result itself (the rejected Wedderburn pair-generator extension) can stand without them.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

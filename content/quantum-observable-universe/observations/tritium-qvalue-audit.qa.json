@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "[process/status leak, md] the word 'audit' (agent QA process) in published prose — \"audits\"; \"Audit\" (+1 more). 'audit' is the agent QA process; in the manuscript the object is a verification, cross-check or derivation review | [process/status leak, md] process heading (Status / Audit / Non-claims / Remaining content) — \"## Audit\". process heading describing the work item rather than the mathematics | [pipeline structural term, md] 'this block' / 'the block' (pipeline unit, not a reader-facing object) — \"This block\". 'block' is the authoring pipeline's unit of content; a reader sees a section, definition or remark | Verbatim: \"This block audits the tritium $Q$-value derivation. ## Derivation chain **Step 0: Substrate parameter**. Fixes $q_0$ from $m_\\mu/m_e$. **Step 1: Typed crossing oper…\"",
-        "reviewed_at": "2026-08-08T08:22:01Z",
+        "result": "pass",
+        "notes": "All three flagged prose items are gone: \"This block audits the tritium $Q$-value derivation\" now reads \"We re-derive and cross-check the tritium $Q$-value\", and the \"## Audit\" heading is now \"## Findings\". The surviving .ts title \"Audit of tritium $Q$-value derivation\" uses \"audit\" in its mathematical sense -- a step-by-step verification of a derivation against experiment -- which the body then carries out.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

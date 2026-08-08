@@ -1199,11 +1199,11 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch lane and step labels open both the .ts title and the body. Title: \"**Track C Step B**: factorise the Markov-closure → Hopf-link content into two atomic Lean axioms ...\". Body first line: \"**Track C Step B: axiomatic Markov-closure map**, reducing the open content to two atomic axioms.\" followed by \"Per **the Track-C plan** in [`rem:F3-eps6-leading-eq-neg-2b-cubed`](...)\". \"Track C\", \"Step B\" and \"the Track-C plan\" are work-plan coordinates; \"F3\" in the referenced label is a branch decision code. Also carries the \"**Archimedean specialisation (§7c)**\" AGENTS.md tag.",
-        "reviewed_at": "2026-08-08T00:00:00Z",
+        "notes": "The \"Track C Step B\" prefix is gone from both the .ts title and the opening line, and the \"§7c\" tag is gone. But two work-plan lane labels survive in the body: \"Per **the Track-C plan** in [`rem:F3-eps6-leading-eq-neg-2b-cubed`](#rem:F3-eps6-leading-eq-neg-2b-cubed)\" and \"The eventual full **Track-A** formalisation targets only the first atom; the second is already closed.\" Neither Track is defined anywhere in the paper.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }
