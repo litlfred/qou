@@ -1208,3 +1208,26 @@ is C1-inapplicable — C1's ∞ is single-slope, `rszIsoformalDim = 0`) and alig
 sibling's `AmplitudeIsGaugeInvariantCrossRatio`. Nothing fitted, nothing wired;
 `r*`/`μ₃`/`c₃`/AME/`q₀` never inverted; `q₀`-derivation not routed through. Audit
 [`docs/audits/2026-08-08-birkhoff-amplitude-e-crossratio-construction.md`](../audits/2026-08-08-birkhoff-amplitude-e-crossratio-construction.md).
+
+### 2026-08-08 — χ(P)|q₀ EVALUATED vs r* — the cross-ratio is a UNIT PHASE, not 1.585 (scope-(a))
+
+The decisive check the E=χ(P) rows above left open: **evaluate the closed-form χ(P) at the
+substrate and compare to r* = μ₃/c₃ ≈ 1.585.** Done (proton q₀, no tuning; witness
+[`c1-chi-magnitude-vs-r-star.witness.json`](../../computations/qbeta/c1-chi-magnitude-vs-r-star.witness.json),
+audit [`2026-08-08-chi-p-magnitude-vs-r-star-evaluation.md`](../audits/2026-08-08-chi-p-magnitude-vs-r-star-evaluation.md)).
+
+**Result.** χ(P) on the real axis is a **pure unit-modulus phase**: `|χ| = 1` EXACTLY (dev
+0.0; closed form = direct connection matrix to 1e-5), a `z`-dependent elliptic function
+(`arg χ = −0.488/−1.921/+1.310/+3.052` at `z = 0.30/0.45/0.60/0.75`); `|α| = q^{3/4} =
+1.0814…` exactly. `r* ≈ 1.585` is a real magnitude `> 1`. A unit phase cannot equal it:
+`||χ|−r*| = 0.585` uniformly. **So the naive identity `χ(P) = r*` does NOT close the A=3
+magnitude** — same pattern as every other trace/cross-ratio object here (modulus 1, r*≠1).
+
+**Sharpening, not refutation.** This does NOT refute `E = χ(P)` (the gauge-invariance
+argument never claimed χ(P) = the *magnitude*). It relocates the wall: the A=3 lift is
+*affine* in `E` (`factor_sa − (B·D⁻¹/A)·E`, `factor_sa ≤ 1`), so `r*` is a real functional
+of `E`, not `E` itself. The cross-ratio's numeric VALUE is **no longer open** (it is a
+computed unit phase); what remains open is the phase→real-amplitude→lift bridge — including
+a genuine type tension (`A3AntiSelfAdjointLift` wants a real `E`; χ(P) is a unit-modulus
+complex phase). Nothing fitted, nothing wired; `r*`/`μ₃`/`c₃` never inverted;
+`q₀`-derivation not routed through. Bean `qou-wgnx`/`qou-wiub`.
