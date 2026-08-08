@@ -92,7 +92,7 @@ theorem isFeasible_of_emptyConstraints
   exact i.elim
 
 /-- **Primal-feasible objective value** at a given feasible point. -/
-def objAt (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : R :=
+def SDPPrimal.objAt (sdp : SDPPrimal n R ι) (Φ : Matrix (Fin n) (Fin n) R) : R :=
   Matrix.trace (sdp.cost * Φ)
 
 /-- **Dual SDP** derived from the primal: maximise `Σ b_i y_i` over
@@ -183,12 +183,12 @@ slackness. -/
 variable [Fintype ι]
 
 /-- **Dual slack matrix** `S(y) := T - Σ_i y_i · A_i`. -/
-def dualSlack (sdp : SDPPrimal n R ι) (y : ι → R) :
+def SDPPrimal.dualSlack (sdp : SDPPrimal n R ι) (y : ι → R) :
     Matrix (Fin n) (Fin n) R :=
   sdp.cost - ∑ i, y i • sdp.constraint i
 
 /-- **Dual objective value** at a dual point `y`: `Σ_i y_i · b_i`. -/
-def dualObjAt (sdp : SDPPrimal n R ι) (y : ι → R) : R :=
+def SDPPrimal.dualObjAt (sdp : SDPPrimal n R ι) (y : ι → R) : R :=
   ∑ i, y i * sdp.rhs i
 
 /-- **Key algebraic identity**: `tr(S(y) · Φ) = objAt Φ -
