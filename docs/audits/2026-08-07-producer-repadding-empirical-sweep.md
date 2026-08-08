@@ -2194,3 +2194,55 @@ intended to record the convention does not, which makes every survey over it —
 including mine — worthless until the labels are re-derived from the values
 rather than trusted. That is a labelling repair, not a physics decision, and it
 should be settled before anyone reads those strings again.
+
+## P48 — the q_inv gate is not a mechanical copy, and probe_9b was never broken
+
+Two corrections to the "port the remaining two gates" item.
+
+### `probe_9b_laurent_degree_10a5` already handled colour weighting
+
+I listed it as carrying the same three-way limitation. It does not — line 124
+reads:
+
+```python
+elif abs(d_f - _D_PN_F64) < 1e-9:
+    d = -H_SYMB * (sp.Rational(1, 2) - DELTA_SYM / 4)
+```
+
+It is a *symbolic* (sympy) path that already knows the colour-weighted p–n
+crossing, and its `unrecognised d` raise is a genuine catch-all for a fourth
+unexpected value rather than the defect fixed elsewhere. Grepping for the error
+string found a match; reading the file found a different situation.
+
+### The q_inv port was wrong, and nearly shipped a 3× error
+
+Porting `chi_at_q_inv_via_native_mpfr` looked mechanical — same shape, same
+call, same `{0, −h0, −h0/2}` snap. It ran, it was fast, and every one of the 11
+deuteron partitions changed:
+
+    chi[(6,)]   6.7692509169991208562  ->  2.1105940824945303718
+
+A convention change is 4e-6 here. A factor of three is not a convention; it is
+a wrong answer. The cause:
+
+    h at q_0     =  0.209060298795639315
+    h at q_0^-1  = -0.209060298795639315   (= -h0)
+
+The producer evaluates at **q₀⁻¹**, so the `h` Rust derives internally is
+`−h₀`, and the native default shift for an averaged crossing is `−h₀/2`. But
+the `d` values in the braid word are expressed at **q₀**, so the old code
+mapping `−h₀/2 → sign 0` was deliberately letting Rust re-derive the shift at
+the inverse point. Passing `−d = +h₀/2` explicitly overrides that with the
+wrong sign.
+
+Reverted. The q_inv path needs its shift expressed at q₀⁻¹, which is a
+semantic question about what a colour-weighted crossing means under
+q → q⁻¹ — not something to infer from the q₀ code. **The Rust groundwork
+serves it; the Python port does not transfer.**
+
+Worth stating plainly because it is the second time in this arc that "the same
+error string" turned out not to mean "the same bug", and the first time the
+classifier's `VALUES` verdict caught a genuine error of mine rather than an
+expected migration. A 4e-6 expectation is what made a 3× result obviously
+wrong; without a calibrated sense of the right magnitude it would have looked
+like just another regeneration.
