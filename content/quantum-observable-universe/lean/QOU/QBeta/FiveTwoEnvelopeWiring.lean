@@ -275,4 +275,70 @@ theorem exp_saddle_iff_curve {x y : ℂ} (hx : x ≠ 0)
   field_simp at h
   linear_combination -h
 
+/-! ### 5. `∂V/∂y` on the curve is `2πi·(integer)/y` — Route 30's correction, structurally
+
+Route 30 G2 refuted "the envelope hypothesis is free on the curve": `∂V/∂y = 0`
+holds at two of the three roots, but at the positive real root it is `2πi/t`,
+because `−t` sits on `log`'s cut.
+
+The general statement behind that is cleaner than either case. On the curve the
+**exponentiated** saddle holds exactly, so the logarithmic one holds *up to*
+`2πi`, and therefore
+
+    ∂V/∂y · y  ∈  2πi·ℤ
+
+at **every** point of the curve. `k = 0` recovers the two easy roots; `k = ∓1`
+is the real root's leak. Nothing has to be known in advance about which root is
+which. -/
+theorem exists_int_dVdy_mul {x y : ℂ} (hx : x ≠ 0) (hy : y ≠ 0)
+    (h1 : (1 : ℂ) - y ≠ 0) (h2 : (1 : ℂ) - x * y ≠ 0) (h3 : (1 : ℂ) - y / x ≠ 0)
+    (hc : curve x y = 0) :
+    ∃ k : ℤ, dVdy x y * y = -(k * (2 * Real.pi * Complex.I)) := by
+  have hneg : (-y) ≠ 0 := neg_ne_zero.mpr hy
+  set S : ℂ := Complex.log (1 - y) + Complex.log (1 - x * y) + Complex.log (1 - y / x)
+    - 2 * Complex.log (-y) with hS
+  -- the exponentiated saddle, from the curve
+  have hsad : (1 - y) * (1 - x * y) * (1 - y / x) = y ^ 2 := by
+    have := (deformed_saddle_iff_curve x y).mpr hc
+    field_simp
+    linear_combination -this
+  -- so `exp S = 1`
+  have hexp : Complex.exp S = 1 := by
+    rw [hS]
+    rw [Complex.exp_sub, Complex.exp_add, Complex.exp_add,
+      Complex.exp_log h1, Complex.exp_log h2, Complex.exp_log h3]
+    rw [show (2 : ℂ) * Complex.log (-y) = Complex.log (-y) + Complex.log (-y) by ring,
+      Complex.exp_add, Complex.exp_log hneg]
+    rw [hsad]
+    field_simp
+  obtain ⟨k, hk⟩ := Complex.exp_eq_one_iff.mp hexp
+  refine ⟨k, ?_⟩
+  have hdv : dVdy x y * y = -S := by
+    unfold dVdy
+    rw [hS]
+    field_simp
+    ring
+  rw [hdv, hk]
+
+/-- **Hence the envelope condition holds at any curve point with a REAL root and
+a real derivative** — which is exactly the positive real root's situation.
+
+`dVdy · y = 2πi·k` makes `dVdy` purely imaginary when `y` is real, and a real
+`Y'` then leaves nothing in the real part. This is Route 30's leak, discharged
+rather than assumed. -/
+theorem re_dVdy_mul_eq_zero_of_real {x : ℂ} {t t' : ℝ} (hx : x ≠ 0) (ht : t ≠ 0)
+    (h1 : (1 : ℂ) - (t : ℂ) ≠ 0) (h2 : (1 : ℂ) - x * (t : ℂ) ≠ 0)
+    (h3 : (1 : ℂ) - (t : ℂ) / x ≠ 0) (hc : curve x (t : ℂ) = 0) :
+    (dVdy x (t : ℂ) * (t' : ℂ)).re = 0 := by
+  have htc : ((t : ℝ) : ℂ) ≠ 0 := by simpa using ht
+  obtain ⟨k, hk⟩ := exists_int_dVdy_mul hx htc h1 h2 h3 hc
+  -- `dVdy = −k·2πi / t`, purely imaginary since `t` is real
+  have hre : (dVdy x (t : ℂ)).re = 0 := by
+    have hval : dVdy x (t : ℂ) = -(k * (2 * Real.pi * Complex.I)) / ((t : ℝ) : ℂ) := by
+      field_simp at hk ⊢
+      linear_combination hk
+    rw [hval]
+    simp [Complex.div_re, Complex.ofReal_re, Complex.ofReal_im]
+  exact re_mul_eq_zero_of_im_axis hre
+
 end QOU.QBeta.FiveTwoDeformedSaddle

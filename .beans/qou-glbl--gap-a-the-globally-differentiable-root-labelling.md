@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T23:10:00Z
+updated_at: 2026-08-08T23:35:00Z
 ---
 
 ## What is open
@@ -106,22 +106,49 @@ gives `∂p/∂y = 7/4` exactly — verified in Lean — and `c = 3/4 = cos φ` 
 arc. So Route 32 G8's measured minimum of `1.75` is *attained*, and the measured
 and proved values agree exactly rather than approximately.
 
-### What remains: assembly only
+### ✅ `heⱼ` — the envelope condition — is DISCHARGED, and Route 30's leak with it
 
-Both analytic obstructions are now theorems:
+    exists_int_dVdy_mul (hx : x ≠ 0) (hy : y ≠ 0) … (hc : curve x y = 0) :
+      ∃ k : ℤ, dVdy x y * y = −(k · 2πi)
+
+    re_dVdy_mul_eq_zero_of_real … (hc : curve x (t : ℂ) = 0) :
+      (dVdy x t · t').re = 0
+
+**The general statement is cleaner than either special case.** Route 30 G2
+refuted "the envelope hypothesis is free on the curve": `∂V/∂y = 0` at two roots
+but `2πi/t` at the positive real one, because `−t` sits on `log`'s cut. Behind
+both is one fact — on the curve the **exponentiated** saddle holds exactly, so
+the logarithmic one holds *up to* `2πi`, hence
+
+    ∂V/∂y · y ∈ 2πi·ℤ
+
+at **every** point of the curve. `k = 0` recovers the two easy roots; `k = ∓1`
+is the real root's leak. **Nothing has to be known in advance about which root
+is which** — which is the point, since that classification is exactly what the
+labelling problem makes awkward.
+
+The second theorem then discharges `heⱼ` at the real root: `dVdy·y ∈ 2πi·ℤ`
+makes `dVdy` purely imaginary when `y` is real, and a real `Y'` leaves nothing
+in the real part. Route 30's correction, proved rather than assumed.
+
+### What remains: assembly only
 
 | piece | status |
 |---|---|
 | continuity through the collision | ✅ `continuous_otherRoots` |
-| IFT non-degeneracy off the collision | ✅ `unitCubic_deriv_ne_zero` |
+| IFT non-degeneracy off the collision | ✅ `unitCubic_deriv_ne_zero` (tight at 7/4) |
 | local differentiable labelling | ✅ `exists_hasDerivAt_root` (pre-existing) |
+| the envelope condition `heⱼ` | ✅ `re_dVdy_mul_eq_zero_of_real` / `exists_int_dVdy_mul` |
+| the log-sum conditions `hA`, `hB` | ✅ `logSumA_eq_log`, `logSumB_eq_neg_log` (pre-existing) |
 | one-exceptional-point glue | ✅ `envelopeS_total` (pre-existing) |
+| **concrete `Y₁ Y₂ Y₃` + `VSide` + the two `log(−y)` routes** | **open** |
 
-What is left is **assembling** these into concrete `Y₁ Y₂ Y₃ : ℝ → ℂ` and
-discharging `hasDerivAt_envelopeS`'s remaining per-root side conditions
-(`VSide`, the two `log(−y)` routes, `heⱼ`). That is bookkeeping over proved
-parts — which this lane's record says is *exactly* where unexamined regions
-hide, so it should not be called trivial in advance.
+What is left is building the concrete labelling and discharging the remaining
+per-root side conditions. That is bookkeeping over proved parts — which this
+lane's record says is *exactly* where unexamined regions hide, so it should not
+be called trivial in advance. Note in particular that `VSide` is the hypothesis
+that was once **vacuous** (correction 6 on #4701); whatever discharges it must
+be checked against real arc data, not merely type-checked.
 
 ### The original "what remains: (a) only" note, superseded
 
