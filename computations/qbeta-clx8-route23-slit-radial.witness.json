@@ -3,7 +3,7 @@
   "bean": "qou-clx8",
   "parent_bean": "qou-0yqu",
   "dps": 30,
-  "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmSlit.lean + QOU/MathlibExt/ComplexDilogarithmDeriv.lean",
+  "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithm{Slit,Deriv,Unique}.lean",
   "gates": [
     {
       "gate": "G1",
@@ -189,12 +189,56 @@
       "integral_form_at_w_eq_0": "1.0",
       "lean_junk_value_of_closed_form_at_0": "0 (since x/0 = 0)",
       "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "UNIQUENESS has bite. eqOn_cLiTwoExt_of_eqOn_ball says any analytic g on C minus [1,inf) agreeing with the SERIES on the disc IS cLiTwoExt. mpmath's polylog(2,.) is such a g, built by a wholly different route (functional equations + acceleration). They agree at every point tested -- at |y| up to 40, where the defining series diverges outright, so neither is summing it",
+      "rows": [
+        {
+          "y": "(1.5 + 0.3j)",
+          "|y|": "1.52971",
+          "series_term_k400": "4.35564e+68",
+          "|cLiTwoExt - polylog|": "0.0"
+        },
+        {
+          "y": "(-2.0 + 3.0j)",
+          "|y|": "3.60555",
+          "series_term_k400": "3.84194e+217",
+          "|cLiTwoExt - polylog|": "0.0"
+        },
+        {
+          "y": "(6.0 + 2.0j)",
+          "|y|": "6.32456",
+          "series_term_k400": "1.61391e+315",
+          "|cLiTwoExt - polylog|": "0.0"
+        },
+        {
+          "y": "(40.0 + 0.5j)",
+          "|y|": "40.0031",
+          "series_term_k400": "4.29979e+635",
+          "|cLiTwoExt - polylog|": "0.0"
+        }
+      ],
+      "worst": "0.0",
+      "series_diverges_at_all_points": true,
+      "pass": true
+    },
+    {
+      "gate": "G11",
+      "claim": "star-convexity about 0: for y OFF the cut the whole segment {s*y : s in [0,1]} stays off it -- the Lean lemma starConvex_zero_notCut, which is what makes C minus [1,inf) connected and the identity theorem applicable. With a NEGATIVE control: for y ON the cut the segment does meet it, so the property is not vacuously true of everything",
+      "segment_points": 21,
+      "off_cut_segments_stay_off": true,
+      "on_cut_points_whose_segment_hits": [
+        "(2.0 + 0.0j)",
+        "(7.0 + 0.0j)"
+      ],
+      "pass": true
     }
   ],
   "verdict": {
     "outcome": "cLiTwoExt's integral converges on ALL of C minus [1,inf) -- the geometric hypothesis qou-clx8 asked for, now Lean-proved -- and its derivative ALONG RAYS is proved by FTC rather than by differentiating under the integral sign.",
     "what_widened": "the old side condition Re(1-y)>0 rejects every point in G1, including both examples the bean names, while the identity holds at all of them. ComplexDilogarithm.intervalIntegrable_log_one_sub_div is now stated on slitPlane membership, with the old form kept as a corollary.",
-    "now_closed": "analyticity on C minus [1,inf) IS proved -- analyticOnNhd_cLiTwoExt in ComplexDilogarithmDeriv.lean, by differentiation under the integral sign. Mathlib supplies the DUI theorem; the piece it does not supply is the uniform lower bound on ||1 - w z|| over a ball times [0,1], proved by compactness. G8 tests direction independence, which the radial derivative could not give.",
+    "now_closed": "analyticity AND uniqueness on C minus [1,inf) are proved -- analyticOnNhd_cLiTwoExt in ComplexDilogarithmDeriv.lean, by differentiation under the integral sign. Mathlib supplies the DUI theorem; the piece it does not supply is the uniform lower bound on ||1 - w z|| over a ball times [0,1], proved by compactness. G8 tests direction independence, which the radial derivative could not give.",
     "does_not_move_the_sum_rule": "qou-clx8 is explicit that Route 5 is a restatement; even the whole chain leaves an unevaluated real integral. Taken for the Mathlib gap, as instructed.",
     "sum_rule_status": "verified to 80 dps, unproved"
   }

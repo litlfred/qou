@@ -10,7 +10,7 @@ tags:
     - lean
     - mathlib-gap
 created_at: 2026-08-07T15:20:00Z
-updated_at: 2026-08-08T11:30:00Z
+updated_at: 2026-08-08T12:15:00Z
 parent: 0yqu
 ---
 
@@ -329,6 +329,79 @@ is the natural follow-on, tracked with `qou-gkco`.
 
 **And the bean's own caveat stands, unchanged:** this does not move the sum rule.
 Route 5 is a restatement; even the full chain leaves an unevaluated real
+integral. Taken for the Mathlib gap, as this bean instructed.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## ✅ 2026-08-08 (later) — the identification too: `cLiTwoExt` is **the** continuation
+
+The entry above closed analyticity but left one thing explicitly open:
+
+> The phrase *"identified with the `Li₂` the sum rule refers to"* … is
+> uniqueness … needs **connectedness of `ℂ ∖ [1,∞)`**, which is not proved here.
+
+Now proved. `QOU/MathlibExt/ComplexDilogarithmUnique.lean`, sorry-free, `lake`
+green (2573 jobs), axioms `[propext, Classical.choice, Quot.sound]`. Route 23 now
+11 gates, exit 0.
+
+```lean
+theorem eqOn_cLiTwoExt_of_eqOn_ball {g : ℂ → ℂ}
+    (hg : AnalyticOnNhd ℂ g notCut)
+    (hagree : ∀ z : ℂ, ‖z‖ < 1 → g z = cLiTwo z) :
+    Set.EqOn g cLiTwoExt notCut
+```
+
+So `cLiTwoExt y₁` at `‖y₁‖ = 1.52` is *the* value the sum rule's `Li₂(y₁)` refers
+to, with no choice left open.
+
+### The Mathlib gap, precisely
+
+Mathlib has all three moving parts and **not** the one that matters here:
+
+| have | Mathlib |
+|---|---|
+| `ℂ ∖ (−∞,0]` star-convex about `1` | `Complex.starConvex_one_slitPlane` ✓ |
+| star-convex ⟹ path-connected | `StarConvex.isPathConnected` ✓ |
+| identity theorem | `AnalyticOnNhd.eqOn_of_preconnected_of_frequently_eq` ✓ |
+| **`ℂ ∖ [1,∞)` star-convex about `0`** | **absent** |
+
+`starConvex_zero_notCut` fills it, and the reason is the one the picture
+suggests: if `t·w` is on the cut for some `t ∈ (0,1]`, it is real and `≥ 1`, so
+`w` is real with `w = (t·w)/t ≥ 1/t ≥ 1` — `w` was on the cut already.
+
+`notCut_eq_preimage_slitPlane` records why the star centre moved from Mathlib's
+`1` to `0`: the two sets are exchanged by `w ↦ 1 − w`, which sends `1 ↦ 0`. The
+direct proof is shorter than transporting star-convexity across that map, so the
+relation is recorded as an equation rather than used.
+
+### Non-vacuity, in Lean and numerically
+
+A uniqueness theorem is universally quantified, and one whose hypotheses nothing
+satisfies proves nothing — the same trap Route 21's G5 was built for.
+
+* **In Lean:** `eqOn_cLiTwoExt_hypotheses_satisfiable` — `cLiTwoExt` itself meets
+  them.
+* **Numerically, with real bite (G10):** mpmath's `polylog(2,·)` is an
+  **independently implemented** analytic continuation — functional equations and
+  series acceleration, nothing to do with this integral. Uniqueness predicts it
+  must equal `cLiTwoExt` off the cut, and it does, at `|y|` up to `40`, where the
+  defining series diverges outright (term at `k = 400` is astronomically large),
+  so neither construction can be summing it.
+* **G11** checks star-convexity on segments **with a negative control**: for `y`
+  off the cut the whole segment `{s·y}` stays off, and for `y` *on* the cut the
+  segment does meet it — so the property is not vacuously true of everything.
+
+### `qou-clx8` is now closed end to end
+
+Sharp domain (`ℂ ∖ [1,∞)`, the half-plane `Re y ≥ 1` recovered), radial
+derivative by FTC, full analyticity by DUI, and uniqueness by the identity
+theorem. The `Honest labelling` paragraph in `ComplexDilogarithm.lean` has been
+updated twice today and now says what is true.
+
+**And the bean's own caveat still stands:** none of this moves the sum rule.
+Route 5 is a restatement; even the whole chain leaves an unevaluated real
 integral. Taken for the Mathlib gap, as this bean instructed.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**

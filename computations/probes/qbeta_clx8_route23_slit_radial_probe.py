@@ -276,10 +276,63 @@ def main() -> int:
                      and fabs(mpf(lim_vals[-1]) - 1) < mpf(10) ** -10),
     })
 
+    # ---- G10: UNIQUENESS has bite -- two independent continuations agree ----
+    # eqOn_cLiTwoExt_of_eqOn_ball says any analytic g on C\[1,inf) agreeing with
+    # the SERIES on the disc equals cLiTwoExt. mpmath's polylog(2,.) is exactly
+    # such a g, implemented by a completely different route (functional equations
+    # + acceleration). So uniqueness predicts they agree off the disc -- where the
+    # series itself diverges and cannot be what either is computing.
+    rows10, worst10 = [], mpf(0)
+    for y in [mpc(mpf("1.5"), mpf("0.3")), mpc(mpf("-2"), mpf("3")),
+              mpc(mpf("6"), mpf("2")), mpc(mpf("40"), mpf("0.5"))]:
+        # the defining series diverges here: |y|>1 so |y^k/k^2| -> infinity
+        k = 400
+        term = fabs(y) ** k / mpf(k) ** 2
+        d = fabs(li2_int(y) - polylog(2, y))
+        worst10 = max(worst10, d)
+        rows10.append({"y": nstr(y, 8), "|y|": nstr(fabs(y), 6),
+                       "series_term_k400": nstr(term, 6),
+                       "|cLiTwoExt - polylog|": nstr(d, 6)})
+    gates.append({
+        "gate": "G10",
+        "claim": "UNIQUENESS has bite. eqOn_cLiTwoExt_of_eqOn_ball says any analytic g on "
+                 "C minus [1,inf) agreeing with the SERIES on the disc IS cLiTwoExt. mpmath's "
+                 "polylog(2,.) is such a g, built by a wholly different route (functional "
+                 "equations + acceleration). They agree at every point tested -- at |y| up to "
+                 "40, where the defining series diverges outright, so neither is summing it",
+        "rows": rows10, "worst": nstr(worst10, 8),
+        "series_diverges_at_all_points": bool(all(mpf(r["series_term_k400"]) > 1 for r in rows10)),
+        "pass": bool(worst10 < TOL
+                     and all(mpf(r["series_term_k400"]) > 1 for r in rows10)),
+    })
+
+    # ---- G11: star-convexity about 0, with a negative control --------------
+    seg = [mpf(s) / 20 for s in range(0, 21)]
+    off_cut = [mpc(mpf("1.5"), mpf("0.3")), mpc(mpf("-2"), mpf("3")),
+               mpc(mpf("40"), mpf("0.5")), mpc(mpf("0.5"), mpf(0))]
+    on_cut = [mpc(mpf("2"), mpf(0)), mpc(mpf("7"), mpf(0))]
+    off_ok = all(new_hypothesis_holds(s * y) for y in off_cut for s in seg)
+    # negative control: for y ON the cut the segment DOES meet it (at s=1, and
+    # wherever s*y >= 1), so star-convexity is not vacuously true of every point
+    on_hits = [nstr(y, 6) for y in on_cut
+               if any(not new_hypothesis_holds(s * y) for s in seg)]
+    gates.append({
+        "gate": "G11",
+        "claim": "star-convexity about 0: for y OFF the cut the whole segment {s*y : s in [0,1]} "
+                 "stays off it -- the Lean lemma starConvex_zero_notCut, which is what makes "
+                 "C minus [1,inf) connected and the identity theorem applicable. With a NEGATIVE "
+                 "control: for y ON the cut the segment does meet it, so the property is not "
+                 "vacuously true of everything",
+        "segment_points": len(seg),
+        "off_cut_segments_stay_off": bool(off_ok),
+        "on_cut_points_whose_segment_hits": on_hits,
+        "pass": bool(off_ok and len(on_hits) == len(on_cut)),
+    })
+
     out = {
         "probe": "qbeta_clx8_route23_slit_radial",
         "bean": "qou-clx8", "parent_bean": "qou-0yqu", "dps": mp.dps,
-        "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithmSlit.lean + QOU/MathlibExt/ComplexDilogarithmDeriv.lean",
+        "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithm{Slit,Deriv,Unique}.lean",
         "gates": gates,
         "verdict": {
             "outcome": "cLiTwoExt's integral converges on ALL of C minus [1,inf) -- the "
@@ -291,7 +344,7 @@ def main() -> int:
                             "at all of them. ComplexDilogarithm.intervalIntegrable_log_one_sub_"
                             "div is now stated on slitPlane membership, with the old form kept "
                             "as a corollary.",
-            "now_closed": "analyticity on C minus [1,inf) IS proved -- analyticOnNhd_cLiTwoExt "
+            "now_closed": "analyticity AND uniqueness on C minus [1,inf) are proved -- analyticOnNhd_cLiTwoExt "
                           "in ComplexDilogarithmDeriv.lean, by differentiation under the "
                           "integral sign. Mathlib supplies the DUI theorem; the piece it does "
                           "not supply is the uniform lower bound on ||1 - w z|| over a ball "
@@ -309,7 +362,7 @@ def main() -> int:
     for g in gates:
         print(f"  {g['gate']}  pass={g['pass']}  {g['claim'][:86]}")
     print(f"\nwitness -> {dest}")
-    print("VERDICT: cLiTwoExt is ANALYTIC on C minus [1,inf) -- the continuation is a theorem.")
+    print("VERDICT: cLiTwoExt is THE analytic continuation -- analytic, and unique.")
     return 0 if all(g["pass"] for g in gates) else 1
 
 

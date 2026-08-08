@@ -450,7 +450,10 @@ in `QOU/MathlibExt/ComplexDilogarithmDeriv.lean`
 This paragraph previously said analyticity was "not proved here … not a theorem
 in this file". That is no longer true and the sentence would now be a false
 claim in the corpus, which is why it is rewritten rather than left standing.
-Bean `qou-clx8`; `qou-gkco` still tracks the downstream identification. -/
+Uniqueness too: `eqOn_cLiTwoExt_of_eqOn_ball` in
+`QOU/MathlibExt/ComplexDilogarithmUnique.lean` shows any analytic function on
+`ℂ ∖ [1,∞)` agreeing with the series on the disc *is* `cLiTwoExt`, so it is
+**the** continuation and not merely *a* one. Bean `qou-clx8`. -/
 
 /-- The dilogarithm by its integral definition, valid past the unit disc.
 

@@ -384,6 +384,7 @@ import QOU.QBeta.FiveTwoAbelFiveTerm
 import QOU.MathlibExt.ComplexDilogarithm
 import QOU.MathlibExt.ComplexDilogarithmSlit
 import QOU.MathlibExt.ComplexDilogarithmDeriv
+import QOU.MathlibExt.ComplexDilogarithmUnique
 import QOU.QBeta.FiveTwoDiscriminant
 import QOU.Archimedean.ConstantOffOnePoint
 import QOU.Archimedean.BranchIntegerPinning
