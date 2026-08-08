@@ -108,6 +108,7 @@ import QOU.BraidKnot.BraidLinkTypes
 import QOU.BraidKnot.BraidGroupNStrand
 import QOU.BraidKnot.MarkovAxiomsPrimitive
 import QOU.BraidKnot.MarkovParameterFibreRank
+import QOU.BraidKnot.CrossingEnergyBarParity
 import QOU.BraidKnot.H3HeckeIdempotents
 import QOU.BraidKnot.HoefsmitV21CosSymmetrization
 import QOU.BraidKnot.QBetaCategoricalPrecisionLadder
