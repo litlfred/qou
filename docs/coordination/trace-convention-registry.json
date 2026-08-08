@@ -35,6 +35,16 @@
       "verified_by": "computations/probes/probe_writhe0_trace_insensitivity.py",
       "lean": null
     },
+    "negative_stabilisation": {
+      "definition": "z_minus := z - h, h = q - q^-1; forced by sigma_n^-1 = sigma_n - h in axiom 3 (rem:markov-axioms-primitive). The FORMULA is convention-independent -- it holds for every member of the Ocneanu family; only its value moves.",
+      "z_minus_C": "(q^(3/2) - q^3 - q^2 + q + 1)/(q(q+1))",
+      "z_minus_C_at_q0": "0.29026003538805515083",
+      "z_minus_D": "1/(q^3 + q)",
+      "z_minus_D_at_q0": "0.40362773835082594197",
+      "bar_involution": "Under q -> q^-1: z_C is bar-INVARIANT (z_C = q^(1/2)/(q+1) = bar z_C), whereas z_D is NOT: bar z_D = 1/(q^3+q). Note the identity bar z_D = z_minus_D exactly -- under convention D the positive and negative stabilisation parameters are bar-conjugate. Verified symbolically 2026-08-08 (sympy, exact cancellation).",
+      "bar_invariance_caveat": "content/quantum-observable-universe/braids-and-knots/bar-involution-c5-algebraic-identities.md asserts 'the Markov parameter z is bar-invariant'. That is TRUE for C and FALSE for D, so it is one of the corpus statements that a future z change to D would falsify. Its companion factorisation h = (q^(1/2)-q^(-1/2))(q^(1/2)+q^(-1/2)) is an identity in q alone and is unaffected; only the naming of q^(1/2)+q^(-1/2) as 1/z is convention-bound.",
+      "z_independent_consequences": "The root pair of z*z_minus = 1, namely z = q and z = -q^-1 (the two one-dimensional characters, both degenerate), depends only on h and is therefore identical under every convention. So is the z^k factor for appending k stabilised strands. Verified 2026-08-08."
+    },
     "rule": "Any tau / tr_M value quoted below 0.1 % precision, and any cross-method comparison of trace values, must name its convention id from this registry with the script or Lean decl cited. Convention-silent trace values are not comparable.",
     "supersedes": "docs/audits/2026-06-09-binding-trace-convention-split.md (the de-facto registry; retained as the historical record)"
   },
@@ -48,7 +58,9 @@
       "weights_at_q0": null,
       "value_at_beta_bor": null,
       "value_note": "never evaluated on beta_Bor in-repo; the A infrastructure is an A>=4 chi encoding, not an H_3 z-trace",
-      "implementations": ["computations/chi_via_matrix_m_mpfr (native bindings)"],
+      "implementations": [
+        "computations/chi_via_matrix_m_mpfr (native bindings)"
+      ],
       "lean": null,
       "forcing_status": "not-a-z-trace",
       "verify": null,
@@ -63,7 +75,9 @@
       "weights_at_q0": null,
       "value_at_beta_bor": null,
       "value_note": "deprecated before any beta_Bor evaluation",
-      "implementations": ["computations/mass_at_3A_proper.py::markov_trace_3A"],
+      "implementations": [
+        "computations/mass_at_3A_proper.py::markov_trace_3A"
+      ],
       "lean": null,
       "forcing_status": "deprecated",
       "verify": null,
@@ -129,7 +143,10 @@
   ],
   "gaps": [
     {
-      "pair": ["D", "C"],
+      "pair": [
+        "D",
+        "C"
+      ],
       "at": "beta_Bor, proton-pin q0",
       "absolute": "0.000195541251071",
       "relative_ppm": "195.82281",
@@ -151,8 +168,10 @@
       "open_item": {
         "bean": "qou-3qrv",
         "audit": "docs/audits/2026-08-08-borromean-trace-convention-forcing.md",
-        "blast_radius": "~30 F_Bor consumers; -197 ppm on m_p",
-        "note": "OWNER DECISION. No agent may switch the production trace to close this. D is the value that lands on CODATA, which is exactly why deciding by match is forbidden here."
+        "blast_radius": "~30 F_Bor consumers; -197 ppm on m_p. Closing it the OTHER way -- moving the DEFINITIONAL side from C to D by rewriting z in the braids-and-knots blocks -- is not cheap either: as of 2026-08-08 at least 8 corpus sites stipulate or derive from z = 1/(q^{1/2}+q^{-1/2}), including thm:jones-markov-trace itself (the block rem:markov-axioms-primitive cites), jones-markov-trace.lean, prf:trm-hopf-sigma1-sq-closed-form, prf:trace-locality-meets-gs-nonlocality, prf:hecke-satisfies-blitvic-hypothesis, rem:bar-involution-c5-algebraic-identities (whose bar-invariance claim holds for C and FAILS for D), prop:centered-hecke-variance-positive (+ its proof, which uses (q^{1/2}+q^{-1/2})^2 > 4), and prf:algebraic-gns-embedding. It would also flip the `binding` channel from agreed to disputed, since binding's definitional_source is that same line while binding production is C. Inventory: docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md.",
+        "note": "OWNER DECISION. No agent may switch the production trace to close this, and no agent may close it from the definitional side either -- rewriting z from C to D in the braids-and-knots definition blocks decides the same question in the same forbidden way, just from the other end. D is the value that lands on CODATA, which is exactly why deciding by match is forbidden here. What WAS done on 2026-08-08 (and is not a decision): the naming defect in rem:markov-axioms-primitive and the false Jones-polynomial sentence in thm:jones-markov-trace were corrected, so both blocks now say plainly which family member their stipulated z is. The dispute is unchanged and stays open.",
+        "bean_definitional_side": "qou-h9p8",
+        "audit_definitional_side": "docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md"
       }
     },
     {
@@ -183,7 +202,12 @@
       "line": 310,
       "reason": "NOT a Borromean trace and NOT a trace convention. It traces atom_braid_word_3A (computations/mass_at_3A_proper.py:256), which for (Z,N)=(1,0) is an 11-crossing word whose core is sigma_0^3 sigma_1^-3 -- a different braid closure from the 6-crossing interleaved beta_Bor = (sigma_0 sigma_1^-1)^3. Comparing it to a beta_Bor value measures a braid-word difference, not a convention difference.",
       "incident": "produced a false 6.7 % 'fifth convention' alarm on 2026-08-08 (bean qou-3qrv section 1)",
-      "aliases": ["tr_M_atomic_fast", "tr_M_atomic_rust", "tr_M_atomic_at_q0", "tr_M_atomic_lq"]
+      "aliases": [
+        "tr_M_atomic_fast",
+        "tr_M_atomic_rust",
+        "tr_M_atomic_at_q0",
+        "tr_M_atomic_lq"
+      ]
     }
   ],
   "entry_points": [
@@ -239,7 +263,15 @@
       "about_channel": "mass",
       "layer": "definition",
       "names_convention": "C",
-      "note": "this block IS the definitional pin; it is the reason the mass channel's definitional_convention is C"
+      "note": "this block IS the definitional pin; it is the reason the mass channel's definitional_convention is C. 2026-08-08: the block's NAMING defect was corrected (it concluded 'the non-degenerate Jones-Markov trace' while stipulating C) -- it now names convention C explicitly and states that the Jones-polynomial closure is D. The VALUE of z was deliberately NOT changed: that is the reserved owner decision of docs/audits/2026-08-08-trace-convention-registry-and-doc-fix.md section 6 follow-up 1. See docs/audits/2026-08-08-markov-axioms-naming-vs-z-value.md."
+    },
+    {
+      "file": "content/quantum-observable-universe/braids-and-knots/jones-markov-trace.md",
+      "quote": "z = \\frac{1}{q^{1/2} + q^{-1/2}} = \\mathrm{tr}_M(\\sigma_i)",
+      "about_channel": "binding",
+      "layer": "definition",
+      "names_convention": "C",
+      "note": "thm:jones-markov-trace is the SECOND corpus site stipulating the C value with the same three axioms, and it is the block that rem:markov-axioms-primitive cites. Recorded here so the two cannot drift apart: any future change of z in one must change it in the other. Until 2026-08-08 this block also asserted that tr_M of a braid closure 'computes the Jones polynomial up to framing', which is false at z = z_C (y_(1^3) != 0); corrected to name the family member and pin the Jones case to y_(1^3) = 0, i.e. convention D."
     }
   ],
   "production_files": [
@@ -283,7 +315,9 @@
       "description": "the mislabel that produced the false 6.7 % alarm: listing tr_M_atomic as a Borromean trace convention",
       "convention_row": {
         "id": "X",
-        "implementations": ["computations/markov/markov_peel.py::tr_M_atomic"]
+        "implementations": [
+          "computations/markov/markov_peel.py::tr_M_atomic"
+        ]
       },
       "must_error_with": "excluded tracer"
     },

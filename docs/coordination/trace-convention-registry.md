@@ -82,12 +82,61 @@ A channel whose two conventions differ **must** carry `status: "disputed"` and a
 non-null `open_item` naming a bean and an audit. R8 of the validator enforces
 this: a convention disagreement may not be recorded silently.
 
-> **The `mass` dispute is an owner decision.** Blast radius: ~30 `F_Bor`
-> consumers and −197 ppm on $m_p$. No agent may switch the production trace to
-> close it. D is the value that lands on CODATA, which is precisely why
-> deciding by match is forbidden here. Full analysis:
-> [`2026-08-08-borromean-trace-convention-forcing.md`](../audits/2026-08-08-borromean-trace-convention-forcing.md)
-> and [`2026-08-08-trace-convention-registry-and-doc-fix.md`](../audits/2026-08-08-trace-convention-registry-and-doc-fix.md).
+> **The `mass` dispute is an owner decision, and it is closed from *neither*
+> end by an agent.** Blast radius: ~30 `F_Bor` consumers and −197 ppm on $m_p$.
+> No agent may switch the production trace to close it — and equally, no agent
+> may rewrite $z$ from C to D in the braids-and-knots definition blocks, which
+> decides the same question in the same forbidden way from the other end. D is
+> the value that lands on CODATA, which is precisely why deciding by match is
+> forbidden here. Full analysis:
+> [`2026-08-08-borromean-trace-convention-forcing.md`](../audits/2026-08-08-borromean-trace-convention-forcing.md),
+> [`2026-08-08-trace-convention-registry-and-doc-fix.md`](../audits/2026-08-08-trace-convention-registry-and-doc-fix.md),
+> and — for the cost of the definitional route — the site inventory in
+> [`2026-08-08-markov-axioms-naming-vs-z-value.md`](../audits/2026-08-08-markov-axioms-naming-vs-z-value.md).
+
+### The two definitional pins are now both registered
+
+Two blocks stipulate the C value with the same three axioms, and one cites the
+other, so they can only be changed together. Both are `doc_claims` rows (R6):
+
+| block | file | what it pins |
+|---|---|---|
+| `rem:markov-axioms-primitive` | `braids-and-knots/markov-axioms-primitive.md` line 5 | axiom 3's $z = 1/(q^{1/2}+q^{-1/2})$ |
+| `thm:jones-markov-trace` | `braids-and-knots/jones-markov-trace.md` line 7 | the same value, as $z = \mathrm{tr}_M(\sigma_i)$ |
+
+Both were corrected on 2026-08-08 for **naming**, not value: the first concluded
+"the non-degenerate *Jones*-Markov trace" while stipulating C, and the second
+asserted that the closure "computes the Jones polynomial up to framing", which
+is false at $z = z_C$ (its $y_{(1^3)} \neq 0$). Neither $z$ was changed.
+
+## The negative stabilisation, and what is convention-independent
+
+Axiom 3 plus $\sigma_n^{-1} = \sigma_n - h$, $h = q - q^{-1}$, forces
+$\mathrm{tr}_M(x\sigma_n^{-1}) = z_{-}\mathrm{tr}_M(x)$ with
+$z_{-} := z - h$. The **formula** holds for every member of the family; only
+its value moves:
+
+| | $z$ | $z(q_0)$ | $z_{-} = z - h$ | $z_{-}(q_0)$ | bar-invariant? |
+|---|---|---|---|---|---|
+| **C** | $q^{1/2}/(q+1)$ | $0.49932033418369445$ | $\frac{q^{3/2}-q^3-q^2+q+1}{q(q+1)}$ | $0.29026003538805515$ | **yes** |
+| **D** | $q^3/(q^2+1)$ | $0.61268803714646524$ | $1/(q^3+q)$ | $0.40362773835082594$ | **no** |
+
+Two facts worth keeping, both verified symbolically (exact cancellation):
+
+- **Under D the two stabilisation parameters are bar-conjugate**:
+  $\overline{z_D} = z_D\big|_{q \to q^{-1}} = 1/(q^3+q) = z_{-}^{D}$ exactly.
+- **Under C, $z$ is bar-invariant** ($\overline{z_C} = z_C$) — which is what
+  [`rem:bar-involution-c5-algebraic-identities`](../../content/quantum-observable-universe/braids-and-knots/bar-involution-c5-algebraic-identities.md)
+  asserts. That claim is therefore **C-specific and would be falsified by a move
+  to D**; its companion factorisation
+  $h = (q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})$ is an identity in $q$ alone and
+  survives either way.
+
+**Convention-independent, so unaffected by any future $z$ change:** the root
+pair of $z\,z_{-} = 1$, namely $z = q$ and $z = -q^{-1}$ (the two
+one-dimensional characters, both degenerate), which depends only on $h$; and
+the $z^k$ factor for appending $k$ stabilised strands, which only counts
+applications of axiom 3.
 
 ## The writhe-$0$ lemma — what it does and does not buy
 
