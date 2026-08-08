@@ -135,4 +135,78 @@ theorem normalisation_step_trivial_of_k_agree
     rw [← hfac c₁, ← hfac c₂]; exact hagree
   exact mul_left_cancel₀ hk h
 
+/-! ### The van der Veen constant, and what the law turns it into
+
+The three statements above are about the SHAPE of the law.  The two below are
+about the specific constant the `c_σ` arc now carries.  Van der Veen's
+asymptotic for a Whitehead chain `W_{a,1,c,d}`, once the signs in his Lemma 2a
+and his Step-3 coefficient are corrected, gives in closed form
+
+    c_σ  =  2^{1/2−n} (n² + m²)^{−1/4},    n := c+d,  m := 4a−c+d
+
+written below as `√2 / (2ⁿ · √√(n²+m²))` to stay inside `Monoid.npow` and
+`Real.sqrt`.  The corpus's law is `c_σ = k·|τ|^{−1/2}` with `k = 2^{−1/2}`, i.e.
+`c_σ = √(1/(2τ))`.  `vdv_c_sigma_iff_tau` says those two statements together
+pin `τ` to `2^{2n−2}√(n²+m²)` and nothing else.
+
+That is what makes the pre-registered `τ_DG` predictions at `L8n5`, `L10n100`
+and `L10n103` a CONSEQUENCE of the closed form rather than a second fit: given
+the closed form and the law, the value of `τ` is forced, so computing it in
+SnapPy is a genuine test that could have failed.
+
+-- Ref: [vanderveen2008] arXiv:math/0611181, Lemma 1-4 and Main theorem
+-- Ref: [manuscript] docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md
+-/
+
+/-- The corpus's 1-loop law in the form it is actually used: `c = √(1/(2τ))`. -/
+noncomputable def vdvCSigma (n : ℕ) (m : ℝ) : ℝ :=
+  Real.sqrt 2 / (2 ^ n * Real.sqrt (Real.sqrt ((n : ℝ) ^ 2 + m ^ 2)))
+
+/-- **The law inverts.**  For positive `τ` and `c`, `c = √(1/(2τ))` and
+`τ = 1/(2c²)` say the same thing.  Stated separately because it is the only
+step in `vdv_c_sigma_iff_tau` that is about the law rather than the constant. -/
+theorem law_inverts {t c : ℝ} (ht : 0 < t) (hc : 0 < c) :
+    c = Real.sqrt (1 / (2 * t)) ↔ t = 1 / (2 * c ^ 2) := by
+  have h2t : (0:ℝ) < 2 * t := by linarith
+  constructor
+  · intro h
+    have hsq : c ^ 2 = 1 / (2 * t) := by
+      rw [h]; exact Real.sq_sqrt (le_of_lt (by positivity))
+    rw [hsq]
+    field_simp
+  · intro h
+    have hc2 : (0:ℝ) < c ^ 2 := by positivity
+    have : 1 / (2 * t) = c ^ 2 := by
+      rw [h]; field_simp
+    rw [this, Real.sqrt_sq hc.le]
+
+/-- **The derived constant forces the torsion.**
+
+`c_σ = 2^{1/2−n}(n²+m²)^{−1/4}` together with the law `c_σ = √(1/(2τ))` holds
+exactly when `τ = 2^{2n−2}√(n²+m²)`, written here as `4ⁿ√(n²+m²)/4`. -/
+theorem vdv_c_sigma_iff_tau {t : ℝ} (ht : 0 < t) (n : ℕ) (m : ℝ)
+    (hnm : 0 < (n : ℝ) ^ 2 + m ^ 2) :
+    vdvCSigma n m = Real.sqrt (1 / (2 * t)) ↔
+      t = 4 ^ n * Real.sqrt ((n : ℝ) ^ 2 + m ^ 2) / 4 := by
+  have hS : (0:ℝ) < Real.sqrt ((n : ℝ) ^ 2 + m ^ 2) := Real.sqrt_pos.mpr hnm
+  have hSS : (0:ℝ) < Real.sqrt (Real.sqrt ((n : ℝ) ^ 2 + m ^ 2)) :=
+    Real.sqrt_pos.mpr hS
+  have hpow : (0:ℝ) < (2:ℝ) ^ n := by positivity
+  have hc : 0 < vdvCSigma n m := by
+    unfold vdvCSigma; positivity
+  -- `(c_σ)² = 2 / (4ⁿ · √(n²+m²))`
+  have hsq : vdvCSigma n m ^ 2 = 2 / (4 ^ n * Real.sqrt ((n : ℝ) ^ 2 + m ^ 2)) := by
+    unfold vdvCSigma
+    rw [div_pow, mul_pow, Real.sq_sqrt (by norm_num : (0:ℝ) ≤ 2),
+        Real.sq_sqrt hS.le]
+    congr 1
+    rw [← pow_mul, mul_comm n 2, pow_mul]
+    norm_num
+  have hden : (4:ℝ) ^ n * Real.sqrt ((n : ℝ) ^ 2 + m ^ 2) ≠ 0 := by positivity
+  have hval : 1 / (2 * (2 / (4 ^ n * Real.sqrt ((n : ℝ) ^ 2 + m ^ 2))))
+      = 4 ^ n * Real.sqrt ((n : ℝ) ^ 2 + m ^ 2) / 4 := by
+    field_simp
+    norm_num
+  rw [law_inverts ht hc, hsq, hval]
+
 end QOU.OneLoopPrefactorInvariance

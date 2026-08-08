@@ -246,6 +246,31 @@ out of eq (2.3) as the corpus's `k`, **the corpus's calibration on `4_1` stands
 and is not redundant**, and if anything DGLZ's constant and the corpus's are the
 same calibration performed twice.
 
+> **Addendum, same day — the second half of that sentence is now false.** The
+> first half stands: `k` cannot be lifted out of DGLZ eq (2.3), for exactly the
+> reasons above, and nothing below changes that. But the conclusion drawn from
+> it — that the `4_1` calibration is therefore *irreducible* — assumed DGLZ was
+> the only available route to the constant. It is not. Van der Veen's asymptotic
+> for the Whitehead chains supplies `c_σ` **directly from the colored Jones**,
+> with no convention to reconcile, and evaluating the integral he left
+> unevaluated gives
+>
+> ```
+> c_σ(W_{a,1,c,d}) = 2^{1/2−n} (n² + m²)^{−1/4},   n := c+d,  m := 4a−c+d
+> ```
+>
+> which reproduces `k = 2^{−1/2}` on the link side with no calibration at all.
+> The `4_1` calibration is now *corroborated rather than required* there — it
+> remains load-bearing on the one-cusped side, which van der Veen's family does
+> not reach (`b = 1` chains have `c+d+1 ≥ 2` components).
+>
+> The lesson for this audit's method: it correctly established that DGLZ's
+> constant is unusable, and then over-concluded from "this route is blocked" to
+> "the quantity is not derivable". Those are different claims, and only the
+> first was shown.
+>
+> See `docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`.
+
 ### What survives, and it is the part that matters
 
 **The exponent is invariant under every one of those offsets.** No multiplicative

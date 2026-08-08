@@ -106,6 +106,15 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 >   matches `s₁`, under which the relation is `T = 4/|τ_DG|` rather than
 >   `1/|τ_DG|`. A factor of 4 from a convention choice; the constant cannot be
 >   lifted.
+>   **Superseded later the same day, for links only.** "Cannot be lifted *from
+>   DGLZ*" remains true and is the whole of what was shown here. But `k` does not
+>   have to come from DGLZ: van der Veen's colored-Jones asymptotic for the
+>   Whitehead chains gives `c_σ = 2^{1/2−n}(n²+m²)^{−1/4}` outright
+>   (`n = c+d`, `m = 4a−c+d`), reproducing `k = 2^{−1/2}` with no calibration and
+>   no convention to reconcile. So on the **link** side `k` is derived, and the
+>   `4_1` calibration is corroborated rather than required; on the **knot** side
+>   this entry stands unchanged, since van der Veen's family contains no knots.
+>   See `2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`.
 > * **What IS invariant is the exponent** — no multiplicative constant changes
 >   `−1/2` — so the FORM transfers and the prefactor does not. The `T^{+1/2}` vs
 >   `|τ|^{−1/2}` sign is likewise a choice of variable, verified to 1.3e−10 on

@@ -1,32 +1,48 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T13:24:09.705469+00:00",
-  "commitSha": "f9f49cbe3d74183d113b9c775edf3ae86fcddd69",
+  "computedAt": "2026-08-08T15:22:07.428967+00:00",
+  "commitSha": "e4f9b2618d9d4736067448f319083031df752875",
   "assertions": [
     {
-      "name": "closed_forms_match_quadrature",
-      "computed": "1",
-      "expected": "1",
+      "name": "closed_form_matches_Q_N_on_every_chain",
+      "computed": "20",
+      "expected": "20",
       "passed": true,
       "tolerance": "0.5",
-      "source": "arctan form (Whitehead, n=1) and arcsin form (Borromean, n=2) each agree with direct quadrature of van der Veen's Step-6 integral to better than 1e-25"
+      "source": "|Q_inf| = 2^{-n/2} sqrt(2/|A|) against Q_N computed directly from van der Veen's Lemma 1, Richardson-extrapolated"
     },
     {
-      "name": "step6_reduction_and_prefactor_validated",
+      "name": "lemma2a_cross_term_is_signed",
       "computed": "1",
       "expected": "1",
       "passed": true,
       "tolerance": "0.5",
-      "source": "the Whitehead closed form reproduces an independent evaluation of the un-reduced 2-D Step-5 integral, which is the only place the derived prefactor C = 2 psi 2^(-n/2) enters"
+      "source": "log(S_{n,k}/S~_N) on the opposite-sign corner, against the signed and absolute-value readings of Lemma 2a"
+    },
+    {
+      "name": "tau_dg_prediction_exact_on_corpus_values",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|tau_DG| = 2^{2n-2} sqrt(n^2+m^2) against the corpus's independently computed values at L5a1 and L6a4"
+    },
+    {
+      "name": "tau_dg_preregistered_predictions_confirmed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "L8n5, L10n100, L10n103: predicted before the manifolds were located, then computed with one_loop_torsion.py"
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 47,
   "computation": "one-loop-vdv-constant-closed-form",
   "scriptFile": "one_loop_vdv_constant_closed_form_probe.py",
-  "scriptHash": "208e1431a5a3",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "100fa4039e5a",
+  "scriptCommitSha": "c884382397307024a656cfe9910d6c7e8ef176c2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,59 +55,285 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Evaluates in closed form the constant van der Veen (AGT 8 (2008) 603-624) leaves unevaluated in the proof of his Lemma 4 — the constant E in the colored-Jones asymptotic of a Whitehead chain, which is the object this corpus measures as c_sigma. His Step 6 reduces it to a 1-D integral of a Gaussian against erfc^n; that is an (n+1)-dimensional Gaussian orthant probability, elementary exactly for n <= 2, and the Whitehead link (n=1) and Borromean rings (n=2) are both inside that window. Gives arctan and arcsin closed forms, checked against quadrature to 1e-25 and, for the Whitehead link, against an independent evaluation of the un-reduced 2-D Step-5 integral. Does NOT yet give c_sigma: the bridge needs Lemma 3's S~_N constant and the J/J' normalisation, and the measured ratio is c-dependent, so it cannot be guessed from one link. Nothing fitted.",
-  "auditOnly": "docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md",
+  "description": "Closes the bridge from van der Veen's constant E to this corpus's c_sigma, for the whole b=1 Whitehead-chain family. Derives c_sigma = 2^{1/2-n}(n^2+m^2)^{-1/4} (n = c+d, m = 4a-c+d) from his Lemmas 1-4, correcting three slips in the published proof, and verifies it against Q_N computed directly from Lemma 1 on 20 chains. RETRACTS this probe's earlier orthant-probability closed form, which was downstream of an unchecked premise. Implies |tau_DG| = 2^{2n-2} sqrt(n^2+m^2), confirmed to 18 digits at L5a1, L6a4 and - pre-registered - L8n5, L10n100, L10n103. Makes the constant k = 2^{-1/2} derived rather than calibrated on the link side. Moduli only; the phase of E is not checked. Nothing fitted.",
+  "auditOnly": "docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md",
   "data": {
     "source": {
       "paper": "van der Veen, Proof of the volume conjecture for Whitehead chains, Algebr. Geom. Topol. 8 (2008) 603-624",
       "arxiv": "math/0611181",
       "local": "uploads/0611181v2.pdf",
-      "what_he_proves": "the volume conjecture for the family, with D = 3 pi for b = 1 — the N-power, independent of the number of components",
-      "what_he_leaves": "E, given as a (c+d+1)-dim Gaussian integral and self-reduced in Step 6 to one dimension; he shows only that it is nonzero",
-      "his_deferral": "cites Gukov-Murakami for the conjecture that E is determined by the Ray-Singer torsion, and defers it to a subsequent publication",
-      "sequel_status": "a literature search finds no such sequel — his later work moves to spin networks and then to algorithmic knot invariants; and no other author has published this constant for a multi-cusped link in this setting (colored Jones in S^3 at e^{2 pi i/N})"
+      "what_he_proves": "the volume conjecture for the family, D = 3 pi for b = 1",
+      "what_he_leaves": "E, as a (c+d+1)-dim Gaussian integral; he shows only that it is nonzero, which is all his theorem needs",
+      "sequel_status": "no sequel exists; his later work moves to spin networks, and no other author has published this constant for a multi-cusped link in this setting"
     },
-    "closed_forms": {
-      "L5a1 (Whitehead)": {
-        "W_parameters": "a=0, b=1, c=1, d=0",
-        "cusps": 2,
-        "n_eq_c_plus_d": 1,
-        "A": "(1.0 - 1.0j)",
-        "integral_numeric": "(0.3359741489681530919776 + 0.05792312441439105494502j)",
-        "integral_closed_form": "(0.3359741489681530919776 + 0.05792312441439105494502j)",
-        "closed_form_matches_quadrature_to": "9.126e-72",
-        "Q_inf": "(-0.27805102455376203703 - 0.39389727338254414692j)",
-        "abs_Q_inf": "0.48214876774041381024",
-        "c_sigma_measured": "0.59460355750136053336",
-        "abs_Q_inf_over_c_sigma": "0.81087434082381955585"
+    "retraction": {
+      "what_was_claimed": "Step 6 reduces E to a Gaussian-against-erfc^n integral, an (n+1)-dim orthant probability, with elementary closed forms arctan(sqrt A)/(pi sqrt(A/2)) at n=1 and an arcsin form at n=2",
+      "why_it_was_wrong": "the erfc factors come from folding the Step-4 Gaussian onto an orthant, which is an artifact of Lemma 2a being stated in the DISTANCES |n'|,|k'| rather than the signed offsets its own Taylor expansion supplies",
+      "why_the_old_checks_missed_it": "both the 1e-25 quadrature check and the independent Step-5 cross-check were downstream of that integrand; they tested the reduction, never the premise. Nothing was compared against J_N itself, which is the only check that could have caught it",
+      "superseded_values": {
+        "abs_Q_inf_n1": "0.48214876774041381",
+        "abs_Q_inf_n2": "0.21634689593878546"
       },
-      "L6a4 (Borromean)": {
-        "W_parameters": "a=0, b=1, c=1, d=1",
-        "cusps": 3,
-        "n_eq_c_plus_d": 2,
-        "A": "(2.0 + 0.0j)",
-        "integral_numeric": "(0.2163468959387854596583 + 0.0j)",
-        "integral_closed_form": "0.2163468959387854596583",
-        "closed_form_matches_quadrature_to": "2.264e-72",
-        "Q_inf": "(0.21634689593878545966 + 0.0j)",
-        "abs_Q_inf": "0.21634689593878545966",
-        "c_sigma_measured": "0.25087248112923038055",
-        "abs_Q_inf_over_c_sigma": "0.86237794980526393019"
+      "corrected_values": {
+        "abs_Q_inf_n1": "0.8408964152537145430311255",
+        "abs_Q_inf_n2": "0.5"
       }
     },
-    "why_it_closes": "each erfc is a half-space indicator integrated out, so the n-fold product against a Gaussian is an (n+1)-dimensional Gaussian ORTHANT probability. Elementary closed forms exist exactly for n <= 2 (bivariate/trivariate orthant); n >= 3 requires Plackett reduction and has none in general. The Whitehead link (n=1) and Borromean rings (n=2) are both inside that window — a Whitehead chain with more clasps would not be.",
-    "step5_step6_crosscheck": {
-      "abs_Q_from_step5_2d": "0.48214876774041381024",
-      "abs_Q_from_step6_closed": "0.48214876774041381024",
-      "agreement": "9.056e-72",
-      "validates": "the Step5 -> Step6 reduction AND the prefactor C = 2 psi 2^(-n/2), which is derived from van der Veen's text here rather than stated by him"
+    "corrections_to_published_proof": {
+      "lemma_2a_absolute_values": {
+        "printed": "exp(-(pi/N)(n'^2 + 2 n' k' + 2 k'^2)), n',k' distances",
+        "correct": "the same form in the SIGNED offsets n - floor(N/2), k - floor(N/4)",
+        "signed_form_wins_on_every_sample": true,
+        "consequence": "the Step-4 integral is over R^(n+1), so it is elementary for every n, not only n <= 2"
+      },
+      "step3_coefficient_A": {
+        "printed": "A = (c+d) - (4a+c-d) i",
+        "correct": "A = (c+d) - (4a-c+d) i, matching chi^(4a-c+d) in Lemma 1",
+        "chains_that_discriminate": [
+          "W_{1,1,1,0}",
+          "W_{1,1,2,1}",
+          "W_{1,1,0,2}",
+          "W_{2,1,2,0}",
+          "W_{1,1,3,0}",
+          "W_{2,1,0,3}"
+        ]
+      },
+      "main_theorem_b_ge_2_sign": {
+        "printed": "E = 2 pi (c+d) log 2 + (4a+3c-3d)/4 * 2 pi^2 i",
+        "correct_real_part": "-2 pi (c+d) log 2, as his Lemma 5 gives",
+        "verified": true,
+        "cases": {
+          "W_{0,2,1,0}": {
+            "limit_matches_2_pow_minus_c_plus_d": true
+          },
+          "W_{0,2,1,1}": {
+            "limit_matches_2_pow_minus_c_plus_d": true
+          },
+          "W_{0,3,2,0}": {
+            "limit_matches_2_pow_minus_c_plus_d": true
+          }
+        }
+      },
+      "lemma_3_is_correct_as_printed": true
     },
-    "bridge_to_c_sigma_NOT_done": {
-      "missing": "the constant in van der Veen's Lemma 3 for the maximal term S~_N, and the normalisation between J and the reduced J' this corpus measures",
-      "ratio_at_c2_whitehead": "0.81087434082381955585",
-      "ratio_at_c3_borromean": "0.86237794980526393019",
-      "ratio_is_c_dependent": true,
-      "why_c_dependent_is_expected": "S~_N enters the bridge raised to the (c+d) power, so the missing factor cannot be a single constant and cannot be inferred from one link"
+    "closed_form": {
+      "notation": "n := c+d,  m := 4a-c+d,  A := n - m i",
+      "Q_inf": "psi * 2^{-n/2} * sqrt(2/A)",
+      "c_sigma": "2^{1/2-n} * (n^2 + m^2)^{-1/4}",
+      "tau_dg_implied": "2^{2n-2} * sqrt(n^2 + m^2)",
+      "Re_E": "2 pi [ (1/2 - n) log 2 - (1/4) log(n^2 + m^2) ]",
+      "scope": "moduli only; the phase of E is not checked here",
+      "chains": {
+        "W_{0,1,1,0}": {
+          "n_eq_c_plus_d": 1,
+          "m_eq_4a_minus_c_plus_d": -1,
+          "abs_Q_inf_closed_form": "0.8408964152537145430311255",
+          "c_sigma_closed_form": "0.59460355750136053335875",
+          "tau_dg_predicted": "1.414213562373095048801689",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,0,1}": {
+          "n_eq_c_plus_d": 1,
+          "m_eq_4a_minus_c_plus_d": 1,
+          "abs_Q_inf_closed_form": "0.8408964152537145430311255",
+          "c_sigma_closed_form": "0.59460355750136053335875",
+          "tau_dg_predicted": "1.414213562373095048801689",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 0,
+          "abs_Q_inf_closed_form": "0.5",
+          "c_sigma_closed_form": "0.25",
+          "tau_dg_predicted": "8.0",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,2,0}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": -2,
+          "abs_Q_inf_closed_form": "0.4204482076268572715155627",
+          "c_sigma_closed_form": "0.2102241038134286357577814",
+          "tau_dg_predicted": "11.31370849898476039041351",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,0,2}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 2,
+          "abs_Q_inf_closed_form": "0.4204482076268572715155627",
+          "c_sigma_closed_form": "0.2102241038134286357577814",
+          "tau_dg_predicted": "11.31370849898476039041351",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,2,1}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": -1,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.09940884109588133314673346",
+          "tau_dg_predicted": "50.5964425626940693119823",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,1,2}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 1,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.09940884109588133314673346",
+          "tau_dg_predicted": "50.5964425626940693119823",
+          "discriminates_A_sign": false
+        },
+        "W_{1,1,1,0}": {
+          "n_eq_c_plus_d": 1,
+          "m_eq_4a_minus_c_plus_d": 3,
+          "abs_Q_inf_closed_form": "0.562341325190349080394951",
+          "c_sigma_closed_form": "0.3976353643835253325869338",
+          "tau_dg_predicted": "3.162277660168379331998894",
+          "discriminates_A_sign": true
+        },
+        "W_{1,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 4,
+          "abs_Q_inf_closed_form": "0.3343701524882110120016165",
+          "c_sigma_closed_form": "0.1671850762441055060008083",
+          "tau_dg_predicted": "17.88854381999831757127339",
+          "discriminates_A_sign": false
+        },
+        "W_{1,1,2,1}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 3,
+          "abs_Q_inf_closed_form": "0.2427458858536617101418603",
+          "c_sigma_closed_form": "0.08582363099612990649292822",
+          "tau_dg_predicted": "67.88225099390856234248106",
+          "discriminates_A_sign": true
+        },
+        "W_{0,1,3,0}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": -3,
+          "abs_Q_inf_closed_form": "0.2427458858536617101418603",
+          "c_sigma_closed_form": "0.08582363099612990649292822",
+          "tau_dg_predicted": "67.88225099390856234248106",
+          "discriminates_A_sign": false
+        },
+        "W_{0,1,2,2}": {
+          "n_eq_c_plus_d": 4,
+          "m_eq_4a_minus_c_plus_d": 0,
+          "abs_Q_inf_closed_form": "0.1767766952966368811002111",
+          "c_sigma_closed_form": "0.04419417382415922027505277",
+          "tau_dg_predicted": "256.0",
+          "discriminates_A_sign": false
+        },
+        "W_{2,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 8,
+          "abs_Q_inf_closed_form": "0.2462395302527261632522124",
+          "c_sigma_closed_form": "0.1231197651263630816261062",
+          "tau_dg_predicted": "32.98484500494128439857128",
+          "discriminates_A_sign": false
+        },
+        "W_{1,1,0,2}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 6,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.1405853312975872700987378",
+          "tau_dg_predicted": "25.29822128134703465599115",
+          "discriminates_A_sign": true
+        },
+        "W_{0,1,4,0}": {
+          "n_eq_c_plus_d": 4,
+          "m_eq_4a_minus_c_plus_d": -4,
+          "abs_Q_inf_closed_form": "0.1486508893753401333396875",
+          "c_sigma_closed_form": "0.03716272234383503333492187",
+          "tau_dg_predicted": "362.0386719675123324932323",
+          "discriminates_A_sign": false
+        },
+        "W_{2,1,2,0}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 6,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.1405853312975872700987378",
+          "tau_dg_predicted": "25.29822128134703465599115",
+          "discriminates_A_sign": true
+        },
+        "W_{1,1,3,0}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 1,
+          "abs_Q_inf_closed_form": "0.2811706625951745401974755",
+          "c_sigma_closed_form": "0.09940884109588133314673346",
+          "tau_dg_predicted": "50.5964425626940693119823",
+          "discriminates_A_sign": true
+        },
+        "W_{0,1,3,1}": {
+          "n_eq_c_plus_d": 4,
+          "m_eq_4a_minus_c_plus_d": -2,
+          "abs_Q_inf_closed_form": "0.1671850762441055060008083",
+          "c_sigma_closed_form": "0.04179626906102637650020207",
+          "tau_dg_predicted": "286.2167011199730811403742",
+          "discriminates_A_sign": false
+        },
+        "W_{3,1,1,1}": {
+          "n_eq_c_plus_d": 2,
+          "m_eq_4a_minus_c_plus_d": 12,
+          "abs_Q_inf_closed_form": "0.2027307249193849309631583",
+          "c_sigma_closed_form": "0.1013653624596924654815791",
+          "tau_dg_predicted": "48.66210024238575751199747",
+          "discriminates_A_sign": false
+        },
+        "W_{2,1,0,3}": {
+          "n_eq_c_plus_d": 3,
+          "m_eq_4a_minus_c_plus_d": 11,
+          "abs_Q_inf_closed_form": "0.1480758268005812296703671",
+          "c_sigma_closed_form": "0.05235271063024785057724581",
+          "tau_dg_predicted": "182.4280680158620766617678",
+          "discriminates_A_sign": true
+        }
+      },
+      "chains_tested": 20,
+      "mismatches": 0,
+      "worst_relative_error_below": "1e-5",
+      "verification_method": "Q_N from Lemma 1 in log space, Richardson-extrapolated from N = 1600, 3200; float64 is adequate because every term is normalised by S~_N, and only the verdict reaches this witness"
+    },
+    "bridge_to_c_sigma": {
+      "L5a1": {
+        "chain": "W_{0,1,1,0}",
+        "cusps": 2,
+        "c_sigma_derived": "0.59460355750136053335875",
+        "c_sigma_measured_in_corpus": "0.5946035575013605333606037",
+        "c_sigma_rel_diff": "3.11756e-21",
+        "tau_dg_predicted": "1.414213562373095048801689",
+        "tau_dg_computed_in_corpus": "1.414213562373095048801689",
+        "tau_dg_rel_diff": "1.85269e-61"
+      },
+      "L6a4": {
+        "chain": "W_{0,1,1,1}",
+        "cusps": 3,
+        "c_sigma_derived": "0.25",
+        "c_sigma_measured_in_corpus": "0.2508724811292303805497315",
+        "c_sigma_rel_diff": "0.00347779",
+        "tau_dg_predicted": "8.0",
+        "tau_dg_computed_in_corpus": "8.0",
+        "tau_dg_rel_diff": "0.0"
+      }
+    },
+    "tau_dg_preregistered_predictions": {
+      "L8n5": {
+        "chain": "W_{0,1,2,0}",
+        "cusps": 3,
+        "tau_dg_predicted": "11.31370849898476039041351",
+        "tau_dg_computed": "11.31370849898476039041351",
+        "rel_diff": "1.81114e-71"
+      },
+      "L10n100": {
+        "chain": "W_{0,1,2,1}",
+        "cusps": 4,
+        "tau_dg_predicted": "50.5964425626940693119823",
+        "tau_dg_computed": "50.5964425626940693119823",
+        "rel_diff": "2.7167e-71"
+      },
+      "L10n103": {
+        "chain": "W_{0,1,3,0}",
+        "cusps": 4,
+        "tau_dg_predicted": "67.88225099390856234248106",
+        "tau_dg_computed": "67.88225099390856234248106",
+        "rel_diff": "1.81114e-71"
+      }
     },
     "upstream_witness_hashes": [
       {

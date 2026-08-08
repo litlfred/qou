@@ -676,7 +676,9 @@ export default chapter({
             // Provenance of the 1-loop prefactor law c_sigma = k |tau|^p: the
             // FORM is DGLZ eq (2.3) for a general M, the exponent -1/2 is
             // normalisation-invariant and was already measured by the k_c
-            // checks, and the constant k is convention and stays calibrated.
+            // checks, and the constant k -- which cannot be lifted out of
+            // DGLZ's conventions -- is instead DERIVED on the link side from
+            // van der Veen's colored-Jones asymptotic (bean qou-vdvS).
             "one-loop-prefactor-provenance",
             // A_ω=3 closed-sector conditional adoption (bean qou-ujmw): the
             // resurgent-Stokes = DT/BPS bridge (GGM Conj 3(d) + GPPV) and the

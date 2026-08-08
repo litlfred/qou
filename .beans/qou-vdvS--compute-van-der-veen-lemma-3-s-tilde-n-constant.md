@@ -1,7 +1,7 @@
 ---
 # qou-vdvS
 title: 'Bridge step 1: compute the constant in van der Veen Lemma 3 for the maximal term S~_N'
-status: todo
+status: completed
 type: task
 priority: high
 tags:
@@ -12,7 +12,7 @@ tags:
     - whitehead-link
     - borromean-rings
 created_at: 2026-08-08T14:07:16Z
-updated_at: 2026-08-08T14:07:16Z
+updated_at: 2026-08-08T18:40:00Z
 ---
 
 ## The ask
@@ -65,3 +65,42 @@ The constant part of `S~_N` extracted from Lemma 3, in closed form, with a
 numerical cross-check against the committed colored-Jones data at BOTH links.
 
 Audit: `docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`
+
+## Resolution — done, and it went further than the ask
+
+Lemma 3 as printed is **correct**: `S~_N ~ exp((4N/pi)Lambda(pi/4) - (1/2)log 2N)`,
+i.e. `S~_N ~ e^{4N Lambda/pi} / sqrt(2N)`.  Verified numerically rather than
+trusted, because the `s_n` line inside its own proof drops a factor `2pi` — the
+two extreme terms of `log S~_N = -2 s_{N/4+N/2} + 2 s_{N/4} + s_{N/2}` cancel
+that factor, so the lemma survives its own proof's typo.  (The mangled text
+extraction the ask warned about was real; `pypdf` on `uploads/0611181v2.pdf`
+page 5 reads it cleanly.)
+
+Its constant `2^{-1/2}` per unit of `c+d` is exactly what cancels the
+cusp-dependence in the N-power and yields `D = 3 pi` independent of `c, d`.
+
+**The bridge is closed, for the whole b=1 family rather than two links.**  With
+`n := c+d` and `m := 4a-c+d`,
+
+    c_sigma(W_{a,1,c,d}) = 2^{1/2-n} (n^2 + m^2)^{-1/4}
+
+**The trap this bean recorded in advance was real, and it was not where it was
+expected.**  The ask warned that `|Q_inf|/c_sigma` was c-dependent (0.8109 at
+c=2, 0.8624 at c=3) and that fitting on one link would be wrong.  Both true —
+but the c-dependence was not a missing normalisation.  It was an ERROR in the
+committed `|Q_inf|` values, which were themselves wrong.  Van der Veen's
+Lemma 2a is stated in the DISTANCES `|n'|, |k'|` where its own Taylor expansion
+is signed, and folding the Step-4 Gaussian onto an orthant is an artifact of
+that.  With signs restored the ratio is exactly `2^{n/2}`, with no missing
+factor at all.
+
+Three slips found in the published proof, none affecting his theorem: Lemma 2a's
+absolute values; the Step-3 coefficient `A` carrying `4a+c-d` where Lemma 1 gives
+`4a-c+d`; and the main theorem's `b >= 2` constant carrying the wrong sign
+against its own Lemma 5.
+
+Probe: `computations/probes/one_loop_vdv_constant_closed_form_probe.py` (rewritten;
+its previous closed form is retracted in place).
+Audit: `docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`.
+Lean: `QOU.OneLoopPrefactorInvariance.vdv_c_sigma_iff_tau`.
+Follow-ups: `qou-vdvT` (general peripheral curves), `qou-vdvP` (the phase of E).

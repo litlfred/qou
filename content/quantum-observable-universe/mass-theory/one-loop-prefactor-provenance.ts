@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:one-loop-prefactor-provenance",
   title:
-    "The 1-loop prefactor law splits: the exponent $-1/2$ is normalisation-invariant and measured, the constant $k$ is convention and stays calibrated",
+    "The 1-loop prefactor law splits: the exponent $-1/2$ is normalisation-invariant and measured, and on the link side the constant $k$ is derived from van der Veen rather than calibrated",
   chapter: "mass-theory",
   lean: {
     ref: "qou:QOU.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
