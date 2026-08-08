@@ -182,7 +182,7 @@ export const references: CSLData[] = [
     page: "853-952",
     DOI: "10.2140/gt.2015.19.853",
     URL: "https://doi.org/10.2140/gt.2015.19.853",
-    note: "Geom. Topol. 19 (2015), no. 2, 853-952 (RIMS-1785). The second coefficient of the Kashaev-invariant asymptotic expansion of a two-bridge knot is a constant multiple of the square root of the twisted Reidemeister torsion at the holonomy representation (first coefficient = complex volume). The half of the 1-loop=torsion input for 6_2 combined by Garoufalidis–Yoon. Vol/pages verified via WebSearch (2026-08-02); DOI follows the msp.org gt.YEAR.VOL.PAGE pattern, PDF not read in-sandbox.",
+    note: "Geom. Topol. 19 (2015), no. 2, 853-952 (RIMS-1785). FULL TEXT READ 2026-08-08, upgrading the previous abstract-level note and SETTLING the exponent convention. Their eq (2) is <K>_N = e^{N zeta} N^{3/2} omega(K) (1 + sum kappa_i (2 pi i/N)^i + O(N^{-d-1})), and Theorem 1.1 states omega^2(D) = +- T(K)/(2 sqrt(-1)) with T the twisted Reidemeister torsion — so omega is a constant times sqrt(T), i.e. the +1/2 power, and the constant is PINNED as 1/(2 sqrt(-1)). This agrees with DGLZ (which also carries +1/2 in the torsion) and dissolves the apparent tau^{+1/2} vs |tau|^{-1/2} discrepancy against this corpus: the corpus simply works in the reciprocal variable. Class: two-bridge KNOTS only — nothing multi-cusped, so it does NOT reach the Whitehead link or the Borromean rings. Scope caveat from the paper itself: the identity omega^2 = +- T/(2 sqrt-1) is unconditional, but identifying omega with the actual second coefficient assumes the technical hypotheses of Poisson summation and the saddle-point method, and the asymptotics are rigorous only for hyperbolic knots up to 7 crossings. The half of the 1-loop=torsion input for 6_2 combined by Garoufalidis–Yoon.",
   }),
 
   // ── Dimofte–Garoufalidis 2013 — the 1-loop invariant from the gluing equations ──
@@ -201,6 +201,70 @@ export const references: CSLData[] = [
     DOI: "10.2140/gt.2013.17.1253",
     URL: "https://doi.org/10.2140/gt.2013.17.1253",
     note: "Geom. Topol. 17 (2013), no. 3, 1253-1315; arXiv:1202.6268. Defines the DG formal power series from an ideal triangulation whose constant (1-loop) term is a topological invariant conjectured to equal the nonabelian Reidemeister–Ray–Singer (adjoint) torsion. Source of the 1-loop invariant that Garoufalidis–Yoon prove = adjoint torsion for two-bridge knots. Authors/vol/pages/DOI verified via Project Euclid + WebSearch (2026-08-02).",
+  }),
+
+  // ── Pandey–Wong 2021 — the asymptotic expansion for fundamental shadow links ──
+  ref({
+    id: "pandey-wong-2021",
+    type: "article",
+    title:
+      "On the asymptotic expansion for the relative Reshetikhin-Turaev invariants of fundamental shadow link pairs",
+    author: [
+      { family: "Pandey", given: "Tushar" },
+      { family: "Wong", given: "Ka Ho" },
+    ],
+    issued: { "date-parts": [[2021]] },
+    URL: "https://arxiv.org/abs/2105.08805",
+    note: "The companion to pandey-wong-2023 and the closest existing multi-cusped result: proves the Asymptotic Expansion Conjecture for pairs (M,L) whose complement is a fundamental shadow link complement, for sufficiently small logarithmic holonomies and cone angles < pi, with the 1-loop term the adjoint twisted Reidemeister torsion. IMPORTANT SCOPE: this is the RELATIVE Reshetikhin-Turaev invariant in the Chen-Yang setting at e^{2 pi i/(N+1/2)}, a different invariant at a different root of unity from the colored Jones of a link in S^3 at e^{2 pi i/N} that vanderveen2008 and this corpus work with. It therefore does NOT close van der Veen's E. Registered from search 2026-08-08; abstract-level only, arxiv.org unreachable in-sandbox.",
+  }),
+
+  // ── Wong 2019 — Whitehead-chain asymptotics, growth rate only ──────
+  ref({
+    id: "wong-2019",
+    type: "article",
+    title: "Asymptotics of some quantum invariants of the Whitehead chains",
+    author: [{ family: "Wong", given: "Ka Ho" }],
+    issued: { "date-parts": [[2019]] },
+    URL: "https://arxiv.org/abs/1912.10638",
+    note: "Directly on van der Veen's family, and a NEAR MISS for the constant: it proves only the exponential GROWTH RATE (the volume of a possibly-incomplete structure) at t = e^{2 pi i/(N+1/2)}, and yields the volume conjecture for Turaev-Viro invariants of all Whitehead chain complements. Full text read in-sandbox (local copy 1912.10638v2.pdf): no occurrence of '1-loop', 'subleading' or 'constant term', and the only torsion mentions are a single bibliography entry. Recorded so the near miss is not re-searched.",
+  }),
+
+  // ── DGLZ 2009 — the one-loop term IS the Ray-Singer torsion (physics side) ──
+  ref({
+    id: "dimofte-gukov-lenells-zagier-2009",
+    type: "article-journal",
+    title:
+      "Exact results for perturbative Chern-Simons theory with complex gauge group",
+    author: [
+      { family: "Dimofte", given: "Tudor" },
+      { family: "Gukov", given: "Sergei" },
+      { family: "Lenells", given: "Jonatan" },
+      { family: "Zagier", given: "Don" },
+    ],
+    "container-title": "Communications in Number Theory and Physics",
+    issued: { "date-parts": [[2009]] },
+    volume: "3",
+    page: "363-443",
+    URL: "https://arxiv.org/abs/0903.2472",
+    note: "arXiv:0903.2472; local copy uploads/0903.2472v1.pdf. THE source of the 1-loop prefactor form this corpus uses: eq (2.1) expands Z^(rho) with an explicit hbar-power -(1/2)delta log hbar, delta = h1 - h0 (2.2), and eq (2.3) identifies the one-loop coefficient with the Ray-Singer torsion, S_1 = (1/2) log(T(M;E_rho)/2), for a GENERAL 3-manifold M with a flat G_C bundle — unrestricted by knot/link or cusp number. A physics derivation (one-loop saddle point / Feynman diagrams, citing Witten 1989, Bar-Natan-Witten 1991, Gukov-Murakami), NOT a theorem. Its multiplicative constant is convention: a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log(pi) shift against Gukov-Murakami (fn 24), with the S_n integration constants fixed 'by comparison to the asymptotics of the colored Jones polynomial'. Body read in-sandbox 2026-08-08 via pdfminer; journal volume/pages carried over from the pre-existing references.bib entry and NOT independently verified.",
+  }),
+
+  // ── Gukov–Murakami 2008 — conjectures the sub-leading constant is the torsion ──
+  ref({
+    id: "gukov-murakami-2008",
+    type: "article-journal",
+    title:
+      "SL(2,C) Chern-Simons theory and the asymptotic behavior of the colored Jones polynomial",
+    author: [
+      { family: "Gukov", given: "Sergei" },
+      { family: "Murakami", given: "Hitoshi" },
+    ],
+    "container-title": "Letters in Mathematical Physics",
+    issued: { "date-parts": [[2008]] },
+    volume: "86",
+    page: "79-98",
+    URL: "https://arxiv.org/abs/math/0608324",
+    note: "arXiv:math/0608324. Cited as [2] by vanderveen2008, which attributes to it the conjecture that the constant E in the colored-Jones asymptotic 'is determined by the Ray-Singer torsion of the complement twisted by the holonomy representation' — i.e. exactly this corpus's c_sigma <-> torsion question, stated as an open problem. DGLZ footnote 24 records that their S_1 matches this paper's up to a shift by log(pi). NOT read in-sandbox: title/authors/arXiv id taken from the vanderveen2008 and DGLZ bibliographies, journal volume/pages unverified.",
   }),
 
   // ── Milnor 1954 — link groups; μ̄-invariants defined mod gcd of pairwise linkings ──

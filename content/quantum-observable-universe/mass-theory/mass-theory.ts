@@ -673,6 +673,11 @@ export default chapter({
             "rem-c3-s-imq-decay-projection",
             "rem-qstar-decay-sector-q0",
             "rem-ohtsuki-tower-bar-parity",
+            // Provenance of the 1-loop prefactor law c_sigma = k |tau|^p: the
+            // FORM is DGLZ eq (2.3) for a general M, the exponent -1/2 is
+            // normalisation-invariant and was already measured by the k_c
+            // checks, and the constant k is convention and stays calibrated.
+            "one-loop-prefactor-provenance",
             // A_ω=3 closed-sector conditional adoption (bean qou-ujmw): the
             // resurgent-Stokes = DT/BPS bridge (GGM Conj 3(d) + GPPV) and the
             // conditional theorem deriving A_ω(4₁)=3 as a BPS/DT count.
