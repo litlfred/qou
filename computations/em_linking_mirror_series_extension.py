@@ -52,6 +52,12 @@ ROOT = HERE.parent
 ISO = ROOT / "qou-mass/src/qou_mass/data/isotopes"
 SCOPING = HERE / "em-linking-invariant-scoping.witness.json"
 
+# Raise precision before the constant below, not only in main(): it is built
+# at import time, and at mpmath's default 15 dps this 30-digit literal would
+# be frozen at 53 bits — half its digits discarded. Idempotent, so the call in
+# main() is unaffected.
+set_compute_dps()
+
 # Derived per-pair Coulomb unit tanh(ln q0)*B_pp, fixed at the A=3 H_6
 # value by the corpus (mirror-pair-coulomb-sign-correction.witness.json).
 PER_PAIR_UNIT = mpf("0.237670225314853041078773435698")
