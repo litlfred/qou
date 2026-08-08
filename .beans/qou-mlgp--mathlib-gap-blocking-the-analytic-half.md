@@ -218,3 +218,56 @@ offset case has to be built.
 
 This is materially cheaper than formalising general Laplace, which is what the
 bean originally implied was needed. Nothing is built yet.
+
+
+## (B) SOLVED ON PAPER — exact identity, Mathlib has every piece
+
+The offset was NOT the open bit. `jacobiTheta₂_functional_equation` is stated
+for ALL `z`, so the characteristic case is already there:
+
+    jacobiTheta₂_functional_equation (z tau : C) :
+      theta2 z tau = 1/(-I*tau)^(1/2) * exp(-pi*I*z^2/tau) * theta2 (z/tau) (-1/tau)
+
+Instantiate at `tau = i a/pi` and `z = -i a c/pi`. Then `tau.im = a/pi > 0`,
+`z/tau = -c`, `-1/tau = i pi/a`, `(-I tau)^(1/2) = (a/pi)^(1/2)`, and — the part
+worth checking by hand — the exponential prefactor is `exp(a c^2)`, which
+EXACTLY cancels the `exp(-a c^2)` produced by completing the square. Nothing is
+left over. Result:
+
+    sum_{k in Z} exp(-a (k-c)^2)  =  sqrt(pi/a) * theta2(-c, i pi/a)      EXACT
+
+i.e. Poisson summation for the Gaussian, obtained from the theta functional
+equation rather than from Poisson directly.
+
+**Verified numerically to 1e-16** at (a,c) = (1,0), (1,0.3), (0.3,0.5),
+(0.1,0.25), (0.02,0.8333), (0.005,0.8333) — including `c = 5/6`, the actual
+figure-eight saddle offset.
+
+**And the tail is exponentially small, not merely o(1).** `Im(i pi/a) = pi/a`,
+so every `n != 0` term of `theta2(-c, i pi/a)` carries `exp(-pi^2 n^2/a)`:
+
+    sum_k exp(-a(k-c)^2) = sqrt(pi/a) * (1 + O(exp(-pi^2/a)))
+
+Numerically `sqrt(pi/a)` alone is already correct to 1e-16 at `a = 0.1`. At the
+figure-eight saddle `a = pi sqrt3/N`, so the correction is
+`O(exp(-pi N/sqrt3))` — utterly negligible, and far stronger than the `o(1)`
+the Laplace step actually needs.
+
+## What building (B) requires — concrete
+
+  1. `Mathlib.NumberTheory.ModularForms.JacobiTheta.TwoVariable`:
+     `jacobiTheta₂`, `jacobiTheta₂_functional_equation`,
+     `hasSum_jacobiTheta₂_term`. `.../JacobiTheta/Bounds.olean` also exists and
+     should supply the `n != 0` tail bound.
+  2. Match the real sum `sum_k exp(-a(k-c)^2)` against
+     `hasSum_jacobiTheta₂_term` — a real-to-complex tsum identification.
+  3. Instantiate the functional equation and discharge the algebra above. The
+     one fiddly part is the complex power `(-I*tau)^(1/2)` (`cpow`), which must
+     be shown equal to `(a/pi)^(1/2)` on the positive imaginary axis.
+  4. Bound the `n != 0` tail by `exp(-pi^2/a)` and conclude.
+
+None of this is Laplace's method in general — it is one instantiation of an
+existing Mathlib theorem plus bookkeeping. The bean's original framing ("no
+Mathlib basis at all") was wrong for (B); it was right only for (A).
+
+Not built. Step 3's `cpow` is the likely time sink.
