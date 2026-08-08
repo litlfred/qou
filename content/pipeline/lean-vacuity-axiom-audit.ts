@@ -1522,6 +1522,24 @@ function main() {
       const cats = explicit ? (i++, next.split(",")) : DEFAULT_FAIL;
       failOn = new Set(cats.map((s) => s.trim()).filter(Boolean));
     }
+    // An unrecognised FLAG is a mistake, not a scan root. Falling through to
+    // `roots.push()` made `--help` a path that matches no `.lean`, and the
+    // witness below then wrote 0 findings over the committed audit — turning a
+    // typo into "the corpus is clean". Same for `--jsonn`, `-h`, etc.
+    else if (a.startsWith("-")) {
+      console.error(`lean-vacuity-axiom-audit: unknown option '${a}'\n`);
+      console.error(
+        "usage: bun run content/pipeline/lean-vacuity-axiom-audit.ts [root ...]\n" +
+          "  --json FILE          witness output (default docs/audits/2026-06-17-lean-vacuity-axiom-audit.json)\n" +
+          "  --write-sidecars     upsert <block>.qa.json script entries\n" +
+          "  --only CATEGORY      restrict to one category\n" +
+          "  --review-ledger F    seed/refresh the agent-verdict ledger\n" +
+          "  --check-ledger F     fail unless every candidate has a fresh verdict\n" +
+          "  --fail-on A,B        exit non-zero on these categories\n" +
+          "  --quiet\n",
+      );
+      process.exit(2);
+    }
     else roots.push(a);
   }
   const scanRoots = roots.length ? roots : DEFAULT_ROOTS;
@@ -1596,6 +1614,23 @@ function main() {
     conjecture_graph: graph,
     flagged,
   };
+  // Safety net for the same failure the unknown-option check above prevents at
+  // the source: a run that scanned NOTHING must not overwrite a real audit.
+  // The witness is a committed file, and zeros in it read as "the corpus is
+  // clean" — the most misleading possible artifact. Observed: a stray `--help`
+  // replaced a 1961-file / 44-defect / 105-flagged-file audit with all zeros.
+  // A genuinely empty scan is always a mistake (a bad root, a typo); there is
+  // no legitimate run of this script over zero `.lean` files.
+  if (files.length === 0) {
+    console.error(
+      `lean-vacuity-axiom-audit: scanned 0 .lean files under ${scanRoots.join(", ")} — refusing to write ${jsonOut}.`,
+    );
+    console.error(
+      "  Writing would replace the committed audit with zeros, which reads as a clean corpus.",
+    );
+    console.error("  Check the scan root(s); pass a directory that contains .lean files.");
+    process.exit(2);
+  }
   writeFileSync(resolve(REPO_ROOT, jsonOut), JSON.stringify(witness, null, 2) + "\n");
 
   if (writeSc) {
