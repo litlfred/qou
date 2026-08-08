@@ -3,18 +3,28 @@ import QOU.QBeta.FiveTwoRogersReflection
 import QOU.Archimedean.ComplexDilogBridge
 import QOU.MathlibExt.ComplexDilogarithmLanden
 import QOU.MathlibExt.ComplexDilogarithmBoundary
+import QOU.MathlibExt.ComplexDilogarithmOnCut
 
 /-!
-# `extend` **is** `Re` of the analytic Rogers `L` — the `x < 0` regime
+# `extend` **is** `Re` of the analytic Rogers `L` — **`qou-rstq` item 4, closed**
 
-Bean `qou-rstq` item 4. Route 33 measured the identification at `1e-50` in all
-three regimes and named what Lean was missing *per regime*. This file closes the
-`x < 0` one, which is the Landen regime, using
-`QOU.MathlibExt.landenCombo_ofReal_eq_zero`.
+    extend_eq_re_cRogersL (hx0 : x ≠ 0) (hx1 : x ≠ 1) :
+      extend (π²/6) rogersL x = Re (cLiTwoExt x + log x · log(1−x) / 2)
 
-## The statement
+for **every** real `x ≠ 0, 1` — all three regimes, hence all six arguments
+`extended_sum` uses, none of which is `0` or `1`.
 
-    extend (π²/6) rogersL x = Re (cLiTwoExt x + log x · log(1−x) / 2)   for x < 0
+Route 33 measured this identification at `1e-50` and named what Lean was missing
+per regime. All of it is now proved. The three regimes needed three different
+things:
+
+| regime | what it needed |
+|---|---|
+| `0 < x < 1` | nothing — the series converges, `cLiTwo_ofReal` bridges |
+| `x < 0` | Landen's identity, `landenCombo_ofReal_eq_zero` |
+| `x > 1` | the inversion identity **on the cut**, `re_inversion_identity` — which needed integrability of `cLiTwoExt`'s integrand at `x > 1`, and the branch-point value `cLiTwoExt 1 = π²/6` |
+
+## The statement, per regime
 
 The left side is the corpus's **piecewise** extension, built on the real `LiTwo`
 (a `tsum`, hence the junk value `0` outside its disc of convergence). The right
@@ -48,18 +58,26 @@ same `−t`-on-log's-cut phenomenon that produced corrections 5 and 6 in the
 transport lane. Here it is harmless, and *because* the partner factor is real —
 not because the cut was avoided.
 
-## Scope
+## Scope — what this closes, and what it does NOT
 
-This closes one of the two open regimes. The **inversion** regime (`x > 1`)
-is untouched and remains the sharper: `x > 1` lies *on* `cLiTwoExt`'s cut, so it
-needs a genuine boundary value rather than a constant of integration. Exactly one
-of the six arguments `extended_sum` uses lives there — `w₁ = 2.24698` — and it
-cannot be avoided.
+**Closed:** `qou-rstq` item 4. `extended_sum` is stated for the piecewise
+`extend`; the level-7 bridge computes with the analytic `Re L`. This is the
+identification that lets them talk to each other, and it now covers every
+argument either of them uses.
 
-With this file, the identification is proved for **five of those six
-arguments**: the three negative ones here, and the two in `[0,1]` where
-`extend` is the identity and `cLiTwo_ofReal` already bridges. Item 4 is **not**
-closed; it is reduced to a single argument in a single regime.
+**NOT closed, and unchanged by this file:**
+
+* the **5₂ sum rule** itself — item 4 was one input to the level-7 bridge, not
+  the sum rule;
+* **Gap A**, the globally differentiable root labelling (`qou-glbl`), still the
+  one open hypothesis in the transport;
+* **assembling** `S(π)` and wiring `corr_sum_eq_neg_pi_sq` to `extended_sum`
+  (`qou-asem`) — that composition is now unblocked but is not written.
+
+An earlier draft of this file said the inversion regime "needs a genuine
+boundary value rather than a constant of integration". **That was wrong** —
+Route 35 showed `Re L` is continuous across the cut, so there was no limit to
+take. The correction is recorded in `qou-invr` rather than quietly deleted.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -158,5 +176,99 @@ theorem extend_eq_re_cRogersL_of_neg {x : ℝ} (hx : x < 0) :
   -- `log(1−x)²` and `log(−x)·log(1−x)`, so `linear_combination` closes it
   rw [extend_of_neg _ _ hx, ← hu, rogersL, hlogu, hlog1u, re_cRogersL_of_neg hx]
   linear_combination -hre
+
+/-! ## The INVERSION regime, `x > 1` — the sixth and last argument -/
+
+/-- `Re` of the analytic Rogers `L` at real `x > 1`. `log x` is real, so it
+factors out of the real part; `log(1−x)` contributes only its own real part,
+which `Real.log` being even renders as `log(x−1)`. -/
+theorem re_cRogersL_of_one_lt {x : ℝ} (hx : 1 < x) :
+    (cRogersL ((x : ℝ) : ℂ)).re
+      = (cLiTwoExt ((x : ℝ) : ℂ)).re + Real.log x * Real.log (1 - x) / 2 := by
+  have hx0 : (0 : ℝ) < x := lt_trans zero_lt_one hx
+  have hlogx : Complex.log ((x : ℝ) : ℂ) = ((Real.log x : ℝ) : ℂ) :=
+    (Complex.ofReal_log hx0.le).symm
+  have hcast : (1 : ℂ) - ((x : ℝ) : ℂ) = (((1 - x : ℝ)) : ℂ) := by push_cast; ring
+  have hhalf : ∀ w : ℂ, w / 2 = ((((1 : ℝ) / 2) : ℝ) : ℂ) * w := by
+    intro w; push_cast; ring
+  rw [cRogersL, Complex.add_re, hlogx, hcast, hhalf, Complex.re_ofReal_mul,
+    Complex.re_ofReal_mul, re_log_ofReal]
+  ring
+
+/-- **`extend` IS `Re` of the analytic Rogers `L` on `x > 1`.**
+
+The last of the three regimes. `re_inversion_identity` is the only analytic
+input; the rest is the same log bookkeeping as the `x < 0` case. -/
+theorem extend_eq_re_cRogersL_of_one_lt {x : ℝ} (hx : 1 < x) :
+    extend (Real.pi ^ 2 / 6) rogersL x = (cRogersL ((x : ℝ) : ℂ)).re := by
+  have hx0 : (0 : ℝ) < x := lt_trans zero_lt_one hx
+  have hxne : x ≠ 0 := ne_of_gt hx0
+  have hinv0 : (0 : ℝ) < 1 / x := by positivity
+  have hinv1 : 1 / x < 1 := by rw [div_lt_one hx0]; exact hx
+  have hx1 : (0 : ℝ) < x - 1 := by linarith
+  -- the inversion identity, with `Re cLiTwoExt(1/x)` recognised as `LiTwo (1/x)`
+  have hid := QOU.MathlibExt.re_inversion_identity (le_of_lt hx)
+  rw [← liTwo_eq_re_cLiTwoExt hinv0 hinv1] at hid
+  -- log bookkeeping
+  have hloginv : Real.log (1 / x) = -Real.log x := by
+    rw [one_div, Real.log_inv]
+  have hlog1inv : Real.log (1 - 1 / x) = Real.log (x - 1) - Real.log x := by
+    have h : (1 : ℝ) - 1 / x = (x - 1) / x := by field_simp
+    rw [h, Real.log_div (ne_of_gt hx1) hxne]
+  have hlog1x : Real.log (1 - x) = Real.log (x - 1) := by
+    rw [← Real.log_neg_eq_log]; congr 1; ring
+  -- assemble
+  rw [extend_of_one_lt _ _ hx, rogersL, hloginv, hlog1inv,
+    re_cRogersL_of_one_lt hx, hlog1x]
+  linear_combination -hid
+
+/-! ## The identity regime `0 < x < 1`, and all three combined -/
+
+/-- On `(0,1)` both logarithms are real, so `Re` passes straight through. -/
+theorem re_cRogersL_of_mem {x : ℝ} (h0 : 0 < x) (h1 : x < 1) :
+    (cRogersL ((x : ℝ) : ℂ)).re
+      = (cLiTwoExt ((x : ℝ) : ℂ)).re + Real.log x * Real.log (1 - x) / 2 := by
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have hlogx : Complex.log ((x : ℝ) : ℂ) = ((Real.log x : ℝ) : ℂ) :=
+    (Complex.ofReal_log h0.le).symm
+  have hcast : (1 : ℂ) - ((x : ℝ) : ℂ) = (((1 - x : ℝ)) : ℂ) := by push_cast; ring
+  have hlog1x : Complex.log ((((1 - x : ℝ)) : ℂ)) = ((Real.log (1 - x) : ℝ) : ℂ) :=
+    (Complex.ofReal_log h1x.le).symm
+  rw [cRogersL, Complex.add_re, hlogx, hcast, hlog1x]
+  norm_cast
+
+/-- **`extend` IS `Re` of the analytic Rogers `L` on `(0,1)`** — where `extend`
+is the identity and the series converges, so nothing analytic is needed. -/
+theorem extend_eq_re_cRogersL_of_mem {x : ℝ} (h0 : 0 < x) (h1 : x < 1) :
+    extend (Real.pi ^ 2 / 6) rogersL x = (cRogersL ((x : ℝ) : ℂ)).re := by
+  rw [extend_of_mem _ _ h0.le h1.le, rogersL, re_cRogersL_of_mem h0 h1,
+    liTwo_eq_re_cLiTwoExt h0 h1]
+
+/-- **`qou-rstq` item 4, all three regimes at once.**
+
+    extend (π²/6) rogersL x = Re (cLiTwoExt x + log x · log(1−x) / 2)
+
+for every real `x ≠ 0, 1`. The corpus's **piecewise** extension and `Re` of the
+**analytic** Rogers `L` are the same function.
+
+`extended_sum` is stated for the left side; the level-7 bridge computes with the
+right. This is the identification that lets them talk to each other, and it
+covers **all six arguments** `extended_sum` uses — none of which is `0` or `1`.
+
+The three regimes needed three different things:
+* `x < 0` — Landen's identity (`landenCombo_ofReal_eq_zero`);
+* `0 < x < 1` — nothing, the series converges;
+* `x > 1` — the inversion identity **on the cut** (`re_inversion_identity`),
+  which in turn needed integrability of `cLiTwoExt`'s integrand at `x > 1` and
+  the branch-point value `cLiTwoExt 1 = π²/6`. -/
+theorem extend_eq_re_cRogersL {x : ℝ} (hx0 : x ≠ 0) (hx1 : x ≠ 1) :
+    extend (Real.pi ^ 2 / 6) rogersL x = (cRogersL ((x : ℝ) : ℂ)).re := by
+  rcases lt_trichotomy x 0 with h | h | h
+  · exact extend_eq_re_cRogersL_of_neg h
+  · exact absurd h hx0
+  · rcases lt_trichotomy x 1 with h1 | h1 | h1
+    · exact extend_eq_re_cRogersL_of_mem h h1
+    · exact absurd h1 hx1
+    · exact extend_eq_re_cRogersL_of_one_lt h1
 
 end QOU.QBeta.FiveTwoExtendIdentification

@@ -530,3 +530,38 @@ were the other three. Recorded in the module docstring rather than passed over,
 since the first three were all missed on the way past.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+
+---
+
+## 2026-08-08 — ITEM 4 IS CLOSED
+
+    extend_eq_re_cRogersL (hx0 : x ≠ 0) (hx1 : x ≠ 1) :
+      extend (π²/6) rogersL x = Re (cLiTwoExt x + log x · log(1−x) / 2)
+
+`QOU/QBeta/FiveTwoExtendIdentification.lean`, sorry-free, `lake`-verified,
+axioms `[propext, Classical.choice, Quot.sound]`. All three regimes; all six
+arguments `extended_sum` uses, none of which is `0` or `1`.
+
+The per-argument table that replaced the per-regime one is now uniformly done:
+
+| arguments | regime | status |
+|---|---|---|
+| two in `[0,1]` | identity | done |
+| three negative | Landen | done |
+| `w₁ = 2.24698` | inversion | **done** |
+
+Supporting work landed in `QOU/MathlibExt/ComplexDilogarithmOnCut.lean`
+(integrability on the cut, continuity on the cut, the on-cut derivative,
+`cLiTwoExt 1 = π²/6`, the inversion identity) and
+`QOU/MathlibExt/ComplexDilogarithmLanden.lean` (Landen's identity, constant
+included). See `qou-invr` for the route and for the three predictions this lane
+made about it that were wrong.
+
+**⚠ What item 4 was and was not.** It was one input to the level-7 bridge — the
+link letting `extended_sum` (about the piecewise `extend`) talk to the bridge
+(which computes with the analytic `Re L`). Closing it does **not** close the sum
+rule, does not touch Gap A (`qou-glbl`), and does not perform the assembly
+(`qou-asem`) it unblocks.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

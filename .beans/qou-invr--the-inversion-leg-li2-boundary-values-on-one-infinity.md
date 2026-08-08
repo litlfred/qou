@@ -1,7 +1,7 @@
 ---
 # qou-invr
-title: 'THE sharpest open item: the inversion leg for w₁ = 2.24698 — NOT a boundary-value problem (A2 settled it)'
-status: todo
+title: 'CLOSED: the inversion leg for w₁ = 2.24698 — extend ≡ Re L is proved in all three regimes'
+status: done
 type: task
 priority: high
 tags:
@@ -13,7 +13,48 @@ created_at: 2026-08-08T17:30:00Z
 updated_at: 2026-08-08T20:10:00Z
 ---
 
-## What is open, stated as narrowly as it now can be
+## ✅ CLOSED 2026-08-08 — and so is `qou-rstq` item 4
+
+    extend_eq_re_cRogersL (hx0 : x ≠ 0) (hx1 : x ≠ 1) :
+      extend (π²/6) rogersL x = Re (cLiTwoExt x + log x · log(1−x) / 2)
+
+All three regimes, hence **all six arguments** `extended_sum` uses. Sorry-free,
+`lake`-verified, axioms `[propext, Classical.choice, Quot.sound]`, non-vacuity
+checked at one argument from each regime including `w₁ = 2.24698`.
+
+The chain that closed the inversion regime, in the order it had to be built:
+
+1. **`intervalIntegrable_clog_one_sub_div_ofReal`** — the integrand is
+   integrable at `x > 1`. Without it `cLiTwoExt x` there is the junk value `0`.
+2. **`continuousAt_liTwoKernel_ofReal`** — the kernel is continuous on the cut
+   along the real ray. `slitPlane` was sufficient, not necessary.
+3. **`hasDerivAt_cLiTwoExt_ofReal`** — `d/dx cLiTwoExt(x) = −log(1−x)/x`
+   **on the cut**, by taking the ray direction to be `1` once the endpoint cap
+   was removed.
+4. **`cLiTwoExt_one = π²/6`** — the branch point, reachable because `cLiTwoExt`
+   along the reals is a *primitive* and primitives of integrable functions are
+   continuous. Both existing boundary lemmas exclude `1` exactly.
+5. **`re_inversion_identity`** — `Re Li₂(x) + Li₂(1/x) + ½log²x = π²/3`.
+6. **`extend_eq_re_cRogersL_of_one_lt`** — log bookkeeping onto `extend`.
+
+### Three predictions this bean made that were wrong
+
+Recorded because the pattern matters more than the result:
+
+* **"needs a genuine boundary value"** — false. Route 35: `Re L` is continuous
+  across the cut, nothing to take a limit of.
+* **"`notCut` is used only for integrability"** — false. Three uses; two were
+  *sufficient conditions* that survive on the real ray.
+* **"the s-derivative vs x-derivative conversion is circular"** — false. An
+  artefact of the `t ≤ 1` cap, which came from integrability being known only
+  on `[0,1]`.
+
+Each was stated as a blocker and each dissolved on contact. **"Recorded
+blocker" should be read as "not yet priced", not "hard"** — and separately, an
+elaboration timeout (63 s, twice) turned out to be a stray `rw [one_div]`, not
+mathematics.
+
+## The original framing (superseded, kept for the record)
 
 `qou-rstq` item 4 asks that the corpus's **piecewise** `extend` be identified
 with `Re` of the **analytic** Rogers `L`. As of 2026-08-08 that is proved for
