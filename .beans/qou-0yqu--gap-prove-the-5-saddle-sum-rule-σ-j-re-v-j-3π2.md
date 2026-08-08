@@ -4,7 +4,7 @@ title: 'GAP: prove the 5₂ saddle sum rule Σ_j Re V_j = -3π²/2'
 status: in-progress
 type: task
 created_at: 2026-08-03T14:28:26Z
-updated_at: 2026-08-07T15:12:04Z
+updated_at: 2026-08-08T13:10:00Z
 ---
 
 
@@ -779,5 +779,89 @@ The likely repair: `Σⱼ Vⱼ` is **symmetric** in the roots, and symmetric fun
 stay analytic across a branch point even though the branches do not. Rewriting
 the transport symmetrically, or deforming the path off `|x| = 1` around `x₀`,
 should recover it. **Neither is written, and neither is assumed.**
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the integral, examined: residues ruled out, and a caution on the disc −23 lead
+
+Route 24, 6 gates, exit 0, 120 dps. Nothing evaluated; the difficulty is located
+and one route is closed off.
+
+### What the integral is
+
+    I := −∫₀¹ log P(z)/z dz,   P(z) = 1 − 2z + 3z² − z³ = ∏ⱼ(1 − yⱼz)
+
+    I = 0.97173068146864825912777416993855050011200599…
+
+`P` is the reciprocal of the 5₂ cubic, an integer cubic, positive on `[0,1]`
+(min `0.6180…`, at `z = 1`).
+
+### Evaluating it IS the sum rule — derived here, not assumed
+
+This bean states the equivalence; Route 24 G2 derives it independently and
+checks it to 120 dps:
+
+    3·Σⱼ Li₂(yⱼ) + Σⱼ Re log²(−yⱼ) = −3π²/2
+
+which is `Σⱼ Re Vⱼ = −3π²/2` at `x = 1`, since `Vⱼ = 3Li₂(yⱼ) + log(−yⱼ)²` there.
+So "evaluate the integral" is not a separable subproblem — it is the whole thing.
+
+### The closed form is MINIMAL
+
+PSLQ at 120 dps, with `L = log y₃` and `θ = arg y₁`:
+
+    6·I = 3π² − 3L² + 4θ² − 8πθ
+
+and **no sub-basis of `{π², L², θ²}` supports any relation at all** — all four
+terms are needed. The `πL` and `θL` coefficients come out zero, so this is
+exactly the `−π²/6 − ½L² + (2/3)(θ−π)²` recorded above.
+
+### ⚠ Residues do not touch it — demonstrated, not argued
+
+This bean warns that expanding `log P = Σ log(1−yⱼz)` is circular. The residue
+route is **the same circle traversed the other way**, and G3 runs it to the end:
+
+1. IBP: `I = ∫₀¹ log z · P′(z)/P(z) dz` — rational apart from `log z`.
+2. `P′/P` is a **logarithmic derivative with simple roots**, so **every residue
+   is exactly 1**. Residues carry only where the roots are; no arithmetic.
+3. The transcendence is in `log z`, which is not meromorphic. Its branch cut
+   contributes `∫₀¹ log z/(z−r) dz = Li₂(1/r)` at each pole.
+4. Summing returns `Σⱼ Li₂(yⱼ) = I`. Circular, to 1e-51.
+
+Worth recording as closed: contour methods relocate this difficulty, they do not
+remove it.
+
+### ⚠ CAUTION: the disc −23 literature lead may point at the wrong invariant
+
+This bean says disc −23 is "*the* classical worked example in the
+dilogarithm-ladder / Zagier-conjecture literature … a lookup in a well-trodden
+one". That machinery computes `ζ_F(2)` via the **Bloch–Wigner** function `D` —
+the *imaginary-part* invariant. Two measurements (G5):
+
+* **`Σⱼ D(yⱼ) = 0` automatically here**, because `P` is real: `D(y₃) = 0` and
+  `D(ȳ₁) = −D(y₁)`. It carries no information about this problem.
+* **`D(y₁) = 0.9427…` is PSLQ-independent** of the whole `{π², L², θ², πθ, θL}`
+  basis, while `I` lies *inside* it — and `D` enters the relation for `I` with
+  coefficient **0**.
+
+So `D` and `I` are different invariants, and the `ζ_F(2)` route governs the one
+this problem does not need. Not a refutation of the literature lead, but it
+means "look it up" is under-specified: what would have to be found is a
+real-part ladder, not a zeta value.
+
+### Where the attack should go instead
+
+`∏ⱼ yⱼ = 1` **and** `∏ⱼ(1 − yⱼ) = 1`, so `y` and `1−y` are units. A complex
+cubic field has unit rank `r₁ + r₂ − 1 = 1`, so `⋀²(O_F^× ⊗ ℚ)` is **zero** and
+the wedge obstruction `y ∧ (1−y)` vanishes **identically** — the structural
+reason a weight-2 ladder should exist here at all.
+
+That points at explicit **five-term functional equations**, and this branch
+already has `rogersL_fiveTerm` as a sorry-free Lean theorem. The level-7 ladder
+was found exactly that way. Note the level-7 cubic lives in a *different* field
+(disc 49, totally real), so the proved ladder cannot supply this one — but the
+method transfers.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
