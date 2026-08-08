@@ -2395,3 +2395,64 @@ incomplete sample — a stronger statement than the original, and the figure any
 without) is skewed by `canonical_isotope_witness.py`, a genuine per-Z shard
 producer emitting 120 witnesses; excluding it gives 158 with 78 lacking a q₀
 field, matching the per-producer figure.
+
+## P52 — `ANCHOR_MIGRATION_INFERRED`, and two defects only measurement found
+
+The verdict P50 asked for: where a witness carries no q₀ field to flip, infer a
+migration from the producer resolving to `proton` plus every moved field sitting
+inside the 1e-5 collateral bound. Reached only on the `not flips` branch — the
+exact point the old rule returned `VALUES` unconditionally. **Not auto-kept**:
+the driver's `KEEP` is exact set membership, so INFERRED lands in `drop` and is
+surfaced for review, which needed no driver edit and is pinned by a self-test.
+
+32 self-tests (was 15), all originals kept verbatim. The negatives matter more
+than the positives: a convention-sized 1.8e-4 move → `VALUES`; a witness that
+*does* carry a q₀ field → strict path → `VALUES`.
+
+### The impact number is unmeasurable, and was not estimated
+
+The wave reverted its 59 `VALUES` witnesses per file before they ever reached
+the object store, and the log holds only totals. Those pairs exist nowhere
+readable. What could be measured, all read-only from git:
+
+- **Regression on the wave's own 42 pairs** (`13ff8207^` → `13ff8207`): 37
+  DECLARED / 5 ANCHOR_MIGRATION under both old and new rules. Zero drift.
+- **All 1287 commits, 222 real witness pairs**: VALUES 140 → 138, INFERRED 2
+  (1.4%). Everything else unchanged. Of the 138 declining: 55 carry a q₀ field,
+  34 moved a non-numeric field, 24 moved nothing numerically, 19 name no
+  producer, 6 exceed the bound — and those 6 are 0.0019–2.8 relative, ≥190× the
+  bound. **Nothing sits near the threshold**, which is the property that makes
+  the bound safe rather than lucky.
+
+History is dominated by hand-authored physics changes rather than producer
+re-runs, so 1.4% bounds false-positive risk, not the wave conversion rate.
+
+### Two defects the measurement caught
+
+1. **float64 de-padding read as an anchor migration.** Commit `0de68792`
+   ("strip float64 padding… no value moved") rewrites
+   `2.029883212819307392038581383530981838703155517578125` as
+   `2.0298832128193074` — different text, *identical* float. 24 of its 58 files
+   classified INFERRED. A fourth gate (largest relative move strictly > 0) fixes
+   it. Fitting that the padding drain this whole document is about turns out to
+   be the thing most easily mistaken for a migration.
+2. **The verdict would never have fired.** `witness_regen_wave` builds a
+   PYTHONPATH for producer *subprocesses*, but calls `classify` in its own
+   process, which has only `computations/` on `sys.path`. The resolver returned
+   `None` for every producer and collapsed silently back to `VALUES` —
+   indistinguishable from the verdict correctly declining. Shipped as-is it
+   would have looked like a well-behaved gate that simply never applied.
+   `_resolve_anchor` now falls back to the in-repo substrate path.
+
+### Two things left open
+
+- **Gate 2 filters nothing today.** Of 163 declaring producers, 13 resolve to
+  muon and all 13 carry a q₀ field, so gate 1 already stops them. Kept — the
+  manifest is editable and it is the condition the verdict claims — but the
+  numeric gates do all the discriminating, and that is documented in-code
+  rather than left to be rediscovered.
+- **A one-producer disagreement on the stem-only baseline.** The agent measured
+  55/60 where P50 and an independent re-measurement both give **56/59**; a third
+  measurement here, pinned at `13ff8207`, also gives 56/59. Immaterial — both
+  cite the fuller 78 of 159 — but the baseline should not be quoted again until
+  someone names the producer.
