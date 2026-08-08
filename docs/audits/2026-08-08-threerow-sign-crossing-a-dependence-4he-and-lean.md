@@ -81,12 +81,17 @@ So the probe sweeps a **diagnostic ray** `q ∈ (1, 4]`.
 
 | isotope | crossings on `(1,q₀]` (physical) | crossings on `(q₀,4]` (diagnostic) |
 |---|---|---|
-| D (n=6) | **1.05365** | none |
+| D (n=6) | **1.05365** | 3.41010 |
 | T (n=9) | none | **1.46170** |
 | ³He (n=9) | none | **1.42852**, 3.21633 |
 
 **Verdict: A-DEPENDENT, not special.** The n=9 crossing is real and sits just
 above the anchor.
+
+Every isotope has further sign changes far out on the ray (D at 3.4101, ³He also
+at 3.2163). Those are recorded for completeness and carry no reading whatsoever —
+`F_K` grows super-exponentially out there. The load-bearing comparison is the
+**first** crossing and which side of `q₀` it falls on.
 
 ### 1.3 The n=9 mechanism is *not* the clean n=6 two-block overtake
 
