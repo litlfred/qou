@@ -1,4 +1,4 @@
-The Skein relation assigns positive crossings a weight of $q$ and negative crossings a weight of $q^{-1}$:
+The Skein relation assigns positive crossings a weight of $q$ and negative crossings a weight of $-q^{-1}$:
 
 $$
   q  L_+ -  q^{-1} L_-
