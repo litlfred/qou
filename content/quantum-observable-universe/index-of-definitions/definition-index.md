@@ -98,7 +98,7 @@
 | [def:exceptional-divisor](#def:exceptional-divisor) | Exceptional divisor at $p$ | Ch 2 | `qou:QOU.ExceptionalDivisor` |
 | [def:fermion-boson-decomposition](#def:fermion-boson-decomposition) | Fermion--Boson decomposition | Ch 2 | `qou:QOU.Fermion` |
 | [def:hadron-fibre-embedding](#def:hadron-fibre-embedding) | Fibre-compatible hadron embedding | Ch 8 | `qou:QOU.HadronFibreEmbedding` |
-| [def:lp-duality-hypothesis-class](#def:lp-duality-hypothesis-class) | Finite LP strong-duality + complementary-slackness hypothesis class (§3b-cond) | Ch 10 | `qou:QOU.BraidKnot.HasFiniteLPDuality` |
+| [def:lp-duality-hypothesis-class](#def:lp-duality-hypothesis-class) | Finite LP strong-duality + complementary-slackness hypothesis class | Ch 10 | `qou:QOU.BraidKnot.HasFiniteLPDuality` |
 | [def:flavor-dressing-functor](#def:flavor-dressing-functor) | Flavor dressing functor | Ch 10 | `qou:QOU.FlavorDressing.FlavorDressingFunctor` |
 | [def:frobenius-pairing](#def:frobenius-pairing) | Frobenius pairing | Ch 1 | `qou:QOU.FrobeniusHopfData.frobeniusForm` |
 | [def:gravitational-constant](#def:gravitational-constant) | Gravitational constant from information geometry | Ch 18 | `qou:QOU.Information.gravitationalConstant` |
@@ -778,7 +778,7 @@
 | [conj:rho-k-pair-gen-canonical-form](#conj:rho-k-pair-gen-canonical-form) | Conjectural canonical form of the pair-gen piece $\rho_K^{\text{pair-gen}}$ in the graded $\rho_K$ expansion: there exists a closed-form Wedderburn-coupled functional form $f_2(q, \hat V_i, \hat V_j)$ such that $\rho_K^{\text{pair-gen}} = \sum_{i<j} f_2(q, \hat V_i^{\text{full}}, \hat V_j^{\text{full}})$ recovering the six-term theorem's Kashaev limit at sub-percent accuracy. | Ch 7 | `qou:QOU.BraidKnot.RhoKPairGenCanonicalForm.pair_gen_kashaev_limit` |
 | [conj:double-magic-delta-i-bound](#conj:double-magic-delta-i-bound) | Conjecture: Empirical double-magic isotopes satisfy $|\Delta i| \leq 1$ across Bring shell indices | Ch 13 | `qou:QOU.Interactions.DoubleMagicDeltaI.DeltaIBoundConjecture` |
 | [conj:e-hartree-categorical-derivation](#conj:e-hartree-categorical-derivation) | Conjectured categorical derivation of $E_h = m_e c_q^2 \alpha_{EM}^2$ via $J^1$-vanishing in the molecular LP dual | Ch 12 | `qou:QOU.Archimedean.EHartreeCategoricalDerivation` |
-| [conj:cpt-d6-d7-d8-closure](#conj:cpt-d6-d7-d8-closure) | CPT closure: D6 + D7 + D8 jointly imply $C \cdot P \cdot T$ preserves the Markov trace | Ch 8 | `qou:QOU.ParticleInteractions.CPTD6D7D8Closure` |
+| [conj:cpt-d6-d7-d8-closure](#conj:cpt-d6-d7-d8-closure) | CPT closure: charge conjugation, parity and time reversal jointly preserve the Markov trace | Ch 8 | `qou:QOU.ParticleInteractions.CPTClosure` |
 | [conj:cpt-orbit-closure-density](#conj:cpt-orbit-closure-density) | CPT-saturation as Type-B fold-orbit closure: deriving $\rho_F \in \{m_e, 2m_e\}$ from crystal structure | Ch 8 | `qou:QOU.ParticleInteractions.cpt_orbit_closure_density` |
 | [conj:crossing-graded-mass-expansion](#conj:crossing-graded-mass-expansion) | Crossing-graded expansion of the categorical mass endomorphism | Ch 10 | `qou:QOU.ParticleInteractions.CrossingGradedMassExpansion` |
 | [conj:dim-master-pentagon](#conj:dim-master-pentagon) | Ding–Iohara–Miki master Pentagon as unified ancestor of Macdonald + $q$-dilog Pentagons | Ch 10 | `qou:QOU.BraidsAndKnots.DIMMasterPentagon` |

@@ -63,6 +63,5 @@ witness = result.to_dict()   # primal + dual + active_set + gap
 
 ### Notes
 
-*Cross-reference: AGENTS.md §"LP / SDP duals — first-class
-infra". Active baseline of missing-dual witnesses: run the
-validator for the current count — do not cite a dated baseline.*
+*The number of witnesses still missing a dual changes as the corpus grows; run
+the validator for the current figure rather than quoting a dated one.*

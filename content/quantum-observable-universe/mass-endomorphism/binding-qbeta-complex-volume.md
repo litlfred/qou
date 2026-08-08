@@ -1,4 +1,4 @@
-**Conjecture (complex-volume unification of mass-binding and decay).** [§3b class: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
+**Conjecture (complex-volume unification of mass-binding and decay).** [Lean classes: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
 *Binding and the $\beta$-decay $Q$-value are not two stories. They form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
@@ -23,8 +23,7 @@ Categorically — **no braid words**. For a confined knot $K$:
   forms the mass endomorphism of the object $X_K$ representing $K$ in
   the rigid monoidal category $\mathbf{C}$.
 - $\mathrm{tr}_M : \mathrm{End}_{\mathbf{C}}(X_K) \to k$ provides the
-  categorical Markov trace (the closed/categorical trace; AGENTS.md
-  §7a — the fibre functor $\tau$ is a *different* object, never
+  categorical Markov trace (the closed/categorical trace; the fibre functor $\tau$ is a *different* object, never
   $\mathrm{tr}_M$).
 - $\Pi_{\text{free}} \in \mathrm{End}_{\mathbf{C}}(X_K)$ provides the
   idempotent projector ($\Pi_{\text{free}}^2 = \Pi_{\text{free}}$)
@@ -187,7 +186,7 @@ independent open problems.
 
 **Proof economy.** A relation proved for $\mathfrak{V}$ over a commutative
 ring $R$ with the **bar-involution** $\sigma$ (the structural setting —
-*not* $\mathbb{C}$, per AGENTS.md §7c) descends to **both** the bar-even
+*not* $\mathbb{C}$) descends to **both** the bar-even
 (binding) and bar-odd ($\mathfrak{Q}_\beta$) parts from a single proof,
 because the projections $x \mapsto x\pm\sigma x$ act additively. Formalised
 sorry-free in [`QOU.MassEndomorphism`](binding-qbeta-complex-volume.lean):
@@ -234,7 +233,7 @@ companion remarks
 [`rem:channel-rotation-askey-lit`](#rem:channel-rotation-askey-lit) and
 [`rem:complex-volume-character-variety-path`](#rem:complex-volume-character-variety-path).
 
-**Archimedean specialisation (§7c).** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
+**Archimedean specialisation.** The measured binding and $Q_\beta$ form the real and imaginary parts $\mathrm{Re}, \mathrm{Im}$ of the complex Bring-surface volume, valued in $\mathbb{R}$ (with $E_0 : \mathbb{R}$). This provides the archimedean readout of the generic complex-volume construction, acknowledged here.
 
 Two further pieces of the operator picture are proved sorry-free at the free
 endpoint. First, the concrete $AW(3)$ realization: splitting the channel

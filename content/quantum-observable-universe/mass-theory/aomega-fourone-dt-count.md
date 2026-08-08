@@ -31,7 +31,7 @@ $$
 The value $3$ enters only from the certified Stokes computation; the bridge
 class asserts no value of $A_\omega$. So the theorem *derives* that the
 figure-eight observable $A_\omega$ **is** the BPS degeneracy of $T[4_1]$ and
-equals $3$ — it does not assume it (the §3b-cond non-degeneracy requirement).
+equals $3$ — it does not assume it (the non-degeneracy requirement of the bridge class).
 
 ### Scope
 

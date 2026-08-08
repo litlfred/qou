@@ -24,8 +24,8 @@ $N$ chosen by the target precision.*
 2. Compute u = b · ℏ_q² where ℏ_q is the q-quantum constant.
 3. For k = 2, …, N:
    c_2 = -1                  (Taylor-exact, PROVED).
-   c_k for k ≥ 3 are q_0-dependent NEAR-MATCHES (see AGENTS.md
-     "\mathfrak{Q}_\beta c_k is a TRUNCATION ORDER, not a wire/un-wire gate").
+   c_k for k ≥ 3 are q_0-dependent NEAR-MATCHES; N is a truncation
+     order, not a wire/un-wire gate.
    Multiply Q_base by (1 + c_k · u^k).
 4. Return \mathfrak{Q}_\beta.
 ```

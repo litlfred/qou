@@ -23,9 +23,8 @@ and report each $c_k$ with its **tiered classification**.*
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not an inclusion/exclusion
-gate", **never** report tiers as binary wired / dropped — always
-tiered.*
+*The $c_k$ are a truncation order, not an inclusion/exclusion gate: a tier is
+reported as a tier, never as binary wired / dropped.*
 
 ### Algorithm
 

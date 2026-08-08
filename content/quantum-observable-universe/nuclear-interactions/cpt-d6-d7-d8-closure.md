@@ -7,4 +7,4 @@
 
 *The composite $C \cdot P \cdot T$ preserves the Markov trace $\mathrm{tr}_M \colon H_n(q) \to R$. That is, $\mathrm{tr}_M((C \cdot P \cdot T)\beta) = \mathrm{tr}_M(\beta)$ for every closed-braid representative $\beta$.*
 
-The joint statement is that they compose to the CPT theorem at the Markov-trace level. The three components are not logically independent—they collectively constitute the conjecture. The conjecture is class-axiomatised. Downstream blocks that require CPT closure as an explicit hypothesis take `[CPTD6D7D8Closure]` as a class hypothesis.
+The joint statement is that they compose to the CPT theorem at the Markov-trace level. The three components are not logically independent—they collectively constitute the conjecture. The conjecture is class-axiomatised. Downstream blocks that require CPT closure as an explicit hypothesis take `[CPTClosure]` as a class hypothesis.

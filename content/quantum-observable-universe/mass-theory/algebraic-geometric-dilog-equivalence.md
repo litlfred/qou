@@ -173,7 +173,7 @@ $[1, \infty)$) are discharged from Mathlib, not carried. The
 **definition-to-contour identity** — that the real-integral `phiB`
 equals the Faddeev contour integral — remains a numerical pin
 ($8 \times 10^{-29}$ against the validated contour evaluator) and is
-assumed nowhere in the Lean; its honest §3b carrier is
+assumed nowhere in the Lean; its honest carrier is
 `QOU.MathlibExt.PhiBFibreExtension` (the constructed `phiB` extends to a
 full Faddeev $\Phi_b$; no instance).
 

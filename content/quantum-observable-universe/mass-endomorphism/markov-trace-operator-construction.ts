@@ -4,7 +4,7 @@ export default remark({
   label: "rem:markov-trace-operator-construction",
   interprets: "rem:markov-trace-inductive-limit",
   title:
-    "Markov-trace operator construction (forward-reference to WIP-scaffolding audit)",
+    "Markov-trace operator construction",
   uses: [
     "rem:markov-trace-inductive-limit",
     "rem:hecke-algebra-type-scaffold",

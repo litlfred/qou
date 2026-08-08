@@ -12,10 +12,10 @@ Markov trace.
 
 Axiomatised as a Lean class per AGENTS.md §3b-cond.  Downstream
 blocks that need CPT-closure as a hypothesis take this class as
-`[CPTD6D7D8Closure]`.
+`[CPTClosure]`.
 -/
 
-namespace QOU.ParticleInteractions.CPTD6D7D8Closure
+namespace QOU.ParticleInteractions.CPTClosure
 
 /-- The CPT-closure compound conjecture, as a class.
 
@@ -24,7 +24,7 @@ namespace QOU.ParticleInteractions.CPTD6D7D8Closure
     trace.  The three components (D6 / D7 / D8) live in their
     respective component files; here we just record the
     composite. -/
-class CPTD6D7D8Closure where
+class CPTClosure where
   /-- The closed-braid representative space (carrier of the Markov
       trace), abstracted to a generic type to avoid committing to a
       specific braid encoding here. -/
@@ -45,11 +45,11 @@ class CPTD6D7D8Closure where
     `conj:cpt-d6-d7-d8-closure` from the .ts manifest — the joint
     CPT-invariance of the Markov trace, derived directly from the
     class field. -/
-def cpt_closure [inst : CPTD6D7D8Closure] :
+def cpt_closure [inst : CPTClosure] :
     ∀ b : inst.ClosedBraid, inst.markovTrace (inst.cptComposite b) = inst.markovTrace b :=
   -- Ref: [manuscript] prop:cpt-orbit-closure-density (substrate-side density)
   -- Ref: [manuscript] def:bar-involution (categorical CPT building block)
   -- Ref: [wigner1937], [jones1987], [kassel1995]
   inst.cpt_trace_preserved
 
-end QOU.ParticleInteractions.CPTD6D7D8Closure
+end QOU.ParticleInteractions.CPTClosure

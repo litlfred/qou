@@ -13,7 +13,7 @@ This proposition scaffolds that derivation as a single Lean class
 + theorem, then specialises to the three concrete pole orders used
 downstream.
 
-## Lean structure (§3b-cond)
+## Lean structure
 
 - `class BringResidueAtOrder {R} [Field R] (n : ℕ) (q : R)` — the
   contour-integral / Schwarz-integral axiomatisation.  Its sole field

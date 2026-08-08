@@ -1,8 +1,7 @@
 # Partial formal proof of confinement-NF-structure-forcing
 
 **Proposition (partial proof, conditional on
-[`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)
-per AGENTS.md §3b-cond).**
+[`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)).**
 *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 
@@ -119,4 +118,4 @@ $$\mathrm{shift}_{\mathrm{NF}}(\beta_{\mathrm{atomic}}(Z, N)) = 18Z + 21N + 1,$$
 
 matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$ exactly.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

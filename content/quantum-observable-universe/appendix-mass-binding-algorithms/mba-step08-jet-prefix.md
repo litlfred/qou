@@ -8,8 +8,7 @@ at $q = q_0$ via the GS filtration of Step 7.*
 - *Markov-trace polynomial $P_K(q) = \mathrm{tr}_M(\mathrm{NF}(K))$
   (output of Step 3, evaluated symbolically).*
 - *Target jet order $N \in \mathbb{N}$ (chosen by precision goal —
-  default $N = \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$
-  per AGENTS.md "$\mathfrak{Q}_\beta$ c_k truncation order").*
+  default $N = \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$).*
 
 ### Output
 

@@ -52,7 +52,7 @@ closure):
 | $\bar\mu$ sign-rep obstruction (coupling through $\lvert\bar\mu\rvert$ only) | proved-Lean |
 | Milnor-indeterminacy gate (Hopf spectator $\Rightarrow$ inactive; $\alpha$-only activation) | proved-Lean (+ literature `milnor1954`) |
 | W-plane annihilation on $\mathrm{Vol}=0$ bond channels | proved-Lean |
-| CAL-3 bond-channel class selection | conditional (§3b-cond, on the `BindingVolumeLedger` class) |
+| CAL-3 bond-channel class selection | conditional (on the `BindingVolumeLedger` class) |
 | $\alpha\cdot\alpha$ activation applied to specific isotopes ($^8\mathrm{Be}\approx 0$, $k\ge 3$) | conditional on the Brunnian arrangement model |
 | $b = 0.78\ \mathrm{MeV/nucleon}$ | **empirical** (calibrated on 3 one-bond composites) |
 | $\binom{k}{2}$ saturation counting | **data-selected** |

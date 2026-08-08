@@ -39,7 +39,7 @@ The $\Delta i \leq 1$ rule forms the LR-fusion compatibility constraint between 
 
 ## Discussion
 
-We conjecture (AGENTS.md §3b axiom-class):
+We conjecture, axiomatised as a Lean class:
 
 - **Forward direction** ($\Delta i \leq 1 \Rightarrow$ LR-fusion compatible): Relies on the LR-rigidity of adjacent Bring shells.
 - **Reverse direction** ($\Delta i \geq 2 \Rightarrow$ LR-fusion shattered): Relies on a categorical shell-gap argument.

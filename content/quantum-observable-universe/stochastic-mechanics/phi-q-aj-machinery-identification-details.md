@@ -26,4 +26,4 @@ The framework previously distinguished $\Phi_q$ vs $\mathrm{Li}_2^q$ contexts pr
 
 The classes encode literature statements. The framework's contribution is the identification at the algebraic level.
 
-**Archimedean specialisation (§7c).** The $\Phi_q$ / $A_J$ regulator identities are stated over real $q$ with the archimedean ordering $0 < q < 1$. This real-analytic regime is the archimedean side of the substrate wall.
+**Archimedean specialisation.** The $\Phi_q$ / $A_J$ regulator identities are stated over real $q$ with the archimedean ordering $0 < q < 1$. This real-analytic regime is the archimedean side of the substrate wall.

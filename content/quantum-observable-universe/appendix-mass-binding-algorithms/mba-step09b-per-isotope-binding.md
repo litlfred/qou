@@ -33,9 +33,8 @@ These are **fit residuals of the experimental model**, not derived error bounds:
 **Scope (value proved; magnitude gate open, not a closure).** The per-partition
 $\Delta_\lambda$ **value** is proved ($\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$,
 sorry-free general-$n$, `dtEuler_eq_deltaLambda_unconditional`); what remains **open** is
-the many-body binding **magnitude** — the Track A gate (AGENTS.md §"Δ_λ gate"; six ansätze
-failed on the deuteron *magnitude* $r^\ast \approx 1.585$, which no per-block $\Delta_\lambda$
-can supply). This module is an **experimental / phenomenological** generating-function model for that magnitude: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation — the `status: "experimental"` label on this block's manifest is authoritative.
+the many-body binding **magnitude**: six ansätze have failed on the deuteron
+*magnitude* $r^\ast \approx 1.585$, which no per-block $\Delta_\lambda$ can supply. This module is an **experimental / phenomenological** generating-function model for that magnitude: the depth-2 `CKRecursion` reproduces the multi-body binding hierarchy from a small set of seed constants ($r_{\mathrm{res}} \approx 2.596$, $a_0 = 1/2$, the isospin anomaly shift $\approx +1.4947\,m_e$) that are **calibrated, not derived** from the 13 categorical drivers. It is a structural fit, **not** a parameter-free derivation.
 
 ### Python API entry point
 
@@ -51,7 +50,7 @@ from computations.mass_binding_dashboard import _row
 
 ### Notes
 
-*This module explores a $q$-difference generating-function route to the multi-body binding hierarchy. It does **not** supersede the $\Delta_\lambda$ closure search — that gate is open. The shared `CKRecursion` shape across the weak ($Q_\beta$) and strong (binding) sectors is a **structural observation / working hypothesis**, not a proven identity. Per AGENTS.md §"Axiomatization is NOT a Proof", any wiring of a $c_k$ or $\Delta_\lambda$ value to production remains blocked pending a genuine closed-form derivation from the categorical drivers.*
+*This module explores a $q$-difference generating-function route to the multi-body binding hierarchy. It does **not** supersede the $\Delta_\lambda$ closure search, which is open. The shared `CKRecursion` shape across the weak ($Q_\beta$) and strong (binding) sectors is a **structural observation / working hypothesis**, not a proven identity. Axiomatisation is not proof: no $c_k$ or $\Delta_\lambda$ value produced here is carried downstream, pending a genuine closed-form derivation from the categorical drivers.*
 
 *The `CKRecursion` recurrence is extensive and algebraically convenient, but its seed constants are calibrated inputs, so the binding it produces is a fit, not a derivation.*
 

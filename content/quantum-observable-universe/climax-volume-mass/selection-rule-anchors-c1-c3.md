@@ -41,7 +41,7 @@ We provide two purely algebraic identities at the symbolic level, each closed by
 
 ## q-usage discipline
 
-This holds over real $q > 0$ (the substrate-anchor regime). Both identities are q-rational, fibre-level constructs. The c=1 case holds for ALL $q > 0$ (an infinite set of constraints, not a single point). It is AGENTS.md §7c-compliant.
+This holds over real $q > 0$ (the substrate-anchor regime). Both identities are q-rational, fibre-level constructs. The c=1 case holds for ALL $q > 0$ (an infinite set of constraints, not a single point).
 
 ## Cross-references
 

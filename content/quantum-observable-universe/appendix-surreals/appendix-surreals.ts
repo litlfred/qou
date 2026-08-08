@@ -49,7 +49,7 @@ export default chapter({
           ],
         },
         {
-          title: "The B1 theorem rows",
+          title: "Theorem-level rows of the depth correspondence",
           label: "sec:surreal-b1-theorem-rows",
           blocks: [
             // Soft-sharpness version of B1 is theorem-level (Borel + Lewin).
@@ -69,7 +69,7 @@ export default chapter({
           ],
         },
         {
-          title: "B1 status synthesis",
+          title: "Status of the depth correspondence",
           label: "sec:surreal-b1-status",
           blocks: [
             // Canonical B1 current-status synthesis (rounds 1-11).

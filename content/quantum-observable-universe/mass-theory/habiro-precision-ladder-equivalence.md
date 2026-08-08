@@ -28,4 +28,4 @@ The verified proton Habiro coefficients, the uniqueness of the archimedean
 evaluation, and the scope of the exact evaluation are collected in
 [the Habiro precision-ladder context](#rem:habiro-precision-ladder-equivalence-context).
 
-**Archimedean specialisation (§7c).** The Habiro / precision-ladder Taylor coefficients ($\mathbb{N}\to\mathbb{R}$) are the real archimedean evaluations of the generic Habiro-ring expansion; the real coefficient sequences sit on the archimedean side of the substrate wall, acknowledged here.
+**Archimedean specialisation.** The Habiro / precision-ladder Taylor coefficients ($\mathbb{N}\to\mathbb{R}$) are the real archimedean evaluations of the generic Habiro-ring expansion; the real coefficient sequences sit on the archimedean side of the substrate wall, acknowledged here.

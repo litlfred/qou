@@ -28,7 +28,7 @@ fourth calibration.
 The narrative caveat recorded in
 [`docs/coordination/e-unit-deuteron-scale.md`](../../../docs/coordination/e-unit-deuteron-scale.md)
 stands: whether the deuteron binding actually carries this bar-odd character
-is empirically open (the landed §2h data weakly favour a bar-even unit). The
+is empirically open (the landed data weakly favour a bar-even unit). The
 proposition formalizes the *decomposition itself*, which holds regardless;
 the parity assignment of the physical $E_{\text{unit}}$ is the open input.
 

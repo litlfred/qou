@@ -17,7 +17,7 @@ The same Mac Lane coherence already appears in the corpus in two formalized guis
 
 ## Lean structure
 
-[`QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog`](../lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean) proves the biconditional over a generic carrier (`[Add H]`; §7c — categorical content, no archimedean construct), **sorry-free and axiom-free** (`#print axioms` reports no dependency). The forward direction packages the witness; the reverse reads the datum's five-term field — a genuine equivalence, not a self-assuming projection.
+[`QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog`](../lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean) proves the biconditional over a generic carrier (`[Add H]`; categorical content, no archimedean construct), **sorry-free and axiom-free** (`#print axioms` reports no dependency). The forward direction packages the witness; the reverse reads the datum's five-term field — a genuine equivalence, not a self-assuming projection.
 
 ## Scope boundary
 

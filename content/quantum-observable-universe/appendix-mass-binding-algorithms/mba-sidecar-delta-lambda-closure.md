@@ -72,9 +72,10 @@ $y_\lambda\,\chi^\lambda$ weighting and the separate extensive magnitude term
 
 ### Notes
 
-*Per AGENTS.md "$\Delta_\lambda$ gate" rule: the per-partition **value** is now
-proved, but **do not propose a seventh fit-based ansatz for the MAGNITUDE** — the
-three-calibration discipline review will reject it. The magnitude is a separate
+*The per-partition **value** is now proved; the **magnitude** is not, and six
+fit-based ansätze have failed on it. A seventh fit would not advance the question:
+under the three-calibration discipline a fitted magnitude is not a derivation. The
+magnitude is a separate
 additive extensive term (super-pairwise; candidates in
 [`docs/coordination/option-e.md`](../../../docs/coordination/option-e.md)). Full
 context: [`docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md`](../../../docs/audits/2026-08-02-deltalambda-value-proved-downstream-and-additive-term.md).*

@@ -74,7 +74,7 @@ This is the $A\ge3$ analogue of:
 - the T(2, k) tower for lepton + electroweak masses
   (W k=4, Z k=6, τ k=7, H k=8).
 
-## Lean structure (§3b-cond)
+## Lean structure
 
 - `class BindingPerRepReebPhase B m_e ρ_0` — substrate axiom: per-rep
   Reeb phase factorisation, with field `αShiftAt : ℕ → ℕ` recording

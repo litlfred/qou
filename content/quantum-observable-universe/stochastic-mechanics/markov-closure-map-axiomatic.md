@@ -29,4 +29,4 @@ The previous `ThreeFoldMarkovHopfExtraction` class had a single broad axiomatic 
 
 The eventual full Track-A formalisation targets only the first atom; the second is already closed.
 
-**Archimedean specialisation (§7c).** This block invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** This block invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
