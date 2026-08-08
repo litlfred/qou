@@ -1,6 +1,6 @@
 import QOU.BraidKnot.Specht
 import QOU.BraidKnot.SpechtClassification
-import QOU.BraidKnot.JucysMurphy
+import QOU.BraidKnot.JucysMurphyOV
 import QOU.BraidKnot.WedderburnSn
 import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.RegularRepTrace
