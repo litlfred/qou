@@ -62,7 +62,12 @@ warnings.filterwarnings("ignore")
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402
+# 50-dps source. This was `from q_parameter import Q as Q0` — the float64 —
+# laundered below through `mp.mpf(str(Q0))`, so every quantity derived here
+# (E0, h, tau, the whole brane tower) carried ~17 good digits while being
+# computed at dps=50. This module produces the dashboard's canonical mass
+# m_can, so the cap reached the headline mass table.
+from q_parameter import Q_50_DIGIT_STR as Q0  # noqa: E402
 from codata_constants import M_E_MEV as M_E  # noqa: E402
 from _li_2_q_util import li_2_q  # noqa: E402
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402

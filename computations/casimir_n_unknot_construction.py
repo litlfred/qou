@@ -75,7 +75,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from q_parameter import Q  # noqa: E402  (bootstraps qou_substrate path)
+from q_parameter import Q_MP as Q  # noqa: E402  (bootstraps qou_substrate path)
 import mpmath as mp  # noqa: E402
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,

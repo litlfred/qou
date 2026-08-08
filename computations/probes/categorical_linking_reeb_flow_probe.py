@@ -16,7 +16,7 @@ for d in ("", "hecke", "habiro", "substrate"):
     if p not in sys.path:
         sys.path.insert(0, p)
 import _path_bridge  # noqa: E402,F401
-from q_parameter import Q as Q0
+from q_parameter import Q_MP as Q0
 from witness_base import WitnessBuilder
 
 def main():

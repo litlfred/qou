@@ -93,7 +93,7 @@ def main() -> int:
     #   ADJACENT bonds only (A−1, ~A) instead of all C(A,2) (~A²).
     from math import comb as _comb
     import mpmath as _mp
-    from q_parameter import Q as _Q
+    from q_parameter import Q_MP as _Q
     from codata_constants import M_E_MEV as _ME
     from _li_2_q_util import li_2_q as _li
     _mp.mp.dps = 50

@@ -49,7 +49,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q0
+from q_parameter import Q_MP as Q0
 
 PHASE3_WITNESS = _pb.witness_path("delta-lambda-jsj-phase3.witness.json", HERE)
 EMP_WITNESS = _pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)

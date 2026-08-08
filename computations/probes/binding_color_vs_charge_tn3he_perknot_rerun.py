@@ -60,7 +60,7 @@ from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
     flavor_split_subleading,
 )
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402

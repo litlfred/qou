@@ -110,7 +110,7 @@ def categorical_ratio_for_atom(atom_label: str, tr_M_q0: mp.mpf) -> mp.mpf | Non
 
     Electron's |tr_M(β_e)| at H_2 (zero-crossings) = z = 1/(√q + 1/√q).
     """
-    from q_parameter import Q as Q0
+    from q_parameter import Q_MP as Q0
     q = mp.mpf(str(Q0))
     z_electron = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
     rho_atom = {"proton": 1, "neutron": 1, "deuteron": 1}.get(atom_label, 1)

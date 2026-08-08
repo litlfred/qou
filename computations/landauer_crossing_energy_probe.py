@@ -29,7 +29,7 @@ from datetime import datetime, timezone
 
 import mpmath as mp
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from canonical_mass import proton_mass_mev, neutron_mass_mev  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402

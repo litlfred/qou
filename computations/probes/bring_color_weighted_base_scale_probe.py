@@ -40,7 +40,7 @@ from _li_2_q_util import (  # noqa: E402
     flavor_split_subleading,
 )
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()

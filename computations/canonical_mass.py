@@ -106,7 +106,7 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     σ_pred is a genuine formula systematic, not calibration noise."""
     import mpmath as mp
     from m_p_substrate_identity_50dps import F_Bor
-    from q_parameter import Q as q0, vol_4_1_at
+    from q_parameter import Q_MP as q0, vol_4_1_at
     from codata_constants import M_E_MEV
     from derived_masses import q_beta_kashiwara_n2_mev
     q = mp.mpf(str(q0)); m_e = mp.mpf(str(M_E_MEV))

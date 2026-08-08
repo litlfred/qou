@@ -48,7 +48,7 @@ from datetime import datetime, timezone
 import mpmath as mp
 import sympy as sp
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from phase5_n8_dim_q_table import (  # noqa: E402
     dim_q_via_quantum_hooks, hook_lengths, partitions_of,
 )

@@ -35,7 +35,7 @@ import _path_bridge  # noqa: F401, E402
 import sys
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _li_2_q_util import linking_weight_family_a, vol_density_borromean  # noqa: E402
 from gamma_gamma_pair_production_decomposition import (  # noqa: E402
