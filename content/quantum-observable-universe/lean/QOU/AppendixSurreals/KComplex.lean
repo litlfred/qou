@@ -49,14 +49,14 @@ def abs {K : Type u} [SurrealField K] : KComplex K → K :=
   fun ab => |ab.1| + |ab.2|
 
 /-- The **multiplicative unit** in `KComplex K`, i.e. `1 + 0·i`. -/
-def one (K : Type u) [SurrealField K] : KComplex K := (1, 0)
+def KComplex.one (K : Type u) [SurrealField K] : KComplex K := (1, 0)
 
 /-- The **imaginary unit** `i ∈ KComplex K`. -/
 def I (K : Type u) [SurrealField K] : KComplex K := (0, 1)
 
 /-- **Complex multiplication** `(a, b) · (c, d) := (ac − bd, ad + bc)`,
     realising `KComplex K` as `K[X]/(X² + 1)`. -/
-def mul (z w : KComplex K) : KComplex K :=
+def KComplex.mul (z w : KComplex K) : KComplex K :=
   (z.1 * w.1 - z.2 * w.2, z.1 * w.2 + z.2 * w.1)
 
 /-- **Complex conjugation** `(a, b) ↦ (a, −b)`. -/

@@ -53,7 +53,7 @@ structure FibreFold (R : Type*) [CommRing R] where
   map_zero : toFun 0 = 0
 
 /-- An additive map sends negation to negation: `fold(−x) = −fold(x)`. -/
-theorem map_neg (f : FibreFold R) (x : R) :
+theorem FibreFold.map_neg (f : FibreFold R) (x : R) :
     f.toFun (-x) = - f.toFun x := by
   have h : f.toFun (-x) + f.toFun x = 0 := by
     rw [← f.map_add, neg_add_cancel]; exact f.map_zero
