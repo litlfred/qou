@@ -669,6 +669,11 @@ import QOU.MassTheory.BraneGeometricResummation
 -- under every volume reading — Vol ≡ 0 for the literal mass-braid H₉ closures, and
 -- a 2.37× anti-correlated residual for the corpus-canonical binding links.
 import QOU.MassTheory.VolTHe3RadialHandle
+-- prjo: q₀-free ≥3-row extensive cumulant, forward from the proved Δ_λ. Feeds the
+-- C(A,k) cluster basis the combinatorial ≥3-row signed-Springer-dim content s_k;
+-- re-derives μ₂=0 combinatorially (0-fit match) but gives the (−,+) sign order vs
+-- the derived (+,−) window and ratio 2 vs ~9.75. Scope-(a) negative, q₀-free.
+import QOU.MassTheory.ThreeRowExtensiveCumulant
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
