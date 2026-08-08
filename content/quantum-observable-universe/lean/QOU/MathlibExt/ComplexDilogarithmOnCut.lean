@@ -105,8 +105,37 @@ Step (2)'s constancy argument, now with all three derivatives available:
 | `LiTwo(1/x)` | `(log(x−1) − log x)/x` | off the cut, routine |
 | `½·log²x` | `log x / x` | routine |
 
-They cancel identically, so `G' = 0` on `(1,∞)`; pinning `G ≡ π²/3` at `x → 1⁺`
-is what is left.
+They cancel identically. **`hasDerivAt_inversionCombo` proves `G' = 0` on
+`(1,∞)`** — the analytic core of step (2), done.
+
+### What is left: pinning the constant, and why it is harder here than for Landen
+
+`G' = 0` gives the identity only up to a constant, and Route 35 G3 measures
+`G ≡ π²/3`. Pinning it needs one value, and the only available base point is
+`x → 1⁺`, where `½·log²x → 0` and both dilogarithm terms tend to
+`Re cLiTwoExt(1)`. So the constant is `2·Re cLiTwoExt(1)`, and the identity is
+equivalent to
+
+    Re cLiTwoExt(1) = π²/6.
+
+**Contrast with the Landen leg, which is the instructive part.** There the base
+point could be taken at `z → 0⁻`, where *every term vanishes outright* — so no
+special value was needed and the leg closed. Here the base point is forced to
+the **branch point** `x = 1`, where the value is `π²/6` rather than `0`. The two
+legs differ not in their derivative arguments, which are equally routine, but in
+whether the natural base point is a zero or a special value.
+
+Two things are needed, and neither is free:
+
+1. `Re cLiTwoExt(1) = π²/6`. `cLiTwoExt_eq_cLiTwo` needs `‖y‖ < 1` and
+   `cLiTwoExt_eq_cLiTwo_of_norm_le_one` needs `y ∈ notCut`; **`1` satisfies
+   neither** — it is exactly the excluded point of both. So this is an Abel /
+   boundary-limit statement about the series, not a corollary of what exists.
+2. Continuity of `x ↦ Re cLiTwoExt(x)` at `1`, to take the limit at all.
+
+Note (2) is plausible precisely because Route 35 G1 measured the `Re` jump
+across the cut to be **zero** — but measured is not proved, and `x = 1` is the
+branch point rather than an interior point of the cut, so G1 does not cover it.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -441,5 +470,67 @@ theorem hasDerivAt_cLiTwoExt_ofReal {x : ℝ} (hx : 0 < x) (hx1 : x ≠ 1) :
   have h := hasDerivAt_cLiTwoExt_radial_ofReal' (x := 1) one_pos (t := x) hx
     (by simpa using sub_ne_zero.mpr (Ne.symm hx1))
   simpa using h
+
+/-! ## Step (2): the inversion combination has vanishing derivative on `(1,∞)` -/
+
+/-- `d/dx Re cLiTwoExt(x) = −log|1−x|/x`, real `x > 0`, `x ≠ 1`. `Real.log` is
+even, so this reads `−log(x−1)/x` on `x > 1`. -/
+theorem hasDerivAt_re_cLiTwoExt_ofReal {x : ℝ} (hx : 0 < x) (hx1 : x ≠ 1) :
+    HasDerivAt (fun s : ℝ => (cLiTwoExt ((s : ℝ) : ℂ)).re)
+      (-(Real.log (1 - x) / x)) x := by
+  have h := hasDerivAt_cLiTwoExt_ofReal hx hx1
+  have hre := Complex.reCLM.hasFDerivAt.comp_hasDerivAt x h
+  refine hre.congr_deriv ?_
+  have hcast : (1 : ℂ) - ((x : ℝ) : ℂ) = (((1 - x : ℝ)) : ℂ) := by push_cast; ring
+  simp only [Complex.reCLM_apply, Complex.neg_re, Complex.div_re, hcast,
+    re_log_ofReal, Complex.ofReal_re, Complex.ofReal_im, Complex.normSq_ofReal]
+  have hxne : x ≠ 0 := ne_of_gt hx
+  field_simp
+  ring
+
+/-- **The inversion combination is locally constant on `(1,∞)`.**
+
+    G(x) := Re cLiTwoExt(x) + Re cLiTwoExt(1/x) + ½·log²x
+
+has `G' = 0`. The three derivatives are `−log(x−1)/x`, `(log(x−1) − log x)/x` and
+`log x / x`, and they cancel identically. Route 35 G3 measures `G ≡ π²/3`. -/
+theorem hasDerivAt_inversionCombo {x : ℝ} (hx : 1 < x) :
+    HasDerivAt (fun s : ℝ => (cLiTwoExt ((s : ℝ) : ℂ)).re
+        + (cLiTwoExt (((1 / s : ℝ)) : ℂ)).re + Real.log s ^ 2 / 2) 0 x := by
+  have hx0 : 0 < x := lt_trans zero_lt_one hx
+  have hxne : x ≠ 0 := ne_of_gt hx0
+  have hx1 : x ≠ 1 := ne_of_gt hx
+  -- first term
+  have h1 := hasDerivAt_re_cLiTwoExt_ofReal hx0 hx1
+  -- second term, through `s ↦ 1/s`
+  have hinv : HasDerivAt (fun s : ℝ => 1 / s) (-(x ^ 2)⁻¹) x := by
+    simpa [one_div] using hasDerivAt_inv hxne
+  have hinvpos : (0 : ℝ) < 1 / x := by positivity
+  have hinvne : (1 / x) ≠ 1 := by
+    intro h
+    have : x = 1 := by field_simp at h; linarith
+    exact hx1 this
+  have h2raw := (hasDerivAt_re_cLiTwoExt_ofReal hinvpos hinvne).comp x hinv
+  -- third term
+  have hlog : HasDerivAt Real.log x⁻¹ x := Real.hasDerivAt_log hxne
+  have h3 : HasDerivAt (fun s : ℝ => Real.log s ^ 2 / 2) (Real.log x / x) x := by
+    have := (hlog.pow 2).div_const 2
+    refine this.congr_deriv ?_
+    field_simp
+    ring
+  -- the three cancel
+  have hsum := (h1.add h2raw).add h3
+  refine hsum.congr_deriv ?_
+  have hx1' : (0 : ℝ) < x - 1 := by linarith
+  have hlog1x : Real.log (1 - x) = Real.log (x - 1) := by
+    rw [← Real.log_neg_eq_log]
+    congr 1
+    ring
+  have hloginv : Real.log (1 - 1 / x) = Real.log (x - 1) - Real.log x := by
+    have : (1 : ℝ) - 1 / x = (x - 1) / x := by field_simp
+    rw [this, Real.log_div (ne_of_gt hx1') hxne]
+  rw [hlog1x, hloginv]
+  field_simp
+  ring
 
 end QOU.MathlibExt
