@@ -1,125 +1,122 @@
 ---
 # qou-n1c4
-title: 'dual-path xref: regenerate the muon-pinned y_lambda + markov-peel upstreams onto the proton anchor'
+title: 'dual-path xref: the chi family straddles the ideal/experimental q0 layers (owner decision needed)'
 status: todo
 type: task
 created_at: 2026-08-08T16:59:17Z
-updated_at: 2026-08-08T16:59:17Z
+updated_at: 2026-08-08T18:05:00Z
 ---
 
-## Progress log (2026-08-08)
+**The original title and premise of this bean were WRONG and are corrected
+here.** It was opened as "regenerate the muon-pinned y_lambda + markov-peel
+upstreams onto the proton anchor", on the theory that those witnesses were
+stale against producers that had already moved to the proton pin. Running them
+disproved it. Nothing needs regenerating; a layer boundary needs a ruling.
 
-The wave is **three deep, not two**. `markov_peel_atomic_witness.py` reads
-`atomic-tr-m-mpfr-50dps.witness.json` (the Hoefsmit+Wenzl bridge, produced by
-`atomic_tr_m_mpfr_50dps.py`), which is muon-pinned too. Correct order:
+## What is actually true
 
-    regenerate_y_lambda_mpfr.py  ->  atomic_tr_m_mpfr_50dps.py
-                                 ->  markov/markov_peel_atomic_witness.py
+`computations/chi_dual_path_xref_audit.py` cross-checks each χ cache (Σ_λ y_λ χ_λ)
+against the markov-peel scalar:
 
-Three driver defects had to be fixed first (all landed in 9e03e5ee):
+    proton     2.221e-50  ANCHOR_SPLIT    neutron    1.237e-51  AGREES
+    tritium    9.111e-20  AGREES          helium-3   9.111e-20  AGREES
+    deuteron   1.704e-07  ANCHOR_SPLIT    helium-4   3.261e-07  ANCHOR_SPLIT
 
-1. **12 witnesses were invisible.** They are named `<stem>-witness.json` with a
-   HYPHEN, and `dirty_witnesses()` matched only `<stem>.witness.json`. The whole
-   y-lambda family is in that set — the base of this very chain. Measured: y_λ
-   re-anchored muon→proton and the driver logged `touched: []`, recorded
-   NOCHANGE, and left it dirty and UNJUDGED.
-2. **Dependency ordering existed but was inert**, and its tests passed anyway
-   (fixtures wrote via `write_text`; the corpus writes via `WitnessBuilder`).
-3. `dirty_witnesses()` read a failed git call as a clean tree. Defensive fix
-   only — not the cause of (1).
+Same pin agrees to ~1e-19; cross-pin lands at ~1e-7. ⁴He is the controlled
+experiment — the identical 77-partition table scored 9.111e-20 before its
+proton rebuild (4fb4ac54) and 3.261e-07 after.
 
-### Expect the peel to be rejected again, and do not loosen the bound for it
+This is **the defect AGENTS.md §"q₀ anchor convention" (STRICT) already names**,
+rediscovered independently:
 
-Its `abs_diff_vs_bridge` is a **residual** — true value near zero — and the
-classifier's `ANCHOR_COLLATERAL_MAX` is *relative*. A perfect re-anchor taking
-that field from ~1e-7 to ~1e-19 is a 100% relative move and reads as VALUES.
-The first run already rejected it at 6.73e-4.
+> Never straddle the two layers inside one quantity. … the μ₃ Fréchet probe
+> took `y_λ` from the muon-built cache while evaluating `χ_λ` at the proton
+> `q₀` — an 11.54 ppb layer separation … ~1e-7 relative on the result.
 
-That is the classifier being right for the wrong reason, and the fix is NOT to
-widen the tolerance: a bound relaxed to admit one known-good diff stops
-constraining every unknown one. Review the peel diff by hand and, if the
-residual collapsed as predicted, commit it deliberately by explicit path with
-that reasoning recorded.
+11.54 ppb is the μ–p substrate tension itself, and ~1e-7 is what this audit
+measures. Diagnosis settled.
 
-### Ordering caveat for the 32 downstream consumers
+## Why "regenerate it" is the wrong instinct
 
-`dependency_order` only sees witnesses named as literal filenames. Producers
-reading y_λ through the `_load_y_lambda` helper have no filename in their
-source and so get no edge — `chi_at_q0_via_hoefsmit_mpfr.py` sorts ahead of
-y_λ for exactly that reason. Verify the order by reading the code before
-trusting it on the full set, or teach the analysis the known accessors.
+`q0_anchor_manifest.json` classifies producers, and the muon legs are muon **by
+design**:
 
----
+    q_pinning_50_digit           ideal_muon (257 entries)
+    atomic_tr_m_mpfr_50dps       ideal_muon
+    markov_peel_atomic_witness   not listed  (inherits muon via the bridge)
+    regenerate_y_lambda_mpfr     not listed  (so defaults to proton)
 
-Not claimed. Left open deliberately: this is a migration wave, not a
-follow-up, and it should be planned rather than picked up mid-session.
+Measured: a wave over `q_pinning_50_digit -> atomic_tr_m_mpfr_50dps ->
+markov_peel_atomic_witness` produced NOCHANGE + VALUES + VALUES, kept nothing.
+They already emit what their class says they should.
 
-## The finding
+`q_parameter` is **anchor-adaptive** — `q_at` returns proton from a plain shell
+and muon when the running producer's stem is in `ideal_muon` (or
+`QOU_Q0_ANCHOR=ideal`). The same call answering two ways is what made the
+"stale" reading look plausible.
 
-`computations/chi_dual_path_xref_audit.py` (added f918a887) cross-checks each
-χ cache against the markov-peel scalar. The three legs of that comparison are
-no longer on the same q₀ pin:
+## An attempted fix, tried and reverted
 
-    chi tables    MIXED  — deuteron/⁴He/proton proton-pinned,
-                           tritium/helium-3/neutron still muon-pinned
-    y_lambda      muon   — computations/y-lambda-mpfr-witness.json
-    markov-peel   muon   — computations/markov/markov-peel-atomic-tr-m.witness.json
+b302d948 re-anchored `y-lambda-mpfr-witness.json` to proton (clean
+ANCHOR_MIGRATION: 295 fields, 12 flips, worst move 8.461e-07). **Reverted.**
+That cache is the ideal-layer artifact and 257 ideal_muon producers read it, so
+re-pinning it straddles the ideal layer in the other direction — measured
+immediately, `atomic_tr_m_mpfr_50dps` (ideal_muon) then moved 49 fields.
 
-Relative gap Σ_λ y_λ χ_λ vs the peel scalar:
+AGENTS.md gives the intended route instead: experimental-anchor compute should
+call the live closed form `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)`
+rather than read the muon-built cache. It also flags the trap —
+`wedderburn_jones_markov.y_lambda_at(n, q)` serves the cache whenever
+`|q − q_parameter.Q| < 1e-12`, which a caller passing `q_parameter.Q` satisfies
+trivially, with no signal that a boundary was crossed.
 
-    proton     2.221e-50     neutron    1.237e-51
-    tritium    9.111e-20     helium-3   9.111e-20
-    deuteron   1.704e-07     helium-4   3.261e-07
+## The decision (owner-gated — do not resolve unilaterally)
 
-Same pin agrees to ~1e-19; cross-pin lands at 1e-7. ⁴He is the controlled
-experiment — the identical 77-partition table scored 9.111e-20 before the
-proton rebuild (4fb4ac54) and 3.261e-07 after, with nothing changed but the
-anchor.
+The χ family is split: deuteron/⁴He/proton on the experimental pin,
+tritium/helium-3/neutron on the ideal one. One of:
 
-## Why it is not urgent, and not optional either
+1. **χ stays experimental** — then its y_λ leg must come from the live closed
+   form, not the cache, and the peel cross-check needs an experimental-layer
+   counterpart. The cache stays muon for the ideal layer.
+2. **χ returns to ideal** — re-anchor deuteron/⁴He/proton back to muon; the
+   existing cross-check works unchanged.
+3. **Two cached y_λ witnesses**, one per layer, with accessors that refuse to
+   serve across the boundary.
 
-The χ rebuild was right. The two upstreams are simply older than their own
-producers: `q_parameter` exports the proton pin today, and both stale legs read
-it at import —
+The 2026-08-07 owner directive defaults *new compute* to proton, which points
+at (1), but it explicitly does not redefine the ideal CAL-2 layer, and the
+muon/proton split is owner-gated (AGENTS.md; bean `tnjb`). Not mine to pick.
 
-    markov/markov_peel_atomic_witness.py   ← Q_50_DIGIT_STR
-    regenerate_y_lambda_mpfr.py            ← Q_MP
+## Acceptance test either way
 
-so each re-anchors to proton on its next run. Nothing is wrong that a
-regeneration does not fix. But it is not a small regeneration: 14 witnesses
-name these two as upstream and ~50 producers consume them, so re-anchoring the
-base re-anchors the subtree above it.
+`chi_dual_path_xref_audit.py` — every atom should read AGREES at ~1e-19. It
+orders ANCHOR_SPLIT ahead of the numeric verdict deliberately: a cross-pin
+comparison landing under the bound is not a passing check.
 
-## Do it as a wave
+## Do not widen the collateral bound for the peel
 
-Regenerate under `witness_regen_wave.py`, not by hand — same discipline as the
-anchor migration: per-witness revert, clean-tree start, classifier verdict per
-witness, commit by explicit path. Order matters: `regenerate_y_lambda_mpfr.py`
-and `markov_peel_atomic_witness.py` first, then everything that consumes them.
+`markov_peel_atomic_witness` is rejected on
+`data.results[atom=deuteron].abs_diff_vs_bridge` moving 6.73e-04. That field is
+a **residual** — true value near zero — and `ANCHOR_COLLATERAL_MAX` is
+relative, so even a correct re-anchor collapsing it toward zero is a ~100%
+relative move and reads as VALUES. Review that diff by hand if the moment
+comes; a bound relaxed to admit one known-good diff stops constraining every
+unknown one.
 
-## The acceptance test is already written
+## Two open observations — not settled
 
-Re-run `chi_dual_path_xref_audit.py` afterwards. Every atom should read AGREES
-at ~1e-19. Any atom left at 1e-7 means a leg was missed; any atom that goes
-DISAGREES at one pin is a real χ defect the split had been masking.
-
-## Two open observations — do not treat as settled
-
-- Both A=1 atoms (proton, neutron) agree to ~1e-50 *despite* being cross-pinned,
-  so the single-nucleon comparison is not testing the anchor at all. Whether
-  that is a cancellation at n=3 or the peel row for A=1 being derived from the
-  same inputs — which would make it circular — is not established.
+- Both A=1 atoms agree to ~1e-50 *despite* being cross-pinned, so the
+  single-nucleon comparison is not testing the anchor at all. Cancellation at
+  n=3, or the peel row for A=1 sharing inputs (which would make it circular)?
+  Unestablished.
 - The same-pin floor moves with n: ~1e-50 at n=3, 9.111e-20 at both n=9 and
-  n=12. Tritium and helium-3 landing on the *identical* 9.111e-20 points at a
-  shared input (most likely the y_λ table's precision) rather than anything
-  atom-specific. Nothing above n=12 has been measured.
+  n=12. Tritium and helium-3 hitting the *identical* 9.111e-20 points at a
+  shared input (likely the y_λ table's precision). Nothing above n=12 measured.
 
 ## Related correction, already landed
 
-`_b0vf_complete_he4_witness.py`'s GATE B claimed a "~4.8e-8 intrinsic
-two-implementation gap". It is not intrinsic — it is the deuteron's own anchor
-mismatch. Worse, GATE B's tolerance is `10·B_D` with B_D measured off that same
-cross-pinned deuteron, so the bound inflated to 1.7e-06 and now admits ⁴He's
-3.261e-07. Re-run today the gate PASSES: it did not go red, it stopped
-discriminating. Corrected in place at the claim; the replacement audit fixes its
-bound as a constant and self-tests that it is not derived from a witness.
+`_b0vf_complete_he4_witness.py` GATE B claimed a "~4.8e-8 intrinsic
+two-implementation gap". Not intrinsic — the deuteron's own cross-pin gap. Its
+tolerance is `10·B_D` with B_D measured off that same deuteron, so the bound
+inflated to 1.7e-06 and now admits ⁴He's 3.261e-07: re-run today the gate
+PASSES. It did not go red, it stopped discriminating. Corrected in place.

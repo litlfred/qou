@@ -67,25 +67,67 @@ unavoidable. Three complete same-pin atoms agree to 9.111e-20. The 4.8e-8 was
 never intrinsic; it was the deuteron's anchor mismatch, measured and then
 promoted to a constant of nature.
 
-## Root cause — the witnesses are stale, the rebuild was right
+## This is the documented "layer straddle", not staleness
 
-`q_parameter` now exports the proton pin (`Q_50_DIGIT_STR` and `Q_MP` both
-`1.1099785827513808…`). Both stale legs read it at import:
+**Corrected 2026-08-08.** An earlier version of this header called the two muon
+legs stale and predicted they would re-anchor on their next run. That was
+wrong, and running them disproved it: `q_pinning_50_digit` and
+`atomic_tr_m_mpfr_50dps` are both in `q0_anchor_manifest.json` `ideal_muon`
+(257 entries), so they are muon **by design** and regenerate muon. The wave
+rejected both, correctly.
 
-    markov/markov_peel_atomic_witness.py   ← Q_50_DIGIT_STR
-    regenerate_y_lambda_mpfr.py            ← Q_MP
+What the table above actually measures is the defect AGENTS.md §"q₀ anchor
+convention" (STRICT) already names:
 
-So each would re-anchor to proton on its next run; the committed witnesses are
-simply older than their own producers. Nothing here argues the χ rebuild was
-wrong — it argues its two upstreams have not caught up. Regenerating them
-should return every atom to ~1e-19, and that is the prediction this audit
-exists to check afterwards.
+> **Never straddle the two layers inside one quantity.** Mixing an ideal-layer
+> input with an experimental-layer input in a single computed number is a
+> defect regardless of its size. … the μ₃ Fréchet probe took `y_λ` from the
+> muon-built cache while evaluating `χ_λ` at the proton `q₀` — an 11.54 ppb
+> layer separation … ~1e-7 relative on the result.
 
-That regeneration is **bean `qou-n1c4`**, left open rather than done inline:
-14 witnesses name these two as upstream and ~50 producers consume them, so
-re-anchoring the base re-anchors the subtree above it. It is a wave, with the
-same discipline the anchor migration used, and this audit is its acceptance
-test.
+That is this measurement, arrived at independently: proton χ against muon y_λ,
+~1e-7 relative. The 11.54 ppb is the μ–p substrate tension itself. So the
+number is real and the diagnosis is settled — it is a layer boundary being
+crossed, not a witness lagging its producer.
+
+**The fix is therefore NOT to re-pin the shared y_λ cache.** That cache is the
+ideal-layer artifact and 257 ideal_muon producers read it; flipping it to
+proton straddles the ideal layer in the other direction. Measured: with y_λ on
+the proton pin, `atomic_tr_m_mpfr_50dps` (ideal_muon) moved 49 fields. AGENTS.md
+gives the intended route for experimental-anchor compute — call the live closed
+form `schur_principal_mpmath.y_lambda_at_q0_mpmath(n, q)` rather than reading
+the muon-built cache — and warns that
+`wedderburn_jones_markov.y_lambda_at(n, q)` serves that cache whenever
+`|q − q_parameter.Q| < 1e-12`, which a caller passing `q_parameter.Q` satisfies
+trivially, with no signal that a boundary was crossed.
+
+Which anchor the χ family should carry is **owner-gated** (AGENTS.md; bean
+`tnjb`), so this audit reports the split and does not resolve it.
+
+## Why the anchors sit where they do
+
+`q_parameter` is **anchor-adaptive**, which is why one function answered two
+ways during this investigation. `Q_50_DIGIT_STR` / `Q_MP` are proton
+(`1.1099785827513808…`) by default, but under `QOU_Q0_ANCHOR=ideal` — or when
+the running producer's stem is in `q0_anchor_manifest.json` `ideal_muon` —
+`q_at`/`q_str` rebind to the muon string. So the same `q_at` call returns
+proton from a plain shell and muon from inside `q_pinning_50_digit.py`. Read a
+q₀ without knowing which of those you are in and you will misattribute the
+result, as the first cut of this header did.
+
+Chain, measured rather than assumed:
+
+    q_pinning_50_digit.py        ideal_muon   -> q-pinning-50-digit.witness.json
+    atomic_tr_m_mpfr_50dps.py    ideal_muon   -> atomic-tr-m-mpfr-50dps.witness.json
+    markov_peel_atomic_witness.py  unlisted   -> reads the bridge above
+    regenerate_y_lambda_mpfr.py    unlisted   -> y-lambda-mpfr-witness.json
+
+The bridge is where the peel gets its q₀ — not from `q_parameter` — so the peel
+inherits the ideal layer through it.
+
+Bean **`qou-n1c4`** tracks the open decision. It is not a regeneration wave:
+regenerating changes nothing, because the muon legs are already emitting what
+their manifest class says they should.
 
 Verdicts: `AGREES` (one pin, gap at the intrinsic floor), `DISAGREES` (one pin,
 gap above it — a real χ defect), `ANCHOR_SPLIT` (legs on different pins, so the
@@ -285,10 +327,13 @@ def main() -> int:
         print(f"{atom:<11} {ca:<7} {ya:<7} {pa:<7} {n_chi:>3}/{n_parts:<3} "
               f"{fg:>11}  {v}")
     print("\nANCHOR_SPLIT is not a weak result, it is the absence of one: the "
-          "two legs\nwere never compared at the same q0. Regenerate the muon "
-          "upstreams\n(markov_peel_atomic_witness.py, regenerate_y_lambda_mpfr"
-          ".py — both already\nread the proton pin from q_parameter) and every "
-          "atom should return to ~1e-19.")
+          "two legs\nwere never compared at the same q0. This is the layer "
+          "straddle AGENTS.md\nforbids (ideal-layer y_lambda against an "
+          "experimental-layer chi), not stale\nwitnesses — the muon legs are "
+          "`ideal_muon` in q0_anchor_manifest.json and\nregenerate muon by "
+          "design. Re-running them changes nothing; re-pinning the\nshared "
+          "y_lambda cache only straddles the ideal layer instead. Owner-gated: "
+          "see\nbean qou-n1c4.")
     return 1 if bad else 0
 
 
