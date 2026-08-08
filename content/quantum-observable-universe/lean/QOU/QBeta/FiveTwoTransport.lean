@@ -248,6 +248,60 @@ theorem div_mem_notCut_of_real {x y : ℂ} (hx0 : x ≠ 0) (hxim : x.im ≠ 0) (
   rw [hval]
   exact div_ne_zero (neg_ne_zero.mpr (mul_ne_zero hre hxim)) hns
 
+/-- **If `x·y` is real on the arc, its value satisfies `r⁵ − r³ + 1 = 0`.**
+
+This is the exact characterisation of Route 36 G3's crossing — the one the
+retracted G3 asserted could not happen. The derivation needs no Vieta and no
+root tracking:
+
+* substituting `x·y = r` into `curve x y = 0` after multiplying by `x²` gives a
+  **cubic in `x` with real coefficients** (`r` is real);
+* on `|x| = 1` the quadratic `x² + 1 = 2·(Re x)·x` (`unitCircle_quadratic`) is
+  the minimal polynomial of a non-real `x` over `ℝ`, so that cubic reduces to
+  `α·x + β` with `α, β` **real** in `r` and `c = Re x`;
+* `x.im ≠ 0` then forces `α = 0` *and* `β = 0` — two real equations;
+* and `r⁵ − r³ + 1 = α + (r² + 2c)·β` identically.
+
+`hxim` is doing real work at the third step: without it the two coefficients
+could trade off against each other, and indeed at `φ = 0` and `φ = π` — the
+exact points where `x.im = 0` — the conclusion fails, as it must, since `x·y` is
+real there for *every* root. -/
+theorem quintic_of_mul_real {x y : ℂ} {r : ℝ} (hx : x.re ^ 2 + x.im ^ 2 = 1)
+    (hxim : x.im ≠ 0) (hc : curve x y = 0) (hxy : x * y = (r : ℂ)) :
+    r ^ 5 - r ^ 3 + 1 = 0 := by
+  set c : ℝ := x.re with hcdef
+  -- the curve, cleared of `y` by `x·y = r`: a cubic in `x` with real coefficients
+  have hA : (r : ℂ) ^ 3 - (x ^ 2 + 1) * (r : ℂ) ^ 2
+      + x * (x ^ 2 + x + 1) * (r : ℂ) - x ^ 3 = 0 := by
+    have hcc : x * y ^ 3 - (x ^ 2 + 1) * y ^ 2 + (x ^ 2 + x + 1) * y - x = 0 := by
+      rw [← hc]; unfold curve; ring
+    linear_combination x ^ 2 * hcc
+      - ((r : ℂ) ^ 2 + (r : ℂ) * (x * y) + (x * y) ^ 2
+          - (x ^ 2 + 1) * ((r : ℂ) + x * y) + x * (x ^ 2 + x + 1)) * hxy
+  -- `x² − 2cx + 1 = 0`: the minimal polynomial of a non-real point of the circle
+  have hg : x ^ 2 - 2 * (c : ℂ) * x + 1 = 0 := by
+    have := unitCircle_quadratic hx
+    rw [← hcdef] at this
+    linear_combination -this
+  -- reduce `hA` modulo `hg`: quotient `(r−1)(x + 2c − r)`, remainder `αx + β`
+  have hsplit : ((-2 * c * r ^ 2 + 2 * c * (2 * c + 1) * r - (4 * c ^ 2 - 1) : ℝ) : ℂ) * x
+      + ((r ^ 3 - (2 * c + 1) * r + 2 * c : ℝ) : ℂ) = 0 := by
+    push_cast
+    linear_combination hA - ((r : ℂ) - 1) * (x + 2 * (c : ℂ) - (r : ℂ)) * hg
+  -- `α` and `β` are real and `x` is not, so both vanish
+  have hα : -2 * c * r ^ 2 + 2 * c * (2 * c + 1) * r - (4 * c ^ 2 - 1) = 0 := by
+    have him := congrArg Complex.im hsplit
+    simp only [Complex.add_im, Complex.mul_im, Complex.ofReal_re, Complex.ofReal_im,
+      zero_mul, add_zero, Complex.zero_im] at him
+    exact (mul_eq_zero.mp him).resolve_right hxim
+  have hβ : r ^ 3 - (2 * c + 1) * r + 2 * c = 0 := by
+    rw [show ((-2 * c * r ^ 2 + 2 * c * (2 * c + 1) * r - (4 * c ^ 2 - 1) : ℝ) : ℂ) = 0 by
+      rw [hα]; norm_num] at hsplit
+    have h0 : (r : ℂ) ^ 3 - (2 * (c : ℂ) + 1) * (r : ℂ) + 2 * (c : ℂ) = 0 := by
+      simpa using hsplit
+    exact_mod_cast h0
+  linear_combination hα + (r ^ 2 + 2 * c) * hβ
+
 /-- **No real root of `r⁵ − r³ + 1` reaches `1`** — because `r ≥ 1` forces
 `r⁵ − r³ + 1 = r³(r² − 1) + 1 ≥ 1 > 0`.
 
@@ -292,20 +346,68 @@ theorem vSide_of_notCut_mul_div {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hx0 
     hn₂ := mul_root_ne_zero hx0 hc
     hn₃ := div_root_ne_zero hx0 hc }
 
-/-- **`VSide` in full at a real root, on the open arc** — all six fields.
+/-! ### 2c. The last two fields, and `VSide` in full on the open arc -/
 
-Route 36 G5 makes this the majority case rather than a corner: 291 of the 597
-checks are real roots, because the arc crosses the discriminant and *all three*
-roots are real at 46 of the 199 points.
+/-- **`x ↦ x⁻¹` is an involution of the curve**: `curve x⁻¹ y · x² = curve x y`.
 
-`hxim : x.im ≠ 0` is the open-arc condition, and it is load-bearing rather than
-decorative: at `φ = π` it is precisely what fails, and `VSide` fails with it. -/
-theorem vSide_of_real_root {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hxim : x.im ≠ 0)
-    (hy : y.im = 0) (hc : curve x y = 0) : VSide x y := by
+So `x·y` and `y/x` are the *same* `Li₂` argument, read at `x` and at `x⁻¹` —
+and on `|x| = 1` the two points differ only by the sign of `Im x`. `hc₃` therefore
+needs no argument of its own, and this is also why Route 36 G3 found the two
+crossings at the same `φ` with the same value. -/
+theorem curve_inv {x : ℂ} (hx0 : x ≠ 0) (y : ℂ) : curve x⁻¹ y * x ^ 2 = curve x y := by
+  unfold curve
+  field_simp
+  ring
+
+/-- **`x·y ∈ notCut` for every root on the open arc** — `VSide.hc₂`, in full.
+
+The disjunction, used as a disjunction. If `x·y` has nonzero imaginary part the
+first disjunct closes it. If it is real — which Route 36 G3 shows *does* happen,
+exactly once on `(0,π)`, contrary to that gate's retracted claim — then
+`quintic_of_mul_real` pins its value to a root of `r⁵ − r³ + 1` and
+`quintic_root_lt_one` puts that below `1`, closing the second.
+
+Note which fact does the work in each branch. For a *real* root the first
+disjunct is elementary: `Im(x·y) = Im x · Re y`, nonzero on the open arc — and
+that is exactly what expires at `φ = π`, taking `VSide` with it. The quintic is
+needed only for the complex pair, at the one point where its `Im` vanishes. -/
+theorem mul_mem_notCut {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hxim : x.im ≠ 0)
+    (hc : curve x y = 0) : x * y ∈ notCut := by
+  rcases eq_or_ne (x * y).im 0 with him | him
+  · refine Or.inr ?_
+    have hxy : x * y = ((((x * y).re : ℝ)) : ℂ) := by
+      apply Complex.ext <;> simp [him]
+    exact quintic_root_lt_one (quintic_of_mul_real hx hxim hc hxy)
+  · exact Or.inl him
+
+/-- **`y/x ∈ notCut` for every root on the open arc** — `VSide.hc₃`, in full.
+
+`mul_mem_notCut` at `x⁻¹`, via `curve_inv`. On `|x| = 1` the inverse has the same
+real part and the negated imaginary part, so both hypotheses transport unchanged. -/
+theorem div_mem_notCut {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hxim : x.im ≠ 0)
+    (hc : curve x y = 0) : y / x ∈ notCut := by
   have hx0 : x ≠ 0 := fun h => hxim (by rw [h]; simp)
-  have hy0 : y ≠ 0 := root_ne_zero hx0 hc
-  exact vSide_of_notCut_mul_div hx hx0 hc (mul_mem_notCut_of_real hxim hy hy0)
-    (div_mem_notCut_of_real hx0 hxim hy hy0)
+  have hns : Complex.normSq x = 1 := by
+    rw [Complex.normSq_apply]; nlinarith [hx]
+  have hre : (x⁻¹).re = x.re := by rw [Complex.inv_re, hns, div_one]
+  have him : (x⁻¹).im = -x.im := by rw [Complex.inv_im, hns, div_one]
+  have hxi : (x⁻¹).re ^ 2 + (x⁻¹).im ^ 2 = 1 := by rw [hre, him]; nlinarith [hx]
+  have hxiim : (x⁻¹).im ≠ 0 := by rw [him]; exact neg_ne_zero.mpr hxim
+  have hci : curve x⁻¹ y = 0 := by
+    have h2 : curve x⁻¹ y * x ^ 2 = 0 := by rw [curve_inv hx0, hc]
+    exact (mul_eq_zero.mp h2).resolve_right (pow_ne_zero 2 hx0)
+  simpa [inv_mul_eq_div] using mul_mem_notCut hxi hxiim hci
+
+/-- **`VSide` in full, at every root of the curve on the OPEN arc.**
+
+All six fields, no root structure, no labelling, no case analysis left to the
+caller. `hxim : x.im ≠ 0` is the open-arc condition and it is load-bearing, not
+decorative: at `φ = π` it is exactly what fails, and `VSide` fails with it
+(Route 36 G7). Proving this over `Icc 0 π` would be proving something false. -/
+theorem vSide_of_root {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hxim : x.im ≠ 0)
+    (hc : curve x y = 0) : VSide x y :=
+  vSide_of_notCut_mul_div hx (fun h => hxim (by rw [h]; simp)) hc
+    (mul_mem_notCut hx hxim hc) (div_mem_notCut hx hxim hc)
 
 /-! ### 3. `S′(φ) = 2φ` -/
 

@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide FALSE at phi=pi; G3 retracted (x*y IS real once, at a root of r^5-r^3+1); proved at every real root'
+title: 'Gap A: VSide CLOSED on the open arc (and FALSE at phi=pi); what remains is the concrete labelling + log(-y)'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T02:05:00Z
+updated_at: 2026-08-09T02:55:00Z
 ---
 
 ## What is open
@@ -141,9 +141,9 @@ in the real part. Route 30's correction, proved rather than assumed.
 | the envelope condition `heⱼ` | ✅ `re_dVdy_mul_eq_zero_of_real` / `exists_int_dVdy_mul` |
 | the log-sum conditions `hA`, `hB` | ✅ `logSumA_eq_log`, `logSumB_eq_neg_log` (pre-existing) |
 | one-exceptional-point glue | ✅ `envelopeS_total` (pre-existing) |
-| `VSide` — 4 of 6 fields, all 6 at real roots | ✅ `vSide_of_notCut_mul_div`, `vSide_of_real_root` |
+| **`VSide`, all six fields, every root on the OPEN arc** | ✅ `vSide_of_root` |
 | ⚠ `VSide` at `φ = π` | **FALSE — Route 36 G7, below. Prove over `Ico`, never `Icc`.** |
-| **concrete `Y₁ Y₂ Y₃` + `VSide`'s last two fields + the two `log(−y)` routes** | **open** |
+| **concrete `Y₁ Y₂ Y₃` + the two `log(−y)` routes** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
@@ -227,19 +227,51 @@ Three things this exposes, each worth keeping:
 
 Recorded in the `VSide` docstring so it cannot be re-attempted quietly.
 
-### ✅ `VSide` proved in full at every REAL root on the open arc
+### ✅✅ `VSide` IS CLOSED on the open arc — all six fields, every root
 
-    mul_mem_notCut_of_real (hxim : x.im ≠ 0) (hy : y.im = 0) (hy0 : y ≠ 0) : x*y ∈ notCut
-    div_mem_notCut_of_real (hx0 : x ≠ 0) (hxim : x.im ≠ 0) …            : y/x ∈ notCut
-    vSide_of_real_root (hx : |x|=1) (hxim : x.im ≠ 0) (hy : y.im = 0)
-      (hc : curve x y = 0) : VSide x y
+    vSide_of_root (hx : |x| = 1) (hxim : x.im ≠ 0) (hc : curve x y = 0) : VSide x y
 
-`Im(x·y) = Im x · Re y`, so one line each. Per G5 this is the **majority** case,
-not a corner: 291 of the 597 checks are real roots, because the arc crosses the
-discriminant and all three roots are real at 46 of the 199 points.
+No root structure, no labelling, no case analysis left to the caller. Sorry-free,
+`lake`-verified (2584 jobs), axioms `[propext, Classical.choice, Quot.sound]`.
+Supersedes the intermediate `vSide_of_real_root` (real roots only), which is
+removed rather than left as clutter.
 
-`hxim` is load-bearing, not decorative — at `φ = π` it is exactly what fails, and
-`VSide` fails with it. The lemma and the refutation are the same fact.
+`hxim` is the open-arc condition and it is load-bearing, not decorative: at
+`φ = π` it is exactly what fails, and `VSide` fails with it. The theorem and G7's
+refutation are the same fact seen from two sides.
+
+The two hard fields went as follows.
+
+**`hc₂` (`x·y ∈ notCut`) — the disjunction, used as a disjunction.**
+
+    mul_mem_notCut : x*y ∈ notCut
+
+If `Im(x·y) ≠ 0`, done. If `x·y` is real — which G3 shows *does* happen, once, on
+`(0,π)` — then:
+
+    quintic_of_mul_real (hx : |x|=1) (hxim : x.im ≠ 0) (hc : curve x y = 0)
+      (hxy : x*y = r) : r⁵ − r³ + 1 = 0
+    quintic_root_lt_one (h : r⁵ − r³ + 1 = 0) : r < 1
+
+pins the value and puts it below 1. **`quintic_of_mul_real` needs no Vieta and no
+root tracking**, which is what made it cheap: substituting `x·y = r` into the
+curve (times `x²`) gives a cubic in `x` with *real* coefficients; on `|x| = 1` the
+quadratic `x² + 1 = 2·(Re x)·x` is the minimal polynomial of a non-real `x` over
+`ℝ`, so that cubic reduces to `α·x + β` with `α, β` real; `x.im ≠ 0` forces both
+to vanish; and `r⁵ − r³ + 1 = α + (r² + 2c)·β` identically. Both certificates
+were checked at generic `(r, c, x)` **off** the locus before any Lean was written.
+
+`unitCircle_quadratic` was extracted from inside `curve_eq_unitCubic` for this,
+and `curve_eq_unitCubic` now uses it — one line instead of a repeated `nlinarith`.
+
+**`hc₃` (`y/x ∈ notCut`) — free, via an involution nobody had noticed.**
+
+    curve_inv (hx0 : x ≠ 0) (y : ℂ) : curve x⁻¹ y * x² = curve x y
+
+`x ↦ x⁻¹` maps the curve to itself, so `y/x` is just `x·y` read at `x⁻¹` — which
+on `|x| = 1` differs only by the sign of `Im x`. `hc₃` needs no argument of its
+own, and this also **explains** G3's observation that the two crossings sit at the
+same `φ` with the same value: they are the same crossing.
 
 ### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 
@@ -276,14 +308,11 @@ real", "holds everywhere") backed by *positive samples on a grid*. Neither can b
 established that way. Where Route 36 now asserts a "never" it evaluates an exact
 endpoint or bisects a symmetric function — not a denser grid.
 
-**Still open in `VSide`:** `x·y ∈ notCut` and `y/x ∈ notCut` at the **complex
-pair**, on the open arc. `exists_pinning_data` gives `(x·y₃).im < 0` and
-`(x·y₂).im < 0` once `c < 0`; the remaining gap is `y₂` for `c ≥ 0`, and it now
-has to route through the crossing rather than around it — away from `φ*` by
-`Im ≠ 0`, at `φ*` by `quintic_root_lt_one`. The missing step is deriving
-`r⁵ − r³ + 1 = 0` in Lean from `curve x y = 0` ∧ `|x| = 1` ∧ `Im(x·y) = 0`; the
-Vieta route above is the one to follow, and its only real content is that a
-non-real root of a real cubic brings its conjugate.
+**`VSide` is no longer open** — see the section above. `exists_pinning_data`'s
+sign facts turned out not to be needed for it at all: the route through the
+crossing (`Im ≠ 0` away from `φ*`, `quintic_root_lt_one` at it) is uniform in the
+root and needs no per-root labelling, which is what made `hc₂` land in one
+theorem instead of a case analysis over `y₂`, `y₃` and `c`'s sign.
 
 ⚠ Note also what G3's *other* number meant: `min |Im(x·y)| = 0.00676` at
 `φ = 0.0157` belongs to the **real** root (`t·sin φ → 0` as `φ → 0`), not the

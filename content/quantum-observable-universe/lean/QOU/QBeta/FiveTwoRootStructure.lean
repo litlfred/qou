@@ -65,6 +65,22 @@ open Set
 /-- The `y`-cubic of the deformed curve on `|x| = 1`, monic, with `c = cos φ`. -/
 noncomputable def unitCubic (c t : ℝ) : ℝ := t ^ 3 - 2 * c * t ^ 2 + (2 * c + 1) * t - 1
 
+/-- **`2·(Re x)·x = x² + 1` on `|x| = 1`** — which is `x·conj x = 1` in disguise.
+
+Extracted as a theorem rather than left inside `curve_eq_unitCubic`, because it is
+also the *minimal polynomial* of a non-real `x` on the circle over `ℝ`, and that
+is what reduces any polynomial in `x` to something linear with real
+coefficients — used by `quintic_of_mul_real` in `FiveTwoTransport`. -/
+theorem unitCircle_quadratic {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) :
+    2 * (x.re : ℂ) * x = x ^ 2 + 1 := by
+  have h : ((2 * x.re : ℝ) : ℂ) * x = x ^ 2 + 1 := by
+    apply Complex.ext <;>
+      simp only [pow_two, Complex.mul_re, Complex.mul_im, Complex.add_re, Complex.add_im,
+        Complex.ofReal_re, Complex.ofReal_im, Complex.one_re, Complex.one_im] <;>
+      nlinarith [hx]
+  push_cast at h
+  linear_combination h
+
 /-- **On `|x| = 1` the deformed curve's `y`-cubic IS `unitCubic (Re x)`.**
 
 Checked rather than asserted: the reduction rests on `2·Re x·x = x² + 1`, which
@@ -74,15 +90,7 @@ times. -/
 theorem curve_eq_unitCubic {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (y : ℂ) :
     x * y ^ 3 - (x ^ 2 + 1) * y ^ 2 + (x ^ 2 + x + 1) * y - x
       = x * (y ^ 3 - 2 * (x.re : ℂ) * y ^ 2 + (2 * (x.re : ℂ) + 1) * y - 1) := by
-  have hkey : 2 * (x.re : ℂ) * x = x ^ 2 + 1 := by
-    have h : ((2 * x.re : ℝ) : ℂ) * x = x ^ 2 + 1 := by
-      apply Complex.ext <;>
-        simp only [pow_two, Complex.mul_re, Complex.mul_im, Complex.add_re, Complex.add_im,
-          Complex.ofReal_re, Complex.ofReal_im, Complex.one_re, Complex.one_im] <;>
-        nlinarith [hx]
-    push_cast at h
-    linear_combination h
-  linear_combination (y ^ 2 - y) * hkey
+  linear_combination (y ^ 2 - y) * unitCircle_quadratic hx
 
 theorem unitCubic_zero (c : ℝ) : unitCubic c 0 = -1 := by unfold unitCubic; ring
 
