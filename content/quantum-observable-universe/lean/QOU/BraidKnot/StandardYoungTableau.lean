@@ -135,75 +135,7 @@ def StandardYoungTableau.hookLength (μ : YoungDiagram) (i j : ℕ) : ℕ :=
 theorem hookLength_pos (μ : YoungDiagram) (i j : ℕ) : 0 < StandardYoungTableau.hookLength μ i j := by
   unfold StandardYoungTableau.hookLength; omega
 
-/-- Entries increase strictly along a row, for arbitrary `j1 < j2` — the
-structure field only gives consecutive steps. -/
-theorem StandardYoungTableau.entry_row_lt {μ : YoungDiagram}
-    (T : StandardYoungTableau μ) {i j1 j2 : ℕ} (h : j1 < j2) (hmem : (i, j2) ∈ μ) :
-    T.entry i j1 < T.entry i j2 := by
-  induction j2 with
-  | zero => omega
-  | succ k ih =>
-      rcases Nat.lt_succ_iff_lt_or_eq.mp h with hlt | heq
-      · have hk : (i, k) ∈ μ := μ.up_left_mem (le_refl i) (Nat.le_succ k) hmem
-        exact lt_trans (ih hlt hk) (T.row_strict i k hmem)
-      · subst heq; exact T.row_strict i j1 hmem
 
-/-- Entries increase strictly down a column, for arbitrary `i1 < i2`. -/
-theorem StandardYoungTableau.entry_col_lt {μ : YoungDiagram}
-    (T : StandardYoungTableau μ) {i1 i2 j : ℕ} (h : i1 < i2) (hmem : (i2, j) ∈ μ) :
-    T.entry i1 j < T.entry i2 j := by
-  induction i2 with
-  | zero => omega
-  | succ k ih =>
-      rcases Nat.lt_succ_iff_lt_or_eq.mp h with hlt | heq
-      · have hk : (k, j) ∈ μ := μ.up_left_mem (Nat.le_succ k) (le_refl j) hmem
-        exact lt_trans (ih hlt hk) (T.col_strict k j hmem)
-      · subst heq; exact T.col_strict i1 j hmem
-
-/-- **Arm length in closed form.** The cells strictly right of `(i, j)` in row `i`
-are exactly `j < b < μ.rowLen i`, so there are `μ.rowLen i - j - 1` of them. -/
-theorem armCard_eq (μ : YoungDiagram) (i j : ℕ) :
-    (μ.cells.filter (fun c => c.1 = i ∧ j < c.2)).card = μ.rowLen i - j - 1 := by
-  have : (μ.cells.filter (fun c => c.1 = i ∧ j < c.2))
-      = ({i} : Finset ℕ) ×ˢ Finset.Ioo j (μ.rowLen i) := by
-    ext ⟨a, b⟩
-    simp only [Finset.mem_filter, YoungDiagram.mem_cells, Finset.mem_product,
-      Finset.mem_singleton, Finset.mem_Ioo]
-    constructor
-    · rintro ⟨hmem, rfl, hjb⟩
-      exact ⟨rfl, hjb, YoungDiagram.mem_iff_lt_rowLen.mp hmem⟩
-    · rintro ⟨rfl, hjb, hblt⟩
-      exact ⟨YoungDiagram.mem_iff_lt_rowLen.mpr hblt, rfl, hjb⟩
-  rw [this, Finset.card_product, Finset.card_singleton, Nat.card_Ioo, one_mul]
-
-/-- **Leg length in closed form.** Dual to `armCard_eq`, via `colLen`. -/
-theorem legCard_eq (μ : YoungDiagram) (i j : ℕ) :
-    (μ.cells.filter (fun c => c.2 = j ∧ i < c.1)).card = μ.colLen j - i - 1 := by
-  have : (μ.cells.filter (fun c => c.2 = j ∧ i < c.1))
-      = Finset.Ioo i (μ.colLen j) ×ˢ ({j} : Finset ℕ) := by
-    ext ⟨a, b⟩
-    simp only [Finset.mem_filter, YoungDiagram.mem_cells, Finset.mem_product,
-      Finset.mem_singleton, Finset.mem_Ioo]
-    constructor
-    · rintro ⟨hmem, rfl, hia⟩
-      exact ⟨⟨hia, YoungDiagram.mem_iff_lt_colLen.mp hmem⟩, rfl⟩
-    · rintro ⟨⟨hia, halt⟩, rfl⟩
-      exact ⟨YoungDiagram.mem_iff_lt_colLen.mpr halt, rfl, hia⟩
-  rw [this, Finset.card_product, Finset.card_singleton, Nat.card_Ioo, mul_one]
-
-/-- **The hook length in `rowLen`/`colLen` form** — the bridge between the
-`Finset`-of-cells definition used here and the `(λ_i − j) + (colLen j − i) − 1`
-form used by the list-based `prodHooks`. Holds for genuine cells, where both
-subtractions are exact. -/
-theorem hookLength_eq_rowLen_add_colLen (μ : YoungDiagram) {i j : ℕ}
-    (h : (i, j) ∈ μ) :
-    StandardYoungTableau.hookLength μ i j
-      = (μ.rowLen i - j) + (μ.colLen j - i) - 1 := by
-  have hj : j < μ.rowLen i := YoungDiagram.mem_iff_lt_rowLen.mp h
-  have hi : i < μ.colLen j := YoungDiagram.mem_iff_lt_colLen.mp h
-  unfold StandardYoungTableau.hookLength
-  rw [armCard_eq, legCard_eq]
-  omega
 
 /-- The **hook-length product** `∏_{c ∈ μ} h(c)` appearing in the FRT formula. -/
 def hookProduct (μ : YoungDiagram) : ℕ :=
@@ -216,82 +148,10 @@ theorem hookProduct_pos (μ : YoungDiagram) : 0 < hookProduct μ :=
   Finset.prod_induction _ (0 < ·) (fun _ _ ha hb => Nat.mul_pos ha hb) Nat.one_pos
     (fun c _ => hookLength_pos μ c.1 c.2)
 
-/-- **Row decomposition of the cells.** Every cell lies in row `i` for some
-`i < μ.colLen 0`, and the rows are pairwise disjoint. Mathlib has `row_eq_prod`
-but no cells-as-union-of-rows lemma, so it is proved here. -/
-theorem cells_eq_biUnion (μ : YoungDiagram) :
-    μ.cells = (Finset.range (μ.colLen 0)).biUnion (fun i => μ.row i) := by
-  ext ⟨a, b⟩
-  simp only [Finset.mem_biUnion, Finset.mem_range, YoungDiagram.mem_row_iff,
-    YoungDiagram.mem_cells]
-  constructor
-  · intro h
-    exact ⟨a, YoungDiagram.mem_iff_lt_colLen.mp (μ.up_left_mem (le_refl a) (Nat.zero_le b) h), h, rfl⟩
-  · rintro ⟨i, _, hmem, rfl⟩
-    exact hmem
 
-/-- **`hookProduct` as a nested product over rows and columns.** This is the
-indexing half of the bridge to the list-based `prodHooks`: the `Finset` product
-over `μ.cells` becomes `∏_i ∏_{j < rowLen i}`, with the hook already in
-`rowLen`/`colLen` form via `hookLength_eq_rowLen_add_colLen`. -/
-theorem hookProduct_eq_nested (μ : YoungDiagram) :
-    hookProduct μ
-      = ∏ i ∈ Finset.range (μ.colLen 0),
-          ∏ j ∈ Finset.range (μ.rowLen i),
-            ((μ.rowLen i - j) + (μ.colLen j - i) - 1) := by
-  unfold hookProduct
-  rw [cells_eq_biUnion, Finset.prod_biUnion]
-  · refine Finset.prod_congr rfl (fun i _ => ?_)
-    rw [YoungDiagram.row_eq_prod, Finset.prod_product]
-    simp only [Finset.prod_singleton]
-    refine Finset.prod_congr rfl (fun j hj => ?_)
-    exact hookLength_eq_rowLen_add_colLen μ
-      (YoungDiagram.mem_iff_lt_rowLen.mpr (Finset.mem_range.mp hj))
-  · intro x _ y _ hxy
-    simp only [Finset.disjoint_left, YoungDiagram.mem_row_iff]
-    rintro ⟨a, b⟩ ⟨_, rfl⟩ ⟨_, h⟩
-    exact hxy h
 
-/-- `μ.rowLens.getD i 0 = μ.rowLen i`, for EVERY `i` — past the last row both
-sides are `0`, since `i ≥ μ.colLen 0` forces `(i, 0) ∉ μ`. -/
-theorem rowLens_getD (μ : YoungDiagram) (i : ℕ) :
-    μ.rowLens.getD i 0 = μ.rowLen i := by
-  by_cases h : i < μ.rowLens.length
-  · rw [List.getD_eq_getElem _ _ h, YoungDiagram.get_rowLens]
-  · rw [List.getD_eq_default _ _ (Nat.not_lt.mp h)]
-    rw [YoungDiagram.length_rowLens] at h
-    by_contra hne
-    exact h (YoungDiagram.mem_iff_lt_colLen.mp
-      (YoungDiagram.mem_iff_lt_rowLen.mpr (Nat.pos_of_ne_zero (Ne.symm hne))))
 
-/-- Counting `i < m` over `range n`. No such lemma exists upstream, so it is
-proved here by induction on `n`. -/
-private theorem countP_range_lt (m n : ℕ) :
-    (List.range n).countP (fun i => decide (i < m)) = min m n := by
-  induction n with
-  | zero => simp
-  | succ k ih =>
-      rw [List.range_succ, List.countP_append, ih, List.countP_cons, List.countP_nil]
-      by_cases hk : k < m
-      · rw [if_pos (decide_eq_true hk)]; omega
-      · rw [if_neg (by simp [hk])]; omega
 
-/-- **The list-side column length agrees with the diagram's.** Counting rows
-longer than `j` in `μ.rowLens` gives `μ.colLen j` — this is what lets the
-list-based `prodHooks` see the same hooks as `hookProduct`. -/
-theorem length_filter_rowLens (μ : YoungDiagram) (j : ℕ) :
-    (μ.rowLens.filter (fun p => j < p)).length = μ.colLen j := by
-  have hle : μ.colLen j ≤ μ.colLen 0 := μ.colLen_anti 0 j (Nat.zero_le j)
-  rw [← List.countP_eq_length_filter, YoungDiagram.rowLens, List.countP_map]
-  rw [show ((fun p => decide (j < p)) ∘ μ.rowLen)
-        = (fun i => decide (i < μ.colLen j)) by
-    funext i
-    simp only [Function.comp_apply, decide_eq_decide]
-    exact ⟨fun h => YoungDiagram.mem_iff_lt_colLen.mp
-             (YoungDiagram.mem_iff_lt_rowLen.mpr h),
-           fun h => YoungDiagram.mem_iff_lt_rowLen.mp
-             (YoungDiagram.mem_iff_lt_colLen.mpr h)⟩]
-  rw [countP_range_lt, Nat.min_eq_left hle]
 
 /-! ### The FRT hook-length formula
 

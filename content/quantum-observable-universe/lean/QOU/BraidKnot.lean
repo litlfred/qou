@@ -8,8 +8,6 @@ import QOU.BraidKnot.YoungTableauStandard
 import QOU.BraidKnot.WLambdaDefectSubleadingD
 import QOU.BraidKnot.WLambdaDefectLadderE
 import QOU.BraidKnot.IdentityIContentDecomposition
-import QOU.BraidKnot.HookProductBridge
-import QOU.BraidKnot.SytCountBridge
 import QOU.BraidKnot.IdentityIPlancherelInstances
 import QOU.BraidKnot.InterfaceOperatorBlockDiagonal
 import QOU.BraidKnot.KeystoneC2ContentTranspose
