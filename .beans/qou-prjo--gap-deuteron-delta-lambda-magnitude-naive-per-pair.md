@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-08T20:44:11Z
+updated_at: 2026-08-08T20:46:18Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -79,6 +79,39 @@ combinatorial and the magnitude derivation must run through the q0 trace (the mu
 alpha-cluster residual via rho_F cluster integrals, AdditiveResidualSimplex sec S).
 
 Files: docs/audits/2026-08-08-threerow-extensive-cumulant-forward-qfree.md;
-QOU/MassTheory/ThreeRowExtensiveCumulant.lean (sorry-free; lean-direct blocked by
-sandbox disk quota -- hand-audited, recipe in audit doc);
+QOU/MassTheory/ThreeRowExtensiveCumulant.lean (sorry-free; lean-direct exit 0,
+#print axioms clean on all 11 decls -- the earlier "sandbox disk quota" block was a
+MISDIAGNOSIS, corrected 2026-08-09: the toolchain and 6990 mathlib oleans were already
+present. NOTE the residual "sorry-free != derived" seam: sRow3 is a hand-entered table,
+Python-checked and independently re-derived by hook length, NOT a Lean-proved partition
+sum -- cite as "the table sRow3 gives (-,+)", never "Lean proves the >=3-row stratum");
 computations/deltalambda/threerow_extensive_cumulant_forward_probe.py (+witness).
+
+---
+
+## LEAD-2 geometric surface-curvature route (PR #4818, 2026-08-08)
+
+Formalize-first attack on the transverse pairing Ω₂=½P∮∮[𝓕,𝓕]. Does NOT close
+the magnitude (scope-(a)); localizes it and Lean-proves a diagonal dead-end.
+
+- **Lean (sorry-free, lean-direct exit 0):** QOU/MassTheory/TransverseSurfaceCurvature.lean
+  — Seifert Betti b₁=c−s+1 (trefoil=2); ordered transverse pairing over a
+  generic Ring; **THE WALL** formalized (transverse_nonzero_needs_noncommuting_
+  curvature: nonzero pairing ⇒ position-dependent transported curvature = the
+  missing surface-2-form data). Magnitude NOT derived.
+- **Forward probe (0-fit):** AME binding ratios sit BETWEEN the diagonal
+  envelope (∝b₁, undershoots 4He 3 vs 12.72) and off-diagonal envelope
+  (∝C(b₁,2), overshoots 15 vs 12.72) — same shape as na-Stokes ℏ⁰/ℏ² bracketing.
+- **Scope-(b) sub-exclusion (Lean-proved):** the diagonal/Betti-count reading is
+  EXACTLY linear in link count (seifertBettiOne_link_additive) ⇒ pairwise-capped
+  ⇒ CANNOT be the ≥3-body term. DO NOT redo any additive/Betti closure.
+- **Isospin-blind:** T=³He geometry but AME differs (p/n split invisible to
+  genus topology).
+- **Surviving sub-question:** compute the surface-ordered transport U(x,O) on
+  the trefoil Seifert surface + the off-diagonal cross-handle pairing
+  Σ_{i<j}[U_i⁻¹F U_i, U_j⁻¹F U_j], and test whether it is non-additive over
+  links (super-pairwise). Still blocked on the canonical multi-nucleon Seifert
+  braid word (corpus lacks it; only the deuteron trefoil is pinned).
+
+Audit: docs/audits/2026-08-08-nastokes-transverse-surface-curvature-geometric-route.md
+>>>>>>> 9d3805271e (bean qou-prjo: record LEAD-2 geometric route (scope-a non-closure + wall))
