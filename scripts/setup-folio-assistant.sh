@@ -44,7 +44,29 @@
 set -uo pipefail
 
 REPO_URL="${FOLIO_ASSISTANT_REPO:-https://github.com/litlfred/folio-assistant.git}"
-REF="${FOLIO_ASSISTANT_REF:-main}"
+
+# --- resolve the platform ref (PINNED by default) ------------------------
+# The checkers live in the platform repo, so every count this repo quotes
+# ("validate: N issues", "wall-side M/1190") is a function of TWO inputs — the
+# corpus and the platform — and only one of them used to be visible in `git log`.
+# Defaulting to `main` meant two agents on the same corpus commit could measure
+# different numbers and each be right; that happened (bean `vbase`), and cost a
+# round of argument about whose baseline was wrong.
+#
+# So the default is now the SHA in `.folio-assistant-pin`. Moving the platform is
+# a deliberate, reviewable one-line commit to that file, not a silent consequence
+# of when you happened to clone. `FOLIO_ASSISTANT_REF` still overrides for
+# testing against an unreleased platform.
+PIN_FILE="$(dirname "$0")/../.folio-assistant-pin"
+if [ -n "${FOLIO_ASSISTANT_REF:-}" ]; then
+  REF="$FOLIO_ASSISTANT_REF"
+elif [ -f "$PIN_FILE" ]; then
+  # strip comments and blank lines; take the first remaining token
+  REF="$(sed 's/#.*//' "$PIN_FILE" | tr -d '[:space:]' | head -c 64)"
+  [ -n "$REF" ] || REF="main"
+else
+  REF="main"
+fi
 
 die() { echo "setup-folio-assistant: ERROR: $*" >&2; exit 1; }
 info() { echo "setup-folio-assistant: $*" >&2; }
