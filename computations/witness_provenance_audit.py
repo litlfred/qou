@@ -207,6 +207,10 @@ def _resolve(node, assigns: dict, depth: int = 0):
         fn = f.attr if isinstance(f, ast.Attribute) else getattr(f, "id", "")
         if fn == "Path" and node.args:
             yield from _resolve(node.args[0], assigns, depth + 1)
+        elif fn == "witness_path" and node.args:
+            # _path_bridge.witness_path("x.witness.json", HERE) — this repo's
+            # own resolver, 208 call sites. Basename is the first argument.
+            yield from _resolve(node.args[0], assigns, depth + 1)
         elif fn == "with_name" and node.args:
             # script_path.with_name("x.witness.json") — the borromean cluster.
             yield from _resolve(node.args[0], assigns, depth + 1)
@@ -425,6 +429,15 @@ CASES = [
      'd = json.loads(src.read_text())\n'
      'script_path.with_name("mine.witness.json").write_text(j)',
      "upstream.witness.json", "UNCONFIRMED"),
+    ("witness_path reaching a write",
+     'CHI = _pb.witness_path("chi-deuteron-h6.witness.json", HERE)\n'
+     'CHI.write_text(json.dumps(p))',
+     "chi-deuteron-h6.witness.json", "WRITES"),
+    ("witness_path reaching only a read",
+     'src = _pb.witness_path("chi-proton-h3.witness.json", HERE)\n'
+     'd = json.loads(src.read_text())\n'
+     '_pb.witness_path("mine.witness.json", HERE).write_text(j)',
+     "chi-proton-h3.witness.json", "UNCONFIRMED"),
     ("read_text is not a write sink",
      'Path("x.witness.json").read_text()', "x.witness.json", "UNCONFIRMED"),
     ("open without a mode is a read",

@@ -1208,3 +1208,71 @@ so a clean-looking jump is precisely when to stop and verify:
   (`/tmp/trace-wt`); `git ls-files` confirms these are tracked and pre-existing.
   Shadow copies of files that also exist at the correct path — a corpus
   decision, not a tool fix.
+
+## P33 — the six `chi-*` mis-attributions, and why `computations/computations/` existed
+
+### The doubled directory: a cwd-relative path plus a silent `mkdir`
+
+Three producers wrote to the **string literal** `"computations/<name>.witness.json"`
+— resolved against the *current working directory*, not the script. Run from the
+repo root it lands correctly; run from inside `computations/` it lands in
+`computations/computations/`. Two of the three then call
+`out_path.parent.mkdir(parents=True, exist_ok=True)`, which **creates** the
+spurious directory instead of failing, so the mistake left no trace but the
+files. `binding_bring_enhancement_compare.py` already defined `HERE` at line 40
+and did not use it for output; `binding_alpha_shift_witness.py` documented its
+default as *"alongside the script"*, which is precisely what it was not.
+
+All three now build the default from `__file__`. Verified the way the bug was
+caused rather than statically: run each from inside `computations/`, confirm the
+witness lands at the correct path and no doubled directory reappears.
+
+The three committed copies were stale — written 17:36–17:42 on 2026-07-18,
+where the correct-path copies date from 19:19–23:59 the same day — and they
+differ in numbers, not just metadata. Deleted, along with their three keys in
+`raw-float64-baseline.json` (83 baselined fields; removing baseline entries only
+tightens the gate). Audit totals move by exactly those three files and 83 fields
+and nothing else; `NEW dirty 11 / REGRESSED 1` reproduce identically on a clean
+tree, so they are pre-existing and unrelated.
+
+**A drift found while verifying, and deliberately not committed.** Re-running
+those three today reproduces the *older* numbers:
+`binding-bring-enhancement-compare` regenerates `q_0_50dps` at 68 digits where
+the committed witness holds the 50-digit proton anchor, and its
+`delta_flavor_split_subleading` comes back as the value from the stale doubled
+copy. That is a genuine reproducibility failure in the producer's q₀ sourcing —
+unrelated to the path fix, which only changes *where* the file is written. The
+regenerated witnesses were reverted; committing them would leak a drifted value
+over a committed one, the failure `q0_muon_reproduction_sweep.py:145` names as
+the tnjb corruption. Recorded here as its own item.
+
+### Five of the six `chi-*` claims repaired; the sixth is an orphan
+
+Each producer was identified twice over, by independent means — a static trace
+from filename to write sink, and the shape of the payload the candidate writes:
+
+| witness | producer | fingerprint |
+|---|---|---|
+| `chi-proton-h3`, `chi-neutron-h3`, `chi-tritium-h9`, `chi-helium-3-h9` | `per_irrep_pole_atom.py` | 8/8 keys, incl. `compute_time_sec_so_far` |
+| `chi-deuteron-h6` | `per_irrep_pole_deuteron_h6.py` | its smaller payload, and `compute_time_sec` |
+| `chi-helium-4-h12-numeric` | **none** | 1/8 — matches neither |
+
+`per_irrep_pole_atom.py` carries all six atoms in its table and writes
+`chi-{atom}-h{3(Z+N)}.witness.json`; `canonical_tr_m_via_chi_cache.py:82` says
+so outright in a `FileNotFoundError` — *"Run `per_irrep_pole_atom.py {atom_name}`
+to build it."* The `-numeric` suffix on the helium-4 file is why it is not that
+script's output: the live counterpart `chi-helium-4-h12.witness.json` exists and
+fingerprints 8/8. `-numeric` is a superseded variant with no producer — a fourth
+orphan alongside the three already triaged, to be deleted or re-attributed as a
+corpus decision.
+
+Only `scriptFile` was changed. None of the six carried a `scriptHash` (asserted,
+not assumed — the repair aborts if one is present), so no hash was desynced and
+none was invented; `run_pipeline` still sees them as needing a run. The repair
+then **verifies itself**: all five reclassify `UNCONFIRMED → WRITES` under an
+audit that was given no knowledge of the fix.
+
+`_path_bridge.witness_path(name, HERE)` — this repo's own resolver, 208 call
+sites — was added to the tracer as a fifth idiom. It moved only 2 witnesses:
+those call sites are overwhelmingly reads. **`UNCONFIRMED` now stands at 25**,
+`NOT_A_PRODUCER` still the same three by name.

@@ -258,7 +258,13 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--out",
-        default="computations/binding-alpha-shift-witness.witness.json",
+        # Script-relative, which is what the help text has always claimed. The
+        # old cwd-relative "computations/…" default wrote to
+        # computations/computations/… when run from inside computations/, and
+        # `out_path.parent.mkdir(parents=True)` below created that dir silently
+        # rather than failing.
+        default=str(Path(__file__).resolve().parent
+                    / "binding-alpha-shift-witness.witness.json"),
         help="Witness output path (default: alongside the script).",
     )
     ap.add_argument(

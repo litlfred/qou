@@ -155,7 +155,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--out",
-        default="computations/binding-bring-enhancement-compare.witness.json",
+        # Script-relative via the HERE this file already defines: the old
+        # cwd-relative default wrote to computations/computations/… when run
+        # from inside computations/.
+        default=str(HERE / "binding-bring-enhancement-compare.witness.json"),
     )
     ap.add_argument("--print", action="store_true")
     args = ap.parse_args()
