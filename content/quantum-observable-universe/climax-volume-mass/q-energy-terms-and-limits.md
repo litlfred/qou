@@ -26,10 +26,10 @@ The action term dominates: for hadrons, $\mathfrak{S}_q \sim 10^3$ MeV, while th
 
 **Relation to crossing energy.**
 
-Each crossing in the braid word contributes energy $\mathfrak{E}_\times(q) = \frac{1}{2}(q - q^{-1}) = 0.1045$ (in units of the mass scale $\mu_0$). The total action is:
+Each crossing contributes the bar-odd weight $\mathfrak{E}_\times(q) = \tfrac{1}{2}(q - q^{-1}) \approx 0.1045$ (in units of the mass scale $\mu_0$), and it does so independently of the crossing's sign: the bar-odd weight is blind to that sign ([decomposition](#prop:crossing-energy-decomposition)). The *signed* weights are the ones the [crossing energy](#def:crossing-energy) assigns — $+q$ to a positive crossing and $-q^{-1}$ to a negative one — so for a braid word carrying $n_+$ positive and $n_-$ negative crossings the action term is
 
 $$
-  \mathfrak{S}_q(K) \;=\; \sum_{j=1}^{k} \mathfrak{E}_\times^{(\epsilon_j)}(q)
+  \mathfrak{S}_q(K) \;=\; \mathfrak{E}_{\mathrm{cross}}(K) \;=\; n_+ q - n_- q^{-1}.
 $$
 
-where $\epsilon_j = \pm 1$ represents the crossing sign. For a positive crossing: $\mathfrak{E}_\times^{(+)} = q$. For a negative crossing: $\mathfrak{E}_\times^{(-)} = q^{-1}$. The asymmetry $q \neq q^{-1}$ at the substrate parameter $q$ forces positive crossings to carry more energy than negative ones. This is the energy signature of parity violation.
+Summing $\mathfrak{E}_\times$ over all $n_+ + n_-$ crossings recovers the bar-odd part of that total, $\tfrac{1}{2}(n_+ + n_-)(q - q^{-1})$, while the bar-even part carries the *net* count $\tfrac{1}{2}(n_+ - n_-)$ instead ([decomposition](#prop:crossing-energy-decomposition)). For $q > 1$ the two signed weights differ in magnitude, $q > q^{-1}$, so positive and negative crossings are not interchangeable. This is the energy signature of parity violation.
