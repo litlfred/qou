@@ -6,6 +6,7 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.Complex.LocallyUniformLimit
 import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.MeasureTheory.Integral.CircleIntegral
+import QOU.Mathlib.CircleIntegralFinsetSum
 
 /-!
 # The q-theta zero locus — where the C1 connection matrix has its poles
@@ -964,6 +965,128 @@ theorem multiplicity_eq_one_of_winding_step (u : ℂ → ℂ) (a : ℂ) (m : ℕ
     · exact sub_eq_zero.mp h
     · exact absurd h hne
   exact_mod_cast hm
+
+/-- Pointwise split of the logarithmic derivative of a finite product of powers
+times a non-vanishing factor. -/
+theorem logDeriv_prod_pow_sub_mul (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ) (z : ℂ)
+    (hz : ∀ a ∈ S, z ≠ a) (hu : DifferentiableAt ℂ u z) (hun : u z ≠ 0) :
+    logDeriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+      = (∑ a ∈ S, (m a : ℂ) * (z - a)⁻¹) + logDeriv u z := by
+  have hne : ∀ a ∈ S, ((z - a) ^ (m a)) ≠ 0 :=
+    fun a ha => pow_ne_zero _ (sub_ne_zero.mpr (hz a ha))
+  have hd : ∀ a ∈ S, DifferentiableAt ℂ (fun w : ℂ => (w - a) ^ (m a)) z :=
+    fun a _ => (by fun_prop : DifferentiableAt ℂ (fun w : ℂ => w - a) z).pow _
+  have hprodne : (∏ a ∈ S, (z - a) ^ (m a)) ≠ 0 := Finset.prod_ne_zero_iff.mpr hne
+  have hprodd : DifferentiableAt ℂ (fun w : ℂ => ∏ a ∈ S, (w - a) ^ (m a)) z :=
+    DifferentiableAt.fun_finset_prod (fun a ha => hd a ha)
+  rw [logDeriv_mul z hprodne hun hprodd hu, logDeriv_prod S _ z hne hd]
+  congr 1
+  refine Finset.sum_congr rfl fun a ha => ?_
+  rw [logDeriv_fun_pow (by fun_prop : DifferentiableAt ℂ (fun w : ℂ => w - a) z)]
+  have : logDeriv (fun w : ℂ => w - a) z = (z - a)⁻¹ := by
+    rw [logDeriv_apply]
+    simp
+  rw [this]
+
+
+/-- **The argument principle on an annulus, `Finset`-indexed.**
+
+For `F = (∏ a ∈ S, (·−a)^{m a})·u` with `u` analytic and non-vanishing on a
+neighbourhood of the closed annulus and every `a ∈ S` strictly inside it, the
+winding difference counts the zeros with multiplicity. -/
+theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
+    {A : Set ℂ} (r R : ℝ) (hr : 0 < r) (hrR : r < R)
+    (hAopen : IsOpen A) (hAsub : Metric.closedBall (0:ℂ) R \ Metric.ball (0:ℂ) r ⊆ A)
+    (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
+    (hS : ∀ a ∈ S, r < ‖a‖ ∧ ‖a‖ < R) :
+    (∮ z in C((0:ℂ), R), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+        / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
+      - (∮ z in C((0:ℂ), r), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+        / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
+      = (∑ a ∈ S, (m a : ℂ)) * (2 * Real.pi * Complex.I) := by
+  classical
+  set F : ℂ → ℂ := fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w with hF
+  set L : ℂ → ℂ := fun z => deriv u z / u z with hL
+  have hR0 : (0:ℝ) < R := lt_trans hr hrR
+  have hdu : DifferentiableOn ℂ (deriv u) A := (hu.deriv).differentiableOn
+  have hLcont : ContinuousOn L A :=
+    (hdu.continuousOn).div (hu.differentiableOn.continuousOn) hune
+  have hsphR : Metric.sphere (0:ℂ) R ⊆ A := by
+    refine subset_trans ?_ hAsub
+    intro z hz
+    simp only [Metric.mem_sphere, Complex.dist_eq, sub_zero] at hz
+    exact ⟨by simp [Complex.dist_eq, hz], by simp [Complex.dist_eq, hz]; linarith⟩
+  have hsphr : Metric.sphere (0:ℂ) r ⊆ A := by
+    refine subset_trans ?_ hAsub
+    intro z hz
+    simp only [Metric.mem_sphere, Complex.dist_eq, sub_zero] at hz
+    exact ⟨by simp [Complex.dist_eq, hz]; linarith, by simp [Complex.dist_eq, hz]⟩
+  -- pointwise split on each sphere
+  have hsplit : ∀ ρ : ℝ, Metric.sphere (0:ℂ) ρ ⊆ A → (∀ a ∈ S, ρ ≠ ‖a‖) →
+      ∀ z ∈ Metric.sphere (0:ℂ) ρ,
+        deriv F z / F z = (∑ a ∈ S, (m a : ℂ) * (z - a)⁻¹) + L z := by
+    intro ρ hρA hρa z hz
+    have hzA : z ∈ A := hρA hz
+    have hza : ∀ a ∈ S, z ≠ a := by
+      intro a ha h
+      simp only [Metric.mem_sphere, Complex.dist_eq, sub_zero] at hz
+      exact hρa a ha (h ▸ hz).symm
+    have hud : DifferentiableAt ℂ u z := (hu z hzA).differentiableAt
+    have := logDeriv_prod_pow_sub_mul u S m z hza hud (hune z hzA)
+    rwa [logDeriv_apply, logDeriv_apply] at this
+  -- integrability of each piece
+  have hLint : ∀ ρ : ℝ, 0 ≤ ρ → Metric.sphere (0:ℂ) ρ ⊆ A → CircleIntegrable L 0 ρ :=
+    fun ρ hρ hρA => (hLcont.mono hρA).circleIntegrable hρ
+  have hIint : ∀ ρ : ℝ, 0 ≤ ρ → ∀ a ∈ S, ρ ≠ ‖a‖ →
+      CircleIntegrable (fun z : ℂ => (m a : ℂ) * (z - a)⁻¹) 0 ρ := by
+    intro ρ hρ0 a _ hρa
+    have h0 : a ∉ Metric.sphere (0:ℂ) |ρ| := by
+      simp only [Metric.mem_sphere, Complex.dist_eq, sub_zero]
+      intro h
+      rw [abs_of_nonneg hρ0] at h
+      exact hρa h.symm
+    have := (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := a) (R := ρ) (n := -1)).2
+      (Or.inr (Or.inr h0))
+    simpa using this.const_mul (m a : ℂ)
+  have hRne : ∀ a ∈ S, R ≠ ‖a‖ := fun a ha => ne_of_gt (hS a ha).2
+  have hrne : ∀ a ∈ S, r ≠ ‖a‖ := fun a ha => ne_of_lt (hS a ha).1
+  have hbig : ∀ ρ : ℝ, 0 ≤ ρ → Metric.sphere (0:ℂ) ρ ⊆ A → (∀ a ∈ S, ρ ≠ ‖a‖) →
+      (∮ z in C((0:ℂ), ρ), deriv F z / F z)
+        = (∑ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), ρ), (z - a)⁻¹))
+          + ∮ z in C((0:ℂ), ρ), L z := by
+    intro ρ hρ0 hρA hρa
+    have hfun : (∑ a ∈ S, fun z : ℂ => (m a : ℂ) * (z - a)⁻¹)
+        = fun z : ℂ => ∑ a ∈ S, (m a : ℂ) * (z - a)⁻¹ := by
+      funext z; simp [Finset.sum_apply]
+    have hint1 : CircleIntegrable (fun z : ℂ => ∑ a ∈ S, (m a : ℂ) * (z - a)⁻¹) 0 ρ :=
+      hfun ▸ CircleIntegrable.sum S (fun a ha => hIint ρ hρ0 a ha (hρa a ha))
+    rw [circleIntegral.integral_congr hρ0 (hsplit ρ hρA hρa),
+        circleIntegral.integral_add hint1 (hLint ρ hρ0 hρA),
+        QOU.Mathlib.integral_fun_sum (fun a ha => hIint ρ hρ0 a ha (hρa a ha))]
+    congr 1
+    exact Finset.sum_congr rfl fun a _ => circleIntegral.integral_const_mul _ _ _ _
+  rw [hbig R hR0.le hsphR hRne, hbig r hr.le hsphr hrne]
+  -- each `(z−a)⁻¹` gives `2πi` outside and `0` inside
+  have hInR : ∀ a ∈ S, (∮ z in C((0:ℂ), R), (z - a)⁻¹) = 2 * Real.pi * Complex.I :=
+    fun a ha => QOU.QBeta.C1Poles.integral_inv_sub_inside a R (hS a ha).2
+  have hInr : ∀ a ∈ S, (∮ z in C((0:ℂ), r), (z - a)⁻¹) = 0 :=
+    fun a ha => QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le (hS a ha).1
+  rw [Finset.sum_congr rfl (fun a ha => by rw [hInR a ha] :
+        ∀ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), R), (z - a)⁻¹)
+          = (m a : ℂ) * (2 * Real.pi * Complex.I)),
+      Finset.sum_congr rfl (fun a ha => by rw [hInr a ha] :
+        ∀ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), r), (z - a)⁻¹) = (m a : ℂ) * 0)]
+  -- the `u'/u` integrals cancel by the annulus Cauchy theorem
+  have hcancel : (∮ z in C((0:ℂ), R), L z) = ∮ z in C((0:ℂ), r), L z := by
+    refine Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable
+      hr hrR.le Set.countable_empty (hLcont.mono hAsub) ?_
+    intro z hz
+    have hzA : z ∈ A := hAsub ⟨Metric.ball_subset_closedBall hz.1.1,
+      fun h => hz.1.2 (Metric.ball_subset_closedBall h)⟩
+    exact ((hdu z hzA).differentiableAt (hAopen.mem_nhds hzA)).div
+      ((hu z hzA).differentiableAt) (hune z hzA)
+  rw [hcancel]
+  simp [Finset.sum_mul]
 
 end ArgumentPrinciple
 
