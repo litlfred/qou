@@ -137,6 +137,19 @@ META = {
     "engineVersion", "engine", "environment", "generatedAt", "timestamp",
     "upstream_witness_hashes", "precisionMetadata", "compute_time_sec",
     "compute_time_sec_so_far", "_provenance", "convention_inferred_by",
+    # Wall-clock, by the PRINCIPLE above and not to make a light turn green:
+    # each says how LONG the computation ran, never what it computed. They
+    # were missing while `compute_time_sec` and `durationMs` were present, so
+    # the rule was already established and these four were simply the spellings
+    # nobody had hit yet. Counts in the corpus: elapsed_s 127, elapsed_sec 64,
+    # time_sec 42, wall_sec 37.
+    #
+    # Not cosmetic. A timing field re-times on every run and moves by O(1)
+    # relative, so one of them anywhere in a diff pushes the whole witness past
+    # any numeric bound — `binding-canonical` was rejected on
+    # `data.results[atom=3He].wall_sec` while its 27 real fields had moved only
+    # at the float64 floor.
+    "wall_sec", "elapsed_s", "elapsed_sec", "time_sec",
 }
 
 MUON_PREFIX = "1.109978595"
@@ -348,13 +361,14 @@ def _subfloat_move(a: dict, b: dict, moved: list) -> dict | None:
             try:
                 x, y = Decimal(str(a.get(k)).strip()), Decimal(str(b.get(k)).strip())
             except (InvalidOperation, TypeError, ValueError):
-                return None
+                return {"_declined": f"non-numeric move at {k}"}
             rel = abs(y - x) / (abs(x) if x else Decimal(1))
             if rel > Decimal(repr(SUBFLOAT_MAX)):
-                return None
+                return {"_declined": f"{k} moved {float(rel):.3g}, above the "
+                                     f"{SUBFLOAT_MAX:g} sub-float64 floor"}
             worst = max(worst, rel)
     if worst <= 0:
-        return None
+        return {"_declined": "no value moved"}
     worst = float(worst)
     return {"verdict": "SUBFLOAT_MOVE", "moved": len(moved), "flips": 0,
             "worst": worst,
@@ -479,11 +493,17 @@ def classify(old: dict, new: dict, script=None, resolve=None) -> dict:
              if _anchor_of(a.get(k)) == "muon" and _anchor_of(b.get(k)) == "proton"]
     if not flips:
         precise = _subfloat_move(a, b, moved)
-        if precise is not None:
+        if "_declined" not in precise:
             return precise
         inferred = _infer_migration(a, b, moved, old, new, script, resolve)
         if "_declined" not in inferred:
             return inferred
+        # Prefer the sub-float64 gate's reason when the inference gate only
+        # declined on the outer "a q0-valued field exists" condition: the
+        # former names the field and magnitude that actually blocked, the
+        # latter names a property most of this population shares.
+        if inferred["_declined"].startswith("a q0-valued field exists"):
+            inferred = precise
         # Report the gate that declined, not the outer condition. "No flip"
         # is true of every witness that reaches here and so distinguishes none
         # of them; the gate is what a reader can act on.
@@ -669,7 +689,11 @@ INFERRED_CASES = [
      {"scriptFile": "p.py", "q0": "1.1099785827513808",
       "x": 0.20906029879563937},
      _anchor_stub("proton"), "VALUES",
-     "a q0-valued field exists but did not flip"),
+     # Still the strict path (no inferred migration) -- but the reason now
+     # comes from the sub-float64 gate, which names the field and magnitude
+     # that actually blocked rather than a condition most of this population
+     # shares.
+     "x moved 1.11e-07, above the 1e-12 sub-float64 floor"),
     ("a q0 field that moves the WRONG way is not rescued by inference",
      {"scriptFile": "p.py", "q0": "1.1099785827513808"},
      {"scriptFile": "p.py", "q0": "1.1099785955573347"},
