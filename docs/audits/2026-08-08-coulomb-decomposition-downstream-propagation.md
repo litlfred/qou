@@ -110,13 +110,30 @@ in direct conflict with the corrected `.md` (a `proof-statement-integrity`
 failure). Renamed to `claim_ii_bar_odd_crossing_energy` with `(q − q⁻¹)`, and
 the matching conjunct + projection in the theorem updated.
 
-> **⚠ This Lean edit is NOT machine-validated.** `lean`-direct was attempted and
-> could not be run: Lean 4.24.0 is installed but the worktree had 0 Mathlib
-> oleans, and restoring `lake-cache/qou-v4-24-0` **exhausted the disk** (`/` hit
-> 0 MB free) after extracting only the `mathlib` package — `Batteries`, `aesop`
-> and the QOU build were never written, so `lean` fails at
-> `unknown module prefix 'Batteries'`. A complete re-extract needs ~6 GB against
-> 5.5 GB available. CI cannot substitute (auto-triggers are disabled repo-wide).
+> **✅ MACHINE-VALIDATED (parent session, 2026-08-08 — supersedes the caveat
+> below).** `scripts/lean-verify.sh` on
+> `QOU/Observations/strangelet_crossing_energy.lean` → **exit 0, 0 errors**, run
+> from the main checkout where the `lake-cache/qou-v4-24-0` oleans were already
+> resident (mathlib 6990, Batteries present). Sorry-free on **both** greps —
+> naive `grep -c sorry` = 0 and word-bounded
+> `grep -cE '(^|[^[:alnum:]_-])sorry([^[:alnum:]_-]|$)'` = 0 — and
+> `sorryAx|admit|native_decide` = 0. **`lake build` never run.**
+>
+> The structural argument below stands and is now corroborated rather than
+> load-bearing. Retained because it is the reasoning that made the edit
+> defensible before a toolchain was available, and because the failure mode it
+> records is real:
+>
+> **⚠ Original caveat — this Lean edit was NOT machine-validated in the agent's
+> worktree.** `lean`-direct was attempted and could not be run: Lean 4.24.0 is
+> installed but the worktree had 0 Mathlib oleans, and restoring
+> `lake-cache/qou-v4-24-0` **exhausted the disk** (`/` hit 0 MB free) after
+> extracting only the `mathlib` package — `Batteries`, `aesop` and the QOU build
+> were never written, so `lean` failed at `unknown module prefix 'Batteries'`. A
+> complete re-extract needs ~6 GB against 5.5 GB available. CI cannot substitute
+> (auto-triggers are disabled repo-wide). **Lesson: a worktree does not inherit
+> the main checkout's gitignored `.lake`, and restoring a second copy per
+> worktree does not fit on this disk — verify Lean from the main checkout.**
 >
 > The change is nevertheless safe **by inspection**, and the argument is
 > structural rather than a judgement call: the conjunct's proof is the bare
