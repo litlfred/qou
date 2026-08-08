@@ -422,3 +422,48 @@ claim has had to be corrected because the work moved past it.
 | `x > 1` (inversion) | **the real obstacle** — on `cLiTwoExt`'s cut, needs boundary values, new infrastructure |
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+### 2026-08-08 (later still) — the boundary infrastructure, and the base value in the form Landen consumes
+
+`QOU/MathlibExt/ComplexDilogarithmBoundary.lean` (2 theorems) +
+`cLiTwoExt_neg_one` in `QOU/Archimedean/LiTwoNegOne.lean`. Sorry-free, lake
+green.
+
+**The gap that was hiding.** `LiTwo_neg_one` gave `Li₂(−1) = −π²/12` for the
+*series*. But `hasDerivAt_landenCombo` is about `cLiTwoExt`, and
+`cLiTwoExt_eq_cLiTwo` holds only on the **open** disc — while `−1` sits on the
+boundary. Every base point worth using for a dilogarithm identity is on that
+boundary (`−1` for Landen, `1` for reflection), so the open-disc statement is
+exactly one point short wherever it is needed.
+
+**What was built**, stated for *every* boundary point off the cut rather than
+for `−1`:
+
+    ‖y‖ ≤ 1  and  y ∉ [1,∞)   ⟹   cLiTwoExt y = cLiTwo y
+
+Three ingredients, no new estimates:
+
+* `continuousOn_cLiTwo_closedBall` — the series is dominated on the **closed**
+  disc by `1/(k+1)²`, summable via `summable_one_div_succ_sq`, so
+  `continuousOn_tsum` applies. The Weierstrass M-test, and the only place the
+  boundary is touched.
+* `cLiTwoExt` is continuous at `y` because it is analytic on `ℂ ∖ [1,∞)` —
+  `analyticOnNhd_cLiTwoExt`, the theorem `ComplexDilogarithm.lean` flags as its
+  own missing piece.
+* they agree on the open disc, whose closure contains `y`, so the
+  within-neighbourhood filter is `NeBot` and the limits must agree.
+
+⚠ **It does not reach `[1,∞)`.** That boundary is *on* the cut, `cLiTwoExt` is
+not defined there, and no continuity argument in that file applies to it. This
+is stated in the module docstring rather than left implicit, because the
+inversion leg is exactly what needs it.
+
+**Item 4 status:**
+
+| regime | status |
+|---|---|
+| `0 ≤ x ≤ 1` | done |
+| `x < 0` (Landen) | analytic core proved, base value proved **in the form the argument consumes**; remaining: the zero-derivative-to-identity connectedness step |
+| `x > 1` (inversion) | **unchanged — the real obstacle**, and now precisely bounded: it is the one thing the new boundary theorem deliberately cannot reach |
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

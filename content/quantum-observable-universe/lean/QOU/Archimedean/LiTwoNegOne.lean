@@ -1,5 +1,6 @@
 import QOU.Archimedean.ComplexDilogBridge
 import QOU.MathlibExt.AlternatingZetaTwo
+import QOU.MathlibExt.ComplexDilogarithmBoundary
 
 /-!
 # `Li₂(−1) = −π²/12`, real and complex
@@ -8,10 +9,16 @@ The corollary of `hasSum_alternating_zeta_two` that `qou-rstq` item 4 needs: the
 Landen base value, in both the corpus's real `LiTwo` and the complex `cLiTwo`.
 
 Route 33 G4 identified this as the single missing input for the Landen leg —
-its analytic core (`hasDerivAt_landenCombo`) being already proved. With it, the
-remaining obstacle in item 4 is the **inversion** leg for `x > 1`, which lies on
-`cLiTwoExt`'s cut and needs boundary values rather than a constant of
-integration.
+its analytic core (`hasDerivAt_landenCombo`) being already proved.
+
+`cLiTwoExt_neg_one` is the form the Landen argument actually consumes, and
+getting it needed real infrastructure: `cLiTwoExt_eq_cLiTwo` holds on the
+**open** disc, while `−1` sits on the boundary. `ComplexDilogarithmBoundary`
+closes that one-point gap for **every** boundary point off the cut.
+
+With it, the remaining obstacle in item 4 is the **inversion** leg for `x > 1`,
+which lies *on* `cLiTwoExt`'s cut — where no continuity argument in that file
+applies — and needs boundary values from off the cut.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -34,5 +41,13 @@ theorem cLiTwo_neg_one : cLiTwo (-1) = -((π : ℂ) ^ 2 / 12) := by
   rw [this]
   push_cast
   ring
+
+/-- **The continuation's value at `−1`**, which is what the Landen argument
+consumes. `−1` is on the boundary of the disc, so this needs
+`cLiTwoExt_eq_cLiTwo_of_norm_le_one`, not the open-disc agreement. -/
+theorem cLiTwoExt_neg_one : cLiTwoExt (-1) = -((π : ℂ) ^ 2 / 12) := by
+  have hnc : (-1 : ℂ) ∈ notCut := Or.inr (by norm_num)
+  rw [cLiTwoExt_eq_cLiTwo_of_norm_le_one (by norm_num) hnc]
+  exact cLiTwo_neg_one
 
 end QOU.Archimedean

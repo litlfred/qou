@@ -40,6 +40,13 @@ private theorem hg : HasSum g (π ^ 2 / 6) := by
     (by simpa using hz)
   simpa [one_div, Nat.cast_add, Nat.cast_one] using h
 
+/-- `Σ 1/(n+1)² = π²/6`, in shifted indexing — the summability workhorse. -/
+theorem hasSum_one_div_succ_sq :
+    HasSum (fun n : ℕ => (1 : ℝ) / ((n : ℝ) + 1) ^ 2) (π ^ 2 / 6) := hg
+
+theorem summable_one_div_succ_sq :
+    Summable (fun n : ℕ => (1 : ℝ) / ((n : ℝ) + 1) ^ 2) := hasSum_one_div_succ_sq.summable
+
 private theorem hgodd : HasSum (fun k : ℕ => g (2 * k + 1)) (π ^ 2 / 24) := by
   have h := hg.mul_left (1 / 4)
   have hfun : (fun k : ℕ => g (2 * k + 1)) = fun k : ℕ => (1 : ℝ) / 4 * g k := by
