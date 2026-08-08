@@ -39,10 +39,19 @@ Fubini. This is the step that makes the approach work at all — the vertical
 integral **converges**, collapsing 3-D volume to a 2-D base integral.
 
 **H4-2 — Fubini: `Vol(region) = ∫∫_base dA / (2(R²−d²))`.**
-Needs H3 (the region) and the product-measure Fubini for `withDensity`. The
-`Mathlib.MeasureTheory.Constructions.Prod.*` modules were **absent from the
-restored olean cache** (2026-08-08) — re-seed or fetch before starting, or this
-tier stalls on a missing import rather than on mathematics.
+Needs H3 (the region) and the product-measure Fubini for `withDensity`.
+
+> **CORRECTION (2026-08-08, same day).** An earlier revision of this bean said
+> H4-2 was blocked because `Mathlib.MeasureTheory.Constructions.Prod.*` was
+> absent from the restored olean cache. **That was wrong** — I had tried the
+> wrong module path. Fubini IS available:
+> `Mathlib.MeasureTheory.Integral.Prod` and `Mathlib.MeasureTheory.Measure.Prod`
+> are both present, giving `lintegral_prod` and `Measure.volume_eq_prod`.
+> **H4-2 is not blocked on infrastructure.** Its real cost is H3 (getting the
+> region definition right) plus one genuine bridge: `hypVolume` is an `ℝ≥0∞`
+> `lintegral` while H4-1 is a Bochner `∫`, so the two must be reconciled
+> (`ofReal` / `lintegral` ↔ `integral`) before the inner integral can be
+> substituted.
 
 **H4-3 — the base integral over one triangle.** Reduce
 `∫∫_T dA/(2(R²−d²))` over the Euclidean triangle inscribed in the circle of
