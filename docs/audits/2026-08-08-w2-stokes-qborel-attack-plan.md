@@ -1,5 +1,16 @@
 # W2 ∞-residual: staged attack plan for the q-Borel transform + the two Stokes multipliers
 
+> **🛑 SUPERSEDED IN FRAMING (same day).** The RSZ route this plan is built on is
+> **closed** — see [`2026-08-08-rsz-c1-infinity-route-closed.md`](2026-08-08-rsz-c1-infinity-route-closed.md).
+> §3.3 is restricted to integral slopes; its level is `d := μ₂ − μ₁` (a slope
+> *difference*, not a denominator); `dim F = 0` when `k = 1`; and C1 has one slope
+> at `∞`. Bugeaud [14] lifts integrality but is **still two-slope**. Stages **S1,
+> S2, S3 below are void as written** (they presuppose a level and an `A₁,A₂`
+> that C1's `∞` does not have). **S0 stands** — the kernel formalization is
+> correct for arbitrary `d` from the stated recurrence. The work moves to alien
+> calculus; see the closure audit's final section.
+
+
 **Date:** 2026-08-08 · **Axis:** C1 ∞-side (W2, `qou-xufp`; D-ladder `qou-dri7`,
 `qou-b00b`) · **Tier:** plan + one formalize-first prune. No fit, nothing wired,
 no `symbol=C1` claim, **no Stokes multiplier computed**.

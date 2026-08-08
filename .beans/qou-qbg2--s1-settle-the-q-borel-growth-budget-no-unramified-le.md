@@ -1,11 +1,11 @@
 ---
 # qou-qbg2
 title: 'S1: settle the q-Borel growth budget — no unramified level d absorbs deg_q(c_n)=n^2 (do BEFORE S2/S3)'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-08-08T09:25:00Z
+updated_at: 2026-08-08T11:35:00Z
 ---
 
 **A formalize-first prune already bites here.** With `deg_q(c_n) = n^2` now
@@ -94,3 +94,10 @@ mildly interesting numerical fact; it is NOT evidence that `B_{q,2}` resolves C1
 
 Do not cite this bean as establishing the transform. Re-open only if `qou-qbp5`
 resolves in a way that restores a level to C1's infinity.
+
+## VOID 2026-08-08 — see docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+
+The growth budget presupposed an RSZ level `d` for C1's infinity. There is none:
+§3.3 is integral-slopes-only and its `d` is the slope DIFFERENCE `mu_2 - mu_1`.
+The Lean theorem `ramified_qBorel_budget` (`m^2 = m(m-1) + m`) remains TRUE and
+stands; only its interpretation as C1's resolving transform is void.

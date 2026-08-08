@@ -1,11 +1,11 @@
 ---
 # qou-qbs4
 title: 'S3: extract the two Stokes multipliers U in C^2 for C1 (RSZ-wild core; gated on S1+S2)'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-08-08T08:05:00Z
+updated_at: 2026-08-08T11:35:00Z
 ---
 
 The residual proper. Sector-dependent q-Borel/Laplace summation of the ramified
@@ -27,3 +27,11 @@ The Q_beta `Phi_2` precedent -- the forbidden seventh ansatz -- applies directly
 settled.
 
 Plan: `docs/audits/2026-08-08-w2-stokes-qborel-attack-plan.md` (stage S3).
+
+## VOID 2026-08-08 — see docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+
+The target `U in C^2` was derived from `F(P1,P2) = Mat_{1,1}(C)^2`, which does not
+apply: C1 is pure isoclinic at infinity, and Thm 3.3.5 gives dimension 0 at k=1.
+The work moves to ALIEN CALCULUS, which needs no slope filtration -- the corpus
+already has that route (`OneInstantonNormalization.lean`, PR #4246). Re-open only
+if a two-slope structure is exhibited somewhere it actually exists.
