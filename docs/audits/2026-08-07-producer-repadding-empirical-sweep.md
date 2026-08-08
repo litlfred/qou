@@ -1805,3 +1805,83 @@ an anchor artifact and not caused by the re-anchoring; it is a pre-existing
 incompatibility between the word encoding and the native path's expectations,
 surfacing only because the resume logic normally skips the computation
 entirely. Re-anchoring 4He is blocked behind it. Not diagnosed here.
+
+## P41 — the 182 ppm was a crossing convention, and the 4He block is the same fact
+
+Both open 4He questions resolve to one distinction, and the code says so itself.
+
+### `chi_at_q0_via_hoefsmit_mpfr` disagrees with itself
+
+Lines 101–108 substitute a **colour-weighted** crossing value when an optional
+import succeeds:
+
+```python
+_cw_d = -_hm * (mp.mpf(1) / 2 - _avg_color_delta() / 4)
+```
+
+with a comment stating it is *"distinct from the color-blind −h/2 by ~7e-5"*.
+Lines 175–188, the native fast path, then accept only `{0, −h, −h/2}` — the
+colour-**blind** set — and reject anything else:
+
+    unrecognised d=-0.10445824776972628903… (expected 0, -h, or -h/2)
+
+Computed directly, the observed `d` matches the colour-weighted value to 18
+digits (`-0.1044582477697262889495`) and matches `−h/2` under **neither**
+anchor (proton `-0.1045301493978196`, muon `-0.1045301609977968`). So the
+earlier reading — "a pre-existing word-encoding incompatibility" — was right
+that it is not an anchor artifact, and wrong to leave it unexplained: the two
+halves of one file were written to different conventions, and which one runs
+depends on whether `canonical_braid_crossings._avg_color_delta` imports. It
+imports in this container, so the native path is refused and the run falls to
+a pure-mpmath loop too slow for n=12.
+
+### The 182 ppm is that same convention, stated in the witnesses
+
+| witness | `convention` |
+|---|---|
+| `chi-helium-4-h12-numeric` | `averaged-crossings` |
+| `chi-helium-4-h12-at-q0-50dps` | `colour-weighted-averaged-crossing` |
+
+Not an anchor difference, not precision: **colour-blind versus colour-weighted
+crossings**, which is exactly the ~7e-5-in-`d` distinction the source comment
+describes, propagating to 1.8e-4 in `tr_M`. The repoint in the previous PR
+therefore changed 4He's *crossing convention*, which is a physics choice and
+was not what it was advertised as.
+
+One more thing worth recording: the 50dps cache carries
+`compute_time_sec: 0.0`, so the run that stamped its `_provenance`
+(`rust_fn: chi_lambda_all_partitions_mpfr`) resumed a complete cache and
+computed nothing. That provenance block describes a *configuration*, not the
+computation behind those numbers — which is why it cannot be used to argue the
+native path once handled a colour-weighted word.
+
+## P42 — `witness_regen_classify`: the verdict the guard was missing
+
+Committed as a tool rather than left in scratch, because the previous guard
+lived only in a throwaway script and was bypassed the one time it mattered.
+
+| verdict | meaning | commit? |
+|---|---|---|
+| `DECLARED` | upstream hashes appeared, nothing else but metadata moved | yes |
+| `ANCHOR_MIGRATION` | the witness's own q₀ flipped muon → proton, all other movement bounded | yes |
+| `VALUES` | movement neither explains | **no** |
+| `NOCHANGE` | ran, nothing new | n/a |
+
+`ANCHOR_MIGRATION` is the verdict whose absence would have made the guard
+actively harmful: producers read the proton-anchored `Q` from `q_parameter`, so
+regeneration re-anchors automatically, and a guard without this verdict reverts
+that as drift — holding the corpus on the retired anchor precisely while trying
+to protect it.
+
+The acceptance rule is **evidence-gated, not bound-only**: a q₀-valued field
+must be seen flipping from the muon prefix to the proton prefix. Small movement
+alone is never sufficient, and the collateral bound (1e-5) sits deliberately
+below the 1.8e-4 crossing-convention shift, so that change can never be
+mistaken for an anchor migration. Reverse flips and non-numeric changes are
+rejected outright. Nine self-test cases, including the real
+`braid-encoding-audit` shape and the 182 ppm case as a negative.
+
+Validated against the corpus: re-running `braid_encoding_audit` produces 87
+moved fields on 1 positive flip and classifies `ANCHOR_MIGRATION`, which is the
+migration this document has been describing, now committed rather than
+reverted.
