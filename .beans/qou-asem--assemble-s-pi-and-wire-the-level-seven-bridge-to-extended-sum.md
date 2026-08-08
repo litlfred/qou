@@ -1,7 +1,7 @@
 ---
 # qou-asem
-title: 'Assemble S(π) = Σⱼ Re V(−1, yⱼ) in Lean and wire corr_sum_eq_neg_pi_sq to extended_sum'
-status: todo
+title: 'CLOSED: S(π) = Σⱼ Re V(−1, yⱼ) = −π²/2 assembled in Lean'
+status: done
 type: task
 priority: medium
 tags:
@@ -10,10 +10,59 @@ tags:
     - qou-trns
     - assembly
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T17:30:00Z
+updated_at: 2026-08-08T21:55:00Z
 ---
 
-## What is open
+## ✅ CLOSED 2026-08-08
+
+    sum_re_deformedV_at_neg_one (hx : x³ − 2x² − x + 1 = 0) (hlo : 1/2 < x) (hhi : x < 1) :
+      Σⱼ (deformedV (−1, yⱼ)).re = −π²/2
+
+`QOU/QBeta/FiveTwoLevelSevenAssembly.lean`, sorry-free, `lake`-verified (3250
+jobs), axioms `[propext, Classical.choice, Quot.sound]`, wired into `QOU.lean`.
+
+Four proved pieces composed, exactly as C1 anticipated — except that C1's
+"state the missing argument as an explicit hypothesis" was **not needed**,
+because `qou-rstq` item 4 closed first and left nothing missing:
+
+| piece | role |
+|---|---|
+| `extended_sum` | `Σₖ (2·extend L(wₖ) + extend L(−wₖ)) = π²/2` |
+| `extend_eq_re_cRogersL` | item 4 — turns every `extend` into `Re` of the analytic `L` |
+| `levelSeven_orbit_data` | **new** — the `wₖ` negated *are* the level-7 roots, with the signs `corr_sum_eq_neg_pi_sq` needs |
+| `corr_sum_eq_neg_pi_sq` | `Σⱼ corr yⱼ = −π²` |
+
+Two new supporting theorems:
+
+* `deformedV_neg_one_eq` — at `x = −1`, `V` splits as
+  `2·L(−y) + L(y) + (corr's integrand)`, an identity in `ℂ` before any real part
+  is taken. The `corr` definition turns out to be exactly the leftover.
+* `levelSeven_orbit_data` — `y ↦ −y` carries `x³−2x²−x+1` to `y³+2y²−y−1`, so
+  `extended_sum`'s six arguments are the level-7 roots and their negatives.
+  Proved rather than assumed: "the same up to sign" is the kind of step that
+  turns out to be off by a reciprocal.
+
+### ⚠ What this is NOT — C3's warning, restated because it still applies
+
+`S(0) = −3π²/2` **is** the 5₂ sum rule; `S(π) = −π²/2` is the *other* endpoint,
+and `S(0) = 3·S(π)`. This assembles one endpoint of a transport that
+**reformulates** the sum rule rather than approaching it.
+
+It is a composition of proved parts, and **the parts were the work** — item 4
+in particular. Nothing here narrows the headline.
+
+Still open: **Gap A** (`qou-glbl`), the globally differentiable root labelling,
+which is what would connect `S(π)` to `S(0)`.
+
+### C2's independence held
+
+C2 predicted this would not need the labelling to be differentiable, only its
+value at one point. Correct — `sum_re_deformedV_at_neg_one` takes no
+differentiability hypothesis at all, so it is independent of `qou-glbl`.
+
+## The original framing (superseded)
+
+## What was open
 
 Both ends exist in Lean and are **not connected to each other**:
 

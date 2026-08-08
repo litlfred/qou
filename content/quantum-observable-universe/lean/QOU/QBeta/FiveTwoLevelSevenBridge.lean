@@ -173,6 +173,63 @@ theorem corr_sum_eq_neg_pi_sq {y₁ y₂ y₃ : ℝ}
     corr_of_neg_root h₃ hn₃ hne₃]
   ring
 
+/-! ### 3b. The orbit: `extended_sum`'s arguments ARE the level-7 roots, negated
+
+`extended_sum` is stated for the orbit `{1/(1−x), x, (x−1)/x}` of a root `x` of
+`x³ − 2x² − x + 1`. The bridge is about roots of `y³ + 2y² − y − 1`. These are
+the *same* configuration: `y ↦ −y` carries one cubic to the other, so the six
+arguments `extended_sum` uses are the level-7 roots and their negatives.
+
+Proved here rather than assumed, because "the same up to sign" is exactly the
+kind of step that turns out to be off by a reciprocal.
+-/
+
+/-- `−x` is a level-7 root. Immediate: the substitution `y = −x` negates the
+whole cubic. -/
+theorem levelSeven_of_neg {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0) :
+    (-x) ^ 3 + 2 * (-x) ^ 2 - (-x) - 1 = 0 := by linear_combination -hx
+
+/-- `(1−x)/x = −((x−1)/x)` is a level-7 root. -/
+theorem levelSeven_of_orbit_third {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hx0 : x ≠ 0) :
+    ((1 - x) / x) ^ 3 + 2 * ((1 - x) / x) ^ 2 - ((1 - x) / x) - 1 = 0 := by
+  field_simp
+  linear_combination hx
+
+/-- `−1/(1−x)` is a level-7 root. -/
+theorem levelSeven_of_orbit_first {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hx1 : (1 : ℝ) - x ≠ 0) :
+    (-(1 / (1 - x))) ^ 3 + 2 * (-(1 / (1 - x))) ^ 2 - (-(1 / (1 - x))) - 1 = 0 := by
+  field_simp
+  linear_combination hx
+
+/-- **The orbit, packaged with the signs `corr_sum_eq_neg_pi_sq` needs.**
+
+For the root `x ∈ (1/2, 1)`, the three negated orbit members are level-7 roots:
+`(1−x)/x` lies in `(0,1)`, and `−1/(1−x)`, `−x` are negative with `1 + y ≠ 0`. -/
+theorem levelSeven_orbit_data {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hlo : 1 / 2 < x) (hhi : x < 1) :
+    ((1 - x) / x) ^ 3 + 2 * ((1 - x) / x) ^ 2 - ((1 - x) / x) - 1 = 0 ∧
+    (-(1 / (1 - x))) ^ 3 + 2 * (-(1 / (1 - x))) ^ 2 - (-(1 / (1 - x))) - 1 = 0 ∧
+    (-x) ^ 3 + 2 * (-x) ^ 2 - (-x) - 1 = 0 ∧
+    0 < (1 - x) / x ∧ (1 - x) / x < 1 ∧
+    -(1 / (1 - x)) < 0 ∧ -x < 0 ∧
+    1 + -(1 / (1 - x)) ≠ 0 ∧ 1 + -x ≠ 0 := by
+  have hx0 : (0 : ℝ) < x := by linarith
+  have hx0' : x ≠ 0 := ne_of_gt hx0
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  have h1x' : (1 : ℝ) - x ≠ 0 := ne_of_gt h1x
+  refine ⟨levelSeven_of_orbit_third hx hx0', levelSeven_of_orbit_first hx h1x',
+    levelSeven_of_neg hx, by positivity, ?_, ?_, by linarith, ?_, by linarith⟩
+  · rw [div_lt_one hx0]; linarith
+  · have : (0 : ℝ) < 1 / (1 - x) := by positivity
+    linarith
+  · have hne : 1 + -(1 / (1 - x)) = -x / (1 - x) := by
+      field_simp
+      ring
+    rw [hne]
+    exact div_ne_zero (by simpa using hx0') h1x'
+
 /-! ### 4. Non-vacuity -/
 
 /-- **Non-vacuity.** The level-7 cubic really does have one root in `(0,1)` and
