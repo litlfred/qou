@@ -110,3 +110,26 @@ So the burnside chain's remaining sorry-debt is those two — **not** the
 spanning/straightening stub, which is not load-bearing for the rank input.
 
 ### Cone status: 55 modules, `FAILED: none`
+
+## 2026-08-08 — verification-method lesson (from PR #4702's caveat)
+
+PR #4702 (parallel session on the same Specht files) warned:
+
+> *Do not audit sorry-status from restored oleans. The restored `lake-cache` tree
+> was missing `SpechtStandardBasisCore.olean` while carrying its own dependents
+> (built from an older source tree), so `#print axioms` reported a phantom
+> `sorryAx`... Rebuild the cone with `-DautoImplicit=false` (matching the lakefile).*
+
+**The caveat is legitimate and applied to my method**: my cone builder was not
+passing `-DautoImplicit=false` (both `lakefile.toml` files set it), and I was
+building against the restored cache.
+
+Re-ran every axiom claim after **wiping the QOU olean tree entirely** and rebuilding
+56 modules from source with the flag. **All results identical** — nothing moved. So
+the claims stand, but they now rest on a clean build rather than a restored one.
+
+**Standing rule for this audit** (third method lesson, joining "locate the decl
+before declaring it absent" and "verify the full dependents cone"): *an axiom query
+is only as trustworthy as the olean tree under it.* Before publishing a sorry-status
+claim, rebuild the cone from source with the lakefile's flags — a restored cache can
+report both phantom sorries and phantom cleanliness.
