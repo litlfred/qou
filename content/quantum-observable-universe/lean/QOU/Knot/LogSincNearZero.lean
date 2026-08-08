@@ -55,6 +55,7 @@ import QOU.Knot.KashaevEndpointSplit
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.MeanValue
+import QOU.MathlibExt.TrapezoidRule
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -214,5 +215,72 @@ theorem abs_logSinc_deriv_le {x : ℝ} (hx : 0 < x) (hx1 : x ≤ 1) :
   have hhi := sin_sub_mul_cos_lt hx hx1
   rw [abs_of_nonpos (by linarith)]
   nlinarith
+
+/-! ### The second derivative, and an honest note on the higher ones
+
+The composite Euler–Maclaurin rule's error over `k` cells is `k·h⁵·sup|g⁗|/720`,
+which on the SUM is `k·h⁴·sup|g⁗|/720 ≈ sup|g⁗|/N³`.  So the assembly needs
+`sup|logSinc⁗|` on `[h, θ]` to be `o(N²)`.  It is in fact `O(1)`:
+
+    logSinc″   = 1/x² − 1/sin²x                    →  −1/3   as x → 0
+    logSinc‴   = 2cos x/sin³x − 2/x³               →   0
+    logSinc⁗   = 6/x⁴ − (4cos²x + 2)/sin⁴x         →  −2/15
+
+(all three verified against numerical differentiation).  But each is a
+DIFFERENCE OF TWO TERMS THAT INDIVIDUALLY BLOW UP, and the bound depends on the
+cancellation: at `N = 100` the crude `6/h⁴` is `6.2·10⁶` while the true value is
+`0.1335` — a factor of `5·10⁷`.  Feeding the crude bound into the composite rule
+gives an error of `O(N)`, i.e. no theorem at all.
+
+So proving `sup|logSinc⁗| = O(1)` is NOT bookkeeping; it needs `sin` and `cos`
+expansions carried to eighth order with explicit remainders, and an earlier note
+in this corpus that called the interior bound "unglamorous work" understated it.
+What IS elementary is the second derivative, which is what the trapezoid-remainder
+form of the argument needs, and it is proved below from the same two `sin`
+bounds used above.
+-/
+
+/-- `logSinc″ x = 1/x² − 1/sin²x` on `(0, π)`. -/
+theorem hasDerivAt_logSinc_deriv {x : ℝ} (hx : 0 < x) (hxpi : x < π) :
+    HasDerivAt (fun y : ℝ => Real.cos y / Real.sin y - 1 / y)
+      (1 / x ^ 2 - 1 / Real.sin x ^ 2) x := by
+  have hsin : 0 < Real.sin x := Real.sin_pos_of_pos_of_lt_pi hx hxpi
+  have h1 := QOU.MathlibExt.hasDerivAt_cos_div_sin (ne_of_gt hsin)
+  have h2 : HasDerivAt (fun y : ℝ => 1 / y) (-(1 / x ^ 2)) x := by
+    simpa [one_div] using hasDerivAt_inv (ne_of_gt hx)
+  have := h1.sub h2
+  convert this using 1
+  ring
+
+/-- **`|logSinc″ x| ≤ 1` on `(0,1]`.**
+
+`logSinc″ x = (sin²x − x²)/(x²sin²x)`, and `sin x < x`, `sin x > x − x³/4` give
+`x² − sin²x ≤ x⁴/2` and `x²sin²x ≥ 9x⁴/16`, so the quotient is at most `8/9`. -/
+theorem abs_logSinc_deriv2_le {x : ℝ} (hx : 0 < x) (hx1 : x ≤ 1) :
+    |1 / x ^ 2 - 1 / Real.sin x ^ 2| ≤ 1 := by
+  have hxpi : x < π := lt_of_le_of_lt hx1 (by linarith [Real.two_le_pi])
+  have hsin : 0 < Real.sin x := Real.sin_pos_of_pos_of_lt_pi hx hxpi
+  have hlt : Real.sin x < x := Real.sin_lt hx
+  have hcube : x - x ^ 3 / 4 < Real.sin x := Real.sin_gt_sub_cube hx hx1
+  have hx3 : x ^ 3 ≤ x := by
+    nlinarith [mul_nonneg hx.le (by nlinarith : (0 : ℝ) ≤ 1 - x ^ 2)]
+  have hlb : 3 * x / 4 ≤ Real.sin x := by linarith
+  have hden0 : 0 < x ^ 2 * Real.sin x ^ 2 := by positivity
+  have hrw : 1 / x ^ 2 - 1 / Real.sin x ^ 2
+      = (Real.sin x ^ 2 - x ^ 2) / (x ^ 2 * Real.sin x ^ 2) := by
+    field_simp
+  rw [hrw, abs_div, abs_of_pos hden0, div_le_one hden0]
+  have hnumneg : Real.sin x ^ 2 - x ^ 2 ≤ 0 := by
+    nlinarith [mul_pos (sub_pos.mpr hlt) (by linarith : (0 : ℝ) < x + Real.sin x)]
+  rw [abs_of_nonpos hnumneg]
+  -- `x² − sin²x ≤ x⁴/2 ≤ (9/16)x⁴ ≤ x²sin²x`
+  have hd1 : x - Real.sin x < x ^ 3 / 4 := by linarith
+  have hd2 : x + Real.sin x < 2 * x := by linarith
+  have hnum : x ^ 2 - Real.sin x ^ 2 ≤ x ^ 4 / 2 := by
+    nlinarith [hd1, hd2, hx, hsin, sub_pos.mpr hlt]
+  have hsin2 : 9 * x ^ 2 / 16 ≤ Real.sin x ^ 2 := by nlinarith [hlb, hx]
+  have hden : 9 * x ^ 4 / 16 ≤ x ^ 2 * Real.sin x ^ 2 := by
+    nlinarith [hsin2, sq_nonneg x, hx]
+  linarith [pow_nonneg hx.le 4]
 
 end QOU.Knot.FigureEightVolume

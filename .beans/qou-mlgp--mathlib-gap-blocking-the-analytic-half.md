@@ -920,3 +920,60 @@ That is bookkeeping over a dozen existing lemmas, plus `C^4` bounds on `logSinc`
 in the INTERIOR `[h, theta]` (where it is manifestly smooth — no singularity —
 but the fourth derivative still has to be exhibited and bounded, which is real
 if unglamorous work). No missing idea remains.
+
+## CORRECTION: the interior C^4 bound is NOT bookkeeping
+
+The previous entry said the remaining assembly needs "`C^4` bounds on `logSinc`
+in the INTERIOR `[h, theta]` (where it is manifestly smooth — no singularity —
+but the fourth derivative still has to be exhibited and bounded, which is real
+if unglamorous work)". The "unglamorous" understated it. Measured:
+
+    logSinc''   = 1/x^2 - 1/sin^2 x                ->  -1/3    as x -> 0
+    logSinc'''  = 2 cos x/sin^3 x - 2/x^3          ->   0
+    logSinc'''' = 6/x^4 - (4cos^2 x + 2)/sin^4 x   ->  -2/15
+
+(all three checked against numerical differentiation). Each is a DIFFERENCE OF
+TWO TERMS THAT INDIVIDUALLY BLOW UP. At `N = 100` the crude `6/h^4` is `6.2e6`
+while the true `|logSinc''''(h)|` is `0.1335` — a factor of **5e7**.
+
+Why that matters: the composite EM error on the SUM is `k h^4 M/720 ~ M/N^3`,
+so `M = O(1)` gives `O(1/N^3)` (fine) but the crude `M ~ 6/h^4 ~ N^4` gives
+`O(N)` — no theorem at all. The bound therefore DEPENDS on the cancellation, and
+proving it needs `sin`/`cos` expansions to eighth order with explicit
+remainders. That is genuine analysis, not bookkeeping.
+
+Checked that no cheaper route dodges it:
+  * order-1 (plain trapezoid) composite: error on the sum is `k h^2 M''/12 =
+    O(1/N)` — the SAME order as the `-(pi/12N) cot` term being extracted, so it
+    cannot see the answer. Order 2 is genuinely required.
+  * expressing the order-2 remainder via `g'''` instead of `g''''` lowers the
+    requirement to `sup|logSinc'''|`, which is also bounded (-> 0) but needs a
+    seventh-order cancellation. Cheaper, not cheap.
+  * applying EM to `log(2 sin)` directly instead of `logSinc` makes it worse:
+    there `M ~ 6/h^4` with NO cancellation, and the error diverges like `N`.
+
+## What IS elementary, and is now proved
+
+`QOU/Knot/LogSincNearZero.lean`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`:
+
+    hasDerivAt_logSinc_deriv   logSinc'' x = 1/x^2 - 1/sin^2 x   on (0,pi)
+    abs_logSinc_deriv2_le      |logSinc'' x| <= 1                on (0,1]
+
+The bound is `logSinc'' = (sin^2 x - x^2)/(x^2 sin^2 x)` with
+`x^2 - sin^2 x <= x^4/2` (from `sin x < x` and `sin x > x - x^3/4`) and
+`x^2 sin^2 x >= 9x^4/16` (from `sin x >= 3x/4` on `(0,1]`), giving `<= 8/9`.
+Same two `sin` bounds as the earlier results — no new machinery.
+
+This is the second-derivative case of exactly the cancellation the fourth
+derivative needs, done at the order where the algebra is still manageable. It is
+the right template for the harder ones; it is not a substitute for them.
+
+## (A) — honest ledger
+
+    every previously named ingredient                          PROVED
+    |logSinc''| <= 1 on (0,1]                                  PROVED <- this commit
+    sup|logSinc''''| = O(1) on (0,theta]  (or |logSinc'''|)     OPEN, and it is
+                                                               ANALYSIS, not
+                                                               bookkeeping
+    the final assembly, given that bound                       OPEN, bookkeeping
