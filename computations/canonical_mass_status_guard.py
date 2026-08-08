@@ -10,12 +10,28 @@ current status (2026-08-01). The live canonical m_p is CODATA to +1.35 ppb
 (computations/per-observable-100x-status.witness.json). See
 docs/canonical-mass-formula-guardrail.md.
 
-`--scan-py` additionally scans DOCSTRINGS of production compute under
-computations/ (excluding probes/, audits/, sweeps/). That surface sits between
-this guard's .md scope and noncanonical_reentry_audit.py, which is AST-based and
+The docstring pass (ON by default; `--no-scan-py` disables) scans DOCSTRINGS of
+production compute under computations/ (excluding probes/, audits/, sweeps/ and
+the audit_/probe_/sweep_ filename prefixes). That surface sits between this
+guard's .md scope and noncanonical_reentry_audit.py, which is AST-based and
 drops docstrings by design — so a stale formula in a production script's
-docstring was invisible to both. It is opt-in until its ~20 remaining hits are
-triaged; see the note on the `scan_py` branch.
+docstring was invisible to both.
+
+It shipped opt-in (2026-08-08) with 20 untriaged hits; those were triaged and
+the pass turned on 2026-08-08 — 9 were stale live-status claims and were fixed,
+11 cleared via five detector rules, each preferred over an allowlist entry so
+the files stay watched for FUTURE staleness: SUMMARY_SCOPE (an EXPLORATORY /
+DEPRECATED / counterfactual marker in the docstring summary governs what is
+under it), `no <deprecated-token>` as an absence disclaimer, NAMES_THE_GAP
+(.py only — see its note), the audit_/probe_/sweep_ filename prefixes, and
+`m_p-pin` excluded from MASS_CONTEXT as a q₀-anchor name.
+
+Not yet wired into CI: no workflow currently runs this guard, and repo CI
+auto-triggers are disabled (AGENTS.md). `--strict` is also still 2 hits short
+of green on docs/precision-goals.md; both are correct, carefully-qualified
+prose ("bare", "open gap"), so clearing them means a deliberate loosening of
+the .md pass and is left as its own decision — NOT worth buying green by
+weakening the primary surface.
 
 Verified against the defect it was built for (2026-08-08): with
 mass_table_comprehensive.py at its pre-fix revision, `--scan-py` flags line 9
@@ -53,9 +69,13 @@ DEPRECATED_MAGNITUDE = re.compile(
     r"\b966\b|\b406\b|vol_density_borromean|Vol\(\U0001d4d1₃\)|lambda_scale|λ_scale)"
 )
 # Context that makes it a *status* claim about absolute nucleon mass.
+# `m_p-pin` / `m_p pin` is EXCLUDED: there it names the q₀ anchor (the
+# proton-ratio pin, per AGENTS.md §"q₀ anchor convention"), not a proton-mass
+# value — so a line like "3.47% m_p-pin swing" in the Q_β c_k ladder is about
+# a truncation coefficient, not about absolute mass.
 MASS_CONTEXT = re.compile(
-    r"(m_p|m_\{?p\}?|\U0001d52a_\U0001d52d|proton mass|nucleon mass|absolute mass|"
-    r"m_n|neutron mass)", re.IGNORECASE
+    r"(m_\{?p\}?(?![-_ ]?pin)|\U0001d52a_\U0001d52d|proton mass|nucleon mass|"
+    r"absolute mass|m_n|neutron mass)", re.IGNORECASE
 )
 # Words that mark the line as explicitly flagging the figure as wrong/deprecated (skip).
 # NOTE: `\bNOT\b` — the leading `\b` was missing, so this matched the "NOT" inside
@@ -64,8 +84,32 @@ MASS_CONTEXT = re.compile(
 # it was why mass_table_comprehensive.py's stale λ_A docstring stayed invisible.
 NEGATED = re.compile(
     r"(deprecat|wrong|\bNOT\b|never|do not|don't|❌|purged|refut|artifact|"
-    r"guardrail|must never|fit\b|mistake|remov)", re.IGNORECASE
+    r"guardrail|must never|fit\b|mistake|remov|"
+    # "no <deprecated thing>" is a disclaimer of ABSENCE — the docstring is
+    # saying the script does not use the form ("no m_e·Vol(𝓑₃)",
+    # "(no λ_scale, no Skein)"). Kept to the deprecated tokens: a bare `no`
+    # is far too common to negate on.
+    r"\bno\s+(?:m_e|Vol|λ_scale|lambda_scale|Skein|special-cas))", re.IGNORECASE
 )
+
+# The magnitude is NAMING the known discrepancy ("the +2.89 % m_p gap"), not
+# claiming a live mass. A gap is by definition the distance from the right
+# answer, so a line that calls it one is not asserting it as the status.
+# Checked on the hit line only — a "gap" elsewhere in the docstring says
+# nothing about this line (the whole-docstring-scope mistake, see below).
+#
+# 🛑 .py DOCSTRINGS ONLY — do NOT extend this to the .md pass. The prose
+# recurrence this guard was built for (2026-08-01) was an agent writing
+# "m_p misses ~437× / 2.89% Vol·ρ gap" as the live status: it calls the figure
+# a gap AND asserts it as current, so this rule would have missed the exact
+# defect the guard exists to catch. In a docstring the two phrasings separate
+# cleanly — a stale docstring states a FORMULA ("m(K) = m_e · [Vol(𝓑₃)/ℏ_q²] ·
+# λ_A"), it does not narrate a miss — which is why the rule is safe here and
+# unsafe there. The two `*_wiring.py` probes reporting "the recovered fraction
+# of the +2.89 % m_p gap" are the cases it is for; the alternative was
+# allowlisting those files, which would blind the guard to real future
+# staleness in them.
+NAMES_THE_GAP = re.compile(r"\bgaps?\b", re.IGNORECASE)
 
 
 # Counterfactual / hypothesis framing: the docstring is not asserting the form as
@@ -103,6 +147,38 @@ LIVE_REFERENCE_DOCS = (
 # scanning them would be pure noise and the guard would be ignored.
 PY_SCAN_ROOT = "computations"
 PY_EXCLUDED_DIR_PARTS = ("probes", "audits", "sweeps")
+#: Same exclusion by FILENAME prefix. `computations/audit_delta_S_chain.py` is
+#: the same kind of artifact as anything under `audits/` — it exists to walk the
+#: λ_scale-era derivation chain — but it sits at the top level, so the directory
+#: rule alone misses it. Same trade-off the directory rule already makes: these
+#: files may go stale unwatched, and that is preferable to the guard being
+#: ignored for noise.
+PY_EXCLUDED_NAME_PREFIXES = ("audit_", "probe_", "sweep_")
+
+#: Markers that, in a docstring's SUMMARY, declare the epistemic scope of
+#: everything below it. Deliberately NOT the whole `NEGATED` set: a summary can
+#: contain a negation word about some *other* object and mean nothing about the
+#: mass form. `yekutieli_volume_join.py` is the case in point — "derive or
+#: refute the 2.38× bridge" is about the bridge, while the docstring goes on to
+#: label the deprecated Vol·ρ form "Production (m_p path)", which is exactly the
+#: claim this guard exists to catch. Scope markers only.
+SUMMARY_SCOPE = re.compile(
+    r"(exploratory|unproved|deprecat|superseded|obsolete|historical|"
+    r"do not wire|not wired)", re.IGNORECASE
+)
+
+#: How many leading lines of a docstring count as its SUMMARY. A scope marker
+#: there ("EXPLORATORY (UNPROVED — do not wire into production)", "the weight
+#: that would make m_p match CODATA") governs everything under it by
+#: construction, so it negates the whole docstring.
+#:
+#: This is NOT the whole-docstring negation that was tried and reverted. That
+#: let an incidental disclaimer ANYWHERE — a "not-computed" 18 lines *below* a
+#: formula — suppress a real hit. A summary line is different in kind: it
+#: states what the docstring is about. The pre-fix mass_table_comprehensive
+#: docstring is the control, and its summary ("full mass/binding table at
+#: current production tier") carries no marker, so it still trips the guard.
+SUMMARY_LINES = 2
 
 #: Lines either side of a flagged formula that a disclaimer must fall within to
 #: count as negating it. 2 covers the usual "formula line / blank / ⚠ …" shape
@@ -144,6 +220,8 @@ def _iter_py_docstrings():
         rel_parts = path.relative_to(REPO).parts
         if any(part in PY_EXCLUDED_DIR_PARTS for part in rel_parts):
             continue
+        if path.name.startswith(PY_EXCLUDED_NAME_PREFIXES):
+            continue
         rel = str(path.relative_to(REPO))
         if is_allowlisted(rel):
             continue
@@ -173,7 +251,7 @@ def _iter_py_docstrings():
             yield rel, start, lines[start - 1:end]
 
 
-def scan(scan_py: bool = False) -> list[tuple[str, int, str]]:
+def scan(scan_py: bool = True) -> list[tuple[str, int, str]]:
     hits: list[tuple[str, int, str]] = []
     for path in _iter_target_files():
         rel = str(path.relative_to(REPO))
@@ -198,43 +276,61 @@ def scan(scan_py: bool = False) -> list[tuple[str, int, str]]:
     # docstring advertised the removed λ_A form while the code below used the
     # canonical facade. Same three filters as the .md pass.
     #
-    # OPT-IN (`--scan-py`) until triaged. The pass is verified to catch the
-    # defect it was built for (see the module docstring's test note), but it
-    # currently also raises ~15 untriaged files — deprecated modules describing
-    # themselves, and λ_A research/verification scripts that guardrail §3
-    # permits. Turning it on by default would flip a green guard red on hits
-    # nobody has read yet, which is how a guard gets ignored. Triage is tracked
-    # as a bean; wire it into the default (and CI) once the list is classified.
+    # ON by default since 2026-08-08 (`--no-scan-py` disables): the hit list it
+    # shipped with has been triaged — stale claims fixed, legitimate ones
+    # cleared by rule rather than by allowlist. See the module docstring.
     if not scan_py:
         return hits
     for rel, start, doc_lines in _iter_py_docstrings():
-        # Negation is docstring-scoped: if the docstring anywhere marks the form
-        # as deprecated/wrong/a fit, it is not a stale live-status claim.
-        for offset, line in enumerate(doc_lines):
-            if not DEPRECATED_MAGNITUDE.search(line):
-                continue
-            if not MASS_CONTEXT.search(line):
-                continue
-            # Negation is checked over a PROXIMITY WINDOW, not the whole docstring.
-            # Whole-docstring scope over-suppressed: an unrelated "not-computed" 18
-            # lines below the formula hid the real hit. A disclaimer that actually
-            # governs a formula sits within a line or two of it.
-            lo = max(0, offset - NEGATION_WINDOW)
-            window = "\n".join(doc_lines[lo:offset + NEGATION_WINDOW + 1])
-            if NEGATED.search(window) or COUNTERFACTUAL.search(window):
-                continue
-            hits.append((rel, start + offset, line.strip()[:160]))
+        hits.extend(docstring_hits(rel, start, doc_lines))
     return hits
+
+
+def docstring_hits(rel: str, start: int, doc_lines: list[str]) -> list[tuple[str, int, str]]:
+    """Stale live-status hits within ONE docstring.
+
+    Split out from `scan()` so the both-directions regression
+    (`canonical_mass_status_guard_test.py`) can drive it with fixture
+    docstrings instead of the live tree — the live tree is exactly what these
+    filters are tuned against, so a test that reads it proves nothing.
+    """
+    found: list[tuple[str, int, str]] = []
+    # A scope marker in the SUMMARY governs the whole docstring (see
+    # SUMMARY_LINES for why this is not the reverted whole-docstring rule).
+    summary = "\n".join(doc_lines[:SUMMARY_LINES])
+    if SUMMARY_SCOPE.search(summary) or COUNTERFACTUAL.search(summary):
+        return found
+    for offset, line in enumerate(doc_lines):
+        if not DEPRECATED_MAGNITUDE.search(line):
+            continue
+        if not MASS_CONTEXT.search(line):
+            continue
+        # Naming the gap is not claiming the status.
+        if NAMES_THE_GAP.search(line):
+            continue
+        # Negation is checked over a PROXIMITY WINDOW, not the whole docstring.
+        # Whole-docstring scope over-suppressed: an unrelated "not-computed" 18
+        # lines below the formula hid the real hit. A disclaimer that actually
+        # governs a formula sits within a line or two of it.
+        lo = max(0, offset - NEGATION_WINDOW)
+        window = "\n".join(doc_lines[lo:offset + NEGATION_WINDOW + 1])
+        if NEGATED.search(window) or COUNTERFACTUAL.search(window):
+            continue
+        found.append((rel, start + offset, line.strip()[:160]))
+    return found
 
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--strict", action="store_true", help="exit 1 if any hit is found")
     ap.add_argument(
-        "--scan-py",
-        action="store_true",
-        help="also scan docstrings of production compute under computations/ "
-             "(opt-in until the current hit list is triaged)",
+        "--scan-py", dest="scan_py", action="store_true", default=True,
+        help="scan docstrings of production compute under computations/ "
+             "(default: on)",
+    )
+    ap.add_argument(
+        "--no-scan-py", dest="scan_py", action="store_false",
+        help="restrict to the .md prose pass",
     )
     args = ap.parse_args()
 
