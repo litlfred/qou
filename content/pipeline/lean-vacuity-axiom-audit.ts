@@ -520,6 +520,25 @@ function detectTrivialTrue(
         const rhs = eq[2].replace(/\s+/g, "");
         if (lhs && lhs === rhs)
           return mk(d, "proof-no-trivial-true", "reflexive-tautology", false);
+        // Whitespace-only normalisation misses an ascribed NUMERIC LITERAL:
+        // `(0 : ℝ) = 0` compares `(0:ℝ)` against `0` and slips through. That
+        // is how `yangBaxter_energy_zero` / `farComm_energy_zero` shipped a
+        // literal `(0 : ℝ) = 0` as the claim "a Yang-Baxter step has zero
+        // energy" — banned by §Strict Lean Discipline item 5, and reachable
+        // here only because those two also carry an unused hypothesis.
+        //
+        // Deliberately narrow: ONLY a bare numeric literal under a single
+        // ascription is stripped. Stripping ascriptions in general would make
+        // genuine coercion lemmas look vacuous — `((n : ℕ) : ℤ) = n` is
+        // `Nat.cast` content, not a tautology, and its inner side is not a
+        // bare literal, so it is left alone.
+        const unascribeLit = (s: string) => {
+          const m = s.match(/^\((-?\d+(?:\.\d+)?)\s*:[^():]*\)$/);
+          return m ? m[1] : s;
+        };
+        const nl = unascribeLit(lhs), nr = unascribeLit(rhs);
+        if (nl && nl === nr && (nl !== lhs || nr !== rhs))
+          return mk(d, "proof-no-trivial-true", "reflexive-tautology-ascribed-literal", false);
       }
       // (b) existential-over-True `: ∃ …, True` (e.g. `∃ v, True := sorry`,
       // the vol-through-tau dodge) and (c) a top-level `… ∨ True` / `True ∨ …`
