@@ -111,3 +111,60 @@ Incidental: Mathlib has `Polynomial.derivative` as a linear map and
 
 Item 2 is the one that matters for the C1 residual. Closing is a human action —
 leaving status as-is.
+
+## Item 2 ANSWERED 2026-08-08 — multiplicative, and forced; the mixed case is the general one
+
+`QOU/Mathlib/QAlienBridgeEquation.lean`, sorry-free (PR #4771).
+
+The open question was whether the q-native weight shift is additive or
+multiplicative. **It is multiplicative, and the dichotomy is forced rather than a
+modelling choice.**
+
+The operator being conjugated by is a *derivation* classically and an
+*automorphism* in the q-setting (the dilation `σ_q`). Conjugating by a derivation
+is a commutator ⇒ additive shift. Conjugating by an automorphism is
+`σ ∘ Δ ∘ σ⁻¹`, and an algebra map passes **through** the product `tⁿ·E(−)`,
+multiplying by `σ(t)ⁿ` ⇒ multiplicative shift. A derivation would instead have
+*differentiated* that product and produced `n` additively.
+
+| setting | operator | relation | shift |
+|---|---|---|---|
+| classical | derivation `∂` | `⁅∂,Δ_ω⁆ = ω·Δ_ω` | `λ ↦ λ + ω` |
+| q-difference | automorphism `σ` | `σΔ_ωσ⁻¹ = c_ω·Δ_ω` | `λ ↦ c_ω·λ` |
+
+**The link is exact, not analogical.** `euler_weight_additive_qweight_multiplicative`:
+for the *same* `(A,E,t)` carrying both structures, the two systems have the *same*
+alien family `Δ_n = tⁿ·E` on the *same* index `n`; the classical weight is `n` and
+the q-weight is `cⁿ`. One grading — the classical weight *is* the index, the
+q-weight is the character `c^{(−)}` evaluated on it.
+
+**The owner's third option was right and is the general case.** `QBridgeSystem`
+carries a Jordan pair, `σΔ_ωσ⁻¹ = weight ω · Δ_ω + unipotent ω`; `qweight_shift`
+shows the semisimple part *multiplies* the eigenvalue while the unipotent part
+*adds* a correction. That is the Levi decomposition of the local q-difference
+Galois group: a torus of characters `qⁿ` extended by a unipotent part.
+
+Not decorative — there is a genuinely mixed model. With `σ t = t + 1` and
+`σDσ⁻¹ = D`, the derivation `Δ := t·D` has `σΔσ⁻¹ = 1·Δ + D`: trivial semisimple
+weight, all content unipotent. `σ t = t + 1` is the defining property of the
+**q-logarithm** (`σ_q ℓ_q = ℓ_q + 1`), which generates exactly the unipotent part.
+Witnessed concretely on `R[X]` by the shift `X ↦ X+1` with `Δ = X·d/dX`, unipotent
+part `d/dX ≠ 0` (`polyUnipotentSystem_not_isSemisimple`).
+
+Also landed: `conjDeriv` (conjugating a `Derivation` by an `AlgEquiv` is a
+`Derivation` — Mathlib has both halves, not this), `qweight_mul_of_comp` (weights
+**multiply** under composition), `alien_eq_zero_of_dil_comm` (teeth; note the
+degenerate value is `c_ω = 1`, not `0`).
+
+## Remaining on this bean
+
+1. **`ord_dotted_comm`'s hypothesis still lacks a concrete witness** (classical
+   file) — needs Laurent polynomials `R[t,t⁻¹]` for an element of `∂`-eigenvalue
+   `−n`.
+2. **No analytic q-difference module is claimed to satisfy the q-bridge**, C1
+   included. The structure says what such a system looks like and what follows;
+   exhibiting one from a resurgent q-series — and identifying C1's actual weights
+   — is untouched. **This is now the whole remaining gap for the C1 residual**;
+   the additive-vs-multiplicative ambiguity that blocked it is gone.
+
+Closing is a human action — leaving status as-is.
