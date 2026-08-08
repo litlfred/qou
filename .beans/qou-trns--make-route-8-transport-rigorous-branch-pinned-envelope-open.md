@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T12:40:00Z
+updated_at: 2026-08-08T13:20:00Z
 parent: 0yqu
 ---
 
@@ -1160,5 +1160,81 @@ to `7.4e-40`, and proved in Lean.
 The envelope wiring above the pinning: instantiate `hasDerivAt_of_partial_y_eq_zero`
 at `V` and sum over the three roots. Assembly of proved parts — Route 26 G6
 checks the collapse numerically to `1e-31` — but not written.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later still) — the three joins, and a claim that was wrong
+
+Route 30 (`qbeta_5two_route30_envelope_wiring_probe.py`, 8 gates) + three Lean
+modules, all sorry-free, all `lake build`-verified per module, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+| module | theorems | what it joins |
+|---|---|---|
+| `FiveTwoBranchPinned` | 4 | `exp(Σⱼ log(1−x·yⱼ) − log x) = 1` ⟹ `Σⱼ arg(1−x·yⱼ) = φ + 2πk`, then `Σⱼ log(1−x·yⱼ) = log x` |
+| `FiveTwoEnvelopeWiring` | 8 | the envelope theorem instantiated at the actual `V` |
+| `FiveTwoBranchPinnedB` | 9 | `Σⱼ log(1−yⱼ/x) = −log x`, the **second** pinned sum |
+
+### The second pinned sum was invisible until the first was written
+
+`sum_dVdx_of_pinned` takes **two** pinned log-sums; only one had ever been
+worked on. Writing the first made the second obvious. This is the argument
+against calling a chain of proved lemmas with unwritten joins "assembly".
+
+It is proved by **mirroring** the sector argument, not by Route 27 G5's
+conjugation identity (`k₂ = −k₁`) — that would need the root multiset to be
+conjugation-closed *as a permutation*. On `|x| = 1`, `(y/x).im = y.im·x.re −
+y.re·x.im`, and the same two facts that gave `Im(x·y₃) < 0` and `Im(x·y₂) < 0`
+give `Im(y₂/x) > 0` and `Im(y₃/x) > 0`. Nothing new measured or assumed.
+
+### ⚠ A claim this bean almost shipped, and it was FALSE
+
+An earlier draft of `FiveTwoEnvelopeWiring`'s docstring said: *"`∂V/∂y = 0`
+reduces to the deformed saddle, which by `deformed_saddle_iff_curve` **is** the
+curve. So the envelope hypothesis is free on the curve."*
+
+**It is not free.** Route 30 G2:
+
+| root | `∂V/∂y` |
+|---|---|
+| the two roots other than the positive real one | `0` (to `1.2e-40`) |
+| the positive **real** root `t` | `2πi/t` (to `2.1e-40`) — **not zero** |
+
+The *exponentiated* saddle holds at all three roots (to `2.8e-40`). What fails
+at `t` is the **logarithmic** identity: `−t` is a negative real, so it sits on
+`log`'s cut, `log(−t) = log t + iπ`, and the `2·log(−y)` term leaves a bare
+`2πi`. Exponentiating is necessary, not sufficient — the branch integers have to
+line up too. Same family as the `hinv1`/`hlan1` failure and the endpoint
+failures: **the sixth time a branch cut has bitten this lane at a real point.**
+
+### The transport survives, and why
+
+`S(φ) = Σⱼ Re Vⱼ` takes real parts, and the leak is `2πi·t′/t` with `t` and `t′`
+real — purely imaginary, so `Re` kills it. Measured: `Re(dV/dφ) = Re(∂V/∂x·x′)`
+at **all** roots to `4.6e-41`, while the unreduced difference reaches `2.47`.
+The Lean statement was weakened to match: `hasDerivAt_re_deformedV_envelope`
+takes `Re(∂V/∂y·y′) = 0`, not `∂V/∂y = 0`. The stronger
+`hasDerivAt_deformedV_envelope` is still a true theorem — its hypothesis just
+fails at one of the three roots, and the docstring now says so.
+
+### The payoff
+
+Route 30 G6: summing over the three roots, `Re Σⱼ ∂V/∂x·(i·x) = 2φ` **exactly**
+(`9.2e-41`). That is `dS/dφ`.
+
+### Non-vacuity with teeth
+
+`logSumA_eq_log` has fifteen hypotheses and `logSumB_eq_neg_log` sixteen. G7 and
+G8 check that every one holds **simultaneously** at all 399 arc points, and then
+that the conclusion does too. A theorem with sixteen hypotheses deserves that.
+
+### What is left
+
+`S(φ)` is not yet defined in Lean as `Σⱼ Re V(x φ, yⱼ φ)` with a differentiable
+root labelling, so `envelope_integrate` is not applied to it. That needs
+`exists_hasDerivAt_root` threaded through — and it is a join, so it will be
+written, not called assembly.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
