@@ -39,3 +39,23 @@ fixed by gluing/parity) pin PR #4798's transverse surface-curvature coefficient
 `c₂` **parameter-free** (killing its 0…897 germ/handle range)? Falsifiable; no
 free parameter if it works; never touches the trefoil. Carry the §3
 CS-calibration caveat alongside.
+
+## Update 2 (2026-08-08, PR #4824, audit §6) — surviving item changed
+
+Pursued §4. An already-landed proved result redirects it:
+`one_loop_ambiguity_group_probe.py` (qou-fl4t, PR #4691) shows the DG 1-loop
+flattening ambiguity is a **DISCRETE shape-unit group** (⟨√2⟩ for L6a4, trivial
+for 4₁, ⟨√ρ⟩ plastic for 5₂). But #4798's transverse c₂ ranges CONTINUOUSLY
+0…897. A discrete-group canonicalisation cannot pin a continuous range ⇒ the
+"flatten #4798's c₂" framing is **unsupported** (scope-a); c₂ and the
+flattenable τ_DG are different constructions with no established reduction.
+
+REDIRECT: the object the flattening actually canonicalises is the DG 1-loop
+torsion τ_DG (discrete ambiguity + geometric selection ⇒ canonical value).
+Corpus |τ_DG|: 4₁=√3/2, L5a1=√2, L6a4=8.
+
+NEW surviving item (replaces the c₂ item): compute the parameter-free
+τ_DG(8₁₁)/τ_DG(L6a4) and compare to B(³H)/B(³He)=1.0990 — the τ_DG analogue of
+the §2 volume ratio, on the canonically-flattened object. τ_DG(8₁₁) needs a
+SnapPy run (unavailable in the current sandbox — BLOCKED here). Carry the §3
+CS-calibration caveat.

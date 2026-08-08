@@ -70,8 +70,33 @@ Not "derive the deuteron magnitude from the trefoil" (trap, Vol=0), and not "com
 
 That is a real derivation, on hyperbolic manifolds, with no free parameter if it works — and it is falsifiable (the flattening either pins `c₂` or it does not). It is the correct successor to #4798 and does **not** touch the trefoil.
 
+## 6. The flattening's ambiguity is DISCRETE — the §4 object is the DG torsion, not #4798's c₂
+
+Pursuing §4 (2026-08-08, same PR), an already-landed proved result sharpens it and **redirects the object to probe**. `computations/probes/one_loop_ambiguity_group_probe.py` (bean `qou-fl4t`, PR #4691 follow-up) establishes, with `is_isometric_to` + 212-bit volume controls:
+
+> the ambiguity of the DG 1-loop invariant `|det J|` is a **finitely-generated multiplicative group = the shape-unit group of the trace field** — exactly the group the *dropped flattening monomial* `∏ zᵢ''^{fᵢ''} zᵢ'^{fᵢ'}` lives in.
+
+| manifold | flattening ambiguity |
+|---|---|
+| 4₁ (1 cusp) | **trivial** (1 value; 2 tetrahedra, no room) |
+| L5a1, L6a4 (arith.) | ⟨√2⟩ |
+| 5₂ | ⟨√ρ⟩, ρ = plastic number (unit, disc −23 = the 5₂ trace field) |
+| 6₂ | rank ≥ 2 |
+
+**This is decisive for §4.** The flattening controls a **discrete** ambiguity (a shape-unit group; for L6a4/³He it is `⟨√2⟩`, for 4₁ it is *trivial*), and the completeness/parity equations select the geometric member — so the flattened DG torsion `τ_DG` **is** a canonical, parameter-free number. But PR #4798's transverse surface-curvature coefficient `c₂ = ‖Ω₂^⊥‖/h²` ranges **continuously** over 0…897 across germ-normalization + handle choices. A discrete-group canonicalisation cannot be what pins a continuous range: **#4798's `c₂` and the flattenable `τ_DG` are different constructions, and there is no established reduction of the former to the latter.**
+
+Conclusion (scope-(a)): the §4 hypothesis *as stated* — "the flattening pins #4798's `c₂` parameter-free" — is **unsupported**. The flattening's action is understood on the **DG 1-loop torsion** (discrete shape-unit ambiguity + geometric selection ⇒ canonical `τ_DG`), which is the object to use. Do **not** try to flatten #4798's surface-curvature term; compute the canonical `τ_DG` directly. The corpus already has `|τ_DG|`: 4₁ = √3/2, L5a1 = √2, L6a4 = 8 (multicusp probe).
+
+**Concrete next probe (blocked here on SnapPy; beaned).** Form the parameter-free canonical ratio using the flattened `τ_DG` for the A=3 carriers and compare to the binding ratio — the `τ_DG` analogue of the §2 volume ratio, but on the object the flattening actually canonicalises:
+
+```
+τ_DG(8₁₁) / τ_DG(L6a4)   vs   B(³H)/B(³He) = 1.0990
+```
+
+`τ_DG(L6a4) = 8` is in corpus; `τ_DG(8₁₁)` needs a SnapPy run (unavailable in this sandbox). This stays on hyperbolic carriers, is zero-parameter, and — unlike #4798's `c₂` — uses the canonically-flattened object.
+
 ## 5. Disposition
 
 - No production wiring; no fit; no anchor inverted. Deuteron leg stays on the `Re Φ_q` / bar-even `s(z₀)` route (Vol=0), not a hyperbolic volume.
-- `qou-985x` re-scoped to §4 (flattening pins #4798's `c₂` on A≥3 hyperbolic carriers), with the CS-calibration caveat (§3) attached.
-- Sibling coordination: #4591 (CS-blindness, the constraining sibling), #4610 (SnapPy volumes), #4798 (the na-Stokes negative this succeeds).
+- `qou-985x` re-scoped: the §4 framing ("flatten #4798's `c₂`") is **unsupported** (§6 — the flattening's ambiguity is discrete, `c₂` is continuous). The surviving concrete item is the **canonical `τ_DG` ratio** for the A=3 carriers (§6), blocked here on SnapPy. CS-calibration caveat (§3) attached.
+- Sibling coordination: #4591 (CS-blindness, the constraining sibling), #4610 (SnapPy volumes), #4798 (the na-Stokes `c₂` construction this redirects away from), `qou-fl4t` / PR #4691 (the ambiguity-group result §6 rests on).
