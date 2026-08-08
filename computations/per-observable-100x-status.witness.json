@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T18:39:33.457719+00:00",
-  "commitSha": "0a00d6ef9208675f5a30cbcef45a9e6b387632be",
+  "computedAt": "2026-08-08T18:48:03.854968+00:00",
+  "commitSha": "87c627a7cca603ce78725fa0152b3e008769c8b5",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 79,
+  "durationMs": 11,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
   "scriptHash": "19daf1b26292",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptCommitSha": "87c627a7cca603ce78725fa0152b3e008769c8b5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,42 +72,30 @@
       {
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
-        "pred_MeV": "0.782334386518",
+        "pred_MeV": "0.782334410278",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1248.",
+        "err_ppb": "1279.",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "160.1",
+        "miss_factor": "164.0",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. ⚠ ANCHOR STRADDLE: this prediction was built at the muon q₀ (1.10997859555733471989…) but the dashboard evaluates at the proton pin (1.10997858275138080759…). Induced Q_β error ≈ 29.96 ppb = 3.84× the L2 target. Immaterial against today's 1248 ppb residual, but it alone exceeds the target — so no 100× PASS can be credited to this row until the layers agree (AGENTS.md §q₀-anchor; migration bean tnjb).",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "1.278e-51",
-        "compute_output_dps": 60,
-        "anchor_layer": {
-          "status": "STRADDLE",
-          "cache_anchor": "muon",
-          "cache_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-          "producer_q0": "1.1099785827513808075916690956107688798744991218736",
-          "pin_diff_ppb": "-11.53711788998783148354814970615624081568544450717923778883680477507659",
-          "induced_qbeta_error_ppb": "29.95906951938073496283220434470830627139124333343822418311011496184677",
-          "l2_target_ppb": "7.797",
-          "anchor_error_over_target": "3.842384188711136970992972212993241794458284382895757879070169932261994",
-          "anchor_alone_exceeds_l2_target": true,
-          "material_today": null
-        }
+        "compute_output_dps": 60
       },
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565422765",
+        "pred_MeV": "939.565422788",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "2.389",
+        "err_ppb": "2.414",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "415.7",
+        "miss_factor": "420.1",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -118,13 +106,13 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333333721",
+        "pred_MeV": "1.29333336097",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "755.6",
+        "err_ppb": "773.9",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "159.4",
+        "miss_factor": "163.3",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -172,16 +160,16 @@
       "beats_100x_count": 2
     },
     "anchor_layer_qbeta": {
-      "status": "STRADDLE",
-      "cache_anchor": "muon",
-      "cache_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+      "status": "matched",
+      "cache_anchor": "proton",
+      "cache_q0": "1.1099785827513808075916690956107688798744991218736",
       "producer_q0": "1.1099785827513808075916690956107688798744991218736",
-      "pin_diff_ppb": "-11.53711788998783148354814970615624081568544450717923778883680477507659",
-      "induced_qbeta_error_ppb": "29.95906951938073496283220434470830627139124333343822418311011496184677",
+      "pin_diff_ppb": "0.0",
+      "induced_qbeta_error_ppb": "0.0",
       "l2_target_ppb": "7.797",
-      "anchor_error_over_target": "3.842384188711136970992972212993241794458284382895757879070169932261994",
-      "anchor_alone_exceeds_l2_target": true,
-      "material_today": null
+      "anchor_error_over_target": "0.0",
+      "anchor_alone_exceeds_l2_target": false,
+      "material_today": false
     },
     "upstream_witness_hashes": [
       {
@@ -234,7 +222,6 @@
       }
     ]
   },
-  "caveats": [
-    "Q_β row: the cached prediction is built at the muon q₀ while this dashboard evaluates at the proton pin. Induced error ≈ 29.96 ppb = 3.84× the 7.797 ppb L2 target — immaterial against today's 1248 ppb residual, but it alone exceeds the target, so a 100× PASS is suppressed on this row until the layers agree. Fixing it means regenerating qbeta-ck-cache at the proton pin (tracked migration, bean tnjb) — deliberately NOT done here, per AGENTS.md §q₀-anchor rule 4 'untouched muon witnesses: leave them'."
-  ]
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

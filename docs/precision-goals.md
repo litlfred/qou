@@ -173,6 +173,15 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
+> **Anchor correction 2026-08-08.** The Q_β / m_n / Δ_pn rows previously read
+> 1247 / 2.39 / 755 ppb. Those came from a `qbeta-ck-cache` built at the **muon**
+> q₀ and consumed by a **proton**-pinned dashboard — a layer straddle worth
+> 29.96 ppb on Q_β. The cache is now regenerated at the proton pin and the rows
+> above are the layer-consistent values, which is why they now agree with the
+> 1279 ppb / 164.0× figure already quoted in §"Key distinctions" below. No
+> prediction improved or degraded; the numbers were mislabelled, not wrong.
+> Detail: [`audits/2026-08-08-qbeta-l2-anchor-straddle-guard.md`](audits/2026-08-08-qbeta-l2-anchor-straddle-guard.md).
+
 > **Table updated 2026-07-04 (m_p de-fitted; post q₀ re-pin #1422 +
 > de-fitting #1416).** Only m_e meets trivially (scale anchor, err 0);
 > **all five genuine predictions miss** the 100× target, and m_p — the
@@ -188,9 +197,9 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
 | m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 1.35 ppb (de-fitted round-trip) | **misses ~437×** (documented-pin round-trip; the 0.0004 ppb was a dropped fitted tower, 2026-07-04) |
 | m_μ | prediction | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) |
-| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1247 ppb (1.25 ppm) | **misses ~160×** (de-fitted; N=5 ladder was a fit) |
-| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.39 ppb | **misses ~416×** (rides on m_p; +1.35 ppb after the tower drop) |
-| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
+| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) |
+| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.41 ppb | **misses ~420×** (rides on m_p; +1.35 ppb after the tower drop) |
+| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** |
 | m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) |
 
 **Honest summary: 2/7 "meet" — 1 calibration anchor (m_e)
