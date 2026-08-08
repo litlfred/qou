@@ -1,0 +1,195 @@
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Module
+import Mathlib.Tactic.Abel
+import Mathlib.Tactic.Linarith
+import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Algebra.Order.Field.Basic
+
+/-!
+# The nucleon–nucleon interface is a single scalar, and it has a floor
+
+**Why no crossing convention can bind the deuteron.**
+
+In the `H_{3A}` atom word (`computations/mass_at_3A_proper.atom_braid_word_3A`)
+the generator `σ₂` is the *only* one joining strand 2 — nucleon `k`'s last quark
+— to strand 3, nucleon `k+1`'s first. So "the inter-nucleon sector" is literally
+the word placed at that one generator, and the binding functional
+`B = α·ln(tr_free/tr_atom)` reads it through the Markov trace alone.
+
+Two facts collapse that sector to a single number.
+
+* The Hecke quadratic `σ² = h·σ + 1` closes `span{1, σ}` under multiplication
+  (`interface_mul`), so **every** word at `σ₂`, of any length, is `a•σ + b•1`.
+* The Markov property `tr(W·σ) = z·tr(W)` plus linearity then gives
+  `tr(W·(a•σ + b•1)) = (a·z + b)·tr(W)` (`interface_scalar`).
+
+Hence the whole interface enters through `μ = a·z + b`, and the per-bond
+log-suppression is `L = −ln μ`. The framework's four whitelisted crossings are
+the `a = 1` cases at `d ∈ {0, −h(½−δ/4), −h/2, −h}`, i.e. `μ ∈ [z−h, z]`.
+
+Three consequences are recorded here.
+
+`mu_mem_Icc` — the admissible `μ` lies in `[z−h, z]`, so with `−ln` decreasing
+the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. Numerically that is
+`[2.907195, 5.177967]` MeV, while `B_AME(²H) = 2.2245662`: **below the floor by
+30.69 %**. `mu_unreachable` is the formal statement that a target above `z` is
+not attained by any admissible offset — no crossing sign, colour weight, or
+multiplicity reaches the deuteron.
+
+`charge_independence_iff` — the strong force is charge independent, so a bond
+model must give `L_pp = L_nn`. With `d_pp = 0` (σ) and `d_nn = −h` (σ⁻¹) that
+demands `z = z − h`, i.e. `h = 0`, i.e. `q = 1`: the classical limit, where the
+Hecke structure is gone. Measured, `α(L_nn − L_pp) = 2.27077 MeV`, which is
+*identically* the ³H/³He mirror splitting this framework predicts — so that
+splitting is an artifact of the σ/σ⁻¹ charge assignment, not an isospin effect.
+Nature's is 0.764 MeV and mostly Coulomb.
+
+`proj_add_eq_one` / `proj_mul_eq_zero` — the same quadratic supplies the isospin
+decomposition for free. `P₊ = (σ + q⁻¹)/(q + q⁻¹)` and `P₋ = (q − σ)/(q + q⁻¹)`
+are complementary orthogonal idempotents, and for two nucleons `T=1` is the
+isospin-symmetric channel, `T=0` the antisymmetric one. Their interface scalars
+are `μ₊ = (z + q⁻¹)/(q + q⁻¹)` and `μ₋ = (q − z)/(q + q⁻¹)`, with `μ₊ + μ₋ = 1`.
+
+Base ring: **generic** (§7c). The algebra `A` is a plain `[Ring A]` over a
+commutative `[CommRing R]` of scalars, so nothing here assumes the Hecke algebra
+is commutative; the ordered results take `[Field R] [LinearOrder R]
+`[IsStrictOrderedRing R]` because they
+are about the *scalar* `μ`, never about `A`.
+
+Companion audit: `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`.
+Beans `qou-c6gx`, `qou-h7mh`.
+
+**Scope.** This is an impossibility result about the *interface*, and it is
+conditional in one place: `interface_scalar` takes the Markov property as a
+hypothesis, because in this corpus that property is an `axiom` carrying a
+`sorry` (`jones-markov-trace.lean`, standing in for Jones 1987) rather than a
+theorem. Nothing here proves the trace exists.
+
+It also does **not** claim the interface is where the ²H error lives — the
+opposite. Since no admissible `μ` reaches AME, and since the per-bond deficit
+changes sign across `A` (audit §4), the defect is in the *form* of
+`B = −α·ln μ` summed over bonds, not in the choice of crossing. The two
+positive routes suggested by `proj_*` — a derived Clebsch weighting, and
+charge independence imposed with Coulomb carrying the mirror split — are
+neither formalised nor wired here.
+
+The `Li₂^q` product form of audit §8 is not in this file; it needs a Fubini
+argument on a doubly-indexed sum and is tracked separately (bean `qou-cw27`).
+-/
+
+namespace QOU.QBeta.InterfaceScalar
+
+section Algebra
+
+variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+
+/-- **The interface subalgebra is two-dimensional.** The Hecke quadratic
+`σ² = h•σ + 1` closes `span{1, σ}` under multiplication, so a word of *any*
+length at the single inter-nucleon generator is again `a•σ + b•1`. This is what
+forbids "adding more knot operations" at the interface: there is nowhere for
+them to go. -/
+theorem interface_mul (σ : A) (h a b c d : R) (hq : σ * σ = h • σ + 1) :
+    (a • σ + b • (1 : A)) * (c • σ + d • (1 : A))
+      = (a * c * h + a * d + b * c) • σ + (a * c + b * d) • (1 : A) := by
+  have expand :
+      (a • σ + b • (1 : A)) * (c • σ + d • (1 : A))
+        = (a * c) • (σ * σ) + (a * d + b * c) • σ + (b * d) • (1 : A) := by
+    simp [add_mul, mul_add, smul_smul, add_smul]
+    module
+  rw [expand, hq]
+  module
+
+/-- **The interface collapses to one scalar.** Markov stabilisation
+`tr(W·σ) = z·tr(W)` plus linearity of the trace send every interface element
+`a•σ + b•1` to the single number `μ = a·z + b`.
+
+The Markov property is a hypothesis, not a theorem: in this corpus it is an
+axiom standing in for Jones (1987). -/
+theorem interface_scalar (tr : A → R) (W σ : A) (z a b : R)
+    (hadd : ∀ x y : A, tr (x + y) = tr x + tr y)
+    (hsmul : ∀ (c : R) (x : A), tr (c • x) = c * tr x)
+    (hmarkov : tr (W * σ) = z * tr W) :
+    tr (W * (a • σ + b • (1 : A))) = (a * z + b) * tr W := by
+  have expand : W * (a • σ + b • (1 : A)) = a • (W * σ) + b • W := by
+    simp [mul_add]
+  rw [expand, hadd, hsmul, hsmul, hmarkov]
+  ring
+
+end Algebra
+
+section Ordered
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- **Charge independence forces the classical limit.** The framework assigns
+`d_pp = 0` (σ) and `d_nn = −h` (σ⁻¹), so the p-p and n-n interface scalars agree
+only when `h = 0`, i.e. `q = 1`. Since the strong force *is* charge independent,
+the σ/σ⁻¹ assignment cannot be right at `q ≠ 1`. -/
+theorem charge_independence_iff (z h : R) : z + 0 = z + -h ↔ h = 0 := by
+  constructor
+  · intro hyp
+    have : (0 : R) = -h := by linarith
+    linarith
+  · intro hyp; rw [hyp]; ring
+
+/-- The admissible interface offsets `d ∈ [−h, 0]` — σ⁻¹ at one end, σ at the
+other — put `μ = z + d` in `[z − h, z]`. -/
+theorem mu_mem_Icc (z h d : R) (hd_lo : -h ≤ d) (hd_hi : d ≤ 0) :
+    z - h ≤ z + d ∧ z + d ≤ z := by
+  constructor <;> linarith
+
+/-- **The floor theorem.** A target strictly above `z` is attained by no
+admissible interface element. With `z = 1/(√q₀ + 1/√q₀)` this says
+`B ≥ α·ln(1/z) = 2.907195 MeV` for every crossing convention, while
+`B_AME(²H) = 2.2245662` — so the deuteron is unreachable, and the ²H miss cannot
+be localised in the interface. -/
+theorem mu_unreachable (z d μ_req : R) (hd_hi : d ≤ 0) (htarget : z < μ_req) :
+    z + d ≠ μ_req := by
+  intro hcontra
+  have : z + d ≤ z := by linarith
+  linarith [hcontra ▸ this]
+
+/-- Stacking crossings does not escape the interval either: `σ²  = h•σ + 1`
+sends `(a, b) = (1, 0)` to `(h, 1)`, whose scalar `h·z + 1` exceeds `1` whenever
+`h` and `z` are positive — i.e. the two-crossing bond is *anti*-bound
+(`μ > 1 ⟹ L < 0`). Measured: `μ = 1.1044`, `B = −0.416 MeV`. -/
+theorem stacked_crossing_gt_one (z h : R) (hz : 0 < z) (hh : 0 < h) :
+    1 < h * z + 1 := by nlinarith
+
+end Ordered
+
+section Projectors
+
+variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
+
+/-- **The isospin projectors are complementary.** Writing `s = (q + q⁻¹)⁻¹`,
+`P₊ = s•(σ + q⁻¹•1)` and `P₋ = s•(q•1 − σ)` sum to `1`. For two nucleons `T=1`
+is the symmetric channel and `T=0` the antisymmetric one, so the eightfold-way
+decomposition is already present in the Hecke quadratic — no new parameter. -/
+theorem proj_add_eq_one (σ : A) (q qi s : R) (hs : s * (q + qi) = 1) :
+    s • (σ + qi • (1 : A)) + s • (q • (1 : A) - σ) = 1 := by
+  have expand : s • (σ + qi • (1 : A)) + s • (q • (1 : A) - σ)
+      = (s * (q + qi)) • (1 : A) := by
+    module
+  rw [expand, hs, one_smul]
+
+/-- **…and orthogonal.** `P₊ · P₋ = 0` follows from the quadratic together with
+`h = q − q⁻¹`, which is exactly the Hecke parametrisation. -/
+theorem proj_mul_eq_zero (σ : A) (q qi s h : R)
+    (hq : σ * σ = h • σ + 1) (hh : h = q - qi) (hqi : q * qi = 1) :
+    (s • (σ + qi • (1 : A))) * (s • (q • (1 : A) - σ)) = 0 := by
+  have key : (σ + qi • (1 : A)) * (q • (1 : A) - σ) = 0 := by
+    have expand : (σ + qi • (1 : A)) * (q • (1 : A) - σ)
+        = q • σ + (q * qi) • (1 : A) - (σ * σ + qi • σ) := by
+      simp [mul_sub, add_mul, smul_smul]
+    rw [expand, hq, hqi, hh]
+    module
+  calc (s • (σ + qi • (1 : A))) * (s • (q • (1 : A) - σ))
+      = (s * s) • ((σ + qi • (1 : A)) * (q • (1 : A) - σ)) := by
+        rw [smul_mul_smul_comm]
+    _ = 0 := by rw [key, smul_zero]
+
+end Projectors
+
+end QOU.QBeta.InterfaceScalar

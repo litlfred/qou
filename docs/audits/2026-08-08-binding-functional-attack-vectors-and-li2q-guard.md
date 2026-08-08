@@ -215,20 +215,44 @@ and the larger of them ~3× too small. Higher cluster orders do not close ⁴He.
 
 ## §10. Formalizability
 
-The QOU Lean target does not currently build (dashboard footer: 357 err /
-7 sorry, 62 days stale), and this container has no `lean`/`lake` binary, so
-**none of the statements below have been compiled**. They are written to be
-compilable, not claimed as proved.
+**Six of these are now machine-verified.**
+[`content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean)
+compiles `lean`-direct at **exit 0**, sorry-free and axiom-free. (The three
+`sorry`/`axiom` tokens a grep finds in it are prose in the module docstring,
+describing `jones-markov-trace.lean`, not declarations.)
 
-| statement | formalizable | note |
+Environment note, since the skill file asks for these to be recorded: the
+toolchain host `release.lean-lang.org` is **403 by egress policy** here, so
+`elan toolchain install` cannot work. The documented route succeeded —
+`scripts/lean-toolchain-cache-restore.sh` (branch `lake-cache/toolchain-v4-24-0`)
+then `scripts/lean-cache-restore.sh` (branch `lake-cache/qou-v4-24-0`,
+**6990 mathlib oleans**), then `scripts/lean-verify.sh`. Total a few minutes,
+no Mathlib build. `.claude/skills/local/lean-environment-setup.md` §"Mathlib
+cache 403 fallback" is accurate and was the fix.
+
+| statement | Lean name | status |
 |---|---|---|
-| `L_pp = L_nn ↔ h = 0` (§6) | **yes, trivial** | injectivity of `Real.log` on `(0, ∞)` |
-| floor theorem, `B ∈ α·[ln(1/z), ln(1/(z−h))]` (§3) | **yes** | `Real.strictMonoOn_log` is in Mathlib |
-| `P₊ + P₋ = 1`, `P₊P₋ = 0` (§7) | **yes** | algebraic, from the Hecke quadratic |
-| `tr_atom = tr_free·(a·z + b)` (§1) | **conditional** | needs `markov_stab`, which is an *axiom* with a `sorry` in `jones-markov-trace.lean` |
-| `Li₂^q(z) = −h·Σ ln(1 − z q^{−1−2m})` (§8) | **yes** | Fubini on a doubly-indexed absolutely convergent sum |
-| `g(x) = −Li₂^q(−x)` finite ∀ x > 0 (§8) | **yes** | every factor `1 + x q^{−1−2m} > 0` |
-| cluster remainder bounds (§9) | **partly** | convergence `\|τ\| < 1` is easy; the Li₂^q remainder is real analysis |
+| interface subalgebra is 2-dimensional (§1) | `interface_mul` | **proved** |
+| `tr_atom = tr_free·(a·z + b)` (§1) | `interface_scalar` | **proved, conditional** — takes Markov as a hypothesis |
+| `L_pp = L_nn ↔ h = 0` (§6) | `charge_independence_iff` | **proved** |
+| admissible `μ ∈ [z−h, z]` (§3) | `mu_mem_Icc` | **proved** |
+| floor theorem — target above `z` unreachable (§3) | `mu_unreachable` | **proved** |
+| stacking gives `μ > 1`, i.e. anti-bound (§3) | `stacked_crossing_gt_one` | **proved** |
+| `P₊ + P₋ = 1` (§7) | `proj_add_eq_one` | **proved** |
+| `P₊·P₋ = 0` (§7) | `proj_mul_eq_zero` | **proved** |
+| `Li₂^q(z) = −h·Σ ln(1 − z q^{−1−2m})` (§8) | — | **not attempted** — Fubini on a doubly-indexed sum; bean `qou-cw27` |
+| `g(x) = −Li₂^q(−x)` finite ∀ x > 0 (§8) | — | **not attempted** — easy (each factor `1 + x q^{−1−2m} > 0`), but belongs with the identity above |
+| cluster remainder bounds (§9) | — | **not attempted** — `\|τ\| < 1` is easy, the Li₂^q remainder is real analysis |
+
+Two deliberate choices in that file. The ordered results are stated about the
+*scalar* `μ` over `[Field R] [LinearOrder R] [IsStrictOrderedRing R]` rather
+than about `ℝ`, per §7c — the `−ln` is cosmetic, the content is the interval.
+And the algebra is a plain `[Ring A]` over commutative scalars, so nothing
+assumes the Hecke algebra is commutative.
+
+The floor theorem is the one that matters: `mu_unreachable` is a *machine-checked
+impossibility*. No crossing sign, colour weight, or multiplicity reaches the
+deuteron, and that is now settled rather than measured.
 
 Existing Lean status of the ingredients actually used:
 
