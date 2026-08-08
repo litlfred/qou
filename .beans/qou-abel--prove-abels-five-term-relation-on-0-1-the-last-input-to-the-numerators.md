@@ -1,7 +1,7 @@
 ---
 # qou-abel
 title: "Prove Abel's five-term relation on (0,1) — the LAST open input to the level-7 numerators"
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -108,3 +108,60 @@ Discharging this does **not** prove the 5₂ sum rule. Two other links remain:
   in Mathlib), `qou-rstq` (roast queue), parent `qou-0yqu`
 * `QOU/QBeta/FiveTwoFiveTermArguments.lean`, `QOU/QBeta/FiveTwoRogersReflection.lean`
 * PRs #4658 (merged), #4701
+
+---
+
+## 2026-08-08 — PROVED
+
+`QOU/QBeta/FiveTwoAbelFiveTerm.lean`, sorry-free:
+
+```lean
+theorem rogersL_fiveTerm {x y : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (hy0 : 0 < y) (hy1 : y < 1) :
+    rogersL x + rogersL y - rogersL (x * y)
+      - rogersL (x * (1 - y) / (1 - x * y))
+      - rogersL (y * (1 - x) / (1 - x * y)) = 0
+```
+
+Axioms `[propext, Classical.choice, Quot.sound]`, and the whole chain beneath it
+is clean — `hasDerivAt_rogersL`, `LiTwo_reflection'` included. `lake build`
+green. Cross-checked numerically at 25 `(x,y)` pairs, worst residual `1.6e-40`.
+
+`L` is the corpus's own `rogersL`, built on `LiTwo`. Non-vacuous: on `(0,1)` the
+power series converges, so `rogersL` there **is** the real Rogers dilogarithm —
+unlike off `[−1,1]`, where Route 13 showed it is junk.
+
+### How it went
+
+Exactly the shape predicted: fix `y`, kill the derivative, evaluate at `x → 0⁺`.
+
+**The derivative step compiled first try**, which is worth explaining rather than
+being pleased about. All the content sits in four log-splitting lemmas
+(`log_inner_left` and friends), which use `1 - x(1-y)/(1-xy) = (1-x)/(1-xy)` and
+its mirror. Once those are in place, `-2·F'(x)` is a *linear form* in
+`log x, log(1-x), log y, log(1-y), log(1-xy)` whose five coefficients each vanish
+as rational functions — so the last step really is `field_simp; ring`. The
+difficulty was never the calculus; it was arranging for the logs to split, which
+is where every positivity side condition lives.
+
+Three things that did cost iterations, all mechanical:
+
+* `field_simp` normalises `1 - x*y` to `1 - y*x` in one orientation and not the
+  other, so a hypothesis stated as `1 - x * y ≠ 0` silently failed to apply.
+  Fixed by supplying both orientations.
+* `positivity` is structural — it cannot use `0 < x` from the context — so
+  `Real.log_div (by positivity)` failed where `ne_of_gt (mul_pos hx0 _)` works.
+* Two more hypotheses added by reflex and unused: `hy0` in `one_sub_mul_pos`
+  (`x·y < x < 1` needs only `y < 1`) and in `tendsto_inner_right_zero`.
+  **Third and fourth instances this session.**
+
+### What is NOT closed
+
+The remaining step to make `numerators_of_abel` unconditional is the sub-gap this
+bean already flagged: the three instances' arguments must be shown to lie in
+`(0,1)`, which needs bounds on the root — specifically `1/2 < w₂ < 1`, since
+`s = (1-x)/x < 1` fails without it. That is `nlinarith` plus an IVT existence
+argument, and it is not written.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** `qou-trns`'s transport
+is still unformalized and `extend` is still not identified with the analytic
+continuation in Lean.
