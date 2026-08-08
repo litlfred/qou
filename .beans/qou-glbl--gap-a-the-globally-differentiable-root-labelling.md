@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T12:05:00Z
+updated_at: 2026-08-09T12:30:00Z
 ---
 
 ## What is open
@@ -433,7 +433,11 @@ Two thirds of it are already theorems:
   `continuousOn_cLiTwoExt_ofReal_Icc'`, for any `b > 0`.
 
 What is missing is continuity along a **non-real** approach: the arc reaches
-`x·y → 2.2469796` with `Im(x·y) ≈ −r·(π−φ)`, not along the real axis. So the
+`x·y → 2.2469796` with `Im(x·y) ≈ −r·(π−φ)`, not along the real axis. And it is **one
+term, not three**: at `φ = π` the branches are `Yreal = 0.8019377`,
+`Ypair.1 = −0.5549581`, `Ypair.2 = −2.2469796`, so `x·y` is `−0.8019`, `+0.5550`,
+`+2.2470` — only `Ypair.2` reaches the cut. (`pairDisc(π) = 2.8629 > 0`, so
+`otherRoots` is in its real branch there.) So the
 needed statement is `cLiTwoExt` continuous at a cut point restricted to
 `{w | w.im ≤ 0}` — one-sided, and a dominated-convergence argument on the
 defining integral rather than a two-dimensional continuity theorem about `Re Li₂`.

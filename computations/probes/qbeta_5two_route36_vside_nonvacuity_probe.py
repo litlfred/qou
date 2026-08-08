@@ -705,8 +705,17 @@ def main() -> int:
                           "-- the integrand has a log singularity at t = 1/r inside. Split at "
                           "Re(1/w), and split on BOTH sides or the off-cut comparisons are "
                           "silently garbage. Correct value matches mpmath polylog(2,r) exactly",
+        "localisation_at_phi_pi": {
+            "Yreal": "0.8019377358048383  ->  x*y = -0.8019  (Re < 1, fine)",
+            "Ypair.1": "-0.5549581320873712  ->  x*y = +0.5550  (Re < 1, fine)",
+            "Ypair.2": "-2.246979603717467  ->  x*y = +2.2470  ON THE CUT",
+            "note": "pairDisc(pi) = 2.8629 > 0, so otherRoots is in its REAL branch there; "
+                    "only ONE of the three terms is difficult, and it is Ypair.2's "
+                    "cLiTwoExt(x*y). hcont is not three problems, it is one",
+        },
         "still_open": "the Lean statement: cLiTwoExt continuous at a cut point along a path "
-                      "approaching from Im < 0. One-sided, not two-dimensional",
+                      "approaching from Im < 0. One-sided, not two-dimensional, and needed "
+                      "for ONE term (Ypair.2's) rather than for all three branches",
         "pass": bool(below[-1] < mpf(10) ** -8 and above[-1] > 1
                      and fabs(im(v_on) + pi * log(r_cut)) < mpf(10) ** -20
                      and fabs(jump - jump_pred) < mpf(10) ** -8
