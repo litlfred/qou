@@ -1,10 +1,11 @@
 ---
 # qou-prjo
 title: 'GAP: deuteron Delta_lambda magnitude — naive per-pair z dead across A; surviving object is transverse NA-Stokes surface-curvature (not braid-word, not scale, not level, not edge, not DT-count)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-02T19:09:10Z
+updated_at: 2026-08-08T20:44:11Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -45,3 +46,39 @@ until it exists the deuteron magnitude stays open.
 
 Any single-scale / per-pair / level / edge / dimension / writhe / DT-count closure — all
 walled. A `Δ_λ` fitted to `B(D)` is the forbidden 7th ansatz.
+
+
+---
+## Update 2026-08-08 — LEAD 1 attempt (PR #4817, branch claude/deltalambda-3body-extensive-2026-08-08)
+
+Built the q0-free >=3-row extensive cumulant FORWARD from the proved Delta_lambda.
+s_k = Sum_{lam|-k, ell(lam)>=3} (-1)^{n(lam)} f^lam = {1:0, 2:0, 3:-1, 4:-2}, fed into
+the derived C(A,k) coordination-simplex cluster basis (same basis as
+AdditiveResidualSimplex, but q0-free / combinatorial instead of the q0 residual M(A)).
+
+RESULT = scope-(a):
+- 0-fit WIN: nu2 = 0 re-derives the derived mu2 = 0 combinatorially (s1=s2=0),
+  independent of the graded-ladder self-reference, no q0. The deuteron carries no
+  >=3-body cluster term (structural).
+- NEGATIVE (sign): forward (nu3,nu4) = (-1,+2) -- the OPPOSITE sign order to the
+  derived (mu3,mu4) = (+0.4708,-4.591) i.e. the #4316 (+,-) window is reversed.
+  Delta_lambda chirality parity does NOT supply the many-body sign-change.
+- NEGATIVE (magnitude): |nu4/nu3| = 2 vs derived ~9.75; extensive AME ratio
+  B_ext(4)/B_ext(3) = 6.0 vs AME 3.336 (+80%); single-algebra reading = 2.0 (-40%).
+  The two parameter-free readings BRACKET AME; interpolating is the forbidden fit.
+
+CONCLUSION: the q0-free >=3-row signed-Springer-dimension content ALONE does not
+supply the many-body binding sign+magnitude; those live in the q0-dependent
+y_lam*chi^lam trace weighting. Nothing wired. free_parameters=0, no AME inversion.
+
+SURVIVING SUB-QUESTION (next honest unit): is the (+,-) many-body sign-change window
+an irreducibly ARCHIMEDEAN (q0-dependent) feature -- i.e. is a fully q0-free closure
+provably impossible? Concretely: does sign( Sum_{lam|-k, ell>=3} y_lam(q) chi^lam Delta_lambda )
+cross zero between the combinatorial q->1 limit and q0? If yes, the sign is not
+combinatorial and the magnitude derivation must run through the q0 trace (the mu4
+alpha-cluster residual via rho_F cluster integrals, AdditiveResidualSimplex sec S).
+
+Files: docs/audits/2026-08-08-threerow-extensive-cumulant-forward-qfree.md;
+QOU/MassTheory/ThreeRowExtensiveCumulant.lean (sorry-free; lean-direct blocked by
+sandbox disk quota -- hand-audited, recipe in audit doc);
+computations/deltalambda/threerow_extensive_cumulant_forward_probe.py (+witness).
