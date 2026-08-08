@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T13:20:00Z
+updated_at: 2026-08-08T14:05:00Z
 parent: 0yqu
 ---
 
@@ -1236,5 +1236,82 @@ that the conclusion does too. A theorem with sixteen hypotheses deserves that.
 root labelling, so `envelope_integrate` is not applied to it. That needs
 `exists_hasDerivAt_root` threaded through — and it is a join, so it will be
 written, not called assembly.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (evening) — `S(φ)` exists, and the non-vacuity gate earned its keep
+
+Route 31 (`qbeta_5two_route31_transport_total_probe.py`, 6 gates) +
+`QOU/QBeta/FiveTwoTransport.lean` (10 theorems, sorry-free, `lake build
+QOU.QBeta.FiveTwoTransport` green, axioms `[propext, Classical.choice,
+Quot.sound]`).
+
+Everything the envelope step needed was proved; what was missing was **the
+object it is about**. `S(φ) = Σⱼ Re V(x φ, yⱼ φ)` had never been written as a
+Lean function, so `envelope_integrate` had nothing to be applied to. Now:
+`arcX`, `envelopeS`, `hasDerivAt_envelopeS` (`S′ = 2φ`), `envelopeS_total`
+(`S(π) − S(0) = π²`).
+
+### Measured
+
+| quantity | value |
+|---|---|
+| `S(φ) − S(0) − φ²` over the arc, incl. across `φ₀` | `4.9e-40` |
+| `dS/dφ − 2φ` | `0.0` at working precision |
+| `S(π−ε) − S(ε)` against the exact `(π−ε)² − ε²` | `1.8e-40` |
+
+The raw gap from `π²` is `−6.28e-12`, which is **exactly** `−2πε` for the
+`ε = 1e-12` endpoint offset — checked against the exact identity rather than a
+rounded one, because "close to `π²`" is the kind of claim this lane keeps
+getting wrong.
+
+### ⚠ The non-vacuity gate found a fatal hypothesis — twice over
+
+G4 checks all ~20 hypotheses of `hasDerivAt_envelopeS` hold **simultaneously**.
+It found `−y ∈ slitPlane` failing at **all 199 points**. Cause: exactly **one**
+root is real and positive at every `φ`, so `−y` is a negative real, on `log`'s
+cut. A statement carrying that hypothesis is **vacuous on this arc** — true, and
+about nothing.
+
+Fixed by removing it from `VSide` and passing the `log(−y)` derivative in, by
+whichever of two routes applies:
+
+* `hasDerivAt_log_neg_of_slitPlane` — off the cut, the generic case;
+* `hasDerivAt_log_neg_ofReal` — on it, via `log(−t) = log t + iπ`, which is
+  perfectly smooth **along a real path** even though the complex derivative does
+  not exist.
+
+Both give the same value `Y′/Y`, so `hasDerivAt_deformedV_path` does not care
+which supplied it. G4 now checks that one of the two routes covers every root,
+and records that exactly `1` root sits on the cut at each `φ`.
+
+This is the second defect in two rounds from the same source: `−t` on `log`'s
+cut. Route 30 G2 found it corrupting `∂V/∂y`; Route 31 G4 found it emptying the
+hypothesis set. **Both were found by gates that tested what the statement
+actually said**, not what it was supposed to mean.
+
+### G6: the envelope theorem, visible
+
+Approaching `φ₀` the two colliding roots separate like `C·√|φ−φ₀|` with
+`C = 2.6016257` (stable over five decades), so `dy/dφ` **diverges** like
+`0.65040643/√|φ−φ₀|`. Yet the labelled term's derivative stays **bounded** at
+`2.7268867` all the way in — because `∂V/∂y = 0` annihilates the divergent `y′`.
+
+That also **withdraws an earlier draft of this gate**, which claimed the
+labelled terms *jump* at `φ₀`. They do not: they are continuous and their
+derivatives are bounded. The obstruction at `φ₀` is that `y′` fails to exist
+*there*, not that anything blows up nearby — which is exactly why one
+exceptional point costs nothing.
+
+### What is left
+
+- The root-path labelling is a **hypothesis** of `hasDerivAt_envelopeS`,
+  supplied locally by the IFT but not constructed globally in Lean. `S` itself
+  needs no labelling (it is symmetric); only term-by-term differentiation does.
+- **The sum rule.** `S(π) − S(0) = π²` is the transport's derivative step, not
+  the sum rule. Identifying `Σⱼ Re Vⱼ = −3π²/2` with the proved cyclotomic
+  `Σₖ(2L+L) = +π²/2` is untouched by any of this.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**

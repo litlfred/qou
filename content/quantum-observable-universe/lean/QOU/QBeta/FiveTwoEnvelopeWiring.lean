@@ -66,10 +66,18 @@ theorem whose hypothesis fails at one of the three roots, and
 
 ## Side conditions
 
-The `Li₂` derivative needs each argument off the cut `[1,∞)` and nonzero, and
-`log(−y)` needs `−y` off `(−∞,0]`. These are stated as hypotheses, not assumed:
-they are what `FiveTwoCutAvoidance` is for, and pretending otherwise is how a
-gap gets buried.
+The `Li₂` derivative needs each argument off the cut `[1,∞)` and nonzero. These
+are stated as hypotheses, not assumed: they are what `FiveTwoCutAvoidance` is
+for, and pretending otherwise is how a gap gets buried.
+
+The `log(−y)` derivative is taken as a **hypothesis**, not derived from
+`−y ∈ slitPlane`. An earlier draft did derive it that way, and Route 31 G4
+showed the result: on this arc one of the three roots is real and positive at
+*every* `φ`, so `−y` is a negative real, so `slitPlane` fails, so the theorem
+was **vacuous at that root** — at all 199 sampled points. Two routes now supply
+the hypothesis, with the same value `Y′/Y`:
+`hasDerivAt_log_neg_of_slitPlane` off the cut, and `hasDerivAt_log_neg_ofReal`
+on it via `log(−t) = log t + iπ`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 -/
@@ -107,6 +115,51 @@ theorem dV_collect {x y x' y' L₁ L₂ L₃ M : ℂ} (hx : x ≠ 0) (hy : y ≠
   field_simp
   ring
 
+/-! ### 2b. The `log(−y)` derivative — two routes, because one is not enough -/
+
+/-- `log(−r) = log r + iπ` for real `r > 0`. -/
+theorem log_neg_ofReal {r : ℝ} (hr : 0 < r) :
+    Complex.log (-(r : ℂ)) = ((Real.log r : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  have hneg : -(r : ℂ) = ((-r : ℝ) : ℂ) := by push_cast; ring
+  rw [hneg, Complex.log, Complex.arg_ofReal_of_neg (by linarith : -r < 0)]
+  simp [Complex.norm_real, abs_of_neg (show -r < 0 by linarith)]
+
+/-- Route 1: `−y` off the cut. The generic case. -/
+theorem hasDerivAt_log_neg_of_slitPlane {Y : ℝ → ℂ} {Y' : ℂ} {s : ℝ}
+    (hY : HasDerivAt Y Y' s) (hy0 : Y s ≠ 0) (hslit : -Y s ∈ Complex.slitPlane) :
+    HasDerivAt (fun u => Complex.log (-Y u)) (Y' / Y s) s := by
+  have := (Complex.hasDerivAt_log hslit).comp s hY.neg
+  have heq : (-Y s)⁻¹ * -Y' = Y' / Y s := by field_simp
+  rwa [heq] at this
+
+/-- **Route 2: `Y` real and positive — where route 1 is impossible.**
+
+At `y = t > 0` the point `−t` is a *negative real*, so it lies on `log`'s cut and
+`hslit` can never hold. Route 30 G2 already showed the consequence for
+`∂V/∂y`; Route 31 G4 showed the sharper one — a statement carrying `hslit` is
+**vacuous** at the positive real root, which on this arc is one of the three
+roots at every single `φ`.
+
+The derivative still exists along a *real* path, because `log(−t) = log t + iπ`
+is smooth in `t`, and it has the same value `Y′/Y`, so the path theorem below
+does not care which route supplied it. -/
+theorem hasDerivAt_log_neg_ofReal {t : ℝ → ℝ} {t' : ℝ} {s : ℝ}
+    (ht : HasDerivAt t t' s) (hpos : 0 < t s) :
+    HasDerivAt (fun u => Complex.log (-((t u : ℝ) : ℂ))) (((t' : ℝ) : ℂ) / ((t s : ℝ) : ℂ)) s := by
+  have hev : ∀ᶠ u in nhds s, 0 < t u :=
+    ht.continuousAt.eventually (eventually_gt_nhds hpos)
+  have hrw : (fun u => ((Real.log (t u) : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I)
+      =ᶠ[nhds s] fun u => Complex.log (-((t u : ℝ) : ℂ)) :=
+    hev.mono fun u hu => (log_neg_ofReal hu).symm
+  have hlog : HasDerivAt (fun u => Real.log (t u)) (t' / t s) s := ht.log hpos.ne'
+  have hc : HasDerivAt (fun u => ((Real.log (t u) : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I)
+      (((t' / t s : ℝ) : ℂ)) s := by
+    simpa using (Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt s hlog).add_const
+      ((Real.pi : ℂ) * Complex.I)
+  have hval : ((t' / t s : ℝ) : ℂ) = ((t' : ℝ) : ℂ) / ((t s : ℝ) : ℂ) := by push_cast; ring
+  rw [hval] at hc
+  exact hc.congr_of_eventuallyEq hrw.symm
+
 /-! ### 3. The derivative along a path -/
 
 /-- **The total derivative along any differentiable path.**
@@ -117,14 +170,13 @@ theorem hasDerivAt_deformedV_path {X Y : ℝ → ℂ} {X' Y' : ℂ} {s : ℝ}
     (hx0 : X s ≠ 0) (hy0 : Y s ≠ 0)
     (hc₁ : Y s ∈ notCut) (hc₂ : X s * Y s ∈ notCut) (hc₃ : Y s / X s ∈ notCut)
     (hn₂ : X s * Y s ≠ 0) (hn₃ : Y s / X s ≠ 0)
-    (hslit : -Y s ∈ Complex.slitPlane) :
+    (hlogd : HasDerivAt (fun u => Complex.log (-Y u)) (Y' / Y s) s) :
     HasDerivAt (fun u => deformedV (X u, Y u))
       (dVdx (X s) (Y s) * X' + dVdy (X s) (Y s) * Y') s := by
   -- the four inner paths
   have hprod : HasDerivAt (fun u => X u * Y u) (X' * Y s + X s * Y') s := hX.mul hY
   have hquot : HasDerivAt (fun u => Y u / X u) ((Y' * X s - Y s * X') / X s ^ 2) s :=
     hY.div hX hx0
-  have hneg : HasDerivAt (fun u => -Y u) (-Y') s := hY.neg
   -- the four outer derivatives
   have h1 : HasDerivAt (fun u => cLiTwoExt (Y u))
       (-(Complex.log (1 - Y s) / Y s) * Y') s :=
@@ -135,10 +187,7 @@ theorem hasDerivAt_deformedV_path {X Y : ℝ → ℂ} {X' Y' : ℂ} {s : ℝ}
   have h3raw := (hasDerivAt_cLiTwoExt' hc₃ hn₃).comp s hquot
   have h3 : HasDerivAt (fun u => cLiTwoExt (Y u / X u))
       (-(Complex.log (1 - Y s / X s) / (Y s / X s)) * ((Y' * X s - Y s * X') / X s ^ 2)) s := h3raw
-  have hlog : HasDerivAt (fun u => Complex.log (-Y u)) (Y' / Y s) s := by
-    have := (Complex.hasDerivAt_log hslit).comp s hneg
-    have heq : (-Y s)⁻¹ * -Y' = Y' / Y s := by field_simp
-    rwa [heq] at this
+  have hlog := hlogd
   have h4 : HasDerivAt (fun u => Complex.log (-Y u) ^ 2)
       (2 * Complex.log (-Y s) * (Y' / Y s)) s := by
     have := hlog.pow 2
@@ -158,10 +207,10 @@ theorem hasDerivAt_deformedV_envelope {X Y : ℝ → ℂ} {X' Y' : ℂ} {s : ℝ
     (hx0 : X s ≠ 0) (hy0 : Y s ≠ 0)
     (hc₁ : Y s ∈ notCut) (hc₂ : X s * Y s ∈ notCut) (hc₃ : Y s / X s ∈ notCut)
     (hn₂ : X s * Y s ≠ 0) (hn₃ : Y s / X s ≠ 0)
-    (hslit : -Y s ∈ Complex.slitPlane)
+    (hlogd : HasDerivAt (fun u => Complex.log (-Y u)) (Y' / Y s) s)
     (hsaddle : dVdy (X s) (Y s) = 0) :
     HasDerivAt (fun u => deformedV (X u, Y u)) (dVdx (X s) (Y s) * X') s := by
-  have h := hasDerivAt_deformedV_path hX hY hx0 hy0 hc₁ hc₂ hc₃ hn₂ hn₃ hslit
+  have h := hasDerivAt_deformedV_path hX hY hx0 hy0 hc₁ hc₂ hc₃ hn₂ hn₃ hlogd
   rwa [hsaddle, zero_mul, add_zero] at h
 
 /-! ### 3b. The version that actually applies: real parts -/
@@ -183,10 +232,10 @@ theorem hasDerivAt_re_deformedV_envelope {X Y : ℝ → ℂ} {X' Y' : ℂ} {s : 
     (hx0 : X s ≠ 0) (hy0 : Y s ≠ 0)
     (hc₁ : Y s ∈ notCut) (hc₂ : X s * Y s ∈ notCut) (hc₃ : Y s / X s ∈ notCut)
     (hn₂ : X s * Y s ≠ 0) (hn₃ : Y s / X s ≠ 0)
-    (hslit : -Y s ∈ Complex.slitPlane)
+    (hlogd : HasDerivAt (fun u => Complex.log (-Y u)) (Y' / Y s) s)
     (himag : (dVdy (X s) (Y s) * Y').re = 0) :
     HasDerivAt (fun u => (deformedV (X u, Y u)).re) ((dVdx (X s) (Y s) * X').re) s := by
-  have h := hasDerivAt_re (hasDerivAt_deformedV_path hX hY hx0 hy0 hc₁ hc₂ hc₃ hn₂ hn₃ hslit)
+  have h := hasDerivAt_re (hasDerivAt_deformedV_path hX hY hx0 hy0 hc₁ hc₂ hc₃ hn₂ hn₃ hlogd)
   rwa [Complex.add_re, himag, add_zero] at h
 
 /-- **The mechanism, named.** A purely imaginary `∂V/∂y` against a real `y′`
