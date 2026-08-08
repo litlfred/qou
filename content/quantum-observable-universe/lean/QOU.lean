@@ -25,6 +25,23 @@ import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
+-- The complex dilogarithm and its analytic continuation off the unit disc.
+-- `ComplexDilogarithm` was ORPHANED from this root — `lake build` compiles only
+-- `QOU.lean`'s import closure, so a module nothing imports is never checked at
+-- all (bean qou-orph). Wiring the chain here puts every theorem below under CI.
+import QOU.MathlibExt.ComplexDilogarithm
+import QOU.MathlibExt.ComplexDilogarithmSlit
+import QOU.MathlibExt.ComplexDilogarithmDeriv
+import QOU.MathlibExt.ComplexDilogarithmUnique
+import QOU.MathlibExt.ComplexDilogarithmLanden
+import QOU.MathlibExt.AlternatingZetaTwo
+import QOU.MathlibExt.ComplexDilogarithmBoundary
+-- Scalar implicit function theorem, and two one-variable transport lemmas
+-- (a constant pinned off a single point; an integer branch index pinned by a
+-- window). All Mathlib gaps; all sorry-free.
+import QOU.MathlibExt.ImplicitScalar
+import QOU.Archimedean.ConstantOffOnePoint
+import QOU.Archimedean.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
 -- Sorry-free, so it is wired here for CI type-checking (unlike
