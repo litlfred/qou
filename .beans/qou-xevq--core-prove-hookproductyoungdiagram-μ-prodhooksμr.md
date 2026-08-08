@@ -1,11 +1,11 @@
 ---
 # qou-xevq
 title: 'CORE: prove hookProduct(YoungDiagram μ) = prodHooks(μ.rowLens) — reconcile ∏_{c∈cells} hookLength (Finset) with the nested-list prodHooks; the one genuine formalization brick, no existing lemma'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-01T23:34:16Z
-updated_at: 2026-08-08T07:06:22Z
+updated_at: 2026-08-08T07:23:31Z
 ---
 
 
@@ -79,3 +79,45 @@ prodHooks μ.rowLens` needs either a new bridge module importing both or
 moving `prodHooks`. That is a placement decision, not a proof gap.
 
 The FRT `sorry` is untouched — this bean stays strictly below it.
+
+## Summary of Changes — RESOLVED
+
+`hookProduct_eq_prodHooks (μ : YoungDiagram) : hookProduct μ = prodHooks μ.rowLens`
+is proved and **axiom-clean** (`#print axioms` → propext / Classical.choice /
+Quot.sound; no `sorryAx`). New module
+`QOU/BraidKnot/HookProductBridge.lean`, wired into `QOU/BraidKnot.lean`;
+`lake build QOU.BraidKnot` green at 3404 jobs.
+
+The bean called this "the one genuine formalization brick, no existing
+lemma". It decomposed into eight pieces, all proved:
+
+**In `StandardYoungTableau.lean`** (the hook itself)
+- `armCard_eq`, `legCard_eq` — arm and leg as `{i} ×ˢ Ioo j (rowLen i)`
+  and its dual, giving `rowLen i - j - 1` and `colLen j - i - 1`.
+- `hookLength_eq_rowLen_add_colLen` — for a genuine cell,
+  `hookLength μ i j = (rowLen i - j) + (colLen j - i) - 1`. The membership
+  hypothesis is what makes both ℕ-subtractions exact.
+- `cells_eq_biUnion` — `μ.cells` as the disjoint union of its rows.
+  Mathlib has `row_eq_prod` but no such decomposition.
+- `hookProduct_eq_nested` — the cell product as `∏_i ∏_{j < rowLen i}`.
+- `rowLens_getD` — `μ.rowLens.getD i 0 = μ.rowLen i` for every `i`,
+  including past the last row where both sides are 0.
+- `length_filter_rowLens` — rows longer than `j` number `μ.colLen j`.
+- `countP_range_lt` — `(List.range n).countP (· < m) = min m n`, proved by
+  induction; no upstream equivalent.
+
+**In `HookProductBridge.lean`** (the indexing conversion)
+- `prod_range_eq_list_prod` — a `Finset.range` product is the `List.range`
+  product, via `Finset.range_val`.
+- `colLen_rowLens` — `IdentityI.colLen μ.rowLens j = μ.colLen j`.
+- `hookProduct_eq_prodHooks` — the theorem.
+
+Imports added: `Mathlib.Order.Interval.Finset.Nat` (`Nat.card_Ioo`),
+`Mathlib.Data.List.GetD`.
+
+### Scope note
+
+This does NOT prove FRT. `numSYT_mul_hookProduct` keeps its `sorry` and
+is unchanged. What this removes is the definitional friction underneath
+it: downstream results that mix the two hook products no longer have to
+assume they agree.
