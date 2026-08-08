@@ -298,3 +298,38 @@ That last step is bookkeeping over a one-element `Finset`, not analysis.
 Still true, and still the reason not to rush it: `qou-c1wr` established that
 **nothing downstream consumes the divisor**.
 
+## 2026-08-08 — the chain is complete; only θ-specific instantiation is left
+
+`exists_finset_factorisation` closes the last general gap: an analytic function
+on a relatively compact, connected open `V` factorises as
+`(∏ a ∈ S, (·−a)^{m a})·g` with `g` analytic and non-vanishing, *as genuine
+equality on `V`*, in exactly the shape `argumentPrinciple_annulus_finset`
+consumes.
+
+Assembled from the four earlier lemmas plus `finprod_zpow_eq_finset_prod_npow`,
+which normalises `extract_zeros_poles`'s output: that theorem returns a
+`finprod` of **functions** with **ℤ** exponents, and the argument principle
+takes a `Finset.prod` of **values** with **ℕ** exponents. Three conversions:
+`finprod_apply` (functions → pointwise), `finprod_eq_prod_of_mulSupport_subset`
+(finprod → Finset.prod), and `zpow_natCast` under
+`AnalyticOnNhd.divisor_nonneg` (ℤ → ℕ, valid because an analytic function has
+no poles).
+
+**Every general ingredient is now proved.** What remains is θ-specific:
+instantiate `V` as the open annulus and `K` as a slightly larger closed one,
+check `meromorphicOrderAt θ_P u ≠ ⊤` (θ_P is not locally zero — it has a zero at
+`−p^k` and is analytic, so this is the identity theorem again), feed the result
+through `argumentPrinciple_annulus_finset`, and equate with
+`qTheta_winding_step`'s `2πi`. That gives `∑ m a = 1`, and
+`qTheta_neg_zpow_eq_zero` names the one zero.
+
+### The recurring papercut, recorded because it cost three iterations
+
+Lean distinguishes `∑ i ∈ S, fun z => f i z` from `fun z => ∑ i ∈ S, f i z`,
+and `∏ᶠ i, f i` from `fun z => ∏ᶠ i, f i z`. Three separate errors in this arc
+were that distinction and nothing else. `simpa [Finset.sum_apply]` does **not**
+cross it — the bridges are an explicit `funext` for `Finset`, and
+`finprod_apply` (which needs a finiteness hypothesis) for `finprod`. Mathlib
+often ships both forms, e.g. `DifferentiableAt.finset_prod` versus
+`DifferentiableAt.fun_finset_prod`; reach for the `fun_` variant first.
+

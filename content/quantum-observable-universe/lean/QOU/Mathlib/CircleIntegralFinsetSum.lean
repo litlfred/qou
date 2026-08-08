@@ -1,6 +1,7 @@
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 import Mathlib.Analysis.Meromorphic.Divisor
 import Mathlib.Analysis.Analytic.IsolatedZeros
+import Mathlib.Analysis.Meromorphic.FactorizedRational
 
 /-!
 # Two Mathlib gaps at our pinned revision
@@ -24,7 +25,7 @@ and the first lets the contour integral be taken term by term.
 -/
 
 open scoped Real
-open MeasureTheory Filter Set Topology
+open MeasureTheory Filter Set Topology MeromorphicOn
 
 namespace QOU.Mathlib
 
@@ -106,5 +107,76 @@ theorem codiscreteWithin_neBot {U : Set ℂ} (hU : IsOpen U) (hne : U.Nonempty) 
 end NeBot
 
 end IdentityTheorem
+
+section Factorisation
+
+/-- A `finprod` of `zpow` factors with a non-negative, finitely-supported
+exponent is a `Finset.prod` of `npow` factors. -/
+theorem finprod_zpow_eq_finset_prod_npow {D : ℂ → ℤ} (hD : ∀ x, 0 ≤ D x)
+    (hfin : (Function.support D).Finite) (w : ℂ) :
+    (∏ᶠ a, (w - a) ^ (D a)) = ∏ a ∈ hfin.toFinset, (w - a) ^ (D a).toNat := by
+  classical
+  have hsub : (Function.mulSupport fun a => (w - a) ^ (D a)) ⊆ hfin.toFinset := by
+    intro a ha
+    by_contra hcon
+    simp only [Finset.mem_coe, Set.Finite.mem_toFinset, Function.mem_support,
+      not_not] at hcon
+    exact ha (by simp [hcon])
+  rw [finprod_eq_prod_of_mulSupport_subset _ hsub]
+  refine Finset.prod_congr rfl fun a _ => ?_
+  conv_lhs => rw [show (D a) = ((D a).toNat : ℤ) from (Int.toNat_of_nonneg (hD a)).symm]
+  rw [zpow_natCast]
+
+section Factorisation
+
+open Filter Topology MeromorphicOn
+
+/-- **An analytic function factorises over its zeros on a relatively compact,
+connected open set.**
+
+`extract_zeros_poles` gives this modulo a codiscrete set and in `finprod`/`zpow`
+form; the identity theorem upgrades the equality and
+`finprod_zpow_eq_finset_prod_npow` normalises the shape. -/
+theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
+    (hVconn : IsPreconnected V) (hVne : V.Nonempty) (hK : IsCompact K) (hVK : V ⊆ K)
+    {f : ℂ → ℂ} (hf : AnalyticOnNhd ℂ f K)
+    (hord : ∀ u : V, meromorphicOrderAt f u ≠ ⊤) :
+    ∃ (S : Finset ℂ) (m : ℂ → ℕ) (g : ℂ → ℂ),
+      AnalyticOnNhd ℂ g V ∧ (∀ u : V, g u ≠ 0) ∧
+      Set.EqOn f (fun z => (∏ a ∈ S, (z - a) ^ (m a)) * g z) V := by
+  classical
+  have hfV : AnalyticOnNhd ℂ f V := hf.mono hVK
+  have hmV : MeromorphicOn f V := hfV.meromorphicOn
+  -- finitely many zeros, because `K` is compact
+  have hfinite : (divisor f V).support.Finite :=
+    QOU.Mathlib.divisor_support_finite_of_subset hf.meromorphicOn hK hVK
+  obtain ⟨g, hg, hgne, hEq⟩ := hmV.extract_zeros_poles hord hfinite
+  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_⟩
+  -- the divisor is `≥ 0` because `f` is analytic
+  have hDnn : ∀ x, 0 ≤ (divisor f V) x := fun x => hfV.divisor_nonneg x
+  -- upgrade the codiscrete equality to genuine equality
+  haveI : NeBot (codiscreteWithin V) := QOU.Mathlib.codiscreteWithin_neBot hV hVne
+  refine QOU.Mathlib.eqOn_of_eventuallyEq_codiscreteWithin hfV ?_ hVconn ?_
+  · -- the right-hand side is analytic on `V`
+    have : AnalyticOnNhd ℂ (fun z : ℂ => ∏ a ∈ hfinite.toFinset, (z - a) ^ (((divisor f V) a).toNat)) V := by
+      refine Finset.analyticOnNhd_fun_prod _ (fun a _ => ?_)
+      exact (analyticOnNhd_id.sub analyticOnNhd_const).pow _
+    exact this.mul hg
+  · filter_upwards [hEq] with z hz
+    rw [hz, Pi.smul_apply', smul_eq_mul]
+    congr 1
+    have hms : (Function.mulSupport
+        fun u : ℂ => (fun x : ℂ => x - u) ^ ((divisor f V) u)).Finite := by
+      refine hfinite.subset fun u hu => ?_
+      simp only [Function.mem_mulSupport] at hu
+      simp only [Function.mem_support]
+      intro h
+      exact hu (by simp [h])
+    rw [finprod_apply hms z]
+    exact finprod_zpow_eq_finset_prod_npow hDnn hfinite z
+
+end Factorisation
+
+end Factorisation
 
 end QOU.Mathlib
