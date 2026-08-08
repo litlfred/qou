@@ -1,11 +1,60 @@
 ---
 # qou-qb8b
 title: 'Is the HH^1 outer class bar-ODD? The decisive cheap c_3 prune'
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-08T08:10:00Z
-updated_at: 2026-08-08T08:10:00Z
+updated_at: 2026-08-08T09:30:00Z
+---
+
+## RESULT (2026-08-08): the proposed prune DOES NOT EXIST — answered, scope-(a)
+
+Ran it. `computations/hh1_outer_class_cocenter_bar_parity.py`;
+witness `hh1-outer-class-cocenter-bar-parity.witness.json`;
+audit `docs/audits/2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md`.
+
+The bar-parity of the HH^1 outer class acting on HH_0 is **a choice of
+normalization, not an invariant of the class**. Both parities are always
+available, so bar-parity can neither kill nor confirm the fibre-level c_3
+carrier.
+
+Measured (H_3, exact cyclotomic, 8 assertions/point, all pass):
+
+| point | dim HH^1 | Delta^bar ∝ Delta | lambda | raw parity |
+|---|---|---|---|---|
+| q = i ([2]_q=0)   | 1 | yes | +1 | bar-EVEN |
+| q = zeta_6 ([3]=0)| 1 | yes | -1 | bar-ODD  |
+| q = 2 (control)   | 0 | --  | -- | n/a |
+
+Why: dim HH^1 = 1 fixes the representative only up to `D -> cD`, under which
+the parity is multiplied by `bar(c)/c`. Involutivity forces
+`lambda*bar(lambda) = 1` (asserted), which is the Hilbert-90 hypothesis for
+`Q(zeta)/Q(zeta)^+`; H^1 of that extension vanishes so `lambda = bar(c)/c` is
+always solvable. Demonstrated constructively, not argued: rescaling by a
+bar-ODD scalar FLIPS the parity at BOTH points (q=i: EVEN->ODD via c=2i;
+q=zeta_6: ODD->EVEN).
+
+Deeper reason, worth carrying: the real Gram resolvent lived over R where bar
+acts TRIVIALLY, so its parity was rigid and the prune was real. At a root of
+unity bar is the nontrivial Galois map zeta -> zeta^{-1} and Q(zeta) contains
+bar-odd scalars (zeta - zeta^{-1}). The very feature that let the fibre route
+survive the real-route exclusion is what makes bar-parity uninformative here.
+
+### Actions for successors
+
+- **qou-jcmw: do NOT run its parity leg expecting a prune.** The
+  normalization-dependence is field-theoretic and n-independent. The dimension
+  count is still worth having; the parity readout is not. Saves a dim-120
+  solve (14 400 unknowns, ~1.7M Leibniz equations).
+- A parity test regains content only against a PINNED normalization. Closest
+  to what the c_3 front needs: pin the whole construction
+  `S = <tr_M, Delta(x)>` for a canonical generator x in HH_0 and read the
+  parity of THAT NUMBER (c_3's swing is a number, not a class). Filed as
+  qou-qb8d.
+
+Nothing wired. No fit. c_3/Q_beta gap unchanged and open.
+
 ---
 
 Formalize-first prune for the one surviving c_3 route. Depends on / extends
