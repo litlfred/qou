@@ -49,6 +49,44 @@ class archimedean_agreement (traceEval gbMass ε : ℝ) : Prop where
   /-- The archimedean Habiro trace agrees with the GB mass within `ε`. -/
   agree : |traceEval - gbMass| ≤ ε
 
+/-! ## The carrier is content-bearing (falsifiability)
+
+These are the §3b-tax "the carrier must assert something" obligations, proved
+rather than asserted.  They are theorems *about the class*, not instances of
+it — the conjecture itself remains open (no instance below). -/
+
+/-- **Exact agreement at zero tolerance.**  At `ε = 0` the class forces
+    `traceEval = gbMass`.  So the fields are not inert bookkeeping: they pin
+    the archimedean evaluation exactly in the sharp case. -/
+theorem eq_of_tol_zero {traceEval gbMass : ℝ}
+    [h : archimedean_agreement traceEval gbMass 0] : traceEval = gbMass := by
+  have := h.agree
+  rw [abs_nonpos_iff, sub_eq_zero] at this
+  exact this
+
+/-- **The carrier is falsifiable.**  `archimedean_agreement 0 1 0` is
+    *uninhabited*: it would force `0 = 1`.  This is the property the replaced
+    `residual : ℝ` / `residual = 0` schema lacked — that one was inhabited by
+    `⟨0, rfl⟩` for every parameter choice, so it asserted nothing. -/
+theorem not_agreement_zero_one_zero : ¬ archimedean_agreement 0 1 0 := by
+  intro h
+  have : (0 : ℝ) = 1 := @eq_of_tol_zero 0 1 h
+  exact zero_ne_one this
+
+/-- **Monotone in the tolerance.**  A tighter agreement implies a looser one;
+    the family is a genuine nested hierarchy of claims, not a flat tag. -/
+theorem mono_tol {traceEval gbMass ε ε' : ℝ} (hεε' : ε ≤ ε')
+    [h : archimedean_agreement traceEval gbMass ε] :
+    archimedean_agreement traceEval gbMass ε' :=
+  ⟨le_trans h.tol_nonneg hεε', le_trans h.agree hεε'⟩
+
+/-- **Symmetry in the two evaluated quantities.**  The claim is a genuine
+    two-sided comparison. -/
+theorem symm {traceEval gbMass ε : ℝ}
+    [h : archimedean_agreement traceEval gbMass ε] :
+    archimedean_agreement gbMass traceEval ε :=
+  ⟨h.tol_nonneg, by rw [abs_sub_comm]; exact h.agree⟩
+
 -- **No instance is provided — that is the honest open state** (AGENTS.md
 -- §3b-tax).  History: this file previously carried
 --     axiom conj_archimedean_agreement : archimedean_agreement

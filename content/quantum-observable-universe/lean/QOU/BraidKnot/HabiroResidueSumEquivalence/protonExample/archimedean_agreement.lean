@@ -55,6 +55,28 @@ instance to_generic (traceEval ε : ℝ) [h : archimedean_agreement traceEval ε
     HabiroResidueSumEquivalence.archimedean_agreement traceEval 2.1225825095 ε :=
   ⟨h.tol_nonneg, h.agree⟩
 
+/-! ## The proton carrier is content-bearing (falsifiability)
+
+Theorems *about the class*, not instances of it — the proton conjecture
+itself remains open (no instance below). -/
+
+/-- **Exact agreement at zero tolerance**: at `ε = 0` the class pins the
+    degree-48 Habiro trace to the proton GB mass exactly. -/
+theorem eq_of_tol_zero {traceEval : ℝ}
+    [h : archimedean_agreement traceEval 0] :
+    traceEval = 2.1225825095 := by
+  have := h.agree
+  rw [abs_nonpos_iff, sub_eq_zero] at this
+  exact this
+
+/-- **The proton carrier is falsifiable**: `archimedean_agreement 0 0` is
+    uninhabited, since the proton GB mass is nonzero.  (The replaced
+    `residual = 0` schema was inhabited by `⟨0, rfl⟩` for every parameter.) -/
+theorem not_agreement_zero_zero : ¬ archimedean_agreement 0 0 := by
+  intro h
+  have h0 : (0 : ℝ) = 2.1225825095 := @eq_of_tol_zero 0 h
+  norm_num at h0
+
 -- **No instance of `archimedean_agreement` is provided — the honest open
 -- state** (AGENTS.md §3b-tax).  History: this file previously carried an
 -- `axiom` + global `instance` (removed, PR #3793) and then a trivially
