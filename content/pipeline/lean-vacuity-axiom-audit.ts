@@ -514,7 +514,26 @@ function detectTrivialTrue(
       // `1 = 1 := sorry` (the lr-tensor dodge) and `a = a := by simp`
       // slipped through. Match is syntactic (lhs === rhs after stripping
       // whitespace), so `a + b = b + a` is NOT a false positive.
-      const eq = conclTA.match(/^([^=]+?)=([^=].*)$/);
+      // Strip leading ∀-binders and → antecedents before the reflexive test.
+      // A tautology is no less tautological for being quantified: the body of
+      // `∀ N : ℕ, 2 ≤ N → f N = f N` is still `X = X`, and matching the WHOLE
+      // conclusion compares `∀ N : ℕ, 2 ≤ N → f N` against `f N` and misses it.
+      // That is how `orbit_sum_general` shipped
+      // `∀ N, 2 ≤ N → cl3OrbitSumPredicted N zeta3 = cl3OrbitSumPredicted N zeta3`.
+      // Only the matched prefix is dropped — the two SIDES are still compared
+      // verbatim, so `∀ n, f n = g n` is untouched.
+      let refBody = conclTA;
+      for (;;) {
+        const before = refBody;
+        refBody = refBody.replace(/^\s*(?:∀|Π)\s*[^,]*,\s*/, "");
+        // Drop a leading antecedent only when it carries no `=` of its own,
+        // so an equational hypothesis is never mistaken for the conclusion.
+        refBody = refBody.replace(/^\s*([^=→↔]+?)→\s*/, "");
+        if (refBody === before) break;
+      }
+      const eq = (refBody.match(/^([^=]+?)=([^=].*)$/) ?? conclTA.match(/^([^=]+?)=([^=].*)$/)) as
+        | RegExpMatchArray
+        | null;
       if (eq) {
         const lhs = eq[1].replace(/\s+/g, "");
         const rhs = eq[2].replace(/\s+/g, "");
