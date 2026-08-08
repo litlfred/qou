@@ -1,8 +1,23 @@
-# There is no Stokes multiplier at C1's `∞` — I mis-stated the open item
+# C1's `∞` has no *local isoformal* Stokes data — but `qou-wgnx`'s Stokes multipliers are a different object and remain open
 
 **Date:** 2026-08-08 · **Axis:** C1 `∞`-residual (`qou-vkg5`) · **Tier:** correction
-of my own claim + one Lean instance. **No fit, nothing wired, no Stokes multiplier
-computed — because there is none to compute.**
+of my own claim + one Lean instance. **No fit, nothing wired.**
+
+> ## 🛑 READ THIS FIRST — two different objects share the name "Stokes multiplier"
+>
+> An earlier draft of this audit was titled *"There is no Stokes multiplier at
+> C1's `∞`"* full stop. That phrasing is **wrong and actively harmful**: it reads
+> as voiding bean `qou-wgnx`'s open item #1, which is a real, live, meaningful
+> target.
+>
+> | object | where | status |
+> |---|---|---|
+> | **local isoformal moduli at `∞`** — RSZ `F(P₁,…,P_k)`, the analytic moduli *within* one formal class at a single point | this audit | **dimension 0. Does not exist.** C1 is pure isoclinic at `∞` |
+> | **the connection-matrix Stokes multipliers** — the data in `P = Y₀⁻¹Y_∞` between the theta-normalised solutions at `0` and at `∞` | [`qou-wgnx`](../../.beans/) | **OPEN, and the connection matrix + its invariant `χ` are already built** |
+>
+> This audit retracts a claim about the **first** object only. It says nothing
+> against the second, which is global rather than local and is not constrained by
+> any dimension count at a single point.
 
 ## The claim being retracted
 
@@ -76,22 +91,58 @@ The local story at `∞` is therefore **closed**, not open. The "residual freedo
 I characterised in #4771/#4783 as constraining an unknown multiplier is in fact
 the *whole* local invariant, and it is computed.
 
-## What, if anything, remains
+## What remains — and it was already being worked, under `qou-wgnx`
 
-**Not** a local Stokes multiplier. The candidates are genuinely different objects
-and each needs its own justification before being called open:
+I originally listed "global connection data between `0` and `∞`" here as an
+untouched successor target. **It is not untouched.** Bean `qou-wgnx`
+("theta-normalised canonical solutions for C1") has been on it since 2026-08-07:
 
-1. **Global connection data between `0` and `∞`** — the q-analogue of monodromy,
-   the Birkhoff connection matrix, theta/elliptic-valued. This is *not* local
-   Stokes data and is not excluded by anything above. It is the honest successor
-   target. **Not started, and not claimed to be needed for anything downstream.**
-2. **The `q^{½ℤ}` lattice's role downstream** — whether the deck sign or the
-   half-integral weight feeds any Q_β / c_k object at all. Unexamined.
+| result | status there |
+|---|---|
+| `∞`-side theta-normalised canonical solutions | built, substitution residual `1e-62` |
+| connection matrix `P = Y₀⁻¹Y_∞` | obtained, `[[c₊,c₋],[c̄₊,c̄₋]]`, elliptic per entry |
+| pole divisor, module exponents | symbolic, residue theorem confirms completeness |
+| basis-**invariant** cross-ratio `χ = P₀₀P₁₁/(P₀₁P₁₀)` | order 2, closed form verified to `5.3e-63`, shape confirmed against Lin–Ma–Xu arXiv:2412.02281 Thm 1.2 |
+| `QOU/QBeta/C1ConnectionPoles.lean`, `C1ZeroSideExponents.lean` | sorry-free |
 
-Both are stated as *questions*, not as open items with an expected answer. Per
-AGENTS.md §"Before declaring 'open'", promoting either to a tracked open item
-requires the corpus-grep checklist first — which is precisely the step whose
-omission produced this retraction.
+Its open item #1 is the **Stokes multipliers proper** — functions of `χ`, the
+remaining step being convention-dependent. That is a live target and nothing in
+this audit touches it.
+
+## A second correction: my `∞`-exponent value carried a silent `q^{1/4}`
+
+In #4783 I wrote *"C1's `∞` exponent data is fully determined: the pair is
+`±√(q−1)/q`"*. `computations/qbeta/c3_w2_c1_theta_canonical.py` has a section
+headed, verbatim, **"The convention finding — read this before citing
+`B = ±sqrt(q-1)/q`"**, recorded 2026-08-07 — the day before I started:
+
+- `T_edge = ±√(q−1)/q` — root of the Newton **edge polynomial**. Correct as
+  arithmetic about that polynomial.
+- `T_theta = ±√(q−1)/q^{3/4}` — the parameter that indexes the theta-normalised
+  canonical solutions, **hence indexes the Stokes sectors**.
+- They differ by exactly `q^{1/4}`, and **the edge root provably does not satisfy
+  the indicial equation**.
+
+That script's verdict classifies the confusion as scope-(b) and names the failure
+mode: *"an object computed correctly, then given a name whose meaning it does not
+have."* I then did precisely that, and the warning was addressed to the exact
+string I used.
+
+**Consequence for #4771's weight lattice.** I proved there that the dilation lift
+`c² = q` generates `q^{½ℤ}`. The *algebra* stands. But the sector-indexing
+parameter is `T_theta ∼ q^{3/4} ∉ q^{½ℤ}`, so the gloss "C1's `∞` weight lies in
+`q^{½ℤ}`" does not follow — it inherits the same silent `q^{1/4}`. The lattice
+result should be read as a statement about the **dilation lift**, which is what
+it proves, and not about the sector parameter.
+
+## Process note
+
+Three corrections in this arc, all the same shape: an object computed correctly,
+then named as something it is not. The corpus had already diagnosed that pattern
+and written a warning against the specific string I used. What failed was not
+the mathematics but the search — I grepped for names I had invented rather than
+for the concepts, and so never reached `qou-wgnx`, `c3_w2_c1_*`, or
+`C1ZeroSideExponents.lean`.
 
 ## Landed with this correction
 
