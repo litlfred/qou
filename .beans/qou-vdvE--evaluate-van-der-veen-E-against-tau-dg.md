@@ -13,7 +13,7 @@ tags:
     - whitehead-link
     - borromean-rings
 created_at: 2026-08-08T14:07:16Z
-updated_at: 2026-08-08T18:40:00Z
+updated_at: 2026-08-08T22:00:00Z
 ---
 
 ## The ask — RESTATED 2026-08-08, after qou-vdvS closed
@@ -61,3 +61,39 @@ The evaluation is done and committed. Read the probe and audit first:
 ## Definition of done
 
 Either a note sent to the author, or a written decision not to, recorded here.
+
+## Draft written 2026-08-08 — NOT SENT, awaiting the owner's decision
+
+`docs/outreach/2026-08-08-van-der-veen-whitehead-chains-corrections.md`.
+
+Sending is an outward-facing action to a named person and is the repository
+owner's call, not the agent's, so the bean stays open until either it goes or a
+decision not to send is recorded here — which is exactly what the original
+"definition of done" asked for.
+
+The draft covers, each with the check that detects it and against the paper's
+verbatim text:
+
+  1. Lemma 2a stated in the DISTANCES |n'|, |k'| where the Taylor expansion in
+     the proof of Lemma 2 is signed. Table of log(S_{n,k}/S~_N) on the
+     opposite-sign corner at N = 4000.
+  2. `4a+c-d` should be `4a-c+d`, in Step 3's Gaussian coefficient A AND in
+     both branches of the main theorem's CS (verbatim: "-(4a+c-d)/8 2pi^2 if
+     c+d = 1 and -(4a-7c+7d)/8 2pi^2 otherwise"). Two tables: the six
+     discriminating chains for A, and the measured N-linear phase for CS.
+  3. The b >= 2 constant's real part: the main theorem says
+     `E = 2pi(c+d) log 2 + ...` where Lemma 5 gives `-2pi(c+d) log 2`. Table of
+     |J_N| N^-b e^{-Vol N/2pi} -> 2^{-(c+d)}.
+
+Plus a remark that Lemma 3's own displayed `s_n` line drops the `-1/2 log 2pi`
+Stirling term but that Lemma 3 itself is correct, since the two extreme terms
+cancel it — worth saying so he does not think we are claiming Lemma 3 is wrong.
+
+Then the payoff: `E` evaluated in closed form for the whole b=1 family, and the
+Gukov-Murakami consequence `|tau_DG| = 2^{2n-2} sqrt(n^2+m^2)` with the
+pre-registered SnapPy confirmations.
+
+The note opens by stating that his theorem is unaffected — it needs only Vol, D
+and E != 0, and all three survive — and closes with an explicit disclosure that
+it was prepared with AI assistance and that the owner has reviewed it. Do not
+send it without that review actually happening.
