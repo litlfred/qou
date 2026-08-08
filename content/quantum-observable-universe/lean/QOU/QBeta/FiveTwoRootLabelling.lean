@@ -551,6 +551,63 @@ theorem one_sub_Ypair_mem_slitPlane {φ : ℝ} (h : pairDisc φ < 0) :
   obtain ⟨h1, h2⟩ := re_Ypair_lt_one h
   refine ⟨Or.inl ?_, Or.inl ?_⟩ <;> simp <;> linarith
 
+/-! ### 5b''. The four sign facts `hA`/`hB` need
+
+`logSumA_eq_log` wants `(x·y₃).im ≤ 0` and `π/2 < φ → (x·y₂).im ≤ 0`;
+`logSumB_eq_neg_log` wants `0 < (y₂/x).im` and `π/2 < φ → 0 < (y₃/x).im`.
+
+The first pair is `im_mul_otherRoots_snd_neg` / `_fst_neg` verbatim — the
+labelling's `pairBeta`/`pairGamma` *are* those theorems' `β`/`γ`.
+
+The second pair needs no new work either, and that is the point of stating it
+here: on `|x| = 1` and for a **conjugate** pair,
+
+    Im(y/x) = −Im(x·conj y),
+
+so `0 < Im(y₂/x)` is `Im(x·y₃) < 0` — the same two facts read through the
+conjugation. Route 36 G12's `pairDisc φ < 0` is what makes the pair conjugate. -/
+
+/-- The pair are complex conjugates off the collision. -/
+theorem Ypair_conj {φ : ℝ} (h : pairDisc φ < 0) :
+    (starRingEnd ℂ) (Ypair φ).1 = (Ypair φ).2 := by
+  rw [Ypair_of_disc_neg h]
+  simp only [map_add, map_mul, Complex.conj_ofReal, Complex.conj_I]
+  ring
+
+/-- `Im(y/x) = −Im(x·conj y)` on the unit circle. -/
+theorem im_div_eq_neg_im_mul_conj {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) :
+    (y / x).im = -(x * (starRingEnd ℂ) y).im := by
+  have hns : Complex.normSq x = 1 := by rw [Complex.normSq_apply]; nlinarith
+  simp only [Complex.div_im, Complex.mul_im, Complex.conj_re, Complex.conj_im, hns, div_one]
+  ring
+
+theorem im_mul_Ypair_snd_neg {φ : ℝ} {x : ℂ} (hre : x.re = Real.cos φ) (hxim : 0 < x.im)
+    (hxnorm : x.re ^ 2 + x.im ^ 2 = 1) : (x * (Ypair φ).2).im < 0 :=
+  im_mul_otherRoots_snd_neg (Real.cos_le_one φ) (realRootPath_pos φ)
+    (realRootPath_lt_one φ) (unitCubic_realRootPath φ) hre hxim hxnorm
+
+theorem im_mul_Ypair_fst_neg {φ : ℝ} (hcneg : Real.cos φ < 0) {x : ℂ}
+    (hre : x.re = Real.cos φ) (hxim : 0 < x.im)
+    (hxnorm : x.re ^ 2 + x.im ^ 2 = 1) : (x * (Ypair φ).1).im < 0 :=
+  im_mul_otherRoots_fst_neg (Real.cos_le_one φ) hcneg (realRootPath_pos φ)
+    (realRootPath_lt_one φ) (unitCubic_realRootPath φ) hre hxim hxnorm
+
+/-- **`logSumB`'s first sign fact**, from `logSumA`'s second via conjugation. -/
+theorem im_div_Ypair_fst_pos {φ : ℝ} (hd : pairDisc φ < 0) {x : ℂ}
+    (hre : x.re = Real.cos φ) (hxim : 0 < x.im)
+    (hxnorm : x.re ^ 2 + x.im ^ 2 = 1) : 0 < ((Ypair φ).1 / x).im := by
+  rw [im_div_eq_neg_im_mul_conj hxnorm, Ypair_conj hd]
+  exact neg_pos.mpr (im_mul_Ypair_snd_neg hre hxim hxnorm)
+
+/-- **`logSumB`'s second sign fact**, likewise. -/
+theorem im_div_Ypair_snd_pos {φ : ℝ} (hd : pairDisc φ < 0) (hcneg : Real.cos φ < 0)
+    {x : ℂ} (hre : x.re = Real.cos φ) (hxim : 0 < x.im)
+    (hxnorm : x.re ^ 2 + x.im ^ 2 = 1) : 0 < ((Ypair φ).2 / x).im := by
+  have hconj : (starRingEnd ℂ) (Ypair φ).2 = (Ypair φ).1 := by
+    rw [← Ypair_conj hd]; simp
+  rw [im_div_eq_neg_im_mul_conj hxnorm, hconj]
+  exact neg_pos.mpr (im_mul_Ypair_fst_neg hcneg hre hxim hxnorm)
+
 /-! ### 5c. The branches solve the CURVE, not merely `unitCubic`
 
 Everything downstream — `vSide_of_root`, `hasDerivAt_envelopeS` — is stated for

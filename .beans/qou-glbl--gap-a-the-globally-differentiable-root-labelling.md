@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T08:50:00Z
+updated_at: 2026-08-09T09:20:00Z
 ---
 
 ## What is open
@@ -152,7 +152,8 @@ in the real part. Route 30's correction, proved rather than assumed.
 | `VSide` + the `log(−y)` derivatives at the CONCRETE branches | ✅ `FiveTwoEnvelopeInstance.lean` |
 | `heⱼ` at the pair — first tight bound (`Re y < 1`) | ✅ `one_sub_Ypair_mem_slitPlane` |
 | Vieta for the labelling (`hA`/`hB`'s `hv₁ hv₂ hv₃`) | ✅ `vieta_hv1/hv2`, `vieta_e3` |
-| **`heⱼ`'s second grouping (`k = 0`), instantiating `hA`/`hB`, `hcont` at `φ = π`** | **open** |
+| the four sign facts `hA`/`hB` need | ✅ `im_mul_Ypair_*`, `im_div_Ypair_*` |
+| **`heⱼ`'s second grouping (`k = 0`), assembling `hA`/`hB`, `hcont` at `φ = π`** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
