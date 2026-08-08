@@ -111,7 +111,7 @@ def _measure(atom: str, Z: int, N: int, stored: dict, dps: int):
     import _path_bridge  # noqa: F401
     from mpmath import mp, mpf
     from mass_at_3A_proper import atom_braid_word_3A
-    from canonical_braid_crossings import _avg_color_delta
+    from _li_2_q_util import flavor_split_leading
     import pyhecke_native as pn
     from q_parameter import Q_50_DIGIT_STR
 
@@ -119,7 +119,13 @@ def _measure(atom: str, Z: int, N: int, stored: dict, dps: int):
         q_str = str(Q_50_DIGIT_STR)
         q = mpf(q_str)
         h = q - 1 / q
-        cw = -h * (mpf(1) / 2 - _avg_color_delta() / 4)
+        # δ from the closed form at THIS q₀, not `_avg_color_delta()`, which
+        # evaluates at the float64 `q_parameter.Q` and reaches only ~5e-16.
+        # Once the producers went exact this audit became the COARSER side of
+        # its own comparison — it still separated the two conventions
+        # decisively (5.97e-19 weighted vs 3.13e-03 blind), but an audit
+        # carrying the defect it exists to detect is not one to leave alone.
+        cw = -h * (mpf(1) / 2 - flavor_split_leading(q) / 4)
         cwf = float(cw)
         n = 3 * (Z + N)
         word = [(c, cw if abs(float(d) - cwf) < 1e-9 else d, g)
