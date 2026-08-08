@@ -34,6 +34,51 @@ what remains open on this arc:
   (D) the multivariate Gaussian with complex covariance,
       `int_{R^{n+1}} exp(-pi[A u^2/2 + 2 sum (v_j + u/2)^2]) = 2^{-n/2} sqrt(2/A)`.
 
+## CORRECTION — I checked Mathlib and not the corpus. (C) is DONE, in-repo.
+
+The gap analysis below is right about *Mathlib* and wrong about *qou*, and the
+error is the same one this session made three times before it: asking "does the
+library have it?" without asking "do we already have it?"
+
+**(C) the Lobachevsky function and its derivatives: ALREADY BUILT.**
+
+    QOU/Archimedean/BlochWignerLobachevsky.lean   Lob t = Cl_2 (2t)/2, values
+    QOU/Knot/Clausen.lean                         hasDerivAt_clausen, and the
+                                                  Riemann-sum machinery
+    QOU/Archimedean/LobachevskyDerivative.lean    hasDerivAt_Lob   (Lambda' = -log(2 sin))
+                                                  deriv_deriv_Lob  (Lambda'' = -cot)
+                                                  deriv_deriv_Lob_neg / _pos
+                                                  hasDerivAt_neg_log_two_sin
+    QOU/Knot/FigureEightVolumeSqueeze.lean        tendsto_log_kashaev_vol --
+                                                  the figure-eight volume
+                                                  conjecture at LEADING order,
+                                                  discharged
+
+and `QOU/MathlibExt/` is a 54-file Mathlib-gap staging area that already holds
+`ComplexDilogarithm`, `QuantumDilogarithm`, `FaddeevQuantumDilogarithm` and more.
+
+I wrote a `LobachevskyDerivatives.lean` (plural) reproducing four of those
+theorems — one of them, `hasDerivAt_neg_log_two_sin`, with the IDENTICAL name in
+the IDENTICAL namespace, which would have collided on build. It compiled
+sorry-free and was deleted unbuilt. `LobachevskyDerivative.lean`'s own header
+even records the same lesson about a stale bean: "the bean's note that the
+corpus has 'no Lobachevsky function' is stale."
+
+**So the standing gap is narrower than stated below.** `kashaev N` is already
+defined in Lean (`FigureEightVolume.lean`, as
+`sum_k prod_j (2 - 2 cos(2 pi j/N))` = the same `prod 4 sin^2` the probe uses),
+and `(2 pi/N) log(kashaev N) -> Vol(4_1)` is proved. What is missing is exactly
+the NEXT ORDER: from
+
+    log kashaev N = Vol N/(2 pi) + o(N)                     [PROVED in-repo]
+
+to
+
+    log kashaev N = Vol N/(2 pi) + (3/2) log N + log(3^{-1/4}) + o(1)   [OPEN]
+
+which needs (A) Euler-Maclaurin for `s_n` WITH the constant and (B) Laplace's
+method for a sum — and only those two. (C) is done and (D) Mathlib has.
+
 ## What Mathlib actually has — CHECKED, not assumed
 
 The mathlib package in this repo is cache-only (build artifacts, no `.lean`
@@ -69,6 +114,23 @@ Euler-Maclaurin is not enough; the constant term is the entire content.
 (B) is where the `sqrt(2 pi / |phi''|)` and hence the `|cot theta*|^{-1/2}` comes
 from, i.e. the Hessian that cancels in `k`. Without it, `k_sq_eq_half_of_saddle`
 is a theorem about a hypothesis rather than about the colored Jones polynomial.
+
+## Mechanical guard — four duplicates in one session
+
+Duplicated this session: `ohtsuki-takata-2015` (reference), `lawrence-zagier-1999`
+(reference), the `[2]_zeta = phi` result (`bring_golden_jones_probe` rediscovering
+`lr_modulus_identification_sigma235`), and this Lean file. Every one was
+"I checked the external world and not the repo."
+
+BEFORE adding anything, in this order:
+
+    grep -n 'id: "<id>"' content/schema/references.ts     # and grep the TITLE too
+    grep -rn "<concept>" --include=*.lean content/        # Lean already there?
+    grep -rln "<concept>" computations/                   # probe already there?
+    grep -n "<Module>" content/*/lean/QOU.lean            # already imported?
+
+The last one is the cheapest and would have caught this file on its own:
+`import QOU.Archimedean.LobachevskyDerivative` sits at line 289 of `QOU.lean`.
 
 ## Definition of done
 
