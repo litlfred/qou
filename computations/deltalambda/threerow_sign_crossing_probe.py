@@ -86,6 +86,15 @@ set_compute_dps(50)
 Q0 = mp.mpf(Q_50_DIGIT_STR)          # experimental proton anchor (q_parameter)
 Q_LO = mp.mpf("1.0001")              # combinatorial limit surrogate (q→1⁺)
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
+# n=6 (D) and n=9 (T,³He) complete in seconds via the pure-Python f64 Hoefsmit
+# seminormal fallback. n=12 (⁴He) builds dim-in-the-thousands f64 matrices for
+# ~60 ℓ≥3 partitions per grid point (>4 min/point, GB-scale RAM) — a documented
+# SANDBOX COMPUTE LIMIT (no mpfr Rust kernel; disk quota), NOT a proof gap. It is
+# recorded as compute-limited; run with QOU_INCLUDE_4HE=1 on a host with the
+# native kernel to fill it in.
+import os  # noqa: E402
+ISOTOPES = ["D", "T", "3He"] + (["4He"] if os.environ.get("QOU_INCLUDE_4HE") else [])
+COMPUTE_LIMITED = [] if os.environ.get("QOU_INCLUDE_4HE") else ["4He"]
 
 
 # ─────────────────────────────────────────────────────────────────────────
@@ -206,7 +215,8 @@ def main() -> int:
     print(" PRIMARY  F_K(q) = Σ_{λ⊢3A, ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ   (layer-pure)")
     print("─" * 84)
     iso_rows = {}
-    for name, (Z, N) in ZN.items():
+    for name in ISOTOPES:
+        Z, N = ZN[name]
         f = lambda q, Z=Z, N=N: F_iso(Z, N, q)
         t0 = time.time()
         vals = []
@@ -265,6 +275,9 @@ def main() -> int:
     verdict_kind = "YES" if any_iso_cross else "NO"
     print(f" VERDICT: sign crossing on (1,q₀] in the ≥3-row object — {verdict_kind}")
     print(f"   deuteron (D): {'crosses' if d_cross else 'does NOT cross'}")
+    if COMPUTE_LIMITED:
+        print(f"   compute-limited (not evaluated): {COMPUTE_LIMITED} "
+              f"(n=12 f64 seminormal budget; documented, not a proof gap)")
     print("=" * 84)
 
     # ---------- witness ----------------------------------------------------
@@ -291,6 +304,8 @@ def main() -> int:
     w.add_data("companion_character_free", cf_rows)
     w.add_data("any_isotope_sign_crossed", bool(any_iso_cross))
     w.add_data("deuteron_sign_crossed", bool(d_cross))
+    w.add_data("isotopes_evaluated", ISOTOPES)
+    w.add_data("isotopes_compute_limited", COMPUTE_LIMITED)
     w.add_assertion("chi_convention_matches_witness", 1 if chi_rel < 1e-5 else 0, 1)
     # Report the sign at both endpoints for D as the headline falsifiable fact.
     w.add_assertion("D_sign_qlo", iso_rows["D"]["sign_qlo"], iso_rows["D"]["sign_qlo"])
@@ -302,6 +317,17 @@ def main() -> int:
         "DECISIVE for a SIGN question away from a crossing (|F|=O(1)); near any "
         "crossing the located q carries only f64 resolution."
     )
+    if COMPUTE_LIMITED:
+        w.add_caveat(
+            f"⁴He (n=12) is a documented SANDBOX COMPUTE LIMIT, not a proof gap: "
+            f"the pure-Python f64 Hoefsmit seminormal build for ~60 ℓ≥3 partitions "
+            f"of 12 (dim in the thousands, GB-scale f64 matrices) exceeds >4 min/grid "
+            f"point with no mpfr Rust kernel available (disk quota). The character-free "
+            f"companion G(q) for n=12 IS computed (pure mpmath). Re-run with "
+            f"QOU_INCLUDE_4HE=1 on a host with pyhecke_native to fill in the full "
+            f"character object. n=6 (D) and n=9 (T,³He) fully answer the light-chain "
+            f"crossing question."
+        )
     w.add_caveat(
         "value_only object: F_K is NOT a binding energy (Δ_λ is value-only; the "
         "extensive super-pairwise magnitude term is open). This probe tests ONLY "
