@@ -1,11 +1,11 @@
 ---
 # qou-pn5j
 title: 'GAP: derive Whitehead adjoint Reidemeister torsion |tau(L5a1)|=2sqrt2 from octahedron NZ data (upgrades c_sigma=2^{-3/4} from identification to derivation)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-02T09:51:26Z
-updated_at: 2026-08-08T00:50:00Z
+updated_at: 2026-08-08T02:40:00Z
 ---
 
 ## Context
@@ -184,3 +184,45 @@ Probe: computations/probes/one_loop_ohtsuki_5_2_crosscheck_probe.py
 Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md (addendum)
 
 <!-- 2026-08-08T02:20:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 — CLOSED. IDENTIFICATION -> DERIVATION, user-authorized.
+
+Status change made only after the user reviewed the evidence; I deliberately did
+not flip it myself in the two prior passes.
+
+Both objections that reopened this bean on 2026-08-07 are answered, separately:
+
+  (1) the geometric quantity was not well defined -> it is now. The DG 1-loop
+      invariant is triangulation-invariant across 13 manifolds x 25 randomised
+      triangulations, with controls. |tau_DG(L5a1)| = sqrt(2).
+  (2) the per-cusp factor was fitted against its own ambiguity -> the factor does
+      not exist. k_c := c_sigma |tau_DG|^{1/2} is the SAME constant 2^{-1/2} at
+      c = 1 and c = 2 to 17 digits (a per-cusp factor needs k_2/k_1 = sqrt 2;
+      measured 0.999999999999999995). No free parameter remains.
+
+THE CHAIN, with nothing adjustable:
+  |tau_DG(4_1)| = sqrt(3)/2 (DG eq 3.2, given) ;  c_sigma(4_1) = 3^{-1/4}
+  (measured, 17 digits) ;  k := 2^{-1/2} (one number, read off 4_1) ;
+  |tau_DG(L5a1)| = sqrt(2) (computed) ;  => c_sigma(L5a1) = 2^{-3/4}, matching
+  the 20-digit measured value to ~17 digits as a PREDICTION.
+
+k is independently confirmed on 5_2 against Ohtsuki's Theorem 1.1 (a rigorous
+theorem) to 10 digits, on a CUBIC trace field.
+
+THE ONE CARRIED ASSUMPTION: the 1-loop prefactor form c_sigma ~ |tau|^{-1/2}.
+Validated on 4_1 (17 digits), 5_2 (10 digits vs Ohtsuki), consistent on L6a4
+(0.35%) -- but NOT PROVED, and no theorem covers the 2-cusped link case
+(Garoufalidis-Yoon is two-bridge knots). Cite the upgrade WITH that clause:
+
+  "c_sigma = 2^{-3/4} is DERIVED from the triangulation-invariant DG 1-loop
+   invariant of L5a1 plus a single c=1 calibration, ASSUMING the prefactor form
+   c_sigma ~ |tau|^{-1/2}."
+
+Proving the prefactor form for links is the real remaining gap and is a research
+problem, not a computation. Not beaned as actionable work here.
+
+Audit: docs/audits/2026-08-08-c-sigma-derivation-status.md
+
+<!-- 2026-08-08T02:40:00Z branch claude/dg-scope-correction — closed -->

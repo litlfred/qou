@@ -229,7 +229,9 @@ def main() -> int:
     print("NOT settled: the overall constant at c >= 2. Invariance and the")
     print("change-of-curve law are both blind to a factor depending only on c —")
     print("which is exactly the shape of the 2^{(c-1)/2} per-cusp factor. This")
-    print("probe does not revive it (bean qou-pn5j stays at IDENTIFICATION).")
+    print("probe does not revive it. (bean qou-pn5j was later closed as DERIVATION")
+    print("on the JONES side instead -- see the per-cusp dissolution probe and")
+    print("docs/audits/2026-08-08-c-sigma-derivation-status.md. Nothing here changes.)")
 
     wit = {
         "description": (

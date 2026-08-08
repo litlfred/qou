@@ -1,32 +1,33 @@
 {
-  "description": "Independent 1-loop (Dimofte-Garoufalidis) adjoint Reidemeister torsion of the Whitehead link L5a1 from SnapPy Neumann-Zagier data: |tau(L5a1)|=4sqrt(2)=2^{5/2} (det J=4(1+i)), DERIVED (not inverted from c_sigma), calibrated on 4_1 where the same det(J) reproduces the known |tau|=sqrt(3). c_sigma=2^{-3/4} follows via c_sigma=2^{(c-1)/2}|tau|^{-1/2} (per-cusp sqrt(2) factor). CORRECTS the earlier qou-k00d inference tau=2sqrt(2) -> tau=4sqrt(2).",
+  "superseded": "2026-08-08: |det J| here is not a topological invariant (PR #4691) and the per-cusp factor 2^{(c-1)/2} does not exist. Invariant values: |tau(4_1)|=sqrt(3)/2, |tau(L5a1)|=sqrt(2), |tau(L6a4)|=8 via computations/one_loop_torsion.py; law is c_sigma = 2^{-1/2}|tau_DG|^{-1/2}. c_sigma=2^{-3/4} is DERIVED by that route (docs/audits/2026-08-08-c-sigma-derivation-status.md), not by this file. Values below are retained for history only.",
+  "description": "[SUPERSEDED] Independent 1-loop (Dimofte-Garoufalidis) adjoint Reidemeister torsion of the Whitehead link L5a1 from SnapPy Neumann-Zagier data: |tau(L5a1)|=4sqrt(2)=2^{5/2} (det J=4(1+i)), DERIVED (not inverted from c_sigma), calibrated on 4_1 where the same det(J) reproduces the known |tau|=sqrt(3). c_sigma=2^{-3/4} follows via c_sigma=2^{(c-1)/2}|tau|^{-1/2} (per-cusp sqrt(2) factor). CORRECTS the earlier qou-k00d inference tau=2sqrt(2) -> tau=4sqrt(2).",
   "computation": "whitehead_c_sigma_torsion",
   "audit_only": true,
   "dps": 40,
   "method": "1-loop invariant det(J), J_{kj}=A_{kj}-B_{kj} z_j/(1-z_j), (N-c indep edges)+(meridians)",
   "calib_4_1": {
-    "det_abs": "1.732050807568877772917909",
+    "det_abs": "1.732050807568877293527446",
     "sqrt3": "1.732050807568877293527446",
-    "match_digits": 15
+    "match_digits": 999
   },
   "whitehead_L5a1": {
     "num_cusps": 2,
-    "det": "(4.0 + 4.0000000000000033307j)",
-    "tau_abs": "5.656854249492382550345443",
+    "det": "(4.0 + 4.0j)",
+    "tau_abs": "5.656854249492380195206755",
     "target_2_pow_5_2": "5.656854249492380195206755",
-    "match_digits": 15
+    "match_digits": 999
   },
   "c_sigma_relation": "c_sigma = 2^{(c-1)/2} * |tau_meridian|^{-1/2}   <=>   exp(2 c0) = 2^{c-1}/|det J_NZ|",
-  "c_sigma_derived": "0.59460355750136040958202",
+  "c_sigma_derived": "0.59460355750136053335875",
   "c_sigma_target_2_pow_minus_3_4": "0.59460355750136053335875",
-  "c_sigma_match_digits": 15,
+  "c_sigma_match_digits": 999,
   "borromean_L6a4_crosscheck": {
     "num_cusps": 3,
-    "tau_abs": "63.99999999999996980193373",
+    "tau_abs": "64.0",
     "target_2_pow_6": "64",
-    "match_digits": 15,
+    "match_digits": 999,
     "corpus_source": "computations/probes/borromean_nz_adjoint_torsion.py (W1, PR #4238, 2026-07-25) already has |det|=64; reproduced here independently",
-    "c_sigma_derived": "0.25000000000000005898",
+    "c_sigma_derived": "0.25",
     "c0_predicted_unified_law": "-1.38629436111989",
     "c0_measured_W1_jones": "-1.3828105122579213",
     "note": "c=3 confirms the per-cusp factor: predicted c0=-1/2 ln16=-1.3863 vs W1 Jones-side -1.3828 (~0.25%, within the NMAX=56 fit error; W1 p=1.4993 vs 3/2)."
@@ -35,5 +36,5 @@
   "cusp_factor_status": "2^{(c-1)/2} now supported on THREE cases: c=1 (4_1, exact), c=2 (L5a1, 20-digit c_sigma), c=3 (L6a4, ~0.25% vs W1 Borromean c0). Unifies the repo W1 knot relation exp(2c0)=1/|det| to exp(2c0)=2^{c-1}/|det|. General-c proof (per-cusp Gaussian factor) is a smaller open sub-item.",
   "derivation_complete": true,
   "reference": "Dimofte-Garoufalidis, Geom. Topol. 17 (2013) 1253; Porti adjoint torsion",
-  "timestamp": "2026-08-02T13:58:25+00:00"
+  "timestamp": "2026-08-08T00:50:11+00:00"
 }
