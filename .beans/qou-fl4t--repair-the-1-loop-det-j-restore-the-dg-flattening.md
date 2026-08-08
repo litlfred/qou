@@ -473,3 +473,47 @@ gluing equation is imposed. Those stay numerical (and at c=1 a Garoufalidis-Yoon
 theorem).
 
 <!-- 2026-08-08T01:20:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 (tenth pass) — downstream chain reconciled; the framing sweep EXPLAINED.
+
+Items 3 and 4 of the impact analysis's change table, closed.
+
+`probes/borromean_cusp_framing_factor.py` — its framing sweep is CONFIRMED
+EXACTLY and is now explained rather than observed. It is the CHANGE-OF-CURVE
+LAW: replacing cusp k's meridian row by that cusp's longitude row multiplies tau
+by conj(cusp shape of cusp k), and every Borromean cusp shape has modulus exactly
+2. Recomputed with the corrected invariant:
+
+    0 longitudes  |tau| =  8   2^c|tau| =  64      <- all-meridian
+    1 longitude   |tau| = 16   2^c|tau| = 128  (x3)
+    2 longitudes  |tau| = 32   2^c|tau| = 256  (x3)
+    3 longitudes  |tau| = 64   2^c|tau| = 512
+
+reproducing that file's observed {64,128,256,512} exactly. All-meridian is the
+unique minimum because every cusp shape has modulus > 1.
+
+What does NOT survive there: `exp(2c0)|det J_NZ| = 2^{c-1}` is stated in a
+non-invariant quantity, so it is not a well-posed statement about the link; and
+the 2^{c-1} is just 2^c/2, not a "reduced-vs-Kashaev normalization, one Gaussian
+meridian integration per extra cusp". Its DECISIVE THIRD DATA POINT — the 2-cusp
+Whitehead Kashaev tower — already existed in the corpus and PASSES
+(c_sigma(L5a1) = 2^{-3/4} to 20 digits => exp(2c0) = 1/(2 sqrt 2), its exact
+prediction) — and passes equally for the c-free law, which is the point.
+
+`probes/borromean_jones_1loop_torsion.py` — the bounded follow-up it names
+("compute tau(B3) from the octahedral NZ data") is delivered: |tau_DG(L6a4)| = 8.
+Predicted exp(2c0) = 1/16 = 0.0625 vs measured 0.06294 (0.7%). Recorded as
+SUPPORTING, not a match: its two fits bracket the prediction (spread 0.0093 vs
+deviation 0.0035) and its own witness flags a normalization+cusp offset.
+
+`probes/jones_1loop_c0_calibration_fig8.py` — not superseded; it is the anchor.
+Added the normalization note: its |tau_adj| = 1/sqrt(3) is 1/T with T = 2|tau_DG|,
+so its relation reads exp(2c0) = 1/(2|tau_DG|), which carries no per-cusp factor.
+
+STILL OPEN on this bean: item 5, draining float64 from
+whitehead_c_sigma_torsion.py and borromean_nz_adjoint_torsion.py (bean qou-t0rf's
+class) — independent of everything above.
+
+<!-- 2026-08-08T01:50:00Z branch claude/dg-scope-correction -->
