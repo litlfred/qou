@@ -170,20 +170,82 @@ theorem sum_over_perms_eq_zero_of_not_injective {r n : ℕ}
     sum_perm_eq_det_submatrix, det_submatrix_eq_zero_of_not_injective A hφ,
     zero_mul]
 
+/-! ## Step 4 — an injective `φ` sorts into `Selector ∘ permutation`
+
+This is the piece with no Mathlib support. An injective `φ : Fin r → Fin n`
+has an `r`-element image; enumerating that image in increasing order gives the
+strictly monotone `f`, and the permutation `π` records how `φ` shuffles it.
+
+`Finset.orderEmbOfFin` supplies the sorted enumeration; what has to be built
+is the bijection onto the image and the resulting `Equiv.Perm`. -/
+
+/-- The image of `φ`, as a `Finset`. -/
+def imageFinset {r n : ℕ} (φ : Fin r → Fin n) : Finset (Fin n) :=
+  Finset.image φ Finset.univ
+
+theorem mem_imageFinset {r n : ℕ} (φ : Fin r → Fin n) (i : Fin r) :
+    φ i ∈ imageFinset φ :=
+  Finset.mem_image_of_mem φ (Finset.mem_univ i)
+
+/-- An injective `φ` has an image of exactly `r` elements. -/
+theorem card_imageFinset {r n : ℕ} {φ : Fin r → Fin n} (hφ : Function.Injective φ) :
+    (imageFinset φ).card = r := by
+  rw [imageFinset, Finset.card_image_of_injective _ hφ, Finset.card_univ,
+    Fintype.card_fin]
+
+/-- **The selector `φ` sorts to** — its image enumerated in increasing order.
+Strict monotonicity comes free from `orderEmbOfFin` being an order embedding. -/
+def sortSelector {r n : ℕ} {φ : Fin r → Fin n} (hφ : Function.Injective φ) :
+    Selector r n :=
+  ⟨(imageFinset φ).orderEmbOfFin (card_imageFinset hφ),
+   ((imageFinset φ).orderEmbOfFin (card_imageFinset hφ)).strictMono⟩
+
+/-- `φ` viewed as a map into its own image. -/
+def toImage {r n : ℕ} (φ : Fin r → Fin n) (i : Fin r) : (imageFinset φ) :=
+  ⟨φ i, mem_imageFinset φ i⟩
+
+theorem toImage_bijective {r n : ℕ} {φ : Fin r → Fin n}
+    (hφ : Function.Injective φ) : Function.Bijective (toImage φ) := by
+  constructor
+  · intro a b hab
+    exact hφ (congrArg Subtype.val hab)
+  · rintro ⟨x, hx⟩
+    obtain ⟨i, _, hi⟩ := Finset.mem_image.mp hx
+    exact ⟨i, Subtype.ext hi⟩
+
+/-- **The permutation `φ` induces**: where each index lands once the image is
+put in increasing order. -/
+noncomputable def sortPerm {r n : ℕ} {φ : Fin r → Fin n}
+    (hφ : Function.Injective φ) : Equiv.Perm (Fin r) :=
+  (Equiv.ofBijective (toImage φ) (toImage_bijective hφ)).trans
+    ((imageFinset φ).orderIsoOfFin (card_imageFinset hφ)).symm.toEquiv
+
+/-- **The factorization.** `φ = f ∘ π`, with `f` the sorted selector and `π`
+the induced permutation — the statement the assembly step needs. -/
+theorem sortSelector_comp_sortPerm {r n : ℕ} {φ : Fin r → Fin n}
+    (hφ : Function.Injective φ) (i : Fin r) :
+    (sortSelector hφ).1 (sortPerm hφ i) = φ i := by
+  have hround :
+      (imageFinset φ).orderIsoOfFin (card_imageFinset hφ) (sortPerm hφ i)
+        = toImage φ i :=
+    OrderIso.apply_symm_apply _ _
+  show ((imageFinset φ).orderEmbOfFin (card_imageFinset hφ)) (sortPerm hφ i) = φ i
+  rw [← Finset.coe_orderIsoOfFin_apply, hround]
+  rfl
+
 /-! ## Frontier
 
-What remains, in order (see bean `qou-8yph`):
+Steps 1–3 are proved. What remains:
 
-* interchange `∏_i ∑_k` into `∑_{φ : Fin r → Fin n} ∏_i` via `Finset.prod_sum`;
-* show a **non-injective** `φ` contributes `0`, by pairing each `σ` with
-  `σ * swap i j` for two indices where `φ i = φ j`;
-* factor an **injective** `φ` uniquely as `f ∘ π` with `f` strictly monotone
-  and `π` a permutation, pulling out `sign π`;
-* reassemble into the sum over `Selector r n`.
+* finish `sortSelector_comp_sortPerm` (the `orderIsoOfFin`/`orderEmbOfFin`
+  round trip);
+* the sign bookkeeping — `sgn σ` against `sgn (σ ∘ π)` when reindexing the
+  `σ`-sum by the induced permutation;
+* reassemble: sum over injective `φ` = sum over `Selector r n`, since
+  `φ ↦ (sortSelector, sortPerm)` is a bijection onto `Selector × Perm`.
 
-The statement below is the target. It is `sorry` and labelled as such — the
-point of this file is that the pieces above get proved one at a time, not that
-the conclusion gets asserted early. -/
+The target below is `sorry` and labelled as such. Both remaining `sorry`s in
+this file are on that path and nowhere else. -/
 
 /-- **Rectangular Cauchy–Binet.** `det (A * B) = ∑_f det (A_f) * det (B^f)`
 over the strictly monotone `f : Fin r → Fin n`.

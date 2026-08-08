@@ -139,3 +139,39 @@ Step 4, the harder half: an **injective** `φ` factors uniquely as
 `sign π` pulls out. That factorization is where `Selector` finally gets used,
 and it is the piece with no Mathlib support — the sorting of an injective
 `Fin r → Fin n` into monotone-composed-with-permutation has to be built.
+
+## Progress 2026-08-08 (cont) — step 4 sorting infra proved
+
+Back to ONE `sorry` in the file (the target). Everything below is
+axiom-clean.
+
+**Step 4 — an injective `φ` sorts into selector ∘ permutation.** This is the
+piece the bean flagged as having no Mathlib support, and it is now built:
+
+- `imageFinset` / `mem_imageFinset` — `φ`'s image as a `Finset`.
+- `card_imageFinset` — an injective `φ` has an image of exactly `r` elements.
+- `sortSelector` — that image enumerated in increasing order. Strict
+  monotonicity comes free, since `Finset.orderEmbOfFin` is an order embedding.
+- `toImage` / `toImage_bijective` — `φ` as a bijection onto its own image.
+  Injectivity is `hφ`; surjectivity is `Finset.mem_image`.
+- `sortPerm` — the induced `Equiv.Perm (Fin r)`, as
+  `Equiv.ofBijective (toImage φ)` composed with `(orderIsoOfFin …).symm`.
+- `sortSelector_comp_sortPerm` — **the factorization**: `f (π i) = φ i`.
+
+The factorization proof turned out to be three lines. `orderEmbOfFin` is
+definitionally the coercion of `orderIsoOfFin`
+(`Finset.coe_orderIsoOfFin_apply` is `rfl`), so the whole thing is one
+`OrderIso.apply_symm_apply` round trip plus two `rfl`s. `Finset.orderEmbOfFin`
+carrying the strict monotonicity for free was the other saving — `Selector`'s
+proof obligation is discharged by `.strictMono` on the embedding.
+
+### Remaining
+
+- the sign bookkeeping: `sgn σ` vs `sgn (σ ∘ π)` when the `σ`-sum is
+  reindexed by the induced permutation;
+- assembly: `φ ↦ (sortSelector, sortPerm)` is a bijection from injective `φ`
+  onto `Selector r n × Equiv.Perm (Fin r)`, which converts the sum over
+  injective `φ` into the sum over selectors.
+
+The injectivity/non-injectivity split is now fully covered on both sides —
+step 3 kills the non-injective half, step 4 parameterizes the injective half.
