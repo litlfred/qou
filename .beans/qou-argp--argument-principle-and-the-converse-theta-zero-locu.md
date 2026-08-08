@@ -1,11 +1,11 @@
 ---
 # qou-argp
 title: 'Argument principle on an annulus — the single missing lemma for the converse theta zero locus'
-status: todo
+status: done
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-08-08T18:00:00Z
 ---
 
 Split out of `qou-c1ln` row 2, which is otherwise closed. Everything the
@@ -174,3 +174,252 @@ cheap.
 
 Unclaimed. Status moved `in-progress` → `todo` so a sibling does not read it as
 actively held.
+
+## 2026-08-08 — TWO corrections. The gap was smaller than this bean has ever said.
+
+Both are the same error: recording something as missing without checking whether
+it already exists, then planning around the record.
+
+**1. The pinned Mathlib carries what the previous entry hoped it might.**
+Verified directly against `.lake/packages/mathlib` at `f897ebcf`, not against a
+newer checkout:
+
+| | at the pin |
+|---|---|
+| `MeromorphicOn.extract_zeros_poles` | **present** |
+| `Function.locallyFinsuppWithin.finiteSupport` (compact ⇒ finite support) | **present** |
+| `intervalIntegral.integral_finset_sum` | **present** |
+| `CircleIntegrable.sum`, `circleIntegral.integral_add`, `integral_sub_inv_of_mem_ball`, annulus Cauchy, `AnalyticOnNhd.deriv` | **present** |
+| `MeromorphicOn.divisor_support_finite_of_subset` | absent — *four-line wrapper*, now proved |
+| `circleIntegral.integral_fun_sum` | absent — *four-line proof*, now proved |
+
+Both absentees are in `QOU/Mathlib/CircleIntegralFinsetSum.lean`, sorry-free,
+stated in Mathlib's own shape so a pin bump deletes the file rather than
+requiring a rewrite. The earlier note guessed `finiteSupport` was missing; the
+grep failed only because it is declared inside a namespace.
+
+**2. The corpus already has a sorry-free argument principle.**
+`QOU/Mathlib/ArgumentPrinciple.lean` — 687 lines, bean `qou-bmyx`, verified
+`exit 0` — proves `argument_principle` on a **closed disc**, global, via
+Weierstrass factorization, plus `entire_zero_count`. This bean has said "Mathlib
+has no argument principle" since it was opened. True, and irrelevant: the
+*corpus* has one, in a file of that name, from a bean that appears in the same
+`beans list` output this one does.
+
+**What is actually left**, and it is not step 2:
+
+`argument_principle` is on a disc. `θ_p` is holomorphic on `ℂ*` but has an
+essential singularity at `0`, so the disc form does not apply to it — the
+annulus form does, and that is `argumentPrinciple_annulus_single` in
+`C1ConnectionPoles.lean`, which is proved *for a single factor*. The remaining
+work is therefore:
+
+1. **`Finset`-index the annulus statement** — now unblocked: `integral_fun_sum`
+   splits the contour integral over the factors, `divisor_support_finite_of_subset`
+   makes the index set a `Finset`, `logDeriv_prod` splits the integrand.
+2. ~~**Upgrade `extract_zeros_poles`'s codiscrete equality to genuine
+   equality**~~ — **DONE**, same day. `eqOn_of_eventuallyEq_codiscreteWithin`
+   in `QOU/Mathlib/CircleIntegralFinsetSum.lean`, sorry-free. Six lines: Mathlib's
+   `eqOn_or_eventually_ne_of_preconnected` gives *either* `EqOn f g U` *or*
+   `f ≠ g` codiscretely; the second contradicts the hypothesis on a non-trivial
+   filter. `codiscreteWithin_neBot` supplies that non-triviality for a nonempty
+   open set — without it the lemma would have been vacuous, which is worth
+   stating since Mathlib has no `NeBot` instance for `codiscreteWithin` at the
+   pin.
+3. Apply to `θ_p` with `qTheta_winding_step`, which already gives winding
+   difference `= 1`, forcing exactly one simple zero per fundamental annulus.
+
+Revised cost: **one session**, not multi-session, and not blocked on Mathlib.
+
+**Method note.** Twice now the fix was to search by what the statement *says*
+rather than what the theorem is *called* — `extract_zeros_poles` is not named
+"factorisation", and the corpus's own argument principle was never going to
+answer a grep for `windingNumber`. Before recording anything as missing here,
+grep the corpus as well as Mathlib.
+
+## 2026-08-08 (later) — step 2 is done; only the assembly is left
+
+The step this bean called "the one that is not a citation" is proved. All four
+supporting lemmas now sit sorry-free in
+`QOU/Mathlib/CircleIntegralFinsetSum.lean`:
+
+| | |
+|---|---|
+| `integral_fun_sum` | circle integral over a `Finset` sum |
+| `divisor_support_finite_of_subset` | finitely many zeros/poles on a compact set |
+| `eqOn_of_eventuallyEq_codiscreteWithin` | codiscrete equality ⇒ equality, via the identity theorem |
+| `codiscreteWithin_neBot` | the above is not vacuous on a nonempty open set |
+
+**What is left is assembly, not new mathematics.** Take `V` the open annulus,
+`K` a slightly larger closed one; `divisor_support_finite_of_subset` makes the
+zero set a `Finset`; `extract_zeros_poles` factors `θ_P` there;
+`eqOn_of_eventuallyEq_codiscreteWithin` turns that into genuine equality;
+`logDeriv_prod` and `integral_fun_sum` split the contour integral;
+`argumentPrinciple_annulus_single` handles each factor; `qTheta_winding_step`
+pins the total at `1`, forcing one simple zero per fundamental annulus, which
+`qTheta_neg_zpow_eq_zero` identifies as `−p^k`.
+
+That is the converse zero locus, and hence an exact C1 pole divisor. Estimate:
+part of a session. Note `qou-c1wr`'s finding still stands — **nothing downstream
+consumes the divisor**, so this is worth finishing for the Mathlib contribution
+and to close a named gap honestly, not because a number depends on it.
+
+## 2026-08-08 — the annulus argument principle is `Finset`-indexed and proved
+
+`argumentPrinciple_annulus_finset` in `C1ConnectionPoles.lean`, sorry-free. For
+`F = (∏ a ∈ S, (·−a)^{m a})·u` with `u` analytic and non-vanishing on a
+neighbourhood of the closed annulus and every `a ∈ S` strictly inside it, the
+winding difference is `(∑ a ∈ S, m a)·2πi`. With it,
+`logDeriv_prod_pow_sub_mul` — the pointwise split, via Mathlib's
+`logDeriv_prod`.
+
+That was the step this bean called "assembly, not new mathematics", and it was:
+every ingredient existed, the work was matching their shapes. Two of the three
+compile errors were function-valued versus pointwise `Finset` sums
+(`∑ i ∈ S, fun z => f i z` against `fun z => ∑ i ∈ S, f i z`), which needed an
+explicit `funext` bridge — `simpa [Finset.sum_apply]` does not cross it.
+
+**Everything the converse zero locus needs is now proved.** What remains is to
+instantiate it for `θ_P`:
+
+* `V` the open annulus, `K` a slightly larger closed one;
+* `divisor_support_finite_of_subset` makes the zero set of `θ_P` on `V` a
+  `Finset`;
+* `extract_zeros_poles` factors `θ_P` as `(∏ (·−a)^{m a})·g` modulo a
+  codiscrete set;
+* `eqOn_of_eventuallyEq_codiscreteWithin` makes that equality genuine on `V`
+  (both sides analytic, `V` connected);
+* `argumentPrinciple_annulus_finset` gives `∑ m a` as the winding difference;
+* `qTheta_winding_step` says that difference is `1`, so `∑ m a = 1`;
+* `qTheta_neg_zpow_eq_zero` puts a zero at `−p^k`, so `S = {−p^k}` and `m = 1`.
+
+That last step is bookkeeping over a one-element `Finset`, not analysis.
+
+Still true, and still the reason not to rush it: `qou-c1wr` established that
+**nothing downstream consumes the divisor**.
+
+## 2026-08-08 — the chain is complete; only θ-specific instantiation is left
+
+`exists_finset_factorisation` closes the last general gap: an analytic function
+on a relatively compact, connected open `V` factorises as
+`(∏ a ∈ S, (·−a)^{m a})·g` with `g` analytic and non-vanishing, *as genuine
+equality on `V`*, in exactly the shape `argumentPrinciple_annulus_finset`
+consumes.
+
+Assembled from the four earlier lemmas plus `finprod_zpow_eq_finset_prod_npow`,
+which normalises `extract_zeros_poles`'s output: that theorem returns a
+`finprod` of **functions** with **ℤ** exponents, and the argument principle
+takes a `Finset.prod` of **values** with **ℕ** exponents. Three conversions:
+`finprod_apply` (functions → pointwise), `finprod_eq_prod_of_mulSupport_subset`
+(finprod → Finset.prod), and `zpow_natCast` under
+`AnalyticOnNhd.divisor_nonneg` (ℤ → ℕ, valid because an analytic function has
+no poles).
+
+**Every general ingredient is now proved.** What remains is θ-specific:
+instantiate `V` as the open annulus and `K` as a slightly larger closed one,
+check `meromorphicOrderAt θ_P u ≠ ⊤` (θ_P is not locally zero — it has a zero at
+`−p^k` and is analytic, so this is the identity theorem again), feed the result
+through `argumentPrinciple_annulus_finset`, and equate with
+`qTheta_winding_step`'s `2πi`. That gives `∑ m a = 1`, and
+`qTheta_neg_zpow_eq_zero` names the one zero.
+
+### The recurring papercut, recorded because it cost three iterations
+
+Lean distinguishes `∑ i ∈ S, fun z => f i z` from `fun z => ∑ i ∈ S, f i z`,
+and `∏ᶠ i, f i` from `fun z => ∏ᶠ i, f i z`. Three separate errors in this arc
+were that distinction and nothing else. `simpa [Finset.sum_apply]` does **not**
+cross it — the bridges are an explicit `funext` for `Finset`, and
+`finprod_apply` (which needs a finiteness hypothesis) for `finprod`. Mathlib
+often ships both forms, e.g. `DifferentiableAt.finset_prod` versus
+`DifferentiableAt.fun_finset_prod`; reach for the `fun_` variant first.
+
+
+## 2026-08-08 — claimed for the θ-specific instantiation
+
+Branch `claude/c1-theta-zero-locus-instantiation-2026-08-08`. Working the last
+item: instantiate the general chain for `θ_P`.
+
+One thing the plan above glosses. `exists_finset_factorisation` produces `g`
+analytic on the **open** `V`, but `argumentPrinciple_annulus_finset` wants `u`
+non-vanishing on an open set containing the **closed** contour annulus — so `V`
+must be strictly larger than the contours, and then `S` can contain zeros in the
+two collars, which violates that theorem's `∀ a ∈ S, r < ‖a‖ < R`.
+
+Two ways out: prove no zeros sit in a thin enough collar (needs a
+positive-distance argument against a finite set), or drop the hypothesis to
+`‖a‖ ≠ r, R` and count with a filter. The second is strictly more general, is
+the honest statement of the argument principle, and needs no collar at all —
+taking it.
+
+## 2026-08-08 — DONE. The converse zero locus is proved.
+
+`qThetaC_eq_zero_iff` in `QOU/QBeta/C1ThetaZeroLocus.lean`:
+
+    for w ≠ 0,  θ_P(w) = 0  ↔  ∃ k : ℤ, w = −P^{2k}
+
+and `qThetaC_analyticOrderAt_neg_zpow`: every such zero has
+`analyticOrderAt = 1`. Together that is the **whole divisor of `θ_P` on `ℂ*`** —
+the orbit `−p^ℤ`, reduced — so the three C1 pole loci are exact and carry
+multiplicity one rather than being containments. Sorry-free,
+`[propext, Classical.choice, Quot.sound]`.
+
+No hypothesis survives except `w ≠ 0`, and that only because `0` is an essential
+singularity where `θ_P` is not an analytic object at all.
+
+### What the plan above got wrong, and it is the same error a third time
+
+The plan said the remaining work was "θ-specific instantiation, bookkeeping over
+a one-element `Finset`, not analysis". Two of the three things that actually
+blocked it were neither:
+
+1. **The strict-between hypothesis is undischargeable here.**
+   `argumentPrinciple_annulus_finset` requires `r < ‖a‖ < R` for *every* factor.
+   But `exists_finset_factorisation` produces a factorisation analytic on an
+   **open** set, which must therefore be strictly larger than the closed contour
+   annulus — and its zero set can then sit in the two collars. Discharging the
+   hypothesis would need a positive-distance argument against a finite set,
+   *before* knowing the set is finite in the relevant sense.
+   Fix: `argumentPrinciple_annulus_filter`, which asks only that factors avoid
+   the two circles and counts with a filter. A factor inside the inner circle
+   contributes `2πi` to both integrals and cancels; one outside contributes to
+   neither. Strictly more general, and the honest statement of the theorem. The
+   old form is now a two-line corollary.
+
+2. **`a ∈ S` carried no information.** `exists_finset_factorisation` returned
+   `S` and `m` with nothing tying them to `θ`. Reading "`a` is a zero" off
+   membership needs `0 < m a` *and* `S ⊆ V`; reading multiplicity off it needs
+   `analyticOrderAt f a = m a`. All three added
+   (`analyticOrderAt_eq_of_finset_factorisation` is the last, and is general).
+
+The genuinely θ-specific pieces were smaller than either:
+
+| | |
+|---|---|
+| `isPreconnected_openAnnulus` | an annulus is `exp` of a convex strip — the identity theorem wants a connected domain, and Mathlib has nothing about annuli |
+| `qThetaC_ne_zero_outer` | `θ(P²w) = w·θ(w)` carries non-vanishing from `‖z‖ = ρ` out to `‖z‖ = P²ρ`, so `qTheta_winding_step`'s single hypothesis cleans both contours |
+| `qTheta_pos_of_pos` | every term of `∑ P^{−n(n+1)}wⁿ` is positive for `w > 0` — the cheapest proof that `θ` is not identically zero |
+| `qThetaC_ofReal` | the bridge real facts cross to reach the complex statements; unconditional, `Complex.ofReal_tsum` needs no summability |
+| `exists_clean_radius` | only finitely many radii carry a zero, and an interval of reals is infinite |
+
+`exists_clean_radius` is what removed the hypotheses. `qTheta_winding_step` has
+always needed "no zero on `‖z‖ = ρ`", and every downstream statement inherited
+it. That is not a restriction — it is a *choice*, and this lemma is the proof.
+With it, `⌊logb (P²) ‖w‖⌋` places any `w` in a fundamental annulus and a clean
+contour goes just below the lattice point, in an interval that is nonempty
+exactly because `‖w‖ < P^{2k+2}`.
+
+### Consumer status — unchanged, and worth repeating
+
+`qou-c1wr` established that **nothing downstream consumes the divisor**. This
+was worth finishing to close a named gap honestly and for the upstreamable
+lemmas (`argumentPrinciple_annulus_filter`,
+`analyticOrderAt_eq_of_finset_factorisation`,
+`exists_finset_factorisation`, `isPreconnected_openAnnulus`, and the two Mathlib
+wrappers), not because a number moved.
+
+Content updated in the same pass: `prop:c1-theta-zero-locus-and-pole-divisor`
+no longer says the converse is unproved, its `lean.ref` points at
+`qThetaC_eq_zero_iff`, and the stale "Mathlib has no argument principle"
+docstrings in `C1ConnectionPoles.lean` are gone.
+
+Closing.

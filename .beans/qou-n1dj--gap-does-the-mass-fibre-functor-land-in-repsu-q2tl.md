@@ -226,6 +226,71 @@ statements) and 3 (the false sensitivity claim) are all untouched. Sub-task 1 is
 now sharply posed: exhibit an instance of the class for the mass channel, or
 show the mass trace is not of that form.
 
+## Progress 2026-08-08 — sub-tasks 2, 3, 4 DONE; sub-task 1 STILL OPEN
+
+Branch `claude/n1dj-trace-registry-guard-2026-08-08`. Audit:
+[`docs/audits/2026-08-08-trace-convention-registry-and-doc-fix.md`](../docs/audits/2026-08-08-trace-convention-registry-and-doc-fix.md).
+**No production numerical value changed. The bean stays open** — the
+categorical question below is untouched.
+
+**Sub-task 2 (which statement is wrong) — ANSWERED.** The scope note of
+`rem:h3-markov-wenzl-weights-context` is the wrong one, but only in its
+*empirical* claim. The corpus **definition** of the mass trace,
+`prop:categorical-mass-markov` (`mass-endomorphism/categorical-mass-markov.md:13`),
+names "the Jones–Markov trace, functioning as the Frobenius integral on `A`"
+with `A = H_n(R,q)` — i.e. **algebraically, on the full Hecke algebra**, no
+fibre functor, no TL quotient. `rem:markov-axioms-primitive:5` then **pins**
+`z = 1/(q^{1/2}+q^{-1/2})` as a stipulation (axioms 1–2 alone admit a
+one-parameter family). So the definition chain says **C**. The scope note was
+right about C being the corpus trace, right that **binding** uses it
+(`binding_canonical.py` → `closed_form_tau_M.py:132 markov_z` +
+`y_lambda_wenzl_bridge_numeric`), and **wrong that mass does** — production
+mass is D (~30 `F_Bor` consumers). Correcting the doc does not resolve the
+disagreement; it sharpens it into: *the corpus defines the mass trace as C,
+production computes D, and D is the one matching CODATA.*
+
+Consequence for sub-task 1: the charitable "the author was thinking
+categorically, which is evidence for D" reading is **not supported at the
+defining block**. The TL premise has no anchor in the definition chain.
+
+**Sub-task 3 (the false insensitivity claim) — CORRECTED, with the true
+lemma.** For any normalised Markov trace on H_3(q) and any writhe-0, π=id
+braid: `tr_M(β) = 1 + y_(2,1)·(χ^(2,1)(β) − 2)` (verified symbolically for
+arbitrary (y_(3), y_(1³)) under Σy·d = 1, plus `∂tr/∂y_(1³) = 0`, in
+`computations/probes/probe_writhe0_trace_insensitivity.py`, PASS). So writhe 0
+makes only the **y_(3)/y_(1³) split** invisible — the chirality asymmetry the
+same block's own "Non-uniformity" section is about — and **not** y_(2,1). The
+whole gap is one product: `(y^D_(2,1) − y^C_(2,1))·(−3h⁴ − h⁶) = 1.9554e-4`,
+exact as a rational function, 195.82 ppm. The author had the right lemma about
+the wrong ambiguity. The parent's alternative reading — "the traces agree on
+braids whose image lies in TL_3" — is **refuted, scope (b)**:
+`χ^(1³)(β) = (−q^{-1})^{w}` is a unit for every braid, so no braid image has a
+vanishing three-row component.
+
+**Sub-task 4 (do not re-open the 6.7 %) — now machine-enforced.**
+`markov_peel.tr_M_atomic` and its aliases are recorded as **excluded tracers**
+in the new registry; R7 of the validator errors if any convention row lists
+them, and `--lint-docs` warns on doc lines pairing them with a Borromean
+convention claim.
+
+**New guard — the trace-convention registry.**
+[`docs/coordination/trace-convention-registry.md`](../docs/coordination/trace-convention-registry.md)
++ JSON twin + `trace_convention_registry_validate.py` (R1–R8, `--selftest`,
+`--lint-docs`, `--strict`). Channels carry **both** `definitional_convention`
+and `production_convention`, so the mass dispute is a machine-visible field
+rather than something a reader must reconstruct across two directories; R8
+errors if a differing channel lacks an `open_item`. R3 recomputes each
+convention's β_Bor value from the code it names (both CONFIRMED at 3.4e-19
+relative). `--selftest` replays all three historical defects and fails if any
+is not caught. Baseline: PASS, 0 errors, 21 warnings (21 Borromean tracers that
+do not yet declare a convention — a tracked backlog).
+
+**STILL OPEN (sub-task 1, the whole point of this bean):** does the mass fibre
+functor land in Rep(SU_q(2)) ≃ TL_3 or in the full H_3(q)? Nothing above
+answers it, and the definition-chain finding pushes *against* TL. Switching the
+production trace is an owner decision (−197 ppm, ~30 consumers) and was not
+done.
+
 ## Scope
 
 Honest-gap bean per AGENTS §"When you can't close it". This is **not** a claim
