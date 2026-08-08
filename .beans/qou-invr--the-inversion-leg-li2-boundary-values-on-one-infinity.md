@@ -10,7 +10,7 @@ tags:
     - qou-rstq
     - 5two
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T18:40:00Z
+updated_at: 2026-08-08T19:05:00Z
 ---
 
 ## What is open, stated as narrowly as it now can be
@@ -104,37 +104,58 @@ Two things, both smaller than a boundary-value theory, neither free:
 it unblocks everything else here. The vectors below are superseded except where
 noted.
 
-### Step (1): attempted 2026-08-08, NOT landed — exactly where it stopped
+### ✅ Step (1) CRUX LANDED — 2026-08-08, later the same day
 
-`QOU/MathlibExt/ComplexDilogarithmOnCut.lean` carries the proved decomposition
-(`log_ofReal_eq`, `re_log_ofReal`, `abs_im_log_ofReal_le`). The integrability
-statement was **attempted and reverted rather than committed with stubs** — a
-`sorry` asserting integrability would manufacture the junk-value-`0` vacuity the
-lemma exists to prevent, which is the worst possible place for one.
+**Superseding the "NOT landed" note that stood here.** It named the affine
+composition of `intervalIntegrable_log'` as the blocker. That blocker was
+avoidable and no longer exists.
 
-The API is located; what remains is assembly:
+`QOU/MathlibExt/ComplexDilogarithmOnCut.lean`, six theorems, sorry-free,
+`lake`-verified, axioms `[propext, Classical.choice, Quot.sound]`:
 
-* **`arg (1 − x·t)` is an explicit step function** — `if 1 - x*t < 0 then π
-  else 0`, via `Complex.arg_ofReal_of_neg` / `arg_ofReal_of_nonneg`. Bounded and
-  obviously integrable. This part drafted cleanly.
-* **The real part** is `Real.log (1 − x·t)` (`Real.log_abs` makes `|·|` free).
-  `intervalIntegrable_log'` gives `Real.log` unconditionally; what is missing is
-  the **affine composition** — getting from `IntervalIntegrable Real.log` to
-  `IntervalIntegrable (fun t => Real.log (1 - x*t))`. `IntervalIntegrable.comp_mul_left`
-  exists but carries two `enorm ≠ ∞` side conditions, and I did not find the
-  matching `comp_sub_left` form in the time available. **This single step is the
-  blocker.**
-* **Peeling `1/t` off** on `[c,1]` is `IntervalIntegrable.mul_continuousOn`
-  (exists, `t ≥ c > 0` so `1/t` is continuous there).
-* **`[0,c]` by rescaling**, avoiding any edit to the existing slitPlane lemma:
-  with `c = 1/(2x)` and `g(u) = log(1 − u/2)/u` (integrable by the existing
-  lemma, `Re(1 − u/2) ≥ 1/2`), the algebra gives `g(t/c) = c·f(t)` exactly, so
-  `comp_mul_left` with factor `1/c` transports integrability from `0..1` to
-  `0..c`. **Checked on paper; not yet in Lean.**
+```
+intervalIntegrable_clog_one_sub_mul (x a b : ℝ) :
+  IntervalIntegrable (fun t => Complex.log (1 - x*t)) volume a b
+```
 
-So the honest state is: three of four sub-steps have their Mathlib lemma named,
-and the fourth (affine composition of `intervalIntegrable_log'`) is the one to
-solve first. Nothing here is deep; it is API archaeology.
+on **any** interval — logarithmic singularity at `t = 1/x` and branch jump
+included. Non-vacuity checked at `x = 2`, where the singularity is strictly
+inside `[0,1]`.
+
+Two things priced as hard were not:
+
+* **The branch jump is not an obstacle.** `arg (1 − x·t)` for real arguments is
+  an explicit **two-valued step function** (`0`, then `π`) — bounded and
+  measurable, integrable for free.
+* **Integrating `log` through its own singularity is already in Mathlib**, twice:
+  `intervalIntegrable_log'` unconditionally, and
+  `intervalIntegrable_log_norm_meromorphicOn`, which is what this uses. `1 − x·t`
+  is affine ⟹ analytic ⟹ meromorphic.
+
+**That second lemma also dissolved the recorded blocker**: it takes the affine
+map as its *hypothesis* rather than requiring it to be composed in afterwards,
+so the composition never has to happen. The lesson is narrow but repeatable —
+*when a composition fights you, look for the lemma that takes the inner function
+as a hypothesis.*
+
+### What remains in step (1): the `1/t` assembly
+
+`cLiTwoExt`'s integrand is `log(1−x·t)/t`, and the `1/t` is a **second,
+independent** singularity at `t = 0` — removable, and *not* the one just handled.
+
+1. Split at `c = 1/(2x)` with `IntervalIntegrable.trans` (`1 − x·t ≥ 1/2` on `[0,c]`).
+2. On `[c,1]`: `1/t` is continuous (`t ≥ c > 0`), so
+   `IntervalIntegrable.mul_continuousOn` applies to the theorem above.
+3. On `[0,c]`: rescale to the **existing** `intervalIntegrable_log_one_sub_div_of_slitPlane`
+   — with `g(u) = log(1 − u/2)/u` (its hypothesis holds, `Re(1 − u/2) ≥ 1/2`),
+   the algebra gives `g(t/c) = c·f(t)` exactly, so `IntervalIntegrable.comp_mul_left`
+   transports `0..1` to `0..c`. **Checked on paper; not in Lean.**
+
+Step 3 is the only one with work left, and it needs no new analysis — the
+existing lemma plus a change of variables.
+
+**Then step (2)**, the real identity `Re Li₂(x) + Li₂(1/x) = π²/3 − ½·log²x`,
+is still untouched.
 
 ## Attack vectors (A1 and A3 are now SUPERSEDED by A2's result)
 
