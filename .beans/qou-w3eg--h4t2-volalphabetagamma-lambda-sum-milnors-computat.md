@@ -78,6 +78,65 @@ proved: `volChart` stays **defined** as the Λ-sum and labelled analytic;
 `Vol(4₁) = 2·V_tet` stays **numerical, labelled numerical**. A tier that cannot
 be closed gets a bean, not a `sorry`.
 
+## 2026-08-08 UPDATE — the sources landed (commit `31264594`)
+
+The owner uploaded four of the six wanted refs; **Ratcliffe §10.4 and Thurston
+Ch. 7 stayed paywalled**. What the sources changed:
+
+**1. Milnor 1982 full text is in `uploads/Download (2).pdf`** — the Appendix
+carries the proof. It states the target verbatim:
+
+> "ideal hyperbolic 3-simplex … If α, β, γ are the dihedral angles along three
+> edges meeting at a common vertex, then α + β + γ = π and
+> volume = Λ(α) + Λ(β) + Λ(γ)."
+
+and the route, which **confirms the H4-2/H4-3 decomposition above** rather than
+revising it: *place the simplex with one face on the hemisphere
+`z = (1−x²−y²)^{1/2}` and the opposite vertex at ∞, then project orthogonally to
+the unit disk*. The orthoscheme computation ends
+`(Λ(π/2+a) + Λ(2a) + Λ(π/2−a) − Λ(0))/4`, which the duplication identity
+collapses to **`volume = Λ(a)/2`** — H4-4 exactly as scoped.
+
+**2. H4-4's two inputs are now PROVED (sorry-free).** Milnor's proof needs `Λ`
+π-periodic and `Λ(2a) = 2Λ(a) + 2Λ(a+π/2)`; both follow from Clausen lemmas
+already in the tree:
+
+| new | how |
+|---|---|
+| `Lob_add_pi : Λ(t+π) = Λ(t)` | `Cl_2_add_two_pi` (Λ doubles the argument) |
+| `Lob_duplication : Λ(2a) = 2Λ(a) + 2Λ(a+π/2)` | `Cl_2_duplication` at `θ=2a` + `Cl_2_two_pi_sub` at `π−2a` |
+
+Both numerically cross-checked to `1e-31` at five angles. Milnor's **general**
+multiplication identity `Λ(nθ) = n Σ_{k mod n} Λ(θ + kπ/n)` is NOT proved — only
+the `n=2` case the volume proof consumes. General case still open here.
+
+**3. The AFP Poincaré Disc entry has NO volume theory — checked, not assumed.**
+Source extracted from `uploads/afp-Poincare_Disc-current.tar.gz`: 11 theory
+files, **11 289 lines**, and **0 hits** for `volume` / `area` / `lebesgue` /
+`integral`. Its sections are h-lines, h-distance, h-betweenness, h-circles,
+h-perpendicularity, Tarski axioms — a **synthetic** development in the
+**2-dimensional disc**, not Riemannian and not `H³`.
+
+> **Consequence, and it is the important one: there is NO prior art to port.**
+> Hyperbolic *volume* appears to be unformalized in every proof assistant, not
+> just Mathlib. H4 is new formalization, not a translation exercise. This
+> raises confidence in the multi-week estimate rather than lowering it.
+
+**4. `uploads/1010.5321v3.pdf` = Horváth, *Formulas on hyperbolic volume*** —
+orthoscheme volume via the Lobachevsky integral, explicitly avoiding the
+Schläfli differential formula, with edge-lengths as parameters. Worth reading
+for H4-4 if Milnor's angle-parameter route proves awkward in Lean; not yet read
+past the abstract.
+
+**5. Neumann–Zagier is `uploads/1-s2.0-0040938385900047-main (2).pdf`** — the
+filename confirms DOI `10.1016/0040-9383(85)90004-7`, so the "unverified from
+memory" DOI in the table below was **correct**. Still safe to cite only after a
+proper read.
+
+**Still wanted:** Ratcliffe §10.4 (paywalled) — or any full-text Thurston Ch. 7 —
+specifically for the **obtuse-triangle sign convention** in H4-3/H4-5, which
+Milnor's Appendix compresses and which is the flagged place to go wrong.
+
 ## Literature wanted
 
 DOIs below marked **[verified]** were checked online this session; the rest are
