@@ -41,3 +41,21 @@ There is no `witness-pipeline.yml` in the tree despite AGENTS.md referencing
 one. So "wire into CI" has no host today — it wants either a
 `workflow_dispatch` job or a pre-commit hook, and per AGENTS.md §"QA is
 agent-owned; CI is a backup" the agent-run path is the real gate anyway.
+
+## 2026-08-08 — item 1 done: `--strict` is green (PR #4833)
+
+Resolved by option (a′): a per-LINE, **content-hashed** exemption
+(`LINE_EXEMPTIONS`, sha256/12 of the stripped line) rather than any loosening
+of the .md pass. Matches how `.qa.json` sidecars and `*.witness.json` pin their
+sources — edit the sentence and the exemption lapses, which a path- or
+line-number exemption cannot promise, and unlike an `ALLOWLIST_SUBSTR` entry it
+does not blind the guard to the rest of the file.
+
+Documented bar for adding one: the line must state the deprecated figure *and*
+its correct scope. Both entries qualify ("2.89 % bare", "+2.89% open gap", each
+beside the live +1.35 ppb). Two test cases enforce it — the exemptions must
+still match live lines, and a mutated line must re-flag.
+
+**Item 2 (CI wiring) remains open** and is unchanged: nothing runs this guard,
+`build.yml` is `workflow_dispatch`-only, and there is no `witness-pipeline.yml`
+in the tree. Needs either a dispatch job or a pre-commit hook.

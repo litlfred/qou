@@ -26,12 +26,16 @@ under it), `no <deprecated-token>` as an absence disclaimer, NAMES_THE_GAP
 (.py only — see its note), the audit_/probe_/sweep_ filename prefixes, and
 `m_p-pin` excluded from MASS_CONTEXT as a q₀-anchor name.
 
+`--strict` is green as of 2026-08-08. The last two hits were correct,
+carefully-qualified prose in docs/precision-goals.md ("2.89 % bare", "+2.89%
+open gap", both sitting beside the live +1.35 ppb). They are cleared by
+LINE_EXEMPTIONS — a per-LINE, content-hashed exemption — rather than by
+loosening the .md pass, which is this guard's primary surface and where the
+recurrence actually happened. Editing either sentence re-flags it.
+
 Not yet wired into CI: no workflow currently runs this guard, and repo CI
-auto-triggers are disabled (AGENTS.md). `--strict` is also still 2 hits short
-of green on docs/precision-goals.md; both are correct, carefully-qualified
-prose ("bare", "open gap"), so clearing them means a deliberate loosening of
-the .md pass and is left as its own decision — NOT worth buying green by
-weakening the primary surface.
+auto-triggers are disabled (AGENTS.md), so the agent-run path is the gate
+(AGENTS.md §"QA is agent-owned; CI is a backup").
 
 Verified against the defect it was built for (2026-08-08): with
 mass_table_comprehensive.py at its pre-fix revision, `--scan-py` flags line 9
@@ -46,6 +50,7 @@ from __future__ import annotations
 
 import argparse
 import ast
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -126,6 +131,33 @@ COUNTERFACTUAL = re.compile(
 
 def is_allowlisted(rel: str) -> bool:
     return any(s in rel for s in ALLOWLIST_SUBSTR)
+
+
+#: Individual LINES cleared by review, keyed by the sha256 (12 hex) of the
+#: stripped line. Content-addressed on purpose, matching how `.qa.json`
+#: sidecars and `*.witness.json` pin their sources: **edit the sentence and it
+#: re-flags**, which a path-or-line-number exemption cannot promise. Use this
+#: instead of adding a whole file to ALLOWLIST_SUBSTR — that blinds the guard
+#: to everything else in the file, forever.
+#:
+#: The bar for adding one: the line must state the deprecated figure *and* its
+#: correct scope, so a reader cannot mistake it for the live status. Both
+#: entries below do (they say "bare" / "open gap" and sit beside the live
+#: +1.35 ppb). A line that merely *mentions* the figure does not qualify —
+#: fix its prose instead.
+LINE_EXEMPTIONS: dict[str, str] = {
+    # docs/precision-goals.md:51 — a table of residual SCALES; "m_avg: 2.89 %
+    # bare → 819 ppm spectral" is the bare categorical figure, correctly
+    # distinguished from the m_p 242 ppb μ-p floor in the same cell.
+    "a78f1225dba6": "precision-goals: bare-vs-anchored residual scale table",
+    # docs/precision-goals.md:225 — explicitly contrasts the *bare* categorical
+    # value with the live anchored +1.35 ppb two lines above it.
+    "15319ed2998a": "precision-goals: bare categorical value, contrasted with +1.35 ppb",
+}
+
+
+def is_exempt_line(line: str) -> bool:
+    return hashlib.sha256(line.strip().encode()).hexdigest()[:12] in LINE_EXEMPTIONS
 
 
 # Scope: the surfaces where a STALE live-status claim actually misleads a reader — the
@@ -268,6 +300,8 @@ def scan(scan_py: bool = True) -> list[tuple[str, int, str]]:
             if not MASS_CONTEXT.search(line):
                 continue
             if NEGATED.search(line):
+                continue
+            if is_exempt_line(line):
                 continue
             hits.append((rel, i, line.strip()[:160]))
     # Production .py docstrings — the surface between the prose guard (content/
