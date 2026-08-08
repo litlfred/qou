@@ -29,15 +29,23 @@ guess:
 
 | verdict | meaning |
 |---|---|
-| `WRITES` | the script constructs `WitnessBuilder` with a name matching the witness stem — definitive |
-| `UNCONFIRMED` | the filename appears in the script, but not via a builder — could be a read, could be a hand-rolled write |
-| `NOT_A_PRODUCER` | the filename never appears and no builder matches — the claim is almost certainly false |
+| `WRITES` | a `WitnessBuilder` name matches the stem — literal, or an f-string matched as a pattern |
+| `UNCONFIRMED` | the script mentions *some* witness, or builds one under a computed name — cannot confirm, cannot deny |
+| `NOT_A_PRODUCER` | the script mentions **no witness at all** — the claim cannot be true |
 
 `UNCONFIRMED` is deliberately not folded into either neighbour. The `chi-*`
-case is precisely a filename that *appears* in the named script, so a
-"mentions it" test would have called it a producer and reproduced the original
-error. Only `NOT_A_PRODUCER` is asserted as wrong; `UNCONFIRMED` is asserted as
-unchecked, which is a different and honest thing to say.
+case is a filename that *appears* in the named script, so a "mentions it" test
+would have called it a producer and reproduced the original error. Only
+`NOT_A_PRODUCER` is asserted as wrong; `UNCONFIRMED` is asserted as unchecked,
+which is a different and honest thing to say.
+
+**Three times the rule was too aggressive, and each cost an order of
+magnitude** — 324 → 189 → 28 → 3. Missing `WitnessBuilder.wrap_legacy` (229
+call sites); treating an f-string name as unknowable rather than as a pattern;
+and requiring the *concrete* filename when a script may write through a
+computed path. Each intermediate was a plausible number, and each died on
+reading one cited file. Hence the final rule's conservatism: absence is only
+claimed when the script mentions no witness whatsoever.
 
 ## Why not just re-run and see
 
