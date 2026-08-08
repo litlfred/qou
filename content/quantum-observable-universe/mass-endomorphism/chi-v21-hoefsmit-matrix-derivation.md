@@ -35,9 +35,9 @@ Unlike V_(3) where the inverse-Laurent has only one term ($q^{-1}/4$,
 giving bounded oscillation), V_(2,1) has two inverse terms ($q^{-1}/4$
 and $q^{-3}/4$), and the $q^{-3}/4$ term has $\binom{k+2}{2}$ growth
 $\sim k^2/2$. This matches the observed asymptotic $\sim k(k+3)/2$
-for the V_(2,1) coefficients (proved earlier in the conversation).
+for the V_(2,1) coefficients.
 
-## Deferred to follow-up PR
+## Not yet formalised
 
 The **full Lean matrix-product trace derivation** (computing
 $\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2$\times$2

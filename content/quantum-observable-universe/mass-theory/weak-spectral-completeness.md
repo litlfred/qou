@@ -98,10 +98,7 @@ $e_X^\pm$ in $H_2(q)$.
 > signature." That uniform-weight expression was a degenerate
 > artifact of the dimensionally-collapsed $H_2(q)$-only
 > formulation (six rank-1 projectors cannot fit in a 2-dim
-> algebra; see audit
-> [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md)
-> §"Plancherel weight is degenerate special case"). The Hoefsmit
-> $n=6$ formulation supersedes it.
+> algebra). The Hoefsmit $n=6$ formulation supersedes it.
 
 The substrate-level structural quantity is the cell-content
 trace, computed directly from the eight pure-pattern
@@ -166,4 +163,4 @@ If this conjecture closes:
   becomes derivable from $(q_0, m_e)$ alone, closing every β-decay
   half-life prediction simultaneously.
 
-**Archimedean specialisation.** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

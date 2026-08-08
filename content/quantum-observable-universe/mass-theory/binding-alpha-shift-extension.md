@@ -12,7 +12,7 @@ $$
 
 The candidate `(p, k)` values per nucleus are hypothesised; the rigorous
 identification from the substrate's
-Hecke-Wedderburn block structure on $H_{3A}(q)$ is Phase 3 open math.
+Hecke-Wedderburn block structure on $H_{3A}(q)$ is open.
 
 The $A \ge 3$ binding gap, the per-nucleus candidate table and its
 rationale, the Lean structure, and the remaining open math

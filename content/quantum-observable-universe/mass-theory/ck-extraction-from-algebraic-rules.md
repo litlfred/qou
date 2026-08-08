@@ -11,7 +11,7 @@ $$
 $$
 
 with $b = \sqrt{q^4+q^2+1}/(q^2+1)$ (Hoefsmit $V_{(2,1)}$ off-diagonal
-coupling). This block formalises the claim that these closed forms
+coupling). We formalise the claim that these closed forms
 are **derivable outputs** of four algebraic reduction rules, not
 phenomenological identifications.
 
@@ -60,7 +60,7 @@ The class skeleton makes each rule a **separate instance** to discharge,
 turning the c_k extraction into a structured Lean-engineering programme
 rather than a single open conjecture.
 
-## Open R&D
+## What remains open
 
 - Replace the `True` ansatz fields with the substantive matrix
   identities they encode (`yb_cubic` $\leftarrow$ Hoefsmit YB cubic; `hecke_quad`

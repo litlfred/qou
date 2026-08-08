@@ -46,16 +46,15 @@ Two consequences follow:
 2. **It closes the binding program.** Given $R$, the recurrence of
    [`prop:binding-genfun-qdifference`](#prop:binding-genfun-qdifference)
    determines every body term from the deuteron base case (fixing the
-   $\rho\cdot A$ growth law), which is precisely the per-term mass identity
-   (B). Feeding (B) into
+   $\rho\cdot A$ growth law), which is precisely the per-term mass identity. Feeding it into
    [`thm:binding-closure-conditional`](#thm:binding-closure-conditional)
    discharges its one conditional input, promoting
    [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
 This conjecture is therefore the **single keystone** of the step-9b binding
-closure: the residue form (D), the body-order = jet-degree coincidence (C), and
-the recurrence machinery (L3) are all proved; only the identification of $R$
+closure: the residue form, the body-order = jet-degree coincidence, and the
+recurrence machinery are all proved; only the identification of $R$
 with the prolongation symbol remains. It is stated here as a precise,
 falsifiable structural claim — to be *derived* from the prolonged connection's
-local monodromy, not searched canonical.
+local monodromy, not fitted numerically.

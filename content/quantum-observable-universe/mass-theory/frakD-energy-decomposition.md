@@ -25,10 +25,8 @@ zero retained part — a purely decay-channel energy
 calibrations (the width $\mathfrak{D}$ is the CAL-2 datum), rather than a
 fourth calibration.
 
-The narrative caveat recorded in
-[`docs/coordination/e-unit-deuteron-scale.md`](../../../docs/coordination/e-unit-deuteron-scale.md)
-stands: whether the deuteron binding actually carries this bar-odd character
-is empirically open (the landed data weakly favour a bar-even unit). The
+One caveat stands: whether the deuteron binding actually carries this bar-odd
+character is empirically open (the landed data weakly favour a bar-even unit). The
 proposition formalizes the *decomposition itself*, which holds regardless;
 the parity assignment of the physical $E_{\text{unit}}$ is the open input.
 

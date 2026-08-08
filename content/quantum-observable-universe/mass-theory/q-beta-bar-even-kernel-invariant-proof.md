@@ -26,6 +26,5 @@ and higher, which the bar-even ladder absorbs trivially). $\blacksquare$
 
 The bar-even discriminant explains the asymmetry structurally: $\alpha_{\text{EM}}$
 admits a scalar Habiro element because its kernel is bar-even; $\mathfrak{Q}_\beta$ does
-not, so its $c_k \ge 3$ requires the **operator-level grading** (the open
-[canonical evaluation-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md)
-spec from the closed sibling analysis).
+not, so its $c_k \ge 3$ requires the **operator-level grading**, which
+remains open.

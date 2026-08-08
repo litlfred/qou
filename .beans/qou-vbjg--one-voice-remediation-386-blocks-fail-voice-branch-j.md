@@ -111,7 +111,50 @@ Mechanical bulk first (A, C, D), then the semi-mechanical phrase substitution
 
 Validation held at `✓ Valid — 10 issue(s)` throughout — the same 10 as before.
 
-**In flight.** Three subagents on bucket F (`docs/audits/*` and
+**Two chapters are now clear of every detector** — `mass-theory` and
+`mass-endomorphism`, the two largest, together 199 of the 386 failures.
+
+Subagents did bucket F there (46 sites / 31 files and 22 sites / 17 files
+respectively, all three outcomes used). I then took the rest by hand:
+
+* **A second standing boilerplate** turned up that the first pass missed —
+  `> **SUPERSEDED-$\rho_q$ note .**` in 12 blocks. Rewritten as
+  `> **Superseded.**`, which also **fixed a broken link**: it pointed at
+  `../braids-and-knots/mass-endomorphism-tower.md` (the file is in
+  `mass-theory/`) with a `§SUPERSEDED` anchor that does not exist.
+* **The duality tracker.** `docs/duality-tracker.md` calls itself "coord doc"
+  in its own first line and cites a PR for its rationale, so it is the same
+  class as `docs/audits/*`. Its D-numbers had propagated into conjecture
+  *titles* — `**Conjecture (D7 parity closure).**`, `(D16 …)`, `(D15 …)`,
+  `(D21 …)`, `(D17 …)` — and through the bodies. Each D-number names a
+  conjecture that already has a name, so each was replaced by it.
+* **A `## Diagnostics` stanza addressed to an agent skill file** —
+  `Per [.claude/skills/local/canonical-watcher.md](…) §Slot J:` — in 5 blocks.
+  The three bullets under it (GB filtration level, jet order, bar-symmetry
+  status) are real structural data and stay; the heading became
+  `## Structural invariants` and the skill-file line is gone. `## Open R&D`
+  became `## What remains open`.
+* `B1` throughout the bodies, `L2`/`L3` roadmap tiers, `Phase 3`/`Phase 5g`/
+  `Track C`/`Path A`, remaining PR links, one bean id, `§3b-cond` in two
+  published `.ts` titles, and the 33 non-boilerplate `this block` uses.
+* In the keystone `conj:qdifference-kernel-prolongation-symbol` itself: the
+  bare labels `(B)`, `(C)`, `(D)`, `(L3)`, none defined in the block, and a
+  garbled tail ("not searched canonical" → "not fitted numerically").
+
+**False positives correctly left alone.** `c_k^{L2}` in
+`t-beta-markov-frobenius-collapse.md` is the Euclidean $L^2$ norm, named in the
+sentence above it — the notation was tightened to `c_k^{\,L^2}` so it stops
+reading as the roadmap tier. `Markov-trace audit on ${}^3$He` in
+`mass-endomorphism-conjecture.md` is "audit" in the ordinary sense.
+`BindingPerRepReebPhase` is a Lean class name.
+
+**One subagent flag was wrong, checked and dismissed:** it reported
+`witness qbeta-ck-sseries-operator-match` as dangling and now the sole support
+for a sentence. The witness exists —
+`computations/qbeta/qbeta-ck-sseries-operator-match.witness.json`; the search
+missed the subdirectory.
+
+**Still in flight.** One subagent on bucket F (`docs/audits/*` and
 `docs/coordination/*` cited as published sources): 137 sites across 73 files,
 partitioned `mass-theory` / `mass-endomorphism` / the other fourteen chapters.
 They also carry the worst individual offenders in their patches

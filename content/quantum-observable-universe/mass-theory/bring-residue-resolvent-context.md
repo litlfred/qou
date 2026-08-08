@@ -1,9 +1,7 @@
 ## The shared smaller-scope open math, now scaffolded
 
-The α_shift universal derivation chain (audit doc
-[α_shift universal derivation chain](../../../docs/audits/2026-05-30-alpha-shift-universal-derivation-chain.md))
-identified the pole-order origin of the q-integer indices in several
-"empirical" fits.  What remained shared across the α_EM, p-n averaging,
+The α_shift universal derivation chain identified the pole-order origin
+of the q-integer indices in several "empirical" fits.  What remained shared across the α_EM, p-n averaging,
 and meson m_K/m_π treatments was
 the residue/resolvent step: deriving the closed form
 $F_n(q) = 1 / (1 - h_q \cdot q^n)$ from the contour-integral

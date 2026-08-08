@@ -36,8 +36,10 @@ hyperbolic atoms (per
 | ${}^{3}\mathrm{He}$     | link $L_{6a4}$    | 2 | 2 |
 
 The ${}^{4}\mathrm{He}$ case uses the magic $A \cdot 8G$ closure rule rather than a
-census knot. The follow-up R&D that this block flagged has since been carried
-out (a binding-arbiter probe against AME2020), and it does **not** confirm an
+census knot. The follow-up work flagged here has since been carried
+out — a binding-arbiter probe against AME2020,
+[`he4_nu_sdp_binding_arbiter.py`](../../../computations/probes/he4_nu_sdp_binding_arbiter.py)
+— and it does **not** confirm an
 integer $\nu_{\mathrm{SDP}}(⁴\mathrm{He})$: the data-pinned prefactor is
 $\rho_F(⁴\mathrm{He}) = B_{\mathrm{AME}}/(m_e A\,8G) \approx 1.889$, which sits
 **strictly between** the isospin count ($2T{+}1 = 1$, $T{=}0$) and the monotone
@@ -48,16 +50,12 @@ Consequently the identity $\rho_F = \nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ is
 ${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$), where $\rho_F = A{-}1$ is exact and the
 SDP framing is canonical. At the doubly-magic point the prefactor is an
 **empirical effective binding coefficient** ($\approx 1.89$, Coulomb-corrected
-$\approx 1.94$), not an integer categorical multiplicity. Full analysis:
-[`docs/audits/2026-08-02-rho-f-cap-no-derived-origin.md`](../../../docs/audits/2026-08-02-rho-f-cap-no-derived-origin.md)
-and
-[`docs/audits/2026-08-02-he4-nu-sdp-decisive-2-not-3.md`](../../../docs/audits/2026-08-02-he4-nu-sdp-decisive-2-not-3.md).
+$\approx 1.94$), not an integer categorical multiplicity.
 
 ## Categorical home (driver x of the 13-driver menu)
 
 This identity falls under driver (x) **MacMahon-style
-partition-algebra identities** of the canonical-derivation menu
-([`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)).
+partition-algebra identities** of the canonical-derivation menu.
 The Wedderburn multiplicity of $T_w$'s SDP solution is a
 partition-algebra count: it is the dimension of the saturating
 projection in the irreducible-block decomposition
@@ -109,14 +107,11 @@ conjecture-conditional adoption, $\rho_F$ is:
    inhabit — replacing the open-ended "pending formal justification"
    with an auditable conjecture-conditional dependency.
 
-Owner authorised this adoption per Rule-14 procedure
-, in response to
-[`docs/audits/-rule14-kashaev-density.md`](../../docs/audits/-rule14-kashaev-density.md)
-§Recommendation.
+Owner authorised this adoption per Rule-14 procedure.
 
 ## Notation hazard resolved
 
-Prior to this block, three distinct quantities used the symbol $\rho$
+Before the present convention, three distinct quantities used the symbol $\rho$
 in QOU compute and content (per
 [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) §Notation):
 
@@ -132,14 +127,13 @@ removing the third unnamed $\rho$.
 ## Consumers
 
 - the canonical formalism
-  — ATOM_ASSIGN.`nu_sdp` field (renamed from `rho_factor` in the same
-  PR that introduces this block)
+  — ATOM_ASSIGN.`nu_sdp` field (renamed from `rho_factor`)
 - the canonical formalism
   — reads `nu_sdp` and emits `B_pred = nu_sdp · m_e · Vol(K)`
 - [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
   §Algorithm step 3 — supplies $\nu_{\mathrm{SDP}}$ via joint-tower SDP
 
-## Open R&D
+## What remains open
 
 1. **${}^{4}\mathrm{He}$ resolved (negative).** The binding-arbiter probe
    found $\rho_F(⁴\mathrm{He}) \approx 1.889$ — not an integer, and no
@@ -150,12 +144,8 @@ removing the third unnamed $\rho$.
    ${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$) remain the exact domain of the
    $\rho_F = \nu_{\mathrm{SDP}}$ identity.
 2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$** — the A$\in${5,6,7} gap
-   per
-   [`docs/audits/-a5-a7-isotope-wiring-gap.md`](../../docs/audits/-a5-a7-isotope-wiring-gap.md)
    needs $\nu_{\mathrm{SDP}}$ values; the wider atom$\to$knot census Rule-14
-   escalation per
-   [`docs/audits/-rule14-atom-knot-census.md`](../../docs/audits/-rule14-atom-knot-census.md)
-   recommends waiting for R5-full SDP (owner-decided).
+   escalation is deferred until R5-full SDP ships (owner-decided).
 3. **Extend joint-tower SDP to α-cluster atoms (${}^{8}\mathrm{Be}$ and up)** — the
    α-cluster rule inherits $\rho_F = 2$ from ${}^{4}\mathrm{He}$; verifying
    $\nu_{\mathrm{SDP}} = 2$ across the α-cluster recursion would close
@@ -163,14 +153,6 @@ removing the third unnamed $\rho$.
 
 ## Cross-references
 
-- Rule-14 escalation:
-  [`docs/audits/-rule14-kashaev-density.md`](../../docs/audits/-rule14-kashaev-density.md)
-- Sibling Rule-14 escalation (deferred to R5-full SDP):
-  [`docs/audits/-rule14-atom-knot-census.md`](../../docs/audits/-rule14-atom-knot-census.md)
-- 13-driver menu (driver x — MacMahon partition algebra):
-  [`docs/audits/-lambda-scale-canonical-unification.md`](../../docs/audits/-lambda-scale-canonical-unification.md)
-- Coordination ledger:
-  [`docs/coordination/-post-1089-followups-ledger.md`](../../docs/coordination/-post-1089-followups-ledger.md)
 - Underlying Kashaev volume conjecture:
   [`kashaev-volume-conjecture`](kashaev-volume-conjecture.md)
 - $\nu_{\mathrm{SDP}}$ algorithmic definition:

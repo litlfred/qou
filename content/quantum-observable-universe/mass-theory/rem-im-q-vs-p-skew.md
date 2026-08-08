@@ -61,10 +61,7 @@ Quantitative consequences differ between the two mechanisms:
    (a) the missing P_skew content at real q (the P_skew channel
    that bar-projection discards), or (b) Im(q) $\ne$ 0 producing
    complex tr_M whose modulus closes the residual.
-   - Per [Phase A v2 audit](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
-     §Path D + the audit at
-     [`m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md):
-     **(b) is ruled out under the current ansatz** (residual is
+   - **(b) is ruled out under the current ansatz** (residual is
      positive everywhere on the Apollonius circle).
    - **(a) is open** — accessible via the explicit Q_m P_skew
      content from .
@@ -89,7 +86,4 @@ Quantitative consequences differ between the two mechanisms:
 - [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
 - [`prop:categorical-mass-markov`](categorical-mass-markov.md) — modulus projection definition
 - [`bar-involution.md`](bar-involution.md) — bar projection definition
-- Sibling PR [#1153](https://github.com/litlfred/qou/pull/1153) — explicit P_skew = sinh formula for torus knots
-- Audit: [`docs/audits/-complex-q-historical-trajectory.md`](../../../docs/audits/-complex-q-historical-trajectory.md) — historical context of ℂ in physics
-- Audit: [`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) §Implications — Phase 3 finding distinguishing the two mechanisms
 - [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification

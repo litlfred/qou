@@ -57,7 +57,7 @@ shapes differ). However:
    the f-map. The $z$-recursion is a structural input to the f-map
    derivation, not a substitute for the ladder $c_k$ recursion.
 
-## Claims not established by this block
+## Claims not established here
 
 - **A concrete `CKRecursion ℝ` instance.** That would require the
   open f-map identification (the 1ppQ-Q$_\beta$ keystone).

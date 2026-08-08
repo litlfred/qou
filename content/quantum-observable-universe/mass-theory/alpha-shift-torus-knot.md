@@ -56,5 +56,4 @@ $$
 $$
 
 upgrading AXKIA's $\delta_q$-trace identity into the same
-combinatorial universe as the w3-w4 atomic-shift formula
-([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)).
+combinatorial universe as the w3-w4 atomic-shift formula.

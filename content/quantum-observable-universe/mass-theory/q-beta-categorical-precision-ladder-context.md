@@ -1,9 +1,9 @@
-> **SUPERSEDED by Habiro-ring identification .**
+> **Superseded by the Habiro-ring identification.**
 > The per-rung c_k coefficients below are the Taylor expansion of the
 > EXACT, FINITE Habiro sum `Σ_{m=0}^{M} a_m(u) · (u;u)_m` with
 > `a_m ∈ ℤ[u]` and `M = 8` (proton/neutron). The precision ladder was
 > useful when the closed form was unknown; now that the Habiro
-> identification is established, production uses the exact evaluation
+> identification is established, the exact evaluation is used
 > (no rung-by-rung truncation). See
 > [`prop:habiro-precision-ladder-equivalence`](../../braids-and-knots/habiro-precision-ladder-equivalence.md).
 >
@@ -77,8 +77,6 @@ upgrade is to identify the $\mathfrak{Q}_\beta$ **Habiro element** whose Taylor
 coefficients *are* the $c_k$ — the same machinery that made the $\alpha_{EM}$
 next-order factor $[2]_q(1-h^2\alpha)$ binomial-exact
 ([`prop:em-coupling-bring-zero-mode`](#prop:em-coupling-bring-zero-mode)).
-Full discipline:
-[`docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md`](../../../docs/audits/2026-05-31-qbeta-ck-truncation-order-canonical-framing.md).
 
 ## canonical precision ladder
 
@@ -120,16 +118,15 @@ CAL-2 substrate data alone.
 
 ## Open
 
-The audit ([`-qbeta-all-ck-categorical-extension.md`](../../../docs/audits/-qbeta-all-ck-categorical-extension.md))
-reduced $c_4, c_5$ to closed forms in the two categorical primitives
+Extending the categorical treatment to all $c_k$ reduced
+$c_4, c_5$ to closed forms in the two categorical primitives
 $b$ (Hoefsmit Kashiwara) and $c_3 = -2$ (Hopf Jones at $q{=}1$), with
 sub-percent empirical match. The remaining open questions:
 
 1. **Why $c_4 = c_3 \cdot b^4$?** The multiplicative Jones $\times$
    Kashiwara mixing has no derived categorical proof yet. Suggested
    source: spectral-sequence stratification of the Wedderburn-block
-   cohomology of $H_n(q)$ — see
-   [`-qbeta-n5-cohomological-breakdown.md`](../../../docs/audits/-qbeta-n5-cohomological-breakdown.md).
+   cohomology of $H_n(q)$.
 
 2. **Why $c_5 = c_3^2 \cdot 3 + b$?** The Jones-squared $\times$
    3-fold-closure-factor + Kashiwara additive form is suggestive

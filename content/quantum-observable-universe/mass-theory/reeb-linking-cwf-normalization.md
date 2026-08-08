@@ -35,5 +35,5 @@ $g^2\,(1 + [2]_v^2) = 1$, equivalently $g^2\,(5 + (v - v^{-1})^2) = 1$.
 It does not supply the MeV unit for the deuteron binding law: the linear
 $B(^2\mathrm{H}) = 5g$ rule remains a near-match with its unit anchor open
 and its unit anchor open. No instance of the class is provided; per the corpus discipline,
-axiomatization is not proof and this block does not unblock any production
+axiomatization is not proof, and nothing here unblocks any downstream
 wiring.

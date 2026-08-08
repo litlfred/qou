@@ -133,7 +133,7 @@ central operator). $\square$
 
 **Empirical confirmation (Markov-trace level).**
 [`canonical evaluation-phiq-pair-knot-markov-trace.witness.json`](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json)
-(PR [#638](https://github.com/litlfred/qou/pull/638)) computes
+computes
 $\mathrm{tr}_M(\sigma_{pp})$ and $\mathrm{tr}_M(\sigma_{nn})$ via
 Hoefsmit seminormal at $q_0$ for $T$ ($n=9$ with $N=2$ shell) and
 ${}^3\mathrm{He}$ ($n=9$ with $Z=2$ shell):

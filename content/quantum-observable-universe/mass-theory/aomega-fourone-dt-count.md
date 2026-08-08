@@ -40,10 +40,10 @@ Conjecture 3 for the figure-eight, so the bridge instance is discharged there;
 the *general* statement (all hyperbolic knots) is the open conjecture
 [`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge). The result is
 **conditional** on that adopted bridge and is **not** wired to production: the
-L2 accuracy dashboard and the $Q_\beta$ ladder are untouched. The *internal*
+The accuracy dashboard and the $Q_\beta$ ladder are untouched. The *internal*
 derivation of the integer $3$ from the QOU categorical drivers (Hecke $H_3$ /
 Bring / Wedderburn), rather than importing it from Garoufalidis--Gu--Mariño,
-remains open (bean `qou-qnnq`).
+remains open.
 
 The bridge here is the **closed** / state-integral BPS sector. The **open**-HOMFLY
 Gukov--Stošić bridge gives the $4_1$ count $\det(4_1) = 5$ (five HOMFLY-homology

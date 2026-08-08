@@ -81,7 +81,7 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >
 > 1. the **Jones-closure** normalisation
 >    $\mathrm{tr}_M = V_{\mathrm{Jones}} / [2]_q^{\,c-1}$ — the
->    convention of *this block's closed form above* — with weights
+>    convention of *the closed form above* — with weights
 >    $y_{(3)} = [4]_q/[2]_q^3$, $y_{(2,1)} = 1/[2]_q^2$,
 >    $y_{(1^3)} = 0$ identically
 >    ([`prop:h3-markov-wenzl-weights`](h3-markov-wenzl-weights.md));
@@ -99,7 +99,7 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 > above. Both budgets sum to zero (each trace separately has
 > $h^2 = 0$), which masked the mismatch.
 
-In the **Jones-closure convention of this block**, the per-partition
+In the **Jones-closure convention used here**, the per-partition
 decomposition is:
 
 - **$\lambda = (3)$ [trivial, dim 1]:** $\chi^{(3)}(\beta_{\mathrm{Bor}}) = 1$

@@ -69,7 +69,7 @@ following decomposition:
 | **(b)** Antisymmetric: $\mathrm{Cl}_3(2\pi/5) - \mathrm{Cl}_3(4\pi/5)$ | **open**: no closed form modulo $\zeta(3)$ + Tate | 1 |
 | **Total** | | **2** (matches Borel rank) |
 
-The genuinely-new content of B1 at depth 3 over $\mathbb{Q}(\zeta_5)$
+The genuinely-new content of the depth correspondence at depth 3 over $\mathbb{Q}(\zeta_5)$
 is therefore **one specific real number**:
 
 $$
@@ -92,6 +92,6 @@ similar weight-3 functional equations.
 | Cl_3(2π/5) + Cl_3(4π/5) | candidate (open) | **theorem**: $-12\zeta(3)/25$ |
 | Cl_3(2π/5) - Cl_3(4π/5) | candidate (open) | **still open** — only remaining genuinely-new content |
 
-**The depth-3 unproved surface for B1 over $\mathbb{Q}(\zeta_5)$
+**The depth-3 unproved surface for the depth correspondence over $\mathbb{Q}(\zeta_5)$
 shrinks from "2 candidate generators, 4 unknowns" to "1 specific
 real number" ($\approx$ 0.955).**

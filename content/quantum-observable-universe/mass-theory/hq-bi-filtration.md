@@ -64,7 +64,7 @@ The bi-filtration interacts with the existing structures on $\mathcal{H}_q$:
 
 ### The bi-filtration as a tooling unification
 
-This block is the **definition layer** for the framework the
+This is the **definition layer** for the framework the
 keystone implies but does not name. Three downstream conjectures
 populate it:
 

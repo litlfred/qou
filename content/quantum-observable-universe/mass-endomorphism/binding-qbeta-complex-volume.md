@@ -162,15 +162,14 @@ that $u(q_0)$ must cross the diagonal $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$
 between the anchors; $u(q_0)$ itself stays open. The measured values live in
 the probe witness, never in the Lean.
 
-## Computational corroboration (this PR)
+## Computational corroboration
 
 The two channels really construct distinct real components of one object: the
 $E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
 $E_0\cdot\Delta(\mathrm{tr})$) provides a precision-ladder $c_2 \approx -8.0$,
 whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
 **brane-tower** ladder
-([`docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md`](../../../docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md),
-witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
+(witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
 the two parities perfectly align with Re/Im components of one complex
 $c_2$.
 

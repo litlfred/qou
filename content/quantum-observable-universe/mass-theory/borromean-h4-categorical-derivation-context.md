@@ -64,7 +64,6 @@ the framework's existing structure.
 > chain (the 3-strand side of the Borromean story). It does **not**
 > resolve the *cross-algebra* obstruction linking 5-strand $A_5$ fiber
 > action to 3-strand $\mathrm{H}_3$ — that was the original GAP-A-4
-> question (`conj:s5-so3-fiber-action`) and remains open per the
-> [T4–T14 retrospective](../../../docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md)
-> (eight candidate cross-algebra functors refuted).
+> question (`conj:s5-so3-fiber-action`) and remains open: eight candidate
+> cross-algebra functors have been refuted.
 

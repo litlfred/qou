@@ -1,10 +1,8 @@
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
+> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used
+> below is the structurally-wrong leading-order ansatz; the operator-valued
+> form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 **Conjecture (Algebraic-geometric dilogarithm equivalence).**
 *The categorical Markov trace of the nonabelian multiplicative integral
@@ -83,7 +81,7 @@ schemes.
 
 ## Conjectural standing
 
-This block is downstream of
+This result is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)), so it is
 necessarily a **conjecture** — propagation of conjectural backing
@@ -185,7 +183,7 @@ $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ — and with it any
 on the complex-volume unification
 ([binding–$Q_\beta$ complex volume](#conj:binding-qbeta-complex-volume)).
 $\Phi_b$ touches binding **only** through that unproven channel
-identity; no statement in this block or in the Lean carriers above
+identity; no statement here or in the Lean carriers above
 assumes it. The channel is carried explicitly as the class
 `SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity
 $S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and the composition with the

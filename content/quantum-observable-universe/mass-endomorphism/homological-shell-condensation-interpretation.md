@@ -53,8 +53,7 @@ $\Phi_n$ has zero matrix entries on non-self-conjugate isotypical
 components, but the operator on the self-conjugate components is
 generically non-trivial. It is not the Plancherel-weighted
 character sum $\sum_{\lambda = \lambda'} w_\lambda \chi^\lambda$,
-which vanishes identically at certain atomic-braid cycle types
-(see [reframing memo](../../../docs/audits/-self-conj-support-reframing.md)).
+which vanishes identically at certain atomic-braid cycle types.
 The $E_\infty^{p, >0}(n) = 0$ collapse condition stated above is
 precisely operator-level (page collapse on the associated graded
 algebra). It remains consistent with this reading.

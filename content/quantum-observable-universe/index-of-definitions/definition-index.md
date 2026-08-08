@@ -852,7 +852,7 @@
 | [conj:geom-universality](#conj:geom-universality) | Universality of $\mathrm{Geom}(K)$: the categorical volume form yields $\mathrm{Vol}(K)$ and $\mathrm{CS}(K)$ | Ch 8 | `qou:QOU.BraidKnot.geom_universality` |
 | [conj:weinberg-angle-categorical](#conj:weinberg-angle-categorical) | Weinberg angle $\theta_W$ as Hecke-eigenvalue ratio on the EW Hoefsmit projectors | Ch 8 | `qou:QOU.BraidsAndKnots.WeinbergAngleCategorical` |
 | [conj:wenzl-positivity-implies-substrate-positivity](#conj:wenzl-positivity-implies-substrate-positivity) | Wenzl positivity at $q_0$ implies substrate $C^*$-Frobenius positivity | Ch 23 | `qou:QOU.AppendixSurreals.WenzlPositivityImpliesSubstratePositivity` |
-| [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding (L3) | Ch 8 | `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` |
+| [conj:wigner-su4-from-spin-isospin](#conj:wigner-su4-from-spin-isospin) | Wigner $\mathrm{SU}(4) = \mathrm{SU}(2)_S \times \mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding | Ch 8 | `qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin` |
 | [conj:yang-mills-mass-gap](#conj:yang-mills-mass-gap) | Yang--Mills Existence and Mass Gap | Ch 3 | `qou:QOU.Torsion.YangMillsMassGap` |
 | [conj:z-eq-n-rho-correction](#conj:z-eq-n-rho-correction) | Z=N substrate-q correction to the Kashaev law: $B = m_e \cdot \mathrm{Vol}_{\rm hyp}(K_A) \cdot (\rho_{\rm struct} + A - [A]_q)$ | Ch 10 | `qou:QOU.BraidKnot.ZeqNRhoCorrection` |
 

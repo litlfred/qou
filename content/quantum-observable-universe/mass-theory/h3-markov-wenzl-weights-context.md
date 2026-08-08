@@ -9,10 +9,9 @@ The framework's **mass and binding computations** use a *different* trace: the
 **full-Hecke Ocneanu** Markov trace, with parameter $z = 1/(q^{1/2}+q^{-1/2})$
 and Wedderburn weights given by the Wenzl Schur-principal specialisation
 (`y_lambda_wenzl_bridge_numeric` $\to$ `closed_form_tau_M`). That trace is proven
-canonical — Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
+canonical — the ladder linear system $=$ the Wenzl Schur element as a
 $\mathbb{Z}$-Laurent identity — in the $y_\lambda$–$\mathrm{tr}_M$ equivalence
-proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its
-three-row weight is $y_{(1^3)}(q) \neq 0$ for $q \neq 1$.
+proof, and its three-row weight is $y_{(1^3)}(q) \neq 0$ for $q \neq 1$.
 
 The two traces **coincide at the symmetric point** $q = 1$ (both give
 $(\tfrac12,\tfrac14,0)$) and on the observable combination carried by
