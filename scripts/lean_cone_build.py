@@ -99,6 +99,9 @@ def main() -> int:
     ap.add_argument("--report", help="write TSV report here (JSON at <report>.json)")
     ap.add_argument("--log-dir", default="/tmp/lean-cone-logs")
     ap.add_argument("--leandir", required=True)
+    ap.add_argument("--min-free-gb", type=float, default=1.5,
+                    help="stop scheduling new modules below this much free disk; "
+                         "drain in-flight work and still write the report")
     args = ap.parse_args()
 
     leandir = Path(args.leandir).resolve()
@@ -164,18 +167,25 @@ def main() -> int:
                 return False
         return True
 
+    def free_gb() -> float:
+        st = os.statvfs(str(out))
+        return st.f_bavail * st.f_frsize / 1e9
+
     def compile_one(m: str) -> tuple[str, int, str, float]:
         ol = olean_of(m)
         ol.parent.mkdir(parents=True, exist_ok=True)
         t = time.time()
         proc = subprocess.run(
             ["lean", "-DautoImplicit=false", *EXTRA_ARGS, "-o", str(ol),
-             "-i", str(ol.with_suffix(".ilean")), str(mods[m]["src"])],
+             str(mods[m]["src"])],
             capture_output=True, text=True,
         )
         outtxt = (proc.stdout or "") + (proc.stderr or "")
         if proc.returncode != 0:
-            (logdir / (m + ".log")).write_text(outtxt, encoding="utf-8")
+            try:
+                (logdir / (m + ".log")).write_text(outtxt, encoding="utf-8")
+            except OSError as e:  # e.g. ENOSPC — never let logging kill the sweep
+                outtxt += f"\n[log write failed: {e}]"
             # a failed lean run can leave a truncated olean behind
             if ol.is_file():
                 try:
@@ -209,10 +219,16 @@ def main() -> int:
                     stack.append(r)
 
     last_report = time.time()
+    disk_stop = False
     with ThreadPoolExecutor(max_workers=args.jobs) as pool:
         futs: dict = {}
-        while ready or futs:
-            while ready and len(futs) < args.jobs:
+        while (ready and not disk_stop) or futs:
+            if not disk_stop and free_gb() < args.min_free_gb:
+                disk_stop = True
+                print(f"DISK GUARD: {free_gb():.2f} GB free < {args.min_free_gb} GB — "
+                      f"no new modules scheduled; draining {len(futs)} in flight",
+                      flush=True)
+            while ready and not disk_stop and len(futs) < args.jobs:
                 m = ready.pop()
                 if status.get(m) is not None:  # already blocked by an upstream failure
                     continue
@@ -250,9 +266,17 @@ def main() -> int:
                 pct = 100.0 * len(status) / total
                 eta = (el / max(len(status), 1)) * (total - len(status))
                 print(f"  [{len(status)}/{total} {pct:.1f}%] ok={nok} err={nerr} "
-                      f"blocked={nbl} inflight={len(futs)} elapsed={el:.0f}s eta={eta:.0f}s",
+                      f"blocked={nbl} ready={len(ready)} inflight={len(futs)} "
+                      f"free={free_gb():.1f}GB elapsed={el:.0f}s eta={eta:.0f}s",
                       flush=True)
 
+    if disk_stop:
+        # Distinguish "never scheduled because the disk guard fired" from
+        # "blocked by a red upstream" — conflating them would inflate the
+        # unknown-because-of-the-corpus bucket with an environment artifact.
+        for m in order:
+            if status.get(m) is None:
+                status[m] = "unscheduled-disk"
     for m in order:
         status.setdefault(m, "blocked")
 
