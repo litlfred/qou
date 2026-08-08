@@ -2084,3 +2084,51 @@ real regeneration.
 a provenance *loss*, and the classifier refusing it is the desired behaviour
 rather than another special case to carve out. Why the rebuild drops the field
 is the next thing to look at — not more classifier exceptions.
+
+## P46 — the wave driver, committed and with its two bugs fixed
+
+`witness_regen_wave.py` replaces the scratch driver. Both of that script's
+failures came from it being a scratch script:
+
+1. **It was bypassed.** Running producers by hand and then `git add -A` staged
+   four unreviewed witnesses, one a 13/77 partial cache captured mid-rebuild.
+   A guard outside the path actually used is not a guard.
+2. **It discarded its own successes.** Its revert reverted *every* dirty
+   witness at the moment it fired, so each `VALUES` verdict wiped the
+   `DECLARED` / `ANCHOR_MIGRATION` results before it. It reported
+   `DECLARED 26 / ANCHOR_MIGRATION 4` at 90/163 while leaving a clean tree —
+   the counters were right and the retention was not.
+
+Both are now structural. Revert takes an explicit path list, never a directory
+and never "everything dirty"; `run_one` diffs the dirty set before and after a
+single producer so it can only ever judge and revert what that producer
+touched. Retention was verified on a 12-producer slice: the driver reported one
+keep, the tree held exactly that one, and it survived a later `VALUES` revert
+in the same run.
+
+It also **refuses to start from a dirty tree** — it cannot otherwise tell its
+own output from someone else's. That guard caught me during this very pass,
+when a manual triage run had left `braid-encoding-audit` modified.
+
+### Most of the failure rate was harness error, not defects
+
+The slice initially showed 7 of 12 `FAILED`, which reads like a corpus in bad
+shape. Sampling the errors gave one cause:
+
+    ModuleNotFoundError: No module named 'pyhecke'
+
+`pyhecke` (the Python package under `tools/pyhecke`) is a *different* thing from
+the `pyhecke_native` extension, and it was simply absent from the child
+`PYTHONPATH`. With both in-repo package roots on the path, the same slice gives
+`FAILED 5`, and two of the recovered producers now run far enough to be judged
+rather than aborting. **A driver that mis-blames its own environment produces
+exactly the kind of number that sends someone hunting for bugs that are not
+there** — the same failure mode as the earlier "unrunnable" qbeta producers and
+the mis-read Python version.
+
+Serial by design, and documented as such: producers write into a shared tree,
+so two in flight revert each other's output. That is how the ⁴He rebuild was
+clobbered by a concurrent wave earlier in this arc.
+
+6 self-tests, covering the two structural properties rather than the verdict
+policy — that lives in `witness_regen_classify` with its own 13.
