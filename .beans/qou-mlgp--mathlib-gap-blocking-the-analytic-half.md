@@ -606,3 +606,51 @@ only `0 <=`. Combined with the new upper bound that pins `log n!` to within
 (vi) is the larger of the two remaining. (v) is a bounded follow-on to this
 commit — the same series, minorised instead of majorised, which needs a
 geometric lower bound on `1/(2k+3)` rather than the constant `1/3`.
+
+## Gap 2 of (A): CLOSED — Robbins, both sides
+
+`QOU/MathlibExt/StirlingRobbins.lean` now carries eight declarations, all
+sorry-free on `[propext, Classical.choice, Quot.sound]`:
+
+    log_stirlingSeq_diff_le_robbins / _ge_robbins     the telescoping steps
+    log_stirlingSeq_sub_le_robbins  / _ge_robbins     telescoped over any range
+    log_stirlingSeq_sub_log_sqrt_pi_le                <= 1/(12n)
+    le_log_stirlingSeq_sub_log_sqrt_pi                >= 1/(12n+1)
+    log_factorial_le_stirling_robbins                 log n! <= main + 1/(12n)
+    le_log_factorial_stirling_robbins                 log n! >= main + 1/(12n+1)
+
+with `main = n log n - n + (log n)/2 + log(2 pi)/2`. That is full Robbins.
+
+**THE LOWER BOUND NEEDED NO SERIES ESTIMATE.** The terms are all nonnegative, so
+the sum dominates its FIRST term `(1/3) x`, and that alone already beats the
+telescoping gap:
+
+    (1/3)/(2m+3)^2 >= 1/(12m+13) - 1/(12m+25)
+      <=>  36(2m+3)^2 <= (12m+13)(12m+25)
+      <=>  0 <= 24m + 1
+
+true for every `m >= 0`, tight at `m = 0` where the sides differ by exactly `1`.
+So `le_hasSum` plus polynomial algebra is the whole proof. The upper bound needed
+the sharper coefficient bound `1/(2k+3) <= 1/3`; the lower needed only positivity.
+
+The one genuinely new ingredient was the limit step: unlike the upper bound, the
+telescoping here is not a constant bound on `log s`, so the argument shifts to
+the antitone sequence `m -> log s(m+1) - 1/(12(m+1)+1)`, which has the same limit
+`log sqrt(pi)` because the tail vanishes.
+
+Verified independently at `n = 1..10000`: both bounds hold with the expected
+slacks, and the gap `1/(12n) - 1/(12n+1)` is `O(1/n^2)` as needed.
+
+## (A) — where it stands
+
+    (i)   the exact reflection                       PROVED
+    (ii)  symmetric half = trapezoid remainder       PROVED
+    (iii) the j=0 singularity                        REMOVED (exact split)
+    (iv)  Stirling upper, Robbins 1/(12n)            PROVED
+    (v)   Stirling lower, Robbins 1/(12n+1)          PROVED
+    (vi)  Euler-Maclaurin for a smooth function      OPEN  <- the only one left
+
+(vi) is now the sole remaining blocker on (A), and it is not specific to this
+problem: a general Euler-Maclaurin summation formula is simply absent from
+Mathlib. What this corpus needs is the order-2 case for a `C^4` function on a
+compact interval, applied to `logSinc`.

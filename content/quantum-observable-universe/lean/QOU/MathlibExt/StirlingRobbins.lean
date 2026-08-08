@@ -45,12 +45,17 @@
   left in place; this file is the sharp version, with the right constant
   `√(2π)` and the `e^{1/(12n)}` factor.
 
-  WHAT IS NOT HERE.  Robbins' matching LOWER refinement
-  `1/(12n+1) ≤ log σ(n) − log √π`.  Mathlib's `sqrt_pi_le_stirlingSeq` gives the
-  weaker `0 ≤ ·`, which together with the bound below pins `log n!` to within
-  `1/(12n)` — enough for the `O(1/N)` form of (A), not enough for the
-  `−(π/12N)cot θ` refinement, which needs both Robbins bounds (their gap is
-  `O(1/n²) = o(1/N)`).
+  BOTH SIDES ARE HERE.  The matching lower refinement
+  `1/(12n+1) ≤ log σ(n) − log √π` is proved below too, and needs no series
+  estimate at all: the terms are nonnegative, so the sum dominates its FIRST
+  term `⅓·x`, and that alone already beats the telescoping gap — the margin is
+  exactly `24m+1`, tight at `m = 0` where the two sides differ by `1`.
+  Mathlib's `sqrt_pi_le_stirlingSeq` gives only the weaker `0 ≤ ·`.
+
+  Together the two bounds pin `log n!` to within
+  `1/(12n) − 1/(12n+1) = 1/(12n(12n+1)) = O(1/n²)`, which is what `qou-mlgp` (A)
+  needs: the `−(π/12N)cot θ` refinement requires the `1/(12k)` term to `o(1/N)`
+  accuracy, and either bound alone would leave an `O(1/N)` hole.
 
   -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean   (what consumes this)
   -- Ref: [manuscript] QOU/Mathlib/StirlingUpperBound.lean  (the crude cousin)
@@ -161,6 +166,112 @@ theorem log_factorial_le_stirling_robbins {n : ℕ} (hn : n ≠ 0) :
   rw [log_stirlingSeq_formula n] at hkey
   have hsqrt : Real.log (Real.sqrt π) = Real.log π / 2 := by
     rw [Real.log_sqrt Real.pi_pos.le]
+  have hlog2n : Real.log (2 * (n : ℝ)) = Real.log 2 + Real.log n :=
+    Real.log_mul (by norm_num) (ne_of_gt hnR)
+  have hlog2pi : Real.log (2 * π) = Real.log 2 + Real.log π :=
+    Real.log_mul (by norm_num) (ne_of_gt Real.pi_pos)
+  have hdiv : Real.log ((n : ℝ) / Real.exp 1) = Real.log n - 1 := by
+    rw [Real.log_div (ne_of_gt hnR) (Real.exp_ne_zero 1), Real.log_exp]
+  rw [hsqrt, hlog2n, hdiv] at hkey
+  rw [hlog2pi]
+  linarith
+
+/-! ### The matching lower bound
+
+Robbins' other half.  Remarkably it needs no series estimate at all: the terms
+are all nonnegative, so the sum dominates its FIRST term `⅓·x`, and that alone
+already beats the telescoping gap.  The margin is exactly `24m+1`:
+
+    ⅓·x ≥ 1/(12(m+1)+1) − 1/(12(m+2)+1)
+      ⟺  36(2m+3)² ≤ (12m+13)(12m+25)
+      ⟺  0 ≤ 24m + 1
+
+true for every `m ≥ 0`, and tight at `m = 0` where the two sides differ by `1`.
+-/
+
+/-- **The telescoping step, from below.**  The first term of the series already
+dominates `1/(12(m+1)+1) − 1/(12(m+2)+1)`. -/
+theorem log_stirlingSeq_diff_ge_robbins (m : ℕ) :
+    1 / (12 * ((m : ℝ) + 1) + 1) - 1 / (12 * ((m : ℝ) + 2) + 1)
+      ≤ Real.log (stirlingSeq (m + 1)) - Real.log (stirlingSeq (m + 2)) := by
+  have hm : (0 : ℝ) ≤ (m : ℝ) := Nat.cast_nonneg m
+  -- the sum dominates its first term, all terms being nonnegative
+  have hfirst := le_hasSum (log_stirlingSeq_diff_hasSum m) 0 (fun j _ => by positivity)
+  -- the algebraic content, stated over a real variable so no cast shape matters
+  have key : ∀ x : ℝ, 0 ≤ x →
+      1 / (12 * (x + 1) + 1) - 1 / (12 * (x + 2) + 1) ≤ 1 / (3 * (2 * x + 3) ^ 2) := by
+    intro x hx
+    have h1 : (0 : ℝ) < 12 * (x + 1) + 1 := by linarith
+    have h2 : (0 : ℝ) < 12 * (x + 2) + 1 := by linarith
+    rw [div_sub_div _ _ (ne_of_gt h1) (ne_of_gt h2),
+      div_le_div_iff₀ (by positivity) (by positivity)]
+    nlinarith [hx]
+  refine le_trans (key (m : ℝ) hm) (le_trans (le_of_eq ?_) hfirst)
+  push_cast
+  field_simp
+  ring
+
+/-- The telescoped lower bound over any range. -/
+theorem log_stirlingSeq_sub_ge_robbins {n m : ℕ} (hnm : n ≤ m) :
+    1 / (12 * ((n : ℝ) + 1) + 1) - 1 / (12 * ((m : ℝ) + 1) + 1)
+      ≤ Real.log (stirlingSeq (n + 1)) - Real.log (stirlingSeq (m + 1)) := by
+  induction m, hnm using Nat.le_induction with
+  | base => simp
+  | succ p hp ih =>
+      have hstep := log_stirlingSeq_diff_ge_robbins p
+      push_cast at ih hstep ⊢
+      ring_nf at ih hstep ⊢
+      linarith
+
+/-- **`1/(12n+1) ≤ log σ(n) − log √π`** for `n ≠ 0` — Robbins' lower refinement,
+the counterpart of `log_stirlingSeq_sub_log_sqrt_pi_le`. -/
+theorem le_log_stirlingSeq_sub_log_sqrt_pi {n : ℕ} (hn : n ≠ 0) :
+    1 / (12 * (n : ℝ) + 1) ≤ Real.log (stirlingSeq n) - Real.log (Real.sqrt π) := by
+  obtain ⟨p, rfl⟩ : ∃ p, n = p + 1 := ⟨n - 1, by omega⟩
+  have hsqrt : (0 : ℝ) < Real.sqrt π := Real.sqrt_pos.mpr Real.pi_pos
+  have hlim : Tendsto (fun m : ℕ => Real.log (stirlingSeq (m + 1))) atTop
+      (𝓝 (Real.log (Real.sqrt π))) :=
+    (Real.continuousAt_log (ne_of_gt hsqrt)).tendsto.comp
+      (tendsto_stirlingSeq_sqrt_pi.comp (tendsto_add_atTop_nat 1))
+  -- the telescoping bound is not a constant bound on `log σ`, so shift by the
+  -- vanishing tail: `m ↦ log σ(m+1) − 1/(12(m+1)+1)` is antitone with the same limit.
+  have htend0 : Tendsto (fun m : ℕ => 1 / (12 * ((m : ℝ) + 1) + 1)) atTop (𝓝 0) := by
+    have hmono : Tendsto (fun m : ℕ => 12 * ((m : ℝ) + 1) + 1) atTop atTop := by
+      refine tendsto_atTop_mono (fun m => ?_) tendsto_natCast_atTop_atTop
+      have : (0 : ℝ) ≤ (m : ℝ) := Nat.cast_nonneg m
+      linarith
+    simpa only [one_div] using hmono.inv_tendsto_atTop
+  have hlim2 : Tendsto
+      (fun m : ℕ => Real.log (stirlingSeq (m + 1)) - 1 / (12 * ((m : ℝ) + 1) + 1))
+      atTop (𝓝 (Real.log (Real.sqrt π) - 0)) := hlim.sub htend0
+  have hbd : ∀ᶠ m : ℕ in atTop,
+      Real.log (stirlingSeq (m + 1)) - 1 / (12 * ((m : ℝ) + 1) + 1)
+        ≤ Real.log (stirlingSeq (p + 1)) - 1 / (12 * ((p : ℝ) + 1) + 1) := by
+    filter_upwards [eventually_ge_atTop p] with m hm
+    linarith [log_stirlingSeq_sub_ge_robbins hm]
+  have := le_of_tendsto hlim2 hbd
+  push_cast
+  linarith
+
+/-- **Robbins' bounds, both sides.**  For `n ≠ 0`,
+
+    n·log n − n + ½log n + ½log(2π) + 1/(12n+1)
+      ≤ log n! ≤
+    n·log n − n + ½log n + ½log(2π) + 1/(12n).
+
+The lower bound strictly sharpens Mathlib's `Stirling.le_log_factorial_stirling`
+(which has no `1/(12n+1)` term), and the upper bound has no Mathlib counterpart
+at all.  Their gap is `1/(12n) − 1/(12n+1) = 1/(12n(12n+1)) = O(1/n²)`, which is
+what `qou-mlgp` (A) needs: the `−(π/12N)cot θ` refinement requires the `1/(12k)`
+term to `o(1/N)` accuracy, and either bound alone leaves an `O(1/N)` hole. -/
+theorem le_log_factorial_stirling_robbins {n : ℕ} (hn : n ≠ 0) :
+    (n : ℝ) * Real.log n - n + Real.log n / 2 + Real.log (2 * π) / 2
+        + 1 / (12 * (n : ℝ) + 1)
+      ≤ Real.log n ! := by
+  have hnR : (0 : ℝ) < n := by exact_mod_cast Nat.pos_of_ne_zero hn
+  have hkey := le_log_stirlingSeq_sub_log_sqrt_pi hn
+  rw [log_stirlingSeq_formula n] at hkey
+  have hsqrt : Real.log (Real.sqrt π) = Real.log π / 2 := Real.log_sqrt Real.pi_pos.le
   have hlog2n : Real.log (2 * (n : ℝ)) = Real.log 2 + Real.log n :=
     Real.log_mul (by norm_num) (ne_of_gt hnR)
   have hlog2pi : Real.log (2 * π) = Real.log 2 + Real.log π :=
