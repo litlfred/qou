@@ -71,7 +71,7 @@ The canonical values are rigorously evaluated via formal trace definitions.
 
 See [Table 4](#tbl:recomputed-low-isotope-mass-table-table4-data).
 
-## the categorical route categorical verification of the proton pole order
+## Categorical verification of the proton pole order
 
 $$
   \mathrm{ord}_{u=0}\bigl(\mathrm{tr}_M(\mathcal{B}_p)\bigr) = 19 = 18 Z + 21 N + 1 \quad \text{at } (Z, N) = (1, 0).
@@ -88,4 +88,4 @@ These orders are rigorously exact, as lower-order poles cannot cancel a strict m
 - [`prop:atomic-mass-gb-nf`](atomic-mass-gb-nf.md): The master mass formula $\mathfrak{m}(K) = \rho_K m_e |\mathrm{tr}_M|$.
 - [`prop:q-hecke-seminormal-character-closure`](q-hecke-seminormal-character-closure.md): Partition-sum and canonical-reducer agreement.
 - [`prop:hecke-branching-trace-decomposition`](hecke-branching-trace-decomposition.md): Operator-valued Littlewood-Richardson block formula.
-- [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md): the categorical route categorical verification.
+- [`prop:per-nucleon-shift-additive-linearity`](per-nucleon-shift-additive-linearity.md): the categorical verification.

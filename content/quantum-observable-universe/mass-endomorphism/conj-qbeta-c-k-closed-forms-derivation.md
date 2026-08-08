@@ -8,7 +8,7 @@ Three formal derivation paths stand open:
 
 ## Precision
 
-The baseline $\mathfrak{Q}_\beta$ categorical prediction achieves a $+6.02$ ppb residual at $N=3$ **against the muon-anchored (ideal-math) $q_0$**. This result has **not** been refreshed since the 2026-05-28 proton-anchor re-pin; under the **experimental (proton-pinned) $q_0$** — the operative
+The baseline $\mathfrak{Q}_\beta$ categorical prediction achieves a $+6.02$ ppb residual at $N=3$ **against the muon-anchored (ideal-math) $q_0$**. That figure is computed against the muon anchor; under the **experimental (proton-pinned) $q_0$** — the operative
 convention — $\mathfrak{Q}_\beta$ currently **misses the 7.8 ppb accuracy target by $\approx 164\times$** (per the accuracy dashboard). The higher-order corrections ($c_4$ to $c_7$) were tuned to the muon-anchored ladder; their proton-anchored precision is open, not established.
 
 Under the three-calibration discipline, we flag these empirical fits as conditional inputs. Any prediction relying on them must declare this dependency explicitly.
