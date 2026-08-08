@@ -872,3 +872,51 @@ order as the answer); what is needed is `logSinc'(x) -> 0` as `x -> 0+`, and
     (viii)     logSinc is C^4 at 0                  NOT NEEDED — retracted
     (ix)       |logSinc x| <= x^2/3 near 0          PROVED  <- this commit
     (x)        |logSinc' x| <= x near 0             OPEN — elementary, 2 monotonicities
+
+## The derivative bound BUILT — (A)'s named ingredient list is now empty
+
+`QOU/Knot/LogSincNearZero.lean` gained four more, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`:
+
+    sin_sub_mul_cos_pos     0 < sin x - x cos x            on (0,1]
+    sin_sub_mul_cos_lt      sin x - x cos x < x^2 sin x    on (0,1]
+    hasDerivAt_logSinc      logSinc' x = cos x/sin x - 1/x on (0,pi)
+    abs_logSinc_deriv_le    |logSinc' x| <= x              on (0,1]
+
+Both monotonicity facts are `f(0) = 0` plus `f' > 0` via
+`strictMonoOn_of_deriv_pos` on `Icc 0 1`:
+
+    u = sin x - x cos x               u' = x sin x > 0
+    v = x^2 sin x - sin x + x cos x   v' = x(sin x + x cos x) > 0
+
+the second using `cos > 0` on `(0,1] subset (0, pi/2)`. Then
+`logSinc' x = (x cos x - sin x)/(x sin x)`, `u > 0` opens the absolute value as
+`sin x - x cos x`, and `v > 0` bounds it by `x^2 sin x`, so the quotient is
+`< x`. Verified numerically at five `x` down to `0.01`.
+
+**LEAN NOTES.** (i) `hasDerivAt_id` composes into `id`-wrapped forms that `ring`
+treats as atoms — `simp only [id_eq]` before `ring`. Same species as the
+`HasDerivAt.pow` Pi-power trap recorded earlier. (ii) `positivity` cannot use
+hypotheses about variables: `0 < y * sin y` needs `mul_pos hy.1 hs`, not
+`positivity`.
+
+## (A) — the ledger, and what "assembly" now means
+
+    (i)-(vii)  reflection, trapezoid identity + bound, the j=0 split,
+               Robbins both sides, order-2 EM one-cell and composite   PROVED
+    (viii)     logSinc is C^4 at 0                            RETRACTED, not needed
+    (ix)       |logSinc x| <= x^2/3 near 0                             PROVED
+    (x)        |logSinc' x| <= x near 0                                PROVED
+
+Every analytic ingredient this bean ever named for (A) is now built and
+sorry-free. What is left is the ASSEMBLY: instantiate the composite rule at
+`g = logSinc`, `a = h`, `k-1` cells; add `sum_log_two_sin_split`; add the
+Robbins bounds for `log(k!)`; collect the `h`-endpoint terms with (ix) and (x);
+and read off
+
+    s_k = (N/pi) Lambda(th) - (1/2) log(2N sin th) - (pi/12N) cot(th) + O(1/N^3)
+
+That is bookkeeping over a dozen existing lemmas, plus `C^4` bounds on `logSinc`
+in the INTERIOR `[h, theta]` (where it is manifestly smooth — no singularity —
+but the fourth derivative still has to be exhibited and bounded, which is real
+if unglamorous work). No missing idea remains.
