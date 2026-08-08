@@ -39,8 +39,7 @@ See [Table 2](#tbl:mass-tower-coefficient-stratification-table2-data).
 **Coordinating note for sibling computations.**
 
 The two parallel computational efforts
-(`claude/verify-mass-computation-k0DaZ`,
-`claude/phase-b-heavy-rust-character-kernel`) are independently
+are independently
 verifying that the spectral-derived coefficients close the
 ${}^4\mathrm{He}$ binding-energy gap.  This proposition supplies the
 forcing structure: each Bethe--Weizsäcker coefficient is a specific

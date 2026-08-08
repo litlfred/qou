@@ -13,8 +13,8 @@ identifies the closed form by induction:
 
 The base-case $+1$ originates from the **single mixed (p, n)
 interface** in pppnnn ordering, contributing
-$\alpha((\sigma+\sigma^{-1})/2) = 1$ from the compound-shift theorem
-on `claude/w3-w4-followups`.  This matches
+$\alpha((\sigma+\sigma^{-1})/2) = 1$ from the compound-shift theorem.
+This matches
 [`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot)'s
 simplest interface case $\alpha = 1$ for the Hecke-symmetric
 average. $\square$

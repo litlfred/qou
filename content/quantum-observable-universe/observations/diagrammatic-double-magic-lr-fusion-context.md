@@ -34,7 +34,7 @@ The illustration blocks [`ex:single-magic-O18-diagram`](single-magic-O18-diagram
 
 The combinatorial barrier at $k \geq 12$ prevents Hoefsmit matrix-evaluation for $\{50, 82, 126\}$. The LR-rigidity conjecture nonetheless predicts a uniquely determined $\nu_{ZN}$ at each double-magic candidate independent of matrix evaluations. Predicted targets in the higher-magic ladder include $^{132}\mathrm{Sn}$ ($Z = 50, N = 82$) and $^{208}\mathrm{Pb}$ ($Z = 82, N = 126$). At each target, the LR fusion is conjecturally rigid. The algebraic prediction of the binding-per-nucleon peak is a zero-parameter statement.
 
-*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate. Empirical Yamanouchi enumeration ([`lr_fusion_self_conj_test.py`](https://github.com/litlfred/qou/blob/claude/qou-algebraic-refactor-1qVFc/computations/lr_fusion_self_conj_test.py)) finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion, not self-conjugacy of the dominant component.*
+*The dominant component $V_{\lambda_A}$ in the LR decomposition need not be self-conjugate. Empirical Yamanouchi enumeration ([`lr_fusion_self_conj_test.py`](../../../computations/lr_fusion_self_conj_test.py)) finds the dominant $\nu$ is non-self-conjugate at every tested $(Z, N)$. The criterion is content additivity on the LR-fusion, not self-conjugacy of the dominant component.*
 
 ## Discussion
 
