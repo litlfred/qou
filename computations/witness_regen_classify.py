@@ -121,23 +121,16 @@ ROOT = HERE.parent
 # `convention` fails the test and is deliberately excluded: it changes what the
 # numbers MEAN, worth 182 ppm in tr_M(4He).
 #
-# `engine`, `_provenance` and `convention_inferred_by` are here because they
-# record *how* a value was produced, not the value. Leaving `engine` out made
-# the classifier reject a genuine deuteron ANCHOR_MIGRATION on the grounds that
-# a string field moved — the numerics were within bound and the q₀ flip was
-# present, but the engine label changed from the fallback path to the native
-# one. That is exactly the kind of provenance churn a regeneration is expected
-# to produce.
+# Two entries earned their place the hard way and are worth naming:
 #
-# `scriptFile` is metadata here by separation of concerns, not by indifference:
-# `witness_provenance_audit` is the tool that polices whether a scriptFile
-# claim is true (it found five false ones), while this classifier answers only
-# "did a VALUE move". A stamp adding the field where none existed is a
-# provenance gain and must not veto an otherwise-clean regeneration.
+# `engine` — leaving it out made the classifier reject a genuine deuteron
+# ANCHOR_MIGRATION because a string moved: the numerics were inside the bound
+# and the q₀ flip was present, but the engine label changed from the fallback
+# path to the native one. Exactly the provenance churn a regeneration produces.
 #
-# `convention` is deliberately NOT here: colour-blind versus colour-weighted
-# crossings is a physics choice worth 182 ppm in tr_M(4He), and a run that
-# changes it must surface as VALUES rather than slip through as metadata.
+# `scriptFile` — metadata here by separation of concerns, not indifference.
+# `witness_provenance_audit` polices whether a scriptFile claim is *true* (it
+# found five false ones); this classifier only asks whether a VALUE moved.
 META = {
     "computedAt", "commitSha", "scriptHash", "scriptCommitSha", "scriptFile",
     "durationMs", "description",
