@@ -53,6 +53,16 @@ Needs H3 (the region) and the product-measure Fubini for `withDensity`.
 > (`ofReal` / `lintegral` ↔ `integral`) before the inner integral can be
 > substituted.
 
+> **H4-2 is DONE (2026-08-08, sorry-free) — bean `qou-hqzr`.** Both predicted
+> costs were real and neither was larger than predicted (the Pi/Prod split is
+> one measure-preserving definition; the `∫⁻`/`∫` bridge goes through
+> `ofReal_integral_eq_lintegral_ofReal` on H4-1's integrability). **One finding
+> that changes H4-3:** the fibre mass is `⊤` *on* the circle, and Milnor's base
+> triangle is INSCRIBED — its three vertices lie on it. So the usable statement
+> is the a.e. one, `hypVolume_chimney_of_ae_lt`; **H4-3 must consume that, not**
+> the pointwise open-disk corollary. File
+> `QOU/Archimedean/HyperbolicVolumeFubini.lean`.
+
 **H4-3 — the base integral over one triangle.** Reduce
 `∫∫_T dA/(2(R²−d²))` over the Euclidean triangle inscribed in the circle of
 radius `R`. Milnor's route: cut `T` at the circumcentre into 6 right triangles
