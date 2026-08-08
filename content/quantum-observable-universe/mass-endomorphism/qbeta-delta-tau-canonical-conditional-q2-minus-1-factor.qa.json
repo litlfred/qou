@@ -16,7 +16,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"- Coordination ledger: [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md). **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs, physical observables, and numerical evaluation a\" -- internal coordination ledger under `docs/coordination/` ('docs/coordination/1ppq-qbeta.md') in body prose: \"- Sibling on main: [`prop:q-beta-over-e0-classical-vanishing`](../mass-theory/q-beta-over-e0-classical-vanishing.md) (shows the classical-point vanishing of the upstream object $S(q) = \\mathfrak{Q}_\\beta/E_0$). - Coordination ledger: [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1pp\"",
+        "notes": "The `§7c` tag and the `docs/coordination/1ppq-qbeta.md` link are fixed, but the cross-reference list still names a git branch: \"- Sibling on main: [`prop:q-beta-over-e0-classical-vanishing`](../mass-theory/q-beta-over-e0-classical-vanishing.md)\". \"on main\" states which branch the sibling block lives on, which no reader can resolve; the link itself is fine.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",

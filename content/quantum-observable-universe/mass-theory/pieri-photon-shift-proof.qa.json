@@ -1118,7 +1118,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). branch-local deictic ('this arc', 'the corpus', 'this block') — 'the corpus'; e.g. \"...rn labels of the tower algebra $\\bigoplus_m H_m(q)$, one label set per level. At level $n + 1$ the corpus writes $\\lambda + \\square := (\\lambda_1 + 1, \\lambda_2) \\vdash n+1$ and $\\lambda - \\square :=...\".",
+        "notes": "Re-review from the current text: the support convention still speaks as the repo rather than the paper — \"At level $n + 1$ the corpus writes $\\lambda + \\square := (\\lambda_1 + 1, \\lambda_2) \\vdash n+1$ and $\\lambda - \\square := ...$\". \"the corpus\" is the repository's word for the manuscript collection.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

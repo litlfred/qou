@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"*where $\\mathrm{tr}_M$ provides the canonical Jones–Markov trace ([categorical mass = Markov](#prop:categorical-mass-markov)) and $\\rho_K$ provides a positive scalar—the **categorical density** of the atomic braid class.* **Archimedean specialisation (§7c).** This block operates on the archimedean s\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: \"**Archimedean specialisation (§7c).** This block operates on\" is now \"**Archimedean specialisation.** What follows operates on\", dropping both the AGENTS.md section id and the pipeline's word for the block itself.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

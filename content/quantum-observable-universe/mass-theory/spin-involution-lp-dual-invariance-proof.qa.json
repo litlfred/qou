@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). PR / issue number — 'PR [#638]', 'pull/638'; e.g. \"...s.json`](../../../computations/canonical evaluation-phiq-pair-knot-markov-trace.witness.json) (PR [#638](https://github.com/litlfred/qou/pull/638)) computes $\\mathrm{tr}_M(\\sigma_{pp})$ and $\\mathrm{...\". What these actually are: a GitHub pull-request / issue number.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the PR reference \"(PR [#638](https://github.com/litlfred/qou/pull/638))\" is gone; the witness is now cited by filename alone, and the surviving \"$q$-sweep\" is a parameter sweep.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

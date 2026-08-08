@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "WIP status marker in the published TITLE: \"Markov-trace operator construction (forward-reference to WIP-scaffolding audit)\". The parenthetical points at a branch artifact no reader can reach. Body also carries the AGENTS.md tag \"**Archimedean specialisation (§7c).**\".",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the published title is now plain \"Markov-trace operator construction\", and the body's \"**Archimedean specialisation (§7c).** This block sits\" became \"**Archimedean specialisation.** What follows sits\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

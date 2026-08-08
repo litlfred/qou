@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal coordination ledger under `docs/coordination/` ('docs/coordination/1ppq-qbeta.md') in body prose: \"- **Higher-order Taylor coefficients of $\\Delta\\mathrm{tr}_M^{\\text{can}}$.** Vanishing at $q = 1$ (order-0) is an immediate consequence. Higher orders depend on the specific behaviour of $y_\\lambda(q)$ at $q = 1$, which the dimension-normalisation axiom does not uniquely determine. - **Bridge to th\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/coordination/1ppq-qbeta.md` ledger reference is gone; the limitation now reads \"The $f$-map keystone remains open\", naming the open object in place.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1609,12 +1609,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'B1' as a bare table/branch label — 'B1'; e.g. \"...Identifying *any one* of the three candidates explicitly would: 1. **Close the depth-3 row of B1.** The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)...\". 'the keystone' used as a known referent — 'keystone'; e.g. \"...g *any one* of the three candidates explicitly would: 1. **Close the depth-3 row of B1.** The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) currently h...\". What these actually are: 'B1' is not defined anywhere in the manuscript; it is a table/row label carried over from a branch audit; 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the bare tracker label 'B1' is gone, replaced by \"Close the depth-3 row of the depth correspondence\", and \"The keystone\" is immediately linked to `conj:gb-depth-period-correspondence`.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"For the archimedean realisation---where the descended trace yields the holonomy $\\mathrm{Hol}_{\\nabla_A}$ and each transient trace yields the quantum dilogarithm $\\Phi_q(z_i)$---see [archimedean proof](#prf:topological-mass). **Archimedean specialisation (§7c).** The categorical mass $\\mathrm{catego\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: \"**Archimedean specialisation (§7c).**\" lost its AGENTS.md tag and now reads \"**Archimedean specialisation.** The categorical mass ...\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

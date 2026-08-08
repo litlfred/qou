@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "WIP status marker in the published TITLE: \"Iwahori-Hecke algebra $H_n(R, q)$ type scaffold (forward-reference to WIP-scaffolding audit)\". \"WIP-scaffolding audit\" is a branch artifact; a reader cannot resolve it. Body also carries the AGENTS.md tag \"**Archimedean specialisation (§7c).**\". Note: the R1/R2/R3 in this block (\"the quadratic relation (R1), the far-commutation relation (R2), and the braid cubic relation (R3)\") are the Hecke defining relations, defined in place - legitimate mathematics, NOT flagged.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the published title dropped \"(forward-reference to WIP-scaffolding audit)\" and is now \"Iwahori-Hecke algebra $H_n(R, q)$: the Lean type and its defining relations\", and the body's \"**Archimedean specialisation (§7c).**\" lost its AGENTS.md tag.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

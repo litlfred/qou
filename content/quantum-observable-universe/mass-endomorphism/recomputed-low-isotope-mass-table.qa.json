@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "A branch route label heads a section: \"## Path A categorical verification of the proton pole order\", and recurs as \"This closes the multi-nucleon Path A\" and \"Path A categorical verification\" / \"Path A audit and reading correction\". \"Path A\" is a branch decision label; the object is the categorical (per-irrep pole-order) route to the proton pole order. Work-tracking narration: \"(tracked under [Workplan 0b](../../../docs/audits/-workplan-0b-script-rewire-handoff.md))\". Four `docs/audits/...` internal documents are listed as cross-references, including \"Pre-$q$-Hecke audit\".",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the \"Path A\" branch route label is gone from the heading and body, along with the \"(tracked under Workplan 0b)\" note and all four `docs/audits/*` cross-references.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

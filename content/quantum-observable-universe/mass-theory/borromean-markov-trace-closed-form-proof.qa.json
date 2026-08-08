@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). branch-local deictic ('this arc', 'the corpus', 'this block') — 'the corpus'; e.g. \"...da \\chi^\\lambda$. > **Convention note.** Two distinct > Markov-trace normalisations appear in the corpus for $H_3(q)$, and > they have **different** Wenzl weights and different per-partition > budget...\".",
+        "notes": "Re-review from the current text: two branch-local references survive in the convention note — \"Two distinct Markov-trace normalisations appear in the corpus for $H_3(q)$\" and \"the phase1c witness records `lean_form_matches: false`\". \"the corpus\" is the repo's word for the manuscript collection and \"phase1c\" is a workplan phase id; neither resolves for a reader.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

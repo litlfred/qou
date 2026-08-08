@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"The present conjecture concerns the vortex case: $\\varrho$ forms a closed cycle whose support does not necessarily factor through a finite brane-tower extension. The holonomy $\\mathrm{Hol}_{\\nabla_A}$ along $\\varrho_0$ (the flat gauge-field holonomy of the base-level connection) replaces the :refter\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the `§7c` AGENTS.md tag was removed from the archimedean-specialisation paragraph, which now opens \"**Archimedean specialisation.** What follows sits on the archimedean side\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

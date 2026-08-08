@@ -1141,7 +1141,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§2h'; e.g. \"...r the deuteron binding actually carries this bar-odd character is empirically open (the landed §2h data weakly favour a bar-even unit). The proposition formalizes the *decomposition itself*, wh...\". audit / coordination doc path — 'docs/coordination/'; e.g. \"...D}$ is the CAL-2 datum), rather than a fourth calibration. The narrative caveat recorded in [`docs/coordination/e-unit-deuteron-scale.md`](../../../docs/coordination/e-unit-deuteron-scale.md) stands: whether...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript; audit and coordination docs are internal working records.",
+        "notes": "Re-review from the current text: the AGENTS.md §2h label and the docs/coordination path are gone, but the closing section still cites a compute artifact and uses merge vocabulary — \"The mass-binding dashboard's **Entanglement** table computes this split for every light nucleus — its `retained E` column is ...\", and earlier \"(the landed data weakly favour a bar-even unit)\". A reader cannot resolve \"the mass-binding dashboard\" or \"landed\".",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

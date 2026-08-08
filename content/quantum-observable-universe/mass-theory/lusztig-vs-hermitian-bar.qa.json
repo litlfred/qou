@@ -1569,12 +1569,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). process heading (Status / Open R&D / Diagnostics) — '## Non-claims'; e.g. \"...of the decomposition; it does not claim either new channel corresponds to physical structure. ## Non-claims of this proposition (CAL-4 caveat) - It does not claim $\\mathrm{Im}(q_0) \\neq 0$. - It does n...\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: \"## Non-claims of this proposition (CAL-4 caveat)\" is reader-facing scoping — the section simply lists what the proposition does not assert — and CAL-4 is the manuscript's own calibration caveat.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

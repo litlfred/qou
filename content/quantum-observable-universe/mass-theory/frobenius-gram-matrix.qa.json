@@ -1556,7 +1556,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). work-status marker — 'STALE', 'pending recomputation'; e.g. \"...} & g_{35} \\\\ z^3 & g_{15} & g_{15} & g_{35} & g_{35} & g_{55} \\end{pmatrix} $$ *where (STALE — pending recomputation):* - $g_{15} = hz^3 + z^2$ (from $\\sigma_0 \\cdot e^- = he^- + L_-$) -...\".",
+        "notes": "Re-review from the current text: the block is still published carrying its own work-status markers — \"**Proposition (stale symbolic entries — see Markov-bug note).**\", \"the entries containing $z^3$ or higher $z^k$ powers from $\\mathrm{tr}_M(e^-)$ are stale and need the $z^3 \\mapsto hz^2 + z$ substitution to be propagated\", and \"*where (STALE — pending recomputation):*\". STALE / pending recomputation / \"Markov-bug note\" describe the repo's state of work, not the mathematics.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

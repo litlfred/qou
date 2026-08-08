@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§7c'; e.g. \"...s the evidence, the Lean file proves only the two underlying identities. **Base-ring note (§7c).** The Lean sibling is stated over a generic `[Field R]` (no archimedean `$\\mathbb{R}$` depen...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript.",
+        "notes": "Re-review from the current text: §7c is gone from the base-ring note, but the note still ends in build-infrastructure vocabulary — \"This avoids `CharZero` entirely (so it stays inside the sandbox cache cone) and is verified sorry-free (`lake env lean`).\" The \"sandbox cache cone\" is a property of the repo's CI, not of the mathematics.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

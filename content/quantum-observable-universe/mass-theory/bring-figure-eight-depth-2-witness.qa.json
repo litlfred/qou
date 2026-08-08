@@ -1597,12 +1597,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). work-status marker — 'sanity check'; e.g. \"...,}212{,}819{,}307{,}250{,}042{,}405{,}108{,}549{,}040{,}571{,}883\\ldots $$ A SnapPy-precision sanity check via independent Clausen-series partial sum (2 million terms) agrees to $\\sim 13$ digits — the...\". 'the keystone' used as a known referent — 'keystone'; e.g. \"...-2 grouplike of $\\mathcal{H}_q$. ### Cross-reference: deeper-depth Bring instances (open) The keystone predicts analogous canonical witnesses at every depth: | Depth | Bring object | Predicted std...\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: nothing branch-local survives — \"A SnapPy-precision sanity check via independent Clausen-series partial sum\" is an ordinary numerical cross-check, and \"the keystone\" resolves to `conj:gb-depth-period-correspondence`, linked earlier in the same block.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

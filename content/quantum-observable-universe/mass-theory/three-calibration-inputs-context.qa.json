@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'workplan'; e.g. \"...bolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/-math-framework-workplan.md#p25)). - $\\mathfrak{E}_0$ has two framework-derived forms and one CODATA cross-check, all...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...final reporting step ([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/-math-framework-workplan.md#p25)). - $\\mathfrak{E}_0$ has two framework-derived forms and one C...\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids; audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links and the workplan item ids (Phase N / Track N / P#.# / tranche) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

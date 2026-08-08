@@ -16,7 +16,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/conjecture-cones.md') in body prose: \"If this conjecture fails (no closed-form $\\Phi_{\\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\\Phi_{\\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate th\"",
+        "notes": "The `docs/audits/conjecture-cones.md` link is fixed, but the authoring pipeline's word for the manuscript's own contents remains: \"Every algebraic downstream block that relies on the mass tower routes through this infinite series.\" Here \"block\" is a content unit of the pipeline, not a Wedderburn, Hecke or isotypical block.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",

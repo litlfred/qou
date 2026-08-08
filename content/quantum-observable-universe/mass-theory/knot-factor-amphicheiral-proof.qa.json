@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/coordination/'; e.g. \"...fies, and gives the clean sum-of-positive-squares formula. See the resolution discussion in [`docs/coordination/i1-canonical evaluation-author-queue-.md`](../../../../docs/coordination/i1-canonical evaluatio...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

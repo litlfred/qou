@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...nd the spread is uniformly bad across the entire physical regime $|q| \\in (1, \\varphi)$. See [`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](../../../docs/audits/2026-05-31-ck-exploratory-pr...\". time-stamped note — '2026-05-31'; e.g. \"...d is uniformly bad across the entire physical regime $|q| \\in (1, \\varphi)$. See [`docs/audits/2026-05-31-ck-exploratory-probes-removed.md`](../../../docs/audits/2026-05-31-ck-exploratory-probes-remov...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

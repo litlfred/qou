@@ -1572,7 +1572,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). owner-decision status marker — 'acknowledged-CAL'; e.g. \"Borromean baryon $\\\\lambda_{\\\\text{scale}}$ empirical form $5/2 - h^2 \\\\cdot G$ (acknowledged-CAL-4)\". What these actually are: 'owner' is the repo maintainer role in the agent workflow.",
+        "notes": "Re-review from the current text: the .md body is clean, but the published `title:` in the sibling .ts still ends with a QA disposition — \"Borromean baryon $\\lambda_{\\text{scale}}$ empirical form $5/2 - h^2 \\cdot G$ (acknowledged-CAL-4)\". \"acknowledged-\" is the owner/QA acknowledgement status and CAL-4 is nowhere defined in the manuscript; the fix was applied to the prose but not to the title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

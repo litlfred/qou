@@ -1396,12 +1396,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md). > Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md). The **Kashaev v...\". work-status marker — 'SUPERSEDED'; e.g. \"> **SUPERSEDED-$\\rho_q$ note .** Any use of the > scalar substrate density $\\rho_q = 1/\\hbar_q^2$ in this blo...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links and the work-status markers (SUPERSEDED / STALE / pending) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

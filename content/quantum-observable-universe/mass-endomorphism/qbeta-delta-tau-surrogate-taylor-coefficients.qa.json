@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal coordination ledger under `docs/coordination/` ('docs/coordination/1ppq-qbeta.md') in body prose: \"[`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json). - 1ppQ-Q$_\\beta$ coordination ledger: [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).\" -- internal precision-target id (1ppQ) ('1ppQ') in body prose: \"[`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json). - 1ppQ-Q$_\\beta$ coordination ledger: [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the \"1ppQ-Q$_\\beta$ coordination ledger\" line pointing at `docs/coordination/1ppq-qbeta.md` was removed; the cross-references now list only the parent block and the witness JSON.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

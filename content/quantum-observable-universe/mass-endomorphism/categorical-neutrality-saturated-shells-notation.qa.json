@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md (the repo's agent-instruction file) cited as if it were a reference ('AGENTS.md §7a', 'AGENTS.md') in body prose: \"by $\\sigma_1, \\dots, \\sigma_{n-1}$ subject to the braid relations and $\\sigma_i^2 = (q - q^{-1}) \\sigma_i + 1$ ([AGENTS.md §7a](../../../AGENTS.md)); * $\\Delta_n^2 = (\\sigma_1 \\sigma_2 \\cdots \\sigma_{n-1})^n \\in Z(B_n)$ for the **full-twist** generator of the centre of the\" -- AGENTS.md section id used as a bare tag ('§7a') in body prose: \"by $\\sigma_1, \\dots, \\sigma_{n-1}$ subject to the braid relations and $\\sigma_i^2 = (q - q^{-1}) \\sigma_i + 1$ ([AGENTS.md §7a](../../../AGENTS.md)); * $\\Delta_n^2 = (\\sigma_1 \\sigma_2 \\cdots \\sigma_{n-1})^n \\in Z(B_n)$ for the **full-twist** generator of the centre of the\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the `AGENTS.md §7a` citation was removed from the $H_n(q)$ notation bullet, which now states the braid and quadratic relations directly.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

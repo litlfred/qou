@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...r) as a $\\mathbb{Z}$-Laurent identity — in the $y_\\lambda$–$\\mathrm{tr}_M$ equivalence proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its three-row weight is $y_{(1^3)}(q) \\neq...\". time-stamped note — '2026-05-05'; e.g. \"...thbb{Z}$-Laurent identity — in the $y_\\lambda$–$\\mathrm{tr}_M$ equivalence proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its three-row weight is $y_{(1^3)}(q) \\neq 0$ for $q...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md` path and its time-stamp are gone; the surviving \"caught in review\" in the correction note is ordinary editorial prose.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

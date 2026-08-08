@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md section id used as a bare tag ('§7c') in body prose: \"| $k = 3$ | $c_3 \\approx -2$, factor $(1 - 2b^3\\hbar_q^6)$ | near-match (recursion + open kernel) | | $k \\geq 4$ | $c_k^{(\\lambda)}$ | recursion-generated; kernel open | **Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-a\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: \"**Archimedean specialisation (§7c).** This block sits\" is now \"**Archimedean specialisation.** What follows sits\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

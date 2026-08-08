@@ -1590,12 +1590,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§3b'; e.g. \"...{-29}$ against the validated contour evaluator) and is assumed nowhere in the Lean; its honest §3b carrier is `QOU.MathlibExt.PhiBFibreExtension` (the constructed `phiB` extends to a full Fadde...\". git branch name — 'this branch'; e.g. \"...$e^{i \\ln q_0 / 2}$ at the substrate map (Lean: `norm_fibreQParam`, `fibreQParam_fibreB`). On this branch the modular-double product diverges and the construction is the real single integral `phiB` (`...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md). > Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md). **Conjecture (A...\". work-status marker — 'SUPERSEDED'; e.g. \"> **SUPERSEDED-$\\rho_q$ note .** Any use of the > scalar substrate density $\\rho_q = 1/\\hbar_q^2$ in this blo...\". 'the keystone' used as a known referent — 'keystone'; e.g. \"...-class pattern used for [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge). ## The bar-odd keystone: argument identification to $S$ The equivalence above is the **bar-even** face of the corresp...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript; a git working branch, not a stable reference; audit and coordination docs are internal working records; 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends), the `docs/audits/` and `docs/coordination/` links, the work-status markers (SUPERSEDED / STALE / pending), the git working-branch references and the bare \"keystone\" referent no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

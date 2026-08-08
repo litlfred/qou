@@ -1353,7 +1353,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body and the .ts title (published)). 'C1' as a bare module label — 'C1'; e.g. \"The q-difference kernel R is the jet-prolongation symbol, carried by the binding module C1\". workplan / phase / tranche item label — 'step-9b'; e.g. \"...rom conditional to unconditional. This conjecture is therefore the **single keystone** of the step-9b binding closure: the residue form (D), the body-order = jet-degree coincidence (C), and the re...\". 'the keystone' used as a known referent — 'keystone'; e.g. \"...t-filtration) from conditional to unconditional. This conjecture is therefore the **single keystone** of the step-9b binding closure: the residue form (D), the body-order = jet-degree coincidenc...\". What these actually are: 'C1' is a branch label; the object is the rank-2 q-difference module of [m+2]_q b_{m+2} = b_{m+1} + b_m; P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids; 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
+        "notes": "Re-review from the current text: 'C1' has been cut from the .ts title (which now trails off as \"...carried by the \"), and the .md body still labels the target with a workplan step — \"This conjecture is therefore the **single keystone** of the step-9b binding closure\". \"step-9b\" is an item of the internal workplan.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

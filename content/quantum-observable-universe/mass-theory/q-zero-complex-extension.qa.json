@@ -1914,12 +1914,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). audit / coordination doc path — 'docs/audits/'; e.g. \"...\\\\neq 0$ is uninstantiated infrastructure (audit: [`2026-05-24-q-zero-reality-audit`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).\". time-stamped note — '2026-05-24'; e.g. \"...0$ with $|q_0| > 1$ and $\\\\mathrm{Im}(q_0) \\\\neq 0$ is uninstantiated infrastructure (audit: [`2026-05-24-q-zero-reality-audit`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md)).\". the word 'audit' in body prose — 'audit'; e.g. \"...mplex $q_0$ with $|q_0| > 1$ and $\\\\mathrm{Im}(q_0) \\\\neq 0$ is uninstantiated infrastructure (audit: [`2026-05-24-q-zero-reality-audit`](../../../docs/audits/2026-05-24-q-zero-reality-audit.md))...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the word \"audit\" used for the project's review process and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

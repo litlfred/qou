@@ -1609,12 +1609,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'the keystone' used as a known referent — 'keystone'; e.g. \"...H}_q$ carries two distinct filtrations:* - *the **iterated-integral depth** on grouplikes ([keystone correspondence](#conj:gb-depth-period-correspondence)), $G^{(0)} \\subseteq G^{(1)} \\subseteq...\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the bare \"keystone\" referent no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

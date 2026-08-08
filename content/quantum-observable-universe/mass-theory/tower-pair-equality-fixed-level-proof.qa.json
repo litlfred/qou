@@ -1103,7 +1103,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'P3.4', 'workplan'; e.g. \"...x}\\,\\hbar_q^{2(N+1)} / (1 - \\hbar_q^2)$ once the uniform $\\Delta_{\\max}$ bound is established (P3.4 in the workplan, still open).\". work-status marker — 'still open'; e.g. \"...(1 - \\hbar_q^2)$ once the uniform $\\Delta_{\\max}$ bound is established (P3.4 in the workplan, still open).\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids.",
+        "notes": "Re-review from the current text: the final sentence still carries a workplan item id — \"once the uniform $\\Delta_{\\max}$ bound is established (P3.4 in the workplan, still open).\" P3.4 and \"the workplan\" are internal plan references.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

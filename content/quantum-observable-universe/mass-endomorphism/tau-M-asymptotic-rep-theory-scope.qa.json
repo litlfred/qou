@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal precision-target id (1ppQ) ('1\\\\,\\\\mathrm{ppQ') in body prose: \"For the production mass formula ($\\mathfrak{m}_{\\mathfrak{n}} = \\mathfrak{m}_{\\mathfrak{p}} + \\mathfrak{Q}_\\beta + \\mathfrak{m}_{\\mathfrak{e}}$), only the $N=1$ envelope and the proved seed $c_2 = -1$ are used (`derived_masses.q_beta_kashiwara_n2_mev`). The higher rungs matter only for the $1\\,\\math\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Cleared on re-review rather than by an edit: \"$1\\,\\mathrm{ppQ}$\" is the manuscript's own precision unit (1 part per quadrillion, $10^{-15}$, tabulated as \"$1$ ppQ ($10^{-15}$)\" in `q-beta-categorical-precision-ladder-context`), not an internal tracker id.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

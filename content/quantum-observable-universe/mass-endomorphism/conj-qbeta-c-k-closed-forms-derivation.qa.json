@@ -14,7 +14,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch calibration bookkeeping in published prose: \"This result has **not** been refreshed since the 2026-05-28 proton-anchor re-pin; under the **experimental (proton-pinned) $q_0$** --- the operative L2 convention --- $\\mathfrak{Q}_\\beta$ currently **misses the 7.8 ppb L2 target by $\\approx 164\\times$** (per the L2 dashboard).\" \"L2 convention\", \"L2 target\" and \"the L2 dashboard\" are internal layer/tracking labels, and \"has not been refreshed since\" is a staleness note about the repo's own numbers. Also \"Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-path.md`])\".",
+        "notes": "Branch bookkeeping survives in \"## Precision\": \"This result has **not** been refreshed since the 2026-05-28 proton-anchor re-pin\" is a staleness note about the repo's own numbers, and the figure is sourced to \"(per the accuracy dashboard)\" — a tracking surface the paper does not contain. The \"L2 convention\" / \"L2 target\" layer labels and the `docs/audits/-qbeta-ladder-closure-path.md` link are fixed.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",

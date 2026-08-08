@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'sibling' (branch/session) reference — 'sibling'; e.g. \"...he output is the exact $q$-rational $y_\\lambda$. Tractable in pure Python for $n \\leq 5$; the sibling Rust kernel (`phase-b-heavy-rust-character-kernel`) handles larger $n$. *Witness data layout....\".",
+        "notes": "Re-review from the current text: the only surviving defect is a git working-branch name in the .md body — \"Tractable in pure Python for $n \\leq 5$; the sibling Rust kernel (`phase-b-heavy-rust-character-kernel`) handles larger $n$.\" That is the branch `claude/phase-b-heavy-rust-character-kernel`, and \"sibling\" here means a sibling session/branch, neither of which a reader can resolve.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

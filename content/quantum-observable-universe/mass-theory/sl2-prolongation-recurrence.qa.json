@@ -1863,12 +1863,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'the keystone' used as a known referent — 'keystone'; e.g. \"...h\\theta$ for a prolongation rapidity $\\theta$; pinning $\\theta$ is the last open number of the keystone, and is solvable from three residue weights via $\\tau = (a_D^{(2)} + a_D^{(4)})/a_D^{(3)}$.\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the bare \"keystone\" referent no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'B1' as a bare table/branch label — 'B1'; e.g. \"...ta(3)$ + Tate | 1 | | **Total** | | **2** (matches Borel rank) | The genuinely-new content of B1 at depth 3 over $\\mathbb{Q}(\\zeta_5)$ is therefore **one specific real number**: $$ \\mathrm...\". work-status marker — 'still open'; e.g. \"...date (open) | **theorem**: $-12\\zeta(3)/25$ | | Cl_3(2π/5) - Cl_3(4π/5) | candidate (open) | **still open** — only remaining genuinely-new content | **The depth-3 unproved surface for B1 over $\\mathb...\". What these actually are: 'B1' is not defined anywhere in the manuscript; it is a table/row label carried over from a branch audit.",
+        "notes": "Re-review from the current text: 'B1' has been replaced by \"the depth correspondence\", but the work-round numbering survives throughout — \"Combining round 10 + this round, the 2-dim Borel-rank space ...\", \"Reflection-formula reductions (round 10) and multiplication-formula reductions (this prop.) have been exhausted\", and a whole table headed \"Status before round 11 | Status after round 11\". Round N is the project's own work cycle, invisible to a reader.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

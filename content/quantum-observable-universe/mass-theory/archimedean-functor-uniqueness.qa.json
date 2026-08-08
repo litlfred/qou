@@ -1569,7 +1569,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — '§3b-cond'; e.g. \"...**without `sorry`**; the block therefore qualifies as a *rigorous > conditional result* in the §3b-cond sense rather than an unproved > conjecture.\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript.",
+        "notes": "Re-review from the current text: hypotheses (C1)–(C2) are defined in place and the §3b-cond label is gone, but the closing blockquote still uses the pipeline's word for the manuscript's own contents — \"the block therefore qualifies as a *rigorous conditional result* rather than an unproved conjecture.\" A reader has no referent for \"the block\".",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

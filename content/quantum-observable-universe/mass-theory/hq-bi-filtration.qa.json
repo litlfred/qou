@@ -1682,12 +1682,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'the keystone' used as a known referent — 'keystone'; e.g. \"...ubstrate)), filtered by iterated-integral depth $G^{(0)} \\subseteq G^{(1)} \\subseteq \\cdots$ ([keystone correspondence](#conj:gb-depth-period-correspondence)). For each Bring-embeddable knot/link $K...\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: every use of \"keystone\" here is linked — \"([keystone correspondence](#conj:gb-depth-period-correspondence))\" — so the referent is a conjecture the paper defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

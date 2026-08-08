@@ -1418,7 +1418,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). work-status marker — 'SUPERSEDED'; e.g. \"...raid Markov-trace-weighted sum over $K_\\\\ell$'s braid representative, **without** invoking the SUPERSEDED scalar substrate density $\\\\rho_q = 1/\\\\hbar_q^2$ as a dimensional factor.\".",
+        "notes": "Re-review from the current text: the .md body was corrected to lowercase (\"without invoking the superseded scalar density $\\rho_q$\"), but the published `title:` in the sibling .ts still carries the repo's all-caps work-status marker — \"**without** invoking the SUPERSEDED scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.\" The marker was cleaned from the prose and left in the title.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

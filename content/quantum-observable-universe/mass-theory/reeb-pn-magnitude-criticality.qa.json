@@ -1132,12 +1132,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...s the separate [conjecture](reeb-linking-cwf-normalization.md), and the derivation record is [`docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md`](https://github.com/litlfr...\". time-stamped note — '2026-07-06'; e.g. \"...te [conjecture](reeb-linking-cwf-normalization.md), and the derivation record is [`docs/audits/2026-07-06-reeb-flow-pn-magnitude-provenance-and-1four-extension.md`](https://github.com/litlfred/qou/blo...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

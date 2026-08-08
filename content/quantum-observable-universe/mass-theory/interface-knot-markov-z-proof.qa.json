@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'Phase 5g'; e.g. \"...ical-fit parameter remains at the $\\mathrm{tr}_M$ level. ### Constit-side companion identity (Phase 5g, conjectural) The factorisation $(\\star)$ isolates the **interface** contribution to the $\\ma...\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the workplan label \"Phase 5g\" is gone from the companion-identity heading, which now reads \"### Constit-side companion identity (conjectural)\", and the AGENTS.md pointer is now just \"per the base-ring convention\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

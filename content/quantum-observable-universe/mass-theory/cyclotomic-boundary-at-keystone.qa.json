@@ -888,12 +888,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body and the .ts title (published)). 'the keystone' used as a known referent — 'keystone'; e.g. \"**Conjecture (cyclotomic boundary at the keystone order).** The binding $q$-deformation of the na-Stokes period $S(n) = \\sum_{\\lambda \\vdash n}...\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: \"the keystone order\" is glossed mathematically in place — \"where $5$ is the keystone order $S_5 \\supset A_5$\" — so it reads as the pivotal order the conjecture is about, not as an unresolvable project nickname.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

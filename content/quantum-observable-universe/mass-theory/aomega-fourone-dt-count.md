@@ -39,8 +39,8 @@ This is a **theorem for $4_1$** — Garoufalidis--Gu--Mariño proved peacock
 Conjecture 3 for the figure-eight, so the bridge instance is discharged there;
 the *general* statement (all hyperbolic knots) is the open conjecture
 [`conj:stokes-dt-bps-bridge`](#conj:stokes-dt-bps-bridge). The result is
-**conditional** on that adopted bridge and is **not** wired to production: the
-The accuracy dashboard and the $Q_\beta$ ladder are untouched. The *internal*
+**conditional** on that adopted bridge and is **not** carried downstream: the accuracy dashboard and the $Q_\beta$ ladder
+are untouched. The *internal*
 derivation of the integer $3$ from the QOU categorical drivers (Hecke $H_3$ /
 Bring / Wedderburn), rather than importing it from Garoufalidis--Gu--Mariño,
 remains open.

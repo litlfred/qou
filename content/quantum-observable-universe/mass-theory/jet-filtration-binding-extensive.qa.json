@@ -1846,12 +1846,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'the keystone' used as a known referent — 'keystone'; e.g. \"...n-abelian-Stokes identity** $a_D^{(n)} = \\mathrm{lw}(n-1)$ (the mean quantum dimension; the keystone conjecture, whose residue-sum form is `prop:sw-period-residue-sum`); 3. the per-atom **resi...\". What these actually are: 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: \"the keystone conjecture\" is named together with the paper's own `prop:sw-period-residue-sum`, and the `probe_full_theta_binding.py` mention is a data-availability citation.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

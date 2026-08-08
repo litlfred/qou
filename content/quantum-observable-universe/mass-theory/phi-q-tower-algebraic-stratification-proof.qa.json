@@ -1286,7 +1286,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). the word 'audit' in body prose — 'audit'; e.g. \"...3-manifold side; the algebraic stratification itself is unconditional. In the language of the audit's strict-Archimedean-wall directive: * The **statement** of the mass formula uses the algebra...\".",
+        "notes": "Re-review from the current text: the closing section still frames its scoping against the project's review process — \"In the language of the audit's strict-Archimedean-wall directive:\". The \"audit\" and its \"directive\" are the repo's QA discipline, not something the manuscript states.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

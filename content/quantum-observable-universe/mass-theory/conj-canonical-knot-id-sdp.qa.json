@@ -1418,7 +1418,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). R# roadmap/rung label — 'R5-minimal'; e.g. \"...the binding operator $K(\\mathfrak{H}) \\in H_{3A}(q_0)$ are open verification requirements. The R5-minimal verifier confirms the assignments at the constituent level.\". What these actually are: R2/R3/R4/R5-full/R5-minimal are rungs of an internal tooling roadmap.",
+        "notes": "Re-review from the current text: the closing sentence still names a rung of the internal tooling roadmap — \"The R5-minimal verifier confirms the assignments at the constituent level.\" R5-minimal is a stage of the repo's solver roadmap (R2–R5), not a verifier the paper defines.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

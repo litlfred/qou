@@ -1351,7 +1351,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...z^3$ in this block; corrected per [Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/-trm5-markov-bug.md)).* *Gram matrix $G_{ij} = \\tau(b_i b_j^{-1})$ (cyclic self-pairing). The...\". the word 'audit' in body prose — 'audit'; e.g. \"...igma_1\\sigma_0) = hz^2 + z$ (formerly stated as $z^3$ in this block; corrected per [Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/-trm5-markov-bug.md)).* *Gram matrix $...\". What these actually are: audit and coordination docs are internal working records.",
+        "notes": "Re-review from the current text: the docs/audits link is gone, but the remark still opens in the working channel — \"**Remark.** *User question: where does the Gram matrix fit in the spectral-sequence / Frobenius framework?*\" — and still carries a work-status marker: \"The first-row/column entries below shown as $z^3$ are stale per the Markov-bug fix and should read $hz^2+z$.\" A transcribed user question and a repo bugfix are not reader-facing.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

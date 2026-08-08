@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'P3.4', 'workplan'; e.g. \"...the named conjecture [`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max) (workplan **P3.4** path (b)). This proposition therefore **reduces the convergence question to a single...\". the word 'audit' in body prose — 'audit'; e.g. \"...the boundedness hypothesis $|\\Delta^{(n)}| \\le \\Delta_{\\max}$ holds empirically (cf. `sdp-lift-audit.witness.json`: every real Hecke word has $x^T G x \\ge 0$). At higher ranks the hypothesis is...\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids.",
+        "notes": "Re-review from the current text: the hypothesis is still tagged with a workplan item id — \"is the named conjecture [`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max) (workplan **P3.4** path (b))\". P3.4 and \"workplan\" belong to the project's plan, not to the manuscript.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

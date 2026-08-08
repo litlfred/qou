@@ -16,7 +16,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Reads as a fix-up changelog: \"(see audit log [`docs/audits/-p3-h-3a-divergence.md`](...))\" then \"Both underlying bugs are now fixed: 1. **Weight layer:** `schur_weyl_symbolic.schur_weyl_weight` incorrectly used ...\". \"audit log\", \"both underlying bugs are now fixed\" and the script-internal function name are branch remediation notes, not results. Two further `docs/audits/-q-hecke-character-gap-closure.md` references.",
+        "notes": "The `docs/audits/-p3-h-3a-divergence.md` and `docs/audits/-q-hecke-character-gap-closure.md` links are gone, but the fix-up changelog they framed is still the body of the section: \"Both underlying bugs are now fixed: 1. **Weight layer:** `schur_weyl_symbolic.schur_weyl_weight` incorrectly used the two-variable Schur function ... It now uses ...\" — remediation notes about the project's own scripts rather than results. \"## Production paths\" also closes on CI narration: \"The cross-check witness gates this on every continuous integration run.\"",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",

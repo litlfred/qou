@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body and the .ts title (published)). author-initialism pointer w/o bib key — 'GGM', 'GGM Conj 3', 'GGM Conjecture 3'; e.g. \"...t T^*S^3$; colored HOMFLY homology) | $\\det(4_1) = 5$ | | GPPV [`gukov-pei-putrov-vafa2017`] + GGM Conj 3(d) | **closed** / state-integral ($\\hat{Z}$; resurgent Stokes) | $\\{3, 4\\}$ | The **open**-HO...\". What these actually are: GGM is Garoufalidis-Gu-Marino; cite [garoufalidis-gu-marino2021] and state the equation rather than pointing at their numbering.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: \"GGM Conj 3(d)\" is a literature citation, spelled out as Garoufalidis--Gu--Mariño and keyed to [`garoufalidis-gu-marino2023peacock`] in the same block — not a branch or tracker label.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

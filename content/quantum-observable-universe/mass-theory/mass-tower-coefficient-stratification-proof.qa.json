@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). git branch name — 'claude/phase-b-heavy-rust-character-kernel', 'claude/verify-mass-computation'; e.g. \"...a). **Coordinating note for sibling computations.** The two parallel computational efforts (`claude/verify-mass-computation-k0DaZ`, `claude/phase-b-heavy-rust-character-kernel`) are independently verifying that the spe...\". 'sibling' (branch/session) reference — 'sibling'; e.g. \"...ee [Table 2](#tbl:mass-tower-coefficient-stratification-table2-data). **Coordinating note for sibling computations.** The two parallel computational efforts (`claude/verify-mass-computation-k0DaZ...\". What these actually are: a git working branch, not a stable reference.",
+        "notes": "Re-review from the current text: the closing paragraph is still cross-session coordination — \"**Coordinating note for sibling computations.** The two parallel computational efforts (`claude/verify-mass-computation-k0DaZ`, `claude/phase-b-heavy-rust-character-kernel`) are independently verifying that the spectral-derived coefficients close the ${}^4\\mathrm{He}$ binding-energy gap.\" Both names are git working branches and \"sibling computations\" is session vocabulary.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

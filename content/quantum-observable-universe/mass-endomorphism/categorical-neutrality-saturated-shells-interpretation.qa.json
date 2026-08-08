@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/-self-conj-support-reframing.md', 'docs/audits/conjecture-cones.md') in body prose: \"The character sum vanishes identically at certain atomic-braid cycle types. The binding-energy enhancement at magic shells derives from the non-vanishing of $\\Phi_n$ on the self-conjugate isotypical operator blocks. Empirically, the GS-filtration Term 6 plus an `is_magic_pair` operator-correction ca\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/-self-conj-support-reframing.md` and `docs/audits/conjecture-cones.md` links are gone, leaving the character-sum and downstream-cone passages resting on in-paper propositions only.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

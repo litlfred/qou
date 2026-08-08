@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). git branch name — 'claude/w3-w4-followups'; e.g. \"...rdering, contributing $\\alpha((\\sigma+\\sigma^{-1})/2) = 1$ from the compound-shift theorem on `claude/w3-w4-followups`. This matches [`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot)'s simplest inter...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...order of $\\mathrm{tr}_M$, NOT the q-pole order of any single per-irrep $\\chi^\\lambda_q$. See [`docs/audits/-per-irrep-pole-18-21-research-note.md`](../../docs/audits/-per-irrep-pole-18-21-research-note....\". the word 'audit' in body prose — 'audit'; e.g. \"...us its incoming interface contribution. Detailed $\\sigma^2$-adjacency analysis is given in the audit doc ([`docs/audits/-per-nucleon-shift-derivation.md`](../../docs/audits/-per-nucleon-shift-der...\". follow-up / next-steps narration — 'followups'; e.g. \"...ributing $\\alpha((\\sigma+\\sigma^{-1})/2) = 1$ from the compound-shift theorem on `claude/w3-w4-followups`. This matches [`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot)'s simplest inter...\". What these actually are: a git working branch, not a stable reference; audit and coordination docs are internal working records.",
+        "notes": "Re-review from the current text: the docs/audits paths are gone, but the base case still attributes a theorem to a git branch — \"contributing $\\alpha((\\sigma+\\sigma^{-1})/2) = 1$ from the compound-shift theorem on `claude/w3-w4-followups`.\" That is a working branch, not a citable location.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

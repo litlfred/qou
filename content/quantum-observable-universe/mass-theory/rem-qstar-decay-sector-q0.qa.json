@@ -873,12 +873,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"..../computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json)); full context in [`docs/audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md`](../../../docs/audits/2026-07-12-c3-hype...\". time-stamped note — '2026-07-12'; e.g. \"...ns/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json)); full context in [`docs/audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md`](../../../docs/audits/2026-07-12-c3-hypersensitivi...\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1088,12 +1088,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). follow-up / next-steps narration — 'follow-up'; e.g. \"...rburn.witness.json`) is absent from `computations/` and its regeneration is tracked as an open follow-up.\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: the closing sentence is a data-availability caveat — the certifying witness `atom-mass-complete-wedderburn.witness.json` is recorded as absent from `computations/` — not a deferral to a PR or work item.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

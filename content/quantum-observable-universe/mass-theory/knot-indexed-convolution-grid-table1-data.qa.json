@@ -10,7 +10,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). repo/graph-hygiene vocabulary — 'not yet in any chapter', 'orphan block'; e.g. \"...ambda(q) \\in \\mathbb{Z}[q^{± 1}]$ | | EW interface knot $\\bowtie_K$ | `def:ew-interface-knot` (orphan block — not yet in any chapter section) | 0 | EW braid in $B_6$ with interface $I$ | element of $H_6...\". What these actually are: pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "notes": "Re-review from the current text: three rows of the table still carry graph-hygiene bookkeeping — \"`def:ew-interface-knot` (orphan block — not yet in any chapter section)\", \"`conj:categorical-higgs-mechanism` (orphan block) Step C\" and \"`conj:categorical-linking-operation` (orphan block)\". \"orphan block\" and \"not yet in any chapter section\" describe the content graph's wiring state, not the mathematics.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

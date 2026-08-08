@@ -1609,12 +1609,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). 'B1' as a bare table/branch label — 'B1'; e.g. \"...d to braid orbits on cells: each pair $(g, \\beta)$ gives a relation among period values. 3. **B1 sharpness via representation theory.** The keystone's sharpness condition (image generates $\\...\". 'the keystone' used as a known referent — 'keystone'; e.g. \"...ta)$ gives a relation among period values. 3. **B1 sharpness via representation theory.** The keystone's sharpness condition (image generates $\\mathcal{P}_n / \\mathcal{P}_{n-1}$ non-by definition...\". What these actually are: 'B1' is not defined anywhere in the manuscript; it is a table/row label carried over from a branch audit; 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the bare tracker label 'B1' is gone — item 3 now reads \"**Sharpness of the depth correspondence via representation theory.**\" — leaving only \"the keystone's sharpness condition\", which is the depth correspondence the same sentence names.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1355,12 +1355,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .ts title (published)). 'B1' as a bare table/branch label — 'B1'; e.g. \"Conway--Kinoshita--Terasaka mutant pair: B1 Vol-injectivity sanity check\". work-status marker — 'sanity check'; e.g. \"Conway--Kinoshita--Terasaka mutant pair: B1 Vol-injectivity sanity check\". What these actually are: 'B1' is not defined anywhere in the manuscript; it is a table/row label carried over from a branch audit.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the .ts title no longer carries the bare tracker label 'B1' or the phrase \"sanity check\" — it now reads \"a volume-injectivity check for the depth correspondence\".",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

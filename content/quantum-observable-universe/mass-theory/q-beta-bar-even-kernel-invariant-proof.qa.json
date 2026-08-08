@@ -1285,12 +1285,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). git branch name — 'blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md'; e.g. \"...**operator-level grading** (the open [canonical evaluation-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md) spec from the closed sibling analysis).\". audit / coordination doc path — 'docs/audits/', 'kickoff'; e.g. \"...ation-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md) spec from the closed sibling analysis).\". 'sibling' (branch/session) reference — 'sibling'; e.g. \"...ute-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md) spec from the closed sibling analysis).\". time-stamped note — '2026-06-04'; e.g. \"...nical evaluation-B](https://github.com/litlfred/qou/blob/claude/qbeta-ck-habiro-operator-route-2026-06-04/docs/audits/2026-06-04-qbeta-ck-operator-route-kickoff.md) spec from the closed sibling analys...\". What these actually are: a git working branch, not a stable reference; audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the git working-branch references, the \"sibling\" branch/session references and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

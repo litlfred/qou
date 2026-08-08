@@ -1925,7 +1925,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'workplan'; e.g. \"...and matching it against the residue weights $a_D^{(n)}$ (the consistency test of the keystone workplan, gated on the per-knot weights at $n = 2, 3$).\". 'the keystone' used as a known referent — 'keystone'; e.g. \"...ch points and matching it against the residue weights $a_D^{(n)}$ (the consistency test of the keystone workplan, gated on the per-knot weights at $n = 2, 3$).\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids; 'the keystone' is the corpus nickname for `conj:gb-depth-period-correspondence`.",
+        "notes": "Re-review from the current text: the final clause still hangs the identification off the project's plan — \"matching it against the residue weights $a_D^{(n)}$ (the consistency test of the keystone workplan, gated on the per-knot weights at $n = 2, 3$).\" \"the keystone workplan\" is an internal work plan, not part of the paper.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

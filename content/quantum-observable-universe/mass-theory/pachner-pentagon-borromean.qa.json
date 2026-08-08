@@ -1407,12 +1407,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). D## duality-tracker label — 'D15'; e.g. \"**Conjecture (D15 Pachner-Pentagon closure).** *The Pachner $2$–$3$ move on the ideal-tetrahedron decomposition...\". What these actually are: D## are row numbers in `docs/duality-tracker.md`.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/duality-tracker.md` row labels (D##) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

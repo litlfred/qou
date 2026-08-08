@@ -15,12 +15,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Work-tracking narration with a dated audit filename: \"The dynamic $H_{3A}$ re-weighting forms a separate tracked fix (`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2).\" \"a separate tracked fix\", the audit filename and \"§7 Tier 2\" are all branch bookkeeping.",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the tracked-fix sentence citing `docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2 now reads \"The dynamic $H_{3A}$ re-weighting remains a separate open correction.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

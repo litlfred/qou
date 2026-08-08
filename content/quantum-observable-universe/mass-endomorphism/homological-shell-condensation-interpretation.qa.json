@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "AGENTS.md (the repo's agent-instruction file) cited as if it were a reference ('AGENTS.md §3b') in body prose: \"precisely operator-level (page collapse on the associated graded algebra). It remains consistent with this reading. ## Discussion This remains conjectural under AGENTS.md §3b. The supporting evidence comprises: 1. Numerical verification at $n \\in \\{2, 8, 20\\}$ via the matrix-evaluation programme.\" -- AGENTS.md section id used as a bare tag ('§3b') in body prose: \"precisely operator-level (page collapse on the associated graded algebra). It remains consistent with this reading. ## Discussion This remains conjectural under AGENTS.md §3b. The supporting evidence comprises: 1. Numerical verification at $n \\in \\{2, 8, 20\\}$ via the matrix-evaluation programme.\" -- internal branch audit document under `docs/audits/` ('docs/audits/-self-conj-support-reframing.md') in body prose: \"character sum $\\sum_{\\lambda = \\lambda'} w_\\lambda \\chi^\\lambda$, which vanishes identically at certain atomic-braid cycle types (see [reframing memo](../../../docs/audits/-self-conj-support-reframing.md)). The $E_\\infty^{p, >0}(n) = 0$ collapse condition stated above is\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: \"This remains conjectural under AGENTS.md §3b\" is now simply \"This remains conjectural\", and the `docs/audits/-self-conj-support-reframing.md` reframing-memo link was removed from the operator-level clarification.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

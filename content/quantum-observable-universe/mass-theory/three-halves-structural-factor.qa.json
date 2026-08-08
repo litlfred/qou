@@ -1550,12 +1550,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — 'AGENTS.md', '§7c'; e.g. \"...ves-structural-factor.lean`](three-halves-structural-factor.lean) over generic `[Field R]` per AGENTS.md §7c, using `field_simp; ring`. Generic-ring proofs apply at the substrate $q_0 \\approx 1.110$...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...^2)/(2+h^2)$ — closes $m_\\mu/m_e$ via $\\mathrm{Vol}(4_1)/\\hbar_q^2$ to 0.034 % of CODATA (`docs/audits/-lepton-bring-surface-h3-3channel-convention.md`). - **Tau** ($m = 3$, $K_\\tau = 10_{43}$ candi...\". follow-up / next-steps narration — 'followup'; e.g. \"...l}(10_{43})/\\hbar_q^2$ to +0.79 % of CODATA (`docs/audits/-t6-f-ell-derivation-attempt.md` followup section). The reduction $[6]_q = [2]_q \\cdot [3]_q \\cdot (1 + h^2)$ is the fundamental ide...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript; audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the AGENTS.md section labels (§7c / §3b-cond and friends), the `docs/audits/` and `docs/coordination/` links and the follow-up / next-steps narration no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

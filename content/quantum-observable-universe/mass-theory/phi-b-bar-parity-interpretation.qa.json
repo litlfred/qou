@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...b$) factor. (Scan: `computations/qbeta/qbeta_fmap_parity_stability_probe.py`; accuracy audit: `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.)\". time-stamped note — '2026-07-06'; e.g. \"...(Scan: `computations/qbeta/qbeta_fmap_parity_stability_probe.py`; accuracy audit: `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.)\". the word 'audit' in body prose — 'audit'; e.g. \"...($\\Phi_b$) factor. (Scan: `computations/qbeta/qbeta_fmap_parity_stability_probe.py`; accuracy audit: `docs/audits/2026-07-06-qbeta-faddeev-phi-b-modular-double-accuracy.md`.)\". What these actually are: audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the word \"audit\" used for the project's review process and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

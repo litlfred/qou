@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/-structural-diagnosis-operator-valued.md') in body prose: \"This quantitative magnitude budget drives the [`structural-diagnosis-operator-valued`](https://github.com/litlfred/qou/blob/main/docs/audits/-structural-diagnosis-operator-valued.md) audit's conclusion. The symmetric scalar substrate cannot account for the empirical Z$\\leftrightarrow$N-asymmetric ma\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/-structural-diagnosis-operator-valued.md` link and the phrase \"the ... audit's conclusion\" were replaced by \"This quantitative magnitude budget forces the structural conclusion.\"",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

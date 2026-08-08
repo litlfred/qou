@@ -1650,12 +1650,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). internal skill/hook file — '.claude/', 'Slot J', 'canonical-watcher', 'skills/local/'; e.g. \"...1 IS the topological-cohomological route; D16 IS the K-theoretic route. ## Diagnostics Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J...\". audit / coordination doc path — 'duality-tracker'; e.g. \"...anifold-with-cusps Poincaré– Lefschetz (partial in Mathlib). ## Cross-references - [`docs/duality-tracker.md`](../../docs/duality-tracker.md) D21 + paired with D16 - D16 [`conj:borromean-bloch-group...\". D## duality-tracker label — 'D16', 'D21'; e.g. \"**Conjecture (D21 Poincaré–Lefschetz closure).** *The Borromean complement $\\mathbf{S}^3 \\setminus \\mathcal{B}_3...\". R# roadmap/rung label — 'R&D'; e.g. \"...ty is independent of q-parameter; both sides are classical-topology constructions). ## Open R&D 1. Verify that the Borromean volume $8G$ arises as a Poincaré– Lefschetz pairing in Lean —...\". process heading (Status / Open R&D / Diagnostics) — '## Diagnostics', '## Open R&D'; e.g. \"...distinct dualities. D21 IS the topological-cohomological route; D16 IS the K-theoretic route. ## Diagnostics Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-wat...\". What these actually are: `.claude/skills/local/canonical-watcher.md` is an agent hook spec and '§Slot J' is a slot in that spec; audit and coordination docs are internal working records; D## are row numbers in `docs/duality-tracker.md`; R2/R3/R4/R5-full/R5-minimal are rungs of an internal tooling roadmap.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the `.claude/skills/local/` hook reference and its §Slot, the `docs/duality-tracker.md` row labels (D##), the internal tooling-roadmap rungs (R2–R5 / Open R&D) and the process headings (Status / Open R&D / Diagnostics) no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

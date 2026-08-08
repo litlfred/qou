@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). work-status marker — 'research-grade'; e.g. \"...| 4 | Extend to $H_{18}, H_{21}$ (${}^{6}$Li, ${}^{7}$Li) — replaces deprecated volume-match | research-grade | | 5 | Scale to $\\ell = 2$ α-cluster atoms ${}^{8}$Be$\\to$${}^{40}$Ca | large; needs SDP-deco...\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: the table now carries no workplan, branch or tracker labels; \"research-grade\" and \"deprecated volume-match\" are ordinary maturity and supersession hedges.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

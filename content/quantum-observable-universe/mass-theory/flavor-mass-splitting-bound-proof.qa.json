@@ -1102,12 +1102,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). follow-up / next-steps narration — 'follow-up'; e.g. \"...-substrate inputs (the nucleon-baryon sum rule for the average $\\bar\\mu$) and live in the open follow-up; see [`rem:dressed-quark-numerology-at-q0`](../observations/dressed-quark-numerology-at-q0.md)...\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: \"live in the open follow-up; see [`rem:dressed-quark-numerology-at-q0`]\" points at a remark the paper contains — ordinary scoping prose, not a deferral to a PR or work item.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

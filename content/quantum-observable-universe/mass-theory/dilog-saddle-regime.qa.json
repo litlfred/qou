@@ -903,12 +903,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). follow-up / next-steps narration — 'filler'; e.g. \"...ction $\\mathrm{Cl}_2(\\theta)$ ([Clausen function Mathlib filler](#rem:clausen-function-mathlib-filler)). Its critical points solve $$ \\frac{d}{d\\theta}\\,\\mathrm{Im}\\,\\mathrm{Li}_2(e^{i\\theta})...\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Clean: \"[Clausen function Mathlib filler](#rem:clausen-function-mathlib-filler)\" is a link to a remark the paper contains, so the word \"filler\" is that block's own name rather than a work-item label.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1894,7 +1894,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). AGENTS.md policy-section label — 'AGENTS.md', '§3b-cond', '§7c'; e.g. \"...proof, conditional on [`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md) per AGENTS.md §3b-cond).** *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-...\". audit / coordination doc path — 'docs/audits/'; e.g. \"...block-decomposition of $\\rho_\\lambda(I)$ — scalar form proved in [scalar audit](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md); operator-valued form closed conditional on [`conj:c...\". the word 'audit' in body prose — 'audit'; e.g. \"...Hecke-branching block-decomposition of $\\rho_\\lambda(I)$ — scalar form proved in [scalar audit](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md); operator-valued form closed con...\". What these actually are: these are sections of the repo's AGENTS.md agent-instruction file (§7c = the base-ring convention, §3b-cond = the conditional-result / hypothesis-class policy), not sections of this manuscript; audit and coordination docs are internal working records.",
+        "notes": "Re-review from the current text: AGENTS.md §3b-cond/§7c, the docs/audits links and the word 'audit' are all gone; what remains is one undefined workplan label in the verification section — \"matching the empirical W-3 closed form $D(u) = 2^{2A+1} \\cdot u^{18Z + 21N + 1} \\cdot (1+u^2)^{3A-1}$ exactly.\" \"W-3\" occurs nowhere else in the manuscript and is a workplan item id.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

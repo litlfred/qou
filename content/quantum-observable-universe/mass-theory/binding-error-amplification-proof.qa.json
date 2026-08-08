@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'step-9a', 'step-9b'; e.g. \"...lightest, most weakly bound nuclei. **Corollary.** The per-knot mass-prediction accuracy (the step-9a frontier) and the binding-energy accuracy (the step-9b frontier) are not independent problems....\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids.",
+        "notes": "Re-review from the current text: the Corollary still labels two research frontiers with workplan item ids — \"The per-knot mass-prediction accuracy (the step-9a frontier) and the binding-energy accuracy (the step-9b frontier) are not independent problems.\" \"step-9a\" and \"step-9b\" are steps of the internal workplan, not anything the paper defines.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

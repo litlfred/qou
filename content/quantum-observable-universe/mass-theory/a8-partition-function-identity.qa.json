@@ -1551,12 +1551,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). workplan / phase / tranche item label — 'Phase 5q', 'Track 1', 'tranche'; e.g. \"...m = 8$ shell, not of the algebraic-expansion shape, so this finding is expected to survive the Phase 5q convention switch (cf. Track 1 of the $\\mathfrak{Q}_\\beta$ Habiro follow-up coordination ledge...\". audit / coordination doc path — 'coordination ledger', 'docs/audits/', 'docs/coordination/'; e.g. \"...Habiro coefficient of the proton and neutron in the canonical Habiro-witness convention (per [`docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md`](https://github.com/litlfred/qou/blob/m...\". time-stamped note — '2026-06-01'; e.g. \"...icient of the proton and neutron in the canonical Habiro-witness convention (per [`docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md`](https://github.com/litlfred/qou/blob/main/docs/a...\". the word 'audit' in body prose — 'audit'; e.g. \"...This identification was made in the **Habiro-witness convention** (`include_inter=True`). The audit [`docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md`](https://github.com/litl...\". follow-up / next-steps narration — 'follow-up', 'followup'; e.g. \"...cted to survive the Phase 5q convention switch (cf. Track 1 of the $\\mathfrak{Q}_\\beta$ Habiro follow-up coordination ledger). The Hardy–Ramanujan values $(1, 2, 3, 5, 7)$ are standard (OEIS A000041...\". What these actually are: P#.#, 'Phase N', 'Track N', 'step-9b' and the '13-driver menu' are workplan item ids; audit and coordination docs are internal working records.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/` and `docs/coordination/` links, the word \"audit\" used for the project's review process, the workplan item ids (Phase N / Track N / P#.# / tranche), the follow-up / next-steps narration and the time-stamped working notes no longer appear in the published prose or title; what is left resolves to objects the paper itself defines.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

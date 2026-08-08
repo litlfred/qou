@@ -1341,7 +1341,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). git branch name — 'blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json'; e.g. \"...rmalism and locked in [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)). **Yekutieli at finite slice** (multiplicative integration on surfaces, restricted to finit...\". follow-up / next-steps narration — 'followups'; e.g. \"...tration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)). **Yekutieli at finite slice** (multiplic...\". What these actually are: a git working branch, not a stable reference.",
+        "notes": "Re-review from the current text: the witness citation still points at a git working branch — \"locked in [`gb-filtration-jet-order.witness.json`](https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/gb-filtration-jet-order.witness.json)\". The `claude/mass-units-bridge-followups` path is a branch, not a stable reference a reader can resolve.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

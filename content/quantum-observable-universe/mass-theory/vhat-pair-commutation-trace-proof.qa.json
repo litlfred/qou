@@ -1103,7 +1103,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). the word 'audit' in body prose — 'audit'; e.g. \"...ading collapses, the operators become scalars, and the pentagon collapses to a tautology. The audit gap is therefore resolved as follows: the pentagon identity is a feature of the **operator lif...\".",
+        "notes": "Re-review from the current text: the closing paragraph still resolves a QA finding rather than a mathematical one — \"The audit gap is therefore resolved as follows: the pentagon identity is a feature of the **operator lift** ...\", and just above it \"The operator pentagon was a heuristic prompt\". \"the audit gap\" and \"prompt\" are the working channel's vocabulary.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

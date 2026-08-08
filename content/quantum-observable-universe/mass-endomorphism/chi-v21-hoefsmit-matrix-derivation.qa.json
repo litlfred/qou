@@ -16,7 +16,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Session narration and a status heading in published prose. Heading: \"## Deferred to follow-up PR\" - a branch scheduling decision, not a section of a paper. Provenance given as chat history: \"This matches the observed asymptotic $\\sim k(k+3)/2$ for the V_(2,1) coefficients (proved earlier in the conversation).\" A reader has no conversation. Build-state narration too: \"(currently chapter-block isolated --- Lake module doesn't yet expose them)\".",
+        "notes": "Build-state narration survives in \"## Not yet formalised\": \"(currently chapter-block isolated — Lake module doesn't yet expose them)\" and \"The proof is the only remaining `sorry` in this chapter-block content\" both report the repo's Lean build state, and \"Resolving the YB cubic anomaly (`d_1 \\leftrightarrow d_2` swap per `rem:post-pr665-open-rd-inventory`)\" carries a PR number in the referent. The earlier defects are fixed: the heading is now \"## Not yet formalised\" rather than \"## Deferred to follow-up PR\", and \"(proved earlier in the conversation)\" is gone.",
         "reviewed_at": "2026-08-08T08:22:35.606Z",
         "reviewer": {
           "kind": "agent",

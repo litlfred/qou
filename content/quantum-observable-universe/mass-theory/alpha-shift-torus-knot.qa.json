@@ -1976,7 +1976,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). audit / coordination doc path — 'docs/audits/'; e.g. \"...ta_q$-trace identity into the same combinatorial universe as the w3-w4 atomic-shift formula ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)).\". repo/graph-hygiene vocabulary — 'unblocked'; e.g. \"...to the same combinatorial universe as the w3-w4 atomic-shift formula ([`docs/audits/-w3-habiro-unblocked.md`](../../docs/audits/-w3-habiro-unblocked.md)).\". What these actually are: audit and coordination docs are internal working records; pipeline/graph bookkeeping vocabulary ('wired', 'orphan block', 'section lead'), not reader-facing.",
+        "notes": "Re-review from the current text: the .md body closes on two branch labels a reader cannot resolve — \"upgrading AXKIA's $\\delta_q$-trace identity into the same combinatorial universe as the w3-w4 atomic-shift formula.\" AXKIA is the branch `claude/improve-charge-precision-AXKIA` and \"w3-w4\" is the W-3/W-4 workplan pair (cf. `claude/w3-w4-followups`); neither is defined anywhere in the manuscript.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

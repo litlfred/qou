@@ -1284,7 +1284,7 @@
     "voice-branch-jargon": [
       {
         "result": "fail",
-        "notes": "Branch/audit working labels leaking into published prose (the .md body). the word 'audit' in body prose — 'audit'; e.g. \"...:binding-scale-catalan) and $G \\approx 0.9160$ is Catalan's constant. Per [the divergence-audit branch's reconciliation](#prop:mass-endomorphism-tower), $\\alpha\\,\\ln\\lvert V \\rvert$ is the...\".",
+        "notes": "Re-review from the current text: the brane-tower bullet still attributes a reconciliation to a working branch and an audit — \"Per [the divergence-audit branch's reconciliation](#prop:mass-endomorphism-tower), $\\alpha\\,\\ln\\lvert V \\rvert$ is the leading-order expansion of ...\". The link text names a git branch and the project's divergence audit rather than the proposition it points to.",
         "reviewed_at": "2026-08-08T08:19:18Z",
         "reviewer": {
           "kind": "agent",

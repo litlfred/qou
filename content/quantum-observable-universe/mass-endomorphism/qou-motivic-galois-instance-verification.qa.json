@@ -13,12 +13,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "internal branch audit document under `docs/audits/` ('docs/audits/family-4-motivic-path.md') in body prose: \"- **Lean instance.** The instance in [`qou-motivic-galois-instance.lean`](qou-motivic-galois-instance.lean) discharges [`def:motivic-galois-character`](#def:motivic-galois-character) for the QOU substrate. The `frobenius_at` field maps each prime to its extracted Frobenius eigenvalue. The `almost_ev\"",
-        "reviewed_at": "2026-08-08T08:22:35.606Z",
+        "result": "pass",
+        "notes": "Fixed: the `docs/audits/family-4-motivic-path.md` link was removed from the Lean-instance bullet, which now cites only `qou-motivic-galois-instance.lean` and in-paper definitions.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }
