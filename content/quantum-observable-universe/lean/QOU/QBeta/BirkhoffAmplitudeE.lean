@@ -37,9 +37,24 @@ locate the precise remaining wall (Part 3–4).
 * The **`∞`-side** exponent is OPEN: C1 is slope-`½` irregular at `∞`, so its canonical
   solution needs the q-native wild / alien datum (`2026-08-08-rsz-c1-infinity-route-closed.md`;
   bean `qou-vkg5`).
-* The **cross-ratio `χ(P)`** has a conjectured theta closed form whose *ellipticity* is
-  PROVED (`C1ConnectionPoles.connRatio_elliptic`); `χ(P) = closed form` is UNPROVED (needs
-  the analytic construction; bean `qou-wgnx`).
+* The **cross-ratio `χ(P)`** has a theta closed form whose *ellipticity* is PROVED
+  (`C1ConnectionPoles.connRatio_elliptic`); `χ(P) = closed form` (that χ *equals* it, via
+  the analytic construction / Jacobi triple product) is UNPROVED (bean `qou-wgnx`).
+
+  **Value re-scope (2026-08-08).**  The closed form is on main and its NUMERIC value at the
+  substrate is now COMPUTED, so "χ(P)'s value is open" is stale: `χ(P)|q₀` (proton pin) is a
+  **pure unit-modulus phase**, `|χ| = 1` exactly, a `z`-dependent elliptic function — NOT a
+  single real number and NOT the lift magnitude `r* = μ₃/c₃ ≈ 1.585`.  A unit phase cannot
+  equal a real magnitude `> 1`, so the direct identity `χ(P) = r*` is a **scope-(a) negative**
+  (witness `computations/qbeta/c1-chi-magnitude-vs-r-star.witness.json`, audit
+  `2026-08-08-chi-p-magnitude-vs-r-star-evaluation.md`).  This does NOT refute `E = χ(P)`
+  (the gauge argument never claimed χ(P) is the magnitude); the lift is *affine* in `E`
+  (`factor_sa − (B·D⁻¹/A)·E`, `factor_sa ≤ 1`), so `r*` is a real functional of `E`, not `E`.
+  What is now precisely open: the **phase→real-amplitude→lift bridge** — which real
+  anti-self-adjoint `E` the unit-phase `χ(P)` supplies (a real `E` vs a complex phase is a
+  genuine type tension) and whether it yields `r*` — plus the from-first-principles `∞`-side
+  wild datum (bean `qou-vkg5`).  The cross-ratio's *value* is no longer the open item; the
+  bridge is.
 
 **The construction (Part 1, built on `QCharacter`).**  Each entry `P_{ij}` is a theta-quotient
 q-character (RSZ pseudo-constant, `C1ConnectionPoles.thetaRatio_multiplier`): its σ_q-multiplier
