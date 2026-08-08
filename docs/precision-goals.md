@@ -265,6 +265,25 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 > **L2 binding-energy targets remain presently unreachable** — not because
 > of compute precision, and no longer because of the per-partition value,
 > but because the super-pairwise extensive **magnitude** term is open R&D.
+>
+> **ℓ¹-ceiling sharpening (2026-08-07, `free_parameters = 0`).** The "magnitude
+> is open" statement is now a *proved quantitative bound*, not an inference. The
+> ℓ¹ norm `Σ_λ |y_λ χ^λ Δ_λ|` — the absolute ceiling reachable with **perfect
+> constructive interference and zero cancellation** — is only `[0.36, 0.59]` of
+> the AME target across **all four** atoms (D 0.516 · T 0.358 · ³He 0.592 ·
+> ⁴He 0.406). So **no re-signing, no re-weighting, and no `Δ_λ` re-derivation
+> can close the deficit** — the entire "find a better `Δ_λ`" family (where all
+> six-plus prior ansätze lived) is foreclosed as scope-(a). A genuinely **new
+> additive term is required**, and the ℓ¹ ceiling is the quantitative bar it
+> must clear: it must supply **41–64 % of each target on its own**. The ≥3-body
+> sector is the coherent one (`ℓ(λ)=3` cancellation ratio 0.98–1.00 at T/³He),
+> and ⁴He's two-row sector is suppressed ~29,000× (a *strong, unproved*
+> coincidence at the doubly-magic `[1⁴]` SU(4) singlet — not a proved selection
+> rule). Current identified candidate for the new term: the He4-local ≥4-body
+> cumulant `b₄ = −ln det(I + m·S)` (`eig(S) = {±√5, ±1}`), whose lone open scalar
+> `m ∈ (0, 1/√5)` must be **derived forward**, not selected by AME (fit trap:
+> no Σ(2,3,5) object is structurally forced below the ceiling). Full probe:
+> [`docs/audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md`](audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md).
 
 | Atom | B_AME (MeV) | σ_B / B | 100× target |
 |---|---:|---:|---:|
