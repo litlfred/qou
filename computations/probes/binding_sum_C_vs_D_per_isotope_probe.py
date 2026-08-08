@@ -143,14 +143,28 @@ def delta_lambda(lam):
     return (-1) ** n_lambda(list(lam)) * classical_dim(list(lam))
 
 
-def measure_atom(atom, q, dps):
-    """chi^lambda once, then both conventions' sums off the same characters."""
+def measure_atom(atom, q, dps, two_row_only=False):
+    """chi^lambda once, then both conventions' sums off the same characters.
+
+    `two_row_only` restricts the chi computation to ell(lambda) <= 2.  This is
+    EXACT for the convention-D sums (D annihilates every >2-row weight, proved
+    in the sibling probe's C2) and gives the two-row PARTIAL sum on the C side;
+    the C total is then unavailable and reported as None.  It exists because
+    the full n = 12 character set includes blocks of dimension up to 2673,
+    while the seven two-row blocks of 12 top out at 297.
+    """
     Z, N = ATOMS[atom]
     n = 3 * (Z + N)
     word = atom_braid_word_3A(Z, N)
     parts = [tuple(p) for p in partitions_of(n)]
-    log(f"{atom}: H_{n}, {len(parts)} partitions, {len(word)} crossings")
+    if two_row_only:
+        parts = [p for p in parts if len(p) <= 2]
+    log(f"{atom}: H_{n}, {len(parts)} partitions"
+        f"{' (two-row only)' if two_row_only else ''}, {len(word)} crossings")
 
+    # NOTE: y_vector_at_z always normalises over ALL partitions of n
+    # (sum_lambda y_lambda d_lambda = 1); restricting `parts` above only
+    # restricts which chi are computed, never the normalisation.
     yC = y_vector_at_z(n, q, z_C(q))
     yD = y_vector_at_z(n, q, z_D(q))
 
@@ -215,6 +229,8 @@ def measure_atom(atom, q, dps):
         "B_AME2020_MeV": AME_B_MEV[atom],
         "rel_err_C": mp.nstr((B_C - ame) / ame, 10),
         "rel_err_D": mp.nstr((B_D - ame) / ame, 10),
+        "two_row_only": bool(two_row_only),
+        "totals_are_two_row_partial": bool(two_row_only),
         "by_partition": rows,
     }
     log(f"  {atom}: tr_M  C={mp.nstr(trC,12)}  D={mp.nstr(trD,12)}")
@@ -232,6 +248,8 @@ def main() -> int:
                     help="comma-separated subset of "
                          "deuteron,tritium,helium-3,helium-4")
     ap.add_argument("--dps", type=int, default=50)
+    ap.add_argument("--two-row-only", action="store_true",
+                    help="compute chi only for ell(lambda) <= 2: EXACT for the D sums, two-row partial on the C side")
     args = ap.parse_args()
 
     set_compute_dps()
@@ -245,9 +263,11 @@ def main() -> int:
     for atom in wanted:
         if atom not in ATOMS:
             raise SystemExit(f"unknown atom {atom!r}")
-        results[atom] = measure_atom(atom, q, args.dps)
+        results[atom] = measure_atom(atom, q, args.dps,
+                                     two_row_only=args.two_row_only)
 
-    slug = "-".join(a[:4] for a in wanted)
+    slug = "-".join(a[:4] for a in wanted) + \
+        ("-tworow" if args.two_row_only else "")
     wb = WitnessBuilder(f"binding-sum-c-vs-d-{slug}", engine="mpmath")
     wb.add_parameter("q_0", Q_50_DIGIT_STR)
     wb.add_parameter("q_0_pin", "experimental/proton "
@@ -257,6 +277,7 @@ def main() -> int:
     wb.add_parameter("z_C", mp.nstr(z_C(q), 30))
     wb.add_parameter("z_D", mp.nstr(z_D(q), 30))
     wb.add_parameter("atoms", wanted)
+    wb.add_parameter("two_row_only", bool(args.two_row_only))
     for atom, r in results.items():
         wb.add_data(atom, r)
         wb.add_assertion(

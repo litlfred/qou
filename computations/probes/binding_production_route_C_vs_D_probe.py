@@ -108,13 +108,20 @@ def chi_of_word(word, parts, q, label):
     return out
 
 
-def measure(atom, q):
+def measure(atom, q, two_row_only=False):
     Z, N = ATOMS[atom]
     n = 3 * (Z + N)
     w_atom = atom_braid_word_3A(Z, N, include_inter=True)
     w_free = atom_braid_word_3A(Z, N, include_inter=False)
     parts = [tuple(p) for p in partitions_of(n)]
-    log(f"{atom}: H_{n}, {len(parts)} partitions, "
+    if two_row_only:
+        # EXACT for the D traces (D annihilates every >2-row weight); the C
+        # traces then become two-row partials.  Needed at n = 12, where the
+        # full character set reaches dim 2673 but the seven two-row blocks
+        # of 12 stop at 297.
+        parts = [p for p in parts if len(p) <= 2]
+    log(f"{atom}: H_{n}, {len(parts)} partitions"
+        f"{' (two-row only)' if two_row_only else ''}, "
         f"atom {len(w_atom)} / free {len(w_free)} crossings")
 
     yC, yD = y_vector_at_z(n, q, z_C(q)), y_vector_at_z(n, q, z_D(q))
@@ -138,6 +145,8 @@ def measure(atom, q):
         "atom": atom, "Z": Z, "N": N, "n_strands": n,
         "n_partitions": len(parts),
         "n_zeroed_under_D": sum(1 for p in parts if len(p) > 2),
+        "two_row_only": bool(two_row_only),
+        "C_values_are_two_row_partial": bool(two_row_only),
         "E_0_MeV": str(E_0),
         "tr_M_atom_C": mp.nstr(trA_C, 25),
         "tr_M_free_C": mp.nstr(trF_C, 25),
@@ -168,6 +177,7 @@ def measure(atom, q):
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--atoms", default="deuteron")
+    ap.add_argument("--two-row-only", action="store_true")
     args = ap.parse_args()
     set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
@@ -175,9 +185,11 @@ def main() -> int:
     log(f"E_0 = {E_0} MeV (experimental_constants.Q_NEUTRON_MEV)")
 
     wanted = [a.strip() for a in args.atoms.split(",") if a.strip()]
-    results = {a: measure(a, q) for a in wanted}
+    results = {a: measure(a, q, two_row_only=args.two_row_only)
+               for a in wanted}
 
-    slug = "-".join(a[:4] for a in wanted)
+    slug = "-".join(a[:4] for a in wanted) + \
+        ("-tworow" if args.two_row_only else "")
     wb = WitnessBuilder(f"binding-production-route-c-vs-d-{slug}",
                         engine="mpmath")
     wb.add_parameter("q_0", Q_50_DIGIT_STR)

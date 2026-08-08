@@ -1,0 +1,69 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T13:15:07.012711+00:00",
+  "commitSha": "951515eaa56344c8371a1afc42abef02ad530563",
+  "assertions": [
+    {
+      "name": "helium-4_delta_tr_changes_under_D",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the C->D change is a per-block reweighting, not a common scale, so it does not cancel in the trace difference that production uses"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 19,
+  "computation": "binding-production-route-c-vs-d-heli-tworow",
+  "scriptFile": "binding_production_route_C_vs_D_probe.py",
+  "scriptHash": "e20029d09f06",
+  "scriptCommitSha": "951515eaa56344c8371a1afc42abef02ad530563",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "PRODUCTION binding route (delta_tr = tr_M(free) - tr_M(atom), B = E_0 * delta_tr, per binding_canonical.py) evaluated under the binding channel's current convention C and under the mass channel's settled convention D, at the EXPERIMENTAL (proton) q_0. Measurement only.",
+  "contentBlock": "prop:h3-markov-wenzl-weights",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_muon_built_cache": false,
+    "uses_experimental_target_values_as_input": false,
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946"
+  },
+  "data": {
+    "helium-4": {
+      "atom": "helium-4",
+      "Z": 2,
+      "N": 2,
+      "n_strands": 12,
+      "n_partitions": 7,
+      "n_zeroed_under_D": 0,
+      "two_row_only": true,
+      "C_values_are_two_row_partial": true,
+      "E_0_MeV": "0.7823334093100222",
+      "tr_M_atom_C": "0.05129578445898951544544111",
+      "tr_M_free_C": "0.4364887490648054041268347",
+      "tr_M_atom_D": "0.1609741454424073751800878",
+      "tr_M_free_D": "1.280783151528646410636338",
+      "delta_tr_C": "0.3851929646058158886813936",
+      "delta_tr_D": "1.11980900608623903545625",
+      "delta_tr_D_over_C": "2.90713774389",
+      "B_MeV_C": "0.301349325242303",
+      "B_MeV_D": "0.876063997507515",
+      "B_AME2020_MeV": "28.295673",
+      "rel_err_C": "-0.9893499856",
+      "rel_err_D": "-0.9690389411",
+      "two_row_share_of_delta_tr_C": "1.0"
+    }
+  }
+}
