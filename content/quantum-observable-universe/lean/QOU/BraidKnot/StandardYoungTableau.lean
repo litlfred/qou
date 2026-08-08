@@ -133,6 +133,31 @@ def StandardYoungTableau.hookLength (μ : YoungDiagram) (i j : ℕ) : ℕ :=
 theorem hookLength_pos (μ : YoungDiagram) (i j : ℕ) : 0 < StandardYoungTableau.hookLength μ i j := by
   unfold StandardYoungTableau.hookLength; omega
 
+/-- Entries increase strictly along a row, for arbitrary `j1 < j2` — the
+structure field only gives consecutive steps. -/
+theorem StandardYoungTableau.entry_row_lt {μ : YoungDiagram}
+    (T : StandardYoungTableau μ) {i j1 j2 : ℕ} (h : j1 < j2) (hmem : (i, j2) ∈ μ) :
+    T.entry i j1 < T.entry i j2 := by
+  induction j2 with
+  | zero => omega
+  | succ k ih =>
+      rcases Nat.lt_succ_iff_lt_or_eq.mp h with hlt | heq
+      · have hk : (i, k) ∈ μ := μ.up_left_mem (le_refl i) (Nat.le_succ k) hmem
+        exact lt_trans (ih hlt hk) (T.row_strict i k hmem)
+      · subst heq; exact T.row_strict i j1 hmem
+
+/-- Entries increase strictly down a column, for arbitrary `i1 < i2`. -/
+theorem StandardYoungTableau.entry_col_lt {μ : YoungDiagram}
+    (T : StandardYoungTableau μ) {i1 i2 j : ℕ} (h : i1 < i2) (hmem : (i2, j) ∈ μ) :
+    T.entry i1 j < T.entry i2 j := by
+  induction i2 with
+  | zero => omega
+  | succ k ih =>
+      rcases Nat.lt_succ_iff_lt_or_eq.mp h with hlt | heq
+      · have hk : (k, j) ∈ μ := μ.up_left_mem (Nat.le_succ k) (le_refl j) hmem
+        exact lt_trans (ih hlt hk) (T.col_strict k j hmem)
+      · subst heq; exact T.col_strict i1 j hmem
+
 /-- **Arm length in closed form.** The cells strictly right of `(i, j)` in row `i`
 are exactly `j < b < μ.rowLen i`, so there are `μ.rowLen i - j - 1` of them. -/
 theorem armCard_eq (μ : YoungDiagram) (i j : ℕ) :

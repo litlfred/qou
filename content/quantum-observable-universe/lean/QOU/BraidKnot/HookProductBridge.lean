@@ -1,5 +1,6 @@
 import QOU.BraidKnot.StandardYoungTableau
 import QOU.BraidKnot.IdentityIContentDecomposition
+import QOU.Mathlib.HookLengthFormula
 
 /-!
 # Reconciling the two hook-length products
@@ -61,5 +62,18 @@ theorem hookProduct_eq_prodHooks (μ : YoungDiagram) :
   refine congrArg List.prod (List.map_congr_left ?_)
   intro j _
   rw [colLen_rowLens]
+
+/-- **Bridge (1) of sp09.** The `BraidKnot` hook product equals the
+`QOU.Mathlib` one. Both are `∏_{c ∈ μ.cells}` of a hook length, and on a genuine
+cell both hook lengths reduce to `(rowLen i − j) + (colLen j − i) − 1` —
+`hookLength_eq_rowLen_add_colLen` here, `YoungDiagram.hookLength_eq_of_mem`
+there. -/
+theorem hookProduct_eq_hookLengthProduct (μ : YoungDiagram) :
+    hookProduct μ = μ.hookLengthProduct := by
+  unfold hookProduct YoungDiagram.hookLengthProduct
+  refine Finset.prod_congr rfl (fun c hc => ?_)
+  obtain ⟨i, j⟩ := c
+  have hmem : (i, j) ∈ μ := (YoungDiagram.mem_cells _).mp hc
+  rw [hookLength_eq_rowLen_add_colLen μ hmem, YoungDiagram.hookLength_eq_of_mem μ hmem]
 
 end QOU.BraidKnot
