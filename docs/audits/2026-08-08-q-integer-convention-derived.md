@@ -85,8 +85,9 @@ eyeball. That is the dangerous size.
 | **GEOMETRIC** | `qIntPoly (q) (n)` | `Mass/QHookDimension` |
 | balanced | `qIntBal (q) (n)` | `Mass/QHookDimensionBalanced` |
 | balanced | `qBracket (R) (q) (k:ℤ)` | `IwahoriHecke/Hoefsmit` |
+| balanced | `qInt (q) (n)` | `predicted-spectra/skein-finiteness-bound` |
 
-4 geometric, 4 balanced. **The bare name `qInt` is geometric in three files and
+**Nine definitions across nine files: 4 geometric, 5 balanced.** **The bare name `qInt` is geometric in three files and
 balanced in a fourth** (`q_turbulence_spectrum`). Same glyph, two conventions —
 the overloaded-symbol trap AGENTS.md warns about. *Reading a call site does not
 tell you which object you have.*
@@ -104,6 +105,9 @@ Two files were checked directly rather than assumed guilty:
 * **`Mass/QHookDimension`** (geometric) vs **`QHookDimensionBalanced`**
   (balanced) are a deliberate pair, not a contradiction: the second exists
   precisely to prove the twist relating them.
+* **`predicted-spectra/skein-finiteness-bound`** defines a ninth `qInt`, but a
+  **balanced** one — `(q^n − (1/q)^n)/(q − 1/q)`. Duplication, not a defect; it
+  is correct as written and only adds to the naming clutter.
 
 ## What was fixed here
 
@@ -153,7 +157,7 @@ built by nothing and read by nothing.
 
 ## Not done here
 
-The rename/reconcile sweep. Eight definitions across eight files, each with
+The rename/reconcile sweep. Nine definitions across nine files, each with
 downstream consumers that must be checked individually against (D1) — a
 geometric site is fine if its variable means `q²`. That is a scoped pass of its
 own, filed as `qou-qint`, not something to blanket-apply.

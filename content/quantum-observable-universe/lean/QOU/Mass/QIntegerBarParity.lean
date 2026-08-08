@@ -1,7 +1,7 @@
 /-
   Why the corpus's quantum integer is the BALANCED one: bar parity.
 
-  The corpus carries two q-integer conventions (nine definitions across eight
+  The corpus carries two q-integer conventions (nine definitions across nine
   files at the time of writing, four geometric and five balanced):
 
       GEOMETRIC   `qIntPoly q n = ∑_{i<n} q^i`        (`QOU.Mass.QHookDimension`)
@@ -22,8 +22,8 @@
       NOT invariant: it transforms with weight `−(n−1)`.
 
   WHY IT MATTERS, stated as the contrapositive that is actually usable:
-  `qIntPoly_not_bar_even_of_ne` shows the geometric form is bar-even *only* in
-  the degenerate cases `n ≤ 1` or `q^2 = 1`.  So **any quantity required to be
+  `qIntPoly_bar_even_forces_degenerate` shows the geometric form is bar-even
+  *only* in degenerate cases (`n ≤ 1`, `q^(n−1) = 1`, or a vanishing sum).  So **any quantity required to be
   bar-even — every cosh-channel / mass-side object — must use the balanced
   form**; a geometric `[n]` inside one breaks the parity bookkeeping silently,
   because at a single anchor the two differ only by a monomial factor that no
