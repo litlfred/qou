@@ -111,6 +111,37 @@ Verified with `lean`-direct (`LEAN_PATH` against the restored oleans, **exit
 — the three standard Mathlib axioms, **no `sorryAx`**; likewise for the other
 three declarations. Zero `sorry` / `admit` / `native_decide` in the file.
 
+### The prior Lean file proves the *other* half — and the audit over-claimed it
+
+`QOU/Mass/C1FormalSolutionGrowth.lean` (2026-08-01, sorry-free) already exists.
+It defines
+
+```lean
+def c1FormalDeg (n : ℕ) : ℕ := ∑ m ∈ range n, (2 * m + 1)
+theorem c1FormalDeg_eq_sq (n : ℕ) : c1FormalDeg n = n ^ 2
+```
+
+and imports **no `Polynomial` at all** (only `BigOperators` + `Tactic.Ring`).
+`c1FormalDeg` is *defined* to be the sum, so `c1FormalDeg_eq_sq` is the pure-`ℕ`
+identity `Σ_{m<n}(2m+1) = n²`. That is true and correctly proved — but on its own
+it says nothing about the coefficients `cₙ`: nothing in that module mentions the
+recurrence, the factor `f_m`, or `natDegree`. The name asserts "the C1
+formal-solution degree"; the content is a fact about natural numbers.
+
+So the 08-01 audit's summary — *"the ∞ formal solution is now explicit and its
+divergence **proved** (`deg = n²`)"* — over-states what that file establishes.
+The divergence claim needs the *polynomial* degree, which is the
+no-cancellation step, and that was the missing half.
+
+**This is not a criticism of that file**, which is honest about what it states;
+it is a correction to the audit line that cites it as proving the divergence.
+`cCoeff_natDegree_eq_c1FormalDeg` now closes the gap by proving the genuine
+`natDegree` equals `c1FormalDeg`, which is what earns that definition its name.
+
+(Method note: my own corpus-grep for this work searched Borel/D-ladder terms and
+missed this file. It surfaced only when reading the 08-01 audit's "What landed"
+list — a reminder that the grep is necessary, not sufficient.)
+
 **Where the mathematical content actually sits, in the Lean.** The two
 disequalities `2m ≠ m` and `2m+1 ≠ m` are discharged from `m > 0` and are
 exactly the no-cancellation fact; they are what the `m = 0` branch cannot

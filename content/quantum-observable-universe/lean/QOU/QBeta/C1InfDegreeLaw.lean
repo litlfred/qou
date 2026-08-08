@@ -32,6 +32,7 @@ crossed here).
 -/
 import Mathlib.Algebra.Polynomial.Degree.Lemmas
 import Mathlib.Tactic.ComputeDegree
+import QOU.Mass.C1FormalSolutionGrowth
 
 namespace QOU.QBeta
 
@@ -99,5 +100,35 @@ theorem cCoeff_natDegree (n : ℕ) : (cCoeff n).natDegree = n ^ 2 := by
       rw [cCoeff_succ, natDegree_mul (cCoeff_ne_zero k) (cFactor_ne_zero k),
         ih, cFactor_natDegree]
       ring
+
+/-!
+### Bridge to `QOU.Mass.C1FormalSolutionGrowth`
+
+`QOU.Mass.C1FormalSolutionGrowth.c1FormalDeg n` is *defined* as `∑_{m<n} (2m+1)`, and
+`c1FormalDeg_eq_sq` proves it equals `n²`. That is a true statement about
+natural numbers, but on its own it says nothing about the coefficients `cₙ` —
+the name asserts "the C1 formal-solution degree" while nothing in that module
+mentions `Polynomial` or the recurrence.
+
+The lemma below is the missing link: the *actual* `natDegree` of the *actual*
+coefficient polynomial equals that combinatorial quantity. It is what earns
+`c1FormalDeg` its name, and it is the step that requires the domain structure
+of `ℤ[X]` plus the no-cancellation fact — neither of which is available to a
+pure-`Nat` argument.
+-/
+
+/-- **Bridge.** The genuine polynomial degree of `cₙ` is the combinatorial
+`c1FormalDeg n`. This is what connects `QOU.Mass.C1FormalSolutionGrowth.c1FormalDeg` to the object it
+is named for. -/
+theorem cCoeff_natDegree_eq_c1FormalDeg (n : ℕ) :
+    (cCoeff n).natDegree = QOU.Mass.C1FormalSolutionGrowth.c1FormalDeg n := by
+  rw [cCoeff_natDegree, QOU.Mass.C1FormalSolutionGrowth.c1FormalDeg_eq_sq]
+
+/-- The per-step increment, transported to the genuine degree: appending the
+factor `f_n` raises the polynomial degree by exactly `2n+1`. -/
+theorem cCoeff_natDegree_step (n : ℕ) :
+    (cCoeff (n + 1)).natDegree = (cCoeff n).natDegree + (2 * n + 1) := by
+  rw [cCoeff_natDegree, cCoeff_natDegree]
+  ring
 
 end QOU.QBeta
