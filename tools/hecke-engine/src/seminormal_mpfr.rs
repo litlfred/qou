@@ -145,11 +145,27 @@ fn apply_sigma_inv_mpfr(v: &mut [Float], blocks: &[BlockMpfr], h: &Float, prec: 
     }
 }
 
-/// Apply `v ← (σ_i + σ_i⁻¹)/2 · v = (σ_i - h/2) · v` in-place at MPFR
-/// precision. MPFR analogue of [`crate::seminormal::apply_sigma_averaged_left`].
-/// See that function for the math derivation.
-fn apply_sigma_averaged_mpfr(v: &mut [Float], blocks: &[BlockMpfr], h: &Float, prec: u32) {
-    let half_h = Float::with_val(prec, h) / 2;
+/// Apply `v ← (σ_i - shift·I) · v` in-place at MPFR precision.
+///
+/// With `shift = h/2` this is the symmetric average
+/// `(σ_i + σ_i⁻¹)/2 = σ_i - h/2` — the MPFR analogue of
+/// [`crate::seminormal::apply_sigma_averaged_left`]; see that function for the
+/// derivation.
+///
+/// **Why the shift is a parameter and no longer `h/2` inline.** A crossing in
+/// this convention is `σ_g + d·I`, so `d` selects an affine combination of σ
+/// and σ⁻¹: `d = 0` gives σ, `d = -h` gives σ⁻¹, and `d = -h/2` the symmetric
+/// average. The QOU pipeline also uses a **colour-weighted** p–n crossing,
+/// `d = -h·(1/2 - δ/4)` with δ the substrate flavour split — weight
+/// `1/2 + δ/4` on σ instead of `1/2`. Hardcoding `h/2` made that
+/// unrepresentable, so `chi_at_q0_via_hoefsmit_mpfr` refused the native path
+/// (`unrecognised d=…, expected 0, -h, or -h/2`) and fell back to a
+/// pure-mpmath loop that is impractical at H_12.
+///
+/// Taking the shift costs nothing and covers every `d`; callers wanting the
+/// previous behaviour pass `h/2`.
+fn apply_sigma_shift_mpfr(v: &mut [Float], blocks: &[BlockMpfr], shift: &Float, prec: u32) {
+    let half_h = Float::with_val(prec, shift);
     for block in blocks {
         match block {
             BlockMpfr::One { i, a } => {
@@ -201,6 +217,25 @@ pub fn chi_lambda_braid_mpfr(
     q_str: &str,
     dps: u32,
 ) -> String {
+    chi_lambda_braid_mpfr_shift(shape, word, q_str, dps, None)
+}
+
+/// As [`chi_lambda_braid_mpfr`], but with the `sign == 0` crossing shift given
+/// explicitly as a decimal string instead of defaulting to `h/2`.
+///
+/// A crossing is `σ_g + d·I`; `avg_shift` is `-d`. `None` means `h/2`, the
+/// symmetric average, so this is a strict generalisation and the four-argument
+/// form above is unchanged. Pass `h·(1/2 - δ/4)` for the colour-weighted p–n
+/// crossing. The string keeps full precision across the boundary, exactly as
+/// `q_str` does — taking an `f64` here would cap the shift at ~1e-16 and quietly
+/// bound the accuracy of every downstream χ.
+pub fn chi_lambda_braid_mpfr_shift(
+    shape: &[usize],
+    word: &[(i32, u32)],
+    q_str: &str,
+    dps: u32,
+    avg_shift: Option<&str>,
+) -> String {
     let prec = dps_to_bits(dps);
     let n: usize = shape.iter().sum();
     if n == 0 {
@@ -221,6 +256,24 @@ pub fn chi_lambda_braid_mpfr(
     }
 
     let h = Float::with_val(prec, &q) - Float::with_val(prec, q.clone().recip());
+
+    // Shift applied for `sign == 0`. Default h/2 (symmetric average); an
+    // explicit string carries a colour-weighted crossing at full precision.
+    // A malformed string must not silently degrade to the symmetric average —
+    // that would return a plausible number for a different physical
+    // convention — so it is rejected.
+    let avg_shift_f: Float = match avg_shift {
+        None => Float::with_val(prec, &h) / 2,
+        Some(s) => Float::parse(s)
+            .map(|p| Float::with_val(prec, p))
+            .unwrap_or_else(|_| {
+                panic!(
+                    "chi_lambda_braid_mpfr_shift: avg_shift {:?} is not a \
+                     decimal number",
+                    s
+                )
+            }),
+    };
 
     let resolved: Vec<(i32, &[BlockMpfr])> = word
         .iter()
@@ -283,7 +336,7 @@ pub fn chi_lambda_braid_mpfr(
                     } else if sign < 0 {
                         apply_sigma_inv_mpfr(&mut buf, blocks, &h, prec);
                     } else {
-                        apply_sigma_averaged_mpfr(&mut buf, blocks, &h, prec);
+                        apply_sigma_shift_mpfr(&mut buf, blocks, &avg_shift_f, prec);
                     }
                 }
                 partial += &buf[i];

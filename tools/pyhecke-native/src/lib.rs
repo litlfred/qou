@@ -1919,12 +1919,25 @@ fn chi_lambda_all_partitions_f64(
 /// recommended; pin to `q_parameter.Q_50_DIGIT_STR` from Python).
 /// `dps` controls the MPFR working precision (50 = production,
 /// 100 = research-grade).
+/// `avg_shift` (optional) overrides the shift applied to `sign == 0`
+/// crossings. Omitted or `None` keeps the symmetric average `h/2`, so existing
+/// four-argument callers are unaffected. Pass `h·(1/2 - δ/4)` as a decimal
+/// string for the **colour-weighted** p–n crossing, which the sign encoding
+/// alone cannot express: a crossing is `σ_g + d·I`, and quantising `d` to a
+/// sign discards everything but the three symmetric cases. That is why
+/// `chi_at_q0_via_hoefsmit_mpfr` refused the native path with
+/// `unrecognised d=…` and fell back to a loop impractical at H_12.
+///
+/// A string rather than an `f64`: the shift carries the substrate flavour
+/// split δ and must cross the boundary at the same precision as `q_str`.
 #[pyfunction]
+#[pyo3(signature = (n_strands, word, q_str, dps, avg_shift=None))]
 fn chi_lambda_all_partitions_mpfr(
     n_strands: usize,
     word: Vec<(i32, u32)>,
     q_str: String,
     dps: u32,
+    avg_shift: Option<String>,
 ) -> Vec<(Vec<usize>, String)> {
     let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
         .iter()
@@ -1942,11 +1955,12 @@ fn chi_lambda_all_partitions_mpfr(
             (c, gen)
         })
         .collect();
-    wenzl_lr::chi_lambda_canonical_all_partitions_mpfr(
+    wenzl_lr::chi_lambda_canonical_all_partitions_mpfr_shift(
         n_strands,
         &word_with_averaged,
         &q_str,
         dps,
+        avg_shift.as_deref(),
     )
 }
 

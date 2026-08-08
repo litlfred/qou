@@ -1885,3 +1885,83 @@ Validated against the corpus: re-running `braid_encoding_audit` produces 87
 moved fields on 1 positive flip and classifies `ANCHOR_MIGRATION`, which is the
 migration this document has been describing, now committed rather than
 reverted.
+
+## P43 — teaching the native path a colour-weighted crossing
+
+The block on 4He was that `chi_at_q0_via_hoefsmit_mpfr` could not use its own
+fast path when colour weighting is on. Tracing it gives a one-line cause and a
+small fix.
+
+### The representation, and what the sign encoding threw away
+
+A crossing here is `σ_g + d·I`, so `d` picks an affine combination of σ and
+σ⁻¹ via the Hecke relation `σ⁻¹ = σ − h`:
+
+| `d` | crossing | weight on σ |
+|---|---|---|
+| `0` | σ | 1 |
+| `−h` | σ⁻¹ | 0 |
+| `−h/2` | symmetric average `(σ+σ⁻¹)/2` | ½ |
+| `−h(½ − δ/4)` | **colour-weighted** p–n | **½ + δ/4** |
+
+The FFI passed only `sign ∈ {1, −1, 0}`, and the MPFR kernel hardcoded `h/2`
+for `sign == 0`. The colour-weighted crossing is a *fourth* affine
+combination, so quantising `d` to a sign cannot express it — hence the
+`unrecognised d=…` raise and the fall back to a pure-mpmath loop, which at
+H_12 is impractical (13 partitions of 77 in ten minutes).
+
+The 2^k sub-word path could not have carried it either: uniform ½ weighting is
+what lets `chi_factor` sum 2^k sub-words in exact integer arithmetic and defer
+one division. Weights `(½±δ/4)` are irrational, so that trick dies. The MPFR
+path is different — it substitutes `σ_g − shift·I` directly — and there the
+generalisation is free.
+
+### The change
+
+`apply_sigma_averaged_mpfr(v, blocks, h, prec)` becomes
+`apply_sigma_shift_mpfr(v, blocks, shift, prec)`; the shift is threaded up
+through `chi_lambda_braid_mpfr_shift`, `chi_lambda_canonical_h_n_mpfr_shift`
+and `chi_lambda_canonical_all_partitions_mpfr_shift`, each of which the
+original four-argument function now delegates to with `None`. The pyo3 entry
+takes an optional fifth argument. **A decimal string, not an `f64`** — the
+shift carries δ and has to cross the boundary at the same precision as
+`q_str`, or χ is capped near 1e-16 whatever `dps` says. A malformed string
+panics rather than silently falling back to `h/2`, which would return a
+plausible number for a *different physical convention*.
+
+Verified in both directions:
+
+- **Backwards compatible, bit-identical.** The four-argument call and an
+  explicit `h/2` return the same strings.
+- **Correct, not merely different.** Native colour-weighted χ^λ at H_3 against
+  the independent pure-mpmath `_chi_lambda_of_word_mpf` (which accepts
+  arbitrary `d`):
+
+    | λ | relative difference |
+    |---|---|
+    | (3) | 3.8e-50 |
+    | (2,1) | 4.7e-50 |
+    | (1,1,1) | 8.8e-51 |
+
+  Machine precision at 50 dps.
+
+Python now derives the shift from the word instead of raising, and still
+refuses a word that mixes two different averaged `d` values — that genuinely
+has no single-shift form.
+
+### Two process failures, recorded
+
+**The 4He rebuild was clobbered by my own wave.** I left the regeneration wave
+and the 4He rebuild running concurrently over the same tree. The wave reverts
+dirty witnesses; the 4He cache is a dirty witness while being rebuilt, so the
+wave restored the committed muon version mid-flight and the rebuild then
+"resumed" from a complete cache and did nothing. Two writers, one tree.
+
+**The wave discards its own successes.** `_revert` reverts *every* dirty
+witness at the moment it fires, not just the one under judgement — so each
+`VALUES` verdict also wipes the `DECLARED` and `ANCHOR_MIGRATION` results
+accumulated before it. The run reported `DECLARED 26 / ANCHOR_MIGRATION 4` at
+90/163 while leaving a clean tree, which is how the bug surfaced: the counters
+were right and the retention was not. The classifier
+(`witness_regen_classify`, 9/9) is committed and sound; the *driver* around it
+needs per-witness revert before the wave is worth re-running.
