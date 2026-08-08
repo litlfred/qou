@@ -89,28 +89,41 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 >   `c_σ = k·|τ|^p·f(M)` with `f` weakly varying fits the four points equally
 >   well, and nothing in the corpus excludes it. That is the load-bearing part.
 >
-> **AMENDED AGAIN, same day — the form is in the literature, constant and all.**
-> `uploads/0903.2472v1.pdf` (Dimofte–Gukov–Lenells–Zagier) was sitting
+> **AMENDED AGAIN, same day — the FORM is in the literature; the CONSTANT is
+> not.** `uploads/0903.2472v1.pdf` (Dimofte–Gukov–Lenells–Zagier) was sitting
 > downloaded and cited nowhere in the repository. Read. Its eq (2.3) is
 >
 > ```
 > S₁^(ρ) = ½ log( T(M; E_ρ) / 2 )      ⇒   one-loop factor = 2^{−1/2}·T^{1/2}
 > ```
 >
-> * **`k = 2^{−1/2}` is not "calibrated on `4_1`" — it is the `/2` inside their
->   logarithm.**
-> * The `T^{+1/2}` vs `|τ|^{−1/2}` sign is a choice of variable: the two agree
->   when `T = 1/|τ_DG|`, verified to 1.3e−10 on `5_2` and 6.2e−21 on `L5a1` (the
->   two that did **not** fix the constant). With nothing calibrated,
->   `c_σ = (1/(2|τ_DG|))^{1/2}` is a zero-parameter prediction.
+> * **`k = 2^{−1/2}` IS still calibrated.** An earlier version of this amendment
+>   said it "is the `/2` inside their logarithm" and that it was never a fit.
+>   Retracted. DGLZ carry a `/2` in (2.3), a `+log 2` in (4.5) between `S₁` and
+>   the colored-Jones coefficient `s₁`, and a `log π` shift against
+>   Gukov–Murakami — and fix their integration constants against colored-Jones
+>   asymptotics. The corpus measures `c_σ` from that same asymptotic, so it
+>   matches `s₁`, under which the relation is `T = 4/|τ_DG|` rather than
+>   `1/|τ_DG|`. A factor of 4 from a convention choice; the constant cannot be
+>   lifted.
+> * **What IS invariant is the exponent** — no multiplicative constant changes
+>   `−1/2` — so the FORM transfers and the prefactor does not. The `T^{+1/2}` vs
+>   `|τ|^{−1/2}` sign is likewise a choice of variable, verified to 1.3e−10 on
+>   `5_2` and 6.2e−21 on `L5a1`. Read correctly that agreement says **one
+>   constant serves both cusp numbers**, which is this corpus's own empirical
+>   result — DGLZ assert nothing about cusp-independence, and Ray–Singer torsion
+>   on a cusped manifold needs a basis of `H¹` whose rank is the cusp number.
 > * That also dissolves the Ohtsuki–Takata discrepancy noted a moment ago — DGLZ
 >   carry `+1/2` in the torsion too.
 > * Eq (2.3) is stated for a **general** 3-manifold `M` with a flat `G_C` bundle,
->   with **no** restriction to knots, two-bridge knots or cusp number. So even
->   the "`c_σ` depends on `τ` alone" part above is not an open assumption.
-> * `jones_1loop_c0_calibration_fig8.py`'s `exp(2c₀) = 1/(2|τ_DG|)` **is** eq
->   (2.3) rearranged. The corpus wrote it down independently and never connected
->   it to the source.
+>   with **no** restriction to knots, two-bridge knots or cusp number. So the
+>   "`c_σ` depends on `τ` alone" part above is a cited result — for the FORM. The
+>   NORMALISATION at `c ≥ 2` is a separate, still-open question, and it is the
+>   one with a track record here (the retracted `2^{(c−1)/2}`, and L6a4's
+>   unexplained 0.35%).
+> * `jones_1loop_c0_calibration_fig8.py`'s `exp(2c₀) = 1/(2|τ_DG|)` coincides
+>   with eq (2.3) under one convention reading and differs by the eq (4.5)
+>   `log 2` under the other — a structural echo, not provenance for the constant.
 >
 > **What is actually left is RIGOUR.** Eq (2.3) is a one-loop saddle-point /
 > Feynman-diagram derivation (Witten 1989, Bar-Natan–Witten 1991,

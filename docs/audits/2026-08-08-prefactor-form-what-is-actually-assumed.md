@@ -186,9 +186,9 @@ S₁^(ρ) = ½ log( T(M; E_ρ) / 2 )                                    (2.3)
 
 so the one-loop factor is `exp(S₁) = (T/2)^{1/2} = 2^{−1/2}·T^{1/2}`.
 
-**The "calibrated" constant is the `/2` in their logarithm.** `k = 2^{−1/2}` is
-not a fit and never was; it is written down in the paper the form was already
-attributed to.
+**~~The "calibrated" constant is the `/2` in their logarithm.~~ RETRACTED — see
+the correction below.** That was written before reading far enough, and it is
+wrong. The constant is a normalisation choice in DGLZ too.
 
 **The exponent sign was a variable choice.** DGLZ carry `T^{+1/2}`, the corpus
 `|τ_DG|^{−1/2}`. They agree exactly when `T = 1/|τ_DG|`, verified numerically:
@@ -213,13 +213,54 @@ the reciprocal variable. No sign disagreement exists.
 is `exp(2S₁) = T/2`. Under `T = 1/|τ_DG|` these are the same equation and
 `c₀ = S₁` identically — derived independently, never connected to the source.
 
-### What this does to Finding 1
+### CORRECTION — the constant is convention, and I claimed otherwise
 
-Finding 1 concluded that the load-bearing assumption is "`c_σ` depends on `τ`
-alone". **Eq (2.3) states exactly that dependence, for a general 3-manifold `M`
-with a flat `G_C` bundle** — no restriction to knots, two-bridge knots, or cusp
-number. So that is not an open assumption either; it is the content of a cited
-result.
+Read further and the claim above collapses. DGLZ carry **at least three**
+distinct additive offsets between conventions:
+
+| where | offset |
+|---|---|
+| eq (2.3) | the `/2` inside `log(T/2)` |
+| eq (4.5) | `S₁(0) = s₁ + log 2`, relating `S₁` to the **colored-Jones** coefficient `s₁` |
+| footnote 24 | their `S₁` matches Gukov–Murakami "up to a shift by `log π`" |
+
+and they say the `S_n` are determined by their differential hierarchy *only up
+to an additive constant*, fixed "by comparison to the asymptotics of the colored
+Jones polynomial". **DGLZ calibrate too.**
+
+Worse for the retracted claim: the corpus measures `c_σ` from the colored-Jones
+asymptotic, i.e. it corresponds to `s₁`, not `S₁`. Carry the eq (4.5) `log 2`
+through and the identification itself moves:
+
+```
+c_σ = exp(S₁)   ⇒   T = 1/|τ_DG|
+c_σ = exp(s₁)   ⇒   T = 4/|τ_DG|
+```
+
+A factor of 4 in `T` from one convention choice. So `2^{−1/2}` cannot be lifted
+out of eq (2.3) as the corpus's `k`, **the corpus's calibration on `4_1` stands
+and is not redundant**, and if anything DGLZ's constant and the corpus's are the
+same calibration performed twice.
+
+### What survives, and it is the part that matters
+
+**The exponent is invariant under every one of those offsets.** No multiplicative
+constant changes `−1/2`. So the *form* `c_σ ∝ |τ|^{−1/2}` transfers from eq (2.3)
+— stated for a general 3-manifold `M` with a flat `G_C` bundle, no restriction to
+knots, two-bridge knots, or cusp number — while the prefactor does not.
+
+That still answers Finding 1's "does `c_σ` depend on `τ` alone": the dependence is
+a cited result. It does **not** hand over the constant.
+
+### And it sharpens where the c ≥ 2 risk actually is
+
+That `k` is the *same* at `c = 1` and `c = 2` (`k₁ = k₂` to 17 digits) is **this
+corpus's empirical finding**, not something read off DGLZ — nothing there asserts
+cusp-independence. Ray–Singer torsion on a cusped manifold requires a choice of
+basis in `H¹`, whose rank *is* the cusp number. That is exactly where a
+cusp-dependent normalisation would hide, and exactly where the retracted
+`2^{(c−1)/2}` per-cusp factor lived. The `c = 3` (L6a4) 0.35% offset sits in that
+same territory and is still unexplained.
 
 ### What is actually left
 

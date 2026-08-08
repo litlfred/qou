@@ -1,32 +1,32 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T12:06:49.038098+00:00",
-  "commitSha": "494add1a3066dcdb4e0132942107abf99ae77ae7",
+  "computedAt": "2026-08-08T12:22:01.853715+00:00",
+  "commitSha": "a53de0c448df7ebede81d343a03d43b71e258959",
   "assertions": [
     {
-      "name": "T_equals_one_over_tau_on_independent_manifolds",
+      "name": "consistency_relation_holds_on_independent_manifolds",
       "computed": "1",
       "expected": "1",
       "passed": true,
       "tolerance": "0.5",
-      "source": "(c_sigma*sqrt2)^2 = 1/|tau_DG| to better than 1e-9 on 5_2 and L5a1, the two whose c_sigma did not fix the constant"
+      "source": "(c_sigma*sqrt2)^2 = 1/|tau_DG| to better than 1e-9 on 5_2 and L5a1. This is a CONSISTENCY relation under the exp(S_1) reading, not a determination of T — under exp(s_1) the same data give 4/|tau_DG|"
     },
     {
-      "name": "dglz_predicts_c_sigma_with_no_free_parameter",
+      "name": "one_constant_works_at_both_cusp_numbers",
       "computed": "6.521e-11",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-9",
-      "source": "c_sigma = (1/(2|tau_DG|))^(1/2) straight from eq (2.3), nothing calibrated, against the independently measured c_sigma on 5_2 and L5a1"
+      "source": "whatever the normalisation, a SINGLE constant reproduces the independently measured c_sigma at c=1 (5_2) and c=2 (L5a1). That cusp-independence is this corpus's empirical result; DGLZ assert nothing about it"
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 10,
   "computation": "one-loop-dglz-prefactor-identification",
   "scriptFile": "one_loop_dglz_prefactor_identification_probe.py",
-  "scriptHash": "e9e850b830af",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "7d6794a24040",
+  "scriptCommitSha": "a53de0c448df7ebede81d343a03d43b71e258959",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,7 +39,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Identifies the corpus's 1-loop prefactor form with Dimofte-Gukov-Lenells-Zagier eq (2.3) (arXiv:0903.2472, uploads/0903.2472v1.pdf), S_1 = (1/2) log(T/2), whose one-loop factor is 2^(-1/2) T^(1/2). The constant the corpus calls 'calibrated on 4_1' is the /2 inside that logarithm. Verifies T = 1/|tau_DG| against committed measurements, counting only 5_2 and L5a1 as evidence since 4_1 fixed the constant. Resolves the tau^(+1/2) vs |tau|^(-1/2) sign discrepancy: both are +1/2 in the torsion, the corpus works in the reciprocal. DGLZ's statement is for a general M with flat bundle E_rho, unrestricted by cusp number, so the open problem is the rigour of a physics derivation rather than the form being unknown for links. Nothing fitted; nothing wired.",
+  "description": "Identifies the SHAPE of the corpus's 1-loop prefactor with Dimofte-Gukov-Lenells-Zagier eq (2.3) (arXiv:0903.2472, uploads/0903.2472v1.pdf), S_1 = (1/2) log(T/2). The dependence c_sigma ~ (torsion)^(-1/2) is theirs and holds for a general M with a flat G_C bundle, unrestricted by cusp number. The CONSTANT is NOT: DGLZ carry a /2 in (2.3), a +log 2 in (4.5) between S_1 and the colored-Jones coefficient s_1, and a log pi shift against Gukov-Murakami, and fix their integration constants against colored-Jones asymptotics — so they calibrate too, and the corpus's k = 2^(-1/2) is not made redundant. Since the corpus measures c_sigma from the colored-Jones asymptotic it corresponds to s_1, under which the identification is T = 4/|tau_DG| rather than 1/|tau_DG|. The exponent is invariant under all of this; the prefactor is not. Corrects an earlier version of this probe that claimed the constant was never a fit. Nothing fitted; nothing wired.",
   "auditOnly": "docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md",
   "data": {
     "dglz_source": {
@@ -50,11 +50,14 @@
       "eq_2_1": "Z^(rho)(M;hbar) = exp( S_0/hbar - (1/2) delta log hbar + sum_{n>=0} S_{n+1} hbar^n )",
       "eq_2_3": "S_1^(rho) = (1/2) log( T(M; E_rho) / 2 )",
       "one_loop_factor": "exp(S_1) = (T/2)^(1/2) = 2^(-1/2) T^(1/2)",
+      "eq_4_5": "S_1(0) = s_1 + log 2  — s_1 is the COLORED-JONES coefficient",
+      "footnote_24": "their S_1 matches Gukov-Murakami 'up to a shift by log pi'",
+      "integration_constants": "the S_n are determined by the hierarchy of differential equations only up to an additive constant, 'fixed by comparison to the asymptotics of the colored Jones polynomial' — DGLZ calibrate too",
       "status": "PHYSICS DERIVATION, not a theorem: one-loop saddle point / Feynman diagrams, citing Witten 1989 [52], Bar-Natan-Witten 1991 [5], Gukov-Murakami 2006 [23]",
       "generality": "stated for a 3-manifold M with a flat G_C bundle E_rho — NOT restricted to knots, two-bridge knots, or cusp number",
       "citation_status_before_this_probe": "one references.bib entry was its ONLY occurrence in the repository — no audit, probe, bean or Lean file cited it"
     },
-    "identification_T_equals_one_over_tau": {
+    "consistency_relation_under_exp_S1_reading": {
       "4_1": {
         "T_from_c_sigma": "1.1547005383792515395",
         "one_over_tau_DG": "1.154700538379251529",
@@ -79,6 +82,19 @@
         "rel_diff": "0.006992",
         "role": "supporting only (known normalisation offset)"
       }
+    },
+    "the_constant_is_convention_not_physics": {
+      "offsets_in_dglz": [
+        "/2 in eq (2.3)",
+        "+log 2 in eq (4.5) between S_1 and s_1",
+        "log pi vs Gukov-Murakami (footnote 24)"
+      ],
+      "corpus_measures": "c_sigma from the colored-Jones asymptotic, i.e. the s_1 normalisation, not S_1",
+      "T_under_exp_S1": "1/|tau_DG|",
+      "T_under_exp_s1": "4/|tau_DG|",
+      "consequence": "a factor of 4 in T from one convention choice, so the '/2' cannot be lifted as the corpus's k. The earlier claim in this probe that k 'was never a fit' is RETRACTED. The corpus's calibration on 4_1 stands and is not redundant.",
+      "what_is_invariant": "the exponent. No multiplicative constant changes -1/2, which is why the FORM transfers across all of these conventions and the prefactor does not",
+      "cusp_independence_is_empirical": "that k is the same at c=1 and c=2 (k_1 = k_2 to 17 digits) is this corpus's own measurement. DGLZ assert nothing about cusp-independence, and Ray-Singer torsion on a cusped manifold requires a basis of H^1 whose rank is the cusp number — the exact place the retracted 2^((c-1)/2) per-cusp factor lived"
     },
     "zero_parameter_prediction_from_dglz": {
       "4_1": {
@@ -113,7 +129,7 @@
       "L6a4": "supporting only — carries a documented normalisation+cusp offset flagged in its own witness"
     },
     "resolves_sign_discrepancy": "docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md flagged that the ohtsuki-takata-2015 registration says 'square root of the twisted Reidemeister torsion' (tau^(+1/2)) while the corpus uses |tau|^(-1/2). DGLZ have the same +1/2. The discrepancy is a choice of variable, not a disagreement: the corpus's tau_DG is the reciprocal of the torsion appearing in both papers.",
-    "corpus_already_had_it": "computations/probes/jones_1loop_c0_calibration_fig8.py states exp(2 c_0) = 1/(2 |tau_DG|). DGLZ (2.3) is exp(2 S_1) = T/2. Under T = 1/|tau_DG| these are the same equation, so the corpus's c_0 is DGLZ's S_1 identically — written down independently and never connected to the source.",
+    "structural_echo_not_provenance": "computations/probes/jones_1loop_c0_calibration_fig8.py states exp(2 c_0) = 1/(2 |tau_DG|); DGLZ (2.3) is exp(2 S_1) = T/2. Under one of the two convention choices these coincide with c_0 = S_1; under the other they differ by the eq (4.5) log 2. Recorded as a structural echo, NOT as evidence that the corpus's constant came from the literature.",
     "what_remains_open": "RIGOUR, not content. Eq (2.3) is a physics one-loop result, and nothing here upgrades it. But it is stated for general M, so the repeated corpus line 'no theorem covers the link case' describes the proof status, not the formula's reach — the formula covers links already. Restating that line accordingly is a documentation fix, not a research result.",
     "scope": "reads one paper and checks one identification against committed numbers. Derives nothing. The T = 1/|tau_DG| orientation is established numerically here, not read off DGLZ's Delta(m) convention; pinning it from their conventions is separate work.",
     "upstream_witness_hashes": [
