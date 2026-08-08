@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T09:15:00Z
+updated_at: 2026-08-08T15:20:00Z
 parent: 0yqu
 ---
 
@@ -671,5 +671,83 @@ There were already **four** beans about exactly this failure (`j0th`,
 `scripts/probe-float64-guard.py` + `.github/workflows/probe-float64-gate.yml`,
 bean **`qou-f64g`**, with the backlog measured (17546 hits / 2184 files) and the
 12 sharpest named.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the IFT the envelope needs, built as Mathlib infra
+
+`QOU/MathlibExt/ImplicitScalar.lean`, sorry-free, **no warnings**, `lake` green
+(1967 jobs), axioms `[propext, Classical.choice, Quot.sound]`.
+
+```lean
+theorem exists_hasDerivAt_implicit [CompleteSpace 𝕜]
+    (hf : HasStrictFDerivAt f f' (x₀, y₀)) (h0 : f (x₀, y₀) = 0)
+    (hB : f' (0, 1) ≠ 0) :
+    ∃ g : 𝕜 → 𝕜, g x₀ = y₀ ∧ (∀ᶠ x in 𝓝 x₀, f (x, g x) = 0) ∧
+      HasDerivAt g (-(f' (1, 0)) / f' (0, 1)) x₀
+```
+
+Over any complete nontrivially-normed field — `ℂ` for this lane, `ℝ` for free.
+
+### Why it was a Mathlib gap
+
+Mathlib **has** an implicit function theorem, `Analysis/Calculus/Implicit.lean`,
+but it is the general Banach version built on `ImplicitFunctionData`: it presents
+the solution set through a complemented-subspace splitting, with
+`implicitFunction : F → G → E` taking a point of `ker f'`. Right shape for a
+submanifold, wrong shape for "solve for `y` as a function of `x`" — and it is
+imported by nothing else in Mathlib. The scalar case in the form everyone
+actually uses was simply absent.
+
+### The construction
+
+Straighten the graph with `Φ(x,y) = (x, f x y)`, derivative
+`L(a,b) = (a, A·a + B·b)`, invertible exactly when `B = ∂f/∂y ≠ 0`, inverse
+`L⁻¹(a,b) = (a, (b − A·a)/B)` written down explicitly via
+`ContinuousLinearEquiv.equivOfInverse`. Then Mathlib's *inverse* function
+theorem applies to `Φ`, and `g x := (Φ.localInverse (x,0)).2`.
+`eventually_right_inverse` gives `Φ(Ψ(x,0)) = (x,0)`, whose first component says
+`Ψ(x,0) = (x, g x)` and whose second says `f x (g x) = 0`. The derivative comes
+from `to_localInverse` composed with `a ↦ (a,0)`, and `L⁻¹(1,0) = (1, −A/B)` is
+where the IFT formula appears.
+
+### Usability, checked end to end
+
+`exists_sqrt_branch`: instantiated on `f(x,y) = y² − x` at `(1,1)`, where
+`∂f/∂y = 2 ≠ 0` and `∂f/∂x = −1`, the theorem returns a branch of `√x` through
+`1` with `g′(1) = −(−1)/2 = 1/2` — the derivative of `√x` at `1`, as it must be.
+An existence theorem whose hypotheses nothing satisfies is worthless; this is
+that check.
+
+### ⚠ Where it does NOT apply on the arc, and why that was expected
+
+`∂curve/∂y ≠ 0` is exactly "`y` is a **simple** root", i.e. the discriminant is
+nonzero. On this arc the discriminant **vanishes**, at `θ = 137.9206708879635°`
+— `exists_unit_circle_disc_zero`, proved in `FiveTwoDiscriminant.lean`. Two
+branches collide there and no differentiable labelling of individual roots
+survives it.
+
+So this gives the branches on `[0,π] ∖ {φ₀}` and cannot give them at `φ₀`. That
+is not a defect — it is why `ConstantOffOnePoint.lean` exists.
+`constant_of_hasDerivWithinAt_zero_off_point` glues a derivative identity holding
+off one point into a statement on the whole interval, using continuity there.
+**The two bricks were built for each other**, a year apart in this lane's
+reckoning, and only now meet.
+
+### What still stands between this and `dS/dφ = 2φ`
+
+1. **`HasStrictFDerivAt` for the GGM curve** as a function of `(x,y)` — mechanical
+   (polynomial), verbose, not written. That is the next brick and it is what
+   plugs this in.
+2. The chain rule assembling `d/dφ Σⱼ V(x, yⱼ(φ))`, where the `y′` terms die
+   because `∂V/∂y = 0` — and *that* is already free, via
+   `deformed_saddle_iff_curve`: the saddle condition **is** the curve.
+3. `Σⱼ ∂V/∂x = −2 log x / x` from the Vieta products plus branch pinning.
+4. The `[0,π] ∖ {φ₀}` → `[0,π]` gluing, which is `ConstantOffOnePoint`.
+
+Note the envelope never needs the *value* of `dyⱼ/dx` — only that it exists,
+because `∂V/∂y = 0` annihilates it. The IFT is used for existence alone.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
