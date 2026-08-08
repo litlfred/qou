@@ -40,6 +40,7 @@
 
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.BraidsAndKnots
 
@@ -52,8 +53,8 @@ universe u
     `q - q⁻¹` is required to be invertible (`q² ≠ 1`); on the
     Laurent field `ℚ(q)` this holds as long as we work generically
     (away from roots of unity). -/
-noncomputable def qIntZ {R : Type u} [Field R] (q : R) (k : ℤ) : R :=
-  (q ^ k - q ^ (-k)) / (q - q⁻¹)
+noncomputable abbrev qIntZ {R : Type u} [Field R] (q : R) (k : ℤ) : R :=
+  QOU.QInteger.qIntBalZ q k
 
 /-- Markov parameter `z = 1/(v + v⁻¹)` in terms of the formal
     square root `v` of `q` (so `v² = q`).  No `Real.sqrt` is
