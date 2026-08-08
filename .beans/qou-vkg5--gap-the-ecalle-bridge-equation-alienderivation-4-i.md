@@ -281,3 +281,64 @@ Two prunes now bound the search for it:
   sign. A candidate outside `q^{½ℤ}` is wrong without further computation.
 
 Closing is a human action — leaving status as-is.
+
+## ATTACK OPTIONS for the remaining item (C1's `∞` weight)
+
+Three routes, ranked by cost/decisiveness. **Option B has already paid off in
+part** — its `0`-side half is landed (below), which is what makes it the
+recommended entry point.
+
+### Option B — connection / indicial route  ← RECOMMENDED, partly landed
+
+The two ends are *not* symmetric, and that asymmetry is exploitable: `0` is
+**Fuchsian**, so its weights are the roots of an indicial equation — pure
+algebra, no analysis. `∞` is irregular. The Birkhoff connection matrix ties them,
+and the `∞` weight is the theta-quasi-periodicity of that matrix.
+
+**Landed** (`QOU/QBeta/C1FuchsianExponents.lean`, sorry-free): C1's `0`-side
+weights are the roots of
+
+    t² + (q−1)·t + (q−1) = 0,   discriminant q² − 6q + 5 = (q−1)(q−5)
+
+derived two independent ways (evaluating coefficients at `x = 0`; and as the
+resonance condition of the actual recurrence `bₙ[q^{2n} + (q−1)qⁿ + (q−1)] =
+q^{2n}b_{n−1}`). Proved: the discriminant is **not a square in `ℚ[q]`**, so the
+`0`-weights are irrational over `ℚ(q)`. Note the proof needs a *multiplicity*
+argument, not the degree parity that worked on the `∞` side — the degree is even,
+so parity is silent; `(q−1)(q−5)` has simple roots.
+
+**Remaining:** build the connection matrix and read its quasi-periodicity. Needs
+the `0`-side solution basis (q-hypergeometric, explicit) and the `∞`-side formal
+basis (have it: `deg_q(cₙ) = n²`). Decisive if it closes.
+
+### Option A — theta functional equation
+
+For slope `½`, the instanton factor on the ramified cover `ζ² = x` is a Jacobi
+theta in `ζ` with base `√q`. `θ(qx) = x·θ(x)` for the normalisation
+`θ(x) = Σ q^{−n(n+1)/2}xⁿ`; the weight is then the `σ`-eigenvalue of that factor
+under `ζ ↦ c·ζ`, `c² = q`. Consistent with the proved lattice `q^{½ℤ}`.
+
+**Hazard, stated up front:** this is the route most likely to produce a
+plausible-but-wrong answer, because the theta normalisation is convention-heavy
+and several inequivalent conventions are in circulation. Pin the normalisation
+against a cited source *before* computing, and check the result reproduces the
+proved lattice and the proved deck-sign ambiguity. Do not report a weight from
+this route without an independent cross-check.
+
+### Option C — numerical probe
+
+Sum the divergent `∞` series in two sectors at high precision and difference
+them. **This is a check, never a derivation** — a constant extracted this way is
+a fit and must be labelled one (AGENTS.md anti-fit). Useful only to *falsify* a
+candidate from A or B.
+
+### Constraints any answer must satisfy (already proved — use as filters)
+
+1. multiplicative, on `E_q` — not additive, not on `ℂ*`
+2. in `q^{½ℤ}`, up to the deck sign (`dilationLift_*`)
+3. not visible in the monomial grading (`monomial_eigenvalue_mem_zpowers`) — must
+   come from the quadratic `deg_q(cₙ) = n²` factor
+4. the `∞` ramification constant is `√(q−1)`, non-removable
+   (`not_isSquare_newtonEdgeConstant`)
+
+A candidate failing any of these is wrong before any further computation.
