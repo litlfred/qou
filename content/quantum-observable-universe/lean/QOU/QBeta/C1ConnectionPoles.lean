@@ -32,6 +32,8 @@ and the whole question reduces to: **where does `θ_p` vanish?**
 
 * `qTheta_neg_zpow_eq_zero` — `θ_p(w) = 0` for every `w ∈ −p^ℤ`, the `⊇`
   direction of the zero locus, which is exactly what places the poles above.
+  The converse — that these are the *only* zeros, each simple — is
+  `QOU/QBeta/C1ThetaZeroLocus.lean`, built on the contour identity below.
 * `summable_qThetaTerm` — the series converges for `P > 1`, `w ≠ 0`.
 * `qTheta_functional_equation` — `θ_P(P²w) = w·θ_P(w)`, i.e. `θ_p(pw) = w θ_p(w)`.
 * `qThetaC_conj` / `norm_qThetaC_conj_pair` — `θ_P` commutes with conjugation,
@@ -47,19 +49,17 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   `logDeriv_qThetaC_functional_equation` — the functional equation over `ℂ`,
   differentiated, and in logarithmic-derivative form
   `p·θ'(pw)/θ(pw) = 1/w + θ'(w)/θ(w)`. That last one is the **`+1` per
-  period**: it is the entire zero-counting mechanism, and it is what leaves the
-  argument principle as the *only* missing ingredient for the converse zero
-  locus (see below).
+  period**: it is the entire zero-counting mechanism the converse zero locus
+  runs on.
 * `circleIntegral_scale` / `winding_step` / `qTheta_winding_step` — the same
   `+1`, carried up to the **contour** level:
 
       ∮_{|z| = pρ} θ'/θ dz  =  2πi  +  ∮_{|z| = ρ} θ'/θ dz
 
   for any `ρ > 0` on whose circle `θ_P` does not vanish. This is the form the
-  argument principle consumes, and it is the last step Mathlib supports.
-  `circleIntegral_scale` (change of variables for `circleIntegral`, absent from
-  Mathlib) and `winding_step` (`1/w` in the integrand ⇒ `2πi` in the integral)
-  are stated `θ`-free and are reusable.
+  argument principle consumes. `circleIntegral_scale` (change of variables for
+  `circleIntegral`, absent from Mathlib) and `winding_step` (`1/w` in the
+  integrand ⇒ `2πi` in the integral) are stated `θ`-free and are reusable.
 * `qTheta_inversion` — `θ_P(1/w) = w·θ_P(w)`, Morita's inversion formula
   (arXiv:1105.1998 §2.1) in our normalisation.
 * `thetaRatio_multiplier` — `θ_P(cz)/θ_P(z)` is a q-character with multiplier
@@ -74,9 +74,9 @@ and the whole question reduces to: **where does `θ_p` vanish?**
 `summable_qThetaTerm`, `differentiableOn_qThetaC` and
 `qTheta_functional_equation` are the **analytic foundation for the converse**.
 The vanishing theorem itself needs none of them (see below), but every route to
-"these are the *only* zeros" needs `θ_p` to be a genuine analytic object —
-which is now proved, not assumed — and the functional equation is what forces
-the zero set to be a union of `p`-orbits.
+"these are the *only* zeros" needs `θ_p` to be a genuine analytic object, and
+the functional equation is what forces the zero set to be a union of
+`p`-orbits.
 
 The proof is an **involution**, and needs no analysis at all. For each `k`, the
 map `n ↦ 2k−1−n` on `ℤ`
@@ -680,13 +680,11 @@ theorem deriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ) (hw :
 This is the whole zero-counting mechanism in one line. Integrating over
 `|w| = ρ` and substituting `w ↦ pw` turns the `1/w` into `2πi`, so the winding
 number of `θ_p` on `|w| = pρ` is exactly **one more** than on `|w| = ρ`.
-The argument principle would then read that off as *exactly one zero, counted
-with multiplicity, in every fundamental annulus* — which with
-`qTheta_neg_zpow_eq_zero` pins that zero at `−p^k` and makes it simple, i.e.
-gives the converse zero locus outright.
-
-Mathlib has no argument principle, so the last step is not taken here. What is
-established is that **everything else it needs is proved**. -/
+The argument principle reads that off as *exactly one zero, counted with
+multiplicity, in every fundamental annulus*, which with
+`qTheta_neg_zpow_eq_zero` pins that zero at `−p^k` and makes it simple. That
+inference is taken in `QOU/QBeta/C1ThetaZeroLocus.lean`
+(`qThetaC_eq_zero_iff`). -/
 theorem logDeriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ)
     (hw : w ≠ 0) (hθ : qThetaC P w ≠ 0) :
     (P : ℂ) ^ (2:ℤ) * deriv (qThetaC P) ((P : ℂ) ^ (2:ℤ) * w)
@@ -754,14 +752,13 @@ The only hypothesis beyond `ρ > 0` is that `θ_P` has no zero on `|z| = ρ` —
 unavoidable, since otherwise the integrand is not defined there, and harmless,
 since the radius is ours to choose.
 
-**This is as far as Mathlib allows.** The argument principle would now read the
-left-hand side minus the right as *the number of zeros, with multiplicity, in
-the annulus `ρ < |z| < pρ`*, hence exactly one; `qTheta_neg_zpow_eq_zero`
-supplies that zero at `−p^k`, making it simple and the only one, so the zero
-set is exactly `−p^ℤ` and the C1 pole divisor is exact rather than `⊇`.
+The argument principle reads the left-hand side minus the right as *the number
+of zeros, with multiplicity, in the annulus `ρ < |z| < pρ`*, hence exactly one;
+`qTheta_neg_zpow_eq_zero` supplies that zero at `−p^k`, making it simple and the
+only one, so the zero set is exactly `−p^ℤ` and the C1 pole divisor is exact
+rather than `⊇`. That is `QOU/QBeta/C1ThetaZeroLocus.lean`, which consumes this
+theorem: `qThetaC_eq_zero_iff` and `qThetaC_analyticOrderAt_neg_zpow`.
 
-Mathlib has no argument principle, no winding number and no complex residue, so
-that last inference is not taken here. Everything it consumes is proved above.
 Checked numerically at our substrate in
 `computations/qbeta/c3_w2_c1_theta_zero_count.py`. -/
 theorem qTheta_winding_step (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
@@ -800,13 +797,12 @@ theorem qTheta_winding_step (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
   rw [hcast]
   rw [← mul_div_assoc, h, one_div]
 
-/-! ### The argument principle on an annulus — proved, given a factorisation
+/-! ### The argument principle on an annulus
 
-Added 2026-08-08 (bean `qou-argp` step 1). `qTheta_winding_step` above produces
-the contour identity; this section proves the inference that consumes it, in the
-form Mathlib does not have. What is **not** here is the *existence* of the
-factorisation — that zeros of a holomorphic function on a compact annulus are
-finite and of finite order — which is `qou-argp` step 2.
+`qTheta_winding_step` above produces the contour identity; this section proves
+the inference that consumes it, in the form Mathlib does not have — for a
+function presented as `(∏ (·−a)^{m a})·u`. The *existence* of that presentation
+for an analytic function is `QOU.Mathlib.exists_finset_factorisation`.
 
 Everything below is `θ`-free and upstreamable. -/
 
