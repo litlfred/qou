@@ -25,16 +25,18 @@
     * `weierstrassFactor_genus_zero`  : `E₀(z) = 1 - z`.
     * `weierstrassFactor_eq_zero_iff` : `Eₚ(z) = 0 ↔ z = 1` (exp is nonvanishing).
     * `differentiable_weierstrassFactor` : each `Eₚ` is entire.
+    * `norm_one_sub_weierstrassFactor_le` — the Weierstrass estimate
+      `‖1 - Eₚ(z)‖ ≤ ‖z‖^{p+1}` for `‖z‖ ≤ 1`, the convergence-critical lemma.
+      PI-2, closed 2026-08-07 in `QOU.Mathlib.WeierstrassFactorEstimate`.
+    * `multipliable_canonicalProduct` — convergence of the canonical product
+      `∏ₙ Eₚ(z/aₙ)` when `∑ₙ ‖aₙ‖^{-(p+1)} < ∞`. PI-3, closed 2026-08-08.
 
   Stated precisely with a cited `sorry` (the genuinely-hard analytic core — NOT
   vacuous `True`, NOT axiomatized as-if-proved):
 
-    * `norm_one_sub_weierstrassFactor_le` — the Weierstrass estimate
-      `‖1 - Eₚ(z)‖ ≤ ‖z‖^{p+1}` for `‖z‖ ≤ 1`, the convergence-critical lemma.
-    * `multipliable_canonicalProduct` — convergence of the canonical product
-      `∏ₙ Eₚ(z/aₙ)` when `∑ₙ ‖aₙ‖^{-(p+1)} < ∞`.
     * `hadamard_factorization` — **the factorization theorem** (the stated-open
-      core). It is the fact that pins `phiBProd` among its elliptic multiples.
+      core, PI-5, the ONLY remaining `sorry` in this file). It is the fact that
+      pins `phiBProd` among its elliptic multiples.
 
   DEFINITIONS also introduced: `IsEntireOfOrderLE f ρ` (finite order of growth,
   via the standard exponential-type bound `‖f z‖ ≤ A·exp(C·‖z‖^ρ)`) and
@@ -43,9 +45,15 @@
   `ℝ`/`ℂ` here are genuine, not gratuitous.
 
   ROADMAP (tractable-brick order; see docs/audits/2026-07-20-pi1-hadamard-scaffold.md):
-    PI-2  `norm_one_sub_weierstrassFactor_le` from the nonneg-coefficient series
-          `Eₚ(z) = 1 - ∑_{k>p} a_k z^k`, `a_k ≥ 0`, `∑ a_k = 1`.
-    PI-3  `multipliable_canonicalProduct` from PI-2 + `Summable.multipliable`.
+    PI-2  DONE (2026-08-07). `norm_one_sub_weierstrassFactor_le` — but NOT from
+          the nonneg-coefficient series this roadmap proposed; that route needs
+          real power-series machinery. See `WeierstrassFactorEstimate`.
+    PI-3  DONE (2026-08-08). `multipliable_canonicalProduct` from PI-2 plus
+          `Complex.multipliable_one_add_of_summable`. The roadmap's
+          "`Summable.multipliable`" does not exist under that name; the working
+          criterion is `Summable f → Multipliable (1 + f)`, and the `‖z‖ ≤ 1`
+          side condition of PI-2 holds only EVENTUALLY, which is exactly what
+          `Summable.of_norm_bounded_eventually_nat` accepts.
     PI-4  order/genus lemmas (`p ≤ ρ`, exponent of convergence ≤ order).
     PI-5  Jensen ⇒ zero-counting ⇒ the factorization (deepest; needs Nevanlinna).
 
@@ -56,6 +64,7 @@
 
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import Mathlib.Analysis.SpecialFunctions.Log.Summable
 import Mathlib.Topology.Algebra.InfiniteSum.Basic
 import Mathlib.Algebra.Polynomial.Eval.Defs
 import Mathlib.Algebra.Polynomial.Degree.Definitions
@@ -154,8 +163,32 @@ theorem multipliable_canonicalProduct {a : ℕ → ℂ} (p : ℕ)
     (ha : ∀ n, a n ≠ 0) (hsum : Summable (fun n => 1 / ‖a n‖ ^ (p + 1)))
     (z : ℂ) : Multipliable (fun n => weierstrassFactor p (z / a n)) := by
   -- Ref: [manuscript] Ahlfors §5.3, Theorem 5; Conway XI.§2, Theorem 2.4.
-  -- SORRY: needs infinite product convergence from Summable
-  sorry
+  -- PROVED 2026-08-08. The estimate does the work, but note where the `‖z‖ ≤ 1`
+  -- hypothesis is discharged: it is NOT true for every `n`, only eventually.
+  -- Summability forces `1/‖aₙ‖^{p+1} → 0`, hence `‖aₙ‖ → ∞`, hence `‖z/aₙ‖ ≤ 1`
+  -- off a finite set — and `Summable.of_norm_bounded_eventually_nat` only needs
+  -- the bound eventually, so no finite-set surgery is required.
+  have hpos : ∀ n, (0 : ℝ) < ‖a n‖ := fun n => norm_pos_iff.mpr (ha n)
+  -- Comparing against `1/(‖z‖^{p+1} + 1)` rather than `1/‖z‖^{p+1}` keeps the
+  -- constant positive at `z = 0`, avoiding a case split.
+  have hc : (0 : ℝ) < 1 / (‖z‖ ^ (p + 1) + 1) := by positivity
+  have hev : ∀ᶠ n in Filter.atTop,
+      ‖weierstrassFactor p (z / a n) - 1‖ ≤ ‖z‖ ^ (p + 1) * (1 / ‖a n‖ ^ (p + 1)) := by
+    filter_upwards [hsum.tendsto_atTop_zero.eventually_lt_const hc] with n hn
+    have hA : (0 : ℝ) < ‖a n‖ ^ (p + 1) := pow_pos (hpos n) _
+    have hB : (0 : ℝ) < ‖z‖ ^ (p + 1) + 1 := by positivity
+    have hbig : ‖z‖ ^ (p + 1) + 1 < ‖a n‖ ^ (p + 1) := lt_of_one_div_lt_one_div hA hn
+    have hzn : ‖z / a n‖ ≤ 1 := by
+      rw [norm_div, div_le_one (hpos n)]
+      have hlt : ‖z‖ ^ (p + 1) < ‖a n‖ ^ (p + 1) := by linarith
+      exact le_of_lt (lt_of_pow_lt_pow_left₀ _ (norm_nonneg _) hlt)
+    rw [norm_sub_rev]
+    calc ‖1 - weierstrassFactor p (z / a n)‖ ≤ ‖z / a n‖ ^ (p + 1) :=
+          norm_one_sub_weierstrassFactor_le p hzn
+      _ = ‖z‖ ^ (p + 1) * (1 / ‖a n‖ ^ (p + 1)) := by rw [norm_div, div_pow]; ring
+  have key : Summable (fun n => weierstrassFactor p (z / a n) - 1) :=
+    Summable.of_norm_bounded_eventually_nat (hsum.mul_left _) hev
+  simpa using Complex.multipliable_one_add_of_summable key
 
 /-- **Hadamard factorization theorem** (the stated-open core, PI-5). An entire
     function `f` of finite order `ρ` with `f(0) ≠ 0` factors as

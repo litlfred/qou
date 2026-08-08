@@ -12,7 +12,7 @@ tags:
     - repo-infra
     - tractable
 created_at: 2026-08-01T23:31:06Z
-updated_at: 2026-08-07T18:40:00Z
+updated_at: 2026-08-08T03:10:00Z
 parent: qou-k1mq
 ---
 
@@ -70,3 +70,46 @@ power-series support.
 - **`hadamard_factorization` (PI-5).** Jensen + zero-counting +
   Borel-Caratheodory; `#eval` enumeration finds ZERO declarations matching
   `eierstrass`/`adamard`/`ensen` in Mathlib. Unchanged.
+
+---
+
+## 2026-08-08 — PI-3 CLOSED. Two of the three sorries are now gone.
+
+`multipliable_canonicalProduct` is proved, sorry-free:
+`#print axioms` = [propext, Classical.choice, Quot.sound]. Verified with
+scripts/verify-lean-direct.sh; the file now carries exactly ONE live sorry
+(`hadamard_factorization`, PI-5), confirmed by axioms — only that declaration
+still depends on sorryAx.
+
+  PI-2  norm_one_sub_weierstrassFactor_le   closed 2026-08-07 (WeierstrassFactorEstimate)
+  PI-3  multipliable_canonicalProduct       closed 2026-08-08  <- this pass
+  PI-5  hadamard_factorization              OPEN
+
+WHAT THE PROOF NEEDED, AND WHERE THE ROADMAP WAS WRONG.
+
+The roadmap said "PI-3 from PI-2 + `Summable.multipliable`". There is no such
+lemma. The working criterion in Mathlib v4.24.0 is
+
+    Complex.multipliable_one_add_of_summable : Summable f → Multipliable (1 + f)
+
+so the product is written as prod (1 + (E_p(z/a_n) - 1)) and the work is showing
+`Summable (fun n => E_p(z/a_n) - 1)`.
+
+The real subtlety is the side condition. PI-2's estimate needs ‖z‖ <= 1, and
+‖z/a_n‖ <= 1 is FALSE for small n in general — it holds only eventually,
+because summability forces 1/‖a_n‖^{p+1} -> 0 hence ‖a_n‖ -> infinity. No
+finite-set surgery is needed: `Summable.of_norm_bounded_eventually_nat` accepts
+an eventual bound. Comparing against 1/(‖z‖^{p+1} + 1) instead of 1/‖z‖^{p+1}
+keeps the constant positive at z = 0 and avoids a case split.
+
+Lemma names that had drifted in this Mathlib version and cost a round each:
+`one_div_lt_one_div_iff` -> `lt_of_one_div_lt_one_div`,
+`lt_of_pow_lt_pow_left` -> `lt_of_pow_lt_pow_left₀`. `positivity` also cannot
+prove 0 < ‖a n‖^(p+1) without being handed `a n ≠ 0` — use `pow_pos`.
+
+PI-5 REMAINS, and it is not a matter of finding the right lemma names: it needs
+Jensen's formula, zero-counting/exponent-of-convergence, and Borel-Caratheodory
+growth machinery, none of which Mathlib v4.24.0 has in usable form. That is a
+multi-week build, not a session. Not attempted here, and not faked.
+
+<!-- 2026-08-08T03:10:00Z branch claude/dg-scope-correction -->
