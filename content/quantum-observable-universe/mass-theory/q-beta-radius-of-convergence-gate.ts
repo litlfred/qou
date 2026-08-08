@@ -34,6 +34,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-08",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing.** The subject is a *radius of convergence* and a pole location on the real line, and \`u_substrate\` is a hard-coded decimal (\`0.008517234550156142\`). A radius of convergence is a metric notion and a decimal literal is an archimedean evaluation; neither survives passage to a generic commutative ring.`,
+    },
+    {
       kind: "status",
       body:
         "**Theorem (this proposition, the gate direction).** Sorry-free " +
