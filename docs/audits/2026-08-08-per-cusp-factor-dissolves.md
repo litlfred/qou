@@ -199,3 +199,55 @@ python3 computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
 scripts/verify-lean-direct.sh \
   content/quantum-observable-universe/lean/QOU/OneLoopEdgeLattice.lean
 ```
+
+---
+
+## Addendum, 2026-08-08 — an independent PUBLISHED check at `c = 1`
+
+**Probe:** `computations/probes/one_loop_ohtsuki_5_2_crosscheck_probe.py`
+**Witness:** `computations/one-loop-ohtsuki-5-2-crosscheck.witness.json`
+
+The weakest point of the law above was that `k = 2^{−1/2}` is calibrated at
+`c = 1` on the **figure-eight alone**, in a quadratic trace field, from this
+corpus's own extraction. That is now fixed.
+
+Ohtsuki's asymptotic expansion of the Kashaev invariant of `5_2`
+(`uploads/ki52.pdf`, Theorem 1.1) is a **rigorous theorem**, not a fit:
+
+```
+<5_2>_N = e^{N ζ} N^{3/2} ω (1 + Σ κ_i (2πi/N)^i + O(N^{-d-1}))
+ω = e^{−iπ/4} ((1 − y₀)/(2y₀ + 1))^{1/2},   y₀ the root of (y−1)³ = y, Im > 0
+```
+
+(That `ω` reproduces the paper's printed `0.0901905774… − i·0.6499757866…` to
+all 10 digits, so the formula is recovered, not guessed.) Then:
+
+```
+predicted from the law, k from 4_1 alone   c_σ(5_2) = 0.65620337051419987
+Ohtsuki's |ω|                                       = 0.65620337047140662
+                                    agreement: 10 digits — all the paper prints
+```
+
+**Nothing was fitted**: `k` comes from `4_1`, `|τ_DG(5_2)|` from the geometry,
+`ω` from the paper. `5_2` is also two-bridge, so Garoufalidis–Yoon prove 1-loop
+= adjoint torsion for it — both sides are theorem-backed.
+
+### A closed form falls out
+
+Since `|ω|² = 1/(2|τ_DG|)`:
+
+```
+|τ_DG(5_2)| = |2y₀ + 1| / (2 |y₀ − 1|)         exact to working precision
+```
+
+`y₀` has minimal polynomial `y³ − 3y² + 2y − 1`, of discriminant **−23** — the
+same as `x³ − x − 1`. That is the `5_2` trace-field discriminant found
+independently in PR #4658, and the field of the ambiguity generator `√ρ` from
+PR #4697. A **cubic** field, so the match is not a quadratic coincidence.
+
+### Scope — what this does not do
+
+It strengthens the `c = 1` leg only. `5_2` is one-cusped, so it says nothing new
+about `c`-dependence: the only `c = 2` test remains the Whitehead link, and
+`c = 3` remains supporting-only. And it confirms the constant on an independent
+point; it does not prove the law.

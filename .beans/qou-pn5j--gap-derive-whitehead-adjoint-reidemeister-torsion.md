@@ -137,3 +137,50 @@ Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md
 Probe: computations/probes/one_loop_c_sigma_percusp_dissolution_probe.py
 
 <!-- 2026-08-08T00:50:00Z branch claude/dg-scope-correction -->
+
+---
+
+## 2026-08-08 (later) — the c=1 anchor no longer rests on 4_1 alone.
+
+The weakest point of the law `c_sigma = 2^{-1/2}|tau_DG|^{-1/2}` was that its
+constant is calibrated at c=1 on the FIGURE-EIGHT ALONE, in a quadratic trace
+field, from this corpus's own extraction. Fixed with an independent published
+source.
+
+Ohtsuki, "On the asymptotic expansion of the Kashaev invariant of the 5_2 knot"
+(uploads/ki52.pdf), Theorem 1.1 -- a RIGOROUS THEOREM, not a fit:
+
+    <5_2>_N = e^{N zeta} N^{3/2} omega (1 + sum kappa_i (2 pi i/N)^i + O(N^{-d-1}))
+    omega   = e^{-i pi/4} ((1 - y_0)/(2 y_0 + 1))^{1/2},  (y_0-1)^3 = y_0, Im y_0 > 0
+
+That omega reproduces the paper's printed 0.0901905774... - i 0.6499757866... to
+all 10 digits, so the formula is recovered rather than guessed. Then:
+
+    predicted from the law, k from 4_1 alone   c_sigma(5_2) = 0.65620337051419987
+    Ohtsuki |omega|                                         = 0.65620337047140662
+                                     agreement: 10 digits = all the paper prints
+
+NOTHING FITTED: k from 4_1, |tau_DG(5_2)| from the geometry, omega from the
+paper. 5_2 is two-bridge, so Garoufalidis-Yoon prove 1-loop = adjoint torsion for
+it -- both sides theorem-backed.
+
+CLOSED FORM, as a by-product. Since |omega|^2 = 1/(2|tau_DG|):
+
+    |tau_DG(5_2)| = |2 y_0 + 1| / (2 |y_0 - 1|)       exact to working precision
+
+y_0 has minimal polynomial y^3 - 3y^2 + 2y - 1, discriminant -23 -- the same as
+x^3 - x - 1, i.e. the 5_2 trace field (PR #4658) and the field of the ambiguity
+generator sqrt(rho) (PR #4697). A CUBIC field, so this is not a quadratic-field
+coincidence.
+
+SCOPE. Strengthens the c = 1 leg only. 5_2 is one-cusped, so this says nothing
+new about c-dependence: the only c = 2 test is still the Whitehead link, and
+c = 3 is still supporting-only. And it confirms the constant on an independent
+point; it does not prove the law. The prefactor form c_sigma ~ |tau|^{-1/2}
+remains the carried assumption, so the DERIVATION status change is still left to
+review.
+
+Probe: computations/probes/one_loop_ohtsuki_5_2_crosscheck_probe.py
+Audit: docs/audits/2026-08-08-per-cusp-factor-dissolves.md (addendum)
+
+<!-- 2026-08-08T02:20:00Z branch claude/dg-scope-correction -->
