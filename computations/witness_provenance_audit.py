@@ -55,6 +55,26 @@ arc keeps paying for. Static attribution answers "is this claim structurally
 possible", which is the question `run_pipeline` needs before it decides a
 witness is current.
 
+## The three survivors, triaged
+
+All three verified by hand; each has a different cause, and none is fixable by
+re-running:
+
+- **`kite_tail_reconciliation.witness.json`** — rename residue. The script
+  writes `kite-tail-reconciliation` (hyphens) via `WitnessBuilder`, and the
+  underscore-named file is a stale duplicate left behind by the rename. **Both
+  are committed.** The tool is right to reject the claim: the named script
+  produces the *other* file.
+- **`psl27-irrep-verification.witness.json`** — no script in the corpus
+  mentions it. A true orphan.
+- **`sigma-all-evaluator.witness.json`** — its only producer,
+  `build_sigma_all_evaluator_witness.py`, lives in `_deprecated/`. Orphaned by
+  a deprecation.
+
+None can be regenerated, and `run_pipeline` treats all three as current.
+Deleting or re-attributing them is a corpus decision, not a tool fix, so this
+records rather than acts.
+
 Usage:
     python3 computations/witness_provenance_audit.py
     python3 computations/witness_provenance_audit.py --strict     # exit 1 on NOT_A_PRODUCER
