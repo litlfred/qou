@@ -1357,16 +1357,31 @@ gate on the same argument that justified `mpf_context_dps_audit.py`: neither
 existing gate can see it, because a value that is merely *wrong* past digit 16
 is not padded and carries no float64 marker. Not built here.
 
-### Left un-regenerated, deliberately
+### Un-regenerated, then regenerated — the census was installable after all
 
-`m_tau_census_sweep.py` has the same fix, but its witness cannot be
-regenerated in this container. SnapPy installs, but this build lacks the large
-census databases the committed witness was made against: a re-run searches
-180,511 manifolds where the committed record has 433,804, and moves
-`volume_ceiling` from 33.31 to 30.19. That is a smaller search, not a better
-one. The source fix is committed and the witness is not, so the audit still
-reports it as 1 NEW — an honest red rather than a green bought with a
-degraded environment.
+`m_tau_census_sweep.py` was first left with its fix committed and its witness
+not, because a re-run here searched 180,511 manifolds where the committed
+record has 433,804: SnapPy installs, but this build shipped without the large
+census databases. That was reported as an honest red rather than a green bought
+with a degraded environment.
+
+It was worth one more attempt. `pip install snappy_15_knots` supplies the
+missing database, and `len(HTLinkExteriors)` then reads **433,804** — the exact
+figure in the committed witness, which is what makes the re-run trustworthy
+rather than merely successful. Regenerated on that basis: every census count,
+volume ceiling and ceiling manifold is byte-identical to the committed record,
+so the only changes are the padding fix (`m_tau_over_m_e` → `3477.23`) and
+`vol_target_k2` moving in the 17th significant digit, which is the correctly-
+precise constant propagating.
+
+The padding audit is now **NEW: 0** and `--strict` exits 0.
+
+The general point stands and is worth keeping: three environment mismatches
+turned up in one session (mpmath 1.3.0 vs 1.4.1, this census, and
+`pyhecke_native`/`clarabel` with Python 3.11 vs 3.13). Two were repairable and
+one is not. The rule that held throughout is not "never regenerate" but
+**match the reference environment first, and verify the match on a value the
+committed witness already records** — here, the manifold count.
 
 ## P35 — undeclared upstreams: the count was 122 because the sweep was a grep
 
