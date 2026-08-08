@@ -335,6 +335,58 @@ def main() -> int:
                      and max_real_root < lvl7 and lvl7 - max_real_root < mpf(10) ** -4),
     })
 
+    # ---- G7: VSide is FALSE at phi = pi, and G1 never looked ----------------
+    # G1 samples phi = pi*(i+1)/(N+1), i = 0..N-1 -- the OPEN interval. It never tests the
+    # endpoint. It turns out the endpoint is exactly where VSide fails, so G1's "holds
+    # everywhere" would have been read as covering a point it excluded.
+    #
+    # At phi = pi the arc reaches x = -1, all three roots are real (level-7), and for a real
+    # root Im(x*y) = y*sin(phi) -- so EVERY imaginary part vanishes at once. Two roots are
+    # still carried by Re < 1; the third, y = -2.2469796, gives x*y = +2.2469796, which is
+    # real with Re >= 1. That is Li2's cut. VSide.hc2 and hc3 are FALSE there.
+    #
+    # ⚠ Evaluating this with x = exp(i*pi) reports notCut = TRUE, because mpmath returns
+    # x = -1 + 4.1e-43j and the spurious Im saves it -- the SAME trap as G2, in a new place.
+    # x must be built exactly.
+    xpi = mpc(-1, 0)                     # EXACT, not exp(i*pi)
+    rts_pi = polyroots([xpi, -(xpi ** 2 + 1), xpi ** 2 + xpi + 1, -xpi],
+                       maxsteps=300, extraprec=300)
+    bad = [y for y in rts_pi if not in_not_cut(xpi * y)]
+    x0 = mpc(1, 0)
+    rts_0 = polyroots([x0, -(x0 ** 2 + 1), x0 ** 2 + x0 + 1, -x0], maxsteps=300, extraprec=300)
+    zero_ok = all(in_not_cut(x0 * y) and in_not_cut(y / x0) and in_not_cut(y) for y in rts_0)
+    # what the naive exp(i*pi) evaluation would have said
+    xpi_float = exp(mpc(0, 1) * pi)
+    rts_pf = polyroots([xpi_float, -(xpi_float ** 2 + 1), xpi_float ** 2 + xpi_float + 1,
+                        -xpi_float], maxsteps=300, extraprec=300)
+    naive_says_ok = all(in_not_cut(xpi_float * y) for y in rts_pf)
+    gates.append({
+        "gate": "G7",
+        "claim": "VSide is FALSE AT phi = pi, and G1 STRUCTURALLY CANNOT SEE IT because it samples "
+                 "the OPEN interval pi*(i+1)/(N+1). At the endpoint x = -1, all three roots are "
+                 "real (they are the level-7 roots), and for a real root Im(x*y) = y*sin(phi) -- so "
+                 "every imaginary part vanishes SIMULTANEOUSLY. Two roots survive on Re < 1; the "
+                 "third, y = -2.2469796, gives x*y = +2.2469796, real with Re >= 1, which is "
+                 "exactly Li2's cut. So VSide.hc2 and hc3 are false there and MUST NOT be attempted "
+                 "on the closed arc. The transport is unaffected: `envelopeS_total` asks for the "
+                 "derivative only on `Ico 0 pi` and for continuity on `Icc 0 pi`, so the endpoint "
+                 "needs a VALUE but not differentiability -- and `sum_re_deformedV_at_neg_one` "
+                 "already supplies the value at x = -1 with no differentiability hypothesis",
+        "phi_pi_roots_failing_hc2": [nstr(re(y), 16) for y in bad],
+        "phi_pi_x_times_failing_root": [nstr(re(xpi * y), 16) for y in bad],
+        "phi_pi_all_six_hold": bool(len(bad) == 0),
+        "phi_zero_all_hold": bool(zero_ok),
+        "naive_exp_i_pi_evaluation_would_report_ok": bool(naive_says_ok),
+        "why_naive_is_wrong": "exp(i*pi) returns -1 + 4.1e-43j, and that spurious Im satisfies "
+                              "the first disjunct -- the same trap as G2, in a new place. x must "
+                              "be built exactly as mpc(-1, 0)",
+        "consequence": "any attempt to prove VSide for phi in Icc 0 pi is attempting something "
+                       "FALSE; the provable statement is over Ico 0 pi",
+        # the gate PASSES by confirming the failure is real, isolated to pi, and that the
+        # naive evaluation hides it -- this is a recorded refutation, not a green light
+        "pass": bool(len(bad) == 1 and zero_ok and naive_says_ok),
+    })
+
     out = {
         "probe": "qbeta_5two_route36_vside_nonvacuity",
         "bean": "qou-glbl", "dps": mp.dps,
@@ -342,8 +394,15 @@ def main() -> int:
                             "QOU/QBeta/FiveTwoRootStructure.lean (exists_pinning_data)"],
         "gates": gates,
         "verdict": {
-            "measured": "VSide is NON-VACUOUS: all six conditions hold simultaneously at all 597 "
-                        "checks (199 arc points x 3 roots).",
+            "measured": "VSide is NON-VACUOUS on the OPEN arc: all six conditions hold "
+                        "simultaneously at all 597 checks (199 interior arc points x 3 roots) -- "
+                        "and is FALSE at the endpoint phi = pi (G7).",
+            "endpoint": "G7. At x = -1 the roots are the level-7 roots, all real, and "
+                        "Im(x*y) = y*sin(phi) vanishes for all three at once. The root "
+                        "y = -2.2469796 then has x*y = +2.2469796 on Li2's cut, so hc2 and hc3 "
+                        "FAIL. G1 samples the open interval and structurally cannot see this. The "
+                        "transport survives because `envelopeS_total` needs the derivative only on "
+                        "`Ico 0 pi`; VSide must be proved over Ico, never Icc.",
             "trap_avoided": "a naive `Im != 0` disjunct attribution counts the REAL root as "
                             "complex, because polyroots returns |Im| ~ 1e-41 for it. Classified "
                             "by root type instead. The non-vacuity conclusion is unaffected; the "
@@ -365,8 +424,8 @@ def main() -> int:
         print(f"  {g['gate']}  pass={g['pass']}  {g['claim'][:84]}")
     print(f"\nwitness -> {dest}")
     ok = all(g["pass"] for g in gates)
-    print("VERDICT: " + ("VSide is non-vacuous on the arc; the disjunct attribution needed a "
-                         "root-type classifier, not an Im != 0 test."
+    print("VERDICT: " + ("VSide is non-vacuous on the OPEN arc and FALSE at phi = pi (G7), where "
+                         "x*y = 2.2469796 lands on Li2's cut. Prove it over Ico 0 pi, never Icc."
                          if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 

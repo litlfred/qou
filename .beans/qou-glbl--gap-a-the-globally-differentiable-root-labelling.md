@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: continuity, non-degeneracy and 4/6 of VSide PROVED — what remains is the concrete labelling'
+title: 'Gap A: VSide is FALSE at phi=pi (prove over Ico, never Icc); proved in full at every real root'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T00:40:00Z
+updated_at: 2026-08-09T01:15:00Z
 ---
 
 ## What is open
@@ -141,7 +141,8 @@ in the real part. Route 30's correction, proved rather than assumed.
 | the envelope condition `heⱼ` | ✅ `re_dVdy_mul_eq_zero_of_real` / `exists_int_dVdy_mul` |
 | the log-sum conditions `hA`, `hB` | ✅ `logSumA_eq_log`, `logSumB_eq_neg_log` (pre-existing) |
 | one-exceptional-point glue | ✅ `envelopeS_total` (pre-existing) |
-| `VSide` — 4 of its 6 fields | ✅ `vSide_of_notCut_mul_div` (2026-08-08, below) |
+| `VSide` — 4 of 6 fields, all 6 at real roots | ✅ `vSide_of_notCut_mul_div`, `vSide_of_real_root` |
+| ⚠ `VSide` at `φ = π` | **FALSE — Route 36 G7, below. Prove over `Ico`, never `Icc`.** |
 | **concrete `Y₁ Y₂ Y₃` + `VSide`'s last two fields + the two `log(−y)` routes** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
@@ -153,10 +154,11 @@ be called trivial in advance.
 
 `VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
 it was measured before any Lean was written for it. **Route 36**
-(`qbeta_5two_route36_vside_nonvacuity_probe.py`, 6 gates, all pass):
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **7 gates**, all pass — G7 is a
+recorded *refutation*, see below):
 
 * **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks
-  (199 arc points × 3 roots). The correction-6 version scores 199 failures under
+  (199 **interior** arc points × 3 roots; the endpoints are not sampled — G7). The correction-6 version scores 199 failures under
   the same gate, so the gate is falsifiable rather than decorative.
 * **G2 a trap** — `polyroots` returns `|Im| ~ 2.6e-41` for the real root at **one**
   arc point, so a naive `Im ≠ 0` disjunct test misattributes it. It bites 1 time
@@ -192,11 +194,63 @@ counterexample outright: at `y = 2`, `2x² − 9x + 2 = 0` gives `x = (9±√65)
 both real, neither on the unit circle, with `y = 2 ∉ notCut`. Drop the hypothesis
 and the theorem is false. Recorded in the docstring so it is not later "simplified".
 
-**Still open in `VSide`:** `x·y ∈ notCut` and `y/x ∈ notCut`. G3 measured both —
-carried by `Im ≠ 0` at all 597 checks with `min |Im| = 0.00676`, a genuine margin,
-so neither needs a case split. `exists_pinning_data` already gives `(x·y₃).im < 0`
-and `(x·y₂).im < 0` once `c < 0`; the gap is `y₂` when `c ≥ 0`, plus the real
-root, where `Im(x·t) = t·sin φ > 0` should be cheap.
+### ⚠⚠ 2026-08-08 — `VSide` is **FALSE at `φ = π`**. Route 36 G7.
+
+Found while attacking the last two fields, by measuring instead of assuming. It
+is the single most important thing in this bean.
+
+At the endpoint `x = −1` the three roots are the **level-7 roots** and are all
+real, so for each of them `Im(x·y) = y·sin φ` — and every imaginary part vanishes
+*simultaneously*. Two roots are still carried by `Re < 1`. The third,
+`y = −2.2469796`, gives `x·y = +2.2469796`: real, `Re ≥ 1`, sitting exactly on
+Li₂'s cut. **`VSide.hc₂` and `hc₃` are false there.**
+
+So: **prove `VSide` over `Ico 0 π`, never `Icc 0 π`.** Any attempt at the closed
+interval is an attempt at something false.
+
+Three things this exposes, each worth keeping:
+
+1. **G1 structurally could not see it.** It samples `φ = π(i+1)/(N+1)` — the
+   *open* interval. "Holds at all 597 checks" would have been read as covering a
+   point it never tested. The sampling was right by luck, not by design.
+2. **A naive evaluation reports the endpoint as FINE.** `exp(iπ)` returns
+   `−1 + 4.1e-43i`, and that spurious imaginary part satisfies `notCut`'s first
+   disjunct. This is **the same trap G2 documents, in a second place** — and the
+   first time it would have produced a false *pass* rather than a wrong reason.
+   `x` must be built exactly as `mpc(-1, 0)`.
+3. **The transport is unaffected, and the reason is structural, not lucky.**
+   `envelopeS_total` asks for `ContinuousOn … (Icc 0 π)` but `HasDerivAt` only on
+   `Ico 0 π`. The endpoint needs a **value**, not differentiability — and
+   `sum_re_deformedV_at_neg_one` (`qou-asem`) already supplies that value at
+   `x = −1` with no differentiability hypothesis in it. The two results meet
+   exactly where this one has to stop.
+
+Recorded in the `VSide` docstring so it cannot be re-attempted quietly.
+
+### ✅ `VSide` proved in full at every REAL root on the open arc
+
+    mul_mem_notCut_of_real (hxim : x.im ≠ 0) (hy : y.im = 0) (hy0 : y ≠ 0) : x*y ∈ notCut
+    div_mem_notCut_of_real (hx0 : x ≠ 0) (hxim : x.im ≠ 0) …            : y/x ∈ notCut
+    vSide_of_real_root (hx : |x|=1) (hxim : x.im ≠ 0) (hy : y.im = 0)
+      (hc : curve x y = 0) : VSide x y
+
+`Im(x·y) = Im x · Re y`, so one line each. Per G5 this is the **majority** case,
+not a corner: 291 of the 597 checks are real roots, because the arc crosses the
+discriminant and all three roots are real at 46 of the 199 points.
+
+`hxim` is load-bearing, not decorative — at `φ = π` it is exactly what fails, and
+`VSide` fails with it. The lemma and the refutation are the same fact.
+
+**Still open in `VSide`:** `x·y ∈ notCut` and `y/x ∈ notCut` at the **complex
+pair**, on the open arc. G3 measured both — carried by `Im ≠ 0` at all 597 checks
+with `min |Im| = 0.00676`. `exists_pinning_data` already gives `(x·y₃).im < 0`
+and `(x·y₂).im < 0` once `c < 0`; the remaining gap is `y₂` for `c ≥ 0`.
+
+⚠ And note what G3's margin actually was: `min |Im(x·y)| = 0.00676` at
+`φ = 0.0157` belongs to the **real** root (`t·sin φ → 0` as `φ → 0`), not to the
+pair — the pair's own minimum is `0.00587`. The real root's margin closing at
+`φ = 0` is harmless, because `Re(x·t) = t·cos φ < 1` carries it there. It is the
+*same* degeneration that is fatal at `φ = π`, where `Re` does not.
 
 ### The original "what remains: (a) only" note, superseded
 

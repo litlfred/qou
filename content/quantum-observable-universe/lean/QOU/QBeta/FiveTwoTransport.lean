@@ -117,7 +117,33 @@ stays readable.
 Route 31 G4 showed that made the whole statement **vacuous at the positive real
 root** — which on this arc is one of the three roots at every `φ`. The `log(−y)`
 derivative is passed separately instead, by whichever of
-`hasDerivAt_log_neg_of_slitPlane` / `hasDerivAt_log_neg_ofReal` applies. -/
+`hasDerivAt_log_neg_of_slitPlane` / `hasDerivAt_log_neg_ofReal` applies.
+
+## ⚠⚠ `VSide` is FALSE at `φ = π`. Prove it over `Ico 0 π`, never `Icc 0 π`.
+
+Route 36 G7. At the endpoint `x = −1` the three roots are the level-7 roots and
+are **all real**, so for each of them `Im(x·y) = y·sin φ` vanishes — every
+imaginary part goes at once. Two are still carried by `Re < 1`; the third,
+`y = −2.2469796`, gives `x·y = +2.2469796`, real with `Re ≥ 1`. That is exactly
+Li₂'s cut, so `hc₂` and `hc₃` fail there. Attempting `VSide` on the closed
+interval is attempting something false.
+
+The transport is **unaffected**, and it is worth seeing why rather than
+assuming it: `envelopeS_total` asks for `ContinuousOn … (Icc 0 π)` but for
+`HasDerivAt` only on `Ico 0 π`. The endpoint needs a *value*, not
+differentiability — and `sum_re_deformedV_at_neg_one` already supplies that
+value at `x = −1`, with no differentiability hypothesis anywhere in it. So the
+two results meet exactly at the point where this one has to stop.
+
+`hasDerivAt_envelopeS` below carries `hhi : φ ≤ π` for `arcX_arg`'s principal
+range. That is not wrong — the theorem holds — but at `φ = π` its `VSide`
+hypotheses cannot be met by the actual roots, so it has no instance there.
+
+⚠ And this is invisible to a naive check. `exp(I * π)` evaluates to
+`−1 + 4.1e-43·I`, and that spurious imaginary part satisfies `notCut`'s first
+disjunct, so a numerical probe reports the endpoint as fine. Route 36 G7 builds
+`x = −1` exactly for that reason — the same trap `root_mem_notCut` documents,
+in a second place. -/
 structure VSide (x y : ℂ) : Prop where
   hy0 : y ≠ 0
   hc₁ : y ∈ notCut
@@ -198,6 +224,30 @@ theorem mul_root_ne_zero {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) : x * 
 theorem div_root_ne_zero {x y : ℂ} (hx0 : x ≠ 0) (hc : curve x y = 0) : y / x ≠ 0 :=
   div_ne_zero (root_ne_zero hx0 hc) hx0
 
+/-- For **real** `y ≠ 0` and `x` off the real axis, `Im(x·y) = Im x · Re y ≠ 0`.
+
+This is what carries every *real* root on the **open** arc, with no case
+analysis — and it is exactly what expires at `φ = π`, where `Im x = 0` and the
+root `−2.2469796` is left with `Re(x·y) = 2.2469796` on the cut. See the `VSide`
+docstring. -/
+theorem mul_mem_notCut_of_real {x y : ℂ} (hxim : x.im ≠ 0) (hy : y.im = 0) (hy0 : y ≠ 0) :
+    x * y ∈ notCut := by
+  refine Or.inl ?_
+  have hre : y.re ≠ 0 := fun h => hy0 (Complex.ext (by simpa using h) (by simpa using hy))
+  simpa [Complex.mul_im, hy] using mul_ne_zero hxim hre
+
+/-- The `y/x` counterpart: `Im(y/x) = −Re y · Im x / ‖x‖²`. -/
+theorem div_mem_notCut_of_real {x y : ℂ} (hx0 : x ≠ 0) (hxim : x.im ≠ 0) (hy : y.im = 0)
+    (hy0 : y ≠ 0) : y / x ∈ notCut := by
+  refine Or.inl ?_
+  have hre : y.re ≠ 0 := fun h => hy0 (Complex.ext (by simpa using h) (by simpa using hy))
+  have hns : Complex.normSq x ≠ 0 := by
+    simpa [Complex.normSq_eq_zero] using hx0
+  have hval : (y / x).im = -(y.re * x.im) / Complex.normSq x := by
+    rw [Complex.div_im, hy]; ring
+  rw [hval]
+  exact div_ne_zero (neg_ne_zero.mpr (mul_ne_zero hre hxim)) hns
+
 /-- **`VSide` reduced to its two genuinely root-dependent fields.**
 
 Given the two `notCut` memberships that need the labelling, the other four are
@@ -216,6 +266,21 @@ theorem vSide_of_notCut_mul_div {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hx0 
     hc₃ := h₃
     hn₂ := mul_root_ne_zero hx0 hc
     hn₃ := div_root_ne_zero hx0 hc }
+
+/-- **`VSide` in full at a real root, on the open arc** — all six fields.
+
+Route 36 G5 makes this the majority case rather than a corner: 291 of the 597
+checks are real roots, because the arc crosses the discriminant and *all three*
+roots are real at 46 of the 199 points.
+
+`hxim : x.im ≠ 0` is the open-arc condition, and it is load-bearing rather than
+decorative: at `φ = π` it is precisely what fails, and `VSide` fails with it. -/
+theorem vSide_of_real_root {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) (hxim : x.im ≠ 0)
+    (hy : y.im = 0) (hc : curve x y = 0) : VSide x y := by
+  have hx0 : x ≠ 0 := fun h => hxim (by rw [h]; simp)
+  have hy0 : y ≠ 0 := root_ne_zero hx0 hc
+  exact vSide_of_notCut_mul_div hx hx0 hc (mul_mem_notCut_of_real hxim hy hy0)
+    (div_mem_notCut_of_real hx0 hxim hy hy0)
 
 /-! ### 3. `S′(φ) = 2φ` -/
 
