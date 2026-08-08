@@ -83,13 +83,16 @@ opaque ChernSimonsGramDeterminantIdentityHolds (q : ℝ) (hq : q > 1) : Prop
 class ChernSimonsCorrectionConjecture (q : ℝ) (hq : q > 1) : Prop where
   identity_holds : ChernSimonsGramDeterminantIdentityHolds q hq
 
-axiom chern_simons_correction_identity_holds : ∀ (q : ℝ) (hq : q > 1), ChernSimonsGramDeterminantIdentityHolds q hq
-
--- Ref: [manuscript] conj:em-coupling-chern-simons
-instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
-    ChernSimonsCorrectionConjecture q hq where
-  -- Witness: computations/none
-  -- Ref: [manuscript]
-  identity_holds := chern_simons_correction_identity_holds q hq
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance chern_simons_correction_conjecture (q : ℝ) (hq : q > 1) :
+--     axiom chern_simons_correction_identity_holds : ∀ (q : ℝ) (hq : q > 1), ChernSimonsGramDeterminan
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[ChernSimonsCorrectionConjecture q hq]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[ChernSimonsCorrectionConjecture q hq]` as an explicit hypothesis.
 
 end QOU.ArchimedeanUniverse
