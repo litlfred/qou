@@ -80,11 +80,11 @@ def IsFinite (x : K) : Prop := ∃ n : ℕ, |x| < (n : K)
 theorem infinitesimal_zero : Infinitesimal (0 : K) := by
   intro n; simp
 
-theorem neg {x : K} (h : Infinitesimal x) : Infinitesimal (-x) := by
+theorem Infinitesimal.neg {x : K} (h : Infinitesimal x) : Infinitesimal (-x) := by
   intro n; simpa using h n
 
 /-- Closure of infinitesimals under addition (via the `2n` trick). -/
-theorem add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y) :
+theorem Infinitesimal.add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y) :
     Infinitesimal (x + y) := by
   intro n
   have hx2 := hx (2 * n)
@@ -135,13 +135,13 @@ theorem isFinite_one : IsFinite (1 : K) := by
   simpa using isFinite_natCast (K := K) 1
 
 /-- Every infinitesimal is finite. -/
-theorem isFinite {x : K} (h : Infinitesimal x) : IsFinite x := by
+theorem Infinitesimal.isFinite {x : K} (h : Infinitesimal x) : IsFinite x := by
   refine ⟨1, ?_⟩
   have := h 1
   simpa using this
 
 /-- Finites are closed under addition. -/
-theorem add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x + y) := by
   obtain ⟨n, hn⟩ := hx
   obtain ⟨m, hm⟩ := hy
@@ -153,7 +153,7 @@ theorem add {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
   exact lt_of_le_of_lt this hsum
 
 /-- Finites are closed under negation. -/
-theorem neg {x : K} (h : IsFinite x) : IsFinite (-x) := by
+theorem IsFinite.neg {x : K} (h : IsFinite x) : IsFinite (-x) := by
   obtain ⟨n, hn⟩ := h; exact ⟨n, by simpa using hn⟩
 
 /-- Finites are closed under multiplication. -/

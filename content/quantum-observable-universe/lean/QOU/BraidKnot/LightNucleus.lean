@@ -32,7 +32,7 @@ def LightNucleus.A : LightNucleus → ℕ
   | .helium3   => 3
 
 /-- The atomic strand count `n_0 = 3 · A`. -/
-def n₀ (n : LightNucleus) : ℕ := 3 * n.A
+def LightNucleus.n₀ (n : LightNucleus) : ℕ := 3 * n.A
 
 /-- The number of constituents (nucleons). -/
 def numConstituents (n : LightNucleus) : ℕ := n.A

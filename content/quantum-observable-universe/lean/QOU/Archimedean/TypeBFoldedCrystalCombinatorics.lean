@@ -46,7 +46,7 @@ deriving DecidableEq, Repr
 def Cell.content (x : Cell) : ℤ := (x.col : ℤ) - (x.row : ℤ)
 
 /-- The transpose of a cell: swap row and column. -/
-def transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
+def Cell.transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
 
 /-- The transpose involution is involutive: `(x.transpose).transpose = x`. -/
 @[simp] theorem Cell.transpose_transpose (x : Cell) :
@@ -73,11 +73,11 @@ structure PartitionWithCells where
 deriving Repr
 
 /-- The **content sum** of a partition is `Σ_{x ∈ λ} c(x)`. -/
-def content_sum (P : PartitionWithCells) : ℤ :=
+def PartitionWithCells.content_sum (P : PartitionWithCells) : ℤ :=
   (P.cells.map Cell.content).sum
 
 /-- The **transpose** of a partition: transpose every cell. -/
-def transpose (P : PartitionWithCells) :
+def PartitionWithCells.transpose (P : PartitionWithCells) :
     PartitionWithCells :=
   ⟨P.cells.map Cell.transpose⟩
 

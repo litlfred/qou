@@ -44,12 +44,12 @@ inductive PartitionOf5 where
   deriving DecidableEq, Repr
 
 /-- Explicit list of all 7 partitions of 5. -/
-def allList : List PartitionOf5 :=
+def PartitionOf5.allList : List PartitionOf5 :=
   [.five, .fourOne, .threeTwo, .threeOneOne, .twoTwoOne, .twoOneOneOne, .onesFive]
 
 /-- Dimension of the S_5 irrep V_λ for each partition λ ⊢ 5
     (standard hook-length formula values; cf. James 1984 §2). -/
-def dim : PartitionOf5 → ℕ
+def PartitionOf5.dim : PartitionOf5 → ℕ
   | .five          => 1
   | .fourOne       => 4
   | .threeTwo      => 5
@@ -129,10 +129,10 @@ inductive A5Irrep where
   deriving DecidableEq, Repr
 
 /-- All five A₅ irreps. -/
-def allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
+def A5Irrep.allList : List A5Irrep := [.A, .T₁, .T₂, .G, .H]
 
 /-- Dimension of each A₅ irrep. -/
-def dim : A5Irrep → ℕ
+def A5Irrep.dim : A5Irrep → ℕ
   | .A => 1 | .T₁ => 3 | .T₂ => 3 | .G => 4 | .H => 5
 
 /-- A₅ has exactly five irreps — equal to its number of conjugacy classes
@@ -757,11 +757,11 @@ inductive A5ConjClass where
   deriving DecidableEq, Repr
 
 /-- All five A₅ conjugacy classes. -/
-def allList : List A5ConjClass :=
+def A5ConjClass.allList : List A5ConjClass :=
   [.id, .doubleTransp, .threeCycle, .fiveCycleA, .fiveCycleB]
 
 /-- Size of each A₅ conjugacy class. -/
-def size : A5ConjClass → ℕ
+def A5ConjClass.size : A5ConjClass → ℕ
   | .id => 1 | .doubleTransp => 15 | .threeCycle => 20
   | .fiveCycleA => 12 | .fiveCycleB => 12
 

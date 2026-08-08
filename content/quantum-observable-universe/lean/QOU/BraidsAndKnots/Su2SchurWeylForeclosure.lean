@@ -49,7 +49,7 @@ inductive PartitionOf5 where
   deriving DecidableEq, Repr
 
 /-- All 7 partitions of 5. -/
-def allList : List PartitionOf5 :=
+def PartitionOf5.allList : List PartitionOf5 :=
   [.five, .fourOne, .threeTwo, .threeOneOne, .twoTwoOne, .twoOneOneOne, .onesFive]
 
 /-- Number of (nonzero) rows of the Young diagram. -/
