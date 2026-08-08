@@ -186,3 +186,47 @@ A TRAP TO AVOID (cost me a cycle): if the migration comment mentions
 "QIntegerCanonical", a naive `if "QIntegerCanonical" not in text` guard will
 think the import is already present and SKIP inserting it. Check for the literal
 import line, not the bare filename.
+
+
+---
+
+# *** THE CEILING, MEASURED (2026-08-08) — "43 duplicates" was WRONG ***
+
+Pushed into the varied-signature batch to drain it. It does not drain: the 43
+balanced definitions are NOT 43 duplicates of qIntBal. They are 43
+balanced-CONVENTION definitions with genuinely DIFFERENT TYPES.
+
+Method: attempted mechanical migration on every plausible candidate with
+AUTO-REVERT, and let Lean adjudicate interchangeability rather than reasoning
+about defeq. 3 kept, 2 refused, 4 skipped as type-incompatible up front.
+
+MIGRATED THIS ROUND (lean-direct EXIT 0):
+  predicted-spectra/em-coupling-fixed-point.lean    qIntReal
+  predicted-spectra/skein-finiteness-bound.lean     qInt
+  brings-surface/orbital-fourier-decomposition.lean qInt
+RUNNING TOTAL: 8 of 55 consolidated onto the canonical definition.
+
+WHY THE REST ARE NOT DRAINABLE (this is the ceiling, not a backlog):
+  GUARDED     11   `if q = 1 then n else ...` -- a DIFFERENT function. Migrating
+                   changes behaviour at q=1. Not a duplicate.
+  Z-INDEX      6   (k : Z). qIntBal takes N. Needs a Z sibling in the canonical
+                   module before any of these can move.
+  RING-INDEX   3   exponent lives in the ring/reals, not N (q ^ (rho : R)).
+                   A different function again.
+  SHORTHAND    7   [2]_q = q + q^-1, [3]_q = q^2+1+q^-2 written out. Arguably
+                   fine as-is; consolidating buys little.
+  CTX-BOUND    1   q comes from a structure field (ctx.q).
+  PROOF-FORM   2   defeq-equal, but downstream proofs need the literal
+                   syntactic body (HabiroMagnitudeA3: (q^n)^-1 vs q^-1^n;
+                   bar-involution-invariance: Z-cast exponent). Lean refused
+                   both; auto-revert kept them intact.
+
+SO: the honest consolidation ceiling on the CURRENT canonical signature is
+roughly what has been done. To go further you must first EXTEND the canonical
+module -- add a Z-index sibling and decide a policy for the guarded variants
+(either a guarded canonical form, or leave them and document that they are
+deliberately different functions). That is a design decision, not a sweep.
+
+ALSO FOUND: braids-and-knots/chi-std-pernucleon-closed-form.lean is RED ON MAIN
+(pre-existing, unrelated to this work) -- another instance of the class in
+qou-orph / qou-k448 where nothing checks a file.
