@@ -95,3 +95,47 @@ later as a test, not as a prerequisite.
 
 `Finset.prod_sum` to interchange `∏_i ∑_k` into `∑_{φ} ∏_i`. That is the step
 that introduces the `φ : Fin r → Fin n` indexing everything after it runs on.
+
+## Progress 2026-08-08 (cont) — steps 2 and 3 proved
+
+All axiom-clean; the file still carries exactly ONE `sorry`, the target.
+
+**Step 2 — regroup by `φ`.**
+- `prod_sum_interchange` — `∏_i ∑_k` becomes `∑_{φ : Fin r → Fin n} ∏_i`,
+  via `Fintype.prod_sum`.
+- `det_mul_eq_sum_over_functions` — `det (A * B) = ∑_φ ∑_σ sgn σ • ∏_i …`.
+  Every later step is now a statement about a single `φ`.
+
+**Step 3 — a non-injective `φ` contributes 0.** Done, and by a better route
+than the textbook one.
+
+The standard argument pairs `σ` with `σ ∘ (swap i j)` and cancels. That
+does not work cleanly here: the term is `∏_i A(σi)(φi) · B(φi)(i)`, and
+reindexing by the swap leaves the `B` factor carrying `τ i` rather than `i`,
+so the two products are not equal termwise. A hand-rolled involution would
+have to fight that.
+
+Instead: the `B` product is `σ`-independent, so factor it out. What remains
+is `∑_σ sgn σ ∏_k A(σk)(φk)`, which **is** `Matrix.det_apply` for
+`A.submatrix id φ`. A non-injective `φ` repeats a column of that submatrix,
+and Mathlib's `det_zero_of_row_eq` (through `det_transpose`) already kills
+it. Three short lemmas instead of an involution argument:
+`sum_perm_eq_det_submatrix`, `det_submatrix_eq_zero_of_not_injective`,
+`sum_over_perms_eq_zero_of_not_injective`.
+
+### Two Lean-side snags worth recording
+
+- `(Matrix.det_apply _).symm` as a **term** blew the heartbeat budget
+  ("(deterministic) timeout at `whnf`"). The same proof as
+  `by rw [Matrix.det_apply]; rfl` is instant — the term-mode elaboration was
+  the problem, not the mathematics.
+- `simp_rw` through the split/factor chain made no progress; spelling the
+  rewrite out with an explicit `Finset.sum_congr` worked first time.
+
+### Next
+
+Step 4, the harder half: an **injective** `φ` factors uniquely as
+`f ∘ π` with `f` strictly monotone and `π : Equiv.Perm (Fin r)`, and
+`sign π` pulls out. That factorization is where `Selector` finally gets used,
+and it is the piece with no Mathlib support — the sorting of an injective
+`Fin r → Fin n` into monotone-composed-with-permutation has to be built.
