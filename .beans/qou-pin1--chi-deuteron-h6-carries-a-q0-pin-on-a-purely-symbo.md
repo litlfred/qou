@@ -1,11 +1,11 @@
 ---
 # qou-pin1
 title: 'chi-deuteron-h6 carries a q0 pin on a purely SYMBOLIC artifact (declared muon, recorded proton)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T19:00:00Z
-updated_at: 2026-08-08T19:00:00Z
+updated_at: 2026-08-08T19:35:00Z
 ---
 
 Surfaced by the new `computations/audits/q0_declared_vs_recorded_sweep.py`
@@ -42,3 +42,22 @@ the two labels is wrong and say which.
 must match value) and reports `Q0_FLIP: 0` corpus-wide. The same blind spot hid
 a live 30.4 ppb mislabel on `qbeta-ck-cache` until 2026-08-08. See
 `docs/audits/2026-08-08-q0-declared-vs-recorded-sweep.md`.
+
+
+## RESOLVED 2026-08-08 (branch claude/q0-pin-coverage-2026-08-08)
+
+Chain traced -- canonical_braid_crossings, hoefsmit_symbolic,
+per_irrep_pole_proton_h3 -- and it IS purely symbolic. Module-level
+`Q = sp.symbols('q', positive=True)`; the single numeric import
+(`from q_parameter import Q as q_num`) sits inside hoefsmit_symbolic's
+`if __name__ == "__main__"` self-test, unreachable from any import path.
+
+So neither label was meaningful, as suspected. Stem moved ideal_muon ->
+ambiguous; spurious q0Anchor/q0Value dropped from chi-deuteron-h6.witness.json.
+DECL_MISMATCH is now 0.
+
+Caveat worth carrying: removing a stem from ideal_muon is a LIVE RE-PIN
+(q_parameter reads the manifest by stem), inert here only because this producer
+never imports q_parameter outside its self-test. The check was the precondition,
+not a formality. Audit: docs/audits/2026-08-08-q0-pin-coverage-and-the-manifest-
+is-config.md
