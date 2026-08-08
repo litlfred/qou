@@ -1,11 +1,11 @@
 ---
 # qou-qbq6
 title: 'S2 remainder: identify A1,A2 for C1 - needs the slope decomposition, which a single-edge polygon does not supply'
-status: todo
+status: scrapped
 type: task
 priority: high
 created_at: 2026-08-08T09:05:00Z
-updated_at: 2026-08-08T09:05:00Z
+updated_at: 2026-08-08T11:35:00Z
 ---
 
 Split out of `qou-qbr3` (S2), whose Newton-data half is done.
@@ -25,3 +25,9 @@ exist for C1 at infinity at all: RSZ's `P_i` are graded pieces of the slope
 filtration, one per DISTINCT slope with `mu_1 < ... < mu_k`, and C1 at infinity
 has a single slope. If the objection stands there is nothing to identify here,
 and this bean should be closed rather than worked.
+
+## VOID 2026-08-08 — see docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+
+There is no `A1,A2` to identify: `F(P1,...,Pk)` needs `k >= 2` distinct slopes and
+C1 has one at infinity. Bugeaud [14] lifts integrality, not the two-slope
+requirement.

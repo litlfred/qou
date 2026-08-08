@@ -1,11 +1,11 @@
 ---
 # qou-qbr3
 title: 'S2: ramification — Newton slope blocks A1,A2 at infinity and their square roots B1,B2 (gated on S1)'
-status: in-progress
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-08-08T08:05:00Z
-updated_at: 2026-08-08T08:50:00Z
+updated_at: 2026-08-08T11:35:00Z
 ---
 
 Compute the slope blocks `A1, A2` from the Newton polygon of
@@ -73,3 +73,10 @@ Identifying `A1, A2` concretely for C1 requires the **slope decomposition** of t
 module into `P1, P2` -- which the single-edge Newton polygon does not by itself
 hand over. That is the remaining work here. Do NOT label the characteristic-
 equation roots as `A1, A2`; that is the error corrected above.
+
+## VOID 2026-08-08 — see docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
+
+The Newton half of this bean STANDS (polygon, characteristic equation, and the
+proved non-removability of sqrt(q-1) in `C1NewtonRamification.lean`) -- all
+computed from the operator. What is void is the `A1,A2` target: RSZ's `A_i` are
+the leading matrices of TWO slope components, and C1 has one slope at infinity.

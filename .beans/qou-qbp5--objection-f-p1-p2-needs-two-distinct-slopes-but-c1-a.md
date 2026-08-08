@@ -1,11 +1,11 @@
 ---
 # qou-qbp5
 title: 'OBJECTION: F(P1,P2) needs TWO distinct slopes, but C1 at infinity has ONE - is the ''two Stokes multipliers'' target well-posed?'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-08T09:05:00Z
-updated_at: 2026-08-08T09:55:00Z
+updated_at: 2026-08-08T11:35:00Z
 ---
 
 **Raised 2026-08-08 while doing S2. This may invalidate the S3 target as framed;
@@ -167,3 +167,10 @@ restriction, not the two-slope requirement.
 **Remaining lit gap:** none for this question. RSZ and Bugeaud are both local and
 both need two slopes. If rescue 1 is pursued, the relevant literature is the
 q-analogue of the Birkhoff connection problem, not §3.3.
+
+## CLOSED 2026-08-08 — objection UPHELD, written up
+
+Full write-up: `docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md`. RSZ's own
+text (§3.3 title; `d := mu_2 - mu_1` p.38; Thm 3.3.5 dim 0 at k=1; p.21 Def 2.3.1)
+plus Bugeaud [14]'s two-slope §2 close it. Mis-citation, not refutation of the
+physics. Dependent beans qbg2/qbr3/qbq6/qbs4 marked void.
