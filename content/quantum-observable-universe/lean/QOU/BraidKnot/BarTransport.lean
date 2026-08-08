@@ -40,7 +40,7 @@ def IsBarSymmetric (J : K → ℕ → K) (q : K) : Prop :=
   ∀ n, J q n = J q⁻¹ n
 
 /-- Bar symmetry gives function-level equality. -/
-theorem eq_fun {J : K → ℕ → K} {q : K}
+theorem IsBarSymmetric.eq_fun {J : K → ℕ → K} {q : K}
     (hsym : IsBarSymmetric J q) : J q = J q⁻¹ :=
   _root_.funext hsym
 
@@ -54,7 +54,7 @@ theorem annihilates_bar_of_symmetric
     (hsym : IsBarSymmetric J q)
     (h : Annihilates op q⁻¹ (J q⁻¹)) :
     Annihilates op q⁻¹ (J q) := by
-  rw [hsym.eq_fun]
+  rw [IsBarSymmetric.eq_fun hsym]
   exact h
 
 
@@ -88,7 +88,7 @@ structure MFreeQDiffOp (K : Type*) [Field K] where
   rhs : K → K
 
 /-- Convert an m-free operator to the general `QDifferenceOperator`. -/
-def toOp (op : MFreeQDiffOp K) : QDifferenceOperator K where
+def MFreeQDiffOp.toOp (op : MFreeQDiffOp K) : QDifferenceOperator K where
   order := op.order
   coeff j q _m := op.coeff j q
   rhs q _m := op.rhs q
@@ -99,12 +99,12 @@ def MFreeAnnihilates (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) : Prop :=
     ∑ j ∈ range (op.order + 1), op.coeff j q * J (N + j) = op.rhs q
 
 /-- m-free annihilation IS annihilation of the general operator. -/
-theorem annihilates_iff (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) :
+theorem MFreeQDiffOp.annihilates_iff (op : MFreeQDiffOp K) (q : K) (J : ℕ → K) :
     MFreeAnnihilates op q J ↔ Annihilates op.toOp q J := by
   simp only [MFreeAnnihilates, Annihilates, MFreeQDiffOp.toOp]
 
 /-- The bar involution of an m-free operator: replace `q` by `q⁻¹`. -/
-def bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
+def MFreeQDiffOp.bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
   order := op.order
   coeff j q := op.coeff j q⁻¹
   rhs q := op.rhs q⁻¹
@@ -116,7 +116,7 @@ def bar (op : MFreeQDiffOp K) : MFreeQDiffOp K where
     simply replacing `q` with `q⁻¹` in the coefficients — and since the
     Tower values `J(N+j)` don't change, this is the barred operator acting
     on the SAME tower. Sorry-free. -/
-theorem bar_annihilates_of_annihilates
+theorem MFreeQDiffOp.bar_annihilates_of_annihilates
     (op : MFreeQDiffOp K) (q : K) (J : ℕ → K)
     (h : MFreeAnnihilates op q J) :
     MFreeAnnihilates op.bar q⁻¹ J := by
