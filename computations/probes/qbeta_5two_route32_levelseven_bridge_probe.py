@@ -38,7 +38,8 @@ paper only, and sitting directly on this bridge.
 import json
 import pathlib
 
-from mpmath import (cos, exp, fabs, im, log, mp, mpf, nstr, pi, polylog, polyroots, re)
+from mpmath import (cos, exp, fabs, findroot, im, log, mp, mpc, mpf, nstr, pi, polylog,
+                    polyroots, re)
 
 
 def roots_at(x):
@@ -214,19 +215,72 @@ def main() -> int:
         "pass": bool(worst_dp > 1),
     })
 
-    # ---- G9: what this does NOT close ---------------------------------------
+    # ---- G9: the link this gate guarded is now CLOSED ------------------------
+    # G9 previously asserted that the `extend` <-> analytic-L identification was
+    # OPEN, with pass hardcoded True, and said it was "the one gate here that
+    # would fail if the lane ever quietly closed it without saying so".
+    # The lane has now closed it -- openly -- so the gate is REWRITTEN rather
+    # than left passing on a claim that has drifted. It is also converted from a
+    # hardcoded declaration into an actual MEASUREMENT.
+    def rogersL_real(u):
+        return polylog(2, u) + log(u) * log(1 - u) / 2
+
+    def extend_piecewise(v):
+        """The corpus's `extend (pi^2/6) rogersL`, all three branches."""
+        C = pi ** 2 / 6
+        if v > 1:
+            return 2 * C - rogersL_real(1 / v)
+        if v < 0:
+            return -rogersL_real(v / (v - 1))
+        return rogersL_real(v)
+
+    def ReL_analytic(v):
+        z = mpc(v, 0)
+        return re(polylog(2, z) + log(z) * log(1 - z) / 2)
+
+    xr = findroot(lambda t: t ** 3 - 2 * t ** 2 - t + 1, mpf("0.55"))
+    ws = [1 / (1 - xr), xr, (xr - 1) / xr]
+    six = ws + [-w for w in ws]
+    rows9, worst9 = [], mpf(0)
+    for a in six:
+        d = fabs(extend_piecewise(a) - ReL_analytic(a))
+        worst9 = max(worst9, d)
+        rows9.append({"x": nstr(a, 18), "difference": nstr(d, 8),
+                      "regime": ("x>1 inversion" if a > 1 else
+                                 "x<0 Landen" if a < 0 else "0<=x<=1 identity")})
     gates.append({
         "gate": "G9",
-        "claim": "THE OPEN LINK, recorded as a gate so it is not lost in prose: G4 uses the "
-                 "ANALYTIC Rogers L = Li2(z) + (1/2) log z log(1-z), while Lean's `extended_sum` "
-                 "is stated for the corpus's PIECEWISE `extend`. Those agree by Route 15 ON PAPER "
-                 "ONLY -- `qou-rstq` item 4, still open -- and that identification sits directly "
-                 "on this bridge. Until it is in Lean, this route maps the sum rule onto proved "
-                 "pieces but does not prove it. This gate asserts the gap EXISTS; it is the one "
-                 "gate here that would fail if the lane ever quietly closed it without saying so",
-        "analytic_L_used_here": "polylog(2,z) + log(z)*log(1-z)/2",
-        "lean_theorem_is_about": "extend (piecewise, Zagier), via FiveTwoRogersExtend",
-        "open_bean_item": "qou-rstq item 4",
+        "claim": "THE LINK THIS GATE GUARDED IS NOW CLOSED, and the gate is rewritten rather than "
+                 "left passing on a drifted claim. It used to assert that `extend` = Re of the "
+                 "analytic Rogers L held ON PAPER ONLY (qou-rstq item 4), with pass hardcoded "
+                 "True, and said it would fail if the lane closed it quietly. The lane closed it "
+                 "openly: `extend_eq_re_cRogersL` in QOU/QBeta/FiveTwoExtendIdentification.lean "
+                 "proves it for every real x != 0, 1 -- all three regimes, all six arguments. So "
+                 "G4's use of the analytic L above is now backed by a Lean theorem, not by "
+                 "Route 15's paper argument. This gate now MEASURES the identification at the six "
+                 "arguments instead of declaring anything",
+        "was": "assertion that the gap EXISTS, pass hardcoded True",
+        "now": "measurement of the identification the Lean theorem states",
+        "lean_theorem": "QOU.QBeta.FiveTwoExtendIdentification.extend_eq_re_cRogersL",
+        "per_argument": rows9,
+        "worst_difference": nstr(worst9, 10),
+        "pass": bool(worst9 < mpf(10) ** -40),
+    })
+
+    # ---- G10: and what remains open, so the closure is not overread ----------
+    gates.append({
+        "gate": "G10",
+        "claim": "WHAT ITEM 4's CLOSURE DOES NOT BUY, stated because the temptation to overread is "
+                 "the reason G9 existed. Item 4 was ONE INPUT to this bridge. Still open: (a) GAP "
+                 "A, a globally differentiable root labelling -- the one remaining hypothesis in "
+                 "the transport, re-priced in G8; (b) ASSEMBLING S(pi) = sum_j Re V(-1, y_j) in "
+                 "Lean and composing corr_sum_eq_neg_pi_sq with extended_sum, which item 4 "
+                 "unblocks but does not perform. And the headline is untouched: S(0) = -3 pi^2/2 "
+                 "IS the sum rule (G1), so the transport REFORMULATES it rather than approaching "
+                 "it. Closing item 4 moved a link, not the headline",
+        "still_open": ["Gap A -- global root labelling (qou-glbl)",
+                       "assembling S(pi) and wiring the bridge to extended_sum (qou-asem)"],
+        "headline_unchanged": "S(0) = -3 pi^2/2 IS the sum rule; the transport reformulates it",
         "pass": True,
     })
 
@@ -241,10 +295,15 @@ def main() -> int:
                        "cyclotomic identity gives +pi^2/2; and the difference is a log-bilinear "
                        "-pi^2 which is ONE argument at ONE root.",
             "what_is_proved_here": "corr_sum_eq_neg_pi_sq -- the -pi^2, from the cubic itself.",
-            "what_is_still_open": "(a) qou-rstq item 4, the identification of `extend` with Re of "
-                                  "the analytic Rogers L, which sits ON this bridge; (b) the "
-                                  "global root labelling for the transport (Gap A, re-priced in "
-                                  "G8); (c) assembling S(pi) = sum_j Re V(-1, y_j) in Lean.",
+            "closed_since_this_probe_was_written": "qou-rstq item 4 -- the identification of "
+                                  "`extend` with Re of the analytic Rogers L, which sits ON this "
+                                  "bridge, is now PROVED in Lean for all three regimes "
+                                  "(extend_eq_re_cRogersL). G9 is rewritten accordingly.",
+            "what_is_still_open": "(a) the global root labelling for the transport (Gap A, "
+                                  "re-priced in G8, bean qou-glbl); (b) assembling S(pi) = sum_j "
+                                  "Re V(-1, y_j) in Lean and composing corr_sum_eq_neg_pi_sq with "
+                                  "extended_sum (bean qou-asem) -- unblocked by item 4, not "
+                                  "performed by it.",
             "sum_rule_status": "verified to 80 dps, unproved",
         },
     }
@@ -256,7 +315,8 @@ def main() -> int:
     print(f"\nwitness -> {dest}")
     ok = all(g["pass"] for g in gates)
     print("VERDICT: " + ("the sum rule IS S(0); the bridge to the proved identity is one arg at "
-                         "one root. The `extend` link (G9) is still open."
+                         "one root. The `extend` link (G9) is now CLOSED in Lean; Gap A and the "
+                         "assembly (G10) remain."
                          if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 
