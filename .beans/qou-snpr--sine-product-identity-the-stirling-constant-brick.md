@@ -1,7 +1,7 @@
 ---
 # qou-snpr
 title: 'The brick that supplies the Stirling constant: prod_{j=1}^{N-1} 2 sin(j pi/N) = N'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -184,3 +184,45 @@ via `IsPrimitiveRoot.nthRoots_eq`, and (ii) `|1 - e^{iθ}| = 2 sin(θ/2)` from
 `Complex.normSq_apply` + `Real.sin_sq_eq_half_sub`, then `Complex.abs` of the
 identity above. Both are routine; neither is the difficulty that stalled this
 bean.
+
+## DONE 2026-08-08 — both halves built, sorry-free
+
+`QOU/MathlibExt/RootsOfUnityProduct.lean`, three theorems, all on
+`[propext, Classical.choice, Quot.sound]`, wired into `QOU.lean`:
+
+```lean
+prod_one_sub_nthRoots_erase_one : (map (1 - ·) ((nthRoots n 1).erase 1)).prod = n
+prod_one_sub_zeta_pow           : ∏ j ∈ Ico 1 n, (1 - ζ^j) = n
+prod_two_sin_pi_div             : ∏ j ∈ Ico 1 n, 2 sin(j π/n) = n     <- THE TARGET
+```
+
+Numerically confirmed afterwards at `n = 2,3,5,7,12,30` (exact to 1e-12), and
+the endpoint consequence `s_{n-1} = -log n` likewise — i.e. the statement proved
+is the statement wanted, not a vacuous or mis-indexed one.
+
+**Both "hard steps" this bean warned about turned out not to exist.**
+
+  * The `nthRootsFinset` surgery: avoided entirely by the derivative trick.
+  * The injectivity needed to push `erase` through `map`: NOT needed —
+    `Multiset.map_erase_of_mem` requires only membership, because multiset
+    `erase` removes a single occurrence. `j ↦ ζ^j` is periodic and not
+    injective, and that never mattered.
+
+Both were found by grepping `.ilean` declaration names rather than guessing.
+The two genuine snags were mundane: `natDegree_X_pow_sub_C` takes `r` not `a`,
+and `simp` normalising `↑(2*x)` to `2*↑x` so that `exp_ofReal_mul_I_re` stopped
+matching (fixed with `simp only` and an explicit lemma list).
+
+## What this does and does not close
+
+DOES: the additive constant in the `s_k` expansion is now pinned rather than
+free — `s_{n-1} = -log n` is a theorem.
+
+DOES NOT: `c_sigma(4_1) = 3^{-1/4}` is still not Lean-proved. That needs
+`qou-mlgp` (A) the refined Euler-Maclaurin — sharpening
+`QOU.Knot.abs_deviation_le` from `O(log N)` to `O(1)`, which is the step that
+can actually SEE this constant — and (B) Laplace's method for a sum. This brick
+is a prerequisite for (A), not a substitute.
+
+Worth contributing upstream: Mathlib has neither this nor
+`∏ sin(kπ/n) = n/2^{n-1}`, confirmed across all 6990 modules.

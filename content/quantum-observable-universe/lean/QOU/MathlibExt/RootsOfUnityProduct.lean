@@ -72,4 +72,86 @@ theorem prod_one_sub_nthRoots_erase_one {n : ℕ} (hn : n ≠ 0) :
   rw [← key, hp]
   simp [Polynomial.derivative_X_pow]
 
+/-- **`∏_{j=1}^{n-1}(1 - ζ^j) = n`** for a primitive `n`-th root of unity `ζ`.
+
+The index conversion needs no injectivity: `Multiset.map_erase_of_mem` holds for
+any `f`, because multiset `erase` removes a single occurrence. -/
+theorem prod_one_sub_zeta_pow {n : ℕ} (hn : n ≠ 0) {ζ : ℂ}
+    (hζ : IsPrimitiveRoot ζ n) :
+    ∏ j ∈ Finset.Ico 1 n, (1 - ζ ^ j) = (n : ℂ) := by
+  classical
+  have h := prod_one_sub_nthRoots_erase_one hn
+  have hmap : Polynomial.nthRoots n (1 : ℂ)
+      = Multiset.map (fun j => ζ ^ j) (Multiset.range n) := by
+    simpa using hζ.nthRoots_eq (α := (1 : ℂ)) (a := (1 : ℂ)) (one_pow n)
+  have h0 : (0 : ℕ) ∈ Multiset.range n := by
+    simp [Nat.pos_of_ne_zero hn]
+  have herase : (Polynomial.nthRoots n (1 : ℂ)).erase 1
+      = Multiset.map (fun j => ζ ^ j) ((Multiset.range n).erase 0) := by
+    rw [hmap, Multiset.map_erase_of_mem _ _ h0]
+    simp
+  rw [herase, Multiset.map_map] at h
+  have hidx : (Finset.Ico 1 n).val = (Multiset.range n).erase 0 := by
+    have : (Finset.range n).erase 0 = Finset.Ico 1 n := by
+      ext j; simp [Finset.mem_erase, Finset.mem_Ico]; omega
+    rw [← this]; rfl
+  rw [Finset.prod_eq_multiset_prod, hidx]
+  simpa [Function.comp] using h
+
+/-- **`∏_{j=1}^{n-1} 2 sin(jπ/n) = n`.**
+
+The real form, obtained from `prod_one_sub_zeta_pow` at `ζ = e^{2πi/n}` by
+taking norms, using `‖1 - e^{iθ}‖ = 2 sin(θ/2)` on `(0, 2π)`.
+
+At `k = n-1` this is `s_{n-1} = -log n` for
+`s_k = -∑_{j=1}^k log(2 sin(jπ/n))`, the endpoint that pins the additive
+constant in the one-loop expansion of `QOU.Knot.kashaev`. -/
+theorem prod_two_sin_pi_div (n : ℕ) (hn : n ≠ 0) :
+    ∏ j ∈ Finset.Ico 1 n, (2 * Real.sin ((j : ℝ) * Real.pi / n)) = (n : ℝ) := by
+  classical
+  have hnR : (0 : ℝ) < n := by exact_mod_cast Nat.pos_of_ne_zero hn
+  set ζ : ℂ := Complex.exp (2 * (Real.pi : ℂ) * Complex.I / n) with hζdef
+  have hζ : IsPrimitiveRoot ζ n := Complex.isPrimitiveRoot_exp n hn
+  -- each factor: ‖1 - ζ^j‖ = 2 sin(jπ/n)
+  have hfac : ∀ j ∈ Finset.Ico 1 n,
+      ‖1 - ζ ^ j‖ = 2 * Real.sin ((j : ℝ) * Real.pi / n) := by
+    intro j hj
+    rw [Finset.mem_Ico] at hj
+    have hjpos : (0 : ℝ) < (j : ℝ) * Real.pi / n := by
+      have : (0 : ℝ) < (j : ℝ) := by exact_mod_cast hj.1
+      positivity
+    have hjlt : (j : ℝ) * Real.pi / n < Real.pi := by
+      rw [div_lt_iff₀ hnR]
+      have : (j : ℝ) < n := by exact_mod_cast hj.2
+      nlinarith [Real.pi_pos]
+    have hsin : 0 < Real.sin ((j : ℝ) * Real.pi / n) :=
+      Real.sin_pos_of_pos_of_lt_pi hjpos hjlt
+    set x : ℝ := (j : ℝ) * Real.pi / n with hx
+    have hpow : ζ ^ j = Complex.exp (((2 * x : ℝ) : ℂ) * Complex.I) := by
+      rw [hζdef, ← Complex.exp_nat_mul]
+      congr 1
+      push_cast [hx]
+      ring
+    rw [hpow]
+    have hre : (Complex.exp (((2 * x : ℝ) : ℂ) * Complex.I)).re = Real.cos (2 * x) :=
+      Complex.exp_ofReal_mul_I_re _
+    have him : (Complex.exp (((2 * x : ℝ) : ℂ) * Complex.I)).im = Real.sin (2 * x) :=
+      Complex.exp_ofReal_mul_I_im _
+    have hsq : ‖1 - Complex.exp (((2 * x : ℝ) : ℂ) * Complex.I)‖ ^ 2
+        = (2 * Real.sin x) ^ 2 := by
+      rw [← Complex.normSq_eq_norm_sq, Complex.normSq_apply]
+      simp only [Complex.sub_re, Complex.sub_im, Complex.one_re, Complex.one_im,
+        hre, him]
+      nlinarith [Real.sin_sq_add_cos_sq (2 * x), Real.sin_sq_eq_half_sub x]
+    have h1 : (0 : ℝ) ≤ ‖1 - Complex.exp (((2 * x : ℝ) : ℂ) * Complex.I)‖ :=
+      norm_nonneg _
+    have h2 : (0 : ℝ) ≤ 2 * Real.sin x := by linarith
+    nlinarith [hsq, h1, h2]
+  calc ∏ j ∈ Finset.Ico 1 n, (2 * Real.sin ((j : ℝ) * Real.pi / n))
+      = ∏ j ∈ Finset.Ico 1 n, ‖1 - ζ ^ j‖ := by
+        exact (Finset.prod_congr rfl hfac).symm
+    _ = ‖∏ j ∈ Finset.Ico 1 n, (1 - ζ ^ j)‖ := (norm_prod _ _).symm
+    _ = ‖(n : ℂ)‖ := by rw [prod_one_sub_zeta_pow hn hζ]
+    _ = (n : ℝ) := by simp
+
 end QOU.MathlibExt
