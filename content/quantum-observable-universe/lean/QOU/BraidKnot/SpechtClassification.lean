@@ -452,33 +452,25 @@ theorem nonempty_tableau (μ : YoungDiagram) : Nonempty (Specht.Tableau μ) :=
   ⟨(Fintype.equivFinOfCardEq (Fintype.card_coe μ.cells)).symm⟩
 
 open scoped BigOperators in
-/-- **Sagan Thm 2.4.4.** A `k`-linear intertwiner `S^μ ≃ S^ν` (for the group
-`Perm (Fin (nOf μ))` acting on `S^ν` through `h`) forces `μ` to dominate `ν`.
-
-The proof applies `κ_t` to `e (e_t)`.  Because `κ_t e_t = |C_t| e_t` stays inside
-`S^μ`, equivariance of `e` on `S^μ` alone gives `κ_t (e e_t) = |C_t| · e e_t ≠ 0`
-— no extension of `e` to `M^μ` is needed, which is where the textbook proof uses
-`M^μ = S^μ ⊕ (S^μ)ᗮ`.  Expanding `e e_t` in the `ν`-tabloid basis then produces a
-tabloid with `κ_t {s} ≠ 0`, and Lemma 2.2.6 converts that into dominance. -/
-theorem dom_of_intertwiner {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
-    (e : Specht.SpechtSubmodule (k := k) μ ≃ₗ[k] Specht.SpechtSubmodule (k := k) ν)
-    (he : ∀ (σ : Perm (Fin (Specht.nOf μ))) (x : Specht.SpechtSubmodule (k := k) μ),
-      e (spechtRep (k := k) μ σ x) = spechtRepOn (k := k) h σ (e x)) :
+/-- The `κ_t` computation at the heart of Sagan Thm 2.4.4 (the step that avoids
+extending `θ` to `M^μ`): because `κ_t e_t = |C_t| e_t` stays inside `S^μ`,
+equivariance of `θ` on `S^μ` alone gives `κ_t (θ e_t) = |C_t| · θ e_t ≠ 0`.
+Expanding `θ e_t` in the `ν`-tabloid basis then produces a tabloid with
+`κ_t {s} ≠ 0`, and Lemma 2.2.6 converts that into dominance: an equivariant
+`θ : S^μ → M^ν` not killing the polytabloid `e_t` forces `μ ⊵ ν`. -/
+theorem dom_of_kapCross {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (t : Specht.Tableau μ)
+    (θ : Specht.SpechtSubmodule (k := k) μ →ₗ[k] Specht.Mtab (k := k) ν)
+    (hθ : ∀ (σ : Perm (Fin (Specht.nOf μ))) (x : Specht.SpechtSubmodule (k := k) μ),
+      θ (spechtRep (k := k) μ σ x)
+        = Specht.Mtab.rep ν (SpechtCrossKappa.transportPerm h σ) (θ x))
+    (ht : θ ⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t⟩ ≠ 0) :
     partitionDom μ ν := by
   classical
-  obtain ⟨t⟩ := nonempty_tableau μ
   set y : Specht.SpechtSubmodule (k := k) μ :=
     ⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t⟩ with hy
-  -- 1. `e y` is a nonzero element of `M^ν`
-  have hyne : y ≠ 0 := fun hzero =>
-    SpechtCrossKappa.polytabloid_ne_zero (K := k) μ t (congrArg Subtype.val hzero)
-  have heyne : ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) ≠ 0 := by
-    intro hzero
-    refine hyne ?_
-    have h0 : e y = 0 := Subtype.ext hzero
-    have hb := congrArg e.symm h0
-    rwa [e.symm_apply_apply, map_zero] at hb
-  -- 2. inside `S^μ`, the `C_t`-sum is `|C_t| • y`  (`κ_t e_t = |C_t| e_t`)
+  have heyne : θ y ≠ 0 := ht
+  -- inside `S^μ`, the `C_t`-sum is `|C_t| • y`  (`κ_t e_t = |C_t| e_t`)
   have hsum : (∑ π : Specht.colStab t,
         (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
           spechtRep (k := k) μ (π : Perm (Fin (Specht.nOf μ))) y)
@@ -496,29 +488,21 @@ theorem dom_of_intertwiner {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nO
       exact Finset.sum_congr rfl (fun π _ => rfl)
     rw [hL, ← SpechtIrreducible.kapL_apply, SpechtCrossKappa.kapL_polytabloid]
     simp [hy]
-  -- 3. therefore `κ_t (e y) = |C_t| • e y`
-  have hkap : SpechtCrossKappa.kapCross (k := k) h t
-        ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν)
-      = (Fintype.card (Specht.colStab t)) •
-          ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) := by
+  -- therefore `κ_t (θ y) = |C_t| • θ y`
+  have hkap : SpechtCrossKappa.kapCross (k := k) h t (θ y)
+      = (Fintype.card (Specht.colStab t)) • θ y := by
     rw [SpechtCrossKappa.kapCross_apply]
     have hterm : ∀ π : Specht.colStab t,
         (Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
             Specht.Mtab.rep ν (SpechtCrossKappa.transportPerm h
-              (π : Perm (Fin (Specht.nOf μ))))
-              ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν)
-          = ((e ((Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
-              spechtRep (k := k) μ (π : Perm (Fin (Specht.nOf μ))) y) :
-                Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) := by
+              (π : Perm (Fin (Specht.nOf μ)))) (θ y)
+          = θ ((Equiv.Perm.sign (π : Perm (Fin (Specht.nOf μ))) : ℤ) •
+              spechtRep (k := k) μ (π : Perm (Fin (Specht.nOf μ))) y) := by
       intro π
-      rw [map_zsmul, he]
-      rfl
-    rw [Finset.sum_congr rfl (fun π _ => hterm π), ← Submodule.coe_sum, ← map_sum, hsum,
-      map_nsmul]
-    simp
-  -- 4. `|C_t| ≠ 0` in char 0, so `κ_t` does not kill `e y`
-  have hne : SpechtCrossKappa.kapCross (k := k) h t
-      ((e y : Specht.SpechtSubmodule (k := k) ν) : Specht.Mtab (k := k) ν) ≠ 0 := by
+      rw [map_zsmul, hθ]
+    rw [Finset.sum_congr rfl (fun π _ => hterm π), ← map_sum, hsum, map_nsmul]
+  -- `|C_t| ≠ 0` in char 0, so `κ_t` does not kill `θ y`
+  have hne : SpechtCrossKappa.kapCross (k := k) h t (θ y) ≠ 0 := by
     rw [hkap]
     haveI : Nonempty (Specht.colStab t) := ⟨1⟩
     intro hzero
@@ -526,7 +510,7 @@ theorem dom_of_intertwiner {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nO
     rcases smul_eq_zero.mp hzero with hc | hv
     · exact (Nat.cast_ne_zero.mpr Fintype.card_ne_zero) hc
     · exact heyne hv
-  -- 5. so some `ν`-tabloid survives `κ_t`; Lemma 2.2.6 turns that into dominance
+  -- so some `ν`-tabloid survives `κ_t`; Lemma 2.2.6 turns that into dominance
   by_contra hdom
   refine hne ?_
   have hall : ∀ s : Specht.Tableau ν,
@@ -544,6 +528,76 @@ theorem dom_of_intertwiner {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nO
       rw [Specht.Mtab.of, Finsupp.smul_single, smul_eq_mul, mul_one]
     rw [hsingle, map_smul, hall s, smul_zero, LinearMap.zero_apply]
   rw [hzeroMap, LinearMap.zero_apply]
+
+open scoped BigOperators in
+/-- **Sagan Thm 2.4.4, hom form.**  A nonzero equivariant `θ : S^μ → M^ν` forces
+`μ ⊵ ν`.  This is the general statement; the isomorphism version below is the
+special case `θ = (inclusion) ∘ e`.
+
+`θ ≠ 0` gives a polytabloid it does not kill, because the `e_t` span `S^μ`. -/
+theorem dom_of_nonzero_hom {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (θ : Specht.SpechtSubmodule (k := k) μ →ₗ[k] Specht.Mtab (k := k) ν)
+    (hθ : ∀ (σ : Perm (Fin (Specht.nOf μ))) (x : Specht.SpechtSubmodule (k := k) μ),
+      θ (spechtRep (k := k) μ σ x)
+        = Specht.Mtab.rep ν (SpechtCrossKappa.transportPerm h σ) (θ x))
+    (hne : θ ≠ 0) :
+    partitionDom μ ν := by
+  classical
+  -- some polytabloid survives `θ`: they span `S^μ`
+  obtain ⟨t, ht⟩ : ∃ t : Specht.Tableau μ,
+      θ ⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t⟩ ≠ 0 := by
+    by_contra hall
+    push_neg at hall
+    refine hne (LinearMap.ext (fun x => ?_))
+    rw [LinearMap.zero_apply]
+    obtain ⟨v, hv⟩ := x
+    induction hv using Submodule.span_induction with
+    | mem z hz =>
+        obtain ⟨t, rfl⟩ := hz
+        exact hall t
+    | zero => exact map_zero θ
+    | add z w hz hw ihz ihw =>
+        have hsplit : (⟨z + w, Submodule.add_mem _ hz hw⟩ :
+            Specht.SpechtSubmodule (k := k) μ) = ⟨z, hz⟩ + ⟨w, hw⟩ := rfl
+        rw [hsplit, map_add, ihz, ihw, add_zero]
+    | smul c z hz ihz =>
+        have hsplit : (⟨c • z, Submodule.smul_mem _ c hz⟩ :
+            Specht.SpechtSubmodule (k := k) μ) = c • ⟨z, hz⟩ := rfl
+        rw [hsplit, map_smul, ihz, smul_zero]
+  exact dom_of_kapCross h t θ hθ ht
+
+open scoped BigOperators in
+/-- **Sagan Thm 2.4.4 for an isomorphism.**  A `k`-linear intertwiner
+`S^μ ≃ S^ν` (for `Perm (Fin (nOf μ))` acting on `S^ν` through `h`) forces `μ ⊵ ν`.
+Immediate from `dom_of_nonzero_hom` applied to `e` followed by the inclusion
+`S^ν ↪ M^ν`. -/
+theorem dom_of_intertwiner {μ ν : YoungDiagram} (h : Specht.nOf μ = Specht.nOf ν)
+    (e : Specht.SpechtSubmodule (k := k) μ ≃ₗ[k] Specht.SpechtSubmodule (k := k) ν)
+    (he : ∀ (σ : Perm (Fin (Specht.nOf μ))) (x : Specht.SpechtSubmodule (k := k) μ),
+      e (spechtRep (k := k) μ σ x) = spechtRepOn (k := k) h σ (e x)) :
+    partitionDom μ ν := by
+  classical
+  refine dom_of_nonzero_hom h ((Specht.SpechtSubmodule (k := k) ν).subtype ∘ₗ (e : _ →ₗ[k] _))
+    (fun σ x => ?_) ?_
+  · show ((e (spechtRep (k := k) μ σ x) : Specht.SpechtSubmodule (k := k) ν) :
+        Specht.Mtab (k := k) ν) = _
+    rw [he]
+    rfl
+  · -- `e` is injective and `S^μ ≠ 0`, so the composite is nonzero
+    obtain ⟨t⟩ := nonempty_tableau μ
+    intro hzero
+    set y : Specht.SpechtSubmodule (k := k) μ :=
+      ⟨Specht.polytabloid (k := k) t, Specht.polytabloid_mem_specht t⟩ with hy
+    have hyne : y ≠ 0 := fun hz =>
+      SpechtCrossKappa.polytabloid_ne_zero (K := k) μ t (congrArg Subtype.val hz)
+    refine hyne ?_
+    have hcoe : ((e y : Specht.SpechtSubmodule (k := k) ν) :
+        Specht.Mtab (k := k) ν) = 0 := by
+      have hv := LinearMap.congr_fun hzero y
+      simpa using hv
+    have h0 : e y = 0 := Subtype.ext hcoe
+    have hb := congrArg e.symm h0
+    rwa [e.symm_apply_apply, map_zero] at hb
 
 /-- **James/Sagan cross-shape dominance — PROVED.**  A representation isomorphism
 `S^μ ≅ S^ν` (over the shared group via `h`) forces dominance both ways:
@@ -607,16 +661,62 @@ representation isomorphism `ρ ≅ spechtRep μ` (after transporting the acting 
 along `nOf μ = n`).
 
 This is the half of the classification that says the Specht modules **exhaust** the
-irreducibles. -/
+irreducibles.
+
+## Status: the last open target of this file, and it is not close
+
+Everything else in the Specht cluster is now proved: `specht_isSimple`
+(`SpechtIrreducible`), `specht_pairwise_noniso` above, and the cross-shape
+dominance theorem `dom_of_nonzero_hom` in its general **hom** form
+(`Hom_{k[S_n]}(S^μ, M^ν) ≠ 0 ⇒ μ ⊵ ν`). So the Specht modules are known to be
+`#partitions` many pairwise non-isomorphic simples. What is missing is that
+there are **no others**, and that is a genuinely different theorem.
+
+### Why the machinery above does not reach it
+
+The natural attempt: `W` simple is a quotient of the regular module, hence (by
+semisimplicity, Maschke in char 0) a submodule of it; identify the regular
+module with `M^{(1ⁿ)}`; pick `ν` extremal in dominance with `W ↪ M^ν`; and apply
+James's dichotomy `specht_submodule_dichotomy`, which gives `S^ν ≤ W` — hence
+`W = S^ν` by simplicity — **or** `W ≤ (S^ν)ᗮ`.
+
+The second branch is the whole problem. Excluding it needs to know where the
+composition factors of `(S^ν)ᗮ` live, i.e. **Young's rule** (the factors of
+`M^ν` are `S^ρ` with `ρ ⊵ ν`, and `S^ν` occurs once). `dom_of_nonzero_hom` gives
+the dominance *bound* on such a factor but not its existence, so the extremality
+argument has nothing to contradict. Adding a hypothesis to dodge this would be
+assuming the theorem.
+
+### The two honest routes, and what each still costs
+
+**(a) Counting.** `#{simple k[S_n]-modules} = dim_k Z(k[S_n]) = #conj classes of
+S_n = #partitions of n`, then pigeonhole against the `#partitions` pairwise
+non-isomorphic Specht modules. Three genuine Mathlib gaps:
+
+* `dim_k Z(k[G]) = #conj classes` — the class sums are a basis of the centre.
+  Mathlib has no centre-of-group-algebra API at the pinned revision.
+* `#conj classes of Perm (Fin n) = #partitions n` — the closest Mathlib gets is
+  `Equiv.Perm.partition` and `partition_eq_of_isConj`; the induced bijection
+  `ConjClasses (Perm (Fin n)) ≃ Nat.Partition n` is not there.
+* `#{iso-classes of simple modules} = #Wedderburn blocks ≤ dim_k Z(A)` for a
+  semisimple `A`. `WedderburnSn` supplies the decomposition with an **abstract**
+  block count; identifying it is exactly the gap.
+
+**(b) Young's rule / Specht filtration** of the permutation modules. Larger, and
+it subsumes far more than is needed here.
+
+Route (a) is the more mechanical of the two and is the recommended one.
+Tracked as bean sp06. -/
 theorem specht_exhausts_irreducibles {n : ℕ} {W : Type} [AddCommGroup W] [Module k W]
     (ρ : Representation k (Perm (Fin n)) W)
     (_hsimple : IsSimpleModule (MonoidAlgebra k (Perm (Fin n))) ρ.asModule) :
     ∃ (μ : YoungDiagram) (h : Specht.nOf μ = n),
       IsRepIso (k := k) ρ
         ((spechtRep (k := k) μ).comp (transportPermHom h.symm)) := by
-  -- Ref: [sagan2001] §2.4 (the Specht modules form a complete set of irreducible
-  -- k[S_n]-modules in char 0; #{S^μ} = #conjugacy classes = #partitions);
-  -- brick-3 target.
+  -- Ref: [sagan2001] §2.4. NOT reachable from the cross-shape machinery in this
+  -- file — see the docstring: the missing input is Young's rule, or the counting
+  -- chain #simples = dim Z(k[S_n]) = #conj classes = #partitions, which needs
+  -- three Mathlib gaps. Do not weaken the statement to close it.
   sorry
 
 /-- **The count corollary (the punchline).**  The number of iso-classes of
