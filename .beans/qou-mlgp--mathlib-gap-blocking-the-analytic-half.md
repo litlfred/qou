@@ -819,3 +819,56 @@ determine, the only thing left between this corpus and (A).
 
 Note (viii) is a REGULARITY fact about one explicit function, not a missing
 piece of general analysis. Every general tool the argument needs now exists.
+
+## CORRECTION: (A) never needed `logSinc` to be C^4 at 0
+
+The previous entry named "logSinc is C^4 at 0 (analytic extension)" as the ONLY
+thing left. That was wrong — not about the mathematics, but about what (A)
+needs. The requirement was an artefact of applying the composite rule on
+`[0, theta]`. It disappears on `[h, theta]`.
+
+**WHY.** The Kashaev sum is `sum_{j=1}^{k} logSinc(j h)` — it STARTS AT j = 1.
+So `[h, theta]` with `k-1` cells is the natural interval and it never touches 0.
+The cost is three left-endpoint terms:
+
+    (1/h) int_0^h logSinc,     (1/2) logSinc(h),     (h/12) logSinc'(h)
+
+and all three are `O(h^2) = O(1/N^2)` — one order BELOW the `O(1/N)` term being
+chased. Measured at N = 100..800: about `-0.55/N^2`, `-0.82/N^2`, `-0.27/N^2`.
+They do not enter the answer.
+
+(Their leading parts also cancel exactly: with `logSinc x = -x^2/6 + O(x^4)` they
+contribute `-h^2/18 + h^2/12 - h^2/36 = 0`, which is why the `[0,theta]` and
+`[h,theta]` forms agree to `O(h^4)`.)
+
+**WHAT IS ACTUALLY NEEDED** is two elementary bounds near 0, not regularity at 0.
+`QOU/Knot/LogSincNearZero.lean`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:122`, proves the
+first:
+
+    logSinc_nonpos                 logSinc x <= 0            on (0, pi)
+    neg_sq_div_three_le_logSinc    -(x^2/3) <= logSinc x     on (0, 1]
+    abs_logSinc_le                 |logSinc x| <= x^2/3      on (0, 1]
+
+from `Real.sin_lt`, `Real.sin_gt_sub_cube` and `Real.log_le_sub_one_of_pos`.
+No analytic extension, no power series, no removable-singularity machinery.
+The stale header on `CompositeEulerMaclaurin.lean` has been corrected in place
+rather than left to mislead.
+
+**STILL NEEDED:** `|logSinc' x| <= x` on `(0,1]`, equivalently
+`|x cos x - sin x| <= x^2 sin x`. Both halves are one-line monotonicity
+arguments — `u = sin x - x cos x` has `u(0) = 0`, `u' = x sin x > 0`;
+`v = x^2 sin x - sin x + x cos x` has `v(0) = 0`, `v' = x(sin x + x cos x) > 0`
+on `(0,1]` — via `strictMonoOn_of_deriv_pos`. Not formalised yet.
+
+Note this bound is needed only to make `(h/12) logSinc'(h)` provably `o(h)`.
+Mere boundedness of `logSinc'` is NOT enough (it would give `O(h)`, the same
+order as the answer); what is needed is `logSinc'(x) -> 0` as `x -> 0+`, and
+`|logSinc' x| <= x` is the cheapest clean way to say it.
+
+## (A) — the ledger, corrected
+
+    (i)-(vii)  as before                            PROVED
+    (viii)     logSinc is C^4 at 0                  NOT NEEDED — retracted
+    (ix)       |logSinc x| <= x^2/3 near 0          PROVED  <- this commit
+    (x)        |logSinc' x| <= x near 0             OPEN — elementary, 2 monotonicities

@@ -25,15 +25,16 @@
   identity once the integral is split.  Hypotheses on the big interval restrict
   to each cell by `Set.Icc` monotonicity.
 
-  WHAT REMAINS BEFORE (A) IS ASSEMBLED, STATED HONESTLY.  Applying this to
-  `logSinc x = log(sin x) − log x` on `[0, θ]` needs `logSinc` to be `C⁴` AT
-  `x = 0`, and it is not — as literally defined, each of `log(sin x)` and
-  `log x` is separately non-differentiable there, even though their difference
-  extends analytically (`logSinc x = −x²/6 + O(x⁴)`).  Mathlib's convention
-  `log 0 = 0` gives the right VALUE at `0` (`logSinc_zero`) but not
-  differentiability.  So the remaining step is to exhibit the analytic extension
-  and prove it agrees with `logSinc` on `(0, θ]`.  That is real work and is not
-  done here; it is now the ONLY thing between this corpus and (A).
+  ON APPLYING THIS TO `logSinc` — SUPERSEDED, SEE `QOU/Knot/LogSincNearZero.lean`.
+  An earlier version of this header said the remaining obstacle was exhibiting
+  the analytic extension of `logSinc x = log(sin x) − log x` at `0`, since the
+  rule was being applied on `[0, θ]` and `logSinc` is not differentiable at `0`
+  as literally written.  That is true of `[0, θ]` but is an artefact of the
+  choice of left endpoint: the Kashaev sum starts at `j = 1`, so `[h, θ]` is the
+  natural interval, it never touches `0`, and the three left-endpoint terms it
+  costs are all `O(h²) = O(1/N²)` — one order BELOW the `O(1/N)` term (A) is
+  chasing.  No analytic extension is needed.  See that file for the elementary
+  `O(x²)` bound that replaces it.
 
   -- Ref: [manuscript] QOU/MathlibExt/CorrectedTrapezoid.lean   (the one-cell rule)
   -- Ref: [manuscript] QOU/Knot/KashaevEndpointSplit.lean       (where logSinc enters)
