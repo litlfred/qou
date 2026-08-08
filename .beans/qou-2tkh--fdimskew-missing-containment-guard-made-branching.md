@@ -89,3 +89,24 @@ instance — and all three failed on a *degenerate* input the informal theorem
 silently excludes (the zero sequence; a non-containing shape; a negative order).
 Worth making the small-instance check part of the recipe for planting a cited
 `sorry` at all.
+
+## Census at the end of the sweep (2026-08-08)
+
+`lake build` clean, 0 errors. **5** in-closure sorries (was 7), **10** tree-wide
+(was 12). Closed this session: `QGevreyOrder.cauchyMul_order` (qou-02dh) and
+`YoungTableauStandard.skew_le_straight` (qou-wf9n).
+
+What remains, and why:
+
+| file | count | why it stays |
+|---|---|---|
+| `BraidKnot/YoungTableauStandard.lean` | 2 | `branching_two_one`, `sum_dimSYT_eq_involution` — *equalities*, need the RSK bijection |
+| `TopologicalMass/cat_descended_is_base_mass.lean` | 2 | over `opaque` constants; neither provable nor refutable as stated |
+| `Mathlib/HadamardFactorization.lean` | 1 | Jensen + zero counting + Weierstrass canonical product |
+| `Mathlib/EllipticDivisorDegree.lean` | 1 | the argument principle; absent from Mathlib v4.24.0 |
+| `BraidKnot/SnWedderburnPartitionBridge.lean` | 1 | rational Wedderburn split + C₂ eigenvalue alignment |
+| `BraidKnot/JucysMurphy.lean` | 1 | Vershik–Kerov seminormal base vector |
+| `Archimedean/HyperbolicVolumeIndependence.lean` | 1 | OPEN CONJECTURE (Zagier) |
+| `BraidsAndKnots/YoungDiagramKernel.lean` | 1 | OPEN CONJECTURE (Biane–Śniady / Kerov CLT) |
+
+All ten now stand in front of statements checked at a small instance.
