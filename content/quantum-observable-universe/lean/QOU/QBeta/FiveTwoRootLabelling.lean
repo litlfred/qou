@@ -444,6 +444,67 @@ theorem hasDerivAt_Ypair_fst {φ : ℝ} (h : pairDisc φ < 0) :
     rw [Ypair_of_disc_neg hu]
   exact (hb.add hi).congr_of_eventuallyEq heq
 
+/-! ### 5c. The branches solve the CURVE, not merely `unitCubic`
+
+Everything downstream — `vSide_of_root`, `hasDerivAt_envelopeS` — is stated for
+`curve x y = 0`. On `|x| = 1` that is `x · unitCubic (Re x) y`
+(`curve_eq_unitCubic`), so each conversion is one rewrite. It still has to be
+made: a labelling that solves the real cubic but not the curve would satisfy
+every statement in §1–5b and none downstream, and would typecheck the whole way. -/
+
+/-- **`Y₁` is a root of the curve.** -/
+theorem curve_Yreal {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) {φ : ℝ}
+    (hre : x.re = Real.cos φ) : curve x (Yreal φ) = 0 := by
+  have hz : Yreal φ ^ 3 - 2 * ((x.re : ℝ) : ℂ) * Yreal φ ^ 2
+      + (2 * ((x.re : ℝ) : ℂ) + 1) * Yreal φ - 1 = 0 := by
+    rw [hre]
+    have h := unitCubic_realRootPath φ
+    unfold unitCubic at h
+    have hc : ((realRootPath φ ^ 3 - 2 * Real.cos φ * realRootPath φ ^ 2
+        + (2 * Real.cos φ + 1) * realRootPath φ - 1 : ℝ) : ℂ) = 0 := by
+      rw [h]; norm_num
+    unfold Yreal
+    push_cast [-Complex.ofReal_cos] at hc
+    linear_combination hc
+  unfold curve
+  rw [curve_eq_unitCubic hx (Yreal φ), hz, mul_zero]
+
+/-- **The quadratic cofactor vanishes at both members of the pair** — Vieta,
+via `otherRoots_factor`. -/
+theorem pair_quadratic_zero (φ : ℝ) :
+    (Ypair φ).1 ^ 2 + (pairBeta φ : ℂ) * (Ypair φ).1 + (pairGamma φ : ℂ) = 0 ∧
+    (Ypair φ).2 ^ 2 + (pairBeta φ : ℂ) * (Ypair φ).2 + (pairGamma φ : ℂ) = 0 := by
+  constructor <;>
+    · rw [otherRoots_factor (pairBeta φ) (pairGamma φ)]
+      unfold Ypair
+      ring
+
+/-- **`Y₂` and `Y₃` are roots of the curve.**
+
+`unitCubic c Y = (Y − t)(Y² + βY + γ)` with `β = t − 2c`, `γ = t² − 2ct + 2c + 1`
+— an identity whose constant term needs `gamma_rel`, `t·γ = 1`. So a root of the
+cofactor is a root of the cubic, hence of the curve. -/
+theorem curve_Ypair {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) {φ : ℝ}
+    (hre : x.re = Real.cos φ) :
+    curve x (Ypair φ).1 = 0 ∧ curve x (Ypair φ).2 = 0 := by
+  have hγ : (realRootPath φ : ℝ) * (pairGamma φ) = 1 := by
+    have := gamma_rel (unitCubic_realRootPath φ)
+    unfold pairGamma
+    linear_combination this
+  have key : ∀ Y : ℂ, Y ^ 2 + (pairBeta φ : ℂ) * Y + (pairGamma φ : ℂ) = 0 →
+      Y ^ 3 - 2 * ((x.re : ℝ) : ℂ) * Y ^ 2 + (2 * ((x.re : ℝ) : ℂ) + 1) * Y - 1 = 0 := by
+    intro Y hY
+    have hγc : ((realRootPath φ : ℝ) : ℂ) * ((pairGamma φ : ℝ) : ℂ) = 1 := by
+      exact_mod_cast congrArg (fun r : ℝ => (r : ℂ)) hγ
+    rw [hre]
+    unfold pairBeta pairGamma at hY hγc
+    push_cast [-Complex.ofReal_cos] at hY hγc ⊢
+    linear_combination (Y - ((realRootPath φ : ℝ) : ℂ)) * hY + hγc
+  obtain ⟨h1, h2⟩ := pair_quadratic_zero φ
+  constructor
+  · unfold curve; rw [curve_eq_unitCubic hx _, key _ h1, mul_zero]
+  · unfold curve; rw [curve_eq_unitCubic hx _, key _ h2, mul_zero]
+
 /-- **`Y₃`, the conjugate branch.** Same hypothesis, opposite sign on the
 imaginary part. -/
 theorem hasDerivAt_Ypair_snd {φ : ℝ} (h : pairDisc φ < 0) :

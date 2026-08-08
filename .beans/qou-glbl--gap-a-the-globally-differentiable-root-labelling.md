@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T06:00:00Z
+updated_at: 2026-08-09T06:45:00Z
 ---
 
 ## What is open
@@ -148,6 +148,7 @@ in the real part. Route 30's correction, proved rather than assumed.
 | `t(c)` single-valued and differentiable | ✅ `eq_realRoot'`, `hasDerivAt_realRoot` |
 | `Y₁` (real branch), `Y₂ Y₃` continuous through the collision | ✅ `Yreal`, `continuous_Ypair` |
 | `Y₂ Y₃` **differentiable** off the collision | ✅ `hasDerivAt_Ypair_fst/snd` |
+| all three branches are **curve** roots | ✅ `curve_Yreal`, `curve_Ypair` |
 | **feeding all three into `hasDerivAt_envelopeS`, + `hcont` at `φ = π`** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
