@@ -167,6 +167,22 @@ targeted next unit.
 - `μ₂ = 0` is the sole 0-fit structural win, and it re-derives an already-known
   fact by an independent (combinatorial, q₀-free) route.
 
+## 7. Verification status (honest)
+
+- **Python probe:** run, all 8 exact-integer assertions pass; witness emitted
+  (`free_parameters=0`, no float64, AME as targets only).
+- **Lean:** authored sorry-free and **hand-audited**. `lean`-direct could **not**
+  be run in this session: the sandbox is under a hard ~38.9 GB disk quota, and a
+  full Mathlib olean set (needed by `import Mathlib.Tactic`) does not fit alongside
+  the 12 GB `.git` (the `lake-cache/qou-v4-24-0` restore extracts only partially).
+  This is a documented **hard disk block**, not a proof gap. To verify: restore the
+  cache branch on a host with ≥ ~10 GB free and run
+  `lake env lean content/.../QOU/MassTheory/ThreeRowExtensiveCumulant.lean`
+  (expect exit 0). The structural theorem `clusterF_eq_zero_of_card_le_two` and the
+  `decide` integer-arithmetic lemmas are elementary; the three `Bext` value lemmas
+  use the idiomatic `norm_num [Finset.sum_range_succ, …]` expansion and are
+  cross-checked by the Python probe.
+
 ## References
 - Proved value: `QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional`
   (`dtEuler_eq_deltaLambda_unconditional`), audit
