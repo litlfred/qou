@@ -299,24 +299,58 @@ theorem det_submatrix_comp_perm {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
   have : A.submatrix id (f ∘ π) = (A.submatrix id f).submatrix id π := rfl
   rw [this, Matrix.det_permute']
 
+/-! ## Step 6 — assembly
+
+Three moves, each with its ingredient already proved above:
+
+1. drop the non-injective `φ` (their terms are `0`);
+2. reindex the injective `φ` by `(f, π)`, using the two round trips;
+3. regroup: the `π`-sum for a fixed `f` is `det (minorB B f)` by `det_apply`,
+   with the sign absorbed by `det_submatrix_comp_perm`.
+-/
+
+/-- The summand, named so the reindexing has something to talk about. -/
+private def term {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (B : Matrix (Fin n) (Fin r) R) (φ : Fin r → Fin n) : R :=
+  (A.submatrix id φ).det * ∏ i, B (φ i) i
+
+/-- Only injective `φ` can contribute. -/
+theorem term_eq_zero_of_not_injective {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (B : Matrix (Fin n) (Fin r) R) {φ : Fin r → Fin n}
+    (hφ : ¬ Function.Injective φ) : term A B φ = 0 := by
+  rw [term, det_submatrix_eq_zero_of_not_injective A hφ, zero_mul]
+
+/-- For a fixed selector, summing the term over all permutations gives the
+product of the two minors. -/
+theorem sum_term_comp_perm {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (B : Matrix (Fin n) (Fin r) R) (f : Selector r n) :
+    (∑ π : Equiv.Perm (Fin r), term A B (f.1 ∘ π))
+      = (minorA A f).det * (minorB B f).det := by
+  have hB : (minorB B f).det
+      = ∑ π : Equiv.Perm (Fin r), Equiv.Perm.sign π • ∏ i, B (f.1 (π i)) i :=
+    Matrix.det_apply _
+  rw [hB, Finset.mul_sum]
+  refine Finset.sum_congr rfl (fun π _ => ?_)
+  rw [term, det_submatrix_comp_perm, minorA]
+  -- `(f ∘ π) i` vs `f (π i)` is definitional once the composition is
+  -- unfolded; the rest is the `ℤˣ`-action and associativity
+  simp only [Function.comp_apply, Units.smul_def]
+  ring
+
 /-! ## Frontier
 
-Steps 1–3 are proved. What remains:
-
-* finish `sortSelector_comp_sortPerm` (the `orderIsoOfFin`/`orderEmbOfFin`
-  round trip);
-* the sign bookkeeping — `sgn σ` against `sgn (σ ∘ π)` when reindexing the
-  `σ`-sum by the induced permutation;
-* reassemble: sum over injective `φ` = sum over `Selector r n`, since
-  `φ ↦ (sortSelector, sortPerm)` is a bijection onto `Selector × Perm`.
-
-The target below is `sorry` and labelled as such. Both remaining `sorry`s in
-this file are on that path and nowhere else. -/
+Everything except the reindexing is proved. What is left in
+`det_mul_eq_sum_minors` is the bijection step: `∑_φ term = ∑_{(f,π)} term`,
+via `Finset.sum_bij'` with `(f, π) ↦ f.1 ∘ π` one way and
+`φ ↦ (sortSelector, sortPerm)` the other — both round trips
+(`sortSelector_comp`, `sortPerm_comp`) and the vanishing
+(`term_eq_zero_of_not_injective`) are in hand. -/
 
 /-- **Rectangular Cauchy–Binet.** `det (A * B) = ∑_f det (A_f) * det (B^f)`
 over the strictly monotone `f : Fin r → Fin n`.
 
-NOT YET PROVED — see the frontier note above and bean `qou-8yph`. -/
+NOT YET PROVED — only the reindexing remains; see the frontier note and bean
+`qou-8yph`. -/
 theorem det_mul_eq_sum_minors {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
     (B : Matrix (Fin n) (Fin r) R) :
     (A * B).det = ∑ f : Selector r n, (minorA A f).det * (minorB B f).det := by

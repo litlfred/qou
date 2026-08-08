@@ -220,3 +220,45 @@ Only the assembly. Every ingredient exists:
 Remaining work is a `Finset.sum_nbij'` (or an `Equiv` between injective `φ`
 and `Selector × Perm`) plus the arithmetic regrouping — bookkeeping, not new
 mathematics.
+
+## Progress 2026-08-08 (cont) — step 6 pieces; only the reindexing left
+
+27 declarations, **1 `sorry`** (the target). Everything else axiom-clean.
+
+Added:
+- `term` — the summand, named so the reindexing has something to talk about.
+- `term_eq_zero_of_not_injective` — only injective `φ` contribute.
+- `sum_term_comp_perm` — **for a fixed selector, summing the term over all
+  permutations gives `det (minorA A f) * det (minorB B f)`**. This is the
+  whole right-hand side, per selector.
+
+### What is genuinely left
+
+One thing: `∑_φ term = ∑_{(f,π)} term (f ∘ π)`, i.e. the `Finset.sum_bij'`
+reindexing. Both round trips (`sortSelector_comp`, `sortPerm_comp`), the
+forward map (`comp_perm_injective`) and the vanishing
+(`term_eq_zero_of_not_injective`) are all in hand — the remaining work is
+plumbing them into `sum_bij'`, whose dependent-membership signature is why
+`sum_nbij'` will not do.
+
+### Lean friction worth recording (all cost real time)
+
+- `rw [Matrix.det_apply]` rewrote the **wrong** determinant — it matched
+  `minorA`'s before `minorB`'s. Fixed by stating the `minorB` expansion as a
+  named `have` instead of rewriting in place.
+- `ring` fails where the two sides differ only by `(f ∘ π) i` vs `f (π i)`:
+  it treats them as distinct atoms. `simp only [Function.comp_apply]` first,
+  then `ring`.
+- `rfl` also fails there — `Function.comp` does not reduce in that position
+  without the explicit unfolding.
+- `Units.smul_def` has to be applied to **both** sides; a single `rw` hits
+  only the first occurrence and leaves a `•` behind that `ring` cannot see
+  through.
+
+### Revised sizing
+
+The bean estimated "a few hundred lines, multi-session, plausible Mathlib PR".
+Line count is tracking well under that — Mathlib's `Finset.Sort` API and
+`det_permute'` did more than expected, and the two hardest-looking steps
+(sign bookkeeping, the sorting factorization) were each a handful of lines.
+The Mathlib-PR judgement stands: Cauchy–Binet is genuinely absent upstream.
