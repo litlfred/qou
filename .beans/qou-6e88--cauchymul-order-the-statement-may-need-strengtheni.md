@@ -57,3 +57,34 @@ setting (positivity / suitable field) where the driving subtraction cannot occur
 Nobody should spend a session trying to prove `>=` as currently written.
 
 **The `<=` direction is untouched** and remains the tractable half.
+
+## DONE 2026-08-08 — hypothesis added, `≤` half proved
+
+Both actions this bean called for are landed (`49567bc98`).
+
+**The statement is repaired.** `cauchyMul_order` now carries
+`hnc : NoCancellation a b` — eventually some fixed `c > 0` has
+`c·‖a_k‖·‖b_{n−k}‖ ≤ ‖(a⋆b)_n‖` for every `k ≤ n`. It constrains the product's
+*norm* against its summands' norms and says nothing about its order, so it does
+not assume the conclusion. `not_noCancellation_of_cauchyMul_eventually_zero`
+(sorry-free) shows it genuinely fails in the witness's situation — otherwise
+"add a hypothesis" would be indistinguishable from weakening the statement until
+it became true.
+
+**The `≤` half is proved, sorry-free and UNCONDITIONALLY** —
+`cauchyMul_bound`. Not via the ε-δ route this bean anticipated: in the header's
+own *bound form* (`‖a_n‖ ≤ C·Aⁿ·q^{s n²/2}`) the upper half is finitary, so
+there is no ε-δ and no `logb q 0 = 0` wrinkle at vanishing coefficients. It
+needs no non-cancellation hypothesis at all — bounding a sum of norms never
+requires knowing the terms fail to cancel. Only `≥` was ever false.
+
+Also landed: `envelope_shift_le` — raising both slopes by `δ ≥ 0` raises the
+envelope by at most `δ`, the algebraic content of the limit↔bound step.
+
+**What is left is the `≥` half alone** (the file's single remaining `sorry`,
+cited): pick `k ≈ θ*·n` attaining the envelope, then apply `hnc` to transfer
+that summand's growth to the convolution. It now sits on a statement believed
+true rather than one known false.
+
+Verified: `lean`-direct exit 0; `#print axioms` clean on all three new results.
+Closing is a human action — leaving status as-is.
