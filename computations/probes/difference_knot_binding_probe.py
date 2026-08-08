@@ -81,6 +81,13 @@ CASES = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 # Q3 reference the derived difference knot is asked to reproduce.
 CENSUS_BINDING_VOL = {"D": 0.0, "T": 8.2863168, "3He": 7.3277248}
 
+# Raise precision before the constant below, not only in main(): it is built
+# at import time and would otherwise be frozen at mpmath's default 15 dps.
+# `_H` is taken to float immediately, so nothing downstream depends on the
+# extra digits here — but a 17-digit literal silently losing one is the shape
+# this file should not model. Idempotent alongside main()'s call.
+set_compute_dps()
+
 # Substrate h = q − q⁻¹ at q₀; the crossing-sign classifier thresholds.
 _Q0 = mp.mpf("1.1099785955573347")
 _H = float(_Q0 - 1 / _Q0)            # ≈ 0.2091

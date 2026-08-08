@@ -42,6 +42,11 @@ from pathlib import Path
 
 import mpmath as mp
 
+# Precision must be raised HERE, not in main(): the 25-digit constant below is
+# built at import time, and at mpmath's default 15 dps it would be frozen at
+# 53 bits with 9 of its digits discarded. main() sets the same 50.
+mp.mp.dps = 50
+
 # Vol(Whitehead) = 4·Catalan = volume of the regular ideal octahedron.
 VOL_WHITEHEAD = mp.mpf("3.663862376708876060218414")  # = 4·G, SnapPy 3.66386238
 

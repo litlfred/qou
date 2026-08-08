@@ -54,6 +54,12 @@ B_AME = {
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 
+# Raise precision before the constants below, not only in main(): these are
+# built at import time, and at mpmath's default 15 dps a 17-digit literal is
+# frozen at 53 bits with its last digit gone. Same 30 dps main() sets, and
+# set_compute_dps is idempotent.
+set_compute_dps(30)
+
 # Vol_hyp per atom (from PR #787 Phase 3 delta-lambda-jsj-phase3.witness.json).
 VOL_HYP = {
     "D":   mp.mpf("12.776095278687214"),

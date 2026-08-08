@@ -1458,3 +1458,71 @@ scoped; the regeneration wave needs the reference environment — Python 3.13,
 `alpha_star_vs_binding_gap.py` reading an upstream from a directory that does
 not contain it is a live bug found on the way, not a consequence of anything
 here. Recorded, not fixed.
+
+## P36 — porting to `add_upstream`: 40 are mechanical, 290 need the API to change
+
+Scoping the port properly changed what the work *is*. Two measurements, each
+of which corrected a guess:
+
+**Where the read happens.** The first cut said all 331 undeclared producers
+read their upstream at import time, which would have meant no builder could
+possibly exist yet. That was a bug in the measurement — the walk descended into
+module-level `def` bodies, so a read anywhere in the file counted as
+import-time. Corrected: **40 read at import, 291 inside a function.** (Same
+error shape as the `try:`-block false positive in P34's gate, found the same
+way: the number was too round to believe.)
+
+**Whether a builder is in scope yet.** The binding constraint is not *where*
+the read is but whether a `WitnessBuilder` exists when it happens, since
+`add_upstream` is a method and the hash record needs somewhere to land:
+
+| | producers |
+|---|---:|
+| builder constructed **before** the first upstream read — directly portable | **40** |
+| builder exists but is constructed **after** the read — needs a reorder | **290** |
+| no builder call at all | 0 |
+
+So the dominant shape in this corpus is *read your inputs at the top, build the
+witness at the bottom* — and `add_upstream` requires exactly the opposite
+order. **That, not oversight, is why adoption sits at 5.7%.** The API asks for
+a structure most of these producers do not have.
+
+### One port, verified end to end
+
+`probe_inter_knot_decoupling.py` is one of the 40. `_load_q_0()` now takes the
+builder and calls `add_upstream(Q_PINNING)`. Re-run, the witness gains exactly
+what it should:
+
+```json
+"upstream_witness_hashes": [
+  {"path": "q-pinning-50-digit.witness.json",
+   "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+   "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+   "computedAt": "2026-07-18T17:30:49.888071+00:00"}]
+```
+
+**No numeric value moves.** Only the source is committed: this container's run
+drops `pyhecke_native 0.9.0` and `clarabel 0.11.1` from the environment block,
+so the witness itself must be regenerated where those exist. The declaration
+takes effect on that re-run; until then the source is strictly better and the
+witness is unchanged.
+
+### What the other 290 need
+
+A reorder per producer is 290 hand-edits with no mechanical check — the shape
+of change this arc has already been burned by once, when a blind regex patched
+ten scratch files where the gate named five.
+
+The alternative is to let the record be taken before a builder exists and
+attach later: a module-level `record_upstream(path)` that wraps the existing
+`load_and_hash_upstream` and accumulates, with `WitnessBuilder` draining the
+pending list on construction. That would make all 290 a one-line substitution
+at the read site, with no restructuring.
+
+**Deliberately not implemented here.** A global mutable accumulator in the
+witness substrate can leak records between producers when two builders are
+constructed in one process, or when a test imports a producer module for its
+symbols — silent cross-contamination of provenance metadata, which is the
+precise failure this whole audit arc exists to prevent. It needs an ownership
+rule (drain-on-construct vs. explicit scope), and that is a substrate design
+decision, not a side effect of a porting pass.
