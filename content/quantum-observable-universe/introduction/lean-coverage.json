@@ -1,33 +1,33 @@
 {
   "paper": "quantum-observable-universe",
-  "total_blocks": 3008,
+  "total_blocks": 3025,
   "by_kind": {
-    "remark": 953,
-    "prose": 382,
+    "remark": 962,
+    "prose": 383,
     "proof": 436,
-    "proposition": 590,
+    "proposition": 596,
     "example": 101,
     "definition": 255,
     "theorem": 48,
-    "conjecture": 170,
+    "conjecture": 171,
     "corollary": 15,
     "lemma": 45,
     "diagram": 2,
     "simulator": 11
   },
   "provable": {
-    "total": 698,
-    "with_lean_field": 697,
-    "with_lean_file": 695,
-    "sorry_free": 654,
-    "percent_sorry_free": 93.7
+    "total": 704,
+    "with_lean_field": 701,
+    "with_lean_file": 699,
+    "sorry_free": 688,
+    "percent_sorry_free": 97.7
   },
   "conjectures": {
-    "total": 170,
+    "total": 171,
     "external": 15,
-    "qou_original": 155,
+    "qou_original": 156,
     "primary": 78,
-    "dependent": 77,
+    "dependent": 78,
     "primary_class_axiomatized": 68,
     "percent_primary_class_axiomatized": 87.2,
     "class_axiomatized": 157
