@@ -19,10 +19,10 @@ algebraic layer. This bean tracks closing that gap, in dependency order.
 | # | claim | today | needs |
 |---|---|---|---|
 | 1 | `qThetaC` holomorphic on `ℂ*` | ✅ **PROVED** `differentiableOn_qThetaC` | done 2026-08-07 — see below |
-| 2 | **exact** zero locus (converse of `qTheta_neg_zpow_eq_zero`) | ⊇ only; **all inputs but one now proved** | ~~JTP~~ **the argument principle, and nothing else** — rescoped 2026-08-07, see below |
+| 2 | **exact** zero locus (converse of `qTheta_neg_zpow_eq_zero`) | ✅ **PROVED** `qThetaC_eq_zero_iff` | done 2026-08-08 via #4770 — the argument principle landed too (`qou-argp`) |
 | 3 | 0-side series radius 1; ∞-side entire | ✅ **PROVED** (radius `≥ 1`; entire) | done 2026-08-07 — see below |
 | 4 | `Y₀`, `Y_∞`, inverse, meromorphy; `P(pz)=P(z)` | not proved | matrix-valued meromorphic functions; `Analysis/Meromorphic/*` partial |
-| 5 | pole divisor + completeness (residue thm) | numerical | argument principle — same single gap as #2. **But: nothing consumes it** (below) |
+| 5 | pole divisor + completeness (residue thm) | numerical | ~~argument principle~~ — **that gap closed** (#4770). Still **not worth working: nothing consumes it** (below) |
 | 6 | `χ` = the closed form, `α = t₂/T`, order 2 | numerical (12 pts, `5.3e-63`) | all of 1–5 |
 
 **Confirmed absent** in Mathlib (name scan at HEAD, 2026-08-07):
@@ -234,3 +234,45 @@ The claim line above names branch `pr4672` →
 `qou-c1wr` that nothing downstream consumes the divisor.
 
 Unclaimed. Status moved `in-progress` → `todo`; the claim is stale, not active.
+
+## 2026-08-08 (later) — row 2 CLOSED; and the axis has no remaining work worth doing
+
+**Row 2 was stale in this table.** It read *"⊇ only … needs the argument
+principle, and nothing else"*. Both halves landed in #4770 and are on `main`:
+
+* `QOU.Mathlib.ArgumentPrinciple.argument_principle`, plus the annulus forms
+  `argumentPrinciple_annulus_{single,filter,finset}` in `C1ConnectionPoles.lean`
+  — the named lemma the 08-07 rescope said was the only gap;
+* `QOU.QBeta.C1ThetaZeroLocus.qThetaC_eq_zero_iff` —
+  `qThetaC P w = 0 ↔ ∃ k : ℤ, w = −P^{2k}`, the exact converse, plus every zero
+  simple.
+
+Row 5's stated blocker was *the same* argument principle, so that gap is closed
+too — but row 5 keeps its **do-not-work** marker for the independent reason
+recorded above: nothing consumes it.
+
+### Resulting state of this bean
+
+| row | state |
+|---|---|
+| 1 holomorphy | ✅ proved |
+| 2 exact zero locus | ✅ proved (#4770) |
+| 3 series convergence | ✅ proved |
+| 4 `Y₀`/`Y_∞` meromorphy | open — expensive, **no consumer** |
+| 5 pole divisor | unblocked but **no consumer**; explicitly not to be worked |
+| 6 `χ` closed form | open — needs 4; **no consumer** |
+
+**Everything still open on this axis is explicitly recorded as having no
+downstream consumer.** Rows 4 and 6 were "deliberately not started" on that
+ground (08-08 entry), row 5 likewise. So the honest reading is not "three rows
+remain" but **"the axis is finished as far as anything needs it"**; what is left
+is optional completeness work with a known-empty consumer set.
+
+### Third instance of the same staleness failure in two days
+
+`qou-wgnx`'s top summary said the Stokes multipliers were open while its own
+entries 21–23 said trivial; this table said row 2 needed a lemma that had
+already landed. Both are *summaries that went stale against work recorded
+elsewhere in the same corpus*, and both were read as current by a later agent
+(PR #4790, then this one). The per-bean fixes are in; the pattern is worth a
+systemic look — a stale-summary check has no owner today.
