@@ -48,10 +48,10 @@ measurement rather than by argument.**
 
 | isotope | n = 3A | Z, N | F(q→1⁺) | F(q₀) | crossing q | relative to q₀ |
 |---|---:|---|---:|---:|---:|---|
-| **D** | 6 | 1,1 | +8.05·10⁻⁵ | −0.1950 | **≈ 1.0537** | **below** |
-| **T** | 9 | 1,2 | −4.06·10⁻⁴ | −2.318 | ≈ 1.4617 | *above* (diagnostic) |
-| **³He** | 9 | 2,1 | −4.06·10⁻⁴ | −2.806 | ≈ 1.4285 | *above* (diagnostic) |
-| **⁴He** | 12 | 2,2 | +1.177·10⁻³ | −5.947 | **≈ 1.019** | **below** |
+| **D** | 6 | 1,1 | +8.05·10⁻⁵ | −0.1950 | **1.05365** | **below** |
+| **T** | 9 | 1,2 | −4.06·10⁻⁴ | −2.318 | 1.46170 | *above* (diagnostic) |
+| **³He** | 9 | 2,1 | −4.06·10⁻⁴ | −2.806 | 1.42852 | *above* (diagnostic) |
+| **⁴He** | 12 | 2,2 | +1.177·10⁻³ | −5.947 | **1.02092** | **below** |
 
 `q₀ ≈ 1.10998` sits **inside** the light-nucleus crossing band, not on one side
 of it.
@@ -195,11 +195,21 @@ the trade entirely.
 | 1.05460 | −1.0121 |
 | **q₀ = 1.109979** | **−5.9469** |
 
+**Crossing on `(1, q₀]`: q = 1.02092** (bisected, f64 resolution) — the sign
+change is bracketed between q = 1.01346 (F = +5.50·10⁻²) and q = 1.02710
+(F = −9.06·10⁻²).
+
+On the diagnostic ray above q₀, F_4He changes sign three further times (brackets
+`(1.1908, 1.2513)`, `(1.3311, 1.4361)`, `(2.7291, 3.2776)`) before running away as
+`−9.5·10²³` at q = 4. Those are beyond-substrate structure and carry no physical
+reading; they are recorded only so the ray is described honestly rather than
+truncated at the first zero.
+
 ---
 
 ## 3. The non-monotone ladder, and one pattern I am NOT claiming
 
-Crossing q against A: **1.0537 (D) → ~1.43–1.46 (T, ³He) → ~1.019 (⁴He)**. Not
+Crossing q against A: **1.05365 (D) → 1.4285/1.4617 (³He, T) → 1.02092 (⁴He)**. Not
 monotone. The n=9 pair is the outlier, and the two n=9 crossings are nearly
 degenerate with each other while sitting far from both Z=N cases.
 
