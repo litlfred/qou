@@ -1,11 +1,95 @@
 ---
 # qou-n1dj
 title: 'GAP: does the MASS fibre functor land in Rep(SU_q(2))~TL or full H_3(q)? (corpus self-contradiction, D vs C, 197 ppm on m_p)'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-08T09:50:22Z
-updated_at: 2026-08-08T09:50:22Z
+updated_at: 2026-08-08T14:30:00Z
 ---
+
+## RESOLVED 2026-08-08 — the answer is D, and the premise was already in the mass chapter
+
+Branch `claude/n1dj-mass-fibre-dimension-2026-08-08`. Full analysis:
+[`docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md`](../docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md).
+
+**Reframing "which trace?" → "which fibre?" made it answerable, because the mass
+chapter already states the fibre.** `lem:feynman-eigenbasis-decomposition`
+([`feynman-eigenbasis-decomposition.md`](../content/quantum-observable-universe/mass-theory/feynman-eigenbasis-decomposition.md))
+defines the mass channel's decomposition as
+
+    V^(tensor n)  ≅  ⊕_{λ ⊢ n, ℓ(λ) ≤ 2}  V_λ ⊗ S_λ ,   V = fundamental of SU_q(2)
+
+with the **row cap `ℓ(λ) ≤ 2` in the index set** and `⌊n/2⌋+1` summands (the
+two-row count). At `n = 3` the sum is `{(3), (2,1)}`: **`(1³)` is absent**, so
+`y_(1³) = 0` is not an extra assumption — it restates the decomposition the mass
+chapter already uses. Feed it into the sorry-free
+`markovWeights_eq_jones_of_threeRow_eq_zero` ⟹ **convention D, uniquely.**
+
+The CODATA match was not used. Chain: fibre → row cap → `y_(1³)=0` → D.
+
+**Sub-task 1 (find the independent argument) — DONE, plus new Lean.** New
+sorry-free file
+[`QOU/BraidsAndKnots/FibreDimensionForcesTL.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/FibreDimensionForcesTL.lean)
+(generic `[CommRing R] [IsDomain R]`, division-free, no `ℝ`/ordering/`q₀`;
+`scripts/lean-verify.sh` exit 0; `#print axioms` clean on all 5):
+
+- `qNumber_shift_identity` — `q[N+1] − q⁻¹[N−1] = q^N[2]`
+- `ocneanu_param_eq_of_fibre_qdim` — **`z·[N]_q = q^N`**: the fibre's quantum
+  dimension *determines* the Ocneanu parameter, so a fibre leaves **no residual
+  trace freedom**
+- `ocneanu_param_of_two_dim_fibre` — `N=2 ⟹ z(q+q⁻¹) = q²`, **verbatim** what
+  `MarkovTraceTLUniqueness` concludes, but derived from `dim_q V = [2]_q` with no
+  reference to the TL quotient. Independent cross-check, two routes one parameter.
+- `threeRow_eq_zero_of_jones_ocneanu` — the converse, closing the biconditional
+- `twoDimFibre_pins_h3_weights` — composite
+
+**Sub-task 2 (reconcile) — the Scope note of `prop:h3-markov-wenzl-weights` is
+the wrong side.** It says mass/binding use the full-Hecke Ocneanu trace with
+`y_(1³) ≠ 0`; that contradicts the mass chapter's own `ℓ(λ) ≤ 2` decomposition,
+`qou-w5fw` (N = qdim of fibre; `dim V = 2`), `qou-fvzm` (main `f92a8b15`,
+"N = 2 is LOCKED IN for the mass pipeline"), and what production computes.
+**Not edited here** — content change with its own review surface + sidecar +
+render-QA gate. Filed as follow-up in the audit §Follow-ups.
+
+**Sub-task 3 (false sensitivity claim) — confirmed refuted**, and it is the
+Scope note's own load-bearing justification, so the note does not survive its
+correction either.
+
+**New: convention C corresponds to NO integer fibre dimension.**
+`z(N) = q^N/[N]_q = (q−q⁻¹)/(1−q^{−2N})` is strictly decreasing in `N` for
+`q > 1`, hence injective, so `N = −ln(1−(q−q⁻¹)/z)/(2 ln q)`.
+[`computations/ocneanu_param_from_fibre_dimension.py`](../computations/ocneanu_param_from_fibre_dimension.py)
+(5/5 pass, 50 dps, **proton** `q₀` pin recorded, `uses_experimental_target_values:
+false`): `z_D → N = 2.0`, `z_{N=3} → N = 3.0`, but
+`z_C = 1/(q^{1/2}+q^{-1/2}) = 0.4993203341836945 → N_eff = 2.5995155364`.
+Scope **(b)**, invariant named: **integrality of a fibre dimension** (+ the
+injectivity above + `ocneanu_param_eq_of_fibre_qdim`). C is not the categorical
+trace on any fibre — conditional on the corpus's own definition of mass as a
+categorical trace on `V^{⊗n}`. **NOT claimed:** that C is not a Markov trace on
+`H₃(q)`; it is one, a fine member of the Ocneanu family.
+
+**Colour — the mass chain does NOT inherit the `N = 3` problem.** Three spin-½
+strands in a 2-dim fibre cannot be antisymmetrised (`dim V_{(1³)} = C(N,3) = 0`
+for `N < 3`, `RowCapObstruction.weyl_dim_alt_eq_zero_iff`). Colour antisymmetry
+is load-bearing in the eightfold chapter and does need `N ≥ 3` — but that is a
+**different fibre and a different functor** (`ocneanu_N_lockin_probe`: the two
+traces are not proportional, so it cannot be reached by re-tuning), so the
+open `N = 3` construction (`qou-8p1x`) is not on the mass chain's critical path.
+
+**Literature — one source read, the rest unobtainable.** Read: Jones 1985
+(Bull. AMS 12(1) 103–111, `jones1985`, from `uploads/`). Its relations (I)–(VI)
+p.2 state the TL trace is *"completely determined"* by `tr(1)=1` + cyclicity +
+the single `tr(w e_{n+1}) = t/(1+t)²·tr(w)` — an upstream corroboration that a
+TL-factoring trace has no free parameter. Thm 12 p.5 is the one-variable Jones
+skein (`N=2`), not two-variable HOMFLY. Unobtainable: `jones1987`, `geck2000`,
+`kassel1995` (paywalled — cited as existing, **no claim attributed**);
+`wenzl1988` PDF (entry exists in `references.ts` with verified metadata, but the
+`ℓ(λ) > N` weight-vanishing is *believed standard, not verified in-sandbox*);
+FYHLMO 1985 (`www.ams.org` egress-blocked — **no `ref()` added**, metadata
+unverified). `paper-search` MCP returns `[]`/`{}` for every query including a
+known-good DOI. No `ref()` entry added; `references.bib` untouched.
+
+**No production numerical value changed.**
 
 Spun out of [`qou-3qrv`](qou-3qrv--class-i-is-the-borromean-trace-convention-forced-o.md)
 on 2026-08-08 (branch `claude/3qrv-borromean-trace-convention-2026-08-08`), which
