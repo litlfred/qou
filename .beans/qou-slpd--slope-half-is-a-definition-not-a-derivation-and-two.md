@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T05:30:00Z
+updated_at: 2026-08-08T06:30:00Z
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.
@@ -142,11 +142,29 @@ In increasing cost:
    The routeA audit called this "exact hand algebra" and asked for
    formalize-first; this is that, a year of prose later.
 
-   **Still open in item 4**: deriving the `∞`-side *recursion*
-   `c_{m+1} = c_m(1 + (q−1)qᵐ + (q−1)q^{2m})` from `L1`. That is a different
-   object from the polygon — the polygon needs only the coefficient valuations,
-   the recursion needs the actual series solution — and it remains
-   witness-sourced.
+   **Remainder of item 4 — ✅ DONE the same day: the recursion is derived too.**
+   Applying `L1` to `f = ∑_{k≥0} c_k x^{-k}` (with `σ(x^{-k}) = q^{-k}x^{-k}`),
+   the coefficient of `x^{-n}` collects four terms, one per summand of `L1`,
+   with an index shift `k = n+1` on the `q²x·σ²` piece:
+
+       q²q^{-2(n+1)}c_{n+1} − q^{-2n}c_n − (q−1)q^{-n}c_n − (q−1)c_n
+
+   That is `l1CoeffAt`, and `l1CoeffAt_eq_zero_iff` proves in general that it
+   vanishes **iff** `c_{n+1} = c_n(1 + (q−1)qⁿ + (q−1)q^{2n})`. That the
+   collection really *is* the coefficient — the one step that would otherwise be
+   inspection — is machine-checked symbolically with symbolic `c_k` in
+   `computations/qbeta/c3_w2_c1_inf_recursion_derivation.py` (4/4). Sorry-free,
+   `[propext, Classical.choice, Quot.sound]`.
+
+   **And an honest caveat that was not previously on the record**: the ansatz
+   does **not** satisfy `L1 f = 0`. Multiplying by `x` shifts `σ²f`'s `k = 0`
+   term up to `x^{+1}`, leaving `l1Obstruction = q²c₀`, nonzero for the corpus's
+   `c₀ = 1` (every power above `x^{+1}` does vanish — checked). So the recursion
+   characterises "`L1 f` has no `x^{-n}` term for `n ≥ 0`", not "`L1 f = 0`".
+   That leftover is exactly what a nonzero Newton slope forces — a pure power
+   series in `1/x` cannot solve an irregular operator — and it does not touch
+   the growth chain, which only ever used the recursion. Both the script and
+   Lean now carry it.
 
 5. **The one premise the polygon does NOT settle.** Computing the polygon pins
    the NUMBER `½`. It does not say whether that number is the q-Gevrey *order*
@@ -162,9 +180,10 @@ strands now reach the same `½` from opposite ends:
 * *growth strand* — recursion (witness) ⟹ ratio degree `2m+1` ✅ ⟹ `deg_q cₙ = n²`
   ✅ ⟹ order 2 / level ½ ✅
 
-What is missing is the **bridge between them** (item 5): which growth quantity
-the polygon slope is. Both strands are now machine-checked, so the bridge is the
-only prose left in the load-bearing path.
+Both strands are now machine-checked **end to end** — the growth strand starts
+at the operator, not at a witness. What is missing is the **bridge between
+them** (item 5): which growth quantity the polygon slope is. That bridge is now
+the *only* prose left in the load-bearing path.
 
 `ThetaSlopeArithmetic` now says in its docstring that `c1Slope` and `ggmSlopes`
 are stipulated and that the order/level identification is a premise, so nothing

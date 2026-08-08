@@ -33,7 +33,9 @@ route. Those cannot both be the Newton slope. Settling it needs the Newton polyg
 computed directly — bean `qou-slpd` item 4 — not a relabelling.
 
 **Scope.** The growth-degree identity `∑_{m<n}(2m+1) = n²` (= `deg_q cₙ`), plus — added
-2026-08-08 — the *derivation* of the ratio degree it used to assume. `natDegree_c1MultPoly`
+2026-08-08 — the *derivation* of the ratio degree it used to assume **and of the recursion
+itself** (`l1CoeffAt_eq_zero_iff`, bottom of file: the recursion is exactly what makes
+`L1`'s `x^{-n}` coefficients vanish, so nothing on this strand is witness-sourced any more). `natDegree_c1MultPoly`
 proves the per-step multiplier `1 + (q−1)qᵐ + (q−1)q^{2m}`, read as a `Polynomial ℤ` in `q`,
 has degree exactly `2m+1`; `natDegree_c1CoeffPoly` then chains that through `natDegree_mul`
 to `deg_q cₙ = n²` **from the recursion** rather than from a docstring claim. What is still
@@ -144,5 +146,78 @@ theorem natDegree_c1CoeffPoly (n : ℕ) : (c1CoeffPoly n).natDegree = n ^ 2 := b
     rw [c1CoeffPoly, natDegree_mul (c1CoeffPoly_ne_zero k) (c1MultPoly_ne_zero k),
         ih, natDegree_c1MultPoly]
     ring
+
+
+/-! ## The recursion, derived from `L1`
+
+Added 2026-08-08 (bean `qou-slpd` item 4, remainder). Everything above took the
+recursion `c_{m+1} = c_m(1 + (q−1)qᵐ + (q−1)q^{2m})` from
+`c3-w2-inf-formal-solution.witness.json`. It is now derived from the operator.
+
+Applying `L1 = (q²x − 1)σ² − (q−1)σ − (q−1)` (with `σ : x ↦ qx`, so
+`σ(x^{-k}) = q^{-k}x^{-k}`) to the `∞`-side ansatz `f = ∑_{k≥0} c_k x^{-k}`, the
+coefficient of `x^{-n}` collects exactly four terms — one per summand of `L1`,
+with an index shift `k = n+1` on the `q²x·σ²` piece:
+
+    q²·q^{-2(n+1)}·c_{n+1}   −   q^{-2n}·c_n   −   (q−1)q^{-n}·c_n   −   (q−1)·c_n
+
+That collection is `l1CoeffAt`. That it really is the coefficient is checked
+symbolically, with symbolic `c_k`, in
+`computations/qbeta/c3_w2_c1_inf_recursion_derivation.py` (4/4) — so the
+term-by-term reading is machine-verified rather than eyeballed.
+`l1CoeffAt_eq_zero_iff` below then proves, in general, that it vanishes **iff**
+the recursion holds.
+
+**The ansatz does not satisfy `L1 f = 0` outright**, and that is recorded rather
+than dropped. Multiplying by `x` shifts the `k = 0` term of `σ²f` up to `x^{+1}`,
+leaving `l1Obstruction = q²·c₀`, nonzero for the corpus's `c₀ = 1` (every power
+above `x^{+1}` does vanish — checked in the script). So the honest statement is:
+the recursion is equivalent to `L1 f` having **no `x^{-n}` term for any `n ≥ 0`**,
+with one leftover at `x^{+1}`. That leftover is what a nonzero Newton slope
+forces — a pure power series in `1/x` cannot solve an irregular operator — and
+it does not touch the growth chain, which only ever used the recursion. -/
+
+section Recursion
+
+variable {K : Type*} [Field K]
+
+noncomputable def l1CoeffAt (q : K) (c : ℕ → K) (n : ℕ) : K :=
+  q ^ 2 * (q⁻¹) ^ (2 * (n + 1)) * c (n + 1)
+    - (q⁻¹) ^ (2 * n) * c n
+    - (q - 1) * (q⁻¹) ^ n * c n
+    - (q - 1) * c n
+
+theorem l1CoeffAt_scaled (q : K) (hq : q ≠ 0) (c : ℕ → K) (n : ℕ) :
+    q ^ (2 * n) * l1CoeffAt q c n
+      = c (n + 1) - c n * (1 + (q - 1) * q ^ n + (q - 1) * q ^ (2 * n)) := by
+  have h1 : ((q⁻¹) ^ (2 * (n + 1)) : K) = (q ^ (2 * n) * q ^ 2)⁻¹ := by
+    rw [inv_pow, ← pow_add]; congr 2
+  have h2 : ((q⁻¹) ^ (2 * n) : K) = (q ^ (2 * n))⁻¹ := inv_pow q (2 * n)
+  have h3 : ((q⁻¹) ^ n : K) = (q ^ n)⁻¹ := inv_pow q n
+  rw [l1CoeffAt, h1, h2, h3]
+  field_simp
+  ring
+
+theorem l1CoeffAt_eq_zero_iff (q : K) (hq : q ≠ 0) (c : ℕ → K) (n : ℕ) :
+    l1CoeffAt q c n = 0
+      ↔ c (n + 1) = c n * (1 + (q - 1) * q ^ n + (q - 1) * q ^ (2 * n)) := by
+  have hqn : (q ^ (2 * n)) ≠ 0 := pow_ne_zero _ hq
+  have key := l1CoeffAt_scaled q hq c n
+  constructor
+  · intro h
+    rw [h, mul_zero] at key
+    exact sub_eq_zero.mp key.symm
+  · intro h
+    rw [h, sub_self] at key
+    exact (mul_eq_zero.mp key).resolve_left hqn
+
+noncomputable def l1Obstruction (q : K) (c : ℕ → K) : K := q ^ 2 * c 0
+
+theorem l1Obstruction_ne_zero (q : K) (hq : q ≠ 0) (c : ℕ → K) (hc : c 0 = 1) :
+    l1Obstruction q c ≠ 0 := by
+  rw [l1Obstruction, hc, mul_one]
+  exact pow_ne_zero _ hq
+
+end Recursion
 
 end QOU.Mass.C1FormalSolutionGrowth
