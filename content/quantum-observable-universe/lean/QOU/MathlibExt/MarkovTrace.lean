@@ -69,7 +69,7 @@ variable {n d : ℕ}
 
     This is the structural fact that makes `HeckeRep.character` behave like a
     trace on the braid monoid.  Proved by induction on the first word. -/
-theorem eval_append (ρ : HeckeRep n d) (v w : BraidWord n) :
+theorem HeckeRep.eval_append (ρ : HeckeRep n d) (v w : BraidWord n) :
     ρ.eval (v ++ w) = ρ.eval v * ρ.eval w := by
   induction v with
   | nil => simp [HeckeRep.eval]

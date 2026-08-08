@@ -70,7 +70,7 @@ abbrev WedderburnDecomposition (n : ℕ) : Type :=
 
 /-- **Block-PSD predicate**: a Wedderburn-decomposition element
     is "PSD" iff each block is PSD as a matrix. -/
-def PosSemidef {n : ℕ}
+def WedderburnDecomposition.PosSemidef {n : ℕ}
     (x : WedderburnDecomposition n) : Prop :=
   ∀ (lam : Nat.Partition n), Matrix.PosSemidef (x lam)
 

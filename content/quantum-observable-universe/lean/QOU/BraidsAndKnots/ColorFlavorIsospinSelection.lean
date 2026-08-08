@@ -55,7 +55,7 @@ inductive NucleonPair
 
 /-- Total isospin of each channel: the triplet `I=1` is exchange-symmetric, the
 singlet `I=0` exchange-antisymmetric. -/
-def isospin : NucleonPair → ℕ
+def NucleonPair.isospin : NucleonPair → ℕ
   | .pp => 1 | .nn => 1 | .pnSym => 1 | .pnAlt => 0
 
 /-- Dimensions of the isospin summands of `I=½ ⊗ I=½`. -/

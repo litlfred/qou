@@ -22,6 +22,17 @@ export default proposition({
   uses: ["prop:three-parameters-wedderburn"],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** The Lean " +
+        "`PlancherelViaRecipe` states the Markov-trace normalisation " +
+        "`Σ_λ d_λ y_λ(q) = 1` over `ℝ`, evaluated at the substrate anchor. " +
+        "Separately (not a base-ring issue): the current declaration is a " +
+        "placeholder concluding `(1 : ℝ) = 1` rather than the displayed sum, " +
+        "tracked in `docs/audits/lean-vacuity-review-ledger.json`.",
+    },
+    {
       kind: "refined-framing",
       date: "2026-06-29",
       body:

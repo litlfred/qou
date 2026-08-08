@@ -134,7 +134,12 @@ sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder            # noqa: E402
+from witness_base import WitnessBuilder, record_upstream            # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from fivetwo_saddle_values import saddle_values, volume  # noqa: E402
 
 BASIS = _HERE / "qbeta-5two-phi-series-engine.witness.json"
@@ -152,7 +157,7 @@ D1_ORDERS = [(6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 12)]
 
 def load_basis():
     """`P_k` coefficients of `φ_σ1` from the A4.2 engine witness."""
-    d = json.loads(BASIS.read_text())
+    d = record_upstream(BASIS, _UPSTREAM_RECORDS)
     src = d.get("data", d)
     raw = src.get("P_coefficients") or src.get("P") or src.get("coefficients")
     if raw is None:
@@ -350,6 +355,7 @@ def main() -> int:
 
     w = WitnessBuilder("qbeta-5two-v3-from-borel-poles",
                        engine="mpmath", _script_path=__file__)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Non-circular measurement of V3 for 5_2 from the Borel-Pade pole "
         "map. The reality of V3 (GGM 6.1 keeps only Re V for sigma_3) "

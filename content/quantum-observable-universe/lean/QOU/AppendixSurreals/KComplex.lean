@@ -45,26 +45,26 @@ abbrev KComplex (K : Type u) [SurrealField K] : Type u := K × K
 
 /-- The **Manhattan modulus** `|a + bi| := |a| + |b|`.  Placeholder
     for the Euclidean modulus `√(a²+b²)`. -/
-def abs {K : Type u} [SurrealField K] : KComplex K → K :=
+def KComplex.abs {K : Type u} [SurrealField K] : KComplex K → K :=
   fun ab => |ab.1| + |ab.2|
 
 /-- The **multiplicative unit** in `KComplex K`, i.e. `1 + 0·i`. -/
-def one (K : Type u) [SurrealField K] : KComplex K := (1, 0)
+def KComplex.one (K : Type u) [SurrealField K] : KComplex K := (1, 0)
 
 /-- The **imaginary unit** `i ∈ KComplex K`. -/
-def I (K : Type u) [SurrealField K] : KComplex K := (0, 1)
+def KComplex.I (K : Type u) [SurrealField K] : KComplex K := (0, 1)
 
 /-- **Complex multiplication** `(a, b) · (c, d) := (ac − bd, ad + bc)`,
     realising `KComplex K` as `K[X]/(X² + 1)`. -/
-def mul (z w : KComplex K) : KComplex K :=
+def KComplex.mul (z w : KComplex K) : KComplex K :=
   (z.1 * w.1 - z.2 * w.2, z.1 * w.2 + z.2 * w.1)
 
 /-- **Complex conjugation** `(a, b) ↦ (a, −b)`. -/
-def conj (z : KComplex K) : KComplex K := (z.1, -z.2)
+def KComplex.conj (z : KComplex K) : KComplex K := (z.1, -z.2)
 
 /-- **Algebraic norm** `‖a + bi‖² := a² + b²` valued in `K`.  Always
     non-negative. -/
-def normSq (z : KComplex K) : K := z.1 * z.1 + z.2 * z.2
+def KComplex.normSq (z : KComplex K) : K := z.1 * z.1 + z.2 * z.2
 
 /-! ### Algebraic identities for `KComplex.mul` -/
 

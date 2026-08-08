@@ -411,7 +411,7 @@ def main() -> int:
 
     # Load Habiro witness
     hab_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
-    hab = json.loads(hab_path.read_text())
+    hab = builder.add_upstream(hab_path)
     builder.add_data("habiro_witness_used", str(hab_path.name))
 
     # ─── A. verify Habiro infrastructure ──────────────────────

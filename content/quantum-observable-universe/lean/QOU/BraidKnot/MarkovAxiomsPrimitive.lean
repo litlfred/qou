@@ -84,7 +84,7 @@ noncomputable def markovZax_real (q : ℝ) (_hq : 0 < q) : ℝ :=
     Do NOT migrate to `markovZax (Real.sqrt q)` — that still triggers
     the `q-usage-positivity-implicit` warning since `Real.sqrt` carries
     no positivity hypothesis. -/
-@[deprecated (since := "2026-08-03") "Migrate to (a) the generic `markovZax (u : R)` with an explicit u² = q hypothesis (Tier 2 — preferred), or (b) `markovZax_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZax (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to (a) the generic `markovZax (u : R)` with an explicit u² = q hypothesis (Tier 2 — preferred), or (b) `markovZax_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZax (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def markovZax_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 

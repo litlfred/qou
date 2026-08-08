@@ -47,7 +47,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 
@@ -79,7 +84,7 @@ def factor_bar_parity(f_q: callable, q: mp.mpf, q_inv: mp.mpf) -> dict:
 
 
 def main() -> int:
-    q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+    q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
     q_inv = mp.mpf(1) / q
 
     # Define the four factors of Δm/M_N
@@ -153,6 +158,7 @@ def main() -> int:
     rel_diff_pct = rel_diff * 100
 
     w = WitnessBuilder("verify-isospin-bar-anomaly", engine="python+mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Verifies that the substrate flavor-split closed form "
         "Δm/M_N = ℏ_q² · h · [2]_q · (1 + ℏ_q³) / 3 is bar-ANTI-"

@@ -25,11 +25,54 @@ import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
+-- The complex dilogarithm and its analytic continuation off the unit disc.
+-- `ComplexDilogarithm` was ORPHANED from this root — `lake build` compiles only
+-- `QOU.lean`'s import closure, so a module nothing imports is never checked at
+-- all (bean qou-orph). Wiring the chain here puts every theorem below under CI.
+import QOU.MathlibExt.ComplexDilogarithm
+import QOU.MathlibExt.ComplexDilogarithmSlit
+import QOU.MathlibExt.ComplexDilogarithmDeriv
+import QOU.MathlibExt.ComplexDilogarithmUnique
+import QOU.MathlibExt.ComplexDilogarithmLanden
+import QOU.MathlibExt.AlternatingZetaTwo
+import QOU.MathlibExt.ComplexDilogarithmBoundary
+-- Scalar implicit function theorem, and two one-variable transport lemmas
+-- (a constant pinned off a single point; an integer branch index pinned by a
+-- window). All Mathlib gaps; all sorry-free.
+import QOU.MathlibExt.ImplicitScalar
+import QOU.Archimedean.ConstantOffOnePoint
+import QOU.Archimedean.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
 -- Sorry-free, so it is wired here for CI type-checking (unlike
 -- HadamardFactorization itself, which still carries PI-3 / the full theorem).
 import QOU.Mathlib.WeierstrassFactorEstimate
+-- Algebraic skeleton of the Dimofte-Garoufalidis 1-loop invariant: the shape
+-- identity ζ+ζ'+ζ''=0, the CUSP-NUMBER-FREE degeneracy of the edge rows, the
+-- lattice-basis determinant lemmas, and the proof that the per-cusp factor
+-- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
+import QOU.OneLoopEdgeLattice
+-- Borel-Carathéodory inequality: a one-sided bound on Re f gives a two-sided
+-- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
+-- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
+import QOU.Mathlib.BorelCaratheodory
+-- Scoping check for the Hadamard chain: phiBProd is a RATIO whose denominator
+-- factor vanishes at an explicit point for every b /= 0, so it is not entire and
+-- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
+import QOU.Mathlib.HadamardApplicability
+-- Faddeev rigidity: the ratio of two FaddeevPhi solutions is ib- and i/b-periodic
+-- (the prefactor cancels), and given an entire ratio that extends from the dense
+-- complement of the prefactor zeros to everywhere. Collapses the open input
+-- `hibinv` (qou-rp5f) into `hratio` (qou-cons). Sorry-free.
+import QOU.Mathlib.FaddeevRatioPeriodic
+-- The FaddeevPhi class has NO regularity field, so its solution set absorbs any
+-- doubly-periodic factor (lattice indicator included). Hence `hratio` (qou-cons)
+-- is not derivable from the class — it is a fact about the analytic Phi_b.
+import QOU.Mathlib.FaddeevSolutionSet
+-- The hratio "reduction" is circular: given double periodicity, "ratio entire"
+-- and "ratio constant" are the same statement. So qou-cons is not a sub-problem
+-- of uniqueUpToScalar — it IS uniqueUpToScalar. Sorry-free.
+import QOU.Mathlib.RigidityReductionScope
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
@@ -79,11 +122,15 @@ import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
+import QOU.Knot.RademacherReversible
+import QOU.Knot.M004AngleStructure
+import QOU.Knot.L6a4AngleStructure
 import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
@@ -230,8 +277,10 @@ import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
--- Sorry-free P-vs-NP information-theoretic bricks (the counting/decision
--- carrier `QouPNeqNp` stays orphaned — it holds the one intentional `sorry`).
+-- Sorry-free P-vs-NP information-theoretic bricks.  The counting/decision
+-- carrier `QouPNeqNp` is itself sorry-free and axiom-free: its open content
+-- is the `faithful` class field, and **no instance is provided**, so every
+-- downstream use carries `[QouPNeqNp …]` visibly in its signature.
 import QOU.Information.SurrealBudgetGrade
 import QOU.Information.GCTMultiplicityObstruction
 import QOU.Information.MagnitudeAxisBoundary
@@ -239,6 +288,8 @@ import QOU.Information.CountingModuliGrade
 import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.CocenterTraceFactor
+import QOU.Information.OuterDerivationResidue
+import QOU.Information.HochschildH1
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
 import QOU.Information.PNeqNpWallUnification
@@ -250,6 +301,7 @@ import QOU.GradedFrobeniusHopf
 import QOU.ChannelSeparation
 import QOU.Archimedean
 import QOU.Archimedean.DilogReflection
+import QOU.Archimedean.IdealTetrahedronConcavity
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
@@ -380,19 +432,11 @@ import QOU.QBeta.FiveTwoRogersExtend
 import QOU.QBeta.FiveTwoFiveTermArguments
 import QOU.QBeta.FiveTwoRogersReflection
 import QOU.QBeta.FiveTwoAbelFiveTerm
--- the corpus complex dilogarithm this lane depends on; was orphaned (qou-orph)
-import QOU.MathlibExt.ComplexDilogarithm
-import QOU.MathlibExt.ComplexDilogarithmSlit
-import QOU.MathlibExt.ComplexDilogarithmDeriv
-import QOU.MathlibExt.ComplexDilogarithmLanden
-import QOU.MathlibExt.AlternatingZetaTwo
-import QOU.MathlibExt.ComplexDilogarithmBoundary
+-- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
+-- top of this file (with the other MathlibExt imports), not here — it is
+-- general analytic infrastructure, not 5₂ content.
 import QOU.Archimedean.LiTwoNegOne
-import QOU.MathlibExt.ComplexDilogarithmUnique
-import QOU.MathlibExt.ImplicitScalar
 import QOU.QBeta.FiveTwoDiscriminant
-import QOU.Archimedean.ConstantOffOnePoint
-import QOU.Archimedean.BranchIntegerPinning
 import QOU.QBeta.FiveTwoCutAvoidance
 import QOU.QBeta.FiveTwoDeformedSaddle
 import QOU.QBeta.FiveTwoCurveDeriv
@@ -419,6 +463,9 @@ import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.PhiBSArgumentIdentification
 import QOU.QBeta.WindingGFTransform
 import QOU.QBeta.ThetaRealityBound
+import QOU.QBeta.AfreeThetaConstraint
+import QOU.QBeta.ChannelMeridianIdentification
+import QOU.QBeta.CompleteStructureExclusion
 import QOU.QBeta.StokesSymmetryConstant
 import QOU.QBeta.StokesQZeroDTCount
 import QOU.QBeta.StokesSymmetryConstantQZero

@@ -67,7 +67,12 @@ import mpmath as mp
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from codata_constants import (  # noqa: E402 — CODATA-2022 validation masses (registry; no literals)
@@ -120,7 +125,7 @@ def main() -> int:
     if not s3_path.exists():
         print("  ERROR: atomic-braid-mass-table.witness.json missing")
         return 1
-    s3 = json.loads(s3_path.read_text())
+    s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 
     # Per-atom: extract the term values
@@ -268,6 +273,7 @@ def main() -> int:
 
     # Witness emission
     w = WitnessBuilder("compound-binding-via-differences", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Item 3 from Phase 1.8 actionable path: compound binding energies "
         "B(Z, N) via LP-dual differences per term7-alpha5's "

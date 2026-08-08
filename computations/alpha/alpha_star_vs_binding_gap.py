@@ -40,6 +40,13 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder
+# The three upstreams read in main() live in `computations/`, not in this
+# cluster dir. `witness_path` searches the prefer-dir first, then every
+# cluster — which is exactly what its docstring exists for: it "replaces the
+# pre-refactor HERE / '<name>.witness.json' idiom, which after Phase 4
+# silently resolved to the wrong cluster dir." This file was one of those
+# casualties, and had been unable to run at all.
+from _path_bridge import witness_path
 
 
 def spearman_rho_n4(x: list[float], y: list[float]) -> float:
@@ -65,11 +72,11 @@ def spearman_rho_n4(x: list[float], y: list[float]) -> float:
 def main() -> int:
     base = Path(__file__).resolve().parent
 
-    with open(base / "joint-tower-sdp-rust.witness.json") as f:
+    with open(witness_path("joint-tower-sdp-rust.witness.json", base)) as f:
         jt = json.load(f)
-    with open(base / "ame-2020-binding-energies.witness.json") as f:
+    with open(witness_path("ame-2020-binding-energies.witness.json", base)) as f:
         ame = json.load(f)
-    with open(base / "mass-table-ppb.witness.json") as f:
+    with open(witness_path("mass-table-ppb.witness.json", base)) as f:
         mt = json.load(f)
 
     # Map atom-cert names → mass-table row sym.

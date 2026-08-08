@@ -62,17 +62,17 @@ def hoefsmit_sigma1_gen {R : Type*} [Field R]
     `0 ≤ hoefsmit_b_sq q` hypothesis. Kept for backward compatibility
     with the existing theorems in this file; new code should use the
     generic `hoefsmit_sigma1_gen` with an explicit square-root witness. -/
-@[deprecated (since := "2026-08-03") "Migrate to the generic `hoefsmit_sigma1_gen d1 d2 b` with an explicit `b² = hoefsmit_b_sq q` hypothesis (Tier 2), or a future `hoefsmit_sigma1_real q hq` archimedean shim carrying `0 ≤ hoefsmit_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
-noncomputable def hoefsmit_sigma1_gen (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
+@[deprecated "Migrate to the generic `hoefsmit_sigma1_gen d1 d2 b` with an explicit `b² = hoefsmit_b_sq q` hypothesis (Tier 2), or a future `hoefsmit_sigma1_real q hq` archimedean shim carrying `0 ≤ hoefsmit_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
+noncomputable def hoefsmit_sigma1_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![hoefsmit_d1 q, Real.sqrt (hoefsmit_b_sq q);
      Real.sqrt (hoefsmit_b_sq q), hoefsmit_d2 q]
 
 /-- Backward-compatibility alias — `hoefsmit_sigma1` is the legacy form.
     Phase 2 migrates the file's theorems to use `hoefsmit_sigma1_gen`
     directly; until then, this alias keeps existing references compiling. -/
-@[deprecated (since := "2026-08-03") "Use `hoefsmit_sigma1_gen` explicitly (Phase 1), or migrate to `hoefsmit_sigma1_gen` (Phase 2)."]
+@[deprecated "Use `hoefsmit_sigma1_gen` explicitly (Phase 1), or migrate to `hoefsmit_sigma1_gen` (Phase 2)." (since := "2026-08-03")]
 noncomputable def hoefsmit_sigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
-  hoefsmit_sigma1_gen q
+  hoefsmit_sigma1_legacy q
 
 /-! ## Hecke quadratic identity on σ_0
 
@@ -130,8 +130,8 @@ lemma hoefsmit_b_sq_nonneg (q : ℝ) (hq : q ≠ 0) :
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 trace"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
-    Matrix.trace (hoefsmit_sigma1_gen q) = q - q⁻¹ := by
-  unfold hoefsmit_sigma1_gen hoefsmit_d1 hoefsmit_d2
+    Matrix.trace (hoefsmit_sigma1_legacy q) = q - q⁻¹ := by
+  unfold hoefsmit_sigma1_legacy hoefsmit_d1 hoefsmit_d2
   have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
   simp [Matrix.trace, Fin.sum_univ_succ, Fin.sum_univ_zero]
   field_simp
@@ -141,8 +141,8 @@ theorem hoefsmit_sigma1_trace_eq (q : ℝ) (hq : q ≠ 0) :
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 determinant"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
-    Matrix.det (hoefsmit_sigma1_gen q) = -1 := by
-  unfold hoefsmit_sigma1_gen
+    Matrix.det (hoefsmit_sigma1_legacy q) = -1 := by
+  unfold hoefsmit_sigma1_legacy
   -- det of 2x2: a·d − b·c.  For !![d_1, sqrt b²; sqrt b², d_2]:
   --   det = d_1·d_2 − (sqrt b²)² = d_1·d_2 − b²   (b² ≥ 0)
   -- Using b² = d_1·d_2 + 1:   det = d_1·d_2 − (d_1·d_2 + 1) = −1.
@@ -156,12 +156,12 @@ theorem hoefsmit_sigma1_det_eq (q : ℝ) (hq : q ≠ 0) :
 -- Ref: [manuscript] prop:hoefsmit-V21-cos-symmetrization §"σ_1 Hecke quadratic"
 -- Ref: [hoefsmit1974] (Hoefsmit's PhD thesis, seminormal form)
 theorem hoefsmit_sigma1_hecke_quadratic (q : ℝ) (hq : q ≠ 0) :
-    hoefsmit_sigma1_gen q * hoefsmit_sigma1_gen q
-      = (q - q⁻¹) • hoefsmit_sigma1_gen q + (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
+    hoefsmit_sigma1_legacy q * hoefsmit_sigma1_legacy q
+      = (q - q⁻¹) • hoefsmit_sigma1_legacy q + (1 : Matrix (Fin 2) (Fin 2) ℝ) := by
   -- Compute both sides entry-wise. The off-diagonal `b = sqrt(b²)`
   -- squared becomes `b²` via `Real.mul_self_sqrt` (using `b² ≥ 0`).
   -- All four entry equalities then reduce to rational identities in `q`.
-  unfold hoefsmit_sigma1_gen
+  unfold hoefsmit_sigma1_legacy
   have hq2 : (q^2 + 1 : ℝ) ≠ 0 := by positivity
   have hb_sq_nn : 0 ≤ hoefsmit_b_sq q := hoefsmit_b_sq_nonneg q hq
   ext i j
@@ -192,7 +192,7 @@ noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q) : ℝ :=
 /-- **Legacy unsafe form** of `markovZ` — `Real.sqrt q` without the
     `0 < q` hypothesis. Use `markovZ (u : R)` (Tier 2) or `markovZ_real
     q hq` (Tier 5) in new code. -/
-@[deprecated (since := "2026-08-03") "Migrate to (a) the generic `markovZ (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to (a) the generic `markovZ (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def markovZ_legacy (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Quantum-integer differential. -/
@@ -268,14 +268,14 @@ theorem hoefsmit_V21_cos_symmetrization (q : ℝ) (hq : q ≠ 0) [V21Eigenphase 
        = (q - q⁻¹) • hoefsmit_sigma0 q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
     ∧
     -- σ_1 satisfies the Hecke quadratic
-    (hoefsmit_sigma1_gen q * hoefsmit_sigma1_gen q
-       = (q - q⁻¹) • hoefsmit_sigma1_gen q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
+    (hoefsmit_sigma1_legacy q * hoefsmit_sigma1_legacy q
+       = (q - q⁻¹) • hoefsmit_sigma1_legacy q + (1 : Matrix (Fin 2) (Fin 2) ℝ))
     ∧
     -- σ_1 trace = q − q⁻¹
-    (Matrix.trace (hoefsmit_sigma1_gen q) = q - q⁻¹)
+    (Matrix.trace (hoefsmit_sigma1_legacy q) = q - q⁻¹)
     ∧
     -- σ_1 determinant = −1
-    (Matrix.det (hoefsmit_sigma1_gen q) = -1)
+    (Matrix.det (hoefsmit_sigma1_legacy q) = -1)
     ∧
     -- Markov-symmetrized character is the unsymmetrized trace times cos α
     (∀ trace_unsym : ℝ,

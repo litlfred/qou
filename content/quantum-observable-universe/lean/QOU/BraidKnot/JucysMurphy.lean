@@ -830,8 +830,33 @@ theorem seminormalVector_data_step {k : Type} [Field k] [CharZero k] (μ : Young
 /-- **OV existence core 1 (base seminormal vector — the residual cited debt).** For *some*
 standard tableau `T₀` of shape `μ` there is a nonzero simultaneous JM eigenvector in `S^λ`
 with the content tuple of `T₀`.  Classically this is the explicit seminormal vector of the
-column-superstandard tableau (or, in Okounkov–Vershik, the highest weight of the GZ chain);
-its construction needs the polytabloid straightening machinery not yet built here.  Strictly
+column-superstandard tableau (or, in Okounkov–Vershik, the highest weight of the GZ chain).
+
+**Status note (corrected).** An earlier version of this docstring said the construction "needs
+the polytabloid straightening machinery not yet built here". That is **stale**: this file
+imports `QOU.BraidKnot.SpechtStandardBasis`, and the straightening machinery
+(`standardPolytabloid_straightening`, `standardPolytabloid_span`, and the Garnir core
+`straightening_step_colMax`) is now **proved sorry-free** there — `#print axioms` on each gives
+exactly `[propext, Classical.choice, Quot.sound]`. So the cited blocker no longer applies; what
+remains is the eigen-computation itself, not missing infrastructure.
+
+The reduction is set up in `QOU.BraidKnot.OVBaseSeminormalVector` (sorry-free, imports this
+file — hence the residual must be discharged there or in a leaf, not in place). Its
+`jm_polytabloid_split` gives, for any tableau `t`,
+
+  `X_s · e_t = #{j < s : (j s) ∈ colStab t} · (−e_t) + Σ_{j < s, (j s) ∉ colStab t} e_{(j s)·t}`.
+
+For the column-superstandard `T₀` with `s` at cell `(i, j)` the same-column count is `i`, so the
+first term is `−i · e_{T₀}`; since `content(i,j) = j − i`, the **sole remaining obligation** is
+the off-column (Garnir) collapse
+
+  `Σ_{j' < s, (j' s) ∉ colStab T₀} e_{(j' s)·T₀} = j · e_{T₀}`,
+
+i.e. the off-column sum contributes exactly the number of cells strictly left of `s` in its row.
+Numerically confirmed in
+`docs/audits/2026-07-19-ov-base-vector-column-superstandard-verification.md`.
+
+Strictly
 smaller than the previous all-`T` existence core: existence for a *single* tableau, with the
 propagation to every `T` now machine-checked (`seminormalVector_data_step` +
 `syt_adjacentSwap_connected`).

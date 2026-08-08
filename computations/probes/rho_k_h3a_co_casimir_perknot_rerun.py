@@ -61,7 +61,12 @@ from codata_constants import M_E_MEV, M_P_MEV, M_D_MEV  # noqa: E402
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from murnaghan_nakayama import partitions_of  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _li_2_q_util import vol_density_per_block, vol_density_borromean  # noqa: E402
 
 VOL_B3 = 8 * mp.catalan  # Vol(𝓑₃), Adams 1985 — same constant the density routines use
@@ -127,8 +132,7 @@ def main() -> int:
     print(f"  Σ y_λ χ^λ Δ_λ^B (density-independent)       = {mp.nstr(sum_contrib, 12)}")
 
     # Cross-check against the parent's committed witness value.
-    parent_w = json.loads(
-        _pb.witness_path("rho-k-h3a-co-casimir.witness.json", _PARENT).read_text())
+    parent_w = record_upstream(_pb.witness_path("rho-k-h3a-co-casimir.witness.json", _PARENT), _UPSTREAM_RECORDS)
     parent_sum = mp.mpf(
         parent_w["data"]["co_casimir_prediction"]["sum_contributions_signed"])
     sum_match = abs(sum_contrib - parent_sum) < mp.mpf("1e-40")
@@ -176,6 +180,7 @@ def main() -> int:
     print(f"\n  VERDICT: {verdict}")
 
     wb = WitnessBuilder("rho-k-h3a-co-casimir-perknot-rerun", engine="python+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.data["audit"] = "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md"
     wb.data["bean"] = "x5az"
     wb.data["q_0_50dps"] = mp.nstr(Q_MP, 50)

@@ -71,7 +71,12 @@ import mpmath as mp
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP, Q_INV_MP
 from experimental_constants import M_P_MEV, M_N_MEV
 
@@ -89,7 +94,7 @@ def main() -> int:
     if not witness_path.exists():
         print(f"  ERROR: {witness_path} missing")
         return 1
-    delta_n2 = json.loads(witness_path.read_text())
+    delta_n2 = record_upstream(witness_path, _UPSTREAM_RECORDS)
     results = delta_n2["data"]["results_by_n"]
 
     print("\n  Per-Hecke-level Δ_n² action (q₀^{c(λ)} per block):")
@@ -159,7 +164,7 @@ def main() -> int:
     # placeholder `full_twist_scalar(A)=1.0` shortcut in the legacy
     # path and therefore remains a legacy-witness consumer by design.
     s3_path = _pb.witness_path("atomic-braid-mass-table.witness.json", HERE)
-    s3 = json.loads(s3_path.read_text())
+    s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 
     p_t1 = mp.mpf(rows["p"]["term1_atomic_total"])
@@ -211,6 +216,7 @@ def main() -> int:
 
     # Witness emission
     w = WitnessBuilder("delta-n2-placeholder-audit", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Item 4b from Phase 1.8 actionable path: audit the Δ_n² placeholder "
         "in atomic_braid_mass_table.full_twist_scalar (currently returns 1.0 "

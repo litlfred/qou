@@ -146,13 +146,18 @@ sys.path.insert(0, str(HERE))
 
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 
 # Substrate q_0 at 50 dps (witness-derived)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 HBAR_Q = (Q - mp.mpf(1)) / Q
 
 # Borromean rings hyperbolic volume.  Exact closed-form via the
@@ -227,6 +232,7 @@ LINKING_WEIGHT_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4633436333")
 
 def main() -> int:
     w = WitnessBuilder("m-p-borromean-verification-50dps", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "AUDIT-VERIFICATION at MPFR 50 dps of the EXCISED λ_A "
         "Borromean-VolDensity path (`conj:borromean-baryon-mass-formula`) "

@@ -209,7 +209,7 @@ def main() -> int:
     # ─────────────────────────────────────────────────────────────────
     log("Step 1: Load tr_M(p, q) and tr_M(n, q) from witness")
     w_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
-    w = json.loads(w_path.read_text())
+    w = builder.add_upstream(w_path)
 
     p_tr_str = w["results"]["p (proton, A=1)"]["tr_M_in_q"]
     n_tr_str = w["results"]["n (neutron, A=1)"]["tr_M_in_q"]

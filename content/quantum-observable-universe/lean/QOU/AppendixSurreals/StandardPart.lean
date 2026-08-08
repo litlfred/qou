@@ -278,7 +278,7 @@ downstream development quote `standardPart` as a Mathlib
 /-- The **finite-surreal subring** of `K`.  Closure follows from
     `zero_isFinite`, `one_isFinite`, `IsFinite.add`, `IsFinite.neg`,
     `IsFinite.mul` (proved in `Basic.lean`). -/
-def finiteSubring : Subring K where
+def SurrealField.finiteSubring : Subring K where
   carrier := { x : K | SurrealField.IsFinite x }
   zero_mem' := SurrealField.zero_isFinite
   one_mem' := SurrealField.one_isFinite
@@ -320,20 +320,20 @@ quotient. -/
 def IsClose (x y : K) : Prop := SurrealField.IsInfinitesimal (x - y)
 
 /-- `IsClose` is reflexive. -/
-theorem refl (x : K) : IsClose x x := by
+theorem IsClose.refl (x : K) : IsClose x x := by
   unfold IsClose
   rw [sub_self]
   exact SurrealField.zero_isInfinitesimal
 
 /-- `IsClose` is symmetric. -/
-theorem symm {x y : K} (h : IsClose x y) : IsClose y x := by
+theorem IsClose.symm {x y : K} (h : IsClose x y) : IsClose y x := by
   unfold IsClose at *
   have hneg : -(x - y) = y - x := by ring
   rw [← hneg]
   exact h.neg
 
 /-- `IsClose` is transitive. -/
-theorem trans {x y z : K}
+theorem IsClose.trans {x y z : K}
     (hxy : IsClose x y) (hyz : IsClose y z) : IsClose x z := by
   unfold IsClose at *
   have heq : x - z = (x - y) + (y - z) := by ring

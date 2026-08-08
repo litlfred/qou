@@ -36,6 +36,14 @@ from mpmath import mp, mpf  # noqa: E402
 warnings.filterwarnings("ignore")
 import snappy  # noqa: E402
 
+# Raise precision BEFORE building any module-level mpf. `set_compute_dps()` is
+# also called in main(), but that runs long after import — a constant built
+# here at mpmath's default 15 dps is frozen at 53 bits, and serializing it
+# later at compute precision prints the binary64 tail (3477.23 came out as
+# 3477.23000000000001818989403545856475830078125). Idempotent, so the call in
+# main() is unaffected.
+set_compute_dps()
+
 M_TAU_OVER_M_E = mpf("3477.23")
 CENSUSES = [
     "HTLinkExteriors",

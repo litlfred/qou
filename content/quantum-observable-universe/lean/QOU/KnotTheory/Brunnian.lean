@@ -63,7 +63,7 @@ def deleteLetters (ℓ : List BraidLetter) (i : ℕ) : List BraidLetter :=
 /-- Naive component deletion on a braid word: drops the strand
     at position `i` and renumbers higher generators.  See the
     `deleteLetters` doc-comment for the topological caveat. -/
-def deleteComponent (β : BraidWord) (i : ℕ) : BraidWord where
+def BraidWord.deleteComponent (β : BraidWord) (i : ℕ) : BraidWord where
   name := β.name ++ "_minus_" ++ toString i
   strands := β.strands - 1
   letters := deleteLetters β.letters i

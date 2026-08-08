@@ -77,13 +77,18 @@ from pyhecke.gram import (  # noqa: E402
     TR_M,
 )
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 # ── Step 1. Load Gram matrix + inverse from canonical witness ────
 
 GRAM_WITNESS_PATH = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
-_gram_data = json.loads(GRAM_WITNESS_PATH.read_text())
+_gram_data = record_upstream(GRAM_WITNESS_PATH, _UPSTREAM_RECORDS)
 GRAM = np.array(_gram_data["gram_matrix"], dtype=float)
 GRAM_INV = np.array(_gram_data["gram_inverse"], dtype=float)
 assert GRAM.shape == (6, 6), f"Gram matrix shape mismatch: {GRAM.shape}"
@@ -236,6 +241,7 @@ PDG_G_A = 1.2754
 # ── Step 6. Assemble witness ────────────────────────────────────
 
 w = WitnessBuilder("borromean-axial-coupling", engine="numpy")
+w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
 w.set_description(
     "Axial coupling g_A as an instance of the master formula "
     "⟨O⟩_T = Σ_{i,j ∈ A*(T)} u_i (G⁻¹)_{ij} ⟨O,b_j⟩ "

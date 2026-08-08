@@ -1008,6 +1008,94 @@ not an edit. Recorded with the discriminator so it can be scoped:
 # one, but never calls add_upstream
 ```
 
+## P30 — the missing `scriptHash` was concealing real staleness
+
+`compute_audit_scan` reports witnesses lacking `scriptHash` + `scriptFile`,
+without which `run_pipeline.py` treats a witness as current and skips
+regeneration. Scoped, **excluding `_deprecated/`** (a first count said 448 and
+had swept deprecated witnesses in — that number was wrong):
+
+| | witnesses |
+|---|---:|
+| live, carry both fields | 2166 |
+| **no `scriptFile` at all** | **173** |
+| `scriptFile`, no `scriptHash` | **78** — 12 use `WitnessBuilder`, 66 hand-written |
+| `scriptFile` naming a producer that no longer exists | 8 |
+
+**`scriptHash` cannot be backfilled**, which is the first thing to establish
+because it looks like it can: the field hashes the *script*, so it is
+computable without running anything — and stamping the current hash onto a
+witness that may be stale would assert a freshness nobody checked. That is
+precisely the failure the field exists to catch. Only a real re-run produces a
+witness and a hash that agree.
+
+**Re-running is also not enough for most of them.** Of the 12 whose producer
+does use `WitnessBuilder` (7 distinct scripts), re-running gave:
+
+| | |
+|---|---:|
+| gained a `scriptHash` | **5 / 7** |
+| …of those, with **no** value change | **1 / 5** |
+
+The other four moved a large fraction of their numbers:
+
+```
+entanglement-orders                38 of 83 numeric fields changed
+inverse-markov-qvalues             33 of 53
+nf-qvalues                         32 of 43
+markov-free-energy-qvalues         26 of 51
+```
+
+**That is the finding.** These are not cosmetic metadata gaps: 45–77 % of the
+numbers in those four witnesses are stale, and the missing `scriptHash` is
+exactly why nobody noticed — `run_pipeline.py` had no way to know they needed
+re-running. P30's one-line description ("hand-written witnesses are treated as
+current and silently skip regeneration") is understated; the consequence is a
+corpus of committed numbers that no longer match their own producers.
+
+The 66 hand-written ones cannot be fixed by re-running at all — they need
+porting to `WitnessBuilder` first, and a first batch of 12 arbitrary targets
+confirmed it: **0 of 12 gained a hash**, including one that exited 0.
+
+Not regenerated here. Committing those four witnesses changes hundreds of
+published numbers, which is a decision about the corpus rather than a cleanup,
+and it should be made deliberately with the staleness quantified per witness —
+which the table above now makes possible.
+
+### Measured, then regenerated — and a fourth sub-class
+
+All 12 unhashed `WitnessBuilder` witnesses (7 scripts) measured before deciding
+what to commit:
+
+| witness | rc | hash | stale |
+|---|---|---|---:|
+| `nf-qvalues` | 0 | ✓ | **32/43 (74 %)** |
+| `inverse-markov-qvalues` | 0 | ✓ | **33/53 (62 %)** |
+| `markov-free-energy-qvalues` | 0 | ✓ | **26/51 (51 %)** |
+| `entanglement-orders` | 0 | ✓ | **38/83 (46 %)** |
+| `qbeta-odd-carrier-sector-decomposition` | 0 | ✓ | 0/35 |
+| `chi-*` ×6 | 0 | ✗ | 0 |
+| `kite_tail_reconciliation` | 1 | ✗ | 0 |
+
+Five regenerated and committed; **129 numbers move**. Nothing in the sources
+changed — each producer run unmodified at HEAD already disagreed with its own
+committed witness. `qbeta-odd-carrier` is included *because* it moved nothing:
+it isolates the metadata change from the value change.
+
+**The fourth sub-class: `scriptFile` naming a consumer.** The six `chi-*`
+witnesses claim `delta_lambda_empirical_tabulation.py`, which **reads** them as
+`chi_witness` inputs and never writes them — as do `mass_vol_density.py` and
+`mass_per_knot_density.py`. Nothing in the corpus writes them. Re-running the
+named "producer" therefore does nothing, which is exactly what was observed
+(rc=0, hash absent, no value moved).
+
+This invalidates an assumption in the counts above: **`scriptFile` was taken as
+truthful**, and at least 6 of the 12 are misattributed. The earlier split (173
+no `scriptFile` / 78 unhashed / 8 orphaned) is a floor on the provenance
+problem, not a description of it — a witness naming a real script is not
+evidence that script produces it. The honest discriminator is whether the
+script *writes* that filename, which none of these do.
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field
@@ -1052,3 +1140,668 @@ where this document said the non-mechanizable part lived all along.
   (`habiro_interpolate_cross_validator`, `rho_k_h3a_lp_dual`, both exit 2), so
   their traces are partial — sites found are real, absence is not evidence.
 
+
+## P32 — `UNCONFIRMED` triage: follow the filename to the write sink
+
+`witness_provenance_audit.py` shipped (#4717) recognising exactly one way to
+write a witness: `WitnessBuilder`. That is not how most of this corpus writes
+one. 250 producers assemble the payload by hand, write it to an explicit path,
+and stamp the staleness metadata afterwards (`stamp_staleness_metadata`, 185
+call sites). All of them read as non-writers, which is why `UNCONFIRMED` stood
+at **466 of 2250** — a number large enough to make the verdict useless.
+
+The upgrade traces a filename from a literal to a **write sink**. Sinks are
+asymmetric on purpose: `write_text` / `write_bytes` and `open(…, "w"|"a"|"x")`
+count; `read_text` and a bare `open()` do not. That asymmetry is the whole
+safeguard, and it is the difference between this and the "mentions it" test
+that produced the original mis-attribution.
+
+Three path idioms, found by reading what was left after each pass rather than
+by guessing up front:
+
+| idiom | example | after |
+|---|---|---|
+| `Path(x)`, `HERE / x`, via a variable | `out = HERE / "…"; out.write_text(…)` | 466 → 198 |
+| `os.path.join(…, x)` | the whole `alpha_em` probe family | 198 → 53 |
+| `p.with_name(x)` | the `borromean` cluster | 53 → **32** |
+
+Each idiom landed with a **paired negative test** — the same construct reaching
+a read instead of a write, which must stay `UNCONFIRMED`.
+
+### What was checked, given this arc's history
+
+Three earlier cuts of this tool were wrong by ~10× each (324 → 189 → 28 → 3),
+so a clean-looking jump is precisely when to stop and verify:
+
+- **`NOT_A_PRODUCER` held at 3 across all three extensions — by name, not by
+  count.** This is structural, not luck: the verdict is reached only when the
+  source mentions no witness at all, and finding *more* writes cannot create
+  that condition. The upgrade can only move `UNCONFIRMED → WRITES`.
+- **The regression is pinned on real corpus data, not only in a unit test.**
+  All six `chi-*.witness.json` that name `delta_lambda_empirical_tabulation.py`
+  remain `UNCONFIRMED`: that script contains their filenames, hands them to a
+  read, and writes a different witness. This is the exact shape the tool exists
+  to reject, and it survives the upgrade.
+- **Five newly-promoted witnesses were read by hand**, all confirmed genuine
+  writers. One was worth the trip: `chi_at_q0_via_hoefsmit_mpfr.py` was cited in
+  the tool's own docstring as unresolvable ("writes via a helper"). It does have
+  an atomic-save helper — and also writes `out.write_text(...)` directly at line
+  341, so the f-string pattern resolves it correctly. The docstring's example
+  was stale and has been replaced with one that is still true
+  (`binding_canonical.py`, whose builder name is not a literal).
+- **A self-test case had to be retired, not satisfied.** `"hand-rolled write"`
+  asserted `UNCONFIRMED` for `Path("out.witness.json").write_text(j)` — the
+  documented limitation this change removes. Replaced by the identical source
+  expecting `WRITES`, with a comment recording the swap so it does not read as
+  a silently loosened test. 25/25 pass.
+
+### Two findings recorded, not fixed here
+
+- **Six `chi-*` witnesses are mis-attributed.** Their `scriptFile` names a
+  script that reads them. `UNCONFIRMED` is the honest verdict — the tool cannot
+  prove no unseen path writes them — but the correct producer should be
+  identified and the claim repaired.
+- **`computations/computations/` exists and is committed** (3 duplicate
+  witnesses, commit `e5dcd8f5`), the signature of a producer run from the wrong
+  working directory. Checked specifically because this arc has already been
+  burned once by mistaking self-inflicted contamination for a finding
+  (`/tmp/trace-wt`); `git ls-files` confirms these are tracked and pre-existing.
+  Shadow copies of files that also exist at the correct path — a corpus
+  decision, not a tool fix.
+
+## P33 — the six `chi-*` mis-attributions, and why `computations/computations/` existed
+
+### The doubled directory: a cwd-relative path plus a silent `mkdir`
+
+Three producers wrote to the **string literal** `"computations/<name>.witness.json"`
+— resolved against the *current working directory*, not the script. Run from the
+repo root it lands correctly; run from inside `computations/` it lands in
+`computations/computations/`. Two of the three then call
+`out_path.parent.mkdir(parents=True, exist_ok=True)`, which **creates** the
+spurious directory instead of failing, so the mistake left no trace but the
+files. `binding_bring_enhancement_compare.py` already defined `HERE` at line 40
+and did not use it for output; `binding_alpha_shift_witness.py` documented its
+default as *"alongside the script"*, which is precisely what it was not.
+
+All three now build the default from `__file__`. Verified the way the bug was
+caused rather than statically: run each from inside `computations/`, confirm the
+witness lands at the correct path and no doubled directory reappears.
+
+The three committed copies were stale — written 17:36–17:42 on 2026-07-18,
+where the correct-path copies date from 19:19–23:59 the same day — and they
+differ in numbers, not just metadata. Deleted, along with their three keys in
+`raw-float64-baseline.json` (83 baselined fields; removing baseline entries only
+tightens the gate). Audit totals move by exactly those three files and 83 fields
+and nothing else; `NEW dirty 11 / REGRESSED 1` reproduce identically on a clean
+tree, so they are pre-existing and unrelated.
+
+**A drift found while verifying, and deliberately not committed.** Re-running
+those three today reproduces the *older* numbers:
+`binding-bring-enhancement-compare` regenerates `q_0_50dps` at 68 digits where
+the committed witness holds the 50-digit proton anchor, and its
+`delta_flavor_split_subleading` comes back as the value from the stale doubled
+copy. That is a genuine reproducibility failure in the producer's q₀ sourcing —
+unrelated to the path fix, which only changes *where* the file is written. The
+regenerated witnesses were reverted; committing them would leak a drifted value
+over a committed one, the failure `q0_muon_reproduction_sweep.py:145` names as
+the tnjb corruption. Recorded here as its own item.
+
+### Five of the six `chi-*` claims repaired; the sixth is an orphan
+
+Each producer was identified twice over, by independent means — a static trace
+from filename to write sink, and the shape of the payload the candidate writes:
+
+| witness | producer | fingerprint |
+|---|---|---|
+| `chi-proton-h3`, `chi-neutron-h3`, `chi-tritium-h9`, `chi-helium-3-h9` | `per_irrep_pole_atom.py` | 8/8 keys, incl. `compute_time_sec_so_far` |
+| `chi-deuteron-h6` | `per_irrep_pole_deuteron_h6.py` | its smaller payload, and `compute_time_sec` |
+| `chi-helium-4-h12-numeric` | **none** | 1/8 — matches neither |
+
+`per_irrep_pole_atom.py` carries all six atoms in its table and writes
+`chi-{atom}-h{3(Z+N)}.witness.json`; `canonical_tr_m_via_chi_cache.py:82` says
+so outright in a `FileNotFoundError` — *"Run `per_irrep_pole_atom.py {atom_name}`
+to build it."* The `-numeric` suffix on the helium-4 file is why it is not that
+script's output: the live counterpart `chi-helium-4-h12.witness.json` exists and
+fingerprints 8/8. `-numeric` is a superseded variant with no producer — a fourth
+orphan alongside the three already triaged, to be deleted or re-attributed as a
+corpus decision.
+
+Only `scriptFile` was changed. None of the six carried a `scriptHash` (asserted,
+not assumed — the repair aborts if one is present), so no hash was desynced and
+none was invented; `run_pipeline` still sees them as needing a run. The repair
+then **verifies itself**: all five reclassify `UNCONFIRMED → WRITES` under an
+audit that was given no knowledge of the fix.
+
+`_path_bridge.witness_path(name, HERE)` — this repo's own resolver, 208 call
+sites — was added to the tracer as a fifth idiom. It moved only 2 witnesses:
+those call sites are overwhelmingly reads. **`UNCONFIRMED` now stands at 25**,
+`NOT_A_PRODUCER` still the same three by name.
+
+## P34 — Class B closed: the digits decide what the distance cannot
+
+The Class B verdict above was **"needs a decision about the detector, not the
+producers"**, and reasoned that no static test could separate a genuine
+near-integer from a truncated double, because the two overlap on distance:
+
+    mpf(0.1) printed at 50 dps   rel. distance 1.56e-50   IS padding
+    tr_M(1), genuinely computed  rel. distance 1.37e-51   is NOT
+
+That is correct **about a threshold** — and the detector was a threshold
+(`abs(x - mpf(float(x))) / abs(x) < 1e-30`). It is not correct about static
+tests in general, and the difference is worth stating precisely, because the
+earlier conclusion generalised one to the other.
+
+Padding is not "close to a double". Padding is *printing a double's own
+digits*. `mpf(0.1)` at 50 dps emits
+`0.10000000000000000555111512312578270211815834045410` — the exact expansion of
+the binary64, truncated. `tr_M(1)` emits `0.999…99863`, and the nearest double
+is `1.0`, whose exact expansion is `1`. Those are different digit strings, and
+proximity does not make them the same one. `Decimal(<float>)` gives the double's
+exact value, so the comparison is available and cheap.
+
+`is_double_expansion` asks that question, with a tolerance of exactly one
+half-ulp **of the shown precision** — mpmath rounds the last digit it prints,
+and a first draft that demanded exact string equality wrongly cleared the
+expansion of `1e-09` for precisely that reason. The place value is read from
+`Decimal.as_tuple().exponent`, not by counting characters after the `.`, so
+exponent-notation strings get the right ulp. The old threshold is kept as a
+cheap pre-filter and is no longer the discriminator.
+
+### Validated in both directions, because this change can only *remove* flags
+
+The dangerous direction here is the opposite of the provenance work: an
+over-eager discriminator hides real padding instead of inventing it.
+
+- **Nothing real was cleared.** All 15 flags in the committed corpus survive;
+  the audit reports the same 14 occurrences / 7 files / 1 NEW as before.
+- **The false positives clear.** Three of the nine Class B producers were
+  re-run in a throwaway worktree — never the live checkout — and their fresh
+  output carries 15 flagged fields under the old test and **0** under the new
+  one, including `tr_M_identity_H4_at_q0`, `f_leading_ratio`, `H_leading_ratio`
+  and the `h_expansion` table. The remaining six producers were not re-run;
+  their share of the 39 is expected to clear on the same grounds but is **not
+  measured**, and should not be reported as if it were.
+- Seven self-test cases were added, four of them the values those producers
+  actually emit and three the padding shapes that must still be caught —
+  including the `1e-09` expansion that broke the first draft.
+
+### A sixth padding mechanism, found on the way
+
+The audit reported 2 NEW padded fields, both `m_tau/m_e = 3477.23`, in
+producers that already do the right thing (`mpf("3477.23")`, a string, never a
+float). The constant is built at **module scope**, and `set_compute_dps()` is
+called inside `main()` — so the constant is constructed at import time at
+mpmath's default 15 dps, frozen at 53 bits, and serialized later at compute
+precision, printing the binary64 tail. Confirmed directly:
+
+    early = mpf('3477.23')   # at 15 dps      -> 3477.23000000000001818989403545856475830078125
+    mp.dps = 70
+    late  = mpf('3477.23')   # after the raise -> 3477.23
+    early == late            -> False
+
+Not a formatting artifact: the values genuinely differ.
+`m_tau_hecke_energy_route.py` is worse than the literals suggest — it also
+*divides* at 15 dps (`mpf("1776.86") / mpf("105.6583755")`).
+
+Both now call the idempotent `set_compute_dps()` at module scope before any
+constant. `m_tau_hecke_energy_route` is fixed and regenerated: the padding is
+gone and `abs_rel_error_pct` shifts in the ~14th digit, which is the fix
+working rather than drift.
+
+**The class is larger than the two.** An AST sweep finds **170 module-level
+`mpf("…")` constants across 63 files** built before precision is raised. Most
+are harmless — tolerances (`mpf('1e-25')`) and constants with fewer
+significant digits than 53 bits carries (`mpf('0.51099895069')`, 11 digits) —
+so this is a *potential*, not a backlog of 170 defects. It deserves its own
+gate on the same argument that justified `mpf_context_dps_audit.py`: neither
+existing gate can see it, because a value that is merely *wrong* past digit 16
+is not padded and carries no float64 marker. Not built here.
+
+### Un-regenerated, then regenerated — the census was installable after all
+
+`m_tau_census_sweep.py` was first left with its fix committed and its witness
+not, because a re-run here searched 180,511 manifolds where the committed
+record has 433,804: SnapPy installs, but this build shipped without the large
+census databases. That was reported as an honest red rather than a green bought
+with a degraded environment.
+
+It was worth one more attempt. `pip install snappy_15_knots` supplies the
+missing database, and `len(HTLinkExteriors)` then reads **433,804** — the exact
+figure in the committed witness, which is what makes the re-run trustworthy
+rather than merely successful. Regenerated on that basis: every census count,
+volume ceiling and ceiling manifold is byte-identical to the committed record,
+so the only changes are the padding fix (`m_tau_over_m_e` → `3477.23`) and
+`vol_target_k2` moving in the 17th significant digit, which is the correctly-
+precise constant propagating.
+
+The padding audit is now **NEW: 0** and `--strict` exits 0.
+
+The general point stands and is worth keeping: three environment mismatches
+turned up in one session (mpmath 1.3.0 vs 1.4.1, this census, and
+`pyhecke_native`/`clarabel` with Python 3.11 vs 3.13). Two were repairable and
+one is not. The rule that held throughout is not "never regenerate" but
+**match the reference environment first, and verify the match on a value the
+committed witness already records** — here, the manifold count.
+
+## P35 — undeclared upstreams: the count was 122 because the sweep was a grep
+
+`witness_upstream_declaration_audit.py` replaces the ad-hoc sweep that produced
+the 122 figure above. It shares its path resolver with
+`witness_provenance_audit` — same idioms (`Path(x)`, `HERE / x`,
+`os.path.join`, `p.with_name`, `_pb.witness_path`, and values reached through
+a variable), with the read/write sinks **inverted**: here `read_text`,
+`json.load(open(p))` and a bare `open(p)` are what count, and a write is not.
+
+| | producers | edges |
+|---|---:|---:|
+| undeclared upstream (invisible to drift) | **331** | **410** |
+| fully declared via `add_upstream` | 23 | |
+| declares, but via a computed path — not counted either way | 7 | |
+
+The earlier 122 was a grep for `json.load` adjacent to a literal filename, so
+it saw only the plainest spelling. Every path that reaches a read through a
+variable, a helper, or `os.path.join` was invisible to it — the same
+undercount, in the same direction, that recognising only `WitnessBuilder` made
+in P32. **331 is not a correction of a wrong method; it is the same question
+asked with a resolver instead of a regex.**
+
+Three flagged producers were read by hand and all three are real:
+`aK_via_lp_dual.py:56` (`json.load(Q_PIN.open())`),
+`alpha_star_vs_binding_gap.py:68-72` (three witnesses opened directly), and
+`_habiro_coefficient_extract.py:136`. The last one is worth naming as a
+limitation rather than a win: it resolves because a module-level variable and
+a function parameter share the name `habiro_path`, and here they do denote the
+same file. A different file passed under a reused name would resolve wrongly.
+
+**Bounding the noise:** 21 of the 410 edges (5%) name a witness that does not
+exist in the corpus — dangling reads, or name-collision artifacts of exactly
+the kind above. The count is a floor with ~5% noise, not a precise inventory,
+and reading it as either would be a mistake.
+
+The useful structure is the ranking, not the total:
+
+| undeclared dependents | upstream |
+|---:|---|
+| 71 | `q-pinning-50-digit.witness.json` |
+| 31 | `y-lambda-at-q0.witness.json` |
+| 30 | `habiro-coefficients-atomic.witness.json` |
+| 18 | `q-beta-operator-valued-N3.witness.json` |
+
+`q-pinning-50-digit` moving silently invalidates 71 producers. That is where a
+port earns the most, and it is a far better unit of work than "331 producers".
+
+**Report-only, not wired into CI.** Every other gate in this arc was
+introduced at baseline zero so it could fail the build. This one starts at 331,
+so gating it would install a standing red — the failure mode #4653 avoided.
+
+### Why no producer was ported here
+
+`add_upstream` rewrites the witness (it records the upstream's hash), so a port
+is a re-run, not an edit — and **this container cannot faithfully re-run these
+producers**. Four candidates were screened in a throwaway worktree:
+
+| producer | what a re-run here would record |
+|---|---|
+| `alpha_star_vs_binding_gap` | already broken: reads `base / "joint-tower-sdp-rust.witness.json"` where `base` is its own directory and the upstream is not there |
+| `alpha_k_jones_markov_h12` | exits 1 |
+| `aK_via_lp_dual` | `python 3.13.12 → 3.11.15`, drops `pyhecke_native 0.9.0` |
+| `a3_mirror_residual_reconciliation` | drops `clarabel 0.11.1` |
+| `alpha_em_shift_chain` | drops `pyhecke_native`, and **loses `q0`, `inv_alpha_chain`, `inv_alpha_bare`** — the computation degrades without the native module |
+
+That is the third environment mismatch this session, after mpmath 1.3.0 vs
+1.4.1 (resolved by installing 1.4.1) and SnapPy's missing census databases (not
+resolved). A port committed from here would record a degraded environment as
+though it were the reference one. The detector is committed and the work is
+scoped; the regeneration wave needs the reference environment — Python 3.13,
+`pyhecke_native`, `clarabel`, the full SnapPy census, mpmath 1.4.1.
+
+`alpha_star_vs_binding_gap.py` reading an upstream from a directory that does
+not contain it is a live bug found on the way, not a consequence of anything
+here. Recorded, not fixed.
+
+## P36 — porting to `add_upstream`: 40 are mechanical, 290 need the API to change
+
+Scoping the port properly changed what the work *is*. Two measurements, each
+of which corrected a guess:
+
+**Where the read happens.** The first cut said all 331 undeclared producers
+read their upstream at import time, which would have meant no builder could
+possibly exist yet. That was a bug in the measurement — the walk descended into
+module-level `def` bodies, so a read anywhere in the file counted as
+import-time. Corrected: **40 read at import, 291 inside a function.** (Same
+error shape as the `try:`-block false positive in P34's gate, found the same
+way: the number was too round to believe.)
+
+**Whether a builder is in scope yet.** The binding constraint is not *where*
+the read is but whether a `WitnessBuilder` exists when it happens, since
+`add_upstream` is a method and the hash record needs somewhere to land:
+
+| | producers |
+|---|---:|
+| builder constructed **before** the first upstream read — directly portable | **40** |
+| builder exists but is constructed **after** the read — needs a reorder | **290** |
+| no builder call at all | 0 |
+
+So the dominant shape in this corpus is *read your inputs at the top, build the
+witness at the bottom* — and `add_upstream` requires exactly the opposite
+order. **That, not oversight, is why adoption sits at 5.7%.** The API asks for
+a structure most of these producers do not have.
+
+### One port, verified end to end
+
+`probe_inter_knot_decoupling.py` is one of the 40. `_load_q_0()` now takes the
+builder and calls `add_upstream(Q_PINNING)`. Re-run, the witness gains exactly
+what it should:
+
+```json
+"upstream_witness_hashes": [
+  {"path": "q-pinning-50-digit.witness.json",
+   "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+   "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+   "computedAt": "2026-07-18T17:30:49.888071+00:00"}]
+```
+
+**No numeric value moves.** Only the source is committed: this container's run
+drops `pyhecke_native 0.9.0` and `clarabel 0.11.1` from the environment block,
+so the witness itself must be regenerated where those exist. The declaration
+takes effect on that re-run; until then the source is strictly better and the
+witness is unchanged.
+
+### What the other 290 need
+
+A reorder per producer is 290 hand-edits with no mechanical check — the shape
+of change this arc has already been burned by once, when a blind regex patched
+ten scratch files where the gate named five.
+
+The alternative is to let the record be taken before a builder exists and
+attach later: a module-level `record_upstream(path)` that wraps the existing
+`load_and_hash_upstream` and accumulates, with `WitnessBuilder` draining the
+pending list on construction. That would make all 290 a one-line substitution
+at the read site, with no restructuring.
+
+**Deliberately not implemented here.** A global mutable accumulator in the
+witness substrate can leak records between producers when two builders are
+constructed in one process, or when a test imports a producer module for its
+symbols — silent cross-contamination of provenance metadata, which is the
+precise failure this whole audit arc exists to prevent. It needs an ownership
+rule (drain-on-construct vs. explicit scope), and that is a substrate design
+decision, not a side effect of a porting pass.
+
+## P37 — `record_upstream`, 21 producers ported, and two corrections
+
+### The API: the list belongs to the caller
+
+P36 measured that 290 of 330 witness-consuming producers read their upstreams
+*before* constructing a builder, so `add_upstream` — a method — could not reach
+them. `record_upstream(path, into)` closes that without a restructure:
+
+```python
+_UP: list = []
+q0 = mpf(record_upstream(Q_PIN, _UP)["derived_50_digit"]["q"])
+...
+w = WitnessBuilder("my-witness").add_upstream_records(_UP)
+```
+
+The obvious alternative was a module-level accumulator drained on builder
+construction — one edit per producer instead of two. **Rejected, and the
+rejection is the design.** It breaks in two ordinary situations: producer P
+imports Q, and Q recorded upstreams at *its* import, so P's builder drains and
+claims Q's records; or a test imports a producer for its symbols and any later
+builder inherits them. Both silently attach the wrong provenance — the precise
+failure this metadata exists to detect. An explicit list makes that class of
+bug unrepresentable: a record can only reach the witness whose author named the
+list. `test_lists_do_not_leak` pins it, and `add_upstream_records` is
+idempotent by `(path, sha256)` so recording early and declaring late cannot
+double an edge. 7 tests, all passing.
+
+### 21 producers ported, by a rewriter that only touches what it can prove
+
+Hand-editing 40 files of varied shape is the blind-regex hazard this document
+has already paid for once. Instead an AST rewriter replaced only reads it could
+prove: the whole read is **one expression** (`json.loads(X.read_text())` or
+`json.load(X.open())`), `X` resolves via the audit's own resolver to a witness
+the module does not itself write, and a `WitnessBuilder` is assigned to a plain
+name **in the same function, strictly before** the read. Everything else was
+left alone.
+
+Verification was external to the rewriter, which is the point:
+
+- 23 files changed, 25 reads rewritten; **all 23 compile**.
+- The audit — which knows nothing about the rewriter — moves from 330/409 to
+  **309 producers / 384 edges**, and declared from 24 to 45. The edge count
+  fell by exactly 25, matching the rewriter's own report.
+- Sampled runs: 3 of 4 exit 0 and emit the declaration, including a two-edge
+  case (`delta-lambda-z4N-phase4` → `delta-lambda-jsj-phase3` +
+  `delta-lambda-empirical-tabulation`). The fourth,
+  `delta_lambda_jsj_phase3`, fails on a missing `probe_he4_jsj_topology` —
+  **identical before and after the port**, so pre-existing.
+
+Source only again: this container drops `pyhecke_native` and `clarabel`, so the
+witnesses must be regenerated where those exist.
+
+### Correction: the `chi-helium-4-h12-numeric` readers cannot be repointed
+
+The previous pass proposed repointing its three readers at
+`chi-helium-4-h12.witness.json` and retiring the variant. **That was wrong**,
+and reading the two files settles it: the `-numeric` witness carries
+`per_partition` (with `y_at_q0`, `chi_q_at_q0`) and `abs_tr_M`, while
+`chi-helium-4-h12` carries `chi_lambda_symbolic`. They are a numeric result and
+a symbolic cache — not two spellings of one thing, and
+`delta_lambda_2row_stratum_analysis.py:177` reads `cached["per_partition"]`,
+which the symbolic file does not have.
+
+Its producer is gone from the tree entirely — every script emitting `abs_tr_M`
+is under `_deprecated/`, and none of them writes this filename. So it is an
+**un-reproducible live input**, and its `scriptFile` was the same false claim
+the five `chi-*` witnesses carried: `delta_lambda_empirical_tabulation.py`,
+which only reads it. Repaired to the corpus's existing convention for this
+situation — a parenthesized prose value, as used by 6 other witnesses
+("(legacy orphan — no current producer; …)"), naming the confusion so the next
+reader does not repeat it. No `scriptHash` was present, so nothing desynced.
+`UNCONFIRMED` 21 → **20**.
+
+### Triage: `PADDING_RISK` needs no bulk fix, and that is now demonstrated
+
+Of the 133, roughly 95 are measured physical constants (CODATA/AME/PDG) and 38
+are tolerances. In both, the value survives 53 bits — six significant digits is
+all `1776.86` *has*. Harm only reaches a witness by serializing at compute
+precision, and that path is already gated: build each at 15 dps, `str()` at 70,
+and `is_f64_padded` flags **every one**, including `1e-25`. The padding audit
+sits at zero under `--strict`, and it is exactly how the two `m_tau` producers
+were caught. Gating this tier would add 133 obligations against a failure
+another gate already stops.
+
+### Recorded, not fixed
+
+`tools/qou-substrate/tests/test_smoke.py::test_substrate_constants_have_expected_values`
+fails on clean `main` (verified by stash): `HBAR_Q_SQ` disagrees with
+`VOL_FIGURE_EIGHT / MASS_RATIO_MU_E` by 2.06e-09 against a 1e-15 tolerance.
+A substrate-constants inconsistency, unrelated to anything here, and not
+something to silently adjust.
+
+## P38 — the reference environment was reachable after all; 4He leaves a dead anchor
+
+### Three "environment blockers" were two installs and a misreading
+
+P36/P37 held witnesses back because this container could not reproduce the
+reference environment. Pushing on that dissolved most of it:
+
+| gap | resolution |
+|---|---|
+| mpmath 1.3.0 vs 1.4.1 | `pip install mpmath==1.4.1` |
+| SnapPy census: 180,511 vs 433,804 manifolds | `pip install snappy_15_knots` → `len(HTLinkExteriors)` = 433,804, matching the committed witness exactly |
+| `clarabel` absent | `pip install clarabel` → 0.11.1, the recorded version |
+| `pyhecke_native` absent | built from `tools/pyhecke-native` with maturin + `libgmp-dev`/`libmpfr-dev` → **0.9.0**, the recorded version |
+| "Python 3.12/3.13 vs this container's 3.11.15" | **a misreading.** 1463 of 1680 witnesses already record 3.11.15; 3.13.12 accounts for 141 and 3.12.3 for 65. This container *is* the corpus norm — regenerating here converges rather than downgrades. |
+
+The last one is worth naming as an error rather than a discovery: two witnesses
+that happened to be built elsewhere were generalised into a blanket rule, and
+that rule then blocked ~130 regenerations for two passes. The check that
+settled it — count what the corpus actually records — cost one command.
+
+### Regeneration: mechanism proven, wave not finished
+
+A harness runs every producer that declares an upstream, then classifies:
+`DECLARED` (the hashes appeared and nothing but metadata moved) is kept;
+`VALUES`, `NOCHANGE` and `FAILED` are reverted, so a drift cannot be committed
+by accident. It reverts *only* dirty `*.witness.json` paths — a blanket
+`git checkout -- computations/` would have undone the ported sources, which is
+why the ports are committed first.
+
+163 producers now declare an upstream. The run is slow (many are minutes each)
+and was stopped early; the two that completed are both clean `DECLARED` —
+declaration present, **zero** non-metadata fields changed — and are committed.
+The remaining 161 are a long run, not an unsolved problem.
+
+### 4He was reading a superseded q₀, and that is a content change
+
+`chi-helium-4-h12-numeric.witness.json` has no producer anywhere in the tree,
+and reading it explains why that matters: its `q_0_float` is
+**1.1099785955541805** — the *muon-anchored* q₀ — against the current
+proton-anchored 1.1099785827513808. Three live producers were consuming
+numbers computed at an anchor the repo deliberately retired.
+
+The successor is already in the corpus:
+`chi-helium-4-h12-at-q0-50dps.witness.json` carries the same 77 partitions of
+12, at 50 dps instead of float64, with a live producer
+(`chi_at_q0_via_hoefsmit_mpfr.py`). Two independent signs it was always the
+intended replacement: `delta_lambda_empirical_tabulation.load_chi_per_lambda`
+*already* normalises its `by_partition` / `y_lambda` / `chi_lambda` shape, and
+the 5Li row beside 4He was migrated to this family earlier. 4He was the
+straggler.
+
+All three readers now point at it. **This moves a published number:**
+
+    tr_M(4He), legacy   (muon-anchored q0) = 0.05534834587669884
+    tr_M(4He), successor (proton anchor)   = 0.055358426266783106465
+    relative change                        = 182 ppm
+
+182 ppm is not a rounding artifact; it propagates into the helium-4 binding
+prediction. It is a *correction* — the old value is anchored to a q₀ this repo
+no longer uses — but accepting a 182 ppm move in a published quantity is a
+content decision, so it is stated here in full rather than folded into an
+infrastructure change. Nothing else in the repoint alters a value: the readers
+downcast to float in any case, and `delta_lambda_2row_stratum_analysis`
+computes `dim` itself rather than reading the field the successor lacks.
+
+## P39 — two corrections, and why `--strict` must wait
+
+### The 4He successor is muon-anchored too; the 182 ppm is not an anchor change
+
+P38 said the repoint moved 4He "to the proton anchor". **It did not.**
+`chi-helium-4-h12-at-q0-50dps.witness.json` carries
+`q_0_50dps = 1.1099785955573347…` — the **muon** prefix. The repoint moved 4He
+from one muon-anchored value to another.
+
+The arithmetic should have caught this before the claim was made. The two q₀
+values differ at the **12th** significant digit (`1.10997859555_41805` vs
+`1.10997859555_73347`, ~3e-12 relative). A 3e-12 perturbation cannot move χ at
+the 5th digit. So the 182 ppm was never the anchor: it is a *methodological*
+gap between two computations of the same quantity — the successor via
+`pyhecke_native 0.9.0` `chi_lambda_all_partitions_mpfr` (branch decomposition,
+50 dps), the legacy one by another route at float64. **Two computations of
+tr_M(4He) disagreeing by 182 ppm is an open question, not a resolved one.**
+
+### 4He was not a straggler — the muon anchor is the majority
+
+| | witnesses |
+|---|---:|
+| muon-anchored q₀ only | **650** |
+| proton-anchored q₀ only | 379 |
+| both | 60 |
+| `q0Anchor` field: muon / proton / ambiguous | 344 / 232 / 23 |
+
+The migration to the proton anchor is roughly **37% done**. Calling 4He "the
+straggler" inverted the picture; it sits with the majority.
+
+What actually re-anchors it: `chi_at_q0_via_hoefsmit_mpfr.py` imports `Q` from
+`q_parameter` (`1.1099785827513808…`, proton), so the committed cache is simply
+stale — written before the re-anchoring — and the producer's resume logic skips
+recomputation whenever a complete cache exists, which is why re-running it
+changed nothing. Forced to rebuild it writes
+`q_0_50dps = 1.10997858275138080759166909561076`, correct. That rebuild is 77
+partitions through `pyhecke_native` and is slow (~13 partitions per 10 min);
+it is incremental and SIGTERM-safe, so it resumes.
+
+### `--strict` cannot be turned on yet, and the porting made that worse
+
+`witness_dependency_drift.py` runs warn-mode (`|| true`) pending a drained
+backlog. It is not drained:
+
+|  | before this session's ports | now |
+|---|---:|---:|
+| self-stale (`scriptHash` ≠ producer) | 479 | **567** |
+| drift records | 633 | 634 |
+| witnesses carrying `upstream_witness_hashes` | 155 | 161 |
+
+**The +88 is mine.** Porting a producer changes its source, hence its
+`scriptHash`, while its witness stays unregenerated — so every source-only port
+converts an *undeclared-edge* problem into a *self-staleness* problem until the
+witness is re-run. Producer-side declaration is now at 44%, but witness-side
+adoption is still 5.9%, and only regeneration closes that gap.
+
+That is an argument for **finishing the regeneration wave before porting the
+remaining 197**, not for porting more: each additional port raises the very
+backlog that keeps `--strict` off. The residual 197 break down as 91 with no
+plain-`Name` builder assignment (they use `wrap_legacy` /
+`stamp_staleness_metadata`, so `add_upstream_records` has nowhere to attach),
+88 with an unhandled read shape, and 18 using `with X.open() as fh`.
+
+Precondition for escalation, stated so it can be checked rather than judged:
+self-staleness back to its pre-port level or below, and witness-side upstream
+adoption tracking the 44% producer-side figure. The three precision gates
+(`mpf_context_dps`, `module_const_precision`, `witness_float64_padding`) are
+already `--strict` and already green; the staleness validator is the only step
+still carrying `|| true`.
+
+## P40 — I committed drift I had built a harness to prevent
+
+Three witnesses reached a commit here with moved values and no review:
+`braid-encoding-audit` (87 fields), `c3-hopf-habiro-analysis` (9),
+`binding-energy-categorical-deuteron` (1). They came from **manual sample
+runs** of the ported producers, swept up by `git add -A` — the regeneration
+harness, which exists precisely to revert anything that is not a clean
+declaration landing, was never involved. A fourth, the 4He chi cache, was
+committed **13/77 complete** because a background rebuild was mid-flight when
+the same `git add -A` ran. All four are reverted to `origin/main`.
+
+The lesson is not "be careful with `git add -A`" but that the discipline has to
+be *in the tooling path*: I ran producers outside the harness and then staged
+everything, so the harness's guarantees did not apply to the thing being
+committed.
+
+### What the reverted diff shows, though, is the migration answering itself
+
+`braid-encoding-audit`'s 87 moved fields are all one substitution:
+
+    old  -0.10453016099779683   = -h/2 at the MUON anchor
+    new  -0.10453014939781968   = -h/2 at the PROTON anchor
+
+The producer reads `Q` from `q_parameter`, which is proton-anchored, so
+**re-running it re-anchors it automatically**. That generalises: the 650
+muon-anchored witnesses are not a separate migration project — they re-anchor
+as a side effect of being regenerated, and they stay muon-anchored precisely
+because nothing has re-run them.
+
+**This breaks my regeneration harness's classification.** It keeps `DECLARED`
+(hashes appeared, nothing else moved) and reverts `VALUES`. But a producer that
+both declares an upstream *and* re-anchors will be classified `VALUES` and
+reverted — the harness would discard a correct migration as drift. It needs a
+third verdict that recognises a muon→proton anchor substitution as intended,
+rather than lumping it with unexplained movement.
+
+### The 4He native path is bypassed for an unrelated reason
+
+Forcing the rebuild reveals `chi_at_q0_via_hoefsmit_mpfr` falling back off
+`pyhecke_native` to the pure-mpmath loop, which is far too slow for n=12:
+
+    native chi path bypassed (ValueError: unrecognised d=-0.10445824776972628903…
+    expected 0, -h, or -h/2)
+
+That `d` matches `-h/2` under **neither** anchor — proton gives
+`-0.1045301493978196`, muon `-0.1045301609977968`, and the value seen is
+`-0.1044582477697262`, differing at the 4th significant digit. So this is not
+an anchor artifact and not caused by the re-anchoring; it is a pre-existing
+incompatibility between the word encoding and the native path's expectations,
+surfacing only because the resume logic normally skips the computation
+entirely. Re-anchoring 4He is blocked behind it. Not diagnosed here.

@@ -36,21 +36,21 @@ notation "τ(" r "," s ")" => TorusKnotLabel.mk r s (by omega) (by omega) (by de
 /-- The Seifert genus of a torus knot: `g(T_{r,s}) = (r−1)(s−1)/2`.
     Returns the Seifert rank (numerator); the actual genus is this
     divided by 2 (which is always an integer for coprime r, s). -/
-def seifertRank (τ : TorusKnotLabel) : ℕ :=
+def TorusKnotLabel.seifertRank (τ : TorusKnotLabel) : ℕ :=
   (τ.r - 1) * (τ.s - 1) / 2
 
 /-- The number of crossings of `τ(r,s)`: `min(r(s−1), s(r−1))`. -/
-def crossings (τ : TorusKnotLabel) : ℕ :=
+def TorusKnotLabel.crossings (τ : TorusKnotLabel) : ℕ :=
   min (τ.r * (τ.s - 1)) (τ.s * (τ.r - 1))
 
 /-- The product invariant `r × s`. -/
-def product (τ : TorusKnotLabel) : ℕ := τ.r * τ.s
+def TorusKnotLabel.product (τ : TorusKnotLabel) : ℕ := τ.r * τ.s
 
 /-! ## §2  Embeddability -/
 
 /-- A torus knot `τ(r,s)` is embeddable on a genus-`g` surface iff
     its Seifert rank fits: `(r−1)(s−1)/2 ≤ g`. -/
-def embeddableOn (τ : TorusKnotLabel) (g : ℕ) : Prop :=
+def TorusKnotLabel.embeddableOn (τ : TorusKnotLabel) (g : ℕ) : Prop :=
   τ.seifertRank ≤ g
 
 instance (τ : TorusKnotLabel) (g : ℕ) : Decidable (τ.embeddableOn g) :=
@@ -62,7 +62,7 @@ instance (τ : TorusKnotLabel) (g : ℕ) : Decidable (τ.embeddableOn g) :=
     - degree 1 if `s` is prime or 1
     - degree 2 if `s` is a perfect square of a prime
     - degree k if `s = p^k` for some prime p -/
-def degree (τ : TorusKnotLabel) : ℕ :=
+def TorusKnotLabel.degree (τ : TorusKnotLabel) : ℕ :=
   -- Simplified: check if s is a prime power
   if τ.s = 9 ∨ τ.s = 4 then 2  -- T_{2,9} = T_{2,3²}, T_{3,4} = T_{3,2²}
   else 1
@@ -116,7 +116,7 @@ theorem tau_2_11_not_embeddable :
 /-! ## §4  Shell assignment -/
 
 /-- The shell number assigned to a torus knot on Σ₄. -/
-def shellNumber (τ : TorusKnotLabel) : ℕ :=
+def TorusKnotLabel.shellNumber (τ : TorusKnotLabel) : ℕ :=
   if τ.r = 2 ∧ τ.s = 3 then 1      -- trefoil → shell 1
   else if τ.r = 2 ∧ τ.s = 5 then 2  -- cinquefoil → shell 2
   else if τ.r = 2 ∧ τ.s = 7 then 3  -- 7₁ → shell 3

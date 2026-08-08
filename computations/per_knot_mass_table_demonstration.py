@@ -121,7 +121,7 @@ def main() -> int:
 
     # Load per-atom Vol(K) witness
     vol_witness = HERE / "per-atom-hyperbolic-volume.witness.json"
-    vol_data = json.loads(vol_witness.read_text())["data"]
+    vol_data = w.add_upstream(vol_witness)["data"]
 
     atoms = [
         ("p",   1, 0, 1, vol_data["Vol_p"],   vol_data["knot_p"]),

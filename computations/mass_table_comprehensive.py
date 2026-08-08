@@ -57,7 +57,12 @@ from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
 )
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402  (canonical facade)
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # AME 2020 binding energies (MeV) — used for comparison only.
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
@@ -175,7 +180,7 @@ def borromean_mass_prediction(
             import json as _json
             vol_witness = HERE / "per-atom-hyperbolic-volume.witness.json"
             if vol_witness.exists():
-                vol_data = _json.load(vol_witness.open())["data"]
+                vol_data = record_upstream(vol_witness, _UPSTREAM_RECORDS)["data"]
                 vol_key = f"Vol_{atom_name}"
                 if vol_key in vol_data:
                     from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M
@@ -333,6 +338,7 @@ def main() -> int:
         engine="mpmath",
         start_time=t_start,
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Comprehensive mass/binding table for all nuclei from proton "
         "(A=1) through ¹²C (A=12) at the current production tier: "
@@ -375,7 +381,7 @@ def main() -> int:
     mt_ppb_data = None
     if mt_ppb_path.exists():
         import json as _json
-        mt_ppb_data = _json.load(mt_ppb_path.open())
+        mt_ppb_data = builder.add_upstream(mt_ppb_path)
 
     for i, (name, Z, N) in enumerate(ISOTOPES):
         A = Z + N

@@ -43,7 +43,12 @@ import pathlib
 
 import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from mpmath import mp, mpf, sqrt, acoth  # noqa: E402
 
@@ -51,6 +56,12 @@ HERE = pathlib.Path(__file__).resolve().parent
 ROOT = HERE.parent
 ISO = ROOT / "qou-mass/src/qou_mass/data/isotopes"
 SCOPING = HERE / "em-linking-invariant-scoping.witness.json"
+
+# Raise precision before the constant below, not only in main(): it is built
+# at import time, and at mpmath's default 15 dps this 30-digit literal would
+# be frozen at 53 bits — half its digits discarded. Idempotent, so the call in
+# main() is unaffected.
+set_compute_dps()
 
 # Derived per-pair Coulomb unit tanh(ln q0)*B_pp, fixed at the A=3 H_6
 # value by the corpus (mirror-pair-coulomb-sign-correction.witness.json).
@@ -95,7 +106,7 @@ def main() -> None:
 
     # End-to-end validation against the published light-pair values.
     published = {int(r["A"]): mpf(str(r["residual_factor_kappa"]))
-                 for r in json.loads(SCOPING.read_text())
+                 for r in record_upstream(SCOPING, _UPSTREAM_RECORDS)
                  ["data"]["per_pair_residual_factors"]}
     val = {}
     max_dev = mpf(0)
@@ -169,6 +180,7 @@ def main() -> None:
     coth_alive = kmin > 1
 
     wb = WitnessBuilder("em-linking-mirror-series", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "The discriminating test for the open two-like-charge "
         "EM-linking invariant (bean qou-i6rg): extends the kappa(A) "

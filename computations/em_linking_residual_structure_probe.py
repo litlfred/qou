@@ -45,7 +45,12 @@ import pathlib
 
 import _path_bridge  # noqa: F401
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from mpmath import mp, mpf, sqrt, acoth  # noqa: E402
 
@@ -72,7 +77,7 @@ def pearson(xs, ys):
 
 def main() -> None:
     set_compute_dps()
-    w = json.loads(SERIES.read_text())
+    w = record_upstream(SERIES, _UPSTREAM_RECORDS)
     rows = [{"A": r["A"], "Z": r["Z"], "kappa": mpf(str(r["kappa"]))}
             for r in w["data"]["series"] if r["A"] not in UNBOUND_A]
 
@@ -130,6 +135,7 @@ def main() -> None:
     any_drift = any(drift.values())
 
     wb = WitnessBuilder("em-linking-residual-structure", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "EXPLORATORY residual-structure analysis of the extended "
         "mirror series (bean qou-dsui). Both surviving geometric "

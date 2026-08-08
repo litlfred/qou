@@ -67,7 +67,12 @@ from codata_constants import (  # noqa: E402
     Q_BETA_MEV,
     Q_BETA_MEV_ERR,
 )
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 OUT = HERE / "qbeta-habiro-residual.witness.json"
 
@@ -92,17 +97,13 @@ def main() -> int:
     sig_exp_rel = mp.mpf(str(Q_BETA_MEV_ERR)) / Q_codata
 
     # --- 1. CANONICAL q₀ (live, proton-pinned) -------------------------
-    qpin = json.loads(
-        (COMP / "q-pinning-50-digit.witness.json").read_text(encoding="utf-8")
-    )
+    qpin = record_upstream(COMP / "q-pinning-50-digit.witness.json", _UPSTREAM_RECORDS)
     q0 = mp.mpf(qpin["derived_50_digit"]["q"])
     anchor = qpin["calibration_inputs"]["anchor"]
     sig_q0_rel = mp.mpf(qpin["physical_anchoring_bound"]["codata_relative_uncertainty"])
 
     # --- production ladder residuals (Q_A / Q_N1 / Q_N2) ---------------
-    ov = json.loads(
-        (COMP / "q-beta-operator-valued-N3.witness.json").read_text(encoding="utf-8")
-    )["data"]
+    ov = record_upstream(COMP / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)["data"]
     Q_A = mp.mpf(str(ov["Q_A"]))       # N=0 = single-wrap closed form
     Q_N1 = mp.mpf(str(ov["Q_N1"]))     # c_1 = b (Kashiwara)
     Q_N2 = mp.mpf(str(ov["Q_N2"]))     # c_2 = -1 (PROVED) — production wire
@@ -168,6 +169,7 @@ def main() -> int:
 
     # --- witness -------------------------------------------------------
     wb = WitnessBuilder("qbeta-habiro-residual", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "σ_theory vs σ_CAL decomposition of the production Q_β residual at "
         "the canonical (proton-pinned) q₀. Recomputed LIVE — settles the "

@@ -89,7 +89,11 @@ _sys.path.insert(0, _os.path.join(_d, "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = _os.path.basename(__file__)
-with open("computations/alphaem-dilog-bloch-probe.witness.json", "w") as f:
+# Script-relative, not cwd-relative: the old "computations/…" literal wrote to
+# computations/computations/… whenever this ran from inside computations/.
+_OUT = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
+                     "alphaem-dilog-bloch-probe.witness.json")
+with open(_OUT, "w") as f:
     json.dump(witness, f, indent=2)
 print("VERDICT:", verdict)
 print("\nsingle-pi signature:", json.dumps(signature, indent=2))

@@ -50,16 +50,19 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from codata_constants import M_E_MEV
 from q_parameter import Q as Q0, HBAR_Q
 
 
 def load_empirical_atoms() -> dict:
     """Per-atom empirical best-single-block Δ data."""
-    w = json.loads(
-        (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
-    )
+    w = record_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE), _UPSTREAM_RECORDS)
     out = {}
     for atom in ("D", "T", "3He", "4He"):
         a = w["data"]["per_atom"][atom]
@@ -132,6 +135,7 @@ def test_two_factor(atoms: dict, V_form: str) -> dict:
 
 def main() -> int:
     builder = WitnessBuilder("delta-lambda-two-factor-phase2")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Phase 2 of the closed-forms-first-principles workplan: tests "
         "the two-factor closure form Δ_λ(K) = V(K) · c_λ across "

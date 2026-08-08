@@ -57,7 +57,12 @@ import sympy as sp
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q as Q0  # noqa: E402
 
 # 50-dps for q₀ verification
@@ -266,9 +271,9 @@ def extract_helium_witnesses(u):
     he3_path = _pb.witness_path("habiro-coefficients-helium-3.witness.json", HERE)
     he4_path = _pb.witness_path("habiro-coefficients-helium-4.witness.json", HERE)
 
-    atomic = json.loads(atomic_path.read_text())
-    he3 = json.loads(he3_path.read_text()) if he3_path.exists() else None
-    he4 = json.loads(he4_path.read_text()) if he4_path.exists() else None
+    atomic = record_upstream(atomic_path, _UPSTREAM_RECORDS)
+    he3 = record_upstream(he3_path, _UPSTREAM_RECORDS) if he3_path.exists() else None
+    he4 = record_upstream(he4_path, _UPSTREAM_RECORDS) if he4_path.exists() else None
 
     def parse_coeffs(coeffs_list):
         """Parse list of {m, a_m} into dict {m: sympy_expr}."""
@@ -359,6 +364,7 @@ def main() -> int:
         "qbeta-habiro-phi8-squared-from-z-squared-probe",
         engine="python+sympy",
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Algebraic verification: tests whether the universal Φ_8² factor "
         "observed in atomic-step Δa_m Habiro factorizations arises "

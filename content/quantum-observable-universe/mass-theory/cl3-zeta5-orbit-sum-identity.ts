@@ -27,4 +27,19 @@ export default proposition({
     "theorem-level",
     "50-dps-numerical",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The identity is rational in a formal `zeta3` and its proof is " +
+        "`field_simp`/`ring`, so the *statement* is algebraic; the `ℝ` " +
+        "enters only because `cl3OrbitSumPredicted` is `ℝ`-typed upstream " +
+        "in `QOU.Infra.Polylogarithm`, where `Cl_3` is a real " +
+        "Clausen-function value. Genericising would mean moving the " +
+        "upstream definition to a generic `[Field R]`, which is a " +
+        "cross-module change and is deliberately not done here.",
+    },
+  ],
 });

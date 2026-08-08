@@ -335,10 +335,10 @@ structure YoungDiagram where
   nonempty : rows ≠ []
 
 /-- The size (number of boxes) of a Young diagram. -/
-def size (μ : YoungDiagram) : ℕ := μ.rows.sum
+def YoungDiagram.size (μ : YoungDiagram) : ℕ := μ.rows.sum
 
 /-- The number of parts (rows) of a Young diagram. -/
-def numParts (μ : YoungDiagram) : ℕ := μ.rows.length
+def YoungDiagram.numParts (μ : YoungDiagram) : ℕ := μ.rows.length
 
 /-- The spin label associated to a two-row Young diagram:
     `j = (λ₁ − λ₂)/2`. -/

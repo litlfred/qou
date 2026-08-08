@@ -34,7 +34,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
@@ -104,7 +109,7 @@ def main():
     print()
 
     # Now: the precision ladder from Q_β witness
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     Q_A = mpf(w["data"]["Q_A"])
     Q_AME = mpf(w["data"]["Q_AME"])
 
@@ -139,6 +144,7 @@ def main():
     print("  ○ N≥4 c_k from higher Habiro terms")
 
     wb = WitnessBuilder("habiro-to-1ppq-chain", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Wire Habiro integer coefficients through precision ladder "
         "to Q_beta. Chain: a_m(u) -> (u;u)_m -> eigenvalue b*hbar^2 "

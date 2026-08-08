@@ -34,7 +34,12 @@ from mpmath import mp, mpf, sqrt, log
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from _precision import set_compute_dps
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR
 
 
@@ -44,7 +49,7 @@ def main():
     h = q - 1/q
     hbar = 1 - 1/q
 
-    w = json.loads((HERE / "q-beta-operator-valued-N3.witness.json").read_text())
+    w = record_upstream(HERE / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
     c3 = mpf(w["data"]["c_3_empirical_additive"])
     b = mpf(w["data"]["hoefsmit_b"])
 
@@ -54,6 +59,7 @@ def main():
     b_sq = (h**2 + 3) / (h**2 + 4)
 
     wb = WitnessBuilder("c3-hopf-habiro-analysis", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     # Wire to the c_3 ↔ Hopf-link categorical prop. NOTE the tiered framing
     # (AGENTS.md c_k banner): this prop is the *near-match* identification
     # c_3 = J_Hopf(q=1) = -2 (classical limit), NOT a Taylor-exact claim.

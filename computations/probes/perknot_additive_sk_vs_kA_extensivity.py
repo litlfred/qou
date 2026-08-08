@@ -50,8 +50,13 @@ from pathlib import Path
 import mpmath as mp
 
 from _precision import set_compute_dps
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
 
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
@@ -96,8 +101,8 @@ def order_desc(vals: dict[str, mp.mpf]) -> list[str]:
 
 
 def main() -> int:
-    synth = json.loads(SYNTH.read_text())
-    rerun = json.loads(RERUN.read_text())
+    synth = record_upstream(SYNTH, _UPSTREAM_RECORDS)
+    rerun = record_upstream(RERUN, _UPSTREAM_RECORDS)
 
     # ── 1. cross-check: reproduce B_base and μ_ext from the synthesis witness
     B_base, B_AME, mu_target = {}, {}, {}
@@ -268,6 +273,7 @@ def main() -> int:
 
     w = WitnessBuilder(
         "perknot-additive-sk-vs-kA-extensivity", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only(
         "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md")
     w.set_description(

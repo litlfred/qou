@@ -88,7 +88,12 @@ import mpmath as mp
 from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP
 
 
@@ -151,7 +156,7 @@ def main() -> int:
     # This script remains a legacy-witness consumer by design.
     here = Path(__file__).parent
     s3_path = here / "atomic-braid-mass-table.witness.json"
-    s3 = json.loads(s3_path.read_text())
+    s3 = record_upstream(s3_path, _UPSTREAM_RECORDS)
     rows = {r["atom"]: r for r in s3["data"]["rows"]}
 
     p_t1 = mp.mpf(rows["p"]["term1_atomic_total"])
@@ -234,6 +239,7 @@ def main() -> int:
 
     # Witness emission
     w = WitnessBuilder("deuteron-delta-i-audit", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Item (a) audit: the genuine Δ_I knot operator at A=2 is "
         "|tr_M(β_D)|/|tr_M(p)|·|tr_M(n)| = 0.3883/2.0386 = 0.1904, NOT the "

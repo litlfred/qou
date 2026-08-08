@@ -48,14 +48,19 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 H = Q - mp.mpf(1) / Q
 
 ATOM_CHI = {
@@ -198,6 +203,7 @@ def solve_atom_lp(atom: str) -> dict:
 
 def main() -> int:
     w = WitnessBuilder("a-K-via-lp-dual-full", engine="numpy")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. "
         "Solves the operator-selection LP per "

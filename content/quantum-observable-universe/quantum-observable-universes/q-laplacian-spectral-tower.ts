@@ -29,4 +29,19 @@ export default proposition({
     "fibre-level",
     "unifying",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module " +
+        "`quantum-observable-universes/q-laplacian-spectral-tower.lean` " +
+        "uses `Real.pi`, `Complex.*`. These are real-analytic constructs " +
+        "with no generic-`CommRing` counterpart, so the `ℝ` " +
+        "specialisation is forced by the statement itself rather than " +
+        "chosen. The block therefore sits on the archimedean side of the " +
+        "§7c wall by construction.",
+    },
+  ],
 });

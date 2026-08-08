@@ -40,7 +40,7 @@ specific NP-complete problem is carried as the structure's *fields* (an
 honest open input); what is proved is that any such reduction *transfers
 polynomiality both ways*. Nothing is wired to production. This composes
 with — does not replace — `PNeqNpEquivalence.JonesComplexityCitations`
-(the `#P` counting inclusion) and the still-`sorry` `QouPNeqNp` carrier.
+(the `#P` counting inclusion) and the instance-free `QouPNeqNp` carrier.
 
 -- Ref: [manuscript] information-theory/skein-turing-machine,
    information-theory/p-vs-np-boundary

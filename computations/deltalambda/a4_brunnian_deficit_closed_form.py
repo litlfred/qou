@@ -62,7 +62,12 @@ import mpmath as mp  # noqa: E402
 
 from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 _T0 = time.time()
@@ -185,8 +190,8 @@ def main():
     _log("building σ-words (band construction mirroring the measuring probe)")
     # provenance guard: the reproduced band word must equal the measured witness's
     import json as _json
-    _wit = _json.loads((_Path(__file__).resolve().parent /
-                        "a4-h12-brunnian-deficit-measure.witness.json").read_text())
+    _wit = record_upstream(_Path(__file__).resolve().parent /
+                        "a4-h12-brunnian-deficit-measure.witness.json", _UPSTREAM_RECORDS)
     assert [[i, j, e] for (i, j, e) in W4_BAND] == _wit["parameters"]["band_factors"], \
         "W4_BAND must match the measuring witness's recorded band_factors"
     w4_sigma = band_word_to_sigma(W4_BAND)
@@ -387,6 +392,7 @@ def main():
     # derivation rather than just the save step.
     w = WitnessBuilder("a4-brunnian-deficit-closed-form", engine="python",
                        start_time=_T0_MONO)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "EXACT symbolic closed form of the A=4 4-component Brunnian level deficit "
         "1 - tau_L4 under the perblock convention g = sum y_lambda*|chi_lambda| at base "
