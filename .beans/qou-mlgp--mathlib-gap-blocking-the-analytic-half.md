@@ -1087,3 +1087,42 @@ remainder and the telescoping bound is NOT yet stated as one theorem); and the
 telescoping step itself — `sum of per-cell oscillations = TV` for a monotone
 function — is not formalised either. Both are bookkeeping over existing pieces,
 but they are bookkeeping that has not been done.
+
+## The oscillation-driven cell bound: first of the two named bookkeeping pieces
+
+`QOU/MathlibExt/CorrectedTrapezoid.lean` gained three more, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`:
+
+    abs_weight_sq_deriv2_le                     |w''| <= 2(b-a)^2 on [a,b]
+    abs_integral_weight_sq_deriv2_mul_le        |int w'' g''| <= 2(b-a)^3 D
+                                                when |g'' - g''(a)| <= D
+    abs_corrected_trapezoid_sub_integral_le_osc |trap - B2 - int| <= (b-a)^3 D/12
+
+The last is the counterpart of `abs_corrected_trapezoid_sub_integral_le`, which
+needs `sup|g''''|`. This one needs only how much `g''` MOVES across the cell —
+an OSCILLATION, not a supremum — which is exactly what telescopes when `g''` is
+monotone.
+
+`|w''| <= 2(b-a)^2` because `w'' = 12u^2 - 12hu + 2h^2 = 12(u - h/2)^2 - h^2`
+ranges over `[-h^2, 2h^2]` on `u in [0,h]`. And `int w'' = 0` is what lets `g''`
+be replaced by `g'' - g''(a)` for free — the substitution that converts a sup
+bound into an oscillation bound.
+
+**LEAN NOTE.** `have hWint := hWc.intervalIntegrable` leaves the MEASURE a
+metavariable (no expected type), and the failure surfaces far away as
+"typeclass instance problem is stuck: IsLocallyFiniteMeasure ?m". Pin it with
+`(mu := volume)` at the `have`. Three rounds were spent patching the wrong line
+before reading the reported line number properly.
+
+## (A) — what is left
+
+    every analytic requirement                                       PROVED
+    the oscillation-driven cell bound                                PROVED <- this commit
+    composite version carrying the oscillation bound + telescoping   OPEN
+    the final assembly                                               OPEN
+
+The remaining composite piece is: redo `abs_integral_sub_composite_le`'s
+induction with `abs_corrected_trapezoid_sub_integral_le_osc` in place of the
+`g''''` bound, and sum the per-cell oscillations of a monotone `g''` by
+`Finset.sum_range_sub` telescoping to `|g''(b) - g''(a)|`. Structurally
+identical to the induction already proved; not yet written.

@@ -343,4 +343,115 @@ theorem integral_weight_sq_mul_deriv4_eq {g₂ g₃ g₄ : ℝ → ℝ} {a b : �
   rw [hb, ha] at hftc
   linarith
 
+/-! ### The `g″`-form error bound, driven by OSCILLATION rather than a sup
+
+Combining the three previous results — the exact order-2 identity, the reduction
+`∫ w·g⁗ = ∫ w″·g″`, and `∫ w″ = 0` — the per-cell error is controlled by the
+OSCILLATION of `g″` on the cell, not by `sup|g⁗|`.  That is what lets the cells
+telescope when `g″` is monotone.
+-/
+
+/-- `|w″| ≤ 2(b−a)²` on `[a,b]`.  Writing `u = x−a` and `h = b−a`,
+`w″ = 12u² − 12hu + 2h² = 12(u − h/2)² − h²`, which on `u ∈ [0,h]` ranges over
+`[−h², 2h²]`. -/
+theorem abs_weight_sq_deriv2_le {a b x : ℝ} (_hab : a ≤ b) (hx : x ∈ Set.Icc a b) :
+    |12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2|
+      ≤ 2 * (b - a) ^ 2 := by
+  rw [Set.mem_Icc] at hx
+  rw [abs_le]
+  constructor <;>
+    nlinarith [mul_nonneg (sub_nonneg.mpr hx.1) (sub_nonneg.mpr hx.2),
+      sq_nonneg (b - a), sq_nonneg (2 * x - a - b)]
+
+/-- **`|∫_a^b w″·g″| ≤ 2(b−a)³·D`** when `|g″ − g″(a)| ≤ D` on the cell.
+
+The point is that `D` is an OSCILLATION, not a supremum: `∫ w″ = 0` lets `g″` be
+replaced by `g″ − g″(a)` for free. -/
+theorem abs_integral_weight_sq_deriv2_mul_le {g₂ : ℝ → ℝ} {a b D : ℝ} (hab : a ≤ b)
+    (hc2 : ContinuousOn g₂ (Set.uIcc a b))
+    (hD : ∀ x ∈ Set.uIcc a b, |g₂ x - g₂ a| ≤ D) :
+    |∫ x in a..b,
+        (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x|
+      ≤ 2 * (b - a) ^ 3 * D := by
+  have hWc : ContinuousOn (fun x : ℝ =>
+      12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2)
+      (Set.uIcc a b) := by fun_prop
+  have hWint := hWc.intervalIntegrable (μ := volume)
+  have hWg2 := (hWc.mul hc2).intervalIntegrable (μ := volume)
+  -- replace `g₂` by `g₂ − g₂ a`, free because `∫ w″ = 0`
+  have hshift : (∫ x in a..b,
+        (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x)
+      = ∫ x in a..b,
+          (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2)
+            * (g₂ x - g₂ a) := by
+    have hpt : ∀ x : ℝ,
+        (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * (g₂ x - g₂ a)
+          = (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x
+            - g₂ a * (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) := by
+      intro x; ring
+    simp_rw [hpt]
+    rw [integral_sub hWg2 (hWint.const_mul _),
+      intervalIntegral.integral_const_mul, integral_weight_sq_deriv2]
+    ring
+  rw [hshift]
+  have hDnn : 0 ≤ D := le_trans (abs_nonneg _)
+    (hD a (by rw [Set.uIcc_of_le hab]; exact ⟨le_rfl, hab⟩))
+  have hpt : ∀ x ∈ Set.uIcc a b,
+      |(12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * (g₂ x - g₂ a)|
+        ≤ 2 * (b - a) ^ 2 * D := by
+    intro x hx
+    rw [abs_mul]
+    have h1 := abs_weight_sq_deriv2_le hab (by rwa [Set.uIcc_of_le hab] at hx)
+    have h2 := hD x hx
+    have hw0 : (0 : ℝ) ≤ 2 * (b - a) ^ 2 := by positivity
+    exact mul_le_mul h1 h2 (abs_nonneg _) hw0
+  calc |∫ x in a..b, _ * (g₂ x - g₂ a)|
+      ≤ ∫ x in a..b,
+          |(12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2)
+            * (g₂ x - g₂ a)| := abs_integral_le_integral_abs hab
+    _ ≤ ∫ _x in a..b, 2 * (b - a) ^ 2 * D := by
+        refine integral_mono_on hab
+          (((hWc.mul (hc2.sub continuousOn_const)).abs).intervalIntegrable
+            (μ := volume))
+          ((continuousOn_const :
+            ContinuousOn (fun _ : ℝ => 2 * (b - a) ^ 2 * D)
+              (Set.uIcc a b)).intervalIntegrable (μ := volume)) ?_
+        intro x hx
+        exact hpt x (by rw [Set.uIcc_of_le hab]; exact hx)
+    _ = 2 * (b - a) ^ 3 * D := by
+        rw [intervalIntegral.integral_const, smul_eq_mul]
+        ring
+
+/-- **The order-2 error bound driven by the oscillation of `g″`.**
+
+    |trapezoid − B₂-correction − ∫| ≤ (b−a)³·D/12   when |g″ − g″(a)| ≤ D.
+
+Compare `abs_corrected_trapezoid_sub_integral_le`, which needs `sup|g⁗|`.  This
+version needs only how much `g″` MOVES across the cell, which is what telescopes
+when `g″` is monotone. -/
+theorem abs_corrected_trapezoid_sub_integral_le_osc
+    {g g₁ g₂ g₃ g₄ : ℝ → ℝ} {a b D : ℝ} (hab : a ≤ b)
+    (hg : ∀ x ∈ Set.uIcc a b, HasDerivAt g (g₁ x) x)
+    (hg1 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₁ (g₂ x) x)
+    (hg2 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₂ (g₃ x) x)
+    (hg3 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₃ (g₄ x) x)
+    (hc2 : ContinuousOn g₂ (Set.uIcc a b))
+    (hc4 : ContinuousOn g₄ (Set.uIcc a b))
+    (hD : ∀ x ∈ Set.uIcc a b, |g₂ x - g₂ a| ≤ D) :
+    |(b - a) / 2 * (g a + g b) - (b - a) ^ 2 / 12 * (g₁ b - g₁ a)
+        - ∫ x in a..b, g x|
+      ≤ (b - a) ^ 3 * D / 12 := by
+  have hid := integral_eq_corrected_trapezoid_sub hg hg1 hg2 hg3 hc4
+  have hred := integral_weight_sq_mul_deriv4_eq hg2 hg3 hc2 hc4
+  have hbd := abs_integral_weight_sq_deriv2_mul_le hab hc2 hD
+  have hrw : (b - a) / 2 * (g a + g b) - (b - a) ^ 2 / 12 * (g₁ b - g₁ a)
+      - ∫ x in a..b, g x
+      = -(1 / 24) * ∫ x in a..b,
+          (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x := by
+    rw [hid, ← hred]; ring
+  rw [hrw, abs_mul]
+  have h24 : |-(1 : ℝ) / 24| = 1 / 24 := by norm_num
+  rw [show -(1 / 24 : ℝ) = -(1 : ℝ) / 24 by norm_num, h24]
+  linarith
+
 end QOU.MathlibExt
