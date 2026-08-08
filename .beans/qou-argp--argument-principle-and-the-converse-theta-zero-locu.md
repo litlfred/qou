@@ -1,7 +1,7 @@
 ---
 # qou-argp
 title: 'Argument principle on an annulus — the single missing lemma for the converse theta zero locus'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
@@ -263,3 +263,38 @@ That is the converse zero locus, and hence an exact C1 pole divisor. Estimate:
 part of a session. Note `qou-c1wr`'s finding still stands — **nothing downstream
 consumes the divisor**, so this is worth finishing for the Mathlib contribution
 and to close a named gap honestly, not because a number depends on it.
+
+## 2026-08-08 — the annulus argument principle is `Finset`-indexed and proved
+
+`argumentPrinciple_annulus_finset` in `C1ConnectionPoles.lean`, sorry-free. For
+`F = (∏ a ∈ S, (·−a)^{m a})·u` with `u` analytic and non-vanishing on a
+neighbourhood of the closed annulus and every `a ∈ S` strictly inside it, the
+winding difference is `(∑ a ∈ S, m a)·2πi`. With it,
+`logDeriv_prod_pow_sub_mul` — the pointwise split, via Mathlib's
+`logDeriv_prod`.
+
+That was the step this bean called "assembly, not new mathematics", and it was:
+every ingredient existed, the work was matching their shapes. Two of the three
+compile errors were function-valued versus pointwise `Finset` sums
+(`∑ i ∈ S, fun z => f i z` against `fun z => ∑ i ∈ S, f i z`), which needed an
+explicit `funext` bridge — `simpa [Finset.sum_apply]` does not cross it.
+
+**Everything the converse zero locus needs is now proved.** What remains is to
+instantiate it for `θ_P`:
+
+* `V` the open annulus, `K` a slightly larger closed one;
+* `divisor_support_finite_of_subset` makes the zero set of `θ_P` on `V` a
+  `Finset`;
+* `extract_zeros_poles` factors `θ_P` as `(∏ (·−a)^{m a})·g` modulo a
+  codiscrete set;
+* `eqOn_of_eventuallyEq_codiscreteWithin` makes that equality genuine on `V`
+  (both sides analytic, `V` connected);
+* `argumentPrinciple_annulus_finset` gives `∑ m a` as the winding difference;
+* `qTheta_winding_step` says that difference is `1`, so `∑ m a = 1`;
+* `qTheta_neg_zpow_eq_zero` puts a zero at `−p^k`, so `S = {−p^k}` and `m = 1`.
+
+That last step is bookkeeping over a one-element `Finset`, not analysis.
+
+Still true, and still the reason not to rush it: `qou-c1wr` established that
+**nothing downstream consumes the divisor**.
+
