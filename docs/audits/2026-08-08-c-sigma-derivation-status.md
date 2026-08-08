@@ -74,6 +74,30 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 
 ## THE ONE ASSUMPTION BEING CARRIED — read this before citing the upgrade
 
+> **AMENDED 2026-08-08 — it is not one assumption, it is two, and only the
+> second is actually assumed.** Full argument in
+> `docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md`.
+>
+> * **The exponent `−1/2` is NOT assumed.** For any pair of manifolds
+>   `k_i = k_j` and `p_ij = −1/2` are algebraically the same statement, so the
+>   `k_c`-constancy checks in this very document were exponent measurements all
+>   along. The 17-digit `k_1 = k_2` agreement *is* `p = −1/2` to 17 digits. A
+>   free four-point fit — 4 points, 2 parameters, 2 residual degrees of freedom,
+>   so a test that can actually fail — returns `p = −0.4983` and `k = 0.70699`
+>   against the predicted `2^{−1/2}`.
+> * **What IS assumed is that `c_σ` depends on `τ` ALONE.** A law
+>   `c_σ = k·|τ|^p·f(M)` with `f` weakly varying fits the four points equally
+>   well, and nothing in the corpus excludes it. That is the load-bearing part.
+>
+> Two cheaper moves than the research problem, both from the reference ledger:
+> `uploads/0903.2472v1.pdf` (DGLZ), the stated origin of the form, is downloaded
+> and cited **nowhere** in the repository; and `ohtsuki-takata-2015` is
+> registered with a paraphrase that may already prove the form for two-bridge
+> knots — modulo a `τ^{+1/2}` vs `|τ|^{−1/2}` discrepancy in that paraphrase and
+> the registration's own note that the PDF was never read.
+>
+> The text below stands as written; read it with that split in mind.
+
 The chain assumes the **1-loop prefactor form**
 
 ```
