@@ -67,3 +67,51 @@ Per site, in this order:
 Do NOT blanket-convert geometric -> balanced.  D1 makes a geometric site correct
 when its variable is q^2; converting it would INTRODUCE an error.  Every site
 needs the two-step check above.
+
+
+---
+
+# *** SCOPE CORRECTED (2026-08-08) — 55 definitions, not 9 ***
+
+My original inventory came from a narrow grep and undercounted by 6x. Full scan
+of `def q{Int,Bracket,Num,Integer}*` over content/**/*.lean:
+
+    total       55
+    balanced    43   <- the corpus is ALREADY overwhelmingly canonical
+    geometric   10   <- the actionable set
+    geo-in-q^2   1   <- CORRECT per D1 (HeckeEnergyPositivity.qIntegerRescaled)
+    Z-polynomial 1
+
+So this bean is NOT "convert everything to balanced" -- the convention is
+already settled in practice. It is a NAMING problem: ~15 aliases (qInt, qIntBal,
+qIntPoly, qIntReal, qIntSym, qIntZ, qInt2, qInt3, qBracket, qBracket2, qNum,
+qNumber, qNumberSym, qInteger, qIntegerRescaled) and the bare name `qInt` used
+for BOTH conventions across 18 files that define it locally.
+
+THE 10 GEOMETRIC (actionable):
+  MathlibExt/QIntegerFactorial                qInt
+  Resurgence/StokesConstantQDimCategoricity   qInt  + qIntPoly (Z-poly)
+  FluidDynamics/surreal_enstrophy_finite_modes qInt
+  BraidKnot/wedderburn_trace_identity         qInt
+  QCollatz                                    qInt
+  Mass/QHookDimension                         qIntPoly
+  Mass/QHookDimensionBalanced                 qIntPoly   (deliberate pair)
+  Torsion/TopologicalMass                     qNumber
+  lifting-and-descent/quantum-dilogarithm     qInteger
+
+D1 VALIDATED EMPIRICALLY -- do not blanket-convert:
+  Interactions/HeckeEnergyPositivity.qIntegerRescaled = sum_{j<k} q^(2j)
+  is geometric IN q^2, which D1 says is CORRECT. It is even named "Rescaled".
+
+CHECKED, NOT defects (do not re-open):
+  * Archimedean/GroundRing.qInt scans geometric but IS BALANCED -- body is
+    sum_{k<|n|} T(n-1-2k), the symmetric weight string, with correct n<0
+    antisymmetry. A classifier matched its comment, not its body.
+  * Torsion/TopologicalMass.qNumber is geometric in a MASS file (which D2
+    predicts is a defect) but feeds NO mass result -- only two lemmas about
+    itself. Dead weight. It DOES have a wrong docstring ("Quantum
+    dilogarithm: Phi_q(z) = ...") on a q-number -- a real, separate, minor fix.
+
+REVISED PLAN: this is a rename-for-clarity sweep over ~15 aliases plus a
+convention check on 10 sites -- multi-session. Do the naming first (mechanical,
+low risk), the 10 checks second.
