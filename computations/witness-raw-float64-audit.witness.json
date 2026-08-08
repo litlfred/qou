@@ -3,11 +3,11 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1596,
-    "total_fields": 540648,
+    "dirty_witnesses": 1586,
+    "total_fields": 540432,
     "baseline_files": 1582,
     "baseline_fields": 540334,
-    "new_not_baselined": 15,
+    "new_not_baselined": 5,
     "regressed": 1,
     "drained_files": 3
   }
