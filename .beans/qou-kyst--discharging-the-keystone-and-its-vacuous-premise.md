@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: medium
 created_at: 2026-08-08T08:10:00Z
-updated_at: 2026-08-08T08:10:00Z
+updated_at: 2026-08-08T10:00:00Z
 ---
 
 The two things above the C1 chain that are open by nature rather than by
@@ -63,3 +63,30 @@ stops carrying a proposition whose Lean is a restatement. **(b) is an owner
 call and is the cheap one.**
 
 Relates: `qou-slpd`, `qou-c1ln`, `qou-c1wr`.
+
+## 2026-08-08 — owner said proceed; both items actioned as far as evidence allows
+
+**Keystone — F2 taken, F1/F3 left open.** Of the three re-scoping options, F2
+("mark the GGM clause refuted") is the one already carried by evidence, so that
+is the one recorded, in a new author note on the block. The refutation is now
+machine-checked rather than asserted: `newtonSlopes_c1_ne_ggm` derives both
+Newton-polygon slope multisets from the operators' coefficient valuations and
+proves they differ, so with RSZ Thm 2.2.1(i) (polygon is a module invariant) and
+Thm 2.2.4 (slope multiset preserved by every gauge) **no q-difference-module
+identification of C1 with GGM exists**. F1 (rewrite the block to R1) and F3
+(split it) are *not* foreclosed — they change the block's title and statement,
+which is editorial and still the owner's. The class still has no instance; that
+remains the honest open state for the surviving R1 clause.
+
+**`prop:mi-sw-abelianisation` — restated, no longer vacuous.**
+`QOU/BringsSurface.lean` now has `class MISWAbelianisation (sw_period
+mi_integral) : Prop` with the abelianisation as its single field, and
+`mi_sw_abelianisation` derives the conclusion from `[K : MISWAbelianisation …]`.
+This is not cosmetic: the old theorem could be discharged by handing it its own
+conclusion, whereas an instance must exhibit the abelianisation. The open state
+is now in the *type*. `validation` moved `trivial` → `stub`.
+
+Mathlib still cannot support a real instance (principal bundles over `S²`,
+nonabelian gauge theory, Yekutieli multiplicative integration), so no-instance
+is expected to persist. What changed is that it is stated rather than disguised
+— which was the actual defect.

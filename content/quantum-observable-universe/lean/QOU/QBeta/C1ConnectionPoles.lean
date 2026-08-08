@@ -4,6 +4,7 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.Complex.LocallyUniformLimit
+import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 
 /-!
@@ -784,5 +785,186 @@ theorem qTheta_winding_step (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
   have h := logDeriv_qThetaC_functional_equation P hP z hz0 (hne z hz)
   rw [hcast]
   rw [← mul_div_assoc, h, one_div]
+
+/-! ### The argument principle on an annulus — proved, given a factorisation
+
+Added 2026-08-08 (bean `qou-argp` step 1). `qTheta_winding_step` above produces
+the contour identity; this section proves the inference that consumes it, in the
+form Mathlib does not have. What is **not** here is the *existence* of the
+factorisation — that zeros of a holomorphic function on a compact annulus are
+finite and of finite order — which is `qou-argp` step 2.
+
+Everything below is `θ`-free and upstreamable. -/
+
+section ArgumentPrinciple
+
+open Metric
+
+/-- `∮_{|z|=R} (z−a)⁻¹ dz = 2πi` when `a` is inside the circle. -/
+theorem integral_inv_sub_inside (a : ℂ) (R : ℝ) (ha : ‖a‖ < R) :
+    (∮ z in C((0:ℂ), R), (z - a)⁻¹) = 2 * Real.pi * Complex.I := by
+  refine circleIntegral.integral_sub_inv_of_mem_ball ?_
+  simpa [Complex.dist_eq] using ha
+
+/-- `∮_{|z|=R} (z−a)⁻¹ dz = 0` when `a` is outside the circle. -/
+theorem integral_inv_sub_outside (a : ℂ) (R : ℝ) (hR : 0 ≤ R) (ha : R < ‖a‖) :
+    (∮ z in C((0:ℂ), R), (z - a)⁻¹) = 0 := by
+  have hne : ∀ z ∈ closedBall (0:ℂ) R, z - a ≠ 0 := by
+    intro z hz h
+    rw [sub_eq_zero] at h
+    subst h
+    simp only [mem_closedBall, Complex.dist_eq, sub_zero] at hz
+    linarith
+  refine Complex.circleIntegral_eq_zero_of_differentiable_on_off_countable
+    hR Set.countable_empty ?_ ?_
+  · exact ContinuousOn.inv₀ (by fun_prop) hne
+  · intro z hz
+    refine DifferentiableAt.inv (by fun_prop) (hne z ?_)
+    exact ball_subset_closedBall hz.1
+
+/-- `logDeriv` of `(· − a)^m · u` splits as `m/(z−a) + logDeriv u`. -/
+theorem logDeriv_pow_sub_mul (u : ℂ → ℂ) (a : ℂ) (m : ℕ) (z : ℂ)
+    (hz : z ≠ a) (hu : DifferentiableAt ℂ u z) (hun : u z ≠ 0) :
+    logDeriv (fun w => (w - a) ^ m * u w) z = m * (z - a)⁻¹ + logDeriv u z := by
+  have hsub : DifferentiableAt ℂ (fun w : ℂ => w - a) z := by fun_prop
+  have hsubne : (z - a) ≠ 0 := sub_ne_zero.mpr hz
+  have hpow : DifferentiableAt ℂ (fun w : ℂ => (w - a) ^ m) z := hsub.pow m
+  have hpowne : ((z - a) ^ m) ≠ 0 := pow_ne_zero _ hsubne
+  rw [logDeriv_mul z hpowne hun hpow hu, logDeriv_fun_pow hsub m]
+  congr 1
+  rw [logDeriv_apply]
+  have : deriv (fun w : ℂ => w - a) z = 1 := by
+    simpa using (hasDerivAt_id z).sub_const a |>.deriv
+  rw [this, one_div]
+
+/-- **Argument principle on an annulus, for a single zero of known order.**
+
+If `f = (· − a)^m · u` with `u` analytic and non-vanishing on an open `A`
+containing the closed annulus `r ≤ ‖z‖ ≤ R`, and the zero `a` lies strictly
+inside the annulus, then the winding difference is exactly `m`:
+
+    ∮_{|z|=R} f'/f  −  ∮_{|z|=r} f'/f  =  m · 2πi.
+
+The `u'/u` part cancels by the annulus Cauchy theorem; the `m/(z−a)` part
+contributes `2πi` on the outer circle (Cauchy) and `0` on the inner (holomorphic
+in the disc). -/
+theorem argumentPrinciple_annulus_single (u : ℂ → ℂ) (a : ℂ) (m : ℕ) {A : Set ℂ}
+    (r R : ℝ) (hr : 0 < r) (hrR : r < R)
+    (hAopen : IsOpen A) (hAsub : closedBall (0:ℂ) R \ ball (0:ℂ) r ⊆ A)
+    (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
+    (har : r < ‖a‖) (haR : ‖a‖ < R) :
+    (∮ z in C((0:ℂ), R), deriv (fun w => (w - a) ^ m * u w) z
+        / ((fun w => (w - a) ^ m * u w) z))
+      - (∮ z in C((0:ℂ), r), deriv (fun w => (w - a) ^ m * u w) z
+        / ((fun w => (w - a) ^ m * u w) z))
+      = (m : ℂ) * (2 * Real.pi * Complex.I) := by
+  set f : ℂ → ℂ := fun w => (w - a) ^ m * u w with hf
+  set L : ℂ → ℂ := fun z => deriv u z / u z with hL
+  have hR0 : (0:ℝ) < R := lt_trans hr hrR
+  -- `u'/u` is continuous on `A`
+  have hdu : DifferentiableOn ℂ (deriv u) A := (hu.deriv).differentiableOn
+  have hLcont : ContinuousOn L A :=
+    (hdu.continuousOn).div (hu.differentiableOn.continuousOn) hune
+  -- the two spheres sit in `A`
+  have hsphR : sphere (0:ℂ) R ⊆ A := by
+    refine subset_trans ?_ hAsub
+    intro z hz
+    simp only [mem_sphere, Complex.dist_eq, sub_zero] at hz
+    exact ⟨by simp [Complex.dist_eq, hz], by simp [Complex.dist_eq, hz]; linarith⟩
+  have hsphr : sphere (0:ℂ) r ⊆ A := by
+    refine subset_trans ?_ hAsub
+    intro z hz
+    simp only [mem_sphere, Complex.dist_eq, sub_zero] at hz
+    exact ⟨by simp [Complex.dist_eq, hz]; linarith, by simp [Complex.dist_eq, hz]⟩
+  -- pointwise: `f'/f = m/(z−a) + u'/u` on each sphere
+  have hsplit : ∀ ρ : ℝ, sphere (0:ℂ) ρ ⊆ A → ρ ≠ ‖a‖ →
+      ∀ z ∈ sphere (0:ℂ) ρ, deriv f z / f z = (m : ℂ) * (z - a)⁻¹ + L z := by
+    intro ρ hρA hρa z hz
+    have hzA : z ∈ A := hρA hz
+    have hza : z ≠ a := by
+      intro h; subst h
+      simp only [mem_sphere, Complex.dist_eq, sub_zero] at hz
+      exact hρa hz.symm
+    have hud : DifferentiableAt ℂ u z := (hu z hzA).differentiableAt
+    have := logDeriv_pow_sub_mul u a m z hza hud (hune z hzA)
+    rwa [logDeriv_apply, logDeriv_apply] at this
+  -- integrability
+  have hLint : ∀ ρ : ℝ, 0 ≤ ρ → sphere (0:ℂ) ρ ⊆ A → CircleIntegrable L 0 ρ :=
+    fun ρ hρ hρA => (hLcont.mono hρA).circleIntegrable hρ
+  have hIint : ∀ ρ : ℝ, 0 ≤ ρ → ρ ≠ ‖a‖ →
+      CircleIntegrable (fun z : ℂ => (m : ℂ) * (z - a)⁻¹) 0 ρ := by
+    intro ρ hρ0 hρa
+    have h0 : a ∉ sphere (0:ℂ) |ρ| := by
+      simp only [mem_sphere, Complex.dist_eq, sub_zero]
+      intro h
+      rw [abs_of_nonneg hρ0] at h
+      exact hρa h.symm
+    have := (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := a) (R := ρ) (n := -1)).2
+      (Or.inr (Or.inr h0))
+    simpa using this.const_mul (m : ℂ)
+  -- assemble
+  have hRne : R ≠ ‖a‖ := by linarith
+  have hrne : r ≠ ‖a‖ := by linarith
+  have hbig : ∀ ρ : ℝ, 0 ≤ ρ → sphere (0:ℂ) ρ ⊆ A → ρ ≠ ‖a‖ →
+      (∮ z in C((0:ℂ), ρ), deriv f z / f z)
+        = (m : ℂ) * (∮ z in C((0:ℂ), ρ), (z - a)⁻¹) + ∮ z in C((0:ℂ), ρ), L z := by
+    intro ρ hρ0 hρA hρa
+    rw [circleIntegral.integral_congr hρ0 (hsplit ρ hρA hρa),
+        circleIntegral.integral_add (hIint ρ hρ0 hρa) (hLint ρ hρ0 hρA),
+        circleIntegral.integral_const_mul]
+  rw [hbig R hR0.le hsphR hRne, hbig r hr.le hsphr hrne,
+      integral_inv_sub_inside a R haR, integral_inv_sub_outside a r hr.le har]
+  -- the `u'/u` circle integrals agree, by the annulus Cauchy theorem
+  have hcancel : (∮ z in C((0:ℂ), R), L z) = ∮ z in C((0:ℂ), r), L z := by
+    refine Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable
+      hr hrR.le Set.countable_empty (hLcont.mono hAsub) ?_
+    intro z hz
+    have hzA : z ∈ A := hAsub ⟨ball_subset_closedBall hz.1.1,
+      fun h => hz.1.2 (ball_subset_closedBall h)⟩
+    exact ((hdu z hzA).differentiableAt (hAopen.mem_nhds hzA)).div
+      ((hu z hzA).differentiableAt) (hune z hzA)
+  rw [hcancel]
+  ring
+
+/-- **The C1 payoff: any factorised zero in a fundamental annulus is SIMPLE.**
+
+Compose `qTheta_winding_step` (winding difference `= 2πi`) with
+`argumentPrinciple_annulus_single` (winding difference `= m·2πi`): the
+multiplicity is forced to `1`.
+
+So *conditional only on `θ_P` admitting a factorisation `(·−a)^m·u` on the
+annulus with `u` analytic and non-vanishing* — the classical finiteness fact,
+not an extra assumption about `θ_P` — the zero in each fundamental annulus is
+simple. Together with `qTheta_neg_zpow_eq_zero`, which puts a zero at `−p^k`,
+that zero **is** `−p^k` and there is no other: the converse zero locus.
+
+The remaining gap is therefore exactly the existence of the factorisation, and
+nothing else. -/
+theorem multiplicity_eq_one_of_winding_step (u : ℂ → ℂ) (a : ℂ) (m : ℕ) {A : Set ℂ}
+    (r R : ℝ) (hr : 0 < r) (hrR : r < R)
+    (hAopen : IsOpen A) (hAsub : Metric.closedBall (0:ℂ) R \ Metric.ball (0:ℂ) r ⊆ A)
+    (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
+    (har : r < ‖a‖) (haR : ‖a‖ < R)
+    (hwind : (∮ z in C((0:ℂ), R), deriv (fun w => (w - a) ^ m * u w) z
+                / ((fun w => (w - a) ^ m * u w) z))
+              - (∮ z in C((0:ℂ), r), deriv (fun w => (w - a) ^ m * u w) z
+                / ((fun w => (w - a) ^ m * u w) z))
+            = 2 * Real.pi * Complex.I) :
+    m = 1 := by
+  have hap := argumentPrinciple_annulus_single u a m r R hr hrR hAopen hAsub hu hune har haR
+  rw [hwind] at hap
+  have hne : (2 * (Real.pi : ℂ) * Complex.I) ≠ 0 := by
+    have : (Real.pi : ℂ) ≠ 0 := by
+      exact_mod_cast Real.pi_ne_zero
+    simp [this, Complex.I_ne_zero]
+  have : ((m : ℂ) - 1) * (2 * Real.pi * Complex.I) = 0 := by
+    rw [sub_mul, one_mul, ← hap]; ring
+  have hm : (m : ℂ) = 1 := by
+    rcases mul_eq_zero.mp this with h | h
+    · exact sub_eq_zero.mp h
+    · exact absurd h hne
+  exact_mod_cast hm
+
+end ArgumentPrinciple
 
 end QOU.QBeta.C1Poles

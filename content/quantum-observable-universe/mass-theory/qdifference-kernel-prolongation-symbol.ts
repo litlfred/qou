@@ -29,6 +29,36 @@ export default conjecture({
         "TERMINUS of the C1<->GGM investigation (Door-iv + Door-v, owner-steered 'direct product / really within a matrix' + 'cross/quadratic term'). Door-iv: the TENSOR SQUARE C1(x)C1 is anisoclinic {+1,0,-1} superset GGM {+1,-1} — the FIRST C1-construction with the right graded module, circumventing Door-i's Newton-polygon obstruction. Door-v: the residual between the tensor-square {+1,-1} realization and GGM is NOT a Stokes datum (unipotent part trivial, U->I; connecting matrix constant on gr) — the SOLE difference is a diagonal Z/2 (-1)^m sign character: GGM's growing solution alternates sign (y_{m+1}~-q^m y_m) while the all-positive squares f+^2,f-^2 provably cannot (parity). So C1(x)C1 and GGM agree as graded+Stokes modules, differing by EXACTLY the bar-parity (-1)^m twist. This IS the framework's cosh/sinh (bar-even mass / bar-odd decay) distinction, now machine-measured as the single named minimal residual: the binding kernel C1 is the bar-even (cosh) face, GGM the bar-odd (sinh) face. Sharpens R1: not an identification (the parity genuinely separates them) but the exact, minimal, named difference. Probes: docs/audits/2026-07-20-qlift-doorIV-matrix.md, 2026-07-20-qlift-doorV-stokes.md.",
       see: "docs/audits/2026-07-20-qlift-doorV-stokes.md",
     },
+    {
+      kind: "status",
+      date: "2026-08-08",
+      body:
+        "**F2 recorded: the GGM-identification clause is REFUTED at module " +
+        "level** (bean qou-kyst; owner said proceed on the F1/F2/F3 re-scoping). " +
+        "Of the three options left open on 2026-07-20 — F1 rewrite the whole " +
+        "conjecture to R1, F2 mark the GGM clause refuted, F3 split the block — " +
+        "F2 is the one already carried by evidence in this corpus, so it is the " +
+        "one taken; F1 and F3 remain available and are NOT foreclosed by this " +
+        "note. The refutation is now machine-checked rather than asserted: " +
+        "`QOU.Mass.ThetaSlopeArithmetic.newtonSlopes_c1_ne_ggm` derives the two " +
+        "Newton-polygon slope multisets from the operators' coefficient " +
+        "valuations — C1 `{1/2,1/2}` pure isoclinic, GGM eq-49 `{-1,+1}` — and " +
+        "proves they differ, so `pullback_cannot_reach_ggm` no longer rests on " +
+        "hand-entered constants. By RSZ Thm 2.2.1(i) the polygon is a module " +
+        "invariant and by Thm 2.2.4 the slope multiset is preserved by every " +
+        "gauge, so NO q-difference-module identification of C1 with GGM exists. " +
+        "The conjecture's surviving content is the reframe (R1): C1 itself is " +
+        "the prolongation-symbol carrier and GGM is a distinct colored-Jones " +
+        "face, differing by exactly the bar-parity (-1)^m twist (Door-iv/v). " +
+        "That surviving clause is what the class " +
+        "`QDifferenceKernelIsProlongationSymbol` should be instantiated " +
+        "against; it still has no instance, which remains the honest open " +
+        "state. What is NOT settled by this note and needs the owner: whether " +
+        "the block's title and statement should be rewritten to R1 (F1) or the " +
+        "block split (F3). Recorded so the refuted clause is not re-litigated " +
+        "and not silently carried as open.",
+      see: "docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md",
+    },
   ],
   uses: [
     "prop:binding-genfun-qdifference",

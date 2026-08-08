@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:mi-sw-abelianisation",
   lean: { ref: "qou:QOU.Brings.mi_sw_abelianisation",
-    validation: "trivial",
+    validation: "stub",
   },
   title: "Abelianisation of the MI integral on exceptional divisors",
   authorNotes: [
@@ -29,6 +29,26 @@ export default proposition({
         "is a restatement. Discharging it means proving the abelianisation, i.e. " +
         "steps (1)-(3) of the proof outline in `QOU/BringsSurface.lean`, not " +
         "assuming their conclusion.",
+    },
+    {
+      kind: "status",
+      date: "2026-08-08",
+      body:
+        "**Restated as a class with no instance** (bean qou-kyst; owner said " +
+        "proceed). `QOU/BringsSurface.lean` now declares " +
+        "`class MISWAbelianisation (sw_period mi_integral) : Prop` with the " +
+        "abelianisation as its single field, and `mi_sw_abelianisation` derives " +
+        "the conclusion from `[K : MISWAbelianisation …]`. This is how the " +
+        "corpus already carries its other open content-bearing claims (§3b-tax, " +
+        "cf. `QDifferenceKernelIsProlongationSymbol`). The difference from the " +
+        "old form is not cosmetic: the previous theorem could be discharged by " +
+        "handing it its own conclusion, whereas an instance must now exhibit " +
+        "the abelianisation. The open state is in the type. `validation` moved " +
+        "`trivial` → `stub`, which is the enum value for a declaration whose " +
+        "content is not supplied. Mathlib cannot support a real instance — " +
+        "principal bundles over S², nonabelian gauge theory, Yekutieli " +
+        "multiplicative integration — so no-instance is expected to persist; " +
+        "what has changed is that it is now stated rather than disguised.",
     },
   ],
   uses: [
