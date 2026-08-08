@@ -200,3 +200,57 @@ cubic and everything is simpler there.
 | extension = analytic continuation | ❌ **new gap**, item 4 above |
 
 **Standing status, unchanged: the 5₂ sum rule is verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — roast item 4 refined, and a correction to how I framed it
+
+### Correction: the corpus DOES have a complex dilogarithm
+
+When Route 15 reduced roast item 4 to "`Li₂` inversion and `Li₂` Landen", I wrote
+that neither is in Mathlib and implied there was nothing to build on. The Mathlib
+half is right. The implication is **wrong**:
+
+`QOU/MathlibExt/ComplexDilogarithm.lean` already has, sorry-free —
+
+* `cLiTwo` by its power series, with `cLiTwo_analyticOnNhd` on the unit ball;
+* `cLiTwo_eq_intervalIntegral` — the integral representation on the disc;
+* `cLiTwoExt y := −∫₀¹ log(1 − yz)/z dz`, **defined for every `y`** (junk-valued
+  where the integrand is not integrable, per Mathlib convention);
+* `cLiTwoExt_eq_cLiTwo` on the disc, plus the integrability lemmas.
+
+**This is the second time in this lane that a "we don't have X" conclusion came
+from searching for a name rather than a statement** — the first was
+`hasSum_one_div_nat_pow_mul_cos` in `qou-mlbg`. The lesson did not stick the
+first time. Before writing "the corpus has no …", grep the corpus.
+
+### The refinement: item 4's two halves are NOT equally hard
+
+Roast item 4 needs `extend` identified with `Re` of the analytic Rogers `L` at
+`w₁ = +2.2470` (inversion branch) and `−w₁ = −2.2470` (Landen branch). Those are
+in different situations:
+
+* **Landen half, `x < 0`.** `−w₁` is far from the cut `[1,∞)`, the defining
+  integral converges, and `cLiTwoExt` is *already the right object there*. What
+  is missing is the Landen identity itself.
+* **Inversion half, `x > 1`.** `w₁` lies **on** the cut. `cLiTwoExt` is not the
+  right object at a point of `[1,∞)` — one needs `Re` of the boundary value,
+  which is well defined precisely because the discontinuity across the cut is
+  `2πi·log x`, i.e. **purely imaginary**. That fact is what the whole lane's
+  "take real parts" convention rests on, and it has never been stated anywhere.
+
+So the inversion half carries an extra step nobody had written down. **Do not
+plan item 4 as one job.**
+
+### `ComplexDilogarithm.lean` is itself orphaned
+
+It is **not** imported from `QOU.lean`, so `lake build` never compiles it —
+a ~500-line sorry-free complex dilogarithm that nothing in the repo checks.
+Exactly `qou-orph`'s thesis, in the file this lane most depends on.
+
+### A near-miss worth recording
+
+`grep -c "sorry" ComplexDilogarithm.lean` returns **3**, and all three are in the
+module docstring, in prose asserting the file *is* sorry-free. I nearly recorded
+"3 sorries" as a defect. **A count is not a finding until you have looked at the
+lines.**
