@@ -1352,12 +1352,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: 'C1' has been cut from the .ts title (which now trails off as \"...carried by the \"), and the .md body still labels the target with a workplan step — \"This conjecture is therefore the **single keystone** of the step-9b binding closure\". \"step-9b\" is an item of the internal workplan.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"This conjecture is therefore the **single keystone** of the step-9b binding closure\" -> \"... the **single remaining input** to the binding closure\". The two consequences, the Newton-polygon refutation in the scope note and the falsifiability framing are unchanged. The .ts title is a two-line string concatenation that reads correctly end to end (\"... carried by the binding q-lift module\"), so it needed no change.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

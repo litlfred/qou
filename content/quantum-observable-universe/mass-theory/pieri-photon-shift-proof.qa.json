@@ -1117,12 +1117,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the support convention still speaks as the repo rather than the paper — \"At level $n + 1$ the corpus writes $\\lambda + \\square := (\\lambda_1 + 1, \\lambda_2) \\vdash n+1$ and $\\lambda - \\square := ...$\". \"the corpus\" is the repository's word for the manuscript collection.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"At level $n + 1$ the corpus writes $\\lambda + \\square := ...$\" -> \"At level $n + 1$ we write ...\". The support convention, the two-row SU_q(2) justification and the Pieri argument are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

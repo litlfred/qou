@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the hypothesis is still tagged with a workplan item id — \"is the named conjecture [`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max) (workplan **P3.4** path (b))\". P3.4 and \"workplan\" belong to the project's plan, not to the manuscript.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(workplan **P3.4** path (b))\" deleted. The named conjecture link, the empirical per-level bound, the `uniform_bound_pass` witness citation and the open status of the uniform-$\\Delta_{\\max}$ subconjecture are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -26,7 +26,7 @@ The categorical primitives are **two**:
 - $c_4$: multiplicative Jones $\times$ Kashiwara mixing ($c_3 \cdot b^4$).
 - $c_5$: additive Jones$^2 \cdot$ integer + Kashiwara mixing ($c_3^2 \cdot 3 + b$).
 
-The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
+The earlier $c_4 = b^2 + 1/2$ form is superseded: it is 9.5% off the empirical value, while $c_3 \cdot b^4$ matches to 0.9%.
 
 The KL decategorification governs the appearance of
 classical-limit Jones values: the mass observable lives in the KL
@@ -91,7 +91,7 @@ $q_0$, but the $N{=}4 \to N{=}5$ non-monotonicity (the residual ticks
 back up) is the signature that the $c_k{\geq}3$ are q$_0$-dependent
 near-matches rather than exact Taylor coefficients: a series with exact
 $c_k$ converges monotonically. Sub-ppb agreement at $q_0$ is therefore
-Subgoal-2 territory (research-grade) **conditional on** the Habiro-element
+still research-grade and **conditional on** the Habiro-element
 upgrade, not an unconditional derivation.
 
 The $N=2$ slight over-ceiling reflects that the Kashiwara-only prediction

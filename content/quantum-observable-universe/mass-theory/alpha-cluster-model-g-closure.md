@@ -11,7 +11,7 @@ gate).**
 > \cdot \alpha$ pairs activate, via the proved gate
 > [`prop:alpha-cluster-activation-gate`](#prop:alpha-cluster-activation-gate) —
 > **not** the absolute cluster base. It is recorded here for its structural
-> content and its audit trail, and must not be cited as an ab-initio prediction.
+> content alone, and must not be cited as an ab-initio prediction.
 
 Applying the activation gate to the light $\alpha$-conjugate (and
 $\alpha + \text{light-remainder}$) isotopes, with cluster decompositions
@@ -59,7 +59,8 @@ closure):
 | $g = 2.4155 \approx 3b$ ($-2.9\%$) | **guarded near-match** |
 | $^{11}\mathrm{B} / {}^{14}\mathrm{N} / {}^{19}\mathrm{F}$ mixed multi-bond | **open** ($-58/-33/-10\%$ deficit) |
 
-Witnesses (audit-only, not wired to any production dashboard):
+Numerical verification (checks only; no result elsewhere in this paper
+depends on them):
 [`alpha-activation-brunnian.witness.json`](../../../computations/deltalambda/alpha-activation-brunnian.witness.json)
 (9/9), building on
 [`alpha-cluster-volume-additivity.witness.json`](../../../computations/deltalambda/alpha-cluster-volume-additivity.witness.json)

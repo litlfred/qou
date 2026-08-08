@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the last sentence still points the reader at an internal coordination artifact — \"The full brick-by-brick chain is recorded in the keystone arc map.\" The \"arc map\" is a repo planning document, not a part of the manuscript.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The closing sentence \"The full brick-by-brick chain is recorded in the keystone arc map\" is deleted: its only content was a pointer to an internal planning document, and no mathematical claim rode on it. The preceding \"honest content ... not a mathematical gap\" hedge is untouched.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

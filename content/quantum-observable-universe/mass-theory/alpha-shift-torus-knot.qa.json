@@ -1975,12 +1975,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the .md body closes on two branch labels a reader cannot resolve — \"upgrading AXKIA's $\\delta_q$-trace identity into the same combinatorial universe as the w3-w4 atomic-shift formula.\" AXKIA is the branch `claude/improve-charge-precision-AXKIA` and \"w3-w4\" is the W-3/W-4 workplan pair (cf. `claude/w3-w4-followups`); neither is defined anywhere in the manuscript.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"upgrading AXKIA's $\\delta_q$-trace identity into the same combinatorial universe as the w3-w4 atomic-shift formula\" -> \"recasting the $\\delta_q$-trace identity in the same combinatorial terms as the atomic-shift formula\". Both branch labels are gone; the identification of the two identities survives, and \"atomic-shift formula\" is a name the manuscript uses elsewhere.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

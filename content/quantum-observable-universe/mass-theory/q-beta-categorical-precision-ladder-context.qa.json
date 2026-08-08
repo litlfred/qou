@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: AGENTS.md §7b, the docs/audits path and the caps marker are gone, but two workflow references remain — \"The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value\" and \"Sub-ppb agreement at $q_0$ is therefore Subgoal-2 territory (research-grade)\". \"the audit\" is the project's review and \"Subgoal-2\" is a workplan label.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"The doc's earlier $c_4 = b^2 + 1/2$ form is superseded; the audit shows it was 9.5% off the empirical value\" -> \"The earlier $c_4 = b^2 + 1/2$ form is superseded: it is 9.5% off the empirical value\"; \"Sub-ppb agreement at $q_0$ is therefore Subgoal-2 territory (research-grade) **conditional on** the Habiro-element upgrade\" -> \"... is therefore still research-grade and **conditional on** the Habiro-element upgrade\". The 9.5% and 0.9% figures, the non-monotonicity argument and the conditionality are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

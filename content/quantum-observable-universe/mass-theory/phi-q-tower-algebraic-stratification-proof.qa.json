@@ -1285,12 +1285,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the closing section still frames its scoping against the project's review process — \"In the language of the audit's strict-Archimedean-wall directive:\". The \"audit\" and its \"directive\" are the repo's QA discipline, not something the manuscript states.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"In the language of the audit's strict-Archimedean-wall directive:\" -> \"In terms of the strict Archimedean wall:\". The three-way statement / interpretation / proof separation below it is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -8,12 +8,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the second half of the file is still a work plan addressed to whoever picks it up next — \"## 2. Derivation Pathways (The 13-Driver Options) — Based on the scoping, we will pursue the formalized f-map via the non-scalar categorical drivers\", and \"## Next Steps — We will begin formally scaffolding the **Direct Cyclotomic Map** (Option 3) alongside the **Hexagon Equations** (Option 2) in Lean.\" The 13-driver menu, \"the scoping\" and the Next Steps section are work-plan narration.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The H1 \"Structural f-map Derivation Strategy\" -> \"Structural form of the f-map\"; \"## 2. Derivation Pathways (The 13-Driver Options)\" with \"Based on the scoping, we will pursue the formalized f-map via the non-scalar categorical drivers\" -> \"## 2. Derivation pathways\" with \"A formalised f-map must therefore be sought among the non-scalar categorical routes\"; the \"## Next Steps — We will begin formally scaffolding ...\" work plan -> \"## What remains open\", which states that the functor from the Habiro coefficients $a_m$ to the ladder $c_k$ is not yet defined and names the direct cyclotomic map (C) and the hexagon equations (B) as the two candidate routes. The pole-obstruction series, the \"the f-map cannot be a scalar operator\" conclusion and all three route descriptions are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

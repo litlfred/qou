@@ -22,7 +22,7 @@ $$
 $$
 ### Corollaries
 
-**Generalises round 9**: the small-cases bridge verification
+**Generalisation**: the small-cases bridge verification
 at $n \leq 4$ extends to all $n$ via the bar-eigenspace argument.
 
 **Corollary for the depth correspondence**:

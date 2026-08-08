@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the docs/audits paths are gone, but the base case still attributes a theorem to a git branch — \"contributing $\\alpha((\\sigma+\\sigma^{-1})/2) = 1$ from the compound-shift theorem on `claude/w3-w4-followups`.\" That is a working branch, not a citable location.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Pass. The flagged attribution of the compound-shift theorem to `claude/w3-w4-followups` had already been removed, and the sentence reads cleanly as \"... from the compound-shift theorem. This matches [`prop:alpha-shift-torus-knot`]'s simplest interface case\". Re-read in full for residual branch, tracker or workplan vocabulary; none found.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

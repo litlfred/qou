@@ -1,6 +1,5 @@
-**Remark.**
-*User question: where does the Gram matrix fit in the
-spectral-sequence / Frobenius framework?*
+**Remark (where the Gram matrix fits in the spectral-sequence /
+Frobenius framework).**
 
 **Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common
@@ -50,8 +49,8 @@ $\tau(\sigma_0\sigma_1\sigma_0) = hz^2 + z$
 (formerly stated as $z^3$; since corrected).*
 
 *Gram matrix $G_{ij} = \tau(b_i b_j^{-1})$ (cyclic self-pairing).
-The first-row/column entries below shown as $z^3$ are stale per
-the Markov-bug fix and should read $hz^2 + z$:*
+The first-row/column entries shown as $z^3$ below are uncorrected: by the
+recursion just quoted they should read $hz^2 + z$:*
 
 $$
   G \;=\;

@@ -52,7 +52,7 @@ Two consequences follow:
    [`conj:binding-manybody-eq-jet-filtration`](#conj:binding-manybody-eq-jet-filtration)
    from conditional to unconditional.
 
-This conjecture is therefore the **single keystone** of the step-9b binding
+This conjecture is therefore the **single remaining input** to the binding
 closure: the residue form, the body-order = jet-degree coincidence, and the
 recurrence machinery are all proved; only the identification of $R$
 with the prolongation symbol remains. It is stated here as a precise,

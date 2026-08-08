@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: §3b-cond, \"Phase 3\" and the docs/audits paths are gone, but the Lean-structure section still narrates repository hygiene in the pipeline's own vocabulary — \"Consolidating all four nuclei into one instance — rather than four separate sibling blocks — addresses the inefficiency of repeating the per-nucleus identification pattern: a single block now carries the full candidate table.\" \"sibling blocks\" / \"a single block\" is the authoring pipeline's word for the paper's own content units, and the closing \"derivation queued at `prop:meson-color-tube-uniqueness`\" is work-queue narration.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"rather than four separate sibling blocks — addresses the inefficiency ... a single block now carries the full candidate table\" -> \"All four nuclei are carried by this single instance rather than by four per-nucleus instances, so the identification pattern is stated once and the full candidate table is discharged in one place\"; \"the meson force-carrier derivation queued at `prop:meson-color-tube-uniqueness`\" -> \"the still-open meson force-carrier derivation at ...\"; \"The merged α_shift universal chain\" -> \"The α_shift universal chain\". The candidate table, its \"open\" statuses and the ρ_0 calibration discussion are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

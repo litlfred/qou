@@ -130,7 +130,7 @@ is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
 by a factor of $\sim 22$ at $q_0$. It is retained only as a
 legacy/degenerate reference; the cell-content trace is operative.
 
-### Downstream consequence — closes NV-1
+### Downstream consequence — the weak-scale crossing count
 
 The weak-scale crossing count $N_v$ is conjecturally derivable
 from the **bar-self-dual cell-content trace** over the EW
@@ -152,13 +152,14 @@ identity must hold at all generic $q$).
 **PSLQ test.** The constrained basis is
 $\{[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k,
 \mathrm{tr}_{\rm pure}\}$ — strictly smaller than the
-brute-force monomial basis of the impasse audit. The earlier
+brute-force monomial basis used previously. The earlier
 Plancherel-weight basis $\{[2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
 is **superseded**.
-### Audit-flag impact
+### Consequences
 
 If this conjecture closes:
-- **NV-1**: hard flag closed via constrained PSLQ on the extended basis
+- **the weak-scale crossing count $N_v$**: pinned by constrained PSLQ on the
+  extended basis
 - **β-decay rates**: $G_F = 1/(\sqrt{2}\,N_v^2 E_\times^2 \mu_0^2)$
   becomes derivable from $(q_0, m_e)$ alone, closing every β-decay
   half-life prediction simultaneously.

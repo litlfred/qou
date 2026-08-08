@@ -1102,12 +1102,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the final sentence still carries a workplan item id — \"once the uniform $\\Delta_{\\max}$ bound is established (P3.4 in the workplan, still open).\" P3.4 and \"the workplan\" are internal plan references.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(P3.4 in the workplan, still open)\" -> \"(still open)\". The truncation bound, its dependence on the uniform $\\Delta_{\\max}$ result and the open status are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

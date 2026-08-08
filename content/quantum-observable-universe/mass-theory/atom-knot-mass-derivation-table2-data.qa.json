@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the table still carries internal tooling-roadmap rungs and a branch URL — \"R5-full pending — research-grade\", \"Rust `gb_nf_reducer.rs` (R2; ...)\", \"(R3; ...)\", \"(R4; ...)\", \"`sdp_verifier.rs` (R5-minimal; ...)\", and row 7's link to `https://github.com/litlfred/qou/blob/claude/mass-units-bridge-followups/computations/methodology-deprecation.witness.json`. R2–R5 are rungs of the repo's tooling roadmap and `claude/mass-units-bridge-followups` is a working branch; the manuscript defines neither.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The tooling-roadmap rungs are out of the table: \"R5-full pending — research-grade\" -> \"not implemented — needs the full joint-tower SDP solver (research-grade)\"; the \"(R2;\", \"(R3;\", \"(R4;\" tags dropped from the three Rust entries; \"R5-minimal\" -> \"reduced form\", which keeps the reduced/full distinction the two rungs encoded. Row 7's branch URL had already been made repo-relative. Every unit-test count, scaling note and the ✓/✗/partial column are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

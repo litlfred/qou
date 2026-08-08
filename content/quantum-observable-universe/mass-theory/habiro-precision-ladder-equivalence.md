@@ -21,8 +21,8 @@ $q$-Pochhammer symbol, and $M < \infty$ (the series terminates).*
 *Under the archimedean evaluation $u \mapsto u_0$ at the substrate
 square-root, each $(u_0;\,u_0)_m$ contributes a factor that shrinks
 like $\sim \hbar_q^m$, where $\hbar_q$ is the universal substrate
-Planck quantum (categorical; exact algebraic values at the substrate q_0
-recorded in the audit ledger, not here).*
+Planck quantum (categorical; the exact algebraic values at the substrate $q_0$ are not
+reproduced here).*
 
 The verified proton Habiro coefficients, the uniqueness of the archimedean
 evaluation, and the scope of the exact evaluation are collected in

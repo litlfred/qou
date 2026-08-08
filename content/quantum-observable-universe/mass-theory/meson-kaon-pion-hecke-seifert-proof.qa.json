@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: §7c is gone from the base-ring note, but the note still ends in build-infrastructure vocabulary — \"This avoids `CharZero` entirely (so it stays inside the sandbox cache cone) and is verified sorry-free (`lake env lean`).\" The \"sandbox cache cone\" is a property of the repo's CI, not of the mathematics.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(so it stays inside the sandbox cache cone)\" is removed from the base-ring note; the sentence now reads \"This avoids `CharZero` entirely and is verified sorry-free (`lake env lean`).\" The `CharZero` avoidance, the char != 2,3,5 hypotheses and the sorry-free status all survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

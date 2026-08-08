@@ -1674,12 +1674,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: a git working branch is still cited as the location of a result — \"Rules 1, 3 are already discharged for $V_{(2,1)}$ at $H_3(q)$ (the Hoefsmit matrix theorems in this branch).\" \"this branch\" is the working branch, not a part of the paper; the later \"per the open R&D in [`prop:q-beta-categorical-precision-ladder`]\" carries the same workflow vocabulary.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(the Hoefsmit matrix theorems in this branch)\" -> \"by the Hoefsmit matrix theorems\"; \"per the open R&D in [`prop:q-beta-categorical-precision-ladder`]\" -> \"an open point recorded in [`prop:q-beta-categorical-precision-ladder`]\"; \"which is auditable per rule\" -> \"which is checkable rule by rule\". The per-rule discharge status and the open items are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

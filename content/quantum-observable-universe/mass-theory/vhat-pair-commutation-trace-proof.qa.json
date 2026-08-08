@@ -1102,12 +1102,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the closing paragraph still resolves a QA finding rather than a mathematical one — \"The audit gap is therefore resolved as follows: the pentagon identity is a feature of the **operator lift** ...\", and just above it \"The operator pentagon was a heuristic prompt\". \"the audit gap\" and \"prompt\" are the working channel's vocabulary.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"The audit gap is therefore resolved as follows\" -> \"The apparent tension is therefore resolved as follows\" — the tension being the pentagon's requirement $uv = q\\,vu$ against the commutativity of the scalar $\\hat V_i$, which the block sets up two sections earlier; \"The operator pentagon was a heuristic prompt\" -> \"The operator pentagon is a heuristic\". The operator-lift vs. scalar-projection resolution and the four proof steps are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

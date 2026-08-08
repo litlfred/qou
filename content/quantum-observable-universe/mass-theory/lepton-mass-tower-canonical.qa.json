@@ -1417,12 +1417,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the .md body was corrected to lowercase (\"without invoking the superseded scalar density $\\rho_q$\"), but the published `title:` in the sibling .ts still carries the repo's all-caps work-status marker — \"**without** invoking the SUPERSEDED scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor.\" The marker was cleaned from the prose and left in the title.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The published `title:` now reads \"**without** invoking the superseded scalar substrate density $\\rho_q = 1/\\hbar_q^2$ as a dimensional factor\", matching the lowercase form the .md body already used. The all-caps SUPERSEDED markers in the authorNotes are left as they are — that is the working channel.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

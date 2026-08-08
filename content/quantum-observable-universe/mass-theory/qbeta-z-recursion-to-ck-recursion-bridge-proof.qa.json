@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the bridge discussion still cites an internal coordination record — \"is conjectured to be expressible in the $z$-basis via the open f-map (cf. 1ppQ-Q$_\\beta$ ledger)\". The \"1ppQ-Q_β ledger\" is a repo tracking document a reader cannot reach.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Pass. The flagged \"(cf. 1ppQ-Q$_\\beta$ ledger)\" had already been removed; the sentence now reads \"is conjectured to be expressible in the $z$-basis via the open f-map\". Re-read in full; no ledger, branch, tracker or workplan reference remains, and both \"Claims not established here\" items are intact.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

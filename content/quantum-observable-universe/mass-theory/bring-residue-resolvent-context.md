@@ -54,18 +54,17 @@ Mathlib-import follow-up; until then this file states the
 
 ## Downstream consequence
 
-Each specialisation collapses an "open audit finding" or
-"residue normalisation" gap into a **single shared open class
-instance**:
+Each specialisation collapses a separate residue-normalisation gap
+into a **single shared open class instance**:
 
-| consumer block | downstream form | resolvent specialisation |
+| where used | downstream form | resolvent specialisation |
 |---|---|---|
 | [fine-structure observation](#rem:fine-structure-observation) | $1/\alpha_{\rm EM} = q \cdot [9]_q \cdot [10]_q + 2/(3\pi)$ | `BringResidueAtOrder 9` + `10` (genus-4 pair) |
 | [p-n averaging uniqueness](#prop:pn-averaging-uniqueness) | $\sigma_{pn}(q)$ Bring color-tube weight $1/(1 - h_q \cdot q^{10})$ | `BringResidueAtOrder 10` |
 | [meson color-tube uniqueness](#prop:meson-color-tube-uniqueness) | $m_K^2 / m_\pi^2 = [3]_q \cdot [4]_q$ | `BringResidueAtOrder 3` + `4` (meson pair) |
 
 Closing the class once therefore discharges the residue open math
-across all three consumers.
+in all three cases.
 
 ## Lean formalization
 

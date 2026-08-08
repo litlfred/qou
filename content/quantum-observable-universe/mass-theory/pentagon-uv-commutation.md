@@ -21,8 +21,8 @@ $$
 $$
 
 without any $q$-factor. This is the level-internal lemma
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace),
-which closes the level-internal half of the audit gap.
+[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace); it
+settles the level-internal half of the commutation question.
 
 ## Between adjacent jet levels — the pentagon q-factor
 

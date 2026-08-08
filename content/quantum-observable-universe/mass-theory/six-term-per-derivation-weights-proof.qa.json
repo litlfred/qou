@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the brane-tower bullet still attributes a reconciliation to a working branch and an audit — \"Per [the divergence-audit branch's reconciliation](#prop:mass-endomorphism-tower), $\\alpha\\,\\ln\\lvert V \\rvert$ is the leading-order expansion of ...\". The link text names a git branch and the project's divergence audit rather than the proposition it points to.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The link text \"[the divergence-audit branch's reconciliation](#prop:mass-endomorphism-tower)\" -> \"[the mass-endomorphism tower](#prop:mass-endomorphism-tower)\", naming the proposition the link already pointed at and matching the citation style used elsewhere in the same list. The $\\alpha \\ln|V|$ leading-order-expansion claim is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

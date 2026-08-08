@@ -59,5 +59,4 @@ Each term is exact at its level; the truncation error at level $N$
 is bounded by
 [`prop:jet-tower-convergence`](#prop:jet-tower-convergence) at
 $\le \Delta_{\max}\,\hbar_q^{2(N+1)} / (1 - \hbar_q^2)$ once the
-uniform $\Delta_{\max}$ bound is established (P3.4 in the workplan,
-still open).
+uniform $\Delta_{\max}$ bound is established (still open).

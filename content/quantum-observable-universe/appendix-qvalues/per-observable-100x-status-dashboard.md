@@ -20,7 +20,7 @@ witnesses for each anchor), so it is included in auto-regeneration
 sweeps and does not go stale silently.
 
 **Authoritative reference.** For the precision-goal definition (L1 vs
-L2, Subgoal-1 vs Subgoal-2, CAL-2 floor), see
+the two accuracy sub-goals, the CAL-2 floor), see
 [`docs/precision-goals.md`](../../../docs/precision-goals.md). The
 witness here is the live numerical snapshot; the goal definitions are
 the source of truth.

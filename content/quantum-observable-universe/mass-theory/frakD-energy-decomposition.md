@@ -26,16 +26,15 @@ calibrations (the width $\mathfrak{D}$ is the CAL-2 datum), rather than a
 fourth calibration.
 
 One caveat stands: whether the deuteron binding actually carries this bar-odd
-character is empirically open (the landed data weakly favour a bar-even unit). The
+character is empirically open (the available data weakly favour a bar-even unit). The
 proposition formalizes the *decomposition itself*, which holds regardless;
 the parity assignment of the physical $E_{\text{unit}}$ is the open input.
 
-## Already tabulated
+## The split across the light nuclei
 
-The mass-binding dashboard's **Entanglement** table computes this split for
-every light nucleus — its `retained E` column is
-$E_0 \cdot (\cosh\text{-channel})$ and its `emitted E` column is
+The split has been computed for every light nucleus: the retained energy is
+$E_0 \cdot (\cosh\text{-channel})$ and the emitted energy is
 $E_0 \cdot |\sinh\text{-channel}|$. The
-`emitted/retained` ratio rises from $0.96$ at the deuteron — the least
+emitted/retained ratio rises from $0.96$ at the deuteron — the least
 saturated, most decay-like light binding, matching its $\beta$-threshold
 character — toward $1.00$ by ${}^6\mathrm{Li}$.

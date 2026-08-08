@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: three rows of the table still carry graph-hygiene bookkeeping — \"`def:ew-interface-knot` (orphan block — not yet in any chapter section)\", \"`conj:categorical-higgs-mechanism` (orphan block) Step C\" and \"`conj:categorical-linking-operation` (orphan block)\". \"orphan block\" and \"not yet in any chapter section\" describe the content graph's wiring state, not the mathematics.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(orphan block — not yet in any chapter section)\" and the two bare \"(orphan block)\" parentheticals are removed from the three rows; the third row now reads \"`conj:categorical-higgs-mechanism`, Step C\". Labels, depths, knot indices and output types are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1140,12 +1140,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the AGENTS.md §2h label and the docs/coordination path are gone, but the closing section still cites a compute artifact and uses merge vocabulary — \"The mass-binding dashboard's **Entanglement** table computes this split for every light nucleus — its `retained E` column is ...\", and earlier \"(the landed data weakly favour a bar-even unit)\". A reader cannot resolve \"the mass-binding dashboard\" or \"landed\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(the landed data weakly favour a bar-even unit)\" -> \"(the available data weakly favour a bar-even unit)\"; the section \"## Already tabulated\" and \"The mass-binding dashboard's **Entanglement** table computes this split ... its `retained E` column ... its `emitted E` column\" -> \"## The split across the light nuclei\" and \"The split has been computed for every light nucleus: the retained energy is ... and the emitted energy is ...\". The 0.96 -> 1.00 ratio trend and the open parity assignment for the physical E_unit are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

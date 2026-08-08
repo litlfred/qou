@@ -1925,12 +1925,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: 'B1' has been replaced by \"the depth correspondence\", but a work-round label survives in the corollaries — \"**Generalises round 9**: the small-cases bridge verification at $n \\leq 4$ extends to all $n$ via the bar-eigenspace argument.\" \"round 9\" is a cycle of the project's work, meaningless to a reader.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"**Generalises round 9**: the small-cases bridge verification at $n \\leq 4$ extends to all $n$\" -> \"**Generalisation**: ...\". The $n \\leq 4$ to all-$n$ extension and the bar-eigenspace argument are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

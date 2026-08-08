@@ -47,10 +47,10 @@ The earlier framing (alternating Kashiwara $\times$ Jones at even/odd $k$)
 captured the *empirical pattern* but underspecified the *derivation*.
 The four-rule reframing shifts the conjectural content from
 "the alternation happens" to **"the four reduction rules jointly
-determine the unique normal form"** — which is auditable per rule:
+determine the unique normal form"** — which is checkable rule by rule:
 
-- Rules 1, 3 are already discharged for $V_{(2,1)}$ at $H_3(q)$
-  (the Hoefsmit matrix theorems in this branch).
+- Rules 1, 3 are already discharged for $V_{(2,1)}$ at $H_3(q)$ by the
+  Hoefsmit matrix theorems.
 - Rule 2 (Hecke idempotents) is largely Mathlib-able via the standard
   Iwahori-Hecke decomposition.
 - Rule 4 (GB/jet reduction) is the novel conjectural ingredient — it
@@ -71,8 +71,8 @@ rather than a single open conjecture.
   (where the reduction is short enough to discharge by
   case-analysis on the typed-$\mathbf{B}_3$ word structure).
 - Extend the extraction to $k \geq 5$ — the simple alternating
-  Kashiwara $\times$ Jones pattern breaks at $c_5, c_6$ per the open R&D in
-  [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder);
+  Kashiwara $\times$ Jones pattern breaks at $c_5, c_6$, an open point recorded
+  in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder);
   the four-rule reframing may identify which rule's discharge needs
   enrichment (likely Rule 2 + Rule 4) to capture multi-link Jones
   contributions.

@@ -1350,12 +1350,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the docs/audits link is gone, but the remark still opens in the working channel — \"**Remark.** *User question: where does the Gram matrix fit in the spectral-sequence / Frobenius framework?*\" — and still carries a work-status marker: \"The first-row/column entries below shown as $z^3$ are stale per the Markov-bug fix and should read $hz^2+z$.\" A transcribed user question and a repo bugfix are not reader-facing.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The transcribed session turn \"**Remark.** *User question: where does the Gram matrix fit in the spectral-sequence / Frobenius framework?*\" -> \"**Remark (where the Gram matrix fits in the spectral-sequence / Frobenius framework).**\", keeping the subject and dropping the conversation; \"are stale per the Markov-bug fix and should read $hz^2 + z$\" -> \"are uncorrected: by the recursion just quoted they should read $hz^2 + z$\", which now points at the Ocneanu–Wenzl recursion stated immediately above. The correction itself survives.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

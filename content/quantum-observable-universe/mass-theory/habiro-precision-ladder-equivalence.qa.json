@@ -1549,12 +1549,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: §7c is gone, but the statement still defers a value to an internal QA artifact — \"(categorical; exact algebraic values at the substrate q_0 recorded in the audit ledger, not here)\". \"the audit ledger\" is a repo record, so the reader is sent somewhere the paper does not contain.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"(categorical; exact algebraic values at the substrate q_0 recorded in the audit ledger, not here)\" -> \"(categorical; the exact algebraic values at the substrate $q_0$ are not reproduced here)\". The caveat that those values are not given in this block survives; the reader is no longer sent to a repo record.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

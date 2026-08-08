@@ -71,5 +71,4 @@ proved" downstream.
 unconditional; `seifert_ratio_T25_T23` carries explicit `$2,3,5\neq 0$`
 hypotheses — the invertibility the rational identity genuinely needs,
 vacuous in any characteristic-0 specialisation. This avoids `CharZero`
-entirely (so it stays inside the sandbox cache cone) and is verified
-sorry-free (`lake env lean`).
+entirely and is verified sorry-free (`lake env lean`).

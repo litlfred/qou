@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the T4–T14 retrospective link and its docs/audits path are gone, but the section is still framed around the repo's default branch and an internal tracker id — the heading \"## Connection to the wider framework on `main`\" and \"The two ingredients each have a categorical home that landed on `main` after the initial derivation\", plus \"that was the original GAP-A-4 question (`conj:s5-so3-fiber-action`)\". `main` is a git branch, \"landed\" is merge vocabulary, and GAP-A-4 appears nowhere else in the manuscript.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. Heading \"## Connection to the wider framework on `main`\" -> \"## Connection to the wider framework\"; \"each have a categorical home that landed on `main` after the initial derivation\" -> \"each acquired a categorical home elsewhere in the framework after the initial derivation\"; \"that was the original GAP-A-4 question (`conj:s5-so3-fiber-action`) and remains open\" -> \"that is the question posed by (`conj:s5-so3-fiber-action`), and it remains open\". The open cross-algebra obstruction and the eight refuted candidate functors survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

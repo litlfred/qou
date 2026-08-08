@@ -59,7 +59,8 @@ the canonical formalism,
 
 ### The 2-dim Bring trilog regulator image
 
-Combining round 10 + this round, the 2-dim Borel-rank space
+Combining the reflection-formula reductions with the identity above, the
+2-dim Borel-rank space
 $K_5^{\mathrm{ind}}(\mathbb{Q}(\zeta_5)) \otimes \mathbb{Q}$ admits the
 following decomposition:
 
@@ -78,16 +79,16 @@ $$
 $$
 
 Whether this admits a closed form modulo $\zeta(3)$ + Tate is **open**.
-Reflection-formula reductions (round 10) and multiplication-formula
-reductions (this prop.) have been exhausted at depth 3 over $\mathbb{Q}(\zeta_5)$;
+Reflection-formula reductions and multiplication-formula
+reductions (the present proposition) have been exhausted at depth 3 over $\mathbb{Q}(\zeta_5)$;
 further reductions would require Goncharov's 22-term relation or
 similar weight-3 functional equations.
 
 ### Reduction of the depth-3 surface
 
-| Item | Status before round 11 | Status after round 11 |
+| Item | Status before this proposition | Status after |
 |---|---|---|
-| Im Li_3(ζ_5) | Tate-rational (round 10) | Tate-rational (no change) |
+| Im Li_3(ζ_5) | Tate-rational (reflection formula) | Tate-rational (no change) |
 | Im Li_3($\zeta_5^2$) | candidate | **Tate-rational**: $2\pi^3/125$ |
 | Cl_3(2π/5) + Cl_3(4π/5) | candidate (open) | **theorem**: $-12\zeta(3)/25$ |
 | Cl_3(2π/5) - Cl_3(4π/5) | candidate (open) | **still open** — only remaining genuinely-new content |

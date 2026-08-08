@@ -1568,12 +1568,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: hypotheses (C1)–(C2) are defined in place and the §3b-cond label is gone, but the closing blockquote still uses the pipeline's word for the manuscript's own contents — \"the block therefore qualifies as a *rigorous conditional result* rather than an unproved conjecture.\" A reader has no referent for \"the block\".",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"the block therefore qualifies as a *rigorous conditional result*\" -> \"the uniqueness statement therefore qualifies as a *rigorous conditional result*\". The rigorous-conditional vs. unproved-conjecture distinction is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

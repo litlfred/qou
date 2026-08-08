@@ -1396,12 +1396,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the docs/audits paths and \"this block flagged\" are gone, but the block is still largely written in the language of the repo's decision procedure — the statement is headed \"**Conjecture (Rule 14 conditional adoption — owner authorised).**\", a section is headed \"## Categorical home (driver x of the 13-driver menu)\", another \"## Resolution of the Rule-14 escalation\" ending \"Owner authorised this adoption per Rule-14 procedure\", and the open items say \"(when it lands; R&D in progress)\", \"Until R5-full SDP ships\" and \"escalation is deferred until R5-full SDP ships (owner-decided)\". Rule-14, the owner role, the 13-driver menu and the R5-full rung are all internal workflow.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed throughout. Statement heading \"**Conjecture (Rule 14 conditional adoption — owner authorised).**\" -> \"**Conjecture (conditional).**\", with the conditionality still spelled out in its own section; \"## Categorical home (driver x of the 13-driver menu)\" -> \"## Categorical home\", keeping the MacMahon partition-algebra identification and rewriting \"pulls $\\rho_F$ onto driver (x) and removes it from the Rule-14 escalation queue\" as \"identifies $\\rho_F$ as such a count\"; \"## Resolution of the Rule-14 escalation\" -> \"## Status of the density prefactor\", with the garbled \"Pre- the / the canonical formalism / formalism self-declared ...\" rebuilt and \"Owner authorised this adoption per Rule-14 procedure\" dropped; \"(when it lands; R&D in progress)\", \"Until R5-full SDP ships\", \"the R5-full canonical knot solver\" and \"deferred until R5-full SDP ships (owner-decided)\" all -> \"the full SDP solver\" / \"which does not yet exist\"; \"an auditable conjecture-conditional dependency\" -> \"an explicit conjectural dependency\"; \"## Consumers\" -> \"## Where $\\nu_{\\mathrm{SDP}}$ is used\". Every number and every hedge survives, including $\\rho_F({}^4\\mathrm{He}) \\approx 1.889$, the negative $^4$He finding, the Coulomb-corrected 1.94, and the scoping of the identity to the three census atoms.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: §3b-cond, the docs/audits path and the time-stamp are gone, but the Downstream section still names the project's QA process and its content units — \"Each specialisation collapses an \\\"open audit finding\\\" or \\\"residue normalisation\\\" gap into a **single shared open class instance**\", above a table whose first column is headed \"consumer block\". \"open audit finding\" is a QA-sweep finding and \"consumer block\" is the pipeline's word for the paper's own units.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"collapses an \\\"open audit finding\\\" or \\\"residue normalisation\\\" gap\" -> \"collapses a separate residue-normalisation gap\"; the table column headed \"consumer block\" -> \"where used\"; \"across all three consumers\" -> \"in all three cases\". The three specialisations, their pole orders and the shared-open-class claim are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

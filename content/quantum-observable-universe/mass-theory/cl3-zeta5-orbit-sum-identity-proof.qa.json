@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: 'B1' has been replaced by \"the depth correspondence\", but the work-round numbering survives throughout — \"Combining round 10 + this round, the 2-dim Borel-rank space ...\", \"Reflection-formula reductions (round 10) and multiplication-formula reductions (this prop.) have been exhausted\", and a whole table headed \"Status before round 11 | Status after round 11\". Round N is the project's own work cycle, invisible to a reader.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The work-round numbering is gone: \"Combining round 10 + this round\" -> \"Combining the reflection-formula reductions with the identity above\"; \"Reflection-formula reductions (round 10) and multiplication-formula reductions (this prop.)\" -> the two reduction families named directly, with \"(the present proposition)\"; the table header \"Status before round 11 | Status after round 11\" -> \"Status before this proposition | Status after\"; \"Tate-rational (round 10)\" -> \"Tate-rational (reflection formula)\". All 50-dps values, the residual and every open/theorem/candidate status are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

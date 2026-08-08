@@ -8,7 +8,7 @@ the extensive observable lives in the **per-rep q-Reeb rotation
 phase** on the column-rich irrep of a substrate-fixed force-carrier
 torus knot.
 
-The merged α_shift universal chain proves
+The α_shift universal chain proves
 $\alpha_{\text{shift}}(T_{p, k}) = k \cdot (p - 1)$ — the
 **pole order of σ** on the column-rich irrep, equivalently the
 boundary holonomy of the Yekutieli non-abelian Stokes integral
@@ -109,10 +109,9 @@ instance covering all four light nuclei $A \in \{2, 3, 4\}$:
   `matches_alpha_shift` definitionally; the instance body is
   `matches_alpha_shift _ := rfl`.  **No `sorry`.**
 
-Consolidating all four nuclei into one instance — rather than four
-separate sibling blocks — addresses the inefficiency of repeating
-the per-nucleus identification pattern: a single block now carries
-the full candidate table.
+All four nuclei are carried by this single instance rather than by four
+per-nucleus instances, so the identification pattern is stated once and
+the full candidate table is discharged in one place.
 
 ## Remaining open math
 
@@ -133,5 +132,5 @@ Closing it — proving why specifically T(2, 5) carries A=3 mirror
 binding etc. — requires the per-nucleus minimisation argument on
 H_{3A}(q)'s Wedderburn block at the binding's smallest non-trivial
 irrep.  Lean target: a theorem deriving $(p_A, k_A)$ from a Hecke-
-trace minimisation principle, analogous to the meson force-carrier
-derivation queued at `prop:meson-color-tube-uniqueness`.
+trace minimisation principle, analogous to the still-open meson
+force-carrier derivation at `prop:meson-color-tube-uniqueness`.

@@ -16,8 +16,7 @@ content) is **discarded by construction**.
 
 For **real** $q > 0$, $\eta = \log q$ is real, $\sinh(\eta)$ is a
 real number, and $P_{\mathrm{skew}}$ content is **real-valued**.
-Sibling makes
-this explicit for torus knots:
+For torus knots this is explicit:
 $Q_m(\eta) = \sinh((2m+1)\eta) / (2 \cosh \eta)$ is real at real $q_0$.
 Per
 [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md),
@@ -63,8 +62,8 @@ Quantitative consequences differ between the two mechanisms:
    complex tr_M whose modulus closes the residual.
    - **(b) is ruled out under the current ansatz** (residual is
      positive everywhere on the Apollonius circle).
-   - **(a) is open** — accessible via the explicit Q_m P_skew
-     content from .
+   - **(a) is open** — accessible via the explicit $Q_m$ P_skew
+     content given above.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
    ([`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
@@ -75,7 +74,7 @@ Quantitative consequences differ between the two mechanisms:
    (the discarded sinh-channel could shift the LO ratio).
 
 3. **Physical interpretation**: $P_{\mathrm{skew}} = $ EM/charge-distinguishing
-   channel (sibling  documents this for torus knots).
+   channel (explicit for torus knots, as above).
    $\mathrm{Im}(q) = $ a substrate moduli parameter (not directly
    physical until tied to an observable Im observable, which the
    framework does not currently provide).

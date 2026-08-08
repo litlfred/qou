@@ -1569,12 +1569,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the proposition still sources its premise from an internal review document — \"The shape-collapse audit states that $c_k$ comes from the $u_{\\text{ladder}}$ Taylor expansion of $S(q) = \\mathfrak{Q}_\\beta/E_0$.\" The \"shape-collapse audit\" is a QA record, not a result the paper contains.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"The shape-collapse audit states that $c_k$ comes from the $u_{\\text{ladder}}$ Taylor expansion of $S(q)$\" -> \"One reading has $c_k$ coming from the $u_{\\text{ladder}}$ Taylor expansion of $S(q)$\". The claim being refuted is stated in full, and the 0/0 degeneracy argument, the proved $c_2 = -1$ remark and the 0.168% figure are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

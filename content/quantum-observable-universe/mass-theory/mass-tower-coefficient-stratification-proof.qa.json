@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the closing paragraph is still cross-session coordination — \"**Coordinating note for sibling computations.** The two parallel computational efforts (`claude/verify-mass-computation-k0DaZ`, `claude/phase-b-heavy-rust-character-kernel`) are independently verifying that the spectral-derived coefficients close the ${}^4\\mathrm{He}$ binding-energy gap.\" Both names are git working branches and \"sibling computations\" is session vocabulary.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The heading \"**Coordinating note for sibling computations.**\" and the sentence stump the earlier branch-name removal left behind (\"The two parallel computational efforts / are independently / verifying ...\") are rebuilt as \"**Note on the ${}^4\\mathrm{He}$ gap.** Whether the spectral-derived coefficients close the ${}^4\\mathrm{He}$ binding-energy gap is still under independent numerical verification.\" The forcing-structure claim and the fit-replaced-by-derivation conclusion are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

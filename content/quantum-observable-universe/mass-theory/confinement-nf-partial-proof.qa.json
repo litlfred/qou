@@ -1893,12 +1893,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: AGENTS.md §3b-cond/§7c, the docs/audits links and the word 'audit' are all gone; what remains is one undefined workplan label in the verification section — \"matching the empirical W-3 closed form $D(u) = 2^{2A+1} \\cdot u^{18Z + 21N + 1} \\cdot (1+u^2)^{3A-1}$ exactly.\" \"W-3\" occurs nowhere else in the manuscript and is a workplan item id.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"matching the empirical W-3 closed form $D(u) = ...$ exactly\" -> \"matching the empirical closed form $D(u) = ...$ exactly\". The closed form, the 18Z + 21N + 1 result and the exactness claim are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

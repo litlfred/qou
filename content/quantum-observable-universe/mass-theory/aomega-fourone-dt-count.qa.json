@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the §3b-cond label and the bean id `qou-qnnq` are gone, but the Scope paragraph still speaks in pipeline terms — \"The result is **conditional** on that adopted bridge and is **not** wired to production: the The accuracy dashboard and the $Q_\\beta$ ladder are untouched.\" \"wired to production\" and \"the accuracy dashboard\" are compute-pipeline artifacts, not objects of the paper (the sentence is also garbled by the earlier edit).",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The Scope sentence, which the earlier edit had also left garbled, is rebuilt as \"is **not** carried downstream: no mass prediction and no rung of the $Q_\\beta$ ladder depends on it\". \"wired to production\" and \"the accuracy dashboard\" are gone; the conditionality on the adopted bridge and the fact that nothing downstream uses the result both survive.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

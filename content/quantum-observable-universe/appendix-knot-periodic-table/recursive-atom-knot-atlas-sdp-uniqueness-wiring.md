@@ -22,12 +22,12 @@ parameterised `NucleusEmptySDPUniqueness` module, covers any nucleus
 once $A$ (equivalently $n = 3A$) is fixed.
 
 Named wrappers expose this at four granularity layers — from the ten
-QOU-tracked R5-full nuclei, through per-element and per-stable-isotope
+the tracked nuclei, through per-element and per-stable-isotope
 coverage, down to the generic module valid for any $n : \mathbb{N}$:
 
 | Granularity | Lean file | Coverage |
 |---|---|---|
-| QOU-tracked R5-full nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | $^2$H, $^3$H, $^3$He, $^4$He, $^6$Li, $^9$Be, $^{11}$B, $^{12}$C, $^{14}$N, $^{16}$O |
+| tracked nuclei | `Applied<Nucleus>Uniqueness.lean` (10 files) | $^2$H, $^3$H, $^3$He, $^4$He, $^6$Li, $^9$Be, $^{11}$B, $^{12}$C, $^{14}$N, $^{16}$O |
 | Per-element (AME2020 ref) | `PeriodicTableUniqueness.lean` | 118 elements H..Og |
 | Per-stable-isotope | `StableIsotopeUniqueness.lean` | 252 stable nuclides H..Bi |
 | Generic | `NucleusEmptySDPUniqueness.lean` | Any $n : \mathbb{N}$ |

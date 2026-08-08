@@ -10,19 +10,19 @@ tags: ["mass-theory", "q-beta", "continuum-limit", "hyperbolic-volume", "faddeev
 > `−Vol(4₁) ≈ −2.02988` is **anchor-blind** and misses **both** substrate anchors
 > (muon **+0.479%**, proton **−1.907%**) while the actual $c_3$ **swings 2.43%**
 > (muon −2.0202, proton −2.0693); at the muon (CAL-2) pin it is **6.9× worse**
-> than the keystone's own `−Vol(4₁)+u−(10/3)u²` near-match. So the "continuum
+> than the precision ladder's own `−Vol(4₁)+u−(10/3)u²` near-match. So the "continuum
 > limit is exactly −Vol(4₁), rigorously banishing all algebraic truncations"
 > claim is **not** supported — it makes the muon fit worse and fails cross-anchor
 > (§8 guard). Moreover, `c_3 → −2 = J_Hopf(q=1)` is the **canonical** q=1 shadow
 > (registry **KC10 / KC20** `C_Hopf(2)=−2`), **not** a "hallucination." The
 > hyperbolic geometry below is real and kept (`Vol(4₁)=2·Cl₂(π/3)`, Lobachevsky
 > saddle at `π/3`); only the $c_3$ **identification** and the "exact/rigorous"
-> tier are corrected. Companion keystone re-scope: `#3501`/`#3503`.
+> tier are corrected.
 
 The third topological mass gap observable $c_3$ was initially measured via empirical extrapolation of the $N=3$ operator-valued calculations across the $Q_\beta$ manifold, resulting in a near-match physical measurement of:
 $$ c_3^{\text{emp}} \approx -2.02162 $$
 
-The canonical $q = 1$ shadow of this quantity is $J_{\text{Hopf}}(1) = -2$ (kernel-constraint registry KC10/KC20, $C_{\text{Hopf}}(2) = -2$). The question addressed below is whether the residual gap between $c_3^{\text{emp}}$ and $-2$ admits a continuum-geometric description. (Combinatorial constraints proposed over $S_5$ cells did not survive audit.)
+The canonical $q = 1$ shadow of this quantity is $J_{\text{Hopf}}(1) = -2$ (kernel-constraint registry KC10/KC20, $C_{\text{Hopf}}(2) = -2$). The question addressed below is whether the residual gap between $c_3^{\text{emp}}$ and $-2$ admits a continuum-geometric description. (Combinatorial constraints proposed over $S_5$ cells did not survive scrutiny.)
 
 ## The Continuum Limit Kashaev Integral
 
@@ -42,8 +42,8 @@ $$ A = \frac{\text{Vol}(4_1)}{\pi} \approx 0.6461318 $$
 
 The candidate identification
 $$ c_3 \xrightarrow{N \to \infty} -\text{Vol}(4_1) \approx -2.02988 $$
-is **scope-limited, not exact**: $-\text{Vol}(4_1)$ is anchor-blind, missing both substrate anchors (muon $+0.479\%$, proton $-1.907\%$) while the measured $c_3$ itself swings $2.43\%$ across anchors (muon $-2.0202$, proton $-2.0693$); at the muon (CAL-2) pin it is $6.9\times$ worse than the keystone near-match $-\text{Vol}(4_1) + u - (10/3)\,u^2$. The residual between the observed $-2.0216$ and $-2.02988$ was previously attributed to finite-size truncation scaling; the cross-anchor swing shows the identification itself does not close.
+is **scope-limited, not exact**: $-\text{Vol}(4_1)$ is anchor-blind, missing both substrate anchors (muon $+0.479\%$, proton $-1.907\%$) while the measured $c_3$ itself swings $2.43\%$ across anchors (muon $-2.0202$, proton $-2.0693$); at the muon (CAL-2) pin it is $6.9\times$ worse than the precision-ladder near-match $-\text{Vol}(4_1) + u - (10/3)\,u^2$. The residual between the observed $-2.0216$ and $-2.02988$ was previously attributed to finite-size truncation scaling; the cross-anchor swing shows the identification itself does not close.
 
-What stands is the hyperbolic geometry: $\text{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, with the Lobachevsky saddle at $\theta = \pi/3$, supplies the geometric envelope that anchor-sensitive corrections (the keystone ladder) refine — not a rigorous continuum evaluation of $c_3$.
+What stands is the hyperbolic geometry: $\text{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$, with the Lobachevsky saddle at $\theta = \pi/3$, supplies the geometric envelope that anchor-sensitive corrections (the precision ladder) refine — not a rigorous continuum evaluation of $c_3$.
 
 

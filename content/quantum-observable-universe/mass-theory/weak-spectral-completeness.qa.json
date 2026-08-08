@@ -1663,12 +1663,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: §7c and the docs/audits link are gone, but the PSLQ paragraph and the section after it still run on QA-process vocabulary — \"strictly smaller than the brute-force monomial basis of the impasse audit\", then the heading \"### Audit-flag impact\" and \"**NV-1**: hard flag closed via constrained PSLQ on the extended basis\". The \"impasse audit\", \"audit flags\" and the flag id NV-1 are the project's review bookkeeping.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"strictly smaller than the brute-force monomial basis of the impasse audit\" -> \"... used previously\"; the heading \"### Downstream consequence — closes NV-1\" -> \"### Downstream consequence — the weak-scale crossing count\"; \"### Audit-flag impact\" -> \"### Consequences\", and \"**NV-1**: hard flag closed via constrained PSLQ on the extended basis\" -> \"**the weak-scale crossing count $N_v$**: pinned by constrained PSLQ on the extended basis\". The conditional \"If this conjecture closes\" framing, the $G_F$ consequence and the superseded-Plancherel-basis note are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1315,12 +1315,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the whole opening sentence is still pipeline narration — \"We consolidate structural results reconnected during the orphan audit. These blocks address phenomena at the boundary of the mass theory.\" \"the orphan audit\" is the project's QA sweep and \"These blocks\" is the pipeline's word for the paper's own contents.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"We consolidate structural results reconnected during the orphan audit. These blocks address phenomena at the boundary of the mass theory.\" -> \"We collect several structural results that address phenomena at the boundary of the mass theory.\" The remaining three sentences of the intro are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the Corollary still labels two research frontiers with workplan item ids — \"The per-knot mass-prediction accuracy (the step-9a frontier) and the binding-energy accuracy (the step-9b frontier) are not independent problems.\" \"step-9a\" and \"step-9b\" are steps of the internal workplan, not anything the paper defines.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The Corollary's two workplan ids are dropped: \"the per-knot mass-prediction accuracy (the step-9a frontier) and the binding-energy accuracy (the step-9b frontier)\" now names the two accuracies plainly. The amplification factors, the ~0.1%–0.8% gating figure and the cancellation argument are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

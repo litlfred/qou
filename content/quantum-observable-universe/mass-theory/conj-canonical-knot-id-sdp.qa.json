@@ -1417,12 +1417,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the closing sentence still names a rung of the internal tooling roadmap — \"The R5-minimal verifier confirms the assignments at the constituent level.\" R5-minimal is a stage of the repo's solver roadmap (R2–R5), not a verifier the paper defines.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"The R5-minimal verifier confirms the assignments at the constituent level\" -> \"The reduced-form SDP verifier confirms ...\". The three knot assignments, the 0.5% residual figure and the open verification requirements are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

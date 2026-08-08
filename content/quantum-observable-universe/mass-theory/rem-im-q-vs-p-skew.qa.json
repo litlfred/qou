@@ -1410,12 +1410,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: PR [#1153], the docs/audits paths and \"Phase 3\" are gone, but stripping them left dangling branch/PR references — \"Sibling makes this explicit for torus knots: $Q_m(\\eta) = ...$\", \"(sibling  documents this for torus knots)\" and \"**(a) is open** — accessible via the explicit Q_m P_skew content from .\" \"Sibling\" is the sibling PR/branch, and with the link removed the sentences now point at nothing.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Repaired, not merely trimmed. The three sentences an earlier link removal had left dangling are reconstructed from the surrounding context: \"Sibling makes this explicit for torus knots: $Q_m(\\eta) = ...$\" -> \"For torus knots this is explicit: $Q_m(\\eta) = ...$\"; \"**(a) is open** — accessible via the explicit Q_m P_skew content from .\" -> \"... content given above.\"; \"(sibling  documents this for torus knots)\" -> \"(explicit for torus knots, as above)\". All three now resolve to the $Q_m(\\eta)$ formula stated in Mechanism 1 of this same block. No claim, table row, hedge or open status changed.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

@@ -984,12 +984,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: §2e–§2f and the docs/audits path are gone, but the scope paragraph still argues from repository policy — \"No instance of the class is provided; per the corpus discipline, axiomatization is not proof, and nothing here unblocks any downstream wiring.\" \"the corpus discipline\" and \"downstream wiring\" are the authoring pipeline's rules and graph, not the paper's.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Pass. The flagged \"per the corpus discipline, axiomatization is not proof, and nothing here unblocks any downstream wiring\" had already been rewritten to \"and axiomatisation is not proof, so nothing here is carried downstream\". Re-read in full: the open MeV unit anchor, the near-match label on $B(^2\\mathrm{H}) = 5g$ and the no-instance caveat are all intact, and no pipeline vocabulary remains.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

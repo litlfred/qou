@@ -1283,12 +1283,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the only surviving defect is a git working-branch name in the .md body — \"Tractable in pure Python for $n \\leq 5$; the sibling Rust kernel (`phase-b-heavy-rust-character-kernel`) handles larger $n$.\" That is the branch `claude/phase-b-heavy-rust-character-kernel`, and \"sibling\" here means a sibling session/branch, neither of which a reader can resolve.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. The branch name is gone: \"the sibling Rust kernel (`phase-b-heavy-rust-character-kernel`) handles larger $n$\" -> \"larger $n$ needs a compiled character kernel\"; the later \"defer to the Rust kernel for higher-$n$ probes\" -> \"defer to a compiled kernel\". The $n \\leq 5$ tractability bound and all complexity claims are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

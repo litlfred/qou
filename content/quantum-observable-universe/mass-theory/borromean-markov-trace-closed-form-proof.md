@@ -75,7 +75,7 @@ The three irreps of $S_3$ / $H_3(q)$ contribute distinctly to the
 Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 
 > **Convention note.** Two distinct
-> Markov-trace normalisations appear in the corpus for $H_3(q)$, and
+> Markov-trace normalisations are in use for $H_3(q)$, and
 > they have **different** Wenzl weights and different per-partition
 > budgets:
 >
@@ -90,7 +90,7 @@ Frobenius expansion $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$.
 >    the formal derivation), whose
 >    weights are all non-zero and whose trace value on
 >    $\beta_{\mathrm{Bor}}$ **differs** from the closed form above
->    (e.g. $0.91926$ vs $0.93917$ at $q = 1.3$; the phase1c witness
+>    (e.g. $0.91926$ vs $0.93917$ at $q = 1.3$; that witness
 >    records `lean_form_matches: false`).
 >
 > An earlier revision of this section tabulated the bridge-convention

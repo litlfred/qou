@@ -1569,12 +1569,12 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the block still describes its own result as closing a QA finding — \"This is the level-internal lemma [`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace), which closes the level-internal half of the audit gap.\" \"the audit gap\" is a finding of the project's review process; the reader has no such gap in view.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"which closes the level-internal half of the audit gap\" -> \"it settles the level-internal half of the commutation question\" — the question being where $uv = q\\,vu$ lives, which the block's opening paragraph poses. The lemma reference and the claim itself are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }

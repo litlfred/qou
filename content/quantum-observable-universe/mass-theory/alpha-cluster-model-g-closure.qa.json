@@ -9,12 +9,12 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Re-review from the current text: the AGENTS.md label §3b-cond is gone, but the .md body still routes the reader through the repo's QA/compute pipeline. It records the model \"for its structural content and its audit trail\", and labels the evidence \"Witnesses (audit-only, not wired to any production dashboard)\". \"audit trail\", \"audit-only\", \"wired\" and \"production dashboard\" are the authoring pipeline's own vocabulary, not objects this paper defines.",
-        "reviewed_at": "2026-08-08T08:19:18Z",
+        "result": "pass",
+        "notes": "Fixed. \"recorded here for its structural content and its audit trail\" -> \"for its structural content alone\"; the evidence heading \"Witnesses (audit-only, not wired to any production dashboard)\" -> \"Numerical verification (checks only; no result elsewhere in this paper depends on them)\", which keeps the caveat that nothing downstream consumes these witnesses without the pipeline's vocabulary. Every epistemic tier, residual and the anti-laundering hedge are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",
-          "id": "local/branch-jargon-sweep",
+          "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
       }
