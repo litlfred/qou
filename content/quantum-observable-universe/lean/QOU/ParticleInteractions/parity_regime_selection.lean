@@ -47,11 +47,6 @@ class ParityRegimeSelectionContext where
   /-- Sum of Frobenius-positive Markov-trace configurations
       (`Σ_FP`) used in the even-`A` regime. -/
   Sigma_FP : ℝ
-  /-- The parity regime selection claim (conclusion). -/
-  parity_regime_selection_claim : sign_val = (-(1 : ℝ)) ^ (A - 1) ∧
-    (Odd A → 3 ≤ A → Q_value = |S_Delta| * m_e) ∧
-    (Even A → Q_value = (Sigma_FP + 1) * m_e) ∧
-    (A = 1 → Q_value = (S_Delta + 1) * m_e)
 
 /-- **Parity regime selection** (from manuscript):
 
@@ -79,6 +74,6 @@ theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
     (Even ctx.A → ctx.Q_value = (ctx.Sigma_FP + 1) * ctx.m_e) ∧
     (ctx.A = 1 → ctx.Q_value = (ctx.S_Delta + 1) * ctx.m_e) := by
   -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
-  exact ctx.parity_regime_selection_claim
+  sorry
 
 end QOU.ParticleInteractions
