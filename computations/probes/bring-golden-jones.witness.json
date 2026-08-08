@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-08T17:27:10.294722+00:00",
-  "commitSha": "0efa5d09a2fa241939482d5047b43b2f514a17bc",
+  "computedAt": "2026-08-08T17:37:54.140226+00:00",
+  "commitSha": "42f05741225f3e4dd5fb6cea31bff6cbc54a417c",
   "assertions": [
     {
       "name": "quantum_dimension_at_r5_is_the_golden_ratio",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 16,
   "computation": "bring-golden-jones",
   "scriptFile": "bring_golden_jones_probe.py",
-  "scriptHash": "7e061c4f20c7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ea41a1e868cd",
+  "scriptCommitSha": "93f319503535da35f58e742be5a721192ecb5256",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +89,7 @@
     "three_candidate_sqrt5_mechanisms": {
       "1_gauss_sum": "sum_k zeta_5^{k^2} = sqrt5, the WRT invariant of a lens space; Sigma_2(T_{2,5}) = L(5,q) since |H_1| = |Delta(-1)| = 5. This is what the corpus states.",
       "2_branched_cover": "Sigma_5(T_{2,3}) is the Poincare homology sphere Sigma(2,3,5) = S^3/2I, |2I| = 120 = |S_5| = |Aut(Bring)|. OPEN — needs lawrence-zagier-1999, unreadable here; see qou-lz235.",
-      "3_quantum_dimension": "this file: [2]_{r=5} = phi and the Bring knots' Jones values are golden-ratio algebraic integers. IDENTIFIED with (1): both are Q(sqrt5) = Q(zeta_5)^+ via 2 cos(pi/5)."
+      "3_quantum_dimension": "[2]_{r=5} = phi and the Bring knots' Jones values are golden-ratio algebraic integers. IDENTIFIED with (1): both are Q(sqrt5) = Q(zeta_5)^+ via 2 cos(pi/5). NOTE the quantum-dimension half is PRIOR IN-REPO work (lr_modulus_identification_sigma235.py, keystone_valuemap_genuine_smatrix_s013.py); only the Jones-polynomial evaluations and the jones1985 link are added here."
     },
     "what_this_is_not": {
       "not_c_sigma": "T_{2,3} and T_{2,5} are torus knots — zero simplicial volume, polynomial colored-Jones growth, no Lobachevsky saddle. c_sigma is a different object and the volume conjecture is vacuous on them.",

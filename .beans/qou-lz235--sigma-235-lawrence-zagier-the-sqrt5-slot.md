@@ -133,3 +133,56 @@ closed forms live in `Q(i)` and `Q(sqrt-3)`, the two exceptional IMAGINARY
 quadratic fields. `Q(sqrt5)` is REAL. So a `sqrt5` cannot enter `c_sigma` by the
 polyhedral route at all, and any connection would have to be of a different
 kind. Expect a separation, not a unification.
+
+## CORRECTION 2026-08-08 — this bean was largely redundant, and I duplicated a reference
+
+Two mistakes, both mine, both recorded rather than quietly fixed.
+
+**1. The corpus already has this.** Before opening this bean I did not check what
+`Sigma(2,3,5)` work already exists in-repo. It is extensive and machine-validated:
+
+    computations/lr_modulus_identification_sigma235.py
+    computations/probes/keystone_colored_lr_modulus_s013.py
+    computations/probes/keystone_valuemap_genuine_smatrix_s013.py
+    computations/probes/keystone-colored-sigma235-wrt.witness.json
+    computations/deltalambda/deltalambda_icosahedral_smatrix_magnitude_probe.py
+
+including the Hikami odd characters `chi^{(1,1,a)}_{60}`, the genuine S-matrix,
+the McKay `2I <-> E8-hat` correspondence, and `sum mark^2 = 120 = |2I|`. It also
+already contains `[3]_zeta = [2]_zeta = phi` at `zeta = e^{i pi/5}` — which
+`bring_golden_jones_probe.py` REDISCOVERED. That probe's docstring now says so;
+its genuinely new content is only the Jones-polynomial evaluations of the two
+Bring torus knots and the `jones1985` link.
+
+**2. `lawrence-zagier-1999` was already registered** (correct pages 93-108, DOI,
+and a note calling it the "foundation of the Sigma(2,3,5) keystone false-theta
+machinery"). I registered a second copy. Removed; the one new fact — that every
+host is egress-blocked here, and that `hikami2005brieskorn` restates the result
+— was merged into the surviving entry. This is the SECOND duplicate reference I
+have created in this session (the first was `ohtsuki-takata-2015`). The lesson is
+mechanical: **grep `references.ts` for the id AND the title before adding, and
+grep `computations/` for the topic before opening a bean.**
+
+**The reading block is moot.** `hikami2005brieskorn` is already in `uploads/`
+(`0405028v2.pdf`) and contains the Poincare-sphere result as its **Theorem 10**,
+attributed to Lawrence-Zagier, plus the generalisation to all
+`Sigma(p1,p2,p3)` and — section 6 — the identification of the S-matrix with the
+**Reidemeister torsion**. So no retrieval is needed. Corollary 11 gives
+
+    tau_N(Sigma(p)) ~ sqrt(N/i) sum_l S_l e^{-(i/2) pi P N (1 + sum l_j/p_j)^2} + tail
+
+with `S_l` the torsion, a `sqrt(N)` prefactor (not `N^{3/2}`), and the exponential
+a PHASE only since `Vol = 0`. The `sqrt5` appears in exactly the slot the
+c_sigma law's `|tau|^{-1/2}` occupies — e.g. `1/sqrt5` for `Sigma(3,4,5)`,
+`2/sqrt7` for `Sigma(2,3,7)`. Note `Sigma(2,3,5)` is the exceptional case
+`sum 1/p_j > 1` (spherical), handled separately by Theorem 10.
+
+## What is actually left
+
+Not "read Lawrence-Zagier". Rather: **is the Hikami torsion `S_l` for
+`Sigma(2,3,5)` related to the hyperbolic `c_sigma = k |tau_DG|^{-1/2}`, or is it
+a parallel structure sharing only the field?** The N-powers differ
+(`sqrt N` vs `N^{3/2}`), the exponential is a phase rather than a volume, and
+`Q(sqrt5)` is REAL where the hyperbolic closed forms live in the imaginary
+quadratics `Q(i)` and `Q(sqrt-3)`. Expect a separation. Before any further work,
+READ the five in-repo files above — the answer may already be there.

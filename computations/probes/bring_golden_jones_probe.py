@@ -20,6 +20,17 @@ written into the paper as one thing:
      produces the golden ratio directly as a quantum dimension, and the Bring
      knots' own Jones polynomials evaluate to golden-ratio algebraic integers.
 
+PRIOR ART IN THIS REPO — READ THIS BEFORE CITING THE PROBE. The fact that
+`[2]_zeta = [3]_zeta = phi` at `zeta = e^{i pi/5}` is NOT new here. It is already
+established, machine-validated, in `computations/lr_modulus_identification_sigma235.py`
+and `probes/keystone_valuemap_genuine_smatrix_s013.py`, together with the whole
+Sigma(2,3,5) / Hikami odd-character apparatus, the McKay `2I <-> E8-hat`
+correspondence, and `sum mark^2 = 120 = |2I|`. This probe rediscovered it. What
+is genuinely added below is narrower: the JONES POLYNOMIAL EVALUATIONS of the two
+Bring torus knots at the fifth-root points, and the explicit identification with
+`jones1985`'s Markov trace. The quantum-dimension line is included for
+self-containedness and is credited, not claimed.
+
 WHAT IS COMPUTED. At `r = 5` the quantum integers are `[n] = sin(n pi/5)/sin(pi/5)`,
 so `[2] = [3] = phi = (1+sqrt5)/2` — the golden ratio IS the quantum dimension,
 and `sqrt5 = 2 phi - 1`. Evaluating the two Bring torus knots' Jones polynomials
@@ -180,10 +191,15 @@ def main() -> int:
                              "Sigma(2,3,5) = S^3/2I, |2I| = 120 = |S_5| = "
                              "|Aut(Bring)|. OPEN — needs lawrence-zagier-1999, "
                              "unreadable here; see qou-lz235."),
-        "3_quantum_dimension": ("this file: [2]_{r=5} = phi and the Bring "
-                                "knots' Jones values are golden-ratio "
-                                "algebraic integers. IDENTIFIED with (1): both "
-                                "are Q(sqrt5) = Q(zeta_5)^+ via 2 cos(pi/5)."),
+        "3_quantum_dimension": ("[2]_{r=5} = phi and the Bring knots' Jones "
+                                "values are golden-ratio algebraic integers. "
+                                "IDENTIFIED with (1): both are "
+                                "Q(sqrt5) = Q(zeta_5)^+ via 2 cos(pi/5). NOTE "
+                                "the quantum-dimension half is PRIOR IN-REPO "
+                                "work (lr_modulus_identification_sigma235.py, "
+                                "keystone_valuemap_genuine_smatrix_s013.py); "
+                                "only the Jones-polynomial evaluations and the "
+                                "jones1985 link are added here."),
     })
     wb.add_data("what_this_is_not", {
         "not_c_sigma": ("T_{2,3} and T_{2,5} are torus knots — zero simplicial "
