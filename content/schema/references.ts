@@ -2009,6 +2009,7 @@ export const references: CSLData[] = [
     issue: "1",
     page: "103-111",
     DOI: "10.1090/S0273-0979-1985-15304-2",
+    note: "FULL TEXT AVAILABLE at `uploads/S0273-0979-1985-15304-2.pdf`. The original construction: the invariant from a MARKOV TRACE on the Hecke/von Neumann algebra of the braid group, via Alexander's and Markov's theorems. Relevant to the `brings-surface` $\\sqrt5$: at a fifth root of unity the Markov trace produces the golden ratio directly as a quantum dimension, $[2]_{r=5} = 2\\cos(\\pi/5) = \\varphi$, and the two torus knots that chapter names evaluate to golden-ratio algebraic integers — $|V(3_1)(\\zeta_{10})|^2 = \\varphi^2$ and $|V(T_{2,5})(\\zeta_{10})|^2 = 2+\\varphi$, the global dimension of the Fibonacci category. This identifies the corpus's Gauss-sum $\\sqrt5$ with the Markov-trace $\\sqrt5$: both are $\\mathbb{Q}(\\sqrt5) = \\mathbb{Q}(\\zeta_5)^+$. It is NOT the $c_\\sigma$ $\\sqrt5$ — torus knots have zero volume, and the hyperbolic closed forms live in the imaginary quadratic fields $\\mathbb{Q}(i)$ and $\\mathbb{Q}(\\sqrt{-3})$ where a real $\\sqrt5$ cannot appear. See `computations/probes/bring_golden_jones_probe.py`.",
   }),
 
   // ── Edge 1978 ─────────────────────────────────────────────────

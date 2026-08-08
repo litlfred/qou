@@ -1,0 +1,99 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-08T17:27:10.294722+00:00",
+  "commitSha": "0efa5d09a2fa241939482d5047b43b2f514a17bc",
+  "assertions": [
+    {
+      "name": "quantum_dimension_at_r5_is_the_golden_ratio",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "[2] = sin(2 pi/5)/sin(pi/5) against (1+sqrt5)/2, symbolically"
+    },
+    {
+      "name": "bring_knot_jones_values_are_golden",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|V|^2 at zeta_5 and zeta_10 for 3_1 and T_{2,5} against closed forms asserted before evaluation"
+    },
+    {
+      "name": "cinquefoil_golden_value_is_fibonacci_global_dimension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|V(T_{2,5})(zeta_10)|^2 = 2 + phi = 1 + phi^2 = D^2_{Fib}"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "bring-golden-jones",
+  "scriptFile": "bring_golden_jones_probe.py",
+  "scriptHash": "7e061c4f20c7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Identifies the sqrt5 of the brings-surface chapter with the sqrt5 of the Jones polynomial at a fifth root of unity. At r = 5 the quantum dimension [2] = [3] = phi, and the Bring torus knots' Jones polynomials evaluate to golden-ratio algebraic integers, the cinquefoil's |V(zeta_10)|^2 = 2 + phi being the Fibonacci category's global dimension. Separates this from the c_sigma sqrt5 question: torus knots have zero volume and the hyperbolic closed forms live in the imaginary quadratic fields Q(i) and Q(sqrt-3), where a real sqrt5 cannot appear. Exact radicals throughout; closed forms asserted before evaluation.",
+  "auditOnly": "docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md",
+  "data": {
+    "quantum_dimensions_r5": {
+      "[1]": "1",
+      "[2]": "sqrt(5 - sqrt(5))*(sqrt(5) + 5)**(3/2)/20",
+      "[3]": "sqrt(5 - sqrt(5))*(sqrt(5) + 5)**(3/2)/20",
+      "[4]": "1"
+    },
+    "jones_evaluations": {
+      "3_1 (trefoil)": {
+        "zeta_10": {
+          "abs_V_squared": "sqrt(5)/2 + 3/2",
+          "closed_form": "sqrt(5)/2 + 3/2",
+          "reading": "phi^2",
+          "matches": true
+        },
+        "zeta_5": {
+          "abs_V_squared": "7/2 - sqrt(5)/2",
+          "closed_form": "7/2 - sqrt(5)/2",
+          "reading": "3 - 1/phi",
+          "matches": true
+        }
+      },
+      "T_{2,5} (cinquefoil)": {
+        "zeta_10": {
+          "abs_V_squared": "sqrt(5)/2 + 5/2",
+          "closed_form": "sqrt(5)/2 + 5/2",
+          "reading": "2 + phi = D^2 of the Fibonacci category",
+          "matches": true
+        },
+        "zeta_5": {
+          "abs_V_squared": "7/2 - 3*sqrt(5)/2",
+          "closed_form": "7/2 - 3*sqrt(5)/2",
+          "reading": "phi^{-4}",
+          "matches": true
+        }
+      }
+    },
+    "three_candidate_sqrt5_mechanisms": {
+      "1_gauss_sum": "sum_k zeta_5^{k^2} = sqrt5, the WRT invariant of a lens space; Sigma_2(T_{2,5}) = L(5,q) since |H_1| = |Delta(-1)| = 5. This is what the corpus states.",
+      "2_branched_cover": "Sigma_5(T_{2,3}) is the Poincare homology sphere Sigma(2,3,5) = S^3/2I, |2I| = 120 = |S_5| = |Aut(Bring)|. OPEN — needs lawrence-zagier-1999, unreadable here; see qou-lz235.",
+      "3_quantum_dimension": "this file: [2]_{r=5} = phi and the Bring knots' Jones values are golden-ratio algebraic integers. IDENTIFIED with (1): both are Q(sqrt5) = Q(zeta_5)^+ via 2 cos(pi/5)."
+    },
+    "what_this_is_not": {
+      "not_c_sigma": "T_{2,3} and T_{2,5} are torus knots — zero simplicial volume, polynomial colored-Jones growth, no Lobachevsky saddle. c_sigma is a different object and the volume conjecture is vacuous on them.",
+      "field_obstruction": "the hyperbolic closed forms live in Q(i) (octahedral) and Q(sqrt-3) (tetrahedral), the two exceptional IMAGINARY quadratic fields. Q(sqrt5) is REAL, so it cannot appear there by that route at all."
+    }
+  }
+}
