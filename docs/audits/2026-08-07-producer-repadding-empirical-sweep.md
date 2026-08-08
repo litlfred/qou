@@ -2456,3 +2456,62 @@ re-runs, so 1.4% bounds false-positive risk, not the wave conversion rate.
   measurement here, pinned at `13ff8207`, also gives 56/59. Immaterial — both
   cite the fuller 78 of 159 — but the baseline should not be quoted again until
   someone names the producer.
+
+## P53 — ⁴He rebuilt in 20 minutes, and the label bug was in the producer
+
+The colour-weighted native path turned an "hours, dedicated run" job into
+**1218 s** — 1199 s of it a single `chi_lambda_all_partitions_mpfr` batch over
+all 77 partitions, no bypass warning, 9 of 47 crossings taking explicit
+`avg_shifts`. The earlier estimate of hours measured the pure-mpmath fallback,
+not the fixed path.
+
+| | value |
+|---|---|
+| new `tr_M_at_q0` | `0.055358408216379032879226444353999291113592115895273` |
+| old (`13ff8207`) | `0.055358426266783106464808452739349303052129025560984` |
+| relative change | **−3.26e-07** |
+| q₀ shift muon→proton | −1.15e-08 → amplification **28.3×** |
+
+`q_0_50dps` carries the proton prefix, `q0Anchor` reads `proton`, `scriptHash`
+is stamped. Largest per-λ move 1.99e-6, everything inside the 1e-5 bound. The
+numerics are a clean anchor migration.
+
+### The classifier still said VALUES, and it was right three times over
+
+Peeling the diff back: normalise the `by_partition` ordering and drop the new
+`dim` field → still `VALUES`; drop the fields the rebuild loses → then
+`ANCHOR_MIGRATION`. Three structural problems, not one:
+
+1. **Partition order changed and entries gained `dim`/`compute_time_sec`.** The
+   classifier flattens `by_partition` positionally, so a reorder alone
+   misaligns all 77 entries.
+2. **`convention` regressed** — and this is the important one.
+3. **Fields present at HEAD are dropped**: `producer`,
+   `tr_M_markov_peel_xref`, `tr_M_dual_path_rel_gap`, `n_partitions_total`,
+   `partial`. `save_witness`'s payload simply does not emit them.
+
+### The mislabelling was never in the witnesses
+
+`save_witness` **hardcoded** `"convention": "averaged-crossings"` — in both
+payloads — while `build_chi_cache_at_q0` installs the colour-weighted p–n
+crossing thirty lines above. Every A≥2 cache therefore shipped a label
+contradicting its own numbers, which is precisely what
+`chi_convention_from_values_audit` had to detect by recomputation.
+
+So repairing the three mislabelled witnesses by hand would have been **undone
+by the next rebuild** — and this very rebuild proved it, regressing ⁴He's one
+*correct* label to `averaged-crossings`. Fixing witnesses while the producer
+re-asserts the wrong string is a treadmill.
+
+The label is now **derived from the word**: count the crossings the
+colour-weighted substitution actually replaced, and label accordingly. A=1
+atoms have none, so colour-blind stays honest for them — counted rather than
+assumed from the atom. Confirmed end to end against the independent audit:
+
+    proton     averaged-crossings                 INDISTINGUISHABLE
+    deuteron   colour-weighted-averaged-crossing  AGREES
+
+deuteron classifies `VALUES` on that rebuild, which is the guard working as
+designed: `convention` is deliberately outside `META`, so a convention change
+must surface for review rather than pass as metadata. It is committed here with
+that justification and an independent measurement behind it, not waved through.

@@ -98,16 +98,33 @@ def build_chi_cache_at_q0(
     # d = −h·(½ − δ/4) here to match it. Distinct from the color-blind
     # −h/2 by ~7e-5, so a 1e-9 match window is unambiguous. A=1 atoms have
     # no inter-nucleon crossing → no match → word unchanged.
+    n_colour_weighted = 0
     try:
         from canonical_braid_crossings import _avg_color_delta
         _qm = mp.mpf(q_str)
         _hm = _qm - mp.mpf(1) / _qm
         _cw_d = -_hm * (mp.mpf(1) / 2 - _avg_color_delta() / 4)
         _cw_f64 = float(_cw_d)
+        n_colour_weighted = sum(1 for (_, d, _) in word
+                                if abs(float(d) - _cw_f64) < 1e-9)
         word = [(c, _cw_d if abs(float(d) - _cw_f64) < 1e-9 else d, g)
                 for (c, d, g) in word]
     except Exception:
         pass  # import miss / unexpected shape → leave word as-is
+    # Derive the convention label from the word instead of asserting it. Both
+    # payloads below used to hardcode "averaged-crossings" while this block
+    # installs the colour-weighted p-n crossing — so every A>=2 cache shipped a
+    # label contradicting its own numbers, which
+    # `chi_convention_from_values_audit` then had to detect by recomputation
+    # (deuteron, tritium, helium-3 all MISLABELLED). Repairing the witnesses
+    # without repairing this would have been undone by the next rebuild; this
+    # run regressed helium-4's one correct label exactly that way.
+    #
+    # A=1 atoms have no inter-nucleon crossing, so nothing is substituted and
+    # colour-blind is the honest label for them — which is why this is counted
+    # rather than assumed from the atom.
+    convention = ("colour-weighted-averaged-crossing" if n_colour_weighted
+                  else "averaged-crossings")
     t0 = time.time()
 
     if not incremental:
@@ -120,6 +137,7 @@ def build_chi_cache_at_q0(
             "Z": Z, "N": N,
             "n_strands": n,
             "n_partitions": result["n_partitions_used"],
+            "convention": convention,
             "compute_time_sec": round(elapsed, 2),
             "tr_M_at_q0": result["tr_M"],
             "by_partition": result["by_partition"],
@@ -302,7 +320,7 @@ def build_chi_cache_at_q0(
                     f"Re-running picks up cached partitions and computes the "
                     f"remaining ones."
                 ),
-                "convention": "averaged-crossings",
+                "convention": convention,
                 "q_0_50dps": str(q),
                 "dps": dps,
                 "n_strands": n,
@@ -325,6 +343,7 @@ def build_chi_cache_at_q0(
         "Z": Z, "N": N,
         "n_strands": n,
         "n_partitions": len(per_partition),
+        "convention": convention,
         "compute_time_sec": round(elapsed, 2),
         "tr_M_at_q0": str(running_total),
         "by_partition": per_partition,
@@ -350,7 +369,9 @@ def save_witness(record: dict) -> Path:
             f"symbolic data is not yet available. ~100× faster to build "
             f"than the symbolic counterpart (no sympy poly arithmetic)."
         ),
-        "convention": "averaged-crossings",
+        # From the record, not recomputed: `save_witness` is a different
+        # scope and must not re-derive a label the build already established.
+        "convention": record["convention"],
         "q_0_50dps": Q_50_DIGIT_STR,
         "dps": 50,
         "n_strands": n,
