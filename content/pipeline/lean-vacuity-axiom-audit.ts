@@ -144,7 +144,25 @@ type Category =
   // A `rfl`-proved statement binding an explicit hypothesis it cannot use.
   // `rfl` consults no hypothesis, so the claim holds for every value of it.
   // Not reachable by the projection detector (the body is not `ctx.field`).
-  | "proof-no-unused-hypothesis-rfl";
+  | "proof-no-unused-hypothesis-rfl"
+  // The docstring says the body is a `sorry`; the body has none.
+  //
+  // Why this is worth its own criterion rather than folding into the
+  // projection detector: `detectSelfAssuming` gates on the projected FIELD
+  // NAME (`CONCLUSION_FIELD` — `claim_`, `_holds`, `_eq`, …), so a class field
+  // named outside that convention is invisible to it no matter how blatantly
+  // it posits the conclusion. Two live cases were found by hand on 2026-08-08,
+  // both missed for exactly that reason and both named `*_ident`:
+  // `confinement_categorical` (`exact ctx.confinement_ident`) and
+  // `nucleon_ordering_factorization` (`exact ctx.factorization_ident`).
+  //
+  // This detector keys on nothing but the docstring and the body, so no
+  // naming convention can dodge it. It is also the *cheapest* signal for the
+  // defect: an author who writes "the body is therefore `sorry`" and then
+  // discharges by projection has left the contradiction in plain text. When
+  // the prose and `#print axioms` disagree about whether a proof exists, one
+  // of them is wrong and the class is usually positing its own conclusion.
+  | "proof-docstring-sorry-mismatch";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -159,6 +177,7 @@ const ALL_CATEGORIES: Category[] = [
   "proof-claims-unencoded",
   "proof-dependent-conjecture-not-conditional",
   "proof-no-unused-hypothesis-rfl",
+  "proof-docstring-sorry-mismatch",
 ];
 
 const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
@@ -186,6 +205,11 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   // definitional restatement (should be a `def`), occasionally a real signal
   // that the underlying definition ignores an argument. Major, not critical.
   "proof-no-unused-hypothesis-rfl": "major",
+  // Critical: the docstring is not merely stale, it is *load-bearing
+  // misinformation*. An audit reading the prose records an honest queued gap;
+  // an audit reading `#print axioms` records a proof. Both are wrong, and they
+  // disagree — so neither review path can catch it unaided.
+  "proof-docstring-sorry-mismatch": "critical",
 };
 
 interface Hit {
@@ -782,6 +806,58 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
     return h;
   }
   return mk(d, "proof-no-self-assuming-projection", pat, false);
+}
+
+/**
+ * The docstring asserts the body is a `sorry`. The body has none.
+ *
+ * Deliberately keyed on nothing but the doc block and the body — no field
+ * name, no naming convention, so nothing an author calls a field can dodge it.
+ * That is the point: `detectSelfAssuming` gates on `CONCLUSION_FIELD`, and
+ * both live cases found on 2026-08-08 were named `*_ident` and slipped past.
+ *
+ * Present tense only. A docstring narrating history ("previously carried a
+ * `sorry`", "the `sorry` is removed", "sorry-free") is describing the past or
+ * the absence, not claiming the body has one, and must not fire.
+ */
+const DOC_CLAIMS_SORRY =
+  /(?:body|proof|it)\s+is\s+(?:therefore\s+|thus\s+|an?\s+)*`?sorry`?|discharged\s+by\s+(?:an?\s+)?`?sorry`?|stated\s+(?:[^.\n]{0,60}?)\bwith\s+(?:an?\s+)?`?sorry`?|honest\s+`?sorry`?|carries\s+(?:an?\s+)?`?sorry`?/i;
+
+/**
+ * Phrases that make a `sorry` mention historical, negated, or hypothetical.
+ * Checked on the SAME sentence as the match, not the whole doc block — a file
+ * may legitimately say "sorry-free" about one declaration and claim a `sorry`
+ * for another in the next paragraph.
+ */
+const SORRY_MENTION_IS_HISTORICAL =
+  /sorry-free|no\s+longer|previously|formerly|used\s+to|was\s+`?sorry`?|removed|not\s+a\s+`?sorry`?|no\s+`?sorry`?|instead\s+of|rather\s+than|modulo/i;
+
+function detectDocstringSorryMismatch(d: Decl, doc: string): Hit | undefined {
+  // Only declarations that *can* carry a proof body.
+  const provable = PROVABLE_KINDS.test(d.kind);
+  const isDefProof =
+    /^def\b/.test(d.kind) &&
+    PROP_CONCLUSION.test(conclusionTypeAscription(d.sig) ?? "");
+  if (!provable && !isDefProof) return undefined;
+
+  // The claim only bites if the body genuinely has no `sorry`.
+  if (/\bsorry\b/.test(d.body)) return undefined;
+  if (d.body.trim() === "") return undefined; // axiom/structure — nothing to check
+
+  // Find a sentence that claims a `sorry` in the present tense.
+  const sentences = doc.split(/(?<=[.!?])\s+|\n{2,}/);
+  const claim = sentences.find(
+    (s) => DOC_CLAIMS_SORRY.test(s) && !SORRY_MENTION_IS_HISTORICAL.test(s),
+  );
+  if (!claim) return undefined;
+
+  const h = mk(d, "proof-docstring-sorry-mismatch", "doc-claims-sorry-body-has-none", false);
+  h.detail =
+    "docstring states the body is `sorry` but the body contains none — the prose and " +
+    "`#print axioms` disagree about whether a proof exists. Check whether a class field " +
+    "is being projected: this is how a self-assuming projection reads when the field name " +
+    "escapes `CONCLUSION_FIELD`";
+  return h;
 }
 
 /**
@@ -1417,6 +1493,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     }
     push(tt);
     push(detectSelfAssuming(d));
+    push(detectDocstringSorryMismatch(d, doc));
     push(detectUnusedHypothesisRfl(d));
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));

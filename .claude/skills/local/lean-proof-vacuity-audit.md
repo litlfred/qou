@@ -261,6 +261,61 @@ consistent with the empty-carrier opt-out), never leave a bare un-annotated `: T
 > the heuristic that the 2026-06-26 triage missed on `q_gl_obstruction_calc`,
 > `confinement-categorical`, the fluid-dynamics conditionals, and others.
 
+### 8. Docstring claims a `sorry` the body does not have — `proof-docstring-sorry-mismatch`
+
+The prose says *"the body is therefore `sorry`"* / *"discharged by `sorry`"* /
+*"stated with `sorry` + citation"*, and the body contains **no `sorry`**.
+
+**Why this is a separate criterion and not a case of #1.** `detectSelfAssuming`
+gates on the projected **field name** (`CONCLUSION_FIELD`: `claim_`, `_holds`,
+`_eq`, …). A class field named outside that convention is invisible to it no
+matter how plainly it posits the conclusion. Two live cases found by hand on
+2026-08-08 were missed for exactly that reason, and both happened to be named
+`*_ident`:
+
+| declaration | body | why #1 missed it |
+|---|---|---|
+| `confinement_categorical` | `exact ctx.confinement_ident` | `confinement_ident` ∉ `CONCLUSION_FIELD` |
+| `nucleon_ordering_factorization` | `exact ctx.factorization_ident` | `factorization_ident` ∉ `CONCLUSION_FIELD` |
+
+This detector reads **only** the doc block and the body, so no naming choice can
+dodge it. It is also the cheapest possible signal: an author who writes "the body
+is therefore `sorry`" and then discharges by projection has left the
+contradiction in plain text.
+
+**Why `critical`.** The docstring is not merely stale, it is load-bearing
+misinformation *in two directions at once*: an audit reading the prose records an
+honest queued gap, an audit reading `#print axioms` records a proof. Both are
+wrong and they disagree, so neither review path catches it unaided.
+
+**First corpus run (2026-08-08): 13 candidates.** Three were spot-checked and
+**all three were true positives** — including two whose docstrings assert the
+precise opposite of their code:
+
+- `volume_perturbation` — *"Stated with `sorry` … **no conclusion field on the
+  class hands this back**"*, above `exact ctx.volume_perturbation_claim`, where
+  the class field is even commented `(conclusion)`.
+- `shell_filling_rule` — *"the unproved ones carry honest `sorry`s in their named
+  sub-theorems … **not projected conclusion fields**"*, while both named
+  sub-theorems are `exact ctx.inner_shells_fill` / `exact ctx.hund_rule`, with no
+  `sorry` in either.
+- `kappa_vanishes_iff_chi` — *"inherits that lemma's single honest `sorry`"*, but
+  `qou_obstruction_reduction.lean` contains **no `sorry` in code at all**; the
+  cited `obstruction_trace_gap` is `exact ⟨ctx.kappa0_eq_chi_A,
+  ctx.phi_1_image_eq_chi_A⟩`. Anything downstream calling that file's result
+  "derived, never assumed" inherits an assumption instead.
+
+**Do not soften the regex to exclude delegated sorries.** The obvious refinement
+— skip when the doc attributes the `sorry` to a sub-theorem or an inherited lemma
+("in their named sub-theorems", "inherits … `sorry`") — would have suppressed
+**two of those three**. Delegation is exactly where the claim goes unchecked. The
+detector stays high-recall and the call stays with the agent, per the ledger below.
+
+What it does **not** fire on: historical or negated mentions (`sorry-free`,
+"previously carried a `sorry`", "the `sorry` is removed", "no longer"), matched
+per-sentence so one declaration's "sorry-free" does not mask another's claim in
+the next paragraph.
+
 ## Agent-inspection ledger — making agent confirmation mandatory (2026-06-28)
 
 The detector is **high-recall by design**; the legit-vs-genuine call requires
@@ -313,6 +368,7 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 | `proof-no-unused-hypotheses` | active | #4 weakened statement |
 | `proof-no-decide-masking` | active | #5 evaluator masking (`native_decide`) |
 | `proof-no-provable-axiom` | active | #6 uncited / provable axiom |
+| `proof-docstring-sorry-mismatch` | active | #8 docstring claims a `sorry` the body lacks |
 
 **Minimal wiring (per Agent-A recon):**
 
