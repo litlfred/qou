@@ -43,6 +43,11 @@ import QOU.Mathlib.BorelCaratheodory
 -- factor vanishes at an explicit point for every b /= 0, so it is not entire and
 -- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
 import QOU.Mathlib.HadamardApplicability
+-- Faddeev rigidity: the ratio of two FaddeevPhi solutions is ib- and i/b-periodic
+-- (the prefactor cancels), and given an entire ratio that extends from the dense
+-- complement of the prefactor zeros to everywhere. Collapses the open input
+-- `hibinv` (qou-rp5f) into `hratio` (qou-cons). Sorry-free.
+import QOU.Mathlib.FaddeevRatioPeriodic
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
