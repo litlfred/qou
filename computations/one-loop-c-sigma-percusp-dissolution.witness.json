@@ -1,0 +1,107 @@
+{
+  "description": "The per-cusp factor 2^{(c-1)/2} in whitehead_c_sigma_torsion.py dissolves once the 1-loop determinant is corrected. k_c = c_sigma |tau_DG|^{1/2} is the same constant 2^{-1/2} at c=1 and c=2, so the c=1 calibration predicts c_sigma(L5a1) with zero free parameters. Also closes, for c=1 vs 2, the overall-normalization caveat left open by the multi-cusp derivation.",
+  "computation": "one_loop_c_sigma_percusp_dissolution_probe",
+  "audit_only": true,
+  "tau_dg": {
+    "4_1": "0.866025403784438646763723170752936183471402626905190314027903",
+    "L5a1": "1.41421356237309504880168872420969807856967187537694807317668",
+    "L6a4": "8.00000000000000000000000000000000000000000000000000000000000"
+  },
+  "c_sigma_measured": {
+    "4_1": "0.759835685651592550771809300000000000000000000000000000000000",
+    "L5a1": "0.594603557501360533360603700000000000000000000000000000000000",
+    "L6a4": "0.250872481129230380549731508503312974004085822854053659576421"
+  },
+  "k_c": {
+    "1": "0.707106781186547527602703494257123500025499461133411521604881",
+    "2": "0.707106781186547524403048812838775335239993761039664755826954",
+    "3": "0.709574530478291918771524514308356266926084250215338959086340"
+  },
+  "k1_vs_k2_rel_diff": "0.00000000000000000452499504537239268977569641595857822307047264230937399916589",
+  "per_cusp_factor_survives": false,
+  "zero_parameter_prediction": {
+    "predicted_c_sigma_L5a1": "0.594603557501360536051181851654455012343418559355321663437693",
+    "measured_c_sigma_L5a1": "0.594603557501360533360603700000000000000000000000000000000000",
+    "rel_diff": "0.00000000000000000452499504537239268977569641595857822307047264230937400274250",
+    "passes": true
+  },
+  "mechanism_tau_old_over_tau_dg": {
+    "4_1": {
+      "cusps": 1,
+      "ratio_old_over_new": "2.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": true
+    },
+    "5_2": {
+      "cusps": 1,
+      "ratio_old_over_new": "1.73767392366541860361313992838219444495493132402899863385217",
+      "equals_2_pow_c": false
+    },
+    "6_2": {
+      "cusps": 1,
+      "ratio_old_over_new": "7.59665899196781415749596200412654702143400959141858222625347",
+      "equals_2_pow_c": false
+    },
+    "7_4": {
+      "cusps": 1,
+      "ratio_old_over_new": "1.62353574881120998289501137328438357741393195812544790962246",
+      "equals_2_pow_c": false
+    },
+    "L5a1": {
+      "cusps": 2,
+      "ratio_old_over_new": "4.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": true
+    },
+    "m125": {
+      "cusps": 2,
+      "ratio_old_over_new": "4.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": true
+    },
+    "L6a2": {
+      "cusps": 2,
+      "ratio_old_over_new": "2.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": false
+    },
+    "L6a1": {
+      "cusps": 2,
+      "ratio_old_over_new": "4.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": true
+    },
+    "L6a4": {
+      "cusps": 3,
+      "ratio_old_over_new": "8.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": true
+    },
+    "s776": {
+      "cusps": 3,
+      "ratio_old_over_new": "1.00000000000000000000000000000000000000000000000000000000000",
+      "equals_2_pow_c": false
+    },
+    "L7a1": {
+      "cusps": 2,
+      "ratio_old_over_new": "2.82842712474619009760337744841939615713934375075389614635336",
+      "equals_2_pow_c": false
+    },
+    "L8a1": {
+      "cusps": 2,
+      "ratio_old_over_new": "3.63299986880194283123360466831780762206009041393024178574503",
+      "equals_2_pow_c": false
+    },
+    "L10n1": {
+      "cusps": 2,
+      "ratio_old_over_new": "5.68158637801738422280860968353687418732746454625898144202209",
+      "equals_2_pow_c": false
+    }
+  },
+  "mechanism_is_general": false,
+  "c3_supporting_only": "borromean-jones-1loop-torsion.witness.json flags an unresolved normalization+cusp offset vs the 1-cusp anchor; p=1.4993 vs 3/2",
+  "assumption": "the 1-loop prefactor form c_sigma ∝ |tau|^{-1/2}, validated on 4_1 to 17 digits, is assumed — not proved — here",
+  "bears_on": [
+    "bean qou-fl4t",
+    "bean qou-pn5j",
+    "PR #4691",
+    "PR #4697",
+    "PR #4707",
+    "PR #4708"
+  ],
+  "timestamp": "2026-08-07T23:59:40+00:00"
+}

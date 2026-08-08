@@ -1,0 +1,31 @@
+{
+  "description": "Independent published cross-check of c_sigma = 2^{-1/2}|tau_DG|^{-1/2} at c = 1 on the 5_2 knot, against Ohtsuki's Theorem 1.1 asymptotic expansion of the Kashaev invariant. Agreement to 10 digits, the full precision the paper prints, with nothing fitted. Yields a closed form |tau_DG(5_2)| = |2y_0+1|/(2|y_0-1|).",
+  "computation": "one_loop_ohtsuki_5_2_crosscheck_probe",
+  "audit_only": true,
+  "ohtsuki_omega_formula": "e^{-i pi/4} ((1 - y_0)/(2 y_0 + 1))^{1/2}",
+  "y0_min_poly": "y^3 - 3 y^2 + 2 y - 1",
+  "y0_discriminant": -23,
+  "y0": "(0.337641021377626987019545572760951329632797971549133317732992 + 0.562279512062301243899182144909373061497843002895783939838390j)",
+  "omega_reconstructed": "(0.0901905774056703282026049716161619976882164858718415333539781 - 0.649975786642416444962425090786021592896171454628897974785856j)",
+  "omega_paper_printed": "(0.0901905774 - 0.649975786600000000000000000000000000000000000000000000000000j)",
+  "omega_formula_recovery_abs_diff": "0.0000000000427937778792162049206214482405335948606888446593244004879279",
+  "tau_dg_5_2": "1.16116273813391007312872008055798756566099796380537250953037",
+  "c_sigma_predicted": "0.656203370514199869748586026141940552069665142523264542304734",
+  "ohtsuki_abs_omega": "0.656203370471406623603423276554355711824302689278092357351972",
+  "relative_difference": "0.0000000000652133897325611617648932731939839564392146561276952498039586",
+  "digits_agreement": 10,
+  "paper_printed_digits": 10,
+  "passes": true,
+  "closed_form": "|tau_DG(5_2)| = |2 y_0 + 1| / (2 |y_0 - 1|)",
+  "closed_form_rel_diff": "0.0",
+  "scope": "strengthens the c = 1 leg only; 5_2 is one-cusped and this says nothing new about c-dependence",
+  "bears_on": [
+    "bean qou-fl4t",
+    "bean qou-pn5j",
+    "PR #4658",
+    "PR #4697",
+    "PR #4707",
+    "PR #4708"
+  ],
+  "timestamp": "2026-08-08T00:36:12+00:00"
+}

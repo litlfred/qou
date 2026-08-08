@@ -17,9 +17,18 @@ monomial — a different matrix, not a normalisation of this one. Consequences:
   * The exp(2c₀) = 1/|det J_NZ| relation calibrated on 4_1 inherits the factor 2.
 
 USE `computations/one_loop_torsion.py` instead. It is triangulation-invariant
-(verified to 30 digits over ~20 retriangulations of 4_1, 5_2, 6_2) and carries
-the DG unit test. It is ONE-CUSPED ONLY and raises for c ≥ 2, so it cannot yet
-replace the 𝓑₃ (c=3) computation here — that needs DG Sec 4.5.
+(verified over 25 retriangulations each of 13 manifolds) and carries the DG unit
+test. It now covers ANY cusp number, including 𝓑₃ at c = 3, where it gives
+|τ| = 8 rather than the 64 here. The multi-cusp case is DERIVED in
+`docs/audits/2026-08-07-one-loop-multicusp-derivation.md` — it is not in DG at
+all, and in particular not their Sec 4.5, which is the character-variety
+generalization at one cusp (PR #4708).
+
+CAVEAT before repointing this probe's calibration: the overall constant at
+c ≥ 2 is inherited from c = 1 and is NOT pinned. Neither invariance nor the
+change-of-curve law can see a factor depending only on c — which is exactly the
+shape of the `2^{(c−1)/2}` per-cusp factor this chain wanted. Swapping 64 → 8
+here does not settle c_σ.
 
 Bean qou-fl4t; audit docs/audits/2026-08-07-one-loop-fix-impact-analysis.md.
 Jones-side 1-loop measurement.
