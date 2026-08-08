@@ -285,6 +285,7 @@ import QOU.ChannelSeparation
 import QOU.Archimedean
 import QOU.Archimedean.DilogReflection
 import QOU.Archimedean.IdealTetrahedronConcavity
+import QOU.Archimedean.LobachevskyDerivative
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
