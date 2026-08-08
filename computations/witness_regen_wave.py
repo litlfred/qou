@@ -263,10 +263,17 @@ def summarise(records: list[dict], limit: int = 8) -> list[str]:
     for rec in records:
         for w in rec.get("witnesses", []):
             if w["verdict"] == "VALUES":
-                # Key on the CAUSE, not the field. "no q0 flip" is the finding
-                # (the evidence gate cannot fire); it stays invisible while
-                # every rejection prints a different field name.
-                key = w.get("reason") or "no q0-valued field flipped muon -> proton"
+                # Key on the CAUSE, not the field, so a shared cause aggregates
+                # instead of scattering under one field name per rejection.
+                #
+                # The default used to be the literal string "no q0-valued field
+                # flipped muon -> proton". That is the OUTER condition — true of
+                # every rejection that reaches the inference path — so wave 3
+                # filed 50 of its 51 VALUES under it and the histogram
+                # distinguished none of them. The classifier now names the gate
+                # that actually declined, and a missing reason is a bug in it,
+                # not a case to paper over with a plausible-sounding label.
+                key = w.get("reason") or "BUG: classifier returned no reason"
                 reasons[key] = reasons.get(key, 0) + 1
     for title, hist in (("FAILED causes", causes), ("VALUES reasons", reasons)):
         if not hist:
@@ -387,8 +394,14 @@ def self_test() -> int:
 
     out = "\n".join(summarise(records))
     check("1x  killed" in out, "summary histograms the failure causes")
-    check("no q0-valued field flipped" in out,
-          "summary names the unreasoned VALUES rejections as the gate finding")
+    check("BUG: classifier returned no reason" in out,
+          "summary flags a reasonless VALUES as a bug, not a gate finding")
+    reasoned = [{**records[0], "witnesses": [
+        {**records[0]["witnesses"][0], "reason": "x moved 2e-05, above the "
+         "1e-05 anchor bound"}]}]
+    out = "\n".join(summarise(reasoned))
+    check("above the 1e-05 anchor bound" in out and "BUG:" not in out,
+          "summary keys VALUES on the gate the classifier named")
 
     print(f"\n{ran - fails}/{ran} passed")
     return 1 if fails else 0

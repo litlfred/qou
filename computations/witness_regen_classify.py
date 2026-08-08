@@ -291,17 +291,25 @@ def _anchor_of(v) -> str | None:
 
 def _infer_migration(a: dict, b: dict, moved: list, old: dict, new: dict,
                      script, resolve) -> dict | None:
-    """`ANCHOR_MIGRATION_INFERRED`, or None when the case is not that.
+    """`ANCHOR_MIGRATION_INFERRED`, or `{"_declined": <why>}` when not that.
 
     Every gate below is a *reason not to infer*. None of them may be relaxed
     into "probably fine": the whole verdict exists because direct evidence is
     unavailable, so the circumstantial substitutes have to be exact.
+
+    Each declines with the reason it declined for, and `classify` carries that
+    string onto the VALUES verdict it falls back to. Returning a bare None was
+    measurably worse than useless: the 51 VALUES of wave 3 then all reported
+    the caller's default, "no q0-valued field flipped muon -> proton", which is
+    the *outer* condition every one of them satisfies and names no gate at all.
+    A population that large reported under one indistinguishable label is a
+    population nobody can triage, and it had to be re-run to find out why.
     """
     # 1. Only where the strict gate is structurally unable to fire. A witness
     #    carrying any q0-valued field — on either side, flipped or not — could
     #    have shown the migration and did not, and that silence is evidence.
     if any(_anchor_of(v) is not None for v in (*a.values(), *b.values())):
-        return None
+        return {"_declined": "a q0-valued field exists but did not flip"}
 
     # 2. The producer must be one a re-run actually re-anchors. `ideal_muon`
     #    producers (257 of them in the manifest) keep the muon pin, so movement
@@ -317,9 +325,11 @@ def _infer_migration(a: dict, b: dict, moved: list, old: dict, new: dict,
     #    read a passing gate 2 as independent corroboration.
     script = script or _script_of(old, new)
     if not script:
-        return None
-    if (resolve or _resolve_anchor)(script) != "proton":
-        return None
+        return {"_declined": "witness names no producer"}
+    anchor = (resolve or _resolve_anchor)(script)
+    if anchor != "proton":
+        return {"_declined": f"{script} resolves to "
+                             f"{anchor or 'no'} anchor, not proton"}
 
     # 3. Every move numeric and inside the collateral bound. A non-numeric
     #    change has no magnitude to compare against 1e-5, so it can never be
@@ -329,10 +339,11 @@ def _infer_migration(a: dict, b: dict, moved: list, old: dict, new: dict,
     for k in moved:
         x, y = _num(a.get(k)), _num(b.get(k))
         if x is None or y is None:
-            return None
+            return {"_declined": f"non-numeric move at {k}"}
         rel = abs(y - x) / (abs(x) if x else 1.0)
         if rel > ANCHOR_COLLATERAL_MAX:
-            return None
+            return {"_declined": f"{k} moved {rel:.3g}, above the "
+                                 f"{ANCHOR_COLLATERAL_MAX:g} anchor bound"}
         if rel > worst:
             worst, worst_at = rel, k
 
@@ -346,7 +357,8 @@ def _infer_migration(a: dict, b: dict, moved: list, old: dict, new: dict,
     #    this gate, 24 of that commit's 58 files classified as inferred
     #    migrations. They are re-serialisations.
     if worst <= 0.0:
-        return None
+        return {"_declined": "text differs but no value moved; a "
+                             "re-serialisation, not a migration"}
 
     return {"verdict": "ANCHOR_MIGRATION_INFERRED", "moved": len(moved),
             "flips": 0, "worst": worst, "worst_at": worst_at,
@@ -393,10 +405,13 @@ def classify(old: dict, new: dict, script=None, resolve=None) -> dict:
              if _anchor_of(a.get(k)) == "muon" and _anchor_of(b.get(k)) == "proton"]
     if not flips:
         inferred = _infer_migration(a, b, moved, old, new, script, resolve)
-        if inferred is not None:
+        if "_declined" not in inferred:
             return inferred
+        # Report the gate that declined, not the outer condition. "No flip"
+        # is true of every witness that reaches here and so distinguishes none
+        # of them; the gate is what a reader can act on.
         return {"verdict": "VALUES", "moved": len(moved), "flips": 0,
-                "sample": moved[:5]}
+                "reason": inferred["_declined"], "sample": moved[:5]}
 
     # Every other movement must be bounded, and none may go the wrong way.
     for k in moved:
@@ -576,7 +591,8 @@ INFERRED_CASES = [
       "x": 0.20906032199559366},
      {"scriptFile": "p.py", "q0": "1.1099785827513808",
       "x": 0.20906029879563937},
-     _anchor_stub("proton"), "VALUES"),
+     _anchor_stub("proton"), "VALUES",
+     "a q0-valued field exists but did not flip"),
     ("a q0 field that moves the WRONG way is not rescued by inference",
      {"scriptFile": "p.py", "q0": "1.1099785827513808"},
      {"scriptFile": "p.py", "q0": "1.1099785955573347"},
@@ -585,7 +601,8 @@ INFERRED_CASES = [
     ("a muon-anchored producer is never an inferred migration",
      {"scriptFile": "p.py", "x": 0.20906032199559366},
      {"scriptFile": "p.py", "x": 0.20906029879563937},
-     _anchor_stub("muon"), "VALUES"),
+     _anchor_stub("muon"), "VALUES",
+     "p.py resolves to muon anchor, not proton"),
     ("an ambiguous producer is never an inferred migration",
      {"scriptFile": "p.py", "x": 0.20906032199559366},
      {"scriptFile": "p.py", "x": 0.20906029879563937},
@@ -596,15 +613,16 @@ INFERRED_CASES = [
     ("an unresolvable anchor degrades to VALUES",
      {"scriptFile": "p.py", "x": 0.20906032199559366},
      {"scriptFile": "p.py", "x": 0.20906029879563937},
-     _anchor_stub(None), "VALUES"),
+     _anchor_stub(None), "VALUES",
+     "p.py resolves to no anchor, not proton"),
     ("a witness naming no producer cannot be inferred",
      {"x": 0.20906032199559366}, {"x": 0.20906029879563937},
-     _anchor_stub("proton"), "VALUES"),
+     _anchor_stub("proton"), "VALUES", "witness names no producer"),
     # A non-numeric move has no magnitude, so the bound cannot exclude it.
     ("a non-numeric move alongside a bounded one is not inferred",
      {"scriptFile": "p.py", "x": 0.20906032199559366, "note": "a"},
      {"scriptFile": "p.py", "x": 0.20906029879563937, "note": "b"},
-     _anchor_stub("proton"), "VALUES"),
+     _anchor_stub("proton"), "VALUES", "non-numeric move at note"),
     ("a convention flip with no q0 field is not inferred",
      {"scriptFile": "p.py", "convention": "colour-blind"},
      {"scriptFile": "p.py", "convention": "colour-weighted"},
@@ -612,9 +630,13 @@ INFERRED_CASES = [
     ("just inside the collateral bound is inferred",
      {"scriptFile": "p.py", "x": 1.0}, {"scriptFile": "p.py", "x": 1.000009},
      _anchor_stub("proton"), "ANCHOR_MIGRATION_INFERRED"),
+    # The decline must name the bound gate it actually failed, NOT the outer
+    # "no flip" condition — the distinction that made wave 3's 50 VALUES
+    # unreadable and forced a second run to recover.
     ("just outside the collateral bound is not",
      {"scriptFile": "p.py", "x": 1.0}, {"scriptFile": "p.py", "x": 1.00002},
-     _anchor_stub("proton"), "VALUES"),
+     _anchor_stub("proton"), "VALUES",
+     "x moved 2e-05, above the 1e-05 anchor bound"),
     # One field inside the bound must not carry another that is outside it.
     ("one out-of-bound field vetoes the whole diff",
      {"scriptFile": "p.py", "x": 1.0, "y": 1.0},
@@ -634,7 +656,8 @@ INFERRED_CASES = [
      _anchor_stub("proton"), "VALUES"),
     ("a reserialised number is not an inferred migration",
      {"scriptFile": "p.py", "n": "3"}, {"scriptFile": "p.py", "n": "3.0"},
-     _anchor_stub("proton"), "VALUES"),
+     _anchor_stub("proton"), "VALUES",
+     "text differs but no value moved; a re-serialisation, not a migration"),
 ]
 
 
@@ -650,11 +673,22 @@ def self_test() -> int:
         fails += not ok
         print(f"  {'ok  ' if ok else 'FAIL'}  {label}   (want {want}, got {got})")
 
-    for label, old, new, resolve, want in INFERRED_CASES:
-        got = classify(dict(old), dict(new), resolve=resolve)["verdict"]
+    # A 6th element pins the decline reason. Every VALUES case here declines at
+    # some gate, and pinning the text is what stops the reason regressing to a
+    # single uninformative label again.
+    for case in INFERRED_CASES:
+        label, old, new, resolve, want = case[:5]
+        want_reason = case[5] if len(case) > 5 else None
+        out = classify(dict(old), dict(new), resolve=resolve)
+        got = out["verdict"]
         ok = got == want
+        detail = f"want {want}, got {got}"
+        if want_reason is not None:
+            reason = out.get("reason", "")
+            ok = ok and reason == want_reason
+            detail = f"want reason {want_reason!r}, got {reason!r}"
         fails += not ok
-        print(f"  {'ok  ' if ok else 'FAIL'}  {label}   (want {want}, got {got})")
+        print(f"  {'ok  ' if ok else 'FAIL'}  {label}   ({detail})")
 
     # The verdict is only safe because the driver does not auto-keep it. Pin
     # both halves of that here: it must stay a distinct string, and it must not
