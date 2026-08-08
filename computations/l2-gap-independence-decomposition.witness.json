@@ -1,0 +1,131 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T23:47:37.807330+00:00",
+  "commitSha": "df6e9766b9dfa24c9ef4befe48ff8eadc3b79a91",
+  "assertions": [
+    {
+      "name": "m_mu_error_is_the_pin_separation",
+      "computed": 3.160923270438513e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "|S(m_mu)| * 11.537 ppb vs reported 209.8 ppb"
+    },
+    {
+      "name": "m_n_error_is_derived_from_m_p_and_Q_beta",
+      "computed": 4.369158394406544e-05,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "m_n = m_p + Q_beta + m_e"
+    },
+    {
+      "name": "Delta_pn_absolute_error_equals_Q_beta",
+      "computed": 0.0003052974826182176,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.001,
+      "source": "Delta_pn = Q_beta + m_e, m_e exact"
+    },
+    {
+      "name": "m_p_far_more_accurate_than_its_pin_sensitivity",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "signature of the quantity the pin was solved to reproduce"
+    },
+    {
+      "name": "Q_beta_is_NOT_explained_by_the_pin",
+      "computed": 0.02374528584748125,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.05,
+      "source": "pin accounts for 30.4 of 1279 ppb"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 32,
+  "computation": "l2-gap-independence-decomposition",
+  "scriptFile": "l2_gap_independence_decomposition.py",
+  "scriptHash": "cb0c286658be",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Separates the five failing 1ppQ L2 observables into real derivation gaps and bookkeeping. m_mu's 209.8 ppb is exactly the 11.537 ppb muon/proton pin separation times its sensitivity 18.185 (ratio 1.0000); m_n is derived from m_p and Q_beta (ratio 1.00004); Delta_pn carries Q_beta's absolute error identically (ratio 1.00031); m_p sits 179x more accurate than its own pin sensitivity allows, the signature of the CAL-2 calibration it anchors. Only Q_beta is unexplained — the pin accounts for 2.4% of its 1279 ppb. Propagation identities proven in QOU.MassTheory.DifferenceObservableErrorSplit.",
+  "parameters": {
+    "source_status": "per_observable_100x_status.py 2026-08-08",
+    "source_sensitivity": "mu-p-pin-sensitivity-map.witness.json",
+    "q0_layer_separation_ppb": "11.537118"
+  },
+  "data": {
+    "pin_attribution": {
+      "m_p": {
+        "S": "-20.9969854",
+        "predicted_ppb": "242.2446982040772",
+        "actual_ppb": "1.351",
+        "ratio": "179.30769667215188749074759437453737971872686898594"
+      },
+      "m_n": {
+        "S": "-20.97027445",
+        "predicted_ppb": "241.9365308220351",
+        "actual_ppb": "2.414",
+        "ratio": "100.22225800415704225352112676056338028169014084507"
+      },
+      "m_mu": {
+        "S": "-18.18535891",
+        "predicted_ppb": "209.80663161702138",
+        "actual_ppb": "209.8",
+        "ratio": "1.0000316092327043851286939942802669208770257387989"
+      },
+      "Q_beta": {
+        "S": "-2.632392301",
+        "predicted_ppb": "30.370220598928518",
+        "actual_ppb": "1279.0",
+        "ratio": "0.023745285847481249413604378420641125879593432369038"
+      }
+    },
+    "m_n_is_derived": {
+      "relation": "m_n = m_p + Q_beta + m_e",
+      "predicted_ppb": "2.4141054714836409739606069086072627146327111404239",
+      "reported_ppb": "2.414",
+      "ratio": "1.000043691583944065435214129497623328348264764053"
+    },
+    "Delta_pn_is_derived": {
+      "relation": "Delta_pn = Q_beta + m_e (m_e exact, CAL-1)",
+      "abs_err_Delta_MeV": "0.000001000909913404",
+      "abs_err_Q_beta_MeV": "0.00000100060443139",
+      "ratio": "1.0003052974826182175699148939184871462674844110856",
+      "relative_scale_Delta_over_Q": "1.6531728588710023262332615962291575915184294634688"
+    },
+    "verdict": {
+      "genuine_gap": [
+        "Q_beta"
+      ],
+      "pin_artifact": [
+        "m_mu"
+      ],
+      "calibration_residual": [
+        "m_p"
+      ],
+      "algebraic_consequence": [
+        "m_n",
+        "Delta_pn"
+      ],
+      "scoreboard_if_Q_beta_closes": "5/7"
+    }
+  }
+}

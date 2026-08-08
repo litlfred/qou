@@ -3,7 +3,7 @@
   "witness": {
     "id": "mu-p-pin-sensitivity-map",
     "scriptHash": "98ab2ae9a14e",
-    "scriptCommitSha": "44bbb24621dac845528255f6d65641ad0a9ce2e4",
+    "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
     "producer": "computations/mu_p_pin_sensitivity_map.py",
     "description": "Relative pin-sensitivity S(O)=dlogO/dlogq of the canonical mass chain. Localizes the 11.5 ppb μ–p tension in the absolute muon anchor ℏ_q²; F_Bor/W_λ/mass-ratios are pin-robust."
   },
@@ -202,13 +202,13 @@
       ]
     }
   },
-  "scriptHash": "98ab2ae9a14e",
-  "scriptCommitSha": "44bbb24621dac845528255f6d65641ad0a9ce2e4",
-  "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
-  "engine": "python",
-  "computedAt": "2026-07-18T17:56:00.589897+00:00",
-  "durationMs": 0,
   "scriptFile": "mu_p_pin_sensitivity_map.py",
+  "scriptHash": "98ab2ae9a14e",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "commitSha": "df6e9766b9dfa24c9ef4befe48ff8eadc3b79a91",
+  "engine": "python",
+  "computedAt": "2026-08-08T23:31:37.481027+00:00",
+  "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
