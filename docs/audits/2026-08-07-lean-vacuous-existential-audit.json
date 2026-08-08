@@ -1,18 +1,8 @@
 {
   "schema": "lean-vacuous-existential/v1",
-  "scanned_files": 2588,
-  "count": 13,
+  "scanned_files": 2601,
+  "count": 10,
   "findings": [
-    {
-      "file": "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean",
-      "line": 198,
-      "kind": "theorem",
-      "name": "torsion_effective_tree_bounded",
-      "bound_var": "bound",
-      "rhs": "t.order ^ n",
-      "proof": "by exact ⟨t.order ^ n, rfl⟩",
-      "rfl_witness": true
-    },
     {
       "file": "content/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration.lean",
       "line": 39,
@@ -64,16 +54,6 @@
       "rfl_witness": true
     },
     {
-      "file": "content/quantum-observable-universe/mass-theory/knot-factor-borromean-composite.lean",
-      "line": 39,
-      "kind": "theorem",
-      "name": "knot_factor_borromean_value",
-      "bound_var": "a",
-      "rhs": "(1 - h ^ 2) ^ k",
-      "proof": "⟨(1 - h ^ 2) ^ k, rfl⟩",
-      "rfl_witness": true
-    },
-    {
       "file": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean",
       "line": 83,
       "kind": "theorem",
@@ -121,16 +101,6 @@
       "bound_var": "Q_q",
       "rhs": "bareQValue q (daughterPoly / parentPoly) m_e * knotOperator",
       "proof": "⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩",
-      "rfl_witness": true
-    },
-    {
-      "file": "content/quantum-observable-universe/quantum-observable-universes/categorical-action-exists.lean",
-      "line": 56,
-      "kind": "theorem",
-      "name": "CategoricalAction.exists",
-      "bound_var": "S",
-      "rhs": "categoricalAction Φ swap",
-      "proof": "⟨categoricalAction Φ swap, rfl⟩",
       "rfl_witness": true
     }
   ]
