@@ -211,4 +211,136 @@ theorem abs_corrected_trapezoid_sub_integral_le
   rw [show -(1 / 24 : ℝ) = -(1 : ℝ) / 24 by norm_num, h24]
   linarith
 
+/-! ### Reducing the remainder from `g⁗` to `g″`
+
+The kernel `w = (x−a)²(b−x)²` has DOUBLE roots at both ends, so `w(a) = w(b) =
+w′(a) = w′(b) = 0` and two integrations by parts leave no boundary terms at all:
+
+    ∫_a^b w·g⁗ = ∫_a^b w″·g″,        w″ = 12(x−a)² − 12(b−a)(x−a) + 2(b−a)²
+
+(again one FTC application, against `F := w·g‴ − w′·g″`).  Moreover `w″` has ZERO
+MEAN, `∫_a^b w″ = 0`, because `w′` vanishes at both ends.
+
+WHY THIS MATTERS FOR `qou-mlgp` (A).  The `g⁗` form needs `sup|logSinc⁗|`, whose
+finiteness rests on an eighth-order cancellation (`6/x⁴ − (4cos²+2)/sin⁴`, two
+terms that individually blow up — at `N = 100` the crude bound overshoots by
+`5·10⁷`).  The `g″` form needs only `logSinc″`, which is already bounded here
+(`QOU/Knot/LogSincNearZero.lean`: `|logSinc″| ≤ 1` on `(0,1]`).
+
+The zero mean is what makes it sharp enough.  Writing the remainder as
+`∫ w″·(g″ − c)` for any constant `c` and taking `c = g″(a)`,
+
+    |remainder| ≤ (∫|w″|)·osc_cell(g″) ≤ 2h³·osc_cell(g″),
+
+and if `g″` is MONOTONE the per-cell oscillations telescope over the `k` cells to
+`|g″(b) − g″(a)| ≤ 2·sup|g″|` instead of accumulating as `k·h·sup|g‴|`.  That
+turns the composite error on the sum into `O(h²·sup|g″|) = O(1/N²)` — below the
+`O(1/N)` term (A) is after.
+
+So the remaining analytic requirement drops from "bound `logSinc⁗`" (an
+eighth-order cancellation) to "`logSinc″` is monotone", i.e. the SIGN condition
+`logSinc‴ < 0`, i.e. `x³·cos x < sin³x` on `(0, π)`.  That is a single clean
+inequality — an Adamović–Mitrinović-type statement — rather than a cancellation
+estimate.  It is not proved here, and Mathlib's `sin_gt_sub_cube` (`x − x³/4`)
+is too weak for it; the sharper `sin x > x − x³/6` would suffice.
+-/
+
+/-- **The order-2 kernel's derivative has zero mean:** `∫_a^b w″ = 0`.
+
+Immediate from the FTC: its antiderivative `w′ = 4(x−a)³ − 6(b−a)(x−a)² +
+2(b−a)²(x−a)` vanishes at both endpoints. -/
+theorem integral_weight_sq_deriv2 (a b : ℝ) :
+    ∫ x in a..b, (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2)
+      = 0 := by
+  have hW : ∀ x : ℝ, HasDerivAt
+      (fun y : ℝ => 4 * (y - a) ^ 3 - 6 * (b - a) * (y - a) ^ 2
+        + 2 * (b - a) ^ 2 * (y - a))
+      (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) x := by
+    intro x
+    have hu : HasDerivAt (fun y : ℝ => y - a) 1 x := by
+      simpa using (hasDerivAt_id x).sub_const a
+    have hu2 : HasDerivAt (fun y : ℝ => (y - a) ^ 2) (2 * (x - a)) x := by
+      have h := hu.pow 2; norm_num at h; convert h using 1
+    have hu3 : HasDerivAt (fun y : ℝ => (y - a) ^ 3) (3 * (x - a) ^ 2) x := by
+      have h := hu.pow 3; norm_num at h; convert h using 1
+    have h := ((hu3.const_mul (4 : ℝ)).sub (hu2.const_mul (6 * (b - a)))).add
+      (hu.const_mul (2 * (b - a) ^ 2))
+    convert h using 1
+    ring
+  have hcont : Continuous fun x : ℝ =>
+      12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2 := by fun_prop
+  rw [integral_eq_sub_of_hasDerivAt (fun x _ => hW x) (hcont.intervalIntegrable a b)]
+  ring
+
+/-- **The order-2 remainder in second-derivative form.**
+
+    ∫_a^b (x−a)²(b−x)²·g⁗ = ∫_a^b (12(x−a)² − 12(b−a)(x−a) + 2(b−a)²)·g″
+
+Two integrations by parts with no boundary terms, because `w` has double roots at
+both endpoints — done as one FTC application against `F := w·g‴ − w′·g″`. -/
+theorem integral_weight_sq_mul_deriv4_eq {g₂ g₃ g₄ : ℝ → ℝ} {a b : ℝ}
+    (hg2 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₂ (g₃ x) x)
+    (hg3 : ∀ x ∈ Set.uIcc a b, HasDerivAt g₃ (g₄ x) x)
+    (hc2 : ContinuousOn g₂ (Set.uIcc a b))
+    (hc4 : ContinuousOn g₄ (Set.uIcc a b)) :
+    (∫ x in a..b, (x - a) ^ 2 * (b - x) ^ 2 * g₄ x)
+      = ∫ x in a..b,
+          (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x := by
+  have hwc : ContinuousOn (fun x : ℝ => (x - a) ^ 2 * (b - x) ^ 2)
+      (Set.uIcc a b) := by fun_prop
+  have hw2c : ContinuousOn (fun x : ℝ =>
+      12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2)
+      (Set.uIcc a b) := by fun_prop
+  have hF : ∀ x ∈ Set.uIcc a b, HasDerivAt
+      (fun y : ℝ => (y - a) ^ 2 * (b - y) ^ 2 * g₃ y
+        - (4 * (y - a) ^ 3 - 6 * (b - a) * (y - a) ^ 2 + 2 * (b - a) ^ 2 * (y - a))
+            * g₂ y)
+      ((x - a) ^ 2 * (b - x) ^ 2 * g₄ x
+        - (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x) x := by
+    intro x hx
+    have hu : HasDerivAt (fun y : ℝ => y - a) 1 x := by
+      simpa using (hasDerivAt_id x).sub_const a
+    have hbx : HasDerivAt (fun y : ℝ => b - y) (-1) x := by
+      simpa using (hasDerivAt_id x).const_sub b
+    have hu2 : HasDerivAt (fun y : ℝ => (y - a) ^ 2) (2 * (x - a)) x := by
+      have h := hu.pow 2; norm_num at h; convert h using 1
+    have hu3 : HasDerivAt (fun y : ℝ => (y - a) ^ 3) (3 * (x - a) ^ 2) x := by
+      have h := hu.pow 3; norm_num at h; convert h using 1
+    have hb2 : HasDerivAt (fun y : ℝ => (b - y) ^ 2) (-(2 * (b - x))) x := by
+      have h := hbx.pow 2; norm_num at h; convert h using 1
+    have hw : HasDerivAt (fun y : ℝ => (y - a) ^ 2 * (b - y) ^ 2)
+        (4 * (x - a) ^ 3 - 6 * (b - a) * (x - a) ^ 2
+          + 2 * (b - a) ^ 2 * (x - a)) x := by
+      have h := hu2.mul hb2
+      convert h using 1
+      ring
+    have hw1 : HasDerivAt
+        (fun y : ℝ => 4 * (y - a) ^ 3 - 6 * (b - a) * (y - a) ^ 2
+          + 2 * (b - a) ^ 2 * (y - a))
+        (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) x := by
+      have h := ((hu3.const_mul (4 : ℝ)).sub (hu2.const_mul (6 * (b - a)))).add
+        (hu.const_mul (2 * (b - a) ^ 2))
+      convert h using 1
+      ring
+    have h := (hw.mul (hg3 x hx)).sub (hw1.mul (hg2 x hx))
+    convert h using 1
+    ring
+  have hint : IntervalIntegrable
+      (fun x => (x - a) ^ 2 * (b - x) ^ 2 * g₄ x
+        - (12 * (x - a) ^ 2 - 12 * (b - a) * (x - a) + 2 * (b - a) ^ 2) * g₂ x)
+      volume a b :=
+    ((hwc.mul hc4).sub (hw2c.mul hc2)).intervalIntegrable
+  have hftc := integral_eq_sub_of_hasDerivAt hF hint
+  rw [integral_sub (hwc.mul hc4).intervalIntegrable
+    (hw2c.mul hc2).intervalIntegrable] at hftc
+  -- both boundary terms vanish: `w` and `w′` have double/simple roots at `a`, `b`
+  have hb : (b - a) ^ 2 * (b - b) ^ 2 * g₃ b
+      - (4 * (b - a) ^ 3 - 6 * (b - a) * (b - a) ^ 2 + 2 * (b - a) ^ 2 * (b - a))
+        * g₂ b = 0 := by ring
+  have ha : (a - a) ^ 2 * (b - a) ^ 2 * g₃ a
+      - (4 * (a - a) ^ 3 - 6 * (b - a) * (a - a) ^ 2 + 2 * (b - a) ^ 2 * (a - a))
+        * g₂ a = 0 := by ring
+  rw [hb, ha] at hftc
+  linarith
+
 end QOU.MathlibExt

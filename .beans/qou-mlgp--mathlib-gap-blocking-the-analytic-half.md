@@ -977,3 +977,56 @@ the right template for the harder ones; it is not a substitute for them.
                                                                ANALYSIS, not
                                                                bookkeeping
     the final assembly, given that bound                       OPEN, bookkeeping
+
+## The eighth-order cancellation is DODGEABLE: reduce the remainder to g''
+
+`QOU/MathlibExt/CorrectedTrapezoid.lean` gained two, sorry-free on
+`[propext, Classical.choice, Quot.sound]`:
+
+    integral_weight_sq_deriv2        int_a^b w'' = 0
+    integral_weight_sq_mul_deriv4_eq int_a^b w g4 = int_a^b w'' g2
+
+with `w = (x-a)^2(b-x)^2` and `w'' = 12(x-a)^2 - 12(b-a)(x-a) + 2(b-a)^2`.
+
+**WHY IT WORKS.** `w` has DOUBLE roots at both endpoints, so
+`w(a)=w(b)=w'(a)=w'(b)=0` and two integrations by parts leave NO boundary terms
+— one FTC application against `F := w g3 - w' g2`, the same trick as everywhere
+else in this file. And `int w'' = 0` because `w'` vanishes at both ends.
+
+**WHAT IT BUYS.** The `g4` form needs `sup|logSinc''''|`, whose finiteness rests
+on an eighth-order cancellation (crude bound overshoots by 5e7 — see the
+previous entry). The `g2` form needs only `logSinc''`, which is ALREADY PROVED
+bounded here (`|logSinc''| <= 1` on `(0,1]`).
+
+The zero mean is what makes it sharp enough. Writing the remainder as
+`int w''(g'' - c)` with `c = g''(a)`:
+
+    |remainder| <= (int|w''|) osc_cell(g'') <= 2h^3 osc_cell(g'')
+
+and if `g''` is MONOTONE the per-cell oscillations TELESCOPE over the k cells to
+`|g''(b) - g''(a)|` instead of accumulating as `k h sup|g'''|`. Composite error
+on the sum becomes `(h^2/12) TV(g'') = O(1/N^2)`.
+
+Verified: with `TV(logSinc'')` on `[h, 5pi/6]`, the bound / the `-(pi/12N)cot`
+term is 0.064, 0.032, 0.016, 0.008 at N = 100, 200, 400, 800 — falling like
+`1/N`, i.e. strictly below the answer, as required.
+
+**THE REMAINING REQUIREMENT, REDUCED.** From "bound `logSinc''''`" (an
+eighth-order cancellation of two blowing-up terms) to "`logSinc''` is monotone",
+i.e. the SIGN condition `logSinc''' < 0`, i.e.
+
+    x^3 cos x  <  sin^3 x      on (0, pi)
+
+a single clean inequality (Adamovic-Mitrinovic type), verified numerically
+across `(0, 5pi/6]`. For `x >= pi/2` it is trivial (LHS <= 0 < RHS). For
+`x < pi/2` it needs `sin x > x - x^3/6`; Mathlib's `sin_gt_sub_cube` gives only
+`x - x^3/4`, which is too weak — that is the concrete missing lemma.
+
+## (A) — ledger
+
+    every previously named ingredient                    PROVED
+    |logSinc''| <= 1 on (0,1]                            PROVED
+    int w g4 = int w'' g2,  int w'' = 0                  PROVED  <- this commit
+    x^3 cos x < sin^3 x on (0,pi)   (monotonicity)       OPEN — one inequality,
+                                                         needs sin x > x - x^3/6
+    the final assembly                                   OPEN — bookkeeping
