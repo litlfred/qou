@@ -385,6 +385,7 @@ import QOU.MathlibExt.ComplexDilogarithm
 import QOU.QBeta.FiveTwoDiscriminant
 import QOU.Archimedean.ConstantOffOnePoint
 import QOU.Archimedean.BranchIntegerPinning
+import QOU.QBeta.FiveTwoCutAvoidance
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge

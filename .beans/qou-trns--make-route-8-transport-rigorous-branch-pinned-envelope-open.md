@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T07:05:00Z
+updated_at: 2026-08-08T08:20:00Z
 parent: 0yqu
 ---
 
@@ -512,5 +512,92 @@ first build reported exit 0 while the log said `lake: command not found`. The
 costume; caught only because the log gets read every time. Restored via
 `scripts/lean-toolchain-cache-restore.sh` then `scripts/lean-cache-restore.sh`
 (6990 oleans) — those scripts exist for exactly this firewalled case.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 (later) — `hcont` on the OPEN arc is now PROVED, and it is real algebra
+
+`QOU/QBeta/FiveTwoCutAvoidance.lean`, sorry-free, `lake` green (1749 jobs),
+axioms `[propext, Classical.choice, Quot.sound]`. Route 21, 7 gates, exit 0.
+
+The entry above said `hcont` was "measured, not proved" and that proving it "means
+bounding `Re`/`Im` of `1 − x·yⱼ` on `|x| = 1` from the curve, which is a
+real-algebraic statement and is NOT written". It is written now, and it needed no
+complex analysis at all.
+
+### The observation that does the work
+
+**On `|x| = 1` all three elementary symmetric functions of the GGM curve are
+real:**
+
+    e₁ = (x²+1)/x = x + 1/x = 2c,   e₂ = (x²+x+1)/x = 1 + 2c,   e₃ = 1
+
+So the cubic in `y` on the arc is `Y³ − 2cY² + (1+2c)Y − 1`, `c = cos φ` — **real
+coefficients**. The 5₂ polynomial is its `c = 1` member and minus the Watson
+cubic is its `c = −1` member, which is why the endpoint factor is `1 − w₁`.
+
+Route 17 already noted `e₁, e₂, e₃` are rational in `x`; what was not used is
+that on `|x| = 1` they are *real*, which collapses the whole question.
+
+### The elimination
+
+A factor meets the cut iff `t := x·y` is real with `t ≥ 1`. Put `y = t/x =
+t(c − is)`, substitute, split real/imaginary. Divide the imaginary part by `s·t`
+(valid for `φ ∈ (0,π)`; `t ≠ 0` because `e₃ = 1`), use `s² = 1 − c²`:
+
+    I  = −4c²t² + 4c²t − 2c + t² − 1
+    II = 4c³t³ − 4c³t² + 2c²t − 3ct³ + 2ct² + ct − 1
+
+    Res_c(I, II) = 64 · t³ · (t−1)⁴ · (t⁵ − t³ + 1)
+
+Lean checks the elimination by `linear_combination` with explicit Bézout
+cofactors — the resultant is **verified, not imported from a CAS**:
+
+    A = −t⁴(t−1)⁴(2c²t² + c − t²),   B = −t³(t−1)⁴(2ct² + 1)
+
+Each branch dies: `t = 0` is refused by `II` directly; `t = 1` forces `c = 0`
+from `I` and then `II` reads `−1 = 0`; and `t⁵ − t³ + 1 > 0` for all `t > 0`
+(for `t ≤ 1` it is `t⁵ + (1−t³)`, for `t > 1` it exceeds 1 — no critical-point
+analysis needed).
+
+**Conclusion: `t < 0`.** Stronger than required — on the open arc `1 − x·yⱼ` is
+not merely off the cut, it is `> 1`.
+
+### The eliminant is sharp, and that is also the vacuity check
+
+`t⁵ − t³ + 1` has exactly one real root, `−1.2365057…`, negative — and it is
+**attained**. At `φ/π = 0.453289155972`, where the conjugate pair has
+`φ + θ = π`, `x·y` is real and equals that root to 40 dps, deviation `0.0`
+(G5). So the quintic's one real root *is* the one real value `x·y` takes on the
+open arc.
+
+That gate exists because `xy_neg` is a **no-solution theorem**, and a no-solution
+theorem with unsatisfiable hypotheses proves nothing. Without G5 the whole file
+would be unfalsifiable. Worth making a habit: every "no such configuration"
+result needs a witness that the configuration is expressible.
+
+### What is still open
+
+* **The continuity packaging** — "`F` continuous" ⟸ "no factor meets the cut" is
+  `Log`'s continuity off `(−∞,0]` composed with continuity of the root multiset.
+  Standard, not formalised.
+* **The endpoint `φ = π`** — genuinely on the cut, so cut-avoidance does not
+  apply. Continuity there is one-sided and holds by the sign of
+  `Im(1 − x·y) = −y·sin φ > 0` for `y < 0`. Not formalised.
+* **The envelope derivative `dS/dφ = 2φ`** — untouched.
+
+So `hcont` is not yet a theorem end to end; what was a real-algebraic gap is now
+a routine-analysis gap. Different debt, much smaller.
+
+### A measurement note
+
+The first check of the real-coefficient reduction reported a max discrepancy of
+`2.64` and looked like a refutation. It was a **sort key**: comparing two root
+lists ordered by `(re, im)` puts a conjugate pair in different orders when the
+real parts differ in the last bits. Replaced with a nearest-match multiset
+distance; worst is now `< 1e-30`. A root-list comparison must never be done by
+sorting on floating-point keys.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
