@@ -50,6 +50,11 @@ These are concrete cardinalities the Lean scaffolds can reference.
 namespace QOU.BraidKnot
 
 open QOU.QuantumObservableUniverses
+-- The bodies below refer to the class fields bare (`gauge_coupling_g`,
+-- `vev_v_GeV`, `scalar_mass_factor`, …), so both class namespaces must be
+-- open — the projections live in them, not at `QOU.QuantumObservableUniverses`
+-- / `QOU.BraidKnot` scope.
+open CategoricalHiggsIdempotent TorusKnotMass
 
 /-- Cardinality of the GS-NF basis of knot operators on 3-strand
     braids B_3. Per `knot-operator-bring-action.md` §"The 6 basis
@@ -167,8 +172,7 @@ def scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :
     ratio equals cos θ_W exactly (CONDITIONAL, derived from
     CategoricalHiggsIdempotent.m_W_over_m_Z_eq_cos_theta_W). -/
 theorem corollary_W_Z_ratio_eq_cos_theta_W :
-    CategoricalHiggsIdempotent.m_W_GeV / CategoricalHiggsIdempotent.m_Z_GeV =
-      CategoricalHiggsIdempotent.cos_theta_W :=
+    m_W_GeV / m_Z_GeV = cos_theta_W :=
   CategoricalHiggsIdempotent.m_W_over_m_Z_eq_cos_theta_W
 
 /-- Explicit numerical reduction: 6/5 = 1.2. -/

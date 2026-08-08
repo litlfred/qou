@@ -140,3 +140,68 @@ At ~7%, fix-then-flip is realistic rather than a rewrite. Suggested order:
 2. Compile the remainder in batches, quarantining what is genuinely stale.
 3. Then flip `globs = ["QOU", "QOU.+"]` so the closure can never silently
    shrink again.
+
+---
+
+## Drain executed — 2026-08-08
+
+`globs = ["QOU", "QOU.+"]` is **flipped** and the tree drained. 45 modules
+fixed across the sweep. Coverage went from **888 oleans / 1654 modules (53%)**
+to **1652 / 1654**.
+
+The 7% estimate above was in the right ballpark for *rate* but the sample
+badly understated *concentration*: `QOU/Mathlib/HeckeAlgebra.lean` alone
+carried 101 errors, and one module (`exists_axiom_2_observability.lean`) had
+no `import` line at all.
+
+### What the 766 actually contained
+
+Overwhelmingly one defect — a declaration at file scope that every call site
+addresses through a namespace — but it presents in **five** distinct error
+shapes, which is why earlier sweeps kept missing subsets of it:
+
+| shape | when |
+|---|---|
+| `Invalid field 'x'` | receiver's type is a `structure` |
+| `Unknown constant 'NS.x'` | written out explicitly |
+| `Invalid dotted identifier` | `.ctor` with undetermined expected type |
+| `Invalid field: … 'Function.x'` | type is a `def` whnf-ing to a Pi |
+| `'NS.x' has already been declared` | two blocks both claiming the bare name |
+
+The last one only appears once a *sibling* block is also fixed, so it cannot
+be enumerated up front. HeckeAlgebra had four `def one`, three `def basis`,
+three `def basis_count` and three `def mulSigmaAbstract` all colliding at
+module scope.
+
+Three defect classes the blind spot hid that **no sorry census would ever
+show**:
+
+1. never-compiled modules (the 766),
+2. unaudited vacuity — e.g. `PentagonUvCommutation`'s `∨ True` (bean
+   qou-zzhw), invisible while the module was outside the build,
+3. plausible-looking calls to API that does not exist — `SDPRankEquality`
+   invoked two invented Mathlib lemmas; `JointGaloisBraidAction` carried a
+   live global instance against a 5-field class built from a stale 2-field
+   shape, in a file whose own siblings comment such instances out per
+   AGENTS.md §3b-cond.
+
+### Method note — standalone `lean` is NOT authoritative
+
+Verifying a file with `lean` against the build's `LEAN_PATH` gives false
+greens: the seeded olean cache can be **stale relative to current sources**.
+`QOU/BraidKnot/SubstrateEWHypotheses.lean` verified clean that way and then
+failed under `lake build`, because the cached
+`CategoricalHiggsIdempotent.olean` predated the refactor that moved
+`gauge_coupling_g`, `vev_v_GeV` &c. into class fields. Standalone `lean` is
+fine as a fast inner loop; **only `lake build` closes a module.**
+
+### Remaining
+
+- `QOU/Machinery/MarkovTraceH4.lean` compiles but takes **over an hour**.
+  Not a correctness problem; it is now the critical path of every full build
+  and wants its own bean.
+- Re-run the corpus sorry/vacuity audit (qou-joo5): every previous figure was
+  measured on 53% of the tree.
+- Correct the premise sentence in
+  `docs/audits/2026-06-28-content-sibling-compile-sweep.md` and
+  `.github/workflows/lean-content-siblings.yml` (still open from above).
