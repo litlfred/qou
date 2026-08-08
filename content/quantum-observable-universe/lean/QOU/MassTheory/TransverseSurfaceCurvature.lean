@@ -202,6 +202,45 @@ theorem transverse_nonzero_needs_noncommuting_curvature (l : List R)
   push_neg at hc
   exact h (listPairing_eq_zero_of_all_comm l (fun x hx y hy => hc x hx y hy))
 
+/-! ### Trace/character annihilation — the transverse term is invisible to the
+    scalar Markov trace
+
+Any *cyclic* linear functional `τ` (`τ(a·b)=τ(b·a)` — the Markov trace / a
+Wedderburn block character `χ^λ`) annihilates every curvature commutator, hence
+the whole transverse pairing.  This is the formal reason the transverse
+surface curvature **cannot** contribute to binding through the *scalar* trace
+channel (why the scalar-trace binding `B = E₀·Δtr_M` saturates); any surviving
+contribution must be **operator-valued** (eigenphase-weighted / non-trace) —
+the channel independently named in the sibling probes #4619 and
+[`2026-07-24-eunit-magnus-order2.md` §2](../../../../../../docs/audits/2026-07-24-eunit-magnus-order2.md). -/
+
+/-- A cyclic linear functional kills the curvature commutator. -/
+theorem curvComm_trace_zero {A : Type*} [AddCommGroup A] (τ : R →+ A)
+    (hcyc : ∀ a b : R, τ (a * b) = τ (b * a)) (a b : R) :
+    τ (curvComm a b) = 0 := by
+  rw [curvComm, map_sub, hcyc a b, sub_self]
+
+theorem rowPairing_trace_zero {A : Type*} [AddCommGroup A] (τ : R →+ A)
+    (hcyc : ∀ a b : R, τ (a * b) = τ (b * a)) (c : R) (l : List R) :
+    τ (rowPairing c l) = 0 := by
+  induction l with
+  | nil => simp [rowPairing]
+  | cons y ys ih =>
+    rw [rowPairing, map_add, curvComm_trace_zero τ hcyc, ih, add_zero]
+
+/-- **The whole transverse pairing has vanishing trace/character.**  Under any
+    cyclic functional (Markov trace, block character `χ^λ`) the ordered
+    transverse pairing evaluates to `0`.  So the transverse surface curvature is
+    a purely *operator-valued* object; it leaves no imprint on the scalar Jones/
+    Markov trace. -/
+theorem listPairing_trace_zero {A : Type*} [AddCommGroup A] (τ : R →+ A)
+    (hcyc : ∀ a b : R, τ (a * b) = τ (b * a)) (l : List R) :
+    τ (listPairing l) = 0 := by
+  induction l with
+  | nil => simp [listPairing]
+  | cons c xs ih =>
+    rw [listPairing, map_add, rowPairing_trace_zero τ hcyc, ih, add_zero]
+
 /-! ## Part C — scalar magnitude envelope (diagonal / additive reading)
 
 The *diagonal* (per-handle) envelope of the transverse magnitude assigns one
