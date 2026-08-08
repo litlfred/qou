@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: the root labelling — (b) CONTINUITY through the collision is PROVED; (a) local differentiability remains'
+title: 'Gap A: (b) continuity PROVED, and (a)\'s non-degeneracy PROVED (∂p/∂y ≥ 7/4) — what remains is assembly'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T22:45:00Z
+updated_at: 2026-08-08T23:10:00Z
 ---
 
 ## What is open
@@ -82,7 +82,48 @@ So the *labelling of the colliding pair* is continuous through the collision,
 while not being differentiable there. **That asymmetry is what makes Gap A
 tractable**, and it is now a theorem rather than an argument.
 
-### What remains: (a) only
+### ✅ (a)'s NON-DEGENERACY IS PROVED — and Route 32 G8's `1.75` is exactly `7/4`
+
+    unitCubic_deriv_ge (ht0 : 0 < t) (ht1 : t < 1) (hp : unitCubic c t = 0) :
+      7/4 ≤ 3t² − 4ct + (2c+1)
+
+    unitCubic_deriv_ne_zero : … → 3t² − 4ct + (2c+1) ≠ 0
+
+`exists_hasDerivAt_root` needs exactly `curveDy ≠ 0`. On `|x| = 1` the curve is
+`x · unitCubic c`, so `curveDy = x·(3t² − 4ct + 2c+1)` and — `x ≠ 0` — the
+non-degeneracy is a statement about the **real cubic alone**.
+
+Two exact facts prove it, with `c` eliminated by the root relation:
+
+* `(3t² − 4ct + 2c+1)·t(1−t) = −t⁴ + 2t³ + t² − 2t + 1` — a **`c`-free quartic**;
+* that quartic satisfies `q(t) − 7/16 = (2t−1)²(9 + 4t − 4t²)/16 ≥ 0` on `(0,1)`,
+  and `t(1−t) ≤ 1/4`.
+
+Dividing gives `∂p/∂y ≥ (7/16)/(1/4) = 7/4`.
+
+**The bound is TIGHT, not a lossy estimate.** At `c = 3/4` the root `t = 1/2`
+gives `∂p/∂y = 7/4` exactly — verified in Lean — and `c = 3/4 = cos φ` is on the
+arc. So Route 32 G8's measured minimum of `1.75` is *attained*, and the measured
+and proved values agree exactly rather than approximately.
+
+### What remains: assembly only
+
+Both analytic obstructions are now theorems:
+
+| piece | status |
+|---|---|
+| continuity through the collision | ✅ `continuous_otherRoots` |
+| IFT non-degeneracy off the collision | ✅ `unitCubic_deriv_ne_zero` |
+| local differentiable labelling | ✅ `exists_hasDerivAt_root` (pre-existing) |
+| one-exceptional-point glue | ✅ `envelopeS_total` (pre-existing) |
+
+What is left is **assembling** these into concrete `Y₁ Y₂ Y₃ : ℝ → ℂ` and
+discharging `hasDerivAt_envelopeS`'s remaining per-root side conditions
+(`VSide`, the two `log(−y)` routes, `heⱼ`). That is bookkeeping over proved
+parts — which this lane's record says is *exactly* where unexamined regions
+hide, so it should not be called trivial in advance.
+
+### The original "what remains: (a) only" note, superseded
 
 A locally differentiable labelling on `[0,π] ∖ {φ₀}`, and the real root `t(φ)`
 globally. The scalar IFT (`QOU.MathlibExt.ImplicitScalar`, proved) supplies it,

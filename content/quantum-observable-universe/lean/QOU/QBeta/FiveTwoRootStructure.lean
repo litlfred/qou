@@ -182,6 +182,55 @@ noncomputable def otherRoots (β γ : ℝ) : ℂ × ℂ :=
     (((-β / 2 : ℝ) : ℂ) + ((Real.sqrt (4 * γ - β ^ 2) / 2 : ℝ) : ℂ) * Complex.I,
      ((-β / 2 : ℝ) : ℂ) - ((Real.sqrt (4 * γ - β ^ 2) / 2 : ℝ) : ℂ) * Complex.I)
 
+/-! ### Gap A (a): the IFT's non-degeneracy, PROVED rather than measured
+
+`exists_hasDerivAt_root` gives a locally differentiable root labelling wherever
+`curveDy ≠ 0`. Route 32 G8 *measured* `|∂p/∂y| ≥ 1.75` at the real root on the
+arc; below it is proved, and the `1.75` turns out to be exactly `7/4` with a
+closed-form source.
+
+On `|x| = 1` the curve is `x · unitCubic c`, so `curveDy = x·(3t² − 4ct + 2c+1)`
+and — `x ≠ 0` — the non-degeneracy is a statement about the real cubic alone.
+-/
+
+/-- The `y`-derivative of `unitCubic`, times `t(1−t)`, is a **`c`-free quartic**.
+The root relation eliminates `c` entirely. -/
+theorem unitCubic_deriv_mul {c t : ℝ} (hp : unitCubic c t = 0) :
+    (3 * t ^ 2 - 4 * c * t + (2 * c + 1)) * (t * (1 - t))
+      = -t ^ 4 + 2 * t ^ 3 + t ^ 2 - 2 * t + 1 := by
+  unfold unitCubic at hp
+  linear_combination (1 - 2 * t) * hp
+
+/-- **`∂p/∂y ≥ 7/4` at the real root** — so the IFT applies, and the `1.75`
+Route 32 G8 measured is exactly `7/4`.
+
+Two exact facts do it: the quartic satisfies
+`q(t) − 7/16 = (2t−1)²(9 + 4t − 4t²)/16 ≥ 0` on `(0,1)`, and `t(1−t) ≤ 1/4`.
+Dividing, `∂p/∂y ≥ (7/16)/(1/4) = 7/4`. Equality would need `t = 1/2`, which is
+excluded by `two_fifths_lt` only in the weak sense — the bound holds regardless. -/
+theorem unitCubic_deriv_ge {c t : ℝ} (ht0 : 0 < t) (ht1 : t < 1)
+    (hp : unitCubic c t = 0) :
+    7 / 4 ≤ 3 * t ^ 2 - 4 * c * t + (2 * c + 1) := by
+  have hmul := unitCubic_deriv_mul hp
+  have h1t : (0 : ℝ) < 1 - t := by linarith
+  have htt : (0 : ℝ) < t * (1 - t) := mul_pos ht0 h1t
+  -- `q(t) ≥ 7/16`, from the exact factorisation
+  have hq : (7 : ℝ) / 16 ≤ -t ^ 4 + 2 * t ^ 3 + t ^ 2 - 2 * t + 1 := by
+    nlinarith [sq_nonneg (2 * t - 1), mul_pos ht0 h1t, sq_nonneg t]
+  -- `t(1−t) ≤ 1/4`
+  have hle : t * (1 - t) ≤ 1 / 4 := by nlinarith [sq_nonneg (2 * t - 1)]
+  nlinarith [hmul, hq, hle, htt]
+
+/-- **The IFT's hypothesis holds at the real root**, in the form
+`exists_hasDerivAt_root` consumes: `3t² − 4ct + 2c+1 ≠ 0`. -/
+theorem unitCubic_deriv_ne_zero {c t : ℝ} (ht0 : 0 < t) (ht1 : t < 1)
+    (hp : unitCubic c t = 0) :
+    3 * t ^ 2 - 4 * c * t + (2 * c + 1) ≠ 0 := by
+  have := unitCubic_deriv_ge ht0 ht1 hp
+  intro h
+  rw [h] at this
+  linarith
+
 /-- **`otherRoots` is continuous — including THROUGH the collision.**
 
 Bean `qou-glbl` part (b). The formula is piecewise on the sign of `β² − 4γ`, and
