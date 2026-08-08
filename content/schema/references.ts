@@ -4419,6 +4419,35 @@ export const references: CSLData[] = [
       + "so a reader should confirm before relying on the exact wording.",
   }),
 
+  // ── Śniady 2005 — genus expansion for symmetric-group characters ──
+  // Registered 2026-08-08 by paper-relevance-triage: same defect class as
+  // garoufalidis2012 / murakami2004 above — the key `sniady2006asymptotics`
+  // is used as a `# Ref:` in SEVEN producers under computations/deltalambda/
+  // (fl_kernel_sign_structure, fl_sniady_genus_biased_measure,
+  // fl_sniady_rsk_form_verify, wlambda_covariance_kernel_frontier,
+  // wlambda_covariance_epic_phase1/2/3) with no registry entry. The key's
+  // `2006` is the journal year; the source in the repo is the 2005 preprint.
+  ref({
+    id: "sniady2006asymptotics",
+    type: "article",
+    title:
+      "Asymptotics of characters of symmetric groups, genus expansion and free probability",
+    author: [{ family: "Śniady", given: "Piotr" }],
+    issued: { "date-parts": [[2005]] },
+    URL: "https://arxiv.org/abs/math/0411647",
+    note: "arXiv:math/0411647v2 [math.CO], 21 Oct 2005. Author, title, arXiv "
+      + "id and preprint date read directly off uploads/0411647v2.pdf. The "
+      + "corpus elsewhere asserts a published version in Probab. Theory Relat. "
+      + "Fields 136 (2006) 263-297, DOI 10.1007/s00440-005-0479-7 - that "
+      + "journal metadata is NOT recorded here because it could not be "
+      + "verified in-session (arxiv.org and doi.org are egress-blocked from "
+      + "the agent sandbox) and the local PDF is the preprint. A reader with "
+      + "network access should confirm and promote this entry to "
+      + "article-journal. Consumed for Thm 4.14 (the Sigma-hat_3 = R_4 + R_2 "
+      + "identity that wlambda_covariance_kernel_frontier.py verifies "
+      + "numerically) and Prop 3.4 (deg Sigma_pi = n - 2*genus(pi)).",
+  }),
+
   // ── Champanerkar 2003 — A-polynomial & Bloch invariants (thesis) ─
   ref({
     id: "champanerkar2003",
