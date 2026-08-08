@@ -24,7 +24,41 @@ Verify the declaration's namespace-qualified name against the file before
 rewriting, and confirm the target carries the block's headline claim (not a
 weaker lemma) — the rule from #4739 §2.
 
-## Absent from the whole corpus (7)
+## ⚠ RETRACTED — none of these is absent (2026-08-08)
+
+**The "absent from the whole corpus" verdict below is wrong for all seven.**
+Every one has a module in the Lean tree, at exactly the path its ref implies:
+
+| ref | module |
+|---|---|
+| `QOU.Eightfold.Sym2Gate` | `lean/QOU/Eightfold/Sym2Gate.lean` |
+| `QOU.Eightfold.WeylInvarianceQDeformation` | `lean/QOU/Eightfold/WeylInvarianceQDeformation.lean` |
+| `QOU.Eightfold.RowCapObstruction` | `lean/QOU/Eightfold/RowCapObstruction.lean` |
+| `QOU.Eightfold.GellMannOkuboIdentity` | `lean/QOU/Eightfold/GellMannOkuboIdentity.lean` |
+| `QOU.BraidKnot.chirality_frobenius_self_pairing` | `lean/QOU/BraidKnot/chirality_frobenius_self_pairing.lean` |
+| `QOU.BraidKnot.GBResidueSpectralSum.spectral_decomposition` | `lean/QOU/BraidKnot/GBResidueSpectralSum.lean` |
+| `QOU.BraidsKnots.RamifiedDiscFusion` | `lean/QOU/BraidsKnots/RamifiedDiscFusion.lean` |
+
+**The `QOU.Eightfold` chapter IS formalised** — the instruction below to "check
+whether that chapter was ever formalised at all" is answered affirmatively;
+there is even a fifth module, `Sym2GateParity.lean`, beyond the four named.
+
+**Why the verdict was wrong.** I ran a grep for top-level *declaration names*
+and concluded absence when these are **module-path refs** — §0a candidate 2,
+`<lakeRoot>/<Decl/Path>.lean`. The ref `QOU.Eightfold.Sym2Gate` names a MODULE,
+not a declaration, so a declaration grep can never find it. The triviality
+probe's `decl-not-found` meant "no declaration to probe", not "the ref is
+broken".
+
+The same regex also omitted `axiom`, `opaque` and class fields — which is how
+`s5_acts_on_ew_slice` was mis-reported in #4739 §1. Third and fourth instances
+of one defect.
+
+PR #4757 acts on the corrected picture: these are mis-shaped or already-correct
+refs, not formalisation gaps. **Prefer that PR's per-ref table over the list
+below**, which is retained only as the record of what was assumed.
+
+## Superseded: "absent from the whole corpus" (7)
 
 `QOU.Eightfold.Sym2Gate`, `QOU.Eightfold.WeylInvarianceQDeformation`,
 `QOU.Eightfold.RowCapObstruction`, `QOU.Eightfold.GellMannOkuboIdentity`,
