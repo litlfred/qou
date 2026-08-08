@@ -29,9 +29,35 @@ guess:
 
 | verdict | meaning |
 |---|---|
-| `WRITES` | a `WitnessBuilder` name matches the stem — literal, or an f-string matched as a pattern |
+| `WRITES` | a `WitnessBuilder` name matches the stem, **or** the filename provably reaches a write sink — literal, or an f-string matched as a pattern |
 | `UNCONFIRMED` | the script mentions *some* witness, or builds one under a computed name — cannot confirm, cannot deny |
 | `NOT_A_PRODUCER` | the script mentions **no witness at all** — the claim cannot be true |
+
+## Hand-rolled writers: follow the path to the sink
+
+`WitnessBuilder` is not the only way to write one. 250 producers assemble the
+payload by hand, write it to an explicit path, and stamp the metadata
+afterwards (`stamp_staleness_metadata`, 185 call sites). Recognising only the
+builder left every one of those `UNCONFIRMED` — 466 of 2250.
+
+So a filename is also `WRITES` when it can be traced from a literal to a write
+sink. Sinks are asymmetric **on purpose**: `write_text` / `write_bytes` and
+`open(…, "w"|"a"|"x")` count; `read_text` and a bare `open()` do not. That
+asymmetry is the entire safeguard — `delta_lambda_empirical_tabulation.py`
+*contains* `"chi-proton-h3.witness.json"`, but only ever hands it to a read, so
+it stays `UNCONFIRMED` while the file it genuinely writes is confirmed. A
+"mentions it" test cannot tell those apart; that is the error this tool exists
+to not repeat, and a corpus case (not just a unit test) pins it.
+
+Path idioms resolved, each with a paired negative test: `Path(x)`, `HERE / x`,
+`os.path.join(…, x)`, `p.with_name(x)`, and any of those reached through a
+variable (depth-limited). Together: **466 → 32 `UNCONFIRMED`**.
+
+The upgrade can only move `UNCONFIRMED → WRITES`. It cannot manufacture a
+`NOT_A_PRODUCER`, because that verdict is reached only when the source mentions
+no witness at all — a condition finding *more* writes never creates. Measured
+across all three extensions, `NOT_A_PRODUCER` held at the same three witnesses,
+by name and not merely by count.
 
 `UNCONFIRMED` is deliberately not folded into either neighbour. The `chi-*`
 case is a filename that *appears* in the named script, so a "mentions it" test
@@ -75,6 +101,30 @@ None can be regenerated, and `run_pipeline` treats all three as current.
 Deleting or re-attributing them is a corpus decision, not a tool fix, so this
 records rather than acts.
 
+## The 466 UNCONFIRMED, triaged — and why the obvious upgrade is unsafe
+
+| | witnesses | shape |
+|---:|---|---|
+| **250** | no `WitnessBuilder` at all | hand-rolled `json.dump` / `write_text` |
+| **197** | imports it, no resolvable constructor | `WitnessBuilder.stamp_staleness_metadata(...)` — 185 call sites |
+| 15 | a builder exists, but no name matches | |
+| 2 | name from a variable | |
+| 2 | syntax error | |
+
+The 197 are a **fourth** builder shape, found the same way as `wrap_legacy`:
+`adjacent_vs_full_probe.py` assembles the payload by hand, writes it to
+`Path(__file__).parent / "adjacent-vs-full-probe.witness.json"`, then calls
+`stamp_staleness_metadata` for the metadata. They genuinely do produce their
+witness, and the concrete filename is right there as a literal.
+
+**The tempting upgrade — "literal filename present + the file writes something
+⇒ WRITES" — is exactly the original bug.** `delta_lambda_empirical_tabulation`
+contains the literal `"chi-proton-h3.witness.json"` *and* writes a witness of
+its own; that rule would call it the producer of six witnesses it only reads,
+which is the error this tool exists to catch. Upgrading these needs real
+dataflow — the literal must reach a write, not merely coexist with one — so
+they stay `UNCONFIRMED` until someone does that properly.
+
 Usage:
     python3 computations/witness_provenance_audit.py
     python3 computations/witness_provenance_audit.py --strict     # exit 1 on NOT_A_PRODUCER
@@ -94,6 +144,127 @@ _OPAQUE = "\x01opaque"
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+
+
+def _fstring_pattern(node: ast.JoinedStr) -> str:
+    """An f-string is still a pattern: its literal segments pin the shape.
+
+    `f"A-operator-extract-h{n}-{iface}"` becomes `^A\-operator\-extract\-h.+\-.+$`.
+    Treating a parameterised name as unknowable instead put ~135 witnesses in
+    NOT_A_PRODUCER on an earlier cut.
+    """
+    parts = [re.escape(v.value) if isinstance(v, ast.Constant)
+             and isinstance(v.value, str) else None for v in node.values]
+    return _DYNAMIC + "^" + "".join(p if p is not None else ".+" for p in parts) + "$"
+
+
+def _matches(names: set[str], target: str) -> bool:
+    if target in names:
+        return True
+    return any(n.startswith(_DYNAMIC) and re.match(n[len(_DYNAMIC):], target)
+               for n in names)
+
+
+_WRITE_METHODS = {"write_text", "write_bytes"}
+_RESOLVE_DEPTH = 5
+
+
+def _assignments(tree: ast.AST) -> dict:
+    """Name -> every value ever assigned to it, module-wide.
+
+    Scope is ignored deliberately: over-collecting can only widen what a path
+    might denote, which risks a false WRITES on a name reused for two files —
+    a real limitation, and the reason this never downgrades anything.
+    """
+    out: dict = {}
+    for n in ast.walk(tree):
+        if isinstance(n, ast.Assign):
+            for t in n.targets:
+                if isinstance(t, ast.Name):
+                    out.setdefault(t.id, []).append(n.value)
+        elif isinstance(n, (ast.AnnAssign, ast.AugAssign)) and isinstance(n.target, ast.Name):
+            if n.value is not None:
+                out.setdefault(n.target.id, []).append(n.value)
+    return out
+
+
+def _resolve(node, assigns: dict, depth: int = 0):
+    """Literal filenames (or patterns) this path expression may denote."""
+    if depth > _RESOLVE_DEPTH or node is None:
+        return
+    if isinstance(node, ast.Constant) and isinstance(node.value, str):
+        yield node.value
+    elif isinstance(node, ast.JoinedStr):
+        yield _fstring_pattern(node)
+    elif isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div):
+        # HERE / "x.witness.json" — the basename is the right operand.
+        yield from _resolve(node.right, assigns, depth + 1)
+    elif isinstance(node, ast.Name):
+        for v in assigns.get(node.id, []):
+            yield from _resolve(v, assigns, depth + 1)
+    elif isinstance(node, ast.Call):
+        f = node.func
+        fn = f.attr if isinstance(f, ast.Attribute) else getattr(f, "id", "")
+        if fn == "Path" and node.args:
+            yield from _resolve(node.args[0], assigns, depth + 1)
+        elif fn == "witness_path" and node.args:
+            # _path_bridge.witness_path("x.witness.json", HERE) — this repo's
+            # own resolver, 208 call sites. Basename is the first argument.
+            yield from _resolve(node.args[0], assigns, depth + 1)
+        elif fn == "with_name" and node.args:
+            # script_path.with_name("x.witness.json") — the borromean cluster.
+            yield from _resolve(node.args[0], assigns, depth + 1)
+        elif fn == "join" and node.args:
+            # os.path.join(dir, …, "x.witness.json") — basename is the LAST
+            # argument, mirroring the `/` case above. The alpha_em probes are
+            # written this way throughout; without it they read as non-writers.
+            yield from _resolve(node.args[-1], assigns, depth + 1)
+
+
+def written_filenames(tree: ast.AST) -> set:
+    """Witness filenames that provably REACH a write in this module.
+
+    This is the whole difference between producing a witness and mentioning
+    one. `delta_lambda_empirical_tabulation` contains the literal
+    "chi-proton-h3.witness.json" inside a dict it feeds to json.load; that
+    literal reaches no write, so it is not collected here. A test pins it.
+
+    Sinks are asymmetric on purpose: `write_text`/`write_bytes` and
+    `open(..., "w")` count; `read_text` and `json.load` do not.
+    """
+    assigns = _assignments(tree)
+    out: set = set()
+
+    def collect(path_node):
+        for lit in _resolve(path_node, assigns):
+            if ".witness.json" in lit or lit.startswith(_DYNAMIC):
+                out.add(lit)
+
+    for n in ast.walk(tree):
+        if not isinstance(n, ast.Call):
+            continue
+        f = n.func
+        if isinstance(f, ast.Attribute) and f.attr in _WRITE_METHODS:
+            collect(f.value)                      # p.write_text(...)
+        elif isinstance(f, ast.Attribute) and f.attr == "open":
+            if _is_write_mode(n):
+                collect(f.value)                  # p.open("w")
+        elif getattr(f, "id", "") == "open" and n.args:
+            if _is_write_mode(n, mode_index=1):
+                collect(n.args[0])                # open(p, "w")
+    return out
+
+
+def _is_write_mode(call: ast.Call, mode_index: int = 0) -> bool:
+    args = list(call.args)
+    cand = args[mode_index] if len(args) > mode_index else None
+    for kw in call.keywords:
+        if kw.arg == "mode":
+            cand = kw.value
+    if cand is None:
+        return False          # no mode given => "r"
+    return isinstance(cand, ast.Constant) and isinstance(cand.value, str) \
+        and any(c in cand.value for c in "wax")
 
 
 def builder_names(tree: ast.AST) -> set[str]:
@@ -124,15 +295,7 @@ def builder_names(tree: ast.AST) -> set[str]:
             if isinstance(c, ast.Constant) and isinstance(c.value, str):
                 out.add(c.value)
             elif isinstance(c, ast.JoinedStr):
-                # A parameterised name: f"A-operator-extract-h{n}-{iface}".
-                # The literal segments are still a pattern, so turn it into one
-                # rather than give up — treating a dynamic name as "produces
-                # nothing" put ~135 witnesses in NOT_A_PRODUCER on the second cut.
-                parts = ["".join(re.escape(v.value)) if isinstance(v, ast.Constant)
-                         and isinstance(v.value, str) else "\x00"
-                         for v in c.values]
-                out.add(_DYNAMIC + "^" + "".join(
-                    p if p != "\x00" else ".+" for p in parts) + "$")
+                out.add(_fstring_pattern(c))
             else:
                 out.add(_OPAQUE)   # name from a variable: unknowable either way
     return out
@@ -145,20 +308,24 @@ def classify(source: str, witness_filename: str) -> str:
         return "UNCONFIRMED"
     stem = witness_filename[: -len(".witness.json")]
     names = builder_names(tree)
-    if stem in names:
+    if _matches(names, stem):
         return "WRITES"
-    for n in names:
-        if n.startswith(_DYNAMIC) and re.match(n[len(_DYNAMIC):], stem):
-            return "WRITES"
+    # A hand-rolled writer is still a writer: the payload is assembled by hand,
+    # written to an explicit path, and the metadata stamped afterwards
+    # (WitnessBuilder.stamp_staleness_metadata, 185 call sites). Confirming
+    # those needs the filename to REACH a write, not merely appear.
+    if _matches(written_filenames(tree), witness_filename):
+        return "WRITES"
     if _OPAQUE in names:
         # The script builds a witness whose name is computed. Cannot confirm it
         # is this one; cannot assert it is not. That is what UNCONFIRMED is for.
         return "UNCONFIRMED"
     # Conservative: a script that mentions ".witness.json" AT ALL may be writing
-    # this one through a computed path — chi_at_q0_via_hoefsmit_mpfr writes
-    # `chi-{atom}-h{n}-at-q0-50dps.witness.json` via a helper, so the concrete
-    # name never appears. Only a script that never mentions a witness can be
-    # asserted not to produce one.
+    # this one through a path this resolver cannot follow — a loop over a table
+    # of names, a config value, a helper that takes the stem as an argument.
+    # `binding_canonical.py` is the live example: it constructs a WitnessBuilder
+    # whose name is not a literal, so nothing here can pin it either way. Only a
+    # script that never mentions a witness can be asserted not to produce one.
     return "UNCONFIRMED" if ".witness.json" in source else "NOT_A_PRODUCER"
 
 
@@ -211,7 +378,9 @@ CASES = [
     # but only as an input the script READS.
     ("reads it as an input", '{"chi_witness": "chi-proton-h3.witness.json"}',
      "chi-proton-h3.witness.json", "UNCONFIRMED"),
-    ("hand-rolled write", 'Path("out.witness.json").write_text(j)', "out.witness.json", "UNCONFIRMED"),
+    # (A "hand-rolled write" case sat here asserting UNCONFIRMED, back when the
+    # tool could not follow a path to its sink. Same source now appears below
+    # as "write_text on a literal path", expecting WRITES.)
     ("never mentions a witness at all", 'x = 1\n', "orphan.witness.json", "NOT_A_PRODUCER"),
     ("templated path via a helper", 'OUT = f"chi-{atom}-h{n}.witness.json"',
      "chi-deuteron-h6.witness.json", "UNCONFIRMED"),
@@ -220,6 +389,59 @@ CASES = [
     ("non-literal keyword name: also UNCONFIRMED, never asserted absent",
      'WitnessBuilder(name=nm)', "orphan.witness.json", "UNCONFIRMED"),
     ("syntax error degrades to unconfirmed", 'def (:', "x.witness.json", "UNCONFIRMED"),
+    # --- dataflow: the literal must REACH a write ---
+    ("write_text on a literal path",
+     'Path("out.witness.json").write_text(j)', "out.witness.json", "WRITES"),
+    ("HERE / literal, via a variable",
+     'out = HERE / "adjacent-vs-full-probe.witness.json"\nout.write_text(j)',
+     "adjacent-vs-full-probe.witness.json", "WRITES"),
+    ("open(path, 'w')",
+     'p = HERE / "o.witness.json"\nwith open(p, "w") as f:\n    json.dump(d, f)',
+     "o.witness.json", "WRITES"),
+    ("f-string path reaching a write",
+     '(HERE / f"chi-{atom}-h{n}.witness.json").write_text(j)',
+     "chi-deuteron-h6.witness.json", "WRITES"),
+    # THE REGRESSION. This is the shape the whole tool exists to reject: the
+    # literal is present, the script writes a witness of its OWN, but the
+    # literal only ever reaches a read.
+    ("literal reaches only a read, while the file writes something else",
+     'cfg = {"chi_witness": "chi-proton-h3.witness.json"}\n'
+     'd = json.loads((HERE / cfg["chi_witness"]).read_text())\n'
+     'out = HERE / "delta-lambda-empirical-tabulation.witness.json"\n'
+     'out.write_text(j)',
+     "chi-proton-h3.witness.json", "UNCONFIRMED"),
+    ("os.path.join reaching open(…, 'w')",
+     'out = os.path.join(_here(), "alpha-em-b5-assembly.witness.json")\n'
+     'with open(out, "w") as f:\n    json.dump(w, f)',
+     "alpha-em-b5-assembly.witness.json", "WRITES"),
+    ("os.path.join reaching only a read",
+     'p = os.path.join(_here(), "upstream.witness.json")\n'
+     'd = json.load(open(p))\n'
+     'out = os.path.join(_here(), "mine.witness.json")\n'
+     'open(out, "w").write(j)',
+     "upstream.witness.json", "UNCONFIRMED"),
+    ("with_name reaching a write",
+     'out = script_path.with_name("borromean-qzeil-fixedq.witness.json")\n'
+     'out.write_text(j)',
+     "borromean-qzeil-fixedq.witness.json", "WRITES"),
+    ("with_name reaching only a read",
+     'src = script_path.with_name("upstream.witness.json")\n'
+     'd = json.loads(src.read_text())\n'
+     'script_path.with_name("mine.witness.json").write_text(j)',
+     "upstream.witness.json", "UNCONFIRMED"),
+    ("witness_path reaching a write",
+     'CHI = _pb.witness_path("chi-deuteron-h6.witness.json", HERE)\n'
+     'CHI.write_text(json.dumps(p))',
+     "chi-deuteron-h6.witness.json", "WRITES"),
+    ("witness_path reaching only a read",
+     'src = _pb.witness_path("chi-proton-h3.witness.json", HERE)\n'
+     'd = json.loads(src.read_text())\n'
+     '_pb.witness_path("mine.witness.json", HERE).write_text(j)',
+     "chi-proton-h3.witness.json", "UNCONFIRMED"),
+    ("read_text is not a write sink",
+     'Path("x.witness.json").read_text()', "x.witness.json", "UNCONFIRMED"),
+    ("open without a mode is a read",
+     'open(HERE / "x.witness.json")', "x.witness.json", "UNCONFIRMED"),
 ]
 
 

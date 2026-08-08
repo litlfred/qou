@@ -1,8 +1,8 @@
 {
   "engine": "snappy",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-01T20:14:49.035084+00:00",
-  "commitSha": "1b5746644d78ff16ce3a5fef7472a82db02f10bc",
+  "computedAt": "2026-08-08T07:53:56.062606+00:00",
+  "commitSha": "588a8c604c7ce6273c902db8cc7188037a5cdcb7",
   "assertions": [
     {
       "name": "censuses_searched",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 38,
+  "durationMs": 42,
   "computation": "m-tau-census-sweep",
   "scriptFile": "m_tau_census_sweep.py",
-  "scriptHash": "0aafbaf4b335",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "867fb2467988",
+  "scriptCommitSha": "6fec1f0d2dc0a19feefbdac4b90234a51c39e430",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,15 +37,18 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1"
   },
   "description": "EXPLORATORY full-census sweep for the m_tau k=2 volume target (beans qou-zvtr/qou-ejxn): searches every SnapPy census available here for hyperbolic volume within 1% of (m_tau/m_e)*hbar_q^2 at canonical q0. Reports the hit list in full AND each census's volume ceiling, so the reach of the search is on the record. No candidate proposed; no fit.",
   "contentBlock": "rem:m-tau-knot-prediction",
   "data": {
     "target": {
-      "m_tau_over_m_e": "3477.23000000000001818989403545856475830078125",
+      "m_tau_over_m_e": "3477.23",
       "q0": "1.1099785827513808076",
-      "vol_target_k2": "34.136615254398915085",
+      "vol_target_k2": "34.136615254398914906",
       "band_rel": 0.01,
       "band": [
         33.79524910185492,
