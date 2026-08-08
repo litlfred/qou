@@ -67,3 +67,25 @@ carries the split, because as written the labels invite the wrong reading.
 
 Do not resolve this by choosing whichever parity makes a downstream number work.
 A derived parity comes from the construction; a chosen one is a fit.
+
+
+---
+
+# *** UPDATED 2026-08-08 (second correction) ***
+
+The claim "neither split is derived" is too strong on the S_leak side.
+S_leak = c_3 + Vol(4_1) HAS geometric backing: the Phi_b saddle volume deficit
+0.0094 ~ |S(muon)| = 0.00968, fit-free and anchor-blind (PR #3654; KC21;
+2026-07-12 capstone result 5).
+
+Corrected framing of this bean:
+ - S := -c_3/kappa_(2,1) IS definitional and carries no parity information.
+ - S_leak IS geometrically motivated, at ~2.9% on the SCALE. The exact
+   normalisation is open and conj:im-q-physical-role is still a conjecture.
+ - So c_3's bar-parity is not "undetermined by everything" -- the geometric
+   route is live and is the one to push. See KC21 + the capstone's open item:
+   the exact D(u-tilde) ladder function.
+
+Do NOT re-derive the 1/u^3 hypersensitivity result or the S = h*D factorisation
+-- both are already in the corpus (KC21). Start from the capstone's own stated
+open item.

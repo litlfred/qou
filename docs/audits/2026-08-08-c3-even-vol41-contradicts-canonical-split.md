@@ -1,28 +1,43 @@
-# c₃^even = −Vol(4₁) is not derived — and neither "split" of c₃ is
+# c₃'s two "S"s do not share epistemic status — plus two self-corrections
 
-> ## 🛑 CORRECTED SAME DAY (2026-08-08) — read this first
+> ## 🛑 CORRECTED TWICE, SAME DAY (2026-08-08) — read this first
 >
-> **The first version of this audit claimed the `κ·S` split provides an
-> INDEPENDENT cross-check REFUTING `c₃^even = −Vol(4₁)`. That claim was
-> CIRCULAR and is WITHDRAWN.**
+> This audit was wrong twice, in opposite directions. Both errors are left
+> visible; the surviving contribution is small and is stated plainly at the end.
 >
-> `S` is *defined* as `S := a₁/κ_(2,1)` with `a₁ = −c₃`
+> **Error 1 — the `κ·S` cross-check was CIRCULAR.** I claimed the `κ·S` split
+> independently refutes `c₃^even = −Vol(4₁)`. But `S` is *defined* as
+> `S := a₁/κ_(2,1)` with `a₁ = −c₃`
 > ([`qbeta_s_complex_volume_rigidity_probe.py:69`](scripts/qbeta_s_complex_volume_rigidity_probe.py);
-> [`2026-06-13-qbeta-root-of-unity-residue-program.md:177`](2026-06-13-qbeta-root-of-unity-residue-program.md)).
-> So "reconstructing" `S = −c₃/κ` and recovering the quoted `908.4` / `886.8`
-> is an **identity**, not a test.
+> [`2026-06-13-qbeta-root-of-unity-residue-program.md:177`](2026-06-13-qbeta-root-of-unity-residue-program.md)),
+> so "reconstructing" it is an identity. The tell: agreement of `4.1e-5`/`1.1e-5`
+> sits *inside* the 4-significant-figure rounding window (`5.5e-5`/`5.6e-5`) of
+> the quoted `908.4`/`886.8`.
 >
-> The tell, missed the first time: the agreement was `4.1e-5` / `1.1e-5`, both
-> **inside the 4-significant-figure rounding window** (`5.5e-5` / `5.6e-5`) of
-> the quoted values. Agreement at exactly the quoted precision is the signature
-> of the same number, not of confirmation.
+> **Error 2 — "(H1) is UNDERIVED, no derivation exists in the corpus" is also
+> FALSE**, in the opposite direction. The Φ_b state-integral saddle supplies the
+> `|S|` scale from geometry, **fit-free and anchor-blind**: at the real substrate
+> meridian the saddle gives `Im 𝔙 = 0` exactly (amphichirality) and a volume
+> deficit `0.0094 ≈ |S(muon)| = 0.00968` (PR #3654; [2026-07-12
+> capstone](2026-07-12-c3-wall-resolution-capstone.md) result 5; registry
+> **KC21**, tier symbolic-exact). That *is* a geometric motivation for
+> subtracting a `4₁` volume.
 >
-> **The corrected finding is stronger** and is the body below. The error is left
-> visible rather than rewritten away: it is the *same failure mode as the subject
-> matter*, committed while auditing it.
+> **Root cause of error 2:** AGENTS.md's corpus-grep checklist item 4 is *"check
+> the relevant coordination ledger"*. I grepped `docs/`, `content/`,
+> `computations/` for the strings `S_leak` and `c₃^even` and **skipped the
+> ledger**. KC21 is indexed under Φ_b / volume-deficit / ladder vocabulary — a
+> string search for my own framing could never have found it.
+>
+> **Also not new:** the "209× cancellation amplification" I reported is the
+> corpus's known `1/u³` ladder artifact (capstone result 3: the extractor is
+> `c₃ = (Q_β/Q_N2 − 1)/u³`, and `S′(q*) = 2.37 × (1/u³)` is a *smooth* `O(1)`
+> prefactor). And the Skein factorisation I landed this morning — bar-odd
+> `= (q − q⁻¹) × bar-even` — is the corpus's `S = h·D(ũ)` with `h = q − 1/q`
+> (KC21). Both independently re-derived, neither discovered.
 
 **Date:** 2026-08-08 · **Bean:** `qou-qb8f` · **PR:** #4742
-· **Tier:** scope-(a) — (H1) underived; the "contradiction" claim WITHDRAWN
+· **Tier:** scope-(a); two claims withdrawn (see banner). Surviving finding: the two-S collision
 · **Discipline:** no fit, no wiring, no tier change, no Lean edited.
 Applies AGENTS.md §"Defined residual ≠ derived decomposition (STRICT, 2026-08-08)"
 to the case that motivated it — and then to the arbiter I reached for.
@@ -138,15 +153,46 @@ anchor swing of S_leak  507.51%
 amplification           208.63×      ← arithmetic
 ```
 
-c₃'s own 2.43% swing across 11.54 ppb is **real** — that is the `dc₃/dq ≈ 4.6e6`
-obstruction, and it stands. The extra ~209× is cancellation. Any argument reading
-`S_leak`'s *relative* swing as structural sensitivity is reading the
-cancellation, not the physics. (Arguments using the *absolute* difference
-`|S₁ − S₂|` are unaffected — the offset cancels there identically.)
+**This is not new.** It is the corpus's known `1/u³` ladder artifact: the
+extractor is `c₃ = (Q_β/Q_N2 − 1)/u³` with `u ≈ 0.0085`, and `S′(q*) =
+2.37 × (1/u³)` — a *smooth* `O(1)` prefactor over a tiny `u³`
+([capstone](2026-07-12-c3-wall-resolution-capstone.md) result 3; KC21). The
+capstone's verdict is that **"the wall was never physical."** Re-derived here
+independently, not discovered.
 
-**(C) (H1) remains underived.** No derivation of `c₃^even = −Vol(4₁)` exists in
-the corpus (searched `docs/`, `content/`, `computations/`). This is *absence of a
-derivation* — not, as first claimed, a contradiction with one.
+Arguments using the *absolute* difference `|S₁ − S₂|` are unaffected — the
+offset cancels there identically.
+
+**(C) ~~(H1) remains underived~~ — WITHDRAWN.** See the banner. The Φ_b saddle
+supplies the `|S|` scale from geometry, fit-free and anchor-blind (volume deficit
+`0.0094 ≈ |S(muon)| = 0.00968`, PR #3654, KC21 tier symbolic-exact). What is
+still open is narrower: the match is a **~2.9% scale agreement**, not an exact
+identity; the exact normalisation is open; and `conj:im-q-physical-role` remains
+a **conjecture**. So (H1) *as an exact identity* is not established — but
+"unmotivated" was false.
+
+## The surviving contribution: the two "S"s do not share epistemic status
+
+Two distinct objects are both called *"the c₃ bar-odd `S`"*:
+
+| object | value at muon | status |
+|---|---|---|
+| `S_leak = c₃ + Vol(4₁)` | +0.00968 | **geometric backing** — Φ_b saddle volume deficit, fit-free, anchor-blind (KC21) |
+| `S := −c₃/κ_(2,1)` | 886.79 | **definition** — carries no information (§ above) |
+
+They differ by ~5 orders of magnitude (ratio 91582.5).
+
+The [2026-07-12 capstone](2026-07-12-c3-wall-resolution-capstone.md) **straddles
+them**: its header and numbers (`S(muon)=+0.00968`, `S(proton)=−0.03946`) are
+`S_leak`, while its result 1 states *"the c₃ bar-odd `S = Q_β/E₀`"* (≈ 886.8).
+
+This matters because **conflating them transfers unearned credibility** from the
+geometrically-backed object to the definitional one. `SLeakZeroCrossing.lean`
+carries a symbol-collision guard, so the collision is known — but the capstone
+still crosses it, and KC21 inherits the same vocabulary.
+
+That, and the honest record of two wrong turns, is this audit's actual
+contribution. It is smaller than the two claims it replaces.
 
 ## Scope
 

@@ -185,3 +185,47 @@ the same corrected conclusion.
 qb8g is no longer "prove c_3^even = 0" (that premise came from the withdrawn
 argument). It is now: NEITHER split is derived, so c_3's bar-parity needs a
 genuinely derived decomposition before any bar-parity claim can be made.
+
+
+---
+
+# *** SECOND CORRECTION (2026-08-08) — "(H1) is UNDERIVED" is ALSO WRONG ***
+
+Withdrawn in the opposite direction. The Phi_b state-integral saddle supplies
+the |S| scale from GEOMETRY, fit-free and anchor-blind: at the real substrate
+meridian, Im V = 0 exactly (amphichirality) and a volume deficit
+0.0094 ~ |S(muon)| = 0.00968. PR #3654; 2026-07-12 capstone result 5; registry
+KC21, tier symbolic-exact.
+
+So subtracting a 4_1 volume IS geometrically motivated. What remains open is
+narrower: ~2.9% SCALE agreement, not an exact identity; exact normalisation
+open; conj:im-q-physical-role still a conjecture.
+
+ROOT CAUSE OF THE MISS: AGENTS.md corpus-grep checklist item 4 = "check the
+relevant coordination ledger". I grepped docs/, content/, computations/ for the
+strings `S_leak` and `c_3^even` and SKIPPED the ledger. KC21 is indexed under
+Phi_b / volume-deficit / ladder vocabulary, so a string search for my own
+framing could never have found it. LESSON: for any c_k question, read
+docs/coordination/ck-dk-canonical-registry.md FIRST.
+
+ALSO NOT NEW (both independently re-derived by me today, neither discovered):
+ - the "209x cancellation amplification" is the known 1/u^3 ladder artifact
+   (extractor c_3 = (Q_beta/Q_N2 - 1)/u^3; S'(q*) = 2.37 x 1/u^3, SMOOTH).
+   Capstone verdict: "the wall was never physical."
+ - the Skein bar-odd factorisation (q - q^-1) x bar-even is the corpus's
+   S = h*D(u-tilde) with h = q - 1/q (KC21).
+
+## SURVIVING CONTRIBUTION (small, but real)
+
+THE TWO-S COLLISION. Two objects both called "the c_3 bar-odd S":
+    S_leak = c_3 + Vol(4_1)    ~ +0.00968   GEOMETRIC BACKING (Phi_b, KC21)
+    S      = -c_3/kappa_(2,1)  ~ 886.79     DEFINITION, no information
+ratio ~91582 (~5 orders). The 2026-07-12 capstone STRADDLES them: header +
+numbers are S_leak; result 1 says "S = Q_beta/E_0". Conflating them transfers
+unearned credibility from the backed object to the definitional one.
+SLeakZeroCrossing.lean has a collision guard, so it is known -- but the capstone
+crosses it anyway and KC21 inherits the vocabulary.
+
+Status: this bean's question is ANSWERED as far as I can take it. (H1) exact =
+open; (H1) motivated = yes. Remaining actionable item is the collision, which is
+a documentation/registry matter for the c_3 owners.
