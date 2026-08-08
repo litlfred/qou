@@ -52,6 +52,10 @@ import QOU.Mathlib.FaddeevRatioPeriodic
 -- doubly-periodic factor (lattice indicator included). Hence `hratio` (qou-cons)
 -- is not derivable from the class — it is a fact about the analytic Phi_b.
 import QOU.Mathlib.FaddeevSolutionSet
+-- The hratio "reduction" is circular: given double periodicity, "ratio entire"
+-- and "ratio constant" are the same statement. So qou-cons is not a sub-problem
+-- of uniqueUpToScalar — it IS uniqueUpToScalar. Sorry-free.
+import QOU.Mathlib.RigidityReductionScope
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker

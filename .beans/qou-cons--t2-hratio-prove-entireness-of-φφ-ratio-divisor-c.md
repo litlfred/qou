@@ -46,3 +46,41 @@ What is NOT available is proving this bean from what is currently there. Anyone
 who tries using only the three class fields is wasting the attempt.
 
 Status left todo: the bean is real work, but its statement needs fixing first.
+
+## 2026-08-08 (later) — AND THE REDUCTION IS CIRCULAR. hratio IS the theorem.
+
+Beyond being unprovable from the class, `hratio` is not a sub-problem at all.
+Proved sorry-free in `QOU/Mathlib/RigidityReductionScope.lean`:
+
+    hratio_iff_conclusion (hper) :
+      Differentiable C (fun z => Psi z / Phi z)  <->  exists c, forall z, Psi z / Phi z = c
+
+Forward is `ratio_const_of_entire_ratio`; backward is that a constant is
+differentiable. Given `hper` — which IS smaller, and is now discharged
+(qou-rp5f / FaddeevRatioPeriodic) — the hypothesis `hratio` and the conclusion
+`uniqueUpToScalar` are the SAME STATEMENT. Classically: the ratio is elliptic,
+and an elliptic function is entire exactly when it is constant.
+
+So the advertised reduction
+
+    uniqueUpToScalar  <==  hratio (qou-cons) + hper (qou-rp5f)
+
+has one real edge (hper, done) and one identity edge. Anyone who "proves this
+bean" has proved uniqueUpToScalar outright, using an input that is nowhere in the
+current chain.
+
+WHAT THE MISSING INPUT IS. FaddeevSolutionSet shows the solution set absorbs any
+doubly-periodic factor, so the functional equations ALONE cannot pin a solution
+up to scalar; with regularity that becomes "elliptic", and non-constant elliptic
+functions exist. An extra condition is MANDATORY: a growth bound, a minimality
+principle, or a pinned divisor.
+
+THIS PARTIALLY REHABILITATES THE HADAMARD DIRECTION (qou-v4if). Its retracted
+motivation — "phiBProd is selected among its elliptic multiples by a
+growth/minimality principle" — was reaching for exactly this mandatory input, and
+was RIGHT that one is needed. What was wrong was aiming Hadamard at phiBProd,
+which is not entire. A growth argument aimed at the two entire HALVES, or at a
+pinned divisor, is still a live candidate — a much smaller claim than the one
+retracted, and proved nowhere yet.
+
+RESTATE THIS BEAN before working it. As written it is the theorem, not a step.
