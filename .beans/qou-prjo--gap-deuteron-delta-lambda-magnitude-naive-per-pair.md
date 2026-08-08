@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-08T22:37:59Z
+updated_at: 2026-08-08T23:15:13Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -134,3 +134,43 @@ Structural cause: 3-row block overtake — (4,1,1)[Δ=−10, +term near q=1] ove
 CLOSES the sub-question 'where does the deuteron ≥3-row sign live' → the archimedean/q₀-dependent trace weighting (q₀-USE not q₀-derivation; derived not fitted; free_parameters=0; proton anchor; layer-pure). Confirms #4817 §5 / #4818 §5.
 
 Does NOT close the MAGNITUDE (Δ_λ value-only; super-pairwise extensive term still open). Also NOT the cross-isotope (μ₃,μ₄)=(+,−) cumulant window (distinct surviving unit, §6.1). Files: docs/audits/2026-08-08-deltalambda-threerow-sign-crossing-probe.md; computations/deltalambda/threerow_sign_crossing_probe.py + witness.
+
+
+## Follow-up (PR #4832, 2026-08-08) — sign structure sharpened; MAGNITUDE STILL OPEN
+
+Three units on the ≥3-row signed trace `F_K(q) = Σ_{λ⊢3A, ℓ≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ`.
+Bean stays **OPEN** — `F_K` is value-only and none of this touches the extensive
+super-pairwise term.
+
+**1. The deuteron crossing is A-DEPENDENT, not special.** #4829 swept only
+`(1,q₀]` and called n=9 "no crossing". On a beyond-substrate diagnostic ray the
+n=9 crossing IS there, at q ≈ 1.4617 (T) / 1.4285 (³He) — just above q₀. The
+ladder is non-monotone: D 1.0537 (below q₀) · T,³He ~1.43–1.46 (above) · ⁴He
+~1.019 (below). q₀ ≈ 1.10998 sits INSIDE the light-nucleus crossing band.
+
+**2. ⁴He was never compute-limited.** #4829 blamed a missing `pyhecke_native`.
+The real cause: `chi_atom` added a dense `np.eye(dim)` to an already-sparse CSR
+Hoefsmit operator, densifying it and forcing O(dim³) per braid-word letter
+(Σdim³ = 2.1e12 over the ℓ≥3 stratum of 12, L=47). Keeping the identity sparse +
+accumulating `Tr(∏M_j)` column-batch-wise gives O(L·dim²): largest n=12 partition
+3.5 s, full 70-partition sum ~32 s/grid point, pure Python. Bit-identical to the
+dense path (rel 1.4e-15). **No truncation was taken** — all 70 partitions summed.
+Reusable kernel: `computations/deltalambda/threerow_chi_sparse.py`.
+
+**3. Lean, sorry-free** (`QOU/BraidsAndKnots/ThreeRowSignCrossing.lean`,
+`lean`-direct exit 0, `#print axioms` = [propext, Classical.choice, Quot.sound]):
+`sign_crossing_of_block_dominance_exchange` (dominance exchange ⟹ zero, by IVT),
+`crossing_unique_of_strictMonoOn_ratio` (monotone overtake ratio ⟹ unique zero),
+`two_block_neg_iff_ratio_gt_one`. These take the per-block dominance data as
+HYPOTHESES — they do not certify the f64 numbers.
+
+**Flagged, NOT claimed:** Z=N (D, ⁴He) cross below q₀; Z≠N (T, ³He) cross above.
+Four points in two pairs, no derivation. Needs ⁶Li/⁷Li continuation (now cheap)
+plus a structural reason before it is anything.
+
+**Also noted:** the character is decisive — the character-free `G(q)=Σ y_λ·Δ_λ`
+puts the n=12 crossing ABOVE q₀ (1.597) while the full character object puts it
+BELOW (~1.019). Any route modelling the ≥3-row sign from the `y_λ` weighting
+alone gets n=12 wrong.
+
+Audit: `docs/audits/2026-08-08-threerow-sign-crossing-a-dependence-4he-and-lean.md`
