@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T17:30:00Z
+updated_at: 2026-08-08T22:20:00Z
 ---
 
 ## What is open
@@ -38,7 +38,81 @@ Three measurements have shrunk it:
 So the obstruction is confined to **splitting one quadratic with smooth
 coefficients**, at one point where its discriminant vanishes.
 
-## Attack vectors
+## 2026-08-08 — AUDITED. B1-vs-B2 was a FALSE CHOICE; the glue is already proved.
+
+The bean said "decide between B1 and B2 by inspection". Inspected. The decision
+does not arise, because **`envelopeS_total` already has the exceptional-point
+form**:
+
+```
+envelopeS_total (hcont : ContinuousOn (envelopeS Y₁ Y₂ Y₃) (Icc 0 π))
+                (hderiv : ∀ φ ∈ Ico 0 π, φ ≠ c → HasDerivAt (envelopeS …) (2φ) φ) :
+  envelopeS Y₁ Y₂ Y₃ π = envelopeS Y₁ Y₂ Y₃ 0 + π²
+```
+
+One exceptional point `c` is already tolerated. So B2's machinery is **built**,
+and Gap A is not "construct a global labelling" — it is two smaller things:
+
+* **(a)** a *locally* differentiable labelling on `[0,π] ∖ {φ₀}` — the scalar
+  IFT (`QOU.MathlibExt.ImplicitScalar`, proved) supplies this, with
+  non-degeneracy from `|∂p/∂y| ≥ 1.75` at the real root (Route 32 G8);
+* **(b)** a *continuous* labelling on all of `[0,π]`, including `φ₀`.
+
+**(b) is much easier than what this bean feared**, and the reason is worth
+stating: at `φ₀` the two colliding roots converge *to the same value*. So any
+labelling has both branches tending to a common limit — **continuity survives
+exactly what differentiability does not.** The bean's title ("globally
+differentiable") named the wrong requirement.
+
+## What the hypotheses actually demand — measured, not assumed
+
+Every *algebraic* hypothesis in the envelope chain is **symmetric**:
+
+| hypothesis | form |
+|---|---|
+| `h₁, h₂, h₃` | the elementary symmetric functions `Σyⱼ`, `Σyᵢyⱼ`, `y₁y₂y₃` |
+| `hA`, `hB` | log **sums** over the fiber |
+
+The only per-root demands are `hYⱼ : HasDerivAt Yⱼ Yⱼ' φ` and
+`heⱼ : (∂V/∂y · Yⱼ').re = 0`. And `heⱼ` says the derivative is **annihilated** —
+so `Yⱼ'` enters the conclusion only through a product that vanishes.
+
+**The hypothesis demands strictly more than the conclusion uses.** That is the
+precise statement of Gap A, and it is why the fix is a reformulation rather than
+a construction.
+
+## The Lagrangian frame — why this is the native way to see it
+
+Raised in conversation, and it is right. The deformed curve `p(x,y) = 0` is a
+**Lagrangian** in `(ℂ*)²` for `ω = dlog x ∧ dlog y`; `V` is its generating
+function; and "`∂V/∂y = 0` on the curve" is exactly the statement that `dV`
+restricted to the Lagrangian is the tautological one-form. **The envelope
+theorem *is* that statement.**
+
+What the frame buys is not a new technique but the right diagnosis: upstairs on
+the curve there is no labelling problem at all. `S(φ)` is a **pushforward** — a
+sum over the fiber of `C → x`-line — and a fiber sum is insensitive to how the
+sheets are named. The branch point is an artefact of projecting down. That is
+the same conclusion the hypothesis audit reaches from the other side, which is
+the useful part: two independent routes to "work symmetrically".
+
+## Reeb flow — assessed and set aside
+
+Also raised. I do not see a route, and would rather say so than force one:
+
+* The corpus's Reeb material (`QOU/AlgebraicSubstrate/ReebEpsilon.lean`) is the
+  Reeb **infinitesimal `ε`** from Conway's surreals — the substrate clock. That
+  is a different object from the contact-geometry Reeb vector field.
+* Gap A is a branched triple cover of a real interval. There is no contact
+  structure in play, and no periodic-orbit question. Reeb flow answers
+  "does this contact manifold carry a closed orbit"; Gap A asks "can I name
+  three sheets smoothly through a collision".
+
+Recorded so it is not re-derived. If a specific contact structure on the
+spectral curve is intended, that would change the assessment — the objection is
+to the unspecified version, not to the idea in principle.
+
+## Attack vectors (B1/B2 SUPERSEDED — see the audit above)
 
 ### B1 — Split the labelling: `t` globally, the pair symmetrically
 Prove `t : ℝ → ℝ` differentiable on all of `[0,π]` directly from the scalar IFT
