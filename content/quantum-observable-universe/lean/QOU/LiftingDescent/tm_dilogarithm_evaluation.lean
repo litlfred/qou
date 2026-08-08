@@ -44,10 +44,6 @@ archimedean constructs.
 
 namespace QOU.LiftingDescent
 
-/-- The norm of the divisor-`i` non-abelian multiplicative integral
-    `‖MI∫_{E_i}(∇_A q, L ∧ F⁺)‖`. -/
-def MI (i : ℕ) : ℝ := ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t
-
 /-- The q-logarithm `ln_q` (at the ambient deformation parameter `q`).
     Its q-series theory is not in Mathlib, so it stays opaque; the
     dilogarithm `Phi_q` below is a genuine integral of it. -/
@@ -56,6 +52,10 @@ opaque lnq : ℝ → ℝ
 /-- The Briggs–Klein spectral coordinate `z_i` at the exceptional
     divisor `E_i`. -/
 opaque z : ℕ → ℝ
+
+/-- The norm of the divisor-`i` non-abelian multiplicative integral
+    `‖MI∫_{E_i}(∇_A q, L ∧ F⁺)‖`. -/
+noncomputable def MI (i : ℕ) : ℝ := ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t
 
 /-- The Faddeev–Kashaev quantum dilogarithm, **defined** by its
     integral representation `Φ_q(w) = ∫₀^{w} ln_q(1+t)/t dt` (the

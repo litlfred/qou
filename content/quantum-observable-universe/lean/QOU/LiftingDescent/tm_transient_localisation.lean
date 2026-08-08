@@ -59,14 +59,15 @@ def transientBlowupCount : ℕ := 0
     `‖MI∫_Σ (α − τ̂ₙ(α))‖`. -/
 def transientMItotal : ℝ := 0
 
+/-- The norm of the multiplicative integral over the `i`-th exceptional
+    divisor `Eᵢ`: `‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`. -/
+opaque transientMIdiv : ℕ → ℝ
+
 /-- The norm of the multiplicative integral of the transient component
     over the `i`-th disc `Dᵢ` (centred at the blow-up point `pᵢ`):
     `‖MI∫_{Dᵢ} (α − τ̂ₙ(α))‖`. -/
 def transientMIdisc (i : ℕ) : ℝ := transientMIdiv i
 
-/-- The norm of the multiplicative integral over the `i`-th exceptional
-    divisor `Eᵢ`: `‖MI∫_{Eᵢ} (∇_A q, L ∧ F⁺)‖`. -/
-opaque transientMIdiv : ℕ → ℝ
 
 /-- **Open input 1 — disjoint-support additivity.**  The transient
     component is supported in the disjoint discs `Dᵢ`, so the MI-norm

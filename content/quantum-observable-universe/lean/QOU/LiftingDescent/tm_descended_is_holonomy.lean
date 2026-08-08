@@ -48,6 +48,9 @@ namespace QOU.LiftingDescent
     `Σ = Σ₀ ∪ ⋃_{i=1}^N D_i`. -/
 def descendedBlowupCount : ℕ := 0
 
+/-- The unknot-core holonomy `Hol_{∇A}(ϱ₀; 𝔊)`. -/
+opaque unknotHolonomy : ℝ
+
 /-- The descended-term multiplicative surface integral over the whole
     surface: `MI∫_Σ τ̂ₙ(α)`. -/
 def descendedMI : ℝ := unknotHolonomy
@@ -60,8 +63,6 @@ def descendedMIcore : ℝ := unknotHolonomy
     exceptional disc: `MI∫_{D_i} τ̂ₙ(α)`. -/
 def descendedMIdisc (i : ℕ) : ℝ := 1
 
-/-- The unknot-core holonomy `Hol_{∇A}(ϱ₀; 𝔊)`. -/
-opaque unknotHolonomy : ℝ
 
 /-- **Open input 1 — multiplicativity over the blow-up decomposition.**
     Yekutieli's multiplicative surface integral is multiplicative over
