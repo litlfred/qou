@@ -75,6 +75,52 @@ DOES NOT EXIST (checked, all `unknown constant`):
     Real.cos_sq_half
     Real.log_eq_zero_iff        (use Real.exp_log + Real.exp_zero instead)
 
+## Mathlib genuinely lacks this — it is an UPSTREAM contribution target
+
+Confirmed by grepping declaration NAMES across all 6990 modules (see technique
+below): no sine-product formula anywhere, and `prod_one_sub` over roots of unity
+returns only `Finset.prod_one_sub_ordered`, which is unrelated. So
+
+    prod_{k=1}^{n-1} sin(k pi/n) = n / 2^{n-1}
+
+is missing from Mathlib outright. It is a classical, self-contained, widely
+wanted identity — worth contributing upstream rather than burying in `QOU/`.
+
+## SEARCH TECHNIQUE for a source-less Mathlib (reusable, worth knowing)
+
+This repo's mathlib package is cache-only: `.lake/packages/mathlib/` contains
+build artifacts and NO `.lean` source, so `grep` over Mathlib source fails
+silently and looks like "Mathlib doesn't have it". It does not follow.
+
+**`.ilean` index files carry declaration names.** So:
+
+    cd .lake/packages/mathlib/.lake/build/lib/lean/Mathlib
+    grep -roh '"[A-Za-z_.]*<pattern>[A-Za-z_.]*"' --include=*.ilean . | sort -u
+
+finds declarations without source and without a compile cycle. Three earlier
+`#check` guessing rounds this session would have been one grep.
+
+## The route, now identified
+
+`nthRootsFinset`'s API is thin — `card_nthRootsFinset`, `mem_nthRootsFinset`,
+`nthRootsFinset_def`, and no image/bijection lemma — which is what makes the
+finset surgery painful. The key that unlocks it is on the MULTISET side:
+
+    IsPrimitiveRoot.nthRoots_eq :
+      IsPrimitiveRoot zeta n -> alpha^n = a ->
+        nthRoots n a = Multiset.map (fun x => zeta^x * alpha) (Multiset.range n)
+
+At `alpha = a = 1` this IS the bijection `range n -> {zeta^j}`, as a multiset
+equality — exactly what was missing. Plan:
+
+  1. `nthRoots n 1 = Multiset.map (zeta ^ .) (Multiset.range n)`   [above]
+  2. get `X^n - 1 = prod over that multiset of (X - C z)` — check for a
+     multiset-valued form of `X_pow_sub_one_eq_prod` (grep `.ilean` for
+     `prod_multiset_X_sub_C`)
+  3. split off the `j = 0` factor `(X - 1)`, divide, evaluate at `X = 1`
+  4. take `Complex.abs`, use `|1 - e^{i t}|^2 = 2 - 2 cos t = 4 sin^2(t/2)`
+     via `Complex.normSq_apply` + `Real.sin_sq_eq_half_sub`
+
 ## The hard step, named in advance
 
 Going from `X_pow_sub_one_eq_prod` to `prod_{j=1}^{N-1}(1 - zeta^j) = N` means
