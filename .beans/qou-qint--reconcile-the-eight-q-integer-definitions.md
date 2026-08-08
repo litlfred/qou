@@ -115,3 +115,43 @@ CHECKED, NOT defects (do not re-open):
 REVISED PLAN: this is a rename-for-clarity sweep over ~15 aliases plus a
 convention check on 10 sites -- multi-session. Do the naming first (mechanical,
 low risk), the 10 checks second.
+
+
+---
+
+# *** MIGRATION COST MEASURED (2026-08-08) — consolidation is NOT a free rename ***
+
+Built the canonical home and tried a 5-file migration. Result: 2/5 clean,
+3/5 needed proof surgery and were REVERTED rather than churned.
+
+DELIVERED:
+  QOU/MathlibExt/QIntegerCanonical.lean  -- the single home.
+    qIntBal  (canonical [n]_q)  and  qIntGeo  (geometric, for q^2 sites),
+    both `abbrev`s onto the ALREADY-PROVED defs in QHookDimension{,Balanced},
+    so no new definition enters the corpus. Plus the bridge theorems in one
+    place: qIntBal_eq_twist_canonical, qIntBal_bar_even_canonical,
+    qIntGeo_bar_covariant, and @[simp] defining equations.
+
+MIGRATED AND VERIFIED (lean-direct EXIT 0):
+  mass-theory/degree-two-baryon-weight.lean       qInt
+  mass-theory/wigner-coefficient-derivation.lean  qInt   (note: arg order (n)(q))
+
+REVERTED, and why -- THE COST FINDING:
+  QOU/MassComputationChainRoadmap.lean   qInt
+  QOU/GaugeFieldFluidDynamics.lean       qInteger
+  information-theory/quantum-volume.lean qInteger
+  All three are VERBATIM duplicates of qIntBal, so the swap is semantically
+  free -- but their downstream proofs do `unfold <local>; simp`, and after
+  aliasing, `unfold` reduces through BOTH layers and leaves the follow-up
+  tactic nothing to act on ("simp made no progress" / "failed to unfold").
+  Adding @[simp] defining equations fixed 2 of 5; the rest need per-site
+  tactic edits. I declined to rewrite three files' proofs in passing.
+
+  => BUDGET FOR THE REST: expect ~60% of migrations to need proof surgery,
+     roughly one tactic edit per lemma that unfolds the local name. This is
+     the number to plan the sweep with; it is NOT a mechanical rename.
+
+STILL NOT MIGRATED: ~40 balanced duplicates + the 10 geometric sites.
+
+ALSO DO NOT FORGET (guard, unchanged): Interactions/HeckeEnergyPositivity's
+qIntegerRescaled = sum q^(2j) is geometric IN q^2 and CORRECT. Do not convert.

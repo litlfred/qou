@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 
 /-!
@@ -14,8 +15,11 @@ quantum 3-integer, encoding the 3-quark baryon structure.
 namespace QOU.BaryonWeight
 
 /-- Quantum n-integer [n]_q = (q^n - q^{-n}) / (q - q^{-1}). -/
-noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+-- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
+-- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
+-- every call site and proof below is unchanged, while the DEFINITION now has a
+-- single home.  See QOU/MathlibExt/QIntegerCanonical.lean.
+noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
 
 /-- At q₀ = 1.10998: [3]_q ≈ 3.044. -/
 theorem qInt3_approx :
