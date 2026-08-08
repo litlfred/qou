@@ -23,6 +23,15 @@
   fact about c₃'s anchor-to-anchor variation ALONE, and the obstruction holds
   whether or not `−Vol(4₁)` is c₃'s bar-even part.
 
+  AND THE CANCELLATION ARTIFACT DOES NOT REACH IT.  `S_leak` is separately known
+  to be a ~98% cancellation, which amplifies c₃'s anchor swing by ~209× — the
+  RELATIVE swing goes `2.4325% → 507.51%`.  That amplification is arithmetic,
+  not structure, so it would be a bad thing to rest an argument on.  This file
+  does not: the bound is stated in the ABSOLUTE difference `|S₁ − S₂|`, which is
+  `0.04914234` for `S_leak` and for bare c₃ alike — the ~209× lives in the
+  denominator of a relative measure that never appears here.  The `0.049` below
+  IS c₃'s real 2.4325% swing.
+
   That matters because the c₃ arc already carries a structural obstruction the ϑ
   arc never had.  The ck-dk canonical registry records c₃ as
   **"EMPIRICAL — near-match, REFUTED as real-q fibre element"**, with
