@@ -165,3 +165,53 @@ argument, and it is not written.
 **The 5₂ sum rule remains verified to 80 dps, unproved.** `qou-trns`'s transport
 is still unformalized and `extend` is still not identified with the analytic
 continuation in Lean.
+
+---
+
+## 2026-08-08 (later) — the sub-gap is closed too; the numerators are UNCONDITIONAL
+
+The bound this bean flagged in advance is written:
+
+```lean
+theorem numerators_of_root {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hlo : 1 / 2 < x) (hhi : x < 1) :
+    (7 * (2 * (π^2/6) + 2 * rogersL x - rogersL (1 / (2 - x))) = 17 * (π^2/6))
+      ∧ (7 * (2 * rogersL x - rogersL (x / (x + 1))) = 5 * (π^2/6))
+      ∧ (7 * (-(2 * (π^2/6)) + 2 * rogersL x + rogersL ((1 - x) / x)) = -(π^2/6))
+```
+
+**No hypothesis about `L` remains.** Abel is `rogersL_fiveTerm`, reflection is
+`rogersL_one_sub`, both proved. Sorry-free, standard axioms, `lake` green.
+
+And it is not vacuous:
+
+```lean
+theorem exists_root_in_Ioo : ∃ x : ℝ, x ^ 3 - 2 * x ^ 2 - x + 1 = 0 ∧ 1 / 2 < x ∧ x < 1
+```
+
+by IVT — `f(1/2) = 1/8 > 0`, `f(1) = -1 < 0`. Cross-checked numerically at the
+root `0.55495813208737119142`; all three residuals `< 5e-40`.
+
+`1/2 < x` earns its place exactly where predicted: `s = (1-x)/x < 1` is false
+without it, and `s` is `hC`'s second argument.
+
+### Small note worth keeping
+
+`positivity` failed on `0 < (1-x)/x` while succeeding on `0 < 1/(2-x)` two lines
+earlier. Not a quirk: `positivity` tries `assumption` on atoms, and `0 < 2 - x`
+was in context while `0 < 1 - x` was not. Adding the missing `have` fixed it.
+**When `positivity` fails on one of several similar goals, look for the missing
+hypothesis rather than reaching for a different tactic.**
+
+### Where this leaves the chain
+
+The level-7 numerators `(17, 5, -1)` are now **proved in Lean, unconditionally,
+for the corpus's own dilogarithm**, from the cubic and a root bound.
+
+That is one link. The 5₂ sum rule needs two more, both still open:
+
+* `qou-trns` — the transport `x = 1 → x = -1`, envelope theorem unformalized;
+* `qou-rstq` item 4 — `extend` identified with the analytic continuation *in
+  Lean* (closed on paper by Route 15; needs `Li₂` inversion and `Li₂` Landen).
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

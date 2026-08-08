@@ -1,4 +1,5 @@
 import QOU.QBeta.FiveTwoRogersReflection
+import QOU.QBeta.FiveTwoFiveTermArguments
 
 /-!
 # Abel's five-term relation for the Rogers dilogarithm on `(0,1)`
@@ -307,5 +308,72 @@ theorem rogersL_fiveTerm (hx0 : 0 < x) (hx1 : x < 1) (hy0 : 0 < y) (hy1 : y < 1)
       using (abelAux_eq hy0 hy1 ht ⟨hx0, hx1⟩).symm
   have h := tendsto_nhds_unique hconst (tendsto_abelAux_zero hy0 hy1)
   simpa [abelAux] using h
+
+/-! ### The level-7 numerators, unconditionally
+
+`FiveTwoFiveTermArguments.numerators_of_abel` took Abel's relation and reflection
+as hypotheses. Both are now theorems for `rogersL`, so the numerators follow from
+nothing but the cubic and a bound on its root.
+
+The bound is the sub-gap `qou-abel` flagged in advance: `1/2 < x` is genuinely
+needed, because `s = (1-x)/x < 1` is false without it. -/
+
+theorem root_bounds {x : ℝ} (hlo : 1 / 2 < x) (hhi : x < 1) :
+    (0 < 1 / (2 - x) ∧ 1 / (2 - x) < 1) ∧ (0 < x / (x + 1) ∧ x / (x + 1) < 1)
+      ∧ (0 < (1 - x) / x ∧ (1 - x) / x < 1) := by
+  have hx0 : (0 : ℝ) < x := by linarith
+  have h2 : (0 : ℝ) < 2 - x := by linarith
+  have h1 : (0 : ℝ) < x + 1 := by linarith
+  have h1x : (0 : ℝ) < 1 - x := by linarith
+  refine ⟨⟨by positivity, ?_⟩, ⟨by positivity, ?_⟩, ⟨by positivity, ?_⟩⟩
+  · rw [div_lt_one h2]; linarith
+  · rw [div_lt_one h1]; linarith
+  · rw [div_lt_one hx0]; linarith
+
+/-- **The level-7 numerators `(17, 5, -1)`, from the cubic alone.**
+
+No hypothesis about `L` remains: Abel's relation is `rogersL_fiveTerm` and
+reflection is `rogersL_one_sub`, both proved. -/
+theorem numerators_of_root {x : ℝ} (hx : x ^ 3 - 2 * x ^ 2 - x + 1 = 0)
+    (hlo : 1 / 2 < x) (hhi : x < 1) :
+    (7 * (2 * (Real.pi ^ 2 / 6) + 2 * rogersL x - rogersL (1 / (2 - x)))
+        = 17 * (Real.pi ^ 2 / 6))
+      ∧ (7 * (2 * rogersL x - rogersL (x / (x + 1))) = 5 * (Real.pi ^ 2 / 6))
+      ∧ (7 * (-(2 * (Real.pi ^ 2 / 6)) + 2 * rogersL x + rogersL ((1 - x) / x))
+        = -(Real.pi ^ 2 / 6)) := by
+  obtain ⟨⟨hq0, hq1⟩, ⟨hr0, hr1⟩, ⟨hs0, hs1⟩⟩ := root_bounds hlo hhi
+  have hx0 : (0 : ℝ) < x := by linarith
+  have h2 : (2 : ℝ) - x ≠ 0 := by intro h; linarith [h ▸ (rfl : (2:ℝ) - x = 2 - x)]
+  have h2' : (0 : ℝ) < 2 - x := by linarith
+  have h1 : (0 : ℝ) < x + 1 := by linarith
+  have hxx : (1 : ℝ) - x * x ≠ 0 := by nlinarith
+  -- defining relations
+  have hq : (1 / (2 - x)) * (2 - x) = 1 := by field_simp
+  have hr : (x / (x + 1)) * (x + 1) = x := by field_simp
+  have hs : ((1 - x) / x) * x = 1 - x := by field_simp
+  -- the four reflection instances
+  have hrw := rogersL_one_sub hx0 hhi
+  have hrq := rogersL_one_sub hq0 hq1
+  have hrr := rogersL_one_sub hr0 hr1
+  have hrs := rogersL_one_sub hs0 hs1
+  -- the three Abel instances
+  have hA := rogersL_fiveTerm hx0 hhi hx0 hhi
+  have hB := rogersL_fiveTerm (x := 1 - x) (y := 1 / (2 - x))
+    (by linarith) (by linarith) hq0 hq1
+  have hC := rogersL_fiveTerm (x := x) (y := (1 - x) / x) hx0 hhi hs0 hs1
+  exact FiveTwoFiveTermArguments.numerators_of_abel rogersL (Real.pi ^ 2 / 6)
+    hx hq hr hs hxx hrw hrq hrr hrs hA hB hC
+
+/-- The cubic really does have a root in `(1/2, 1)`, so `numerators_of_root` is
+not vacuous. `f(1/2) = 1/8 > 0` and `f(1) = -1 < 0`. -/
+theorem exists_root_in_Ioo :
+    ∃ x : ℝ, x ^ 3 - 2 * x ^ 2 - x + 1 = 0 ∧ 1 / 2 < x ∧ x < 1 := by
+  have hcont : ContinuousOn (fun t : ℝ => t ^ 3 - 2 * t ^ 2 - t + 1) (Set.Icc (1 / 2) 1) :=
+    (((continuous_pow 3).sub ((continuous_pow 2).const_smul (2 : ℝ))).sub
+      continuous_id).add continuous_const |>.continuousOn
+  have hmem : (0 : ℝ) ∈ Set.Ioo ((1 : ℝ) ^ 3 - 2 * 1 ^ 2 - 1 + 1)
+      ((1 / 2 : ℝ) ^ 3 - 2 * (1 / 2) ^ 2 - 1 / 2 + 1) := by norm_num
+  obtain ⟨c, hc, hfc⟩ := intermediate_value_Ioo' (by norm_num : (1 / 2 : ℝ) ≤ 1) hcont hmem
+  exact ⟨c, hfc, hc.1, hc.2⟩
 
 end QOU.QBeta.FiveTwoAbelFiveTerm
