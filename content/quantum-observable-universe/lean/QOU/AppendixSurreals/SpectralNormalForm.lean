@@ -43,10 +43,16 @@ of the valuation ring $\mathcal{O}$.
       this holds). -/
   residual_eq_zero : residual = 0
 
-axiom conj_spectral_normal_form : SpectralNormalForm
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/spectral-normal-form.ts
-noncomputable instance : SpectralNormalForm := conj_spectral_normal_form
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom conj_spectral_normal_form : SpectralNormalForm
+--     noncomputable instance : SpectralNormalForm := conj_spectral_normal_form
+-- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
+-- every downstream `[SpectralNormalForm]` resolved for free.  Removed, not completed — downstream
+-- results must take `[SpectralNormalForm]` as an explicit hypothesis.
+
 end QOU.AppendixSurreals
