@@ -26,5 +26,5 @@ the trace of the prolongation monodromy. The non-hyperbolic torus sector
 confirms the form: its recurrence is $x^2 - 2\cosh(2\eta_0)\,x + 1$, i.e.
 $\det = 1$ with $\tau = 2\cosh(2\eta_0)$. For the hyperbolic binding sector
 $\tau = 2\cosh\theta$ for a prolongation rapidity $\theta$; pinning $\theta$ is
-the last open number of the keystone, and is solvable from three residue
+the last open number of the depth correspondence, and is solvable from three residue
 weights via $\tau = (a_D^{(2)} + a_D^{(4)})/a_D^{(3)}$.

@@ -1338,8 +1338,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The agent-branch links are gone, but the block still describes the repository's build machinery rather than mathematics: the published title and the opening heading are both \"Build-pipeline integration\", and the body closes \"Updates to any input propagate via [`witness_staleness_tracker.py`](...) to the rendered appendix on the next `bun run build`.\" `bun run build` is the authoring repository's build command; a reader has no such command to run.",
+        "result": "pass",
+        "notes": "Fixed. The published .ts title and the opening heading, both \"Build-pipeline integration\", are now \"Provenance of the recursive atom-knot atlas entries\" and \"Provenance of the atlas entries\". The closing sentence no longer ends at the authoring repository's build command: \"propagate ... to the rendered appendix on the next `bun run build`\" is now a statement that changed inputs mark the affected entries stale, the atlas is recomputed from the listed sources, and no entry is maintained by hand. The five sources, their composition order and the 50-digit precision statement are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

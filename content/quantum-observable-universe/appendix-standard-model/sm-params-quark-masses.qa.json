@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: \"no construction extracts individual current-quark masses $m_u, \\ldots, m_t$ from it, and nothing in the corpus addresses the heavy flavours\".",
+        "result": "pass",
+        "notes": "Fixed. \"nothing in the corpus addresses the heavy flavours\" is now \"the heavy flavours are untouched here\". The two admissions survive verbatim in substance: no construction extracts the individual current-quark masses, and no knot or braid identification exists for s, c, b or t.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

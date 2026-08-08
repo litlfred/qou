@@ -35,4 +35,4 @@ Zhedanov's $AW(3)$ algebra \cite{zhedanov1991} embeds the rotation as an operato
 
 ## Vertex-algebra shadow
 
-Under the bar involution, the character side splits as a $\mathbb{Z}_2$-orbifold $V = V^+ \oplus V^-$. The involved characters form false theta functions, appearing as $(1,p)$ singlet log-VOA characters \cite{creutzig-milas2014}. Their quantum modularity tracks the disk-interior versus root-of-unity rotation, using the Lawrence–Zagier $\Psi$ operation established at the $W_\lambda$ keystone. This structure suggests a path to unify the lepton-tower $\Phi_q$ mechanism with the binding/decay model.
+Under the bar involution, the character side splits as a $\mathbb{Z}_2$-orbifold $V = V^+ \oplus V^-$. The involved characters form false theta functions, appearing as $(1,p)$ singlet log-VOA characters \cite{creutzig-milas2014}. Their quantum modularity tracks the disk-interior versus root-of-unity rotation, using the Lawrence–Zagier $\Psi$ operation established for $W_\lambda$. This structure suggests a path to unify the lepton-tower $\Phi_q$ mechanism with the binding/decay model.

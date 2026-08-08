@@ -31,18 +31,17 @@ spacetime are two computations of the same hyperbolic invariant.
   bar-symmetry corresponds to the parity-reversal of the squashed
   3-sphere $S^3_b \to S^3_{1/b}$.
 
-## Open R&D
+## Open questions
 
 1. Identify the 3d $\mathcal{N}{=}2$ theory $T[\mathcal{B}_3]$
    explicitly (Dimofte–Gaiotto–Gukov 2014 provides the construction).
 2. Cross-check the $h^4 = -3/4$ coefficient as a 4-loop contribution
    in $T[\mathcal{B}_3]$ partition function.
-3. Closing the conjecture is a very long horizon — the QFT-side
-   formalisation it would require has not yet been developed.
+3. Closing the conjecture remains distant: the QFT-side
+   formalisation it would require has not been developed.
 
 ## Cross-references
 
-  + §2 Cluster C (Pentagon validation)
 - [`conj:borromean-bloch-group-element`](borromean-bloch-group-element.md)
   — K-theoretic regulator parallel
 - [`conj:kashaev-volume-conjecture`](kashaev-volume-conjecture.md)

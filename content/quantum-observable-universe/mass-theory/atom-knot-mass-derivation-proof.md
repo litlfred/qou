@@ -100,7 +100,7 @@ $\nu_{\mathrm{SDP}} \cdot m_e \cdot \mathrm{Vol}_{\mathrm{hyp}}(K)$ via the volu
 conjecture, which is the conventional way of writing the same
 identity. $\square$
 
-### Methodology gating
+### Methodological preconditions
 
 The proof above presumes the joint-tower SDP is constructively in
 place (step 1 of the algorithm). Within the present implementation:

@@ -36,8 +36,8 @@ Jones invariants enter at $q = 1$ rather than at substrate $q_0$.
 ## Truncation order and error estimate
 
 The ladder is a **convergent series**: $N$ is a *truncation order*
-chosen by the target precision, not a discrete "wire/don't-wire"
-canonicity gate. The ladder step is
+chosen by the target precision, not an all-or-nothing
+canonicity decision. The ladder step is
 
 $$
 u \;=\; b\,\hbar_q^2 \;\approx\; 0.00852, \qquad

@@ -1,6 +1,6 @@
 **Algorithm (Mass identity at $q = q_0$).**
-*Evaluate the absolute nucleon mass via the muon-anchored Hecke energy
-(owner ruling 2026-06-24)*
+*Evaluate the absolute nucleon mass via the muon-anchored Hecke energy — the
+form adopted here as canonical*
 
 $$
 m_p = \dim V_{(2,1)} \cdot \bigl( m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e \bigr), \qquad
@@ -11,8 +11,8 @@ $$
 $F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| \cdot [3]_q! / q^3$,
 via the canonical chain Steps 1 $\to$ 3 $\to$ 5 $\to$ here. This is the
 **raw** identity: the substrate parameter $q_0$ is pinned by solving
-exactly this form against $m_p/m_e$ (owner ruling 2026-07-03, which
-stripped an earlier fitted Habiro 4-loop dressing from the pin), so the
+exactly this form against $m_p/m_e$ (an earlier version of the pin carried
+a fitted Habiro 4-loop dressing, which is not used here), so the
 identity round-trips $m_p$ by construction and $m_\mu$, $m_n$ are the
 predictions.*
 
@@ -22,10 +22,10 @@ predictions.*
 > the producer (`m_p_substrate_identity_50dps.habiro_ratio_s5bb`) but is
 > **fit-tier, not derived**: the exact $c_4$ that lands $m_p$ on CODATA
 > is *linear in the $q_0$ pin offset* (so $c_4$ merely reparametrizes the
-> $\mu$–$p$ tension), and neither $c_4 = 46$ nor $c_4 = 4143/90$ has a
-> derivation trail in the corpus. Applied at the raw pin it *overshoots*
-> CODATA $m_p$ by $\approx 242$ ppb. The reconcile (relabel / revert /
-> drop) is owner-gated.
+> $\mu$–$p$ tension), and neither $c_4 = 46$ nor $c_4 = 4143/90$ is derived
+> anywhere in this paper. Applied at the raw pin it *overshoots*
+> CODATA $m_p$ by $\approx 242$ ppb. Which value to adopt — or whether to
+> drop the dressing altogether — is unresolved.
 
 ### Input
 
@@ -74,8 +74,8 @@ from canonical_mass import proton_neutron_mass_mev
 m_p_MeV, m_n_MeV = proton_neutron_mass_mev()
 ```
 
-*`computations/canonical_mass.py` is the SINGLE facade (owner ruling
-2026-06-24): it prefers the producer witness and falls back to the raw
+*`computations/canonical_mass.py` is the single entry point: it
+prefers the producer witness and falls back to the raw
 identity above (no $R_{\mathrm{s5bb}}$ dressing — the fallback matches
 the raw pin). Producer:
 [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py).*
@@ -85,14 +85,12 @@ the raw pin). Producer:
 *Canonical witness:
 [`m-p-substrate-identity-50dps.witness.json`](../../../computations/m-p-substrate-identity-50dps.witness.json)
 (predictions $m_p, m_n, m_\mu$, CODATA anchors, ppb residuals).
-Dashboard roll-up:
+Residuals for this and the other observables are collected in
 [`per-observable-100x-status.witness.json`](../../../computations/per-observable-100x-status.witness.json).*
 
 ### Notes
 
-*Deprecation (owner ruling 2026-06-24, guardrail
-[`canonical-mass-formula-guardrail.md`](../../../docs/canonical-mass-formula-guardrail.md)):
-the volume-density forms
+*Superseded forms: the volume-density expressions
 $m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \lambda_A / \hbar_q^2$
 ($\approx 966$ MeV, a CODATA-implied fit) and
 $m_e \cdot \mathrm{Vol}(\mathcal{B}_3) \cdot \mathrm{tr}_M / \hbar_q^2$
@@ -105,8 +103,8 @@ $\Delta_\lambda$ frontier.*
 *Anchor bookkeeping: at the proton-pinned $q_0$ the $m_p$ value is an
 anchor round-trip (exact in ratio space), $m_\mu$ and $m_n$ are the
 predictions; the pin's Habiro dressing reconciles the muon identity to
-$\approx 1.4$ ppb (the $c_4$ pin-vs-producer 46 vs $4143/90$ reconcile
-is owner-gated).*
+$\approx 1.4$ ppb (the $c_4$ discrepancy between the pin and the producer,
+46 versus $4143/90$, is unresolved).*
 
 *Linking-weight selection rule (binding-side, retained for Step 9b):
 the factor

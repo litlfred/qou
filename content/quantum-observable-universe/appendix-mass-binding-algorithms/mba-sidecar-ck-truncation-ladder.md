@@ -23,8 +23,8 @@ and report each $c_k$ with its **tiered classification**.*
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*The $c_k$ are a truncation order, not an inclusion/exclusion gate: a tier is
-reported as a tier, never as binary wired / dropped.*
+*The $c_k$ are a truncation order, not an inclusion/exclusion criterion: a tier is
+reported as a tier, never collapsed to a binary keep-or-discard verdict.*
 
 ### Algorithm
 
@@ -62,6 +62,5 @@ Higher-precision regenerations use
 
 *Permanent fix path is the $\mathfrak{Q}_\beta$ Habiro element parallel to
 $\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
-The $c_3$ reversal history (six entries as of
-2026-05-31) is the canonical example of why tiered classification
-is mandatory.*
+The classification of $c_3$ has been reversed repeatedly, and is the
+canonical example of why tiered classification is mandatory.*

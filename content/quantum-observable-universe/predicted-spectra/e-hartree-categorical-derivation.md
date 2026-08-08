@@ -48,7 +48,7 @@ A covalent bond shares exactly two electrons via Pauli exclusion and singlet pai
 
 The molecular SDP is a quadratic program over the Frobenius Gram matrix ([`prop:operator-selection-lp § dual program`](#prop:operator-selection-lp)). A single perturbation $\varepsilon$ turns on the covalent constraint in the quadratic primal. The Legendre/Schur-complement dual is $y_{\mathrm{cov}}(\varepsilon) = \tfrac{1}{2}\varepsilon^{2}\,(G^{-1})_{\mathrm{cov,cov}} + O(\varepsilon^{4})$. If $\varepsilon \propto \alpha_{EM}$, this gives $y_{\mathrm{cov}} \propto \alpha_{EM}^{2}$ with no linear term.
 
-**Gap.** The bare separated-atom configuration must be a smooth interior point. The covalent constraint must be active at $\varepsilon = 0$ as an equality. In practice, the activation is a kink. The dual $y_{\mathrm{cov}}$ jumps non-smoothly. The linear coefficient is generically non-zero. A rigorous version requires the bare atoms to saturate the Frobenius-pairing equality. This is not verified. It is the source of the round-21 refutation of the $y_{\mathrm{cov}}$ form.
+**Gap.** The bare separated-atom configuration must be a smooth interior point. The covalent constraint must be active at $\varepsilon = 0$ as an equality. In practice, the activation is a kink. The dual $y_{\mathrm{cov}}$ jumps non-smoothly. The linear coefficient is generically non-zero. A rigorous version requires the bare atoms to saturate the Frobenius-pairing equality. This is not verified. It is the source of the refutation of the $y_{\mathrm{cov}}$ form.
 
 ### Mechanism C — parity / antipode invariance of the Markov trace
 
@@ -88,7 +88,7 @@ Three derivation mechanisms are recorded above. Each has an explicit identified 
 
 ## Supporting data tables
 
-Tables 1–13 collect the intermediate symbolic computations of the investigation. Tables 10–13 support the rigorous results and mechanisms above. Tables 1–9 record per-round intermediate data.
+Tables 1–13 collect the intermediate symbolic computations of the investigation. Tables 10–13 support the rigorous results and mechanisms above. Tables 1–9 record the intermediate data of the successive attempts.
 
 ---
 

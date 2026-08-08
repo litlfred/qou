@@ -1,7 +1,7 @@
 **Algorithm (LP/SDP dual-emission contract).**
 *Every LP / SDP / operator-selection compute must emit both
 primal and dual variables in its witness JSON. This sidecar
-documents the canonical contract enforced in CI.*
+documents the canonical contract.*
 
 ### Required witness fields
 
@@ -24,15 +24,10 @@ result whose `.to_dict()` contains every required field. The
 per-witness driver script is
 [`confinement-operator-selection.py`](../../../computations/confinement-operator-selection.py).
 
-### CI enforcement
+### Validation
 
-[`computations/lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
-runs in `witness-pipeline.yml`:
-
-- warn-only by default;
-- `--strict` fails CI;
-- `--strict-wired` enforces the wired subset only.
-
+The contract is checked mechanically by
+[`computations/lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py).
 The validator scans every `*.witness.json` whose name or
 `description` / `computation` field signals an LP / SDP /
 operator-selection compute and verifies the dual fields are
@@ -63,5 +58,5 @@ witness = result.to_dict()   # primal + dual + active_set + gap
 
 ### Notes
 
-*The number of witnesses still missing a dual changes as the corpus grows; run
-the validator for the current figure rather than quoting a dated one.*
+*Not every LP/SDP witness yet carries its dual. The number outstanding changes
+as the computations are extended, so no figure for it is quoted here.*

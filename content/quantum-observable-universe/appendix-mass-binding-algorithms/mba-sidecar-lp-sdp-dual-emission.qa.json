@@ -3,8 +3,8 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"Cross-reference: AGENTS.md\" line is gone, but the repository build system is still addressed directly. The heading \"### CI enforcement\" stands over \"[`lp_dual_witness_validator.py`](...) runs in `witness-pipeline.yml`: warn-only by default; `--strict` **fails CI**; `--strict-wired` enforces the wired subset only.\" And the closing Notes are still an instruction to a maintainer, with the repository as the paper's name for itself: \"The number of witnesses still missing a dual changes as **the corpus** grows; **run the validator** for the current figure rather than quoting a dated one.\"",
+        "result": "pass",
+        "notes": "Fixed. The \"### CI enforcement\" heading is now \"### Validation\" and the warn-only / --strict / --strict-wired CI modes and the witness-pipeline.yml reference are gone; what the validator actually checks (dual fields present on every LP/SDP/operator-selection witness) is kept, as is the validator script citation. \"enforced in CI\" is dropped from the opening. The closing Notes no longer instruct a maintainer to run the validator and no longer call the paper \"the corpus\"; they now state plainly that not every LP/SDP witness yet carries its dual and that no count is quoted because it changes. The 58-of-58 historical figure is untouched.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

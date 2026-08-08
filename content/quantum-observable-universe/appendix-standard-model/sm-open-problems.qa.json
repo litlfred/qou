@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: the opening still reads \"none of them is discharged elsewhere in the corpus\", and internal audits are used as the provenance column of a published table — \"| Writhe-to-isospin map | derived (sign and ratio, scale-free) | hypercharge audit, 2026-06-02 |\", and twice \"uploads round-2 reads audit, 2026-08-01\". Dated audit memos and \"round-2\" are the working channel.",
+        "result": "pass",
+        "notes": "Fixed. \"none of them is discharged elsewhere in the corpus\" is now \"elsewhere in this paper\". The provenance column no longer cites internal audits: the writhe-to-isospin row points at the gauge-truncation conjecture, the Z_6 row at the hypercharge-invariant conjecture, the 2-group row drops the dated audit memo for the strand-twist datum, and \"canonical mass facade\" is now the mass-identity algorithm. All four targets are existing labels and resolve. Every status verdict, including the open and falsified ones, is unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

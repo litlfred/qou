@@ -1,4 +1,4 @@
-The keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) asserts an inclusion $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$ plus a sharpness condition. The sharpness condition admits two formulations:
+The depth correspondence [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence) asserts an inclusion $\tau_{\mathrm{arch}}(G^{(n)}) \subseteq \mathcal{P}_n$ plus a sharpness condition. The sharpness condition admits two formulations:
 
 | Version | Statement | What it says |
 |---|---|---|
@@ -7,7 +7,7 @@ The keystone [`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-corre
 
 The soft version is theorem-level ([`prop:b1-soft-sharpness-theorem`](#prop:b1-soft-sharpness-theorem)) via Borel's theorem and polylog non-vanishing. The strong version remains conditional, but the soft version suffices for QOU's predictive purposes.
 
-Soft sharpness elevates the following keystone-derived claims to theorems:
+Soft sharpness elevates the following consequences of the correspondence to theorems:
 
 | Claim | Status before | Status after this prop |
 |---|---|---|

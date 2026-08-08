@@ -15,8 +15,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The docs/audits links, the \"§SUPERSEDED\" anchor and the investigation-log pointers are gone, but session-round bookkeeping survives in two places: \"It is the source of the **round-21** refutation of the $y_{\\mathrm{cov}}$ form.\" and \"Tables 1-9 record **per-round** intermediate data.\" A reader cannot resolve \"round-21\" or \"per-round\" to anything the paper defines.",
+        "result": "pass",
+        "notes": "Fixed, both round-bookkeeping leaks. \"the source of the **round-21** refutation of the $y_{\\mathrm{cov}}$ form\" -> \"the source of the refutation of the $y_{\\mathrm{cov}}$ form\"; \"Tables 1-9 record **per-round** intermediate data\" -> \"Tables 1-9 record the intermediate data of the successive attempts\". The refutation itself and the unverified-saturation gap are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

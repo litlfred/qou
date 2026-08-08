@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unremediated. The register still publishes branch rename history with dates inside the symbol definitions: \"**Canonized 2026-07-12** from the former split \\\"$\\mathrm{HA}$\\\" (acronym) vs bare \\\"$H_A$\\\"\", \"**Renamed from $r$ on 2026-06-04**\", \"**Renamed from $\\kappa$ 2026-07-12** (§6 collision fix)\", \"**Introduced 2026-07-12** (§6 collision fix)\", \"**Renamed from $r_W$** in the May 2026 cleanup\", and \"**Canonized 2026-07-12** (§6) across `particle-interactions/`\". It also counts the repository rather than the paper -- \"**Distinct** from the contact form $\\varTheta$ (upper-case, **443 corpus uses**) and from bare $\\theta$ (261 generic-angle uses)\" -- and keeps the formalisation-status marker \"promotion to a functor (with Reeb source category) is aspirational **pending** formalization of Reeb as a category\".",
+        "result": "pass",
+        "notes": "Fixed. All six dated rename entries are restated as what the symbol means now, with the older notation named but not dated: \"Canonized 2026-07-12\" on h_A and on the 0-indexed generators, \"Renamed from r on 2026-06-04\", \"Renamed from kappa 2026-07-12\", \"Introduced 2026-07-12\", and \"Renamed from r_W in the May 2026 cleanup\" all now read \"Older text writes ...\" or a plain statement of the convention. The repository counts are gone: \"443 corpus uses\" and \"261 generic-angle uses\" become plain distinctions from the contact form and the generic angle, and \"1489+ uses\" is dropped from the Markov-trace row. The formalisation-status marker \"aspirational pending formalization of Reeb as a category\" is now \"whether it promotes to a functor is not settled here, since Reeb is not formalized as a category\", which keeps the unresolved status in present tense. Also removed: a list of block filenames behind the theta_q entry, and \"desync the two blocks\" → \"desynchronize the two statements\". A dangling \"of .\" left by an earlier link removal is closed off.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

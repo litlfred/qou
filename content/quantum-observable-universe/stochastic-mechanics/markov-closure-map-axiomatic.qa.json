@@ -1198,8 +1198,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"Track C Step B\" prefix is gone from both the .ts title and the opening line, and the \"§7c\" tag is gone. But two work-plan lane labels survive in the body: \"Per **the Track-C plan** in [`rem:F3-eps6-leading-eq-neg-2b-cubed`](#rem:F3-eps6-leading-eq-neg-2b-cubed)\" and \"The eventual full **Track-A** formalisation targets only the first atom; the second is already closed.\" Neither Track is defined anywhere in the paper.",
+        "result": "pass",
+        "notes": "Fixed, both lane labels. \"Per **the Track-C plan** in [`rem:F3-eps6-leading-eq-neg-2b-cubed`]\" -> \"As set out in [`rem:F3-eps6-leading-eq-neg-2b-cubed`]\"; \"The eventual full **Track-A** formalisation targets only the first atom\" -> \"A full formalisation therefore targets only the first atom\". The Lean identifiers `TrackCReducedAxiom` and `track_C_c_3_eq_neg_two` are code names in the companion file and are left as they are.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

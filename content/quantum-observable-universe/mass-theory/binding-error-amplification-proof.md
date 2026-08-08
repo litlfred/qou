@@ -30,7 +30,7 @@ residual in the predicted nuclear mass is magnified by $\mathcal{A}$ in the
 binding. A categorical derivation of binding to experimental precision
 therefore requires the bound-state mass to be derived to a precision finer
 than $B/M_{\mathrm{atom}} \approx 0.1\%$–$0.8\%$ of the experimental binding
-target — i.e. the binding problem is gated by the mass problem, not
+target — i.e. the binding problem depends on the mass problem and is not
 separable from it.
 
 This also explains why computing binding as a difference of two large

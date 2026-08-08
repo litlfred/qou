@@ -1,4 +1,4 @@
-**Significance: bridge to the w3-w4 atomic-shift framework.** Both factors in the multiplicative chain ([$\alpha_{EM}$ shift multiplicative chain](#prop:alpha-em-shift-multiplicative-chain)) expose the identical combinatorial primitive: the pole order at $q = 0$ of a seminormal Hecke trace.
+**Significance: bridge to the atomic-shift framework.** Both factors in the multiplicative chain ([$\alpha_{EM}$ shift multiplicative chain](#prop:alpha-em-shift-multiplicative-chain)) expose the identical combinatorial primitive: the pole order at $q = 0$ of a seminormal Hecke trace.
 
 | Object                          | Shift role                                                                                            |
 |---------------------------------|--------------------------------------------------------------------------------------------------------|

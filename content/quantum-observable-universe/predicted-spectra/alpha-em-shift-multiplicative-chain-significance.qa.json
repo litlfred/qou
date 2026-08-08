@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The docs/audits link is gone, but the opening sentence still carries an undefined internal label: \"**Significance: bridge to the w3-w4 atomic-shift framework.**\". \"w3-w4\" is a branch workstream id (inherited from the `-w3-habiro-unblocked` audit note that used to be linked here); it occurs nowhere else in the paper and resolves to nothing for a reader.",
+        "result": "pass",
+        "notes": "Fixed. \"**Significance: bridge to the w3-w4 atomic-shift framework.**\" -> \"**Significance: bridge to the atomic-shift framework.**\" The branch workstream id is gone; the claim about the shared combinatorial primitive is unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

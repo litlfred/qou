@@ -1338,8 +1338,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The `docs/coordination/` memo link is gone, but the pipeline-plumbing vocabulary is untouched: the published title is still \"Lean SDP-uniqueness wiring for the atlas entries\", and the body opens \"## SDP-uniqueness wiring (Lean side)\" / \"**What this wiring certifies**\". \"Wiring\" names the repository's manuscript-to-Lean plumbing, not a mathematical relation between the atlas entries and the uniqueness theorem.",
+        "result": "pass",
+        "notes": "Fixed. The pipeline-plumbing vocabulary is gone: the published .ts title \"Lean SDP-uniqueness wiring for the atlas entries\" is now \"SDP uniqueness for the atlas entries, certified in Lean\", the heading \"## SDP-uniqueness wiring (Lean side)\" is now \"## SDP uniqueness, Lean side\", and \"**What this wiring certifies**\" is now \"**What is certified**\". The scope caveat is untouched: only the empty-constraint SDP demonstration is certified, and the real per-nucleus SDP with non-empty constraints remains substantive open work.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

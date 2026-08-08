@@ -49,8 +49,8 @@ the Volume Conjecture for the Whitehead link (as a Whitehead chain) via
 a *positive-sum* colored-Jones kernel
 $S_{n,k} = \prod_{j=1}^{n} 2\sin^2\!\bigl((k+j)\pi/N\bigr)/\sin(j\pi/N) > 0$;
 Murakami's earlier analysis (2002) generalised the figure-8 calculation
-to the same asymptotic match. This published discharge is now
-**pinned in-corpus three independent ways**, formula-free:
+to the same asymptotic match. This published discharge is
+**corroborated three independent ways**, formula-free:
 
 1. **[Kas95] §3 face-index state sum** on the 2-bridge $b(8,3)$ plat
    presentation (plat word $[-2,-2,1,-2,-2]$, strands $(2,9)$), evaluated

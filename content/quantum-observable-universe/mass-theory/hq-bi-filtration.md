@@ -4,7 +4,7 @@
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
 $G^{(0)} \subseteq G^{(1)} \subseteq \cdots$
-([keystone correspondence](#conj:gb-depth-period-correspondence)).
+([depth correspondence](#conj:gb-depth-period-correspondence)).
 For each Bring-embeddable knot/link $K$ ([Bring-embeddable
 knots](#rem:bring-embeddable-knots)) with dominant cell
 $\lambda_K \vdash n_K$ and central primitive idempotent
@@ -65,7 +65,7 @@ The bi-filtration interacts with the existing structures on $\mathcal{H}_q$:
 ### The bi-filtration as a tooling unification
 
 This is the **definition layer** for the framework the
-keystone implies but does not name. Three downstream conjectures
+depth correspondence implies but does not name. Three downstream conjectures
 populate it:
 
 - [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)

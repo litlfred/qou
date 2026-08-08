@@ -9,8 +9,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"§7c\" tag is gone, but the section \"Two guises of the one pentagon\" still opens \"The same Mac Lane coherence already appears in the corpus in two formalized guises, which this proposition records as one law\". \"The corpus\" is the repository's content set.",
+        "result": "pass",
+        "notes": "Fixed. \"The same Mac Lane coherence already appears in the corpus in two formalized guises\" is now \"has already appeared above in two formalized guises\". Both guises, their Lean names and the sorry-free status are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

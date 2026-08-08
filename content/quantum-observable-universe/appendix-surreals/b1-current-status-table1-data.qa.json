@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"Avenue A or B\" decision label is gone, but the work-plan effort estimate it sat beside is still published in the table cell: \"[`conj:qou-infra-discharges-goncharov-zeta5`](#conj:qou-infra-discharges-goncharov-zeta5) (either route, **~1-2 weeks**)\". \"~1-2 weeks\" is a scheduling estimate for whoever does the work, not a statement about the mathematics.",
+        "result": "pass",
+        "notes": "Fixed. The scheduling estimate is dropped from the table cell: \"(either route, ~1-2 weeks)\" -> \"(either route)\". The conditional status, the discharger reference and the two-route claim are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

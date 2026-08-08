@@ -19,7 +19,7 @@ The following table outlines the eleven canonical steps of the substrate-to-obse
 **Sidecar algorithms.**
 Four standalone algorithms support the production pipeline:
 
-1. **$\Delta_\lambda$ closure ansätze** (Option E). The per-partition density at each isotope; currently open.
+1. **$\Delta_\lambda$ closure ansätze.** The per-partition density at each isotope; currently open.
 2. **$c_k$ truncation ladder.** The convergent series whose truncation order $N$ is fixed by precision $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.
 3. **LP/SDP dual emission contract.** Every operator-selection compute must emit primal and dual variables, enforced by `lp_dual_witness_validator.py`.
 4. **Witness-JSON pipeline.** Cross-language interchange schema and the `WitnessBuilder` pattern.

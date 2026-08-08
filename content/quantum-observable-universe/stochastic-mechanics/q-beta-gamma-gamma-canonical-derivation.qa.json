@@ -1156,8 +1156,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Nothing here was remediated. The .ts title still opens on the branch decision label -- \"**Story B** selected as canonical $\\mathfrak{Q}_\\beta$ interpretation by tracing the cat-action -> Frobenius -> Wedderburn -> Wenzl bridge chain ...\" -- with no gloss in the title's own context. The body carries \"settling the **Story A vs Story B** ambiguity flagged in [`probe_q_beta_high_precision_ck.py`](...)\", the heading \"## Story A vs Story B resolution\", and two work-plan lane headings that are defined nowhere in the paper: \"## **Track-C** open question\" and \"## **Track-B** open question\" (\"Once the structural identification is settled, ... **Track B** extends to higher orders\" was rewritten, but the headings remain).",
+        "result": "pass",
+        "notes": "Fixed, title and body. The published .ts title no longer opens on the branch decision label: \"Story B selected as canonical $\\mathfrak{Q}_\\beta$ interpretation by tracing ...\" -> \"The categorical-chain reading of the $\\mathfrak{Q}_\\beta$ precision ladder, traced through ...\", with the 112x residual reduction and the CODATA comparison kept. In the body the two readings are now named by what they say: the fitted reading (in which $c_2$ is chosen to match the data) and the categorical reading (Kashiwara $c_2 = b^2$ with Hopf $c_3 = -2$). The heading \"## Story A vs Story B resolution\" -> \"## Resolving the ambiguity: fitted versus categorical reading\", and the lane headings \"## Track-C open question\" / \"## Track-B open question\" -> \"## Open question: a rigorous $c_3 = -2$\" / \"## Open question: higher orders\". The selection rule, the 1.7% deviation, and the statement that $c_5, c_6$ remain unidentified are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

@@ -1120,8 +1120,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The QA-process word was fixed (\"an honest audit\" is now \"an honest survey\"), but the platform schema term survives in the same sentence: \"an honest survey of the **QOU content objects** shows most of these are *never actually used* in a load-bearing way\". \"content object\" is the authoring platform's name for a block; the paper defines no such thing.",
+        "result": "pass",
+        "notes": "Fixed. \"an honest survey of the QOU content objects\" -> \"an honest survey of the QOU development\". The authoring platform's schema term \"content object\" is gone; the survey and its conclusion (most of the analytic apparatus is never load-bearing) are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The `claude/mass-units-bridge-followups` branch links are gone, but four citations still resolve through the authoring platform's own directory: \"[`canonical_mass_table_extended.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_mass_table_extended.py)\", the companion `canonical-mass-table-extended.witness.json` and `m-p-borromean-verification-50dps.witness.json` links, and \"[`canonical_isotope_witness.py`](https://github.com/litlfred/qou/blob/main/folio-assistant/computations/canonical_isotope_witness.py)\". The scripts live under `computations/`; the `folio-assistant/` segment names the authoring platform and the path does not resolve.",
+        "result": "pass",
+        "notes": "Fixed. All four citation URLs had the authoring-platform segment `folio-assistant/` in the path, so none resolved; the segment is removed from canonical_mass_table_extended.py, canonical-mass-table-extended.witness.json, m-p-borromean-verification-50dps.witness.json and canonical_isotope_witness.py, which now point at `computations/` where the scripts and witnesses actually live. No prose or numbers changed.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

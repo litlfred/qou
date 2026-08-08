@@ -15,8 +15,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"§7c\" tag is gone, but the standing archimedean paragraph still ends on the authoring unit: \"What follows invokes these constructs ... **The block** therefore sits on the archimedean side of the substrate wall.\" Every sibling carrying the same boilerplate (categorical-proton-unique, categorical-neutron-exists, categorical-neutron-unique, breit-wheeler-pair-production) was rewritten to \"What follows sits on the archimedean side of the substrate wall\"; this one kept \"The block\".",
+        "result": "pass",
+        "notes": "Fixed. \"The block therefore sits on the archimedean side of the substrate wall\" -> \"What follows therefore sits on the archimedean side of the substrate wall\", matching the sibling blocks carrying the same standing paragraph. The authoring pipeline's unit no longer appears.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

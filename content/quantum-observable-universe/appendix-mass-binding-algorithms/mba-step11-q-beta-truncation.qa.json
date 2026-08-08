@@ -3,8 +3,8 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The bean id \"s5bb\", the \"PR #2723\" pointer, the AGENTS.md quotation and the dated docs/audits memo are gone, but branch-state narration survives in the Notes: \"*Status (**live**): $\\mathfrak{Q}_\\beta$ at $\\sim 160\\times$ miss ...*\" and \"**Supersedes the earlier \\\"164.0x as of 2026-05-31 / Habiro-exact 5.7 ppb at the pre-re-pin muon anchor\\\" note.**\" A reader has no access to the superseded note and no way to resolve the date or the re-pin it refers to.",
+        "result": "pass",
+        "notes": "Fixed. \"Status (live)\" is now \"Status\". The supersession sentence citing the pre-re-pin \"164.0x as of 2026-05-31 / Habiro-exact 5.7 ppb\" note is removed from the published prose and moved verbatim into authorNotes in the .ts, since those figures describe a former pin rather than the current construction. \"exact closure gated on the s5-so3 / Habiro keystone\" is now \"exact closure depends on the s5-so3 fibre action (conj:s5-so3-fiber-action), which is unproved\" — same dependency, no programme ranking. Two workplan gates (\"a wire/un-wire gate\", \"an inclusion/exclusion gate\") become \"criterion\". The live figures (160x, 1248 ppb, 1.25 ppm, 181x, 1.04 ppb, 1690x) and the near-match tier are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

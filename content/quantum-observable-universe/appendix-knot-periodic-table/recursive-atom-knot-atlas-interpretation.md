@@ -1,7 +1,7 @@
-## Build-pipeline integration
+## Provenance of the atlas entries
 
-The purpose of this integration is a single reproducible source of truth, so
-the rendered appendix never drifts from the witnesses it summarizes. The atlas
+Every entry is computed from a single reproducible chain of sources, so the
+table never drifts from the witnesses it summarizes. The atlas
 is auto-rendered by
 [`recursive_atom_knot_atlas_render.py`](../../../computations/recursive_atom_knot_atlas_render.py).
 
@@ -23,6 +23,7 @@ hyperbolic volume of the Markov closure is computed from the
 $\sigma$-braid word at $\geq 50$ decimal digits via
 `hp_volume_of_link_closure(braid_word, digits=50)` which calls
 SnapPy's `Link(braid_closure=...).exterior.high_precision`
-inside `mpmath.workdps(50)`. Updates to any input propagate via
+inside `mpmath.workdps(50)`. When any input changes,
 [`witness_staleness_tracker.py`](../../../computations/witness_staleness_tracker.py)
-to the rendered appendix on the next `bun run build`.
+marks the affected entries stale and the atlas is recomputed from the sources
+above; no entry is maintained by hand.

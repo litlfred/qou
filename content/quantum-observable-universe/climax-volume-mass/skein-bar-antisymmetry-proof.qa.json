@@ -1283,8 +1283,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: the \"**Refactoring corollary (case-split collapse).**\" still carries an editing to-do keyed to source paths and block slugs — \"several existing case-split arguments in `braids-and-knots/` can be collapsed using this principle:\" followed by the table \"| Block | Current structure | Simplification |\" listing \"`commutative-crossing-energy`\" and \"`phase-scoped-applicability`\" against rewrite instructions (\"one computation + bar-apply\"). The mathematics — bar-equivariance transports the proof — needs none of it.",
+        "result": "pass",
+        "notes": "Fixed. The heading is now \"**Corollary (case-split collapse).**\", and the editing to-do keyed to source paths and block slugs -- \"several existing case-split arguments in `braids-and-knots/` can be collapsed\" plus the \"| Block | Current structure | Simplification |\" table -- is gone. The mathematical content it carried is kept as prose: wherever the corollary applies (a pair of positive/negative crossing computations, a per-crossing-sign feasibility check, an enumeration of $L_+$ and $L_-$ state-sum contributions) the terms enter bar-paired, and the case-split is bookkeeping, not new content. The three specific refactor candidates were moved to `authorNotes` in the .ts rather than deleted.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

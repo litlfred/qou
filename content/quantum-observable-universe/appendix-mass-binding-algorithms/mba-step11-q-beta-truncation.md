@@ -25,7 +25,7 @@ $N$ chosen by the target precision.*
 3. For k = 2, …, N:
    c_2 = -1                  (Taylor-exact, PROVED).
    c_k for k ≥ 3 are q_0-dependent NEAR-MATCHES; N is a truncation
-     order, not a wire/un-wire gate.
+     order, not an inclusion/exclusion criterion.
    Multiply Q_base by (1 + c_k · u^k).
 4. Return \mathfrak{Q}_\beta.
 ```
@@ -42,7 +42,7 @@ establishes the precision ladder and the convergence rate.*
   swings (e.g. $c_3 = -2 = J_{\mathrm{Hopf}}(q = 1)$ within
   $\sim 3\%$ at the m_p-pin $q_0$).*
 - *$c_k$ never reported as "fitted": the truncation order is a tier,
-  not an inclusion/exclusion gate.*
+  not an inclusion/exclusion criterion.*
 
 ### Complexity
 
@@ -75,11 +75,10 @@ Its outer factor $(1 - b^2\hbar_q^4) = (1 - u^2)$ is exactly the
 $c_2 = -1$ term of the ladder above (with $u = b\,\hbar_q^2$); the $\cos$
 factor supplies the odd-$b$ ($N{=}1$) correction.*
 
-*Status (live): $\mathfrak{Q}_\beta$ at $\sim 160\times$ miss
+*Status: $\mathfrak{Q}_\beta$ at $\sim 160\times$ miss
 (1248 ppb, $+1.25\,\mathrm{ppm}$ on $\mathfrak{Q}_\beta$) and $m_n$ at
 $\sim 181\times$ miss ($+1.04\,\mathrm{ppb}$) vs the (research-grade,
 sub-CAL-2-floor) 100× targets — both improved $\sim 1690\times$ over the
-former flavor-split route. TIER: **near-match**; exact closure gated on
-the s5-so3 / Habiro keystone (`conj:s5-so3-fiber-action`).
-Supersedes the earlier "164.0× as of 2026-05-31 / Habiro-exact 5.7 ppb at
-the pre-re-pin muon anchor" note.*
+former flavor-split route. TIER: **near-match**; exact closure depends on the
+$s_5$–$\mathrm{so}(3)$ fibre action (`conj:s5-so3-fiber-action`), which is
+unproved.*

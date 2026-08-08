@@ -1,4 +1,4 @@
-**Algorithm (Per-isotope binding energy — experimental $q$-difference generating-function model; the $\Delta_\lambda$ gate is open).**
+**Algorithm (Per-isotope binding energy — experimental $q$-difference generating-function model; the $\Delta_\lambda$ magnitude is open).**
 *Evaluate the binding energy $B_n \propto w_n$ for multi-body nuclear clusters via the universal `CKRecursion` depth-2 discrete generating function, seeded by the topological traces of the strong mediator knots.*
 
 ### Input
@@ -28,9 +28,9 @@ These are **fit residuals of the experimental model**, not derived error bounds:
 1. *With the seed constants calibrated, the generating function reproduces $^4$He ($n=4$) to within $\sim 3.4$ keV of the AME value — a fit residual, not a parameter-free bound ($^4$He remains open, the $\mathrm{Vol}_4$ census gap).*
 2. *The isospin anomaly correction resolves the $n=3$ doublet ordering ($^3$H vs $^3$He); the residual is a calibrated near-match, not an accuracy claim against the L2 target.*
 
-**Keystone status (2026-07-20).** The $q$-lift of the proved classical depth-2 kernel exists exactly on the $[n]_q!$-normalized carrier ($c(q) = 1$, probe-verified; Lean brick in progress) and is distinct from the GGM eq-49 carrier up to scalar gauge — identification open.
+**The $q$-lift of the depth-2 kernel.** The $q$-lift of the proved classical depth-2 kernel exists exactly on the $[n]_q!$-normalized carrier ($c(q) = 1$, probe-verified; not yet formalized in Lean) and is distinct from the Garoufalidis–Gu–Mariño resurgent-Stokes carrier \cite{garoufalidis-gu-marino2021} up to scalar gauge. The identification is open.
 
-**Scope (value proved; magnitude gate open, not a closure).** The per-partition
+**Scope (value proved; magnitude open, not a closure).** The per-partition
 $\Delta_\lambda$ **value** is proved ($\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$,
 sorry-free general-$n$, `dtEuler_eq_deltaLambda_unconditional`); what remains **open** is
 the many-body binding **magnitude**: six ansätze have failed on the deuteron
@@ -46,7 +46,7 @@ from computations.mass_binding_dashboard import _row
 
 ### Witness contract
 
-*Witness generated via the mass binding dashboard runs: `dashboard_and_sweep_results.md`. (The dashboard logs report the model's fit residuals per isotope; these are calibrated near-matches, not a closure — the $\Delta_\lambda$ gate is open.)*
+*Witness generated via the mass binding dashboard runs: `dashboard_and_sweep_results.md`. (The dashboard logs report the model's fit residuals per isotope; these are calibrated near-matches, not a closure — the $\Delta_\lambda$ magnitude is open.)*
 
 ### Notes
 
@@ -54,6 +54,6 @@ from computations.mass_binding_dashboard import _row
 
 *The `CKRecursion` recurrence is extensive and algebraically convenient, but its seed constants are calibrated inputs, so the binding it produces is a fit, not a derivation.*
 
-### Tier note: experimental generating-function model (2026-07-08)
+### Tier note: experimental generating-function model
 
 *The $w_n$ values and the $\sim 3$ keV $^4$He fit residual come from the discrete $q$-difference recurrence with calibrated seeds — a phenomenological reproduction, not a structural bound. A kernel-constraints Lean file for the $q$-difference recurrence exists on the $Q_\beta$ side (`QBetaCKRecursionKernelConstraints.lean`); a binding-sector analogue that would formalize any derived (non-calibrated) constant is not yet written.*

@@ -1396,8 +1396,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The bare \"B1\" is gone from the .ts title, which now reads \"The depth correspondence conditionally reduces to the Volume Conjecture at Borromean rings, the Whitehead link, and twist knots\". But the body now routes the reader through a repository path instead: \"Explicit cell pairing and Volume Conjecture discharge steps for the Borromean rings and Whitehead link are recorded in the **`audit/b1-hyperbolic-rows-theorem-audit` block**.\" That target is a directory-qualified file path in an `audit/` subdirectory with no `.ts` sibling and no label, so there is nothing for a reader to follow.",
+        "result": "pass",
+        "notes": "Fixed. The pointer to the `audit/b1-hyperbolic-rows-theorem-audit` directory path is gone; the sentence now states the mathematics it was standing in for: over $F = \\mathbb{Q}(i)$ the dominant cell pairs by Markov trace with $\\mathrm{Li}_2^q(i)$, giving $\\mathrm{Vol}(L_{6a4}) = 8G$ and $\\mathrm{Vol}(L5a1) = 4G$, and van der Veen's coloured-Jones asymptotics discharge the Volume Conjecture at both links. Nothing is now routed through a repository path.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

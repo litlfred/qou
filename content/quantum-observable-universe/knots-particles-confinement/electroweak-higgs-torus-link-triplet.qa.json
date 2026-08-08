@@ -10,8 +10,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "C1/C2/C$_{\\text{sector}}$/C$_{\\text{top}}$ are now defined in the block's own table and expanded in the prose, and \"the former C3 ... and C4\" is gone — those are no longer defects. Two leaks remain: \"The corpus map $Q = \\tfrac12\\,\\mathrm{writhe}$ on the all-positive braid $\\sigma_1^{2k}$ ...\", where \"the corpus\" is the repository; and the heading \"**The chain of conjectures (narrowed).**\", whose \"(narrowed)\" narrates a branch-side revision the reader never saw.",
+        "result": "pass",
+        "notes": "Fixed, both leaks. \"The corpus map $Q = \\tfrac12\\,\\mathrm{writhe}$\" -> \"The crossing-to-charge map $Q = \\tfrac12\\,\\mathrm{writhe}$\", and the heading \"**The chain of conjectures (narrowed).**\" -> \"**The chain of conjectures.**\". The under-determination it reports is unchanged: $Q(T(2,2k)) = k > 0$ for all three carriers cannot single out the neutral slot, and both $W = \\sigma_1^4$ and the mirror $W = \\sigma_3^6$ satisfy every proved constraint.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

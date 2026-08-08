@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"not been refreshed since the 2026-05-28 proton-anchor re-pin\" staleness note, the \"L2 convention\" / \"L2 target\" layer labels and the docs/audits link are gone. But a published figure is still sourced to a tracking surface the paper does not contain: \"$\\mathfrak{Q}_\\beta$ currently **misses the 7.8 ppb accuracy target by $\\approx 164\\times$** (**per the accuracy dashboard**)\".",
+        "result": "pass",
+        "notes": "Fixed. The published figure is no longer sourced to a tracking surface: \"misses the 7.8 ppb accuracy target by $\\approx 164\\times$ (per the accuracy dashboard)\" -> \"misses the 7.8 ppb accuracy target by $\\approx 164\\times$\". The figure, the muon-anchored versus proton-pinned distinction, and the statement that the proton-anchored precision of $c_4$ to $c_7$ is open and not established are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

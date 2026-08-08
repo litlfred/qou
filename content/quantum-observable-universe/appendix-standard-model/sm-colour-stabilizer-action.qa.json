@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "\"This block\" is gone, but \"the corpus\" survives twice as the paper's name for itself: \"the Günaydin–Gürsey colour subalgebra, which the corpus carries with the proved gate\" and \"the corpus constructs the colour algebra\". The referent is this paper / the framework.",
+        "result": "pass",
+        "notes": "Fixed. Both \"the corpus\" self-references are gone: the Günaydin–Gürsey subalgebra is now \"carried here with the proved gate\", and \"the corpus constructs the colour algebra\" is now \"the colour algebra is constructed here\". The open content (no construction makes it act on the states) is unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

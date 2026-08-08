@@ -134,7 +134,7 @@ $u(q_0)$ (log meridian holonomy). The deformed volume itself is a
 theorem for $4_1$ and explicitly computable via Neumann–Zagier; the two
 open inputs — the map $u(q_0)$ and the channel identity — are carried by
 the class `QOU.QBeta.PhiBSArgumentIdentification.SDeformedVolumeChannel`.
-Composed with the argument-identification keystone of
+Composed with the argument identification of
 ([algebraic-geometric dilogarithm equivalence](../mass-theory/algebraic-geometric-dilog-equivalence.md)),
 three statements are derived unconditionally from the two classes
 (`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`,

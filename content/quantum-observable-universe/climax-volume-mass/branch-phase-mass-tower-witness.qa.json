@@ -1156,8 +1156,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "\"Path A\" and the commit pointers are gone, but the caveat still narrates repository housekeeping: \"**Caveat (updated).** ... The probe witness [`rho-k-pair-gen-v2-wedderburn.witness.json`](../../../computations/_deprecated/rho-k-pair-gen-v2-wedderburn.witness.json) is now deprecated.\" A `_deprecated/` path and a file's lifecycle status belong to the working channel; the negative result itself (the rejected Wedderburn pair-generator extension) can stand without them.",
+        "result": "pass",
+        "notes": "Fixed. \"**Caveat (updated).** We have now categorically derived ...\" -> \"**Caveat.** We have categorically derived ...\", and the sentence deprecating `computations/_deprecated/rho-k-pair-gen-v2-wedderburn.witness.json` is removed. The negative result stands untouched: the Wedderburn pair-generator extension was tested and **rejected** (it worsens the fit to ~4.7% MAE), as do the $\\leq 0.30\\%$ agreement and the $18Z + 21N + 1$ pole-order verification. The deprecated-witness pointer was moved to `authorNotes` in the .ts.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

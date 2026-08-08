@@ -1,6 +1,6 @@
-## SDP-uniqueness wiring (Lean side)
+## SDP uniqueness, Lean side
 
-**What this wiring certifies**: the *abstract framework demonstration*
+**What is certified**: the *abstract framework demonstration*
 of $T_w$ uniqueness at the empty-constraint SDP for a nucleus's
 strand count. The **real per-nucleus SDP** (with non-empty
 constraints from the mass formula and multi-term cost) is

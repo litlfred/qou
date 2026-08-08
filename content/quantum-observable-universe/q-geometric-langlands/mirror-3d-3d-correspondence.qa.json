@@ -1584,8 +1584,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The `.claude/skills/local/canonical-watcher.md` \"Diagnostics\" stanza and the D16/D18 tracker ids are gone, but the cross-reference list still opens with an orphaned tracker label: \"  + §2 Cluster C (Pentagon validation)\". \"Cluster C\" is a grouping inside the internal duality tracker; stripped of its link it now has no antecedent at all.",
+        "result": "pass",
+        "notes": "Fixed. The orphaned tracker label \"  + §2 Cluster C (Pentagon validation)\" is removed from the cross-reference list; it had no antecedent once its link was stripped, and the two remaining cross-references and the literature pointer are unchanged. Also in this block, the heading \"## Open R&D\" -> \"## Open questions\" and \"Closing the conjecture is a very long horizon\" -> \"Closing the conjecture remains distant\", keeping the statement that the QFT-side formalisation has not been developed.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

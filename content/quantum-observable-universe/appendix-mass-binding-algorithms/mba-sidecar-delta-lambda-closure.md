@@ -14,7 +14,7 @@ for an isotope knot $K$, consumed by Step 9b
   (the signed Springer dimension; $n(\lambda)$ is the jet-order valuation
   parity, $\dim V_\lambda$ the Wedderburn dimension).*
 
-### Status (2026-08-02) — value proved; magnitude external
+### Status: value proved, magnitude external
 
 **The per-partition value is PROVED, sorry-free, general-$n$:**
 $\Delta_\lambda = (-1)^{n(\lambda)}\dim V_\lambda$
@@ -24,7 +24,7 @@ jet-order valuation parity `deltaSign_eq_nStat_parity`; the magnitude leg is
 the Wedderburn dimension. Both are substrate-derived — not fitted.
 
 **What remains open is NOT the value — it is the many-body binding MAGNITUDE.**
-The earlier "six-ansatz gate" (below) failed to derive the deuteron/light-nucleus
+The six ansätze recorded below failed to derive the deuteron/light-nucleus
 magnitude deficit $r^\ast \approx 1.585$, **not** the per-partition value. This is
 a category distinction the old framing conflated:
 
@@ -45,7 +45,7 @@ refuted on the deuteron (each supplied the wrong $r^\ast$, none touched the now-
 
 | Ansatz | Source | Refuted on |
 |--------|--------|------------|
-| Frobenius co-Casimir | Track-A early proposals | deuteron |
+| Frobenius co-Casimir | early Frobenius-pairing proposals | deuteron |
 | Demazure-fibre | symmetric-crystal early attempts | deuteron |
 | LP-Plancherel | LP-based ansatz | deuteron |
 | LP-Frobenius | LP-based ansatz | deuteron |

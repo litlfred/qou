@@ -3,8 +3,8 @@
     "milnor-amalgamated-flow": [],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The internal watcher is still named as part of the witness contract: \"Every `*.witness.json` is validated by: [`lp_dual_witness_validator.py`](...) (LP/SDP duals), **`q-usage-watcher`** (q-regime declarations), and the q0 staleness detector. Stale or schema-violating witnesses **fail CI in `witness-pipeline.yml`**.\" The opening also forwards to a section that does not exist in the block: \"for **legacy witnesses**, is scheduled to be migrated to it -- see *Migration status* below\".",
+        "result": "pass",
+        "notes": "Fixed. The witness contract no longer names the internal watcher or the build: \"q-usage-watcher\" and \"fail CI in witness-pipeline.yml\" are replaced by what is actually checked — LP/SDP dual fields, an explicit q-regime declaration, and staleness against the current q_0 — with a stale or schema-violating witness rejected rather than consumed. The dangling forward reference to a \"Migration status\" section that does not exist is replaced by the fact it stood for: a residue of older witnesses does not yet conform.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: the table cell still reads \"open — no corpus content\", and the body \"no block, computation, or audit in the corpus addresses $\\theta_{\\mathrm{QCD}}$\" and \"nothing in the corpus develops it\". \"Corpus\", \"block\" and \"audit\" are the authoring platform's own object names.",
+        "result": "pass",
+        "notes": "Fixed. The table cell \"open — no corpus content\" is now \"open — no construction offered here\"; \"no block, computation, or audit in the corpus addresses\" is now \"nothing in this paper addresses\"; \"nothing in the corpus develops it\" is now \"nothing here develops it\". The strong-CP angle is still stated as entirely open and the framing-sector direction still carries its explicit non-endorsement.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

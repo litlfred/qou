@@ -61,7 +61,7 @@ class InterNucleonChannelColorTube
         = flavor_only_hecke (flavor_of C₁) (flavor_of C₂)
 ```
 
-The class becomes inhabited by the $S_{5}$/SO(3) fiber data once `conj:s5-so3-fiber-action` lands.
+The class becomes inhabited by the $S_{5}$/SO(3) fiber data once `conj:s5-so3-fiber-action` is established.
 
 ## Consumers
 

@@ -21,6 +21,16 @@
           "id": "local/branch-jargon-sweep",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Re-reviewed under the one-voice pass. The tier gloss \"*open* (no corpus content closes the parameter)\" is now \"*open* (nothing here closes the parameter)\". The 26-parameter counting, the headline tally (1 input, 1 proxy, 1 partial, 2 conjectural, 21 open) and the statement that no parameter beyond the calibration set is derived to experimental precision are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
       }
     ]
   }

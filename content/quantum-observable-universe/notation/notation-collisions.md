@@ -12,12 +12,12 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
 - **$c_k$ vs $\mathrm{cl}_k$** — the letter $c$ carried **three** distinct coefficient families, two of them within ~12% of each other numerically, which is how they stayed conflated. We now split them:
     - $c_k$ = **Q$_\beta$ precision-ladder** coefficients only, $Q_\beta = Q_{\text{base}}\prod_k(1 + c_k u^k)$ with $u = b\hbar_q^2$ — dimensionless, $c_2 = -1$ proved Taylor-exact, $c_3 = -2$ a near-match.
     - $\mathrm{cl}_k$ = **cluster / Ursell coefficients** of the many-body expansion — MeV-valued. $\mathrm{cl}_3 = -\mathfrak{E}_0\,\Delta^2 g$ is the three-body cluster coefficient of the $\mu_3$ door ($\mu_3 > 0 \iff \Delta^2 g < 0$), and the Borromean H$_9$ magnitude lift is the same family.
-  We never write a bare $c_k$ for a cluster coefficient. Rationale for the roman two-letter tag rather than a new single letter: **every** single Roman letter is either register-claimed or produces a same-domain case-collision ($X_k$ vs the knot object $X_K$; $Y_k$ vs the Markov weight $y_\lambda$; $Z$ = proton number; $W_\lambda$ = geometric weight; $j$ vs the Jones polynomial $J_K(q)$). This follows the same resolution already used for $\mathrm{Sk}$ (Skein module, moved off $\mathcal{S}$) and $h_{\mathrm{A}}$ (Hecke amplitude, canonized 2026-07-12 off bare $H_A$).
+  We never write a bare $c_k$ for a cluster coefficient. Rationale for the roman two-letter tag rather than a new single letter: **every** single Roman letter is either register-claimed or produces a same-domain case-collision ($X_k$ vs the knot object $X_K$; $Y_k$ vs the Markov weight $y_\lambda$; $Z$ = proton number; $W_\lambda$ = geometric weight; $j$ vs the Jones polynomial $J_K(q)$). This follows the same resolution already used for $\mathrm{Sk}$ (Skein module, moved off $\mathcal{S}$) and $h_{\mathrm{A}}$ (Hecke amplitude, moved off bare $H_A$).
 - **$\chi_q$** = Lyapunov exponent (distinct from $\chi_\zeta(c)$, the character).
 - **$\theta_p$ vs $\vartheta_K$** — two unrelated objects sharing a glyph. $\theta_p(w) = \sum_{n\in\mathbb{Z}} p^{-n(n+1)/2}w^{n}$ is the $q$-theta of a $q$-difference operator: a function of a complex variable, satisfying $\theta_p(pw) = w\,\theta_p(w)$, whose zero set is the orbit $-p^{\mathbb{Z}}$. $\vartheta_K$ is the **angular** deformation parameter of the volume channel $S_K = A_\omega\,\kappa\,(\ln^{2} q_0 - \vartheta_K^{2})$ — a real angle attached to a knot, not a function. Neither is a Newton-polygon slope; "theta order" in the slope register is a third, again unrelated, use of the word.
 - **$\zeta$** = three distinct uses, never bare. We use $\zeta_n := e^{2\pi i/n}$ (primitive $n$-th root of unity, always with integer subscript — e.g. $\zeta_5$, $\zeta_6 = e^{i\pi/3}$); $\zeta(s)$ (Riemann zeta function, always parenthesised, e.g. $\zeta(2) = \pi^2/6$, $\zeta(3)$ — Apéry's constant); $\chi_\zeta(c)$ (character, always with $\chi$ prefix and argument). We do not use the bare token $\zeta$ alone.
 - **$\mathcal{P}_n$** = Goncharov period filtration class (weight-$n$ periods modulo lower-weight). This is distinct from $P_\ell$, the elementary symmetric polynomials in Jucys–Murphy elements ([`prop:jucys-murphy-central-elements-qou`](#prop:jucys-murphy-central-elements-qou)), which are non-calligraphic and indexed by symmetric-polynomial degree.
-- **$H_q$** alone = not used. Three distinct concepts share the letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$ (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke / hook-length, always with argument). The Hecke amplitude $q - q^{-1}$ is $h_{\mathrm{A}}$ (plain-italic scalar, roman subscript; canonized 2026-07-12 from the former "$\mathrm{HA}$" / bare "$H_A$" split — bare $H_A$ collided with the Hecke algebra $H_A(q)$ on $A$ strands).
+- **$H_q$** alone = not used. Three distinct concepts share the letter $H$: $\mathcal{H}_q$ (shuffle Hopf algebra), $\hat{H}_q$ (Hamiltonian operator), $H_n(q)$ or $H_q(\lambda)$ (Hecke / hook-length, always with argument). The Hecke amplitude $q - q^{-1}$ is $h_{\mathrm{A}}$ (plain-italic scalar, roman subscript). Older text splits this between "$\mathrm{HA}$" and a bare "$H_A$"; bare $H_A$ collided with the Hecke algebra $H_A(q)$ on $A$ strands.
 - **$\mathfrak{S}$** = categorical action (fraktur, Hamilton's $S$). We previously wrote the action two ways — calligraphic $\mathcal{S}_q$ and plain $S_q$. We now unify both to $\mathfrak{S}_q$ throughout the paper. This frees calligraphic $\mathcal{S}$ for the state bundle alone (QOU tuple $(\mathbf{C}, \varTheta, G, \mathcal{S})$). Three other objects deliberately keep $S$ / $\mathrm{Sk}$ and are not the action:
     - the Hopf antipode $S$ (plain $S$, or $S_q$ on the $q$-shuffle Hopf algebra);
     - the q-entropy $S_q(U)$ (`quantum-temperature`, with $\partial S_q/\partial \mathfrak{E}_q = 1/T_q$) and the Bekenstein–Hawking entropy $S_{BH}$ — entropy is a distinct thermodynamic observable, never the action;
@@ -49,10 +49,10 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
   | sum identity | — | $\sum y_\lambda d_\lambda = 1$ | $\sum w_\lambda = 1$ | (no sum) |
 
   The $y_\lambda$ vector $(1/2, 1/4, 0)$ is not uniform and $y_{(1^3)} = 0$ identically (Temperley–Lieb quotient — Jones factors through TL). The Wenzl-bridge $y_\lambda = w_\lambda$ fails at $\lambda = (2,1)$ here ($1/4 \neq 2/3$) because the bridge identity uses a different (non-Jones, Schur-element) normalisation of $y_\lambda$. They coincide on the self-conjugate stratum after matching normalisation conventions. When in doubt, we cite the source proposition.
-- **$\check{q}$** (q-háček, meaning "little hook" in Czech) = spinor information rate, $\check{q} = q^{1/2}$, $\check{q}^2 = q$. This is the eigenvalue of the elementary half-twist on the spin-½ fundamental rep of $\mathrm{SU}_q(2)$. We reserve it exclusively for this purpose. The háček diacritic encodes the relation $\check{q}^2 = q$ in the glyph, making every occurrence self-documenting. The relation to $q$ is exactly analogous to $i$ vs $-1$. The spinor rate $\check{q}$ opens up the 2-D spinor (spin-½) representation from the 1-D adjoint (spin-1) representation. We renamed this from $r$ on 2026-06-04 to free $r$ for radius / generic-real contexts. We never use $r$ or $t$ for $q^{1/2}$ ($t$ clashes with the $V_K(t)$ knot variable and with time-like usage). We reserve $\iota$ for involution / inclusion.
-- **$u$** = LP shadow-price $u_\lambda, u_0$ (Schrijver convention for operator-selection LP dual variables, see Table 3 row 15) or the $Q_\beta$ precision-ladder step variable $u_{\text{ladder}} = b\,\hbar_q^2$ with $Q_\beta = Q_{\text{base}} \prod_k (1 + c_k\,u_{\text{ladder}}^k)$, $b$ the Hoefsmit coupling and $\hbar_q = (q-1)/q$. At $q_0$, $u_{\text{ladder}} \approx 0.00852$. We retired Habiro $u = q^{1/2}$ on 2026-06-04. We now write the Habiro-ring expansion as $\mathrm{tr}_M = \sum_m a_m(\check{q})\,(\check{q};\check{q})_m / D(\check{q})$ with $\check{q}$ the spinor rate above. When a compute script uses BOTH the ladder step and either the LP shadow-price $u_\lambda$ or the (retired) Habiro $u$, the ladder variable must be spelled `u_ladder` to keep contexts unambiguous. Single-context scripts may keep bare `u` when an in-script comment annotates which meaning applies (`u = sqrt(q)` for Habiro-facing scripts is permitted when accompanied by `# = \check{q}, spinor rate` annotation).
+- **$\check{q}$** (q-háček, meaning "little hook" in Czech) = spinor information rate, $\check{q} = q^{1/2}$, $\check{q}^2 = q$. This is the eigenvalue of the elementary half-twist on the spin-½ fundamental rep of $\mathrm{SU}_q(2)$. We reserve it exclusively for this purpose. The háček diacritic encodes the relation $\check{q}^2 = q$ in the glyph, making every occurrence self-documenting. The relation to $q$ is exactly analogous to $i$ vs $-1$. The spinor rate $\check{q}$ opens up the 2-D spinor (spin-½) representation from the 1-D adjoint (spin-1) representation. Older text writes $r$ for this; we reserve $r$ for radius / generic-real contexts. We never use $r$ or $t$ for $q^{1/2}$ ($t$ clashes with the $V_K(t)$ knot variable and with time-like usage). We reserve $\iota$ for involution / inclusion.
+- **$u$** = LP shadow-price $u_\lambda, u_0$ (Schrijver convention for operator-selection LP dual variables, see Table 3 row 15) or the $Q_\beta$ precision-ladder step variable $u_{\text{ladder}} = b\,\hbar_q^2$ with $Q_\beta = Q_{\text{base}} \prod_k (1 + c_k\,u_{\text{ladder}}^k)$, $b$ the Hoefsmit coupling and $\hbar_q = (q-1)/q$. At $q_0$, $u_{\text{ladder}} \approx 0.00852$. We do not use the Habiro convention $u = q^{1/2}$. We write the Habiro-ring expansion as $\mathrm{tr}_M = \sum_m a_m(\check{q})\,(\check{q};\check{q})_m / D(\check{q})$ with $\check{q}$ the spinor rate above. When a compute script uses BOTH the ladder step and either the LP shadow-price $u_\lambda$ or the older Habiro $u$, the ladder variable must be spelled `u_ladder` to keep contexts unambiguous. Single-context scripts may keep bare `u` when an in-script comment annotates which meaning applies (`u = sqrt(q)` for Habiro-facing scripts is permitted when accompanied by `# = \check{q}, spinor rate` annotation).
 - **"Borel"** = three unrelated senses, never to be cross-linked: (i) the Lie-theoretic **Borel subalgebra** (Armand Borel) of the $q$-oper chapter ([`def:q-oper`](../q-geometric-langlands/q-oper.md)); (ii) the K-theoretic **Borel regulator** (Armand Borel, 1977) of [`prop:borel-partial-resolution`](../appendix-surreals/borel-partial-resolution.md) and [`conj:borel-zagier-qou-volumes`](../predicted-spectra/borel-zagier-qou-volumes.md) — the only "Borel" in the definition index before 2026-07; (iii) **Écalle–Borel resummation** (Émile Borel) — the Borel transform $\mathcal{B}$, lateral/median Laplace–Borel sums, alien derivatives $\Delta_\omega$ ([`def:ecalle-borel-resummation`](../appendix-surreals-archimedean/ecalle-borel-resummation.md)). Resummation statements bear neither on regulator transcendence (ℚ-linear independence of volumes) nor on flag/oper data; conflating the senses is a notation violation.
-- **$\ell$** = Wenzl principal-specialisation length (number of points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). We renamed this from $r_W$ in the May 2026 notation cleanup. Old code/docs using $r_W$ should migrate to $\ell$.
+- **$\ell$** = Wenzl principal-specialisation length (number of points in $s_\lambda(1, q^2, \ldots, q^{2(\ell-1)})$). Older text writes $r_W$ for this quantity.
 - We do not use numerical $q \approx 1.110$ (or any specific value of the substrate parameter) outside the introduction, Chapter 8 (Information Theory, for falsifiability computations), and Chapter 11 (Observations). Geometry chapters use symbolic $q$.
 
 **Approximation convention (derived / observed values).** Numerical values derived from the substrate parameter $q_0$ or compared to experimental data use $\approx$ (or $\simeq$), never $=$, unless an explicit error term is present. Exact algebraic identities (e.g. $c_q = 1/(q-1)$) use $=$ since they hold for all $q$.
@@ -87,7 +87,7 @@ Convention: $\mathfrak{D}_K = \hbar / (\text{lifetime of } K)$. Subscripts: $\ma
 
 The category $\mathbf{Arch}$ is the target of $\tau$, not the name of a functor. When authoring, we say which one: "$\tau$ specialised to $\mathbf{Arch}$" or "the $R \mapsto \mathbb{R}$ realisation". We never write "the archimedean realisation" without context.
 
-**Pinning $\tau$'s codomain — one functor, several de-enriched levels.** The canonical fibre functor is $\tau \colon \mathbf{C} \to \mathbf{Arch}$. Where the corpus writes $\tau$ into a *different* target, it means a **composite** with $\tau$, not a rival functor:
+**Pinning $\tau$'s codomain — one functor, several de-enriched levels.** The canonical fibre functor is $\tau \colon \mathbf{C} \to \mathbf{Arch}$. Where $\tau$ is written into a *different* target, it means a **composite** with $\tau$, not a rival functor:
 
 | Written as | Means | Level |
 |---|---|---|
@@ -108,7 +108,7 @@ These are genuine functors (they act on morphisms). What is **not** a functor is
 | $B_{\mathrm{lin}}$ | $Q_\beta(n)\,(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}}))$ | **linear-truncation** production | canonical compute |
 | $B_{\mathrm{depth}}$ | $\sum_k \alpha_k \Phi_k$ | depth-stratified tower | default; empirical $\alpha_k$ |
 | $B_{\mathrm{magic}}$ | $2\,m_e A\,\mathrm{Vol}(L6a4)$ (⁴He) | flat magic-$A$ | ⁴He canonical |
-| $B_\lambda$ | $m_e \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$ | per-partition | $\Delta_\lambda$-gated |
+| $B_\lambda$ | $m_e \sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$ | per-partition | open (the $\Delta_\lambda$ magnitude) |
 
 **Critical distinction — $B_{\mathrm{sym}}$ (exact) vs $B_{\mathrm{lin}}$ (linear).** $B_{\mathrm{lin}}$ is the linearization of $B_{\mathrm{sym}}$ (Kashaev $\mathrm{tr}_M \sim \exp(\mathrm{Vol})$; the scalar $\Delta\mathrm{tr}$ is the first-order term). They are NOT interchangeable. Their ratio is the binding deficit
 $$ B_{\mathrm{sym}} / B_{\mathrm{lin}} \;\approx\; q_0^{\,5(2A-1)}, $$
@@ -142,7 +142,7 @@ third is the observable.
   $\mathrm{tr}_M(a) \neq \mathrm{tr}(L_a)$: the Markov trace is the *quantum*
   trace, not the regular-representation trace.
 
-**Owner ruling (2026-07-12) — $\mathcal{M}$ = endomorphism; the mass functional is $\mathfrak{m}$.** The glyph $\mathcal{M}$ is currently overloaded **three** ways across the corpus, which is forbidden:
+**Convention — $\mathcal{M}$ = endomorphism; the mass functional is $\mathfrak{m}$.** The glyph $\mathcal{M}$ is overloaded **three** ways in the literature and in earlier text, which is forbidden here:
 
 | Sense | Object | Type | Canonical glyph |
 |---|---|---|---|
@@ -150,9 +150,9 @@ third is the observable.
 | **mass functional** | Skein-module map $\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (evaluates a knot class to its mass) | functional | **$\mathfrak{m}$** (migrate ← $\mathcal{M}$) |
 | **scattering amplitude** | transition matrix element $\lvert\mathcal{M}_q\rvert^2$ (e.g. [`trace-ratio-observable`](../observations/trace-ratio-observable.md)) | scalar amplitude | **$\mathcal{M}_q$** (distinct; unaffected) |
 
-Ruling: reserve $\mathcal{M}$ (calligraphic operator) for the **endomorphism**; the Skein **functional** becomes $\mathfrak{m}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (fraktur observable register, matching the mass scalar $\mathfrak{m}$ it outputs); the QFT **amplitude** $\mathcal{M}_q$ keeps its subscripted glyph. The Skein-module entry above is updated to $\mathfrak{m}$ accordingly.
+Convention: reserve $\mathcal{M}$ (calligraphic operator) for the **endomorphism**; the Skein **functional** becomes $\mathfrak{m}\colon\mathrm{Sk}_q\to\mathbb{R}_{\geq0}$ (fraktur observable register, matching the mass scalar $\mathfrak{m}$ it outputs); the QFT **amplitude** $\mathcal{M}_q$ keeps its subscripted glyph. The Skein-module entry above is updated to $\mathfrak{m}$ accordingly.
 
-> **Scope of the ruling.** The rename applies to the functional sense only. The
+> **Scope of the convention.** The rename applies to the functional sense only. The
 > amplitude sense $\lvert\mathcal{M}_q\rvert^2$ and the endomorphism sense
 > $\mathcal{M}(K)$ keep $\mathcal{M}$, so the two must be distinguished case by
 > case rather than by a blanket substitution; some earlier text still uses
@@ -180,13 +180,12 @@ which is **forbidden**:
   `QOU.QBeta.FaddeevModularDouble` ($\Phi_b$). The legacy Lean class
   `QOU.Machinery.FaddeevQuantumDilogContext` names the **compact** $\Phi_q$
   (kept for `lean.ref` compatibility; its docstring flags this).
-- **Residual collision — follow-up cleanup:** a few Askey-two-saddle prose
-  sites use the single glyph "$\Phi_q$" where context makes clear the
-  non-compact regulator is meant. Resolving that (a distinct glyph, or always
-  writing $\Phi_b$) is a follow-up notation decision; until then, disambiguate
-  in surrounding prose.
+- **Residual collision.** A few Askey-two-saddle passages write the single
+  glyph "$\Phi_q$" where context makes clear the non-compact regulator is
+  meant. That collision is unresolved: no distinct glyph is reserved for it
+  here, so disambiguate from the surrounding prose.
 
-## Photon $\gamma$ vs the unknot $0_1$ (STRICT — recurring-mistake rule, 2026-08-01)
+## Photon $\gamma$ vs the unknot $0_1$
 
 The photon and the unknot are **different objects** and must never be
 identified:

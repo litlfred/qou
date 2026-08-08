@@ -1310,6 +1310,16 @@
           "id": "local/branch-jargon-rereview",
           "agent_skill": "local/one-voice-audit"
         }
+      },
+      {
+        "result": "pass",
+        "notes": "Re-reviewed under the added scope, which splits workplan uses of \"gate\" from mathematical ones. The status-flag glossary read \"*open* (open gate)\"; it now reads \"*open* (open question, no derivation yet)\", which is what the tier means. L1 and L2 are left in place: this block defines them here as the two precision legs, so they are not roadmap tiers.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
       }
     ]
   },

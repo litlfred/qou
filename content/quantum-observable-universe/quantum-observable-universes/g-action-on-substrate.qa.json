@@ -15,8 +15,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: the closing section is still headed \"### Audit impact\" — \"Resolving this residual will systematically clear a significant cluster of structural dependencies.\" \"Audit\" here is the project's QA process and \"cluster of structural dependencies\" its dependency graph, not a mathematical verification.",
+        "result": "pass",
+        "notes": "Fixed. The \"### Audit impact\" heading is now \"### What rests on this residual\", and \"Resolving this residual will systematically clear a significant cluster of structural dependencies\" is now \"A significant number of the results below are conditional on resolving this residual\" — the same dependency claim, stated as mathematics rather than as QA-process progress. The Table 3 cross-reference, the -1.81% residual and the three candidate physical origins are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

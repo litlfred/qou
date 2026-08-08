@@ -16,7 +16,7 @@ blocks that need CPT-closure as a hypothesis take this class as
 `[CPTClosure]`.
 -/
 
-namespace QOU.ParticleInteractions.CPTClosure
+namespace QOU.ParticleInteractions
 
 /-- The CPT-closure compound conjecture, as a class.
 
@@ -52,4 +52,4 @@ def cpt_closure [inst : CPTClosure] :
   -- Ref: [wigner1937], [jones1987], [kassel1995]
   inst.cpt_trace_preserved
 
-end QOU.ParticleInteractions.CPTClosure
+end QOU.ParticleInteractions

@@ -10,7 +10,7 @@ This is the precise sense in which the $q$-dilogarithm is **forced by the rigid-
 
 ## Two guises of the one pentagon
 
-The same Mac Lane coherence already appears in the corpus in two formalized guises, which this proposition records as one law:
+The same Mac Lane coherence has already appeared above in two formalized guises, which this proposition records as one law:
 
 - **Cochain / 3-cocycle guise.** The additive twist associator $\alpha = dF$ satisfies the pentagon automatically because $d^2 = 0$ (`QOU.BringsSurface.PentagonTwist.assoc_pentagon`, sorry-free).
 - **Dilogarithm five-term guise.** The `pentagon` field of the $q$-dilogarithm datum, whose operator form is the Faddeev–Kashaev pentagon $\Phi(\mathsf P)\Phi(\mathsf Q) = \Phi(\mathsf Q)\Phi(\mathsf P+\mathsf Q)\Phi(\mathsf P)$ ([`rem:q-dilogarithm-pentagon-associator`](q-dilogarithm-pentagon-associator.md)).

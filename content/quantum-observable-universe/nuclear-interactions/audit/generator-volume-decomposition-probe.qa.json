@@ -11,8 +11,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: \"What survives from this probe is the **shape** of $\\Delta V_i$ across generators and the sign of $\\Delta E$ --- not the magnitude of the totals.\" \"This probe\" names a branch investigation rather than a piece of the argument. The same paragraph also defers to a repository convention: \"which carries the saturation the raw generator sum lacks (per the canonical-mass guardrail)\".",
+        "result": "pass",
+        "notes": "\"What survives from this probe\" replaced by \"What survives\"; the shape/sign result and its scope caveat are unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

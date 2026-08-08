@@ -101,7 +101,7 @@ The class asserts nothing provable-outright; no instance is fabricated. This
 matches the conjectural-class pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
-## The bar-odd keystone: argument identification to $S$
+## The bar-odd open item: argument identification to $S$
 
 The equivalence above is the **bar-even** face of the correspondence:
 the asymptotic recovers the real volume $D(z) = \mathrm{Vol}_{\mathrm{hyp}}$,
@@ -109,7 +109,7 @@ which for the amphichiral $4_1$ supplies the $-\mathrm{Vol}(4_1)$ part of
 the $Q_\beta$ coefficient $c_3$. Its **bar-odd** companion is the
 anchor-dependent leak $S = c_3 + \mathrm{Vol}(4_1)$, carried not by the
 compact $\Phi_q$ but by the Faddeev non-compact $\Phi_b$
-(modular double). The keystone open item is the
+(modular double). The open item is the
 **argument-identification map**: the structural map $q_0 \mapsto z(q_0)$
 — the substrate-to-meridian-holonomy map supplied by the same
 pole-to-cusp matching as items 1–2 — such that the fibre-branch Faddeev
@@ -187,7 +187,7 @@ identity; no statement here or in the Lean carriers above
 assumes it. The channel is carried explicitly as the class
 `SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity
 $S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and the composition with the
-keystone is derived, not assumed: `phase_eq_im_deformed_volume`,
+argument-identification map is derived, not assumed: `phase_eq_im_deformed_volume`,
 `phiB_eq_cs_phase`, and `exists_cs_vanishing` (the sign flip of $S$
 forces a substrate point with vanishing deformed Chern–Simons part).
 

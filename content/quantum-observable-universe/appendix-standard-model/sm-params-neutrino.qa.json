@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: \"The generation-counting problem (why three copies?) is prior to every parameter in this table and is nowhere addressed in the corpus\". Should name this paper or the framework.",
+        "result": "pass",
+        "notes": "Fixed. \"nowhere addressed in the corpus\" is now \"nowhere addressed in this paper\". The generation-counting problem is still stated as prior to every parameter in the table and still open.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

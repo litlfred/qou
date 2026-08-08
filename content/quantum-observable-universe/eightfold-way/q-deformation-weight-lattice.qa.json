@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: \"a theorem of Lusztig/Kashiwara, cited here and \\emph{not} formalised in this corpus\" and \"These follow from the Drinfeld--Jimbo construction and are cited, not machine-checked in this corpus\". \"This corpus\" is the repository's content set; the reader's object is this paper.",
+        "result": "pass",
+        "notes": "\"in this corpus\" replaced — the citations now read \"cited here, not machine-checked\", which says the same thing about the mathematics without naming a repository.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

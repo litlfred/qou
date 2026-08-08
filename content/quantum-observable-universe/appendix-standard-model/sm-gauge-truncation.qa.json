@@ -13,8 +13,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "Unchanged: \"For the $\\mathrm{SU}(3)$ factor no categorical derivation exists; the corpus contains octonion and colour-complex-structure fragments\". \"The corpus\" is the repository's block store, not something the reader has.",
+        "result": "pass",
+        "notes": "Fixed. \"the corpus contains octonion and colour-complex-structure fragments\" is now \"what is available here is octonion and colour-complex-structure fragments\". The admission is intact: no categorical derivation of the SU(3) factor exists, and no construction of an SU(3) action from the three-strand structure.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

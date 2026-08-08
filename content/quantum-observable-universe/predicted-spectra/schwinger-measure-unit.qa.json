@@ -5,8 +5,8 @@
   "criteria": {
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"audit\" use and the \"this block\" deictic are gone, but three leaks remain. The repo role stands in for the premises' own authority: \"and, separately, by the **owner premises** P1 (substrate scale-freedom) and P2 (proper time as computational time) stated there\" -- the sibling conjecture calls the same pair \"The framework premises\". An agent scratch artifact is the evidence: \"Empirical support: **the exploration probe's** exact checks\". And the platform schema term appears in the notation paragraph: \"the notation register reserves plain $c$ for color ... so **content blocks** use $\\varsigma$\".",
+        "result": "pass",
+        "notes": "Fixed, all three leaks. \"the owner premises P1 ... and P2\" -> \"the framework premises P1 ... and P2\", matching the sibling conjecture. \"Empirical support: the exploration probe's exact checks\" -> \"Empirical support is exact rather than numerical\", keeping the moment identity at orders 1 through 6 and the pin-invariance falsifier. \"so content blocks use $\\varsigma$\" -> \"so this paper uses $\\varsigma$\". The concession that canonicity is not proved is untouched.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

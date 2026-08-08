@@ -1302,8 +1302,8 @@
     ],
     "voice-branch-jargon": [
       {
-        "result": "fail",
-        "notes": "The \"D3/D23\" duality-tracker ids are gone from the Step 6 row, which now reads \"Frobenius pairing $\\langle a,b\\rangle_F$ + self-duality $\\Psi = S^2 = \\mathrm{id}$\". But the branch decision label in the sidecar list remains: \"1. **$\\Delta_\\lambda$ closure ansätze** (**Option E**). The per-partition density at each isotope; currently open.\" \"Option E\" names nothing the paper defines.",
+        "result": "pass",
+        "notes": "Fixed. The branch decision label \"(Option E)\" is dropped from the Delta_lambda closure ansätze entry, which now reads as a plain sidecar heading. \"currently open\" is unchanged.",
         "reviewed_at": "2026-08-08T12:00:00Z",
         "reviewer": {
           "kind": "agent",

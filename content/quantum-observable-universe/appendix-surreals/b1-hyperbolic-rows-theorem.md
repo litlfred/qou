@@ -2,7 +2,7 @@
 
 Beyond the figure-8 row and the seven torus-knot rows, the depth correspondence ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence)) holds for additional Bring-embeddable hyperbolic-knot rows, conditional on Volume Conjecture discharges.
 
-See [Table 1](#tbl:b1-hyperbolic-rows-theorem-table1-data). (Twist knot $K_n$ has $n$ half-twists; $K_2 = 4_1$ is the figure-8. Genus of $K_n$ is 1 for all $n$, so all twist knots are Bring-embeddable.) Explicit cell pairing and Volume Conjecture discharge steps for the Borromean rings and Whitehead link are recorded in the `audit/b1-hyperbolic-rows-theorem-audit` block.
+See [Table 1](#tbl:b1-hyperbolic-rows-theorem-table1-data). (Twist knot $K_n$ has $n$ half-twists; $K_2 = 4_1$ is the figure-8. Genus of $K_n$ is 1 for all $n$, so all twist knots are Bring-embeddable.) For the Borromean rings and the Whitehead link the cell pairing and the Volume Conjecture discharge are explicit: over $F = \mathbb{Q}(i)$ the dominant cell pairs by Markov trace with $\mathrm{Li}_2^q(i)$, giving $\mathrm{Vol}(L_{6a4}) = 8G$ and $\mathrm{Vol}(L5a1) = 4G$ with $G$ Catalan's constant, and van der Veen's coloured-Jones asymptotics discharge the Volume Conjecture at both links.
 
 For any hyperbolic Bring-embeddable knot or link $K$ with shape parameter in some number field $F = \mathbb{Q}(z_K)$:
 - **Step 1 (Bloch–Suslin)** is unconditionally established for any $F$.
