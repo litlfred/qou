@@ -695,6 +695,15 @@ class WitnessBuilder:
         ``_git_file_sha`` helpers from outside this module.
         """
         spath = str(script_path)
+        # `scriptFile` FIRST, and with the same basename convention `build()`
+        # uses (line ~784): it is the key every anchor audit uses to map a
+        # witness back to its producer. Without it a stamped `q0Anchor` is
+        # unattributable, so the stamp records a pin no sweep can check — and
+        # since these callers rebuild their payload each run, a `scriptFile`
+        # that had only been BACKFILLED disappears on regeneration. Measured:
+        # stamping 13 producers without this dropped 4 witnesses out of the
+        # checkable set even though their pins were correctly written.
+        payload["scriptFile"] = Path(spath).name
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()

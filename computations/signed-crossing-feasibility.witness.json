@@ -2,7 +2,7 @@
   "computation": "signed-crossing-feasibility",
   "kind": "exploratory-probe",
   "content_block": "conj:brane-tower-z-habiro / step-9 binding",
-  "engine": "mpmath-exact",
+  "engine": "python",
   "hypothesis": "ILP-with-chirality: signed integer crossing assignment of the canonical complete-graph bonds",
   "constants": {
     "q0": "1.1099785955573347198997632204832250266562084087802",
@@ -19,7 +19,7 @@
     "n_close_with_edge_absence_of_4": 1,
     "deuteron_pn_bond_count_needed": "0.57191327489729785123527090678756852407598399242699",
     "verdict": "signed-ILP-pure-chirality-refuted",
-    "note": "pure chirality (signs only, canonical graph fixed) closes 0/4; adding edge absence (= edge selection, the fitting freedom) closes 1/4 — only 3He, via selection not signs. Deuteron needs 0.572 pn bonds (fractional)."
+    "note": "pure chirality (signs only, canonical graph fixed) closes 0/4; adding edge absence (= edge selection, the fitting freedom) closes 1/4 \u2014 only 3He, via selection not signs. Deuteron needs 0.572 pn bonds (fractional)."
   },
   "atoms": [
     {
@@ -127,12 +127,12 @@
       "ame-2020-binding-energies.witness.json"
     ]
   },
-  "scriptHash": "e1bd6586cc3f",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "computedAt": "2026-07-18T19:19:23.301804+00:00",
-  "durationMs": 0,
   "scriptFile": "signed_crossing_feasibility_probe.py",
+  "scriptHash": "63358795a98f",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "commitSha": "69aa1178325e24183d2b870ae4599eb18fd1a352",
+  "computedAt": "2026-08-08T23:21:54.062739+00:00",
+  "durationMs": 0,
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

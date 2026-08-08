@@ -98,3 +98,67 @@ a DECL_MISMATCH the next regeneration cannot clear. Held out mechanically in
 Order of operations for this one: give it the `stamp_staleness_metadata` fix
 this bean prescribes → regenerate (its q₀ becomes proton, honestly) → then
 declare `physical_proton`.
+
+
+## RESOLVED 2026-08-08 — all 14 now PRODUCE their pin
+
+`computations/audits/q0_backfilled_pin_fix.py` (new) applies the
+`stamp_staleness_metadata` recipe to every backfilled pin, with the safety check
+that has to come first.
+
+### The 14 confirmed by an independent test
+
+"Writes via `json.dump`" is the wrong detector — it flags **46** witnesses here,
+most of which do reach a builder somewhere. The property that matters is whether
+the PRODUCER ITSELF maintains the pin:
+
+    produces-pin  the source mentions `q0Anchor`          3
+    via-builder   calls WitnessBuilder/wrap_legacy/stamp  559
+    BACKFILLED    neither — the pin is unmaintained        14
+
+That returns **exactly 14**, reproducing this bean's count by a different route.
+
+### 🛑 The check that had to come first
+
+`stamp_staleness_metadata` auto-resolves the anchor through `resolve_q0_anchor`,
+which **defaults to proton for an undeclared stem**. Stamping a muon-recorded
+witness whose producer is undeclared would silently FLIP it to proton —
+destroying a correct label under the banner of protecting it, the same trap that
+broke the first `witness.py` preserve-forward fix.
+
+Checked before editing: 13 of 14 were safe (every muon-pinned one is already
+declared `ideal_muon`, so the stamp reproduces its label). The 14th,
+`zhabiro_phiq_production_crosscheck`, was refused by the guard and handled as an
+**evidenced correction** instead: its committed `q0Value` is the MUON literal
+under a proton `q0_source`, i.e. that witness was generated through the
+cross-layer fallback removed the same day. Its muon pin records the DEFECT, not
+an intent, so proton is right — declared `physical_proton` and listed in the
+tool's `ACCEPT_FLIP` with that reasoning inline, rather than hand-edited.
+
+### A gap in `stamp_staleness_metadata` itself, found by the coverage number
+
+After stamping 13 producers, checkable coverage went **DOWN** (545 → 542). The
+helper sets `scriptHash`, `commitSha`, `engine`, `computedAt`, `q0Anchor`… but
+**not `scriptFile`** — the key every anchor audit uses to map a witness back to
+its producer. These callers rebuild their payload each run, so a `scriptFile`
+that had itself only been backfilled vanished on regeneration: 4 witnesses got a
+correctly-written pin that nothing could attribute.
+
+Fixed in `witness.py`: `scriptFile` is now stamped first, with the same basename
+convention `build()` uses. A pin nothing can attribute is barely better than no
+pin. 33/33 substrate tests pass.
+
+### Result
+
+    14/14 pins now PRODUCED (verified by re-running each and confirming survival)
+    coverage 545 -> 546 checkable, DECL_MISMATCH 0
+    12 witnesses committed; every moved field explained (0 UNEXPLAINED),
+    no assertion-state changes
+
+`lw2_c2_independent_hopf_test_attempt` cannot run from its own directory here
+(`ModuleNotFoundError: q_parameter` — it does not add `computations/` to
+`sys.path`). That fails identically at HEAD, so it is a pre-existing packaging
+quirk, not this change; verified instead with `PYTHONPATH` set, and its pin
+survives.
+
+Two producers were reverted rather than committed — see qou-pin6.

@@ -94,3 +94,41 @@ be that one of THEM is the stale side.
 
 Held out mechanically in `computations/audits/q0_undetermined_triage.py`
 (`HOLD_OUT`), with this evidence inline.
+
+
+## THIRD AND FOURTH INSTANCES 2026-08-08 — surfaced by the qou-pin5 stamping work
+
+Adding a `stamp_staleness_metadata` call cannot change a computed value — it
+mutates metadata keys on an already-built payload. So when regeneration moved
+values in two of the 14, that movement was pre-existing staleness being exposed.
+
+Confirmed rather than argued: reverted the edit, ran the **unmodified HEAD**
+producer, and got the same moved values.
+
+    option_e_probe1_derive_1plusq_over_2
+        decisive_fit_test.required_factor_muon
+            committed 1.0537173577644955…  HEAD rerun 1.0535280770898103…
+        residual_muon_pct    0.12070979 -> 0.13869784   (|Δrel| 1.3e-01)
+        residual_proton_pct  0.12069868 -> 0.13868673
+      Note this is a muon-vs-proton COMPARISON probe (the class the owner ruled
+      legitimate), so both layers moving together points at a shared upstream
+      input, not at an anchor question.
+
+    rho_w_crystal_vertex_trace
+        by_partition[0].chi_lambda_cached
+            committed 1.5597586581034162…  HEAD rerun 1.5598702809528043…
+        by_partition[1].chi_lambda_cached
+            committed 3.2158908784733051…  HEAD rerun 3.2163178980816625…
+        crosscheck_abs_err moves by |Δrel| 1.0 — the field whose whole job is to
+        detect exactly this.
+      The name says `chi_lambda_CACHED`: the likely story is a χ cache that was
+      rebuilt while this witness was not.
+
+Both witnesses were REVERTED; the stamping code fix was kept. That is the
+conservative combination: the committed witness keeps its (correct, backfilled)
+pin and no staleness is swept in, while the next deliberate regeneration will
+produce the pin properly.
+
+Next step for both: find what moved the upstream value, decide which side is
+right, regenerate as its own change. `crosscheck_abs_err` in the second one is a
+built-in oracle — read it first.

@@ -277,6 +277,26 @@ def main() -> int:
     }
 
     out = HERE / "lw2-c2-independent-hopf-test-attempt.witness.json"
+    # Stamp the q0 pin from the producer itself (bean qou-pin5). This witness
+    # is written with a raw json.dump rather than WitnessBuilder.save(), so
+    # neither build()'s stamping nor save()'s preserve-forward ever runs — any
+    # pin it carried had been BACKFILLED by a sweep, and the first regeneration
+    # after that backfill drops it.
+    try:
+        try:
+            from qou_substrate.witness import WitnessBuilder as _WB
+        except ImportError:
+            import sys as _s
+            from pathlib import Path as _P
+            for _anc in _P(__file__).resolve().parents:
+                _c = _anc / "tools" / "qou-substrate" / "python"
+                if _c.is_dir():
+                    _s.path.insert(0, str(_c))
+                    break
+            from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(witness, script_path=__file__)
+    except Exception as _exc:  # noqa: BLE001
+        print(f"  [warn] q0/staleness metadata NOT stamped: {_exc!r}")
     out.write_text(json.dumps(witness, indent=2) + "\n")
 
     print("=" * 78)
