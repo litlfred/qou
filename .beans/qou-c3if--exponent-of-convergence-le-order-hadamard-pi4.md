@@ -10,7 +10,7 @@ tags:
     - mathlib-gap
     - paper-qou
 created_at: 2026-08-08T03:30:00Z
-updated_at: 2026-08-08T03:30:00Z
+updated_at: 2026-08-08T07:10:00Z
 parent: qou-v4if
 ---
 
@@ -69,3 +69,47 @@ Also loose: no `0 < A` is required, so `A <= 0` forces `f == 0`. Harmless where
 that `phiBProd` satisfies `IsEntireOfOrderLE` and not merely "order <= rho". If
 it does not, the definition must be relaxed to the eps-form FIRST, and every
 downstream statement re-checked.
+
+---
+
+## 2026-08-08 — the promoted action item was run. The answer is worse than "no".
+
+The roast above ended: "before investing in PI-4/PI-5, verify that `phiBProd`
+satisfies `IsEntireOfOrderLE` and not merely order <= rho."
+
+**It satisfies neither. `phiBProd` is not entire at all.**
+
+`QOU.MathlibExt.PhiBProd.phiBProd` is defined as a RATIO of two infinite
+products, and the `k = 0` DENOMINATOR factor vanishes at an explicit point, for
+EVERY `b /= 0` — including the substrate b. Proved sorry-free in
+`QOU/Mathlib/HadamardApplicability.lean`:
+
+    denFactor_eq_zero        denFactor b ((I*b/2)*(1 + 1/b^2)) 0 = 0
+    denFactor_eq_zero_shift  ... and at every dual-period translate + m*I*b
+
+`IsEntireOfOrderLE f rho` has `Differentiable C f` as its FIRST conjunct. So
+`IsEntireOfOrderLE (phiBProd b) rho` is unavailable for every rho, and the
+question of finite-type-vs-order-<=-rho — the whole point of the roast above —
+never arises. The stronger/weaker hypothesis debate was downstream of an
+assumption that fails one step earlier.
+
+WHAT IS AND IS NOT PROVED, because the distinction matters:
+  PROVED     a denominator FACTOR vanishes, explicitly, for every b /= 0.
+  NOT PROVED that the denominator PRODUCT vanishes there (needs the
+             multipliability hypotheses phiBProd's own theorems carry), nor that
+             the numerator does not vanish to matching order and make the
+             singularity removable. Neither is expected to fail; neither is
+             checked. Hence the conclusion is stated as "entirety cannot be
+             ASSUMED", not "phiBProd has a pole".
+
+LIKELY REPAIR, recorded so it is not re-derived: each numFactor/denFactor is
+entire in z, and for Im b^2 > 0 both products converge locally uniformly, so the
+NUMERATOR and DENOMINATOR are separately entire. Hadamard applies to each of
+them, not to their ratio. Whether the minimality principle survives that
+reformulation is an open question, not a translation.
+
+CONSEQUENCE FOR THIS BEAN AND FOR qou-v4if. PI-4 and PI-5 are not blocked — they
+are fine theorems about entire functions — but the MOTIVATION stated at the top
+of HadamardFactorization.lean does not connect them to phiBProd. Anyone
+resuming should fix the motivation (or the target) BEFORE proving more of the
+chain, or the chain will be finished and still not apply.

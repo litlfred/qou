@@ -39,6 +39,10 @@ import QOU.OneLoopEdgeLattice
 -- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
 -- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
 import QOU.Mathlib.BorelCaratheodory
+-- Scoping check for the Hadamard chain: phiBProd is a RATIO whose denominator
+-- factor vanishes at an explicit point for every b /= 0, so it is not entire and
+-- IsEntireOfOrderLE cannot be assumed for it. Sorry-free.
+import QOU.Mathlib.HadamardApplicability
 -- Per Copilot review: `QOU.MathlibExt.SDPRankEquality` is kept
 -- OUT of the top-level umbrella while it still has `sorry`
 -- placeholders (rank-nullity Mathlib API + Goldman-Tucker
