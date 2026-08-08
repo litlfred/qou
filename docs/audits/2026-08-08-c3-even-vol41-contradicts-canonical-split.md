@@ -191,6 +191,20 @@ geometrically-backed object to the definitional one. `SLeakZeroCrossing.lean`
 carries a symbol-collision guard, so the collision is known — but the capstone
 still crosses it, and KC21 inherits the same vocabulary.
 
+> **THIRD NARROWING (2026-08-08).** The collision is **already guarded in the Lean
+> file itself**. `SLeakZeroCrossing.lean` has carried, since before this audit, a
+> section headed *"The object (notation-collision guard, AGENTS.md §'attributes do
+> not transfer')"* stating that `S_leak` is `O(0.01)` and sign-flips, is
+> **distinct** from `QOU.QBeta.SRigidity.S = Q_β/E₀` which is `O(900)` and does
+> not, and *"Do not conflate the two symbols."* My own `qou-qb8f` bean recorded
+> that guard on the morning of the same day — and I then presented the collision
+> as this audit's unanticipated finding anyway. Withdrawn.
+>
+> What is left, and it is narrow: the **2026-07-12 capstone document** crosses the
+> collision the Lean file guards — its header and numbers are `S_leak` (≈0.0097)
+> while its result 1 says `S = Q_β/E₀` (≈887). A documentation defect in one audit
+> doc. That is the whole of this audit's original content.
+>
 > **Partly anticipated — cite, do not claim.** The `S = h·D(ũ)` half of this was
 > already re-scoped by
 > [`qbeta-c3-qstar-k31-repin.witness.json`](../../computations/qbeta/qbeta-c3-qstar-k31-repin.witness.json):
