@@ -2,12 +2,44 @@
   Hadamard factorization for entire functions of finite order — the Mathlib
   v4.24.0 gap (grep-confirmed absent).
 
-  MOTIVATION (epic qou-lbth, brick PI-1; pentagon-infra blocker). The residual
+  ⚠ MOTIVATION RETRACTED 2026-08-08 — THIS CHAIN IS NOT THE ROUTE TO
+  `uniqueUpToScalar`. See `docs/audits/2026-08-08-hadamard-vs-liouville-route.md`.
+
+  Two things are wrong with the motivation as stated below.
+
+  (1) `phiBProd` is NOT ENTIRE, so `IsEntireOfOrderLE (phiBProd b) ρ` — whose
+      first conjunct is `Differentiable ℂ` — is unavailable at every `ρ`. It is a
+      RATIO of two products whose denominator factor vanishes at an explicit
+      point for every `b ≠ 0` (`QOU.Mathlib.HadamardApplicability.denFactor_eq_zero`,
+      sorry-free). Its two HALVES are entire and Hadamard applies to those
+      (`differentiable_numProd`, `differentiable_denProd`), but that is a
+      different statement from the one below.
+
+  (2) More decisively, the target does not need this chain at all.
+      `QOU.MathlibExt.DoublyPeriodicLiouville` is SORRY-FREE and already reduces
+      `uniqueUpToScalar` to two smaller named inputs — `hratio` (bean qou-cons:
+      the ratio of two FaddeevPhi solutions is entire, their divisors coinciding)
+      and `hibinv` (bean qou-rp5f) — with the doubly-periodic ⇒ constant step
+      PROVED. Bean qou-lv34 calls that "the only honest route". Neither remaining
+      input is Hadamard factorization, and neither is made easier by it.
+
+      That file also states, correctly and in prose, that `Φ_b` "is meromorphic
+      with a genuine zero/pole lattice" — a sibling file in this repository
+      contradicted the motivation below before it was written.
+
+  WHAT IS NOT RETRACTED: the bricks. PI-2 (`WeierstrassFactorEstimate`), PI-3
+  (`multipliable_canonicalProduct`), `BorelCaratheodory`, and the entirety
+  results are correct, sorry-free and reusable Mathlib-gap infrastructure. They
+  simply have no current consumer. Do not finish PI-4/PI-5 on the justification
+  below; name a target that actually needs canonical products first.
+
+  ORIGINAL MOTIVATION, kept for history (epic qou-lbth, brick PI-1;
+  pentagon-infra blocker). The residual
   leg of `PentagonRigidity.uniqueUpToScalar` reduces (PR #4120 +
   `MeromorphicSameOrder.lean`) to the analytic fact that the canonical minimal
   Faddeev solution `phiBProd` is selected among all `phiBProd·(elliptic)`
-  multiples by a growth/minimality principle. That principle is a special case
-  of the **Hadamard factorization theorem**: an entire function of finite order
+  multiples by a growth/minimality principle. That principle was claimed to be a
+  special case of the **Hadamard factorization theorem**: an entire function of finite order
   `ρ` equals `exp(g)·∏ₙ Eₚ(z/aₙ)`, a product of Weierstrass primary factors over
   its zeros `aₙ` times the exponential of a polynomial `g` of degree `≤ ρ`, with
   genus `p ≤ ρ`. Mathlib has Jensen's formula, the Nevanlinna value-distribution
