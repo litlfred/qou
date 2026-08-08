@@ -268,9 +268,12 @@ disambiguates a parity claim; name the half instead.
 That last usage carries its own hazard: writing the bar involution as
 "$\sigma \colon q \mapsto q^{-1}$" states only the **coefficient half**, and a
 reader who takes it as the definition will compute the wrong parity for
-anything living inside $H_n(q)$. Three corpus claims have been corrected for
-exactly this — the crossing-energy channels, the $V_\lambda \leftrightarrow
-V_{\lambda'}$ intertwiner (which is the sign twist $\sigma_i \mapsto
--\sigma_i^{-1}$, not the bar involution), and the Markov parameter $z$ (whose
-bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$). When the
-object being graded lies in the algebra, use both halves.
+anything living inside $H_n(q)$. Three corpus claims have been caught by
+exactly this slip: the crossing-energy channels and the $V_\lambda
+\leftrightarrow V_{\lambda'}$ intertwiner (which is the sign twist $\sigma_i
+\mapsto -\sigma_i^{-1}$, not the bar involution) are corrected here, and the
+argument from bar-invariance for the Markov parameter $z$ is withdrawn — its
+bar-partner is $z - h$, not $z$, because M3 contains $\sigma_n$. (The $z$
+*convention* itself is unsettled and is not changed here; see
+[`def:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md).)
+When the object being graded lies in the algebra, use both halves.
