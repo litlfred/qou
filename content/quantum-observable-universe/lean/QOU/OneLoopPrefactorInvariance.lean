@@ -52,6 +52,7 @@
 -/
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
 namespace QOU.OneLoopPrefactorInvariance
 
@@ -208,5 +209,102 @@ theorem vdv_c_sigma_iff_tau {t : ℝ} (ht : 0 < t) (n : ℕ) (m : ℝ)
     field_simp
     norm_num
   rw [law_inverts ht hc, hsq, hval]
+
+/-! ### The saddle condition, and what it forces
+
+The knot-side derivation runs Laplace's method on Kashaev's one-variable sum
+`⟨4₁⟩_N = Σ_k |(q;q)_k|²`, whose logarithm expands as
+
+    log g_k = −(2N/π)·Λ(θ) + log(2N sin θ) + O(1/N),      θ = kπ/N
+
+with `Λ` the Lobachevsky function.  Three quantities come out of the saddle:
+
+  * the SADDLE CONDITION `Λ'(θ) = −log(2 sin θ) = 0`, i.e. `2 sin θ* = 1`;
+  * the STIRLING factor `2 sin θ*`, from the subleading term;
+  * the HESSIAN `|Λ''(θ*)| = |cot θ*|`, from the Gaussian integral,
+
+giving `c_σ = 2 sin θ* · |cot θ*|^{−1/2}` and `|τ_DG| = |cot θ*| / 2`.
+
+WHAT IS AND IS NOT PROVED HERE.  The analytic input — the Euler–Maclaurin
+expansion of `s_k` and Laplace's method — is ASSUMED, as hypotheses `hc` and
+`hτ` below.  It is not formalised and Mathlib has no usable form of it.  What is
+proved is the algebra downstream of it, which is where the whole surprise lives:
+
+  * `saddle_forces_cot` — the saddle condition plus `θ ∈ (π/2, π)` pins
+    `cot θ* = −√3`.  Nothing about `4₁` is used; one summation variable is the
+    only input.
+  * `c_sq_sqrt_three_of_saddle` and `c_pow_four_eq_third` — hence `c_σ⁴ = 1/3`.
+    In one variable the saddle condition IS `2 sin θ* = 1`, so the Stirling
+    factor is forced to `1` and `c_σ = 3^{−1/4}` with no freedom at all.
+    `3^{−1/4}` is a property of "one summation variable", not of `4₁`.
+  * `k_sq_eq_half_of_saddle` — the sharpest of the three, and the reason this
+    section exists.  `k := c_σ·|τ|^{1/2}` satisfies `k² = 1/2` **using only the
+    saddle condition**: the Hessian cancels between `c_σ` and `τ` before it is
+    ever evaluated, so `k = 2^{−1/2}` never depended on `cot θ* = −√3`, on the
+    trace field, or on which manifold this is.  The corpus calibrated `k` on
+    `4₁` for a long time; it was forced by the shape of the saddle.
+
+-- Ref: [manuscript] computations/probes/one_loop_c_sigma_tetrahedral_probe.py
+-- Ref: [manuscript] docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md
+-/
+
+/-- **The saddle condition pins the cotangent.**  On `(π/2, π)`, the only
+solution of `2 sin θ = 1` has `cot θ = −√3`. -/
+theorem saddle_forces_cot {θ : ℝ} (hθ : θ ∈ Set.Ioo (π / 2) π)
+    (hsad : 2 * Real.sin θ = 1) :
+    Real.cos θ / Real.sin θ = -Real.sqrt 3 := by
+  have hs : Real.sin θ = 1 / 2 := by linarith
+  have hcneg : Real.cos θ < 0 :=
+    Real.cos_neg_of_pi_div_two_lt_of_lt hθ.1 (by linarith [hθ.2, Real.pi_pos])
+  have hpy : Real.sin θ ^ 2 + Real.cos θ ^ 2 = 1 := Real.sin_sq_add_cos_sq θ
+  have hsq : Real.cos θ ^ 2 = 3 / 4 := by rw [hs] at hpy; nlinarith [hpy]
+  have h3 : Real.sqrt 3 ^ 2 = 3 := Real.sq_sqrt (by norm_num)
+  have hpos : 0 < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hfac : (2 * Real.cos θ - Real.sqrt 3) * (2 * Real.cos θ + Real.sqrt 3) = 0 := by
+    nlinarith [hsq, h3]
+  have hne : 2 * Real.cos θ - Real.sqrt 3 ≠ 0 := by nlinarith [hcneg, hpos]
+  have hzero : 2 * Real.cos θ + Real.sqrt 3 = 0 := by
+    rcases mul_eq_zero.mp hfac with h | h
+    · exact absurd h hne
+    · exact h
+  have hcos : Real.cos θ = -(Real.sqrt 3 / 2) := by linarith
+  rw [hcos, hs]; ring
+
+/-- `c_σ² · √3 = 1`, from the saddle. -/
+theorem c_sq_sqrt_three_of_saddle {θ c : ℝ} (hθ : θ ∈ Set.Ioo (π / 2) π)
+    (hsad : 2 * Real.sin θ = 1)
+    (hc : c ^ 2 * |Real.cos θ / Real.sin θ| = (2 * Real.sin θ) ^ 2) :
+    c ^ 2 * Real.sqrt 3 = 1 := by
+  rw [saddle_forces_cot hθ hsad, abs_neg, abs_of_nonneg (Real.sqrt_nonneg 3),
+      hsad] at hc
+  linarith [hc]
+
+/-- **`c_σ = 3^{−1/4}`, with no freedom.**  Stated as `c_σ⁴ = 1/3` to stay
+inside `npow`. -/
+theorem c_pow_four_eq_third {θ c : ℝ} (hθ : θ ∈ Set.Ioo (π / 2) π)
+    (hsad : 2 * Real.sin θ = 1)
+    (hc : c ^ 2 * |Real.cos θ / Real.sin θ| = (2 * Real.sin θ) ^ 2) :
+    c ^ 4 = 1 / 3 := by
+  have h := c_sq_sqrt_three_of_saddle hθ hsad hc
+  have h3 : Real.sqrt 3 ^ 2 = 3 := Real.sq_sqrt (by norm_num)
+  nlinarith [h, h3]
+
+/-- **`k = 2^{−1/2}` is forced by the saddle condition alone.**
+
+`c_σ = 2 sin θ*·|cot θ*|^{−1/2}` and `|τ| = |cot θ*|/2`, so in `k := c_σ·√|τ|`
+the Hessian cancels *before it is evaluated*.  No `θ ∈ (π/2, π)`, no `cot θ* =
+−√3`, no trace field, no manifold — only `2 sin θ* = 1`.
+
+This is why the `4₁` calibration was never carrying information. -/
+theorem k_sq_eq_half_of_saddle {θ c k : ℝ} (hsad : 2 * Real.sin θ = 1)
+    (hc : c ^ 2 * |Real.cos θ / Real.sin θ| = (2 * Real.sin θ) ^ 2)
+    (hk : k = c * Real.sqrt (|Real.cos θ / Real.sin θ| / 2)) :
+    k ^ 2 = 1 / 2 := by
+  have hnn : (0:ℝ) ≤ |Real.cos θ / Real.sin θ| / 2 := by positivity
+  rw [hk, mul_pow, Real.sq_sqrt hnn]
+  have hsplit : c ^ 2 * (|Real.cos θ / Real.sin θ| / 2)
+      = c ^ 2 * |Real.cos θ / Real.sin θ| / 2 := by ring
+  rw [hsplit, hc, hsad]
+  norm_num
 
 end QOU.OneLoopPrefactorInvariance

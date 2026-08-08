@@ -261,14 +261,96 @@ agrees with the `4_1` calibration.
 So the calibration is now *redundant on the link side* — corroborated rather
 than required. What is **not** established:
 
-* **The knot side.** `4_1` is not a Whitehead chain (`b = 1` chains have
-  `c+d+1 ≥ 2` components), so nothing here derives `c_σ(4_1) = 3^{−1/4}`. The
-  one-cusped leg still rests on Garoufalidis–Yoon plus calibration.
+* ~~**The knot side.**~~ **Closed the same day — see below.** `4_1` is not a
+  Whitehead chain, but it does not need to be.
 * **`c_σ ∝ |τ|^{−1/2}` in general.** What is shown is that the derived Jones-side
   constant and the independently computed DG invariant satisfy that relation on
   five manifolds at three cusp numbers. That is a much stronger test than the
   corpus had, and it is not a proof.
 * **The phase of `E`.** Untouched.
+
+## The knot side, closed — and why the method has exactly two homes
+
+**What made the link case work was not van der Veen.** It was that his critical
+point sits at `(π/2, π/4)`, a *rational* point in units of π, because those
+complements are glued from **regular ideal octahedra** (`Vol = 8(c+d)Λ(π/4)`).
+The rest of the argument — state-sum → Lobachevsky potential → critical point →
+Hessian, with `|Q_∞|² ∝ 1/det(Hess)` — does not care which link it is.
+
+**So look for the other regular ideal polyhedron.** `4_1` is two regular ideal
+*tetrahedra*, and Kashaev's invariant is a one-variable sum of the same shape:
+
+```
+⟨4_1⟩_N = Σ_k |(q;q)_k|² = Σ_k ∏_{j≤k} 4sin²(jπ/N) = Σ_k e^{−2 s_k}
+```
+
+— the *same* `s_k` whose expansion was already verified for Lemma 3. Feeding it
+through, with `θ = kπ/N`:
+
+| ingredient | value |
+|---|---|
+| saddle `Λ′(θ) = −log(2 sin θ) = 0` | `2 sin θ* = 1`, so `θ* = 5π/6` |
+| leading value `(2N/π)Λ(π/6)` | `= Vol·N/2π`, since `Vol(4_1) = 4Λ(π/6)` |
+| Stirling `2N sin θ*` | `N` |
+| Hessian `Λ″(θ*) = −cot θ*` | `√3`, giving `√(N/√3)` |
+
+```
+⟨4_1⟩_N ~ 3^{−1/4}·N^{3/2}·e^{Vol·N/2π}
+```
+
+so `c_σ(4_1) = 3^{−1/4}` **and** the power `N^{3/2}` are derived. Numerically,
+Richardson at `N = 32000, 64000` gives `0.759835685682` against
+`3^{−1/4} = 0.759835685652` — relative `4.0e−11`, and the corpus's own
+extrapolated value agrees to `4.5e−18`.
+
+**A rigidity worth stating.** In one variable the saddle condition *is*
+`2 sin θ* = 1`, so the Stirling factor is pinned to `1` and
+
+```
+c_σ = |cot θ*|^{−1/2} = 3^{−1/4}
+```
+
+with no freedom at all. `3^{−1/4}` is a property of *one summation variable*,
+not of `4_1`.
+
+**And `k = 2^{−1/2}` never depended on any of it.** Since
+`c_σ = 2 sin θ*·|cot θ*|^{−1/2}` and `|τ_DG| = |cot θ*|/2`, the Hessian cancels
+in `k := c_σ·|τ|^{1/2}` **before it is evaluated**:
+
+```
+k² = (2 sin θ*)²/2 = 1/2
+```
+
+using only the saddle condition — no trace field, no cusp number, no manifold.
+The `4_1` calibration the whole `c_σ` arc rested on was never carrying
+information. This is `k_sq_eq_half_of_saddle`, and it is the sharpest thing in
+this file.
+
+**`τ_DG` is the Hessian.** `|τ_DG|(4_1) = |cot θ*|/2 = √3/2` reproduces the
+corpus's independently computed value exactly. That is the DG/Gukov–Murakami
+claim exhibited in the smallest case, not assumed.
+
+**Why exactly two closed-form families.** The saddle sits at a root-of-unity
+shape precisely for the regular ideal polyhedra:
+
+| | shape | trace field | `|τ_DG|` |
+|---|---|---|---|
+| tetrahedral (`4_1`) | `e^{iπ/3}` | `Q(ζ₃) = Q(√−3)` | `√3/2` |
+| octahedral (`W_{a,1,c,d}`) | `i` | `Q(ζ₄) = Q(i)` | `2^{2n−2}\|A\|`, `A = n − mi ∈ Z[i]` |
+
+In the link case `A` is literally a **Gaussian integer** and `|A| = √(n²+m²)` is
+the square root of its norm — that is the arithmetic content of the closed form.
+And those two are the only imaginary quadratic fields with extra units, the two
+Bianchi cases. For a general knot the trace field is a general number field and
+`det(Hess)` is an algebraic number in it with no reason to have a radical
+expression. **The obstruction to extending the method is arithmetic, not
+analytic.**
+
+The one place a `√5` could enter the same way is the regular ideal
+**dodecahedron** — the Aitchison–Rubinstein dodecahedral knots, two of them
+glued from regular ideal dodecahedra. `Q(ζ₅)` is degree 4 and not imaginary
+quadratic, so this is *not* a third Bianchi case and the parallel may well fail;
+that is exactly why it is worth testing. Beaned as `qou-dodK`.
 
 ## Literature status — recorded so it is not re-searched
 
