@@ -2246,3 +2246,47 @@ classifier's `VALUES` verdict caught a genuine error of mine rather than an
 expected migration. A 4e-6 expectation is what made a 3× result obviously
 wrong; without a calibrated sense of the right magnitude it would have looked
 like just another regeneration.
+
+## P49 — measured, not surveyed: every distinguishable χ cache is mislabelled
+
+`chi_convention_from_values_audit.py` recomputes each atom's χ^λ both ways and
+asks which one the stored values match, instead of reading the `convention`
+string. Read-only — it writes no witness, so it is safe beside a running wave.
+
+| atom | claims | Σ\|diff\| blind | Σ\|diff\| weighted | verdict |
+|---|---|---|---|---|
+| proton | `averaged-crossings` | 3.31e-07 | 3.31e-07 | `INDISTINGUISHABLE` |
+| neutron | `averaged-crossings` | 2.68e-07 | 2.68e-07 | `INDISTINGUISHABLE` |
+| deuteron | `averaged-crossings` | 3.13e-03 | **0.00e+00** | **`MISLABELLED`** |
+| tritium | `averaged-crossings` | 1.52e-02 | 3.22e-05 | **`MISLABELLED`** |
+| helium-3 | `averaged-crossings` | 1.94e-02 | 4.05e-05 | **`MISLABELLED`** |
+
+**Every atom where the two conventions differ at all is mislabelled**, by two to
+three orders of magnitude. Not one carries a correct label. proton and neutron
+are not counter-examples: A=1 atoms have no inter-nucleon crossing, so the
+colour-weighted substitution has nothing to act on and the conventions are the
+same computation — decided structurally (zero p–n crossings in the word) rather
+than by comparing floats, since a string-passed shift and an internally derived
+`h/2` differ in the last bits.
+
+deuteron reads `0.00e+00` because it was regenerated through the now-working
+native path earlier in this pass — an exact reproduction, which is the
+strongest possible confirmation that the stored values are colour-weighted.
+
+### This inverts the question I put to the owner
+
+I asked whether ⁴He should keep `colour-weighted-averaged-crossing` or revert
+to `averaged-crossings` "like the rest of the corpus", on a survey showing 1
+colour-weighted against 11 averaged. **⁴He was not the outlier — it was the
+only one telling the truth.** The other labels say colour-blind while the
+numbers are colour-weighted, so the survey counted labels that describe nothing.
+
+There is accordingly no physics decision to make here: the corpus computes
+colour-weighted throughout (`_avg_color_delta`, 16 live consumers), ⁴He's label
+already matches its values, and what remains is repairing four wrong strings.
+That is a labelling fix, and it should be done from measurement — this tool —
+rather than by hand, since hand-labelling is how they came to be wrong.
+
+⁴He itself is not in the table: at H_12 each measurement is a full 77-partition
+recompute, hours per convention. It is the one atom whose label was never in
+doubt anyway.
