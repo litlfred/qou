@@ -1073,3 +1073,31 @@ respect the bar-parity of its principal grading — a candidate whose bar-parity
 mismatches its target sign is structurally excluded (`barEven_barOdd_forces_zero`),
 independent of magnitude. Formalize-first record for bean `qou-ph2a`:
 [`docs/audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md`](../audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md).
+
+## 2026-08-08 · A=3 magnitude ROUTE 2-c (amplitude E) — the DT-index / 3d-index / graded-Euler route is BAR-PARITY EXCLUDED from supplying E (scope-(b))
+
+(Branch `claude/deltalambda-dt-index-amplitude-e-2026-08-08`, beans `qou-3dya`/`qou-jqof`.) Attacks
+the open keystone `qou-jqof` (derive the anti-self-adjoint amplitude `E` of ROUTE 2-c) via the
+**DT-invariant / 3d-index / graded-Euler** substrate route — a **distinct angle** from the resurgent
+Stokes route a sibling is on. **Verdict: scope-(b) route-scoped exclusion (proved invariant:
+bar-parity).** The DT-index / 3d-index / graded-Euler datum is by definition an **integer** (a
+Behrend-weighted virtual point count = alternating dimension sum `χ = Σ_k(−1)^k dim(G)_k ∈ ℤ`); a
+ring-hom bar involution fixes `ℤ ↪ R`, so every DT value is **bar-EVEN** (`dtIndex_barEven`,
+`map_intCast`). The amplitude `E = C + σB` is **bar-ODD** — *derived*, not assumed: the physical
+mass/C1 face has a bar-even cross-term `B·D⁻¹·C` (parity of `r*=μ₃/c₃`), which with `B` bar-odd, `D`
+bar-even forces `C` bar-odd (`crossTermBarEven_imp_C_barOdd`), hence `E` bar-odd (`amplitude_barOdd`).
+Bar-even ∧ bar-odd ⇒ 0 (`barEven_barOdd_eq_zero`, invariant `char R ≠ 2`), so the nonzero `E` a lift
+forces (`A3AntiSelfAdjointLift.amplitude_nonzero`) is **NOT** any DT-index value
+(`dtIndex_cannot_supply_amplitude`). The DT route lives in the bar-EVEN (self-adjoint, `≤ 1`) sector
+(`A3OffBlockDerivation.magnitudeFactor_le_one`); the lift lives in the bar-ODD sector. **This removes
+the DT-index route from the ROUTE 2-c menu and hands `E` back to the bar-ODD resurgent-Stokes / DM
+q-cubic sector** (`conj:qdifference-kernel-prolongation-symbol`) — the correct parity (±i / π/2),
+converging with the Stokes-route sibling from a different direction. Consistent with
+`amplitude_surjective` (some real bar-odd `E` hits `r*`, never a DT integer) and with Horn-1 (#4540:
+the DT/Behrend sign is a real π-phase, bar-even). **Element-level analog of the established corpus
+`QOU.BraidKnot.BarParityInvariant`** (`barEven_barOdd_forces_zero`, bean `qou-ph2a`/`s5bb`) — same
+bar-parity filter, new step is `dtIndex_barEven` (DT integers are bar-even) + the DT↔`E` connection.
+Lean `QOU/QBeta/DTIndexAmplitudeE.lean` sorry-free (lean-direct exit 0, 0 real sorries, no
+native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted, nothing wired;
+`r*`/`μ₃`/`c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`. Audit:
+[`docs/audits/2026-08-08-dtindex-amplitude-e-bar-parity-exclusion.md`](../audits/2026-08-08-dtindex-amplitude-e-bar-parity-exclusion.md).
