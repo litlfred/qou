@@ -67,6 +67,26 @@ class QouObstructionReductionContext where
   kappa0_eq_chi_A : kappa0 = chi_A
   phi_1_image_eq_chi_A : phi_1_image = (chi_A : ℝ)
 
+/-- **The universal obstruction class `χ(A) ∈ HH²(U_q, Ad) ≅ ℤ`**, under the
+    name its consumers use.
+
+    A pure accessor for the existing `chi_A` field — it introduces no new datum
+    and no new hypothesis. `SkeinResolutionObstruction` is documented as being
+    "cross-wired to the **same** `QouObstructionReductionContext` … via
+    `obstruction_class_eq`", i.e. deliberately reading the one canonical class
+    rather than carrying a free field of its own; that wiring just had no name
+    on this side. Adding it here keeps the single-source-of-truth property the
+    de-axiomatisation (bean `7kzn`) was for. -/
+def QouObstructionReductionContext.obstruction_class
+    (ctx : QouObstructionReductionContext) : ℤ := ctx.chi_A
+
+/-- The obstruction class **is** `χ(A)`, definitionally. This is the equation
+    the downstream evaluations rewrite along, so that each is visibly an
+    evaluation of the one class rather than of a private copy. -/
+@[simp] theorem QouObstructionReductionContext.obstruction_class_eq
+    (ctx : QouObstructionReductionContext) :
+    ctx.obstruction_class = ctx.chi_A := rfl
+
 /-- **Residual cohomology gap.**  The Euler/trace pairing on the
     generator of the one-dimensional `HH²(U_q, Ad)` evaluates to `χ(A)`,
     so `κ₀ = χ(A)` and the trace image is `χ(A)`.  This is the explicit

@@ -58,7 +58,7 @@ theorem kappa_eq_zero_of_chi_zero (h : octx.chi_A = 0) : S.κ = 0 := by
     evaluations of the same class. -/
 theorem kummer_vanishes_of_chi_zero (h : octx.chi_A = 0) (n : ℕ) :
     octx.kappa_vanishes n := by
-  rw [octx.kappa_vanishes_iff, octx.obstruction_class_eq, h]
+  rw [QOU.AlgebraicSubstrate.kappa_vanishes_iff_chi, h]
   exact dvd_zero _
 
 end SkeinResolutionObstruction
