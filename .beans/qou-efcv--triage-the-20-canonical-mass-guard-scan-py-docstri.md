@@ -1,10 +1,11 @@
 ---
 # qou-efcv
 title: Triage the ~20 canonical-mass guard --scan-py docstring hits, then wire it on by default
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T21:05:39Z
-updated_at: 2026-08-08T21:05:39Z
+updated_at: 2026-08-08T22:43:31Z
 ---
 
 
@@ -67,3 +68,49 @@ permitted. **Do not rubber-stamp them from that audit alone** — it inventoried
 - `computations/yekutieli_volume_join.py`:11 —  Production (m_p path):   m = m_e · Vol(𝓑₃)/ℏ_q² · linking_weight
 
 Regenerate with: `python3 computations/canonical_mass_status_guard.py --scan-py`
+
+## 2026-08-08 — triaged; pass is ON by default (PR #4826)
+
+All 20 hits read and classified. **9 were stale live-status claims and were
+fixed**; **11 cleared by rule**, never by `ALLOWLIST_SUBSTR` — an allowlist
+entry blinds the guard to *future* staleness in that file, which is the
+opposite of what this pass is for.
+
+**Fixed (stale):** `entanglement_emitted_energy` (flat "The proton mass is
+m_e·(Vol(𝓑₃)/ℏ_q²)·LW"), `m_p_borromean_verification_50dps` (×3 — now carries
+a 2026-06-24 supersession banner), `mass_vol_density` + `mass_per_knot_density`
+("production's near-correct m_p comes from the global scalar" — it does not,
+and λ_A ≈ 2.46 is the CODATA-implied fit), `skein_proton_canonical`,
+`yekutieli_volume_join` ("Production (m_p path)"), plus two the detector now
+clears but that were stale on reading: `lambda_scale_refinement_h4_correction_bring`
+("framework canonical predictions are … 965 MeV") and
+`borromean_volume_propagation_to_m_p` (calling a zero-importer deprecated
+script "the production script").
+
+**Cleared by five rules,** each from the docstring that motivated it:
+`SUMMARY_SCOPE` (EXPLORATORY / DEPRECATED / counterfactual marker in the
+summary governs what is under it — restricted to *scope* markers, not all of
+`NEGATED`, so "derive or refute the 2.38× bridge" does not grant blanket
+immunity); `no <deprecated-token>` as an absence disclaimer; `NAMES_THE_GAP`
+(**.py only** — the 2026-08-01 prose recurrence said "2.89% Vol·ρ gap" *as*
+the status, so this rule must never reach the .md pass); `audit_`/`probe_`/
+`sweep_` filename prefixes, matching the existing directory exclusion; and
+`m_p-pin` out of `MASS_CONTEXT`, since there it names the q₀ anchor.
+
+Locked in by `computations/canonical_mass_status_guard_test.py` — fixture-driven,
+including the verbatim pre-fix `mass_table_comprehensive` docstring as the
+must-stay-red control (a live-tree test would pass by construction).
+
+**Remaining, deliberately not done:**
+
+- **CI wiring.** No workflow runs this guard, and repo CI auto-triggers are
+  disabled (AGENTS.md), so there is nowhere to wire it right now.
+- **`--strict` is 2 hits short**, both `docs/precision-goals.md` ("m_avg: 2.89 %
+  bare", "+2.89% open gap"). Both are *correct*, carefully-qualified prose.
+  Clearing them means loosening the .md pass — the guard's primary surface, and
+  the one where the recurrence actually happened. Buying green that way is the
+  wrong trade; it needs its own decision.
+
+Separately, the triage turned up a live compute defect that no guard can see:
+`qou-7loj` (the canonical mass table's nucleon rows are read out of the
+deprecated Vol·ρ witness, +2.89 %).
