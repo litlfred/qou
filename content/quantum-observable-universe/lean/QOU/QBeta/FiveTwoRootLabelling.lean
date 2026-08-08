@@ -444,6 +444,50 @@ theorem hasDerivAt_Ypair_fst {φ : ℝ} (h : pairDisc φ < 0) :
     rw [Ypair_of_disc_neg hu]
   exact (hb.add hi).congr_of_eventuallyEq heq
 
+/-! ### 5b'. Toward `heⱼ` at the pair — the first tight bound
+
+Route 36 G13. `heⱼ` for the pair needs `k = 0` in `dVdy·y ∈ 2πi·ℤ`
+(`exists_int_dVdy_mul`), because `Re(dVdy·Y′) = k·2π·Im(Y′/y)`. The real root
+does **not** need it — there `dVdy` is purely imaginary and `Y′` is real, which
+is `re_dVdy_mul_eq_zero_of_real`.
+
+The pinning quantity is
+
+    S = arg(1−y) + [arg(1−xy) + arg(1−y/x) − 2·arg(−y)] = 2πk
+
+and `k = 0` follows from `|S| < 2π`. **Bounding the four terms separately does
+not work** — G13 measures their ranges as `1.4076 + 3.1133 + 3.1133 + 2·2.1115 =
+11.857 > 2π`. That route is closed; the correlations are what carry it.
+
+Two *groupings* are tight instead, each measured under `π/2`, and their bounds
+sum to `2.8152 < 2π`. This section proves the first, which is the elementary one:
+`|arg(1−y)| < π/2` iff `Re(1−y) > 0` iff `Re y < 1`, and at the pair
+`Re y = cos φ − t/2` with `cos φ ≤ 1` and `t > 0`. The second grouping remains
+open. -/
+
+/-- At the pair, `Re y = cos φ − t/2` — both members share it, being conjugates. -/
+theorem re_Ypair_eq {φ : ℝ} (h : pairDisc φ < 0) :
+    ((Ypair φ).1).re = Real.cos φ - realRootPath φ / 2 ∧
+    ((Ypair φ).2).re = Real.cos φ - realRootPath φ / 2 := by
+  rw [Ypair_of_disc_neg h]
+  unfold pairBeta
+  constructor <;> · simp [Complex.cos_ofReal_re]; ring
+
+/-- **`Re y < 1` at the pair.** `cos φ ≤ 1` and `t > 0`; nothing else is needed. -/
+theorem re_Ypair_lt_one {φ : ℝ} (h : pairDisc φ < 0) :
+    ((Ypair φ).1).re < 1 ∧ ((Ypair φ).2).re < 1 := by
+  obtain ⟨h1, h2⟩ := re_Ypair_eq h
+  have hc : Real.cos φ ≤ 1 := Real.cos_le_one φ
+  have ht : 0 < realRootPath φ := realRootPath_pos φ
+  exact ⟨by rw [h1]; linarith, by rw [h2]; linarith⟩
+
+/-- **`1 − y` is off `log`'s cut at the pair**, which is `|arg(1−y)| < π/2` — the
+first of G13's two tight groupings, and the one that is elementary. -/
+theorem one_sub_Ypair_mem_slitPlane {φ : ℝ} (h : pairDisc φ < 0) :
+    (1 - (Ypair φ).1) ∈ Complex.slitPlane ∧ (1 - (Ypair φ).2) ∈ Complex.slitPlane := by
+  obtain ⟨h1, h2⟩ := re_Ypair_lt_one h
+  refine ⟨Or.inl ?_, Or.inl ?_⟩ <;> simp <;> linarith
+
 /-! ### 5c. The branches solve the CURVE, not merely `unitCubic`
 
 Everything downstream — `vSide_of_root`, `hasDerivAt_envelopeS` — is stated for

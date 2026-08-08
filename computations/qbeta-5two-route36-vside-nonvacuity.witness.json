@@ -176,6 +176,25 @@
       "c_star_from_G5_quartic": "-0.7422176658829284376",
       "cross_check_agreement": "5.6819e-31",
       "pass": true
+    },
+    {
+      "gate": "G13",
+      "claim": "he_j FOR THE PAIR NEEDS k = 0, AND A TERM-BY-TERM BOUND CANNOT PIN IT. For the positive REAL root he_j is already proved and needs no k at all (dVdy is purely imaginary, t' is real). For the pair Re(dVdy*Y') = k*2*pi*Im(Y'/y), so k = 0 is required. Measured: |dVdy| <= 1.2e-40 at the pair (k = 0) and = 2*pi/t at the real root, max 14.6055 (|k| = 1) -- Route 30 G2's split, reconfirmed from the LEAN definition of dVdy. THE USEFUL PART IS THE NEGATIVE ONE: the pinning quantity S = arg(1-y)+arg(1-xy)+arg(1-y/x)-2arg(-y) is identically 0, but the four terms bounded separately give 11.857 > 2*pi, so no term-by-term argument works. Two groupings ARE tight, each under pi/2, and their sum 2.8152 < 2*pi pins k = 0 with room. The first, |arg(1-y)| < pi/2, is provable from Re y < 1 (for the pair Re y = c - t/2, c <= 1, t > 0). The second is the open obligation",
+      "max_abs_dVdy_at_pair": "1.2278366e-40",
+      "max_abs_dVdy_at_positive_real_root": "14.60551427",
+      "pinning_S_range_at_pair": [
+        "-9.1835496e-41",
+        "9.1835496e-41"
+      ],
+      "naive_termwise_bound": "1.4076 + 3.1133 + 3.1133 + 2*2.1115 = 11.857 > 2*pi = 6.2832 -- INSUFFICIENT",
+      "tight_grouping_1_arg_1_minus_y": "in [-1.4076, 1.4076], < pi/2, PROVABLE from Re y < 1",
+      "tight_grouping_2_range": [
+        "-1.4076132",
+        "1.4076132"
+      ],
+      "tight_grouping_2": "arg(1-xy) + arg(1-y/x) - 2 arg(-y) -- the OPEN obligation; measured under pi/2, needs only < 3*pi/2 for the pinning",
+      "max_Re_y_at_pair": "0.7847802931",
+      "pass": true
     }
   ],
   "verdict": {

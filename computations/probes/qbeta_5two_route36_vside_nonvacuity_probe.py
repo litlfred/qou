@@ -64,8 +64,8 @@ import json
 import pathlib
 
 from mpmath import cos as mpmath_cos
-from mpmath import (exp, fabs, findroot, im, mp, mpc, mpf, nstr, pi, polyroots, re,
-                    sqrt)
+from mpmath import (arg, exp, fabs, findroot, im, log, mp, mpc, mpf, nstr, pi,
+                    polyroots, re, sqrt)
 
 
 def roots_at(ph):
@@ -737,6 +737,84 @@ def main() -> int:
         "cross_check_agreement": nstr(fabs(cstar_here - cstar_g5), 5),
         "pass": bool(n_none == 0 and n_neg > 0 and n_pos > 0 and n_neg + n_pos == N
                      and fabs(cstar_here - cstar_g5) < mpf(10) ** -30),
+    })
+
+    # ---- G13: he_j for the PAIR needs k = 0, and a naive bound CANNOT pin it ----
+    # `hasDerivAt_envelopeS` wants (dVdy x (Y_j phi) * Y_j').re = 0. For the positive REAL
+    # root that is already proved (`re_dVdy_mul_eq_zero_of_real`) and needs NO k: dVdy is
+    # purely imaginary there and t' is real. The pair is different --
+    #     Re(dVdy * Y') = k * 2*pi * Im(Y'/y)
+    # so it needs k = 0 outright.
+    #
+    # Measured, both halves: at the pair |dVdy| <= 1.2e-40 (k = 0), while at the real root
+    # |dVdy| = 2*pi/t, max 14.6055 at t = 0.43019 (|k| = 1). Route 30 G2's split, confirmed
+    # from the Lean definition of dVdy rather than from the paper.
+    #
+    # ⚠ THE USEFUL PART IS WHAT DOES NOT WORK. The pinning quantity is
+    #     S = arg(1-y) + arg(1-xy) + arg(1-y/x) - 2 arg(-y),   S = 2*pi*k
+    # and it is identically 0. But bounding the four terms SEPARATELY gives
+    #     1.4076 + 3.1133 + 3.1133 + 2*2.1115 = 11.857  >  2*pi = 6.2832
+    # so a term-by-term bound cannot force k = 0. The correlations are needed.
+    #
+    # Two groupings ARE tight, and they say where to look:
+    #     arg(1-y)                                in [-1.4076, 1.4076]   (< pi/2)
+    #     arg(1-xy) + arg(1-y/x) - 2 arg(-y)      in [-1.4076, 1.4076]   (< pi/2)
+    # Sum of the two bounds is 2.8152 < 2*pi, which pins k = 0 with room to spare.
+    #
+    # The FIRST is provable: |arg(1-y)| < pi/2 iff Re(1-y) > 0 iff Re y < 1, and for the
+    # pair Re y = c - t/2 with c <= 1 and t > 0. The SECOND is the open obligation.
+    def dVdy_val(x, y):
+        return (-log(1 - y) - log(1 - x * y) - log(1 - y / x) + 2 * log(-y)) / y
+
+    w_pair, w_real = None, None
+    s_lo, s_hi = None, None
+    g_lo, g_hi = None, None
+    re_y_max = None
+    for i in range(N):
+        ph = pi * mpf(i + 1) / (N + 1)
+        x = exp(mpc(0, 1) * ph)
+        for y in polyroots([x, -(x ** 2 + 1), x ** 2 + x + 1, -x],
+                           maxsteps=300, extraprec=300):
+            v = fabs(dVdy_val(x, y))
+            if fabs(im(y)) < REAL_TOL and re(y) > 0:
+                w_real = v if w_real is None or v > w_real else w_real
+                continue
+            w_pair = v if w_pair is None or v > w_pair else w_pair
+            s = arg(1 - y) + arg(1 - x * y) + arg(1 - y / x) - 2 * arg(-y)
+            s_lo = s if s_lo is None or s < s_lo else s_lo
+            s_hi = s if s_hi is None or s > s_hi else s_hi
+            g = arg(1 - x * y) + arg(1 - y / x) - 2 * arg(-y)
+            g_lo = g if g_lo is None or g < g_lo else g_lo
+            g_hi = g if g_hi is None or g > g_hi else g_hi
+            re_y_max = re(y) if re_y_max is None or re(y) > re_y_max else re_y_max
+    gates.append({
+        "gate": "G13",
+        "claim": "he_j FOR THE PAIR NEEDS k = 0, AND A TERM-BY-TERM BOUND CANNOT PIN IT. For the "
+                 "positive REAL root he_j is already proved and needs no k at all (dVdy is purely "
+                 "imaginary, t' is real). For the pair Re(dVdy*Y') = k*2*pi*Im(Y'/y), so k = 0 is "
+                 "required. Measured: |dVdy| <= 1.2e-40 at the pair (k = 0) and = 2*pi/t at the "
+                 "real root, max 14.6055 (|k| = 1) -- Route 30 G2's split, reconfirmed from the "
+                 "LEAN definition of dVdy. THE USEFUL PART IS THE NEGATIVE ONE: the pinning "
+                 "quantity S = arg(1-y)+arg(1-xy)+arg(1-y/x)-2arg(-y) is identically 0, but the "
+                 "four terms bounded separately give 11.857 > 2*pi, so no term-by-term argument "
+                 "works. Two groupings ARE tight, each under pi/2, and their sum 2.8152 < 2*pi "
+                 "pins k = 0 with room. The first, |arg(1-y)| < pi/2, is provable from Re y < 1 "
+                 "(for the pair Re y = c - t/2, c <= 1, t > 0). The second is the open obligation",
+        "max_abs_dVdy_at_pair": nstr(w_pair, 8) if w_pair is not None else None,
+        "max_abs_dVdy_at_positive_real_root": nstr(w_real, 10) if w_real is not None else None,
+        "pinning_S_range_at_pair": [nstr(s_lo, 8), nstr(s_hi, 8)],
+        "naive_termwise_bound": "1.4076 + 3.1133 + 3.1133 + 2*2.1115 = 11.857 > 2*pi = 6.2832 "
+                                "-- INSUFFICIENT",
+        "tight_grouping_1_arg_1_minus_y": "in [-1.4076, 1.4076], < pi/2, PROVABLE from Re y < 1",
+        "tight_grouping_2_range": [nstr(g_lo, 8), nstr(g_hi, 8)],
+        "tight_grouping_2": "arg(1-xy) + arg(1-y/x) - 2 arg(-y) -- the OPEN obligation; "
+                            "measured under pi/2, needs only < 3*pi/2 for the pinning",
+        "max_Re_y_at_pair": nstr(re_y_max, 10) if re_y_max is not None else None,
+        "pass": bool(w_pair is not None and w_pair < mpf(10) ** -(mp.dps - 10)
+                     and w_real is not None and w_real > 1
+                     and s_lo is not None and fabs(s_lo) < mpf(10) ** -30
+                     and fabs(s_hi) < mpf(10) ** -30
+                     and re_y_max is not None and re_y_max < 1),
     })
 
     out = {
