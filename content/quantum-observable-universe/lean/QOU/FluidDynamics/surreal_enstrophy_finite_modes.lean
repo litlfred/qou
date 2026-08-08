@@ -106,7 +106,7 @@ theorem Infinitesimal.add {x y : K} (hx : Infinitesimal x) (hy : Infinitesimal y
     _ = 1 := by norm_num
 
 /-- An infinitesimal times a finite element is infinitesimal. -/
-theorem mul_finite {x y : K} (hx : Infinitesimal x)
+theorem Infinitesimal.mul_finite {x y : K} (hx : Infinitesimal x)
     (hy : IsFinite y) : Infinitesimal (x * y) := by
   intro n
   obtain ⟨m, hm⟩ := hy
@@ -157,7 +157,7 @@ theorem IsFinite.neg {x : K} (h : IsFinite x) : IsFinite (-x) := by
   obtain ⟨n, hn⟩ := h; exact ⟨n, by simpa using hn⟩
 
 /-- Finites are closed under multiplication. -/
-theorem mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
+theorem IsFinite.mul {x y : K} (hx : IsFinite x) (hy : IsFinite y) :
     IsFinite (x * y) := by
   obtain ⟨n, hn⟩ := hx
   obtain ⟨m, hm⟩ := hy
@@ -858,7 +858,7 @@ theorem discrete_gronwall {G : K} (Ω : ℕ → K) (hG : 0 ≤ G)
         _ = G ^ (n + 1) * Ω 0 := by rw [pow_succ]; ring
 
 /-- Finites are closed under powers. -/
-theorem pow {x : K} (h : IsFinite x) (n : ℕ) : IsFinite (x ^ n) := by
+theorem IsFinite.pow {x : K} (h : IsFinite x) (n : ℕ) : IsFinite (x ^ n) := by
   induction n with
   | zero => simpa using isFinite_one
   | succ n ih => rw [pow_succ]; exact ih.mul h

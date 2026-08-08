@@ -89,10 +89,10 @@ def PartitionWithCells.transpose (P : PartitionWithCells) :
     content, so the two list-sums sum to zero. -/
 -- Ref: [manuscript] AGENTS.md §7b "Type B folding ⇒ symmetric crystal,
 -- bar-involution invariant by construction"
-theorem content_sum_plus_transpose_content_sum_eq_zero
+theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     (P : PartitionWithCells) :
     P.content_sum + P.transpose.content_sum = 0 := by
-  unfold content_sum transpose
+  unfold PartitionWithCells.content_sum PartitionWithCells.transpose
   rw [List.map_map]
   rw [show (Cell.content ∘ Cell.transpose) =
         (fun x => -x.content) by
@@ -115,7 +115,7 @@ theorem content_sum_plus_transpose_content_sum_eq_zero
     partition case (e.g. `(2, 2)`, `(3, 1)`, `(4, 1, 1, 1)` etc.):
     folding pairs each cell with its transpose, and the
     fixed-point partition sits at the symmetric centre. -/
-theorem self_transpose_content_sum_zero
+theorem PartitionWithCells.self_transpose_content_sum_zero
     (P : PartitionWithCells)
     (h : P = P.transpose) :
     P.content_sum = 0 := by
