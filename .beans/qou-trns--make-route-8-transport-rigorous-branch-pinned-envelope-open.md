@@ -358,3 +358,69 @@ neutral convenience near a square-root singularity**, which is of a piece with
 the `0.348` lesson: it was the same failure to state how a number was obtained.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the last analytic step is now a LEAN LEMMA
+
+`QOU/Archimedean/ConstantOffOnePoint.lean`, sorry-free, `lake` green:
+
+```lean
+theorem constant_of_hasDerivWithinAt_zero_off_point {f : ℝ → ℝ} {a b c : ℝ}
+    (hcont : ContinuousOn f (Set.Icc a b))
+    (hderiv : ∀ x ∈ Set.Ico a b, x ≠ c → HasDerivWithinAt f 0 (Set.Ici x) x) :
+    ∀ x ∈ Set.Icc a b, f x = f a
+```
+
+**Continuous on `[a,b]`, zero derivative off one point ⟹ constant.** That is
+exactly the transport's remaining shape, with no dilogarithm in it: the envelope
+argument gives `dS/dφ = 2φ` wherever the IFT applies — everywhere except the one
+branch point `FiveTwoDiscriminant.exists_unit_circle_disc_zero` proves exists —
+and `S` is continuous throughout (Route 17).
+
+Apply it to `f φ := S(e^{iφ}) − φ²` on `[0,π]` with `c = φ₀`.
+
+**Riemann removability is not needed.** I first framed the fix that way; it is
+overkill. This is one-variable real analysis, and the exceptional point costs
+nothing.
+
+### Why it needed proving rather than citing
+
+Mathlib's `constant_of_has_deriv_right_zero` wants the right derivative at
+**every** point of `Ico a b`. Splitting at `c` works on `[a,c]`, where `Ico a c`
+excludes `c` — but fails on `[c,b]`, whose `Ico c b` *contains* `c`. The fix is
+to apply it on `[t,b]` for each `t > c` and pass to the limit using continuity.
+
+### ⚠ A process failure, recorded because it nearly shipped
+
+I ran this file with `lean` directly, in the background, read an **empty log**,
+and reported "compiled first try". It had not compiled — the `nohup … &` wrapper
+returned immediately and my wait loop raced it. `lake build` then found two
+**renamed** identifiers (`Ioc_mem_nhdsWithin_Ioi` → `Ioc_mem_nhdsGT`,
+`nhdsWithin_Ioi_self_neBot'` → an instance) plus two type mismatches.
+
+Two lessons, both already on this lane's list and both re-learned the hard way:
+
+1. **An empty log is not a pass.** This is the same wrapper-exit trap logged
+   earlier in the session for `lake build`.
+2. **`lean` direct is more permissive than `lake`.** The lakefile sets
+   `autoImplicit = false` and other `leanOptions` that a bare `lean` invocation
+   does not. **Every Lean claim in this lane should be `lake`-verified, not
+   `lean`-verified.** The other files were, and are fine — but only by habit,
+   not by rule.
+
+### Where the transport now stands
+
+| step | status |
+|---|---|
+| symmetric Vieta products, non-vanishing on the arc | ✅ Lean (`prod_one_sub_x_mul`, `prod_x_sub`) |
+| discriminant vanishes at one point of the arc | ✅ Lean (`exists_unit_circle_disc_zero`) |
+| `Σⱼ log` continuous through it (colliding terms equal) | ✅ measured (Route 19), **not Lean** |
+| envelope `dS/dφ = 2φ` off that point | ❌ **not written** — needs IFT + `d/dz Li₂` |
+| constant-off-one-point glue | ✅ **Lean, this file** |
+| `S` continuous on `[0,π]` | ✅ measured (Route 17), **not Lean** |
+
+The one genuinely unwritten mathematical step is the **envelope derivative**,
+and it now sits between two Lean-proved endpoints.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
