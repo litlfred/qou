@@ -1,9 +1,9 @@
-# Vacuous existentials — a third vacuity shape (17 found, 4 drained, 13 live)
+# Vacuous existentials — a third vacuity shape (17 found, 7 drained, 10 live)
 
 Date: 2026-08-07. Detector:
 [`scripts/lean-vacuous-existential-audit.py`](../../scripts/lean-vacuous-existential-audit.py).
 Scanned 2588 `.lean` files under `content/`. **Originally 17 candidates in 15 files**,
-**17/17** discharged by handing the right-hand side straight back. **4 are now drained; 13 remain** — see Disposition below.
+**17/17** discharged by handing the right-hand side straight back. **7 are now drained; 10 remain** — see Disposition below.
 
 Found while triaging the `wall-side-correct` shortlist (PR #4693 item 3):
 several files flagged for a gratuitous `ℝ` turned out to carry a much
@@ -98,10 +98,35 @@ that the intended mathematics is false. `knotFactor`, `regimeSwitchedBinding`,
 and `stratumDepth` are real definitions doing real work; only the
 theorems purporting to state something *about* them are empty.
 
-## Disposition — 4 drained, 13 remain
+## Disposition — 7 drained, 10 remain
 
-**17 → 13 (15 → 11 files).** Every replacement is verified `lean`-direct
+**17 → 10 (15 → 8 files).** Every replacement is verified `lean`-direct
 against the restored olean cache (exit 0, sorry-free); none is asserted.
+
+### Round 2 (2026-08-08)
+
+| was | now |
+|---|---|
+| `knot_factor_borromean_value : ∃ a, a = (1-h²)^k` | *deleted* — `knot_factor_borromean` directly above already proves `composite = (1-h²)^k` and genuinely consumes its `BrunnianDecoupling` hypothesis |
+| `torsion_effective_tree_bounded : ∃ bound, bound = t.order ^ n` | *deleted, gap recorded* — see below |
+| `CategoricalAction.exists : ∃ S, S = categoricalAction Φ swap` | `categoricalAction (𝟙 A) swap = η_ ≫ swap ≫ ε_` — falsifiable (fails if whiskering by `𝟙` is not the identity); name kept, it is a `lean.ref` target |
+
+**`torsion_effective_tree_bounded` had two faults, not one.** Beyond the
+vacuity, its docstring claimed the tree size is *"bounded **polynomially**
+in the root-of-unity order"* while the statement said `t.order ^ n` —
+exponential in `n`. The statement did not match the claim it was labelled
+with. Stating the real proposition needs an effective-tree-size function
+to bound, and none exists in that file (`TorsionPoint` carries only
+`order`), so it is recorded as a gap rather than replaced by a weaker
+theorem.
+
+**`CategoricalAction.exists` is the clearest instance of the pattern.**
+Its own docstring conceded *"'exists' and 'equals tr(Φ)' hold by
+construction"* — which is precisely the defect. Existence of a named
+composite is not a theorem; the `def categoricalAction` above already
+supplies it.
+
+### Round 1 (2026-08-07)
 
 | was | now | note |
 |---|---|---|
