@@ -1,11 +1,11 @@
 ---
 # qou-argp
 title: 'Argument principle on an annulus — the single missing lemma for the converse theta zero locus'
-status: in-progress
+status: done
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T13:00:00Z
+updated_at: 2026-08-08T18:00:00Z
 ---
 
 Split out of `qou-c1ln` row 2, which is otherwise closed. Everything the
@@ -298,3 +298,128 @@ That last step is bookkeeping over a one-element `Finset`, not analysis.
 Still true, and still the reason not to rush it: `qou-c1wr` established that
 **nothing downstream consumes the divisor**.
 
+## 2026-08-08 — the chain is complete; only θ-specific instantiation is left
+
+`exists_finset_factorisation` closes the last general gap: an analytic function
+on a relatively compact, connected open `V` factorises as
+`(∏ a ∈ S, (·−a)^{m a})·g` with `g` analytic and non-vanishing, *as genuine
+equality on `V`*, in exactly the shape `argumentPrinciple_annulus_finset`
+consumes.
+
+Assembled from the four earlier lemmas plus `finprod_zpow_eq_finset_prod_npow`,
+which normalises `extract_zeros_poles`'s output: that theorem returns a
+`finprod` of **functions** with **ℤ** exponents, and the argument principle
+takes a `Finset.prod` of **values** with **ℕ** exponents. Three conversions:
+`finprod_apply` (functions → pointwise), `finprod_eq_prod_of_mulSupport_subset`
+(finprod → Finset.prod), and `zpow_natCast` under
+`AnalyticOnNhd.divisor_nonneg` (ℤ → ℕ, valid because an analytic function has
+no poles).
+
+**Every general ingredient is now proved.** What remains is θ-specific:
+instantiate `V` as the open annulus and `K` as a slightly larger closed one,
+check `meromorphicOrderAt θ_P u ≠ ⊤` (θ_P is not locally zero — it has a zero at
+`−p^k` and is analytic, so this is the identity theorem again), feed the result
+through `argumentPrinciple_annulus_finset`, and equate with
+`qTheta_winding_step`'s `2πi`. That gives `∑ m a = 1`, and
+`qTheta_neg_zpow_eq_zero` names the one zero.
+
+### The recurring papercut, recorded because it cost three iterations
+
+Lean distinguishes `∑ i ∈ S, fun z => f i z` from `fun z => ∑ i ∈ S, f i z`,
+and `∏ᶠ i, f i` from `fun z => ∏ᶠ i, f i z`. Three separate errors in this arc
+were that distinction and nothing else. `simpa [Finset.sum_apply]` does **not**
+cross it — the bridges are an explicit `funext` for `Finset`, and
+`finprod_apply` (which needs a finiteness hypothesis) for `finprod`. Mathlib
+often ships both forms, e.g. `DifferentiableAt.finset_prod` versus
+`DifferentiableAt.fun_finset_prod`; reach for the `fun_` variant first.
+
+
+## 2026-08-08 — claimed for the θ-specific instantiation
+
+Branch `claude/c1-theta-zero-locus-instantiation-2026-08-08`. Working the last
+item: instantiate the general chain for `θ_P`.
+
+One thing the plan above glosses. `exists_finset_factorisation` produces `g`
+analytic on the **open** `V`, but `argumentPrinciple_annulus_finset` wants `u`
+non-vanishing on an open set containing the **closed** contour annulus — so `V`
+must be strictly larger than the contours, and then `S` can contain zeros in the
+two collars, which violates that theorem's `∀ a ∈ S, r < ‖a‖ < R`.
+
+Two ways out: prove no zeros sit in a thin enough collar (needs a
+positive-distance argument against a finite set), or drop the hypothesis to
+`‖a‖ ≠ r, R` and count with a filter. The second is strictly more general, is
+the honest statement of the argument principle, and needs no collar at all —
+taking it.
+
+## 2026-08-08 — DONE. The converse zero locus is proved.
+
+`qThetaC_eq_zero_iff` in `QOU/QBeta/C1ThetaZeroLocus.lean`:
+
+    for w ≠ 0,  θ_P(w) = 0  ↔  ∃ k : ℤ, w = −P^{2k}
+
+and `qThetaC_analyticOrderAt_neg_zpow`: every such zero has
+`analyticOrderAt = 1`. Together that is the **whole divisor of `θ_P` on `ℂ*`** —
+the orbit `−p^ℤ`, reduced — so the three C1 pole loci are exact and carry
+multiplicity one rather than being containments. Sorry-free,
+`[propext, Classical.choice, Quot.sound]`.
+
+No hypothesis survives except `w ≠ 0`, and that only because `0` is an essential
+singularity where `θ_P` is not an analytic object at all.
+
+### What the plan above got wrong, and it is the same error a third time
+
+The plan said the remaining work was "θ-specific instantiation, bookkeeping over
+a one-element `Finset`, not analysis". Two of the three things that actually
+blocked it were neither:
+
+1. **The strict-between hypothesis is undischargeable here.**
+   `argumentPrinciple_annulus_finset` requires `r < ‖a‖ < R` for *every* factor.
+   But `exists_finset_factorisation` produces a factorisation analytic on an
+   **open** set, which must therefore be strictly larger than the closed contour
+   annulus — and its zero set can then sit in the two collars. Discharging the
+   hypothesis would need a positive-distance argument against a finite set,
+   *before* knowing the set is finite in the relevant sense.
+   Fix: `argumentPrinciple_annulus_filter`, which asks only that factors avoid
+   the two circles and counts with a filter. A factor inside the inner circle
+   contributes `2πi` to both integrals and cancels; one outside contributes to
+   neither. Strictly more general, and the honest statement of the theorem. The
+   old form is now a two-line corollary.
+
+2. **`a ∈ S` carried no information.** `exists_finset_factorisation` returned
+   `S` and `m` with nothing tying them to `θ`. Reading "`a` is a zero" off
+   membership needs `0 < m a` *and* `S ⊆ V`; reading multiplicity off it needs
+   `analyticOrderAt f a = m a`. All three added
+   (`analyticOrderAt_eq_of_finset_factorisation` is the last, and is general).
+
+The genuinely θ-specific pieces were smaller than either:
+
+| | |
+|---|---|
+| `isPreconnected_openAnnulus` | an annulus is `exp` of a convex strip — the identity theorem wants a connected domain, and Mathlib has nothing about annuli |
+| `qThetaC_ne_zero_outer` | `θ(P²w) = w·θ(w)` carries non-vanishing from `‖z‖ = ρ` out to `‖z‖ = P²ρ`, so `qTheta_winding_step`'s single hypothesis cleans both contours |
+| `qTheta_pos_of_pos` | every term of `∑ P^{−n(n+1)}wⁿ` is positive for `w > 0` — the cheapest proof that `θ` is not identically zero |
+| `qThetaC_ofReal` | the bridge real facts cross to reach the complex statements; unconditional, `Complex.ofReal_tsum` needs no summability |
+| `exists_clean_radius` | only finitely many radii carry a zero, and an interval of reals is infinite |
+
+`exists_clean_radius` is what removed the hypotheses. `qTheta_winding_step` has
+always needed "no zero on `‖z‖ = ρ`", and every downstream statement inherited
+it. That is not a restriction — it is a *choice*, and this lemma is the proof.
+With it, `⌊logb (P²) ‖w‖⌋` places any `w` in a fundamental annulus and a clean
+contour goes just below the lattice point, in an interval that is nonempty
+exactly because `‖w‖ < P^{2k+2}`.
+
+### Consumer status — unchanged, and worth repeating
+
+`qou-c1wr` established that **nothing downstream consumes the divisor**. This
+was worth finishing to close a named gap honestly and for the upstreamable
+lemmas (`argumentPrinciple_annulus_filter`,
+`analyticOrderAt_eq_of_finset_factorisation`,
+`exists_finset_factorisation`, `isPreconnected_openAnnulus`, and the two Mathlib
+wrappers), not because a number moved.
+
+Content updated in the same pass: `prop:c1-theta-zero-locus-and-pole-divisor`
+no longer says the converse is unproved, its `lean.ref` points at
+`qThetaC_eq_zero_iff`, and the stale "Mathlib has no argument principle"
+docstrings in `C1ConnectionPoles.lean` are gone.
+
+Closing.

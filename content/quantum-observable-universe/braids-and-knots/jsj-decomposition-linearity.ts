@@ -17,7 +17,19 @@ import { conjecture } from "../../schema/builders";
 export default conjecture({
   label: "conj:jsj-decomposition-linearity",
   title: "JSJ additivity of nucleon braids",
-  lean: { ref: "qou:QOU.BraidsKnots.JSJ_volume_additivity" },
+  // The ref carries the MODULE path `QOU/BraidsKnots/LinearJSJVolume.lean`
+  // plus the declaration name, which is how `lean.ref` resolves (§0a
+  // candidate 2). The bare `QOU.BraidsKnots.JSJ_volume_additivity` did not
+  // resolve: there is no `QOU/BraidsKnots.lean` and no
+  // `QOU/BraidsKnots/JSJ_volume_additivity.lean`.
+  //
+  // Target: the `axiom JSJ_volume_additivity`, which states exactly this
+  // block's headline equation `Vol(AtomicKnot Z N) = Z·Vol_p + N·Vol_n`
+  // (cited to [thurston1978]). The block's *decomposition hypothesis* —
+  // that the complement JSJ-splits into exactly Z proton and N neutron
+  // pieces — is the conjectural half and is not separately formalised;
+  // the axiom bundles it into the additivity statement.
+  lean: { ref: "qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity" },
   uses: [
     "def:atom-knot",
     "prop:thurston-volume-additivity",

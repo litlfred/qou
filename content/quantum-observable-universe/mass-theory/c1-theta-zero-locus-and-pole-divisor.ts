@@ -3,12 +3,12 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:c1-theta-zero-locus-and-pole-divisor",
   lean: {
-    ref: "qou:QOU.QBeta.C1Poles.qTheta_neg_zpow_eq_zero",
+    ref: "qou:QOU.QBeta.C1Poles.qThetaC_eq_zero_iff",
     validation: "validated",
   },
   title:
     "The connection matrix of the ramified binding operator is p-elliptic and " +
-    "its poles are theta zeros; the q-theta vanishes on −p^ℤ",
+    "its poles are theta zeros; the q-theta vanishes exactly on −p^ℤ",
   uses: [
     "conj:qdifference-kernel-prolongation-symbol",
   ],
@@ -87,6 +87,48 @@ export default proposition({
         "(bean qou-c1wr). The only C1-arc outputs with a consumer are the " +
         "theta growth and the isoclinicity obstruction. This block is a record " +
         "of correct but orphaned work and should not be cited as load-bearing.",
+    },
+    {
+      kind: "status",
+      date: "2026-08-08",
+      body:
+        "**The converse zero locus is proved; this block no longer claims less " +
+        "than the mathematics.** `qThetaC_eq_zero_iff` (QOU/QBeta/" +
+        "C1ThetaZeroLocus.lean): for w ≠ 0, θ_P(w) = 0 ↔ w ∈ " +
+        "−P^{2ℤ}. With `qThetaC_analyticOrderAt_neg_zpow` (every zero " +
+        "simple) that is the whole divisor of θ_P on ℂ*, so the three " +
+        "pole loci in the .md are exact and reduced rather than containments. " +
+        "Sorry-free, [propext, Classical.choice, Quot.sound].\n\n" +
+        "**What the note above got wrong, recorded because the error repeated.** " +
+        "It said the gap was 'one missing lemma, the argument principle on an " +
+        "annulus, which Mathlib does not have'. The name scan behind that was " +
+        "real but answered a different question: the corpus already had " +
+        "QOU/Mathlib/ArgumentPrinciple.lean (on a disc — inapplicable, " +
+        "θ_P has an essential singularity at 0), and Mathlib had the " +
+        "factorisation the annulus form needs under " +
+        "`MeromorphicOn.extract_zeros_poles`, which is not a name anyone greps " +
+        "for when looking for 'argument principle'. Search by what the " +
+        "statement says, not by what the theorem is called.\n\n" +
+        "**What actually had to be built**, all sorry-free: " +
+        "`argumentPrinciple_annulus_filter` (the annulus argument principle with " +
+        "factors anywhere off the two contours — the strict-between version " +
+        "is undischargeable here, because the factorisation's domain must be " +
+        "strictly larger than the contour annulus and its zeros can then sit in " +
+        "the collars); `exists_finset_factorisation` strengthened with positive " +
+        "multiplicities and S ⊆ V; `analyticOrderAt_eq_of_finset_factorisation`; " +
+        "`isPreconnected_openAnnulus` (an annulus is exp of a convex strip — " +
+        "the identity theorem wants a connected domain); `qThetaC_ne_zero_outer` " +
+        "(the functional equation carries non-vanishing from |z| = ρ out to " +
+        "|z| = P²ρ); `qTheta_pos_of_pos` (all terms positive on the " +
+        "positive real axis — the cheapest proof that θ is not " +
+        "identically zero); and `exists_clean_radius`, which is what turns " +
+        "`qTheta_winding_step`'s 'no zero on the contour' hypothesis from a " +
+        "restriction into a choice.\n\n" +
+        "**Consumer status is unchanged** (bean qou-c1wr): nothing in the corpus " +
+        "consumes the pole divisor, χ, the closed form, or α = t₂/T. " +
+        "This was worth finishing to close a named gap honestly and for the " +
+        "upstreamable lemmas, not because a downstream number moved.",
+      see: "content/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
     },
   ],
   tags: [

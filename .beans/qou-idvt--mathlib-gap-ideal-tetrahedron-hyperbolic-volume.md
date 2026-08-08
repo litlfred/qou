@@ -122,3 +122,56 @@ them.
 
 Revised tiering: T1 (Lobachevsky on top of `Cl_2`) → T2 (`Vol` as the sum) →
 **T3-core DONE** → T3-plumbing (second-derivative test) ⇒ `qou-krvm` (iv).
+
+---
+
+## 2026-08-08 (later) — T1 IS DONE. Two claims in this bean were stale.
+
+`QOU/Archimedean/LobachevskyDerivative.lean` + `IdealTetrahedronShapeBridge.lean`,
+both sorry-free (`#print axioms` clean, cone-built).
+
+**Correction 1 — "the corpus has `Cl_2` but no `Λ`" was already false when
+written.** `BlochWignerLobachevsky` has carried `Lob t = Cl_2 (2*t)/2` plus
+`Lob_neg` / `Lob_zero` / `Lob_pi_div_two` / `Lob_pi` all along, and
+`QOU/Knot/Clausen.lean` has carried `hasDerivAt_Cl_2_series`
+(`Cl₂'(θ) = −log(2 sin(θ/2))` on `(0,2π)`). The same stale sentence is repeated
+in `IdealTetrahedronConcavity.lean`'s docstring; both are now corrected.
+
+**What was genuinely missing** was `Λ`'s OWN derivative — one chain rule away,
+and the thing that makes `Lob` the primitive `Λ(x) = −∫₀ˣ log|2 sin t| dt`
+rather than a rescaled `Cl₂`:
+
+  * `hasDerivAt_Lob` — `Λ'(t) = −log(2 sin t)` on `(0,π)`
+  * `hasDerivAt_deriv_Lob` / `deriv_deriv_Lob` — **`Λ''(t) = −cot t`**, which
+    `IdealTetrahedronConcavity` had only in prose while writing its Hessian in
+    `cot`. It is now a theorem, so that Hessian is the Hessian OF the
+    Lobachevsky volume sum.
+
+**Correction 2 — `Λ` is NOT concave on `(0,π)`.** `Λ'' = −cot` is negative only
+on `(0,π/2)` and is POSITIVE on `(π/2,π)` (`deriv_deriv_Lob_neg` / `_pos`, both
+proved). Concavity of the tetrahedron volume comes from the SUM via
+`cot_add_cot_pos`, not from `Λ` termwise. Recorded because "Λ''=−cot, so Λ is
+concave" is the plausible false next step, and the octahedral point
+`(π/4,π/4,π/2)` sits exactly at the sign change.
+
+**Bonus — the shape bridge.** `AngleTriple` is *precisely* what
+`tetAngles_sum_eq_pi` produces, so `BlochWignerLobachevsky` and
+`IdealTetrahedronConcavity` were describing one object from opposite ends with
+no link. `AngleTriple.ofShape (z) (hz : 0 < z.im)` is the missing constructor;
+concavity and the exact `det = 1` now transport to shape coordinates.
+
+Its hypothesis is settled too:
+`computations/qbeta/descartes_lambda_shape_upper_half_plane.py` shows the
+Descartes cubic has NEGATIVE discriminant (−18.948) at both anchors, so
+`z_q = λ(𝓔_q)` is necessarily non-real — a sign fact, no fit. (Two side
+findings there, both scope-(a) and unwired: `D(z_q) = 0.91496` sits 0.11% off
+Catalan — a near-match, not an identity — and `ξ = D/ℏ_q² = 93.2`, which
+contradicts `conj:crossing-graded-mass-expansion`'s own "perturbative /
+`ξ → 0`" framing.)
+
+**Revised tiering — 2 of 4 closed:**
+T1 **DONE** → T2 (`Vol` = the Λ-sum; GEOMETRIC, still open) → T3-core **DONE**
+→ T3-plumbing (`C²` second-derivative test, still open) ⇒ `qou-krvm` (iv).
+
+Still NOT closed, and not axiomatised anywhere per this bean's GUARD: T2 and
+T3-plumbing. Bean stays open.

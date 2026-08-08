@@ -43,10 +43,16 @@ locally from patch to patch.
       this holds). -/
   residual_eq_zero : residual = 0
 
-axiom conj_local_infinitesimal_field : LocalInfinitesimalField
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/local-infinitesimal-field.ts
-noncomputable instance : LocalInfinitesimalField := conj_local_infinitesimal_field
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom conj_local_infinitesimal_field : LocalInfinitesimalField
+--     noncomputable instance : LocalInfinitesimalField := conj_local_infinitesimal_field
+-- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
+-- every downstream `[LocalInfinitesimalField]` resolved for free.  Removed, not completed — downstream
+-- results must take `[LocalInfinitesimalField]` as an explicit hypothesis.
+
 end QOU.AppendixSurreals

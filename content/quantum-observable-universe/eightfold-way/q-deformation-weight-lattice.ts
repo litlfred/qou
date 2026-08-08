@@ -23,7 +23,16 @@ export default remark({
     "prop:a2-from-three-strands",
     "rem:hecke-algebra-from-braiding",
   ],
-  lean: { ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation" },
+  // The ref now names a DECLARATION, not the module.
+  // `cartan_fixed_while_qSerre_moves` is the conjunction the file's own
+  // docstring calls "the file's actual claim" — the Cartan datum constant in
+  // q, the Serre coefficient demonstrably not (witnessed at q = 2) — which is
+  // exactly this block's "two 2s" separation. It does NOT formalise
+  // q-independence of the root datum under Drinfeld–Jimbo; that is standard
+  // (Lusztig/Kashiwara) and cited, per the refined-framing note below.
+  lean: {
+    ref: "qou:QOU.Eightfold.WeylInvarianceQDeformation.cartan_fixed_while_qSerre_moves",
+  },
   authorNotes: [
     {
       kind: "refined-framing",
