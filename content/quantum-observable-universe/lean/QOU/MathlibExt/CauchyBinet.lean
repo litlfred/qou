@@ -31,8 +31,10 @@ without specializing to ℝ.
 
 ## Status
 
-Being built incrementally. What is proved here is proved; the frontier is
-marked with `sorry` and named, never papered over with a weakened statement.
+**Complete and `sorry`-free.** `det_mul_eq_sum_minors` is the general theorem;
+`det_gram_map_ne_zero` is the corollary `sp01` consumes. Every declaration in
+this file checks with `#print axioms` reporting only
+`propext, Classical.choice, Quot.sound`.
 
 ## Proof route
 
@@ -310,7 +312,7 @@ Three moves, each with its ingredient already proved above:
 -/
 
 /-- The summand, named so the reindexing has something to talk about. -/
-private def term {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+def term {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
     (B : Matrix (Fin n) (Fin r) R) (φ : Fin r → Fin n) : R :=
   (A.submatrix id φ).det * ∏ i, B (φ i) i
 
@@ -337,24 +339,151 @@ theorem sum_term_comp_perm {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
   simp only [Function.comp_apply, Units.smul_def]
   ring
 
-/-! ## Frontier
+/-- The injective `φ` — after `term_eq_zero_of_not_injective`, the only index
+set that carries any weight. -/
+def injFns (r n : ℕ) : Finset (Fin r → Fin n) :=
+  Finset.univ.filter (fun φ => Function.Injective φ)
 
-Everything except the reindexing is proved. What is left in
-`det_mul_eq_sum_minors` is the bijection step: `∑_φ term = ∑_{(f,π)} term`,
-via `Finset.sum_bij'` with `(f, π) ↦ f.1 ∘ π` one way and
-`φ ↦ (sortSelector, sortPerm)` the other — both round trips
-(`sortSelector_comp`, `sortPerm_comp`) and the vanishing
-(`term_eq_zero_of_not_injective`) are in hand. -/
+theorem mem_injFns {r n : ℕ} {φ : Fin r → Fin n} (hφ : φ ∈ injFns r n) :
+    Function.Injective φ :=
+  (Finset.mem_filter.mp hφ).2
+
+theorem mem_injFns_of {r n : ℕ} {φ : Fin r → Fin n}
+    (hφ : Function.Injective φ) : φ ∈ injFns r n :=
+  Finset.mem_filter.mpr ⟨Finset.mem_univ _, hφ⟩
+
+/-- **The reindexing.** Sorting is a bijection from the injective `φ` onto the
+pairs `(f, π)`, and `Finset.sum_bij'` takes exactly the two round trips proved
+above plus the factorization.
+
+Note the direction of `sum_bij'`'s `i`: it is allowed to depend on membership,
+which is what lets it be `φ ↦ (sortSelector hφ, sortPerm hφ)` — `sortSelector`
+needs the injectivity proof, so the non-dependent `sum_nbij'` cannot express
+this map. -/
+theorem sum_term_eq_sum_pairs {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
+    (B : Matrix (Fin n) (Fin r) R) :
+    (∑ φ ∈ injFns r n, term A B φ)
+      = ∑ p : Selector r n × Equiv.Perm (Fin r), term A B (p.1.1 ∘ p.2) := by
+  refine Finset.sum_bij'
+    (fun φ hφ => (sortSelector (mem_injFns hφ), sortPerm (mem_injFns hφ)))
+    (fun p _ => p.1.1 ∘ p.2)
+    (fun _ _ => Finset.mem_univ _)
+    (fun p _ => mem_injFns_of (comp_perm_injective p.1 p.2))
+    ?_ ?_ ?_
+  · -- `sortSelector` ∘ `sortPerm` rebuilds `φ`
+    intro φ hφ
+    exact funext fun i => sortSelector_comp_sortPerm (mem_injFns hφ) i
+  · -- sorting `f ∘ π` recovers the pair; the two halves are the round trips
+    rintro ⟨f, π⟩ _
+    simp only [Prod.mk.injEq]
+    exact ⟨Subtype.ext (sortSelector_comp f π), sortPerm_comp f π⟩
+  · -- the summands agree, again by the factorization
+    intro φ hφ
+    exact congrArg (term A B)
+      (funext fun i => (sortSelector_comp_sortPerm (mem_injFns hφ) i).symm)
 
 /-- **Rectangular Cauchy–Binet.** `det (A * B) = ∑_f det (A_f) * det (B^f)`
 over the strictly monotone `f : Fin r → Fin n`.
 
-NOT YET PROVED — only the reindexing remains; see the frontier note and bean
-`qou-8yph`. -/
+Absent from Mathlib as of this writing — see the header note. -/
 theorem det_mul_eq_sum_minors {r n : ℕ} (A : Matrix (Fin r) (Fin n) R)
     (B : Matrix (Fin n) (Fin r) R) :
     (A * B).det = ∑ f : Selector r n, (minorA A f).det * (minorB B f).det := by
   -- Ref: [aitken1956] Aitken, Determinants and Matrices, §II (Cauchy–Binet)
-  sorry
+  -- 3. regroup the pair-sum: for a fixed `f`, the `π`-sum is `det (minorB B f)`
+  have hpairs : (∑ p : Selector r n × Equiv.Perm (Fin r), term A B (p.1.1 ∘ p.2))
+      = ∑ f : Selector r n, (minorA A f).det * (minorB B f).det := by
+    rw [Fintype.sum_prod_type]
+    exact Finset.sum_congr rfl (fun f _ => sum_term_comp_perm A B f)
+  -- 1. the non-injective `φ` contribute nothing, so the sum may be restricted
+  have hdrop : (∑ φ ∈ injFns r n, term A B φ)
+      = ∑ φ : Fin r → Fin n, term A B φ := by
+    refine Finset.sum_subset (Finset.filter_subset _ _) ?_
+    intro φ _ hφ
+    exact term_eq_zero_of_not_injective A B fun h => hφ (mem_injFns_of h)
+  rw [det_mul_eq_sum_det_submatrix]
+  show (∑ φ : Fin r → Fin n, term A B φ) = _
+  -- 2. reindex, then 3.
+  rw [← hdrop, sum_term_eq_sum_pairs, hpairs]
+
+/-! ## Corollary — the Gram determinant is a sum of squares
+
+This is the form `sp01` (`specht_form_nondegenerate`) asks for, and the reason
+the general theorem was worth building. Specialising `B := Aᵀ` makes the two
+minors transposes of each other, so each term of the Cauchy–Binet sum is a
+*square*:
+
+  `det (A Aᵀ) = ∑_f (det A_f)²`
+
+Over an ordered ring that is immediately `≥ 0`, and `> 0` as soon as a single
+minor is nonzero — no positive-definiteness machinery, no rank argument.
+
+The last lemma is the transfer that made this route preferable to the ℝ-only
+shortcut `sp01` declined: run the positivity over `ℤ`, where the sum of
+squares lives, then push the *nonzero* conclusion along `ℤ → k` for any
+characteristic-zero field. The hypothesis stays `[Field k] [CharZero k]`
+rather than collapsing to `ℝ`. -/
+
+/-- **Gram form.** `det (A Aᵀ)` is the sum of the squares of the `r × r`
+minors of `A`. -/
+theorem det_mul_transpose_eq_sum_sq {r n : ℕ} (A : Matrix (Fin r) (Fin n) R) :
+    (A * Aᵀ).det = ∑ f : Selector r n, (minorA A f).det ^ 2 := by
+  rw [det_mul_eq_sum_minors]
+  refine Finset.sum_congr rfl (fun f _ => ?_)
+  -- `minorB Aᵀ f` and `(minorA A f)ᵀ` are the same matrix on the nose
+  have hT : minorB Aᵀ f = (minorA A f)ᵀ := rfl
+  rw [hT, Matrix.det_transpose, sq]
+
+section Ordered
+
+variable {S : Type*} [CommRing S] [LinearOrder S] [IsStrictOrderedRing S]
+
+/-- A Gram determinant is never negative. -/
+theorem det_mul_transpose_nonneg {r n : ℕ} (A : Matrix (Fin r) (Fin n) S) :
+    0 ≤ (A * Aᵀ).det := by
+  rw [det_mul_transpose_eq_sum_sq]
+  exact Finset.sum_nonneg fun _ _ => sq_nonneg _
+
+/-- **One nonzero minor suffices.** A single nonvanishing `r × r` minor makes
+the whole Gram determinant strictly positive — the other terms cannot cancel
+it, because they are squares. -/
+theorem det_mul_transpose_pos {r n : ℕ} (A : Matrix (Fin r) (Fin n) S)
+    {f₀ : Selector r n} (h : (minorA A f₀).det ≠ 0) : 0 < (A * Aᵀ).det := by
+  rw [det_mul_transpose_eq_sum_sq]
+  refine Finset.sum_pos' (fun _ _ => sq_nonneg _) ⟨f₀, Finset.mem_univ _, ?_⟩
+  exact lt_of_le_of_ne (sq_nonneg _) (Ne.symm (pow_ne_zero 2 h))
+
+end Ordered
+
+section CharZeroTransfer
+
+variable {k : Type*} [Field k] [CharZero k]
+
+/-- **The transfer.** An integer matrix with a nonzero `r × r` minor has a
+nonsingular Gram matrix over *every* characteristic-zero field.
+
+The order is only used over `ℤ`; `k` never needs to be ordered, which is
+exactly what keeps `sp01`'s hypothesis at `[Field k] [CharZero k]`. -/
+theorem det_gram_map_ne_zero {r n : ℕ} (M : Matrix (Fin r) (Fin n) ℤ)
+    {f₀ : Selector r n} (h : (minorA M f₀).det ≠ 0) :
+    ((M.map (Int.cast : ℤ → k)) * (M.map (Int.cast : ℤ → k))ᵀ).det ≠ 0 := by
+  -- casting commutes with the Gram product entry by entry
+  have hmap : (M.map (Int.cast : ℤ → k)) * (M.map (Int.cast : ℤ → k))ᵀ
+      = (M * Mᵀ).map (Int.cast : ℤ → k) := by
+    ext i j
+    simp only [Matrix.mul_apply, Matrix.map_apply, Matrix.transpose_apply,
+      Int.cast_sum, Int.cast_mul]
+  rw [hmap]
+  -- over `ℤ` the determinant is a positive sum of squares …
+  have hZ : (M * Mᵀ).det ≠ 0 := (det_mul_transpose_pos M h).ne'
+  -- … and `det` commutes with the cast, so the conclusion travels to `k`
+  have hmm : (Int.castRingHom k).mapMatrix (M * Mᵀ)
+      = (M * Mᵀ).map (Int.cast : ℤ → k) := rfl
+  have hdet := (Int.castRingHom k).map_det (M * Mᵀ)
+  rw [hmm] at hdet
+  rw [← hdet]
+  simpa using (Int.cast_ne_zero (α := k)).mpr hZ
+
+end CharZeroTransfer
 
 end QOU.MathlibExt.CauchyBinet

@@ -1,11 +1,11 @@
 ---
 # qou-8yph
 title: 'MATHLIB-INFRA: rectangular Cauchy-Binet det(AB) = Σ_J det(A_J)det(B^J) — absent from Mathlib, gates sp01'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-08-08T08:19:02Z
-updated_at: 2026-08-08T08:19:02Z
+updated_at: 2026-08-08T09:22:03Z
 ---
 
 `sp01` (the critical path into the whole Specht cluster) names two possible
@@ -262,3 +262,76 @@ Line count is tracking well under that — Mathlib's `Finset.Sort` API and
 `det_permute'` did more than expected, and the two hardest-looking steps
 (sign bookkeeping, the sorting factorization) were each a handful of lines.
 The Mathlib-PR judgement stands: Cauchy–Binet is genuinely absent upstream.
+## DONE 2026-08-08 — complete and sorry-free
+
+`QOU/MathlibExt/CauchyBinet.lean`: 489 lines, 37 declarations, **zero
+`sorry`**. `lake build QOU.MathlibExt.CauchyBinet` green (1304 jobs).
+Every headline declaration verified with `#print axioms` reporting only
+`propext, Classical.choice, Quot.sound`.
+
+### The theorem
+
+    det_mul_eq_sum_minors :
+      (A * B).det = ∑ f : Selector r n, (minorA A f).det * (minorB B f).det
+
+over any `[CommRing R]`, `Selector r n = {f : Fin r → Fin n // StrictMono f}`.
+
+### The corollaries sp01 actually consumes
+
+- `det_mul_transpose_eq_sum_sq` — `det (A Aᵀ) = ∑_f (det A_f)²`. The
+  `minorB Aᵀ f = (minorA A f)ᵀ` identity is `rfl`, so this is three lines.
+- `det_mul_transpose_nonneg` / `det_mul_transpose_pos` — over
+  `[CommRing S] [LinearOrder S] [IsStrictOrderedRing S]`, the Gram
+  determinant is `≥ 0`, and `> 0` as soon as **one** minor is nonzero
+  (`Finset.sum_pos'`; the other terms are squares and cannot cancel it).
+- `det_gram_map_ne_zero` — **the transfer**. For `M : Matrix (Fin r) (Fin n) ℤ`
+  with one nonzero `r × r` minor, `det (N Nᵀ) ≠ 0` where `N = M.map Int.cast`
+  into any `[Field k] [CharZero k]`. The order is used only over `ℤ`; `k`
+  never needs to be ordered.
+
+That last one is the point of the whole bean: it is exactly the route sp01
+named, and it keeps the hypothesis at `[Field k] [CharZero k]` instead of
+collapsing to `ℝ` — the specialization the owner declined on 2026-07-25.
+
+### The final step (the reindexing) — how it went
+
+`Finset.sum_bij'` on the nose, first compile. Maps:
+
+- `i : φ ↦ (sortSelector hφ, sortPerm hφ)` — **dependent on membership**, which
+  is precisely why `sum_nbij'` cannot express it: `sortSelector` needs the
+  injectivity proof that membership in `injFns r n` carries.
+- `j : (f, π) ↦ f.1 ∘ π`
+
+and the four obligations are the lemmas already banked: `left_inv` is
+`sortSelector_comp_sortPerm` under `funext`, `right_inv` is
+`sortSelector_comp` + `sortPerm_comp` under `Prod.mk.injEq`, and `h` is
+`congrArg (term A B)` of the same factorization.
+
+Two things made this land clean:
+
+- **Definitional proof irrelevance.** `right_inv`'s goal carries the
+  membership-derived injectivity proof, not `comp_perm_injective f π`.
+  `exact` accepts the mismatch because `Function.Injective φ` is a `Prop`.
+  No `Subsingleton.elim`, no proof-transport.
+- **Letting `sum_bij'` derive injectivity.** Going the other direction
+  (`sum_bij` from pairs to functions, with the non-dependent `i`) would have
+  needed `i_inj` proved by hand, which means rewriting under `sortSelector`'s
+  dependent proof argument. `sum_bij'` gets injectivity free from the two
+  round trips.
+
+### Final sizing verdict
+
+The bean opened with "a few hundred lines, multi-session, plausible Mathlib
+PR". Landed at 489 lines including ~150 of docstring, in-session. Mathlib's
+`Finset.Sort` API (`orderEmbOfFin`, `orderIsoOfFin`, `orderEmbOfFin_unique`)
+and `det_permute'` carried more than budgeted.
+
+**The Mathlib-PR judgement stands** — rectangular Cauchy–Binet is genuinely
+absent upstream (no file matches `Cauchy-Binet`/`cauchy_binet`/`CauchyBinet`;
+`det_mul` is square-only), and this file is self-contained apart from those
+Mathlib APIs.
+
+### Next
+
+Wire `det_gram_map_ne_zero` into `sp01` / `qou-0xyc` — that is a separate
+bean's work, not this one's.
