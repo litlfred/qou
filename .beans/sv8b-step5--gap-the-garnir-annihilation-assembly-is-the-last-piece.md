@@ -1,7 +1,7 @@
 ---
 # sv8b-step5
 title: 'GAP: sv8b step 5 — the Garnir annihilation assembly is the ONLY piece left'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - specht
     - okounkov-vershik
 created_at: 2026-08-08T09:00:00Z
-updated_at: 2026-08-08T09:00:00Z
+updated_at: 2026-08-08T19:02:41Z
 ---
 
 ## Why this bean exists
