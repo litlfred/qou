@@ -221,9 +221,15 @@ def main() -> int:
                     help="survey mode, but exit 1 if anything is found")
     args = ap.parse_args()
 
+    missing: list[pathlib.Path] = []
     if args.diff is not None:
-        files = [pathlib.Path(f) for f in args.diff]
-        files = [f for f in files if in_scope(f) and f.exists()]
+        named = [pathlib.Path(f) for f in args.diff]
+        # A named path that does not exist is a caller error, not a clean file.
+        # Dropping it silently is how a gate passes by scanning nothing — the
+        # same failure this lane hit with an audit that returned [] on a parse
+        # error. Report it, and fail on it.
+        missing = [f for f in named if not f.exists()]
+        files = [f for f in named if f.exists() and in_scope(f)]
         gate = True
     else:
         files = sorted((ROOT / SCOPE).rglob("*.py"))
@@ -242,9 +248,22 @@ def main() -> int:
             print(f"  {rel}:{lineno}  [{kind}]  {detail}")
 
     if args.diff is not None:
-        scanned = f"{len(files)} file(s) in this diff"
+        scanned = (f"{len(files)} of {len(args.diff)} named file(s) in scope "
+                   f"({SCOPE}/), {len(missing)} missing")
     else:
         scanned = f"{len(files)} file(s) under {SCOPE}/"
+
+    if missing:
+        print("\nprobe-float64-guard: named path(s) do not exist — nothing was scanned "
+              "for them, so this run proves nothing about:")
+        for f in missing:
+            print(f"  {f}")
+        return 1
+
+    if args.diff is not None and not files:
+        print(f"probe-float64-guard: nothing to scan -- {scanned}. "
+              "This is NOT a pass; it means no in-scope file was handed to the gate.")
+        return 0
 
     if total == 0:
         print(f"probe-float64-guard: clean -- {scanned}, no float64 entry points.")

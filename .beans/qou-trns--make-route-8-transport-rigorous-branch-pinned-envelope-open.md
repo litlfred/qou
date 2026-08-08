@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-08T18:30:00Z
+updated_at: 2026-08-08T11:40:00Z
 parent: 0yqu
 ---
 
@@ -1029,5 +1029,74 @@ cut — the sixth independent appearance of that endpoint.
 
 Option A, with eyes open about the margins. If either elimination proves
 intractable, Option B is the fallback and pays for itself in Mathlib.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — Option A's obligations are gone: the margins were an artefact
+
+Route 28 (`qbeta_5two_route28_arg_sector_probe.py`, 8 gates) +
+`QOU/QBeta/FiveTwoArgSector.lean` (11 theorems, sorry-free, `lake build
+QOU.QBeta.FiveTwoArgSector` green, axioms `[propext, Classical.choice,
+Quot.sound]`).
+
+**The three obligations above are withdrawn — not because they were proved, but
+because they were never the right statement.** They came from confining the
+argument sum to the *uniform* window `(−π, 2π)`. But the window only has to
+exclude `φ ± 2π`, and it may depend on `φ`. With `φ ∈ [0, π)` the window
+`(φ − 2π, φ + 2π)` suffices, and it is loose enough that the individual bounds
+become free or elementary:
+
+| input | source | was |
+|---|---|---|
+| `arg(1 − x·y₁) ∈ (−π/2, 0)`, `y₁` the positive real root | `‖x·y₁‖ = y₁ < 1` ⟹ `Re > 0` | obligation 1, 10% margin |
+| `arg(1 − x·y₃) ≥ 0` when `Im(x·y₃) ≤ 0` | `Complex.arg_nonneg_iff` | obligation 3 |
+| `arg(1 − x·y₂) ∈ (−π, π]` | **free** | obligation 2, 17% margin |
+| when `φ > π/2`, also `arg(1 − x·y₂) ≥ 0` | same as `y₃` | — |
+
+**So the 10% and 17% margins were an artefact of the uniform window, not of the
+mathematics.** The judgement call this bean recorded — "whether the trade is
+worth making" — did not need to be made.
+
+### What survives, and is now PROVED
+
+One inequality: on the conjugate-pair part of the arc, `s·a < c·b` for the upper
+member `y₂ = a + b i` (`sa_lt_cb`). Route 27 measured `max(s·a − c·b) = −0.3365`
+and left it open. It follows from two Vieta consequences — `2cR = 1 + 2aR` and
+`2a(R−1) = R² − R − 1`, `R = ‖y₂‖²` — by three sign certificates:
+
+* `1 < R` (`one_lt_normSq`), i.e. the real root is `< 1`: otherwise `b² > 0`
+  forces `4R(R−1)² > (R²−R−1)²`, impossible on `(0,1]` where the left side is at
+  most `16/27` (certificate `(3R−1)²(4−3R) ≥ 0`) and the right at least `1`.
+* `a > 0`: `c > a > 0` and `E := 1 + 4aR + 4a²R(R−1) > 0` **termwise**.
+* `a < 0 < −c`: `E·(R−1) = R³(R−1)² − 1`, and
+  `R³(R−1)² = (R³ − R²)·(R² − R)` is a product of two factors in `(0,1)` — the
+  first `< 1` because `c < 0`, the second because `a < 0`.
+
+`sq_gap` is the bridge: `(s·a)² − (c·b)² = a² − c²R`.
+
+On the all-real part (`φ > φ₀`) the inequality is not needed at all: both extra
+roots are **negative** (product `1`, sum `2c < 0`), so `Im(x·y) = y·sin φ < 0`
+outright. Route 28 G8 confirms `(1 positive, 2 negative)` and `c < 0` at every
+such point.
+
+### Option D stays ruled out, and is now explained
+
+`Re(1 − x·yⱼ) > 0` is false near `φ = π` — but that is precisely the all-real
+part, where the sign argument replaces it. The two failures do not overlap.
+
+### Adversarial check on the Lean statement itself
+
+Route 28 G6: the hypothesis `π/2 < φ → 0 ≤ a₂` is **load-bearing**. Without it
+the best lower bound is `−π/2 + (−π) + 0 = −3π/2`, which clears `φ − 2π` only
+while `φ ≤ π/2` — so the weaker statement is false on more than half the arc.
+
+### What is still open
+
+The bridge from "three complex roots satisfying the Vieta relations" to "a real
+root in `(0,1)` plus a conjugate pair (or three reals)". That is algebra, not
+analysis, and it is stated as hypotheses in `FiveTwoArgSector` rather than
+assumed silently. **`hcont`'s consumer is not closed by this file.**
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
