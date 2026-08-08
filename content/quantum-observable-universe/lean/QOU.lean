@@ -563,6 +563,10 @@ import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
 import QOU.Archimedean.HodgeWeilRealStructure
+-- B2-lift AUTOMATIC (moduli-independent) ingredients, Lean-locked (bean qou-8mbd):
+-- Brick 1 nome exponent-group equivariance (τ↦−τ ↔ q↦q⁻¹; τ↦½−τ ↔ q↦−q⁻¹, Z4→GInt units);
+-- Brick 2 Weil∘Galois = conj + complete Fix(c)/Fix(F) characterization. No MOC instance (open).
+import QOU.Archimedean.B2LiftAutomaticIngredients
 import QOU.Archimedean.CanonicalTitsIso
 import QOU.Archimedean.TauRhoHodgeShadow
 import QOU.Archimedean.TauS5EquivarianceReduction
