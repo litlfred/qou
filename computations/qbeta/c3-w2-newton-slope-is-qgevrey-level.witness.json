@@ -1,0 +1,81 @@
+{
+  "schema": "witness/v1",
+  "engine": "sympy",
+  "scriptFile": "c3_w2_newton_slope_is_qgevrey_level.py",
+  "scriptSha256": "c90ea2e1abeb64c1e7294b2e598b033132669499e9576033b90bf5197ae92c5b",
+  "commitSha": "649375b1f4b4716abf03aebea300835d4761b3ad",
+  "description": "Bean qou-slpd item 5. Settles whether the Newton-polygon slope is the q-Gevrey ORDER or the LEVEL \u2014 the last prose step in the C1 chain consumed by conj:qdifference-kernel-prolongation-symbol. RSZ section 1.3.2 makes order and level reciprocal, and the corpus had one 1/2 of each kind. The q-Euler equation, RSZ's own touchstone, has slope 1 where order and level coincide and therefore cannot decide the question. The family L_k = z^k sigma - 1 has Newton slope k, recursion c_m = q^{m-k} c_{m-k}, closed form c_{jk} = q^{k j (j-1)/2}, order 1/k and level k: the LEVEL tracks the slope, verified symbolically for k = 1, 2, 3 including the recursion at every index. Consequence for C1: its computed slope 1/2 read as a level predicts order 2 and growth q^{n^2}, which is the Lean-proved deg_q c_n = n^2; read as an order it would predict q^{n^2/4}, off by a factor 4 in the exponent and inconsistent with the corpus's own measurement.",
+  "computation": {
+    "family": "L_k = z^k*sigma - 1, sigma: z -> q z",
+    "kValues": [
+      1,
+      2,
+      3
+    ],
+    "seriesTruncation": 14,
+    "orderDefinition": "lim 2 log_q |c_m| / m^2  (RSZ order s: a_n = O(A^n q^{s n^2/2}))"
+  },
+  "results": {
+    "perK": {
+      "1": {
+        "newtonSlope": 1,
+        "recursionVerified": true,
+        "closedFormLogQ": "j*(j - 1)/2",
+        "order": "1",
+        "level": "1",
+        "slopeEqualsLevel": true,
+        "slopeEqualsOrder": true
+      },
+      "2": {
+        "newtonSlope": 2,
+        "recursionVerified": true,
+        "closedFormLogQ": "j*(j - 1)",
+        "order": "1/2",
+        "level": "2",
+        "slopeEqualsLevel": true,
+        "slopeEqualsOrder": false
+      },
+      "3": {
+        "newtonSlope": 3,
+        "recursionVerified": true,
+        "closedFormLogQ": "3*j*(j - 1)/2",
+        "order": "1/3",
+        "level": "3",
+        "slopeEqualsLevel": true,
+        "slopeEqualsOrder": false
+      }
+    },
+    "qEulerIsDegenerate": true,
+    "kWhereOrderFails": [
+      2,
+      3
+    ],
+    "c1PredictedGrowthExponent": "1",
+    "c1MeasuredGrowthExponent": "1",
+    "c1OrderReadingGrowthExponent": "1/4"
+  },
+  "checks": [
+    {
+      "name": "recursion_from_operator_all_k",
+      "detail": "for k = [1, 2, 3], solving coeff(L_k f, z^m) = 0 returns c_m = q^(m-k) c_(m-k) for every m = k..14",
+      "passed": true
+    },
+    {
+      "name": "newton_slope_equals_qgevrey_level",
+      "detail": "for k = [1, 2, 3]: slope k, order 1/k, level k. slope == level in every case.",
+      "passed": true
+    },
+    {
+      "name": "q_euler_is_degenerate_higher_k_separates",
+      "detail": "at k=1 order and level coincide, so RSZ's own touchstone cannot distinguish them; at k>=2 they separate and level wins",
+      "passed": true
+    },
+    {
+      "name": "c1_growth_matches_slope_as_level",
+      "detail": "C1 slope 1/2 read as a LEVEL predicts order 2, growth q^{n^2}, which is the Lean-proved deg_q c_n = n^2. Read as an ORDER it would predict q^{n^2/4}, inconsistent with the corpus's own measured growth.",
+      "passed": true
+    }
+  ],
+  "verdict": "The Newton slope is the q-Gevrey LEVEL, not the order. Verified on the slope-k family for k = 1, 2, 3: slope k, order 1/k, level k. The k=1 case (q-Euler) is degenerate \u2014 order and level both equal 1 \u2014 which is why this went unexamined. For C1 the reading is forced rather than chosen: slope 1/2 as a level reproduces the Lean-proved q^{n^2} growth, as an order it would predict q^{n^2/4}. So theta_eq_half_gs_bridge's grounding of c1Slope = 1/2 through routeB_gaussian_order_half uses the wrong quantity of the wrong sequence; the right grounding is the inf-side LEVEL, which is c1InfCoeff_order_two restated. The NUMBER 1/2 was never in doubt and no downstream conclusion changes \u2014 Door-i needs only that the two slope multisets differ, which is now newtonSlopes_c1_ne_ggm.",
+  "durationMs": 370
+}

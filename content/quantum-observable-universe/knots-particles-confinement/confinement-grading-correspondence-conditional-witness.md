@@ -19,7 +19,7 @@ Witnesses:
 `confined-knot-binding.witness.json`,
 `confinement-operator-selection.witness.json`.
 
-These computations provide empirical evidence for the upstream conjecture. Once the upstream conjecture is settled, this block becomes an unconditional theorem.
+These computations provide empirical evidence for the upstream conjecture. Once the upstream conjecture is settled, this witness becomes an unconditional theorem.
 
 ## Computational corollary
 

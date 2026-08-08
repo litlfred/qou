@@ -1195,6 +1195,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed, both lane labels. \"Per **the Track-C plan** in [`rem:F3-eps6-leading-eq-neg-2b-cubed`]\" -> \"As set out in [`rem:F3-eps6-leading-eq-neg-2b-cubed`]\"; \"The eventual full **Track-A** formalisation targets only the first atom\" -> \"A full formalisation therefore targets only the first atom\". The Lean identifiers `TrackCReducedAxiom` and `track_C_c_3_eq_neg_two` are code names in the companion file and are left as they are.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

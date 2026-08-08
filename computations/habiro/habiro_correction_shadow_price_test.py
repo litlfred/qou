@@ -41,7 +41,12 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
 try:
@@ -60,7 +65,7 @@ def main():
     p_n = 30
 
     # Load the A=3 H₉ chi-cache (proton at H₉ = A=3)
-    cache = json.loads((_pb.witness_path("chi-tritium-h9-at-q0-50dps.witness.json", HERE)).read_text())
+    cache = record_upstream(_pb.witness_path("chi-tritium-h9-at-q0-50dps.witness.json", HERE), _UPSTREAM_RECORDS)
     data = cache.get("data", cache)
     by_part = data["by_partition"]
     # Keep substrate values at mpmath precision (flagged by
@@ -200,6 +205,7 @@ def main():
     # Build witness with FULL LP dual fields (per AGENTS.md LP/SDP rule)
     w = WitnessBuilder("habiro-correction-shadow-price-test", engine="python",
                        start_time=_t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Tests whether the proton Habiro correction coefficients (1/30, "
         "1/1260) are LP/SDP shadow prices. Operator-selection LP at H₉ "

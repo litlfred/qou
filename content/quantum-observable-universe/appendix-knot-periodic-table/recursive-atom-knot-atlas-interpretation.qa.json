@@ -1335,6 +1335,18 @@
         "reviewed_at": "2026-07-12T00:34:54.917Z",
         "reviewed_sha": "7858cbecd61d9f31c04141201716db2615ab765b"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The published .ts title and the opening heading, both \"Build-pipeline integration\", are now \"Provenance of the recursive atom-knot atlas entries\" and \"Provenance of the atlas entries\". The closing sentence no longer ends at the authoring repository's build command: \"propagate ... to the rendered appendix on the next `bun run build`\" is now a statement that changed inputs mark the affected entries stale, the atlas is recomputed from the listed sources, and no entry is maintained by hand. The five sources, their composition order and the 50-digit precision statement are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

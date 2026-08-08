@@ -1660,6 +1660,18 @@
         "reviewed_at": "2026-07-12T00:35:02.628Z",
         "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Clean. `thm:qou-obstruction-reduction` and similar are block labels; \"qou-\" here is the paper's own prefix, not a bean id.",
+        "reviewed_at": "2026-08-08T00:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-sweep",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

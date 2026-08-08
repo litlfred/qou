@@ -11,6 +11,18 @@
     "ts": "160a501666c0"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "\"The arc\" is now introduced by \"This sub-section proves the pairing unique and exhibits the $\\mathrm{SU}(2)$ realisation\", so it reads as the sub-section's sequence of steps rather than as a working name for a run of blocks.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

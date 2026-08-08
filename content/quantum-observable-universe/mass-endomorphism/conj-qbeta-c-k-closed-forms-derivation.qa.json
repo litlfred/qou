@@ -1,0 +1,28 @@
+{
+  "$schema": "block-qa/v1",
+  "label": "rem:qbeta-c-k-closed-forms-derivation",
+  "kind": "remark",
+  "paths": {
+    "ts": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms-derivation.ts",
+    "md": "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms-derivation.md"
+  },
+  "source_hashes": {
+    "ts": "06459fb5c56c",
+    "md": "b1007e60e203"
+  },
+  "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The published figure is no longer sourced to a tracking surface: \"misses the 7.8 ppb accuracy target by $\\approx 164\\times$ (per the accuracy dashboard)\" -> \"misses the 7.8 ppb accuracy target by $\\approx 164\\times$\". The figure, the muon-anchored versus proton-pinned distinction, and the statement that the proton-anchored precision of $c_4$ to $c_7$ is open and not established are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
+  },
+  "updated_at": "2026-08-08T08:22:35.606Z"
+}

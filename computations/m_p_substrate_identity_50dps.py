@@ -95,7 +95,12 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -128,6 +133,40 @@ def trM_borromean(q):
     docs/audits/2026-06-09-binding-trace-convention-split.md addendum,
     probe_convention_d_vs_c_borromean.py (the D != C proof), and
     probe_trace_convention_production_impact.py (production impact).
+
+    WHY D AND NOT C — the forcing argument, and its unmet premise
+    (bean qou-3qrv; docs/audits/2026-08-08-borromean-trace-convention-
+    forcing.md). This function previously asserted the convention with
+    no justification for the selection. The justification has two links;
+    the first is proved, the second is NOT.
+
+    FORCED, GIVEN TEMPERLEY-LIEB. A normalised Markov trace on H_3(q) is
+    determined by (tr 1, tr s0, tr s0s1) = (1, z, z^2), so its Wedderburn
+    weights are a 3x3 linear solve in the Ocneanu parameter z. The TL
+    condition y_(1^3)(z) = 0 has exactly two roots: z = q, which is
+    degenerate (weights (1,0,0) — it annihilates the 2-row block too, so
+    it is not faithful on TL_3), and z = q^3/(q^2+1), whose weight vector
+    is exactly ([4]_q/[2]_q^3, 1/[2]_q^2, 0) = convention D. So D is the
+    UNIQUE Markov trace that factors through TL_3 and is faithful on it —
+    no residual freedom, and no experimental input anywhere in the chain.
+    Sorry-free in QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean
+    (markovWeights_eq_jones_of_threeRow_eq_zero); computed in
+    computations/probe3qrv_zpin.py.
+
+    PREMISE NOT ESTABLISHED. The above is conditional on the mass fibre
+    functor landing in Rep(SU_q(2)) ~ TL rather than in the full H_3(q),
+    and that premise is currently CONTRADICTED in the corpus: the scope
+    note of prop:h3-markov-wenzl-weights (mass-theory/h3-markov-wenzl-
+    weights-context.md) states that the mass and binding computations use
+    the full-Hecke Ocneanu trace, i.e. convention C — while this function
+    (via F_Bor -> canonical_mass.py) supplies D. Do not read the Lean
+    file as settling the selection: it proves a closed form FOR D, and
+    the uniqueness theorem proves TL => D; neither proves TL.
+
+    Until that premise is settled, treat the D-over-C choice as a
+    documented open item, not as a derived result. Do not "resolve" it by
+    observing that D is the value matching CODATA — deciding by match is
+    the failure mode the bean was opened to test for.
     """
     h = q - 1 / q
     return abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
@@ -240,9 +279,7 @@ def main():
     Q_beta_ame = None
     m_n_roundtrip = None
     try:
-        qb_witness = json.loads(
-            (COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json").read_text()
-        )
+        qb_witness = record_upstream(COMPUTE_DIR / "q-beta-operator-valued-N3.witness.json", _UPSTREAM_RECORDS)
         qb_val = qb_witness.get("data", {}).get("Q_AME")
         if qb_val is not None:
             Q_beta_ame = mpf(str(qb_val))
@@ -303,6 +340,7 @@ def main():
 
     # ── BUILD WITNESS ──────────────────────────────────────────────
     w = WitnessBuilder("m-p-substrate-identity-50dps", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Production substrate-categorical prediction of m_p and m_n from "
         "(m_e, m_μ, q_0) using Lean-proved closed forms for |tr_M(β_Bor)| "

@@ -1299,6 +1299,18 @@
         "reviewed_at": "2026-07-12T00:34:55.997Z",
         "reviewed_sha": "a390975172b947c0522dda496f17868e5c0a243a"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The branch decision label \"(Option E)\" is dropped from the Delta_lambda closure ansätze entry, which now reads as a plain sidecar heading. \"currently open\" is unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

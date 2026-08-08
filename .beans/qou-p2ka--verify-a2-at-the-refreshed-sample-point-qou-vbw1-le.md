@@ -1,7 +1,7 @@
 ---
 # qou-p2ka
 title: 'VERIFY: A2 residual at the refreshed sample point (qou-vbw1 leftover)'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T04:00:00Z
@@ -79,3 +79,44 @@ uninterrupted wall time; that is the authoritative check.
 `dbbe12fd`'s message already states this verification status plainly, and PR
 #4513's test plan does not claim A2 as passed. Nothing in the corpus asserts a
 green A2 for the new point.
+
+---
+
+## CLOSED 2026-08-08 — A2 RE-RUN COMPLETED, VERDICT UNCHANGED
+
+The resumable harness finished (4696s wall, 726 I(m,e) values at ORD_SEQ=1600,
+E_GF=±60, dps=70), resuming across two container restarts as designed.
+
+    old (typed, stale theta 0.20323503)   max rel residual = 1.6703807e-10
+    new (derived theta 0.20313250701828)  max rel residual = 1.6719466e-10
+    A2_TOL = 1e-8  ->  both PASS
+    A2 verdict unchanged by the substitution: TRUE   (ratio 1.0009375)
+
+So commit `dbbe12fd` (qou-vbw1, last consumer) is verified: refreshing the A2
+sample point from the stale typed theta to the derived one moved the residual by
+0.09% and changed no verdict. `qou-vbw1` is now fully verified, all 4 remaining
+consumers included.
+
+## The structural argument was right, and is now confirmed rather than assumed
+
+This bean recorded an ARGUMENT for why a regression was unlikely — identical
+modulus (`| |w_old| - |w_new| | = 0.0` at 60 dps), `I(m,e)` independent of `w`,
+every convergence condition stated in terms of `|w|`, so only the phase moved by
+2.05e-4 rad. That predicted a tiny, non-verdict-changing shift. Measured: 0.09%.
+
+Worth keeping the distinction the bean drew: the argument was **not** treated as
+a check, and the PR's test plan did not claim A2 as passed. It is passed now
+because it was run, not because it was reasoned about.
+
+## Also confirmed: the reduced-settings proxy was RIGHT to be rejected
+
+This bean recorded a proxy run (ORD=400, window ±12) giving ratio 0.9989, and
+rejected it as uninformative because both residuals came out truncation-dominated
+at O(0.8). The converged run gives residuals of 1.67e-10 — **nine orders of
+magnitude smaller**. The proxy's numbers were meaningless as absolute values,
+exactly as recorded. Its ratio happened to be in the right ballpark (0.9989 vs
+1.0009), but that was luck, not signal.
+
+The harness stays in the tree (`qbeta_3bp8_a2_sample_point_delta_check.py`) —
+it is a working example of a resumable long-compute that survives container
+restarts, which the long-compute discipline in AGENTS.md has no other instance of.

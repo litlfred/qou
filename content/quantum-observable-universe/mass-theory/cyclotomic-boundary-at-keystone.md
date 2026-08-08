@@ -1,4 +1,4 @@
-**Conjecture (cyclotomic boundary at the keystone order).**
+**Conjecture (cyclotomic boundary at the quintic order).**
 
 The binding $q$-deformation of the na-Stokes period
 $S(n) = \sum_{\lambda \vdash n} \dim_q(\lambda)$ satisfies the recurrence
@@ -11,21 +11,21 @@ whose deviation term $D(n)$ — the **Habiro tail** — carries a universal
 $(q-1)^2$ double root at $q=1$ and is bar-even ($D(1/q)=D(q)$). The
 conjecture asserts that $D(n)$ is **cyclotomic** — a product of cyclotomic
 polynomials (times the $(q-1)^2$ factor and a $q$-monomial) — **if and
-only if $n \leq 5$**, where $5$ is the keystone order $S_5 \supset A_5$.
+only if $n \leq 5$**, where $5$ is the quintic order $S_5 \supset A_5$.
 
 **The alignment.** The cyclotomic-pure regime $n \leq 5$ coincides exactly
-with the framework's calibration and keystone data:
+with the framework's calibration orders and the quintic order:
 
 $$
 \{\,n \leq 5 : D(n)\text{ cyclotomic}\,\}
 \;=\;
 \underbrace{\{n=2,3,4\}}_{\text{calibration orders } c=1,2,3}
 \;\cup\;
-\underbrace{\{n=5\}}_{S_5\text{ keystone}}.
+\underbrace{\{n=5\}}_{S_5\text{ quintic order}}.
 $$
 
 The first non-cyclotomic (non-$q$-holonomic) content appears at the first
-body order $n=6$ that is *neither* a calibration *nor* the keystone.
+body order $n=6$ that is *neither* a calibration *nor* the quintic order.
 
 **The arithmetic mechanism.** At $q=1$ one has $S(n)|_{q=1} = \sum_{\lambda
 \vdash n} f^\lambda = I(n)$, the involution / telephone numbers (OEIS
@@ -53,7 +53,7 @@ distinction, **not** a cyclotomic-vs-non-cyclotomic one (a product of
 several cyclotomics is still cyclotomic). It does not, by itself, supply the
 arithmetic mechanism above.
 
-**The McKay coincidence (rep-theory, link unproven).** At the keystone $n=5$
+**The McKay coincidence (rep-theory, link unproven).** At the quintic order $n=5$
 the four conjugation classes $\{\lambda,\lambda'\}$ of $S_5$ carry quantum
 dimensions equal to the **$E_8$ Coxeter marks** $[\mathrm{mark}]_q$:
 
@@ -85,7 +85,7 @@ bearing on the arithmetic mechanism is unproven.
    non-cyclotomic, so non-cyclotomicity is the *expected* outcome — the
    content is entirely that $n \leq 5$ *are* cyclotomic, and that "for all
    $n \geq 6$, with no exceptions" is what a proof must supply.
-2. *Alignment*: that boundary coincides with {calibration $\cup$ keystone}
+2. *Alignment*: that boundary coincides with {calibration $\cup$ quintic}
    orders $\{2,3,4\}\cup\{5\}$.
 3. *Rep-theory*: the McKay-mark / $S_6$-outer-automorphism coincidence at
    $n=6$.

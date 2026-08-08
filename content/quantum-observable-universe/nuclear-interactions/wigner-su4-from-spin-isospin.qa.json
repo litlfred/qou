@@ -13,6 +13,18 @@
     "lean": "0193f1de0d11"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"(L3)\" layer label is out of the published title, and the body sentence now reads \"The framework's nuclear-shell binding relies on a hard-coded `magic A·8G` rule\" with no layer id.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

@@ -1299,6 +1299,28 @@
         "reviewed_at": "2026-07-12T00:34:55.997Z",
         "reviewed_sha": "a390975172b947c0522dda496f17868e5c0a243a"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The agent-configuration citation is gone: the enforcement sentence naming \"AGENTS.md and relevant agent skills (`local/coordinate.md`, `local/compute-author.md`, `local/compute-audit.md`, `local/proof-editor.md`)\" was replaced by a \"**Maintenance contract.**\" paragraph that ties a proposition to its canonical script and witness JSON. The \"L1\" / \"L2\" precision legs are defined in place in this same block.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      },
+      {
+        "result": "pass",
+        "notes": "Re-reviewed under the added scope, which splits workplan uses of \"gate\" from mathematical ones. The status-flag glossary read \"*open* (open gate)\"; it now reads \"*open* (open question, no derivation yet)\", which is what the tier means. L1 and L2 are left in place: this block defines them here as the two precision legs, so they are not roadmap tiers.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

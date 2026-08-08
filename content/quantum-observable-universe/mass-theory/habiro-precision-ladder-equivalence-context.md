@@ -50,6 +50,6 @@ Reaching experiment-grade precision requires higher-order
 corrections that are **not** currently derived from the $a_m$;
 attempts to read them off as a "precision ladder" tuned the
 coefficients against the experimental value rather than evaluating
-them categorically. The canonical content of this block is the
+them categorically. The canonical content here is the
 integrality of the $a_m$, not a high-precision prediction.
 

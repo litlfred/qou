@@ -102,7 +102,12 @@ from hecke_symbolic import (                                # noqa: E402
 from markov_trace_canonical import tr_M_element            # noqa: E402
 from hecke_core import h as _h_num                         # noqa: E402
 from q_parameter import Q as Q0                            # noqa: E402
-from witness_base import WitnessBuilder                    # noqa: E402
+from witness_base import WitnessBuilder, record_upstream                    # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def _classify(c: float, d: float, h_num: float) -> str:
@@ -360,7 +365,7 @@ def main() -> int:
         prior_path = HERE / "term5-aK-audit.witness.json"
         if prior_path.exists():
             try:
-                prior = json.loads(prior_path.read_text())
+                prior = record_upstream(prior_path, _UPSTREAM_RECORDS)
                 prior_rows = prior.get("data", {}).get("results", []) or []
                 for prow in prior_rows:
                     plabel = prow.get("atom")
@@ -447,6 +452,7 @@ def main() -> int:
         })
 
     w = WitnessBuilder("term5-aK-audit", engine="sympy")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Term 5 chirality factor a_K — audit of the production closed "
         "form `Π(1+sign·h)` over pn-crossings vs four Gram-matrix "

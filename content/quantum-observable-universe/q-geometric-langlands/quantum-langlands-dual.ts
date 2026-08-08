@@ -25,6 +25,5 @@ export default conjecture({
     "research-grade",
     "axiom-class",
     "open-problem",
-    "non-scholarly-voice-exception",
   ],
 });

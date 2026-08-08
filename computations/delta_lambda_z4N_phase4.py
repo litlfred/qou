@@ -87,11 +87,11 @@ def main() -> int:
     builder.add_parameter("inv_z_to_4", str(inv_z ** 4))
 
     # Load Phase 3 Vol_hyp
-    p3 = json.loads(PHASE3_WITNESS.read_text())["data"]["jsj_volumes"]
+    p3 = builder.add_upstream(PHASE3_WITNESS)["data"]["jsj_volumes"]
     vol_hyp = {a: mp.mpf(str(p3[a]["hyperbolic_volume"])) for a in ("D", "T", "3He", "4He")}
 
     # Load empirical |Δ_λ*|
-    emp_data = json.loads(EMP_WITNESS.read_text())["data"]["per_atom"]
+    emp_data = builder.add_upstream(EMP_WITNESS)["data"]["per_atom"]
     empirical = {a: mp.mpf(str(emp_data[a]["a_single_block"]["best_abs_delta"]))
                  for a in ("D", "T", "3He", "4He")}
 

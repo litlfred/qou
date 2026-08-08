@@ -35,19 +35,33 @@
                     Invent. Math. 92.
 -/
 
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Defs
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
 namespace QOU.BraidsAndKnots
 
 open BigOperators
 
+/-! ### Base ring
+
+Base ring for the telescope.  Everything below is **field algebra in
+`Q` and `X`** — a geometric ratio, a quotient, and `Q ≠ 1`.  No ordering,
+no radical, no `Real.*` construct appears, so per AGENTS.md §7c the
+statements belong over a generic field, not over `ℝ`.
+
+This also matches what the file already said about itself: the telescope's
+natural home is `ℚ(Q, X)`, and `ℝ` was only ever the stub choice. -/
+
+variable {R : Type*} [Field R]
+
 /-! ## Telescope identity
 
-For the purposes of this stub we state the telescope as an identity
-in `ℝ` parametrised by `Q` and `X`; the full categorical statement
-(over `ℚ(Q, X)` via the Frobenius identity for the regular `S_n`-
-representation) lives in a follow-up file. -/
+The telescope is stated as an identity over a generic field `R`,
+parametrised by `Q` and `X`. The full categorical statement (over
+`ℚ(Q, X)` via the Frobenius identity for the regular `S_n`-
+representation) still lives in a follow-up file, but nothing here
+needs `ℝ`: instantiate at `R := ℚ(Q, X)`, at `ℝ` for the archimedean
+evaluation, or anywhere else. -/
 
 /-- The Wenzl-bridge normalisation `Z_n = Σ_{λ ⊢ n} f_λ · s_{λ,X}(Q)`,
     abstractly. The sum is encoded by the value `Z_n` on the right of
@@ -56,10 +70,10 @@ representation) lives in a follow-up file. -/
     partition combinatorics machinery (which lives in
     `y-lambda-closed-form-wenzl-bridge.lean`). -/
 -- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
-axiom wenzlNormalizationOfShape (n : ℕ) (Q X : ℝ) : ℝ
+axiom wenzlNormalizationOfShape {R : Type*} [Field R] (n : ℕ) (Q X : R) : R
 
 /-- The right-hand side of the telescope: a single geometric ratio. -/
-noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
+noncomputable def telescopeRHS (n : ℕ) (Q X : R) : R :=
   ((1 - X) / (1 - Q)) ^ n
 
 /-- **External axiom (Stanley EC2 Cor. 7.12.5; Macdonald I.3 ex. 1).**
@@ -81,8 +95,8 @@ noncomputable def telescopeRHS (n : ℕ) (Q X : ℝ) : ℝ :=
     The axiom IS the conjectural input — see §3b-cond audit doc. -/
 -- Ref: [stanley1999] Enumerative Combinatorics II, Cor. 7.12.5
 -- Ref: [macdonald1995] Symmetric Functions and Hall Polynomials, I.3 ex. 1
-axiom wenzlNormalizationOfShape_eq_telescope :
-    ∀ (n : ℕ) (Q X : ℝ), Q ≠ 1 →
+axiom wenzlNormalizationOfShape_eq_telescope {R : Type*} [Field R] :
+    ∀ (n : ℕ) (Q X : R), Q ≠ 1 →
       wenzlNormalizationOfShape n Q X = telescopeRHS n Q X
 
 /-- **Macdonald hook-content telescope**:
@@ -100,7 +114,7 @@ axiom wenzlNormalizationOfShape_eq_telescope :
     samples. -/
 -- Ref: [stanley1999] Enumerative Combinatorics II, Cor. 7.12.5
 theorem macdonald_hook_telescope
-    (n : ℕ) (Q X : ℝ) (hQ : Q ≠ 1) :
+    (n : ℕ) (Q X : R) (hQ : Q ≠ 1) :
     wenzlNormalizationOfShape n Q X = telescopeRHS n Q X :=
   wenzlNormalizationOfShape_eq_telescope n Q X hQ
 
@@ -113,12 +127,13 @@ single geometric factor, giving the canonical hook-content form. -/
 /-- Per-partition Wenzl Schur element value, abstracted (full
     definition in `y-lambda-closed-form-wenzl-bridge.lean`). -/
 -- Ref: [manuscript] mass-theory/y-lambda-closed-form-wenzl-bridge
-axiom wenzlSchurElementValue (Q X : ℝ) (lamHookContent : ℝ → ℝ → ℝ) : ℝ
+axiom wenzlSchurElementValue {R : Type*} [Field R] (Q X : R)
+    (lamHookContent : R → R → R) : R
 
 /-- The clean closed form for `y_λ`: numerator is the Schur
     principal-specialisation product, denominator is the telescope. -/
-noncomputable def yLambdaClosedForm (n : ℕ) (Q X : ℝ)
-    (lamHookContent : ℝ → ℝ → ℝ) : ℝ :=
+noncomputable def yLambdaClosedForm (n : ℕ) (Q X : R)
+    (lamHookContent : R → R → R) : R :=
   wenzlSchurElementValue Q X lamHookContent / telescopeRHS n Q X
 
 /-- **Closed-form $y_\lambda$ via the telescope**.
@@ -133,8 +148,8 @@ noncomputable def yLambdaClosedForm (n : ℕ) (Q X : ℝ)
     This is `O(n)` per partition (one cell scan for contents and
     hook lengths) — no `sympy.simplify`, no manual algebra. -/
 theorem y_lambda_closed_form_via_telescope
-    (n : ℕ) (Q X : ℝ) (hQ : Q ≠ 1)
-    (lamHookContent : ℝ → ℝ → ℝ) :
+    (n : ℕ) (Q X : R) (hQ : Q ≠ 1)
+    (lamHookContent : R → R → R) :
     wenzlSchurElementValue Q X lamHookContent
         / wenzlNormalizationOfShape n Q X
       = yLambdaClosedForm n Q X lamHookContent := by

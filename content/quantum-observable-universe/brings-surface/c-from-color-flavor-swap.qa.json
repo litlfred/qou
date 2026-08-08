@@ -13,6 +13,18 @@
     "lean": "90163d0b08f9"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The D6/D7/D8/D22 tracker ids, the duality-tracker reference, the `.claude/skills/local/canonical-watcher.md` \"Diagnostics\" stanza with its \"Slot J\", the two PR links, the \"Close D7 and D8\" work list and the AGENTS.md §7b citation are all gone; the conjecture is now stated and titled as the colour-sheet flavour swap.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

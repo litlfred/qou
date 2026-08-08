@@ -49,7 +49,12 @@ from gram_matrix_seminormal_n import (  # noqa: E402
     gram_matrix_seminormal_block,
     partitions_of_descending,
 )
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Pull canonical NF-basis Gram + TR_M from pyhecke.gram
 from pyhecke.gram import G as NF_GRAM_AT_DEFAULT_Q  # noqa: E402
@@ -58,7 +63,7 @@ from pyhecke.gram import NF_NAMES  # noqa: E402
 
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q0_MP = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q0_MP = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 Q0_F64 = float(Q0_MP)
 
 # NF basis indexing: σ_1 = matrices[0], σ_2 = matrices[1] in Hoefsmit
@@ -90,6 +95,7 @@ def main() -> None:
     # Witness builder created up front so durationMs measures actual
     # solve/reassembly time, not just JSON serialisation.
     w = WitnessBuilder(name="option-e-phase1-h3-cross-check", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Option E Phase 1 cross-check: verify that the per-block "
         "Hoefsmit-seminormal data from `gram_matrix_seminormal_block` "

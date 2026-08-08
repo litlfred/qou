@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:q-momentum-properties",
   title: "Additivity, Markov invariance, and parity of $q$-momentum",
-  lean: { ref: "qou:QOU.Archimedean.QMomentumProperties",
+  lean: { ref: "qou:QOU.Archimedean.qMomentumP_additive",
     validation: "not_checked",
   },
   uses: ["def:q-momentum"],

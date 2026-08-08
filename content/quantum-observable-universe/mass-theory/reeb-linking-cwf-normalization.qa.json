@@ -981,6 +981,18 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Pass. The flagged \"per the corpus discipline, axiomatization is not proof, and nothing here unblocks any downstream wiring\" had already been rewritten to \"and axiomatisation is not proof, so nothing here is carried downstream\". Re-read in full: the open MeV unit anchor, the near-match label on $B(^2\\mathrm{H}) = 5g$ and the no-instance caveat are all intact, and no pipeline vocabulary remains.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

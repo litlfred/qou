@@ -124,7 +124,19 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The pipeline vocabulary is gone: \"The **reconnected orphan blocks** land the bridge ...\" now reads \"The closing results land the bridge between the Markov closure map and the classical-limit construction explicitly\"; the surviving \"narrative arc\" describes the chapter's exposition, not a branch.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ]
   },
   "updated_at": "2026-07-07T14:26:56.022979Z"
 }

@@ -1,0 +1,122 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "bar-parity of the HH^1 outer class acting on the cocenter",
+  "bean": "qou-qb8b",
+  "algebra": "H_3(q) Iwahori-Hecke, dim 6",
+  "description": "Reads the bar-parity of the induced action of the HH^1 outer derivation class on the cocenter HH_0 = A/[A,A]. The action is class-canonical because inner derivations induce zero on HH_0 (asserted). Bar-EVEN kills the fibre-level c_3 carrier route to the same bar-parity invariant that closed the real Gram-resolvent route; bar-ODD would clear that obstruction.",
+  "method": "exact cyclotomic linear algebra; Der = nullspace of Leibniz constraints, Inn = span of ad_x, cocenter by complementary coordinates; bar applied SEMILINEARLY (Delta^bar = M bar(Delta) bar(M)). No fit.",
+  "assertions": [
+    {
+      "name": "root_of_unity_points_valid",
+      "passed": true,
+      "detail": "q=i has [2]_q=0, q=zeta_6 has [3]_q=0; both on the unit circle with conjugate(z) = z^{-1}, so the bar branch is valid"
+    },
+    {
+      "name": "inner_acts_as_zero_on_cocenter[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "every ad_x induces the zero map on HH_0, so the induced action depends only on the HH^1 class (test is canonical)"
+    },
+    {
+      "name": "bar_is_involutive[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "BAR_A * bar(BAR_A) = I on A (semilinear involution verified)"
+    },
+    {
+      "name": "bar_involutive_on_cocenter[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "Mbar * bar(Mbar) = I on HH_0 (guards the semilinear branch)"
+    },
+    {
+      "name": "lambda_has_norm_one[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "lambda*bar(lambda) = 1 -- the Hilbert-90 hypothesis for Q(zeta)/Q(zeta)^+, so lambda = bar(c)/c is solvable and the parity is a choice of normalization, not an invariant"
+    },
+    {
+      "name": "delta_is_class_canonical[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "6 alternative representatives (outer + ad_x for each basis x) all reproduce Delta exactly"
+    },
+    {
+      "name": "inner_acts_as_zero_on_cocenter[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "every ad_x induces the zero map on HH_0, so the induced action depends only on the HH^1 class (test is canonical)"
+    },
+    {
+      "name": "bar_is_involutive[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "BAR_A * bar(BAR_A) = I on A (semilinear involution verified)"
+    },
+    {
+      "name": "bar_involutive_on_cocenter[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "Mbar * bar(Mbar) = I on HH_0 (guards the semilinear branch)"
+    },
+    {
+      "name": "lambda_has_norm_one[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "lambda*bar(lambda) = 1 -- the Hilbert-90 hypothesis for Q(zeta)/Q(zeta)^+, so lambda = bar(c)/c is solvable and the parity is a choice of normalization, not an invariant"
+    },
+    {
+      "name": "delta_is_class_canonical[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "6 alternative representatives (outer + ad_x for each basis x) all reproduce Delta exactly"
+    },
+    {
+      "name": "inner_acts_as_zero_on_cocenter[q = 2        (semisimple control)]",
+      "passed": true,
+      "detail": "every ad_x induces the zero map on HH_0, so the induced action depends only on the HH^1 class (test is canonical)"
+    },
+    {
+      "name": "bar_is_involutive[q = 2        (semisimple control)]",
+      "passed": true,
+      "detail": "BAR_A * bar(BAR_A) = I on A (semilinear involution verified)"
+    }
+  ],
+  "allPassed": true,
+  "results": [
+    {
+      "label": "q = i        ([2]_q = 0)",
+      "dim_HH0": 3,
+      "dim_HH1": 1,
+      "outer_action_on_cocenter": "Matrix([\n[0,   2/3,   I],\n[0,   4/3, 2*I],\n[0, 2*I/3,  -1]])",
+      "bar_conjugated": "Matrix([\n[0,   2/3,   I],\n[0,   4/3, 2*I],\n[0, 2*I/3,  -1]])",
+      "raw_parity_of_representative": "bar-EVEN",
+      "bar_conjugate_proportional_to_delta": true,
+      "proportionality_lambda": "1",
+      "normalization_dependence": {
+        "scaling_scalar": "2*I",
+        "scalar_is_bar_odd": true,
+        "parity_after_rescale": "bar-ODD",
+        "parity_flipped_by_rescaling": true
+      },
+      "bar_parity": "bar-EVEN"
+    },
+    {
+      "label": "q = zeta_6   ([3]_q = 0)",
+      "dim_HH0": 3,
+      "dim_HH1": 1,
+      "outer_action_on_cocenter": "Matrix([\n[0,    (-sqrt(3) + I)/(sqrt(3) + 3*I),                             -1],\n[0, (2*sqrt(3)/3 + 2*I)/(sqrt(3) - I),                             -2],\n[0,                                -1, (-sqrt(3) - 3*I)/(sqrt(3) - I)]])",
+      "bar_conjugated": "Matrix([\n[0,      (sqrt(3) - I)/(sqrt(3) + 3*I),         1],\n[0, (-2*sqrt(3)/3 - 2*I)/(sqrt(3) - I),         2],\n[0,                                  1, sqrt(3)*I]])",
+      "raw_parity_of_representative": "bar-ODD",
+      "bar_conjugate_proportional_to_delta": true,
+      "proportionality_lambda": "-1",
+      "normalization_dependence": {
+        "scaling_scalar": "(sqrt(3) + 3*I)/(sqrt(3) - I)",
+        "scalar_is_bar_odd": true,
+        "parity_after_rescale": "bar-EVEN",
+        "parity_flipped_by_rescaling": true
+      },
+      "bar_parity": "bar-ODD"
+    },
+    {
+      "label": "q = 2        (semisimple control)",
+      "dim_HH0": 3,
+      "dim_HH1": 0,
+      "outer_action_on_cocenter": null,
+      "bar_parity": "n/a (no outer class)"
+    }
+  ],
+  "verdict": "THE PROPOSED PRUNE DOES NOT EXIST. The bar-parity of the HH^1 outer class acting on HH_0 is NOT an invariant of the class: it is a choice of normalization. Delta^bar is proportional to Delta at both root-of-unity points (lambda = +1 at q=i, lambda = -1 at q=zeta_6), and lambda*bar(lambda) = 1 -- the Hilbert-90 hypothesis for Q(zeta)/Q(zeta)^+ -- so lambda = bar(c)/c is always solvable. Demonstrated constructively rather than argued: rescaling the representative by a bar-ODD scalar FLIPS the parity at both points (bar-EVEN -> bar-ODD at q=i; bar-ODD -> bar-EVEN at q=zeta_6). CONSEQUENCE: bar-parity cannot prune the fibre-level c_3 carrier the way it pruned the real Gram resolvent. The route is NOT killed -- and NOT confirmed either. A finer invariant, or a construction that PINS the normalization, is required.",
+  "scope": "scope-(a). This is a negative result about the TEST, not about the route: it shows the bar-parity readout carries no information for an un-normalized class. It does NOT exclude the HH^1 carrier. n=3 is the MECHANISM check: its non-semisimple points are [2]_q=0 and [3]_q=0, NOT the Bring [5]. The Bring fibre is H_5 at a 5th root of unity (bean qou-jcmw). The normalization-dependence argument is field-theoretic (Hilbert 90 over Q(zeta)/Q(zeta)^+) and does not depend on n, so it is expected to carry to H_5 -- which is why the expensive dim-120 H_5 parity computation should NOT be run expecting a prune.",
+  "why_the_real_route_pruned_but_this_does_not": "The real Gram resolvent lived over R, where bar acts trivially, so its parity was rigid and the bar-odd target S was genuinely unreachable. At a root of unity bar acts as the nontrivial Galois map zeta -> zeta^{-1}, and Q(zeta) CONTAINS bar-odd scalars (e.g. zeta - zeta^{-1}), so both parities are always available. That is precisely why the fibre-level route survived the real-route exclusion chain in the first place."
+}

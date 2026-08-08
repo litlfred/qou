@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:per-block-hopf-jones-absorption-pattern",
   lean: {
-    ref: "qou:QOU.BraidKnot.per_block_hopf_jones_absorption",
+    ref: "qou:QOU.BraidKnot.dimension_scaled_absorption_pattern",
     validation: "not_checked",
   },
   interprets: "rem:chi-per-irrep-cyclotomic-closed-forms",

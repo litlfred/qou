@@ -2,12 +2,12 @@
  "schema": "witness/v1",
  "engine": "sympy",
  "scriptFile": "c3_w2_c1_ramification_leading_blocks.py",
- "commitSha": "unknown",
+ "commitSha": "873379b030c56608c4e20bed48e5139281fb6571",
  "description": "W2 \u221e-side: ramification of the C1 q-difference module. Slope \u00bd at \u221e makes the companion nilpotent, so no leading block is readable. Ramifying with index 2 (x=z\u00b2, q=p\u00b2) integralises the slope to 1 and yields the edge polynomial p\u2074T\u00b2 \u2212(p\u00b2\u22121), whose roots are the two leading blocks B\u2081,\u2082 = \u00b1\u221a(q\u22121)/q. These index the two Stokes sectors; the multipliers themselves still need the q-Borel/theta resummation.",
  "computation": {
   "script": "computations/qbeta/c3_w2_c1_ramification_leading_blocks.py",
-  "scriptCommitSha": "unknown",
-  "scriptHash": "419a5bdb9c49"
+  "scriptCommitSha": "873379b030c56608c4e20bed48e5139281fb6571",
+  "scriptHash": "45c86b983b65"
  },
  "results": {
   "operator": "L1 = (q^2 x - 1) s^2 - (q-1) s - (q-1)   [C1, RSZ route-A]",
@@ -46,14 +46,14 @@
     -2
    ]
   ],
-  "edge_polynomial_in_p": "T**2*p**4 - p**2 + 1",
+  "edge_polynomial_in_p": "T**2*p**3 - p**2 + 1",
   "leading_blocks_in_p": [
-   "-sqrt(p**2 - 1)/p**2",
-   "sqrt(p**2 - 1)/p**2"
+   "-sqrt((p**2 - 1)/p**3)",
+   "sqrt((p**2 - 1)/p**3)"
   ],
   "leading_blocks_in_q": [
-   "-sqrt(q - 1)/q",
-   "sqrt(q - 1)/q"
+   "-sqrt((q - 1)/q**(3/2))",
+   "sqrt((q - 1)/q**(3/2))"
   ],
   "sectors_distinct": true,
   "stokes_space_dim_expected": 2
@@ -80,5 +80,5 @@
  ],
  "verdict": "CONFIRMED: the \u221e-side ramification is index 2; the leading blocks are B_{1,2} = \u00b1sqrt(q-1)/q, distinct for q != 1. This unblocks the 'compute the A_i' step recorded open in 2026-08-01-c1-inf-slope-half-rsz-stokes.md. The two Stokes multipliers remain open.",
  "scope": "Leading exponential data only. Does NOT compute the Stokes multipliers. Symbolic, no fit, nothing wired.",
- "durationMs": 346
+ "durationMs": 302
 }

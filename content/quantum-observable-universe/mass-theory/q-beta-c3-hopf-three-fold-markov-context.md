@@ -31,7 +31,7 @@ unknot contribution is trivial.
 
 ### Fact 4 — KL decategorification at $q = 1$
 
-Per AGENTS.md §7b's Kazhdan-Lusztig decategorification principle, the
+By Kazhdan–Lusztig decategorification, the
 mass observable lives in the classical limit. At $q = 1$ the Jones
 polynomial of the Hopf link evaluates to:
 

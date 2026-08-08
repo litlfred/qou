@@ -701,6 +701,52 @@ refutations missing the (a)/(b) scope; `local/compute-author`
 §formalize-first is the forward complement (prove the invariant that
 *would* justify a (b) before running the wide search).
 
+## Defined residual ≠ derived decomposition (STRICT, 2026-08-08)
+
+A third member of the family with "sorry-free ≠ derived" and
+"conditional-proved ≠ premise-established": **`X_resid := X − C` is a
+definition, not a decomposition.** Writing a residual with `:=` and then
+reasoning about it as though it were *the* bar-odd part (or *the*
+anomalous part, or *the* non-perturbative part) of `X` smuggles in an
+unproved identification — that `X`'s complementary part *is* `C`.
+
+Before treating any residual as a decomposition, check all three:
+
+1. **Is the split empirically accessible at all?** A bar-decomposition
+   `X^even(q) = (X(q) + X(1/q))/2` needs `X` at **both** `q` and `1/q`.
+   Every substrate anchor sits at `q ≈ 1.10998`; none supplies
+   `q ≈ 0.901`. So no amount of anchor data determines a bar-split — it
+   always comes from an assumed structural form. Say which form.
+2. **Is the offset *forced*, or merely *in range*?** If the interesting
+   feature is a sign change across two anchors, it is produced by **any**
+   constant strictly between the two values. Compute that window and
+   report its width before claiming the feature is evidence for your
+   particular `C`. Worked case: `S_leak := c₃ + Vol(4₁)` sign-flips
+   across the anchors — but so does `c₃ + V` for **every** `V` in a
+   window of width 0.049, including `2 + 1/36`, `63/31`, and `e^{0.708}`
+   ([`sleak_offset_genericity_check.py`](computations/qbeta/sleak_offset_genericity_check.py)).
+   The flip restates "`c₃` differs between anchors"; it says nothing
+   about `Vol(4₁)`.
+3. **Does the corpus already carry a *different* split of the same
+   object?** Two inequivalent "bar-even part of `X`" claims mean at most
+   one is the canonical split. Grep before building on either. (Same
+   worked case: `c₃`'s bar-even part is given as an exact `ℚ(√3)`
+   ũ-ladder in one audit and as `−Vol(4₁)` in another; the two are not
+   the same object, and a symbol-collision guard separating the two `S`s
+   does **not** reconcile the two *even* parts.)
+
+Theorems stated for a *generic* function with the residual's signs as
+**hypotheses** are unaffected and remain valid — the defect is never in
+that Lean, it is in the interpretive step that the residual *is* the
+named part of `X`. Keep the two separate when you cite such a result.
+
+History: added after an agent (this repo, PR #4724) built a c₃ candidate
+filter on `S_leak` without checking whether the `−Vol(4₁)` identification
+was derived, published it to a sibling PR, and had to retract it. The
+author caught it with one question: *"this is not derived?"*. Full
+retraction + the three checks worked through:
+[`docs/audits/2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md` §RETRACTED](docs/audits/2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md).
+
 ## Conditional-proved ≠ premise-established (STRICT, 2026-07-07)
 
 The sibling of "sorry-free ≠ derived" (registry §1): a **hypothesis-carrying

@@ -1730,6 +1730,18 @@
           "agent_date": "2026-07-13"
         }
       }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The `.claude/skills/local/canonical-watcher.md` \"Diagnostics\" / \"Slot J\" stanza, the \"landed in PR #1127\" sentence, the duality-tracker \"D14 + §2 Cluster D\" citation, the \"13-driver menu\" `docs/audits/` memo and the D1/D2 ids for the two involutions are all gone; the involutions are now named (bar, Hermitian $*$, modular $S$).",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
     ]
   },
   "updated_at": "2026-07-13T00:59:15.685Z"

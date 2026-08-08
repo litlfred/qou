@@ -5,7 +5,7 @@ $$
   \Phi_q(v)\,\Phi_q(u) \;=\; \Phi_q(u)\,\Phi_q(uv)\,\Phi_q(v)
 $$
 
-requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. This block establishes where that relation lives in the brane-tower formalism and how it drives the jet-tower mass ascension.
+requires the quantum-torus relation $uv = q\,vu$ on its operator arguments. We establish where that relation lives in the brane-tower formalism and how it drives the jet-tower mass ascension.
 
 ## Within a single jet level — trivial commutation
 
@@ -21,8 +21,8 @@ $$
 $$
 
 without any $q$-factor. This is the level-internal lemma
-[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace),
-which closes the level-internal half of the audit gap.
+[`lem:vhat-pair-commutation-trace`](#lem:vhat-pair-commutation-trace); it
+settles the level-internal half of the commutation question.
 
 ## Between adjacent jet levels — the pentagon q-factor
 

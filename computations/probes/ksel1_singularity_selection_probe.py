@@ -127,7 +127,12 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, sqrt as mpsqrt  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0        # sympy exact / integer comparisons
 TOL_50 = 1e-30       # 60-dps kernel-identity cross-checks
@@ -142,7 +147,7 @@ X_TGT = "0.53"       # generic target output-pole location (K2 demo)
 # Q_50_DIGIT_STR) — same sourcing as rep_jackson_identification_probe.
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
 
 _ii, _jj, _kk, _mm = sp.symbols("i j k m", integer=True)
@@ -684,6 +689,7 @@ def main() -> int:
     set_compute_dps(60)
     wb = WitnessBuilder("ksel1-singularity-selection",
                         engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "KSel-1 (singularity matching) on the (REP) canonical-choice "
         "continuum (bean qou-334t; audit-only, scope-(a), NO FIT, "

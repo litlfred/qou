@@ -11,6 +11,18 @@
     "ts": "35e148aec96d"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "The \"## Closed content\" / \"## Remaining content\" headings now stand over concrete statements of which Lean class hooks are inhabited and which three instances still need proofs, so they report the mathematical state rather than a work item.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "bib-cite-resolves": [
       {
         "field_hash": {

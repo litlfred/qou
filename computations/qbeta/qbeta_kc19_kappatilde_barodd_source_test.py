@@ -57,7 +57,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
@@ -80,7 +85,7 @@ def main() -> int:
     print(" kappa-tilde deformed rungs -> KC19 fit-free bar-odd source test")
     print("=" * 78)
 
-    d = json.loads(RUNGS_WITNESS.read_text())["data"]
+    d = record_upstream(RUNGS_WITNESS, _UPSTREAM_RECORDS)["data"]
     cands = {
         "G1_imVb_truncation": mp.mpf(str(d["imV_meridian_corrected"]["truncation_4_rungs"])),
         "G2_imVb_resummed_pade22": mp.mpf(str(d["imV_meridian_corrected"]["resummed_pade22"])),
@@ -131,6 +136,7 @@ def main() -> int:
     print("    the odd swing lives in the D(u) ladder (KC21/KC22), not meridian geometry.")
 
     wb = WitnessBuilder("qbeta-kc19-kappatilde-barodd-source-test", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Fit-free KC19 consumption test of the three derived bar-odd meridian "
         "candidates from the #3691 deformed-rung tower (Im V_b truncation "

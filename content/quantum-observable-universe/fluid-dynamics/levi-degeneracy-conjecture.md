@@ -23,4 +23,4 @@ Exactly one of the following three regimes holds:
 
 The three regimes are mutually exclusive and, on the bounded-rate interval $\beta \in [0, 1]$, exhaustive; a two-way alternative between (A) and (B) alone would omit the marginal window (C). The framework argues for branch (A), but the value of $\beta$ — hence which regime obtains — is not established here; it is the open computation the conjecture names. See [`prop:core-levi-form`](#prop:core-levi-form) for the equivalence tying $\mathcal{C}_L$ to the core aspect ratio.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

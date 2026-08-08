@@ -140,7 +140,11 @@ type Category =
   // term to inspect. These four close that gap.
   | "proof-no-empty-prop-carrier"
   | "proof-claims-unencoded"
-  | "proof-dependent-conjecture-not-conditional";
+  | "proof-dependent-conjecture-not-conditional"
+  // A `rfl`-proved statement binding an explicit hypothesis it cannot use.
+  // `rfl` consults no hypothesis, so the claim holds for every value of it.
+  // Not reachable by the projection detector (the body is not `ctx.field`).
+  | "proof-no-unused-hypothesis-rfl";
 
 const ALL_CATEGORIES: Category[] = [
   "proof-no-trivial-true",
@@ -154,6 +158,7 @@ const ALL_CATEGORIES: Category[] = [
   "proof-no-empty-prop-carrier",
   "proof-claims-unencoded",
   "proof-dependent-conjecture-not-conditional",
+  "proof-no-unused-hypothesis-rfl",
 ];
 
 const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
@@ -176,6 +181,11 @@ const SEVERITY: Record<Category, "critical" | "major" | "minor"> = {
   "proof-no-empty-prop-carrier": "critical",
   "proof-claims-unencoded": "major",
   "proof-dependent-conjecture-not-conditional": "critical",
+  // High-recall candidate, agent-confirmed like the conjecture-discipline
+  // classes: a `rfl` proof with a decorative hypothesis is usually a
+  // definitional restatement (should be a `def`), occasionally a real signal
+  // that the underlying definition ignores an argument. Major, not critical.
+  "proof-no-unused-hypothesis-rfl": "major",
 };
 
 interface Hit {
@@ -484,12 +494,37 @@ function detectTrivialTrue(
   // inhabited). They are NOT scanned for the reflexive-tautology case (a
   // real def legitimately reduces to a value).
   const isDodge = DODGE_KINDS.test(d.kind);
-  if (!isProvable && !isDodge) return undefined;
-  const concl = conclusionOf(d.sig);
+  // `axiom X : True` was invisible here until 2026-08-08: `axiom` is neither
+  // a PROVABLE_KIND nor a DODGE_KIND, so the guard below dropped it before any
+  // pattern ran. It is the purest form of the anti-pattern — an axiom whose
+  // conclusion is `True` asserts nothing, has no body to inspect, and (unlike
+  // a `theorem`) is not even *provable*-looking, so no reader thinks to check
+  // it. Live instance that motivated this: `QOU.Eightfold.Sym2Gate`'s
+  // `su3_sym2_irreducible`, an `axiom … : True` standing in for "the SU(3)
+  // fundamental has irreducible Sym²" (drain: bean `qou-8fl1` item 3).
+  const isAxiom = /^axiom\b/.test(d.kind);
+  if (!isProvable && !isDodge && !isAxiom) return undefined;
+  // Strip `--` line comments from the conclusion before pattern-matching.
+  // A commented-out explanation sitting between the `:` and the actual
+  // conclusion hides the conclusion from every test below — which is exactly
+  // how `su3_sym2_irreducible` evaded this detector even after `axiom` was
+  // admitted above:
+  //
+  //     axiom su3_sym2_irreducible :
+  //       -- "For V = the SU(3) fundamental (dim 3), Sym²(V) is irreducible."
+  //       True
+  //
+  // The prose is where the real claim lives; `True` is what is asserted.
+  const concl = conclusionOf(d.sig)
+    .replace(/--[^\n]*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   const body = d.body.trim();
   let pattern: string | undefined;
-  if (/^True\b/.test(concl) || concl === "True") pattern = "conclusion-True";
-  else if (/^True(\s*[∧×]\s*True)+$/.test(concl)) pattern = "conclusion-True-conj";
+  if (/^True\b/.test(concl) || concl === "True")
+    pattern = isAxiom ? "axiom-true" : "conclusion-True";
+  else if (/^True(\s*[∧×]\s*True)+$/.test(concl))
+    pattern = isAxiom ? "axiom-true" : "conclusion-True-conj";
   else {
     // Tautological conclusions — provable kinds only. The STATEMENT asserts
     // nothing, so the body is irrelevant (rfl, sorry, simp, decide all
@@ -504,12 +539,50 @@ function detectTrivialTrue(
       // `1 = 1 := sorry` (the lr-tensor dodge) and `a = a := by simp`
       // slipped through. Match is syntactic (lhs === rhs after stripping
       // whitespace), so `a + b = b + a` is NOT a false positive.
-      const eq = conclTA.match(/^([^=]+?)=([^=].*)$/);
+      // Strip leading ∀-binders and → antecedents before the reflexive test.
+      // A tautology is no less tautological for being quantified: the body of
+      // `∀ N : ℕ, 2 ≤ N → f N = f N` is still `X = X`, and matching the WHOLE
+      // conclusion compares `∀ N : ℕ, 2 ≤ N → f N` against `f N` and misses it.
+      // That is how `orbit_sum_general` shipped
+      // `∀ N, 2 ≤ N → cl3OrbitSumPredicted N zeta3 = cl3OrbitSumPredicted N zeta3`.
+      // Only the matched prefix is dropped — the two SIDES are still compared
+      // verbatim, so `∀ n, f n = g n` is untouched.
+      let refBody = conclTA;
+      for (;;) {
+        const before = refBody;
+        refBody = refBody.replace(/^\s*(?:∀|Π)\s*[^,]*,\s*/, "");
+        // Drop a leading antecedent only when it carries no `=` of its own,
+        // so an equational hypothesis is never mistaken for the conclusion.
+        refBody = refBody.replace(/^\s*([^=→↔]+?)→\s*/, "");
+        if (refBody === before) break;
+      }
+      const eq = (refBody.match(/^([^=]+?)=([^=].*)$/) ?? conclTA.match(/^([^=]+?)=([^=].*)$/)) as
+        | RegExpMatchArray
+        | null;
       if (eq) {
         const lhs = eq[1].replace(/\s+/g, "");
         const rhs = eq[2].replace(/\s+/g, "");
         if (lhs && lhs === rhs)
           return mk(d, "proof-no-trivial-true", "reflexive-tautology", false);
+        // Whitespace-only normalisation misses an ascribed NUMERIC LITERAL:
+        // `(0 : ℝ) = 0` compares `(0:ℝ)` against `0` and slips through. That
+        // is how `yangBaxter_energy_zero` / `farComm_energy_zero` shipped a
+        // literal `(0 : ℝ) = 0` as the claim "a Yang-Baxter step has zero
+        // energy" — banned by §Strict Lean Discipline item 5, and reachable
+        // here only because those two also carry an unused hypothesis.
+        //
+        // Deliberately narrow: ONLY a bare numeric literal under a single
+        // ascription is stripped. Stripping ascriptions in general would make
+        // genuine coercion lemmas look vacuous — `((n : ℕ) : ℤ) = n` is
+        // `Nat.cast` content, not a tautology, and its inner side is not a
+        // bare literal, so it is left alone.
+        const unascribeLit = (s: string) => {
+          const m = s.match(/^\((-?\d+(?:\.\d+)?)\s*:[^():]*\)$/);
+          return m ? m[1] : s;
+        };
+        const nl = unascribeLit(lhs), nr = unascribeLit(rhs);
+        if (nl && nl === nr && (nl !== lhs || nr !== rhs))
+          return mk(d, "proof-no-trivial-true", "reflexive-tautology-ascribed-literal", false);
       }
       // (b) existential-over-True `: ∃ …, True` (e.g. `∃ v, True := sorry`,
       // the vol-through-tau dodge) and (c) a top-level `… ∨ True` / `True ∨ …`
@@ -709,6 +782,111 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
     return h;
   }
   return mk(d, "proof-no-self-assuming-projection", pat, false);
+}
+
+/**
+ * A `rfl`-proved statement carrying an explicit hypothesis it cannot use.
+ *
+ * `rfl` consults NO hypothesis — it proves the conclusion by definitional
+ * unfolding alone. So a provable declaration whose body reduces to `rfl`,
+ * and which binds an explicit `(h : …)` that does not occur in its own
+ * conclusion, proves that conclusion for EVERY value of that hypothesis. The
+ * hypothesis is decoration, and the statement is definitionally true rather
+ * than a theorem (§Strict Lean Discipline item 8: it should be a `def`).
+ *
+ * The sharper consequence is about the DEFINITION, not the theorem: if
+ * `f a = f b := rfl` holds with the relating hypothesis unused, then `f`
+ * does not depend on that argument at all.
+ *
+ * Worked instance — `LevelSufficiency`
+ * (`knots-particles-confinement/level-sufficiency.lean:72`): both hypotheses
+ * are `_`-prefixed and the body is `rfl`, so `markovTrace P q = markovTrace
+ * P' q` holds for ANY two particles and the covering condition is decoration.
+ *
+ * Why the existing detectors structurally miss it: there is no `sorry`, no
+ * `axiom`, no `True` conclusion, and the body is not a `ctx.field`
+ * projection, so `proof-no-self-assuming-projection` cannot match it however
+ * its regexes are tuned.
+ *
+ * PRECISION (this is a high-recall candidate class, agent-confirmed like the
+ * others, hence `major` rather than `critical`):
+ *  - Only EXPLICIT `( … : … )` binders count. Instance `[…]`, implicit `{…}`
+ *    and strict-implicit `⦃…⦄` binders can be load-bearing for elaboration
+ *    even when the proof is `rfl`.
+ *  - A binder whose name OCCURS IN THE CONCLUSION is used by the statement
+ *    (e.g. `(h : P) : Q h = …`), so it is not decoration — skipped.
+ *  - Binders that look like DATA rather than hypotheses (`(n : ℕ)`,
+ *    `(q : ℝ)`) are skipped; a `rfl` over data is ordinary computation. Only
+ *    Prop-shaped types (carrying a relation/connective) count.
+ */
+// Tactic separators in Lean 4 are `;` OR a newline, so both must be accepted:
+// `strangelet_double_beta` writes `by\n  unfold double_beta_rate\n  rfl` and was
+// missed by a `;`-only pattern.
+const RFL_BODY =
+  /^(?:rfl|by\s+rfl|by\s+(?:unfold|delta|show|simp\s+only|with_unfolding_all)\b[^;\n]*[;\n]\s*rfl)\s*$/;
+/**
+ * The same blindness, wearing an existential.
+ *
+ * `∃ a, a = e` proved `⟨_, rfl⟩` consults no hypothesis either — the witness
+ * is handed over and `rfl` closes the equation. `RFL_BODY` never matched it
+ * because the body is an anonymous constructor rather than the token `rfl`,
+ * so a statement could bind any number of decorative hypotheses and stay
+ * invisible to this detector. Ten such declarations sat in
+ * `docs/audits/2026-08-07-lean-vacuous-existential-audit.json` — found by the
+ * standalone `scripts/lean-vacuous-existential-audit.py`, flagged by nothing
+ * that gates.
+ *
+ * Whitespace is collapsed before matching, so the `by`-block form
+ * (`by\n  exact ⟨.borromean, rfl⟩`) is covered by the same pattern.
+ */
+const ANON_RFL_BODY = /^(?:by\s+exact\s+)?⟨[^⟨⟩]*,\s*rfl⟩$/;
+/** A binder type that looks like a proposition rather than data. */
+const PROP_SHAPED = /[=≤<≥>≠∈∣]|↔|→|∧|∨|¬|Odd\b|Even\b|Prime\b/;
+
+function detectUnusedHypothesisRfl(d: Decl): Hit | undefined {
+  if (!PROVABLE_KINDS.test(d.kind)) return undefined;
+  const body = d.body.trim();
+  const collapsed = body.replace(/\s+/g, " ").trim();
+  const anon = ANON_RFL_BODY.test(collapsed);
+  if (!RFL_BODY.test(body) && !anon) return undefined;
+  const concl = conclusionTypeAscription(d.sig);
+  if (!concl) return undefined;
+
+  // Explicit binders only, from the head up to the conclusion `:`.
+  const head = d.sig.slice(0, d.sig.length - concl.length);
+  const unused: string[] = [];
+  for (const m of head.matchAll(/\(\s*([^():]+?)\s*:\s*([^()]*(?:\([^()]*\)[^()]*)*)\)/g)) {
+    const names = m[1].trim().split(/\s+/);
+    const ty = m[2].trim();
+    if (!PROP_SHAPED.test(ty)) continue; // data binder, not a hypothesis
+    for (const n of names) {
+      if (!/^_?[a-zA-Z_][\w']*$/.test(n)) continue;
+      // Used by the statement itself? then it is not decoration.
+      if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(concl)) continue;
+      // Used by the PROOF? A bare `rfl` mentions nothing, but an anonymous
+      // constructor supplies a witness that can be built from a hypothesis
+      // (`⟨h.choose, rfl⟩`), and then the binder is load-bearing. Checking
+      // the body is a no-op for the `rfl` shapes and required for this one.
+      if (n !== "_" && new RegExp(`(^|[^\\w'])${n}([^\\w']|$)`).test(body)) continue;
+      unused.push(n);
+    }
+  }
+  if (unused.length === 0) return undefined;
+  // `_`-prefixed names are the author explicitly recording non-use — the
+  // strongest form of the signal, and worth distinguishing in the witness.
+  const pat = anon
+    ? unused.every((n) => n.startsWith("_"))
+      ? "rfl-witness-with-underscored-hypothesis"
+      : "rfl-witness-with-unused-hypothesis"
+    : unused.every((n) => n.startsWith("_"))
+      ? "rfl-with-underscored-hypothesis"
+      : "rfl-with-unused-hypothesis";
+  const h = mk(d, "proof-no-unused-hypothesis-rfl", pat, false);
+  h.detail =
+    `proof is \`${body}\`, which uses no hypothesis, yet the statement binds ` +
+    `${unused.map((n) => `\`${n}\``).join(", ")} — absent from the conclusion, so ` +
+    `the claim holds for every value of ${unused.length > 1 ? "them" : "it"}`;
+  return h;
 }
 
 function detectDecideMasking(d: Decl): Hit | undefined {
@@ -1239,6 +1417,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     }
     push(tt);
     push(detectSelfAssuming(d));
+    push(detectUnusedHypothesisRfl(d));
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));
     push(detectProvableAxiom(d, origLines));
@@ -1522,6 +1701,24 @@ function main() {
       const cats = explicit ? (i++, next.split(",")) : DEFAULT_FAIL;
       failOn = new Set(cats.map((s) => s.trim()).filter(Boolean));
     }
+    // An unrecognised FLAG is a mistake, not a scan root. Falling through to
+    // `roots.push()` made `--help` a path that matches no `.lean`, and the
+    // witness below then wrote 0 findings over the committed audit — turning a
+    // typo into "the corpus is clean". Same for `--jsonn`, `-h`, etc.
+    else if (a.startsWith("-")) {
+      console.error(`lean-vacuity-axiom-audit: unknown option '${a}'\n`);
+      console.error(
+        "usage: bun run content/pipeline/lean-vacuity-axiom-audit.ts [root ...]\n" +
+          "  --json FILE          witness output (default docs/audits/2026-06-17-lean-vacuity-axiom-audit.json)\n" +
+          "  --write-sidecars     upsert <block>.qa.json script entries\n" +
+          "  --only CATEGORY      restrict to one category\n" +
+          "  --review-ledger F    seed/refresh the agent-verdict ledger\n" +
+          "  --check-ledger F     fail unless every candidate has a fresh verdict\n" +
+          "  --fail-on A,B        exit non-zero on these categories\n" +
+          "  --quiet\n",
+      );
+      process.exit(2);
+    }
     else roots.push(a);
   }
   const scanRoots = roots.length ? roots : DEFAULT_ROOTS;
@@ -1596,6 +1793,23 @@ function main() {
     conjecture_graph: graph,
     flagged,
   };
+  // Safety net for the same failure the unknown-option check above prevents at
+  // the source: a run that scanned NOTHING must not overwrite a real audit.
+  // The witness is a committed file, and zeros in it read as "the corpus is
+  // clean" — the most misleading possible artifact. Observed: a stray `--help`
+  // replaced a 1961-file / 44-defect / 105-flagged-file audit with all zeros.
+  // A genuinely empty scan is always a mistake (a bad root, a typo); there is
+  // no legitimate run of this script over zero `.lean` files.
+  if (files.length === 0) {
+    console.error(
+      `lean-vacuity-axiom-audit: scanned 0 .lean files under ${scanRoots.join(", ")} — refusing to write ${jsonOut}.`,
+    );
+    console.error(
+      "  Writing would replace the committed audit with zeros, which reads as a clean corpus.",
+    );
+    console.error("  Check the scan root(s); pass a directory that contains .lean files.");
+    process.exit(2);
+  }
   writeFileSync(resolve(REPO_ROOT, jsonOut), JSON.stringify(witness, null, 2) + "\n");
 
   if (writeSc) {

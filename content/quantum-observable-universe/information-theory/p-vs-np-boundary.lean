@@ -193,11 +193,20 @@ structure TorsionPoint where
   order : ℕ
   -- order_pos : order ≥ 2  -- (archimedean; not meaningful over R_q)
 
-/-- At a torsion point, the effective tree size is bounded polynomially
-    in the root-of-unity order. -/
-theorem torsion_effective_tree_bounded (t : TorsionPoint) (n : ℕ) :
-    ∃ bound : ℕ, bound = t.order ^ n := by
-  exact ⟨t.order ^ n, rfl⟩
+-- The former `torsion_effective_tree_bounded (t) (n) : ∃ bound : ℕ,
+-- bound = t.order ^ n := ⟨t.order ^ n, rfl⟩` was removed. Two problems,
+-- neither repairable in place:
+--
+--   1. `∃ bound, bound = e` is provable by `⟨e, rfl⟩` for any `e`, so the
+--      declaration asserted nothing about torsion points or trees.
+--   2. Its docstring claimed the tree size is "bounded POLYNOMIALLY in the
+--      root-of-unity order", but `t.order ^ n` is exponential in `n`. The
+--      statement did not match the claim it was labelled with.
+--
+-- Stating the real proposition needs an effective-tree-size function to
+-- bound, and none is defined in this file -- `TorsionPoint` carries only
+-- `order`. Left as a gap rather than a vacuous theorem; see
+-- docs/audits/2026-08-07-lean-vacuous-existential-audit.md.
 
 /-- A non-torsion real number: q > 1 and q^k ≠ 1 for all k ≥ 1. -/
 structure NonTorsionReal where

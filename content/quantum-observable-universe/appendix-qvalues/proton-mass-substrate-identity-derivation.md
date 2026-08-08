@@ -148,15 +148,18 @@ $f(q)$ factor with $f(q_0) \approx 1.00167$ not yet identified, or
 precision floor. This correction remains a near-match candidate, not
 an established categorical derivation.
 
+The Ocneanu-weight cancellation behind the $-12\,m_e$ term carries a
+universal leading-pole coefficient $-1/12$. That coefficient rests on
+high-precision numerical pole detection, verified to 200 decimal
+places; the symbolic Hoefsmit route to the cancellation count still
+carries unrepaired convention and sign issues, so the coefficient is
+numerically verified rather than symbolically derived.
+
 ## See also
 
 - [`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
-- [`docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md)
-  — full audit writeup
 - [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
-- [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
-  — the universal $-1/12$ leading-pole coefficient (200-dps verified)
 - [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)
   — production-grade compute script (50-dps MPFR)

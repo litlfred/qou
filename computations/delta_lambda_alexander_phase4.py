@@ -232,9 +232,7 @@ def main() -> int:
 
     # 3. Load empirical |Δ_λ*| from Phase 1b tabulation
     try:
-        emp_w = json.loads(
-            (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
-        )["data"]["per_atom"]
+        emp_w = builder.add_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE))["data"]["per_atom"]
         empirical = {a: float(emp_w[a]["a_single_block"]["best_abs_delta"])
                      for a in ("D", "T", "3He", "4He")}
     except Exception as e:

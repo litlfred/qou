@@ -81,7 +81,12 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _li_2_q_util import load_q_50dps, li_2_q  # noqa: E402
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
@@ -356,8 +361,7 @@ def main() -> int:
         print(line)
 
     # cross-check the scalar Jones baseline against the committed witness
-    committed = json.loads(
-        (HERE / "borromean-binding-recompute.witness.json").read_text())
+    committed = record_upstream(HERE / "borromean-binding-recompute.witness.json", _UPSTREAM_RECORDS)
     max_base_dev = mp.mpf(0)
     for row in committed["isotopes"]:
         mine = rows[row["iso"]]["scalar_jones"]["B_tower"]
@@ -390,6 +394,7 @@ def main() -> int:
 
     # ── witness ──
     wb = WitnessBuilder("probe-9b-perlambda-brane-tower", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "PROBE 4 (bean v292): per-λ collapse-last rerun of the single-"
         "pipeline Borromean brane tower. Structural: the pipeline τ is "

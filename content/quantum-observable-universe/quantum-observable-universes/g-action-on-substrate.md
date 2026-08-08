@@ -86,6 +86,6 @@ Compared to the CODATA target $\mathcal{N}_{\rm sym}(q_0) = 213.11$, this leaves
 
 The small discrepancy suggests an incomplete specification of the constraints. Possible physical origins include a categorical correction to the vacuum volume normalization, a Plancherel weight for the electroweak block, or a Higgs-mixing correction of order $\mathcal{O}(\hbar_q^2)$ on the $Z$-host. Precise discrimination requires refining the substrate's categorical structure.
 
-### Audit impact
+### What rests on this residual
 
-Resolving this residual will systematically clear a significant cluster of structural dependencies. See [Table 3](#tbl:g-action-on-substrate-table3-data).
+A significant number of the results below are conditional on resolving this residual. See [Table 3](#tbl:g-action-on-substrate-table3-data).

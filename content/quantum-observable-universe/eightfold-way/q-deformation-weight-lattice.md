@@ -30,24 +30,36 @@ constant.
 The following are proved sorry-free in
 \texttt{QOU/Eightfold/WeylInvarianceQDeformation.lean}:
 \begin{itemize}
-\item The Cartan matrix $a_{ij}$ is fixed integer data, independent of
-  $q$ (\texttt{cartanMatrix\_A2\_q\_independent}, quantified over two
-  arbitrary $q_1, q_2$ in any commutative ring).
 \item The off-diagonal entry $a_{12} = -1$ and the Serre exponent
   $1 - a_{12} = 2$ (\texttt{cartan\_A2\_offdiag},
   \texttt{serre\_exponent\_A2}).
-\item The $q$-Serre coefficient $[2]_q$ and the Cartan diagonal
-  $a_{ii} = 2$ are distinct objects, agreeing only at $q = 1$
-  (\texttt{qSerre\_neq\_cartan\_diag},
-  \texttt{qSerre\_eq\_cartan\_at\_classical}) --- the ``two $2$s''
-  separation above.
+\item The $q$-Serre coefficient $[2]_q$ genuinely \emph{moves} with $q$ ---
+  witnessed at $q = 2$, where the framed binomial is $5$ and the framed
+  Cartan diagonal is $4$ (\texttt{qSerre\_not\_constant}) --- while the
+  Cartan datum does not (\texttt{cartanMatrixAt\_const}).  The conjunction
+  of the two is the ``two $2$s'' separation
+  (\texttt{cartan\_fixed\_while\_qSerre\_moves}), and it is the conjunction,
+  not either half alone, that carries the content: constancy of the Cartan
+  datum is true \emph{by construction} and is compatible with both sides
+  being constant, which is exactly the confusion at issue.
+\item For $(q-1)^2 \neq 0$ the two differ
+  (\texttt{qSerre\_neq\_cartan\_diag}); they agree at $q = 1$
+  (\texttt{qSerre\_eq\_cartan\_at\_classical}).
 \item The root-angle ratio $\cos\theta = a_{ij}/a_{ii} = -1/2$
   (\texttt{root\_angle\_ratio\_A2}).
 \end{itemize}
 
+\textbf{What the Lean does not establish.}
+That Drinfeld--Jimbo quantisation leaves the root datum invariant is a
+theorem of Lusztig/Kashiwara, cited here and \emph{not} formalised in this
+corpus; it belongs to the ``standard, but not formalised'' list below, not
+to the machine-checked list above.  What is machine-checked is the
+\emph{arithmetic} of the separation on the $A_2$ datum, which is a weaker
+statement and should not be cited for the stronger one.
+
 **What is $q$-independent — standard, but not formalised here.**
-These follow from the Drinfeld--Jimbo construction and are cited, not
-machine-checked in this corpus:
+These follow from the Drinfeld--Jimbo construction and are cited here, not
+machine-checked:
 \begin{itemize}
 \item The root lattice $\Lambda_R = \mathbb{Z}\alpha_1 \oplus
   \mathbb{Z}\alpha_2$ and the weight lattice $\Lambda_W =

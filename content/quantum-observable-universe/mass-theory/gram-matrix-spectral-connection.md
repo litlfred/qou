@@ -1,6 +1,5 @@
-**Remark.**
-*User question: where does the Gram matrix fit in the
-spectral-sequence / Frobenius framework?*
+**Remark (where the Gram matrix fits in the spectral-sequence /
+Frobenius framework).**
 
 **Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common
@@ -47,12 +46,11 @@ generator lies in the proper sub-algebra; this fails for
 $\sigma_0\sigma_1\sigma_0$ since $\sigma_1\sigma_0 \notin H_2$).
 The canonical Ocneanu--Wenzl recursion gives
 $\tau(\sigma_0\sigma_1\sigma_0) = hz^2 + z$
-(formerly stated as $z^3$ in this block; corrected per
-[Markov-bug audit](https://github.com/litlfred/qou/blob/main/docs/audits/-trm5-markov-bug.md)).*
+(formerly stated as $z^3$; since corrected).*
 
 *Gram matrix $G_{ij} = \tau(b_i b_j^{-1})$ (cyclic self-pairing).
-The first-row/column entries below shown as $z^3$ are stale per
-the Markov-bug fix and should read $hz^2 + z$:*
+The first-row/column entries shown as $z^3$ below are uncorrected: by the
+recursion just quoted they should read $hz^2 + z$:*
 
 $$
   G \;=\;
@@ -81,7 +79,7 @@ Summing $G^{-1}$ diagonal times $1/\dim_q$ gives exactly the Frobenius
 co-Casimir trace $\sum_\lambda 1/\dim_q(\lambda)$ — recovering
 ([Frobenius universal](#thm:frobenius-codim-universal)).*
 
-*The quantum dimensions $\dim_q(\lambda)$ entering this block structure
+*The quantum dimensions $\dim_q(\lambda)$ entering this Wedderburn block structure
 are the Wedderburn-block face of the $q$-Laplacian spectral tower
 ([the $q$-Laplacian spectral tower](#prop:q-laplacian-spectral-tower)):
 at a root of unity $q = e^{i\pi/\kappa}$ they truncate to the finite

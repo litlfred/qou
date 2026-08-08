@@ -13,8 +13,8 @@ identifies the closed form by induction:
 
 The base-case $+1$ originates from the **single mixed (p, n)
 interface** in pppnnn ordering, contributing
-$\alpha((\sigma+\sigma^{-1})/2) = 1$ from the compound-shift theorem
-on `claude/w3-w4-followups`.  This matches
+$\alpha((\sigma+\sigma^{-1})/2) = 1$ from the compound-shift theorem.
+This matches
 [`prop:alpha-shift-torus-knot`](#prop:alpha-shift-torus-knot)'s
 simplest interface case $\alpha = 1$ for the Hecke-symmetric
 average. $\square$
@@ -30,7 +30,7 @@ increments are:
 - **per-new-neutron:** pole $+10.5$ (cancellation $= 1.5$,
   half-integer), shift $= 2 \cdot 10.5 = 21$.
 
-#### Path A categorical verification (proton + deuteron)
+#### Categorical verification (proton + deuteron)
 
 Both the per-proton coefficient $18$ and the multi-nucleon
 combination $18 + 21 + 1 = 40$ are verified by direct symbolic
@@ -69,15 +69,9 @@ Hoefsmit pole-order analysis:
 **Reading note.** The per-irrep maximum $\mathrm{ord}_{q=0}^{(-)}\chi^\lambda_q(\mathcal{B}_p) = 11$
 (at $\lambda = (2, 1)$); the "$18$" in the formula is the
 per-proton additive coefficient of the **full summed** $u$-pole
-order of $\mathrm{tr}_M$, NOT the q-pole order of any single
-per-irrep $\chi^\lambda_q$. See
-[`docs/audits/-per-irrep-pole-18-21-research-note.md`](../../docs/audits/-per-irrep-pole-18-21-research-note.md)
-for the reading correction and the optimisation strategy that
-makes multi-nucleon Path A tractable.
+order of $\mathrm{tr}_M$, NOT the q-pole order of any single per-irrep
+$\chi^\lambda_q$.
 
 The cancellation count enumerates the $\sigma^2$-relation reductions
 ($\sigma^2 = h\sigma + 1$ in the Hecke quadratic) in the new
-nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming
-interface contribution. Detailed $\sigma^2$-adjacency analysis is given in
-the audit doc
-([`docs/audits/-per-nucleon-shift-derivation.md`](../../docs/audits/-per-nucleon-shift-derivation.md)).
+nucleon's intrinsic $\sigma^{\pm 1}$-adjacencies plus its incoming interface contribution.

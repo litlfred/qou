@@ -32,3 +32,71 @@ volume identity as a Lean `class` and consume it downstream — that would be
 exactly the laundering AGENTS.md forbids ("Axiomatization is NOT a Proof"). If
 qou-skum wants `structural` classification, the justification is the cited
 literature fact plus this numeric check, stated as such.
+
+---
+
+# ATTACK VECTORS (2026-08-08)
+
+## Where it sits in the chain
+
+At the **Archimedean end**: `Vol(K)` enters the mass formula
+`m(K) = m_e * Vol(K) * rho(K) / hbar_q^2` and the binding channel's
+`V_41(0) = Vol(4_1)`. It intervenes between **the knot's hyperbolic geometry and
+the MeV observable**. So it is not decorative — it is load-bearing for absolute
+mass, which is why "numerical only" is worth tracking rather than shrugging at.
+
+## AV1 — this bean is now BLOCKED ON, and unblocked by, one shared piece of infra
+
+The same missing Mathlib theory blocks `qou-krvm` hypothesis (iv) (Rivin volume
+concavity). Both need ideal-simplex volume in Lean. Split out as its own
+infra bean so the two consumers stop each carrying the same "large Mathlib gap"
+note: see the ideal-tetrahedron-volume bean.
+
+## AV2 — the two claims have DIFFERENT difficulty; do not treat them as one
+
+  * `Vol(B_3) = 2 * V_oct = 8*Catalan`  — the octahedral one reduces to Catalan's
+    constant, and `Mathlib` has more Catalan/Clausen material than it has ideal
+    simplices. Check `Mathlib.Analysis.SpecialFunctions` for Clausen/Lobachevsky
+    before assuming both are equally far.
+  * `Vol(4_1) = 2 * V_tet = 2*Cl_2(pi/3)`  — needs the Lobachevsky function.
+
+`QOU.Archimedean.ClausenFunctionMathlibFiller` already exists in the tree (it is
+in the `FigureEightComplexVolume` import cone). START THERE — the gap may be
+narrower than this bean assumed when it was filed.
+
+## AV3 — the honest interim already exists and should be used, not re-litigated
+
+`V_41(0) = 2*Cl_2(pi/3)` is stated EXACTLY in `FigureEightComplexVolume`
+(`V₄₁_zero_re`), because `a_2` is purely imaginary. So the corpus already has
+the closed form as a Lean-level statement; what is missing is the bridge from
+"the closed form" to "the hyperbolic volume of the manifold". Name that bridge
+precisely — it is a smaller target than "hyperbolic volume theory".
+
+## AV4 — an EXACT appearance of the octahedral shape (added 2026-08-08, PR #4769)
+
+Relevant to the `Vol(B_3) = 2 x V_oct` half, and NOT numerical. The Descartes
+cubic at the classical point `q = 1` factors over Q:
+
+    27x^3 + 18x + 20 = (3x + 2)(9x^2 - 6x + 10)   -> roots -2/3, 1/3 +- i
+
+so the Legendre invariant is `z_1 = (1+i)/(1-i) = i` EXACTLY — the shape of the
+ideal tetrahedron whose angle triple is `(pi/2, pi/4, pi/4)` and whose volume is
+`D(i) = Catalan G`, one quarter of the regular ideal octahedron (`4G`), i.e.
+`Vol(B_3)/8`. Machine-checked over `fractions.Fraction` in
+[`computations/qbeta/xi_classical_limit_probe.py`](../computations/qbeta/xi_classical_limit_probe.py)
+(`q1_exact()`).
+
+**WHAT THIS DOES AND DOES NOT GIVE YOU.** It does NOT close this bean and does
+NOT prove `Vol(B_3) = 8G`. The gap this bean names is the GEOMETRIC bridge —
+"this closed form" -> "the hyperbolic volume of that manifold" — and an exact
+shape parameter supplies no part of it. What it does give: the octahedral shape
+now appears in the corpus by **exact algebra** rather than only by SnapPy
+numerics, so a future closure has an anchor-free starting point on the shape
+side. Treat as a lead, not as progress on the volume identification.
+
+## GUARD (unchanged, and it is the point of this bean)
+
+Do NOT axiomatise the volume identity as a Lean class and consume it downstream.
+That is the laundering AGENTS.md forbids. Leave numerical, labelled numerical.
+AV4 above is an exact fact about a SHAPE PARAMETER; it is not the volume
+identity and must not be cited as if it were.

@@ -17,4 +17,4 @@ $$
 
 This form is independent of $n$. The choice of 1-d irrep ($V_{(n)}$ trivial or $V_{(1^n)}$ sign) dictates the eigenvalue $\lambda_\sigma \in \{+q,\, -q^{-1}\}$.
 
-This block operates on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at the substrate parameter $q_0$.
+What follows operates on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at the substrate parameter $q_0$.

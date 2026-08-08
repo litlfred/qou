@@ -13,6 +13,18 @@
     "lean": "f188b2c0260a"
   },
   "criteria": {
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The \"### Audit impact\" heading is now \"### What rests on this residual\", and \"Resolving this residual will systematically clear a significant cluster of structural dependencies\" is now \"A significant number of the results below are conditional on resolving this residual\" — the same dependency claim, stated as mathematics rather than as QA-process progress. The Table 3 cross-reference, the -1.81% residual and the three candidate physical origins are unchanged.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
+      }
+    ],
     "voice-status-leak": [
       {
         "field_hash": {

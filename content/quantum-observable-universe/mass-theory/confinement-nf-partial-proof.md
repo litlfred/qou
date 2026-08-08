@@ -1,8 +1,7 @@
 # Partial formal proof of confinement-NF-structure-forcing
 
 **Proposition (partial proof, conditional on
-[`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)
-per AGENTS.md §3b-cond).**
+[`def:lp-duality-hypothesis-class`](lp-duality-hypothesis-class.md)).**
 *The three claims of [`conj:confinement-nf-structure-forcing`](#conj:confinement-nf-structure-forcing)
 decompose as follows.*
 
@@ -25,13 +24,11 @@ The three claims $T_1, T_2, T_3$ decompose and are discharged as follows.
    weighted by Littlewood-Richardson coefficients $c^{\lambda^\star}_{\mu, \nu}$,
    and $\Delta_{\mathrm{resid}} = 0$ by $T_3$.
    **Reduced to Sub-lemma 2.1** (Hecke-branching block-decomposition
-   of $\rho_\lambda(I)$ — scalar form proved in
-   [scalar audit](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md);
+   of $\rho_\lambda(I)$ — scalar form proved;
    operator-valued form closed conditional on
    [`conj:crystal-graph-realization`](crystal-graph-realization.md)
    via the combinatorial $R$-matrix on $B_\mu \otimes B_\nu$ at
-   $q \to 0$ — see
-   [crystal audit](../../../docs/audits/-crystal-r-matrix-sublemma-2-1.md)).
+   $q \to 0$).
 
 3. *(Strong duality, $T_3$.)*
    $\mathrm{duality\_gap}(\beta) = 0$.
@@ -90,8 +87,7 @@ $\alpha_{\mathrm{shift}}(I)$ term per
 
 **Sub-lemma 2.1 (now categorically proved).** The pole-order contribution of
 $\rho_\lambda(I)$ in the $(\mu, \nu)$-isotypic block is bounded by
-the Hoefsmit-derived block-decomposition formula.  See
-[full categorical proof](../../../docs/audits/-sub-lemma-2-1-categorical-proof.md).
+the Hoefsmit-derived block-decomposition formula.
 
 Combining the per-component pole orders (proved via Sub-lemma 2.1)
 with the LR multiplicities and the interface $\alpha$-shift
@@ -117,6 +113,6 @@ the formula yields
 
 $$\mathrm{shift}_{\mathrm{NF}}(\beta_{\mathrm{atomic}}(Z, N)) = 18Z + 21N + 1,$$
 
-matching the empirical W-3 closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$ exactly.
+matching the empirical closed form $D(u) = 2^{2A+1} \cdot u^{18Z + 21N + 1} \cdot (1+u^2)^{3A-1}$ exactly.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
