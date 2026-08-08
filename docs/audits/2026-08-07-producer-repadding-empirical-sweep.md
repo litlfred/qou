@@ -2515,3 +2515,65 @@ deuteron classifies `VALUES` on that rebuild, which is the guard working as
 designed: `convention` is deliberately outside `META`, so a convention change
 must surface for review rather than pass as metadata. It is committed here with
 that justification and an independent measurement behind it, not waved through.
+
+## P54 — labels repaired, the gate taught, and a correction to P47
+
+Tritium and helium-3 repaired to `colour-weighted-averaged-crossing`; all three
+now read `AGREES` under the values audit. The deuteron's repair is the
+producer's, not a hand-edit, since the derived-label fix regenerated it — and
+`convention_inferred_by` is deliberately kept on the two hand-set labels and
+absent from the deuteron, so the asymmetry itself records which is which.
+
+### Correcting P47
+
+P47 said, of the deuteron: *"the `colour-weighted-averaged-crossing` label is
+honest… that also settles the earlier worry that a mislabelled convention was
+lurking — it was not."* **The cache declared `averaged-crossings` at the time.**
+The residuals were read correctly and the label was read backwards, so a
+sentence claiming the labels were fine sat directly beneath the measurement
+proving three of them wrong. It is true of the deuteron now, for the first time,
+and only because the producer was fixed.
+
+### The gate asserted the wrong convention for the whole family
+
+`chi_convention_audit` had `KNOWN_CONVENTIONS = {sign-only, averaged}` and both
+`PRODUCER_CONVENTION["chi_at_q0_via_hoefsmit_mpfr.py"]` and the
+`^chi-.*-at-q0-50dps$` pattern asserting `AVERAGED`. So it **agreed with the
+wrong string** for every A≥2 cache, and adding the new vocabulary alone would
+have converted that silent agreement into a CRITICAL mismatch — the repair
+turning a green gate red for being correct.
+
+Both are now word-dependent sets: this family substitutes the colour-weighted
+crossing only where a p–n interface exists, so A=1 atoms and every `-free-`
+word are honestly `AVERAGED` while A≥2 atoms are `COLOUR_WEIGHTED`. The gate
+rejects strings outside the vocabulary; deciding *which* applies belongs to
+`chi_convention_from_values_audit`, which recomputes instead of asserting.
+`mismatch (CRITICAL)` returns to 0, with the one pre-existing
+`unknown-convention` (`bring_color_weighted-…`) untouched.
+
+Note the gate reads `producer` or `scriptFile`, and the rebuilt caches carry
+neither — `stamp_staleness_metadata` does not set them — so expectations come
+from the computation-id pattern. That is why fixing only the producer map would
+not have been enough.
+
+### The `-at-qinv-` family is correctly labelled, which vindicates a revert
+
+Measured: colour-blind reproduces `chi-{deuteron,tritium,helium-3}-h*-at-qinv-`
+to **exactly zero**, so `averaged-crossings` is right there. Not an accident —
+`chi_at_q_inv_via_native_mpfr._word_to_signed` collapses every crossing to
+±1/0 and passes no shift, letting the kernel derive −h/2 itself.
+
+That is independent confirmation that reverting the q_inv port (P48) was
+correct. Had it shipped, it would have made this family colour-weighted and
+broken labels that were already right — a 3× error in the values *and* a
+regression in the labels. The same sign trap caught the measurement too: a
+first pass weighting with h(q₀) while evaluating at q₀⁻¹ produced a residual of
+2.8e+01, a sign error masquerading as a decisive rival, until the word was
+rebuilt at the evaluation q.
+
+Also measured and needing nothing: dineutron, diproton and every `-free-` word
+carry zero colour-weighted crossings, so the conventions coincide
+(`INDISTINGUISHABLE`). And the proton/neutron residual floor of ~3e-07 is not
+noise — those caches still store the muon-pinned q₀ while the audit recomputes
+at the proton pin. The convention signal is ~500× larger, so the verdicts
+survive it comfortably.
