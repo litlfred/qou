@@ -2,15 +2,18 @@
   "computation": "chi-neutron-h3-at-q0-50dps",
   "description": "Numerical χ^λ_q(β_atomic(0, 1)) = neutron per partition λ ⊢ 3, evaluated at q = q_0 at 50 decimal places via the Hoefsmit seminormal basis. Companion to the symbolic chi-neutron-h3.witness.json emitted by per_irrep_pole_atom.py; this numerical cache is used by canonical_tr_m_via_chi_cache.py and the 3-way 1ppb cross-check (cross_check_trM_1ppb.py) when full symbolic data is not yet available. ~100× faster to build than the symbolic counterpart (no sympy poly arithmetic).",
   "convention": "averaged-crossings",
-  "q_0_50dps": "1.1099785955573347198997632204832250266562084087802",
+  "producer": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "n_partitions_total": 3,
+  "partial": false,
+  "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "dps": 50,
   "n_strands": 3,
   "atom": "neutron",
   "Z": 0,
   "N": 1,
   "n_partitions": 3,
-  "compute_time_sec": 0.0,
-  "tr_M_at_q0": "0.92323330514983772546573530276491123416377319107628",
+  "compute_time_sec": 0.01,
+  "tr_M_at_q0": "0.92323322991163711534904262732714418911581936608969",
   "by_partition": [
     {
       "partition": [
@@ -18,8 +21,8 @@
       ],
       "dim": 1,
       "y_lambda": "0.41539579536061340131043751972541446062496615551882",
-      "chi_lambda": "1.1221068372401542628963679203269596989177445045232",
-      "contribution": "0.46611846213495624916934530080418425301227448946448",
+      "chi_lambda": "1.1221068216024720179876193343832280960799349809582",
+      "contribution": "0.46611845563912879544893319654257998599010537490388",
       "compute_time_sec": 0.0
     },
     {
@@ -29,8 +32,8 @@
       ],
       "dim": 2,
       "y_lambda": "0.28092963103101970777815130637822107959502749332953",
-      "chi_lambda": "1.7008888501492637559124854282172990958251349586039",
-      "contribution": "0.4778300770972080369649145483638875422082241901562",
+      "chi_lambda": "1.700888606127042842517474453593031936458781072515",
+      "contribution": "0.4778300085441355523948731739127462007141984739198",
       "compute_time_sec": 0.0
     },
     {
@@ -41,18 +44,18 @@
       ],
       "dim": 1,
       "y_lambda": "0.022744942577347183133259867518143380184978857822109",
-      "chi_lambda": "-0.91076220623031557509439896477205906620682118546323",
-      "contribution": "-0.020715234082326560668524546403160561056725488544397",
+      "chi_lambda": "-0.91076221455307441181149529541819402347332188723947",
+      "contribution": "-0.020715234271627232494763743128181997588484482733988",
       "compute_time_sec": 0.0
     }
   ],
-  "scriptHash": "5d75028ddb7b",
-  "scriptCommitSha": "unknown",
-  "commitSha": "dcd8299892b77a5c17b4be77dded017be21ef57d",
-  "engine": "mpmath",
-  "computedAt": "2026-07-18T23:59:55.716699+00:00",
+  "scriptHash": "5b07d99bba41",
+  "scriptCommitSha": "362beea4715ced6cd86e74990885f51ebef958a4",
+  "commitSha": "1c6d981e75e031e5f871a898551d88c205dd8e3a",
+  "engine": "python+mpmath",
+  "computedAt": "2026-08-08T18:40:35.831281+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "q0Anchor": "ambiguous",
-  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py"
+  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

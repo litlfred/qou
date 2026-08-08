@@ -54,6 +54,7 @@ from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf,
     _chi_lambda_of_word_mpf,
     _load_y_lambda,
+    load_y_lambda_for_q0,
     tr_M_via_wenzl_bridge_mpfr,
 )
 from witness_base import WitnessBuilder  # noqa: E402
@@ -70,7 +71,7 @@ def _save_partial(out_path: Path, payload: dict) -> None:
 
 def build_chi_cache_at_q0(
     atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
-    incremental: bool = True,
+    incremental: bool = True, fresh: bool = False,
 ) -> dict:
     """Return per-λ χ^λ(β_atomic(Z, N); q_0) at 50 dps.
 
@@ -150,14 +151,45 @@ def build_chi_cache_at_q0(
     already: dict[tuple, dict] = {}
     if out_path.exists():
         existing = json.loads(out_path.read_text())
-        for entry in existing.get("by_partition", []):
-            already[tuple(entry["partition"])] = entry
-        if already:
-            print(f"    resume: {len(already)} partition(s) already cached")
+        # Resume ONLY from a cache computed at this same q₀.
+        #
+        # This used to resume unconditionally, so re-running at a different
+        # anchor kept the PREVIOUS anchor's χ values and stamped the new q₀
+        # over them — a witness whose label and contents disagree, which is
+        # the defect the whole `q0Anchor` apparatus exists to prevent.
+        #
+        # Measured: migrating tritium / helium-3 / neutron to proton
+        # "completed" in 0.25s, 0.12s and 0.00s, and the dual-path audit then
+        # read 2.14e-07 / 2.83e-07 / 8.15e-08 against a proton peel — versus
+        # 1e-16 for the two atoms genuinely recomputed. A stale cache wearing
+        # a fresh label is indistinguishable by inspection; only the
+        # cross-check caught it.
+        prev_q = str(existing.get("q_0_50dps", "")).strip()
+        # `--fresh` is the repair path for a cache ALREADY relabelled. The q0
+        # check above compares against the stored q0, so a witness that was
+        # wrongly stamped with the new anchor looks consistent and resumes
+        # its stale values forever. Nothing in the file can reveal that; only
+        # recomputation can.
+        if fresh:
+            print(f"    --fresh: discarding "
+                  f"{len(existing.get('by_partition', []))} cached "
+                  f"partition(s) and recomputing from scratch")
+        elif prev_q and prev_q != str(q_str).strip():
+            print(f"    q0 CHANGED ({prev_q[:22]}… -> {str(q_str)[:22]}…): "
+                  f"discarding {len(existing.get('by_partition', []))} cached "
+                  f"partition(s) and recomputing")
+        else:
+            for entry in existing.get("by_partition", []):
+                already[tuple(entry["partition"])] = entry
+            if already:
+                print(f"    resume: {len(already)} partition(s) already cached")
 
     with mp.workdps(dps):
         q = mp.mpf(q_str)
-        y_table = _load_y_lambda(n, None)
+        # y_λ at the SAME layer as q₀. `_load_y_lambda(n, None)` reads the
+        # default cache, which is the ideal (muon) one — pairing it with a
+        # proton q₀ is the straddle AGENTS.md forbids, built into the producer.
+        y_table = load_y_lambda_for_q0(n, q_str)
         shapes = list(parts_of(n))
         per_partition: list[dict] = []
         running_total = mp.mpf(0)
@@ -418,6 +450,12 @@ def main() -> int:
              "partial symbolic caches). One of: " + ", ".join(ATOMS),
     )
     parser.add_argument("--dps", type=int, default=50)
+    parser.add_argument(
+        "--fresh", action="store_true",
+        help="Ignore any cached partitions and recompute from scratch. Use "
+             "when a cache may already have been stamped with the CURRENT q0 "
+             "while holding values computed at a different one — the resume "
+             "check compares stored-vs-current q0, so it cannot see that.")
     args = parser.parse_args()
 
     if not args.atoms:
@@ -442,7 +480,8 @@ def main() -> int:
             continue
         Z, N = ATOMS[atom_name]
         try:
-            record = build_chi_cache_at_q0(atom_name, Z, N, q_str, dps=args.dps)
+            record = build_chi_cache_at_q0(atom_name, Z, N, q_str,
+                                           dps=args.dps, fresh=args.fresh)
         except Exception as exc:  # noqa: BLE001
             print(f"  {atom_name:>9}  ERROR  {type(exc).__name__}: {exc}")
             continue

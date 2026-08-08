@@ -1,10 +1,36 @@
 ---
 # qou-n1c4
 title: 'dual-path xref: the chi family straddles the ideal/experimental q0 layers (owner decision needed)'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-08T16:59:17Z
 updated_at: 2026-08-08T18:05:00Z
+---
+
+## RESOLVED 2026-08-08 — owner ruled: all new compute to the proton pin
+
+Owner decision: *"all new compute to the proton pin ... migrate what needed"* —
+option 1, with option 3 as its mechanism. The ideal layer keeps its own cache
+(AGENTS.md is explicit the directive does not redefine CAL-2); the experimental
+layer got the counterpart it was missing.
+
+Acceptance test passes — every atom, every leg on one pin:
+
+    proton    3.450e-17   neutron    6.783e-17   deuteron  1.024e-16
+    tritium   1.702e-16   helium-3   1.369e-16   helium-4  2.047e-16
+
+all AGREES, from 8.1e-08 … 3.3e-07 before. `chi_convention_from_values_audit`
+also now reads AGREES for deuteron/tritium/helium-3 (was MISLABELLED) with a
+0.00e+00 weighted residual.
+
+**Follow-up, not resolved here:** the muon layer used to agree at 9.111e-20 and
+proton now sits at ~1e-16 — about four orders coarser, with a floor that looks
+like an f64 leak. `_avg_color_delta` is documented to cap at ~5e-16 because it
+reads the float64 `q_parameter.Q` rather than the 50-dps string, and AGENTS.md
+says deep-1ppQ callers should use `flavor_split_leading(local_q0_50dps)`. The
+A=1 atoms sit at ~1e-17 with no colour crossing at all, so that is probably not
+the whole story. Worth its own bean.
+
 ---
 
 **The original title and premise of this bean were WRONG and are corrected

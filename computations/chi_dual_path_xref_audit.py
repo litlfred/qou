@@ -213,7 +213,7 @@ def _measure(atom: str, Z: int, N: int):
     """(gap, anchors, n_chi, n_parts) for one atom. Import-heavy; lazy."""
     import _path_bridge  # noqa: F401
     import mpmath as mp
-    from tr_m_wenzl_bridge_mpfr import _load_y_lambda
+    from tr_m_wenzl_bridge_mpfr import load_y_lambda_for_q0
 
     n = 3 * (Z + N)
     chi_path = HERE / f"chi-{atom}-h{n}-at-q0-50dps.witness.json"
@@ -227,13 +227,15 @@ def _measure(atom: str, Z: int, N: int):
     if not chi:
         return None, (None, None, None), 0, 0
 
-    yw = json.loads(Y_LAMBDA_WITNESS.read_text(encoding="utf-8"))
     pw = json.loads(PEEL_WITNESS.read_text(encoding="utf-8"))
-    anchors = (anchor_of(cw.get("q_0_50dps")),
-               anchor_of(yw.get("q_0_50dps")),
+    # Pair each χ with y_λ at ITS OWN pin rather than with one shared cache.
+    # The accessor refuses to cross the boundary, so a missing counterpart
+    # surfaces as a raise here instead of as a silent ~1e-7 error downstream.
+    chi_q0 = cw.get("q_0_50dps")
+    y = load_y_lambda_for_q0(n, chi_q0)
+    y_anchor = anchor_of(chi_q0)
+    anchors = (anchor_of(chi_q0), y_anchor,
                anchor_of((pw.get("parameters") or {}).get("q0")))
-
-    y = _load_y_lambda(n, None)
     peel = None
     for r in pw["data"]["results"]:
         if r["Z"] == Z and r["N"] == N:

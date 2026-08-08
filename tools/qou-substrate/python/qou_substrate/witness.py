@@ -82,6 +82,40 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     return val
 
 
+_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859555"))
+_Q0_FIELDS = ("q_0_50dps", "q0", "q_0", "q0_50dps")
+
+
+def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
+    """The anchor a payload's own q₀ VALUES imply, or None if it records none.
+
+    Evidence only — used to refuse carrying a stale `q0Anchor` across a
+    re-anchoring, never to invent a pin. Returns None when the payload records
+    no recognisable q₀, and also when it records BOTH pins: a payload that
+    legitimately spans layers (a cross-anchor comparison) must not have either
+    one asserted over it.
+    """
+    seen = set()
+
+    def walk(node, depth=0):
+        if depth > 4 or len(seen) > 1:
+            return
+        if isinstance(node, Mapping):
+            for k, v in node.items():
+                if k in _Q0_FIELDS and isinstance(v, str):
+                    for name, pre in _Q0_PREFIXES:
+                        if v.strip().startswith(pre):
+                            seen.add(name)
+                elif isinstance(v, (dict, list)):
+                    walk(v, depth + 1)
+        elif isinstance(node, list):
+            for v in node[:64]:
+                walk(v, depth + 1)
+
+    walk(payload)
+    return seen.pop() if len(seen) == 1 else None
+
+
 def resolve_q0_anchor(
     script_path: Union[str, Path], *, env: Optional[Mapping[str, str]] = None,
 ) -> tuple:
@@ -849,10 +883,26 @@ class WitnessBuilder:
         # Preserve only. A witness with no recorded pin still gets none —
         # inventing one would assert a pin the producer never established, and
         # Q0_ANCHOR_MISSING is a tolerated state.
+        # ...but NEVER across an actual re-anchoring. Carrying a stale pin is
+        # strictly worse than dropping one: a dropped pin reads as
+        # Q0_ANCHOR_MISSING, a tolerated state the audit reports, whereas a
+        # carried one ASSERTS a layer the numbers no longer belong to — the
+        # muon-value-read-as-proton confusion of bean tnjb, with a provenance
+        # field vouching for it.
+        #
+        # Measured: `markov_peel_atomic_witness` re-anchored to proton (its
+        # stem is not in `q0_anchor_manifest.json`, so it resolves proton) and
+        # the rebuilt witness still carried `q0Anchor: muon` with the muon
+        # `q0Value`, next to a proton `parameters.q0`.
         if isinstance(existing, dict):
-            for _k in ("q0Anchor", "q0Value"):
-                if _k not in witness and _k in existing:
-                    witness[_k] = existing[_k]
+            _actual = _q0_anchor_from_payload(witness)
+            _stale = (_actual is not None
+                      and existing.get("q0Anchor") in ("muon", "proton")
+                      and existing.get("q0Anchor") != _actual)
+            if not _stale:
+                for _k in ("q0Anchor", "q0Value"):
+                    if _k not in witness and _k in existing:
+                        witness[_k] = existing[_k]
 
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops

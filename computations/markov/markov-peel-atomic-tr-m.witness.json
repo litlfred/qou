@@ -1,15 +1,15 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-29T15:51:16.551748+00:00",
-  "commitSha": "2bfeb6134ad67611ad2873e0c92a5c47af4f65cd",
+  "computedAt": "2026-08-08T18:09:18.466693+00:00",
+  "commitSha": "1c6d981e75e031e5f871a898551d88c205dd8e3a",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 24,
   "computation": "markov-peel-atomic-tr-m",
   "scriptFile": "markov_peel_atomic_witness.py",
-  "scriptHash": "4e2c1341b27a",
-  "scriptCommitSha": "472e8b34f36379a2a0a3510be349e7bbba5986df",
+  "scriptHash": "deff9ebd6959",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,14 +19,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Production atomic Markov trace tr_M(β_atom) at q = q₀ via the Markov-axiom recursive-ascent path (markov_peel + markov_trace_canonical, #508 / PR #516).  Cross-checks against atomic-tr-m-mpfr-50dps.witness.json (Hoefsmit + Wenzl bridge) for the atoms it covers (proton, neutron, D, T, ³He); ⁴He and beyond are first-time computations enabled by this rewrite.",
   "contentBlock": "prop:markov-pair-z2",
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802"
+    "q0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "method": "incremental_reduced_element + tr_M_element(simplify=False)",
@@ -39,13 +41,13 @@
         "word_length": 11,
         "reduced_term_count": 4,
         "trace_sympy_ops": 75,
-        "tr_M_at_q0": "1.0653062286131670593652845464313725576506616741351",
-        "elapsed_reduce_sec": 0.049,
+        "tr_M_at_q0": "1.0653061442544499756666334037445034130528872534934",
+        "elapsed_reduce_sec": 0.056,
         "elapsed_trace_sec": 0.0,
-        "elapsed_evalf_sec": 0.004,
+        "elapsed_evalf_sec": 0.006,
         "atom": "proton",
-        "bridge_witness_value": "1.06530622861316705936528454643137255765066167413520000000000",
-        "abs_diff_vs_bridge": "9.88923e-50",
+        "bridge_witness_value": "1.06530613479173841380765576505879258891753529363056512863792",
+        "abs_diff_vs_bridge": "9.46271e-9",
         "bridge_is_color_blind": false
       },
       {
@@ -56,13 +58,13 @@
         "word_length": 11,
         "reduced_term_count": 4,
         "trace_sympy_ops": 63,
-        "tr_M_at_q0": "0.92323329718615355710525339599068604013866212190134",
-        "elapsed_reduce_sec": 0.034,
+        "tr_M_at_q0": "0.92323322991163717797026991200748498402824245608809",
+        "elapsed_reduce_sec": 0.041,
         "elapsed_trace_sec": 0.0,
-        "elapsed_evalf_sec": 0.001,
+        "elapsed_evalf_sec": 0.002,
         "atom": "neutron",
-        "bridge_witness_value": "0.923233297186153557105253395990686040138662121901370000000000",
-        "abs_diff_vs_bridge": "3.07368e-50",
+        "bridge_witness_value": "0.923233221947952342365968411611314104717930876342588042311913",
+        "abs_diff_vs_bridge": "7.96368e-9",
         "bridge_is_color_blind": false
       },
       {
@@ -73,13 +75,13 @@
         "word_length": 23,
         "reduced_term_count": 32,
         "trace_sympy_ops": 2765,
-        "tr_M_at_q0": "0.38835718872378100730177249496534606587836263700872",
-        "elapsed_reduce_sec": 1.917,
-        "elapsed_trace_sec": 0.006,
-        "elapsed_evalf_sec": 0.085,
+        "tr_M_at_q0": "0.38835714119779098941649346949090499349342765669822",
+        "elapsed_reduce_sec": 2.273,
+        "elapsed_trace_sec": 0.007,
+        "elapsed_evalf_sec": 0.087,
         "atom": "deuteron",
-        "bridge_witness_value": "0.388286471559408882668623506562459052329338141416570000000000",
-        "abs_diff_vs_bridge": "7.07172e-5",
+        "bridge_witness_value": "0.388357122562352815076554060811402206896142251599849801491787",
+        "abs_diff_vs_bridge": "1.86354e-8",
         "bridge_is_color_blind": true
       },
       {
@@ -90,13 +92,13 @@
         "word_length": 35,
         "reduced_term_count": 256,
         "trace_sympy_ops": 20864,
-        "tr_M_at_q0": "0.10407106930208715571593073165688859407758241976544",
-        "elapsed_reduce_sec": 19.64,
-        "elapsed_trace_sec": 0.148,
-        "elapsed_evalf_sec": 0.479,
+        "tr_M_at_q0": "0.10407105735473067417013764417833271249496034860754",
+        "elapsed_reduce_sec": 23.78,
+        "elapsed_trace_sec": 0.201,
+        "elapsed_evalf_sec": 0.533,
         "atom": "tritium",
-        "bridge_witness_value": "0.104052118678465629313373882370944682484880060724050000000000",
-        "abs_diff_vs_bridge": "1.89506e-5",
+        "bridge_witness_value": "0.104071047032529224665555405604181328528452335164959516482001",
+        "abs_diff_vs_bridge": "1.03222e-8",
         "bridge_is_color_blind": true
       },
       {
@@ -107,13 +109,13 @@
         "word_length": 35,
         "reduced_term_count": 128,
         "trace_sympy_ops": 9788,
-        "tr_M_at_q0": "0.20657847508740299947588410513714093687525942386618",
-        "elapsed_reduce_sec": 8.991,
-        "elapsed_trace_sec": 0.048,
-        "elapsed_evalf_sec": 0.185,
+        "tr_M_at_q0": "0.20657843351067234587227748703535139758447504146334",
+        "elapsed_reduce_sec": 10.266,
+        "elapsed_trace_sec": 0.059,
+        "elapsed_evalf_sec": 0.222,
         "atom": "helium-3",
-        "bridge_witness_value": "0.206540858572496952178887701303563993714774065537880000000000",
-        "abs_diff_vs_bridge": "3.76165e-5",
+        "bridge_witness_value": "0.206578416736234163611728142434862038141873963594494844693319",
+        "abs_diff_vs_bridge": "1.67744e-8",
         "bridge_is_color_blind": true
       },
       {
@@ -124,17 +126,25 @@
         "word_length": 47,
         "reduced_term_count": 1024,
         "trace_sympy_ops": 63496,
-        "tr_M_at_q0": "0.055358426266783106469852047498437740316331036735298",
-        "elapsed_reduce_sec": 96.819,
-        "elapsed_trace_sec": 1.734,
-        "elapsed_evalf_sec": 1.823,
+        "tr_M_at_q0": "0.055358415544598426788690736434777649666639096495765",
+        "elapsed_reduce_sec": 113.662,
+        "elapsed_trace_sec": 2.48,
+        "elapsed_evalf_sec": 2.053,
         "atom": "helium-4",
         "bridge_witness_value": null,
         "abs_diff_vs_bridge": null
       }
     ],
-    "bridge_witness_compared": "atomic-tr-m-mpfr-50dps.witness.json"
-  },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+    "bridge_witness_compared": "atomic-tr-m-mpfr-50dps.witness.json",
+    "upstream_witness_hashes": [
+      {
+        "path": "atomic-tr-m-mpfr-50dps-proton.witness.json",
+        "sha256": "95bee173347cd877ecba3a48a54d73741520ca08f988d9302cc4e74b48d483b8",
+        "size_bytes": 8372,
+        "commitSha": "1c6d981e75e031e5f871a898551d88c205dd8e3a",
+        "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+        "computedAt": "2026-08-08T17:55:45.076206+00:00"
+      }
+    ]
+  }
 }
