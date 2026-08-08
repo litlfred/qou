@@ -61,6 +61,7 @@
 
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 import Mathlib.MeasureTheory.Measure.WithDensity
+import Mathlib.Analysis.SpecialFunctions.ImproperIntegrals
 
 namespace QOU.Archimedean.HyperbolicVolume
 
@@ -130,5 +131,41 @@ theorem hypVolume_compl_eq_zero : hypVolume upperHalfSpaceᶜ = 0 := by
   rw [hypVolume_apply measurableSet_upperHalfSpace.compl,
     setLIntegral_eq_zero_iff measurableSet_upperHalfSpace.compl measurable_hypDensity]
   filter_upwards with p hp using hypDensity_eq_zero hp
+
+/-! ### H4 step 1 — the vertical integral
+
+The first step of Milnor's volume computation, and the one that makes the whole
+approach work: integrating `dz/z³` up a vertical line CONVERGES, and collapses
+the three-dimensional hyperbolic volume to a two-dimensional Euclidean integral
+over the base.  See `qou-5gai` H4-1.
+
+This is stated and proved here because it is self-contained -- it needs neither
+the ideal-tetrahedron region (H3) nor Fubini.  Assembling it into
+`Vol = ∫∫ dA / (2(R² - d²))` is H4-2, which does. -/
+
+/-- **The vertical hyperbolic integral converges**, with the elementary value
+`∫_{z₀}^{∞} z^{-3} dz = 1/(2 z₀²)`. -/
+theorem integral_Ioi_rpow_neg_three {z₀ : ℝ} (hz : 0 < z₀) :
+    ∫ z in Ioi z₀, z ^ (-3 : ℝ) = 1 / (2 * z₀ ^ 2) := by
+  rw [integral_Ioi_rpow_of_lt (by norm_num) hz, show (-3 : ℝ) + 1 = -2 by norm_num,
+    Real.rpow_neg hz.le]
+  have h2 : z₀ ^ (2 : ℝ) = z₀ ^ (2 : ℕ) := by
+    rw [← Real.rpow_natCast z₀ 2]; norm_num
+  rw [h2]
+  have hz2 : (z₀ : ℝ) ^ (2 : ℕ) ≠ 0 := by positivity
+  field_simp
+
+/-- The same integral at the **hemisphere height** `z₀ = √(R² - d²)`, which is
+the form H4 actually consumes: over a base point at distance `d` from the centre
+of a hemisphere of radius `R`, the vertical fibre contributes
+`1 / (2(R² - d²))`.
+
+Summing this over the base triangle is what produces the Λ-sum; that summation
+is H4-2/H4-3 and is NOT done here. -/
+theorem integral_Ioi_hemisphere {R d : ℝ} (hd : 0 ≤ d) (hdR : d < R) :
+    ∫ z in Ioi (Real.sqrt (R ^ 2 - d ^ 2)), z ^ (-3 : ℝ) = 1 / (2 * (R ^ 2 - d ^ 2)) := by
+  have hR : 0 < R := lt_of_le_of_lt hd hdR
+  have hpos : 0 < R ^ 2 - d ^ 2 := by nlinarith
+  rw [integral_Ioi_rpow_neg_three (Real.sqrt_pos.mpr hpos), Real.sq_sqrt hpos.le]
 
 end QOU.Archimedean.HyperbolicVolume
