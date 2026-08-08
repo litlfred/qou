@@ -30,16 +30,16 @@ opaque SkeinFactorizationStructuralHolds : Prop
 class SkeinShellCorrection : Prop where
   skein_factorization_structural : SkeinFactorizationStructuralHolds
 
-axiom skein_shell_correction_skein_factorization_structural : SkeinFactorizationStructuralHolds
-
--- Ref: [manuscript] conj:skein-shell-correction
-instance skein_shell_correction_conjecture : SkeinShellCorrection where
-  -- Witness: computations/none
-  -- Gap: assumed conjectural (no rigorous derivation yet).
-  -- Path: future inductive proof via HOMFLY iterated Skein
-  -- resolution + induction on the number of closed sub-shells,
-  -- then per-shell crossing-energy identification.
-  -- Ref: [manuscript] conj:skein-shell-correction
-  skein_factorization_structural := skein_shell_correction_skein_factorization_structural
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance skein_shell_correction_conjecture : SkeinShellCorrection where
+--     axiom skein_shell_correction_skein_factorization_structural : SkeinFactorizationStructuralHolds
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[SkeinShellCorrection]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[SkeinShellCorrection]` as an explicit hypothesis.
 
 end QOU.SkeinShellCorrection

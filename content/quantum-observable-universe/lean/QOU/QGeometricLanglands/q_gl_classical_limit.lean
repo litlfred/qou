@@ -44,10 +44,16 @@ class q_gl_classical_limit where
       recovering $\mathbb{L}_{\mathrm{BD}}$. -/
   recovers_classical : differential_limit ∧ dual_group_limit
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-classical-limit.ts
-axiom q_gl_classical_limit_conjecture : q_gl_classical_limit
-noncomputable instance : q_gl_classical_limit := q_gl_classical_limit_conjecture
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     noncomputable instance : q_gl_classical_limit := q_gl_classical_limit_conjecture
+--     axiom q_gl_classical_limit_conjecture : q_gl_classical_limit
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[q_gl_classical_limit]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[q_gl_classical_limit]` as an explicit hypothesis.
 
 end QOU.QGeometricLanglands
