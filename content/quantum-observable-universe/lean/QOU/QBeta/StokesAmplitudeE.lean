@@ -130,7 +130,7 @@ theorem stokesAmplitude_eq_zero_of_dim_zero {R : Type*} [CommRing R] {d : ℕ}
     This is the RSZ input that places C1 in the vanishing branch of Part 2. -/
 theorem c1_isoformal_toNat_zero (r μ : Fin 1 → ℤ) :
     (rszIsoformalDim 1 r μ).toNat = 0 := by
-  rw [rszIsoformalDim_one]
+  rw [rszIsoformalDim_one]; rfl
 
 /-! ### Part 2 — the scope-(b) sub-exclusion: single-slope local Stokes CANNOT lift. -/
 
