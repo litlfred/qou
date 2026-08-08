@@ -140,3 +140,49 @@ analytic half stays informal — recorded here, with the reason. Do NOT quietly
 leave the Lean reading as though it covers more than it does; the file header and
 `prop:one-loop-prefactor-provenance` both say explicitly what is assumed, and
 that must stay true.
+
+
+## (A) DIAGNOSED — it is a structural change, not a tightening. 2026-08-08
+
+Read `abs_deviation_le`'s actual construction before attempting it. It is built
+from `sum_log_sin_le_integral_Icc` / `integral_le_sum_log_sin_Icc` — a
+**rectangle-rule sandwich**: on each cell the monotonicity of `log(2 sin)`
+brackets the sample by the integral. A rectangle rule has `O(h·Var)` error per
+cell BY CONSTRUCTION; no sharpening of its constants reaches `O(h²)`.
+
+So (A) is not "tighten `masterErr`". It needs:
+
+  1. the TRAPEZOID / Euler-Maclaurin correction `(f(a)+f(b))/2` per cell — a
+     different comparison, requiring `f''` control rather than monotonicity;
+  2. separate treatment of the `j = 0` endpoint where `log(2 sin) -> -infinity`.
+     That endpoint is where BOTH the `log N` and the `1/2` in the correction
+     come from; it is the entire content, and it is why a leading-order EM is
+     useless here.
+
+Realistically a multi-day formalisation, not a sitting. Recorded so the next
+attempt does not start by trying to improve constants.
+
+## Landed toward (A): the exact endpoint constraint
+
+`QOU/Knot/KashaevProdEndpoint.lean`, sorry-free, wired into `QOU.lean`:
+
+    kashaev_factor_eq_sin_sq   2 - 2cos(2 pi j/N) = (2 sin(pi j/N))^2
+    kashaevProd_endpoint       kashaevProd N (N-1) = N^2        EXACT, all N != 0
+    sum_log_two_sin_endpoint   sum_{j=1}^{N-1} log(2 sin(j pi/N)) = log N
+
+Numerically confirmed at N = 2,3,5,7,12,30. Built on
+`QOU.MathlibExt.prod_two_sin_pi_div` (bean `qou-snpr`).
+
+**Why it matters for (A).** Evaluate the target expansion at `k = N-1`:
+`Lambda(pi) = 0` and `sin(pi(N-1)/N) = sin(pi/N)`, so it must return
+`-(1/2) log(2 N sin(pi/N)) + O(1/N) = -log N + O(1/N)`. The theorem above says
+that value EXACTLY, for every N, with no asymptotics. So it is a hard constraint
+that pins the additive constant rather than evidence for it — and any candidate
+refinement that fails it is wrong without further checking.
+
+## (B) not started
+
+Laplace's method for a sum. Mathlib has nothing (0 modules). Note it is needed
+only through the specific `phi'' = -2 pi sqrt3 / N` at the figure-eight saddle,
+so a bespoke version may be far cheaper than the general theorem — worth
+scoping before attempting the general one.
