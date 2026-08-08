@@ -78,6 +78,44 @@ theorem Lob_pi_sub (t : ℝ) : Lob (Real.pi - t) = -Lob t := by
   rw [show 2 * (Real.pi - t) = 2 * Real.pi - 2 * t by ring, QOU.Knot.Cl_2_two_pi_sub]
   ring
 
+/-! ### The two identities Milnor's volume proof actually consumes
+
+Sourced from the Appendix of [milnor1982] (full text now in `uploads/`), which
+states `Λ` is "odd, periodic of period π" and, in the orthoscheme computation,
+substitutes `Λ(2a) = 2Λ(a) + 2Λ(a + π/2)` to reduce the value to `Λ(a)/2`.
+Those are H4-4's inputs; both fall out of Clausen lemmas already in the tree.
+
+Milnor's general multiplication identity `Λ(nθ) = n Σ_{k mod n} Λ(θ + kπ/n)` is
+NOT proved here -- only the `n = 2` case below, which is what the volume proof
+uses. The general case is left open (`qou-w3eg`). -/
+
+/-- **`Λ` has period `π`** -- Milnor's Appendix, Lemma 1. Immediate from `Cl₂`'s
+`2π`-periodicity, since `Λ(t) = Cl₂(2t)/2` doubles the argument. -/
+theorem Lob_add_pi (t : ℝ) : Lob (t + Real.pi) = Lob t := by
+  unfold Lob
+  rw [show 2 * (t + Real.pi) = 2 * t + 2 * Real.pi by ring, Cl_2_add_two_pi]
+
+/-- **The duplication identity `Λ(2a) = 2Λ(a) + 2Λ(a + π/2)`.**
+
+This is the `n = 2` case of Milnor's multiplication identity, and the exact
+substitution his orthoscheme computation makes to collapse
+`(Λ(π/2 + a) + Λ(2a) + Λ(π/2 - a) - Λ(0))/4` to `Λ(a)/2`.
+
+Proof: `Cl_2_duplication` at `θ = 2a` gives `Cl₂(4a) = 2Cl₂(2a) - 2Cl₂(π - 2a)`,
+and `Cl_2_two_pi_sub` at `π - 2a` gives `Cl₂(π + 2a) = -Cl₂(π - 2a)`, which is
+precisely the term needed to match. -/
+theorem Lob_duplication (a : ℝ) :
+    Lob (2 * a) = 2 * Lob a + 2 * Lob (a + Real.pi / 2) := by
+  unfold Lob
+  have hdup : Cl_2 (2 * (2 * a)) = 2 * Cl_2 (2 * a) - 2 * Cl_2 (Real.pi - 2 * a) :=
+    Cl_2_duplication (2 * a)
+  have hrefl : Cl_2 (2 * Real.pi - (Real.pi - 2 * a)) = -Cl_2 (Real.pi - 2 * a) :=
+    QOU.Knot.Cl_2_two_pi_sub (Real.pi - 2 * a)
+  have hsimp : 2 * Real.pi - (Real.pi - 2 * a) = 2 * (a + Real.pi / 2) := by ring
+  rw [hsimp] at hrefl
+  rw [hdup, hrefl]
+  ring
+
 /-! ### The closed simplex -/
 
 /-- The CLOSED angle simplex.  Compact, so a maximum exists on it. -/
