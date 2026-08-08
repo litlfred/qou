@@ -48,7 +48,7 @@ variable {n : ℕ}
 /-- **Frobenius inner product** on `Matrix (Fin n) (Fin n) ℝ`,
     defined as `tr(A^T · B) = Σ_{ij} A_ij B_ij`.  The standard
     choice in matrix analysis. -/
-def frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
+def Matrix.frobeniusInner (A B : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
   (A.transpose * B).trace
 
 /-- **Symmetry** of the Frobenius inner product. -/

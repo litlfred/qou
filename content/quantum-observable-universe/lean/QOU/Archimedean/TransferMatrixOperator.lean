@@ -47,7 +47,7 @@ theorem reduce_identity {R : Type*} [Field R]
 
 /-- Reducing `σ·σ` (i.e. `T = σ` acting on `σ`, `a=c=1`, `b=d=0`) recovers the
     Hecke relation `σ² = (q − q⁻¹)σ + 1`. -/
-theorem reduce_sigma_squared {R : Type*} [Field R]
+theorem TransferMatrixOperator.reduce_sigma_squared {R : Type*} [Field R]
     (T : TransferMatrixOperator R) :
     T.reduceA 1 0 1 0 = T.q - T.q⁻¹ ∧ T.reduceB 1 0 1 0 = 1 := by
   refine ⟨?_, ?_⟩

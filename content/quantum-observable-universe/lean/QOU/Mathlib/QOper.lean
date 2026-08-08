@@ -89,7 +89,7 @@ structure QOper2 extends QConnection2 K where
   oper_zero : a₂₂ = fun _ => 0
 
 /-- The trace function of a q-oper. -/
-def trace (A : QOper2 K) : K → K := A.a₁₁
+def QOper2.trace (A : QOper2 K) : K → K := A.a₁₁
 
 /-- The quantum Wronskian (negative of the (1,2) entry). -/
 def QOper2.quantumWronskian (A : QOper2 K) : K → K := fun x => -(A.a₁₂ x)

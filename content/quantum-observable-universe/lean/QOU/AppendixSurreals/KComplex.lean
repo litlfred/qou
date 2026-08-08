@@ -52,7 +52,7 @@ def abs {K : Type u} [SurrealField K] : KComplex K → K :=
 def KComplex.one (K : Type u) [SurrealField K] : KComplex K := (1, 0)
 
 /-- The **imaginary unit** `i ∈ KComplex K`. -/
-def I (K : Type u) [SurrealField K] : KComplex K := (0, 1)
+def KComplex.I (K : Type u) [SurrealField K] : KComplex K := (0, 1)
 
 /-- **Complex multiplication** `(a, b) · (c, d) := (ac − bd, ad + bc)`,
     realising `KComplex K` as `K[X]/(X² + 1)`. -/
