@@ -44,51 +44,60 @@ chapter through their archimedean scalar values).
 
 namespace QOU.LiftingDescent
 
-/-- Number of blow-up points `N` in the decomposition
-    `Σ = Σ₀ ∪ ⋃_{i=1}^N D_i`. -/
-def descendedBlowupCount : ℕ := 0
-
-/-- The descended-term multiplicative surface integral over the whole
-    surface: `MI∫_Σ τ̂ₙ(α)`. -/
-def descendedMI : ℝ := unknotHolonomy
-
-/-- The descended-term multiplicative integral over the spanning disc
-    `Σ₀` of the unknot core: `MI∫_{Σ₀} τ̂ₙ(α)`. -/
-def descendedMIcore : ℝ := unknotHolonomy
-
-/-- The descended-term multiplicative integral over the `i`-th
-    exceptional disc: `MI∫_{D_i} τ̂ₙ(α)`. -/
-def descendedMIdisc (i : ℕ) : ℝ := 1
+/-! The five primitives below are `opaque`.  That is load-bearing, not
+stylistic: an earlier revision *defined* them (`descendedBlowupCount := 0`,
+`descendedMIdisc := 1`, `descendedMI := descendedMIcore := unknotHolonomy`),
+which silently collapsed all three "open inputs" into tautologies —
+`descended_MI_factorises` became `x = x * (empty product)`, and the other two
+became `rfl`.  The three theorems then *looked* proved while asserting nothing,
+and `tm_descended_is_holonomy` "derived" its conclusion from them.  Keeping the
+primitives opaque is what makes the open inputs falsifiable statements and the
+final theorem a genuine composition.  Bean `qou-t4cv`. -/
 
 /-- The unknot-core holonomy `Hol_{∇A}(ϱ₀; 𝔊)`. -/
 opaque unknotHolonomy : ℝ
 
+/-- Number of blow-up points `N` in the decomposition
+    `Σ = Σ₀ ∪ ⋃_{i=1}^N D_i`. -/
+opaque descendedBlowupCount : ℕ
+
+/-- The descended-term multiplicative surface integral over the whole
+    surface: `MI∫_Σ τ̂ₙ(α)`. -/
+opaque descendedMI : ℝ
+
+/-- The descended-term multiplicative integral over the spanning disc
+    `Σ₀` of the unknot core: `MI∫_{Σ₀} τ̂ₙ(α)`. -/
+opaque descendedMIcore : ℝ
+
+/-- The descended-term multiplicative integral over the `i`-th
+    exceptional disc: `MI∫_{D_i} τ̂ₙ(α)`. -/
+opaque descendedMIdisc : ℕ → ℝ
+
 /-- **Open input 1 — multiplicativity over the blow-up decomposition.**
     Yekutieli's multiplicative surface integral is multiplicative over
-    `Σ = Σ₀ ∪ ⋃ D_i`; not in Mathlib, body is `sorry`. -/
+    `Σ = Σ₀ ∪ ⋃ D_i`; not in Mathlib. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 theorem descended_MI_factorises :
     descendedMI
       = descendedMIcore
-          * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i := by
-  simp [descendedMI, descendedMIcore, descendedBlowupCount]
+          * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i :=
+  sorry
 
 /-- **Open input 2 — the descended term is trivial on exceptional
     discs.**  `τ̂ₙ(α)` is base-level (descended), so it carries no
-    contribution over the blow-up discs `D_i`; body is `sorry`. -/
+    contribution over the blow-up discs `D_i`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md
 theorem descended_exceptional_disc_trivial :
-    ∀ i : ℕ, descendedMIdisc i = 1 := by
-  intro i
-  rfl
+    ∀ i : ℕ, descendedMIdisc i = 1 :=
+  sorry
 
 /-- **Open input 3 — non-abelian Stokes on the spanning disc.**
     The multiplicative integral of the descended term over `Σ₀` is the
-    boundary holonomy of the unknot core `ϱ₀`; body is `sorry`. -/
+    boundary holonomy of the unknot core `ϱ₀`. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 theorem descended_core_stokes :
-    descendedMIcore = unknotHolonomy := by
-  rfl
+    descendedMIcore = unknotHolonomy :=
+  sorry
 
 /-- **Descended term = unknot-core holonomy**
     ([`lem:topological-mass-holonomy`]).
