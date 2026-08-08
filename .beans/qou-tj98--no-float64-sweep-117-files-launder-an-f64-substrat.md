@@ -1,10 +1,11 @@
 ---
 # qou-tj98
 title: 'NO FLOAT64 sweep: 117 files launder an f64 substrate constant through mpf(str(...))'
-status: todo
+status: in-progress
 type: bug
+priority: normal
 created_at: 2026-08-08T19:43:43Z
-updated_at: 2026-08-08T19:43:43Z
+updated_at: 2026-08-08T19:46:03Z
 ---
 
 `computations/f64_into_mpmath_audit.py` (added this session) finds 117 files doing `mpf(str(X))` where X is a float64 substrate constant — an mpf holding ~17 real digits, which then looks exact at every later inspection (type() says mpf, nstr(...,50) prints 50 digits).
