@@ -401,3 +401,58 @@ basis and read its quasi-periodicity. The `0`-side recurrence is explicit:
 `bₙ[q^{2n} + (q−1)qⁿ + (q−1)] = q^{2n}b_{n−1}`.
 
 Closing is a human action — leaving status as-is.
+
+## RETRACTED 2026-08-08 — there is no Stokes multiplier at `∞`; I mis-stated the item
+
+The scoreboard row above reading **"Stokes multiplier — OPEN, the only remaining
+item"** is **wrong**. That object does not exist for C1.
+
+C1 at `∞` is **pure isoclinic** (single Newton edge `(r,d) = (2,1)`, slope ½
+mult 2). RSZ Thm 3.3.5 gives `dim F = Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ)`, empty at `k = 1`; and
+independently the q-Stokes matrices are unipotent automorphisms inducing the
+identity on `gr M₀` (§4.4, Thm 5.5.7), which with one slope has no
+strictly-upper-triangular part. **The Stokes group is trivial — not hard to
+compute, nonexistent.**
+
+**This was already in the corpus and in my own landed work.**
+[`2026-07-20-qlift-routeA-rsz-invariants.md` §2](../docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md)
+established the pure-isoclinic single edge three weeks earlier, machine-checked;
+[`2026-07-20-qlift-doorI-analytic-summation.md` §1](../docs/audits/2026-07-20-qlift-doorI-analytic-summation.md)
+records the Stokes-sheaf reading from RSZ; and `rszIsoformalDim_one`'s docstring,
+which I wrote in #4721, says verbatim *"A pure isoclinic module has no isoformal
+moduli, hence no Stokes data to extract."* I then stated the opposite three times.
+
+Cause: a framing error, not a computation error, and the same shape as the one
+#4721 fixed. #4721 killed the *derivation* of "two Stokes multipliers" but I kept
+the *noun* as the name of the residual and never re-asked whether the object
+survived its own refutation. The corpus-grep would have caught it — I grepped for
+`{0,1,∞}`, for beans, for declaration collisions, but never for `pure isoclinic`,
+the phrase that decides it (6 hits, 3 prior audits).
+
+### Corrected state — the `∞` local story is CLOSED
+
+| item | status |
+|---|---|
+| formal class at `∞` | pure isoclinic `E(2,1,c)`, slope ½ mult 2 |
+| class parameter `c` | **determined** — edge equation + `det A` + deck sign |
+| weight lattice | `q^{½ℤ}` up to deck sign |
+| analytic moduli in that class | **a point, `dim = 0` — no Stokes data** |
+
+The "residual freedom" I described in #4771/#4783 as constraining an unknown
+multiplier is in fact the *entire* local invariant, and it is computed.
+
+### What remains — stated as questions, not as open items
+
+1. **Global connection data between `0` and `∞`** (Birkhoff / q-monodromy,
+   theta-valued). Not local Stokes data, not excluded by the above, not started —
+   and not shown to be needed by anything downstream.
+2. **Whether the `q^{½ℤ}` lattice or the deck sign feeds any downstream Q_β / c_k
+   object at all.** Unexamined.
+
+Neither is promoted to a tracked open item here. Per AGENTS.md §"Before declaring
+'open'" that needs the corpus-grep checklist first — the step whose omission
+caused this retraction.
+
+Landed: `c1_infinity_isoformalDim_eq_zero` (the C1 *instance*, since the general
+lemma was already there and got restated wrongly anyway) + audit
+[`2026-08-08-c1-infinity-has-no-stokes-multiplier.md`](../docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md).
