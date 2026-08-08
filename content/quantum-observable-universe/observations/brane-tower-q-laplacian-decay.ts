@@ -29,5 +29,20 @@ export default proposition({
       kind: "note",
       body: "Provides an explicit absolute-convergence bound for the brane-tower integration, tightening the linkage between exponential decay of the q-Laplacian eigenfunctions and the physical justification for non-local integration.",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "`brane_tower_q_laplacian_decay.lean` is genuinely analytic: it " +
+        "imports `Mathlib.Analysis.SpecificLimits.Basic` and **derives its " +
+        "closed form by summing an infinite series** " +
+        "(`tsum_geometric_of_lt_one` on `∑' k, M·r^(k+1)`), with `rho_L2 : ℝ` " +
+        "the L² norm of the Reeb-bundle density. Convergence of a `tsum` and " +
+        "an L² norm are archimedean, so the block sits on the archimedean " +
+        "side of the §7c wall by construction. The Lean file's own field " +
+        "docstring already says so; this note puts it where the checker reads " +
+        "it.",
+    },
   ],
 });

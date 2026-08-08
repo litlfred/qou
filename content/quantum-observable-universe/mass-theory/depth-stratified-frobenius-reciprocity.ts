@@ -1,6 +1,25 @@
 import { conjecture } from "../../schema/builders";
 
 export default conjecture({
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note — deliberate two-sided placement.** The " +
+        "mathematical core of the Lean sibling is **already generic**: " +
+        "`uniformWedderburnWeight` and `frPulledBackWeight` are stated over " +
+        "`{R : Type*} [Field R]` and closed by `field_simp`. The only `ℝ` are " +
+        "the two **empirical falsification records** — " +
+        "`(1.82 : ℝ) < 2.30 ∧ (1.82 : ℝ) < 5.94` and " +
+        "`(3.96 : ℝ) > 2.31 ∧ (2.31 : ℝ) > 1.82 ∧ (1.82 : ℝ) < 5.47` — which " +
+        "the module docstring itself introduces as \"empirical falsification " +
+        "records as direct theorems\". Decimal measurements compared by `<` " +
+        "are `ℝ` by §7c. So the generic construction and its numerical " +
+        "realisation legitimately coexist in one file; the mixed-signal flag " +
+        "is the criterion observing that coexistence, not a misplacement.",
+    },
+  ],
   label: "conj:depth-stratified-frobenius-reciprocity",
   title:
     "Frobenius-reciprocity ideal restriction at low curvature-rank",

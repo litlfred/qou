@@ -292,6 +292,9 @@ import QOU.Archimedean.DilogReflection
 import QOU.Archimedean.IdealTetrahedronConcavity
 import QOU.Archimedean.LobachevskyDerivative
 import QOU.Archimedean.IdealTetrahedronShapeBridge
+import QOU.Archimedean.IdealTetrahedronVolumeConcavity
+import QOU.Archimedean.LobachevskyMaximum
+import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
@@ -514,6 +517,21 @@ import QOU.QBeta.A3OffBlockDerivation
 -- _injective) ⇒ scope-(a), one real DOF. Deriving E from the DM q-cubic prolongation symbol
 -- is the open keystone (DerivedAmplitudeGivesLift, no instance).
 import QOU.QBeta.A3AntiSelfAdjointLift
+-- DT-index / 3d-index / graded-Euler route is BAR-PARITY excluded from supplying the
+-- anti-self-adjoint amplitude E (DT values bar-even integers; E bar-odd) — scope-(b).
+import QOU.QBeta.DTIndexAmplitudeE
+-- WALL: the LOCAL Stokes/resurgence route cannot supply the A=3 amplitude E —
+-- single-slope carrier ⇒ RSZ isoformal dim 0 ⇒ E=0 (no lift, scope-(b)); multi-slope
+-- leaves E free ⇒ value lives in the GLOBAL Birkhoff matrix (open successor, no instance).
+import QOU.QBeta.StokesAmplitudeE
+-- WELL-POSEDNESS of E as a functional of the GLOBAL Birkhoff matrix: (a) the cross-ratio
+-- P₀₁P₁₀/(P₀₀P₁₁) is the UNIQUE gauge-invariant (frame-free target); (b) a single entry is
+-- gauge-dependent (residual elliptic-unit freedom), so E = the cross-ratio, not an entry.
+import QOU.QBeta.BirkhoffAmplitudeWellPosed
+-- CONSTRUCTION: the A=3 amplitude E is the frame-free Birkhoff CROSS-RATIO χ(P)
+-- (not a bare entry — gauge-movable, ill-posed); cross-ratio elliptic because the exponent
+-- multipliers cancel; the WALL is χ(P)'s VALUE (0-exp determined, ∞-exp/closed-form open).
+import QOU.QBeta.BirkhoffAmplitudeE
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
@@ -560,6 +578,11 @@ import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
+import QOU.Archimedean.HodgeWeilRealStructure
+-- B2-lift AUTOMATIC (moduli-independent) ingredients, Lean-locked (bean qou-8mbd):
+-- Brick 1 nome exponent-group equivariance (τ↦−τ ↔ q↦q⁻¹; τ↦½−τ ↔ q↦−q⁻¹, Z4→GInt units);
+-- Brick 2 Weil∘Galois = conj + complete Fix(c)/Fix(F) characterization. No MOC instance (open).
+import QOU.Archimedean.B2LiftAutomaticIngredients
 import QOU.Archimedean.CanonicalTitsIso
 import QOU.Archimedean.TauRhoHodgeShadow
 import QOU.Archimedean.TauS5EquivarianceReduction

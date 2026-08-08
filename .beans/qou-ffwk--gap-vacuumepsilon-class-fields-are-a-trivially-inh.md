@@ -86,3 +86,89 @@ satisfiable by a constant" belongs in
 `scripts/lean-definition-collapsed-audit.py` alongside the existing
 signal-A/signal-B logic — currently it only flags collapsed *proofs*,
 not collapsed *carriers*.
+
+## FINDING (2026-08-08) — field refinement is NOT sufficient; the blocker is one level down
+
+I set out to do the fix this bean describes — refine `VacuumEpsilon`'s
+`residual = 0` schema to the claim its docstring states — and stopped, because
+the premise is wrong. Recording why, since the next agent will otherwise spend
+the same time discovering it.
+
+### 1. The docstring states the wrong claim
+
+The class docstring says the content is *"vacuum normalisation requires
+`Geom(unknot) = 0`"*. Reading the source block
+[`conj:vacuum-epsilon`](content/quantum-observable-universe/appendix-surreals/vacuum-epsilon.md),
+that is the **strict** vacuum being *relaxed*, not the conjecture. The
+conjecture is the opposite:
+
+> `Geom(🝆) = ε ∈ **No**` — a *positive infinitesimal*, with `st(ε) = 0`.
+
+Encoding the docstring literally would have formalised the negation of the
+conjecture. Read the `.md`, not the Lean docstring.
+
+### 2. A second carrier for the same conjecture already exists
+
+`QOU/AppendixSurreals/Conjectures.lean:394` declares `class VacuumEpsilon'`,
+"factored out of the original `VacuumEpsilon`", with a narrowing audit and an
+`st`-image theorem. So the conjecture has **two** carriers: the legacy
+placeholder (de-laundered in #4750) and this one. Consolidating them is its
+own task; refining the legacy one in isolation would deepen the split.
+
+### 3. And `VacuumEpsilon'` is *also* trivially inhabited
+
+```lean
+instance (K : Type) [SurrealField K] : VacuumEpsilon' K where
+  exists_epsilon_vacuum := ⟨epsilonSurreal K, rfl⟩
+```
+
+compiles. Its only field is `∃ SQ, QOU_VacuumEnergy SQ = epsilonSurreal K`,
+and `QOU_VacuumEnergy Q := Q` is the **identity** — its own docstring says
+*"placeholder semantics … Makes `VacuumEpsilon` formally provable (witness:
+`Q := ε`)"*. So `ε` witnesses it by `rfl`.
+
+### The actual blocker
+
+**The semantic functions these classes would be refined *against* are
+themselves identity or absent placeholders**, so any field written over them
+is satisfiable by construction:
+
+| placeholder | status |
+|---|---|
+| `QOU_VacuumEnergy Q := Q` | identity |
+| `QOU_ObservabilityNorm Q := Q` | identity |
+| `Knot := ℕ` | index carrier, "sufficient to make `Nonempty Knot` provable" |
+| `Geom : Link → ℝ` | does not exist anywhere in the corpus |
+
+So this bean's fix is **necessary but not sufficient** — the same shape as the
+finding it was created from (de-laundering was necessary but not sufficient
+for these carriers). Two levels stacked:
+
+```
+axiom-discharged instance   →  removed (#4750)
+trivially-inhabited fields  →  this bean
+placeholder semantics       →  the real blocker, below both
+```
+
+Refining `residual : ℝ` into `geom_unknot : geom 🝆 = ε` only relocates the
+vacuity unless `geom` is a genuine function. Introducing `opaque geom` would
+help — an opaque global cannot be satisfied by choosing a convenient value —
+but that is a modelling decision about the Hoefsmit pipeline, not a schema
+edit, and it belongs with whoever owns `Conjectures.lean`'s narrowing work.
+
+### Revised next step
+
+Not "refine ten field schemas". In order:
+
+1. **Consolidate** the duplicate `VacuumEpsilon` / `VacuumEpsilon'` carriers.
+2. **Replace the identity placeholders** (`QOU_VacuumEnergy`,
+   `QOU_ObservabilityNorm`) with `opaque` constants. That single change makes
+   every class field written over them non-trivial, because an opaque global
+   cannot be witnessed by `rfl`. It is likely the highest-leverage edit in
+   this whole area and is *not* per-carrier work.
+3. Only then refine the per-carrier schemas, against real functions.
+
+Step 2 is cheap and mechanical; I have not done it because it changes the
+semantics of a file with an active narrowing audit, and stepping on that is
+the coordination failure AGENTS.md warns about. Worth a note to whoever owns
+`Conjectures.lean` before it is attempted.

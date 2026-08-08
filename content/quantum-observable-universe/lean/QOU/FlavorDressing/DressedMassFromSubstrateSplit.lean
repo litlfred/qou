@@ -46,14 +46,56 @@ noncomputable def substrate_split_factor (q : ℝ) : ℝ :=
     `prop:flavor-split-substrate`), this rearranges to
     `μ_d − μ_u = M_N · substrate_split_factor q`.  The closed-form
     statement is recorded as this axiom; promoting it to a theorem
-    requires Lean formalisations of both upstream lemmas. -/
+    requires Lean formalisations of both upstream lemmas.
+    **This was an `axiom` until 2026-08-08, and it made the library
+    inconsistent.** It read
+
+    ```lean
+    axiom dressed_mass_split_substrate_closed_form
+        (F : FlavorDressingFunctor) (M_N q : ℝ) (_hM : 0 < M_N) (_hq : 1 < q) :
+        F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
+    ```
+
+    `F`, `M_N` and `q` are all universally quantified and mutually
+    unrelated: nothing ties `M_N` to `F`. The left side is fixed by `F`
+    alone, the right side varies freely with `M_N`. Take the constant
+    dressing `μ ≡ 1` (the class is trivially inhabited, `μ_pos` is
+    `one_pos`), so the left side is `1 − 1 = 0`, and instantiate at
+    `M_N = 1`, `q = 2`:
+
+    ```lean
+    theorem dressed_mass_axiom_is_inconsistent : False := by
+      have h := dressed_mass_split_substrate_closed_form flatF 1 2 one_pos (by norm_num)
+      simp [flatF, substrate_split_factor] at h
+      …  -- √2 + (√2)⁻¹ = 0, false since √2 > 0
+    ```
+
+    That compiled, with `#print axioms` naming this axiom. Because
+    `substrate_split_factor` is a *concrete* strictly-positive expression
+    rather than an opaque symbol, the forced `factor = 0` is refutable, so
+    the defect is `False` rather than mere collapse.
+
+    Worth noting how it got here: the docstring below records that a review
+    (Gemini #696) flagged the downstream theorem as a **tautology**, and the
+    repair was to introduce this axiom. The tautology fix over-corrected into
+    unsoundness — the statement stopped being empty by starting to be false.
+
+    The repair is the §3b-cond hypothesis class below, with **no instance**:
+    the relation holds for a *particular* `(F, M_N, q)` — the nucleon-mass
+    scale belonging to that dressing — not for arbitrary triples. -/
 -- Ref: [manuscript] observations/pair-skein-mass-formula
 --      braids-and-knots/flavor-dressed-mass-from-substrate-split § "Derivation"
-axiom dressed_mass_split_substrate_closed_form
-    (F : FlavorDressingFunctor) (M_N q : ℝ)
-    (_hM : 0 < M_N) (_hq : 1 < q) :
-    F.μ Flavor.down - F.μ Flavor.up
-      = M_N * substrate_split_factor q
+class DressedMassSubstrateSplit
+    (F : FlavorDressingFunctor) (M_N q : ℝ) : Prop where
+  /-- The nucleon-mass scale is positive. -/
+  M_N_pos : 0 < M_N
+  /-- The substrate parameter is above the classical point. -/
+  q_gt_one : 1 < q
+  /-- The closed form itself: `μ_d − μ_u = M_N · s(q)`, for *this* `M_N`
+      (the nucleon-mass scale of *this* dressing `F`) — the content of
+      `prop:flavor-split-substrate` combined with
+      `lem:pair-skein-mass-formula`, pending Lean formalisations of both. -/
+  split : F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
 
 /-- **Substrate-pure derivation of the dressed-quark mass
     splitting.**  Combines `prop:flavor-split-substrate` (substrate
@@ -66,19 +108,31 @@ axiom dressed_mass_split_substrate_closed_form
       `μ_d − μ_u = M_N · substrate_split_factor q`
 
     holds (up to the `O((Δm/M_N)²)` correction absorbed in the
-    Skein-side identity).  Proved from the axiom
-    `dressed_mass_split_substrate_closed_form` above, which records
-    the closed-form result pending full Lean formalisation of the
-    two upstream lemmas it combines.  This is no longer a tautology
-    (Gemini #696 medium): the conclusion is a substantive equality
-    backed by the axiomatised closed form, not a re-statement of
-    its own hypotheses. -/
+    Skein-side identity), **conditional on** the named hypothesis
+    `DressedMassSubstrateSplit F M_N q`, which is where the two
+    unformalised upstream lemmas enter.
+
+    Not a tautology (the original Gemini #696 finding): the conclusion
+    is a substantive equality drawn from the hypothesis class. Not
+    unconditional either (the over-correction that followed, and which
+    made the library inconsistent — see the class docstring above): the
+    relation is asserted only for a triple that carries the instance,
+    not for arbitrary `(F, M_N, q)`. -/
 -- Ref: [manuscript] braids-and-knots/flavor-dressed-mass-from-substrate-split
 theorem dressed_mass_from_substrate_split
     (F : FlavorDressingFunctor) (M_N q : ℝ)
-    (hM : 0 < M_N) (hq : 1 < q) :
+    [h : DressedMassSubstrateSplit F M_N q] :
     F.μ Flavor.down - F.μ Flavor.up
       = M_N * substrate_split_factor q :=
-  dressed_mass_split_substrate_closed_form F M_N q hM hq
+  h.split
+
+/-- The hypotheses travel with the instance: a triple carrying
+    `DressedMassSubstrateSplit` has a positive nucleon-mass scale and a
+    substrate parameter above the classical point. -/
+theorem dressed_mass_split_hypotheses
+    (F : FlavorDressingFunctor) (M_N q : ℝ)
+    [h : DressedMassSubstrateSplit F M_N q] :
+    0 < M_N ∧ 1 < q :=
+  ⟨h.M_N_pos, h.q_gt_one⟩
 
 end QOU.FlavorDressing

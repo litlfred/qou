@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.volume_perturbation
@@ -37,8 +38,8 @@ namespace QOU.BraidKnot
 
 /-- The balanced (symmetric) `q`-integer
     `[m]_q = (q^m − q^{−m}) / (q − q^{−1})`. -/
-noncomputable def qIntSym (q : ℝ) (m : ℤ) : ℝ :=
-  (q ^ m - q ^ (-m)) / (q - q⁻¹)
+noncomputable abbrev qIntSym (q : ℝ) (m : ℤ) : ℝ :=
+  QOU.QInteger.qIntBalZ q m
 
 /-- **`[0]_q = 0`** — the unperturbed Hecke level (`k = 3`, i.e. `[k−3]_q`
     at `k = 3`) carries no volume perturbation.  Sorry-free. -/
@@ -61,9 +62,6 @@ class VolumePerturbationContext where
   δΦ : ℕ → ℝ
   /-- Definitional link: the Markov parameter `z = 1 / (√q + 1/√q)`. -/
   z_def : z = 1 / (Real.sqrt q + 1 / Real.sqrt q)
-  /-- The volume perturbation formula claim (conclusion). -/
-  volume_perturbation_claim : ∀ k : ℕ, 4 ≤ k →
-      δΦ k = z ^ 2 * Vol_41 * qIntSym q ((k : ℤ) - 3)
 
 /-- **Volume perturbation formula** ([`prop:volume-perturbation-formula`])
     — the real manuscript identity, stated over the class's data fields
@@ -81,6 +79,6 @@ theorem volume_perturbation [ctx : VolumePerturbationContext] :
     ∀ k : ℕ, 4 ≤ k →
       ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41 * qIntSym ctx.q ((k : ℤ) - 3) := by
   -- Ref: [manuscript] quantum-observable-universe/mass-theory/volume-perturbation-formula.md
-  exact ctx.volume_perturbation_claim
+  sorry
 
 end QOU.BraidKnot

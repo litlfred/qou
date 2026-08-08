@@ -70,13 +70,6 @@ opaque spechtPartialTrace : ℕ → ℝ
 /-- The Jones–Markov trace `tr_M(ρ(β))` on `H_n(R, q)`. -/
 opaque markovTrace : ℝ
 
-/-- Context for the Markov Trace Branching claim. -/
-class MarkovIdentificationContext where
-  /-- The Markov trace branching claim (conclusion). -/
-  markovTrace_branching_claim : markovTrace
-      = (Finset.range nPartitions).sum
-          (fun l => markovWeight l * spechtPartialTrace l)
-
 /-- **Branching identity (Wenzl bridge): `tr_M = Σ_λ w_λ tr_{S_λ}`.**
 
 The substantive content of `lem:feynman-markov-identification`: the
@@ -85,14 +78,14 @@ Specht-module partial traces.  Rests on the branching / Wenzl-bridge
 decomposition, which Mathlib does not have — so the body is `sorry`
 with the manuscript citation. -/
 -- Ref: [manuscript] lem:feynman-markov-identification (Wenzl-bridge branching of tr_M)
-theorem markovTrace_branching [ctx : MarkovIdentificationContext] :
+theorem markovTrace_branching :
     markovTrace
       = (Finset.range nPartitions).sum
           (fun l => markovWeight l * spechtPartialTrace l) := by
   -- Ref: [manuscript] lem:feynman-markov-identification — branching /
   -- Wenzl-bridge decomposition of tr_M into Specht partial traces;
   -- not in Mathlib.
-  exact ctx.markovTrace_branching_claim
+  sorry
 
 /-- **Clause (ii): the Markov-weighted eigenbasis sum equals the
 Jones–Markov trace** ([`lem:feynman-markov-identification`]).
@@ -101,7 +94,7 @@ Consumes the standalone branching lemma `markovTrace_branching` (the
 substantive, `sorry`-carrying input) together with the definitional
 clause (i). -/
 -- Ref: [manuscript] lem:feynman-markov-identification
-theorem markov_identification [ctx : MarkovIdentificationContext] :
+theorem markov_identification :
     amplitudeEigenbasis nPartitions markovWeight spechtPartialTrace
       = markovTrace := by
   rw [amplitudeEigenbasis_eq_sum, markovTrace_branching]

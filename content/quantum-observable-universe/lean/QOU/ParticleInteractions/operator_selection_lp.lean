@@ -1,5 +1,5 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Order.Ring.Defs
 import Mathlib.Data.Fintype.Fin
 
 /-!
@@ -34,7 +34,15 @@ duality holds — and ends in `sorry` (disposition B): proving it
 requires the LP strong-duality theorem for feasible bounded programs,
 which is not yet available in the `QOU` library / Mathlib.  The
 feasible-set definition `IsFeasible` is genuine (no opaque `Prop`
-field projected). -/
+field projected).
+
+## Base ring (§7c)
+
+Nothing in the program is archimedean: feasibility, optimality and
+strong duality are statements about `Finset.sum`, `*` and `≤`, and a
+linear program makes sense over any ordered commutative ring.  The
+scalars are therefore a generic `R`, and the substrate evaluation is
+the instantiation `R := ℝ`. -/
 
 namespace QOU.ParticleInteractions
 
@@ -42,48 +50,40 @@ namespace QOU.ParticleInteractions
     Frobenius Gram matrix `G`, the target net value `n_target`, a
     candidate primal point `x*`, and the net-constraint dual variable
     `y₀*`.  These are *inputs*; nothing here asserts the conclusion. -/
-class OperatorSelectionLpContext where
+class OperatorSelectionLpContext (R : Type*) [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] where
   /-- The strand number `n ≥ 2`. -/
   n : ℕ
   /-- The basis cardinality `d = n!`. -/
   d : ℕ
-  /-- The target net value `n_target ∈ ℝ_{>0}`. -/
-  n_target : ℝ
-  /-- The Markov-trace cost coefficients `t : Fin d → ℝ`. -/
-  t : Fin d → ℝ
-  /-- The Frobenius Gram matrix `G : Fin d → Fin d → ℝ`. -/
-  G : Fin d → Fin d → ℝ
-  /-- The candidate primal point `x* : Fin d → ℝ`. -/
-  x_star : Fin d → ℝ
-  /-- The Markov-trace dual variable `y₀* : ℝ`. -/
-  y_0_star : ℝ
-  /-- The operator selection LP claim (conclusion). -/
-  operator_selection_lp_claim :
-    ((Finset.univ.sum fun i : Fin d => x_star i) = n_target ∧
-     (∀ i : Fin d, 0 ≤ (Finset.univ.sum fun j : Fin d => G i j * x_star j))) ∧
-    (∀ x : Fin d → ℝ,
-      ((Finset.univ.sum fun i : Fin d => x i) = n_target ∧
-       (∀ i : Fin d, 0 ≤ (Finset.univ.sum fun j : Fin d => G i j * x j))) →
-      (Finset.univ.sum fun i : Fin d => t i * x_star i) ≤
-        (Finset.univ.sum fun i : Fin d => t i * x i)) ∧
-    (Finset.univ.sum fun i : Fin d => t i * x_star i) = n_target * y_0_star
+  /-- The target net value `n_target`. -/
+  n_target : R
+  /-- The Markov-trace cost coefficients `t : Fin d → R`. -/
+  t : Fin d → R
+  /-- The Frobenius Gram matrix `G : Fin d → Fin d → R`. -/
+  G : Fin d → Fin d → R
+  /-- The candidate primal point `x* : Fin d → R`. -/
+  x_star : Fin d → R
+  /-- The Markov-trace dual variable `y₀* : R`. -/
+  y_0_star : R
 
 namespace OperatorSelectionLpContext
 
-variable [ctx : OperatorSelectionLpContext]
+variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
+variable [ctx : OperatorSelectionLpContext R]
 
-/-- A vector `x : Fin d → ℝ` is LP-feasible: it satisfies the net
+/-- A vector `x : Fin d → R` is LP-feasible: it satisfies the net
     constraint and Frobenius positivity. (Boundedness `xᵢ ≥ -M` is
     absorbed into the existence of a large `M`; we keep the two
     binding constraints, which are the ones that select the optimum.)
 
     This is a genuine predicate on the data, not a projected field. -/
-def IsFeasible (x : Fin ctx.d → ℝ) : Prop :=
+def IsFeasible (x : Fin (ctx.d) → R) : Prop :=
   (Finset.univ.sum fun i : Fin ctx.d => x i) = ctx.n_target ∧
   (∀ i : Fin ctx.d, 0 ≤ (Finset.univ.sum fun j : Fin ctx.d => ctx.G i j * x j))
 
 /-- The objective value `Σᵢ tᵢ xᵢ` of a candidate `x`. -/
-def objective (x : Fin ctx.d → ℝ) : ℝ :=
+def objective (x : Fin (ctx.d) → R) : R :=
   Finset.univ.sum fun i : Fin ctx.d => ctx.t i * x i
 
 end OperatorSelectionLpContext
@@ -95,9 +95,10 @@ dual variable `y₀*` certifies optimality via strong duality
 `objective x* = n_target · y₀*`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality, feasible bounded programs)
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/operator-selection-lp.md
-theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
+theorem operator_selection_lp {R : Type*} [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] [ctx : OperatorSelectionLpContext R] :
     OperatorSelectionLpContext.IsFeasible ctx.x_star ∧
-    (∀ x : Fin ctx.d → ℝ, OperatorSelectionLpContext.IsFeasible x →
+    (∀ x : Fin ctx.d → R, OperatorSelectionLpContext.IsFeasible x →
       OperatorSelectionLpContext.objective ctx.x_star ≤
         OperatorSelectionLpContext.objective x) ∧
     OperatorSelectionLpContext.objective ctx.x_star
@@ -106,6 +107,7 @@ theorem operator_selection_lp [ctx : OperatorSelectionLpContext] :
   -- feasible, bounded linear programs) and the simplex/vertex
   -- optimality argument selecting x*. Not yet formalised in QOU/Mathlib.
   -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  exact ctx.operator_selection_lp_claim
+  -- Honest sorry: LP strong duality + vertex-optimality not yet formalised.
+  sorry
 
 end QOU.ParticleInteractions

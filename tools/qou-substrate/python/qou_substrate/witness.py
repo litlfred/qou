@@ -121,6 +121,37 @@ def resolve_q0_anchor(
     return anchor, (_q0_value_for_anchor(anchor) if anchor in ("muon", "proton") else None)
 
 
+def q0_anchor_is_declared(
+    script_path: Union[str, Path], *, env: Optional[Mapping[str, str]] = None,
+) -> bool:
+    """Whether this producer's pin is POSITIVELY declared, vs merely defaulted.
+
+    ``resolve_q0_anchor`` returns ``"proton"`` for any stem absent from
+    ``q0_anchor_manifest.json`` — that is the runtime *default*, not evidence.
+    The manifest lists ~309 of ~780 producers, so absence is the common case
+    and says nothing about the real pin.
+
+    Callers that want to *contradict* a recorded pin must gate on this: without
+    a positive declaration there is no ground to overrule what a producer
+    previously recorded, and doing so would strip legitimate ``muon`` labels
+    from every unlisted producer.
+    """
+    environ = os.environ if env is None else env
+    e = (environ.get("QOU_Q0_ANCHOR", "") or "").strip().lower()
+    if e in ("ideal", "muon", "canonical", "physical", "proton", "experimental"):
+        return True
+    try:
+        man = json.loads(
+            (_repo_root() / "computations" / "q0_anchor_manifest.json")
+            .read_text(encoding="utf-8")
+        )
+    except Exception:  # noqa: BLE001
+        return False
+    stem = Path(script_path).stem
+    return any(stem in man.get(k, [])
+               for k in ("ideal_muon", "physical_proton", "ambiguous"))
+
+
 def _git_head_sha() -> str:
     """Return the current HEAD commit SHA."""
     try:
@@ -806,6 +837,25 @@ class WitnessBuilder:
             if k not in witness:
                 witness[k] = v
 
+        # Stamp the q₀ pin when it is POSITIVELY declared for this producer
+        # (env var or an explicit `q0_anchor_manifest.json` entry). Without
+        # this, `q0Anchor` is only written by producers that remember to call
+        # `stamp_staleness_metadata` — 184 of ~780 — so the manifest carried no
+        # weight at write time and stale pins survived on preserve-forward.
+        # Undeclared producers are still left unstamped: Q0_ANCHOR_MISSING is a
+        # tolerated state, and defaulting one in would assert a pin nobody
+        # established.
+        if "q0Anchor" not in witness:
+            try:
+                if q0_anchor_is_declared(self._script_path):
+                    _a, _v = resolve_q0_anchor(self._script_path)
+                    if _a in ("muon", "proton"):
+                        witness["q0Anchor"] = _a
+                        if _v is not None:
+                            witness["q0Value"] = _v
+            except Exception:  # noqa: BLE001
+                pass
+
         return witness
 
     def save(self, extra: Optional[dict] = None) -> Path:
@@ -849,10 +899,41 @@ class WitnessBuilder:
         # Preserve only. A witness with no recorded pin still gets none —
         # inventing one would assert a pin the producer never established, and
         # Q0_ANCHOR_MISSING is a tolerated state.
+        #
+        # BUT: preserve-forward must not carry a pin that is now FALSE.
+        # A re-run that moved to the other layer keeps the old label and
+        # silently mislabels a freshly computed value. Observed live —
+        # `qbeta_ck_cache` computes at the proton pin, yet its witness read
+        # `q0Anchor: "muon"` with the muon 50-digit value, because this block
+        # copied the pre-re-pin stamp forward. The Q_β prediction had moved
+        # 30.4 ppb under a label saying it had not.
+        #
+        # Only a POSITIVE declaration may overrule a recorded pin
+        # (`q0_anchor_is_declared`: env var, or an explicit manifest entry).
+        # `resolve_q0_anchor` alone is not enough — it defaults to "proton" for
+        # every stem absent from the manifest, which is ~470 producers, so
+        # gating on it would strip legitimate `muon` labels wholesale.
+        #
+        # On a declared contradiction, DROP rather than correct: writing the
+        # resolved pin here would assert a stamp the producer never
+        # established — the very thing the "preserve only" rule above exists to
+        # prevent — and Q0_ANCHOR_MISSING is explicitly tolerated. A producer
+        # that wants a positive label calls `stamp_staleness_metadata`.
         if isinstance(existing, dict):
-            for _k in ("q0Anchor", "q0Value"):
-                if _k not in witness and _k in existing:
-                    witness[_k] = existing[_k]
+            _recorded = existing.get("q0Anchor")
+            _stale_pin = False
+            if _recorded in ("muon", "proton"):
+                try:
+                    if q0_anchor_is_declared(self._script_path):
+                        _resolved, _ = resolve_q0_anchor(self._script_path)
+                        _stale_pin = (_resolved in ("muon", "proton")
+                                      and _resolved != _recorded)
+                except Exception:  # noqa: BLE001
+                    _stale_pin = False
+            if not _stale_pin:
+                for _k in ("q0Anchor", "q0Value"):
+                    if _k not in witness and _k in existing:
+                        witness[_k] = existing[_k]
 
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops

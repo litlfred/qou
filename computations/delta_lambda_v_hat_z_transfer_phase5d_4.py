@@ -50,7 +50,6 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from mass_at_3A_proper import per_generator_V_hat_3A
-from _li_2_q_util import load_q_50dps
 
 
 # (Z, N, label, expected_interface_generators) — interface gens are at
@@ -78,7 +77,21 @@ def main() -> int:
     )
     builder.set_content_block("def:ew-interface-knot")
 
-    q, q_inv, z = load_q_50dps()
+    # 🛑 Was: `load_q_50dps()`, which reads the MUON `q-pinning-50-digit`
+    # witness by default. But `per_generator_V_hat_3A` (imported above from
+    # `mass_at_3A_proper`) takes no q argument -- it binds its own q_0 at module
+    # level from `q_parameter`, which resolves PROTON for that stem. So the
+    # muon q/h/z below were being applied to proton-computed V̂, and the witness
+    # recorded the muon q_0 as this producer's q_0.
+    #
+    # That is the `delta_lambda_fr_identity_phase5c` defect again (fixed
+    # 2026-08-08): two layers meeting inside one quantity, invisible because
+    # each half is individually reasonable. Take q_0 from the same place the
+    # V̂ side takes it, so the pair is single-layer by construction.
+    from q_parameter import Q as _Q_RUNTIME  # noqa: E402
+    q = mp.mpf(str(_Q_RUNTIME))
+    q_inv = mp.mpf(1) / q
+    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
     h = q - q_inv
     builder.add_parameter("q_0", str(q))
     builder.add_parameter("h", str(h))

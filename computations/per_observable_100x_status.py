@@ -196,6 +196,74 @@ def load_witness(name: str) -> dict:
     return {}
 
 
+#: |dlnQ_β/dlnq| is O(1), so a pin mismatch of Δq/q propagates to Q_β almost
+#: undiminished. Recomputed symbolically below rather than hard-coded.
+_QBETA_L2_TARGET_PPB = mpf("7.797")
+
+
+def _qbeta_dln_dlnq(q0: mpf) -> mpf:
+    """d ln Q_β / d ln q at q0, from the base form
+    Q_β = m_e·|q²−2q−1|·(q+1)/(2q³).  Closed form, no fit."""
+    return q0 * ((2 * q0 - 2) / (q0 ** 2 - 2 * q0 - 1)
+                 + 1 / (q0 + 1) - 3 / q0)
+
+
+def _anchor_layer_check(cache: dict) -> dict:
+    """Compare the q₀ a cached Q_β prediction was BUILT at against the pin this
+    dashboard EVALUATES at, and size the resulting error.
+
+    Why this exists.  ``qbeta-ck-cache.witness.json`` is stamped
+    ``q0Anchor: "muon"``; this producer reads ``q_parameter.Q_50_DIGIT_STR``,
+    which is **proton**-pinned (AGENTS.md owner directive 2026-08-07: all
+    production compute defaults to the experimental anchor).  The cached field
+    consumed below is ``Q_pred_after_this_rung_MeV`` — a *prediction*, which
+    depends on q₀ even when the rung's own coefficient does not.  (The cache's
+    per-rung ``q0_dependent: False`` flag describes ``c_k``, **not** the
+    prediction; reading it as covering the prediction is the trap.)
+
+    That is the straddling hazard AGENTS.md §q₀-anchor names — "never straddle
+    the two layers inside one quantity" — and it is currently **silent**.
+
+    It is immaterial today only by accident: the sole DERIVED rung is k = 2, so
+    the residual is 1248 ppb and the ~30 ppb anchor error is 2.4 % of it.  But
+    the anchor error is **3.84× the entire L2 target**, so on the day a higher
+    c_k is proved Taylor-exact and the residual collapses, this term dominates
+    and the row's pass/fail verdict becomes an artefact of the layer mismatch —
+    firing on exactly the event the ladder exists to detect.  Same shape as the
+    dead-code ``load_witness`` bug that preceded it.
+
+    This does NOT regenerate the muon witness (a tracked migration, bean
+    ``tnjb``, explicitly not an idle-drain).  It makes the mismatch loud.
+    """
+    from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+    q_prod = mpf(Q_50_DIGIT_STR)
+    q_cache_raw = cache.get("q0Value")
+    anchor = cache.get("q0Anchor")
+    if q_cache_raw is None:
+        return {
+            "status": "unknown",
+            "detail": "cache carries no q0Value stamp; layer cannot be verified",
+        }
+    q_cache = mpf(str(q_cache_raw))
+    rel = (q_prod - q_cache) / q_cache
+    induced_ppb = abs(_qbeta_dln_dlnq(q_prod) * rel) * mpf(10) ** 9
+    matched = abs(rel) < mpf("1e-15")
+    return {
+        "status": "matched" if matched else "STRADDLE",
+        "cache_anchor": anchor,
+        "cache_q0": str(q_cache),
+        "producer_q0": str(q_prod),
+        "pin_diff_ppb": str(rel * mpf(10) ** 9),
+        "induced_qbeta_error_ppb": str(induced_ppb),
+        "l2_target_ppb": str(_QBETA_L2_TARGET_PPB),
+        "anchor_error_over_target": str(induced_ppb / _QBETA_L2_TARGET_PPB),
+        "anchor_alone_exceeds_l2_target": bool(induced_ppb
+                                               > _QBETA_L2_TARGET_PPB),
+        "material_today": False if matched else None,
+    }
+
+
 def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     """Build one row of the per-observable status table."""
     codata, sigma_exp, role, sigma_source = OBSERVABLES[obs]
@@ -365,6 +433,7 @@ def main() -> dict:
     # Lean promotes it (tier='derived') and the dashboard auto-picks it up.
     ck_cache = load_witness("qbeta-ck-cache.witness.json")
     ck_data = ck_cache.get("data", {})
+    qbeta_anchor = _anchor_layer_check(ck_cache)
     if ck_data.get("rows"):
         # Find the deepest cumulative rung whose tier is "derived".
         # (Fallback to the legacy label for any cache lacking `tier`.)
@@ -381,6 +450,21 @@ def main() -> dict:
             Q_pred_str = last_derived_row["Q_pred_after_this_rung_MeV"]
             Q_pred = mpf(Q_pred_str)
             Q_beta_best = Q_pred
+            _anchor_note = ""
+            if qbeta_anchor.get("status") == "STRADDLE":
+                _anchor_note = (
+                    f" ⚠ ANCHOR STRADDLE: this prediction was built at the "
+                    f"{qbeta_anchor['cache_anchor']} q₀ "
+                    f"({qbeta_anchor['cache_q0'][:22]}…) but the dashboard "
+                    f"evaluates at the proton pin "
+                    f"({qbeta_anchor['producer_q0'][:22]}…). Induced Q_β error "
+                    f"≈ {float(qbeta_anchor['induced_qbeta_error_ppb']):.2f} ppb "
+                    f"= {float(qbeta_anchor['anchor_error_over_target']):.2f}× the "
+                    f"L2 target. Immaterial against today's 1248 ppb residual, "
+                    f"but it alone exceeds the target — so no 100× PASS can be "
+                    f"credited to this row until the layers agree "
+                    f"(AGENTS.md §q₀-anchor; migration bean tnjb)."
+                )
             rows.append(_row_for(
                 "Q_beta", Q_pred,
                 f"Q_N{k} from qbeta-ck-cache.witness.json (deepest DERIVED-tier "
@@ -390,8 +474,20 @@ def main() -> dict:
                 f"(extracted from CODATA Q_β, circular, q₀-dependent) — cached "
                 f"for downstream reuse but NOT credited as a prediction. See "
                 f"deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md "
-                f"and qbeta-scaling-bridge-investigation.witness.json.",
+                f"and qbeta-scaling-bridge-investigation.witness.json."
+                + _anchor_note,
             ))
+            # Guard with teeth: while the layers disagree by more than the
+            # entire L2 target, a 100× PASS on this row would be an artefact of
+            # the mismatch rather than a result. Can only ever turn a would-be
+            # PASS into a FAIL — today the row already misses by ~160×, so this
+            # is numerically a no-op. It arms correctly for the promotion event.
+            if qbeta_anchor.get("anchor_alone_exceeds_l2_target"):
+                _r = rows[-1]
+                if _r.get("beats_100x_experimental"):
+                    _r["beats_100x_experimental"] = False
+                    _r["suppressed_by_anchor_straddle"] = True
+                _r["anchor_layer"] = qbeta_anchor
         else:
             Q_beta_best = None
     else:
@@ -516,6 +612,7 @@ def main() -> dict:
             "cal-3-q-beta.witness.json — no floating literals."
         ),
         "rows": rows,
+        "anchor_layer_qbeta": qbeta_anchor,
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -551,6 +648,22 @@ if __name__ == "__main__":
           f"observables beat 100× experimental target.")
     print(f"         {out['summary']['beats_1x_count']} / {out['summary']['total']} "
           f"beat 1× experimental.")
+    _al = out.get("anchor_layer_qbeta", {})
+    if _al.get("status") == "STRADDLE":
+        print()
+        print("⚠ Q_β ANCHOR-LAYER STRADDLE")
+        print(f"    cached prediction built at : {_al['cache_anchor']} q₀ "
+              f"= {_al['cache_q0'][:24]}…")
+        print(f"    dashboard evaluates at     : proton q₀ "
+              f"= {_al['producer_q0'][:24]}…")
+        print(f"    pin difference             : "
+              f"{float(_al['pin_diff_ppb']):.3f} ppb")
+        print(f"    induced Q_β error          : "
+              f"{float(_al['induced_qbeta_error_ppb']):.2f} ppb "
+              f"= {float(_al['anchor_error_over_target']):.2f}× the L2 target")
+        print("    => immaterial vs today's 1248 ppb residual, but it alone")
+        print("       exceeds the target, so no 100× PASS can be credited to")
+        print("       this row until the layers agree (bean tnjb).")
     print()
 
     # Emit witness via WitnessBuilder for reproducible staleness metadata.
@@ -563,6 +676,18 @@ if __name__ == "__main__":
     w.set_description(out["description"])
     w.add_data("rows", out["rows"])
     w.add_data("summary", out["summary"])
+    w.add_data("anchor_layer_qbeta", out["anchor_layer_qbeta"])
+    if out["anchor_layer_qbeta"].get("status") == "STRADDLE":
+        w.add_caveat(
+            "Q_β row: the cached prediction is built at the muon q₀ while this "
+            "dashboard evaluates at the proton pin. Induced error ≈ 29.96 ppb "
+            "= 3.84× the 7.797 ppb L2 target — immaterial against today's "
+            "1248 ppb residual, but it alone exceeds the target, so a 100× "
+            "PASS is suppressed on this row until the layers agree. Fixing it "
+            "means regenerating qbeta-ck-cache at the proton pin (tracked "
+            "migration, bean tnjb) — deliberately NOT done here, per "
+            "AGENTS.md §q₀-anchor rule 4 'untouched muon witnesses: leave "
+            "them'.")
     w.add_assertion(
         "summary_total_observables",
         computed=out["summary"]["total"],

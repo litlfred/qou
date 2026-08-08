@@ -3,6 +3,27 @@
 **Date:** 2026-07-27 · **Branch:** `claude/delta-lambda-magnitude-derivation-2026-07-27`
 **Milestone bean:** `qou-ksxr`
 
+> **🟥 STATUS UPDATE (2026-08-08) — read before working this ledger.** Two
+> later results reframe the front:
+> 1. **The per-partition `Δ_λ` VALUE is PROVED** (2026-08-02, sorry-free,
+>    general-n: `Δ_λ = (−1)^{n(λ)}·dim V_λ`,
+>    `dtEuler_eq_deltaLambda_unconditional`). The NZ/Stokes→`|S|`→`|Δ_λ|` chain
+>    below is therefore **superseded on the per-partition value**; its residual
+>    value is only as a *route to the many-body magnitude*, not the Δ_λ value.
+> 2. **The ℓ¹-ceiling forecloses the whole "better `Δ_λ` closes binding"
+>    premise** (2026-08-07, `free_parameters = 0`): `Σ_λ|y_λ χ^λ Δ_λ|` reaches
+>    at most `[0.36, 0.59]` of the AME target across D/T/³He/⁴He *even with
+>    perfect interference*. So **no re-derivation of `Δ_λ` — by this NZ/Stokes
+>    route or any other — can close binding**; a genuinely **new additive
+>    ≥4-body term** is required (must supply 41–64 % of each target alone). The
+>    live successor front is the He4-local cumulant `b₄ = −ln det(I + m·S)`, not
+>    a better `Δ_λ` magnitude. See
+>    [`docs/audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md`](../audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md)
+>    and the precision-goals Δ_λ gate.
+> The Lean sub-tasks below (hibinv/hratio entireness, Stokes-constant algebra)
+> remain **valid formalization targets in their own right**; just do not frame
+> them as "closing binding."
+
 ## Notation (2026-07-27, owner directive: avoid collision with substrate u = b·ℏ_q²)
 
 | Symbol | Meaning |
