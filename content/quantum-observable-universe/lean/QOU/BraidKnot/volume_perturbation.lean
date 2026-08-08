@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.volume_perturbation
@@ -37,8 +38,8 @@ namespace QOU.BraidKnot
 
 /-- The balanced (symmetric) `q`-integer
     `[m]_q = (q^m − q^{−m}) / (q − q^{−1})`. -/
-noncomputable def qIntSym (q : ℝ) (m : ℤ) : ℝ :=
-  (q ^ m - q ^ (-m)) / (q - q⁻¹)
+noncomputable abbrev qIntSym (q : ℝ) (m : ℤ) : ℝ :=
+  QOU.QInteger.qIntBalZ q m
 
 /-- **`[0]_q = 0`** — the unperturbed Hecke level (`k = 3`, i.e. `[k−3]_q`
     at `k = 3`) carries no volume perturbation.  Sorry-free. -/
