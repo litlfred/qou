@@ -76,3 +76,61 @@ is the generalisable finding, not just this one wire.
 Docstring pointers to this were added in PR #4826
 (`m_p_borromean_verification_50dps.py`, `m_qclt_approx.py`) so a reader hits
 the warning at either end of the chain; the wiring itself is untouched.
+
+## 2026-08-08 — CODE FIXED and verified; WITNESSES STILL STALE (PR #4833)
+
+`lookup_nucleon_mass_borromean` → `lookup_nucleon_mass_canonical`, now calling
+`canonical_mass.nucleon_mass_mev()`. The old name is kept as an alias so an
+older call site is visible at review rather than silently resurrecting the
+route. The CODATA *reference* was also being read out of the same deprecated
+witness — that is what kept each row's `err_ppm` looking self-consistent while
+the prediction sat 2.89 % off — so it now comes from `codata_constants`.
+
+Verified by direct call (mpmath 1.4.1 installed into the sandbox):
+
+| row | was | now | CODATA | err |
+|---|--:|--:|--:|--:|
+| proton  | 965.384476 (+2.890 %) | 938.272089427 | 938.272088160 | **+1.35 ppb** |
+| neutron | 966.714774 (+2.890 %) | 939.565422765 | 939.565420520 | **+2.39 ppb** |
+
+Those two ppb figures are the ones
+[`canonical-mass-formula-guardrail.md`](../docs/canonical-mass-formula-guardrail.md)
+independently states for the canonical route — they were not fed in, so the
+agreement is a real cross-check, not a restatement. Composite rows return
+`(None, None)`; the binding-energy path is untouched.
+
+Locked by `computations/canonical_mass_table_nucleon_rows_test.py` (5/5), which
+asserts both the ppb bound and the explicit absence of the two deprecated
+magnitudes, so a regression names itself.
+
+### ⚠ Still open — the data
+
+The **committed witnesses are unchanged and still carry 965.384 / 966.715**:
+
+- `canonical-mass-table-extended.witness.json`
+- `low-isotope-mass-table.witness.json`
+- and the projections `m-qclt-approx`, `multi-layer-gap-decomposition`,
+  `lambda-scale-refinements-composed-predictions`
+
+Regeneration needs the `pyhecke_native` Rust wheel for the `tr_M` column, which
+is not built in this sandbox (`laurent_q_rust: pyhecke_native missing`), so the
+producer cannot run end-to-end here. `mpmath`/`sympy`/`numpy` pip-installed
+fine; only the Rust extension is missing. Re-run in an env with the wheel:
+
+    python3 -u canonical_mass_table_extended.py 2>&1 | tee /tmp/cmte.log
+    python3 -u low_isotope_mass_table.py        2>&1 | tee /tmp/limt.log
+
+Note the sandbox has mpmath **1.4.1** where the witness recorded **1.3.0**;
+regenerate on the pinned version so unrelated last-digit churn does not land.
+
+**Honest note:** an exploratory `--atoms p,n` run of the producer overwrote
+`canonical-mass-table-extended.witness.json` with an errored (0-row) result.
+Reverted immediately via `git checkout --`; verified restored (7 rows) and the
+working tree is clean. That producer writes its witness even when every row
+errors, which is worth fixing separately.
+
+### Still worth doing: the class, not the instance
+
+A witness-level guard — flag any witness whose numeric fields sit within
+tolerance of a known deprecated magnitude while claiming a canonical
+`prediction_method`. That closes the fourth surface; this fixes one wire on it.
