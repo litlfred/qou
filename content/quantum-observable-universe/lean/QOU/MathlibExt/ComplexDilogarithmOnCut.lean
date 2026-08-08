@@ -1,6 +1,8 @@
 import QOU.MathlibExt.ComplexDilogarithmDeriv
 import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
 import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
+import QOU.MathlibExt.ComplexDilogarithmBoundary
+import QOU.Archimedean.ConstantOffOnePoint
 
 /-!
 # `cLiTwoExt`'s integrand is integrable at real `x > 0` — `qou-invr` step (1), DONE
@@ -108,7 +110,35 @@ Step (2)'s constancy argument, now with all three derivatives available:
 They cancel identically. **`hasDerivAt_inversionCombo` proves `G' = 0` on
 `(1,∞)`** — the analytic core of step (2), done.
 
-### What is left: pinning the constant, and why it is harder here than for Landen
+### ✅ AND THE CONSTANT IS PINNED — step (2) is closed
+
+    re_inversion_identity (hx : 1 ≤ x) :
+      Re cLiTwoExt(x) + Re cLiTwoExt(1/x) + ½·log²x = π²/3
+
+The value came from `cLiTwoExt_one : cLiTwoExt 1 = π²/6`, which needed a route
+around **both** existing boundary lemmas — see below. The exceptional point
+`x = 1`, where the derivative does not exist, costs nothing:
+`constant_of_hasDerivWithinAt_zero_off_point` is built for exactly that shape,
+and was already in the tree for the transport lane.
+
+### How `cLiTwoExt 1 = π²/6` was obtained
+
+`1` is **the excluded point of both** existing lemmas — `cLiTwoExt_eq_cLiTwo`
+needs `‖y‖ < 1`, `cLiTwoExt_eq_cLiTwo_of_norm_le_one` needs `y ∈ notCut`. The
+route around:
+
+* `cLiTwo 1 = π²/6` is immediate — the **series converges at `1`**, so this is
+  just `hasSum_one_div_succ_sq`. No boundary theory.
+* `cLiTwoExt` along the reals **is a primitive** (`cLiTwoExt_ofReal_eq_primitive`,
+  from `cLiTwoExt_ofReal_mul` at `y = 1`), and primitives of integrable functions
+  are continuous — **integrability at `x = 1` being step (1)**.
+* So both are continuous along `[0,1]` and agree on `[0,1)`; the value at the
+  branch point follows by uniqueness of limits.
+
+Step (1) is therefore not merely a prerequisite of step (2) — it is what makes
+the branch point reachable at all.
+
+### The earlier framing, kept because the contrast still holds
 
 `G' = 0` gives the identity only up to a constant, and Route 35 G3 measures
 `G ≡ π²/3`. Pinning it needs one value, and the only available base point is
@@ -532,5 +562,167 @@ theorem hasDerivAt_inversionCombo {x : ℝ} (hx : 1 < x) :
   rw [hlog1x, hloginv]
   field_simp
   ring
+
+/-! ## Pinning the constant: `cLiTwoExt 1 = π²/6` -/
+
+/-- `cLiTwo 1 = π²/6` — the series converges *at* `1`, so this is immediate from
+`hasSum_one_div_succ_sq`; no boundary theory is involved. -/
+theorem cLiTwo_one : cLiTwo 1 = ((Real.pi ^ 2 / 6 : ℝ) : ℂ) := by
+  unfold cLiTwo
+  have hr := hasSum_one_div_succ_sq
+  have hc := Complex.ofRealCLM.hasSum hr
+  refine HasSum.tsum_eq ?_
+  refine hc.congr_fun ?_
+  intro k
+  simp only [Complex.ofRealCLM_apply]
+  push_cast
+  ring
+
+/-- `cLiTwoExt` along the reals **is** the primitive of the `y = 1` kernel.
+Holds at `0` too, where both sides are `0`. -/
+theorem cLiTwoExt_ofReal_eq_primitive (x : ℝ) :
+    cLiTwoExt ((x : ℝ) : ℂ) = -∫ u in (0 : ℝ)..x, liTwoKernel (1 : ℂ) u := by
+  rcases eq_or_ne x 0 with rfl | hx
+  · simp
+  · simpa using cLiTwoExt_ofReal_mul (y := (1 : ℂ)) hx
+
+/-- **`cLiTwoExt` is continuous along `[0,1]`, up to and including the branch
+point.** Because it is a primitive of an integrable function — integrability at
+`x = 1` being step (1) with `x = 1`. -/
+theorem continuousOn_cLiTwoExt_ofReal_Icc :
+    ContinuousOn (fun x : ℝ => cLiTwoExt ((x : ℝ) : ℂ)) (Set.Icc 0 1) := by
+  have hint : IntervalIntegrable (liTwoKernel (1 : ℂ)) MeasureTheory.volume 0 1 := by
+    have h := intervalIntegrable_clog_one_sub_div_ofReal (x := 1) one_pos
+    have hfun : (fun t : ℝ => Complex.log ((1 : ℂ) - ((1 : ℝ) : ℂ) * (t : ℂ)) / (t : ℂ))
+        = liTwoKernel (1 : ℂ) := by
+      funext t
+      simp [liTwoKernel]
+    rwa [hfun] at h
+  have hprim := intervalIntegral.continuousOn_primitive_interval' hint
+    (by simp : (0 : ℝ) ∈ Set.uIcc (0 : ℝ) 1)
+  have huIcc : Set.uIcc (0 : ℝ) 1 = Set.Icc 0 1 :=
+    Set.uIcc_of_le (by norm_num)
+  rw [huIcc] at hprim
+  have : (fun x : ℝ => cLiTwoExt ((x : ℝ) : ℂ))
+      = fun x : ℝ => -∫ u in (0 : ℝ)..x, liTwoKernel (1 : ℂ) u := by
+    funext x; exact cLiTwoExt_ofReal_eq_primitive x
+  rw [this]
+  exact hprim.neg
+
+/-- **`cLiTwoExt 1 = π²/6`.** Both `cLiTwoExt` and `cLiTwo` are continuous along
+`[0,1]` and agree on `[0,1)`; the value at the branch point follows.
+
+⚠ Neither `cLiTwoExt_eq_cLiTwo` (needs `‖y‖ < 1`) nor
+`cLiTwoExt_eq_cLiTwo_of_norm_le_one` (needs `y ∈ notCut`) reaches `1` — it is
+exactly the excluded point of both. The continuity above is what closes the gap,
+and it exists only because step (1) supplied integrability at `x = 1`. -/
+theorem cLiTwoExt_one : cLiTwoExt 1 = ((Real.pi ^ 2 / 6 : ℝ) : ℂ) := by
+  have hne : (nhdsWithin (1 : ℝ) (Set.Ico 0 1)).NeBot := by
+    rw [← mem_closure_iff_nhdsWithin_neBot]
+    rw [closure_Ico (by norm_num : (0:ℝ) ≠ 1)]
+    exact ⟨by norm_num, le_rfl⟩
+  have hsub : Set.Ico (0:ℝ) 1 ⊆ Set.Icc 0 1 := Set.Ico_subset_Icc_self
+  -- `cLiTwoExt` along the reals, restricted
+  have h1 : ContinuousWithinAt (fun x : ℝ => cLiTwoExt ((x : ℝ) : ℂ)) (Set.Ico 0 1) 1 :=
+    (continuousOn_cLiTwoExt_ofReal_Icc 1 ⟨by norm_num, le_rfl⟩).mono hsub
+  -- `cLiTwo` along the reals, from continuity on the CLOSED ball
+  have hmaps : Set.Icc (0:ℝ) 1 ⊆ (fun x : ℝ => ((x : ℝ) : ℂ)) ⁻¹' Metric.closedBall (0 : ℂ) 1 := by
+    intro x hx
+    simp only [Set.mem_preimage, Metric.mem_closedBall, dist_zero_right]
+    rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg hx.1]
+    exact hx.2
+  have h2on : ContinuousOn (fun x : ℝ => cLiTwo ((x : ℝ) : ℂ)) (Set.Icc 0 1) :=
+    ContinuousOn.comp continuousOn_cLiTwo_closedBall
+      Complex.continuous_ofReal.continuousOn hmaps
+  have h2 : ContinuousWithinAt (fun x : ℝ => cLiTwo ((x : ℝ) : ℂ)) (Set.Ico 0 1) 1 :=
+    (h2on 1 ⟨by norm_num, le_rfl⟩).mono hsub
+  -- they agree on `[0,1)`, where the series converges
+  have heqf : (fun x : ℝ => cLiTwo ((x : ℝ) : ℂ))
+      =ᶠ[nhdsWithin (1:ℝ) (Set.Ico 0 1)] (fun x : ℝ => cLiTwoExt ((x : ℝ) : ℂ)) := by
+    refine eventually_mem_nhdsWithin.mono fun x hx => ?_
+    have hnorm : ‖((x : ℝ) : ℂ)‖ < 1 := by
+      rw [Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg hx.1]
+      exact hx.2
+    exact (cLiTwoExt_eq_cLiTwo hnorm).symm
+  have hb := tendsto_nhds_unique h1 (h2.congr' heqf)
+  simp only [Complex.ofReal_one] at hb
+  rw [hb, cLiTwo_one]
+
+/-! ## Step (2), closed: the inversion identity on `[1,∞)` -/
+
+/-- Continuity of `cLiTwoExt` along `[0,b]` for **any** `b > 0` — the primitive
+argument again, now that integrability holds on `0..b`. -/
+theorem continuousOn_cLiTwoExt_ofReal_Icc' {b : ℝ} (hb : 0 < b) :
+    ContinuousOn (fun x : ℝ => cLiTwoExt ((x : ℝ) : ℂ)) (Set.Icc 0 b) := by
+  have hint : IntervalIntegrable (liTwoKernel (1 : ℂ)) MeasureTheory.volume 0 b := by
+    have h := intervalIntegrable_clog_one_sub_div_ofReal' (x := 1) one_pos hb
+    have hfun : (fun t : ℝ => Complex.log ((1 : ℂ) - ((1 : ℝ) : ℂ) * (t : ℂ)) / (t : ℂ))
+        = liTwoKernel (1 : ℂ) := by
+      funext t; simp [liTwoKernel]
+    rwa [hfun] at h
+  have hprim := intervalIntegral.continuousOn_primitive_interval' hint
+    (by simp : (0 : ℝ) ∈ Set.uIcc (0 : ℝ) b)
+  rw [Set.uIcc_of_le hb.le] at hprim
+  have hEq : (fun x : ℝ => cLiTwoExt ((x : ℝ) : ℂ))
+      = fun x : ℝ => -∫ u in (0 : ℝ)..x, liTwoKernel (1 : ℂ) u := by
+    funext x; exact cLiTwoExt_ofReal_eq_primitive x
+  rw [hEq]
+  exact hprim.neg
+
+/-- `Re cLiTwoExt(1) = π²/6`. -/
+theorem re_cLiTwoExt_one : (cLiTwoExt 1).re = Real.pi ^ 2 / 6 := by
+  rw [cLiTwoExt_one, Complex.ofReal_re]
+
+/-- **The inversion identity, `x ≥ 1`.**
+
+    Re cLiTwoExt(x) + Re cLiTwoExt(1/x) + ½·log²x = π²/3
+
+`G' = 0` on `(1,∞)` (`hasDerivAt_inversionCombo`), `G` is continuous up to and
+including the branch point, and `G(1) = 2·Re cLiTwoExt(1) = π²/3`
+(`re_cLiTwoExt_one`). The exceptional point `x = 1`, where the derivative does
+not exist, costs nothing — `constant_of_hasDerivWithinAt_zero_off_point` is
+built for exactly that. -/
+theorem re_inversion_identity {x : ℝ} (hx : 1 ≤ x) :
+    (cLiTwoExt ((x : ℝ) : ℂ)).re + (cLiTwoExt (((1 / x : ℝ)) : ℂ)).re
+      + Real.log x ^ 2 / 2 = Real.pi ^ 2 / 3 := by
+  set G : ℝ → ℝ := fun s : ℝ => (cLiTwoExt ((s : ℝ) : ℂ)).re
+      + (cLiTwoExt (((1 / s : ℝ)) : ℂ)).re + Real.log s ^ 2 / 2 with hG
+  have hb : (0 : ℝ) < x + 1 := by linarith
+  -- continuity of `G` on `[1, x+1]`
+  have hcont : ContinuousOn G (Set.Icc 1 (x + 1)) := by
+    have hsub : Set.Icc (1 : ℝ) (x + 1) ⊆ Set.Icc 0 (x + 1) :=
+      Set.Icc_subset_Icc (by norm_num) le_rfl
+    refine ContinuousOn.add (ContinuousOn.add ?_ ?_) ?_
+    · exact Complex.continuous_re.comp_continuousOn
+        ((continuousOn_cLiTwoExt_ofReal_Icc' hb).mono hsub)
+    · refine Complex.continuous_re.comp_continuousOn ?_
+      -- pin `g` and `f`: `cLiTwoExt` unfolds to `-∫ …`, so bare `.comp` lets
+      -- higher-order unification pick `Neg.neg` as the outer function
+      refine ContinuousOn.comp (g := fun u : ℝ => cLiTwoExt ((u : ℝ) : ℂ))
+        (f := fun s : ℝ => 1 / s) (continuousOn_cLiTwoExt_ofReal_Icc' hb) ?_ ?_
+      · exact ContinuousOn.div continuousOn_const continuousOn_id
+          (fun s hs => by intro h; rw [h] at hs; exact absurd hs.1 (by norm_num))
+      · intro s hs
+        have hs1 : (1 : ℝ) ≤ s := hs.1
+        have hspos : (0 : ℝ) < s := lt_of_lt_of_le zero_lt_one hs1
+        refine ⟨by positivity, ?_⟩
+        have : 1 / s ≤ 1 := by rw [div_le_one hspos]; exact hs1
+        linarith
+    · refine ContinuousOn.div_const (ContinuousOn.pow ?_ 2) 2
+      exact Real.continuousOn_log.mono (fun s hs => by
+        have : (0:ℝ) < s := lt_of_lt_of_le zero_lt_one hs.1
+        simpa using ne_of_gt this)
+  -- derivative zero off the single point `1`
+  have hderiv : ∀ s ∈ Set.Ico (1 : ℝ) (x + 1), s ≠ 1 →
+      HasDerivWithinAt G 0 (Set.Ici s) s := by
+    intro s hs hs1
+    have hs' : 1 < s := lt_of_le_of_ne hs.1 (Ne.symm hs1)
+    exact (hasDerivAt_inversionCombo hs').hasDerivWithinAt
+  have hconst := QOU.Archimedean.constant_of_hasDerivWithinAt_zero_off_point
+    (c := 1) hcont hderiv x ⟨hx, by linarith⟩
+  have hG1 : G 1 = Real.pi ^ 2 / 3 := by
+    simp only [hG, one_div_one, Complex.ofReal_one, re_cLiTwoExt_one, Real.log_one]
+    ring
+  exact hconst.trans hG1
 
 end QOU.MathlibExt
