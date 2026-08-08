@@ -41,6 +41,28 @@ What has changed since that was written: the **analytic** half is now done
 (see "What is already built" below), so the remaining work is exactly the
 **geometric measure theory**, and it can be tiered.
 
+## ⚠ REPRESENTATION DECISION (2026-08-08) — H1 picked the wrong one
+
+**H1 was written on `ℝ × ℝ × ℝ`. That choice makes H2 structurally impossible
+and should be migrated to `Fin 3 → ℝ` before more is built on it.** Measured,
+not guessed — each row is an `infer_instance` / `#check` run against the
+restored cache:
+
+| representation | Haar / scaling (H2) | Fubini (H4-2) |
+|---|---|---|
+| `ℝ × ℝ × ℝ` — **H1's current choice** | ❌ `volume.IsAddHaarMeasure` **fails to synthesize**; so does `IsAddRightInvariant`. `Mathlib.MeasureTheory.Measure.Haar.Prod` **does not exist** | ✅ `lintegral_prod` applies directly |
+| `Fin 3 → ℝ` / `EuclideanSpace ℝ (Fin 3)` | ✅ `IsAddHaarMeasure`, `IsAddRightInvariant`, `finrank = 3`, `Measure.addHaar_smul` all available | ✅ via `measurePreserving_piFinSuccAbove`, which splits one coordinate off measure-preservingly into `ℝ × (Fin 2 → ℝ)` |
+
+So the Pi representation has **both**; Prod has only Fubini. I chose Prod in H1
+optimizing for the Fubini step without checking the Haar side — H2's dilation
+invariance (`Lebesgue's λ³` vs `the density's 1/λ³`) needs `addHaar_smul`, which
+Prod cannot supply.
+
+**Recommendation: migrate H1 to `Fin 3 → ℝ`** (mechanically `p.2.2 ↦ p 2`)
+before H2 or H4-2 is attempted. Until that happens, treat H1 as a correct object
+on an inconvenient carrier: everything proved in it stands, but it is a dead end
+for the rest of the series. The H1 file header carries the same warning.
+
 ## Tiers
 
 **H1 — the hyperbolic volume measure on `H³`.** Define upper half-space and

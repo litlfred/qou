@@ -22,6 +22,24 @@
   a measure that turned out to be zero, or to charge the boundary, would make
   every later statement meaningless.
 
+  ⚠ THE CARRIER HERE IS THE WRONG ONE FOR H2 -- READ BEFORE BUILDING ON THIS.
+  This file uses `ℝ × ℝ × ℝ`.  Everything proved below is correct on it, but the
+  representation is a dead end for the rest of the series, measured 2026-08-08:
+
+      volume on `ℝ × ℝ × ℝ`  : `IsAddHaarMeasure` FAILS to synthesize, as does
+                               `IsAddRightInvariant`; `Measure.Haar.Prod` does
+                               not exist.  Fubini (`lintegral_prod`) does work.
+      volume on `Fin 3 → ℝ`  : `IsAddHaarMeasure`, `IsAddRightInvariant`,
+                               `finrank = 3`, `addHaar_smul` ALL available; and
+                               Fubini still works, via
+                               `measurePreserving_piFinSuccAbove`.
+
+  H2's dilation invariance needs `addHaar_smul`, so it cannot be done on this
+  carrier at all.  I chose `Prod` optimizing for the Fubini step without
+  checking the Haar side -- the honest fix is to migrate this file to
+  `Fin 3 → ℝ` (mechanically `p.2.2 ↦ p 2`) before attempting H2 or H4-2.
+  Tracked in bean `qou-5gai`.
+
   WHAT IS *NOT* HERE -- read before citing.
 
   * **No metric, no isometries, no geodesics.**  This is the volume MEASURE
