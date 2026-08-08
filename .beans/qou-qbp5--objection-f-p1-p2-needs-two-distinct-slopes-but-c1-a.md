@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T09:05:00Z
-updated_at: 2026-08-08T09:25:00Z
+updated_at: 2026-08-08T09:55:00Z
 ---
 
 **Raised 2026-08-08 while doing S2. This may invalidate the S3 target as framed;
@@ -125,3 +125,45 @@ the most likely home of any C^2).
   operator itself and are independent of RSZ's framing.
 - **S1's arithmetic** (`qou-qbg2`): `ramified_qBorel_budget` (m^2 = m(m-1) + m)
   is a true theorem. But **its INTERPRETATION is withdrawn** -- see that bean.
+
+## Bugeaud [14] OBTAINED — and it does NOT rescue the framing
+
+Owner uploaded it 2026-08-08 (commit 733a88b8):
+`uploads/CRMATH_2011__349_19-20_1037_0.pdf`. Identity metadata-verified from the
+PDF's own `/Title`, `/Author` and `dc:description` (the body text is a
+font-subset encoding and does not extract, but the metadata is plain):
+
+  Virginie Bugeaud, "Classification analytique et theorie de Galois locales des
+  modules aux q-differences a pentes non entieres",
+  C. R. Acad. Sci. Paris, Ser. I, 349 (2011) 1037-1039, doi 10.1016/j.crma.2011.09.002
+
+Exactly RSZ's [14]. Registered in `content/schema/references.ts` as `bugeaud2011`.
+
+**Its section bookmarks settle the last open possibility:**
+
+  1 Introduction
+  2 Classification analytique isoformelle a DEUX PENTES
+  3 Operateurs de Stokes
+  4 Groupe de Galois formel
+
+So the non-integral generalisation is **still a two-slope theory**. Combined with
+RSZ §3.3 (integral, also two-slope) this closes the gap: **no version of the
+apparatus -- integral or ramified -- supplies Stokes data for a module that is
+pure isoclinic at the point in question.** Bugeaud lifts the integrality
+restriction, not the two-slope requirement.
+
+**Status of the three candidate rescues from the original objection:**
+
+1. **Global 0-vs-infinity (Birkhoff) rather than local at infinity** -- STILL LIVE,
+   and now the only survivor. C1 is Fuchsian at 0 and irregular at infinity; a
+   connection datum between two singular points is a different object from the
+   local isoformal class at one of them, and W2 is literally named for the
+   Birkhoff matrix. **This is where any C^2 must come from, if anywhere.**
+2. **The polygon actually has two edges** -- would need the 08-01 slope data to be
+   wrong. My independent computation says one edge. Cheap to re-derive; do that
+   before trusting rescue 1.
+3. **Post-ramification splitting** -- DEAD, as recorded: same slope, k=1 still.
+
+**Remaining lit gap:** none for this question. RSZ and Bugeaud are both local and
+both need two slopes. If rescue 1 is pursued, the relevant literature is the
+q-analogue of the Birkhoff connection problem, not §3.3.
