@@ -3269,3 +3269,54 @@ the path plus the implicit function theorem for `yⱼ(x)` (discriminant bounded 
 from zero, so the hypothesis holds). Ordinary analysis, not a research problem,
 but not done. **Sum rule: verified to 80 dps, numerators derived, transport
 branch-pinned, still not proved.**
+
+**2026-08-08 — the cyclotomic side is PROVED IN LEAN. Two links remain, both analytic.**
+
+Beans `qou-abel`, `qou-rhyp`, `qou-fivt` — all three **closed**. PR #4701.
+
+`Σₖ (2·L(wₖ) + L(−wₖ)) = π²/2` is now a theorem about the corpus's own
+dilogarithm, sorry-free on `[propext, Classical.choice, Quot.sound]`:
+
+| theorem | file |
+|---|---|
+| `rogersL_fiveTerm` — **Abel's five-term relation** on `(0,1)` | `QOU/QBeta/FiveTwoAbelFiveTerm.lean` |
+| `numerators_of_root` — `(17,5,−1)`, **no hypothesis on `L`** | same |
+| `exists_root_in_Ioo` — non-vacuity, by IVT | same |
+| `extended_targets` / `extended_sum` — the targets in original form | same |
+| `hasDerivAt_rogersL` — `L'(x) = −(log(1−x)/x + log x/(1−x))/2` | `FiveTwoRogersReflection.lean` |
+
+Abel's relation went the way `LiTwo_reflection'` does: fix `y`, kill the
+derivative, evaluate at `x → 0⁺`. All the content is in four log-splitting
+lemmas; after they fire, `−2F'(x)` is a linear form in
+`log x, log(1−x), log y, log(1−y), log(1−xy)` whose five coefficients each vanish
+as rational functions, so the last step is `field_simp; ring`.
+
+**Two of the ladder's twelve hypotheses were FALSE, not hard** — worth knowing if
+you build on the earlier notes. `hinv1` and `hlan1` fail by `−2.4543` and
+`+1.5692` for a Rogers `L` built on `LiTwo`: their arguments `w₁ = 2.2470` and
+`−w₁` leave the disc of convergence, where Lean's `tsum` is the junk value `0`
+and `Real.log` is even. Every earlier probe missed it by evaluating with mpmath's
+`polylog` — testing the mathematics while the Lean file encodes the semantics.
+Repaired definitionally in `FiveTwoRogersExtend` (Zagier §I.3).
+
+**Correction to the 2026-08-07 entry above.** It says the `B₂` route needs "only
+real analysis and `Cl₂` … not the complex `Li₂` continuation". True, and now
+moot: Route 11→14 derived the numerators from the five-term relation directly,
+never evaluating `Li₂` at a root of unity. The `B₂` framing is explanatory and
+**load-bearing for nothing**.
+
+### What is still open — and it is NOT the dilogarithm
+
+The sum rule is `Σⱼ Re Vⱼ = −3π²/2`; what is proved is `Σₖ(2L(wₖ)+L(−wₖ)) = +π²/2`.
+
+1. **`qou-trns`** — transport `x = 1 → x = −1`. Branch integer pinned; the
+   **envelope theorem is numerical only**. Weakest link, and analytic.
+2. **`qou-rstq` item 4** — `extend` is not identified with `Re` of the analytic
+   Rogers `L` *in Lean*. Route 15 closed it on paper. Its two halves are **not
+   equally hard**: the Landen half sits far from the cut where the corpus's
+   `cLiTwoExt` is already the right object; the inversion half sits **on**
+   `[1,∞)` and needs `Re` of the boundary value, well defined only because the
+   discontinuity is `2πi·log x` — purely imaginary. That fact underpins this
+   lane's whole "take real parts" convention and is written down nowhere.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
