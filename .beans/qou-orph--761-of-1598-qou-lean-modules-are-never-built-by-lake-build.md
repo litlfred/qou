@@ -1,7 +1,7 @@
 ---
 # qou-orph
 title: 'INFRA (measured): 761 of 1598 QOU Lean modules are never built by `lake build`'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -142,3 +142,104 @@ PY
 
 * `qou-0yqu` (the 5₂ lane this surfaced in), `qou-rhyp`, `qou-mfst` (the other
   open lakefile-drift bean), PRs #4658 (merged), #4701
+
+---
+
+## 2026-08-08 — STEP 1 DONE for 153 of the 757 orphans: **94.8% are green**
+
+The bean said "measure before deciding; that number decides everything below; do
+not guess it." Measured, on the two directories this lane depends on:
+
+| scope | orphans | fail | green |
+|---|---|---|---|
+| `QOU.QBeta.*` | 82 | **1** | 98.8% |
+| `QOU.Archimedean.*` + `QOU.MathlibExt.*` | 71 | **7** | 90.1% |
+| **total** | **153** | **8** | **94.8%** |
+
+Method: `lake build <all orphans in scope>` in one invocation, so lake builds the
+union of dependencies and reports every failure rather than stopping at the
+first. Toolchain was already warm from the 5₂ lane's Mathlib cone.
+
+### The eight, and what is actually wrong with them
+
+**Mathlib drift — renamed or removed lemmas (3):**
+
+* `QOU.MathlibExt` — `Unknown constant List.foldl_mul_eq_mul_prod` (×3),
+  `Unknown constant Real.rpow_half_eq_sqrt`
+* `QOU.MathlibExt.FrobeniusInnerProduct`
+* `QOU.MathlibExt.PosSemidefDiagZero`
+
+**Internal drift — QOU declarations that no longer exist (5):**
+
+* `QOU.QBeta.FaddeevModularDouble` — `Eq.sq_eq_one_of_bar_even`, `Eq.inv`,
+  `Eq.mul_bar_self`. The `Eq.` prefix is the tell: dot-notation fell back to `Eq`
+  because the intended lemma is gone.
+* `QOU.Archimedean.BreitWheelerPairProduction` — `TransferMatrixOperator.reduce_sigma_squared`
+* `QOU.Archimedean.TorusKnot` — `TorusKnotLabel.seifertRank`, `.embeddableOn`
+* `QOU.Archimedean.QMomentum` — `QMomentum.writhe`
+* `QOU.Archimedean.yekutieli_leading_coefficient`
+
+**Every one of these is the kind of breakage a build gate catches the day it
+happens.** None is deep; all are stale references. That is the argument for step
+4 (the new-orphan gate) more than any amount of prose.
+
+### What this changes
+
+The bean's step 2 applies: the failure count *is* small, so wiring the green
+ones in is safe. Not done wholesale here — 145 new imports on a PR about the 5₂
+sum rule invites conflicts with the ~120 in-progress sibling beans. What **was**
+done: `QOU.MathlibExt.ComplexDilogarithm` is now imported from `QOU.lean`. It is
+this lane's own dependency (a ~500-line sorry-free complex dilogarithm), it was
+orphaned, and it builds green.
+
+### For whoever does step 2 properly
+
+* The measurement command is one line; reuse it per directory.
+* Wire in the green ones **per directory**, not all at once, so a conflict with a
+  sibling is a small rebase rather than a large one.
+* The eight above should each get a bean or a fix first — do **not** wire them in
+  and leave `lake build` red.
+* 604 orphans are still unmeasured: `QOU.BraidKnot` (147), `QOU.MassTheory` (46),
+  `QOU.BraidsAndKnots` (35), `QOU.Machinery` (29), `QOU.FluidDynamics` (26),
+  `QOU.ParticleInteractions` (21), `QOU.Hecke` (20), and the tail.
+  **Do not extrapolate 94.8% to them** — the two directories measured are the
+  ones this lane has been actively working in, which is exactly the sampling bias
+  that would make them healthier than average.
+
+---
+
+## 2026-08-08 — STEP 4 DONE: the gate exists, so the number stops growing
+
+`content/pipeline/lean-orphan-audit.ts` + `.github/workflows/lean-orphan-gate.yml`.
+
+Two modes:
+
+```sh
+bun run content/pipeline/lean-orphan-audit.ts                 # survey, always exit 0
+bun run content/pipeline/lean-orphan-audit.ts --diff <files>  # GATE, exit 1 on a new orphan
+```
+
+Diff-scoped, in the style `lean-content-siblings.yml` already uses — a whole-tree
+gate would block every PR on the ~750-module backlog. Paths outside the library
+tree are ignored, so passing a PR's whole `.lean` diff is safe. Exit codes
+verified directly (1 on an orphan, 0 on a wired module, 0 on survey) rather than
+through a pipe, which reports the pipe's status.
+
+**Also fixed the sentence this bean identified as the likely reason the problem
+went unnoticed.** `lean-content-siblings.yml`'s header said the lakefile "globs
+`srcDir='.'` = the lean/ tree only", which reads as though everything *inside*
+`lean/` is covered by `lake build`. It is not, and that header is the most
+natural place for someone to have formed the wrong belief. It now says so
+explicitly and points at the new gate.
+
+Workflow is `workflow_dispatch:` only — CI auto-triggers are disabled repo-wide
+(owner directive 2026-06-30, Actions billing), so the **local command is the
+real gate** today. That is a limitation of the repo, not of this change.
+
+### Remaining on this bean
+
+* **Steps 2-3: the backlog.** 604 orphans still unmeasured. Measure per
+  directory, wire in the green ones per directory (small rebases, not one large
+  one), bean or fix the red ones. Do not wire in a red module and leave
+  `lake build` broken.
+* **The eight known failures** listed above still need owners.
