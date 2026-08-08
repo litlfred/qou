@@ -33,6 +33,13 @@ import json  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from qou_substrate.precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent
+                       / "substrate"))
+import codata_constants as _C  # noqa: E402
+from qbeta_utils import c3_target_at  # noqa: E402
 
 _WITNESS = (Path(__file__).resolve().parent
             / "qbeta-c3-keystone-anchor-blind.witness.json")
@@ -45,6 +52,23 @@ _WITNESS = (Path(__file__).resolve().parent
 # truncation of a printout. There was no artifact to read instead. Bean
 # qou-t0rf; the certificate flagged the copies as untraceable literals.
 INPUT_SIG_DIGITS = 12
+
+# ── AND THE ARITHMETIC PRECISION IS NOT THE UNCERTAINTY ──────────────────
+# c_3 is not measured; it is an INVERSION of the CAL-3 calibration input
+# through the Q_beta ladder (qbeta_utils.c3_target_at):
+#
+#     c_3 = (Q_codata / Q_N2 - 1) / u^3 ,   u = b*hbar_q^2 ~ 8.5e-3
+#
+# The division by u^3 ~ 6.2e-7 amplifies the input uncertainty by ~1.6e6.
+# Q_beta_n = 0.78233341(61) MeV carries 6 significant digits (PDG 2024 /
+# AME 2020), and 6 digits in gives c_3 = -2.020 +- 1.26 out. So the 12-digit
+# strings upstream are ARITHMETIC precision, not knowledge, and reporting S
+# to 9 digits on the strength of them overstates it by ~11 orders of
+# magnitude. This probe now propagates the CAL-3 error alongside.
+DERIVED_NOT_MEASURED = (
+    "c_3 is an inversion of the CAL-3 input Q_beta(n) through the ladder, "
+    "not an independent measurement; its uncertainty is dominated by that "
+    "input amplified by 1/u^3")
 
 
 def main() -> None:
@@ -102,6 +126,44 @@ def main() -> None:
         lost = mp.log10(abs(c3[a]) / abs(S[a]))
         sig[a] = int(mp.floor(INPUT_SIG_DIGITS - lost))
     n_sig = min(sig.values())
+
+    # ── propagate the CAL-3 experimental uncertainty ─────────────────────
+    # The SAME Q_beta(n) enters at both anchors, so its error is FULLY
+    # CORRELATED between them. That matters: it cancels almost entirely in
+    # the difference (the swing) and not at all in the individual values
+    # (the signs). Done by re-running the inversion at Q +- dQ rather than
+    # by a linearisation, so no expansion is assumed.
+    Qc = mpf(str(_C.Q_BETA_MEV))
+    dQc = mpf(str(_C.Q_BETA_MEV_ERR))
+    m_e = mpf(str(_C.M_E_MEV))
+    dps = mp.dps
+    anch = {"muon": q_muon_at(dps), "proton": q_at(dps)}
+
+    def S_shifted(dq):
+        return {a: c3_target_at(anch[a], Qc + dq, m_e) + vol for a in anch}
+
+    S_hi, S_lo = S_shifted(dQc), S_shifted(-dQc)
+    dS = {a: max(abs(S_hi[a] - S[a]), abs(S_lo[a] - S[a])) for a in anch}
+    diff0 = S["muon"] - S["proton"]
+    d_diff = max(abs((S_hi["muon"] - S_hi["proton"]) - diff0),
+                 abs((S_lo["muon"] - S_lo["proton"]) - diff0))
+    flip_hi = S_hi["muon"] > 0 > S_hi["proton"]
+    flip_lo = S_lo["muon"] > 0 > S_lo["proton"]
+    flip_resolved = bool(flip_hi and flip_lo)
+    swing_resolved = bool(abs(d_diff) < abs(diff0) / 10)
+
+    print(f"\nCAL-3 propagation (Q_beta(n) = {mp.nstr(Qc, 9)} +- "
+          f"{mp.nstr(dQc, 2)} MeV, PDG 2024):")
+    print(f"  the ladder divides by u^3, amplifying that by ~1.6e6:")
+    for a in ("muon", "proton"):
+        print(f"    S({a:6s}) = {mp.nstr(S[a], 9):>14} +- {mp.nstr(dS[a], 4)}"
+              f"   <- uncertainty is {mp.nstr(dS[a] / abs(S[a]), 4)}x the value")
+    print(f"  BUT the error is fully correlated (same Q at both anchors), so")
+    print(f"    S(muon) - S(proton) = {mp.nstr(diff0, 10)} +- "
+          f"{mp.nstr(d_diff, 3)}   (rel {mp.nstr(d_diff / abs(diff0), 3)})")
+    print(f"  => the SWING is resolved: {swing_resolved}")
+    print(f"  => the SIGN FLIP is resolved: {flip_resolved}  "
+          f"(at +1 sig both S > 0; at -1 sig both S < 0)")
     print(f"\nprecision: inputs carry {INPUT_SIG_DIGITS} sig digits; the "
           f"c₃ + Vol cancellation costs")
     print(f"  {mp.nstr(mp.log10(abs(c3['muon']) / abs(S['muon'])), 3)} decades "
@@ -127,8 +189,45 @@ def main() -> None:
     wb.add_data("S_leak", {a: mp.nstr(S[a], n_sig) for a in S})
     wb.add_data("S_leak_claim_odd_part",
                 {a: mp.nstr(claimS[a], n_sig) for a in claimS})
+    wb.add_data("cal3_uncertainty_propagation", {
+        "Q_beta_n_MeV": mp.nstr(Qc, 12),
+        "Q_beta_n_MeV_err": mp.nstr(dQc, 4),
+        "source": "CAL-3, 0.78233341(61) MeV, PDG 2024 / AME 2020",
+        "amplification": ("c_3 = (Q_codata/Q_N2 - 1)/u^3 with u ~ 8.5e-3, so "
+                          "1/u^3 ~ 1.6e6 multiplies the input error"),
+        "S_uncertainty": {a: mp.nstr(dS[a], 4) for a in dS},
+        "S_uncertainty_over_value": {a: mp.nstr(dS[a] / abs(S[a]), 4)
+                                     for a in dS},
+        "difference_S_muon_minus_S_proton": mp.nstr(diff0, 12),
+        "difference_uncertainty": mp.nstr(d_diff, 4),
+        "difference_uncertainty_relative": mp.nstr(d_diff / abs(diff0), 4),
+        "swing_resolved": swing_resolved,
+        "sign_flip_resolved": flip_resolved,
+        "reading": (
+            "The error is FULLY CORRELATED across anchors — the same "
+            "Q_beta(n) enters both — so it cancels in the difference and does "
+            "not cancel in the individual values. Consequence: the 2.43% "
+            "SWING is resolved to ~1.5e-5 relative and is a real feature; the "
+            "individual anchor values are not resolved at all (uncertainty "
+            "~130x the value), and therefore NEITHER IS THE SIGN FLIP. At "
+            "Q + 1 sigma both S are positive; at Q - 1 sigma both are "
+            "negative. The zero crossing between the anchors is a property of "
+            "the central value, not of the data."),
+        "bears_on": (
+            "QOU/QBeta/SLeakZeroCrossing.lean states that 'the anchor signs "
+            "are the only empirical input' to sleak_zero_between_anchors and "
+            "sign_definite_carrier_excluded. Those theorems remain valid — "
+            "they are conditional on the signs — but the hypothesis they are "
+            "conditioned on is NOT established by this data. Their "
+            "APPLICABILITY is open, not their correctness."),
+    })
     wb.add_data("precision", {
         "input_sig_digits": INPUT_SIG_DIGITS,
+        "WARNING_arithmetic_not_uncertainty": (
+            "the digit count below is ARITHMETIC precision from the 12-digit "
+            "upstream strings. It is NOT the uncertainty — see "
+            "cal3_uncertainty_propagation, which is ~11 orders of magnitude "
+            "larger. Do not cite these digits as accuracy."),
         "decades_lost_to_cancellation": {
             a: mp.nstr(mp.log10(abs(c3[a]) / abs(S[a])), 4)
             for a in c3},
@@ -148,11 +247,23 @@ def main() -> None:
                   "and the fraction is a linear-interpolation estimate of its "
                   "location, not a computed q*"),
     })
-    wb.add_assertion("S_sign_flips_across_anchors",
+    wb.add_assertion("S_sign_flips_across_anchors_at_central_values",
                      computed="1" if (S["muon"] > 0 > S["proton"]) else "0",
                      expected="1", tolerance="0.5",
-                     source="S(muon) > 0 > S(proton) — two measured values, "
-                            "the input to sleak_zero_between_anchors")
+                     source="S(muon) > 0 > S(proton) AT THE CENTRAL VALUES. "
+                            "Scoped deliberately: see the next assertion — "
+                            "this does NOT survive the CAL-3 uncertainty, so "
+                            "it must not be cited as an established sign flip")
+    wb.add_assertion("swing_is_resolved_but_sign_flip_is_not",
+                     computed="1" if (swing_resolved and not flip_resolved)
+                              else "0",
+                     expected="1", tolerance="0.5",
+                     source="the CAL-3 error is common to both anchors, so it "
+                            "cancels in S(muon) - S(proton) (resolved to "
+                            "~1.5e-5 relative) and not in the individual "
+                            "values (~130x the value). Asserted as the "
+                            "FINDING: the swing is real, the sign flip is not "
+                            "established by this data")
     wb.add_assertion("claim_odd_part_cannot_sign_flip",
                      computed="1" if (claimS["muon"] * claimS["proton"] > 0)
                               else "0",
