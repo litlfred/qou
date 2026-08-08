@@ -63,10 +63,13 @@ mp.dps = 60
 
 try:
     from q_parameter import Q as q0, Q_INV as qi, HA
-except Exception:
-    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
-    qi = 1 / q0
-    HA = q0 - qi
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 
 z = 1 / (mp.sqrt(q0) + mp.sqrt(qi))
 HA_d = q0 ** 5 - qi ** 5          # dressed intra-atomic pe sum (eigenvalues q^5,-q^-5)

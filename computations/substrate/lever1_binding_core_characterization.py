@@ -32,8 +32,13 @@ q = sp.Symbol("q", positive=True)
 try:
     from qou_substrate import constants as C  # noqa: E402
     Q0 = str(C.Q_MP) if hasattr(C, "Q_MP") else str(C.Q)
-except Exception:
-    Q0 = "1.10997859555733471"
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 
 WIT = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                    "lever1-binding-correction-cyclotomic-structure.witness.json")

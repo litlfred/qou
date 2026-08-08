@@ -145,8 +145,13 @@ def _muon_q0():
     try:
         from qou_substrate.constants import q_muon_at
         return mpf(str(q_muon_at()))
-    except Exception:
-        return mpf("1.1099785955541810")
+    except Exception as _q0_exc:
+        raise RuntimeError(
+            "q0 accessor unavailable. Substituting the muon literal here would compute "
+            "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+            "forbids, arriving through the error path. A cross-layer fallback is worse than "
+            "no fallback: fix the environment instead."
+        ) from _q0_exc
 
 
 def _provenance(path):

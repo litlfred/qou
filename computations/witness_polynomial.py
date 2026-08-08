@@ -41,12 +41,13 @@ def _default_q0() -> sp.Rational:
     try:
         from q_parameter import Q as Q0_FLOAT  # type: ignore
         return sp.Rational(str(Q0_FLOAT))
-    except ImportError:
-        # Fallback to the canonical 50-digit pinning. Per
-        # `prop:three-calibration-discipline`, q_0 is the H^1
-        # calibration; this value is not a fit but the resolution
-        # of the lepton-ratio constraint at 50dp.
-        return sp.Rational("1.10997859555733471")
+    except ImportError as _q0_exc:
+        raise RuntimeError(
+            "q0 accessor unavailable. Substituting the muon literal here would compute "
+            "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+            "forbids, arriving through the error path. A cross-layer fallback is worse than "
+            "no fallback: fix the environment instead."
+        ) from _q0_exc
 
 
 def expose_polynomial(

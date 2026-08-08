@@ -94,8 +94,13 @@ except Exception:
 try:
     from q_parameter import q_at
     Q0 = str(q_at())
-except Exception:
-    Q0 = "1.1099785955573347198997632204832250266562084087802"
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 
 # exact bare characters at n = 4 (7a convention), derived in the docstring
 q = sp.symbols("q", positive=True)

@@ -73,9 +73,13 @@ def _q0() -> "mp.mpf":
     try:
         from qou_substrate.constants import Q  # type: ignore[import-not-found]
         return mp.mpf(str(Q)), "qou_substrate.constants.Q (package pin)"
-    except Exception:
-        # Fallback: canonical muon-q₀ value used by the computations/ layer.
-        return mp.mpf("1.10997859555733471"), "muon-q₀ literal (computations/ layer)"
+    except Exception as _q0_exc:
+        raise RuntimeError(
+            "q0 accessor unavailable. Substituting the muon literal here would compute "
+            "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+            "forbids, arriving through the error path. A cross-layer fallback is worse than "
+            "no fallback: fix the environment instead."
+        ) from _q0_exc
 
 
 def _q_int(k: int, q: "mp.mpf") -> "mp.mpf":

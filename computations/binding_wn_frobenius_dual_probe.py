@@ -48,8 +48,13 @@ except Exception:
 try:
     from q_parameter import Q as Q0
     q = mp.mpf(str(Q0))
-except Exception:
-    q = mp.mpf("1.10997859555733471")
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 from wedderburn_jones_markov import y_lambda_at
 
 

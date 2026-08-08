@@ -41,8 +41,13 @@ from codata_constants import (  # noqa: E402 — canonical PDG registry
 try:
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
     Q0 = float(Q_50_DIGIT_STR[:20])
-except Exception:
-    Q0 = 1.10997859555733
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 
 
 def partitions_of(n):

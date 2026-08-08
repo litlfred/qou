@@ -68,8 +68,12 @@ try:
     Q0 = mp.mpf(str(q_at()))
     Q0_SRC = "qou_substrate.constants.q_at (proton pin)"
 except Exception:  # pragma: no cover
-    Q0 = mp.mpf("1.10997859555733")
-    Q0_SRC = "literal fallback"
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    )
 
 N = 16  # series/cyclotomic depth
 

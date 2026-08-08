@@ -49,8 +49,13 @@ except Exception:
 try:
     from q_parameter import Q_50_DIGIT_STR as Q0
     q0 = mp.mpf(Q0)
-except Exception:
-    q0 = mp.mpf('1.1099785955573347')
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 
 I_TELEPHONE = [1, 1, 2, 4, 10, 26, 76, 232, 764]  # OEIS A000085
 

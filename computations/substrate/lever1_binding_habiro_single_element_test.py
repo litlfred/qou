@@ -45,8 +45,13 @@ from young_qdim import q, qint, qfact, S  # noqa: E402
 try:
     from qou_substrate import constants as C  # noqa: E402
     Q0 = str(C.Q_MP) if hasattr(C, "Q_MP") else str(C.Q)
-except Exception:
-    Q0 = "1.10997859555733471"  # muon-q0 fallback (computations layer canonical)
+except Exception as _q0_exc:
+    raise RuntimeError(
+        "q0 accessor unavailable. Substituting the muon literal here would compute "
+        "at the IDEAL pin under proton labelling -- the straddle AGENTS.md q0-anchor "
+        "forbids, arriving through the error path. A cross-layer fallback is worse than "
+        "no fallback: fix the environment instead."
+    ) from _q0_exc
 
 MMAX = 10
 print(f"[1/4] Computing binding period S(0..{MMAX}) (symbolic in q) ...", flush=True)
