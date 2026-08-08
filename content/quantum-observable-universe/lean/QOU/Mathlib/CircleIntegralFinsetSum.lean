@@ -127,8 +127,6 @@ theorem finprod_zpow_eq_finset_prod_npow {D : ℂ → ℤ} (hD : ∀ x, 0 ≤ D 
   conv_lhs => rw [show (D a) = ((D a).toNat : ℤ) from (Int.toNat_of_nonneg (hD a)).symm]
   rw [zpow_natCast]
 
-section Factorisation
-
 open Filter Topology MeromorphicOn
 
 /-- **An analytic function factorises over its zeros on a relatively compact,
@@ -136,13 +134,18 @@ connected open set.**
 
 `extract_zeros_poles` gives this modulo a codiscrete set and in `finprod`/`zpow`
 form; the identity theorem upgrades the equality and
-`finprod_zpow_eq_finset_prod_npow` normalises the shape. -/
+`finprod_zpow_eq_finset_prod_npow` normalises the shape.
+
+The multiplicities are strictly positive and `S ⊆ V`, so `S` is *exactly* the
+zero set of `f` on `V` — without those, `a ∈ S` would carry no information and
+the factorisation could not be read backwards. -/
 theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
     (hVconn : IsPreconnected V) (hVne : V.Nonempty) (hK : IsCompact K) (hVK : V ⊆ K)
     {f : ℂ → ℂ} (hf : AnalyticOnNhd ℂ f K)
     (hord : ∀ u : V, meromorphicOrderAt f u ≠ ⊤) :
     ∃ (S : Finset ℂ) (m : ℂ → ℕ) (g : ℂ → ℂ),
-      AnalyticOnNhd ℂ g V ∧ (∀ u : V, g u ≠ 0) ∧
+      AnalyticOnNhd ℂ g V ∧ (∀ u : V, g u ≠ 0) ∧ (∀ a ∈ S, 0 < m a) ∧
+      (∀ a ∈ S, a ∈ V) ∧
       Set.EqOn f (fun z => (∏ a ∈ S, (z - a) ^ (m a)) * g z) V := by
   classical
   have hfV : AnalyticOnNhd ℂ f V := hf.mono hVK
@@ -151,9 +154,21 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
   have hfinite : (divisor f V).support.Finite :=
     QOU.Mathlib.divisor_support_finite_of_subset hf.meromorphicOn hK hVK
   obtain ⟨g, hg, hgne, hEq⟩ := hmV.extract_zeros_poles hord hfinite
-  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_⟩
   -- the divisor is `≥ 0` because `f` is analytic
   have hDnn : ∀ x, 0 ≤ (divisor f V) x := fun x => hfV.divisor_nonneg x
+  refine ⟨hfinite.toFinset, fun a => ((divisor f V) a).toNat, g, hg, hgne, ?_, ?_, ?_⟩
+  · -- a point of the support has a nonzero, hence positive, divisor value
+    intro a ha
+    have hne0 : (divisor f V) a ≠ 0 := by
+      have := (Set.Finite.mem_toFinset hfinite).1 ha
+      rwa [Function.mem_support] at this
+    have hnn := hDnn a
+    -- `show` first: the goal is a beta-redex, which `omega` treats as opaque
+    show 0 < ((divisor f V) a).toNat
+    omega
+  · -- a divisor is supported inside its domain
+    exact fun a ha =>
+      (divisor f V).supportWithinDomain ((Set.Finite.mem_toFinset hfinite).1 ha)
   -- upgrade the codiscrete equality to genuine equality
   haveI : NeBot (codiscreteWithin V) := QOU.Mathlib.codiscreteWithin_neBot hV hVne
   refine QOU.Mathlib.eqOn_of_eventuallyEq_codiscreteWithin hfV ?_ hVconn ?_
@@ -175,7 +190,37 @@ theorem exists_finset_factorisation {V K : Set ℂ} (hV : IsOpen V)
     rw [finprod_apply hms z]
     exact finprod_zpow_eq_finset_prod_npow hDnn hfinite z
 
-end Factorisation
+/-- **In a `Finset` factorisation the exponent at a factor is the order of
+vanishing there.**
+
+Splitting `(· − a)^{m a}` off the product leaves an analytic function that does
+not vanish at `a` — the two remaining kinds of factor, `(· − b)^{m b}` for
+`b ≠ a` and the cofactor `g`, are both nonzero there — and that is exactly what
+`analyticOrderAt f a = m a` says. -/
+theorem analyticOrderAt_eq_of_finset_factorisation {V : Set ℂ} (hV : IsOpen V)
+    {S : Finset ℂ} {m : ℂ → ℕ} {f g : ℂ → ℂ}
+    (hg : AnalyticOnNhd ℂ g V) (hgne : ∀ z ∈ V, g z ≠ 0) (hSV : ∀ a ∈ S, a ∈ V)
+    (hEq : Set.EqOn f (fun z => (∏ a ∈ S, (z - a) ^ (m a)) * g z) V)
+    {a : ℂ} (ha : a ∈ S) : analyticOrderAt f a = m a := by
+  classical
+  have haV : a ∈ V := hSV a ha
+  have hpow : ∀ T : Finset ℂ,
+      AnalyticOnNhd ℂ (fun z : ℂ => ∏ b ∈ T, (z - b) ^ (m b)) V := fun T =>
+    Finset.analyticOnNhd_fun_prod _ fun b _ => (analyticOnNhd_id.sub analyticOnNhd_const).pow _
+  -- `f` is analytic at `a`, since it agrees with an analytic function near it
+  have hfA : AnalyticAt ℂ f a :=
+    (((hpow S) a haV).mul (hg a haV)).congr
+      (Filter.eventuallyEq_of_mem (hV.mem_nhds haV) hEq).symm
+  rw [hfA.analyticOrderAt_eq_natCast]
+  refine ⟨fun z => (∏ b ∈ S.erase a, (z - b) ^ (m b)) * g z,
+    ((hpow (S.erase a)) a haV).mul (hg a haV), ?_, ?_⟩
+  · refine mul_ne_zero (Finset.prod_ne_zero_iff.2 fun b hb => ?_) (hgne a haV)
+    exact pow_ne_zero _ (sub_ne_zero.2 (Ne.symm (Finset.ne_of_mem_erase hb)))
+  · filter_upwards [hV.mem_nhds haV] with z hz
+    have hval : f z = (∏ b ∈ S, (z - b) ^ (m b)) * g z := hEq hz
+    rw [hval, smul_eq_mul, ← mul_assoc]
+    congr 1
+    exact (Finset.mul_prod_erase S (fun b => (z - b) ^ (m b)) ha).symm
 
 end Factorisation
 
