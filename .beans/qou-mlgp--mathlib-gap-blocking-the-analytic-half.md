@@ -1030,3 +1030,60 @@ across `(0, 5pi/6]`. For `x >= pi/2` it is trivial (LHS <= 0 < RHS). For
     x^3 cos x < sin^3 x on (0,pi)   (monotonicity)       OPEN — one inequality,
                                                          needs sin x > x - x^3/6
     the final assembly                                   OPEN — bookkeeping
+
+## The last inequality is PROVED — x^3 cos x < sin^3 x
+
+`QOU/MathlibExt/SinCubeBounds.lean`, three declarations, all sorry-free on
+`[propext, Classical.choice, Quot.sound]`, wired at `QOU.lean:345`:
+
+    sub_cube_div_six_lt_sin                        x - x^3/6 < sin x      all x > 0
+    cos_lt_one_sub_sq_div_two_add_pow_four_div_24  cos x < 1 - x^2/2 + x^4/24
+    mul_cube_cos_lt_sin_cube                       x^3 cos x < sin^3 x    on (0, pi)
+
+**ANOTHER GAP MATHLIB DOCUMENTS AND DOES NOT FILL.** `Trigonometric/Bounds.lean`
+proves `sin_gt_sub_cube : x - x^3/4 < sin x` on `(0,1]`, and the comment right
+above it says "the tighter inequality is `sin x > x - x^3/6` for all `x > 0`,
+but this inequality has [a simpler proof]". The tighter form is supplied here,
+for ALL `x > 0` with no upper restriction. Same species as the Robbins gap:
+Mathlib names the sharper statement in prose and leaves it unformalised.
+
+**THE LADDER** — three monotonicity steps, each `f(0) = 0` plus `f' > 0`, each
+feeding the next:
+
+    1. f = sin x - x + x^3/6         f' = cos x - 1 + x^2/2 > 0
+       straight from Mathlib's one_sub_sq_div_two_lt_cos
+    2. g = 1 - x^2/2 + x^4/24 - cos x   g' = sin x - x + x^3/6 = f > 0
+       step 1 IS step 2's derivative positivity
+    3. (1 - x^2/6)^3 = 1 - x^2/2 + x^4/12 - x^6/216 exceeds 1 - x^2/2 + x^4/24
+       exactly when x^2 <= 9, so on (0, pi/2) step 2 gives cos x < (1-x^2/6)^3,
+       hence x^3 cos x < (x - x^3/6)^3 < sin^3 x by step 1.
+       For x >= pi/2 it is trivial: cos x <= 0 < sin^3 x.
+
+Note step 1 needed no upper bound on `x` at all — `one_sub_sq_div_two_lt_cos`
+holds for every `x != 0`, so `StrictMonoOn` on `Set.Ici 0` does the whole job.
+That is why the result is stronger than Mathlib's on both counts (constant AND
+range).
+
+## (A) — every analytic requirement is now discharged
+
+    reflection, trapezoid identity + bound, j=0 split, Robbins both sides,
+    order-2 EM one-cell + composite, |logSinc| <= x^2/3, |logSinc'| <= x,
+    |logSinc''| <= 1, int w g4 = int w'' g2, int w'' = 0,
+    x^3 cos x < sin^3 x  (logSinc'' monotone)                        ALL PROVED
+
+What remains is the ASSEMBLY and nothing else:
+  * instantiate the composite rule at `g = logSinc`, `a = h`, `k-1` cells,
+    with the `int w'' g''` remainder form and the telescoping oscillation bound;
+  * add `sum_log_two_sin_split` and the Robbins bounds for `log(k!)`;
+  * collect the three `h`-endpoint terms with `|logSinc| <= x^2/3` and
+    `|logSinc'| <= x`;
+  * read off `s_k = (N/pi)Lambda(th) - (1/2)log(2N sin th) - (pi/12N)cot(th)
+    + O(1/N^2)`.
+
+Two caveats worth keeping honest: the composite rule as proved takes the
+remainder in `g4` form, so the assembly must route through
+`integral_weight_sq_mul_deriv4_eq` by hand (a composite version with the `g''`
+remainder and the telescoping bound is NOT yet stated as one theorem); and the
+telescoping step itself — `sum of per-cell oscillations = TV` for a monotone
+function — is not formalised either. Both are bookkeeping over existing pieces,
+but they are bookkeeping that has not been done.
