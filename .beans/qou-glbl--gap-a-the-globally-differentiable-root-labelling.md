@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: the globally differentiable root labelling — the last hypothesis in the transport'
+title: 'Gap A: the root labelling — (b) CONTINUITY through the collision is PROVED; (a) local differentiability remains'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T22:20:00Z
+updated_at: 2026-08-08T22:45:00Z
 ---
 
 ## What is open
@@ -63,6 +63,35 @@ stating: at `φ₀` the two colliding roots converge *to the same value*. So any
 labelling has both branches tending to a common limit — **continuity survives
 exactly what differentiability does not.** The bean's title ("globally
 differentiable") named the wrong requirement.
+
+### ✅ (b) IS PROVED — `continuous_otherRoots`, 2026-08-08
+
+    continuous_otherRoots : Continuous (fun p : ℝ × ℝ => otherRoots p.1 p.2)
+
+`QOU/QBeta/FiveTwoRootStructure.lean`, sorry-free, `lake`-verified, axioms
+`[propext, Classical.choice, Quot.sound]`. Checked at an actual collision
+(`γ = β²/4`), where the two roots genuinely coincide.
+
+`otherRoots` is piecewise on the sign of `β² − 4γ` — and that sign change **is**
+the collision. It is continuous anyway, because at `β² − 4γ = 0` **both branches
+give `(−β/2, −β/2)`**: `Real.sqrt 0 = 0` on one side, and the imaginary part
+vanishes on the other. `Continuous.if_le` is exactly the right shape, and its
+boundary obligation is precisely that agreement.
+
+So the *labelling of the colliding pair* is continuous through the collision,
+while not being differentiable there. **That asymmetry is what makes Gap A
+tractable**, and it is now a theorem rather than an argument.
+
+### What remains: (a) only
+
+A locally differentiable labelling on `[0,π] ∖ {φ₀}`, and the real root `t(φ)`
+globally. The scalar IFT (`QOU.MathlibExt.ImplicitScalar`, proved) supplies it,
+with non-degeneracy from `|∂p/∂y| ≥ 1.75` at the real root (Route 32 G8). Then
+`envelopeS_total`'s exceptional-point form closes the transport.
+
+Note the pieces now sit on both sides of `φ₀`: `continuous_otherRoots` handles
+the collision, the IFT handles everything else, and `envelopeS_total` glues them
+with one point excluded.
 
 ## What the hypotheses actually demand — measured, not assumed
 

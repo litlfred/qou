@@ -182,6 +182,30 @@ noncomputable def otherRoots (β γ : ℝ) : ℂ × ℂ :=
     (((-β / 2 : ℝ) : ℂ) + ((Real.sqrt (4 * γ - β ^ 2) / 2 : ℝ) : ℂ) * Complex.I,
      ((-β / 2 : ℝ) : ℂ) - ((Real.sqrt (4 * γ - β ^ 2) / 2 : ℝ) : ℂ) * Complex.I)
 
+/-- **`otherRoots` is continuous — including THROUGH the collision.**
+
+Bean `qou-glbl` part (b). The formula is piecewise on the sign of `β² − 4γ`, and
+that is exactly where the two roots collide. It is nonetheless continuous, for
+the reason that makes Gap A tractable at all: at `β² − 4γ = 0` **both branches
+give `(−β/2, −β/2)`** — `Real.sqrt 0 = 0` on one side, and the imaginary part
+vanishes on the other.
+
+So the *labelling* is continuous across the collision even though it is not
+differentiable there. That is the asymmetry `qou-glbl` turns on: continuity
+survives exactly what differentiability does not. -/
+theorem continuous_otherRoots :
+    Continuous (fun p : ℝ × ℝ => otherRoots p.1 p.2) := by
+  unfold otherRoots
+  have hsq : Continuous Real.sqrt := Real.continuous_sqrt
+  refine Continuous.if_le ?_ ?_ continuous_const (by fun_prop) ?_
+  · exact Continuous.prodMk (by fun_prop) (by fun_prop)
+  · exact Continuous.prodMk (by fun_prop) (by fun_prop)
+  · intro q hq
+    -- on the boundary `0 = β² − 4γ`, both branches are `(−β/2, −β/2)`
+    have h1 : q.1 ^ 2 - 4 * q.2 = 0 := hq.symm
+    have h2 : 4 * q.2 - q.1 ^ 2 = 0 := by linarith
+    simp [h1, h2, Real.sqrt_zero]
+
 theorem otherRoots_sum (β γ : ℝ) : (otherRoots β γ).1 + (otherRoots β γ).2 = -β := by
   unfold otherRoots
   split_ifs <;> · push_cast; ring
