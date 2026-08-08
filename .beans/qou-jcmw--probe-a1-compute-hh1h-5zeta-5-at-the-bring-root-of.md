@@ -23,7 +23,14 @@ induced action is canonically attached to the class. This direction is EXACT
 (rank_p <= rank_0, so a non-containment mod p persists to characteristic 0), and
 it closes the degree-mismatch worry the 08-08 assessment raised.
 
-**The bar-parity sub-test is VACUOUS.** Over Q(zeta), bar is a sigma-semilinear
+**The bar-parity sub-test is VACUOUS — but this DUPLICATES bean `qou-qb8b`,
+which landed on main first the same day** (docs/audits/2026-08-08-hh1-outer-
+class-bar-parity-prune-does-not-exist.md). Cite that one; mine is independent
+corroboration only, and its audit explicitly advised NOT running this leg.
+Corpus-grep failure on my part: checked at session start, not re-checked before
+claiming. The genuinely new parts are the H_5(zeta_5) dimension count + cocenter
+rank (which qou-qb8b left as "remains worth doing") and the cost correction
+(480 unknowns, not the 14,400 that audit estimated -- so H_5 is cheap). Over Q(zeta), bar is a sigma-semilinear
 algebra automorphism of H_n(zeta) itself. With dim HH^1 = 1, [D^bar] = mu.[D]
 forces mu.sigma(mu) = 1; Hilbert 90 gives mu = nu/sigma(nu); and since
 sigma(a) = -a for a = zeta - zeta^{-1}, the generators nu.D and a.nu.D of the

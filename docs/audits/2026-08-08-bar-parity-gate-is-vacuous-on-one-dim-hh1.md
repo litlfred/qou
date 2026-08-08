@@ -1,132 +1,96 @@
-# The bar-parity gate is vacuous on a one-dimensional HH¹ (2026-08-08)
+# Bar-parity on a 1-dim HH¹ — independent corroboration of `qou-qb8b`, and a cost correction
 
 **Bean:** `qou-jcmw` · **Tier:** exact symbolic (ℚ(i) + ℚ[x]/Φ₅) · **Wired:** nothing.
-**No fit, no free parameter.** Producer:
-[`hh1_bar_parity_is_not_an_invariant.py`](../../computations/hh1_bar_parity_is_not_an_invariant.py) ·
-witness: `computations/hh1-bar-parity-not-an-invariant.witness.json`.
 
-Completes the bean opened by
-[`2026-08-08-qbeta-l2-assessment-post-week-landings.md` §5](2026-08-08-qbeta-l2-assessment-post-week-landings.md)
-and continued in
-[`2026-08-08-hh1-h5-bring-root-cocenter-action.md`](2026-08-08-hh1-h5-bring-root-cocenter-action.md).
-
-**Result: the proposed gate cannot prune anything.** Not because the outer class
-passes it — because bar parity is not a property of the class at all.
+> ## 🛑 THIS RESULT IS NOT NEW — READ [`2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md`](2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md) FIRST
+>
+> Bean `qou-qb8b` established the same conclusion earlier the same day and
+> **landed on `main` first**: the bar-parity of the HH¹ outer class acting on
+> the cocenter is a choice of normalization, not an invariant, so the proposed
+> prune cannot exist. That audit is the canonical statement. This document is
+> an **independent re-derivation**, kept per AGENTS.md §"Parallel exploration"
+> ("two independent confirmations of an open result are valuable") — not a
+> discovery, and it must not be cited as one.
+>
+> **My corpus-grep failure.** I ran the checklist at session start and then
+> claimed this result hours later without re-running it, against a corpus that
+> had moved. That is the #1515 / #1532 / #1543 pattern, committed by the same
+> session that quoted the rule two documents earlier. Recorded, not buried.
 
 ---
 
-## 0. What was being asked, and why it was ill-posed
+## 1. What the two derivations share
 
-The 08-08 assessment set the test:
+Both reach: with `dim_K HH¹ = 1`, `[D^bar] = μ·[D]` forces `μ·σ(μ) = 1`;
+Hilbert 90 for `ℚ(ζ)/ℚ(ζ)⁺` makes `μ = ν/σ(ν)` always solvable; and since
+`σ(a) = −a` for `a = ζ − ζ⁻¹`, rescaling by a bar-odd scalar flips the parity.
+Both verify on `H₃` in exact cyclotomic arithmetic.
 
-> *"test whether the outer class's action on the cocenter is **bar-odd**. If it is
-> bar-**even**, the whole route dies to the same bar-parity invariant that killed
-> the real resolvent."*
+`qou-qb8b`'s version is **stronger** and should be the one cited:
 
-Parts 1–2 established `dim HH¹(H₅(ζ₅)) = 1` and that the class acts with rank 1
-on the 7-dimensional cocenter. Part 3 could only measure a *sign-twisted* shadow
-of bar, because over `F_p` the involution `q ↦ q⁻¹` has no home.
+- it runs **two** roots (`q = i`, `q = ζ₆`) and finds them on **opposite** raw
+  parities (`λ = +1` vs `λ = −1`) — the asymmetry is itself the symptom, and it
+  is more convincing than my single-point check;
+- it exhibits the flip **constructively** at both points rather than resting on
+  the theorem;
+- it explains *why* the real-resolvent prune worked and this one cannot (over
+  ℝ bar acts trivially, so parity is rigid; at a root of unity `ℚ(ζ)` contains
+  bar-odd scalars for free) — the part genuinely worth carrying forward;
+- it carries a successor (`qou-qb8d`) that runs the **pinned** test and finds
+  the trace-paired number `S_x = tr_M(Δ(x))` is **MIXED with a nonzero bar-odd
+  part** — a positive indication for the carrier that my work does not reach.
 
-Done properly over `ℚ(ζ)`, the question dissolves: **a one-dimensional HH¹ has
-generators of both parities.**
+My contribution to this specific question is one more independent confirmation.
+That has some value and no priority.
 
-## 1. Bar really is an automorphism over ℚ(ζ) — the step F_p could not see
+## 2. What this branch does add
 
-Over `K = ℚ(ζ)`, `bar : T_i ↦ T_i − a` together with `σ : ζ ↦ ζ⁻¹` is a
-**σ-semilinear algebra automorphism of `A = H_n(ζ)` itself** — it maps `A` to
-`A`, unlike over `F_p` where it maps `H_z → H_{z⁻¹}`. Applying it to the defining
-relation and using `σ(a) = −a`:
+Two things, neither of which is the parity result.
 
-```
-(T_i − a)^2 − σ(a)(T_i − a) − 1  =  T_i^2 − a T_i − 1  =  0
-```
+**(a) The dimension count at the actual Bring root.** `qou-qb8b`'s audit says
+explicitly that `qou-jcmw` *"remains worth doing for its dimension count"*.
+Done: **`dim HH¹(H₅(ζ₅)) = 1`**, with a semisimple control at generic `q`
+giving 0, and the outer class acting with **rank 1 on the 7-dimensional
+cocenter** — the `H₅` instance of the not-trace-blind mechanism `qou-qb8b`
+established at `H₃`. See
+[`2026-08-08-hh1-h5-bring-root-cocenter-action.md`](2026-08-08-hh1-h5-bring-root-cocenter-action.md).
 
-Verified exactly in the producer (`M · σ(M) = I`, and `bar(B_i B_j) =
-bar(B_i)·bar(B_j)` on all 36 basis pairs).
+**(b) A cost correction that reverses an operational recommendation.** That
+audit's §"do not spend the H₅ computation on this" estimates `H₅` at *"dim 120
+— 14 400 unknowns and ~1.7M Leibniz equations"* and treats the expense as a
+reason to skip it. That estimate parametrizes a derivation by its **full
+matrix** on the 120-dimensional algebra.
 
-## 2. The argument
-
-`bar` preserves `Der` and `Inn`, so it acts σ-semilinearly on `HH¹`. With
-`dim_K HH¹ = 1`, write `[D^bar] = μ·[D]`. Applying `bar` twice:
-
-```
-D  =  bar^2 D bar^{-2}  =  σ(μ)·μ·D      =>      μ·σ(μ) = 1
-```
-
-`K/K^σ` is a quadratic extension, so **Hilbert 90** gives `μ = ν/σ(ν)`. Then:
-
-| generator | parity |
-|---|---|
-| `ν·D` | **bar-even** |
-| `a·ν·D` | **bar-odd** |
-
-because `σ(a) = −a`. Both are generators of the *same line*. So parity is a
-property of a **chosen generator**, not of the class — and on a one-dimensional
-`HH¹` it carries no information.
-
-**Free corollary.** Since `B·D₀·B⁻¹ = μ·D₀` is a scalar multiple, `im(D₀)` and
-`ker(D₀)` are automatically **bar-stable**. The refined form of the question —
-"does the outer class respect the bar-decomposition of `HH₀`?" — is therefore
-also answered, affirmatively, with no computation.
-
-## 3. Verification
-
-The argument uses only three hypotheses: `dim HH¹ = 1`, `σ(a) = −a`, and
-`K/K^σ` quadratic. It is uniform in `n`, so it was verified in **exact ℚ(i)
-arithmetic on `H₃` at `q = i`** — 6-dimensional, every step checkable — rather
-than asserted:
+A derivation is determined by its values on the `n−1` **generators**, with the
+defining relations as constraints. For `H₅` that is
 
 ```
-dim Der = 4   dim Inn = 3   dim HH^1 = 1                      ✓
-sigma(a) = -a                                                 ✓
-bar is an involution  (M . sigma(M) = I)                      ✓
-bar is an algebra automorphism (all 36 basis pairs)           ✓
-D^bar is again a derivation                                   ✓
-[D^bar] = mu.[D]   with mu = 1,   mu.sigma(mu) = 1            ✓
-Hilbert 90:  mu = nu/sigma(nu),  nu = 2                       ✓
-  generator  nu.D    :  bar-even                              ✓
-  generator  a.nu.D  :  bar-odd                               ✓
+4 x 120  =   480 unknowns          (not 14 400)
+10 relations x 120 = 1 200 equations (not ~1.7M)
 ```
 
-All three hypotheses hold for `H₅(ζ₅)`: `dim HH¹ = 1` was computed in part 1;
-`σ(a) = −a` and `σ² = id` are verified **algebraically** in `ℚ[x]/Φ₅(x)` with
-`σ : x ↦ x⁴` (going through `exp(2πi/5)` leaves sympy holding an unreduced
-`conjugate(sin(2π/5))` and reports a spurious failure — noted because the first
-run did exactly that); and `ℚ(ζ₅)/ℚ(√5)` is quadratic with `Gal = {1, σ}`.
+— a 1 200 × 480 modular rank, which runs in seconds. The saving is ~30× in
+unknowns and ~1400× in equations.
 
-## 4. Scope, and what this does and does not mean
+So the cost argument for skipping `H₅` does not hold, and the dimension count
+it deferred is cheap. That is the actionable part of this branch: **`H₅` at the
+Bring root is not an expensive computation**, and neither is `H₆`/`H₇` if
+wanted.
 
-**Scope-(b) — but about the GATE, not about the route.** Invariant cited: Hilbert
-90 for `K/K^σ` together with `σ(a) = −a`. What is excluded is the *inference*
-"the class is bar-even, therefore the route dies". That inference is unavailable,
-permanently, for any one-dimensional `HH¹`.
+## 3. Correction to my own earlier framing in this branch
 
-**This neither advances nor refutes c₃.** It removes a proposed filter. The
-surviving state of the route is unchanged from part 2:
+An earlier commit here reported a **Θ-even** result from a sign-twisted bar
+over `F_p` and called the true bar-parity question "the decisive gate", with
+the ℚ(ζ₅) computation as the next step. Given `qou-qb8b`, that framing was
+already wrong when written: there is no gate, and the ℚ(ζ₅) step it proposed
+had already been run by someone else. The `F_p` Θ-shadow work retains only its
+narrow correct point — that bar does not act on a single finite-field
+specialization — which `qou-qb8b` states more directly.
 
-- source object exists (`HH¹ = 1`), computed not assumed;
-- it is trace-visible (`D₀ ≠ 0`, exact), so the `HH₀`/`HH¹` degree mismatch is
-  not an obstruction;
-- **no parity obstruction exists** (this document);
-- and it is still true that nobody has shown the c₃ swing *is* this class, that
-  the HH¹ modules were built for the P≠NP residue, and that `q₀ ≈ 1.10998` is not
-  a root of unity — the target remains a Habiro-ring element evaluated at `q₀`.
+## 4. Net
 
-Co-location is still not identification. What has changed is that the three cheap
-ways of killing this lead are now all spent, so it has to be worked or left
-alone on its merits.
-
-## 5. Consequence for how parity gates are stated elsewhere
-
-The bar-parity argument that *did* work — the real-`q₀` exclusion chain
-(#4282/#4288/#4293), where a real, trace-built bar-**even** Gram resolvent cannot
-carry the bar-**odd** `S` — is unaffected. There the objects compared are
-*specific elements* with fixed normalisations, not generators of a line, so
-parity is genuinely an invariant of what is being compared.
-
-The lesson is narrow and worth recording: **a parity gate needs a canonically
-normalised object.** Applied to a one-dimensional cohomology class it is vacuous,
-and any future "is class X bar-odd?" test should first say what fixes X's scale.
-If the normalisation would come from matching the c₃ magnitude, that is a fit and
-is forbidden — which is the real reason this particular gate was never going to
-work.
+- Bar-parity: **duplicated**, cite `qou-qb8b`.
+- `dim HH¹(H₅(ζ₅)) = 1` and rank-1 cocenter action at the Bring root: **new**,
+  and explicitly the piece `qou-qb8b` left open.
+- `H₅` is cheap, not expensive: **new**, and it reverses a recommendation.
+- c₃ and the Q_β derivation gap: **unchanged** by any of this.

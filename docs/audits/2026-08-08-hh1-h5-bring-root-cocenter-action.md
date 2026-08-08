@@ -3,6 +3,18 @@
 **Bean:** `qou-jcmw` · **Tier:** compute probe (modular-exact) · **Wired:** nothing.
 **No fit, no free parameter, no AME inversion.**
 
+> **🛑 Read [`2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md`](2026-08-08-hh1-outer-class-bar-parity-prune-does-not-exist.md)
+> (bean `qou-qb8b`) first.** It landed on `main` earlier the same day and
+> already establishes (i) that the bar-parity prune **cannot exist** — parity is
+> normalization, not an invariant — and (ii) at `H₃`, that the outer class is
+> **not trace-blind** (`tr_M ∘ Δ ≠ 0`), with a pinned trace-paired successor
+> showing a nonzero **bar-odd** component. What is new here is narrower than
+> the original text below implied: the **dimension count and cocenter rank at
+> the actual Bring root `H₅(ζ₅)`** — the piece `qou-qb8b` explicitly left as
+> *"remains worth doing"* — plus the finding that it is **cheap** (480 unknowns,
+> not the 14 400 that audit estimated). The §3 parity discussion below is
+> superseded; see [`2026-08-08-bar-parity-gate-is-vacuous-on-one-dim-hh1.md`](2026-08-08-bar-parity-gate-is-vacuous-on-one-dim-hh1.md) §1.
+
 Runs the falsifiable prune named in
 [`2026-08-08-qbeta-l2-assessment-post-week-landings.md` §5](2026-08-08-qbeta-l2-assessment-post-week-landings.md):
 
@@ -89,8 +101,10 @@ Since every trace factors through the cocenter
 > **The unique outer derivation of `H₅` at the Bring root is trace-visible — it
 > can move `tr_M`.**
 
-That is the property the c₃ route needs from this object, and it is now
-established rather than hoped for. It also closes the degree-mismatch worry the
+This is the `H₅` instance of a mechanism `qou-qb8b` had already established at
+`H₃` (`tr_M ∘ Δ ≠ 0`, with the trace-paired number MIXED and carrying a nonzero
+bar-odd part). It confirms at the Bring case what was shown on the toy — an
+extension, not a discovery. It also closes the degree-mismatch worry the
 08-08 assessment raised (c₃ lives in `HH₀`, derivations in `HH¹`): the bridge
 `HH¹ ↷ HH₀` is nonzero here, so the two degrees do connect.
 
