@@ -87,6 +87,7 @@ variable [DecidableRel (IsConj : G → G → Prop)]
 noncomputable def classSum (c : ConjClasses G) : MonoidAlgebra k G :=
   ∑ g ∈ c.carrier.toFinset, MonoidAlgebra.single g (1 : k)
 
+omit [Fintype G] [DecidableEq G] [DecidableRel (IsConj : G → G → Prop)] in
 /-- Conjugation-invariance of the coefficients of a central element.
 
 `z` central means `single h 1 * z = z * single h 1` for every `h`; comparing
@@ -104,6 +105,7 @@ theorem coeff_conj_eq_of_mem_center {z : MonoidAlgebra k G}
     simp
   rw [← hL, hcomm, hR]
 
+omit [Fintype G] [DecidableEq G] [DecidableRel (IsConj : G → G → Prop)] in
 /-- The coefficients of a central element are constant on conjugacy classes. -/
 theorem coeff_eq_of_isConj {z : MonoidAlgebra k G}
     (hz : z ∈ Subalgebra.center k (MonoidAlgebra k G)) {g g' : G} (hc : IsConj g g') :
@@ -114,12 +116,14 @@ theorem coeff_eq_of_isConj {z : MonoidAlgebra k G}
   rw [← hg']
   exact coeff_conj_eq_of_mem_center hz _ _
 
+omit [DecidableEq G] in
 /-- Each conjugacy class's carrier is the fibre of `ConjClasses.mk` over it. -/
 theorem carrier_toFinset_eq_filter (c : ConjClasses G) :
     c.carrier.toFinset = Finset.univ.filter (fun g : G => ConjClasses.mk g = c) := by
   ext g
   simp [ConjClasses.mem_carrier_iff_mk_eq]
 
+omit [DecidableEq G] in
 /-- **The centre is contained in the span of the class sums.**
 
 A central `z` is constant on classes, so `z = Σ_c z(cᵒᵘᵗ) · classSum c`; the
@@ -161,6 +165,7 @@ section CenterField
 variable {k G : Type*} [Field k] [Group G] [Fintype G] [DecidableEq G]
   [DecidableRel (IsConj : G → G → Prop)]
 
+omit [DecidableEq G] in
 /-- **`dim_k Z(k[G]) ≤ #conj classes`.**  Immediate from `center_le_span_classSum`
 and `finrank_range_le_card`. -/
 theorem finrank_center_le_card_conjClasses :
@@ -173,5 +178,77 @@ theorem finrank_center_le_card_conjClasses :
     (finrank_range_le_card _)
 
 end CenterField
+
+/-! ## 3. Class functions
+
+A function `G → k` constant on conjugacy classes is determined by its values on
+`ConjClasses G`, so the space of them has dimension at most the number of
+classes.  This is the target the characters of pairwise non-isomorphic simple
+modules land in, and the reason `#simples ≤ #conj classes`. -/
+
+section ClassFunctions
+
+variable (k G : Type*) [CommRing k] [Group G]
+
+/-- The **class functions** `G → k`: those constant on conjugacy classes. -/
+def classFunctions : Submodule k (G → k) where
+  carrier := {f | ∀ g h : G, f (h * g * h⁻¹) = f g}
+  zero_mem' := by intro _ _; rfl
+  add_mem' hf hg := by intro x h; simp only [Pi.add_apply, hf x h, hg x h]
+  smul_mem' c f hf := by intro x h; simp only [Pi.smul_apply, hf x h]
+
+variable {k G}
+
+theorem mem_classFunctions {f : G → k} :
+    f ∈ classFunctions k G ↔ ∀ g h : G, f (h * g * h⁻¹) = f g := Iff.rfl
+
+/-- A class function takes the same value on conjugate elements. -/
+theorem classFunctions_apply_of_isConj {f : G → k} (hf : f ∈ classFunctions k G)
+    {g g' : G} (hc : IsConj g g') : f g' = f g := by
+  obtain ⟨u, hu⟩ := hc
+  have hg' : (u : G) * g * (u : G)⁻¹ = g' := by rw [hu.eq]; group
+  rw [← hg']
+  exact hf g u
+
+variable [Fintype G] [DecidableRel (IsConj : G → G → Prop)]
+
+/-- Restriction of a class function to conjugacy classes. -/
+noncomputable def onClasses : classFunctions k G →ₗ[k] (ConjClasses G → k) where
+  toFun f := fun c => (f : G → k) c.out
+  map_add' _ _ := rfl
+  map_smul' _ _ := rfl
+
+omit [Fintype G] [DecidableRel (IsConj : G → G → Prop)] in
+theorem onClasses_injective : Function.Injective (onClasses (k := k) (G := G)) := by
+  intro f₁ f₂ hf
+  refine Subtype.ext (funext (fun g => ?_))
+  have hcls := congrFun hf (ConjClasses.mk g)
+  have hconj : IsConj g (ConjClasses.mk g).out := by
+    rw [← ConjClasses.mk_eq_mk_iff_isConj]
+    exact ((ConjClasses.quotient_mk_eq_mk _).symm.trans
+      (Quotient.out_eq (ConjClasses.mk g))).symm
+  rw [← classFunctions_apply_of_isConj f₁.2 hconj,
+    ← classFunctions_apply_of_isConj f₂.2 hconj]
+  exact hcls
+
+end ClassFunctions
+
+section ClassFunctionsField
+
+variable {k G : Type*} [Field k] [Group G] [Fintype G]
+  [DecidableRel (IsConj : G → G → Prop)]
+
+/-- **`dim_k {class functions} ≤ #conj classes`.**  A class function is
+determined by its values on classes. -/
+theorem finrank_classFunctions_le :
+    Module.finrank k (classFunctions k G) ≤ Fintype.card (ConjClasses G) := by
+  classical
+  haveI : Module.Finite k (G → k) := Module.Finite.pi
+  have h := LinearMap.finrank_le_finrank_of_injective
+    (f := onClasses (k := k) (G := G)) onClasses_injective
+  rw [Module.finrank_fintype_fun_eq_card] at h
+  exact h
+
+end ClassFunctionsField
 
 end QOU.MathlibExt.GroupAlgebraCenter

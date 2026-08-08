@@ -87,4 +87,32 @@ theorem inf_orthogonalBilin_eq_bot [Fintype ι] [DecidableEq ι]
   rw [← hW]
   exact span_inf_orthogonalBilin_eq_bot B v hdet
 
+/-! ## Diagonal Gram ⇒ linear independence
+
+The other thing a Gram matrix is good for. Nondegeneracy above needs the whole
+matrix invertible; independence needs only that it is **diagonal with nonzero
+diagonal**, which is what an orthogonality relation delivers without any
+normalisation of the diagonal entries.
+
+This is the step that lets the Specht completeness count avoid
+`[IsAlgClosed k]`: `FDRep.char_orthonormal` pins the diagonal to `1` and needs
+algebraic closure to do it, but a *bound* only needs the diagonal nonzero. -/
+
+/-- **A family with a diagonal, nonvanishing Gram matrix is linearly
+independent.** No symmetry, no nondegeneracy of `B` elsewhere. -/
+theorem linearIndependent_of_gram_diagonal {ι : Type*} [Fintype ι]
+    (B : V →ₗ[k] V →ₗ[k] k) (v : ι → V)
+    (hoff : ∀ i j, i ≠ j → B (v i) (v j) = 0)
+    (hdiag : ∀ i, B (v i) (v i) ≠ 0) :
+    LinearIndependent k v := by
+  classical
+  refine Fintype.linearIndependent_iff.mpr (fun c hc j => ?_)
+  -- pair the relation with `v j`: every cross term dies
+  have h0 : B (∑ i, c i • v i) (v j) = 0 := by rw [hc]; simp
+  rw [map_sum, LinearMap.sum_apply] at h0
+  simp only [map_smul, LinearMap.smul_apply, smul_eq_mul] at h0
+  rw [Finset.sum_eq_single j (fun i _ hij => by rw [hoff i j hij, mul_zero])
+    (fun hj => absurd (Finset.mem_univ j) hj)] at h0
+  exact (mul_eq_zero.mp h0).resolve_right (hdiag j)
+
 end QOU.MathlibExt.GramNondegenerate
