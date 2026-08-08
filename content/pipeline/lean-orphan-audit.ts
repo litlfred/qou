@@ -26,6 +26,38 @@
  * eight failures were all stale references (renamed Mathlib lemmas, deleted QOU
  * declarations), i.e. exactly what a gate catches the day it happens.
  *
+ * ## An orphan is not only unverified — it ships no `.olean`
+ *
+ * Raised by the sibling lane on PR #4762, which hit this from the other end:
+ * importing the orphan `QOU.Mass.QHookDimensionBalanced` from a content-block
+ * `.lean` failed with
+ *
+ *     error: object file '.../QOU/Mass/QHookDimensionBalanced.olean' of module
+ *            QOU.Mass.QHookDimensionBalanced does not exist
+ *
+ * **Verified here, and the scope is narrower than "a latent build failure for
+ * every future consumer" — worth stating precisely, because the two paths
+ * differ:**
+ *
+ *   - `lake build QOU.Mass.QHookDimensionBalanced` **succeeds** (883 jobs).
+ *     Lake resolves imports transitively and builds the orphan on demand, so
+ *     orphan status costs a `lake` consumer inside the package nothing but time.
+ *   - The `.olean` is nonetheless **absent** from the build tree, because
+ *     nothing in the default target ever produced it. So every `lean`-DIRECT
+ *     consumer breaks — which is precisely the content-block sibling path
+ *     (`scripts/lean-verify-siblings.sh`), the one that cannot use lake.
+ *
+ * So: an orphan is a latent build failure for `lean`-direct and olean-cache
+ * consumers, not for `lake` within the package. Still a real cost — the sibling
+ * path is exactly where it bites — but claiming it breaks *every* consumer
+ * would be this lane's signature error: a claim adjacent to the one measured.
+ *
+ * Independent corroboration of scale, by a different method (#4762): 1630
+ * `.lean` sources under `QOU/` against 942 oleans on `lake-cache/qou-v4-24-0`,
+ * a ~213-file gap after allowing for post-cache additions. A lower bound from a
+ * stale cache; the import-reachability count below is the fuller number.
+ * Different denominators, same conclusion.
+ *
  * ## Modes
  *
  *   bun run content/pipeline/lean-orphan-audit.ts
