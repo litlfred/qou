@@ -1,5 +1,6 @@
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 import Mathlib.Analysis.Meromorphic.Divisor
+import Mathlib.Analysis.Analytic.IsolatedZeros
 
 /-!
 # Two Mathlib gaps at our pinned revision
@@ -23,7 +24,7 @@ and the first lets the contour integral be taken term by term.
 -/
 
 open scoped Real
-open MeasureTheory
+open MeasureTheory Filter Set Topology
 
 namespace QOU.Mathlib
 
@@ -63,5 +64,47 @@ theorem divisor_support_finite_of_subset {f : 𝕜 → F} {V : Set 𝕜}
     exact absurd rfl hz
 
 end Divisor
+
+section IdentityTheorem
+
+/-- Analytic functions agreeing codiscretely on a preconnected set agree on it. -/
+theorem eqOn_of_eventuallyEq_codiscreteWithin {f g : ℂ → ℂ} {U : Set ℂ}
+    (hf : AnalyticOnNhd ℂ f U) (hg : AnalyticOnNhd ℂ g U) (hU : IsPreconnected U)
+    [NeBot (codiscreteWithin U)]
+    (h : f =ᶠ[codiscreteWithin U] g) : EqOn f g U := by
+  rcases hf.eqOn_or_eventually_ne_of_preconnected hg hU with h' | h'
+  · exact h'
+  · exact absurd (eventually_false_iff_eq_bot.mp ((h.and h').mono fun _ hx => hx.2 hx.1))
+      (NeBot.ne inferInstance)
+
+
+
+section NeBot
+
+open Topology
+
+/-- For a nonempty open `U ⊆ ℂ`, the codiscrete-within filter is non-trivial.
+Without this the lemma above is vacuous. -/
+theorem codiscreteWithin_neBot {U : Set ℂ} (hU : IsOpen U) (hne : U.Nonempty) :
+    NeBot (codiscreteWithin U) := by
+  obtain ⟨x, hx⟩ := hne
+  rw [neBot_iff]
+  intro hbot
+  have hmem : (∅ : Set ℂ) ∈ codiscreteWithin U := hbot ▸ Filter.mem_bot
+  rw [mem_codiscreteWithin] at hmem
+  have hdis := hmem x hx
+  rw [Set.diff_empty, disjoint_iff] at hdis
+  -- `𝓝[≠] x ⊓ 𝓟 U = 𝓝[{x}ᶜ ∩ U] x`, and restricting to the neighbourhood `U`
+  -- does not change it, so it is `𝓝[≠] x` — non-trivial, as `ℂ` has no
+  -- isolated points.
+  rw [nhdsWithin, inf_assoc, inf_principal, ← nhdsWithin] at hdis
+  have hUmem : U ∈ 𝓝[{x}ᶜ] x := nhdsWithin_le_nhds (hU.mem_nhds hx)
+  have heq : 𝓝[{x}ᶜ ∩ U] x = 𝓝[≠] x := nhdsWithin_inter_of_mem' hUmem
+  rw [heq] at hdis
+  exact (PerfectSpace.not_isolated x).ne hdis
+
+end NeBot
+
+end IdentityTheorem
 
 end QOU.Mathlib

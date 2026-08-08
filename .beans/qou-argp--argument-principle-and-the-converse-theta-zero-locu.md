@@ -217,10 +217,15 @@ work is therefore:
 1. **`Finset`-index the annulus statement** — now unblocked: `integral_fun_sum`
    splits the contour integral over the factors, `divisor_support_finite_of_subset`
    makes the index set a `Finset`, `logDeriv_prod` splits the integrand.
-2. **Upgrade `extract_zeros_poles`'s codiscrete equality to genuine equality** on
-   the annulus. Both sides are analytic there (`θ_p` has no poles, so the divisor
-   is `≥ 0`) and the annulus is connected, so this is the identity theorem. *This
-   is the one step that is not a citation.*
+2. ~~**Upgrade `extract_zeros_poles`'s codiscrete equality to genuine
+   equality**~~ — **DONE**, same day. `eqOn_of_eventuallyEq_codiscreteWithin`
+   in `QOU/Mathlib/CircleIntegralFinsetSum.lean`, sorry-free. Six lines: Mathlib's
+   `eqOn_or_eventually_ne_of_preconnected` gives *either* `EqOn f g U` *or*
+   `f ≠ g` codiscretely; the second contradicts the hypothesis on a non-trivial
+   filter. `codiscreteWithin_neBot` supplies that non-triviality for a nonempty
+   open set — without it the lemma would have been vacuous, which is worth
+   stating since Mathlib has no `NeBot` instance for `codiscreteWithin` at the
+   pin.
 3. Apply to `θ_p` with `qTheta_winding_step`, which already gives winding
    difference `= 1`, forcing exactly one simple zero per fundamental annulus.
 
@@ -232,3 +237,29 @@ rather than what the theorem is *called* — `extract_zeros_poles` is not named
 answer a grep for `windingNumber`. Before recording anything as missing here,
 grep the corpus as well as Mathlib.
 
+## 2026-08-08 (later) — step 2 is done; only the assembly is left
+
+The step this bean called "the one that is not a citation" is proved. All four
+supporting lemmas now sit sorry-free in
+`QOU/Mathlib/CircleIntegralFinsetSum.lean`:
+
+| | |
+|---|---|
+| `integral_fun_sum` | circle integral over a `Finset` sum |
+| `divisor_support_finite_of_subset` | finitely many zeros/poles on a compact set |
+| `eqOn_of_eventuallyEq_codiscreteWithin` | codiscrete equality ⇒ equality, via the identity theorem |
+| `codiscreteWithin_neBot` | the above is not vacuous on a nonempty open set |
+
+**What is left is assembly, not new mathematics.** Take `V` the open annulus,
+`K` a slightly larger closed one; `divisor_support_finite_of_subset` makes the
+zero set a `Finset`; `extract_zeros_poles` factors `θ_P` there;
+`eqOn_of_eventuallyEq_codiscreteWithin` turns that into genuine equality;
+`logDeriv_prod` and `integral_fun_sum` split the contour integral;
+`argumentPrinciple_annulus_single` handles each factor; `qTheta_winding_step`
+pins the total at `1`, forcing one simple zero per fundamental annulus, which
+`qTheta_neg_zpow_eq_zero` identifies as `−p^k`.
+
+That is the converse zero locus, and hence an exact C1 pole divisor. Estimate:
+part of a session. Note `qou-c1wr`'s finding still stands — **nothing downstream
+consumes the divisor**, so this is worth finishing for the Mathlib contribution
+and to close a named gap honestly, not because a number depends on it.
