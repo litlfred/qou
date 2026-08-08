@@ -327,3 +327,60 @@ numerators as "DERIVED" carried an implication of novelty that is withdrawn.
 literature" / "written down nowhere" / "new". Two have now failed —
 `hasSum_one_div_nat_pow_mul_cos` in Mathlib (`qou-mlbg`), and this. The lane has
 a pattern of asserting absence without searching.
+
+---
+
+## 2026-08-08 — item 4 attacked: `extend` IS `Re L`, measured; Landen's core proved
+
+Route 33 (`qbeta_5two_route33_extend_identification_probe.py`, 6 gates, 50 dps) +
+`QOU/MathlibExt/ComplexDilogarithmLanden.lean` (4 theorems, sorry-free, lake
+green).
+
+### Why this became the sharpest item
+
+Route 32 reduced the 5₂ sum rule to the level-7 bridge, which rests on Lean's
+`extended_sum` — stated for the **piecewise** `extend`, while the bridge computes
+with the **analytic** Rogers `L`. Item 4 is now the last non-transport link, and
+everything around it is proved.
+
+### Measured
+
+`extend (π²/6) rogersL x = Re L_analytic(x)` to **1e-50**, at the six arguments
+`extended_sum` actually uses — the level-7 orbit `{1/(1−x), x, (x−1)/x}` and its
+negatives — and across all three regimes on 81-point sweeps.
+
+### Proved this round
+
+The **analytic core of the Landen leg**:
+
+    d/dz [ Li₂(z) + Li₂(z/(z−1)) + ½·log(1−z)² ] = 0     (`hasDerivAt_landenCombo`)
+
+The three derivatives are `−log(1−z)/z`, `−log(1−z)/(z(z−1))`, `log(1−z)/(z−1)`,
+and they cancel because `−1/z − 1/(z(z−1)) + 1/(z−1) = 0` identically. The branch
+condition is isolated as `1 − z ∈ slitPlane` and **shown load-bearing** (G6): at
+`z = 3` the step `log(1 − z/(z−1)) = −log(1−z)` fails by exactly `2πi`.
+
+This is precisely what `ComplexDilogarithm.lean` lists as *not* provided: "the
+inversion formula … Note this is **false** for `cLiTwo` at `‖z‖ > 1`".
+
+### What is still missing, per regime (G5)
+
+| regime | status |
+|---|---|
+| `0 ≤ x ≤ 1` | **nothing** — `cLiTwo_ofReal` already bridges the corpus's `LiTwo` |
+| `x < 0` (Landen) | analytic core **proved**; remaining: the base value `Li₂(−1) = −π²/12` |
+| `x > 1` (inversion) | **harder, not attempted** — see below |
+
+The Landen base value is one special value, and the corpus's
+`rogersL_reflection` already supplies the partner `rogersL(½) = π²/12` at the
+natural base point `z = −1`. Mathlib has `hasSum_zeta_two` (`π²/6`) but no
+alternating analogue, so it is not free.
+
+**The inversion leg is the sharper obstacle.** `x > 1` lies *on* `cLiTwoExt`'s
+cut — `notCut = {w | Im w ≠ 0 ∨ Re w < 1}` excludes it — so it needs a
+**boundary value from off the cut**, not merely a constant of integration. That
+is new analytic infrastructure. Exactly **one** of the six arguments is in that
+regime (`w₁ = 2.24698`, the same value that falsified `hinv1`), and it cannot be
+avoided.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
