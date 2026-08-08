@@ -419,3 +419,66 @@ potential the residual is dominated by the ENDPOINT half-term, not the saddle:
 Still assumed downstream, and NOT covered by any of the above: a bound on the
 actual sums rather than on their expansions (window + tail control), and the
 integral's own `1/N` corrections.
+
+## (A) HALVED — an exact reflection, and the 1/N term in closed form
+
+Not closed. But it is no longer "a rectangle-rule sandwich one order too coarse,
+multi-day, no handle". There is now an exact identity that constrains the whole
+expansion, and the missing `1/N` term has been identified.
+
+**THE REFLECTION.** `sin((N-j) pi/N) = sin(j pi/N)`, so for EVERY `k < N`
+
+    L_k + L_{N-1-k} = log N,     L_k := -s_k = sum_{j=1}^k log(2 sin(j pi/N))
+
+`QOU/Knot/FigureEightVolume.sum_log_two_sin_reflect`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`, together with the single-factor
+`sin_pi_div_reflect`. Proof: split `Ico 1 N` at `k+1`, reflect the upper block
+by `j -> N-j` (`Finset.sum_Ico_reflect`), and land on the endpoint value
+`sum_log_two_sin_endpoint`. This is strictly stronger than the endpoint alone,
+which only constrained `k = N-1`.
+
+**WHAT IT BUYS — the symmetric half of (A) is a trapezoid remainder, exactly.**
+Substituting `s_k = (N/pi) Lambda(th) - (1/2) log(2N sin th) + eps_k` with
+`th = k pi/N`, `h = pi/N`, and using `Lambda(pi - x) = -Lambda(x)`, every term
+cancels and the reflection collapses to
+
+    eps_k + eps_{N-1-k} = (1/2)[f(th) + f(th+h)] - (1/h) int_th^{th+h} f
+
+with `f = log(2 sin)` — the TRAPEZOID REMAINDER on one cell, as an IDENTITY, not
+an estimate. Verified to working dps at 16 `(N,k)`; at `k = N/2` it quarters on
+each doubling of `N` (ratio 4.0009, 4.0002, 4.0001), i.e. `O(1/N^2)` — already
+sharper than the `O(1/N)` being claimed. So ALL of (A)'s difficulty is in the
+antisymmetric half.
+
+This also vindicates the earlier structural diagnosis in
+`KashaevProdEndpoint.lean`: the missing ingredient really is the TRAPEZOID
+correction `(f(a)+f(b))/2`, and the reflection exhibits it directly rather than
+by analogy.
+
+**AND THE ANTISYMMETRIC HALF HAS A CLOSED FORM.**
+
+    eps_k = -(pi / 12 N) cot(theta) + O(1/N^3)
+
+which is exactly the Euler-Maclaurin `B_2/2!` term `(h/12) f'`, `f' = cot`.
+Measured at five `theta` over `N = 400, 800, 1600`: agreement to 7 digits, and
+the residual of `N.eps` quarters on each doubling (so `eps`'s next correction is
+`O(1/N^3)`, as even-order Euler-Maclaurin requires). It is odd about `pi/2` — as
+the reflection forces — and at `theta = pi/2` it vanishes to `1e-69`.
+
+So the refined expansion, measured but NOT proved, is
+
+    s_k = (N/pi) Lambda(th) - (1/2) log(2 N sin th) - (pi/12N) cot(th) + O(1/N^3)
+
+with NO leftover additive constant. That independently confirms the `2N` inside
+the log — the correction to van der Veen's Lemma 3 recorded in
+`docs/outreach/2026-08-08-van-der-veen-whitehead-chains-corrections.md`.
+
+**WHAT IS STILL OPEN, PLAINLY.** Only the reflection is formalised. The
+`-(pi/12N) cot` term is measured and is standard Euler-Maclaurin, but proving it
+still needs the singular `j = 0` endpoint handled, and THAT is where the
+`-(1/2) log N` and the additive constant come from — it needs Stirling, not
+Euler-Maclaurin. The reflection does not reach it: it pairs `k` with `N-1-k`,
+and both endpoints sit outside that pairing. Next concrete step is the endpoint,
+not the interior.
+
+Probe: `computations/probes/kashaev_reflection_probe.py`, 3 assertions, all pass.

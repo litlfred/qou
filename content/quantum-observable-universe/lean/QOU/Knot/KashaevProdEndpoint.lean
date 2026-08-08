@@ -99,4 +99,62 @@ theorem sum_log_two_sin_endpoint {N : ℕ} (hN : N ≠ 0) :
   rw [← Real.log_prod _ _ (fun j hj => ne_of_gt (hpos j hj))]
   rw [QOU.MathlibExt.prod_two_sin_pi_div N hN]
 
+/-- The single-factor reflection `sin((N−i)π/N) = sin(iπ/N)`, from
+`sin(π − x) = sin x`. -/
+theorem sin_pi_div_reflect {N i : ℕ} (hi : i ≤ N) (hN : N ≠ 0) :
+    Real.sin ((((N - i : ℕ) : ℝ)) * π / N) = Real.sin ((i : ℝ) * π / N) := by
+  have hNR : (N : ℝ) ≠ 0 := Nat.cast_ne_zero.mpr hN
+  have harg : (((N - i : ℕ) : ℝ)) * π / N = π - (i : ℝ) * π / N := by
+    rw [Nat.cast_sub hi]
+    field_simp
+  rw [harg, Real.sin_pi_sub]
+
+/-- **The exact reflection `s_k + s_{N−1−k} = −log N`**, for every `k < N`.
+
+Written on `L_k := ∑_{j=1}^{k} log(2 sin(jπ/N)) = −s_k`, so the statement below
+is `L_k + L_{N−1−k} = log N`.  Splitting `Ico 1 N` at `k+1` and reflecting the
+upper block by `j ↦ N − j` turns it into the lower block for `N−1−k`; the
+endpoint value `log N` is `sum_log_two_sin_endpoint`.
+
+WHY THIS IS THE STRUCTURAL HALF OF `qou-mlgp` (A).  Unlike the endpoint, this is
+exact for every `k` as well as every `N`, so it constrains the whole expansion
+rather than one value.  Substituting the conjectured form
+`s_k = (N/π)Λ(θ) − ½log(2N sin θ) + ε_k` with `θ = kπ/N`, `h = π/N`, and using
+`Λ(π − x) = −Λ(x)`, everything cancels and the reflection collapses to
+
+    ε_k + ε_{N−1−k} = ½[f(θ) + f(θ+h)] − (1/h)·∫_θ^{θ+h} f,     f = log(2 sin),
+
+which is the TRAPEZOID remainder on a single cell — an identity, not an
+estimate.  Hence the SYMMETRIC half of (A)'s error is a trapezoid remainder,
+`O(h² csc²θ)` in the interior, already sharper than the `O(1/N)` being claimed,
+and the entire difficulty of (A) sits in the ANTISYMMETRIC half.
+
+Measured (`computations/probes/kashaev_reflection_probe.py`, 40 digits): the
+identity holds exactly, the symmetric part is `O(1/N²)`, and the antisymmetric
+`1/N` term is the Euler–Maclaurin `B₂` term `−(π/12N)·cot θ` — vanishing
+identically at `θ = π/2`, as the antisymmetry forces. -/
+theorem sum_log_two_sin_reflect {N k : ℕ} (hN : N ≠ 0) (hk : k < N) :
+    (∑ j ∈ Finset.Ico 1 (k + 1), Real.log (2 * Real.sin ((j : ℝ) * π / N)))
+      + (∑ j ∈ Finset.Ico 1 (N - k), Real.log (2 * Real.sin ((j : ℝ) * π / N)))
+      = Real.log N := by
+  classical
+  set g : ℕ → ℝ := fun j => Real.log (2 * Real.sin ((j : ℝ) * π / N)) with hg
+  -- reflect the upper block `Ico (k+1) N` onto the lower block `Ico 1 (N-k)`
+  have key := Finset.sum_Ico_reflect g 1 (n := N) (by omega : N - k ≤ N + 1)
+  have hidx : Finset.Ico (N + 1 - (N - k)) (N + 1 - 1) = Finset.Ico (k + 1) N := by
+    have h1 : N + 1 - (N - k) = k + 1 := by omega
+    have h2 : N + 1 - 1 = N := by omega
+    rw [h1, h2]
+  rw [hidx] at key
+  have hfix : ∑ j ∈ Finset.Ico 1 (N - k), g (N - j)
+      = ∑ j ∈ Finset.Ico 1 (N - k), g j := by
+    refine Finset.sum_congr rfl (fun j hj => ?_)
+    rw [Finset.mem_Ico] at hj
+    simp only [hg]
+    rw [sin_pi_div_reflect (by omega : j ≤ N) hN]
+  rw [hfix] at key
+  -- split the endpoint sum at `k+1`
+  have hsplit := Finset.sum_Ico_consecutive g (by omega : 1 ≤ k + 1) (by omega : k + 1 ≤ N)
+  rw [← sum_log_two_sin_endpoint hN, ← hsplit, key]
+
 end QOU.Knot.FigureEightVolume
