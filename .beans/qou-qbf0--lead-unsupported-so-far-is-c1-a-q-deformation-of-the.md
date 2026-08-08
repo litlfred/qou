@@ -1,11 +1,11 @@
 ---
 # qou-qbf0
 title: 'LEAD (unsupported so far): is C1 a q-deformation of the polylog connection on P1 minus {0,1,inf}? The map is MISSING'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T10:55:00Z
-updated_at: 2026-08-08T10:55:00Z
+updated_at: 2026-08-08T11:15:00Z
 ---
 
 ## Where the lead came from
@@ -83,3 +83,67 @@ the three-site coincidence as evidence in any durable artifact.
 **Lit ask if pursued:** a source giving a q-difference/q-KZ equation with
 q-polylogarithm solutions and an explicit singular locus. Not among the seven
 uploaded.
+
+## PRUNE RUN 2026-08-08 — the KZ identification FAILS, on two independent tests
+
+**Test 1 — local types.** A KZ-type connection on `P^1 - {0,1,inf}` is
+REGULAR-SINGULAR at all three points (every Newton slope 0). C1:
+
+    x = 0        all ord_0 a_i = 0   -> slope 0    -> Fuchsian    MATCHES
+    x = [1]      simple zero of a_2                -> genuine site (qou-qbe9x)
+    x = infinity single edge slope 1/2 -> IRREGULAR              MISMATCH
+
+**Test 2 — the classical limit (the sharper one).** Irregularity at finite `q` is
+not by itself fatal: a q-deformation may confluence to a regular-singular ODE. So
+does C1 have a finite rank-2 limit as `q -> 1`?
+
+    a_1 = a_0 = -(q-1) -> 0,   while  a_2 = q^2 x - 1 -> x - 1 != 0
+
+so `L1 -> (x-1) sigma^2`, and `(x-1) y(q^2 x) = 0` is **not rank 2** -- the limit
+is DEGENERATE. Rescaling does not save it: `L1/(q-1)` has leading coefficient
+`(q^2 x - 1)/(q-1) -> infinity` for `x != 1` (checked at eps = 1e-1 ... 1e-6:
+26.3, 206.0, 2006.0, 2000006.0 -- diverging as 2/eps).
+
+**Verdict, scope-(a):** C1 is not a q-deformation of the KZ/polylog connection on
+`P^1 - {0,1,inf}` in the naive sense. It is irregular where that picture is
+regular-singular, and it has no finite rank-2 classical limit to confluence to.
+The three-site coincidence is not evidence, and this bean should not be cited as
+support for one. What is NOT excluded: some non-naive correspondence at the level
+of periods/values rather than connections -- but no one should chase that without
+a concrete map.
+
+## The right tool is ALIEN CALCULUS — and it dodges the obstruction that killed RSZ
+
+Owner asked. **Corpus first:** resurgence is not new here -- 239 files mention it,
+27 alien derivations, 25 the bridge equation, 95 Ecalle. Per
+`docs/audits/2026-08-01-uq0-map-resurgence-surreal-tool-assessment.md` §2, the
+alien-calculus attack **already exists**: `OneInstantonNormalization.lean`
+(PR #4246) + `2026-07-25-aomega-one-instanton-magnitude-probe.md` -- structurally
+done, quantitatively open. That audit also maps `C1` into the same single open
+object as every other angle (the Q_beta Habiro element / resurgent trans-series
+normalisation).
+
+**Why this matters for the present thread.** The RSZ route died because
+`F(P1,...,Pk)` is built on the SLOPE FILTRATION and needs `k >= 2` distinct slopes
+(`qou-qbp5`); C1 has one. **Alien calculus has no such requirement.** Alien
+derivations `Delta_omega` act on the resurgent function itself and measure
+singularities in the Borel plane; they do not need a two-slope filtration, and
+they are the natural home for exactly the irregular, q-Gevrey-divergent object
+that `deg_q(c_n) = n^2` (proved this session) certifies C1 to be.
+
+So the correct statement is not "RSZ almost worked" but: **RSZ was never the right
+tool for a pure-isoclinic point, and the tool the corpus already uses -- alien
+calculus -- is.** That reframes S3 (`qou-qbs4`) away from "extract U in C^2 via
+Birkhoff-Guenther" and toward the existing one-instanton/alien route.
+
+**Open caveat, honestly:** classical alien calculus is well developed; the
+q-analogue is less standard, and Test 2 shows we cannot confluence C1 to the
+classical setting and apply Ecalle there. Whatever is used must be q-native.
+
+## Also noted
+
+Owner identified `uploads/ant-v14-n7-s.pdf` as ANT **13**:7 and pointed at its TOC:
+the relevant article is **Jarossay, "Pro-unipotent harmonic actions and dynamical
+properties of p-adic cyclotomic multiple zeta values"** (p. 1711) -- the p-adic
+cyclotomic-MZV side of the same `{0,1,inf}` story. Not yet read; noted for whoever
+picks up the periods/values angle left open above.
