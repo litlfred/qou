@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T05:05:00Z
+updated_at: 2026-08-09T06:00:00Z
 ---
 
 ## What is open
@@ -146,7 +146,9 @@ in the real part. Route 30's correction, proved rather than assumed.
 | the `log(−y)` **routing** — which root takes which route | ✅ `log_neg_route` |
 | the labelling's *shape* + route 2's path condition | ✅ forced, Route 36 G9 |
 | `t(c)` single-valued and differentiable | ✅ `eq_realRoot'`, `hasDerivAt_realRoot` |
-| **composing into `Y₁ Y₂ Y₃` and feeding `hasDerivAt_envelopeS`** | **open — the last piece** |
+| `Y₁` (real branch), `Y₂ Y₃` continuous through the collision | ✅ `Yreal`, `continuous_Ypair` |
+| `Y₂ Y₃` **differentiable** off the collision | ✅ `hasDerivAt_Ypair_fst/snd` |
+| **feeding all three into `hasDerivAt_envelopeS`, + `hcont` at `φ = π`** | **open** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
@@ -157,7 +159,7 @@ be called trivial in advance.
 
 `VSide` is the hypothesis that was once **vacuous** (correction 6 on #4701), so
 it was measured before any Lean was written for it. **Route 36**
-(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **9 gates**, all pass — G3 is a
+(`qbeta_5two_route36_vside_nonvacuity_probe.py`, **12 gates**, all pass — G3 is a
 **retraction** and G7 a recorded *refutation*, both below):
 
 * **G1 non-vacuity** — all six conditions hold *simultaneously* at all 597 checks

@@ -162,6 +162,20 @@
       "approach_side": "Im < 0, i.e. from below the cut",
       "still_open": "ContinuousOn (envelopeS Y1 Y2 Y3) (Icc 0 pi) at the endpoint phi = pi, where the Li2 argument sits ON [1,inf). Needs Route 35's continuity of Re Li2 across the cut, in Lean, applied to this argument",
       "pass": true
+    },
+    {
+      "gate": "G12",
+      "claim": "`hasDerivAt_Ypair_fst/snd` CARRY `pairDisc phi < 0`, AND THAT HYPOTHESIS IS SATISFIABLE -- measured, not assumed, because it does two jobs at once (selecting otherRoots' complex branch and keeping sqrt away from 0) and a hypothesis like that is exactly the shape that turns out to hold nowhere (correction 6). It holds at 153 of 199 arc points; the other 46 are the all-real regime. CROSS-CHECK: pairDisc is computed here from the LEAN definitions (beta = t-2c, gamma = t^2-2ct+2c+1), a different formula from G5's cubic discriminant, and the two agree exactly -- same 153/46 split, and the zero lands on the known collision phi_0 = 137.9206708879635 deg with cos = c* = -0.7422176658829284376",
+      "points_pairDisc_neg_complex_pair": 153,
+      "points_pairDisc_pos_all_real": 46,
+      "points_undetermined": 0,
+      "pairDisc_zero_phi_rad": "2.4071698135544545213",
+      "pairDisc_zero_phi_deg": "137.9206708879635054",
+      "known_collision_phi0_deg": "137.9206708879635",
+      "cos_of_zero": "-0.7422176658829284376",
+      "c_star_from_G5_quartic": "-0.7422176658829284376",
+      "cross_check_agreement": "5.6819e-31",
+      "pass": true
     }
   ],
   "verdict": {

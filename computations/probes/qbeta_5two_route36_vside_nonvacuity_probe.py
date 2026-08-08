@@ -682,6 +682,63 @@ def main() -> int:
                      and re(w_end) > 1 and fabs(im(w_end)) < mpf(10) ** -30),
     })
 
+    # ---- G12: `hasDerivAt_Ypair_*`'s hypothesis is satisfiable, and IS the collision ----
+    # The pair's derivative lemmas carry `pairDisc phi < 0`, which selects otherRoots'
+    # complex branch AND keeps sqrt away from 0. A hypothesis doing two jobs at once is
+    # exactly the kind that turns out to hold nowhere -- correction 6 all over again -- so it
+    # is measured rather than assumed.
+    #
+    # `pairDisc` is computed here from the LEAN definitions (beta = t - 2c,
+    # gamma = t^2 - 2ct + 2c + 1) rather than from the cubic's discriminant, so agreement
+    # with G5 is a genuine cross-check between two different formulas.
+    def pair_disc(ph):
+        c = mpmath_cos(ph)
+        rts = polyroots([mpf(1), -2 * c, 2 * c + 1, mpf(-1)], maxsteps=300, extraprec=300)
+        v = [re(r) for r in rts if fabs(im(r)) < REAL_TOL and 0 < re(r) < 1]
+        if len(v) != 1:
+            return None
+        t = v[0]
+        return (t - 2 * c) ** 2 - 4 * (t ** 2 - 2 * c * t + 2 * c + 1)
+
+    n_neg, n_pos, n_none = 0, 0, 0
+    for i in range(N):
+        d = pair_disc(pi * mpf(i + 1) / (N + 1))
+        if d is None:
+            n_none += 1
+        elif d < 0:
+            n_neg += 1
+        else:
+            n_pos += 1
+    phi0 = findroot(pair_disc, (mpf("2.40"), mpf("2.42")), solver='bisect', tol=mpf(10) ** -30)
+    cstar_here = mpmath_cos(phi0)
+    cstar_g5 = [re(r) for r in polyroots([mpf(16), mpf(-48), mpf(28), mpf(12), mpf(-31)],
+                                         maxsteps=300, extraprec=300)
+                if fabs(im(r)) < mpf(10) ** -35 and -1 <= re(r) <= 1][0]
+    gates.append({
+        "gate": "G12",
+        "claim": "`hasDerivAt_Ypair_fst/snd` CARRY `pairDisc phi < 0`, AND THAT HYPOTHESIS IS "
+                 "SATISFIABLE -- measured, not assumed, because it does two jobs at once "
+                 "(selecting otherRoots' complex branch and keeping sqrt away from 0) and a "
+                 "hypothesis like that is exactly the shape that turns out to hold nowhere "
+                 "(correction 6). It holds at 153 of 199 arc points; the other 46 are the "
+                 "all-real regime. CROSS-CHECK: pairDisc is computed here from the LEAN "
+                 "definitions (beta = t-2c, gamma = t^2-2ct+2c+1), a different formula from G5's "
+                 "cubic discriminant, and the two agree exactly -- same 153/46 split, and the "
+                 "zero lands on the known collision phi_0 = 137.9206708879635 deg with "
+                 "cos = c* = -0.7422176658829284376",
+        "points_pairDisc_neg_complex_pair": n_neg,
+        "points_pairDisc_pos_all_real": n_pos,
+        "points_undetermined": n_none,
+        "pairDisc_zero_phi_rad": nstr(phi0, 20),
+        "pairDisc_zero_phi_deg": nstr(phi0 * 180 / pi, 19),
+        "known_collision_phi0_deg": "137.9206708879635",
+        "cos_of_zero": nstr(cstar_here, 20),
+        "c_star_from_G5_quartic": nstr(cstar_g5, 20),
+        "cross_check_agreement": nstr(fabs(cstar_here - cstar_g5), 5),
+        "pass": bool(n_none == 0 and n_neg > 0 and n_pos > 0 and n_neg + n_pos == N
+                     and fabs(cstar_here - cstar_g5) < mpf(10) ** -30),
+    })
+
     out = {
         "probe": "qbeta_5two_route36_vside_nonvacuity",
         "bean": "qou-glbl", "dps": mp.dps,

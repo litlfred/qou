@@ -2,6 +2,7 @@ import QOU.QBeta.FiveTwoRootStructure
 import QOU.MathlibExt.ImplicitScalar
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+import Mathlib.Analysis.SpecialFunctions.Sqrt
 
 /-!
 # The real root as a differentiable function of `c` — bean `qou-glbl`
@@ -292,10 +293,56 @@ in `φ` wherever `t` is — with **no exceptional point** — which is the whole
 Gap A is tractable: only the *splitting* of the pair degenerates at `φ₀`, not the
 pair itself. -/
 
+/-- `d/dφ realRootPath` — named so the statements below stay readable. -/
+noncomputable def realRootPath' (φ : ℝ) : ℝ :=
+  (-(-2 * realRoot (Real.cos φ) ^ 2 + 2 * realRoot (Real.cos φ))
+    / (3 * realRoot (Real.cos φ) ^ 2 - 4 * Real.cos φ * realRoot (Real.cos φ)
+        + 2 * Real.cos φ + 1)) * (-Real.sin φ)
+
+theorem hasDerivAt_realRootPath' (φ : ℝ) :
+    HasDerivAt realRootPath (realRootPath' φ) φ := hasDerivAt_realRootPath φ
+
+/-- The quadratic cofactor's coefficients along the arc: `Y² + βY + γ`. -/
+noncomputable def pairBeta (φ : ℝ) : ℝ := realRootPath φ - 2 * Real.cos φ
+
+noncomputable def pairGamma (φ : ℝ) : ℝ :=
+  realRootPath φ ^ 2 - 2 * Real.cos φ * realRootPath φ + 2 * Real.cos φ + 1
+
+theorem hasDerivAt_pairBeta (φ : ℝ) :
+    HasDerivAt pairBeta (realRootPath' φ + 2 * Real.sin φ) φ := by
+  have h := (hasDerivAt_realRootPath' φ).sub
+    ((Real.hasDerivAt_cos φ).const_mul (2 : ℝ))
+  unfold pairBeta
+  convert h using 1
+  ring
+
+theorem hasDerivAt_pairGamma (φ : ℝ) :
+    HasDerivAt pairGamma
+      (2 * realRootPath φ * realRootPath' φ
+        - (2 * (-Real.sin φ) * realRootPath φ + 2 * Real.cos φ * realRootPath' φ)
+        + 2 * (-Real.sin φ)) φ := by
+  have h := ((((hasDerivAt_realRootPath' φ).pow 2).sub
+      (((Real.hasDerivAt_cos φ).const_mul (2 : ℝ)).mul (hasDerivAt_realRootPath' φ))).add
+      ((Real.hasDerivAt_cos φ).const_mul (2 : ℝ))).add_const 1
+  unfold pairGamma
+  convert h using 1
+  ring
+
+/-- The pair's discriminant along the arc. Its sign flips exactly at the
+collision `φ₀` (Route 36 G5), so both branches of `otherRoots` are live. -/
+noncomputable def pairDisc (φ : ℝ) : ℝ := pairBeta φ ^ 2 - 4 * pairGamma φ
+
+theorem continuous_pairBeta : Continuous pairBeta :=
+  continuous_iff_continuousAt.mpr fun φ => (hasDerivAt_pairBeta φ).continuousAt
+
+theorem continuous_pairGamma : Continuous pairGamma :=
+  continuous_iff_continuousAt.mpr fun φ => (hasDerivAt_pairGamma φ).continuousAt
+
+theorem continuous_pairDisc : Continuous pairDisc :=
+  (continuous_pairBeta.pow 2).sub (continuous_const.mul continuous_pairGamma)
+
 /-- The colliding pair, as a function of `φ`. -/
-noncomputable def Ypair (φ : ℝ) : ℂ × ℂ :=
-  otherRoots (realRootPath φ - 2 * Real.cos φ)
-    (realRootPath φ ^ 2 - 2 * Real.cos φ * realRootPath φ + 2 * Real.cos φ + 1)
+noncomputable def Ypair (φ : ℝ) : ℂ × ℂ := otherRoots (pairBeta φ) (pairGamma φ)
 
 /-- **The pair is continuous on the whole arc, collision included.**
 
@@ -313,5 +360,109 @@ theorem continuous_Ypair : Continuous Ypair := by
       realRootPath φ ^ 2 - 2 * Real.cos φ * realRootPath φ + 2 * Real.cos φ + 1 :=
     (((ht.pow 2).sub (hcos.mul ht)).add hcos).add continuous_const
   exact continuous_otherRoots.comp (h1.prodMk h2)
+
+/-! ### 5b. Differentiating the pair, off the collision
+
+`otherRoots` splits on the sign of `β² − 4γ`, and Route 36 G5 shows that sign
+genuinely flips on the arc — at `φ₀`, where the discriminant vanishes. So each
+branch has to be differentiated separately, under a hypothesis pinning which one
+is active. The hypothesis is not decoration: at `φ₀` the pair is *not*
+differentiable, which is precisely the exceptional point `envelopeS_total` allows.
+
+This section does the branch where the pair is genuinely complex (`β² < 4γ`),
+which Route 36 G5 measures as 153 of the 199 arc points. -/
+
+/-- `4γ − β²`, positive exactly where the pair is genuinely complex. -/
+noncomputable def pairNegDisc (φ : ℝ) : ℝ := 4 * pairGamma φ - pairBeta φ ^ 2
+
+/-- `d/dφ` of the above, named to keep the statements readable. -/
+noncomputable def pairNegDisc' (φ : ℝ) : ℝ :=
+  4 * (2 * realRootPath φ * realRootPath' φ
+      - (2 * (-Real.sin φ) * realRootPath φ + 2 * Real.cos φ * realRootPath' φ)
+      + 2 * (-Real.sin φ))
+    - 2 * pairBeta φ * (realRootPath' φ + 2 * Real.sin φ)
+
+theorem hasDerivAt_pairNegDisc (φ : ℝ) :
+    HasDerivAt pairNegDisc (pairNegDisc' φ) φ := by
+  have h := ((hasDerivAt_pairGamma φ).const_mul (4 : ℝ)).sub ((hasDerivAt_pairBeta φ).pow 2)
+  unfold pairNegDisc pairNegDisc'
+  convert h using 1
+  ring
+
+/-- The imaginary half-width of the complex pair. -/
+noncomputable def pairIm (φ : ℝ) : ℝ := Real.sqrt (pairNegDisc φ) / 2
+
+/-- Differentiable exactly where the pair has not collided — `√` is the only
+thing in the way, and `pairNegDisc φ > 0` is what clears it. -/
+theorem hasDerivAt_pairIm {φ : ℝ} (h : 0 < pairNegDisc φ) :
+    HasDerivAt pairIm
+      (pairNegDisc' φ / (2 * Real.sqrt (pairNegDisc φ)) / 2) φ :=
+  ((hasDerivAt_pairNegDisc φ).sqrt (ne_of_gt h)).div_const 2
+
+/-- **The complex branch, identified.** `pairDisc φ < 0` selects `otherRoots`'
+second case. -/
+theorem Ypair_of_disc_neg {φ : ℝ} (h : pairDisc φ < 0) :
+    Ypair φ = (((-pairBeta φ / 2 : ℝ) : ℂ) + ((pairIm φ : ℝ) : ℂ) * Complex.I,
+               ((-pairBeta φ / 2 : ℝ) : ℂ) - ((pairIm φ : ℝ) : ℂ) * Complex.I) := by
+  have hlt : ¬ (0 ≤ pairBeta φ ^ 2 - 4 * pairGamma φ) := by
+    unfold pairDisc at h; linarith
+  unfold Ypair otherRoots
+  rw [if_neg hlt]
+  unfold pairIm pairNegDisc
+  norm_num
+
+/-- `pairDisc < 0` on a whole neighbourhood — needed because `HasDerivAt` is a
+statement about the function *near* `φ`, not at it. -/
+theorem eventually_disc_neg {φ : ℝ} (h : pairDisc φ < 0) :
+    ∀ᶠ u in 𝓝 φ, pairDisc u < 0 :=
+  continuous_pairDisc.continuousAt (Iio_mem_nhds h)
+
+theorem pairNegDisc_eq_neg (φ : ℝ) : pairNegDisc φ = -pairDisc φ := by
+  unfold pairNegDisc pairDisc; ring
+
+/-- **`Y₂` is differentiable wherever the pair has not collided.**
+
+The hypothesis `pairDisc φ < 0` is doing two separate jobs, and both are needed:
+it selects `otherRoots`' complex branch, and it keeps `√` away from `0`. At `φ₀`
+both fail at once — which is exactly why `φ₀` is the exceptional point
+`envelopeS_total` is built to tolerate, rather than an artefact of this proof. -/
+theorem hasDerivAt_Ypair_fst {φ : ℝ} (h : pairDisc φ < 0) :
+    HasDerivAt (fun u => (Ypair u).1)
+      (((-(realRootPath' φ + 2 * Real.sin φ) / 2 : ℝ) : ℂ)
+        + ((pairNegDisc' φ / (2 * Real.sqrt (pairNegDisc φ)) / 2 : ℝ) : ℂ) * Complex.I) φ := by
+  have hneg : 0 < pairNegDisc φ := by rw [pairNegDisc_eq_neg]; linarith
+  have hb : HasDerivAt (fun u : ℝ => ((-pairBeta u / 2 : ℝ) : ℂ))
+      (((-(realRootPath' φ + 2 * Real.sin φ) / 2 : ℝ) : ℂ)) φ :=
+    Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ
+      ((hasDerivAt_pairBeta φ).neg.div_const 2)
+  have hi : HasDerivAt (fun u : ℝ => ((pairIm u : ℝ) : ℂ) * Complex.I)
+      (((pairNegDisc' φ / (2 * Real.sqrt (pairNegDisc φ)) / 2 : ℝ) : ℂ) * Complex.I) φ :=
+    (Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ (hasDerivAt_pairIm hneg)).mul_const _
+  have heq : (fun u : ℝ => (Ypair u).1) =ᶠ[𝓝 φ]
+      fun u : ℝ => ((-pairBeta u / 2 : ℝ) : ℂ) + ((pairIm u : ℝ) : ℂ) * Complex.I := by
+    filter_upwards [eventually_disc_neg h] with u hu
+    rw [Ypair_of_disc_neg hu]
+  exact (hb.add hi).congr_of_eventuallyEq heq
+
+/-- **`Y₃`, the conjugate branch.** Same hypothesis, opposite sign on the
+imaginary part. -/
+theorem hasDerivAt_Ypair_snd {φ : ℝ} (h : pairDisc φ < 0) :
+    HasDerivAt (fun u => (Ypair u).2)
+      (((-(realRootPath' φ + 2 * Real.sin φ) / 2 : ℝ) : ℂ)
+        - ((pairNegDisc' φ / (2 * Real.sqrt (pairNegDisc φ)) / 2 : ℝ) : ℂ) * Complex.I) φ := by
+  have hneg : 0 < pairNegDisc φ := by rw [pairNegDisc_eq_neg]; linarith
+  have hb : HasDerivAt (fun u : ℝ => ((-pairBeta u / 2 : ℝ) : ℂ))
+      (((-(realRootPath' φ + 2 * Real.sin φ) / 2 : ℝ) : ℂ)) φ :=
+    Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ
+      ((hasDerivAt_pairBeta φ).neg.div_const 2)
+  have hi : HasDerivAt (fun u : ℝ => ((pairIm u : ℝ) : ℂ) * Complex.I)
+      (((pairNegDisc' φ / (2 * Real.sqrt (pairNegDisc φ)) / 2 : ℝ) : ℂ) * Complex.I) φ :=
+    (Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ (hasDerivAt_pairIm hneg)).mul_const _
+  have heq : (fun u : ℝ => (Ypair u).2) =ᶠ[𝓝 φ]
+      fun u : ℝ => ((-pairBeta u / 2 : ℝ) : ℂ) - ((pairIm u : ℝ) : ℂ) * Complex.I := by
+    filter_upwards [eventually_disc_neg h] with u hu
+    rw [Ypair_of_disc_neg hu]
+  exact (hb.sub hi).congr_of_eventuallyEq heq
+
 
 end QOU.QBeta.FiveTwoDeformedSaddle
