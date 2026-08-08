@@ -1,0 +1,317 @@
+import QOU.QBeta.FiveTwoRootStructure
+import QOU.MathlibExt.ImplicitScalar
+import Mathlib.Analysis.Calculus.Deriv.MeanValue
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
+
+/-!
+# The real root as a differentiable function of `c` — bean `qou-glbl`
+
+Gap A's last piece. `hasDerivAt_envelopeS` takes the root labelling
+`Y₁ Y₂ Y₃ : ℝ → ℂ` as given, differentiable functions; this file builds the one
+that carries the real root.
+
+## Why this labelling and no other — Route 36 G9
+
+    Y₁ φ = ((realRoot (cos φ) : ℝ) : ℂ)
+    (Y₂ φ, Y₃ φ) = otherRoots (t − 2c) (t² − 2ct + 2c + 1)
+
+is forced, not chosen. Every fact it needs was already proved:
+
+| need | supplied by |
+|---|---|
+| the root exists | `exists_root_mem_Ioo` |
+| it is **unique** in `(0,1)` | `real_root_neg_of_ne` — every other real root is negative |
+| the IFT applies | `unitCubic_deriv_ne_zero`, and `∂p/∂y ≥ 7/4` is *tight* |
+| the other two are continuous through the collision | `continuous_otherRoots` |
+
+and `Y₁` comes out **real-valued by construction**, which is exactly the shape
+`hasDerivAt_log_neg_ofReal` needs. That was the one residue `log_neg_route` left
+open: route 2's lemma wants `Y` real-valued *near* `φ`, not merely real *at* `φ`,
+and no pointwise fact about roots can supply it. The construction does.
+
+## What uniqueness is for
+
+`exists_hasDerivAt_implicit` is **local**: it produces *some* `g` solving the
+equation near `c`, with no claim that `g` is the root anyone else means.
+Uniqueness in `(0,1)` is what turns that into a statement about `realRoot` —
+`g` is continuous and lands in the open interval `(0,1)`, so it *is* `realRoot`
+near `c`, and the derivative transfers.
+
+The bound has to be *strict* because uniqueness is quoted at **nearby**
+parameters, not merely at `c` itself.
+
+## The bound is `c < 3/2`, and getting past `c = 1` was the point
+
+A first version carried `hc : c < 1`. That excludes `c = 1`, which is `φ = 0`, an
+endpoint of the transport — so it would have cost an **exceptional point**, and
+`envelopeS_total` tolerates exactly one, already spent on the collision
+`φ₀ = 137.9206708879635°`. Two exceptions would have meant Gap A does *not* close
+by assembling what is already proved.
+
+It costs nothing, because uniqueness has a **second and independent proof** near
+`c = 1`. `∂p/∂t = 3t² − 4ct + (2c+1)` has discriminant-in-`t` equal to
+`16c² − 24c − 12`, negative on `c ∈ (−0.3956…, 1.8956…)`; so on `[1/2, 3/2]` the
+cubic is strictly *increasing*, hence injective, hence has at most one real root
+anywhere (`strictMono_unitCubic`). No root structure enters.
+
+The two regimes overlap on `[1/2, 1]`: `real_root_neg_of_ne` covers `c ≤ 1`,
+monotonicity covers `[1/2, 3/2]`. Together (`eq_realRoot'`) they give uniqueness
+for every `c < 3/2` — which contains the entire arc range `[−1,1]` *plus* a
+two-sided neighbourhood of the endpoint. So `c = 1` is interior, and `φ = 0`
+needs no exception.
+
+`VSide` separately is false at `φ = π` (Route 36 G7) and needs `x.im ≠ 0`, so it
+lives on the open arc; this file covers all of `[0,π]`.
+
+## The derivative
+
+    dt/dc = −2t(1−t) / (3t² − 4ct + 2c + 1)
+
+Checked against a numerical derivative at seven values of `c` spanning the arc,
+agreeing to `5.7e-42` (Route 36). At `c = 3/4` it is exactly `−2/7`, the point
+where `unitCubic_deriv_ge`'s bound `7/4` is attained.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+-/
+
+namespace QOU.QBeta.FiveTwoDeformedSaddle
+
+open Set Filter Topology QOU.MathlibExt
+
+/-! ### 1. The root in `(0,1)`, as a function -/
+
+/-- **The root of `unitCubic c` in `(0,1)`.** Single-valued by `eq_realRoot`. -/
+noncomputable def realRoot (c : ℝ) : ℝ := (exists_root_mem_Ioo c).choose
+
+theorem realRoot_mem_Ioo (c : ℝ) : realRoot c ∈ Ioo (0 : ℝ) 1 :=
+  (exists_root_mem_Ioo c).choose_spec.1
+
+theorem realRoot_pos (c : ℝ) : 0 < realRoot c := (realRoot_mem_Ioo c).1
+
+theorem realRoot_lt_one (c : ℝ) : realRoot c < 1 := (realRoot_mem_Ioo c).2
+
+theorem unitCubic_realRoot (c : ℝ) : unitCubic c (realRoot c) = 0 :=
+  (exists_root_mem_Ioo c).choose_spec.2
+
+/-- **Uniqueness, and it is stronger than "unique in `(0,1)`".**
+
+Every *positive* real root of `unitCubic c` equals `realRoot c` — no upper bound
+needed, because `real_root_neg_of_ne` makes every root other than `realRoot c`
+negative outright. The first draft carried `r < 1` and Lean flagged it as unused;
+dropping it is the honest statement.
+
+That also lines up with Route 36 G8, which measures exactly **one** positive real
+root at every arc point: this is that fact, in the form a proof can use. It is
+what makes `realRoot` a function rather than a choice, and what lets a local IFT
+solution be identified with it. -/
+theorem eq_realRoot {c r : ℝ} (hc : c ≤ 1) (h0 : 0 < r)
+    (hp : unitCubic c r = 0) : r = realRoot c := by
+  by_contra hne
+  have hneg := real_root_neg_of_ne hc (realRoot_pos c) (realRoot_lt_one c)
+    (unitCubic_realRoot c) hp hne
+  linarith
+
+/-! ### 1b. A second uniqueness regime, covering `c = 1` on both sides
+
+`real_root_neg_of_ne` carries `c ≤ 1`, so it cannot see a two-sided neighbourhood
+of `c = 1` — and `c = 1` is `φ = 0`, an endpoint of the transport. Rather than
+spend an exceptional point there, note that uniqueness has a *second* and
+entirely different proof nearby.
+
+`∂p/∂t = 3t² − 4ct + (2c+1)` has discriminant-in-`t` equal to `16c² − 24c − 12`,
+negative for `c ∈ (−0.3956…, 1.8956…)`. So on `[1/2, 3/2]` the cubic is strictly
+**increasing**, hence has exactly one real root — no root-structure argument
+needed. The two regimes overlap on `[1/2, 1]`, so together they give uniqueness
+for every `c < 3/2`, and `c = 1` is interior. -/
+
+/-- `d/dt unitCubic c t = 3t² − 4ct + (2c+1)`. -/
+theorem hasDerivAt_unitCubic (c t : ℝ) :
+    HasDerivAt (unitCubic c) (3 * t ^ 2 - 4 * c * t + 2 * c + 1) t := by
+  have h1 : HasDerivAt (fun t : ℝ => t ^ 3) (3 * t ^ 2) t := by
+    simpa using hasDerivAt_pow 3 t
+  have h2 : HasDerivAt (fun t : ℝ => 2 * c * t ^ 2) (2 * c * (2 * t)) t := by
+    simpa using (hasDerivAt_pow 2 t).const_mul (2 * c)
+  have h3 : HasDerivAt (fun t : ℝ => (2 * c + 1) * t) (2 * c + 1) t := by
+    simpa using (hasDerivAt_id t).const_mul (2 * c + 1)
+  have h := ((h1.sub h2).add h3).sub_const 1
+  unfold unitCubic
+  convert h using 1
+  ring
+
+/-- **The `t`-derivative is positive for every `t`, when `1/2 ≤ c ≤ 3/2`.**
+
+Not the same statement as `unitCubic_deriv_ge`, which bounds it *at a root* in
+`(0,1)`. Here there is no root hypothesis and no constraint on `t` — which is
+what strict monotonicity needs. -/
+theorem unitCubic_deriv_pos {c t : ℝ} (h1 : 1 / 2 ≤ c) (h2 : c ≤ 3 / 2) :
+    0 < 3 * t ^ 2 - 4 * c * t + 2 * c + 1 := by
+  nlinarith [sq_nonneg (3 * t - 2 * c),
+    mul_nonneg (by linarith : (0 : ℝ) ≤ c - 1 / 2) (by linarith : (0 : ℝ) ≤ 3 / 2 - c)]
+
+/-- **`unitCubic c` is strictly increasing for `1/2 ≤ c ≤ 3/2`**, hence injective,
+hence has at most one real root anywhere. -/
+theorem strictMono_unitCubic {c : ℝ} (h1 : 1 / 2 ≤ c) (h2 : c ≤ 3 / 2) :
+    StrictMono (unitCubic c) :=
+  strictMono_of_hasDerivAt_pos (f' := fun t => 3 * t ^ 2 - 4 * c * t + 2 * c + 1)
+    (fun t => hasDerivAt_unitCubic c t) (fun _ => unitCubic_deriv_pos h1 h2)
+
+/-- **Uniqueness on `c < 3/2`** — the two regimes combined.
+
+`c ≤ 1` goes through `real_root_neg_of_ne`; `1 < c < 3/2` goes through strict
+monotonicity, which needs no root structure. The overlap is what lets `c = 1` be
+an interior point rather than an endpoint. -/
+theorem eq_realRoot' {c r : ℝ} (hc : c < 3 / 2) (h0 : 0 < r)
+    (hp : unitCubic c r = 0) : r = realRoot c := by
+  rcases le_or_gt c 1 with h | h
+  · exact eq_realRoot h h0 hp
+  · exact (strictMono_unitCubic (c := c) (by linarith) (by linarith)).injective
+      (by rw [hp, unitCubic_realRoot])
+
+/-! ### 2. `unitCubic` as a function of the pair -/
+
+/-- The strict derivative of `(c,t) ↦ unitCubic c t`, with partials
+`∂/∂c = −2t² + 2t` and `∂/∂t = 3t² − 4ct + 2c + 1`. -/
+theorem hasStrictFDerivAt_unitCubic (c₀ t₀ : ℝ) :
+    HasStrictFDerivAt (fun q : ℝ × ℝ => unitCubic q.1 q.2)
+      ((-2 * t₀ ^ 2 + 2 * t₀) • ContinuousLinearMap.fst ℝ ℝ ℝ
+        + (3 * t₀ ^ 2 - 4 * c₀ * t₀ + 2 * c₀ + 1) • ContinuousLinearMap.snd ℝ ℝ ℝ)
+      (c₀, t₀) := by
+  have hc : HasStrictFDerivAt (fun q : ℝ × ℝ => q.1)
+      (ContinuousLinearMap.fst ℝ ℝ ℝ) (c₀, t₀) := hasStrictFDerivAt_fst
+  have ht : HasStrictFDerivAt (fun q : ℝ × ℝ => q.2)
+      (ContinuousLinearMap.snd ℝ ℝ ℝ) (c₀, t₀) := hasStrictFDerivAt_snd
+  -- `unitCubic c t = ((t³ − (2c)·t²) + (2c+1)·t) − 1`, matching the definition's parse
+  have h := (((ht.pow 3).sub ((hc.const_mul (2 : ℝ)).mul (ht.pow 2))).add
+      (((hc.const_mul (2 : ℝ)).add_const 1).mul ht)).sub_const 1
+  simp only [unitCubic]
+  convert h using 1
+  refine ContinuousLinearMap.ext fun v => ?_
+  simp
+  ring
+
+/-! ### 3. `realRoot` is differentiable -/
+
+/-- **`realRoot` is differentiable, with the implicit-function derivative.**
+
+    d/dc realRoot c = −2·t·(1−t) / (3t² − 4ct + 2c + 1),    t = realRoot c
+
+`hc : c < 1` is strict on purpose — see the module docstring. -/
+theorem hasDerivAt_realRoot {c : ℝ} (hc : c < 3 / 2) :
+    HasDerivAt realRoot
+      (-(-2 * realRoot c ^ 2 + 2 * realRoot c)
+        / (3 * realRoot c ^ 2 - 4 * c * realRoot c + 2 * c + 1)) c := by
+  have hB : (3 * realRoot c ^ 2 - 4 * c * realRoot c + 2 * c + 1) ≠ 0 := by
+    have h := unitCubic_deriv_ne_zero (realRoot_pos c) (realRoot_lt_one c)
+      (unitCubic_realRoot c)
+    intro hz
+    exact h (by linarith)
+  have hB' : ((-2 * realRoot c ^ 2 + 2 * realRoot c) • ContinuousLinearMap.fst ℝ ℝ ℝ
+      + (3 * realRoot c ^ 2 - 4 * c * realRoot c + 2 * c + 1) • ContinuousLinearMap.snd ℝ ℝ ℝ)
+      ((0 : ℝ), (1 : ℝ)) ≠ 0 := by simpa using hB
+  obtain ⟨g, hg0, hgsol, hgd⟩ :=
+    exists_hasDerivAt_implicit (hasStrictFDerivAt_unitCubic c (realRoot c))
+      (by simpa using unitCubic_realRoot c) hB'
+  -- the local solution IS `realRoot` near `c`: it is continuous, lands in `(0,1)`,
+  -- and the root there is unique
+  have hmem : ∀ᶠ x in 𝓝 c, g x ∈ Ioo (0 : ℝ) 1 := by
+    refine hgd.continuousAt ?_
+    rw [hg0]
+    exact Ioo_mem_nhds (realRoot_pos c) (realRoot_lt_one c)
+  have hlt : ∀ᶠ x in 𝓝 c, x < 3 / 2 := Iio_mem_nhds hc
+  have heq : realRoot =ᶠ[𝓝 c] g := by
+    filter_upwards [hgsol, hmem, hlt] with x hx1 hx2 hx3
+    exact (eq_realRoot' hx3 hx2.1 hx1).symm
+  have := hgd.congr_of_eventuallyEq heq
+  simpa using this
+
+/-- `realRoot` is continuous wherever it is differentiable. -/
+theorem continuousAt_realRoot {c : ℝ} (hc : c < 3 / 2) : ContinuousAt realRoot c :=
+  (hasDerivAt_realRoot hc).continuousAt
+
+/-! ### 4. Along the arc — and `Y₁` is real-valued *as a function*
+
+`c = cos φ ≤ 1 < 3/2` for **every** `φ`, so the arc never leaves the regime of
+§3 and there is no side condition to carry here at all. -/
+
+/-- The real root along the transport arc, as a function of `φ`. -/
+noncomputable def realRootPath (φ : ℝ) : ℝ := realRoot (Real.cos φ)
+
+theorem realRootPath_pos (φ : ℝ) : 0 < realRootPath φ := realRoot_pos _
+
+theorem realRootPath_lt_one (φ : ℝ) : realRootPath φ < 1 := realRoot_lt_one _
+
+/-- **`realRootPath` is differentiable at every `φ`** — no exceptional point.
+
+`cos φ ≤ 1 < 3/2` unconditionally, so `hasDerivAt_realRoot` applies everywhere on
+the arc and the chain rule does the rest. This is where the widened bound of §1b
+pays: with `c < 1` this statement would have had to exclude `φ = 0`. -/
+theorem hasDerivAt_realRootPath (φ : ℝ) :
+    HasDerivAt realRootPath
+      ((-(-2 * realRoot (Real.cos φ) ^ 2 + 2 * realRoot (Real.cos φ))
+        / (3 * realRoot (Real.cos φ) ^ 2 - 4 * Real.cos φ * realRoot (Real.cos φ)
+            + 2 * Real.cos φ + 1)) * (-Real.sin φ)) φ := by
+  have hc : Real.cos φ < 3 / 2 := by
+    have := Real.cos_le_one φ; linarith
+  exact (hasDerivAt_realRoot hc).comp φ (Real.hasDerivAt_cos φ)
+
+/-- **`Y₁`, the labelling's real branch.**
+
+Written as `((· : ℝ) : ℂ)` of a *real* function on purpose, not as a `ℂ`-valued
+function that happens to take real values. `hasDerivAt_log_neg_ofReal` — route 2
+of `log_neg_route`, the only route available at the positive real root — is
+stated for exactly this shape, and no pointwise fact about roots can supply it.
+Route 36 G8/G9: the positive real root is where route 1 is *impossible*, and this
+is the root that carries it. -/
+noncomputable def Yreal (φ : ℝ) : ℂ := ((realRootPath φ : ℝ) : ℂ)
+
+theorem hasDerivAt_Yreal (φ : ℝ) :
+    HasDerivAt Yreal
+      ((((-(-2 * realRoot (Real.cos φ) ^ 2 + 2 * realRoot (Real.cos φ))
+        / (3 * realRoot (Real.cos φ) ^ 2 - 4 * Real.cos φ * realRoot (Real.cos φ)
+            + 2 * Real.cos φ + 1)) * (-Real.sin φ) : ℝ)) : ℂ) φ :=
+  (Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ (hasDerivAt_realRootPath φ))
+
+/-- `Yreal` never vanishes — it is a root in `(0,1)`. -/
+theorem Yreal_ne_zero (φ : ℝ) : Yreal φ ≠ 0 := by
+  simp only [Yreal, ne_eq, Complex.ofReal_eq_zero]
+  exact (realRootPath_pos φ).ne'
+
+/-- `Yreal` solves the cubic — the reason it is a *root* path and not just a
+smooth curve. -/
+theorem unitCubic_realRootPath (φ : ℝ) :
+    unitCubic (Real.cos φ) (realRootPath φ) = 0 := unitCubic_realRoot _
+
+theorem continuous_realRootPath : Continuous realRootPath :=
+  continuous_iff_continuousAt.mpr fun φ => (hasDerivAt_realRootPath φ).continuousAt
+
+/-! ### 5. The other two branches
+
+`Y₂` and `Y₃` are the roots of the quadratic cofactor, whose coefficients are the
+*symmetric* functions `β = t − 2c` and `γ = t² − 2ct + 2c + 1`. Those are smooth
+in `φ` wherever `t` is — with **no exceptional point** — which is the whole reason
+Gap A is tractable: only the *splitting* of the pair degenerates at `φ₀`, not the
+pair itself. -/
+
+/-- The colliding pair, as a function of `φ`. -/
+noncomputable def Ypair (φ : ℝ) : ℂ × ℂ :=
+  otherRoots (realRootPath φ - 2 * Real.cos φ)
+    (realRootPath φ ^ 2 - 2 * Real.cos φ * realRootPath φ + 2 * Real.cos φ + 1)
+
+/-- **The pair is continuous on the whole arc, collision included.**
+
+`continuous_otherRoots` is continuous *through* the branch collision — at
+`β² = 4γ` both of its branches give `(−β/2, −β/2)` — and the coefficients are
+continuous because `realRootPath` is. So `envelopeS`'s continuity hypothesis on
+`Icc 0 π` is available with no exceptional point; only the *derivative* needs one,
+and `envelopeS_total` is built to tolerate exactly that asymmetry. -/
+theorem continuous_Ypair : Continuous Ypair := by
+  have ht : Continuous realRootPath := continuous_realRootPath
+  have hcos : Continuous fun φ : ℝ => 2 * Real.cos φ :=
+    continuous_const.mul Real.continuous_cos
+  have h1 : Continuous fun φ : ℝ => realRootPath φ - 2 * Real.cos φ := ht.sub hcos
+  have h2 : Continuous fun φ : ℝ =>
+      realRootPath φ ^ 2 - 2 * Real.cos φ * realRootPath φ + 2 * Real.cos φ + 1 :=
+    (((ht.pow 2).sub (hcos.mul ht)).add hcos).add continuous_const
+  exact continuous_otherRoots.comp (h1.prodMk h2)
+
+end QOU.QBeta.FiveTwoDeformedSaddle

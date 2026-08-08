@@ -448,6 +448,7 @@ import QOU.QBeta.FiveTwoEnvelopeAssembly
 import QOU.QBeta.FiveTwoBranchByArgument
 import QOU.QBeta.FiveTwoArgSector
 import QOU.QBeta.FiveTwoRootStructure
+import QOU.QBeta.FiveTwoRootLabelling
 import QOU.QBeta.FiveTwoBranchPinned
 import QOU.QBeta.FiveTwoEnvelopeWiring
 import QOU.QBeta.FiveTwoBranchPinnedB

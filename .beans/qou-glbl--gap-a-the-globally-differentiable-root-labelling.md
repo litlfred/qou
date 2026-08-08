@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide CLOSED, log(-y) routing settled, labelling FORCED; what remains is the Lean assembly of t(c)'
+title: 'Gap A: VSide CLOSED, routing settled, t(c) DIFFERENTIABLE (phi=0 exception removed); what remains is composing Y1 Y2 Y3'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T04:10:00Z
+updated_at: 2026-08-09T05:05:00Z
 ---
 
 ## What is open
@@ -145,7 +145,8 @@ in the real part. Route 30's correction, proved rather than assumed.
 | ⚠ `VSide` at `φ = π` | **FALSE — Route 36 G7, below. Prove over `Ico`, never `Icc`.** |
 | the `log(−y)` **routing** — which root takes which route | ✅ `log_neg_route` |
 | the labelling's *shape* + route 2's path condition | ✅ forced, Route 36 G9 |
-| **the Lean assembly of `t(c)` and its derivative** | **open — the last piece** |
+| `t(c)` single-valued and differentiable | ✅ `eq_realRoot'`, `hasDerivAt_realRoot` |
+| **composing into `Y₁ Y₂ Y₃` and feeding `hasDerivAt_envelopeS`** | **open — the last piece** |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
@@ -329,6 +330,58 @@ that the `(0,1)` root *is* the unique **positive real** root, i.e. precisely the
 uniqueness theorems and differentiating it through `ImplicitScalar`. The pieces
 are proved; what is missing is putting them together, and this lane's record says
 that is exactly where unexamined regions hide.
+
+### ✅ `realRoot` is a differentiable function of `c` — `FiveTwoRootLabelling.lean`
+
+    realRoot (c : ℝ) : ℝ                       the root of `unitCubic c` in (0,1)
+    eq_realRoot'  (hc : c < 3/2) (h0 : 0 < r) (hp : unitCubic c r = 0) : r = realRoot c
+    hasDerivAt_realRoot (hc : c < 3/2) :
+      HasDerivAt realRoot (−(−2t² + 2t) / (3t² − 4ct + 2c + 1)) c
+
+The derivative was checked against a numerical derivative at seven values of `c`
+spanning the arc, agreeing to **5.7e-42**, *before* any Lean was written. At
+`c = 3/4` it is exactly `−2/7` — the point where `unitCubic_deriv_ge`'s bound
+`7/4` is attained, so the two results meet on the nose.
+
+**`eq_realRoot` came out stronger than drafted.** It was written with `r < 1` and
+Lean flagged that hypothesis as unused — correctly: `real_root_neg_of_ne` makes
+every root other than `realRoot c` negative, so *any positive* root equals it, no
+upper bound needed. That is Route 36 G8's "exactly one positive real root per arc
+point", in the form a proof can use.
+
+### ⚠→✅ The `φ = 0` endpoint: a real obstruction, then removed
+
+A first version carried `hc : c < 1`, excluding `c = 1` — which is `φ = 0`, an
+endpoint of the transport. That would have cost an **exceptional point**, and
+`envelopeS_total` tolerates exactly one, already spent on the collision at
+`φ₀ = 137.9206708879635°`. Two exceptions would have meant **Gap A does not close
+by assembling what is already proved** — the opposite of what this bean's
+remaining-work line implied. It was recorded as such before being attacked.
+
+It is removed, and the fix is algebra rather than analysis. Uniqueness has a
+**second, independent proof** near `c = 1`: `∂p/∂t = 3t² − 4ct + (2c+1)` has
+discriminant-in-`t` equal to `16c² − 24c − 12`, negative on
+`c ∈ (−0.3956…, 1.8956…)`. So on `[1/2, 3/2]` the cubic is strictly *increasing*,
+hence injective, hence has at most one real root anywhere — `strictMono_unitCubic`,
+with no root structure at all.
+
+| regime | covers | via |
+|---|---|---|
+| `real_root_neg_of_ne` | `c ≤ 1` | the other real roots are negative |
+| `strictMono_unitCubic` | `[1/2, 3/2]` | positive derivative ⟹ injective |
+
+They overlap on `[1/2, 1]`, so together they give uniqueness for every `c < 3/2`
+— the entire arc range `[−1,1]` *plus* a two-sided neighbourhood of the endpoint.
+`c = 1` is interior; `φ = 0` needs no exception; `envelopeS_total`'s one exception
+stays available for `φ₀`, which is what it was for.
+
+⚠ `unitCubic_deriv_pos` is **not** `unitCubic_deriv_ge`. The latter bounds the
+derivative *at a root in `(0,1)`*; the former has no root hypothesis and no
+constraint on `t`, which is exactly what monotonicity needs. Conflating them
+would give a strictly weaker statement that does not prove injectivity.
+
+**Still open:** composing `realRoot` with `cos` to get `Y₁`, building `(Y₂, Y₃)`
+from `otherRoots`, and feeding the three into `hasDerivAt_envelopeS`.
 
 ### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 
