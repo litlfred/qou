@@ -105,11 +105,14 @@ import QOU.HeckeAlgebra
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
+import QOU.Knot.RademacherReversible
+import QOU.Knot.M004AngleStructure
 import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
@@ -256,8 +259,10 @@ import QOU.ArchimedeanUniverse
 import QOU.PAdicQuantumGroups
 import QOU.GaugeFieldFluidDynamics
 import QOU.InformationTheory
--- Sorry-free P-vs-NP information-theoretic bricks (the counting/decision
--- carrier `QouPNeqNp` stays orphaned — it holds the one intentional `sorry`).
+-- Sorry-free P-vs-NP information-theoretic bricks.  The counting/decision
+-- carrier `QouPNeqNp` is itself sorry-free and axiom-free: its open content
+-- is the `faithful` class field, and **no instance is provided**, so every
+-- downstream use carries `[QouPNeqNp …]` visibly in its signature.
 import QOU.Information.SurrealBudgetGrade
 import QOU.Information.GCTMultiplicityObstruction
 import QOU.Information.MagnitudeAxisBoundary
@@ -265,6 +270,8 @@ import QOU.Information.CountingModuliGrade
 import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.CocenterTraceFactor
+import QOU.Information.OuterDerivationResidue
+import QOU.Information.HochschildH1
 import QOU.Information.SkeinGradeConnective
 import QOU.Information.SkeinShadowConjInvariance
 import QOU.Information.PNeqNpWallUnification
@@ -410,6 +417,8 @@ import QOU.QBeta.ReebTowerJacobiAnger
 import QOU.QBeta.PhiBSArgumentIdentification
 import QOU.QBeta.WindingGFTransform
 import QOU.QBeta.ThetaRealityBound
+import QOU.QBeta.AfreeThetaConstraint
+import QOU.QBeta.ChannelMeridianIdentification
 import QOU.QBeta.StokesSymmetryConstant
 import QOU.QBeta.StokesQZeroDTCount
 import QOU.QBeta.StokesSymmetryConstantQZero

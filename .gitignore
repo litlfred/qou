@@ -162,3 +162,14 @@ computations/borromean-qzeil-certificate.witness.json
 # ⁴He stage-2 probe resume caches (self-cleaning; ignore mid-flight)
 computations/deltalambda/.he4_stage2_legA_progress.jsonl
 computations/deltalambda/.he4_stage2_legB_progress.jsonl
+
+# Split olean-cache tarball parts. scripts/lean-olean-cache-seed.sh builds these
+# in the repo root even on a dry run, and they are ~90 MB each — above GitHub's
+# blob limit. They belong only on the lake-cache/* orphan branches, never on a
+# work branch.
+lake-oleans.tgz.part*
+lake-oleans.tgz
+
+# qou-vbw1 A2 verification aid (resumable I-cache + log); see qbeta_3bp8_a2_sample_point_delta_check.py
+.a2_icache.json
+.a2_run.log

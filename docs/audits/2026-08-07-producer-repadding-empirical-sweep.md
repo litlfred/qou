@@ -1008,6 +1008,94 @@ not an edit. Recorded with the discriminator so it can be scoped:
 # one, but never calls add_upstream
 ```
 
+## P30 — the missing `scriptHash` was concealing real staleness
+
+`compute_audit_scan` reports witnesses lacking `scriptHash` + `scriptFile`,
+without which `run_pipeline.py` treats a witness as current and skips
+regeneration. Scoped, **excluding `_deprecated/`** (a first count said 448 and
+had swept deprecated witnesses in — that number was wrong):
+
+| | witnesses |
+|---|---:|
+| live, carry both fields | 2166 |
+| **no `scriptFile` at all** | **173** |
+| `scriptFile`, no `scriptHash` | **78** — 12 use `WitnessBuilder`, 66 hand-written |
+| `scriptFile` naming a producer that no longer exists | 8 |
+
+**`scriptHash` cannot be backfilled**, which is the first thing to establish
+because it looks like it can: the field hashes the *script*, so it is
+computable without running anything — and stamping the current hash onto a
+witness that may be stale would assert a freshness nobody checked. That is
+precisely the failure the field exists to catch. Only a real re-run produces a
+witness and a hash that agree.
+
+**Re-running is also not enough for most of them.** Of the 12 whose producer
+does use `WitnessBuilder` (7 distinct scripts), re-running gave:
+
+| | |
+|---|---:|
+| gained a `scriptHash` | **5 / 7** |
+| …of those, with **no** value change | **1 / 5** |
+
+The other four moved a large fraction of their numbers:
+
+```
+entanglement-orders                38 of 83 numeric fields changed
+inverse-markov-qvalues             33 of 53
+nf-qvalues                         32 of 43
+markov-free-energy-qvalues         26 of 51
+```
+
+**That is the finding.** These are not cosmetic metadata gaps: 45–77 % of the
+numbers in those four witnesses are stale, and the missing `scriptHash` is
+exactly why nobody noticed — `run_pipeline.py` had no way to know they needed
+re-running. P30's one-line description ("hand-written witnesses are treated as
+current and silently skip regeneration") is understated; the consequence is a
+corpus of committed numbers that no longer match their own producers.
+
+The 66 hand-written ones cannot be fixed by re-running at all — they need
+porting to `WitnessBuilder` first, and a first batch of 12 arbitrary targets
+confirmed it: **0 of 12 gained a hash**, including one that exited 0.
+
+Not regenerated here. Committing those four witnesses changes hundreds of
+published numbers, which is a decision about the corpus rather than a cleanup,
+and it should be made deliberately with the staleness quantified per witness —
+which the table above now makes possible.
+
+### Measured, then regenerated — and a fourth sub-class
+
+All 12 unhashed `WitnessBuilder` witnesses (7 scripts) measured before deciding
+what to commit:
+
+| witness | rc | hash | stale |
+|---|---|---|---:|
+| `nf-qvalues` | 0 | ✓ | **32/43 (74 %)** |
+| `inverse-markov-qvalues` | 0 | ✓ | **33/53 (62 %)** |
+| `markov-free-energy-qvalues` | 0 | ✓ | **26/51 (51 %)** |
+| `entanglement-orders` | 0 | ✓ | **38/83 (46 %)** |
+| `qbeta-odd-carrier-sector-decomposition` | 0 | ✓ | 0/35 |
+| `chi-*` ×6 | 0 | ✗ | 0 |
+| `kite_tail_reconciliation` | 1 | ✗ | 0 |
+
+Five regenerated and committed; **129 numbers move**. Nothing in the sources
+changed — each producer run unmodified at HEAD already disagreed with its own
+committed witness. `qbeta-odd-carrier` is included *because* it moved nothing:
+it isolates the metadata change from the value change.
+
+**The fourth sub-class: `scriptFile` naming a consumer.** The six `chi-*`
+witnesses claim `delta_lambda_empirical_tabulation.py`, which **reads** them as
+`chi_witness` inputs and never writes them — as do `mass_vol_density.py` and
+`mass_per_knot_density.py`. Nothing in the corpus writes them. Re-running the
+named "producer" therefore does nothing, which is exactly what was observed
+(rc=0, hash absent, no value moved).
+
+This invalidates an assumption in the counts above: **`scriptFile` was taken as
+truthful**, and at least 6 of the 12 are misattributed. The earlier split (173
+no `scriptFile` / 78 unhashed / 8 orphaned) is a floor on the provenance
+problem, not a description of it — a witness naming a real script is not
+evidence that script produces it. The honest discriminator is whether the
+script *writes* that filename, which none of these do.
+
 ## What remains
 
 Localization is done: all 19 re-padders are measured and every Class A field

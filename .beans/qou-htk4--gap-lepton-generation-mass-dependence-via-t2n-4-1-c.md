@@ -4,7 +4,7 @@ title: 'GAP: lepton generation mass dependence via the T(2,n)-4_1 coupling. The 
 status: todo
 type: task
 created_at: 2026-08-07T17:40:00Z
-updated_at: 2026-08-07T23:30:00Z
+updated_at: 2026-08-08T00:45:00Z
 ---
 
 ## Scope sharpened, 2026-08-07 (second pass on qou-lsp9)
@@ -57,4 +57,49 @@ m = C g^w f^p entirely. Still open, still worth attacking.
 Reading: nothing on the lepton's OWN knot supplies the bend, which is
 independent support for the linking/satellite route to 4_1 -- the mass
 enters through a coupling to an object outside T(2,n).
+
+## Additive direction CLOSED, 2026-08-08 — one shape left
+
+`docs/audits/2026-08-08-lepton-additive-class-log-convexity.md`;
+Lean `lepton_tower_log_convexity.lean`;
+probe `computations/lepton_tower_additive_screening.py`.
+
+The additive interface term -- the shape the bend screen explicitly could
+NOT touch -- is now closed for POSITIVE modes, and by a sharper argument
+than the multiplicative screen:
+
+    x(w) = c g^w + d h^w,  c,d >= 0, g,h > 0
+    x(w)x(w+4) - x(w+2)^2 = c d g^w h^w (g^2-h^2)^2 >= 0   =>  bend <= 1
+
+Observed lepton bend is 12.295 (log-CONCAVE). A positive sum of geometric
+modes is log-CONVEX. Strict inequality, no free parameter left -- unlike
+the multiplicative screen, which ruled things out by how large an exponent
+they needed.
+
+Equality only in the degenerate single-mode limits (g = h, or a vanishing
+coefficient). NOT monotone in the second coefficient: the bend dips to an
+interior minimum (~0.967) and returns to 1 as d -> infinity. An earlier
+draft claimed monotone worsening; that was wrong and is corrected.
+
+NOT CLOSED, deliberately: (i) more than two modes -- the same Lagrange
+identity symmetrises over pairs, not formalised; (ii) sign-indefinite
+combinations.
+
+## THE ONE SHAPE LEFT STANDING -- check this first on any new candidate
+
+Sign-indefiniteness escapes ALL THREE exclusions, always via a NODE:
+
+  * linear readouts of H_2(q): alpha, beta of opposite sign
+  * multiplicative C g^w f^p: a readout with a zero has unbounded ratios
+  * additive c g^w + d h^w: d < 0 breaks Cauchy-Schwarz; node at d = -q^(2w)
+
+Everything closed so far was closed by POSITIVITY. Everything that survives
+does so by having a zero in or near the generation window. So: before
+building any new candidate bridge, check whether it has a node. That is the
+only place the freedom to bend the tower has ever been found.
+
+Open question this line has NOT touched: whether a node is physically
+available -- i.e. whether the electron can sit near a genuine zero of the
+underlying quantity. That is a strong, testable structural claim, not a
+fitting knob, and it is the natural next target.
 
