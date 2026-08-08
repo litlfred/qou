@@ -481,9 +481,20 @@ theorem gs_degree_leading_coeff_half :
     and (ii) the leading Gaussian coefficient of the GS cumulative degree
     `C(m,2)` (`gs_degree_leading_coeff_half`).  Hence the θ-coefficient of the
     kernel exponent `q^{m²/4}` is `½·s = ½·½ = ¼`, i.e. `θ = ½·C(m,2)` at leading
-    order — the compiled half of the numerical probe.  What remains probe-only
-    (NOT asserted here) is that the kernel's actual coefficient sequence realises
-    order ½ (the RSZ slope=order theorem). -/
+    order — the compiled half of the numerical probe.
+
+    **CORRECTED 2026-08-08 (bean `qou-slpd` item 5).** This theorem's `s = ½` is
+    the Route-B kernel's q-Gevrey **order**, and the docstring used to call the
+    missing piece "the RSZ slope=order theorem". There is no such theorem: the
+    Newton slope is the **level** (see §MI-3(d) below — the slope-`k` family
+    separates order from level, and the level tracks the slope). So this bridge
+    reaches the right *number* `½` by the wrong route. The correct grounding of
+    `ThetaSlopeArithmetic.c1Slope = ½` is the C1 `∞`-side **level**, which is
+    `c1InfCoeff_order_two` restated via `isQGevreyLevel_of_order`. Nothing
+    downstream changes — Door-i needs only that the two slope multisets differ
+    (`ThetaSlopeArithmetic.newtonSlopes_c1_ne_ggm`) — but the statement below
+    should be read as a numerical coincidence of two `½`s, not as a slope
+    identification. -/
 theorem theta_eq_half_gs_bridge :
     ∃ s : ℝ,
       (∀ q : ℝ, 1 < q → IsQGevreyOrder q s (fun n : ℕ => q ^ ((n : ℝ) ^ 2 / 4)))
@@ -701,5 +712,176 @@ theorem c1InfCoeff_order_two (hq : 1 < q) : IsQGevreyOrder q 2 (c1InfCoeff q) :=
     linarith [hdiv]
 
 end C1InfOrder
+
+/-! ## MI-3(d): the Newton slope is the q-Gevrey LEVEL, not the order
+
+Bean `qou-slpd` item 5. `IsQGevreyOrder` and `IsQGevreyLevel` are reciprocal
+(RSZ §1.3.2), and this corpus carries one `½` of each kind — the Route-B
+kernel's *order* and the C1 `∞`-side's *level*. Which one the Newton polygon
+attaches to was the last step in the C1 chain carried by prose.
+
+**RSZ's own touchstone cannot settle it.** The q-Euler / Tshakaloff equation
+`zσf = f` has Newton slope `1` and solution `c_m = q^{m(m-1)/2}`, i.e. order `1`
+**and** level `1`. At slope 1 the two readings agree, which is exactly why a `½`
+could sit unexamined here: the one example everyone checks against is the one
+case that cannot tell them apart. `slopeOneCoeff_order_one` below is that case.
+
+**The slope-`k` family separates them.** `L_k = z^kσ − 1` has Newton points
+`(0,0)`, `(1,k)`, hence slope `k`; recursion `c_m = q^{m−k}c_{m−k}`; nonzero
+coefficients `c_{jk} = q^{k j(j−1)/2}`; and therefore order `1/k`, level `k`. It
+is the **level** that tracks the slope. `slopeTwoCoeff_order_half` below is the
+first case where they differ; `computations/qbeta/c3_w2_newton_slope_is_qgevrey_level.py`
+(4/4) checks polygon, recursion, closed form and order symbolically for
+`k = 1, 2, 3`.
+
+**Consequence for C1, and it is forced rather than chosen.** The computed Newton
+slope at `∞` is `½` (`ThetaSlopeArithmetic.newtonSlopes_c1`). Read as a *level*
+it predicts order `2`, i.e. growth `q^{n²}` — which is exactly
+`c1InfCoeff_order_two` and `C1FormalSolutionGrowth.natDegree_c1CoeffPoly`. Read
+as an *order* it would predict `q^{n²/4}`, off by a factor 4 in the exponent and
+inconsistent with the corpus's own measured growth. So
+`theta_eq_half_gs_bridge` below reaches the right **number** by the wrong route:
+it grounds `c1Slope = ½` in the Route-B *order*, where the correct grounding is
+the `∞`-side *level*. The number, and every downstream conclusion, is unchanged
+— Door-i needs only that the two slope multisets differ, which is
+`ThetaSlopeArithmetic.newtonSlopes_c1_ne_ggm`. -/
+
+/-- Solution coefficients of the slope-`2` model `z²σf = f`, restricted to the
+even indices where they are nonzero: `d_j := c_{2j}`, from `c_m = q^{m-2}c_{m-2}`. -/
+noncomputable def slopeTwoCoeff (q : ℝ) : ℕ → ℝ
+  | 0 => 1
+  | (j + 1) => q ^ (2 * j) * slopeTwoCoeff q j
+
+theorem slopeTwoCoeff_mul (q : ℝ) (j : ℕ) :
+    slopeTwoCoeff q j * q ^ j = q ^ (j * j) := by
+  induction j with
+  | zero => simp [slopeTwoCoeff]
+  | succ k ih =>
+    have hexp : q ^ ((k + 1) * (k + 1)) = q ^ (k * k) * q ^ (2 * k) * q := by
+      rw [← pow_add, ← pow_succ]; congr 1; ring
+    calc slopeTwoCoeff q (k + 1) * q ^ (k + 1)
+        = q ^ (2 * k) * (slopeTwoCoeff q k * q ^ k) * q := by
+          rw [show slopeTwoCoeff q (k + 1) = q ^ (2 * k) * slopeTwoCoeff q k from rfl,
+              pow_succ]
+          ring
+      _ = q ^ (2 * k) * q ^ (k * k) * q := by rw [ih]
+      _ = q ^ ((k + 1) * (k + 1)) := by rw [hexp]; ring
+
+theorem slopeTwoCoeff_pos (q : ℝ) (hq : 0 < q) (j : ℕ) : 0 < slopeTwoCoeff q j := by
+  induction j with
+  | zero => rw [slopeTwoCoeff]; norm_num
+  | succ k ih =>
+    rw [show slopeTwoCoeff q (k + 1) = q ^ (2 * k) * slopeTwoCoeff q k from rfl]
+    exact mul_pos (pow_pos hq _) ih
+
+theorem logb_slopeTwoCoeff (q : ℝ) (hq : 1 < q) (j : ℕ) :
+    logb q (slopeTwoCoeff q j) = (j : ℝ) * j - j := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  have hlq : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hd : 0 < slopeTwoCoeff q j := slopeTwoCoeff_pos q hq0 j
+  have h := slopeTwoCoeff_mul q j
+  have hlog : Real.log (slopeTwoCoeff q j) + (j : ℝ) * Real.log q
+      = ((j : ℝ) * j) * Real.log q := by
+    have := congrArg Real.log h
+    rwa [Real.log_mul (ne_of_gt hd) (ne_of_gt (pow_pos hq0 j)), Real.log_pow,
+         Real.log_pow, Nat.cast_mul] at this
+  rw [logb, div_eq_iff hlq]
+  linarith
+
+/-- **The slope-2 model has q-Gevrey order ½ — so its LEVEL is 2, the slope.**
+
+`z²σf = f` has Newton slope `2` (points `(0,0)`, `(1,2)`). Its formal solution
+`∑ c_m z^m` has `c_m = q^{m-2}c_{m-2}`, hence `c_{2j} = q^{j(j-1)}`, hence
+
+    2·log_q c_{2j} / (2j)²  =  (j² − j)/(2j²)  →  ½.
+
+Order `½`, level `2`. The slope is `2`. **So the Newton slope is the LEVEL.** -/
+theorem slopeTwoCoeff_order_half (q : ℝ) (hq : 1 < q) :
+    Tendsto (fun j : ℕ => 2 * logb q (slopeTwoCoeff q j) / ((2 * (j : ℝ)) ^ 2))
+      atTop (𝓝 (1 / 2)) := by
+  have heq : ∀ j : ℕ, 1 ≤ j →
+      2 * logb q (slopeTwoCoeff q j) / ((2 * (j : ℝ)) ^ 2) = 1 / 2 - 1 / (2 * (j : ℝ)) := by
+    intro j hj
+    have hj0 : (0:ℝ) < (j : ℝ) := by exact_mod_cast hj
+    rw [logb_slopeTwoCoeff q hq j]
+    field_simp
+  have hlim : Tendsto (fun j : ℕ => 1 / 2 - 1 / (2 * (j : ℝ))) atTop (𝓝 (1 / 2)) := by
+    have h : Tendsto (fun j : ℕ => (2 : ℝ)⁻¹ * (1 / (j : ℝ))) atTop (𝓝 0) := by
+      simpa using (tendsto_const_div_atTop_nhds_zero_nat (1 : ℝ)).const_mul (2 : ℝ)⁻¹
+    have h2 : Tendsto (fun j : ℕ => 1 / (2 * (j : ℝ))) atTop (𝓝 0) := by
+      refine h.congr fun j => ?_
+      rw [one_div, one_div, mul_inv_rev]
+      ring
+    simpa using (tendsto_const_nhds (x := (1 / 2 : ℝ))).sub h2
+  refine hlim.congr' ?_
+  filter_upwards [eventually_ge_atTop 1] with j hj
+  exact (heq j hj).symm
+
+/-! ### The slope-1 control — why this went unexamined -/
+
+/-- Solution coefficients of the slope-`1` model `zσf = f` (the q-Euler /
+Tshakaloff series, RSZ eq. 2.1): `c_m = q^{m-1}c_{m-1}`, so `c_m = q^{m(m-1)/2}`. -/
+noncomputable def slopeOneCoeff (q : ℝ) : ℕ → ℝ
+  | 0 => 1
+  | (j + 1) => q ^ j * slopeOneCoeff q j
+
+theorem slopeOneCoeff_sq_mul (q : ℝ) (j : ℕ) :
+    slopeOneCoeff q j * slopeOneCoeff q j * q ^ j = q ^ (j * j) := by
+  induction j with
+  | zero => simp [slopeOneCoeff]
+  | succ k ih =>
+    have hexp : q ^ ((k + 1) * (k + 1)) = q ^ (2 * k) * q ^ (k * k) * q := by
+      rw [← pow_add, ← pow_succ]; congr 1; ring
+    calc slopeOneCoeff q (k + 1) * slopeOneCoeff q (k + 1) * q ^ (k + 1)
+        = q ^ (2 * k) * (slopeOneCoeff q k * slopeOneCoeff q k * q ^ k) * q := by
+          rw [show slopeOneCoeff q (k + 1) = q ^ k * slopeOneCoeff q k from rfl,
+              pow_succ, two_mul, pow_add]
+          ring
+      _ = q ^ (2 * k) * q ^ (k * k) * q := by rw [ih]
+      _ = q ^ ((k + 1) * (k + 1)) := hexp.symm
+
+theorem slopeOneCoeff_pos (q : ℝ) (hq : 0 < q) (j : ℕ) : 0 < slopeOneCoeff q j := by
+  induction j with
+  | zero => rw [slopeOneCoeff]; norm_num
+  | succ k ih =>
+    rw [show slopeOneCoeff q (k + 1) = q ^ k * slopeOneCoeff q k from rfl]
+    exact mul_pos (pow_pos hq _) ih
+
+theorem logb_slopeOneCoeff (q : ℝ) (hq : 1 < q) (j : ℕ) :
+    logb q (slopeOneCoeff q j) = ((j : ℝ) * j - j) / 2 := by
+  have hq0 : (0:ℝ) < q := lt_trans zero_lt_one hq
+  have hlq : Real.log q ≠ 0 := ne_of_gt (Real.log_pos hq)
+  have hd : 0 < slopeOneCoeff q j := slopeOneCoeff_pos q hq0 j
+  have h := slopeOneCoeff_sq_mul q j
+  have hlog : Real.log (slopeOneCoeff q j) + Real.log (slopeOneCoeff q j)
+      + (j : ℝ) * Real.log q = ((j : ℝ) * j) * Real.log q := by
+    have := congrArg Real.log h
+    rwa [Real.log_mul (mul_ne_zero (ne_of_gt hd) (ne_of_gt hd)) (ne_of_gt (pow_pos hq0 j)),
+         Real.log_mul (ne_of_gt hd) (ne_of_gt hd), Real.log_pow, Real.log_pow,
+         Nat.cast_mul] at this
+  rw [logb, div_eq_iff hlq] at *
+  linarith
+
+/-- **The slope-1 model has q-Gevrey order 1 — level 1 too.**
+
+`zσf = f` has Newton slope `1`, and its solution has order `1` = level `1`. The
+two readings **agree** here, which is exactly why "slope ½" could sit unexamined
+in this corpus for a year: the textbook example is the one case that cannot tell
+order from level. -/
+theorem slopeOneCoeff_order_one (q : ℝ) (hq : 1 < q) :
+    Tendsto (fun j : ℕ => 2 * logb q (slopeOneCoeff q j) / ((j : ℝ) ^ 2))
+      atTop (𝓝 1) := by
+  have heq : ∀ j : ℕ, 1 ≤ j →
+      2 * logb q (slopeOneCoeff q j) / ((j : ℝ) ^ 2) = 1 - 1 / (j : ℝ) := by
+    intro j hj
+    have hj0 : (0:ℝ) < (j : ℝ) := by exact_mod_cast hj
+    rw [logb_slopeOneCoeff q hq j]
+    field_simp
+  have hlim : Tendsto (fun j : ℕ => 1 - 1 / (j : ℝ)) atTop (𝓝 1) := by
+    simpa using (tendsto_const_nhds (x := (1 : ℝ))).sub
+      (tendsto_const_div_atTop_nhds_zero_nat (1 : ℝ))
+  refine hlim.congr' ?_
+  filter_upwards [eventually_ge_atTop 1] with j hj
+  exact (heq j hj).symm
 
 end QOU.Mathlib.QGevreyOrder

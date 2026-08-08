@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T02:00:00Z
-updated_at: 2026-08-08T06:30:00Z
+updated_at: 2026-08-08T07:30:00Z
 ---
 
 Found while looking for the *one* C1 result that has a downstream consumer.
@@ -166,12 +166,37 @@ In increasing cost:
    the growth chain, which only ever used the recursion. Both the script and
    Lean now carry it.
 
-5. **The one premise the polygon does NOT settle.** Computing the polygon pins
-   the NUMBER `½`. It does not say whether that number is the q-Gevrey *order*
-   or the *level* of any particular solution sequence, and §2 showed the corpus
-   has one `½` of each kind. Closing it means a slope↔growth theorem (RSZ ch. 5
-   territory), or at minimum locating RSZ's statement of it verbatim rather than
-   inferring from §2.3.2 + Ex. 3.3.3.
+5. ~~**The one premise the polygon does NOT settle.**~~ ✅ **DONE 2026-08-08 —
+   the Newton slope is the LEVEL.**
+
+   Settled without needing RSZ's ch. 5 machinery, by a model family that
+   separates the two readings. **RSZ's own touchstone cannot do it**: the
+   q-Euler / Tshakaloff equation `zσf = f` has slope `1` and solution
+   `c_m = q^{m(m−1)/2}`, i.e. order `1` *and* level `1`. At slope 1 the readings
+   agree — which is precisely why a `½` sat unexamined here.
+
+   The family `L_k = z^kσ − 1` separates them: Newton points `(0,0)`, `(1,k)` so
+   slope `k`; recursion `c_m = q^{m−k}c_{m−k}`; closed form
+   `c_{jk} = q^{k j(j−1)/2}`; hence **order `1/k`, level `k`**. The level tracks
+   the slope. Checked symbolically for `k = 1,2,3` — polygon, recursion, closed
+   form, order — in `computations/qbeta/c3_w2_newton_slope_is_qgevrey_level.py`
+   (4/4). Lean carries the two decisive cases: `slopeOneCoeff_order_one` (the
+   degenerate touchstone) and `slopeTwoCoeff_order_half` (the first case where
+   order ≠ level), both sorry-free.
+
+   **For C1 the reading is forced, not chosen.** Computed slope `½` read as a
+   *level* predicts order `2`, growth `q^{n²}` — exactly the Lean-proved
+   `deg_q cₙ = n²` and `c1InfCoeff_order_two`. Read as an *order* it would
+   predict `q^{n²/4}`, off by a factor 4 in the exponent and inconsistent with
+   the corpus's own measured growth.
+
+   **Correction made**: `theta_eq_half_gs_bridge` grounded `c1Slope = ½` in the
+   Route-B *order* and its docstring called the missing piece "the RSZ
+   slope=order theorem". There is no such theorem. Docstring corrected to say the
+   theorem is a numerical coincidence of two `½`s, not a slope identification,
+   and to point at the right grounding (the `∞`-side level). **The number `½` was
+   never in doubt and nothing downstream changes** — Door-i needs only that the
+   two multisets differ, which is `newtonSlopes_c1_ne_ggm`.
 
 **Where this leaves it.** (1), (2), (3) done; (4) half done. Two independent
 strands now reach the same `½` from opposite ends:
@@ -180,10 +205,20 @@ strands now reach the same `½` from opposite ends:
 * *growth strand* — recursion (witness) ⟹ ratio degree `2m+1` ✅ ⟹ `deg_q cₙ = n²`
   ✅ ⟹ order 2 / level ½ ✅
 
-Both strands are now machine-checked **end to end** — the growth strand starts
-at the operator, not at a witness. What is missing is the **bridge between
-them** (item 5): which growth quantity the polygon slope is. That bridge is now
-the *only* prose left in the load-bearing path.
+**All five items are closed.** The chain consumed by
+`conj:qdifference-kernel-prolongation-symbol` now runs operator → conclusion
+with no prose step and no witness-sourced input:
+
+    L1 coefficients ⟹ valuations (0,1,1) ⟹ Newton slopes {½,½}      [Lean]
+                                        ⟹ ≠ GGM's {−1,+1} ⟹ Door-i  [Lean]
+    L1 ⟹ recursion ⟹ ratio degree 2m+1 ⟹ deg_q cₙ = n² ⟹ order 2   [Lean]
+    slope = LEVEL (model family, k=1,2,3)                            [Lean+sympy]
+    ⟹ slope ½ = level ½ = order 2 = the measured growth              [consistent]
+
+What is NOT closed, and never was part of this bean: the keystone conjecture
+itself (`conj:qdifference-kernel-prolongation-symbol` is class-axiomatised with
+no instance — the honest open state), and `prop:mi-sw-abelianisation`, one of its
+`uses[]` premises, which is `trivial` because its hypothesis is its conclusion.
 
 `ThetaSlopeArithmetic` now says in its docstring that `c1Slope` and `ggmSlopes`
 are stipulated and that the order/level identification is a premise, so nothing
