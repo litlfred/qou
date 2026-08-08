@@ -117,9 +117,7 @@ def main() -> int:
 
     q = sp.Symbol("q", positive=True)
     eps = sp.Symbol("eps")
-    w = json.loads(
-        (_pb.witness_path("qbeta-per-block-paper-closed-forms.witness.json", HERE)).read_text()
-    )
+    w = builder.add_upstream(_pb.witness_path("qbeta-per-block-paper-closed-forms.witness.json", HERE))
     forms = {lam: sp.sympify(w["data"]["paper_closed_forms"][lam],
                              locals={"q": q})
              for lam in w["data"]["paper_closed_forms"]}

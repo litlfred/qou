@@ -122,8 +122,7 @@ def main() -> int:
     eps = sp.Symbol("eps")
     U = sp.Symbol("U")  # Habiro u = √q
 
-    wit = json.loads(
-        (_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    wit = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     dU = sp.cancel(habiro_trM(wit["results"]["n (neutron, A=1)"], U)
                    - habiro_trM(wit["results"]["p (proton, A=1)"], U))
     # substitute U = √q → Δtr_M as a function of q

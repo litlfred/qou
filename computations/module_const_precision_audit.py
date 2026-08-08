@@ -67,6 +67,30 @@ since a comparison threshold does not care about its 40th digit. That is a
 judgement about *use*, which no static test can make, so they are reported and
 not gated.
 
+## Triage of the `PADDING_RISK` tier — why it needs no bulk fix
+
+Of the 133 in this corpus, roughly 95 are **measured physical constants**
+(CODATA/AME/PDG: `M_TAU = mpf("1776.86")`, `B_D_AME = mpf("2.224566")`) and
+roughly 38 are **tolerances**. In both groups the value survives 53 bits
+intact — six significant digits is all `1776.86` *has* — so nothing is lost at
+construction. The only way harm reaches a witness is by serializing such a
+constant at compute precision, which prints the binary64 tail.
+
+**That path is already gated, and demonstrably so.** Build each at 15 dps,
+`str()` it at 70, and hand it to `witness_float64_padding_audit.is_f64_padded`:
+
+    1776.86      -> 1776.85999999999989995558280497789...   flagged
+    105.6583755  -> 105.65837550000000533145794179290...   flagged
+    2.224566     -> 2.224565999999999821312712811050...    flagged
+    1e-25        -> 1.000000000000000038494869749191...e-25 flagged
+
+So the padding audit catches every one of them at the moment it would matter,
+and it currently sits at zero under `--strict`. That is exactly how the two
+`m_tau` producers were found: constant built early, serialized, flagged NEW,
+fixed at the producer. Gating `PADDING_RISK` here would add 133 obligations to
+prevent a failure another gate already stops — and would red-wall a backlog
+that is, as far as any witness shows, entirely harmless today.
+
 Usage:
     python3 computations/module_const_precision_audit.py
     python3 computations/module_const_precision_audit.py --list

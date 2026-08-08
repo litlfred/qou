@@ -395,7 +395,7 @@ def main() -> int:
 
     # ─── Load atomic Habiro coefficients ───────────────────────
     hab_path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
-    hab = json.loads(hab_path.read_text())
+    hab = builder.add_upstream(hab_path)
     builder.add_data("base_habiro_witness", str(hab_path.name))
 
     p_a = load_atom(hab, "p (proton, A=1)")

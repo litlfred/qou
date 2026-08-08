@@ -238,7 +238,7 @@ def main() -> int:
     # Read CAL-anchored c_k from the cache witness
     import json
     cache_path = _pb.witness_path("qbeta-ck-cache.witness.json", HERE)
-    cache = json.loads(cache_path.read_text())
+    cache = wb.add_upstream(cache_path)
     cal_c_k = {}
     for row in cache["data"]["rows"]:
         k = row["k"]
