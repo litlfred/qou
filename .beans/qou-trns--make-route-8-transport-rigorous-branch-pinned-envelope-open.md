@@ -10,7 +10,7 @@ tags:
     - 5two
     - analysis
 created_at: 2026-08-07T21:15:00Z
-updated_at: 2026-08-07T21:15:00Z
+updated_at: 2026-08-08T07:05:00Z
 parent: 0yqu
 ---
 
@@ -422,5 +422,95 @@ Two lessons, both already on this lane's list and both re-learned the hard way:
 
 The one genuinely unwritten mathematical step is the **envelope derivative**,
 and it now sits between two Lean-proved endpoints.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## 2026-08-08 — the branch integer is now a LEAN THEOREM, and the arc turns out to END ON THE CUT
+
+`QOU/Archimedean/BranchIntegerPinning.lean`, sorry-free, `lake` green (1893
+jobs), axioms `[propext, Classical.choice, Quot.sound]`.
+
+```lean
+theorem eq_zero_of_continuousOn_of_exp_eq_one {F : ℝ → ℂ} {a b x : ℝ}
+    (hx : x ∈ Set.Icc a b) (hcont : ContinuousOn F (Set.Icc a b))
+    (hexp : ∀ y ∈ Set.Icc a b, Complex.exp (F y) = 1) (h0 : F a = 0) :
+    F x = 0
+```
+
+Instantiate at `F φ := Σⱼ Log(1 − e^{iφ}·yⱼ) − iφ` on `[0, π]`. This **replaces**
+the sub-gap-1 argument twice over: the original (integrality + local constancy on
+a collision-free arc) was refuted with the discriminant; the Route 19 repair
+argued the conclusion from a grid. This derives it, in one step, from three
+inputs — and two of them are already theorems.
+
+| input | status |
+|---|---|
+| `exp (F φ) = 1` | Lean-proved — it *is* `prod_one_sub_x_mul` (#4658) |
+| `F 0 = 0` | Lean-proved — same Vieta identity at `x = 1` |
+| `F` continuous on `[0,π]` | **open**, and now measured directly |
+
+Connectedness plus the base point, together. The old argument needed two steps
+because local constancy tells you `k` is *constant* and never which constant.
+
+### The finding: the transport arc ends ON the branch cut, twice over
+
+Route 20 (`qbeta_5two_route20_cut_avoidance_probe.py`, 7 gates, exit 0) measures
+the **hypothesis** instead of the conclusion — the point of having the lemma. Its
+first version tested the obvious sufficient condition, "no factor meets
+`(−∞,0]`", and **failed**: margin `9.3e-43` at `φ/π = 1.0`, unmoved by a `1e4`
+refinement. Not a grid artefact, not a tolerance. At `x = −1`,
+
+    1 − x·y₁  =  1 − w₁  =  −1.2469796…
+
+is exactly on the cut, with `w₁` the largest root of `w³ − 2w² − w + 1` — **the
+level-7 ladder's own cubic**. And `x = −1` is on the cut as well.
+
+### Why `hcont` survives it, and why that is uncomfortable
+
+Continuity forbids *crossing*, not *touching*. The contact is transversal — the
+margin is exactly `w₁·(π − φ)`, ratio → 1 over four orders of magnitude (G3) —
+and one-sided: rising to `φ = π` the factor arrives from **above**, `arg → +π`,
+which is exactly where the principal branch is defined on the cut. So `F` is
+continuous on `[0,π]` and the lemma applies.
+
+Traverse the arc **downward** and the factor arrives from below, `arg → −π`,
+while principal `Log` still returns `+π`: a real `2πi` jump (G6 measures both
+directions — upward residual `< 0.05`, downward `> 6.0`). **The transport's
+orientation is load-bearing, and only because of where the principal branch is
+declared to sit.**
+
+### This is the mechanism behind the three spurious `2π`s recorded above
+
+This bean records three separate occasions on which a principal-vs-continuous
+`Log` produced a spurious `2π`, and calls it "the single most reliable source of
+false alarms in this work". It is not luck. **The arc's endpoint is on the cut**,
+in two independent ways, so any principal-branch evaluation there is one
+convention away from being off by `2πi`. Naming the cause should stop the fourth
+instance.
+
+### Margin elsewhere — the collision is invisible to it
+
+Interior minimum `0.337` at `φ/π = 0.542`; `0.775` at the branch point `φ₀` (G5).
+The cut condition and the collision condition are independent — which is exactly
+why the symmetric repair survives a collision that killed the per-root argument.
+
+### What is still open
+
+* **`hcont` is measured, not proved.** Proving it means showing from the curve
+  that no factor `1 − x·yⱼ` meets `(−∞,0]` for `φ ∈ [0,π)` — a real-algebraic
+  statement — plus the one-sided limit at the endpoint. **Not written.**
+* **The envelope derivative `dS/dφ = 2φ`** — unchanged, still the other open
+  step, still needs the IFT plus `d/dz Li₂` along a path.
+
+### A process note
+
+`lake` was unavailable in this container (elan blocked by the proxy, 403) and the
+first build reported exit 0 while the log said `lake: command not found`. The
+*wrapper's* exit code, not lake's. Same trap as the `nohup` incident, new
+costume; caught only because the log gets read every time. Restored via
+`scripts/lean-toolchain-cache-restore.sh` then `scripts/lean-cache-restore.sh`
+(6990 oleans) — those scripts exist for exactly this firewalled case.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
