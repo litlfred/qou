@@ -64,3 +64,28 @@ New in MI-4: `isQGevreyOrder_pos`, `cauchyMul_pos`, `term_le_cauchyMul`,
 `tendsto_logb_const`, `tendsto_logb_comp`, `tendsto_term`, `term_coeff_le`,
 `cauchyMul_coeff_le`. Three stale scope notes (file header, MI-2 SCOPE block,
 MI-3(c) docstring) rewritten — they all still described the `≥` half as cited.
+
+## Superseded in form, kept in substance (2026-08-08, on integrating `main`)
+
+See qou-0z7n for the collision. A sibling landed an independent MI-2 fix first,
+so the file was resolved to **their** version and this work was re-applied on top
+of it. The `≥` argument above is unchanged — it is now
+**`cauchyMul_order_of_pos`**, and it consumes their `cauchyMul_bound` for the `≤`
+half instead of the four lemmas listed in the Todo, which are dropped as
+duplicates:
+
+| dropped (mine) | kept (theirs) |
+|---|---|
+| `cauchyEnvelope_add_le` | `envelope_shift_le` |
+| `cauchyMul_norm_le_envelope` | `QGevreyBound` + `cauchyMul_bound` |
+| `eventually_linear_le_rpow_sq` | not needed — `n+1 ≤ 2ⁿ` inside `cauchyMul_bound` |
+| `cauchyMul_norm_eventually_le` | replaced by `coeff_le_of_qGevreyBound` |
+
+`exists_global_gaussian_bound` survives as `qGevreyBound_of_isQGevreyOrder`,
+retargeted to their `QGevreyBound` definition.
+
+**The file is no longer sorry-free.** Their `cauchyMul_order` — general `K`, with
+`NoCancellation` — is still open; my proved result is the positive-real instance
+of it. Net effect on the census: this file went from 1 sorry to 1 sorry, but the
+open statement is now the *general* one rather than the restricted one, which is
+the better place for the remaining debt to sit.
