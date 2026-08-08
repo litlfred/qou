@@ -11,7 +11,8 @@
     {
       "id": "R1-em-coulomb-decomposition",
       "channel": "EM",
-      "doc": "content/quantum-observable-universe/climax-volume-mass/coulomb-charge.md:9-15",
+      "doc": "HISTORICAL — was content/quantum-observable-universe/climax-volume-mass/coulomb-charge.md:9-15; that block was CORRECTED 2026-08-08 to match its already-canonical sibling observations/crossing-energy-decomposition.md. This entry is retained as a regression fixture: the 'parts' below are the transcribed DEFECTIVE split, not live doc text, so it still (correctly) reports DEFECT(known). Do not repoint it at the live file.",
+      "status": "fixed-at-source-2026-08-08",
       "names": "crossing-energy split into 'baseline (strong)' + 'Coulomb correction'",
       "whole": "p*q - m/q",
       "parts": ["(p+m)*(q + 1/q)/2", "((p-m)/2)*(q - 1/q)"],
