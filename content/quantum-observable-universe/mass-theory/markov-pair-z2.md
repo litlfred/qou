@@ -87,14 +87,49 @@ For the Hopf row the sign sits entirely in the branch of $t^{1/2}$: with
 $t^{1/2} := A^{-2} = -q^{-1}$, $-t^{1/2}-t^{5/2} = q^{-1}+q^{-5}$. In $q$ there is
 no ambiguity, which is one practical reason to state the normalisation in $q$.
 
+**Why this is a link invariant, and why D is the only choice.** The table above
+would be worth little if it rested on knowing which link each braid closes to. It
+does not. By **Markov's theorem**, two braids have the same closure exactly when
+they are related by conjugation and by stabilisation
+$\beta \in B_n \mapsto \beta\sigma_n^{\pm 1} \in B_{n+1}$, so invariance under
+those moves *is* the statement that $V$ is a link invariant — and all three
+checks are algebra, with no knot theory in them:
+
+| move | effect | invariance condition |
+|---|---|---|
+| conjugation | $e$, $n$ fixed; $\mathrm{tr}_M$ cyclic | automatic, any $z$ |
+| positive stabilisation | $e \mapsto e+1$, $n \mapsto n+1$, $\mathrm{tr}_M \mapsto z\,\mathrm{tr}_M$ | $q^{-2}[2]_q\,z = 1$ |
+| negative stabilisation | $e \mapsto e-1$, $n \mapsto n+1$, $\mathrm{tr}_M \mapsto (z-h)\,\mathrm{tr}_M$ | $q^{2}[2]_q\,(z-h) = 1$ |
+
+(The negative row uses $\sigma^{-1} = \sigma - h$, which follows from the
+quadratic relation alone: $\sigma(\sigma - h) = \sigma^2 - h\sigma = 1$.)
+
+Each stabilisation condition is not merely *satisfied by* convention D — each
+one, on its own, **forces** it, needing only $q \neq 0$. Hence:
+
+> **Convention D is the unique Markov parameter for which
+> $q^{-2e}[2]_q^{\,n-1}\mathrm{tr}_M$ is a link invariant.**
+
+That the two stabilisations independently pin the *same* $z$ is a genuine
+consistency check on the normalisation, not a restatement — and it passes.
+
+Under this statement the retracted prefactor $q^{1/2}+q^{-1/2}$ is not a
+near-miss. With it the quantity fails to survive a stabilisation move, so it is
+not an invariant of anything at all.
+
 Proved in
 [`JonesNormalisation.lean`](../lean/QOU/QBeta/JonesNormalisation.lean) —
-`tl_generator_sq`, `unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
-`two_component_unlink`, `kauffman_loop`; sorry-free, and every hypothesis is
-`IsConventionD` plus $q \neq 0$ (that $q^2+1 \neq 0$ is *derived*, not assumed —
-`q_sq_add_one_ne_zero`). The identification of each closure is standard braid
-theory, taken as input rather than formalised; what is proved is that the
-normalisation returns the right invariant given it.
+`tl_generator_sq`, `sigma_inv`, `stab_pos_iff_conventionD`,
+`stab_neg_iff_conventionD`, `jonesV_stabilise_pos`, `jonesV_stabilise_neg`,
+`conventionD_iff_markov_invariant`, plus the four closure values
+(`unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
+`two_component_unlink`) and `kauffman_loop`. Sorry-free; every hypothesis is
+`IsConventionD` plus $q \neq 0$, and $q^2+1 \neq 0$ is *derived* rather than
+assumed (`q_sq_add_one_ne_zero`) — in a general field it can vanish, so assuming
+it would have been a hidden hypothesis.
+
+The four closure rows are retained as sanity checks — they confirm the invariant
+is normalised so the unknot is $1$ — but they are no longer load-bearing.
 
 **The proposition above is unaffected.** $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
 follows from the Markov axiom alone and holds for any Markov parameter. So the

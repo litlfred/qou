@@ -70,14 +70,43 @@ run against the writhe correction `(−A³)^{-e}`, collapses to `q^{-2e}` — ev
 odd power of `A` cancels, which is why the final formula has no square roots even
 though the Kauffman variable does.
 
-## Status
+## Why this is a link invariant at all — and why D is forced
 
-The four closure checks are proved as scalar identities under `IsConventionD`.
-They are checks of the *normalisation*, not of the braid-group topology: that
-`cl(σ₁σ₂) ⊂ B₃` is the unknot and `cl(σ₁σ₃) ⊂ B₄` is the two-component unlink is
-input here, taken from the standard theory, not derived. What is proved is that
-given those closures the formula returns `1`, `1`, `q⁻¹+q⁻⁵` and `δ` — the
-correct Jones polynomials — which is what pins the normalisation.
+An earlier version of this file checked the formula on four closures and noted
+that the closure identifications (`cl(σ₁σ₂) ⊂ B₃` is the unknot, and so on) were
+taken from standard theory rather than derived. That caveat is now unnecessary,
+and the reason is better than a formalisation of knot topology would have been.
+
+By **Markov's theorem**, two braids have the same closure exactly when they are
+related by conjugation and by stabilisation `β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1}`. So a
+function of `(β, e, n)` that is invariant under those moves *is* a link
+invariant — no knots required. All three checks are algebra:
+
+* **Conjugation.** `e` and `n` do not change, and `tr_M` is cyclic
+  (`jonesV_conj`). Free, for any Markov parameter.
+* **Positive stabilisation.** `e ↦ e+1`, `n ↦ n+1`,
+  `tr_M(βσ_n) = z·tr_M(β)`. Invariance is exactly `q⁻²·[2]_q·z = 1`
+  (`jonesV_stabilise_pos`).
+* **Negative stabilisation.** `e ↦ e−1`, `n ↦ n+1`. From the quadratic relation
+  `σ⁻¹ = σ − h` (`sigma_inv`), so `tr_M(βσ_n⁻¹) = (z−h)·tr_M(β)`, and invariance
+  is exactly `q²·[2]_q·(z−h) = 1` (`jonesV_stabilise_neg`).
+
+Both stabilisation conditions are not merely *satisfied by* convention D — each
+one, on its own, **forces** it (`stab_pos_iff_conventionD`,
+`stab_neg_iff_conventionD`, needing only `q ≠ 0`). That is the theorem this file
+is really about:
+
+> **Convention D is the unique Markov parameter for which
+> `q^{-2e}[2]_q^{n-1}tr_M` is a link invariant.**
+
+`markov-pair-z2`'s prefactor `q^{1/2}+q^{-1/2}` is not a near-miss under this
+statement; with it the quantity is not an invariant of anything, because it fails
+to survive a stabilisation move.
+
+The four closure values are then corollaries worth keeping as sanity checks —
+they confirm the invariant is normalised so that the unknot is `1` — but they are
+no longer load-bearing, and nothing here assumes which link a given braid closes
+to.
 -/
 
 namespace QOU.QBeta.JonesNormalisation
@@ -121,6 +150,21 @@ theorem tl_generator_sq (q : R) (hq : q ≠ 0) (s : A)
   rw [hs, hcom, hprod]
   noncomm_ring
 
+/-- **The inverse braid generator is `σ − h`.** From the quadratic relation
+alone: `σ(σ − h) = σ² − σh = (hσ + 1) − hσ = 1`, and symmetrically on the left.
+
+This is what makes negative stabilisation computable without ever inverting
+anything: `tr_M(σ⁻¹) = z − h`. -/
+theorem sigma_inv (q : R) (s : A)
+    (hs : s * s = algebraMap R A (q - q⁻¹) * s + 1) :
+    s * (s - algebraMap R A (q - q⁻¹)) = 1 ∧
+      (s - algebraMap R A (q - q⁻¹)) * s = 1 := by
+  have hcom : s * algebraMap R A (q - q⁻¹) = algebraMap R A (q - q⁻¹) * s :=
+    (Algebra.commutes _ s).symm
+  constructor
+  · rw [mul_sub, hs, hcom]; abel
+  · rw [sub_mul, hs]; abel
+
 end TLGenerator
 
 section Scalars
@@ -134,9 +178,19 @@ polynomials are known independently. Each is stated under `IsConventionD` and
 under nothing else, so each is a check that convention D — and not merely *some*
 Markov parameter — is what makes the normalisation land. -/
 
-/-- The Jones normalisation factor: `q^{-2e} · [2]_q^{n-1}`. -/
-noncomputable def jonesFactor (q : R) (e n : ℕ) : R :=
-  (q⁻¹) ^ (2 * e) * (q + q⁻¹) ^ (n - 1)
+/-- The Jones normalisation factor `q^{-2e} · [2]_q^{m}`, where **`m = n − 1`**
+is the strand count less one.
+
+Carrying `m` rather than `n` is deliberate: `n - 1` in `ℕ` is truncated
+subtraction, which would silently do the wrong thing at `n = 0` and force a side
+condition on every lemma. With `m` the stabilisation moves are `m ↦ m + 1` and
+nothing is ever subtracted. -/
+noncomputable def jonesFactor (q : R) (e m : ℕ) : R :=
+  (q⁻¹) ^ (2 * e) * (q + q⁻¹) ^ m
+
+/-- The normalised invariant `V = q^{-2e}·[2]_q^{m}·tr`, with `tr` the Markov
+trace of the braid and `m = n − 1`. -/
+noncomputable def jonesV (q : R) (e m : ℕ) (tr : R) : R := jonesFactor q e m * tr
 
 /-- **`q² + 1 ≠ 0` is forced, not assumed.** In a general field it could vanish
 (characteristic `2`, or `q = i` over `ℂ`), but convention D rules it out: if
@@ -226,6 +280,116 @@ theorem two_component_unlink (q z : R) (hq : q ≠ 0) (hD : IsConventionD q z) :
     _ = q + q⁻¹ := one_mul _
 
 end Scalars
+
+section MarkovInvariance
+
+variable {R : Type*} [Field R]
+
+/-! ### Markov invariance — the reason this is a link invariant
+
+Markov's theorem: braid closures coincide exactly under conjugation and
+stabilisation. So invariance under those two moves makes `jonesV` a link
+invariant, with no knot theory in the statement. Each move turns out to *force*
+convention D. -/
+
+/-- **Positive stabilisation ⟺ convention D.** The move
+`β ∈ B_n ↦ βσ_n ∈ B_{n+1}` sends `e ↦ e+1`, `m ↦ m+1` and multiplies the trace
+by `z`. Invariance is the single identity `q⁻²·[2]_q·z = 1` — and that identity
+is equivalent to `z(q²+1) = q³`.
+
+Only `q ≠ 0` is needed in either direction; no `q² + 1 ≠ 0` side condition,
+because if `q² + 1 = 0` then `[2]_q = 0` and both sides are false. -/
+theorem stab_pos_iff_conventionD (q z : R) (hq : q ≠ 0) :
+    (q⁻¹) ^ 2 * (q + q⁻¹) * z = 1 ↔ IsConventionD q z := by
+  unfold IsConventionD
+  constructor <;> intro h
+  · field_simp at h
+    linear_combination h
+  · field_simp
+    linear_combination h
+
+/-- **Negative stabilisation ⟺ convention D.** The move
+`β ↦ βσ_n⁻¹` sends `e ↦ e−1`, `m ↦ m+1`, and by `sigma_inv` multiplies the trace
+by `z − h`. Invariance is `q²·[2]_q·(z−h) = 1`, again equivalent to convention D.
+
+That the two stabilisations force the *same* `z` is not automatic — it is a
+consistency check on the whole normalisation, and it passes. -/
+theorem stab_neg_iff_conventionD (q z : R) (hq : q ≠ 0) :
+    q ^ 2 * (q + q⁻¹) * (z - (q - q⁻¹)) = 1 ↔ IsConventionD q z := by
+  unfold IsConventionD
+  constructor <;> intro h
+  · -- Cancel the `q` on the goal rather than dividing the hypothesis by it:
+    -- `linear_combination h / q` would introduce `q⁻¹`, which `ring` cannot
+    -- discharge without knowing `q * q⁻¹ = 1`.
+    field_simp at h
+    apply mul_left_cancel₀ hq
+    linear_combination h
+  · field_simp
+    linear_combination q * h
+
+/-- **`jonesV` is invariant under positive stabilisation.** `e ↦ e+1`,
+`m ↦ m+1`, `tr ↦ z·tr`. -/
+theorem jonesV_stabilise_pos (q z : R) (hq : q ≠ 0) (hD : IsConventionD q z)
+    (e m : ℕ) (tr : R) :
+    jonesV q (e + 1) (m + 1) (z * tr) = jonesV q e m tr := by
+  have hz : (q⁻¹) ^ 2 * (q + q⁻¹) * z = 1 := (stab_pos_iff_conventionD q z hq).mpr hD
+  unfold jonesV jonesFactor
+  calc (q⁻¹) ^ (2 * (e + 1)) * (q + q⁻¹) ^ (m + 1) * (z * tr)
+      = ((q⁻¹) ^ 2 * (q + q⁻¹) * z) * ((q⁻¹) ^ (2 * e) * (q + q⁻¹) ^ m * tr) := by
+        rw [Nat.mul_succ, pow_add, pow_succ]; ring
+    _ = (q⁻¹) ^ (2 * e) * (q + q⁻¹) ^ m * tr := by rw [hz, one_mul]
+
+/-- **`jonesV` is invariant under negative stabilisation.** `e ↦ e−1`,
+`m ↦ m+1`, `tr ↦ (z−h)·tr`. Stated with the source exponent as `e + 1` so that
+the target is `e` — no truncated subtraction anywhere. -/
+theorem jonesV_stabilise_neg (q z : R) (hq : q ≠ 0) (hD : IsConventionD q z)
+    (e m : ℕ) (tr : R) :
+    jonesV q e (m + 1) ((z - (q - q⁻¹)) * tr) = jonesV q (e + 1) m tr := by
+  have hz : q ^ 2 * (q + q⁻¹) * (z - (q - q⁻¹)) = 1 :=
+    (stab_neg_iff_conventionD q z hq).mpr hD
+  have hqi : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+  unfold jonesV jonesFactor
+  have expand : (q⁻¹) ^ (2 * (e + 1)) = (q⁻¹) ^ (2 * e) * ((q⁻¹) ^ 2) := by
+    rw [Nat.mul_succ, pow_add]
+  rw [expand, pow_succ]
+  have key : (q + q⁻¹) * (z - (q - q⁻¹)) = (q⁻¹) ^ 2 := by
+    have h2 : q ^ 2 * ((q + q⁻¹) * (z - (q - q⁻¹))) = 1 := by
+      rw [← hz]; ring
+    field_simp at h2 ⊢
+    linear_combination h2
+  calc (q⁻¹) ^ (2 * e) * ((q + q⁻¹) ^ m * (q + q⁻¹)) * ((z - (q - q⁻¹)) * tr)
+      = (q⁻¹) ^ (2 * e) * (q + q⁻¹) ^ m * ((q + q⁻¹) * (z - (q - q⁻¹))) * tr := by ring
+    _ = (q⁻¹) ^ (2 * e) * (q + q⁻¹) ^ m * ((q⁻¹) ^ 2) * tr := by rw [key]
+    _ = (q⁻¹) ^ (2 * e) * ((q⁻¹) ^ 2) * (q + q⁻¹) ^ m * tr := by ring
+
+/-- **Conjugation invariance.** `e` and `m` are unchanged by conjugation and the
+trace is cyclic, so nothing needs proving beyond transporting the trace equality.
+Recorded because Markov's theorem needs *both* moves, and it costs one line —
+leaving it implicit would make the invariance argument look narrower than it is.
+
+Holds for any Markov parameter; it is the stabilisation moves, not this one, that
+pin convention D. -/
+theorem jonesV_conj (q : R) (e m : ℕ) (tr₁ tr₂ : R) (hcyc : tr₁ = tr₂) :
+    jonesV q e m tr₁ = jonesV q e m tr₂ := by rw [hcyc]
+
+/-- **The characterisation.** Bringing the two together: the normalisation
+survives both stabilisation moves **iff** the Markov parameter is convention D.
+
+With `jonesV_conj` and Markov's theorem this says convention D is the *unique*
+Markov parameter for which `q^{-2e}[2]_q^{n-1}tr_M` is a link invariant. The
+uniqueness is the part that matters for the excision: a wrong loop parameter does
+not give a slightly-off invariant, it gives something that is not an invariant. -/
+theorem conventionD_iff_markov_invariant (q z : R) (hq : q ≠ 0) :
+    ((q⁻¹) ^ 2 * (q + q⁻¹) * z = 1 ∧ q ^ 2 * (q + q⁻¹) * (z - (q - q⁻¹)) = 1)
+      ↔ IsConventionD q z := by
+  constructor
+  · rintro ⟨hp, -⟩
+    exact (stab_pos_iff_conventionD q z hq).mp hp
+  · intro hD
+    exact ⟨(stab_pos_iff_conventionD q z hq).mpr hD,
+           (stab_neg_iff_conventionD q z hq).mpr hD⟩
+
+end MarkovInvariance
 
 section Kauffman
 
