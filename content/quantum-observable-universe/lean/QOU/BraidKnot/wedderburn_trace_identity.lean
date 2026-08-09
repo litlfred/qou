@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Field.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.wedderburn_trace_identity — corrected (the old sum-identity was false)
@@ -37,8 +38,8 @@ namespace QOU.BraidKnot
 open scoped BigOperators
 
 /-- The `q`-integer `[k]_q = 1 + q + … + q^{k-1}`. -/
-def qInt {R : Type*} [Field R] (q : R) (k : ℕ) : R :=
-  ∑ i ∈ Finset.range k, q ^ i
+abbrev qInt {R : Type*} [Field R] (q : R) (k : ℕ) : R :=
+  QOU.QInteger.qIntGeo q k
 
 /-- The `q`-factorial `[n]_q! = [1]_q · [2]_q · … · [n]_q` — the Hecke-level scale (computed
     directly as this product, **not** as `Σ_λ dim_q²`, which is a different `q`-polynomial). -/
