@@ -13,6 +13,14 @@
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { checkWallSide } from "../folio-assistant/content/pipeline/qa-checkers-voice.ts";
+import { resolveCanonicalLean } from "../folio-assistant/content/pipeline/qa-utils.ts";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
+
+/** Repo root, anchored on this file's own location (`scripts/` -> one up)
+ *  rather than `process.cwd()`, so `resolveCanonicalLean` finds the Lake
+ *  tree no matter which directory the script is invoked from. */
+const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
 const argv = process.argv.slice(2);
 if (argv.length === 0) {
@@ -29,27 +37,37 @@ if (argv.length === 0) {
   process.exit(2);
 }
 
-/** Resolve a block manifest's `lean.ref` to a file on disk, mirroring the
- *  pipeline's lookup order: sibling `<root>.lean` first, then
- *  `<lakeRoot>/<Decl/Path>.lean` under the package's Lake root. */
+/** Resolve a block manifest's `lean.ref` to a file on disk: sibling
+ *  `<root>.lean` first, then the pipeline's own `resolveCanonicalLean`.
+ *
+ *  This DELEGATES rather than re-deriving the lookup. The hand-rolled
+ *  longest-prefix walk that used to live here silently disagreed with
+ *  qa-sweep, and it disagreed in the worst direction — it reported PASS on
+ *  a file the checker had never scored.
+ *
+ *  Worked failure: `mass-theory/three-calibration-inputs.ts` carries
+ *  `ref: "qou:QOU.BraidKnot.three_calibration_inputs"`. Walking prefixes of
+ *  the FULL decl path finds no `QOU/BraidKnot/three_calibration_inputs.lean`,
+ *  falls back one component, finds the import-only aggregator
+ *  `QOU/BraidKnot.lean` — which does not declare `three_calibration_inputs`
+ *  at all — and checks THAT. The aggregator is archimedean-free, so the
+ *  block reported PASS while its real file
+ *  (`QOU/BraidKnot/ThreeCalibrationInputs.lean`) was a live critical
+ *  `wall-side-correct` fail in the sidecar.
+ *
+ *  `resolveCanonicalLean` is built to reject exactly this: its step (a)
+ *  trusts the direct module path ONLY if the file actually declares the
+ *  decl, then falls through to a basename map and a decl→file scan.
+ *  A checker script that scores a different file from the sweep it is
+ *  meant to reproduce is worse than no checker script. */
 function resolveLeanFromManifest(tsPath: string): string | undefined {
   const base = tsPath.replace(/\.ts$/, "");
   const sibling = `${base}.lean`;
   if (existsSync(sibling)) return sibling;
   const src = readFileSync(tsPath, "utf-8");
-  const m = src.match(/ref:\s*"([^:"]+):([^"]+)"/);
+  const m = src.match(/ref:\s*"([^"]+)"/);
   if (!m) return undefined;
-  const decl = m[2];
-  // qou -> content/quantum-observable-universe/lean
-  const lakeRoot = "content/quantum-observable-universe/lean";
-  // Try progressively shorter prefixes: the trailing component of the decl
-  // path is usually the theorem name, not part of the file path.
-  const parts = decl.split(".");
-  for (let n = parts.length; n > 0; n--) {
-    const cand = `${lakeRoot}/${parts.slice(0, n).join("/")}.lean`;
-    if (existsSync(cand)) return cand;
-  }
-  return undefined;
+  return resolveCanonicalLean(m[1], REPO_ROOT) ?? undefined;
 }
 
 const targets: { lean: string; md?: string; ts?: string; label: string }[] = [];
