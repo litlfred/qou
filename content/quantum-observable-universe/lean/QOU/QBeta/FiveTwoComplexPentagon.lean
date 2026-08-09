@@ -1277,6 +1277,80 @@ theorem branch_lower :
   refine saddle_branch_eq_lower hne h1ne hcube (by simpa using S.him) ?_
   simpa using S.re_le_one
 
+/-! ##### From the root data to the two pentagon instances -/
+
+/-- The upper composite argument `A₃ = (1−t)/(1−a·t)`. -/
+noncomputable def A3 : ℂ := (1 - (S.t : ℂ)) / (1 - S.a * (S.t : ℂ))
+
+theorem one_sub_t_pos : (0 : ℝ) < 1 - S.t := by linarith [S.ht1]
+
+theorem one_sub_t_cast : (1 : ℂ) - (S.t : ℂ) = ((1 - S.t : ℝ) : ℂ) := by push_cast; ring
+
+theorem den_ne_zero : (1 : ℂ) - S.a * (S.t : ℂ) ≠ 0 := by
+  intro hc
+  have h : ((1 : ℂ) - S.a * (S.t : ℂ)).im = 0 := by rw [hc]; simp
+  simp only [Complex.sub_im, Complex.one_im, zero_sub, neg_eq_zero, Complex.mul_im,
+    Complex.ofReal_re, Complex.ofReal_im, mul_zero, zero_add] at h
+  exact absurd h (mul_ne_zero (ne_of_gt S.him) (ne_of_gt S.ht0))
+
+theorem den_im_neg : ((1 : ℂ) - S.a * (S.t : ℂ)).im < 0 := by
+  simp only [Complex.sub_im, Complex.one_im, zero_sub, Complex.mul_im, Complex.ofReal_re,
+    Complex.ofReal_im, mul_zero, zero_add]
+  have := mul_pos S.him S.ht0
+  linarith
+
+/-- `Im A₃ > 0`: positive real numerator over a denominator below the axis. -/
+theorem A3_im_pos : 0 < S.A3.im := by
+  have h : S.A3 = ((1 - S.t : ℝ) : ℂ) / (1 - S.a * (S.t : ℂ)) := by
+    show (1 - (S.t : ℂ)) / (1 - S.a * (S.t : ℂ)) = _
+    rw [S.one_sub_t_cast]
+  rw [h]
+  exact im_div_ofReal_pos S.one_sub_t_pos S.den_ne_zero S.den_im_neg
+
+theorem mem_a : S.a ∈ rogersDomain := mem_rogersDomain_of_im_ne_zero (ne_of_gt S.him)
+
+theorem mem_A3 : S.A3 ∈ rogersDomain :=
+  mem_rogersDomain_of_im_ne_zero (ne_of_gt S.A3_im_pos)
+
+/-- `(1−a)/(1−at) = A₃⁻¹` — Route 55's `(1−a)(1−b) = (1−ab)²` with the pair
+`(a, t)` and third root `conj a`. -/
+theorem inv_A3 : (1 - S.a) / (1 - S.a * (S.t : ℂ)) = S.A3⁻¹ := by
+  have hq := S.den_ne_zero
+  have hnum : (1 : ℂ) - (S.t : ℂ) ≠ 0 := by
+    rw [S.one_sub_t_cast]; exact_mod_cast S.one_sub_t_pos.ne'
+  have hc : (starRingEnd ℂ) S.a ≠ 0 := by simpa using S.ne_zero
+  have hcube : ((starRingEnd ℂ) S.a) ^ 3 - 2 * ((starRingEnd ℂ) S.a) ^ 2
+      + 3 * ((starRingEnd ℂ) S.a) - 1 = 0 := by
+    have h := congrArg (starRingEnd ℂ) S.cubic_a
+    simpa [map_ofNat] using h
+  have hrec : (1 - S.a) * (1 - (S.t : ℂ)) = (1 - S.a * (S.t : ℂ)) ^ 2 :=
+    pentagon_arg_reciprocal (a := S.a) (b := (S.t : ℂ)) (c := (starRingEnd ℂ) S.a)
+      (by linear_combination S.hsum) (by linear_combination S.hprod) hcube hc
+  show (1 - S.a) / (1 - S.a * (S.t : ℂ)) = ((1 - (S.t : ℂ)) / (1 - S.a * (S.t : ℂ)))⁻¹
+  rw [inv_div]
+  field_simp
+  linear_combination -hrec + (-2 * (S.t : ℂ)) * S.pair_rel + (2 * S.a) * S.cubic_t
+
+/-- `1 − b⁻¹ = 1 − a·t`, since `a·b·t = 1`. -/
+theorem one_sub_inv_conj : (1 : ℂ) - ((starRingEnd ℂ) S.a)⁻¹ = 1 - S.a * (S.t : ℂ) := by
+  have hb : (starRingEnd ℂ) S.a ≠ 0 := by simpa using S.ne_zero
+  field_simp
+  linear_combination S.hprod
+
+/-- **The first pentagon instance**, in the capstone's shape. -/
+theorem pentagon_upper :
+    cRogersL (S.t : ℂ) + cRogersL S.a + cRogersL S.A3
+      + cRogersL (1 - ((starRingEnd ℂ) S.a)⁻¹) + cRogersL S.A3⁻¹
+      = ((Real.pi ^ 2 / 2 : ℝ) : ℂ) := by
+  have h := pentagonSum_eq_pi_sq_div_two S.ht0 S.ht1 S.mem_a
+  unfold pentagonSum at h
+  rw [S.one_sub_inv_conj, ← S.inv_A3]
+  show cRogersL (S.t : ℂ) + cRogersL S.a
+      + cRogersL ((1 - (S.t : ℂ)) / (1 - S.a * (S.t : ℂ)))
+      + cRogersL (1 - S.a * (S.t : ℂ))
+      + cRogersL ((1 - S.a) / (1 - S.a * (S.t : ℂ))) = _
+  linear_combination h
+
 end SaddleRoots
 
 end SaddleStructure

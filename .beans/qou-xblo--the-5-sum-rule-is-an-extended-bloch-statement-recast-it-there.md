@@ -1265,3 +1265,41 @@ Only the two pentagon values (theorems) and the identification of its abstract
 between is now derived.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 67 — the first pentagon instance, derived from the root data
+
+`SaddleRoots.pentagon_upper`:
+
+    L(t) + L(a) + L(A₃) + L(1 − b⁻¹) + L(A₃⁻¹) = π²/2
+
+with `A₃ = (1−t)/(1−at)` and `b = conj a` — **exactly the shape Route 64's
+capstone takes as `P1`**, now a theorem about `SaddleRoots` rather than a
+hypothesis.
+
+Three facts make the pentagon's own five arguments fit that shape:
+
+* `inv_A3` — `(1−a)/(1−at) = A₃⁻¹`, i.e. Route 55's `(1−a)(1−b) = (1−ab)²`
+  applied to the pair `(a, t)` with third root `conj a`. Needed the cubic *and*
+  the pair relation, with cofactors `−2t·R + 2a·C` on top of the reciprocal
+  identity — a Gröbner reduction, not a guess.
+* `one_sub_inv_conj` — `1 − b⁻¹ = 1 − a·t`, from `a·b·t = 1`.
+* `A3_im_pos` — `Im A₃ > 0`: a positive real numerator over a denominator below
+  the axis, `im_div_ofReal_pos` (new in `MathlibExt`, with its mirror).
+
+### The remaining gap, stated exactly
+
+`P2` — the same at `(t, conj a)` — is the mirror and is not yet written. With it,
+Route 64's capstone becomes a theorem about `SaddleRoots` with **no hypotheses
+beyond the structure itself**, giving
+
+    2·Σ Li₂ = 2π²/3 − (iπ/2)(log A₃ − log B₃ + log b − log a)
+              − (2/3)Σ log² + (2πi/3)Σ εⱼ log yⱼ
+
+and the `ε` are already `branch_real`/`branch_upper`/`branch_lower`. The final
+step to `−π²/6 − ½log²y₃ + (2/3)(θ−π)²` then needs `arg A₃ = (π−θ)/3`
+(`saddle_clog_cube_of_roots`, proved) and `log a = −½log t + iθ`
+(`normSq_mul`, proved, plus the argument).
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

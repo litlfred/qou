@@ -457,4 +457,21 @@ theorem branch_im {y : ℂ} :
       = 2 * y.arg - 3 * ((1 : ℂ) - y).arg := by
   simp [Complex.sub_im, Complex.mul_im, Complex.log_im, Complex.log_re]
 
+/-- `Im(p/q) > 0` for a positive real `p` and a `q` below the axis. -/
+theorem im_div_ofReal_pos {p : ℝ} (hp : 0 < p) {q : ℂ} (hq : q ≠ 0) (hqim : q.im < 0) :
+    0 < ((p : ℂ) / q).im := by
+  have hns : 0 < Complex.normSq q := Complex.normSq_pos.2 hq
+  rw [Complex.div_im]
+  simp only [Complex.ofReal_im, Complex.ofReal_re, zero_mul, zero_div, zero_sub, neg_pos]
+  exact div_neg_of_neg_of_pos (mul_neg_of_pos_of_neg hp hqim) hns
+
+/-- `Im(p/q) < 0` for a positive real `p` and a `q` above the axis. -/
+theorem im_div_ofReal_neg {p : ℝ} (hp : 0 < p) {q : ℂ} (hq : q ≠ 0) (hqim : 0 < q.im) :
+    ((p : ℂ) / q).im < 0 := by
+  have hns : 0 < Complex.normSq q := Complex.normSq_pos.2 hq
+  rw [Complex.div_im]
+  simp only [Complex.ofReal_im, Complex.ofReal_re, zero_mul, zero_div, zero_sub,
+    neg_lt_zero]
+  exact div_pos (mul_pos hp hqim) hns
+
 end QOU.MathlibExt
