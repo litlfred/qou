@@ -507,3 +507,47 @@ top-level `requirements.txt` or `pyproject.toml` declaring it (only
 `qou-mass/pyproject.toml`, unrelated), and scipy was absent from this container
 until installed by hand. Recorded, not fixed: adding a dependency manifest is a
 structural change beyond this drain.
+
+### CORRECTION to the blast-radius note above: `gram_qtrace` is a DIFFERENT defect
+
+Above I wrote that `gram_qtrace_hutchinson_probe.py` is "confirmed also broken
+by the same guard" and told whoever picks it up that "the fix is only
+`allow_float64=True` IF that call site's path really is f64". **That advice
+would have been wrong here, and would have papered over a live wrong number.**
+
+Diagnosed properly: this probe never calls `set_compute_dps` at all. So `mp.dps`
+is still mpmath's default 15 when it runs
+
+    q0 = mp.mpf(str(_Q50))        # _Q50 = q_parameter.Q_50_DIGIT_STR
+
+and the 50-digit substrate anchor is TRUNCATED as it is parsed:
+
+    built at dps=15 : 1.109978582751380837834176      <- what the probe used
+    built at dps=50 : 1.109978582751380807591669      <- the anchor
+                                     ^ diverges at the 17th digit
+
+The guard is not a false positive and the sweep is not "deliberately f64" — it
+is catching a real truncation of q₀. The probe's own comment at that line claims
+the opposite ("50-dps source: `mpf(str(q_parameter.Q))` ... atom_braid_word_3A
+now rejects it"), i.e. someone already tried to fix this and the fix was
+ineffective because dps was never raised. `allow_float64=True` here would have
+silenced a correct guard and frozen the wrong anchor in place.
+
+Correct fix: `set_compute_dps(50)` before the first `mp.mpf(<50-digit string>)`.
+Applied. **This is the same defect class the bean already recorded once** — the
+`VOL_41` constant built at module scope above `set_compute_dps` in
+`one_loop_c_sigma_tetrahedral_probe.py`. Second instance, different producer,
+found by a different gate. A static `module_const_precision_audit` catches the
+module-scope form; this one is inside a function, so only running the producer
+finds it.
+
+**Not yet re-run**, so its witness is not regenerated here: the value of q₀ moves
+in the 17th digit, so its numbers will move and that needs its own verification
+pass rather than being folded into a drain commit.
+
+`threerow_sign_crossing_decomp.py` was ALSO blocked by the guard and now runs
+again as a side effect of the χ-helper declaration — it imports `chi_atom`.
+
+`threerow_n12_isospin_control.py` is broken for an unrelated reason (it does
+`import _path_bridge` without first putting `computations/` on `sys.path`, so it
+fails from every cwd). Pre-existing, produces no witness, not touched.
