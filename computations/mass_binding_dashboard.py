@@ -308,7 +308,7 @@ def _bond_type_L():
 
     Each bond type is the a = 1 case at its own d, so
 
-        L_XY = -ln(z + d_XY),   z = 1/(sqrt(q0) + 1/sqrt(q0))
+        L_XY = -ln(z + d_XY),   z = q0^3/(q0^2 + 1)      [convention D]
 
     Agrees with the transfer kernel to 4.489e-32 at all three bond types (that
     residual is the shared tr_free floor, not a per-case error). Two things are
@@ -317,12 +317,25 @@ def _bond_type_L():
     forbids -- and L_pp is exhibited as ln(1/z) EXACTLY, a derived constant of
     the framework with no freedom in it at all.
 
-    WHAT THE CLOSED FORM ALSO EXPOSES. B over the ENTIRE admissible interface
-    family (d from 0 at sigma to -h at sigma^-1) spans [2.907195, 5.177967] MeV
-    for a single bond. AME(2H) = 2.2245662 is 30.69% BELOW that minimum, so no
-    crossing sign, colour weight, or crossing multiplicity can reach the
-    deuteron -- the miss is not localisable in the interface. Stacking is worse
-    than useless: m = 2 gives mu = 1.1044, i.e. B = -0.416 MeV.
+    WHAT THE CLOSED FORM ALSO EXPOSES, and it REVERSED under D. B over the
+    ENTIRE admissible interface family (d from 0 at sigma to -h at sigma^-1),
+    for a single bond, with E0 = 4.1859813632944758969 MeV:
+
+        convention C (excised)   [2.907195188, 5.177967207] MeV
+        convention D (production)[2.050709692, 3.797782935] MeV
+
+    Under C, AME(2H) = 2.2245662 sat BELOW the whole band -- the minimum was
+    30.69 % above it -- so no crossing sign, colour weight, or crossing
+    multiplicity could reach the deuteron and the miss was not localisable in
+    the interface. Under D the band CONTAINS AME(2H) (8.48 % above the
+    minimum, at d = -0.1192*h). The 2H impossibility argument that this
+    paragraph used to make DOES NOT SURVIVE the convention change; the
+    registry records the same reversal under the `binding` channel's
+    resolution. The stacking remark (m = 2 gives mu = 1.1044, B = -0.416 MeV)
+    was also computed under C and has not been recomputed.
+
+    Prose corrected 2026-08-09, bean qou-wgta item 13; the `zx` below had
+    already been switched to D and this docstring had not.
     """
     import mpmath as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
