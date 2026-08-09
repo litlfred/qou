@@ -77,7 +77,8 @@ therefore be *degree ≥ 2* to be nonzero on the intra-baryon structure.
 
 | # | Candidate | (a) indep. of `w`? | (b) GMN-compatible? | (c) derivable? | Verdict |
 |---|-----------|---------------------|----------------------|-----------------|---------|
-| 1 | Framing phase `q^{w·c}` / ribbon twist | **No** — a function of `w` by construction; trivial (writhe 0) on `β_Bor` | — | — | **EXCLUDED**: factors through `w`; the ribbon twist `θ_j = q^{j(j+1)}` is a *spin/Casimir* ladder (2026-06-02 audit §3), not a charge |
+| 1a | Framing phase `q^{w·c}` | **No** — a function of `w` by construction; trivial (writhe 0) on `β_Bor` | — | — | **EXCLUDED**: factors through `w`; the ribbon twist `θ_j = q^{j(j+1)}` is a *spin/Casimir* ladder (2026-06-02 audit §3), not a charge |
+| 1b | Per-strand framing datum `T(t)` (`def:strand-twist-datum`) | **Yes** — provably *not* a function of `w`: `exists_same_writhe_ne_totalTwist` gives framings with distinct total twist at fixed writhe | Yes (free ℤ label) | — | **NOT EXCLUDED — correction, see below**. Independent, but *freely assignable*, so the published enumeration supplies no corroboration (`TwistBatteryVacuity.lean`) |
 | 2 | Self-linking / framing-independent part | **No** — `sl = w + tw`; its isotopy content *is* the writhe; vanishes on `β_Bor` (w=0, pairwise=0) | — | — | **EXCLUDED**: not a new invariant; degree-1, vanishes on baryon |
 | 3 | Determinant `det = \|Δ_K(−1)\|` | Yes (isotopy) | **No** — positive-definite | — | **EXCLUDED (scope-(b), positivity)**: a provably non-negative invariant cannot carry a *signed* `Y` (matter/antimatter `Y = ±1`) |
 | 4 | Signature `σ(K)` | Yes (concordance inv.) | **No derivation** — even-integer, connected-sum-additive but no map `σ → Y`; wrong value spectrum | Not derived | **NOT SELECTED**: independent but no derivation `Y = σ`; would need a fit |
@@ -200,3 +201,58 @@ sector + coupling normalization remain open.**
   `milnor1954` + `habegger-masbaum2000` in `references.ts`.
 - Dimensionful-normalization sibling obstruction:
   [`2026-06-03-em-linking-invariant.md`](2026-06-03-em-linking-invariant.md).
+
+---
+
+## Correction (2026-08-09): candidate 1 was two objects, and one was wrongly excluded
+
+The original candidate table listed *"framing phase `q^{w·c}` / ribbon
+twist"* as a single row and excluded it on the ground that it "factors
+through `w`". That conflated two different objects, and the exclusion is
+correct for only one of them.
+
+* **The framing phase `q^{w·c}`** is built from the writhe by construction,
+  so it does factor through `w`. Row 1a stands.
+* **The per-strand framing datum `T(t)`** (`def:strand-twist-datum`, landed
+  on `main` in the eightfold-way chapter) is a function
+  `t : {1,…,n} → ℤ` with `T(t) = Σᵢ tᵢ`. Its Lean sibling proves
+  `exists_same_writhe_ne_totalTwist`: at *fixed* writhe there exist framings
+  with distinct total twist. So `T(t)` provably does **not** factor through
+  `w`, and the original exclusion never reached it.
+
+The two documents therefore did not contradict each other; this audit's
+table was simply mislabelled. Recorded because the apparent contradiction
+was flagged as blocking (bean `qou-6006`) and is now resolved.
+
+### What the correction does *not* restore
+
+`T(t)` is independent of the writhe precisely because it is a **free
+integer label**, and that is also why the published enumeration cannot
+corroborate it. `QOU/StandardModel/TwistBatteryVacuity.lean` proves
+(sorry-free) that the whole battery collapses: the spectrum test is exactly
+`T = 3Q` (the `−2I₃` common to candidate and target cancels), the nucleon
+test is entailed by charge additivity and states one condition twice, and
+the `Z₆` condition never sees the assignment. The reported "4 of 10,000
+survivors" is `1 × 2 × 2 × 1` multiset counting.
+
+A parameter-free repair — replacing the free label by the **canonical
+ribbon twist**, `Q = c(λ)/3` with `c` the content sum — was tested and
+fails: at `n = 3` the content sums `{3, 0, −3}` give the *integer* charges
+`{+1, 0, −1}`, and no `n ≤ 8` yields both quark charges `{+2/3, −1/3}`
+(`computations/ribbon_twist_charge_quantum_probe.py`). Scope-(a) for that
+reading; other ribbon normalisations are untested.
+
+So `T(t)` is a *live* candidate — the framing route is not excluded — but it
+is not corroborated, and the open content is exactly what the chapter
+already says: whether the twist multisets are **forced** by the categorical
+braid words.
+
+### Bearing on `μ̄₁₂₃`
+
+Unchanged. The load-bearing argument for a degree-2 invariant — every
+degree-1 crossing invariant vanishes on the Borromean baryon `𝓑₃` — is
+untouched, and `T(t)` is not a crossing invariant at all (it is framing
+data), so the two candidates are not competitors on the same axis. Per
+`2026-08-09-hypercharge-battery-reduction.md`, `μ̄₁₂₃ = B` supplies the `B`
+half of the left-handed requirement `Y = B − L` and leaves the `L` half
+open.
