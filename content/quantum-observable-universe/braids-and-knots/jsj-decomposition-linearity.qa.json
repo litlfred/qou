@@ -4,11 +4,14 @@
   "kind": "conjecture",
   "paths": {
     "ts": "content/quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.ts",
-    "md": "content/quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.md"
+    "md": "content/quantum-observable-universe/braids-and-knots/jsj-decomposition-linearity.md",
+    "lean": "content/quantum-observable-universe/lean/QOU/BraidsKnots/LinearJSJVolume.lean"
   },
   "source_hashes": {
-    "md": "80e0cd3125d6",
-    "ts": "70d95804e950"
+    "md": "19959c9e078b",
+    "ts": "110f582fc6d5",
+    "lean": "66d786c4be1d",
+    "lean_statement": "ab18307b5bc5"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -329,20 +332,21 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "80e0cd3125d6",
-          "ts": "70d95804e950"
+          "md": "19959c9e078b",
+          "ts": "110f582fc6d5",
+          "lean": "66d786c4be1d",
+          "lean_statement": "ab18307b5bc5"
         },
-        "result": "n/a",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
-        "notes": "block has no .lean sibling"
+        "reviewed_at": "2026-08-09T02:24:12.806Z",
+        "reviewed_sha": "e88e3708342876c4bc1bd3026d526cb5103c5f15"
       }
     ],
     "wall-base-ring-minimal": [
@@ -961,5 +965,5 @@
       }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-09T02:24:12.806Z"
 }
