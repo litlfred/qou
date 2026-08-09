@@ -428,6 +428,131 @@ theorem he_Ypair {φ : ℝ} (h : pairDisc φ < 0) (hlo : 0 ≤ φ) (hhi : φ < R
   · rw [dVdy_Ypair_fst_eq_zero h hlo hhi, zero_mul, Complex.zero_re]
   · rw [dVdy_Ypair_snd_eq_zero h hlo hhi, zero_mul, Complex.zero_re]
 
+/-! ## The real-pair regime, past the collision
+
+`pairDisc φ > 0` is `Ioo φ₀ π`, where the pair is real. Everything the transport
+needs there is the mirror of the complex case, and the two facts it turns on are
+`pairGamma = 1/t > 0` (from `gamma_rel`) and `pairBeta > 0`.
+
+⚠ `pairBeta > 0` is not "obvious from the picture". It is what says both real
+roots are **negative** — and if it failed, both would be positive, contradicting
+Route 36 G8's measurement that exactly one root per arc point is positive real.
+It is proved here from `pairDisc > 0` alone, by an inequality rather than by
+appealing to where `φ₀` sits. -/
+
+theorem pairGamma_pos (φ : ℝ) : 0 < pairGamma φ := by
+  have hγ : realRootPath φ * pairGamma φ = 1 := by
+    have h := gamma_rel (unitCubic_realRootPath φ)
+    unfold pairGamma
+    linarith [h]
+  have ht : 0 < realRootPath φ := realRootPath_pos φ
+  nlinarith [hγ, ht]
+
+/-- **`β > 0` past the collision**, hence both real roots negative.
+
+If `β ≤ 0` then `2c ≥ t > 0`, so `β² = (2c−t)² ≤ (2−t)²` using `c ≤ 1`; and
+`4γ = 4/t > 4 > (2−t)²` for `t ∈ (0,1)`. So `pairDisc = β² − 4γ < 0`, against the
+hypothesis. No fact about where the discriminant crossing sits is used. -/
+theorem pairBeta_pos {φ : ℝ} (h : 0 < pairDisc φ) : 0 < pairBeta φ := by
+  by_contra hb
+  push_neg at hb
+  have hγ : realRootPath φ * pairGamma φ = 1 := by
+    have hg := gamma_rel (unitCubic_realRootPath φ)
+    unfold pairGamma
+    linarith [hg]
+  have ht0 : 0 < realRootPath φ := realRootPath_pos φ
+  have ht1 : realRootPath φ < 1 := realRootPath_lt_one φ
+  have hc : Real.cos φ ≤ 1 := Real.cos_le_one φ
+  have hbe : pairBeta φ = realRootPath φ - 2 * Real.cos φ := rfl
+  have hd : pairDisc φ = pairBeta φ ^ 2 - 4 * pairGamma φ := rfl
+  rw [hd] at h
+  nlinarith [hγ, ht0, ht1, hc, hb, hbe, sq_nonneg (realRootPath φ - 1)]
+
+theorem re_Ypair_neg_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
+    ((Ypair φ).1).re < 0 ∧ ((Ypair φ).2).re < 0 ∧
+      ((Ypair φ).1).im = 0 ∧ ((Ypair φ).2).im = 0 := by
+  have hb : 0 < pairBeta φ := pairBeta_pos h
+  have hγ : 0 < pairGamma φ := pairGamma_pos φ
+  have hlt : Real.sqrt (pairDisc φ) < pairBeta φ := by
+    have hle : pairDisc φ < pairBeta φ ^ 2 := by
+      have : pairDisc φ = pairBeta φ ^ 2 - 4 * pairGamma φ := rfl
+      linarith
+    calc Real.sqrt (pairDisc φ) < Real.sqrt (pairBeta φ ^ 2) := by
+          exact Real.sqrt_lt_sqrt h.le hle
+      _ = pairBeta φ := by rw [Real.sqrt_sq hb.le]
+  have hnn : 0 ≤ Real.sqrt (pairDisc φ) := Real.sqrt_nonneg _
+  rw [Ypair_of_disc_pos h]
+  refine ⟨?_, ?_, ?_, ?_⟩ <;> simp <;> linarith
+
+/-- The two `Im(y/x)` sign facts on the real branch — proved directly, not
+through the conjugacy `Ypair.2 = conj Ypair.1`, which is a complex-branch fact. -/
+theorem im_div_Ypair_pos_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ)
+    (hsin : 0 < Real.sin φ) :
+    0 < ((Ypair φ).1 / arcX φ).im ∧ 0 < ((Ypair φ).2 / arcX φ).im := by
+  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h
+  refine ⟨?_, ?_⟩
+  · rw [im_arcX_div, hi1]
+    nlinarith [mul_pos hsin (neg_pos.mpr hp1)]
+  · rw [im_arcX_div, hi2]
+    nlinarith [mul_pos hsin (neg_pos.mpr hp2)]
+
+theorem im_mul_Ypair_neg_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ)
+    (hsin : 0 < Real.sin φ) :
+    (arcX φ * (Ypair φ).1).im < 0 ∧ (arcX φ * (Ypair φ).2).im < 0 := by
+  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h
+  refine ⟨?_, ?_⟩
+  · rw [im_arcX_mul, hi1]
+    nlinarith [mul_pos hsin (neg_pos.mpr hp1)]
+  · rw [im_arcX_mul, hi2]
+    nlinarith [mul_pos hsin (neg_pos.mpr hp2)]
+
+/-- **`heⱼ` on the real branch** — regime 4 of `FiveTwoPairSaddle`, where
+`arg(1−y)` and `arg(−y)` are both `0` outright and the whole quantity collapses
+to `arg(1−xy) + arg(1−y/x) ∈ (−π, π)`. -/
+theorem he_Ypair_real {φ : ℝ} (h : 0 < pairDisc φ) (hsin : 0 < Real.sin φ)
+    (Y' : ℂ) :
+    (dVdy (arcX φ) ((Ypair φ).1) * Y').re = 0
+      ∧ (dVdy (arcX φ) ((Ypair φ).2) * Y').re = 0 := by
+  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h
+  obtain ⟨hd1, hd2⟩ := im_div_Ypair_pos_of_disc_pos h hsin
+  obtain ⟨hm1, hm2⟩ := im_mul_Ypair_neg_of_disc_pos h hsin
+  have hv := vSide_Ypair_fst (φ := φ) (ne_of_gt hsin)
+  have hw := vSide_Ypair_snd (φ := φ) (ne_of_gt hsin)
+  have hz1 : dVdy (arcX φ) ((Ypair φ).1) = 0 :=
+    dVdy_eq_zero_of_argSum_bound (arcX_ne_zero φ) hv.hy0
+      (one_sub_ne_zero_of_mem_notCut hv.hc₁) (one_sub_ne_zero_of_mem_notCut hv.hc₂)
+      (one_sub_ne_zero_of_mem_notCut hv.hc₃)
+      ((curve_Ypair (arcX_normSq φ) (arcX_re φ)).1)
+      (abs_argSum_lt_of_real_neg hi1 hp1 hm1 hd1)
+  have hz2 : dVdy (arcX φ) ((Ypair φ).2) = 0 :=
+    dVdy_eq_zero_of_argSum_bound (arcX_ne_zero φ) hw.hy0
+      (one_sub_ne_zero_of_mem_notCut hw.hc₁) (one_sub_ne_zero_of_mem_notCut hw.hc₂)
+      (one_sub_ne_zero_of_mem_notCut hw.hc₃)
+      ((curve_Ypair (arcX_normSq φ) (arcX_re φ)).2)
+      (abs_argSum_lt_of_real_neg hi2 hp2 hm2 hd2)
+  exact ⟨by rw [hz1, zero_mul, Complex.zero_re],
+    by rw [hz2, zero_mul, Complex.zero_re]⟩
+
+/-- `hB` on the real branch — identical to `logSumB_concrete` except that the two
+`Im(y/x)` sign facts come from `re_Ypair_neg_of_disc_pos` rather than from the
+conjugacy, which does not hold here. -/
+theorem logSumB_concrete_real {φ : ℝ} (hsin : 0 < Real.sin φ) (hd : 0 < pairDisc φ)
+    (hφ0 : 0 ≤ φ) (hφπ : φ < π) :
+    Complex.log (1 - Yreal φ / arcX φ) + Complex.log (1 - (Ypair φ).1 / arcX φ)
+      + Complex.log (1 - (Ypair φ).2 / arcX φ) = -Complex.log (arcX φ) := by
+  have hxim : 0 < (arcX φ).im := by rw [arcX_im]; exact hsin
+  have hxre : (arcX φ).re = Real.cos φ := arcX_re φ
+  have hsne : Real.sin φ ≠ 0 := ne_of_gt hsin
+  obtain ⟨hp1, hp2⟩ := im_div_Ypair_pos_of_disc_pos hd hsin
+  exact logSumB_eq_neg_log (arcX_ne_zero φ)
+    (one_sub_ne_zero_of_mem_notCut (vSide_Yreal hsne).hc₃)
+    (one_sub_ne_zero_of_mem_notCut (vSide_Ypair_fst hsne).hc₃)
+    (one_sub_ne_zero_of_mem_notCut (vSide_Ypair_snd hsne).hc₃)
+    (vieta_hv1 (arcX_normSq φ) hxre) (vieta_hv2 (arcX_normSq φ) hxre) (vieta_e3 φ)
+    hxim (arcX_normSq φ) (realRootPath_pos φ) (realRootPath_lt_one φ)
+    hp1 (fun _ => hp2)
+    hφ0 hφπ (arcX_arg (by linarith [Real.pi_pos]) (le_of_lt hφπ))
+
 /-! ## The assembly — `hasDerivAt_envelopeS` at the concrete labelling
 
 Every hypothesis of `hasDerivAt_envelopeS` is now a theorem about `Yreal` and
@@ -481,6 +606,63 @@ theorem hasDerivAt_envelopeS_concrete {φ : ℝ} (hd : pairDisc φ < 0)
     (he_Yreal hsn) (he_Ypair hd hlo.le hhi _).1 (he_Ypair hd hlo.le hhi _).2
     (logSumA_concrete hsin hlo.le hhi) (logSumB_concrete hsin hd hlo.le hhi)
 
+/-- On the real branch `−y` is a **positive real**, so it is in `slitPlane` by
+`Re > 0` rather than by `Im ≠ 0` — the opposite disjunct from the complex case. -/
+theorem neg_Ypair_mem_slitPlane_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
+    -(Ypair φ).1 ∈ Complex.slitPlane ∧ -(Ypair φ).2 ∈ Complex.slitPlane := by
+  obtain ⟨hp1, hp2, _, _⟩ := re_Ypair_neg_of_disc_pos h
+  exact ⟨Or.inl (by simpa using hp1), Or.inl (by simpa using hp2)⟩
+
+theorem hasDerivAt_log_neg_Ypair_fst_real {φ : ℝ} (hd : 0 < pairDisc φ)
+    (hs : Real.sin φ ≠ 0) :
+    HasDerivAt (fun u => Complex.log (-(Ypair u).1))
+      ((((-(realRootPath' φ + 2 * Real.sin φ)
+          + -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2 : ℝ) : ℂ)
+        / (Ypair φ).1) φ :=
+  hasDerivAt_log_neg_of_slitPlane (hasDerivAt_Ypair_fst_real hd)
+    (vSide_Ypair_fst hs).hy0 (neg_Ypair_mem_slitPlane_of_disc_pos hd).1
+
+theorem hasDerivAt_log_neg_Ypair_snd_real {φ : ℝ} (hd : 0 < pairDisc φ)
+    (hs : Real.sin φ ≠ 0) :
+    HasDerivAt (fun u => Complex.log (-(Ypair u).2))
+      ((((-(realRootPath' φ + 2 * Real.sin φ)
+          - -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2 : ℝ) : ℂ)
+        / (Ypair φ).2) φ :=
+  hasDerivAt_log_neg_of_slitPlane (hasDerivAt_Ypair_snd_real hd)
+    (vSide_Ypair_snd hs).hy0 (neg_Ypair_mem_slitPlane_of_disc_pos hd).2
+
+/-- **`S′ = 2φ` on the real-pair regime `Ioo φ₀ π`.** The mirror of
+`hasDerivAt_envelopeS_concrete`, with `pairDisc φ < 0` replaced by `0 < pairDisc φ`
+throughout. Together the two cover `Ioo 0 π` minus the collision, which is
+exactly what `envelopeS_total_of_ioo` consumes. -/
+theorem hasDerivAt_envelopeS_concrete_real {φ : ℝ} (hd : 0 < pairDisc φ)
+    (hlo : 0 < φ) (hhi : φ < π) :
+    HasDerivAt (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2))
+      (2 * φ) φ := by
+  have hsin : 0 < Real.sin φ := Real.sin_pos_of_pos_of_lt_pi hlo hhi
+  have hsn : Real.sin φ ≠ 0 := ne_of_gt hsin
+  exact hasDerivAt_envelopeS (by linarith [Real.pi_pos]) hhi.le
+    (hasDerivAt_Yreal' φ) (hasDerivAt_Ypair_fst_real hd) (hasDerivAt_Ypair_snd_real hd)
+    (vSide_Yreal hsn) (vSide_Ypair_fst hsn) (vSide_Ypair_snd hsn)
+    (hasDerivAt_log_neg_Yreal φ) (hasDerivAt_log_neg_Ypair_fst_real hd hsn)
+    (hasDerivAt_log_neg_Ypair_snd_real hd hsn)
+    (he_Yreal hsn) (he_Ypair_real hd hsin _).1 (he_Ypair_real hd hsin _).2
+    (logSumA_concrete hsin hlo.le hhi) (logSumB_concrete_real hsin hd hlo.le hhi)
+
+/-- **`S′ = 2φ` on all of `Ioo 0 π` except the collision.**
+
+The two regimes joined. `pairDisc φ ≠ 0` is exactly "not at the collision", and
+it is the *only* hypothesis left besides being in the open interval — the
+labelling, the branch routing, the envelope condition and both log sums are all
+discharged. -/
+theorem hasDerivAt_envelopeS_concrete_of_ne {φ : ℝ} (hd : pairDisc φ ≠ 0)
+    (hlo : 0 < φ) (hhi : φ < π) :
+    HasDerivAt (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2))
+      (2 * φ) φ := by
+  rcases hd.lt_or_gt with h | h
+  · exact hasDerivAt_envelopeS_concrete h hlo hhi
+  · exact hasDerivAt_envelopeS_concrete_real h hlo hhi
+
 /-! ## `Ioo`, not `Ico` — the `φ = 0` endpoint dissolves
 
 `envelopeS_total` asks for the derivative on `Ico 0 π`, i.e. **including** the
@@ -527,5 +709,25 @@ theorem envelopeS_total_of_ioo {Y₁ Y₂ Y₃ : ℝ → ℂ} {c : ℝ} (hc0 : 0
       HasDerivAt (envelopeS Y₁ Y₂ Y₃) (2 * φ) φ) :
     envelopeS Y₁ Y₂ Y₃ π = envelopeS Y₁ Y₂ Y₃ 0 + π ^ 2 :=
   total_of_deriv_on_ioo hc0 hcπ hcont hderiv
+
+/-- **The transport, reduced to continuity alone.**
+
+Given a collision point `c` and continuity of `S` on the closed interval, the
+whole of `S(π) − S(0) = π²` follows. Every other hypothesis
+`hasDerivAt_envelopeS` and `envelopeS_total` between them asked for is now a
+theorem about the concrete labelling.
+
+⚠ What is *not* here: `hcont`. Its hard point is `φ = π`, where two of the `Li₂`
+arguments land on the cut — the `Li₂` half of that is proved
+(`continuousAt_re_cLiTwoExt`, 2-D), but composing it along the arc is not
+written. -/
+theorem envelopeS_total_concrete {c : ℝ} (hc0 : 0 < c) (hcπ : c < π)
+    (hcoll : ∀ φ ∈ Set.Ioo (0 : ℝ) π, φ ≠ c → pairDisc φ ≠ 0)
+    (hcont : ContinuousOn (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2))
+      (Set.Icc 0 π)) :
+    envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) π
+      = envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) 0 + π ^ 2 :=
+  envelopeS_total_of_ioo hc0 hcπ hcont
+    (fun φ hφ hne => hasDerivAt_envelopeS_concrete_of_ne (hcoll φ hφ hne) hφ.1 hφ.2)
 
 end QOU.QBeta.FiveTwoDeformedSaddle

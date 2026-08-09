@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: S-prime = 2phi PROVED at the concrete labelling on Ioo 0 phi0. Two NEW obligations, both found by doing the assembly.'
+title: 'Gap A CLOSED except hcont: S(pi) - S(0) = pi^2 now follows from continuity of S alone, at the concrete labelling.'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T20:40:00Z
+updated_at: 2026-08-09T22:15:00Z
 ---
 
 ## What is open
@@ -727,7 +727,53 @@ was written when the exceptional point was the only endpoint in view.
 own upstream lemma.* Three of this lane's four "blockers" have now dissolved on
 contact, and two of them were mine to begin with.
 
-### ⚠ FINDING 2 — the REAL-pair regime has no derivative lemma at all
+### ✅ FINDING 2 IS CLOSED — the real-pair regime, and it cost one inequality
+
+    hasDerivAt_Ypair_fst_real / _snd_real (h : 0 < pairDisc φ)
+    he_Ypair_real (h : 0 < pairDisc φ) (hsin : 0 < sin φ) (Y' : ℂ)
+    logSumB_concrete_real
+    hasDerivAt_envelopeS_concrete_real (hd : 0 < pairDisc φ) (0 < φ) (φ < π)
+
+and the two regimes joined:
+
+    hasDerivAt_envelopeS_concrete_of_ne (hd : pairDisc φ ≠ 0) (0 < φ) (φ < π) :
+      HasDerivAt (envelopeS Yreal Ypair.1 Ypair.2) (2*φ) φ
+
+`pairDisc φ ≠ 0` — *not at the collision* — is now the **only** hypothesis
+besides being in the open interval.
+
+**The one real step is `pairBeta_pos`.** Everything on the real branch turns on
+both roots being **negative**, which is `β > 0` and `γ > 0`. `γ = 1/t > 0` is free
+from `gamma_rel`. `β > 0` is not free, and it is not "obvious from the picture"
+either — if it failed both roots would be *positive*, contradicting Route 36 G8's
+measurement that exactly one root per arc point is positive real. Proved from
+`pairDisc > 0` alone: if `β ≤ 0` then `2c ≥ t > 0`, so `β² = (2c−t)² ≤ (2−t)²`
+using `c ≤ 1`, while `4γ = 4/t > 4 > (2−t)²` for `t ∈ (0,1)` — so
+`pairDisc = β² − 4γ < 0`, contradiction. **No fact about where `φ₀` sits is
+used**, which matters: the crossing's location is measured (`c* = −0.7422`), not
+proved.
+
+Two smaller mirrorings, each taking the *opposite* disjunct from the complex case:
+
+* `−y ∈ slitPlane` by `Re > 0` (it is a positive real) rather than by `Im ≠ 0`;
+* `logSumB`'s two `Im(y/x) > 0` facts directly from `Im(y/x) = −sin φ·Re y`
+  rather than through the conjugacy `Ypair.2 = conj Ypair.1`, which is a
+  complex-branch fact and simply false here.
+
+### ✅✅ THE TRANSPORT IS REDUCED TO CONTINUITY ALONE
+
+    envelopeS_total_concrete (hc0 : 0 < c) (hcπ : c < π)
+      (hcoll : ∀ φ ∈ Ioo 0 π, φ ≠ c → pairDisc φ ≠ 0)
+      (hcont : ContinuousOn (envelopeS Yreal Ypair.1 Ypair.2) (Icc 0 π)) :
+      envelopeS … π = envelopeS … 0 + π²
+
+Every hypothesis `hasDerivAt_envelopeS` and `envelopeS_total` between them asked
+for is now a theorem about the concrete labelling. What is left is `hcont`, plus
+`hcoll` — the statement that `φ₀` is the *only* zero of `pairDisc` on the arc,
+which Route 32 measures and nothing proves, and which is therefore carried as a
+hypothesis rather than assumed.
+
+### The superseded note on FINDING 2
 
 `hasDerivAt_Ypair_fst` / `_snd` both carry `pairDisc φ < 0`, so
 `hasDerivAt_envelopeS_concrete` holds on **`Ioo 0 φ₀`** only —
@@ -753,8 +799,11 @@ from `sum = 2c − t < 0` and `product = pairGamma > 0` past the crossing.
 |---|---|
 | `S′ = 2φ` on `Ioo 0 φ₀` | ✅ `hasDerivAt_envelopeS_concrete` |
 | the `Ico`/`Ioo` glue | ✅ `envelopeS_total_of_ioo` |
-| `S′ = 2φ` on `Ioo φ₀ π` (real pair) | ⏳ **finding 2** — needs `hasDerivAt_Ypair_*` for `pairDisc φ > 0`, then regime 4 |
-| `hcont : ContinuousOn (envelopeS …) (Icc 0 π)` | ⏳ the `Li₂` half is done (`continuousAt_re_cLiTwoExt`); the composition is not written |
+| `S′ = 2φ` on `Ioo φ₀ π` (real pair) | ✅ `hasDerivAt_envelopeS_concrete_real` |
+| both regimes joined | ✅ `hasDerivAt_envelopeS_concrete_of_ne` |
+| the whole transport, given continuity | ✅ `envelopeS_total_concrete` |
+| `hcont : ContinuousOn (envelopeS …) (Icc 0 π)` | ⏳ **the only piece left.** The `Li₂` half is done (`continuousAt_re_cLiTwoExt`, 2-D); composing it along the arc is not written |
+| `hcoll` — `φ₀` is the only zero of `pairDisc` | ⏳ measured (Route 32), carried as a hypothesis rather than assumed |
 
 Both are bookkeeping over proved parts — and this bean's own record says that is
 not a reason to call them trivial.

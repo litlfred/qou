@@ -444,6 +444,75 @@ theorem hasDerivAt_Ypair_fst {φ : ℝ} (h : pairDisc φ < 0) :
     rw [Ypair_of_disc_neg hu]
   exact (hb.add hi).congr_of_eventuallyEq heq
 
+/-! ### 4c. The **real**-pair regime, past the collision
+
+`hasDerivAt_Ypair_fst`/`_snd` carry `pairDisc φ < 0` and so cover only
+`Ioo 0 φ₀`. Past `φ₀ = 137.9206708879635°` the pair is genuinely **real**
+(Route 36 G5: all three roots real at 46 of 199 arc points) and `otherRoots` is
+in its `√d` branch.
+
+⚠ This gap was invisible until the transport was assembled. Every statement about
+the pair had `pairDisc φ < 0` written into it, so it never surfaced as a *missing
+hypothesis* — it surfaced as a theorem silently covering part of the arc. The
+proof is the mirror of the complex branch: `√` is differentiable away from `0`,
+and here it is `pairDisc φ > 0` that keeps it away. -/
+
+theorem eventually_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
+    ∀ᶠ u in 𝓝 φ, 0 < pairDisc u :=
+  continuous_pairDisc.continuousAt (Ioi_mem_nhds h)
+
+theorem hasDerivAt_pairDisc (φ : ℝ) : HasDerivAt pairDisc (-pairNegDisc' φ) φ := by
+  have hfun : pairDisc = -pairNegDisc := by
+    funext u
+    simp only [Pi.neg_apply, pairNegDisc_eq_neg, neg_neg]
+  rw [hfun]
+  exact (hasDerivAt_pairNegDisc φ).neg
+
+theorem Ypair_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
+    Ypair φ = ((((-pairBeta φ + Real.sqrt (pairDisc φ)) / 2 : ℝ) : ℂ),
+               (((-pairBeta φ - Real.sqrt (pairDisc φ)) / 2 : ℝ) : ℂ)) := by
+  have hle : 0 ≤ pairBeta φ ^ 2 - 4 * pairGamma φ := by unfold pairDisc at h; linarith
+  unfold Ypair otherRoots
+  rw [if_pos hle]
+  unfold pairDisc
+  norm_num
+
+/-- **`Y₂` on the real branch.** -/
+theorem hasDerivAt_Ypair_fst_real {φ : ℝ} (h : 0 < pairDisc φ) :
+    HasDerivAt (fun u => (Ypair u).1)
+      ((((-(realRootPath' φ + 2 * Real.sin φ)
+          + -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2 : ℝ) : ℂ)) φ := by
+  have hr : HasDerivAt (fun u : ℝ => (-pairBeta u + Real.sqrt (pairDisc u)) / 2)
+      ((-(realRootPath' φ + 2 * Real.sin φ)
+        + -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2) φ :=
+    (((hasDerivAt_pairBeta φ).neg).add
+      ((hasDerivAt_pairDisc φ).sqrt (ne_of_gt h))).div_const 2
+  have hb : HasDerivAt (fun u : ℝ => (((-pairBeta u + Real.sqrt (pairDisc u)) / 2 : ℝ) : ℂ))
+      ((((-(realRootPath' φ + 2 * Real.sin φ)
+        + -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2 : ℝ) : ℂ)) φ :=
+    Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ hr
+  refine hb.congr_of_eventuallyEq ?_
+  filter_upwards [eventually_disc_pos h] with u hu
+  rw [Ypair_of_disc_pos hu]
+
+/-- **`Y₃` on the real branch.** -/
+theorem hasDerivAt_Ypair_snd_real {φ : ℝ} (h : 0 < pairDisc φ) :
+    HasDerivAt (fun u => (Ypair u).2)
+      ((((-(realRootPath' φ + 2 * Real.sin φ)
+          - -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2 : ℝ) : ℂ)) φ := by
+  have hr : HasDerivAt (fun u : ℝ => (-pairBeta u - Real.sqrt (pairDisc u)) / 2)
+      ((-(realRootPath' φ + 2 * Real.sin φ)
+        - -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2) φ :=
+    (((hasDerivAt_pairBeta φ).neg).sub
+      ((hasDerivAt_pairDisc φ).sqrt (ne_of_gt h))).div_const 2
+  have hb : HasDerivAt (fun u : ℝ => (((-pairBeta u - Real.sqrt (pairDisc u)) / 2 : ℝ) : ℂ))
+      ((((-(realRootPath' φ + 2 * Real.sin φ)
+        - -pairNegDisc' φ / (2 * Real.sqrt (pairDisc φ))) / 2 : ℝ) : ℂ)) φ :=
+    Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ hr
+  refine hb.congr_of_eventuallyEq ?_
+  filter_upwards [eventually_disc_pos h] with u hu
+  rw [Ypair_of_disc_pos hu]
+
 /-! ### 5a'. Vieta for the concrete labelling
 
 `logSumA_eq_log` and `logSumB_eq_neg_log` — the `hA`/`hB` inputs to
