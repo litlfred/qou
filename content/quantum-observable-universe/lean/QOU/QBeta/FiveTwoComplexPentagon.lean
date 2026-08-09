@@ -956,6 +956,31 @@ theorem pentagon_arg_reciprocal {a b c : ℂ} (hsum : a + b + c = 2) (hprod : a 
     (mul_eq_zero.mp h).resolve_left (pow_ne_zero 2 hc)
   linear_combination h2
 
+/-- **The angle identity's algebraic core.** For two roots `a`, `c` of the saddle
+cubic (`hR` says the third root is `1/(ac)`),
+
+    ((1−c)/(1−ca))³ · a = −c
+
+i.e. `a₃³·y₁ = −y₃`. Taking arguments gives `3·arg a₃ + arg y₁ = π`, which is the
+angle identity `arg a₃ = (π − arg y₁)/3` that Route 58's inversion evaluation
+rests on. The identity is *not* a consequence of `hR` alone — the cubic is needed
+too, and the cofactors below are what a Gröbner reduction against both returns. -/
+theorem saddle_arg_cube {a c : ℂ}
+    (hR : a ^ 2 * c + a * c ^ 2 - 2 * (a * c) + 1 = 0)
+    (hC : c ^ 3 - 2 * c ^ 2 + 3 * c - 1 = 0) :
+    (1 - c) ^ 3 * a + c * (1 - c * a) ^ 3 = 0 := by
+  linear_combination (-(a * c ^ 3) + c ^ 4 - 2 * c ^ 3 + 3 * c ^ 2) * hR
+    + (-(a * c ^ 3) + 2 * a * c ^ 2 - a - c) * hC
+
+/-- The same in the form the pentagon uses: the cube of the composite argument
+times the other root is minus the real root. -/
+theorem saddle_arg_cube' {a c : ℂ}
+    (hR : a ^ 2 * c + a * c ^ 2 - 2 * (a * c) + 1 = 0)
+    (hC : c ^ 3 - 2 * c ^ 2 + 3 * c - 1 = 0) (hne : (1 : ℂ) - c * a ≠ 0) :
+    ((1 - c) / (1 - c * a)) ^ 3 * a = -c := by
+  field_simp
+  linear_combination saddle_arg_cube hR hC
+
 end SaddleStructure
 
 end QOU.QBeta.FiveTwoComplexPentagon

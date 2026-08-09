@@ -806,3 +806,61 @@ circle. Gröbner-verified before measurement.
 approached from the upper half-plane.** Everything else in the chain is proved.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 58 — a COMPLETE PROOF PATH from an already-proved theorem. Four elementary links left.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** This route does not
+prove it. It exhibits a chain from a Lean theorem that *is* proved to the sum
+rule's stated target, and gates every link. Four links are open.
+
+### The chain
+
+Route 54's `pentagonSum_eq_pi_sq_div_two` (sorry-free) applies at **both**
+`(y₃, y₁)` and `(y₃, y₂)` — the real root against each complex one, since
+`y₃ = 0.4301597… ∈ (0,1)` and `y₁, y₂` are off both cuts. Adding the two
+instances and using `a₅ = 1/a₃` (Route 55) gives
+
+    Σ_y L + L(y₃) + inv_a + inv_b + L(a₄) + L(b₄) = π²
+
+with `a₄ = 1 − y₃y₁ = 1 − 1/y₂`. Four elementary evaluations collapse it:
+
+    inv_a = L(a₃) + L(1/a₃)  = (π² + πθ)/6 + iπ·log(y₃)/4        [G3, OPEN]
+    L(a₄) − L(y₂)            = (3πθ − π²)/6 − iπ·log(y₃)/4       [G4, OPEN]
+    ⟹  Σ_y L = π²/2 − (2π/3)·θ                                  [Route 47's form]
+    Σ log y log(1−y) = log²y₃ − (4/3)θ² + (4π/3)θ                [G6, OPEN]
+    ⟹  A = −π²/6 − ½log²y₃ + (2/3)(θ−π)²                        [the stated target]
+
+Every residual ≈ 1e-60 at 60 dps. `A` matches the corpus's own target expression.
+
+### ⚠ What this changes, and what it does not
+
+Route 47's closed form was a **numerical observation with no derivation**. It is
+now the consequence of a proved theorem plus two elementary links. And the sum
+rule itself is now separated from a theorem by **branch bookkeeping**, not by
+analysis. The analytic input this lane lacked — a complex `Li₂` carrying the
+pentagon — is done.
+
+It does **not** prove the sum rule. G3, G4, G6 and the angle identity are not
+proved, here or in Lean.
+
+### One quarter of one link, closed
+
+`saddle_arg_cube` (Lean, sorry-free): for two roots `a`, `c` of the cubic,
+
+    ((1−c)/(1−ca))³ · a = −c            i.e.   a₃³·y₁ = −y₃
+
+so `3·arg a₃ + arg y₁ = π`, which is the angle identity G3 rests on. Not a
+consequence of the pair relation alone — the cubic is needed too, and the
+cofactors are what a Gröbner reduction against both returns.
+
+### The open list, exactly
+
+1. `inv_a` evaluation (inversion `L(z)+L(1/z)`, branch pinned).
+2. `arg(a₃) = (π − arg y₁)/3` — algebraic core now proved, the argument/mod-2π
+   step is not.
+3. `L(1−1/z) − L(z)` evaluation (the anharmonic relation, branch pinned).
+4. `Σ log y log(1−y)` evaluation (the saddle branch equation).
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
