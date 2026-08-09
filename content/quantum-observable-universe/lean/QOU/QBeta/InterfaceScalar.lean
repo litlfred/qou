@@ -302,6 +302,38 @@ theorem binding_indep_of_free_trace (a trf mu : ℝ) (hf : 0 < trf) (hm : 0 < mu
 
 end Mirror
 
+section FlavourTilt
+
+/-- **The flavour tilt is an additive shift on μ, of size `h·δ/4`.**
+
+The p–n template is `d = −h(½ − δ/4)`, which is exactly the colour-blind
+`−h/2` displaced by `h·δ/4`. So the tilt's whole effect on the interface scalar
+is that shift — there is no other channel through which δ enters the trace. -/
+theorem tilt_is_additive_shift {R : Type*} [Field R] (h δ : R) :
+    -(h * (1 / 2 - δ / 4)) = -(h / 2) + h * δ / 4 := by ring
+
+/-- **…so the binding it induces depends only on the ratio `t/μ₀`.**
+
+With `μ₀` the colour-blind scalar and `t = h·δ/4` the shift, the change in
+`B = −α·log μ` is `−α·log(1 + t/μ₀)` exactly. That is what makes the two roles
+of δ separable: at q₀, `t = 7.19e-5` and `μ₀ = 0.394790`, so `t/μ₀ = 1.82e-4`
+and the entire tilt is worth `7.6e-4 MeV` on `B(²H)` — while the
+leading-vs-subleading disagreement inside δ is a further 1e-3 of *that*.
+
+Role (a) (δ as the physical `Δm/M_N`, gated at 1000 ppm against CODATA) and
+role (b) (δ as this tilt) therefore cannot disturb one another, and can be
+given separate names and separate derivations. Bean `qou-nbx7`. -/
+theorem tilt_log_shift (a mu0 t : ℝ) (h0 : 0 < mu0) (ht : 0 < mu0 + t) :
+    -a * Real.log (mu0 + t) - -a * Real.log mu0 = -a * Real.log (1 + t / mu0) := by
+  have hpos : 0 < 1 + t / mu0 := by
+    have hr : 1 + t / mu0 = (mu0 + t) / mu0 := by field_simp
+    rw [hr]; exact div_pos ht h0
+  have hfac : mu0 + t = mu0 * (1 + t / mu0) := by field_simp
+  rw [hfac, Real.log_mul (ne_of_gt h0) (ne_of_gt hpos)]
+  ring
+
+end FlavourTilt
+
 section Projectors
 
 variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
