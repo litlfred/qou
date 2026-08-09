@@ -244,3 +244,32 @@ theorem dressed_is_lp_stable_unconstrained_false :
        ⟨(), trivial, rfl⟩
 
 end RefuteProbe8
+import QOU.BraidsKnots.nsi_q_deformed_kernel
+import QOU.ParticleInteractions.four_term_pair_nucleon
+
+namespace RefuteProbe9
+open QOU.BraidsKnots QOU.ParticleInteractions
+
+/-- `K_cat` is a free field. At `q = 0` the claimed right-hand side is the
+    Mathlib junk value `_ / 0 = 0` (since `ℏ_0 = 1 - 0⁻¹ = 1` makes the
+    denominator `r² - ℏ² = 0` at `r = 1`), so a kernel that is identically `1`
+    refutes it. -/
+theorem nsi_q_kernel_identification_unconstrained_false :
+    ¬ ∀ (ctx : NsiQDeformedKernelContext ℝ) (s t : ℝ), ctx.q ≠ 1 →
+        ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
+  intro h
+  have := h { q := 0, ϱ := id, K_cat := fun _ _ => 1 } 0 1 (by norm_num)
+  simp [qDeformedKernel, hbarQ] at this
+
+/-- `confinedNet` is a free field and `protonNetTarget = 0.999`. -/
+theorem four_term_pair_nucleon_unconstrained_false :
+    ¬ ∀ ctx : FourTermPairNucleonContext,
+        ∀ φ₀ φ₁ φ₀₁ : ℝ,
+          ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget := by
+  intro h
+  have := h { confinedNet := fun _ _ _ _ => 0,
+              protonFlavours := fun _ => true,
+              neutronFlavours := fun _ => false } 0 0 0
+  norm_num [protonNetTarget] at this
+
+end RefuteProbe9
