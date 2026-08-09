@@ -59,6 +59,17 @@ at `N = 2`, carrying the row cap.
 > finding — it is *why* C was excised — but it is no longer a statement about
 > production. Nothing computational changed; `_y_lambda_at_convention_C_HISTORICAL`
 > is the only remaining C path and it is unwired.
+>
+> **UPDATED 2026-08-09 (bean `qou-wgta`, item 9).** The line above was wrong in
+> both halves. `_y_lambda_at_convention_C_HISTORICAL` was never a C
+> *implementation* — it was a delegation to
+> `schur_principal_mpmath.y_lambda_at_q0_mpmath`, which the excision had left
+> on C — and it was not unwired, `main()` below called it. That function is now
+> convention D, so C is preserved explicitly as
+> `schur_principal_mpmath.y_lambda_at_q0_mpmath_convention_C_HISTORICAL` and
+> `main()` quotes that directly. `_y_lambda_at_convention_C_HISTORICAL` is now
+> genuinely unwired **and mislabelled** (it returns D); it is on the bean's
+> do-not-touch list, so it is left for the owner.
 
 Historical (pre-excision), kept because it is the evidence against C:
 
@@ -384,8 +395,22 @@ def main() -> int:
         print("\n" + "-" * 78)
         print(" where does the EXCISED convention C sit?  (historical)")
         print("-" * 78)
-        from wedderburn_jones_markov import (
-            _y_lambda_at_convention_C_HISTORICAL as _yC)
+        # Source of C: schur_principal_mpmath's explicitly-preserved C pair.
+        #
+        # This used to read wedderburn_jones_markov's
+        # `_y_lambda_at_convention_C_HISTORICAL`, which was only ever C
+        # because it delegated to `schur_principal_mpmath.y_lambda_at_q0_mpmath`
+        # -- and that function moved to convention D in the qou-wgta sweep
+        # (2026-08-09).  Left pointing there, this block printed
+        # "C's y_(1³)/y_(3) = 0.0" and "real N reproducing it = 2.0" under a
+        # banner reading NON-INTEGER: a D-vs-D comparison asserting the
+        # opposite of the finding it exists to display.
+        #
+        # A convention that no longer exists in the pipeline still has to be
+        # *quotable*, so C is kept as a named historical implementation rather
+        # than inferred from whatever happens to be unswitched.
+        from schur_principal_mpmath import (
+            y_lambda_at_q0_mpmath_convention_C_HISTORICAL as _yC)
         cprod = {k: mp.mpf(str(v)) for k, v in _yC(n, q).items()}
         tgt = cprod[(1, 1, 1)] / cprod[(3,)]
         def f(N):
