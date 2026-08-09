@@ -184,13 +184,29 @@ def main() -> int:
             b = sqrt(-D) / 2
             y2 = -beta / 2 + 1j * b
             y3 = -beta / 2 - 1j * b
-        # the constructed triple must BE the root multiset
-        got = sorted([complex(t), complex(y2), complex(y3)], key=lambda z: (z.real, z.imag))
-        want = sorted([complex(r) for r in
-                       polyroots([x, -(x ** 2 + 1), x ** 2 + x + 1, -x],
-                                 maxsteps=800, extraprec=2000)],
-                      key=lambda z: (z.real, z.imag))
-        if max(abs(a - b_) for a, b_ in zip(got, want)) > 1e-20:
+        # The constructed triple must BE the root multiset.
+        #
+        # ⚠ This comparison used to route both sides through `complex(...)`,
+        # which rounds to binary64 BEFORE the difference is taken — so a stated
+        # tolerance of 1e-20 was in fact "do these agree to float64", ~1e-16,
+        # and the two sides agreed only because rounding hid the gap rather than
+        # because the roots matched. Compared at working precision now. Caught by
+        # the `complex-call` rule added to the float64 guard on #4777.
+        # ⚠ Matched by NEAREST NEIGHBOUR, both directions -- NOT by sorting.
+        # Sorting on `(re, im)` is unstable exactly here: the conjugate pair has
+        # equal real parts in exact arithmetic, `polyroots` returns them
+        # differing at ~1e-40, and the sort then orders by that noise and can
+        # invert the pair relative to the constructed list. The mis-pairing
+        # reports a discrepancy of 2*|Im y| ~ 2.6 -- not a small error, a wrong
+        # comparison. The float64 version hid it: rounding made the two real
+        # parts bit-identical, so the tie-break fell to `im` consistently in
+        # both lists. Removing the rounding exposed the fragility, not an error.
+        got = [t, y2, y3]
+        want = list(polyroots([x, -(x ** 2 + 1), x ** 2 + x + 1, -x],
+                              maxsteps=800, extraprec=2000))
+        fwd = max(min(fabs(a - b_) for b_ in want) for a in got)
+        bwd = max(min(fabs(b_ - a) for a in got) for b_ in want)
+        if max(fwd, bwd) > mpf(10) ** -20:
             bad6["constructed_roots_wrong"] += 1
         v3 = im(x * y3)
         worst_snd = max(worst_snd, v3)

@@ -1,7 +1,7 @@
 ---
 # qou-f64j
-title: 'The float64 guard misses complex literals (`1j`, `2j*pi`) — a whole entry-point class'
-status: todo
+title: 'DONE — the diagnosis was WRONG. Complex literals were already covered; CALL ARGUMENTS were not, and the guard reported CLEAN on seven of them'
+status: done
 type: bug
 priority: medium
 tags:
@@ -10,8 +10,80 @@ tags:
     - qou-f64g
     - precision
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-08T17:30:00Z
+updated_at: 2026-08-10T03:10:00Z
 ---
+
+## ✅ DONE 2026-08-10 — and this bean's own diagnosis was wrong
+
+Fix on **#4777**, which owns the guard (`2f8631197f`); this bean and the probe
+repair are on #4701. Measured in place on the gates branch at `c9078fbcb7`,
+against `origin/main` **`1b8b30758b`**.
+
+**D1 was already implemented.** `visit_Constant` has a `complex` branch: `0.1j`
+is flagged, `1j` / `2j` / `0.25j` are allowed because they are *exactly
+representable* — a documented decision, not an oversight. This bean's headline
+was **false** by the time it was read. Checking before fixing is what caught it.
+
+**What was actually missing is bigger**, and it is the failure the guard exists
+to prevent, committed by the guard itself: a lossy float literal handed to a
+**call** was in neither the `arithmetic` nor the `constructor` context, so it was
+dropped. A file with seven such entry points reported **clean**:
+
+```
+sqrt(0.1)   findroot(f, 0.1)   quad(f, [0, 0.1])   complex(0.1, 0)
+```
+
+Two rules added — `float-call-arg` (any call argument, walking container
+literals; tolerance comparisons stay exempt) and `complex-call` (`complex(...)`,
+the exact analogue of `float(...)` one type up).
+
+### D2 — the backlog jump, attributed
+
+| version | hits | files |
+|---|---|---|
+| baseline `c9078fbcb7` | 17,607 | 2,192 |
+| `+ float-call-arg` | 18,779 | 2,239 |
+| `+ complex-call` | **19,114** | **2,244** |
+
+**+1,507 hits in +52 files**; +1,172/+47 from the call-argument rule, +335/+5 from
+`complex(...)`. The gate is `--diff`-scoped, so the backlog blocks nothing.
+
+### ⚠⚠ The new rule earned its keep on its FIRST run, in this lane's own probe
+
+`qbeta_5two_route29_root_structure_probe.py` used
+`complex(t), complex(y2), complex(y3)` and then compared against a stated
+tolerance of `1e-20`. **Binary64 resolves ~1e-16**, so the check read as 1e-20
+and was in fact "do these agree to float64". Removing the rounding made G6 fail
+at 147 of 699 points, with a worst discrepancy of **2.65** — not noise.
+
+And the failure was *also* not a mathematical error. Sorting on `(re, im)` is
+unstable exactly there: the conjugate pair has equal real parts in exact
+arithmetic, `polyroots` returns them differing at ~1e-40, and the sort then
+orders by that noise and can invert the pair, mis-pairing `a+bi` with `a−bi` for
+a difference of `2|Im y| ≈ 2.6`. **The float64 rounding had been hiding the
+fragility** by making the two real parts bit-identical, so the tie-break fell to
+`im` consistently in both lists.
+
+Repaired by matching **nearest-neighbour in both directions** instead of by
+sorting. G6 passes at working precision. Two lessons, both worth keeping:
+
+* a tolerance below the precision of the values being compared is not a
+  tolerance, it is decoration;
+* removing a float64 downgrade can expose a *fragile comparison* rather than a
+  wrong answer — and the fragile comparison was the real defect.
+
+### D3 — sibling classes, checked rather than guessed
+
+| class | status |
+|---|---|
+| `complex(...)` calls | ✅ now flagged |
+| `math` / `numpy` / `cmath` / `statistics` / `scipy` imports | already flagged |
+| `**0.1` on an `mpf` | already flagged (`float-in-arithmetic`); `**0.5` correctly allowed, dyadic |
+| lossy float inside a list/dict passed to a call | ✅ now flagged (walked) |
+| `round()` on an `mpf` | left alone — mpmath's `__round__` returns an `mpf`, so it is not an entry point |
+
+No false positives: clean on both branches' diffs and on Routes 36–39, and the
+four control paths (clean / dirty / missing / empty) all still behave.
 
 ## What
 

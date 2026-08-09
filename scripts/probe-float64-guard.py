@@ -20,10 +20,20 @@ WHAT IT CATCHES, AND WHY EACH ONE
    Pure-imaginary literals with integral imaginary part (`1j`, `2j`) are exact
    and are allowed; they are the house idiom in `exp(1j*phi)`.
 
-2. **`float(...)` calls.** Usually `round(float(x))` to extract an integer from
-   an mpf. Use `int(nint(x))` -- `nint` rounds at working precision.
+2. **`float(...)` and `complex(...)` calls.** Usually `round(float(x))` to
+   extract an integer from an mpf. Use `int(nint(x))` -- `nint` rounds at working
+   precision. `complex(...)` is the same collapse one type up: it takes an `mpc`
+   and returns binary64.
 
-3. **`math` / `numpy` / `cmath` / `statistics` imports.** All float64.
+3. **Lossy float literals handed to a CALL.** `sqrt(0.1)`, `findroot(f, 0.1)`,
+   `quad(f, [0, 0.1])`, `complex(0.1, 0)` — all reach mpmath at float64, and none
+   of them is a BinOp or an `mpf(...)` argument, so none was caught. Until this
+   rule existed the guard reported **clean** on a file containing seven of them,
+   which is the failure the guard exists to prevent, committed by the guard
+   itself. Container literals are walked, because `quad(f, [0, 0.1])` is the
+   common shape. Tolerance comparisons stay exempt.
+
+4. **`math` / `numpy` / `cmath` / `statistics` imports.** All float64.
 
 USAGE
 -----
@@ -87,6 +97,7 @@ class Context(ast.NodeVisitor):
         self.tolerance = set()      # id(node) of floats used only in comparisons
         self.arithmetic = set()     # id(node) of floats in BinOp / unary arithmetic
         self.constructor = set()    # id(node) of floats passed to mpf/mpc/mpmathify
+        self.call_arg = set()       # id(node) of floats handed to ANY other call
 
     def visit_Compare(self, node):
         for operand in [node.left, *node.comparators]:
@@ -111,6 +122,16 @@ class Context(ast.NodeVisitor):
             for a in node.args:
                 if isinstance(a, ast.Constant) and isinstance(a.value, (float, complex)):
                     self.constructor.add(id(a))
+        else:
+            # Every OTHER call: a float literal handed to `sqrt`, `findroot`,
+            # `quad`, `complex`, … reaches mpmath just as surely as one in a
+            # BinOp, and until this branch existed the guard reported CLEAN on a
+            # file containing seven of them. Container literals are walked too,
+            # because `quad(f, [0, 0.1])` is the common shape.
+            for a in [*node.args, *(k.value for k in node.keywords)]:
+                for sub in ast.walk(a):
+                    if isinstance(sub, ast.Constant) and isinstance(sub.value, float):
+                        self.call_arg.add(id(sub))
         self.generic_visit(node)
 
 
@@ -163,6 +184,10 @@ class Finder(ast.NodeVisitor):
             elif id(node) in self.ctx.arithmetic and id(node) not in self.ctx.tolerance:
                 self._flag(node, "float-in-arithmetic",
                            f"{src} -- build it as mpf(\"{src}\") instead")
+            elif id(node) in self.ctx.call_arg and id(node) not in self.ctx.tolerance:
+                self._flag(node, "float-call-arg",
+                           f"{src} -- passed into a call at float64; "
+                           f"build it as mpf(\"{src}\") first")
         elif isinstance(v, complex):
             # `1j`, `2j` are exact; `0.4j` is not
             if v.real != 0 or loses_digits(src, v.imag):
@@ -175,6 +200,12 @@ class Finder(ast.NodeVisitor):
         if isinstance(f, ast.Name) and f.id == "float":
             self._flag(node, "float-call",
                        "float(...) -- use int(nint(x)) to pull an integer out of an mpf")
+        elif isinstance(f, ast.Name) and f.id == "complex":
+            # the exact analogue of `float(...)`, one type up: it takes an mpc
+            # and returns binary64. Missed for the same reason `float(...)` was
+            # caught -- somebody wrote one rule and not the other.
+            self._flag(node, "complex-call",
+                       "complex(...) -- collapses an mpc to float64; use mpc(re, im)")
         self.generic_visit(node)
 
     def visit_Import(self, node):
