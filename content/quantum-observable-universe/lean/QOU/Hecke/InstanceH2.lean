@@ -119,4 +119,35 @@ noncomputable instance instHeckeAlgebraH2 : HeckeAlgebra R 2 q (H2 R q) where
     rintro x rfl
     exact ⟨⟨0, by omega⟩, rfl⟩
 
+/-! ## What this instance does NOT establish
+
+`HeckeAlgebra` as stated asks for a generator map, the three relations, and
+spanning. It does **not** ask that `A` be free of rank `n!` over `R`, and
+without that it does not characterise `H_n(q)` — it is satisfied by algebras
+far too small.
+
+Concretely, at `q = 1` the parameter `h = q - q⁻¹` is `0`, so `x = 1` solves
+`x² = h·x + 1`; braid and far-commutativity are automatic in a commutative
+ring; and `spans` holds because `Subalgebra ℚ ℚ` is a subsingleton. Hence: -/
+
+/-- **The class admits a rank-1 model at every `n`.** `ℚ` itself is a
+    `HeckeAlgebra ℚ n 1 ℚ` for all `n` — including `n` where `H_n(1)` has
+    dimension `n! = 6, 24, 120, …`.
+
+    So a hypothesis `[HeckeAlgebra R n q A]` is much weaker than "`A` is the
+    Hecke algebra": anything proved from it also holds of `ℚ` at `q = 1`. The
+    missing axiom is the **Iwahori basis** — `A` free of rank `n!` over `R` on
+    `{T_w}_{w ∈ S_n}`. See bean qou-ghak / the H3–H4 roadmap. -/
+instance rankOneModel (n : ℕ) : HeckeAlgebra ℚ n 1 ℚ where
+  embed := fun _ => 1
+  quadratic := by intro i; norm_num
+  braid := by intro i j _; simp
+  farCommute := by intro i j _; simp
+  spans := Subsingleton.elim _ _
+
+/-- `H2 R q` above *is* of the right rank (`AdjoinRoot` of a monic quadratic is
+    free of rank `2 = 2!`), but the class cannot see that — which is exactly the
+    point of `rankOneModel`. -/
+example : HeckeAlgebra ℚ 3 1 ℚ := inferInstance
+
 end QOU.Hecke.InstanceH2
