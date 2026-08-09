@@ -47,3 +47,43 @@ those two are redundant carriers carrying nothing the tree needs:
   redundant part.
 
 Do not delete either file wholesale; separate what is duplicated from what is not.
+
+## DONE (both instances) — `QOU/Hecke/InstanceOnH3A.lean`, `QOU/Hecke/InstanceOnH4A.lean`
+
+`instHeckeAlgebraH3A : HeckeAlgebra K 3 q (H3A K (q - q⁻¹))` and
+`instHeckeAlgebraH4A : HeckeAlgebra K 4 q (H4A K (q - q⁻¹))`, both axiom-clean.
+Paired with `isHeckeOfFullRank_H3A` / `_H4A` these are the first objects for which
+both halves hold of the same carrier: the relations **and** the dimension.
+
+### Keeping `spans` cheap at `n = 4`: the word tree
+
+The naive route needs every basis vector as a word, and the longest is
+`σ₀σ₁σ₀σ₂σ₁σ₀` — six letters. Expanding six nested `mulσ`s per basis vector is
+what took the analogous attempt on the ASCII basis to ~8.7 GB (qou-awp7).
+
+Avoidable, because right multiplication by a generator is a **single** `mulσ`:
+`mulNF₄_e_right` gives `u · b_j = wordAction j u`, and the generators sit at basis
+indices `1`, `2`, `6`, whose word actions are exactly `mulσ₀`, `mulσ₁`, `mulσ₂`.
+So each basis vector is its parent times one generator and every step is depth 1
+on a literal vector:
+
+    b_j = b_{parent j} * σ_{last letter of word j}
+
+The 23 non-unit basis vectors form a tree under that relation — checked, not
+assumed: every parent word is itself in the basis list. Generated from
+`wordAction`'s own word list so it cannot drift. **Whole file: 73 seconds.**
+
+### One real snag, worth remembering
+
+The braid relations cannot be quoted at `v = (s0).v`. `braid_σ₀σ₁ h v` is
+`mulσ₀(mulσ₁(mulσ₀ v)) = mulσ₁(mulσ₀(mulσ₁ v))` — three deep — while the product
+`s0 * s1 * s0` reduces to two. The fix is to quote it at `v = γ` and supply
+`mulσ₀ h unitNF₄ = (s0).v` etc. (`mulσ₀_unit`, `mulσ₁_unit`, `mulσ₂_unit`).
+Quoting it at the wrong `v` also drives `isDefEq` past its heartbeat limit rather
+than failing cleanly.
+
+### Still open: retire the duplicate carriers
+
+`QOU/Hecke/InstanceH3.H3Alg` and `QOU/Hecke/InstanceH4.H4Alg` are now redundant
+carriers. Separate what is genuinely theirs before removing anything — see the
+list above.
