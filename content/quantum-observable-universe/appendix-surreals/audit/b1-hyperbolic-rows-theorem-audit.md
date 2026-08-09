@@ -65,3 +65,35 @@ All three agree, and their VC growth Richardson-extrapolates to
 $\mathrm{Vol}(L5a1)=4G$. The sub-leading constant is
 $c_0 = -0.53 \pm 0.08$ (factor $\approx 2$) from mpmath exact-root
 anchors $N=6,8,10,12$ — the fit validated against the figure-8's exact $-\tfrac14\ln 3$. The factor-2 reading is **under the knot exponent $p=3/2$**; whether the 2-cusp link exponent differs is the one open sub-item. The supporting computations are recorded in `computations/whitehead-volume-identification.witness.json` and `computations/whitehead-c0-mpmath.witness.json`.
+
+**Step 3 in Lean.** The van der Veen positive-sum kernel also underwrites
+an in-repo squeeze proof of this row. Three pieces are unconditional and
+sorry-free:
+
+1. the **saddle value** identity
+   ([`QOU.Knot.WhiteheadSaddle.saddle_integral`](../../lean/QOU/Knot/WhiteheadSaddleClausen.lean)) —
+   $\int_0^{1/2}\bigl[2\log\bigl(2\sin\pi(u+\tfrac14)\bigr) - \log(2\sin\pi u)\bigr]\,\mathrm{d}u
+   = 2\,\mathrm{Cl}_2(\pi/2)/\pi$, so $2\pi$ times it is
+   $4\,\mathrm{Cl}_2(\pi/2) = 4G$;
+2. the **analytic limit** at the $\lfloor N/2\rfloor$ level
+   ([`whitehead_vc_innerSum_half`](../../lean/QOU/Knot/WhiteheadSaddleClausen.lean)) —
+   $(2\pi/N)\log\sum_k S_{\lfloor N/2\rfloor,k} \to 4G$, squeezed below by
+   the explicit $k^\ast = \lfloor N/4\rfloor$ saddle term and above by the
+   $k$-independent envelope $(2\pi/N)\log N + U_{\max}(N)$; and
+3. the **reduction** of the conjecture to that single saddle-value input
+   ([`QOU.Knot.WhiteheadVC.whitehead_vc_of_saddle_value`](../../lean/QOU/Knot/WhiteheadVolumeConjecture.lean),
+   §3b-cond), together with the Catalan bridge
+   $G = \mathrm{Cl}_2(\pi/2)$ (`catalanG_eq_clausen_pi_div_two`) that
+   matches the two constants.
+
+What remains open is narrow and bookkeeping-shaped: the abstract
+`kashaev`-linked statement `whitehead_volume_conjecture` is indexed at the
+placeholder $(N-1)/2$ rather than $\lfloor N/2\rfloor$, and carries this
+row's one honest `sorry` (`-- Ref: [vanderveen2008]`, bean qou-1gkf) until
+the $\lfloor N/2\rfloor$ result above is ported to that index. The
+published discharge (van der Veen 2008) supplies the unconditional
+statement meanwhile. See
+[`docs/audits/2026-07-26-whitehead-vc-verification-and-p-exponent.md`](../../../../docs/audits/2026-07-26-whitehead-vc-verification-and-p-exponent.md)
+and witnesses `computations/whitehead-kashaev-statesum.witness.json`,
+`computations/whitehead-van-der-veen.witness.json`,
+`computations/whitehead-saddle.witness.json` (PRs #4274, #4394, #4532).
