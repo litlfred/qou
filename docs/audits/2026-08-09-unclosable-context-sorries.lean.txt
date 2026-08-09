@@ -203,3 +203,44 @@ theorem operator_selection_lp_unconstrained_false :
   simp [OperatorSelectionLpContext.objective] at this
 
 end RefuteProbe7
+import QOU.AlgebraicSubstrate.qou_obstruction_reduction
+import QOU.ParticleInteractions.atomic_lp_stability
+
+namespace RefuteProbe8
+open QOU.AlgebraicSubstrate QOU.ParticleInteractions
+
+/-- `kappa0`, `chi_A` and `phi_1_image` are free fields; the surviving
+    hypotheses (`vdb_duality`, `drinfeld_rigidity`, `kappa_vanishes_def`)
+    mention none of them. -/
+theorem obstruction_trace_gap_unconstrained_false :
+    ¬ ∀ ctx : QouObstructionReductionContext,
+        ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+  intro h
+  have := h { hhCohDim := fun _ => 1, hhHomDim := fun _ => 1,
+              vdb_duality := fun _ _ => rfl, drinfeld_rigidity := rfl,
+              chi_A := 0, phi_1_image := 0, kappa0 := 1,
+              kappa_vanishes := fun n => (n : ℤ) ∣ 1,
+              kappa_vanishes_def := fun _ => Iff.rfl }
+  simp at this
+
+/-- No candidate exists at all when `Candidate := Empty`. -/
+theorem bare_is_lp_unstable_unconstrained_false :
+    ¬ ∀ ctx : AtomicLPStabilityContext,
+        ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 := by
+  intro h
+  obtain ⟨X, _⟩ := h { Candidate := Empty, bareVolume := fun x => x.elim,
+                       dressedVolume := fun x => x.elim,
+                       normalised := fun _ => True }
+  exact X.elim
+
+/-- …and the opposite instance refutes its `¬∃` sibling: one candidate, both
+    predicates satisfied. -/
+theorem dressed_is_lp_stable_unconstrained_false :
+    ¬ ∀ ctx : AtomicLPStabilityContext,
+        ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 := by
+  intro h
+  exact h { Candidate := Unit, bareVolume := fun _ => 0,
+            dressedVolume := fun _ => 0, normalised := fun _ => True }
+       ⟨(), trivial, rfl⟩
+
+end RefuteProbe8
