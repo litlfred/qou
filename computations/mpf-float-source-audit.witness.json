@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "benign": 13,
-      "advisory-cast": 10
+      "advisory-cast": 11
     },
     "defects": [],
     "rows": [
@@ -63,6 +63,14 @@
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "delta = mp.mpf(float(_avg_color_delta()))",
+        "fix": null
+      },
+      {
+        "file": "computations/deltalambda/threerow_sign_crossing_probe.py",
+        "line": 125,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return mp.mpf(float(np.trace(prod)))",
         "fix": null
       },
       {
