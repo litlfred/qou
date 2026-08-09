@@ -68,3 +68,57 @@ mismatch, not a mathematical one. Lifting the weights removes it.
 proved ASCII cyclicity along the basis permutation. This bean is worth doing
 regardless: the `ℝ` pin is a §7c violation on its own terms, and every downstream
 `y_λ` result inherits it.)
+
+## 2026-08-09 — step 1 done, and three corrections to this bean
+
+Generalised in `QOU/Mathlib/HeckeAlgebra.lean`, tree green (5381 jobs, exit 0,
+45 sorries — unchanged):
+
+| declaration | was | now |
+|---|---|---|
+| `H3.poincare`, `_pos`, `_ne_zero` | `ℝ` | generic ordered field |
+| `H3.blockSym3`, `H3.blockAlt3` | `ℝ` | ” |
+| `H4.poincare`, `_pos`, `_ne_zero` | `ℝ` | ” |
+| `H4.blockSym4`, `H4.blockAlt4` | `ℝ` | ” |
+
+Backward compatible: every existing `ℝ` call site still elaborates, which the
+full build confirms. The `nlinarith` positivity proofs carried over verbatim —
+they only use squares-non-negative and positive coefficients.
+
+Evidence is in the file rather than asserted here: `example`s proving
+`H3.poincare (2 : ℚ) ≠ 0`, `H4.poincare (2 : ℚ) ≠ 0`,
+`(0 : ℚ) < H4.poincare (-3/7 : ℚ)`, the `ℝ` counterpart still working, and
+`H4.blockSym4` over both `ℚ` and `ℝ`.
+
+### Correction 1 — `LinearOrderedField` does not exist any more
+
+This bean recommended `[LinearOrderedField K]`. In Mathlib rev `f897ebcf` that is
+**deprecated and no longer a class**, so `[LinearOrderedField K]` is an invalid
+binder annotation. The spelling is
+
+```lean
+{K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+```
+
+### Correction 2 — the `ℝ` pinning is wider than this bean said
+
+Not only the H4 blocks. Still on `ℝ` in the same file, for a follow-up:
+`H2.markovTrace`, `H2.blockSym`, `H2.blockAlt`, `blockSum_eq_one`,
+`H3.markovTrace` and its two value lemmas, `H3.sigma1_sq_eq`, `H3.sigma2_sq_eq`,
+`H3.braid_relation`, `H3.blockMixed21`, `H3.blockSum_first_component`,
+`H4.blockMixed22`, `H4.blockStd31`, `H4.blockStd211`,
+`H4.sum_q_sq_length_eq_poincare`, `H4.markovTraceOnBasis`.
+
+### Correction 3 — do not state block-projector facts at a fixed index
+
+A first attempt at the `ℚ` evidence asserted `H4.blockSym4 q 0 = 1 / P(q)`. That
+is **not provable**, and rightly so: it silently assumes the identity permutation
+sits at basis index `0`, whereas `blockSym4`'s own docstring records that
+per-index values depend on the noncomputable basis enumeration. State the
+defining identity instead. The file now carries that reasoning next to the
+examples.
+
+Step 2 — fully generic `[Field K]` plus `hP : poincare q ≠ 0` — is still open and
+still worth doing where the genericity is load-bearing: `P` genuinely vanishes at
+roots of unity, so the hypothesis is real, and it is the shape `wedderburn₃/₄`
+already carry.

@@ -572,24 +572,27 @@ theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
     `{0, 1, 1, 2, 2, 3}`).  Correct normalizer for the
     trivial-representation idempotent `e_[3]`; the sign
     idempotent `e_[1,1,1]` uses `P(q⁻¹)`. -/
-noncomputable def H3.poincare (q : ℝ) : ℝ :=
+noncomputable def H3.poincare {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) : K :=
   1 + 2 * q ^ 2 + 2 * q ^ 4 + q ^ 6
 
 /-- `P(q) ≥ 1 > 0` for every real `q` (even powers, positive
     coefficients): the Poincaré normalizer is unconditionally
     non-zero — no genericity hypothesis needed. -/
-theorem H3.poincare_pos (q : ℝ) : 0 < H3.poincare q := by
+theorem H3.poincare_pos {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    0 < H3.poincare q := by
   unfold H3.poincare
   nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3)]
 
 /-- The Poincaré normalizer never vanishes (any real `q`). -/
-theorem H3.poincare_ne_zero (q : ℝ) : H3.poincare q ≠ 0 :=
+theorem H3.poincare_ne_zero {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H3.poincare q ≠ 0 :=
   ne_of_gt (H3.poincare_pos q)
 
 /-- The symmetric Wedderburn projector `e_[3]` for `H_3(q)`
     over `ℝ`.  Coefficient list `(1, q, q, q², q², q³) / P(q)`
     with `P = H3.poincare` the S_3 Poincaré polynomial. -/
-noncomputable def H3.blockSym3 (q : ℝ) : H3Carrier ℝ :=
+noncomputable def H3.blockSym3 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H3Carrier K :=
   let z := H3.poincare q
   (1 / z, q / z, q / z, q ^ 2 / z, q ^ 2 / z, q ^ 3 / z)
 
@@ -597,7 +600,8 @@ noncomputable def H3.blockSym3 (q : ℝ) : H3Carrier ℝ :=
     `H_3(q)` over `ℝ`.  Coefficient list `(1, -q⁻¹, -q⁻¹, q⁻²,
     q⁻², -q⁻³) / P(q⁻¹)` — the sign block is normalized by the
     Poincaré polynomial evaluated at `q⁻¹`. -/
-noncomputable def H3.blockAlt3 (q : ℝ) : H3Carrier ℝ :=
+noncomputable def H3.blockAlt3 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H3Carrier K :=
   let z := H3.poincare q⁻¹
   (1 / z, -q⁻¹ / z, -q⁻¹ / z, q⁻¹ ^ 2 / z, q⁻¹ ^ 2 / z, -q⁻¹ ^ 3 / z)
 
@@ -690,19 +694,39 @@ theorem H4.basis_count : (Finset.univ : Finset (Fin 24)).card = 24 := by
     `1,3,5,6,5,3,1` over `ℓ = 0..6`; coefficient sum `24 = 4!`).
     Correct normalizer for the trivial idempotent `e_[4]`; the
     sign idempotent `e_[1⁴]` uses `P₄(q⁻¹)`. -/
-noncomputable def H4.poincare (q : ℝ) : ℝ :=
+noncomputable def H4.poincare {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) : K :=
   1 + 3 * q ^ 2 + 5 * q ^ 4 + 6 * q ^ 6 + 5 * q ^ 8 + 3 * q ^ 10 + q ^ 12
 
 /-- `P₄(q) ≥ 1 > 0` for every real `q` (even powers, positive
     coefficients) — unconditionally non-zero, like `H3.poincare_pos`. -/
-theorem H4.poincare_pos (q : ℝ) : 0 < H4.poincare q := by
+theorem H4.poincare_pos {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    0 < H4.poincare q := by
   unfold H4.poincare
   nlinarith [sq_nonneg q, sq_nonneg (q ^ 2), sq_nonneg (q ^ 3),
              sq_nonneg (q ^ 4), sq_nonneg (q ^ 5), sq_nonneg (q ^ 6)]
 
 /-- The `S_4` Poincaré normalizer never vanishes (any real `q`). -/
-theorem H4.poincare_ne_zero (q : ℝ) : H4.poincare q ≠ 0 :=
+theorem H4.poincare_ne_zero {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H4.poincare q ≠ 0 :=
   ne_of_gt (H4.poincare_pos q)
+
+/-! ### The Poincaré normalizers are not tied to `ℝ` (bean qou-yax5)
+
+`H3.poincare` and `H4.poincare` used to be declared over `ℝ`, and
+`QOU/Machinery/HeckeH4AlgebraLaws.lean`, `HeckeH4StabilizationRung.lean` and
+`HeckeH4Wedderburn.lean` all state the §7c convention explicitly — generic base
+ring, "no `ℝ`, no ordering, no archimedean construct". Only these normalizers and
+the block projectors were pinned.
+
+Nothing archimedean is needed: the coefficients are positive and the powers even,
+so `nlinarith` proves positivity over any ordered field. The examples below are
+the point of the change — exact `y_λ` arithmetic over `ℚ`, with `ℝ` unaffected. -/
+
+example : H3.poincare (2 : ℚ) ≠ 0 := H3.poincare_ne_zero 2
+example : H4.poincare (2 : ℚ) ≠ 0 := H4.poincare_ne_zero 2
+example : (0 : ℚ) < H4.poincare (-3 / 7 : ℚ) := H4.poincare_pos _
+example : H4.poincare (2 : ℝ) ≠ 0 := H4.poincare_ne_zero 2
+
 
 open QOU.Mathlib.PermutationEnumeration in
 /-- Symmetric Wedderburn projector `e_[4]` for `H_4(q)` over `ℝ`:
@@ -713,7 +737,8 @@ open QOU.Mathlib.PermutationEnumeration in
     invariant statement (sums, traces, length fibers) is
     enumeration-independent.  Normalizer forced by
     `T_w e_[4] = q^{ℓ(w)} e_[4]` (cf. `H3.blockSym3`). -/
-noncomputable def H4.blockSym4 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockSym4 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H4Carrier K :=
   fun i =>
     q ^ (lengthFn 4 i) / H4.poincare q
 
@@ -722,9 +747,28 @@ open QOU.Mathlib.PermutationEnumeration in
     `i ↦ (-q⁻¹)^{ℓ(i)} / P₄(q⁻¹)` — sign-block weights at the
     `-q⁻¹` Hecke eigenvalue, normalized by the Poincaré
     polynomial at `q⁻¹` (cf. `H3.blockAlt3`). -/
-noncomputable def H4.blockAlt4 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockAlt4 {K : Type u} [Field K] [LinearOrder K] [IsStrictOrderedRing K] (q : K) :
+    H4Carrier K :=
   fun i =>
     (-q⁻¹) ^ (lengthFn 4 i) / H4.poincare q⁻¹
+
+/-! **Over `ℚ` the H₄ Wedderburn projector is available and exact** — the point of
+generalising the normalizers off `ℝ` (bean qou-yax5).
+
+Stated as the defining identity rather than at a fixed index: per-index values
+depend on the noncomputable basis enumeration, as `blockSym4`'s docstring says, so
+`blockSym4 q 0 = 1 / P(q)` would silently assume the identity permutation sits at
+index `0`. It does not follow from anything here. -/
+open QOU.Mathlib.PermutationEnumeration in
+example :
+    H4.blockSym4 (2 : ℚ) = fun i => (2 : ℚ) ^ (lengthFn 4 i) / H4.poincare (2 : ℚ) :=
+  rfl
+
+open QOU.Mathlib.PermutationEnumeration in
+example :
+    H4.blockSym4 (2 : ℝ) = fun i => (2 : ℝ) ^ (lengthFn 4 i) / H4.poincare (2 : ℝ) :=
+  rfl
+
 
 open QOU.Mathlib.PermutationEnumeration in
 /-- **`S_4` length distribution**: the number of permutations at
