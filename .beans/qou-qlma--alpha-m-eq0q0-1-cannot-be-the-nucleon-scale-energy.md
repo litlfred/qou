@@ -174,3 +174,81 @@ DERIVED, and its acceptance test is now two-sided:
 - [x] item 3 — is one-alpha a claim? No: unexamined default, nothing pins it
 - [ ] resolve the two-E_0 fork explicitly (which is THE E_0, and say so once)
 - [ ] `mass_at_3A_proper --E0` default disagrees with the path it feeds — fix
+
+## DECISIVE (2026-08-09): the title of this bean is too weak — NO alpha works
+
+Asked why alpha exists at all and what the right object is. Both have sharp
+answers, and together they redirect the whole investigation.
+
+### Why alpha exists: forced, not chosen
+
+Everything upstream of the Archimedean step is dimensionless — q0 is a mass
+RATIO, and so are h, delta, z, chi^lambda, y_lambda and tr_M. Exactly one
+dimensionful input exists in the whole framework (CAL-1, m_e). So the map to MeV
+**must** have the form `m_e x f(q0)`. Its existence is not a modelling choice;
+only the dimensionless factor f is.
+
+    alpha = m_e * 1/(q0(q0-1)) = m_e * 8.19176117219 = 4.18598136329 MeV
+    identity: q0(q0-1) = q0^2 * hbar_q,  hbar_q = 1 - 1/q0   (residual 7.2e-42)
+
+so equivalently `alpha = m_e/(q0^2 * hbar_q)` — "the electron rest energy per
+Planck tick" (`beta-decay-energy-scale.md`).
+
+### Why NO choice of alpha can close 2H
+
+Take a ratio of two quantities the framework predicts with the SAME alpha.
+Alpha cancels exactly:
+
+    framework   B(2H)/Q_beta = 0.929218723 / 0.188291 = 4.935014012
+    nature      B(2H)/Q_beta = 2.224566   / 0.782333  = 2.843501463
+    ratio of ratios                                   = 1.735541225   (+73.55%)
+
+**That number is alpha-free.** It cannot be moved by any f(q0) whatsoever, so
+replacing alpha with "the right object" cannot work — there is no right object.
+Equivalently:
+
+    alpha needed for 2H binding   = 2.39401762 MeV
+    alpha needed for beta decay   = 4.15491628 MeV
+    ratio                         = 1.735541225x
+
+One alpha cannot serve both, and the derived alpha (4.18598) is within **0.75%**
+of the beta-decay requirement. So alpha is essentially RIGHT where it is
+validated, and the derivation in `beta-decay-energy-scale.md` is not the defect.
+
+### What the right object actually is
+
+Not alpha — the **dimensionless binding multiplier**. The framework computes
+
+    ln(tr_free/tr_atom) = 0.929218723
+
+and to reproduce AME at the derived alpha it must be
+
+    B_AME/alpha = 0.531432419        i.e. a factor 1.748517 too large.
+
+So the target for replacement is that number, and by the chain walk
+(`docs/audits/2026-08-09-canonical-chain-walk-gaps-marked.md`) it is built from
+exactly two things that are neither calibrated nor derived:
+
+  * **GAP 1** — `z_m = 1/(q^1/2+q^-1/2)`, chosen over the link-invariant `z_J`
+    with no derivation, and known (per `markov-z-reconciliation.md`) to be the
+    convention WITHOUT the writhe prefactor, hence not a link invariant;
+  * **GAP 2** — the interface templates `sigma`/`sigma^-1` assigned by electric
+    charge, plus a hardcoded nucleon ordering.
+
+### Consequences for this bean's earlier sections
+
+- The "two E_0s" fork (4.185981 derived vs 0.782333 CODATA) is still a real
+  inconsistency and the owner ruling stands (keep only derived) — but it is now
+  a HYGIENE item, not a route to closing 2H. Neither value can close it.
+- The two-sided acceptance test recorded earlier ("2.394018 to hit 2H,
+  <= 3.209370 to be admissible") is **withdrawn as a target**: hitting 2.394018
+  would break beta decay by the same 1.7355x. Retained only as a diagnostic.
+- The Lean bound `alpha <= 3.209370` remains valid and remains a genuine
+  contradiction with the derived 4.18598 — but its resolution is to fix the
+  dimensionless number so the floor is not binding, not to lower alpha.
+
+- [x] why does alpha exist — dimensionally forced, m_e x f(q0)
+- [x] what is the right object — NOT alpha; alpha cancels. It is the
+      dimensionless multiplier, target 0.531432 vs current 0.929219
+- [ ] retarget onto GAP 1 (z_m) — the one factor that is neither calibrated nor
+      derived and that moves the multiplier
