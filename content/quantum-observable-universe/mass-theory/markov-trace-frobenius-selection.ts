@@ -2,14 +2,28 @@ import { proposition } from "../../schema/builders";
 
 export default proposition({
   label: "prop:markov-trace-frobenius-selection",
-  title: "Markov trace uniqueness on H_n(R, q) — the Jones–Markov form τ_M",
+  title: "Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy",
   chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988", "yekutieli2015"],
-  uses: [],
+  uses: ["lem:feynman-eigenbasis-decomposition"],
   defines: [],
-  tags: ["normalization", "frobenius", "no-fitting", "uniqueness"],
-  lean: { ref: "qou:QOU.BraidKnot.qou_markov_trace_is_jones_markov" },
+  tags: [
+    "normalization",
+    "frobenius",
+    "no-fitting",
+    "uniqueness",
+    "trace-convention",
+    "conditional",
+  ],
+  lean: {
+    ref: "qou:QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical",
+  },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-09",
+      body: "Restated (detangler decision 2). The selection criterion was NON-DEGENERACY, which convention D provably violates: y_(1^3) = 0 exactly, so the block published a derivation arguing against the convention it adopted. Criterion replaced by {row cap: y_lambda = 0 for l(lambda) >= 3} + {faithfulness: y_lambda != 0 for l(lambda) <= 2}, which — unlike non-degeneracy — DERIVES z*[2]_q = q^2. The hypotheses bite at level 3: at n <= 2 the row cap is vacuous and z is genuinely free, so the selection theorem is stated with its level-3 weight vector rather than at an arbitrary n; stated at arbitrary n it would be false, since at n = 2 the two hypotheses hold for a one-parameter family of traces. Uniqueness at fixed z was never a consequence of non-degeneracy and is unchanged. The pairing is degenerate on H_n with radical exactly the Temperley-Lieb ideal, and non-degenerate on TL_n. lean.ref repointed off qou_markov_trace_is_jones_markov, whose MarkovTraceUniqueness class is unsatisfiable over any field with an element outside {0,1}.",
+    },
     {
       kind: "note",
       date: "2026-05-29",
