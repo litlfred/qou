@@ -389,4 +389,72 @@ theorem cRogersL_add_inv_of_im_neg {z : ℂ} (h : z.im < 0) :
   push_cast
   linear_combination (-((Real.pi : ℂ) ^ 2) / 2) * hI
 
+/-! ## The branch equation, from a multiplicative relation
+
+`exp u = 1` puts `Im u` in `2πℤ`; a window of width `2π` pins which one. This is
+the same window argument as `im_eq_pi_of_exp_eq_neg_ofReal`, in the form the
+saddle branch equation needs. -/
+
+/-- **A window pins the branch integer.** `exp u = 1` and
+`Im u ∈ (2π(n−1), 2π(n+1))` force `u = n·2πi` — the window has width `4π` and
+still contains only one multiple of `2π`, which is what makes the crude bounds
+the saddle supplies sufficient. `Re u = 0` comes free; it is not a hypothesis. -/
+theorem eq_intMul_two_pi_I_of_exp_eq_one {u : ℂ} {n : ℤ} (h : Complex.exp u = 1)
+    (hlo : (2 * (n : ℝ) - 2) * Real.pi < u.im)
+    (hhi : u.im < (2 * (n : ℝ) + 2) * Real.pi) :
+    u = (n : ℂ) * (2 * (Real.pi : ℂ) * Complex.I) := by
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  obtain ⟨m, hm⟩ := Complex.exp_eq_one_iff.mp h
+  have him : u.im = 2 * (m : ℝ) * Real.pi := by
+    rw [hm]
+    simp [Complex.mul_im, Complex.ofReal_im, Complex.ofReal_re]
+    ring
+  rw [him] at hlo hhi
+  have hmn : m = n := by
+    have h1 : (2 * (n : ℝ) - 2) < 2 * (m : ℝ) := by nlinarith
+    have h2 : (2 * (m : ℝ)) < 2 * (n : ℝ) + 2 := by nlinarith
+    have h1' : (2 * n - 2 : ℤ) < 2 * m := by exact_mod_cast h1
+    have h2' : (2 * m : ℤ) < 2 * n + 2 := by exact_mod_cast h2
+    omega
+  rw [hm, hmn]
+
+/-- `y² = (1−y)³` gives `exp(2·log y − 3·log(1−y)) = 1`. -/
+theorem exp_branch_eq_one {y : ℂ} (hy : y ≠ 0) (h1y : (1 : ℂ) - y ≠ 0)
+    (hsq : y ^ 2 = (1 - y) ^ 3) :
+    Complex.exp (2 * Complex.log y - 3 * Complex.log (1 - y)) = 1 := by
+  have e2 : Complex.exp (2 * Complex.log y) = y ^ 2 := by
+    rw [two_mul, Complex.exp_add, Complex.exp_log hy]
+    ring
+  have e3 : Complex.exp (3 * Complex.log (1 - y)) = (1 - y) ^ 3 := by
+    rw [show (3 : ℂ) = 1 + 1 + 1 by norm_num]
+    rw [add_mul, add_mul, one_mul, Complex.exp_add, Complex.exp_add,
+      Complex.exp_log h1y]
+    ring
+  rw [Complex.exp_sub, e2, e3, hsq, div_self (pow_ne_zero 3 h1y)]
+
+/-- **The saddle branch equation, with its integer pinned by a window.**
+
+    2·log y − 3·log(1−y) = ε·2πi
+
+from `y² = (1−y)³` alone, plus a `2π`-wide window on the imaginary part. For the
+5₂ cubic `y² = (1−y)³` **is** the cubic — `(1−y)³ − y² = −(y³−2y²+3y−1)`
+identically — so this is the branch equation with nothing assumed about branches. -/
+theorem branch_eq_of_window {y : ℂ} {n : ℤ} (hy : y ≠ 0) (h1y : (1 : ℂ) - y ≠ 0)
+    (hsq : y ^ 2 = (1 - y) ^ 3)
+    (hlo : (2 * (n : ℝ) - 2) * Real.pi
+      < (2 * Complex.log y - 3 * Complex.log (1 - y)).im)
+    (hhi : (2 * Complex.log y - 3 * Complex.log (1 - y)).im
+      < (2 * (n : ℝ) + 2) * Real.pi) :
+    2 * Complex.log y - 3 * Complex.log (1 - y)
+      = 2 * (Real.pi : ℂ) * Complex.I * (n : ℂ) := by
+  have h := eq_intMul_two_pi_I_of_exp_eq_one (exp_branch_eq_one hy h1y hsq) hlo hhi
+  rw [h]
+  ring
+
+/-- The imaginary part of the branch expression is `2·arg y − 3·arg(1−y)`. -/
+theorem branch_im {y : ℂ} :
+    (2 * Complex.log y - 3 * Complex.log (1 - y)).im
+      = 2 * y.arg - 3 * ((1 : ℂ) - y).arg := by
+  simp [Complex.sub_im, Complex.mul_im, Complex.log_im, Complex.log_re]
+
 end QOU.MathlibExt

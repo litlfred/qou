@@ -1088,6 +1088,78 @@ theorem saddle_clog_cube_of_roots {a b : ℂ} {t : ℝ} (ht : 0 < t)
   obtain ⟨b1, b2, b3⟩ := saddle_arg_bounds hsum hprod hC ha h1 h2 hconj him3 hima
   exact saddle_clog_cube ht (saddle_pair_rel hsum hprod) hC h1 ha ha0 b1 b2 b3
 
+/-- **`y² = (1−y)³` IS the saddle cubic.** `(1−y)³ − y² = −(y³−2y²+3y−1)`
+identically, so the multiplicative relation the branch equation needs is the
+cubic itself and nothing extra is assumed. -/
+theorem saddle_sq_eq_one_sub_cube {y : ℂ} (h : y ^ 3 - 2 * y ^ 2 + 3 * y - 1 = 0) :
+    y ^ 2 = (1 - y) ^ 3 := by
+  linear_combination h
+
+/-- **The saddle branch equation, integer pinned.**
+
+    2·log y − 3·log(1−y) = 2πi·n
+
+from the cubic alone plus a window on `2·arg y − 3·arg(1−y)`. The window has
+width `4π`, so the bounds needed are crude: for the real root both arguments
+vanish (`n = 0`); for `y₁` the expression lies in `(0, 7π/2) ⊂ (0, 4π)` from
+`Im y₁ > 0` and `Re y₁ < 1` alone (`n = 1`); for `y₂` it is the mirror
+(`n = −1`). -/
+theorem saddle_branch_eq {y : ℂ} {n : ℤ} (hy : y ≠ 0) (h1y : (1 : ℂ) - y ≠ 0)
+    (hcube : y ^ 3 - 2 * y ^ 2 + 3 * y - 1 = 0)
+    (hlo : (2 * (n : ℝ) - 2) * Real.pi < 2 * y.arg - 3 * ((1 : ℂ) - y).arg)
+    (hhi : 2 * y.arg - 3 * ((1 : ℂ) - y).arg < (2 * (n : ℝ) + 2) * Real.pi) :
+    2 * Complex.log y - 3 * Complex.log (1 - y)
+      = 2 * (Real.pi : ℂ) * Complex.I * (n : ℂ) := by
+  refine branch_eq_of_window hy h1y (saddle_sq_eq_one_sub_cube hcube) ?_ ?_ <;>
+    rwa [branch_im]
+
+/-- **The branch integer at the real root is `0`** — both arguments vanish, so no
+window argument is needed at all. -/
+theorem saddle_branch_eq_real {t : ℝ} (h0 : 0 < t) (h1 : t < 1)
+    (hcube : (t : ℂ) ^ 3 - 2 * (t : ℂ) ^ 2 + 3 * (t : ℂ) - 1 = 0) :
+    2 * Complex.log (t : ℂ) - 3 * Complex.log (1 - (t : ℂ)) = 0 := by
+  have hy : ((t : ℝ) : ℂ) ≠ 0 := by exact_mod_cast h0.ne'
+  have h1y : (1 : ℂ) - ((t : ℝ) : ℂ) ≠ 0 := by
+    rw [show (1 : ℂ) - ((t : ℝ) : ℂ) = ((1 - t : ℝ) : ℂ) by push_cast; ring]
+    exact_mod_cast (by linarith : (0 : ℝ) < 1 - t).ne'
+  have hargy : ((t : ℝ) : ℂ).arg = 0 := by
+    rw [Complex.arg_ofReal_of_nonneg h0.le]
+  have harg1 : ((1 : ℂ) - ((t : ℝ) : ℂ)).arg = 0 := by
+    rw [show (1 : ℂ) - ((t : ℝ) : ℂ) = ((1 - t : ℝ) : ℂ) by push_cast; ring,
+      Complex.arg_ofReal_of_nonneg (by linarith : (0 : ℝ) ≤ 1 - t)]
+  have h := saddle_branch_eq (n := 0) hy h1y hcube
+    (by rw [hargy, harg1]; simpa using Real.pi_pos)
+    (by rw [hargy, harg1]; simpa using Real.pi_pos)
+  simpa using h
+
+/-- **The branch integer at the upper complex root is `1`**, from two crude sign
+conditions: `Im y > 0` and `Re y ≤ 1`.
+
+Those give `arg y ∈ (0, π)` and `arg(1−y) ∈ (−π/2, 0)`, so the branch expression
+lies in `(0, 7π/2) ⊂ (0, 4π)` — inside the window, with room. Nothing numeric,
+and no fact about the cubic beyond the cubic itself. -/
+theorem saddle_branch_eq_upper {y : ℂ} (hy : y ≠ 0) (h1y : (1 : ℂ) - y ≠ 0)
+    (hcube : y ^ 3 - 2 * y ^ 2 + 3 * y - 1 = 0)
+    (him : 0 < y.im) (hre : y.re ≤ 1) :
+    2 * Complex.log y - 3 * Complex.log (1 - y) = 2 * (Real.pi : ℂ) * Complex.I := by
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  have hargy_pos : 0 < y.arg := by
+    refine lt_of_le_of_ne (Complex.arg_nonneg_iff.mpr him.le) ?_
+    intro hc
+    exact absurd (Complex.arg_eq_zero_iff.mp hc.symm).2 (ne_of_gt him)
+  have hargy_lt : y.arg < Real.pi := Complex.arg_lt_pi_iff.mpr (Or.inr (ne_of_gt him))
+  have him1 : ((1 : ℂ) - y).im < 0 := by
+    simpa [Complex.sub_im] using him
+  have hre1 : 0 ≤ ((1 : ℂ) - y).re := by
+    simp only [Complex.sub_re, Complex.one_re]
+    linarith
+  have harg1_neg : ((1 : ℂ) - y).arg < 0 := Complex.arg_neg_iff.mpr him1
+  have harg1_gt : -(Real.pi / 2) ≤ ((1 : ℂ) - y).arg :=
+    Complex.neg_pi_div_two_le_arg_iff.mpr (Or.inl hre1)
+  have h := saddle_branch_eq (n := 1) hy h1y hcube (by push_cast; nlinarith)
+    (by push_cast; nlinarith)
+  simpa using h
+
 end SaddleStructure
 
 /-! ### Complex Rogers reflection

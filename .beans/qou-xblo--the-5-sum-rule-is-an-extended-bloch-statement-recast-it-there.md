@@ -1170,3 +1170,53 @@ dilogarithm on the right. What separates that from the sum rule is the branch
 equations and three facts about the roots.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 65 — the branch equations, proved from the cubic
+
+Route 64's capstone took the three branch equations as hypotheses. **They are not
+extra input.**
+
+### `y² = (1−y)³` IS the cubic
+
+    (1−y)³ − y² = −(y³ − 2y² + 3y − 1)        identically
+
+so `saddle_sq_eq_one_sub_cube` is one `linear_combination`. Hence
+`exp(2·log y − 3·log(1−y)) = y²/(1−y)³ = 1`, and `2·log y − 3·log(1−y) ∈ 2πiℤ`
+with **no branch assumption anywhere**.
+
+### The window, again loose
+
+`eq_intMul_two_pi_I_of_exp_eq_one`: `exp u = 1` and `Im u ∈ (2π(n−1), 2π(n+1))`
+force `u = n·2πi`. Width `4π` and still only one multiple of `2π` inside — which
+is what makes the saddle's crude bounds enough. `Re u = 0` comes free; it is not
+a hypothesis.
+
+### The three integers
+
+* **`ε₃ = 0`** — `saddle_branch_eq_real`. **Fully proved**, no window needed:
+  both `arg y₃` and `arg(1−y₃)` vanish because `y₃ ∈ (0,1)`.
+* **`ε₁ = +1`** — `saddle_branch_eq_upper`. From two sign conditions, `Im y > 0`
+  and `Re y ≤ 1`: they give `arg y ∈ (0,π)` and `arg(1−y) ∈ [−π/2, 0)`, so the
+  branch expression lies in `(0, 7π/2) ⊂ (0, 4π)`. Nothing numeric.
+* **`ε₂ = −1`** — the mirror, by conjugation.
+
+`Re y₁ ≤ 1` is itself root data: `2·Re y₁ = 2 − y₃` with `y₃ ∈ (0,1)`, so
+`Re y₁ = 1 − y₃/2 < 1`.
+
+### The ledger now
+
+| input to Route 64's capstone | status |
+|---|---|
+| the two pentagon values | **theorems** (54) |
+| branch equation, real root | **proved** (65) |
+| branch equation, complex roots | **proved from `Im y > 0`, `Re y ≤ 1`** (65) |
+| `arg A₃ = (π − arg y₁)/3` | **proved from root data** (61, 62) |
+| `\|y₁\|²y₃ = 1`, `y₂ = conj y₁` | not yet stated in Lean |
+
+The last row is what is left before the capstone becomes unconditional in the
+root data — and it is the conjugate-pair structure of a real cubic with one real
+root, not anything about dilogarithms.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
