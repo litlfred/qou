@@ -205,3 +205,65 @@ to in another shell while the gates were running. Fixed: the diff is now
 filtered to `computations/**/*.witness.json`, which is the only thing the audits
 can write. A reporter that cries wolf on unrelated edits is one agents learn to
 skip, which is the failure mode this whole bean is about.
+
+---
+
+## 2026-08-09 — the scope grew: 3 → 18 NEW + 2 REGRESSED
+
+Re-measured after integrating `origin/main` (498 commits) into
+`claude/drain-float64-ratchet` for PR #4729:
+
+    NEW dirty witnesses : 18   (was 3)
+    REGRESSED           : 2    (was 0)
+
+**15 of the new entries and both regressions arrived with main's 498
+commits.** The original three (the qbeta trio below) are unchanged.
+
+    835  computations/probes/nastokes-multigen-cluster-additivity.witness.json
+    126  computations/deltalambda/threerow-qcross-trend.witness.json
+     98  computations/probes/nastokes-orbit-symmetric-readout.witness.json
+     91  computations/alpha/alpha-k-jones-markov-h12.witness.json
+     82  computations/deltalambda/threerow-crossing-a-dependence.witness.json
+     73  computations/deltalambda/threerow-4he-completion.witness.json
+     52  computations/probes/nastokes-germ-gauge-covariance.witness.json
+     25  computations/probes/canonical-ordering-dof.witness.json
+     20  computations/atomic-tr-m-mpfr-50dps-proton.witness.json
+     16  computations/probes/nastokes-transverse-curvature-seifert.witness.json
+     16  computations/qbeta/qborel-growth-budget-probe.witness.json          <- original
+     15  computations/deltalambda/threerow-sign-crossing.witness.json
+     15  computations/qbeta/cauchymul-order-cancellation-witness.witness.json <- original
+      6  computations/markov-z-fibre-rank-bar-covariance.witness.json
+      5  computations/crossing-energy-channel-basis.witness.json
+      5  computations/volume-binding-four-point.witness.json
+      4  computations/qbeta/c3-w2-c1-pole-divisor.witness.json               <- original
+      1  computations/ground-state-ordering-argmin-sweep.witness.json
+
+    REGRESSED:
+      1 -> 78    computations/chi-helium-4-h12-at-q0-50dps.witness.json
+     36 -> 52    computations/probes/keystone-colored-sigma235-wrt.witness.json
+
+Clusters, which is a hint about the producers rather than the witnesses:
+`nastokes-*` (4 files, 1001 fields), `deltalambda/threerow-*` (4, 296),
+`alpha/*` (1, 91). Those look like three arcs each writing float64 through a
+shared helper, not eighteen independent mistakes.
+
+### Why this matters for PR #4729
+
+That PR's stated purpose is that the ratchet exits 0. It did, against the main
+of 2026-08-08. It does not against the main of 2026-08-09. **The PR is
+otherwise ready** — merges clean (origin/main is an ancestor), all its own
+gates pass, its drains verified — but its headline claim is now false, through
+no change of its own.
+
+The ratchet is a moving target: main accrues float64 debt faster than a single
+PR closes it. Whatever is decided for #4729, that is the structural problem,
+and a per-PR drain will not fix it. The guard installed by #4729
+(`QOU_WITNESS_STRICT_FLOAT64=warn` by default, at `WitnessBuilder.save`) is the
+mechanism that would — but only once its default is `raise`, which #4729
+deliberately did not do because ~1580 baseline witnesses would break their
+producers on re-run.
+
+**Not done here, and deliberately:** nothing baselined, no `--rebaseline`, no
+number hand-edited. The two ratchet audit witnesses were regenerated and
+committed because their COUNTS moved (staleness, not drift), per the gate's own
+instruction.
