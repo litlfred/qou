@@ -257,3 +257,45 @@ both Kummer modules. The two stories touch only through `Vol(5₂)`, via
 `yekutieli-transcendence-shadow.md`'s conjecture that `Vol(4₁)`, `Vol(5₂)`,
 `Vol(ℬ₃)` are algebraically independent — and **the proved sum rule does not
 threaten it**, because `D` cancels on the Galois orbit the sum rule sums over.
+
+---
+**2026-08-09 — first consumer of Kummer: `VOL_5_2` as an exact constant.**
+
+`QOU/Knot/FiveTwoVolumeConstant.lean`, sorry-free, standard axioms, build exit 0
+/ 3251 jobs, zero `sorry`.
+
+**Why it was needed.** `FigureEightVolumeLiterature.lean` records that the 4₁
+volume conjecture was **unstateable** while `VOL_4_1` was "a truncated rational
+decimal ≈ 1e-30 away from `2·Cl₂(π/3)`, making the statement literally false";
+bean `qou-yf47` repaired it by *defining* `VOL_4_1 := 2·Cl₂(π/3)`. **5₂ had no
+such constant** — only a SnapPy decimal, Lean decimal literals
+(`MassDerivation.vol_figure_eight`), and the outright placeholder
+`HyperbolicVolume : Knot → ℝ := fun k => 0 * (k : ℝ)`
+(`AppendixSurreals/Conjectures.lean`). Any exact 5₂ volume statement written
+against those is false or vacuous, for exactly the reason `qou-yf47` found.
+
+Now: `fiveTwoShape` (= `y₁`, from `SaddleRoots.ofRealRoot` on the IVT real root),
+`VOL_5_2 := 3 · BlochWigner_lob fiveTwoShape`, with `fiveTwoShape_cubic`,
+`fiveTwoShape_im_pos`, `fiveTwoShape_angles_sum`, `fiveTwoShape_law_of_sines`.
+
+**The payoff — `VOL_5_2_eq_dilog`:**
+
+    VOL_5_2 = 3 · ( Im (cLiTwoExt y₁) + log‖y₁‖ · arg(1 − y₁) )
+
+So the constant has an **angle** form and a **dilogarithm** form, proved equal.
+**Before Kummer this equation could not have been written down** — it is exactly
+the transport `BlochWignerLobachevsky.lean` forbade. That prohibition being
+lifted is what makes it a one-line consequence.
+
+**⚠ NOT proved: that `VOL_5_2` is the hyperbolic volume of `S³ ∖ 5₂`.** That is
+the *geometric* factor, cited to the literature exactly as `VOL_4_1` cites
+Thurston/Milnor. And it is **not currently a statable Lean theorem at all**:
+Mathlib has no hyperbolic 3-manifolds and QOU defines no volume functor — the
+only "volume" objects in Lean are decimal literals and a placeholder returning
+`0`. That is a sharper obstruction than "unproved", and it is what
+`qou-m015`/`qou-krvm` would have to change.
+
+Numerically `VOL_5_2 = 2.82812208833078316276389880927663494277…`, matching the
+corpus's SnapPy HP 50-dps constant to full recorded precision (Route 71,
+residual `4.9e-50`). That is a **control on the definition**, not a proof of the
+geometric identification.
