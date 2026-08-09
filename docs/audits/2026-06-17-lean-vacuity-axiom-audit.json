@@ -1,13 +1,13 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-08T23:53:13.364Z",
+  "generated": "2026-08-09T00:00:14.297Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 1656,
-  "files_flagged": 128,
-  "total_defects": 103,
+  "scanned_files": 1662,
+  "files_flagged": 124,
+  "total_defects": 99,
   "total_exempt": 59,
   "categories": {
-    "proof-docstring-sorry-mismatch": 13,
+    "proof-docstring-sorry-mismatch": 9,
     "proof-no-trivial-true": 17,
     "proof-no-self-assuming-projection": 8,
     "proof-no-unused-hypothesis-rfl": 7,
@@ -373,7 +373,7 @@
       {
         "name": "MRatioInversionMonotone",
         "file": "content/quantum-observable-universe/lean/QOU/MassComputationChainRoadmap.lean",
-        "line": 86
+        "line": 87
       },
       {
         "name": "NSCounterexample",
@@ -1367,17 +1367,6 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean": [
-      {
-        "line": 80,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem volume_perturbation [ctx : VolumePerturbationContext] :",
-        "decl": "volume_perturbation",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/wedderburnWeightCanonical.lean": [
       {
         "line": 104,
@@ -1661,17 +1650,6 @@
         "snippet": "axiom su3_sym2_irreducible :",
         "decl": "su3_sym2_irreducible",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals/markov_identification.lean": [
-      {
-        "line": 88,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem markovTrace_branching [ctx : MarkovIdentificationContext] :",
-        "decl": "markovTrace_branching",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean": [
@@ -2323,17 +2301,6 @@
         "detail": "opaque-marker field(s) `: True` (su4_action, alpha_cluster_from_su4_quadruplets) — honestly framed; tracked not counted"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/four_term_pair_nucleon.lean": [
-      {
-        "line": 114,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :",
-        "decl": "four_term_pair_nucleon",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean": [
       {
         "line": 75,
@@ -2399,17 +2366,6 @@
         "snippet": "theorem qPochDenom_eq_zero_at_pole {K : Type*} [Field K] (q : K) (hq : q ≠ 0)",
         "decl": "qPochDenom_eq_zero_at_pole",
         "severity": "critical"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Torsion/neutron_proton_splitting.lean": [
-      {
-        "line": 91,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :",
-        "decl": "neutron_proton_splitting",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ]
   }
