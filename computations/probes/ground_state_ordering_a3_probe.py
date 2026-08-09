@@ -547,43 +547,98 @@ def part4_fix_impact(results: dict, assertions: dict) -> None:
     ok = d0 < MIRROR_TOL and d1 < MIRROR_TOL
     assertions["atom_chain_mirror_certified"] = 1 if ok else 0
 
-    rows = []
-    moved = False
-    for (Z, N, alt) in [(2, 1, "ppn"), (2, 2, "nppn")]:
+    CASES = [(2, 1, "ppn"), (2, 2, "nppn"), (3, 3, "npnppn")]
+
+    # 4a -- the per-generator Wedderburn volumes V0/V1.
+    print("\n  4a. per-generator Wedderburn volumes V0/V1 (atom_V_full_sym)")
+    v_rows = []
+    v_moved = False
+    for (Z, N, alt) in CASES:
         helper = "".join(HCS._ground_state_ordering(Z, N))
-        gh0, gh1 = _atom_chain_mirror(list(helper), Z)
-        ga0, ga1 = _atom_chain_mirror(list(alt), Z)
-        V0h, V1h = _chain_V_mirror(gh0), _chain_V_mirror(gh1)
-        V0a, V1a = _chain_V_mirror(ga0), _chain_V_mirror(ga1)
+        V0h, V1h = (_chain_V_mirror(c) for c in _atom_chain_mirror(list(helper), Z))
+        V0a, V1a = (_chain_V_mirror(c) for c in _atom_chain_mirror(list(alt), Z))
         rel0 = abs(V0a - V0h) / abs(V0h)
         rel1 = abs(V1a - V1h) / abs(V1h) if V1h != 0 else mp.mpf(0)
         if rel0 > mp.mpf("1e-30") or rel1 > mp.mpf("1e-30"):
-            moved = True
-        print(f"\n  (Z,N)=({Z},{N})  helper={helper}  candidate={alt}")
-        print(f"    V0  helper={mp.nstr(V0h, 20)}   candidate={mp.nstr(V0a, 20)}"
-              f"   rel delta={mp.nstr(rel0, 6)}")
-        print(f"    V1  helper={mp.nstr(V1h, 20)}   candidate={mp.nstr(V1a, 20)}"
-              f"   rel delta={mp.nstr(rel1, 6)}")
-        rows.append({
+            v_moved = True
+        print(f"    (Z,N)=({Z},{N}) helper={helper:8s} alt={alt:8s} "
+              f"V0={mp.nstr(V0h, 18):>22s} rel dV0={mp.nstr(rel0, 4):>10s} "
+              f"rel dV1={mp.nstr(rel1, 4):>10s}")
+        v_rows.append({
             "Z": Z, "N": N, "helper": helper, "candidate": alt,
             "V0_helper": mp.nstr(V0h, 20), "V0_candidate": mp.nstr(V0a, 20),
             "V1_helper": mp.nstr(V1h, 20), "V1_candidate": mp.nstr(V1a, 20),
             "rel_delta_V0": mp.nstr(rel0, 10), "rel_delta_V1": mp.nstr(rel1, 10),
         })
+    print(f"    => V0/V1 move under a re-ordering: {v_moved}")
+    print("    This is EXACTLY the commuting-transfer-factor structure proved in")
+    print("    QOU/MassTheory/TransferFactorCommute.lean: `_vertex_channels_sym`")
+    print("    runs the same T(d) = S + d.1 recursion, and `atom_gen_chains_sym`")
+    print("    enumerates ALL C(A,2) nucleon pairs, whose type multiset is fixed by")
+    print("    (Z, N). So the chain multiset -- hence V -- is ordering-independent.")
+    assertions["atom_V_is_ordering_independent"] = 0 if v_moved else 1
 
-    print("\n  => changing the helper's arrangement MOVES the per-generator")
-    print(f"     Wedderburn volumes V0/V1 of the atom: {moved}")
-    print("     `atom_V_full_sym` / `build_atom_nf_sym` / `atom_gen_chains_sym`")
-    print("     all consume `_ground_state_ordering`, so a fix propagates into")
-    print("     every witness built on them.  THE FIX IS THEREFORE NOT APPLIED")
-    print("     HERE -- it crosses this session's scope bar (change no published")
-    print("     number) and is filed as a bean instead.")
-    assertions["helper_fix_would_move_published_values"] = 1 if moved else 0
+    # 4b -- the Hecke normal-form vector.
+    print("\n  4b. Hecke normal-form vector (build_atom_nf_sym / build_atom_nf_mp)")
+    import compound_shift_nf as CSN  # noqa: PLC0415  (heavy; only needed here)
+    orig = HCS._ground_state_ordering
+    nf_rows = []
+    nf_moved = False
+    try:
+        for (Z, N, alt) in CASES:
+            helper = "".join(orig(Z, N))
+            nf_h = CSN.build_atom_nf_mp(Z, N, dps=DPS)
+            patched = (lambda a: (lambda z, n: list(a) if (z, n) == (Z, N)
+                                  else orig(z, n)))(alt)
+            HCS._ground_state_ordering = patched
+            CSN._ground_state_ordering = patched
+            nf_a = CSN.build_atom_nf_mp(Z, N, dps=DPS)
+            HCS._ground_state_ordering = orig
+            CSN._ground_state_ordering = orig
+            worst = max((abs(a - b) / abs(a) if a != 0 else abs(a - b))
+                        for a, b in zip(nf_h, nf_a))
+            if worst > mp.mpf("1e-30"):
+                nf_moved = True
+            print(f"    (Z,N)=({Z},{N}) helper={helper:8s} alt={alt:8s} "
+                  f"worst rel delta on the 6-vector = {mp.nstr(worst, 8)}")
+            nf_rows.append({
+                "Z": Z, "N": N, "helper": helper, "candidate": alt,
+                "nf_helper": [mp.nstr(x, 20) for x in nf_h],
+                "nf_candidate": [mp.nstr(x, 20) for x in nf_a],
+                "worst_rel_delta": mp.nstr(worst, 10),
+            })
+    finally:
+        HCS._ground_state_ordering = orig
+        CSN._ground_state_ordering = orig
+    print(f"    => the NF vector moves under a re-ordering: {nf_moved}")
+    print("    `hm_sym` is the 6-dimensional Hecke NF multiplication, which is NOT")
+    print("    of the commuting T(d) form -- so the NF, unlike V, is genuinely")
+    print("    order-sensitive.")
+    assertions["hecke_nf_is_ordering_dependent"] = 1 if nf_moved else 0
+
+    # 4c -- Phi_1 itself.
+    phi_moved = any(
+        abs(phi_full(list(HCS._ground_state_ordering(Z, N)), Z)
+            - phi_full(list(alt), Z)) > mp.mpf("1e-30")
+        for (Z, N, alt) in CASES)
+    print(f"\n  4c. Phi_1 (compute_phi1_full_sym) moves under a re-ordering: "
+          f"{phi_moved}")
+    assertions["phi1_is_ordering_dependent"] = 1 if phi_moved else 0
+
+    would_move = nf_moved or phi_moved
+    print("\n  => VERDICT: a helper fix leaves the Wedderburn volumes V0/V1")
+    print("     untouched but MOVES the Hecke NF vector (and Phi_1), and")
+    print("     build_atom_nf_sym / build_atom_nf_mp feed committed witnesses.")
+    print("     THE FIX IS THEREFORE NOT APPLIED HERE -- it crosses this")
+    print("     session's scope bar (change no published number). Filed as a bean.")
+    assertions["helper_fix_would_move_published_values"] = 1 if would_move else 0
 
     consumers = [
-        "hecke_core_symbolic.atom_gen_chains_sym -> atom_V_full_sym",
-        "hecke_core_symbolic.build_atom_nf_sym",
-        "hecke_core_symbolic.compute_phi1_full_sym (via _alternating_ordering_sym)",
+        "hecke_core_symbolic.atom_gen_chains_sym -> atom_V_full_sym "
+        "(ordering-INDEPENDENT, 4a)",
+        "hecke_core_symbolic.build_atom_nf_sym (ordering-DEPENDENT, 4b)",
+        "hecke_core_symbolic.compute_phi1_full_sym via _alternating_ordering_sym "
+        "(ordering-DEPENDENT, 4c)",
         "compound_shift_nf.build_atom_nf_mp (own transcription, line ~197)",
         "channel_binding.py (BOND_CROSSING self-test source of truth)",
         "crystal_shift_nf_atomic.py, atomic_tr_m_mpfr_50dps.py (downstream)",
@@ -593,9 +648,94 @@ def part4_fix_impact(results: dict, assertions: dict) -> None:
         print(f"    - {c}")
     results["part4_fix_impact"] = {
         "mirror_certification": {"dV0": mp.nstr(d0, 8), "dV1": mp.nstr(d1, 8)},
-        "rows": rows, "would_move_published_values": moved,
+        "wedderburn_volumes": {"rows": v_rows, "moves": v_moved},
+        "hecke_nf": {"rows": nf_rows, "moves": nf_moved},
+        "phi1_moves": phi_moved,
+        "would_move_published_values": would_move,
         "consumers": consumers,
         "action_taken": "NONE -- diagnostic only; filed as a bean.",
+    }
+
+
+# ---------------------------------------------------------------------------
+# Part 6 -- the mechanism: commuting transfer factors + the undefined (n, e)
+# ---------------------------------------------------------------------------
+
+def part6_mechanism(results: dict, assertions: dict) -> None:
+    print("\n" + "=" * 78)
+    print("PART 6 -- WHY: commuting transfer factors, and the (n, e) hole")
+    print("=" * 78)
+
+    # (i) The transfer factors of the Phi chain all commute (Lean: transferFactor_comm).
+    def T(d):
+        return (_H + d, mp.mpf(1), mp.mpf(1), d)
+
+    def mm(X, Y):
+        return (X[0] * Y[0] + X[1] * Y[2], X[0] * Y[1] + X[1] * Y[3],
+                X[2] * Y[0] + X[3] * Y[2], X[2] * Y[1] + X[3] * Y[3])
+
+    d1, d2 = mp.mpf(0), -_H * _HALF
+    ab, ba = mm(T(d1), T(d2)), mm(T(d2), T(d1))
+    comm_gap = max(abs(x - y) for x, y in zip(ab, ba))
+    print(f"  (i) T(d1)T(d2) vs T(d2)T(d1) at the 3He strand-0 coefficients "
+          f"(0, -h/2): max |delta| = {mp.nstr(comm_gap, 6)}")
+    print("      Proved in general, sorry-free and over a generic CommRing, in")
+    print("      QOU/MassTheory/TransferFactorCommute.lean (`transferFactor_comm`,")
+    print("      `chainProd_perm`, `phiReadout_chainProd_perm`): T(d) = S + d.1 for")
+    print("      one fixed S, so the chain product -- and V -- depends on the")
+    print("      crossing coefficients ONLY as a MULTISET.")
+    assertions["transfer_factors_commute"] = 1 if comm_gap < mp.mpf("1e-40") else 0
+
+    # (ii) Hence the 3He bare-nucleon readouts are EQUAL, not merely close.
+    phi_ppn = phi_fast(list("ppn"))
+    phi_pnp = phi_fast(list("pnp"))
+    gap_nuc = abs(phi_ppn - phi_pnp)
+    print(f"\n  (ii) 3He bare-nucleon Phi: ppn = {mp.nstr(phi_ppn, 20)}")
+    print(f"                             pnp = {mp.nstr(phi_pnp, 20)}")
+    print(f"       |difference| = {mp.nstr(gap_nuc, 6)}  -- an EXACT degeneracy,")
+    print("       not a near-miss. At the NUCLEON level the objective cannot")
+    print("       prefer either arrangement, so rule (iii)'s 'sorted BEATS")
+    print("       interleaving for A <= 3' is, at 3He, a TIE rather than a strict")
+    print("       win. (At T it IS strict -- see Part 1.)")
+    assertions["he3_nucleon_level_is_exactly_degenerate"] = (
+        1 if gap_nuc < mp.mpf("1e-40") else 0)
+
+    # (iii) The production separation comes from the electron tail alone.
+    ne = HCS._crossing_coeff_sym("n", "e")
+    pe = HCS._crossing_coeff_sym("p", "e")
+    print(f"\n  (iii) _crossing_coeff_sym('p','e') = {pe}")
+    print(f"        _crossing_coeff_sym('n','e') = {ne}   <-- UNDEFINED (None)")
+    print("        `_phi1_from_ordering_sym` SKIPS an undefined coefficient, so a")
+    print("        neutron placed before the electron tail contributes a bare")
+    print("        V = 1 (log 0) for that strand. The strict 3He separation under")
+    print("        the production Phi_1 is therefore produced entirely by this")
+    print("        asymmetry -- electrons couple to protons, not to neutrons --")
+    print("        and NOT by the nucleon ordering itself.")
+    phi_full_ppn = phi_full(list("ppn"), 2)
+    phi_full_pnp = phi_full(list("pnp"), 2)
+    print(f"        Phi_1(ppn) = {mp.nstr(phi_full_ppn, 20)}")
+    print(f"        Phi_1(pnp) = {mp.nstr(phi_full_pnp, 20)}")
+    print(f"        separation = {mp.nstr(phi_full_pnp - phi_full_ppn, 12)}")
+    assertions["n_e_crossing_coefficient_undefined"] = 1 if ne is None else 0
+    assertions["p_e_crossing_coefficient_defined"] = 1 if pe is not None else 0
+
+    results["part6_mechanism"] = {
+        "transfer_commutator_gap": mp.nstr(comm_gap, 8),
+        "lean": ("content/quantum-observable-universe/lean/QOU/MassTheory/"
+                 "TransferFactorCommute.lean"),
+        "he3_phi_nuc_ppn": mp.nstr(phi_ppn, 20),
+        "he3_phi_nuc_pnp": mp.nstr(phi_pnp, 20),
+        "he3_phi_nuc_gap": mp.nstr(gap_nuc, 8),
+        "crossing_coeff_p_e": str(pe),
+        "crossing_coeff_n_e": str(ne),
+        "he3_phi1_ppn": mp.nstr(phi_full_ppn, 20),
+        "he3_phi1_pnp": mp.nstr(phi_full_pnp, 20),
+        "he3_phi1_separation": mp.nstr(phi_full_pnp - phi_full_ppn, 12),
+        "reading": ("At the nucleon level the objective is EXACTLY degenerate "
+                    "between ppn and pnp (commuting transfer factors => multiset "
+                    "dependence only). The production Phi_1 separates them in "
+                    "favour of sorted, but only through the electron tail, whose "
+                    "(n, e) coupling is undefined and therefore skipped."),
     }
 
 
@@ -646,6 +786,42 @@ def part5_missing_rows(results: dict, assertions: dict) -> None:
     for zn in dropped:
         print(f"    ({zn[0]}, {zn[1]}) -> {labels.get(zn, '?')}")
 
+    # The decisive evidence that the exclusion is UNINTENDED: the same module
+    # provisions reference data for 3He and 4He in three separate dicts, and
+    # imports a CODATA constant used for nothing else.
+    provisioned = {
+        "AME_BINDING['3He']": '"3He": 7.71804' in src,
+        "AME_BINDING['4He']": '"4He": 28.2957' in src,
+        "CODATA_MASS['3He']": '"3He": None,  # not in codata_constants' in src,
+        "CODATA_MASS['4He']": '"4He": float(M_HE4_MEV_VALIDATION)' in src,
+        "ATLAS_TAG['3He']": src.count('"3He"') >= 3,
+        "ATLAS_TAG['4He']": src.count('"4He"') >= 3,
+        "imports M_HE4_MEV_VALIDATION": "M_HE4_MEV_VALIDATION" in src,
+    }
+    print("\n  DECISIVE: the module PROVISIONS 3He and 4He and then never emits them.")
+    for k, v in provisioned.items():
+        print(f"    {k:34s} present in source: {v}")
+    print("    All three dicts are consumed by the row loop -- AME_BINDING.get(name),")
+    print("    CODATA_MASS.get(name), ATLAS_TAG[name] -- for a `name` that can never")
+    print("    be '3He' or '4He'. In particular M_HE4_MEV_VALIDATION is imported")
+    print("    solely to populate CODATA_MASS['4He'], which is therefore DEAD.")
+    print("    An author who meant to exclude these two would not have written")
+    print("    their AME binding energies, their atlas tags, and a dedicated CODATA")
+    print("    import for them. The exclusion is unintended.")
+    all_prov = all(provisioned.values())
+    assertions["he3_he4_reference_data_is_provisioned"] = 1 if all_prov else 0
+
+    # And they really are absent from the committed witness.
+    wpath = REPO / "computations" / "mass-table-comprehensive.witness.json"
+    absent = None
+    if wpath.exists():
+        wtxt = wpath.read_text()
+        absent = (wtxt.count("3He") == 0 and wtxt.count("4He") == 0
+                  and wtxt.count("5He") > 0)
+        print(f"\n  committed witness: '3He' occurrences = {wtxt.count('3He')}, "
+              f"'4He' = {wtxt.count('4He')}, '5He' = {wtxt.count('5He')}")
+        assertions["he3_he4_absent_but_he5_present_in_witness"] = 1 if absent else 0
+
     # The witness's sole assertion is evaluated over the FILTERED row set.
     has_assertion = "all_A_leq_4_masses_computed" in src
     a_le_4_rows = [("p", 1, 0), ("n", 0, 1), ("D", 1, 1), ("T", 1, 2)]
@@ -672,9 +848,15 @@ def part5_missing_rows(results: dict, assertions: dict) -> None:
         "dropped": [list(d) for d in dropped],
         "dropped_labels": {f"{z},{n}": labels.get((z, n)) for (z, n) in dropped},
         "genuine_duplicates_among_dropped": [list(o) for o in overlap],
+        "reference_data_provisioned": provisioned,
+        "he3_he4_absent_from_committed_witness": absent,
         "classification": ("GENERATOR BUG -- false-premise dedup guard. No He "
                            "isotope is in the explicit list, so no Z >= 2 grid row "
-                           "can duplicate it; `a > 4` drops 6 unique rows."),
+                           "can duplicate it; `a > 4` drops 6 unique rows. UNINTENDED: "
+                           "the same module provisions AME_BINDING, CODATA_MASS and "
+                           "ATLAS_TAG entries for 3He and 4He and imports "
+                           "M_HE4_MEV_VALIDATION solely for CODATA_MASS['4He'], all of "
+                           "which the guard renders unreachable."),
         "collateral": ("the witness's sole assertion "
                        "`all_A_leq_4_masses_computed` is evaluated over the "
                        "post-filter row set {p, n, D, T} and so passes without "
@@ -705,6 +887,7 @@ def main() -> int:
     part2_sweep(results, assertions)
     part3_alternative_objectives(results, assertions)
     part4_fix_impact(results, assertions)
+    part6_mechanism(results, assertions)
     part5_missing_rows(results, assertions)
 
     dt = time.time() - t0
@@ -712,19 +895,32 @@ def main() -> int:
     print("SUMMARY")
     print("=" * 78)
     he3 = results["part1_A3"]["3He"]
-    print("  LOOSE END 1 -- classification (a): the HELPER is wrong at 3He.")
-    print(f"      Phi_q argmin over all 3 arrangements of (Z,N)=(2,1) is "
-          f"{he3['argmin_phi_full']} (sorted),")
-    print(f"      matching prop:ground-state-ordering rule (iii); the helper "
-          f"returns {he3['helper']}.")
-    print("      The helper performs no search (Part 0) and is not the Phi_q")
-    print("      argmin in general (Part 2), and no other stated objective")
-    print("      rescues it (Part 3) -- so this is a defect, not a definitional")
-    print("      difference. NOT FIXED: the fix moves published values (Part 4).")
+    print("  LOOSE END 1 -- classification (a), with a sharp caveat.")
+    print("      (a) THE HELPER IS THE DEFECTIVE SIDE. It performs no variational")
+    print("          search at all (Part 0) -- it is a fixed interleaving")
+    print("          generator -- and it is the Phi_1 argmin in only "
+          f"{results['part2_sweep']['helper_optimal_count']}/"
+          f"{results['part2_sweep']['cases']} swept")
+    print("          cases (Part 2); no other objective the corpus states rescues")
+    print("          it (Part 3). It does not implement the rule its name invokes.")
+    print(f"      At 3He the Phi_1 argmin is {he3['argmin_phi_full']} (sorted), as")
+    print(f"      rule (iii) says; the helper's {he3['helper']} ranks LAST of 3.")
+    print("      CAVEAT (Part 6): on the BARE NUCLEON chain ppn and pnp are")
+    print("      EXACTLY degenerate -- proved, not measured: the transfer factors")
+    print("      commute, so V depends only on the coefficient multiset. Rule")
+    print("      (iii)'s 'sorted BEATS interleaving' is therefore a TIE at 3He,")
+    print("      strict only once the electron tail is included -- and that")
+    print("      separation is generated by the UNDEFINED (n, e) coupling, not by")
+    print("      the nucleon ordering. Both readings agree sorted is optimal;")
+    print("      neither supports the helper's pnp.")
+    print("      NOT FIXED: a fix leaves V untouched but moves the Hecke NF vector")
+    print("      (up to 2.5x) and Phi_1 (Part 4) -- outside this session's scope.")
     print("  LOOSE END 2 -- 3He/4He absence is a GENERATOR BUG (Part 5): a dedup")
     print("      guard `a > 4` whose premise ('explicitly added ... He isotopes')")
     print("      is false -- the explicit list is H-chain only. 6 unique rows are")
-    print("      dropped; 3He and 4He are the only bound ones.")
+    print("      dropped; 3He and 4He are the only bound ones. The witness's sole")
+    print("      assertion `all_A_leq_4_masses_computed` passes only because the")
+    print("      filter removed the rows it claims to cover.")
     print(f"\n  wall {dt:.1f}s   assertions "
           f"{sum(assertions.values())}/{len(assertions)}")
 
@@ -749,7 +945,16 @@ def main() -> int:
         "only H-chain entries (p, n, D, T, all Z <= 1), so no Z >= 2 grid row can "
         "duplicate it. The guard drops exactly 6 unique (Z, N) rows, of which 3He "
         "and 4He are the only bound nuclides. free_parameters = 0; no AME/CODATA "
-        "quantity selects anything; nothing is wired; no published number changed.")
+        "quantity selects anything; nothing is wired; no published number changed. "
+        "Sharpening: on the BARE NUCLEON chain the two 3He arrangements are "
+        "EXACTLY degenerate -- the transfer factors T(d) = S + d.1 all commute, so "
+        "the readout depends on the crossing coefficients only as a multiset "
+        "(proved sorry-free over a generic CommRing in "
+        "QOU/MassTheory/TransferFactorCommute.lean). Rule (iii)'s 'sorted BEATS "
+        "interleaving' is thus a TIE at 3He, strict only after the electron tail "
+        "is appended -- and that separation is produced by the UNDEFINED (n, e) "
+        "crossing coefficient, which _phi1_from_ordering_sym silently skips. Both "
+        "readings put sorted at the optimum; neither supports the helper's pnp.")
     w.set_audit_only(True)
     w.add_parameter("q0_experimental_proton_anchor", mp.nstr(Q0, 30))
     w.add_parameter("q0_pin", "experimental/proton (q_parameter.q_at; owner directive "
