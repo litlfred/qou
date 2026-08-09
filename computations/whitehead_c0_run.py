@@ -25,6 +25,26 @@ from whitehead_c0_mpmath import (  # noqa: E402
 mp.mp.dps = 60
 OUT = Path(__file__).resolve().parent / "whitehead-c0-mpmath.witness.json"
 
+
+def _stamp_witness_provenance(payload: dict, *, engine: str = "python") -> dict:
+    """Add engine / scriptFile / commitSha (+ script hashes) to a hand-built
+    witness payload, without changing any of its existing fields.
+
+    No-op if `qou_substrate` is unimportable, so the probe still runs in a
+    bare environment and the audit flags the witness honestly.
+    """
+    try:
+        sys.path.insert(
+            0,
+            str(Path(__file__).resolve().parent.parent / "tools" / "qou-substrate" / "python"),
+        )
+        from qou_substrate import WitnessBuilder  # noqa: E402
+    except Exception:  # pragma: no cover — bare env
+        return payload
+    WitnessBuilder.stamp_staleness_metadata(payload, script_path=__file__, engine=engine)
+    return payload
+
+
 # All N recomputed fresh via the fast O(N⁸) path at dps=60 (the earlier
 # dps=40/δ=1e-35 seeds were only ~4 digits — too coarse to keep).
 SEED = {}
@@ -70,6 +90,8 @@ def write_witness(vals, note):
         "progress_note": note,
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    # Provenance for the audit (qou-44se).
+    _stamp_witness_provenance(w, engine="mpmath")
     OUT.write_text(json.dumps(w, indent=2))
     print(f"    witness updated ({note}): c0_mean={c0_mean:.4f} factor={factor:.2f} -> factor {nearest}", flush=True)
 

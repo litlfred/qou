@@ -48,3 +48,69 @@ python3 -u computations/audits/witness_provenance_audit.py
 ```
 
 (then `git checkout --` the witness unless you intend to land the snapshot).
+
+## Progress 2026-08-09 (PR #4834) — root cause fixed, one witness regenerated
+
+**Root cause confirmed and fixed at the helper, not the JSONs.**
+`WitnessBuilder.stamp_staleness_metadata` — the public helper whose stated job
+is stamping provenance onto hand-built payloads — set `scriptHash`,
+`scriptCommitSha`, `commitSha`, `engine`, `engineVersion`, `computedAt`,
+`durationMs` but **not `scriptFile`**. So every witness stamped by it failed
+the audit's `engine`/`scriptFile`/`commitSha` triple while looking fully
+provenanced.
+
+Corroboration that this was a known papercut: `m_tau_knot_prediction.py:343`
+sets `witness["scriptFile"] = basename(__file__)` **by hand immediately after
+calling the helper**. That workaround is now unnecessary.
+
+Fixed in both mirrors:
+- `tools/qou-substrate/python/qou_substrate/witness.py`
+- `qou-mass/src/qou_mass/_internal/witness_base.py`
+
+Four whitehead producers now stamp provenance (they hand-built the dict and
+`json.dumps`'d it, bypassing the helper entirely):
+`whitehead_c_sigma_hiprec.py`, `whitehead_c_sigma_fig8_calib.py`,
+`whitehead_c0_mpmath.py`, `whitehead_c0_run.py`.
+
+**Regenerated: 1** — `whitehead-c-sigma-fig8-calib.witness.json`
+(verified additive-only: provenance + `q0Anchor`/`q0Value`, no science value
+changed).
+
+## THREE separate defects found while doing it — none of them the missing fields
+
+1. **`whitehead-c-sigma-hiprec` is not reproducible from its default
+   invocation.** The committed witness has `dps=100` and
+   `Ns=[400,600,900,1300,1700,2100,2500,3000]`; the script defaults to
+   `dps=60`, `Ns=[300,400,500,700,900,1100,1400]`. Re-running degrades
+   `best_match_digits` **20 → 16** and shifts `c_sigma_extrapolated` in the
+   17th digit. **Not regenerated** — a provenance stamp is not worth
+   downgrading a 20-digit result. Faithful command (recovered from the
+   witness's own recorded parameters, untested — it is an O(N²) mpf tower to
+   N=3000 at dps=100):
+   ```bash
+   python3 computations/whitehead_c_sigma_hiprec.py 100 400,600,900,1300,1700,2100,2500,3000
+   ```
+
+2. **Two scripts write the same witness.** `whitehead_c0_mpmath.py` *and*
+   `whitehead_c0_run.py` both write `whitehead-c0-mpmath.witness.json`. The
+   committed one records `computation: "whitehead_c0_run"`, so `_run` is the
+   real producer — running `_mpmath` silently overwrites it with a different
+   script's output (it also rewords `description` and `precision`). A witness
+   with two producers has no meaningful `scriptFile`. **Not regenerated**;
+   the `_run` re-run exceeded a 10-minute budget and was killed, so nothing
+   partial was committed.
+
+3. **None of these producers use the canonical precision module** (owner
+   observation). `computations/substrate/_precision.py` exposes
+   `set_compute_dps()`, and `whitehead_c_sigma_hiprec.py`,
+   `whitehead_c0_run.py`, `whitehead_c_sigma_fig8_calib.py` reference it
+   **zero** times — they hardcode `mp.mp.dps` or read it from `sys.argv[1]`.
+   That is *why* defect 1 exists: output precision is an unrecorded CLI
+   argument instead of repo policy. **This is the deeper fix** and is the
+   right next step: route these producers through `set_compute_dps()` and
+   record the resolved dps + all tower parameters in the witness, so the
+   invocation is recoverable from the artifact rather than from memory.
+
+Deliberately not done here: changing precision semantics on a landed 20-digit
+result is a behaviour change that wants its own scoped change, not a rider on
+a provenance fix.

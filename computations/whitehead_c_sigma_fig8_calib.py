@@ -29,6 +29,26 @@ from pathlib import Path
 import mpmath as mp
 
 
+def _stamp_witness_provenance(payload: dict, *, engine: str = "python") -> dict:
+    """Add engine / scriptFile / commitSha (+ script hashes) to a hand-built
+    witness payload, without changing any of its existing fields.
+
+    Degrades to a no-op if `qou_substrate` is not importable, so the probe
+    still runs in a bare environment — the provenance audit will then flag the
+    witness, which is the honest outcome rather than a silent half-stamp.
+    """
+    try:
+        sys.path.insert(
+            0,
+            str(Path(__file__).resolve().parent.parent / "tools" / "qou-substrate" / "python"),
+        )
+        from qou_substrate import WitnessBuilder  # noqa: E402
+    except Exception:  # pragma: no cover — bare env
+        return payload
+    WitnessBuilder.stamp_staleness_metadata(payload, script_path=__file__, engine=engine)
+    return payload
+
+
 def log_J_fig8(N: int) -> mp.mpf:
     """log J'_N(4_1)(e^{2πi/N}) = log Σ_{k} ∏_{j≤k}(2 sin(πj/N))²  (positive sum)."""
     piN = mp.pi / N
@@ -115,5 +135,7 @@ if __name__ == "__main__":
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
     out = Path(__file__).resolve().parent / "whitehead-c-sigma-fig8-calib.witness.json"
+    # Provenance: engine / scriptFile / commitSha for the audit (qou-44se).
+    _stamp_witness_provenance(wit, engine="mpmath")
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")

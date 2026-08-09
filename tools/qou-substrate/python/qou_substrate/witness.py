@@ -698,6 +698,13 @@ class WitnessBuilder:
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()
+        # `scriptFile` completes the provenance triple that
+        # computations/audits/witness_provenance_audit.py checks
+        # (engine / scriptFile / commitSha). Omitting it made every witness
+        # stamped by this helper fail that audit while looking fully
+        # provenanced -- the audit reported 23 such files on 2026-08-09,
+        # up from 10 (bean qou-44se).
+        payload["scriptFile"] = Path(spath).name
         payload["engine"] = engine
         payload["computedAt"] = datetime.now(timezone.utc).isoformat()
         payload["durationMs"] = 0

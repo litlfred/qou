@@ -10,5 +10,15 @@
   "match_digits": 17,
   "template_validated": true,
   "note": "Validates that the reduced-colored-Jones c_\u03c3 IS the 1-loop torsion prefactor |\u03c4|^{-1/2} on the known figure-eight case, making the Whitehead c_\u03c3=2^{-3/4} \u21d2 |\u03c4(L5a1)|=2\u221a2 a template-consistent identification.",
-  "timestamp": "2026-08-02T09:47:42+00:00"
+  "timestamp": "2026-08-09T10:30:40+00:00",
+  "scriptHash": "3ae742229a50",
+  "scriptCommitSha": "36cc60c6e0f1b4cc50dcf8dff6e3cb2b8d7d6261",
+  "commitSha": "bbaef0b0bc2072c6c2b0d8b2b4e94448cee8d832",
+  "scriptFile": "whitehead_c_sigma_fig8_calib.py",
+  "engine": "mpmath",
+  "computedAt": "2026-08-09T10:30:40.776305+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.3.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

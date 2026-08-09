@@ -33,6 +33,26 @@ from pathlib import Path
 import mpmath as mp
 
 
+def _stamp_witness_provenance(payload: dict, *, engine: str = "python") -> dict:
+    """Add engine / scriptFile / commitSha (+ script hashes) to a hand-built
+    witness payload, without changing any of its existing fields.
+
+    Degrades to a no-op if `qou_substrate` is not importable, so the probe
+    still runs in a bare environment — the provenance audit will then flag the
+    witness, which is the honest outcome rather than a silent half-stamp.
+    """
+    try:
+        sys.path.insert(
+            0,
+            str(Path(__file__).resolve().parent.parent / "tools" / "qou-substrate" / "python"),
+        )
+        from qou_substrate import WitnessBuilder  # noqa: E402
+    except Exception:  # pragma: no cover — bare env
+        return payload
+    WitnessBuilder.stamp_staleness_metadata(payload, script_path=__file__, engine=engine)
+    return payload
+
+
 def log_JN(N: int) -> mp.mpf:
     """log|J_N(Whitehead W_{0,1,1,0})(e^{2πi/N})| — van der Veen Lemma 1, mpmath.
 
@@ -146,6 +166,10 @@ if __name__ == "__main__":
         "note": "Structural claim c_σ=2^{-3/4} TESTED numerically here; DERIVATION from adjoint Reidemeister torsion is a separate step (see whitehead_torsion_1loop.py). NOT wired.",
         "timestamp": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }
+    # Stamp engine / scriptFile / commitSha (+ script hashes) so the witness
+    # carries provenance. The hand-built payload above is kept verbatim; this
+    # only adds the standard fields the provenance audit requires (qou-44se).
+    _stamp_witness_provenance(wit, engine="mpmath")
     out = Path(__file__).resolve().parent / "whitehead-c-sigma-hiprec.witness.json"
     out.write_text(json.dumps(wit, indent=2))
     print(f"\n  Witness: {out}")

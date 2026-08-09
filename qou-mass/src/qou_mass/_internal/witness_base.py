@@ -484,6 +484,10 @@ class WitnessBuilder:
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()
+        # `scriptFile` completes the provenance triple the witness-provenance
+        # audit checks (engine / scriptFile / commitSha). Kept in sync with
+        # tools/qou-substrate/python/qou_substrate/witness.py.
+        payload["scriptFile"] = Path(spath).name
         payload["engine"] = engine
         payload["computedAt"] = datetime.now(timezone.utc).isoformat()
         payload["durationMs"] = 0
