@@ -69,9 +69,16 @@ theorem levelSeven_eq_unitCubic (y : ℝ) : unitCubic (-1) y = y ^ 3 + 2 * y ^ 2
   unfold unitCubic; ring
 
 /-- **The log relation at a root.** `Real.log` is even in Mathlib, so this is the
-statement for `|y|` and `|1+y|` without writing the bars. -/
+statement for `|y|` and `|1+y|` without writing the bars.
+
+⚠ No `y ≠ 0`. A first version carried it and Lean flagged it unused — correctly:
+`Real.log_pow` is unconditional (Mathlib's `Real.log 0 = 0` makes it so), and the
+two nonvanishing hypotheses `Real.log_mul` needs are exactly `hy1` and `h1y`.
+`y = 0` is excluded by `hy` anyway (it would give `−1 = 0`), so dropping the
+bound costs nothing and removes a hypothesis every caller was discharging. The
+fourth unused-hypothesis warning in this lane to carry a real simplification. -/
 theorem log_rel_of_root {y : ℝ} (hy : y ^ 3 + 2 * y ^ 2 - y - 1 = 0)
-    (hy0 : y ≠ 0) (hy1 : 1 + y ≠ 0) (h1y : (1 : ℝ) - y ≠ 0) :
+    (hy1 : 1 + y ≠ 0) (h1y : (1 : ℝ) - y ≠ 0) :
     2 * Real.log y = 2 * Real.log (1 + y) + Real.log (1 - y) := by
   have h := congrArg Real.log (sq_eq_of_root hy)
   rw [Real.log_pow, Real.log_mul (pow_ne_zero 2 hy1) h1y, Real.log_pow] at h
@@ -102,7 +109,7 @@ theorem corr_of_pos_root {y : ℝ} (hy : y ^ 3 + 2 * y ^ 2 - y - 1 = 0)
   have e₄ : Complex.log (1 - (y : ℂ)) = ((Real.log (1 - y) : ℝ) : ℂ) := by
     have : (1 : ℂ) - (y : ℂ) = ((1 - y : ℝ) : ℂ) := by push_cast; ring
     rw [this, log_ofReal_pos (by linarith)]
-  have hrel := log_rel_of_root hy (by linarith) (by linarith) (by linarith)
+  have hrel := log_rel_of_root hy (by linarith) (by linarith)
   unfold corr
   rw [e₁, e₂, e₃, e₄]
   simp only [Complex.sub_re, Complex.div_re, Complex.mul_re, Complex.mul_im, Complex.add_re,
@@ -125,7 +132,7 @@ theorem corr_of_neg_root {y : ℝ} (hy : y ^ 3 + 2 * y ^ 2 - y - 1 = 0)
   have e₄ : Complex.log (1 - (y : ℂ)) = ((Real.log (1 - y) : ℝ) : ℂ) := by
     have : (1 : ℂ) - (y : ℂ) = ((1 - y : ℝ) : ℂ) := by push_cast; ring
     rw [this, log_ofReal_pos (by linarith)]
-  have hrel := log_rel_of_root hy (by linarith) h1 (by linarith)
+  have hrel := log_rel_of_root hy h1 (by linarith)
   have hlogeq : Real.log (-y) = Real.log y := Real.log_neg_eq_log y
   rcases lt_trichotomy (1 + y) 0 with hs | hs | hs
   · -- `1 + y < 0`: its argument is `π`, but `log(−y)` is real so it drops out

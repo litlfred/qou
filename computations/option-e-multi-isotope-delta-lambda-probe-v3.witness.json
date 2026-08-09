@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11",
-  "computedAt": "2026-08-08T07:53:06.003791+00:00",
+  "computedAt": "2026-08-09T00:41:00.215150+00:00",
   "computation": "option-e-multi-isotope-delta-lambda-probe-v3",
   "description": "Option E v3: extends v2's content_sum_negated rule to T and \u00b3He + tests 5 per-knot offset corrections derived from substrate data (no AME fitting). User insight: f should depend on the knot K, not just \u03bb.",
   "scriptFile": "option_e_multi_isotope_delta_lambda_probe_v3.py",
@@ -74,9 +74,9 @@
     }
   },
   "per_knot_residuals_MeV": {
-    "deuteron": "0.3858584179999608",
-    "tritium": "7.368991331760706",
-    "helium-3": "5.606083113690237"
+    "deuteron": "0.3858584179999608150225081169346251594485757915226",
+    "tritium": "7.3689913317607062558994087941255408770006235934145",
+    "helium-3": "5.6060831136902363175510453047553101640773967798754"
   },
   "candidate_offsets_tested": [
     "negated_n_partitions",
