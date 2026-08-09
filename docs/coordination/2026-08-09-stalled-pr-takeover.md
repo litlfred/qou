@@ -118,6 +118,12 @@ can be verified as-is.
 | **4834** | opened | convention-D ruling, Lean, `qou-w2d7`, registry — see its description |
 | **4766** | coordinated | its `N_eff ≈ 2.5995` exclusion of C upgraded to a theorem for **every** `N` (`zC_not_fibre_family` + `zRank_eq_qpow_div_qInt`); correction posted that binding is not settled on C |
 | **4718** | reviewed + measured | fix is real (**+12 tests, −2 collection errors**, A/B on current main with numpy present) but the *"59 of 86 test files"* headline **does not reproduce**; the figure is also in the shipped `conftest.py` docstring. Offered to take it over and correct both claims. |
+| **4568** | **do not merge as-is** | its "10 → 9" was true on 2026-08-02 and is now obsolete: current main is **23 missing**, completeness *regressed* 0.9952 → 0.9903. A generated snapshot cannot be merged accurate after 7 days. Recommended close-and-regenerate. Spawned bean `qou-44se`. |
+| **4409** | **sound, one fix to fold in; conflicts** | release asset is real (1.53 GB, 4,184 modules); `gh`-absent fallback works. But its fallback keeps `--depth=1`, which **silently shallow-fies the whole clone** — the defect that corrupted this very sweep. Bean `qou-70g5`. Also: the asset's `browser_download_url` **404s** (slash in tag name). |
+| **4579** | **verified — recommend merge** | `lean-verify` exit 0 against the real cone, 0 sorries, `#print axioms` clean on all **7** decls. Single new file, checks against current main unmodified. |
+| **4435** | **verified — recommend merge** | `lean-verify` exit 0, 0 sorries, `#print axioms` clean on all **20** decls. Modifies an existing file and still compiles against current main. |
+| **4514** | beans-only | 4 files, 49 lines, **no code**. Its `qou-5gnb` beans a target that is already proved on main (see 4685). |
+| **4685** | **not mergeable** | conflicts; merged `PartitionHookProductBridge.lean` carries a `<<<` marker; `StandardYoungTableauHLF.lean` has **4 sorries** and imports a nonexistent module `QOU.BraidKnot.SytMathlibBridge`; merged `SYTEnumerationFintype.lean` fails on `ext_toSsyt` (semantic conflict). `DeltaLambdaSignRule.lean` merges byte-identical to main — already absorbed. **And its headline target `numSYT_mul_hookProduct` is already proved sorry-free on main** (`HookProductHLF.lean:99`). |
 
 ## Verification posture for this takeover
 
