@@ -195,6 +195,79 @@ theorem spoly_not_isNormalForm_completed (hp : HeckeParams) :
   refine hnf bs31 (bs31_mem hp) w₂ (by rw [spoly_coeff_w₂]; norm_num) ?_
   rw [bs31_lm]
 
+/-! ### The refuting overlap **resolves** in the completed system
+
+`spoly_not_isNormalForm_completed` says only that the S-polynomial is no longer
+irreducible. The Gröbner–Shirshov condition asks for more — that it *reduces to
+zero* — and here it does, in a single step, for a reason worth seeing:
+
+    oc.spoly       =  w₁ − w₂        (§4e: coeff w₁ = 1, coeff w₂ = −1)
+    bs31.relation  =  w₂ − w₁        (bsWord₁ 3 1 = w₂, bsWord₂ 2 3 1 = w₁)
+
+They are negatives of each other. So one application of `bs31` in empty context
+with coefficient `−1` annihilates it exactly. The obstruction and its repair are
+the same two words with opposite signs. -/
+
+theorem bs31_lc : bs31.lc (heckeOrder 4) = 1 := by
+  show bs31.relation.coeff (bs31.lm (heckeOrder 4)) = 1
+  rw [bs31_lm, bs31_relation]
+  simp [AlgElement.ofTerms_coeff, w₁, w₂]
+
+/-- `w₁`, `w₂` and the ambient word `σ₃σ₂σ₃σ₁` are three distinct words. -/
+theorem three_words_distinct :
+    w₁ ≠ w₂ ∧ oc.word ≠ w₁ ∧ oc.word ≠ w₂ := by
+  refine ⟨by decide, ?_, ?_⟩
+  · show ([⟨3⟩, ⟨2⟩, ⟨3⟩, ⟨1⟩] : Monomial (HeckeGen 4)) ≠ w₁
+    decide
+  · show ([⟨3⟩, ⟨2⟩, ⟨3⟩, ⟨1⟩] : Monomial (HeckeGen 4)) ≠ w₂
+    decide
+
+/-- The S-polynomial and the Bokut–Shiao relation cancel coefficient by
+coefficient. -/
+theorem spoly_add_relation_eq_zero (m : Monomial (HeckeGen 4)) :
+    oc.spoly.coeff m + bs31.relation.coeff m = 0 := by
+  obtain ⟨h12, hw1, hw2⟩ := three_words_distinct
+  by_cases h : oc.spoly.coeff m = 0
+  · rw [h, zero_add, bs31_relation]
+    have hm1 : m ≠ w₁ := by rintro rfl; rw [spoly_coeff_w₁] at h; exact one_ne_zero h
+    have hm2 : m ≠ w₂ := by
+      rintro rfl; rw [spoly_coeff_w₂] at h; exact absurd h (by norm_num)
+    simp [AlgElement.ofTerms_coeff, Ne.symm hm1, Ne.symm hm2]
+  · rcases spoly_support m (by exact h) with rfl | rfl | rfl
+    · rw [spoly_coeff_w₁, bs31_relation]
+      simp [AlgElement.ofTerms_coeff, Ne.symm h12]
+    · rw [spoly_coeff_w₂, bs31_relation]
+      simp [AlgElement.ofTerms_coeff, h12]
+    · exact absurd (OverlapComposition.spoly_coeff_word_eq_zero oc) h
+
+/-- **The overlap that refutes the uncompleted system resolves in the completed
+one** — one step, to zero.
+
+This is the Gröbner–Shirshov condition for this composition, and it is strictly
+stronger than `spoly_not_isNormalForm_completed`: not merely "reducible" but
+"reduces to zero". Contrast `NotAGSBasis.spoly_isNormalForm`, which is the same
+S-polynomial against `heckeRewritingSystem` and cannot be reduced at all. -/
+theorem refuting_overlap_resolves (hp : HeckeParams) :
+    SingleStepReduction (heckeOrder 4) (heckeCompletedRewritingSystem 4 hn4 hp)
+      oc.spoly AlgElement.zero := by
+  refine ⟨bs31, bs31_mem hp, [], [], -1, ?_, ?_, ?_⟩
+  · rw [bs31_lm]
+    show oc.spoly.coeff w₂ ≠ 0
+    rw [spoly_coeff_w₂]; norm_num
+  · rw [bs31_lm, bs31_lc]
+    show (-1 : ℝ) * 1 = oc.spoly.coeff w₂
+    rw [spoly_coeff_w₂]; norm_num
+  · intro m
+    show (0 : ℝ) = oc.spoly.coeff m - (-1) * (AlgElement.contextMul [] bs31.relation []).coeff m
+    have hctx : (AlgElement.contextMul [] bs31.relation []).coeff m
+        = bs31.relation.coeff m := by
+      have : m = [] ++ m ++ ([] : Monomial (HeckeGen 4)) := by simp
+      rw [this, AlgElement.contextMul_coeff_middle]
+      simp
+    rw [hctx]
+    have := spoly_add_relation_eq_zero m
+    linarith
+
 end Completion
 
 /-! ## §4h  The general leading monomial
