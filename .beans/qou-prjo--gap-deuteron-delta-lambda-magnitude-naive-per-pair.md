@@ -302,3 +302,69 @@ Nothing wired, no fit, free_parameters=0. Bean stays OPEN.
 
 Files: docs/audits/2026-08-08-nastokes-surface-curvature-trefoil-negative.md;
 computations/probes/nastokes_surface_curvature_trefoil_probe.py.
+
+---
+## GAUGE QUESTION ANSWERED — the transverse route closes NEGATIVE (PR #4848, 2026-08-09)
+
+Ran the one question #4798 left: *is there a derived principle fixing the germ
+normalization and the two H₁ handle holonomies?* **YES — and it determines c₂ = 0,
+not the c₂ ≈ 1 that would close the deuteron.** Bean stays **OPEN** (magnitude untouched).
+
+**Phase 0 (the corpus already pinned BOTH gauges — no new principle needed):**
+- *Transport*: `QOU.MathlibExt.YekutieliIntegration.holonomy = List.prod` in path order
+  (+ `holonomy_append`) fixes the ordering; Seifert's algorithm on a braid closure puts
+  discs↔strands, bands↔letters (`seifertBettiOne = c−s+1`, #4818). Together these make the
+  transport to band k the ORDERED PARTIAL PRODUCT — so on the deuteron word σ₁³ **every**
+  admissible transport is a power of ρ(σ₁). ρ(σ₂) is not in the word ⇒ #4798's `s1,s2` and
+  `s2,s1s2` rows are INADMISSIBLE, not alternative gauges.
+- *Germ*: `def:germ-commutator-q-curvature` defines δq as a germ-level increment **of q**,
+  i.e. the logarithmic q-derivative. #4798's competing "log σ" is the braid-direction
+  CONNECTION 1-form, not a q-germ (and is not a root vector — defect 14.48), so its
+  294/617/251 column measures the wrong object.
+- Negative Phase-0 findings (don't re-search): no corpus block assigns holonomies to
+  Seifert H₁ handles; no Seifert-matrix convention beyond the standard V; `_deprecated/`
+  Yekutieli per-cell probes are unrelated to surface transport.
+
+**Derivation (exact, q-INDEPENDENT):** in the 2-dim Hecke rep the two q-derivative germs
+are the constant matrices δq₁ = H−2E, δq₂ = −H, so F_q = [δq₁,δq₂] = **−4E** — a PURE ROOT
+VECTOR (traceless, nilpotent) with **Ad(ρ(σ₁))F_q = −q²·F_q** (eigenvalue = the ratio of
+σ₁'s Hecke eigenvalues). Hence every transported curvature 𝓕_k = (−q²)^{−k}F_q lies on ONE
+LINE ⇒ [𝓕_i,𝓕_j] = 0 for all i,j ⇒ **Ω₂^⊥ = Σ J_ij[𝓕_i,𝓕_j] = 0 for EVERY intersection
+form, EVERY H₁ basis/spanning tree, EVERY handle assignment.** The handle gauge never
+needed fixing — the answer does not depend on it. Robust to any transport in the Borel
+containing ρ(σ₁), i.e. to everything σ₁³ can build.
+
+**SCOPE-(b) structural exclusion, RESTRICTED to single-generator (2,L)-torus channels.**
+Cited invariant: the Ad(ρ(σ₁))-eigenvector property (Lean-proved). **Multi-generator words
+(A ≥ 3) are explicitly NOT excluded** — there the eigenvector property fails and the object
+is generically large (#4798's 896.71 is evidence of that); that stays scope-(a) open.
+
+**Consequence — the σ₁³ channel is order-2 STERILE in BOTH directions:** longitudinal
+inter-crossing Magnus tower = 0 (N2, single generator) AND transverse surface curvature = 0
+(this PR). So the deuteron −9.2% / bar-even g₂·h² residual is **not a second-order NA-Stokes
+effect at all**, and **g₂ ≈ 1.0087 now has NO NA-Stokes explanation** — it was never derived
+and must not be wired. This CLOSES the LEAD-2 geometric surface-curvature route for the
+deuteron with a named invariant, instead of parking it behind an unmeasurable gauge.
+
+**DO NOT REDO:** any transverse-pairing / surface-curvature closure on a single-generator
+channel, under any germ normalization or handle convention — the vanishing is
+gauge-independent.
+
+Lean (sorry-free, `lean`-direct exit 0, `#print axioms` clean on all 16 decls —
+[propext, Classical.choice, Quot.sound], no sorryAx): `QOU/MassTheory/GermRootVectorGaugeFixing.lean`
+(abstract layer generic CommRing/Ring per §7c; concrete layer generic Field; braid + Hecke
+relations proved, so the matrices are certified Hecke generators). Seam recorded: the step
+∂_q σ_i = ds_i is by-hand entrywise differentiation (sympy checks it independently) — cite
+"Lean proves the commutator of the constant germs is the root vector", never "Lean proves
+the germ is the q-derivative".
+
+free_parameters=0; g₂ used ONCE, post-hoc, after the value was fixed by the principle;
+AME never inverted; experimental proton anchor (immaterial — everything is q-independent).
+
+Files: docs/audits/2026-08-09-nastokes-gauge-fixing-germ-root-vector.md;
+computations/probes/nastokes_germ_root_vector_gauge_probe.py (+witness, 7/7 assertions).
+
+**Surviving units:** (1) transverse pairing on multi-generator words — is it super-pairwise?
+(still killed by the scalar trace, so needs a non-trace functional, itself an open licence
+question); (2) g₂'s origin, now unexplained; (3) the super-pairwise extensive term, the
+actual magnitude gate, untouched.
