@@ -38,6 +38,7 @@ import QOU.MathlibExt.AlternatingZetaTwo
 import QOU.MathlibExt.ComplexDilogarithmBoundary
 import QOU.MathlibExt.ComplexDilogarithmOnCut
 import QOU.MathlibExt.ComplexDilogarithmInversion
+import QOU.MathlibExt.ComplexRogersDilog
 -- Scalar implicit function theorem, and two one-variable transport lemmas
 -- (a constant pinned off a single point; an integer branch index pinned by a
 -- window). All Mathlib gaps; all sorry-free.

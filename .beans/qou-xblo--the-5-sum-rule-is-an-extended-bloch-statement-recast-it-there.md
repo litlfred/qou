@@ -359,3 +359,55 @@ not a torsion statement (G6). Sharper and better founded than the old target,
 and in the paper's own normalisation rather than my reconstruction.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Routes 49b–50 — the open statement is NOT open, and the pentagon is under way
+
+### ⚠ Correction: `arg(y₁)/π ∉ ℚ` is a theorem, not a conjecture
+
+An earlier session note called it "genuine open number theory". **Wrong.** It is
+elementary via **Kronecker**: `arg(y₁)/π ∈ ℚ` iff `y₁/ȳ₁` is a root of unity,
+and `y₁/ȳ₁ = y₁²y₃` is an algebraic integer of modulus 1 with minimal
+polynomial `x⁶−3x⁵+11x⁴+5x³+11x²−3x+1`, whose conjugates have moduli
+`0.2821`, `1`, `3.5445`. Not all on the unit circle ⟹ not a root of unity ⟹
+irrational. Nothing external, nothing named, nothing to look up.
+
+**Downstream this matters.** `cs(ξ) = (2π/3)·arg(y₁)` is therefore *provably*
+not a rational multiple of `π²`. So no torsion, rationality or finite-order
+argument can prove the sum rule — which is why Route 43's target had to die and
+why four alphabets all left a rank gap of exactly 1: those searches look for
+**rational** relations and the answer is not rational.
+
+### The pentagon, in Lean
+
+Two halves, both landed:
+
+* **algebraic** — `FiveTwoSaddleSumRule.lean` §7h,
+  `pentagon_deriv_x_eq_zero`: the `x`-derivative of the Rogers pentagon sum is
+  `0`, with the five logs as **free variables** so no branch choice is made.
+  Verified symbolically first: collecting the numerator on `log x`, `log(1−x)`,
+  `log y`, `log(1−y)`, `log(1−xy)` gives coefficient `0` for each, plus zero
+  remainder.
+* **analytic** — new module `QOU/MathlibExt/ComplexRogersDilog.lean`:
+  `cRogersL z = cLiTwoExt z + ½·log z·log(1−z)` built on the corpus's own
+  integral continuation, with
+
+      hasDerivAt_cRogersL : L′(z) = −½·( log(1−z)/z + log z/(1−z) )
+
+  under exactly the four hypotheses the pieces need (`z ∈ notCut`, `z ≠ 0`,
+  `z` and `1−z ∈ slitPlane`). Wired into `QOU.lean` so it is not an orphan.
+
+Both sorry-free, standard axioms, `lake build` exit 0.
+
+### What is still owed for the five-term identity
+
+1. Chain-rule assembly at the three composite pentagon arguments.
+2. **The branch conditions** under which `log a₃ = log(1−x) − log(1−xy)` and its
+   two companions hold. This is the delicate part, and it is not new: those
+   expansions are exactly where flattening enters, so it is Routes 45–46's
+   bookkeeping and Neumann's `ker ν` reappearing.
+3. Connectedness + pinning the constant (the `Landen` pattern already in the
+   corpus).
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
