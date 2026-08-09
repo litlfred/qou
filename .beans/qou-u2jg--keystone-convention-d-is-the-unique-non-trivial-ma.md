@@ -108,3 +108,69 @@ reckless and buys nothing.
   [ ] T6. TL_n's diagram-basis Gram determinant is KNOWN in closed form
       (Di Francesco-Golinelli-Guitter meander determinant). If the star form
       equals it, positivity is a CITATION, not a proof obligation. Check first.
+
+## UPDATE 2026-08-09 -- pushed as far as it goes without the sibling
+
+Commit 10b8dac1d. All sorry-free, lake build exit 0 no warnings, axioms clean;
+traceRadical_two_sided depends on NO AXIOMS AT ALL.
+
+### T-list status
+
+  [x] T3. THE RADICAL IS A TWO-SIDED IDEAL. traceRadical_two_sided, from
+      associativity and cyclicity alone -- cyclicity used in exactly one place,
+      the left-multiplication direction. This is what licenses "work in TL_n" as
+      an ALGEBRA statement rather than a vector-space one.
+      zero_weight_block_erasable made the quotient harmless; this makes it legal.
+
+  [x] T5. WENZL IS NOW A COROLLARY, NOT A CITATION. vanishing_step +
+      vanishing_all_levels derive the >= 3-row vanishing at all n >= 3 from the
+      n = 3 pinning. Three inputs, all measured this session:
+        * branching coherence, worst residual 1.34e-51 at n = 2..6
+        * nonnegativity, zero negative weights at every n tested
+        * every >= 3-row shape at n+1 covers a >= 3-row shape at n, for
+          n+1 >= 4 -- exhaustive at n+1 = 4,5,6,7, no exceptions. The sole
+          exception is (1^3) at n = 3, which is exactly why 3 is the base case.
+      Given those the step is one line: a vanishing sum of nonnegatives has
+      every term zero.
+      HONESTY: the combinatorial input is a HYPOTHESIS in the Lean signature,
+      not a formalised fact about Young diagrams. Verified by exhaustion, not
+      proved. Stated as a hypothesis deliberately so the dependency is visible
+      rather than buried in a sorry.
+
+  [ ] T1. General normalisation [2]^n = sum_k m_k [n-2k+1], m_k = C(n,k)-C(n,k-1).
+      OPEN. Needs the multiplicity bookkeeping; n = 3,4 stand as ring identities.
+  [ ] T2. sum_k m_k^2 = Catalan(n). OPEN, same reason. Partially mitigated:
+      counts_are_catalan now checks 2,5,14,42 against Mathlib's own `catalan`
+      rather than this file's arithmetic table, so "= Catalan" is no longer the
+      file's claim about itself.
+  [ ] T4. Quotient form positive DEFINITE. Gated on T6.
+  [~] T6. Meander / TL Gram determinant -- workflow wz3teraa6 in flight on
+      whether this closes T4 by CITATION. It also checks a suspected corpus
+      confusion: 1/[2]_q = 0.497290545604916 vs convention-C z = 0.499320334,
+      only 0.4 % apart and easy to conflate, on DIFFERENT elements (the TL
+      generator e_i vs the Hecke generator sigma_i).
+
+### NEW, beyond the T-list
+
+  * THE SHARPEST FORM. conventionD_unique_nontrivial:
+
+        IsConventionD q z   <->   y_(1^3) = 0  AND  y_(2,1) != 0
+
+    Right-hand side = "the trace factors through Temperley-Lieb AND is not the
+    one-dimensional character". D is exactly that, nothing else is. This is the
+    statement to cite; everything else in the section is scaffolding for it.
+  * not_conventionD_of_antisym_survives -- convention C excluded BY DERIVATION,
+    not by owner ruling: y_(1^3) = 0.0227449 there, so C is not D.
+  * IsConventionD as a consumable predicate (multiplicative -- no q != 0, no
+    division). This ANSWERS Ask 3 to the sibling by building it rather than
+    negotiating it: nothing was placed in QOU/Hecke/, they take it or ignore it.
+  * The closed forms DERIVED rather than measured:
+        y_(2,1) (q^2+1)^2 = q^2      y_(3) (q^2+1)^2 = q^4 + 1
+
+### Coordination
+
+Posted to litlfred/qou#4857 twice: intent (comment 5232517970) and progress with
+cherry-pick pointers (5232610373). Ledger at
+docs/coordination/hecke-tower-and-trace-parameter.md. Subscribed to the PR.
+Asks 1 (convention-C prose in their MarkovTraceH2) and 2 (qou-awp7 via the H4A
+Wedderburn isomorphism) are still open with them.
