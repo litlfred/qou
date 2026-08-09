@@ -259,3 +259,48 @@ stated-not-proved. free_parameters = 0; q0 = experimental proton anchor, layer-p
    turns on it.
 7. Fix the `a > 4` guard, regenerate the mass table with the 3He/4He rows restored,
    and restate `all_A_leq_4_masses_computed` so its wording matches its range.
+
+---
+
+## PR #4855 (2026-08-09) — `prop:ground-state-ordering` truth-value SETTLED, per clause
+
+The corpus's *stated* selection rule turns out not to be a `Φ_q`-minimality
+rule at all, so reconciling the four ordering artefacts to it would relabel
+the arbitrariness rather than remove it.
+
+**Verdict.**
+
+| clause | verdict |
+|---|---|
+| `A ≥ 4` interleaved + tail-packed minimises `Φ_q` | **FALSE** |
+| `A ≤ 3` sorted beats interleaving | **TRUE at `A = 3`**, false as stated at `A = 2` |
+
+**Evidence.** Exhaustive sweep over every `C(A,Z)` arrangement, `Z ≤ N`,
+`A ≤ 16` (128 sweeps, 55 588 evaluations, 131 s), at the experimental
+(proton) `q₀`, on **both** readouts (`Φ_nuc` bare chain; `Φ₁` with the
+`["e"]*Z` tail). Probe `computations/probes/ground_state_ordering_argmin_sweep.py`,
+witness `computations/ground-state-ordering-argmin-sweep.witness.json`,
+cross-checked against `_phi1_from_ordering_sym` to 1.7e-55.
+
+- Prescribed arrangement is argmin in **17/62** (`Φ_nuc`) / **10/62** (`Φ₁`)
+  and strict **argmax** in 12/62 / 8/62.
+- Sharpest counterexample `A=5, Z=1`: prescribed `npnnn` is rank **5/5** on
+  both readouts; sorted `pnnnn` is the argmin, by **1.352 nats**.
+- Rule (ii) (tail packing) refuted independently: the argmin **head**-packs
+  — at `Z=1` the minimising proton sits at `A-5` for every `6 ≤ N ≤ 15`.
+- `A=2` is an **exact tie** under `Φ_nuc` (multiset degeneracy from the
+  commuting transfer factors) and a strict *loss* for sorted under `Φ₁`.
+
+**Lean (sorry-free, umbrella-registered, `#print axioms` clean).**
+`QOU.MassTheory.GroundStateOrderingRefutation` — the counterexample holds for
+a whole interval of `q` above 1 (numerically `1 < q ≲ 1.22`, anchor well
+inside), via the certificate `RHS − LHS = (t−1)·(deg-20 poly with all
+coefficients positive)`, `t = √q`. `transferEigen_vieta` records the one
+conjunct of the original proposition that survives: `λ₊λ₋ = −1`.
+
+Audit: `docs/audits/2026-08-09-ground-state-ordering-truth-value.md`.
+
+**Bean stays OPEN.** The precondition is now settled, but the underlying gap
+is not: which ordering production should use is still underived and is the
+owner's call. No production behaviour was changed and no published number
+moved by #4855.
