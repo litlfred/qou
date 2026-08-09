@@ -105,3 +105,68 @@ uncertain at roughly the +/-25 % level, not a sharp number. The ORDER-OF-
 MAGNITUDE conclusions survive unchanged -- current sigma/sigma^-1+writhe is
 ~9x too big, alpha*delta is ~14x too small, gg's exact zero omits a real term --
 because those are factors of 9-14 against a target uncertain by ~25 %.
+
+## DISAMBIGUATION: which "delta"/symmetry-breaking channel is which
+
+Owner is right that symmetry was broken earlier via Bring's embedding. But those
+are DIFFERENT channels and must not be conflated. At least four distinct objects
+share the delta/Delta name in this corpus:
+
+  1. FLAVOUR  delta(q) = flavor_split_leading = (q-1)^2(1-q^-4)/3 = 0.0013757.
+     Enters ONLY the p-n bond, d_pn = -h(1/2 - delta/4). PROVEN.
+  2. COLOUR   Delta(z), the Bring discriminant. brings-smoothness.md: "the six
+     topological defects ... where the discriminant Delta(z) vanishes and two
+     color sheets X_i, X_j collide". This is the Bring-embedding breaking the
+     owner is recalling -- it is a COLOUR-sheet collision, S_5 automorphism.
+  3. Delta-lambda, the entire computations/deltalambda/ cluster. A different
+     object again (W-plane / lambda-scale), not a flavour split.
+  4. Delta i, the Bring SHELL INDEX difference
+     (conj:double-magic-delta-i-bound, |Delta i| <= 1).
+
+WHY IT MATTERS FOR THE NSA. The Nolen-Schiffer residual needs FLAVOUR charge-
+symmetry breaking (m_d - m_u, rho-omega mixing). Channel 2 (Bring Delta(z)) is
+COLOUR breaking, not flavour -- it cannot supply it. Channel 1 IS flavour but is
+Lean-proved to cancel out of the mirror split (mirror_split_eq_L_diff). So:
+
+    the corpus HAS symmetry breaking in the colour channel (Bring) and in the
+    flavour channel (delta), and NEITHER reaches the mirror split. What reaches
+    the mirror split is the sigma/sigma^-1 crossing sign, which is TOPOLOGICAL
+    and carries no flavour or colour content at all.
+
+That is the disambiguation, and it sharpens the gap in section 2 rather than
+softening it.
+
+## THE RADIUS QUESTION -- what radius, and can we derive it
+
+WHAT: the equivalent uniform-charge-sphere radius R = sqrt(5/3)*r_rms, i.e. the
+radius of the uniform ball with the same Coulomb self-energy. For 3He the rms
+CHARGE radius is 1.9661 fm -> R = 2.5382 fm. (Note charge vs point-proton radius
+differ: subtracting the proton's own size R_p = 0.841 fm gives r_point ~ 1.777
+fm. Which one you use changes E_C at the ~20 % level, so the choice must be
+stated.)
+
+HOW IT IS MEASURED (this is why the anomaly is meaningful): elastic electron
+scattering, r_ch^2 = -6 dF/dQ^2 at Q^2=0; muonic-atom Lamb shift; isotope
+shifts. In the real NSA analysis the radius is an EXPERIMENTAL input, not a
+fitted one -- which is exactly what our r0=1.2 fm shortcut is not.
+
+FALSE LEAD, KILLED: the form factor's Q^2 is a MOMENTUM TRANSFER (inverse
+length); QOU's q0 = 1.10998 is DIMENSIONLESS. Same letter, unrelated. Do not
+identify them.
+
+CAN THE FRAMEWORK DERIVE IT? A route already exists and is already scoped:
+computations/deltalambda/pion_radius_and_cusp_volume_gap_probe.py, which names
+its own two gaps --
+  GAP 1: why the per-nucleon packing length is the pion Compton wavelength
+         lambda-bar_pi = hbar/(m_pi c) = 1.4139 fm at coefficient EXACTLY 1
+         (measured 0.985 +/- 0.069);
+  GAP 2: the hyperbolic-volume -> Euclidean-radius identification behind A^(1/3).
+So the SCALE CLASS is argued (Vol(Hopf)=0 kills the W-plane contribution on the
+bond channel, leaving CAL-3 / m_pi as the only length), but the COEFFICIENT is
+measured, not derived. Companions in the same cluster:
+mirror_split_continuum_em_probe.py, deltalambda_coulomb_mirror_split_probe.py.
+
+NEXT on the radius: check whether lambda-bar_pi + the A^(1/3) identification
+reproduces R = 2.5382 fm at A=3. It will not out of the box -- A=3 is not a
+saturated sphere, and R/lambda-bar_pi = 1.795 -- so the light-nucleus regime
+needs its own argument, which is the same place the r0=1.2 fm formula fails.
