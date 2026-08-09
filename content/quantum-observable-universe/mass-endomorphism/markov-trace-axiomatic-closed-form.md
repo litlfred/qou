@@ -14,14 +14,14 @@ $$
   \mathrm{tr}_M(\alpha\beta) = \mathrm{tr}_M(\beta\alpha),
 $$
 
-*with $z = 1/(q^{1/2} + q^{-1/2})$. Then for the proton's atomic-braid word $\sigma_1^7 \sigma_2^4 \in H_3(q)$, the Markov trace admits the closed-form expression:*
+*with $z = q^{3}/(q^{2}+1)$ (**convention D**). Then for the proton's atomic-braid word $\sigma_1^7 \sigma_2^4 \in H_3(q)$, the Markov trace admits the closed-form expression:*
 
 $$
   \mathrm{tr}_M(\sigma_1^7 \sigma_2^4)(q)
    \;=\; a_7 a_4 \, z^2 \;+\; (a_7 b_4 + b_7 a_4)\, z \;+\; b_7 b_4,
 $$
 
-*where $(a_k, b_k)$ are the polynomials in $h$ defined by the Hecke-power recurrence $a_{k+1} = h\,a_k + b_k$, $b_{k+1} = a_k$, $a_0 = 0$, $b_0 = 1$. After substituting $h = q - q^{-1}$ and $z = 1/(q^{1/2}+q^{-1/2})$ and rationalising, the denominator factors as $q^{10}(q+1)^3$.*
+*where $(a_k, b_k)$ are the polynomials in $h$ defined by the Hecke-power recurrence $a_{k+1} = h\,a_k + b_k$, $b_{k+1} = a_k$, $a_0 = 0$, $b_0 = 1$. After substituting $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ and rationalising, the denominator factors as $q^{10}(q+1)^3$.*
 
 *Numerical evaluation at the substrate parameter $q_0$ yields:*
 

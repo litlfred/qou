@@ -45,6 +45,12 @@ export default chapter({
         // on computational time, categorical dynamics, and the proposed
         // four-domain Planck-step dictionary.
         "computational-spacetime-observer",
+        // Decision 7: the hbar_q / Reeb-coefficient result and its two
+        // qualifications — the finite-q gradient/Reeb mixing, and the
+        // share-versus-total reading of the two Planck lengths.
+        "reeb-coefficient-is-hbar-q",
+        "connes-distance-not-reeb-step-count",
+        "planck-length-share-vs-total",
       ],
     }),
     section({

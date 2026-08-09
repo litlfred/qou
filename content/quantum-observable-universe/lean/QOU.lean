@@ -494,6 +494,17 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape
+-- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
+-- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
+-- import list 2026-08-09 -- all three were ORPHANS, compiling only when named
+-- explicitly on the lake command line, so a plain `lake build` never checked
+-- them and no CI run would have caught a regression in any of them.
+import QOU.QBeta.InterfaceScalar
+import QOU.QBeta.GramSignature
+import QOU.QBeta.TemperleyLiebTower
+import QOU.QBeta.WedderburnTraceDecomposition
+import QOU.QBeta.MarkovGramDegenerate
+import QOU.QBeta.JonesNormalisation
 -- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
 -- library root: `lake build` only builds `QOU.lean`'s import closure, so a
 -- module nothing imports is never compiled. See bean qou-orph.
@@ -771,6 +782,15 @@ import QOU.Mathlib.SYTHookFormula
 import QOU.Mathlib.SYTHookFormulaBeta
 import QOU.Mathlib.SYTHookFormulaBetaProd
 import QOU.Mathlib.SYTHookFormulaRows
+-- Bean qou-7gei: the >= 3-row corner-removal fact, which discharges the
+-- combinatorial hypothesis of QOU.QBeta.TemperleyLiebTower.vanishing_step.
+-- Pulls in QOU.Mathlib.YoungDiagramCorner (IsCornerCell / eraseCorner), which
+-- the SYT cluster also uses.
+import QOU.Mathlib.YoungDiagramThreeRowCorner
+-- Ballot numbers m_j(n) = C(n,j) - C(n,j-1): the Mathlib-gap engine shared by
+-- the q-Clebsch-Gordan normalisation (qou-0cyu G2) and the Catalan sum (G5).
+import QOU.Mathlib.BallotNumbers
+import QOU.QBeta.QDimNormalisation
 import QOU.MassTheory.MirrorPairBondScaling
 import QOU.QBeta.CubicSaddleDiscriminant
 import QOU.QBeta.G3RealnessConjugationBrick

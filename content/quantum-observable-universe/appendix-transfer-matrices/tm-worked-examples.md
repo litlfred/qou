@@ -1,6 +1,6 @@
 These examples work the complete transfer matrix computation for small nuclei by hand. The light nuclei are small enough that the abstract construction can be verified by eye. Walking through them makes the $\binom{A}{2}$ cost concrete: one transfer-matrix multiplication per nucleon pair.
 
-Recall: $z = 1/(q^{1/2} + q^{-1/2})$.
+Recall: $z = q^3/(q^2+1) = q^2/[2]_q$ (convention D; the excised convention C wrote $1/(q^{1/2}+q^{-1/2})$). **The worked numerals below have not been regenerated** — they were computed under convention C and are wrong by the $22.7\,\%$ convention gap in $z$ (2026-08-09).
 
 ## Example 1: Hydrogen ($A = 1$, $Z = 1$)
 

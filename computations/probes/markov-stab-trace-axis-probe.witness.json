@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:20:26.728174+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "computedAt": "2026-08-09T04:32:07.685463+00:00",
+  "commitSha": "13a5ebfaddf4b37a3d3aa9253acdd71db6287a4e",
   "assertions": [
     {
       "name": "z_markov_below_one_linking_weight_above_one",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1833,
+  "durationMs": 1784,
   "computation": "markov-stab-trace-axis-probe",
   "scriptFile": "markov_stab_trace_axis_probe.py",
-  "scriptHash": "314a6683754f",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "64bb471b945f",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Markov-stabilization trace-level axis probe for the H₃→H₄ jump (PR #1762 chain; sibling #1841 Bratteli REFUTED, #1808 Option E lead). Formalize-first: records the z<1 direction obstruction, then tests M1 (identity trace tr_M(1_{H₄}) = Σ_{λ⊢4} y_λ·f^λ) and M2 (z^{±k}·linking_weight vs clean H₃ quantities) exactly. EXPLORATORY — no production code or witnesses changed.",
   "auditOnly": "docs/audits/2026-06-04-markov-stab-trace-axis-scope.md",
@@ -41,7 +43,7 @@
     "direction_obstruction_note": "z = 1/(q^½+q^{-½}) ≈ 0.4993 < 1 at q₀; linking_weight ≈ 2.53 > 1. A single Markov stabilization β↦β·σ₃ scales tr_M by z < 1, so it cannot produce the >1 linking_weight multiplier. The naive stabilization reading is structurally dead.",
     "M1_identity_trace": {
       "verdict": "REFUTED",
-      "tr_M_identity_H4_at_q0": "1.0",
+      "tr_M_identity_H4_at_q0": "0.99999999999999999999999999999999999999999999999999863",
       "linking_weight_at_q0": "2.5327796636746759826636838141577022737497563139135",
       "relative_error": "0.6051768677938795044326435331368505471707764945991363920690542334611462",
       "tr_M_identity_is_one": true,

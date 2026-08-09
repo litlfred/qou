@@ -308,7 +308,7 @@ def _bond_type_L():
 
     Each bond type is the a = 1 case at its own d, so
 
-        L_XY = -ln(z + d_XY),   z = 1/(sqrt(q0) + 1/sqrt(q0))
+        L_XY = -ln(z + d_XY),   z = q0^3/(q0^2 + 1)      [convention D]
 
     Agrees with the transfer kernel to 4.489e-32 at all three bond types (that
     residual is the shared tr_free floor, not a per-case error). Two things are
@@ -317,12 +317,25 @@ def _bond_type_L():
     forbids -- and L_pp is exhibited as ln(1/z) EXACTLY, a derived constant of
     the framework with no freedom in it at all.
 
-    WHAT THE CLOSED FORM ALSO EXPOSES. B over the ENTIRE admissible interface
-    family (d from 0 at sigma to -h at sigma^-1) spans [2.907195, 5.177967] MeV
-    for a single bond. AME(2H) = 2.2245662 is 30.69% BELOW that minimum, so no
-    crossing sign, colour weight, or crossing multiplicity can reach the
-    deuteron -- the miss is not localisable in the interface. Stacking is worse
-    than useless: m = 2 gives mu = 1.1044, i.e. B = -0.416 MeV.
+    WHAT THE CLOSED FORM ALSO EXPOSES, and it REVERSED under D. B over the
+    ENTIRE admissible interface family (d from 0 at sigma to -h at sigma^-1),
+    for a single bond, with E0 = 4.1859813632944758969 MeV:
+
+        convention C (excised)   [2.907195188, 5.177967207] MeV
+        convention D (production)[2.050709692, 3.797782935] MeV
+
+    Under C, AME(2H) = 2.2245662 sat BELOW the whole band -- the minimum was
+    30.69 % above it -- so no crossing sign, colour weight, or crossing
+    multiplicity could reach the deuteron and the miss was not localisable in
+    the interface. Under D the band CONTAINS AME(2H) (8.48 % above the
+    minimum, at d = -0.1192*h). The 2H impossibility argument that this
+    paragraph used to make DOES NOT SURVIVE the convention change; the
+    registry records the same reversal under the `binding` channel's
+    resolution. The stacking remark (m = 2 gives mu = 1.1044, B = -0.416 MeV)
+    was also computed under C and has not been recomputed.
+
+    Prose corrected 2026-08-09, bean qou-wgta item 13; the `zx` below had
+    already been switched to D and this docstring had not.
     """
     import mpmath as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
@@ -333,12 +346,39 @@ def _bond_type_L():
     with _mp.workdps(max(_mp.mp.dps, 60)):
         q0x = _mp.mpf(str(_Q50))
         hx = q0x - 1 / q0x
-        zx = 1 / (_mp.sqrt(q0x) + 1 / _mp.sqrt(q0x))
+        # CONVENTION D (fixed 2026-08-09). This read
+        # `zx = 1/(sqrt(q0)+1/sqrt(q0))` = 0.4993203 -- convention **C**, the
+        # full-Hecke Ocneanu z. C was excised (73311b57, 33a6c7aa) but the
+        # excision swept `wedderburn_jones_markov.y_lambda_at` and
+        # `closed_form_tau_M.markov_z` and MISSED this inline literal, so the
+        # binding dashboard was still reporting C bond energies afterwards.
+        # D is z = q^3/(q^2+1) = 0.6126880.
+        zx = q0x ** 3 / (q0x ** 2 + 1)
         dx = flavor_split_leading(q0x)
         d = {"pp": _mp.mpf(0),                                  # sigma
              "pn": -hx * (_mp.mpf(1) / 2 - dx / 4),             # colour-weighted
              "nn": -hx}                                         # sigma^-1
-        return {k: float(-_mp.log(zx + v)) for k, v in d.items()}
+        # WRITHE NORMALISATION (owner directive 2026-08-09: "want all derived
+        # bits in there even if negligible"). Lean-proved SORRY-FREE in
+        # QOU/QBeta/WritheNormalisation.lean: Markov invariance forces
+        # S_hat = S * A^(e-n) with A^2 = 1-h, i.e. the factor (1-h)^((e-n)/2),
+        # unique up to sign (`writhe_factor_sq`,
+        # `writhe_factor_unique_up_to_sign`) -- no freedom to tune.
+        #
+        # On the free/atom RATIO the strand count cancels (both n=6), so only
+        # the exponent-sum difference survives:
+        #     L_XY  ->  L_XY - (delta_e/2)*ln(1-h)
+        # with delta_e = +1 for sigma (pp), -1 for sigma^-1 (nn), and
+        # 2t-1 ~ -6.9e-4 for the p-n colour superposition at t ~ 0.4997.
+        #
+        # Bean qou-c6gx recorded this as "REAL but negligible ... 3.2e-4 MeV".
+        # That was the 2H (p-n) case ONLY, where delta_e ~ 0. For a PURE
+        # crossing delta_e = +/-1 and the shift is alpha*|ln(1-h)|/2 = 0.4909
+        # MeV -- NOT negligible, and equal-and-opposite on pp vs nn.
+        de = {"pp": _mp.mpf(1), "nn": _mp.mpf(-1),
+              "pn": 2 * (_mp.mpf(1) / 2 - dx / 4) - 1}
+        lw = _mp.log(1 - hx)
+        return {k: float(-_mp.log(zx + v) - de[k] / 2 * lw) for k, v in d.items()}
 
 
 def _nucleon_msym(alpha):

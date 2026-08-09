@@ -10,7 +10,10 @@ the unique linear functional satisfying
     tr_M(σ_i x) = z · tr_M(x)        for x ∈ H_{i}(q),  i < n,
     tr_M(xy)   = tr_M(yx),
 
-with z = 1/(√q + 1/√q).  In the Wedderburn decomposition
+with z = q³/(q² + 1) — **convention D** (SU(2)/Temperley–Lieb, Jones);
+convention C's z = 1/(√q + 1/√q) was excised by owner ruling 2026-08-09,
+see docs/coordination/trace-convention-registry.md.  In the Wedderburn
+decomposition
 
     tr_M(β) = Σ_{λ ⊢ n} y_λ(q) · χ^λ(β),
 
@@ -83,9 +86,17 @@ from hecke_characters import partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from q_parameter import HA as HA_VAL  # noqa: E402
 
-# Markov parameter z = 1/(√q + 1/√q).
-SQ = sp.sqrt(Q)
-Z_MARK = sp.cancel(1 / (SQ + 1 / SQ))
+# Markov parameter — TRACE CONVENTION **D** (SU(2)/Temperley–Lieb, Jones):
+#     z = q³/(q² + 1).
+# Owner ruling 2026-08-09 excised convention C (z = 1/(√q + 1/√q) = √q/(q+1)),
+# which this line carried until then.  Registry:
+# docs/coordination/trace-convention-registry.md.
+#
+# Structural check this z passes and C does not: feeding it through the Wenzl
+# level relation below gives Q^r = q⁴ = Q², i.e. **r = 2 exactly** — the SU(2)
+# level, equivalently the row cap ℓ(λ) ≤ 2 that forces y_(1³) = 0.  Under C the
+# same relation gives a non-integral level (Q^r ≈ 1.72025 at q₀) and y_(1³) ≠ 0.
+Z_MARK = sp.cancel(Q**3 / (Q**2 + 1))
 
 
 def atom_braid_word_3A_to_crossings(Z: int, N: int, *, include_inter: bool = False):
@@ -163,7 +174,10 @@ QR_W = sp.cancel(Z_W_RAW / (1 - Q_W + Z_W_RAW))  # Q^r symbolic — rational in 
 
 def schur_principal_symbolic(lam) -> sp.Expr:
     """s_λ(1, Q, Q², …, Q^{r-1}) symbolically, where Q = q² and Q^r is
-    the Wenzl level fixed by the Markov parameter z = 1/(√q + 1/√q).
+    the Wenzl level fixed by the Markov parameter z = q³/(q² + 1)
+    (convention D).  For that z the relation collapses to Q^r = Q², i.e.
+    r = 2, so this is the two-variable specialization s_λ(1, Q) and
+    vanishes identically on any λ with three or more rows.
 
     Closed form:
         s_λ = Q^{n(λ)} · ∏_{x∈λ} (1 - Q^{r + c(x)}) / (1 - Q^{h(x)})

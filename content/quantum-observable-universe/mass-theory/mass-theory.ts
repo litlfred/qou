@@ -178,6 +178,18 @@ export default chapter({
             // fixed point; consumes the Borromean Markov-trace closed form.
             "unit-modulus-eigenvalue",
             "unit-modulus-eigenvalue-proof",
+            // Decision 7: convention D IS Temperley–Lieb. The characterisation
+            // comes first, then the metric consequence it explains — a reader
+            // who meets "the radical blocks the Connes sup" before "the radical
+            // is the TL ideal" reads the quotient as an ad-hoc amputation.
+            "convention-d-kills-antisymmetriser",
+            "convention-d-kills-antisymmetriser-proof",
+            "markov-branching-three-term",
+            "hecke-radical-is-temperley-lieb",
+            "markov-gram-star-positive",
+            "markov-gram-bilinear-vs-star",
+            "gram-degeneracy-blocks-connes",
+            "finite-connes-forces-trivial-kernel",
           ],
         }),
         section({
@@ -837,7 +849,12 @@ export default chapter({
         "jucys-murphy-central-elements-qou",
         "jucys-murphy-central-elements-qou-proof",
         "jucys-murphy-central-elements-qou-interpretation",
-        "spin-involution",
+        // def:spin-involution relocated to knots-particles-confinement §7
+        // (2026-08-09, decision 5): three of its four consumers are the
+        // EW-triplet charge/spin blocks there, and it has `uses: []` so it
+        // drags no dependency forward. The lp-dual-invariance arc below is
+        // the fourth consumer and now reads BACKWARD into Ch 8 for the
+        // definition.
         "spin-involution-lp-dual-invariance",
         "spin-involution-lp-dual-invariance-proof",
         "spin-involution-lp-dual-invariance-interpretation",

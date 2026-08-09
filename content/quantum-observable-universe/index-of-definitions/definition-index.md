@@ -1,4 +1,4 @@
-**908** indexed entries across 7 categories.
+**910** indexed entries across 7 categories.
 
 ## Definitions
 
@@ -82,10 +82,10 @@
 | [def:confinement-level](#def:confinement-level) | Confinement level via shadow-price filtration | Ch 8 | `qou:QOU.BraidKnot.ConfinementLevel` |
 | [def:contact-affine-chart](#def:contact-affine-chart) | Contact affine chart on $\mathbb{P}(V)$ | Ch 2 | `qou:QOU.ContactAffineChart` |
 | [def:color-sector-coords](#def:color-sector-coords) | Color sector coordinates $\mathfrak{r},\mathfrak{g},\mathfrak{b}$ | Ch 6 | `qou:QOU.ColorSectorCoords` |
-| [def:coulomb-charge](#def:coulomb-charge) | Coulomb charge of a knot composite | Ch 9 | `qou:QOU.Braiding.CoulombCharge` |
+| [def:coulomb-charge](#def:coulomb-charge) | Coulomb charge of a knot composite | Ch 8 | `qou:QOU.Braiding.CoulombCharge` |
 | [def:covalent-bond-types](#def:covalent-bond-types) | Covalent bond (shared Hopf links) | Ch 15 | `qou:QOU.Organic.CovalentBond` |
 | [def:covalent-bond-shared-trefoil](#def:covalent-bond-shared-trefoil) | Covalent bond as shared electron trefoil | Ch 14 | `qou:QOU.Molecular.CovalentBond` |
-| [def:crossing-energy](#def:crossing-energy) | Crossing energy of a knot composite | Ch 9 | `qou:QOU.Braiding.CrossingEnergy` |
+| [def:crossing-energy](#def:crossing-energy) | Crossing energy of a knot composite | Ch 8 | `qou:QOU.Braiding.CrossingEnergy` |
 | [def:brane-boundary](#def:brane-boundary) | Defining boundary of the brane | Ch 4 | `qou:QOU.braneBoundary` |
 | [def:derived-atom](#def:derived-atom) | Derived atom $\mathcal{A}(Z, N)$ from pair production | Ch 8 | `qou:QOU.Interactions.DerivedAtom` |
 | [def:archimedean-condition](#def:archimedean-condition) | Descartes condition | Ch 6 | `qou:QOU.ArchimedeanCondition` |
@@ -177,6 +177,7 @@
 | [def:spatial-realization-functor](#def:spatial-realization-functor) | Spatial realization functor | Ch 3 | `qou:QOU.SpatialRealizationFunctor` |
 | [def:spectator-normalization](#def:spectator-normalization) | Spectator normalization factor | Ch 8 | `qou:QOU.ParticleInteractions.SpectatorNormalization` |
 | [def:information-speed-of-light](#def:information-speed-of-light) | Speed of light as Lieb--Robinson velocity | Ch 18 | `qou:QOU.Information.speedOfLight` |
+| [def:spin-involution](#def:spin-involution) | Spin involution on a Frobenius $*$-algebra | Ch 8 | `qou:QOU.BraidKnot.SpinInvolution` |
 | [def:stable-atom](#def:stable-atom) | Stable atom (ILP feasibility) | Ch 8 | `qou:QOU.BraidKnot.StableAtom` |
 | [def:stable-nucleus](#def:stable-nucleus) | Stable nucleus (Skein energy minimum) | Ch 12 | `qou:QOU.Torsion.StableNucleus` |
 | [def:standard-part-functor](#def:standard-part-functor) | standard-part map $\mathrm{st} : \mathbf{No}_{\mathrm{fin}} \to \mathbb{R}$ | Ch 23 | `qou:QOU.AppendixSurreals.StandardPart` |
@@ -802,6 +803,7 @@
 | [conj:jet-filtered-knot-factor](#conj:jet-filtered-knot-factor) | Jet-filtered knot factor: per-level character convergence and nuclear quotient braid | Ch 10 | `qou:QOU.BraidKnot.jet_filtered_knot_factor` |
 | [conj:jet-convergence-classical-limit](#conj:jet-convergence-classical-limit) | Jet-filtered knot invariant converges to classical dimension-weighted average | Ch 10 | `qou:QOU.BraidKnot.jet_convergence_classical_limit` |
 | [conj:three-knot-jet-order-independence](#conj:three-knot-jet-order-independence) | Jet-order algebraic independence (QOU-attackable reduction) | Ch 12 | `qou:QOU.Archimedean.JetOrderIndependence` |
+| [conj:jsj-decomposition-linearity](#conj:jsj-decomposition-linearity) | JSJ additivity of nucleon braids | Ch 8 | `qou:QOU.BraidsKnots.LinearJSJVolume.JSJ_volume_additivity` |
 | [conj:kashaev-density-equals-sdp-multiplicity](#conj:kashaev-density-equals-sdp-multiplicity) | Kashaev density prefactor equals joint-tower SDP Wedderburn multiplicity ($\rho_F = \nu_{\mathrm{SDP}}$) | Ch 10 | `qou:QOU.Kashaev.DensityEqualsSDPMultiplicity` |
 | [conj:kashaev-volume-conjecture](#conj:kashaev-volume-conjecture) | Kashaev volume conjecture (axiomatised as Lean class) | Ch 10 | `qou:QOU.Kashaev.VolumeConjecture` |
 | [conj:kashaev-surreal](#conj:kashaev-surreal) | Kashaev volume conjecture as a surreal standard-part identity | Ch 22 | `qou:QOU.AppendixSurreals.KashaevSurreal` |

@@ -1,5 +1,5 @@
 **Conjecture (Canonical form of $\rho_K^{\text{pair-gen}}$).**
-*There exists a closed-form Wedderburn-coupled functional $f_2 : \mathbb{Q}(q^{1/2}) \times \mathbb{Q}(q^{1/2}) \times \mathbb{Q}(q^{1/2}) \to \mathbb{R}$ such that for every atomic braid $\mathcal{B}_K \in B_{3A}$:*
+*There exists a closed-form Wedderburn-coupled functional $f_2 : \mathbb{Q}(q) \times \mathbb{Q}(q) \times \mathbb{Q}(q) \to \mathbb{R}$ such that for every atomic braid $\mathcal{B}_K \in B_{3A}$:*
 
 $$
 \rho_K^{\text{pair-gen}}
@@ -17,7 +17,7 @@ m_e \cdot |\mathrm{tr}_M(\mathcal{B}_K)| \cdot \left(\rho_K^{\text{LO}} + \rho_K
 \;+\; O(\hbar_q^{6})
 $$
 
-*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = 1/(q^{1/2} + q^{-1/2})$ forms the Markov parameter.*
+*matches CODATA to sub-percent accuracy across $Z = 1..20$. Here, $\hat V_i^{\text{full}}$ denotes the Wedderburn-traced per-generator volumes, and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**).*
 
 ## Empirical evidence
 

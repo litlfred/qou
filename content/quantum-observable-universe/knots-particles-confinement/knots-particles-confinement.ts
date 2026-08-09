@@ -161,6 +161,17 @@ export default chapter({
       title: "Electroweak and Higgs sector as an even-twist torus-link triplet",
       label: "sec:electroweak-higgs-torus-link-triplet",
       blocks: [
+        // Relocated here 2026-08-09 (decision 5) so the EW-triplet results
+        // below no longer forward-reference their own definitions.
+        // Order is forced by the dependency chain
+        //   def:crossing-energy → def:coulomb-charge → the EW triplet blocks.
+        // crossing-energy + coulomb-charge came from climax-volume-mass
+        // sec:crossing-energy; spin-involution from mass-theory
+        // sec:lp-dual-jucys-murphy (which keeps the lp-dual-invariance arc
+        // and now reads backward for the definition).
+        "crossing-energy",
+        "coulomb-charge",
+        "spin-involution",
         "electroweak-triplet-bring-embedding",
         "electroweak-triplet-far-commuting-minimal",
         "electroweak-triplet-far-commuting-minimal-proof",
@@ -220,6 +231,13 @@ export default chapter({
         "isotope-knot-properties",
         "isotope-knot-equivalence",
         "isotope-knot-equivalence-proof",
+        // Relocated from braids-and-knots sec:knot-fundamental-groups
+        // 2026-08-09 (decision 5), where it had landed as a 2026-07-12
+        // Ledger §5 orphan integration. The conjecture is stated over
+        // isotopes (Z, N), so it belongs after the isotope-knot arc and
+        // before the stability arc; its dep def:atom-knot is at the head of
+        // this section, so the edge is now backward and intra-chapter.
+        "jsj-decomposition-linearity",
         "stable-atom",
         "stable-atom-properties",
         "stable-atom-decidable",

@@ -39,7 +39,9 @@ pub extern "C" fn qou_hecke_version() -> *const std::os::raw::c_char {
     s.as_ptr()
 }
 
-/// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
+/// Markov parameter z = q^3 / (q^2 + 1) — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+/// `docs/coordination/trace-convention-registry.md`.
 #[no_mangle]
 pub extern "C" fn qou_hecke_markov_z(q: f64) -> f64 {
     gram::markov_z(q)
