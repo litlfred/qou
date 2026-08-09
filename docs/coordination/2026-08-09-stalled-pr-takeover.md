@@ -124,7 +124,8 @@ can be verified as-is.
 | **4435** | **verified — recommend merge** | `lean-verify` exit 0, 0 sorries, `#print axioms` clean on all **20** decls. Modifies an existing file and still compiles against current main. |
 | **4514** | beans-only | 4 files, 49 lines, **no code**. Its `qou-5gnb` beans a target that is already proved on main (see 4685). |
 | **4451** | **do not merge as-is** | its `chapters/*.tex` diff is a **compact-mode render** (6 × `% compact-mode: block excluded`) committed over the full one — `prop:brings-is-qou` loses its entire five-item body; **−138/+29** across `chapters/`. Also silently drops the `\uses{}` edge `def:briggs-klein-chart`, and force-adds a **6.6 MB gitignored `main.pdf`**. Its `deploy/auth-gateway/server.ts` SPA deep-link fallback is a **good, unrelated** fix — recommended splitting it out to land on its own. |
-| **4685** | **not mergeable** | conflicts; merged `PartitionHookProductBridge.lean` carries a `<<<` marker; `StandardYoungTableauHLF.lean` has **4 sorries** and imports a nonexistent module `QOU.BraidKnot.SytMathlibBridge`; merged `SYTEnumerationFintype.lean` fails on `ext_toSsyt` (semantic conflict). `DeltaLambdaSignRule.lean` merges byte-identical to main — already absorbed. **And its headline target `numSYT_mul_hookProduct` is already proved sorry-free on main** (`HookProductHLF.lean:99`). |
+| **4685** | **CLOSED — superseded** | its content landed via #4698 (`9847cc32`) before I reviewed it. My four "blockers" were all downstream of that: `main` already carries the `ext_toSsyt` repair (`5e45c294`), #4698 **dropped** `StandardYoungTableauHLF.lean` in favour of #4692's `HookProductHLF.lean` (`d1b5ae8b`), and `DeltaLambdaSignRule` was already absorbed (`c89d17df`). I had recommended a rebase; corrected and closed. |
+| ~~4685~~ | ~~not mergeable~~ | conflicts; merged `PartitionHookProductBridge.lean` carries a `<<<` marker; `StandardYoungTableauHLF.lean` has **4 sorries** and imports a nonexistent module `QOU.BraidKnot.SytMathlibBridge`; merged `SYTEnumerationFintype.lean` fails on `ext_toSsyt` (semantic conflict). `DeltaLambdaSignRule.lean` merges byte-identical to main — already absorbed. **And its headline target `numSYT_mul_hookProduct` is already proved sorry-free on main** (`HookProductHLF.lean:99`). |
 
 ## Verification posture for this takeover
 
@@ -149,3 +150,27 @@ Two traps worth carrying into the remaining work, both hit in the first hour:
   those files. Verify the *merged* tree
   (`git merge-tree --write-tree`, then `git cat-file -p <tree>:<path>`), or
   you are checking a version that will never exist.
+- **Read the PR thread before reviewing it.** #4685 had two comments saying it
+  was superseded and could be closed. I reviewed it cold, found four real
+  blockers, and recommended a 715-commit rebase — when the correct disposition
+  was *close*. Every blocker I found was downstream of the supersession.
+
+## Caveat on this sweep's Lean verification method
+
+Verdicts here come from `scripts/lean-verify.sh` (`lean`-direct against oleans
+restored from `lake-cache/qou-v4-24-0`) plus `#print axioms`. Per a warning
+recorded on #4685:
+
+> *"the restored olean tree gives **false** sorry-status … a clean-looking
+> false positive in either direction."*
+
+Exposure, assessed rather than waved away:
+
+- A **missing** olean fails loudly — that is exactly how `SytMathlibBridge`
+  surfaced on #4685 — so it cannot cause a silent pass.
+- A **stale** olean is the real risk and these checks would **not** catch it.
+
+So "verified" in this document means *`lean`-direct exit 0 + clean axioms
+against a restored tree*, **not** a from-source dependents-cone build. For a
+result that has to be relied on, build the cone (`qou-4r5y`: breaks mask each
+other, so audit the cone rather than re-reading diffs).
