@@ -45,7 +45,9 @@ pub fn version() -> String {
     env!("CARGO_PKG_VERSION").to_string()
 }
 
-/// Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
+/// Markov parameter `z = q^3 / (q^2 + 1)` — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+/// `docs/coordination/trace-convention-registry.md`.
 pub fn markov_z(q: f64) -> f64 {
     gram::markov_z(q)
 }
@@ -159,7 +161,8 @@ mod tests {
     #[test]
     fn trace_weights_shape() {
         // 6 NF-basis Markov-trace weights: [1, z, z, z², z², z³]
-        // where z = 1/(q^{1/2} + q^{-1/2}). NOT a probability —
+        // where z = q³/(q² + 1) (trace convention D; C excised
+        // 2026-08-09). NOT a probability —
         // it's a Markov-trace tuple. Just verify the shape + the
         // first element is identically 1.0.
         let w = trace_weights(Q_SUBSTRATE);
@@ -227,8 +230,9 @@ mod tests {
     #[test]
     fn tr_m_atomic_mpfr_smoke() {
         // Single positive σ_1 on B_3 at 20-dps. Markov-Ocneanu-Wenzl
-        // trace of a Hecke generator is z = 1/(q^{1/2} + q^{-1/2}),
-        // so the string should start with "4.99…" at q_0. n=3 chosen
+        // trace of a Hecke generator is z = q³/(q² + 1) (trace convention
+        // D), so the string should start with "6.12…" at q_0. Was "4.99…"
+        // (convention C) until the excision of 2026-08-09. n=3 chosen
         // over n=2 because B_2 trips an upstream edge case in
         // tr_m_word_lq's recursion.
         let s = tr_m_atomic_mpfr(
@@ -237,7 +241,7 @@ mod tests {
             "1.10998".to_string(),
             20,
         ).expect("tr_m_atomic_mpfr smoke");
-        assert!(s.starts_with("4.99"), "expected '4.99...', got '{s}'");
+        assert!(s.starts_with("6.12"), "expected '6.12...', got '{s}'");
     }
 
     #[test]

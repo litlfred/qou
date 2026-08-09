@@ -25,7 +25,9 @@ use hecke_engine::littlewood_richardson;
 use hecke_engine::tr_m_atomic_mpfr as trmpfr;
 use napi_derive::napi;
 
-/// Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
+/// Markov parameter `z = q^3 / (q^2 + 1)` — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+/// `docs/coordination/trace-convention-registry.md`.
 #[napi]
 pub fn markov_z(q: f64) -> f64 {
     gram::markov_z(q)

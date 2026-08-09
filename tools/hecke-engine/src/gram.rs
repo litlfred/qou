@@ -1,10 +1,32 @@
 //! Gram matrix on the NF basis of H_3(q) — Rust implementation.
 //!
 //! Mirrors `pyhecke.gram` (see
-//! `tools/pyhecke/python/pyhecke/gram.py`). Same NF basis, same
-//! Markov-trace weights, same Hecke reduction rules — numerical
-//! output is byte-identical to the Python implementation to within
-//! f64 rounding (< 1e-14 per entry).
+//! `tools/pyhecke/python/pyhecke/gram.py`). Same NF basis, same Hecke
+//! reduction rules.
+//!
+//! # Two divergences from the Python mirror — read before trusting a number
+//!
+//! **1. `TR_M[5]` differs, and has since 2026-05-19.** This engine's
+//! [`trace_weights`] ends `z³`; `pyhecke.gram.TR_M` ends `h·z² + z`. The
+//! Python value is the correct Markov trace of `e⁻ = σ₀σ₁σ₀` (cyclicity plus
+//! `σ₀² = h·σ₀ + 1`); `z³` is the bug that
+//! `docs/audits/2026-05-19-trm5-markov-bug.md` fixed in Python and never
+//! ported here. So the "byte-identical to the Python implementation" claim
+//! that stood in this header until 2026-08-09 was false: under convention C
+//! the Gram determinants were −0.3608011 here against −0.1892052 there.
+//!
+//! **2. Fixing (1) makes this Gram singular.** With the correct `h·z² + z`
+//! and the production convention D, the 6×6 Markov–Gram form is degenerate —
+//! proved in `content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`
+//! (eigenvalues −0.752702, 0, +0.752702×3, +4.230339; signature (4,1) plus a
+//! null direction; det = 0). [`gram_inverse`] would then panic, or worse,
+//! return a matrix with ~1e15 entries — that is what `numpy.linalg.inv` does
+//! on the Python side: no exception, and ‖G·G⁻¹ − I‖ = 1.64.
+//!
+//! Both are open for the owner (bean `qou-wgta`, items 10/11). The
+//! convention here IS convention D as of 2026-08-09; the `z³` weight is
+//! knowingly left in place because correcting it in isolation replaces a
+//! wrong-but-finite answer with a silently unbounded one.
 //!
 //! Public API:
 //!
@@ -31,10 +53,23 @@ pub const NF_NAMES: [&str; 6] = ["gamma", "sigma_0", "sigma_1", "L_plus", "L_min
 /// Default substrate parameter q_0 (matches `q_parameter.py`).
 pub const Q_0: f64 = 1.1099785955541805;
 
-/// z = 1 / (q^{1/2} + q^{-1/2}) — Markov closure parameter.
+/// z = q³/(q² + 1) — Markov closure parameter, **trace convention D**
+/// (SU(2)/Temperley–Lieb, Jones).
+///
+/// Owner ruling 2026-08-09 excised convention C (`z = 1/(q^{1/2}+q^{-1/2})`),
+/// which this function carried until then. Registry:
+/// `docs/coordination/trace-convention-registry.md`. This symbol is
+/// re-exported through all nine language bindings (pyhecke-native, wasm,
+/// node, c, jvm, r, julia, gap, octave) and drives [`trace_weights`] and the
+/// `v_std` quark-volume channel, so a revert here is a nine-binding change.
+///
+/// Incidental precision note: D is a rational function of `q`, so this no
+/// longer calls `sqrt` at all — two correctly-rounded transcendental ops
+/// leave the path. The engine as a whole remains f64 (`Poly`, `[[f64; 6]; 6]`,
+/// `Q_0`); that is unchanged here and is tracked separately.
 #[inline]
 pub fn markov_z(q: f64) -> f64 {
-    1.0 / (q.sqrt() + (1.0 / q).sqrt())
+    q * q * q / (q * q + 1.0)
 }
 
 /// h = q - q^{-1} — the Hecke relation coefficient.
@@ -43,7 +78,8 @@ pub fn hecke_h(q: f64) -> f64 {
     q - 1.0 / q
 }
 
-/// Markov-trace weights on the 6-element NF basis.
+/// Markov-trace weights on the 6-element NF basis (convention D, via
+/// [`markov_z`]).
 pub fn trace_weights(q: f64) -> [f64; 6] {
     let z = markov_z(q);
     [1.0, z, z, z * z, z * z, z * z * z]
@@ -631,9 +667,18 @@ mod tests {
 
     #[test]
     fn z_at_q0_matches_python() {
-        // pyhecke.gram.z at q_0 = 1.1099785955541805
+        // pyhecke.gram.z at Q_0 = 1.1099785955541805, convention D.
+        // Was 0.4993203340335982 (convention C) until the 2026-08-09 excision.
+        //
+        // SECOND STALENESS, deliberately NOT fixed here: `Q_0` above is the
+        // MUON pin. The registry's q_0 and every new computation use the
+        // PROTON pin 1.1099785827513808 (AGENTS.md owner directive
+        // 2026-08-07), 11.54 ppb away. At the proton pin this z would be
+        // 0.6126880371464652. Re-pinning `Q_0` moves every certificate the
+        // engine has emitted, so it is an owner decision, not a side effect
+        // of a convention migration. Bean qou-wgta item 16.
         let z = markov_z(Q_0);
-        assert!((z - 0.4993203340335982).abs() < 1e-14, "z = {}", z);
+        assert!((z - 0.6126880505455892).abs() < 1e-14, "z = {}", z);
     }
 
     #[test]
@@ -668,12 +713,31 @@ mod tests {
         }
     }
 
+    /// Gram determinant at `Q_0`, convention D.
+    ///
+    /// RENAMED from `det_at_q0_matches_python` (2026-08-09, bean qou-wgta
+    /// item 10): it never matched Python and could not have. This engine's
+    /// [`trace_weights`] ends `..., z*z*z`, while `pyhecke.gram.TR_M` ends
+    /// `..., h*z*z + z`. `h·z² + z` is the correct Markov value for
+    /// `e⁻ = σ₀σ₁σ₀` (cyclicity plus `σ₀² = h·σ₀ + 1`); `z³` is the
+    /// pre-2026-05-19 bug, fixed in Python by
+    /// `docs/audits/2026-05-19-trm5-markov-bug.md` and NEVER PORTED HERE.
+    /// The two determinants under C were −0.3608011166161873 (this engine)
+    /// against −0.1892052 (pyhecke). The old test name asserted an equality
+    /// that had been false for three months.
+    ///
+    /// The z³ bug is deliberately NOT fixed in this commit — see the
+    /// module-level note and the bean. Correcting it makes this Gram
+    /// SINGULAR under D (`QOU/QBeta/GramSignature.lean`: eigenvalues
+    /// −0.752702, 0, +0.752702×3, +4.230339; det = 0), which would break
+    /// `gram_inverse` across all nine bindings. That is a proved structural
+    /// result needing an owner decision, not a patch.
     #[test]
-    fn det_at_q0_matches_python() {
-        // pyhecke Gram det at q_0 = -0.3608011166161873
+    fn det_at_q0_convention_d() {
+        // Was -0.3608011166161873 under convention C.
         let g = gram_matrix(Q_0);
         let d = det_6x6(&g);
-        assert!((d - (-0.3608011166161873)).abs() < 1e-10, "det = {}", d);
+        assert!((d - (-0.15201823561588593)).abs() < 1e-10, "det = {}", d);
     }
 
     #[test]

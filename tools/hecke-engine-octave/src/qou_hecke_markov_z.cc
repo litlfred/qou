@@ -1,4 +1,5 @@
-// qou_hecke_markov_z.cc — z = 1 / (q^{1/2} + q^{-1/2}).
+// qou_hecke_markov_z.cc — z = q^3 / (q^2 + 1), trace convention D
+// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09.
 #include "mex.h"
 #include "hecke_engine.h"
 

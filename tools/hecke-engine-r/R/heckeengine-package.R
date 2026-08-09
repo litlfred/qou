@@ -6,7 +6,7 @@
 #'
 #' @section Functions:
 #'   * `qou_version()`         — package version
-#'   * `qou_markov_z(q)`       — z = 1 / (q^{1/2} + q^{-1/2})
+#'   * `qou_markov_z(q)`       — z = q^3 / (q^2 + 1)  (trace convention D)
 #'   * `qou_hecke_h(q)`        — h = q - q^{-1}
 #'   * `qou_trace_weights(q)`  — 6-element NF-basis weights
 #'   * `qou_gram_matrix(q)`    — 6x6 Gram matrix
