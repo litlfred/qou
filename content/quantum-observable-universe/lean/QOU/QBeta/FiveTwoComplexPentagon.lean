@@ -1201,6 +1201,67 @@ theorem cRogersL_one_sub_inv_sub_of_im_neg {z : ℂ} (h : z.im < 0) :
   push_cast
   linear_combination (((Real.pi : ℂ) ^ 2) / 2) * hI
 
+/-- **The anharmonic relation above the real axis.** The mirror of
+`cRogersL_one_sub_inv_sub_of_im_neg`:
+
+    L(1 − 1/z) − L(z) = −π²/6 − (iπ/2)·log z      for `Im z > 0`
+
+With the four one-log forms — inversion and the anharmonic step, each on both
+sides of the axis — the anharmonic group's action on `cRogersL` is completely
+tabulated, and every evaluation Route 58 needs is a substitution. -/
+theorem cRogersL_one_sub_inv_sub_of_im_pos {z : ℂ} (h : 0 < z.im) :
+    cRogersL (1 - z⁻¹) - cRogersL z
+      = -((Real.pi ^ 2 / 6 : ℝ) : ℂ)
+        - ((Real.pi : ℂ) * Complex.I / 2) * Complex.log z := by
+  have hne : z.im ≠ 0 := ne_of_gt h
+  rw [cRogersL_one_sub_inv_sub (mem_invDomain_of_im_ne_zero hne)
+      (arg_ne_pi_of_im_ne_zero hne) (inv_mem_rogersDomain_of_im_ne_zero hne),
+    clog_neg_of_im_pos h]
+  have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+  push_cast
+  linear_combination (((Real.pi : ℂ) ^ 2) / 2) * hI
+
+/-! ### The assembly: `Σ L` over the saddle orbit, from two pentagon instances
+
+Route 58's chain, as one lemma. The two pentagon instances are `Route 54` at
+`(y₃, y₁)` and `(y₃, y₂)`; the four evaluations are the one-log forms above; and
+what comes out is the orbit sum in terms of **four logarithms and `π²`** — no
+dilogarithm on the right.
+
+Nothing here is about the 5₂ cubic in particular: it is bookkeeping over the
+anharmonic toolkit, and the caller supplies the geometry (`a₅ = 1/a₃`,
+`a₄ = 1 − 1/b`, and which root sits above the axis). -/
+
+/-- **The orbit sum, from two pentagon instances and the four one-log
+evaluations.**
+
+    2·(L(c) + L(a) + L(b)) = 2π²/3 − (iπ/2)·(log A₃ − log B₃ + log b − log a)
+
+With `b = conj a`, `B₃ = conj A₃` and `c` real, the bracket is `2i·(arg A₃ −
+arg a)` and this reads `Σ L = π²/3 + (π/2)(arg A₃ − arg a)`. Route 61's
+`saddle_clog_cube_of_roots` then supplies `arg A₃`, and Route 47's closed form
+follows.
+
+⚠ The two pentagon values are hypotheses here. They are theorems —
+`pentagonSum_eq_pi_sq_div_two` — but stating them as inputs keeps this lemma pure
+bookkeeping. -/
+theorem saddle_sum_cRogersL {a b c A3 B3 : ℂ}
+    (P1 : cRogersL c + cRogersL a + cRogersL A3 + cRogersL (1 - b⁻¹) + cRogersL A3⁻¹
+      = ((Real.pi ^ 2 / 2 : ℝ) : ℂ))
+    (P2 : cRogersL c + cRogersL b + cRogersL B3 + cRogersL (1 - a⁻¹) + cRogersL B3⁻¹
+      = ((Real.pi ^ 2 / 2 : ℝ) : ℂ))
+    (hA3 : 0 < A3.im) (hB3 : B3.im < 0) (ha : 0 < a.im) (hb : b.im < 0) :
+    2 * (cRogersL c + cRogersL a + cRogersL b)
+      = ((2 * Real.pi ^ 2 / 3 : ℝ) : ℂ)
+        - ((Real.pi : ℂ) * Complex.I / 2)
+          * (Complex.log A3 - Complex.log B3 + Complex.log b - Complex.log a) := by
+  have e1 := cRogersL_add_inv_of_im_pos hA3
+  have e2 := cRogersL_add_inv_of_im_neg hB3
+  have e3 := cRogersL_one_sub_inv_sub_of_im_neg hb
+  have e4 := cRogersL_one_sub_inv_sub_of_im_pos ha
+  push_cast at P1 P2 e1 e2 e3 e4 ⊢
+  linear_combination P1 + P2 - e1 - e2 - e3 - e4
+
 end Reflection
 
 

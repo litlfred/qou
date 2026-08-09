@@ -1071,3 +1071,53 @@ hypothesis survives. Nothing numeric enters anywhere.
   only remaining link with its own input.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 63 — the anharmonic toolkit is complete, and the orbit sum assembles
+
+### Four one-log forms, both sides of the axis
+
+    L(z) + L(1/z)     =  π²/3 + (iπ/2)·log z     Im z > 0
+    L(z) + L(1/z)     =  π²/3 − (iπ/2)·log z     Im z < 0
+    L(1−1/z) − L(z)   = −π²/6 − (iπ/2)·log z     Im z > 0
+    L(1−1/z) − L(z)   = −π²/6 + (iπ/2)·log z     Im z < 0
+
+The anharmonic group's action on `cRogersL` is now completely tabulated, and
+every evaluation Route 58 needs is a substitution. All four sorry-free; each
+verified at four to six points first and each **fails** on the wrong side of the
+axis, which is the control.
+
+### The assembly — `saddle_sum_cRogersL`
+
+    2·(L(c) + L(a) + L(b)) = 2π²/3 − (iπ/2)·(log A₃ − log B₃ + log b − log a)
+
+from the two pentagon instances and the four evaluations, by one
+`linear_combination`. **No dilogarithm on the right.**
+
+With `b = conj a`, `B₃ = conj A₃`, `c` real, the bracket is `2i(arg A₃ − arg a)`
+and this reads
+
+    Σ_y L = π²/3 + (π/2)·(arg A₃ − arg a)
+
+Route 61's `saddle_clog_cube_of_roots` supplies `arg A₃ = (π − arg a)/3`, giving
+`Σ_y L = π²/2 − (2π/3)·arg y₁` — Route 47's closed form. Checked numerically at
+50 dps: assembly residual `2.1e-50`, and all three routes to `Σ_y L` agree to 30
+digits.
+
+### The ledger
+
+| link | status |
+|---|---|
+| G3 inversion | **proved** (59, 62) |
+| G3 angle | **proved from root data**, no `arg` hypothesis (58, 61, 62) |
+| G4 anharmonic | **proved**, both signs (60, 63) |
+| assembly to `Σ_y L` | **proved** (63) |
+| conjugate-root inputs | `log(conj z) = conj(log z)` — Mathlib, one line |
+| **G6** `Σ log y log(1−y)` | **open** — the saddle branch equation |
+
+Everything between the proved pentagon and Route 47's closed form is now in
+place. **G6 is the last link with its own input**, and it is the bridge from
+`Σ L` to `A`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

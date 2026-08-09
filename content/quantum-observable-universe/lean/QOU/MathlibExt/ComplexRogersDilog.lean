@@ -372,4 +372,21 @@ theorem cRogersL_add_inv_of_im_pos {z : ℂ} (h : 0 < z.im) :
   push_cast
   linear_combination (-((Real.pi : ℂ) ^ 2) / 2) * hI
 
+/-- **Rogers inversion below the real axis.** The mirror of
+`cRogersL_add_inv_of_im_pos`:
+
+    L(z) + L(1/z) = π²/3 − (iπ/2)·log z          for `Im z < 0`
+
+Same cancellation, opposite sign — the two together are the inversion half of the
+anharmonic toolkit. -/
+theorem cRogersL_add_inv_of_im_neg {z : ℂ} (h : z.im < 0) :
+    cRogersL z + cRogersL z⁻¹
+      = ((Real.pi ^ 2 / 3 : ℝ) : ℂ) - ((Real.pi : ℂ) * Complex.I / 2) * Complex.log z := by
+  have hne : z.im ≠ 0 := ne_of_lt h
+  rw [cRogersL_add_inv (mem_invDomain_of_im_ne_zero hne) (arg_ne_pi_of_im_ne_zero hne),
+    clog_neg_of_im_neg h]
+  have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+  push_cast
+  linear_combination (-((Real.pi : ℂ) ^ 2) / 2) * hI
+
 end QOU.MathlibExt
