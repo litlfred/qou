@@ -1,11 +1,11 @@
 ---
 # fwr4
 title: 'mass-theory carries the paper''s long-range ordering problem'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-09T21:35:00Z
-updated_at: 2026-08-09T23:40:00Z
+updated_at: 2026-08-10T00:20:00Z
 parent: fwr1
 ---
 After the block moves (`fwr2`) and transpositions (`fwr3`) are taken out, 177
@@ -87,3 +87,57 @@ sustained demonstration that satisfying the graph is not the same as reading wel
 A2 may already be discharged: fwr2 moved `def:quantum-bloch-group` into
 `sec:kashiwara-jones-quantum-dilog`, which is A2's destination. Verify before
 re-moving.
+
+---
+
+**Outcome: 5 consolidation moves applied, forward references 200 -> 193.**
+
+Two of the six proposals were already discharged by fwr2 and were verified, not
+re-applied: `def:quantum-bloch-group` already sits in
+`sec:kashiwara-jones-quantum-dilog` (A2's destination), and
+`prop:nuclear-knot-classification` already sits beside the block defining
+Geom(K) (A4's first half).
+
+Eight moves went in, review returned **4 good, 4 neutral, 0 bad** — and three
+were still withdrawn, because two of the rationales were wrong rather than the
+arithmetic:
+
+- **A3c/A3d withdrawn.** They moved the pentagon flavours out of
+  `sec:kashiwara-jones-quantum-dilog`, where a comment in the manifest records a
+  deliberate re-homing: *"the pentagon identities belong with the quantum
+  dilogarithm"*. The destination's title names neither pentagons nor
+  dilogarithms. Restored — and the forward edge A3d was chasing (pachner ->
+  q-rogers, distance 1) is fixed in place by ordering q-rogers first, which is
+  all it ever needed.
+- **A3e withdrawn.** It moved `conj:dim-master-pentagon` to open problems as "a
+  conjecture with no users at all". It has no `uses[]` users; the section intro
+  names it in prose. Its removal also left a section titled *"pentagon and
+  volume bridges"* containing no block that mentions a pentagon.
+- **A4a corrected by one slot**, not reverted: `conj:geom-yekutieli-alignment`
+  opens on a definite description of the piecewise invariant, so it belongs
+  after the block that lays that invariant out, not before it.
+
+Withdrawing those cost 4 edges — 189 would have been available, 193 is what
+survives reading. The strongest move stands: `prop:pentagon-uv-commutation` was
+the *opening* block of "Transfer matrices and Skein mass", and no remaining block
+in that section contains the words "pentagon", "jet tower" or "quantum torus".
+
+Three section intros were reworded, each falsified by a move: a block count that
+no longer counted, a sub-section announcing a block that had left, and a sequence
+description still naming a block re-homed in an earlier pass.
+
+**Left for the author, deliberately:**
+
+1. **A section title that no longer describes its contents.** With the pentagon
+   blocks re-homed by an earlier pass, *"Geometric face: pentagon and volume
+   bridges"* is thin on pentagons even with `conj:dim-master-pentagon` restored.
+   Rename, or route the pentagon flavours back — both are editorial.
+2. **Two near-verbatim duplications the moves exposed**, harmless at 300
+   positions apart and glaring adjacent:
+   `vhat-pair-commutation-trace-proof.md:61-89` ("## Operator lift") against
+   `pentagon-uv-commutation.md:27-46` (same quantization, same tau-hat, same
+   U-V commutation), and `geom-yekutieli-alignment.md:131-136` against
+   `geometric-invariant-piecewise.md:76-80` (the figure-eight amphicheiral
+   paragraph). Choosing which passage survives is an authorial call.
+3. **The 49-block vertex-factorisation chain (H1)** and the **seven edges that
+   want an edit rather than a move** — unchanged from the analysis above.
