@@ -308,3 +308,54 @@ consistency is itself the finding: the missing input is not a relation of this
 kind that was overlooked.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 49 — Neumann's actual definitions OVERTURN this bean's own target
+
+Probe `computations/probes/qbeta_5two_route49_neumann_kernel_probe.py`
+(6 gates, all pass, dps 45). Source: **`uploads/0307092v2.pdf`** — W D Neumann,
+*Extended Bloch group and the Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004)
+413–474.
+
+### What the paper actually says
+
+1. `R(z;p,q) = R(z) + (πi/2)(p·log(1−z) + q·log z) − π²/6`, valued in **ℂ/π²ℤ**
+   (Prop 2.5). Routes 43–47 used a **minus** sign and omitted the `−π²/6`.
+2. **`ℬ̂(ℂ) = ker ν`**, `ν([z;p,q]) = (log z + pπi) ∧ (−log(1−z) + qπi)`
+   (Def 2.4, Lemma 2.3). *That* is the membership condition — concrete and
+   computable. It is exactly what Route 44 was missing when it could only say
+   flattenings form a torsor.
+3. `R ∘ λ = i(vol + i·cs)` — the Cheeger–Chern–Simons class.
+
+### ⚠ This bean's stated target was wrong, twice over
+
+The bean said: *show `Σ_σ [y_σ; ε_σ, 0]` is torsion in `ℬ̂(ℂ)`.* Both halves fail.
+
+**(a) `(ε,0)` is not in `ker ν`** (G2). `ν = 0` requires
+`X = Σ(q·log y + p·log(1−y)) ∈ ℚ·πi`; for `(±ε,0)` the ratio `Im(X)/π =
+∓0.8961794846…`, no rational at maxcoeff 1e4. The element is not in the group.
+
+**(b) The admissible flattenings give a non-torsion value.** The condition forces
+`3q + 2p = 0` at **every** root — `(p,q) ∈ ℤ·(3,−2)` — derived from the branch
+relation and confirmed by search (G3). **That is precisely the null direction
+Route 44 found empirically**, now *derived*. For those, the correction is
+`π²·k·ε ≡ 0 (mod π²)`, so `R` is flattening-independent (G4):
+
+    R(ξ) = −(2π/3)·arg(y₁)        exactly, mod π²
+
+and `arg(y₁)/π = 0.32786538652883426446…` is irrational to PSLQ at maxcoeff 1e8,
+so **`R(ξ) is not torsion`** (G5).
+
+### The target, corrected
+
+`R(ξ)` is **real**, so by `R ∘ λ = i(vol + i·cs)` the volume part vanishes —
+consistent with Route 42's `Σ_σ D = 0` — and the sum rule is the Chern–Simons
+**evaluation**
+
+    cs(ξ) = (2π/3)·arg(y₁)        (mod π²)
+
+not a torsion statement (G6). Sharper and better founded than the old target,
+and in the paper's own normalisation rather than my reconstruction.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
