@@ -45,12 +45,23 @@
   The two halves are kept separate on purpose: `cot_quadratic_pos` mentions no
   `Λ` and no analysis, so it is reusable on its own.
 
-  **What is still not claimed:** the step from "Hessian negative definite on the
-  tangent space, pointwise" to "strictly concave on the angle-structure
-  polytope" — that is `qou-mlgp` Gap 3, and it wants a Mathlib-shaped lemma about
-  concavity on an affine slice that may or may not exist.  Also nothing here is
-  about a *specific* triangulation; m004/L6a4 have angle-structure polytopes and
-  m015 (5₂) does not (bean `qou-m015`).
+  **And the assembly** (`qou-mlgp` Gap 3, for one tetrahedron):
+  `strictConcaveOn_tetVolLine` — `Λ(α)+Λ(β)+Λ(γ)` is *strictly concave along
+  every line in the angle simplex*.  Since strict concavity on a convex set is
+  exactly strict concavity along every segment, that is Rivin's theorem for a
+  single tetrahedron.
+
+  The mechanism worth naming: the tangent condition `u+v+w = 0` is precisely what
+  keeps the angles summing to `π` all along the line, so `cot_quadratic_pos`
+  applies at *every* point of it, not just at the basepoint.  Restricting to a
+  line is what makes this one-variable, so Mathlib's
+  `strictConcaveOn_of_deriv2_neg'` applies directly and no multivariable
+  second-derivative test is needed.
+
+  **What is still not claimed.**  Nothing here is about a *specific*
+  triangulation, and nothing here sums over tetrahedra: m004 and L6a4 have
+  angle-structure polytopes, m015 (5₂) does not (bean `qou-m015`).  And nothing
+  here evaluates a volume — see below.
 
   ⚠ **The bound is NOT uniform.**  Strict positivity holds pointwise on the open
   simplex and degenerates at the boundary: numerically the normalised minimum
@@ -254,5 +265,157 @@ derivative of `Λ` at an angle is `−cot`, so `−Λ″ = cot`. -/
 theorem deriv_deriv_Lob {t : ℝ} (h0 : 0 < t) (h1 : t < π) :
     deriv (deriv QOU.Archimedean.Lob) t = -Real.cot t :=
   (hasDerivAt_deriv_Lob h0 h1).deriv
+
+/-! ### Rivin concavity for one ideal tetrahedron, assembled
+
+Bean `qou-mlgp` Gap 3, for a single tetrahedron.  The two halves above combine:
+`Λ″ = −cot` supplies the Hessian, `cot_quadratic_pos` supplies its sign.
+
+The statement is concavity **along a line in the angle simplex**.  That is not a
+weakening — strict concavity on a convex set *is* strict concavity along every
+segment — and it is what makes the whole thing one-variable, so Mathlib's
+`strictConcaveOn_of_deriv2_neg'` applies directly.
+
+The mechanism worth naming: the tangent condition `u + v + w = 0` is exactly
+what keeps the three angles summing to `π` all along the line,
+
+    `(α+tu) + (β+tv) + (γ+tw) = (α+β+γ) + t(u+v+w) = π + 0 = π`,
+
+so `cot_quadratic_pos` applies at *every* point of the line, not just at `t = 0`. -/
+
+/-- The tetrahedron volume `Λ(α)+Λ(β)+Λ(γ)` restricted to the line
+`t ↦ (α+tu, β+tv, γ+tw)`. -/
+noncomputable def tetVolLine (α β γ u v w t : ℝ) : ℝ :=
+  QOU.Archimedean.Lob (α + t * u) + QOU.Archimedean.Lob (β + t * v)
+    + QOU.Archimedean.Lob (γ + t * w)
+
+/-- The admissible parameters: those keeping all three angles positive.  Given
+`α+β+γ = π` and `u+v+w = 0` this also forces each angle `< π`. -/
+def tetLineDomain (α β γ u v w : ℝ) : Set ℝ :=
+  {t | 0 < α + t * u ∧ 0 < β + t * v ∧ 0 < γ + t * w}
+
+theorem convex_tetLineDomain (α β γ u v w : ℝ) :
+    Convex ℝ (tetLineDomain α β γ u v w) := by
+  intro x hx y hy a b ha hb hab
+  obtain ⟨hx1, hx2, hx3⟩ := hx
+  obtain ⟨hy1, hy2, hy3⟩ := hy
+  -- a convex combination of two positives is positive, because `a + b = 1`
+  -- means they cannot both vanish
+  have key : ∀ p q : ℝ, 0 < p → 0 < q → 0 < a * p + b * q := by
+    intro p q hp hq
+    rcases ha.lt_or_eq with h | h
+    · exact add_pos_of_pos_of_nonneg (mul_pos h hp) (mul_nonneg hb hq.le)
+    · have hb1 : b = 1 := by linarith
+      rw [← h, hb1, zero_mul, one_mul, zero_add]; exact hq
+  simp only [tetLineDomain, Set.mem_setOf_eq, smul_eq_mul]
+  refine ⟨?_, ?_, ?_⟩
+  · have h := key _ _ hx1 hy1
+    have e : α + (a * x + b * y) * u = a * (α + x * u) + b * (α + y * u) := by
+      linear_combination (-α) * hab
+    rw [e]; exact h
+  · have h := key _ _ hx2 hy2
+    have e : β + (a * x + b * y) * v = a * (β + x * v) + b * (β + y * v) := by
+      linear_combination (-β) * hab
+    rw [e]; exact h
+  · have h := key _ _ hx3 hy3
+    have e : γ + (a * x + b * y) * w = a * (γ + x * w) + b * (γ + y * w) := by
+      linear_combination (-γ) * hab
+    rw [e]; exact h
+
+/-- Along the line, the three angles still sum to `π`. -/
+theorem tetLine_sum (α β γ u v w t : ℝ) (hsum : α + β + γ = π) (htan : u + v + w = 0) :
+    (α + t * u) + (β + t * v) + (γ + t * w) = π := by
+  have : t * u + t * v + t * w = t * (u + v + w) := by ring
+  rw [htan, mul_zero] at this; linarith
+
+/-- First derivative along the line. -/
+theorem hasDerivAt_tetVolLine {α β γ u v w t : ℝ}
+    (hsum : α + β + γ = π) (htan : u + v + w = 0)
+    (ht : t ∈ tetLineDomain α β γ u v w) :
+    HasDerivAt (tetVolLine α β γ u v w)
+      (-Real.log (2 * Real.sin (α + t * u)) * u
+        + -Real.log (2 * Real.sin (β + t * v)) * v
+        + -Real.log (2 * Real.sin (γ + t * w)) * w) t := by
+  obtain ⟨h1, h2, h3⟩ := ht
+  have hs := tetLine_sum α β γ u v w t hsum htan
+  have b1 : α + t * u < π := by linarith
+  have b2 : β + t * v < π := by linarith
+  have b3 : γ + t * w < π := by linarith
+  have i1 : HasDerivAt (fun s : ℝ => α + s * u) u t := by
+    simpa using ((hasDerivAt_id t).mul_const u).const_add α
+  have i2 : HasDerivAt (fun s : ℝ => β + s * v) v t := by
+    simpa using ((hasDerivAt_id t).mul_const v).const_add β
+  have i3 : HasDerivAt (fun s : ℝ => γ + s * w) w t := by
+    simpa using ((hasDerivAt_id t).mul_const w).const_add γ
+  exact (((hasDerivAt_Lob h1 b1).comp t i1).add
+    ((hasDerivAt_Lob h2 b2).comp t i2)).add ((hasDerivAt_Lob h3 b3).comp t i3)
+
+/-- **The second derivative along the line is `−cotQuadratic`, hence negative.**
+This is where `Λ″ = −cot` and `cot_quadratic_pos` meet. -/
+theorem deriv2_tetVolLine_neg {α β γ u v w t : ℝ}
+    (hsum : α + β + γ = π) (htan : u + v + w = 0) (hne : ¬(u = 0 ∧ v = 0))
+    (ht : t ∈ tetLineDomain α β γ u v w) :
+    deriv^[2] (tetVolLine α β γ u v w) t < 0 := by
+  obtain ⟨h1, h2, h3⟩ := ht
+  have hs := tetLine_sum α β γ u v w t hsum htan
+  have b1 : α + t * u < π := by linarith
+  have b2 : β + t * v < π := by linarith
+  have b3 : γ + t * w < π := by linarith
+  -- the domain is open, so `deriv` agrees with the formula near `t`
+  have hopen : IsOpen (tetLineDomain α β γ u v w) := by
+    have : tetLineDomain α β γ u v w
+        = (fun s : ℝ => α + s * u) ⁻¹' (Set.Ioi 0)
+          ∩ ((fun s : ℝ => β + s * v) ⁻¹' (Set.Ioi 0)
+            ∩ (fun s : ℝ => γ + s * w) ⁻¹' (Set.Ioi 0)) := by
+      ext s; simp [tetLineDomain, and_assoc]
+    rw [this]
+    exact ((isOpen_Ioi.preimage (by fun_prop)).inter
+      ((isOpen_Ioi.preimage (by fun_prop)).inter (isOpen_Ioi.preimage (by fun_prop))))
+  have hev : deriv (tetVolLine α β γ u v w)
+      =ᶠ[nhds t] fun s : ℝ => -Real.log (2 * Real.sin (α + s * u)) * u
+        + -Real.log (2 * Real.sin (β + s * v)) * v
+        + -Real.log (2 * Real.sin (γ + s * w)) * w := by
+    filter_upwards [hopen.mem_nhds ⟨h1, h2, h3⟩] with s hs'
+    exact (hasDerivAt_tetVolLine hsum htan hs').deriv
+  -- differentiate the formula
+  have i1 : HasDerivAt (fun s : ℝ => α + s * u) u t := by
+    simpa using ((hasDerivAt_id t).mul_const u).const_add α
+  have i2 : HasDerivAt (fun s : ℝ => β + s * v) v t := by
+    simpa using ((hasDerivAt_id t).mul_const v).const_add β
+  have i3 : HasDerivAt (fun s : ℝ => γ + s * w) w t := by
+    simpa using ((hasDerivAt_id t).mul_const w).const_add γ
+  have d1 := ((hasDerivAt_neg_log_two_sin h1 b1).comp t i1).mul_const u
+  have d2 := ((hasDerivAt_neg_log_two_sin h2 b2).comp t i2).mul_const v
+  have d3 := ((hasDerivAt_neg_log_two_sin h3 b3).comp t i3).mul_const w
+  have hd2 : HasDerivAt (deriv (tetVolLine α β γ u v w))
+      (-(Real.cos (α + t * u) / Real.sin (α + t * u)) * u * u
+        + -(Real.cos (β + t * v) / Real.sin (β + t * v)) * v * v
+        + -(Real.cos (γ + t * w) / Real.sin (γ + t * w)) * w * w) t :=
+    ((d1.add d2).add d3).congr_of_eventuallyEq hev
+  have hq := cot_quadratic_pos (α := α + t * u) (β := β + t * v) (γ := γ + t * w)
+    h1 h2 h3 hs (by linarith : u + v + w = 0) hne
+  unfold cotQuadratic at hq
+  have : deriv^[2] (tetVolLine α β γ u v w) t
+      = -(Real.cos (α + t * u) / Real.sin (α + t * u) * u ^ 2
+        + Real.cos (β + t * v) / Real.sin (β + t * v) * v ^ 2
+        + Real.cos (γ + t * w) / Real.sin (γ + t * w) * w ^ 2) := by
+    rw [Function.iterate_succ, Function.iterate_one, Function.comp_apply, hd2.deriv]; ring
+  rw [this]
+  linarith
+
+/-- **RIVIN CONCAVITY FOR ONE IDEAL TETRAHEDRON.**
+
+`Λ(α)+Λ(β)+Λ(γ)` is *strictly concave* along every line in the angle simplex —
+i.e. along every direction `(u,v,w)` with `u+v+w = 0` that is not zero.
+
+Since strict concavity on a convex set is exactly strict concavity along every
+segment, this is Rivin's theorem for a single tetrahedron. -/
+theorem strictConcaveOn_tetVolLine {α β γ u v w : ℝ}
+    (hsum : α + β + γ = π) (htan : u + v + w = 0) (hne : ¬(u = 0 ∧ v = 0)) :
+    StrictConcaveOn ℝ (tetLineDomain α β γ u v w) (tetVolLine α β γ u v w) := by
+  refine strictConcaveOn_of_deriv2_neg' (convex_tetLineDomain α β γ u v w) ?_
+    (fun t ht => deriv2_tetVolLine_neg hsum htan hne ht)
+  intro t ht
+  exact ((hasDerivAt_tetVolLine hsum htan ht).continuousAt).continuousWithinAt
 
 end QOU.Knot.Rivin

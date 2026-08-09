@@ -433,10 +433,21 @@ not a definitional unfolding**.
 
 So, precisely:
 
-* Nothing here proves `BlochWigner_lob = Im Li₂(z) + log|z|·arg(1−z)`, and it
-  **cannot currently be proved in this corpus**: Mathlib has no polylogarithm
-  or dilogarithm at all (checked 2026-08-08 across the restored olean tree —
-  zero `*polylog*` / `*dilog*` modules).
+* Nothing here proves `BlochWigner_lob = Im Li₂(z) + log|z|·arg(1−z)`.
+
+  ⚠ **STATUS CORRECTED 2026-08-09 (bean `qou-kmmr`).** This bullet used to read
+  "and it **cannot currently be proved in this corpus**: Mathlib has no
+  polylogarithm or dilogarithm at all". The Mathlib half is still true — Mathlib
+  has neither — but the conclusion no longer follows, because **the corpus now
+  has its own**: `QOU.MathlibExt.cLiTwoExt`, the integral continuation of `Li₂`
+  off the disc, with the reflection, inversion and five-term identities all
+  proved (`QOU/MathlibExt/ComplexRogersDilog.lean`,
+  `QOU/QBeta/FiveTwoComplexPentagon.lean`). Kummer's identity is therefore
+  **unblocked, not impossible** — it is open work, tracked as `qou-kmmr`.
+
+  Numerically it is exact: checked 2026-08-09 at 40 dps against this file's own
+  `Lob`/`tetAngle` definitions at five shapes including the 5₂ shape `y₁`,
+  residual `≤ 1.1e-41` (the precision floor) at every one.
 * Therefore **do not transport dilogarithm facts onto this symbol** — the
   five-term relation, the functional equations, or any N–Z result stated for
   *their* `D` — without first proving Kummer's identity. The name is shared;
