@@ -216,6 +216,20 @@ theorem trM4_phi (z : R) (u : Fin 24 → R) : trM4 z h (phi u) = trM z h u := by
   simp
   ring
 
+/-! ## Far-commutation on the ASCII side
+
+`simp` rewrites innermost-first, so the three intertwiners collapse a subscript
+composite to `phi (…)` one generator at a time — producing the *subscript* word
+shape. For the 6 words where the two bases differ that is not the ASCII word, and
+the two sides no longer match. Normalising needs `σ₀σ₂ = σ₂σ₀` on the ASCII
+generators as well; the subscript counterpart is
+`HeckeH4StabilizationRung.far_commute_σ₀σ₂`. -/
+
+theorem mulσ_farcomm02 (u : Fin 24 → R) :
+    mulσ0 h (mulσ2 h u) = mulσ2 h (mulσ0 h u) := by
+  funext i
+  fin_cases i <;> simp [mulσ0, mulσ2] <;> ring
+
 /-! ## What is NOT here yet: the product correspondence
 
 `phi_mulNF : phi (mulNF h u v) = mulNF₄ h (phi u) (phi v)` is the one step left,
@@ -231,23 +245,34 @@ theorem trM4_cyclic (z : R) (x y : Fin 24 → R) :
   exact trM_cyclic z h (psi x) (psi y)
 ```
 
-**The obstacle is mechanical, not mathematical.** All the content is above: the
-24 `phi_word_*` lemmas say precisely that each word action corresponds, and
-`mulNF`/`mulNF₄` are literal 24-term sums over exactly those word actions with
-coefficients `v i` and `(phi v) (piIdx i) = v i`. What fails is getting `simp` to
-apply `← phi_word_*` to the unfolded `mulNF₄`: the linter reports every one of
-the 24 as *unused*, so the rewrites never fire, and the two sides are then left
-as unequal-looking sums that `ring` cannot match.
+**The obstacle is mechanical, not mathematical.** Everything the statement needs
+is above: the generator actions correspond, hence every word action does
+(`phi_word_*`), the traces agree (`trM4_phi`), and `mulNF`/`mulNF₄` are literal
+24-term sums over exactly those word actions with coefficients related by
+`(phi v) (piIdx i) = v i`.
 
-Things tried: `phi` in the same `simp only` as the `←` rewrites (unfolds `phi`
-first and destroys the patterns), and the two-pass split above (rewrites still do
-not fire). Note `phi_word_0` is the trivial `phi u = phi u`, which is a
-degenerate simp lemma and may be worth excluding from the set.
+Three `simp`-based approaches have failed, each differently — recorded so a
+fourth guess is not needed:
 
-Likely fixes for whoever picks this up, cheapest first: drop `phi_word_0` from
-the rewrite set; use `conv` to target the right-hand side only; or abandon `simp`
-and write the 24 rewrites as an explicit `calc`/`rw` chain over the unfolded sum.
-Bean qou-x64l.
+1. **`phi` in the same `simp only` as `← phi_word_*`.** `phi` unfolds first and
+   destroys the rewrite patterns.
+2. **Two passes: `simp only [mulNF₄, ← phi_word_*]`, then unfold.** The
+   unused-simp-args linter reports **all 24 `phi_word_*` as unused** — they never
+   fire. Diagnosis: `simp` rewrites innermost-first, so `← phi_mulσ*` (which are
+   `phi_word_1/2/3` in disguise) collapse each composite one generator at a time,
+   yielding the *subscript* word shape; for the 6 words where the bases differ
+   that is not the ASCII word, so the longer lemmas never match.
+3. **Adding `mulσ_farcomm02` to normalise those 6.** Still fails, and worse: the
+   right-hand side comes out with **70 terms instead of 24**, carrying
+   coefficients indexed by `invIdx j` rather than by literals — `simp` is
+   mangling the coefficient vector, not merely failing to rewrite.
+
+What that points at: stop unfolding `mulNF`/`mulNF₄` by `simp` at all. The tree
+already has the structured accessors — `mulNF₄_e_right`, `mulNF₄_expand_right`,
+`mulNF₄_sum_left/right`, `basis_decomp₄` — and the proof should go through those,
+expressing both products as `Finset.sum` over the basis and reindexing along
+`piIdx` with `Finset.sum_nbij` or `Equiv.sum_comp`, so the 24 terms are never
+written out. Bean qou-x64l.
 -/
 
 end QOU.Machinery.H4Bridge
