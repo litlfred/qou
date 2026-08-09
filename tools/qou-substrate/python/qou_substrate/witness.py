@@ -464,6 +464,64 @@ def _check_raw_float64(witness: dict, name: str) -> None:
         raise ValueError(f"raw-float64 guard: {msg}")
 
 
+# ── Non-finite guard (NaN / Infinity) ───────────────────────────────
+#
+# `json.dump` emits bare `NaN`, `Infinity` and `-Infinity` by default. **JSON
+# has no such tokens** (RFC 8259 numbers are finite decimals), so a witness
+# containing one is not valid JSON and a strict parser rejects the whole file.
+# Python's own loader accepts them, which is why this goes unnoticed: the
+# producer round-trips its own output happily and only a non-Python consumer
+# discovers the file is unreadable.
+#
+# Found by the 2026-08-09 sweep: 25 witnesses under `computations/` fail
+# `json.load(..., parse_constant=raise)` — 20 live and 5 deprecated.
+#
+# Same shape as the raw-float64 guard above, deliberately: `warn` by default
+# so this is not a breaking change while the existing ones are re-run, `=1` to
+# raise in CI and when fixing a producer.
+#
+#     QOU_WITNESS_STRICT_NONFINITE=warn   report offending paths (default)
+#     QOU_WITNESS_STRICT_NONFINITE=1      raise ValueError
+#     QOU_WITNESS_STRICT_NONFINITE=0      silence entirely
+#
+# The fix is NOT to stringify the NaN and move on. A NaN in a witness is
+# normally a 0/0 or an empty reduction that the producer did not notice; decide
+# what the value should be, or record it as null with a caveat saying why.
+
+def _nonfinite_paths(obj, path=""):
+    """Yield JSON paths of every NaN / +-Infinity float in `obj`."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            yield from _nonfinite_paths(v, f"{path}.{k}")
+    elif isinstance(obj, (list, tuple)):
+        for i, v in enumerate(obj):
+            yield from _nonfinite_paths(v, f"{path}[{i}]")
+    elif isinstance(obj, float) and not isinstance(obj, bool):
+        if obj != obj or obj in (float("inf"), float("-inf")):
+            yield path
+
+
+def _check_nonfinite(witness: dict, name: str) -> None:
+    """Guard the single point where a witness is written. See the note above."""
+    mode = os.environ.get("QOU_WITNESS_STRICT_NONFINITE", "warn").strip().lower()
+    if mode in ("0", "off", "false"):
+        return
+    if mode == "":
+        mode = "warn"
+    paths = list(_nonfinite_paths(witness))
+    if not paths:
+        return
+    head = ", ".join(paths[:8]) + (" \u2026" if len(paths) > 8 else "")
+    msg = (f"{name}: {len(paths)} non-finite value(s) (NaN/Infinity) would "
+           f"enter the witness — {head}. JSON has no such token, so the file "
+           f"will not parse under a strict loader. Decide the value or record "
+           f"null with a caveat; do not stringify it and move on.")
+    if mode in ("warn", "warning"):
+        print(f"\u26a0 non-finite: {msg}", file=sys.stderr)
+    else:
+        raise ValueError(f"non-finite guard: {msg}")
+
+
 class WitnessBuilder:
     """
     Build a structured witness JSON conforming to ComputationWitness.
@@ -1076,6 +1134,7 @@ class WitnessBuilder:
             return out_path
 
         _check_raw_float64(witness, out_path.name)
+        _check_nonfinite(witness, out_path.name)
 
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
