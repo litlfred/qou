@@ -70,7 +70,7 @@ for _p in (str(_COMP), str(_COMP / "substrate"),
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from pyhecke.gram import NF_NAMES, TR_M, gram_matrix  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 
 mp.mp.dps = 50
 

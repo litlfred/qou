@@ -92,6 +92,58 @@ balanced in a fourth** (`q_turbulence_spectrum`). Same glyph, two conventions �
 the overloaded-symbol trap AGENTS.md warns about. *Reading a call site does not
 tell you which object you have.*
 
+## 🛑 CENSUS CORRECTION (2026-08-08, later) — it is 55 definitions, not 9
+
+The table above was built from a narrow grep (`qInt|qIntPoly|qBracket|qIntBal`)
+and is **badly incomplete**. A full scan for `def q{Int,Bracket,Num,Integer}*`
+across `content/quantum-observable-universe/**/*.lean` finds:
+
+| | count |
+|---|---|
+| **total q-integer definitions** | **55** |
+| balanced (canonical) | **43** |
+| geometric | **10** |
+| geometric-in-`q²` (legitimate per D1) | **1** |
+| integer polynomial (`1+X+X²`) | **1** |
+
+So the corpus is **overwhelmingly already balanced** — the convention is not in
+dispute, it is the *naming* that is. Under a dozen aliases: `qInt`, `qIntBal`,
+`qIntPoly`, `qIntReal`, `qIntSym`, `qIntZ`, `qInt2`, `qInt3`, `qBracket`,
+`qBracket2`, `qNum`, `qNumber`, `qNumberSym`, `qInteger`, `qIntegerRescaled`.
+
+**The 10 genuinely geometric definitions** (the actionable set for `qou-qint`):
+
+| file | name |
+|---|---|
+| `MathlibExt/QIntegerFactorial` | `qInt` |
+| `Resurgence/StokesConstantQDimCategoricity` | `qInt` |
+| `FluidDynamics/surreal_enstrophy_finite_modes` | `qInt` |
+| `BraidKnot/wedderburn_trace_identity` | `qInt` |
+| `QCollatz` | `qInt` |
+| `Mass/QHookDimension` | `qIntPoly` |
+| `Mass/QHookDimensionBalanced` | `qIntPoly` (the deliberate pair) |
+| `Torsion/TopologicalMass` | `qNumber` |
+| `lifting-and-descent/quantum-dilogarithm` | `qInteger` |
+| `Resurgence/StokesConstantQDimCategoricity` | `qIntPoly` (ℤ-polynomial) |
+
+**(D1) validated empirically.** `Interactions/HeckeEnergyPositivity` defines
+`qIntegerRescaled q k = Σ_{j<k} q^{2j}` — geometric, but **in `q²`**, which is
+exactly the case D1 says is *correct*. It is even named `Rescaled`. This is the
+concrete reason a blanket geometric→balanced sweep would introduce a bug.
+
+**Two mis-reads of my own, corrected by inspection rather than left standing:**
+
+* `Archimedean/GroundRing.qInt` scans as geometric but is **balanced** — its body
+  is `Σ_{k<|n|} T(n−1−2k)`, the symmetric weight string written out (and it
+  handles `n < 0` with the right antisymmetry). My classifier matched its
+  *comment*.
+* `Torsion/TopologicalMass.qNumber` is geometric and sits in a *mass* file, which
+  (D2) predicts should be a defect. **It is not**: it is used only by two lemmas
+  *about itself* (`qNumber_pos`, `qNumber_at_one`) and feeds no mass result.
+  Dead weight, not a live error. It does carry a genuine docstring defect — it is
+  labelled *"Quantum dilogarithm: `Φ_q(z) = ∫₀ᶻ ln_q(1+t)/t dt`"*, which is not
+  what it defines.
+
 ## Checked, and NOT defects
 
 Two files were checked directly rather than assumed guilty:

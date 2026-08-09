@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Order.Filter.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.QCasimir — Classical limit (q → 1) of the q-Casimir eigenvalue
@@ -43,8 +44,8 @@ open Filter Topology
     generic `qNumberSym` of `def:q-casimir`:
     `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)`. Re-stated locally so this block
     typechecks standalone. -/
-noncomputable def qNumberSym (q : ℝ) (n : ℤ) : ℝ :=
-  (q ^ n - q ^ (-n)) / (q - q⁻¹)
+noncomputable abbrev qNumberSym (q : ℝ) (n : ℤ) : ℝ :=
+  QOU.QInteger.qIntBalZ q n
 
 /-- q-Casimir eigenvalue over `ℝ` — the `K := ℝ` specialisation of the
     generic `QCasimirEigenvalue` of `def:q-casimir`: `[j]_q · [j+1]_q`. -/

@@ -6,7 +6,7 @@ import QOU.BraidKnot.SpechtStandardBasis
 import QOU.BraidKnot.SpechtClassification
 import QOU.BraidKnot.SpechtFinrankWired
 import QOU.BraidKnot.IdentityIContentDecomposition
-import QOU.BraidKnot.JucysMurphy
+import QOU.BraidKnot.JucysMurphyOV
 import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.OVTopAssembly
 

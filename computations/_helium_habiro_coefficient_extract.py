@@ -72,7 +72,7 @@ from habiro_coefficients_atomic import (  # noqa: E402
     cyclotomic_expansion,
     reconstruct,
 )
-from q_parameter import Q as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
 
 
 def _markov_z_q(q: sp.Symbol) -> sp.Expr:

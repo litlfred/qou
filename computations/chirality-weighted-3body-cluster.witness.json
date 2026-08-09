@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-24T11:57:27.678496+00:00",
-  "commitSha": "1e4bfb1655362502884d2545cff5e1ce4bee56e0",
+  "computedAt": "2026-08-08T20:09:21.020189+00:00",
+  "commitSha": "8ebaee55993e8d63c7cb3b4196bcdbee4b275bab",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-weighted-3body-cluster",
   "scriptFile": "chirality_weighted_3body_cluster_probe.py",
   "scriptHash": "650e9c6470aa",
-  "scriptCommitSha": "97e83599cba7a42baea000494cfbf6f57236561d",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,14 +19,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Connected 3-body cluster c3=joint-pair_sum for abs/signed/chiral combiners over the H_9 joint trace (Rust kernel, 0 fit). Tests whether the chirality sign sgn(w0^{S_l'}) flips c3 to attractive.",
   "parameters": {
-    "q_0": "1.1099785955573347",
-    "E0_MeV": "4.18598082758289",
+    "q_0": "1.1099785827513808",
+    "E0_MeV": "4.18598136329447",
     "free_parameters": 0
   },
   "data": {
@@ -34,19 +36,19 @@
       {
         "atom": "T",
         "abs_c3_MeV": "-1.7687753",
-        "signed_c3_MeV": "-1.6324813",
-        "chiral_c3_MeV": "0.075991558",
+        "signed_c3_MeV": "-1.6324812",
+        "chiral_c3_MeV": "0.075991527",
         "b3_empirical_MeV": "1.8081"
       },
       {
         "atom": "3He",
         "abs_c3_MeV": "-1.4054244",
         "signed_c3_MeV": "-1.3288376",
-        "chiral_c3_MeV": "0.12021737",
+        "chiral_c3_MeV": "0.12021733",
         "b3_empirical_MeV": "1.044345"
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

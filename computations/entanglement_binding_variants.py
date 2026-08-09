@@ -26,7 +26,7 @@ import sys
 import mpmath as mp  # noqa: E402
 
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, M_E_MEV  # noqa: E402
 
 # AME2020 total binding (MeV)

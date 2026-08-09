@@ -50,7 +50,11 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-from q_parameter import Q as q0, HA as h_q  # canonical aliases per AGENTS.md §7
+# 50-dps sources. `h_q` is only used in 1e-6 tolerance comparisons and `q0`
+# in a sympy subst cast to complex, so neither NEEDS full precision — but
+# reading the f64 name is what the NO FLOAT64 directive forbids, and the
+# _MP family is a drop-in in both positions.
+from q_parameter import Q_MP as q0, HA_MP as h_q  # canonical aliases per AGENTS.md §7
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
 # NOT calibration inputs — per AGENTS.md §"Canonical derivation chain" the

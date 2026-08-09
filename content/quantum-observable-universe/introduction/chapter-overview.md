@@ -43,7 +43,7 @@ $$
 
 [*The Mass Endomorphism*](#chap:mass-endomorphism) systematically extracts mass from the spectral data of a single categorical endomorphism. Mass firmly behaves as a categorical invariant: the Markov trace $\mathrm{tr}_M$ of a distinguished Hecke element. A recursive Gröbner–Shirshov reduction evaluates this trace, culminating in the **mass endomorphism conjecture** which analytically resums the brane tower.
 
-[*Particle Interactions and Nuclear Structure*](#chap:particle-interactions) develops the exact interaction-selection mechanism. A **semidefinite program** precisely selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound rigorously limits these operators to a strictly **six-dimensional** basis in $H_3(q)$, capturing identity, $\beta$-decay, photon handling, and pair production without free parameters.
+[*Nuclear Interactions and Binding*](#chap:nuclear-interactions) develops the exact interaction-selection mechanism. A **semidefinite program** precisely selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound rigorously limits these operators to a strictly **six-dimensional** basis in $H_3(q)$, capturing identity, $\beta$-decay, photon handling, and pair production without free parameters.
 
 [*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) formally defines the topological mass formula:
 $$

@@ -34,7 +34,13 @@ def main() -> int:
     assert n1n == _NEUTRON_G1, "q=None neutron g1 != _NEUTRON_G1"
 
     # 2. explicit q=q0 reproduces q=None to the float floor.
-    q0 = mp.mpf(str(Q0))
+    #
+    # Sourced from the 50-dps string, not `mp.mpf(str(q_parameter.Q))`. That
+    # idiom is an mpf holding 17 real digits, and `nucleon_gen_chains` now
+    # rejects it — rightly: it was testing the q-path with a float64 while the
+    # q=None path it is compared against is exact.
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    q0 = mp.mpf(str(_Q50))
     g0q, g1q = nucleon_gen_chains(['u', 'u', 'd'], q=q0)
     md = max(abs(float(a[1]) - float(b[1])) for a, b in zip(g0q + g1q, g0n + g1n))
     assert md < 1e-9, f"q=q0 vs q=None max |Δd| = {md} too large"

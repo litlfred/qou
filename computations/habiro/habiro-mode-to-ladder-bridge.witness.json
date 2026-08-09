@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:40:06.215216+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T13:04:25.818011+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "both_candidates_scale_fix_solvable",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 705,
+  "durationMs": 1744,
   "computation": "habiro-mode-to-ladder-bridge",
   "scriptFile": "habiro_mode_to_ladder_bridge.py",
-  "scriptHash": "48061f964e52",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "bcd8161f0ee9",
+  "scriptCommitSha": "86a218eb31906ceb0b4a575f0231d1c28a5a2f77",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Executes the PR #1622 open bridge: the change of variable u=√q ↦ u_L=b·ℏ_q² that reads the ladder c_k off the exact Δtr_M mode decomposition. Δtr_M expressed in ℏ_q is an ordinary power series; u_L=b·ℏ² makes even-in-ℏ rungs the integer-u_L ladder (G_k=a_2k/b^k, anchor-independent constants — the only non-C1-refuted path) and odd-in-ℏ rungs the bar-odd half-integer remainder. Peels c_2..c_4 with c_2=−1 fixing the scale; contrasts the anchor-independent formal coefficients against the naive real-q analytic control (predicted C1-refuted). Exact symbolic; tiered; no fit; no wiring.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
@@ -130,6 +131,24 @@
     "anchor_stability": {
       "bridge_ck_are_constants": true,
       "note": "Bridge c_k are formal-series constants (no q₀ enters) ⇒ anchor-independent by construction — the non-C1-refuted path. The empirical c_3 swing (proton −2.069 / muon −2.010) is the higher-rung truncation, not a c_3 ambiguity."
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "habiro-coefficients-atomic.witness.json",
+        "sha256": "640903ed5f8137e42b5e2581b7bd3a80bc313755b9e923c1ff4b4746d55d468a",
+        "size_bytes": 12671,
+        "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:55:54.718701+00:00"
+      },
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "895ce0f3477a26332ae4acb30c2f4ca908c38982777051290c5ee43dd5e8889c",
+        "size_bytes": 5560,
+        "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+        "scriptCommitSha": "890ee81e8fb0ad89fc0861c56a54487b5eb82353",
+        "computedAt": "2026-06-22T14:32:18.810430+00:00"
+      }
+    ]
   }
 }

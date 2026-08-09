@@ -72,7 +72,7 @@ from habiro_coefficients_atomic import (  # noqa: E402
     reconstruct,
 )
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
-from q_parameter import Q as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────────

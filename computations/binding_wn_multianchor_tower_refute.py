@@ -45,7 +45,7 @@ try:
 except Exception:
     mp.mp.dps = 50
 try:
-    from q_parameter import Q as Q0
+    from q_parameter import Q_MP as Q0
     q = mp.mpf(str(Q0))
 except Exception:
     q = mp.mpf("1.10997859555733471")

@@ -60,8 +60,12 @@ TAU0_IM = mp.mpf("0.186676")
 
 
 def _q0():
-    from qou_substrate.constants import Q  # type: ignore[import-not-found]
-    return mp.mpf(str(Q))
+    # Q_50_DIGIT_STR, not Q: `Q` is the f64 solve, and mpf(str(Q)) would
+    # convert a double to a high-precision TYPE while preserving only its
+    # 17 digits (owner directive: NO FLOAT64).
+    from qou_substrate.constants import (  # type: ignore[import-not-found]
+        Q_50_DIGIT_STR)
+    return mp.mpf(Q_50_DIGIT_STR)
 
 
 def _young_natural(shape):

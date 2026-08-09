@@ -25,6 +25,25 @@ import QOU.MathlibExt.YekutieliIntegration
 import QOU.MathlibExt.SDP
 import QOU.MathlibExt.SDPEmptyConstraints
 import QOU.MathlibExt.SDPRealUniqueness
+-- The complex dilogarithm and its analytic continuation off the unit disc.
+-- `ComplexDilogarithm` was ORPHANED from this root — `lake build` compiles only
+-- `QOU.lean`'s import closure, so a module nothing imports is never checked at
+-- all (bean qou-orph). Wiring the chain here puts every theorem below under CI.
+import QOU.MathlibExt.ComplexDilogarithm
+import QOU.MathlibExt.ComplexDilogarithmSlit
+import QOU.MathlibExt.ComplexDilogarithmDeriv
+import QOU.MathlibExt.ComplexDilogarithmUnique
+import QOU.MathlibExt.ComplexDilogarithmLanden
+import QOU.MathlibExt.AlternatingZetaTwo
+import QOU.MathlibExt.ComplexDilogarithmBoundary
+import QOU.MathlibExt.ComplexDilogarithmOnCut
+import QOU.MathlibExt.ComplexDilogarithmInversion
+-- Scalar implicit function theorem, and two one-variable transport lemmas
+-- (a constant pinned off a single point; an integer branch index pinned by a
+-- window). All Mathlib gaps; all sorry-free.
+import QOU.MathlibExt.ImplicitScalar
+import QOU.Archimedean.ConstantOffOnePoint
+import QOU.Archimedean.BranchIntegerPinning
 -- Weierstrass primary-factor estimate ‖1 - E_p(z)‖ ≤ ‖z‖^{p+1}: the Mathlib-gap
 -- infrastructure that closes PI-2 of QOU.Mathlib.HadamardFactorization.
 -- Sorry-free, so it is wired here for CI type-checking (unlike
@@ -68,6 +87,11 @@ import QOU.Mathlib.RigidityReductionScope
 import QOU.MathlibExt.PosSemidefTraceZero
 import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
+import QOU.MathlibExt.CauchyBinet
+import QOU.MathlibExt.RankMinor
+import QOU.MathlibExt.GramNondegenerate
+import QOU.MathlibExt.GroupAlgebraCenter
+import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
@@ -287,6 +311,9 @@ import QOU.Archimedean.DilogReflection
 import QOU.Archimedean.IdealTetrahedronConcavity
 import QOU.Archimedean.LobachevskyDerivative
 import QOU.Archimedean.IdealTetrahedronShapeBridge
+import QOU.Archimedean.IdealTetrahedronVolumeConcavity
+import QOU.Archimedean.LobachevskyMaximum
+import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
@@ -305,6 +332,17 @@ import QOU.Archimedean.DilogNaStokesOrdering
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot
+-- The Specht irreducibility chain. Historically kept OUT of the umbrella
+-- because `SpechtIrreducible` carried an honest `sorry`; it no longer does
+-- (`specht_form_nondegenerate` and `specht_isSimple` are both proved), so it
+-- belongs in the build closure where CI can see it. Its own imports
+-- (`SpechtStandardBasisCore`) still carry the Garnir straightening stub —
+-- that is pre-existing and now visible in the package build rather than
+-- hidden outside it.
+import QOU.BraidKnot.SpechtBaseChange
+import QOU.BraidKnot.SpechtIrreducible
+import QOU.BraidKnot.SpechtCrossDominance
+import QOU.BraidKnot.SpechtCrossKappa
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -358,6 +396,7 @@ import QOU.Braiding.non_self_intersection
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
 import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
+import QOU.BraidsAndKnots.TFromTraceCyclicity
 -- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
 -- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
 import QOU.BraidsAndKnots.PachnerPentagonBorromean
@@ -408,6 +447,43 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape
+-- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
+-- library root: `lake build` only builds `QOU.lean`'s import closure, so a
+-- module nothing imports is never compiled. See bean qou-orph.
+import QOU.QBeta.FiveTwoCyclotomicBloch
+import QOU.QBeta.FiveTwoLevelSevenLadder
+import QOU.QBeta.FiveTwoRogersExtend
+import QOU.QBeta.FiveTwoFiveTermArguments
+import QOU.QBeta.FiveTwoRogersReflection
+import QOU.QBeta.FiveTwoAbelFiveTerm
+-- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
+-- top of this file (with the other MathlibExt imports), not here — it is
+-- general analytic infrastructure, not 5₂ content.
+import QOU.Archimedean.LiTwoNegOne
+import QOU.QBeta.FiveTwoDiscriminant
+import QOU.QBeta.FiveTwoCutAvoidance
+import QOU.QBeta.FiveTwoDeformedSaddle
+import QOU.QBeta.FiveTwoCurveDeriv
+import QOU.QBeta.FiveTwoEnvelopeSum
+import QOU.QBeta.FiveTwoEnvelopeAssembly
+import QOU.QBeta.FiveTwoBranchByArgument
+import QOU.QBeta.FiveTwoArgSector
+import QOU.QBeta.FiveTwoRootStructure
+import QOU.QBeta.FiveTwoRootLabelling
+import QOU.QBeta.FiveTwoBranchPinned
+import QOU.QBeta.FiveTwoEnvelopeWiring
+import QOU.QBeta.FiveTwoPairSaddle
+import QOU.QBeta.FiveTwoBranchPinnedB
+import QOU.QBeta.FiveTwoTransport
+import QOU.QBeta.FiveTwoEnvelopeInstance
+import QOU.QBeta.FiveTwoLevelSevenBridge
+import QOU.QBeta.FiveTwoExtendIdentification
+import QOU.QBeta.FiveTwoLevelSevenAssembly
+import QOU.QBeta.FiveTwoSaddleSumRule
+import QOU.QBeta.FiveTwoDTSpectrumSplit
+import QOU.QBeta.FiveTwoSaddleCurve
+import QOU.QBeta.FiveTwoStokesMatrixIdentities
+import QOU.QBeta.FiveTwoSumRuleIntegrand
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge
@@ -498,6 +574,21 @@ import QOU.QBeta.A3OffBlockDerivation
 -- _injective) ⇒ scope-(a), one real DOF. Deriving E from the DM q-cubic prolongation symbol
 -- is the open keystone (DerivedAmplitudeGivesLift, no instance).
 import QOU.QBeta.A3AntiSelfAdjointLift
+-- DT-index / 3d-index / graded-Euler route is BAR-PARITY excluded from supplying the
+-- anti-self-adjoint amplitude E (DT values bar-even integers; E bar-odd) — scope-(b).
+import QOU.QBeta.DTIndexAmplitudeE
+-- WALL: the LOCAL Stokes/resurgence route cannot supply the A=3 amplitude E —
+-- single-slope carrier ⇒ RSZ isoformal dim 0 ⇒ E=0 (no lift, scope-(b)); multi-slope
+-- leaves E free ⇒ value lives in the GLOBAL Birkhoff matrix (open successor, no instance).
+import QOU.QBeta.StokesAmplitudeE
+-- WELL-POSEDNESS of E as a functional of the GLOBAL Birkhoff matrix: (a) the cross-ratio
+-- P₀₁P₁₀/(P₀₀P₁₁) is the UNIQUE gauge-invariant (frame-free target); (b) a single entry is
+-- gauge-dependent (residual elliptic-unit freedom), so E = the cross-ratio, not an entry.
+import QOU.QBeta.BirkhoffAmplitudeWellPosed
+-- CONSTRUCTION: the A=3 amplitude E is the frame-free Birkhoff CROSS-RATIO χ(P)
+-- (not a bare entry — gauge-movable, ill-posed); cross-ratio elliptic because the exponent
+-- multipliers cancel; the WALL is χ(P)'s VALUE (0-exp determined, ∞-exp/closed-form open).
+import QOU.QBeta.BirkhoffAmplitudeE
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
@@ -544,6 +635,11 @@ import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
+import QOU.Archimedean.HodgeWeilRealStructure
+-- B2-lift AUTOMATIC (moduli-independent) ingredients, Lean-locked (bean qou-8mbd):
+-- Brick 1 nome exponent-group equivariance (τ↦−τ ↔ q↦q⁻¹; τ↦½−τ ↔ q↦−q⁻¹, Z4→GInt units);
+-- Brick 2 Weil∘Galois = conj + complete Fix(c)/Fix(F) characterization. No MOC instance (open).
+import QOU.Archimedean.B2LiftAutomaticIngredients
 import QOU.Archimedean.CanonicalTitsIso
 import QOU.Archimedean.TauRhoHodgeShadow
 import QOU.Archimedean.TauS5EquivarianceReduction
@@ -646,6 +742,27 @@ import QOU.MassTheory.BraneGeometricResummation
 -- under every volume reading — Vol ≡ 0 for the literal mass-braid H₉ closures, and
 -- a 2.37× anti-correlated residual for the corpus-canonical binding links.
 import QOU.MassTheory.VolTHe3RadialHandle
+-- prjo: q₀-free ≥3-row extensive cumulant, forward from the proved Δ_λ. Feeds the
+-- C(A,k) cluster basis the combinatorial ≥3-row signed-Springer-dim content s_k;
+-- re-derives μ₂=0 combinatorially (0-fit match) but gives the (−,+) sign order vs
+-- the derived (+,−) window and ratio 2 vs ~9.75. Scope-(a) negative, q₀-free.
+import QOU.MassTheory.ThreeRowExtensiveCumulant
+-- qou-prjo LEAD-2 (geometric route): transverse NA-Stokes surface-curvature
+-- structure + THE WALL (nonzero pairing needs position-dependent transport =
+-- the missing surface-2-form data). Forward geometric, sorry-free, magnitude
+-- NOT derived.
+import QOU.MassTheory.TransverseSurfaceCurvature
+-- qou-prjo: a two-block dominance exchange forces a zero (IVT), and "block B
+-- overtook block A" and "the total went negative" are the same statement. The
+-- per-block dominance data are HYPOTHESES — the f64 numbers are not certified,
+-- and the two-block mechanism is realised at n=6 ONLY (n=9 is multi-block
+-- cancellation, n=12's total exceeds its largest term). Sorry-free.
+import QOU.BraidsAndKnots.ThreeRowSignCrossing
+-- qou-prjo: the Wenzl-level stratum degeneracy — s_λ = 0 at integer level r=k for
+-- every ℓ(λ) > k. Since r → 2⁺ as q → 1⁺, the whole ℓ≥3 stratum degenerates at
+-- q=1, which is WHY the ≥3-row trace is O(10⁻⁵) near q=1. Sorry-free, generic
+-- Field K.
+import QOU.BraidsAndKnots.WenzlLevelStratum
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):
@@ -660,3 +777,27 @@ import QOU.BraidsAndKnots.DeltaLambdaJetOrderDegreeSelection
 import QOU.BraidsAndKnots.DeltaLambdaGradedConcentration
 import QOU.BraidsAndKnots.NStatConjugateGeneral
 import QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional
+-- qou-48is: the Φ_q transfer factors T(d) = S + d·1 all commute, so the chain
+-- product — and the readout V̂ = z·M₁₀ + M₁₁ — depends on the crossing
+-- coefficients ONLY as a multiset. Consequence: the two ³He arrangements ppn
+-- and pnp are EXACTLY degenerate on the bare nucleon chain, so rule (iii) of
+-- prop:ground-state-ordering is a tie there, not a strict win. Sorry-free,
+-- generic CommRing; derives no binding energy and no ordering.
+import QOU.MassTheory.TransferFactorCommute
+-- qou-48is (doc-currency, PR #4854): PR #4851's two ordering Lean files were
+-- never registered here, so nothing built them. Both verify lean-direct exit 0.
+import QOU.MassTheory.CanonicalOrderingSaddle
+import QOU.MassTheory.NucleonOrderingSymmetry
+-- qou-48is (PR #4855): the A>=4 clause of prop:ground-state-ordering is FALSE —
+-- explicit strictly-better arrangement at A=5 (sorted pnnnn beats the prescribed
+-- npnnn on BOTH readouts), proved for an interval of q containing the anchor.
+import QOU.MassTheory.GroundStateOrderingRefutation
+-- qou-prjo (PR: germ gauge covariance): the germ q-curvature F_q = [dq_i, dq_j]
+-- is NOT gauge-covariant (connection law, concrete nonzero defect witness), so
+-- the transverse NA-Stokes Omega_2 has no basis-independent value; the covariant
+-- second-order object (the cup square) is identically a coboundary.
+import QOU.MassTheory.GermConnectionGaugeCovariance
+-- qou-prjo (doc-currency): PR #4848 / #4849's Lean files were never registered
+-- here, so nothing built them. Both verify lean-direct exit 0.
+import QOU.MassTheory.GermRootVectorGaugeFixing
+import QOU.MassTheory.TransversePairingClusterDecomposition

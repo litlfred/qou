@@ -82,6 +82,40 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     return val
 
 
+_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859555"))
+_Q0_FIELDS = ("q_0_50dps", "q0", "q_0", "q0_50dps")
+
+
+def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
+    """The anchor a payload's own q₀ VALUES imply, or None if it records none.
+
+    Evidence only — used to refuse carrying a stale `q0Anchor` across a
+    re-anchoring, never to invent a pin. Returns None when the payload records
+    no recognisable q₀, and also when it records BOTH pins: a payload that
+    legitimately spans layers (a cross-anchor comparison) must not have either
+    one asserted over it.
+    """
+    seen = set()
+
+    def walk(node, depth=0):
+        if depth > 4 or len(seen) > 1:
+            return
+        if isinstance(node, Mapping):
+            for k, v in node.items():
+                if k in _Q0_FIELDS and isinstance(v, str):
+                    for name, pre in _Q0_PREFIXES:
+                        if v.strip().startswith(pre):
+                            seen.add(name)
+                elif isinstance(v, (dict, list)):
+                    walk(v, depth + 1)
+        elif isinstance(node, list):
+            for v in node[:64]:
+                walk(v, depth + 1)
+
+    walk(payload)
+    return seen.pop() if len(seen) == 1 else None
+
+
 def resolve_q0_anchor(
     script_path: Union[str, Path], *, env: Optional[Mapping[str, str]] = None,
 ) -> tuple:
@@ -119,6 +153,37 @@ def resolve_q0_anchor(
         if anchor is None:
             anchor = "proton"  # runtime default: not-ideal_muon ⇒ proton
     return anchor, (_q0_value_for_anchor(anchor) if anchor in ("muon", "proton") else None)
+
+
+def q0_anchor_is_declared(
+    script_path: Union[str, Path], *, env: Optional[Mapping[str, str]] = None,
+) -> bool:
+    """Whether this producer's pin is POSITIVELY declared, vs merely defaulted.
+
+    ``resolve_q0_anchor`` returns ``"proton"`` for any stem absent from
+    ``q0_anchor_manifest.json`` — that is the runtime *default*, not evidence.
+    The manifest lists ~309 of ~780 producers, so absence is the common case
+    and says nothing about the real pin.
+
+    Callers that want to *contradict* a recorded pin must gate on this: without
+    a positive declaration there is no ground to overrule what a producer
+    previously recorded, and doing so would strip legitimate ``muon`` labels
+    from every unlisted producer.
+    """
+    environ = os.environ if env is None else env
+    e = (environ.get("QOU_Q0_ANCHOR", "") or "").strip().lower()
+    if e in ("ideal", "muon", "canonical", "physical", "proton", "experimental"):
+        return True
+    try:
+        man = json.loads(
+            (_repo_root() / "computations" / "q0_anchor_manifest.json")
+            .read_text(encoding="utf-8")
+        )
+    except Exception:  # noqa: BLE001
+        return False
+    stem = Path(script_path).stem
+    return any(stem in man.get(k, [])
+               for k in ("ideal_muon", "physical_proton", "ambiguous"))
 
 
 def _git_head_sha() -> str:
@@ -806,6 +871,25 @@ class WitnessBuilder:
             if k not in witness:
                 witness[k] = v
 
+        # Stamp the q₀ pin when it is POSITIVELY declared for this producer
+        # (env var or an explicit `q0_anchor_manifest.json` entry). Without
+        # this, `q0Anchor` is only written by producers that remember to call
+        # `stamp_staleness_metadata` — 184 of ~780 — so the manifest carried no
+        # weight at write time and stale pins survived on preserve-forward.
+        # Undeclared producers are still left unstamped: Q0_ANCHOR_MISSING is a
+        # tolerated state, and defaulting one in would assert a pin nobody
+        # established.
+        if "q0Anchor" not in witness:
+            try:
+                if q0_anchor_is_declared(self._script_path):
+                    _a, _v = resolve_q0_anchor(self._script_path)
+                    if _a in ("muon", "proton"):
+                        witness["q0Anchor"] = _a
+                        if _v is not None:
+                            witness["q0Value"] = _v
+            except Exception:  # noqa: BLE001
+                pass
+
         return witness
 
     def save(self, extra: Optional[dict] = None) -> Path:
@@ -849,10 +933,60 @@ class WitnessBuilder:
         # Preserve only. A witness with no recorded pin still gets none —
         # inventing one would assert a pin the producer never established, and
         # Q0_ANCHOR_MISSING is a tolerated state.
+        # ...but NEVER across an actual re-anchoring. Carrying a stale pin is
+        # strictly worse than dropping one: a dropped pin reads as
+        # Q0_ANCHOR_MISSING, a tolerated state the audit reports, whereas a
+        # carried one ASSERTS a layer the numbers no longer belong to — the
+        # muon-value-read-as-proton confusion of bean tnjb, with a provenance
+        # field vouching for it.
+        #
+        # TWO independent ways a carried pin can be FALSE. We drop on EITHER,
+        # because neither subsumes the other (merge of two fixes that landed
+        # concurrently, 2026-08-09):
+        #
+        #  (1) PAYLOAD EVIDENCE — the freshly computed q₀ in the payload
+        #      disagrees with the recorded label. Measured:
+        #      `markov_peel_atomic_witness` re-anchored to proton (its stem is
+        #      NOT in `q0_anchor_manifest.json`) and the rebuilt witness still
+        #      carried `q0Anchor: muon` with the muon `q0Value`, next to a
+        #      proton `parameters.q0`. Being undeclared, (2) misses it.
+        #  (2) DECLARED RE-ANCHORING — an env var or an explicit manifest entry
+        #      contradicts the recorded label. Measured: `qbeta_ck_cache`
+        #      computed at the proton pin while its witness read
+        #      `q0Anchor: "muon"`; the Q_β prediction had moved 30.4 ppb under
+        #      a label saying it had not. Where the payload carries no readable
+        #      q₀, (1) misses it.
+        #
+        # (1) is payload EVIDENCE, not the resolver default, so it does NOT
+        # have the failure mode that rules out gating on `resolve_q0_anchor`
+        # alone: that defaults to "proton" for the ~470 producers absent from
+        # the manifest, and gating on it would strip legitimate `muon` labels
+        # wholesale. Reading the actual computed value does not.
+        #
+        # On either contradiction DROP rather than correct: writing the
+        # resolved pin here would assert a stamp the producer never
+        # established — the very thing the "preserve only" rule above exists to
+        # prevent — and Q0_ANCHOR_MISSING is explicitly tolerated. A producer
+        # that wants a positive label calls `stamp_staleness_metadata`.
         if isinstance(existing, dict):
-            for _k in ("q0Anchor", "q0Value"):
-                if _k not in witness and _k in existing:
-                    witness[_k] = existing[_k]
+            _recorded = existing.get("q0Anchor")
+            _stale = False
+            if _recorded in ("muon", "proton"):
+                _actual = _q0_anchor_from_payload(witness)
+                if _actual is not None and _actual != _recorded:
+                    _stale = True                      # (1) payload evidence
+                if not _stale:                         # (2) declared re-anchor
+                    try:
+                        if q0_anchor_is_declared(self._script_path):
+                            _resolved, _ = resolve_q0_anchor(self._script_path)
+                            _stale = (_resolved in ("muon", "proton")
+                                      and _resolved != _recorded)
+                    except Exception:  # noqa: BLE001
+                        _stale = False
+            if not _stale:
+                for _k in ("q0Anchor", "q0Value"):
+                    if _k not in witness and _k in existing:
+                        witness[_k] = existing[_k]
 
         # If an existing witness is substantively identical (ignoring
         # ephemeral meta fields), preserve it — avoids CI drift loops

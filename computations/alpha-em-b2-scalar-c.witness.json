@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-24T21:02:49.254976+00:00",
-  "commitSha": "536e6ad66d1bab0774231c5bdafb5a3a0e16e464",
+  "computedAt": "2026-08-09T00:21:30.872604+00:00",
+  "commitSha": "ac41614653db40f53b4e20c70de0aa699c0d36b1",
   "assertions": [
     {
       "name": "scalar_commutant_nullity",
@@ -13,7 +13,7 @@
     },
     {
       "name": "invariant_form_symmetric",
-      "computed": "1.67e-51",
+      "computed": "9.188e-52",
       "expected": "0",
       "passed": true,
       "tolerance": 1e-30,
@@ -21,11 +21,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 14,
   "computation": "alpha-em-b2-scalar-c",
   "scriptFile": "alpha_em_b2_scalar_c_probe.py",
-  "scriptHash": "06c247725997",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1fcdf8435e46",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,15 +35,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "α_EM B2 τ-identification, Option C (Markov-side pin of scalar c). Machine-verified for the std=(4,1) seminormal H₅(q₀)-block: invariant-form space nullity = 1 (scalar-commutant / Schur premise of #4160 confirmed), unique generator symmetric (orthogonal type, IsSymm premise), Markov weight w_(4,1)(q₀)=d_q²/[5]_q! reported as the Markov-side normalization. Hodge-side polarization normalization (Braden–Northover period matrix) is the remaining refinement; Schur guarantees proportionality. No fit, no instance, nothing wired; 1/(8π) phase-4.",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "auditOnly": "docs/audits/2026-07-24-alpha-em-b2-tau-identification-attack-options.md",
   "parameters": {
-    "q0": "1.1099785827513808",
-    "q0_pin": "qou_substrate.constants.Q (package pin)",
+    "q0": "1.10997858275138080759166909561",
+    "q0_pin": "qou_substrate.constants.Q_50_DIGIT_STR (package pin, 50 dps)",
     "shape": [
       4,
       1
@@ -52,16 +55,16 @@
     "dps": 50
   },
   "data": {
-    "hecke_relation_residual": "8.01829e-51",
-    "braid_relation_residual": "6.01372e-51",
+    "hecke_relation_residual": "5.34553e-51",
+    "braid_relation_residual": "5.34553e-51",
     "invariant_form_nullity": 1,
     "invariant_form_is_symmetric": true,
-    "orthogonality_residual": "7.5716e-51",
-    "d_q_std_at_q0": "4.10968241120794114727446347749",
-    "wedderburn_weight_std_at_q0": "0.128620004175246883935741331662",
-    "markov_side_pin_of_c": "0.128620004175246883935741331662",
+    "orthogonality_residual": "6.68191e-51",
+    "d_q_std_at_q0": "4.1096824112079411617605687891",
+    "wedderburn_weight_std_at_q0": "0.128620004175246883333850815092",
+    "markov_side_pin_of_c": "0.128620004175246883333850815092",
     "open_remaining": "Hodge-polarization normalization from Braden–Northover period matrix (braden-northover-2012); c = markov_norm / hodge_norm. Schur (#4160) forces proportionality.",
-    "verdict": "Option C (Markov-side pin of the B2 scalar c). For the actual std=(4,1) seminormal H₅(q₀)-block: (i) the invariant-bilinear-form space is EXACTLY 1-dimensional — the numerical witness that the commutant is scalar (absolute irreducibility, Schur), the named hypothesis of Option B's invariantForm_proportional_of_commutantScalar (#4160); (ii) its unique generator is SYMMETRIC (orthogonal type; residual 1.67e-51), matching the B2 IsSymm premise discharged in MarkovGramRealSymm.lean; (iii) the canonical Markov normalization is w_(4,1)(q₀) = d_q²/[5]_q! = 0.128620004175. STRICT: the physical c = (Markov norm)/(Hodge polarization norm); the Hodge denominator needs the Braden–Northover period polarization of Jac(Bring) — the remaining refinement. Schur (#4160) GUARANTEES proportionality; nothing is fabricated, no TauRhoHodgeLift instance is registered, 1/(8π) stays phase-4. Nullity=1 and symmetric type are generic in q (q₀-pin-independent)."
+    "verdict": "Option C (Markov-side pin of the B2 scalar c). For the actual std=(4,1) seminormal H₅(q₀)-block: (i) the invariant-bilinear-form space is EXACTLY 1-dimensional — the numerical witness that the commutant is scalar (absolute irreducibility, Schur), the named hypothesis of Option B's invariantForm_proportional_of_commutantScalar (#4160); (ii) its unique generator is SYMMETRIC (orthogonal type; residual 9.19e-52), matching the B2 IsSymm premise discharged in MarkovGramRealSymm.lean; (iii) the canonical Markov normalization is w_(4,1)(q₀) = d_q²/[5]_q! = 0.128620004175. STRICT: the physical c = (Markov norm)/(Hodge polarization norm); the Hodge denominator needs the Braden–Northover period polarization of Jac(Bring) — the remaining refinement. Schur (#4160) GUARANTEES proportionality; nothing is fabricated, no TauRhoHodgeLift instance is registered, 1/(8π) stays phase-4. Nullity=1 and symmetric type are generic in q (q₀-pin-independent)."
   },
   "caveats": [
     "Nullity=1 and symmetric type are generic in q (hold for all semisimple q>0), so independent of the q₀ pin. Only w_(4,1)(q₀) is q₀-dependent.",

@@ -72,7 +72,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim,
     partitions_of,
 )
-from q_parameter import Q  # noqa: E402
+from q_parameter import Q_MP as Q  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 50

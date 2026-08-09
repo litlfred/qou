@@ -37,14 +37,24 @@ Restructured per §1a honest dispositions:
   - claim (iii) `shell_filling_lp_strong_duality` — the optimal LP
     primal objective equals the dual objective `Z·y₀` (LP strong
     duality for the electron assignment problem).
+
+## Base ring (§7c)
+
+Everything counted here -- occupancies, capacities, singly-occupied sites -- is
+`ℕ`, and the only scalars are the LP dual variable `y_0` and the primal
+objective, related by `primal_obj = Z * y_0`. That needs a natural-number cast
+and a product, nothing ordered and nothing archimedean, so the LP scalars are a
+generic `[Semiring R]`; the substrate evaluation is `R := ℝ`.
 -/
 
 namespace QOU.Molecular
 
+variable {R : Type*} [Semiring R]
+
 /-- Data of the shell-filling claim for atom `(Z, N)`.  All fields are
     *inputs* (model data, defining formulas, and the Pauli structural
     hypothesis); none carries a conclusion of the proposition. -/
-class ShellFillingRuleContext where
+class ShellFillingRuleContext (R : Type*) [Semiring R] where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -69,21 +79,15 @@ class ShellFillingRuleContext where
   /-- Number of singly-occupied sites of a valence configuration. -/
   singly : ValenceConfig → ℕ
   /-- LP dual variable `y₀` (electron chemical potential). -/
-  y_0 : ℝ
+  y_0 : R
   /-- Optimal primal objective of the electron assignment LP (the
       minimal total `Φ₁`). -/
-  primal_obj : ℝ
-  /-- Inner shells fill completely. -/
-  inner_shells_fill : ∀ n : ℕ, n < n_val → occupancy n = capacity n
-  /-- Hund's rule: ground state maximises singly-occupied valence sites. -/
-  hund_rule : ∀ c : ValenceConfig, singly c ≤ singly ground
-  /-- LP strong duality. -/
-  lp_strong_duality : primal_obj = (Z : ℝ) * y_0
+  primal_obj : R
 
 /-- **Pauli occupancy bound — derived sorry-free.**  Every shell obeys
     `occupancy n ≤ 2n²`, from the Pauli hypothesis and the defining
     capacity formula (genuine algebra, not a projection). -/
-theorem shell_filling_pauli_bound [ctx : ShellFillingRuleContext]
+theorem shell_filling_pauli_bound [ctx : ShellFillingRuleContext R]
     (n : ℕ) : ctx.occupancy n ≤ 2 * n ^ 2 := by
   have h := ctx.occupancy_le_capacity n
   rwa [ctx.capacity_def n] at h
@@ -94,9 +98,10 @@ theorem shell_filling_pauli_bound [ctx : ShellFillingRuleContext]
     valence electron.  The `Φ₁`-monotonicity argument is not yet
     formalised. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext] :
+theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext R] :
     ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
-  exact ctx.inner_shells_fill
+  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+  sorry
 
 /-- **Claim (ii), Hund's rule — stated, not yet proved.**  Within the
     valence shell the ground state maximises the number of singly
@@ -105,9 +110,10 @@ theorem shell_filling_inner_shells [ctx : ShellFillingRuleContext] :
     minimised on distinct spatial sites.  The `Φ₁` comparison is not
     yet formalised. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext] :
+theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext R] :
     ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
-  exact ctx.hund_rule
+  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+  sorry
 
 /-- **Claim (iii), LP strong duality — stated, not yet proved.**  The
     optimal primal objective of the electron assignment LP equals the
@@ -116,9 +122,10 @@ theorem shell_filling_hund_rule [ctx : ShellFillingRuleContext] :
     duality for this LP is not yet formalised. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP strong duality)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext] :
-    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
-  exact ctx.lp_strong_duality
+theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext R] :
+    ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
+  -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
+  sorry
 
 /-- **Proposition** ([`prop:shell-filling-rule`]) — resolving
     declaration for the `lean.ref` URI
@@ -132,10 +139,10 @@ theorem shell_filling_lp_strong_duality [ctx : ShellFillingRuleContext] :
     named sub-theorems (see module docstring), not projected
     conclusion fields. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/shell-filling-rule.md
-theorem shell_filling_rule [ctx : ShellFillingRuleContext] :
+theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :
     (∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n) ∧
     (∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground) ∧
-    ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 :=
+    ctx.primal_obj = (ctx.Z : R) * ctx.y_0 :=
   ⟨shell_filling_inner_shells, shell_filling_hund_rule,
    shell_filling_lp_strong_duality⟩
 

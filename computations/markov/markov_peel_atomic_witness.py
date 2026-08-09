@@ -102,11 +102,47 @@ ATOMS_LITHIUM = [
 ]
 
 
+def _on_proton() -> bool:
+    """True when this producer resolved to the experimental pin."""
+    return str(Q_50_DIGIT_STR).startswith("1.10997858275")
+
+
+def _bridge_name() -> str:
+    """The bridge witness at THIS producer's own q₀ layer.
+
+    Single source for both the load and the `bridge_witness_compared`
+    provenance field. They were separate, and the field was a hardcoded
+    literal — so once the load became anchor-aware the witness would have
+    declared it compared against the muon bridge while actually reading the
+    proton one. A provenance field naming a file the run never opened is worse
+    than no field: it is checkable, and it checks out wrong.
+    """
+    return ("atomic-tr-m-mpfr-50dps-proton.witness.json" if _on_proton()
+            else "atomic-tr-m-mpfr-50dps.witness.json")
+
+
 def _load_bridge_witness() -> dict[str, str]:
     """Return atom -> tr_M(q₀) string from the Hoefsmit + Wenzl bridge
     witness, for cross-check.  Empty dict if the file is missing.
     """
-    f = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    # Load the bridge at THIS producer's own q0 layer, not whichever one the
+    # default name happens to point at. This producer is NOT in
+    # `q0_anchor_manifest.json`, so `Q_50_DIGIT_STR` resolves to the
+    # experimental (proton) pin — while the default bridge witness is the
+    # `ideal_muon` one. Comparing across that boundary is the straddle
+    # AGENTS.md §"q₀ anchor convention" forbids, and it was not subtle:
+    # `abs_diff_vs_bridge` for the deuteron read 6.73e-04, which is also what
+    # kept rejecting this witness in the regeneration wave.
+    #
+    # On an all-muon checkout the pins already agree and the default name is
+    # used, so nothing changes there.
+    f = _pb.witness_path(_bridge_name(), HERE)
+    if _on_proton() and not f.exists():
+        raise SystemExit(
+            "this producer is on the proton pin but the proton bridge witness "
+            "is missing. Generate it with\n    QOU_Q0_ANCHOR=proton python3 "
+            "computations/atomic_tr_m_mpfr_50dps.py --anchor proton\n"
+            "Refusing to cross-check a proton trace against the muon bridge.")
     if not f.exists():
         return {}
     data = record_upstream(f, _UPSTREAM_RECORDS)

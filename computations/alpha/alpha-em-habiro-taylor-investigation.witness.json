@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:13:05.450609+00:00",
-  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
+  "computedAt": "2026-08-08T19:37:05.808177+00:00",
+  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
   "assertions": [
     {
       "name": "habiro_taylor_coefficients_extracted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 225,
+  "durationMs": 215,
   "computation": "alpha-em-habiro-taylor-investigation",
   "scriptFile": "alpha_em_habiro_taylor_investigation.py",
   "scriptHash": "2e933d1e8f99",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,15 +45,15 @@
       "recursive_relation": "c_k(α) = c_k^{[2]_q} − α · c_{k−2}^{[2]_q}  where c_k^{[2]_q} are exact rational Taylor coefficients of [2]_q = √(4+h²)"
     },
     "q0_evaluation": {
-      "q_0": "1.1099785955573347199",
-      "h_0": "0.20906032199559367898",
-      "exact_form_at_q0": "2.010255514307252172",
-      "habiro_taylor_truncated_at_k8": "2.0102555142984515598",
-      "truncation_error": "8.8006122e-12",
-      "truncation_error_relative": "4.3778575e-12"
+      "q_0": "1.1099785827513808076",
+      "h_0": "0.20906029879563931543",
+      "exact_form_at_q0": "2.010255512038413512",
+      "habiro_taylor_truncated_at_k8": "2.0102555120296129096",
+      "truncation_error": "8.8006024e-12",
+      "truncation_error_relative": "4.3778527e-12"
     },
     "structural_conclusion": "The empirical next-order α_EM form α·[2]_q/(8π)·(1-h²α) is a Habiro element (in q, with α as parameter) whose Taylor coefficients at q=1 in h-basis are EXACT rationals (linear in α). The c_k thrashing is closed by Habiro universality once the underlying categorical Habiro element is named. The framework's open structural question dualizes from 'construct [Z_2] ∈ B_3(ℂ)' (Bloch side) to 'identify the Habiro element' (Habiro side) — equivalent via colored Jones / Kashaev machinery, but Habiro side is more concrete."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -54,7 +54,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from _precision import COMPUTE_DPS  # noqa: E402
-from q_parameter import Q as Q_STR  # noqa: E402  canonical 50-dps substrate value
+from q_parameter import Q_MP as Q_STR  # noqa: E402  canonical 50-dps substrate value
 from codata_constants import (  # noqa: E402
     M_E_MEV,
     AME_B_DEUTERON_MEV_VALIDATION as B_D_AME,

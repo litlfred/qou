@@ -142,6 +142,68 @@ else
 fi
 
 echo
+# Soundness / vacuity of quantified statements (bean qou-7t1n).
+#
+# `#print axioms` reports which axioms a proof DEPENDS ON, not whether they
+# are jointly SATISFIABLE — nothing else in this repo checks the latter. On
+# 2026-08-08 that gap was hiding four axioms that each proved `False`
+# (b1_hyperbolic_rows, schrijver_strong_duality,
+# schrijver_complementary_slackness, dressed_mass_split_substrate_closed_form),
+# every one behind clean-looking audits, in files whose citations were apt.
+#
+# Run here rather than only in CI because CI is workflow_dispatch-only
+# (owner directive 2026-06-30), so a script nobody invokes catches nothing.
+if command -v python3 >/dev/null 2>&1; then
+  audit="$(dirname "$0")/lean-one-sided-binder-audit.py"
+  if [ -f "$audit" ]; then
+    audit_out=$(python3 "$audit" 2>/dev/null || true)
+    # Print the whole report rather than a sed slice: the findings sit below
+    # a blank line after each section header, so a `/^UNSOUND/,/^$/` range
+    # shows the header and drops the actual file list — which is the only
+    # part worth reading.
+    if printf '%s\n' "$audit_out" | grep -qE "^(UNSOUND|ADVISORY)"; then
+      action=1
+      if printf '%s\n' "$audit_out" | grep -q "^UNSOUND"; then
+        echo "🛑 UNSOUND quantified statement(s) — these prove False. Fix before commit."
+      else
+        echo "▸ soundness audit: unconditional claim(s) over an arbitrary structure."
+        echo "  Fatal iff the related fields are independent — read the structure."
+      fi
+      printf '%s\n' "$audit_out" | sed 's/^/    /'
+    fi
+  fi
+fi
+
+# ── canonical-mass status guard ───────────────────────────────────────────────
+# Runs when the change touches a surface the guard covers: production compute
+# docstrings (computations/**.py), the authoritative paper (content/**.md), or a
+# live reference doc (docs/**.md).
+#
+# Hosted HERE rather than in CI on purpose. Every workflow in .github/workflows
+# is `workflow_dispatch`-only (auto-triggers disabled repo-wide, 2026-06-30,
+# Actions billing), so a CI job for this guard would never fire on a push and
+# would only look like coverage. This script is the path agents actually walk
+# before committing — AGENTS.md §"QA is agent-owned; CI is a backup".
+#
+# The guard is stdlib-only (ast/re/hashlib), so it adds no dependency to the
+# preflight. Its two regression suites need mpmath and are NOT run here; run
+# them directly when touching the guard itself:
+#   python3 computations/canonical_mass_status_guard_test.py
+#   python3 computations/canonical_mass_table_nucleon_rows_test.py
+if printf '%s\n' "${files[@]}" | grep -qE '^(computations/.*\.py|(content|docs)/.*\.md)$'; then
+  guard="computations/canonical_mass_status_guard.py"
+  if [ -f "$guard" ]; then
+    if ! guard_out=$(python3 "$guard" --strict 2>&1); then
+      action=1
+      echo "⚠ canonical-mass status guard: a DEPRECATED absolute-mass figure is cited as live status."
+      echo "  Live m_p is CODATA +1.35 ppb via the canonical_mass facade; 2.89%/966/406/−57% are the"
+      echo "  Vol(𝓑₃)·ρ forms. See docs/canonical-mass-formula-guardrail.md."
+      printf '%s\n' "$guard_out" | sed 's/^/    /'
+    fi
+  fi
+fi
+
+echo
 if [ "$action" -eq 1 ]; then
   echo "⚠ check-sidecars: action needed above. Resolve §7c markers / refresh sidecars BEFORE commit."
 else

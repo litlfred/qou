@@ -51,7 +51,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from hecke_core import E_HARTREE_EV  # noqa: E402
 
 NMAX = 7

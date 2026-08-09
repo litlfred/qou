@@ -92,36 +92,63 @@ class HasFiniteLPDuality (lp : OperatorSelectionLP) : Type where
 
 namespace HasFiniteLPDuality
 
-/-- **External axiom (Schrijver 1986 §7.2): finite-dim LP strong
-    duality.**  For every `OperatorSelectionLP lp`, the duality gap
-    is zero.  Pending Mathlib's finite-dim LP-duality library. -/
--- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
+/-! ### No global instance — and why the two that were here proved `False`
+
+This namespace used to carry
+
+```lean
 axiom schrijver_strong_duality :
     ∀ (lp : OperatorSelectionLP), lp.duality_gap = 0
-
-/-- **External axiom (Schrijver 1986 §7.4): complementary slackness.**
-    At the LP optimum, a partition `λ` lies in the active set iff
-    its primal constraint is tight. -/
--- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
 axiom schrijver_complementary_slackness :
     ∀ (lp : OperatorSelectionLP) (lam : lp.Λ),
       lam ∈ lp.active_set ↔ lp.tight lam
+```
 
-/-- **Schrijver model (consistency witness).**
+plus a `schrijverModel` building a `HasFiniteLPDuality lp` from them for any
+`lp`. **Each axiom independently made the library inconsistent.**
 
-    Discharges both class fields via the cited external axioms
-    `schrijver_strong_duality` and `schrijver_complementary_slackness`.
-    These axioms are §3b-cond placeholders pending Mathlib's finite-
-    dim LP-duality library; when that lands, both axioms can be
-    discharged unconditionally without touching the consumer side.
+`OperatorSelectionLP` carries `primal_obj` and `dual_obj` as *arbitrary,
+independent* reals — it has no feasibility, boundedness or optimality data at
+all — and `duality_gap` is **defined** as `|primal_obj − dual_obj|`. So the
+first axiom asserts that any two reals are equal:
 
-    Provided as a `def` (not `instance`) to avoid polluting typeclass
-    resolution. -/
--- Ref: [schrijver1986theory] Schrijver, "Theory of Linear and Integer Programming," Wiley 1986
-noncomputable def schrijverModel (lp : OperatorSelectionLP) :
-    HasFiniteLPDuality lp where
-  dualityGapZero := schrijver_strong_duality lp
-  complementarySlackness := schrijver_complementary_slackness lp
+```lean
+def badLP : OperatorSelectionLP where
+  Λ := Empty; finite := by infer_instance
+  primal_obj := 0; dual_obj := 1
+  active_set := ∅; tight := fun _ => True
+
+theorem strong_duality_axiom_is_inconsistent : False := by
+  have h : badLP.duality_gap = 0 := schrijver_strong_duality badLP
+  simp [OperatorSelectionLP.duality_gap, badLP] at h
+```
+
+The second is separately inconsistent for the same reason: `active_set` and
+`tight` are independent fields, so an LP with an empty active set and a
+universally-true tightness predicate refutes the iff. Both proofs compiled,
+with `#print axioms` naming one axiom each.
+
+**The mathematics is not at fault — the transcription is.** Schrijver §7.2
+holds for a *bounded and feasible* LP at its *optimum*. Those hypotheses were
+dropped, and `OperatorSelectionLP` does not even carry the fields needed to
+state them, so the axioms quantified over structures for which the theorem is
+simply false. Same shape as the JSJ/Thurston case (PR #4774): a correct
+citation attached to a statement broader than the cited result.
+
+**The class itself was always right**, and the module docstring above says so
+— *"The class is purely a hypothesis carrier."* Taking `HasFiniteLPDuality lp`
+as an instance hypothesis for a *specific* `lp` is the correct §3b-cond
+pattern, and `theorem_3_via_class` / `theorem_1_via_class` below consume it
+correctly. What was wrong was manufacturing that hypothesis for free, for
+every `lp`, via two false axioms. Removed, not completed: a caller must now
+supply the instance for their own LP, which is where the real LP-theory
+obligation belongs.
+
+Follow-up (bean `qou-7t1n`): to state Schrijver honestly, `OperatorSelectionLP`
+needs its constraint data plus feasibility/boundedness/optimality predicates,
+and the duality result should be conditional on those. That is a genuine
+modelling task, not a transcription fix, and is deliberately not attempted
+inside an unsoundness repair. -/
 
 /-- Theorem 3 of `prop:confinement-nf-partial-proof` derived from
     the hypothesis class.  Drop-in replacement for the existing

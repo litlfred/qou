@@ -50,6 +50,8 @@ them out by destructuring the conjunction.
 
 namespace QOU.Mathlib.Summary
 
+universe u
+
 open QOU.Mathlib.SpectralSequence
 open QOU.Mathlib.HeckeAlgebra
 open QOU.Mathlib.WenzlBridgeConcrete

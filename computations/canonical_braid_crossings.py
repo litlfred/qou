@@ -42,7 +42,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
-_AVG_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀)
+_AVG_COLOR_DELTA = None  # cached δ = flavor_split_leading(q₀)
 
 
 def _avg_color_delta():
@@ -72,8 +72,23 @@ def _avg_color_delta():
         import mpmath as _mp
         # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
         from _li_2_q_util import flavor_split_leading
-        from q_parameter import Q as _Q0
-        _AVG_COLOR_DELTA = flavor_split_leading(_mp.mpf(str(_Q0)))  # mp.mpf
+        # 50-dps source, NOT the float64 `q_parameter.Q`.
+        #
+        # This read `Q` and laundered it through `mpf(str(...))`, so δ was
+        # evaluated at ~17 good digits and this accessor reached only ~5e-16 —
+        # the cap the docstring above warns about. With 16 live consumers that
+        # was the single widest f64 leak in the braid pipeline: δ enters the
+        # colour-weighted crossing as −h·(½ − δ/4), and a 1e-16 error in δ
+        # lands at ~7e-20 on a χ result that is otherwise exact to ~1e-50.
+        #
+        # `flavor_split_leading` takes q as an argument and is exact at
+        # whatever precision it is handed, so the fix is to hand it the right
+        # thing. Built at >= 60 dps because an mpf keeps the precision it was
+        # CREATED at, and this cache is populated on first call — under
+        # whatever ambient dps that caller happens to have.
+        from q_parameter import Q_50_DIGIT_STR as _Q50
+        with _mp.workdps(max(_mp.mp.dps, 60)):
+            _AVG_COLOR_DELTA = flavor_split_leading(_mp.mpf(str(_Q50)))
     return _AVG_COLOR_DELTA
 
 

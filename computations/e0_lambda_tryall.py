@@ -49,12 +49,15 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 from mpmath import mp, mpf, acos  # noqa: E402
 
 # Substrate constants — canonical, B_AME-independent.
-from qou_substrate.constants import Q, HA, Q_INV  # noqa: E402
+from qou_substrate.constants import (  # noqa: E402
+    Q_50_DIGIT_STR, HA, Q_INV)
 from _li_2_q_util import vol_density_borromean  # noqa: E402
 
 mp.dps = 50
 
-Q0 = mpf(str(Q))
+# Q_50_DIGIT_STR, not Q: `Q` is the f64 solve, and mpf(str(Q)) keeps only its
+# 17 digits while looking exact at every later inspection (NO FLOAT64).
+Q0 = mpf(Q_50_DIGIT_STR)
 QI0 = mpf(1) / Q0
 H = Q0 - QI0  # h = q − q⁻¹
 HBAR_Q = 1 - QI0  # ℏ_q

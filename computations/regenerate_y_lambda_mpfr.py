@@ -58,7 +58,43 @@ from q_parameter import Q_MP  # noqa: E402
 set_compute_dps()
 
 SOURCE = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
-OUTPUT = HERE / "y-lambda-mpfr-witness.json"
+
+# One cache per q0 LAYER, never one shared between them.
+#
+# Before this split there was a single `y-lambda-mpfr-witness.json` holding the
+# muon (ideal) evaluation, while THIS producer defaulted to `Q_MP` — proton. So
+# running it rewrote the ideal-layer cache with experimental-layer numbers, in
+# place, under the same filename: the layer straddle AGENTS.md §"q₀ anchor
+# convention" forbids, installed at the base of the chain. Measured live — the
+# rewrite moved 295 fields with 12 anchor flips, and `atomic_tr_m_mpfr_50dps`
+# (an `ideal_muon` producer) then moved 49 fields reading it.
+#
+# The ideal cache keeps the legacy filename so the existing consumers and
+# `tr_m_wenzl_bridge_mpfr._Y_LAMBDA_DEFAULT` stay unbroken.
+OUTPUT_BY_ANCHOR = {
+    "ideal": HERE / "y-lambda-mpfr-witness.json",
+    "proton": HERE / "y-lambda-mpfr-proton-witness.json",
+}
+Q_PINNING = HERE / "q-pinning-50-digit.witness.json"
+
+
+def q0_for(anchor: str) -> str:
+    """The 50-dps q₀ string for one layer. Never guesses, never falls back.
+
+    `proton` is `q_parameter.Q_MP` — the experimental pin the 2026-08-07 owner
+    directive makes the default for new compute.
+
+    `ideal` is read from `q-pinning-50-digit.witness.json`, which `q_parameter`
+    itself treats as the canonical muon source (`_MUON_Q_STR`): it matches
+    neither the proton Newton solve nor the `q_muon_at()` closed form, so it
+    has to be read rather than recomputed.
+    """
+    if anchor == "proton":
+        return mp.nstr(Q_MP, 50, strip_zeros=False)
+    if anchor == "ideal":
+        q = json.loads(Q_PINNING.read_text())["derived_50_digit"]["q"]
+        return mp.nstr(mp.mpf(q), 50, strip_zeros=False)
+    raise SystemExit(f"unknown anchor {anchor!r}: expected 'proton' or 'ideal'")
 
 
 def evaluate_y_at_q0(symbolic_str: str, q0_str_50dps: str) -> str:
@@ -79,12 +115,21 @@ def evaluate_y_at_q0(symbolic_str: str, q0_str_50dps: str) -> str:
 
 
 def main() -> int:
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--anchor", choices=("proton", "ideal"), default="proton",
+                    help="q0 layer to evaluate at. Default proton, per the "
+                         "2026-08-07 owner directive; each layer writes its "
+                         "OWN cache, so this never rewrites the other one.")
+    a = ap.parse_args()
+    anchor, OUTPUT = a.anchor, OUTPUT_BY_ANCHOR[a.anchor]
+
     print("=" * 96)
-    print("  Regenerate y-lambda-mpfr-witness.json at TRUE 50 dps")
+    print(f"  Regenerate {OUTPUT.name} at TRUE 50 dps  [anchor={anchor}]")
     print("  Source: y-lambda-wenzl-bridge-symbolic-witness.json (exact symbolic)")
     print("=" * 96)
 
-    q0_str = mp.nstr(Q_MP, 50, strip_zeros=False)
+    q0_str = q0_for(anchor)
     print(f"\n  q_0 (50 dps) = {q0_str}")
 
     sym = json.loads(SOURCE.read_text())
@@ -149,6 +194,12 @@ def main() -> int:
         "source_witness": "y-lambda-wenzl-bridge-symbolic-witness.json",
         "source_witness_hash": src_hash,
         "q_0_50dps": q0_str,
+        # Self-declared layer. Without it a reader has to infer the pin by
+        # string-matching the q0 prefix, which is how the two caches got
+        # confused for one another in the first place.
+        "q0Anchor": "proton" if anchor == "proton" else "muon",
+        "q0Layer": ("experimental / Physical-Observations" if anchor == "proton"
+                    else "ideal / canonical 3-CAL"),
         "dps": 50,
         "tables_by_n": out_tables,
         "audit_reference": "AUDIT-DEEP-2026-05.md §7; PR #564 convention/precision audit",

@@ -1,4 +1,5 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Data.Nat.Notation
+import Mathlib.Order.Defs.PartialOrder
 
 /-!
 # QOU.Molecular.co_lp_dual_binding
@@ -25,26 +26,36 @@ the self-assuming projection forbidden by AGENTS.md §3b-cond item 5).
   the hypothesis, do not restate it).
 - `co_lp_dual_binding` (the resolving decl) conjoins the *definitional*
   selection `k* = 3` with the two *derived* minimality inequalities.
-  Neither inequality projects a conclusion field. -/
+  Neither inequality projects a conclusion field.
+
+## Base ring (§7c)
+
+`Φ₁` here is the LP objective functional on bond orders, and the only thing
+done to its values is `≤`. Nothing is measured and nothing is archimedean, so
+the values live in a generic ordered `R` (contrast `ch4_lp_dual_binding`, whose
+`E_bind_CH` is a measured bond energy and is therefore `ℝ` by meaning). The
+substrate evaluation is the instantiation `R := ℝ`. -/
 
 namespace QOU.Molecular
 
+variable {R : Type*} [Preorder R]
+
 /-- Data of the CO LP-dual-binding claim. All fields are *inputs*; none
     is the conclusion. -/
-class CoLpDualBindingContext where
+class CoLpDualBindingContext (R : Type*) [Preorder R] where
   /-- The selected CO bond order `k* ∈ {1, 2, 3}` (definitional input). -/
   k_star : ℕ
   /-- The triple bond is selected: `k* = 3` (definitional input). -/
   k_star_def : k_star = 3
   /-- `Φ₁` at bond order `k`. -/
-  Phi_1_k : ℕ → ℝ
+  Phi_1_k : ℕ → R
 
 /-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond
     item 5): carries the conjectural LP-dual *hypothesis* — bond order
     `3` minimises `Φ₁` over the candidate bond orders `{1, 2, 3}` — as a
     field, NOT the conclusion (the minimality inequalities are *derived*
     from it below). -/
-class QIntegerMassFormula (ctx : CoLpDualBindingContext) : Prop where
+class QIntegerMassFormula (ctx : CoLpDualBindingContext R) : Prop where
   /-- Bond order 3 minimises `Φ₁` over the candidate orders (the
       ground-state selection hypothesis). -/
   triple_minimises : ∀ k : ℕ, k ≤ 3 → ctx.Phi_1_k 3 ≤ ctx.Phi_1_k k
@@ -54,7 +65,7 @@ class QIntegerMassFormula (ctx : CoLpDualBindingContext) : Prop where
     the minimisation *hypothesis* at `k = 1`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
-theorem co_triple_beats_single (ctx : CoLpDualBindingContext)
+theorem co_triple_beats_single (ctx : CoLpDualBindingContext R)
     [hc : QIntegerMassFormula ctx] :
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 :=
   hc.triple_minimises 1 (by omega)
@@ -64,7 +75,7 @@ theorem co_triple_beats_single (ctx : CoLpDualBindingContext)
     the minimisation *hypothesis* at `k = 2`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
-theorem co_triple_beats_double (ctx : CoLpDualBindingContext)
+theorem co_triple_beats_double (ctx : CoLpDualBindingContext R)
     [hc : QIntegerMassFormula ctx] :
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 2 :=
   hc.triple_minimises 2 (by omega)
@@ -78,7 +89,7 @@ theorem co_triple_beats_double (ctx : CoLpDualBindingContext)
     hypothesis, not projected. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
-theorem co_lp_dual_binding (ctx : CoLpDualBindingContext)
+theorem co_lp_dual_binding (ctx : CoLpDualBindingContext R)
     [hc : QIntegerMassFormula ctx] :
     ctx.k_star = 3 ∧
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 ∧

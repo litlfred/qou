@@ -115,7 +115,7 @@ q = 1**. Consequences for this row:
   weights sectors.
 - **Derivation target (supersedes the "more N" route).** Compute `c_{σ_geom}(q=1)` and
   the trivial-sector contribution for L5a1 directly, rather than fitting a power. The
-  twist-knot cyclotomic formula (Masbaum, [`uploads/Download.pdf`](../../uploads/Download.pdf):
+  twist-knot cyclotomic formula (Masbaum, [`uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf`](../../uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf):
   `J'_{K_p}(N)=Σ_n \tilde f_{K_p,n}(q^{1-N})_n(q^{1+N})_n`) is a ready cross-check on the
   R-matrix engine, since the twist knots `K_p` are `(-1/p)` Dehn fillings of one
   Whitehead component.

@@ -3,14 +3,15 @@
   "label": "def:quantum-dilogarithm-disambiguation",
   "kind": "definition",
   "paths": {
-    "ts": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.ts",
-    "md": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.md",
-    "lean": "content/quantum-observable-universe/particle-interactions/quantum-dilogarithm-disambiguation.lean"
+    "ts": "content/quantum-observable-universe/knots-particles-confinement/quantum-dilogarithm-disambiguation.ts",
+    "md": "content/quantum-observable-universe/knots-particles-confinement/quantum-dilogarithm-disambiguation.md",
+    "lean": "content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumDilogarithm.lean"
   },
   "source_hashes": {
     "md": "db8e971e4b82",
-    "ts": "3d9e06f1e047",
-    "lean": "24f82797f4da"
+    "ts": "2a7d0ecf8743",
+    "lean": "ba5fb6e7919f",
+    "lean_statement": "75277599e712"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -531,19 +532,20 @@
       {
         "field_hash": {
           "md": "db8e971e4b82",
-          "ts": "3d9e06f1e047",
-          "lean": "24f82797f4da"
+          "ts": "2a7d0ecf8743",
+          "lean": "ba5fb6e7919f",
+          "lean_statement": "75277599e712"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "d57f31bc95cf",
-          "script_commit_sha": "3157bb0064d2a3a253ef3ae7bea19b5bbe12e591"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T02:24:30.289Z",
+        "reviewed_sha": "e88e3708342876c4bc1bd3026d526cb5103c5f15"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1412,5 +1414,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-03T19:38:33.714Z"
+  "updated_at": "2026-08-09T02:24:30.289Z"
 }

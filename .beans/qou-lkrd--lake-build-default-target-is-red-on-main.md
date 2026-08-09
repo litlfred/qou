@@ -90,3 +90,45 @@ lake build QOU.QBeta.FiveTwoArgSector        # green, 2060 jobs
    defined (or the dot-notation call sites repointed at whatever replaced them).
 3. Then wire `lake build` — the *default* target — into whatever gate is
    supposed to be checking Lean, so the scope of "green" matches the claim.
+
+---
+
+## 2026-08-09 — the default target has now been measured, twice. Recording it here so this bean stops saying "unknown".
+
+Measured in a 15 GB container, `PATH` carrying `~/.elan/bin` (⚠ `lake` is not on
+the default non-interactive `PATH`; a shell wrapper around it reported exit 0
+while `lake` itself was `command not found`).
+
+**It was genuinely RED — for a reason this bean never named.** At `origin/main`
+`bccb55f188`, and equally at `1b8b30758b`, `lake build QOU` failed with two
+errors, both `linarith failed to find a contradiction`, at
+`QOU/Archimedean/HyperbolicVolumeTranscendence.lean:132` and `:140`. `QOU.lean`
+imports `QOU.Archimedean`, which imports that module, so it is in the closure.
+Two errors, not 22, and a different module than this bean named — so the bean's
+**specifics stayed wrong while its headline came back true**.
+
+Cause: `linarith` matches atoms at *reducible* transparency, and the two
+`∑ i ∈ Finset.range 20, (-1)^i * f i` occurrences did not unify for it, so the
+partial sums became distinct atoms and `0.915 < S ≤ catalan_G ≤ 0.915` was
+invisible. That makes the failure sensitive to the **import environment**: the
+same module built clean on `claude/fivetwo-level7-ladder-numerators`, whose tree
+lacked two modules of the closure. It surfaced only because merging main into
+that branch invalidated a **stale `.olean`** and forced the recompile.
+
+**Fixed on main** by a sibling in `181cda5e5e`, two lines taking the
+transitivity step directly (`exact lt_of_lt_of_le hnum hlow` /
+`exact lt_of_le_of_lt hup hnum`). Re-verified at `2aaac60320` with the `.olean`
+deleted first: exit 0, 3143 jobs.
+
+**What blocks end-to-end verification now is not a proof failure.** At
+`2aaac60320`, `lake build QOU` dies at `[4804/5126] Building
+QOU.Mathlib.SYTEnumerationN7` with `Lean exited with code 137` — **SIGKILL, the
+OOM killer**. Not contention: built alone with ~8 GB free it still exits 137.
+That module is a brute-force `#SYT = dimHLF` enumeration at `n = 7`. So a
+sibling's "1675/1675, exit 0" is presumably true on a larger machine, and the
+finding is that **the default target's buildability is machine-dependent** —
+which is the concrete cause behind `qou-lkdf`, replacing "an attempt died with a
+container".
+
+Two method rules this cost, both now in the lane's discipline: **delete the
+`.olean` before claiming a module compiles**, and **exit 137 is OOM, not red**.

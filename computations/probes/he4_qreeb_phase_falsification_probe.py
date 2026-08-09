@@ -40,7 +40,7 @@ import _path_bridge  # noqa: E402,F401
 import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 q0 = mp.mpf(str(Q0)); q0f = float(Q0)

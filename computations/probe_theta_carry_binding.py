@@ -34,7 +34,7 @@ from mpmath import mpf, acos, fabs
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 mp.mp.dps = 40

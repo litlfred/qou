@@ -97,3 +97,81 @@ axioms a proof depends on, not whether those axioms are jointly satisfiable.
 Nothing in this repo checks the latter. A cheap partial guard would be a CI
 declaration `example : False := by exact? ` — or simply attempting `False`
 against each library module — but that is not currently done anywhere.
+
+## UPDATE — three more inconsistencies, from two more files
+
+B1 was not alone. Continuing the `qou-i6cn` read turned up **three further
+axioms that each independently prove `False`**, in two files. Total for the
+session: **four unsound axioms across three files.**
+
+### `QOU/BraidKnot/LpDualityHypothesisClass.lean` — two
+
+```lean
+axiom schrijver_strong_duality : ∀ (lp : OperatorSelectionLP), lp.duality_gap = 0
+axiom schrijver_complementary_slackness :
+    ∀ (lp : OperatorSelectionLP) (lam : lp.Λ), lam ∈ lp.active_set ↔ lp.tight lam
+```
+
+`OperatorSelectionLP` carries `primal_obj`, `dual_obj`, `active_set` and
+`tight` as **arbitrary independent fields** — no feasibility, boundedness or
+optimality data at all — and `duality_gap` is *defined* as
+`|primal_obj − dual_obj|`. So the first says any two reals are equal; the
+second says an empty active set matches a universally-true tightness
+predicate. Both refuted with a two-line witness structure.
+
+Schrijver §7.2/§7.4 hold for a *bounded and feasible* LP *at its optimum*.
+Those hypotheses were dropped, and the structure cannot even state them.
+
+### `QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean` — one
+
+```lean
+axiom dressed_mass_split_substrate_closed_form
+    (F : FlavorDressingFunctor) (M_N q : ℝ) (_hM : 0 < M_N) (_hq : 1 < q) :
+    F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q
+```
+
+`F`, `M_N`, `q` are mutually unrelated — nothing ties the nucleon-mass scale
+to the dressing. The left side is fixed by `F`; the right varies freely with
+`M_N`. The constant dressing `μ ≡ 1` makes the left side `0`, forcing
+`substrate_split_factor q = 0` — and that is a *concrete* strictly-positive
+expression, so it is refutable rather than merely collapsing.
+
+**How it got there is the instructive part.** The docstring records that a
+review (Gemini #696) flagged the downstream theorem as a **tautology**; the
+repair was to introduce this axiom. The tautology fix over-corrected into
+unsoundness: the statement stopped being empty by starting to be false. Worth
+keeping in mind when draining the vacuity queue — the two failure modes are
+adjacent, and the obvious fix for one is a route into the other.
+
+## Pattern across all four
+
+Every one has the same shape: **a cited theorem transcribed without the
+hypotheses that make it true**, quantified over a structure too weak to state
+those hypotheses. Not one is a mathematical error by the author — the
+citations are apt and the intent is right in each case. The defect is
+entirely in the Lean transcription, which is why reading the `.md` never
+reveals it and why `#print axioms` stays clean downstream.
+
+## Detector now carries three signals
+
+`scripts/lean-one-sided-binder-audit.py`, self-test 6/6, corpus **0 UNSOUND /
+0 advisory**:
+
+- **UNSOUND** — a whole side of an order relation is a bare unconstrained
+  binder (B1).
+- **ADVISORY** — an unconditional claim relating projections of an arbitrary
+  structure (the LP and flavour-dressing cases). Fatal iff the projected
+  fields are independent, which needs a human; flagged, not auto-failed. This
+  signal found the flavour-dressing one on its own after being written for
+  the LP one.
+- **COLLAPSE** — the original one-sided-`=` case.
+
+## What still is not checked
+
+`#print axioms` reports *dependency*, not *satisfiability*. Nothing in this
+repo checks that the axiom set is consistent, which is exactly why four
+`False`-proving axioms sat in the tree with clean-looking audits. A cheap
+partial guard worth considering: a CI step that, for each library module
+declaring axioms, attempts `example : False` with a small tactic battery plus
+degenerate-witness construction. It would not be complete, but all four of
+this session's cases fall to a two-line witness.

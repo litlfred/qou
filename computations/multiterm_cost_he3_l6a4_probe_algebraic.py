@@ -21,7 +21,7 @@ import mpmath as mp
 
 from _precision import set_compute_dps
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q_CANONICAL
+from q_parameter import Q_MP as Q_CANONICAL
 from codata_constants import M_E_MEV, AME_B_HE3_MEV_VALIDATION
 from hecke_core import z as z_val
 

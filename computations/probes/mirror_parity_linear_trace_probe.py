@@ -47,7 +47,7 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 
 # (name, Z, N, class): N=Z controls + the two feasible mirror pairs.
 ISOTOPES = [

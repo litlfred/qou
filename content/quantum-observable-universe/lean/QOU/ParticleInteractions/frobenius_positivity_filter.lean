@@ -40,9 +40,19 @@ This replaces the previous self-assuming `class … Context` whose fields
 *were* the manuscript conclusions (`claim_i_positivity_condition`,
 `claim_ii_exclusion_count`) with a `theorem … := ⟨ctx.…, ctx.…⟩`
 projection (forbidden by AGENTS.md §1a / §3b-cond rule 5).
+
+## Base ring (§7c)
+
+The proved core (`parity_odd_card`, `frobenius_positivity_filter`) lives
+entirely in `ZMod 2` and `Finset` and mentions no scalars at all. The only
+scalars are the parent/daughter Hoefsmit `G`-function products, and the sole
+thing asked of them is `0 ≤ ·`; so they take values in a generic ordered
+commutative ring and the substrate evaluation is `R := ℝ`.
 -/
 
 namespace QOU.ParticleInteractions
+
+variable {R : Type*} [CommRing R] [PartialOrder R]
 
 /-- The four crossing channels of a single nucleon factor:
     trivial, confined, unconfined, sign. -/
@@ -68,15 +78,15 @@ theorem card_config (A : ℕ) : Fintype.card (Config A) = 4 ^ A := by
     Their precise definition is the Hoefsmit/Markov `G`-function product;
     here they are carried as data so the positivity predicate and the
     exclusion count below are stated over the *actual* products. -/
-structure ProductData (A : ℕ) where
+structure ProductData (R : Type*) [CommRing R] [PartialOrder R] (A : ℕ) where
   /-- Parent product `m_{e,par}(c) = ∏ₘ G_{nₘ}(cₘ)`. -/
-  parentProd : Config A → ℝ
+  parentProd : Config A → R
   /-- Daughter product `m_{e,dau}(c) = ∏ₘ G_{n'ₘ}(cₘ)`. -/
-  daughterProd : Config A → ℝ
+  daughterProd : Config A → R
 
 /-- A configuration is **Frobenius-positive** when both the parent and the
     daughter mass products are non-negative. -/
-def FrobeniusPositive {A : ℕ} (P : ProductData A) (c : Config A) : Prop :=
+def FrobeniusPositive {A : ℕ} (P : ProductData R A) (c : Config A) : Prop :=
   0 ≤ P.parentProd c ∧ 0 ≤ P.daughterProd c
 
 /-- **Characterisation (definitional).** Frobenius-positivity is exactly
@@ -84,12 +94,12 @@ def FrobeniusPositive {A : ℕ} (P : ProductData A) (c : Config A) : Prop :=
     is the manuscript's part (i); it holds by definition of the predicate
     (it is *not* projected from a context field — the predicate is defined
     by this conjunction). -/
-theorem frobeniusPositive_iff {A : ℕ} (P : ProductData A) (c : Config A) :
+theorem frobeniusPositive_iff {A : ℕ} (P : ProductData R A) (c : Config A) :
     FrobeniusPositive P c ↔ (0 ≤ P.parentProd c ∧ 0 ≤ P.daughterProd c) :=
   Iff.rfl
 
 /-- The set of **excluded** (non-Frobenius-positive) configurations. -/
-noncomputable def excludedConfigs {A : ℕ} (P : ProductData A)
+noncomputable def excludedConfigs {A : ℕ} (P : ProductData R A)
     [DecidablePred (FrobeniusPositive P)] : Finset (Config A) :=
   Finset.univ.filter (fun c => ¬ FrobeniusPositive P c)
 

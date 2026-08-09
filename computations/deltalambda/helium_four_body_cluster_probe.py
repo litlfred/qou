@@ -71,7 +71,7 @@ import mpmath as mp  # noqa: E402
 import pyhecke_native  # noqa: E402
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 

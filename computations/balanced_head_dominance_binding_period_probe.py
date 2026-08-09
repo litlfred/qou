@@ -27,7 +27,7 @@ from datetime import datetime, timezone
 
 import mpmath as mp
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from phase5_n8_dim_q_table import hook_lengths, partitions_of  # noqa: E402
 
 DPS = 50

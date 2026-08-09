@@ -2132,3 +2132,550 @@ clobbered by a concurrent wave earlier in this arc.
 
 6 self-tests, covering the two structural properties rather than the verdict
 policy — that lives in `witness_regen_classify` with its own 13.
+
+## P47 — the dropped `q0Anchor`, and why the convention labels cannot be trusted
+
+### The producer never stamped its own provenance
+
+`chi_at_q0_via_hoefsmit_mpfr` imports `WitnessBuilder` and never used it:
+`save_witness` hand-built a payload dict. So a rebuild wrote no `scriptHash`,
+no `scriptFile` and **no `q0Anchor`** — the committed file's
+`q0Anchor: "ambiguous"` had come from a one-off `chi_convention_audit --fix`,
+and regenerating silently dropped it. Losing an anchor label is worse than the
+stale one it replaced, and it is exactly what the classifier refused the
+rebuild for.
+
+Now stamped. `resolve_q0_anchor` reports **"proton"** for this script, so the
+rebuild carries a correct anchor where the committed file had only
+"ambiguous" — a strict provenance gain.
+
+Three more classifier refinements, each forced by a real regeneration rather
+than invented:
+
+- **`ambiguous` → `proton` is a resolution, not movement**, accepted only when
+  a numeric q₀ flip is independently present. The reverse (definite → unknown)
+  is a loss and stays rejected.
+- **`scriptFile` is metadata here** by separation of concerns, not
+  indifference: `witness_provenance_audit` is what polices whether a
+  scriptFile claim is *true* (it found five false ones); this classifier only
+  answers "did a VALUE move", and a stamp adding the field must not veto an
+  otherwise-clean run.
+- With those, the deuteron rebuild classifies **`ANCHOR_MIGRATION`**: 37 fields
+  moved, one flip, `tr_M` shifting 2.18e-07 — the muon→proton amplification,
+  comfortably inside the 1e-5 bound. 15 self-tests.
+
+### The `convention` labels are wrong, which changes the 4He question
+
+I previously reported that only 1 witness of 28 uses
+`colour-weighted-averaged-crossing`, and framed repointing 4He as moving it
+onto a one-off. **That framing was built on labels, and the labels are not
+reliable.**
+
+The `-at-q0-50dps` family declares:
+
+| count | `convention` |
+|---:|---|
+| 11 | `averaged-crossings` |
+| 8 | `sign-only-crossings` |
+| 1 | `colour-weighted-averaged-crossing` |
+| 1 | `bring_color_weighted-averaged-crossings` |
+
+But the deuteron witness in that family declares `averaged-crossings` while its
+**values are colour-weighted** — computing χ^λ(β_D) both ways against it gives
+4.23e-06 for colour-weighted against 3.13e-03 for colour-blind. The label says
+one thing and the numbers say another, and the numbers are what the pipeline
+actually computes: `_avg_color_delta` has 16 live consumers and installs the
+colour-weighted crossing wherever it imports.
+
+So the open question is **not** "should 4He be colour-weighted like the rest of
+the corpus" — the corpus already *is* colour-weighted where it matters, and its
+`convention` strings simply lag the code. The real defect is that a field
+intended to record the convention does not, which makes every survey over it —
+including mine — worthless until the labels are re-derived from the values
+rather than trusted. That is a labelling repair, not a physics decision, and it
+should be settled before anyone reads those strings again.
+
+## P48 — the q_inv gate is not a mechanical copy, and probe_9b was never broken
+
+Two corrections to the "port the remaining two gates" item.
+
+### `probe_9b_laurent_degree_10a5` already handled colour weighting
+
+I listed it as carrying the same three-way limitation. It does not — line 124
+reads:
+
+```python
+elif abs(d_f - _D_PN_F64) < 1e-9:
+    d = -H_SYMB * (sp.Rational(1, 2) - DELTA_SYM / 4)
+```
+
+It is a *symbolic* (sympy) path that already knows the colour-weighted p–n
+crossing, and its `unrecognised d` raise is a genuine catch-all for a fourth
+unexpected value rather than the defect fixed elsewhere. Grepping for the error
+string found a match; reading the file found a different situation.
+
+### The q_inv port was wrong, and nearly shipped a 3× error
+
+Porting `chi_at_q_inv_via_native_mpfr` looked mechanical — same shape, same
+call, same `{0, −h0, −h0/2}` snap. It ran, it was fast, and every one of the 11
+deuteron partitions changed:
+
+    chi[(6,)]   6.7692509169991208562  ->  2.1105940824945303718
+
+A convention change is 4e-6 here. A factor of three is not a convention; it is
+a wrong answer. The cause:
+
+    h at q_0     =  0.209060298795639315
+    h at q_0^-1  = -0.209060298795639315   (= -h0)
+
+The producer evaluates at **q₀⁻¹**, so the `h` Rust derives internally is
+`−h₀`, and the native default shift for an averaged crossing is `−h₀/2`. But
+the `d` values in the braid word are expressed at **q₀**, so the old code
+mapping `−h₀/2 → sign 0` was deliberately letting Rust re-derive the shift at
+the inverse point. Passing `−d = +h₀/2` explicitly overrides that with the
+wrong sign.
+
+Reverted. The q_inv path needs its shift expressed at q₀⁻¹, which is a
+semantic question about what a colour-weighted crossing means under
+q → q⁻¹ — not something to infer from the q₀ code. **The Rust groundwork
+serves it; the Python port does not transfer.**
+
+Worth stating plainly because it is the second time in this arc that "the same
+error string" turned out not to mean "the same bug", and the first time the
+classifier's `VALUES` verdict caught a genuine error of mine rather than an
+expected migration. A 4e-6 expectation is what made a 3× result obviously
+wrong; without a calibrated sense of the right magnitude it would have looked
+like just another regeneration.
+
+## P49 — measured, not surveyed: every distinguishable χ cache is mislabelled
+
+`chi_convention_from_values_audit.py` recomputes each atom's χ^λ both ways and
+asks which one the stored values match, instead of reading the `convention`
+string. Read-only — it writes no witness, so it is safe beside a running wave.
+
+| atom | claims | Σ\|diff\| blind | Σ\|diff\| weighted | verdict |
+|---|---|---|---|---|
+| proton | `averaged-crossings` | 3.31e-07 | 3.31e-07 | `INDISTINGUISHABLE` |
+| neutron | `averaged-crossings` | 2.68e-07 | 2.68e-07 | `INDISTINGUISHABLE` |
+| deuteron | `averaged-crossings` | 3.13e-03 | **0.00e+00** | **`MISLABELLED`** |
+| tritium | `averaged-crossings` | 1.52e-02 | 3.22e-05 | **`MISLABELLED`** |
+| helium-3 | `averaged-crossings` | 1.94e-02 | 4.05e-05 | **`MISLABELLED`** |
+
+**Every atom where the two conventions differ at all is mislabelled**, by two to
+three orders of magnitude. Not one carries a correct label. proton and neutron
+are not counter-examples: A=1 atoms have no inter-nucleon crossing, so the
+colour-weighted substitution has nothing to act on and the conventions are the
+same computation — decided structurally (zero p–n crossings in the word) rather
+than by comparing floats, since a string-passed shift and an internally derived
+`h/2` differ in the last bits.
+
+deuteron reads `0.00e+00` because it was regenerated through the now-working
+native path earlier in this pass — an exact reproduction, which is the
+strongest possible confirmation that the stored values are colour-weighted.
+
+### This inverts the question I put to the owner
+
+I asked whether ⁴He should keep `colour-weighted-averaged-crossing` or revert
+to `averaged-crossings` "like the rest of the corpus", on a survey showing 1
+colour-weighted against 11 averaged. **⁴He was not the outlier — it was the
+only one telling the truth.** The other labels say colour-blind while the
+numbers are colour-weighted, so the survey counted labels that describe nothing.
+
+There is accordingly no physics decision to make here: the corpus computes
+colour-weighted throughout (`_avg_color_delta`, 16 live consumers), ⁴He's label
+already matches its values, and what remains is repairing four wrong strings.
+That is a labelling fix, and it should be done from measurement — this tool —
+rather than by hand, since hand-labelling is how they came to be wrong.
+
+⁴He itself is not in the table: at H_12 each measurement is a full 77-partition
+recompute, hours per convention. It is the one atom whose label was never in
+doubt anyway.
+
+## P50 — the evidence gate cannot fire for half the corpus
+
+The wave's early counts showed `VALUES` at 9 of 20 — a rejection rate high
+enough to be suspicious rather than informative. Measuring the cause:
+
+| declaring producers with a locatable witness | 115 |
+|---|---:|
+| witness carries a q₀-valued field | 56 |
+| **carries none** | **59** |
+
+`ANCHOR_MIGRATION` is evidence-gated: it requires seeing a q₀-valued field flip
+muon → proton. **For 59 of 115 witnesses there is no such field to flip**, so a
+genuine re-anchoring can only ever classify `VALUES` and be reverted. The
+verdict added to stop the guard discarding correct migrations still discards
+them for half the corpus.
+
+That gating was a deliberate choice, made because "small movement" alone cannot
+distinguish an anchor shift from a crossing-convention change. But the numbers
+now say the bound does separate them: an anchor migration moves ~1e-7 relative,
+the convention moves 1.8e-4, and the collateral ceiling already sits at 1e-5
+between the two. So for a witness with no q₀ field, the available evidence is:
+
+- `resolve_q0_anchor(producer)` reports **proton**, so a re-anchor is expected
+  on any re-run; and
+- every moved field is inside the 1e-5 bound, which excludes the convention
+  change by an order of magnitude either side.
+
+That is weaker than seeing the flip, and it should not be laundered into the
+same verdict. The right shape is a distinct `ANCHOR_MIGRATION_INFERRED` that is
+**reported but not auto-kept** — surfaced for a human rather than silently
+committed or silently reverted.
+
+**Deliberately not implemented in this pass.** Changing what the guard keeps,
+while a wave is running against it and without measuring the outcome, is the
+same move that produced every self-inflicted problem in this document. The
+finding is the deliverable; the verdict needs its own pass with before/after
+counts.
+
+Two smaller gaps surfaced with it, both in the driver rather than the policy:
+it reports counts but not *which* witnesses were rejected or why, which is what
+made a 45% rejection rate uninvestigable without this separate measurement; and
+witness-to-producer matching is by stem, so the 48 producers whose witness name
+does not derive from the script name were not measurable here at all.
+
+## P51 — the driver now keeps its evidence, and P50 survives a fuller measurement
+
+### 95 rejections that could not be investigated
+
+The first full wave reported `DECLARED 37 / ANCHOR_MIGRATION 5 / VALUES 59 /
+FAILED 36 / NOCHANGE 26` and nothing else. Those 95 rejections were
+**uninvestigable**: the witness is reverted moments later, so no artefact
+survives, and the counters recorded neither which producer nor which field
+triggered the verdict. Answering "why is the VALUES rate 45%" needed a separate
+measurement pass — for evidence the driver had held in its hand and discarded.
+
+Every producer now yields a record: verdict, the witnesses it touched, the
+classifier's own `reason`/`sample` per rejection, and for a failure the exit
+code (or `timeout`) with the last line of stderr. That last field is not
+incidental — the dominant failure in the first wave was
+`ModuleNotFoundError: No module named 'pyhecke'`, pure harness error, and the
+counts alone could not tell it from 36 real defects.
+
+Two details worth recording because they are easy to get wrong:
+
+- **`TimeoutExpired.stderr` is raw bytes even under `text=True`**, because the
+  exception is raised inside `_communicate` before the decode step. Assuming
+  `str` loses the stderr of exactly the runs that hung — the ones hardest to
+  diagnose afterwards.
+- **The report is rewritten after every producer**, atomically. A 163-producer
+  wave runs for hours; a report that only exists on clean exit is missing
+  precisely when something went wrong enough to interrupt it.
+
+The `VALUES` histogram keys on the *cause* rather than the field, so the P50
+finding surfaces as one line instead of hiding behind 59 distinct field names.
+21 self-tests (was 6), including the pure `roll_up` partition and a stubbed
+end-to-end `main()` that spawns no producer.
+
+### P50 re-measured over the fuller producer set
+
+P50's denominator came from matching witnesses to producers by filename stem,
+which missed 48 producers. All 48 are now resolvable — reusing the existing
+machinery rather than a new resolver: `builder_names` (including f-string
+patterns), the `written_filenames` dataflow resolver, and the `scriptFile`
+back-reference filtered through `classify(...) == "WRITES"`. 44 have a committed
+witness; the other 4 resolve cleanly by name but their witness has **never been
+committed**, which is a finding rather than a resolver failure. Recovery was two
+independent routes agreeing, with **zero witnesses claimed by more than one
+producer** across all 278 — the check against f-string over-matching.
+
+Measured pinned at `13ff8207`, never the working tree:
+
+| | producers | q₀ field | none |
+|---|---:|---:|---:|
+| stem only (P50 baseline, reproduced exactly) | 115 | 56 | **59** |
+| newly recovered | 44 | 25 | **19** |
+| **fuller set** | **159** | **81** | **78** |
+
+**78 of 159 (49%) against the reported 59 of 115 (51%).** The evidence gate's
+inability to fire for roughly half the corpus was *not* an artefact of the
+incomplete sample — a stronger statement than the original, and the figure any
+`ANCHOR_MIGRATION_INFERRED` sizing should quote. The per-witness view (278, 79
+without) is skewed by `canonical_isotope_witness.py`, a genuine per-Z shard
+producer emitting 120 witnesses; excluding it gives 158 with 78 lacking a q₀
+field, matching the per-producer figure.
+
+## P52 — `ANCHOR_MIGRATION_INFERRED`, and two defects only measurement found
+
+The verdict P50 asked for: where a witness carries no q₀ field to flip, infer a
+migration from the producer resolving to `proton` plus every moved field sitting
+inside the 1e-5 collateral bound. Reached only on the `not flips` branch — the
+exact point the old rule returned `VALUES` unconditionally. **Not auto-kept**:
+the driver's `KEEP` is exact set membership, so INFERRED lands in `drop` and is
+surfaced for review, which needed no driver edit and is pinned by a self-test.
+
+32 self-tests (was 15), all originals kept verbatim. The negatives matter more
+than the positives: a convention-sized 1.8e-4 move → `VALUES`; a witness that
+*does* carry a q₀ field → strict path → `VALUES`.
+
+### The impact number is unmeasurable, and was not estimated
+
+The wave reverted its 59 `VALUES` witnesses per file before they ever reached
+the object store, and the log holds only totals. Those pairs exist nowhere
+readable. What could be measured, all read-only from git:
+
+- **Regression on the wave's own 42 pairs** (`13ff8207^` → `13ff8207`): 37
+  DECLARED / 5 ANCHOR_MIGRATION under both old and new rules. Zero drift.
+- **All 1287 commits, 222 real witness pairs**: VALUES 140 → 138, INFERRED 2
+  (1.4%). Everything else unchanged. Of the 138 declining: 55 carry a q₀ field,
+  34 moved a non-numeric field, 24 moved nothing numerically, 19 name no
+  producer, 6 exceed the bound — and those 6 are 0.0019–2.8 relative, ≥190× the
+  bound. **Nothing sits near the threshold**, which is the property that makes
+  the bound safe rather than lucky.
+
+History is dominated by hand-authored physics changes rather than producer
+re-runs, so 1.4% bounds false-positive risk, not the wave conversion rate.
+
+### Two defects the measurement caught
+
+1. **float64 de-padding read as an anchor migration.** Commit `0de68792`
+   ("strip float64 padding… no value moved") rewrites
+   `2.029883212819307392038581383530981838703155517578125` as
+   `2.0298832128193074` — different text, *identical* float. 24 of its 58 files
+   classified INFERRED. A fourth gate (largest relative move strictly > 0) fixes
+   it. Fitting that the padding drain this whole document is about turns out to
+   be the thing most easily mistaken for a migration.
+2. **The verdict would never have fired.** `witness_regen_wave` builds a
+   PYTHONPATH for producer *subprocesses*, but calls `classify` in its own
+   process, which has only `computations/` on `sys.path`. The resolver returned
+   `None` for every producer and collapsed silently back to `VALUES` —
+   indistinguishable from the verdict correctly declining. Shipped as-is it
+   would have looked like a well-behaved gate that simply never applied.
+   `_resolve_anchor` now falls back to the in-repo substrate path.
+
+### Two things left open
+
+- **Gate 2 filters nothing today.** Of 163 declaring producers, 13 resolve to
+  muon and all 13 carry a q₀ field, so gate 1 already stops them. Kept — the
+  manifest is editable and it is the condition the verdict claims — but the
+  numeric gates do all the discriminating, and that is documented in-code
+  rather than left to be rediscovered.
+- **A one-producer disagreement on the stem-only baseline.** The agent measured
+  55/60 where P50 and an independent re-measurement both give **56/59**; a third
+  measurement here, pinned at `13ff8207`, also gives 56/59. Immaterial — both
+  cite the fuller 78 of 159 — but the baseline should not be quoted again until
+  someone names the producer.
+
+## P53 — ⁴He rebuilt in 20 minutes, and the label bug was in the producer
+
+The colour-weighted native path turned an "hours, dedicated run" job into
+**1218 s** — 1199 s of it a single `chi_lambda_all_partitions_mpfr` batch over
+all 77 partitions, no bypass warning, 9 of 47 crossings taking explicit
+`avg_shifts`. The earlier estimate of hours measured the pure-mpmath fallback,
+not the fixed path.
+
+| | value |
+|---|---|
+| new `tr_M_at_q0` | `0.055358408216379032879226444353999291113592115895273` |
+| old (`13ff8207`) | `0.055358426266783106464808452739349303052129025560984` |
+| relative change | **−3.26e-07** |
+| q₀ shift muon→proton | −1.15e-08 → amplification **28.3×** |
+
+`q_0_50dps` carries the proton prefix, `q0Anchor` reads `proton`, `scriptHash`
+is stamped. Largest per-λ move 1.99e-6, everything inside the 1e-5 bound. The
+numerics are a clean anchor migration.
+
+### The classifier still said VALUES, and it was right three times over
+
+Peeling the diff back: normalise the `by_partition` ordering and drop the new
+`dim` field → still `VALUES`; drop the fields the rebuild loses → then
+`ANCHOR_MIGRATION`. Three structural problems, not one:
+
+1. **Partition order changed and entries gained `dim`/`compute_time_sec`.** The
+   classifier flattens `by_partition` positionally, so a reorder alone
+   misaligns all 77 entries.
+2. **`convention` regressed** — and this is the important one.
+3. **Fields present at HEAD are dropped**: `producer`,
+   `tr_M_markov_peel_xref`, `tr_M_dual_path_rel_gap`, `n_partitions_total`,
+   `partial`. `save_witness`'s payload simply does not emit them.
+
+### The mislabelling was never in the witnesses
+
+`save_witness` **hardcoded** `"convention": "averaged-crossings"` — in both
+payloads — while `build_chi_cache_at_q0` installs the colour-weighted p–n
+crossing thirty lines above. Every A≥2 cache therefore shipped a label
+contradicting its own numbers, which is precisely what
+`chi_convention_from_values_audit` had to detect by recomputation.
+
+So repairing the three mislabelled witnesses by hand would have been **undone
+by the next rebuild** — and this very rebuild proved it, regressing ⁴He's one
+*correct* label to `averaged-crossings`. Fixing witnesses while the producer
+re-asserts the wrong string is a treadmill.
+
+The label is now **derived from the word**: count the crossings the
+colour-weighted substitution actually replaced, and label accordingly. A=1
+atoms have none, so colour-blind stays honest for them — counted rather than
+assumed from the atom. Confirmed end to end against the independent audit:
+
+    proton     averaged-crossings                 INDISTINGUISHABLE
+    deuteron   colour-weighted-averaged-crossing  AGREES
+
+deuteron classifies `VALUES` on that rebuild, which is the guard working as
+designed: `convention` is deliberately outside `META`, so a convention change
+must surface for review rather than pass as metadata. It is committed here with
+that justification and an independent measurement behind it, not waved through.
+
+## P54 — labels repaired, the gate taught, and a correction to P47
+
+Tritium and helium-3 repaired to `colour-weighted-averaged-crossing`; all three
+now read `AGREES` under the values audit. The deuteron's repair is the
+producer's, not a hand-edit, since the derived-label fix regenerated it — and
+`convention_inferred_by` is deliberately kept on the two hand-set labels and
+absent from the deuteron, so the asymmetry itself records which is which.
+
+### Correcting P47
+
+P47 said, of the deuteron: *"the `colour-weighted-averaged-crossing` label is
+honest… that also settles the earlier worry that a mislabelled convention was
+lurking — it was not."* **The cache declared `averaged-crossings` at the time.**
+The residuals were read correctly and the label was read backwards, so a
+sentence claiming the labels were fine sat directly beneath the measurement
+proving three of them wrong. It is true of the deuteron now, for the first time,
+and only because the producer was fixed.
+
+### The gate asserted the wrong convention for the whole family
+
+`chi_convention_audit` had `KNOWN_CONVENTIONS = {sign-only, averaged}` and both
+`PRODUCER_CONVENTION["chi_at_q0_via_hoefsmit_mpfr.py"]` and the
+`^chi-.*-at-q0-50dps$` pattern asserting `AVERAGED`. So it **agreed with the
+wrong string** for every A≥2 cache, and adding the new vocabulary alone would
+have converted that silent agreement into a CRITICAL mismatch — the repair
+turning a green gate red for being correct.
+
+Both are now word-dependent sets: this family substitutes the colour-weighted
+crossing only where a p–n interface exists, so A=1 atoms and every `-free-`
+word are honestly `AVERAGED` while A≥2 atoms are `COLOUR_WEIGHTED`. The gate
+rejects strings outside the vocabulary; deciding *which* applies belongs to
+`chi_convention_from_values_audit`, which recomputes instead of asserting.
+`mismatch (CRITICAL)` returns to 0, with the one pre-existing
+`unknown-convention` (`bring_color_weighted-…`) untouched.
+
+Note the gate reads `producer` or `scriptFile`, and the rebuilt caches carry
+neither — `stamp_staleness_metadata` does not set them — so expectations come
+from the computation-id pattern. That is why fixing only the producer map would
+not have been enough.
+
+### The `-at-qinv-` family is correctly labelled, which vindicates a revert
+
+Measured: colour-blind reproduces `chi-{deuteron,tritium,helium-3}-h*-at-qinv-`
+to **exactly zero**, so `averaged-crossings` is right there. Not an accident —
+`chi_at_q_inv_via_native_mpfr._word_to_signed` collapses every crossing to
+±1/0 and passes no shift, letting the kernel derive −h/2 itself.
+
+That is independent confirmation that reverting the q_inv port (P48) was
+correct. Had it shipped, it would have made this family colour-weighted and
+broken labels that were already right — a 3× error in the values *and* a
+regression in the labels. The same sign trap caught the measurement too: a
+first pass weighting with h(q₀) while evaluating at q₀⁻¹ produced a residual of
+2.8e+01, a sign error masquerading as a decisive rival, until the word was
+rebuilt at the evaluation q.
+
+Also measured and needing nothing: dineutron, diproton and every `-free-` word
+carry zero colour-weighted crossings, so the conventions coincide
+(`INDISTINGUISHABLE`). And the proton/neutron residual floor of ~3e-07 is not
+noise — those caches still store the muon-pinned q₀ while the audit recomputes
+at the proton pin. The convention signal is ~500× larger, so the verdicts
+survive it comfortably.
+
+## P55 — ⁴He lands proton-anchored, and a classifier gap worth naming
+
+Rebuilt against the fixed producer: 77/77, `convention`
+**`colour-weighted-averaged-crossing`** restored *by derivation* rather than by
+hand, `q0Anchor: proton`, `q_0_50dps` on the proton prefix, `scriptHash`
+stamped. `chi_convention_audit` holds at `mismatch (CRITICAL): 0`.
+
+Verified key-matched against HEAD rather than positionally:
+
+| | |
+|---|---|
+| partitions | 77 → 77, identical set |
+| largest per-λ relative move | 1.99e-06 at λ=(7,4,1) — inside the 1e-5 bound |
+| `tr_M` relative change | 3.26e-07 |
+| convention | unchanged (the regression never reached a commit) |
+
+A clean anchor migration.
+
+### The classifier still calls it VALUES, and that is a real gap
+
+`reason: non-numeric change at by_partition[0].dim`. The rebuild reorders
+partitions and each entry gains `dim` and `compute_time_sec`; `flatten` walks
+lists **positionally**, so a reorder alone misaligns all 77 entries and one
+added key is enough to veto. Peeling it back — sort `by_partition` by λ, drop
+the added keys — yields `ANCHOR_MIGRATION`.
+
+So the verdict is honest about what it saw and wrong about what happened. The
+fix is to key list-of-record fields by their natural identity (here
+`partition`) instead of by index, which would also stop a producer that merely
+reorders its output from reading as 561 moved fields. **Not done here** — it
+changes what the guard accepts, and doing that at the end of a long pass
+without before/after counts across the corpus is the move this document keeps
+recording the cost of.
+
+Committed on the key-matched evidence above, with the limitation stated, rather
+than by relaxing the guard to make a green light appear.
+
+## P56 — the guard walks down to the real defect
+
+Three fixes, and the order they surfaced in is the point: each cleared a layer
+of schema churn and exposed the next, until what was left was a genuine data
+loss.
+
+### 1. Lists were addressed by position
+
+`flatten` walked lists by index, so the ⁴He rebuild — which reorders
+`by_partition` and gives each entry a `dim` — misaligned all 77 entries at
+once and reported **560 moved fields**, rejecting on `by_partition[0].dim`. The
+verdict was honest about what it saw and wrong about what happened; any
+producer that merely reorders its output would read the same way.
+
+Records carrying an identity key are now addressed by it —
+`by_partition[partition=(7, 4, 1)].chi_lambda` compares like with like whatever
+the order. Lists without one keep index addressing, which is right for
+genuinely positional data, and duplicate identities fall back to index, since
+collapsing two entries loses a field and that is worse than misaligning one.
+560 → 241.
+
+### 2. An added field is not a moved field
+
+`dim` did not exist before, so it cannot have *moved*. Vetoing on it rejects a
+clean migration for enriching its own output. Additions are now skipped on the
+anchor path — and removals are the opposite, a rejection, which is what
+surfaced the actual bug:
+
+    VALUES  field removed at n_partitions_total
+
+`description` also went to `META`, and the list now carries **the principle**
+rather than growing until the light turns green: *a field belongs in META when
+it describes how, when or by what the computation ran — never what it
+computed.* `convention` fails that test and stays out; it changes what the
+numbers mean, worth 182 ppm.
+
+### 3. The rebuild was shrinking its own witness
+
+`save_witness` dropped seven fields HEAD carried. Two (`scriptFile`,
+`_provenance`) are metadata. Three — `producer`, `n_partitions_total`,
+`partial` — are real and now restored: the last two are how a consumer tells a
+complete cache from a resumed one, and `producer` is the first thing
+`chi_convention_audit._producer_field` reads, which is why that gate had been
+falling through to a computation-id pattern.
+
+**Two are not restored, and must not be faked.** `tr_M_markov_peel_xref` and
+`tr_M_dual_path_rel_gap` came from a cross-check the current producer does not
+compute — `tr_M_via_wenzl_bridge_mpfr` returns no such values. Inventing them
+to make a diff clean would be fabricating a cross-check that never ran. That is
+a genuine capability regression in the producer, recorded here rather than
+papered over.
+
+### A fourth verdict: `SCHEMA_GAIN`
+
+A diff that only *adds* fields moved no value. Restoring the three above
+produces exactly that shape, and calling it `VALUES` would report a strict
+provenance gain as drift. **Reported, not auto-kept** — an added field could
+still carry a wrong new value, and this verdict certifies only that nothing old
+moved. `KEEP` is unchanged, so the driver still reverts it for a human to look
+at.
+
+40 self-tests (was 32), including the negatives that keep each rule honest: an
+addition *alongside* a real move is still `VALUES`, a reordered list hiding a
+real move is still caught, and a removed field is still a loss.

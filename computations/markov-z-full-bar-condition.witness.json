@@ -1,0 +1,136 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T21:56:43.187618+00:00",
+  "commitSha": "548a34b6937e9586d559ec29ad5cf9d17fe9ad33",
+  "assertions": [
+    {
+      "name": "checks_failed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "n_integer_ranks_satisfying_full_bar_condition",
+      "computed": 8,
+      "expected": 8,
+      "passed": true,
+      "source": "sympy exact; ALL of them -- it is an identity of the family"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1872,
+  "computation": "markov-z-full-bar-condition",
+  "scriptFile": "markov_z_full_bar_condition_probe.py",
+  "scriptHash": "d95a6783eaf6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "M3 contains sigma_n, which the bar involution inverts, so the bar-partner of the Markov parameter z is z - h, not z. Under the correct condition bar(z) = z - h, convention D holds and C fails -- reversing the coefficient-half verdict of #4767/#4802.",
+  "parameters": {
+    "exact": "sympy, symbolic in q",
+    "q_0_pin": "not applicable (symbolic)",
+    "uses_muon_built_cache": false
+  },
+  "data": {
+    "checks": {
+      "hecke_relation_holds": true,
+      "sigma_inv_eq_sigma_minus_h": true,
+      "C_is_coefficient_half_invariant": true,
+      "D_is_not_coefficient_half_invariant": true,
+      "D_satisfies_full_bar_condition": true,
+      "C_fails_full_bar_condition": true,
+      "verdict_reverses_between_conditions": true,
+      "D_both_sides_equal_one_over_q3_plus_q": true,
+      "every_integer_rank_satisfies_full_condition": true,
+      "full_bar_condition_holds_for_symbolic_N": true,
+      "family_equals_h_over_one_minus_q_pow_minus_2N": true,
+      "C_implied_rank_is_q_dependent": true,
+      "no_rank_is_coefficient_half_invariant": true
+    },
+    "correct_condition": "bar(z) = z - h,  h = q - 1/q",
+    "conventions": {
+      "C": {
+        "z": "1/(q^(1/2)+q^(-1/2))",
+        "coefficient_half_invariant": true,
+        "satisfies_full_bar_condition": false
+      },
+      "D": {
+        "z": "q^3/(q^2+1)",
+        "coefficient_half_invariant": false,
+        "satisfies_full_bar_condition": true,
+        "both_sides": "1/(q^3+q)"
+      }
+    },
+    "per_rank": [
+      {
+        "N": 1,
+        "z_N": "q",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 2,
+        "z_N": "q**3/(q**2 + 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 3,
+        "z_N": "q**5/(q**4 + q**2 + 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 4,
+        "z_N": "q**7*(q**2 - 1)/(q**8 - 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 5,
+        "z_N": "q**9*(q**2 - 1)/(q**10 - 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 6,
+        "z_N": "q**11*(q**2 - 1)/(q**12 - 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 7,
+        "z_N": "q**13*(q**2 - 1)/(q**14 - 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      },
+      {
+        "N": 8,
+        "z_N": "q**15*(q**2 - 1)/(q**16 - 1)",
+        "satisfies_full_bar_condition": true,
+        "coefficient_half_invariant": false
+      }
+    ],
+    "interpretation": {
+      "the_dilemma_dissolves": "#4802 concluded bar-invariance and a fibre reading are incompatible at every rank. That holds for the coefficient-half condition bar(z) = z, and that negative is reproduced here. But M3 contains sigma_n, which bar inverts, so the condition the axiom actually supports is bar(z) = z - h -- and THAT condition is an identity of the whole fibre family, verified for symbolic N (equivalently z_N = h/(1 - q^(-2N))). Bar-covariance and the fibre reading are not competing desiderata; they are the SAME condition. There was never a trade-off to make.",
+      "why_C_fails": "Convention C is not a member of the family at any fixed rank: solving z_C = h/(1-q^(-2N)) for N returns a q-dependent expression, so C's implied rank varies with q. The N = 2.5995 of #4766/#4802 is a pointwise inversion at q_0, not a rank. That is why C satisfies the coefficient-half condition and fails the full one.",
+      "same_error_class_as_item_2": "Like eigenbasis-structural-lemmas item 2 (PR #4826), a bar claim about an object living inside the algebra was computed with the coefficient half alone, dropping the sigma -> sigma^{-1} half.",
+      "what_this_does_not_settle": "Scope (a): it removes the stated grounds for preferring C. The >= 8 corpus sites hard-coding C and the owner reservation recorded in #4767 are untouched and not weighed here."
+    }
+  },
+  "caveats": [
+    "Rests on tau(x sigma_n^{-1}) = (z - h) tau(x), which follows from M3 plus sigma^{-1} = sigma - h (verified) and LINEARITY of tau. It further assumes the Markov trace is bar-compatible, tau(bar y) = bar(tau y); that compatibility is the standard Ocneanu-trace property but is asserted here, not proved.",
+    "Scope (a). Removes the bar-invariance argument for convention C; does not by itself decide the convention, and does not touch the >= 8 corpus sites that hard-code C."
+  ]
+}

@@ -84,14 +84,14 @@ def HasOrder (h : R) (k : ℕ) (x : A) : Prop :=
   ∃ c : A, x = algebraMap R A (h ^ k) * c
 
 /-- Downward monotone: order ≥ `k'` implies order ≥ `k` for `k ≤ k'`. -/
-theorem of_le {h : R} {k k' : ℕ} (hle : k ≤ k') {x : A}
+theorem HasOrder.of_le {h : R} {k k' : ℕ} (hle : k ≤ k') {x : A}
     (hx : HasOrder h k' x) : HasOrder h k x := by
   obtain ⟨c, hc⟩ := hx
   refine ⟨algebraMap R A (h ^ (k' - k)) * c, ?_⟩
   rw [hc, ← mul_assoc, ← map_mul, ← pow_add, Nat.add_sub_cancel' hle]
 
 /-- **Products add h-orders.** -/
-theorem mul {h : R} {p q : ℕ} {x y : A}
+theorem HasOrder.mul {h : R} {p q : ℕ} {x y : A}
     (hx : HasOrder h p x) (hy : HasOrder h q y) : HasOrder h (p + q) (x * y) := by
   obtain ⟨c, rfl⟩ := hx
   obtain ⟨d, rfl⟩ := hy
@@ -101,7 +101,7 @@ theorem mul {h : R} {p q : ℕ} {x y : A}
 
 /-- **Commutators add h-orders** — the h²-per-level engine of the order law.
 `[x, y] = x·y − y·x` has order `p + q` when `x, y` have orders `p, q`. -/
-theorem commutator {h : R} {p q : ℕ} {x y : A}
+theorem HasOrder.commutator {h : R} {p q : ℕ} {x y : A}
     (hx : HasOrder h p x) (hy : HasOrder h q y) :
     HasOrder h (p + q) (x * y - y * x) := by
   obtain ⟨c, rfl⟩ := hx
@@ -114,7 +114,7 @@ theorem commutator {h : R} {p q : ℕ} {x y : A}
 
 /-- **Trace transfer.** Any R-linear functional (the Markov trace is one) maps an
 h-order-`k` element to a scalar divisible by `h^k`. -/
-theorem trace {h : R} {k : ℕ} {x : A} (hx : HasOrder h k x)
+theorem HasOrder.trace {h : R} {k : ℕ} {x : A} (hx : HasOrder h k x)
     (τ : A →ₗ[R] R) : ∃ s : R, τ x = h ^ k * s := by
   obtain ⟨c, rfl⟩ := hx
   refine ⟨τ c, ?_⟩

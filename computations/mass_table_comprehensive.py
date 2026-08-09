@@ -5,12 +5,24 @@ Computes absolute masses AND binding energies for all nuclei from
 proton (A=1) through ¹²C (A=12), using the current production
 infrastructure:
 
-  ABSOLUTE MASS:
-    m(K) = m_e · [Vol(𝓑₃)/ℏ_q²] · λ_A · (1 ± Δm/(2·M_N))
+  ABSOLUTE MASS — via the `canonical_mass` facade (muon-anchored Hecke
+  energy), NOT the λ_A Borromean form:
 
-  where λ_A = Family A (PROVED), Δm/M_N = substrate-pure flavor-split
-  (PROVED per PR #942). Proton gets −Δm/2, neutron gets +Δm/2.
+    m_p = 2·(m_μ·F_Bor − 6·m_e),  m_μ = m_e·Vol(4₁)/ℏ_q²,
+    F_Bor = |tr_M(β_Bor)|·[3]_q!/q³              → ≈938.27 / 939.56 MeV
+
   Composite nucleus mass = Z·m_p + N·m_n − B(K).
+
+  ⚠ The form `m(K) = m_e·[Vol(𝓑₃)/ℏ_q²]·λ_A · (1 ± Δm/(2·M_N))` that this
+  docstring previously advertised as "the current production tier" was
+  **removed 2026-06-24** (owner ruling): applying 1/ℏ_q² to the *Borromean*
+  volume with ρ=λ_A is a CODATA-implied FIT giving m_p ≈ 966 (+2.96%).
+  λ_A is still computed here, but **only as a diagnostic column** (see
+  `linking_weight_family_a` below) — it does not enter the mass.
+  See docs/canonical-mass-formula-guardrail.md.
+
+  Δm/M_N = substrate-pure flavor-split (PROVED per PR #942) remains the
+  p/n split applied to the facade's nucleon masses.
 
   BINDING ENERGY:
     For A ≤ 3: binding_canonical with use_closed_form=True (PR #921;
@@ -146,16 +158,26 @@ for z in range(2, 119):
 def borromean_mass_prediction(
     q: mp.mpf, Z: int, N: int, atom_name: str = None,
 ) -> dict:
-    """Predict absolute mass of nucleus (Z, N) via the Borromean
-    baryon mass formula (Family A + substrate-pure flavor-split).
+    """Predict absolute mass of nucleus (Z, N) from the canonical nucleon
+    masses (+ substrate-pure flavor-split).
 
-    m_avg = m_e · Vol(𝓑₃)/ℏ_q² · λ_A
-    m_p_pred = m_avg · (1 − Δm/(2·M_N))
-    m_n_pred = m_avg · (1 + Δm/(2·M_N))
+    m_p_pred, m_n_pred = `canonical_mass.proton_neutron_mass_mev()`
+        — the muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e).
     m_nucleus = Z · m_p_pred + N · m_n_pred − B(K)
 
-    If Vol(K) is available for the atom, uses the truth-tracking
-    per-knot formula: m(K) = m_e · VolDensity(K, q₀)
+    ⚠ The name `borromean_mass_prediction` and the formula
+    `m_avg = m_e · Vol(𝓑₃)/ℏ_q² · λ_A` this docstring used to state are
+    **historical**: that λ_A route is a fit (m_p ≈ 966, +2.96%) and was
+    removed 2026-06-24 by owner ruling — see the inline comment below and
+    docs/canonical-mass-formula-guardrail.md. The function name is kept to
+    avoid churning call sites; it no longer describes the mass route.
+
+    If Vol(K) is available for the atom, a per-knot
+    `m(K) = m_e · vol_density_per_block(Vol(K), tr_M(K), q)` column is
+    additionally reported as the TRUTH-TRACKING OVERRIDE. That per-block
+    reading is **not** a canonical absolute mass either (it gives
+    m_p ≈ 406, −57%); per the guardrail `vol_density_per_block` is valid
+    for binding *ratios*, where the scale cancels.
     """
     m_e = mp.mpf(str(M_E_MEV))
 

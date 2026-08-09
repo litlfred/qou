@@ -1,0 +1,30 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "PROBE-A part 4: bar parity is not an invariant of a 1-dim HH^1",
+  "bean": "qou-jcmw",
+  "description": "Exact Q(i) verification that the bar involution is a sigma-semilinear algebra automorphism, that [D^bar] = mu.[D] with mu.sigma(mu) = 1, and that Hilbert 90 plus sigma(a) = -a realise BOTH parities on generators of the same one-dimensional class. Hence the bar-parity gate cannot prune a 1-dimensional HH^1.",
+  "verification_vehicle": "H_3 at q = i, chosen because the argument is uniform in n (it uses only dim HH^1 = 1, sigma(a) = -a, and Hilbert 90 for a quadratic cyclotomic extension) and H_3 is small enough for exact arithmetic. All three hypotheses hold for H_5(zeta_5): dim HH^1 = 1 was computed in part 1, sigma(a) = -a is checked here for zeta_5 directly, and Q(zeta_5)/Q(sqrt 5) is quadratic.",
+  "results": {
+    "dim_Der": 4,
+    "dim_Inn": 3,
+    "dim_HH1": 1,
+    "bar_is_involution": true,
+    "bar_is_algebra_automorphism": true,
+    "mu": "1",
+    "norm_mu_sigma_mu": "1",
+    "nu": "2",
+    "nu_D_parity": {
+      "even": true,
+      "odd": false
+    },
+    "a_nu_D_parity": {
+      "even": false,
+      "odd": true
+    },
+    "zeta5_sigma_a_eq_minus_a": true,
+    "zeta5_sigma_is_involution": true
+  },
+  "verdict": "The bar-parity sub-test of bean qou-jcmw is VACUOUS as posed: parity is a property of a chosen generator, not of a one-dimensional class, and both parities are realised. Scope-(b) for the GATE (invariant cited: Hilbert 90 for K/K^sigma together with sigma(a) = -a). This neither advances nor refutes the c_3 route -- it removes a proposed filter, so the route must be advanced or pruned on other grounds.",
+  "wired_to_production": false,
+  "fit_performed": false
+}

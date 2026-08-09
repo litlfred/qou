@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-06-29T17:15:05.133965+00:00",
-  "commitSha": "a47a1e7a1abca511f5b43c9d930709397d648845",
+  "computedAt": "2026-08-09T00:39:26.931720+00:00",
+  "commitSha": "74074440e60b2e843d7494aceb29387d5d6ce029",
   "assertions": [
     {
       "name": "a3plus_atoms_bypass_rank_deficiency_blocker",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 24,
   "computation": "binding-combiner-markov-peel-fallback",
   "scriptFile": "binding_combiner_markov_peel_fallback.py",
-  "scriptHash": "d7c7bdfccdcb",
-  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
+  "scriptHash": "8eddf0a46788",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,14 +28,16 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Binding energy via the canonical markov_peel Markov-trace difference B = E_0·(|tr_M(free)| − |tr_M(atom)|), closure-path-3 from docs/audits/2026-06-09-binding-canonical-default-depth-stratified.md. Bypasses the A ≥ 3 rank-deficiency blocker in canonical_tr_m_via_branching.py (which returns None for A ≥ 3) by using the exact-symbolic markov_peel trace (Gröbner–Shirshov reduce + Markov-axiom recursive ascent) directly, with no A-operator extracts. Uses pn_convention='strict_averaged' (color-blind) because the exact-symbolic-in-q trace path cannot represent the numeric color-weighting delta of the canonical default; the perturbation is sub-0.1%. RESULT: the trace difference under-binds severely with the wrong A-trend, confirming the audit's diagnosis that a per-atom trace difference carries no magic-A scale factor.",
   "contentBlock": "prop:atomic-mass-gb-nf",
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "E_0_CAL3_MeV": "0.7823334093100222",
     "m_e_CAL1_MeV": "0.51099895069",
     "pn_convention": "strict_averaged",
@@ -50,22 +52,22 @@
         "N": 1,
         "A": 2,
         "free_config": {
-          "tr_M_at_q0": "0.98352618195548050569232970261262953513066814133038",
-          "abs_tr_M_at_q0": "0.98352618195548050569232970261262953513066814133038",
+          "tr_M_at_q0": "0.98352618195548050569232970261262953513066814132985",
+          "abs_tr_M_at_q0": "0.98352618195548050569232970261262953513066814132985",
           "reduced_term_count": 16,
           "trace_sympy_ops": 619,
           "word_length": 22,
-          "elapsed_reduce_sec": 0.331,
+          "elapsed_reduce_sec": 0.37,
           "elapsed_trace_sec": 0.002
         },
         "bound_config": {
-          "tr_M_at_q0": "0.38828647155940888266862350656245905232933814141651",
-          "abs_tr_M_at_q0": "0.38828647155940888266862350656245905232933814141651",
+          "tr_M_at_q0": "0.38828647155940888266862350656245905232933814141634",
+          "abs_tr_M_at_q0": "0.38828647155940888266862350656245905232933814141634",
           "reduced_term_count": 32,
           "trace_sympy_ops": 1449,
           "word_length": 23,
-          "elapsed_reduce_sec": 0.421,
-          "elapsed_trace_sec": 0.006
+          "elapsed_reduce_sec": 0.481,
+          "elapsed_trace_sec": 0.007
         },
         "B_dim": "0.59523971039607162302370619605",
         "B_MeV_E0": "0.465675911991",
@@ -80,22 +82,22 @@
         "N": 2,
         "A": 3,
         "free_config": {
-          "tr_M_at_q0": "0.90802411983566707176671820142944112197096404749745",
-          "abs_tr_M_at_q0": "0.90802411983566707176671820142944112197096404749745",
+          "tr_M_at_q0": "0.90802411983566707176671820142944112197096404749673",
+          "abs_tr_M_at_q0": "0.90802411983566707176671820142944112197096404749673",
           "reduced_term_count": 64,
           "trace_sympy_ops": 2423,
           "word_length": 33,
-          "elapsed_reduce_sec": 1.831,
-          "elapsed_trace_sec": 0.014
+          "elapsed_reduce_sec": 2.111,
+          "elapsed_trace_sec": 0.016
         },
         "bound_config": {
-          "tr_M_at_q0": "0.10405211867846562931337388237094468248488006072402",
-          "abs_tr_M_at_q0": "0.10405211867846562931337388237094468248488006072402",
+          "tr_M_at_q0": "0.10405211867846562931337388237094468248488006072397",
+          "abs_tr_M_at_q0": "0.10405211867846562931337388237094468248488006072397",
           "reduced_term_count": 256,
           "trace_sympy_ops": 12164,
           "word_length": 35,
-          "elapsed_reduce_sec": 9.874,
-          "elapsed_trace_sec": 0.162
+          "elapsed_reduce_sec": 11.061,
+          "elapsed_trace_sec": 0.192
         },
         "B_dim": "0.803972001157201442453344319058",
         "B_MeV_E0": "0.628974156655",
@@ -110,22 +112,22 @@
         "N": 1,
         "A": 3,
         "free_config": {
-          "tr_M_at_q0": "1.0477565676413004582450360499088079712009749821853",
-          "abs_tr_M_at_q0": "1.0477565676413004582450360499088079712009749821853",
+          "tr_M_at_q0": "1.0477565676413004582450360499088079712009749821844",
+          "abs_tr_M_at_q0": "1.0477565676413004582450360499088079712009749821844",
           "reduced_term_count": 64,
           "trace_sympy_ops": 2402,
           "word_length": 33,
-          "elapsed_reduce_sec": 1.832,
-          "elapsed_trace_sec": 0.018
+          "elapsed_reduce_sec": 2.129,
+          "elapsed_trace_sec": 0.022
         },
         "bound_config": {
-          "tr_M_at_q0": "0.20654085857249695217888770130356399371477406553782",
-          "abs_tr_M_at_q0": "0.20654085857249695217888770130356399371477406553782",
+          "tr_M_at_q0": "0.20654085857249695217888770130356399371477406553767",
+          "abs_tr_M_at_q0": "0.20654085857249695217888770130356399371477406553767",
           "reduced_term_count": 128,
           "trace_sympy_ops": 5420,
           "word_length": 35,
-          "elapsed_reduce_sec": 2.963,
-          "elapsed_trace_sec": 0.051
+          "elapsed_reduce_sec": 3.363,
+          "elapsed_trace_sec": 0.053
         },
         "B_dim": "0.841215709068803506066148348605",
         "B_MeV_E0": "0.658111153641",
@@ -140,22 +142,22 @@
         "N": 2,
         "A": 4,
         "free_config": {
-          "tr_M_at_q0": "0.96732375059192494747999458356500059134669333837088",
-          "abs_tr_M_at_q0": "0.96732375059192494747999458356500059134669333837088",
+          "tr_M_at_q0": "0.96732375059192494747999458356500059134669333836985",
+          "abs_tr_M_at_q0": "0.96732375059192494747999458356500059134669333836985",
           "reduced_term_count": 256,
           "trace_sympy_ops": 8377,
           "word_length": 44,
-          "elapsed_reduce_sec": 9.648,
-          "elapsed_trace_sec": 0.122
+          "elapsed_reduce_sec": 11.472,
+          "elapsed_trace_sec": 0.142
         },
         "bound_config": {
-          "tr_M_at_q0": "0.055348345879337324856613592342565465147784293796198",
-          "abs_tr_M_at_q0": "0.055348345879337324856613592342565465147784293796198",
+          "tr_M_at_q0": "0.055348345879337324856613592342565465147784293796153",
+          "abs_tr_M_at_q0": "0.055348345879337324856613592342565465147784293796153",
           "reduced_term_count": 1024,
           "trace_sympy_ops": 38840,
           "word_length": 47,
-          "elapsed_reduce_sec": 48.04,
-          "elapsed_trace_sec": 1.59
+          "elapsed_reduce_sec": 53.823,
+          "elapsed_trace_sec": 1.915
         },
         "B_dim": "0.911975404712587622623380991222",
         "B_MeV_E0": "0.713468827576",
@@ -179,7 +181,7 @@
     "bypasses_rank_deficiency_blocker": true,
     "closure_status": "blocker-free baseline; does NOT close binding (under-binds, wrong A-trend) — trace difference has no magic-A scale factor",
     "color_weighting_note": "strict_averaged used; canonical bring_color_weighted delta is a sub-0.1% numeric perturbation not representable in the exact-symbolic-in-q trace path",
-    "total_wall_sec": 79.6
+    "total_wall_sec": 90.2
   },
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
