@@ -58,6 +58,15 @@ def bracket (a b : R) : R := a * b - b * a
 theorem bracket_skew (a b : R) : bracket a b = - bracket b a := by
   simp only [bracket]; noncomm_ring
 
+/-- **Central (color-dressing) invariance (sorry-free).** Adding central elements `s, t` (they
+commute with everything — e.g. the `bring_color_weighted` scalar dressing `−h(½−δ/4)·1`) to the
+two arguments leaves the bracket unchanged: `⁅a+s, b+t⁆ = ⁅a,b⁆`. -/
+theorem bracket_add_central {a b s t : R}
+    (hs : ∀ x, s * x = x * s) (ht : ∀ x, t * x = x * t) :
+    bracket (a + s) (b + t) = bracket a b := by
+  simp only [bracket, mul_add, add_mul]
+  rw [ht a, hs b, hs t]; abel
+
 /-- The right-handed trefoil Seifert matrix `[[-1, 1], [0, -1]]` (genus 1). -/
 def seifertTrefoil : Fin 2 → Fin 2 → ℤ
   | 0, 0 => -1
@@ -109,5 +118,17 @@ demands: the surface is the ONLY source, and only off the abelian shadow. -/
 theorem surface2Form_trefoil_eq_zero_iff (A : Fin 2 → R) :
     surface2Form seifertTrefoil A = 0 ↔ bracket (A 0) (A 1) = 0 := by
   rw [surface2Form_trefoil]
+
+/-- **The dressing is irrelevant (sorry-free).** Shifting each handle holonomy by a central
+element (the color/flavor scalar dressing) leaves the trefoil surface term unchanged. So the
+whole `bring_color_weighted` `−h(½−δ/4)·1` interface dressing **does not contribute** to the
+transverse curvature — only the BARE non-abelian crossing commutator `⁅A_a, A_b⁆` does. This
+prunes the interface search: the missing deuteron datum is a genuinely non-commuting pair of
+crossings, not a scalar color weight. -/
+theorem surface2Form_trefoil_dressing_invariant (A s : Fin 2 → R)
+    (h0 : ∀ x, s 0 * x = x * s 0) (h1 : ∀ x, s 1 * x = x * s 1) :
+    surface2Form seifertTrefoil (fun i => A i + s i) = surface2Form seifertTrefoil A := by
+  rw [surface2Form_trefoil, surface2Form_trefoil]
+  exact bracket_add_central h0 h1
 
 end QOU.QBeta.YekutieliTrefoilDiscretization
