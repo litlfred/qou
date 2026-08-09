@@ -120,6 +120,41 @@ Honest accounting of the miss:
 | absolute `B = −α·ln μ` | +1.1892 | +5.8485 | 4.6593 |
 | nature | ≈ −0.07 | +2.2246 | 2.2906 |
 
+> **RETRACTION 2026-08-09 — the `+5.8485` column is NOT a deuteron prediction,
+> and tabulating it against nature's `+2.2246` was wrong.** It is *identically*
+> the pp+nn two-bond energy. Exact algebraic identity under D, residual `1.0e-51`
+> at 50 dps:
+>
+>     z     = q³/(q²+1)  = μ_pp        z − h = q⁻¹/(q²+1) = μ_nn
+>     μ₋    = 1/(q+q⁻¹)² = μ_pp · μ_nn        μ₊ = 1 − μ_pp·μ_nn
+>
+> so `B(T=0) = −α·ln μ₋ = B_pp + B_nn` exactly — and it is *writhe-invariant*,
+> the `±0.4908765` shifts on pp and nn cancelling in the sum. Equivalently
+> `μ₋ = [1]/[2]²` and `μ₊ = [3]/[2]²`, relative quantum dimensions with the
+> `q^{±2}` framing factors cancelled. So (a) the colour-weighted p–n bond and
+> (b) the `T = 0` projector are **different objects**, not competing predictions
+> — there was never a conflict to reconcile.
+>
+> Moreover `+5.8485` can **never** be the deuteron, for any `q`: `q + q⁻¹ ≥ 2`
+> by AM-GM (already proved in-file as `two_le_add_inv`) gives `μ₋ ≤ 1/4`, hence
+>
+>     B(T=0) ≥ α·ln 4 = 5.803002359688 MeV     for every q,
+>
+> and `B_AME(²H) = 2.2245662` is **61.7 % below that universal floor**
+> (symmetrically `B(T=1) ≤ α·ln(4/3) = 1.204232`). A two-line Lean proof from
+> lemmas already present.
+>
+> What the projectors legitimately supply is the **ordering**
+> (`mu_singlet_lt_mu_triplet`, `singlet_binds_more`) and the channel-selection
+> refutation (`content_keyed_interface_refuted`) — none of which is a magnitude
+> claim. Those stand. The magnitude framing below does not.
+>
+> Structural note worth keeping: (a) and (b) are the **diagonal and off-diagonal
+> data of one 2×2 Hoefsmit `V_{(2,1)}` block** of `H₃`. The bond family has no
+> access to the off-diagonal, which is exactly *why* `t` is confined to
+> `[z−h, z]` and the projectors sit outside it on both sides. That same `M₂`
+> block is what carries the Lorentzian signature in `GramSignature.lean`.
+
 The **sign pattern is right and the magnitude is 2.034× too large**. Both model
 channels bind, where nature binds only one.
 
