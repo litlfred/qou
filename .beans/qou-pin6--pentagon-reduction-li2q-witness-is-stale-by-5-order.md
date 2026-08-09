@@ -132,3 +132,82 @@ produce the pin properly.
 Next step for both: find what moved the upstream value, decide which side is
 right, regenerate as its own change. `crosscheck_abs_err` in the second one is a
 built-in oracle — read it first.
+
+
+## RESOLVED for `rho_w_crystal_vertex_trace` 2026-08-09 — and MY FIRST VERDICT WAS BACKWARDS
+
+The committed `rho-w-crystal-vertex-trace.witness.json` records `crosscheck_abs_err ≈ 1e-49`
+against `chi-deuteron-h6-at-q0-50dps.witness.json`. Re-running gives **1.1e-4**. Chasing it
+down took two passes, and the first one reached the wrong answer.
+
+### Not a q₀ question
+
+The muon/proton separation moves `chi^[6]` by 8.1e-8 — four orders too small. Running
+`rho_w` under `QOU_Q0_ANCHOR=ideal` leaves the crosscheck at 1.115e-4, unchanged. Both
+producers are stable and reproduce themselves.
+
+### 🛑 The first verdict, and why it was wrong
+
+Of the partitions of 6 exactly two — `[6]` and `[1^6]` — give **1-dimensional** Hecke reps,
+where every generator is a scalar and the braid word collapses to a product. That looked like
+an independent arbiter, and it said `rho_w` was right and the cache wrong (matching `rho_w`
+to 15 digits, missing the cache by 1.1e-4).
+
+It was **not independent**. The closed form fixed the interface ("averaged") crossing at
+`I = s − h/2` — the COLOR-BLIND form — which was read straight out of `rho_w`. Adopting one
+disputant's convention and then finding it agrees with that disputant proves nothing.
+
+### The real answer: fit the convention, do not assume it
+
+`canonical_braid_crossings.classify_crossing` maps **two physically distinct** crossings onto
+one label:
+
+    d = -h/2                  color-BLIND
+    d = -h*(1/2 - delta/4)    color-WEIGHTED p-n interface
+
+Both return `"averaged"`, and `atom_canonical_crossings` returns only `(gen_idx, ctype)`.
+**The label is lossy**: a consumer rebuilding operators from it cannot recover which it had.
+
+Fitting `k` = how many averaged crossings take the weighted form
+(`computations/audits/chi_interface_convention_fit.py`):
+
+    atom        Z,N   n_avg   fit k   |diff|      Z*N
+    proton      1,0     2       0     4.8e-50      0
+    neutron     0,1     2       0     2.1e-50      0
+    diproton    2,0     4       0     8.6e-50      0
+    dineutron   0,2     4       0     9.4e-50      0
+    deuteron    1,1     5       1     5.6e-20      1
+    tritium     1,2     7       1     5.6e-20      2
+    helium-3    2,1     7       1     8.6e-20      2
+    helium-4    2,2     9       1     8.7e-20      4
+
+Exact to machine zero in all eight, with **k = 1 exactly when the atom has both a proton and
+a neutron**. Note it is NOT `Z*N`, the p-n pair count — the natural guess, ruled out by
+tritium, helium-3 and helium-4.
+
+### Verdict, reversed
+
+**The cache is CORRECT.** `chi_at_q0_via_hoefsmit_mpfr` applies the color-weighted interface
+on the p-n crossing. `rho_w_crystal_vertex_trace` builds `I_g = sigma_g - (h/2)*1` for EVERY
+averaged crossing, dropping `delta` on that one crossing — which is exactly why homogeneous
+atoms (p, n, pp, nn, no p-n interface) agree to 1e-50 and every mixed atom does not.
+
+So the committed `rho_w` witness is not merely stale: the producer has a real defect, and its
+`crosscheck_abs_err` field is the thing that catches it.
+
+### Two follow-ups
+
+1. **Fix the API, not each consumer.** `classify_crossing` should distinguish the two
+   (`averaged` vs `averaged_pn`) or return the coefficient. Every consumer rebuilding
+   operators from `atom_canonical_crossings` output inherits this today.
+2. **`chi_at_q0_via_hoefsmit_mpfr`'s resume path keys only on partition shape** —
+   `already[tuple(entry["partition"])]` — with no q₀ or dps check. Re-running it at a
+   different anchor reuses every cached value and re-stamps the CURRENT `q_0_50dps` onto
+   them; observed turning a muon-computed cache into one labelled proton without recomputing
+   a single χ. It cannot cause the 1.1e-4 (a from-scratch rebuild reproduces it) but it is a
+   straddle generator. Its `--help` also advertises `--atoms` while the parser takes
+   positional atom names.
+
+Lean: `QOU.MassTheory.OneDimWordCharacter` (sorry-free) proves the word collapse that makes
+the fit legitimate. Its `interface_on_trivial_rep` needs `2 ≠ 0` — in characteristic 2 the
+identity is false, which `ring` correctly refused before the hypothesis was added.

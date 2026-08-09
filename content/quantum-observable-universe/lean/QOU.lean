@@ -124,6 +124,7 @@ import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
 import QOU.MassTheory.DifferenceObservableErrorSplit
+import QOU.MassTheory.OneDimWordCharacter
 import QOU.MassTheory.SU4SupermultipletGate
 import QOU.MassTheory.BodyOrderCumulant
 import QOU.MassTheory.ReebPnMagnitude
