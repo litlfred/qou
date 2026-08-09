@@ -738,3 +738,68 @@ than one carrying float64:
   * `threerow_n12_isospin_control.py` — `import _path_bridge` without putting
     `computations/` on `sys.path`; fails from every cwd. No witness, untouched.
   * scipy is undeclared repo-wide (no top-level requirements.txt/pyproject).
+
+---
+
+## Third batch: the numpy cluster. 7 NEW -> 3 NEW
+
+    nastokes-multigen-cluster-additivity   835 -> 0
+    nastokes-orbit-symmetric-readout        98 -> 0
+    nastokes-germ-gauge-covariance          52 -> 0
+    nastokes-transverse-curvature-seifert   16 -> 0
+    alpha-k-jones-markov-h12                91 -> (source fixed, cannot run here)
+
+**Branch total: 18 NEW + 2 REGRESSED -> 3 NEW + 1 REGRESSED**, 541,817 ->
+540,392 fields (-1,425).
+
+### These were NOT ported to mpmath, and that is the right answer
+
+My earlier note sized this cluster as "a real port, the expensive kind". That
+was wrong about what the fix should be. Reading the producers:
+
+  * `nastokes-transverse-curvature-seifert` imports **no numpy at all** — it
+    was in the cluster by name only. Its floats were mpf AME constants being
+    `float()`-ed on the way in, plus two exact integer-over-integer
+    combinatorial ratios. Fixed exactly, worst value move 0.0.
+  * The three real numpy probes each already carry their own precision
+    control: multigen re-runs R_3 at 40 dps in mpmath at dim 11, and says so
+    in its own caveat. The verdicts are 0-vs-O(1e3) questions, not
+    1-part-per-quadrillion questions.
+
+Porting a dim-77 sweep over ten germ pairs and four isotopes to mpmath would
+cost hours per run to produce digits the question does not use — and it would
+publish precision the numpy kernel never had. So each numeric field is written
+at **binary64's own round-trip width** (`repr`), applied once at the single
+`add_data` sink rather than at ~30 call sites, so a field added later cannot
+quietly miss it.
+
+Verified harder than a leaf diff: every one of the 985 values round-trips to a
+**bit-identical** float, leaf counts unchanged (1135 / 170 / 71), and 16/16,
+17/17, 15/15 assertions byte-identical.
+
+### A witness that was not valid JSON
+
+`nastokes-orbit-symmetric-readout` contained a bare `NaN` literal at
+`part_C.He4.band-local.SA_average_over_mean`. `json.dump` emits that by
+default, but **JSON has no such token** — any strict parser rejected the file.
+Confirmed: the pre-drain witness fails `json.load(..., parse_constant=raise)`
+and the drained one passes. The NaN value itself is unchanged and still says
+what it said; it is simply no longer smuggled through as an invalid literal.
+Worth a sweep of the other witnesses for the same thing.
+
+## What remains, and none of it is drain work
+
+    alpha-k-jones-markov-h12        91   pyhecke_native absent (module-scope
+                                         import — the probe will not even load)
+    atomic-tr-m-mpfr-50dps-proton   20   pyhecke_native
+    chi-helium-4-h12-at-q0-50dps    78   pyhecke_native   [REGRESSED]
+    ground-state-ordering-argmin     1   its lean_bridge block has no producer
+
+All four have their **producer sinks already fixed and committed**. They land
+the moment someone re-runs on a host with `pyhecke_native` — except
+ground-state, which needs the `lean_bridge` block to get a producer first.
+
+The alpha change is **syntax-checked only**, flagged as such in its commit:
+the module cannot be imported here, so it has never been executed. Whoever
+re-runs it on a native-kernel host should diff the witness before committing,
+the same way every other drain in this branch was checked.
