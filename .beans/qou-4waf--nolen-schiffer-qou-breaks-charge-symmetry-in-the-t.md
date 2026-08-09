@@ -83,3 +83,25 @@ dividing by h. Do not wire it.
   flavour sector rather than a nuisance in the EM sector.
 - Separately: coulomb_energy.py holds float64 literals (ALPHA_HBAR_C_MEV_FM =
   1.43996, R0_FM = 1.2) against the standing no-float64 directive.
+
+## PRECISION NOTE on the numbers above (added same day)
+
+Separating what is literature from what this bean computed:
+
+  * DIRECTION (proper Coulomb undershoots experiment) -- standard, definitional.
+  * ~7 % for medium-mass mirror pairs -- standard literature figure. Its
+    UNIFORMITY across a wide mass range is what makes it an anomaly rather than
+    a modelling defect.
+  * -10.9 % / +0.083028 MeV at A=3 -- **NOT a literature value.** That is this
+    bean's own equivalent-uniform-sphere estimate (sqrt(5/3)*r_rms), far cruder
+    than the Faddeev calculations with realistic NN potentials that the
+    published A=3 residual comes from. Published A=3 shortfalls are roughly
+    0.06-0.08 MeV, so the estimate lands in the right range -- but "my estimate
+    agrees with the range" is not "this is the standard number", and it was
+    briefly written up as the latter. Corrected.
+
+Consequence for section 3: the "required +0.083028 MeV" target is
+uncertain at roughly the +/-25 % level, not a sharp number. The ORDER-OF-
+MAGNITUDE conclusions survive unchanged -- current sigma/sigma^-1+writhe is
+~9x too big, alpha*delta is ~14x too small, gg's exact zero omits a real term --
+because those are factors of 9-14 against a target uncertain by ~25 %.

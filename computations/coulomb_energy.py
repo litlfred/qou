@@ -39,9 +39,16 @@ treat E_C as the leading EM term, not a high-precision value.
         equivalent uniform R = √(5/3)·r_rms = 2.5382 fm and an implied r₀ = 1.760 fm.
         Fixable by using the measured radius — at the cost of importing an experimental
         input the framework otherwise avoids.
-    (b) The Nolen–Schiffer anomaly (Nolen & Schiffer 1969) is the OPPOSITE: once the
-        Coulomb energy is computed properly, theory falls SHORT of experiment by ~7 %
-        (~10.9 % at A = 3, a residual of +0.0830 MeV). It is not a modelling slip; it is
+    (b) The Nolen–Schiffer anomaly (Nolen & Schiffer, Ann. Rev. Nucl. Sci. 19 (1969) 471)
+        is the OPPOSITE: once the Coulomb energy is computed properly, theory falls SHORT
+        of experiment by ~7 % across medium-mass mirror pairs. That ~7 % is the standard
+        literature figure; its uniformity across a wide mass range is what makes it an
+        anomaly rather than a modelling defect. The −10.9 % / +0.0830 MeV quoted above is
+        NOT a literature value — it is this file's own equivalent-uniform-sphere estimate
+        from the measured charge radius, which is far cruder than the Faddeev calculations
+        the published A = 3 residual comes from. It lands in the right range (published
+        A = 3 shortfalls are roughly 0.06–0.08 MeV) but should not be cited as the
+        standard number. It is not a modelling slip; it is
         the standard evidence for charge-symmetry breaking in the strong NN force,
         sourced in the SM by m_d − m_u and ρ–ω mixing — i.e. FLAVOUR effects.
 
