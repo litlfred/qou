@@ -1,10 +1,11 @@
 ---
 # qou-usft
 title: 'Light-nucleus regime: derive the Coulomb radius AND density shape from binding + q-CLT, not r0*A^(1/3)'
-status: in-progress
+status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T10:35:13Z
-updated_at: 2026-08-09T10:35:13Z
+updated_at: 2026-08-09T10:57:36Z
 ---
 
 
@@ -217,3 +218,70 @@ Do not feed q0 = 1.10998 into a Tsallis q-Gaussian.
          classical ceiling)
 - [ ] 4. compute f for the framework's own q-deformed density and compare
 - [ ] 5. only then quote a CDE
+
+## STEP 4 — CANNOT BE COMPUTED. The framework has no spatial charge density.
+
+Went to compute f for the framework's q-deformed density and found there is no
+such object. Two checks:
+
+  * `deltalambda/mirror_split_continuum_em_probe.py:34` tiers its own density as
+    "MODEL ASSUMPTION (uniform charge density)" -- the corpus already knows this
+    is assumed, not derived.
+  * the q-CLT is over BONDS / TRACE FACTORS, not position:
+        B_qCLT(K)   = alpha * bonds(K) * ell-bar      (per-bond bulk sum)
+        B_qCLT_fac  = alpha * Sum_i ln|V_i|           (factorised trace)
+    Both live in TRACE space. Neither is a probability distribution over R^3.
+
+Using the q-CLT as a spatial charge density would be a CATEGORY ERROR, the same
+class as feeding q0 into a Tsallis q-Gaussian. Recorded so the next agent does
+not do it: the q-CLT factorises a trace over bonds; it says nothing about where
+charge sits.
+
+Nor does the Bozejko-Speicher quantum-group q-Gaussian rescue it directly: it is
+a ONE-dimensional measure on a compact interval, and it is defined for
+q in (-1,1) while q0 = 1.10998 > 1. Turning it into a 3-D radial charge density
+requires an extra modelling assumption, which is precisely the thing being
+avoided.
+
+## THIS REVISES RESULT 6 ABOVE
+
+R6 said the EM sector's classical geometry was an inconsistency, and grouped it
+with the alpha_EM defect as "unwired, not underived". That was right for
+alpha_EM -- the derived object existed, was already used in the meson sector,
+and is now wired (step 1). It is WRONG for the geometry:
+
+    alpha_EM   -> was UNWIRED. Fixed.
+    r0, A^(1/3), the 3/5 shape -> UNDERIVED. There is no q-deformed
+                                  position-space object to wire in their place.
+
+So the EM sector is not classical by oversight. It is classical because the
+framework has never constructed a position-space geometry at all -- everything
+it has is trace-space or hyperbolic-volume. That is a much larger gap than a
+wiring miss, and it is the real reason the Nolen-Schiffer line keeps producing
+cancellations: three of the four EM inputs have no derived counterpart to
+compare against.
+
+## FINAL STATE OF THIS BEAN
+
+- [x] 1. derived alpha_EM wired + de-float64 (a188542f). Real, small (+3.6 ppm),
+         provenance not numerics.
+- [x] 2. binding-length radius EVALUATED and REJECTED -- the -6.3 % win used AME
+         S_sep; parameter-free it is +37.8 %, worse than r0*A^(1/3).
+- [x] 3. shape target derived: f must reach 0.5214 to close the CDE alone;
+         Gaussian 0.4886 is the classical ceiling, leaving 6.29 %.
+- [x] 4. f for the framework's density: NOT COMPUTABLE -- no such density exists.
+
+## WHAT WOULD ACTUALLY UNBLOCK THIS
+
+Not more EM work. Two prerequisites, both outside this bean:
+
+  1. A POSITION-SPACE density from the framework. Until one exists, the shape
+     factor is an assumption and the 7.3 % shape ambiguity swamps the 7 %
+     anomaly. This is the blocker for steps 3-5.
+  2. QOU's LIGHT-NUCLEUS BINDING (currently 3He -30 %, 3H -28 %). The
+     binding-length radius becomes usable the moment this is right, and it is
+     the right physics for A<=4. Downstream of the NN sector (qou-kj4v,
+     qou-7zob), not of the EM sector.
+
+Recommend this bean go to BLOCKED on those two rather than stay in-progress:
+every remaining EM-side step is gated on an object the framework does not have.
