@@ -1022,6 +1022,38 @@ quantifies a bar map `σ : R →+* R` with `C_geom ≠ −(σ B_geom)` (was a fr
 native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted, nothing wired;
 `μ₃/c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`.
 
+## 2026-08-08 · A=3 amplitude ROUTE 2-c-STOKES — the LOCAL Stokes/resurgence route CANNOT supply `E`; a WALL (scope-(a) + scope-(b) sub-exclusion)
+
+(Branch `claude/deltalambda-stokes-amplitude-e-2026-08-08`, bean `qou-jqof`.) Attacks
+`E` (the single free DOF ROUTE 2-c isolated) via the **local Stokes-constant / resurgence /
+Écalle-Borel** angle — distinct from the DT-index route. **Verdict: WALL, not closure** —
+extends PR #4790's retraction (C1's `∞` pure isoclinic ⇒ RSZ isoformal dim 0 ⇒ no local
+Stokes data) to `E`. **The bridge (CITED MODEL, RSZ Thm 5.5.7 unipotency, not a fit):** the
+amplitude a *local* q-Stokes datum supplies is the strictly-off-block part of the unipotent
+q-Stokes matrix, a coordinate sum `∑_{i<d} coeffᵢvᵢ` (`stokesAmplitude`) over the `d =
+rszIsoformalDim k r μ = Σ_{i<j}rᵢrⱼ(μⱼ−μᵢ)` slope-pairing moduli (RSZ Thm 3.3.5). **Two
+branches, both wall the route (Lean `StokesAmplitudeE.lean`, sorry-free, lean-direct exit 0,
+`#print axioms` = the 3 standard axioms, no `sorryAx`):** (i) **single-slope carrier**
+(`k=1`, exactly C1's `∞`): `rszIsoformalDim_one = 0` ⇒ amplitude forced `0`
+(`stokesAmplitude_eq_zero_of_dim_zero`) ⇒ composed with ROUTE 2-c's `amplitude_nonzero`, the
+local Stokes data **cannot lift** (`pureIsoclinic_local_stokes_cannot_lift`, **scope-(b)**,
+cited invariant = RSZ empty slope-pairing at `k=1`); (ii) **multi-slope carrier**: a local
+lift *forces* ≥2 slopes (`local_stokes_lift_forces_positive_dim`), but then the amplitude is
+**surjective onto `R`** (`stokesAmplitude_surjective_of_dim_pos`) ⇒ local Stokes data leaves
+`E` **free**; its value lives in the **GLOBAL** (`0↔∞`) Birkhoff connection matrix
+(theta-valued, un-started — #4790's W2 successor,
+`2026-08-01-branch-selection-birkhoff-connection-matrix.md`), NOT any local Stokes constant.
+So C1 (Fuchsian at 0, pure isoclinic at ∞) has **empty local Stokes data at every local
+point** — the local route is walled either way. **Unifies the sibling Stokes negatives** at
+the amplitude level (large-order `2πP≈1` not GGM `3`; bar-odd ladder anchor-blind/`Im=0` on
+the real meridian; ±i phase not the Δ_λ sign): the carrier's *local* Stokes moduli is simply
+too small to be `E`. Open successor = §3b dependent class `GlobalBirkhoffSuppliesAmplitude`
+(content-bearing, **NO instance**; distinct from ROUTE 2-c's `DerivedAmplitudeGivesLift` — it
+names the **global** Birkhoff datum, not the DM q-cubic). Audit
+[`docs/audits/2026-08-08-stokes-amplitude-e-local-wall.md`](../audits/2026-08-08-stokes-amplitude-e-local-wall.md).
+Nothing fitted, nothing wired; `μ₃/c₃`/AME/`q₀` never inverted; `q₀`-derivation not routed
+through; `free_parameters = 0`.
+
 **2026-08-02 — PROBE 2 (A=4 interface operator): the ≥4-body magnitude wall is a ONE-SCALAR
 gate — the derived `−ln det(I+G)` form is SURJECTIVE onto (0,∞); naive uniform `z` scope-(b)
 excluded — WALL(scope-(a)), sharpened from #4526.** (Branch
@@ -1073,3 +1105,129 @@ respect the bar-parity of its principal grading — a candidate whose bar-parity
 mismatches its target sign is structurally excluded (`barEven_barOdd_forces_zero`),
 independent of magnitude. Formalize-first record for bean `qou-ph2a`:
 [`docs/audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md`](../audits/2026-08-01-mu-p-tension-attack-recon-floor-verdict.md).
+
+## 2026-08-08 · A=3 magnitude ROUTE 2-c (amplitude E) — the DT-index / 3d-index / graded-Euler route is BAR-PARITY EXCLUDED from supplying E (scope-(b))
+
+(Branch `claude/deltalambda-dt-index-amplitude-e-2026-08-08`, beans `qou-3dya`/`qou-jqof`.) Attacks
+the open keystone `qou-jqof` (derive the anti-self-adjoint amplitude `E` of ROUTE 2-c) via the
+**DT-invariant / 3d-index / graded-Euler** substrate route — a **distinct angle** from the resurgent
+Stokes route a sibling is on. **Verdict: scope-(b) route-scoped exclusion (proved invariant:
+bar-parity).** The DT-index / 3d-index / graded-Euler datum is by definition an **integer** (a
+Behrend-weighted virtual point count = alternating dimension sum `χ = Σ_k(−1)^k dim(G)_k ∈ ℤ`); a
+ring-hom bar involution fixes `ℤ ↪ R`, so every DT value is **bar-EVEN** (`dtIndex_barEven`,
+`map_intCast`). The amplitude `E = C + σB` is **bar-ODD** — *derived*, not assumed: the physical
+mass/C1 face has a bar-even cross-term `B·D⁻¹·C` (parity of `r*=μ₃/c₃`), which with `B` bar-odd, `D`
+bar-even forces `C` bar-odd (`crossTermBarEven_imp_C_barOdd`), hence `E` bar-odd (`amplitude_barOdd`).
+Bar-even ∧ bar-odd ⇒ 0 (`barEven_barOdd_eq_zero`, invariant `char R ≠ 2`), so the nonzero `E` a lift
+forces (`A3AntiSelfAdjointLift.amplitude_nonzero`) is **NOT** any DT-index value
+(`dtIndex_cannot_supply_amplitude`). The DT route lives in the bar-EVEN (self-adjoint, `≤ 1`) sector
+(`A3OffBlockDerivation.magnitudeFactor_le_one`); the lift lives in the bar-ODD sector. **This removes
+the DT-index route from the ROUTE 2-c menu and hands `E` back to the bar-ODD resurgent-Stokes / DM
+q-cubic sector** (`conj:qdifference-kernel-prolongation-symbol`) — the correct parity (±i / π/2),
+converging with the Stokes-route sibling from a different direction. Consistent with
+`amplitude_surjective` (some real bar-odd `E` hits `r*`, never a DT integer) and with Horn-1 (#4540:
+the DT/Behrend sign is a real π-phase, bar-even). **Element-level analog of the established corpus
+`QOU.BraidKnot.BarParityInvariant`** (`barEven_barOdd_forces_zero`, bean `qou-ph2a`/`s5bb`) — same
+bar-parity filter, new step is `dtIndex_barEven` (DT integers are bar-even) + the DT↔`E` connection.
+Lean `QOU/QBeta/DTIndexAmplitudeE.lean` sorry-free (lean-direct exit 0, 0 real sorries, no
+native_decide/trivial-true/axiom), wired into `QOU.lean`. Nothing fitted, nothing wired;
+`r*`/`μ₃`/`c₃`/AME/CODATA/`q₀` never inverted; `free_parameters = 0`. Audit:
+[`docs/audits/2026-08-08-dtindex-amplitude-e-bar-parity-exclusion.md`](../audits/2026-08-08-dtindex-amplitude-e-bar-parity-exclusion.md).
+
+## 2026-08-08 · A=3 magnitude ROUTE 2-c (amplitude E) — WELL-POSEDNESS: E is the gauge-invariant CROSS-RATIO of the Birkhoff matrix, NOT a single (frame-dependent) entry
+
+(Branch `claude/deltalambda-birkhoff-wellposed-2026-08-08`, bean `qou-wiub`/`qou-jqof`.) Red-team /
+well-posedness mirror of the μ₃-target-robustness audits, complementary to the sibling constructing
+the connection matrix explicitly (they own `BirkhoffAmplitudeE.lean`; this owns
+`BirkhoffAmplitudeWellPosed.lean`). Two merged results (`DTIndexAmplitudeE` #4810, `StokesAmplitudeE`
+#4811) pinned the anti-self-adjoint amplitude `E := C+σB` to the GLOBAL `0↔∞` Birkhoff connection
+matrix `P=(X^∞)⁻¹X^0` of C1. **Before a value is extracted: is `E` a single entry of `P`, or a
+gauge-dependent combination requiring the full monodromy?** By `QCharacter.IsQChar.ratio_qInvariant`,
+the local solution bases are unique only up to a `q`-invariant (elliptic) normalisation, so `P` carries
+a residual gauge `P ↦ D_∞⁻¹ P D_0`, entrywise `P_{ij} ↦ (d_∞,i)⁻¹ P_{ij} (d_0,j)`. **Verdict — MIXED,
+both branches proved sorry-free: (a)** the cross-ratio `crossRatio P := P₀₁·P₁₀/(P₀₀·P₁₁)` is
+gauge-invariant (`crossRatio_gauge_invariant` — the four gauge units cancel) and is the UNIQUE invariant
+(`gauge_fixes_all_iff`: the gauge stabiliser of a generic 2×2 `P` is the 1-parameter global scale, so
+`4−3=1` invariant); **(b)** a single entry is NOT invariant — it carries a full elliptic-unit gauge
+freedom (`entry_gauge_orbit_surjective`: any `u·P₀₁` reachable; `entry_not_gauge_invariant`: a nontrivial
+gauge moves it), so reading `E` off one entry is **ill-posed**, needing an extra normalisation datum.
+**Consequence:** `E` is a frame-free physical amplitude (`A3AntiSelfAdjointLift.amplitude_injective`), so
+it must equal the gauge-invariant cross-ratio, not a matrix element — **the sibling should target
+`crossRatio(P)`.** Recorded as the OPEN §3b carrier `AmplitudeIsGaugeInvariantCrossRatio`
+(`E = crossRatio P ∧ E ≠ 0`), NO instance; choosing the cross-ratio to hit `r*` (`amplitude_surjective`)
+would be the forbidden fit and is not done. Bar-oddness of `crossRatio(P)`
+(`DTIndexAmplitudeE.amplitude_barOdd`) is a consistency check the concrete `P` must satisfy — noted,
+not proved (no concrete `σ` on `P` yet). Lean `QOU/QBeta/BirkhoffAmplitudeWellPosed.lean` sorry-free
+(lean-direct exit 0, no native_decide/trivial-true/axiom). Nothing fitted, nothing wired;
+`r*`/`μ₃`/`c₃`/AME/CODATA/`q₀` never inverted; `q₀`-derivation not routed through. Audit:
+[`docs/audits/2026-08-08-birkhoff-amplitude-e-well-posedness.md`](../audits/2026-08-08-birkhoff-amplitude-e-well-posedness.md).
+
+## 2026-08-08 · A=3 amplitude ROUTE 2-c-BIRKHOFF — CONSTRUCTING the C1 cross-ratio: `E = χ(P)` (frame-free), the WALL is its VALUE; scope-(a), converges with the well-posedness sibling
+
+**Branch** `claude/deltalambda-birkhoff-amplitude-e-2026-08-08` · **bean `qou-wiub`** ·
+**Lean** `QOU/QBeta/BirkhoffAmplitudeE.lean` (sorry-free, lean-direct exit 0, axioms
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`; 0 native_decide / 0 trivial-true /
+0 axiom).
+
+Assigned the **connection-matrix CONSTRUCTION** angle on the open keystone `E` (the single
+free DOF ROUTE 2-c isolated; LOCAL Stokes walled #4811, DT-index bar-excluded #4810 — both
+hand `E` to the GLOBAL `0↔∞` Birkhoff matrix `P = (X^{(∞)})⁻¹ X^{(0)}` of C1). Built `P`'s
+structural content from the q-character infra (`QCharacter.IsQChar`) and located the precise
+next wall.
+
+**Convergence (not contradiction) with the well-posedness sibling
+`BirkhoffAmplitudeWellPosed.lean`.** Mid-task the sibling proved (sorry-free) that `E`, being
+frame-free (`A3AntiSelfAdjointLift.amplitude_injective`), **must be the gauge-invariant
+CROSS-RATIO `χ(P) = P₀₁P₁₀/(P₀₀P₁₁)`, not a single matrix entry** (a bare entry moves under
+the elliptic diagonal normalization gauge → ill-posed; 4 entries − 3 gauge dims = 1
+invariant). This file **independently confirms** it — `crossRatio_gauge_invariant` (the
+cross-ratio is gauge-invariant) + `entry_gauge_movable` (a bare entry is movable to any
+nonzero value under a χ-preserving gauge) + `distinct_entries_share_crossRatio` — and takes
+the construction angle on the corrected object.
+
+**Genuinely new construction result — `crossRatio_conn_qInvariant`.** Straight from
+`IsQChar`: the cross-ratio of the four connection entries is σ_q-invariant (elliptic)
+**because the exponent multipliers cancel exactly** — each entry `P_{ij}` has multiplier
+`c_{0,j}/c_{∞,i}`, and `(c₀₁/c∞₀)(c₀₀/c∞₁) = (c₀₀/c∞₀)(c₀₁/c∞₁)` (`connMultiplier_balance`).
+This *constructs* the frame-free object's ellipticity from the q-character algebra — the
+abstract reason `χ(P)` is theta-valued and `C1ConnectionPoles.connRatio_elliptic` holds —
+and singles out `χ(P)` (not any entry) as the well-posed `E`-carrier. Bridge to A3
+(`lift_injective_in_crossRatio` + `lift_reachable_by_crossRatio`): since `E = χ(P)` is
+frame-free and `E ↦ factor` is a bijection, **deriving `χ(P)` DOES pin the A=3 lift** — no
+gauge ambiguity remains; only the cross-ratio's *value* is open.
+
+**Net verdict — WALL (scope-(a)), sharpened + well-posed.** The wall is no longer "which
+functional of `P` is `E`" (answered: the cross-ratio) but the **VALUE of `χ(P)`**: its
+closed form is the open bean `qou-wgnx` (`χ = closed form` proved-elliptic but unproved),
+and its `∞`-input is C1's slope-`½` wild normalization (open bean `qou-vkg5`; the 0-side
+Fuchsian exponent IS determined, `C1FuchsianExponents`). Open successor recorded as §3b
+dependent class `BirkhoffCrossRatioSuppliesAmplitude` (content-bearing: 0-exponent
+determined + ∞-exponent open + `E = χ(P)` + bar-odd consistency + lift; **NO instance**),
+correcting `StokesAmplitudeE.GlobalBirkhoffSuppliesAmplitude` (whose `multislope` condition
+is C1-inapplicable — C1's ∞ is single-slope, `rszIsoformalDim = 0`) and aligned with the
+sibling's `AmplitudeIsGaugeInvariantCrossRatio`. Nothing fitted, nothing wired;
+`r*`/`μ₃`/`c₃`/AME/`q₀` never inverted; `q₀`-derivation not routed through. Audit
+[`docs/audits/2026-08-08-birkhoff-amplitude-e-crossratio-construction.md`](../audits/2026-08-08-birkhoff-amplitude-e-crossratio-construction.md).
+
+### 2026-08-08 — χ(P)|q₀ EVALUATED vs r* — the cross-ratio is a UNIT PHASE, not 1.585 (scope-(a))
+
+The decisive check the E=χ(P) rows above left open: **evaluate the closed-form χ(P) at the
+substrate and compare to r* = μ₃/c₃ ≈ 1.585.** Done (proton q₀, no tuning; witness
+[`c1-chi-magnitude-vs-r-star.witness.json`](../../computations/qbeta/c1-chi-magnitude-vs-r-star.witness.json),
+audit [`2026-08-08-chi-p-magnitude-vs-r-star-evaluation.md`](../audits/2026-08-08-chi-p-magnitude-vs-r-star-evaluation.md)).
+
+**Result.** χ(P) on the real axis is a **pure unit-modulus phase**: `|χ| = 1` EXACTLY (dev
+0.0; closed form = direct connection matrix to 1e-5), a `z`-dependent elliptic function
+(`arg χ = −0.488/−1.921/+1.310/+3.052` at `z = 0.30/0.45/0.60/0.75`); `|α| = q^{3/4} =
+1.0814…` exactly. `r* ≈ 1.585` is a real magnitude `> 1`. A unit phase cannot equal it:
+`||χ|−r*| = 0.585` uniformly. **So the naive identity `χ(P) = r*` does NOT close the A=3
+magnitude** — same pattern as every other trace/cross-ratio object here (modulus 1, r*≠1).
+
+**Sharpening, not refutation.** This does NOT refute `E = χ(P)` (the gauge-invariance
+argument never claimed χ(P) = the *magnitude*). It relocates the wall: the A=3 lift is
+*affine* in `E` (`factor_sa − (B·D⁻¹/A)·E`, `factor_sa ≤ 1`), so `r*` is a real functional
+of `E`, not `E` itself. The cross-ratio's numeric VALUE is **no longer open** (it is a
+computed unit phase); what remains open is the phase→real-amplitude→lift bridge — including
+a genuine type tension (`A3AntiSelfAdjointLift` wants a real `E`; χ(P) is a unit-modulus
+complex phase). Nothing fitted, nothing wired; `r*`/`μ₃`/`c₃` never inverted;
+`q₀`-derivation not routed through. Bean `qou-wgnx`/`qou-wiub`.

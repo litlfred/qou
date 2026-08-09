@@ -50,6 +50,11 @@ These are concrete cardinalities the Lean scaffolds can reference.
 namespace QOU.BraidKnot
 
 open QOU.QuantumObservableUniverses
+-- The bodies below refer to the class fields bare (`gauge_coupling_g`,
+-- `vev_v_GeV`, `scalar_mass_factor`, …), so both class namespaces must be
+-- open — the projections live in them, not at `QOU.QuantumObservableUniverses`
+-- / `QOU.BraidKnot` scope.
+open CategoricalHiggsIdempotent TorusKnotMass
 
 /-- Cardinality of the GS-NF basis of knot operators on 3-strand
     braids B_3. Per `knot-operator-bring-action.md` §"The 6 basis

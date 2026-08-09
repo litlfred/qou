@@ -38,7 +38,7 @@ import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402

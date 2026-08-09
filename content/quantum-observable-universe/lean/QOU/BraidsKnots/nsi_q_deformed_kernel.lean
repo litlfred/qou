@@ -146,8 +146,6 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
       of the filament (the `q`-deformed commutator's replacement of
       the classical `1/r²`). -/
   K_cat : ℝ → ℝ → ℝ
-  /-- Kernel identification conclusion. -/
-  kernel_ident : ∀ s t, q ≠ 1 → K_cat s t = qDeformedKernel q ‖ϱ s - ϱ t‖
 
 /-- **Identification of the inherited kernel** — the trace-side
     kernel of the filament's categorical mass equals the concrete
@@ -159,7 +157,9 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
 theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
     [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (_hq1 : ctx.q ≠ 1) :
     ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
-  exact ctx.kernel_ident s t _hq1
+  -- Ref: [manuscript] lem:nsi-q-deformed-kernel — the q-deformed commutator and q-Hodge star
+  -- are not yet formalised.
+  sorry
 
 /-- **`q`-deformed commutator replaces `1/r²` with a hard kernel at
     `r = ℏ_q`** ([`lem:nsi-q-deformed-kernel`]) — the resolving

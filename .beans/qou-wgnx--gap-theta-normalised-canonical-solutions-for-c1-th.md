@@ -13,7 +13,17 @@ updated_at: 2026-08-07T10:04:33Z
 # STATUS SUMMARY (2026-08-07, current) — read this first
 
 **The connection matrix and its invariant are DONE, in closed form. The Stokes
-multipliers proper are not.**
+multipliers are TRIVIAL — the target dissolved rather than being computed.**
+
+> **⚠ This summary was STALE from 2026-08-07 until 2026-08-08.** It previously
+> read *"The Stokes multipliers proper are not [done]"* and listed them as open
+> item #1 — the position of entry ~18, **superseded by entries 21, 22 and 23**
+> of this same bean, which conclude the opposite. Because the block is headed
+> "read this first", it was the first thing a later agent saw, and it cost one
+> (`qou-vkg5`, PR #4790) a full re-derivation plus a wrong "still open" claim
+> published to a merged PR. Entry 23's standing lesson — *grep the corpus first,
+> especially when the target is phrased as "open"* — is defeated if the summary
+> at the top of the bean is itself the stale thing. Fixed here.
 
 ## Achieved
 
@@ -38,9 +48,31 @@ multipliers proper are not.**
 
 ## Open
 
-1. **Stokes multipliers proper.** χ is the invariant they are functions of; the
-   remaining step is convention-dependent. Lin–Ma–Xu is the reference and is now
-   **in-repo** at `uploads/2412.02281v1.pdf`.
+1. ~~**Stokes multipliers proper.**~~ **CLOSED — trivial, by four independent
+   routes.** Not "computed"; the object does not exist as a separate invariant
+   for a pure isoclinic module.
+   * corpus, 2026-07-20 — `conj:qdifference-kernel-prolongation-symbol` author
+     notes: C1 pure isoclinic, *"the residual is NOT a Stokes datum (unipotent
+     part trivial)"*, RSZ Thms 2.2.1 / 2.2.4 / 5.5.7 cited by number;
+   * entry 21 — RSZ §5 read directly: one slope ⇒ `Λ_I(M)` trivial ⇒
+     `H¹(E_q, Λ_I(M₀))` a point;
+   * entry 22 — DVRSZ survey confirms *pur ⟺ une seule pente*, and that `T±`
+     are two **exponents at one slope**, not two slopes;
+   * `qou-vkg5` / PR #4790, 2026-08-08 — independently via a *different* RSZ
+     statement, Thm 3.3.5's dimension formula
+     `dim F = Σ_{i<j} rᵢrⱼ(μⱼ−μᵢ)`, an empty sum at `k = 1`. Lean:
+     `QOU.MathlibExt.RSZ.c1_infinity_isoformalDim_eq_zero`.
+
+   Entry 21's flagged caveat (RSZ's constructions are for *integral* slopes;
+   ours is integral only after ramification) is answered by the 07-20 corpus
+   note, which cites the theorems for the isoclinicity invariant directly.
+
+   **Correction owed to PR #4790:** its "read this first" table lists the
+   connection-matrix multipliers as *"OPEN and live"*. That came from this
+   summary while it was stale. The two objects it distinguishes are genuinely
+   distinct — local isoformal moduli vs connection-matrix data — but the second
+   one's **status** is wrong there: both are trivial/dissolved, and the
+   deliverable on this axis is the connection matrix and `χ`.
 2. **Jacobi triple product in Lean** — needed for the *converse* of the zero
    locus. Mathlib has neither JTP nor the argument principle. Multi-session job;
    scoped in the twelfth entry.

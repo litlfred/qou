@@ -39,7 +39,7 @@ from _habiro_coefficient_extract import (  # noqa: E402
     _load_p_n_symbolic,
     _write_witness,
 )
-from q_parameter import Q as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 

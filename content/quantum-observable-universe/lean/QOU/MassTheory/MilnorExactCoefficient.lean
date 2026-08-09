@@ -140,7 +140,7 @@ structure CyclicTrace (R A : Type*) [CommRing R] [Ring A] [Algebra R A] where
 
 /-- **A cyclic trace annihilates every ring commutator.**  This is the engine of
 the sub-wall: `τ([x,y]) = τ(x·y) − τ(y·x) = 0`. -/
-theorem commutator (τ : CyclicTrace R A) (x y : A) :
+theorem CyclicTrace.commutator (τ : CyclicTrace R A) (x y : A) :
     τ.toLin (x * y - y * x) = 0 := by
   rw [map_sub, τ.cyclic x y, sub_self]
 

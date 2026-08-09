@@ -11,7 +11,7 @@ import QOU.BraidKnot.WedderburnSn
 import QOU.BraidKnot.SpechtClassification
 import QOU.BraidKnot.RegularRepBlockTrace
 import QOU.BraidKnot.RegularRepTrace
-import QOU.BraidKnot.JucysMurphy
+import QOU.BraidKnot.JucysMurphyOV
 import Mathlib.Algebra.Algebra.Bilinear
 
 /-!

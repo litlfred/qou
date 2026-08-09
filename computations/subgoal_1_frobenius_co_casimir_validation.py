@@ -38,7 +38,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from murnaghan_nakayama import dim_q_lambda  # noqa: E402
 

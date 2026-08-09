@@ -1270,6 +1270,7 @@ When a user request arrives, route to the right skill(s):
 | "upload / scan / intake / process document" | `local/document-intake` | collaborator |
 | "WHO / guideline / L1 / L2 / normative" | `local/document-intake` | collaborator |
 | "uploads/ status / what's pending" | `local/document-intake` | collaborator |
+| "is this paper relevant / triage the uploads / what can we use from X / which uploads aren't cited / source ledger" | `local/paper-relevance-triage` | collaborator |
 | "critical path / trace dependencies" | `local/critical-path-analysis` | collaborator |
 | "archimedean vs categorical / context audit" | `local/critical-path-analysis` | reader |
 | "what assumptions does X need" | `local/critical-path-analysis` | reader |
@@ -1351,7 +1352,7 @@ user roles may invoke it. The three roles form a hierarchy:
 | Role | Skills |
 |------|--------|
 | `reader` | editor, content-validation, latex-validation, scientific-accuracy, readability-editing, proof-status-tracking, proof-gap-audit, todo-review, docs-generation, diff, watch, chapter-complexity-review, verify-local-substrate, remark-audit, rendering-auditor, rendering-fixes, markdown-render-check, witnessed-values, proof-integration-watcher, canonical-watcher, detangler-integration-watcher, production-vs-exploratory-discipline, proposition-consolidation-audit, q-usage-watcher, symbiotic-interaction, devils-advocate-watcher, definition-clarity-audit |
-| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, lean-substantive-pass, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit, compute-author, coordinate, compute-integration-watcher, ffi-roundtrip-audit |
+| `collaborator` | All reader skills + formalizer, category-theory, lean-generation, lean-proof-review, lean-build-fix, lean-completeness-audit, lean-substantive-pass, proof-triage, proof-simplifier, proof-editor, proof-exposition-review, proof-narrative-lean-equivalence, proof-conciseness, chapter-analysis, content-block-review, ontologist, paper-importer, document-intake, paper-relevance-triage, test-engineer, lean-environment-setup, simulator, one-voice-audit, compute-audit, compute-author, coordinate, compute-integration-watcher, ffi-roundtrip-audit |
 | `owner` | All collaborator skills + deployment-auth |
 
 When a user connects via **Folio Assist** (chat), they default to `reader`

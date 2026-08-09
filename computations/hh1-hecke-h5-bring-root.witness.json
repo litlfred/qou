@@ -1,0 +1,93 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "PROBE-A (Bring case): dim HH^1(H_5(q)) at the 5th root of unity",
+  "bean": "qou-jcmw",
+  "description": "dim HH^1(H_5(q)) = dim Der - dim Inn at q = zeta_5 and zeta_10 (both [5]_q = 0, the n=5 non-semisimple locus), with a generic-q control and an n=3 regression against the merged hand-coded producer. Tests whether the fibre-level cyclotomic c_3 carrier has an outer-derivation source class.",
+  "method": "Regular representation of balanced H_n(q) (T_i^2 = a T_i + 1, a = q - q^{-1}) built programmatically on the basis {T_w}; Der = nullspace of the Leibniz constraints imposed on D(T_i) by the quadratic, braid and commuting relations; Inn = n! - dim Z(A). Exact modular linear algebra over F_p with p = 1 mod 20.",
+  "rigour_note": "All entries lie in Z[zeta]; reduction mod a prime above p is a ring homomorphism so rank_p <= rank_0, hence dim HH^1_p >= dim HH^1_0. A modular value of 0 therefore PROVES the characteristic-0 value is 0. A nonzero modular value is only an upper bound.",
+  "primes": [
+    5021,
+    60041
+  ],
+  "results_H5": {
+    "q = zeta_5   (Bring, [5]_q=0)": {
+      "5021": {
+        "dim_Der": 114,
+        "dim_Z": 7,
+        "dim_Inn": 113,
+        "dim_HH1": 1,
+        "vanishing_brackets": [
+          5
+        ]
+      },
+      "60041": {
+        "dim_Der": 114,
+        "dim_Z": 7,
+        "dim_Inn": 113,
+        "dim_HH1": 1,
+        "vanishing_brackets": [
+          5
+        ]
+      }
+    },
+    "q = zeta_10  ([5]_q=0)": {
+      "5021": {
+        "dim_Der": 114,
+        "dim_Z": 7,
+        "dim_Inn": 113,
+        "dim_HH1": 1,
+        "vanishing_brackets": [
+          5
+        ]
+      },
+      "60041": {
+        "dim_Der": 114,
+        "dim_Z": 7,
+        "dim_Inn": 113,
+        "dim_HH1": 1,
+        "vanishing_brackets": [
+          5
+        ]
+      }
+    },
+    "q = 3        (generic)": {
+      "5021": {
+        "dim_Der": 113,
+        "dim_Z": 7,
+        "dim_Inn": 113,
+        "dim_HH1": 0,
+        "vanishing_brackets": []
+      },
+      "60041": {
+        "dim_Der": 113,
+        "dim_Z": 7,
+        "dim_Inn": 113,
+        "dim_HH1": 0,
+        "vanishing_brackets": []
+      }
+    }
+  },
+  "regression_H3": {
+    "generic q=3": {
+      "dim_Der": 3,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 0
+    },
+    "q=i  ([2]_q=0)": {
+      "dim_Der": 4,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 1
+    },
+    "q=zeta_6 ([3]_q=0)": {
+      "dim_Der": 4,
+      "dim_Z": 3,
+      "dim_Inn": 3,
+      "dim_HH1": 1
+    }
+  },
+  "verdict": "route survives: outer class exists at the Bring root; bar-parity test is the next gate.",
+  "wired_to_production": false,
+  "fit_performed": false
+}

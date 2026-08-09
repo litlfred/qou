@@ -30,7 +30,7 @@ import _path_bridge  # noqa: F401,E402
 
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
 

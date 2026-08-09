@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T17:22:46.103608+00:00",
-  "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
+  "computedAt": "2026-08-09T00:14:18.250154+00:00",
+  "commitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4810,
+  "durationMs": 4076,
   "computation": "canonical-mass-table-extended",
   "scriptFile": "canonical_mass_table_extended.py",
-  "scriptHash": "5457f04c7a7b",
-  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
+  "scriptHash": "24d485c288e4",
+  "scriptCommitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -25,10 +25,10 @@
   },
   "description": "Extended canonical mass table via unknown method 'branching'. Layer 1 canonical pipeline per docs/audits/2026-05-18-all-atoms-isotopes-plan.md. Coverage is determined by --atoms (see parameters.atoms_requested); the actual rows reflect what completed within the per-atom timeout. Each row carries the per-atom IsotopeRecord with explicit knot-operator catalogue (intra-nucleon, inter-nucleon interfaces, closure topology). For p and n, the prediction column is the Borromean-tower nucleon mass (conditional on conj:borromean-baryon-mass-formula, sub-ppm vs CODATA); for D and up the prediction column is the mass-table-ppb binding energy (Kashaev law / α-cluster / volume-match).",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
     "method": "branching",
     "precision": "mpfr",
-    "dps": 50,
+    "dps": 0,
     "compute_dps": 70,
     "output_dps": 60,
     "target_dps": 60,
@@ -445,7 +445,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.104071069302087155715930731656888594077582419765481193981033",
+        "tr_M_q0_canonical_50dps": "0.104071069302087155706449026068381119976943088037765428852023",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -693,7 +693,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.206578475087402999475884105137140936875259423866238020984115",
+        "tr_M_q0_canonical_50dps": "0.206578475087402999457063156194875204017734288007641841464382",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1016,7 +1016,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0553584262667831064698520474984377403163310367353238237927138",
+        "tr_M_q0_canonical_50dps": "0.0553584262667831064648084527393493030521290255609457472078877",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1414,7 +1414,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.0294467557534109300253585700600884843589248235802397696689877",
+        "tr_M_q0_canonical_50dps": "0.0294467557534109300226757354311861797679127779419539464061367",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -1887,7 +1887,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.00789107411351287580185243018802502180402798151173307369898942",
+        "tr_M_q0_canonical_50dps": "0.00789107411351287580113349031334919627704955183405735341439617",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2435,7 +2435,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.00211463195424304618240987136613495345966827885576167834844658",
+        "tr_M_q0_canonical_50dps": "0.00211463195424304618221721150636179496335306264765667760785080",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -2455,19 +2455,19 @@
     "upstream_witness_hashes": [
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "72c93a1ae5c1ad8154a4660c97b0aee985e18e6a8b5d2e903588dd512914b89b",
-        "size_bytes": 11913,
+        "sha256": "4f85ee897d8f2518e5099d3561f303c9ba822509defb9c3f885cb2286bbe9459",
+        "size_bytes": 12022,
         "commitSha": "cf175829ea7eb4cb53526e1c0955680945eb935e",
         "scriptCommitSha": "fb92449d6b0184c1e5d73617fc033973591bfaa3",
         "computedAt": "2026-06-22T12:36:08.687751+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "cb4b76b51ef58f364fcc1a6e9a5c5ece4529dfffe098ce3a96b5e61f73f47819",
-        "size_bytes": 9112,
-        "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
-        "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
-        "computedAt": "2026-06-22T13:19:41.230571+00:00"
+        "sha256": "793d0659c1ff79878c288b6a8dcd520b64b091725fc6cf41fe5b9ad7c2d0a99f",
+        "size_bytes": 10468,
+        "commitSha": "e309512a690ab453503aad077dba5ed3077cabb1",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-02T12:20:49.981050+00:00"
       }
     ]
   },

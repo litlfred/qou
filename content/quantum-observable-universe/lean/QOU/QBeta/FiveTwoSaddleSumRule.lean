@@ -440,4 +440,136 @@ theorem re_V_real_root_eq_rogers {y L₂ : ℝ} (hy : 0 < y)
   norm_num
   ring
 
+/-! ### §7d — the distribution (Kubert) route: the algebraic skeleton
+
+The header records the identified route to the missing second equation as the
+Kubert/distribution relation applied to `Li₂(y²) = Li₂((1−y)³)`, and says it is
+"not formalized here". The **algebraic** half is formalized below, sorry-free;
+the analytic half — a complex `Li₂` carrying the distribution identity —
+remains open, and nothing here closes the sum rule.
+
+The route runs through the **cube root**. If `u³ + u² = 1` then `y := u³`
+solves the saddle cubic and `1 − y = u²`, so the single parameter `u` presents
+`y` and its reflection *simultaneously*; the branch equation `y² = (1−y)³`
+becomes `u⁶ = u⁶` (`branch_trivial_in_cubeRoot`). That is the reason to prefer
+`u`, and it is why the distribution relation is the natural next input.
+
+**A correction, recorded because the wrong version was drafted first.** An
+earlier draft of this section claimed the distribution family is *vacuous* on
+the Galois sum — that summing the relation over the orbit degenerates to
+`A = A`, making the whole family a no-go. That claim is **false**. The reason
+it is false is exactly `saddle_comp_cube_factor` and `reflected_comp_sq_factor`
+below: `X⁹ − 2X⁶ + 3X³ − 1` and `X⁶ − X⁴ + 2X² − 1` are both **reducible**, so
+the `Li`-sum over the nine (resp. six) numbers splits into sums over *smaller*
+orbits instead of being one irreducibly new unknown. Both cubic factors
+`X³ + X² − 1` and `X³ − X² + 1` have discriminant `−23` — the same field as
+`y`. So the distribution relation is genuinely informative; what it is not is
+*sufficient*, which is a different and much weaker statement.
+
+Numerics for the split, to 60 dps, are in
+`computations/probes/qbeta_5two_route40_distribution_factors_probe.py`.
+Bean `qou-0yqu`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+
+/-- `u³ + u² = 1` gives `1 − u³ = u²`: the cube-root parameter presents the
+saddle root `y = u³` and its reflection `1 − y` at once. -/
+theorem one_sub_cube_of_cubeRoot {R : Type*} [CommRing R] {u : R}
+    (hu : u ^ 3 + u ^ 2 - 1 = 0) : 1 - u ^ 3 = u ^ 2 := by
+  linear_combination -hu
+
+/-- **`y = u³` solves the saddle cubic.** The cofactor is the sextic factor of
+`saddle_comp_cube_factor`, which is not a coincidence: it is the same
+factorization seen from the other side. -/
+theorem saddle_cubic_of_cubeRoot {R : Type*} [CommRing R] {u : R}
+    (hu : u ^ 3 + u ^ 2 - 1 = 0) :
+    (u ^ 3) ^ 3 - 2 * (u ^ 3) ^ 2 + 3 * u ^ 3 - 1 = 0 := by
+  linear_combination (u ^ 6 - u ^ 5 + u ^ 4 - 2 * u ^ 3 + u ^ 2 + 1) * hu
+
+/-- **`w = u²` solves `w³ − w² + 2w − 1`**, the minimal polynomial of `1 − y`. -/
+theorem reflected_cubic_of_cubeRoot {R : Type*} [CommRing R] {u : R}
+    (hu : u ^ 3 + u ^ 2 - 1 = 0) :
+    (u ^ 2) ^ 3 - (u ^ 2) ^ 2 + 2 * u ^ 2 - 1 = 0 := by
+  linear_combination (u ^ 3 - u ^ 2 + 1) * hu
+
+/-- **`u⁵ = 1 − u`.** The reflection of the cube-root parameter is again a
+power of it — the plastic-number identity `ρ⁻¹ + ρ⁻⁵ = 1`, where `u = ρ⁻¹`. -/
+theorem pow_five_of_cubeRoot {R : Type*} [CommRing R] {u : R}
+    (hu : u ^ 3 + u ^ 2 - 1 = 0) : u ^ 5 = 1 - u := by
+  linear_combination (u ^ 2 - u + 1) * hu
+
+/-- **The branch equation is trivial in the cube-root parameter.**
+
+`y² = (1−y)³` — the content of `cubic_iff_sq_eq_cube`, and the source of every
+branch subtlety in this file — collapses to `u⁶ = u⁶` once `y = u³`. -/
+theorem branch_trivial_in_cubeRoot {R : Type*} [CommRing R] {u : R}
+    (hu : u ^ 3 + u ^ 2 - 1 = 0) : (u ^ 3) ^ 2 = (1 - u ^ 3) ^ 3 := by
+  rw [one_sub_cube_of_cubeRoot hu]; ring
+
+/-- **`X⁹ − 2X⁶ + 3X³ − 1` is reducible.** The nine cube roots of the saddle
+orbit are not a single new Galois orbit: they split as a cubic and a sextic.
+This is what makes the distribution relation informative rather than vacuous. -/
+theorem saddle_comp_cube_factor {R : Type*} [CommRing R] (X : R) :
+    X ^ 9 - 2 * X ^ 6 + 3 * X ^ 3 - 1
+      = (X ^ 3 + X ^ 2 - 1) * (X ^ 6 - X ^ 5 + X ^ 4 - 2 * X ^ 3 + X ^ 2 + 1) := by
+  ring
+
+/-- **`X⁶ − X⁴ + 2X² − 1` is reducible**, into *two* cubics — both of
+discriminant `−23`, i.e. both generating the same field as `y`. -/
+theorem reflected_comp_sq_factor {R : Type*} [CommRing R] (X : R) :
+    X ^ 6 - X ^ 4 + 2 * X ^ 2 - 1 = (X ^ 3 - X ^ 2 + 1) * (X ^ 3 + X ^ 2 - 1) := by
+  ring
+
+/-- The two cubic factors of `reflected_comp_sq_factor` are exchanged by
+`X ↦ −X`, so the second orbit is the negation of the first. -/
+theorem cubeRoot_factor_neg {R : Type*} [CommRing R] (X : R) :
+    X ^ 3 - X ^ 2 + 1 = -((-X) ^ 3 + (-X) ^ 2 - 1) := by ring
+
+/-! The two factorizations again in **generating-polynomial** form. For a monic
+`R` of degree `d` with roots `Xᵢ`, `∏ᵢ (1 − Xᵢ z) = z^d · R(1/z)`, which is the
+coefficient list of `R` read low-to-high; this is the form in which the
+identity `Σᵢ Li₂(Xᵢ) = −∫₀¹ log ∏ᵢ(1 − Xᵢ z) / z dz` transports a
+factorization into a relation between `Li₂` sums. (Note the direction: the
+highest-first coefficient list *is already* the generating polynomial
+low-to-high — reversing it is the natural-looking error, and it is wrong.) -/
+
+/-- Generating-polynomial form of `saddle_comp_cube_factor`. -/
+theorem genPoly_saddle_comp_cube {R : Type*} [CommRing R] (z : R) :
+    1 - 2 * z ^ 3 + 3 * z ^ 6 - z ^ 9
+      = (1 + z - z ^ 3) * (1 - z + z ^ 2 - 2 * z ^ 3 + z ^ 4 + z ^ 6) := by
+  ring
+
+/-- Generating-polynomial form of `reflected_comp_sq_factor`. -/
+theorem genPoly_reflected_comp_sq {R : Type*} [CommRing R] (z : R) :
+    1 - z ^ 2 + 2 * z ^ 4 - z ^ 6 = (1 - z + z ^ 3) * (1 + z - z ^ 3) := by
+  ring
+
+/-- **The distribution relation, summed over the orbit.**
+
+With `Li` abstract and carrying only the triplication identity
+`Li (z³) = 3·(Li z + Li (ωz) + Li (ω²z))`, summing over the three cube-root
+parameters gives `Σⱼ Li(yⱼ) = 3·S₉`, with `S₉` the `Li`-sum over the nine
+numbers `ω^k uⱼ`.
+
+On its own this is one equation in one new unknown, and that is all this
+theorem says — it is deliberately as weak as its hypothesis. Its value is that
+`saddle_comp_cube_factor` then splits `S₉` along a cubic and a sextic, so the
+new unknown is not irreducibly new. Turning that split into a relation between
+`Li₂` sums needs the analytic input this file does not have. -/
+theorem sum_distribution_of_triplication
+    (Li : ℂ → ℂ) (ω : ℂ) (u : Fin 3 → ℂ)
+    (htrip : ∀ z : ℂ, Li (z ^ 3) = 3 * (Li z + Li (ω * z) + Li (ω ^ 2 * z))) :
+    (∑ j, Li ((u j) ^ 3))
+      = 3 * ∑ j, (Li (u j) + Li (ω * u j) + Li (ω ^ 2 * u j)) := by
+  rw [Finset.mul_sum]
+  exact Finset.sum_congr rfl fun j _ => htrip (u j)
+
+/-- The same for duplication on `w = u²`, giving `Σⱼ Li(1 − yⱼ) = 2·S₆`. -/
+theorem sum_distribution_of_duplication
+    (Li : ℂ → ℂ) (u : Fin 3 → ℂ)
+    (hdup : ∀ z : ℂ, Li (z ^ 2) = 2 * (Li z + Li (-z))) :
+    (∑ j, Li ((u j) ^ 2)) = 2 * ∑ j, (Li (u j) + Li (-(u j))) := by
+  rw [Finset.mul_sum]
+  exact Finset.sum_congr rfl fun j _ => hdup (u j)
+
 end QOU.QBeta.FiveTwo

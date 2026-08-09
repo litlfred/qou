@@ -59,7 +59,7 @@ from y_lambda_wenzl_bridge import (
     partitions_of,
     y_lambda_wenzl_bridge_numeric,
 )
-from q_parameter import Q as Q0_FLOAT
+from q_parameter import Q_MP as Q0_FLOAT
 
 
 # Canonical |tr_M(β_K, q_0)| values from derivation_chain.TR_M_AT_Q0;

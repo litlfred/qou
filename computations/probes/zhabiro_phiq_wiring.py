@@ -52,9 +52,16 @@ try:
     from qou_substrate.constants import q_at  # type: ignore
     Q0 = mp.mpf(str(q_at()))
     Q0_SOURCE = "qou_substrate.constants.q_at (proton pin)"
-except Exception:  # pragma: no cover - fallback for bare environments
-    Q0 = mp.mpf("1.10997859555733")
-    Q0_SOURCE = "literal fallback 1.10997859555733"
+except Exception as _exc:  # pragma: no cover
+    # Was: fall back to the literal 1.10997859555733 -- which is the MUON
+    # value, despite the comment above declaring this q_0 proton-pinned. A
+    # bare environment would therefore compute at the ideal layer under a
+    # proton label, silently. AGENTS.md §q0-anchor forbids straddling inside
+    # one quantity, so fail loudly rather than switch layers.
+    raise RuntimeError(
+        "qou_substrate.constants.q_at unavailable; refusing to fall back to "
+        "the muon literal in a proton-pinned module (AGENTS.md q0-anchor). "
+        f"Original error: {_exc!r}") from _exc
 
 N_DEPTH = 12  # cyclotomic depth for the truncation cross-check
 

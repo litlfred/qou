@@ -28,7 +28,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-from q_parameter import Q as Q0  # noqa: E402  (muon-pinned canonical, matches kaon witness)
+from q_parameter import Q_MP as Q0  # noqa: E402  (muon-pinned canonical, matches kaon witness)
 
 # PDG 2024 masses (MeV), charged pion as the unit
 M_PI = mp.mpf("139.57039")

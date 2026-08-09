@@ -8,6 +8,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Feynman Path Integrals as a Special Case of Categorical Trace
@@ -41,9 +42,8 @@ namespace QOU.FeynmanPathIntegrals
 
 /-- The quantum number `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)` for natural `n`.
     Uses `ℕ` exponent to avoid `rpow` complications. -/
-noncomputable def qNum (q : ℝ) (n : ℕ) : ℝ :=
-  if q = 1 then (n : ℝ)
-  else (q ^ n - (q⁻¹) ^ n) / (q - q⁻¹)
+noncomputable abbrev qNum (q : ℝ) (n : ℕ) : ℝ :=
+  QOU.QInteger.qIntBalCl q n
 
 /-- The quantum dimension `[2j+1]_q` for half-integer spin `j`,
     encoded as `dim_q(n) = [n]_q` for `n = 2j+1 : ℕ`. -/
@@ -51,7 +51,7 @@ noncomputable abbrev quantumDim (q : ℝ) (n : ℕ) : ℝ := qNum q n
 
 /-- At q = 1, the quantum number reduces to n. -/
 theorem qNum_at_one (n : ℕ) : qNum 1 n = (n : ℝ) := by
-  unfold qNum; simp
+  simp only [qNum, QOU.QInteger.qIntBalCl]; simp
 
 /-- The quantum number `[n]_q` is positive for `q > 0`, `q ≠ 1`, `n ≥ 1`.
 
@@ -60,7 +60,7 @@ theorem qNum_at_one (n : ℕ) : qNum 1 n = (n : ℝ) := by
 -- Ref: [chari1994] Chari & Pressley, "A Guide to Quantum Groups," CUP 1994
 theorem qNum_pos {q : ℝ} {n : ℕ} (hq : 0 < q) (hq1 : q ≠ 1) (hn : 0 < n) :
     0 < qNum q n := by
-  unfold qNum
+  simp only [qNum, QOU.QInteger.qIntBalCl]
   simp only [hq1, ↓reduceIte]
   have hqi : 0 < q⁻¹ := inv_pos.mpr hq
   by_cases hq_gt : 1 < q

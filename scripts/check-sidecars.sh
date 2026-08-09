@@ -174,6 +174,35 @@ if command -v python3 >/dev/null 2>&1; then
   fi
 fi
 
+# ── canonical-mass status guard ───────────────────────────────────────────────
+# Runs when the change touches a surface the guard covers: production compute
+# docstrings (computations/**.py), the authoritative paper (content/**.md), or a
+# live reference doc (docs/**.md).
+#
+# Hosted HERE rather than in CI on purpose. Every workflow in .github/workflows
+# is `workflow_dispatch`-only (auto-triggers disabled repo-wide, 2026-06-30,
+# Actions billing), so a CI job for this guard would never fire on a push and
+# would only look like coverage. This script is the path agents actually walk
+# before committing — AGENTS.md §"QA is agent-owned; CI is a backup".
+#
+# The guard is stdlib-only (ast/re/hashlib), so it adds no dependency to the
+# preflight. Its two regression suites need mpmath and are NOT run here; run
+# them directly when touching the guard itself:
+#   python3 computations/canonical_mass_status_guard_test.py
+#   python3 computations/canonical_mass_table_nucleon_rows_test.py
+if printf '%s\n' "${files[@]}" | grep -qE '^(computations/.*\.py|(content|docs)/.*\.md)$'; then
+  guard="computations/canonical_mass_status_guard.py"
+  if [ -f "$guard" ]; then
+    if ! guard_out=$(python3 "$guard" --strict 2>&1); then
+      action=1
+      echo "⚠ canonical-mass status guard: a DEPRECATED absolute-mass figure is cited as live status."
+      echo "  Live m_p is CODATA +1.35 ppb via the canonical_mass facade; 2.89%/966/406/−57% are the"
+      echo "  Vol(𝓑₃)·ρ forms. See docs/canonical-mass-formula-guardrail.md."
+      printf '%s\n' "$guard_out" | sed 's/^/    /'
+    fi
+  fi
+fi
+
 echo
 if [ "$action" -eq 1 ]; then
   echo "⚠ check-sidecars: action needed above. Resolve §7c markers / refresh sidecars BEFORE commit."

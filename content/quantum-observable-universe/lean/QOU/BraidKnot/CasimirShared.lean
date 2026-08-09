@@ -79,12 +79,12 @@ noncomputable def QuantumSu2.qInt (qs : QuantumSu2) (n : ℕ) : R_q :=
 /-- [1]_q = 1 for all q ≠ 1. -/
 -- Ref: [lusztig1993]
 theorem qInt_one (qs : QuantumSu2) : qs.qInt 1 = 1 := by
-  unfold qInt; simp [pow_one, div_self (sub_ne_zero.mpr qs.q_ne_one)]
+  unfold QuantumSu2.qInt; simp [pow_one, div_self (sub_ne_zero.mpr qs.q_ne_one)]
 
 /-- [2]_q = q + 1. -/
 -- Ref: [lusztig1993]
 theorem qInt_two (qs : QuantumSu2) : qs.qInt 2 = qs.q + 1 := by
-  unfold qInt
+  unfold QuantumSu2.qInt
   have h : qs.q - 1 ≠ 0 := sub_ne_zero.mpr qs.q_ne_one
   field_simp; ring
 

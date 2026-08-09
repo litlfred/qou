@@ -50,7 +50,7 @@ from habiro_coefficients_interpolate import (  # noqa: E402
 )
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_weyl_symbolic import partitions_of  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402

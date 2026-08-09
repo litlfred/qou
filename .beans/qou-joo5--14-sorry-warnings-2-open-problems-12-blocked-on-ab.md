@@ -1,11 +1,11 @@
 ---
 # qou-joo5
 title: '14 sorry warnings: 2 open problems, 12 blocked on absent Mathlib theory'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T06:55:56Z
-updated_at: 2026-08-08T06:55:56Z
+updated_at: 2026-08-08T08:14:40Z
 ---
 
 Audit of the 14 `declaration uses 'sorry'` warnings left after qou-k21h
@@ -87,3 +87,49 @@ work is the load-bearing part and unblocks the most:
 4. Weierstrass/Hadamard chain (independent of 1–3)
 
 Several are plausible Mathlib contributions in their own right.
+
+## Re-audit 2026-08-08 — the set changed; 17 now, not 14
+
+This bean's original list is stale. `main` moved ~23.5k commits, and the
+sorry set turned over: two closed (`numSYT_mul_hookProduct` via sp09,
+`StandardYoungTableau` is now sorry-free), and several appeared that did
+not exist when this was written.
+
+**Current, from source (`grep -n '^\s*sorry\s*$'`):**
+
+| classification | site |
+|---|---|
+| OPEN CONJECTURE | `HyperbolicVolumeIndependence:42` — algebraic independence of the three hyperbolic volumes |
+| OPEN CONJECTURE | `YoungDiagramKernel:310` — `covariance_kernel_conjecture`, Biane–Śniady / Kerov-CLT; "verified k ≤ 30 computationally. Not proved." |
+| declared OPEN input | `cat_descended_is_base_mass:79` — `descended_trace_is_base_trace` |
+| declared OPEN input | `cat_descended_is_base_mass:89` — `base_mass_is_norm_of_base_trace` |
+| deferred analytic | `QGevreyOrder:269` — `cauchyMul_order` |
+| deferred analytic | `HadamardFactorization:293` — `hadamard_factorization` |
+| blocked on Mathlib | `EllipticDivisorDegree:241` — needs the argument principle |
+| RSK program | `YoungTableauStandard:121/129/136` — branching, skew, involutions |
+| Specht program | `Specht:313/328`, `SpechtClassification:454/494`, `SpechtIrreducible:1076`, `JucysMurphy:850`, `SnWedderburnPartitionBridge:250` |
+
+**Two of the three sorries this bean listed for HadamardFactorization are
+gone** — only `hadamard_factorization` itself remains, so the Weierstrass
+estimate and canonical-product convergence were closed on main. Worth
+noting against `qou-v4if`, which recorded the PI-2 brick as "NOT tractable
+in Mathlib v4.24.0 within reason".
+
+**Nothing here changes the conclusion.** Every remaining site is a declared
+open input, an explicit conjecture, or a cited classical theorem with no
+Mathlib foundation. None is a proof gap an edit closes.
+
+### The one entry point worth naming
+
+`specht_form_nondegenerate` (`SpechtIrreducible:1076`) is **sp01** — the
+foundation of `sp00`'s PHASE A, and the thing `specht_isSimple` waits on.
+It has its own bean, `qou-0xyc`. If effort goes anywhere in the Specht
+cluster, it goes there first; the other five Specht sorries are downstream
+of it.
+
+### Method note
+
+This audit reads `^\s*sorry\s*$` from source rather than build warnings.
+The earlier count came from a build log and undercounted, because a module
+that fails to compile never reports its own `sorry`s — so the corpus-wide
+figure was only trustworthy once the package built.

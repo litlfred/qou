@@ -56,6 +56,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 import numpy as np
+import mpmath as _mpm
+from mpmath import mpf
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, Q_INV as QI, HA as HA_VAL
@@ -256,7 +258,7 @@ def _cached_seminormal(shape: tuple[int, ...]):
 def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
                          pn_convention: str = "bring_color_weighted",
-                         q=None):
+                         q=None, allow_float64: bool = False):
     """Full 3A-strand braid word as a list of (c, d, gen_idx) triples.
 
     Matches the chain-walk convention of
@@ -279,30 +281,72 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     rather than the baked q₀ — the q-parameterised-braid-word core refactor
     (docs/workplans/2026-06-17-q-parameterised-braid-word-core.md). Every
     crossing is a template {0, −h, −h/2, −h(½−δ/4)} with `h=q−q⁻¹`,
-    `δ=flavor_split_subleading(q)` the only q-dependent quantities; the intra
+    `δ=flavor_split_leading(q)` the only q-dependent quantities; the intra
     chains come from `nucleon_gen_chains(quarks, q=q)`. `q=None` (default)
     uses the canonical q₀ data (`pyhecke.gram.h`, `_avg_color_delta`) and is
     byte-identical to the historical word — all existing callers omitting `q`
     are unaffected. Used by `tr_m_atom_zn(q=…)` and the N-grid simulators
     (multiple q at once).
     """
+    from pyhecke.atom import reject_float64_q
+    reject_float64_q(q, allow_float64=allow_float64, where="atom_braid_word_3A")
     A = Z + N
-    h_loc = h if q is None else (q - 1 / q)
+    # ── NO FLOAT64 (owner directive) ──────────────────────────────────────
+    # Every crossing offset below used to be cast to a Python float, so a
+    # word feeding a 50-dps computation carried ~17 good digits. Two separate
+    # leaks, both fixed here at the source rather than patched per consumer:
+    #
+    #   h     `pyhecke.gram.h` IS a Python float — 2.61e-16 relative against
+    #         the 50-dps closed form — and was used directly as `h_loc`.
+    #   δ     `_avg_color_delta()` evaluates at the float64 `q_parameter.Q`
+    #         and reaches only ~5e-16, as its own docstring says. AGENTS.md
+    #         §"q₀ anchor convention" directs deep-1ppQ callers to
+    #         `flavor_split_leading(local_q0_50dps)`, the same closed form
+    #         taking q as an argument.
+    #
+    # Measured end to end on the dual-path cross-check: exact crossings alone
+    # took the deuteron from 1.024e-16 to 3.476e-20, and exact δ took it from
+    # there to 3.229e-50. The δ term is small (δ/4 is ~6.9e-4 of the offset)
+    # and dominated the floor anyway once the crossings were exact.
+    #
+    # This deliberately BREAKS the "byte-identical to the historical word"
+    # property the docstring above claims for `q=None`. That word was the
+    # float64-contaminated one; reproducing it bit-for-bit is not a property
+    # worth keeping. Consumers needing f64 (the numpy validation paths) cast
+    # at their own boundary, where the loss is visible.
+    # Built at >= 60 dps regardless of the caller's ambient precision: an
+    # mpf keeps the precision it was CREATED at, so `mpf(str(q0))` under the
+    # mpmath default (dps=15) would bake in a 15-digit q0 and silently undo
+    # everything below. Callers already inside a higher workdps keep theirs.
+    with _mpm.workdps(max(_mpm.mp.dps, 60)):
+        if q is None:
+            from q_parameter import Q_50_DIGIT_STR as _Q50
+            _q_exact = mpf(str(_Q50))
+        else:
+            _q_exact = q
+        h_loc = _q_exact - mpf(1) / _q_exact
+        # DE-WIRED 2026-06-29: proven leading δ, not posited subleading.
+        # Inside the same guard as h_loc so δ is built at full precision too.
+        from _li_2_q_util import flavor_split_leading
+        delta = flavor_split_leading(_q_exact)
+        # Every inter-nucleon template built HERE, in the same context. An mpf
+        # carries the precision of the operation, not just of its operands, so
+        # forming `-h_loc / 2` further down would round it to whatever dps the
+        # caller happens to be in — silently re-capping the value that was
+        # just computed exactly.
+        _X_PP = (mpf(1), mpf(0))                                    # σ
+        _X_NN = (mpf(1), -h_loc)                                    # σ⁻¹
+        _X_PN_CW = (mpf(1), -h_loc * (mpf(1) / 2 - delta / 4))      # colour-weighted
+        _X_PN_BLIND = (mpf(1), -h_loc / 2)                          # colour-blind
     if q is None:
         p_g0, p_g1, n_g0, n_g1 = _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
     else:
         from pyhecke.atom import nucleon_gen_chains
-        p_g0, p_g1 = nucleon_gen_chains(['u', 'u', 'd'], q=q)
-        n_g0, n_g1 = nucleon_gen_chains(['u', 'd', 'd'], q=q)
-    # color-weighted p-n δ: canonical _avg_color_delta() at q₀, else at q.
-    if q is None:
-        from canonical_braid_crossings import _avg_color_delta
-        delta = float(_avg_color_delta())
-    else:
-        # DE-WIRED 2026-06-29: proven leading δ, not posited subleading
-        from _li_2_q_util import flavor_split_leading
-        delta = float(flavor_split_leading(q))
-    word: list[tuple[float, float, int]] = []
+        p_g0, p_g1 = nucleon_gen_chains(['u', 'u', 'd'], q=q,
+                                        allow_float64=allow_float64)
+        n_g0, n_g1 = nucleon_gen_chains(['u', 'd', 'd'], q=q,
+                                        allow_float64=allow_float64)
+    word: list = []
     ordering = ['p'] * Z + ['n'] * N
     for k, nuc in enumerate(ordering):
         intra = p_g0 if nuc == 'p' else n_g0
@@ -310,24 +354,24 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
         base_g0 = 3 * k
         base_g1 = 3 * k + 1
         for c, d in intra:
-            word.append((float(c), float(d), base_g0))
+            word.append((c, d, base_g0))
         for c, d in intra_g1:
-            word.append((float(c), float(d), base_g1))
+            word.append((c, d, base_g1))
         if include_inter and k < A - 1:
             i_inter = 3 * k + 2
             next_nuc = ordering[k + 1]
             if nuc == 'p' and next_nuc == 'p':
-                base_cross = (1.0, 0.0)
+                base_cross = _X_PP
                 m_this = m_pp
             elif nuc == 'n' and next_nuc == 'n':
-                base_cross = (1.0, float(-h_loc))
+                base_cross = _X_NN
                 m_this = m_nn
             else:
                 if pn_convention == "bring_color_weighted":
                     # color-weighted p-n averaged crossing: σ − h·(1/2 − δ/4).
-                    base_cross = (1.0, float(-h_loc * (0.5 - delta / 4.0)))
+                    base_cross = _X_PN_CW
                 elif pn_convention == "strict_averaged":
-                    base_cross = (1.0, float(-h_loc / 2))   # color-blind (validation)
+                    base_cross = _X_PN_BLIND   # color-blind (validation)
                 else:
                     raise ValueError(
                         f"unknown pn_convention: {pn_convention!r} "

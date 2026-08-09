@@ -12,7 +12,11 @@ strands (the Borromean linking) and EMITS γγ̄ pairs; the emitted pairs carry
 energy that radiates away and is not in the final bound-state trace. Maybe
 that emitted energy is the 2.89% proton VolDensity gap.
 
-Quantification. The proton mass is m_p = m_e · (Vol(𝓑₃)/ℏ_q²) · LW(q), where
+Quantification. The form under study here is the Vol·ρ reading
+m_p = m_e · (Vol(𝓑₃)/ℏ_q²) · LW(q) — DEPRECATED for absolute mass by the
+2026-06-24 ruling (canonical: m_p = 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV via
+`canonical_mass.py`). It is the right object for *this* probe, whose subject
+is precisely that form's +2.89 % gap; it is not the framework's live m_p.
 LW is the Borromean linking weight (the ρ density). Three readings of LW:
   • Family A   — PROVED categorical, terminates at h²: LW = 5/2 + (3/4)h².
   • via Jones  — the FULL Markov-trace of β_Bor (all h-orders = all γγ̄
@@ -35,7 +39,7 @@ import _path_bridge  # noqa: F401, E402
 import sys
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _li_2_q_util import linking_weight_family_a, vol_density_borromean  # noqa: E402
 from gamma_gamma_pair_production_decomposition import (  # noqa: E402

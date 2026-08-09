@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T11:16:56.916165+00:00",
-  "commitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+  "computedAt": "2026-08-09T13:55:31.237297+00:00",
+  "commitSha": "f884620c6840951a00564d8681c30453c68160d2",
   "assertions": [
     {
       "name": "extracted_theta_all_real",
@@ -24,7 +24,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "em-linking-sk-theta-extraction",
   "scriptFile": "em_linking_sk_form_theta_extraction.py",
   "scriptHash": "a300dc21a067",

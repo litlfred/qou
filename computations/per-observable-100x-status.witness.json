@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T13:52:07.467377+00:00",
-  "commitSha": "484c86462f9b238c40449a1835fb39acb1f352a2",
+  "computedAt": "2026-08-08T18:48:03.854968+00:00",
+  "commitSha": "87c627a7cca603ce78725fa0152b3e008769c8b5",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "04904109d041",
-  "scriptCommitSha": "909e4e3c58d7423994256f68f268a7075fa94b8d",
+  "scriptHash": "19daf1b26292",
+  "scriptCommitSha": "87c627a7cca603ce78725fa0152b3e008769c8b5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -72,16 +72,16 @@
       {
         "obs": "Q_beta",
         "role": "derived (CAL-1+CAL-2)",
-        "pred_MeV": "0.782334386518",
+        "pred_MeV": "0.782334410278",
         "codata_MeV": "0.782333410000",
         "sigma_exp_MeV": "6.10000e-7",
-        "err_ppb": "1248.",
+        "err_ppb": "1279.",
         "sigma_exp_ppb": "779.7",
         "target_100x_ppb": "7.797",
-        "miss_factor": "160.1",
+        "miss_factor": "164.0",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 (fallback; qbeta-ck-cache witness not present)",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json.",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "1.278e-51",
         "compute_output_dps": 60
@@ -89,16 +89,16 @@
       {
         "obs": "m_n",
         "role": "validation",
-        "pred_MeV": "939.565422765",
+        "pred_MeV": "939.565422788",
         "codata_MeV": "939.565420520",
         "sigma_exp_MeV": "5.40000e-7",
-        "err_ppb": "2.389",
+        "err_ppb": "2.414",
         "sigma_exp_ppb": "0.5747",
         "target_100x_ppb": "0.005747",
-        "miss_factor": "415.7",
+        "miss_factor": "420.1",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "codata_constants.M_N_MEV_VALIDATION",
         "compute_truncation_ppb": "1.064e-54",
         "compute_output_dps": 60
@@ -106,16 +106,16 @@
       {
         "obs": "Delta_pn",
         "role": "validation (derived)",
-        "pred_MeV": "1.29333333721",
+        "pred_MeV": "1.29333336097",
         "codata_MeV": "1.29333236000",
         "sigma_exp_MeV": "6.12944e-7",
-        "err_ppb": "755.6",
+        "err_ppb": "773.9",
         "sigma_exp_ppb": "473.9",
         "target_100x_ppb": "4.739",
-        "miss_factor": "159.4",
+        "miss_factor": "163.3",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=0) + m_e; no flavor-split — per PR #1298 gap diagnostic",
+        "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
         "sigma_source": "M_N_MEV_VALIDATION − M_P_MEV_VALIDATION; σ in quadrature",
         "compute_truncation_ppb": "7.732e-52",
         "compute_output_dps": 60
@@ -159,19 +159,31 @@
       "beats_1x_count": 2,
       "beats_100x_count": 2
     },
+    "anchor_layer_qbeta": {
+      "status": "matched",
+      "cache_anchor": "proton",
+      "cache_q0": "1.1099785827513808075916690956107688798744991218736",
+      "producer_q0": "1.1099785827513808075916690956107688798744991218736",
+      "pin_diff_ppb": "0.0",
+      "induced_qbeta_error_ppb": "0.0",
+      "l2_target_ppb": "7.797",
+      "anchor_error_over_target": "0.0",
+      "anchor_alone_exceeds_l2_target": false,
+      "material_today": false
+    },
     "upstream_witness_hashes": [
       {
         "path": "m-p-substrate-identity-50dps.witness.json",
-        "sha256": "943210f1e2151ca66d52cd1eec506cf29b550b09c94d55086ff70d2896087427",
-        "size_bytes": 5024,
+        "sha256": "b62e3348d05d84ec1b8c905e6b551a2d09cb965710392e925028d0bf15012ad7",
+        "size_bytes": 5116,
         "commitSha": "09145f168191a3607c090e24b554eae32a30f4d9",
         "scriptCommitSha": "633b47159a418d635a114c00146b239e651b8f86",
         "computedAt": "2026-07-07T11:26:15.005428+00:00"
       },
       {
         "path": "m-p-borromean-verification-50dps.witness.json",
-        "sha256": "6e8536cef754cbbaecbe12f3610837c293eb83979b279f77316c8230093ac7bc",
-        "size_bytes": 10359,
+        "sha256": "793d0659c1ff79878c288b6a8dcd520b64b091725fc6cf41fe5b9ad7c2d0a99f",
+        "size_bytes": 10468,
         "commitSha": "e309512a690ab453503aad077dba5ed3077cabb1",
         "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
         "computedAt": "2026-07-02T12:20:49.981050+00:00"
@@ -209,5 +221,7 @@
         "computedAt": "2026-07-05T11:19:01.311438+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

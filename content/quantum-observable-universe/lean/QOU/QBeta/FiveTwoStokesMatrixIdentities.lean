@@ -106,7 +106,7 @@ theorem Splus0_transpose_mul_Sminus0 : Splus0ᵀ * Sminus0 = 1 := by
   ext i j
   fin_cases i <;> fin_cases j <;>
     simp [Splus0, Sminus0, Matrix.mul_apply, Fin.sum_univ_three,
-      Matrix.transpose_apply, Matrix.one_apply]
+      Matrix.transpose_apply]
 
 /-! ## Inversion identity — truncated to order `q³`
 

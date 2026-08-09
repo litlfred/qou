@@ -21,7 +21,7 @@
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **CERTIFIED (2026-07-13) — 6/6 production atoms** (p, n, D, T, ³He, ⁴He). `cross_check_trM_1ppb.py` reports `allPassed=True` (`all_atoms_within_1ppQ`, `character_engine_matches_closed_form`); worst closed-form χ-anchor \|Δ\| = **5.6e-50** (proton 9.3e-50, neutron 3.3e-50), no float64 in the hot path. The last gap (⁴He, H₁₂) closed by building `pyhecke-native` from source. See [`audits/2026-07-13-l1-4he-certification-complete.md`](audits/2026-07-13-l1-4he-certification-complete.md). **Supersedes** the 2026-06-17 gap ([`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md)): the float64-limited `markov_peel` witness and the Habiro-divergence were replaced by the mpf / native-Rust path. *(The aggregate `onepb-status-dashboard.witness.json`, dated 2026-07-06, is stale and predates this certification.)* |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **2/7 meet** — one calibration anchor (m_e) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_count=2`). |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **2/7 meet** — one calibration anchor (m_e) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442 — **caveat:** the ~47 ppb precision is *two-term-truncation-dependent*: `(3q²−1)/(2q²)` is the leading 2 terms of `1+log(1+ℏ_q)` and the full series fits *worse* (~103 ppb), so the EM factor is not yet a converged derivation — deriving why `(3q²−1)/(2q²)` is the physical object is the open successor, bean `qou-v6oz`; the `[3]_q[4]_q` core (99.98 %) is exact/Lean-proved and α_em is derived, so the ratio itself is parameter-free); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_count=2`). |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -173,6 +173,15 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 
 ### Per-observable target table (CODATA 2022)
 
+> **Anchor correction 2026-08-08.** The Q_β / m_n / Δ_pn rows previously read
+> 1247 / 2.39 / 755 ppb. Those came from a `qbeta-ck-cache` built at the **muon**
+> q₀ and consumed by a **proton**-pinned dashboard — a layer straddle worth
+> 29.96 ppb on Q_β. The cache is now regenerated at the proton pin and the rows
+> above are the layer-consistent values, which is why they now agree with the
+> 1279 ppb / 164.0× figure already quoted in §"Key distinctions" below. No
+> prediction improved or degraded; the numbers were mislabelled, not wrong.
+> Detail: [`audits/2026-08-08-qbeta-l2-anchor-straddle-guard.md`](audits/2026-08-08-qbeta-l2-anchor-straddle-guard.md).
+
 > **Table updated 2026-07-04 (m_p de-fitted; post q₀ re-pin #1422 +
 > de-fitting #1416).** Only m_e meets trivially (scale anchor, err 0);
 > **all five genuine predictions miss** the 100× target, and m_p — the
@@ -188,9 +197,9 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
 | m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 1.35 ppb (de-fitted round-trip) | **misses ~437×** (documented-pin round-trip; the 0.0004 ppb was a dropped fitted tower, 2026-07-04) |
 | m_μ | prediction | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) |
-| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1247 ppb (1.25 ppm) | **misses ~160×** (de-fitted; N=5 ladder was a fit) |
-| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.39 ppb | **misses ~416×** (rides on m_p; +1.35 ppb after the tower drop) |
-| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 755 ppb | **misses ~159×** |
+| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) |
+| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.41 ppb | **misses ~420×** (rides on m_p; +1.35 ppb after the tower drop) |
+| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** |
 | m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) |
 
 **Honest summary: 2/7 "meet" — 1 calibration anchor (m_e)
@@ -256,6 +265,25 @@ giving σ_rel(B) of order 0.04–0.45 ppm. **100× targets here are in the
 > **L2 binding-energy targets remain presently unreachable** — not because
 > of compute precision, and no longer because of the per-partition value,
 > but because the super-pairwise extensive **magnitude** term is open R&D.
+>
+> **ℓ¹-ceiling sharpening (2026-08-07, `free_parameters = 0`).** The "magnitude
+> is open" statement is now a *proved quantitative bound*, not an inference. The
+> ℓ¹ norm `Σ_λ |y_λ χ^λ Δ_λ|` — the absolute ceiling reachable with **perfect
+> constructive interference and zero cancellation** — is only `[0.36, 0.59]` of
+> the AME target across **all four** atoms (D 0.516 · T 0.358 · ³He 0.592 ·
+> ⁴He 0.406). So **no re-signing, no re-weighting, and no `Δ_λ` re-derivation
+> can close the deficit** — the entire "find a better `Δ_λ`" family (where all
+> six-plus prior ansätze lived) is foreclosed as scope-(a). A genuinely **new
+> additive term is required**, and the ℓ¹ ceiling is the quantitative bar it
+> must clear: it must supply **41–64 % of each target on its own**. The ≥3-body
+> sector is the coherent one (`ℓ(λ)=3` cancellation ratio 0.98–1.00 at T/³He),
+> and ⁴He's two-row sector is suppressed ~29,000× (a *strong, unproved*
+> coincidence at the doubly-magic `[1⁴]` SU(4) singlet — not a proved selection
+> rule). Current identified candidate for the new term: the He4-local ≥4-body
+> cumulant `b₄ = −ln det(I + m·S)` (`eig(S) = {±√5, ±1}`), whose lone open scalar
+> `m ∈ (0, 1/√5)` must be **derived forward**, not selected by AME (fit trap:
+> no Σ(2,3,5) object is structurally forced below the ceiling). Full probe:
+> [`docs/audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md`](audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md).
 
 | Atom | B_AME (MeV) | σ_B / B | 100× target |
 |---|---:|---:|---:|

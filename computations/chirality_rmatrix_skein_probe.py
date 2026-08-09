@@ -42,7 +42,7 @@ import _path_bridge  # noqa: F401, E402
 import sys
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 
 # (name, np-pair spin channels: +1 = symmetric/spin-1 (σ, +h),
 #  −1 = antisymmetric/spin-0 (σ⁻¹, −h)); empirical a_K coefficient string.

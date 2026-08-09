@@ -78,7 +78,7 @@ from _li_2_q_util import (  # noqa: E402
     vol_density_per_block,
     geom_leading,
 )
-from q_parameter import Q as q_0  # noqa: E402
+from q_parameter import Q_MP as q_0  # noqa: E402
 from codata_constants import (  # noqa: E402 — registry (no inline CODATA literals)
     M_E_MEV,
     M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_D_MEV_VALIDATION,

@@ -83,7 +83,7 @@ structure SignedResidualSplit where
   hS : 0 ≤ S
 
 /-- The realized residual moment `μ = B − S`. -/
-def residual (r : SignedResidualSplit) : ℝ := r.B - r.S
+def SignedResidualSplit.residual (r : SignedResidualSplit) : ℝ := r.B - r.S
 
 /-! ### Sign selection: the sign of `μ` picks the dominant operator -/
 

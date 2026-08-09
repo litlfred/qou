@@ -1,6 +1,6 @@
 import _path_bridge, sympy as sp, mpmath as mp
 mp.mp.dps = 50
-from q_parameter import Q
+from q_parameter import Q_MP as Q
 from markov.markov_peel import word_to_element
 from markov.markov_trace_canonical import tr_M_element
 from hecke_symbolic import q as qsym, HA as H_SYMB, z_markov as Z_SYMB

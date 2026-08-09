@@ -1,7 +1,7 @@
 ---
 # vbase
 title: 'GAP: the validate baseline is not well-defined — folio-assistant is unpinned'
-status: todo
+status: completed
 type: task
 priority: high
 tags: [infra, qa, verification]
@@ -84,3 +84,24 @@ the confusion even without (1).
 State the platform SHA alongside the count:
 `git -C "$(readlink -f folio-assistant)" rev-parse --short HEAD`.
 A bare issue count is not a claim anyone else can check.
+
+---
+
+## RESOLVED 2026-08-08 — the platform is pinned
+
+`.folio-assistant-pin` now carries the platform SHA, and
+`scripts/setup-folio-assistant.sh` defaults its `REF` to that file instead of
+`main`. `FOLIO_ASSISTANT_REF` still overrides for testing. Bumping the platform
+is a reviewable one-line commit; the pin file asks for before/after issue counts
+in the bump message, so a checker behaviour change gets seen rather than absorbed.
+
+Pinned at `e1030e83b6be3605e2a08b5e19a35e20c6d6d2a7`.
+
+**A third variance axis, found while doing this.** The bean framed the problem as
+platform-only. It is not. Against the *same* platform `e1030e8`, the corpus moved
+too: `run-validate` reported **10** issues earlier in the session and **4** now,
+because #4786 ("fix every cross-reference warning") landed in between. So a bare
+quoted count is under-determined by *both* inputs. The pin fixes one axis; the
+other is fixed by quoting the corpus commit alongside the number, which
+`run-validate` does not print. Small follow-up if it recurs.
+

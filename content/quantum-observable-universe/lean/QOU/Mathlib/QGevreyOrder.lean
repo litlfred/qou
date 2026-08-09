@@ -1042,4 +1042,402 @@ theorem slopeKCoeff_order_half (q : ℝ) (hq : 1 < q) :
       atTop (𝓝 (1 / 2)) := by
   simpa using slopeKCoeff_order q hq 2 (by norm_num)
 
+/-! ## MI-4 — the `≥` direction under positivity, and `cauchyMul_order` discharged there
+
+`cauchyMul_order` above is stated for an arbitrary normed field and carries the
+`NoCancellation` hypothesis its `≥` half genuinely needs; in that generality the
+half is still open.  This section closes it in the **positive real** regime — the
+one the MI-2 numerics were run in ("positive/no-cancel coefficients") — and on
+the way shows `NoCancellation` is satisfiable at all.
+
+* `noCancellation_of_pos` — for `0 < a n`, `0 < b n` the hypothesis holds with
+  `c = 1`, because a sum of positive terms dominates each of its terms.  So
+  `NoCancellation` is not vacuous and the general theorem has content.
+* `cauchyMul_order_of_pos` — the full law, **proved**, for positive real
+  coefficients.  Its conclusion is `cauchyMul_order`'s on exactly the instances
+  `noCancellation_of_pos` supplies, so it is a partial discharge of that theorem,
+  not a parallel statement.
+
+Positivity makes the sum dominate each of its terms, so it is enough to name the
+term at the maximiser of `θ ↦ sθ² + t(1−θ)²`; along `kₙ = ⌊θn⌋` the `≥` half is
+then a composition of limits,
+
+    2·log_q(a_{kₙ}·b_{n−kₙ}) / n²
+      = (2·log_q a_{kₙ}/kₙ²)·(kₙ/n)² + (2·log_q b_{n−kₙ}/(n−kₙ)²)·((n−kₙ)/n)²
+      → s·θ² + t·(1−θ)².
+
+The maximiser reads off `cauchyEnvelope`'s closed form: an endpoint `θ ∈ {0,1}`
+in the convex (`max`) branch, `θ = t/(s+t)` in the concave one, where
+`sθ² + t(1−θ)² = st/(s+t)` exactly.  Degenerate concave sub-cases (`s = 0`,
+`t = 0`, `s + t = 0`) all have envelope `0` and take an endpoint, so no `θ`
+outside `[0,1]` is ever formed and `s + t = 0` is never divided by.
+
+The `≤` half is not redone here: it is `cauchyMul_bound` above, consumed through
+the two bridges `qGevreyBound_of_isQGevreyOrder` and `coeff_le_of_qGevreyBound`. -/
+
+section Positive
+
+/-! ### Bridges between the limit form and `QGevreyBound` -/
+
+/-- **Limit form ⇒ bound form at an inflated slope.**  The finitely many indices
+where the eventual bound has not yet kicked in are absorbed into `C`; no
+geometric factor is needed, so `A = 1`. -/
+theorem qGevreyBound_of_isQGevreyOrder {q s : ℝ} (hq : 1 < q) {a : ℕ → K}
+    (ha : IsQGevreyOrder q s a) {ε : ℝ} (hε : 0 < ε) :
+    QGevreyBound q (s + ε) a := by
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  obtain ⟨N₀, hN₀⟩ := eventually_atTop.mp (order_eventually_le ha hε)
+  have hnn : ∀ k : ℕ, (0 : ℝ) ≤ ‖a k‖ / q ^ ((s + ε) * (k : ℝ) ^ 2 / 2) := fun k =>
+    div_nonneg (norm_nonneg _) (Real.rpow_pos_of_pos hq0 _).le
+  refine ⟨1 + ∑ k ∈ Finset.range (max N₀ 1), ‖a k‖ / q ^ ((s + ε) * (k : ℝ) ^ 2 / 2), 1,
+    by linarith [Finset.sum_nonneg (fun k (_ : k ∈ Finset.range (max N₀ 1)) => hnn k)],
+    one_pos, fun n => ?_⟩
+  rw [one_pow, mul_one]
+  rcases lt_or_ge n (max N₀ 1) with hlt | hge
+  · -- initial segment: the constant already contains this very ratio
+    have hsingle := Finset.single_le_sum (f := fun k : ℕ =>
+      ‖a k‖ / q ^ ((s + ε) * (k : ℝ) ^ 2 / 2)) (fun k _ => hnn k) (Finset.mem_range.mpr hlt)
+    rw [div_le_iff₀ (Real.rpow_pos_of_pos hq0 _)] at hsingle
+    nlinarith [(Real.rpow_pos_of_pos hq0 ((s + ε) * (n : ℝ) ^ 2 / 2))]
+  · -- tail: the defining limit gives the bound outright, with constant `1`
+    have hn1 : 1 ≤ n := le_trans (le_max_right N₀ 1) hge
+    have hn2 : (0 : ℝ) < (n : ℝ) ^ 2 := by
+      have : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn1
+      positivity
+    have hbound := hN₀ n (le_trans (le_max_left N₀ 1) hge)
+    unfold logb at hbound
+    rw [div_le_iff₀ hn2] at hbound
+    have hhalf : Real.log ‖a n‖ / Real.log q ≤ (s + ε) * (n : ℝ) ^ 2 / 2 := by linarith
+    rw [div_le_iff₀ hlogq] at hhalf
+    have hkey : ‖a n‖ ≤ q ^ ((s + ε) * (n : ℝ) ^ 2 / 2) := Real.le_rpow_of_log_le hq0 hhalf
+    nlinarith [(Real.rpow_pos_of_pos hq0 ((s + ε) * (n : ℝ) ^ 2 / 2)),
+      Finset.sum_nonneg (fun k (_ : k ∈ Finset.range (max N₀ 1)) => hnn k)]
+
+/-- **Bound form ⇒ an eventual bound on the leading coefficient.**  The `C·Aⁿ`
+prefactor contributes degree `≤ 1` in `n`, which the `n²` denominator washes
+out. -/
+theorem coeff_le_of_qGevreyBound {q u : ℝ} (hq : 1 < q) {c : ℕ → ℝ}
+    (hc : QGevreyBound q u c) (hpos : ∀ n, 0 < c n) {ε : ℝ} (hε : 0 < ε) :
+    ∀ᶠ n : ℕ in atTop, 2 * logb q (c n) / (n : ℝ) ^ 2 ≤ u + ε := by
+  obtain ⟨C, A, hC, hA, hbd⟩ := hc
+  have hq0 : (0 : ℝ) < q := by linarith
+  have hlogq : 0 < Real.log q := Real.log_pos hq
+  -- the majorant, which tends to `u`
+  have hlim : Tendsto (fun n : ℕ =>
+      2 * logb q C / (n : ℝ) ^ 2 + 2 * logb q A / (n : ℝ) + u) atTop (𝓝 (0 + 0 + u)) := by
+    refine Tendsto.add (Tendsto.add ?_ ?_) tendsto_const_nhds
+    · exact Tendsto.div_atTop tendsto_const_nhds
+        ((tendsto_pow_atTop (by norm_num : 2 ≠ 0)).comp tendsto_natCast_atTop_atTop)
+    · exact Tendsto.div_atTop tendsto_const_nhds tendsto_natCast_atTop_atTop
+  have hev : ∀ᶠ n : ℕ in atTop,
+      2 * logb q C / (n : ℝ) ^ 2 + 2 * logb q A / (n : ℝ) + u ≤ u + ε := by
+    have hmem : ∀ᶠ z in 𝓝 (0 + 0 + u), z ≤ u + ε := by
+      filter_upwards [Iio_mem_nhds (show (0 : ℝ) + 0 + u < u + ε by linarith)] with z hz
+      exact le_of_lt hz
+    exact hlim.eventually hmem
+  filter_upwards [hev, eventually_ge_atTop 1] with n hn hn1
+  have hnR : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn1
+  have hn2 : (0 : ℝ) < (n : ℝ) ^ 2 := by positivity
+  -- expand the logarithm of the majorant
+  have hlogprod : Real.log (C * A ^ n * q ^ (u * (n : ℝ) ^ 2 / 2))
+      = Real.log C + (n : ℝ) * Real.log A + (u * (n : ℝ) ^ 2 / 2) * Real.log q := by
+    rw [Real.log_mul (by positivity) (ne_of_gt (Real.rpow_pos_of_pos hq0 _)),
+      Real.log_mul (ne_of_gt hC) (by positivity), Real.log_pow, Real.log_rpow hq0]
+  have hmono : Real.log (c n) ≤ Real.log (C * A ^ n * q ^ (u * (n : ℝ) ^ 2 / 2)) := by
+    have := hbd n
+    rw [Real.norm_of_nonneg (hpos n).le] at this
+    exact Real.log_le_log (hpos n) this
+  rw [hlogprod] at hmono
+  -- divide through by `log q` and by `n²`
+  unfold logb
+  rw [div_le_iff₀ hn2]
+  have hdiv : Real.log (c n) / Real.log q
+      ≤ Real.log C / Real.log q + (n : ℝ) * (Real.log A / Real.log q)
+        + u * (n : ℝ) ^ 2 / 2 := by
+    rw [div_le_iff₀ hlogq]
+    have : Real.log C / Real.log q * Real.log q = Real.log C := div_mul_cancel₀ _ (ne_of_gt hlogq)
+    have hA' : Real.log A / Real.log q * Real.log q = Real.log A :=
+      div_mul_cancel₀ _ (ne_of_gt hlogq)
+    nlinarith [hmono, this, hA']
+  have hn' : 2 * logb q C / (n : ℝ) ^ 2 * (n : ℝ) ^ 2 = 2 * logb q C :=
+    div_mul_cancel₀ _ (ne_of_gt hn2)
+  have hn'' : 2 * logb q A / (n : ℝ) * (n : ℝ) = 2 * logb q A :=
+    div_mul_cancel₀ _ (ne_of_gt hnR)
+  have hnn2 : (n : ℝ) * (n : ℝ) = (n : ℝ) ^ 2 := by ring
+  unfold logb at hn' hn'' hn
+  nlinarith [hdiv, hn, hn', hn'', hnn2, hn2, hnR]
+
+/-! ### Positivity: `NoCancellation` holds, and the law is provable -/
+
+/-- The Cauchy product of positive sequences is positive. -/
+theorem cauchyMul_pos {a b : ℕ → ℝ} (ha0 : ∀ n, 0 < a n) (hb0 : ∀ n, 0 < b n) (n : ℕ) :
+    0 < cauchyMul a b n :=
+  Finset.sum_pos (fun i _ => mul_pos (ha0 i) (hb0 _))
+    ⟨0, Finset.mem_range.mpr n.succ_pos⟩
+
+/-- **The sum dominates each of its terms** — the one place positivity is used,
+and the whole content of `noCancellation_of_pos`. -/
+theorem term_le_cauchyMul {a b : ℕ → ℝ} (ha0 : ∀ n, 0 < a n) (hb0 : ∀ n, 0 < b n)
+    {k n : ℕ} (hk : k ≤ n) : a k * b (n - k) ≤ cauchyMul a b n :=
+  Finset.single_le_sum (f := fun i => a i * b (n - i))
+    (fun i _ => (mul_pos (ha0 i) (hb0 _)).le) (Finset.mem_range.mpr (Nat.lt_succ_of_le hk))
+
+/-- **`NoCancellation` is satisfiable** — it holds with `c = 1` for positive real
+coefficients.  Together with `not_noCancellation_of_cauchyMul_eventually_zero`
+(which shows it can fail) this pins the hypothesis as a genuine side condition:
+neither vacuous nor automatic. -/
+theorem noCancellation_of_pos {a b : ℕ → ℝ} (ha0 : ∀ n, 0 < a n) (hb0 : ∀ n, 0 < b n) :
+    NoCancellation a b := by
+  refine ⟨1, one_pos, ?_⟩
+  filter_upwards with n
+  intro k hk
+  have hkn : k ≤ n := Nat.lt_succ_iff.mp (Finset.mem_range.mp hk)
+  rw [one_mul, Real.norm_of_nonneg (cauchyMul_pos ha0 hb0 n).le,
+    Real.norm_of_nonneg (ha0 k).le, Real.norm_of_nonneg (hb0 (n - k)).le]
+  exact term_le_cauchyMul ha0 hb0 hkn
+
+/-- Over `ℝ` a **positive** sequence's order can be stated without the norm. -/
+theorem isQGevreyOrder_pos {q s : ℝ} {a : ℕ → ℝ} (hpos : ∀ n, 0 < a n) :
+    IsQGevreyOrder q s a ↔
+      Tendsto (fun n : ℕ => 2 * logb q (a n) / (n : ℝ) ^ 2) atTop (𝓝 s) := by
+  have hfun : (fun n : ℕ => 2 * logb q ‖a n‖ / (n : ℝ) ^ 2)
+      = fun n : ℕ => 2 * logb q (a n) / (n : ℝ) ^ 2 := by
+    funext n; rw [Real.norm_of_nonneg (hpos n).le]
+  unfold IsQGevreyOrder
+  rw [hfun]
+
+private theorem logb_le_logb {q : ℝ} (hq : 1 < q) {x y : ℝ} (hx : 0 < x) (hxy : x ≤ y) :
+    logb q x ≤ logb q y :=
+  div_le_div_of_nonneg_right (Real.log_le_log hx hxy) (Real.log_pos hq).le
+
+private theorem logb_mul' {q x y : ℝ} (hx : x ≠ 0) (hy : y ≠ 0) :
+    logb q (x * y) = logb q x + logb q y := by
+  unfold logb; rw [Real.log_mul hx hy, add_div]
+
+/-- A frozen index contributes nothing to the leading coefficient — the `n²`
+denominator washes a constant out.  This is what makes the endpoint cases
+(`θ ∈ {0,1}`) work. -/
+private theorem tendsto_logb_const {q : ℝ} (x : ℝ) :
+    Tendsto (fun n : ℕ => 2 * logb q x / (n : ℝ) ^ 2) atTop (𝓝 0) :=
+  Tendsto.div_atTop tendsto_const_nhds
+    ((tendsto_pow_atTop (by norm_num : 2 ≠ 0)).comp tendsto_natCast_atTop_atTop)
+
+/-- **Reindex an order limit along `u`, then rescale.**  If `uₙ → ∞` with
+`uₙ/n → c`, the leading coefficient of `a` read at `uₙ` against `n²` converges to
+`s·c²`.  This one computation is the whole interior (saddle) case. -/
+private theorem tendsto_logb_comp {q s : ℝ} {a : ℕ → ℝ}
+    (ha : Tendsto (fun n : ℕ => 2 * logb q (a n) / (n : ℝ) ^ 2) atTop (𝓝 s))
+    {u : ℕ → ℕ} {c : ℝ} (hu : Tendsto u atTop atTop)
+    (hratio : Tendsto (fun n : ℕ => ((u n : ℕ) : ℝ) / (n : ℝ)) atTop (𝓝 c)) :
+    Tendsto (fun n : ℕ => 2 * logb q (a (u n)) / (n : ℝ) ^ 2) atTop (𝓝 (s * c ^ 2)) := by
+  have h1 : Tendsto (fun n : ℕ => 2 * logb q (a (u n)) / ((u n : ℕ) : ℝ) ^ 2)
+      atTop (𝓝 s) := ha.comp hu
+  have h2 : Tendsto (fun n : ℕ => (((u n : ℕ) : ℝ) / (n : ℝ)) ^ 2) atTop (𝓝 (c ^ 2)) :=
+    hratio.pow 2
+  refine Tendsto.congr' ?_ (h1.mul h2)
+  filter_upwards [hu.eventually_ge_atTop 1, eventually_ge_atTop 1] with n hun hn
+  have hu0 : ((u n : ℕ) : ℝ) ≠ 0 := by
+    have : (0 : ℝ) < ((u n : ℕ) : ℝ) := by exact_mod_cast hun
+    exact ne_of_gt this
+  have hn0 : ((n : ℝ)) ≠ 0 := by
+    have : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+    exact ne_of_gt this
+  field_simp
+
+/-- The two index contributions add, because `log` turns the selected term's
+product into a sum (both factors are positive). -/
+private theorem tendsto_term {q : ℝ} {a b : ℕ → ℝ} (ha0 : ∀ n, 0 < a n) (hb0 : ∀ n, 0 < b n)
+    (k : ℕ → ℕ) {ca cb : ℝ}
+    (hA : Tendsto (fun n : ℕ => 2 * logb q (a (k n)) / (n : ℝ) ^ 2) atTop (𝓝 ca))
+    (hB : Tendsto (fun n : ℕ => 2 * logb q (b (n - k n)) / (n : ℝ) ^ 2) atTop (𝓝 cb)) :
+    Tendsto (fun n : ℕ => 2 * logb q (a (k n) * b (n - k n)) / (n : ℝ) ^ 2)
+      atTop (𝓝 (ca + cb)) := by
+  refine Tendsto.congr' ?_ (hA.add hB)
+  filter_upwards with n
+  rw [logb_mul' (ne_of_gt (ha0 _)) (ne_of_gt (hb0 _))]
+  ring
+
+/-- Monotonicity of `log_q` transports "the sum dominates the term" to the
+leading coefficients. -/
+private theorem term_coeff_le {q : ℝ} {a b : ℕ → ℝ} (hq : 1 < q)
+    (ha0 : ∀ n, 0 < a n) (hb0 : ∀ n, 0 < b n)
+    {k : ℕ → ℕ} (hk : ∀ n, k n ≤ n) (n : ℕ) :
+    2 * logb q (a (k n) * b (n - k n)) / (n : ℝ) ^ 2
+      ≤ 2 * logb q (cauchyMul a b n) / (n : ℝ) ^ 2 := by
+  have h := logb_le_logb hq (mul_pos (ha0 (k n)) (hb0 (n - k n)))
+    (term_le_cauchyMul ha0 hb0 (hk n))
+  exact div_le_div_of_nonneg_right (by linarith) (sq_nonneg _)
+
+/-- **[MI-2 — PROVED for positive real coefficients] Convolution order =
+envelope.**  The conclusion of `cauchyMul_order` on exactly the instances
+`noCancellation_of_pos` supplies, so this is a partial discharge of that
+theorem's residual `sorry`, not a restatement of it.
+
+`≤` is `cauchyMul_bound` through the two `QGevreyBound` bridges; `≥` is the
+Laplace/saddle term selection described in the section header.  The two are glued
+by `tendsto_order`.
+
+Checked at the small instances the MI-2 numerics report: `(-1,-1) ↦ -0.5`,
+`(-2,-1) ↦ -2/3`, `(2,1) ↦ 2`, `(-3,1) ↦ 1`. -/
+theorem cauchyMul_order_of_pos {q s t : ℝ} {a b : ℕ → ℝ}
+    (ha : IsQGevreyOrder q s a) (hb : IsQGevreyOrder q t b)
+    (hq : 1 < q) (ha0 : ∀ n, 0 < a n) (hb0 : ∀ n, 0 < b n) :
+    IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
+  have haR := (isQGevreyOrder_pos ha0).mp ha
+  have hbR := (isQGevreyOrder_pos hb0).mp hb
+  -- the endpoint selections, used by every degenerate branch
+  have hzero : Tendsto
+      (fun n : ℕ => 2 * logb q (a ((fun _ : ℕ => 0) n) * b (n - (fun _ : ℕ => 0) n))
+        / (n : ℝ) ^ 2) atTop (𝓝 (0 + t)) :=
+    tendsto_term ha0 hb0 (fun _ => 0) (tendsto_logb_const (a 0)) (by simpa using hbR)
+  have hfull : Tendsto
+      (fun n : ℕ => 2 * logb q (a ((fun n : ℕ => n) n) * b (n - (fun n : ℕ => n) n))
+        / (n : ℝ) ^ 2) atTop (𝓝 (s + 0)) :=
+    tendsto_term ha0 hb0 (fun n => n) haR (by simpa using tendsto_logb_const (q := q) (b 0))
+  obtain ⟨k, hk, hterm⟩ :
+      ∃ k : ℕ → ℕ, (∀ n, k n ≤ n) ∧
+        Tendsto (fun n : ℕ => 2 * logb q (a (k n) * b (n - k n)) / (n : ℝ) ^ 2)
+          atTop (𝓝 (cauchyEnvelope s t)) := by
+    by_cases hcc : s ≤ 0 ∧ t ≤ 0
+    · obtain ⟨hs, ht⟩ := hcc
+      have hE : cauchyEnvelope s t = s * t / (s + t) := by
+        unfold cauchyEnvelope; exact if_pos ⟨hs, ht⟩
+      rw [hE]
+      rcases eq_or_lt_of_le (add_nonpos hs ht) with hst0 | hstneg
+      · have hs0 : s = 0 := by linarith
+        have ht0 : t = 0 := by linarith
+        subst hs0; subst ht0
+        exact ⟨fun _ => 0, fun n => Nat.zero_le n, by simpa using hzero⟩
+      · rcases eq_or_lt_of_le ht with ht0 | htneg
+        · refine ⟨fun _ => 0, fun n => Nat.zero_le n, ?_⟩
+          rw [show s * t / (s + t) = 0 + t by rw [ht0]; simp]
+          exact hzero
+        · rcases eq_or_lt_of_le hs with hs0 | hsneg
+          · refine ⟨fun n => n, fun n => le_refl n, ?_⟩
+            rw [show s * t / (s + t) = s + 0 by rw [hs0]; simp]
+            exact hfull
+          · -- the genuine interior saddle: `θ = t/(s+t) ∈ (0,1)`
+            set θ : ℝ := t / (s + t) with hθdef
+            have hstne : s + t ≠ 0 := ne_of_lt hstneg
+            have hθ0 : 0 < θ := div_pos_of_neg_of_neg htneg hstneg
+            have hθ1 : θ < 1 := by
+              rw [hθdef, div_lt_one_iff]
+              exact Or.inr (Or.inr ⟨hstneg, by linarith⟩)
+            have hfloor_le : ∀ n : ℕ, ⌊θ * (n : ℝ)⌋₊ ≤ n := by
+              intro n
+              have hle : θ * (n : ℝ) ≤ (n : ℝ) := by
+                nlinarith [Nat.cast_nonneg (α := ℝ) n]
+              calc ⌊θ * (n : ℝ)⌋₊ ≤ ⌊((n : ℕ) : ℝ)⌋₊ := Nat.floor_le_floor hle
+                _ = n := Nat.floor_natCast n
+            refine ⟨fun n => ⌊θ * (n : ℝ)⌋₊, hfloor_le, ?_⟩
+            have hratioA : Tendsto (fun n : ℕ => ((⌊θ * (n : ℝ)⌋₊ : ℕ) : ℝ) / (n : ℝ))
+                atTop (𝓝 θ) :=
+              (tendsto_nat_floor_mul_div_atTop (R := ℝ) hθ0.le).comp
+                tendsto_natCast_atTop_atTop
+            have hratioB : Tendsto
+                (fun n : ℕ => ((n - ⌊θ * (n : ℝ)⌋₊ : ℕ) : ℝ) / (n : ℝ))
+                atTop (𝓝 (1 - θ)) := by
+              refine Tendsto.congr' ?_ ((tendsto_const_nhds (x := (1 : ℝ))).sub hratioA)
+              filter_upwards [eventually_ge_atTop 1] with n hn
+              have hn0 : ((n : ℝ)) ≠ 0 := by
+                have : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+                exact ne_of_gt this
+              rw [Nat.cast_sub (hfloor_le n)]
+              field_simp
+            have huA : Tendsto (fun n : ℕ => ⌊θ * (n : ℝ)⌋₊) atTop atTop :=
+              tendsto_nat_floor_atTop.comp
+                (Tendsto.const_mul_atTop hθ0 tendsto_natCast_atTop_atTop)
+            have huB : Tendsto (fun n : ℕ => n - ⌊θ * (n : ℝ)⌋₊) atTop atTop := by
+              refine (tendsto_natCast_atTop_iff (R := ℝ)).mp ?_
+              refine tendsto_atTop_mono (f := fun n : ℕ => (1 - θ) * (n : ℝ)) (fun n => ?_)
+                (Tendsto.const_mul_atTop (by linarith) tendsto_natCast_atTop_atTop)
+              rw [Nat.cast_sub (hfloor_le n)]
+              have := Nat.floor_le (mul_nonneg hθ0.le (Nat.cast_nonneg (α := ℝ) n))
+              nlinarith
+            have hval : s * θ ^ 2 + t * (1 - θ) ^ 2 = s * t / (s + t) := by
+              rw [hθdef]; field_simp; ring
+            rw [← hval]
+            exact tendsto_term ha0 hb0 _
+              (tendsto_logb_comp haR huA hratioA) (tendsto_logb_comp hbR huB hratioB)
+    · have hE : cauchyEnvelope s t = max s t := by
+        unfold cauchyEnvelope; exact if_neg hcc
+      rw [hE]
+      rcases le_total t s with hts | hst
+      · rw [max_eq_left hts]
+        exact ⟨fun n => n, fun n => le_refl n, by simpa using hfull⟩
+      · rw [max_eq_right hst]
+        exact ⟨fun _ => 0, fun n => Nat.zero_le n, by simpa using hzero⟩
+  -- squeeze: the selected term bounds below, `cauchyMul_bound` bounds above
+  rw [isQGevreyOrder_pos (fun n => cauchyMul_pos ha0 hb0 n)]
+  refine tendsto_order.2 ⟨fun c hc => ?_, fun c hc => ?_⟩
+  · filter_upwards [hterm.eventually (Ioi_mem_nhds hc)] with n hn
+    exact lt_of_lt_of_le hn (term_coeff_le hq ha0 hb0 hk n)
+  · have hε : (0 : ℝ) < (c - cauchyEnvelope s t) / 4 := by linarith
+    have hbA := qGevreyBound_of_isQGevreyOrder hq ha hε
+    have hbB := qGevreyBound_of_isQGevreyOrder hq hb hε
+    have hprod := cauchyMul_bound hq hbA hbB
+    have hshift := envelope_shift_le s t ((c - cauchyEnvelope s t) / 4) hε.le
+    filter_upwards [coeff_le_of_qGevreyBound hq hprod
+      (fun n => cauchyMul_pos ha0 hb0 n) hε] with n hn
+    linarith
+
+end Positive
+
+/-! ### The unhypothesised law, refuted inside Lean
+
+`not_noCancellation_of_cauchyMul_eventually_zero` above shows `NoCancellation`
+fails on the `q^{n²}` / formal-inverse pair — the mathematically strongest
+witness, since both factors carry the *same positive order*.  Its Lean content is
+that the hypothesis fails there; the pair itself lives in a Python witness.
+
+The lemma below is the cheap complement: a fully machine-checked refutation of
+the hypothesis-free statement, needing no external witness.  It exploits a
+different mechanism — `Real.log 0 = 0`, so the zero sequence has order `0` — and
+is therefore weaker as evidence but complete as a proof. -/
+
+/-- **The identically-zero sequence has q-Gevrey order `0`**, for every base:
+`‖0‖ = 0` and `Real.log 0 = 0`, so the defining ratio is identically `0`. -/
+theorem isQGevreyOrder_zero (q : ℝ) : IsQGevreyOrder q 0 (fun _ : ℕ => (0 : K)) := by
+  unfold IsQGevreyOrder
+  refine Tendsto.congr' ?_ (tendsto_const_nhds (x := (0 : ℝ)))
+  filter_upwards with n
+  simp [logb]
+
+/-- **The unhypothesised convolution law is FALSE** (machine-proved, no `sorry`,
+no external witness).  Over `ℝ` with `q = 2`: `a n = 2^{n²}` has order `2`, the
+zero sequence has order `0`, their Cauchy product is `0` and so has order `0`,
+yet `cauchyEnvelope 2 0 = max 2 0 = 2`.  `order_unique` then gives `0 = 2`.
+
+This is why `cauchyMul_order` carries `NoCancellation`.  Axioms
+`[propext, Classical.choice, Quot.sound]`. -/
+theorem cauchyMul_order_unhypothesised_false :
+    ¬ ∀ (q s t : ℝ) (a b : ℕ → ℝ),
+        IsQGevreyOrder q s a → IsQGevreyOrder q t b → 1 < q →
+        IsQGevreyOrder q (cauchyEnvelope s t) (cauchyMul a b) := by
+  intro h
+  have hlog : Real.log 2 ≠ 0 := ne_of_gt (Real.log_pos one_lt_two)
+  have ha : IsQGevreyOrder (2 : ℝ) 2 (fun n : ℕ => (2 : ℝ) ^ (n ^ 2)) := by
+    unfold IsQGevreyOrder
+    refine Tendsto.congr' ?_ (tendsto_const_nhds (x := (2 : ℝ)))
+    filter_upwards [eventually_ge_atTop 1] with n hn
+    have hn0 : ((n : ℝ)) ^ 2 ≠ 0 := by
+      have : (0 : ℝ) < (n : ℝ) := by exact_mod_cast hn
+      positivity
+    show (2 : ℝ) = 2 * logb 2 ‖(2 : ℝ) ^ (n ^ 2)‖ / (n : ℝ) ^ 2
+    rw [Real.norm_of_nonneg (by positivity)]
+    unfold logb
+    rw [Real.log_pow]
+    push_cast
+    field_simp
+  have hb : IsQGevreyOrder (2 : ℝ) 0 (fun _ : ℕ => (0 : ℝ)) := isQGevreyOrder_zero (K := ℝ) 2
+  have hE : cauchyEnvelope 2 0 = 2 := by norm_num [cauchyEnvelope]
+  have hprod : cauchyMul (fun n : ℕ => (2 : ℝ) ^ (n ^ 2)) (fun _ : ℕ => (0 : ℝ))
+      = fun _ : ℕ => (0 : ℝ) := by
+    funext n; simp [cauchyMul]
+  have hc := h 2 2 0 _ _ ha hb one_lt_two
+  rw [hE, hprod] at hc
+  have : (2 : ℝ) = 0 := order_unique hc (isQGevreyOrder_zero (K := ℝ) 2)
+  norm_num at this
+
 end QOU.Mathlib.QGevreyOrder

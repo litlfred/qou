@@ -23,4 +23,11 @@ export default proposition({
     "derivation",
     "term-5",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing.** \`RibbonTwistEigenvalue\` carries \`q_pos : 0 < q\` as a class field, and \`log_q_first_order\` takes \`0 < q\` and expands a logarithm to first order. An ordering hypothesis in the class signature and a \`log\` in the statement are archimedean by construction; the \`linarith\` / \`nlinarith\` in the proofs consume that order.`,
+    },
+  ],
 });

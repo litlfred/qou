@@ -89,7 +89,7 @@ instance : Fintype A5Irrep where
   complete := fun x => by cases x <;> decide
 
 /-- The icosahedral rotation angle (in degrees) of each conjugacy class. -/
-def angle : IcoClass → ℕ
+def IcoClass.angle : IcoClass → ℕ
   | .e => 0 | .c2 => 180 | .c3 => 120 | .c5a => 72 | .c5b => 144
 
 /-- **The A₅ character zero pattern** (`charVanishes λ C = true ⟺ χ_λ(C) = 0`): `T₁,T₂` vanish on

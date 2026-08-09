@@ -1,0 +1,21 @@
+---
+# qou-zyr2
+title: Cite 1604.02688v1.pdf at computations/probes/figure_eight_3d_index.py
+status: todo
+type: task
+created_at: 2026-08-08T23:37:22Z
+updated_at: 2026-08-08T23:37:22Z
+---
+
+The Prop A.3 pairing and Cor 10.21 criterion are asserted in the probe and its witness with no reference key; once the entry exists the probe docstring and the audit lineage should cite it.
+
+**From the source**
+- Def. 8.1 / Cor. 8.2 — The 3D-index I^0_T(0) is a generating series summed over normal-surface classes of the ideal triangulation.
+  Use here: The stated shape of the candidate collective binding term (idea B3) and the structure the corpus's Borromean/figure-eight index computations assume.
+- Cor. 10.21 — For a 1-efficient ideal triangulation the index sum is a genuine power series (no negative powers of q).
+  Use here: This is self-test (i) of the corpus's Borromean 3D-index validation gate, currently cited as 'GHHR Cor 10.21' with no bibliography entry.
+
+Source: `uploads/1604.02688v1.pdf` — no `references.ts` entry yet
+Relevance: **core** — agent assessment, not yet adjudicated.
+
+Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

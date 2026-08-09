@@ -45,6 +45,7 @@
 -/
 
 import QOU.Archimedean.EmCouplingBringZeroMode
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.ArchimedeanUniverse
 
@@ -56,8 +57,7 @@ open QOU.Archimedean (bringZeroModeValue)
     because the fixed-point equation carries the archimedean
     transcendental `π` and therefore lives past the substrate wall
     (§7c). -/
-noncomputable def qIntReal (n : ℕ) (q : ℝ) : ℝ :=
-  (q ^ n - (q⁻¹) ^ n) / (q - q⁻¹)
+noncomputable abbrev qIntReal (n : ℕ) (q : ℝ) : ℝ := QOU.QInteger.qIntBal q n
 
 /-- Tree-level inverse coupling `q·[9]_q·[10]_q` (the sorry-free bare
     formula of `prop:em-coupling-projection`, evaluated on ℝ). -/

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-29T15:09:29.400120+00:00",
-  "commitSha": "67a00dfddc6be02bcc7972a8c552d04b43b13e25",
+  "computedAt": "2026-08-08T20:13:00.176690+00:00",
+  "commitSha": "8ebaee55993e8d63c7cb3b4196bcdbee4b275bab",
   "assertions": [
     {
       "name": "geometric_closed_form_differs_only_at_hbar6",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 11,
   "computation": "flavor-split-geometric-closure-probe",
   "scriptFile": "flavor_split_geometric_closure_probe.py",
   "scriptHash": "fd61295b97ed",
-  "scriptCommitSha": "a4b525f912bc4b79ae12621b18af096f71c37cae",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,28 +27,30 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Scope-(a) measurement: the flavor-split subleading (1+ℏ_q³) vs the geometric closed form 1/(1−ℏ_q³). They differ at O(ℏ_q⁶) ~ 9.5e-7; neither closes the Δm_pn/M_N gap to CODATA (leading already −0.5%). The closed form is a hypothesis, not a derived identity — NOT wired to production δ (calibration-sensitive; needs an independent derivation that the correction is geometric).",
   "parameters": {
-    "q0": "1.1099785955573347198997632204832250266562084087802"
+    "q0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "hbar_q": "0.099081726438258959082099415982742323605414892867363",
-    "leading": "0.0013757112499766120135287432436351703219021757083132",
-    "subleading_1_plus_hbar3": "0.0013770494097940612483979963266208764111825025514274",
-    "geometric_closed_1_over_1_minus_hbar3": "0.0013770507126947873011732949067422153430606878299781",
-    "rel_closed_vs_trunc": "0.00000094615394101771922622342669122077379559699082780303",
-    "err_trunc_vs_codata": "0.00030529083322614441558122159307414736967750970861496",
-    "err_closed_vs_codata": "0.00030434496813725170985479854157002521335685599045272",
+    "hbar_q": "0.099081716044258507839177117518906063985258373389462",
+    "leading": "0.0013757108070270960085511092741065506222254760119377",
+    "subleading_1_plus_hbar3": "0.0013770489659925545053975695881732168367239748151548",
+    "geometric_closed_1_over_1_minus_hbar3": "0.0013770502688920405817874381366924776776033645445393",
+    "rel_closed_vs_trunc": "0.00000094615334548926595554005235508208083423443396890862",
+    "err_trunc_vs_codata": "0.00030561301920949091759016760135967208724789509428907",
+    "err_closed_vs_codata": "0.00030466715502078220176976084307295476990438416764725",
     "codata_dmn_over_mn": "0.0013774699387394029668339406551297433261342328109031",
     "geometric_closes_gap": false,
-    "C_true_codata_over_leading": "1.001278385099213844590282213013884525362579275699",
-    "ratio_Ctrue_minus_1_over_hbar3": "1.3142591339675104554307857080537549505473377122033",
-    "fraction_of_correction_supplied_by_1plus_hbar3": "0.76088495347274550926415498518238231572354207297714"
+    "C_true_codata_over_leading": "1.001278707489482061191485579149752694111327559207",
+    "ratio_Ctrue_minus_1_over_hbar3": "1.3145909848642104055895796294305827520336656903115",
+    "fraction_of_correction_supplied_by_1plus_hbar3": "0.76069287825162910074929807799563032581570123374297"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

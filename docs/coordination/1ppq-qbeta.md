@@ -2982,7 +2982,7 @@ integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`
 `Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
 
 *Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
-Zagier (2007) as `uploads/fulltext.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+Zagier (2007) as `uploads/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
 `{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
 `Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
 `−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would
@@ -3201,3 +3201,122 @@ Note two false friends: bean `el8w` is Borel *resummation*, and `cj2d5`
 `17, 5, −1` by five-term/Abel, needing only a real `Li₂` (QOU has one) and the
 Rogers functional equations. **Sum-rule status unchanged: verified to 80 dps,
 unproved.**
+
+**2026-08-07 (post-#4658) — Route 10: the three level-7 numerators are a Bernoulli
+`B₂`. The sum rule is now ONE distribution relation.**
+
+Bean `qou-fivt`. Route 9 left the sum rule equivalent to three explicit rationals
+`Re[2L(wₖ)+L(−wₖ)] = mₖπ²/42`, `m = (17,5,−1)`, verified but underived — three
+integers that looked fitted.
+
+They are not three constants. `mₖ = 3k² − 21k + 35` (symmetric under `k ↦ 7−k`),
+and that quadratic is `mₖ/7 = 21·B₂(k/7) + 3/2` with `B₂(x) = x² − x + 1/6`.
+`B₂` is the Fourier signature of `Li₂` at roots of unity — `Σₙcos(2πnx)/n² =
+π²B₂(x)`, i.e. **`Re Li₂(ζ₇^k) = π²B₂(k/7)`** (verified 1e-61). And
+`wₖ = ζ₇^k + ζ₇^{−k} + 1` exactly. So the whole remaining content is
+
+    Re[2·L(wₖ) + L(−wₖ)] = (7/2)·Re Li₂(ζ₇^k) + π²/4
+
+**Why this is the useful form:** (i) it kills the "fitted" objection — one
+Bernoulli polynomial, not three lucky integers; (ii) `Re Li₂(ζ₇^k) = π²B₂(k/7)`
+is **elementary**, the cosine Fourier series of `B₂`, needing only real analysis
+and `Cl₂` — **not** the complex `Li₂` continuation blocking `qou-clx8`/`qou-ph1k`
+— and the corpus already has `Cl₂` from #4666
+(`QOU/Archimedean/BlochWignerLobachevsky.lean`); (iii) it names the object:
+Kubert / multiplication relations, with standard technique.
+
+Note the symmetry with Route 4, which *died* on the Kubert relation applied at
+`Li₂(y²) = Li₂((1−y)³)` (six new unknowns for one relation). The same machinery
+nets positive here only because Route 8 first moved the problem to a field where
+roots of unity are the natural arguments.
+
+**⚠ Not a proof** — the relation is verified, not derived. Probe + witness:
+`qbeta_5two_route10_kubert_distribution_probe.py`,
+`qbeta-5two-route10-kubert-distribution.witness.json` (6 gates, 60 dps).
+**Route count 10 tried; 7 refuted, 3 reductions. Sum-rule status unchanged:
+verified to 80 dps, unproved.**
+
+**2026-08-07 (post-#4658) — Routes 11–12: the numerators are DERIVED, and the
+transport's branch integer is PINNED. One analytic gap left.**
+
+**Route 11 (`qou-fivt`) — the three numerators `17, 5, −1` are derived**, not
+fitted. Reduce to `(0,1)` by reflection / inversion `L(x)+L(1/x)=2L(1)` / Landen
+`L(x)+L(x/(x−1))=0`; the argument set `{w₂, q, r, s}` plus reflections is **closed
+under the five-term relation** (15 instances, 3 independent); exact certificate
+
+    T₁ = (2R₁ − 4R₂ + R₃)/7    T₂ = (R₁ − 2R₂ + 4R₃)/7    T₃ = (4R₁ − R₂ + 2R₃)/7
+
+with `rank(R) = rank(R ∪ T) = 3`, in exact `Fraction` arithmetic. The coefficient
+triples are cyclic shifts of `(1,2,4)` — **the quadratic residues mod 7** — which
+is where the `/7` in `mₖ/7` comes from. *Dead end recorded:* PSLQ over
+`[L1, a, L(q), L(r), L(s)]` returns `[−4,4,−3,4,3]`, a linear consequence of the
+targets carrying no information; the five-term closure is what supplies
+independent equations.
+
+**Route 12 (`qou-trns`) — `k = 0` pinned by the base point.** Previously argued
+from integrality + local constancy, which gives *constant* but not *which*
+constant. Now: `exp(g) = ∏ⱼ[(1−yⱼ/x)/(1−xyⱼ)] = 1/x²` (exact Vieta, Lean-proved),
+`g` continuous on a collision-free arc, so `g + 2log x` is constant; **at `x = 1`
+every factor is exactly 1, so `g(1) = 0`** and the constant is 0. Verified at 2000
+points, worst `1.6e-30`. Hence `S(−1) = S(1) + π²`.
+
+⚠ Two probe errors recorded in `qou-trns`: a script that hard-coded "no jump"
+while its own output showed `2π`, and a comparison against mpmath's *principal*
+`log x` (which jumps at `φ = π`) rather than the continuous branch `iφ`.
+
+**The one remaining gap is the envelope theorem** — differentiability of `V` along
+the path plus the implicit function theorem for `yⱼ(x)` (discriminant bounded away
+from zero, so the hypothesis holds). Ordinary analysis, not a research problem,
+but not done. **Sum rule: verified to 80 dps, numerators derived, transport
+branch-pinned, still not proved.**
+
+**2026-08-08 — the cyclotomic side is PROVED IN LEAN. Two links remain, both analytic.**
+
+Beans `qou-abel`, `qou-rhyp`, `qou-fivt` — all three **closed**. PR #4701.
+
+`Σₖ (2·L(wₖ) + L(−wₖ)) = π²/2` is now a theorem about the corpus's own
+dilogarithm, sorry-free on `[propext, Classical.choice, Quot.sound]`:
+
+| theorem | file |
+|---|---|
+| `rogersL_fiveTerm` — **Abel's five-term relation** on `(0,1)` | `QOU/QBeta/FiveTwoAbelFiveTerm.lean` |
+| `numerators_of_root` — `(17,5,−1)`, **no hypothesis on `L`** | same |
+| `exists_root_in_Ioo` — non-vacuity, by IVT | same |
+| `extended_targets` / `extended_sum` — the targets in original form | same |
+| `hasDerivAt_rogersL` — `L'(x) = −(log(1−x)/x + log x/(1−x))/2` | `FiveTwoRogersReflection.lean` |
+
+Abel's relation went the way `LiTwo_reflection'` does: fix `y`, kill the
+derivative, evaluate at `x → 0⁺`. All the content is in four log-splitting
+lemmas; after they fire, `−2F'(x)` is a linear form in
+`log x, log(1−x), log y, log(1−y), log(1−xy)` whose five coefficients each vanish
+as rational functions, so the last step is `field_simp; ring`.
+
+**Two of the ladder's twelve hypotheses were FALSE, not hard** — worth knowing if
+you build on the earlier notes. `hinv1` and `hlan1` fail by `−2.4543` and
+`+1.5692` for a Rogers `L` built on `LiTwo`: their arguments `w₁ = 2.2470` and
+`−w₁` leave the disc of convergence, where Lean's `tsum` is the junk value `0`
+and `Real.log` is even. Every earlier probe missed it by evaluating with mpmath's
+`polylog` — testing the mathematics while the Lean file encodes the semantics.
+Repaired definitionally in `FiveTwoRogersExtend` (Zagier §I.3).
+
+**Correction to the 2026-08-07 entry above.** It says the `B₂` route needs "only
+real analysis and `Cl₂` … not the complex `Li₂` continuation". True, and now
+moot: Route 11→14 derived the numerators from the five-term relation directly,
+never evaluating `Li₂` at a root of unity. The `B₂` framing is explanatory and
+**load-bearing for nothing**.
+
+### What is still open — and it is NOT the dilogarithm
+
+The sum rule is `Σⱼ Re Vⱼ = −3π²/2`; what is proved is `Σₖ(2L(wₖ)+L(−wₖ)) = +π²/2`.
+
+1. **`qou-trns`** — transport `x = 1 → x = −1`. Branch integer pinned; the
+   **envelope theorem is numerical only**. Weakest link, and analytic.
+2. **`qou-rstq` item 4** — `extend` is not identified with `Re` of the analytic
+   Rogers `L` *in Lean*. Route 15 closed it on paper. Its two halves are **not
+   equally hard**: the Landen half sits far from the cut where the corpus's
+   `cLiTwoExt` is already the right object; the inversion half sits **on**
+   `[1,∞)` and needs `Re` of the boundary value, well defined only because the
+   discontinuity is `2πi·log x` — purely imaginary. That fact underpins this
+   lane's whole "take real parts" convention and is written down nowhere.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**

@@ -1,6 +1,7 @@
 import QOU.Basic
 import QOU.QuantumObservableUniverse
 import Mathlib.Data.Real.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Gauge Field Fluid Dynamics
@@ -18,17 +19,22 @@ namespace QOU.GaugeFieldFluidDynamics
 -- ════════════════════════════════════════════════════════════════
 
 /-- The q-integer [k]_q = (q^k - q^{-k})/(q - q^{-1}). -/
-noncomputable def qInteger (q : ℝ) (k : ℕ) : ℝ :=
-  (q ^ k - q⁻¹ ^ k) / (q - q⁻¹)
+-- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
+-- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
+-- call sites are unchanged; the DEFINITION now has a single home.  Proofs that
+-- said `unfold <local>` become `simp only [<local>, ...qIntBal]` -- `unfold`
+-- reduces through the alias and leaves the follow-up tactic nothing to act on.
+-- See QOU/MathlibExt/QIntegerCanonical.lean.
+noncomputable abbrev qInteger (q : ℝ) (k : ℕ) : ℝ := QOU.QInteger.qIntBal q k
 
 /-- [0]_q = 0 for all q. -/
 theorem qInteger_zero (q : ℝ) : qInteger q 0 = 0 := by
-  unfold qInteger; simp
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp
 
 /-- [1]_q = 1 for q ≠ q⁻¹. -/
 theorem qInteger_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 1 = 1 := by
-  unfold qInteger; simp [pow_one]; exact div_self hq
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp [pow_one]; exact div_self hq
 
 /-- q^k > q^{-k} when q > 1 and k ≥ 1. -/
 theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
@@ -47,7 +53,7 @@ theorem pow_gt_inv_pow (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
 /-- [k]_q > 0 for k ≥ 1 and q > 1. -/
 theorem qInteger_pos (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     qInteger q k > 0 := by
-  unfold qInteger
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   apply div_pos
   · linarith [pow_gt_inv_pow q k hq hk]
   · have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
@@ -68,7 +74,7 @@ theorem qInteger_ne_zero (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
     `z = 1/[2]_{q^{1/2}}`. -/
 theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 2 = q + q⁻¹ := by
-  unfold qInteger
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   rw [pow_two, pow_two, div_eq_iff hq]
   ring
 
@@ -79,7 +85,7 @@ theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 3 = q ^ 2 + 1 + (q⁻¹) ^ 2 := by
   have hq0 : q ≠ 0 := by rintro rfl; simp at hq
   have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
-  unfold qInteger
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   rw [div_eq_iff hq]
   linear_combination (q - q⁻¹) * hqq
 
@@ -93,7 +99,7 @@ theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     which yields the recursion after dividing by `q − q⁻¹`. -/
 theorem qInteger_succ (q : ℝ) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (_hq0 : q ≠ 0) :
     qInteger q (n + 1) = q * qInteger q n + q⁻¹ ^ n := by
-  unfold qInteger
+  simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   rw [div_eq_iff hq, add_mul, mul_assoc, div_mul_cancel₀ _ hq]
   ring
 

@@ -1,0 +1,213 @@
+{
+  "engine": "python-stdlib-exact",
+  "engineVersion": "fractions + math (exact integers, no float64)",
+  "computedAt": "2026-08-08T20:30:10.849151+00:00",
+  "assertions": [
+    {
+      "name": "s1_s2_zero",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "s3_is_minus_one",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "s4_is_minus_two",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "Bext_deuteron_zero",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "Bext_ratio_four_three_is_six",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "forward_nu2_zero_matches_derived_mu2",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "forward_sign_window_opposite",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "forward_ratio_two_not_derived_9p75",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "computation": "threerow-extensive-cumulant-forward",
+  "scriptFile": "threerow_extensive_cumulant_forward_probe.py",
+  "scriptHash": "94df557bbfe1",
+  "q0_anchor": "none (q₀-free construction; ratio-only test)",
+  "description": "LEAD 1 (bean qou-prjo): the q₀-free ≥3-row extensive cumulant built FORWARD from the proved Δ_λ=(−1)^{n(λ)}f^λ restricted to ℓ(λ)≥3, fed into the derived C(A,k) cluster basis. free_parameters=0, no q₀, no AME inversion. Re-derives μ₂=0 combinatorially (0-fit) but gives the (−,+) sign order vs the derived (+,−) window and |ν₄/ν₃|=2 vs ~9.75; extensive AME ratio B_ext(4)/B_ext(3)=6.0 vs AME 3.336. scope-(a); nothing wired. Forward, q₀-free twin of deltalambda_kappa_interface_residual_simplex_probe.py.",
+  "contentBlock": "rem:ohtsuki-tower-bar-parity",
+  "audit_only": true,
+  "tier": "structural (proved Δ_λ + exact cluster arithmetic; AME targets only)",
+  "result": {
+    "free_parameters": 0,
+    "q0_free": true,
+    "no_float64": true,
+    "s_k": {
+      "1": 0,
+      "2": 0,
+      "3": -1,
+      "4": -2,
+      "5": 4
+    },
+    "s_k_detail": {
+      "1": [],
+      "2": [],
+      "3": [
+        {
+          "lambda": [
+            1,
+            1,
+            1
+          ],
+          "rows": 3,
+          "f_lambda": 1,
+          "n_lambda": 3,
+          "delta": -1
+        }
+      ],
+      "4": [
+        {
+          "lambda": [
+            2,
+            1,
+            1
+          ],
+          "rows": 3,
+          "f_lambda": 3,
+          "n_lambda": 3,
+          "delta": -3
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rows": 4,
+          "f_lambda": 1,
+          "n_lambda": 6,
+          "delta": 1
+        }
+      ],
+      "5": [
+        {
+          "lambda": [
+            3,
+            1,
+            1
+          ],
+          "rows": 3,
+          "f_lambda": 6,
+          "n_lambda": 3,
+          "delta": -6
+        },
+        {
+          "lambda": [
+            2,
+            2,
+            1
+          ],
+          "rows": 3,
+          "f_lambda": 5,
+          "n_lambda": 4,
+          "delta": 5
+        },
+        {
+          "lambda": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "rows": 4,
+          "f_lambda": 4,
+          "n_lambda": 6,
+          "delta": 4
+        },
+        {
+          "lambda": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "rows": 5,
+          "f_lambda": 1,
+          "n_lambda": 10,
+          "delta": 1
+        }
+      ]
+    },
+    "reading_Y_extensive_cluster": {
+      "2": 0,
+      "3": -1,
+      "4": -6
+    },
+    "reading_X_single_algebra": {
+      "2": 0,
+      "3": -1,
+      "4": -2
+    },
+    "forward_cumulants": {
+      "nu2": 0,
+      "nu3": -1,
+      "nu4": 2,
+      "abs_nu4_over_nu3": "2"
+    },
+    "zero_fit_match": {
+      "nu2": 0,
+      "derived_mu2": "0",
+      "match": true,
+      "note": "ν₂=0 re-derives the derived μ₂=0 combinatorially (s₁=s₂=0), q₀-free and independent of the graded-ladder self-reference."
+    },
+    "sign_window": {
+      "forward_nu3_nu4_signs": [
+        "-",
+        "+"
+      ],
+      "derived_mu3_mu4_signs": [
+        "+",
+        "-"
+      ],
+      "opposite_order": true,
+      "note": "forward parity gives (−,+); the derived #4316 window is (+,−). The Δ_λ chirality parity does NOT supply the many-body sign-change."
+    },
+    "magnitude_ratio": {
+      "forward_abs_nu4_over_nu3": "2",
+      "derived_abs_mu4_over_mu3": "9.751",
+      "miss_factor": "9751/2000"
+    },
+    "ame_ratio_test_He4_over_T": {
+      "AME": "3.3360",
+      "reading_Y_extensive": "6.0000",
+      "reading_X_single": "2.0000",
+      "verdict": "brackets AME (Y +80%, X −40%); no q₀-free convention lands on it; interpolating is the forbidden fit."
+    },
+    "verdict": "scope-(a): the q₀-free ≥3-row signed-Springer-dimension content, ALONE, reproduces the derived μ₂=0 (0-fit) but not the 3-body sign, the (+,−) sign-change window, or the |μ₄/μ₃|≈9.75 magnitude. The many-body binding sign+magnitude live in the q₀-dependent y_λ·χ^λ trace weighting, not in the combinatorial Δ_λ. Nothing wired."
+  }
+}

@@ -33,7 +33,7 @@ import mpmath as mp  # noqa: E402
 
 mp.mp.dps = 40
 
-from q_parameter import Q as Q0_STR  # noqa: E402
+from q_parameter import Q_MP as Q0_STR  # noqa: E402
 q0 = mp.mpf(str(Q0_STR))
 
 A1_TARGET_P = mp.sqrt(2) * mp.mpf("1.46324616887618")   # 2.0693 (proton anchor)

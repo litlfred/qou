@@ -54,7 +54,7 @@ import _path_bridge  # noqa: F401, E402
 import json  # noqa: E402
 import mpmath as mp  # noqa: E402
 
-from q_parameter import Q as Q0  # noqa: E402 — canonical q₀ source (same as predecessor)
+from q_parameter import Q_MP as Q0  # noqa: E402 — canonical q₀ source (same as predecessor)
 from codata_constants import M_E_MEV as _ME  # noqa: E402
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
 # Shared precision source (qou_substrate.precision via the _precision shim) —

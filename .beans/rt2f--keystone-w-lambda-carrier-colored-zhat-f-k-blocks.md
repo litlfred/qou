@@ -50,4 +50,4 @@ hypothesis class realizing `bwS0(λ; q)` at real q₀ > 1, THEN probe.
 - Lean obligation (sibling DG session): `QOU/BraidKnot/KeystoneQBesselRadialTarget.lean`
 - Ledger: `docs/coordination/s5-so3-keystone.md`
 - Papers: `uploads/0405028v2.pdf`, `uploads/1811.05376v4.pdf`, `uploads/2205.01282v2.pdf`,
-  `uploads/fulltext.pdf`
+  `uploads/zagier-the-dilogarithm-function.pdf`

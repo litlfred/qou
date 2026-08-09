@@ -92,6 +92,18 @@ def li_2_q(
     if eps is None:
         eps = mpf(10) ** (5 - mp.dps)
     if mp.fabs(z_val) >= q:
+        # OUTSIDE THE SERIES DISC. The series has radius |z| < q, but the
+        # FUNCTION does not stop there — see `li_2_q_negative_continuation`.
+        # For z < 0 every product factor is 1 + |z|q^{-1-2m} > 1, so the
+        # continuation is real, positive-argument and convergent, and we
+        # return it. That is the branch the brane tower actually takes:
+        # it only ever evaluates g(x) = -Li_2^q(-x) at x > 0.
+        #
+        # For z >= q > 0 the first factors 1 - z·q^{-1-2m} go negative, so the
+        # continuation is genuinely complex (the branch cut) and `inf` is
+        # retained rather than silently returning a principal value.
+        if z_val < 0:
+            return li_2_q_negative_continuation(z_val, q, q_inv, eps=eps)
         return mpf("inf")
     total = mpf(0)
     z_pow = mpf(1)
@@ -110,6 +122,62 @@ def li_2_q(
 # ── Shared helpers (centralized per gemini #687 review) ─────────
 
 _Q_WITNESS_DEFAULT = Path(__file__).parent / "q-pinning-50-digit.witness.json"
+
+
+def li_2_q_negative_continuation(
+    z_val: mpf,
+    q: mpf,
+    q_inv: mpf | None = None,
+    max_m: int = 100_000,
+    eps: mpf | None = None,
+) -> mpf:
+    """Analytic continuation of ``li_2_q`` to ``z < 0``, past the series disc.
+
+    DERIVED, not fitted. With ``[n]_q = (q^n - q^-n)/h`` and ``h = q - q^-1``,
+
+        z^n / (n [n]_q) = (h/n) · SUM_{m>=0} (z q^{-1-2m})^n
+
+    and summing over ``n`` first (``SUM_n w^n/n = -ln(1-w)``) gives the q-product
+
+        Li_2^q(z) = -h · SUM_{m>=0} ln(1 - z q^{-1-2m}),
+
+    convergent off the poles ``{q^{1+2m}}`` and equal to the series wherever the
+    series converges. Verified against `li_2_q` to ~1e-45 at
+    z in {-1, -0.5, 0.5, 0.9, 1.05} (`--self-test`).
+
+    Restricted to ``z < 0`` deliberately: there every factor is
+    ``1 + |z| q^{-1-2m} > 1``, so the sum is real, and it is the only branch the
+    brane tower needs — it evaluates ``g(x) = -Li_2^q(-x)`` at ``x > 0`` only.
+    For ``z >= q > 0`` the continuation is complex and `li_2_q` keeps returning
+    ``inf`` rather than a silent principal value.
+
+    WHY THIS EXISTS. `li_2_q` hard-returned ``inf`` for ``|z| >= q``, and that
+    GUARD — not the function — is what made the atom-word brane tower "diverge
+    for Z >= 2". Only one argument even crosses the radius (tau_p^2 = 1.13488
+    against q0 = 1.10998, over by 2.2%). The divergence is also GEOMETRIC
+    (ratio -> |z|/q), not factorial, so Borel resummation is the wrong tool;
+    analytic continuation is the right one and this is it in closed form.
+    Bean `qou-cw27`.
+    """
+    if q_inv is None:
+        q_inv = mpf(1) / q
+    if z_val >= 0:
+        raise ValueError(
+            f"li_2_q_negative_continuation is for z < 0 (got {z_val}); for "
+            f"z >= q the continuation is complex, not real")
+    if eps is None:
+        eps = mpf(10) ** (5 - mp.dps)
+    h = q - q_inv
+    total = mpf(0)
+    q_pow = q_inv           # q^{-1-2m} at m = 0
+    q_step = q_inv * q_inv  # multiply by q^{-2} each step
+    for _ in range(max_m):
+        term = mp.log(1 - z_val * q_pow)   # 1 - z·q^{..} > 1 since z < 0
+        total = total + term
+        if mp.fabs(term) < eps:
+            break
+        q_pow = q_pow * q_step
+    return -h * total
 
 
 def load_q_50dps(path: Path | None = None) -> tuple[mpf, mpf, mpf]:

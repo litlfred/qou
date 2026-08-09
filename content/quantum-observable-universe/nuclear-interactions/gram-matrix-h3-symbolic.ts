@@ -20,6 +20,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-08",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing, and the entries alone would not have shown it.** The Gram entries are rational functions of \`u\` (e.g. \`u / (u² + 1)\`) and the determinant factors are polynomials, so the *data* looks purely algebraic. The content is not: the main theorem is **positive-definiteness for \`u > 1\`**, proved through a chain of per-factor positivity lemmas (\`detFactor1_pos\` …) discharged by \`linarith\` / \`positivity\`. Positive-definiteness is an ordering statement and does not survive to a generic ring — over \`ℂ\` the denominator \`u² + 1\` even vanishes.`,
+    },
+    {
       kind: "status",
       date: "2026-05-25",
       body:

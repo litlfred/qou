@@ -37,7 +37,7 @@ _self_test confirms χ ≡ char_fast (≡ pyhecke_native) for D (n=6), ³He
 
 NO float64 on the canonical path (owner ruling 2026-06-09): all numeric
 work is mpmath at the 50-dps floor; the float (c,d) carried by the word
-builder is re-lifted to MPFR here (δ rebuilt from flavor_split_subleading).
+builder is re-lifted to MPFR here (δ rebuilt from flavor_split_leading).
 """
 from __future__ import annotations
 
@@ -88,7 +88,7 @@ def word_to_mpfr(word, q: "mp.mpf"):
     Every atom-word crossing has c=1; only d distinguishes σ / σ⁻¹ /
     averaged / color-weighted p-n. The float d carries ~17 sig digits, so
     we re-identify the template and rebuild d at full dps (δ from
-    flavor_split_subleading). Raises on any unrecognised template so
+    flavor_split_leading). Raises on any unrecognised template so
     convention drift fails loudly (mirrors chi_cd_mpfr.to_braid_terms).
     """
     h = q - 1 / q

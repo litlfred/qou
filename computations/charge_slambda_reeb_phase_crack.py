@@ -51,7 +51,7 @@ import _path_bridge  # noqa: F401,E402
 
 import mpmath as mp  # noqa: E402
 from pyhecke.wedderburn import wedderburn_weight  # noqa: E402 — w̃_λ=dim_q²/[n]_q!
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402

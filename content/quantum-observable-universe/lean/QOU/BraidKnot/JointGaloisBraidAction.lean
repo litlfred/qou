@@ -56,7 +56,11 @@ class JointGaloisBraidAction (n : ℕ) where
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
+-- Per AGENTS.md §3b-cond we provide NO global instance: the class *is* the
+-- axiomatisation, and downstream results must take it as an explicit
+-- `[JointGaloisBraidAction n]` hypothesis.  A global instance would discharge
+-- the conjecture for free.
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/joint-galois-braid-action.ts
-noncomputable instance (n : ℕ) : JointGaloisBraidAction n := ⟨fun _ => 0, fun _ => rfl⟩
+-- noncomputable instance (n : ℕ) : JointGaloisBraidAction n := sorry
 
 end QOU.BraidKnot

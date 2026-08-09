@@ -3132,6 +3132,28 @@ export const references: CSLData[] = [
     DOI: "10.1016/S0550-3213(98)00668-3",
   }),
 
+  // ── Milnor 1982 ────────────────────────────────────────────────
+  ref({
+    id: "milnor1982",
+    type: "article-journal",
+    title: "Hyperbolic geometry: The first 150 years",
+    author: [{ family: "Milnor", given: "John W." }],
+    "container-title": "Bulletin of the American Mathematical Society",
+    volume: "6",
+    issue: "1",
+    page: "9-24",
+    issued: { "date-parts": [[1982]] },
+    DOI: "10.1090/S0273-0979-1982-14958-8",
+    note:
+      "Source for the Lobachevsky function $\\Lambda$ and the ideal-simplex " +
+      "volume $\\mathrm{Vol}(\\alpha,\\beta,\\gamma) = \\Lambda(\\alpha) + " +
+      "\\Lambda(\\beta) + \\Lambda(\\gamma)$, together with the theorem that " +
+      "the regular ideal simplex is the unique volume maximiser. The " +
+      "analytic half of the latter is formalized in " +
+      "`QOU.Archimedean.IdealTetrahedronConcavity.volChart_isMaxOn_regular`; " +
+      "the volume identification itself is bean qou-5gai H4 (open).",
+  }),
+
   // ── Thurston 1978 ──────────────────────────────────────────────
   ref({
     id: "thurston1978",
@@ -4460,6 +4482,35 @@ export const references: CSLData[] = [
       + "q_eval = exp((u + 2*pi*i)/N). NOT independently verified against the "
       + "published text - arxiv.org is egress-blocked from the agent sandbox, "
       + "so a reader should confirm before relying on the exact wording.",
+  }),
+
+  // ── Śniady 2005 — genus expansion for symmetric-group characters ──
+  // Registered 2026-08-08 by paper-relevance-triage: same defect class as
+  // garoufalidis2012 / murakami2004 above — the key `sniady2006asymptotics`
+  // is used as a `# Ref:` in SEVEN producers under computations/deltalambda/
+  // (fl_kernel_sign_structure, fl_sniady_genus_biased_measure,
+  // fl_sniady_rsk_form_verify, wlambda_covariance_kernel_frontier,
+  // wlambda_covariance_epic_phase1/2/3) with no registry entry. The key's
+  // `2006` is the journal year; the source in the repo is the 2005 preprint.
+  ref({
+    id: "sniady2006asymptotics",
+    type: "article",
+    title:
+      "Asymptotics of characters of symmetric groups, genus expansion and free probability",
+    author: [{ family: "Śniady", given: "Piotr" }],
+    issued: { "date-parts": [[2005]] },
+    URL: "https://arxiv.org/abs/math/0411647",
+    note: "arXiv:math/0411647v2 [math.CO], 21 Oct 2005. Author, title, arXiv "
+      + "id and preprint date read directly off uploads/0411647v2.pdf. The "
+      + "corpus elsewhere asserts a published version in Probab. Theory Relat. "
+      + "Fields 136 (2006) 263-297, DOI 10.1007/s00440-005-0479-7 - that "
+      + "journal metadata is NOT recorded here because it could not be "
+      + "verified in-session (arxiv.org and doi.org are egress-blocked from "
+      + "the agent sandbox) and the local PDF is the preprint. A reader with "
+      + "network access should confirm and promote this entry to "
+      + "article-journal. Consumed for Thm 4.14 (the Sigma-hat_3 = R_4 + R_2 "
+      + "identity that wlambda_covariance_kernel_frontier.py verifies "
+      + "numerically) and Prop 3.4 (deg Sigma_pi = n - 2*genus(pi)).",
   }),
 
   // ── Champanerkar 2003 — A-polynomial & Bloch invariants (thesis) ─
