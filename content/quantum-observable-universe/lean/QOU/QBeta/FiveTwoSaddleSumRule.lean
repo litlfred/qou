@@ -572,4 +572,81 @@ theorem sum_distribution_of_duplication
   rw [Finset.mul_sum]
   exact Finset.sum_congr rfl fun j _ => hdup (u j)
 
+/-! ### §7e — the sum rule **is** a flattened-Rogers statement
+
+Probes Routes 42–45 (`qou-xblo`) measured that the sum rule sits naturally in
+the *extended* Bloch group rather than the ordinary one: `Σ_σ D(σ y) = 0`
+identically, so the Bloch–Wigner regulator — the ordinary group's — is blind to
+it, while the flattened Rogers dilogarithm
+
+    R̂(z; p, q) = Li₂ z + ½·log z·log(1−z) − (πi/2)·(p·log(1−z) + q·log z)
+
+gives `Σ_σ R̂(y_σ; ε_σ, 0) = −π²/6` at 60 dps, with `ε` the branch data that
+`branch_data_of_cubic` above already proves integral.
+
+⚠ **That numerical identity is NOT proved here and nothing below claims it.**
+What *is* proved is the bridge: the corpus's `V`-form and the flattened form
+differ by an **elementary** term, over an abstract `Li`, using only the branch
+relation. So the two statements are equivalent, and a proof of either is a proof
+of the other. That turns "they differ by an elementary term, verified to 50 dps"
+into a theorem, and it is the whole of what knowing the new target buys in Lean
+— the analytic content (a complex `Li₂`, the pentagon identity, `ℬ̂(ℂ)`) is
+still absent from Mathlib and from this corpus. -/
+
+/-- **The flattened Rogers dilogarithm**, with `Li` abstract.
+
+`p` multiplies `log(1−z)` and `q` multiplies `log z`, matching Neumann's
+convention and the probes. -/
+noncomputable def flattenedRogers (Li : ℂ → ℂ) (z p q : ℂ) : ℂ :=
+  Li z + Complex.log z * Complex.log (1 - z) / 2
+    - ((Real.pi : ℂ) * I / 2) * (p * Complex.log (1 - z) + q * Complex.log z)
+
+/-- **The V-form and the flattened form differ by an elementary term.**
+
+For each root, given only the branch relation `2·log y − 3·log(1−y) = 2πi·ε`,
+
+    3·Li(y) + (log y + b·πi)²
+      = 3·R̂(y; ε, 0) + (3πi/2)·ε·log(1−y) + πi·(ε + 2b)·log y − π²·b²
+
+with the correction built from logs and the branch integers alone — no
+dilogarithm in it. The dilogarithm cancels identically; the content is the
+`log²` bookkeeping that the branch relation controls. -/
+theorem V_eq_three_flattenedRogers_add_elementary
+    (Li : ℂ → ℂ) {y ε b : ℂ}
+    (hbranch : 2 * Complex.log y - 3 * Complex.log (1 - y)
+      = 2 * (Real.pi : ℂ) * I * ε) :
+    3 * Li y + (Complex.log y + b * (Real.pi : ℂ) * I) ^ 2
+      = 3 * flattenedRogers Li y ε 0
+        + (3 * ((Real.pi : ℂ) * I / 2) * ε * Complex.log (1 - y)
+          + (Real.pi : ℂ) * I * (ε + 2 * b) * Complex.log y
+          - (Real.pi : ℂ) ^ 2 * b ^ 2) := by
+  unfold flattenedRogers
+  -- `ring` treats `I` as an opaque atom, so `(b·π·I)^2` never becomes `-b²π²`
+  -- on its own; `Complex.I_sq` has to be supplied as a second relation.
+  linear_combination (Complex.log y / 2) * hbranch
+    + (b ^ 2 * (Real.pi : ℂ) ^ 2) * Complex.I_sq
+
+/-- **The sum rule is equivalent to the flattened statement**, summed over the
+three roots.
+
+`Σ V(yⱼ) = 3·Σ R̂(yⱼ; εⱼ, 0) + (elementary)`. Since the correction contains no
+`Li`, proving either side's value proves the other's — which is exactly why the
+extended-Bloch reformulation is worth having rather than merely suggestive.
+
+Still no instance: this is a bridge between two open statements, not a proof of
+either. **The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+theorem sum_V_eq_three_sum_flattenedRogers
+    (Li : ℂ → ℂ) (y ε b : Fin 3 → ℂ)
+    (hbranch : ∀ j, 2 * Complex.log (y j) - 3 * Complex.log (1 - y j)
+      = 2 * (Real.pi : ℂ) * I * ε j) :
+    (∑ j, (3 * Li (y j) + (Complex.log (y j) + b j * (Real.pi : ℂ) * I) ^ 2))
+      = 3 * (∑ j, flattenedRogers Li (y j) (ε j) 0)
+        + ∑ j, (3 * ((Real.pi : ℂ) * I / 2) * ε j * Complex.log (1 - y j)
+          + (Real.pi : ℂ) * I * (ε j + 2 * b j) * Complex.log (y j)
+          - (Real.pi : ℂ) ^ 2 * (b j) ^ 2) := by
+  have per := fun j =>
+    V_eq_three_flattenedRogers_add_elementary Li (b := b j) (hbranch j)
+  simp only [Fin.sum_univ_three]
+  linear_combination per 0 + per 1 + per 2
+
 end QOU.QBeta.FiveTwo
