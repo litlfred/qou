@@ -572,4 +572,97 @@ theorem genNoCycle {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (v : ℕ 
   have hle := Int.le_of_dvd hpos hdvd
   omega
 
+/-! ### Uniform spread exclusion — a large leading run excludes any `k_odd`
+
+The per-rung `of_lead` corollaries (`qcollatz_no_{three,four}_odd_cycle_of_lead`)
+all instantiate one fact: the `q = 1` numerator `M_{m+1} = genSteinerNumZ r (m+1)`
+does **not** depend on the last even run `r m` (its recursion only reaches
+`runSum r m`), while the denominator height `2^{runSum (m+1) + (m+1)} − 3^{m+1}`
+grows with `r m`. So a large last run forces the height gap for **every**
+arrangement of the other runs. Threshold: `3^{m+1} ≤ 2^{r m + m}`. This is the
+uniform spread half of the `q`-Steiner endgame; the clustered case (all runs
+small) is the finite residue. -/
+
+/-- `0 ≤ M_m`. -/
+theorem genSteinerNumZ_nonneg (r : ℕ → ℕ) (m : ℕ) : 0 ≤ genSteinerNumZ r m := by
+  induction m with
+  | zero => simp [genSteinerNumZ]
+  | succ n ih =>
+    have h2 : (0 : ℤ) ≤ 2 ^ (runSum r n + n) := by positivity
+    simp only [genSteinerNumZ]; linarith
+
+/-- `0 < M_{m+1}` — the numerator of a nonempty cyclic word is positive
+    (discharges the `hpos` hypothesis of `genNoCycle`). -/
+theorem genSteinerNumZ_pos (r : ℕ → ℕ) (m : ℕ) : 0 < genSteinerNumZ r (m + 1) := by
+  have h2 : (0 : ℤ) < 2 ^ (runSum r m + m) := by positivity
+  have h0 := genSteinerNumZ_nonneg r m
+  simp only [genSteinerNumZ]; linarith
+
+/-- **Loose bound** `M_m ≤ 2^{runSum m}·(3^m − 2^m)` (clean induction). -/
+theorem genSteinerNumZ_le (r : ℕ → ℕ) (m : ℕ) :
+    genSteinerNumZ r m ≤ 2 ^ runSum r m * (3 ^ m - 2 ^ m) := by
+  induction m with
+  | zero => simp [genSteinerNumZ]
+  | succ n ih =>
+    simp only [genSteinerNumZ]
+    have e3 : (3 : ℤ) ^ (n + 1) = 3 * 3 ^ n := by rw [pow_succ]; ring
+    have e2 : (2 : ℤ) ^ (n + 1) = 2 * 2 ^ n := by rw [pow_succ]; ring
+    have hp : (2 : ℤ) ^ (runSum r n + n) = 2 ^ runSum r n * 2 ^ n := by rw [pow_add]
+    have hmono : (2 : ℤ) ^ runSum r n ≤ 2 ^ runSum r (n + 1) := by
+      apply pow_le_pow_right₀ (by norm_num); simp only [runSum]; omega
+    have hge : (0 : ℤ) ≤ 3 ^ (n + 1) - 2 ^ (n + 1) := by
+      have h23 : (2 : ℤ) ^ (n + 1) ≤ 3 ^ (n + 1) := by
+        gcongr
+        norm_num
+      linarith
+    have step1 : 3 * genSteinerNumZ r n + (2 : ℤ) ^ (runSum r n + n)
+        ≤ 2 ^ runSum r n * (3 ^ (n + 1) - 2 ^ (n + 1)) := by
+      rw [e3, e2, hp]
+      nlinarith [ih, pow_nonneg (by norm_num : (0 : ℤ) ≤ 2) (runSum r n)]
+    have step2 : (2 : ℤ) ^ runSum r n * (3 ^ (n + 1) - 2 ^ (n + 1))
+        ≤ 2 ^ runSum r (n + 1) * (3 ^ (n + 1) - 2 ^ (n + 1)) :=
+      mul_le_mul_of_nonneg_right hmono hge
+    linarith [step1, step2]
+
+/-- **Tight bound** `M_{m+1} ≤ 2^{runSum m}·(3^{m+1} − 2^{m+1})` — the numerator is
+    bounded independently of the last run `r m` (only `runSum r m` enters). -/
+theorem genSteinerNumZ_le_lead (r : ℕ → ℕ) (m : ℕ) :
+    genSteinerNumZ r (m + 1) ≤ 2 ^ runSum r m * (3 ^ (m + 1) - 2 ^ (m + 1)) := by
+  simp only [genSteinerNumZ]
+  have ih := genSteinerNumZ_le r m
+  have e3 : (3 : ℤ) ^ (m + 1) = 3 * 3 ^ m := by rw [pow_succ]; ring
+  have e2 : (2 : ℤ) ^ (m + 1) = 2 * 2 ^ m := by rw [pow_succ]; ring
+  have hp : (2 : ℤ) ^ (runSum r m + m) = 2 ^ runSum r m * 2 ^ m := by rw [pow_add]
+  rw [e3, e2, hp]
+  nlinarith [ih, pow_nonneg (by norm_num : (0 : ℤ) ≤ 2) (runSum r m)]
+
+/-- **Uniform spread exclusion.** A cyclic word of `m + 1` odd steps whose last
+    even run `r m` is large enough — `3^{m+1} ≤ 2^{r m + m}` — has **no cycle**,
+    for ANY arrangement of the other runs. Subsumes every per-rung `of_lead`
+    corollary at once (the spread half of the `q`-Steiner endgame). -/
+theorem genNoCycle_of_lead {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (v : ℕ → R)
+    (r : ℕ → ℕ) (hq : φ q = 1)
+    (hrel : ∀ i, (q + 1) ^ (r i + 1) * v (i + 1) = (q ^ 2 + q + 1) * v i + 1)
+    (m : ℕ) (hcyc : v (m + 1) = v 0)
+    (hlead : (3 : ℤ) ^ (m + 1) ≤ 2 ^ (r m + m)) : False := by
+  refine genNoCycle φ q v r hq hrel (m + 1) hcyc (genSteinerNumZ_pos r m) ?_
+  have htight := genSteinerNumZ_le_lead r m
+  have hden : (2 : ℤ) ^ (runSum r (m + 1) + (m + 1))
+      = 2 ^ runSum r m * (2 * 2 ^ (r m + m)) := by
+    have : runSum r (m + 1) + (m + 1) = runSum r m + (r m + m) + 1 := by
+      simp only [runSum]; omega
+    rw [this, pow_succ, pow_add]; ring
+  rw [hden]
+  have hP0 : (0 : ℤ) ≤ 2 ^ runSum r m := by positivity
+  have hP1 : (1 : ℤ) ≤ 2 ^ runSum r m := by
+    simpa using pow_le_pow_right₀ (by norm_num : (1 : ℤ) ≤ 2) (Nat.zero_le (runSum r m))
+  have hAmul : (2 : ℤ) ^ runSum r m * 3 ^ (m + 1)
+      ≤ 2 ^ runSum r m * 2 ^ (r m + m) := mul_le_mul_of_nonneg_left hlead hP0
+  have hAle : (2 : ℤ) ^ (r m + m) ≤ 2 ^ runSum r m * 2 ^ (r m + m) := by
+    nlinarith [hP1, pow_nonneg (by norm_num : (0 : ℤ) ≤ 2) (r m + m)]
+  have h2pos : (0 : ℤ) < 2 ^ runSum r m * 2 ^ (m + 1) := by positivity
+  have e2 : (2 : ℤ) ^ (m + 1) = 2 * 2 ^ m := by rw [pow_succ]; ring
+  nlinarith [htight, hAmul, hAle, h2pos, hlead, e2,
+             pow_nonneg (by norm_num : (0 : ℤ) ≤ 2) (r m + m)]
+
 end QOU.AppendixSurreals
