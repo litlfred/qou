@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-09T02:45:00Z
+updated_at: 2026-08-09T07:54:56Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -529,3 +529,67 @@ reported at A>=3 must state which arrangement it used. See
 docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md.
 
 This bean (deuteron Delta_lambda magnitude) stays OPEN and is unaffected.
+
+
+--------
+
+## Update 2026-08-09 — Ω₂ IS NOT GAUGE-COVARIANT (PR #4856, branch claude/germ-gauge-covariance-2026-08-09)
+
+Ran the question #4849 §2.3 left open. **VERDICT: not covariant.** The transverse
+NA-Stokes route is closed at the level of the OBSERVABLE, not of its value.
+
+**The algebra** (Lean sorry-free, generic `Ring R`, `#print axioms` clean on all 48
+decls, umbrella-registered — `QOU/MassTheory/GermConnectionGaugeCovariance.lean`):
+
+- `germ_mul` — the germ `α(u) = (Du)u⁻¹` is a **1-COCYCLE**: `α(uv) = α(u) + Ad(u)α(v)`.
+  So it is defined only modulo the **coboundary** `(1 − Ad u)Θ` — that IS the gauge.
+- `germ_conj` — the connection law: `α ↦ Ad(b)(α + (1 − Ad u)Θ)`, `Θ = b⁻¹(Db)`.
+- `germCurvature_covariant_iff` + `gaugeDefect_ne_zero` — covariance holds IFF a defect
+  vanishes, and a concrete ring/derivation/units triple has `Δ = !![X², −2X; 0, −X²] ≠ 0`.
+- `listPairing_map_adAct` — the pairing is covariant GIVEN covariant inputs, so ALL of
+  the failure sits in `F_q`, none in the transports or in the pairing.
+- `cupSq_eq_neg_coboundary` — **the covariant order-2 object is ZERO**: the bracket cup
+  square `⟦α(u), Ad(u)α(v)⟧` is EXACTLY `−∂β` with explicit primitive `β = q∂_qα`.
+- `trace_germ_conj` — `τ(α(w)) = q∂_q log det ρ(w)` IS gauge-invariant, but abelian:
+  pure writhe/framing, already walled by `no_writhe_only_framing`.
+
+**The measurement** (`computations/probes/nastokes_germ_gauge_covariance_probe.py`,
+15/15 assertions, 4.4 s; witness `nastokes-germ-gauge-covariance.witness.json`):
+
+- exact over ℚ(q) in the 2-dim rep: connection law verified both-sides-independently;
+  defect `Δ = −3q²H − 2E − 2q²F ≠ 0`; cup-square identity exact on all 25 word pairs.
+- real ⁴He atom word `atom_braid_word_3A(2,2)`, H₁₂(q): covariance defect
+  `‖Ad(B)⁻¹Ω₂′ − Ω₂‖/‖Ω₂‖` = **0.78 … 14.4** (0 iff covariant), gauge diag(1,q,…,q^{d−1}).
+- **readout-independent**: seminormal λ=(11,1) vs REDUCED BURAU (same rep — character
+  equality 1.7e-15 on 40 random words) give **different conjugation-invariant `tr(Ω₂^k)`**
+  — `tr Ω₂²` even changes SIGN. Conjugate operators have equal trace powers, full stop.
+
+**Consequences.**
+1. #4849's 16.4× germ-observer spread is **VOID, not open** — nothing to choose between.
+   ‖Ω₂‖ was never invariant on two counts (object not a tensor; Frobenius norm not
+   invariant under non-unitary B).
+2. **Retro-narrows #4848**: its `Ω₂ = 0` on `σ₁³` is itself gauge-dependent (in the gauge
+   diag(1,q) the curvature is no longer an Ad(σ₁)-eigenvector and `Ω₂ ≠ 0`). Its algebra
+   is correct; its "every gauge" ranged over J and handle exponents, not over
+   q-DEPENDENT regaugings. #4849 §2.3's "zero in every gauge" parenthetical is too strong.
+3. Structural reason the route was never going to work: `q` is ONE direction and a
+   curvature needs TWO; the generator indices i,j are group elements, not base
+   directions. The "transverse surface curvature" was never a curvature.
+
+**Scope.** (b) for non-covariance (proved obstruction: cocycle + nonzero defect +
+invariants differing across two realizations of one rep). (b) for the cup-square
+vanishing (exact identity, primitive exhibited). **(a)** for "no OTHER nonzero covariant
+functional exists" — NOT claimed; one exists (the abelian trace) and a classification of
+invariants of `[α] ∈ H¹(B_n; 𝔤𝔩_{Adρ})` is open.
+
+**Do NOT redo.** Any transverse-pairing magnitude extraction under any germ
+normalisation, handle convention, intersection form, observer-pair rule, or basis. No
+sweep can recover an object with no basis-independent value. A future attempt must work
+with the class `[α] ∈ H¹` itself — noting its cup square vanishes and its invariant
+linear functional is the already-walled writhe.
+
+`free_parameters = 0`; no AME, no g₂, no binding number in the compute. q₀ = experimental
+proton anchor (germ is q-dependent at A≥3, so the pin is material). Nothing wired.
+Audit: `docs/audits/2026-08-09-germ-gauge-covariance-verdict.md`.
+
+**The ≥3-body binding MAGNITUDE gate is untouched. Bean stays OPEN.**
