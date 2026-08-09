@@ -315,3 +315,49 @@ overstated. Two cautions carried in: the q-CLT is trace-space, not a spatial
 distribution; and the corpus holds TWO incompatible Planck lengths differing by
 t_P ~ 10.1 (qou-adwi), so "convert a framework length to fm" is not yet
 well-posed either.
+
+
+## A^(1/3) IS NOT REPAIRABLE FOR LIGHT NUCLEI — measured, 2026-08-09
+
+With the length now CAL-3 (lambdabar_pi = 1.4138 fm, commit 9a1d7680), the
+entire remaining A=3 radius error is the A^(1/3) SATURATION assumption. Tested
+by solving for the exponent x that R = lambdabar_pi * A^x would need:
+
+    nucleus   r_rms    R_equiv   R/lambdabar_pi     x
+    2H        2.1421   2.765439  1.95601          0.9679
+    3H        1.7591   2.270988  1.60628          0.4314
+    3He       1.9661   2.538224  1.79530          0.5326
+    4He       1.6755   2.163061  1.52994          0.3067
+
+A^(1/3) needs x = 0.3333 everywhere. Measured x runs 0.31 -> 0.97, a factor of
+three. NO power law fits, and the ordering says why: 4He (x = 0.307, nearly
+A^(1/3)) is tightly bound and compact, while 2H (x = 0.968) is a halo -- weakly
+bound and enormous. SIZE TRACKS BINDING, NOT NUCLEON COUNT.
+
+So the saturation exponent is not a coefficient to be tuned; it is the wrong
+functional form in this regime. Which is the same conclusion the binding-length
+route reached independently, from the other direction.
+
+## CONSEQUENCE — the EM sector is now fully gated on the NN sector
+
+Everything importable has been replaced or accounted for:
+
+    alpha_EM      DERIVED (a188542f)      was CODATA
+    hbar c        unit conversion         legitimately external
+    nuclear length CAL-3 lambdabar_pi     was empirical r0 = 1.2 (9a1d7680)
+    A^(1/3)       WRONG FORM for A<=4     needs binding, measured above
+    3/5 shape     needs a density         none exists (qou-mumr)
+
+The two remaining items both require the same thing: QOU's light-nucleus binding
+energies, currently 2H +27.3 %, 3He -30.4 %, 3H -27.6 %. There is no further EM
+work that does not wait on them.
+
+NEXT IS THE NN SECTOR, not this bean. The live handles there:
+  * qou-kj4v -- the deuteron is now REACHABLE under D (required d = -0.11945 h,
+    inside the Hecke range); the gap is that the derived colour weight
+    t = 0.499656 is not the required t = 0.119453. ONE bond, no coordination
+    freedom, so this is pure bond-energy error with nothing topological to
+    blame. Cleanest target in the framework.
+  * qou-7zob -- the ell/space index, needed because Pauli locks spin to isospin
+    and a flavour-only interface cannot split 3S1 from 1S0 at all.
+  * qou-h7mh -- the coordination/bond-count question for A >= 3.
