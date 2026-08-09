@@ -1,8 +1,65 @@
 {
-  "schema": "witness/v1-informal",
   "engine": "mpmath+snappy",
-  "scriptHash": "f1f13d0c8dc2",
-  "scriptCommitSha": "fa998932d906b45e3149f7d3f9e81b2f68930d31",
+  "engineVersion": "mpmath 1.3.0; snappy 3.3.2",
+  "computedAt": "2026-08-09T12:31:08.153569+00:00",
+  "durationMs": 3101,
+  "computation": "charm-frobenius-block-projection",
+  "scriptFile": "charm_frobenius_block_projection_probe.py",
+  "scriptHash": "69650ef30c15",
+  "scriptCommitSha": "ecfa9281df7b60282d55fda3194fe0af3169ecc5",
+  "commitSha": "34981e8882d05a3032dc8d7b81c02f9f0a2f9b27",
+  "assertions": [
+    {
+      "name": "hecke_resid_(3,)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-40,
+      "passed": true
+    },
+    {
+      "name": "braid_resid_(3,)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-40,
+      "passed": true
+    },
+    {
+      "name": "hecke_resid_(2, 1)",
+      "computed": 9.722996307614505e-52,
+      "expected": 0.0,
+      "tolerance": 1e-40,
+      "passed": true
+    },
+    {
+      "name": "braid_resid_(2, 1)",
+      "computed": 1.3363823550460978e-51,
+      "expected": 0.0,
+      "tolerance": 1e-40,
+      "passed": true
+    },
+    {
+      "name": "hecke_resid_(1, 1, 1)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-40,
+      "passed": true
+    },
+    {
+      "name": "braid_resid_(1, 1, 1)",
+      "computed": 0.0,
+      "expected": 0.0,
+      "tolerance": 1e-40,
+      "passed": true
+    },
+    {
+      "name": "trM_identity_eq_one",
+      "computed": 1.0,
+      "expected": 1.0,
+      "tolerance": 1e-30,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
   "description": "charm_frobenius_block_projection_probe: Frobenius/Wedderburn charm-block projection of a composite braid's complex volume vs the charm mass hierarchy (derive-then-check).",
   "producer": "computations/charm_frobenius_block_projection_probe.py",
   "consumes": [
@@ -78,7 +135,7 @@
           1
         ],
         "vol": 9.802001165794124,
-        "chern_simons": -0.1423210987614249,
+        "chern_simons": -0.14232109876142515,
         "components": 3,
         "block_frac_re": {
           "(3,)": 0.4648194439627773,
@@ -86,7 +143,7 @@
           "(1, 1, 1)": 0.016766740353294732
         },
         "charm_block_proj_re": 5.081492825697643,
-        "charm_block_proj_im": -0.07378122386123945
+        "charm_block_proj_im": -0.07378122386123957
       },
       "k=2 (winding 7 on strand1)": {
         "word": [
@@ -101,16 +158,16 @@
           1,
           1
         ],
-        "vol": 10.448618163634745,
-        "chern_simons": -0.21323378701260312,
+        "vol": 10.448618163634743,
+        "chern_simons": -0.21323378701260304,
         "components": 3,
         "block_frac_re": {
           "(3,)": 0.5036932648940182,
           "(2, 1)": 0.4843373428532121,
           "(1, 1, 1)": 0.011969392252769632
         },
-        "charm_block_proj_re": 5.060655957862661,
-        "charm_block_proj_im": -0.10327708580821196
+        "charm_block_proj_re": 5.06065595786266,
+        "charm_block_proj_im": -0.10327708580821192
       },
       "k=3 (winding 9 on strand1)": {
         "word": [
@@ -127,16 +184,16 @@
           1,
           1
         ],
-        "vol": 10.68447716869078,
-        "chern_simons": 0.24797973246763166,
+        "vol": 10.684477168690778,
+        "chern_simons": 0.24797973246763122,
         "components": 3,
         "block_frac_re": {
           "(3,)": 0.5330625030452413,
           "(2, 1)": 0.4585925093908888,
           "(1, 1, 1)": 0.008344987563869883
         },
-        "charm_block_proj_re": 4.8998211963195635,
-        "charm_block_proj_im": 0.11372164779041247
+        "charm_block_proj_re": 4.899821196319563,
+        "charm_block_proj_im": 0.11372164779041227
       },
       "k=4 (winding 11 on strand1)": {
         "word": [
@@ -155,16 +212,16 @@
           1,
           1
         ],
-        "vol": 10.794664454363982,
-        "chern_simons": 0.22397763498608347,
+        "vol": 10.794664454363986,
+        "chern_simons": 0.22397763498608353,
         "components": 3,
         "block_frac_re": {
           "(3,)": 0.5543565049651875,
           "(2, 1)": 0.43992636182680644,
           "(1, 1, 1)": 0.005717133208006066
         },
-        "charm_block_proj_re": 4.7488574605494955,
-        "charm_block_proj_im": 0.09853366609000014
+        "charm_block_proj_re": 4.748857460549497,
+        "charm_block_proj_im": 0.09853366609000017
       }
     }
   },
