@@ -1449,10 +1449,19 @@ The repo uses a **single root Lake workspace** (`/lakefile.toml`,
 **Preferred build commands** (always run from repo root):
 
 ```bash
-lake build           # build every paper package
-lake build QOU       # single paper library
-lake exe cache get   # fetch Mathlib cache for the workspace
+lake build QOU UGB Fred2005   # build every paper package
+lake build QOU                # single paper library
+lake exe cache get            # fetch Mathlib cache for the workspace
 ```
+
+**Name the targets.** A bare `lake build` at the root is a **no-op**: it exits 0
+with "Build completed successfully (0 jobs)" having examined nothing. The root
+package aggregates the three paper packages and declares no library of its own,
+so its default target set is empty; `defaultTargets` cannot reference another
+package's target, and a root aggregator module would under-build because each
+paper's library is glob-declared (`globs = ["QOU", "QOU.+"]`) and a glob library
+is built only by naming the library target. The root `lakefile.toml` carries the
+same note.
 
 Per-paper `cd content/<paper>/lean && lake build` still works, but
 root-workspace commands are the standardized entry point used by CI
