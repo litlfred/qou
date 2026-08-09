@@ -156,3 +156,49 @@ Off the unit circle the tetrahedron is not isosceles and `log|z| ≠ 0`; it need
 the two-variable argument `dD = log|z| d arg(1−z) − log|1−z| d arg z` against
 `dΛ(θ) = −log|2 sin θ| dθ`. **`|y₁| = 1.5236`, so nothing here reaches
 `Vol(5₂)`.** Only the general case would.
+
+---
+**2026-08-09 — third increment: the ideal-tetrahedron LAW OF SINES, and the
+radial reduction it unlocks.**
+
+`QOU/Knot/IdealTetLawOfSines.lean`, sorry-free, standard axioms, build exit 0 /
+3091 jobs, zero `sorry`. Probe `qbeta_5two_route73_law_of_sines_radial_probe.py`
+(60 dps, 4 gates, all passing); guard clean, in place.
+
+    ‖z‖ = sin θ₂ / sin θ₃        (Im z > 0)
+
+with `θ₂ = arg(1/(1−z))`, `θ₃ = arg(1 − 1/z)`. Also `sin_tetAngle₂/₃` (the two
+sines in closed form), their positivity, and `log_sin_sub_log_sin` —
+`log(2 sin θ₃) − log(2 sin θ₂) = −log‖z‖`, which is the shape the Λ-derivative
+actually produces.
+
+**This is the ideal-tetrahedron analogue of the Euclidean law of sines**: the
+*modulus* of the shape parameter is a ratio of sines of opposite angles, exactly
+as a side length is in a triangle. It is what ties the ANGLE description of a
+tetrahedron to the SHAPE-PARAMETER description.
+
+**Why it matters here — it collapses two variables to one.** General-`z` Kummer
+looks like it needs the two-variable argument
+`dD = log|z| d arg(1−z) − log|1−z| d arg z`. It does not. Fix `arg z` and vary
+`r = |z|` along a ray:
+
+* `θ₁ = arg z` is **constant**, so `Λ(θ₁)` contributes nothing;
+* `θ₁+θ₂+θ₃ = π` (`tetAngles_sum_eq_pi`) forces `dθ₃ = −dθ₂`;
+* so `d/dr (Λ(θ₂)+Λ(θ₃)) = log(sin θ₃/sin θ₂)·dθ₂/dr`;
+* while `d/dr` of the dilogarithm side is `−log r · dθ₂/dr`.
+
+These agree **iff** `r = sin θ₂/sin θ₃` — the law of sines. And the basepoint
+`r = 1` is `KummerDilogHalf.kummer_unit_circle`, already proved. So general-`z`
+Kummer becomes the same "same derivative, pin the constant" shape as everything
+else in this lane.
+
+The proof of the law of sines itself is elementary: `Complex.sin_arg` is
+*unconditional* in Mathlib, giving `sin θ₂ = Im z/‖1−z‖` and
+`sin θ₃ = Im z/(‖z‖·‖1−z‖)` directly; the ratio is `‖z‖` on the nose.
+
+**⚠ NOT yet proved: general-`z` Kummer.** The radial argument is planned and
+numerically confirmed (Route 73 G3: the Λ−dilog difference is constant, and
+zero, along every ray tested) but **not assembled in Lean**. G3 is evidence the
+plan works, *not* a proof. What remains is the differentiability of `θ₂` in `r`
+and the chain-rule assembly — mechanical, but real. `Vol(5₂)` needs that plus
+the geometric factor and is untouched.
