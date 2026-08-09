@@ -516,4 +516,68 @@ theorem content_keyed_interface_refuted
 
 end ChannelSelection
 
+section ConjugationInvariance
+
+variable {A : Type*} [Ring A] {K : Type*}
+
+/-- **A conjugated interface has the same trace value.**
+
+The attack that dies here: `chi_monotone_transfer.word_to_mpfr` rejects
+non-monotone braid words, so a bond joining strands `1 ↔ 3` must be written
+`σ₁σ₂σ₁⁻¹` and is currently unreachable. The proposed remedy was to lift that
+restriction and thereby enlarge the set of attainable interface values.
+
+It attains nothing new. Cyclicity of the Markov trace, `tr (ab) = tr (ba)`,
+gives conjugation invariance for free:
+
+    tr (u b u⁻¹) = tr (u⁻¹ u b) = tr b.
+
+Every conjugate of `σ₂` carries `σ₂`'s value exactly. Lifting the monotone-word
+restriction changes which *words* are admissible but not which *numbers* are
+reachable, so the colour-weight blocker — that `span{1, σ₂}` is a 2-plane
+inside the 4-dimensional `V_(2,1)` block — survives untouched. The refutation
+is by derivation, not by measurement.
+
+Stated for a bare `u : Aˣ` and an arbitrary codomain `K`: no order, no
+topology, no algebraic structure on the target is used. Cyclicity alone is the
+whole hypothesis. -/
+theorem trace_conj_eq (tr : A → K) (hcyc : ∀ a b : A, tr (a * b) = tr (b * a))
+    (u : Aˣ) (b : A) : tr ((u : A) * b * (↑u⁻¹ : A)) = tr b := by
+  rw [hcyc ((u : A) * b) (↑u⁻¹ : A), ← mul_assoc]
+  simp
+
+/-- **…so conjugation enlarges no reachable set.** Packaging of the above for
+the reachability question: if `S` is the set of interface values attainable by
+monotone words and `tr b ∈ S`, then `tr (u b u⁻¹) ∈ S` as well. No `S` can grow
+by admitting conjugates. -/
+theorem conjugation_reaches_no_new_values (tr : A → K)
+    (hcyc : ∀ a b : A, tr (a * b) = tr (b * a))
+    (u : Aˣ) (b : A) (S : Set K) (hb : tr b ∈ S) :
+    tr ((u : A) * b * (↑u⁻¹ : A)) ∈ S := by
+  rw [trace_conj_eq tr hcyc u b]; exact hb
+
+/-- **The ordering-dependence of the nuclear chain is NOT a trace defect.**
+
+Bean `qou-c6gx` recorded that the dashboard's binding energy depends on the
+hard-coded nucleon ordering (³He: `ppn` 6.7969 MeV vs `pnp` 7.7794 MeV) and read
+it as a possible violation of trace invariance. It is not one. `ppn` carries the
+bond multiset `{pp, pn}`; `pnp` carries `{pn, pn}`. Different multisets are
+genuinely different links — *not* conjugates of one another — so different
+traces are the correct answer.
+
+Formally: an energy keyed on the bond multiset is automatically well defined on
+any two orderings that induce the *same* multiset. When they induce different
+ones, the values may legitimately differ, and the ill-posedness lies in the
+*input* — a nucleus has no ordering — not in the trace.
+
+That is evidence against the chain as a nuclear model (`qou-h7mh`), which is a
+strictly different complaint from the one `qou-c6gx` filed. -/
+theorem multiset_keyed_energy_well_defined
+    {Ordering Bonds : Type*} (bonds : Ordering → Bonds) (E : Bonds → K)
+    (o₁ o₂ : Ordering) (hsame : bonds o₁ = bonds o₂) :
+    E (bonds o₁) = E (bonds o₂) := by
+  rw [hsame]
+
+end ConjugationInvariance
+
 end QOU.QBeta.InterfaceScalar
