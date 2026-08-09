@@ -54,8 +54,6 @@ class HasConfinementSDPData (n : ℕ) where
   slaterStrict : Prop
   /-- Optimal dual shadow price `y₀*`. -/
   y0Star : R_q
-  /-- SDP strong duality conclusion. -/
-  strong_duality : primalOpt = nTarget * y0Star
 
 /-- Cost-operator accessor. -/
 def sdpCost (n : ℕ) [h : HasConfinementSDPData n] :
@@ -141,7 +139,13 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
 theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
     [HasConfinementSDPStrongDuality n h] :
     primalOpt n = nTarget n * y0Star n := by
-  exact HasConfinementSDPData.strong_duality
+  -- The body previously read `exact HasConfinementSDPData.strong_duality`, projecting a
+  -- `strong_duality` field the DATA class carried (doc-labelled "conclusion"), while this
+  -- docstring said the conic-duality step "is discharged by `sorry` here" and that the
+  -- theorem "no longer merely projects that class field". Both were false. The data-class
+  -- field is deleted; `[HasConfinementSDPStrongDuality n h]` remains as the legitimate
+  -- conditional input a caller with a solver-verified identity can supply.
+  sorry
 
 -- The deprecated universal axiom `ConfinementSDP_axiom` has been
 -- removed. Use `ConfinementSDP` (typeclass-backed) instead.

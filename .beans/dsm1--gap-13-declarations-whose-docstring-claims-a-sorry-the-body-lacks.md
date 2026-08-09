@@ -1,7 +1,7 @@
 ---
 # dsm1
-title: 'GAP: declarations whose docstring claims a `sorry` the body does not have (9 live)'
-status: todo
+title: 'GAP: docstring-claims-a-sorry queue — DRAINED (13 → 1, and that 1 is a known FP)'
+status: completed
 type: task
 priority: high
 tags:
@@ -104,3 +104,63 @@ the agent.
    the docstring is simply wrong and should stop claiming a `sorry`.
 
 Whichever is chosen, the outcome is that the prose and `#print axioms` agree.
+
+---
+
+## DRAINED 2026-08-09 — 13 → 1
+
+**Eight fixed** by the honest disposition (delete the conclusion-bearing class
+field, restore a real `sorry` + `-- Ref:`, so prose and `#print axioms` agree):
+
+| declaration | field deleted |
+|---|---|
+| `kappa_commutes_bar` | `kappa_commutes_bar_field` |
+| `mobius_frobenius_kernel` | `classical_limit` |
+| `nsi_q_kernel_identification` | `kernel_ident` (its doc said "conclusion") |
+| `skein_mass_from_linking` | `skein_mass_ident` |
+| `mass_categorical_descent` | `descent_ident` |
+| `obstruction_trace_gap` | `kappa0_eq_chi_A`, `phi_1_image_eq_chi_A` |
+| `shell_filling_inner_shells` / `_hund_rule` / `_lp_strong_duality` | `inner_shells_fill`, `hund_rule`, `lp_strong_duality` |
+| `ConfinementSDP` | `HasConfinementSDPData.strong_duality` |
+
+Four more were fixed on `main` by other sessions while this ran
+(`volume_perturbation` — via an explicit `Revert "prove volume_perturbation via
+context enrichment"` — plus `markov_identification`, `four_term_pair_nucleon`,
+`neutron_proton_splitting`).
+
+## The detector was refined by what the drain taught, not by taste
+
+The first version deliberately did **not** exempt delegated `sorry`s, because
+five declarations delegated in exactly that language while the delegated-to
+declaration had no `sorry` either.
+
+After the drain, the three survivors were all cases where the delegation had
+become **true**. So the exemption is now gated on *evidence*, not wording:
+`DOC_DELEGATES_SORRY` (wording) **and** `fileHasSorryCode` (a real `sorry`
+somewhere in the file, read from comment-free bodies). Wording alone never
+exempts.
+
+Regression-tested: the two founding cases (`confinement_categorical`,
+`nucleon_ordering_factorization`) still fire **CRITICAL** against their pre-fix
+sources. Recall on the defect class is unchanged.
+
+## Known residual false positive — `identityB_general`
+
+`OVTopAssembly.lean:203` still reports CRITICAL. Its docstring truthfully places
+the `sorry`s in "the bricks", which are in **other files**, and the exemption's
+evidence check is file-local. Fixing it properly means resolving the delegation
+target across the import cone — a real improvement, not attempted here, because
+a cross-file `sorry` search is a different (and much more expensive) query than
+the one this detector is built on.
+
+**Do not silence it by widening the wording rule.** That is the mistake the
+drain already disproved.
+
+## Also found, not mine, not fixed
+
+`QOU/SkeinResolutionObstruction.lean:41` does not compile **on `main`** —
+`Invalid field 'obstruction_class'`, a field that exists in no version of
+`QouObstructionReductionContext`. Confirmed pre-existing by stashing and
+rebuilding against clean `main`. Unrelated to this bean; filed here so it is not
+lost.
+
