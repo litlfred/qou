@@ -312,3 +312,43 @@ Hecke GS work has never been covered by UGB's own `lake build`, and
 `HeckeCompletion` would not be either. Measured: 26 modules, 24 reachable from
 the root, the 2 unreachable ones being exactly `HeckeGS` and `HeckeCompletion`.
 Same class of problem as qou-rc7b, and the same fix — `globs = ["UGB", "UGB.+"]`.
+
+
+## 2026-08-09 (later still) — step 2: the completed system's rules are classified
+
+`heckeCompletedRewritingSystem_lm_cases` — the analogue of
+`heckeRewritingSystem_lm_cases` for the completed system. Every rule is one of
+**four** families and its leading monomial is explicit:
+
+| family | leading monomial |
+|---|---|
+| quadratic | `[σᵢ, σᵢ]` |
+| Yang–Baxter (`j = i+1`) | `[σⱼ, σᵢ, σⱼ]` |
+| far-commutation (`j+1 < i`) | `[σᵢ, σⱼ]` |
+| **Bokut–Shiao** (`i'+1 = i`, `j ≤ i'`) | **`bsWord₁ i j`** |
+
+The first three are the original classification verbatim — the completed system
+keeps every original rule, so `List.mem_append` hands them straight over. The
+fourth needed `bokutShiaoRelation_lm` from step 1, which is why the general
+leading monomial had to come first.
+
+Also `heckeCompletedRewritingSystem_lm_ne_nil`: no rule has an empty leading
+monomial. That is not decoration — `gs_basis_of_empty_lm` proves an empty leading
+monomial collapses the whole GS property, and it was the defect behind the
+removed sentinel. Re-established for the larger rule set. `bsWord₁ i j` ends in
+`σᵢ`, so it is never empty.
+
+Both axiom-clean, file warning-free.
+
+### Why this is the gate for everything downstream
+
+§4e's irreducibility machinery — `no_rule_infix_w₁`, `no_sq_infix_w₁`,
+`no_rule_infix_w₂` and the rest — all dispatch on the *classification*. None of
+that can be redone against the completed system without this. So the next step,
+the overlap analysis for the completed rule set, now has its foundation.
+
+### Ordering trap
+
+`bokutShiaoRelation_lm` lives in §4h, so a §4i that uses it must come after §4h,
+not before §4g. Lean reports it as `Unknown identifier`, which reads like a typo
+rather than a section-ordering mistake.

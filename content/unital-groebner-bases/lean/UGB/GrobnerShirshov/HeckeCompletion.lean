@@ -282,4 +282,52 @@ theorem bokutShiaoRelation_lm {n : ℕ} {i' i j : Fin n}
       · rw [bsWord₁_cons hi hj]
         exact List.Lex.rel (by simp only [HeckeGen.rank]; omega)
 
+/-! ## §4i  Every rule of the completed system, classified
+
+The analogue of `heckeRewritingSystem_lm_cases` for the completed system. That
+classification is what §4e's irreducibility machinery runs on — `no_rule_infix_w₁`
+and friends dispatch on it — so the completed system needs its own before any of
+that can be redone against it. -/
+
+/-- **Every rule of `heckeCompletedRewritingSystem` is one of four families**, and
+its leading monomial is the explicit word listed here. The first three cases are
+`heckeRewritingSystem_lm_cases` verbatim, since the completed system keeps every
+original rule; the fourth is the Bokut–Shiao family, via the general
+`bokutShiaoRelation_lm`. -/
+theorem heckeCompletedRewritingSystem_lm_cases {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (r : ReductionRule (HeckeGen n) ℝ)
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    (∃ i : Fin n, r.lm (heckeOrder n) = [⟨i⟩, ⟨i⟩]) ∨
+    (∃ i j : Fin n, j.val = i.val + 1 ∧ r.lm (heckeOrder n) = [⟨j⟩, ⟨i⟩, ⟨j⟩]) ∨
+    (∃ i j : Fin n, j.val + 1 < i.val ∧ r.lm (heckeOrder n) = [⟨i⟩, ⟨j⟩]) ∨
+    (∃ i' i j : Fin n, i'.val + 1 = i.val ∧ j.val ≤ i'.val ∧
+        r.lm (heckeOrder n) = bsWord₁ i j) := by
+  rcases List.mem_append.mp hr with hr' | hr'
+  · rcases heckeRewritingSystem_lm_cases hn hp r hr' with h | h | h
+    · exact Or.inl h
+    · exact Or.inr (Or.inl h)
+    · exact Or.inr (Or.inr (Or.inl h))
+  · -- the Bokut–Shiao block: three nested enumerations, then the side condition
+    obtain ⟨i, -, hi⟩ := List.mem_flatMap.mp hr'
+    obtain ⟨i', -, hi'⟩ := List.mem_flatMap.mp hi
+    obtain ⟨j, -, hj⟩ := List.mem_filterMap.mp hi'
+    by_cases hc : i'.val + 1 = i.val ∧ j.val ≤ i'.val
+    · rw [if_pos hc] at hj
+      cases hj
+      exact Or.inr (Or.inr (Or.inr
+        ⟨i', i, j, hc.1, hc.2, bokutShiaoRelation_lm hc.1 hc.2⟩))
+    · rw [if_neg hc] at hj; exact absurd hj (by simp)
+
+/-- No rule of the completed system has an empty leading monomial — the
+non-degeneracy `gs_basis_of_empty_lm` shows is essential, re-established for the
+larger rule set. The Bokut–Shiao words are never empty: `bsWord₁ i j` ends in
+`σᵢ`. -/
+theorem heckeCompletedRewritingSystem_lm_ne_nil {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (r : ReductionRule (HeckeGen n) ℝ)
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    r.lm (heckeOrder n) ≠ [] := by
+  rcases heckeCompletedRewritingSystem_lm_cases hn hp r hr with
+    ⟨i, h⟩ | ⟨i, j, -, h⟩ | ⟨i, j, -, h⟩ | ⟨i', i, j, -, -, h⟩ <;> rw [h] <;>
+    simp [bsWord₁]
+
 end UGB.GrobnerShirshov.Hecke
