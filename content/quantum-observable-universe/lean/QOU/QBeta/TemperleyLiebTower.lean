@@ -674,6 +674,131 @@ theorem traceRadical_two_sided (tr : A → R)
     a * c ∈ traceRadical tr ∧ c * a ∈ traceRadical tr :=
   ⟨traceRadical_mul_mem tr ha c, traceRadical_mem_mul tr hcyc ha c⟩
 
+/-- **The bilinear radical and the star radical coincide.**
+
+`traceRadical` above is the null space of the **bilinear** pairing `tr(a·b)`,
+but every positivity statement on this branch concerns the **star** pairing
+`tr(a·b*)`. The two are equal, because `*` is a bijection and so `{b* : b}`
+exhausts the algebra — but that line was nowhere written, and an unstated
+bilinear-vs-star identification is exactly what produced the retracted
+Lorentzian reading (commit 748ba9b1). Written now.
+
+Only surjectivity of `star` is used; no involution law, no antimultiplicativity,
+no ring structure on the target beyond `Zero`. -/
+theorem traceRadical_star_eq (tr : A → R) (star : A → A)
+    (hsurj : Function.Surjective star) :
+    {a : A | ∀ b : A, tr (a * star b) = 0} = traceRadical tr := by
+  ext a
+  constructor
+  · intro ha c
+    obtain ⟨b, hb⟩ := hsurj c
+    rw [← hb]
+    exact ha b
+  · intro ha b
+    exact ha (star b)
+
 end RadicalIsIdeal
+
+section Definiteness
+
+/-!
+## T4 — positive definiteness, and it never needed the meander determinant
+
+**Correction, recorded rather than quietly fixed.** Bean `qou-u2jg` listed
+`T4. Quotient form positive DEFINITE — gated on T6` (the Temperley–Lieb
+diagram-basis Gram determinant of Di Francesco–Golinelli–Guitter). **That gating
+was a mis-scoping.** The citation route requires first *proving* that the star
+form equals the DFGG diagram form, which in turn requires constructing `TLₙ` and
+proving `Hₙ/rad ≅ TLₙ` — the whole open problem, not a lemma on the way to it. A
+citation gated behind an unproved isomorphism is not a shortcut.
+
+The Wedderburn route needs nothing new. `GramSignature.markov_star_nonneg`
+already gives `tr_M(a a*) = Σ_λ y_λ · tr(A_λ A_λ*)` with each block term a sum
+of squares. Upgrading `≥ 0` to `> 0` needs only that the *surviving* weights are
+**strictly** positive — and the branch's own closed form supplies that for free:
+
+    y₍ₙ₋ₖ,ₖ₎ = [n − 2k + 1]_q / [2]_qⁿ ,   n − 2k + 1 ≥ 1 ,   q₀ > 1
+    ⟹ [m]_q > 0 for m ≥ 1 ⟹ y_λ > 0.
+
+No diagram basis, no lift `e_i = q − σ_i`, no loop counting, no DFGG. It works
+at every `n` at once.
+
+### What the DFGG excursion *did* establish, and it is worth keeping
+
+`δ = [2]_q = q + q⁻¹`, and under convention D
+
+    q − z = q/(q² + 1) = 1/[2]_q   identically in q,
+
+verified to 60 dps with residual exactly `0.0`. So `tr_M(x·e_n) = (q − z)tr_M(x)`
+with `e_i := q − σ_i`, i.e. **convention D is the standard normalised
+Temperley–Lieb Markov trace at loop parameter `δ = [2]_q`**, and
+`μ₋ = (q − z)/(q + q⁻¹) = 1/δ²` — which is the `1/[2]_q²` already proved as
+`y_mixed_conventionD`. `loop_reciprocal` below is that identity.
+
+**And it found a live defect.** `1/δ = 0.497290545604915556` and convention-C
+`z = 0.499320334183694452` differ by 0.408 %, and the corpus has conflated them:
+`mass-theory/h3-markov-wenzl-weights-context.md:69` asserts that
+`1/(q^{1/2}+q^{-1/2})` "is the Temperley–Lieb loop reciprocal `1/δ` — correct for
+the TL generator `e_i`", which is false, and
+`docs/coordination/convention-slip-registry.json:79` repeats it. The two numbers
+are `1/(x + 1/x)` at `x = q` and at `x = √q`: one square root apart. Tracked
+separately; not fixed here.
+-/
+
+section LoopParameter
+
+variable {R : Type*} [Field R]
+
+/-- **`q − z` is the Temperley–Lieb loop reciprocal.** Under convention D,
+`(q − z)(q + q⁻¹) = 1`, i.e. `q − z = 1/δ` with `δ = [2]_q`.
+
+Combined with the Markov property `tr_M(x·e_n) = (q − z)·tr_M(x)` for
+`e_i := q − σ_i`, this says convention D *is* the standard normalised
+Temperley–Lieb trace — the sharpest form of the `Hₙ/rad ≅ TLₙ` statement that
+does not require constructing `TLₙ`. -/
+theorem loop_reciprocal (q z : R) (hq : q ≠ 0) (hD : IsConventionD q z) :
+    (q - z) * (q + q⁻¹) = 1 := by
+  rw [IsConventionD] at hD
+  field_simp
+  linear_combination -hD
+
+end LoopParameter
+
+section StrictWeights
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- **`[m]_q` has a positive numerator for `q > 1` and `m ≥ 1`.** `q⁻ᵐ < 1 < qᵐ`.
+This is the only new input T4 needs. -/
+theorem qint_num_pos (q : R) (hq : 1 < q) {m : ℕ} (hm : 0 < m) :
+    (q⁻¹) ^ m < q ^ m := by
+  have hq0 : (0 : R) < q := lt_trans zero_lt_one hq
+  have hinv : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+  have hinv0 : (0 : R) < q⁻¹ := inv_pos.mpr hq0
+  have hm0 : m ≠ 0 := Nat.ne_of_gt hm
+  calc (q⁻¹) ^ m < 1 := pow_lt_one₀ (le_of_lt hinv0) hinv hm0
+    _ < q ^ m := one_lt_pow₀ hq hm0
+
+/-- **The analytic core of T4.** A weighted sum of nonnegative terms with
+*strictly* positive weights vanishes only when every term vanishes.
+
+Applied to `tr_M(a a*) = Σ_λ y_λ · tr(A_λ A_λ*)`: if the trace of `a a*` is zero
+then every surviving block of `a` is zero, so `a` lies in the radical. That is
+positive-definiteness on `Hₙ/rad`, and it is all T4 ever required. -/
+theorem terms_zero_of_weighted_sum_zero {ι : Type*} (s : Finset ι) (y f : ι → R)
+    (hy : ∀ i ∈ s, 0 < y i) (hf : ∀ i ∈ s, 0 ≤ f i)
+    (hsum : ∑ i ∈ s, y i * f i = 0) : ∀ i ∈ s, f i = 0 := by
+  intro i hi
+  have hnn : ∀ j ∈ s, 0 ≤ y j * f j := fun j hj =>
+    mul_nonneg (le_of_lt (hy j hj)) (hf j hj)
+  have hzero : y i * f i = 0 :=
+    (Finset.sum_eq_zero_iff_of_nonneg hnn).mp hsum i hi
+  rcases mul_eq_zero.mp hzero with h | h
+  · exact absurd h (ne_of_gt (hy i hi))
+  · exact h
+
+end StrictWeights
+
+end Definiteness
 
 end QOU.QBeta.TemperleyLiebTower
