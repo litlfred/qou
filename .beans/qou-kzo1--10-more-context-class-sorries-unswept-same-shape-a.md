@@ -1,7 +1,7 @@
 ---
 # qou-kzo1
 title: 10 more context-class sorries unswept — same shape as the 8 already refuted
-status: todo
+status: done
 type: task
 created_at: 2026-08-09T10:50:57Z
 updated_at: 2026-08-09T10:50:57Z
@@ -52,3 +52,51 @@ conclusion names", which is not a pattern. Build the instance.
 
 Whatever the outcome, record it: a statement that survives the attempt is
 evidence *for* it, which is how `covariance_kernel_conjecture` was cleared.
+
+---
+
+## Swept 2026-08-09 — 5 more refuted, running total 13 of 13
+
+| theorem | verdict | refuted by |
+|---|---|---|
+| `shell_filling_inner_shells` | REFUTED | `n_val := 2`, empty shells; class gives `≤`, theorem asserts `=` |
+| `shell_filling_hund_rule` | REFUTED | `ValenceConfig := Bool`, ground the *less* singly-occupied one |
+| `shell_filling_lp_strong_duality` | REFUTED | `Z := 0, y_0 := 0, primal_obj := 1` |
+| `mobius_frobenius_kernel` | REFUTED | `K_FH ≡ 0`; limit `0` vs claimed `1/‖γs−γt‖² = 1` |
+| `operator_selection_lp` | REFUTED | `d := 0`: empty-sum objective vs `n_target * y_0_star` |
+| `scalar_channel_ordering_independent` | **not a gap** | already proved: `(hperm.map f).prod_eq` |
+
+### Two things this round changed about the finding
+
+**1. Carrying hypotheses is not enough.** `ShellFillingRuleContext` is *not* a
+bare-data class — it carries `capacity_def : ∀ n, capacity n = 2*n²` and
+`occupancy_le_capacity : ∀ n, occupancy n ≤ capacity n`. It is still refutable,
+because the theorem asserts `occupancy n = capacity n` and the class only
+bounds it. The criterion is not "does the class have hypotheses" but "are they
+strong enough for the conclusion" — which kills the last syntactic proxy I had
+for detecting this cheaply.
+
+**2. It is not confined to arithmetic.** `mobius_frobenius_kernel` asserts a
+*limit* (`Tendsto … (nhds (1/‖γs−γt‖²))`) over a free kernel field, and falls
+the same way — set `K_FH ≡ 0` and use uniqueness of limits in a `NeBot` filter.
+Analysis statements are not safer.
+
+### One correction
+
+`scalar_channel_ordering_independent` was on this list in error — my extractor
+matched a neighbouring declaration. It is proved, sorry-free, and always was.
+
+### Not attempted (3)
+
+- `nsi_q_kernel_identification` — same shape, needs `qDeformedKernel`'s value.
+- `four_term_pair_nucleon_counts`
+- `confinement_categorical` — extends `QOU.Shared.MarkovTraceContext`, so the
+  instance needs the parent's fields too; more construction work, no reason to
+  expect a different answer.
+
+`operator_selection_lp`'s refutation is in
+`docs/audits/2026-08-09-unclosable-context-sorries.lean.txt` but **not** in the
+source file: that module imports only `Algebra.Order.Ring.Defs` and
+`Fintype.Fin`, so neither `ℝ` nor `ℤ`'s ordered-ring instances are in scope, and
+widening a substrate-side module's imports for an audit artefact risks the
+`wall-side-correct` criterion. Left out deliberately.

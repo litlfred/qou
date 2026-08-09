@@ -82,4 +82,20 @@ theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
   -- the classical Hodge star and of ∫_A ∘ μ to the SU(2) Killing form at q = 1.
   sorry
 
+/-- **Refutable as written** — the class never relates the fields the
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`). -/
+theorem mobius_frobenius_kernel_unconstrained_false :
+    ¬ ∀ (ctx : MobiusFrobeniusKernelContext ℝ) (s t : ℝ), ctx.γ s ≠ ctx.γ t →
+        Filter.Tendsto (fun q => ctx.K_FH q s t)
+          (nhdsWithin 1 {q : ℝ | q ≠ 1})
+          (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
+  intro h
+  haveI : (nhdsWithin (1 : ℝ) {q : ℝ | q ≠ 1}).NeBot := by
+    have hset : {q : ℝ | q ≠ 1} = ({1} : Set ℝ)ᶜ := rfl
+    rw [hset]; infer_instance
+  have ht := h { γ := id, K_FH := fun _ _ _ => 0 } 0 1 (by norm_num)
+  have : (0 : ℝ) = 1 / ‖(0 : ℝ) - 1‖ ^ 2 :=
+    tendsto_nhds_unique tendsto_const_nhds ht
+  norm_num at this
+
 end QOU.BraidsKnots
