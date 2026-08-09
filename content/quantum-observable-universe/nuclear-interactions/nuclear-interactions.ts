@@ -118,6 +118,34 @@ export default chapter({
       ],
     }),
 
+    // ── §3b. The NN channel: isospin selection and the interface band ──
+    // Decision 7 homes all three nuclear Lean results here — isospin
+    // selection, the band separation, the colour-tube floor — because they
+    // are one connected argument and none of them had any exposition.
+    // Reading order: select the channel → refute the alternative → define
+    // the map → state the branching → measure the gap → close the
+    // colour-tube route. Placement AFTER §3 is the least disruptive
+    // insertion; siting it right after §2 sec:confinement-selection (also
+    // operator selection, and upstream of §3's (Z,N) magic-number work) is
+    // arguably the better read and is left as an owner call. Decision 4
+    // forbids CHAPTER moves, not section ordering inside a chapter.
+    section({
+      title: "Isospin selection and the interface band",
+      label: "sec:nn-isospin-interface",
+      blocks: [
+        "nn-isospin-interface-intro",
+        "isospin-singlet-binds-more",
+        "isospin-singlet-binds-more-proof",
+        "content-keyed-interface-refuted",
+        "nucleon-pair-isospin-channel",
+        "isospin-selection-class-inhabited",
+        "branching-identity-isospin-weights",
+        "interface-band-between-isospin-weights",
+        "interface-never-realises-isospin-weight",
+        "colour-tube-floor-overshoots-deuteron",
+      ],
+    }),
+
     // ── §4. Derived atom examples ────────────────────────────────
     section({
       title: "Derived atom examples",

@@ -5,7 +5,10 @@ export default proposition({
   title: "Markov-trace selection on H_n(R, q) — the row cap, not non-degeneracy",
   chapter: "mass-theory",
   cites: ["jones1987", "wenzl1988", "yekutieli2015"],
-  uses: ["lem:feynman-eigenbasis-decomposition"],
+  uses: [
+    "lem:feynman-eigenbasis-decomposition",
+    "prop:convention-d-kills-antisymmetriser",
+  ],
   defines: [],
   tags: [
     "normalization",
@@ -19,6 +22,22 @@ export default proposition({
     ref: "qou:QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical",
   },
   authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-09",
+      body:
+        "Wired to the derived characterisation (detangler decision 7). The replacement " +
+        "criterion is faithfulness on the non-radical blocks together with the row cap, and " +
+        "it is now backed by an exposition block rather than by this note alone: " +
+        "prop:convention-d-kills-antisymmetriser, carrying " +
+        "qou:QOU.QBeta.TemperleyLiebTower.antisym_vanishes_only_at_two_roots (the antisymmetric " +
+        "weight vanishes at exactly two values of z) and z_eq_q_forces_trivial (the branch z = q " +
+        "collapses the trace to the one-dimensional character). Convention D is thereby the " +
+        "UNIQUE non-trivial Markov trace on H_3(q) killing the three-strand antisymmetriser, " +
+        "and convention C is excluded by derivation rather than by ruling. The uses[] edge " +
+        "added here is the editorial one: a reader needs the characterisation to see why the " +
+        "row cap selects rather than merely describes.",
+    },
     {
       kind: "note",
       date: "2026-08-09",
