@@ -357,7 +357,7 @@
     }
   ],
   "evaluators": {
-    "note": "R9 -- THE NUMERIC CHECK. Every entry here is IMPORTED AND CALLED at q0, and its result compared against the declared convention's z_at_q0 / weights_at_q0 at abs_tol 1e-40. This exists because R4/R5 compare a DOCSTRING STRING to a REGISTRY STRING and never to code: on 2026-08-09 a stale docstring and a stale registry agreed with each other and the validator reported PASS over four convention-C production entry points, three convention hybrids and a cache-served C. A numeric check cannot be defeated by a stale docstring, a stale registry, a vendored copy, or a witness cache.",
+    "note": "R9 -- THE NUMERIC CHECK. Every entry here is IMPORTED AND CALLED at q0, and its result compared against the declared convention's z_at_q0 / weights_at_q0 at abs_tol 1e-40. This exists because R4/R5 compare a DOCSTRING STRING to a REGISTRY STRING and never to code: on 2026-08-09 a stale docstring and a stale registry agreed with each other and the validator reported PASS over four convention-C production entry points, three convention hybrids and a cache-served C. A numeric check cannot be defeated by a stale docstring, a stale registry, a vendored copy, a witness cache, or -- added 2026-08-09 -- a stale COMPILED ARTIFACT whose source reads correctly while the installed binary does not.",
     "abs_tol": "1e-40",
     "z": [
       {
@@ -419,6 +419,16 @@
         ],
         "abs_tol": "1e-15",
         "note": "BLOCKED on C by design -- see blocked_migrations. Registered as C so R9 ASSERTS the exception instead of leaving it undetected. If this ever reports D without blocked_migrations being cleared, something switched it and G_INV is now silently wrong."
+      },
+      {
+        "id": "pyhecke_native.markov_z",
+        "convention": "D",
+        "module": "pyhecke_native",
+        "symbol": "markov_z",
+        "kind": "callable_q",
+        "sys_path": [],
+        "abs_tol": "1e-15",
+        "note": "THE COMPILED ARTIFACT. Added 2026-08-09 after the installed wheel was found returning convention C while its own Rust source (tools/hecke-engine/src/gram.rs:75) read D -- the .so was built 2026-08-08 11:30 UTC, b5f4cb5b9 migrated the engine C->D at 2026-08-09 13:18 UTC, and nothing compared the two. Source review cannot see this defect and neither can the content-layer axis; only calling the binary can. markov_z is re-exported through all nine language bindings and drives trace_weights and the v_std quark-volume channel, so a stale build here is a silent C reintroduction across the whole native path -- and it converts 'regenerate from the producer' from the remediation into the attack. If this entry fails, REBUILD (maturin build --release in tools/pyhecke-native, then pip install --force-reinstall the wheel) before running any producer."
       }
     ],
     "weights_n3": [

@@ -391,6 +391,55 @@ theorem conventionD_iff_markov_invariant (q z : R) (hq : q ≠ 0) :
 
 end MarkovInvariance
 
+section InterfaceFactorisation
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A]
+
+/-! ### The interface factorisation `z^{p₊}(z−h)^{p₋}`
+
+`prf:interface-knot-markov-z` claims
+
+    tr_M^FULL / tr_M^CONSTIT  =  z^{p₊} · (z − h)^{p₋}
+
+for an atom with `p₊` positive and `p₋` negative interface crossings. That claim
+is **convention-independent** — it is iterated Markov peel and holds for any
+Markov parameter — which is why regenerating its table under convention D should
+reproduce agreement to the same precision rather than break it. The two
+per-crossing factors are `tr_M(σ) = z` and `tr_M(σ⁻¹) = z − h`, the latter from
+`sigma_inv` (`σ⁻¹ = σ − h`, from the quadratic relation alone). -/
+
+/-- **Iterated Markov peel.** One peel hypothesis, applied `k` times. -/
+theorem peel_pow (tr : A → R) (z : R) (s : A)
+    (hpeel : ∀ y : A, tr (y * s) = z * tr y) (x : A) (k : ℕ) :
+    tr (x * s ^ k) = z ^ k * tr x := by
+  induction k with
+  | zero => simp
+  | succ n ih =>
+      calc tr (x * s ^ (n + 1)) = tr (x * s ^ n * s) := by rw [pow_succ, mul_assoc]
+        _ = z * tr (x * s ^ n) := hpeel _
+        _ = z * (z ^ n * tr x) := by rw [ih]
+        _ = z ^ (n + 1) * tr x := by ring
+
+/-- **The interface factorisation.** `p₊` positive crossings contribute `z` each,
+`p₋` negative ones contribute `w = z − h` each, multiplicatively.
+
+Stated with the crossings already gathered at the peelable end, because that is
+what the Markov axiom licenses: `tr(y·σₙ) = z·tr(y)` needs `σₙ` to be the *top*
+generator, outside the subalgebra `y` lives in. That the interface crossings of a
+nuclear braid can be brought into that position is the physical input of
+`prf:interface-knot-markov-z` — a claim about `atom_braid_word_3A`, not about the
+trace — and is **not** proved here. What is proved is that once they are, the
+factorisation is exact, and exact for *every* Markov parameter. -/
+theorem interface_factorisation (tr : A → R) (z w : R) (sp sm : A)
+    (hp : ∀ y : A, tr (y * sp) = z * tr y)
+    (hm : ∀ y : A, tr (y * sm) = w * tr y)
+    (x : A) (p m : ℕ) :
+    tr (x * sp ^ p * sm ^ m) = z ^ p * w ^ m * tr x := by
+  rw [peel_pow tr w sm hm _ m, peel_pow tr z sp hp x p]
+  ring
+
+end InterfaceFactorisation
+
 section Kauffman
 
 variable {R : Type*} [Field R]
