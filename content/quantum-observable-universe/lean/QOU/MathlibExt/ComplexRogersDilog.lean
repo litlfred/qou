@@ -237,4 +237,83 @@ theorem cRogersL_add_inv {z : ℂ} (hz : z ∈ invDomain) (harg : z.arg ≠ Real
   rw [hinv]
   linear_combination hcomb - (Complex.log z / 2) * hlog
 
+/-! ## Pinning a branch integer by a window
+
+Route 58's remaining links all have the same shape: an algebraic identity such as
+`a₃³·y₁ = −y₃` gives `3·log a₃ + log y₁ = log(−y₃) + 2πik`, and the work is
+showing `k = 0`. The window that does it need not be tight — the arguments
+involved live in `(0, π)` and `(0, π/2)`, so the sum lands in `(0, 5π/2)`, and
+the only value there congruent to `π` mod `2π` is `π` itself.
+
+`Archimedean/BranchIntegerPinning.lean` pins such an integer along a *continuous
+family*; this is the single-point version, and it is what the saddle needs. -/
+
+/-- If `exp u = c` and `Im u` lies in `(−π, π]`, then `u` **is** `log c`. -/
+theorem clog_eq_of_exp_eq {u c : ℂ} (h : Complex.exp u = c)
+    (hlo : -Real.pi < u.im) (hhi : u.im ≤ Real.pi) : Complex.log c = u := by
+  rw [← h, Complex.log_exp hlo hhi]
+
+/-- **The window lemma.** `exp u` a *negative real* forces `Im u ≡ π (mod 2π)`;
+a window of width less than `2π` containing `π` then pins it. `(0, 3π)` is the
+window the saddle supplies, and it is far from tight. -/
+theorem im_eq_pi_of_exp_eq_neg_ofReal {u : ℂ} {t : ℝ} (ht : 0 < t)
+    (h : Complex.exp u = ((-t : ℝ) : ℂ)) (hlo : -Real.pi < u.im) (hhi : u.im < 3 * Real.pi) :
+    u.im = Real.pi := by
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  have hbase : Complex.exp (((Real.log t : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I)
+      = ((-t : ℝ) : ℂ) := by
+    rw [Complex.exp_add, Complex.exp_pi_mul_I, ← Complex.ofReal_exp, Real.exp_log ht]
+    push_cast
+    ring
+  obtain ⟨n, hn⟩ := Complex.exp_eq_exp_iff_exists_int.mp (h.trans hbase.symm)
+  have him : u.im = Real.pi + n * (2 * Real.pi) := by
+    rw [hn]
+    simp [Complex.add_im, Complex.mul_im, Complex.ofReal_im, Complex.ofReal_re]
+  rw [him] at hlo hhi
+  have hn0 : n = 0 := by
+    have h1 : (-1 : ℝ) < n := by nlinarith [hlo, hpi]
+    have h2 : (n : ℝ) < 1 := by nlinarith [hhi, hpi]
+    have hl : (-1 : ℤ) < n := by exact_mod_cast h1
+    have hr : n < (1 : ℤ) := by exact_mod_cast h2
+    omega
+  rw [him, hn0]
+  push_cast
+  ring
+
+/-- **The saddle's log identity, from the window.** If `a³·b = −t` with `t > 0`
+and the two arguments sit in `[0, π/2]` and `[0, π]`, then
+
+    3·log a + log b = log t + iπ
+
+with no branch correction: the sum of arguments lands in `[0, 5π/2] ⊂ (−π, 3π)`,
+and `π` is the only value there congruent to `π` mod `2π`. The window is not
+tight, which is the point — the bounds needed are crude sign conditions.
+
+Applied to `a₃³·y₁ = −y₃` (`FiveTwoComplexPentagon.saddle_arg_cube'`) this is
+the angle identity Route 58's link G3 rests on. -/
+theorem clog_cube_mul {a b : ℂ} {t : ℝ} (ha : a ≠ 0) (hb : b ≠ 0) (ht : 0 < t)
+    (h : a ^ 3 * b = ((-t : ℝ) : ℂ))
+    (ha1 : 0 ≤ a.arg) (ha2 : a.arg ≤ Real.pi / 2) (hb1 : 0 ≤ b.arg) :
+    3 * Complex.log a + Complex.log b
+      = ((Real.log t : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  set u : ℂ := 3 * Complex.log a + Complex.log b with hu
+  have hexp : Complex.exp u = ((-t : ℝ) : ℂ) := by
+    rw [hu, Complex.exp_add, show (3 : ℂ) * Complex.log a = Complex.log a + Complex.log a
+      + Complex.log a by ring, Complex.exp_add, Complex.exp_add,
+      Complex.exp_log ha, Complex.exp_log hb, ← h]
+    ring
+  have huim : u.im = 3 * a.arg + b.arg := by
+    simp [hu, Complex.add_im, Complex.mul_im, Complex.log_im]
+  have hlo : -Real.pi < u.im := by rw [huim]; nlinarith [Complex.arg_le_pi b]
+  have hhi : u.im < 3 * Real.pi := by
+    rw [huim]; nlinarith [Complex.arg_le_pi b]
+  have him := im_eq_pi_of_exp_eq_neg_ofReal ht hexp hlo hhi
+  have hlog : Complex.log ((-t : ℝ) : ℂ) = u := by
+    rw [← hexp, Complex.log_exp (by rw [him]; linarith) (le_of_eq him)]
+  have hneg : ((-t : ℝ) : ℂ) = -((t : ℝ) : ℂ) := by push_cast; ring
+  rw [hneg, log_neg_ofReal ht] at hlog
+  rw [← hlog]
+
+
 end QOU.MathlibExt

@@ -981,6 +981,33 @@ theorem saddle_arg_cube' {a c : ℂ}
   field_simp
   linear_combination saddle_arg_cube hR hC
 
+/-- **Link G3's branch pinning, assembled.** `saddle_arg_cube'` gives
+`a₃³·y₁ = −y₃`; `MathlibExt.clog_cube_mul` turns that into
+
+    3·log a₃ + log y₁ = log y₃ + iπ
+
+with **no** branch correction, given only three crude sign conditions on the
+arguments. Those three are what remains of Route 58's link G3 — facts about the
+specific algebraic numbers (`Re a₃ = 1/2 > 0`, `Im a₃ > 0`, `Im y₁ > 0`), not
+about dilogarithms.
+
+⚠ Stated with the sign conditions as hypotheses. They are **not** discharged
+here. -/
+theorem saddle_clog_cube {a : ℂ} {t : ℝ} (ht : 0 < t)
+    (hR : a ^ 2 * (t : ℂ) + a * (t : ℂ) ^ 2 - 2 * (a * (t : ℂ)) + 1 = 0)
+    (hC : (t : ℂ) ^ 3 - 2 * (t : ℂ) ^ 2 + 3 * (t : ℂ) - 1 = 0)
+    (hne : (1 : ℂ) - (t : ℂ) * a ≠ 0) (ha : a ≠ 0)
+    (ha0 : (1 - (t : ℂ)) / (1 - (t : ℂ) * a) ≠ 0)
+    (harg1 : 0 ≤ ((1 - (t : ℂ)) / (1 - (t : ℂ) * a)).arg)
+    (harg2 : ((1 - (t : ℂ)) / (1 - (t : ℂ) * a)).arg ≤ Real.pi / 2)
+    (hbarg : 0 ≤ a.arg) :
+    3 * Complex.log ((1 - (t : ℂ)) / (1 - (t : ℂ) * a)) + Complex.log a
+      = ((Real.log t : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  refine clog_cube_mul ha0 ha ht ?_ harg1 harg2 hbarg
+  rw [saddle_arg_cube' hR hC hne]
+  push_cast
+  ring
+
 end SaddleStructure
 
 /-! ### Complex Rogers reflection

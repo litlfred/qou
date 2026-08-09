@@ -956,3 +956,54 @@ not an analysis problem, and it is not in the corpus —
 *continuous family*, which is a different technique.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 61 — the branch pinning, and it is not tight
+
+The obstacle after Route 60 was: from `a₃³·y₁ = −y₃`, conclude
+`3·log a₃ + log y₁ = log y₃ + iπ` — i.e. pin `k = 0` in a `2πik`. That looked
+like it needed sharp bounds on the arguments of specific algebraic numbers. **It
+does not.**
+
+    arg a₃ ∈ [0, π/2]   and   arg y₁ ∈ [0, π]
+      ⟹  3·arg a₃ + arg y₁ ∈ [0, 5π/2] ⊂ (−π, 3π)
+
+and `π` is the only value in `(−π, 3π)` congruent to `π` mod `2π`. `5π/2 < 3π`
+with room to spare — the window is *loose*, and the bounds needed are crude sign
+conditions, not numerics.
+
+### Landed (Lean, sorry-free, standard axioms)
+
+* `clog_eq_of_exp_eq` — `exp u = c` and `Im u ∈ (−π, π]` ⟹ `log c = u`. One line
+  over `Complex.log_exp`.
+* `im_eq_pi_of_exp_eq_neg_ofReal` — **the window lemma**: `exp u` a negative real
+  forces `Im u ≡ π (mod 2π)`; a window `(−π, 3π)` pins it to `π`.
+  `Archimedean/BranchIntegerPinning.lean` does this along a *continuous family*;
+  this is the single-point version, which is what the saddle needs.
+* `clog_cube_mul` — `a³b = −t`, `t > 0`, `arg a ∈ [0,π/2]`, `arg b ≥ 0` ⟹
+  `3 log a + log b = log t + iπ`.
+* `saddle_clog_cube` — the above composed with `saddle_arg_cube'` (Route 58).
+
+### What remains of link G3
+
+Exactly three **sign conditions** on the specific numbers, taken as hypotheses:
+
+    0 ≤ arg a₃     arg a₃ ≤ π/2     0 ≤ arg y₁
+
+which are `Im a₃ ≥ 0`, `Re a₃ ≥ 0`, `Im y₁ ≥ 0`. Route 55 proved
+`a₃ + ā₃ = 1`, so `Re a₃ = 1/2`. These are facts about roots of a cubic, not
+about dilogarithms.
+
+### The ledger
+
+| link | status |
+|---|---|
+| G3 inversion | `cRogersL_add_inv` **proved** (59) |
+| G3 angle, algebra | `saddle_arg_cube` **proved** (58) |
+| G3 angle, pinning | `saddle_clog_cube` **proved** modulo three sign conditions (61) |
+| G4 anharmonic | `cRogersL_one_sub_inv_sub` **proved** (60) |
+| G4 evaluate `log y₂` | open — same shape, `log y₂ = −½log y₃ − iθ` |
+| G6 `Σ log·log` | open — the saddle branch equation |
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
