@@ -168,12 +168,19 @@
     {
       "id": "binding",
       "description": "per-isotope binding via the free-minus-bound trace difference",
-      "definitional_convention": "C",
+      "definitional_convention": "D",
       "definitional_source": "rem:markov-axioms-primitive line 5",
-      "production_convention": "C",
-      "production_source": "computations/binding_canonical.py -> closed_form_tau_M.py::markov_z (= 1/(sqrt(q)+1/sqrt(q))) + y_lambda_wenzl_bridge_numeric",
+      "production_convention": "D",
+      "production_source": "computations/closed_form_tau_M.py::markov_z (now q^3/(q^2+1)) and computations/wedderburn_jones_markov.py::y_lambda_at (now the SU(2) quantum dimensions via y_lambda_su_n), both switched by the owner ruling of 2026-08-09",
       "status": "agreed",
-      "open_item": null
+      "open_item": null,
+      "resolution": {
+        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
+        "numerical_impact": "REAL and it is NOT an improvement on aggregate: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves 37.39% -> 43.85%. 2H improves +74.85% -> +27.36% and the 3H/3He mirror split 2.2708 -> 1.7471 MeV (nature 0.7638); everything heavier under-binds worse.",
+        "structural_impact": "the 2H impossibility disappears. Under C, AME(2H)=2.2246 sits 30.4% BELOW the whole admissible band [2.9072, 5.1780]; under D the band is [2.0507, 3.7978] and AME is inside it, at d = -0.1192*h.",
+        "mass_channel_unaffected": "verified: m_p = 938.27208943 and m_n = 939.56542276 both unchanged, because trM_borromean uses the Lean closed form (4+h^2-3h^4-h^6)/(h^2+4) and never calls y_lambda_at.",
+        "not_decided_by": "experimental match \u2014 see numerical_impact, D is worse on aggregate"
+      }
     },
     {
       "id": "borromean-binding-single-pipeline",
@@ -242,11 +249,11 @@
     },
     {
       "file": "content/quantum-observable-universe/mass-theory/h3-markov-wenzl-weights-context.md",
-      "quote": "binding channel uses the full-Hecke Ocneanu",
+      "quote": "binding channel uses convention D",
       "about_channel": "binding",
       "layer": "production",
-      "names_convention": "C",
-      "note": "binding_canonical.py -> closed_form_tau_M is genuinely on C"
+      "names_convention": "D",
+      "note": "switched C -> D by owner ruling 2026-08-09 together with the mass definitional layer; binding_canonical.py -> closed_form_tau_M::markov_z now returns q^3/(q^2+1)"
     },
     {
       "file": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md",

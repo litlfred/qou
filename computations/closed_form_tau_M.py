@@ -131,9 +131,31 @@ PnConvention = Literal["chi_lambda_braid", "strict_averaged", "bring_color_weigh
 
 
 def markov_z(q: mp.mpf) -> mp.mpf:
-    """Markov parameter z(q) = 1 / (q^{1/2} + q^{-1/2})."""
+    """Markov parameter z(q) = q^3 / (q^2 + 1) — registry convention **D**.
+
+    OWNER RULING 2026-08-09: convention C excised. This returned C's
+    `1/(q^{1/2} + q^{-1/2}) = 0.4993203` until then; it now returns D's
+    `q^3/(q^2+1) = 0.6126880`.
+
+    The selection is FORCED, not stipulated. `lem:feynman-eigenbasis-
+    decomposition` puts the row cap `ell(lambda) <= 2` in the mass channel's own
+    decomposition (V = the fundamental of SU_q(2)), so `y_(1^3) = 0`; given that,
+    `QOU.BraidsAndKnots.MarkovTraceTLUniqueness.
+    markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free) makes the faithful
+    normalised Markov trace unique and equal to `q^3/(q^2+1)`. The competing root
+    `z = q` is degenerate (`y_(2,1) = 0`, not faithful on TL_3).
+
+    NOT decided by which value matches experiment. For the record it does NOT
+    flatter the binding table: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves
+    37.39% -> 43.85%. It does fix 2H (+74.85% -> +27.36%) and, structurally, the
+    deuteron stops being unreachable — under C, AME sits 30.4% below the whole
+    admissible band; under D it is inside it.
+
+    Registry: docs/coordination/trace-convention-registry.md.
+    Forcing: docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md.
+    """
     q = mp.mpf(q)
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    return q ** 3 / (q ** 2 + 1)
 
 
 def hecke_h(q: mp.mpf) -> mp.mpf:
