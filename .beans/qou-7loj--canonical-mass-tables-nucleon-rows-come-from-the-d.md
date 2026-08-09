@@ -195,3 +195,26 @@ needs re-reading against a canonical baseline; any downstream citation of the
   framing. Needs re-scoping first, not a re-run.
 - `lambda-scale-refinements-composed-predictions` — a λ_A refinements probe;
   studying the deprecated route is guardrail §3 permitted and correct here.
+
+## 2026-08-09 — correction: the spectral audit's result was NOT invalidated
+
+I over-claimed above and in PR #4839. Re-read of
+[`2026-05-28-spectral-phase-correction-derived.md`](../docs/audits/2026-05-28-spectral-phase-correction-derived.md)
+against a canonical baseline, with the arithmetic re-verified at 30 dps:
+
+- `966.050 × 0.971120 = 938.150` → **−818.8 ppm** vs m_avg CODATA 938.919.
+  The audit's −819 ppm and ~35× are exactly right and **independent of this
+  defect** — it derives a correction *to the Vol·ρ·λ_A form*, and never
+  claimed to correct the canonical route.
+- What actually changed is the result's **role**: canonical m_avg is already
+  +1.87 ppb, so composing the factor with it double-corrects (→ 911.802,
+  −2.888 %). The narrow true statement is *do not compose this factor with the
+  canonical absolute mass* — not "the closure claim is refuted".
+- "Every downstream citation is suspect" was also wrong: the sweep found
+  **one** consumer, `m_qclt_approx.py`, already handled in #4839.
+  `vol_density_borromean_spectral` has no callers; `e0_lambda_composite.py`
+  only names the function in prose.
+
+The `m_qclt_approx` assertion text is accurate as written (it is scoped to
+that channel); the over-reach was in the PR summary and in this bean, and the
+audit now carries a dated §"Re-read against a canonical baseline".
