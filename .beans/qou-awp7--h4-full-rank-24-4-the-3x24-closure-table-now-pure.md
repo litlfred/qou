@@ -104,3 +104,54 @@ Run `python3 computations/markov/gen_h4_word_operators.py --chunks 4 --out
 content/quantum-observable-universe/lean/QOU/Hecke`, verify each chunk builds
 inside a sane memory ceiling, then commit. Only then is `24 ≤ finrank` in the
 tree. The upper bound (the `3 × 24` closure table) remains as described above.
+
+## 2026-08-09 — CORRECTION: the closure table is not needed. The tree already has the Wedderburn iso.
+
+The plan above (and the survey in
+`docs/audits/2026-08-09-hecke-infrastructure-what-is-needed.md`) was written
+without reading `QOU/Machinery/HeckeH3*.lean` and `HeckeH4*.lean`. They contain
+far more than the survey said, and they make most of this bean obsolete.
+
+Already in the tree, sorry-free:
+
+| module | content |
+|---|---|
+| `HeckeH4StabilizationRung` | `mulσ₀/₁/₂_hecke`, `braid_σ₀σ₁`, `braid_σ₁σ₂`, **`far_commute_σ₀σ₂`** — the whole presentation on the *subscript* 24-word basis. Its own docstring: far commutation "non-vacuous for the FIRST time at n = 4" |
+| `HeckeH4AlgebraLaws` | `mulNF₄`, bilinearity, unit laws, and **`mulNF₄_assoc`** — via exactly the structured route (`mulσₖ (u·v) = u·(v·σₖ)`, lifted along the right basis), explicitly "no 24³ brute force". Plus `H4A R h` with `Ring` and `Algebra` |
+| `HeckeH4Wedderburn` | **`wedderburn₄ : H4A K (q - q⁻¹) ≃ₐ[K] K × K × M₂ × M₃ × M₃`**, an `AlgEquiv`, sorry-free |
+| `HeckeH3AlgebraInstance` / `HeckeH3Wedderburn` | the same one rung down: `H3A R h` with `Ring`, and `wedderburn₃ : H3A ≃ₐ K × K × M₂` |
+
+### What that does to this bean
+
+`1 + 1 + 4 + 9 + 9 = 24 = 4!` and `1 + 1 + 4 = 6 = 3!`. The rank follows from the
+`AlgEquiv` by `finrank` transport plus `finrank_prod` / `finrank_matrix` — **no
+closure table, no word operators, no independence argument.**
+`gen_h4_word_operators.py` and its three measurements stay useful as a record of
+what the coordinate route costs, but the route itself is not needed.
+
+### Revised task
+
+1. `HeckeAlgebra R 3 q (H3A K (q - q⁻¹))` and `HeckeAlgebra R 4 q (H4A K (q - q⁻¹))`
+   — the class instances, built from the presentation lemmas already proved on
+   those bases.
+2. `IsHeckeOfFullRank` for both, by transporting `finrank` along `wedderburn₃` /
+   `wedderburn₄`.
+3. Then `QOU/Hecke/InstanceH3.H3Alg` and `InstanceH4.H4Alg` are redundant carriers
+   and should be reduced to what is genuinely theirs, or dropped.
+
+### What was wrongly claimed, and where it was corrected
+
+- `InstanceH3` said its braid discharge was "the first non-vacuous braid relation
+  anywhere in the tree". False — `QOU.Mathlib.HeckeAlgebra.H3.braid_relation` and
+  `HeckeH3AlgebraLaws` both predate it. The defensible claim, now in the module,
+  is *first non-vacuous discharge of the `HeckeAlgebra` class's `braid` field*.
+- `InstanceH4` said the same about far-commutativity, and said the presentation
+  had never been checked in Lean. False on the subscript basis; true only of
+  `MarkovTraceH4`'s **ASCII** basis, which is a separate table that
+  `HeckeH4AlgebraLaws` deliberately does not import. Scoped accordingly.
+- `InstanceH4` presented the `mulNF` associativity route as dead. Only the naive
+  coordinate-expansion route is dead; the structured route works and was already
+  taken in `HeckeH4AlgebraLaws`. Corrected.
+- `FullRank` called `H2` "the first — and so far only — object in the tree that is
+  a Hecke algebra in the honest sense". `H3A` and `H4A` are honest Hecke algebras
+  with sorry-free Wedderburn isomorphisms; they simply had no class instance.

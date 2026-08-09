@@ -5,60 +5,74 @@ import QOU.Machinery.MarkovTraceH4
 # `QOU.Hecke.InstanceH4` — `n = 4`, where far-commutativity first has content
 
 `InstanceH2` gave `H₂(q)` (braid and far-commutativity both vacuous — one
-generator index). `InstanceH3` gave `H₃(q)`, the first non-vacuous **braid**
-relation. This file gives `n = 4`, the first non-vacuous **far-commutativity**:
-`Generator n` carries `idx : Fin (n - 1)`, and `Generator.farCommuting` needs two
-indices differing by `≥ 2`, so it is unsatisfiable until `n - 1 ≥ 3`.
+generator index). `InstanceH3` gave `n = 3`, where the class's `braid` field
+first has content. This file gives `n = 4`, where its `farCommute` field first
+does: `Generator n` carries `idx : Fin (n - 1)`, and `Generator.farCommuting`
+needs two indices differing by `≥ 2`, so it is unsatisfiable until `n - 1 ≥ 3`.
 
-`n = 4` is therefore the **last level that exercises anything new**. The three
-relation shapes are quadratic (n ≥ 2), braid (n ≥ 3), far-commutativity (n ≥ 4);
-`n ≥ 5` adds more indices and no new axiom shape.
+`n = 4` is therefore the **last level that exercises a new class field**. The
+three relation shapes are quadratic (n ≥ 2), braid (n ≥ 3), far-commutativity
+(n ≥ 4); `n ≥ 5` adds more indices and no new shape.
 
-## Construction: the operator algebra, not a structure-constant table
+## What is new here, and what was already in the tree
 
-`QOU.Machinery.MarkovTraceH4` already carries the three generator **right
-actions** `mulσ0`, `mulσ1`, `mulσ2` on the 24-element Gröbner normal-form basis
-of `H₄(q)` — generated and cross-validated by
-`computations/markov/hecke_regular_nf_table.py` — together with `mulNF`, the full
-product, and its bilinearity.
+**Already in the tree, and this file does not claim otherwise.**
+`QOU.Machinery.HeckeH4StabilizationRung` proves the whole Hecke presentation on
+the *subscript* 24-word basis — `mulσ₀_hecke`, `mulσ₁_hecke`, `mulσ₂_hecke`,
+`braid_σ₀σ₁`, `braid_σ₁σ₂`, and `far_commute_σ₀σ₂`, whose own docstring records
+that far commutation is "non-vacuous for the FIRST time at n = 4". Building on
+it, `QOU.Machinery.HeckeH4AlgebraLaws` proves `mulNF₄_assoc` and wraps the result
+as `H4A R h`, a genuine `Ring` and `Algebra`, and `QOU.Machinery.HeckeH4Wedderburn`
+carries the sorry-free `wedderburn₄ : H4A K (q - q⁻¹) ≃ₐ[K] K × K × M₂ × M₃ × M₃`.
 
-The obvious route (put a `Ring` on `Fin 24 → R` with `mulNF`, as `InstanceH3` does
-with `H3.mul`) runs straight into the depth-6 `whnf` wall that module's docstring
-warns about: `mulNF` composes up to six `mulσ`s, so associativity unfolds to
-depth twelve. Measured: `simp` exhausts 4 000 000 heartbeats after seven minutes
-without closing a single generator case.
+**New here** is only the bridge: nothing had ever instantiated the *class*
+`QOU.Hecke.HeckeAlgebra` at `n = 4`, so every `[HeckeAlgebra R n q A]` hypothesis
+in the corpus was still unwitnessed at a level where `farCommute` is satisfiable.
 
-So this file takes the **right regular representation** instead. Each `mulσk` is
-an `R`-linear endomorphism of `Fin 24 → R`; the algebra is the subalgebra of
-`Module.End R (Fin 24 → R)` they generate. Associativity is then function
-composition — free, and never unfolded. What has to be proved is exactly the
-Hecke presentation, at depth ≤ 3:
+## Construction: the operator algebra
 
-| lemma | depth | relation |
-|---|---|---|
-| `mulσ_sq0/1/2` | 2 | `σₖ² = 1 + h·σₖ` |
-| `mulσ_farcomm02` | 2 | `σ₀σ₂ = σ₂σ₀` — **the point of `n = 4`** |
-| `mulσ_braid01`, `mulσ_braid12` | 3 | `σᵢσⱼσᵢ = σⱼσᵢσⱼ` |
+`QOU.Machinery.MarkovTraceH4` carries a *different* 24-word table — the **ASCII**
+basis, which `HeckeH4AlgebraLaws` deliberately does not import (its `trM_cyclic`
+rests on a cited `sorry`, and staying off it keeps the Wedderburn chain sorry-free
+by construction). The two tables are separate data, so the presentation has to be
+checked on each; on the ASCII basis it had not been.
 
-All six discharge by `fin_cases` + `simp` + `ring` in about thirteen seconds
-total. They are also of independent interest: until now the claim that
-`mulσ0/1/2` satisfy the Hecke presentation rested on the Python generator's
-cross-validation, not on anything Lean had checked.
+The naive route — put a `Ring` on `Fin 24 → R` with `mulNF` and prove
+associativity by expanding coordinates — does not work: `mulNF` composes up to six
+`mulσ`s, so associativity unfolds to depth twelve, and `simp` exhausts 4 000 000
+heartbeats after seven minutes without closing one generator case. (The structured
+route does work, and `HeckeH4AlgebraLaws` already took it on the subscript basis:
+prove `mulσₖ (u·v) = u·(v·σₖ)` and lift along the right basis. This file did not
+need it.)
+
+Instead: the **right regular representation**. Each `mulσk` is an `R`-linear
+endomorphism of `Fin 24 → R`; the algebra is the subalgebra of
+`Module.End R (Fin 24 → R)` they generate, so associativity is function
+composition — free, and never unfolded. What remains is the presentation on the
+ASCII basis, at depth ≤ 3:
+
+| lemma | depth | relation | subscript-basis counterpart |
+|---|---|---|---|
+| `mulσ_sq0/1/2` | 2 | `σₖ² = 1 + h·σₖ` | `HeckeH4StabilizationRung.mulσₖ_hecke` |
+| `mulσ_farcomm02` | 2 | `σ₀σ₂ = σ₂σ₀` | `…far_commute_σ₀σ₂` |
+| `mulσ_braid01/12` | 3 | `σᵢσⱼσᵢ = σⱼσᵢσⱼ` | `…braid_σ₀σ₁`, `…braid_σ₁σ₂` |
+
+All six by `fin_cases` + `simp` + `ring` in about thirteen seconds.
 
 ## What is proved here, and what is not
 
-Proved: the `HeckeAlgebra R 4 q` instance, all four fields with the braid and
-far-commutativity cases carrying real content, plus `not_commutative` — which
-already rules out every commutative model, including
-`QOU.Hecke.InstanceH2.rankOneModel`.
+Proved: the `HeckeAlgebra R 4 q` instance, all four fields, with content in the
+braid and far-commutativity cases; and `not_commutative`, which rules out every
+commutative model including `QOU.Hecke.InstanceH2.rankOneModel`.
 
-**Not** proved: `IsHeckeOfFullRank R 4 _`, i.e. that this algebra is free of rank
-`24 = 4!`. Linear independence of the 24 word operators is cheap (they send the
-identity basis vector to the 24 distinct basis vectors); spanning needs the
-72-entry closure table `σₖ · b_j`, which is now pure symbolic rewriting against
-the six relations above rather than coordinate expansion. Tracked separately —
-see the bean. Until it lands, this instance is a genuine `HeckeAlgebra` whose
-dimension has not been pinned, and should be read as exactly that.
+**Not** proved: `IsHeckeOfFullRank R 4 _`, freeness of rank `24 = 4!`.
+
+Note the better route, now that the tree has been read properly: `wedderburn₄` is
+an `AlgEquiv` onto `K × K × M₂ × M₃ × M₃`, whose dimension is
+`1 + 1 + 4 + 9 + 9 = 24 = 4!` — so putting the class instance on `H4A` instead of
+on this operator algebra gets the rank for free, with no closure table at all.
+Bean qou-awp7. Until that lands, read `instHeckeAlgebraH4` as exactly what it is:
+a genuine `HeckeAlgebra` at `n = 4` whose dimension has not been pinned.
 -/
 
 namespace QOU.Hecke.InstanceH4
@@ -212,7 +226,7 @@ theorem generator_four_cases (i : Generator 4) : i = ⟨0⟩ ∨ i = ⟨1⟩ ∨
 
 /-- **`H₄(q)` is a Hecke algebra**, with all three relation shapes carrying
 content: the quadratic from `mulσ_sqk`, the braid from `mulσ_braid01/12`, and —
-for the first time anywhere in the tree — **far-commutativity** from
+for the first time as a class field — **far-commutativity** from
 `mulσ_farcomm02`. -/
 instance instHeckeAlgebraH4 : HeckeAlgebra R 4 q (H4Alg R q) where
   embed := embed4 R q
