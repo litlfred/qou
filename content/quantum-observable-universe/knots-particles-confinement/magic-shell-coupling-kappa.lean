@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 
 /-!
@@ -33,6 +34,20 @@ universe u
 noncomputable def qBracket (q : ℝ) (n : ℕ) : ℝ :=
   if n = 0 then 0
   else (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket** — and the `n = 0` guard is
+redundant, which is the fact worth recording.  `qIntBal q 0 = (1 − 1)/(q − q⁻¹)`
+is already `0`, so this site agrees with the canonical bracket *everywhere*,
+including on the degenerate locus `q − q⁻¹ = 0` where both sides are `0` by
+Lean's `x / 0 = 0`.  No hypothesis is needed. -/
+theorem qBracket_eq_canonical (q : ℝ) (n : ℕ) :
+    qBracket q n = QOU.QInteger.qIntBal q n := by
+  unfold qBracket
+  split_ifs with h
+  · subst h
+    simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 /-- The Hecke deformation parameter `h = q − q⁻¹`. -/
 noncomputable def hParam (q : ℝ) : ℝ := q - q⁻¹
@@ -143,7 +158,7 @@ theorem kappaClosed_neg {q m_e : ℝ}
   have hE0 : 0 < E0 q m_e := E0_pos hq hm
   have hh_pos : 0 < hParam q := hParam_pos hq
   have h_inv_h_gt_one : 1 < 1 / hParam q := by
-    rw [lt_div_iff hh_pos]
+    rw [lt_div_iff₀ hh_pos]
     linarith
   have h_log_pos : 0 < Real.log (1 / hParam q) :=
     Real.log_pos h_inv_h_gt_one
