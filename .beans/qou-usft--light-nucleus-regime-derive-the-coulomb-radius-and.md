@@ -90,3 +90,62 @@ class, and it is systematic rather than a one-off.
       binding -> radius -> E_C entirely inside the framework
 - [ ] then, and only then, quote a CDE -- with the shape fixed, not assumed
 - [ ] de-float64 coulomb_energy.py
+
+## RESULT 5 — should q-geometry be in EM too? YES, and it is NOT negligible
+
+Owner asked whether the q-deformation is just negligible at q0 = 1.110. It is
+not, and the reason is that the anomaly being chased is small:
+
+    h  = q - 1/q        = 0.2090603    (20.91 %)
+    h^2                 = 0.0437062    ( 4.371 %)
+    hbar_q = (q-1)/q    = 0.0990817    ( 9.908 %)
+    h^3                 = 0.0091372    ( 0.914 %)
+
+    Nolen-Schiffer anomaly           ~ 7 %
+    density-shape ambiguity (R3)     = 7.3 %
+
+An O(h^2) q-geometry correction is 4.4 % and an O(h) one is 20.9 %. BOTH are
+comparable to or larger than the 7 % being explained. So q-geometry corrections
+cannot be dropped as small -- they are the same order as the signal. q0 looks
+close to 1, but h is 21 %, and that is the number that matters.
+
+## RESULT 6 — corpus consistency on geometry: the EM sector is the outlier
+
+Swept. 710 files under computations/ carry q-deformed or hyperbolic geometry
+(q_int, quantum dimensions, hyperbolic volumes). The ENTIRE nuclear EM-sector
+geometry is two lines of classical Euclidean:
+
+    coulomb_energy.py:76   return R0_FM * A ** (1.0 / 3.0)
+    coulomb_energy.py:86   return 0.6 * Z*(Z-1) * ALPHA_HBAR_C_MEV_FM / nuclear_radius_fm(A)
+
+Four separate classical imports in those two lines:
+  1. r0 = 1.2 fm            empirical saturation constant (fails at A<=4, R1)
+  2. A^(1/3)                classical saturated-sphere scaling, Euclidean
+  3. 3/5                    uniform-BALL shape factor (the 7.3 % ambiguity, R3)
+  4. ALPHA_HBAR_C = 1.43996 CODATA alpha_EM -- NOT the framework's derived one
+plus float64 throughout, against the standing no-float64 directive.
+
+Point 4 is the sharpest: `ALPHA_EM_INV_DERIVED` / `_alpha_em_inv_derived`
+EXISTS and is used in the meson EM sector
+(meson_em_sinh_closed_form.py:42,162,192), so the framework already derives
+alpha_EM from q and already uses it elsewhere. The nuclear EM sector simply does
+not call it. That is not a derivation gap, it is an unwired one.
+
+So the consistency answer is: the framework is q-deformed in the strong sector
+and in the meson EM sector, and CLASSICAL in the nuclear EM sector. The
+Nolen-Schiffer work sits exactly on that seam, which is why it keeps producing
+cancellations rather than signal.
+
+## REVISED NEXT (ordered by cheapness x leverage)
+
+- [ ] 1. Wire the DERIVED alpha_EM into coulomb_energy.py. Pure wiring, the
+         object already exists and is already used in the meson sector. Also
+         de-float64 while touching it.
+- [ ] 2. Replace r0*A^(1/3) with the binding length for A<=4 (R1: -31.8 % ->
+         -6.3 %). Uses framework-predicted binding energies.
+- [ ] 3. Compute the q-Gaussian shape factor f and place it against
+         0.4547 / 0.4648 / 0.4886. CAUTION: Tsallis q and quantum-group q are
+         DIFFERENT parameters -- do not feed q0 = 1.10998 into a Tsallis
+         q-Gaussian, that is a category error.
+- [ ] 4. Only then quote a CDE, with shape derived rather than assumed, and
+         check it is not another cancellation before claiming anything.
