@@ -757,4 +757,71 @@ theorem nu_pi_part_eq_zero_iff {y : ℂ} {p q : ℂ} (hlog : Complex.log y ≠ 0
   · intro h
     linear_combination (Complex.log y / 3) * h
 
+/-! ### §7h — the five-term (pentagon) identity: its derivative vanishes
+
+The analytic input this whole lane is missing is the five-term identity for a
+complex `Li₂`. Its standard proof is two steps: differentiate in one variable
+and show the derivative vanishes identically, then pin the constant. **Step one
+is algebra**, and it is proved here.
+
+Writing `L(z) = Li₂(z) + ½·log z·log(1−z)` for the Rogers dilogarithm,
+`L′(z) = −½·( log(1−z)/z + log z/(1−z) )`. Differentiating the pentagon sum in
+`x` and expanding every `log` of a composite argument into the five basic ones —
+
+    log a₃ = log(1−x) − log(1−xy),      log(1−a₃) = log x + log(1−y) − log(1−xy)
+    log a₄ = log(1−xy),                 log(1−a₄) = log x + log y
+    log a₅ = log(1−y) − log(1−xy),      log(1−a₅) = log y + log(1−x) − log(1−xy)
+
+— the coefficient of each of `log x`, `log(1−x)`, `log y`, `log(1−y)`,
+`log(1−xy)` vanishes separately as a rational function. That is the content
+below, with the five logs left as free variables so no branch choice is made.
+
+⚠ **This is not the five-term identity.** Two things are still owed: the
+`HasDerivAt` statements assembling `L′` from `hasDerivAt_cLiTwoExt'` through the
+chain rule, and — the genuinely delicate part — the branch conditions under
+which the three `log` expansions above actually hold. Those expansions are
+exactly where flattening enters, so the branch bookkeeping of Routes 45–46 and
+Neumann's `ker ν` are the same difficulty showing up again. Nothing here
+discharges them.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+
+/-- `L′(z) = −½·( log(1−z)/z + log z/(1−z) )`, with the two logarithms passed in
+as free variables so the lemma makes no branch choice. -/
+noncomputable def rogersDeriv (a la l1a : ℂ) : ℂ := -(1 / 2) * (l1a / a + la / (1 - a))
+
+/-- **The pentagon's `x`-derivative vanishes identically.**
+
+The five terms are `L(x)`, `L(y)`, `L((1−x)/(1−xy))`, `L(1−xy)`,
+`L((1−y)/(1−xy))`, whose `x`-derivatives carry the chain-rule factors
+`1`, `0`, `(y−1)/(1−xy)²`, `−y`, `(1−y)·y/(1−xy)²`. With each composite
+logarithm expanded into the five basic ones, the sum is zero — for **all**
+values of the five log variables, so the identity is independent of every
+branch choice. Only the five non-vanishing conditions are needed. -/
+theorem pentagon_deriv_x_eq_zero (x y lx l1x ly l1y lxy : ℂ)
+    (hx : x ≠ 0) (hx1 : (1 : ℂ) - x ≠ 0) (hy : y ≠ 0) (hy1 : (1 : ℂ) - y ≠ 0)
+    (hxy : (1 : ℂ) - x * y ≠ 0) :
+    rogersDeriv x lx l1x * 1
+      + rogersDeriv y ly l1y * 0
+      + rogersDeriv ((1 - x) / (1 - x * y)) (l1x - lxy) (lx + l1y - lxy)
+          * ((y - 1) / (1 - x * y) ^ 2)
+      + rogersDeriv (1 - x * y) lxy (lx + ly) * (-y)
+      + rogersDeriv ((1 - y) / (1 - x * y)) (l1y - lxy) (ly + l1x - lxy)
+          * ((1 - y) * y / (1 - x * y) ^ 2)
+      = 0 := by
+  unfold rogersDeriv
+  -- `field_simp` normalises `x * y` to `y * x`, so it needs the non-vanishing
+  -- hypothesis in that orientation too.
+  have hyx : (1 : ℂ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have h3 : (1 : ℂ) - (1 - x) / (1 - x * y) = x * (1 - y) / (1 - x * y) := by
+    field_simp; ring
+  have h5 : (1 : ℂ) - (1 - y) / (1 - x * y) = y * (1 - x) / (1 - x * y) := by
+    field_simp; ring
+  rw [h3, h5]
+  have hxy1 : x * (1 - y) ≠ 0 := mul_ne_zero hx hy1
+  have hyx1 : y * (1 - x) ≠ 0 := mul_ne_zero hy hx1
+  have hxyne : x * y ≠ 0 := mul_ne_zero hx hy
+  field_simp
+  ring
+
 end QOU.QBeta.FiveTwo
