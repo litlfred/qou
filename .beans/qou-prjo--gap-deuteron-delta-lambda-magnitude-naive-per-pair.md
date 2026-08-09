@@ -368,3 +368,68 @@ computations/probes/nastokes_germ_root_vector_gauge_probe.py (+witness, 7/7 asse
 (still killed by the scalar trace, so needs a non-trace functional, itself an open licence
 question); (2) g₂'s origin, now unexplained; (3) the super-pairwise extensive term, the
 actual magnitude gate, untouched.
+
+---
+## Multi-generator (A >= 3) transverse pairing — PR #4849 (2026-08-09)
+
+**Bean STAYS OPEN.** Runs the case #4848 explicitly left open. Supplies one input
+to the >= 3-body term; closes no magnitude.
+
+**1. The canonical A >= 3 words ALREADY EXIST** — `mass_at_3A_proper.atom_braid_word_3A(Z,N)`.
+#4818's "the corpus lacks the canonical multi-nucleon Seifert braid word" is
+superseded. D 6 strands/23 letters/gens 0-4; T,3He 9/35/0-7; 4He 12/47/0-10.
+
+**2. SCOPING: every atom word is MULTI-generator, including the deuteron.** #4848's
+scope-(b) is stated (correctly) for single-generator channels and covers the reduced
+pn-CHANNEL word sigma_1^3 / trefoil. The 6-strand deuteron ATOM word that the
+mass/binding compute consumes is a different corpus object and is NOT covered. Do not
+transfer "the deuteron channel is order-2 sterile" from one to the other.
+
+**3. VERDICT: SUPER-PAIRWISE (scope-(a)+).** With #4848's pinned conventions
+(Yekutieli ordered partial products; Seifert bands<->crossings; log q-derivative germ)
+in the corpus seminormal rep of H_12(q) (all A=2,3,4 words in ONE algebra):
+Omega != 0; Moebius cluster residuals ||R3|| in [8.3, 2.0e4] and ||R4|| in [83, 2.3e4]
+over 81/30 coupled readings. He4 cluster budget (band-local): 1-body 20.7%,
+2-body 82.0%, **3-body 49.2%**, 4-body 0.0% of ||Omega||. So it clears #4818's
+pairwise cap -- a NECESSARY property of the missing term.
+
+**4. But the LEAN says that content is TRANSPORT, not curvature.**
+`QOU/MassTheory/TransversePairingClusterDecomposition.lean` (sorry-free, generic Ring,
+#print axioms <= [propext, Quot.sound] on all 11 decls): listPairing is BILINEAR, so
+`listPairing_append` decomposes it exactly into 1-block + 2-block terms and
+`moebius3_eq_zero` / `moebius4_eq_zero` vanish IDENTICALLY at fixed curvature lists.
+=> the entire measured super-pairwise content is context-dependence of the Yekutieli
+transport. Nothing three-body about the curvature.
+
+**5. NEGATIVE (scope-(a)-): the value is NOT determined.**
+- germ observer pair: 16.4x spread (0.342 band-local / 0.960 (0,1) / 2.265 (3,4));
+  def:germ-commutator-q-curvature says "two independent observations", not WHICH two
+  for n > 3. Derived prune: only ADJACENT pairs give F != 0 (|i-j|>=2 gives exactly 0)
+  -- narrows to n-2 candidates, does not choose.
+- **nucleon ORDERING: 1.13x** (T pnn/npn/nnp 0.960/1.007/1.087; He4 six orderings
+  0.528-0.596). A many-body binding term is a function of the NUCLEUS; the corpus's
+  own scalar observable is ordering-invariant (tr_M(beta)=tr_M(rep) exactly). This one
+  is a function of the braid word. **This is the sharp negative.**
+- lambda: only 1.03-1.10x across 5 partitions of 12 (dim 11-165, 2-6 rows) -- the one
+  axis where it IS robust.
+
+**6. Two facts worth carrying forward.**
+- The germ is **q-DEPENDENT for A >= 3**. delta q is q-free only where every axial
+  distance is +-1 (the 2-dim case #4848 worked in); at |rho|=2 it is manifestly
+  q-dependent. He4 R3/||Om|| = 0.528 at q0 vs 0.185 at q=1.25.
+- **The germ transforms like a CONNECTION, not a tensor**, under a q-DEPENDENT basis
+  change: dq -> B dq B^-1 + (1 - Ad sigma)(q (d_q B) B^-1). The seminormal basis is
+  q-dependent; the reduced-Burau basis of #4798/#4848 is a different gauge. #4848's
+  conclusion is unaffected (0 in every gauge) but any NONZERO value inherits this.
+
+**Revival needs two PRINCIPLES, not another sweep:** (i) which two germ observers
+(+ the representation gauge); (ii) a nucleon-symmetric readout. Until both exist a
+number off this object is a gauge choice.
+
+free_parameters = 0; no AME input anywhere (not even a post-hoc comparison -- there is
+no determined value to compare); q0 = experimental proton anchor; nothing wired.
+
+Files: docs/audits/2026-08-09-nastokes-multigenerator-cluster-additivity.md;
+QOU/MassTheory/TransversePairingClusterDecomposition.lean;
+computations/probes/nastokes_multigen_cluster_additivity_probe.py (+witness, 16
+assertions all passing, 40 s wall).
