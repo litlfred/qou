@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.FluidDynamics.q_turbulence_spectrum
@@ -72,6 +73,13 @@ variable [ctx : QTurbulenceSpectrumContext]
     (the `.md`'s convention; `[k]_q → k` as `q → 1`). -/
 noncomputable def qInt (k : ℕ) : ℝ :=
   (ctx.q ^ k - ctx.q⁻¹ ^ k) / (ctx.q - ctx.q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.**  The body is already the
+canonical one — the equation holds by `rfl` — so what the local `def` adds is
+only the binding of `q` to the context.  It is kept for that reason; the
+identity records that no second convention is in play here. -/
+theorem qInt_eq_canonical (k : ℕ) :
+    qInt (ctx := ctx) k = QOU.QInteger.qIntBal ctx.q k := rfl
 
 /-- Claim (i) as a **definition**: the q-deformed Kolmogorov spectrum
     `E_q(k) = C_q · ε^{2/3} · [k]_q^{−5/3} / ([k]_q / k)`. -/

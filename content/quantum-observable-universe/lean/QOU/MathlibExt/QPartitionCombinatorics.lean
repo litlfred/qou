@@ -2,6 +2,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.MathlibExt.QPartitionCombinatorics
@@ -50,6 +51,19 @@ variable {R : Type*} [Field R]
 noncomputable def qBracket (q : R) (n : ℕ) : R :=
   if n = 0 then 0
   else (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.**  The `n = 0` guard is
+redundant — `qIntBal q 0 = (1 − 1)/(q − q⁻¹) = 0` already — so the agreement is
+unconditional, on the degenerate locus too.  The `def` is kept because
+`qFactorial` and the `1 < q` positivity lemmas below unfold it. -/
+theorem qBracket_eq_canonical (q : R) (n : ℕ) :
+    qBracket q n = QOU.QInteger.qIntBal q n := by
+  unfold qBracket
+  split_ifs with h
+  · subst h
+    simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 @[simp]
 theorem qBracket_zero (q : R) : qBracket q 0 = 0 := by
