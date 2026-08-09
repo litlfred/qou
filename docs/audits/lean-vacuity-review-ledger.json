@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-09T22:36:07.600Z",
+  "updated_at": "2026-08-09T22:30:00Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -76,7 +76,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "disposition": "restate-or-demote",
-      "evidence": "Doubly vacuous: a self-assuming projection (`ctx.holds`) whose conclusion is also a tautology `(1 : ℝ) = 1`. Even if the context class were inhabited, the theorem would assert nothing — `1 = 1` is provable by `rfl` without the class. The docstring claims a `numerical scale of the uniform bound`, so the intended content is a bound on Δ_max. Fix: state the bound with its actual numeral and either prove it or carry it as a `conjecture` with `-- Ref:`."
+      "evidence": "Doubly vacuous: a self-assuming projection (`ctx.holds`) whose conclusion is also a tautology `(1 : \u211d) = 1`. Even if the context class were inhabited, the theorem would assert nothing \u2014 `1 = 1` is provable by `rfl` without the class. The docstring claims a `numerical scale of the uniform bound`, so the intended content is a bound on \u0394_max. Fix: state the bound with its actual numeral and either prove it or carry it as a `conjecture` with `-- Ref:`."
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean::plancherel_via_recipe::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -87,7 +87,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "disposition": "restate-or-demote",
-      "evidence": "Doubly vacuous, same shape as `delta_max_numerical_scale`: `[ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 := ctx.holds`. The class is projected but the conclusion is a tautology, so the declaration is content-free with or without an instance. Fix: state the Plancherel identity the recipe is supposed to produce (a sum over partitions equalling 1 is the plausible intent — that is a real claim) and prove or demote it."
+      "evidence": "Doubly vacuous, same shape as `delta_max_numerical_scale`: `[ctx : PlancherelViaRecipeContext] : (1 : \u211d) = 1 := ctx.holds`. The class is projected but the conclusion is a tautology, so the declaration is content-free with or without an instance. Fix: state the Plancherel identity the recipe is supposed to produce (a sum over partitions equalling 1 is the plausible intent \u2014 that is a real claim) and prove or demote it."
     },
     "content/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean::markov_gns_embedding::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -98,7 +98,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HasMarkovGnsEmbedding` carries field `repr` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `repr` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `HasMarkovGnsEmbedding` carries field `repr` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `repr` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean::knot_eigenbasis_density::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -118,7 +118,7 @@
       "verdict": "genuine",
       "file_sha": "d3f87cee121c",
       "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. The name asserts a count of colour sectors; the Lean proves `(3 : ℕ) = 3 := rfl`, which holds regardless of how many colour sectors exist. No definition of the sector set appears in the statement, so nothing connects the claim to the corpus. Fix: state `Fintype.card <sector type> = 3` (or the cardinality of whatever set Chapter 6 §Braid structure names) and discharge it; a `decide`/`rfl` on the real carrier is fine. Banned by Strict Lean Discipline §5 (`X = X := rfl`).",
+      "evidence": "Tautology ascribed to a literal. The name asserts a count of colour sectors; the Lean proves `(3 : \u2115) = 3 := rfl`, which holds regardless of how many colour sectors exist. No definition of the sector set appears in the statement, so nothing connects the claim to the corpus. Fix: state `Fintype.card <sector type> = 3` (or the cardinality of whatever set Chapter 6 \u00a7Braid structure names) and discharge it; a `decide`/`rfl` on the real carrier is fine. Banned by Strict Lean Discipline \u00a75 (`X = X := rfl`).",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -219,7 +219,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `CoreLeviContext` carries field `cond` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cond` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `CoreLeviContext` carries field `cond` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cond` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::core_levi_cond_aspect_bound::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -230,7 +230,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `CoreLeviContext` carries field `cond_aspect_bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cond_aspect_bound` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `CoreLeviContext` carries field `cond_aspect_bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cond_aspect_bound` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean::core_levi_cond_bound::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -241,7 +241,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `CoreLeviContext` carries field `cond` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cond` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `CoreLeviContext` carries field `cond` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cond` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.lean::helicity_cwf_relation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -252,7 +252,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HelicityContext` carries field `Wr` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `Wr` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `HelicityContext` carries field `Wr` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `Wr` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/knots-particles-confinement/c-equals-bar-iff-all-1dim.lean::exactly_two_one_dim_irreps::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -261,7 +261,7 @@
       "verdict": "genuine",
       "file_sha": "c05762810c54",
       "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. The name asserts that H₂ has exactly two 1-dimensional irreps; the Lean proves `(2 : ℕ) = 2 := rfl`. The surrounding docstring works out the genuine C = bar computation on the two eigenvalues {q, −q⁻¹}, which is real content the statement never reaches. Fix: state the cardinality of the 1-dim irrep set (or the two-eigenvalue characterisation the docstring derives) and prove it.",
+      "evidence": "Tautology ascribed to a literal. The name asserts that H\u2082 has exactly two 1-dimensional irreps; the Lean proves `(2 : \u2115) = 2 := rfl`. The surrounding docstring works out the genuine C = bar computation on the two eigenvalues {q, \u2212q\u207b\u00b9}, which is real content the statement never reaches. Fix: state the cardinality of the 1-dim irrep set (or the two-eigenvalue characterisation the docstring derives) and prove it.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -269,36 +269,56 @@
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 38,
-      "verdict": "needs-agent",
-      "file_sha": "03c233b3decc"
+      "verdict": "genuine",
+      "file_sha": "03c233b3decc",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom X : Type` carrier stub. Not a false mathematical assertion \u2014 positing a type asserts almost nothing \u2014 but it is an unjustified `axiom` in an audit whose whole point is that `axiom` means 'assumed'. The docstring names its provenance in prose ('full definition in `hecke-normal-form.lean`'), so the fix is mechanical: add a `-- Ref:` pointing at the real definition, or declare it `opaque`/`variable` instead of `axiom`. Grouped with the other carrier stubs in the same conditional file.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::HeckeNormalForm::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 42,
-      "verdict": "needs-agent",
-      "file_sha": "03c233b3decc"
+      "verdict": "genuine",
+      "file_sha": "03c233b3decc",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom X : Type` carrier stub; two occurrences (confinement-grading-correspondence-conditional.lean and bar-involution-invariance.lean), same shape and same fix. The docstring cites the defining file in prose but carries no `-- Ref:`. Add the citation or switch to `opaque`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::KLRModule::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 46,
-      "verdict": "needs-agent",
-      "file_sha": "03c233b3decc"
+      "verdict": "genuine",
+      "file_sha": "03c233b3decc",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom X : Type` carrier stub for the Brundan\u2013Kleshchev KLR module. This one has a real literature home (Brundan\u2013Kleshchev), so a `-- Ref:` is available and should be added rather than left implicit in the docstring.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::KLRTopDegree::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 49,
-      "verdict": "needs-agent",
-      "file_sha": "03c233b3decc"
+      "verdict": "genuine",
+      "file_sha": "03c233b3decc",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom KLRTopDegree {n} (M : KLRModule n) : \u2115` \u2014 a function stub, not a proposition. Asserts the existence of a top-degree function without defining it. Fix: define it from the KLR grading, or cite the source that does.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::confinementLevel::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 52,
-      "verdict": "needs-agent",
-      "file_sha": "03c233b3decc"
+      "verdict": "genuine",
+      "file_sha": "03c233b3decc",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom confinementLevel {n q} (T : HeckeNormalForm n q) : \u2115` \u2014 function stub. The docstring points at `def:confinement-level`, which is the citation that should be in a `-- Ref:` line.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/delta-skein-substrate-identity.lean::delta_skein_eq_mass_splitting::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -323,7 +343,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HasMagicShellCouplingKappaClosedForm` carries field `kappa_empirical` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `kappa_empirical` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `HasMagicShellCouplingKappaClosedForm` carries field `kappa_empirical` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `kappa_empirical` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean::delta_max_numerical_scale::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -332,7 +352,7 @@
       "verdict": "genuine",
       "file_sha": "e04fbfcd5d7d",
       "disposition": "restate-or-demote",
-      "evidence": "Doubly vacuous: a self-assuming projection (`ctx.holds`) whose conclusion is also a tautology `(1 : ℝ) = 1`. Even if the context class were inhabited, the theorem would assert nothing — `1 = 1` is provable by `rfl` without the class. The docstring claims a `numerical scale of the uniform bound`, so the intended content is a bound on Δ_max. Fix: state the bound with its actual numeral and either prove it or carry it as a `conjecture` with `-- Ref:`.",
+      "evidence": "Doubly vacuous: a self-assuming projection (`ctx.holds`) whose conclusion is also a tautology `(1 : \u211d) = 1`. Even if the context class were inhabited, the theorem would assert nothing \u2014 `1 = 1` is provable by `rfl` without the class. The docstring claims a `numerical scale of the uniform bound`, so the intended content is a bound on \u0394_max. Fix: state the bound with its actual numeral and either prove it or carry it as a `conjecture` with `-- Ref:`.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -349,7 +369,7 @@
       "line": 352,
       "verdict": "genuine",
       "file_sha": "412f76c5e701",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `BranchingConverges` is inhabited, nothing that inhabits it supplies content. Instances read by hand: inhabited only by a Fact-wrapper (`⟨hf.out⟩`, relabels the assumption) and `branchingConverges_refl` (the diagonal f_k = f_inf, where the bound is 0 ≤ … and closes by positivity); the theorem quantifies over arbitrary f_k, f_inf. (Automated shape test saw: branchingConverges_of_fact(fact-wrapper), branchingConverges_refl(degenerate-slice).)",
+      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `BranchingConverges` is inhabited, nothing that inhabits it supplies content. Instances read by hand: inhabited only by a Fact-wrapper (`\u27e8hf.out\u27e9`, relabels the assumption) and `branchingConverges_refl` (the diagonal f_k = f_inf, where the bound is 0 \u2264 \u2026 and closes by positivity); the theorem quantifies over arbitrary f_k, f_inf. (Automated shape test saw: branchingConverges_of_fact(fact-wrapper), branchingConverges_refl(degenerate-slice).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote"
@@ -363,7 +383,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `TowerNoncollapseImpliesIndependence` carries field `independence` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `independence` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `TowerNoncollapseImpliesIndependence` carries field `independence` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `independence` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::term7_structural::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -393,7 +413,7 @@
       "line": 113,
       "verdict": "genuine",
       "file_sha": "f8a11f21fc0a",
-      "evidence": "Self-assuming projection: `.invariance` has the conclusion's type and is returned verbatim, and though `SkeinMultisetInvariant` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `skeinMultisetInvariant_refl config config … := ⟨rfl⟩` — the diagonal; the theorem takes two arbitrary configs, and is itself named `…_axiom`. (Automated shape test saw: skeinMultisetInvariant_refl(degenerate-slice).)",
+      "evidence": "Self-assuming projection: `.invariance` has the conclusion's type and is returned verbatim, and though `SkeinMultisetInvariant` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `skeinMultisetInvariant_refl config config \u2026 := \u27e8rfl\u27e9` \u2014 the diagonal; the theorem takes two arbitrary configs, and is itself named `\u2026_axiom`. (Automated shape test saw: skeinMultisetInvariant_refl(degenerate-slice).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote"
@@ -404,7 +424,7 @@
       "line": 406,
       "verdict": "legit",
       "file_sha": "726fbbf3a076",
-      "evidence": "Accessor idiom, not a defect. Instances read by hand: four instances discharge m = 1,2,3,4 from qInt_ratio_bound_m1..m4 with real analytic work; the class binds `_hm4 : m ≤ 4`, so they EXHAUST its domain. (Automated shape test saw: qIntRatioBoundSmall_one(substantive), qIntRatioBoundSmall_two(substantive), qIntRatioBoundSmall_three(substantive), qIntRatioBoundSmall_four(substantive).)",
+      "evidence": "Accessor idiom, not a defect. Instances read by hand: four instances discharge m = 1,2,3,4 from qInt_ratio_bound_m1..m4 with real analytic work; the class binds `_hm4 : m \u2264 4`, so they EXHAUST its domain. (Automated shape test saw: qIntRatioBoundSmall_one(substantive), qIntRatioBoundSmall_two(substantive), qIntRatioBoundSmall_three(substantive), qIntRatioBoundSmall_four(substantive).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "no-fix"
@@ -415,7 +435,7 @@
       "line": 599,
       "verdict": "legit",
       "file_sha": "726fbbf3a076",
-      "evidence": "Accessor idiom, not a defect. Instances read by hand: same shape as QIntRatioBoundSmall — four proved instances exhausting the bounded parameter domain. (Automated shape test saw: qFactRatioBound_zero(substantive), qFactRatioBound_one(substantive), qFactRatioBound_two(substantive), qFactRatioBound_three(substantive).)",
+      "evidence": "Accessor idiom, not a defect. Instances read by hand: same shape as QIntRatioBoundSmall \u2014 four proved instances exhausting the bounded parameter domain. (Automated shape test saw: qFactRatioBound_zero(substantive), qFactRatioBound_one(substantive), qFactRatioBound_two(substantive), qFactRatioBound_three(substantive).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "no-fix"
@@ -444,7 +464,7 @@
       "line": 1037,
       "verdict": "needs-agent",
       "file_sha": "1bd42f7c7b3c",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceBound` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `convergenceBound_refl … f f` — the diagonal, closed by simp/positivity. (Automated shape test saw: convergenceBound_refl(degenerate-slice).)",
+      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceBound` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `convergenceBound_refl \u2026 f f` \u2014 the diagonal, closed by simp/positivity. (Automated shape test saw: convergenceBound_refl(degenerate-slice).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote",
@@ -456,7 +476,7 @@
       "line": 1092,
       "verdict": "needs-agent",
       "file_sha": "1bd42f7c7b3c",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `KnotInvariantConvergence` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus `…_refl` diagonal; no instance supplies the general bound. (Automated shape test saw: knotInvariantConvergence_of_fact(fact-wrapper), knotInvariantConvergence_refl(degenerate-slice).)",
+      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `KnotInvariantConvergence` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus `\u2026_refl` diagonal; no instance supplies the general bound. (Automated shape test saw: knotInvariantConvergence_of_fact(fact-wrapper), knotInvariantConvergence_refl(degenerate-slice).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote",
@@ -471,7 +491,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `MatrixChainEqBuildChains` carries field `eq` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `eq` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `MatrixChainEqBuildChains` carries field `eq` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `eq` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean::skein_from_markov_traces::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -489,7 +509,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `KnotOperatorSelectionContext` carries field `tr_Phi` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `tr_Phi` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `KnotOperatorSelectionContext` carries field `tr_Phi` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `tr_Phi` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/spectrahedral_phase_collapse.lean::nucleon_sdp_rank_drop::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -543,7 +563,7 @@
       "line": 95,
       "verdict": "genuine",
       "file_sha": "9d0ac9333141",
-      "evidence": "Self-assuming projection: `.multi` has the conclusion's type and is returned verbatim, and though `NobleGasMultiOperator` is inhabited, nothing that inhabits it supplies content. Instances read by hand: sole instance is a Fact-wrapper `⟨hf.out⟩` from `[hf : Fact (bindingMultiplicity S q ≥ 2)]` — it relabels the assumption and supplies nothing. (Automated shape test saw: nobleGasMultiOperator_of_fact(fact-wrapper).)",
+      "evidence": "Self-assuming projection: `.multi` has the conclusion's type and is returned verbatim, and though `NobleGasMultiOperator` is inhabited, nothing that inhabits it supplies content. Instances read by hand: sole instance is a Fact-wrapper `\u27e8hf.out\u27e9` from `[hf : Fact (bindingMultiplicity S q \u2265 2)]` \u2014 it relabels the assumption and supplies nothing. (Automated shape test saw: nobleGasMultiOperator_of_fact(fact-wrapper).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote"
@@ -568,7 +588,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `GradedTraceResidueSplit` carries field `total` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `total` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `GradedTraceResidueSplit` carries field `total` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `total` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean::hecke_baer_star_generic::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -579,7 +599,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HeckeBaerStarGenericContext` carries field `RightAnnihilator` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `RightAnnihilator` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `HeckeBaerStarGenericContext` carries field `RightAnnihilator` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `RightAnnihilator` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean::theorem_3_via_class::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -615,7 +635,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `PhiQTowerAlgebraicStratification` carries field `mass` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `mass` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `PhiQTowerAlgebraicStratification` carries field `mass` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `mass` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean::rogers_correction_leading_h_order::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -642,7 +662,7 @@
       "verdict": "genuine",
       "file_sha": "582b1a26e769",
       "disposition": "restate-or-demote",
-      "evidence": "Doubly vacuous, same shape as `delta_max_numerical_scale`: `[ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 := ctx.holds`. The class is projected but the conclusion is a tautology, so the declaration is content-free with or without an instance. Fix: state the Plancherel identity the recipe is supposed to produce (a sum over partitions equalling 1 is the plausible intent — that is a real claim) and prove or demote it.",
+      "evidence": "Doubly vacuous, same shape as `delta_max_numerical_scale`: `[ctx : PlancherelViaRecipeContext] : (1 : \u211d) = 1 := ctx.holds`. The class is projected but the conclusion is a tautology, so the declaration is content-free with or without an instance. Fix: state the Plancherel identity the recipe is supposed to produce (a sum over partitions equalling 1 is the plausible intent \u2014 that is a real claim) and prove or demote it.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -655,7 +675,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `A4BettiTraceFactorization` carries field `target_binding_gap` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `target_binding_gap` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `A4BettiTraceFactorization` carries field `target_binding_gap` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `target_binding_gap` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean::ReebBundleComplementEqualsVolume::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -678,7 +698,7 @@
       "verdict": "genuine",
       "file_sha": "a8cafd85a8ec",
       "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. The statement's own comment block spells out the intended claim — the degree-0 dimension of Ω¹(A) is 0 because the symmetric channel sees σ_i → q and the restricted multiplication kernel is trivial — and then concludes `(0 : ℕ) = 0 := rfl`. The reasoning is in a comment; the Lean carries none of it. Fix: state the dimension of the degree-0 part of Ω¹(A) and prove it, or demote to a documented conjecture.",
+      "evidence": "Tautology ascribed to a literal. The statement's own comment block spells out the intended claim \u2014 the degree-0 dimension of \u03a9\u00b9(A) is 0 because the symmetric channel sees \u03c3_i \u2192 q and the restricted multiplication kernel is trivial \u2014 and then concludes `(0 : \u2115) = 0 := rfl`. The reasoning is in a comment; the Lean carries none of it. Fix: state the dimension of the degree-0 part of \u03a9\u00b9(A) and prove it, or demote to a documented conjecture.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -686,15 +706,23 @@
       "category": "proof-no-trivial-true",
       "pattern": "axiom-true",
       "line": 68,
-      "verdict": "needs-agent",
-      "file_sha": "72c72df7840c"
+      "verdict": "genuine",
+      "file_sha": "72c72df7840c",
+      "disposition": "restate-or-drop",
+      "evidence": "The worst shape in this group: an `axiom` whose conclusion is literally `True`. It therefore assumes nothing and proves nothing, while its name and comments assert a real fact (`Sym\u00b2(V)` irreducible of dim 6 for the SU(3) fundamental; equivalently V is complex type, V \u2247 V*). Anything downstream that cites it as support is citing a tautology. Fix: state the actual proposition \u2014 the comment already says it is standard, so a `-- Ref:` plus an honest `sorry`, or a `conjecture` demotion, are both acceptable; `axiom \u2026 : True` is not.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::su3_sym2_irreducible::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 68,
-      "verdict": "needs-agent",
-      "file_sha": "72c72df7840c"
+      "verdict": "genuine",
+      "file_sha": "72c72df7840c",
+      "disposition": "restate-or-drop",
+      "evidence": "The worst shape in this group: an `axiom` whose conclusion is literally `True`. It therefore assumes nothing and proves nothing, while its name and comments assert a real fact (`Sym\u00b2(V)` irreducible of dim 6 for the SU(3) fundamental; equivalently V is complex type, V \u2247 V*). Anything downstream that cites it as support is citing a tautology. Fix: state the actual proposition \u2014 the comment already says it is standard, so a `-- Ref:` plus an honest `sorry`, or a `conjecture` demotion, are both acceptable; `axiom \u2026 : True` is not.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean::amplitude_finite_sum::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -716,7 +744,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `split` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `split` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean::dressed_mass_split_hypotheses::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -727,7 +755,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `M_N_pos` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `M_N_pos` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `DressedMassSubstrateSplit` carries field `M_N_pos` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `M_N_pos` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/GradedFrobeniusHopf.lean::degree_zero_dim_one::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -736,7 +764,7 @@
       "verdict": "genuine",
       "file_sha": "55b48bdc9dc3",
       "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. Docstring: `the degree-0 subspace has dimension 1 (the symmetric eigenspace)`; the Lean proves `(1 : ℕ) = 1 := rfl`. The neighbouring `degree-≥1 subspace has dimension 5` claim has the same shape. Fix: state `finrank` (or the relevant dimension function) of the graded piece and prove it.",
+      "evidence": "Tautology ascribed to a literal. Docstring: `the degree-0 subspace has dimension 1 (the symmetric eigenspace)`; the Lean proves `(1 : \u2115) = 1 := rfl`. The neighbouring `degree-\u22651 subspace has dimension 5` claim has the same shape. Fix: state `finrank` (or the relevant dimension function) of the graded piece and prove it.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -749,7 +777,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `HabiroFlowSolution` carries field `expQ_solves_base_reeb` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `expQ_solves_base_reeb` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `HabiroFlowSolution` carries field `expQ_solves_base_reeb` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `expQ_solves_base_reeb` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::proton_pair_skein_approx::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -760,7 +788,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `ProtonPairSkeinApprox` carries field `bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `bound` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `ProtonPairSkeinApprox` carries field `bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `bound` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::neutron_pair_skein_approx::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -771,7 +799,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `NeutronPairSkeinApprox` carries field `bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `bound` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `NeutronPairSkeinApprox` carries field `bound` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `bound` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass.lean::skein_mass_relation_holds::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -782,7 +810,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `SkeinMassRelationHolds` carries field `identity` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `identity` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `SkeinMassRelationHolds` carries field `identity` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `identity` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean::pair_skein_mass_formula::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -793,7 +821,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `PairSkeinMassContext` carries field `pair_skein_mass_ident` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pair_skein_mass_ident` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `PairSkeinMassContext` carries field `pair_skein_mass_ident` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pair_skein_mass_ident` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Information/ChiMinusSix.lean::QOUCohomology::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -818,7 +846,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `ScalarLPProjection` carries field `agrees` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `agrees` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `ScalarLPProjection` carries field `agrees` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `agrees` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean::trefoil_topological_mass_eq_codata::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -829,7 +857,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `TrefoilElectronMassConj` carries field `trefoil_topological_mass` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `trefoil_topological_mass` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `TrefoilElectronMassConj` carries field `trefoil_topological_mass` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `trefoil_topological_mass` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean::trefoil_strand_count_eq_two::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -840,7 +868,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `TrefoilElectronMassConj` carries field `trefoil_strand_count` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `trefoil_strand_count` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `TrefoilElectronMassConj` carries field `trefoil_strand_count` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `trefoil_strand_count` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean::trefoil_crossing_count_eq_three::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -851,7 +879,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `TrefoilElectronMassConj` carries field `trefoil_crossing_count` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `trefoil_crossing_count` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `TrefoilElectronMassConj` carries field `trefoil_crossing_count` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `trefoil_crossing_count` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean::saddle_eq_volume::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -992,7 +1020,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `CatEigenspaceDecompositionContext` carries field `m_rho` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `m_rho` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `CatEigenspaceDecompositionContext` carries field `m_rho` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `m_rho` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/lean/QOU/Torsion/JetProlongation.lean::jet_prolongation_C::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1045,8 +1073,12 @@
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 170,
-      "verdict": "needs-agent",
-      "file_sha": "788ee94db04c"
+      "verdict": "genuine",
+      "file_sha": "788ee94db04c",
+      "disposition": "prove-it",
+      "evidence": "An uncited `axiom` asserting a *finite, decidable* claim: `\u2200 n \u2208 Finset.Icc 1 5, partitionCount n = Fintype.card (Nat.Partition n)`, where `partitionCount` is a literal 6-case table. This is `proof-no-provable-axiom` in its purest form \u2014 the content is p(1..5) = 1,2,3,5,7 (OEIS A000041), uncontested and finite. The docstring is honest about the blocker (a uniform `decide` route for `Fintype.card (Nat.Partition n)`) but is also self-inconsistent: it says 'Stated as a `sorry`' while the declaration is an `axiom`, which is a stronger and less visible commitment \u2014 a `sorry` shows up in the sorry audit, an `axiom` does not. Fix: prove it (per-`n` `decide`, or via Mathlib's partition API), or at minimum downgrade to a cited `sorry` so it is tracked.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean::rho_eq_qdim_via_canonical_knot::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1064,7 +1096,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `CrystalBasisCorrespondence` carries field `reduction_holds` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `reduction_holds` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `CrystalBasisCorrespondence` carries field `reduction_holds` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `reduction_holds` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/descended-level-zero.lean::descended_level_zero::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1075,7 +1107,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DescendedLevelZeroContext` carries field `desc_contrib_zero` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `desc_contrib_zero` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `DescendedLevelZeroContext` carries field `desc_contrib_zero` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `desc_contrib_zero` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean::he4_strong_duality_value::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1093,7 +1125,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `MassAnchorStableGateClass` carries field `swing_within_tolerance` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `swing_within_tolerance` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `MassAnchorStableGateClass` carries field `swing_within_tolerance` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `swing_within_tolerance` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_direction_sanity_forward::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1104,7 +1136,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `MassDirectionSanityGateClass` carries field `magnitude_within_threshold` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `magnitude_within_threshold` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `MassDirectionSanityGateClass` carries field `magnitude_within_threshold` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `magnitude_within_threshold` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/meson-kaon-pion-hecke-seifert.lean::meson_squaring_exponent::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -1113,7 +1145,7 @@
       "verdict": "genuine",
       "file_sha": "3e2de7d5f873",
       "disposition": "restate-against-a-definition",
-      "evidence": "Tautology ascribed to a literal. Docstring: `the squaring exponent equals the number of quark constituents`; the Lean proves `(2 : ℕ) = 2 := rfl`. That docstring names an *equality between two defined quantities*, which is a genuine and easily-stated proposition — the tautology drops both sides. Fix: define/locate the exponent and the constituent count and state their equality.",
+      "evidence": "Tautology ascribed to a literal. Docstring: `the squaring exponent equals the number of quark constituents`; the Lean proves `(2 : \u2115) = 2 := rfl`. That docstring names an *equality between two defined quantities*, which is a genuine and easily-stated proposition \u2014 the tautology drops both sides. Fix: define/locate the exponent and the constituent count and state their equality.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -1133,7 +1165,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `pole_at_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_at_u_substrate` is outside CONCLUSION_FIELD.",
+      "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `pole_at_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_at_u_substrate` is outside CONCLUSION_FIELD.",
       "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_direction_sanity::proof-no-self-assuming-projection": {
@@ -1145,7 +1177,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `direction_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `direction_match` is outside CONCLUSION_FIELD.",
+      "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `direction_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `direction_match` is outside CONCLUSION_FIELD.",
       "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean::qbeta_direction_sanity_magnitude_match::proof-no-self-assuming-projection": {
@@ -1157,7 +1189,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DirectionSanityGateClass` carries field `magnitude_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `magnitude_match` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `DirectionSanityGateClass` carries field `magnitude_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `magnitude_match` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean::qbeta_g_simple_pole_at_u_substrate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1168,7 +1200,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `RadiusOfConvergenceGateClass` carries field `pole_location_is_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_location_is_u_substrate` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `RadiusOfConvergenceGateClass` carries field `pole_location_is_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_location_is_u_substrate` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean::shared_denominator_cusp_holonomy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1179,7 +1211,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `SharedDenominatorCuspHolonomy` carries field `cusp_complete_of_root` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cusp_complete_of_root` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `SharedDenominatorCuspHolonomy` carries field `cusp_complete_of_root` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `cusp_complete_of_root` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean::wenzl_annihilator::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -1225,29 +1257,45 @@
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 99,
-      "verdict": "needs-agent",
-      "file_sha": "7c138c29f222"
+      "verdict": "genuine",
+      "file_sha": "7c138c29f222",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom partitionTranspose {n} : Partition n \u2192 Partition n`. Note the nearby `-- Ref: [fulton1997]` belongs to the *following* declaration (hook lengths under transpose), not to this one, so the citation window is genuinely empty here. Partition transpose is elementary and constructive \u2014 this should be a `def`, not an axiom, and Mathlib's `YoungDiagram.transpose` already provides it.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::HeckeNormalForm::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 161,
-      "verdict": "needs-agent",
-      "file_sha": "7c138c29f222"
+      "verdict": "genuine",
+      "file_sha": "7c138c29f222",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom X : Type` carrier stub; two occurrences (confinement-grading-correspondence-conditional.lean and bar-involution-invariance.lean), same shape and same fix. The docstring cites the defining file in prose but carries no `-- Ref:`. Add the citation or switch to `opaque`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::barNormalForm::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 165,
-      "verdict": "needs-agent",
-      "file_sha": "7c138c29f222"
+      "verdict": "genuine",
+      "file_sha": "7c138c29f222",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom barNormalForm {n} : HeckeNormalForm n \u2192 HeckeNormalForm n` \u2014 function stub for the bar involution `q \u21a6 q\u207b\u00b9`. The bar involution is standard (Kazhdan\u2013Lusztig); cite it or define it on the real carrier.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean::isPairProductionOutput::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 169,
-      "verdict": "needs-agent",
-      "file_sha": "7c138c29f222"
+      "verdict": "genuine",
+      "file_sha": "7c138c29f222",
+      "disposition": "cite-or-make-opaque",
+      "evidence": "Uncited `axiom isPairProductionOutput {n} : HeckeNormalForm n \u2192 Prop` \u2014 predicate stub with no defining condition. Because the downstream conjecture class quantifies over it, an empty predicate would make the conditional result vacuous; this one is worth defining rather than citing.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean::cpt_closure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1258,7 +1306,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `CPTClosure` carries field `ClosedBraid` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `ClosedBraid` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `CPTClosure` carries field `ClosedBraid` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `ClosedBraid` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean::q_beta_spectral_conditional::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1283,7 +1331,7 @@
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DoubleMagicConjecture` carries field `SelfConjugate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `SelfConjugate` is outside CONCLUSION_FIELD."
+      "evidence": "Self-assuming projection. The conditional class `DoubleMagicConjecture` carries field `SelfConjugate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim \u2014 so the theorem derives nothing. This is the AGENTS.md \u00a73b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect \u2014 carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture \u2014 a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `SelfConjugate` is outside CONCLUSION_FIELD."
     },
     "content/quantum-observable-universe/predicted-spectra/quantum-dilogarithm-volume.lean::quantum_dilogarithm_volume::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",

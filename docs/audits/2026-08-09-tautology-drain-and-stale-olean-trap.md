@@ -65,7 +65,38 @@ declarations shows `[propext, Classical.choice, Quot.sound]` only — no
 
 Non-exempt scanner candidates 64 → 57; ledger 148 → 141.
 
-## 3. Stale oleans fake "unknown identifier" errors — check before reporting
+## 3. The 11 `uncited-axiom` candidates — all genuine, two shapes
+
+Eight are **carrier stubs** (`axiom HeckeAlgebra : Type`, `axiom
+partitionTranspose : Partition n → Partition n`, …). Positing a type or a
+function asserts little, but it is still an unjustified `axiom` in an audit
+whose premise is that `axiom` means *assumed*. Each names its provenance in
+prose and none carries a `-- Ref:`, so the fix is mechanical — cite it, or use
+`opaque`. Two deserve more than a citation: `partitionTranspose` is elementary
+and constructive (Mathlib's `YoungDiagram.transpose` already provides it), and
+`isPairProductionOutput` is an empty predicate that a downstream conjecture
+class quantifies over — if it stays empty, the conditional result is vacuous.
+
+A citation-window subtlety worth recording: `partitionTranspose` sits directly
+above a `-- Ref: [fulton1997]`, but that line belongs to the *following*
+declaration (hook lengths under transpose). The window really is empty; the
+adjacency is misleading to a human skimming, not just to the scanner.
+
+Two are sharper:
+
+- **`su3_sym2_irreducible`** is an `axiom` whose conclusion is literally
+  `True`. It assumes nothing and proves nothing, while its name and comments
+  assert a real fact (`Sym²(V)` irreducible of dim 6; V complex type, so
+  V ≇ V*). Anything citing it as support is citing a tautology.
+- **`partitionCount_eq_fintype_card_partition_small`** axiomatises a *finite,
+  decidable* claim — `p(1..5) = 1,2,3,5,7` against a literal 6-case table.
+  Its docstring is honest about the blocker but self-inconsistent: it says
+  *"Stated as a `sorry`"* while the declaration is an `axiom`. That difference
+  matters, and not in the harmless direction — **a `sorry` appears in the sorry
+  audit; an `axiom` does not.** The honest floor here is a cited `sorry`, so
+  the item stays tracked.
+
+## 4. Stale oleans fake "unknown identifier" errors — check before reporting
 
 `SkewSYT.lean` first came back **red**: two `unknown identifier` errors for
 `QOU.MathlibExt.sum_insertionSort_eq` and `sum_eq_finsetSum_getD`. Both lemmas
