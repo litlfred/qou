@@ -78,7 +78,7 @@ Lesson worth keeping: an artifact-presence survey cannot answer a
 
 ## Why this matters
 
-For these 785 modules there is currently **no** automated check of any kind:
+For these modules (795 as of 2026-08-09) there is currently **no** automated check of any kind:
 
 - `lake build QOU` does not build them (above);
 - a library `.lean` with no `.ts`/`.md` sibling has no `.qa.json` sidecar and
@@ -86,16 +86,65 @@ For these 785 modules there is currently **no** automated check of any kind:
 - CI auto-triggers are disabled repo-wide (`build.yml` is
   `workflow_dispatch`-only).
 
-## Next steps (needs owner scoping — NOT an idle-drain)
+## Triage (step 1 — DONE 2026-08-09)
 
-1. Triage the 785: genuinely dead, or merely unwired? Sample ~20 first.
-2. For the "should be built" set, either add
-   `globs = ["QOU", "QOU.+"]` to the lakefile or add the missing imports to
-   `QOU.lean`. **Expect breakage** — some have plausibly been red for months.
-   That is the point, but it makes this a scoped tranche.
-3. Delete genuinely dead modules rather than leaving them to rot.
-4. Add a cheap guard so a new orphan is visible at authoring time.
+Counts re-measured against a newer `main`; the population grew 785 → **795**
+as the corpus moved, which is itself the point (orphans accrue silently).
 
-Do **not** flip the glob on without step 1 — turning on 785 unbuilt modules at
-once could be very red, and would land that breakage on whoever is next to
-touch the file.
+| class | count | meaning |
+|---|---|---|
+| **load-bearing** | **270** | a content block's `lean.ref` names this module |
+| interior | 190 | reachable only from another orphan |
+| dead-root candidates | 347 | no `lean.ref`, no orphan importer |
+
+**270 load-bearing is the headline.** Those are blocks whose manifest claims a
+Lean formalisation that no build has ever elaborated.
+
+### Do they actually compile? Sampled 22 by `lean`-direct
+
+| sample | n | result |
+|---|---|---|
+| load-bearing | 12 | 11 pass, 1 dep-gap |
+| dead-root candidates | 10 | 10 pass |
+
+**Zero real source errors.** The one non-pass —
+`QOU.BraidKnot.symbolic_character_table` — is `object file ... does not exist`
+for `QOU.BraidKnot.SytSmallShapeCounts`, i.e. it imports another orphan that
+has no olean *because nothing builds it*. Not a source defect; the orphan gap
+propagating into its own verification.
+
+### Sorry hygiene holds
+
+33 real `sorry`s across all 795 files (26 files), and **every one carries a
+`-- Ref:` within 8 lines — 0 uncited**. (A first pass reported 358/323; that
+regex was matching the *phrase* "sorry-free" in prose. Numbers above are with
+comments stripped.)
+
+### Revised risk — I over-cautioned
+
+The earlier "expect breakage, could be very red" warning is **not supported**.
+The sources look healthy. Two honest caveats before anyone treats that as
+"safe":
+
+1. **22 of 795 is ~2.8%.** Zero failures in 22 bounds the failure rate at
+   roughly **13%** (rule of three, 95%) — so up to ~100 files could still fail.
+   "Most compile" is supported; "all compile" is not.
+2. **Per-file `lean`-direct ≠ a whole-library build.** Each file was checked
+   alone. Compiling all 795 *into one library* can surface conflicts that
+   per-file checking structurally cannot — duplicate declaration names,
+   clashing instances, universe issues across modules that never met before.
+   This is the residual unknown, and it is the reason to stage the work.
+
+## Next steps
+
+1. ~~Triage~~ — done, above.
+2. **Wire up in tranches, load-bearing first.** The 270 with a `lean.ref` are
+   the ones where the corpus asserts something unchecked, so they buy the most
+   per unit of risk. Add imports to `QOU.lean` (or `globs = ["QOU", "QOU.+"]`)
+   a directory at a time, building between tranches so a cross-module clash is
+   attributable.
+3. **Triage the 347 dead-roots separately** — they sample clean, so they are
+   *unwired*, not rotten. Decide per subtree whether to wire or delete;
+   deleting healthy proved content would be the worse error.
+4. ~~Cheap guard~~ — `scripts/lean-orphan-modules.sh` (read-only, exits
+   non-zero when orphans exist, so it can gate once the count is driven down).
