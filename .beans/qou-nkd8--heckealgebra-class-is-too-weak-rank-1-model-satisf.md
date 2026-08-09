@@ -1,10 +1,11 @@
 ---
 # qou-nkd8
 title: HeckeAlgebra class is too weak — rank-1 model satisfies it at every n; add the Iwahori-basis axiom
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T12:31:34Z
-updated_at: 2026-08-09T12:31:34Z
+updated_at: 2026-08-09T12:48:47Z
 ---
 
 
@@ -53,3 +54,40 @@ the Hecke algebra rather than merely to satisfy the relations.
 just cannot say so.
 
 Full survey: `docs/audits/2026-08-09-hecke-infrastructure-what-is-needed.md`.
+
+## DONE — `QOU/Hecke/FullRank.lean`
+
+Companion predicate, as recommended. `HeckeAlgebra` untouched, so all five
+hypothesis sites still compile.
+
+```lean
+class IsHeckeOfFullRank (R : Type u) (n : ℕ) (A : Type u)
+    [Field R] [Ring A] [Algebra R A] : Prop where
+  free : Module.Free R A
+  finrank_eq : Module.finrank R A = n.factorial
+```
+
+Shipped and axiom-clean (`propext, Classical.choice, Quot.sound`; the numeric
+induction depends on no axioms at all):
+
+| declaration | content |
+|---|---|
+| `not_isHeckeOfFullRank_rankOne` | the rank-1 model fails the predicate at **every** `n ≥ 2` |
+| `not_isHeckeOfFullRank_rankOne_three` | the `n = 3` case spelled out |
+| `heckePoly_monic`, `heckePoly_natDegree` | `X² − hX − 1` monic of degree 2 |
+| `finrank_H2` | `finrank R (H2 R q) = 2` |
+| `instIsHeckeOfFullRankH2` | **`H₂(q)` has full rank `2 = 2!`** |
+| `finrank_succ_of_rung` | tower law: rung of rank `n+1` over a level of rank `n!` gives `(n+1)!` |
+| `finrank_of_rank_recursion` | `d 0 = 1`, `d (n+1) = (n+1)·d n` ⟹ `d n = n!` |
+| `isHeckeOfFullRank_succ` | the two composed, ready to `exact` inside an `induction` |
+| `instIsHeckeOfFullRankBase/One` | `R` itself at `n = 0, 1` |
+
+Rank `n!` is not the full Iwahori statement — it fixes the dimension, not the
+`{T_w}` labelling. That is deliberate and documented in the module: dimension is
+what every downstream argument uses and what the degenerate models fail. Given
+Iwahori's theorem (not formalised, and nothing here depends on it), `spans` +
+`finrank = n!` pins `A` to `H_n(q)` up to isomorphism.
+
+**Consequence for the roadmap:** the rank condition is now inductive, so a tower
+owes one rung at a time — `H_{n+1}` free of rank `n+1` over `H_n` — instead of a
+from-scratch dimension computation per level. qou-jr3k (H3) is now a single rung.
