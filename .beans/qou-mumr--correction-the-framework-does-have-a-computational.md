@@ -75,3 +75,150 @@ rho(r) would need.
     over-claim.
 Both left for the sweep's result so they are corrected once, with the full
 picture, rather than twice.
+
+## CORRECTION TO THIS BEAN (sweep returned) — I overread the source twice
+
+The sweep confirms a derived Planck length exists, so the owner's correction of
+me stands. But TWO things I wrote above are wrong.
+
+### (a) "distance in spacetime is computational -- a COUNT of Reeb/Planck steps"
+
+OVERREAD. `discrete-planck-step.md:55` actually says the count of Planck steps
+measures dynamical distance **IN REEB TIME**, and its `N(q0,q)` is an integral
+over the SUBSTRATE PARAMETER -- a cosmological-time count along the q-trajectory,
+not a spatial separation between two points. "Distance is integer-valued
+[spatial]" does not follow from the line I cited.
+
+Worse, `planck-time-interpretation.md` names what `ell_P` actually is:
+"After one Planck time of Reeb flow, the ANGULAR DISPLACEMENT is
+ell_P(q) = hbar_q * t_P = 1." It is one circuit of the Reeb FIBRE -- a phase,
+not a spatial displacement. And it is an IDENTITY: it equals 1 for every q over
+every field, so it carries no scale information at all. The q-dependence lives
+entirely in t_P, the step COUNT, never in the length.
+
+### (b) I cited two mutually inconsistent Planck lengths as if they agreed
+
+Above I quoted `ell_P = 1` (discrete-planck-step.md:39) and
+`ell_q = (q-1)/q ~ 0.0991` (p5-counterexample.md:4) in adjacent paragraphs
+without noticing they differ by a factor t_P ~ 10.1. That is a REAL CORPUS
+DEFECT, not just my sloppiness, and nobody had flagged it:
+
+    information-theory/discrete-planck-step.md:39-43   ell_P = hbar_q * t_P  = 1
+    information-theory/planck-info-unit.md:1           ell_P(p) ~ hbar_q     ~ 0.0991
+    lean/QOU/InformationTheory.lean:32-34              localPlanckLength := quantumPlanckConstant
+                                                       (i.e. = hbar_q EXACTLY)
+    fluid-dynamics/planck-reynolds.md:1                ell_q = (q-1)/q       ~ 0.0991
+
+The Lean file has silently HARDENED the prose's "~" into a definitional "=".
+Anyone consuming `localPlanckLength` is getting hbar_q, while the
+discrete-Planck-step chapter says the Planck length is identically 1. These
+cannot both be right. Needs adjudication -- own bean.
+
+## THE OPERATIVE CONCLUSION SURVIVES
+
+Wrong on the letter, right on the consequence. The corpus HAS:
+  * a derived but DIMENSIONLESS ell_P (an angular Reeb displacement, == 1);
+  * ASSUMED metrics -- Fubini-Study inherited on Bring's surface
+    (briggs-klein-chart.md:1), the round metric on P(V) = S^2 and an actual
+    distance function d_{P(V)} gating a force law
+    (measurement-observation/torsion-knot-flow.md:19,22,29), a base manifold M
+    with a smooth metric and spatial wavenumbers
+    (q-heat-kernel-peter-weyl.md:13). All declared ARCHIMEDEAN SPECIALISATION,
+    i.e. inputs.
+  * radial coordinates -- but in SUBSTRATE/MODULI space (genus-4 surface, or the
+    2-sphere), never a radius from a nuclear centre.
+
+It does NOT have (i) any transport from algebraic/hyperbolic invariants to a
+Euclidean length, or (ii) a 3-space or charge density. And the corpus says (i)
+about ITSELF, which is the strongest evidence available:
+
+  pion_radius_and_cusp_volume_gap_probe.py:56-63 --
+    "there is NO categorical volume->length transport in the corpus. All corpus
+     lengths arise as Compton inversions hbar c / mass."
+
+So r0, A^(1/3), 3/5 and rho(r) still have no derived counterpart. The EM
+conclusion in qou-usft stands; only its justification needed narrowing.
+
+Also: `lean/QOU/MassTheory/RadialVolRhoMirrorTest.lean` is a MACHINE-CHECKED
+REFUTATION of the nearest thing to a density ansatz, rho(K) = tr_M(K) -- it
+fails the 3H/3He mirror test in DIRECTION (C_knot ratio 1.35 vs rho ratio 0.50,
+straddling unity). "Radial" there is magnitude-vs-phase, not position.
+
+## THE ONE ACTIONABLE OPENING
+
+A categorical Dirac operator EXISTS with Lean existence and uniqueness:
+`quantum-observable-universes/categorical-dirac-operator{,-exists,-unique}`,
+D_grad = q^-1 grad + (1-q^-1) iota_xi grad. Connes is in references.bib. But the
+corpus NEVER forms the spectral distance
+    d(phi,psi) = sup{ |phi(a)-psi(a)| : ||[D,a]|| <= 1 }.
+NCG appears only as ALGEBRA (the universal Kahler-differential SES,
+docs/audits/2026-05-03-tau-hat-n-proton-realisation.md:81-87), never as metric
+geometry. There is no spectral triple.
+
+That is the sharpest available route to a genuine derived metric: the algebra is
+there, the Dirac operator is there and is Lean-proved to exist and be unique,
+and the missing step is forming the triple and the distance. NOT attempted here.
+
+## On the owner's remembered paper
+
+Finster's CAUSAL FERMION SYSTEMS -- the programme where spacetime itself emerges
+from a measure on operators -- IS in the corpus: references.bib
+(finster2021/2022/2024, dappiaggi2024) and `observations/cfs-comparison-summary.md`.
+That is almost certainly the memory. But the block is a STRUCTURAL COMPARISON
+only: it records agreements (both type II_1 factors, free-probability class) and
+mismatches (G(1,1)=1 vs L_CFS(1,1)=0), leaves the key numerical question open,
+and imports no geometry. Also present: Verlinde entropic gravity, Jacobson,
+Bilson-Thompson braided QG (vendored PDF), 't Hooft Planck-scale CA (realised as
+the Planck STEP, i.e. time). NO causal sets, spin foams, tensor networks, or
+Ryu-Takayanagi anywhere.
+
+## LITERATURE — actual entries, with corpus locations
+
+Verified present in `references.bib` by the sweep. Marked with what each does
+and does NOT give us.
+
+  finster2021 / finster2022 / finster2024, dappiaggi2024
+      CAUSAL FERMION SYSTEMS. Spacetime and its geometry EMERGE from a measure
+      on operators on a Hilbert space -- the closest published programme to
+      "distance is computational". Corpus block:
+      content/quantum-observable-universe/observations/cfs-comparison-summary.md
+      STATUS: structural comparison ONLY. Records agreements (both type II_1
+      factors, free-probability class) and mismatches (G(1,1)=1 vs
+      L_CFS(1,1)=0), leaves the key numerical question open, imports no geometry.
+
+  connes1994 (Noncommutative Geometry), connes1996,
+  chamseddine-connes-1997 (spectral action)
+      THE tool for getting a metric from an algebra: the spectral distance
+      d(phi,psi) = sup{|phi(a)-psi(a)| : ||[D,a]|| <= 1} on a spectral triple
+      (A, H, D). Recovers geodesic distance in the commutative case and works
+      for noncommutative A.
+      STATUS: cited, but used only as ALGEBRA (universal Kahler-differential
+      SES, docs/audits/2026-05-03-tau-hat-n-proton-realisation.md:81-87). The
+      distance formula is never formed; there is no spectral triple.
+      => This is the actionable gap: the categorical Dirac operator already
+         exists AND is Lean-proved existent and unique.
+
+  verlinde2011 (entropic gravity), jacobson1995 (Einstein eq. as equation of
+  state)
+      Cited at information-theory/information-theory-intro.md:3.
+      STATUS: emergent GRAVITY / FORCE, not emergent DISTANCE. Both presuppose
+      a metric and derive dynamics on it.
+
+  bilsonthompson2007, "Quantum gravity and the standard model"
+      Braid states in background-independent QG. Vendored PDF at
+      uploads/0603022v2.pdf. Directly on-theme (braids -> particles).
+      STATUS: no metric construction.
+
+  thooft2016, Planck-scale cellular automaton
+      Cited at discrete-planck-step.md:68; the Planck STEP realises 't Hooft's
+      tick. STATUS: discretises TIME, not space.
+
+  Ashtekar / Rovelli LQG entropy
+      gravity-spacetime/lqg-entropy-qdim-partition-pole.md:14 uses S = A/4 l_p^2
+      to FIX the Immirzi parameter. STATUS: l_p enters as an EXTERNAL symbol --
+      it is consuming a Planck length, not deriving one.
+
+  ABSENT entirely, checked: causal sets (Bombelli-Lee-Meyer-Sorkin), spin foams
+  as a construction, tensor networks / MERA, Ryu-Takayanagi, ER=EPR,
+  It-from-Qubit. If the owner is remembering a distance-from-counting paper, it
+  is Finster CFS above, not a causal-set source -- none is in the tree.
