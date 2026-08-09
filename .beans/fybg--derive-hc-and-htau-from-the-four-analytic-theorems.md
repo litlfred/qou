@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T03:00:00Z
+updated_at: 2026-08-09T04:00:00Z
 ---
 
 ## Why this bean exists
@@ -211,3 +211,61 @@ sum-to-integral bound and this expansion have independent error terms, and
 combining them needs the `theta`-remainder controlled uniformly over the `k`
 that matter. `KashaevArgmax` confines those to a neighbourhood of `k*`, where
 both bounds are uniformly good -- that is the shape of step 3's setup.
+
+## Landed: the RIGHT tail is Gaussian. 2026-08-09
+
+`QOU/Knot/KashaevTailBound.lean::kashaevProd_right_tail`, sorry-free:
+
+    kashaevProd N (k*+d) <= kashaevProd N k* * exp(-sqrt3 pi d(d-1)/N)
+
+with `k* = floor(5N/6)`. This is `e^{-c d^2/N}` -- the Gaussian of width
+`sqrt(N)` that `hasSum_gaussian_theta` is waiting for.
+
+All of it comes from ONE fact: `f(theta) = log(2 sin theta)` is CONCAVE on
+`(0, pi)` (`f'' = -csc^2 < 0`) and vanishes at `theta*` with
+`f'(theta*) = cot theta* = -sqrt3`. Concavity puts `f` below its tangent there:
+
+    log(2 sin theta) <= -sqrt3 (theta - 5pi/6)      for all theta in (0, pi)
+
+`log_two_sin_le_tangent`, proved by the derivative-sign argument (`u' =
+cot + sqrt3` changes sign exactly at `theta*`, so `u` peaks there at 0) on top
+of a new `cot_antitoneOn`.
+
+### Why the naive bound is not enough -- and the probe measures the gap
+
+Each ratio `(2 sin theta_{k*+i})^2` is `< 1` and they decrease, so the obvious
+bound is `prod <= (first factor)^d`. That is `e^{-c d/N}`, exponential in
+`d/N`, and it does NOT confine the sum to a `sqrt(N)` window. The `d^2` comes
+from the factors continuing to shrink -- i.e. from the LINEAR bound on `f`, not
+from the first factor alone. At `N=480, d=60`:
+
+    true ratio            5.5e-28
+    quadratic bound       3.7e-18       <- proved here
+    first-factor^d        2.5e-1        <- the naive bound
+
+Seventeen orders. And the window scales right: the bound crosses `1e-6` at
+`d/sqrt(N) = 1.68, 1.68, 1.61, 1.61` for `N = 60, 240, 960, 3840`.
+
+### ONLY the right tail. Read the file header before citing it.
+
+On the left the terms are RISING towards the saddle, so what is needed is a
+LOWER bound on `f` -- and the tangent gives an upper one. Concavity is the
+wrong way round there. The left tail needs a secant/chord bound instead
+(`f(theta) >= (theta* - theta)/sqrt3` on `[2pi/3, theta*]`, from
+`cot <= cot(2pi/3) = -1/sqrt3`). NOT DONE. `kashaevProd_right_tail` does not
+confine the sum on both sides, and the file says so in as many words.
+
+### Lean gotcha: `linarith` after a division-heavy multiplication
+
+`linarith [mul_le_mul_of_nonneg_left hfrac hpos]` FAILED on a goal that is
+literally `hfrac` scaled by `2 sqrt3`, where both sides carry `pi / N`. Its own
+preprocessing did not bring the two into a common normal form. `ring_nf at h2
+ok` first, THEN `linarith`, works. Two prior attempts (`nlinarith` with a
+`mul_nonneg` hint; splitting `(X+1-n)*pi/N` into `(X+1)*pi/N - n*pi/N`) both
+failed -- the split was necessary but not sufficient.
+
+### What is left
+
+The left tail (above), then the Gaussian sum itself via
+`hasSum_gaussian_theta_tilt`, then `hc`/`htau`. Steps 1 and 2 are done, step 3
+is half done.
