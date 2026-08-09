@@ -126,6 +126,42 @@ untouched:
   the error is infinitesimal and `Vol` is not). That yields "the limit equals
   `Vol`", never "no polynomial relation".
 
+## The one lift where a grade *does* become informative
+
+The prune is about the volumes as **standard reals**. There is a precise sense
+in which lifting them changes the picture, and it is worth stating because it
+is the only place in this neighbourhood where the surreal formalism carries
+real content.
+
+Suppose each volume is realised as a surreal `Ṽᵢ ∈ **No**` with
+`std(Ṽᵢ) = Vᵢ` — for instance the `q`-deformed volume as a function of the Reeb
+infinitesimal `ε`, whose `ω`-expansion the framework could in principle compute.
+Then for `P ∈ ℚ[x,y,z]`,
+
+```
+P(Ṽ) = P(V) + (infinitesimal corrections),
+```
+
+so `ordω(P(Ṽ)) = 0` when `P(V) ≠ 0`, and `ordω(P(Ṽ)) < 0` when `P(V) = 0`
+(the standard part cancels and only the infinitesimal tail survives).
+**At the lifted level the grade genuinely separates relation from
+non-relation** — unlike at the standard level, where both live at grade `0`.
+
+This does not evade the prune, and it is not a proof strategy on its own: to
+*use* the criterion you must already know `ordω(P(Ṽ))`, which is
+`nonvanishing_premise_circular` one level up. What it does is relocate the
+problem to something the framework might actually have a handle on: instead of
+"is this standard real zero?", the question becomes "does the `ω`-expansion of
+the `q`-deformed volume triple have a negative-grade annihilator?" — a question
+about a computable deformation, with the Yekutieli tower supplying the
+expansion. A negative answer at every finite grade would be the perpetual-
+obstruction statement in a form the squeeze's own machinery can express.
+
+That is the productive reading of the user's intuition, and it is the route the
+prune leaves open. Note it still needs the same effectivity input as the
+tower-height contrapositive: a bound on which grades can be reached at a given
+polynomial degree.
+
 ## Related defect found and fixed
 
 `JetOrderIndependence.lean` carried two global instances that discharged their
