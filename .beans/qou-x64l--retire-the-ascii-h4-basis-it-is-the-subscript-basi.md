@@ -59,8 +59,11 @@ multi-line, so its entries carry newlines).
 3. That unblocks `QOU.Hecke.MarkovTrace 4 q (H4A K (q − q⁻¹))` and a
    `MarkovTraceContext` at `n = 4` — the last open Hecke item below `n = 5`.
 4. Then retire the ASCII chain: `MarkovTraceH4.lean` and `MarkovTraceH4Gram0..7`,
-   ~6.5k generated lines. `QOU/Hecke/InstanceH4.lean` goes with it — it is built
-   on the ASCII actions and qou-ti7p already lists it as a redundant carrier.
+   ~6.5k generated lines. `QOU/Machinery/H4AsciiPresentation.lean` goes with it —
+   it is the Hecke presentation on the ASCII actions, and its subscript-basis
+   counterparts are already proved in `HeckeH4StabilizationRung`. (It replaced
+   `QOU/Hecke/InstanceH4.lean`, retired in qou-ti7p; `H4BasisBridge` imports it
+   for `mulσ_farcomm02`, so that import goes at the same time.)
 
 ## Why this is worth doing beyond tidiness
 

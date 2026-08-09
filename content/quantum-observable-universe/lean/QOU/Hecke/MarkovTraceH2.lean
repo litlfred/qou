@@ -169,10 +169,14 @@ theorem contextH2_generator_nonempty : Nonempty (Generator contextH2.n) := by
 
 `cyclic` and `trace_prod_gen` are free here — the first because `H₂(q)` is
 commutative, the second because there is only one generator index. At `n ≥ 3`
-neither is free: `QOU.Hecke.InstanceH3.not_commutative`-style noncommutativity is
-already visible at `n = 3` (and proved at `n = 4` in `InstanceH4`), and
-`QOU.Machinery.MarkovTraceH4` carries cyclicity at `n = 4` as a cited `sorry`
-precisely because the `Fin 24` brute force is heartbeat-infeasible.
+neither is free. Noncommutativity is already visible at `n = 3`
+(`QOU.Machinery.H3`: `σ₀σ₁ = e₄ ≠ e₃ = σ₁σ₀`) and at `n = 4`
+(`QOU.Machinery.H4.mulσ0_mulσ1_ne`), so `cyclic` becomes a theorem rather than a
+consequence of commutativity — `QOU.Hecke.MarkovTraceOnH3A.markovTraceH3A` is the
+first witness where it does, and where `trace_prod_gen` is satisfiable at all.
+Cyclicity at `n = 4` is `QOU.Machinery.H4.trM_cyclic`, sorry-free via the
+576-entry `gram_symm` closure, and correspondingly expensive: it is the tree's
+build pole.
 
 So this witness makes `MarkovTraceContext`-quantified results non-vacuous. It
 does not make them evidence about the general Markov trace. -/
