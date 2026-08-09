@@ -86,6 +86,18 @@ reduction, which Mathlib at rev `f897ebcf` does not have (`find Mathlib -iname
   non-empty support and `IsGrobnerShirshovBasis` collapsed — it held of *any*
   system, and `hecke_is_gs_basis` was provable in four lines while saying
   nothing. Removed; `gs_basis_of_empty_lm` now proves the collapse in general.
+* **And with the sentinel gone the statement is not merely unproved — it is
+  FALSE.** Machine-checked at `n = 4`
+  (`UGB.GrobnerShirshov.Hecke.NotAGSBasis.hecke_not_gs_basis_four`): Yang–Baxter
+  for `(σ₂,σ₃)` (lm `σ₃σ₂σ₃`) overlaps far-commutation for `(σ₃,σ₁)` (lm `σ₃σ₁`)
+  on `σ₃σ₂σ₃σ₁`, and the two reductions `σ₂σ₃σ₂σ₁` and `σ₃σ₂σ₁σ₃` are both
+  irreducible, so the S-polynomial has a non-zero normal form. The axiom is
+  deleted. Bokut & Shiao Thm 3.5 was misapplied: it gives a GS basis for the
+  **completed** system, adjoining `sᵢsᵢ₋₁⋯sⱼsᵢ → sᵢ₋₁sᵢsᵢ₋₁⋯sⱼ`, whose first
+  instance is exactly this S-polynomial. Nothing `q`-deformed is at fault — the
+  same overlap obstructs the Coxeter presentation of `S₄`. (Their general
+  *conjecture* for arbitrary Coxeter groups was separately disproved by
+  Chen–Liu.) The completion is what qou-auq3 now needs.
 * Two defects remain before the axiom can be *proved*: `leadingMonomial` ignores
   its order argument (`hf.choose`, an arbitrary support element), and
   `SingleStepReduction` never requires `f − g` to lie in the ideal despite its

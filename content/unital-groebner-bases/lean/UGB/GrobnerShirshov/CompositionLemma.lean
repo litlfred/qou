@@ -80,6 +80,7 @@ axiom local_confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
     (f g₁ g₂ : AlgElement G k)
     (h₁ : SingleStepReduction ord sys f g₁)
     (h₂ : SingleStepReduction ord sys f g₂) :
@@ -109,6 +110,7 @@ axiom confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
     (f g₁ g₂ : AlgElement G k)
     (h₁ : MultiStepReduction ord sys f g₁)
     (h₂ : MultiStepReduction ord sys f g₂) :
@@ -136,6 +138,7 @@ axiom normal_form_unique
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
     (f nf₁ nf₂ : AlgElement G k)
     (hred₁ : ReducesToNF ord sys f nf₁)
     (hred₂ : ReducesToNF ord sys f nf₂)
@@ -157,7 +160,8 @@ axiom normal_form_unique
 theorem composition_lemma
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k) :
     ∀ (f : AlgElement G k),
       reduce ord sys hgs (reduce ord sys hgs f) = reduce ord sys hgs f := by
   intro f
@@ -174,7 +178,7 @@ theorem composition_lemma
   have h_nf'_red : ReducesToNF ord sys nf nf' :=
     ⟨reduce_reduces ord sys hgs nf, h_nf'_normal⟩
   -- By uniqueness: nf' = nf
-  exact normal_form_unique ord sys hgs nf nf' nf h_nf'_red h_nf_self
+  exact normal_form_unique ord sys hgs hnqz nf nf' nf h_nf'_red h_nf_self
 
 /-! ## §6  Retraction Property (Bridge to FormalGroups.lean) -/
 
@@ -187,6 +191,7 @@ theorem retraction_property
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
     (embed : AlgElement G k → AlgElement G k)
     (h_embed : ∀ f, embed (reduce ord sys hgs f) = reduce ord sys hgs f) :
     ∀ (f : AlgElement G k),
@@ -194,6 +199,6 @@ theorem retraction_property
       reduce ord sys hgs f := by
   intro f
   rw [h_embed]
-  exact composition_lemma ord sys hgs f
+  exact composition_lemma ord sys hgs hnqz f
 
 end UGB.GrobnerShirshov

@@ -309,7 +309,7 @@ axiom descended_gs_inherited
     (ord : AdmissibleOrder G)
     (jss : JetStratifiedSystem G k)
     (h_desc_gs : IsGrobnerShirshovBasis G k ord jss.descended)
-    (oc : OverlapComposition G k)
+    (oc : OverlapComposition G k ord)
     (h₁ : oc.rule₁ ∈ jss.descended.rules)
     (h₂ : oc.rule₂ ∈ jss.descended.rules) :
     ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero
@@ -336,11 +336,11 @@ axiom jet_stratified_gs_criterion
     (ord : AdmissibleOrder G)
     (jss : JetStratifiedSystem G k)
     (h_desc_gs : IsGrobnerShirshovBasis G k ord jss.descended)
-    (h_new_overlap : ∀ (oc : OverlapComposition G k),
+    (h_new_overlap : ∀ (oc : OverlapComposition G k ord),
       oc.rule₁ ∈ jss.full.rules → oc.rule₂ ∈ jss.full.rules →
       ¬(oc.rule₁ ∈ jss.descended.rules ∧ oc.rule₂ ∈ jss.descended.rules) →
       ∃ nf, ReducesToNF ord jss.full oc.spoly nf ∧ nf.isZero)
-    (h_new_inclusion : ∀ (ic : InclusionComposition G k),
+    (h_new_inclusion : ∀ (ic : InclusionComposition G k ord),
       ic.inner ∈ jss.full.rules → ic.outer ∈ jss.full.rules →
       ¬(ic.inner ∈ jss.descended.rules ∧ ic.outer ∈ jss.descended.rules) →
       ∃ nf, ReducesToNF ord jss.full ic.spoly nf ∧ nf.isZero) :
@@ -438,13 +438,13 @@ def spolySavings (m k : ℕ) : ℕ := m * (m - 1) / 2
 theorem jet_stratified_correct
     {G : Type u} {k : Type v} [Field k] [DecidableEq G]
     (cfg : JetReductionConfig G k)
-    (h_new_resolved : ∀ (oc : OverlapComposition G k),
+    (h_new_resolved : ∀ (oc : OverlapComposition G k cfg.ord),
       oc.rule₁ ∈ cfg.system.full.rules →
       oc.rule₂ ∈ cfg.system.full.rules →
       ¬(oc.rule₁ ∈ cfg.system.descended.rules ∧
         oc.rule₂ ∈ cfg.system.descended.rules) →
       ∃ nf, ReducesToNF cfg.ord cfg.system.full oc.spoly nf ∧ nf.isZero)
-    (h_inc_resolved : ∀ (ic : InclusionComposition G k),
+    (h_inc_resolved : ∀ (ic : InclusionComposition G k cfg.ord),
       ic.inner ∈ cfg.system.full.rules →
       ic.outer ∈ cfg.system.full.rules →
       ¬(ic.inner ∈ cfg.system.descended.rules ∧

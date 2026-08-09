@@ -69,14 +69,16 @@ theorem lemma_generator_choice
         ∃ m : Monomial G, m ∈ g'.support ∧
           (leadingMonomial ord r.relation r.nonzero) <:+: m := by
   cases hred with
-  | refl _ =>
+  | refl =>
     -- Empty run: f = g.
     left; rfl
   | step h_prefix h_last =>
     -- A final single step occurred: extract its generator witness.
     rename_i g'
     right
-    obtain ⟨r, hr_mem, m, hm_supp, hm_infix, _⟩ := h_last.exists_witness
-    exact ⟨g', h_prefix, r, hr_mem, m, hm_supp, hm_infix⟩
+    obtain ⟨r, hr_mem, a, b, _, hne, -, -⟩ := h_last.exists_witness
+    exact ⟨g', h_prefix, r, hr_mem,
+      a ++ leadingMonomial ord r.relation r.nonzero ++ b,
+      AlgElement.mem_support_of_coeff_ne_zero hne, ⟨a, b, rfl⟩⟩
 
 end UGB.UnitalGroebner
