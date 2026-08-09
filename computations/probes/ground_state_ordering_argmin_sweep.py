@@ -381,7 +381,8 @@ def main() -> int:
         "max_A": args.max_a,
         "verdict_tally": verdict,
         "results": results,
-        "wall_seconds": round(time.time() - t0, 1),
+        # wall clock, not a measurement — string so it is not raw float64
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     path = args.out or str(Path(__file__).resolve().parent.parent /
                            "ground-state-ordering-argmin-sweep.witness.json")
