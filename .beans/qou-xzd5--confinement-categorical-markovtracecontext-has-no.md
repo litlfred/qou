@@ -1,7 +1,7 @@
 ---
 # qou-xzd5
 title: 'confinement_categorical: MarkovTraceContext has NO instance anywhere — may be vacuously true, not unclosable'
-status: todo
+status: done
 type: task
 created_at: 2026-08-09T11:07:51Z
 updated_at: 2026-08-09T11:07:51Z
@@ -65,3 +65,51 @@ Step 1 is an hour's work and settles the common case.
 With this one outstanding, the sweep stands at **18 attempted, 18 refutable, 0
 survivors**, plus this one blocked. The only statement to survive any check
 remains `covariance_kernel_conjecture` (proved on `k ≤ 8`).
+
+---
+
+## RESOLVED 2026-08-09 — the class IS inhabited, so it is #10 not #3
+
+The deciding experiment worked. `Generator n` is `structure Generator (n : ℕ)
+where idx : Fin (n - 1)` — **ℕ subtraction**, so at `n = 0` *and* `n = 1` the
+index type is `Fin 0`, i.e. empty. `embed` is then trivial and `quadratic`,
+`braid`, `farCommute` hold vacuously. Taking `A := R := ℤ` reduces
+`spans : Algebra.adjoin R (Set.range embed) = ⊤` to `⊥ = ⊤` in
+`Subalgebra ℤ ℤ`, which is a subsingleton.
+
+```lean
+noncomputable instance degenerateHecke : HeckeAlgebra ℤ 0 0 ℤ where
+  embed      := fun i => absurd i.idx.isLt (by omega)
+  quadratic  := fun i => absurd i.idx.isLt (by omega)
+  braid      := fun i _ _ => absurd i.idx.isLt (by omega)
+  farCommute := fun i _ _ => absurd i.idx.isLt (by omega)
+  spans      := Subsingleton.elim _ _
+
+noncomputable instance degenerateMarkov : MarkovTrace 0 (0 : ℤ) ℤ where
+  trace := LinearMap.id;  normalised := rfl
+  cyclic := fun x y => by simp [mul_comm];  z_param := 0
+  trace_gen := fun i => absurd i.idx.isLt (by omega)
+  trace_prod_gen := fun i _ _ => absurd i.idx.isLt (by omega)
+```
+
+`witness : MarkovTraceContext` follows. All in
+`docs/audits/2026-08-09-unclosable-context-sorries.lean.txt`.
+
+### Consequences
+
+1. **`MarkovTraceContext` is inhabited**, so nothing quantified over it is
+   vacuous. The #3 branch of this bean is closed: it does **not** apply, here
+   or to the rest of the family.
+2. **`confinement_categorical` is therefore #10**, and refuted:
+   `n_blocks := 0` empties the sum while `E_infinity_00 := 1`.
+3. The sweep is complete — **19 attempted, 19 refutable, 0 survivors.**
+
+### Worth knowing about the witness
+
+It is *degenerate on purpose*: `n = 0` means no generators, so it satisfies the
+Hecke axioms by having nothing to satisfy them about. That is exactly what makes
+it a good refutation instrument, and exactly why it is **not** evidence that the
+substantive Hecke infrastructure exists. Nothing here builds `H_n(q)` for `n ≥ 2`.
+
+An `n ≥ 2` instance remains unbuilt anywhere in the tree, which is the real
+missing infra the manuscript keeps citing.
