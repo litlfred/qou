@@ -28,13 +28,15 @@
   rests on `inner_u_rot` / `inner_v_rot`: rotating by `θ` and then projecting
   onto the `θ`-frame returns the original coordinates.
 
-  WHAT THIS DOES *NOT* CLOSE.  H4-5c is still open, and what remains is the
-  genuinely geometric half: that a triangle INSCRIBED in the circle is the
-  union, up to null sets, of three `wedgeAt`s whose half-angles are its three
-  inscribed angles and whose axes point at the three side-midpoints.  That is
-  Milnor's subdivision proper.  This file removes the infrastructural obstacle
-  in front of it; it does not perform it.  Nothing here is a statement about
-  ideal tetrahedra.
+  WHAT THIS FILE DOES *NOT* DO.  It does not perform Milnor's subdivision —
+  that a triangle INSCRIBED in the circle is the union, up to null sets, of
+  three `wedgeAt`s whose half-angles are its three inscribed angles and whose
+  axes point at the three side-midpoints.  This file removes the
+  infrastructural obstacle in front of that step; the step itself is
+  `QOU.Archimedean.OrthoschemeTiling`
+  (`milnorWedges_ae_eq_inscribedTriangle`, H4-5c-ii(b)), with the Λ-sum on the
+  union in `QOU.Archimedean.OrthoschemeLambdaSum` (H4-5c-ii(a)).  Nothing here,
+  or there, is a statement about ideal tetrahedra.
 
   Archimedean (ℝ): `cos`, `sin`, Lebesgue measure, ordering — §7c.
 

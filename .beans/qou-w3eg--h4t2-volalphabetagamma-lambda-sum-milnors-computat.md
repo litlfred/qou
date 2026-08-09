@@ -163,7 +163,7 @@ areas; do not assume the acute case is general).
 > | **H4-5b** the PAIR | `hypVolume (chimney (wedge R ψ) R) = Λ(ψ)` — a WHOLE `Λ`: two mirror orthoschemes at `½Λ` each | ✅ |
 > | **H4-5c-i** ROTATION | `hypVolume (chimney (wedgeAt R θ ψ) R) = Λ(ψ)` — the same, at ANY axis | ✅ |
 > | **H4-5c-ii(a)** the Λ-SUM | `hypVolume (chimney (milnorWedges R t α β γ) R) = Λ(α)+Λ(β)+Λ(γ)` | ✅ |
-> | **H4-5c-ii(b)** the TILING | `milnorWedges =ᵐ` the inscribed triangle | ✗ **the only open step** |
+> | **H4-5c-ii(b)** the TILING | `milnorWedges =ᵐ` the inscribed triangle | ✅ **(PR #4883)** |
 >
 > **The Λ-sum landed** — `hypVolume_chimney_milnorWedges`, the first statement
 > in the tier with `Λ(α)+Λ(β)+Λ(γ)` on the right, for `0 < α,β,γ < π/2` with
@@ -295,6 +295,35 @@ areas; do not assume the acute case is general).
 > and `milnorWedges` vs the half-plane triple agree at the **set** level on
 > 59 999 interior grid points across 40 random acute triangles (0 mismatches),
 > with 0 all-same-sign occurrences in 200 000 draws.
+>
+> **H4-5c-ii(b) LANDED (2026-08-09, sorry-free) — PR #4883**, file
+> [`OrthoschemeTiling.lean`](../content/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeTiling.lean).
+> 22 declarations, `#print axioms` clean on every one. **The H4 tier's target
+> is now a statement about a triangle:**
+>
+>     hypVolume (chimney (inscribedTriangle R t α β γ) R) = ofReal (Λ α + Λ β + Λ γ)
+>
+> All three predicted ingredients held exactly as certified; the route above
+> needed no revision. Four things worth carrying forward:
+>
+> 1. **The `⊆` lemmas need no `0 < R`.** The wedge's own chord slack `G₃` comes
+>    straight from membership, so a degenerate `R` makes the wedge empty and the
+>    statement vacuous rather than false — the same strengthening H4-5b made for
+>    `wedge_subset_disk`. Do not add the hypothesis back.
+> 2. **The a.e. form of H4-2 is what gets spent here.** `hypVolume_chimney_of_ae_lt`,
+>    not the pointwise `_of_subset_disk` — exactly as `qou-hqzr` predicted when
+>    it noted the inscribed triangle has its three vertices ON the circle where
+>    the fibre mass is `⊤`. The prediction was correct and cost nothing extra.
+> 3. **`Measure.addHaar_submodule` is the right shelf for the null lines** —
+>    each edge line is `LinearMap.ker` of a nonzero functional, and `≠ ⊤` is
+>    witnessed by `(−sin φ, cos φ) ↦ 1`. Do not go looking for a graph-of-a-
+>    function or a Fubini-slice argument.
+> 4. **`precision-gates.sh` does not exist on this branch's base.** It is on
+>    `main` but postdates #4864's base commit; it had to be run from
+>    `git show origin/main:scripts/precision-gates.sh`. Its red (raw-float64,
+>    39 new dirty witnesses) is **entirely pre-existing** and does not implicate
+>    the new probe or witness — checked by name. A later rebase onto current
+>    `main` picks the script up normally.
 >
 > **The honesty question this step raises, and it is NOT about the tiling.**
 > Defining the inscribed triangle *as* the intersection of the three chord
