@@ -40,16 +40,23 @@ that same q_0: `y_lambda_wenzl_bridge_numeric` is a live closed form keyed on
 the q passed in, so no muon-built cache is consulted and the two layers are
 never straddled inside one quantity.
 
-Requires: mpmath, snappy.  Corpus y_λ via y_lambda_wenzl_bridge (pure).
+Requires: mpmath.  snappy is OPTIONAL — only Reading (B) uses it; without it
+Reading (B) is skipped and `snappy_error` records why, while Reading (A) (the
+parameter-free primary result) still computes.  Corpus y_λ via
+y_lambda_wenzl_bridge (pure mpmath).
 Emits computations/charm-frobenius-block-projection.witness.json.
 """
 from __future__ import annotations
 
+import datetime as _dt
 import json
 import sys
+import time as _time
 from pathlib import Path
 
 import mpmath as mp
+
+_T0 = _time.time()
 
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
@@ -207,8 +214,10 @@ def main():
     # ============ Reading (B): SnapPy complex volume + [2,1] projection ======
     readingB = None
     snappy_err = None
+    _snappy_version = None
     try:
         import snappy
+        _snappy_version = getattr(snappy, "__version__", "unknown")
 
         def volcs_comps(word):
             L = snappy.Link(braid_closure=word)
@@ -271,18 +280,56 @@ def main():
     import hashlib
     import os
     import subprocess
+    _cwd = os.path.dirname(os.path.abspath(__file__))
     try:
         _commit = subprocess.check_output(
             ["git", "log", "-1", "--format=%H", "--", __file__],
-            cwd=os.path.dirname(os.path.abspath(__file__))).decode().strip() or "unknown"
+            cwd=_cwd).decode().strip() or "unknown"
     except Exception:
         _commit = "unknown"
+    try:
+        _head_commit = subprocess.check_output(
+            ["git", "rev-parse", "HEAD"], cwd=_cwd).decode().strip() or "unknown"
+    except Exception:
+        _head_commit = "unknown"
+
+    # Standard witness assertions: the self-validation residuals that back the
+    # "no fit" claim.  Each is a checkable numeric with an explicit tolerance,
+    # so a validator can re-verify this witness without reading the prose.
+    _TOL = mp.mpf("1e-40")
+    assertions = []
+    for _k, _v in val.items():
+        if "resid" in _k:
+            assertions.append({
+                "name": _k,
+                "computed": float(_v),
+                "expected": 0.0,
+                "tolerance": float(_TOL),
+                "passed": abs(mp.mpf(_v)) <= _TOL,
+            })
+    assertions.append({
+        "name": "trM_identity_eq_one",
+        "computed": float(val["trM_identity"]),
+        "expected": 1.0,
+        "tolerance": 1e-30,
+        "passed": abs(mp.mpf(val["trM_identity"]) - 1) <= mp.mpf("1e-30"),
+    })
+    all_passed = all(a["passed"] for a in assertions)
 
     witness = {
-        "schema": "witness/v1-informal",
         "engine": "mpmath+snappy",
+        "engineVersion": f"mpmath {mp.__version__}"
+                         + (f"; snappy {_snappy_version}" if _snappy_version else
+                            "; snappy unavailable"),
+        "computedAt": _dt.datetime.now(_dt.timezone.utc).isoformat(),
+        "durationMs": int((_time.time() - _T0) * 1000),
+        "computation": "charm-frobenius-block-projection",
+        "scriptFile": "charm_frobenius_block_projection_probe.py",
         "scriptHash": hashlib.sha256(Path(__file__).read_bytes()).hexdigest()[:12],
         "scriptCommitSha": _commit,
+        "commitSha": _head_commit,
+        "assertions": assertions,
+        "allPassed": all_passed,
         "description": "charm_frobenius_block_projection_probe: Frobenius/Wedderburn "
                        "charm-block projection of a composite braid's complex volume "
                        "vs the charm mass hierarchy (derive-then-check).",
