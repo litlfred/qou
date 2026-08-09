@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T11:12:18.669851+00:00",
-  "commitSha": "b4e08da801707f834026feab2747afed9f7d60e0",
+  "computedAt": "2026-08-08T13:06:49.973010+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 5,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
-  "scriptHash": "c45a51f28cd0",
-  "scriptCommitSha": "8e43287ac32516de7bca862b321c5871fd314906",
+  "scriptHash": "d88373ec596d",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,8 +31,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired — every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
   "parameters": {
@@ -307,7 +308,17 @@
       "alpha-cluster": 6
     },
     "klr_violations_count": 8,
-    "fully_canonically_wired_atoms": []
+    "fully_canonically_wired_atoms": [],
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+        "size_bytes": 5551,
+        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:30:49.888071+00:00"
+      }
+    ]
   },
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"

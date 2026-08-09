@@ -88,7 +88,7 @@ except Exception:  # pragma: no cover
 
 # Canonical substrate q0 (proton-anchored). FALSIFICATION / reference only.
 try:
-    from q_parameter import Q as Q0  # type: ignore
+    from q_parameter import Q_MP as Q0  # type: ignore
     Q0 = mp.mpf(str(Q0))
 except Exception:  # pragma: no cover - shim fallback
     Q0 = mp.mpf("1.10997859561220225731080831999100762523924148")

@@ -32,7 +32,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV as _ME,
     AME_B_DEUTERON_MEV_VALIDATION,

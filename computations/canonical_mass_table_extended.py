@@ -328,54 +328,56 @@ def lookup_b_pred_existing(
         return None, None
 
 
-def lookup_nucleon_mass_borromean(
+def lookup_nucleon_mass_canonical(
     Z: int, N: int, borromean: dict | None = None,
 ) -> tuple[float | None, str | None]:
-    """Cross-reference the Borromean tower m_p / m_n prediction.
+    """Canonical absolute nucleon mass for the p / n rows, via the facade.
 
-    `canonical-mass-table-extended` computes |tr_M| but does not
-    self-derive nucleon mass. The Borromean tower verification
-    (`m-p-borromean-verification-50dps.witness.json`) provides
-    m_p and m_n at 0.25 ppm, conditional on
-    `conj:borromean-baryon-mass-formula`. For p (Z=1, N=0) and n
-    (Z=0, N=1) rows we surface this prediction so the table is
-    not misleadingly empty for free nucleons.
+    `canonical-mass-table-extended` computes |tr_M| but does not self-derive a
+    nucleon mass, so the free-nucleon rows have to source theirs. They now come
+    from `canonical_mass.nucleon_mass_mev()` — the muon-anchored Hecke energy
+    `m_p = 2·(m_μ·F_Bor − 6·m_e)`, CODATA to +1.35 ppb — which is what
+    docs/canonical-mass-formula-guardrail.md requires of *every* absolute-mass
+    consumer.
+
+    HISTORY (fixed 2026-08-08, bean `qou-7loj`). This function used to read
+    `m-p-borromean-verification-50dps.witness.json` and return its
+    `m_p_pred_MeV = 965.384` / `m_n_pred_MeV = 966.715` — the
+    `m_e·Vol(𝓑₃)/ℏ_q²·λ_A` form the 2026-06-24 ruling deprecated for absolute
+    mass. So the table's nucleon rows were 27 MeV (+2.89 %) high while labelled
+    `prediction_method=CANONICAL_TRACE`, and that propagated through
+    `low_isotope_mass_table.py` into every consumer of the low-isotope table.
+
+    It survived every guard because the deprecated value crossed the boundary
+    as **data**: a `json.loads` of a witness path, with no import and no call,
+    so `noncanonical_reentry_audit.py` had no AST edge to find, and the formula
+    appeared in no prose or docstring for the status guards to read.
+
+    The Borromean-tower figure is not lost — it remains in its own witness,
+    which is the right place for a prediction conditional on
+    `conj:borromean-baryon-mass-formula`. It is simply no longer served as the
+    canonical absolute mass. `borromean` is still accepted so existing call
+    sites keep working; it is unused.
 
     Returns (m_pred_MeV, origin_label) or (None, None).
     """
+    del borromean  # retained for call-site compatibility; no longer consulted
+    species = {(1, 0): "proton", (0, 1): "neutron"}.get((Z, N))
+    if species is None:
+        return None, None
     try:
-        if borromean is None:
-            path = _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE)
-            if not path.exists():
-                return None, None
-            borromean = json.loads(path.read_text())
-        data = borromean.get("data", borromean)
-
-        def _to_float(x: Any) -> float | None:
-            # The Borromean witness stores values as mpmath-formatted
-            # strings (e.g. "938.27185263683084707"). Coerce to f64
-            # for downstream arithmetic; the 50-dps source value is
-            # preserved as a string in the witness file itself.
-            if x is None:
-                return None
-            try:
-                return float(x)
-            except (TypeError, ValueError):
-                return None
-
-        if Z == 1 and N == 0:
-            return (
-                _to_float(data.get("proton", {}).get("m_p_pred_MeV")),
-                "borromean-tower (conj:borromean-baryon-mass-formula)",
-            )
-        if Z == 0 and N == 1:
-            return (
-                _to_float(data.get("neutron", {}).get("m_n_pred_MeV")),
-                "borromean-tower (conj:borromean-baryon-mass-formula)",
-            )
+        from canonical_mass import nucleon_mass_mev  # noqa: E402 — facade
+        return (
+            float(nucleon_mass_mev(species)),
+            "canonical_mass facade (muon-anchored Hecke energy)",
+        )
+    except (ImportError, ValueError, TypeError):
         return None, None
-    except (KeyError, json.JSONDecodeError):
-        return None, None
+
+
+#: Pre-2026-08-08 name. Kept so an older call site fails loudly at review time
+#: rather than silently resurrecting the +2.89 % route.
+lookup_nucleon_mass_borromean = lookup_nucleon_mass_canonical
 
 
 def main() -> int:
@@ -519,19 +521,20 @@ def main() -> int:
         origin: str | None = None
         prediction_type = "mass" if is_nucleon else "binding_energy"
         if is_nucleon:
-            pred, origin = lookup_nucleon_mass_borromean(Z, N, borromean_data)
-            # CODATA references taken from the Borromean witness so the
-            # comparison stays consistent with the prediction source.
+            pred, origin = lookup_nucleon_mass_canonical(Z, N)
+            # CODATA reference from codata_constants, not from the Borromean
+            # witness: that witness is the deprecated Vol·ρ route (qou-7loj),
+            # and sourcing the *reference* from it too was what kept the row's
+            # err_ppm looking self-consistent while the prediction was 2.89 %
+            # off the canonical value.
             try:
-                bdata = (borromean_data or {}).get("data", borromean_data or {})
-                key = "proton" if (Z, N) == (1, 0) else "neutron"
-                codata_key = (
-                    "m_p_codata_MeV" if (Z, N) == (1, 0)
-                    else "m_n_codata_MeV"
+                from codata_constants import (  # noqa: E402
+                    M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
                 )
-                v = bdata.get(key, {}).get(codata_key)
-                ref = float(v) if v is not None else None
-            except (TypeError, ValueError):
+                ref = float(
+                    M_P_MEV_VALIDATION if (Z, N) == (1, 0) else M_N_MEV_VALIDATION
+                )
+            except (ImportError, TypeError, ValueError):
                 ref = None
         else:
             pred, origin = lookup_b_pred_existing(Z, N, mass_table_ppb_data)

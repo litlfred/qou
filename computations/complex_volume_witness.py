@@ -40,7 +40,7 @@ from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 
 # substrate inputs (CAL-1 m_e, CAL-2 q₀) — pure canonical, no fit
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV as _ME  # noqa: E402
 
 # canonical energy scale α = E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV (derived,

@@ -377,6 +377,7 @@ import QOU.Braiding.non_self_intersection
 -- Keystone geometric-angle fingerprint: the ℓ=1 icosahedral character on the
 -- 5-fold rotation is the golden ratio (parameter-free; validates irrepToRotation).
 import QOU.BraidsAndKnots.IcosahedralCharacterGoldenRatio
+import QOU.BraidsAndKnots.TFromTraceCyclicity
 -- D15 Pachner–Pentagon (conj:pachner-pentagon-borromean): §3b conjecture-class
 -- with sorry-free consumer theorems. Wired so CI type-checks it (not an orphan).
 import QOU.BraidsAndKnots.PachnerPentagonBorromean
@@ -685,6 +686,16 @@ import QOU.MassTheory.BraneGeometricResummation
 -- under every volume reading — Vol ≡ 0 for the literal mass-braid H₉ closures, and
 -- a 2.37× anti-correlated residual for the corpus-canonical binding links.
 import QOU.MassTheory.VolTHe3RadialHandle
+-- prjo: q₀-free ≥3-row extensive cumulant, forward from the proved Δ_λ. Feeds the
+-- C(A,k) cluster basis the combinatorial ≥3-row signed-Springer-dim content s_k;
+-- re-derives μ₂=0 combinatorially (0-fit match) but gives the (−,+) sign order vs
+-- the derived (+,−) window and ratio 2 vs ~9.75. Scope-(a) negative, q₀-free.
+import QOU.MassTheory.ThreeRowExtensiveCumulant
+-- qou-prjo LEAD-2 (geometric route): transverse NA-Stokes surface-curvature
+-- structure + THE WALL (nonzero pairing needs position-dependent transport =
+-- the missing surface-2-form data). Forward geometric, sorry-free, magnitude
+-- NOT derived.
+import QOU.MassTheory.TransverseSurfaceCurvature
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):

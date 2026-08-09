@@ -1,0 +1,15 @@
+---
+# qou-gbvs
+title: Remark interpreting centsim.pdf at docs/workplans/2026-06-08-uploaded-paper-results-ingestion-bac…
+status: todo
+type: task
+created_at: 2026-08-08T23:37:35Z
+updated_at: 2026-08-08T23:37:35Z
+---
+
+Record the extraction fact so the next agent does not re-fail: this upload is an image-only scan with no text layer; pdftotext/pypdf/pdfminer all return zero characters and tesseract is unavailable, so it must be read via the vision path. It sat as 'UNVERIFIED -- identify on ingestion' in the 2026-06-08 ingestion backlog for that reason.
+
+Source: `uploads/centsim.pdf` — no `references.ts` entry yet
+Relevance: **core** — agent assessment, not yet adjudicated.
+
+Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

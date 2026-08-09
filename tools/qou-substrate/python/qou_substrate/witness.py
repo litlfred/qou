@@ -82,6 +82,40 @@ def _q0_value_for_anchor(anchor: str) -> Optional[str]:
     return val
 
 
+_Q0_PREFIXES = (("proton", "1.10997858275"), ("muon", "1.10997859555"))
+_Q0_FIELDS = ("q_0_50dps", "q0", "q_0", "q0_50dps")
+
+
+def _q0_anchor_from_payload(payload: Mapping) -> Optional[str]:
+    """The anchor a payload's own q₀ VALUES imply, or None if it records none.
+
+    Evidence only — used to refuse carrying a stale `q0Anchor` across a
+    re-anchoring, never to invent a pin. Returns None when the payload records
+    no recognisable q₀, and also when it records BOTH pins: a payload that
+    legitimately spans layers (a cross-anchor comparison) must not have either
+    one asserted over it.
+    """
+    seen = set()
+
+    def walk(node, depth=0):
+        if depth > 4 or len(seen) > 1:
+            return
+        if isinstance(node, Mapping):
+            for k, v in node.items():
+                if k in _Q0_FIELDS and isinstance(v, str):
+                    for name, pre in _Q0_PREFIXES:
+                        if v.strip().startswith(pre):
+                            seen.add(name)
+                elif isinstance(v, (dict, list)):
+                    walk(v, depth + 1)
+        elif isinstance(node, list):
+            for v in node[:64]:
+                walk(v, depth + 1)
+
+    walk(payload)
+    return seen.pop() if len(seen) == 1 else None
+
+
 def resolve_q0_anchor(
     script_path: Union[str, Path], *, env: Optional[Mapping[str, str]] = None,
 ) -> tuple:
@@ -899,38 +933,57 @@ class WitnessBuilder:
         # Preserve only. A witness with no recorded pin still gets none —
         # inventing one would assert a pin the producer never established, and
         # Q0_ANCHOR_MISSING is a tolerated state.
+        # ...but NEVER across an actual re-anchoring. Carrying a stale pin is
+        # strictly worse than dropping one: a dropped pin reads as
+        # Q0_ANCHOR_MISSING, a tolerated state the audit reports, whereas a
+        # carried one ASSERTS a layer the numbers no longer belong to — the
+        # muon-value-read-as-proton confusion of bean tnjb, with a provenance
+        # field vouching for it.
         #
-        # BUT: preserve-forward must not carry a pin that is now FALSE.
-        # A re-run that moved to the other layer keeps the old label and
-        # silently mislabels a freshly computed value. Observed live —
-        # `qbeta_ck_cache` computes at the proton pin, yet its witness read
-        # `q0Anchor: "muon"` with the muon 50-digit value, because this block
-        # copied the pre-re-pin stamp forward. The Q_β prediction had moved
-        # 30.4 ppb under a label saying it had not.
+        # TWO independent ways a carried pin can be FALSE. We drop on EITHER,
+        # because neither subsumes the other (merge of two fixes that landed
+        # concurrently, 2026-08-09):
         #
-        # Only a POSITIVE declaration may overrule a recorded pin
-        # (`q0_anchor_is_declared`: env var, or an explicit manifest entry).
-        # `resolve_q0_anchor` alone is not enough — it defaults to "proton" for
-        # every stem absent from the manifest, which is ~470 producers, so
-        # gating on it would strip legitimate `muon` labels wholesale.
+        #  (1) PAYLOAD EVIDENCE — the freshly computed q₀ in the payload
+        #      disagrees with the recorded label. Measured:
+        #      `markov_peel_atomic_witness` re-anchored to proton (its stem is
+        #      NOT in `q0_anchor_manifest.json`) and the rebuilt witness still
+        #      carried `q0Anchor: muon` with the muon `q0Value`, next to a
+        #      proton `parameters.q0`. Being undeclared, (2) misses it.
+        #  (2) DECLARED RE-ANCHORING — an env var or an explicit manifest entry
+        #      contradicts the recorded label. Measured: `qbeta_ck_cache`
+        #      computed at the proton pin while its witness read
+        #      `q0Anchor: "muon"`; the Q_β prediction had moved 30.4 ppb under
+        #      a label saying it had not. Where the payload carries no readable
+        #      q₀, (1) misses it.
         #
-        # On a declared contradiction, DROP rather than correct: writing the
+        # (1) is payload EVIDENCE, not the resolver default, so it does NOT
+        # have the failure mode that rules out gating on `resolve_q0_anchor`
+        # alone: that defaults to "proton" for the ~470 producers absent from
+        # the manifest, and gating on it would strip legitimate `muon` labels
+        # wholesale. Reading the actual computed value does not.
+        #
+        # On either contradiction DROP rather than correct: writing the
         # resolved pin here would assert a stamp the producer never
         # established — the very thing the "preserve only" rule above exists to
         # prevent — and Q0_ANCHOR_MISSING is explicitly tolerated. A producer
         # that wants a positive label calls `stamp_staleness_metadata`.
         if isinstance(existing, dict):
             _recorded = existing.get("q0Anchor")
-            _stale_pin = False
+            _stale = False
             if _recorded in ("muon", "proton"):
-                try:
-                    if q0_anchor_is_declared(self._script_path):
-                        _resolved, _ = resolve_q0_anchor(self._script_path)
-                        _stale_pin = (_resolved in ("muon", "proton")
+                _actual = _q0_anchor_from_payload(witness)
+                if _actual is not None and _actual != _recorded:
+                    _stale = True                      # (1) payload evidence
+                if not _stale:                         # (2) declared re-anchor
+                    try:
+                        if q0_anchor_is_declared(self._script_path):
+                            _resolved, _ = resolve_q0_anchor(self._script_path)
+                            _stale = (_resolved in ("muon", "proton")
                                       and _resolved != _recorded)
-                except Exception:  # noqa: BLE001
-                    _stale_pin = False
-            if not _stale_pin:
+                    except Exception:  # noqa: BLE001
+                        _stale = False
+            if not _stale:
                 for _k in ("q0Anchor", "q0Value"):
                     if _k not in witness and _k in existing:
                         witness[_k] = existing[_k]

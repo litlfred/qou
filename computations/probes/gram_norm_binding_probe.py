@@ -219,7 +219,9 @@ def main() -> int:
         qbar = {}
         if args.qbar:
             import mpmath as _mp
-            q0m = _mp.mpf(str(Q0))
+            from q_parameter import Q_50_DIGIT_STR as _Q50
+            # 50-dps source; the f64 `Q` is rejected by the word builder.
+            q0m = _mp.mpf(str(_Q50))
             legs = {}
             for tag, qv in (("q0", q0m), ("qi", 1 / q0m)):
                 yq = y_lambda_at(n, q_val=float(qv))

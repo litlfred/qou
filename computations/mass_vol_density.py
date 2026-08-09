@@ -129,10 +129,16 @@ def density_per_block(tr_M_K: mp.mpf) -> mp.mpf:
 
     ⚠ The two readings are NOT interchangeable: at q₀ the per-block H₃
     trace tr_M(proton) ≈ 1.0653 differs from the global H₄ scalar
-    ≈ 2.5328 by ≈2.378× (`compare_density_readings`). The per-block
-    reading taken literally gives m_p ≈ 406 MeV (−56.7%); production's
-    near-correct m_p comes from the global scalar landing near the
-    CODATA-implied λ≈2.46 with the (different) H₄ index set. The
+    ≈ 2.5328 by ≈2.378× (`compare_density_readings`).
+
+    As ABSOLUTE MASS both readings are DEPRECATED (2026-06-24 ruling):
+    per-block taken literally gives m_p ≈ 406 MeV (−56.7%), and the global
+    scalar ≈ 966 MeV (+2.96%) — the latter only by landing near the
+    CODATA-implied fit λ_A ≈ 2.46 on the (different) H₄ index set. The
+    canonical absolute mass is the muon-anchored
+    m_p = 2·(m_μ·F_Bor − 6·m_e) ≈ 938.27 MeV via `canonical_mass.py`.
+    The per-block reading remains valid for BINDING ratios, where the
+    density scale cancels. The
     reconciliation is the OPEN per-block-vs-global question, gated on the
     per-knot hyperbolic Vol (#1762/#1816) — this helper EXPOSES both
     readings, it does NOT silently swap production. See

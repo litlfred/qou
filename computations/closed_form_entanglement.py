@@ -32,7 +32,7 @@ import sys
 import mpmath as mp  # noqa: E402
 
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 
 SEQUENCE = [("D", 1, 1), ("3He", 2, 1), ("4He", 2, 2), ("6Li", 3, 3),

@@ -47,10 +47,14 @@ import numpy as np
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from q_parameter import Q as Q0_FLOAT
+# 50-dps source. `set_q` does `mp.mpf(str(...))` internally, so a STRING
+# input gives the full 50 digits where the f64 `Q` gave 17. Alias renamed
+# from Q0_STR: it is no longer a float, and a name that says otherwise is
+# the label problem this sweep exists to remove.
+from q_parameter import Q_50_DIGIT_STR as Q0_STR
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_mpmath import set_q, qint, qfac
-set_q(Q0_FLOAT)
+set_q(Q0_STR)
 
 import pyhecke_native
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
@@ -84,7 +88,7 @@ KNOT_TO_PARTICLE = {
 
 # α_k weights per binding_depth_stratified_rust.py
 def alpha_k(k: int) -> mp.mpf:
-    Q0 = mp.mpf(str(Q0_FLOAT))
+    Q0 = mp.mpf(str(Q0_STR))
     z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
     G = mp.catalan
     M_E_MEV = mp.mpf("0.51099894999999995")
@@ -122,7 +126,7 @@ def chi_K_at_lambda(K_word: list, lam: tuple) -> float:
     else:
         word_m = [(1 if s > 0 else -1, abs(s)) for s in K_word]
         try:
-            value = float(chi_lambda_braid(lam, word_m, q_value=Q0_FLOAT))
+            value = float(chi_lambda_braid(lam, word_m, q_value=Q0_STR))
         except Exception:
             value = 0.0
     _CHI_K_CACHE[cache_key] = value
@@ -207,7 +211,7 @@ def main() -> int:
         "simplified result (chirality K_1* = K_3* = 6_1 wins at 1.49×)."
     )
     builder.set_content_block("prop:depth-stratified-frobenius-reciprocity")
-    builder.add_parameter("q_0", str(Q0_FLOAT))
+    builder.add_parameter("q_0", str(Q0_STR))
 
     # Load atom-chi witnesses
     atom_witnesses = {}
@@ -309,7 +313,7 @@ def main() -> int:
     print(f"    we project them to H_3 via the inclusion σ_1 ↦ σ_1, no σ_2 used.")
 
     try:
-        gram_inv_raw = pyhecke_native.gram_inverse(float(Q0_FLOAT))
+        gram_inv_raw = pyhecke_native.gram_inverse(float(Q0_STR))
         gram_inv = np.array(gram_inv_raw, dtype=float)
         print(f"    Gram inverse at q_0 (6×6 matrix): condition number = "
               f"{np.linalg.cond(gram_inv):.4f}")

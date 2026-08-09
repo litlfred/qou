@@ -1,15 +1,15 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-03T19:20:59.115544+00:00",
-  "commitSha": "46462ce70d37043bf5240c1da21eea0fb1378439",
+  "computedAt": "2026-08-08T21:31:42.208457+00:00",
+  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "deligne-stable-range-binding-period-probe",
   "scriptFile": "deligne_stable_range_binding_period_probe.py",
-  "scriptHash": "338057b25ce5",
-  "scriptCommitSha": "e9093f1b66c45ed53b7abe805fab7f2430c60492",
+  "scriptHash": "793afbda76f7",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,16 +19,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Deligne/TL stable-range probe for T_q(n)=sum dim_q: (1) per-shape padded-family closed form (rational in q, q^n — the interpolation restriction property) verified exactly; (2) captured fraction of the stable truncation at substrate q_0 — feasibility verdict for interpolated-level evaluation of the binding period.",
   "audit_only": true,
   "tier": "decisive probe (formalize-first: formula derived then machine-verified; capture is a measurement, no fit)",
   "precision_dps": 50,
   "constants": {
-    "q_0": "1.1099785955573347"
+    "q_0": "1.1099785955573347199"
   },
   "restriction_property": {
     "mu_max": 4,
@@ -125,7 +127,7 @@
     "stable_truncation_captures_T_at_q0": false,
     "capture_decreasing_in_n": true
   },
-  "timestamp": "2026-07-03T19:20:59+00:00",
+  "timestamp": "2026-08-08T21:31:42+00:00",
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

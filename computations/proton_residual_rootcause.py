@@ -79,7 +79,11 @@ from d_phi_q_series import phi_q_series as PhiQ_euler_mpfr
 # Per-block reformulation — Branch D
 from per_block_phi_q import mass_per_block, particle_braids
 
-from q_parameter import Q as Q0_FLOAT
+# 50-dps source. `set_q` does `mp.mpf(str(...))` internally, so a STRING
+# input gives the full 50 digits where the f64 `Q` gave 17. Alias renamed
+# from Q0_STR: it is no longer a float, and a name that says otherwise is
+# the label problem this sweep exists to remove.
+from q_parameter import Q_50_DIGIT_STR as Q0_STR
 from experimental_constants import M_E_MEV, M_P_MEV
 from witness_base import WitnessBuilder
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
@@ -88,7 +92,7 @@ from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 DPS = 50
 mp.dps = DPS
 
-Q0_MP = mpf(str(Q0_FLOAT))
+Q0_MP = mpf(str(Q0_STR))
 Q0_INV_MP = mpf(1) / Q0_MP
 
 
@@ -237,7 +241,7 @@ def main() -> int:
     print("=" * 100)
     print("PROTON RESIDUAL ROOT-CAUSE DIAGNOSTIC (Phase 1, 1ppb plan)")
     print("=" * 100)
-    print(f"  q_0 = {Q0_FLOAT}")
+    print(f"  q_0 = {Q0_STR}")
     print(f"  z   = {float(Z_MARKOV):.10f}")
     print(f"  CODATA m_p = {M_P_MEV} MeV, m_e = {M_E_MEV} MeV")
     print(f"  Target ppb error: 1 (current: 544,145)")
@@ -391,7 +395,7 @@ def main() -> int:
         "formula structure.  See "
         "docs/audits/2026-05-09-mass-table-1ppb-audit.md for the audit."
     )
-    w.add_parameter("q_0", float(Q0_FLOAT))
+    w.add_parameter("q_0", float(Q0_STR))
     w.add_parameter("z_markov", float(Z_MARKOV))
     w.add_parameter("dps_mpfr_branches", DPS)
     w.add_parameter("V_e", float(V_e))

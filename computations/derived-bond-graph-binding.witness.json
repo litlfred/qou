@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:48:39.525194+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T13:00:17.500815+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "f_bond_derivation_matches_measured_trace_ratio",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1783129293621,
+  "durationMs": -1786192918224,
   "computation": "derived-bond-graph-binding",
   "scriptFile": "derived_bond_graph_binding.py",
-  "scriptHash": "f38eb5fd17de",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "7f4af3d8cf38",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,12 +26,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, f_pn=z−h(½−δ/4) — closed q₀ expressions, NO fit, NO |·|. Validated: ∏_chain f_bond reproduces the measured tr_atom/tr_free to 3e-07. Binding B = E_0·log(tr_free/tr_atom) = E_0·Σ_bonds log(1/f_bond) (extensive, positive — no modulus). FIX: the braid wires only A−1 CHAIN bonds; the complete graph (C(Z,2) pp + Z·N pn + C(N,2) nn) is the all-pairs topology. Per-bond energies E_0·log(1/f): pp=2.907, pn=3.890, nn=5.178 MeV (substrate-fixed).",
   "parameters": {
@@ -273,6 +274,16 @@
       "chain_miss_range": "0.57–2.36×",
       "complete_miss_range": "0.45–1.20×",
       "verdict": "f is DERIVED (Markov factor of the bridge), not fitted. Chain (A−1 bonds, as-wired) under-binds (esp ⁴He); complete graph (C(A,2)) over-binds the light nuclei — the true bond graph is between (saturation/Pauli/shell), the remaining structural question. The per-bond ENERGIES are fixed substrate quantities; only the edge SET is open."
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "binding-canonical.witness.json",
+        "sha256": "3950fb614c34db7fbe3764ce44b0b25c51e8b3e16dd730e8387df0e21e77e497",
+        "size_bytes": 6231,
+        "commitSha": "a47a1e7a1abca511f5b43c9d930709397d648845",
+        "scriptCommitSha": "b2d94df75a85abb27b1790defaaa7ec7dccb5820",
+        "computedAt": "2026-06-29T17:13:41.851813+00:00"
+      }
+    ]
   }
 }

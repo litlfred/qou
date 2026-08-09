@@ -1,10 +1,11 @@
 ---
 # qou-prjo
 title: 'GAP: deuteron Delta_lambda magnitude — naive per-pair z dead across A; surviving object is transverse NA-Stokes surface-curvature (not braid-word, not scale, not level, not edge, not DT-count)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-02T19:09:10Z
+updated_at: 2026-08-09T01:07:05Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -45,3 +46,152 @@ until it exists the deuteron magnitude stays open.
 
 Any single-scale / per-pair / level / edge / dimension / writhe / DT-count closure — all
 walled. A `Δ_λ` fitted to `B(D)` is the forbidden 7th ansatz.
+
+
+---
+## Update 2026-08-08 — LEAD 1 attempt (PR #4817, branch claude/deltalambda-3body-extensive-2026-08-08)
+
+Built the q0-free >=3-row extensive cumulant FORWARD from the proved Delta_lambda.
+s_k = Sum_{lam|-k, ell(lam)>=3} (-1)^{n(lam)} f^lam = {1:0, 2:0, 3:-1, 4:-2}, fed into
+the derived C(A,k) coordination-simplex cluster basis (same basis as
+AdditiveResidualSimplex, but q0-free / combinatorial instead of the q0 residual M(A)).
+
+RESULT = scope-(a):
+- 0-fit WIN: nu2 = 0 re-derives the derived mu2 = 0 combinatorially (s1=s2=0),
+  independent of the graded-ladder self-reference, no q0. The deuteron carries no
+  >=3-body cluster term (structural).
+- NEGATIVE (sign): forward (nu3,nu4) = (-1,+2) -- the OPPOSITE sign order to the
+  derived (mu3,mu4) = (+0.4708,-4.591) i.e. the #4316 (+,-) window is reversed.
+  Delta_lambda chirality parity does NOT supply the many-body sign-change.
+- NEGATIVE (magnitude): |nu4/nu3| = 2 vs derived ~9.75; extensive AME ratio
+  B_ext(4)/B_ext(3) = 6.0 vs AME 3.336 (+80%); single-algebra reading = 2.0 (-40%).
+  The two parameter-free readings BRACKET AME; interpolating is the forbidden fit.
+
+CONCLUSION: the q0-free >=3-row signed-Springer-dimension content ALONE does not
+supply the many-body binding sign+magnitude; those live in the q0-dependent
+y_lam*chi^lam trace weighting. Nothing wired. free_parameters=0, no AME inversion.
+
+SURVIVING SUB-QUESTION (next honest unit): is the (+,-) many-body sign-change window
+an irreducibly ARCHIMEDEAN (q0-dependent) feature -- i.e. is a fully q0-free closure
+provably impossible? Concretely: does sign( Sum_{lam|-k, ell>=3} y_lam(q) chi^lam Delta_lambda )
+cross zero between the combinatorial q->1 limit and q0? If yes, the sign is not
+combinatorial and the magnitude derivation must run through the q0 trace (the mu4
+alpha-cluster residual via rho_F cluster integrals, AdditiveResidualSimplex sec S).
+
+Files: docs/audits/2026-08-08-threerow-extensive-cumulant-forward-qfree.md;
+QOU/MassTheory/ThreeRowExtensiveCumulant.lean (sorry-free; lean-direct exit 0,
+#print axioms clean on all 11 decls -- the earlier "sandbox disk quota" block was a
+MISDIAGNOSIS, corrected 2026-08-09: the toolchain and 6990 mathlib oleans were already
+present. NOTE the residual "sorry-free != derived" seam: sRow3 is a hand-entered table,
+Python-checked and independently re-derived by hook length, NOT a Lean-proved partition
+sum -- cite as "the table sRow3 gives (-,+)", never "Lean proves the >=3-row stratum");
+computations/deltalambda/threerow_extensive_cumulant_forward_probe.py (+witness).
+
+---
+
+## LEAD-2 geometric surface-curvature route (PR #4818, 2026-08-08)
+
+Formalize-first attack on the transverse pairing Ω₂=½P∮∮[𝓕,𝓕]. Does NOT close
+the magnitude (scope-(a)); localizes it and Lean-proves a diagonal dead-end.
+
+- **Lean (sorry-free, lean-direct exit 0):** QOU/MassTheory/TransverseSurfaceCurvature.lean
+  — Seifert Betti b₁=c−s+1 (trefoil=2); ordered transverse pairing over a
+  generic Ring; **THE WALL** formalized (transverse_nonzero_needs_noncommuting_
+  curvature: nonzero pairing ⇒ position-dependent transported curvature = the
+  missing surface-2-form data). Magnitude NOT derived.
+- **Forward probe (0-fit):** AME binding ratios sit BETWEEN the diagonal
+  envelope (∝b₁, undershoots 4He 3 vs 12.72) and off-diagonal envelope
+  (∝C(b₁,2), overshoots 15 vs 12.72) — same shape as na-Stokes ℏ⁰/ℏ² bracketing.
+- **Scope-(b) sub-exclusion (Lean-proved):** the diagonal/Betti-count reading is
+  EXACTLY linear in link count (seifertBettiOne_link_additive) ⇒ pairwise-capped
+  ⇒ CANNOT be the ≥3-body term. DO NOT redo any additive/Betti closure.
+- **Isospin-blind:** T=³He geometry but AME differs (p/n split invisible to
+  genus topology).
+- **Surviving sub-question:** compute the surface-ordered transport U(x,O) on
+  the trefoil Seifert surface + the off-diagonal cross-handle pairing
+  Σ_{i<j}[U_i⁻¹F U_i, U_j⁻¹F U_j], and test whether it is non-additive over
+  links (super-pairwise). Still blocked on the canonical multi-nucleon Seifert
+  braid word (corpus lacks it; only the deuteron trefoil is pinned).
+
+Audit: docs/audits/2026-08-08-nastokes-transverse-surface-curvature-geometric-route.md
+
+---
+## SIGN sub-question RESOLVED (PR #4829, 2026-08-08) — bean stays OPEN (magnitude unclosed)
+
+> SUPERSEDED ON TWO POINTS by #4832/#4836 (see the later entries): (a) the n=9
+> "no crossing" is correct only on (1,q₀] — a crossing exists but sits ABOVE the
+> Wenzl pole q*=1.27845 where the effective level r is COMPLEX, so it is not a
+> member of the same trend; (b) the ⁴He "compute-limit / disk quota" was a
+> MISDIAGNOSIS — the cause was a dense np.eye densifying the sparse seminormal
+> matrices; fixed, ⁴He crosses on the physical interval at q=1.02092.
+
+Ran #4817 §5's exact next unit: does sign(Σ_{λ⊢3A, ℓ≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ) cross zero on (1,q₀]?
+
+VERDICT: **YES for the deuteron**. F_D = +8.05e-5 at q→1⁺ → −0.1950 at q₀, zero-crossing at **q≈1.05365** ∈ (1,q₀). T/³He (n=9) monotone negative, no crossing (scope-(a)). ⁴He (n=12) documented compute-limit (f64 seminormal, no mpfr kernel; disk quota). Char-free companion G=Σ y_λ·Δ_λ also crosses at n=6 (q≈1.024); n=9,12 don't.
+
+Structural cause: 3-row block overtake — (4,1,1)[Δ=−10, +term near q=1] overtaken by (3,2,1)[Δ=+16, largest |Δ| in ℓ≥3, −term at q₀]; sgn F_D(q₀)=sgn(y·χ·Δ)_{(3,2,1)}<0.
+
+CLOSES the sub-question 'where does the deuteron ≥3-row sign live' → the archimedean/q₀-dependent trace weighting (q₀-USE not q₀-derivation; derived not fitted; free_parameters=0; proton anchor; layer-pure). Confirms #4817 §5 / #4818 §5.
+
+Does NOT close the MAGNITUDE (Δ_λ value-only; super-pairwise extensive term still open). Also NOT the cross-isotope (μ₃,μ₄)=(+,−) cumulant window (distinct surviving unit, §6.1). Files: docs/audits/2026-08-08-deltalambda-threerow-sign-crossing-probe.md; computations/deltalambda/threerow_sign_crossing_probe.py + witness.
+
+
+## Follow-up (PR #4832, 2026-08-08) — sign structure sharpened; MAGNITUDE STILL OPEN
+
+Three units on the ≥3-row signed trace `F_K(q) = Σ_{λ⊢3A, ℓ≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ`.
+Bean stays **OPEN** — `F_K` is value-only and none of this touches the extensive
+super-pairwise term.
+
+**1. The deuteron crossing is A-DEPENDENT, not special.** #4829 swept only
+`(1,q₀]` and called n=9 "no crossing". On a beyond-substrate diagnostic ray the
+n=9 crossing IS there, at q ≈ 1.4617 (T) / 1.4285 (³He) — just above q₀. The
+ladder is non-monotone: D 1.0537 (below q₀) · T,³He ~1.43–1.46 (above) · ⁴He
+~1.019 (below). q₀ ≈ 1.10998 sits INSIDE the light-nucleus crossing band.
+
+**2. ⁴He was never compute-limited.** #4829 blamed a missing `pyhecke_native`.
+The real cause: `chi_atom` added a dense `np.eye(dim)` to an already-sparse CSR
+Hoefsmit operator, densifying it and forcing O(dim³) per braid-word letter
+(Σdim³ = 2.1e12 over the ℓ≥3 stratum of 12, L=47). Keeping the identity sparse +
+accumulating `Tr(∏M_j)` column-batch-wise gives O(L·dim²): largest n=12 partition
+3.5 s, full 70-partition sum ~32 s/grid point, pure Python. Bit-identical to the
+dense path (rel 1.4e-15). **No truncation was taken** — all 70 partitions summed.
+Reusable kernel: `computations/deltalambda/threerow_chi_sparse.py`.
+
+**3. Lean, sorry-free** (`QOU/BraidsAndKnots/ThreeRowSignCrossing.lean`,
+`lean`-direct exit 0, `#print axioms` = [propext, Classical.choice, Quot.sound]):
+`sign_crossing_of_block_dominance_exchange` (dominance exchange ⟹ zero, by IVT),
+`crossing_unique_of_strictMonoOn_ratio` (monotone overtake ratio ⟹ unique zero),
+`two_block_neg_iff_ratio_gt_one`. These take the per-block dominance data as
+HYPOTHESES — they do not certify the f64 numbers.
+
+**Flagged, NOT claimed:** Z=N (D, ⁴He) cross below q₀; Z≠N (T, ³He) cross above.
+Four points in two pairs, no derivation. Needs ⁶Li/⁷Li continuation (now cheap)
+plus a structural reason before it is anything.
+
+**Also noted:** the character is decisive — the character-free `G(q)=Σ y_λ·Δ_λ`
+puts the n=12 crossing ABOVE q₀ (1.597) while the full character object puts it
+BELOW (~1.019). Any route modelling the ≥3-row sign from the `y_λ` weighting
+alone gets n=12 wrong.
+
+Audit: `docs/audits/2026-08-08-threerow-sign-crossing-a-dependence-4he-and-lean.md`
+
+
+### ⁴He completed + a correction to how the deuteron result should be read
+
+⁴He (n=12) ran to completion — full 70-partition ℓ≥3 sum, no truncation, no
+native kernel. It crosses at **q = 1.02092, BELOW q₀**, so the ladder is
+NON-MONOTONE: D 1.05365 (below) · ³He 1.42852 / T 1.46170 (above) · ⁴He 1.02092
+(below).
+
+**Correction worth carrying forward:** the per-λ decomposition shows three
+qualitatively DIFFERENT mechanisms, measured as leading-term/total at q₀:
+
+  n=6   ~1.2×   two-block overtake — one block sets the total
+  n=9   4–11×   multi-block cancellation — total is a small residue
+  n=12  0.34×   broad constructive accumulation — total EXCEEDS its largest term
+
+So #4829 §2's (4,1,1)→(3,2,1) overtake describes **n=6 and only n=6**, and the
+Lean lemma modelled on it is an n=6 statement (the theorems are true for a
+generic split; the empirical premise that one block dominates holds only for the
+deuteron). **Do not generalise the deuteron block story to larger A** — that is
+generalising the wrong object.

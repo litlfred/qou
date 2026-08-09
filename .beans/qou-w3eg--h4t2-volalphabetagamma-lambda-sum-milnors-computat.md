@@ -92,7 +92,7 @@ be closed gets a bean, not a `sorry`.
 The owner uploaded four of the six wanted refs; **Ratcliffe §10.4 and Thurston
 Ch. 7 stayed paywalled**. What the sources changed:
 
-**1. Milnor 1982 full text is in `uploads/Download (2).pdf`** — the Appendix
+**1. Milnor 1982 full text is in `uploads/milnor-1982-hyperbolic-geometry-the-first-150-years.pdf`** — the Appendix
 carries the proof. It states the target verbatim:
 
 > "ideal hyperbolic 3-simplex … If α, β, γ are the dihedral angles along three
@@ -137,7 +137,7 @@ Schläfli differential formula, with edge-lengths as parameters. Worth reading
 for H4-4 if Milnor's angle-parameter route proves awkward in Lean; not yet read
 past the abstract.
 
-**5. Neumann–Zagier is `uploads/1-s2.0-0040938385900047-main (2).pdf`** — the
+**5. Neumann–Zagier is `uploads/neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds-copy-b.pdf`** — the
 filename confirms DOI `10.1016/0040-9383(85)90004-7`, so the "unverified from
 memory" DOI in the table below was **correct**. Still safe to cite only after a
 proper read.

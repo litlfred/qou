@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T21:52:34.211620+00:00",
-  "commitSha": "9d2bd8e854449e89f30f6d1b18e6d73091051d30",
+  "computedAt": "2026-08-08T13:00:19.399619+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "extracted_theta_all_real",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "em-linking-sk-theta-extraction",
   "scriptFile": "em_linking_sk_form_theta_extraction.py",
-  "scriptHash": "cb1a54a36da4",
-  "scriptCommitSha": "30268f147e2a037ddfbfc57f0c3fa232981a1094",
+  "scriptHash": "7ea37159c216",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,12 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "EXPLORATORY test of the owner's lead (bean qou-ed61): is the per-pair Coulomb unit S_K-shaped, S_K = A_omega * cuspModulus * (ln^2 q0 - theta_K^2)? A_omega = 3 is the exact q-independent Stokes symmetry constant and cuspModulus = sqrt3/4 is proved, so the knot-dependence sits entirely in theta_K -- the OPEN G3 datum. Inverts the extended mirror series to the implied theta_K per pair and checks the S_K form for consistency (reality, boost-dominance, smoothness). Does NOT derive theta_K; the normalisation theta_3 is a declared free choice and the whole one-parameter family is reported.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -537,6 +542,16 @@
       "verdict": "The S_K form itself is NOT falsified: theta stays real, stays boost-dominated, stays monotone within tolerance, and the A^(1/6) description IMPROVED (2.80% -> 2.33%). What is falsified is my claim that this was a sharp discriminator. Under theta ~ A^(1/6), reaching the wall needs A ~ (1/0.75)^6 * 63 ~ 350 -- far beyond the last bound mirror pair. The wall is UNREACHABLE in this series, so the test cannot discriminate, and the two readings are degenerate over the whole accessible range. I proposed it as cheap and decisive; it is cheap and indecisive, and that is recorded rather than restated as a success.",
       "what_the_extension_DID_settle": "Not this, but something else: H_coth's scatter IMPROVED with the extension (4.25% -> 3.50% on bound pairs) while its rivals did not (H_FH_Z 4.52% -> 4.39%, H_FH_A 5.50%). The three are no longer statistically tied. Combined with the round-5 withdrawal of the H_FH warrant, coth-saturation is now the only reading with both the best fit and a structural story -- though 'best of three' is not the same as derived."
     },
-    "honest_scope": "This is a CONSISTENCY test, not a derivation. theta_K remains the open G3 datum (bean qou-qnnq); nothing here computes it from the categorical drivers. The normalisation theta_3 is a free choice, and the reported power-law scan is descriptive -- with one free scale it cannot confirm a law, only reveal gross misbehaviour. What the probe establishes is narrower and real: the S_K form is not excluded, and it converts the held-fixed-unit confound into a specific open quantity that the corpus is already trying to derive."
+    "honest_scope": "This is a CONSISTENCY test, not a derivation. theta_K remains the open G3 datum (bean qou-qnnq); nothing here computes it from the categorical drivers. The normalisation theta_3 is a free choice, and the reported power-law scan is descriptive -- with one free scale it cannot confirm a law, only reveal gross misbehaviour. What the probe establishes is narrower and real: the S_K form is not excluded, and it converts the held-fixed-unit confound into a specific open quantity that the corpus is already trying to derive.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "f9af33b1529e1b4bc516ee6317abb79626308b80f6f3e0304fc666f1ea2e8f53",
+        "size_bytes": 10202,
+        "commitSha": "9d2bd8e854449e89f30f6d1b18e6d73091051d30",
+        "scriptCommitSha": "c04ba95ac4eeaf6b2482f3cb2682c7e31f7233ef",
+        "computedAt": "2026-08-01T21:51:01.013054+00:00"
+      }
+    ]
   }
 }

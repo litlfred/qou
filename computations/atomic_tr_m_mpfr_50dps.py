@@ -64,6 +64,46 @@ set_compute_dps()
 Q0 = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 OUT = HERE / "atomic-tr-m-mpfr-50dps.witness.json"
 
+OUT_BY_ANCHOR = {
+    "ideal": OUT,
+    "proton": HERE / "atomic-tr-m-mpfr-50dps-proton.witness.json",
+}
+
+
+def q0_for(anchor: str) -> str:
+    """50-dps q₀ for one layer. `ideal` from the q-pinning witness (the
+    canonical muon source `q_parameter` itself reads), `proton` from
+    `q_parameter.Q_50_DIGIT_STR`. No fallback between them.
+
+    `--anchor proton` alone is NOT enough and this refuses rather than let it
+    look like it worked. `q_parameter` resolves its pin at IMPORT time, from
+    the running script's stem — and this script's stem is in
+    `q0_anchor_manifest.json` `ideal_muon`, so `Q_50_DIGIT_STR` is bound to the
+    MUON value here unless the environment overrides the manifest. argparse
+    runs long after that import, so the flag cannot change it.
+
+    Without this check the run "succeeds" and writes muon numbers into the
+    proton-named witness — a mislabelled layer, which is worse than the
+    straddle it was meant to fix, because the filename then lies about which
+    pin the contents carry.
+    """
+    if anchor == "ideal":
+        return json.load(open(Q0))["derived_50_digit"]["q"]
+    if anchor != "proton":
+        raise SystemExit(f"unknown anchor {anchor!r}: expected 'ideal' or 'proton'")
+    from q_parameter import Q_50_DIGIT_STR
+    q = str(Q_50_DIGIT_STR)
+    if not q.startswith("1.10997858275"):
+        raise SystemExit(
+            "--anchor proton, but q_parameter resolved to the MUON pin "
+            f"({q[:24]}…). This script's stem is in q0_anchor_manifest.json "
+            "`ideal_muon`, and that binding happens at import, before "
+            "argparse. Re-run as:\n"
+            "    QOU_Q0_ANCHOR=proton python3 "
+            "computations/atomic_tr_m_mpfr_50dps.py --anchor proton\n"
+            "Refusing to write muon values into the proton-named witness.")
+    return q
+
 from codata_constants import M_E_MEV  # CODATA 2022 — centralised
 
 # Published Jones polynomials (from Kawauchi tables / KnotInfo).
@@ -165,8 +205,22 @@ def _rust_canonical_tr_M(Z: int, N: int, label: str):
             dt)
 
 
-def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
-    q_str = json.load(open(Q0))["derived_50_digit"]["q"]
+def main(also_symbolic: bool = False, method: str = "canonical-rust",
+         anchor: str = "ideal") -> int:
+    # One witness per q0 LAYER, never one shared. This producer's stem is in
+    # `q0_anchor_manifest.json` `ideal_muon`, so its q0 comes from the
+    # q-pinning witness and `ideal` stays the default here — the 2026-08-07
+    # "default to proton" directive governs NEW compute, and explicitly does
+    # not redefine the ideal CAL-2 layer this producer belongs to.
+    #
+    # The proton counterpart exists because the experimental layer needs its
+    # own bridge: `markov_peel_atomic_witness` is NOT in the manifest, so it
+    # re-anchors to proton on its own, and then cross-checks itself against
+    # THIS witness. With only the muon bridge available that comparison
+    # straddles the layers, and its `abs_diff_vs_bridge` blew up to 6.73e-04.
+    global OUT
+    OUT = OUT_BY_ANCHOR[anchor]
+    q_str = q0_for(anchor)
     q_0 = mpf(q_str)
     q_sym = sp.Symbol("q")  # match sympify default
     print(f"  q_0 (50 dps) = {q_str}")
@@ -380,8 +434,14 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
             "historical_K_comparison": comparison,
         })
 
+    stem = ("atomic-tr-m-mpfr-50dps" if anchor == "ideal"
+            else "atomic-tr-m-mpfr-50dps-proton")
     out = {
-        "computation": "atomic-tr-m-mpfr-50dps",
+        "computation": stem,
+        # Self-declared layer, so a reader never has to infer the pin by
+        # string-matching q0 — that inference is what let the two layers be
+        # mistaken for one another.
+        "q0Anchor": "muon" if anchor == "ideal" else "proton",
         "description":
             "Plan F advance — tr_M(T_w, q_0) via the 3A-strand atom-braid "
             "convention for proton, neutron, deuteron, tritium, ³He, "
@@ -428,7 +488,7 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust") -> int:
     from witness_base import WitnessBuilder  # noqa: E402
     out_path = (
         WitnessBuilder.wrap_legacy(
-            "atomic-tr-m-mpfr-50dps", out,
+            stem, out,
             script_path=__file__, engine="mpmath",
         )
         .set_audit_only(
@@ -462,5 +522,13 @@ if __name__ == "__main__":
              "`rust-with-python-crosscheck`: run both kernels and "
              "assert agreement at 25 dps (uses Python wall time + "
              "Rust speedup gain).")
+    parser.add_argument(
+        "--anchor", choices=("ideal", "proton"), default="ideal",
+        help="q0 layer. Default `ideal` (muon): this producer's stem is in "
+             "q0_anchor_manifest.json `ideal_muon`. `proton` writes the "
+             "separate experimental-layer witness the proton markov-peel "
+             "cross-checks against; neither anchor ever rewrites the other's "
+             "file.")
     args = parser.parse_args()
-    sys.exit(main(also_symbolic=args.symbolic, method=args.method))
+    sys.exit(main(also_symbolic=args.symbolic, method=args.method,
+                  anchor=args.anchor))

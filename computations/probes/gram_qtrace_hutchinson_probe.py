@@ -153,7 +153,10 @@ def _parity(g0, gi):
 def run_isotope(name, Z, N, *, exact_dim, samples):
     import mpmath as mp
     n = 3 * (Z + N)
-    q0 = mp.mpf(str(Q0))
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    # 50-dps source: `mpf(str(q_parameter.Q))` is an mpf carrying only 17
+    # real digits; atom_braid_word_3A now rejects it (NO FLOAT64).
+    q0 = mp.mpf(str(_Q50))
     out = {"iso": name, "Z": Z, "N": N, "n": n}
     for tag, qv in (("q0", q0), ("qi", 1 / q0)):
         y = y_lambda_at(n, q_val=float(qv))
@@ -194,9 +197,11 @@ def main() -> int:
     if args.validate:
         # n=9: force-stochastic vs exact on the same words/legs.
         import mpmath as mp
-        q0 = float(mp.mpf(str(Q0)))
+        from q_parameter import Q_50_DIGIT_STR as _Q50b
+        _q0x = mp.mpf(str(_Q50b))
+        q0 = float(_q0x)   # f64 only for the stochastic kernel below
         y = y_lambda_at(9, q_val=q0)
-        w = atom_braid_word_3A(2, 1, include_inter=True, q=mp.mpf(str(Q0)))
+        w = atom_braid_word_3A(2, 1, include_inter=True, q=_q0x)
         Ge, _ = gram_qtrace(w, 9, y, q=q0, exact_dim=10**9, samples=1)
         Gs, se = gram_qtrace(w, 9, y, q=q0, exact_dim=0, samples=args.samples)
         z = abs(Gs - Ge) / se if se > 0 else 0.0

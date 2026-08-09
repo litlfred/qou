@@ -11,7 +11,27 @@ CLOSED-manifold invariant Ψ(1/q₀) = 2.3296 — ONE number — and its verdict
     "the λ-family needs the WRT TQFT with λ-COLORED insertions (colored Σ(2,3,5) invariants /
      S-matrix), not the bare closed-manifold number."
 
-This probe takes that step. The Lawrence–Zagier/Hikami false theta Ψ(q) = Σ χ(n) q^{n²/120} of
+NORMALISATION (corrected 2026-08-09). Two series are in play and they are NOT the same object:
+
+    Ψ_LZ(q) = Σ χ(n) q^{n²/120}              (Lawrence–Zagier/Hikami false theta)
+    S_JL(q) = Σ χ(n) q^{(n²−1)/120}          (Jacoby–Lawrence, uploads/04procbryden.pdf p.55)
+
+They differ by exactly one universal factor, Ψ_LZ = q^{1/120}·S_JL — not by any n-dependent
+reindexing, because (n²−1)/120 is an INTEGER on the whole support of χ. That integrality is
+proved sorry-free in QOU/MathlibExt/Sigma235FalseThetaExponent.lean
+(`sigma235_sq_eq_120_mul_add_one`: n² = 120m+1 on the eight support residues mod 60), which
+also records the four low exponents 0,1,3,7 that p.55 prints.
+
+The Ohtsuki series itself is the AFFINE image of S_JL, not S_JL and not Ψ_LZ:
+
+    q(q−1)·Z_∞(Σ(2,3,5))(q) = 1 − ½·S_JL(q)
+
+so at 1/q₀ the closed-manifold quantity is ≈ −0.1658, while Ψ_LZ(1/q₀) ≈ 2.3296 and
+S_JL(1/q₀) ≈ 2.3316. An earlier revision of this docstring called Ψ_LZ(1/q₀) "the CLOSED-manifold
+invariant"; that identification was wrong — it omits both the q^{−1/120} twist and the affine
+wrapper (which flips the sign). All three are now emitted separately so no consumer has to guess.
+
+This probe takes that step. The false theta of
 Σ(2,3,5) has support on the residues n ≡ 30·(1 ± 1/2 ± 1/3 ± 1/5) (mod 60) = {1,11,19,29} — the
 ρ-shift of the SU(2) WRT surgery presentation (P = p₁p₂p₃ = 30 = Coxeter number h(E₈)). A Wilson
 line on the order-5 EXCEPTIONAL FIBRE (the icosahedral / A₅ fibre — the keystone's own fibre)
@@ -45,8 +65,11 @@ from mpmath import mp, mpf, nstr  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
-Q0 = mpf("1.1099785955541805")
-INV = 1 / Q0  # bar image, inside the unit disk where Ψ converges
+# Experimental (proton) pin — the default for all compute per the 2026-08-07 owner directive.
+# This file previously carried the muon pin 1.1099785955541805 (−11.5 ppb); it was moved here
+# rather than left straddling, since the whole quantity must sit on one layer.
+Q0 = mpf("1.1099785827513808")
+INV = 1 / Q0  # bar image, inside the unit disk where the false theta converges
 
 P = 30  # = p1*p2*p3 = 2*3*5 = Coxeter number of E8 AND of H4 (600-cell)
 E8_EXPONENTS = (1, 7, 11, 13, 17, 19, 23, 29)
@@ -92,8 +115,26 @@ def chi_of(support):
 
 
 def false_theta(chi, q, nterms=4000):
+    """Ψ_LZ(q) = Σ χ(n) q^{n²/120} — the Lawrence–Zagier/Hikami normalisation."""
     terms = [chi(n) * q ** (mpf(n * n) / 120) for n in range(nterms) if chi(n)]
     return mp.fsum(terms)
+
+
+def false_theta_jl(chi, q, nterms=4000):
+    """S_JL(q) = Σ χ(n) q^{(n²−1)/120} — Jacoby–Lawrence p.55.
+
+    Exponents are integers on the whole support (Lean:
+    `QOU.MathlibExt.sigma235_sq_eq_120_mul_add_one`), so this differs from `false_theta`
+    by the single factor q^{1/120} and by nothing else."""
+    terms = [chi(n) * q ** (mpf(n * n - 1) / 120) for n in range(nterms) if chi(n)]
+    return mp.fsum(terms)
+
+
+def ohtsuki_series_affine(chi, q, nterms=4000):
+    """q(q−1)·Z_∞(Σ(2,3,5))(q) = 1 − ½·S_JL(q) — the closed-manifold quantity itself.
+
+    This, NOT Ψ_LZ, is the Ohtsuki-series side of Jacoby–Lawrence p.55."""
+    return 1 - false_theta_jl(chi, q, nterms) / 2
 
 
 # ---- W_λ / d_q machinery (n=5) -------------------------------------------------
@@ -130,8 +171,19 @@ def run():
     for alpha in (1, 2, 3, 4):
         supp = colored_support(alpha)
         union |= set(supp)
-        psi = false_theta(chi_of(supp), INV)
-        colors[alpha] = {"support": supp, "psi_at_inv_q0": float(psi)}
+        chi = chi_of(supp)
+        psi = false_theta(chi, INV)              # Ψ_LZ, exponent n²/120
+        s_jl = false_theta_jl(chi, INV)          # S_JL, exponent (n²−1)/120
+        ohtsuki = ohtsuki_series_affine(chi, INV)  # 1 − ½ S_JL
+        colors[alpha] = {
+            "support": supp,
+            "psi_lz_at_inv_q0": float(psi),
+            "s_jl_at_inv_q0": float(s_jl),
+            "ohtsuki_affine_at_inv_q0": float(ohtsuki),
+            # sanity: the two normalisations must differ by exactly q^{1/120}
+            "psi_over_s_jl": float(psi / s_jl),
+            "q_pow_1_over_120": float(INV ** (mpf(1) / 120)),
+        }
     e8_generated = sorted(union) == sorted(E8_EXPONENTS)
     # the two lowest colours cover the E8 exponents?
     two_color_union = sorted(set(colored_support(1)) | set(colored_support(2)))
@@ -187,12 +239,17 @@ def report(res):
     print("# λ-coloured Σ(2,3,5) WRT — the residual keystone frontier (colored insertions)\n")
     print(f"q₀ = {res['q0']:.10f}   1/q₀ = {res['inv_q0']:.10f}   P = {res['P']} = h(E₈)\n")
     print("Colouring the order-5 (icosahedral / A₅) fibre by SU(2) colour α shifts 1/5 → α/5:\n")
-    print("| colour α | support R(α) mod 60 | Ψ^{(α)}(1/q₀) |")
-    print("|--:|---|--:|")
+    print("| colour α | support R(α) mod 60 | Ψ_LZ(1/q₀) | S_JL(1/q₀) | 1−½S_JL |")
+    print("|--:|---|--:|--:|--:|")
     for a, d in res["colors"].items():
-        print(f"| {a} | {{{', '.join(map(str, d['support']))}}} | {d['psi_at_inv_q0']:.6f} |")
-    print(f"\n- α=1 support = {{1,11,19,29}} = the **bare** Σ(2,3,5) false-theta support "
-          f"(reproduces `keystone_habiro_wrt_s3_2i_probe`, Ψ≈2.330). ✓ validates the colour formula.")
+        print(f"| {a} | {{{', '.join(map(str, d['support']))}}} | "
+              f"{d['psi_lz_at_inv_q0']:.6f} | {d['s_jl_at_inv_q0']:.6f} | "
+              f"{d['ohtsuki_affine_at_inv_q0']:.6f} |")
+    print("\n  Ψ_LZ = q^{1/120}·S_JL exactly (integrality of (n²−1)/120 on the support is Lean-proved:")
+    print("  QOU.MathlibExt.sigma235_sq_eq_120_mul_add_one). The Ohtsuki series of Jacoby–Lawrence")
+    print("  p.55 is the LAST column, 1 − ½S_JL — not Ψ_LZ, which is neither the invariant nor S_JL.")
+    print(f"\n- α=1 support = {{1,11,19,29}} = the **bare** Σ(2,3,5) false-theta support. "
+          f"✓ validates the colour formula.")
     print(f"- α=2 support = {set(res['colors'][2]['support'])} = the **complementary** four E₈ exponents.")
     print(f"- α=1 ∪ α=2 = {res['two_color_union']}")
     print(f"- E₈ exponents = {res['E8_exponents']}")

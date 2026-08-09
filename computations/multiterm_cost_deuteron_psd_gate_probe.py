@@ -60,10 +60,11 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
+import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: `_precision` moved into substrate/
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
-from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
 from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()

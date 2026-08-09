@@ -1,0 +1,243 @@
+{
+  "engine": "mpmath+f64-sparse-seminormal",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T00:54:30.786670+00:00",
+  "commitSha": "b7259ca85ae49f840c5b3cfd7f4d9ab8c8a86f00",
+  "assertions": [
+    {
+      "name": "kernel_matches_dense_path",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "chi_convention_matches_rust_witness",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "4He_sign_at_q0",
+      "computed": -1,
+      "expected": -1,
+      "passed": true
+    },
+    {
+      "name": "4He_sign_at_qlo",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 15,
+  "computation": "threerow-4he-completion",
+  "scriptFile": "threerow_4he_completion_probe.py",
+  "scriptHash": "a88f8d7807f9",
+  "scriptCommitSha": "2a8dae3e49e21511d144b11ec5ef93da70de57f6",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "UNIT 1 of bean qou-prjo follow-up to #4829: completes the ⁴He (n=12) leg of F_K(q)=Σ_{λ⊢3A,ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ, which #4829 had recorded as a sandbox compute limit. No native kernel and no truncation were needed — the limit was an implementation artifact (a dense np.eye densifying the sparse CSR Hoefsmit operator, forcing O(dim³) per word letter). The sparse kernel (threerow_chi_sparse.py) is an EXACT reorganisation of the same f64 arithmetic, gated bit-level against the #4829 dense path. FULL ℓ≥3 sum over all 70 partitions of 12. Δ_λ=(−1)^{n(λ)}·dim (PROVED value-only); y_λ via live schur_principal_mpmath (EXPERIMENTAL PROTON ANCHOR, not the muon cache); layer-pure. 0 free parameters; AME not used.",
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
+    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_λ",
+    "free_parameters": 0,
+    "n_partitions_l_ge_3": 70,
+    "truncation": "none — full ℓ≥3 sum over all 70 partitions of 12",
+    "chi_kernel": "sparse CSR Hoefsmit seminormal + batched-column trace (exact reorganisation of the #4829 dense path)",
+    "chi_precision": "f64 (no mpfr Rust kernel; precision class unchanged by the reorganisation)"
+  },
+  "data": {
+    "kernel_gate_max_rel_vs_dense": 1.4400753543811822e-15,
+    "chi_vs_rust_witness_max_rel_at_q0": 3.206541047350963e-06,
+    "physical_interval": {
+      "q_grid": [
+        1.0001,
+        1.000201433088601,
+        1.000405752891834,
+        1.00081732058211,
+        1.001646354092317,
+        1.0033163018974662,
+        1.0066801293394054,
+        1.0134559908509175,
+        1.0271048179728943,
+        1.0545980720025265,
+        1.1099785827513808
+      ],
+      "F_values": [
+        0.0011767792668058764,
+        0.0023581201850081815,
+        0.00470018087786693,
+        0.00926596161469932,
+        0.01785025368783146,
+        0.032684131415853364,
+        0.05279905292051413,
+        0.05500839752278748,
+        -0.09056066807344358,
+        -1.0121292515889275,
+        -5.946880353079405
+      ],
+      "F_at_qlo": 0.0011767792668058764,
+      "F_at_q0": -5.946880353079405,
+      "sign_qlo": 1,
+      "sign_q0": -1,
+      "crossings": [
+        1.0209228745896388
+      ]
+    },
+    "diagnostic_ray_above_q0": {
+      "q_grid": [
+        1.109978693749239,
+        1.1448637139527662,
+        1.1908141923201747,
+        1.2513400698995771,
+        1.3310646339719099,
+        1.4360776692341453,
+        1.5744006278267089,
+        1.756599350356927,
+        1.9965911407973331,
+        2.312707843916584,
+        2.729096128730846,
+        3.2775619390463433,
+        4.0
+      ],
+      "F_values": [
+        -5.9468945305513685,
+        -10.674494647127156,
+        -9.547318567955639,
+        99.70131797687496,
+        1357.1534089639017,
+        -1201.3801861595857,
+        -1959966.1571581888,
+        -228234941.12904546,
+        -2312598347.7792783,
+        29872211131401.84,
+        3.4310785456347824e+16,
+        -3.200066711155733e+19,
+        -9.525470647299662e+23
+      ],
+      "sign_change_brackets": [
+        [
+          1.1908141923201747,
+          1.2513400698995771
+        ],
+        [
+          1.3310646339719099,
+          1.4360776692341453
+        ],
+        [
+          1.9965911407973331,
+          2.312707843916584
+        ],
+        [
+          2.729096128730846,
+          3.2775619390463433
+        ]
+      ],
+      "first_sign_change_bracket": [
+        1.1908141923201747,
+        1.2513400698995771
+      ],
+      "n_sign_changes": 4,
+      "bisected": false,
+      "why_not_bisected": "The ray crossing LOCATIONS are not load-bearing — only which side of q₀ the first sign change falls on matters. Bisecting them at n=12 (~32 s per F evaluation) cost >60 min of wall clock on the first run for digits the f64 character path cannot support anyway. Brackets are reported instead: cheaper, and honest about the available resolution.",
+      "ray_max_q": 4.0
+    },
+    "per_partition_at_q0_top8": [
+      {
+        "partition": [
+          8,
+          3,
+          1
+        ],
+        "delta": -891,
+        "term": -1.998325148255291
+      },
+      {
+        "partition": [
+          7,
+          3,
+          2
+        ],
+        "delta": -1925,
+        "term": -1.8918083310078302
+      },
+      {
+        "partition": [
+          6,
+          3,
+          3
+        ],
+        "delta": -1650,
+        "term": -1.5109930654553971
+      },
+      {
+        "partition": [
+          6,
+          4,
+          1,
+          1
+        ],
+        "delta": -3080,
+        "term": -1.1892351624617323
+      },
+      {
+        "partition": [
+          6,
+          3,
+          2,
+          1
+        ],
+        "delta": 5632,
+        "term": 0.9827402303801592
+      },
+      {
+        "partition": [
+          7,
+          3,
+          1,
+          1
+        ],
+        "delta": 2376,
+        "term": 0.9801728999973461
+      },
+      {
+        "partition": [
+          8,
+          2,
+          2
+        ],
+        "delta": 616,
+        "term": -0.7425983719244476
+      },
+      {
+        "partition": [
+          5,
+          4,
+          2,
+          1
+        ],
+        "delta": -5775,
+        "term": -0.5268554652690202
+      }
+    ],
+    "leading_over_total_ratio_at_q0": 0.33602914967349584
+  },
+  "caveats": [
+    "BEYOND-SUBSTRATE DIAGNOSTIC. The 'diagnostic_ray_above_q0' block reports F at q > q₀ ≈ 1.10998 (experimental proton anchor). That is NOT a physical regime and no value on the ray is a prediction; the ray exists only to locate the zero of the analytic object so ⁴He can be placed on the same A-ladder as n=6 and n=9.",
+    "NO TRUNCATION was applied: all 70 ℓ≥3 partitions of 12 are summed. A dominant-|Δ_λ| truncation was considered and REJECTED — no rigorous bound on the neglected remainder is available, and an unbounded truncation would not be a result.",
+    "χ^λ is f64 (pure-Python Hoefsmit seminormal; no mpfr kernel in this sandbox). The sparse reorganisation changes the COST, not the precision class; it is gated bit-level against the #4829 dense path (max rel diff ~1e-15). Sign conclusions are reported together with the leading/total cancellation ratio so the reader can see how far the total sits above the f64 noise floor.",
+    "value_only object: F_K is NOT a binding energy (Δ_λ is value-only). Only the SIGN structure of the ≥3-row trace weighting is tested here. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo)."
+  ]
+}
