@@ -135,6 +135,7 @@ import QOU.Knot.KashaevSaddleWindow
 import QOU.Knot.KashaevBeyondWindow
 import QOU.Knot.KashaevFullSum
 import QOU.Knot.KashaevAsymptoticBounds
+import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian

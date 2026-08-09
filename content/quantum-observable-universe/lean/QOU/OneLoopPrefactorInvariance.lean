@@ -359,11 +359,16 @@ usable form" — which this header carried until 2026-08-09 — is out of date:
     `QOU.MathlibExt.hasSum_gaussian_theta` and `…_tilt` — an EXACT Jacobi-theta
     identity for the Gaussian sum, so sum/integral `= 1 + O(e^{−π²/a})`.
 
-WHAT IS STILL ASSUMED is the LINK: nobody has yet derived `hc` and `hτ` from
-those two theorems.  That derivation — feeding the expansion into the theta
-identity, extracting the saddle condition, the Stirling factor and the Hessian —
-is the open step, and it is a smaller and much better-defined one than the
-analytic gaps it replaced.  Do not read this file as covering it.
+WHAT IS STILL ASSUMED, as of 2026-08-09, is `hτ` ONLY.  `hc` is now DERIVED,
+in `QOU.Knot.FigureEightVolume.cSigma_sq_mul_abs_cot`: the asymptotics produce
+the constant in the shape `c_σ(θ) = (2 sin θ)·|cot θ|^{−1/2}` — Stirling factor
+over square-rooted Hessian — and squaring that and multiplying by `|cot θ|` is
+`hc`.  `cSigma_saddle_pow_four` and `k_sq_eq_half` below are re-proved there
+with `hc` supplied rather than assumed, so the chain from the Kashaev sum to
+`c_σ = 3^{−1/4}` no longer passes through an assumption.
+
+The text here read "nobody has yet derived `hc` and `hτ`" until that date; that
+was true when written and is now half out of date.  `hτ` remains open.
 
 What is proved here is the algebra, which is where the whole surprise lives:
 

@@ -1659,3 +1659,64 @@ ingredients at the Kashaev saddle: the Stirling factor `2 sin th_{k*}` (step 7,
 inside `P`) and the Gaussian width `sqrt(pi/a) = sqrt(N/|cot th*|)` (steps
 12-19, inside `model`). Writing `c_sigma = 2 sin th* |cot th*|^{-1/2}` and
 squaring gives `hc` directly.
+
+---
+
+## Step 20 -- `hc` DERIVED (`QOU/Knot/KashaevCSigma.lean`)
+
+Five theorems, all `[propext, Classical.choice, Quot.sound]`. **This bean's
+first half is done.**
+
+`OneLoopPrefactorInvariance` proved the algebra downstream of the saddle from a
+HYPOTHESIS `hc : c^2 |cot th| = (2 sin th)^2`, and its header recorded that
+nobody had derived it. It is now derived.
+
+The whole content is that steps 7-19 produce the constant in a specific SHAPE:
+
+    c_sigma(th) = (2 sin th) * |cot th|^{-1/2}
+                     ^                ^
+              Stirling factor   Gaussian width
+
+the first from step 7's `log(2N sin th_{k*})`, the second from steps 12-19's
+`sqrt(pi/a)` at `a = pi|cot th|/N`. Square it, multiply by `|cot th|`, and the
+Hessian cancels. **`hc` is not a fact about `4_1`** -- probe part (i) checks it
+at 199 angles across `(0, pi)`, worst relative error `4.8e-51`. It is the
+statement that a Laplace constant is a Stirling factor over a square-rooted
+Hessian, which is what every Laplace constant is.
+
+`stirling_mul_gaussWidth` is the link back to the analysis:
+`(2N sin th) sqrt(pi/a) = c_sigma(th) N^{3/2}` exactly.
+
+`cSigma_saddle_pow_four` and `k_sq_eq_half` re-prove
+`OneLoopPrefactorInvariance`'s conclusions with `hc` SUPPLIED rather than
+assumed. So the chain from the Kashaev sum to `c_sigma = 3^{-1/4}` no longer
+passes through an assumption.
+
+### The loop closes
+
+Probe part (iv) -- the DERIVED value against the MEASURED asymptotics:
+
+    N        <4_1>_N/(N^{3/2} e^{N Vol/2pi})   c_sigma(5pi/6)      gap
+    961            0.76027461955642           0.75983568565159   4.39e-04
+    3841           0.75994536766618           0.75983568565159   1.10e-04
+    15361          0.75986310295666           0.75983568565159   2.74e-05
+
+and exactly:
+
+    c_sigma(5pi/6) = 1/sqrt(sqrt 3) = 3^(-1/4) = 0.75983568565159
+    c_sigma(5pi/6)^4 = 1/3
+    k = c_sigma sqrt(|cot|/2) = 0.70710678118655,  k^2 = 1/2
+
+### A stale header, corrected
+
+`OneLoopPrefactorInvariance.lean` said "nobody has yet derived `hc` and `hτ`".
+True when written, half out of date now. Updated in the same change, with the
+old wording and the date recorded rather than silently replaced -- the same
+discipline applied to that file's earlier "not formalised" claim.
+
+### Remaining
+
+**`htau` only.** `|tau_DG| = |cot th*|/2` is the other output of the saddle;
+`k_sq_eq_half` already shows the Hessian cancels between `c_sigma` and `|tau|`
+before it is evaluated, so what is missing is the identification of `tau` with
+the Hessian, not any further analysis of the Kashaev sum.
