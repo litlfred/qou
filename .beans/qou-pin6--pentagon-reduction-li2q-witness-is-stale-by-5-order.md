@@ -211,3 +211,56 @@ So the committed `rho_w` witness is not merely stale: the producer has a real de
 Lean: `QOU.MassTheory.OneDimWordCharacter` (sorry-free) proves the word collapse that makes
 the fit legitimate. Its `interface_on_trivial_rep` needs `2 ≠ 0` — in characteristic 2 the
 identity is false, which `ring` correctly refused before the hypothesis was added.
+
+
+## BLAST RADIUS 2026-08-09 — 5 more consumers carry the same defect
+
+`computations/audits/averaged_label_consumer_scan.py` (new) finds every consumer
+that rebuilds a Hecke operator from the lossy `"averaged"` label.
+
+    files mentioning "averaged" but not rebuilding an operator : 144  unaffected
+    FIXED (opted into distinguish_color=True)                  :   1  rho_w
+    AT RISK                                                    :   5
+
+    computations/habiro/habiro_coefficients_interpolate.py   line 126
+    computations/hecke/hecke_character_symbolic.py           line 237
+    computations/hoefsmit_numpy.py                           line 149
+    computations/rho_k_h3a_refinement.py                     line 144
+    computations/spectral_coordinates_all_atoms.py           line  53
+
+Two spot-checked by hand, both exactly the defect:
+
+    hoefsmit_numpy:149
+        d_lookup = {"sigma": 0.0, "sigma_inv": -h, "averaged": -h / 2.0}
+    spectral_coordinates_all_atoms:53
+        elif ctype == "averaged":  M = sigma - (h / 2) * np.eye(2)
+
+### Getting the scan right took two corrections, both worth recording
+
+**It first reported 6, missing `rho_w` itself.** The test was "an `averaged`
+branch that constructs from `h`" — but `rho_w` dispatched
+`elif ctype == "averaged": G = inter[g]` while `inter` was built with `h/2` in a
+DIFFERENT function. A construct-in-branch test misses the very file the
+investigation started from. Fixed by also accepting dispatch-here /
+construct-elsewhere.
+
+**Then it reported 10, of which 5 were FALSE.** Broadening caught files whose
+`"averaged"` is a BOND-type key (pp / nn / pn), not a crossing ctype.
+`probe_9b_gate_interface_algebra` maps `"averaged"` to `f_pn = z - h(1/2 - δ/4)`
+— it ALREADY carries δ, so it is the opposite of the defect. Requiring the file
+to actually consume a crossing word (`atom_canonical_crossings`) cut 10 to 5.
+So `probe_9b`'s stale witness, listed above as instance 2, is NOT explained by
+this root cause after all; it still needs its own diagnosis.
+
+### Not fixed here, deliberately
+
+Each fix needs its own validation of the kind `rho_w` got — where the convention
+was fitted on 2 one-dimensional partitions and then verified against all 11.
+Sweeping five producers on the strength of a pattern match, without that
+per-producer check, is what the value-audit discipline exists to prevent.
+
+`hoefsmit_numpy` is worth doing first: it is a float64 fast path, and δ·h ≈ 3e-4
+sits far above f64 noise, so the error is fully present there too.
+
+Gate: `averaged_label_consumer_scan.py --strict` exits 1 while any consumer is
+still at risk.
