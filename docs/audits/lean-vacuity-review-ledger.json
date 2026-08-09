@@ -6,8 +6,12 @@
       "category": "proof-no-decide-masking",
       "pattern": "native_decide",
       "line": 267,
-      "verdict": "needs-agent",
-      "file_sha": "7741aa9a88de"
+      "verdict": "advisory",
+      "file_sha": "7741aa9a88de",
+      "disposition": "note-axiom-footprint",
+      "evidence": "Legitimate use of `native_decide`, with a caveat worth recording. Strict Lean Discipline \u00a76 bans `native_decide` used to mask an unproved structural claim but permits a genuinely decidable finite computation; this is the latter \u2014 `nontrivialBrunnian borromean`, `borromean.length = 6`, and `wordsBelow6.all (fun w => !nontrivialBrunnian w)` are a finite enumeration of 3-braid words with a Kauffman/TL\u2083 bracket evaluation each, which plain kernel `decide` would very likely not discharge in reasonable time. The caveat is the axiom footprint: `native_decide` adds `Lean.ofReduceBool`, so this theorem and everything downstream of it leaves the standard three-axiom set, and an `#print axioms` reader will see it. Advisory: keep, but record the footprint where the minimality result is cited, and prefer `decide` if the enumeration is ever narrowed.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -344,15 +348,23 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 64,
-      "verdict": "needs-agent",
-      "file_sha": "db1a73212f43"
+      "verdict": "advisory",
+      "file_sha": "db1a73212f43",
+      "disposition": "drop-unused-binder",
+      "evidence": "True and useful as an unfolding lemma; the only defect is that `h_me : m_e \u2260 0` is never used (Lean's `x / 0 = 0` makes the identity unconditional). The hypothesis is honest documentation of the intended domain but makes the theorem weaker than it is, and a reader may infer the identity needs a side condition. Drop the binder, or keep it and say why in the docstring. Not a vacuity defect \u2014 the statement relates two named quantities and is what the name says.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/figure-8-muon-mass-cross-check.lean::muon_ratio_is_topological::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 54,
-      "verdict": "needs-agent",
-      "file_sha": "90213848aac6"
+      "verdict": "genuine",
+      "file_sha": "90213848aac6",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Pure definitional unfolding under a physics claim. `muonRatioFromVol q := vol_4_1 / hbarQSq q` (figure-8-muon-mass-cross-check.lean:33), so the theorem restates the definition by `rfl`. The substantive claim the name makes \u2014 that the muon ratio *is* this topological quantity \u2014 is the comparison against CODATA m_\u03bc/m_e, which appears only in the comment block beneath as a numerical witness. `h_q_ne_one` is unused (division by zero returns zero in Lean, so `rfl` never needs it). Fix: state the CODATA agreement, or rename to `muonRatioFromVol_def`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.lean::kappa_closed_form_is_categorical::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -468,8 +480,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 709,
-      "verdict": "needs-agent",
-      "file_sha": "726fbbf3a076"
+      "verdict": "genuine",
+      "file_sha": "726fbbf3a076",
+      "disposition": "restate-or-demote",
+      "evidence": "Conclusion-carrying class projected verbatim (`:= hi.bound`), labelled `Per-instance form` / `Pattern 4`. The long hypothesis list (`hq : q > 1`, `hq2 : q < 2`, `h_link`, `h_dq`, `h_fact`, \u2026) makes the signature read as a derivation of the perturbation bound from the linking and factor bounds, but none of it is used \u2014 the bound arrives from the instance. The neighbouring `ConvergenceRate` class has the same shape (`bound : |f_k - f_inf| \u2264 C_q / Real.sqrt (k-3)`), so this is a file-wide idiom, not a one-off. Fix: derive the bound from `h_dq`/`h_fact` (that derivation is elementary and is what the hypotheses are for), or demote.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::convergence_rate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -486,25 +502,23 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 1037,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "1bd42f7c7b3c",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceBound` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `convergenceBound_refl \u2026 f f` \u2014 the diagonal, closed by simp/positivity. (Automated shape test saw: convergenceBound_refl(degenerate-slice).)",
+      "evidence": "DEGENERATE INHABITATION. The class carries the conclusion as its only field (`bound : |f_k - f_inf| \u2264 C_q / (k-3)`) and the theorem is `hi.bound` \u2014 \u00a73b-cond item 5's forbidden shape (the class must axiomatise hypotheses, not the conclusion). The carrier counts as `inhabited` only through `convergenceBound_refl ... f f`, the REFLEXIVE diagonal instance where `f_k = f_inf`, so the only thing ever constructed is `|f - f| \u2264 C_q/(k-3)` \u2014 trivially true and saying nothing about convergence. Inhabitation is satisfied on a technicality; nothing witnesses the actual bound. Fix: prove the F\u00e9ray-M\u00e9liot bound, or demote to `conjecture`.",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "stale_prev_verdict": "genuine"
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "disposition": "restate-or-demote"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::knot_invariant_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 1092,
-      "verdict": "needs-agent",
+      "verdict": "genuine",
       "file_sha": "1bd42f7c7b3c",
-      "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `KnotInvariantConvergence` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus `\u2026_refl` diagonal; no instance supplies the general bound. (Automated shape test saw: knotInvariantConvergence_of_fact(fact-wrapper), knotInvariantConvergence_refl(degenerate-slice).)",
+      "evidence": "DEGENERATE INHABITATION, identical to `convergence_bound` in the same file: conclusion-as-field, projected by `hi.bound`, with `knotInvariantConvergence_refl ... a a C hC` \u2014 the diagonal `|a - a| \u2264 C/(k-3)` \u2014 as the only instance. Fix the pair together.",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "stale_prev_verdict": "genuine"
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "disposition": "restate-or-demote"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean::matrixChain_eq_buildChains_axiom::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -521,8 +535,12 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 405,
-      "verdict": "needs-agent",
-      "file_sha": "be8af7000d8c"
+      "verdict": "advisory",
+      "file_sha": "be8af7000d8c",
+      "disposition": "drop-unused-binder",
+      "evidence": "Unfolding lemma with an unused `h_len : config.length \u2265 2`. The proof carries an honest inline comment \u2014 `This is definitionally true by unfolding skeinPolynomialCleared` \u2014 so nothing is being passed off as derived. Advisory only: drop the binder, or record why the length bound is kept as documentation.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean::knot_operator_selection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -539,8 +557,12 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 35,
-      "verdict": "needs-agent",
-      "file_sha": "4820ae158009"
+      "verdict": "genuine",
+      "file_sha": "4820ae158009",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Pure definitional unfolding under a name asserting a spectral result. `detFactor3 u := u^3 + u - 1` (GramMatrixH3Symbolic.lean:230), so `detFactor3 u = 0 \u2194 u^3 + u - 1 = 0` is closed by `rfl` and states only that the definition is its own body. Nothing about an SDP, a nucleon, or a rank drop is established, and `hu_pos : u > 0` is unused decoration. Fix: state the rank-drop claim (that the Gram matrix drops rank exactly at the real root of `u^3+u-1`), or rename to `detFactor3_eq_zero_iff` and drop `hu_pos`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse.lean::descartes_universality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -568,15 +590,23 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-underscored-hypothesis",
       "line": 26,
-      "verdict": "needs-agent",
-      "file_sha": "f048918fe065"
+      "verdict": "genuine",
+      "file_sha": "f048918fe065",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Self-aware tautology carrying a `prop:` label. `predictedDim K := (K - 3) / 2`, and the docstring above the theorem reads verbatim `**Theorem (prop:cyclotomic-depth3-dimension-synthesis).** The predicted dimension agrees with itself.` \u2014 the author recorded that it says nothing, and it still ships as the Lean backing for a named proposition. Both hypotheses are `_`-underscored, i.e. explicitly recorded as unused, so `5 \u2264 K` and `Nat.Prime K` are advertised as inputs to a formula derived from neither. Fix: state the synthesis against the actual cyclotomic dimension, not against `predictedDim`'s own body.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDimensionSynthesisAllDepths.lean::dimension_synthesis_all_depths::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-underscored-hypothesis",
       "line": 28,
-      "verdict": "needs-agent",
-      "file_sha": "473e0ede43e1"
+      "verdict": "genuine",
+      "file_sha": "473e0ede43e1",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Same shape as `dimension_synthesis_upper_bound`, generalised over depth: `predictedDim n K = (if n % 2 = 1 then (K-3)/2 else (K-1)/2)` by `rfl`, with all three hypotheses (`2 \u2264 n`, `3 \u2264 K`, `Nat.Prime K`) `_`-underscored and unused. The parity split is real mathematical content \u2014 and it lives entirely in the definition, so the theorem establishes none of it. Fix the pair together.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicTrilogImaginary.lean::closed_form_holds::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -648,15 +678,23 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-witness-with-unused-hypothesis",
       "line": 480,
-      "verdict": "needs-agent",
-      "file_sha": "a02df42a688f"
+      "verdict": "genuine",
+      "file_sha": "a02df42a688f",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Both conjuncts are closed by `rfl` (`exact \u27e8rfl, rfl\u27e9`), so the statement is two definitional unfoldings joined by `\u2227`. Neither `hq : 0 < q` nor the `[UniversalHabiroStructure q]` instance is used \u2014 the instance in particular is advertised as the structure supplying the closure, and contributes nothing. The name claims a universal Habiro closure, one of the framework's open targets, so this is the shape most likely to be miscited downstream as evidence that the closure exists. Fix: derive the two identities from the class fields, or demote.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/OVTopAssembly.lean::identityB_general::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 203,
-      "verdict": "needs-agent",
-      "file_sha": "cc62e0c7b962"
+      "verdict": "legit",
+      "file_sha": "cc62e0c7b962",
+      "disposition": "no-fix",
+      "evidence": "Honest disclosure, correctly flagged by a high-recall detector. The body has no `sorry`, but the docstring's own title is `Identity (B), general n (modulo the tower's stubs)` and it states plainly that `the only residual inputs are the bricks' own honest sorrys (the isotypic-projection identification, the OV eigenvalue theorem, the standard-basis dimension theorem's spanning core), all wired in snSpectralData`. The `sorry` mention that triggered the detector is disclosure of *upstream* sorries reached through `(sn_spectralData_exists n).some`, not a claim about this body. It also states it is `stated exactly as the keystone's identityB_conditional concludes`. Nothing to fix; a reader is told exactly what is assumed.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean::phi_q_tower_algebraic_stratification::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -673,8 +711,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 203,
-      "verdict": "needs-agent",
-      "file_sha": "6252ac8ed2f4"
+      "verdict": "genuine",
+      "file_sha": "6252ac8ed2f4",
+      "disposition": "restate-or-demote",
+      "evidence": "CIRCULAR: the instance stipulates the answer. `instance : RogersCorrectionLeadingOrderH4 where leading_h_order := 4; leading_h_order_eq_four := rfl` \u2014 the value is set to 4 and the field is discharged by `rfl` on `4 = 4`, so `c.leading_h_order = 4` carries no information about the Rogers correction. The file itself concedes the point immediately below: `the substantive theorem (Pentagon \u2192 -3/4 coefficient) requires the explicit Borromean braid lifting in the q-shuffle Hopf algebra, which is structurally open.` The honest form is that sentence as a `conjecture`, not a class whose instance defines the constant it reports.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean::shell_closure_monotone::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -713,15 +755,23 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 42,
-      "verdict": "needs-agent",
-      "file_sha": "4179705884ba"
+      "verdict": "genuine",
+      "file_sha": "4179705884ba",
+      "disposition": "construct-witness-or-drop-pseudo-theorem",
+      "evidence": "UNINHABITED carrier. `[inst : MassVolumeFactorization] : inst.markov_trace = inst.jsj_volume_sum := inst.factorization_identity` \u2014 the conclusion is a field, projected verbatim, and no instance of this class exists in the corpus. NOTE THE OVERLOAD TRAP (AGENTS.md \u00a7conditional-proved item 4): a DIFFERENT `MassVolumeFactorization` lives at `mass-theory/mass-volume-factorization.lean:127`, parameterised `(K : Type*) (n : \u2115)` with fields density/volume/mass/factorization, and it does have an instance \u2014 the degenerate `canonical K 0` zero model. That instance does NOT inhabit this class; the two share only a name. Fix: build a real witness relating the Markov trace to the JSJ volume sum, or drop the pseudo-theorem.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::adjoint_vanishing_propagation::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 96,
-      "verdict": "needs-agent",
-      "file_sha": "a8cafd85a8ec"
+      "verdict": "genuine",
+      "file_sha": "a8cafd85a8ec",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Field projection from an explicit structure argument, with the interesting parameter unused. The body is `jgcs.adjoint_vanishing` \u2014 the level-0 field of `JetGradedChannelSeparation` \u2014 while the statement binds `(k : \u2115)` and the comments claim propagation: `At jet level k, the adjoint still vanishes` / `The adjoint vanishing at level 0 implies at all levels`. The implication from level 0 to level k is the entire content and is exactly what the projection skips; `k` never appears in the proof. The comment even names the missing step (`the prolonged connection preserves the adjoint vanishing by categorical_jet_prolongation`). Fix: prove the propagation by induction on `k` using that lemma.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::kahler_differentials_no_sym_component::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -859,15 +909,23 @@
       "category": "proof-claims-unencoded",
       "pattern": "docstring-claims-gap",
       "line": 48,
-      "verdict": "needs-agent",
-      "file_sha": "470518ab977d"
+      "verdict": "legit",
+      "file_sha": "470518ab977d",
+      "disposition": "no-fix",
+      "evidence": "A content-bearing \u00a73b class, honestly labelled. The docstring opens `**The cohomological assumptions a QOU is built from**` and names both as assumptions with their provenance (observability kills HH\u2070; Yekutieli-Van den Bergh Poincare duality collapses HH\u00b2 \u2245 k). The fields are real Prop equations (`observability : hh0 = 0`, `frobeniusHopf_duality : hh2 = 1`), not an empty marker or a `True` field, so the class asserts something and a downstream `[QOUCohomology]`-conditional result is meaningfully conditional. Correct \u00a73b usage.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean::beta3_via_class::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 157,
-      "verdict": "needs-agent",
-      "file_sha": "33d8c028c778"
+      "verdict": "legit",
+      "file_sha": "33d8c028c778",
+      "disposition": "no-fix",
+      "evidence": "Substantively inhabited. The `TheoremA` instance discharges `value_at_4 := beta3_from_jonquiere` \u2014 a real derivation (Jonqui\u00e8re's formula), not a stipulation \u2014 and `agrees_at K := K = 4` deliberately restricts the predicate to the verified index. The source records that a `agrees_at _ := True` default was rejected on Copilot review precisely because it `would silently prove agrees_at K for every K, undermining the conditional-class boundary`, and that consumers wanting larger `K` must furnish their own substantive instance. That is the discipline this audit asks for. The class name `TheoremA` is unhelpfully generic but not dishonest.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::sdp_lp_projection::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -917,8 +975,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 116,
-      "verdict": "needs-agent",
-      "file_sha": "19333222eaf9"
+      "verdict": "legit",
+      "file_sha": "19333222eaf9",
+      "disposition": "no-fix",
+      "evidence": "Bundle-plus-accessor over a SUBSTANTIVELY inhabited carrier \u2014 the idiom working as intended. `[h : VolumeConjecture41] : Tendsto ... (nhds VOL_4_1) := h.limit_eq_vol` projects a class field, but the instance `volumeConjecture41_of_literature := \u27e8tendsto_log_kashaev_vol\u27e9` supplies a real proof: the file records the conjecture closed for 4\u2081 by bricks E1-E5d (milestone qou-cpfn) \u2014 E5a log-bridge, E4/E5c Riemann-sum-vs-Clausen deviation with k-uniform master error, the E2/E3 Cl\u2082 extremum at 5\u03c0/3, the E5d two-envelope squeeze \u2014 with the note that no Borel resummation was needed. The downstream `kashaev_saddle_volume` is described as unconditional and sorry-free. CAVEAT NOT VERIFIED HERE: I did not run `#print axioms tendsto_log_kashaev_vol`, so the sorry-free claim rests on the file's own note.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Mathlib/WallCrossing.lean::primitive_KS_is_pentagon::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -935,8 +997,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 169,
-      "verdict": "needs-agent",
-      "file_sha": "b74e5b3cc074"
+      "verdict": "genuine",
+      "file_sha": "b74e5b3cc074",
+      "disposition": "cite-as-axiom-or-prove",
+      "evidence": "DEGENERATE INHABITATION plus literature-assumed. `[hStrong : HasStrongDuality sdp h] : Nonempty (StrongDualityPair sdp) := hStrong.pair` projects the conclusion, and the only instance found is `instHasStrongDualityEmpty (sdp : SDPPrimal n R Empty)` \u2014 the EMPTY constraint index, i.e. the no-constraints case. So the general strong-duality statement is inhabited only where it is trivial. The `-- Ref: [boyd-vandenberghe-2004] \u00a75.2.3 + \u00a75.3` (with an honest inline correction of a prior `Theorem 5.5` misattribution) makes it read as an imported theorem \u2014 this is exactly the `cites literature while assuming the statement` subclass the \u00a73b measurement isolated as sharpest. Fix: a cited `axiom`, or prove Slater \u21d2 strong duality.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean::MobiusEnergy::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -964,8 +1030,12 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 86,
-      "verdict": "needs-agent",
-      "file_sha": "701f5d5869f5"
+      "verdict": "genuine",
+      "file_sha": "701f5d5869f5",
+      "disposition": "restate-against-a-definition",
+      "evidence": "`unfold depthBasedRule; rfl` \u2014 the rule's `k` at index 2 is 3 by construction, not because the crystal graph has \u2265 3 vertices. `h : 3 \u2264 \u0393.vertexCount` is unused, so the theorem does not establish that the rule *reaches* k=3 under any graph condition; it reads off a constant. Fix: state the property against a graph whose vertex count matters, or rename to a `_def`-style unfolding lemma and drop `h`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean::padic_frobenius_relation_preserved::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -982,8 +1052,12 @@
       "category": "proof-claims-unencoded",
       "pattern": "docstring-claims-gap",
       "line": 66,
-      "verdict": "needs-agent",
-      "file_sha": "fd776c367e39"
+      "verdict": "legit",
+      "file_sha": "fd776c367e39",
+      "disposition": "no-fix",
+      "evidence": "Exemplary disclosure \u2014 worth citing as the model for the \u00a73b honest-placeholder criterion. The docstring calls the two fields `**carried axioms** (open inputs packaged as class fields)`, distinguishes the genuine analytic hypothesis (strip-growth comparability, Faddeev-Kashaev) from the Lean technicality (`MeromorphicNFOn`, explicitly flagged as `a Lean technicality ... not a math hypothesis`), and then locates the open content precisely: `The class is non-vacuous: phiBProd itself satisfies all fields. But instantiating it for a *second* solution IS the remaining analytic content (the open input that the shift equations alone do not provide).` Non-vacuity is asserted *and* justified by an exhibited instance. No fix.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean::fiber_adjoint_involution_sq::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1000,8 +1074,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 133,
-      "verdict": "needs-agent",
-      "file_sha": "b3dd7e5f4354"
+      "verdict": "genuine",
+      "file_sha": "b3dd7e5f4354",
+      "disposition": "construct-witness-or-drop-pseudo-theorem",
+      "evidence": "UNINHABITED carrier. `[h : HasCategoricalIrreducibility adjointObj inst] : Subsingleton ((\ud835\udfd9_ C) \u27f6 adjointObj) := h.subsingleton` \u2014 the conclusion is the field, and no instance of `HasCategoricalIrreducibility` exists anywhere in the corpus. The declaration is a restatement quantified over a hypothesis nobody has exhibited. Fix: construct an instance for a concrete categorical instanton and prove the subsingleton property there, or drop it and project the field at use sites.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::categorical_dq_squared_nonvanishing::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1095,15 +1173,23 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 302,
-      "verdict": "needs-agent",
-      "file_sha": "12f2773ca875"
+      "verdict": "advisory",
+      "file_sha": "12f2773ca875",
+      "disposition": "drop-unused-binder",
+      "evidence": "`unfold; rfl` exhibits the closed form `-(q^4+1)(q^2-1)/(4q^3)`, which is what the name promises, so the statement earns its title even though it is definitional. `hq : q \u2260 0` is unused decoration (division by zero is zero). Drop the binder.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean::markovTrace_disjointProduct::proof-docstring-sorry-mismatch": {
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 180,
-      "verdict": "needs-agent",
-      "file_sha": "f98d1dab53fb"
+      "verdict": "genuine",
+      "file_sha": "f98d1dab53fb",
+      "disposition": "fix-docstring",
+      "evidence": "Stale docstring, sound theorem \u2014 the reverse of the usual failure. The docstring says the proof `is delegated to the references; it is stated here as a conditional result with a sorry pending the Hecke-typeclass infrastructure`, but the body is `hmT.disjoint_product k n hk \u03b1 \u03b2`: a projection from the *explicit* `IsMarkovTrace` hypothesis, with no sorry. As a conditional accessor over an explicit bundled hypothesis this is the legitimate idiom (the caller must supply `hmT`), so the Lean is fine and only the prose is wrong. Fix the docstring to describe what the proof now does; leaving it claiming a `sorry` misreports the file to the sorry audit and to any reader triaging open work.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean::partitionCount_eq_fintype_card_partition_small::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
@@ -1120,8 +1206,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 275,
-      "verdict": "needs-agent",
-      "file_sha": "c604d9f62e6d"
+      "verdict": "genuine",
+      "file_sha": "c604d9f62e6d",
+      "disposition": "construct-witness-or-drop-pseudo-theorem",
+      "evidence": "UNINHABITED carrier, self-disclosed. `[h : RhoPrefactorStructural Z N q] : |h.rho - h.q_int h.d_lambda_star| \u2264 1/2` with the inline comment `The class instance directly carries the inequality as a field (rho_eq_qdim). This lemma is a thin wrapper exposing it` \u2014 the author states the projection plainly, which is honest, but no `RhoPrefactorStructural` instance exists, so the wrapper wraps nothing. The `-- Ref:` to `conj:rho-prefactor-structural` and to a witness JSON (PR #608 r5-full-canonical-knot-solver) means the numerical support exists outside Lean. Fix: build the instance from that solver output, or demote to `conjecture` matching the `conj:` label it cites.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean::crystal_basis_reduction::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1149,8 +1239,12 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 154,
-      "verdict": "needs-agent",
-      "file_sha": "5ac15f145fb0"
+      "verdict": "advisory",
+      "file_sha": "5ac15f145fb0",
+      "disposition": "note-empirical-provenance",
+      "evidence": "Non-degenerate but empirically sourced. The instance supplies eleven numeric literals (tDD = 24.158, tTp = 20.380, n_target = 13.197, the x/y LP variables) and discharges every field \u2014 including `strong_duality` \u2014 by `norm_num`, so the arithmetic really is machine-checked and the class is genuinely inhabited. The caveat is provenance, which the instance's own docstring states: `The witness JSON is the authoritative numerical source; this instance exists to make the class type-inhabited for Lean elaboration.` So `he4_strong_duality_value` is a consistency check on stipulated LP output, not a derivation of it \u2014 the theorem name reads as a result about \u2074He. Advisory: keep, but say in the docstring that the numbers are witness inputs.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_anchor_stable_forward::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1189,8 +1283,12 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-witness-with-unused-hypothesis",
       "line": 33,
-      "verdict": "needs-agent",
-      "file_sha": "8990e53e81a6"
+      "verdict": "genuine",
+      "file_sha": "8990e53e81a6",
+      "disposition": "restate-or-drop",
+      "evidence": "A disguised triviality. `\u2203 K : NuclearKnotType, K = .borromean` is true for any inhabited enum carrying that constructor (witness `.borromean`, proof `rfl`) \u2014 it does not mention `Z`, `N`, or the hypothesis `hA : Z + N \u2265 4`, so it says nothing about which knot type an `A \u2265 4` nucleus has. The name claims a classification. Fix: state `nuclearKnotType Z N = .borromean` given `hA` \u2014 that is the claim, and it needs the classification function the file should be exporting.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_radius_of_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1253,8 +1351,12 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-witness-with-underscored-hypothesis",
       "line": 151,
-      "verdict": "needs-agent",
-      "file_sha": "21b690eda41c"
+      "verdict": "genuine",
+      "file_sha": "21b690eda41c",
+      "disposition": "restate-or-drop",
+      "evidence": "A disguised triviality: `\u2203 chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0`, witnessed by `\u27e80, rfl\u27e9`. This is true in every ring and is independent of `firstCol`, of `_h : 4 \u2264 firstCol`, and of Wenzl's theorem. The `-- Ref:` block (Wenzl 1987 \u00a73 Thm 3.1, Jones 1987 \u00a75, Witten 1989 \u00a74) makes it read as an imported result, which is the sharper problem \u2014 a reader checking whether Wenzl annihilation is formalised finds three citations attached to `\u2203 x, x = 0`. Fix: state that the *specific* character `\u03c7_\u03bb` at `\u03b6` vanishes when the first column is \u2265 4.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean::main_commutative_diagram::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1348,15 +1450,23 @@
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
       "line": 294,
-      "verdict": "needs-agent",
-      "file_sha": "d4b2ae555085"
+      "verdict": "genuine",
+      "file_sha": "d4b2ae555085",
+      "disposition": "drop-pseudo-theorem-or-restate",
+      "evidence": "The \u00a73b-cond item-5 shape exactly: the class field IS the conclusion, and the theorem projects it verbatim. `class BorromeanQuark where Q_beta_A : \u211d; Q_beta_B : \u211d; forms_agree : Q_beta_A = Q_beta_B`, whose own docstring calls `forms_agree` **The conjecture itself (spectral bridge)** \u2014 and then `q_beta_spectral_conditional [inst] : inst.Q_beta_A = inst.Q_beta_B := inst.forms_agree`. The theorem's docstring defends it as `Derived from the class field forms_agree \u2014 not a sorry-projection of an unrelated conclusion`, which answers a different objection: the problem is not that the conclusion is unrelated but that it is IDENTICAL, so the theorem derives nothing. NOTE THE OVERLOAD (third distinct `BorromeanQuark` in the corpus): the two instances that exist \u2014 `observations/borromean-quark.lean:120` and `lean/QOU/Archimedean/BorromeanQuark.lean:124` \u2014 inhabit a differently-fielded `BorromeanQuark` (field `orbitalDim`), NOT this one, which appears uninhabited. That is the honest open state for a conjecture carrier per \u00a73b-tax, so the CLASS is fine; the defect is the wrapper. Fix: drop the pseudo-theorem and cite `BorromeanQuark.forms_agree` directly, or restate as something derived from the two forms rather than equal to their equality.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/observations/building-block-knots.lean::unknot_amphichiral::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 151,
-      "verdict": "needs-agent",
-      "file_sha": "b4ef5ac2f6ab"
+      "verdict": "advisory",
+      "file_sha": "b4ef5ac2f6ab",
+      "disposition": "drop-unused-binder",
+      "evidence": "`jones_unknot q = jones_unknot q\u207b\u00b9` by `rfl` \u2014 the Jones polynomial of the unknot is the constant 1, so both sides reduce identically. The claim (the unknot is amphichiral) is real and correctly stated; `hq : q \u2260 0` is unused because the constant never inspects `q`. Advisory: drop the binder. Worth noting the proof is only as strong as `jones_unknot` being defined as a constant.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean::nu_selfConjugate::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1373,15 +1483,23 @@
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-with-unused-hypothesis",
       "line": 58,
-      "verdict": "needs-agent",
-      "file_sha": "93bc2507bbb1"
+      "verdict": "advisory",
+      "file_sha": "93bc2507bbb1",
+      "disposition": "drop-unused-binder",
+      "evidence": "`unfold bindingEnergy` then definitional. Several binders are unused, most conspicuously `h_parent_len : parentFactors.length = markovFactors.length` together with `parentFactors`/`daughterFactors`, which the conclusion never mentions. The stated identity itself is meaningful. Advisory: prune the binders the statement does not use, so the signature stops advertising a dependence on parent/daughter data that is not there.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean::spectral_decomposition_qvalue::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
       "pattern": "rfl-witness-with-unused-hypothesis",
       "line": 85,
-      "verdict": "needs-agent",
-      "file_sha": "6c261691ebcf"
+      "verdict": "advisory",
+      "file_sha": "6c261691ebcf",
+      "disposition": "drop-unused-binder",
+      "evidence": "Same family: a definitional identity carrying a long list of positivity hypotheses (`0 < parentPoly`, `0 < daughterPoly`, `0 < m_e`, `1 < q`) that the `rfl`-level proof does not consume. Well cited (Jones 1987 \u00a73-\u00a74, Turaev 2010). Advisory: prune the unused binders; the surviving statement is unchanged in strength and no longer implies the positivity conditions are needed.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean::ContactAffineChart.affineCoord_welldefined::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1398,8 +1516,12 @@
       "category": "proof-docstring-sorry-mismatch",
       "pattern": "doc-claims-sorry-body-has-none",
       "line": 82,
-      "verdict": "needs-agent",
-      "file_sha": "eb7ceecbdfc9"
+      "verdict": "genuine",
+      "file_sha": "eb7ceecbdfc9",
+      "disposition": "restore-honest-sorry-or-build-witness",
+      "evidence": "AUDIT-DODGE (\u00a71a). The docstring makes two explicit promises and the body breaks both: it says the claim is inhabitation of the real bundle \u2014 `not the degenerate \u2203 inv, True` \u2014 and that `Constructing the witness ... needs categorical machinery beyond the current QOU.Basic API, so the body is an honest sorry`. There is no sorry. The body is `\u27e8{ adjointObj := \ud835\udfd9_ C, projLine := \ud835\udfd9_ C, orbit_embed := \ud835\udfd9 _, involution := \ud835\udfd9 _, involution_sq := Category.id_comp _, orbit_involution_compat := Category.comp_id _, orbit_mono := ... }\u27e9` \u2014 every field is the identity on the monoidal unit, which satisfies `involution_sq`, the compatibility and the mono condition trivially. The witness never mentions `fh`, so `Nonempty (FiberAdjointInvolution C fh)` is proved for every category and every Frobenius-Hopf datum without using either: exactly the degeneracy the docstring disclaims, reached by a different route than `\u2203 inv, True`. Carries `-- Ref: [lusztig1993]` and `prop:fiber-adjoint-involution`, so it reads as an established categorical result. Fix: restore the honest `sorry` + `-- Ref:` (the docstring already explains why), or construct the genuine coadjoint-orbit embedding. Do not leave the identity witness.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.lean::volume_form_is_nondegen::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
