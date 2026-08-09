@@ -459,6 +459,7 @@ import QOU.QBeta.FiveTwoEnvelopeInstance
 import QOU.QBeta.FiveTwoLevelSevenBridge
 import QOU.QBeta.FiveTwoExtendIdentification
 import QOU.QBeta.FiveTwoLevelSevenAssembly
+import QOU.QBeta.FiveTwoSaddleSumRule
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge
