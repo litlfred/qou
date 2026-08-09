@@ -239,14 +239,30 @@ def identity(n):
     return [[mpf(1) if i == j else mpf(0) for j in range(n)] for i in range(n)]
 
 
-def generator_word_matrices(lam, syts, syt_index, q, qi):
-    """Pre-build σ_g, σ_g⁻¹, and the interface (σ_g − h/2·1) for each generator
-    g = 1..n−1, in the SYT basis. h = q − q⁻¹ (substrate)."""
+def generator_word_matrices(lam, syts, syt_index, q, qi, delta=None):
+    """Pre-build σ_g, σ_g⁻¹, and BOTH interface operators for each generator
+    g = 1..n−1, in the SYT basis. h = q − q⁻¹ (substrate).
+
+    Two interfaces, because the canonical word contains two physically distinct
+    "averaged" crossings and `classify_crossing` used to collapse them onto one
+    label (see `canonical_braid_crossings.classify_crossing`):
+
+        color-BLIND     I_g   = σ_g − (h/2)·1
+        color-WEIGHTED  I^pn_g = σ_g − h·(1/2 − δ/4)·1     (δ = flavour split)
+
+    Applying the blind form to the p-n crossing — which this function did until
+    2026-08-09 — put χ^λ 1.1e-4 away from the χ cache on every MIXED atom, while
+    homogeneous atoms (p, n, pp, nn, which have no p-n interface) agreed to
+    1e-50. That is the defect `chi_interface_convention_fit.py` diagnosed."""
     n = sum(lam)
     h = q - qi
+    if delta is None:
+        from _li_2_q_util import flavor_split_leading
+        delta = flavor_split_leading(q)
     sig: dict[int, list] = {}
     sig_inv: dict[int, list] = {}
     inter: dict[int, list] = {}
+    inter_pn: dict[int, list] = {}
     for g in range(1, n):
         S = seminormal_generator_matrix(lam, syts, syt_index, g, q, qi)
         sig[g] = S
@@ -254,11 +270,15 @@ def generator_word_matrices(lam, syts, syt_index, q, qi):
         Sinv = [[S[i][j] - (h if i == j else mpf(0)) for j in range(len(S))]
                 for i in range(len(S))]
         sig_inv[g] = Sinv
-        # interface operator I_g = σ_g − (h/2)·1  ("averaged" crossing)
+        # interface operator I_g = σ_g − (h/2)·1  (color-BLIND "averaged")
         Ig = [[S[i][j] - (h / 2 if i == j else mpf(0)) for j in range(len(S))]
               for i in range(len(S))]
         inter[g] = Ig
-    return sig, sig_inv, inter
+        # color-WEIGHTED p-n interface: σ_g − h·(1/2 − δ/4)·1
+        cw = h * (mpf(1) / 2 - delta / 4)
+        inter_pn[g] = [[S[i][j] - (cw if i == j else mpf(0))
+                        for j in range(len(S))] for i in range(len(S))]
+    return sig, sig_inv, inter, inter_pn
 
 
 def rho_lambda_of_word(lam, word, q, qi):
@@ -268,7 +288,8 @@ def rho_lambda_of_word(lam, word, q, qi):
     syts = standard_young_tableaux(lam)
     syt_index = {tuple(sorted(T.items())): i for i, T in enumerate(syts)}
     dim = len(syts)
-    sig, sig_inv, inter = generator_word_matrices(lam, syts, syt_index, q, qi)
+    sig, sig_inv, inter, inter_pn = generator_word_matrices(
+        lam, syts, syt_index, q, qi)
     M = identity(dim)
     for (g0, ctype) in word:
         g = g0 + 1  # 1-indexed generator
@@ -278,6 +299,8 @@ def rho_lambda_of_word(lam, word, q, qi):
             G = sig_inv[g]
         elif ctype == "averaged":
             G = inter[g]
+        elif ctype == "averaged_pn":
+            G = inter_pn[g]
         else:
             raise ValueError(f"unknown ctype {ctype!r}")
         M = mat_mul(M, G)
@@ -298,7 +321,10 @@ def main() -> int:
     Z, N = 1, 1
     A = Z + N
     n = 3 * A  # 6 strands for the deuteron
-    word = atom_canonical_crossings(Z, N)  # the IDENTICAL canonical β_D word
+    # distinguish_color=True: without it the p-n interface arrives labelled
+    # plain "averaged" and gets the color-BLIND operator, which is the 1.1e-4
+    # defect this producer carried until 2026-08-09 (bean qou-pin6).
+    word = atom_canonical_crossings(Z, N, distinguish_color=True)
 
     print(f"[rho_w] deuteron (Z={Z},N={N}), H_{n}, |word|={len(word)} crossings")
 

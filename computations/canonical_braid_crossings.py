@@ -79,6 +79,7 @@ def _avg_color_delta():
 
 def classify_crossing(
     c: float, d: float, h_val: float, *, context: str | None = None,
+    distinguish_color: bool = False,
 ) -> str:
     """Classify a `(c, d)` Hecke-algebra crossing pair into a ctype
     `{sigma, sigma_inv, averaged}` against the substrate `h = q - q⁻¹`.
@@ -91,6 +92,26 @@ def classify_crossing(
     `context` is an optional string appended to error messages so
     call-site debugging (e.g. "atom (Z, N) = (2, 2) gen 5") survives
     the wrapping. The helper itself does no parsing of the context.
+
+    🛑 `distinguish_color` — THE DEFAULT LABEL IS LOSSY.
+        `"averaged"` covers **two physically distinct** crossings:
+
+            d = -h/2                  color-BLIND
+            d = -h·(1/2 - δ/4)        color-WEIGHTED p-n interface
+
+        A consumer that rebuilds operators from the ctype alone therefore
+        cannot tell which it had, and silently substitutes one for the other.
+        `rho_w_crystal_vertex_trace` did exactly that: it built
+        `I_g = σ_g - (h/2)·1` for every averaged crossing, dropping δ on the
+        single p-n interface, which put its χ^λ 1.1e-4 away from the cache on
+        every MIXED atom while homogeneous atoms (p, n, pp, nn — no p-n
+        interface) agreed to 1e-50. Diagnosis:
+        `computations/audits/chi_interface_convention_fit.py`.
+
+        Pass `distinguish_color=True` to get `"averaged_pn"` for the
+        color-weighted case. The default stays `"averaged"` for both, because
+        ~10 consumers branch on that exact string and a silent relabel would
+        break them; opting in is the caller's decision.
     """
     suffix = f" [{context}]" if context else ""
     if abs(c - 1.0) > 1e-12:
@@ -104,9 +125,10 @@ def classify_crossing(
     # "averaged" p-n interface: color-blind −h/2, OR color-weighted
     # −h·(1/2 − δ/4) (bring_color_weighted default, mass_at_3A_proper).
     delta = float(_avg_color_delta())                # float-context comparison
-    if (abs(d - (-h_val / 2.0)) < 1e-9
-            or abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9):
+    if abs(d - (-h_val / 2.0)) < 1e-9:
         return "averaged"
+    if abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9:
+        return "averaged_pn" if distinguish_color else "averaged"
     raise ValueError(
         f"Unrecognised crossing (c, d)=({c}, {d}); expected d ∈ "
         f"{{0, -h, -h/2, -h·(1/2-δ/4)}} with h≈{h_val:.6f}, "
@@ -119,6 +141,7 @@ def atom_canonical_crossings(
     *,
     include_inter: bool = True,
     m_pp: int = 1, m_pn: int = 1, m_nn: int = 1,
+    distinguish_color: bool = False,
 ) -> list[tuple[int, str]]:
     """Canonical (gen_idx, ctype) crossings for atomic braid β(Z, N).
 
@@ -131,6 +154,14 @@ def atom_canonical_crossings(
     Replaces the legacy `hecke_character_symbolic.atomic_braid_to_crossings`,
     which used a disjoint-product convention not matching the
     canonical Markov-axiom reducer.
+
+    🛑 `distinguish_color=True` splits the lossy `"averaged"` label into
+    `"averaged"` (color-blind, `-h/2`) and `"averaged_pn"` (color-weighted,
+    `-h·(1/2 - δ/4)`). ANY consumer that rebuilds Hecke operators from this
+    output needs it — see `classify_crossing`'s note for the defect it caused
+    in `rho_w_crystal_vertex_trace`. Consumers that only COUNT crossings, or
+    pass the word to a backend that re-derives the coefficients itself, are
+    unaffected and can leave it False.
     """
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_core import h as h_val  # numeric h = q_0 − q_0⁻¹
@@ -145,6 +176,7 @@ def atom_canonical_crossings(
         ctx = f"atom_canonical_crossings(Z={Z}, N={N}) gen={int(g)} run={run_idx}"
         out.append((int(g), classify_crossing(
             float(c), float(d), h_val, context=ctx,
+            distinguish_color=distinguish_color,
         )))
     return out
 
