@@ -339,3 +339,98 @@ Ch 9 (knots-particles-confinement)  [definitions]
   └──→ Ch 13 (mass-theory)              [mass analysis]
 ```
 
+
+---
+
+## Definition relocations (decision 5 — 2026-08-09)
+
+Branch `claude/anchor-followups-2026-08-08`. Owner decision 5 of the 9-agent
+detangler review: relocate definitions rather than chapters (decision 4 forbade
+chapter moves, decision 6 forbade section splits), to take the repo's canonical
+logical-defect count — `python3 computations/forward_ref_classifier.py`, the
+`L-dependency` headline — from **8 to 0**.
+
+**No chapter directory was created, removed, renamed or reordered, and no
+section was added, deleted or divided.** `quantum-observable-universe.ts` is
+byte-identical; every change lives inside chapter manifests' `blocks: []`
+arrays.
+
+### Block moves (file-level, `git mv` on the whole sibling set)
+
+| Block | From chapter/section | To chapter/section | Files | Story |
+|-------|---------------------|--------------------|-------|-------|
+| `def:crossing-energy` | climax-volume-mass / `sec:crossing-energy` | knots-particles-confinement / `sec:electroweak-higgs-torus-link-triplet` | `.ts .md .lean .qa.json` | Moves as one unit with `def:coulomb-charge`, which is *defined from* it; both are consumed by the EW-triplet results in the destination section. |
+| `def:coulomb-charge` | climax-volume-mass / `sec:crossing-energy` | knots-particles-confinement / `sec:electroweak-higgs-torus-link-triplet` | `.ts .md .lean .qa.json` | Clears the `conj:` and `thm:electroweak-higgs-torus-link-triplet` forward edges. Placed immediately after `def:crossing-energy`, which it `uses[]`. |
+| `def:spin-involution` | mass-theory / `sec:lp-dual-jucys-murphy` | knots-particles-confinement / `sec:electroweak-higgs-torus-link-triplet` | `.ts .md .lean .qa.json` | `uses: []`, so it drags no dependency forward; three of its four consumers already live in the destination section. Clears three defects on its own. |
+| `conj:jsj-decomposition-linearity` | braids-and-knots / `sec:knot-fundamental-groups` | knots-particles-confinement / `sec:atom-isotope-knots` | `.ts .md .qa.json` (no `.lean` sibling) | The **consumer** moved instead of the definition. Stated over isotopes $(Z,N)$; its dep `def:atom-knot` heads the destination section. Its braids-and-knots home dated only from the 2026-07-12 Ledger §5 orphan integration. |
+
+### Edge drop (no file moved)
+
+| Block | Change | Story |
+|-------|--------|-------|
+| `def:quantum-universe` (quantum-universes) | dropped `def:frobenius-hopf-substrate` from `uses[]`; prose anchor retained in the `.md` | The edge was a pointer, not an editorial dependency — axiom 2 of `quantum-universe.md` spells out the whole Frobenius–Hopf datum ($\mu, \Delta, \eta, \varepsilon, S$, $\rho_V$) inline. |
+
+**Why the edge was dropped rather than the block relocated.** The `uses[]`
+graph carries a genuine 3-cycle,
+
+```
+def:quantum-universe → def:frobenius-hopf-substrate → def:frobenius-pairing → def:quantum-universe
+```
+
+(`quantum-observable-universes/frobenius-hopf-substrate.ts:9`,
+`quantum-universes/frobenius-pairing.ts:10`). **No placement orders a cycle.**
+Relocating `def:frobenius-hopf-substrate` into `quantum-universes` would have
+driven the classifier to 0 only by making the cycle intra-chapter, where the
+classifier — which measures cross-chapter edges — cannot see it. That is
+concealment, not a fix. It would additionally have orphaned the block from 8 of
+its 17 consumers in `quantum-observable-universes`, and would have put a
+relocation and a mathematical restatement on the same file in the same round:
+the block's axiom 4 *is* the non-degeneracy that convention D provably
+violates, and decision 2 orders that axiom restated.
+
+### Allowlist repair (no content moved)
+
+`computations/forward_ref_classifier.py` `SUBJECT_MATCHED_DEFS` carried the key
+`particle-interactions::def:knot-particle-generation`. The
+`particle-interactions` chapter was split into `knots-particles-confinement` on
+2026-08-03 (see the section above), so the key could never match and the
+2026-06-09 author decision it encoded had been silently voided by the rename —
+the `brings-surface → def:knot-particle-generation` edge was surfacing as an
+`L-dependency` purely as an artifact. Repointed to
+`knots-particles-confinement::def:knot-particle-generation`. This is a rename
+follow-through, not a new waive; the subject test still passes at the new
+address.
+
+### Editorial cost accepted
+
+- `climax-volume-mass/sec:crossing-energy` ("Crossing energy and Coulomb
+  charge") keeps 14 of 16 blocks but no longer contains either definition its
+  title names. The section still develops both quantities. **A title revisit is
+  deferred** — renaming a section is a story-changing operation and no section
+  renames were in scope this round.
+- `mass-theory/sec:lp-dual-jucys-murphy` keeps the
+  `spin-involution-lp-dual-invariance{,-proof,-interpretation}` arc, which now
+  reads backward into Ch 8 for its definition.
+- `knots-particles-confinement/sec:electroweak-higgs-torus-link-triplet` grows
+  14 → 17 blocks and `sec:atom-isotope-knots` 18 → 19. The latter is one over
+  the 18-block upper band the manifest comments target — flagged to the density
+  watcher, not a split trigger. For scale, 41 of the paper's 338 sections
+  already exceed 18 blocks (the largest,
+  `mass-theory/sec:cyclotomic-depth-3-trilog`, holds 31), so a 19-block section
+  is unremarkable and no split was warranted under decision 6.
+
+### Anchors and `uses[]`
+
+Zero repointing required, verified by corpus grep: anchors are stored in the
+bare `](#label)` form and `uses[]` stores labels, not paths, so both are
+independent of directory. The only path-bearing artifact per block is the
+`.qa.json` `paths:{ts,md,lean}` block, regenerated by `qa-sweep.ts` (never
+hand-edited).
+
+### Lean
+
+The colocated per-block `.lean` files are **not** in the Lake source path —
+`lakefile.toml:54` roots the QOU library at
+`content/quantum-observable-universe/lean/` — so on inspection no move can
+affect compilation. Not confirmed by a build: the orchestrator held a QOU build
+in this checkout and `lake` was not run.

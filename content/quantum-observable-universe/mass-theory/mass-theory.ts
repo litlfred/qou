@@ -830,7 +830,12 @@ export default chapter({
         "jucys-murphy-central-elements-qou",
         "jucys-murphy-central-elements-qou-proof",
         "jucys-murphy-central-elements-qou-interpretation",
-        "spin-involution",
+        // def:spin-involution relocated to knots-particles-confinement §7
+        // (2026-08-09, decision 5): three of its four consumers are the
+        // EW-triplet charge/spin blocks there, and it has `uses: []` so it
+        // drags no dependency forward. The lp-dual-invariance arc below is
+        // the fourth consumer and now reads BACKWARD into Ch 8 for the
+        // definition.
         "spin-involution-lp-dual-invariance",
         "spin-involution-lp-dual-invariance-proof",
         "spin-involution-lp-dual-invariance-interpretation",

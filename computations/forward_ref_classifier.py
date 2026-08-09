@@ -157,7 +157,19 @@ SUBJECT_MATCHED_DEFS = {
     "lifting-and-descent::def:yekutieli-lifting-condition",  # Yekutieli lift
     "mass-endomorphism::def:mass-identity",           # mass identity
     "measurement-observation::def:bundle-isotopy-equivalence",
-    "particle-interactions::def:knot-particle-generation",
+    # Rename follow-through, NOT a new waive (2026-08-09). This key read
+    # "particle-interactions::def:knot-particle-generation" from the
+    # 2026-06-09 triage until today. The particle-interactions chapter was
+    # split into knots-particles-confinement on 2026-08-03 (Phase 1,
+    # eightfold-way-chapter-2026-08-03) and no longer exists on disk, so the
+    # old key could never match and the author decision it encodes had been
+    # silently voided by a directory rename — the brings-surface →
+    # def:knot-particle-generation edge was showing as an L-dependency purely
+    # as an artifact of that rename. The subject test still passes at the new
+    # address: a definition of knot→particle generation belongs in the chapter
+    # named "Knots, Particles, and Confinement". Repointing the key restores
+    # the 2026-06-09 decision; it does not create one.
+    "knots-particles-confinement::def:knot-particle-generation",
     # q-flat-connection — subject is the flat connection / local system, the
     # core object of geometric Langlands, so it genuinely belongs in its
     # q-geometric-langlands home chapter.  The two early edges
