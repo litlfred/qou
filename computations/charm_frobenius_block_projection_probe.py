@@ -33,7 +33,12 @@ TWO readings, both derive-then-check, both parameter-free where flagged:
     FIT and reported as such.
 
 Convention (AGENTS §7a): Hecke (T-q)(T+1/q)=0, eigenvalues q, -1/q.
-q_0 is the muon-anchored canonical substrate value (computations/ layer).
+q_0 is the EXPERIMENTAL (proton) pin `q_parameter.Q` ~ 1.1099785827513808 --
+the standing default for all new compute (AGENTS §q0 anchor convention,
+owner directive 2026-08-07).  Both y_lambda and chi_lambda are evaluated at
+that same q_0: `y_lambda_wenzl_bridge_numeric` is a live closed form keyed on
+the q passed in, so no muon-built cache is consulted and the two layers are
+never straddled inside one quantity.
 
 Requires: mpmath, snappy.  Corpus y_λ via y_lambda_wenzl_bridge (pure).
 Emits computations/charm-frobenius-block-projection.witness.json.
@@ -53,7 +58,7 @@ sys.path.insert(0, str(HERE / "hecke"))
 
 mp.mp.dps = 50
 
-# Canonical muon-anchored substrate q_0 (computations/ layer).
+# Experimental (proton) substrate q_0 -- the standing default for new compute.
 from q_parameter import Q as Q0  # noqa: E402
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
@@ -283,7 +288,8 @@ def main():
                        "vs the charm mass hierarchy (derive-then-check).",
         "producer": "computations/charm_frobenius_block_projection_probe.py",
         "consumes": ["conj:complex-mass-constituent-functional"],
-        "q0_muon_anchored": q0f,
+        "q0": q0f,
+        "q0_anchor": "experimental-proton (q_parameter.Q; AGENTS 2026-08-07 default)",
         "validation": val,
         "y_lambda": {str(lam): float(Y[lam]) for lam in PARTS},
         "reading_A_scale_free_block_ratio": readingA,
@@ -300,7 +306,7 @@ def main():
     print("=== validation ===")
     for k, v in val.items():
         print(f"  {k}: {v:.3e}" if "resid" in k else f"  {k}: {v}")
-    print("\n=== y_λ (muon-q0) ===")
+    print("\n=== y_λ (proton-q0) ===")
     for lam in PARTS:
         print(f"  {lam}: {float(Y[lam]):.6f}  ({GEN_OF[lam]})")
     print("\n=== Reading (A): scale-free block projections on Borromean ===")

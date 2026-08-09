@@ -44,8 +44,15 @@ are tiny (dims 1, 2, 1), so the probe builds them directly:
   $r=\sqrt{q^4+q^2+1}/(q^2+1)$ (solved symbolically from Hecke + braid).
 - **Validation:** Hecke residual $=0$, braid residual $\sim10^{-51}$,
   $\mathrm{tr}_M(\mathbb{1})=\sum_\lambda y_\lambda\dim_\lambda = 1.0$.
-- **`y_λ`** from the corpus muon-$q_0$ Wenzl bridge (pure mpmath):
+- **`y_λ`** from the corpus Wenzl bridge (`y_lambda_wenzl_bridge_numeric`, pure
+  mpmath), evaluated at the **experimental (proton) pin**
+  $q_0 = $ `q_parameter.Q` $\approx 1.1099785827513808$ — the standing default
+  for new compute (AGENTS §q₀ anchor convention, owner directive 2026-08-07):
   $y_{[3]}=0.41540$, $y_{[2,1]}=0.28093$, $y_{[1^3]}=0.02274$.
+  The bridge is a **live closed form** keyed on the $q$ passed in, not a cached
+  muon-built witness, so $y_\lambda$ and $\chi_\lambda$ are both evaluated at
+  the same $q_0$ and the ideal/experimental layers are never straddled inside
+  one computed quantity.
 
 ### Reading (A) — parameter-free, scale-free (primary)
 
