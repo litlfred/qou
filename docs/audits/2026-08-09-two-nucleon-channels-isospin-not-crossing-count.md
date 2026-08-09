@@ -219,3 +219,61 @@ address so the next reader does not re-derive the obstruction from scratch.
   conditional on Jones (1987).
 * `m_pp`/`m_pn`/`m_nn` are left at 1. Nothing here licenses changing them, and
   §1 is the argument that nothing ever will.
+
+---
+
+## 8. Claims EXCISED from the paper on 2026-08-09, preserved here
+
+Owner directive: excise the false claims from the paper, keep them in the audit.
+These were the module docstring of
+`content/quantum-observable-universe/lean/QOU/QBeta/InterfaceScalar.lean`, which
+is paper content. All were **convention-C specific** and became false when C was
+excised. The THEOREMS are untouched — they are true conditionals; what was wrong
+was the claim that they bind at the deuteron.
+
+Verbatim, as removed:
+
+1. Title / subtitle —
+   "# The nucleon–nucleon interface is a single scalar, **and it has a floor**"
+   "**Why no crossing convention can bind the deuteron.**"
+
+2. The band paragraph —
+   "Numerically that is `[2.907195, 5.177967]` MeV, while `B_AME(²H) =
+   2.2245662`: **below the floor by 30.69 %** … no crossing sign, colour weight,
+   or multiplicity reaches the deuteron."
+
+3. The floor billing —
+   "**the stronger, q-independent form, which supersedes `mu_unreachable` as the
+   headline.** The production Markov parameter is `z = 1/(q^{1/2} + q^{-1/2})`"
+   — `z = 1/(√q+1/√q)` is convention C and is NOT the production parameter.
+
+4. `mu_unreachable`'s own docstring —
+   "so the deuteron is unreachable, and the ²H miss cannot be localised in the
+   interface."
+
+5. The scope note —
+   "This is an impossibility result about the *interface*" … "Since no
+   admissible `μ` reaches AME, and since the per-bond deficit changes sign
+   across `A` (audit §4), the defect is in the *form* of `B = −α·ln μ`".
+
+6. The mirror-split number — "Measured, `α(L_nn − L_pp) = 2.27077 MeV`" (C-era;
+   under D with the derived writhe term it is 0.76532 MeV).
+
+### Why they are false
+
+Under production convention D, `z = q³/(q²+1) = 0.6126880 > 1/2`, so the AM-GM
+step behind the floor never bites. Measured:
+
+    admissible band under C   [2.907195, 5.177967] MeV   AME 2.224566 BELOW it
+    admissible band under D   [2.0507,   3.7978  ] MeV   AME 2.224566 INSIDE it
+
+    required offset under C   d = +0.088442 = +0.42305 h   OUTSIDE [-h, 0]
+    required offset under D   d = -0.024973 = -0.11945 h   INSIDE  [-h, 0]
+
+So the deuteron is reachable. What replaces the impossibility is a narrower and
+better-posed gap: the derived colour weight `t = ½ − δ/4 = 0.499656` does not
+equal the required `t = 0.119453`, a factor 4.183. Reachable, not derived.
+
+Also flagged: the A-scaling refutations in bean `qou-c6gx` ("per-bond deficit
+changes sign, spread 7.105 MeV/bond") were computed under C and must be re-run
+before being cited.

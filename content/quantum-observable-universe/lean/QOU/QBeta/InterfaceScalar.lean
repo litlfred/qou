@@ -8,9 +8,14 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
-# The nucleon–nucleon interface is a single scalar, and it has a floor
+# The nucleon–nucleon interface is a single scalar
 
-**Why no crossing convention can bind the deuteron.**
+**The interface collapses to one number, and that number is bounded.**
+
+> The title and subtitle here used to read "…and it has a floor" / "Why no
+> crossing convention can bind the deuteron". Both are **withdrawn** (2026-08-09):
+> the floor is convention-**C** specific and the deuteron IS reachable under the
+> production convention **D**. See the retraction below.
 
 In the `H_{3A}` atom word (`computations/mass_at_3A_proper.atom_braid_word_3A`)
 the generator `σ₂` is the *only* one joining strand 2 — nucleon `k`'s last quark
@@ -32,15 +37,32 @@ the `a = 1` cases at `d ∈ {0, −h(½−δ/4), −h/2, −h}`, i.e. `μ ∈ [z
 Four consequences are recorded here.
 
 `mu_mem_Icc` — the admissible `μ` lies in `[z−h, z]`, so with `−ln` decreasing
-the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. Numerically that is
-`[2.907195, 5.177967]` MeV, while `B_AME(²H) = 2.2245662`: **below the floor by
-30.69 %**. `mu_unreachable` is the formal statement that a target above `z` is
-not attained by any admissible offset — no crossing sign, colour weight, or
-multiplicity reaches the deuteron.
+the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. `mu_unreachable` is the
+formal statement that a target above `z` is not attained by any admissible
+offset. Both are conditional theorems and remain true as stated.
 
-`bond_energy_floor` — **the stronger, q-independent form, which supersedes
-`mu_unreachable` as the headline.** The production Markov parameter is
-`z = 1/(q^{1/2} + q^{-1/2})`, and AM-GM (`two_le_add_inv`,
+> **RETRACTION 2026-08-09 — the deuteron IS reachable, and the impossibility
+> narrative that used to stand here is withdrawn.** This paragraph read
+> "Numerically that is `[2.907195, 5.177967]` MeV, while `B_AME(²H) =
+> 2.2245662`: **below the floor by 30.69 %** … no crossing sign, colour weight,
+> or multiplicity reaches the deuteron." Those numbers are convention **C**
+> (`z = 1/(√q+1/√q) = 0.4993`), which was excised. Under the production
+> convention **D** (`z = q³/(q²+1) = 0.6127`) the admissible band is
+> `[2.0507, 3.7978]` MeV and **contains** `B_AME(²H) = 2.224566`. Solving for
+> the required offset gives `d = −0.024973 = −0.11945·h`, **inside** the Hecke
+> range `[−h, 0]`, where under C it was `+0.4230·h` and outside. The theorems
+> are untouched; only the claim that they *bind here* was wrong. What remains
+> open is that the derived colour weight `t = ½ − δ/4 = 0.499656` does not equal
+> the required `t = 0.119453` — a derivation gap, not an impossibility.
+> Audit: `docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md`;
+> bean `qou-kj4v`.
+
+`bond_energy_floor` — a `z`-form-specific bound. **`z = 1/(q^{1/2} + q^{-1/2})`
+is convention C and is NO LONGER the production Markov parameter** (production
+is D, `z = q³/(q²+1)`); this paragraph used to call it "the production Markov
+parameter" and to bill this as "the stronger, q-independent form, which
+supersedes `mu_unreachable` as the headline". Both withdrawn. For a `z` of the
+C form, AM-GM (`two_le_add_inv`,
 `markov_param_le_half`) gives `z ≤ 1/2` for *every* `q`. With `d ≤ 0` that
 forces `μ ≤ 1/2` (`mu_le_half`) and hence
 
@@ -63,8 +85,8 @@ form `1/(x + x⁻¹)`**, which is where AM-GM bites.
 > statement about Markov traces in general. See `computations/y_lambda_su_n.py`
 > and `docs/coordination/trace-convention-registry.md`.
 
-Within convention C it stands, and contrapositively
-(`alpha_upper_bound`), the deuteron is reachable only if
+Within convention C it stands — and only there. Contrapositively
+(`alpha_upper_bound`), under C the deuteron would be reachable only if
 
     α  ≤  B_AME(²H)/log 2  =  3.2093703 MeV,
 
@@ -74,10 +96,15 @@ Pursued in bean `qou-qlma`.
 `charge_independence_iff` — the strong force is charge independent, so a bond
 model must give `L_pp = L_nn`. With `d_pp = 0` (σ) and `d_nn = −h` (σ⁻¹) that
 demands `z = z − h`, i.e. `h = 0`, i.e. `q = 1`: the classical limit, where the
-Hecke structure is gone. Measured, `α(L_nn − L_pp) = 2.27077 MeV`, which is
-*identically* the ³H/³He mirror splitting this framework predicts — so that
-splitting is an artifact of the σ/σ⁻¹ charge assignment, not an isospin effect.
-Nature's is 0.764 MeV and mostly Coulomb.
+Hecke structure is gone. Measured under C, `α(L_nn − L_pp) = 2.27077 MeV`; under D with the derived
+writhe term wired it is **0.76532 MeV** (the writhe factor `(1−h)^(Δe/2)` shifts
+pp and nn equally and oppositely, removing 56.19 % of the asymmetry). Either way
+the splitting is an artifact of the σ/σ⁻¹ charge assignment, not an isospin
+effect — charge symmetry demands the *strong* mirror split be small, and the
+flavour parameter δ cancels out of it entirely by `mirror_split_eq_L_diff`.
+Nature's 0.7638 MeV is mostly Coulomb (uniform-sphere E_C alone gives 0.9984),
+so the strong sector should supply only the small Nolen–Schiffer residual, not
+the whole split. Beans `qou-4waf`, `qou-usft`.
 
 `proj_add_eq_one` / `proj_mul_eq_zero` — the same quadratic supplies the isospin
 decomposition for free. `P₊ = (σ + q⁻¹)/(q + q⁻¹)` and `P₋ = (q − σ)/(q + q⁻¹)`
@@ -94,16 +121,19 @@ are about the *scalar* `μ`, never about `A`.
 Companion audit: `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`.
 Beans `qou-c6gx`, `qou-h7mh`.
 
-**Scope.** This is an impossibility result about the *interface*, and it is
-conditional in one place: `interface_scalar` takes the Markov property as a
+**Scope.** This is a structural result about the *interface* — it collapses to
+one scalar, and that scalar is bounded by the Hecke range. It is **not** an
+impossibility result for the deuteron; that reading was C-specific and is
+retracted above. It is conditional in one place: `interface_scalar` takes the Markov property as a
 hypothesis, because in this corpus that property is an `axiom` carrying a
 `sorry` (`jones-markov-trace.lean`, standing in for Jones 1987) rather than a
 theorem. Nothing here proves the trace exists.
 
-It also does **not** claim the interface is where the ²H error lives — the
-opposite. Since no admissible `μ` reaches AME, and since the per-bond deficit
-changes sign across `A` (audit §4), the defect is in the *form* of
-`B = −α·ln μ` summed over bonds, not in the choice of crossing. The two
+It also does **not** claim the interface is where the ²H error lives. Note the
+premise of that argument has itself been retracted: an admissible `μ` **does**
+reach AME under convention D (see the retraction above). The per-bond
+sign-change evidence (audit §4) was also computed under C and needs re-running
+before it is cited. The two
 positive routes suggested by `proj_*` — a derived Clebsch weighting, and
 charge independence imposed with Coulomb carrying the mirror split — are
 neither formalised nor wired here.
@@ -176,8 +206,10 @@ theorem mu_mem_Icc (z h d : R) (hd_lo : -h ≤ d) (hd_hi : d ≤ 0) :
 /-- **The floor theorem.** A target strictly above `z` is attained by no
 admissible interface element. With `z = 1/(√q₀ + 1/√q₀)` this says
 `B ≥ α·ln(1/z) = 2.907195 MeV` for every crossing convention, while
-`B_AME(²H) = 2.2245662` — so the deuteron is unreachable, and the ²H miss cannot
-be localised in the interface. -/
+`B_AME(²H) = 2.2245662`. **Retracted as a physical claim 2026-08-09**: those are
+convention-C numbers, and under production convention D the deuteron IS
+reachable at `d = −0.11945·h`. The theorem below is a true conditional and is
+unaffected; only its application to ²H was wrong. -/
 theorem mu_unreachable (z d μ_req : R) (hd_hi : d ≤ 0) (htarget : z < μ_req) :
     z + d ≠ μ_req := by
   intro hcontra
