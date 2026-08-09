@@ -1275,3 +1275,109 @@ Only the assembly, and it is now a matter of plugging in:
 Steps 1-4 all cite theorems that exist and are sorry-free. Step 5 is arithmetic
 over them. Nothing in the chain is now an open mathematical question -- which is
 a different claim from "it is done", and the assembly is still unwritten.
+
+## (A) IS CLOSED — the assembly, with an explicit `O(1/N^2)` constant
+
+`QOU/Knot/KashaevAsymptotic.lean::kashaev_log_sum_asymptotic`, sorry-free on
+`[propext, Classical.choice, Quot.sound]`. For `1 <= k < N`, `4 <= N`,
+`h = pi/N`, `theta = k pi/N`:
+
+    | sum_{j=1}^{k} log(2 sin(j pi/N))
+        - ( -(N/pi) Lambda(theta) + (1/2) log(2 N sin theta)
+            + (pi/12N) cot theta ) |
+      <= 1/(144 k^2) + (7/12) h^2 + h^2/(12 sin^2 theta)
+
+equivalently `s_k = (N/pi)Lambda(theta) - (1/2)log(2N sin theta)
+- (pi/12N)cot(theta) + O(1/N^2)`. The bean asked for `O(log N) -> O(1)`; this
+is `O(1/N^2)`, and the constant `-(1/2)log(2N sin theta)` is DERIVED.
+
+### The one genuinely new ingredient: `Lambda` near zero WITH its constant
+
+`QOU/Knot/LobNearZero.lean::abs_Lob_sub_near_zero`:
+
+    |Lambda(b) - (b - b log(2b))| <= b^3/3      for 0 < b <= 1
+
+Everything else in the chain was bookkeeping over pieces already built; this
+is where `-(1/2)log(2N sin theta)` comes from, and it is what "(A) needs the
+constant, not the rate" always meant. `(1/h)*Lambda(h)` is `O(1/h)`, so
+anything short of the exact constant destroys the answer.
+
+The proof does not assume any expansion of `Lambda`. For `0 < eps <= b < pi`,
+`Lambda' = -log(2 sin)` gives
+
+    Lambda(eps) - Lambda(b) = int_eps^b logSinc + int_eps^b log(2t)
+
+splitting the integrand at its own singularity: `logSinc` is bounded
+(`|logSinc t| <= t^2/3`) and `log(2t)` integrates in closed form. Letting
+`eps -> 0+` kills the `eps` bracket. That limit needed two things the corpus
+did not have:
+
+  * `continuous_Cl_2` -- `Cl_2` is continuous, Weierstrass M-test on the
+    Fourier series (`|sin(n th)/n^2| <= 1/n^2`, uniform in `th`). The corpus
+    had `summable_clausen` but never continuity.
+  * `Real.continuous_mul_log` for `eps log(2 eps) -> 0` (Mathlib had it).
+
+### How the five error terms land
+
+Exact decomposition (checked to 1e-59 in
+`computations/probes/kashaev_assembly_bound_probe.py`):
+
+    L_k - target = (rho - 1/12k) + delta/h + logSinc(h)/2
+                   - (h/12)(cot h - 1/h) + E
+
+    rho - 1/12k       Robbins BOTH sides       <= 1/(144 k^2)
+    delta/h           Lambda near zero          <= h^2/3
+    logSinc(h)/2      trapezoid h-endpoint      <= h^2/6
+    (h/12)(cot h-1/h) B_2 h-endpoint            <= h^2/12
+    E                 composite Euler-Maclaurin <= h^2/(12 sin^2 theta)
+
+Two cancellations do the real work and neither is optional:
+
+  1. `h log(2h)` from `Lambda(h)` against `h log(2h)` from `int log(2t)` --
+     this is why the CONSTANT and not the rate is what (A) needed.
+  2. `1/(12k)` from Robbins against `(h/12)*(1/theta)` from the `B_2` term at
+     the `theta` end. This is why the one-sided Robbins bound is useless here:
+     `1/(12k)` is exactly the size of the term it cancels, so only the
+     two-sided bracket `1/(12k+1) <= rho <= 1/(12k)` leaves an `O(1/k^2)`
+     residue. `le_log_factorial_stirling_robbins` earning its place.
+
+### The singular `j = 0` endpoint is never approximated
+
+`sum_log_two_sin_split` removes it EXACTLY -- `sum log(2 sin jh) = k log(2h) +
+log k! + sum logSinc(jh)` -- handing the singular part to Stirling and leaving
+Euler-Maclaurin a bounded smooth summand. Nothing is expanded through
+`log(2 sin) -> -infty`. The earlier note in `KashaevReflectionTrapezoid.lean`
+that "the antisymmetric half needs the singular endpoint" is superseded: the
+split dodges it rather than solving it.
+
+### Sharpness, stated honestly
+
+The proved bound is `O(1/N^2)`; the true residual is `O(1/N^3)`
+(residual*N^2 halves per doubling of N, probe part (ii)). The proof does not
+exploit the parity that gives the extra order, and the constant is loose by
+50x-20000x over the tested range. Both are fine for the use -- the point was
+the constant term, not the remainder's sharpness -- but "O(1/N^2), explicit"
+is the claim, not "sharp".
+
+### Files added this round
+
+    QOU/Knot/LobNearZero.lean         continuous_Cl_2, continuous_Lob,
+                                      log_two_sin_eq_logSinc_add,
+                                      integral_log_two_mul, continuousOn_logSinc,
+                                      integral_logSinc_eq, abs_Lob_sub_near_zero
+    QOU/Knot/KashaevAsymptotic.lean   abs_robbins_centred,
+                                      kashaev_log_sum_asymptotic
+    computations/probes/kashaev_assembly_bound_probe.py
+
+### Lean gotchas recorded
+
+  * `intervalIntegrable_log'` (unconditional, volume-only) lives in
+    `Mathlib.Analysis.SpecialFunctions.Integrability.Basic` and is in the
+    `intervalIntegral` namespace -- importing `Integrals.Basic` is not enough.
+  * `Nat.cast (m+1)` and `(m:R)+1` are DIFFERENT ATOMS to `ring`. A single
+    `simp only [hcast]` with `hcast : ((m+1:N):R) = (m:R)+1`, applied to the
+    goal AND to every imported lemma instance, is what makes the final
+    `field_simp; ring` go through. Without it `ring` fails on an identity that
+    is numerically exact to 1e-59.
+  * `abs_of_nonpos (by positivity : -(1/h) <= 0)` does not work -- `positivity`
+    proves positivity, not nonpositivity. `abs_neg` then `abs_of_pos`.
