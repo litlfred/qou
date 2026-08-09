@@ -56,17 +56,28 @@ except ImportError:
 #
 # WHY. `TR_M` below is the Markov trace on the NF basis, `G` its Gram matrix,
 # and `G_INV = np.linalg.inv(G)` runs unconditionally AT IMPORT. Under D that
-# Gram form is DEGENERATE — proved on this branch in
+# Gram form is SINGULAR — established on this branch in
 # content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
-# which names this file by path. Measured here at the proton pin:
+# which names this file by path.
+#
+# Measured here at the proton pin, on the BILINEAR form this module actually
+# builds (`_build_gram` pairs b_i with b_j, no star):
 #
 #     convention C   eigenvalues -0.855067 +0.101797 +0.855067 x3 +3.476950
-#                    det -0.18920521914403668     cond 3.4e+01
-#                    signature (5,1), Lorentzian but NON-degenerate
+#                    det -0.18920521914403668     cond 3.4e+01   NON-singular
 #
 #     convention D   eigenvalues -0.752702  0.000000 +0.752702 x3 +4.230339
-#                    det  3.998e-17                cond 4.9e+16
-#                    signature (4,1) + a NULL DIRECTION
+#                    det  3.998e-17                cond 4.9e+16  SINGULAR
+#
+# READ THE LEAN FILE'S OWN RETRACTION (commit 748ba9b1) BEFORE QUOTING THE
+# SIGNATURE. Its original "(5,1) / (4,1) + null, LORENTZIAN" reading is
+# WITHDRAWN: that used the bilinear pairing, and the Hecke *-structure is
+# T_w* = T_{w^-1}, which on this NF basis swaps L+ <-> L-. Under the correct
+# star pairing the form is C (6,0,0) POSITIVE DEFINITE, D (5,0,1) POSITIVE
+# SEMIDEFINITE. What does NOT change, and is the only thing this note relies
+# on: under D there is exactly ONE null direction, the row-cap one, under
+# BOTH pairings. So det G = 0 and G_INV does not exist. C stays invertible
+# either way, because y_(1^3) = 0.0227 != 0.
 #
 # And numpy does not protect you: `np.linalg.inv` on the D matrix RAISES
 # NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
@@ -74,8 +85,11 @@ except ImportError:
 # molecular.py, sdp.py and nine corpus consumers, is far worse than the
 # stale convention.
 #
-# The Lean file names the repair — quotient by the radical, or use a
-# different seminorm. That is a design decision for the owner, not a swap.
+# The Lean file names the repair — quotient by the radical. Post-retraction
+# that is a strictly better prospect than it first looked: the quotient is a
+# genuine positive-definite inner product, not a causal form. But it is still
+# a design decision for the owner, not a one-line swap, because `G_INV` is
+# exported at import and every consumer expects a 6x6 inverse.
 #
 # ALREADY SPLIT, AND WORSE AFTER A REBUILD. The Rust mirror
 # (tools/hecke-engine/src/gram.rs) IS now convention D. It survives the

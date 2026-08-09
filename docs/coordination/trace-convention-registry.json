@@ -350,9 +350,10 @@
       "stays": "C",
       "bean": "qou-wgta",
       "item": 11,
-      "reason": "G_INV = np.linalg.inv(G) runs at module import, and under D the Markov-Gram form on the H_3(q) NF basis is DEGENERATE (proved: QOU.QBeta.GramSignature, eigenvalues -0.752702, 0, +0.752702 x3, +4.230339; det 0). numpy raises nothing -- it returns entries up to 7.6e15 with ||G G_INV - I|| = 1.64. Switching this line silently corrupts every consumer of G_INV.",
-      "repair_named_by": "content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean -- quotient by the radical, or use a different seminorm",
-      "owner_decision_required": true
+      "reason": "G_INV = np.linalg.inv(G) runs at module import, and under D the Markov-Gram form on the H_3(q) NF basis is SINGULAR -- exactly one null direction (the row-cap one). Bilinear eigenvalues at the proton pin: -0.752702, 0, +0.752702 x3, +4.230339; det 3.998e-17, cond 4.9e16. numpy raises nothing -- it returns entries up to 7.6e15 with ||G G_INV - I|| = 1.64. Switching this line silently corrupts every consumer of G_INV.",
+      "repair_named_by": "QOU/QBeta/GramSignature.lean -- quotient by the radical. Post-retraction the quotient is a genuine positive-definite inner product, so the repair is more attractive than it first appeared; it is still an owner decision because G_INV is exported at import.",
+      "owner_decision_required": true,
+      "signature_note": "Quote the signature from QOU.QBeta.GramSignature only AFTER its in-file retraction (commit 748ba9b1). The original '(5,1) under C, (4,1)+null under D, LORENTZIAN' used the bilinear pairing and is WITHDRAWN; the Hecke *-structure is T_w* = T_{w^-1}, giving C (6,0,0) positive definite and D (5,0,1) positive semidefinite. The SINGULARITY under D is common to both pairings and is the only thing this block depends on."
     }
   ],
   "evaluators": {

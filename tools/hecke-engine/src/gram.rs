@@ -17,11 +17,15 @@
 //!
 //! **2. Fixing (1) makes this Gram singular.** With the correct `h·z² + z`
 //! and the production convention D, the 6×6 Markov–Gram form is degenerate —
-//! proved in `content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`
-//! (eigenvalues −0.752702, 0, +0.752702×3, +4.230339; signature (4,1) plus a
-//! null direction; det = 0). [`gram_inverse`] would then panic, or worse,
-//! return a matrix with ~1e15 entries — that is what `numpy.linalg.inv` does
-//! on the Python side: no exception, and ‖G·G⁻¹ − I‖ = 1.64.
+//! see `content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean`
+//! (bilinear eigenvalues −0.752702, 0, +0.752702×3, +4.230339; det = 0).
+//! Note that file's own retraction, commit `748ba9b1`: its "Lorentzian /
+//! signature (4,1)" reading is WITHDRAWN — under the correct `*`-pairing
+//! (`T_w* = T_{w⁻¹}`) the form is positive semidefinite, `(5,0,1)`. The one
+//! null direction under D is what survives both readings, and it is all this
+//! note needs. [`gram_inverse`] would then panic, or worse, return a matrix
+//! with ~1e15 entries — that is what `numpy.linalg.inv` does on the Python
+//! side: no exception, and ‖G·G⁻¹ − I‖ = 1.64.
 //!
 //! Both are open for the owner (bean `qou-wgta`, items 10/11). The
 //! convention here IS convention D as of 2026-08-09; the `z³` weight is
