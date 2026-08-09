@@ -79,7 +79,11 @@ def chi_atom_sparse(shape: tuple[int, ...], Z: int, N: int, q: mp.mpf,
     sig, dim, _ = build_seminormal_matrices(tuple(shape), sparse=True, q=qf)
     if dim == 0:
         return mp.mpf(0)
-    word = atom_braid_word_3A(Z, N, include_inter=True, q=q)
+    # See `threerow_sign_crossing_probe.chi_atom`: the CSR letters below are
+    # `float(c)·σ + float(d)·I`, so this path is f64 end to end and the
+    # declaration belongs here, at the point where the loss occurs.
+    word = atom_braid_word_3A(Z, N, include_inter=True, q=q,
+                              allow_float64=True)
     ident = sp.identity(dim, format="csr")
     # Each letter stays CSR (≤2 nnz/row); build once, reuse across all batches.
     letters = [(float(c) * sp.csr_matrix(sig[g]) + float(d) * ident).tocsr()
