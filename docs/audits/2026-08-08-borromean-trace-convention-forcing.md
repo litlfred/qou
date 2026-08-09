@@ -254,3 +254,76 @@ Lean:
 ```bash
 scripts/lean-verify.sh content/quantum-observable-universe/lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean
 ```
+
+---
+
+## 6. Follow-up 2026-08-09 — C does not arise from ANY `Rep(SU_q(N))` fibre
+
+§5 poses the remaining question as a disjunction:
+
+> Does the Archimedean/fibre functor for the **mass** channel land in
+> `Rep(SU_q(2)) ≃ TL₃`, or in the full `H₃(q)`?
+
+This narrows the second branch. It does **not** close the question — it removes
+one way of answering it.
+
+**Argument.** A fibre functor into `Rep(SU_q(N))` induces the *quantum* trace,
+whose Wedderburn weights are the quantum dimensions — the principal
+specialisation `s_λ(1, q, …, q^{N-1})`, by hook-content
+
+    s_λ  ∝  Π_{(i,j)∈λ}  [N + j − i]_q / [h(i,j)]_q ,   normalised Σ_λ y_λ f^λ = 1.
+
+Implemented and self-tested in [`computations/y_lambda_su_n.py`](../../computations/y_lambda_su_n.py)
+(33/33), **validated by reproducing convention D exactly at `N = 2`** — the
+weight vector `(0.5054042, 0.2472979, 0)`, `y_{(1³)} = 0` on the nose, and the
+implied `z = q³/(q²+1)`. So the machinery agrees with §3's independent linear
+solve at the one point where both apply.
+
+**Measurement.** Such a trace has `y_λ = 0` for every λ with more than `N` rows.
+Convention C is **nonzero on the deepest partition `(1ⁿ)` at every `n` tested**:
+
+```
+  n     deepest λ with y_C ≠ 0      closest integer N     max |y_C − y_SU(N)|
+  2          2 rows                       3                   0.0248722
+  3          3 rows                       3                   0.0370251
+  4          4 rows                       3                   0.0342957
+  5          5 rows                       5→ none matches      0.0254170
+```
+
+so C forces `N ≥ n` for every `n`, i.e. no finite `N` — and the large-`N` limit
+does not rescue it either, the deviation *growing* with `N`:
+
+```
+  n = 3:   N=3  0.0370251    N=4  0.0927924    N=5  0.1233687
+           N=6  0.1422849    N=20 0.1901070
+```
+
+**Conclusion (scope-(b), named invariant: the row cap `y_λ = 0` for `ℓ(λ) > N`).**
+Convention C is not the quantum trace of `Rep(SU_q(N))` for any `N`, finite or
+in the limit. It is a genuine Ocneanu-family member lying outside the
+quantum-group specialisations — consistent with the registry calling it
+"pinned-by-definition" rather than forced.
+
+**What this buys.** §5's disjunction sharpens from "TL, or full `H₃`" to:
+
+> either the mass fibre lands in TL — and then §3 forces **D**, sorry-free —
+> or it is **not a quantum-group fibre at all**.
+
+In particular the escape route "perhaps C is the SU(3) flavour trace, so the
+mass channel is already carrying the eightfold-way `N = 3`" is **closed**: C is
+not SU(3) (max deviation 0.0370 at `n = 3`), nor SU(N) for any other `N`. That
+route would otherwise be attractive, because the eightfold chapter needs `N = 3`
+and C's effective non-integer index is `N = 2.5995` — nearer 3 than 2, and
+therefore easy to over-read.
+
+**Assumption, stated because the conclusion depends on it.** That a fibre
+functor into `Rep(SU_q(N))` yields the quantum-dimension weights. Standard (it
+is the quantum trace), but it is an input here, not something proved in this
+corpus. If a fibre functor could induce a non-quantum trace, the exclusion
+weakens to "C is not the *quantum* trace of any `Rep(SU_q(N))`".
+
+**Not claimed:** that the fibre is TL; that D is correct; that C is wrong. The
+owner decision in §5 stands untouched, and the rule that it must not be settled
+by CODATA match applies unchanged — noting that under C the deuteron is provably
+unreachable while under D it is reachable, which is exactly the kind of
+match-flavoured evidence that rule exists to discount.
