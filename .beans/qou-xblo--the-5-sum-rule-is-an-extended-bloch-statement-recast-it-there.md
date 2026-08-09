@@ -642,3 +642,55 @@ That is the whole story of this lane in one line: the five-term identity survive
 exactly as far as one real argument, and the volume lives one step past it.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 55 — the saddle cubic IS the plastic cubic, and that is a NEGATIVE
+
+Asked what Route 54's theorem actually *says* at the one 5₂ pair it reaches.
+The answer retro-explains four routes and kills a hope.
+
+### The identity
+
+    ((y−1)/y)³ − (y−1)/y + 1  =  (y³ − 2y² + 3y − 1) / y³
+
+**an identity of rational functions** — nothing reduced modulo the cubic (checked
+at generic points where the cubic does not vanish, so it is not a modular
+coincidence). So the anharmonic map `y ↦ 1 − 1/y` carries the 5₂ saddle cubic
+*onto* `X³ − X + 1`, whose roots are the **negatives of the plastic numbers**.
+
+The saddle orbit and the plastic orbit are ONE orbit of ⟨`z ↦ 1−z`, `z ↦ 1/z`⟩.
+
+### ⚠ Why that is a negative
+
+Routes 41, 47 and 48 closed their alphabets under exactly `1−z` and `1/z`. So
+every relation Route 54's pentagon produces at `(y₃, y₁)` was **already inside
+those alphabets** — the ones whose rank gap was exactly 1, four times over.
+**Route 54's theorem adds no rank.** It should not be read as progress on the
+sum rule, and this bean entry exists so it cannot be.
+
+The degree-6 field does not rescue it either: `a₃, a₅` share the palindromic
+`X⁶−3X⁵+5X⁴−5X³+5X²−3X+1`, but `a₅ = 1/a₃`, so `L(a₃) + L(a₅)` is elementary by
+inversion and the degree-6 elements cancel, leaving only the degree-3 orbit.
+
+### What it does buy
+
+An explanation. The plastic tower (`c` = root of `X³+X²−1` = `1/ρ`, and `c²`,
+`c³`, `1−c = c⁵`) ran through Routes 40–48 and was never explained. It is the
+same orbit. Not a coincidence, not a discovery — a coordinate change.
+
+### The exceptional structure at `(y₃, y₁)`, all exact
+
+Verified by Gröbner reduction against `a+b+c=2`, `ab+ac+bc=3`, `abc=1`, then
+measured to 60 dps:
+
+* `a₅ = 1/a₃` ⟺ `(1−a)(1−b) = (1−ab)²` — and the identity **is** the cubic,
+  satisfied by the third root;
+* `1 − a₃ = conj(a₃)` (so `Re a₃ = 1/2` exactly);
+* `|a₃|² = y₃`;
+* `a₄ = 1 − y₃y₁ = 1 − 1/y₂` is a root of `X³ − X + 1`.
+
+In Lean, sorry-free, standard axioms: `saddle_to_plastic`, `plastic_of_saddle`,
+`saddle_of_plastic`, `pentagon_arg_reciprocal`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

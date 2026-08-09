@@ -892,4 +892,70 @@ theorem pentagonSum_eq_pi_sq_div_two {a : ℝ} (h0 : 0 < a) (h1 : a < 1)
 
 end Unconditional
 
+/-! ### What the theorem says at the 5₂ pair it reaches
+
+At `(y₃, y₁)` — the saddle cubic's real root against a complex one, the one pair
+`pentagonSum_eq_pi_sq_div_two` covers — the five arguments are not generic. Every
+statement below is an **exact** algebraic identity, verified symbolically before
+being written down and recorded numerically to 60 dps in
+`computations/probes/qbeta_5two_route55_saddle_is_plastic_probe.py`.
+
+The first is the one that matters, and it is not about the pentagon at all:
+
+    ((y−1)/y)³ − (y−1)/y + 1 = (y³ − 2y² + 3y − 1) / y³
+
+an identity of *rational functions*, no reduction modulo anything. So the
+anharmonic map `y ↦ 1 − 1/y` carries the 5₂ saddle cubic **onto** `X³ − X + 1`,
+whose roots are the negatives of the plastic numbers. The saddle orbit and the
+plastic orbit are one orbit of the anharmonic group `⟨z ↦ 1−z, z ↦ 1/z⟩`.
+
+⚠ **That is a negative for the rank programme**, and it should be read as one.
+Routes 41, 47 and 48 closed their alphabets under exactly `1−z` and `1/z`, so
+every relation the pentagon produces at `(y₃, y₁)` was already inside those
+alphabets — and their rank gap was exactly 1 every time. The new theorem does not
+add rank. What it does is *explain* why the plastic tower kept surfacing in
+Routes 40–48: it was never a coincidence, it is the same orbit.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+
+section SaddleStructure
+
+/-- **The 5₂ saddle cubic is the plastic cubic, transported by `y ↦ 1 − 1/y`.**
+
+An identity of rational functions — nothing is reduced modulo the cubic. -/
+theorem saddle_to_plastic {y : ℂ} (hy : y ≠ 0) :
+    ((y - 1) / y) ^ 3 - (y - 1) / y + 1 = (y ^ 3 - 2 * y ^ 2 + 3 * y - 1) / y ^ 3 := by
+  field_simp
+  ring
+
+/-- A root of the saddle cubic maps to a root of `X³ − X + 1`, whose roots are
+the negatives of the plastic numbers. -/
+theorem plastic_of_saddle {y : ℂ} (hy : y ≠ 0) (h : y ^ 3 - 2 * y ^ 2 + 3 * y - 1 = 0) :
+    ((y - 1) / y) ^ 3 - (y - 1) / y + 1 = 0 := by
+  rw [saddle_to_plastic hy, h, zero_div]
+
+/-- The inverse transport: a root of `X³ − X + 1` maps back under `x ↦ 1/(1−x)`. -/
+theorem saddle_of_plastic {x : ℂ} (hx : (1 : ℂ) - x ≠ 0) (h : x ^ 3 - x + 1 = 0) :
+    (1 / (1 - x)) ^ 3 - 2 * (1 / (1 - x)) ^ 2 + 3 * (1 / (1 - x)) - 1 = 0 := by
+  have hrw : (1 / (1 - x)) ^ 3 - 2 * (1 / (1 - x)) ^ 2 + 3 * (1 / (1 - x)) - 1
+      = (x ^ 3 - x + 1) / (1 - x) ^ 3 := by field_simp; ring
+  rw [hrw, h, zero_div]
+
+/-- **The two composite pentagon arguments at the saddle are reciprocal.**
+
+`a₅ = 1/a₃`, i.e. `(1−a)(1−b) = (1−ab)²`, for any two roots `a, b` of the saddle
+cubic — and the identity *is* the cubic, satisfied by the third root `c`. This is
+why the degree-6 elements `a₃, a₅` drop out of the relation: `L(a₃) + L(1/a₃)` is
+elementary by inversion, leaving only the degree-3 orbit. -/
+theorem pentagon_arg_reciprocal {a b c : ℂ} (hsum : a + b + c = 2) (hprod : a * b * c = 1)
+    (hcube : c ^ 3 - 2 * c ^ 2 + 3 * c - 1 = 0) (hc : c ≠ 0) :
+    (1 - a) * (1 - b) = (1 - a * b) ^ 2 := by
+  have h : c ^ 2 * ((1 - a) * (1 - b) - (1 - a * b) ^ 2) = 0 := by
+    linear_combination (3 * c - a * b * c - 1) * hprod + (-c ^ 2) * hsum + hcube
+  have h2 : (1 - a) * (1 - b) - (1 - a * b) ^ 2 = 0 :=
+    (mul_eq_zero.mp h).resolve_left (pow_ne_zero 2 hc)
+  linear_combination h2
+
+end SaddleStructure
+
 end QOU.QBeta.FiveTwoComplexPentagon
