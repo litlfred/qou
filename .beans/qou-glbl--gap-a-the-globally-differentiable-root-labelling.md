@@ -1,7 +1,7 @@
 ---
 # qou-glbl
-title: 'Gap A CLOSED. S(pi) - S(0) = pi^2 at the concrete labelling, resting on ONE hypothesis: phi0 is the only zero of pairDisc.'
-status: todo
+title: 'GAP A CLOSED, UNCONDITIONALLY: envelopeS_total_concrete_final proves S(pi) = S(0) + pi^2 with NO hypotheses.'
+status: done
 type: task
 priority: high
 tags:
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T23:55:00Z
+updated_at: 2026-08-10T01:30:00Z
 ---
 
 ## What is open
@@ -846,6 +846,60 @@ contrapositively: `β 0 = t − 2 < 0`.
 
 Both are bookkeeping over proved parts — and this bean's own record says that is
 not a reason to call them trivial.
+
+## ✅✅✅ GAP A IS CLOSED, UNCONDITIONALLY
+
+    envelopeS_total_concrete_final :
+      envelopeS Yreal Ypair.1 Ypair.2 π = envelopeS Yreal Ypair.1 Ypair.2 0 + π²
+
+**No hypotheses.** `lake`-verified, sorry-free, warning-free, axioms
+`[propext, Classical.choice, Quot.sound]`.
+
+The last hypothesis — `hcoll`, that `φ₀` is the only zero of `pairDisc` — is
+proved, and so is the *existence* of the collision, so nothing is left to supply.
+
+### `hcoll` was a claim about a QUARTIC, not about `φ`
+
+Route 32 located the crossing by scanning `φ`. That is a claim about how many
+zeros a function has, backed by samples — the shape this lane has retracted
+twice. The algebra replaces it. `pairDisc` depends on `φ` **only** through
+`t = realRootPath φ`, and
+
+    pairDisc_mul_eq_collQuartic :
+      pairDisc φ · t² · (t−1)² = t⁴ − 2t³ + 7t² − 6t + 1
+
+The quotient of `LHS − RHS` by the cubic was **computed, not guessed**, and
+Route 39 G1 checks the identity at five values of `c` *outside* `[−1,1]` — it is
+a consequence of `unitCubic c t = 0` alone, and checking it only on the arc would
+not have shown that.
+
+Then two facts, and the second was already in the tree:
+
+| fact | source |
+|---|---|
+| `E′ t = 2(2t−1)(t² − t + 3)`, quadratic factor positive (disc `−11`) ⟹ `E` strictly increasing above `t = 1/2` | `strictMonoOn_collQuartic` — one minimum, no root-locating |
+| `pairDisc ≥ 0 ⟹ t² + t − 1 ≥ 0`, i.e. `t ≥ 0.618 > 1/2` | **`W_nonneg_of_disc_nonneg`, already proved**, for a different purpose |
+| `t` strictly increasing in `φ` | `strictMonoOn_realRootPath` — `dt/dc < 0` and `dc/dφ = −sin φ < 0`, two signs |
+
+⚠ **`E` has a SECOND root in `(0,1)`, at `t = 0.2192`** (Route 39 G4). It is out
+of range — `two_fifths_lt` gives `t > 2/5` — but an argument that forgot it would
+be proving something false, so the gate measures it rather than assuming it away.
+
+### And the collision EXISTS, by IVT with both ends already proved
+
+    exists_collision : ∃ c ∈ Ioo 0 π, pairDisc c = 0
+
+`pairDisc 0 < 0` (proved on the way to `hcont`) and `pairDisc π > 0` (proved from
+the cubic on the way to the endpoint bracket). Both were already there for other
+reasons; the IVT step is three lines. **Nothing numeric anywhere in the closure.**
+
+### ⚠ What this does NOT get you — unchanged
+
+`S(0) = −3π²/2` **is** the 5₂ sum rule, and `S(0) = 3·S(π)`, so `S(π) − S(0) = π²`
+**reformulates** it. Gap A was a named gap *inside* a proved chain; closing it
+does not move the headline, and this bean has said so from the start.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
 
 ## What the hypotheses actually demand — measured, not assumed
 

@@ -986,6 +986,125 @@ theorem continuousOn_envelopeS_concrete :
       (Set.Icc 0 π) := fun _ hφ =>
   (continuousAt_envelopeS_concrete hφ.1 hφ.2).continuousWithinAt
 
+/-! ## `hcoll` — the collision is the only zero of `pairDisc`
+
+Route 32 located the crossing by scanning `φ`. That is a claim about how many
+zeros something has, backed by samples, and this lane has retracted two of those.
+The algebra replaces it: `pairDisc` depends on `φ` **only** through
+`t = realRootPath φ`, and
+
+    pairDisc φ · t² · (t−1)²  =  E t,     E t = t⁴ − 2t³ + 7t² − 6t + 1
+
+so `hcoll` is a statement about a **quartic**. Two facts finish it, and both are
+already in the tree or one factorisation away:
+
+* `E′ t = 2(2t−1)(t² − t + 3)` with the quadratic factor positive (discriminant
+  `−11`), so `E` is strictly increasing above `t = 1/2` — one minimum, no
+  root-locating;
+* `pairDisc ≥ 0` forces `t² + t − 1 ≥ 0` (`W_nonneg_of_disc_nonneg`, **already
+  proved**, for a different purpose), i.e. `t ≥ (√5−1)/2 > 1/2`.
+
+⚠ `E` has a **second** root in `(0,1)`, at `t = 0.2192` (Route 39 G4). It is out
+of range — `two_fifths_lt` gives `t > 2/5` — but an argument that forgot it would
+be proving something false. -/
+
+/-- `E t = t⁴ − 2t³ + 7t² − 6t + 1`, the quartic `pairDisc` reduces to. -/
+noncomputable def collQuartic (t : ℝ) : ℝ := t ^ 4 - 2 * t ^ 3 + 7 * t ^ 2 - 6 * t + 1
+
+/-- **The reduction.** A consequence of `unitCubic c t = 0` alone — Route 39 G1
+checks it at five values of `c` *outside* `[−1,1]`, so nothing about the arc is
+smuggled in. -/
+theorem pairDisc_mul_eq_collQuartic (φ : ℝ) :
+    pairDisc φ * realRootPath φ ^ 2 * (realRootPath φ - 1) ^ 2
+      = collQuartic (realRootPath φ) := by
+  have hp := unitCubic_realRootPath φ
+  unfold unitCubic at hp
+  have hd : pairDisc φ = pairBeta φ ^ 2 - 4 * pairGamma φ := rfl
+  unfold pairBeta pairGamma at hd
+  rw [hd, collQuartic]
+  -- quotient of `LHS − RHS` by the cubic, computed rather than guessed
+  linear_combination (-2 * Real.cos φ * realRootPath φ ^ 2
+    + 2 * Real.cos φ * realRootPath φ - 3 * realRootPath φ ^ 3
+    + 6 * realRootPath φ ^ 2 - 5 * realRootPath φ + 1) * hp
+
+theorem hasDerivAt_collQuartic (t : ℝ) :
+    HasDerivAt collQuartic (2 * (2 * t - 1) * (t ^ 2 - t + 3)) t := by
+  have h1 : HasDerivAt (fun x : ℝ => x ^ 4) ((4 : ℕ) * t ^ 3) t := hasDerivAt_pow 4 t
+  have h2 : HasDerivAt (fun x : ℝ => 2 * x ^ 3) (2 * ((3 : ℕ) * t ^ 2)) t :=
+    (hasDerivAt_pow 3 t).const_mul 2
+  have h3 : HasDerivAt (fun x : ℝ => 7 * x ^ 2) (7 * ((2 : ℕ) * t ^ 1)) t :=
+    (hasDerivAt_pow 2 t).const_mul 7
+  have h4 : HasDerivAt (fun x : ℝ => 6 * x) (6 * 1) t := (hasDerivAt_id t).const_mul 6
+  have h := (((h1.sub h2).add h3).sub h4).add_const 1
+  have heq : collQuartic = fun x : ℝ => x ^ 4 - 2 * x ^ 3 + 7 * x ^ 2 - 6 * x + 1 := rfl
+  rw [heq]
+  convert h using 1
+  push_cast
+  ring
+
+/-- `E` is strictly increasing above `1/2`. The quadratic factor `t² − t + 3` has
+discriminant `−11`, so it never vanishes and never changes the sign. -/
+theorem strictMonoOn_collQuartic : StrictMonoOn collQuartic (Set.Ici (1 / 2 : ℝ)) := by
+  refine strictMonoOn_of_deriv_pos (convex_Ici _)
+    (fun t _ => (hasDerivAt_collQuartic t).continuousAt.continuousWithinAt) ?_
+  intro t ht
+  rw [interior_Ici] at ht
+  rw [(hasDerivAt_collQuartic t).deriv]
+  have hq : 0 < t ^ 2 - t + 3 := by nlinarith [sq_nonneg (t - 1 / 2)]
+  have h2 : 0 < 2 * t - 1 := by simp only [Set.mem_Ioi] at ht; linarith
+  positivity
+
+/-- **`t` is strictly increasing in `φ` on `[0,π]`**, which is what turns
+uniqueness in `t` into uniqueness in `φ`. Two signs: `dt/dc < 0` (numerator
+`−2t(1−t) < 0` over a denominator `≥ 7/4`) and `dc/dφ = −sin φ < 0`. -/
+theorem strictMonoOn_realRootPath : StrictMonoOn realRootPath (Set.Icc 0 π) := by
+  refine strictMonoOn_of_deriv_pos (convex_Icc _ _)
+    (fun φ _ => (hasDerivAt_realRootPath' φ).continuousAt.continuousWithinAt) ?_
+  intro φ hφ
+  rw [interior_Icc] at hφ
+  rw [(hasDerivAt_realRootPath' φ).deriv, realRootPath']
+  have ht0 : 0 < realRoot (Real.cos φ) := realRoot_pos _
+  have ht1 : realRoot (Real.cos φ) < 1 := realRoot_lt_one _
+  have hden : 7 / 4 ≤ 3 * realRoot (Real.cos φ) ^ 2
+      - 4 * Real.cos φ * realRoot (Real.cos φ) + (2 * Real.cos φ + 1) :=
+    unitCubic_deriv_ge ht0 ht1 (unitCubic_realRoot _)
+  have hsin : 0 < Real.sin φ := Real.sin_pos_of_pos_of_lt_pi hφ.1 hφ.2
+  have hnum : -(-2 * realRoot (Real.cos φ) ^ 2 + 2 * realRoot (Real.cos φ)) < 0 := by
+    nlinarith [ht0, ht1]
+  have hd : 0 < 3 * realRoot (Real.cos φ) ^ 2 - 4 * Real.cos φ * realRoot (Real.cos φ)
+      + 2 * Real.cos φ + 1 := by linarith
+  have hfrac : -(-2 * realRoot (Real.cos φ) ^ 2 + 2 * realRoot (Real.cos φ))
+      / (3 * realRoot (Real.cos φ) ^ 2 - 4 * Real.cos φ * realRoot (Real.cos φ)
+        + 2 * Real.cos φ + 1) < 0 := div_neg_of_neg_of_pos hnum hd
+  nlinarith [hfrac, hsin]
+
+/-- **`hcoll`, proved.** At most one zero of `pairDisc` on `Icc 0 π`, hence on
+the open arc. -/
+theorem pairDisc_eq_zero_unique {φ₁ φ₂ : ℝ} (h1 : φ₁ ∈ Set.Icc 0 π)
+    (h2 : φ₂ ∈ Set.Icc 0 π) (hz1 : pairDisc φ₁ = 0) (hz2 : pairDisc φ₂ = 0) :
+    φ₁ = φ₂ := by
+  have key : ∀ φ : ℝ, pairDisc φ = 0 →
+      collQuartic (realRootPath φ) = 0 ∧ (1 / 2 : ℝ) ≤ realRootPath φ := by
+    intro φ hz
+    have hq : collQuartic (realRootPath φ) = 0 := by
+      have := pairDisc_mul_eq_collQuartic φ
+      rw [hz] at this
+      linarith [this]
+    refine ⟨hq, ?_⟩
+    -- `pairDisc ≥ 0` forces `t² + t − 1 ≥ 0`, i.e. `t ≥ (√5−1)/2 > 1/2`
+    have hW := W_nonneg_of_disc_nonneg (Real.cos_le_one φ) (realRootPath_pos φ)
+      (realRootPath_lt_one φ) (unitCubic_realRootPath φ) (by
+        have : pairDisc φ = (realRootPath φ - 2 * Real.cos φ) ^ 2
+            - 4 * (realRootPath φ ^ 2 - 2 * Real.cos φ * realRootPath φ
+              + 2 * Real.cos φ + 1) := rfl
+        rw [← this, hz])
+    nlinarith [hW, realRootPath_pos φ]
+  obtain ⟨hq1, hh1⟩ := key φ₁ hz1
+  obtain ⟨hq2, hh2⟩ := key φ₂ hz2
+  have heq : realRootPath φ₁ = realRootPath φ₂ :=
+    strictMonoOn_collQuartic.injOn hh1 hh2 (by rw [hq1, hq2])
+  exact strictMonoOn_realRootPath.injOn h1 h2 heq
+
 /-- **The transport at the concrete labelling, with continuity supplied.**
 
 `S(π) − S(0) = π²` now rests on exactly one thing: that the collision `φ₀` is the
@@ -999,5 +1118,39 @@ theorem envelopeS_total_concrete_of_unique_collision {c : ℝ} (hc0 : 0 < c) (hc
     envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) π
       = envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) 0 + π ^ 2 :=
   envelopeS_total_concrete hc0 hcπ hcoll continuousOn_envelopeS_concrete
+
+/-- **The collision EXISTS**, by the intermediate value theorem — and both ends
+are already theorems: `pairDisc 0 < 0` (the pair is complex at `φ = 0`) and
+`pairDisc π > 0` (it is real at `φ = π`, from the cubic). Nothing numeric. -/
+theorem exists_collision : ∃ c ∈ Set.Ioo (0 : ℝ) π, pairDisc c = 0 := by
+  have hsub := intermediate_value_Ioo Real.pi_pos.le
+    (continuous_pairDisc.continuousOn (s := Set.Icc 0 π))
+  have hmem : (0 : ℝ) ∈ Set.Ioo (pairDisc 0) (pairDisc π) :=
+    ⟨pairDisc_zero_neg, pairDisc_pi_pos⟩
+  obtain ⟨c, hc, hcz⟩ := hsub hmem
+  exact ⟨c, hc, hcz⟩
+
+/-- **The transport, unconditionally.**
+
+    envelopeS Yreal Ypair.1 Ypair.2 π = envelopeS Yreal Ypair.1 Ypair.2 0 + π²
+
+Gap A, closed. Every hypothesis is discharged: the labelling is constructed, its
+branch routing settled, `VSide` and the two log sums proved at it, `heⱼ` pinned by
+`k = 0` in four regimes, continuity carried across the cut at `φ = π` by
+`continuousAt_re_cLiTwoExt`, and the collision both located (IVT) and shown
+unique (a quartic with one minimum).
+
+⚠ **This is not the sum rule.** `S(0) = −3π²/2` *is* the 5₂ sum rule and
+`S(0) = 3·S(π)`, so `S(π) − S(0) = π²` **reformulates** it. Closing Gap A moves a
+named gap inside a proved chain; it does not move the headline.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+theorem envelopeS_total_concrete_final :
+    envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) π
+      = envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) 0 + π ^ 2 := by
+  obtain ⟨c, hc, hcz⟩ := exists_collision
+  refine envelopeS_total_concrete_of_unique_collision hc.1 hc.2 ?_
+  intro φ hφ hne hz
+  exact hne (pairDisc_eq_zero_unique ⟨hφ.1.le, hφ.2.le⟩ ⟨hc.1.le, hc.2.le⟩ hz hcz)
 
 end QOU.QBeta.FiveTwoDeformedSaddle
