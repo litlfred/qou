@@ -10,7 +10,6 @@ export default conjecture({
   },
   uses: [
     "prop:gb-spectral-sequence",
-    "prop:gb-residue-spectral-sum",
     "prop:graded-markov-trace-from-gs-filtration",
     "thm:jones-markov-trace",
   ],

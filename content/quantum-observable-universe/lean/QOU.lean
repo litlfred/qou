@@ -108,6 +108,15 @@ import QOU.MathlibExt.OctonionColourActionBaseModule
 import QOU.MathlibExt.OctonionComplexStructure
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ThetaQcdFramingCp
+import QOU.StandardModel.SecondCrossingInvariant
+-- Information content of the eightfold-way hypercharge battery: the RH half
+-- is entailed by Q (GMN at I3=0 pins Y uniquely, so it discriminates nothing);
+-- the LH half is exactly B - L. Reduces the open Y item to one condition.
+import QOU.StandardModel.HyperchargeBatteryReduction
+-- The strand-twist hypercharge battery reduces to the single equation T = 3Q:
+-- the nucleon check is entailed by charge additivity (and states one condition
+-- twice), and the '4 of 10,000 survivors' is 1x2x2x1 multiset counting.
+import QOU.StandardModel.TwistBatteryVacuity
 -- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
 -- composition obstruction (no naive q-chain rule for non-monomial inner functions).
@@ -821,6 +830,11 @@ import QOU.BraidsAndKnots.ThreeRowSignCrossing
 -- q=1, which is WHY the ≥3-row trace is O(10⁻⁵) near q=1. Sorry-free, generic
 -- Field K.
 import QOU.BraidsAndKnots.WenzlLevelStratum
+-- 1-dim Hecke block characters are writhe monomials (chi_triv=q^writhe,
+-- chi_sign=(-q⁻¹)^writhe); writhe-0 baryon ⟹ both collapse to 1. Prunes the
+-- charm-mass Frobenius block-projection route (block ratio O(1) at balanced
+-- writhe). docs/audits/2026-08-02-charm-mass-frobenius-block-projection-negative.md
+import QOU.MassTheory.TrivialBlockWrithe
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):

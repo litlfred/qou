@@ -12,6 +12,7 @@ export default remark({
     "brane-tower",
     "homological-condensation",
   ],
+  foreshadows: ["prop:categorical-neutrality-saturated-shells"],
   uses: [
     "prop:homological-shell-condensation",
     "prop:categorical-neutrality-saturated-shells",
