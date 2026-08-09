@@ -51,6 +51,41 @@
   `def qInt …`, import this module, and use `qIntBal` or `qIntGeo` by the rule
   above.
 
+  ## Census status (`qou-qint`)
+
+  Of the 55 q-integer declarations, **47 are now tied to this module** by an
+  alias or a proved equation, and the remaining 8 are accounted for rather than
+  outstanding:
+
+  | # | disposition |
+  |---|---|
+  | 3 | the canonical definitions themselves (`QHookDimension{,Balanced}`) |
+  | 2 | continuous index — no equation exists (below) |
+  | 2 | `StokesConstantQDimCategoricity`'s deliberate `Polynomial ℤ` pair |
+  | 1 | blocked: `surreal_enstrophy_finite_modes` is red on `main` (`qou-xo1e`) |
+
+  **The two genuinely-different sites** are the continuous-index brackets:
+  `climax-volume-mass/q-angular-momentum.qNumber`, whose index is a ring element
+  (it is evaluated at half-integer spins), and
+  `q-geometric-langlands/explicit-formula.qInteger`, whose index is a real Reeb
+  eigenvalue under `rpow`.  Both `qIntBal` (ℕ) and `qIntBalZ` (ℤ) are discretely
+  indexed, so for these there is *no equation to state* — not merely none
+  convenient.
+
+  **Two sites that looked genuinely different and were not.**  An earlier census
+  set aside `Interactions.HeckeEnergyPositivity.qIntegerRescaled` (`∑ q^{2j}`)
+  and `HeckeAlgebra.JonesMarkovWenzl.qInteger` (half-powers `q^{k/2}`) as
+  separate conventions.  They are the same convention twisted: the first is
+  `qIntGeo` at `q²`, the second `qIntBal` at `q^{1/2}` — mirror images across
+  `qIntBal_eq_twist_canonical`, both now proved at their sites.  A third,
+  `Archimedean.GroundRing.qInt`, cannot be `qIntBal` at all (`ℤ[q,q⁻¹]` is not a
+  field), but carries `qInt_eq_geo_twist`: the same twist stated division-free,
+  which survives the drop to a `CommRing` because `qIntGeo` needs only that.
+
+  The lesson worth keeping: **a site that looks like a different convention
+  deserves a proof attempt before it is recorded as one.**  Three of five
+  write-offs did not survive one.
+
   -- Ref: [manuscript] docs/audits/2026-08-08-q-integer-convention-derived.md
   -- Ref: [manuscript] AGENTS.md §7a (Hecke–Skein convention)
 -/
