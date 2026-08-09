@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-theta-value.md"
   },
   "source_hashes": {
-    "md": "41cabb1c990b",
-    "ts": "8897cc180605"
+    "ts": "8897cc180605",
+    "md": "41cabb1c990b"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -364,40 +364,21 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
-      {
-        "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
-        },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-theta-value.md:11: At the substrate modulus $q_0 \\approx 1.10998$ the same trace evaluates to $\\mathrm{tr}M_{4_1}(q_0) \\approx -0.91068$, giving"
-      },
       {
         "field_hash": {
           "ts": "8897cc180605",
@@ -411,97 +392,102 @@
         "reviewed_at": "2026-07-13T12:14:53Z",
         "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
         "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Remark reports the numerical value of the 4_1 Reeb trace at the substrate modulus q_0 ~ 1.10998 -- an explicit archimedean-specialisation remark on the closed form. The q_0 pin is the point of the remark, not a leak."
+      },
+      {
+        "field_hash": {
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-theta-value.md:11 — At the substrate modulus $q_0 \\approx 1.10998$ the same trace evaluates to $\\mathrm{tr}M_{4_1}(q_0) \\approx -0.91068$, giving"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
-        "notes": "block has no .lean sibling"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "41cabb1c990b",
-          "ts": "8897cc180605"
+          "ts": "8897cc180605",
+          "md": "41cabb1c990b"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1009,5 +995,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:19.171Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

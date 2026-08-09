@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean"
   },
   "source_hashes": {
-    "md": "f38d36fb31ec",
     "ts": "b82467db91e4",
-    "lean": "aec21f0af216",
-    "lean_statement": "819bc722c72c"
+    "md": "f38d36fb31ec",
+    "lean": "aec21f0af216"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -824,61 +823,39 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "f38d36fb31ec",
           "ts": "b82467db91e4",
-          "lean": "b501cf3b668d"
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:02.628Z",
-        "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"appendix-surreals\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "f38d36fb31ec",
           "ts": "b82467db91e4",
-          "lean": "b501cf3b668d"
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:02.628Z",
-        "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
-      {
-        "field_hash": {
-          "md": "f38d36fb31ec",
-          "ts": "b82467db91e4",
-          "lean": "b501cf3b668d"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
-        },
-        "reviewed_at": "2026-07-12T00:35:02.628Z",
-        "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:105: archimedean Real.* in categorical chapter — `ofReal ∘ Real.exp ∘ st`, not the Berarducci–Mantova transseries | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:206: archimedean Real.* in categorical chapter — projection: `surrealExp x := ofReal (Real.exp (st x))`.  This | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:208: archimedean Real.* in categorical chapter — = ofReal (Real.exp r)`) but loses the infinitesimal / | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:214: archimedean Real.* in categorical chapter — `Real.exp` lemmas and `standardPart_zero`. -/ | content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean:216: archimedean Real.* in categorical chapter — SurrealField.ofReal (Real.exp (standardPart x))"
-      },
       {
         "field_hash": {
           "ts": "b82467db91e4",
@@ -893,82 +870,89 @@
         "reviewed_at": "2026-07-13T12:14:53Z",
         "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
         "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Shared AppendixSurreals Lean; surreal standard-part / Real.* is intrinsic. Archimedean by construction."
+      },
+      {
+        "field_hash": {
+          "ts": "b82467db91e4",
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "f38d36fb31ec",
           "ts": "b82467db91e4",
-          "lean": "e1d0d7c64d9f"
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "f38d36fb31ec",
           "ts": "b82467db91e4",
-          "lean": "e1d0d7c64d9f"
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "f38d36fb31ec",
           "ts": "b82467db91e4",
-          "lean": "b501cf3b668d"
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:02.628Z",
-        "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "f38d36fb31ec",
           "ts": "b82467db91e4",
-          "lean": "b501cf3b668d"
+          "md": "f38d36fb31ec",
+          "lean": "aec21f0af216"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:02.628Z",
-        "reviewed_sha": "b9e9b8dc3bf50fec6e2da3979d66ebef49fffe61"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1563,5 +1547,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:11.416Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

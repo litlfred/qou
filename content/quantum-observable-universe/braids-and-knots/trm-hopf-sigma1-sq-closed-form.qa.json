@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean"
   },
   "source_hashes": {
-    "md": "2a6ccc529c6b",
     "ts": "322545a75ff9",
-    "lean": "71102bd2d813",
-    "lean_statement": "f5e7b0ef7a74"
+    "md": "2a6ccc529c6b",
+    "lean": "71102bd2d813"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -849,61 +848,39 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
+          "ts": "322545a75ff9",
           "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
           "lean": "71102bd2d813"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
+          "ts": "322545a75ff9",
           "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
           "lean": "71102bd2d813"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
-      {
-        "field_hash": {
-          "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
-          "lean": "71102bd2d813"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
-        },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:73: archimedean Real.* in categorical chapter — -- Now both sides are in terms of `Real.sqrt q`. Let u := Real.sqrt q. | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:74: archimedean Real.* in categorical chapter — set u := Real.sqrt q with hu_def | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:46: archimedean tactic in categorical chapter — /-- Hypothesis: q is in the Wenzl positivity regime (q > 1). -/ | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:83: archimedean tactic in categorical chapter — have hu_denom : u ^ 4 + u ^ 2 ≠ 0 := by positivity"
-      },
       {
         "field_hash": {
           "ts": "594d979e3907",
@@ -918,82 +895,91 @@
         "reviewed_at": "2026-07-13T12:14:53Z",
         "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
         "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Closed form of the Hopf-link Markov trace tr_M(sigma_1^2) is expressed in Real.sqrt q (via rpow bridges) with `hq_pos`/`hq_nonneg`. The sqrt(q) is intrinsic to the closed form; genuine archimedean specialisation."
+      },
+      {
+        "field_hash": {
+          "ts": "322545a75ff9",
+          "md": "2a6ccc529c6b",
+          "lean": "71102bd2d813"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:74 — archimedean Real.* in categorical chapter — set u := Real.sqrt q with hu_def | content/quantum-observable-universe/lean/QOU/Braiding/TrMHopfSigma1SqClosedForm.lean:83 — archimedean tactic in categorical chapter — have hu_denom : u ^ 4 + u ^ 2 ≠ 0 := by positivity"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
+          "ts": "322545a75ff9",
           "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
           "lean": "71102bd2d813"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
+          "ts": "322545a75ff9",
           "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
           "lean": "71102bd2d813"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
+          "ts": "322545a75ff9",
           "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
           "lean": "71102bd2d813"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
+          "ts": "322545a75ff9",
           "md": "2a6ccc529c6b",
-          "ts": "594d979e3907",
           "lean": "71102bd2d813"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1806,5 +1792,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:19.171Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

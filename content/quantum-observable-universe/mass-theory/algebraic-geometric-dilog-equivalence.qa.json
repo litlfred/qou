@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean"
   },
   "source_hashes": {
-    "md": "47edace985b5",
     "ts": "ce4625466c29",
-    "lean": "09a4fae99934",
-    "lean_statement": "1d82d24911a0"
+    "md": "47edace985b5",
+    "lean": "09a4fae99934"
   },
   "criteria": {
     "voice-status-leak": [
@@ -299,134 +298,123 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "db2682e6b536",
           "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-14T02:24:28.168Z",
-        "reviewed_sha": "4d17536105887e6052f4597cc1bb3d2628a99039"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-positive\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "db2682e6b536",
           "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-14T02:24:28.168Z",
-        "reviewed_sha": "4d17536105887e6052f4597cc1bb3d2628a99039"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "db2682e6b536",
           "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-14T02:24:28.168Z",
-        "reviewed_sha": "4d17536105887e6052f4597cc1bb3d2628a99039"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "13a4c4127e5b",
-          "ts": "db2bac7acf39",
+          "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "warn",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:82 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - volume‖ < ε | content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:160 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - V‖ < ε) | content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:163 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε := by | content/quantum-observable-universe/mass-theory/algebraic-geometric-dilog-equivalence.lean:175 — positivity-dependent Real.* on q without explicit hypothesis — ‖(1 - q) * Real.log (partialProductLocal q x m) - BlochWignerD x‖ < ε :="
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "db2682e6b536",
           "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-14T02:24:28.168Z",
-        "reviewed_sha": "4d17536105887e6052f4597cc1bb3d2628a99039"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "db2682e6b536",
           "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-14T02:24:28.168Z",
-        "reviewed_sha": "4d17536105887e6052f4597cc1bb3d2628a99039"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "db2682e6b536",
           "ts": "ce4625466c29",
+          "md": "47edace985b5",
           "lean": "09a4fae99934"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-14T02:24:28.168Z",
-        "reviewed_sha": "4d17536105887e6052f4597cc1bb3d2628a99039"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "canonical-calibration-count": [
@@ -1737,5 +1725,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:01:04.690Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

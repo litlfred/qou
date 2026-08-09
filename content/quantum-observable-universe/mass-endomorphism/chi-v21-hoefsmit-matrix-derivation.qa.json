@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean"
   },
   "source_hashes": {
-    "md": "57084c9f0f16",
     "ts": "286394597a73",
-    "lean": "12f2773ca875",
-    "lean_statement": "fb809ce323e9"
+    "md": "57084c9f0f16",
+    "lean": "12f2773ca875"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -362,134 +361,123 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T02:24:16.576Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"generic-R\",\"real-positive\",\"symbolic\"],\"chapter\":\"mass-endomorphism\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "warn",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T02:24:16.576Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:167 — positivity-dependent Real.* on q without explicit hypothesis — off-diagonal as `Real.sqrt (hoefsmit_v21_b_sq q)` without an explicit | content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:172 — positivity-dependent Real.* on q without explicit hypothesis — !![hoefsmit_v21_d1 q, Real.sqrt (hoefsmit_v21_b_sq q); | content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:173 — positivity-dependent Real.* on q without explicit hypothesis — Real.sqrt (hoefsmit_v21_b_sq q), hoefsmit_v21_d2 q] | content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean:249 — positivity-dependent Real.* on q without explicit hypothesis — have h_sqrt : (Real.sqrt (hoefsmit_v21_b_sq q))^2 = hoefsmit_v21_b_sq q := Real.sq_sqrt h_b_sq"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T02:24:16.576Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "b2f8c2c839d5",
-          "ts": "a8465cd96a90",
-          "lean": "4cfff0dfdb1b"
+          "ts": "286394597a73",
+          "md": "57084c9f0f16",
+          "lean": "12f2773ca875"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T02:24:16.576Z",
-        "reviewed_sha": "a261b5599858024c2ffcb9a1f91fc8aceb108c50"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1536,5 +1524,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:59.271Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

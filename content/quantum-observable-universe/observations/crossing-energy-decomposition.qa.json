@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/observations/crossing-energy-decomposition.lean"
   },
   "source_hashes": {
-    "md": "3ea23a62b53b",
     "ts": "9be23f032cb8",
-    "lean": "3eda8282aa35",
-    "lean_statement": "78ecf7321c73"
+    "md": "3ea23a62b53b",
+    "lean": "3eda8282aa35"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -341,134 +340,121 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
-          "lean": "97ca5c076c9e"
+          "md": "3ea23a62b53b",
+          "lean": "3eda8282aa35"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-01T15:25:47.233Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-gt-1\",\"real-positive\",\"symbolic\"],\"chapter\":\"observations\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
+          "md": "3ea23a62b53b",
           "lean": "3eda8282aa35"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-02T08:09:36.670Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
+          "md": "3ea23a62b53b",
           "lean": "3eda8282aa35"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-02T08:09:36.670Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
+          "md": "3ea23a62b53b",
           "lean": "3eda8282aa35"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-02T08:09:36.670Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
+          "md": "3ea23a62b53b",
           "lean": "3eda8282aa35"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-02T08:09:36.670Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
-          "lean": "97ca5c076c9e"
+          "md": "3ea23a62b53b",
+          "lean": "3eda8282aa35"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-01T15:25:47.233Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "3ea23a62b53b",
           "ts": "9be23f032cb8",
-          "lean": "97ca5c076c9e"
+          "md": "3ea23a62b53b",
+          "lean": "3eda8282aa35"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-08-01T15:25:47.233Z",
-        "reviewed_sha": "a9b42c6d01499f60f9d474dd573c4ba7f1f1774e"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "canonical-calibration-count": [
@@ -1928,5 +1914,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:01:31.034Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }
