@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/OneLoopPrefactorInvariance.lean"
   },
   "source_hashes": {
-    "ts": "d2df86c883ee",
     "md": "e1f0b1ad9d34",
-    "lean": "7db2a34cf319"
+    "ts": "d2df86c883ee",
+    "lean": "7db2a34cf319",
+    "lean_statement": "34b571fffb0d"
   },
   "criteria": {
     "q-usage-regime-detected": [
@@ -132,7 +133,49 @@
         "reviewed_at": "2026-08-09T16:53:02.544Z",
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
+    ],
+    "wall-side-correct": [
+      {
+        "field_hash": {
+          "md": "e1f0b1ad9d34",
+          "ts": "d2df86c883ee",
+          "lean": "7db2a34cf319",
+          "lean_statement": "34b571fffb0d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
+        "severity": "critical",
+        "evidence": "content/quantum-observable-universe/lean/QOU/OneLoopPrefactorInvariance.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+      }
+    ],
+    "wall-base-ring-minimal": [
+      {
+        "field_hash": {
+          "md": "e1f0b1ad9d34",
+          "ts": "d2df86c883ee",
+          "lean": "7db2a34cf319",
+          "lean_statement": "34b571fffb0d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+      }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-09T22:20:05.350Z"
 }
