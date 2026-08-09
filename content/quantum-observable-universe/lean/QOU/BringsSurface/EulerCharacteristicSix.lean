@@ -123,4 +123,13 @@ theorem abs_eulerChar_four_eq_factorial_three :
     (eulerChar 4).natAbs = Nat.factorial 3 := by
   rw [eulerChar_four]; rfl
 
+/-- **`dim_R H₃(q) = |χ|`**, with the genus discharged rather than hypothesised.
+
+`constraints_satisfiable` supplies both cohomological constraints at `g = 4`, so
+this is `abs_eulerChar_eq_finrank_H3` with nothing left to assume: the two
+quantities are equal, full stop. Still no mechanism — see the module docstring. -/
+theorem finrank_H3_eq_abs_eulerChar (R : Type*) [Field R] :
+    Module.finrank R (H3Carrier R) = (eulerChar 4).natAbs :=
+  (abs_eulerChar_eq_finrank_H3 R constraints_satisfiable.1 constraints_satisfiable.2).symm
+
 end QOU.BringsSurface
