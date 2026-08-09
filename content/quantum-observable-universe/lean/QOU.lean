@@ -659,6 +659,11 @@ import QOU.Mathlib.SYTHookFormula
 import QOU.Mathlib.SYTHookFormulaBeta
 import QOU.Mathlib.SYTHookFormulaBetaProd
 import QOU.Mathlib.SYTHookFormulaRows
+-- Bean qou-7gei: the >= 3-row corner-removal fact, which discharges the
+-- combinatorial hypothesis of QOU.QBeta.TemperleyLiebTower.vanishing_step.
+-- Pulls in QOU.Mathlib.YoungDiagramCorner (IsCornerCell / eraseCorner), which
+-- the SYT cluster also uses.
+import QOU.Mathlib.YoungDiagramThreeRowCorner
 import QOU.MassTheory.MirrorPairBondScaling
 import QOU.QBeta.CubicSaddleDiscriminant
 import QOU.QBeta.G3RealnessConjugationBrick
