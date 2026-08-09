@@ -1,5 +1,106 @@
 # Hecke infrastructure: what exists, what is missing, and what H3/H4 need
 
+> **STATE OF PLAY — end of 2026-08-09. Read this section first; several sections
+> below were written earlier the same day and are superseded, each marked.**
+>
+> This document was begun before `QOU/Machinery/HeckeH3*.lean` and
+> `HeckeH4*.lean` had been read. They contain far more than it first said, and
+> the corrections are the most important thing in it.
+
+## Where the levels stand
+
+| level | `HeckeAlgebra` class instance | `IsHeckeOfFullRank` | `QOU.Hecke.MarkovTrace` | `MarkovTraceContext` |
+|---|---|---|---|---|
+| `n = 2` | `InstanceH2.instHeckeAlgebraH2`, on `AdjoinRoot(X² − hX − 1)` | `2 = 2!` | `MarkovTraceH2.markovTraceH2` — but `cyclic` free (commutative) and `trace_prod_gen` vacuous | `contextH2` |
+| `n = 3` | `InstanceOnH3A.instHeckeAlgebraH3A`, on the tree's `H3A` | `6 = 3!` | `MarkovTraceOnH3A.markovTraceH3A` — **both fields carry content** | `contextH3` |
+| `n = 4` | `InstanceOnH4A.instHeckeAlgebraH4A`, on the tree's `H4A` | `24 = 4!` | **open** — see below | — |
+| `n ≥ 5` | needs a *proved* GS basis (qou-auq3) | — | — | — |
+
+All axiom-clean (`propext, Classical.choice, Quot.sound`). Before this work the
+class `QOU.Hecke.HeckeAlgebra` had **no instance anywhere in the tree**, so every
+`[HeckeAlgebra R n q A]` hypothesis in the corpus was unwitnessed.
+
+`n = 4` is the last level worth instantiating by hand — it is where `farCommute`
+first has content, and `n ≥ 5` adds no new class field. See
+*How far up does the ladder need to go?* below, which stands.
+
+## What this document got wrong earlier today
+
+1. **"H4Carrier … but no multiplication at all"** (§*H4 and above*, superseded).
+   `QOU.Machinery.HeckeH4AlgebraLaws` has `mulNF₄`, **`mulNF₄_assoc`** — proved
+   via the structured route, `mulσₖ (u·v) = u·(v·σₖ)` lifted along the right
+   basis, explicitly "no 24³ brute force" — and wraps the result as `H4A R h`
+   with `Ring` and `Algebra`. `HeckeH4Wedderburn` then gives
+   `wedderburn₄ : H4A K (q − q⁻¹) ≃ₐ[K] K × K × M₂ × M₃ × M₃`, sorry-free.
+   `HeckeH4StabilizationRung` proves the whole presentation on the subscript
+   basis, including `far_commute_σ₀σ₂`, whose own docstring already recorded that
+   far commutation is "non-vacuous for the FIRST time at n = 4".
+
+2. **"H3 … stuck on one lemma"** (§*H3*, superseded). That is true of
+   `QOU/Mathlib/HeckeAlgebra.lean`'s `H3Carrier`, and `H3.mul_assoc` does close
+   it. But `QOU.Machinery.HeckeH3AlgebraInstance.H3A` was already a `Ring` on the
+   H₃ normal-form basis, with `wedderburn₃` alongside. `InstanceH3.H3Alg` and
+   `InstanceH4.H4Alg` are therefore **duplicate carriers** built in ignorance of
+   `H3A`/`H4A`; bean qou-ti7p records which parts of those two files are
+   genuinely their own and should survive retirement.
+
+3. **The rank was never going to need a closure table.** Bean qou-awp7 planned to
+   reach `24 = 4!` through a `3 × 24` closure table over the reduced-word
+   operators. Unnecessary: `H3A` and `H4A` are structures wrapping their
+   coordinate vector (`v : Fin 6 → R`, `v : Fin 24 → R`) with componentwise
+   module structures, so each is linearly equivalent to its coordinate space and
+   the dimension is unconditional. `FullRankFromWedderburn` also records that the
+   Wedderburn block counts agree — `1+1+2² = 3!` and `1+1+2²+3²+3² = 4!` — which
+   is a real check on the basis, a generic count matching an unconditional one.
+
+4. **`trM_cyclic` at `n = 4` is not a `sorry`.** Three docstrings said it was —
+   `MarkovTraceH4`'s Proof-status section, `MarkovTraceH4Gram`'s own `trM_cyclic`
+   docstring, and (repeating them) `MarkovTraceOnH3A`. `gram_symm` is discharged
+   in `MarkovTraceH4Gram` against the 576 entries of the `Gram0..7` chain and
+   `#print axioms` is clean. All three corrected.
+
+## The one open Hecke item below `n = 5`
+
+A Markov trace at `n = 4`. The sorry-free cyclicity is on the **ASCII** basis
+(`MarkovTraceH4`), while `H4A` — and so `instHeckeAlgebraH4A` — is on the
+**subscript** basis, and the two 24-word tables are different data.
+
+The route that needs neither a second Gram closure nor an explicit change of
+basis is `QOU.Machinery.BilinearTrace.gram_symm_of_rep_decomp`: if `trM4`
+decomposes as a finite weighted sum of representation traces, each multiplicative
+on `mulNF₄`, Gram symmetry follows with no per-pair computation, and
+`wedderburn₄` supplies exactly those representations. What remains is identifying
+the Markov weights — the `y_λ` machinery exists but on `H4Carrier` over `ℝ`,
+a third carrier again.
+
+## Gröbner–Shirshov: the route to general `n`, and what it costs
+
+`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean` is the only
+route past `n = 4` — a GS basis gives normal forms and the `n!` count for all `n`
+at once, and it is the constructive substitute for Matsumoto / Coxeter word
+reduction, which Mathlib at rev `f897ebcf` does not have (`find Mathlib -iname
+"*Hecke*"` returns nothing). Findings so far:
+
+* The system carried a **sentinel rule with empty leading monomial**. Since
+  `[] <:+: m` for every `m`, `isNormalForm` was false for everything with
+  non-empty support and `IsGrobnerShirshovBasis` collapsed — it held of *any*
+  system, and `hecke_is_gs_basis` was provable in four lines while saying
+  nothing. Removed; `gs_basis_of_empty_lm` now proves the collapse in general.
+* Two defects remain before the axiom can be *proved*: `leadingMonomial` ignores
+  its order argument (`hf.choose`, an arbitrary support element), and
+  `SingleStepReduction` never requires `f − g` to lie in the ideal despite its
+  docstring — nor is `OverlapComposition.spoly` computed from the rules.
+  Bean qou-auq3.
+* The S-polynomial argument also needs the ground algebra to have **no
+  quasi-zeros** (Pawloski–Leitner, arXiv:math/0409565v2). The folio's own chapter
+  carries that hypothesis through every statement of its main theorem; in Lean it
+  appears in two docstrings and no hypothesis. Bean qou-k6ks.
+
+---
+
+*Everything below predates the corrections above.*
+
+
 **2026-08-09.** Written while extending `QOU.Hecke.InstanceH2` upward. The
 survey changed the plan, so it is recorded before any more construction.
 
@@ -103,7 +204,7 @@ What this does **not** do is assert such a tower exists. It says what a tower
 owes and discharges the arithmetic once and for all. The rungs are still the
 work — and the first one is H3.
 
-## H3: most of the work is already done, and stuck on one lemma
+## H3: most of the work is already done, and stuck on one lemma — **SUPERSEDED**, see item 2 above
 
 `QOU/Mathlib/HeckeAlgebra.lean` already carries a concrete `H_3`:
 
@@ -134,7 +235,7 @@ by cases on the basis, so it should reduce to a finite check per basis triple
 (6³ = 216 cases) after the definition is made basis-wise rather than via
 `H3.smul` folds.
 
-## H4 and above
+## H4 and above — **SUPERSEDED**, see item 1 above
 
 `H4Carrier R = Fin 24 → R` exists, with `H4.one`, `H4.basis`, `basis_count`,
 Wedderburn projectors and `H4.markovTraceOnBasis` — but **no multiplication at
