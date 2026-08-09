@@ -1004,3 +1004,58 @@ distribution family from contention as a way of avoiding it. Note the search
 now has a much smaller natural alphabet than "the `yⱼ`": the powers `c^m`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 41 — the five-term ladder search, and why the machinery cannot see `A`
+
+Probe `computations/probes/qbeta_5two_route41_ladder_rank_probe.py` (5 gates,
+all pass, dps 40). No Lean; nothing here is provable-and-unproved, it is a
+bound on a family plus two corrections.
+
+### Two corrections, both caught by checks rather than by review
+
+1. **The Li₂-form five-term RHS used in the first draft is WRONG.** The
+   argument set `[x, y, (1−x)/(1−xy), 1−xy, (1−y)/(1−xy)]` is right — it is the
+   Rogers-L pentagon — but the identity is a statement about
+   `L(z) = Li₂(z) + ½log z·log(1−z)` summing to `π²/2`, not about `Li₂` plus a
+   log product. G1 gates the correct form to 40 dps **and** gates the wrong one
+   failing at the same generic real points, by an amount that varies with the
+   point. Caught by evaluating off the configuration it was to be used on.
+2. **"`Σ_σ D(σx) = 0` is a feature of the disc −23 field" is WRONG — it is
+   general.** `D(z̄) = −D(z)`, complex embeddings come in conjugate pairs, real
+   embeddings give `D = 0`. True in every number field. The quartic intended as
+   a *negative control* refused to be one, and that is what exposed it.
+
+### The result
+
+Over a set `S` of Galois orbits in `K = ℚ(c)` closed under `x ↦ 1−x` and
+`x ↦ 1/x`, with **every** Euler-reflection, inversion and pentagon relation
+that closes in `S`, the functional reading off `A` is not in the row space:
+
+| `|S|` orbits | relations | rank | rank + target |
+|---|---|---|---|
+| 82 | 55 | 46 | 47 |
+| 168 | 316 | 153 | 154 |
+
+The gap stays exactly 1 as `S` doubles.
+
+**And the reason, which subsumes Routes 1–5 and 40:** the Bloch-Wigner
+regulator vanishes identically on a Galois sum. The invariant the whole ladder
+/ Bloch-group apparatus computes is *zero here by symmetry*, so it carries no
+information about `A`. Those routes were not unlucky; they were the wrong
+instrument. Any future attempt that reduces to a Bloch-group computation can be
+predicted to fail without running it.
+
+### ⚠ The limit on the rank result — do not quote it without this
+
+The rows are **Bloch-group** statements (relations modulo torsion). Turning one
+into a statement about `Σ Li₂` needs the pentagon summed over the three
+embeddings to have an elementary right-hand side, and G4 measures that it does
+not: at `x = y = c` the sum is `8.3326…` against `3π²/2 = 14.8044…`, a gap of
+`6.4718…`. The pentagon's validity region is the real one; the two complex
+embeddings carry branch corrections that are **not** accounted for. So the
+bound on the family is only as good as that bookkeeping, which is the obvious
+next thing to do if this line is picked up again.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
