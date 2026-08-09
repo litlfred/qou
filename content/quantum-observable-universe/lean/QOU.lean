@@ -319,6 +319,7 @@ import QOU.Archimedean.IdealTetrahedronRegion
 import QOU.Archimedean.OrthoschemePolarReduction
 import QOU.Archimedean.OrthoschemeBaseIntegral
 import QOU.Archimedean.OrthoschemeWedgePair
+import QOU.Archimedean.OrthoschemeRotation
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
