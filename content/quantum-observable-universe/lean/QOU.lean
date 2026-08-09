@@ -791,6 +791,11 @@ import QOU.QBeta.BirkhoffAmplitudeWellPosed
 -- (not a bare entry — gauge-movable, ill-posed); cross-ratio elliptic because the exponent
 -- multipliers cancel; the WALL is χ(P)'s VALUE (0-exp determined, ∞-exp/closed-form open).
 import QOU.QBeta.BirkhoffAmplitudeE
+-- A=3 amplitude bar-odd/unit-modulus Pythagorean bridge: the carrier E=χ(P) is √−1
+-- (bar-odd σE=−E + unit-modulus E·σE=1 ⇒ E²=−1), so the affine lift's modulus is a
+-- quadrature fs²+s²; resolves the "real E vs unit phase" type tension, relocates the
+-- magnitude datum to the transverse slope s (qou-prjo). Conditional §3b, no instance.
+import QOU.QBeta.BirkhoffBarOddPythagorasBridge
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
