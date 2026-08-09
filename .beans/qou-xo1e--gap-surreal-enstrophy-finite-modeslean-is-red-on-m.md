@@ -1,10 +1,39 @@
 ---
 # qou-xo1e
 title: 'GAP: surreal_enstrophy_finite_modes.lean is red on main — add/neg declared twice in QOU.FluidDynamics'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-09T00:03:26Z
-updated_at: 2026-08-09T00:03:26Z
+updated_at: 2026-08-09T21:40:00Z
+---
+
+## RESOLVED 2026-08-09 — fixed upstream, verified, site migrated
+
+**The bean never needed working.** Commit `a8450681a9`
+(*"fix(lean): Infinitesimal.*, PosSemidef row/col, GradedTraceResidueSplit"*)
+had already landed the exact repair proposed below — the four theorems are now
+`Infinitesimal.neg` / `Infinitesimal.add` / `IsFinite.add` / `IsFinite.neg`,
+qualified into per-predicate namespaces, and the dot-notation cascade resolves.
+The open worry that `def … : Prop := ∃ …` might still unfold to `Exists` did not
+materialise: Lean resolves dot notation against the *declared* head symbol, so
+`IsFinite.mul` and `IsFinite.pow` (line 861) bind correctly.
+
+Confirmed rather than assumed: `lean`-direct on the pristine file at current
+`main`, **exit 0**, no errors and no `sorry`.
+
+**Blocked site released.** `qInt` (line 192) is now tied by
+`qInt_eq_canonical_geo`. It goes to **`qIntGeo`**, not `qIntBal` — the body is
+`∑_{j<k} q^j`, the geometric form, and tying it to the balanced bracket would be
+precisely the mis-consolidation `QIntegerCanonical` warns about. The equation is
+`rfl` and unconditional: `qIntGeo` needs only a `CommRing`, which `K` has as a
+`Field`, and neither side divides. Census: **47 → 48 of 55**, and the blocked row
+is gone rather than restated.
+
+**Worth keeping from the original report.** The correction recorded below — that
+the `QIntegerCanonical` import was blamed for a breakage it had only renumbered
+— is the reason this bean was checked against pristine `main` before being
+declared resolved, instead of the reverse error.
+
 ---
 
 
