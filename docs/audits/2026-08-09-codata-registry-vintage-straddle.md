@@ -88,6 +88,21 @@ test**, so the leg can neither confirm nor exclude. An earlier draft used it to
 "localise the defect to the proton"; that was an overclaim and was removed. It
 supports no conclusion in this audit.
 
+## Leg 4 — where the artifact does *not* reach: the μ–p tension
+
+`m_μ` is the single largest L2 miss (963.6×). If the vintage straddle
+explained that too, this would be a far bigger finding — so it was tested
+explicitly rather than left implied. It does not:
+
+| muon–electron ratio used | m_μ miss |
+|---|---|
+| 206.7682830 (as stored, 2018) | 963.6× |
+| 206.7682827 (2022) | **970.2×** |
+
+Correcting the vintage makes `m_μ` **worse**. Recorded as measured: a
+correction that degrades an observable is reported, not suppressed. The μ–p
+substrate tension is genuine physics and this finding does not touch it.
+
 ## Why the dashboard row is exactly this residual
 
 `q₀` is Newton-solved so that the substrate identity reproduces

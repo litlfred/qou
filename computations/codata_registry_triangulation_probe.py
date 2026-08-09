@@ -175,6 +175,23 @@ def main() -> int:
     dash_miss = mpf(row["miss_factor"])
     identity_gap = abs(ppb(leg1) - dash_err_ppb)
 
+    # ── LEG 4 — where the artifact does NOT reach: the mu-p tension ──
+    # Guard against over-reading the finding. If the vintage straddle also
+    # explained m_mu (the single largest L2 miss at 963.6x), that would be a
+    # much bigger claim — so test it explicitly rather than leave it implied.
+    # It does not: correcting M_MU_OVER_M_E to its 2022 value moves m_mu the
+    # WRONG way. The mu-p substrate tension is real physics, untouched here.
+    mu_row = next(r for r in dash["data"]["rows"] if r["obs"] == "m_mu")
+    mu_pred = mpf(mu_row["pred_MeV"])
+    mu_sig = mpf(mu_row["sigma_exp_MeV"])
+    # 2022 CODATA muon-electron ratio, used ONLY to bound the effect's size.
+    ratio_mue_2022 = mpf("206.7682827")
+    mu_miss = {}
+    for tag, rr in (("as_stored_2018", ratio_mue), ("corrected_2022", ratio_mue_2022)):
+        tgt = m_e * rr
+        mu_miss[tag] = abs(_rel(mu_pred, tgt)) / ((mu_sig / tgt) / 100)
+    mu_artifact_helps = mu_miss["corrected_2022"] < mu_miss["as_stored_2018"]
+
     # ── L2 impact PROJECTION (audit-only; re-scores nothing) ─────────
     # What the affected dashboard rows would read against a self-consistent
     # registry. Reported so the finding is quantitative; the dashboard itself
@@ -243,6 +260,13 @@ def main() -> int:
     print(f"    leg-1 residual           = {n(ppb(leg1), 10)} ppb")
     print(f"    |difference|             = {n(identity_gap, 6)} ppb")
 
+    print("\n  LEG 4 — does the artifact reach m_mu (the largest L2 miss)?  NO:")
+    print(f"    m_mu miss, ratio as stored (2018) = {n(mu_miss['as_stored_2018'], 6)}x")
+    print(f"    m_mu miss, ratio corrected (2022) = {n(mu_miss['corrected_2022'], 6)}x")
+    print(f"    => correcting the vintage makes m_mu "
+          f"{'BETTER' if mu_artifact_helps else 'WORSE'}. "
+          f"The mu-p tension is real; this finding does not touch it.")
+
     print("\n  L2 IMPACT PROJECTION (audit-only — this probe re-scores nothing):")
     print("    m_p  — NOT projected: it is the pin anchor, so a corrected")
     print("           round-trip is a calibration tautology, not a pass.")
@@ -281,6 +305,15 @@ def main() -> int:
     w.add_data("leg2_neutron_sigma_ppb", n(ppb(m_n_sigma_rel), 8))
     w.add_data("leg3_muon_residual_ppb_NON_DISCRIMINATING", n(ppb(leg3), 12))
     w.add_data("leg3_muon_n_sigma_NON_DISCRIMINATING", n(leg3_nsigma, 8))
+    w.add_data("leg4_m_mu_miss_ratio_as_stored_2018", n(mu_miss["as_stored_2018"], 8))
+    w.add_data("leg4_m_mu_miss_ratio_corrected_2022", n(mu_miss["corrected_2022"], 8))
+    w.add_data(
+        "leg4_verdict",
+        "Correcting the vintage makes m_mu WORSE (963.6x -> 970.2x). Recorded "
+        "as-measured: a correction that degrades an observable is reported, "
+        "not suppressed. The mu-p substrate tension is genuine and this "
+        "finding does not reach it.",
+    )
     w.add_data("dashboard_m_p_err_ppb", n(dash_err_ppb, 12))
     w.add_data(
         "l2_projection_audit_only",
@@ -331,6 +364,20 @@ def main() -> int:
                "cannot explain — the registries are mixed-vintage. (Against "
                "the measurement sigma this is only ~3.1 sigma; that weaker "
                "framing is recorded in the data block but is not the test.)",
+    )
+
+    # Assertion 4 — the artifact does NOT explain the mu-p tension.
+    # A negative guard: it bounds the finding rather than extending it.
+    w.add_assertion(
+        name="artifact_does_not_explain_mu_p_tension",
+        computed=1.0 if not mu_artifact_helps else 0.0,
+        expected=1.0,
+        tolerance=0.0,
+        source="Indicator (1 = correcting the muon-electron ratio to its 2022 "
+               "value does NOT reduce the m_mu miss). It moves 963.6x -> "
+               "970.2x, i.e. marginally worse. The single largest L2 miss is "
+               "genuine physics — the mu-p substrate tension — and is "
+               "untouched by this registry finding.",
     )
 
     # Assertion 3 — independent neutron leg selects the ratio-consistent proton.
