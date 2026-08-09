@@ -732,3 +732,7 @@ import QOU.MassTheory.TransferFactorCommute
 -- never registered here, so nothing built them. Both verify lean-direct exit 0.
 import QOU.MassTheory.CanonicalOrderingSaddle
 import QOU.MassTheory.NucleonOrderingSymmetry
+-- qou-48is (PR #4855): the A>=4 clause of prop:ground-state-ordering is FALSE —
+-- explicit strictly-better arrangement at A=5 (sorted pnnnn beats the prescribed
+-- npnnn on BOTH readouts), proved for an interval of q containing the anchor.
+import QOU.MassTheory.GroundStateOrderingRefutation
