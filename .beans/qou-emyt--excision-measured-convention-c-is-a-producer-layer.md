@@ -118,3 +118,56 @@ Step 5 is the real excision and it is not a mechanical edit. Two sub-questions:
   its result is convention-scoped at all (many may be C-independent)?
 - the 86 witnesses regenerate from their producers — but that is 86 producer runs,
   serialised (never two producers concurrently in one checkout).
+
+---
+
+## CORRECTION (same session): the producer count above is WRONG
+
+The "70 producers" figure in the table above, and in commit 8e8860509's message,
+is an artefact of a loose grep. The pattern included a bare `0.5 + ` alternative,
+which matches any occurrence of that string anywhere in any Python file — it was
+not measuring convention C at all.
+
+Re-measured with patterns that actually pin the convention-C definition of `z`
+(`q0**0.5 + q0**(-0.5)`, `Q0**0.5 + Q_INV0**0.5`, `q_half + q_half_inv`,
+`sqrt(q) + 1/sqrt(q)`, `A + 1/A`), excluding `_deprecated/`:
+
+| layer | claimed | **actual** |
+|---|---|---|
+| live producers defining `z` the C way | 70 | **13** |
+| witness JSONs with a C fingerprint | 86 | **59** at ≥8 sig digits (86 at ≥7 — the looser threshold pulls in short quotations) |
+| content blocks failing the axis | 12 | 12 (unchanged — this one was mechanical) |
+
+The 13:
+
+```
+computations/atom_mass_derived.py
+computations/atom_mass_partition.py
+computations/deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py
+computations/deltalambda/nuclear_quotient_jones_torus_link_probe.py
+computations/free-neutron-decay.py
+computations/garside-irrep-qvalues.py
+computations/mass-from-q-symbolic.py
+computations/phase5/phase3b_universal_vs_knot_specific_decomposition.py
+computations/qbeta/qbeta_habiro_phase5q_dn_refactorize.py
+computations/qbeta/qbeta_symbolic_chain_alpha_b.py
+computations/rigid_monoidal_gap_invariance_check.py
+computations/substrate/deuteron_tower_fusion_frame_probe.py
+computations/substrate/hecke_core_symbolic.py
+```
+
+Six other producers already define `z` the D way, and the registry's
+`entry_points` are **all** convention D — which is the tell I should have taken
+seriously before quoting 70. The mass/binding pipeline has already migrated; what
+is left is a tail of probes and two or three live computations.
+
+**This makes the excision materially smaller and changes the recommendation.**
+It is no longer "needs a scoped plan and owner sign-off on blast radius" as a
+blocker — 13 files is a reviewable change. The blast-radius question still stands
+for whichever of the 13 feed published numbers (`atom_mass_derived.py`,
+`mass-from-q-symbolic.py`, `free-neutron-decay.py` are the ones to check first),
+but the other ten look like probes whose results are convention-scoped anyway.
+
+Lesson for the axis: the mechanical content sweep was right (12, and it stayed
+12). The two numbers I got wrong were both hand-greps done outside the
+instrument. Where a detector exists, quote the detector.
