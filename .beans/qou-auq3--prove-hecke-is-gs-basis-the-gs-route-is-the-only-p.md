@@ -66,3 +66,168 @@ the 6- and 24-word bases already committed
 (`QOU.Machinery.MarkovTraceOnHecke`, `HeckeH4AlgebraLaws.wordAction`), which were
 computed as GB normal forms by `computations/markov/hecke_regular_nf_table.py`.
 Two independent derivations of the same word list is a real check on both.
+
+---
+
+## 2026-08-09 — the framework is repaired, and the target turns out to be **false**
+
+`hecke_is_gs_basis` cannot be proved: with `leadingMonomial`,
+`SingleStepReduction` and `spoly` repaired, the statement is refutable, and the
+refutation is now in the tree. The axiom has been **deleted** rather than left
+standing — keeping a provably false axiom would have made every downstream
+result meaningless, not merely unproved.
+
+### The counterexample (machine-checked, `n = 4`)
+
+`UGB/GrobnerShirshov/HeckeGS.lean` §4e, namespace `NotAGSBasis`:
+
+```
+NotAGSBasis.hecke_not_gs_basis_four (hp : HeckeParams) :
+  ¬ IsGrobnerShirshovBasis (HeckeGen 4) ℝ (heckeOrder 4)
+      (heckeRewritingSystem 4 hn4 hp)
+
+hecke_is_gs_basis_false :
+  ¬ (∀ n (hn : 0 < n) (hp : HeckeParams), IsGrobnerShirshovBasis …)
+```
+
+`#print axioms` on both: `[propext, Classical.choice, Quot.sound]`. Neither
+depends on `normal_form_exists`, `local_confluence`, `confluence` or
+`normal_form_unique` — the refutation is independent of the framework's
+remaining axioms.
+
+The obstruction is the overlap of two rules of the system on the word
+`σ₃σ₂σ₃σ₁`:
+
+* Yang–Baxter for the adjacent pair `(σ₂,σ₃)`, leading monomial `σ₃σ₂σ₃`;
+* far commutation for `(σ₃,σ₁)`, leading monomial `σ₃σ₁`.
+
+Its S-polynomial is `σ₂σ₃σ₂σ₁ − σ₃σ₂σ₁σ₃` (`spoly_coeff_w₁` proves the
+coefficient at `σ₂σ₃σ₂σ₁` is `1`; the ambient word cancels by the general
+lemma `OverlapComposition.spoly_coeff_word_eq_zero`). Both words are
+irreducible: `no_rule_infix_w₁` / `no_rule_infix_w₂` check the three families
+of leading monomials — `σᵢσᵢ`, `σᵢ₊₁σᵢσᵢ₊₁`, `σᵢσⱼ` with `i > j+1` — against
+each word by `decide`, via the classification lemma
+`heckeRewritingSystem_lm_cases`. So the S-polynomial is a non-zero normal
+form and the system is not confluent.
+
+Nothing about the `q`-deformation is involved: the same overlap obstructs the
+Coxeter presentation of `S₄`. (Checked by hand at `n = 3` and it *is*
+confluent there, which is why `H₂`/`H₃` never surfaced this.)
+
+### Why Bokut & Shiao 2001 was cited for something it does not say
+
+Their Theorem 3.5 gives a GS basis for Coxeter groups by **completing** the
+presentation. The completion adds the family
+
+    σᵢ σᵢ₋₁ ⋯ σⱼ σᵢ  →  σᵢ₋₁ σᵢ σᵢ₋₁ ⋯ σⱼ        (j < i)
+
+of which `σ₃σ₂σ₁σ₃ → σ₂σ₃σ₂σ₁` is exactly the first instance — the very
+S-polynomial above. `heckeRewritingSystem` contains only the defining
+relations (quadratic, braid, far commutation), so the cited theorem never
+applied to it. **This is the work the bean actually needs**: extend
+`heckeRewritingSystem` with that family (indexed by pairs `j < i` in `Fin n`,
+so still finite for each `n`), then verify the compositions. The `n!` count
+and the normal forms for general `n` follow from the *completed* system, not
+from the defining relations.
+
+### One further correction the repair exposed
+
+With `leadingMonomial` actually respecting its order, `yangBaxterRelation i j`
+(`i < j`) has leading monomial `[σⱼ, σᵢ, σⱼ]`, **not** `[σᵢ, σⱼ, σᵢ]` as its
+docstring claimed: deg-lex ranks `σⱼ` above `σᵢ`. The rule therefore rewrites
+`σᵢ₊₁σᵢσᵢ₊₁ → σᵢσᵢ₊₁σᵢ`. The orientation is admissible (the leading monomial
+does dominate the tail); only the prose was wrong. Proved as
+`yangBaxterRelation_lm`; the companions are `heckeRelation_lm`
+(`[σᵢ,σᵢ]`) and `farCommRelation_lm` (`[σᵢ,σⱼ]`, `j < i`).
+
+### The three repairs (`UGB/GrobnerShirshov/`)
+
+1. **`leadingMonomial`** (`Basic.lean` §2) is now the `ord`-greatest support
+   element. Getting there needed order theory the structure did not carry:
+   `AdmissibleOrder.asymm`, `.irrefl`, `.lt_trans` (trichotomy alone does not
+   give transitivity — well-foundedness rules out the 3-cycle), `.exists_max`,
+   and `.not_lt_nil` (**the empty word is the minimum of every admissible
+   order** — otherwise `x ↦ m ++ x` descends forever). Exports:
+   `leadingMonomial_mem_support`, `le_leadingMonomial`,
+   `lt_leadingMonomial_of_coeff_ne_zero`, `leadingMonomial_eq_of_max`,
+   `leadingCoeff`, and the abbreviations `ReductionRule.lm/.lc`.
+
+2. **`SingleStepReduction`** (`Basic.lean` §3) now carries the algebra:
+
+   ```
+   ∃ r ∈ sys.rules, ∃ a b c,
+       f.coeff (a ++ r.lm ord ++ b) ≠ 0 ∧
+       c * r.lc ord = f.coeff (a ++ r.lm ord ++ b) ∧
+       CoeffEq g (f - c • (a · r.relation · b))
+   ```
+
+   The two side conditions are not decoration. Without them `c = 0, g = f` is
+   a legal step, `→` is reflexive, and `CompositionLemma.reduction_well_founded`
+   becomes a **false** axiom. With them every step eliminates the monomial it
+   targets — `SingleStepReduction.exists_eliminated` — so the multiset of
+   monomials strictly decreases and that axiom is at least true-shaped.
+
+3. **`spoly`** is a definition, not a field (`Basic.lean` §4), and both
+   composition structures now take the order as a parameter. They used to
+   quantify the decomposition over *every* admissible order (`lm₁_decomp :
+   ∀ ord, …`), which after repair 1 would have left them almost uninhabited
+   and made the GS predicate vacuous in the *other* direction. New general
+   lemmas: `OverlapComposition.spoly_coeff_word` /
+   `InclusionComposition.spoly_coeff_lm` (the ambient word contributes
+   `lc₂·lc₁ − lc₁·lc₂`) and their `_eq_zero` corollaries over a `CommRing`.
+
+Supporting move: the `AlgElement` arithmetic left `AlgOps.lean` for a new
+`Elem.lean`, which `Basic.lean` imports — stating a reduction step needs
+subtraction and two-sided multiplication by a monomial, and `AlgOps` imports
+`Basic`. Nothing was renamed; `AlgOps` keeps `shortLex_wellFounded` and
+`mkDegLexOrder`. New there: `contextMul a f b` (`= a · f · b`, exact because
+the contexts are monomials) with `contextMul_coeff_middle` / `_shape`, and
+`eraseCoeff`.
+
+### Two definitions changed meaning, deliberately
+
+`AlgElement.isZero` was `support = ∅` and is now `∀ m, coeff m = 0`;
+`isNormalForm` quantified over the `support` field and now quantifies over
+monomials with non-zero coefficient. The `support` field is only a *superset*
+of the true support, so both old forms were statements about a representation
+rather than about an element — and with a correct `SingleStepReduction` they
+are not merely wrong but fatal: `f - f` carries the support
+`f.support ∪ f.support`, so under the old `isZero` **no** S-polynomial could
+ever "reduce to zero" and `IsGrobnerShirshovBasis` would have been vacuously
+*false*. The predicate is now bracketed on both sides, both machine-checked:
+
+* not vacuously true — `one_not_reduces_to_zero` (`Basic.lean`) and its Hecke
+  instance `one_does_not_reduce_to_zero`: as soon as no rule has an empty
+  leading monomial, `1` is a normal form and is not `0`;
+* not vacuously false — `isGrobnerShirshovBasis_of_single_letter_rule`: a
+  one-rule system whose leading monomial is a single letter *is* a GS basis
+  (the length forces every composition to have empty contexts).
+
+`gs_basis_of_empty_lm` survives with one added hypothesis, `lc ≠ 0`, and a
+real proof (induction on the number of non-zero coefficients, each step
+killing one). The hypothesis is needed now that a step must subtract an actual
+multiple of the relation, and the deleted sentinel `⟨ofTerms [([], q)], _⟩`
+satisfied it (`q > 0`). Its second hypothesis — that the relation is supported
+on `[]` alone — is *not* needed: `AdmissibleOrder.not_lt_nil` supplies it.
+
+### State of the build
+
+`lake build` (971 jobs) and `lake build UGB.GrobnerShirshov.HeckeGS` both
+green; `QOU.PhotonThreading` still builds against the repaired UGB. No
+`sorry`, no `native_decide`, no new axiom anywhere. Every new declaration
+`#print axioms`-checks as `[propext, Classical.choice, Quot.sound]`.
+
+### Not done
+
+* The Bokut–Shiao completion itself (the actual path to general `n`).
+* The overlap analysis for the *completed* system — the four families listed
+  in this bean's original plan are the right enumeration, but they have to be
+  checked against the completed rule set, and the far-commutation × braid
+  overlap above is precisely the one that fails without it.
+* `n ≥ 5`: only `n = 4` is refuted, which is enough to refute the `∀ n`
+  statement. The same overlap exists for every `n ≥ 4`; that generalisation is
+  not formalised.
+* The framework's own axioms (`normal_form_exists`, `reduction_well_founded`,
+  `local_confluence`, `confluence`, `normal_form_unique`) are untouched. They
+  are now *stated about repaired definitions*, which is a real change in what
+  they assert, but they remain assumptions.

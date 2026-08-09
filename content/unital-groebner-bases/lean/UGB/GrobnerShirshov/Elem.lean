@@ -187,6 +187,31 @@ theorem singleton_support_nonempty [DecidableEq G] [DecidableEq k] [Nontrivial k
     (singleton m : AlgElement G k).coeff m' = 0 :=
   single_coeff_of_ne 1 h
 
+/-- Zero out the coefficient at one monomial.  Used to peel an element apart
+    one term at a time. -/
+def eraseCoeff [DecidableEq G] (f : AlgElement G k) (m₀ : Monomial G) :
+    AlgElement G k where
+  coeff := fun m => if m = m₀ then 0 else f.coeff m
+  support := f.support
+  support_spec := by
+    intro m hm
+    by_cases h : m = m₀
+    · exact if_pos h
+    · rw [if_neg h]; exact f.support_spec m hm
+
+@[simp] theorem eraseCoeff_self [DecidableEq G] (f : AlgElement G k)
+    (m₀ : Monomial G) : (f.eraseCoeff m₀).coeff m₀ = 0 := by
+  show (if m₀ = m₀ then (0 : k) else f.coeff m₀) = 0
+  exact if_pos rfl
+
+theorem eraseCoeff_of_ne [DecidableEq G] {f : AlgElement G k} {m m₀ : Monomial G}
+    (h : m ≠ m₀) : (f.eraseCoeff m₀).coeff m = f.coeff m := by
+  show (if m = m₀ then (0 : k) else f.coeff m) = f.coeff m
+  exact if_neg h
+
+@[simp] theorem eraseCoeff_support [DecidableEq G] (f : AlgElement G k)
+    (m₀ : Monomial G) : (f.eraseCoeff m₀).support = f.support := rfl
+
 /-! ### §2.2  Addition, scalar multiplication, negation, subtraction -/
 
 /-- Add two algebra elements.  Support is the union (possibly
