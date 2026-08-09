@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T15:40:00Z
+updated_at: 2026-08-09T17:20:00Z
 ---
 
 ## What is open
@@ -411,14 +411,69 @@ constant, so `k = 0` is unavoidable.
 
 | route | status |
 |---|---|
-| bound the four `arg`s separately | ❌ **closed** — G13: they sum to 11.857 > 2π |
-| saddle identity `(1−xy)(1−y/x) = y²/(1−y)` | ❌ **closed** — G14: leaves `m = ±1`, never 0 |
-| G13's two groupings, each measured < π/2 | ⏳ first half **proved** (`one_sub_Ypair_mem_slitPlane`); second open |
+| bound the four `arg`s separately | ❌ **closed** — Route 36 G13: they sum to 11.857 > 2π |
+| saddle identity `(1−xy)(1−y/x) = y²/(1−y)` | ❌ **closed** — Route 36 G14: leaves `m = ±1`, never 0 |
+| three `Complex.log_mul` splits | ❌ **closed** — Route 38 G2: split (iii) is FALSE wherever `Re y > 0` |
+| **a four-regime interval argument** | ✅ **found and measured** — Route 38 G9–G13 |
 
-The open half is `|arg(1−xy) + arg(1−y/x) − 2·arg(−y)| < 3π/2`, measured under
-`π/2`, so there is a factor of three in hand — but it is irreducibly a statement
-about three *correlated* arguments, and G13 proves no bound on the individual
-terms can give it.
+### ✅ ROUTE FOUND — Route 38, four regimes, 15 gates all pass
+
+Write `A = arg(1−y)`, `a₁ = arg(1−xy)`, `a₂ = arg(1−y/x)`, `C = 2·arg(−y)`. Then
+`A + a₁ + a₂ − C = 2πk` — that is just `exists_int_dVdy_mul` with imaginary parts
+taken — so **`k = 0` follows from any bound putting the total strictly inside
+`(−2π, 2π)`**. In each of four regimes the four components lie in intervals whose
+*sum* is strictly inside it. Route 38 G13 checks each component against its
+claimed interval and **computes** the summed interval rather than asserting it.
+
+| regime | what supplies the missing `π/2` | summed interval | n |
+|---|---|---|---|
+| complex pair, `Re y > 0` | `Re y = cos φ − t/2` with `t > 0` forces `cos φ > 0`, so every term of `Im(xy) = cos φ·Im y + sin φ·Re y` carries the sign of `Im y` | `(−3π/2, 2π)` | 160 |
+| complex pair, `Re y ≤ 0`, `cos φ ≤ 0` | both terms of `Im(xy)` flip | `(−3π/2, 2π)` | 107 |
+| complex pair, `Re y ≤ 0`, `cos φ > 0` | **an identity, not a sign**: `Re(xy) + Re(y/x) = 2cos φ·Re y ≤ 0`, so one factor has `Re ≤ 0` and its `arg` lies in `(−π/2, π/2)` | `(−2π, 2π)` | 40 |
+| real pair (past the discriminant) | both roots are **negative**, so `A = 0` and `C = 0` outright and the total collapses to `a₁ + a₂` | `(−π, π)` | 186 |
+
+Every regime is non-empty, so none is decorative — regime 3 is the smallest at 40
+checks and is the only one no sign argument reaches.
+
+**Only `Im y > 0` is analysed.** `Ypair.2 = conj Ypair.1` (`Ypair_conj`, proved),
+and on `|x| = 1` conjugation swaps `x·y` with `y/x`, so `S(conj y) = −S(y)` and
+the second branch is free (G14).
+
+⚠ **The tree's four sign facts are really TWO inequalities.** Writing `y = p+qi`,
+`x = c+si`: `cq − sp > 0` (unconditional) *is* both `im_div_Ypair_fst_pos` and
+`im_mul_Ypair_snd_neg`; `cq + sp < 0` (needs `c < 0`) *is* both
+`im_mul_Ypair_fst_neg` and `im_div_Ypair_snd_pos`. A first draft of Route 38's
+gates mirrored each inequality branch-by-branch with a sign factor and **failed**
+— `Im(x·y)` for one branch pairs with `Im(y/x)` for the *other*, not with itself.
+Conjugation is the only correct symmetry here.
+
+⚠ **`im_mul_Ypair_fst_neg`'s `cos φ < 0` is not a gap to be filled.** Route 38 G3
+measures that it genuinely fails at 181 of 400 arc points, all at `cos φ > 0` —
+and that failure region *is* regime 1, where the **opposite** sign is what
+supplies the bound. Strengthening the lemma would be attempting something false.
+
+### ⚠⚠ `heⱼ` is FALSE at `φ = π`, on `Ypair.2` — Route 38 G15
+
+`S = 2π` there, so `k = ±1`. **The second time in this lane an endpoint has hidden
+behind open-interval sampling** (Route 36 G7 was the first), and the cause is
+identical to VSide's endpoint failure: `x·y = 2.2469796` lands ON Li₂'s cut, so
+`a₁ = a₂ = π` instead of cancelling. Benign for the same structural reason —
+`envelopeS_total` needs `HasDerivAt` only on `Ico 0 π`. Evaluated at
+`x = mpc(-1,0)` exactly; `exp(iπ)` returns `−1 + 4.1e-43i` and reports a clean 0.
+
+### Why the *obvious* route is closed, and what `S = 0` really is
+
+`S = 0` is **equivalent** to three `Complex.log_mul` splits holding at once:
+
+    (i)   log(1−xy) + log(1−y/x) = log((1−xy)(1−y/x))
+    (ii)  log(1−y)  + log(that)  = log(y²)
+    (iii) 2·log(−y)              = log(y²)
+
+and **(iii) is false wherever `Re y > 0`** — 320 of 800 checks, all with the pair
+genuinely complex. Route 38 G2 measures each wrap integer: `n₁ ≡ 0` (split (i) is
+free, G4) and `n₂ = n₃ ∈ {−1,0,1}`. So `S = 0` holds by **wrap cancellation**,
+not because the splits are legitimate, and a proof that performs the three splits
+unconditionally is proving something false.
 
 **(2) `hcont` at `φ = π` — and it is ONE-SIDED, not 2-D (G11, corrected).**
 
