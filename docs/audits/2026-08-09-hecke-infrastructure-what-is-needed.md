@@ -50,16 +50,58 @@ Building `H3`, `H4`, … against it as written would add nothing that
 
 What is needed, in order:
 
-1. **The missing axiom.** Either strengthen `HeckeAlgebra` with the Iwahori
-   basis — `A` free of rank `n!` over `R` on `{T_w}_{w ∈ S_n}` — or add a
-   companion predicate `IsHeckeOfFullRank` and require it where results depend
-   on the algebra genuinely being `H_n(q)`. The second is less disruptive: it
-   leaves existing consumers compiling and lets each be upgraded deliberately.
+1. ~~**The missing axiom.**~~ **DONE — `QOU/Hecke/FullRank.lean`.** Added as a
+   companion predicate rather than by strengthening `HeckeAlgebra` in place, so
+   all five hypothesis sites keep compiling and each can be upgraded
+   deliberately:
 
-2. **Then** the instances mean something. `H2` already qualifies:
-   `AdjoinRoot` of a monic quadratic is free of rank `2 = 2!`, so the existing
-   `instHeckeAlgebraH2` is the genuine two-strand algebra — the class simply
-   cannot express that yet.
+   ```lean
+   class IsHeckeOfFullRank (R : Type u) (n : ℕ) (A : Type u)
+       [Field R] [Ring A] [Algebra R A] : Prop where
+     free : Module.Free R A
+     finrank_eq : Module.finrank R A = n.factorial
+   ```
+
+   `not_isHeckeOfFullRank_rankOne` proves the degenerate model fails it at every
+   `n ≥ 2`, which is the point. Rank `n!` fixes the *dimension*, not the
+   `{T_w}_{w ∈ S_n}` labelling — deliberate: dimension is what downstream
+   arguments use and what the degenerate models fail. Granting Iwahori's theorem
+   (not formalised; nothing depends on it here), `spans` + `finrank = n!` pins
+   `A` to `H_n(q)` up to isomorphism, and neither half alone does.
+
+2. ~~**Then** the instances mean something.~~ **DONE.**
+   `instIsHeckeOfFullRankH2` — `AdjoinRoot` of a monic quadratic is free of rank
+   `2 = 2!` (`finrank_H2`, via `heckePoly_monic` + `heckePoly_natDegree`), so
+   `instHeckeAlgebraH2` is now *provably* the genuine two-strand algebra rather
+   than merely believed to be.
+
+## Assembly is inductive, and that is now machine-checked
+
+The rank condition is **not** something to re-establish level by level. `H_{n+1}`
+is free of rank `n+1` over `H_n` — the Iwahori coset decomposition
+
+  `H_{n+1} = ⊕_{i=0}^{n} H_n · σ_n σ_{n-1} ⋯ σ_{n-i+1}`
+
+— so the tower law multiplies ranks and `1 = 0!` starts the induction. Both
+halves are proved in `QOU/Hecke/FullRank.lean`:
+
+| declaration | content |
+|---|---|
+| `finrank_succ_of_rung` | rung of rank `n+1` over a level of rank `n!` ⟹ level of rank `(n+1)!` (via `Module.finrank_mul_finrank`) |
+| `finrank_of_rank_recursion` | `d 0 = 1`, `d (n+1) = (n+1)·d n` ⟹ `d n = n!` — depends on **no axioms** |
+| `isHeckeOfFullRank_succ` | the two composed, ready to `exact` inside an `induction` |
+| `instIsHeckeOfFullRankBase` / `…One` | `R` itself at `n = 0, 1` |
+
+So a tower owes **one rung at a time**: "free of rank `n+1` over the level
+below". Everything else follows. That is strictly less work than constructing
+each `H_n` and computing its dimension from scratch, and it is the shape
+`QOU.Mathlib.HeckeAlgebra.HnCarrierRec` (`H_{n+1} ≅ Fin (n+1) → H_n`) and
+`basis_dimension_recurses` (`|H_{n+1}| = (n+1)·|H_n|`) were already reaching for
+— those two state the recursion; `finrank_of_rank_recursion` closes it.
+
+What this does **not** do is assert such a tower exists. It says what a tower
+owes and discharges the arithmetic once and for all. The rungs are still the
+work — and the first one is H3.
 
 ## H3: most of the work is already done, and stuck on one lemma
 
@@ -125,10 +167,37 @@ generator pattern that would do it.
 
 ## Recommended order
 
-1. Add the rank axiom (as a companion predicate) — small, unblocks meaning.
-2. Prove `H3.mul` associativity; derive `Ring`/`Algebra`; instantiate at `n = 3`.
+1. ~~Add the rank axiom (as a companion predicate).~~ **DONE** —
+   `QOU/Hecke/FullRank.lean`, bean qou-nkd8. Carried the induction with it, so
+   the remaining levels are rungs rather than constructions.
+2. ~~Prove `H3.mul` associativity; derive `Ring`/`Algebra`; instantiate at
+   `n = 3`.~~ **DONE** — `QOU/Hecke/InstanceH3.lean`, bean qou-jr3k. See below.
 3. `MarkovTrace` on `H2` (bean qou-ghak) — independent of the above and cheap.
-4. H4 multiplication, reconciled with `MarkovTraceH4`'s normal form.
+4. H4 multiplication, reconciled with `MarkovTraceH4`'s normal form. With the
+   induction in place this is the rung `H₄` free of rank `4` over `H₃`, not a
+   24-dimensional computation.
 
-Steps 1–3 are each a day or less. Step 4 is the real infrastructure work the
-manuscript cites.
+Step 3 is a day or less. Step 4 is the real infrastructure work the manuscript
+cites — but the inductive framing is what makes it finite: each level is `n+1`
+cosets over the level below, never `n!` structure constants from scratch.
+
+## H3, done
+
+`H3.mul_assoc` closed on the first attempt. Every coefficient of `H3.mul` is
+polynomial in the eighteen input coefficients and the single scalar `q - q⁻¹`, so
+associativity is a polynomial identity that `ring` discharges componentwise. That
+it *is* an identity is the content — it says `H3.mulSigma1` and `H3.mulSigma2` are
+a faithful transcription of left multiplication in `H₃(q)`, not merely a plausible
+pair of `6 × 6` matrices.
+
+`QOU/Hecke/InstanceH3.lean` then carries `H3Alg R q` (a `def` synonym for
+`H3Carrier R`, so `Prod`'s componentwise `CommRing` cannot leak in), its `Ring`
+and `Algebra` instances, the quadratic and braid relations restated over an
+arbitrary field in ring form, `decompose` (every element is an `R`-combination of
+words in the generators), **`instHeckeAlgebraH3`**, and
+**`instIsHeckeOfFullRankH3`** — rank `6 = 3!`. All axiom-clean.
+
+**It is the first non-vacuous braid relation in the tree.** `InstanceH2` said so
+about itself: at `n = 2`, `Generator 2` has a single index, so `BraidRelation` and
+`FarCommutativity` are never satisfiable and both fields are discharged by
+`absurd`. At `n = 3` the two indices *are* adjacent and `braid` must be real.
