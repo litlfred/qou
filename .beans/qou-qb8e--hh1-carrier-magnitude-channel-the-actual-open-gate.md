@@ -178,3 +178,49 @@ Full write-up, with the singularity inventory, the exact minimal polynomials,
 the reproduction recipe, and the corrections owed to registry row KC22 and
 docs/precision-goals.md §"Open compute levers" (i):
   docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md
+
+## OWED CORRECTIONS: 2 of 3 LANDED (foreground session, 2026-08-09)
+
+Independently re-verified the reversal before acting on it. Decisive check, on
+the CONVERGENT closed form with zero free parameters (|d_k| = AMP*rho^-k/k),
+against the committed witness values as targets:
+
+    diagnostic                    witness         convergent law    rel.err
+    log|d|/(k log k) @k=41        0.4963972525    0.4964783325      1.6e-4
+    log|d|/k^2       @k=41        0.04496114563   0.04496848945     1.6e-4
+    root test |d|^(1/k) @21       5.9103783       5.917128064       1.1e-3
+    root test |d|^(1/k) @27       6.0817125       6.085924273       6.9e-4
+
+A purely convergent law reproduces ALL FOUR published "Gevrey" diagnostics to
+~1e-4 with NO fitted parameter. Those diagnostics never discriminated convergent
+from divergent -- they measured geometric growth against the wrong yardstick.
+Curvature discriminator on the closed form: k^2 D^2 log|d_k| = 1.0011 (k=21),
+1.0003 (41), 1.00005 (101) -> 1, while k D^2 -> 0. kappa = 0. CONFIRMED.
+
+LANDED:
+  1. docs/precision-goals.md "Open compute levers" (i) -- lever WITHDRAWN.
+     Replaced with rho, q*, the Q_b-zero explanation, the closed form, the
+     clause-by-clause supersession of the old text, and the 38-digit pinned
+     h*D(u~0). Explicitly restates that this does NOT derive c_3, does NOT
+     change its tier, and does NOT close L2.
+  2. registry row KC22 -- exact non-holonomicity, 2-adic parity grading and
+     Lean anchors kept VERBATIM; "super-exponentially divergent (q-Gevrey,
+     radius -> 0; the ~0.143 ratio is the (k!)^C shadow, not a radius)" and the
+     "=> transcendental/resurgent (Ecalle acceleration class)" inference struck.
+     Added a note that non-holonomicity is UNAFFECTED by the radius correction.
+
+STILL OWED (3rd item), now enumerated but NOT executed:
+  3. Re-tier the resummation witnesses. Audit section 6 (appended) is the ledger
+     of all 29: 6 UNAFFECTED (arithmetic/holonomicity/2-adic), 11 ILL-POSED
+     (divergent-series estimators on a convergent series), 1 PARTIAL
+     (extension-singularity: the exact k=31 data stands, its "Divergence-class C
+     0.07737->0.06134" reading is the spurious 1/log k decay), 4 NOT ASSESSED
+     (the deformed-meridian / odd-channel-Stokes family -- DIFFERENT OBJECT, the
+     radius result does NOT automatically transfer, no claim made).
+
+     The 11 should move from scope-(a) NEGATIVE to scope-(b) CLOSED/ILL-POSED so
+     nobody reads "gate fails, needs more terms" as an open lever. Do NOT delete
+     them -- they are the evidence the arm was exhausted properly, and their
+     input (the exact ladder) is live. NO witness file was edited; all 29 still
+     report allPassed:true, which is exactly why a bulk re-run would not have
+     caught this.

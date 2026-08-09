@@ -347,3 +347,79 @@ committed artifacts:
 
 Step 4 needs no new tooling and settles the question on the `k ≤ 21` data
 already committed (`e_21/AMP = 0.9763`, correction `−0.497/k`).
+
+---
+
+## 6. Witness ledger — which of the 29 stand, and which are now ill-posed
+
+*Added 2026-08-09 by the foreground session, as the owed enumeration behind §5.
+**No witness file was edited or regenerated**; this is a reading note. Producers
+are unchanged and every one of the 29 still reports `allPassed: true` — that is
+the point, and the reason a bulk re-run would not have caught this. They compute
+what they say they compute; the question several of them answer is the one that
+turned out to be ill-posed.*
+
+**A. UNAFFECTED — the arithmetic stands in full (6).** Nothing here depends on
+the growth class; a convergent series need not be holonomic, and
+`φ(w)log(1−w/ρ) + ψ(w)` over a degree-12 field is exactly the sort of element
+that is not low-order P-finite. The 2-adic parity grading and its Lean anchors
+are likewise untouched.
+
+    qbeta-dladder-generating-function-structure     (the exact d_k, k<=21 — the DATA)
+    qbeta-dladder-coupled-qsqrt3-recurrence
+    qbeta-dladder-q-holonomic-base3
+    qbeta-dladder-log-q-holonomic
+    qbeta-dladder-padic-graded-prime
+    qbeta-dladder-qborel-2adic-transport
+
+**B. ILL-POSED — divergent-series estimators applied to a convergent series
+(11).** Each is a correct computation of a quantity that does not exist. Their
+recorded failures ("gate fails at every `s`", "length-blocked", "estimator gap
+persists") are not obstructions to be overcome; they are the estimators
+detecting that there is nothing to estimate.
+
+    qbeta-dladder-ecalle-acceleration               Leroy gate fails at every s
+    qbeta-dladder-ecalle-phib-resummation
+    qbeta-dladder-single-instanton-extraction       "length-blocked at k=41"
+    qbeta-dladder-fibre-branch-stokes-ambiguity     r* = 0.147 IS the ratio est. of rho
+    qbeta-dladder-fibre-two-action
+    qbeta-dladder-jackson-qborel-acceleration
+    qbeta-dladder-qborel-leroy-resummation
+    qbeta-dladder-parity-split-resummation
+    qbeta-dladder-parity-odd-singularity-even-order
+    qbeta-dladder-barodd-borel-pade-laplace
+    qbeta-dladder-parity-adjudication               "UNDECIDABLE at k=21"
+
+**C. PARTIALLY superseded (1).**
+
+    qbeta-dladder-extension-singularity   The exact extension to k=31 STANDS and is
+                                          reusable. Its reading "Divergence-class C:
+                                          0.07737 -> 0.06134" is the spurious 1/log k
+                                          decay, not a converging exponent.
+
+**D. NOT ASSESSED — different object, needs its own pass (4).** These concern
+the *deformed meridian* and the odd-channel Stokes structure, not `D(ũ)`. The
+radius result does not automatically transfer and no claim is made here either
+way.
+
+    qbeta-c3-borel-pade-deformed-meridian
+    qbeta-c3-borel-pade-deformed-rungs
+    qbeta-c3-borel-pade-resummation
+    qbeta-odd-channel-stokes-borel
+
+**What a maintainer should do with B.** Not delete them — they are the evidence
+that the resummation arm was pursued properly and exhausted, and their inputs
+(the exact ladder) remain live. Re-tier them as **scope-(b) closed / ill-posed**
+rather than **scope-(a) negative**, so the next reader does not read "gate fails,
+needs more terms" as an open lever. That re-tiering is a registry edit and is
+**not made here**; it is tracked on bean `qou-qb8e`.
+
+**Corrections landed alongside this note** (both were listed as owed):
+`docs/precision-goals.md` "Open compute levers" item (i) — the c₃ resummation
+lever is **withdrawn**, with the radius, closed form and the 38-digit pinned
+`h·D(ũ₀)` recorded in its place; and registry row **KC22** in
+`ck-dk-canonical-registry.md` — its exact non-holonomicity, 2-adic grading and
+Lean anchors are kept verbatim, while "super-exponentially divergent (q-Gevrey,
+radius → 0; the `≈0.143` ratio is the `(k!)^C` shadow, not a radius)" and the
+"⇒ transcendental/**resurgent** (Écalle acceleration class)" inference are
+struck. The `≈0.143` ratio was the radius all along.

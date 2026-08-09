@@ -421,15 +421,47 @@ derivation lands"* — points at a route the owner **permanently gated** on
 read as *unfixable*, which is precisely the over-narrowing the refuted-scope
 discipline exists to prevent.
 
-**Open compute levers** (unchanged, plus the current state of the first): (i) the
-c₃ D-ladder resummation — the two-variable form `log R = E(ũ) + h·D(ũ)` holds
-exactly and the ladder is **divergent** (Gevrey `exp(Bk + Ck·log k)`), so closing
-it needs genuine Écalle/Φ_b resummation; numerical extraction of the instanton
-action is **length-blocked at k=41** (growth form unresolved), and the
-fibre-branch Stokes probe localises `A_ω = Δ_ω log Φ_b` to the **fibre**, not the
-substrate meridian (see `qou-qb8e`); and (ii) the α_EM per-loop theta-factor
-(#3911). The listed dead ends stay dead as **scope-(a)** results
-(fixed-order/anchor-invariant resummation; geometric q₀; ratio-based W_λ).
+**Open compute levers**: (i) **WITHDRAWN 2026-08-09 — the c₃ D-ladder
+resummation was never a lever.** The two-variable form `log R = E(ũ) + h·D(ũ)`
+still holds exactly, but the ladder is **convergent**, with radius
+
+    ρ = ũ(q*) = 0.14279999664468968890572088577932032058109273315046
+    q*        = 1.4898947996883652482253115227781736826531279179281
+
+`q*` being the unique real root > 1 of the irreducible degree-12 factor of the
+`Δ_net` numerator — a **zero of `Q_b`**, where `log R` has a plain logarithmic
+branch point. The 2026-07-12 singularity search covered the sqrt branch points,
+the `ũ′ = 0` folds, the `Q_A` zeros and the `cos α_eff` zeros, but **not the
+`Q_b` zeros**; all three nearest singularities are `Q_b` zeros. Closed form
+`D(w) = φ(w)·log(1 − w/ρ) + ψ(w)` with `φ(ρ) = 1/(2h*)`, `h* = q* − 1/q* =
+0.818706471352`, giving `d_k = −(1/(2h*))·ρ^{−k}/k·(1 + O(1/k))` with no free
+parameters.
+
+There is therefore **nothing to resum**: Écalle/Φ_b resummation, the instanton
+action, and the Stokes ambiguity were answering an ill-posed question. The old
+text read "the ladder is **divergent** (Gevrey `exp(Bk + Ck·log k)`) … numerical
+extraction of the instanton action is **length-blocked at k=41** … the
+fibre-branch Stokes probe localises `A_ω = Δ_ω log Φ_b` to the **fibre**". Each
+clause is superseded: `C` is a spurious parameter decaying like `1/log k`; the
+k=41 wall was tooling cost, not information (k ≤ 21 already suffices); the
+Stokes probe's "structural threshold `r* = 0.147`" is the ratio-test estimate of
+`ρ` itself, and "ambiguity unsuppressed on the fibre" is the series diverging
+outside its disk. The discriminator that settles it on the committed k ≤ 21
+data: **`k²Δ²log|d_k| → 1` while `kΔ² → 0`, i.e. `κ = 0`.**
+
+Practical consequence, and it is a gain: at the CAL-2/muon pin `ũ₀ = 0.0094540`
+sits **15.10× inside `ρ`**, so `h·D(ũ₀) = −0.003486063636129187405605313929674524979867`
+is pinned to 38 digits by the already-committed ladder with a rigorous tail
+bound. **This does not derive c₃, does not change its `cal-anchored` tier, and
+does not close L2** — the μ–p anchor swing remains 29.96 ppb = 3.84× the target,
+and the carrier is still anchor-blind (spread 1.23e-9). The real gate is
+unchanged: the map from a bar-odd, anchor-blind fibre object to an
+anchor-*dependent* number.
+[`docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md).
+
+Remaining lever: (ii) the α_EM per-loop theta-factor (#3911). The listed dead
+ends stay dead as **scope-(a)** results (fixed-order/anchor-invariant
+resummation; geometric q₀; ratio-based W_λ).
 
 This is a *ceiling record*, not a target change: the L2 targets stand. Full
 analysis: [`docs/audits/2026-07-18-1ppq-action-plan.md`](audits/2026-07-18-1ppq-action-plan.md);
