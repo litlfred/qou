@@ -1410,3 +1410,57 @@ Now N = 241, 961, 3841.
      `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
   4. `hc`, already algebraically proved in `OneLoopPrefactorInvariance.lean`;
      then `htau`.
+
+---
+
+## Step 16 -- the assembly specialised at the saddle (`QOU/Knot/KashaevSaddleWindow.lean`)
+
+Three theorems, all `[propext, Classical.choice, Quot.sound]`. Step 15 was
+stated for abstract `a`, `L`, `B`; this supplies them:
+
+    kashaevGaussCoeff N k = -pi cot(th_k)/N      kashaevTilt N k = log(2 sin th_k)
+
+`kashaevGaussCoeff_pos` -- `a > 0` exactly when `th_k > pi/2`, which is why the
+summand is a Gaussian and not a growing exponential. `angle_mem_window` lets
+ONE pair of angular bounds (`M` on `1/sin^2`, `K` on `|cot|`, both on
+`[th_{k-W}, th_{k+W}]`) serve every `k'` in the window, via
+`Set.uIcc_subset_Icc`. `B` stays abstract -- it need only dominate step 10's
+per-pair bound, and computing an explicit maximum is caller-side arithmetic.
+
+### The hypotheses ARE satisfiable, from N = 79
+
+Probe part (i). Five Nat/real side conditions interact
+(`W <= k`, `1 <= k-W`, `k+W < N`, `pi/2 < th_k < pi`) and with `k = floor(5N/6)`,
+`W = floor(N^0.6)` the binding one is `k + W < N`: it needs `N^0.6 < N/6`,
+i.e. `N^0.4 > 6`, i.e. `N > 6^2.5 = 88.2`. The probe finds the actual first N
+by search (79 -- floor effects make it slightly under the continuous estimate)
+and asserts every smaller N fails, so a later edit cannot move the threshold
+silently.
+
+### M and K converge to 4 and sqrt3 -- but only at rate N^-0.4
+
+    N        M      (M-4) N^0.4     K     (K-sqrt3) N^0.4
+    241   26.4907     201.75     5.0488       29.75
+    3841   6.3241      63.10     2.3074       15.62
+    61441  4.5922      48.74     1.8953       13.44
+
+The window's angular half-width is `pi W/N ~ pi N^-0.4`, and
+`1/sin^2(5pi/6 + eps) = 4(1 + 2 sqrt3 eps)`, so `(M-4) N^0.4 -> 8 sqrt3 pi =
+43.53`. Observed 48.74 at N = 61441 and still descending. **This is slow**: M
+is 5.13 at N = 15361. It does not threaten the limit, but it is why the
+finite-N bound of step 15 is so far from sharp.
+
+### Two thresholds I guessed wrong, both caught by the probe
+
+`M < 5` at N=15361 (actual 5.13) and `K < 1.85` at N=61441 (actual 1.90). Both
+were my invented tolerances, not the mathematics. Replaced by the rate check
+against the derived constant `8 sqrt3 pi`, which cannot drift.
+
+### Remaining before `hc`
+
+  1. the region OUTSIDE the window, via step 5 (exponentially small there, so
+     step 5's lossy constants are free);
+  2. divide by `g_{k*}` and feed step 7's `log g_{k*}`, giving
+     `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
+  3. `hc` -- already algebraically proved in `OneLoopPrefactorInvariance.lean`;
+     then `htau`.
