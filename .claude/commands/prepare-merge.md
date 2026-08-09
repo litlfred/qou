@@ -258,6 +258,20 @@ surface the duplicates in step 6) saves a full review cycle.
   success while doing so — the same defect shape as the three gates in
   folio-assistant PR #88: *a gate that can report success without examining
   anything is not a gate.*
+
+- **Warm the root workspace's Mathlib cache first: `lake exe cache get`.**
+
+  The root workspace has its *own* `.lake/packages/mathlib`, separate from each
+  paper's. A sandbox that has been building per-paper (`cd content/<paper>/lean
+  && lake build`) has a warm cache in the **paper's** checkout and a cold one at
+  the root, so the first `lake build QOU UGB Fred2005` there starts compiling
+  Mathlib **from source** — observed going through
+  `Mathlib/Algebra/Order/AbsoluteValue/Basic.lean` and friends, which is hours,
+  not minutes, and silently: the output looks like ordinary build progress.
+
+  Both lakefiles pin the same rev (`f897ebcf…`), so the cache applies. Check
+  free disk before doing it — the root copy is a second full Mathlib build tree
+  — and see AGENTS.md's RESTORE → build → SEED note.
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,
