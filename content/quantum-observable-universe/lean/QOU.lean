@@ -138,6 +138,7 @@ import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.Knot.KummerUnitCircle
 import QOU.Knot.RivinConcavity
 import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture

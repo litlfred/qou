@@ -1,0 +1,105 @@
+{
+  "probe": "qbeta_5two_route72_kummer_unit_circle",
+  "beans": [
+    "qou-kmmr"
+  ],
+  "dps": 60,
+  "lean": "QOU/Knot/KummerUnitCircle.lean -- blochWigner_lob_exp",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "on |z| = 1 the ideal tetrahedron is ISOSCELES: the three angles of e^{i theta} are (theta, (pi-theta)/2, (pi-theta)/2), and they sum to pi. This is what collapses Kummer to a one-variable identity there",
+      "samples": [
+        {
+          "theta": "0.25",
+          "angles": [
+            "0.25",
+            "1.44579632679",
+            "1.44579632679"
+          ]
+        },
+        {
+          "theta": "1.0",
+          "angles": [
+            "1.0",
+            "1.07079632679",
+            "1.07079632679"
+          ]
+        },
+        {
+          "theta": "1.0471975512",
+          "angles": [
+            "1.0471975512",
+            "1.0471975512",
+            "1.0471975512"
+          ]
+        },
+        {
+          "theta": "1.57079632679",
+          "angles": [
+            "1.57079632679",
+            "0.785398163397",
+            "0.785398163397"
+          ]
+        },
+        {
+          "theta": "2.5",
+          "angles": [
+            "2.5",
+            "0.320796326795",
+            "0.320796326795"
+          ]
+        },
+        {
+          "theta": "3.01659265359",
+          "angles": [
+            "3.01659265359",
+            "0.0625",
+            "0.0625"
+          ]
+        }
+      ],
+      "max_angle_deviation": "1.5557538e-61",
+      "max_sum_minus_pi": "3.1115076e-61",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "Lam(theta) + 2 Lam((pi-theta)/2) = Cl_2(theta), and it is exactly the Clausen duplication formula Cl_2(2t) = 2 Cl_2(t) - 2 Cl_2(pi-t) halved -- which the corpus already had as Cl_2_duplication, so the Lean proof is three lines",
+      "max_lambda_identity_residual": "2.3336307e-61",
+      "max_duplication_residual": "4.6672615e-61",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE BOUNDARY. The dilogarithm half -- Im Li_2(e^{i theta}) = Cl_2(theta), so that the Lambda-sum equals the Bloch-Wigner dilogarithm form -- is TRUE numerically but is NOT proved in Lean for the corpus's cLiTwoExt. The Lean theorem states its conclusion in terms of Cl_2 alone and makes NO dilogarithm claim. This gate exists so that boundary is recorded, not blurred",
+      "max_residual_lambda_vs_dilog": "1.5557538e-61",
+      "numerically_true": true,
+      "proved_in_lean_for_cLiTwoExt": false,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "SCOPE: this file does NOT reach Vol(5_2). The 5_2 shape y_1 has |y_1| = 1.5236, so it is off the unit circle; its tetrahedron is NOT isosceles and log|z| != 0. The general-z case needs the genuine two-variable argument and is untouched",
+      "y1": "(0.7849201454990266329557 + 1.307141278682045480492353j)",
+      "abs_y1": "1.5247025799298517702",
+      "y1_angles": [
+        "1.030019489685363686",
+        "1.407715442602953035",
+        "0.70385772130147651749"
+      ],
+      "isosceles_failure_a2_minus_a3": "0.70385772",
+      "on_unit_circle": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "proved": "Kummer's Lambda-side on |z| = 1: BlochWigner_lob(e^{i theta}) = Cl_2(theta), sorry-free, standard axioms. On the unit circle Kummer IS Clausen duplication.",
+    "not_proved": [
+      "Kummer for general z (needs the two-variable differential argument)",
+      "Im Li_2(e^{i theta}) = Cl_2(theta) for the corpus's cLiTwoExt",
+      "Vol(5_2) -- y_1 is off the unit circle"
+    ],
+    "sum_rule_status": "PROVED"
+  }
+}
