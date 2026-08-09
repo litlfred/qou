@@ -1003,7 +1003,7 @@ def main() -> int:
     w.save()
 
     ok = all(v == 1 for v in assertions.values())
-    print(f"\n  witness: computations/ground-state-ordering-a3.witness.json")
+    print("\n  witness: computations/probes/ground-state-ordering-a3.witness.json")
     return 0 if ok else 1
 
 
