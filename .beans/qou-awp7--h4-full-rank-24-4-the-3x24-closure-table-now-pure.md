@@ -1,10 +1,11 @@
 ---
 # qou-awp7
 title: 'H4 full rank: 24 = 4! — the 3x24 closure table, now pure symbolic rewriting'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T13:29:31Z
-updated_at: 2026-08-09T13:29:31Z
+updated_at: 2026-08-09T15:01:38Z
 ---
 
 
@@ -155,3 +156,45 @@ what the coordinate route costs, but the route itself is not needed.
 - `FullRank` called `H2` "the first — and so far only — object in the tree that is
   a Hecke algebra in the honest sense". `H3A` and `H4A` are honest Hecke algebras
   with sorry-free Wedderburn isomorphisms; they simply had no class instance.
+
+## DONE — `QOU/Hecke/FullRankFromWedderburn.lean`, and it needed neither route
+
+Neither the closure table nor the Wedderburn transport. `H3A R h` and `H4A R h`
+are **structures wrapping their coordinate vector** — one field each,
+`v : Fin 6 → R` and `v : Fin 24 → R` — with componentwise module structures. So
+each is `R`-linearly equivalent to its coordinate space and the dimension is `6`
+and `24` unconditionally.
+
+| declaration | content |
+|---|---|
+| `h3CoordEquiv`, `h4CoordEquiv` | `H3A R h ≃ₗ[R] (Fin 6 → R)`, `H4A R h ≃ₗ[R] (Fin 24 → R)` |
+| `finrank_H3A`, `finrank_H4A` | `= 6`, `= 24` |
+| **`isHeckeOfFullRank_H3A`**, **`isHeckeOfFullRank_H4A`** | **`instance`s** — no genericity hypotheses needed |
+| `wedderburn₃_block_count`, `wedderburn₄_block_count` | `1+1+2² = 3!`, `1+1+2²+3²+3² = 4!` |
+
+All axiom-clean. Verified by instance search: `IsHeckeOfFullRank ℝ 4 (H4A ℝ 1)`
+and `IsHeckeOfFullRank ℝ 3 (H3A ℝ 1)` both resolve, while
+`not_isHeckeOfFullRank_rankOne` still refutes `IsHeckeOfFullRank ℚ 4 ℚ`.
+
+### An intermediate attempt, and why it is not what shipped
+
+The first version transported `finrank` along `wedderburn₃`/`wedderburn₄`. It
+does not compile: with the whole H₃/H₄ Wedderburn chain imported,
+`Module.finrank_prod` will not fire on `K × K × M₂ × M₃ × M₃` — `simp` reports
+"made no progress", not an instance failure, and raising
+`synthInstance.maxHeartbeats` to 4 000 000 does not change it. The same goal
+proves instantly in a file importing only
+`Mathlib.LinearAlgebra.Dimension.Constructions`, so it is the imported instance
+environment, not the arithmetic. Worth knowing before anyone tries `finrank_prod`
+on a nested product inside this part of the tree.
+
+The block counts are kept as their own theorems: a generic Wedderburn count
+agreeing with an unconditional coordinate count is a real consistency check on
+the basis, and it costs one `decide` each.
+
+### What is still open
+
+`HeckeAlgebra R 3 q (H3A …)` and `HeckeAlgebra R 4 q (H4A …)` — the *class*
+instances on these carriers, built from the presentation lemmas already proved on
+their bases. Once those land, `QOU/Hecke/InstanceH3.H3Alg` and
+`InstanceH4.H4Alg` are redundant carriers and should be reduced or dropped.
