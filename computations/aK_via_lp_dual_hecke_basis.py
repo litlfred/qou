@@ -181,7 +181,14 @@ def solve_atom_lp(atom: str) -> dict:
     # u_0^* shadow price of net constraint
     u0 = result.y0_star
 
-    aK_chi_active = 1.0 + chi_y_sum / abs(u0) if abs(u0) > 1e-12 else float("nan")
+    # u0 is the shadow price of the net constraint and DIVIDES the chirality
+    # sum, so when it vanishes numerically the ratio is undefined — which the
+    # guard below already recognised. It recorded that as float("nan"), and
+    # json.dump writes a bare NaN token, which is not valid JSON; the residual
+    # below then inherited it. null, because undefined-by-a-zero-denominator is
+    # a MISSING value, not a pole of a-K itself.
+    _u0_ok = abs(u0) > 1e-12
+    aK_chi_active = (1.0 + chi_y_sum / abs(u0)) if _u0_ok else None
     aK_C = 1.0  # proton / neutron: A=1, closed form trivially 1
 
     return {
@@ -201,7 +208,12 @@ def solve_atom_lp(atom: str) -> dict:
         "chirality_y_sum": chi_y_sum,
         "a_K_chi_active": aK_chi_active,
         "a_K_C_closed": aK_C,
-        "chi_vs_C_residual": aK_chi_active - aK_C,
+        "chi_vs_C_residual": (aK_chi_active - aK_C
+                              if aK_chi_active is not None else None),
+        "a_K_chi_active_undefined_reason": (
+            None if _u0_ok else
+            "net-constraint shadow price u0 is numerically zero (|u0| <= 1e-12)"
+            " — a_K^chi_active = 1 + chi_y_sum/|u0| is undefined"),
         "per_basis": per_basis,
     }
 
@@ -261,7 +273,8 @@ def main() -> int:
               f"u0*={r['u0_star']:.6f}  active={active_names}")
         print(f"    sc_y_sum={r['self_conjugate_y_sum']:.6f}  "
               f"chi_y_sum={r['chirality_y_sum']:.6f}  "
-              f"a_K^chi_active={r['a_K_chi_active']:.6f}  "
+              f"a_K^chi_active="
+              f"{'n/a' if r['a_K_chi_active'] is None else format(r['a_K_chi_active'], '.6f')}  "
               f"a_K^C={r['a_K_C_closed']}")
     return 0
 
