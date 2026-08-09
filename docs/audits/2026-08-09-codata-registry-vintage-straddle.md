@@ -161,6 +161,24 @@ inconsistency. It makes no claim about the substrate identity's accuracy —
 that question is simply not tested by a round-trip of its own anchor, which is
 the point.
 
+## Blast radius of the follow-up fix (scoping datum, not a defect count)
+
+Correcting `M_P_MEV` is a one-line edit with a long tail. Counting references
+under `computations/`, `tools/`, `qou-mass/` (excluding `_deprecated/`):
+
+| | count |
+|---|---|
+| files referencing `M_P_MEV` / `M_P_MEV_VALIDATION` | **234** |
+| of those, files that construct a `WitnessBuilder` | **175** |
+
+**Read this as scope, not as 175 wrong numbers.** Most consume the value as a
+*validation comparison target*, where a 1.35 ppb shift is far below what the
+consumer resolves; a few may consume it as an *input*, which the
+three-calibration discipline forbids independently of vintage. The point is
+only that the fix regenerates a large committed-witness surface and therefore
+needs its own scoped, owner-gated branch with a long-compute plan — it is not
+an idle-drain item.
+
 ## Follow-ups (deliberately not in PR #4860)
 
 1. Correct `codata_2022_source.M_P_MEV` to the 2022 value and re-score the
