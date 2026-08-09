@@ -68,6 +68,20 @@ Q_RAY_MAX = mp.mpf("4.0")
 N_PHYS = 11      # grid points on the physical interval (1, q₀]
 N_RAY = 13       # grid points on the diagnostic ray (q₀, 4]
 
+# Bisection budget. Each F evaluation at n=12 costs ~32 s, so iteration count is
+# the dominant wall-clock term and must be chosen, not defaulted.
+#
+#   PHYSICAL crossing: bisected. 18 iterations on a bracket of width ~0.014 gives
+#   ~5e-8 resolution — already far finer than the f64 character path warrants,
+#   and the crossing location IS the reported quantity here.
+#
+#   DIAGNOSTIC ray crossings: NOT bisected. Their exact location is not
+#   load-bearing (only which side of q₀ the FIRST crossing falls on matters), and
+#   bisecting four of them at 30 iterations cost >60 min of wall clock on the
+#   first run for digits nobody should quote. Brackets are reported instead —
+#   cheaper AND more honest about the resolution actually available.
+N_BISECT_PHYS = 18
+
 COMP = Path(__file__).resolve().parent.parent
 
 _LAM12 = None
@@ -77,8 +91,16 @@ def lam_l3(n: int) -> list[tuple[int, ...]]:
     return [lam for lam in partitions_of(n) if len(lam) >= 3]
 
 
+_F_CACHE: dict[tuple[int, int, str], mp.mpf] = {}
+
+
 def F_sparse(Z: int, N: int, q: mp.mpf, progress: str = "") -> mp.mpf:
-    """FULL ℓ≥3 sum (no truncation) via the sparse character kernel."""
+    """FULL ℓ≥3 sum (no truncation) via the sparse character kernel. Memoized —
+    each evaluation costs ~32 s at n=12, and the grid/bisection paths revisit
+    endpoints."""
+    ck = (Z, N, mp.nstr(q, 40))
+    if ck in _F_CACHE:
+        return _F_CACHE[ck]
     n = 3 * (Z + N)
     y = y_lambda_at_q0_mpmath(n, q)
     tot = mp.mpf(0)
@@ -91,6 +113,7 @@ def F_sparse(Z: int, N: int, q: mp.mpf, progress: str = "") -> mp.mpf:
             eta = el / (i + 1) * (len(lams) - i - 1)
             print(f"      {progress} λ {i+1}/{len(lams)}  elapsed {el:.0f}s  ETA {eta:.0f}s",
                   flush=True)
+    _F_CACHE[ck] = tot
     return tot
 
 
@@ -159,7 +182,8 @@ def main() -> int:
     for i in range(len(grid_p) - 1):
         a, b = vals_p[i], vals_p[i + 1]
         if a != 0 and b != 0 and (a > 0) != (b > 0):
-            cross_p.append(float(bisect_cross(f, grid_p[i], grid_p[i + 1], a, b, iters=30)))
+            cross_p.append(float(bisect_cross(f, grid_p[i], grid_p[i + 1], a, b,
+                                              iters=N_BISECT_PHYS)))
     print(f"\n   ⁴He  F(q_lo)={float(vals_p[0]):+.6e}   F(q₀)={float(vals_p[-1]):+.6e}"
           f"   sign {int(mp.sign(vals_p[0])):+d}→{int(mp.sign(vals_p[-1])):+d}")
     print(f"   crossings on (1,q₀] (PHYSICAL): {cross_p if cross_p else 'none'}")
@@ -177,15 +201,19 @@ def main() -> int:
         el = time.time() - t0
         print(f"   q={mp.nstr(q,10):14s} F={float(v):+.6e}   "
               f"({el:.0f}s elapsed, ETA {el/(k+1)*(N_RAY-k-1):.0f}s)", flush=True)
+    # Brackets, NOT bisected values — see the N_BISECT_PHYS note. The ray
+    # crossing locations are not load-bearing; only which side of q₀ the FIRST
+    # one falls on matters, and a bracket states that without implying digits the
+    # f64 character path cannot support.
     seq_q = [vals_p[-1]] + vals_r
     seq_g = [Q0] + grid_r
-    cross_r = []
+    cross_r_brackets = []
     for i in range(len(seq_g) - 1):
         a, b = seq_q[i], seq_q[i + 1]
         if a != 0 and b != 0 and (a > 0) != (b > 0):
-            cross_r.append(float(bisect_cross(f, seq_g[i], seq_g[i + 1], a, b, iters=30)))
-    print(f"\n   crossings on (q₀,4] (DIAGNOSTIC ONLY): "
-          f"{[f'{q:.6f}' for q in cross_r] if cross_r else 'none'}")
+            cross_r_brackets.append([float(seq_g[i]), float(seq_g[i + 1])])
+    print(f"\n   sign changes on (q₀,4] (DIAGNOSTIC ONLY, reported as BRACKETS): "
+          f"{[f'({lo:.4f},{hi:.4f})' for lo, hi in cross_r_brackets] if cross_r_brackets else 'none'}")
 
     # ── 4. per-λ decomposition at q₀ ───────────────────────────────────────
     print("\n" + "─" * 88)
@@ -210,10 +238,10 @@ def main() -> int:
     print(" VERDICT (⁴He, n=12)")
     print(f"   sign on the PHYSICAL interval: {int(mp.sign(vals_p[0])):+d} → "
           f"{int(mp.sign(vals_p[-1])):+d}   crossings: {cross_p if cross_p else 'none'}")
-    print(f"   first DIAGNOSTIC crossing above q₀: "
-          f"{cross_r[0] if cross_r else 'none on (q₀,4]'}")
-    print("   A-ladder (crossing q):  n=6 ≈ 1.0537 [≤q₀] · n=9 ≈ 1.43–1.46 [>q₀] · "
-          f"n=12 {'≈ %.4f' % cross_r[0] if cross_r else '— none ≤4'}")
+    print(f"   first DIAGNOSTIC sign change above q₀ (bracket): "
+          f"{cross_r_brackets[0] if cross_r_brackets else 'none on (q₀,4]'}")
+    print("   A-ladder (first crossing q):  n=6 ≈ 1.0537 [≤q₀] · n=9 ≈ 1.43–1.46 [>q₀] · "
+          f"n=12 {'≈ %.5f [≤q₀]' % cross_p[0] if cross_p else '— none ≤ q₀'}")
     print("=" * 88)
 
     # ── witness ────────────────────────────────────────────────────────────
@@ -252,8 +280,17 @@ def main() -> int:
     w.add_data("diagnostic_ray_above_q0", {
         "q_grid": [float(q) for q in grid_r],
         "F_values": [float(v) for v in vals_r],
-        "crossings": cross_r,
-        "first_crossing": cross_r[0] if cross_r else None,
+        "sign_change_brackets": cross_r_brackets,
+        "first_sign_change_bracket": cross_r_brackets[0] if cross_r_brackets else None,
+        "n_sign_changes": len(cross_r_brackets),
+        "bisected": False,
+        "why_not_bisected": (
+            "The ray crossing LOCATIONS are not load-bearing — only which side of "
+            "q₀ the first sign change falls on matters. Bisecting them at n=12 "
+            "(~32 s per F evaluation) cost >60 min of wall clock on the first run "
+            "for digits the f64 character path cannot support anyway. Brackets are "
+            "reported instead: cheaper, and honest about the available resolution."
+        ),
         "ray_max_q": float(Q_RAY_MAX),
     })
     w.add_data("per_partition_at_q0_top8", [
