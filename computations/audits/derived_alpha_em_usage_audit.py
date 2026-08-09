@@ -136,7 +136,25 @@ def scan() -> dict[str, list[tuple[str, int, str]]]:
         # Skip the audit itself — its own regexes contain the literals.
         if p.name == Path(__file__).name:
             continue
+        in_doc, delim = False, ""
         for i, line in enumerate(text.splitlines(), 1):
+            # Skip docstring/prose regions. Without this the audit flags its own
+            # documentation: a docstring sentence containing "137.03" and an "="
+            # looks exactly like an assignment. Not hypothetical — it produced a
+            # VACUOUS regression test here, which kept "finding" the
+            # coulomb_energy defect after that defect was fixed, because it was
+            # matching the prose describing the old behaviour.
+            stripped = line.strip()
+            if in_doc:
+                if delim in line:
+                    in_doc = False
+                continue
+            for d in (chr(34) * 3, chr(39) * 3):
+                if stripped.startswith(d) and stripped.count(d) == 1:
+                    in_doc, delim = True, d
+                    break
+            if in_doc:
+                continue
             if CODATA_PAT.search(line):
                 rel = str(p.relative_to(ROOT))
                 out[classify(line, rel)].append(
@@ -189,8 +207,14 @@ def self_test() -> int:
     chk("trailing comment does not mask a real assignment",
         classify("ALPHA_HBAR_C_MEV_FM = 1.43996   # CODATA",
                  "coulomb_energy.py") == "INPUT")
-    chk("scan finds the known coulomb_energy defect",
-        any("coulomb_energy" in r for r, _, _ in scan()["INPUT"]))
+    # Synthetic, not live-tree. The original asserted the coulomb_energy defect
+    # was still PRESENT, so it went vacuous the moment that defect was fixed —
+    # it kept passing by matching the docstring prose describing the old
+    # behaviour, which is exactly the failure the docstring-skip above prevents.
+    chk("the coulomb_energy defect shape is caught",
+        classify("ALPHA_HBAR_C_MEV_FM = 1.43996", "coulomb_energy.py") == "INPUT")
+    chk("live tree: coulomb_energy is now CLEAN",
+        not any("coulomb_energy" in r for r, _, _ in scan()["INPUT"]))
     print(f"\n{'PASS' if not fails else 'FAIL'} — {fails} failure(s)")
     return 1 if fails else 0
 

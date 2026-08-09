@@ -20,9 +20,12 @@ for light nuclei), vs the production σ/σ⁻¹ form's ~200–350% error.
 Model + inputs (standard nuclear physics, NOT fit to binding data):
     E_C(Z, A) = (3/5) · Z(Z−1) · α_EM · ℏc / R,    R = r₀ · A^{1/3},
 with
-    α_EM · ℏc = 1.43996 MeV·fm   (CODATA fine-structure × ℏc; the framework's derived
-                                  α_EM ≈ 1/137 substitutes 1:1 to the quoted precision),
-    r₀        = 1.2 fm           (standard uniform-charged-sphere nuclear radius constant).
+    α_EM      = DERIVED from q₀ (Bring zero-mode / q[9]_q[10]_q), giving
+                1/α_EM = 137.035935094 and α_EM·ℏc = 1.4399652199 MeV·fm.
+                It was CODATA until 2026-08-09; see the α_EM block below.
+    ℏc        = 197.3269804152 MeV·fm  (unit conversion, legitimately external),
+    r₀        = 1.2 fm           (EMPIRICAL saturation constant — the module's
+                                  largest remaining import; wrong for A ≤ 4).
 The `Z(Z−1)` (rather than `Z²`) is the self-energy of Z discrete protons (no proton self-
 interaction). The uniform-sphere model over-estimates the Coulomb displacement energy of light nuclei;
 treat E_C as the leading EM term, not a high-precision value.
@@ -66,27 +69,83 @@ change any strong-binding witness; it is an additive term reported alongside the
 """
 from __future__ import annotations
 
-# Standard nuclear-physics inputs (not fit to binding data).
-ALPHA_HBAR_C_MEV_FM = 1.43996   # α_EM · ℏc  (CODATA); framework α_EM ≈ 1/137 substitutes 1:1
-R0_FM = 1.2                      # uniform-sphere nuclear radius constant, R = r₀ · A^{1/3}
+import sys
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+if str(HERE) not in sys.path:
+    sys.path.insert(0, str(HERE))
+
+import _path_bridge  # noqa: F401, E402
+import mpmath as mp  # noqa: E402
+
+# ── α_EM: DERIVED, not CODATA (fixed 2026-08-09, bean qou-usft) ──────────
+# This module used to hard-code `ALPHA_HBAR_C_MEV_FM = 1.43996`, the CODATA
+# value, as a Python float. Two defects in one line:
+#
+#   * PROVENANCE. The framework DERIVES α_EM from q₀ (the Bring zero-mode /
+#     q[9]_q[10]_q form) and already uses the derived value in the meson EM
+#     sector (`meson_em_sinh_closed_form._alpha_em_inv_derived`). Consuming
+#     CODATA here made every Coulomb energy in the binding dashboard — a
+#     PREDICTED observable — quietly depend on an experimental input. That is
+#     not a small thing when the framework's headline is that it is
+#     parameter-free. Found by `audits/derived_alpha_em_usage_audit.py`.
+#   * FLOAT64, against the standing owner directive. Now mpmath throughout.
+#
+# The numerical effect is tiny and that is the point: derived 1/α_EM =
+# 137.035935094 vs CODATA 137.035999177, i.e. 468 ppb apart, shifting E_C by
+# 3.6 ppm. The number barely moves; the CLAIM does.
+#
+# ℏc is a unit conversion (CODATA, exact-by-definition inputs), not a physical
+# input being predicted, so it legitimately stays.
+HBAR_C_MEV_FM = mp.mpf("197.3269804152")
+
+# r₀ = 1.2 fm remains an EMPIRICAL saturation constant and is the module's
+# largest remaining import. It is a heavy-nucleus constant and FAILS badly for
+# light nuclei: at A = 3 it gives R = 1.7307 fm against a measured equivalent
+# 2.5382 fm, a −31.8 % error and the source of the +30.7 % E_C over-estimate.
+# The derived replacement for A ≤ 4 is the binding length ℏc/√(2μS_sep)
+# (−6.3 % at ³He, −1.9 % at ³H) — see bean qou-usft. NOT wired yet.
+R0_FM = mp.mpf("1.2")
+
+# The uniform-BALL shape factor. Also an import: with the radius divided out,
+# the shape-only factor spans 0.4547 (exponential) → 0.4886 (Gaussian), a 7.3 %
+# spread that is the same size as the whole Nolen–Schiffer anomaly. Deriving the
+# density profile (q-CLT) rather than assuming a uniform ball is tracked on
+# qou-usft.
+UNIFORM_SPHERE_FACTOR = mp.mpf(3) / 5
 
 
-def nuclear_radius_fm(A: int) -> float:
-    """R = r₀ · A^{1/3} fm — the uniform-charged-sphere radius."""
-    return R0_FM * A ** (1.0 / 3.0)
+def alpha_em_hbar_c_mev_fm() -> "mp.mpf":
+    """α_EM·ℏc in MeV·fm, with α_EM DERIVED from q₀ (not CODATA)."""
+    from q_parameter import Q_50_DIGIT_STR
+    from meson_em_sinh_closed_form import _alpha_em_inv_derived
+    return HBAR_C_MEV_FM / _alpha_em_inv_derived(mp.mpf(Q_50_DIGIT_STR))
 
 
-def coulomb_energy_mev(Z: int, A: int) -> float:
+def nuclear_radius_fm(A: int) -> "mp.mpf":
+    """R = r₀ · A^{1/3} fm — the uniform-charged-sphere radius.
+
+    Saturation scaling. Valid for heavy nuclei; see R0_FM above for why it is
+    wrong for A ≤ 4."""
+    return R0_FM * mp.mpf(A) ** (mp.mpf(1) / 3)
+
+
+def coulomb_energy_mev(Z: int, A: int) -> "mp.mpf":
     """Electrostatic energy E_C = (3/5)·Z(Z−1)·α_EM·ℏc/(r₀·A^{1/3}) in MeV.
 
     Z = proton number, A = mass number. Returns 0 for Z < 2 (no proton pair).
-    This is the energy by which the EM repulsion REDUCES the net nuclear binding."""
+    This is the energy by which the EM repulsion REDUCES the net nuclear binding.
+
+    Returns an `mpf`, not a float — strictly more precise than the previous
+    float64 return, so callers that wrap it in `mp.mpf(str(...))` are unaffected."""
     if Z < 2 or A < 1:
-        return 0.0
-    return 0.6 * Z * (Z - 1) * ALPHA_HBAR_C_MEV_FM / nuclear_radius_fm(A)
+        return mp.mpf(0)
+    return (UNIFORM_SPHERE_FACTOR * Z * (Z - 1)
+            * alpha_em_hbar_c_mev_fm() / nuclear_radius_fm(A))
 
 
-def mirror_displacement_mev(Z_hi: int, Z_lo: int, A: int) -> float:
+def mirror_displacement_mev(Z_hi: int, Z_lo: int, A: int) -> "mp.mpf":
     """Coulomb displacement energy ΔE_C = E_C(Z_hi, A) − E_C(Z_lo, A) for a mirror
     pair at fixed A (Z_hi > Z_lo). Positive: the higher-Z member is less bound by ΔE_C.
     On a charge-symmetric strong core this equals the mirror binding split B(lo) − B(hi)."""
