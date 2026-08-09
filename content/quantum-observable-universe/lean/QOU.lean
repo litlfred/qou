@@ -411,6 +411,14 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape
+-- Anchor-followups cluster (beans qou-o3ta / qou-4g4a): the interface scalar,
+-- the Markov-Gram signature, and the Temperley-Lieb tower. Added to the root
+-- import list 2026-08-09 -- all three were ORPHANS, compiling only when named
+-- explicitly on the lake command line, so a plain `lake build` never checked
+-- them and no CI run would have caught a regression in any of them.
+import QOU.QBeta.InterfaceScalar
+import QOU.QBeta.GramSignature
+import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge
