@@ -87,7 +87,7 @@ def main() -> int:
         "(mirror), and B is swapped, not graded. Under the full involution "
         "both crossing-energy channels are odd."
     )
-    wb.set_content_block("obs:crossing-energy-decomposition")
+    wb.set_content_block("def:bar-involution")
 
     q, p, m, k = sp.symbols("q p m k", positive=True)
 

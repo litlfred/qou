@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T21:10:27.688958+00:00",
-  "commitSha": "f3ed541b157c16ee8f7f3faa1ff07891089b3e6d",
+  "computedAt": "2026-08-09T00:02:23.911180+00:00",
+  "commitSha": "e1cf4c57c7dd6ac435512383b07aa003e1f8f895",
   "assertions": [
     {
       "name": "checks_failed",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 863,
+  "durationMs": 771,
   "computation": "bar-parity-involution-atlas",
   "scriptFile": "bar_parity_involution_atlas_probe.py",
-  "scriptHash": "3fdd8d3dc546",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "06ed44a97fe2",
+  "scriptCommitSha": "bc8eb3ce3e2417eb43328e2f7cfa5c06f9354285",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
     "mpmath": "1.3.0"
   },
   "description": "The four corpus gradings labelled bar-even/bar-odd are aspects of one involution (def:bar-involution) applied by halves: A and D are graded by the coefficient half q -> 1/q, C by the diagram half (mirror), and B is swapped, not graded. Under the full involution both crossing-energy channels are odd.",
-  "contentBlock": "obs:crossing-energy-decomposition",
+  "contentBlock": "def:bar-involution",
   "parameters": {
     "q_0_pin": "experimental/proton",
     "uses_muon_built_cache": false,

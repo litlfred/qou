@@ -115,7 +115,7 @@ def main() -> int:
         "of eigenbasis-structural-lemmas item 2 holds, but its sign is "
         "(-1)^L in the word length, not a per-channel eps_lambda."
     )
-    wb.set_content_block("prop:eigenbasis-structural-lemmas")
+    wb.set_content_block("rem:eigenbasis-structural-lemmas")
 
     checks: dict[str, bool] = {}
 

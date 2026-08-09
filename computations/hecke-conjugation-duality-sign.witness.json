@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T21:38:03.530199+00:00",
-  "commitSha": "9a9aa65a8a76487042a0814c85e2c0dc1f0d8d23",
+  "computedAt": "2026-08-09T00:02:22.740887+00:00",
+  "commitSha": "e1cf4c57c7dd6ac435512383b07aa003e1f8f895",
   "assertions": [
     {
       "name": "checks_failed",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5842,
+  "durationMs": 5772,
   "computation": "hecke-conjugation-duality-sign",
   "scriptFile": "hecke_conjugation_duality_sign_probe.py",
-  "scriptHash": "e2d4e5e929a0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3101c9855458",
+  "scriptCommitSha": "363a8ee77cad6d5cdfb05daf9b665387948df408",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "mpmath": "1.3.0"
   },
   "description": "The V_lambda <-> V_{lambda'} intertwiner is the sign-twisted map sigma -> -sigma^{-1}, not the bar involution. The character identity of eigenbasis-structural-lemmas item 2 holds, but its sign is (-1)^L in the word length, not a per-channel eps_lambda.",
-  "contentBlock": "prop:eigenbasis-structural-lemmas",
+  "contentBlock": "rem:eigenbasis-structural-lemmas",
   "parameters": {
     "exact": "sympy over QQ(q); no substrate pin used",
     "q_0_pin": "not applicable (symbolic in q)",
