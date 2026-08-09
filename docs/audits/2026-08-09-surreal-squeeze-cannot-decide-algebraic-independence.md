@@ -162,6 +162,152 @@ prune leaves open. Note it still needs the same effectivity input as the
 tower-height contrapositive: a bound on which grades can be reached at a given
 polynomial degree.
 
+## The tower-height contrapositive, examined
+
+The prune above kills the *squeeze* route. The corpus's other route is the
+contrapositive in `rem:yekutieli-transcendence-shadow`: a relation forces the
+tower to close at finite height, contradicting perpetual obstruction. Attacked
+in [`QOU/Archimedean/TowerHeightAttack.lean`](../../content/quantum-observable-universe/lean/QOU/Archimedean/TowerHeightAttack.lean)
+(sorry-free, 7 declarations, axioms clean). Three results.
+
+**1. The stated inference is invalid** (`relation_does_not_force_closure`,
+`geomDecomp_relation`). `VolumeTowerDecomposition` is **ungraded** — its
+content is `HasSum levelContribution totalVolume`, a convergent sum of reals.
+A relation among the *totals* is therefore **one real equation**, and one
+equation cannot force term-wise vanishing. Counterexample, over any brane
+tower: `Φ_A(n) = (1/2)ⁿ` and `Φ_B(n) = 2·(1/3)ⁿ` have every level non-zero,
+yet their totals `2` and `3` satisfy `3A − 2B = 0`. Linear relations are
+polynomial relations, so the general step falls.
+
+**2. Step 3 has no instance to run on** (`perpetual_excludes_baseline`). The
+only concrete decompositions in the corpus — `volumeTowerDecomp_4_1`,
+`volumeTowerDecomp_5_2`, `volumeTowerDecomp_B3` — are all
+`baselineDecomposition`: `Φ₀ = Vol`, `Φ_n = 0` for `n ≥ 1`. That is a tower
+closed at height `0`, the *opposite* of perpetual obstruction. Proved that no
+`CSEvaluationFaithful` over a perpetual tower can use one. (The source flags
+the baseline as trivial and promises a "REFINEMENT"; the refinement does not
+exist.)
+
+**3. The repair — and effectivity turns out to be free.** Suppose the
+decomposition is **graded**: level `n` at `q`-grade `n`, with a relation over
+`ℚ[q,q⁻¹]` holding grade by grade. Then a relation is one equation *per level*
+rather than one in total, and everything the contrapositive wants follows:
+`gradewise_determines_level` pins each level of one tower to the other's;
+`gradewise_closure_propagates` transfers closure level-by-level; and
+`recurrence_step` gives the general shape — a relation of `q`-degree `D`
+convolves grade `k` of the relation with grade `n−k` of the tower, so the
+grade-`n` equation is `Σ_{k≤D} c_k Φ_{n−k} = 0`, an **order-`D` linear
+recurrence**. With `c₀ ≠ 0`, a vanishing window of width `D` closes the tower
+forever (`closed_above_window`).
+
+So **`h(P) = deg_q P`** — the height is read straight off the relation, no
+arithmetic input required. The difficulty migrates entirely from *"bound the
+height"* to *"grade the tower"*.
+
+That is the same target the prune reaches from the other side:
+`grade_separation_needs_nonstandard` says separation needs a non-standard
+object, and a graded tower (level `n` at `ω`-grade `n`) is exactly one. **Both
+routes converge on constructing the grading.**
+
+Findings 1 and 2 are **scope-(a)**: statements about the *stated argument*,
+not about the conjecture, which may well be true via a graded version of this
+same route.
+
+## Probe: how far does fibre-level independence actually go?
+
+[`computations/jet_algebraic_independence_probe.py`](../../computations/jet_algebraic_independence_probe.py)
+upgrades the corpus's *linear* jet certificate (rank-3 Jacobian at order 2) to
+a *polynomial* one: is there a non-zero `P ∈ ℚ[x,y,z]` of degree `≤ d` with
+`P(tr_M(4₁), tr_M(5₂), tr_M(𝓑₃)) = O(gᴺ⁺¹)`?
+
+Exact throughout — rational power-series division, exact null space over `ℚ`,
+no floats. The traces carry a framing `√q`, so the expansion is in `g = √q − 1`
+rather than `h = q − 1`; since `h = 2g + g²` is a formal change of variable
+with non-zero linear term, annihilators are preserved either way.
+
+The test is only meaningful once the number of equations `N+1` reaches the
+number of monomials `M = C(d+3,3)`; the probe sets `N = M + 8` and reports
+both. Results are in `jet-algebraic-independence.witness.json`.
+
+**Result — the relations exist, and the minimal degree is 7.** This corrects
+the framing this probe was written under. All three traces are rational in
+`u = √q` (numerator/denominator `u`-degrees 14/9, 16/9, 18/9), so all three lie
+in `ℚ(u)`, which has **transcendence degree 1 over ℚ**. Any *two* elements of
+such a field are already algebraically dependent — so a relation among the
+three is **forced**. The probe therefore does not test *whether*; it measures
+*where*:
+
+| degree `d` | equations | null space | stable under 3× the equations? |
+|---|---|---|---|
+| ≤ 6 | 93 → 385 | `0` | yes — no relation |
+| 7 | 129 → 421 | `3` | yes — **genuine**, 3-dimensional |
+
+Positive control **PASS** (plants `z − x² + 2y`, recovers it). Stability is the
+load-bearing check: adding equations can only raise the rank, so a dimension
+surviving a large margin increase is not a truncation artifact.
+
+**Consequence for the reduction.** `JetOrderIndependence` is a **rank**
+certificate — *linear* independence of the jet coefficient vectors. The
+series it certifies are *algebraically dependent*. So
+`JetTransportImpliesIndependence` cannot be a transfer *of independence* from
+the series to the volumes: the series-level algebraic independence it would
+transfer is false. `TowerHeightAttack.linearIndependent_not_algebraicallyIndependent`
+records the general reason in the cheapest form — `t`, `t²`, `t³` are linearly
+independent yet satisfy `z = x·y`.
+
+This does **not** refute `conj:hyperbolic-volume-transcendence`. The `q → 1`
+jet of `tr_M` is not an expansion of `Vol(K)` — the volume lives in the
+root-of-unity asymptotics — so dependence downstairs says nothing about
+independence upstairs. What it does is remove one apparent route to it, and
+sharpen what the bridge must actually do.
+
+## Aligning with the Ramanujan / quantum-modularity side
+
+Asked whether the Ramanujan-style `q`-series identities in the framework can be
+aligned with this. They can, and more concretely than expected — **the corpus
+already contains the graded object the tower attack says is missing.**
+
+`docs/audits/2026-08-01-fibre-to-observable-bridge-verdict.md` §1a and
+[`rem-ohtsuki-tower-bar-parity.md`](../../content/quantum-observable-universe/mass-theory/rem-ohtsuki-tower-bar-parity.md)
+/ `OhtsukiTowerBarParity.lean` carry the Ohtsuki tower, Lean-scaffolded
+sorry-free:
+
+$$\mathfrak{V}_b = \mathfrak{V}_0 + \sum_{n\ge 1}\kappa_n\,(2\pi b^2)^n,
+\qquad \kappa_n \in \mathbb{Q}(\sqrt 3)\cdot \pi^{\lceil n/2\rceil}.$$
+
+Read against this audit:
+
+* **This is the graded tower.** Level `n` sits at grade `n` in `ℏ = 2πb²`, with
+  the complex volume at grade `0` and arithmetic coefficients above it. That is
+  exactly the shape `TowerHeightAttack §3` requires and
+  `VolumeTowerDecomposition` (a bare `HasSum`) does not supply.
+* **It is also the surreal lift.** `𝔙 = Vol + (infinitesimal corrections)` is
+  the `Ṽ` of the lifted-grade section above: `ord_ω(P(𝔙)) < 0` exactly when
+  `P(Vol) = 0`. So a volume relation forces an infinite family of conditions on
+  the `κ_n` — objects in a *known, computable* ring, not opaque reals.
+* **Where Ramanujan enters.** The Kashaev invariant of `4₁` is the
+  Kontsevich–Zagier strange series `F(q) = Σ (q;q)_n`, a false-theta object in
+  the Ramanujan circle; `kashaev-surreal.md` already records that its Stokes
+  constants are **integer `q`-series identified with 3d-index data** and, under
+  the Fantini–Rella modular-resurgence template, are coefficients of an
+  L-function. The Ramanujan-style identities are the arithmetic of the `κ_n`
+  and the Stokes data — precisely the input needed to constrain the graded
+  conditions.
+
+So the alignment is: **squeeze/bounds → wrong tool (proved here); graded
+Ohtsuki tower → right tool, already present; Ramanujan/quantum-modular
+identities → the arithmetic that constrains its coefficients.** The corpus has
+all three pieces and does not currently connect them to the independence
+question — no file mentioning Ohtsuki also mentions
+`hyperbolic-volume-transcendence`.
+
+Honest limits: the `κ_n` live in a fixed number field times powers of `π`, and
+`𝔙_0` is the *complex* volume (`Vol + i·CS`), so extracting a real-volume
+relation from tower conditions is not automatic; and the Ohtsuki expansion is
+per-knot at its own root of unity, so a *joint* graded object over the three
+knots still has to be built. That construction is the live target (bean
+`qou-5b23`), now with a named starting point rather than a blank page.
+
 ## Related defect found and fixed
 
 `JetOrderIndependence.lean` carried two global instances that discharged their
