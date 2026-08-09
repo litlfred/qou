@@ -108,4 +108,32 @@ theorem k_sq_eq_half {k : ℝ}
     (by rw [sin_five_pi_div_six]; norm_num)
     (cSigma_sq_mul_abs_cot cot_saddle_ne_zero) hk
 
+/-! ### What `hτ` still asks for
+
+`hc` is derived above.  `hτ` is NOT the same kind of step, and it is worth
+being precise about why.
+
+`c_σ` is *defined by* the asymptotics, so `hc` was an identity about a shape
+those asymptotics produce.  `τ_DG` is defined by an entirely different
+construction — the Dimofte–Garoufalidis 1-loop invariant, gluing equations and
+the Neumann–Zagier matrix — and `QOU.OneLoopEdgeLattice` formalises only the
+algebra that construction runs on, saying in its own header that nothing there
+"proves that the multi-cusp construction computes the adjoint torsion".  In
+this corpus `|τ(4₁)|` is a SnapPy computation
+(`computations/one_loop_torsion.py`), matching DG's worked example.
+
+So `hτ : |τ_DG| = |cot θ*|/2` is a bridge between two independent
+constructions, and the `τ` side of it has no Lean definition to bridge to.  It
+is not one more step of this arc; it needs the 1-loop invariant formalised
+first.  What CAN be pinned here is the target: -/
+
+/-- **The number `hτ` has to produce.**  `|cot θ*|/2 = √3/2`.
+
+Stated so the remaining gap is a definite claim in Lean rather than prose:
+`hτ` asserts `|τ_DG(4₁)| = √3/2`, which is Dimofte–Garoufalidis' own worked
+figure-eight example and is, in this corpus, a numerical result only. -/
+theorem abs_cot_saddle_div_two :
+    |Real.cos (5 * π / 6) / Real.sin (5 * π / 6)| / 2 = Real.sqrt 3 / 2 := by
+  rw [cot_five_pi_div_six, abs_neg, abs_of_nonneg (Real.sqrt_nonneg 3)]
+
 end QOU.Knot.FigureEightVolume
