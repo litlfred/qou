@@ -68,13 +68,31 @@ Gell-Mann--Nishijima relation cannot be closed.
   independent of the writhe.  Candidate: ribbon-framing twist
   (Definition~\ref{def:strand-twist-datum}).
   Battery (exploratory, not wired): of $10{,}000$ helon-style
-  assignments, only $4$ survive the spectrum + nucleon-GMN battery;
-  the $u$-quark twist multiset $\{0,1,1\}$ and the electron twist
-  $\{-1,-1,-1\}$ are uniquely determined
-  (\texttt{strand-twist-y-battery.witness.json}).
-  The derivation gap: whether these twist multisets are forced by
-  the categorical braid words (not just consistent with them) is
-  the open content of the hypercharge conjecture.
+  assignments, $4$ survive
+  (\texttt{strand-twist-y-battery.witness.json}) --- but that ratio
+  carries \emph{no} corroboration, and is not a $2500\!:\!1$ filter.
+  Proved sorry-free in
+  \texttt{QOU/StandardModel/TwistBatteryVacuity.lean}: the spectrum
+  battery is exactly $T = 3Q$ (the $-2I_3$ common to candidate and
+  target cancels, leaving the defining equation of
+  $Q_{\mathrm{twist}}$, not a test of it); the nucleon check is
+  entailed by charge additivity and states one condition twice; and
+  the $\mathbb{Z}_6$ condition never sees the assignment, so it
+  filters nothing.  Each flavour is thus filtered independently by
+  one linear equation, and $4 = 1 \times 2 \times 2 \times 1$ counts
+  multisets with totals $3Q = (2,-1,0,-3)$ --- the "uniquely
+  determined" $u$ and electron multisets being the two totals that
+  admit a single multiset.
+  A parameter-free repair using the \emph{canonical} ribbon twist
+  ($Q = c(\lambda)/3$, $c$ the content sum) was tested and fails: at
+  $n = 3$ it gives the integer charges $\{+1,0,-1\}$, and no
+  $n \le 8$ yields both quark charges
+  (\texttt{ribbon\_twist\_charge\_quantum\_probe.py}); scope-(a) for
+  that reading only.
+  The derivation gap is therefore the entire content: whether the
+  twist multisets are forced by the categorical braid words (not
+  just consistent with them) is the open content of the hypercharge
+  conjecture, and nothing else in the battery constrains anything.
 
 \item \textbf{Continuous $G_2$ completion.}
   The discrete skeleton of $\mathrm{SU}(3) \subset G_2 =
