@@ -19,5 +19,5 @@ export default proposition({
   lean: { ref: "qou:QOU.spectral_chart_correspondence",
     validation: "not_checked",
   },
-  uses: ["rem:affine-chart-origin-of-i-and-q"],
+  uses: [],
 });

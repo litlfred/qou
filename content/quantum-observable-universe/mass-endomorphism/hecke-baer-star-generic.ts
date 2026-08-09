@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:explicit-central-idempotent",
     "rem:vc-as-depth-2-instance",
   ],
   cites: [],
