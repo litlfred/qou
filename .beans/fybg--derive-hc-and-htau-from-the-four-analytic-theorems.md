@@ -1199,3 +1199,75 @@ Only the bookkeeping between "model sum over Z" and "the actual Kashaev sum":
      gives `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi} (1 + o(1))`.
   3. `hc` (already algebraically proved in `OneLoopPrefactorInvariance.lean` --
      it is "Stirling factor squared over Gaussian width"), then `htau`.
+
+---
+
+## Step 13 -- the Gaussian tail outside the window (`QOU/MathlibExt/GaussianTailBound.lean`)
+
+Two theorems, both `[propext, Classical.choice, Quot.sound]`. The last piece of
+the window-vs-`Z` comparison; the easy half was already in step 12.
+
+    tsum_gaussian_sub_sum_Icc_le :
+      sum_{n in Z} e^{-a(n-c)^2} - sum_{|n|<=W} e^{-a(n-c)^2}
+        <= e^{a c^2} e^{-a(W+1)^2/4} (1 + 2 sigma/(1-sigma)),  sigma = e^{-a/4}
+
+plus `hasSum_int_geometric` (`sum_{n in Z} q^|n| = 1 + 2q/(1-q)`), which is
+step 8's `hasSum_int_geometric_ne_zero` with the `n=0` term put back.
+
+The bound is deliberately crude -- three give-aways in a row: `(n-c)^2 >=
+n^2/2 - c^2` (costs the `e^{ac^2}`), `n^2 >= (W+1)^2/2 + n^2/2` for
+`|n| >= W+1`, and `n^2 >= |n|` to reach a geometric series. A sharp bound would
+keep `e^{-a(W+1)^2}` instead of `e^{-a(W+1)^2/4}`. Probe part (iii) MEASURES the
+crudeness (overshoot 2.1e12 at a=1, c=0, W=5) rather than leaving "crude" as an
+assertion.
+
+### The window exponent is a real tradeoff, and my first guess was wrong
+
+Writing `W = N^p`:
+
+  * this tail is `~ 1.93 sqrt(N) exp(-1.36 N^{2p-1})` -- wants `p` large;
+  * step 10's cubic is `~ N^{3p-2}` -- wants `p` small, and needs `p < 2/3`.
+
+    N       p      tail/main    cubic
+    1e4   0.55     6.22e+00    3.98e-02
+    1e4   0.60     3.43e-02    1.58e-01
+    1e4   0.65     7.65e-08    6.31e-01
+    1e6   0.55     8.57e+00    7.94e-03
+    1e6   0.60     8.30e-07    6.31e-02
+    1e6   0.65     1.01e-34    5.01e-01
+
+**`p = 0.6` is the balanced choice** (tail exponent `N^{0.2}` against cubic
+`N^{-0.2}`), and NEITHER end of `(1/2, 2/3)` is comfortable:
+
+  * at `p = 0.55` the tail bound is still 8.6x the main term at `N = 1e6` --
+    `1.36 N^{0.1} = 5.4` has not yet beaten the `0.5 log N = 6.9` coming from
+    the `sqrt(N)` prefactor. That crossover is near `N ~ 1e10`. Asymptotically
+    valid, practically useless.
+  * at `p = 0.65` the tail is nothing but the cubic decays only like
+    `N^{-0.05}` -- WORSE overall.
+
+I had written "the tail is much happier near the top of that range"; the
+numbers say otherwise and the probe docstring now says so. The probe asserts
+the `p=0.55` uselessness explicitly, so the claim cannot rot.
+
+### Probe gotcha
+
+Part (i) first summed the geometric series over a fixed `+-400`. At `q = 0.99`
+that truncates at `0.99^400 = 0.018` and reported `195.45` against the correct
+`199` -- a wrong sum, not a rounding artefact. Truncation is now adaptive in
+`q`. (The `q = 0.9` case failed too, but only in the 18th digit; the `q = 0.99`
+failure is the one that mattered.)
+
+### Remaining before `hc`
+
+All the pieces now exist. What is left is assembly, in one file:
+
+  1. window `[k*-W, k*+W]` -> step 11 sandwich -> step 12 evaluation
+     -> step 13 tail;
+  2. everything outside the window -> step 5 (lossy there is free, the region
+     is exponentially small);
+  3. divide by `g_{k*}`, use step 7 for `log g_{k*}`, and read off
+     `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi} (1 + o(1))` with
+     `c_sigma = 3^{-1/4}`;
+  4. `hc` -- already algebraically proved in `OneLoopPrefactorInvariance.lean`;
+     then `htau`.
