@@ -244,6 +244,66 @@ areas; do not assume the acute case is general).
 > (an argument does not apply unchanged), and it **refutes** the stronger
 > reading that the identity is acute-only. It wires to nothing.
 
+> **H4-5c-ii(b) — the TILING is under attack (2026-08-09, resumed after the
+> Λ-sum).** Route settled and *numerically certified before any Lean was
+> written*; recorded here so it is not re-derived. Three ingredients, none of
+> which needs `arctan`, barycentric coordinates, or a convex-hull API:
+>
+> 1. **The wedge is exactly THREE half-planes.** For `0 < ψ < π/2`,
+>
+>        wedgeAt R θ ψ  =  {w·u_θ < R cos ψ} ∩ {w·v_{θ−ψ} > 0} ∩ {w·v_{θ+ψ} < 0}
+>
+>    (`u_φ = (cos φ, sin φ)`, `v_φ = (−sin φ, cos φ)`). The two edge conditions
+>    ARE `|w·v_θ| < (w·u_θ)·tan ψ`, by dividing by `cos ψ > 0`. `wedgeAt_upper` /
+>    `wedgeAt_lower` (already proved, for the disjointness) are one direction of
+>    this; the tiling needs the converse too.
+>
+> 2. **`⊆` is ONE linear identity, not a convexity argument.** For a wedge at
+>    `(θ, ψ)` and the *next* chord half-plane at `(θ+ψ+ψ', ψ')`:
+>
+>        cos ψ · F  =  sin(ψ+ψ') · G₂  +  cos ψ' · G₃
+>
+>    where `F = R cos ψ' − w·u_{θ+ψ+ψ'}` (the goal), `G₂ = −(w·v_{θ+ψ})` (the
+>    shared-edge slack, `> 0` by `wedgeAt_upper`) and `G₃ = R cos ψ − w·u_θ`
+>    (the wedge's own chord slack, `> 0` by definition). Both coefficients are
+>    positive because `0 < ψ+ψ' < π` — **which is exactly acuteness again**, the
+>    same place it entered the disjointness. `sympy` certificate: the residual is
+>    `−cos ψ'·(w·u_θ)·(sin²ψ+cos²ψ−1)`, i.e. **one** `linear_combination` on
+>    `Real.sin_sq_add_cos_sq ψ`, and the `θ`-Pythagoras is not needed at all.
+>    The mirror case (`θ−ψ−ψ'`, using `wedgeAt_lower`) has the *same* certificate.
+>
+> 3. **`⊇` is a sign relation, not a covering computation.** With
+>    `x = w·v_t`, `y = w·v_{t+2γ}`, `z = w·v_{t+2γ+2α}`:
+>
+>        sin(2α)·x + sin(2β)·y + sin(2γ)·z = 0
+>
+>    All three coefficients are `> 0` (`2α, 2β, 2γ ∈ (0, π)` — acuteness a third
+>    time), so **`x, y, z` cannot be all-positive or all-negative**. The six
+>    surviving sign patterns each land in one sector, and `T ⊆ H_i` gives
+>    `T ∩ S_i ⊆ W_i` for free. So the covering needs no geometry beyond this one
+>    relation. Certificate: coefficient `2·cos α·sin α·(w₁ sin t − w₂ cos t)·
+>    (cos²γ+sin²γ+1)` on the γ-Pythagoras.
+>
+> The exceptional set is the three *lines* `x=0`, `y=0`, `z=0` (not merely the
+> three spine segments) — larger than needed, but null and much cheaper: each is
+> the kernel of a nonzero linear functional.
+>
+> **Pre-Lean numerical certification** (all in this session, before writing Lean):
+> both `⊆` identities and the sign relation to `< 9e-15` over 20 000 random
+> parameter draws each; the half-plane triple's three vertices lie on exactly two
+> chord lines each and strictly inside the third (0 violations / 300 triangles);
+> and `milnorWedges` vs the half-plane triple agree at the **set** level on
+> 59 999 interior grid points across 40 random acute triangles (0 mismatches),
+> with 0 all-same-sign occurrences in 200 000 draws.
+>
+> **The honesty question this step raises, and it is NOT about the tiling.**
+> Defining the inscribed triangle *as* the intersection of the three chord
+> half-planes makes the tiling provable but risks assuming the geometry. The
+> anchor: prove the three vertices are on the boundary in the right pattern
+> (each on exactly two chord lines, strictly inside the third) — that pins the
+> half-plane triple to *the* triangle with those vertices. A full
+> `interior (convexHull {P₁,P₂,P₃})` identification is NOT attempted; say so.
+
 ## Prerequisites still open
 
 * **H2** (`qou-5gai`) — the invariances. Strictly speaking H4 can be *stated*
