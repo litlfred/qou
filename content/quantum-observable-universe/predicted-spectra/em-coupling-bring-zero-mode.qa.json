@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/Archimedean/EmCouplingBringZeroMode.lean"
   },
   "source_hashes": {
-    "ts": "85a93fa0314c",
     "md": "da66f7613d55",
-    "lean": "54297b280ce3"
+    "ts": "85a93fa0314c",
+    "lean": "54297b280ce3",
+    "lean_statement": "709f5bf942bf"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -310,11 +311,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T14:03:09.392Z",
-        "reviewed_sha": "9a2453e325158cdf02b6908cdd3a6478598ced4f"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "wall-base-ring-minimal": [
@@ -330,11 +331,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "2c9e5f16d44f",
-          "script_commit_sha": "43a5454114aef7e165b9ed5a278911f824cd8034"
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T14:03:09.392Z",
-        "reviewed_sha": "9a2453e325158cdf02b6908cdd3a6478598ced4f"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2112,5 +2113,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-09T22:20:05.350Z"
 }
