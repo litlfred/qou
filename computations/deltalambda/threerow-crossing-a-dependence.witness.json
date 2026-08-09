@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+f64-seminormal",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T22:46:38.100907+00:00",
-  "commitSha": "2965d82b1f450e3e234d9ea9fd3b714ea22dae2f",
+  "computedAt": "2026-08-09T01:06:07.571816+00:00",
+  "commitSha": "b10072bf1db70c49e05da234cddde02bec05aac6",
   "assertions": [
     {
       "name": "D_sign_at_q0",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 14,
   "computation": "threerow-crossing-a-dependence",
   "scriptFile": "threerow_crossing_a_dependence_probe.py",
   "scriptHash": "245de588c10d",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "5d777fd8b4a8a207511c222a13e9055fa62df135",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
