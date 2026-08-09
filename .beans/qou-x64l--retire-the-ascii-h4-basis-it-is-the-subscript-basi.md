@@ -148,3 +148,121 @@ products as a `Finset.sum` over the basis and reindex along `piIdx` with
 `Finset.sum_nbij` / `Equiv.sum_comp`, so the 24 terms are never written out and
 `simp` never sees a 70-term polynomial. The `phi_word_*` lemmas are exactly the
 per-term input such a proof needs.
+
+---
+
+## 2026-08-09 — `phi_mulNF` and `trM4_cyclic` are proved
+
+Steps 1–2 of the plan above are done, sorry-free and axiom-clean.
+
+### What closed it: reindex the sum, do not unfold it
+
+The three recorded `simp` failures share a single cause, which was not obvious
+until the fourth attempt was framed differently. `mulNF` and `mulNF₄` are both
+24-term sums over word actions, but the terms correspond **under `piIdx`**, not
+position by position. Any tactic that unfolds both sides and matches term
+against term therefore has to permute 24 terms *by rewriting* — which `simp`
+will not do, and which `ring` cannot see through the generator actions. That is
+why attempt 3 produced 70 terms instead of 24: `simp` was not failing to
+rewrite, it was distributing across a mismatched pairing.
+
+Reindexing does it in one step, and never writes the terms out:
+
+```lean
+theorem phi_mulNF (u v : Fin 24 → R) :
+    phi (mulNF h u v) = mulNF₄ h (phi u) (phi v) := by
+  rw [mulNF_expand_right, mulNF₄_expand_right, phi_sum]
+  have step : ∀ k : Fin 24, phi (v k • wordActionA h k u)
+      = (fun j => phi v j • wordAction h j (phi u)) (piEquiv k) := fun k => by
+    rw [phi_smul, phi_wordActionA]; simp
+  rw [Finset.sum_congr rfl fun k _ => step k]
+  exact Equiv.sum_comp piEquiv (fun j => phi v j • wordAction h j (phi u))
+```
+
+The coefficient bookkeeping is the single line `phi v (piIdx k) = v k`, which is
+`phi`'s definition composed with `invIdx_piIdx` — not a computation.
+
+### What had to be built first
+
+The subscript basis already had its right basis action packaged
+(`HeckeH4AlgebraLaws.wordAction`, `mulNF₄_e_right`, `mulNF₄_expand_right`); the
+ASCII basis did not. New in `QOU/Machinery/H4AsciiPresentation.lean`:
+`wordActionA`, `mulNF_zero_right`, `mulNF_sum_right`, `basis_decompA`,
+`mulNF_e_right`, `mulNF_expand_right` — the same five, on the other table.
+`wordActionA` is transcribed from `mulNF`'s own term list and cross-checked
+against it **and** against the 24 `phi_word_*` statements; all 24 agree.
+
+New in the bridge: `piEquiv` (the relabelling as an `Equiv`, which is what makes
+a sum reindexable), `phi_smul`, `phi_sum`, `phi_apply_piIdx`, and
+`phi_wordActionA` — the 24 `phi_word_*` lemmas packaged as one equation in the
+index, which is the form a sum can be reindexed by. `fin_cases` + `exacts`;
+the five `Matrix.cons_val_*` simp lemmas one expects to need are all reported
+unused, so `simp only [wordActionA, wordAction, piIdx]` suffices.
+
+### One `exact` needed its argument spelled out
+
+`exact Equiv.sum_comp piEquiv _` fails with "typeclass instance problem is
+stuck" — with `f` a metavariable the `AddCommMonoid` on the codomain cannot be
+found. Passing `f` explicitly fixes it. Worth remembering: that error message
+does not mean the lemma is wrong for the goal.
+
+### Correction to step 4 of the plan above
+
+**Retiring the ASCII chain does not follow from the consumers moving across.**
+The importers are now exactly: the chain itself, `H4AsciiPresentation`, and
+`H4BasisBridge`. Nothing else in the tree imports `MarkovTraceH4` or
+`MarkovTraceH4Gram*`. But the bridge is not a consumer that can be repointed —
+`trM4_cyclic`'s *proof* runs through `H4.trM_cyclic`, so the 576-entry Gram
+closure is a dependency of the theorem, not merely of its users. Deleting the
+chain would delete the proof.
+
+What this does achieve is narrowing the target: the ASCII chain now has exactly
+**one** remaining job in the whole tree, and it is `trM_cyclic`. Retiring it
+requires an independent proof of cyclicity on the subscript basis, and the route
+is already identified — `QOU.Machinery.BilinearTrace.gram_symm_of_rep_decomp`:
+if `trM4` decomposes as a finite weighted sum of representation traces, each
+multiplicative on `mulNF₄`, Gram symmetry follows with no per-pair computation,
+and `HeckeH4Wedderburn.wedderburn₄` supplies exactly those five representations.
+What remains is identifying the Markov weights. Not attempted.
+
+### Step 3 done too: the Markov trace at `n = 4`
+
+`QOU/Hecke/MarkovTraceOnH4A.lean` — `markovTraceH4A : MarkovTrace 4 q (H4A K (q − q⁻¹))`
+and `contextH4 : QOU.Shared.MarkovTraceContext`. `cyclic` is `trM4_cyclic`; that
+was the whole obstruction, and it is not free at `n = 4` because `H₄(q)` is
+noncommutative.
+
+The trace values cost nothing to evaluate, because every one of them is a basis
+vector and `trM4 z h (e₄ j) = TRM4 z h j` collapses the 24-term sum to a single
+weight (`trM4_e₄`, by `Pi.single_apply` + `Finset.sum_ite_eq'`). The generators
+are `b 1`, `b 2`, `b 6`; the three ordered products are
+
+| product | basis vector | via | weight |
+|---|---|---|---|
+| `σ₀σ₁` | `b 4` | `b_tree_4` | `z²` |
+| `σ₁σ₂` | `b 7` | `b_tree_7` | `z²` |
+| `σ₀σ₂` | `b 8` | `farcomm02`, then `b_tree_8` | `z²` |
+
+The third is the one `n = 3` cannot ask — the far-commuting pair — and reaching
+its basis vector needs the *relation*, not just the word tree, since the tree
+only gives `σ₂σ₀ = b 8`.
+
+Supporting: `trM4_add` / `trM4_smul` added next to `trM4` in
+`HeckeH4StabilizationRung` (the `trM4` counterparts of `MarkovTraceH4`'s
+`trM_add` / `trM_smul`, which existed only on the ASCII side).
+
+**Cost warning, measured.** Touching `HeckeH4StabilizationRung` invalidates
+`HeckeH4BlockMap211` and `HeckeH4BlockMap31`, which are the real build pole:
+each ran **>25 minutes of wall time at ~6 GB RSS** (both at once, ~12 GB), with
+`set_option maxHeartbeats` up to 16 000 000 and ten such settings per file — the
+`.olean` is 69 MB, against 36 MB for a Gram chunk. Any future edit to the rung
+pays that again. If `trM4_add`/`trM4_smul` had gone in the leaf that uses them
+instead, the rung would not have been touched at all; they are placed next to
+`trM4` deliberately, but the price is worth knowing before the next edit there.
+
+### One-line trap: `rw` against a `def`
+
+`s0 K q` is a `def` for `b K q 1`, so `rw [b_tree_4 K q]` fails on a goal
+mentioning `s0` — "did not find an occurrence" — even though the two are
+definitionally equal. `show traceMap K q z (b K q 1 * s1 K q) = z * z` first;
+`show` goes through `isDefEq`, `rw` does not. Cost me three identical errors.

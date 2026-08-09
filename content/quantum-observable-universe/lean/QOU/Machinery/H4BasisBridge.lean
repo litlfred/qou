@@ -5,12 +5,12 @@ import QOU.Machinery.H4AsciiPresentation
 /-!
 # `QOU.Machinery.H4BasisBridge` — the two `H₄` normal-form bases are one basis
 
-The tree carries two 24-word normal-form bases for `H₄(q)` and they have never
-been connected:
+The tree carries two 24-word normal-form bases for `H₄(q)`, and each had exactly
+what the other lacked:
 
-| | module | has | lacks |
+| | module | has | lacked |
 |---|---|---|---|
-| **ASCII** | `MarkovTraceH4` + `MarkovTraceH4Gram0..7` | `trM`, `gram_symm`, **`trM_cyclic`** | associativity, `Ring` |
+| **ASCII** | `MarkovTraceH4` + `MarkovTraceH4Gram0..7` + `H4AsciiPresentation` | `trM`, `gram_symm`, **`trM_cyclic`** | associativity, `Ring` |
 | **subscript** | `HeckeH4StabilizationRung` + `HeckeH4AlgebraLaws` | the presentation, `mulNF₄_assoc`, `H4A` `Ring`/`Algebra`, `wedderburn₄` | **cyclicity** |
 
 They are the same basis relabelled. Mapping each reduced word to its `S₄`
@@ -21,13 +21,25 @@ all, every difference a single far-commutation swap `σ₀σ₂ ↔ σ₂σ₀` 
 group elements they index.
 
 `phi` is the relabelling. It intertwines all three generator actions
-(`phi_mulσ0/1/2`, depth 1 each), hence every word action (`phi_word_*`, a chain
-of rewrites — no coordinate expansion), hence the products; and it carries `trM`
-to `trM4`. Cyclicity therefore transports: **`trM4_cyclic`**, with no second
-576-entry Gram closure.
+(`phi_mulσ0/1/2`, depth 1 each), hence every word action (`phi_wordActionA`),
+hence the products (**`phi_mulNF`**); and it carries `trM` to `trM4`
+(`trM4_phi`). So the missing half transports: **`trM4_cyclic`** — cyclicity on
+the subscript basis, with **no second 576-entry Gram closure**.
+
+## The move that makes `phi_mulNF` go through
+
+Both products are 24-term sums over word actions, but the terms correspond
+*under `piIdx`*, not position by position. Every attempt that unfolds the two
+sums and matches term against term therefore has to permute 24 terms by
+rewriting — which `simp` will not do (three failures, postmortem at the foot of
+this file). Reindexing does it in one step: put both sides in `Finset.sum` form
+(`mulNF_expand_right`, `mulNF₄_expand_right`), carry each term across with
+`phi_wordActionA`, and reindex along `piEquiv`. The 24 terms are never written
+out.
 
 Bean qou-x64l. Once the consumers move across, the ASCII chain — ~6.5k generated
-lines and the tree's build pole, ~4.3 GB peak — can be retired.
+lines and the tree's build pole, ~4.3 GB peak — can be retired; `trM4_cyclic` is
+what they need to move to.
 
 Generated: the permutation and the word correspondence are computed from
 `MarkovTraceH4.mulNF` and `HeckeH4AlgebraLaws.wordAction` themselves, so they
@@ -54,17 +66,40 @@ def invIdx : Fin 24 → Fin 24 := ![0, 3, 2, 8, 7, 13, 1, 4, 6, 5, 10, 12, 9, 11
 @[simp] theorem piIdx_invIdx (j : Fin 24) : piIdx (invIdx j) = j := by
   fin_cases j <;> rfl
 
+/-- `piIdx` as an equivalence. This is what lets a 24-term `Finset.sum` be
+*reindexed* along the relabelling instead of expanded — the move the whole
+product correspondence turns on. -/
+def piEquiv : Fin 24 ≃ Fin 24 where
+  toFun := piIdx
+  invFun := invIdx
+  left_inv := invIdx_piIdx
+  right_inv := piIdx_invIdx
+
+@[simp] theorem piEquiv_apply (i : Fin 24) : piEquiv i = piIdx i := rfl
+
 /-- Relabel an ASCII coordinate vector into subscript coordinates. -/
 def phi (u : Fin 24 → R) : Fin 24 → R := fun j => u (invIdx j)
 
 /-- `phi` is a linear bijection; this is its inverse. -/
 def psi (w : Fin 24 → R) : Fin 24 → R := fun i => w (piIdx i)
 
+omit [CommRing R] in
 @[simp] theorem psi_phi (u : Fin 24 → R) : psi (phi u) = u := by
   funext i; simp [psi, phi]
 
+omit [CommRing R] in
 @[simp] theorem phi_psi (w : Fin 24 → R) : phi (psi w) = w := by
   funext j; simp [psi, phi]
+
+omit [CommRing R] in
+@[simp] theorem phi_apply_piIdx (u : Fin 24 → R) (i : Fin 24) :
+    phi u (piIdx i) = u i := by simp [phi]
+
+theorem phi_smul (c : R) (u : Fin 24 → R) : phi (c • u) = c • phi u := rfl
+
+theorem phi_sum {ι : Type*} (s : Finset ι) (f : ι → (Fin 24 → R)) :
+    phi (∑ k ∈ s, f k) = ∑ k ∈ s, phi (f k) := by
+  funext j; simp [phi, Finset.sum_apply]
 
 /-! ## `phi` intertwines the three generator actions
 
@@ -84,6 +119,7 @@ theorem phi_mulσ2 (u : Fin 24 → R) : phi (mulσ2 h u) = mulσ₂ h (phi u) :=
 
 /-! ## Hence every word action, by rewriting — never by coordinate expansion -/
 
+omit [CommRing R] in
 /-- ASCII word 0 (γ) ↦ subscript word 0 (γ). -/
 theorem phi_word_0 (u : Fin 24 → R) :
     phi (u) = phi u := by
@@ -92,47 +128,47 @@ theorem phi_word_0 (u : Fin 24 → R) :
 /-- ASCII word 1 (σ₂) ↦ subscript word 6 (σ₂). -/
 theorem phi_word_1 (u : Fin 24 → R) :
     phi (mulσ2 h (u)) = mulσ₂ h (phi u) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ2]
 
 /-- ASCII word 2 (σ₁) ↦ subscript word 2 (σ₁). -/
 theorem phi_word_2 (u : Fin 24 → R) :
     phi (mulσ1 h (u)) = mulσ₁ h (phi u) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ1]
 
 /-- ASCII word 3 (σ₀) ↦ subscript word 1 (σ₀). -/
 theorem phi_word_3 (u : Fin 24 → R) :
     phi (mulσ0 h (u)) = mulσ₀ h (phi u) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ0]
 
 /-- ASCII word 4 (σ₁σ₂) ↦ subscript word 7 (σ₁σ₂). -/
 theorem phi_word_4 (u : Fin 24 → R) :
     phi (mulσ2 h (mulσ1 h (u))) = mulσ₂ h (mulσ₁ h (phi u)) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ1, phi_mulσ2]
 
 /-- ASCII word 5 (σ₂σ₁) ↦ subscript word 9 (σ₂σ₁). -/
 theorem phi_word_5 (u : Fin 24 → R) :
     phi (mulσ1 h (mulσ2 h (u))) = mulσ₁ h (mulσ₂ h (phi u)) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ1, phi_mulσ2]
 
 /-- ASCII word 6 (σ₂σ₀) ↦ subscript word 8 (σ₂σ₀). -/
 theorem phi_word_6 (u : Fin 24 → R) :
     phi (mulσ0 h (mulσ2 h (u))) = mulσ₀ h (mulσ₂ h (phi u)) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ0, phi_mulσ2]
 
 /-- ASCII word 7 (σ₀σ₁) ↦ subscript word 4 (σ₀σ₁). -/
 theorem phi_word_7 (u : Fin 24 → R) :
     phi (mulσ1 h (mulσ0 h (u))) = mulσ₁ h (mulσ₀ h (phi u)) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ0, phi_mulσ1]
 
 /-- ASCII word 8 (σ₁σ₀) ↦ subscript word 3 (σ₁σ₀). -/
 theorem phi_word_8 (u : Fin 24 → R) :
     phi (mulσ0 h (mulσ1 h (u))) = mulσ₀ h (mulσ₁ h (phi u)) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ0, phi_mulσ1]
 
 /-- ASCII word 9 (σ₁σ₂σ₁) ↦ subscript word 12 (σ₁σ₂σ₁). -/
 theorem phi_word_9 (u : Fin 24 → R) :
     phi (mulσ1 h (mulσ2 h (mulσ1 h (u)))) = mulσ₁ h (mulσ₂ h (mulσ₁ h (phi u))) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ1, phi_mulσ2]
 
 /-- ASCII word 10 (σ₀σ₁σ₂) ↦ subscript word 10 (σ₀σ₁σ₂). -/
 theorem phi_word_10 (u : Fin 24 → R) :
@@ -153,7 +189,7 @@ theorem phi_word_12 (u : Fin 24 → R) :
 /-- ASCII word 13 (σ₀σ₁σ₀) ↦ subscript word 5 (σ₀σ₁σ₀). -/
 theorem phi_word_13 (u : Fin 24 → R) :
     phi (mulσ0 h (mulσ1 h (mulσ0 h (u)))) = mulσ₀ h (mulσ₁ h (mulσ₀ h (phi u))) := by
-  simp only [phi_mulσ0, phi_mulσ1, phi_mulσ2]
+  simp only [phi_mulσ0, phi_mulσ1]
 
 /-- ASCII word 14 (σ₂σ₁σ₀) ↦ subscript word 14 (σ₂σ₁σ₀). -/
 theorem phi_word_14 (u : Fin 24 → R) :
@@ -228,29 +264,61 @@ subscript counterpart is `HeckeH4StabilizationRung.far_commute_σ₀σ₂`. (Thi
 carried its own copy until bean qou-ti7p folded the whole ASCII presentation into
 `H4AsciiPresentation`.) -/
 
-/-! ## What is NOT here yet: the product correspondence
+/-! ## The word actions correspond, as functions of the index
 
-`phi_mulNF : phi (mulNF h u v) = mulNF₄ h (phi u) (phi v)` is the one step left,
-and with it `trM4_cyclic` — cyclicity on the subscript basis — follows in four
-lines from `H4.trM_cyclic` (sorry-free on the ASCII basis) and `phi_psi`:
+`phi_word_0 … phi_word_23` say the same thing one index at a time. Packaged
+against `wordActionA` / `wordAction` — the two tables' right basis actions — the
+statement becomes a single equation in `k`, which is what a `Finset.sum` can be
+reindexed by. -/
 
-```lean
+theorem phi_wordActionA (k : Fin 24) (u : Fin 24 → R) :
+    phi (wordActionA h k u) = wordAction h (piIdx k) (phi u) := by
+  fin_cases k <;> simp only [wordActionA, wordAction, piIdx]
+  exacts [rfl, phi_mulσ2 h u, phi_mulσ1 h u, phi_mulσ0 h u,
+    phi_word_4 h u, phi_word_5 h u, phi_word_6 h u, phi_word_7 h u, phi_word_8 h u,
+    phi_word_9 h u, phi_word_10 h u, phi_word_11 h u, phi_word_12 h u, phi_word_13 h u,
+    phi_word_14 h u, phi_word_15 h u, phi_word_16 h u, phi_word_17 h u, phi_word_18 h u,
+    phi_word_19 h u, phi_word_20 h u, phi_word_21 h u, phi_word_22 h u, phi_word_23 h u]
+
+/-! ## The product correspondence
+
+The step three `simp`-based attempts could not reach — see the postmortem below.
+It goes through by never writing the 24 terms out: both products become a
+`Finset.sum` over the basis (`mulNF_expand_right`, `mulNF₄_expand_right`), `phi`
+passes through the sum termwise, each term is carried across by
+`phi_wordActionA`, and the sum is *reindexed* along `piEquiv`. The coefficient
+bookkeeping is the one line `phi v (piIdx k) = v k` — which is `phi`'s
+definition composed with `invIdx_piIdx`, not a computation. -/
+
+theorem phi_mulNF (u v : Fin 24 → R) :
+    phi (mulNF h u v) = mulNF₄ h (phi u) (phi v) := by
+  rw [mulNF_expand_right, mulNF₄_expand_right, phi_sum]
+  have step : ∀ k : Fin 24, phi (v k • wordActionA h k u)
+      = (fun j => phi v j • wordAction h j (phi u)) (piEquiv k) := fun k => by
+    rw [phi_smul, phi_wordActionA]
+    simp
+  rw [Finset.sum_congr rfl fun k _ => step k]
+  exact Equiv.sum_comp piEquiv (fun j => phi v j • wordAction h j (phi u))
+
+/-! ## Cyclicity transports
+
+`trM4` had no cyclicity theorem on the subscript basis, which is exactly what
+`H4A` — and hence `QOU.Hecke.InstanceOnH4A.instHeckeAlgebraH4A` — is built on.
+It has one now, and **without a second 576-entry Gram closure**: the ASCII basis
+already carries `QOU.Machinery.H4.trM_cyclic` (sorry-free, via `gram_symm`), the
+products correspond, and the traces correspond. -/
+
 theorem trM4_cyclic (z : R) (x y : Fin 24 → R) :
     trM4 z h (mulNF₄ h x y) = trM4 z h (mulNF₄ h y x) := by
   have hx : x = phi (psi x) := (phi_psi x).symm
   have hy : y = phi (psi y) := (phi_psi y).symm
   rw [hx, hy, ← phi_mulNF, ← phi_mulNF, trM4_phi, trM4_phi]
   exact trM_cyclic z h (psi x) (psi y)
-```
 
-**The obstacle is mechanical, not mathematical.** Everything the statement needs
-is above: the generator actions correspond, hence every word action does
-(`phi_word_*`), the traces agree (`trM4_phi`), and `mulNF`/`mulNF₄` are literal
-24-term sums over exactly those word actions with coefficients related by
-`(phi v) (piIdx i) = v i`.
+/-! ## Postmortem: three `simp` routes that do not work
 
-Three `simp`-based approaches have failed, each differently — recorded so a
-fourth guess is not needed:
+Kept because the failures are instructive about *why* the structured route is
+the right one, not merely that it is.
 
 1. **`phi` in the same `simp only` as `← phi_word_*`.** `phi` unfolds first and
    destroys the rewrite patterns.
@@ -265,12 +333,12 @@ fourth guess is not needed:
    coefficients indexed by `invIdx j` rather than by literals — `simp` is
    mangling the coefficient vector, not merely failing to rewrite.
 
-What that points at: stop unfolding `mulNF`/`mulNF₄` by `simp` at all. The tree
-already has the structured accessors — `mulNF₄_e_right`, `mulNF₄_expand_right`,
-`mulNF₄_sum_left/right`, `basis_decomp₄` — and the proof should go through those,
-expressing both products as `Finset.sum` over the basis and reindexing along
-`piIdx` with `Finset.sum_nbij` or `Equiv.sum_comp`, so the 24 terms are never
-written out. Bean qou-x64l.
+All three unfold `mulNF`/`mulNF₄` into their 24 inline terms and then try to
+match term against term. But the two tables' terms are *not* in correspondence
+position-by-position — they correspond under `piIdx` — so any tactic that
+rewrites in place has to permute 24 terms by rewriting, which `simp` will not do
+and `ring` cannot see through the generator actions. Reindexing a `Finset.sum`
+does it in one step. Bean qou-x64l.
 -/
 
 end QOU.Machinery.H4Bridge

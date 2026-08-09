@@ -54,13 +54,13 @@ variable {R : Type u} [CommRing R] (h : R)
 /-! ## The quadratic relation -/
 
 theorem mulσ_sq0 (v : Fin 24 → R) : mulσ0 h (mulσ0 h v) = v + h • mulσ0 h v := by
-  funext i; fin_cases i <;> simp [mulσ0, Pi.add_apply, Pi.smul_apply]
+  funext i; fin_cases i <;> simp [mulσ0]
 
 theorem mulσ_sq1 (v : Fin 24 → R) : mulσ1 h (mulσ1 h v) = v + h • mulσ1 h v := by
-  funext i; fin_cases i <;> simp [mulσ1, Pi.add_apply, Pi.smul_apply]
+  funext i; fin_cases i <;> simp [mulσ1]
 
 theorem mulσ_sq2 (v : Fin 24 → R) : mulσ2 h (mulσ2 h v) = v + h • mulσ2 h v := by
-  funext i; fin_cases i <;> simp [mulσ2, Pi.add_apply, Pi.smul_apply]
+  funext i; fin_cases i <;> simp [mulσ2]
 
 /-! ## Far-commutativity
 
@@ -107,5 +107,83 @@ theorem mulσ0_mulσ1_ne [Nontrivial R] :
   have h8 := congrFun hcon 8
   rw [mulσ01_e0_apply_eight, mulσ10_e0_apply_eight] at h8
   exact one_ne_zero h8
+
+/-! ## The right basis action
+
+`mulNF` is a 24-term sum `∑ⱼ vⱼ · (u · bⱼ)`, with the composites written out
+inline. Packaging them as a function of the index — exactly what
+`HeckeH4AlgebraLaws.wordAction` does for the subscript basis — turns that
+inline sum into a `Finset.sum`, which is the only form in which the 24 terms can
+be *reindexed* rather than expanded. `H4BasisBridge` needs precisely that: the
+two bases differ by the permutation `piIdx`, so the products correspond by
+reindexing the sum, not by unfolding it (three `simp`-based unfolding attempts
+failed, one producing 70 terms where 24 were expected).
+
+`wordActionA` is transcribed from `mulNF`'s own term list and cross-checked
+against it, and against the 24 `H4BasisBridge.phi_word_*` statements — all 24
+agree — so it cannot silently drift from the table it describes. -/
+
+/-- The right action of the `j`-th ASCII NF basis word, `u ↦ u · b_j` — the same
+24 composites `mulNF` sums over, packaged as a function of the index.
+Counterpart of `HeckeH4AlgebraLaws.wordAction`, on the other table. -/
+def wordActionA (h : R) : Fin 24 → (Fin 24 → R) → (Fin 24 → R) := ![
+  fun u => u,
+  fun u => mulσ2 h u,
+  fun u => mulσ1 h u,
+  fun u => mulσ0 h u,
+  fun u => mulσ2 h (mulσ1 h u),
+  fun u => mulσ1 h (mulσ2 h u),
+  fun u => mulσ0 h (mulσ2 h u),
+  fun u => mulσ1 h (mulσ0 h u),
+  fun u => mulσ0 h (mulσ1 h u),
+  fun u => mulσ1 h (mulσ2 h (mulσ1 h u)),
+  fun u => mulσ2 h (mulσ1 h (mulσ0 h u)),
+  fun u => mulσ1 h (mulσ0 h (mulσ2 h u)),
+  fun u => mulσ0 h (mulσ2 h (mulσ1 h u)),
+  fun u => mulσ0 h (mulσ1 h (mulσ0 h u)),
+  fun u => mulσ0 h (mulσ1 h (mulσ2 h u)),
+  fun u => mulσ1 h (mulσ2 h (mulσ1 h (mulσ0 h u))),
+  fun u => mulσ0 h (mulσ2 h (mulσ1 h (mulσ0 h u))),
+  fun u => mulσ1 h (mulσ0 h (mulσ2 h (mulσ1 h u))),
+  fun u => mulσ0 h (mulσ1 h (mulσ2 h (mulσ1 h u))),
+  fun u => mulσ0 h (mulσ1 h (mulσ0 h (mulσ2 h u))),
+  fun u => mulσ1 h (mulσ0 h (mulσ2 h (mulσ1 h (mulσ0 h u)))),
+  fun u => mulσ0 h (mulσ1 h (mulσ2 h (mulσ1 h (mulσ0 h u)))),
+  fun u => mulσ0 h (mulσ1 h (mulσ0 h (mulσ2 h (mulσ1 h u)))),
+  fun u => mulσ0 h (mulσ1 h (mulσ0 h (mulσ2 h (mulσ1 h (mulσ0 h u)))))]
+
+theorem mulNF_zero_right (h : R) (u : Fin 24 → R) :
+    mulNF h u (0 : Fin 24 → R) = 0 := by
+  funext i; simp [mulNF]
+
+/-- `mulNF u ·` commutes with finite sums in the right argument. -/
+theorem mulNF_sum_right (h : R) (u : Fin 24 → R) (s : Finset (Fin 24))
+    (f : Fin 24 → (Fin 24 → R)) :
+    mulNF h u (∑ j ∈ s, f j) = ∑ j ∈ s, mulNF h u (f j) := by
+  induction s using Finset.induction with
+  | empty => exact mulNF_zero_right h u
+  | @insert a s h1 ih =>
+    rw [Finset.sum_insert h1, Finset.sum_insert h1, mulNF_add_right, ih]
+
+/-- Basis decomposition `u = ∑ᵢ uᵢ • e i` on the ASCII basis. -/
+theorem basis_decompA (u : Fin 24 → R) : u = ∑ i, u i • (e (R := R) i) := by
+  funext j
+  rw [Finset.sum_apply]
+  simp [e, Pi.single_apply, smul_eq_mul, Finset.sum_ite_eq]
+
+/-- **Right basis action**: `u · b_j = wordActionA j u`; the coefficient vector
+`e j` selects exactly the `j`-th composite. -/
+theorem mulNF_e_right (h : R) (u : Fin 24 → R) (j : Fin 24) :
+    mulNF h u (e j) = wordActionA h j u := by
+  fin_cases j <;> (funext i; simp [mulNF, e, wordActionA])
+
+/-- Expansion of the ASCII NF product along the right basis:
+`u · v = ∑_j v_j • (u · b_j)`. This is the form the basis bridge reindexes. -/
+theorem mulNF_expand_right (h : R) (u v : Fin 24 → R) :
+    mulNF h u v = ∑ j, v j • wordActionA h j u := by
+  conv_lhs => rw [basis_decompA v]
+  rw [mulNF_sum_right]
+  exact Finset.sum_congr rfl fun j _ => by
+    rw [mulNF_smul_right, mulNF_e_right]
 
 end QOU.Machinery.H4
