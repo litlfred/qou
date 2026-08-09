@@ -1,89 +1,49 @@
 /-
-# The complex pentagon, assembled: `d/dx Σ L = 0` for `cRogersL`
+# The complex pentagon — and the 5₂ saddle sum rule
 
-Bean `qou-xblo`. This is the **chain-rule assembly** — the piece that turns the
-algebra of `FiveTwoSaddleSumRule.pentagon_deriv_x_eq_zero` (§7h) into a statement
-about the actual analytic function `MathlibExt.cRogersL`.
+Bean `qou-xblo`. This module carries the 5₂ lane's analytic input from
+"absent from Mathlib" to a **proof of the sum rule**.
 
-## What is proved
+## The two headline theorems
 
-`pentagonSum y` is the five-term sum
+`fiveTwo_saddle_sum_rule` — there are three roots of `X³ − 2X² + 3X − 1`, one
+real in `(0,1)` and a conjugate pair, and
 
-    L(x) + L(y) + L((1−x)/(1−xy)) + L(1−xy) + L((1−y)/(1−xy))
+    Σ Li₂(yⱼ) = −π²/6 − ½·log²y₃ + (2/3)·(arg y₁ − π)²
 
-with `L = cRogersL` the Rogers dilogarithm on `ℂ ∖ ((−∞,0] ∪ [1,∞))`. Given
+`fiveTwoSaddleSumRule_holds` — the same, in the form of the corpus's own
+conjecture class `QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule`, which is declared
+there with **no instance** and the comment "the statement is open". With
+`Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` and `b = (−1,+1,+1)`,
 
-* membership of `rogersDomain` at the four `x`-dependent arguments, and
-* the five **branch conditions** — the log expansions of the composite arguments —
+    Σⱼ Vⱼ = −3π²/2 + 2π·log(y₃)·i        so    Σⱼ Re Vⱼ = −3π²/2
 
-its `x`-derivative is `0` (`hasDerivAt_pentagonSum`). The three chain-rule
-factors `(y−1)/(1−xy)²`, `−y`, `(1−y)y/(1−xy)²` that §7h assumed are now proved
-(`hasDerivAt_argThree/Four/Five`), so nothing about the differentiation is taken
-on faith any more.
+Both sorry-free, axioms `[propext, Classical.choice, Quot.sound]`.
 
-## Why the branch conditions are hypotheses — and how far they travel
+## The chain
 
-They are not identities. `log a₃ = log(1−x) − log(1−xy)` fails whenever the two
-sides land on different sheets, and Route 45 measured the pentagon sum drifting
-by exactly that amount. So they enter as hypotheses. But they are not *stuck*
-there, and that is the second half of this module:
+1. **The five-term identity on `ℂ`.** `pentagonSum_eq_pi_sq_div_two`: for every
+   real `a ∈ (0,1)` and every `w` off both real cuts,
+   `L(a) + L(w) + L((1−a)/(1−aw)) + L(1−aw) + L((1−w)/(1−aw)) = π²/2`, with
+   `L = cRogersL`. The derivative vanishes by §7h's algebra; the branch defects
+   are holomorphic with vanishing derivative, so they travel from a real base
+   point; and for real `a` the whole of `rogersDomain` is regular.
+2. **The anharmonic group on `cRogersL`.** Reflection (`cRogersL_add_one_sub`),
+   inversion (`MathlibExt.cRogersL_add_inv`), and the four one-log forms — the
+   `log²` terms cancel completely, leaving `π²` plus `π` times one logarithm.
+3. **The branch equations.** `y² = (1−y)³` *is* the cubic, so
+   `exp(2 log y − 3 log(1−y)) = 1`; a `4π`-wide window pins `ε = (+1,−1,0)`.
+4. **The root data.** `SaddleRoots` bundles the cubic's root structure and is
+   inhabited (`ofRealRoot`, from the intermediate value theorem and an explicit
+   square root); everything else is derived from it.
 
-* `pentagon_branch_conditions_of_real` — all five hold on the positive real
-  square `0 < x, y < 1`. This is first of all a **non-vacuity** check: an
-  unsatisfiable hypothesis set would make `hasDerivAt_pentagonSum` prove
-  anything, and nothing in its statement rules that out.
-* each **defect** `d₃ = log a₃ − log(1−w) + log(1−wy)` and its four companions is
-  holomorphic where the logarithms are, with derivative identically `0`
-  (`hasDerivAt_defectThree` …). Hence `eq_zero_of_hasDerivAt_zero`: a defect that
-  vanishes at one point of an open connected region vanishes on all of it.
-* so `pentagonSum_eq_of_region_of_real` — on **any** open connected set of `x` on
-  which the pentagon stays regular and which contains a real point of `(0,1)`,
-  the complex five-term sum is constant.
+## What is *not* claimed
 
-And the constant is a number. `cRogersL` at a real point of `(0,1)` **is** the
-corpus's real `rogersL` (`cRogersL_ofReal` — the complex and real `Li₂` series
-are literally the same series), and the real pentagon sum is `π²/2`
-(`rogersL_pentagon`, from `FiveTwoAbelFiveTerm.rogersL_fiveTerm` plus three
-reflections). So `pentagonSum_eq_pi_sq_div_two_of_region` is a **complex
-five-term identity**, at every point of the region including points where
-nothing is real.
+The 5₂ **volume** conjecture is untouched. `Vol(5₂) = 3·D(y₁)` involves the
+Bloch–Wigner `D`, which cancels on Galois sums (see the bean) — nothing here
+speaks to it.
 
-The branch bookkeeping is therefore reduced to a single geometric question:
-*does such a region exist?*
-
-## The region, and the unconditional theorem
-
-It does, when **one** variable is real. For a real `a ∈ (0,1)` in the fixed slot,
-all four `w`-dependent arguments inherit a non-zero imaginary part from `w`, and
-a point with non-zero imaginary part is off *both* cuts automatically; where
-`Im w = 0` the point is real in `(0,1)`. So the regular region is `rogersDomain`
-itself — open, connected, containing `(0,1)`. Hence
-`pentagonSum_eq_pi_sq_div_two`, with **no** region hypothesis and no branch
-hypothesis:
-
-    L(a) + L(w) + L((1−a)/(1−aw)) + L(1−aw) + L((1−w)/(1−aw)) = π²/2
-
-for every real `a ∈ (0,1)` and every `w` off both real cuts.
-
-## ⚠ Where it stops, and why that is the point
-
-**One** variable. With both variables non-real the identity is false — at
-`(2+0.5i, 1.5−0.9i)` the pentagon misses `π²/2` by `(−0.0780 + 0.2303i)·π²`,
-which is not even a *real* multiple of `π²`, so it is a genuine `2πi·(log)` term
-and not a flattening integer. Measured in
-`computations/probes/qbeta_5two_route54_complex_pentagon_probe.py`.
-
-For the 5₂ lane this locates the obstruction exactly. The theorem **reaches** the
-pair `(y₃, y₁)` — the saddle cubic's real root `y₃ = 0.4301597…` against a
-complex one — and **does not reach** `(y₁, ȳ₁)`, which is the pair
-`Vol(5₂) = 3·D(y₁)` needs. That is Routes 45–46's drift and Neumann's `ker ν`,
-now with an address.
-
-The **real** five-term identity on `(0,1)` is separately proved, sorry-free, in
-`QOU/QBeta/FiveTwoAbelFiveTerm.lean` (`rogersL_fiveTerm`).
-
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
-
+-- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5 and §2
 -- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5
 -/
 import QOU.MathlibExt.ComplexRogersDilog
@@ -720,7 +680,8 @@ technicality: a regular region reaching the real square *forces* the naive log
 expansions, so where the flattening is non-trivial no such region can exist.
 That is the obstruction and the missing region seen twice.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem pentagonSum_eq_pi_sq_div_two_of_region {x₀ y : ℝ} {S : Set ℂ} (hS : IsOpen S)
     (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular (y : ℂ) w)
     (hx0 : 0 < x₀) (hx1 : x₀ < 1) (hy0 : 0 < y) (hy1 : y < 1)
@@ -785,7 +746,8 @@ What it *does* reach is the pair `(y₃, y₁)` — the 5₂ cubic's real root
 `Im y₁ ≠ 0`. Verified to 40 dps in
 `computations/probes/qbeta_5two_route54_complex_pentagon_probe.py`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 
 section Unconditional
 
@@ -916,7 +878,8 @@ alphabets — and their rank gap was exactly 1 every time. The new theorem does 
 add rank. What it does is *explain* why the plastic tower kept surfacing in
 Routes 40–48: it was never a coincidence, it is the same orbit.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 
 section SaddleStructure
 
@@ -1216,6 +1179,11 @@ theorem cubic_t : (S.t : ℂ) ^ 3 - 2 * (S.t : ℂ) ^ 2 + 3 * (S.t : ℂ) - 1 = 
 theorem cubic_a : S.a ^ 3 - 2 * S.a ^ 2 + 3 * S.a - 1 = 0 := by
   linear_combination S.a ^ 2 * S.hsum - S.a * S.hp2 + S.hprod
 
+theorem cubic_conj_a : ((starRingEnd ℂ) S.a) ^ 3 - 2 * ((starRingEnd ℂ) S.a) ^ 2
+    + 3 * ((starRingEnd ℂ) S.a) - 1 = 0 := by
+  have h := congrArg (starRingEnd ℂ) S.cubic_a
+  simpa [map_ofNat] using h
+
 theorem ne_zero : S.a ≠ 0 := fun hc => absurd (by rw [hc]; simp : S.a.im = 0) (ne_of_gt S.him)
 
 theorem one_sub_ne_zero : (1 : ℂ) - S.a ≠ 0 := by
@@ -1460,6 +1428,71 @@ theorem log_B3 : Complex.log S.B3
   simp only [map_add, map_div₀, map_mul, map_ofNat, Complex.conj_ofReal, Complex.conj_I]
   ring
 
+
+/-! ##### Inhabitation — the cubic really has these roots
+
+Everything above is a theorem about `SaddleRoots`, so it is worth exactly what
+the inhabitation is worth. Here it is: the real root by the intermediate value
+theorem, the conjugate pair by an explicit square root, and the three symmetric
+functions by `Complex.ext`. -/
+
+/-- The saddle cubic has a real root in `(0,1)`: `f(0) = −1 < 0 < 1 = f(1)`. -/
+theorem exists_real_root :
+    ∃ t : ℝ, 0 < t ∧ t < 1 ∧ t ^ 3 - 2 * t ^ 2 + 3 * t - 1 = 0 := by
+  have hcont : ContinuousOn (fun x : ℝ => x ^ 3 - 2 * x ^ 2 + 3 * x - 1) (Set.Icc 0 1) := by
+    fun_prop
+  have hmem : (0 : ℝ) ∈ Set.Ioo ((0 : ℝ) ^ 3 - 2 * (0 : ℝ) ^ 2 + 3 * (0 : ℝ) - 1)
+      ((1 : ℝ) ^ 3 - 2 * (1 : ℝ) ^ 2 + 3 * (1 : ℝ) - 1) := by norm_num
+  obtain ⟨t, ht, hft⟩ := intermediate_value_Ioo (by norm_num : (0 : ℝ) ≤ 1) hcont hmem
+  exact ⟨t, ht.1, ht.2, hft⟩
+
+/-- The discriminant of the residual quadratic is negative — unconditionally, not
+just on `(0,1)`: `3t² − 4t + 8` has discriminant `16 − 96 < 0`. -/
+theorem disc_pos (t : ℝ) : 0 < 3 * t ^ 2 - 4 * t + 8 := by nlinarith [sq_nonneg (3 * t - 2)]
+
+/-- **From a real root, a `SaddleRoots`.** The conjugate pair is
+`(2−t)/2 ± i·√(3t²−4t+8)/2`, the roots of the residual quadratic
+`x² + (t−2)x + (t²−2t+3)`. -/
+noncomputable def ofRealRoot {t : ℝ} (h0 : 0 < t) (h1 : t < 1)
+    (hc : t ^ 3 - 2 * t ^ 2 + 3 * t - 1 = 0) : SaddleRoots where
+  t := t
+  a := (((2 - t) / 2 : ℝ) : ℂ) + ((Real.sqrt (3 * t ^ 2 - 4 * t + 8) / 2 : ℝ) : ℂ) * Complex.I
+  ht0 := h0
+  ht1 := h1
+  hsum := by
+    simp only [map_add, map_mul, Complex.conj_ofReal, Complex.conj_I]
+    push_cast
+    ring
+  hp2 := by
+    have hsq : Real.sqrt (3 * t ^ 2 - 4 * t + 8) ^ 2 = 3 * t ^ 2 - 4 * t + 8 :=
+      Real.sq_sqrt (disc_pos t).le
+    have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+    simp only [map_add, map_mul, Complex.conj_ofReal, Complex.conj_I]
+    have hsq' : ((Real.sqrt (3 * t ^ 2 - 4 * t + 8) : ℝ) : ℂ) ^ 2
+        = ((3 * t ^ 2 - 4 * t + 8 : ℝ) : ℂ) := by exact_mod_cast hsq
+    push_cast at hsq' ⊢
+    linear_combination ((1 : ℂ) / 4) * hsq'
+      + (-(((Real.sqrt (3 * t ^ 2 - 4 * t + 8) : ℝ) : ℂ) ^ 2) / 4) * hI
+  hprod := by
+    have hsq : Real.sqrt (3 * t ^ 2 - 4 * t + 8) ^ 2 = 3 * t ^ 2 - 4 * t + 8 :=
+      Real.sq_sqrt (disc_pos t).le
+    have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+    have hsq' : ((Real.sqrt (3 * t ^ 2 - 4 * t + 8) : ℝ) : ℂ) ^ 2
+        = ((3 * t ^ 2 - 4 * t + 8 : ℝ) : ℂ) := by exact_mod_cast hsq
+    have hcC : ((t : ℝ) : ℂ) ^ 3 - 2 * ((t : ℝ) : ℂ) ^ 2 + 3 * ((t : ℝ) : ℂ) - 1 = 0 := by
+      exact_mod_cast hc
+    simp only [map_add, map_mul, Complex.conj_ofReal, Complex.conj_I]
+    push_cast at hsq' hcC ⊢
+    linear_combination ((t : ℂ) / 4) * hsq'
+      + (-(((Real.sqrt (3 * t ^ 2 - 4 * t + 8) : ℝ) : ℂ) ^ 2 * (t : ℂ)) / 4) * hI + hcC
+  him := by
+    simp only [Complex.add_im, Complex.ofReal_im, Complex.mul_im, Complex.ofReal_re,
+      Complex.I_re, Complex.I_im, mul_zero, mul_one, zero_add, add_zero]
+    exact div_pos (Real.sqrt_pos.mpr (disc_pos t)) two_pos
+
+instance : Nonempty SaddleRoots := by
+  obtain ⟨t, h0, h1, hc⟩ := exists_real_root
+  exact ⟨ofRealRoot h0 h1 hc⟩
 
 end SaddleRoots
 
@@ -1713,7 +1746,8 @@ equations (`hε`), and — to turn the right side into `−π²/6 − ½log²y�
 `arg A₃ = (π − arg y₁)/3` (`saddle_clog_cube_of_roots`). None of the latter is
 discharged here.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem sum_cLiTwoExt_eval {a b c A3 B3 e₁ e₂ e₃ : ℂ}
     (P1 : cRogersL c + cRogersL a + cRogersL A3 + cRogersL (1 - b⁻¹) + cRogersL A3⁻¹
       = ((Real.pi ^ 2 / 2 : ℝ) : ℂ))
@@ -1752,7 +1786,8 @@ it into that needs `arg A₃ = (π − arg a)/3` (`saddle_clog_cube_of_roots`, p
 from root data) and `log a = −½log t + i·arg a` (`normSq_mul`, proved, plus the
 argument). Those substitutions are not made here.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem SaddleRoots.sum_cLiTwoExt_root_data (S : SaddleRoots) :
     2 * (cLiTwoExt S.a + cLiTwoExt ((starRingEnd ℂ) S.a) + cLiTwoExt (S.t : ℂ))
       = ((2 * Real.pi ^ 2 / 3 : ℝ) : ℂ)
@@ -1794,6 +1829,109 @@ theorem SaddleRoots.sum_cLiTwoExt_closed (S : SaddleRoots) :
   push_cast
   linear_combination (-((Real.pi : ℂ) ^ 2) / 3 + (8 / 3) * (Real.pi : ℂ) * (S.a.arg : ℂ)
     - (4 / 3) * (S.a.arg : ℂ) ^ 2) * hI
+
+/-! ### The 5₂ saddle sum rule, for the actual roots
+
+`SaddleRoots` is inhabited (`ofRealRoot`, from the intermediate value theorem),
+so the closed form is a statement about the **actual** roots of
+`X³ − 2X² + 3X − 1` and not merely about a structure. -/
+
+/-- **The 5₂ saddle sum rule.**
+
+There are three roots of `X³ − 2X² + 3X − 1` — one real in `(0,1)` and a
+conjugate pair — and
+
+    Σ Li₂(yⱼ) = −π²/6 − ½·log²y₃ + (2/3)·(arg y₁ − π)²
+
+with `Li₂` the corpus's integral continuation `cLiTwoExt`, which agrees with the
+principal branch off `[1,∞)`. This is the quantity the lane calls `A`, and the
+right side is the expression the corpus records as the sum rule's target.
+
+The chain: the complex five-term identity (Route 54) at `(y₃, y₁)` and
+`(y₃, y₂)`; the anharmonic evaluations (59, 60, 62, 63); the branch equations
+from `y² = (1−y)³` (65); the root data (66–68); and the logarithm evaluations
+(69). Every step is sorry-free with the standard axioms. -/
+theorem fiveTwo_saddle_sum_rule :
+    ∃ (t : ℝ) (a : ℂ), 0 < t ∧ t < 1 ∧ 0 < a.im
+      ∧ (t : ℂ) ^ 3 - 2 * (t : ℂ) ^ 2 + 3 * (t : ℂ) - 1 = 0
+      ∧ a ^ 3 - 2 * a ^ 2 + 3 * a - 1 = 0
+      ∧ ((starRingEnd ℂ) a) ^ 3 - 2 * ((starRingEnd ℂ) a) ^ 2
+          + 3 * ((starRingEnd ℂ) a) - 1 = 0
+      ∧ cLiTwoExt a + cLiTwoExt ((starRingEnd ℂ) a) + cLiTwoExt (t : ℂ)
+        = ((-(Real.pi ^ 2 / 6) - Real.log t ^ 2 / 2
+            + (2 / 3) * (a.arg - Real.pi) ^ 2 : ℝ) : ℂ) := by
+  obtain ⟨t, h0, h1, hc⟩ := SaddleRoots.exists_real_root
+  set S := SaddleRoots.ofRealRoot h0 h1 hc with hS
+  refine ⟨t, S.a, h0, h1, S.him, ?_, S.cubic_a, S.cubic_conj_a, ?_⟩
+  · exact S.cubic_t
+  · have hst : S.t = t := rfl
+    have h := S.sum_cLiTwoExt_closed
+    rw [hst] at h
+    push_cast at h ⊢
+    linear_combination h / 2
+
+/-- **The corpus's own conjecture, proved.**
+
+`QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule` is stated there as a class with no
+instance — "numerically verified, not proved". With `Vⱼ = 3·Li₂(yⱼ) +
+(log yⱼ + bⱼπi)²` and `b = (−1, +1, +1)` on `(y₁, y₂, y₃)`,
+
+    Σⱼ Vⱼ = −3π²/2 + 2π·log(y₃)·i
+
+so `Σⱼ Re Vⱼ = −3π²/2`, which is the class's field. Both halves are elementary,
+as the lane's probes measured — the real part is the conjecture, the imaginary
+part `2π·log y₃`. -/
+theorem fiveTwo_sum_V :
+    ∃ (t : ℝ) (a : ℂ), 0 < t ∧ t < 1 ∧ 0 < a.im
+      ∧ (t : ℂ) ^ 3 - 2 * (t : ℂ) ^ 2 + 3 * (t : ℂ) - 1 = 0
+      ∧ a ^ 3 - 2 * a ^ 2 + 3 * a - 1 = 0
+      ∧ ((starRingEnd ℂ) a) ^ 3 - 2 * ((starRingEnd ℂ) a) ^ 2
+          + 3 * ((starRingEnd ℂ) a) - 1 = 0
+      ∧ (3 * cLiTwoExt a + (Complex.log a + (-1 : ℂ) * (Real.pi : ℂ) * Complex.I) ^ 2)
+        + (3 * cLiTwoExt ((starRingEnd ℂ) a)
+            + (Complex.log ((starRingEnd ℂ) a) + (1 : ℂ) * (Real.pi : ℂ) * Complex.I) ^ 2)
+        + (3 * cLiTwoExt (t : ℂ)
+            + (Complex.log (t : ℂ) + (1 : ℂ) * (Real.pi : ℂ) * Complex.I) ^ 2)
+        = ((-3 * (Real.pi ^ 2 / 2) : ℝ) : ℂ)
+          + ((2 * Real.pi * Real.log t : ℝ) : ℂ) * Complex.I := by
+  obtain ⟨t, h0, h1, hc⟩ := SaddleRoots.exists_real_root
+  set S := SaddleRoots.ofRealRoot h0 h1 hc with hS
+  have hst : S.t = t := rfl
+  refine ⟨t, S.a, h0, h1, S.him, ?_, S.cubic_a, S.cubic_conj_a, ?_⟩
+  · exact S.cubic_t
+  · have hsum := S.sum_cLiTwoExt_closed
+    have hla := S.log_a
+    have hlb := S.log_conj_a
+    have hlt := S.log_t
+    rw [hst] at hsum hla hlb hlt
+    rw [hla, hlb, hlt]
+    have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+    push_cast at hsum ⊢
+    linear_combination (3 / 2 : ℂ) * hsum
+      + (2 * (S.a.arg : ℂ) ^ 2 - 4 * (Real.pi : ℂ) * (S.a.arg : ℂ)
+          + 3 * (Real.pi : ℂ) ^ 2) * hI
+
+/-- **`FiveTwoSaddleSumRule`, instantiated.**
+
+`QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule` is declared there as a class with no
+instance, with the comment "No instance is provided: the statement is open".
+Here is the instance, for `Li = cLiTwoExt`, `y = (y₁, y₂, y₃)` the three roots of
+the saddle cubic, and `b = (−1, +1, +1)`. -/
+theorem fiveTwoSaddleSumRule_holds :
+    ∃ (t : ℝ) (a : ℂ), 0 < t ∧ t < 1 ∧ 0 < a.im
+      ∧ (t : ℂ) ^ 3 - 2 * (t : ℂ) ^ 2 + 3 * (t : ℂ) - 1 = 0
+      ∧ a ^ 3 - 2 * a ^ 2 + 3 * a - 1 = 0
+      ∧ ((starRingEnd ℂ) a) ^ 3 - 2 * ((starRingEnd ℂ) a) ^ 2
+          + 3 * ((starRingEnd ℂ) a) - 1 = 0
+      ∧ FiveTwoSaddleSumRule cLiTwoExt ![a, (starRingEnd ℂ) a, (t : ℂ)] ![-1, 1, 1] := by
+  obtain ⟨t, a, h0, h1, him, hct, hca, hcb, hV⟩ := fiveTwo_sum_V
+  refine ⟨t, a, h0, h1, him, hct, hca, hcb, ⟨?_⟩⟩
+  rw [Fin.sum_univ_three]
+  simp only [Matrix.cons_val_zero, Matrix.cons_val_one]
+  rw [show (![a, (starRingEnd ℂ) a, (t : ℂ)] 2) = (t : ℂ) from rfl,
+    show (![(-1 : ℂ), 1, 1] 2) = (1 : ℂ) from rfl, hV]
+  simp only [Complex.add_re, Complex.mul_re, Complex.ofReal_re, Complex.ofReal_im,
+    Complex.I_re, Complex.I_im, mul_zero, sub_zero, mul_one, add_zero]
 
 end Reflection
 

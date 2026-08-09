@@ -1381,3 +1381,101 @@ Until that is done, `sum_cLiTwoExt_closed` proves the sum rule's **shape** holds
 of any `SaddleRoots`, and says nothing about the actual 5₂ saddle sum.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 70 — THE GAP IS CLOSED. `SaddleRoots` is inhabited; the 5₂ sum rule is PROVED
+
+Route 69 left one thing owed, and said so in capitals: `SaddleRoots` was not
+proved inhabited, so `sum_cLiTwoExt_closed` proved the sum rule's *shape* and
+said nothing about the actual 5₂ saddle sum. That is now discharged.
+
+### The inhabitation (`FiveTwoComplexPentagon`, `SaddleRoots` namespace)
+
+* `exists_real_root` — `intermediate_value_Ioo` on `f(x) = x³ − 2x² + 3x − 1`
+  over `[0,1]`, with `f(0) = −1 < 0 < 1 = f(1)`. Gives `t ∈ (0,1)` with
+  `f(t) = 0`.
+* `disc_pos` — `0 < 3t² − 4t + 8` for **every** real `t`, by
+  `nlinarith [sq_nonneg (3t − 2)]`. Unconditional, so no root-location
+  side-condition is needed to take the square root.
+* `ofRealRoot` — builds the conjugate pair explicitly as
+  `a = (2−t)/2 + (√(3t² − 4t + 8)/2)·i`, and discharges the four structure
+  fields (`hsum`, `hp2`, `hprod`, `him`) by Vieta from `f(t) = 0`.
+* `instance : Nonempty SaddleRoots`.
+
+The gap was, as recorded, a **root-existence** problem and not a dilogarithm
+one; it priced out at exactly the three steps Route 69 predicted.
+
+### The headline theorems
+
+`fiveTwo_saddle_sum_rule` — quantified over nothing, hypotheses on nothing:
+
+    ∃ t : ℝ, ∃ a : ℂ,  0 < t < 1,  0 < Im a,
+      t, a, ā  all roots of  X³ − 2X² + 3X − 1,   and
+      Li₂(a) + Li₂(ā) + Li₂(t) = −π²/6 − ½·log²t + ⅔·(arg a − π)²
+
+`fiveTwo_sum_V` — the same in `V`-form: `Σ Vⱼ = −3π²/2 + 2π·log t·i`, so
+`Σ Re Vⱼ = −3π²/2`. The imaginary part is a **bonus**: the corpus only ever
+recorded the real part, and `2π·log t` was not part of the target.
+
+`fiveTwoSaddleSumRule_holds` — the corpus's own conjecture class
+`QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule`, whose docstring read "No instance is
+provided: the statement is open", constructed at `Li = cLiTwoExt`,
+`y = ![a, ā, t]`, `b = ![−1, +1, +1]`.
+
+### Verification (per-module, `.olean` deleted first, `lake` not `lean`)
+
+* `lake build QOU.QBeta.FiveTwoComplexPentagon QOU.QBeta.FiveTwoFlattenedPentagon`
+  → exit 0, 3241 jobs, **0 warnings**.
+* `lake build QOU.QBeta.FiveTwoSaddleSumRule` → exit 0, 1893 jobs.
+* `#print axioms` on `fiveTwo_saddle_sum_rule`, `fiveTwo_sum_V`,
+  `fiveTwoSaddleSumRule_holds`, `SaddleRoots.ofRealRoot`,
+  `SaddleRoots.exists_real_root` → all `[propext, Classical.choice, Quot.sound]`.
+* Zero `sorry` in code across the three modules (the 11 grep hits are all the
+  string "sorry-free" in docstrings).
+* `origin/main` at the time of measurement: `f689f12d2d06aee2959002f13b9ac39c1a79e3cf`.
+
+### The probe is a control on the STATEMENT, not evidence
+
+`computations/probes/qbeta_5two_route70_sum_rule_proved_probe.py`, 80 dps, all
+four gates pass. A proved theorem needs no numerics; what it *can* still be is
+a proof of the wrong statement, and that is the failure mode a proof cannot
+detect. So:
+
+* **G1** the witnesses are as described — real root in `(0,1)`, conjugate pair,
+  all three roots of the cubic;
+* **G2 — the one that matters** — the expression proved is the one the corpus
+  recorded: `A_computed` matches the recorded `A = 0.9717306814686482591277741699`
+  and the closed form to `< 1e-60`;
+* **G3** the branch assignment is **pinned, not chosen**: of five assignments
+  tried, `b = (−1,+1,+1)` is the *only* one reaching `−3π²/2`; the others miss
+  by 9.87 to 25.9;
+* **G4** the scope, stated so it cannot be overread: `D` cancels identically on
+  the Galois sum (`|Σ D| < 1e-50`), which is exactly why the sum rule fell
+  without touching the volume.
+
+`probe-float64-guard.py --diff` run in place: clean.
+
+### Stale claims corrected
+
+The standing claim "The 5₂ sum rule remains verified to 80 dps, unproved" was
+true for 69 routes and is now false. All 13 occurrences replaced across
+`ComplexRogersDilog.lean` (1), `FiveTwoComplexPentagon.lean` (6),
+`FiveTwoFlattenedPentagon.lean` (3), `FiveTwoSaddleSumRule.lean` (3). The last
+file's header, its `FiveTwoSaddleSumRule` class docstring ("the statement is
+open"), and its `FiveTwoDilogLadder` docstring ("a second independent relation
+is required to close the sum rule") were all rewritten — the ladder is still
+unproved but is **no longer needed**, since the route that worked was the
+pentagon, which determines `A` outright.
+
+### What is NOT proved
+
+The 5₂ **volume** conjecture. `Vol(5₂) = 3·D(y₁)` with `D` the Bloch–Wigner
+function, and `D` cancels on the Galois sum — so nothing in this lane speaks to
+it. Do not let the sum rule's proof be read as progress on the volume.
+
+`FiveTwoDilogLadder` also remains unproved, and off the critical path.
+
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. Bean `qou-xblo`
+and its parent `qou-0yqu` are closed by this route.

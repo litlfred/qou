@@ -48,7 +48,8 @@ square to `(y₁, ȳ₁)`, so the 5₂ volume is still out of reach here. The pr
 two-variable points are evidence that the identity holds there, not a proof that
 a region exists.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 
 -- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5 and §2 (`R(z;p,q)`, `ker ν`)
 -/
@@ -269,7 +270,8 @@ differentiability of the five terms — with no branch condition to check anywhe
 which is precisely what `FiveTwoComplexPentagon` could not say.
 
 ⚠ It is still a region hypothesis, so it does not reach `(y₁, ȳ₁)` and does not
-touch `Vol(5₂)`. **The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+touch `Vol(5₂)`. **The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem flatPentagonSum_eq_pi_sq_div_two_of_region {x₀ y : ℝ} {S : Set ℂ}
     (hS : IsOpen S) (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular (y : ℂ) w)
     (hx0 : 0 < x₀) (hx1 : x₀ < 1) (hy0 : 0 < y) (hy1 : y < 1)
@@ -315,7 +317,8 @@ That is the whole obstruction, and it is sharper than "no region was found":
 So what is missing is a **boundary-continuity** argument, not a region. Measured
 in `computations/probes/qbeta_5two_route57_on_the_cut_probe.py`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 
 section OnTheCut
 

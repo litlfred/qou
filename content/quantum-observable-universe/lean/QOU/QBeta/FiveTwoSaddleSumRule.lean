@@ -7,9 +7,33 @@ merged 2026-08-02) established to 80 dps that the three 5₂ saddle values satis
     Σⱼ Re(Vⱼ) = −3π²/2                                              (SUM)
 
 with `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼ·πi)²` and `yⱼ` the roots of
-`y³ − 2y² + 3y − 1`. That is strong evidence, **not a proof**.
+`y³ − 2y² + 3y − 1`. That was strong evidence, not a proof.
 
-## What this file does and does not prove
+## STATUS: (SUM) IS NOW PROVED — elsewhere
+
+`QOU/QBeta/FiveTwoComplexPentagon.lean` proves it, sorry-free, on the standard
+axioms `[propext, Classical.choice, Quot.sound]`:
+
+* `fiveTwo_saddle_sum_rule` — the closed form
+  `Σ Li₂(yⱼ) = −π²/6 − ½·log²y₃ + ⅔·(arg y₁ − π)²`;
+* `fiveTwo_sum_V` — `Σ Vⱼ = −3π²/2 + 2π·log y₃·i`, whose real part is (SUM);
+* `fiveTwoSaddleSumRule_holds` — the same, packaged as an instance of the
+  `FiveTwoSaddleSumRule` class declared below, at the actual saddle data.
+
+The route is **not** the one this file anticipated. This file's plan was to pin
+`A = Σ Li₂(yⱼ)` against `B = Σ Li₂(1−yⱼ)` and hunt for a second relation
+(`FiveTwoDilogLadder`). What worked instead was the complex five-term
+(pentagon) identity for the Rogers L-function, which determines `A` outright.
+No dilogarithm ladder was needed. See that file's header for the four-step chain.
+
+Scope, so this is not overread: (SUM) is the **sum rule**. The 5₂ **volume**
+conjecture is untouched — the Bloch–Wigner `D` cancels identically on the Galois
+sum, which is precisely why the sum rule fell without reaching the volume.
+
+## What *this* file proves
+
+This file remains the algebraic and reflection layer, and everything in it is
+still live — `branch_data_of_cubic` in particular is used by the proof.
 
 Mathlib carries **no polylogarithm** (no `Polylog`, no `dilog` — checked
 2026-08-03). **QOU, however, has its own** (correction 2026-08-03; an earlier
@@ -22,15 +46,15 @@ dilogarithm exists" and is misleading):
   with the derivative infra Mathlib lacks.
 
 That is exactly the hypothesis `sum_reflection_of_branch` takes, so the
-abstract `Li` below is *instantiable today for real arguments in `(0,1)`* —
-which covers the real saddle root `y₃ = 0.4301597…`. It does **not** cover
-`y₁, y₂` (complex, and `|y₁| = 1.52 > 1`), so (SUM) still cannot be discharged.
-The missing piece is a complex `Li₂` with the complex reflection identity;
-tracked as bean `qou-ph1k`.
+abstract `Li` below is instantiable for real arguments in `(0,1)` — which covers
+the real saddle root `y₃ = 0.4301597…` but not `y₁, y₂` (complex, and
+`|y₁| = 1.52 > 1`). The complex `Li₂` that closes that gap — bean `qou-ph1k` —
+now exists: `QOU.MathlibExt.cLiTwoExt`, with the complex reflection and
+inversion identities, in `QOU/MathlibExt/ComplexRogersDilog.lean`.
 
 Keeping `Li` abstract here is therefore deliberate: it makes the reduction
-independent of which dilogarithm implementation eventually supplies the
-hypothesis. This file:
+independent of which dilogarithm implementation supplies the hypothesis. This
+file:
 
 * proves the **algebraic skeleton** sorry-free and over a generic `CommRing`
   (`cubic_iff_sq_eq_cube`);
@@ -41,15 +65,15 @@ hypothesis. This file:
 * proves the two **bookkeeping consequences** that the prose asserts —
   that `π²/2` is the *unique* centering shift (`centering_constant_unique`)
   and that `V₃` is *determined* by `V₁` (`V_two_of_sum_rule`);
-* records (SUM) itself as a **content-bearing conjecture carrier with no
-  instance** (`FiveTwoSaddleSumRule`), which is the honest representation of
-  an open statement.
+* declares (SUM) itself as the class `FiveTwoSaddleSumRule` — which is now a
+  **theorem**, instantiated in `FiveTwoComplexPentagon` (above). The class is
+  kept as the statement's canonical home; no global instance is declared,
+  because it is true at the 5₂ saddle data, not at arbitrary `Li, y, b`.
 
-The genuinely open input is isolated in `FiveTwoDilogLadder`: one further
-relation between `Σ Li₂(yⱼ)` and `Σ Li₂(1−yⱼ)`. `sum_reflection_of_branch`
-supplies one equation in those two unknowns; a second is needed, and the
-identified route (Kubert/distribution relation on `Li₂(y²) = Li₂((1−y)³)`)
-is not formalized here.
+`FiveTwoDilogLadder` — one further relation between `Σ Li₂(yⱼ)` and
+`Σ Li₂(1−yⱼ)`, via the Kubert/distribution relation on `Li₂(y²) = Li₂((1−y)³)`
+— is still unproved, but is **no longer needed**: it was the anticipated route
+to (SUM), and (SUM) was proved without it.
 
 -- Ref: [manuscript] docs/coordination/1ppq-qbeta.md, 2026-08-02 row
 -- Ref: [garoufalidis2020] https://arxiv.org/abs/2012.00062 eq (233)–(234)
@@ -179,35 +203,60 @@ theorem V_two_of_sum_rule (V : Fin 3 → ℝ)
   simp only [Fin.sum_univ_three] at hsum
   linarith
 
-/-! ### The open statements
+/-! ### The carriers
 
-Both carriers below are **primary conjectures**: their signatures take no
-other conjecture class as a hypothesis. Neither is given an instance, which
-is the honest representation of "numerically verified, not proved". -/
+Both carriers below are **primary**: their signatures take no other conjecture
+class as a hypothesis. `FiveTwoSaddleSumRule` is now a **theorem** — see its
+docstring for the witness. `FiveTwoDilogLadder` is still a conjecture, and is
+given no instance, which is the honest representation of "numerically verified,
+not proved". -/
 
-/-- **CONJECTURE (verified to 80 dps, unproved).** The 5₂ saddle sum rule.
+/-- **PROVED.** The 5₂ saddle sum rule.
 
 `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` over the three roots of the saddle cubic
 satisfies `Σⱼ Re Vⱼ = −3π²/2`.
 
-Numerical status: residual `3.4e-80` at 80 dps, and **specific to the 5₂
-cubic** — five control cubics of the same shape, four sharing the `Πy = 1`
-constraint, miss the target by 0.16 to 2.83. So this is an arithmetic
-property of the 5₂ saddle cubic, not branch bookkeeping.
+The witness is `QOU.QBeta.FiveTwoComplexPentagon.fiveTwoSaddleSumRule_holds`,
+which exhibits the roots and constructs this class at `Li = cLiTwoExt`,
+`y = ![a, ā, t]`, `b = ![-1, 1, 1]` — sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. The stronger closed form
+`Σ Li₂(yⱼ) = −π²/6 − ½·log²t + ⅔·(arg a − π)²` is
+`FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`, and the complex value
+`Σ Vⱼ = −3π²/2 + 2π·log t·i` is `fiveTwo_sum_V`.
 
-No instance is provided: the statement is open. -/
+No *global* instance is declared, and none should be: the class is parameterised
+by `Li`, `y`, `b`, and the statement is true at the 5₂ saddle data, not at
+arbitrary arguments. That specificity was already visible numerically — five
+control cubics of the same shape, four sharing the `Πy = 1` constraint, miss the
+target by 0.16 to 2.83 — so this is an arithmetic property of the 5₂ saddle
+cubic, not branch bookkeeping. Recorded residual before the proof: `3.4e-80` at
+80 dps.
+
+Scope: this is the **sum rule**, not the 5₂ **volume** conjecture, which remains
+untouched — the Bloch–Wigner `D` cancels identically on the Galois sum, which is
+exactly why the sum rule could be proved without reaching the volume. -/
 class FiveTwoSaddleSumRule (Li : ℂ → ℂ) (y b : Fin 3 → ℂ) : Prop where
   /-- `Σⱼ Re Vⱼ = −3π²/2`. -/
   sum_re_eq :
     (∑ j, (3 * Li (y j) + (Complex.log (y j) + b j * (Real.pi : ℂ) * I) ^ 2)).re
       = -3 * (Real.pi ^ 2 / 2)
 
-/-- **CONJECTURE (unproved).** The missing second relation.
+/-- **CONJECTURE (unproved).** A second relation between `A` and `B`.
 
 `sum_reflection_of_branch` gives one equation in `A = Σ Li₂(yⱼ)` and
 `B = Σ Li₂(1−yⱼ)`. Numerically `A ≈ 0.9717306815` and `B ≈ 0.3514640301`,
-neither with an evident closed form, so a second independent relation is
-required to close the sum rule.
+neither with an evident closed form.
+
+Historical note: this class was introduced because a second independent relation
+looked *necessary* to close the sum rule. It was not — the sum rule is now proved
+by the complex five-term route (`FiveTwoComplexPentagon`), which determines `A`
+outright rather than pinning it against `B`: what is proved there is
+`A = −π²/6 − ½·log²t + ⅔·(arg a − π)²`. Note also that the right-hand side of
+`sum_reflection_of_branch` is already explicit in the logarithms, so `B` follows
+from `A` by subtraction wherever that relation's reflection hypothesis holds —
+no *second* relation is involved in either direction. So this class is off the
+critical path, and is retained because the Kubert route below is of independent
+interest.
 
 The identified route is the Kubert/distribution relation
 `Li₂(zⁿ) = n·Σ_{k<n} Li₂(ζₙᵏ z)` applied to `Li₂(y²) = Li₂((1−y)³)`, which
@@ -470,7 +519,7 @@ Numerics for the split, to 60 dps, are in
 `computations/probes/qbeta_5two_route40_distribution_factors_probe.py`.
 Bean `qou-0yqu`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule` and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 
 /-- `u³ + u² = 1` gives `1 − u³ = u²`: the cube-root parameter presents the
 saddle root `y = u³` and its reflection `1 − y` at once. -/
@@ -633,8 +682,13 @@ three roots.
 `Li`, proving either side's value proves the other's — which is exactly why the
 extended-Bloch reformulation is worth having rather than merely suggestive.
 
-Still no instance: this is a bridge between two open statements, not a proof of
-either. **The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+When this was written it was a bridge between two open statements. It is now a
+bridge from a proved one: **the 5₂ sum rule is PROVED**, in
+`QOU.QBeta.FiveTwoComplexPentagon` (`fiveTwo_saddle_sum_rule`,
+`fiveTwoSaddleSumRule_holds`), sorry-free on the standard axioms. The flattened
+side is developed independently in `QOU/QBeta/FiveTwoFlattenedPentagon.lean`,
+where the pentagon holds with **no branch hypotheses at all** — which is the
+reason the flattening was worth having. -/
 theorem sum_V_eq_three_sum_flattenedRogers
     (Li : ℂ → ℂ) (y ε b : Fin 3 → ℂ)
     (hbranch : ∀ j, 2 * Complex.log (y j) - 3 * Complex.log (1 - y j)
@@ -691,8 +745,14 @@ theorem pentagon_diagonal (L : ℂ → ℂ)
 sums rather than five.
 
 Route 46 measures the right-hand side as `3π²/2` for the 5₂ saddle orbit with
-principal branches. Here it is a consequence of the pentagon hypothesis, with
-no branch analysis and no instance — the analytic input is still owed. -/
+principal branches. Here it is a consequence of the pentagon hypothesis, with no
+branch analysis of its own.
+
+The hypothesis as stated — the pentagon for *all* `x, y : ℂ` — is false on the
+cuts, so it is not dischargeable in this form; that is why it is a hypothesis.
+The true statements are `FiveTwoComplexPentagon.pentagonSum_eq_pi_sq_div_two`
+(regularity hypotheses) and `FiveTwoFlattenedPentagon`'s flattened pentagon
+(none). Neither is needed for the sum rule, which took the direct route. -/
 theorem sum_pentagon_diagonal (L : ℂ → ℂ)
     (hpent : ∀ x y : ℂ, L x + L y + L ((1 - x) / (1 - x * y)) + L (1 - x * y)
       + L ((1 - y) / (1 - x * y)) = (Real.pi : ℂ) ^ 2 / 2)
@@ -784,7 +844,7 @@ exactly where flattening enters, so the branch bookkeeping of Routes 45–46 and
 Neumann's `ker ν` are the same difficulty showing up again. Nothing here
 discharges them.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule` and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 
 /-- `L′(z) = −½·( log(1−z)/z + log z/(1−z) )`, with the two logarithms passed in
 as free variables so the lemma makes no branch choice. -/
