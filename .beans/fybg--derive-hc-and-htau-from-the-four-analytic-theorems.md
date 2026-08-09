@@ -938,3 +938,81 @@ tool for this than step 5's one-sided tangent/secant bounds -- the ratio's
 expansion is `-sqrt3 pi d^2/N + O(d^3/N^2) + O(1/N^2)` plus a linear term
 `O(d/N)` from `Lambda'(theta_{k*}) != 0` (it vanishes only at exactly `5pi/6`).
 Then `hc`, then `htau`.
+
+---
+
+## Step 9 -- the ratio against a Gaussian (`QOU/Knot/KashaevRatioExpansion.lean`)
+
+Three theorems, all `[propext, Classical.choice, Quot.sound]`. Gap (B)'s
+second half begins: step 8 says a Gaussian sum equals its integral, and to use
+that on `<4_1>_N = sum_k g_k` one must first know the summand IS a Gaussian.
+
+`logKashaevMain` / `logKashaevErr` name step 6's main and error terms.
+
+  * `abs_log_kashaevProd_ratio_le` -- the triangle inequality on two instances
+    of step 6. Trivial, but note what it buys: the bound on the RATIO is
+    two-sided and uniform, which NO tail bound in `KashaevTailBound` is. Step
+    5's bounds are a tangent line one way and a secant line the other; they
+    cannot be sharp in the constant by construction.
+  * `abs_log_kashaevProd_ratio_taylor` -- Taylor `Lambda` about `theta_k` and
+    the Gaussian appears:
+
+        log(g_k'/g_k) = 2u log(2 sin th_k) + (pi u^2/N) cot th_k
+                        + [log(2N sin th_k') - log(2N sin th_k)]
+                        + (pi/6N)[cot th_k' - cot th_k]
+                        + err,    |err| <= Err_k + Err_k' + M pi^2 |u|^3/(3N^2)
+
+    with `u = k' - k` REAL, so `k'` may sit on either side of `k`.
+
+### The two coefficients, and why they are what they are
+
+**Quadratic.** `a = pi |cot th_k|/N -> sqrt3 pi/N`, and `sqrt(pi/a) ->
+sqrt(N) 3^(-1/4)`. Probe part (iii) checks the rate, not just a value: the
+relative gap times `N` is `3.023` at every one of N = 241, 481, 961, 1921 --
+constant to four digits. And `3.023` is not a fitted number:
+`|cot th_k*|` misses `sqrt3` by `4 * 5pi/(6N) = 10pi/(3N)` (since
+`d cot/d th = -1/sin^2 = -4` at `5pi/6` and `th_k*` undershoots by
+`r pi/6N`, `r <= 5`), a relative `10pi/(3 sqrt3 N) = 6.046/N`, and `sqrt`
+halves it. **So `c_sigma = 3^(-1/4)` is `Lambda''(5pi/6)^(-1/2)` and nothing
+else.**
+
+**Linear.** `2u log(2 sin th_k)` does NOT vanish. It is exactly zero when
+`6 | N` and nonzero otherwise (probe part (iv) asserts BOTH directions), of
+size `~4.52/N`. It is a tilt of the Gaussian -- a shift of the summation
+centre -- not an error to be bounded away, which is what
+`hasSum_gaussian_theta_tilt` exists for.
+
+### A real restriction: the sqrt(N) window vs the endpoint singularity
+
+Probe part (v). Going `u = sqrt(N)` steps RIGHT from `k*` lands at angle
+`5pi/6 + pi/sqrt(N)`, whose distance to `pi` is `pi/6 - pi/sqrt(N)` -- small
+when `N` is small. So `M = sup 1/sin^2` blows up at small `N`:
+
+    N        60      240      960     3840    15360
+    M      40.86     9.68     5.87     4.81     4.38     (-> 4)
+    bound  12.84     1.87     0.57     0.24     0.11
+
+The bound crosses 1 between N=240 and N=960. **Below that the sqrt(N) window
+runs into the endpoint singularity and this expansion does not control it.**
+The probe asserts the threshold (first below 1 at N=960) rather than claiming
+smallness everywhere -- a first draft asserted `bound < 1` at every N and
+failed honestly at N=60 and N=240.
+
+Consequence for the eventual proof: the window must be stated as
+`|u| <= c sqrt(N)` with a constant `c` small enough to keep the right edge
+away from `pi`, or with a threshold on `N`. It is not free.
+
+### Remaining before `hc`
+
+  1. Exponentiate step 9: `g_{k*+u}/g_{k*} = e^{-a u^2 + tilt}(1 + O(eta))`
+     with `eta -> 0` uniformly on the window.
+  2. Sum over the window, apply step 8 (tilted form) to get
+     `sqrt(pi/a)(1 + exponentially small)`.
+  3. Cut the tail beyond the window with step 5's one-sided bounds (lossy
+     there is fine -- the tail is exponentially small).
+  4. Combine with step 7 to get `c_sigma`, then `hc`, then `htau`.
+
+`hc` itself, once `c_sigma` is in hand, is the algebra already proved in
+`OneLoopPrefactorInvariance.lean`: `hc : c^2 |cot th| = (2 sin th)^2` is
+"Stirling factor squared over Gaussian width", and step 6 supplies the
+`2N sin th*` while steps 8-9 supply the `sqrt(N/|cot th*|)`.
