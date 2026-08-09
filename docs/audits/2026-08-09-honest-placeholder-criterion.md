@@ -121,6 +121,54 @@ at all), but it means the §3b exemption currently **swallows the strongest
 signal the detector has**. 22 of the 52 are `field-projection`s, and the
 `claim_`-named ones among them are in that category.
 
+## Outcome for the 9: disclosure, NOT axiom conversion
+
+Recipe 3 ("make it a cited `axiom`") was the intended fix here and it is
+**unsound for all nine.** Every one projects off an abstract class whose data
+is arbitrary — `RMatrixBraidingContext` (`comp`, `R12`, `R13`, `R23`),
+`LevelSufficient P P' q`, `QOneShadowGateClass c2 c3`,
+`BarEvenKernel pole c2 c3 magnitude`, `CosimplicialCrossedGroupoid M`. A
+global `axiom` over such a context asserts the property for **every**
+assignment of that data, and YBE (or a trace equality, or a `q = 1` shadow) is
+plainly false for a general one. Converting would have replaced an invisible
+but *true* hypothesis with a visible and *false* axiom — the §9
+"cited `sorry` on a false statement" defect, in axiom form.
+
+Recipe 3 applies when the content is a genuine external input **about fixed
+objects**. It does not apply to a property of arbitrary context data. Where
+the class is the honest carrier, the fix is criterion (1): say so.
+
+Applied, `lean`-direct exit 0 on each:
+
+| declaration | fix |
+|---|---|
+| `braids-and-knots/r-matrix-braiding-structure.lean` ×2 | disclosure added; notes YBE fails for general context data, so no `axiom` |
+| `lean/QOU/Braiding/r_matrix_braiding_structure.lean` | same (the library copy) |
+| `lean/QOU/BraidKnot/LevelSufficiency.lean` | disclosure; Jones cited for the theory, not for a proof performed here |
+| `mass-theory/q-beta-q-eq-one-shadow-gate.lean` | disclosure; "routine restatement" made exact |
+| `mass-theory/q-beta-bar-even-kernel-typeclass.lean` | disclosure; "from the bundle" ⇒ *projected from* it |
+| `mass-endomorphism/conj-qbeta-c-k-closed-forms.lean` | **different defect** — see below |
+
+**Three were false positives of the disclosure regex**, which is why the
+24/28 split above is a measurement and not a census:
+
+- `ccg_cosimplicial_identities` — already discloses, in wording the regex did
+  not match ("packages the level-based fragment that is immediately
+  discharged from the structure", plus what a full statement would require).
+- `ccg_crossed_module_structure` — discloses *and* does not project a
+  conclusion: `⟨ccg.crossedMod n⟩` genuinely constructs
+  `Nonempty CrossedModule` from a data field.
+- `qbeta_c_k_closed_forms_derived` — discloses openness correctly but
+  described the wrong mechanism: the docstring said the `sorry` is honest
+  "open" and **there is no `sorry`**; the body projects two class fields.
+  That is `proof-docstring-sorry-mismatch` (§8), where prose and
+  `#print axioms` disagree about whether a proof exists. Docstring corrected
+  to describe what the code does; the openness is real and comes from nothing
+  inhabiting the class.
+
+So of the 9, six needed the disclosure fix, two were already honest, and one
+was a mislabelled instance of a different defect.
+
 ## Recommendation
 
 Split the exemption rather than promoting or keeping it wholesale:
