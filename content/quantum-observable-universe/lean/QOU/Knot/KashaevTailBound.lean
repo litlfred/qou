@@ -619,4 +619,97 @@ theorem sq_le_kashaevProd_argmax {N : ℕ} (hN : 6 ≤ N) :
     exact_mod_cast Nat.le_of_lt hj
   rwa [kashaevProd_endpoint hN0] at hfall
 
+/-! ## Part 7 — the first LOWER bound: the peak is not a spike
+
+Everything above bounds the terms from ABOVE, which gives an upper bound on
+`⟨4₁⟩_N` and therefore an inequality, not a value.  Laplace needs the other
+side: the terms near the peak must stay LARGE over a `√N`-wide stretch, or the
+sum could be `g_{k*}` and nothing more.
+
+The bound needed is the mirror image, and the surprise is that it needs no new
+analysis.  Below `θ*` the terms are rising, so a LOWER bound on `g_{k*−d}` needs
+an UPPER bound on the accumulated `log(2 sin)` — and that is exactly what the
+TANGENT gives.  Concavity, which pointed the wrong way for the upper bound on
+the left, points the right way here.  In particular there is NO WINDOW: the
+tangent bound is global on `(0, π)`, so this holds for every `d ≤ k*`. -/
+
+/-- **Lower bound below the saddle.**  `g_{k*−d} ≥ g_{k*}·exp(−√3π d(d+1)/N)`,
+for every `d ≤ k*`.
+
+Note `d(d+1)`, not `d(d−1)`: bounding from below costs one step more than
+bounding from above, because the `d`-th step back is at most `(d+1)h` from `θ*`
+rather than at least `(d−1)h`. -/
+theorem kashaevProd_ge_left {N : ℕ} (hN : 6 ≤ N) (d : ℕ) (hd : d ≤ 5 * N / 6) :
+    kashaevProd N (5 * N / 6)
+        * Real.exp (-(Real.sqrt 3 * π * (d : ℝ) * ((d : ℝ) + 1) / N))
+      ≤ kashaevProd N (5 * N / 6 - d) := by
+  have hN0 : N ≠ 0 := by omega
+  have hpi := Real.pi_pos
+  have hNR : (0 : ℝ) < N := by exact_mod_cast Nat.pos_of_ne_zero hN0
+  have hs3 : (0 : ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hks : 5 * N / 6 < N := by
+    rw [Nat.div_lt_iff_lt_mul (by norm_num)]; omega
+  have hdiv := Nat.div_add_mod (5 * N) 6
+  have hmod : 5 * N % 6 < 6 := Nat.mod_lt _ (by norm_num)
+  induction d with
+  | zero => simp
+  | succ n ih =>
+      have hn : n ≤ 5 * N / 6 := by omega
+      have hprev := ih hn
+      -- the tangent step, read downwards
+      have hstep := kashaevProd_succ_le_exp (N := N) (k := 5 * N / 6 - (n + 1))
+        hN0 (by omega)
+      have hcast : ((5 * N / 6 - (n + 1) : ℕ) : ℝ) + 1 = ((5 * N / 6 - n : ℕ) : ℝ) := by
+        have h : (5 * N / 6 - (n + 1) : ℕ) + 1 = (5 * N / 6 - n : ℕ) := by omega
+        exact_mod_cast congrArg (Nat.cast : ℕ → ℝ) h
+      have hsucc : 5 * N / 6 - (n + 1) + 1 = 5 * N / 6 - n := by omega
+      rw [hsucc, hcast] at hstep
+      -- the `n`-th step back is at most `(n+1)h` from `θ*`; this is the ONLY
+      -- inequality in the induction, and it is `hfrac` scaled by `2√3`
+      have hks1 : 5 * (N : ℝ) / 6 ≤ ((5 * N / 6 - n : ℕ) : ℝ) + ((n : ℝ) + 1) := by
+        have h : ((5 * N / 6 - n : ℕ) : ℝ) + (n : ℝ) = ((5 * N / 6 : ℕ) : ℝ) := by
+          have : (5 * N / 6 - n : ℕ) + n = 5 * N / 6 := by omega
+          exact_mod_cast congrArg (Nat.cast : ℕ → ℝ) this
+        have h2 : 6 * ((5 * N / 6 : ℕ) : ℝ) + 6 > 5 * (N : ℝ) := by
+          have : 6 * (5 * N / 6) + 6 > 5 * N := by omega
+          exact_mod_cast this
+        linarith
+      have hfrac : 5 * π / 6
+          ≤ ((5 * N / 6 - n : ℕ) : ℝ) * π / N + ((n : ℝ) + 1) * π / N := by
+        rw [← add_div, le_div_iff₀ hNR]
+        nlinarith [hks1, hpi.le]
+      have h2 := mul_le_mul_of_nonneg_left hfrac
+        (by positivity : (0 : ℝ) ≤ 2 * Real.sqrt 3)
+      -- divide the step through
+      have hE : (0 : ℝ) < Real.exp (-(2 * Real.sqrt 3)
+          * (((5 * N / 6 - n : ℕ) : ℝ) * π / N - 5 * π / 6)) := Real.exp_pos _
+      have hdown : kashaevProd N (5 * N / 6 - n)
+          * (Real.exp (-(2 * Real.sqrt 3)
+              * (((5 * N / 6 - n : ℕ) : ℝ) * π / N - 5 * π / 6)))⁻¹
+          ≤ kashaevProd N (5 * N / 6 - (n + 1)) := by
+        have h := mul_le_mul_of_nonneg_right hstep (le_of_lt (inv_pos.mpr hE))
+        rwa [mul_inv_cancel_right₀ (ne_of_gt hE)] at h
+      refine le_trans ?_ hdown
+      rw [← Real.exp_neg]
+      push_cast
+      calc kashaevProd N (5 * N / 6)
+            * Real.exp (-(Real.sqrt 3 * π * ((n : ℝ) + 1) * ((n : ℝ) + 1 + 1) / N))
+          ≤ kashaevProd N (5 * N / 6)
+            * (Real.exp (-(Real.sqrt 3 * π * (n : ℝ) * ((n : ℝ) + 1) / N))
+               * Real.exp (-(-(2 * Real.sqrt 3)
+                   * (((5 * N / 6 - n : ℕ) : ℝ) * π / N - 5 * π / 6)))) := by
+            refine mul_le_mul_of_nonneg_left ?_ (kashaevProd_nonneg N _)
+            rw [← Real.exp_add]
+            refine Real.exp_le_exp.mpr ?_
+            ring_nf at h2 ⊢
+            linarith
+        _ = kashaevProd N (5 * N / 6)
+              * Real.exp (-(Real.sqrt 3 * π * (n : ℝ) * ((n : ℝ) + 1) / N))
+            * Real.exp (-(-(2 * Real.sqrt 3)
+                * (((5 * N / 6 - n : ℕ) : ℝ) * π / N - 5 * π / 6))) := by ring
+        _ ≤ kashaevProd N (5 * N / 6 - n)
+            * Real.exp (-(-(2 * Real.sqrt 3)
+                * (((5 * N / 6 - n : ℕ) : ℝ) * π / N - 5 * π / 6))) :=
+            mul_le_mul_of_nonneg_right hprev (le_of_lt (Real.exp_pos _))
+
 end QOU.Knot.FigureEightVolume

@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T08:00:00Z
+updated_at: 2026-08-09T09:00:00Z
 ---
 
 ## Why this bean exists
@@ -452,3 +452,56 @@ a value for `c_sigma`. The lower bound needs the mirror-image pointwise
 inequalities -- a SECANT above `theta*` (where the tangent is an upper bound)
 and the TANGENT below it -- plus `AntitoneOn.integral_le_sum` for the Gaussian
 sum in the other direction.
+
+## Landed: the FIRST LOWER BOUND. The peak is not a spike. 2026-08-09
+
+`QOU/Knot/KashaevTailBound.lean::kashaevProd_ge_left`, sorry-free:
+
+    for every d <= k*:
+      kashaevProd N k* * exp(-sqrt3 pi d(d+1)/N) <= kashaevProd N (k*-d)
+
+Everything before this bounds terms from ABOVE, which yields an upper bound on
+`<4_1>_N` and therefore an inequality, not a value. Laplace needs the other
+side: the terms near the peak must stay LARGE over a `sqrt(N)`-wide stretch, or
+the sum could be `g_{k*}` and nothing more.
+
+**And it needs no new analysis.** Below `theta*` the terms are RISING, so a
+LOWER bound on `g_{k*-d}` needs an UPPER bound on the accumulated
+`log(2 sin)` -- which is exactly what the TANGENT gives. Concavity, which
+pointed the wrong way for the upper bound on the left (forcing the secant and
+its window), points the RIGHT way here. Consequence: **there is no window**.
+The tangent is global on `(0,pi)`, so this holds for every `d <= k*`.
+
+Note `d(d+1)`, not `d(d-1)`: bounding from below costs one step more, because
+the `d`-th step back is at MOST `(d+1)h` from `theta*` rather than at LEAST
+`(d-1)h`. The two directions are not symmetric and the exponents record it.
+
+### The sum lower bound is now elementary, and does NOT need an integral
+
+`sum_{d<m} exp(-a d(d+1)) >= m * exp(-a m(m-1))` -- every term is at least the
+last, since the exponent is monotone. Taking `m ~ 1/sqrt(a)` gives
+`>= m e^{-1} ~ e^{-1}/sqrt(a)`, i.e. `c sqrt(N)` at `a = sqrt3 pi/N`. No
+`AntitoneOn.integral_le_sum`, no Gaussian integral: the earlier plan in this
+bean (which called for the integral comparison in the other direction) was
+overbuilt. NOT YET WRITTEN, but it is three lines of `Finset.card_nsmul_le_sum`
+plus a choice of `m`.
+
+### Lean gotcha: an inequality stated in the wrong direction
+
+The first draft of the induction's key step read
+`-(2 sqrt3)(theta_j - theta*) >= -(2 sqrt3)(n+1) pi/N`. That is TRUE but
+vacuous -- LHS >= 0 >= RHS -- and `linarith` failed on it for a reason that
+looked like a missing sign fact. The needed statement is the OTHER direction,
+`2 sqrt3 (theta* - theta_j) <= 2 sqrt3 (n+1) h`, which is `hfrac` scaled by
+`2 sqrt3` and is purely linear in the monomials, no sign knowledge required.
+When `linarith` fails on something that "should be obvious", check whether the
+hypothesis you are feeding it is the trivially-true version.
+
+Also: `div_le_iff0` vs `le_div_iff0` -- the division was on the RIGHT here and
+on the LEFT in the right-tail proof, and the two need different lemmas.
+
+### What is left
+
+  * the sum lower bound (above -- elementary, three lines);
+  * the numeric constant for the below-window region (recorded last round);
+  * then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
