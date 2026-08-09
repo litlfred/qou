@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T04:00:00Z
+updated_at: 2026-08-09T05:00:00Z
 ---
 
 ## Why this bean exists
@@ -269,3 +269,48 @@ failed -- the split was necessary but not sufficient.
 The left tail (above), then the Gaussian sum itself via
 `hasSum_gaussian_theta_tilt`, then `hc`/`htau`. Steps 1 and 2 are done, step 3
 is half done.
+
+## Landed: the LEFT tail too. Step 3's tail half is complete. 2026-08-09
+
+`QOU/Knot/KashaevTailBound.lean::kashaevProd_left_tail`, sorry-free:
+
+    for 6b <= 5N, d <= b, and 2N <= 3(b-d):
+      kashaevProd N (b-d) <= kashaevProd N b * exp(-pi d(d-1)/(sqrt3 N))
+
+Same Gaussian, run backwards. Two things differ from the right tail and both
+are forced:
+
+  * the constant is `1/sqrt3`, not `sqrt3`, because a SECANT is shallower than
+    the tangent;
+  * there is a WINDOW, `theta >= 2pi/3`, because a secant is only valid across
+    the interval it was drawn over.
+
+`le_log_two_sin_secant : (5pi/6 - theta)/sqrt3 <= log(2 sin theta)` on
+`[2pi/3, 5pi/6]`, from `cot <= cot(2pi/3) = -1/sqrt3` there (`cot_antitoneOn`
+again) integrated back from `theta*`, where `f` vanishes.
+
+**Why a secant and not the tangent.** On the left the terms are RISING toward
+the saddle, so the bound needed is a LOWER bound on `f = log(2 sin)` -- and
+concavity supplies upper bounds. Concavity is the wrong way round there. This
+is the one place in the tail argument where the two sides are genuinely not
+symmetric, and getting it wrong would have produced a plausible-looking proof
+of nothing.
+
+The window is not tight, and the probe says so: the secant survives to
+`theta = 1.5` (below `2pi/3 = 2.094`) and fails by `theta = 1.0`. `2pi/3` is a
+convenient endpoint with a closed-form cotangent, not a boundary of validity.
+
+### Header discipline, again
+
+The file previously said "ONLY THE RIGHT TAIL IS PROVED HERE ... this file does
+not contain it". That was true when written and is now false. Corrected in the
+same commit that made it false. The pattern is worth naming: a header that
+honestly records a gap becomes a lie the moment the gap closes, so closing a
+gap means editing the place that named it.
+
+### What is left of this bean
+
+Step 3's remaining half: the Gaussian SUM itself, via
+`hasSum_gaussian_theta_tilt` -- the tails now confine it to a `sqrt(N)` window
+around `k*`, where (A)'s `O(1/N^2)` bound and `abs_Lob_taylor_saddle`'s cubic
+remainder are both uniformly good. Then step 4, reading off `hc`/`htau`.

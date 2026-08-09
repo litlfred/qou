@@ -93,7 +93,51 @@ for N in (240, 480):
               f"naive one — the file's claim would be wrong")
 
 print()
-print("=== (iv) the sqrt(N) window: where the bound crosses 1e-6 ===")
+print("=== (iv) the SECANT bound log(2 sin th) >= (5pi/6 - th)/sqrt3 ===")
+worstsec = None
+for i in range(0, 201):
+    th = 2 * pi / 3 + mpf(i) * (5 * pi / 6 - 2 * pi / 3) / 200
+    lhs = (5 * pi / 6 - th) / sqrt(3)
+    rhs = log(2 * sin(th))
+    gap = rhs - lhs
+    if worstsec is None or gap < worstsec[1]:
+        worstsec = (float(th), float(gap))
+    check(lhs <= rhs + TOL, f"secant bound violated at theta={th}")
+print(f"  201 sample angles in [2pi/3, 5pi/6]: min slack = {worstsec[1]:.3e} "
+      f"at theta = {worstsec[0]:.4f}   (touches 0 at both ends)")
+# Below 2pi/3 the bound eventually FAILS -- that is why the Lean statement
+# carries the window. It is not tight: the bound survives a little past 2pi/3
+# (concavity keeps it going for a while) and dies well before 0. Both shown,
+# so the window is not read as sharp.
+for th_bad in (mpf('1.9'), mpf('1.5'), mpf('1.0'), mpf('0.5')):
+    lo = (5 * pi / 6 - th_bad) / sqrt(3)
+    hi = log(2 * sin(th_bad))
+    print(f"    theta = {float(th_bad):.4f}: secant claims {float(lo):9.6f} "
+          f"<= {float(hi):9.6f}  -> {'holds' if lo <= hi else 'FAILS'}")
+check((5 * pi / 6 - mpf('1.0')) / sqrt(3) > log(2 * sin(mpf('1.0'))),
+      "the secant bound was expected to FAIL at theta = 1.0 (well below "
+      "2pi/3); if it holds there the window in the Lean statement is "
+      "mis-motivated")
+
+print()
+print("=== (v) the left tail, against the Lean bound ===")
+print(f"{'N':>6} {'d':>5} {'ratio g/g*':>14} {'exp(-c d(d-1)/N)':>18} {'ok':>4}")
+for N in (60, 120, 240, 480):
+    ks = 5 * N // 6
+    base = log_prod(N, ks)
+    for d in (0, 1, 2, 5, 10, 20, 40):
+        k = ks - d
+        if k < 0 or 3 * k < 2 * N:      # the secant window
+            continue
+        ratio = exp(log_prod(N, k) - base)
+        bound = exp(-pi * mpf(d) * (mpf(d) - 1) / (sqrt(3) * N))
+        ok = ratio <= bound + TOL
+        print(f"{N:6d} {d:5d} {float(ratio):14.6e} {float(bound):18.6e} "
+              f"{'ok' if ok else 'FAIL':>4}")
+        check(ok, f"left tail violated at N={N}, d={d}: {ratio} > {bound}")
+
+print()
+print("=== (vi) the sqrt(N) window: where the bound crosses 1e-6 ===")
 for N in (60, 240, 960, 3840):
     d = 1
     while exp(-sqrt(3) * pi * mpf(d) * (mpf(d) - 1) / N) > mpf('1e-6'):
