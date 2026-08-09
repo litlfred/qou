@@ -694,3 +694,61 @@ In Lean, sorry-free, standard axioms: `saddle_to_plastic`, `plastic_of_saddle`,
 `saddle_of_plastic`, `pentagon_arg_reciprocal`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 56 — flattening removes the two-variable failure. Neumann's pentagon, in Lean.
+
+Route 54 proved the identity with one real variable and measured it failing with
+two. This route removes the failure by removing the assumption that caused it.
+
+### The move
+
+The identity needs `log a₃ = log(1−x) − log(1−xy)` and four companions, and those
+DO fail. But nothing forces the use of `log a₃`. Carry the **expansion** as the
+logarithm:
+
+    flatRogers(z, Λ, Λ′) = Li₂(z) + ½·Λ·Λ′ + (log(1−z) − Λ′)·log z
+
+Its derivative is `rogersDeriv(z, Λ, Λ′)·z′` **exactly** — the `log z` factor's
+contribution cancels against the `Λ′` one. So §7h applies verbatim and the
+flattened pentagon has vanishing derivative under `PentagonRegular` **alone**.
+Five branch hypotheses → zero.
+
+What makes it work is that each `Λ` differentiates correctly *as a rational
+function*: `Λ₃′ = −1/(1−x) + y/(1−xy) = (y−1)/((1−x)(1−xy)) = a₃′/a₃`. No branch
+is chosen anywhere. That identity and its four companions is what got traded for
+the branch conditions.
+
+### It is Neumann's `R(z;p,q)`
+
+With `δ = log z − Λ`, `δ′ = log(1−z) − Λ′`:
+
+    flatRogers = L(z) + ½δ′·log z − ½δ·log(1−z) + ½δδ′
+
+and `δ = 2πi·p`, `δ′ = 2πi·q` makes this `R(z;p,q)` up to normalisation. So the
+theorem is the pentagon in `ℬ̂(ℂ)` — what this bean said the lane needed, back at
+Route 49.
+
+### Measured (Route 56 probe, 5 gates, 40 dps)
+
+* G1 — flattening repairs **every** two-variable failure, including the worst
+  (`(−0.447 + 0.354i)·π²`). Max flattened deviation `2.8e-40`.
+* G2 — the ten defects per point are **integers**, measured: max distance to the
+  nearest integer `1.2e-41`, all in `{0, ±1}`.
+* G3 — inert where the branch conditions already hold, so it extends Route 54
+  rather than replacing it.
+* G4 — the control: the unflattened sum still fails at those points, so G1 is not
+  a tautology.
+* G5 — **the flattened identity holds at `(y₁, ȳ₁)`** to `3.7e-40`. That is the
+  pair `Vol(5₂) = 3·D(y₁)` needs.
+
+### ⚠ What is still owed — now exactly one geometric fact
+
+Lean gets constancy on a connected regular region and `π²/2` on a region reaching
+the real square. **No region joining the real square to `(y₁, ȳ₁)` is
+exhibited.** G5 is evidence the identity holds there, not a proof that a path
+exists. But the question is now purely about regularity — all four arguments off
+both cuts along a path — with no branch bookkeeping in it at all.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
