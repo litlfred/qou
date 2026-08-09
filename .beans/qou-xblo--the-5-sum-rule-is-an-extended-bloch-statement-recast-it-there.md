@@ -262,3 +262,49 @@ reflection is a bipyramid symmetry; the tetrahedron-shape reading of
 `Vol(5₂) = 3·D(y₁)` is **inference, not measured against a triangulation**.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 48 — the closed form is NOT general; two new exact values; a fourth alphabet
+
+Probe `computations/probes/qbeta_5two_route48_not_general_probe.py` (4 gates,
+all pass, dps 50). PR **#4865**.
+
+### The negative that matters most
+
+Route 47's `Σ L(y_σ) = π²/2 − (2π/3)·arg(y₁)` has the shape of a Chern–Simons
+statement, which raises the obvious worry that it is a **general identity being
+rediscovered** — in which case the sum rule reduces to a citation.
+
+**It is not general.** It holds for the 5₂ saddle orbit and fails for every
+other orbit tried — `w`, `c`, `−c`, `ρ`, `c⁵`, and two other cubic fields —
+including `X³−X²+1`, which lies in the **same field** (G1). So no known theorem
+is being rediscovered, and the form is special to `y`.
+
+### Two exact values that fell out of falsifying it (G2)
+
+    Σ_σ L over X³−X²+1   =  π²/6      exactly, residual 8e-51
+    P(c⁵)  =  2·P(w)                  exactly, residual 0.0
+
+with `P(·)` the Rogers-L Galois sum. Neither predicted, neither explained.
+Gated rather than left in scrollback.
+
+### A fourth alphabet, the same gap (G3)
+
+Route 47 showed Route 41's alphabet was closed over **units**, so it never
+contained `1/(1+y)` (norm 7, not an algebraic integer) and missed the diagonal
+pentagon. Admitting non-units and closing under `1−z`, `1/z`, `1/(1+z)`, `1−z²`:
+**57 orbits, 52 relations, rank 43 → 44.** Still not determined.
+
+| alphabet | rank → with target |
+|---|---|
+| pure power tower `c^m` | not determined |
+| 82 orbits, closed under `1−x`, `1/x` | 46 → 47 |
+| 168 orbits, same closure | 153 → 154 |
+| **57 orbits, non-units admitted** | **43 → 44** |
+
+The gap has been **exactly 1 across four independent alphabets**. That
+consistency is itself the finding: the missing input is not a relation of this
+kind that was overlooked.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
