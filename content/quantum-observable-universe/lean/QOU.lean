@@ -109,6 +109,10 @@ import QOU.MathlibExt.OctonionComplexStructure
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ThetaQcdFramingCp
 import QOU.StandardModel.SecondCrossingInvariant
+-- Information content of the eightfold-way hypercharge battery: the RH half
+-- is entailed by Q (GMN at I3=0 pins Y uniquely, so it discriminates nothing);
+-- the LH half is exactly B - L. Reduces the open Y item to one condition.
+import QOU.StandardModel.HyperchargeBatteryReduction
 -- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
 -- composition obstruction (no naive q-chain rule for non-monomial inner functions).
