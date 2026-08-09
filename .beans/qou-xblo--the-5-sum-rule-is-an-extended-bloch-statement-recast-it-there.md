@@ -211,3 +211,54 @@ That is algebra only — **the analytic input (a complex Li₂ with the pentagon
 identity) is still owed**, and no instance exists.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 47 — the sum rule's cleanest form: no log² term at all
+
+Probe `computations/probes/qbeta_5two_route47_rogers_closed_form_probe.py`
+(5 gates, all pass, dps 60).
+
+    Σ_σ L(y_σ) = π²/2 − (2π/3)·arg(y₁)          residual 9e-61
+
+equivalently `11π²/6 − 2πΘ`, the two linked by `3Θ = 2π + arg(y₁)` (gated).
+
+Every earlier form carried a `log²` term:
+
+| form | statement |
+|---|---|
+| V | `Σ Re(V_j) = −3π²/2`, `V_j = 3Li₂ + (log y + b·πi)²` |
+| A | `A = −(9/2)L² + 6(Θ−π)² − π²/6` |
+| flattened | `Σ R̂(y; ε, 0) = −π²/6` |
+| **this one** | **`π²/2 − (2π/3)·arg(y₁)` — π² and π×angle only** |
+
+That is the shape a Chern–Simons / flattening statement takes, so it is formal
+support for the extended-Bloch framing of Routes 42–46 rather than another
+reformulation for its own sake. Equivalent to the sum rule, not a weakening
+(G2): `L = Li₂ + ½log·log` and the log-product Galois sum is elementary.
+
+### What did not come with it
+
+It fell out of Route 46's raw-closing diagonal pentagon
+`2P + 2Q + R = 3π²/2` with `P = Σ L(y)`, `Q = Σ L(1/(1+y))`, `R = Σ L(1−y²)`.
+`P` is elementary; **`Q` and `R` are not** — PSLQ finds nothing for either at
+maxcoeff 1e7, nor widened with `log 7` (G3). So the relation says only that
+`2Q + R` is elementary: one equation, two unknowns, closes nothing. Absence of a
+PSLQ hit is evidence, not proof, and is gated as such.
+
+⚠ **The diagonal leaves the unit tower.** `N(1+y) = 7`, so `1/(1+y)` is not an
+algebraic integer — minimal polynomial `7x³−10x²+5x−1`, not monic (G4). The
+prime 7 enters here. Flagged because this lane is named for a level-7 ladder,
+but **no connection to that ladder is measured** and none should be assumed.
+
+### The symmetry question, answered
+
+The five-to-three collapse is a **ℤ/2, not an S₃** (G5): the `x↔y` swap induces
+`(0 1)(2 4)(3)` — cycle type `[1,2,2]`, a reflection — whose orbits on the
+diagonal are the multiplicities `[2,2,1]`. The S₃ in this subject is the
+anharmonic group `⟨z↦1−z, z↦1/z⟩` on a **single** argument: a different action.
+Geometrically the five-term relation is the 2–3 Pachner move (`5 = 2+3`) and the
+reflection is a bipyramid symmetry; the tetrahedron-shape reading of
+`Vol(5₂) = 3·D(y₁)` is **inference, not measured against a triangulation**.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
