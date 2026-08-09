@@ -267,3 +267,55 @@ producers on re-run.
 number hand-edited. The two ratchet audit witnesses were regenerated and
 committed because their COUNTS moved (staleness, not drift), per the gate's own
 instruction.
+
+### Triage: the 18 split by CATEGORY, and my "shared helper" guess was wrong
+
+I wrote above that the clustering "looks like three arcs each writing float64
+through a shared helper, not eighteen independent mistakes". That is not what
+is there. Checked the producers instead of guessing:
+
+    cluster                 files  fields   numpy?  category
+    nastokes-*                4     1001     YES    (3) float64 upstream
+    alpha/*                   1       91     YES    (3) float64 upstream
+    deltalambda/threerow-*    4      296     no     (2) mpmath, downcast
+    the rest (incl. qbeta)    9       97      —     mixed, small
+
+using PR #4729's own taxonomy. The clusters are real but they are NOT one
+shared helper — they are two different failure modes:
+
+**`nastokes-*` and `alpha/*` (1092 fields, 5 producers) are numpy.**
+`nastokes_multigen_cluster_additivity_probe.py:522` is
+`trace=float(np.trace(Om))` — the linear algebra itself is float64. Draining
+these is a genuine port (category 3 in #4729's terms: "mpmath adaptive
+quadrature, gram_matrix_mp/tr_m_mp/hm_mp, clarabel-MPFR"), not a sink fix. The
+835-field witness is one probe emitting `omega`/`trace`/`R2`/`R3` per germ per
+shape per species — the count is large because the loop is wide, not because
+the fix is.
+
+**`deltalambda/threerow-*` (296 fields, 4 producers) is mpmath downcast.**
+No numpy at all; ~20 `float(` calls each. But it is NOT pure sink coercion —
+`threerow_qcross_trend_probe.py` downcasts mid-stream and decides on the
+result:
+
+    249:  "q_cross": float(a) * float(b),
+    250:  "on_real_level_branch": bool(float(a) ** 2 < float(Q_STAR)),
+    275:  a, b = float(a), float(b)
+
+Line 250 is a VERDICT decided in float64, and 275 downcasts before further
+use. So the fix is the same discipline #4729 already applied to the em-linking
+producers — `mp.nstr` at the sink with the `mpf` kept alive wherever a value is
+also compared or ordered — but it has to reach into the computation, not only
+the serialisation.
+
+### What this does to the cost of "drain main's debt first"
+
+Not 1485 undifferentiated fields. Roughly:
+
+  * 296 fields / 4 producers — same shape as the em-linking drains this PR
+    already did, and #4729 has the pattern;
+  * 1092 fields / 5 producers — numpy ports, the expensive kind;
+  * ~97 fields / 9 producers — small and various, including the qbeta trio.
+
+The cheap half is a fifth of the fields and would take the ratchet from 18 NEW
+to 14 NEW — which does not make it green, so it does not on its own change the
+decision on #4729.
