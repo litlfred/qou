@@ -38,32 +38,39 @@ cell at `(N+1, 1)` of content `−N`, so the factor `[N + (−N)]_q = [0]_q = 0`
 kills the whole weight. That is `RowCapObstruction.lean`'s statement arriving as
 arithmetic.
 
-## What this module found, and it is not what was expected
+## What this module found
 
 Validated against the registry: at `N = 2` these weights reproduce convention
 **D** (SU(2)/Temperley–Lieb, Jones) exactly — `(0.5054042, 0.2472979, 0)` at
-`n = 3`, `y_{(1^3)} = 0` on the nose.
+`n = 3`, `y_{(1^3)} = 0` on the nose. That is the live statement: **D is the
+production trace**, so the shipped pipeline *is* an `SU(N)` quantum-group trace,
+at `N = 2`, carrying the row cap.
 
-But the production trace is convention **C**, `(0.4153958, 0.2809296,
-0.0227449)`, and **C matches no integer N**. Solving for the real `N` that
-reproduces C's `y_{(1^3)}/y_{(3)}` ratio gives
+> **UPDATED 2026-08-09.** This section previously read "the production trace is
+> convention **C**" and led with the measurement `N = 2.5995155…` — the real `N`
+> reproducing C's `y_{(1^3)}/y_{(3)}` ratio, showing C sat between SU(2) and
+> SU(3) and was no `SU(N)` trace at all. **C was excised from this branch**
+> (commits `73311b57`, `33a6c7aa`), so that headline described a convention no
+> longer in the pipeline. The C measurement is retained below as a historical
+> finding — it is *why* C was excised — but it is no longer a statement about
+> production. Nothing computational changed; `_y_lambda_at_convention_C_HISTORICAL`
+> is the only remaining C path and it is unwired.
 
-    N = 2.5995155…
+Historical (pre-excision), kept because it is the evidence against C:
 
-so the mass channel sits BETWEEN SU(2) and SU(3) and is not an `SU(N)`
-quantum-group trace at all. Two consequences worth stating plainly:
-
-* C has `y_{(1^3)} ≠ 0`, so the mass trace does **not** carry the `N = 2` row
-  cap. The ledger's "framework supplies `dim V = 2`" is a statement about the
-  single-fibre tower, not about the trace the masses are computed with.
-* The often-repeated shorthand that the framework's `z` is "the
-  Temperley–Lieb / SU(2) value" is **false** — that is convention D, at
-  `z = q^3/(q^2+1) = 0.6126880`, and `D ≠ C` is Lean-proved
+* C's weights were `(0.4153958, 0.2809296, 0.0227449)` and **C matched no
+  integer N** — the implied real `N` was `2.5995155…`.
+* C had `y_{(1^3)} ≠ 0`, so the C mass trace did **not** carry the `N = 2` row
+  cap, and the deepest partition was never killed.
+* The shorthand that the framework's `z` is "the Temperley–Lieb / SU(2) value"
+  was **false under C** — that is convention D, at `z = q^3/(q^2+1) =
+  0.6126880`, and `D ≠ C` is Lean-proved
   (`QOU.BraidsAndKnots.BorromeanTraceConventionSplit.conventionD_ne_conventionC`).
-  The two differ by 195.8 ppm on `β_Bor`.
+  The two differ by 195.8 ppm on `β_Bor`. Under D the shorthand is now correct.
 
-Nothing here is wired into any production path. It is the weight function the
-flavour channel would need, plus the measurement of where C actually sits.
+This module itself is still read-only and wired into no production path. It is
+the weight function the flavour channel would need at general `N`, plus the
+`N = 2` cross-check on the shipped convention.
 
 Read-only: writes no witness, runs no producer.
 
@@ -229,17 +236,24 @@ def self_test() -> int:
             chk(f"row cap: y_λ = 0 for λ with >{N} rows at n={n} "
                 f"({len(capped)} shapes)", all(y[s] == 0 for s in capped))
 
-    # production is convention C, and C is NOT any integer N
+    # POST-EXCISION (2026-08-09): production is convention D, and D IS SU(2).
+    # These three checks previously asserted the C state; C was excised on this
+    # branch (73311b57, 33a6c7aa), so they now pin the live convention instead.
+    # They are the regression guard against a silent slide back to C.
     from wedderburn_jones_markov import y_lambda_at
     prod = {k: mp.mpf(str(v)) for k, v in y_lambda_at(3, q).items()}
-    chk("production y_λ matches registry C, not D",
-        abs(prod[(3,)] - REG_C[0]) < mp.mpf("5e-7")
-        and abs(prod[(1, 1, 1)] - REG_C[2]) < mp.mpf("5e-7"))
-    chk("production y_(1^3) ≠ 0 — C does NOT carry the N=2 row cap",
-        prod[(1, 1, 1)] > mp.mpf("0.02"))
-    for N in (2, 3, 4, 5):
+    chk("production y_λ matches registry D, not C",
+        abs(prod[(3,)] - REG_D[0]) < mp.mpf("5e-7")
+        and abs(prod[(1, 1, 1)] - REG_D[2]) < mp.mpf("5e-7"))
+    chk("production y_(1^3) = 0 — D DOES carry the N=2 row cap",
+        prod[(1, 1, 1)] == 0)
+    chk("production IS SU(2) exactly", all(
+        abs(y_lambda_su_n(3, q, 2)[s] - prod[s]) < mp.mpf("1e-25")
+        for s in ((3,), (2, 1), (1, 1, 1))))
+    for N in (3, 4, 5):
         y = y_lambda_su_n(3, q, N)
-        chk(f"C ≠ SU({N})", abs(y[(3,)] - prod[(3,)]) > mp.mpf("1e-3"))
+        chk(f"production ≠ SU({N})",
+            abs(y[(3,)] - prod[(3,)]) > mp.mpf("1e-3"))
 
     total = 33
     print(f"\n{total - fails}/{total} passed")
@@ -270,23 +284,27 @@ def main() -> int:
 
     from wedderburn_jones_markov import y_lambda_at
     prod = {k: mp.mpf(str(v)) for k, v in y_lambda_at(n, q).items()}
-    print(f" {'C':>3} " + "".join(f"{mp.nstr(prod.get(s, mp.mpf(0)), 10):>17}"
+    print(f" {'D':>3} " + "".join(f"{mp.nstr(prod.get(s, mp.mpf(0)), 10):>17}"
                                   for s in shapes)
-          + "   <- production (registry convention C)")
+          + "   <- production (registry convention D = SU(2))")
 
     if n == 3:
         print("\n" + "-" * 78)
-        print(" where does convention C actually sit?")
+        print(" where does the EXCISED convention C sit?  (historical)")
         print("-" * 78)
-        tgt = prod[(1, 1, 1)] / prod[(3,)]
+        from wedderburn_jones_markov import (
+            _y_lambda_at_convention_C_HISTORICAL as _yC)
+        cprod = {k: mp.mpf(str(v)) for k, v in _yC(n, q).items()}
+        tgt = cprod[(1, 1, 1)] / cprod[(3,)]
         def f(N):
             y = y_lambda_su_n(3, q, N)
             return y[(1, 1, 1)] / y[(3,)] - tgt
         Nstar = mp.findroot(f, mp.mpf("2.6"))
         print(f" C's y_(1³)/y_(3)          = {mp.nstr(tgt, 12)}")
         print(f" real N reproducing it     = {mp.nstr(Nstar, 12)}")
-        print(" NON-INTEGER, between SU(2) and SU(3): the mass channel is not an")
-        print(" SU(N) quantum-group trace, and does not carry the N=2 row cap.")
+        print(" NON-INTEGER, between SU(2) and SU(3): C was not an SU(N)")
+        print(" quantum-group trace and did not carry the N=2 row cap.")
+        print(" That is why it was excised. Production (D) is SU(2) exactly.")
     return 0
 
 

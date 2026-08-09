@@ -136,3 +136,39 @@ empty — it never declared one, so wave 3's report of it timing out came from a
 different selection. Only `term5_aK_audit` (900 s) and `alpha/alpha_k_jones_markov_h12`
 (900 s, NOT on the known-slow list — new) are slow in this set. Budget ~2 × 900 s,
 not 5 ×.
+
+## CORRECTION 2026-08-09 (foreground session): the "no producer anywhere" item
+
+This bean records `atomic-braid-mass-table.witness.json` as "exists nowhere in
+the tree" and treats it as a missing-producer defect. **The absence is real; the
+framing is wrong, and acting on it as stated would violate an explicit
+forbidden-use.**
+
+Checked, not assumed:
+
+1. The file exists nowhere -- CONFIRMED (`find` over the whole tree, 0 hits).
+2. It was **deliberately retired**, not lost.
+   `computations/_deprecated/methodology-deprecation.witness.json:66` lists it
+   under deprecated artifacts: "atomic-braid-mass-table.witness.json (off-main
+   commitSha; six-term formula 24-54 % errors)", alongside the modes-sweep
+   ("best mode still 22 % mean err").
+3. Its consumer **degrades cleanly and says so**.
+   `compound_binding_via_differences.py:124` checks `s3_path.exists()`, prints
+   "ERROR: atomic-braid-mass-table.witness.json missing" and `return 1` -- an
+   exit code, not a crash. Its own docstring at :118 reads: "This script remains
+   a legacy consumer **by design**; for **mass predictions** use the canonical
+   witness instead" -- naming `atomic-mass-via-rho-k.witness.json` as the
+   replacement.
+
+So there is nothing to repair here. **Do NOT regenerate it.** The deprecation
+record lists "Generating new mass predictions for the atlas" and "Citing as
+primary evidence for the mass-table-ppb framework" as FORBIDDEN USES; producing
+the witness to make three audits resolve would do exactly that, and would
+reinstate a six-term formula carrying 24-54 % errors.
+
+The legitimate residue is documentation drift only: the three audits that cite
+the witness (`2026-05-17-p4tt-migration-triage.md:60`,
+`2026-05-10-workplan-0b-script-rewire-handoff.md:267`, `coordination/1ppb.md:132`)
+predate the deprecation and read as though the artifact were live. That is a
+doc-note fix, NOT a regen item, and it should be split out of this bean's
+regen queue so a future sweep does not pick it up as work.

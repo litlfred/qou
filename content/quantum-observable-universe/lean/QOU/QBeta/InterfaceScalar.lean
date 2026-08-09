@@ -381,4 +381,107 @@ theorem proj_mul_eq_zero (σ : A) (q qi s h : R)
 
 end Projectors
 
+section IsospinOrdering
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Convention D makes `2z − h` a manifest positive.** With the
+Temperley–Lieb / SU(2) Markov parameter `z = q³/(q²+1)` and the Hecke
+parameter `h = q − q⁻¹`,
+
+    2z − h = (q⁴ + 1) / (q(q² + 1)),
+
+an identity, not an estimate. Every factor on the right is positive for
+`q > 0`, so the sign needs no numerical input. -/
+theorem two_z_sub_h_conventionD (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    2 * (q ^ 3 / (q ^ 2 + 1)) - (q - q⁻¹) = (q ^ 4 + 1) / (q * (q ^ 2 + 1)) := by
+  field_simp
+  ring
+
+/-- **…hence `h < 2z` for every `q > 0`.** -/
+theorem h_lt_two_z_conventionD (q : R) (hq : 0 < q) :
+    q - q⁻¹ < 2 * (q ^ 3 / (q ^ 2 + 1)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : (0 : R) < q ^ 2 + 1 := by positivity
+  have hid := two_z_sub_h_conventionD q hq0 (ne_of_gt hq2)
+  have hpos : (0 : R) < (q ^ 4 + 1) / (q * (q ^ 2 + 1)) := by positivity
+  linarith [hid ▸ hpos]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The two isospin channels partition the free trace.** The scalar shadow of
+`proj_add_eq_one`: `μ₊ + μ₋ = 1` exactly. Projecting onto a channel can only
+*remove* trace weight, so `μ_T < 1` and `B_T = −α·log μ_T > 0` for both `T` —
+which is why the projector decomposition alone can never produce an unbound
+channel. Unbinding needs `μ > 1`, and that requires leaving the convex
+decomposition of `1`, e.g. `stacked_crossing_gt_one`. -/
+theorem mu_sum_eq_one (q z : R) (hs : q + q⁻¹ ≠ 0) :
+    (z + q⁻¹) / (q + q⁻¹) + (q - z) / (q + q⁻¹) = 1 := by
+  rw [← add_div, div_eq_one_iff_eq hs]
+  ring
+
+/-- **THE ORDERING IS FORCED — no fit, no multiplicity, every `q`.**
+
+`μ₊` is the `T = 1` (isospin-symmetric) interface scalar and `μ₋` the `T = 0`
+(antisymmetric) one. Under convention D,
+
+    μ₋ < μ₊   for every  q > 0,
+
+because the difference is `μ₊ − μ₋ = (2z − h)/(q + q⁻¹)` and
+`h_lt_two_z_conventionD` makes the numerator positive. With `B = −α·log μ`
+decreasing in `μ`, the **isospin singlet is always the more strongly bound
+channel**. Nature agrees: of the four two-nucleon channels — pp, nn, pn(¹S₀)
+all `T = 1`, pn(³S₁) the deuteron at `T = 0` — exactly the `T = 0` one binds.
+
+This is the replacement for the crossing-multiplicity story. The channel is
+selected by a representation label, not by a count of crossings, so there is
+no `m_pp` / `m_nn` to tune (cf. bean `qou-h7mh`: "DO NOT JUST FIT m_*"). -/
+theorem mu_singlet_lt_mu_triplet (q z : R) (hq : 0 < q)
+    (hz : z = q ^ 3 / (q ^ 2 + 1)) :
+    (q - z) / (q + q⁻¹) < (z + q⁻¹) / (q + q⁻¹) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hinv : 0 < q⁻¹ := by positivity
+  have hs : 0 < q + q⁻¹ := by linarith
+  have hnum : q - z < z + q⁻¹ := by
+    have := h_lt_two_z_conventionD q hq
+    rw [hz]; linarith
+  exact (div_lt_div_iff_of_pos_right hs).mpr hnum
+
+/-- **…and therefore the singlet binds harder.** `−log` is decreasing, so
+`μ₋ < μ₊` transports to `B₊ < B₋` for any positive scale `α`. Stated over `ℝ`
+because `Real.log` is. -/
+theorem singlet_binds_more (α μp μm : ℝ) (hα : 0 < α) (hm : 0 < μm)
+    (hlt : μm < μp) : -α * Real.log μp < -α * Real.log μm := by
+  have hlog : Real.log μm < Real.log μp := Real.log_lt_log hm hlt
+  nlinarith
+
+end IsospinOrdering
+
+section ChannelSelection
+
+/-- **Any interface keyed on nucleon CONTENT is refuted by the two pn channels.**
+
+The proposal "identical nucleons take two crossings" — and every variant of it —
+assigns the interface from the unordered pair of nucleon species, i.e. it
+factors through `content : Channel → Content`. But nature's two pn channels
+have the *same* content and *opposite* boundness: pn(³S₁) is the deuteron at
+`+2.224566 MeV`, pn(¹S₀) is unbound (a virtual state at `−0.066 MeV`). A
+function of the content alone must give them the same energy.
+
+So the refutation is logical, not numerical: no choice of `m_pp`, `m_nn`,
+`m_pn` can succeed, because the failure is in what the multiplicities are
+allowed to depend on. `mu_singlet_lt_mu_triplet` supplies the variable that
+does work — the isospin label `T`, which separates the two pn channels. -/
+theorem content_keyed_interface_refuted
+    {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    {Channel Content : Type*} (content : Channel → Content) (B : Content → R)
+    (pn_triplet pn_singlet : Channel)
+    (hsame : content pn_triplet = content pn_singlet)
+    (hbound : 0 < B (content pn_triplet))
+    (hunbound : B (content pn_singlet) ≤ 0) : False := by
+  rw [hsame] at hbound
+  linarith
+
+end ChannelSelection
+
 end QOU.QBeta.InterfaceScalar
