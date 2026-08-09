@@ -703,4 +703,58 @@ theorem sum_pentagon_diagonal (L : ℂ → ℂ)
   simp only [Fin.sum_univ_three]
   linear_combination per 0 + per 1 + per 2
 
+/-! ### §7g — Neumann's kernel condition, and why `R` does not see the flattening
+
+Route 49 read the definitions from Neumann, *Extended Bloch group and the
+Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004) (`uploads/0307092v2.pdf`):
+
+* `R(z;p,q) = R(z) + (πi/2)·(p·log(1−z) + q·log z) − π²/6`, valued in `ℂ/π²ℤ`;
+* `ℬ̂(ℂ) = ker ν` with `ν([z;p,q]) = (log z + pπi) ∧ (−log(1−z) + qπi)`.
+
+Expanding `ν`, membership forces `3q + 2p = 0` at each root. The two theorems
+below are the algebraic content of that, and they need no dilogarithm at all —
+only the branch relation, which `branch_data_of_cubic` already supplies.
+
+⚠ The *numerical* statements of Routes 42–49 — `Σ_σ R(y_σ) = −(2π/3)·arg(y₁)`,
+`Vol(5₂) = 3·D(y₁)`, the irrationality of `arg(y₁)/π` — are **not** proved here
+and are not stated as theorems anywhere in this corpus. They need a complex
+`Li₂` carrying the five-term identity, which Mathlib does not have. -/
+
+/-- **The admissible flattening correction is an integer multiple of `π²`.**
+
+Neumann's kernel condition forces `(p,q) = (3k, −2k)`. For such a flattening the
+correction term is exactly `k·π²·ε` — so in `ℂ/π²ℤ`, where `R` takes values, it
+vanishes whenever `k·ε` is an integer. That is why `R` is independent of the
+choice of admissible flattening, and it is pure algebra over the branch
+relation. -/
+theorem admissible_correction {y ε : ℂ} (k : ℂ)
+    (hbranch : 2 * Complex.log y - 3 * Complex.log (1 - y)
+      = 2 * (Real.pi : ℂ) * I * ε) :
+    ((Real.pi : ℂ) * I / 2) * (3 * k * Complex.log (1 - y)
+        + (-2 * k) * Complex.log y)
+      = k * (Real.pi : ℂ) ^ 2 * ε := by
+  linear_combination (-(k * (Real.pi : ℂ) * I / 2)) * hbranch
+    - (k * (Real.pi : ℂ) ^ 2 * ε) * Complex.I_sq
+
+/-- **`ν = 0` forces `3q + 2p = 0`**, at a root where the branch integer is `0`.
+
+At the real saddle root the branch relation reads `2·log y = 3·log(1−y)`, both
+logs are real, and `ν`'s `πi`-part is `q·log y + p·log(1−y)`. Requiring it to
+vanish pins the flattening to the line `3q + 2p = 0` — which is exactly the null
+direction Route 44 found by search and could only describe as a torsor. -/
+theorem nu_pi_part_eq_zero_iff {y : ℂ} {p q : ℂ} (hlog : Complex.log y ≠ 0)
+    (hbranch : 2 * Complex.log y - 3 * Complex.log (1 - y) = 0) :
+    q * Complex.log y + p * Complex.log (1 - y) = 0 ↔ 3 * q + 2 * p = 0 := by
+  have h1 : Complex.log (1 - y) = 2 / 3 * Complex.log y := by
+    linear_combination (-1 / 3 : ℂ) * hbranch
+  rw [h1]
+  constructor
+  · intro h
+    have : (3 * q + 2 * p) * Complex.log y = 0 := by linear_combination 3 * h
+    rcases mul_eq_zero.mp this with h' | h'
+    · exact h'
+    · exact absurd h' hlog
+  · intro h
+    linear_combination (Complex.log y / 3) * h
+
 end QOU.QBeta.FiveTwo
