@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T11:00:00Z
+updated_at: 2026-08-09T12:00:00Z
 ---
 
 ## Why this bean exists
@@ -601,3 +601,44 @@ file header says exactly this.
      (all terms nonneg), so this is nearly free once the reindex above is
      reused;
   3. then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
+
+## Landed: the LOWER bound on the whole sum, and both sides phrased for `<4_1>_N`. 2026-08-09
+
+`le_sum_kashaevProd`, plus the two `kashaev`-phrased corollaries
+`le_kashaev` and `kashaev_le_split`. All sorry-free.
+
+    kashaevProd N k* * (m * e^{-1}) <= kashaev N        when sqrt3 pi m^2 <= N
+    kashaev N <= w * max 1 (kashaevProd N w)
+                 + g_{k*}(2 + sqrt(sqrt3 N)/2)
+                 + g_{k*}(2 + sqrt(N/sqrt3)/2)
+
+**The lower bound needed no decomposition at all.** Dropping terms only helps,
+so the window sum is a sub-sum of the whole sum with every term nonnegative --
+`Finset.sum_le_sum_of_subset_of_nonneg` and the reindex from Part 9. That is
+the asymmetry between the two directions in one line: an UPPER bound must
+account for every term, a LOWER bound may ignore as many as it likes.
+
+**`kashaev N` is DEFINITIONALLY the sum**, so `le_kashaev` and
+`kashaev_le_split` have no proof body -- they are the same theorems with the
+subject named. Worth having anyway: they are the ones to cite, because they say
+"the Kashaev invariant" rather than "a sum over `Finset.range N`".
+
+### Lean gotcha
+
+`congr 1` on `Finset.sum s f = Finset.sum t f` leaves a FINSET equation
+`s = t`, which `omega` cannot touch even when the underlying arithmetic is
+trivial. Rewrite the range's Nat argument first
+(`have hr : ... = m := by omega; rw [hr]`) and let the sums close by rfl.
+
+### Where the arc stands
+
+`<4_1>_N` is now bounded on BOTH sides by explicit expressions in `g_{k*}`. The
+lower bound is already `c sqrt(N) g_{k*}` in the right shape. The upper bound
+is not: its first summand is `O(N) max 1 g_w`. ONE numeric collapse
+(`e^{-x} <= 1/x` against `D = k*-w ~ N/6`, threshold `N >= 62`) stands between
+the current state and `c1 sqrt(N) g_{k*} <= <4_1>_N <= c2 sqrt(N) g_{k*}`.
+
+After that, `hc` still needs the VALUE of `g_{k*}` -- these bounds are relative
+to it, and turning them into `c_sigma` needs
+`log g_{k*} = 2 s_{k*}` fed through `kashaev_log_sum_asymptotic`. That join is
+untouched.

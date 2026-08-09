@@ -49,10 +49,12 @@
   matching LOWER bounds, which need the tangent again — on the rising side
   concavity finally points the right way, so Part 7 carries NO window.
 
-  Part 9 recombines them: `sum_kashaevProd_le_split` bounds
-  `∑_{k<N} kashaevProd N k` by the three regions' bounds, exactly (an exact
+  Part 9 recombines them.  `sum_kashaevProd_le_split` bounds
+  `∑_{k<N} kashaevProd N k` above by the three regions' bounds (an exact
   three-way split of `Finset.range N`, plus one order-reversing reindex to move
-  the distance-indexed window sum onto an interval).
+  the distance-indexed window sum onto an interval), and `le_sum_kashaevProd`
+  bounds it BELOW by `e^{−1}·m·g_{k*}` whenever `√3πm² ≤ N`.  The lower bound
+  needs no decomposition at all — dropping terms only helps.
 
   WHAT IS STILL MISSING.  The split's FIRST summand is `O(N)·max 1 g_w`, not
   `O(√N)·g_{k*}`: collapsing it needs the numeric constant (`e^{−x} ≤ 1/x`
@@ -872,5 +874,57 @@ theorem sum_kashaevProd_le_split {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 *
     rw [Finset.mem_Ico] at hk ⊢
     omega
   linarith
+
+/-- **The whole sum, from below.**  `⟨4₁⟩_N ≥ e^{−1}·m·g_{k*}` whenever
+`√3·π·m² ≤ N`; taking `m ≈ √(N/(√3π))` makes that `≥ c√N·g_{k*}`.
+
+Nearly free once `sum_kashaevProd_Icc_eq` exists: the window sum is a sub-sum of
+the whole sum and every term is nonnegative.  Unlike the upper bound, this needs
+NO region decomposition — dropping terms only helps. -/
+theorem le_sum_kashaevProd {N m : ℕ} (hN : 6 ≤ N) (hm : m ≤ 5 * N / 6)
+    (hsq : Real.sqrt 3 * π * (m : ℝ) ^ 2 ≤ N) :
+    kashaevProd N (5 * N / 6) * ((m : ℝ) * Real.exp (-1))
+      ≤ ∑ k ∈ Finset.range N, kashaevProd N k := by
+  have hks : 5 * N / 6 < N := by
+    rw [Nat.div_lt_iff_lt_mul (by norm_num)]; omega
+  refine le_trans (le_sum_kashaevProd_left_of_sq hN hm hsq) ?_
+  rcases Nat.eq_zero_or_pos m with hm0 | hmpos
+  · subst hm0
+    simpa using Finset.sum_nonneg (fun k _ => kashaevProd_nonneg N k)
+  have heq : ∑ d ∈ Finset.range m, kashaevProd N (5 * N / 6 - d)
+      = ∑ k ∈ Finset.Icc (5 * N / 6 - m + 1) (5 * N / 6), kashaevProd N k := by
+    rw [sum_kashaevProd_Icc_eq (N := N) (w := 5 * N / 6 - m + 1) (by omega)]
+    -- `congr 1` here would leave a FINSET equation, which omega cannot touch;
+    -- rewrite the range's argument instead
+    have hr : 5 * N / 6 - (5 * N / 6 - m + 1) + 1 = m := by omega
+    rw [hr]
+  rw [heq]
+  refine Finset.sum_le_sum_of_subset_of_nonneg ?_
+    (fun k _ _ => kashaevProd_nonneg N k)
+  intro k hk
+  rw [Finset.mem_Icc] at hk
+  rw [Finset.mem_range]
+  omega
+
+/-! ### The same two statements, phrased for `⟨4₁⟩_N`
+
+`kashaev N` is DEFINITIONALLY `∑ k ∈ Finset.range N, kashaevProd N k`, so these
+are the two theorems above with no proof at all — but they are the ones to cite,
+because they say "the Kashaev invariant" rather than "a sum". -/
+
+/-- `⟨4₁⟩_N ≥ e^{−1}·m·g_{k*}` when `√3πm² ≤ N`. -/
+theorem le_kashaev {N m : ℕ} (hN : 6 ≤ N) (hm : m ≤ 5 * N / 6)
+    (hsq : Real.sqrt 3 * π * (m : ℝ) ^ 2 ≤ N) :
+    kashaevProd N (5 * N / 6) * ((m : ℝ) * Real.exp (-1)) ≤ kashaev N :=
+  le_sum_kashaevProd hN hm hsq
+
+/-- `⟨4₁⟩_N` bounded above by the three regions. -/
+theorem kashaev_le_split {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 * N)
+    (hw2 : 2 * N + 3 ≤ 3 * w) (hwk : w ≤ 5 * N / 6) :
+    kashaev N
+      ≤ (w : ℝ) * max 1 (kashaevProd N w)
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) :=
+  sum_kashaevProd_le_split hN hw1 hw2 hwk
 
 end QOU.Knot.FigureEightVolume
