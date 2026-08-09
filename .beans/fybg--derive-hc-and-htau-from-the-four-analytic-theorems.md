@@ -1078,3 +1078,66 @@ the constant does not need (identifying `c_sigma` is a limit statement).
      (`hasSum_gaussian_theta_tilt`) -- the tilt is why that form exists.
   3. Cut the tail beyond the window with step 5 (lossy is fine there).
   4. Combine with step 7 for `c_sigma`, then `hc`, then `htau`.
+
+---
+
+## Step 11 -- pointwise Gaussian to Gaussian SUM (`QOU/Knot/KashaevWindowSum.lean`)
+
+Five theorems, all `[propext, Classical.choice, Quot.sound]`. The two
+mechanical steps between step 10 and Laplace.
+
+  * `kashaevProd_eq_mul_exp` -- `g_k' = g_k exp(log g_k' - log g_k)`, the only
+    place positivity of both terms is used (`kashaevProd_pos`).
+  * `kashaevProd_bounds_of_log_bound` -- `|log(g_k'/g_k) - T| <= B` becomes
+    `g_k e^{T-B} <= g_k' <= g_k e^{T+B}`, both directions from one hypothesis.
+  * `sum_kashaevProd_le_of_log_bound` / `le_sum_kashaevProd_of_log_bound` --
+    over any `Finset` window, `e^{+-B}` factors out of every term.
+  * `sum_kashaevProd_window_sandwich` -- the two combined:
+    `|sum_s g_k' - g_k sum_s e^T| <= g_k (e^B - 1) sum_s e^T`.
+
+**`T : N -> R` and `B : R` are abstract.** Nothing in this file knows about
+`Lambda`, the saddle, or `4_1`. That is deliberate: a sharper expansion than
+step 10's can be dropped in without touching these proofs.
+
+### No sign hypothesis on B -- a correction
+
+A first draft carried `0 <= B`, reasoning that `e^B - 1` had better be
+nonnegative. Lean's unused-variable linter flagged it, and the linter was
+right: the lower half rests on `e^B + e^{-B} >= 2`, which holds for EVERY real
+`B`, so no sign hypothesis is needed. (And a negative `B` forces the window
+empty -- it would bound an absolute value below zero -- so both sides are 0 and
+the statement is true there too.) The docstring now says this instead of the
+wrong justification I had written.
+
+### The sandwich is not vacuous
+
+Probe part (iv). The sandwich is only worth anything if `e^B - 1 -> 0`:
+
+    N        240      960     3840    15360
+    B       2.449    0.783    0.341    0.160
+    e^B-1  10.577    1.188    0.406    0.173
+    true/model - 1   0.00533  0.00131  0.00033  0.00008
+
+So model and true window sum agree to `1 + O(1/sqrt N)` -- the rate step 10
+established. Note the bound is loose by ~2000x against the truth; that is the
+price of a sup-over-the-window `B` and it does not matter, since only
+`e^B - 1 -> 0` is needed.
+
+### A display that lied, caught
+
+Probe part (iii) first printed the raw window sums. `g_k ~ e^{0.323 N}`, so at
+N = 3840 those are `~1e539` and `float()` renders them `inf`: the table read
+`inf  inf  inf   ok`. The COMPARISON was genuine throughout (mpmath has
+arbitrary exponent range) -- but a column of `inf` next to `ok` shows nothing,
+so everything is now normalised by `g_k`.
+
+Separately: a `python3 - <<'PY'` patch script of mine used `s.split('\\n')`
+inside a quoted heredoc, which splits on a literal backslash-n and collapsed
+the whole probe to one line. Rewrote the file rather than trying to unpick it.
+
+### Remaining before `hc`
+
+  1. Evaluate `sum_s e^{T(k')}` -- extend the window to `Z`, apply step 8 in
+     its TILTED form, and subtract the tail. Step 8 gives
+     `sqrt(pi/a)(1 + exp small)`; step 5 gives the tail.
+  2. Combine with step 7 for `c_sigma`; then `hc`; then `htau`.
