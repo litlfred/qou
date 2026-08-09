@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.chirality_frobenius_self_pairing
@@ -30,6 +31,13 @@ namespace QOU.BraidKnot
 
 /-- The balanced quantum integer `[3]_q = q² + 1 + q⁻²`. -/
 noncomputable def qInt3 {R : Type*} [Field R] (q : R) : R := q ^ 2 + 1 + q⁻¹ ^ 2
+
+/-- **Bridge to the canonical bracket.** Conditional on both `q ≠ 0` and
+`q − q⁻¹ ≠ 0` — the middle `1` of `q² + 1 + q⁻²` is `q · q⁻¹`, so `q ≠ 0` is a
+real hypothesis here, not boilerplate. -/
+theorem qInt3_eq_canonical {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (h : q - q⁻¹ ≠ 0) : qInt3 q = QOU.QInteger.qIntBal q 3 :=
+  (QOU.QInteger.qIntBal_three q hq h).symm
 
 /-- The Hecke deformation parameter `h = q − q⁻¹`. -/
 noncomputable def heckeH {R : Type*} [Field R] (q : R) : R := q - q⁻¹

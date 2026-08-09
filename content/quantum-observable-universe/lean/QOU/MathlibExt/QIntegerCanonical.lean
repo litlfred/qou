@@ -233,6 +233,29 @@ to `0` (Lean's `x / 0 = 0`), not to `n`.  This is the lemma that makes
 theorem qIntBal_one_eq_zero (n : ℕ) : qIntBal (1 : R) n = 0 := by
   simp [qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
 
+/-! ### Small-index shorthands
+
+Five corpus sites write `[2]_q` and `[3]_q` out longhand as `q + q⁻¹` and
+`q² + 1 + q⁻²` under local names (`qInt2`, `qBracket2`, `qInt3`).  They cannot
+be aliased — the longhand *is* their body and their proofs use it — but they can
+be tied to the canonical bracket by these two identities.
+
+Note both are **conditional**, and on more than the obvious: `[2]_q` needs only
+`q − q⁻¹ ≠ 0`, but `[3]_q` additionally needs `q ≠ 0`, because the middle term
+`1` is `q · q⁻¹`.  A shorthand site is therefore equal to the canonical bracket
+*away from the degenerate locus*, not everywhere — which is exactly the kind of
+thing a body swap would have hidden. -/
+
+theorem qIntBal_two {R : Type*} [Field R] (q : R) (h : q - q⁻¹ ≠ 0) :
+    qIntBal q 2 = q + q⁻¹ := by
+  rw [qIntBal_def, div_eq_iff h]; ring
+
+theorem qIntBal_three {R : Type*} [Field R] (q : R) (hq : q ≠ 0)
+    (h : q - q⁻¹ ≠ 0) : qIntBal q 3 = q ^ 2 + 1 + q⁻¹ ^ 2 := by
+  rw [qIntBal_def, div_eq_iff h]
+  field_simp
+  ring
+
 /-- **Closed form of the guarded geometric bracket.**
 
 `qIntGeo` is the `Finset.sum`, but every guarded-geometric site in the corpus
