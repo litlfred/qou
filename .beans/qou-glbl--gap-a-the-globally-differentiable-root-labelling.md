@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide CLOSED, routing settled, t(c) DIFFERENTIABLE (phi=0 exception removed); what remains is composing Y1 Y2 Y3'
+title: 'Gap A: VSide CLOSED, hcont CLOSED (Re Li2 continuous across the cut); ONE obligation left, he_j at the pair (k=0)'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T13:05:00Z
+updated_at: 2026-08-09T15:40:00Z
 ---
 
 ## What is open
@@ -155,7 +155,7 @@ in the real part. Route 30's correction, proved rather than assumed.
 | the four sign facts `hA`/`hB` need | ✅ `im_mul_Ypair_*`, `im_div_Ypair_*` |
 | `hA` and `hB` at the concrete labelling | ✅ `logSumA_concrete`, `logSumB_concrete` |
 | **`heⱼ`'s second grouping (`k = 0`)** | **open — two routes gated closed** |
-| **`hcont` at `φ = π`** | **open, but ONE-SIDED — cheaper than G11 first said** |
+| `hcont` at `φ = π` | ✅ `continuousAt_re_cLiTwoExt` (2-D, not one-sided) |
 
 What is left is building the concrete labelling and discharging the remaining
 per-root side conditions. That is bookkeeping over proved parts — which this
@@ -395,8 +395,8 @@ from `otherRoots`, and feeding the three into `hasDerivAt_envelopeS`.
 ### The last two obligations, stated exactly
 
 Everything else in the transport chain is proved and instantiated at the concrete
-labelling. These two remain, and both now have their dead ends gated rather than
-remembered.
+labelling. **Obligation (2) is now CLOSED** — see the section below it. One
+remains, and both have their dead ends gated rather than remembered.
 
 **(1) `heⱼ` at the pair — needs `k = 0` in `dVdy·y ∈ 2πi·ℤ`.**
 
@@ -457,17 +457,86 @@ Lean's principal branch already sits there (`arg_one_sub_mul_ofReal`):
 `ComplexDilogarithmOnCut.lean`, `lake`-verified (2709 jobs), sorry-free, axioms
 `[propext, Classical.choice, Quot.sound]`.
 
-**What is left of G11 is dominated convergence alone** — a uniform integrable
-bound for `‖log(1−wt)/t‖` near `w₀`. The branch analysis, which is where I
-expected the difficulty, costs nothing. That is the **third** downward revision of
-this obligation in one session: "2-D continuity of `Re Li₂`" → "one-sided" →
-"one-sided minus what Mathlib supplies". Every revision came from looking rather
-than estimating.
+### ⚠⚠ "Dominated convergence alone" was NOT achievable — Route 37
 
-⚠ G11's *first* version asked for the harder thing (`Re Li₂` continuous across
-the cut). That was my over-statement, corrected in place. Recording the
-correction because "this needs a 2-D theorem" is the kind of estimate that turns
-a tractable step into a parked one.
+The line above this one used to read *"what is left of G11 is dominated
+convergence alone — a uniform integrable bound for `‖log(1−wt)/t‖` near `w₀`"*.
+**No such bound exists**, and the reason is one line: the integrand's log
+singularity sits at `t = 1/w` and **moves with `w`**. For every `t` near `1/w₀`
+the point `w = 1/t` is real, lies in the approach set, and sends `|log(1−wt)|` to
+infinity — so the pointwise supremum over any neighbourhood is `+∞` on a whole
+interval of `t`, and no `w`-independent dominating function exists at any
+strength. (Vitali / uniform integrability would work; Mathlib has it in no usable
+shape.)
+
+That is a different failure from the two before it. The first two revisions
+over-*estimated* a step that turned out cheap; this one named a **technique**,
+and the technique was the thing that was false. "Not yet priced" and "priced
+wrong" look identical in a bean until someone tries it.
+
+### ✅✅ OBLIGATION (2) IS CLOSED — `ComplexDilogarithmInversion.lean`
+
+    continuousAt_re_cLiTwoExt (hx : 1 < x) :
+      ContinuousAt (fun w : ℂ => (cLiTwoExt w).re) (x : ℂ)
+
+`lake build QOU.MathlibExt.ComplexDilogarithmInversion` — 3232 jobs, exit 0, no
+errors, no warnings, sorry-free; all ten declarations audit to
+`[propext, Classical.choice, Quot.sound]`. Wired into `QOU.lean`; orphan gate
+clean.
+
+**2-D, not one-sided** — which is what G11's *first* version asked for and I
+retracted as an over-statement. It was not an over-statement; it is the natural
+shape here, and it costs nothing extra over one side. The transport needs both:
+Route 37 G8 measures that at `φ → π` the argument `x·y` reaches `w₀` from
+**below** and `y/x` reaches the **same point** from **above**, so a one-sided
+theorem would have had to be proved twice, in mirror image.
+
+The carrier is the **inversion formula on `ℂ ∖ [0,∞)`**, as a full complex
+equation:
+
+    invCombo w = cLiTwoExt w + cLiTwoExt w⁻¹ + log(−w)²/2 = −π²/6
+
+Read as `Li₂(w) = −π²/6 − Li₂(1/w) − ½log(−w)²`, the singular structure at `w₀`
+is carried **entirely by an elementary function**: `1/w₀ = 0.445` is an interior
+point where `analyticOnNhd_cLiTwoExt` already gives continuity, and `log(−w)²` is
+elementary. Four pieces, each with a reason it is not free:
+
+| piece | why it costs something |
+|---|---|
+| `invDomain = ℂ ∖ [0,∞)` **connected** | the constant is pinned at `−1`, an *interior* point. On a half plane the only computable base point (`−1` again) sits on the **boundary** and the constant would need a limit. `-slitPlane` + `starConvex_one_slitPlane.neg` gives it in three lines |
+| `log(1−1/w) + log(−w) = log(1−w)` | needs `arg(1−1/w) + arg(−w) ∈ (−π,π]`. The two args have strictly **opposite** signs on `ℂ ∖ [0,∞)`; on `(0,1)` both are `+π` and the sum is `2π` — Route 37 G5 checks it **fails** there, so the domain is load-bearing, not defensive |
+| `Re(log(−w)²) = (log‖w‖)² − (\|arg w\| − π)²` | the whole theorem, in one rewrite. `arg(−w)` jumps by `2π` across the positive reals; `\|arg w\|` does not jump there at all |
+| the value **on** the cut | `re_inversion_identity`, already proved — for real `x ≥ 1` **only**, which is exactly why nothing stronger than `.re` is claimed |
+
+⚠ **`.re` is load-bearing, not cosmetic.** `cLiTwoExt` *jumps* across the cut, by
+`2πi·log x` (Route 37 G4 measures 9.45 at `x = 4.5`). A statement about
+`cLiTwoExt` unqualified would be **false**. `envelopeS` takes `.re` of every
+term, which is the only reason the endpoint is reachable at all.
+
+⚠ **Which boundary value Lean computes.** Lean's `Complex.log` takes `arg = +π`
+on the negative reals, and `1 − x·t` is a negative real once `t > 1/x`. So
+`cLiTwoExt x` is the limit from **below**, `Li₂(x − i0)`, `Im = −π·log x`. Route
+37 G3 pins this against the independently known jump `2πi·log x`; getting it
+backwards flips the sign of the `log(−w)²` correction and **every other gate
+still passes**.
+
+**Bonus: `deformedV`'s fourth term comes free.** `deformedV` ends in
+`log(−y)²`, and at `φ = π` the real branch is `Yreal = 0.8019377 > 0`, so `−y`
+is a negative real — on `log`'s cut. `continuousAt_re_log_neg_sq` (`0 < w.re`)
+covers that term as a 2-D statement too, so the same lemma discharges it.
+
+Route 37, **11 gates, all pass**. G0 is a regression gate on the quadrature
+split — the reference integral is *wrong* without it, and this lane has already
+shipped a partial version of that fix which repaired the on-cut value while
+leaving every off-cut comparison quietly wrong. G4 and G8 gate on the **ratio**
+`gap/ε` across six decades, not on a small residual at the finest sample: the
+gap at `ε = 1e-3` is `2.4e-3`, so a fixed threshold would only have been
+reporting how small `ε` was.
+
+⚠ The earlier note said G11's first version "asked for the harder thing
+(`Re Li₂` continuous across the cut)" and called it my over-statement. **That
+retraction was itself wrong** and is withdrawn: the 2-D statement is what got
+proved, and it is what the transport needs.
 
 ### ⚠⚠ G3 RETRACTED — `x·y` **does** become real, and the crossing is exact
 
