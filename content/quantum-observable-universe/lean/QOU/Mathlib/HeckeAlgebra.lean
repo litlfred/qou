@@ -201,12 +201,12 @@ instance triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R) :
     `Mathlib.LinearAlgebra.Matrix.PEquiv` over the basis
     `{1, σ_1}`. -/
 def H2_instance_hook (R : Type u) [CommRing R] (q : R)
-    [I : IwahoriHeckeAlgebra R 2 q] : Prop :=
+    [IwahoriHeckeAlgebra R 2 q] : Prop :=
   ∃ (basis_size : ℕ), basis_size = 2
 
 /-- **Hook for n=3 instance**: 6-dimensional carrier (= |S_3|). -/
 def H3_instance_hook (R : Type u) [CommRing R] (q : R)
-    [I : IwahoriHeckeAlgebra R 3 q] : Prop :=
+    [IwahoriHeckeAlgebra R 3 q] : Prop :=
   ∃ (basis_size : ℕ), basis_size = 6
 
 /-- For any `n`, the basis size of `H_n(q)` should be `n!` (the
@@ -337,7 +337,7 @@ theorem blockSum_eq_one (q : ℝ) (hne : q + q⁻¹ ≠ 0) :
     (H2.blockSym q).2 + (H2.blockAlt q).2 = 0 := by
   refine ⟨?_, ?_⟩
   · show q⁻¹ / (q + q⁻¹) + q / (q + q⁻¹) = 1
-    rw [div_add_div_same]
+    rw [← add_div]
     have : q⁻¹ + q = q + q⁻¹ := by ring
     rw [this]
     exact div_self hne
@@ -903,19 +903,19 @@ theorem H4.sum_q_sq_length_eq_poincare (q : ℝ) :
   ring
 
 /-- Mixed Wedderburn projector `e_[2,2]` for `H_4(q)` (2-dim block). -/
-noncomputable def H4.blockMixed22 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockMixed22 (_q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Schematic: 2-dim mixed block representative.
     if i.val = 0 then 0 else 0
 
 /-- Standard Wedderburn projector `e_[3,1]` for `H_4(q)` (3-dim block). -/
-noncomputable def H4.blockStd31 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockStd31 (_q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Schematic: 3-dim standard block representative.
     if i.val = 0 then 0 else 0
 
 /-- Standard-conjugate Wedderburn projector `e_[2,1,1]` for `H_4(q)`. -/
-noncomputable def H4.blockStd211 (q : ℝ) : H4Carrier ℝ :=
+noncomputable def H4.blockStd211 (_q : ℝ) : H4Carrier ℝ :=
   fun i =>
     -- Schematic: 3-dim standard-conjugate block representative.
     if i.val = 0 then 0 else 0
@@ -1573,7 +1573,7 @@ noncomputable def MarkovTraceRecursionWithMul.canonical_lift
     embed image of H_3 (positions 0..5), the product shifts
     `x`'s coefficients to positions 6..11.  For other inputs,
     returns 0 (sufficient only for the Markov axiom case). -/
-noncomputable def mul_HnC4_tailored (q : ℝ) (x y : HnCarrier 4 ℝ) : HnCarrier 4 ℝ :=
+noncomputable def mul_HnC4_tailored (_q : ℝ) (x _y : HnCarrier 4 ℝ) : HnCarrier 4 ℝ :=
   -- Encodes (embed x) · σ_3: shift positions 0..5 → 6..11.
   -- Ignores y entirely (assumes y = σ_3 for axiom_witness use).
   fun j =>
@@ -1652,7 +1652,8 @@ theorem mul_HnC4_tailored_at_one (q : ℝ) (j : Fin 24) :
   -- For j.val ∈ {6..11}, the value is `embed_HnC3_to_HnC4 (Hn.one 3 ℝ) ⟨j.val - 6, _⟩`
   -- = if (j.val - 6).val = 0 then 1 else 0 = if j.val = 6 then 1 else 0.
   -- For j.val < 6 or ≥ 12, the value is 0.
-  split_ifs <;> simp_all <;> omega
+  split_ifs <;> simp_all
+  omega
 
 /-! ### Markov-axiom identity-element witness
 

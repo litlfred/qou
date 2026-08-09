@@ -87,6 +87,17 @@ def TRM4 (z h : R) : Fin 24 → R := ![
 /-- The level-4 Markov trace: `v ↦ ∑ᵢ vᵢ · TRM4ᵢ`. -/
 def trM4 (z h : R) (v : Fin 24 → R) : R := ∑ i, v i * TRM4 z h i
 
+/-- (M1) Additivity — the `trM4` counterpart of `MarkovTraceH4.trM_add`. -/
+theorem trM4_add (z h : R) (u v : Fin 24 → R) :
+    trM4 z h (u + v) = trM4 z h u + trM4 z h v := by
+  simp only [trM4, Pi.add_apply, add_mul, Finset.sum_add_distrib]
+
+/-- (M1) Homogeneity — the `trM4` counterpart of `MarkovTraceH4.trM_smul`. -/
+theorem trM4_smul (z h c : R) (v : Fin 24 → R) :
+    trM4 z h (c • v) = c * trM4 z h v := by
+  simp only [trM4, Pi.smul_apply, smul_eq_mul, Finset.mul_sum]
+  ring_nf
+
 /-- Hecke quadratic for σ₀ at level 4: `σ₀² = h·σ₀ + 1`. -/
 theorem mulσ₀_hecke (h : R) (v : Fin 24 → R) :
     mulσ₀ h (mulσ₀ h v) = h • mulσ₀ h v + v := by

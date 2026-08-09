@@ -71,11 +71,11 @@ open QOU.Mathlib.UpstreamSubstrateBridge
 theorem master_upstream_complete (R : Type u) [CommRing R]
     (q : R) (q_ℝ z : ℝ) (G : Type u) [Group G] (z_G : G) :
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
-    (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
-    (∃ W3 : WedderburnIsomorphism R 3 q, True) ∧
-    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z, True) ∧
-    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z, True) ∧
-    (∃ Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
+    (∃ _W2 : WedderburnIsomorphism R 2 q, True) ∧
+    (∃ _W3 : WedderburnIsomorphism R 3 q, True) ∧
+    (∃ _M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z, True) ∧
+    (∃ _M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z, True) ∧
+    (∃ _Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
     (q_zero > 1) :=
   complete_upstream_discharge R q q_ℝ z G z_G
 
