@@ -156,6 +156,54 @@ theorem arg_param : ∀ i, (T.param i).arg = ![T.angle₁, T.angle₂, T.angle�
   | 1 => rfl
   | 2 => rfl
 
+/-! #### Relabelling, and volume invariance
+
+`z ↦ 1/(1−z)` does not change the tetrahedron — it changes which edge-pair is
+called "first".  The three dihedral angles are **cyclically permuted**, so the
+volume is unchanged.  This is not a coincidence to be checked numerically; it is
+`Lob a + Lob b + Lob c` being symmetric under cycling its arguments. -/
+
+/-- `1/(1 − 1/(1−z)) = 1 − 1/z`: the second edge parameter of the rotated
+tetrahedron is the third of the original. -/
+theorem shape_cycle₂ (hz0 : T.shape ≠ 0) (h1z : (1:ℂ) - T.shape ≠ 0) :
+    1 / (1 - 1 / (1 - T.shape)) = 1 - 1 / T.shape := by
+  have h : (1:ℂ) - 1 / (1 - T.shape) = -T.shape / (1 - T.shape) := by field_simp; ring
+  rw [h]
+  field_simp
+  ring
+
+/-- `1 − 1/(1/(1−z)) = z`: the third edge parameter of the rotated tetrahedron is
+the first of the original. -/
+theorem shape_cycle₃ (h1z : (1:ℂ) - T.shape ≠ 0) :
+    1 - 1 / (1 / (1 - T.shape)) = T.shape := by
+  field_simp
+  ring
+
+/-- The same tetrahedron, relabelled: shape `1/(1−z)`. -/
+noncomputable def rotate : IdealTetrahedron :=
+  ⟨1 / (1 - T.shape), (tet_im_pos _ T.im_pos).1⟩
+
+@[simp] theorem rotate_shape : T.rotate.shape = 1 / (1 - T.shape) := rfl
+
+/-- **The dihedral angles cycle under relabelling.** -/
+theorem rotate_angles :
+    T.rotate.angle₁ = T.angle₂ ∧ T.rotate.angle₂ = T.angle₃
+      ∧ T.rotate.angle₃ = T.angle₁ := by
+  refine ⟨rfl, ?_, ?_⟩
+  · show tetAngle₂ (1 / (1 - T.shape)) = tetAngle₃ T.shape
+    unfold tetAngle₂ tetAngle₃
+    rw [T.shape_cycle₂ T.shape_ne_zero T.one_sub_shape_ne_zero]
+  · show tetAngle₃ (1 / (1 - T.shape)) = tetAngle₁ T.shape
+    unfold tetAngle₃ tetAngle₁
+    rw [T.shape_cycle₃ T.one_sub_shape_ne_zero]
+
+/-- **The volume is invariant under relabelling** — the three `Λ` terms are
+merely permuted. -/
+@[simp] theorem volume_rotate : T.rotate.volume = T.volume := by
+  obtain ⟨h1, h2, h3⟩ := T.rotate_angles
+  rw [volume_eq_lob_sum, volume_eq_lob_sum, h1, h2, h3]
+  ring
+
 end IdealTetrahedron
 
 /-! ### Ideal triangulations -/

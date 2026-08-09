@@ -161,16 +161,56 @@ complement is Thurston hyperbolisation plus Mostow rigidity, and needs hyperboli
 noncomputable def fiveTwoTet : QOU.MathlibExt.IdealTetrahedron :=
   ⟨fiveTwoShape, fiveTwoShape_im_pos⟩
 
-/-- **The 5₂ ideal triangulation**: three tetrahedra of shape `y₁`. -/
-noncomputable def fiveTwoTriangulation : QOU.MathlibExt.IdealTriangulation 3 :=
-  QOU.MathlibExt.IdealTriangulation.const 3 fiveTwoTet
+/-- **The 5₂ ideal triangulation**, with SnapPy's actual shapes.
 
-/-- **`volume (5₂ triangulation) = VOL_5_2`** — the statement that could not
-previously be written, now a theorem. -/
+⚠ **CORRECTION (2026-08-09).**  An earlier version of this file defined the
+triangulation as `const 3 fiveTwoTet` — three tetrahedra all of shape `y₁`.
+**That is wrong**, and SnapPy says so: `Manifold('5_2').tetrahedra_shapes` gives
+
+    tet 0 : 0.78492014550 + 1.30714127868i   = y₁
+    tet 1 : 0.12256116688 + 0.74486176662i   = 1/(1 − y₁)   ← NOT y₁
+    tet 2 : 0.78492014550 + 1.30714127868i   = y₁
+
+The middle tetrahedron carries the *second edge parameter* of `y₁`, not `y₁`.
+
+The volume claim survives — but as a **theorem now, not an assumption**: the
+relabelling `z ↦ 1/(1−z)` cyclically permutes the three dihedral angles
+(`IdealTetrahedron.rotate_angles`), so `Λ(θ₁)+Λ(θ₂)+Λ(θ₃)` is unchanged
+(`volume_rotate`).  That is why `Vol = 3·D(y₁)` despite the shapes differing.
+
+Recorded because the earlier version was a guess that happened to give the right
+number for a reason it did not state. -/
+noncomputable def fiveTwoTriangulation : QOU.MathlibExt.IdealTriangulation 3 :=
+  ⟨![fiveTwoTet, fiveTwoTet.rotate, fiveTwoTet]⟩
+
+@[simp] theorem fiveTwoTriangulation_tet_zero :
+    fiveTwoTriangulation.tet 0 = fiveTwoTet := rfl
+
+@[simp] theorem fiveTwoTriangulation_tet_one :
+    fiveTwoTriangulation.tet 1 = fiveTwoTet.rotate := rfl
+
+@[simp] theorem fiveTwoTriangulation_tet_two :
+    fiveTwoTriangulation.tet 2 = fiveTwoTet := rfl
+
+/-- The middle tetrahedron's shape is `1/(1 − y₁)`, matching SnapPy. -/
+theorem fiveTwoTriangulation_middle_shape :
+    (fiveTwoTriangulation.tet 1).shape = 1 / (1 - fiveTwoShape) := rfl
+
+/-- **`volume (5₂ triangulation) = VOL_5_2`.**
+
+Not by assuming the shapes are equal — they are not — but because the volume is
+invariant under the relabelling that relates them. -/
 theorem fiveTwoTriangulation_volume : fiveTwoTriangulation.volume = VOL_5_2 := by
   unfold fiveTwoTriangulation VOL_5_2
-  rw [QOU.MathlibExt.IdealTriangulation.volume_const]
-  norm_num [fiveTwoTet, QOU.MathlibExt.IdealTetrahedron.volume]
+  simp only [QOU.MathlibExt.IdealTriangulation.volume, Fin.sum_univ_three,
+    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+    Matrix.cons_val_two, Matrix.tail_cons,
+    QOU.MathlibExt.IdealTetrahedron.volume_rotate]
+  show QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet
+      + QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet
+      + QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet = _
+  unfold QOU.MathlibExt.IdealTetrahedron.volume fiveTwoTet
+  ring
 
 /-- And in dilogarithm form. -/
 theorem fiveTwoTriangulation_volume_dilog :

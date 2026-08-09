@@ -1,7 +1,7 @@
 ---
 # m015
 title: 'm015 (5₂) angle-structure polytope — the missing anchor for Casson–Rivin'
-status: todo
+status: in-progress
 type: task
 priority: normal
 tags:
@@ -46,3 +46,55 @@ must not be conflated in any claim.
 system must admit **no** positively-oriented solution — the angle-structure polytope should
 come out empty. That is the check that the pipeline is detecting geometry rather than
 solving a linear system and calling the answer a volume.
+
+
+---
+**2026-08-09 — SnapPy installed; gluing data obtained and verified SYMBOLICALLY.
+And it caught a wrong model of mine.**
+
+`pip install snappy` works in this environment (3.3.2). Probe
+`qbeta_5two_route74_snappy_gluing_symbolic_probe.py`, 4 gates, all passing;
+float64 guard clean, in place.
+
+**The correction, which matters more than the data.** I had defined the 5₂
+triangulation in Lean as `const 3 fiveTwoTet` — three tetrahedra all of shape
+`y₁`. **SnapPy says otherwise:**
+
+    tet 0 : 0.78492014550 + 1.30714127868i   = y₁
+    tet 1 : 0.12256116688 + 0.74486176662i   = 1/(1 − y₁)   ← NOT y₁
+    tet 2 : 0.78492014550 + 1.30714127868i   = y₁
+
+The middle tetrahedron carries the **second edge parameter** of `y₁`. My model
+gave the right number for a reason it did not state. Corrected in
+`FiveTwoVolumeConstant.lean`, with the SnapPy shapes recorded in the docstring
+and gated as Route 74 G1 so it cannot recur silently.
+
+**Why `Vol = 3·D(y₁)` survives — now a theorem, not an assumption.** `z ↦ 1/(1−z)`
+cyclically permutes the three dihedral angles, because
+`1/(1 − 1/(1−z)) = 1 − 1/z` and `1 − 1/(1/(1−z)) = z`. So `Λ(θ₁)+Λ(θ₂)+Λ(θ₃)` is
+unchanged. In Lean: `IdealTetrahedron.rotate`, `rotate_angles`, `volume_rotate`
+(sorry-free, standard axioms).
+
+**The gluing verification is SYMBOLIC, not numerical** — which is the right way
+round, because both inputs are exact: SnapPy's gluing equations are **integer**
+exponent matrices, and the shape is algebraic. So the check runs in
+`ℚ[y]/(y³−2y²+3y−1)`: form `∏ z^a (z′)^b (z″)^c − 1`, clear denominators, reduce
+mod the minimal polynomial. **All five equations — 3 edge, 2 cusp — reduce to
+exactly 0.** No floating point anywhere in that gate (mpmath appears only to
+identify which algebraic number SnapPy's numeric shape is).
+
+    edge [1,0,1, 1,2,0, 1,0,1]   → 0
+    edge [0,1,1, 0,0,2, 0,1,1]   → 0
+    edge [1,1,0, 1,0,0, 1,1,0]   → 0
+    cusp [-1,0,0, 0,0,1, 0,0,0]  → 0
+    cusp [2,0,-3, 1,0,-2, 0,0,1] → 0
+
+**⚠ Still not done, and still the hard part.** That the algebraic shapes satisfy
+the gluing equations does **not** say this is a triangulation *of* `S³ ∖ 5₂` —
+that is Thurston hyperbolisation plus Mostow rigidity, needing hyperbolic
+3-manifolds neither Mathlib nor QOU has. Route 74 G4 states this.
+
+**Next increment:** encode the integer exponent matrix as a `GluingData 3 5` in
+Lean and prove `SatisfiesEdgeEquations` — the symbolic reduction above says it is
+provable by `field_simp` + `linear_combination` against `fiveTwoShape_cubic`.
+That would make the 5₂ triangulation *certified* rather than merely defined.
