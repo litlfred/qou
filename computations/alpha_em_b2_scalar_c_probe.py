@@ -71,8 +71,11 @@ def _q0() -> "mp.mpf":
     muon/proton pin-confusion bug, bean tnjb). The structural conclusions
     (nullity, symmetric type) are q-independent for generic q."""
     try:
-        from qou_substrate.constants import Q  # type: ignore[import-not-found]
-        return mp.mpf(str(Q)), "qou_substrate.constants.Q (package pin)"
+        # Q_50_DIGIT_STR, not Q: `Q` is the f64 solve (NO FLOAT64).
+        from qou_substrate.constants import (  # type: ignore[import-not-found]
+            Q_50_DIGIT_STR)
+        return (mp.mpf(Q_50_DIGIT_STR),
+                "qou_substrate.constants.Q_50_DIGIT_STR (package pin, 50 dps)")
     except Exception:
         # Fallback: canonical muon-q₀ value used by the computations/ layer.
         return mp.mpf("1.10997859555733471"), "muon-q₀ literal (computations/ layer)"
