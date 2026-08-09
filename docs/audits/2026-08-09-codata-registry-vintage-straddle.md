@@ -103,6 +103,62 @@ Correcting the vintage makes `m_μ` **worse**. Recorded as measured: a
 correction that degrades an observable is reported, not suppressed. The μ–p
 substrate tension is genuine physics and this finding does not touch it.
 
+## Leg 5 — the stale proton reaches Q_β's *target*, but Q_β's miss survives
+
+Q_β is one of the two genuine L2 levers (see the companion finding below), so
+its comparison target had to get the same treatment. The corpus holds **two**
+experimental determinations: `Q_BETA_MEV_AME` (AME2020 direct) and
+`m_n(direct) − m_p − m_e`. The second is built on the stale proton.
+
+| disagreement between the two determinations | ppb | σ |
+|---|---|---|
+| using `M_P_MEV` as stored | 1814.2 | 2.33 σ |
+| using `M_P_MEV_RATIO_CONSISTENT` | **194.3** | 0.249 σ |
+
+The stale proton explains **89.3%** of the disagreement — the two
+determinations then agree comfortably.
+
+Prediction scored against each target:
+
+| target | miss |
+|---|---|
+| AME2020 | 164.0× |
+| via consistent m_p | 139.1× |
+| via **stale** m_p | 68.7× ← the trap |
+
+**Q_β's miss is genuine** against every legitimate target (139–164×, both ≫
+100×) — unlike m_p, the artifact does not dissolve it. But an unwary
+comparison against the stale-derived target reads 68.7×, ~2.4× too
+optimistic. This is the second place the same stale literal produced a
+misleading accuracy number.
+
+## What was fixed in the registry, and what deliberately was not
+
+`physics.nist.gov` is egress-blocked from the authoring sandbox, so the true
+CODATA-2022 proton digits could not be verified. That constrains the fix:
+
+**Fixed** (provable from repo contents alone):
+- `M_P_MEV`'s docstring no longer claims "CODATA-2022". It carries the
+  inconsistency proof and the neutron-leg identification.
+- `M_N_MEV_AME_DERIVED`'s docstring records that its ~1.5 ppb disagreement
+  with the direct neutron is explained by the stale proton it is built from,
+  and that it is **not** an independent neutron measurement.
+- Added `M_P_MEV_RATIO_CONSISTENT` (+ error), explicitly **derived**.
+- Added `MASS_RATIO_P_E` as a **re-export sourced** from `qou_substrate` —
+  not a copy. A local literal would have made the module a fourth registry
+  for the same quantity, i.e. the defect class itself. Fail-soft so a missing
+  `qou_substrate` cannot break 234 importers to serve a diagnostic.
+- Added `triple_consistency_ppb()` / `assert_triple_consistent()` — a
+  regression guard against a defect no precision audit can catch: exactly
+  representable, correctly typed, precise to 11 figures, wrong edition. It
+  asserts against a known-residual ceiling rather than zero, so it is not a
+  guard that is expected to fail.
+
+**Not fixed:** the literal itself. Writing a *derived* number into a file
+whose stated purpose is to vendor NIST quotes would reintroduce exactly the
+provenance defect being documented. The swap stays open on bean `qou-if87`,
+gated on a verified quote. **No value changed; zero blast radius.**
+
 ## Why the dashboard row is exactly this residual
 
 `q₀` is Newton-solved so that the substrate identity reproduces
