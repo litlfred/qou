@@ -5,6 +5,7 @@ export default proposition({
   title:
     "$\\mathrm{Vol}(K)$ factors strictly through the fibre functor $\\tau$",
   tags: ["fibre-functor", "knot-volume", "archimedean", "factorization"],
+  foreshadows: ["conj:kashaev-volume-conjecture"],
   uses: [
     "def:archimedean-realization-functor",
     "conj:kashaev-volume-conjecture",
