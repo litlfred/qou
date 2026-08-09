@@ -195,3 +195,13 @@ serialize with `_precision.fmt`; `jpsi_boundstate_mass_probe.py` is the worked
 conversion), re-run the producer, and re-run `scripts/precision-gates.sh`.
 Adding any of the three to `raw-float64-baseline.json` closes the bean and
 defeats the mechanism — the audit says so in its own output.
+
+## First real use of the gate found a defect in the gate. 2026-08-09
+
+`precision-gates.sh`'s "stale committed audit witnesses" reporter compared
+`git status` before and after the run and attributed every difference to the
+run. On its first outing it flagged a `.beans/*.md` file that was being appended
+to in another shell while the gates were running. Fixed: the diff is now
+filtered to `computations/**/*.witness.json`, which is the only thing the audits
+can write. A reporter that cries wolf on unrelated edits is one agents learn to
+skip, which is the failure mode this whole bean is about.

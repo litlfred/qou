@@ -122,6 +122,7 @@ import QOU.Knot.KashaevEndpointSplit
 import QOU.Knot.LogSincNearZero
 import QOU.Knot.LobNearZero
 import QOU.Knot.KashaevAsymptotic
+import QOU.Knot.KashaevArgmax
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian

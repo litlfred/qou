@@ -114,7 +114,11 @@ for g in "${GATES[@]}"; do
 done
 
 after=$(git status --porcelain 2>/dev/null | sort)
-newly_dirty=$(comm -13 <(printf '%s\n' "$before") <(printf '%s\n' "$after") || true)
+# Restrict to what the audits can actually write. A bare before/after diff
+# misattributes any concurrent edit to the run — it flagged a bean file that was
+# being appended to in another shell on its first outing.
+newly_dirty=$(comm -13 <(printf '%s\n' "$before") <(printf '%s\n' "$after") \
+              | grep -E 'computations/.*\.witness\.json$' || true)
 
 echo
 echo "======================================================================"
