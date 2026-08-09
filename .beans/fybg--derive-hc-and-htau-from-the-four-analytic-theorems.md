@@ -1464,3 +1464,62 @@ against the derived constant `8 sqrt3 pi`, which cannot drift.
      `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
   3. `hc` -- already algebraically proved in `OneLoopPrefactorInvariance.lean`;
      then `htau`.
+
+---
+
+## Step 17 -- everything outside the window (`QOU/Knot/KashaevBeyondWindow.lean`)
+
+Three theorems, all `[propext, Classical.choice, Quot.sound]`.
+
+    sum_kashaevProd_right_beyond_le : sum_{k > k*+W} g_k
+        <= N g_{k*} exp(-sqrt3 pi (W+1)W/N)
+    sum_kashaevProd_left_beyond_le  : sum_{w <= k < k*-W} g_k
+        <= N g_{k*} exp(-pi (W+1)W/(sqrt3 N)),   for 2N <= 3w
+
+`mul_pred_le_of_le` (`d(d-1) >= (W+1)W` for `d >= W+1`) is what turns step 5's
+per-index tail into a uniform one.
+
+**card x largest term, not a geometric sum.** A geometric sum would give
+`e^{-cW^2/N}/(1 - e^{-cW/N})` instead of `N e^{-cW^2/N}`; the exponential
+crushes both, and `Finset.sum_le_card_nsmul` costs three lines where the
+geometric series costs thirty. The region has to beat `sqrt(N)`, not `N`.
+
+### The two directions are not symmetric, and the LEFT is the slow one
+
+    exponent coefficient:  right  sqrt3 pi = 5.441
+                           left   pi/sqrt3 = 1.814
+
+A factor 3, because step 5's lower bound uses a SECANT chord where the upper
+bound uses the TANGENT, and the secant is shallower. Probe part (iii), the
+bounds relative to the main term `3^(-1/4) sqrt(N)`:
+
+    N        right/sqrtN    left/sqrtN
+    241        2.03e-06      7.88e-02
+    3841       2.98e-11      4.85e-03
+    1e6        3.45e-35      3.26e-10
+
+Both vanish; the left one is the binding constraint at small N.
+
+### The region below 2N/3 is not a problem at all
+
+Neither tail bound covers `k < 2N/3` (the secant chord is invalid there), so
+`KashaevTailBound`'s much cruder machinery has to. Probe part (iv) measures
+what is actually there:
+
+    N      sum_{k < 2N/3} g_k / (g_{k*} sqrt N)
+    241            4.28e-13
+    961            4.57e-47
+    3841           4.63e-182
+
+`g_k` collapses so fast below the saddle that this region is beyond
+irrelevant. The crude constants there cost nothing -- I had expected `O(1)`
+relative to `g_{k*}` and it is `1e-180`.
+
+### Remaining before `hc`
+
+  1. add the three regions to the window: `<4_1>_N = window + right + left +
+     below`, giving `<4_1>_N / (g_{k*} sqrt N) -> 3^(-1/4)`;
+  2. feed step 7's `log g_{k*}` to convert that into
+     `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
+  3. `hc` -- already algebraically proved in `OneLoopPrefactorInvariance.lean`;
+     then `htau`.
