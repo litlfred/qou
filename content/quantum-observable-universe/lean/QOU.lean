@@ -419,6 +419,7 @@ import QOU.QBeta.BarOddLadderShape
 import QOU.QBeta.InterfaceScalar
 import QOU.QBeta.GramSignature
 import QOU.QBeta.TemperleyLiebTower
+import QOU.QBeta.WedderburnTraceDecomposition
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge
