@@ -57,6 +57,7 @@ import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.MeanValue
 import QOU.MathlibExt.TrapezoidRule
 import QOU.MathlibExt.SinCubeBounds
+import QOU.MathlibExt.CompositeEulerMaclaurin
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -349,5 +350,81 @@ theorem antitoneOn_logSinc_deriv {c d : ℝ} (hc : 0 < c) (hd : d < π) :
       rw [div_le_div_iff₀ hs3 hx3]
       nlinarith [hkey]
     linarith
+
+/-! ### The composite rule, instantiated at `logSinc`
+
+Every hypothesis is now in hand, so this is a direct application.  The grid is
+`h, 2h, …, (m+1)h` — it starts at `h`, never touching `0`, which is the whole
+reason no regularity at `0` is needed.
+-/
+
+/-- **The Euler–Maclaurin expansion of `∑_{j=1}^{m+1} logSinc(jh)`.**
+
+    | ∑_{j=0}^{m} logSinc(h+jh)
+        − [ (1/h)∫_h^{h+mh} logSinc + ½(logSinc h + logSinc(h+mh))
+            + (h/12)(logSinc′(h+mh) − logSinc′(h)) ] |
+      ≤ (h²/12)·(logSinc″(h) − logSinc″(h+mh))
+
+i.e. the `B₂` term appears once and the error is `O(h²)` — an order below the
+`O(1/N)` term `qou-mlgp` (A) extracts.
+
+This is `QOU.MathlibExt.abs_integral_sub_composite_le_osc` at `g = logSinc`,
+`a = h`, divided through by `h`.  The four hypotheses it needs are
+`hasDerivAt_logSinc`, `hasDerivAt_logSinc_deriv`, continuity of `logSinc″` (from
+`hasDerivAt_logSinc_deriv2`), and `antitoneOn_logSinc_deriv`. -/
+theorem abs_sum_logSinc_sub_euler_maclaurin {h : ℝ} (hh : 0 < h) (m : ℕ)
+    (hlt : h + m * h < π) :
+    |(∑ j ∈ Finset.range (m + 1), logSinc (h + j * h))
+        - ((1 / h) * (∫ x in h..(h + m * h), logSinc x)
+           + (logSinc h + logSinc (h + m * h)) / 2
+           + (h / 12) * ((Real.cos (h + m * h) / Real.sin (h + m * h)
+                            - 1 / (h + m * h))
+                         - (Real.cos h / Real.sin h - 1 / h)))|
+      ≤ h ^ 2 / 12 * ((1 / h ^ 2 - 1 / Real.sin h ^ 2)
+          - (1 / (h + m * h) ^ 2 - 1 / Real.sin (h + m * h) ^ 2)) := by
+  have hmR : (0 : ℝ) ≤ (m : ℝ) := Nat.cast_nonneg m
+  have hle : h ≤ h + (m : ℝ) * h := by nlinarith
+  have hmem : ∀ x ∈ Set.Icc h (h + (m : ℝ) * h), 0 < x ∧ x < π := by
+    intro x hx
+    rw [Set.mem_Icc] at hx
+    exact ⟨lt_of_lt_of_le hh hx.1, lt_of_le_of_lt hx.2 hlt⟩
+  have hcomp := QOU.MathlibExt.abs_integral_sub_composite_le_osc
+    (g := logSinc) (g₁ := fun x => Real.cos x / Real.sin x - 1 / x)
+    (g₂ := fun x => 1 / x ^ 2 - 1 / Real.sin x ^ 2) (a := h) hh m
+    (fun x hx => by
+      obtain ⟨h0, hpi⟩ := hmem x hx; exact hasDerivAt_logSinc h0 hpi)
+    (fun x hx => by
+      obtain ⟨h0, hpi⟩ := hmem x hx; exact hasDerivAt_logSinc_deriv h0 hpi)
+    (fun x hx => by
+      obtain ⟨h0, hpi⟩ := hmem x hx
+      exact ((hasDerivAt_logSinc_deriv2 h0 hpi).continuousAt).continuousWithinAt)
+    (antitoneOn_logSinc_deriv hh hlt)
+  -- divide the composite bound through by `h`
+  have hkey : (∑ j ∈ Finset.range (m + 1), logSinc (h + (j : ℝ) * h))
+      - ((1 / h) * (∫ x in h..(h + (m : ℝ) * h), logSinc x)
+         + (logSinc h + logSinc (h + (m : ℝ) * h)) / 2
+         + (h / 12) * ((Real.cos (h + (m : ℝ) * h) / Real.sin (h + (m : ℝ) * h)
+                          - 1 / (h + (m : ℝ) * h))
+                       - (Real.cos h / Real.sin h - 1 / h)))
+      = -(1 / h) * ((∫ x in h..(h + (m : ℝ) * h), logSinc x)
+          - (h * (∑ j ∈ Finset.range (m + 1), logSinc (h + (j : ℝ) * h))
+             - h / 2 * (logSinc h + logSinc (h + (m : ℝ) * h))
+             - h ^ 2 / 12 * ((Real.cos (h + (m : ℝ) * h) / Real.sin (h + (m : ℝ) * h)
+                                - 1 / (h + (m : ℝ) * h))
+                             - (Real.cos h / Real.sin h - 1 / h)))) := by
+    field_simp
+    ring
+  rw [hkey, abs_mul, abs_neg, abs_of_pos (show (0 : ℝ) < 1 / h from by positivity)]
+  have hb : |(∫ x in h..(h + (m : ℝ) * h), logSinc x)
+      - (h * (∑ j ∈ Finset.range (m + 1), logSinc (h + (j : ℝ) * h))
+         - h / 2 * (logSinc h + logSinc (h + (m : ℝ) * h))
+         - h ^ 2 / 12 * ((Real.cos (h + (m : ℝ) * h) / Real.sin (h + (m : ℝ) * h)
+                            - 1 / (h + (m : ℝ) * h))
+                         - (Real.cos h / Real.sin h - 1 / h)))|
+      ≤ h ^ 3 / 12 * ((1 / h ^ 2 - 1 / Real.sin h ^ 2)
+          - (1 / (h + (m : ℝ) * h) ^ 2 - 1 / Real.sin (h + (m : ℝ) * h) ^ 2)) := hcomp
+  refine le_trans (mul_le_mul_of_nonneg_left hb (by positivity)) (le_of_eq ?_)
+  field_simp
+  try ring
 
 end QOU.Knot.FigureEightVolume
