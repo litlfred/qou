@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T10:41:09.517022+00:00",
-  "commitSha": "258d802ed6647fa69c1998f6779473af86a1a94e",
+  "computedAt": "2026-08-09T10:45:56.762588+00:00",
+  "commitSha": "5db09b43dd463fa30781c2559d90c59dfadadc04",
   "assertions": [
     {
       "name": "dashboard_m_p_error_equals_triangulation_residual",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "codata-registry-triangulation",
   "scriptFile": "codata_registry_triangulation_probe.py",
-  "scriptHash": "b71829aca422",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "3fb204c09391",
+  "scriptCommitSha": "5db09b43dd463fa30781c2559d90c59dfadadc04",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -68,7 +68,22 @@
     "leg2_neutron_sigma_ppb": "0.51087448",
     "leg3_muon_residual_ppb_NON_DISCRIMINATING": "1.40994942015",
     "leg3_muon_n_sigma_NON_DISCRIMINATING": "0.045296945",
-    "dashboard_m_p_err_ppb": "1.351"
+    "dashboard_m_p_err_ppb": "1.351",
+    "l2_projection_audit_only": {
+      "note": "What the affected rows would read against a self-consistent registry. PROJECTION ONLY — the dashboard is unmodified. m_p is excluded on purpose: it is the pin anchor, so a corrected round-trip is a calibration tautology, not a pass.",
+      "m_n": {
+        "err_ppb": "0.90254492",
+        "sigma_exp_ppb": "0.51087448",
+        "miss_factor": "176.66667",
+        "verdict": "FAIL (genuine — Q_beta-driven residual survives)"
+      },
+      "Delta_pn": {
+        "err_ppb": "655.89803",
+        "sigma_exp_ppb": "433.61084",
+        "miss_factor": "151.26421",
+        "verdict": "FAIL (genuine — Q_beta-driven residual survives)"
+      }
+    }
   },
   "upstream": [
     {
