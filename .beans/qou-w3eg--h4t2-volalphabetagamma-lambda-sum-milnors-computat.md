@@ -74,6 +74,43 @@ pieces integrates to half a Lobachevsky value. Uses T1's
 `hasDerivAt_Lob : Λ' = −log(2 sin t)` as the antiderivative — already in the
 tree, which is the one piece of luck here.
 
+> **H4-4 is DONE (2026-08-09, sorry-free) — PR #4842**, in the 1-D form the base
+> integral reduces to after the elementary radial integration:
+> `∫₀^ψ −¼·log((cos²φ − cos²ψ)/cos²φ) dφ = ½Λ(ψ)` for `0 < ψ < π/2`
+> (`integral_orthoscheme`, file `QOU/Archimedean/OrthoschemeBaseIntegral.lean`).
+> Cross-checked numerically at six angles before formalization.
+>
+> **Three things a later agent should not re-derive:**
+> 1. **`Λ` as a primitive across the CLOSED interval** is now available:
+>    `integral_neg_log_two_sin : ∫_a^b −log(2 sin t) = Λ(b) − Λ(a)` on
+>    `0 ≤ a ≤ b ≤ π`, plus the `log sin` form `integral_log_sin_eq` (which
+>    carries the `(b−a)·log 2` explicitly) and `Lob_eq_integral`. T1 gave only
+>    the pointwise derivative on the OPEN interval; the endpoints are where the
+>    orthoscheme actually lives.
+> 2. **The log singularity is not a blocker.** Mathlib's
+>    `intervalIntegrable_log_sin` / `intervalIntegrable_log_cos` hold on ANY
+>    interval — no `0 ∉ [[a,b]]` side condition, unlike
+>    `intervalIntegral.intervalIntegrable_log`. So no Jordan-inequality
+>    comparison argument is needed; the split `log(2 sin t) = log 2 + log sin t`
+>    costs an a.e. rewrite (`ae_sin_ne_zero`) since it fails exactly on the null
+>    set where `sin` vanishes.
+> 3. **The `log 2` cancellation is the normalization check.** Three `log 2`
+>    terms enter with coefficients `−ψ, −ψ, +2ψ` and cancel exactly. A wrong
+>    factor of 2 in the `Λ' = −log(2 sin)` normalization would leave a residual
+>    `ψ·log 2` that no Λ-identity can absorb.
+
+> **H4-3 is now the ONLY joint between the two ends.** H4-2 supplies the 2-D
+> base integral, H4-4 evaluates the 1-D one; what is missing is the polar change
+> of variables between them — the statement that the 2-D integral over the right
+> triangle `{(r,φ) : 0 < φ < ψ, 0 < r < cos ψ / cos φ}` equals
+> `∫₀^ψ −¼·log((cos²φ − cos²ψ)/cos²φ) dφ`. `lintegral_comp_polarCoord_symm` and
+> `integral_comp_polarCoord_symm` are both present in the restored olean cache
+> (`polarCoord.target = Ioi 0 ×ˢ Ioo (−π) π`), so this is not blocked on
+> infrastructure; the cost is (a) describing the triangle in polar coordinates,
+> (b) the inner radial integral `∫₀^{r₀} r dr/(2(R²−r²)) = −¼·log(1 − r₀²/R²)`,
+> and (c) a second `∫⁻`/`∫` bridge, since H4-2's output is an `∫⁻` while H4-4 is
+> Bochner.
+
 **H4-5 — assemble.** The 6 halves pair up into `Λ(α)+Λ(β)+Λ(γ)`. Bookkeeping
 once H4-4 is done, but the sign/orientation conventions are the classic place to
 go wrong (obtuse triangles put the circumcentre outside `T`, and the
