@@ -97,9 +97,9 @@
   "verdict": {
     "proved": "Kummer's identity on |z| = 1, BOTH halves: BlochWigner_lob(e^{i theta}) = Cl_2(theta) = Im cLiTwoExt(e^{i theta}), sorry-free, standard axioms. The Lambda-side IS Clausen duplication; the dilogarithm side is same-derivative-plus-basepoint at theta = pi.",
     "not_proved": [
-      "Kummer for general z (needs the two-variable differential argument)",
-      "Vol(5_2) -- y_1 is off the unit circle"
+      "Vol(5_2) -- the geometric factor of Vol = D is untouched"
     ],
+    "superseded_2": "This list used to include 'Kummer for general z'. That is now PROVED (QOU/Knot/KummerRadial.lean, Route 73/74) -- by a RADIAL reduction using this file's |z| = 1 result as basepoint, not by the two-variable argument anticipated here.",
     "since_superseded": "G3's 'not proved in Lean' was true when written and is now false -- Route 73 proved it. Corrected here rather than left to rot.",
     "sum_rule_status": "PROVED"
   }

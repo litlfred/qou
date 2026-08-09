@@ -202,3 +202,58 @@ zero, along every ray tested) but **not assembled in Lean**. G3 is evidence the
 plan works, *not* a proof. What remains is the differentiability of `θ₂` in `r`
 and the chain-rule assembly — mechanical, but real. `Vol(5₂)` needs that plus
 the geometric factor and is untouched.
+
+---
+**2026-08-09 — ✅ CLOSED. KUMMER'S IDENTITY IS PROVED FOR GENERAL `z`.**
+
+`QOU/Knot/KummerRadial.lean` — `kummer`, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`, `lake build` exit 0 / 3242 jobs with
+all five `.olean`s deleted first, zero `sorry`:
+
+    Im z > 0  ⟹  BlochWigner_lob z = Im (cLiTwoExt z) + log‖z‖ · arg(1 − z)
+
+**The route was NOT the two-variable argument this bean predicted.** The bean
+said general `z` "needs the two-variable argument
+`dD = log|z| d arg(1−z) − log|1−z| d arg z`". It does not. Fixing `arg z` and
+moving radially collapses it to **one** variable:
+
+* `θ₁ = arg z` is constant along the ray, so `Λ(θ₁)` drops out;
+* `θ₁+θ₂+θ₃ = π` forces `dθ₃ = −dθ₂`;
+* the two `Λ′` terms collapse via the **law of sines** to `−log r · θ₂′`;
+* the dilogarithm side moves at `−log r · θ₂′` too (`Im cLiTwoExt` at `θ₂/r`,
+  the `log r · arg(1−z)` term at `−θ₂/r − log r·θ₂′`);
+* so the defect is constant on `(0,∞)`, and `r = 1` kills it —
+  `kummer_unit_circle`, the earlier increment, is the basepoint.
+
+Note the shape: **the `|z| = 1` case is an INPUT to the general case, not a
+special case of it.** The increments compose, they do not supersede.
+
+Chain, all sorry-free: `KummerUnitCircle` (Λ-side on `|z|=1` = Clausen
+duplication) → `KummerDilogHalf` (`cLiTwoExt` side there) → `IdealTetLawOfSines`
+(`‖z‖ = sin θ₂/sin θ₃`) → `KummerRadial` (the reduction).
+
+**THE PROHIBITION IS LIFTED.** `BlochWignerLobachevsky.lean` forbade
+transporting dilogarithm facts onto `BlochWigner_lob` "without first proving
+Kummer's identity". That condition is met; the note is rewritten in place, and
+the `qou-idvt` T2 / `qou-5gai` H4 factorisation `Vol = D` ∘ `D = Λ-sum` now has
+its **analytic factor closed**.
+
+**Stale claims corrected in the same commit — all of them mine, from the three
+previous increments:** Route 73 G4 (`kummer_general_z_proved: False`), Route 72's
+`not_proved` list, and the "WHAT IS NOT PROVED" sections of
+`KummerUnitCircle.lean`, `KummerDilogHalf.lean`, `IdealTetLawOfSines.lean`.
+
+**⚠ STILL NOT `Vol(5₂)`.** Kummer is the *analytic* factor. The **geometric**
+factor — that a particular triangulation's Λ-sum is the hyperbolic volume of a
+particular knot complement — is `qou-m015`/`qou-krvm` and is untouched. Nothing
+in this bean computes a volume.
+
+**Also recorded: a naming collision.** QOU has two unrelated "Kummer"s — this
+dilogarithm identity, and the Kummer sequence/filtration/tower of the Yekutieli
+obstruction story (`κₙ ∈ H²(𝒮,ℬ)`, `conj:q-gl-kummer-filtration`,
+`rem:hochschild-kummer-connection`), whose "**central element**" language is the
+crossed-module boundary `∂ : 𝒪_M^× → SU_{qₙ}(2)`. Disambiguation notes added to
+both Kummer modules. The two stories touch only through `Vol(5₂)`, via
+`yekutieli-transcendence-shadow.md`'s conjecture that `Vol(4₁)`, `Vol(5₂)`,
+`Vol(ℬ₃)` are algebraically independent — and **the proved sum rule does not
+threaten it**, because `D` cancels on the Galois orbit the sum rule sums over.

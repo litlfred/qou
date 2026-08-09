@@ -28,8 +28,13 @@ of constant arg z:
 These agree **iff** r = sin(th2)/sin(th3) -- the law of sines. The basepoint
 r = 1 is `kummer_unit_circle`, already proved.
 
-**The 5_2 sum rule is PROVED.** Kummer for general z is NOT yet assembled in
-Lean, and the 5_2 VOLUME conjecture is Ohtsuki's theorem, not formalised here.
+UPDATE: Kummer for general z is now PROVED -- QOU/Knot/KummerRadial.lean,
+`kummer` -- by exactly the radial reduction described above. G3 was the
+numerical check on the plan; the plan worked.
+
+**The 5_2 sum rule is PROVED.** The 5_2 VOLUME conjecture is Ohtsuki's theorem
+and is NOT formalised here: Kummer is the analytic factor of Vol = D, and the
+geometric factor is untouched.
 """
 
 import json
@@ -127,15 +132,17 @@ def main() -> int:
     # ---- G4: scope ---------------------------------------------------------
     gates.append({
         "gate": "G4",
-        "claim": "SCOPE. What is PROVED in Lean is: Kummer on |z| = 1 (both halves), and the law "
-                 "of sines for all z with Im z > 0. What is NOT yet assembled is the radial "
-                 "argument itself, so KUMMER FOR GENERAL z REMAINS UNPROVED IN LEAN -- G3 is "
-                 "numerical evidence that the plan works, NOT a proof. And Vol(5_2) is untouched: "
-                 "it needs general-z Kummer plus the geometric factor, and the 5_2 volume "
-                 "conjecture is Ohtsuki's published theorem, not formalised anywhere here",
+        "claim": "SCOPE, UPDATED. When written this gate said the radial argument was not yet "
+                 "assembled and general-z Kummer was unproved. It is now PROVED -- "
+                 "QOU/Knot/KummerRadial.lean, `kummer`, sorry-free -- by exactly the reduction G3 "
+                 "anticipated. What remains untouched is Vol(5_2): Kummer is the ANALYTIC factor "
+                 "of Vol = D, and the GEOMETRIC factor (a triangulation's Lambda-sum IS the "
+                 "volume) is qou-m015/qou-krvm territory. The 5_2 volume conjecture is Ohtsuki's "
+                 "published theorem, not formalised anywhere here",
         "kummer_unit_circle_proved": True,
         "law_of_sines_proved": True,
-        "kummer_general_z_proved": False,
+        "kummer_general_z_proved": True,
+        "proved_by": "QOU/Knot/KummerRadial.lean -- kummer",
         "vol_5_2_proved": False,
         "pass": True,
     })
@@ -148,8 +155,9 @@ def main() -> int:
         "verdict": {
             "proved": "Kummer on |z| = 1 (both halves); the ideal-tetrahedron law of sines "
                       "|z| = sin(th2)/sin(th3) for all Im z > 0.",
-            "not_proved": "Kummer for general z -- the radial argument is planned and numerically "
-                          "confirmed (G3) but not assembled in Lean; and Vol(5_2).",
+            "also_proved": "Kummer for general z -- QOU/Knot/KummerRadial.lean, `kummer`. The "
+                           "radial argument G3 anticipated is now assembled.",
+            "not_proved": "Vol(5_2) -- the GEOMETRIC factor of Vol = D is untouched.",
             "sum_rule_status": "PROVED",
         },
     }
@@ -161,9 +169,9 @@ def main() -> int:
     print(f"\nwitness -> {dest}")
     ok = all(g["pass"] for g in gates)
     print("VERDICT: " + (
-        "the law of sines |z| = sin(th2)/sin(th3) holds and makes the difference constant along "
-        "rays -- so general-z Kummer reduces to ONE variable with r = 1 as basepoint. That "
-        "assembly is not yet in Lean, and Vol(5_2) is untouched."
+        "the law of sines |z| = sin(th2)/sin(th3) makes the difference constant along rays, and "
+        "the resulting one-variable argument is now assembled: general-z Kummer is PROVED. "
+        "Vol(5_2) is still untouched -- that needs the geometric factor."
         if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 

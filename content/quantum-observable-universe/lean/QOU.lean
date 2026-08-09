@@ -151,6 +151,7 @@ import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
 import QOU.Knot.IdealTetLawOfSines
 import QOU.Knot.KummerDilogHalf
+import QOU.Knot.KummerRadial
 import QOU.Knot.KummerUnitCircle
 import QOU.Knot.RivinConcavity
 import QOU.Knot.SymmetricOptimum

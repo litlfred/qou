@@ -39,14 +39,53 @@
 
   ═══ WHAT IS STILL NOT PROVED ═══
 
-  **Kummer for general `z`.**  Off the unit circle the tetrahedron is no longer
-  isosceles and `log|z| ≠ 0`; that needs the genuine two-variable argument
-  (`dD = log|z| d arg(1−z) − log|1−z| d arg z`).  **The 5₂ shape `y₁` has
-  `|y₁| = 1.5236`, so this file does not reach `Vol(5₂)`** — see bean `qou-kmmr`.
+  ~~Kummer for general `z`.~~  **Now proved** — `QOU/Knot/KummerRadial.lean`
+  (`kummer`), by a *radial* reduction that uses this file's result as its
+  basepoint, not by the two-variable argument this note anticipated.  This file
+  still proves only the `|z| = 1` case; that is deliberate, since the radial
+  argument needs exactly that as input.
+
+  Still true: nothing here or in `KummerRadial` reaches `Vol(5₂)` — Kummer is the
+  *analytic* factor of `Vol = D`; the geometric factor is `qou-m015`/`qou-krvm`.
 
   **The 5₂ sum rule is PROVED**
   (`FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`); the 5₂ **volume**
   conjecture is Ohtsuki's published theorem and is not formalised anywhere here.
+
+
+  ═══ ⚠ NAMING: THIS IS NOT THE CORPUS'S OTHER KUMMER ═══
+
+  "Kummer" appears in QOU in **two unrelated senses**, both after Ernst Kummer,
+  and a grep for the name will mix them:
+
+  1. **Kummer's identity** (Lewin, *Polylogarithms*, p. 121 eq. (5.5)) — the
+     dilogarithm identity relating the Λ-sum to `Im Li₂(z) + log|z|·arg(1−z)`.
+     That is this file, and the `QOU.Knot.Kummer` namespace.
+  2. **The Kummer sequence / filtration / tower** — `1 → μₙ → 𝔾ₘ → 𝔾ₘ → 1` and
+     the obstruction classes `κₙ ∈ H²(𝒮, ℬ)` of the Yekutieli lifting tower
+     (`lifting-and-descent/`, `stochastic-mechanics/`, `conj:q-gl-kummer-filtration`,
+     `prop:ns-kummer-specialisation`, `rem:hochschild-kummer-connection`). The
+     "**central element**" language belongs to *that* story — the crossed-module
+     boundary `∂ : 𝒪_M^× → SU_{qₙ}(2)` sending a unit to the central element
+     `a·𝟙` — and has nothing to do with dilogarithms.
+
+  They are mathematically unrelated. Do not let a search for one surface the
+  other as if it were relevant.
+
+  ═══ WHERE THE TWO STORIES DO TOUCH ═══
+
+  Not through Kummer, but through `Vol(5₂)`. `predicted-spectra/yekutieli-transcendence-shadow.md`
+  conjectures that `Vol(4₁)`, `Vol(5₂)`, `Vol(ℬ₃)` are **algebraically
+  independent** — a polynomial relation among them over `ℚ[q,q^{-1}]` would force
+  the obstruction tower to close up at finite height, which the corpus's
+  perpetual-obstruction argument needs not to happen.
+
+  Worth stating plainly, because it is the obvious worry: **the proved 5₂ sum
+  rule does not threaten that conjecture.** The sum rule is a closed form for
+  `A = Σ Li₂(yⱼ)` over the Galois orbit, and the Bloch–Wigner `D` — which is
+  what carries the volume — **cancels identically on that orbit**. So the sum
+  rule constrains a quantity from which `Vol(5₂)` has already dropped out, and
+  says nothing about algebraic independence of volumes.
 
   -- Ref: [zagier1986], [milnor1982]
 -/

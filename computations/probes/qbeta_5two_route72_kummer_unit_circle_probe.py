@@ -33,7 +33,8 @@ NOT proved. It is now proved -- `QOU/Knot/KummerDilogHalf.lean`,
 than left to rot.
 
 **The 5_2 sum rule is PROVED** (`FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`).
-Kummer for GENERAL z, and the 5_2 VOLUME, are NOT.
+Kummer for GENERAL z is also now proved (KummerRadial, via a radial reduction
+that uses THIS file's result as its basepoint). The 5_2 VOLUME is NOT.
 """
 
 import json
@@ -147,10 +148,11 @@ def main() -> int:
                       "BlochWigner_lob(e^{i theta}) = Cl_2(theta) = Im cLiTwoExt(e^{i theta}), "
                       "sorry-free, standard axioms. The Lambda-side IS Clausen duplication; the "
                       "dilogarithm side is same-derivative-plus-basepoint at theta = pi.",
-            "not_proved": [
-                "Kummer for general z (needs the two-variable differential argument)",
-                "Vol(5_2) -- y_1 is off the unit circle",
-            ],
+            "not_proved": ["Vol(5_2) -- the geometric factor of Vol = D is untouched"],
+            "superseded_2": "This list used to include 'Kummer for general z'. That is now "
+                            "PROVED (QOU/Knot/KummerRadial.lean, Route 73/74) -- by a RADIAL "
+                            "reduction using this file's |z| = 1 result as basepoint, not by the "
+                            "two-variable argument anticipated here.",
             "since_superseded": "G3's 'not proved in Lean' was true when written and is now "
                                 "false -- Route 73 proved it. Corrected here rather than left "
                                 "to rot.",
@@ -165,9 +167,9 @@ def main() -> int:
     print(f"\nwitness -> {dest}")
     ok = all(g["pass"] for g in gates)
     print("VERDICT: " + (
-        "Kummer on |z| = 1 is PROVED, BOTH halves -- the Lambda-side is Clausen duplication "
-        "and the cLiTwoExt side is Route 73. General Kummer and Vol(5_2) are NOT: the 5_2 "
-        "shape is off the unit circle."
+        "Kummer on |z| = 1 is PROVED, BOTH halves -- and it is the basepoint from which "
+        "general-z Kummer is now also proved (KummerRadial). Vol(5_2) is NOT: that needs the "
+        "geometric factor."
         if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 

@@ -45,6 +45,41 @@
   So what is delivered is the **geometric** side on `|z| = 1`, stated in terms of
   `Cl₂` alone, with no dilogarithm claim.
 
+
+  ═══ ⚠ NAMING: THIS IS NOT THE CORPUS'S OTHER KUMMER ═══
+
+  "Kummer" appears in QOU in **two unrelated senses**, both after Ernst Kummer,
+  and a grep for the name will mix them:
+
+  1. **Kummer's identity** (Lewin, *Polylogarithms*, p. 121 eq. (5.5)) — the
+     dilogarithm identity relating the Λ-sum to `Im Li₂(z) + log|z|·arg(1−z)`.
+     That is this file, and the `QOU.Knot.Kummer` namespace.
+  2. **The Kummer sequence / filtration / tower** — `1 → μₙ → 𝔾ₘ → 𝔾ₘ → 1` and
+     the obstruction classes `κₙ ∈ H²(𝒮, ℬ)` of the Yekutieli lifting tower
+     (`lifting-and-descent/`, `stochastic-mechanics/`, `conj:q-gl-kummer-filtration`,
+     `prop:ns-kummer-specialisation`, `rem:hochschild-kummer-connection`). The
+     "**central element**" language belongs to *that* story — the crossed-module
+     boundary `∂ : 𝒪_M^× → SU_{qₙ}(2)` sending a unit to the central element
+     `a·𝟙` — and has nothing to do with dilogarithms.
+
+  They are mathematically unrelated. Do not let a search for one surface the
+  other as if it were relevant.
+
+  ═══ WHERE THE TWO STORIES DO TOUCH ═══
+
+  Not through Kummer, but through `Vol(5₂)`. `predicted-spectra/yekutieli-transcendence-shadow.md`
+  conjectures that `Vol(4₁)`, `Vol(5₂)`, `Vol(ℬ₃)` are **algebraically
+  independent** — a polynomial relation among them over `ℚ[q,q^{-1}]` would force
+  the obstruction tower to close up at finite height, which the corpus's
+  perpetual-obstruction argument needs not to happen.
+
+  Worth stating plainly, because it is the obvious worry: **the proved 5₂ sum
+  rule does not threaten that conjecture.** The sum rule is a closed form for
+  `A = Σ Li₂(yⱼ)` over the Galois orbit, and the Bloch–Wigner `D` — which is
+  what carries the volume — **cancels identically on that orbit**. So the sum
+  rule constrains a quantity from which `Vol(5₂)` has already dropped out, and
+  says nothing about algebraic independence of volumes.
+
   -- Ref: [zagier1986], [milnor1982], [thurston1978]
 -/
 import QOU.Archimedean.BlochWignerLobachevsky

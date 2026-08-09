@@ -433,34 +433,47 @@ not a definitional unfolding**.
 
 So, precisely:
 
-* Nothing here proves `BlochWigner_lob = Im Li₂(z) + log|z|·arg(1−z)`.
+* ⚠⚠ **STATUS: KUMMER IS NOW PROVED (2026-08-09, bean `qou-kmmr`).**
 
-  ⚠ **STATUS CORRECTED 2026-08-09 (bean `qou-kmmr`).** This bullet used to read
-  "and it **cannot currently be proved in this corpus**: Mathlib has no
-  polylogarithm or dilogarithm at all". The Mathlib half is still true — Mathlib
-  has neither — but the conclusion no longer follows, because **the corpus now
-  has its own**: `QOU.MathlibExt.cLiTwoExt`, the integral continuation of `Li₂`
-  off the disc, with the reflection, inversion and five-term identities all
-  proved (`QOU/MathlibExt/ComplexRogersDilog.lean`,
-  `QOU/QBeta/FiveTwoComplexPentagon.lean`). Kummer's identity is therefore
-  **unblocked, not impossible** — it is open work, tracked as `qou-kmmr`.
+  `QOU/Knot/KummerRadial.lean` — `kummer` — proves, sorry-free and on the
+  standard axioms, for every `z` with `Im z > 0`:
 
-  Numerically it is exact: checked 2026-08-09 at 40 dps against this file's own
-  `Lob`/`tetAngle` definitions at five shapes including the 5₂ shape `y₁`,
-  residual `≤ 1.1e-41` (the precision floor) at every one.
-* Therefore **do not transport dilogarithm facts onto this symbol** — the
-  five-term relation, the functional equations, or any N–Z result stated for
-  *their* `D` — without first proving Kummer's identity. The name is shared;
-  the objects are so far only numerically observed to agree.
-* The agreement IS observed, not assumed blindly:
-  `computations/qbeta/xi_classical_limit_probe.py` evaluates the **dilogarithm**
-  form and cross-checks it against this angle route at the substrate anchor,
-  where they match to the Λ-sum probe's ~1e-6 series accuracy. That is evidence
-  for Kummer, not a proof of it.
+      BlochWigner_lob z = Im (cLiTwoExt z) + log‖z‖ · arg(1 − z)
+
+  So the two objects named `D` in this corpus are the **same function** on the
+  upper half plane. This bullet previously said the identity "cannot currently be
+  proved in this corpus" (Mathlib has no dilogarithm); that was corrected first to
+  "unblocked, not impossible" once `QOU.MathlibExt.cLiTwoExt` was recognised, and
+  is now simply **done**.
+
+  The proof chain, all sorry-free: `KummerUnitCircle` (the Λ-side on `|z| = 1`,
+  which is Clausen duplication) → `KummerDilogHalf` (the `cLiTwoExt` side there,
+  by same-derivative with basepoint `θ = π`) → `IdealTetLawOfSines`
+  (`‖z‖ = sin θ₂/sin θ₃`) → `KummerRadial` (a radial reduction, using the unit
+  circle as basepoint).
+
+* **The prohibition below is therefore LIFTED.** It used to read: "do not
+  transport dilogarithm facts onto this symbol — the five-term relation, the
+  functional equations, or any N–Z result stated for *their* `D` — without first
+  proving Kummer's identity. The name is shared; the objects are so far only
+  numerically observed to agree."
+
+  That condition is now met. Dilogarithm facts about `cLiTwoExt` **may** be
+  transported onto `BlochWigner_lob` on `{Im z > 0}`, via `kummer`. Outside the
+  upper half plane nothing is claimed — `BlochWigner_lob` is built from `arg`s and
+  this file separately proves it vanishes on real shapes in `(0,1)`, which is a
+  branch statement, not an instance of Kummer.
+
+* The numerical cross-check that used to be the only evidence is retained as a
+  control, not as grounds: `computations/qbeta/xi_classical_limit_probe.py`
+  matches the two forms at the substrate anchor to ~1e-6 series accuracy, and
+  Routes 72–73 match them to `1e-41`/`1e-45` at five shapes including `y₁`.
 
 Consequence for `qou-idvt` T2 / `qou-5gai` H4: the target factors as
-(geometric) `Vol = D` ∘ (analytic) `D = Λ-sum`. Proving Kummer would close the
-*analytic* factor only; the geometric one is still the whole of H4. -/
+(geometric) `Vol = D` ∘ (analytic) `D = Λ-sum`. **The analytic factor is now
+closed** (`kummer`). The *geometric* one — that a particular triangulation's
+Λ-sum is the hyperbolic volume of a particular knot complement — is untouched and
+is still the whole of H4. Nothing here computes `Vol(5₂)`. -/
 -- Ref: [thurston1978], [milnor1982], [zagier1986]
 noncomputable def BlochWigner_lob (z : ℂ) : ℝ :=
   Lob (tetAngle₁ z) + Lob (tetAngle₂ z) + Lob (tetAngle₃ z)

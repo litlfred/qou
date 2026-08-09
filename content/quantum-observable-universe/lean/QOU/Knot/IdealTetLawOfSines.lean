@@ -21,6 +21,10 @@
   already proved.  So this lemma is what converts a two-variable problem into the
   same "same derivative, pin the constant" shape the rest of this lane uses.
 
+  **That programme is now carried out**: `QOU/Knot/KummerRadial.lean` proves
+  Kummer for general `z` (`kummer`), and this lemma is the step that makes the
+  two sides' derivatives agree.
+
   ═══ THE PROOF ═══
 
   Entirely elementary, via `Complex.sin_arg : sin (arg x) = x.im / ‖x‖` — which

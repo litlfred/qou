@@ -90,17 +90,19 @@
     },
     {
       "gate": "G4",
-      "claim": "SCOPE. What is PROVED in Lean is: Kummer on |z| = 1 (both halves), and the law of sines for all z with Im z > 0. What is NOT yet assembled is the radial argument itself, so KUMMER FOR GENERAL z REMAINS UNPROVED IN LEAN -- G3 is numerical evidence that the plan works, NOT a proof. And Vol(5_2) is untouched: it needs general-z Kummer plus the geometric factor, and the 5_2 volume conjecture is Ohtsuki's published theorem, not formalised anywhere here",
+      "claim": "SCOPE, UPDATED. When written this gate said the radial argument was not yet assembled and general-z Kummer was unproved. It is now PROVED -- QOU/Knot/KummerRadial.lean, `kummer`, sorry-free -- by exactly the reduction G3 anticipated. What remains untouched is Vol(5_2): Kummer is the ANALYTIC factor of Vol = D, and the GEOMETRIC factor (a triangulation's Lambda-sum IS the volume) is qou-m015/qou-krvm territory. The 5_2 volume conjecture is Ohtsuki's published theorem, not formalised anywhere here",
       "kummer_unit_circle_proved": true,
       "law_of_sines_proved": true,
-      "kummer_general_z_proved": false,
+      "kummer_general_z_proved": true,
+      "proved_by": "QOU/Knot/KummerRadial.lean -- kummer",
       "vol_5_2_proved": false,
       "pass": true
     }
   ],
   "verdict": {
     "proved": "Kummer on |z| = 1 (both halves); the ideal-tetrahedron law of sines |z| = sin(th2)/sin(th3) for all Im z > 0.",
-    "not_proved": "Kummer for general z -- the radial argument is planned and numerically confirmed (G3) but not assembled in Lean; and Vol(5_2).",
+    "also_proved": "Kummer for general z -- QOU/Knot/KummerRadial.lean, `kummer`. The radial argument G3 anticipated is now assembled.",
+    "not_proved": "Vol(5_2) -- the GEOMETRIC factor of Vol = D is untouched.",
     "sum_rule_status": "PROVED"
   }
 }
