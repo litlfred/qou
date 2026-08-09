@@ -85,3 +85,51 @@ The three refutations are **not committed into the content files**. Fixing
 these means adding the missing hypotheses to each context class — a claim
 change, and the author's call, exactly as with qou-zzhw. What is offered here
 is the diagnosis plus a proof for each that the current form is unclosable.
+
+---
+
+## Result: 8 of 8 context-class sorries are unclosable
+
+Every `sorry` in the newly-visible set that is stated over a §3b context class
+has now been attempted with the adversarial-instance method. **All eight are
+refutable.** None is an open gap.
+
+| declaration | class fields | what refutes it |
+|---|---|---|
+| `mass_categorical_descent` | 6, 0 constraining the conclusion | `B := 0, B_desc := 1, B_trans := 0` |
+| `neutron_proton_splitting` | 5, all bare | `m_n := 1`, rest `0` |
+| `finite_cascade_depth` | 9 | `q := 2, N_modes := 1000000` |
+| `volume_perturbation` | 5 | `Vol_41 := 0, δΦ := fun _ => 1` |
+| `skein_mass_from_linking` | 8 | `n := 0, Q := 0, mass := 1` |
+| `parity_regime_selection` | 13 | `A := 1, sign_val := 0` (ℕ sub: `(-1)^(1-1) = 1`) |
+| `lp_dual_stability` | 13, all bare | all-zero context; the `… < 0` conjunct |
+| `confinement_frobenius_reciprocity` | 12, all bare | `y_0_star := 0`; the `0 < y_0_star` conjunct |
+
+Proofs: `docs/audits/2026-08-09-unclosable-context-sorries.lean.txt`. Each
+compiles clean against the tree at `main` @ `258d802ed6`.
+
+Note how little the refutations need. No junk values, no degenerate limits — in
+five of the eight it is enough to set one field to `0` and another to `1`. Three
+do not even need the substantive conjunct: `lp_dual_stability` and
+`confinement_frobenius_reciprocity` assert a strict inequality (`… < 0`,
+`0 < y_0_star`) about data the class never constrains, and `parity_regime_selection`
+falls to `ℕ` subtraction at `A = 1`.
+
+**8/8 is the finding, not the 8.** A sample that size with no survivors says the
+defect is structural: it is how conjectural-class blocks in this corpus are
+being written, not a handful of slips. The hypotheses these theorems need were
+never put in the classes, so every one of the `sorry`s is unclosable — and each
+carries a `-- Ref:` citation that makes it read as a tracked gap.
+
+### Scope of the claim
+
+- **8 context-class sorries: all refuted.**
+- **13 remaining sorry-theorems in the newly-visible set take no context class.**
+  Different shape — the §9 small-instance check applies to them instead, and
+  they are **not** covered by this result. Unaudited, not cleared.
+- The whole population is only the *newly-visible* set (modules outside the
+  pre-drain import closure). Context-class sorries in the 870 modules that
+  always compiled have not been swept.
+
+If the rate holds outside this set, that is the more important number, and it
+is cheap to get: the method is one instance per statement.
