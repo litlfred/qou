@@ -17,7 +17,7 @@ LINEARITY of the character:
       σ − h(½ − δ/4)·1       → [sign-0] + (h·δ/4)·1          (2 terms)
 
 The color-weighted identity-term coefficient `h·δ/4` is rebuilt here at
-full 50-dps from `flavor_split_subleading(q₀)` — the float `d` carried
+full 50-dps from `flavor_split_leading(q₀)` — the float `d` carried
 by the word builder has only ~17 significant digits and would silently
 cap any consumer at f64 precision otherwise.
 

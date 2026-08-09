@@ -42,7 +42,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
-_AVG_COLOR_DELTA = None  # cached δ = flavor_split_subleading(q₀)
+_AVG_COLOR_DELTA = None  # cached δ = flavor_split_leading(q₀)
 
 
 def _avg_color_delta():

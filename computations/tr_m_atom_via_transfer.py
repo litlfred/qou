@@ -87,7 +87,7 @@ def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     When `q` is
     given it is threaded to BOTH the y_λ Jones–Markov weights and the
     transfer χ^λ. NOTE: the canonical color-weighted atom word is
-    **q₀-baked** — its interface `d` carries `flavor_split_subleading(q₀)`
+    **q₀-baked** — its interface `d` carries `flavor_split_leading(q₀)`
     — so `chi_all_lambda_reduced_block`'s `word_to_mpfr` can only re-lift
     it at q₀;
     passing q ≠ q₀ with that convention raises `ValueError` (a true q-sweep

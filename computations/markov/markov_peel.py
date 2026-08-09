@@ -75,7 +75,7 @@ _H_NUM_TOL = 1e-9
 # Color-weighted p-n averaged crossing support (owner default
 # pn_convention="bring_color_weighted", per mass_at_3A_proper.atom_braid_word_3A):
 # the inter-nucleon crossing is σ − h·(½ − δ/4)·𝟙 with
-# δ = flavor_split_subleading(q₀), NOT the color-blind σ − h/2.
+# δ = flavor_split_leading(q₀), NOT the color-blind σ − h/2.
 # Lazily initialised (q_parameter is imported lazily elsewhere here to
 # avoid import cycles). Returns (δ_numeric_at_q0, δ_symbolic_in_q).
 _COLOR_DELTA: "tuple[float, object] | None" = None

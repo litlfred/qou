@@ -281,7 +281,7 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     rather than the baked q₀ — the q-parameterised-braid-word core refactor
     (docs/workplans/2026-06-17-q-parameterised-braid-word-core.md). Every
     crossing is a template {0, −h, −h/2, −h(½−δ/4)} with `h=q−q⁻¹`,
-    `δ=flavor_split_subleading(q)` the only q-dependent quantities; the intra
+    `δ=flavor_split_leading(q)` the only q-dependent quantities; the intra
     chains come from `nucleon_gen_chains(quarks, q=q)`. `q=None` (default)
     uses the canonical q₀ data (`pyhecke.gram.h`, `_avg_color_delta`) and is
     byte-identical to the historical word — all existing callers omitting `q`
