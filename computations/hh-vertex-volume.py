@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 from witness_base import WitnessBuilder
 
-z = 1.0/(q0**0.5+qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # Wedderburn weights (corrected)
 def qint(k):

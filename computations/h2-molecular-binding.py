@@ -36,7 +36,7 @@ from witness_base import WitnessBuilder
 # (No hardcoded m_e / 8G here: those were a vestigial *nuclear* binding
 #  scale.  The molecular binding energy is converted via the DERIVED
 #  E_MOL = m_e·α²/(q+q⁻¹)² scale below — see hecke_core.E_MOL.)
-z = 1.0 / (q0**0.5 + qi**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # B₃-dressed eigenvalues for pe crossing (from Ch 11):
 # A bare pe crossing has eigenvalues (q⁻¹, -q).

@@ -53,7 +53,7 @@ except Exception:
 def sigma_pow_markov_trace(k):
     """tr_M(σ^k) in H_2 via σ² = h σ + 1 (identical to #3548's convention)."""
     h = Q0 - 1 / Q0
-    z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z = Q0**3 / (Q0**2 + 1)
     a, b = mp.mpf(0), mp.mpf(1)
     for _ in range(k):
         a, b = h * a + b, a

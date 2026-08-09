@@ -80,7 +80,7 @@ def row_invariants(q0_str: str) -> dict:
     """Compute the 6 per-basis-element structural invariants at q0."""
     q = mp.mpf(q0_str)
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     # [n]_q for n=1..3 (used for Wedderburn dim_q comparisons)
     qbr = lambda n: (q**n - q**(-n)) / (q - 1/q)
     # Quantum dimensions of H_3(q) Wedderburn blocks (partitions of 3):

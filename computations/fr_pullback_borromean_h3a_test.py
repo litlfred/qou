@@ -267,7 +267,7 @@ def phi_k(chi_map: dict, k: int, weights: dict, dim_q) -> mp.mpf:
 
 
 def make_alpha(q: mp.mpf):
-    z_mark = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z_mark = q**3 / (q**2 + 1)
     G = mp.catalan
 
     def alpha_k(k: int) -> mp.mpf:

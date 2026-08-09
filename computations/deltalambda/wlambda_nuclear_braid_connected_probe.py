@@ -55,7 +55,7 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 Q0 = mp.mpf("1.10997859555733471")
 H = Q0 - 1 / Q0
 QI = 1 / Q0
-Z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+Z = Q0**3 / (Q0**2 + 1)
 
 
 def qint(k):

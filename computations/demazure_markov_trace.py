@@ -164,7 +164,7 @@ def partitions_of(n):
 def y_lambda_telescope(p, q_sym):
     """y_λ via the Macdonald hook-content telescope (closed form)."""
     Q = q_sym ** 2
-    z = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))
+    z = q_sym**3 / (q_sym**2 + 1)
     X = q_sym * z / (1 - Q + q_sym * z)
     cells = hook_lengths(p)
     n = sum(p)

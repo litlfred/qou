@@ -26,7 +26,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, q_int
 from witness_base import WitnessBuilder
 
-z = 1.0 / (q**0.5 + qi**0.5)
+z = q**3 / (q**2 + 1)
 
 # Wedderburn weights (exact symbolic form)
 q2 = q**2

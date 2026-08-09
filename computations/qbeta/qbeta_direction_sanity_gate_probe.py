@@ -99,7 +99,7 @@ def main() -> int:
 
     # Substrate chain (PR #1786)
     h_q = q - 1 / q
-    z_q = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z_q = q**3 / (q**2 + 1)
     alpha = (z_q - 1) * h_q / 2
     b_q = sp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     hbar_q = (q - 1) / q
@@ -138,7 +138,7 @@ def main() -> int:
     # (b) FAILING: PR #1850 z(q_0) pattern — a candidate predicting
     # F(q_0) = z(q_0)^(-k) or similar that gives a wildly wrong magnitude
     # vs. target. Construct a deliberate order-of-magnitude failure.
-    z_q0 = 1 / (mp.sqrt(Q0_mp) + 1 / mp.sqrt(Q0_mp))
+    z_q0 = Q0_mp**3 / (Q0_mp**2 + 1)
     print(f"    Candidate (b): PR #1850 z(q_0) obstruction pattern")
     print(f"      z(q_0) = 1/(√q_0 + 1/√q_0) = {mp.nstr(z_q0, 12)}")
     print(f"      hypothetical F_candidate(q_0) = 1/z(q_0)^5 ~ wild scaling")

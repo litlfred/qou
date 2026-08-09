@@ -64,7 +64,7 @@ def _constants():
     from q_parameter import Q as q0, HA as h
     from codata_constants import M_E_MEV as me
     q0, h, me = float(q0), float(h), float(me)
-    z = 1.0 / (q0 ** 0.5 + q0 ** (-0.5))
+    z = q0**3 / (q0**2 + 1)
     try:
         from canonical_braid_crossings import _avg_color_delta
         delta = float(_avg_color_delta())

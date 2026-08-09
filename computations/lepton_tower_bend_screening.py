@@ -87,7 +87,7 @@ def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
     h = q - 1 / q
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     b = morgan_voyce_b(12, h)
 

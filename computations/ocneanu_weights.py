@@ -67,8 +67,8 @@ from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E40
 # Symbolic q and z for derivation
 q = sp.Symbol('q', positive=True)
 z = sp.Symbol('z', positive=True)
-z_num = 1.0 / (Q0 ** 0.5 + Q0 ** (-0.5))
-z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+z_num = Q0**3 / (Q0**2 + 1)
+z_sym = q**3 / (q**2 + 1)
 
 
 def omega_lambda_formula_guess(shape: tuple[int, ...], *,

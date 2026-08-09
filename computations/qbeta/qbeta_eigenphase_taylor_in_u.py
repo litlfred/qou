@@ -94,7 +94,7 @@ C3_EMP_MUON = mpf("-2.0097")
 def substrate_syms(q: sp.Symbol):
     h = q - 1 / q
     hbar = (q - 1) / q
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     b = sp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     alpha = (z - 1) * h / 2
     u = b * hbar ** 2
@@ -320,7 +320,7 @@ def main() -> int:
         q0 = mpf(q0_str)
         h = q0 - 1 / q0
         hbar = (q0 - 1) / q0
-        z = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+        z = q0**3 / (q0**2 + 1)
         b = mp.sqrt(q0 ** 4 + q0 ** 2 + 1) / (q0 ** 2 + 1)
         alpha = (z - 1) * h / 2
         u = b * hbar ** 2

@@ -68,7 +68,7 @@ ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
 
 def alpha_k(k: int) -> mp.mpf:
     """α_0 = α_1 = α_3 = 1; α_2 = z²; α_{k≥4} = m_e · 8G."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)

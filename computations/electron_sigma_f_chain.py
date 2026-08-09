@@ -65,7 +65,7 @@ import cvxpy as cp  # noqa: E402
 from q_parameter import Q as q0, Q_INV as qi0  # noqa: E402
 
 q0, qi0 = float(q0), float(qi0)
-z = 1.0 / (q0 ** 0.5 + qi0 ** 0.5)
+z = q0**3 / (q0**2 + 1)
 
 
 def confinement_dual(T_diag, n_target, tol=1e-6):

@@ -55,7 +55,7 @@ def canonical_basket(q: mp.mpf) -> dict[str, mp.mpf]:
     b_sq = (q ** 4 + q ** 2 + 1) / (q ** 2 + 1) ** 2
     b = mp.sqrt(b_sq)
     u = b * hbar ** 2                                # u_substrate
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))           # Markov param
+    z = q**3 / (q**2 + 1)           # Markov param
     return {
         "1": mp.mpf(1),
         "sqrt(q)": mp.sqrt(q),

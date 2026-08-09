@@ -84,7 +84,7 @@ m_e = mpf("0.51099895069")
 
 # Wenzl Schur-principal parameters (Q = q², Markov z pinned) — the CANONICAL y_λ (markov module).
 Q = q0 ** 2
-z_mark = 1 / (sqrt(q0) + 1 / sqrt(q0))
+z_mark = q0**3 / (q0**2 + 1)
 z_w = q0 * z_mark
 QR = z_w / (1 - Q + z_w)
 

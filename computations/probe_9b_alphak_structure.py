@@ -97,7 +97,7 @@ def symbolic_2a() -> dict:
     """
     q = sp.Symbol("q", positive=True)
     h = q - 1 / q
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     a = h / (1 - q**4)
     ap = h / (1 - q**-4)

@@ -118,7 +118,7 @@ def q_beta(q):
     """Q_β production near-match (derived_masses.q_beta_kashiwara_n2_mev), q-only."""
     Q_A = q_beta_QA(q)
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbq = (q - 1) / q
     alpha = (z - 1) * h / 2
     q_sq = q ** 2

@@ -43,7 +43,7 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as h_val, LN_Q
 from experimental_constants import M_E_MEV, Q_TRITIUM_MEV, Q_NEUTRON_MEV
 from partition_utils import hook_lengths  # noqa: E402
 
-z = 1.0 / (q0**0.5 + q0**(-0.5))
+z = q0**3 / (q0**2 + 1)
 
 
 # ══════════════════════════════════════════════════════════════

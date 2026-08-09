@@ -63,7 +63,7 @@ from gb_filtration_jet_tracker import HeckeElement, perm_apply_s
 # Sympy q, h, z (matching the jet_tracker convention)
 q = sp.symbols("q", positive=True)
 h_sym = q - 1 / q
-z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+z_sym = q**3 / (q**2 + 1)
 
 
 def coxeter_length(perm: tuple) -> int:

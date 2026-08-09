@@ -78,7 +78,7 @@ Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 q0_mpf = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
-z_mark = 1 / (mp.sqrt(q0_mpf) + 1 / mp.sqrt(q0_mpf))
+z_mark = q0_mpf**3 / (q0_mpf**2 + 1)
 z_f64 = float(z_mark)
 
 N_STRANDS = 12

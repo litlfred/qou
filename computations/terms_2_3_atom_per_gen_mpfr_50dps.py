@@ -79,7 +79,7 @@ def _load_q0_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
     q0 = mp.mpf(d["derived_50_digit"]["q"])
     qi = 1 / q0
     h = q0 - qi
-    z = 1 / (mp.sqrt(q0) + mp.sqrt(qi))
+    z = q0**3 / (q0**2 + 1)
     return q0, qi, h, z
 
 

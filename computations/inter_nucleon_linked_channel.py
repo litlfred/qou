@@ -82,7 +82,7 @@ M_N_MINUS_M_P_MEV = mp.mpf("1.29333236")   # m_n - m_p, PDG 2024 (MeV)
 q = sp.symbols('q', positive=True)
 
 # Solve the two Markov axioms once for the Wenzl weights (symbolic in q).
-_z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+_z_sym = q**3 / (q**2 + 1)
 _A, _B = sp.symbols('A B')
 _sol = sp.solve([_A + _B - 1, _A * q + _B * (-1 / q) - _z_sym], [_A, _B])
 W_2 = sp.simplify(_sol[_A])     # Wenzl weight of block (2)

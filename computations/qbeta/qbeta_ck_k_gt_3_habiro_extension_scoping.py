@@ -103,7 +103,7 @@ def main() -> int:
     # Substrate quantities (per probe_q_beta_operator_valued_N3.py
     # convention — the one used in c_2 = -1 STRUCTURAL).
     h = q - 1 / q                     # Hecke skein
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))  # Markov-Jones
+    z = q**3 / (q**2 + 1)  # Markov-Jones
     alpha = (z - 1) * h / 2           # eigenphase
     d1 = q ** 3 / (q ** 2 + 1)
     d2 = -1 / (q * (q ** 2 + 1))

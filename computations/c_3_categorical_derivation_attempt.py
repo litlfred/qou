@@ -228,7 +228,7 @@ def trM_sigma1_sq_sigma2_sq(q: mpf) -> mpf:
         ⟹ tr_M(σ_1²·σ_2²) = h²·z² + 2·h·z + 1 = (h·z + 1)².
     """
     h = q - 1 / q
-    z = 1 / (mp_sqrt(q) + 1 / mp_sqrt(q))
+    z = q**3 / (q**2 + 1)
     return (h * z + 1) ** 2
 
 
@@ -240,7 +240,7 @@ def trM_sigma1_cubed(q: mpf) -> mpf:
     tr_M = (h²+1)·z + h.
     """
     h = q - 1 / q
-    z = 1 / (mp_sqrt(q) + 1 / mp_sqrt(q))
+    z = q**3 / (q**2 + 1)
     return (h * h + 1) * z + h
 
 

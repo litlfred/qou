@@ -67,7 +67,7 @@ from binding_depth_stratified_lr import (
 
 def alpha_k_production(k: int) -> mp.mpf:
     """Production empirical assignment (binding_depth_stratified_lr.alpha_k)."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     if k in (0, 1, 3):
         return mp.mpf(1)
     if k == 2:
@@ -79,7 +79,7 @@ def alpha_k_derived(k: int) -> mp.mpf:
     """Framework-derived H_3 assignment α_k = tr_M(r_k) for k ≤ 3
     (explicit-alpha-k-h3.md): α_0=1, α_1=0, α_2=z², α_3=h·z²+z.
     k≥4 keeps the production m_e·8G plateau (no derived value exists)."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     h = Q0 - 1 / Q0
     if k == 0:
         return mp.mpf(1)
@@ -139,7 +139,7 @@ def main() -> int:
         "wired. Extension of H_3 GB-depth values to H_{3A} "
         "partition-depth is itself a recorded hypothesis."
     )
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     h = Q0 - 1 / Q0
     builder.add_parameter("alpha_3_derived", fmt(h * z_mark ** 2 + z_mark))
     builder.add_parameter("alpha_1_derived", "0")

@@ -176,7 +176,7 @@ def wedderburn_pair_volumes(
     )
 
     # H_3 Wedderburn weights (match hecke_core convention)
-    z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    z_mark = q0**3 / (q0**2 + 1)
     qdim_sym = 1.0
     qdim_std = q_int(2)
     qdim_alt = 1.0

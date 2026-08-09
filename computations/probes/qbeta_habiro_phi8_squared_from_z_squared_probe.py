@@ -152,7 +152,7 @@ def habiro_of_z_pow_k(k, u, q, max_m=20):
     isolate its cyclotomic signature in the Habiro decomposition).
     """
     log(f"  --- z(q)^{k} Habiro decomposition ---")
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     expr = sp.together(z ** k)
     p_u, shift, denom_str = to_u_polynomial(expr, q, u)
     log(f"    z(q)^{k} as p(u): deg = {sp.Poly(p_u, u).degree()}, "
@@ -228,7 +228,7 @@ def analyse_pochhammer_factors(u, max_m=20):
 def habiro_of_z_diff(u, q, max_m=20):
     """Compute Habiro expansion of z(q)^2 − z(q)^1 and z(q)^2 − z(q)^1·z(q)."""
     log("  --- z(q)² − z(q)¹ Habiro decomposition (interference test) ---")
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     expr_diff = sp.together(z ** 2 - z)
     log(f"    z² − z = {sp.factor(expr_diff)}")
     p_u, shift, denom_str = to_u_polynomial(expr_diff, q, u)
@@ -496,7 +496,7 @@ def main() -> int:
     log("\n[6] Numerical cross-check at q_0 (50 dps)")
     q0_mp = mp.mpf(str(Q0))
     u0_mp = mp.sqrt(q0_mp)
-    z_at_q0 = 1 / (mp.sqrt(q0_mp) + 1 / mp.sqrt(q0_mp))
+    z_at_q0 = q0_mp**3 / (q0_mp**2 + 1)
     log(f"  q_0 = {float(q0_mp):.16f}")
     log(f"  u_0 = √q_0 = {float(u0_mp):.16f}")
     log(f"  z(q_0) = {float(z_at_q0):.16f}")

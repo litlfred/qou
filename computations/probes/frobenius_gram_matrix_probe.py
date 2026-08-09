@@ -83,7 +83,7 @@ def main() -> int:
     mp.dps = 50
 
     q_sympy = sp.Float(Q_50_DIGIT_STR, 50)
-    z_sym = 1 / (sp.sqrt(Q_SYM) + 1 / sp.sqrt(Q_SYM))
+    z_sym = Q_SYM**3 / (Q_SYM**2 + 1)
     h_sym = Q_SYM - 1 / Q_SYM
     z = _eval_at_q0(z_sym)
     h = _eval_at_q0(h_sym)

@@ -105,7 +105,7 @@ def main() -> None:
     set_compute_dps()
     q = mp.mpf(Q_MP)
     h = q - 1 / q
-    z = 1 / (sqrt(q) + 1 / sqrt(q))          # canonical Markov parameter
+    z = q**3 / (q**2 + 1)          # canonical Markov parameter
 
     N = 15
     b = morgan_voyce_b(N, h)

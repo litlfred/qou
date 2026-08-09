@@ -42,7 +42,7 @@ from witness_base import WitnessBuilder
 
 Q0 = q0  # alias for mass_from_tower
 HA = HA_val
-z_mark = 1.0 / (q0**0.5 + qi0**0.5)
+z_mark = q0**3 / (q0**2 + 1)
 hbar_q = (q0 - 1) / q0
 
 def qint(k):
@@ -136,7 +136,7 @@ def mass_from_tower(vols):
     tower.
     """
     n = len(vols)
-    z_mark = 1.0 / (Q0 ** 0.5 + (1.0 / Q0) ** 0.5)
+    z_mark = Q0**3 / (Q0**2 + 1)
 
     desc = 1.0
     for v in vols:
