@@ -649,4 +649,58 @@ theorem sum_V_eq_three_sum_flattenedRogers
   simp only [Fin.sum_univ_three]
   linear_combination per 0 + per 1 + per 2
 
+/-! ### §7f — the pentagon collapses on the diagonal
+
+Route 46 measured that the Rogers pentagon, summed over the three embeddings of
+the 5₂ saddle orbit at `x = y = z`, equals `3π²/2` **exactly with principal
+branches and no flattening** (residual 2.5e-60) — where the sibling `c`-orbit
+needs a branch correction. That measurement is analytic and is not proved here.
+
+What *is* proved is the algebra underneath it: on the diagonal `x = y = z` two
+pairs of the five arguments coincide, so the five-term relation is really a
+three-term one. That is what makes the relation concrete enough to use, and it
+needs no dilogarithm theory at all. -/
+
+/-- On the diagonal, `(1−z)/(1−z²) = 1/(1+z)` — the collapse that makes two
+pairs of pentagon arguments coincide. -/
+theorem pentagon_diagonal_arg {z : ℂ} (h1 : (1 : ℂ) + z ≠ 0) (h2 : (1 : ℂ) - z ≠ 0) :
+    (1 - z) / (1 - z * z) = 1 / (1 + z) := by
+  have hfac : (1 : ℂ) - z * z = (1 - z) * (1 + z) := by ring
+  rw [hfac]
+  field_simp
+
+/-- **The pentagon collapses to three terms on the diagonal.**
+
+With `L` abstract and carrying the five-term (pentagon) relation, at `x = y = z`
+
+    2·L(z) + 2·L(1/(1+z)) + L(1−z²) = π²/2
+
+because `(1−z)/(1−z²) = 1/(1+z)` appears twice. `L` is abstract, so this is
+exactly as strong as the pentagon hypothesis and no stronger — no dilogarithm
+theory is used or claimed. -/
+theorem pentagon_diagonal (L : ℂ → ℂ)
+    (hpent : ∀ x y : ℂ, L x + L y + L ((1 - x) / (1 - x * y)) + L (1 - x * y)
+      + L ((1 - y) / (1 - x * y)) = (Real.pi : ℂ) ^ 2 / 2)
+    {z : ℂ} (h1 : (1 : ℂ) + z ≠ 0) (h2 : (1 : ℂ) - z ≠ 0) :
+    2 * L z + 2 * L (1 / (1 + z)) + L (1 - z ^ 2) = (Real.pi : ℂ) ^ 2 / 2 := by
+  have h := hpent z z
+  rw [pentagon_diagonal_arg h1 h2, show (1 : ℂ) - z * z = 1 - z ^ 2 by ring] at h
+  linear_combination h
+
+/-- The same, summed over the three roots: a relation between **three** Galois
+sums rather than five.
+
+Route 46 measures the right-hand side as `3π²/2` for the 5₂ saddle orbit with
+principal branches. Here it is a consequence of the pentagon hypothesis, with
+no branch analysis and no instance — the analytic input is still owed. -/
+theorem sum_pentagon_diagonal (L : ℂ → ℂ)
+    (hpent : ∀ x y : ℂ, L x + L y + L ((1 - x) / (1 - x * y)) + L (1 - x * y)
+      + L ((1 - y) / (1 - x * y)) = (Real.pi : ℂ) ^ 2 / 2)
+    (y : Fin 3 → ℂ) (h1 : ∀ j, (1 : ℂ) + y j ≠ 0) (h2 : ∀ j, (1 : ℂ) - y j ≠ 0) :
+    2 * (∑ j, L (y j)) + 2 * (∑ j, L (1 / (1 + y j))) + (∑ j, L (1 - (y j) ^ 2))
+      = 3 * ((Real.pi : ℂ) ^ 2 / 2) := by
+  have per := fun j => pentagon_diagonal L hpent (h1 j) (h2 j)
+  simp only [Fin.sum_univ_three]
+  linear_combination per 0 + per 1 + per 2
+
 end QOU.QBeta.FiveTwo

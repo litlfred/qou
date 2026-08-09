@@ -154,3 +154,60 @@ integer `−1` cannot be derived. Everything downstream (the lifted five-term
 relation, the rank computation in `ℬ̂(ℂ)`) waits on it.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 46 — the bookkeeping is COMPLETE, and the y-orbit needed nothing
+
+Probe `computations/probes/qbeta_5two_route46_bookkeeping_complete_probe.py`
+(5 gates, all pass, dps 60). Lean §7f in `FiveTwoSaddleSumRule.lean`.
+
+The Rogers pentagon summed over the three embeddings at `x = y = z`:
+
+| orbit | result |
+|---|---|
+| `y` (5₂ saddle cubic) | **`= 3π²/2` exactly, principal branches, NO flattening** — residual 2.5e-60 |
+| `c` (`X³+X²−1`) | misses by 6.4718; needs the one crossing Route 45 derived |
+
+So the configuration this lane cares about needs **no branch bookkeeping at
+all**, and the 6.4718 discrepancy Route 41 reported belongs to the `c`
+configuration, not the `y` one.
+
+### ⚠ This corrects Route 45's own stated reason
+
+Route 45's G5 said the derived flattening "does not transfer to the y-orbit,
+which needs its own derivation" — implying `y` needs a *different* correction.
+It needs **none**: the c-recipe **over-corrects**, moving an exact total off by
+4.873. G5's numeric claim stands; the explanation attached to it did not.
+
+### The method, validated
+
+Correction read off winding numbers along the continuation path —
+`πi·Σᵢ(w1ᵢ·log aᵢ + w0ᵢ·log(1−aᵢ))` — reproduces Route 45's hand-derived
+c-orbit answer to 2.4e-35. On the y-orbit **every winding is zero**, which is
+*why* no correction arises: derived, not observed after the fact.
+
+### Consequence for Route 41
+
+Route 41's rank no-go carried a gated limit: its rows were Bloch-group
+statements, and converting one to a `Σ Li₂` statement needed bookkeeping that
+was not done. **For the y-orbit that is now done and is trivial** — the pentagon
+row is an exact `Σ L` identity there. The rank conclusion is firmer, and still a
+no-go.
+
+### Lean §7f — the collapse, sorry-free
+
+On the diagonal `(1−z)/(1−z²) = 1/(1+z)`, so two pairs of arguments coincide and
+the five-term relation is really three-term:
+
+    pentagon_diagonal : 2·L(z) + 2·L(1/(1+z)) + L(1−z²) = π²/2
+
+with `L` abstract carrying the pentagon hypothesis, plus `sum_pentagon_diagonal`
+over the three roots. Standard axioms, zero `sorry`, `lake build` exit 0 with the
+`.olean` deleted first. Numerically cross-checked in the collapsed form: residual
+0.0 at 40 dps.
+
+That is algebra only — **the analytic input (a complex Li₂ with the pentagon
+identity) is still owed**, and no instance exists.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
