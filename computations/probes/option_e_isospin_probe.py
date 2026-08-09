@@ -94,7 +94,10 @@ def chi_numeric_float(shape, crossings, q_mp):
     ]
     q = float(q_mp)
     h = q - 1.0 / q
-    d_lookup = {"sigma": 0.0, "sigma_inv": -h, "averaged": -h / 2.0}
+    # Shared map — handles "averaged_pn" (bean qou-pin6). This file passes
+    # distinguish_color=True, so without it the lookup KeyErrors.
+    from canonical_braid_crossings import crossing_d_map
+    d_lookup = {k: float(v) for k, v in crossing_d_map(h).items()}
     eye = np.eye(dim, dtype=np.float64)
     M = np.eye(dim, dtype=np.float64)
     for gen_idx, ctype in crossings:

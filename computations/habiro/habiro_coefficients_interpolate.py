@@ -170,7 +170,12 @@ def markov_trace_numerical(Z, N, q_val, include_inter=True, dps=None):
     """
     from schur_weyl_symbolic import partitions_of
     A = Z + N
-    crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
+    # distinguish_color=True: this file's d_map handles "averaged_pn", but
+    # without the flag the p-n interface never carries that label and every
+    # averaged crossing takes the color-blind -h/2 (bean qou-pin6). Aliased
+    # import, which is why the regex sweep over call sites missed it.
+    crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter,
+                                          distinguish_color=True)
     if dps is None:
         dps = mp.mp.dps
     total = mp.mpc(0)

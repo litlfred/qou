@@ -8,7 +8,7 @@
     "prop:full-pole-structure-mass-trace",
     "thm:knot-mass-formula-unified"
   ],
-  "timestamp": "2026-07-18T17:42:03.582789+00:00",
+  "timestamp": "2026-08-09T01:23:06.249593+00:00",
   "polynomial_q_not_applicable": true,
   "parameters": {
     "q_0": 1.1099785827513808,
@@ -19,30 +19,32 @@
       "Z": 1,
       "N": 0,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "1.06541176800974618826485906217857805937406257729383251664163",
-      "walltime_sec": 0.03945326805114746
+      "tr_M_q0_numerical_60dps": "1.0653061442544502028447836788011517279335935986560743461909",
+      "walltime_sec": 0.08518362045288086
     },
     "n (neutron, A=1)": {
       "Z": 0,
       "N": 1,
       "include_inter": false,
-      "tr_M_q0_numerical_60dps": "0.923413212248394228641660710527817386843536450385891120059384",
-      "walltime_sec": 0.0008833408355712891
+      "tr_M_q0_numerical_60dps": "0.923233229911637360373660689511003499728205325656798747427495",
+      "walltime_sec": 0.0017681121826171875
     },
     "D (deuteron, A=2)": {
       "Z": 1,
       "N": 1,
       "include_inter": true,
-      "tr_M_q0_numerical_60dps": "0.388471363214283978934144659973044735120219086547857294601115",
-      "walltime_sec": 0.35454440116882324
+      "tr_M_q0_numerical_60dps": "0.388357141197791156643396606542760938742465054349017932954231",
+      "walltime_sec": 0.6033034324645996
     }
   },
-  "scriptHash": "1714e7d2d762",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "scriptFile": "habiro_coefficients_interpolate.py",
+  "scriptHash": "f73709e3be57",
+  "scriptCommitSha": "e5e3d7f906d6d97a9ab6e4493ae99f3d2338131e",
+  "commitSha": "e5e3d7f906d6d97a9ab6e4493ae99f3d2338131e",
   "engine": "mpmath",
-  "computedAt": "2026-07-18T17:42:04.027450+00:00",
+  "computedAt": "2026-08-09T01:23:06.273139+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.3.0",
-  "scriptFile": "habiro_coefficients_interpolate.py"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
