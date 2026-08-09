@@ -1,10 +1,11 @@
 ---
 # qou-8plu
 title: 'canonical-mass guard: reach --strict green and wire into CI (2 .md hits + no workflow)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T22:41:51Z
-updated_at: 2026-08-08T22:41:51Z
+updated_at: 2026-08-09T02:14:09Z
 ---
 
 
@@ -59,3 +60,27 @@ still match live lines, and a mutated line must re-flag.
 **Item 2 (CI wiring) remains open** and is unchanged: nothing runs this guard,
 `build.yml` is `workflow_dispatch`-only, and there is no `witness-pipeline.yml`
 in the tree. Needs either a dispatch job or a pre-commit hook.
+
+## 2026-08-09 — item 2 resolved: hosted in the preflight, not in CI
+
+There is nowhere in CI to wire this. **Every** workflow in `.github/workflows`
+is `workflow_dispatch`-only — `build.yml`, `doc-gen4.yml`,
+`lean-content-siblings.yml`, `pyhecke-native-wheel.yml`, `witness-staleness.yml`,
+`build-lean-mcp.yml`, `lake-cache-refresh.yml` — auto-triggers having been
+disabled repo-wide on 2026-06-30 for Actions billing. A new workflow would
+never fire on a push and would only *look* like coverage.
+
+So the guard now runs from [`scripts/check-sidecars.sh`](../scripts/check-sidecars.sh),
+the documented pre-commit preflight, which is the path agents actually walk
+(AGENTS.md §"QA is agent-owned; CI is a backup"). It fires only when the change
+touches a covered surface (`computations/**.py`, `content|docs/**.md`), and the
+guard is stdlib-only (ast/re/hashlib) so the preflight gains no dependency. The
+two regression suites need mpmath and are deliberately left out of the
+preflight; they are named in the comment for anyone touching the guard itself.
+
+Verified both directions: a planted stale docstring trips it (⚠ + the hit list,
+`action=1`), and the clean tree is silent.
+
+If auto-triggers are ever re-enabled, add a `workflow_dispatch` +
+`pull_request` job that runs `python3 computations/canonical_mass_status_guard.py --strict`
+plus the two suites — it is a three-line job with no dependencies beyond mpmath.
