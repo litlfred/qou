@@ -145,6 +145,9 @@ theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
   -- theorem "no longer merely projects that class field". Both were false. The data-class
   -- field is deleted; `[HasConfinementSDPStrongDuality n h]` remains as the legitimate
   -- conditional input a caller with a solver-verified identity can supply.
+  -- Ref: [boyd-vandenberghe-2004] §5.2.3 (Slater) + §5.3 (strong duality for convex
+  --      programs) — the conic-duality step, which Mathlib has no SDP API for.
+  -- Ref: [manuscript] particle-interactions/confinement-sdp
   sorry
 
 -- The deprecated universal axiom `ConfinementSDP_axiom` has been
