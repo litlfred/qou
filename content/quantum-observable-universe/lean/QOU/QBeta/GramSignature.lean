@@ -396,6 +396,10 @@ radical. Quotienting by `rad = (1³)` removes a term already equal to zero. The
 Connes distance becomes finite on `H₃/rad` **at no cost in physics** —
 `finite_distance_forces_trivial_kernel`'s hypothesis is satisfiable after all.
 
+CONVENTION-C: KEEP_HISTORICAL. The C value below is load-bearing -- it is the
+EVIDENCE that C is excluded, not a leftover. Replacing it with the D value
+destroys the contrast the sentence exists to draw. Do not flip.
+
 Note this also explains why C looked healthier: there `y₍₁³₎ = 0.0227449 ≠ 0`,
 so there is no radical and nothing to quotient. The degeneracy is a feature of
 D, and the branching identity is what makes it harmless rather than fatal.

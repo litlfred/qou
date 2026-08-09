@@ -291,6 +291,8 @@ structure at all. **So convention D is the unique non-trivial Markov trace on
 Convention C is thereby excluded by derivation rather than by ruling:
 `z = 1/(q^{1/2} + q^{-1/2})` is neither root, which is exactly why
 `y₍₁³₎ = 0.0227449 ≠ 0` there and why C's Gram form is non-singular.
+(CONVENTION-C: KEEP_HISTORICAL -- that number is the evidence excluding C, not
+a stale production value. Do not flip.)
 
 ### Why this matters beyond bookkeeping
 
@@ -530,7 +532,9 @@ theorem conventionD_unique_nontrivial (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q
 
 /-- **Convention C is excluded**, by derivation rather than by ruling. If the
 antisymmetriser survives — `y₍₁³₎ ≠ 0`, which is C's situation with
-`y₍₁³₎ = 0.0227449` — then `z` is not convention D. Contrapositive of the
+`y₍₁³₎ = 0.0227449` — then `z` is not convention D. (CONVENTION-C:
+KEEP_HISTORICAL -- the hypothesis of this theorem IS C's nonzero weight.)
+Contrapositive of the
 forward direction above. -/
 theorem not_conventionD_of_antisym_survives (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q)
     (hsurv : y₁₃ ≠ 0)
@@ -817,6 +821,7 @@ Temperley–Lieb Markov trace at loop parameter `δ = [2]_q`**, and
 
 **And it found a live defect.** `1/δ = 0.497290545604915556` and convention-C
 `z = 0.499320334183694452` differ by 0.408 %, and the corpus has conflated them:
+(CONVENTION-C: KEEP_HISTORICAL -- both numbers are needed to STATE the defect.)
 `mass-theory/h3-markov-wenzl-weights-context.md:69` asserts that
 `1/(q^{1/2}+q^{-1/2})` "is the Temperley–Lieb loop reciprocal `1/δ` — correct for
 the TL generator `e_i`", which is false, and
