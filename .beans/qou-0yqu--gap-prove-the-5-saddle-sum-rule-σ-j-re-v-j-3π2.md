@@ -932,3 +932,75 @@ is already Lean-proved. The cube-root twist says the search should probably run
 in the field `F(ω)`, not `F`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 40 — the distribution (Kubert) family: mapped, and bounded by a rank argument
+
+Probe `computations/probes/qbeta_5two_route40_distribution_factors_probe.py`
+(8 gates, all pass, dps 40/50/60). Lean: `FiveTwoSaddleSumRule.lean` §7d —
+twelve theorems, sorry-free, `lake build` exit 0, standard axioms only.
+
+### A retraction first — a claim drafted here and never committed
+
+An earlier draft asserted the distribution family is **vacuous** on the Galois
+sum: that `Li₂(z^n) = n·Σₖ Li₂(ζᵏz)` summed over the orbit degenerates to
+`A = A`, closing Route 4 as a no-go family. **That claim is false.** Two
+independent errors produced it, both now gated against:
+
+1. The generating polynomial was built by **reversing** the coefficient list.
+   For monic `R` of degree `d`, `∏(1 − Xᵢz) = z^d·R(1/z)` — the highest-first
+   list read low-to-high, already in the right order. Reversing computes a
+   different polynomial. G1 gates the convention *and* gates that the reversed
+   one fails.
+2. Granting the change of variables `u = z^n` — which **is** true, `S_n = A/n`,
+   G8 — the step "so the relation says `A = A`" assumed `S_n` is one atomic new
+   unknown. It is not.
+
+### What is true: the tower is the powers of ONE generator
+
+Let `c` be a root of `X³+X²−1` (`c = 1/ρ`, `ρ` the plastic number `ρ³=ρ+1`),
+and `C_m = Σ Li₂(cᵢ^m)` over the three conjugates. Exact integer Newton
+identities (G3) give
+
+| power | minimal polynomial | role |
+|---|---|---|
+| `c¹` | `X³+X²−1` | `C₁` |
+| `c²` | `X³−X²+2X−1` = `Q` | **`B = C₂`** |
+| `c³` | `X³−2X²+3X−1` = `P` | **`A = C₃`** |
+| `c⁵` | `X³−4X²+5X−1` | `C₅`, the reflection (`1−c = c⁵`) |
+
+every discriminant `−23·square` — one cubic field throughout. So the two
+sum-rule unknowns are two rungs of a single ladder, not unrelated quantities.
+
+`X⁹−2X⁶+3X³−1` and `X⁶−X⁴+2X²−1` are both **reducible** (G4, exact):
+`= (X³+X²−1)(X⁶−X⁵+X⁴−2X³+X²+1)` and `= (X³−X²+1)(X³+X²−1)`; both cubic
+factors have discriminant `−23`. That reducibility is exactly what refutes the
+retracted reading.
+
+Four relations, all verified numerically (G5 at two precisions, G6):
+
+* `C₂ + C₃ = π²/2 − Σ log y log(1−y)` — reflection at `y = c³`, since `1−c³ = c²`
+* `C₁ + C₅ = ` same over the `c`-orbit — reflection at `c`, since `1−c = c⁵`
+* `C₂ = 2(C₁ + D)` — duplication, `D = Σ Li₂(−cᵢ)`
+* `C₃ = 3(C₁ + E)` — triplication, `E` over the sextic factor
+
+Both reflections close with **principal** logs, no branch correction.
+
+### The no-go, with a proof this time
+
+Six unknowns `(C₁, C₂, C₃, C₅, D, E)`, four relations. The functional reading
+off `A = C₃` lies in the row space iff stacking it leaves the rank unchanged.
+**It does not: rank 4 → 5** (G7), solution family dimension 2. So distribution
+plus reflection over this tower *provably* cannot determine `A`. Unlike the
+retracted claim, this is a rank computation over an explicit matrix.
+
+### What this does NOT close
+
+The five-term relation, Landen (Route 3), and any relation using a root **not**
+of the form `c^m` are all untouched. This strengthens rather than weakens the
+suggested next step above — the five-term search in `F(ω)` — by removing the
+distribution family from contention as a way of avoiding it. Note the search
+now has a much smaller natural alphabet than "the `yⱼ`": the powers `c^m`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
