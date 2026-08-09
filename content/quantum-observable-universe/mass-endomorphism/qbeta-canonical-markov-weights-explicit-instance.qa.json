@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "9ad9667b802c",
-    "ts": "13faa3e50dd5",
+    "ts": "b13a1017d8b6",
     "lean": "522b7e44f865",
     "lean_statement": "10ac0c9445bb"
   },
@@ -1182,11 +1182,11 @@
       {
         "field_hash": {
           "md": "9ad9667b802c",
-          "ts": "13faa3e50dd5",
+          "ts": "b13a1017d8b6",
           "lean": "522b7e44f865",
           "lean_statement": "10ac0c9445bb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -1194,10 +1194,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaCanonicalMarkovWeightsInstance.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-08-09T22:55:29.950Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2147,5 +2145,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T22:55:29.950Z"
 }

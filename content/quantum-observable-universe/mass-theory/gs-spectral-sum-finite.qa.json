@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "9410f1a58fc2",
     "ts": "d48530b9d131",
-    "lean": "53c5f560fc17",
-    "lean_statement": "8a4e627c0717"
+    "lean": "24f4d3e75057",
+    "lean_statement": "ccfe7bb53cf2"
   },
   "criteria": {
     "voice-status-leak": [
@@ -290,10 +290,10 @@
         "field_hash": {
           "md": "9410f1a58fc2",
           "ts": "d48530b9d131",
-          "lean": "53c5f560fc17",
-          "lean_statement": "8a4e627c0717"
+          "lean": "24f4d3e75057",
+          "lean_statement": "ccfe7bb53cf2"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -301,10 +301,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-08-09T22:55:05.844Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -312,8 +310,8 @@
         "field_hash": {
           "md": "9410f1a58fc2",
           "ts": "d48530b9d131",
-          "lean": "53c5f560fc17",
-          "lean_statement": "8a4e627c0717"
+          "lean": "24f4d3e75057",
+          "lean_statement": "ccfe7bb53cf2"
         },
         "result": "pass",
         "reviewer": {
@@ -323,8 +321,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T22:55:05.844Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "q-usage-regime-detected": [
@@ -1818,5 +1816,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T22:55:05.844Z"
 }
