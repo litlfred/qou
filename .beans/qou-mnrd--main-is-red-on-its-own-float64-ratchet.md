@@ -367,3 +367,143 @@ them.
 
 Expected outcome, stated up front so it can be checked rather than claimed:
 this takes 18 NEW -> 14 NEW. **It does not make the ratchet green.**
+
+---
+
+## CORRECTION — the `deltalambda/threerow-*` cluster is not what I said it was
+
+Above I claimed the four `threerow-*` witnesses were "the cheap half ... mpmath
+downcast ... no numpy at all ... same shape as the em-linking drains this PR
+already did". **Wrong on the diagnosis, and it hid a worse problem.** Checked by
+reading the producers and running them, not by grepping for `numpy`:
+
+**1. The f64 IS upstream, through a shared helper.** All four route χ^λ through
+one of two helpers (`threerow_sign_crossing_probe.chi_atom`,
+`threerow_chi_sparse.chi_atom_sparse`), and both call
+`hecke_characters.build_seminormal_matrices`, which does `q_local = float(q)`
+and returns numpy/scipy arrays. Each braid letter is then
+`float(c)·σ + float(d)·I`. So χ is f64 END TO END, whatever precision `q`
+carries in. Only 1 of the 4 files imports numpy itself — which is why a grep
+for numpy said "no" and the grep was measuring the wrong thing.
+
+**2. But the cluster is MIXED, not uniformly category 3.** Each witness carries
+two kinds of block:
+
+  * character-free (`G(q) = Σ y_λ(q)·Δ_λ`, `S_free`, the level ladder, the q
+    grids) — genuine 50-dps mpmath, `float()`-ed only at the sink. float64 was
+    discarding ~34 real digits.
+  * character-dressed (`F_K = Σ y_λ·χ^λ·Δ_λ` and everything derived from it) —
+    f64-limited by χ.
+
+So the drain is per-FIELD, not per-file, and both categories appear in every
+one of the four witnesses.
+
+## The thing that actually mattered: NONE of the four producers would run
+
+Not "carries float64" — **could not regenerate its own witness at all**, on
+`main`, today:
+
+    threerow_sign_crossing_probe.py         TypeError from reject_float64_q
+    threerow_crossing_a_dependence_probe.py TypeError from reject_float64_q
+    threerow_qcross_trend_probe.py          ModuleNotFoundError: scipy, then the same
+    threerow_4he_completion_probe.py        ModuleNotFoundError: scipy, then the same
+
+`reject_float64_q` landed in `efcaf79ed` (2026-08-08T19:29Z, "NO FLOAT64: the
+braid word was f64 at source"). It rejects any mpf equal to its own float64 —
+which includes the grid endpoint `q_lo = mpf("1.0001")`. Every one of these
+probes sweeps a grid that starts there, so every one of them dies on its first
+evaluation.
+
+The guard is RIGHT and is not the defect: a 50-dps pipeline must not be
+silently capped at 17 digits. Its own docstring prescribes the answer —
+"`allow_float64=True` is the escape for paths that are legitimately f64 ...  so
+the loss is declared at the call site instead of hidden" — and these probes are
+exactly that case, already saying so in prose in their PRECISION notes and
+witness caveats. What was missing was the machine-readable declaration. Added at
+the two χ helpers.
+
+**The frozen witnesses were CORRECT, just unreproducible.** After the
+declaration, `threerow-sign-crossing` regenerated with all 51 data leaves
+byte-identical. So this was not silent numeric drift; it was a producer that had
+stopped being runnable and nothing noticing for a day.
+
+### Why nothing noticed
+
+Same root as the rest of this bean. `witness-staleness.yml` is dispatch-only by
+owner decision, so no push has re-run these producers since 2026-06-30. A guard
+that breaks four producers is exactly what a push-triggered run catches on the
+next commit. This is the second concrete cost of the trigger-off window recorded
+in this bean (the first was the three qbeta witnesses); it is recorded as cost,
+not as an argument to re-open a decision that was asked and answered.
+
+### The blast radius is wider than these four
+
+`atom_braid_word_3A(..., q=...)` has 8 call sites across 6 files. Confirmed
+also broken by the same guard, and NOT fixed here:
+
+    computations/probes/gram_qtrace_hutchinson_probe.py
+
+Not established either way (both exceeded a 4-minute probe budget before
+reaching a verdict): `gram_norm_binding_probe.py`,
+`gram_transfer_quadratic.py`, `threerow_isospin_parity_probe.py`. Whoever picks
+those up: the fix is only `allow_float64=True` IF that call site's path really is
+f64 — check it, do not copy the annotation across on faith.
+
+## A gap in `str_at_true_precision`, found by diffing my own output
+
+The obvious drain is `float(x)` -> `str_at_true_precision(x)`, and it is WRONG
+here in the expensive direction. That helper's test is representational and
+exact — "is this mpf equal to its own float64?" — which is right for a pure f64
+kernel output. But `F = Σ y_λ(q)·χ^λ(β;q)·Δ_λ` MIXES a 50-dps mpmath weight with
+an f64 character, so the product is not a 53-bit dyadic, the helper keeps all 50
+digits, and ~34 of them are dyadic tail the χ kernel never supplied:
+
+    was (raw float64) : -0.1949663511459454
+    str_at_true_prec  : -0.19496635114594539089654509922868564866657011668554
+    correct           : -0.19496635114594539
+
+That middle line reads as measured and is WORSE than the float64 it replaced —
+a drain that makes the ratchet green while degrading the witness. Caught only by
+diffing every leaf against the pre-drain copy, which is now the routine for the
+rest of this cluster.
+
+Handled with a local `fmt_f64_limited` (= `fmt(x, 17)`) applied to whatever
+passes through the χ kernel, `str_at_true_precision` to everything else. NOTE
+the distinction it does not resolve: 17 digits is the f64 REPRESENTATION width,
+while the ACCURACY of this χ path is the ~1.5e-6 the probes measure themselves
+in `chi_vs_witness_max_rel_at_q0`. Serializing at 17 keeps the witness
+reproducible; the accuracy lives in a caveat. Both are stated in the witness.
+
+**This is a general hazard, not a threerow one.** Any producer combining an
+mpmath weight with an f64 kernel hits it, and `str_at_true_precision` cannot see
+it. Worth a follow-up: either teach the helper about mixed products (it would
+need provenance, which it deliberately does not track) or document the limit in
+its docstring so the next drain does not walk into it.
+
+## Two verdicts that were being decided in float64
+
+Not sink coercions — these reached into the computation, and are the reason the
+"just fix the sink" framing was wrong:
+
+  * `threerow_crossing_a_dependence_probe.scan_crossings` returned `float()`, so
+    the PHYSICAL vs DIAGNOSTIC classification (`q <= q₀`) compared an f64
+    crossing against a 50-dps q₀. No classification changes, but it was decided
+    at 1e-17 on a value resolved to ~1e-16.
+  * `threerow_qcross_trend_probe.exact_crossing_polys` had
+    `bool(float(a)**2 < float(Q_STAR))` where `a` is an EXACT sympy rational
+    bounding an isolated root — an exact bound round-tripped through f64 to be
+    compared with a 50-dps q*. Now decided in mpf.
+
+A third was latent: `qcross`'s monotonicity assertion reads the first crossing
+back out of the witness dict. Serializing crossings to strings would have made
+`seq[i+1] > seq[i]` a LEXICOGRAPHIC comparison and silently changed an
+assertion's meaning. The mpf values are kept in a parallel structure.
+
+## Undeclared dependency
+
+`threerow_chi_sparse.py` imports `scipy.sparse` at module scope with no
+fallback, so two of the four producers hard-require scipy. The repo has no
+top-level `requirements.txt` or `pyproject.toml` declaring it (only
+`qou-mass/pyproject.toml`, unrelated), and scipy was absent from this container
+until installed by hand. Recorded, not fixed: adding a dependency manifest is a
+structural change beyond this drain.
