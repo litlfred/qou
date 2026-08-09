@@ -262,3 +262,59 @@ divides by zero for that block.
 `frobenius-gram-matrix-context` carries `1.109978595554181`; canonical q₀ is
 `1.1099785827513808…`. Diverges at the 9th significant digit. Not fixed here —
 it is a witness value and needs a producer, and it is out of this axis's scope.
+
+---
+
+## Final state of the content layer: 31 → 6
+
+All 22 `gram-inverse` hits cleared. `gram-inverse-under-d` reports zero, so the
+Frobenius claims are relocated rather than merely relabelled. 25 blocks repaired,
+each re-scanned clean.
+
+Lean verification: `lake build` of `MarkovGramDegenerate`, `TemperleyLiebTower`,
+`QDimNormalisation`, `BallotNumbers`, `YoungDiagramThreeRowCorner`,
+`WedderburnTraceDecomposition`, `GramSignature`, `InterfaceScalar` **plus their
+full import closure — 2032 jobs, exit 0.** That is the closure of what this work
+touches, **not** the whole `QOU` library: two attempts at `lake build QOU` were
+killed by container restarts at ~1 hour each (it was live and progressing both
+times — `HeckeH4BlockMap31`/`BlockMap211` alone take 30+ min CPU apiece). The
+whole-library build is still owed.
+
+### One correction propagated three times, found by one detector
+
+`markov-trace-frobenius-selection-proof` had already retired its `ℚ(q^{1/2})`
+hypothesis as "an artefact of convention C, whose z = 1/(q^{1/2}+q^{-1/2}) needs
+the square root; convention D's z = q³/(q²+1) does not". Three other blocks were
+missed when that propagated, and all three were invisible to a value-based sweep
+because none of them quotes a number:
+
+1. `hecke-satisfies-blitvic-hypothesis` — the √q was its **only** stated reason
+   for an `ℝ` trace codomain. Flagged, **not** generalised: losing the stated
+   reason is not proving no reason exists, and `pairWeight`/`centredMoment` are
+   unaudited. Open Lean question.
+2. `per-braid-mass-tower` — same argument as one of three reasons; the other two
+   (absolute values, `Φ_q`) stand, so the conclusion is unchanged.
+3. `qvalue-derivation-chain` — claimed `V̂_i` exact in `ℚ(q^{1/2})` when `z` was
+   its only √q source and the transfer matrix `T` is over `ℚ(q)`. Corrected to
+   `ℚ(q)`.
+
+### Remaining 6
+
+| block | why it is not a swap |
+|---|---|
+| `interface-knot-markov-z-proof` | the 4-atom table, **producer run** (`mass_at_3A_proper.py`). Also claims "exact at f64 precision" under NO-FLOAT64. |
+| `markov-trace-recursive-reducer` | quotes z-dependent traces (proton 1.633154…, neutron 1.248248…) — **producer run**, do not retype |
+| `y-lambda-cyclotomic-factorization` | built on `q̌ = q^{1/2}` (12 residual √q); the half-argument variable is structural here |
+| `explicit-alpha-k-h3` | 2 residual √q in the prefactors |
+| `shell-structure-eigenvalues` | 2 residual √q |
+| `conj-rho-k-pair-gen-canonical-form` | 3 residual √q |
+
+### Flagged, deliberately unpatched
+
+`markov-pair-z2`'s Hopf-link normalisation
+`J_Hopf = -(q^{1/2}+q^{-1/2})·z²`. The prefactor is the half-argument loop
+parameter `[2]_√q = 2.0027…`; the production TL loop value is
+`δ = [2]_q = 2.010896866707122…`. Under D — which *is* the Jones/TL trace — both
+the prefactor and `z²` move, so the second equality cannot be assumed. Editing
+the prefactor to quiet the detector would ship an unchecked formula, which is the
+same failure mode as the relabelling loophole. Needs a derivation. See `qou-98g5`.
