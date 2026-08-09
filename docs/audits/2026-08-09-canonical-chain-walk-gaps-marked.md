@@ -56,7 +56,54 @@ evidence for them.
 (the δ path was de-wired 2026-06-29 from a *posited* subleading to a *proven*
 leading form). Verified exact this session inside a single `workdps` guard.
 
-## Step 4 — the Markov parameter z · **ASSUMED — GAP 1**
+## Step 4 — the Markov parameter z · ~~ASSUMED — GAP 1~~ → **DERIVED**
+
+> **CORRECTION, same day.** This step was first marked ASSUMED. That was wrong,
+> and the correction matters because it eliminates a route.
+>
+> `y_lambda_at(n, q)` takes **only q** — there is no z argument. Since
+> `tr_M = Σ_λ y_λ χ^λ`, the value of `tr_M(σ)` is fully determined by q, and the
+> Markov parameter is a *consequence* of the weights rather than an input.
+> Checked at n = 2, where `χ^{(2)}(σ) = q` and `χ^{(1,1)}(σ) = −1/q`:
+>
+> ```
+> y_(2)   = 0.69632542639163310909
+> y_(1,1) = 0.30367457360836689091     Σ y_λ d_λ = 1 exactly
+> tr_M(σ) from y_λ         = 0.49932033418369445241
+> 1/(√q + 1/√q)            = 0.49932033418369445241     residual 7.3e-31
+> ```
+>
+> So `z_m` is **derived**, not posited, and it cannot be retuned independently —
+> doing so would contradict `y_λ`. The open choice is one level up: *which member
+> of the Ocneanu family* (equivalently which N) the weights come from. The corpus
+> already states that as open — `ocneanu_N_lockin_probe.py`: "**Why the mass
+> channel is the `N = 2` one remains open**", while also proving N = 3 cannot be
+> reached by retuning because it re-weights channels the mass pipeline uses.
+>
+> **And that route is now closed too.** Solving for the N that would reproduce
+> AME(²H), in `z = 1/[N]_{√q}`:
+>
+> ```
+> crossing            required z     required N
+> colour-weighted     0.6922207      1.4439154
+> σ  (d = 0)          0.5877625      1.6999103
+> σ⁻¹ (d = −h)        0.7968228      1.2546575
+> ```
+>
+> Every one is **non-integer and below 2** — not an SU(N) quantum-group point at
+> all. Adopting one would be a continuous fit to a single datum, which the
+> corpus's own anti-fit discipline forbids.
+>
+> A pleasing identity fell out on the way, worth recording: the isospin projector
+> scalars derived earlier *are* the n = 2 Jones–Markov weights —
+> `μ₊ = y_(2)` and `μ₋ = y_(1,1)` to 3.6e-31. The eightfold-way decomposition and
+> the Wedderburn weights are the same object at n = 2, not two constructions that
+> happen to agree.
+>
+> The original ASSUMED reasoning is kept below because the link-invariance point
+> it makes is still true and still unresolved — it is just not a free parameter.
+
+### (original text, retained — the link-invariance defect is real)
 
 `markov-z-reconciliation.md` documents **two** parameters and the corpus uses
 the second:
@@ -213,17 +260,46 @@ is the sharpest open item in the chain.
 
 ---
 
-## The gaps, ranked
+## The gaps, ranked (revised after the Step 4 correction)
 
 | # | step | gap | severity |
 |---|---|---|---|
 | 4 | 11 | derived α violates the Lean floor by 30.43%; ²H unreachable in principle | **contradiction** |
-| 3 | 9 | α validated only at the β-decay scale; reused at the nuclear scale unvalidated; two E₀s live in the same slot | **high** |
-| 1 | 4 | `z_m` not derived, and not a link invariant → tr_M is braid-representative dependent | **high** |
-| 2 | 5 | interface templates assigned by charge (breaks charge independence); nucleon ordering arbitrary (2.88 MeV) | **high** |
+| 2 | 5 | **the braid word itself** — templates assigned by charge (breaks charge independence), nucleon ordering arbitrary (2.88 MeV), one quark pair out of 3×3 | **primary open route** |
+| 3 | 9 | α validated only at the β-decay scale — but see below: α *cancels*, so this is hygiene, not a route | medium |
+| 1 | 4 | `z_m` is DERIVED from y_λ. Its link-invariance defect is real and unresolved, but it is **not a free parameter** and cannot be retuned | **eliminated as a route** |
 | — | 6 | y_λ capped at 30 digits; "1e-50" claims overstated for tr_M | low |
 | — | 8 | SDP is downstream and validates nothing; its n_target is the wrong (colour-blind) trace | medium |
 | — | 2 | categorical action → Stokes → H_n(q) not audited | unknown |
+
+## Everything that is *not* the braid word has now been eliminated
+
+Collecting the results, for ²H specifically:
+
+| candidate | status |
+|---|---|
+| the functional (`−α ln` vs `α·Δtr`) | **derived** — multiplicativity + extensivity force the log form |
+| α, in any form `m_e·f(q₀)` | **cancels** — `B(2H)/Q_β` is α-free and off by 1.7355× |
+| the Markov parameter z | **derived** from y_λ (7.3e-31) |
+| the Ocneanu member / N | **fit-only** — required N is non-integer, 1.25–1.70, no SU(N) point |
+| the crossing template d ∈ [−h, 0] | **bounded** — Lean `mu_le_half` ⇒ multiplier ≥ 0.6945 |
+| coordination | **absent at A = 2** — one bond has no topology |
+
+With z derived and d bounded, the dimensionless multiplier `−ln(z + d)` is
+confined to `[0.694507, 1.236978]`, while ²H needs **0.531432**. That is outside
+the range, and every input to the range is now either derived or calibrated.
+
+**So the deuteron is unreachable by any parameter choice in the framework as
+structured.** Whatever closes it has to be *structural* — the braid word for ²H
+itself: how many strands, how many inter-nucleon crossings, which quark pairs
+participate, and whether the closure is the right one. That is GAP 2, and it is
+the only route left.
+
+Concretely, the things in GAP 2 that were never derived: the atom word braids
+**one** quark pair out of the 3×3 available across the interface; the interface
+sits at a single generator `σ_{3k+2}`; the nucleon ordering is hardcoded; and
+the transfer kernel structurally cannot express a conjugated (non-monotone)
+interface, so alternatives have never been evaluated.
 
 ## One constraint on any fix, from the corpus's own discipline
 
@@ -240,6 +316,12 @@ framework's own standard, a fit. The admissible resolutions are narrower:
    right dimensionless binding number, which throws the question back to gaps 1
    and 2 (`z_m`, the templates);
 3. the framework records the 30.43% as a known, bounded defect.
+
+**Superseded the same day.** Route (2) said "the dimensionless multiplier is
+wrong ... which lands on z_m". The Step 4 correction shows z_m is derived, so
+route (2) survives but relocates: the multiplier is wrong because the BRAID WORD
+is wrong, not because z is. See "Everything that is not the braid word has now
+been eliminated" above.
 
 Given that Step 10 derives the functional and Step 11 proves the floor, **(2) is
 the only route that can close ²H without breaking β-decay** — and it lands
