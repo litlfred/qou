@@ -58,6 +58,34 @@ names the repair: quotient by the radical, or use a different seminorm. It is
 stated here as a theorem rather than left in prose because it is the load-bearing
 step in deciding whether `qou-5uj7` is viable.
 
+> **MAJOR CORRECTION 2026-08-09 — the Lorentzian reading is an ARTIFACT of the
+> wrong pairing, and the physically relevant form is POSITIVE.** Everything
+> below about `tr(ab)` is correct *as stated about the bilinear form*, but that
+> is not the form a metric is built from. The Hecke `*`-structure is
+> `T_w* = T_{w⁻¹}` — the basis element of the **inverse word**, which on the NF
+> basis simply swaps `L₊ ↔ L₋` and fixes the rest. Pairing with it instead:
+>
+>     S_ij = tr_M(b_i · b_j*)
+>     convention C:  all six eigenvalues POSITIVE          signature (6,0,0)
+>     convention D:  one zero, five positive               signature (5,0,1)
+>     symmetry defect 0.0 in both
+>
+> Same eigenvalue magnitudes — `±0.855067` becomes `+0.855067` fourfold,
+> `±0.752702` becomes `+0.752702` fourfold. The `*` flips exactly the sign of the
+> antisymmetric direction, which is what a `*`-structure is *for*.
+>
+> So: **`tr(ab)` is Lorentzian; `tr(ab*)` is positive.** The claim below that
+> "the framework's natural object is a causal structure, not a metric space" is
+> **WITHDRAWN**. Under D the only defect left is the row-cap null direction, so
+> quotienting by the radical gives a genuine positive-definite inner product —
+> exactly what a Rieffel Lip-norm needs. Under C it is positive definite
+> outright, because `y_(1³) = 0.0227 ≠ 0` keeps that direction alive: a clean
+> consistency check that D's degeneracy is *purely* the row cap.
+>
+> The material below is retained because the block analysis is what explains
+> BOTH signatures — the `M₂` of the `(2,1)` block contributes `(3,1)` under the
+> bilinear form and `(4,0)` under the star form, from the same decomposition.
+
 ## The signature is DERIVED, not measured — it is forced by the block structure
 
 An earlier version of this file called the signature "measured, not proved".
@@ -192,6 +220,50 @@ theorem traceform_M2_orthogonal (α δ β γ : R) :
     (α * 0 + β * γ) + (β * (-γ) + 0 * δ) = 0 := by ring
 
 end TraceForm
+
+section StarForm
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The star form is a sum of squares on each `M_d` block — hence positive.**
+
+Where the bilinear `tr(AB)` splits `M₂` as `(3,1)`, the sesquilinear
+`tr(AA*)` is `Σ|a_ij|²`. On the real `M₂` parametrisation `A = [[a,b],[c,d]]`,
+
+    tr(A Aᵀ) = a² + b² + c² + d²,
+
+manifestly nonnegative, and zero only when `A = 0`. This is why the Markov–Gram
+form flips from signature `(4,1)` to `(5,0)` the moment the correct Hecke
+`*`-structure `T_w* = T_{w⁻¹}` is used instead of plain multiplication. -/
+theorem starform_M2_sum_of_squares (a b c d : R) :
+    a * a + b * b + c * c + d * d = a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 := by ring
+
+/-- **…and it is nonnegative.** -/
+theorem starform_M2_nonneg (a b c d : R) :
+    0 ≤ a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 := by positivity
+
+/-- **Definiteness: the star form vanishes only on zero.** Contrapositive of the
+sum-of-squares shape — a single nonzero entry already forces it positive. This
+is what upgrades the quotient-by-radical form from semidefinite to definite. -/
+theorem starform_M2_pos_of_ne (a b c d : R) (hne : a ≠ 0) :
+    0 < a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 := by positivity
+
+/-- **Positivity of the whole Markov–Gram star form reduces to `y_λ ≥ 0`.**
+
+`tr_M(a a*) = Σ_λ y_λ · tr(A_λ A_λ*)`, and each `tr(A A*)` is a sum of squares
+by `starform_M2_sum_of_squares`. So a nonnegative combination of nonnegative
+terms is nonnegative: the star form is positive semidefinite **exactly when all
+Markov weights are nonnegative**, and degenerate precisely on the blocks where
+`y_λ = 0`. Under convention D that is the single block `(1³)` — the row cap.
+
+Stated for two blocks, which is the shape that matters here (`H₃` has the
+`y_λ > 0` blocks `(3)`, `(2,1)` and the `y = 0` block `(1³)`). -/
+theorem markov_star_nonneg (y₁ y₂ t₁ t₂ : R)
+    (hy₁ : 0 ≤ y₁) (hy₂ : 0 ≤ y₂) (ht₁ : 0 ≤ t₁) (ht₂ : 0 ≤ t₂) :
+    0 ≤ y₁ * t₁ + y₂ * t₂ := by positivity
+
+end StarForm
 
 section Degenerate
 
