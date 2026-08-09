@@ -4,9 +4,23 @@
 Complete nuclear-binding recompute through ONE pipeline (no special-casing,
 no m_e·Vol(𝓑₃)): every nucleus AND every nucleon mass flows from the same
 Borromean H_3 trace τ that `F_Bor` (bean `ovud`) uses for the nucleon rest
-mass. Resolves the Li_2^q convergence wall (the atom-word proton trace
-1.0653 > 1 diverged the free pp pair; the Borromean τ = 0.9986 < 1 converges
-for ALL Z).
+mass. Sidesteps the Li_2^q SERIES wall (the atom-word proton trace 1.0653 > 1
+puts τ_p² = 1.13488 outside the series radius |z| < q₀ = 1.10998, by 2.2%;
+the Borromean τ = 0.9986 < 1 stays inside for ALL Z).
+
+CORRECTED 2026-08-09 (bean `qou-cw27`): this used to say the atom-word tower
+"diverged". It does not. That was the `li_2_q` GUARD, which hard-returned `inf`
+for |z| >= q, not the function. The q-product
+`Li_2^q(z) = -h*SUM_m ln(1 - z*q^{-1-2m})` continues it, matches the series to
+~1e-45, and is finite for every argument this tower takes (`g(x) = -Li_2^q(-x)`
+is only ever evaluated at x > 0, where every factor is 1 + x*q^{-1-2m} > 1).
+`li_2_q` now returns that continuation for z < 0. The divergence was also
+GEOMETRIC (ratio -> |z|/q), not factorial, so Borel resummation would have been
+the wrong tool.
+
+The Borromean route is still preferred here, but on MAGNITUDE grounds: with the
+continuation wired, the atom-word tower gives B(2H) = 2.4477 (+10.0%) yet
+3H -46.6%, 4He -78.0%, versus Borromean's 2.4803 / -42.0% / -77.4%.
 
 Pipeline (derived conventions, per docs/audits/2026-06-28-brane-tower-
 formalize-first-plan.md):
