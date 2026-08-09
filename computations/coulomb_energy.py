@@ -24,9 +24,34 @@ with
                                   α_EM ≈ 1/137 substitutes 1:1 to the quoted precision),
     r₀        = 1.2 fm           (standard uniform-charged-sphere nuclear radius constant).
 The `Z(Z−1)` (rather than `Z²`) is the self-energy of Z discrete protons (no proton self-
-interaction). The uniform-sphere model is known to over-estimate the Coulomb displacement energy
-of light nuclei by ~5–10% per pair (the Nolen–Schiffer anomaly); treat E_C as the leading EM
-term, not a high-precision value.
+interaction). The uniform-sphere model over-estimates the Coulomb displacement energy of light nuclei;
+treat E_C as the leading EM term, not a high-precision value.
+
+    CORRECTION 2026-08-09 — that over-estimate is NOT the Nolen–Schiffer anomaly, and the
+    two have OPPOSITE SIGNS. Measured at A = 3:
+
+      r₀ = 1.2 fm geometry     E_C = 0.998413 MeV   +30.7 %  vs experiment  (OVER)
+      measured charge radius   E_C = 0.680772 MeV   −10.9 %  vs experiment  (UNDER)
+      experiment (³He−³H)            0.7638   MeV
+
+    (a) The +30.7 % is a pure GEOMETRY error. r₀ = 1.2 fm is a heavy-nucleus constant; at
+        A = 3 it gives R = 1.7307 fm, while ³He's rms charge radius is 1.9661 fm, i.e. an
+        equivalent uniform R = √(5/3)·r_rms = 2.5382 fm and an implied r₀ = 1.760 fm.
+        Fixable by using the measured radius — at the cost of importing an experimental
+        input the framework otherwise avoids.
+    (b) The Nolen–Schiffer anomaly (Nolen & Schiffer 1969) is the OPPOSITE: once the
+        Coulomb energy is computed properly, theory falls SHORT of experiment by ~7 %
+        (~10.9 % at A = 3, a residual of +0.0830 MeV). It is not a modelling slip; it is
+        the standard evidence for charge-symmetry breaking in the strong NN force,
+        sourced in the SM by m_d − m_u and ρ–ω mixing — i.e. FLAVOUR effects.
+
+    Consequence for this framework, and it is a real gap: QOU's strong mirror split comes
+    from the σ / σ⁻¹ crossing-sign assignment, which carries NO flavour content, while its
+    flavour-breaking parameter δ = flavor_split_leading enters ONLY the p–n bond — and
+    `QOU.QBeta.InterfaceScalar.mirror_split_eq_L_diff` proves the mirror split is
+    α(L_nn − L_pp), in which the p–n bond CANCELS EXACTLY. So δ contributes identically
+    zero to the mirror split. QOU has its charge-symmetry breaking in the topological
+    channel where the eightfold way says it belongs in the flavour channel. Bean qou-4waf.
 
 This is a (a) scope-limited EM-sector quantity. It does NOT rewire the strong core (the canonical
 charge-symmetric gg bond is gated on `conj:s5-so3-fiber-action`, the s5-so3 keystone) and does NOT
