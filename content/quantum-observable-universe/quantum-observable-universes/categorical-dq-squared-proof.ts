@@ -28,7 +28,19 @@ export default proof({
         "inverse as a field (or be stated over a `Field`/`DivisionRing`). That " +
         "is an edit to `Instanton.lean` and its four other consumers " +
         "(`categorical-q-ext-deriv{,-exists,-unique}.lean`), so it is recorded " +
-        "here rather than done under this block.",
+        "here rather than done under this block.\n\n" +
+        "Side effect, recorded rather than hidden: `wall-base-ring-minimal` " +
+        "went `pass → warn` on this file in the same pass, on the single line " +
+        "that instantiates the generic lemma with the scalar `cqd.q⁻¹`. The " +
+        "warn asks whether the inverse admits a division-free restatement " +
+        "over $\\mathbb{Z}[q,q^{-1}]$; the answer is that the lemma it feeds " +
+        "*is already* division-free — it takes the scalar abstractly over a " +
+        "bare `Ring`, which has no `Inv` — and the `⁻¹` is unavoidable at the " +
+        "call site only because `CategoricalQExtDeriv.dq` is defined as " +
+        "$q^{-1} d + (1 - q^{-1})\\,\\pi_V d$. So the warn is pointing at the " +
+        "same structure-level obstruction described above, and it was left " +
+        "visible deliberately: writing the scalar implicitly would have " +
+        "cleared the marker without removing the inverse.",
       see: "content/quantum-observable-universe/lean/QOU/CategoricalDqSquared.lean",
     },
   ],
