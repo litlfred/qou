@@ -36,6 +36,8 @@ import QOU.MathlibExt.ComplexDilogarithmUnique
 import QOU.MathlibExt.ComplexDilogarithmLanden
 import QOU.MathlibExt.AlternatingZetaTwo
 import QOU.MathlibExt.ComplexDilogarithmBoundary
+import QOU.MathlibExt.ComplexDilogarithmOnCut
+import QOU.MathlibExt.ComplexDilogarithmInversion
 -- Scalar implicit function theorem, and two one-variable transport lemmas
 -- (a constant pinned off a single point; an integer branch index pinned by a
 -- window). All Mathlib gaps; all sorry-free.
@@ -445,6 +447,43 @@ import QOU.ParticleInteractions.delta_pre_archimedean
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape
+-- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
+-- library root: `lake build` only builds `QOU.lean`'s import closure, so a
+-- module nothing imports is never compiled. See bean qou-orph.
+import QOU.QBeta.FiveTwoCyclotomicBloch
+import QOU.QBeta.FiveTwoLevelSevenLadder
+import QOU.QBeta.FiveTwoRogersExtend
+import QOU.QBeta.FiveTwoFiveTermArguments
+import QOU.QBeta.FiveTwoRogersReflection
+import QOU.QBeta.FiveTwoAbelFiveTerm
+-- The Li₂-continuation / scalar-IFT chain this lane rests on is wired at the
+-- top of this file (with the other MathlibExt imports), not here — it is
+-- general analytic infrastructure, not 5₂ content.
+import QOU.Archimedean.LiTwoNegOne
+import QOU.QBeta.FiveTwoDiscriminant
+import QOU.QBeta.FiveTwoCutAvoidance
+import QOU.QBeta.FiveTwoDeformedSaddle
+import QOU.QBeta.FiveTwoCurveDeriv
+import QOU.QBeta.FiveTwoEnvelopeSum
+import QOU.QBeta.FiveTwoEnvelopeAssembly
+import QOU.QBeta.FiveTwoBranchByArgument
+import QOU.QBeta.FiveTwoArgSector
+import QOU.QBeta.FiveTwoRootStructure
+import QOU.QBeta.FiveTwoRootLabelling
+import QOU.QBeta.FiveTwoBranchPinned
+import QOU.QBeta.FiveTwoEnvelopeWiring
+import QOU.QBeta.FiveTwoPairSaddle
+import QOU.QBeta.FiveTwoBranchPinnedB
+import QOU.QBeta.FiveTwoTransport
+import QOU.QBeta.FiveTwoEnvelopeInstance
+import QOU.QBeta.FiveTwoLevelSevenBridge
+import QOU.QBeta.FiveTwoExtendIdentification
+import QOU.QBeta.FiveTwoLevelSevenAssembly
+import QOU.QBeta.FiveTwoSaddleSumRule
+import QOU.QBeta.FiveTwoDTSpectrumSplit
+import QOU.QBeta.FiveTwoSaddleCurve
+import QOU.QBeta.FiveTwoStokesMatrixIdentities
+import QOU.QBeta.FiveTwoSumRuleIntegrand
 import QOU.QBeta.HabiroTailStar
 import QOU.QBeta.HabiroTailCorollaries
 import QOU.QBeta.LevelMixingBridge
