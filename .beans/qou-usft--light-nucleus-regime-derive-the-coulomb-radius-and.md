@@ -285,3 +285,33 @@ Not more EM work. Two prerequisites, both outside this bean:
 
 Recommend this bean go to BLOCKED on those two rather than stay in-progress:
 every remaining EM-side step is gated on an object the framework does not have.
+
+
+## CORRECTION (sweep returned, 2026-08-09) — narrow the step-4 framing
+
+Step 4 above says "the framework has never constructed a position-space geometry
+at all" and "no such density exists". The first clause is FALSE and the second
+is right for the wrong reason. Corrected in qou-mumr; summarised here so this
+bean is not read alone.
+
+WHAT EXISTS: a derived but DIMENSIONLESS Planck length (ell_P = hbar_q*t_P == 1
+over any field -- an ANGULAR Reeb displacement, carrying no scale), and several
+ASSUMED metrics: Fubini-Study inherited on Bring's surface, the round metric on
+P(V) = S^2 with an actual distance function d_{P(V)} gating a force law, and a
+base manifold M with a smooth metric and spatial wavenumbers. All declared
+archimedean specialisation, i.e. INPUTS.
+
+WHAT DOES NOT: any transport from algebraic/hyperbolic invariants to Euclidean
+length, and any 3-space or rho(r). The corpus states the first about ITSELF --
+pion_radius_and_cusp_volume_gap_probe.py:56, "there is NO categorical
+volume->length transport in the corpus. All corpus lengths arise as Compton
+inversions hbar c / mass." And the nearest density ansatz, rho(K) = tr_M(K), is
+MACHINE-CHECKED REFUTED in lean/QOU/MassTheory/RadialVolRhoMirrorTest.lean --
+it fails the 3H/3He mirror in DIRECTION (C_knot 1.35 vs rho 0.50, straddling 1).
+
+So this bean's CONCLUSION stands unchanged: r0, A^(1/3), 3/5 and rho(r) have no
+derived counterpart, and the EM line is blocked. Only the justification was
+overstated. Two cautions carried in: the q-CLT is trace-space, not a spatial
+distribution; and the corpus holds TWO incompatible Planck lengths differing by
+t_P ~ 10.1 (qou-adwi), so "convert a framework length to fm" is not yet
+well-posed either.

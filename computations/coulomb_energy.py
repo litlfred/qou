@@ -104,15 +104,27 @@ HBAR_C_MEV_FM = mp.mpf("197.3269804152")
 # largest remaining import. It is a heavy-nucleus constant and FAILS badly for
 # light nuclei: at A = 3 it gives R = 1.7307 fm against a measured equivalent
 # 2.5382 fm, a −31.8 % error and the source of the +30.7 % E_C over-estimate.
-# The derived replacement for A ≤ 4 is the binding length ℏc/√(2μS_sep)
-# (−6.3 % at ³He, −1.9 % at ³H) — see bean qou-usft. NOT wired yet.
+# A candidate replacement for A ≤ 4 is the binding length ℏc/√(2μS_sep), which
+# scores −6.3 % at ³He and −1.9 % at ³H. NOT WIRED, and not merely for lack of
+# time: those scores use AME separation energies, i.e. an experimental input.
+# With QOU's own predicted binding (³He −30 %, ³H −28 %) it inverts to +37.8 %
+# and +35.0 %, WORSE than r₀·A^{1/3} and opposite in sign. It becomes usable
+# only once the light-nucleus binding is right. Bean qou-usft.
 R0_FM = mp.mpf("1.2")
 
 # The uniform-BALL shape factor. Also an import: with the radius divided out,
 # the shape-only factor spans 0.4547 (exponential) → 0.4886 (Gaussian), a 7.3 %
 # spread that is the same size as the whole Nolen–Schiffer anomaly. Deriving the
-# density profile (q-CLT) rather than assuming a uniform ball is tracked on
-# qou-usft.
+# density profile rather than assuming a uniform ball is tracked on qou-usft.
+#
+# Do not reach for the q-CLT here: it factorises the Markov trace over BONDS
+# (B_qCLT = α·bonds·ℓ̄), so it lives in trace space and is not a distribution
+# over ℝ³. The corpus has assumed metrics (Fubini–Study on Bring's surface, the
+# round metric on P(V) ≅ S²) but no transport from its algebraic invariants to a
+# Euclidean length, and says so itself —
+# `deltalambda/pion_radius_and_cusp_volume_gap_probe.py:56`: "there is NO
+# categorical volume→length transport in the corpus. All corpus lengths arise as
+# Compton inversions ℏc/mass." Beans qou-mumr, qou-adwi.
 UNIFORM_SPHERE_FACTOR = mp.mpf(3) / 5
 
 

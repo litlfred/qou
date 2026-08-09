@@ -222,3 +222,45 @@ and does NOT give us.
   as a construction, tensor networks / MERA, Ryu-Takayanagi, ER=EPR,
   It-from-Qubit. If the owner is remembering a distance-from-counting paper, it
   is Finster CFS above, not a causal-set source -- none is in the tree.
+
+## OWNER'S INSIGHT: "spectral distance is computational distance in aggregate?"
+
+Essentially YES, and it makes the Connes route far more concrete than the
+generic "form a spectral triple" suggestion above. Stating it precisely:
+
+  d_Connes(phi, psi) = sup{ |phi(a) - psi(a)| : a in A, ||[D, a]|| <= 1 }
+
+is not itself a count -- it is a VARIATIONAL formula, a sup over the algebra.
+But on a DISCRETE structure it REDUCES to one. This is standard: for a finite
+spectral triple / a graph whose Dirac operator carries the hopping structure,
+the Connes distance equals the SHORTEST-PATH distance -- the minimal number of
+edges. The mechanism is exactly the owner's "in aggregate":
+
+  * the constraint ||[D, a]|| <= 1 is a LIPSCHITZ condition -- it says the
+    observable a may change by at most 1 per elementary step;
+  * therefore |phi(a) - psi(a)| <= (number of steps between the two states);
+  * the sup SATURATES on the observable that increments by the full 1 at every
+    step, so the sup EQUALS the step count.
+
+So the spectral distance is the algebraic dual of step-counting: it extracts the
+count from the algebra WITHOUT presupposing a geometry, and it interpolates --
+states not separated by a whole number of steps get a real distance.
+
+WHY THIS MATTERS FOR QOU SPECIFICALLY. The framework already has the step
+structure (Reeb/Planck steps) and already has the operator (the categorical
+Dirac operator D_grad = q^-1 grad + (1-q^-1) iota_xi grad, Lean-proved existent
+and unique). The missing step is not conceptual, it is: form the triple and
+check that d_Connes reproduces the Reeb step count. If it does, the framework
+has a DERIVED metric rather than an assumed one, and the count-vs-continuum
+question in qou-usft becomes answerable.
+
+A CONSISTENCY OBSERVATION worth testing, not yet a claim: the Lipschitz
+normalisation ||[D,a]|| <= 1 is what SETS THE UNIT of the resulting distance.
+The corpus's ell_P = hbar_q * t_P == 1 is dimensionless and identically 1 over
+any field. Those two 1's may be the same 1 -- i.e. ell_P == 1 might be the
+statement that the Reeb step IS the Lipschitz unit, which would explain why it
+carries no scale and why converting it to fm needs an external datum
+(g-q-closed-form.md's G_Newton). If so, the qou-adwi contradiction may resolve
+as: ell_P == 1 is the METRIC UNIT, and hbar_q ~ 0.0991 is a different quantity
+(an angular velocity) that was mislabelled a length. TEST THIS before adjudicating
+qou-adwi either way.
