@@ -175,6 +175,33 @@ def main() -> int:
     dash_miss = mpf(row["miss_factor"])
     identity_gap = abs(ppb(leg1) - dash_err_ppb)
 
+    # ── L2 impact PROJECTION (audit-only; re-scores nothing) ─────────
+    # What the affected dashboard rows would read against a self-consistent
+    # registry. Reported so the finding is quantitative; the dashboard itself
+    # is NOT modified here (that touches committed witnesses — separate PR).
+    #
+    # m_p is deliberately NOT projected: under the proton pin it IS the
+    # anchor, so its corrected round-trip is a calibration tautology, not an
+    # accuracy result (AGENTS.md SS"q_0 anchor convention" rule 1, as already
+    # applied to m_mu under the muon pin). The honest disposition is to stop
+    # scoring that row, not to score it as a pass.
+    m_p_err_reg = mpf(CS.M_P_MEV_ERR)
+    proj = []
+
+    m_n_pred = mpf(next(r for r in dash["data"]["rows"] if r["obs"] == "m_n")["pred_MeV"])
+    e = _rel(m_n_pred, m_n_direct)
+    proj.append(("m_n", ppb(e), ppb(m_n_sigma_rel),
+                 abs(e) / (m_n_sigma_rel / 100),
+                 dash["data"]["rows"]))
+
+    d_row = next(r for r in dash["data"]["rows"] if r["obs"] == "Delta_pn")
+    d_pred = mpf(d_row["pred_MeV"])
+    d_target = m_n_direct - m_p_from_ratio
+    d_sig_rel = mp.sqrt(m_n_direct_err ** 2 + m_p_err_reg ** 2) / d_target
+    e_d = _rel(d_pred, d_target)
+    proj.append(("Delta_pn", ppb(e_d), ppb(d_sig_rel),
+                 abs(e_d) / (d_sig_rel / 100), None))
+
     # ── Report ───────────────────────────────────────────────────────
     n = lambda x, d=OUT_DPS: mp.nstr(x, d)  # noqa: E731
     print("=" * 78)
@@ -216,6 +243,15 @@ def main() -> int:
     print(f"    leg-1 residual           = {n(ppb(leg1), 10)} ppb")
     print(f"    |difference|             = {n(identity_gap, 6)} ppb")
 
+    print("\n  L2 IMPACT PROJECTION (audit-only — this probe re-scores nothing):")
+    print("    m_p  — NOT projected: it is the pin anchor, so a corrected")
+    print("           round-trip is a calibration tautology, not a pass.")
+    for obs, e_ppb, s_ppb, miss, _ in proj:
+        row = next(r for r in dash["data"]["rows"] if r["obs"] == obs)
+        print(f"    {obs:9s} err {n(e_ppb, 6):>10s} ppb (was {row['err_ppb']:>8s})"
+              f"   miss {n(miss, 6):>8s}x (was {row['miss_factor']:>7s})"
+              f"   -> still FAIL")
+
     # ── Witness ──────────────────────────────────────────────────────
     w = WitnessBuilder("codata-registry-triangulation", engine="mpmath")
     w.set_description(
@@ -246,6 +282,24 @@ def main() -> int:
     w.add_data("leg3_muon_residual_ppb_NON_DISCRIMINATING", n(ppb(leg3), 12))
     w.add_data("leg3_muon_n_sigma_NON_DISCRIMINATING", n(leg3_nsigma, 8))
     w.add_data("dashboard_m_p_err_ppb", n(dash_err_ppb, 12))
+    w.add_data(
+        "l2_projection_audit_only",
+        {
+            "note": "What the affected rows would read against a self-consistent "
+                    "registry. PROJECTION ONLY — the dashboard is unmodified. "
+                    "m_p is excluded on purpose: it is the pin anchor, so a "
+                    "corrected round-trip is a calibration tautology, not a pass.",
+            **{
+                obs: {
+                    "err_ppb": n(e_ppb, 8),
+                    "sigma_exp_ppb": n(s_ppb, 8),
+                    "miss_factor": n(miss, 8),
+                    "verdict": "FAIL (genuine — Q_beta-driven residual survives)",
+                }
+                for obs, e_ppb, s_ppb, miss, _ in proj
+            },
+        },
+    )
 
     # Assertion 1 (DECISIVE) — the scored m_p error IS the registry residual.
     w.add_assertion(
