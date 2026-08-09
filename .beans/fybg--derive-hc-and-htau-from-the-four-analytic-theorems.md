@@ -1523,3 +1523,71 @@ relative to `g_{k*}` and it is `1e-180`.
      `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
   3. `hc` -- already algebraically proved in `OneLoopPrefactorInvariance.lean`;
      then `htau`.
+
+---
+
+## Step 18 -- THE WHOLE SUM (`QOU/Knot/KashaevFullSum.lean`)
+
+Two theorems, both `[propext, Classical.choice, Quot.sound]`.
+
+    kashaev_split : range N = [0,w) + [w,k*-W) + [k*-W,k*+W] + (k*+W,N)
+
+    abs_kashaev_sub_model_le :
+      | <4_1>_N - g_{k*} e^{L^2/a} sqrt(pi/a) |
+        <= g_{k*} ( window + below + left + right )
+
+Only the window carries any of the constant; the other three are error terms.
+
+### THE HEADLINE
+
+Probe part (iii) -- the FULL invariant, every term of `sum_{k<N} g_k`:
+
+    N        <4_1>_N/(g_{k*} sqrt N)   gap to 3^(-1/4)   gap x N
+    241          0.762080560081          2.2449e-03       0.5410
+    961          0.760394709201          5.5902e-04       0.5372
+    3841         0.759975304786          1.3962e-04       0.5363
+    15361        0.759870581895          3.4896e-05       0.5360
+
+against `3^(-1/4) = 0.759835685652`. `gap x N` is constant to three digits, so
+the convergence is clean `O(1/N)`.
+
+Step 12 reached `3^(-1/4)` from the Gaussian model; step 15 from the window
+sum; **this is the whole thing**.
+
+### Which error binds -- and the answer is not the obvious one
+
+Probe part (iv), relative to the main term (which GROWS like sqrt(N), so
+absolute sizes mislead):
+
+    N       window/model   below/model   left/model    right/model
+    961       5.83e+03      5.70e-01      3.22e-02      2.03e-08
+    3841      7.35e+01      2.82e-01      6.38e-03      3.91e-11
+
+The window dominates at both, and asymptotically stays dominant:
+
+    window/model ~ B ~ M pi^2 W^3/(3N^2) ~ 13.2 N^-0.2   (cubic-limited)
+    below /model ~ (24 sqrt3/pi)/(3^-1/4 sqrt N) ~ 17.4 N^-0.5
+    left, right  ~ sqrt(N) exp(-c N^0.2)
+
+**The `below` bound is CONSTANT in N** -- `24 sqrt3/pi = 13.2` in absolute
+terms. It vanishes only because the main term grows. Its TRUE size is `~1e-47`
+(step 17 probe), so it is loose by about 48 orders of magnitude; that costs
+nothing only because the window is looser still. If `B` were ever sharpened
+past `N^-0.5`, this term would become the bottleneck and would have to be
+redone.
+
+### Where the whole theorem becomes usable
+
+Probe part (i): every side condition first holds at **N = 81** (search, with
+every smaller N asserted to fail). The binding one is again `k + W < N`.
+
+### Remaining before `hc`
+
+  1. feed step 7's `log g_{k*}` into step 18 to convert
+     `<4_1>_N / g_{k*} -> 3^(-1/4) sqrt(N)` into
+     `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
+  2. `hc` -- the algebra is already proved in
+     `OneLoopPrefactorInvariance.lean` (`c^2 |cot th| = (2 sin th)^2` is
+     "Stirling factor squared over Gaussian width"); what step 18 supplies is
+     the Gaussian width, and step 7 the Stirling factor;
+  3. `htau`.
