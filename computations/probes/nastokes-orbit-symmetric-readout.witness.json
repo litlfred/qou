@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T04:29:00.664866+00:00",
-  "commitSha": "e339cfcf03d38807929cbf8ff24aa9d24af81ac3",
+  "computedAt": "2026-08-09T19:35:50.702469+00:00",
+  "commitSha": "270b69705ebaeae90870674a45ae6cb9884a3f1b",
   "assertions": [
     {
       "name": "same_species_orbit_of_strings_is_a_point",
@@ -108,11 +108,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 9,
   "computation": "nastokes-orbit-symmetric-readout",
   "scriptFile": "nastokes_orbit_symmetric_readout_probe.py",
   "scriptHash": "c4a73a56a19f",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "84000c4411407b1a92e7dc25b21bc09a745ffd00",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
