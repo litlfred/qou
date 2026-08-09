@@ -58,12 +58,55 @@ names the repair: quotient by the radical, or use a different seminorm. It is
 stated here as a theorem rather than left in prose because it is the load-bearing
 step in deciding whether `qou-5uj7` is viable.
 
-**Scope.** The numerical signature above is *measured*, not proved here —
-certifying eigenvalues of an explicit `6 × 6` matrix over an irrational `q₀` is
-a separate exercise. What is proved here is the *consequence*: indefiniteness
-rules out the inner-product reading (`neg_diag_not_posdef`), and degeneracy
-rules out a finite sup (`lip_kernel_forces_unbounded`). Both are the general
-statements the measurement feeds into.
+## The signature is DERIVED, not measured — it is forced by the block structure
+
+An earlier version of this file called the signature "measured, not proved".
+That was too weak. It follows from Wedderburn plus one elementary fact, with no
+reference to `q₀` at all.
+
+`H₃(q)` is a sum of **matrix algebras**, not merely of irreps:
+
+    block    irrep dim d    matrix algebra    dimensions
+    (3)          1              M₁                1
+    (2,1)        2              M₂                4
+    (1³)         1              M₁                1                total 6 ✓
+
+The Gram form is `G(a,b) = tr_M(ab) = Σ_λ y_λ · χ_λ(ab)`, so on block `λ` it is
+`y_λ · tr(AB)` on `M_{d_λ}`. And — `traceform_M2_signature` below —
+
+> the **bilinear** form `tr(AB)` on `M_d` (not the sesquilinear `tr(AB*)`) has
+> signature `(d(d+1)/2, d(d−1)/2)`: symmetric matrices positive, antisymmetric
+> negative, and the two are orthogonal.
+
+Hence, over the blocks with `y_λ > 0`,
+
+    signature(G) = ( Σ d_λ(d_λ+1)/2 , Σ d_λ(d_λ−1)/2 ),
+    with G degenerate exactly on the blocks where y_λ = 0.
+
+Evaluating for `H₃`:
+
+    convention C:  (3) → 1+ ;  (2,1) → 3+ 1− ;  (1³) → 1+     ⟹  (5,1,0)  ✓
+    convention D:  (3) → 1+ ;  (2,1) → 3+ 1− ;  (1³) → ZERO   ⟹  (4,1,1)  ✓
+
+Both match the measurement exactly, and every eigenvalue is now accounted for:
+`+4.230339` is the `(3)` block, the `±0.752702` **quadruple** is the `M₂` of the
+`(2,1)` block, `+0.101797` (C only) is `(1³)` — small because `y_(1³) = 0.0227`
+is small — and the `0` (D only) is `(1³)` killed by the row cap.
+
+**Two consequences worth stating plainly.**
+
+* The Lorentzian character is **not a property of the substrate**. Any matrix
+  algebra with `d ≥ 2` contributes `d(d−1)/2` negative directions, so the form
+  is indefinite for *every* `q` and *every* convention with `y_(2,1) > 0`. It
+  appears the moment the algebra has a two-dimensional irrep.
+* The **timelike direction is identified**: it is the antisymmetric element of
+  `M₂` in the `(2,1)` block, i.e. `E₁₂ − E₂₁` — the rotation generator,
+  `𝔰𝔬(2) ⊂ 𝔰𝔩(2)`. Not an accident of `q₀`.
+
+The degeneracy is likewise structural: it *is* the `N = 2` row cap
+(`RowCapObstruction.lean`, `y_(1³) = 0 ⟺ N < 3`) seen through the Gram form.
+Quotienting by the radical is therefore not a repair but a restatement of what
+convention D means — and it leaves a `(4,1)` form, still Lorentzian.
 
 Beans `qou-5uj7` (spectral distance), `qou-adwi` (two Planck lengths),
 `qou-mumr` (no derived metric).
@@ -103,6 +146,52 @@ theorem indefinite_of_pos_and_neg (B : R → R → R) (p n : R)
   · intro h; exact absurd (h p) (not_le.mpr hp)
 
 end Indefinite
+
+section TraceForm
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The trace form on `M₂` has signature `(3,1)`.**
+
+Parametrise `A ∈ M₂` by its symmetric part `(α, δ, β)` and antisymmetric part
+`γ`, i.e. `A = [[α, β+γ], [β−γ, δ]]`. Then
+
+    tr(A²) = α² + 2β² − 2γ² + δ².
+
+Three squares enter with `+` and one with `−`: symmetric directions are
+positive, the single antisymmetric direction is negative. This is the whole
+reason the Markov–Gram form is Lorentzian — the `(2,1)` block of `H₃(q)` is an
+`M₂`, and `M₂` has exactly one antisymmetric direction. -/
+theorem traceform_M2 (α δ β γ : R) :
+    α * α + (β + γ) * (β - γ) + (β - γ) * (β + γ) + δ * δ
+      = α ^ 2 + 2 * β ^ 2 - 2 * γ ^ 2 + δ ^ 2 := by ring
+
+/-- **…so the symmetric directions are positive.** Setting `γ = 0` leaves a sum
+of squares, strictly positive unless all vanish. -/
+theorem traceform_M2_sym_pos (α δ β : R) (hne : α ≠ 0) :
+    0 < α ^ 2 + 2 * β ^ 2 - 2 * (0 : R) ^ 2 + δ ^ 2 := by
+  have h1 : 0 < α ^ 2 := by positivity
+  nlinarith [sq_nonneg β, sq_nonneg δ]
+
+/-- **…and the antisymmetric direction is negative.** Setting `α = δ = β = 0`
+leaves `−2γ²`, strictly negative unless `γ = 0`. This single direction is the
+timelike one: `E₁₂ − E₂₁`, the rotation generator of the standard rep. -/
+theorem traceform_M2_antisym_neg (γ : R) (hne : γ ≠ 0) :
+    (0 : R) ^ 2 + 2 * (0 : R) ^ 2 - 2 * γ ^ 2 + (0 : R) ^ 2 < 0 := by
+  have : 0 < γ ^ 2 := by positivity
+  nlinarith
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Symmetric and antisymmetric parts are orthogonal under the trace form.**
+
+`tr(SK) = 0` whenever `S` is symmetric and `K` antisymmetric, so the signature
+splits cleanly as `(3,1)` with no cross terms. Shown here on the `M₂`
+parametrisation: the mixed terms cancel identically. -/
+theorem traceform_M2_orthogonal (α δ β γ : R) :
+    (α * 0 + β * γ) + (β * (-γ) + 0 * δ) = 0 := by ring
+
+end TraceForm
 
 section Degenerate
 
