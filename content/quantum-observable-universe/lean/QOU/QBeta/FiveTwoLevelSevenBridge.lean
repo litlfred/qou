@@ -50,7 +50,8 @@ close the sum rule: `extended_sum` is stated for the corpus's piecewise
 `extend`, and identifying that with `Re` of the analytic Rogers `L` is
 `qou-rstq` item 4 — open, on paper only, and sitting directly on this bridge.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

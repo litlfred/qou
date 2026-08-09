@@ -3320,3 +3320,48 @@ The sum rule is `Σⱼ Re Vⱼ = −3π²/2`; what is proved is `Σₖ(2L(wₖ)+
    lane's whole "take real parts" convention and is written down nowhere.
 
 **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-09 (PR #4865) — THE 5₂ SADDLE SUM RULE IS PROVED. Routes 51–70.**
+
+Every entry above this line records the sum rule as "verified to 80 dps,
+unproved". That is now false, and this entry is the reason. Those entries are
+left as written — they were accurate on their dates, and this is a log.
+
+`QOU/QBeta/FiveTwoComplexPentagon.lean`, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+* `fiveTwo_saddle_sum_rule` — there exist `t ∈ (0,1)` real and `a` with
+  `Im a > 0`, all three of `t, a, ā` roots of `X³ − 2X² + 3X − 1`, with
+  `Li₂(a) + Li₂(ā) + Li₂(t) = −π²/6 − ½·log²t + ⅔·(arg a − π)²`.
+* `fiveTwo_sum_V` — `Σⱼ Vⱼ = −3π²/2 + 2π·log t·i`. The real part is (SUM). The
+  imaginary part is new: the corpus only ever recorded `Σ Re Vⱼ`.
+* `fiveTwoSaddleSumRule_holds` — the class `QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule`,
+  whose docstring read "No instance is provided: the statement is open",
+  constructed at `Li = cLiTwoExt`, `y = ![a, ā, t]`, `b = ![−1, +1, +1]`.
+
+**The route was not the one this log spent ten entries planning.** The whole
+`A`-vs-`B` programme — Kubert/distribution, the "one remaining distribution
+relation", `FiveTwoDilogLadder` — was never needed. What worked:
+
+1. the complex five-term identity for `cRogersL`, unconditional when one
+   variable is real in `(0,1)` and the other is off both cuts;
+2. the flattened (Neumann `ℬ̂(ℂ)`) pentagon, with **no** branch hypotheses;
+3. complex Rogers reflection + inversion, giving the anharmonic group in four
+   one-log forms where the `log²` terms cancel completely;
+4. branch pinning from `y² = (1−y)³` plus a 4π-wide window, then `SaddleRoots`
+   — proved inhabited by IVT (`f(0) = −1 < 0 < 1 = f(1)`) and an explicit square
+   root (`0 < 3t² − 4t + 8` unconditionally).
+
+Verified per-module with the `.olean` deleted first: `FiveTwoComplexPentagon` +
+`FiveTwoFlattenedPentagon` exit 0 at 3241 jobs, 0 warnings; `FiveTwoSaddleSumRule`
+exit 0 at 1893 jobs. `origin/main` at measurement `f689f12d2d06aee2959002f13b9ac39c1a79e3cf`.
+
+Probe `computations/probes/qbeta_5two_route70_sum_rule_proved_probe.py` (80 dps,
+4 gates) is a **control on the statement, not evidence**: it checks that the
+expression proved is the one this log recorded as the target
+(`A = 0.9717306814686482591277741699`), and that `b = (−1,+1,+1)` is pinned —
+the only one of five assignments reaching `−3π²/2`.
+
+**NOT proved: the 5₂ VOLUME conjecture.** `Vol(5₂) = 3·D(y₁)` and `D` cancels
+identically on the Galois sum — which is exactly why the sum rule could fall
+without reaching the volume. Nothing in this lane speaks to `Vol(5₂)`.

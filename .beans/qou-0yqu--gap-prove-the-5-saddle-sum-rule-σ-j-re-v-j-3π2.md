@@ -1059,3 +1059,73 @@ bound on the family is only as good as that bookkeeping, which is the obvious
 next thing to do if this line is picked up again.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 42 — the volume anchor, the structural obstruction, and two corrections
+
+Probe `computations/probes/qbeta_5two_route42_extended_bloch_anchor_probe.py`
+(5 gates, all pass, dps 50). Follows Routes 40 and 41.
+
+### The anchor: this is the 5₂ trace field, and the volume sits on these roots
+
+    Vol(5₂) = 3·D(y₁)    y₁ the complex root of y³−2y²+3y−1
+    Vol(5₂) = 6·D(c₁)    c₁ the complex root of X³+X²−1  (c = 1/ρ)
+
+with `D` Bloch–Wigner, checked against a **published** volume so it identifies
+`y₁` as the tetrahedron shape rather than restating a definition (G1). The
+reference constant's ~18 digits, not the identity, bound the gate — and the test
+is **relative**, since the inherited deviation scales with the ratio (the same
+2.0e-18 shows as 6.0e-18 at 3 and 1.2e-17 at 6; an absolute tolerance passes one
+and fails the other for no mathematical reason).
+
+### Why every ladder route failed — measured, replacing "did not close"
+
+`D(y₁)` alone carries the **entire** volume. Summed over the Galois orbit it
+cancels **identically**: `y₂ = ȳ₁` with `D(z̄) = −D(z)`, and the real root gives
+`D = 0` (G4). `D` is exactly the regulator the ordinary Bloch group computes, so
+that whole apparatus evaluates to zero on a Galois-summed dilogarithm and can
+carry **no** information about `A`. General, by conjugate symmetry, in every
+number field. Routes 1–5, 40 and 41 were not unlucky — they could not have
+closed.
+
+And the sum rule lives entirely in what `D` discards (G3):
+
+| | value |
+|---|---|
+| `Σ Re(Vⱼ)` | `−3π²/2` — the sum rule |
+| `Σ Im(Vⱼ)` | `2π·log(y₃)` exactly — elementary |
+
+Both halves elementary; the volume is absent from the Galois sum.
+
+### ⚠ Two corrections, recorded because the wrong values were asserted first
+
+1. **`V_j`'s branch integers are `b = (−1, +1, +1)`** — the **real** root carries
+   `+1`, not `0`. Assuming `0` gives `−30.822` against a target of `−14.804`.
+2. **`Σ Im(Vⱼ)` is not zero**, it is `2π·log(y₃)`. A scan over `b ∈ {−2..2}³`
+   that demanded `Im = 0` therefore **rejected the correct assignment** and
+   reported no solution at all. The sum rule is a statement about `Re` only.
+
+Both are gated, including the failing assignment as a negative control.
+
+### What this points at — and it is not another ladder
+
+The `bⱼ` are **flattening data**. The extended Bloch group (Neumann) is built
+from flattenings `(log z + p·πi, log(1−z) + q·πi)`, its regulator is the complex
+volume `Vol + i·CS` rather than `Vol` alone, and the Rogers dilogarithm is well
+defined on it — it retains precisely what `D` throws away. That is where a proof
+should be attempted.
+
+**Ordered next steps.**
+1. Finish Route 41's gated `G4` branch bookkeeping (pentagon over the three
+   embeddings missed `3π²/2` by 6.4718). Cheapest, and prerequisite — until it is
+   done Route 41's rank result is a Bloch-group statement, not a `Σ Li₂` one.
+2. Redo the computation in `ℬ̂(ℂ)`: show `Σ_σ [y_σ; p_σ, q_σ]` is torsion.
+3. Coordinate with sibling **#4824** (`claude/extended-bloch-tetrahedron-wx3mc4`),
+   already in extended-Bloch territory.
+
+**Do not retry:** distribution (rank 4→5) or the ordinary five-term/Bloch ladder
+over the `c^m` orbits (46→47, 153→154). Anything reducing to an ordinary
+Bloch-group computation is blind here for the reason in G4.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

@@ -1,0 +1,79 @@
+{
+  "probe": "qbeta_5two_route70_sum_rule_proved",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 80,
+  "lean": "QOU/QBeta/FiveTwoComplexPentagon.lean -- fiveTwo_saddle_sum_rule, fiveTwoSaddleSumRule_holds",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the witnesses exist and are as stated: one real root in (0,1) and a conjugate pair, all three roots of X^3-2X^2+3X-1. In Lean the real root comes from the intermediate value theorem (f(0) = -1 < 0 < 1 = f(1)) and the pair from an explicit square root, the residual quadratic having discriminant -(3t^2-4t+8) < 0 unconditionally",
+      "t": "0.43015970900194673408860004188",
+      "t_in_unit_interval": true,
+      "a": "(0.78492014549902663295569997906 + 1.30714127868204548049235257351j)",
+      "im_a_positive": true,
+      "b_is_conj_a": true,
+      "max_cubic_residual": "4.216879177e-81",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE CONTROL THAT MATTERS. The expression proved is the one the corpus recorded as the target: Sum Li_2(y_j) = -pi^2/6 - log^2(y_3)/2 + (2/3)(arg y_1 - pi)^2, and it agrees with the recorded value of A at 80 dps. A proof of the WRONG statement is the failure a proof cannot catch, so this gate exists",
+      "A_computed": "0.971730681468648259127774169938550500112",
+      "A_recorded_in_corpus": "0.9717306814686482591277741699",
+      "closed_form": "0.971730681468648259127774169938550500112",
+      "residual_vs_closed_form": "6.325318766e-81",
+      "residual_vs_recorded": "3.855050011e-29",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the branch assignment is pinned, not chosen: b = (-1,+1,+1) on (y_1, y_2, y_3) is the ONLY one of five tried that reaches -3 pi^2/2, and the others miss by 9.87 to 25.9. Both halves are elementary -- the real part is the corpus's conjecture, the imaginary part is 2 pi log(y_3)",
+      "sum_V": "(-14.8044066016340379282517364998 - 5.30048710131356396277497282403j)",
+      "predicted": "(-14.8044066016340379282517364998 - 5.30048710131356396277497282403j)",
+      "residual": "3.373503342e-80",
+      "alternatives": {
+        "(-1,+1,+1)": {
+          "sum_re_V": "-14.80440660163403792825174",
+          "hits_target": true
+        },
+        "(+1,-1,0)": {
+          "sum_re_V": "-30.82201549534345025367374",
+          "hits_target": false
+        },
+        "(+1,-1,+1)": {
+          "sum_re_V": "-40.69161989643280887250823",
+          "hits_target": false
+        },
+        "(-1,+1,0)": {
+          "sum_re_V": "-4.934802200544679309417245",
+          "hits_target": false
+        },
+        "(0,0,0)": {
+          "sum_re_V": "1.860799954234652456123488",
+          "hits_target": false
+        }
+      },
+      "assignments_hitting_target": [
+        "(-1,+1,+1)"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the scope, stated so it cannot be overread. The 5_2 VOLUME conjecture is untouched: Vol(5_2) = 3 D(y_1) with D the Bloch-Wigner function, and D cancels identically on the Galois sum (checked here) -- which is exactly why the sum rule could be proved without touching the volume. Nothing in this lane speaks to Vol(5_2)",
+      "galois_sum_of_D": "0.0",
+      "D_cancels_on_the_orbit": true,
+      "volume_conjecture_proved": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "proved": "the 5_2 saddle sum rule, sorry-free, standard axioms: Sum Li_2(y_j) = -pi^2/6 - log^2(y_3)/2 + (2/3)(arg y_1 - pi)^2, equivalently Sum_j Re V_j = -3 pi^2/2, which instantiates the corpus's own conjecture class.",
+    "role_of_this_probe": "a control on the STATEMENT, not evidence for it.",
+    "not_proved": "the 5_2 volume conjecture. D cancels on the Galois sum.",
+    "sum_rule_status": "PROVED"
+  }
+}

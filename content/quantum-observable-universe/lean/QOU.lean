@@ -38,6 +38,7 @@ import QOU.MathlibExt.AlternatingZetaTwo
 import QOU.MathlibExt.ComplexDilogarithmBoundary
 import QOU.MathlibExt.ComplexDilogarithmOnCut
 import QOU.MathlibExt.ComplexDilogarithmInversion
+import QOU.MathlibExt.ComplexRogersDilog
 -- Scalar implicit function theorem, and two one-variable transport lemmas
 -- (a constant pinned off a single point; an integer branch index pinned by a
 -- window). All Mathlib gaps; all sorry-free.
@@ -148,6 +149,14 @@ import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.MathlibExt.IdealTriangulation
+import QOU.Knot.FiveTwoVolumeConstant
+import QOU.Knot.FigureEightTriangulation
+import QOU.Knot.IdealTetLawOfSines
+import QOU.Knot.KummerDilogHalf
+import QOU.Knot.KummerRadial
+import QOU.Knot.KummerUnitCircle
+import QOU.Knot.RivinConcavity
 import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.Knot.KashaevProdEndpoint
@@ -538,6 +547,9 @@ import QOU.QBeta.FiveTwoLevelSevenBridge
 import QOU.QBeta.FiveTwoExtendIdentification
 import QOU.QBeta.FiveTwoLevelSevenAssembly
 import QOU.QBeta.FiveTwoSaddleSumRule
+import QOU.QBeta.FiveTwoComplexPentagon
+import QOU.QBeta.FiveTwoFlattenedPentagon
+import QOU.QBeta.FiveTwoOhtsukiCriticalPoint
 import QOU.QBeta.FiveTwoDTSpectrumSplit
 import QOU.QBeta.FiveTwoSaddleCurve
 import QOU.QBeta.FiveTwoStokesMatrixIdentities
