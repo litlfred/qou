@@ -363,6 +363,7 @@ import QOU.Archimedean.OrthoschemeBaseIntegral
 import QOU.Archimedean.OrthoschemeWedgePair
 import QOU.Archimedean.OrthoschemeRotation
 import QOU.Archimedean.OrthoschemeLambdaSum
+import QOU.Archimedean.OrthoschemeTiling
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
