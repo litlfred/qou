@@ -48,6 +48,7 @@
 import QOU.Knot.KashaevArgmax
 import QOU.Knot.LobTaylorSaddle
 import QOU.MathlibExt.TrapezoidRule
+import QOU.MathlibExt.GaussianSumBound
 import Mathlib.Analysis.Calculus.MeanValue
 
 namespace QOU.Knot.FigureEightVolume
@@ -472,5 +473,45 @@ theorem kashaevProd_left_tail {N b : ℕ} (hN : N ≠ 0) (hb : 6 * b ≤ 5 * N)
       push_cast
       field_simp
       ring_nf
+
+/-! ## Part 5 — the upper half-sum is `O(√N)` times its largest term
+
+This is where the `N^{3/2}` comes from.  `log_kashaev_le_log_add` already gives
+`⟨4₁⟩_N ≤ N · g_{k*}` — enough for the exponential growth RATE and nothing
+finer.  Feeding the Gaussian tail into `sum_exp_neg_mul_mul_pred_le` replaces
+that `N` by `2 + ½√(N/√3)`, and `√(N/√3)` is exactly the Laplace factor the
+tetrahedral probe measures. -/
+
+/-- **The sum from the saddle upward is `O(√N)` times its largest term.** -/
+theorem sum_kashaevProd_right_le {N : ℕ} (hN : 6 ≤ N) :
+    ∑ k ∈ Finset.Ico (5 * N / 6) N, kashaevProd N k
+      ≤ kashaevProd N (5 * N / 6)
+        * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) := by
+  have hN0 : N ≠ 0 := by omega
+  have hpi := Real.pi_pos
+  have hNR : (0 : ℝ) < N := by exact_mod_cast Nat.pos_of_ne_zero hN0
+  have hs3 : (0 : ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have ha : (0 : ℝ) < Real.sqrt 3 * π / N := by positivity
+  rw [Finset.sum_Ico_eq_sum_range]
+  have hrw : ∀ i : ℕ,
+      Real.sqrt 3 * π * (i : ℝ) * ((i : ℝ) - 1) / N
+        = Real.sqrt 3 * π / N * (i : ℝ) * ((i : ℝ) - 1) := by
+    intro i; field_simp
+  have hterm : ∀ i ∈ Finset.range (N - 5 * N / 6),
+      kashaevProd N (5 * N / 6 + i)
+        ≤ kashaevProd N (5 * N / 6)
+          * Real.exp (-(Real.sqrt 3 * π / N * (i : ℝ) * ((i : ℝ) - 1))) := by
+    intro i hi
+    rw [Finset.mem_range] at hi
+    have h := kashaevProd_right_tail hN i (by omega)
+    rwa [hrw i] at h
+  refine le_trans (Finset.sum_le_sum hterm) ?_
+  rw [← Finset.mul_sum]
+  refine mul_le_mul_of_nonneg_left ?_ (kashaevProd_nonneg N _)
+  have hb := QOU.MathlibExt.sum_exp_neg_mul_mul_pred_le
+    (a := Real.sqrt 3 * π / N) ha (N - 5 * N / 6)
+  have hval : π / (Real.sqrt 3 * π / N) = (N : ℝ) / Real.sqrt 3 := by
+    field_simp
+  rwa [hval] at hb
 
 end QOU.Knot.FigureEightVolume

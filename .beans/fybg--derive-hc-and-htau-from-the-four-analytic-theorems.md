@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T05:00:00Z
+updated_at: 2026-08-09T06:00:00Z
 ---
 
 ## Why this bean exists
@@ -314,3 +314,51 @@ Step 3's remaining half: the Gaussian SUM itself, via
 `hasSum_gaussian_theta_tilt` -- the tails now confine it to a `sqrt(N)` window
 around `k*`, where (A)'s `O(1/N^2)` bound and `abs_Lob_taylor_saddle`'s cubic
 remainder are both uniformly good. Then step 4, reading off `hc`/`htau`.
+
+## Landed: the sqrt(N). The N^{3/2} power's exponent, machine-checked. 2026-08-09
+
+`QOU/Knot/KashaevTailBound.lean::sum_kashaevProd_right_le`, sorry-free:
+
+    sum_{k = k*}^{N-1} kashaevProd N k
+        <= kashaevProd N k* * (2 + sqrt(N / sqrt3) / 2)
+
+The corpus already had `log_kashaev_le_log_add`: `<4_1>_N <= N * g_{k*}`. That
+is enough for the exponential growth RATE and nothing finer. This replaces the
+`N` by `2 + (1/2) sqrt(N/sqrt3)` on the upper half -- and `sqrt(N/sqrt3)` is
+EXACTLY the Laplace factor `one_loop_c_sigma_tetrahedral_probe.py` measures.
+The `1/2` in `N^{3/2}` is this lemma's `1/sqrt(a)` at `a = sqrt3 pi/N`.
+
+### New Mathlib-gap infra: `QOU/MathlibExt/GaussianSumBound.lean`
+
+    sum_exp_neg_mul_sq_le        sum_{d<m} exp(-a d^2) <= 1 + sqrt(pi/a)/2
+    sum_exp_neg_mul_mul_pred_le  sum_{d<m} exp(-a d(d-1)) <= 2 + sqrt(pi/a)/2
+    integral_exp_neg_mul_sq_le   int_0^M exp(-a x^2) <= sqrt(pi/a)/2
+    antitoneOn_exp_neg_mul_sq
+
+uniform in `m`. Mathlib has BOTH halves and not the combination:
+`AntitoneOn.sum_le_integral` compares a decreasing sum to its integral, and
+`integral_gaussian_Ioi b : int_{(0,inf)} exp(-b x^2) = sqrt(pi/b)/2` evaluates
+it. Joining them needs the `d = 0` term peeled off by hand -- no integral
+comparison can see it. That peel is the whole content of the `1` in the bound.
+
+The `d(d-1)` form costs one EXTRA unit (`2`, not `1`) because `d(d-1) >= (d-1)^2`
+fails at `d = 0`. That form is not an artifact: a per-step tail bound with a
+linear penalty accumulates `1 + 2 + ... + (d-1) = d(d-1)/2`, so `d(d-1)` is what
+the tails actually hand you, and pretending it is `d^2` would be wrong at the
+first two terms.
+
+### Scope, stated plainly
+
+UPPER HALF ONLY -- `k` from `k*` to `N-1`. The lower half needs a region
+decomposition the right half does not: `kashaevProd_left_tail` carries a window
+(`theta >= 2pi/3`), and below it the terms have to be handled separately
+(`g_k <= 1` for `k <= N/6`, against `g_{k*} >= N^2` from `kashaevProd_endpoint`;
+and the rising stretch in between). Not done. This does NOT yet bound
+`<4_1>_N`.
+
+### What is left
+
+  * the lower half-sum, with the region decomposition above;
+  * a matching LOWER bound on the sum (only the largest term, `g_{k*}`, is
+    available so far) -- Laplace needs both sides to pin `c_sigma`;
+  * then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
