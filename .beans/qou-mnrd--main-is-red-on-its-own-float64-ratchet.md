@@ -1025,3 +1025,71 @@ Every one of these bit me at least once, and each is invisible to a naive
 `_deprecated/qbeta-gb-filtration-residues.witness.json` is malformed in a way
 NaN does not explain — it contains hand-written `+20.27` and `+202689`, and
 JSON forbids a leading plus. Not touched (deprecated).
+
+---
+
+## MERGED — PR #4893, `8cf939a3b`. Ratchet on `main`: 4 NEW, 0 REGRESSED
+
+From 18 NEW + 2 REGRESSED when this branch started. **Both REGRESSED entries
+are gone.** Rebase-merged as 47 linear commits per AGENTS.md rule 8.
+
+Two mechanical notes for the next merge of this kind:
+
+  * **A branch containing a merge commit cannot be rebase-merged** — GitHub
+    returns `405 This branch can't be rebased`. Integrating `origin/main` with
+    `git merge` therefore forecloses the repo's DEFAULT merge method. Fix:
+    `git rebase origin/main` locally to linearize, then rebase-merge. Verified
+    the linearization was content-neutral (`git diff backup HEAD` empty) before
+    force-pushing with an explicit `--force-with-lease=<ref>:<sha>`.
+  * The `witness-raw-float64-audit` witness conflicts on EVERY such merge and
+    rebase, because both sides carry a stale snapshot of its own counts.
+    Neither side is the answer: resolve by taking either and **re-running the
+    producer**, which is what the file is for.
+
+## STALE PUBLISHED VALUES — `charm-frobenius-block-projection` (NOT a drain issue)
+
+Found while sizing the three witnesses main brought in. This one's committed
+numbers **do not reproduce from current `main`**, and not by a little:
+
+    pred_charm_over_light          1.3486556457833476 -> 0.9757693178472477   (28%)
+    pred_top_over_light            0.05475486952775208 -> 0.0                 (100%)
+    y_chi_block.(1, 1, 1)          0.02274494257734719 -> 0.0                 (100%)
+    y_chi_block.(3,)               0.4153957953606134 -> 0.5054042265039308   (22%)
+    y_chi_block.(2, 1)             0.5602258846477554 -> 0.49315793733285646  (12%)
+
+38 fields move by more than 1e-9. Two go to exactly zero.
+
+**I first assumed mpmath 1.4.1 vs 1.3.0 and I was wrong** — downgrading to
+1.3.0 and re-running gives the same new values, so the interpreter environment
+is not the cause. The producer's own inputs or code changed under a witness
+that was never re-run.
+
+NOT regenerated here, deliberately: a 28% move in a published physics ratio is
+not something to bundle into a float64-serialization commit. It needs its arc's
+owner to say which number is right. Recorded as its own open item.
+
+`m-tau-complex-volume-search` has a smaller version of the same: `snappy_volume`
+-4.34e-14 -> -1.48e-8. Both are numerically zero, but the committed one is not
+what a fresh run produces.
+
+## Drained since the merge
+
+    delta-lambda-alexander-phase4   67 -> 0   (branch
+                                    claude/drain-main-inherited-float64)
+
+It is the only one of main's three that reproduces EXACTLY before the drain, so
+the drain is the sole change. Every value is f64-limited by construction (sympy
+`.evalf()` then `complex()`), so it is written at binary64's round-trip width;
+all 67 round-trip bit-identically.
+
+## Open
+
+    charm-frobenius-block-projection   79   values stale by up to 28% — owner
+    m-tau-complex-volume-search        54   snappy_volume does not reproduce
+    ground-state-ordering-argmin-sweep  1   lean_bridge block has no producer
+
+Inherited reds on `main` that are NOT this bean's arc, recorded so the next
+prepare-merge does not mistake them for new:
+
+    float64-padding ratchet   cross-check-trM-1ppb.witness.json  (dbd91b5ff)
+    module-const precision    y_lambda_su_n.py REG_ZC / REG_ZD
