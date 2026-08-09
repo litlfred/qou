@@ -224,6 +224,27 @@ def certify_markov(tr: MarkovTrace, word, n: int):
 # ---------------------------------------------------------------------------
 
 
+def f64_json(o):
+    """Serialize an f64 result tree for a witness: every float becomes its own
+    repr string; ints/bools/None/strings pass through.
+
+    Same rationale as nastokes_multigen_cluster_additivity_probe.f64_json: the
+    numeric sweep here is float64 by design, so repr(float) is exactly the ~17
+    digits the kernel produced. It round-trips bit-exactly and keeps raw
+    float64 JSON out of the witness. Applied once at the sink so a field added
+    later cannot miss it.
+    """
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        return repr(o)
+    if isinstance(o, dict):
+        return {k: f64_json(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [f64_json(v) for v in o]
+    return o
+
+
 def main() -> int:
     t0 = time.time()
     W = 96
@@ -559,7 +580,7 @@ def main() -> int:
     w.add_parameter("algebra", "H_12(q) seminormal/Hoefsmit for Part C; H_{3A}(q) for Part B")
     w.add_parameter("shape_partC", str(SHAPE))
     for k, v in results.items():
-        w.add_data(k, v)
+        w.add_data(k, f64_json(v))
     for k, v in assertions.items():
         w.add_assertion(k, v, 1)
     w.add_caveat("SCOPE-(b) for the vacuity claim (a proved structural fact about the "
