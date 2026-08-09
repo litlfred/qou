@@ -188,12 +188,29 @@ The substrate sits at `q₀ ≈ 1.11 ≠ 1`, so production evaluation never sees
 guard; it exists for the classical limit `q → 1`, which several sites take
 deliberately (`q-casimir-classical-limit`, `Hoefsmit.qBracket_at_one`).
 
-**Known gap, deliberately not papered over.** The *balanced* form is singular at
-`q = −1` as well (`q − q⁻¹ = 0` there too), and the three guarded-balanced sites
-guard only `q = 1`.  `QOU.IwahoriHecke.Hoefsmit.qBracket` is the one definition
-that guards both.  `qIntBalCl` below reproduces the corpus's prevailing
-one-sided guard rather than silently changing three call sites' behaviour at
-`q = −1`; the two-sided variant is left to whoever needs `q = −1`. -/
+**The gap, and its closure.** The *balanced* form is singular at `q = −1` as
+well (`q − q⁻¹ = 0` there too).  This was first recorded here as an open gap —
+"the two-sided variant is left to whoever needs `q = −1`" — on the belief that
+the guarded-balanced sites all guard only `q = 1`.  A closer census found that
+belief wrong: **three sites guard the singular locus itself**, writing
+`if q − q⁻¹ = 0` (`unified-iterative-correction`, `QSchurYLambdaClosedForm`) or
+the equivalent `if q = q⁻¹` (`zeta8-witness-level2-su2`), and a fourth
+(`QOU.IwahoriHecke.Hoefsmit.qBracket`) guards `q ≠ 1 ∧ q ≠ −1` explicitly.  So
+the two-sided variant had four users already.  It is `qIntBalClSing` below, and
+the two guarded families are now separated by name rather than conflated:
+
+| form | guard | value on the guard |
+|---|---|---|
+| `qIntBalCl` | `q = 1` | `n` |
+| `qIntBalClSing` | `q − q⁻¹ = 0` (i.e. `q = ±1`, and `q = 0`) | `n` |
+
+They are **not** interchangeable: away from characteristic `2`,
+`qIntBalCl (−1) n = 0` while `qIntBalClSing (−1) n = n`.
+`qIntBalClSing_eq_qIntBalCl` states exactly where they do agree, and
+`qIntBalCl_neg_one_eq_zero` carries the `(-1 : R) ≠ 1` hypothesis that separates
+them — in characteristic `2` the locus `{1, −1}` is a single point and the two
+forms coincide, so the distinction this module draws is a
+characteristic-`≠ 2` phenomenon. -/
 
 section ClassicalExtended
 
@@ -232,6 +249,73 @@ to `0` (Lean's `x / 0 = 0`), not to `n`.  This is the lemma that makes
 "guarded → unguarded is a behaviour change" checkable rather than asserted. -/
 theorem qIntBal_one_eq_zero (n : ℕ) : qIntBal (1 : R) n = 0 := by
   simp [qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
+
+open scoped Classical in
+/-- **Singular-locus-guarded balanced q-integer**: `qIntBal` away from the whole
+locus where the balanced denominator vanishes, and `n` on it.
+
+This is the two-sided companion to `qIntBalCl`, and the form four corpus sites
+actually use.  Two honesty notes on the guard, since `q − q⁻¹ = 0` is *not* the
+same set as `q = ±1`:
+
+* **`q = −1` is a genuine removable singularity** and `n` is its correct value,
+  which is why the guard is worth having: `qIntBalCl` returns `0` there.
+* **`q = 0` is caught too**, because Lean's `0⁻¹ = 0` makes `q − q⁻¹ = 0` hold
+  at zero.  The value `n` there is *not* a limit of anything — it is junk from a
+  junk input.  The guard is stated on the denominator rather than on `q = ±1`
+  because that is what the call sites wrote; nothing downstream evaluates at
+  `q = 0`, and the substrate sits at `q₀ ≈ 1.11`. -/
+noncomputable def qIntBalClSing (q : R) (n : ℕ) : R :=
+  if q - q⁻¹ = 0 then (n : R) else qIntBal q n
+
+/-- Away from the singular locus the guard is invisible — the bridge a
+singular-locus-guarded site needs to reuse any unguarded `qIntBal` lemma. -/
+theorem qIntBalClSing_of_ne {q : R} (h : q - q⁻¹ ≠ 0) (n : ℕ) :
+    qIntBalClSing q n = qIntBal q n := by
+  simp [qIntBalClSing, h]
+
+@[simp] theorem qIntBalClSing_one (n : ℕ) : qIntBalClSing (1 : R) n = (n : R) := by
+  simp [qIntBalClSing]
+
+/-- **Exactly where the two guarded forms agree.**  Off `q ∈ {0, −1}` they are
+the same function; on those two points they differ (`qIntBalCl` falls through to
+`qIntBal`, which is `0` there, while `qIntBalClSing` returns `n`).  This is the
+lemma that makes "one-sided vs two-sided guard is a behaviour change" checkable
+rather than asserted — the same service `qIntBal_one_eq_zero` performs for
+guarded vs unguarded. -/
+theorem qIntBalClSing_eq_qIntBalCl {q : R} (h0 : q ≠ 0) (hm : q ≠ -1) (n : ℕ) :
+    qIntBalClSing q n = qIntBalCl q n := by
+  by_cases h1 : q = 1
+  · subst h1; simp [qIntBalClSing, qIntBalCl]
+  · have hne : q - q⁻¹ ≠ 0 := by
+      intro h
+      have hqq : q = q⁻¹ := by linear_combination h
+      have hsq : q * q = 1 := by
+        field_simp at hqq
+        linear_combination hqq
+      have hfac : (q - 1) * (q + 1) = 0 := by ring_nf; linear_combination hsq
+      rcases mul_eq_zero.mp hfac with h' | h'
+      · exact h1 (by linear_combination h')
+      · exact hm (by linear_combination h')
+    rw [qIntBalClSing_of_ne hne, qIntBalCl_of_ne_one h1]
+
+/-- The separating instance, stated so the difference is a theorem and not a
+remark: at `q = −1` the one-sided guard falls through to `0`, the two-sided one
+returns `n`.
+
+**The hypothesis is not boilerplate.** In characteristic `2` we have `−1 = 1`,
+so `qIntBalCl (−1) n = qIntBalCl 1 n = n` and this statement is *false* — the
+two guarded forms coincide there because the two-point locus `{1, −1}` has
+collapsed to one point.  `(-1 : R) ≠ 1` says exactly "the characteristic is not
+`2`", which is what makes the one-sided guard genuinely one-sided. -/
+theorem qIntBalCl_neg_one_eq_zero (h : (-1 : R) ≠ 1) (n : ℕ) :
+    qIntBalCl (-1 : R) n = 0 := by
+  rw [qIntBalCl_of_ne_one h]
+  simp [qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
+
+@[simp] theorem qIntBalClSing_neg_one (n : ℕ) :
+    qIntBalClSing (-1 : R) n = (n : R) := by
+  simp [qIntBalClSing]
 
 /-! ### Small-index shorthands
 
