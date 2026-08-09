@@ -33,7 +33,11 @@ from q_parameter import Q, Q_INV, HA, q_int
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
-z = 1.0 / (q0**0.5 + qi0**0.5)
+# Trace convention D (SU(2)/Temperley-Lieb, Jones): z = q^3/(q^2+1).
+# Owner ruling 2026-08-09 excised convention C, z = 1/(q^{1/2}+q^{-1/2}).
+# D is a rational function of q -- no square root, so this no longer leaves
+# Q(q). Registry: docs/coordination/trace-convention-registry.md.
+z = q0**3 / (q0**2 + 1.0)
 
 # E_0 calibration: free-neutron β-decay Q-value (MeV), per
 # prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.
