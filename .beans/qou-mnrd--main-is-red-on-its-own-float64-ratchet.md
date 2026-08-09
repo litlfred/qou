@@ -1,7 +1,7 @@
 ---
 # qou-mnrd
-title: 'origin/main is RED on its own raw-float64 ratchet — three witnesses landed undrained'
-status: todo
+title: 'main is RED on its own raw-float64 ratchet — 18 NEW + 2 REGRESSED (was 3 when opened)'
+status: in-progress
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-09T01:20:00Z
+updated_at: 2026-08-09T17:00:00Z
 ---
 
 ## The finding
@@ -319,3 +319,51 @@ Not 1485 undifferentiated fields. Roughly:
 The cheap half is a fifth of the fields and would take the ratchet from 18 NEW
 to 14 NEW — which does not make it green, so it does not on its own change the
 decision on #4729.
+
+---
+
+## 2026-08-09 — #4729 is MERGED; this bean is now the live item
+
+PR #4729 merged as `25387e2a4` with its title and body rewritten to say the
+ratchet is red, rather than the "goes green" claim it was opened with. So the
+one thing that was holding the honest statement out of `main` is gone: **`main`
+now carries the guard, the 15 drains, and an accurate account of what is still
+dirty.**
+
+Re-measured on `main` at `25387e2a4`:
+
+    NEW dirty witnesses : 18   (1,556 fields)
+    REGRESSED           : 2
+    drained since baseline : 6 file(s), -1,483 field(s)
+    exit code           : 1
+
+Unchanged from the pre-merge measurement, as expected — #4729 drained its own
+15 and none of the 18 is one of them. The `drained (progress)` line is #4729's
+work showing up against the baseline:
+
+    38 -> 0    computations/inverse-markov-qvalues.witness.json
+    30 -> 0    computations/jpsi-boundstate-mass.witness.json
+    73 -> 61   computations/multi-layer-gap-decomposition.witness.json
+    28 -> 21   computations/markov-free-energy-qvalues.witness.json
+    11 ->  4   computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json
+    37 -> 36   computations/binding-canonical.witness.json
+
+## CLAIMED — the `deltalambda/threerow-*` cluster
+
+Working the cheap half (category 2, mpmath downcast): 4 producers, 296 fields.
+
+    126  computations/deltalambda/threerow-qcross-trend.witness.json
+     82  computations/deltalambda/threerow-crossing-a-dependence.witness.json
+     73  computations/deltalambda/threerow-4he-completion.witness.json
+     15  computations/deltalambda/threerow-sign-crossing.witness.json
+
+Branch: `claude/drain-deltalambda-threerow`, cut fresh from `main` at
+`25387e2a4` (#4729's branch is merged and must not be built on).
+
+**Not** claimed by this session: the `nastokes-*` + `alpha/*` numpy ports
+(1092 fields, 5 producers) and the residual 9 small ones including the qbeta
+trio. Those stay open for whoever takes them; do not assume this branch covers
+them.
+
+Expected outcome, stated up front so it can be checked rather than claimed:
+this takes 18 NEW -> 14 NEW. **It does not make the ratchet green.**
