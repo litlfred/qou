@@ -171,17 +171,57 @@ targeted next unit.
 
 - **Python probe:** run, all 8 exact-integer assertions pass; witness emitted
   (`free_parameters=0`, no float64, AME as targets only).
-- **Lean:** authored sorry-free and **hand-audited**. `lean`-direct could **not**
-  be run in this session: the sandbox is under a hard ~38.9 GB disk quota, and a
-  full Mathlib olean set (needed by `import Mathlib.Tactic`) does not fit alongside
-  the 12 GB `.git` (the `lake-cache/qou-v4-24-0` restore extracts only partially).
-  This is a documented **hard disk block**, not a proof gap. To verify: restore the
-  cache branch on a host with ≥ ~10 GB free and run
-  `lake env lean content/.../QOU/MassTheory/ThreeRowExtensiveCumulant.lean`
-  (expect exit 0). The structural theorem `clusterF_eq_zero_of_card_le_two` and the
-  `decide` integer-arithmetic lemmas are elementary; the three `Bext` value lemmas
-  use the idiomatic `norm_num [Finset.sum_range_succ, …]` expansion and are
-  cross-checked by the Python probe.
+- **Lean: MACHINE-VERIFIED, `lean`-direct exit 0, sorry-free (2026-08-09).**
+  Supersedes this section's earlier "hand-audited / hard disk block" caveat, which
+  was a **misdiagnosis** — the olean cone was reachable all along. Restoring
+  `lake-cache/qou-v4-24-0` and running `lean`-direct (never `lake build`, which
+  re-resolves deps and wipes the restored oleans) against the real
+  `import Mathlib.Tactic` cone gives:
+
+  ```text
+  $ scripts/lean-verify.sh content/quantum-observable-universe/lean/QOU/MassTheory/ThreeRowExtensiveCumulant.lean
+  ── lean-verify: …/ThreeRowExtensiveCumulant.lean ──
+    ✓ exit 0 — checks
+  ```
+
+  No errors, no warnings, no `sorry`. `#print axioms` on all 11 declarations:
+
+  ```text
+  clusterF_eq_zero_of_card_le_two    [propext, Classical.choice, Quot.sound]
+  Bext_two / Bext_three / Bext_four  [propext, Classical.choice, Quot.sound]
+  Bext_ratio_four_three              [propext, Classical.choice, Quot.sound]
+  Bext_deuteron_zero                 [propext, Classical.choice, Quot.sound]
+  nu_values                          does not depend on any axioms
+  forward_edge_coeff_zero            does not depend on any axioms
+  forward_sign_window_opposite       does not depend on any axioms
+  forward_ratio_two                  does not depend on any axioms
+  forward_cumulants_not_derived_pattern  does not depend on any axioms
+  ```
+
+  **No `sorryAx` anywhere.** The five `decide`-backed lemmas are axiom-free
+  outright (closed integer computation in the kernel, not `native_decide`).
+
+- **Vacuity / self-assumption check (AGENTS.md §1a, §3b-tax, §Strict Lean
+  Discipline).** No `: True`, no `X = X := rfl`, no empty `Prop` carrier, no
+  `native_decide`, no `def`-disguised tautology. `clusterF_eq_zero_of_card_le_two`
+  genuinely consumes its hypothesis `hS : S.card ≤ 2`. Two disclosures:
+
+  1. **`sRow3` is a hand-entered lookup table, not a Lean-derived partition sum.**
+     `def sRow3 : ℕ → ℤ | 3 => -1 | 4 => -2 | 5 => 4 | _ => 0` asserts the values
+     `s_k = Σ_{λ⊢k, ℓ(λ)≥3} (−1)^{n(λ)} f^λ` by *definition*; the identity between
+     the table and that partition sum is **checked in Python, not proved in Lean**.
+     So every downstream conclusion here is Lean-proved *for this table*, and
+     "sorry-free ≠ derived" applies at exactly that seam. Independently
+     re-confirmed this session by a from-scratch hook-length recomputation:
+     `s_{1..6} = 0, 0, −1, −2, 4, 16` and `Bext_{2,3,4,5} = 0, −1, −6, −16` —
+     the table and the three `Bext` value lemmas are numerically correct. The
+     scope-(a) verdict is unaffected (a *negative* does not become stronger by
+     formalising the table), but a citing block must not read
+     `forward_sign_window_opposite` as "Lean-proved that the ≥3-row Δ_λ stratum
+     has (−,+) order" — what is Lean-proved is that `sRow3` does.
+  2. **`Bext_deuteron_zero : Bext 2 = 0 := Bext_two`** is a verbatim alias of
+     `Bext_two`. Not vacuous, but redundant; kept for the docstring's deuteron
+     framing.
 
 ## References
 - Proved value: `QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional`

@@ -46,6 +46,15 @@ no `q₀`, per §7c)
   - `forward_ratio_two : ν₄ = −2 · ν₃` — the forward 4-body/3-body magnitude ratio
     is exactly `2`, not the derived `≈ 9.75`.
 
+**Derivation seam (sorry-free ≠ derived).** `sRow3` below is a *hand-entered table*
+of the values `s_k`; the identity `sRow3 k = Σ_{λ⊢k, ℓ(λ)≥3} (−1)^{n(λ)}·f^λ` is
+verified in the companion Python probe (exact integer hook-length arithmetic), **not
+proved in Lean**.  Every theorem here is therefore Lean-proved *for this table*.  A
+citing block must say "the ≥3-row table `sRow3` gives the (−,+) order", not "Lean
+proves the ≥3-row Δ_λ stratum has (−,+) order".  This does not weaken the scope-(a)
+negative (a negative is not strengthened by formalising the table), and closing the
+seam would need SYT/hook-length combinatorics in Lean — out of scope here.
+
 **Anti-fit (STRICT).** No AME value and no `q₀` appears in any statement or proof.
 The AME binding ratios enter only the companion probe/audit as fixed *targets*,
 never inverted.  This records a **scope-(a)** result (per AGENTS.md
