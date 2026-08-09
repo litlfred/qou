@@ -49,11 +49,16 @@
   matching LOWER bounds, which need the tangent again — on the rising side
   concavity finally points the right way, so Part 7 carries NO window.
 
-  WHAT IS STILL MISSING: a bound on `⟨4₁⟩_N` itself.  The regions are all
-  bounded, above and (near the peak) below, but the numeric constant for the
-  below-window region is not assembled here, and neither is the recombination
-  into a single statement about the sum.  Do not read any theorem in this file
-  as bounding the Kashaev invariant.
+  Part 9 recombines them: `sum_kashaevProd_le_split` bounds
+  `∑_{k<N} kashaevProd N k` by the three regions' bounds, exactly (an exact
+  three-way split of `Finset.range N`, plus one order-reversing reindex to move
+  the distance-indexed window sum onto an interval).
+
+  WHAT IS STILL MISSING.  The split's FIRST summand is `O(N)·max 1 g_w`, not
+  `O(√N)·g_{k*}`: collapsing it needs the numeric constant (`e^{−x} ≤ 1/x`
+  against `D = k*−w ≈ N/6`, threshold `N ≥ 62`), which is NOT assembled here.
+  So `⟨4₁⟩_N ≤ C√N·g_{k*}` is still not a theorem — what is proved is a bound in
+  three named pieces, one of which is not yet in the right shape.
 
   -- Ref: [manuscript] QOU/Knot/KashaevArgmax.lean
   -- Ref: [manuscript] QOU/Knot/LobTaylorSaddle.lean
@@ -795,5 +800,77 @@ theorem le_sum_kashaevProd_left_of_sq {N m : ℕ} (hN : 6 ≤ N) (hm : m ≤ 5 *
   rw [neg_le_neg_iff, div_le_one hNR]
   have hmm : (m : ℝ) * ((m : ℝ) - 1) ≤ (m : ℝ) ^ 2 := by nlinarith
   nlinarith [mul_le_mul_of_nonneg_left hmm (mul_nonneg hs3.le hpi.le), hsq]
+
+/-! ## Part 9 — recombination
+
+The window sums are indexed by DISTANCE from the saddle (which is what made the
+Gaussian bounds apply with no reindexing); `⟨4₁⟩_N` is indexed by `k`.  Moving
+between them is one order-reversing reindex, and then the three regions are an
+exact three-way split of `Finset.range N`. -/
+
+/-- The distance-indexed window sum IS the interval sum, reflected. -/
+theorem sum_kashaevProd_Icc_eq {N w : ℕ} (hw : w ≤ 5 * N / 6) :
+    ∑ k ∈ Finset.Icc w (5 * N / 6), kashaevProd N k
+      = ∑ d ∈ Finset.range (5 * N / 6 - w + 1), kashaevProd N (5 * N / 6 - d) := by
+  have h1 : Finset.Icc w (5 * N / 6) = Finset.Ico w (5 * N / 6 + 1) :=
+    (Finset.Ico_succ_right_eq_Icc w (5 * N / 6)).symm
+  rw [h1, Finset.sum_Ico_eq_sum_range]
+  have h2 : 5 * N / 6 + 1 - w = 5 * N / 6 - w + 1 := by omega
+  rw [h2, ← Finset.sum_range_reflect (fun i => kashaevProd N (w + i))
+    (5 * N / 6 - w + 1)]
+  refine Finset.sum_congr rfl (fun j hj => ?_)
+  rw [Finset.mem_range] at hj
+  congr 1
+  omega
+
+/-- **The three regions, recombined.**  An exact split of `Finset.range N` into
+`[0, w)`, `[w, k*]` and `(k*, N)`, each bounded by the corresponding lemma.
+
+Every piece here is sorry-free, but the first summand is `O(N)·max 1 g_w`, NOT
+`O(√N)·g_{k*}` — collapsing it needs the numeric constant recorded in the bean
+(`e^{−x} ≤ 1/x` against `D = k*−w ≈ N/6`, threshold `N ≥ 62`).  So this is a
+bound on `⟨4₁⟩_N` in three named pieces, not the `C√N·g_{k*}` statement.
+
+`hw2` is `2N + 3 ≤ 3w`, one step stricter than the secant window's `2N ≤ 3w`:
+the middle region here is the CLOSED `[w, k*]`, so the distance-indexed sum runs
+to `d = k*−w`, which lands at `w` — and the window has to hold there too. -/
+theorem sum_kashaevProd_le_split {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 * N)
+    (hw2 : 2 * N + 3 ≤ 3 * w) (hwk : w ≤ 5 * N / 6) :
+    ∑ k ∈ Finset.range N, kashaevProd N k
+      ≤ (w : ℝ) * max 1 (kashaevProd N w)
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) := by
+  have hN0 : N ≠ 0 := by omega
+  have hks : 5 * N / 6 < N := by
+    rw [Nat.div_lt_iff_lt_mul (by norm_num)]; omega
+  -- exact split `range N = [0,w) ⊎ [w,k*] ⊎ (k*,N)`
+  have hsplit : ∑ k ∈ Finset.range N, kashaevProd N k
+      = (∑ k ∈ Finset.range w, kashaevProd N k)
+        + (∑ k ∈ Finset.Icc w (5 * N / 6), kashaevProd N k)
+        + ∑ k ∈ Finset.Ico (5 * N / 6 + 1) N, kashaevProd N k := by
+    have e2 : Finset.Icc w (5 * N / 6) = Finset.Ico w (5 * N / 6 + 1) :=
+      (Finset.Ico_succ_right_eq_Icc w (5 * N / 6)).symm
+    have s1 := Finset.sum_Ico_consecutive (fun k => kashaevProd N k)
+      (Nat.zero_le w) (show w ≤ N by omega)
+    have s2 := Finset.sum_Ico_consecutive (fun k => kashaevProd N k)
+      (show w ≤ 5 * N / 6 + 1 by omega) (show 5 * N / 6 + 1 ≤ N by omega)
+    rw [e2, Finset.range_eq_Ico]
+    linarith [s1, s2]
+  rw [hsplit]
+  have hbelow := sum_kashaevProd_below_window_le (N := N) (w := w) hN0 hw1
+  have hmid : ∑ k ∈ Finset.Icc w (5 * N / 6), kashaevProd N k
+      ≤ kashaevProd N (5 * N / 6)
+        * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2) := by
+    rw [sum_kashaevProd_Icc_eq hwk]
+    exact sum_kashaevProd_left_window_le hN (5 * N / 6 - w + 1) (by omega) (by omega)
+  have hright : ∑ k ∈ Finset.Ico (5 * N / 6 + 1) N, kashaevProd N k
+      ≤ kashaevProd N (5 * N / 6)
+        * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) := by
+    refine le_trans ?_ (sum_kashaevProd_right_le hN)
+    refine Finset.sum_le_sum_of_subset_of_nonneg ?_ (fun k _ _ => kashaevProd_nonneg N k)
+    intro k hk
+    rw [Finset.mem_Ico] at hk ⊢
+    omega
+  linarith
 
 end QOU.Knot.FigureEightVolume

@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T10:00:00Z
+updated_at: 2026-08-09T11:00:00Z
 ---
 
 ## Why this bean exists
@@ -555,4 +555,49 @@ statement about the sum is not written.
   2. recombination of the four regions into one statement about
      `sum_{k<N} kashaevProd N k` -- needs an order-reversing reindex to move
      the distance-indexed window sums onto `Finset.Ico`;
+  3. then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
+
+## Landed: RECOMBINATION. A bound on `<4_1>_N` -- in three named pieces. 2026-08-09
+
+`sum_kashaevProd_Icc_eq` and `sum_kashaevProd_le_split`, both sorry-free:
+
+    sum_{k<N} kashaevProd N k
+      <= w * max 1 (kashaevProd N w)
+         + g_{k*} * (2 + sqrt(sqrt3 N)/2)
+         + g_{k*} * (2 + sqrt(N/sqrt3)/2)
+
+for `6w <= 5N`, `2N + 3 <= 3w`, `w <= k*`.
+
+This is the FIRST statement in the arc whose subject is the whole Kashaev sum
+rather than a region of it.
+
+**The reindex.** The window sums are indexed by DISTANCE from the saddle --
+which is what let the Gaussian bounds apply with no reindexing at all -- while
+`<4_1>_N` is indexed by `k`. `sum_kashaevProd_Icc_eq` is the one
+order-reversing bridge: `Icc w k* -> Ico w (k*+1) -> range (k*-w+1)` by
+`Finset.sum_Ico_eq_sum_range`, then `Finset.sum_range_reflect` and an `omega`
+on the index arithmetic. Four lines, and it only has to exist once.
+
+**`hw2` is one step stricter than the secant window.** `2N + 3 <= 3w`, not
+`2N <= 3w`: the middle region is the CLOSED `[w, k*]`, so the distance-indexed
+sum runs to `d = k*-w`, which lands ON `w` -- and the window must hold there
+too. `omega` caught this, with a counterexample, rather than my noticing it.
+
+### What this does NOT say
+
+The first summand is `O(N) * max 1 g_w`, not `O(sqrt N) * g_{k*}`. Collapsing
+it needs the numeric constant recorded two rounds ago (`e^{-x} <= 1/x` against
+`D = k* - w ~ N/6`, threshold `N >= 62`), which is still not assembled.
+
+So `<4_1>_N <= C sqrt(N) g_{k*}` remains NOT A THEOREM. What is proved is a
+bound in three named pieces, one of which is not yet in the right shape. The
+file header says exactly this.
+
+### What is left
+
+  1. the numeric constant (item above) -- turns piece 1 into `O(1) g_{k*}`;
+  2. the matching lower bound on the WHOLE sum -- `le_sum_kashaevProd_left_of_sq`
+     bounds the window from below, and the full sum dominates the window
+     (all terms nonneg), so this is nearly free once the reindex above is
+     reused;
   3. then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
