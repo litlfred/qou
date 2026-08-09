@@ -73,7 +73,7 @@ of cancelling. Benign because `envelopeS_total` needs `HasDerivAt` only on
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle
 
-open Complex Real
+open Complex Real QOU.MathlibExt
 
 /-- The quantity `exists_int_dVdy_mul` pins to `2πℤ`: the imaginary part of
 `−∂V/∂y · y`, written out. -/
@@ -301,5 +301,92 @@ theorem abs_argSum_lt_of_re_mul_or_div_nonpos {x y : ℂ} (hy1 : y.re < 1)
   rcases hor with h | h
   · exact abs_argSum_lt_of_re_mul_nonpos hy1 hyim hyre h hdiv
   · exact abs_argSum_lt_of_re_div_nonpos hy1 hyim hyre h hdiv
+
+/-! ## The conjugate branch, for free
+
+`Ypair.2 = conj Ypair.1`, and on `|x| = 1` conjugation **swaps** `x·y` with
+`y/x` — because `conj x = x⁻¹` there. So `argSum x (conj y) = −argSum x y`: the
+two middle terms exchange places and every term flips sign.
+
+⚠ This is the ONLY correct symmetry between the branches. Route 38's first draft
+of the regime gates tried to mirror each inequality separately with a sign
+factor and failed: `Im(x·y)` for one branch pairs with `Im(y/x)` for the
+**other**, not with itself.
+
+⚠ And the four `arg ≠ π` side conditions are not decoration. `arg_conj` is
+`if arg x = π then π else -arg x`, so a term sitting on `log`'s cut does **not**
+flip — it would break the identity by `2π`, which is exactly the size of the
+error that matters here. Each is discharged from `notCut` at the call site:
+`w ∈ notCut` with `Im w = 0` forces `Re w < 1`, hence `Re (1 − w) > 0`, hence
+`arg (1 − w) = 0`. -/
+
+private theorem conj_ne_pi_aux {z : ℂ} (h : z.arg ≠ Real.pi) :
+    ((starRingEnd ℂ) z).arg = -z.arg := by
+  rw [Complex.arg_conj, if_neg h]
+
+theorem conj_eq_inv_of_unit {x : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) :
+    (starRingEnd ℂ) x = x⁻¹ := by
+  have hx0 : x ≠ 0 := by
+    intro hz
+    rw [hz] at hx
+    simp at hx
+  have hns : Complex.normSq x = 1 := by
+    simp only [Complex.normSq_apply]
+    nlinarith [hx]
+  field_simp
+  rw [mul_comm, Complex.mul_conj]
+  exact_mod_cast hns
+
+/-- On `|x| = 1`, conjugation **swaps** the two mixed arguments. This is the one
+fact the second branch rests on, and it is why mirroring the inequalities
+branch-by-branch fails. -/
+theorem one_sub_mul_conj {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) :
+    (1 : ℂ) - x * (starRingEnd ℂ) y = (starRingEnd ℂ) ((1 : ℂ) - y / x) := by
+  have hx0 : x ≠ 0 := by
+    intro hz
+    rw [hz] at hx
+    simp at hx
+  rw [map_sub, map_one, map_div₀, conj_eq_inv_of_unit hx]
+  field_simp
+
+theorem one_sub_div_conj {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1) :
+    (1 : ℂ) - (starRingEnd ℂ) y / x = (starRingEnd ℂ) ((1 : ℂ) - x * y) := by
+  have hx0 : x ≠ 0 := by
+    intro hz
+    rw [hz] at hx
+    simp at hx
+  rw [map_sub, map_one, map_mul, conj_eq_inv_of_unit hx]
+  field_simp
+
+theorem argSum_conj {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1)
+    (h1 : ((1 : ℂ) - y).arg ≠ Real.pi) (h2 : ((1 : ℂ) - x * y).arg ≠ Real.pi)
+    (h3 : ((1 : ℂ) - y / x).arg ≠ Real.pi) (h4 : (-y).arg ≠ Real.pi) :
+    argSum x ((starRingEnd ℂ) y) = -argSum x y := by
+  have e2 := one_sub_mul_conj (y := y) hx
+  have e3 := one_sub_div_conj (y := y) hx
+  have e1 : (1 : ℂ) - (starRingEnd ℂ) y = (starRingEnd ℂ) ((1 : ℂ) - y) := by
+    rw [map_sub, map_one]
+  have e4 : -(starRingEnd ℂ) y = (starRingEnd ℂ) (-y) := by rw [map_neg]
+  simp only [argSum, e1, e2, e3, e4, conj_ne_pi_aux h1, conj_ne_pi_aux h2,
+    conj_ne_pi_aux h3, conj_ne_pi_aux h4]
+  ring
+
+theorem abs_argSum_conj {x y : ℂ} (hx : x.re ^ 2 + x.im ^ 2 = 1)
+    (h1 : ((1 : ℂ) - y).arg ≠ Real.pi) (h2 : ((1 : ℂ) - x * y).arg ≠ Real.pi)
+    (h3 : ((1 : ℂ) - y / x).arg ≠ Real.pi) (h4 : (-y).arg ≠ Real.pi)
+    (hb : |argSum x y| < 2 * Real.pi) :
+    |argSum x ((starRingEnd ℂ) y)| < 2 * Real.pi := by
+  rw [argSum_conj hx h1 h2 h3 h4, abs_neg]
+  exact hb
+
+/-- `w ∈ notCut` ⟹ `arg (1 − w) ≠ π`: if `Im w ≠ 0` then `Im (1 − w) ≠ 0`, and
+otherwise `Re w < 1` puts `1 − w` strictly in the right half plane. -/
+theorem arg_one_sub_ne_pi {w : ℂ} (h : w ∈ notCut) : ((1 : ℂ) - w).arg ≠ Real.pi := by
+  intro hpi
+  obtain ⟨hre, him⟩ := Complex.arg_eq_pi_iff.1 hpi
+  simp only [Complex.sub_re, Complex.one_re, Complex.sub_im, Complex.one_im] at hre him
+  rcases h with h | h
+  · exact h (by linarith)
+  · linarith
 
 end QOU.QBeta.FiveTwoDeformedSaddle

@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: VSide CLOSED, hcont CLOSED (Re Li2 continuous across the cut); ONE obligation left, he_j at the pair (k=0)'
+title: 'Gap A: BOTH obligations CLOSED — he_j at the pair (k=0) and hcont at phi=pi. What remains is feeding hasDerivAt_envelopeS.'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T17:20:00Z
+updated_at: 2026-08-09T19:05:00Z
 ---
 
 ## What is open
@@ -154,7 +154,7 @@ in the real part. Route 30's correction, proved rather than assumed.
 | Vieta for the labelling (`hA`/`hB`'s `hv₁ hv₂ hv₃`) | ✅ `vieta_hv1/hv2`, `vieta_e3` |
 | the four sign facts `hA`/`hB` need | ✅ `im_mul_Ypair_*`, `im_div_Ypair_*` |
 | `hA` and `hB` at the concrete labelling | ✅ `logSumA_concrete`, `logSumB_concrete` |
-| **`heⱼ`'s second grouping (`k = 0`)** | **open — two routes gated closed** |
+| `heⱼ` at the pair (`k = 0`), BOTH branches | ✅ `he_Ypair` |
 | `hcont` at `φ = π` | ✅ `continuousAt_re_cLiTwoExt` (2-D, not one-sided) |
 
 What is left is building the concrete labelling and discharging the remaining
@@ -451,6 +451,48 @@ Conjugation is the only correct symmetry here.
 measures that it genuinely fails at 181 of 400 arc points, all at `cos φ > 0` —
 and that failure region *is* regime 1, where the **opposite** sign is what
 supplies the bound. Strengthening the lemma would be attempting something false.
+
+### ✅✅ `heⱼ` IS CLOSED — both pair branches, `Ico 0 π`
+
+    he_Ypair (h : pairDisc φ < 0) (hlo : 0 ≤ φ) (hhi : φ < π) (Y' : ℂ) :
+      (dVdy (arcX φ) (Ypair φ).1 * Y').re = 0
+        ∧ (dVdy (arcX φ) (Ypair φ).2 * Y').re = 0
+
+`QOU/QBeta/FiveTwoPairSaddle.lean` (new, the abstract half) +
+`QOU/QBeta/FiveTwoEnvelopeInstance.lean` (the instantiation). Both `lake`-verified
+per module, sorry-free, warning-free; every load-bearing declaration audits to
+`[propext, Classical.choice, Quot.sound]`.
+
+**It comes out STRONGER than the hypothesis asks.** `hasDerivAt_envelopeS` wants
+`(∂V/∂y · Y′).re = 0`, i.e. the derivative *annihilated*. What is proved is
+`∂V/∂y = 0` outright (`dVdy_Ypair_fst_eq_zero`, `dVdy_Ypair_snd_eq_zero`), so it
+holds **for every `Y′`** and nothing about the labelling's derivative is needed.
+
+The chain:
+
+1. `dVdy_eq_zero_of_argSum_bound` — take imaginary parts in `exists_int_dVdy_mul`
+   and `argSum = k·2π`, so **any** bound under `2π` forces `k = 0`.
+2. the four regime bounds, dispatched by `Re y = cos φ − t/2` and `sign(cos φ)`.
+   The dispatch is **three-way, not four-way**, and that is not a simplification:
+   `t > 0` makes `Re y > 0` *force* `cos φ > 0`, so the fourth cell is empty.
+3. the conjugate branch by `argSum_conj`, not by mirroring.
+
+### ✅ Two things the instantiation needed that were not obvious
+
+**The `Ico` endpoint has to be argued, not inherited.** `im_div_Ypair_fst_pos`
+carries `0 < x.im`, i.e. **strictly** `sin φ > 0`, and `VSide` carries
+`x.im ≠ 0` — both fail at `φ = 0`, which `envelopeS_total` needs. `sin φ = 0` on
+`[0,π)` forces `φ = 0` (`Real.sin_eq_zero_iff_of_lt_of_lt`), where `arcX 0 = 1`
+and all three side conditions collapse to `1 − y ≠ 0`. Working on the open
+interval instead would have left a hole exactly at the point the transport
+starts from.
+
+**`argSum_conj`'s four `arg ≠ π` side conditions are load-bearing.**
+`Complex.arg_conj` is `if arg x = π then π else −arg x`, so a term sitting on
+`log`'s cut does **not** flip, and the identity would break by `2π` — precisely
+the size of error that decides `k`. Each is discharged from `notCut`:
+`w ∈ notCut` with `Im w = 0` forces `Re w < 1`, hence `Re(1−w) > 0`, hence
+`arg(1−w) = 0` (`arg_one_sub_ne_pi`). The fourth, `arg(−y) ≠ π`, is `Im y ≠ 0`.
 
 ### ⚠⚠ `heⱼ` is FALSE at `φ = π`, on `Ypair.2` — Route 38 G15
 
