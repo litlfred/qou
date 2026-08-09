@@ -92,13 +92,89 @@ M_E_MEV_ERR = _load_mpf("0.00000000015")
 M_P_MEV = _load_mpf("938.27208816")
 """Proton mass · c² (MeV).
 
-CODATA-2022: 938.27208816(29) MeV — σ ≈ 0.31 ppb.
+⚠ **MISLABELLED VINTAGE — this is the CODATA-2018 value, not 2022.**
+Corrected label 2026-08-09 (PR #4860, bean `qou-2an8`). The *value* is
+unchanged, deliberately: see "why the value is not changed here" below.
+
+**Proof it is not 2022** — this module's `M_E_MEV` and the pin anchor
+`qou_substrate.constants.MASS_RATIO_P_E` are both genuine 2022, and the
+three are algebraically over-determined::
+
+    M_E_MEV * MASS_RATIO_P_E  =  938.27208942732424736394 MeV
+    M_P_MEV                   =  938.27208816            MeV
+    residual                  =  +1.3507 ppb  =  127x the last printed digit
+
+Within a single CODATA adjustment these are one correlated least-squares
+output (the MeV-valued m_p is derived downstream of m_e and the ratio), so a
+same-edition triple agrees to its last printed digit. 127x is not rounding.
+
+An independent observable confirms *which* member is stale: `m_p + m_e + Q_β`
+must reproduce `M_N_MEV_CODATA_DIRECT` (genuine 2022). The ratio-derived
+proton lands at 0.32σ of it; this stored value misses by 2.96σ.
+
+**Why the value is not changed here.** The true CODATA-2022 digits could not
+be verified — physics.nist.gov is egress-blocked in the authoring sandbox —
+and writing a *derived* number into a file whose stated purpose is to be a
+"vendored snapshot of NIST values" would reintroduce exactly the provenance
+defect this note documents. Use `M_P_MEV_RATIO_CONSISTENT` below when you
+need an internally consistent proton; swap this literal only against a
+verified NIST 2022 quote (bean `qou-if87`).
 
 Role: **VALIDATION** anchor (not a calibration input to the
 framework; framework predicts m_p categorically).
 """
 M_P_MEV_ERR = _load_mpf("0.00000029")
 """1σ uncertainty on M_P_MEV.  σ ≈ 0.31 ppb."""
+
+def _mass_ratio_p_e():
+    """The m_p/m_e pin anchor, SOURCED — never re-typed here.
+
+    Deliberately imported rather than copied: a local literal would make this
+    module a fourth registry for the same quantity, which is the defect class
+    this file now documents. ``qou_substrate.constants`` imports only ``math``,
+    so there is no cycle. The ``MASS_RATIO_P_E_STR`` decimal string is
+    preferred over the f64 ``MASS_RATIO_P_E`` so no precision is lost.
+
+    Returns ``None`` rather than raising if ``qou_substrate`` is unavailable.
+    This module is imported by ~234 consumers that never touch the triple; an
+    ImportError here would break every one of them to serve a diagnostic.
+    """
+    import sys as _s
+    from pathlib import Path as _P
+    try:
+        _pkg = _P(__file__).resolve().parent.parent / "tools" / "qou-substrate" / "python"
+        if _pkg.is_dir() and str(_pkg) not in _s.path:
+            _s.path.insert(0, str(_pkg))
+        from qou_substrate.constants import MASS_RATIO_P_E_STR
+        return _load_mpf(MASS_RATIO_P_E_STR)
+    except Exception:  # noqa: BLE001 — diagnostic only; never break importers
+        return None
+
+
+MASS_RATIO_P_E = _mass_ratio_p_e()
+"""m_p/m_e — re-exported from ``qou_substrate.constants`` (the pin anchor).
+
+Present so the triple this module documents can be checked without the caller
+having to reach into two packages. It is a re-export, **not** a second copy.
+"""
+
+M_P_MEV_RATIO_CONSISTENT = (
+    M_E_MEV * MASS_RATIO_P_E if MASS_RATIO_P_E is not None else None
+)
+"""Proton mass · c² (MeV) — **DERIVED, not vendored.**
+
+`M_E_MEV × (m_p/m_e)`, i.e. the proton implied by this module's 2022
+electron mass and the 2022 pin anchor `MASS_RATIO_P_E`. Use this wherever a
+proton consistent with the rest of the 2022 registry is required.
+
+Not a NIST quote: it is a product of two NIST quotes, so it may differ from
+the published CODATA-2022 m_p by up to one unit in the 11th significant
+figure (~0.01 ppb) from NIST's own rounding — 30x below the σ below, and
+135x below the 1.35 ppb inconsistency it exists to avoid.
+"""
+M_P_MEV_RATIO_CONSISTENT_ERR = _load_mpf("0.00000028")
+"""1σ on M_P_MEV_RATIO_CONSISTENT, from σ(m_e)/m_e = 0.29 ppb and
+σ(ratio)/ratio = 0.06 ppb in quadrature ⇒ ≈ 0.30 ppb."""
 
 
 # ── Neutron mass — two competing authoritative values ──────────────
@@ -126,6 +202,17 @@ AME-2020 neutron decay Q-value).
 uncertainties.  Choosing one over the other affects:
 - Q_β consistency (AME-derived path is consistent by construction)
 - Direct comparison against absolute m_n measurements
+
+⚠ **The ~1.5 ppb disagreement is now explained** (2026-08-09, PR #4860):
+this AME-derived value is built on `M_P_MEV`, which is a mislabelled
+CODATA-2018 proton (see its docstring). Rebuilt on
+`M_P_MEV_RATIO_CONSISTENT` the AME path lands within **0.32σ** of
+`M_N_MEV_CODATA_DIRECT` instead of 2.96σ — i.e. the two "competing
+authoritative values" largely stop competing. Consequence for consumers:
+**this value is NOT an independent neutron measurement** — it is
+`M_P_MEV + M_E_MEV + Q_BETA_MEV_AME` by construction, so scoring a
+prediction against it double-counts whatever is already in the proton and
+Q_β. Prefer `M_N_MEV_CODATA_DIRECT` for accuracy scoring.
 """
 M_N_MEV_AME_DERIVED_ERR = _load_mpf("0.00000060")
 
@@ -259,11 +346,66 @@ def summary() -> dict:
     }
 
 
+def triple_consistency_ppb():
+    """Residual of the over-determined (m_e, m_p/m_e, m_p) triple, in ppb.
+
+    Any two of the three fix the third, so a same-edition triple returns ~0
+    (bounded by the printed granularity of ``M_P_MEV``, ~0.011 ppb). A large
+    return value means the registries have drifted apart in vintage.
+
+    Returns a positive number when ``M_P_MEV`` is SMALLER than the proton
+    implied by ``M_E_MEV × MASS_RATIO_P_E``. Currently ≈ +1.3507 ppb — the
+    known 2018/2022 straddle documented on ``M_P_MEV``.
+    """
+    if M_P_MEV_RATIO_CONSISTENT is None:
+        raise RuntimeError(
+            "cannot check the registry triple: qou_substrate is not importable, "
+            "so the m_p/m_e pin anchor could not be sourced. Install/point at "
+            "tools/qou-substrate/python."
+        )
+    return (M_P_MEV_RATIO_CONSISTENT - M_P_MEV) / M_P_MEV * _load_mpf("1e9")
+
+
+#: Residual accepted by :func:`assert_triple_consistent` while the known
+#: 2018/2022 straddle on ``M_P_MEV`` remains unfixed (bean ``qou-if87``).
+#: Tighten to ~0.05 once that literal is corrected against a verified quote.
+KNOWN_TRIPLE_RESIDUAL_PPB = 1.4
+
+
+def assert_triple_consistent(tolerance_ppb=None):
+    """Raise if the registry triple has drifted beyond the accepted residual.
+
+    A regression guard for the defect class found in PR #4860: a registry
+    that is exactly representable, correctly typed and precise to 11 figures,
+    yet from the wrong CODATA edition — invisible to every float64 / precision
+    audit in the repo, because nothing here is imprecise.
+
+    Deliberately asserts against a *known-residual ceiling* rather than zero:
+    asserting zero today would simply fail, and a guard that is expected to
+    fail teaches readers to ignore it.
+    """
+    tol = _load_mpf(str(KNOWN_TRIPLE_RESIDUAL_PPB if tolerance_ppb is None
+                        else tolerance_ppb))
+    resid = triple_consistency_ppb()
+    if abs(resid) > tol:
+        raise AssertionError(
+            f"CODATA registry triple inconsistent by {resid} ppb "
+            f"(ceiling {tol} ppb). Either a registry drifted vintage, or "
+            f"M_P_MEV was corrected and this ceiling should be tightened. "
+            f"See M_P_MEV's docstring and bean qou-if87."
+        )
+    return resid
+
+
 __all__ = [
     "CODATA_EDITION_YEAR", "CODATA_SOURCE_URL", "ALLASCII_URL",
     "VENDORED_SNAPSHOT_DATE",
     "M_E_MEV", "M_E_MEV_ERR",
     "M_P_MEV", "M_P_MEV_ERR",
+    "M_P_MEV_RATIO_CONSISTENT", "M_P_MEV_RATIO_CONSISTENT_ERR",
+    "MASS_RATIO_P_E",
+    "triple_consistency_ppb", "assert_triple_consistent",
+    "KNOWN_TRIPLE_RESIDUAL_PPB",
     "M_N_MEV", "M_N_MEV_ERR",
     "M_N_MEV_CODATA_DIRECT", "M_N_MEV_CODATA_DIRECT_ERR",
     "M_N_MEV_AME_DERIVED", "M_N_MEV_AME_DERIVED_ERR",
