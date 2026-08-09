@@ -628,3 +628,113 @@ serialization split — and nothing here reduces them.
   * `gram_norm_binding_probe.py`, `gram_transfer_quadratic.py`,
     `threerow_isospin_parity_probe.py` — never established whether the guard
     breaks them; each exceeded a 4-minute probe budget before reaching a verdict
+
+---
+
+## Second batch: 14 NEW -> 7 NEW, 2 REGRESSED -> 1
+
+Everything drainable in this container is now drained. Running total for the
+branch: **18 NEW + 2 REGRESSED -> 7 NEW + 1 REGRESSED**, 541,817 -> 541,393
+fields.
+
+Drained and verified this batch (all leaf-diffed against a pre-drain copy,
+assertions byte-identical):
+
+    keystone-colored-sigma235-wrt   36 -> 0   (was REGRESSED at 52)
+    qborel-growth-budget            16 -> 0
+    cauchymul-order-cancellation    15 -> 0
+    canonical-ordering-dof          25 -> 0
+    markov-z-fibre-rank-bar-cov      6 -> 0
+    crossing-energy-channel-basis    5 -> 0
+    volume-binding-four-point        5 -> 0
+    c3-w2-c1-pole-divisor            4 -> 0
+
+### The qbeta trio — this bean's ORIGINAL three — are done
+
+And the reason they landed undrained is now concrete: **all three write their
+own `json.dump` and never pass `WitnessBuilder.save`**, so #4729's guard could
+not see them. That is the bypass #4729's own PR body flagged as its known
+limit; the trio is the worked example of it.
+
+All three turned out to be EXACT RATIONAL computations done in float64 —
+integer kernel degrees over integers, `log_q` values over `n^2`. Fixed with
+`fractions.Fraction`, verdicts decided exactly, serialized as both `p/q` and a
+50-dps decimal. The noise was real: `abs_diff` was `0.0012499999999999734` for
+a quantity that is exactly `1/800`, and the final Cauchy ratio was
+`0.9948979591836735` for exactly `195/196`.
+
+### Three more things that were decided in float64
+
+  * `keystone`'s `qint_value_map_refuted` compared f64 shadows of mpf ratios,
+    and its colored-support residue was `int(round(float(val))) % 60` — an
+    integer residue pulled through an f64 round-trip.
+  * `c3-w2-c1`'s decay factors were `round(x, 4)`-ed into the witness AND
+    tested there: two of the four printed as exactly `10.0` — the one value
+    that would mean "exactly linear" — where they are 9.99997 and 9.99998.
+  * `canonical-ordering-dof`'s 1%-of-B_AME test ran on a `float()`-ed spread.
+
+### A gap in the ratchet's model: inherited float64
+
+`canonical-ordering-dof` reads `B_pred_MeV` / `B_AME_MeV` out of
+`mass-table-comprehensive.witness.json`, which **is in the baseline** with
+75,112 raw float64 fields. The baseline covers the SOURCE of those numbers; it
+does not cover a COPY of them into a new witness. So a baselined witness
+quietly seeds new ratchet debt in every downstream consumer, and the consumer
+gets flagged for the producer's debt. Worth deciding deliberately: either
+consumers must re-serialize inherited values (what was done here — `repr` at
+the true f64 width, declaring the inheritance), or the audit needs a notion of
+provenance it currently has no way to express.
+
+## What is left, and why each is left
+
+**Drainable, but not in this container (3 files, 99 fields).** Regenerating
+these here would DESTROY data, so the source is fixed and the witness is
+deliberately not re-run:
+
+    atomic-tr-m-mpfr-50dps-proton   20   needs pyhecke_native (absent). A bare
+                                         run nulls n_crossings_canonical and
+                                         drops the rust tr_M values. Also needs
+                                         QOU_Q0_ANCHOR=proton --anchor proton.
+    chi-helium-4-h12-at-q0-50dps    78   same native kernel. All 78 are
+                                         compute_time_sec — the 1 -> 78
+                                         "regression" was a completion pass
+                                         adding per-partition timings, not a
+                                         precision loss.
+    ground-state-ordering-argmin      1   its witness carries a `lean_bridge`
+                                         block NO producer writes (added by
+                                         7c60b2f38, cited by
+                                         docs/audits/2026-08-09-ground-state-
+                                         ordering-truth-value.md). Re-running
+                                         deletes it. The probe also defaults to
+                                         --max-a 14 while the witness is
+                                         max_A=16, so a bare run shrinks the
+                                         sweep 62 -> 47 cases.
+
+All three timing fixes are committed, so they land the moment someone re-runs
+on a host with the native kernel (and, for ground-state, once the lean_bridge
+block has a producer).
+
+**The real remaining work: the numpy ports (5 files, 1092 fields).**
+
+    nastokes-multigen-cluster-additivity   835
+    nastokes-orbit-symmetric-readout        98
+    alpha-k-jones-markov-h12                91
+    nastokes-germ-gauge-covariance          52
+    nastokes-transverse-curvature-seifert   16
+
+These are category 3 in #4729's taxonomy — the linear algebra itself is
+float64 (`trace=float(np.trace(Om))`). Not a serialization split; a port. They
+are 78% of the remaining fields and none of this batch's technique applies.
+
+### Reproducibility defects found along the way (not float64, but worse)
+
+Recording these because a witness nobody can regenerate is a bigger problem
+than one carrying float64:
+
+  * `ground-state-ordering-argmin-sweep` — producer deletes a published block
+    (above), and its default flag shrinks the sweep.
+  * `atomic-tr-m-mpfr-50dps` — bare run silently degrades to the non-native
+    path; the `--anchor proton` guard is good and DID fire.
+  * `threerow_n12_isospin_control.py` — `import _path_bridge` without putting
+    `computations/` on `sys.path`; fails from every cwd. No witness, untouched.
+  * scipy is undeclared repo-wide (no top-level requirements.txt/pyproject).
