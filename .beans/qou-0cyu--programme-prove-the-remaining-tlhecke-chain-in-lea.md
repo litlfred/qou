@@ -110,3 +110,57 @@ gaps, not lookup failures:
 AGENTS.md:779 -- Lean structure FIRST for any new derivation, before Python or
 prose. Every item above is already a statement, so that is satisfied; keep it
 that way for children of this bean.
+
+## UPDATE -- G1 STARTED, and G2's proof is now fully worked out on paper
+
+QOU/Mathlib/BallotNumbers.lean (NEW, sorry-free, imported from QOU.lean).
+ballot_succ_succ needs only [propext, Quot.sound]; ballot_one only [propext].
+
+    ballot n j = C(n,j) - C(n,j-1)                    (valued in Z)
+    ballot_succ_succ    m_{j+1}(n+1) = m_{j+1}(n) + m_j(n)     THE ENGINE
+    ballot_boundary_zero  m_{j+1}(2j+1) = 0                    THE CRUX
+    ballot_one, ballot_values_{three,four,five}
+    ballot_sq_sum_catalan_small   G5 at n = 3,4,5 vs Mathlib's own `catalan`
+
+## THE FULL G2 PROOF, worked out -- write it up next, do not re-derive it
+
+TARGET   [2]_q^n = sum_{j=0}^{floor(n/2)} m_j(n) * [n - 2j + 1]_q
+
+STEP. Multiply the n-case by [2] and apply qint_three_term
+([m+2] + [m] = [2][m+1], already proved in TemperleyLiebTower):
+
+    [2]^{n+1} = sum_j m_j(n) ([n-2j+2] + [n-2j])
+
+Reindex the second half by j' = j+1, using [n-2j] = [(n+1) - 2(j+1) + 1]:
+
+    = sum_j ( m_j(n) + m_{j-1}(n) ) [n-2j+2]        over j = 0 .. M+1, M = floor(n/2)
+    = sum_j m_j(n+1) [n-2j+2]                       by ballot_succ_succ
+
+RANGE, and this is the ONLY subtle part:
+  * n ODD  -> floor((n+1)/2) = M+1. The derived range matches exactly. Done.
+  * n EVEN, n = 2m -> floor((n+1)/2) = m = M, but the derived sum runs to M+1.
+    The surplus term sits at j = m+1 with coefficient m_{m+1}(2m+1), which is
+    ZERO by ballot_boundary_zero. So it drops and the sums coincide.
+
+So the parity split is REAL -- not an artefact of a clumsy index choice -- and
+ballot_boundary_zero is exactly what resolves it. Both halves of the machinery
+now exist; what remains is Finset bookkeeping over Finset.range (n/2 + 1), which
+is fiddly but has no further mathematical content.
+
+Base case n = 0: [2]^0 = 1 = m_0(0) * [1] = 1 * 1.
+
+## WHY I DID NOT JUST FINISH IT
+
+Honest reason: the remaining work is Finset range manipulation with a parity
+case split, which is a real chunk of Lean and I would rather land the two
+mathematical lemmas verified than a half-finished induction. The pieces are
+proved; the assembly is mechanical and specified above.
+
+## STILL OPEN, unchanged in priority
+
+  1. The WEDDERBURN INSTANCE from Mathlib's Artin-Wedderburn. Still the highest
+     leverage item in this bean, and untouched. QOU/Hecke/** territory.
+  2. G2 assembly, per the recipe above.
+  3. G5 general -- route (b), direct induction on ballot_succ_succ, avoiding
+     RSK. ballot_boundary_zero will very likely be needed there too.
+  4. G3 (Temperley-Lieb) and G4 (Connes/Rieffel) still need their own decision.

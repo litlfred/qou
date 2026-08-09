@@ -83,6 +83,29 @@ theorem ballot_succ_succ (n j : ℕ) :
       push_cast [Nat.choose_succ_succ n (k + 1), Nat.choose_succ_succ n k]
       ring
 
+/-- **The boundary vanishing: `m_{j+1}(2j+1) = 0`.**
+
+`C(2j+1, j+1) = C(2j+1, j)` by binomial symmetry, so the ballot number just past
+the diagonal is zero. Small, and it is precisely what makes G2's induction close
+in the even case.
+
+**Why it is the crux.** Running `[2]ⁿ⁺¹ = [2]·Σ_j m_j(n)[n−2j+1]` through the
+three-term recursion and reindexing produces a sum over `j = 0 … ⌊n/2⌋ + 1`,
+while the target for `n+1` runs to `⌊(n+1)/2⌋`. Those agree when `n` is odd. When
+`n` is even, say `n = 2m`, the derived sum has one term too many — at
+`j = m + 1`, with coefficient `m_{m+1}(2m+1)`. This lemma says that coefficient
+is `0`, so the extra term disappears and the two sums coincide.
+
+So the parity split in G2 is not an artefact of a clumsy index choice; it is
+real, and this is the fact that resolves it. -/
+theorem ballot_boundary_zero (j : ℕ) : ballot (2 * j + 1) (j + 1) = 0 := by
+  have hle : j + 1 ≤ 2 * j + 1 := by omega
+  have hsub : 2 * j + 1 - (j + 1) = j := by omega
+  have hsymm : (2 * j + 1).choose j = (2 * j + 1).choose (j + 1) := by
+    have h := Nat.choose_symm hle
+    rwa [hsub] at h
+  simp [ballot_succ, hsymm]
+
 /-- The first column is all ones: `m_0(n) = 1`, the single tableau of shape `(n)`. -/
 theorem ballot_zero_eq_one (n : ℕ) : ballot n 0 = 1 := rfl
 
