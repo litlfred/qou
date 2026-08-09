@@ -181,3 +181,81 @@ The Dirac operator supplies the EDGE COSTS. So the open QOU question is not
   structure does not connect Reeb-adjacent states, or connects them with
   non-uniform costs that do not match the step count, the identification is
   FALSE and this bean should be closed negative rather than rescued.
+
+## STEP 1 DONE — what the categorical Dirac operator actually supplies
+
+Definition (categorical-dirac-operator.md):
+
+    D_grad = q^-1 grad + (1 - q^-1) iota_xi grad  :  A -> Omega^1(A)
+
+### FINDING 1 — it is a DERIVATION, not a spectral triple. Retarget.
+
+D_grad maps A -> Omega^1(A). That is a first-order DIFFERENTIAL CALCULUS, NOT a
+self-adjoint operator on a Hilbert space. A Connes spectral triple (A, H, D)
+needs H and a self-adjoint D with [D,a] bounded on H. The corpus has no H.
+
+But this is GOOD news, because in NCG the commutator [D,a] REPRESENTS the
+differential "da" -- so D_grad is already playing the role of a |-> [D,a], i.e.
+exactly the object the Lipschitz seminorm is built from:
+
+    L(a) := || D_grad(a) ||_{Omega^1}
+    d(phi,psi) = sup{ |phi(a) - psi(a)| : L(a) <= 1 }
+
+=> THE RIGHT TARGET IS RIEFFEL'S COMPACT QUANTUM METRIC SPACE, not a Connes
+   spectral triple. Rieffel's framework needs a Lip-NORM (a seminorm with
+   Leibniz, kernel = scalars, and the right compactness), NOT a Hilbert space.
+   It is strictly weaker and it is what the corpus already has. Retarget step 3
+   of the plan accordingly: build the Lip-norm, not the triple.
+
+### FINDING 2 — the Reeb coefficient IS hbar_q, identically
+
+    coefficient on grad        q^-1      = 0.90091828395574149216
+    coefficient on Reeb part  (1 - q^-1) = 0.099081716044258507839
+    hbar_q = (q-1)/q                     = 0.099081716044258507839
+    difference                             4.93e-32  (round-off at 30 dps)
+
+(1 - 1/q) = (q-1)/q is an ALGEBRAIC IDENTITY, not a numerical coincidence. So
+hbar_q is structurally THE REEB-DIRECTION WEIGHT IN THE DIRAC OPERATOR -- which
+is precisely a step COST in the sense the transport picture needs. And the two
+coefficients form a CONVEX COMBINATION summing to exactly 1:
+
+    q = 1     -> pure grad (undeformed covariant derivative)
+    q -> inf  -> pure Reeb (contact component)
+    q0        -> 90.09 % grad + 9.908 % Reeb
+
+### BEARING ON qou-adwi (the two incompatible Planck lengths)
+
+This is structural support for the resolution hypothesised there -- that the two
+values are DIFFERENT QUANTITIES, not contradictory values for one:
+
+    hbar_q ~ 0.0991  = the REEB SHARE of the Dirac operator, i.e. a step cost
+    ell_P  == 1      = the TOTAL, i.e. the normalising unit
+
+and the coefficients summing to exactly 1 is the reason. Under a Lipschitz
+normalisation L(a) <= 1 the unit is set by the whole operator, so a Reeb step
+would carry cost proportional to hbar_q within a unit-normalised total.
+
+STATED AS SUPPORT, NOT PROOF. I have shown the coefficients sum to 1 and that
+ell_P == 1; I have NOT shown these are the same 1. Do not close qou-adwi on
+this. It does, however, move the likely resolution from "one of them is wrong"
+to "they are the share and the total".
+
+### REVISED PLAN
+
+  [x] 1. Extract the edge/hopping structure -- DONE. It is a derivation into
+         1-forms with a q^-1 / hbar_q split between gradient and Reeb parts.
+  [ ] 2. Identify the STATE SET (fibre states? the Ch 10 knot eigenbasis?).
+         Still the blocking unknown -- no distance is well-posed without it.
+  [ ] 3. RETARGETED: build the Rieffel LIP-NORM L(a) = ||D_grad a||, verify the
+         Lip-norm axioms (Leibniz; kernel = scalars). NOT a spectral triple.
+  [ ] 4. Compute d and compare to the Reeb step count.
+  [ ] 5. Lean the finite case.
+  [ ] 6. Only then ask about a position-space density.
+
+  NEW SUB-QUESTION from Finding 2: because D_grad is a CONVEX COMBINATION of a
+  gradient part and a Reeb part, the induced metric is NOT purely the Reeb step
+  count -- it also sees the gradient direction, at 9x the weight. So the naive
+  target "d_Connes = minimal Reeb step count" is probably WRONG as stated: it
+  should be the Reeb count only in the q -> infinity limit, where D_grad ->
+  iota_xi grad. At q0 the metric mixes both. Revise the target theorem before
+  attempting it.
