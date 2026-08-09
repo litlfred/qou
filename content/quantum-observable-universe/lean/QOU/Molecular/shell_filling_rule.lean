@@ -146,4 +146,44 @@ theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :
   ⟨shell_filling_inner_shells, shell_filling_hund_rule,
    shell_filling_lp_strong_duality⟩
 
+/-- **Refutable as written.** The class bounds `occupancy ≤ capacity`; the
+    theorem asserts *equality*. Carrying hypotheses is not enough — they must
+    be strong enough for the conclusion (bean qou-octr, §10). -/
+theorem shell_filling_inner_shells_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 2, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 0 } 1 (by norm_num)
+  norm_num at this
+
+/-- **Refutable as written** — the class never relates the fields the
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`). -/
+theorem shell_filling_hund_rule_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Bool, ground := false,
+              singly := fun b => if b then 1 else 0,
+              y_0 := 0, primal_obj := 0 } true
+  norm_num at this
+
+/-- **Refutable as written** — the class never relates the fields the
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`). -/
+theorem shell_filling_lp_strong_duality_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ, ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 1 }
+  norm_num at this
+
 end QOU.Molecular

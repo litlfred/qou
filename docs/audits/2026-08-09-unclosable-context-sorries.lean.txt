@@ -116,3 +116,90 @@ theorem confinement_frobenius_unconstrained_false :
   norm_num at this
 
 end RefuteProbe4
+import QOU.Molecular.shell_filling_rule
+import QOU.BraidsKnots.mobius_frobenius_kernel
+
+namespace RefuteProbe5
+
+open QOU.Molecular
+
+/-- The class bounds `occupancy ≤ capacity` but the theorem asserts *equality*
+    below `n_val`. An instance with empty shells satisfies every field. -/
+theorem shell_filling_inner_shells_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 2, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 0 } 1 (by norm_num)
+  norm_num at this
+
+/-- `ground` and `singly` are unrelated fields: make the ground state the one
+    with fewer singly-occupied orbitals. -/
+theorem shell_filling_hund_rule_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Bool, ground := false,
+              singly := fun b => if b then 1 else 0,
+              y_0 := 0, primal_obj := 0 } true
+  norm_num at this
+
+end RefuteProbe5
+import QOU.BraidsKnots.mobius_frobenius_kernel
+
+namespace RefuteProbe6
+open QOU.BraidsKnots
+
+/-- `K_FH` is a free field: take it identically zero. The limit is then `0`,
+    but the claimed limit is `1/‖γ s − γ t‖² = 1`. -/
+theorem mobius_frobenius_kernel_unconstrained_false :
+    ¬ ∀ (ctx : MobiusFrobeniusKernelContext ℝ) (s t : ℝ), ctx.γ s ≠ ctx.γ t →
+        Filter.Tendsto (fun q => ctx.K_FH q s t)
+          (nhdsWithin 1 {q : ℝ | q ≠ 1})
+          (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
+  intro h
+  haveI : (nhdsWithin (1 : ℝ) {q : ℝ | q ≠ 1}).NeBot := by
+    have hset : {q : ℝ | q ≠ 1} = ({1} : Set ℝ)ᶜ := rfl
+    rw [hset]; infer_instance
+  have ht := h { γ := id, K_FH := fun _ _ _ => 0 } 0 1 (by norm_num)
+  have : (0 : ℝ) = 1 / ‖(0 : ℝ) - 1‖ ^ 2 :=
+    tendsto_nhds_unique tendsto_const_nhds ht
+  norm_num at this
+
+end RefuteProbe6
+import QOU.Molecular.shell_filling_rule
+import QOU.ParticleInteractions.operator_selection_lp
+
+namespace RefuteProbe7
+open QOU.Molecular QOU.ParticleInteractions
+
+/-- `primal_obj`, `Z` and `y_0` are unrelated fields. -/
+theorem shell_filling_lp_strong_duality_unconstrained_false :
+    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+        ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
+  intro h
+  have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
+              capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
+              occupancy_le_capacity := fun _ => Nat.zero_le _,
+              ValenceConfig := Unit, ground := (), singly := fun _ => 0,
+              y_0 := 0, primal_obj := 1 }
+  norm_num at this
+
+/-- With `d = 0` the objective is an empty sum; `n_target * y_0_star` is not. -/
+theorem operator_selection_lp_unconstrained_false :
+    ¬ ∀ ctx : OperatorSelectionLpContext ℝ,
+        OperatorSelectionLpContext.objective ctx.x_star
+          = ctx.n_target * ctx.y_0_star := by
+  intro h
+  have := h { n := 0, d := 0, n_target := 1, t := fun i => i.elim0,
+              G := fun i => i.elim0, x_star := fun i => i.elim0,
+              y_0_star := 1 }
+  simp [OperatorSelectionLpContext.objective] at this
+
+end RefuteProbe7
