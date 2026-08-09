@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T07:00:00Z
+updated_at: 2026-08-09T08:00:00Z
 ---
 
 ## Why this bean exists
@@ -401,3 +401,54 @@ Two things, and neither is the `sqrt(N)`:
 
 So: `<4_1>_N <= C sqrt(N) g_{k*}` is NOT yet a theorem. Both windows are, and
 they are the part that carries the `sqrt(N)`.
+
+## Landed: the region BELOW the secant window. 2026-08-09
+
+`kashaevProd_le_max_of_le`, `sum_kashaevProd_below_window_le`,
+`sq_le_kashaevProd_argmax` -- all sorry-free.
+
+    kashaevProd N k <= max 1 (kashaevProd N w)          for k <= w <= 5N/6
+    sum_{k<w} kashaevProd N k <= w * max 1 (kashaevProd N w)
+    N^2 <= kashaevProd N (5N/6)
+
+**No analysis at all in this part.** Below `theta = 2pi/3` the secant is invalid,
+but nothing analytic is needed there: the DOWN-UP-DOWN shape from
+`KashaevArgmax` says every term is dominated by one of the two ENDS of that
+stretch -- `kashaevProd N 0 = 1` on the falling part, `kashaevProd N w` on the
+rising part -- and `max` of the two covers both cases in one statement. Pure
+monotonicity runs.
+
+`sq_le_kashaevProd_argmax` sharpens `one_le_kashaevProd_argmax` from `1` to
+`N^2`, which is the same proof (fall from `k*` to `N-1`, where
+`kashaevProd_endpoint` gives exactly `N^2`) read one line earlier. It is what
+makes the `k <= N/6` terms, each `<= 1`, negligible against the peak.
+
+### THE REGION DECOMPOSITION IS NOW COMPLETE; the bound is not
+
+Four regions of `range N`, all with sorry-free bounds:
+
+    k < w                sum_kashaevProd_below_window_le   w * max 1 g_w
+    w <= k <= k*         sum_kashaevProd_left_window_le    g_{k*}(2 + sqrt(sqrt3 N)/2)
+    k* <= k < N          sum_kashaevProd_right_le          g_{k*}(2 + sqrt(N/sqrt3)/2)
+
+What is NOT proved is the arithmetic that turns the first line into `C g_{k*}`:
+
+  * `w := ceil(2N/3)`, so `D := k* - w >= (N-9)/6`;
+  * `g_w <= g_{k*} exp(-pi D(D-1)/(sqrt3 N))` (`kashaevProd_left_tail`);
+  * `e^{-x} <= 1/x` (from `Real.add_one_le_exp`) turns that into
+    `g_w <= g_{k*} sqrt3 N/(pi D(D-1))`;
+  * so `w * g_w <= g_{k*} * 36 sqrt3 N^2/(pi (N-9)(N-15))`, which is `<= 32`
+    for `N >= 62` (checked by hand: with `sqrt3 <= 1.8` and `pi >= 3.14` the
+    inequality is `35.68 N^2 - 2411.5 N + 13564.8 >= 0`, larger root ~61.6);
+  * and `w * 1 <= N <= g_{k*}/N` from `sq_le_kashaevProd_argmax`.
+
+That is a numeric grind with an explicit threshold, not a missing idea. It is
+deliberately NOT waved through here: `<4_1>_N <= C sqrt(N) g_{k*}` is still not
+a theorem, and neither is any statement about `<4_1>_N` itself.
+
+Also still missing, and more important: the matching LOWER bound. Only the
+single largest term is available. An upper bound alone gives an inequality, not
+a value for `c_sigma`. The lower bound needs the mirror-image pointwise
+inequalities -- a SECANT above `theta*` (where the tangent is an upper bound)
+and the TANGENT below it -- plus `AntitoneOn.integral_le_sum` for the Gaussian
+sum in the other direction.

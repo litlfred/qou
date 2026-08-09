@@ -558,4 +558,65 @@ theorem sum_kashaevProd_left_window_le {N : ℕ} (hN : 6 ≤ N) (m : ℕ)
     field_simp
   rwa [hval] at hb
 
+/-! ## Part 6 — the region below the secant window
+
+`sum_kashaevProd_left_window_le` reaches down only to `θ = 2π/3`; below that the
+secant is no longer valid.  What is there instead is the DOWN–UP–DOWN shape:
+the sequence falls on `[0, ⌊N/6⌋]` and rises on `[⌈N/6⌉, w]`, so every term is
+dominated by one of the two ENDS of that stretch.  No analysis is needed, only
+the monotonicity runs from `KashaevArgmax`. -/
+
+/-- Below the window, every term is dominated by an endpoint: `g_k ≤ max 1 g_w`
+for `k ≤ w ≤ 5N/6`.  `1 = kashaevProd N 0` covers the falling stretch and `g_w`
+the rising one. -/
+theorem kashaevProd_le_max_of_le {N k w : ℕ} (hN : N ≠ 0) (hkw : k ≤ w)
+    (hw : 6 * w ≤ 5 * N) :
+    kashaevProd N k ≤ max 1 (kashaevProd N w) := by
+  rcases le_or_gt (6 * k) N with hlow | hhigh
+  · have h := kashaevProd_le_of_falling_small hN (Nat.zero_le k) (fun j _ hj2 => by
+      have hj : 6 * j ≤ N := by omega
+      exact_mod_cast hj)
+    rw [kashaevProd_zero] at h
+    exact le_trans h (le_max_left _ _)
+  · have h := kashaevProd_le_of_rising hN hkw (fun j hj1 hj2 => ⟨by
+      have hj : N ≤ 6 * j := by omega
+      exact_mod_cast hj, by
+      have hj : 6 * j ≤ 5 * N := by omega
+      exact_mod_cast hj⟩)
+    exact le_trans h (le_max_right _ _)
+
+/-- **The whole region below the secant window is at most `w · max 1 g_w`.**
+
+That is `O(N)` times an endpoint value, not `O(√N)` times the peak — but the
+endpoint `g_w` is itself exponentially below the peak (`kashaevProd_left_tail`
+at distance `k* − w ≈ N/6`), so the region contributes `O(1)` relative to
+`g_{k*}` rather than `O(√N)`.  Turning that into a single numeric constant is
+arithmetic over `e^{−x} ≤ 1/x` and `N² ≤ g_{k*}`; it is NOT done here, and this
+lemma alone does not bound `⟨4₁⟩_N`. -/
+theorem sum_kashaevProd_below_window_le {N w : ℕ} (hN : N ≠ 0) (hw : 6 * w ≤ 5 * N) :
+    ∑ k ∈ Finset.range w, kashaevProd N k
+      ≤ (w : ℝ) * max 1 (kashaevProd N w) := by
+  calc ∑ k ∈ Finset.range w, kashaevProd N k
+      ≤ ∑ _k ∈ Finset.range w, max 1 (kashaevProd N w) :=
+        Finset.sum_le_sum (fun k hk =>
+          kashaevProd_le_max_of_le hN (le_of_lt (Finset.mem_range.mp hk)) hw)
+    _ = (w : ℝ) * max 1 (kashaevProd N w) := by
+        rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul]
+
+/-- `N² ≤ kashaevProd N ⌊5N/6⌋` — the peak dominates the exact endpoint value
+`kashaevProd N (N−1) = N²`.  Sharper than `one_le_kashaevProd_argmax`, and it
+is what makes the `k ≤ N/6` terms (each `≤ 1`) negligible against the peak. -/
+theorem sq_le_kashaevProd_argmax {N : ℕ} (hN : 6 ≤ N) :
+    ((N : ℝ)) ^ 2 ≤ kashaevProd N (5 * N / 6) := by
+  have hN0 : N ≠ 0 := by omega
+  have hks : 5 * N / 6 < N := by
+    rw [Nat.div_lt_iff_lt_mul (by norm_num)]; omega
+  have hdiv := Nat.div_add_mod (5 * N) 6
+  have hmod : 5 * N % 6 < 6 := Nat.mod_lt _ (by norm_num)
+  have hfall : kashaevProd N (N - 1) ≤ kashaevProd N (5 * N / 6) := by
+    refine kashaevProd_le_of_falling hN0 (by omega) (by omega) (fun j hj1 _ => ?_)
+    have hj : 5 * N < 6 * j := by omega
+    exact_mod_cast Nat.le_of_lt hj
+  rwa [kashaevProd_endpoint hN0] at hfall
+
 end QOU.Knot.FigureEightVolume
