@@ -95,4 +95,17 @@ theorem neutron_proton_splitting [ctx : NeutronProtonSplittingContext] :
   -- Not yet in Lean (compute: dilog-volume pipeline in computations/).
   sorry
 
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem neutron_proton_splitting_unconstrained_false :
+    ¬ ∀ ctx : NeutronProtonSplittingContext,
+        ctx.m_n - ctx.m_p = ctx.α * |ctx.Φ_udd - ctx.Φ_uud| := by
+  intro h
+  have := h { α := 0, Φ_uud := 0, Φ_udd := 0, m_p := 0, m_n := 1 }
+  norm_num at this
+
 end QOU.Torsion

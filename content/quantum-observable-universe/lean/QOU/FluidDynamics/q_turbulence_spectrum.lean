@@ -138,6 +138,21 @@ theorem finite_cascade_depth :
     (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
   sorry
 
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem finite_cascade_depth_unconstrained_false :
+    ¬ ∀ ctx : QTurbulenceSpectrumContext,
+        (ctx.N_modes : ℝ) ≤ (3 : ℝ) / 4 * Real.log ctx.Re_q / Real.log ctx.q := by
+  intro h
+  have := h { q := 2, q_gt_one := by norm_num, Re_q := 2 / (2 - 1), Re_q_eq := rfl,
+              N_modes := 1000000, ε := 1, ε_pos := by norm_num,
+              C_q := 1, C_q_pos := by norm_num }
+  norm_num at this
+
 end QTurbulence
 
 /-- **q-deformed energy cascade and modified Kolmogorov spectrum**
