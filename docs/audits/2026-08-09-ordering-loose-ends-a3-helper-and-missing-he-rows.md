@@ -14,7 +14,7 @@ did not settle either.
 > owner decision and is not taken here.
 
 Probe: [`ground_state_ordering_a3_probe.py`](../../computations/probes/ground_state_ordering_a3_probe.py)
-→ `ground-state-ordering-a3.witness.json`. `free_parameters = 0`; q₀ =
+→ [`computations/probes/ground-state-ordering-a3.witness.json`](../../computations/probes/ground-state-ordering-a3.witness.json). `free_parameters = 0`; q₀ =
 experimental proton anchor; layer-pure; nothing wired.
 Lean: [`QOU/MassTheory/TransferFactorCommute.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/TransferFactorCommute.lean)
 — sorry-free, zero warnings, `#print axioms = [propext]` on all ten
