@@ -47,9 +47,23 @@ forces `μ ≤ 1/2` (`mu_le_half`) and hence
     B_bond = −α·log μ  ≥  α·log 2  =  2.90150117984 MeV,
 
 against `B_AME(²H) = 2.224566` — **30.43 % below**. This holds for every `q`,
-every crossing convention, every multiplicity, and every `N` in an `SU(N)`
-choice of `z` (larger `N` shrinks `z` and *increases* the floor). It is
-therefore no longer a statement about the interface at all: contrapositively
+every crossing convention, and every multiplicity — **but only for a `z` of the
+form `1/(x + x⁻¹)`**, which is where AM-GM bites.
+
+> **SCOPE CORRECTION 2026-08-09.** This paragraph previously added "and every
+> `N` in an `SU(N)` choice of `z` (larger `N` shrinks `z` and *increases* the
+> floor)". **That is false**, and it mattered. It assumed the `SU(N)` family is
+> `z = 1/[N]`, which it is not — the `SU(N)` weights are quantum dimensions
+> (hook-content), and the `SU(2)` member is registry convention **D** at
+> `z = q³/(q²+1) = 0.6126880 > 1/2`. `markov_param_le_half` does not apply to
+> it, so neither does the floor. Measured under D the admissible band is
+> `[2.0507, 3.7978] MeV` and `B_AME(²H) = 2.224566` lies **inside** it, with the
+> required offset `d = −0.1192·h` admissible. The impossibility below is
+> therefore specific to convention **C**, the production binding trace, not a
+> statement about Markov traces in general. See `computations/y_lambda_su_n.py`
+> and `docs/coordination/trace-convention-registry.md`.
+
+Within convention C it stands, and contrapositively
 (`alpha_upper_bound`), the deuteron is reachable only if
 
     α  ≤  B_AME(²H)/log 2  =  3.2093703 MeV,

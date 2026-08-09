@@ -309,3 +309,59 @@ move from 2 to 3 — it is being asked to move from a non-SU(N) point to 3.
 
 Nothing wired. The module is the weight function the flavour channel would need,
 plus the measurement of where C actually sits.
+
+## What happens under convention D — the impossibility is C-SPECIFIC
+
+Asked directly, and it changes the headline. Registry channels:
+
+    mass     definitional C, production D  -> DISPUTED (bean qou-3qrv, OWNER decision,
+                                              agents explicitly forbidden from switching)
+    binding  C / C                         -> agreed   <- where all of the above lives
+
+So C is "out" for MASS but is current for BINDING. Recomputed the binding
+channel under D (actual D weights on the 6-strand word, not just the closed
+form; 7 of 11 blocks vanish under D, normalisation still exactly 1, and the
+closed form tr_atom = tr_free*(z+d) still holds to 2.56e-42):
+
+    convention   z            admissible B band       AME 2.224566
+    C            0.4993203    [2.9071952, 5.1779672]  OUTSIDE, 30.4% below floor
+    D            0.6126880    [2.0507097, 3.7977829]  INSIDE
+
+**Under D the deuteron is reachable.** Required d = -0.0249256 = -0.1192*h,
+comfortably inside [-h, 0]. The reason is exact: z_C = 1/(x+1/x) <= 1/2 by
+AM-GM, which is what `markov_param_le_half` and `bond_energy_floor` rest on;
+z_D = q^3/(q^2+1) = 0.6127 > 1/2, so the theorem simply does not apply.
+
+CORRECTED IN THE LEAN AS A RESULT. The `bond_energy_floor` docstring claimed the
+floor holds "for every N in an SU(N) choice of z (larger N shrinks z and
+increases the floor)". FALSE — that assumed the family is z = 1/[N]. SU(2) IS
+convention D at z = 0.6127 > 1/2. The theorems are unaffected; the scope claim
+was wrong and is now marked. The impossibility is specific to convention C.
+
+### But D is NOT better, and must not be adopted on this basis
+
+    atom     B_C     errC %      B_D     errD %     B_AME
+    2H     3.8897    +74.85    2.8332    +27.36    2.224566
+    3H     9.0677     +6.91    6.6309    -21.82    8.481798
+    3He    6.7969    -11.94    4.8839    -36.72    7.718043
+    4He   11.9749    -57.68    8.6817    -69.32   28.295673
+    6Li   20.0600    -37.30   14.5301    -54.59   31.994564
+    7Li   25.2380    -35.69   18.3279    -53.30   39.244524
+
+    mean |err|   C 37.39 %   D 43.85 %      mirror split: C 2.2708, D 1.7471 (nature 0.7638)
+
+D fixes 2H's REACHABILITY and improves the mirror split, but under-binds
+everywhere else and is worse on average. The registry's own rule applies with
+full force here: "D is the value that lands on CODATA, which is precisely why
+deciding by match is forbidden." The same forbids adopting D for binding because
+it flatters 2H.
+
+WHAT IS ACTUALLY LEARNED: the 2H impossibility I proved is a property of
+convention C, not of the framework. That converts the headline from "no Markov
+trace can bind the deuteron" to "**the production binding trace cannot, and a
+neighbouring one can**" — which makes the convention choice load-bearing physics
+rather than bookkeeping, and puts it in the same owner-decision class as the
+already-disputed mass channel.
+
+- [ ] does the binding channel's C assignment have a forcing argument, or is it
+      inherited from the definitional doc the way the mass channel's was?
