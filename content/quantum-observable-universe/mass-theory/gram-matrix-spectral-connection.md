@@ -1,19 +1,54 @@
 **Remark (where the Gram matrix fits in the spectral-sequence /
 Frobenius framework).**
 
+> **Read every $G^{-1}$ below on $H_n/\mathrm{rad} \cong \mathrm{TL}_n$, not on
+> $H_n$.** Corrected 2026-08-09. This remark was written under the excised
+> **convention C**, where the antisymmetric weight
+> $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero and $G$ genuinely inverts.
+> Under the production **convention D** the pin $z(q^2+1) = q^3$ forces
+> $y_{(1^3)} = 0$ *exactly*, so the $(1^3)$ block **is** the radical of the trace
+> form and $\det G = 0$. Not "numerically singular" — zero. A $G^{-1}$ computed
+> under C is therefore not an approximation to one under D; the D one does not
+> exist.
+>
+> **This remark already contains its own refutation.** The Wedderburn paragraph
+> below derives $G_{\lambda\mu} = \delta_{\lambda\mu}\,\tau(e_\lambda)$ — block
+> diagonal with the *weights themselves* on the diagonal. So
+> $\det G = \prod_\lambda \tau(e_\lambda)^{\,\cdot}$, and convention D sends one
+> factor to zero. The very next line then writes down
+> $G^{-1}_{\lambda\mu} = \delta_{\lambda\mu}\,[n]_q!/(\dim_q(\lambda)\dim(\lambda))$,
+> which for that block is a division by zero.
+>
+> Nothing structural is lost, only relocated. The radical is a two-sided ideal
+> ([`TemperleyLiebTower.traceRadical_two_sided`](../lean/QOU/QBeta/TemperleyLiebTower.lean)),
+> so $\mathrm{tr}_M$ descends and the induced pairing on the quotient **is**
+> non-degenerate. Ranks: $\mathrm{corank}\,G = 1$ at $n = 3$, $10 = 3^2 + 1^2$ at
+> $n = 4$, $78 = 6^2+5^2+4^2+1^2$ at $n = 5$; what survives is
+> $\sum \dim^2 = C_n$ — the Catalan numbers $5, 14, 42$.
+>
+> Proved in
+> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
+> `block_mem_radical` → `gram_det_eq_zero_of_radical_combination` for the
+> vanishing, `pairing_descends` and `mem_radical_of_pairing_zero` for the
+> descent. Sorry-free.
+
 **Role of the Gram matrix.**
 *The **Gram matrix** $G$ of the Markov pairing is the common
 algebraic object that encodes:*
 
-1. *The **Frobenius algebra structure** of $H_n(R, q)$: the pairing
+1. *The **Frobenius algebra structure** of the **quotient**
+   $H_n(R, q)/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$: the pairing
    $\langle x, y \rangle_\tau := \tau(x \cdot y)$ is non-degenerate
    iff $\det G \neq 0$
-   ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)).*
-2. *The **inverse** $G^{-1}$ enters the **Frobenius co-Casimir**
+   ([Frobenius Gram matrix](#prop:frobenius-gram-matrix)). Under **convention
+   D** that holds on the quotient and **fails on $H_n$ itself**, where
+   $\det G = 0$ exactly — see the correction above.*
+2. *The **inverse** $G^{-1}$ — which exists on that quotient, **not** on $H_n$
+   (**convention D**) — enters the **Frobenius co-Casimir**
    ([Frobenius universal](#thm:frobenius-codim-universal)):
    $C_{\dim_q} = \sum_{i, j} (G^{-1})_{ij} \cdot b_i \cdot b_j$
    in a non-central-idempotent basis (standard Frobenius
-   identity).*
+   identity), with $i, j$ running over the two-row stratum only.*
 3. *The **spectral-sequence pairing**: each $E_\infty^{p, *}$ is
    paired with $\mathrm{tr}_M$ via the Gram matrix restricted to
    the stratum — so $E_\infty^{p, *}(T_w) \to R$ is really
@@ -30,7 +65,7 @@ algebraic object that encodes:*
 |---|---|
 | Term 1 (descended) | $G_{T_w, \mathbf{1}} = \tau(T_w)$ — single matrix entry |
 | Term 2, 3 (brane tower) | $G_{\sigma_i, \sigma_i} = \tau(\sigma_i^2) = hz + 1$; pair $G_{\sigma_i \sigma_j, \sigma_j \sigma_i}$ |
-| Term 4 (Frobenius co-Casimir) | $\tau(C_{\dim_q}) = \mathrm{tr}(G^{-1} \cdot D)$ where $D_{ij} = \delta_{ij}/\dim_q$ per block basis |
+| Term 4 (Frobenius co-Casimir) | $\tau(C_{\dim_q}) = \mathrm{tr}(G^{-1} \cdot D)$ where $D_{ij} = \delta_{ij}/\dim_q$ per block basis — on the non-degenerate quotient $H_n/\mathrm{rad} \cong \mathrm{TL}_n$ (**convention D**; $G$ is singular on $H_n$) |
 | Term 5 (chirality) | $a_K = G_{\beta, \beta^*} / G_{\mathbf{1}, \mathbf{1}}$ |
 | Term 6 (jet-prefix) | $G$ restricted to higher filtration strata |
 
@@ -64,20 +99,41 @@ $$
   \end{pmatrix},
 $$
 
-*with off-diagonal entries computed via Hecke relations.  At
-$q = q_0$, $\det G \neq 0$ (generically), confirming the
-Frobenius property.*
+*with off-diagonal entries computed via Hecke relations.*
+
+*~~At $q = q_0$, $\det G \neq 0$ (generically), confirming the Frobenius
+property.~~ **Retracted 2026-08-09 — this is the convention-C reading.** Under
+the production convention D, $\det G = 0$ at $q = q_0$ and at every generic $q$:
+the vanishing is forced by the pin $z(q^2+1) = q^3$, not by a coincidence at a
+special point, so "generically" does not rescue it. $H_3$ is **not** a Frobenius
+algebra under $\mathrm{tr}_M$; the $5$-dimensional quotient
+$H_3/\mathrm{rad} \cong \mathrm{TL}_3$ is.*
 
 **Gram $\leftrightarrow$ Wedderburn conjugation.**
 *In the central-idempotent basis $\{e_\lambda\}$, the Gram matrix
 is **block-diagonal**: $G_{\lambda, \mu} = \delta_{\lambda \mu}
 \cdot \tau(e_\lambda^2) = \delta_{\lambda \mu} \cdot \tau(e_\lambda)
 = \delta_{\lambda \mu} \cdot \frac{\dim_q(\lambda) \cdot \dim(\lambda)}{[n]_q!}$.
-The inverse is
+The inverse — on the surviving blocks only, since under **convention D** the
+radical blocks have $\tau(e_\lambda) = 0$ — is
 $G^{-1}_{\lambda, \mu} = \delta_{\lambda \mu} \cdot \frac{[n]_q!}{\dim_q(\lambda) \cdot \dim(\lambda)}$.
 Summing $G^{-1}$ diagonal times $1/\dim_q$ gives exactly the Frobenius
 co-Casimir trace $\sum_\lambda 1/\dim_q(\lambda)$ — recovering
 ([Frobenius universal](#thm:frobenius-codim-universal)).*
+
+***The inversion in the previous sentence is only valid block-by-block on the
+surviving blocks.** The block-diagonal form $G_{\lambda\mu} =
+\delta_{\lambda\mu}\tau(e_\lambda)$ is correct under either convention and is the
+sharpest statement in this remark: it shows $\det G$ is a product of the
+Wedderburn weights, so $G$ inverts **iff every weight is nonzero**. Under the
+excised convention C that held. Under convention D it does not — $y_\lambda = 0$
+for every $\lambda$ with $\ell(\lambda) \geq 3$, since the fibre is the
+two-dimensional fundamental of $\mathrm{SU}_q(2)$ and no three-row partition
+survives Schur–Weyl. For those $\lambda$ the displayed $G^{-1}_{\lambda\lambda}$
+divides by zero, and the co-Casimir sum $\sum_\lambda 1/\dim_q(\lambda)$ must run
+over the two-row stratum only. Restricted there, every statement above stands
+unchanged — which is precisely the sense in which the Frobenius structure
+survives on $\mathrm{TL}_n$.*
 
 *The quantum dimensions $\dim_q(\lambda)$ entering this Wedderburn block structure
 are the Wedderburn-block face of the $q$-Laplacian spectral tower
