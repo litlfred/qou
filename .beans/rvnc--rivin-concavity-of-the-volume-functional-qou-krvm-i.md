@@ -76,14 +76,30 @@ That is the negative-definiteness of the Hessian of `Λ(α)+Λ(β)+Λ(γ)` on th
 tangent space of the constraint, i.e. the mathematical content of Rivin
 concavity for one tetrahedron.
 
-**What is still owed — and it is Mathlib-gap work, tracked in `mlgp`.** The
-analytic half: that the Hessian *is* `diag(−cot α, −cot β, −cot γ)`, i.e.
-`Λ″ = −cot`. `QOU/Knot/Clausen.lean` has the first derivative
-(`hasDerivAt_clausen : Cl₂′(θ) = −log(2 sin(θ/2))`, via FTC); the second
-derivative is one more differentiation and does not exist yet. Mathlib has
-**neither** Clausen nor Lobachevsky at all (checked: no file matches).
+**2026-08-09 later — the ANALYTIC half is done too** (`mlgp` Gap 2 closed), in
+the same file:
 
-Until that lands, `cot_quadratic_pos` is a statement about a quadratic form that
-is *known* to be the Hessian rather than *proved* to be. Do not describe
-`qou-krvm` (iv) as discharged; describe it as half-discharged, with the half
-that is done being the one that was actually in doubt.
+* `hasDerivAt_Lob` — `Λ′(t) = −log(2 sin t)` on `(0, π)`, by chain rule on
+  `Λ(t) = Cl₂(2t)/2` through the corpus's `QOU.Knot.hasDerivAt_Cl_2_series`.
+  The inner factor `2` cancels the `/2` in the normalisation — which is why
+  that normalisation is the standard one.
+* `hasDerivAt_deriv_Lob` — **`Λ″(t) = −cot t`** on `(0, π)`.
+* `deriv_deriv_Lob` — the same as a `deriv` equation.
+
+So the quadratic form in `cot_quadratic_pos` really **is** the Hessian, not a
+form asserted to be one. Verified: `lake build` exit 0 / 3157 jobs with the
+`.olean` deleted first; `#print axioms` standard on all of
+`hasDerivAt_Lob`, `hasDerivAt_deriv_Lob`, `deriv_deriv_Lob`,
+`cot_quadratic_pos` — **and on the corpus inputs I leaned on**,
+`QOU.Knot.hasDerivAt_Cl_2_series` and `QOU.Knot.clausen_eq_series`, which I
+checked rather than took from their docstrings.
+
+**What is STILL owed, and it is now Gap 3 not Gap 2.** The step from "Hessian
+negative definite on the tangent space, pointwise" to "strictly concave on the
+angle-structure polytope". That wants a lemma about concavity on an affine
+slice; check `Mathlib.Analysis.Convex.*` before writing one. Remember the bound
+is pointwise and degenerates at the boundary, so anything wanting a uniform
+modulus will not apply.
+
+So `qou-krvm` (iv) is **not** discharged — but what remains is assembly, not the
+mathematical content, which is done.

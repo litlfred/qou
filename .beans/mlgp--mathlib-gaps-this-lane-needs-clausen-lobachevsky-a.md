@@ -30,7 +30,7 @@ duplication, minimum) and `QOU/Archimedean/BlochWignerLobachevsky.lean` (`Cl_2`,
 **This is upstreamable.** `Cl₂` with its FTC derivative, duplication formula and
 `Λ` normalisation is a clean, self-contained Mathlib contribution.
 
-## Gap 2 — `Λ″ = −cot`, the blocker on Rivin concavity  ← DO THIS FIRST
+## Gap 2 — `Λ″ = −cot` — ✅ **CLOSED 2026-08-09**
 
 `hasDerivAt_clausen : Cl₂′(θ) = −log(2 sin(θ/2))` on `(0, 2π)` exists, sorry-free,
 by `integral_hasDerivAt_right`. Since `Λ(t) = Cl₂(2t)/2`, that gives
@@ -43,8 +43,10 @@ Why it matters: bean `rvnc` proved the *algebraic* half of Rivin concavity
 tangent space). Without `Λ″ = −cot` that is a fact about a quadratic form
 *asserted* to be the Hessian rather than *proved* to be. This closes it.
 
-Deliverables: `hasDerivAt_Lob`, `hasDerivAt_Lob'` (i.e. `deriv^[2] Lob = -cot`),
-on `(0, π)`.
+Delivered in `QOU/Knot/RivinConcavity.lean`: `hasDerivAt_Lob`
+(`Λ′ = −log(2 sin)`), `hasDerivAt_deriv_Lob` (`Λ″ = −cot`), `deriv_deriv_Lob`.
+All on `(0, π)`, sorry-free, standard axioms, build exit 0 / 3157 jobs with the
+`.olean` deleted first. It was short, as predicted. **Next: Gap 3.**
 
 ## Gap 3 — strict concavity on an affine subspace
 
@@ -78,5 +80,5 @@ one and should not be started before Gaps 1–3.
 
 ## Ordering
 
-Gap 2 → Gap 1 (upstream) → Gap 3 → Gap 4 → Gap 5. Gap 2 is small, unblocks `rvnc`,
-and is the only one on the critical path to a *volume* statement.
+~~Gap 2~~ (done) → **Gap 3** (now the critical path) → Gap 1 (upstream) → Gap 4 →
+Gap 5.

@@ -35,10 +35,22 @@
   can exceed `π/2`, so at most one cotangent is negative — the identity is how
   that gets used, and no case split on which angle is obtuse is needed.
 
-  **Not claimed here:** that `Λ″ = −cot` (that is the analytic half, and needs
-  a second derivative of `Cl₂`; `QOU/Knot/Clausen.lean` has the first,
-  `hasDerivAt_clausen`).  Nothing here mentions `Λ`, so nothing here depends on
-  it.  The quadratic-form fact is the reusable piece and is stated on its own.
+  **The analytic half is here too** (bean `qou-mlgp` Gap 2): `hasDerivAt_Lob`
+  gives `Λ′(t) = −log(2 sin t)` and `hasDerivAt_deriv_Lob` gives
+  `Λ″(t) = −cot t`, both on `(0, π)`.  The input is the corpus's own
+  `QOU.Knot.hasDerivAt_Cl_2_series` — Mathlib has **neither** Clausen nor
+  Lobachevsky.  So the quadratic form above really is the Hessian, rather than
+  a form asserted to be one.
+
+  The two halves are kept separate on purpose: `cot_quadratic_pos` mentions no
+  `Λ` and no analysis, so it is reusable on its own.
+
+  **What is still not claimed:** the step from "Hessian negative definite on the
+  tangent space, pointwise" to "strictly concave on the angle-structure
+  polytope" — that is `qou-mlgp` Gap 3, and it wants a Mathlib-shaped lemma about
+  concavity on an affine slice that may or may not exist.  Also nothing here is
+  about a *specific* triangulation; m004/L6a4 have angle-structure polytopes and
+  m015 (5₂) does not (bean `qou-m015`).
 
   ⚠ **The bound is NOT uniform.**  Strict positivity holds pointwise on the open
   simplex and degenerates at the boundary: numerically the normalised minimum
@@ -52,7 +64,10 @@
   --      structures, https://arxiv.org/abs/1004.0440
 -/
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Tactic
+import QOU.Knot.Clausen
+import QOU.Archimedean.BlochWignerLobachevsky
 
 namespace QOU.Knot.Rivin
 
@@ -167,5 +182,77 @@ theorem cot_quadratic_pos {α β γ u v w : ℝ}
   -- divide
   have hden : 0 < Real.sin α * Real.sin β * Real.sin γ := by positivity
   nlinarith [hid, hnum, hden]
+
+/-! ### The analytic half — `Λ′ = −log(2 sin)` and `Λ″ = −cot`
+
+Bean `qou-mlgp` Gap 2.  This is what makes `cot_quadratic_pos` a statement about
+the **Hessian** rather than about a quadratic form merely asserted to be one.
+
+Mathlib has no Clausen and no Lobachevsky function; the corpus supplies both.
+The input is `QOU.Knot.hasDerivAt_Cl_2_series` — `Cl₂′(θ) = −log(2 sin(θ/2))`
+on `(0, 2π)`, sorry-free — and `Λ(t) = Cl₂(2t)/2`, so one chain rule gives `Λ′`
+and one more differentiation gives `Λ″`. -/
+
+/-- **`Λ′(t) = −log(2 sin t)` on `(0, π)`.**
+
+Chain rule on `Λ(t) = Cl₂(2t)/2` through `hasDerivAt_Cl_2_series`: the factor `2`
+from the inner derivative cancels the `/2` in the normalisation, which is exactly
+why this normalisation of the Lobachevsky function is the standard one. -/
+theorem hasDerivAt_Lob {t : ℝ} (h0 : 0 < t) (h1 : t < π) :
+    HasDerivAt QOU.Archimedean.Lob (-Real.log (2 * Real.sin t)) t := by
+  have hinner : HasDerivAt (fun s : ℝ => 2 * s) 2 t := by
+    simpa using (hasDerivAt_id t).const_mul (2 : ℝ)
+  have hout := QOU.Knot.hasDerivAt_Cl_2_series (θ := 2 * t)
+    (by linarith) (by linarith)
+  have hcomp : HasDerivAt (fun s : ℝ => QOU.Archimedean.Cl_2 (2 * s))
+      (-Real.log (2 * Real.sin (2 * t / 2)) * 2) t := hout.comp t hinner
+  rw [show 2 * t / 2 = t by ring] at hcomp
+  have h2 := hcomp.div_const 2
+  rw [show -Real.log (2 * Real.sin t) * 2 / 2 = -Real.log (2 * Real.sin t) by ring] at h2
+  show HasDerivAt (fun s : ℝ => QOU.Archimedean.Cl_2 (2 * s) / 2) _ t
+  exact h2
+
+/-- `d/dt (−log(2 sin t)) = −cot t` on `(0, π)`. -/
+theorem hasDerivAt_neg_log_two_sin {t : ℝ} (h0 : 0 < t) (h1 : t < π) :
+    HasDerivAt (fun s : ℝ => -Real.log (2 * Real.sin s))
+      (-(Real.cos t / Real.sin t)) t := by
+  have hs : Real.sin t ≠ 0 := (Real.sin_pos_of_pos_of_lt_pi h0 h1).ne'
+  have h2s : 2 * Real.sin t ≠ 0 := by
+    simpa using mul_ne_zero (by norm_num : (2:ℝ) ≠ 0) hs
+  have hsin : HasDerivAt (fun s : ℝ => 2 * Real.sin s) (2 * Real.cos t) t :=
+    (Real.hasDerivAt_sin t).const_mul 2
+  have hlog := (Real.hasDerivAt_log h2s).comp t hsin
+  -- `(2 cos t) / (2 sin t) = cos t / sin t`
+  have hval : (2 * Real.sin t)⁻¹ * (2 * Real.cos t) = Real.cos t / Real.sin t := by
+    field_simp
+  rw [hval] at hlog
+  exact hlog.neg
+
+/-- **`Λ″(t) = −cot t` on `(0, π)`** — bean `qou-mlgp` Gap 2, the analytic input
+`qou-krvm` (iv) was missing.
+
+Together with `cot_quadratic_pos` this says: the Hessian of `Λ(α)+Λ(β)+Λ(γ)` is
+`diag(−cot α, −cot β, −cot γ)`, and it is negative definite on the tangent space
+of `α+β+γ = π`.  That is Rivin concavity for one ideal tetrahedron.
+
+⚠ Read the sign, and do not generalise it: `−cot` is negative on `(0, π/2)` and
+**positive** on `(π/2, π)`, so `Λ` is concave on the first and **convex** on the
+second.  The concavity is a property of the constrained sum, never of `Λ`. -/
+theorem hasDerivAt_deriv_Lob {t : ℝ} (h0 : 0 < t) (h1 : t < π) :
+    HasDerivAt (deriv QOU.Archimedean.Lob) (-Real.cot t) t := by
+  have hev : deriv QOU.Archimedean.Lob
+      =ᶠ[nhds t] fun s : ℝ => -Real.log (2 * Real.sin s) := by
+    filter_upwards [Ioo_mem_nhds h0 h1] with s hs
+    exact (hasDerivAt_Lob hs.1 hs.2).deriv
+  have hcot : -Real.cot t = -(Real.cos t / Real.sin t) := by
+    rw [Real.cot_eq_cos_div_sin]
+  rw [hcot]
+  exact (hasDerivAt_neg_log_two_sin h0 h1).congr_of_eventuallyEq hev
+
+/-- The Hessian entry, in the form `cot_quadratic_pos` consumes: the second
+derivative of `Λ` at an angle is `−cot`, so `−Λ″ = cot`. -/
+theorem deriv_deriv_Lob {t : ℝ} (h0 : 0 < t) (h1 : t < π) :
+    deriv (deriv QOU.Archimedean.Lob) t = -Real.cot t :=
+  (hasDerivAt_deriv_Lob h0 h1).deriv
 
 end QOU.Knot.Rivin
