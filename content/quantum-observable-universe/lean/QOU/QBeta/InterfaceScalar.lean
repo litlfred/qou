@@ -5,6 +5,7 @@ import Mathlib.Tactic.Abel
 import Mathlib.Tactic.Linarith
 import Mathlib.Algebra.Algebra.Basic
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
 # The nucleon–nucleon interface is a single scalar, and it has a floor
@@ -28,7 +29,7 @@ Hence the whole interface enters through `μ = a·z + b`, and the per-bond
 log-suppression is `L = −ln μ`. The framework's four whitelisted crossings are
 the `a = 1` cases at `d ∈ {0, −h(½−δ/4), −h/2, −h}`, i.e. `μ ∈ [z−h, z]`.
 
-Three consequences are recorded here.
+Four consequences are recorded here.
 
 `mu_mem_Icc` — the admissible `μ` lies in `[z−h, z]`, so with `−ln` decreasing
 the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. Numerically that is
@@ -36,6 +37,25 @@ the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. Numerically that 
 30.69 %**. `mu_unreachable` is the formal statement that a target above `z` is
 not attained by any admissible offset — no crossing sign, colour weight, or
 multiplicity reaches the deuteron.
+
+`bond_energy_floor` — **the stronger, q-independent form, which supersedes
+`mu_unreachable` as the headline.** The production Markov parameter is
+`z = 1/(q^{1/2} + q^{-1/2})`, and AM-GM (`two_le_add_inv`,
+`markov_param_le_half`) gives `z ≤ 1/2` for *every* `q`. With `d ≤ 0` that
+forces `μ ≤ 1/2` (`mu_le_half`) and hence
+
+    B_bond = −α·log μ  ≥  α·log 2  =  2.90150117984 MeV,
+
+against `B_AME(²H) = 2.224566` — **30.43 % below**. This holds for every `q`,
+every crossing convention, every multiplicity, and every `N` in an `SU(N)`
+choice of `z` (larger `N` shrinks `z` and *increases* the floor). It is
+therefore no longer a statement about the interface at all: contrapositively
+(`alpha_upper_bound`), the deuteron is reachable only if
+
+    α  ≤  B_AME(²H)/log 2  =  3.2093703 MeV,
+
+while the derived `α = m_e/(q₀(q₀−1)) = 4.1859814` exceeds that by 30.43 %.
+Pursued in bean `qou-qlma`.
 
 `charge_independence_iff` — the strong force is charge independent, so a bond
 model must give `L_pp = L_nn`. With `d_pp = 0` (σ) and `d_nn = −h` (σ⁻¹) that
@@ -157,7 +177,63 @@ sends `(a, b) = (1, 0)` to `(h, 1)`, whose scalar `h·z + 1` exceeds `1` wheneve
 theorem stacked_crossing_gt_one (z h : R) (hz : 0 < z) (hh : 0 < h) :
     1 < h * z + 1 := by nlinarith
 
+/-- **AM-GM on the Markov parameter.** `2 ≤ x + x⁻¹` for every `x > 0`, since
+`x + x⁻¹ - 2 = (x-1)²/x ≥ 0`. -/
+theorem two_le_add_inv (x : R) (hx : 0 < x) : 2 ≤ x + x⁻¹ := by
+  have key : x + x⁻¹ - 2 = (x - 1) ^ 2 / x := by field_simp; ring
+  have hnn : 0 ≤ (x - 1) ^ 2 / x := by positivity
+  linarith [key ▸ hnn]
+
+/-- **`z ≤ 1/2` for every q.** The production Markov parameter is
+`z_m = 1/(q^{1/2} + q^{-1/2})`; with `x = √q₀` that is `(x + x⁻¹)⁻¹`, bounded by
+`1/2` unconditionally. Wenzl positivity (`q^{1/2} + q^{-1/2} > 2`, already
+required by the corpus) makes it strict. -/
+theorem markov_param_le_half (x : R) (hx : 0 < x) : (x + x⁻¹)⁻¹ ≤ 1 / 2 := by
+  have h2 : (2 : R) ≤ x + x⁻¹ := two_le_add_inv x hx
+  have hpos : (0 : R) < x + x⁻¹ := by positivity
+  rw [inv_eq_one_div]
+  exact one_div_le_one_div_of_le (by norm_num) h2
+
+/-- Every admissible interface scalar is at most `1/2`: `d ≤ 0` from the Hecke
+range, `z ≤ 1/2` from AM-GM. -/
+theorem mu_le_half (z d : R) (hz : z ≤ 1 / 2) (hd : d ≤ 0) : z + d ≤ 1 / 2 := by
+  linarith
+
 end Ordered
+
+section EnergyFloor
+
+/-- **The universal binding floor.** Combining `mu_le_half` with the fact that
+`-log` is decreasing: for any admissible interface scalar,
+
+    B_bond = -α·log μ  ≥  α·log 2.
+
+Numerically `α·log 2 = 2.90150117984 MeV` while `B_AME(²H) = 2.224566`, which is
+**30.43% below the floor**. Unlike `mu_unreachable`, which was stated at the
+actual `z`, this holds for *every* `q`, every crossing convention, every
+multiplicity, and every `N` in an `SU(N)` choice of `z` — so it is a statement
+about **α**, not about the interface.
+
+Contrapositive, and the reason bean `qou-qlma` exists: the deuteron is reachable
+at all only if `α ≤ B_AME(²H)/log 2 = 3.2093703 MeV`. The derived
+`α = m_e/(q₀(q₀−1)) = 4.1859814` exceeds that by 30.43%.
+
+Stated over `ℝ` rather than a generic ordered field because `Real.log` is
+genuinely required here — this is not a gratuitous `ℝ` in the sense of §7c. -/
+theorem bond_energy_floor (a mu : ℝ) (ha : 0 < a) (hmu : 0 < mu)
+    (h : mu ≤ 1 / 2) : a * Real.log 2 ≤ -a * Real.log mu := by
+  have hlog : Real.log mu ≤ Real.log (1 / 2) := Real.log_le_log hmu h
+  have hhalf : Real.log (1 / 2) = -Real.log 2 := by
+    rw [one_div, Real.log_inv]
+  nlinarith [hlog, hhalf]
+
+/-- The contrapositive as a bound on the energy scale: if the observed bond
+energy is below `α·log 2`, then `α` is too large to be the interface scale. -/
+theorem alpha_upper_bound (a mu B : ℝ) (ha : 0 < a) (hmu : 0 < mu)
+    (h : mu ≤ 1 / 2) (hB : -a * Real.log mu = B) : a * Real.log 2 ≤ B := by
+  rw [← hB]; exact bond_energy_floor a mu ha hmu h
+
+end EnergyFloor
 
 section Projectors
 
