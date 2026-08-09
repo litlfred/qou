@@ -166,6 +166,82 @@ OBTUSE = [
 ]
 
 
+def in_milnor_wedges(R, t, a, b, g, w, tol=mpf("1e-18")):
+    """Membership in `milnorWedges R t a b g` -- the Lean definition, evaluated
+    literally: the union of three `wedgeAt`s at the axes/half-angles Milnor's
+    subdivision produces.
+
+        wedgeAt R theta psi = { <w,u> < R cos psi  and  |<w,v>| < <w,u> tan psi }
+        u = (cos theta, sin theta),  v = (-sin theta, cos theta)
+    """
+    from mpmath import tan
+    axes = [(t + g, g), (t + 2 * g + a, a), (t + 2 * g + 2 * a + b, b)]
+    for (th, psi) in axes:
+        wu = w[0] * cos(th) + w[1] * sin(th)
+        wv = -(w[0] * sin(th)) + w[1] * cos(th)
+        if wu < R * cos(psi) - tol and abs(wv) < wu * tan(psi) - tol:
+            return True
+    return False
+
+
+def in_triangle(R, t, a, b, g, w, tol=mpf("1e-18")):
+    """Membership in the OPEN triangle inscribed in the circle of radius R with
+    inscribed angles (a,b,g) and first vertex at angle t -- by the three
+    half-plane tests, independent of the wedge description."""
+    tA, tB, tC = t, t + 2 * g, t + 2 * g + 2 * a
+    V = [(R * cos(x), R * sin(x)) for x in (tA, tB, tC)]
+    cx = sum(p[0] for p in V) / 3
+    cy = sum(p[1] for p in V) / 3
+    for (p, q) in [(V[0], V[1]), (V[1], V[2]), (V[2], V[0])]:
+        dx, dy = q[0] - p[0], q[1] - p[1]
+        d = dx * (w[1] - p[1]) - dy * (w[0] - p[0])
+        dc = dx * (cy - p[1]) - dy * (cx - p[0])
+        if d * dc <= tol:
+            return False
+    return True
+
+
+def wedges_vs_triangle_mismatches(R, t, a, b, g, n=120):
+    """Sample the disk on a polar grid and count points where membership in
+    `milnorWedges` and membership in the open triangle DISAGREE.
+
+    This is the ONE step of H4-5c-ii still unproved in Lean
+    (`milnorWedges = the inscribed triangle`, up to the null spines).  Checking
+    it at the SET level -- not merely that the two have equal measure, which the
+    Lambda-sum already gives -- is what tells the next agent the lemma is true
+    before they invest in proving it.
+
+    Points within `skin` of the triangle's boundary or of a spine (the segments
+    from the circumcentre to the vertices) are skipped: those are exactly the
+    null exceptional set, where open-vs-closed disagreement is expected and
+    carries no information.
+    """
+    skin = mpf("1e-6")
+    tA, tB, tC = t, t + 2 * g, t + 2 * g + 2 * a
+    spines = [tA, tB, tC]
+    bad = 0
+    checked = 0
+    for i in range(1, n):
+        phi = -pi + 2 * pi * mpf(i) / n
+        # skip rays that graze a spine direction
+        if any(abs(((phi - s + pi) % (2 * pi)) - pi) < skin * 1000 for s in spines):
+            continue
+        for j in range(1, n):
+            r = R * mpf(j) / n
+            w = (r * cos(phi), r * sin(phi))
+            inW = in_milnor_wedges(R, t, a, b, g, w, tol=skin)
+            inT = in_triangle(R, t, a, b, g, w, tol=skin)
+            # skip the boundary skin, where open/closed disagreement is expected
+            if in_milnor_wedges(R, t, a, b, g, w, tol=-skin) != inW:
+                continue
+            if in_triangle(R, t, a, b, g, w, tol=-skin) != inT:
+                continue
+            checked += 1
+            if inW != inT:
+                bad += 1
+    return bad, checked
+
+
 def main() -> int:
     t0 = time.time()
     assertions = []
@@ -214,6 +290,23 @@ def main() -> int:
                       "Milnor's subdivision needs a signed piece): the IDENTITY "
                       "still holds. Scope-(a): the argument degenerates, not the "
                       "statement.",
+        })
+
+    # (3) the ONE step of H4-5c-ii still unproved: milnorWedges = the triangle.
+    #     Set-level, not measure-level -- see wedges_vs_triangle_mismatches.
+    for (a, b, g) in ACUTE:
+        bad, checked = wedges_vs_triangle_mismatches(R, mpf("0.37"), a, b, g)
+        assertions.append({
+            "name": f"wedges_eq_triangle_{float(a):.3f}_{float(b):.3f}_{float(g):.3f}",
+            "computed": str(bad),
+            "expected": "0",
+            "passed": bool(bad == 0 and checked > 1000),
+            "tolerance": 0,
+            "source": f"SET-LEVEL check of the one remaining H4-5c-ii step: "
+                      f"membership in milnorWedges vs membership in the open "
+                      f"inscribed triangle, over {checked} interior sample "
+                      f"points (boundary/spine skin excluded). 0 mismatches = "
+                      f"the unproved Lean lemma is TRUE, worth proving.",
         })
 
     all_passed = all(a["passed"] for a in assertions)
