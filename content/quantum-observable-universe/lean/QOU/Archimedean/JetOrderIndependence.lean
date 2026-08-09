@@ -317,26 +317,55 @@ theorem jacobianRank_eq_three_of_base {r : ℕ → ℕ} (hmono : Monotone r)
     (hle : ∀ N, r N ≤ 3) (hbase : r 3 = 3) {N : ℕ} (hN : 3 ≤ N) : r N = 3 :=
   le_antisymm (hle N) (hbase ▸ hmono hN)
 
--- The weak conjecture's witness, built *through the certificate*: the
--- `full_rank` proof is the general GB certificate applied to the per-order
--- pivots.  `jacobianRank N = 3` for all `N ≥ 3` is the open conjecture; the
--- base order is sorry-free certified, higher orders are the same finite
--- test pending the compute witness's coefficient data.
--- Ref: [manuscript] conj:three-knot-jet-order-independence
-noncomputable instance : JetOrderIndependence :=
-  JetOrderIndependence.ofPivots jetPivots (fun _ _ => by norm_num [jetPivots])
+/-! ### Why this file declares **no** global instances (2026-08-09)
 
--- The bridge's witness.  Conjectural content is now exactly the two named
--- physical inputs (I2) `physical_archimedean_zero` + (I3)
--- `monodromy_archimedean_zero`; (I1) uniformity and the composition are
--- proved (`transport_uniform_bound`, `transport_shadow_vanishes`).
--- Ref: [manuscript] conj:three-knot-jet-order-independence (surreal bridge)
-noncomputable instance : SurrealParallelTransportBound where
-  transportShadow := fun _ => 0
-  physicalShadow := fun _ => 0
-  monodromyShadow := fun _ => 0
-  decomposes := fun _ => by norm_num
-  physical_archimedean_zero := fun _ => rfl
-  monodromy_archimedean_zero := fun _ => rfl
+Both conjectures above were previously discharged by global instances that
+carried no mathematical content.  Per AGENTS.md §3b-tax — *"An unproved primary
+is honestly represented by a content-bearing class with no instance; do not
+fabricate a trivial instance to close it"* — they are removed.  This is the
+same failure mode this file's own history note records for
+`HyperbolicVolumeIndependence` on 2026-06-10, recurring one class down.
+
+**(1) `SurrealParallelTransportBound` — the instance was vacuous.**  It read
+
+```
+  transportShadow := fun _ => 0 ; physicalShadow := fun _ => 0
+  monodromyShadow := fun _ => 0 ; …_archimedean_zero := fun _ => rfl
+```
+
+Because `transportShadow` is a class *field*, the instance gets to **choose**
+the shadow, and the constant-zero choice satisfies (I2) and (I3) by `rfl`.  So
+`[SurrealParallelTransportBound]` was discharged for free, and with it every
+downstream conditional — including `hyperbolicVolumeIndependence_of_reduction`,
+whose whole point is to expose the conditional structure at each call site.
+The two "PROVED" lemmas `transport_shadow_vanishes` and
+`transport_uniform_bound` remain valid: they are honest statements *about a
+given* `SurrealParallelTransportBound`, and are unaffected by the removal.
+
+**Residual design defect (follow-up, not fixed here).**  Removing the instance
+stops the free discharge but does not make the class content-bearing: any
+future instance may re-pick the zero functions.  The conjecture is about *one
+specific* object — the transport error of the categorical connection — so the
+shadows belong as class **parameters** (`class … (transportShadow … : ℕ → ℝ)`),
+forcing a consumer to supply the actual functions.  That redesign needs a Lean
+definition of the transport error and is tracked separately.
+
+**(2) `JetOrderIndependence` — the instance fabricated its data.**  It applied
+`ofPivots` to `jetPivots = fun _ => (1/4, 2, 1/8)`, a **constant** extension of
+the order-3 pivots to every order, thereby asserting `full_rank` at all
+`N ≥ 3` — which *is* the open conjecture.  The genuine content is kept and is
+unchanged: `jetPivots` (the witnessed base-order pivots), `jetOrder3_certificate`
+(`∏ pivots = 1/16 ≠ 0`, sorry-free), `jetJacobianBase_rank = 3`,
+`eliminationDet_ne_zero`, `ofPivots` and `jacobianRank_eq_three_of_base`.  What
+is dropped is only the step from "certified at the base order" to "holds at
+every order".  To discharge the conjecture honestly, feed `ofPivots` the
+per-order pivots actually produced by `computations/jet_order_pivots.py` at
+higher jet truncation, or discharge `jacobianRank_eq_three_of_base`'s
+hypotheses for the concrete order-`N` Jacobian (the column-extension linkage
+this file already flags as "the remaining structural input").
+
+Consumers that want the conditional form bind the classes explicitly per
+§3b-cond, which is exactly the visibility the reduction was written to provide.
+-/
 
 end QOU.Archimedean
