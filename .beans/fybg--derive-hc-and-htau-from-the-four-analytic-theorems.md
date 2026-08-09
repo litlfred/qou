@@ -1337,3 +1337,76 @@ The assembly, now purely mechanical:
   3. `abs_sum_Icc_tilted_sub_le` to evaluate the model;
   4. step 5 for everything outside the window;
   5. step 7 for `log g_{k*}` -- and `c_sigma = 3^{-1/4}` follows.
+
+---
+
+## Step 15 -- THE ASSEMBLY (`QOU/Knot/KashaevWindowAssembly.lean`)
+
+Three theorems, all `[propext, Classical.choice, Quot.sound]`. Steps 11 and 14
+meet:
+
+    | sum_{|k'-k|<=W} g_k'  -  g_k e^{L^2/a} sqrt(pi/a) |
+      <= g_k ( (e^B - 1)(e^{L^2/a} sqrt(pi/a) + E) + E )
+
+`a`, `L`, `B` are PARAMETERS, not the Kashaev values -- the hypothesis is
+exactly what `abs_log_kashaevProd_ratio_gaussian` delivers, so specialising is
+a matter of supplying `a = pi|cot th_k|/N` and `L = log(2 sin th_k)`. The
+assembly itself has no knot in it.
+
+`cast_toNat_shift_sub` and `sum_window_model_eq` do the reindexing; `B >= 0`
+is DERIVED (the window contains `k`, so `h k` bounds an absolute value)
+rather than assumed.
+
+### `nlinarith` -> `linarith`: 6m19s -> 11s
+
+The final combination is `h11 + hsecond + hfirst`, which is LINEAR in the
+(large) atoms. `nlinarith` searched products it never needed and took 6m19s;
+`linarith` closes it in 11s. Worth remembering whenever the atoms are big sums:
+reach for `linarith` first and only escalate if it genuinely needs a product.
+
+### THE PAYOFF, from the Kashaev sum itself
+
+Probe part (iii), `W = N^0.6`, `N` not divisible by 6:
+
+    N        window/(g_k sqrt N)     gap to 3^(-1/4)
+    241          0.7620803696          2.24e-03
+    961          0.7603947088          5.59e-04
+    3841         0.7599753048          1.40e-04
+
+against `3^(-1/4) = 0.7598356857`. Step 12 reached this from the Gaussian
+MODEL; this is the Kashaev sum.
+
+### The bound is proved and is NOT numerically sharp -- say so
+
+Probe part (iv):
+
+    N        bound/model
+    241        2.50e+12
+    961        5.83e+03
+    3841       7.35e+01
+
+Shrinking fast, still ~74x the main term at the largest N the probe reaches.
+**What pins `c_sigma` is the limit, which part (iii) exhibits; the finite-N
+bound does not.** The dominant cost is `B` (the sup over the window of step
+10's bound, 4.22 at N=3841), and `e^B - 1` is brutal at `B ~ 4`. Sharpening
+would mean a `k'`-dependent `B` instead of a sup -- more machinery for a better
+finite-N constant that the limit statement does not need.
+
+### Probe gotcha -- the 6 | N degeneracy, AGAIN
+
+First draft used N = 240, 960, 3840. For `6 | N` the saddle index hits `5pi/6`
+exactly, so `L = 0` and the model is `3^(-1/4) sqrt(N)` BY CONSTRUCTION -- the
+tilt is never exercised and part (iii)'s model column is a tautology that
+printed the target to 10 digits at every N. Same trap as the step-6 probe.
+Now N = 241, 961, 3841.
+
+### Remaining before `hc`
+
+  1. specialise the assembly at the Kashaev values (supply `a`, `L`, `B` from
+     step 10 and `hs`/`h` from `abs_log_kashaevProd_ratio_gaussian`);
+  2. add the outside-window region via step 5 (exponentially small, lossy is
+     free);
+  3. divide by `g_{k*}` and feed step 7's `log g_{k*}` -- giving
+     `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi}(1 + o(1))`;
+  4. `hc`, already algebraically proved in `OneLoopPrefactorInvariance.lean`;
+     then `htau`.

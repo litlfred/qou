@@ -130,6 +130,7 @@ import QOU.Knot.KashaevLogAsymptotic
 import QOU.Knot.KashaevRatioExpansion
 import QOU.Knot.KashaevWindowSum
 import QOU.Knot.KashaevWindowIndex
+import QOU.Knot.KashaevWindowAssembly
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
