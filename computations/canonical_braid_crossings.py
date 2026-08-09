@@ -181,4 +181,41 @@ def atom_canonical_crossings(
     return out
 
 
-__all__ = ["atom_canonical_crossings", "classify_crossing"]
+def crossing_d_map(h, *, delta=None, one=None, zero=None):
+    """The `d` coefficient of each ctype, for `cross = sigma_g + d*I`.
+
+    ONE definition, so the five consumers that used to hardcode their own stop
+    drifting apart. Before this existed they disagreed three ways:
+
+        hoefsmit_numpy / rho_k_h3a_refinement / hecke_character_symbolic
+            "averaged" -> -h/2                    color-blind for EVERY crossing
+        habiro_coefficients_interpolate
+            "averaged" -> -h*(1/2 - delta/4)      color-weighted for EVERY crossing
+
+    Both are wrong on a MIXED atom, in opposite directions: the canonical word
+    has exactly ONE color-weighted p-n interface and the rest color-blind (bean
+    qou-pin6). Pass the word from `atom_canonical_crossings(...,
+    distinguish_color=True)` and this map handles both keys correctly.
+
+    `delta` defaults to `_avg_color_delta()`, which reads the f64
+    `q_parameter.Q`. For deep-1ppQ pass `flavor_split_leading(local_q0_50dps)`
+    explicitly — the accessor's own docstring says so, and the difference is
+    3.2e-7 relative, which lands ~1e-19 in a chi^lambda.
+
+    `one`/`zero` let a caller supply its own numeric type (sympy Integer,
+    mp.mpc, numpy float) so the map composes with whatever arithmetic it uses.
+    """
+    if delta is None:
+        delta = _avg_color_delta()
+    z = 0 if zero is None else zero
+    o = 1 if one is None else one
+    half = o / (o + o)
+    return {
+        "sigma": z,
+        "sigma_inv": -h,
+        "averaged": -h * half,                       # color-BLIND
+        "averaged_pn": -h * (half - delta / (o + o + o + o)),  # color-WEIGHTED
+    }
+
+
+__all__ = ["atom_canonical_crossings", "classify_crossing", "crossing_d_map"]

@@ -141,7 +141,12 @@ def chi_numeric(shape, crossings, q_mp):
 
     q = mp.mpf(q_mp)
     h = q - mp.mpf(1) / q
-    d_lookup = {"sigma": mp.mpf(0), "sigma_inv": -h, "averaged": -h / 2}
+    # Shared map — see canonical_braid_crossings.crossing_d_map (bean qou-pin6).
+    # delta from this producer's OWN q at full precision, not the f64 accessor.
+    from canonical_braid_crossings import crossing_d_map
+    from _li_2_q_util import flavor_split_leading
+    d_lookup = crossing_d_map(h, delta=flavor_split_leading(q),
+                              one=mp.mpf(1), zero=mp.mpf(0))
     eye = mp.eye(dim)
 
     M = mp.eye(dim)
@@ -206,7 +211,7 @@ def deuteron_canonical_crossings():
     `mass_at_3A_proper.atom_braid_word_3A(Z=1, N=1)`.
     """
     from canonical_braid_crossings import atom_canonical_crossings
-    return atom_canonical_crossings(1, 1)
+    return atom_canonical_crossings(1, 1, distinguish_color=True)
 
 
 def word_to_crossings(word_1idx):

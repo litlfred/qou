@@ -153,7 +153,7 @@ def build() -> DerivationChain:
             "+ 1 inter-nucleon mixed crossing at σ_2.  Type breakdown "
             "{σ: 11, σ^{-1}: 7, averaged: 5}.  Matches "
             "`canonical_braid_crossings.atom_canonical_crossings(Z=1, "
-            "N=1, include_inter=True)`."
+            "N=1, include_inter=True, distinguish_color=True)`."
         ),
         inputs=["partitions_of_6", FirstPrinciple.HECKE_ENERGY.value],
         output_name="beta_D",

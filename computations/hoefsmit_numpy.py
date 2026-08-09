@@ -146,7 +146,12 @@ def chi_numpy(
 
     q = float(q_value)
     h = q - 1.0 / q
-    d_lookup = {"sigma": 0.0, "sigma_inv": -h, "averaged": -h / 2.0}
+    # Shared map, so "averaged_pn" (the color-weighted p-n interface) is
+    # handled instead of silently taking the color-blind -h/2 (bean qou-pin6).
+    # A caller passing the OLD lossy word never produces that key, so this is
+    # behaviour-preserving until the caller opts into distinguish_color=True.
+    from canonical_braid_crossings import crossing_d_map
+    d_lookup = {k: float(v) for k, v in crossing_d_map(h).items()}
     eye = np.eye(dim, dtype=np.float64)
 
     M = np.eye(dim, dtype=np.float64)

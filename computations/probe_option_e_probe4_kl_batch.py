@@ -65,7 +65,7 @@ def main():
 
     print("=== PROBE 4 KL BATCH ===")
     n = 6
-    word = atom_canonical_crossings(1, 1)  # Deuteron H_6
+    word = atom_canonical_crossings(1, 1, distinguish_color=True)  # Deuteron H_6
     print(f"n = {n}, |word| = {len(word)}")
 
     perms = permutations_S_n(n)

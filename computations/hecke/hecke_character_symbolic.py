@@ -228,13 +228,20 @@ def _q_character_compute(shape, braid_crossings, q):
     if dim == 0:
         return Integer(0)
     h = q - q ** (-1)
+    # Shared map (bean qou-pin6): "averaged_pn" must not fall through to the
+    # color-blind -h/2. Symbolic delta keeps the expression exact in q.
+    from canonical_braid_crossings import crossing_d_map
+    # delta symbolically: flavor_split_leading is the CLOSED FORM
+    # (q-1)^2 * (1 - q^-4) / 3 (prop:flavor-split-substrate), so it composes
+    # with sympy directly — no numeric accessor, the expression stays exact in q.
+    _delta = (q - 1) ** 2 * (1 - q ** (-4)) / 3
+    _d_map = crossing_d_map(h, delta=_delta, one=Integer(1), zero=Integer(0))
     M = sp.eye(dim)
     for gen_idx, cross_d in braid_crossings:
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = {"sigma": Integer(0), "sigma_inv": -h,
-                 "averaged": -h / 2}[cross_d]
+        d_val = _d_map[cross_d]
         cross = sigma + d_val * sp.eye(dim)
         M = M * cross
         # `cancel` — polynomial-division on rationals — is 5–10×
@@ -348,7 +355,7 @@ def q_character_on_braid_word(shape, braid_crossings, q,
 # (per #564 commit c068550c "P3' canonical word fix" + #572 audit
 # `docs/audits/2026-05-08-q-hecke-character-gap-closure.md`).
 #
-# Use `canonical_braid_crossings.atom_canonical_crossings(Z, N)`
+# Use `canonical_braid_crossings.atom_canonical_crossings(Z, N, distinguish_color=True)`
 # instead — bridges `mass_at_3A_proper.atom_braid_word_3A` (canonical
 # convention) → (gen_idx, ctype) format consumable by
 # `q_character_on_braid_word` and `chi_lambda_symbolic`.

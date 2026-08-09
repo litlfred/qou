@@ -259,7 +259,7 @@ def compute_co_casimir_for_atom(
     print(f"  partitions of {n}: {len(parts)}")
 
     # χ^λ(β_atom) for each partition (the expensive step)
-    crossings = atom_canonical_crossings(Z, N)
+    crossings = atom_canonical_crossings(Z, N, distinguish_color=True)
     print(f"  braid crossings: {len(crossings)}")
 
     # Parallel per-λ Hoefsmit χ^λ — embarrassingly parallel. The

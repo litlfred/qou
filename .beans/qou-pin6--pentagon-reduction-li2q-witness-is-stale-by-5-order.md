@@ -264,3 +264,55 @@ sits far above f64 noise, so the error is fully present there too.
 
 Gate: `averaged_label_consumer_scan.py --strict` exits 1 while any consumer is
 still at risk.
+
+
+## FIXED 2026-08-09 — all 5 consumers + 10 call sites, one shared d-map
+
+`canonical_braid_crossings.crossing_d_map(h, delta=..., one=..., zero=...)` is now
+the single definition of the `d` coefficient per ctype. Before it, five consumers
+hardcoded their own and disagreed **three ways**:
+
+    hoefsmit_numpy / rho_k_h3a_refinement / hecke_character_symbolic
+        "averaged" -> -h/2                  color-blind for EVERY crossing
+    habiro_coefficients_interpolate
+        "averaged" -> -h*(1/2 - delta/4)    color-weighted for EVERY crossing
+
+Both blanket choices are wrong on a MIXED atom, in opposite directions. The
+second is worth dwelling on: its comment reads "Was the color-blind −h/2", so
+someone had already hit this and corrected it — the wrong way, over-applying δ
+to the 4 blind crossings instead of under-applying it to the 1 weighted one.
+
+Also fixed in passing: `spectral_coordinates_all_atoms` had
+`else: M = np.eye(2)` — an unrecognised ctype silently became the IDENTITY
+matrix. Now a dict lookup, so an unknown key raises.
+
+### Call sites
+
+10 callers that feed an operator-rebuilder now pass `distinguish_color=True`.
+The 4 that still do not — `qbeta_multiblock_*`, `xq_multiblock_habiro_probe` —
+use `atom_canonical_crossings(1, 0, include_inter=False)`. That word DOES have
+2 averaged crossings (my first note said zero, which was wrong), but a
+homogeneous atom produces no `averaged_pn`, so the flag changes nothing there.
+
+`habiro_coefficients_atomic` needed a hand edit: it imports the function under
+an alias (`atomic_braid_to_crossings`), which the regex sweep missed.
+
+### Validated end-to-end against the χ cache, both precision paths
+
+    chi_numeric (mpmath, 50 dps)   lossy 1.1e-4  ->  distinguished 5.6e-20
+    chi_numpy   (float64)          lossy 1.1e-4  ->  distinguished 3.6e-11
+
+across deuteron, tritium and helium-3; diproton (homogeneous) identical both
+ways at 1e-50. The float64 residual is that path's own accumulation floor over a
+23-matrix product, not a convention error.
+
+`averaged_label_consumer_scan.py --strict` exits 0.
+
+### NOT done: the downstream witnesses
+
+The 10 patched producers now compute different values on mixed atoms, so their
+committed witnesses are stale BY CONSTRUCTION. They are not regenerated here —
+each needs the per-producer value audit `rho_w` got, and several are slow. That
+is the next step, and it is deliberate that this change is source-only: sweeping
+10 producers' witnesses in the same commit as the fix would bury whatever else
+moved in them.

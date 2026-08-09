@@ -41,19 +41,20 @@ def spectral_coordinates(Z, N):
     sigma0 = np.array([[q, 0], [0, -1 / q]])
     sigma1 = np.array([[d2, b], [b, d1]])
 
-    crossings = atom_canonical_crossings(Z, N)
+    # distinguish_color=True: the canonical word has exactly ONE color-weighted
+    # p-n interface per mixed atom; without this it arrives labelled plain
+    # "averaged" and silently takes the color-blind -h/2 (bean qou-pin6).
+    crossings = atom_canonical_crossings(Z, N, distinguish_color=True)
+    from canonical_braid_crossings import crossing_d_map
+    d_map = {k: float(v) for k, v in crossing_d_map(h).items()}
 
     gen_products = {}
     for gen, ctype in crossings:
         sigma = sigma0 if gen % 2 == 0 else sigma1
-        if ctype == "sigma":
-            M = sigma
-        elif ctype == "sigma_inv":
-            M = sigma - h * np.eye(2)
-        elif ctype == "averaged":
-            M = sigma - (h / 2) * np.eye(2)
-        else:
-            M = np.eye(2)
+        # `d_map[ctype]` rather than an if/elif chain with an `else: identity`
+        # fallthrough — an unrecognised ctype used to become the IDENTITY
+        # matrix silently, which is a worse failure than raising.
+        M = sigma + d_map[ctype] * np.eye(2)
 
         if gen not in gen_products:
             gen_products[gen] = np.eye(2)

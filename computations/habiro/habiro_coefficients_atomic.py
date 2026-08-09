@@ -107,7 +107,11 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     Returns a sympy expression in q.
     """
     A = Z + N
-    crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
+    # distinguish_color=True: the canonical word has exactly ONE color-weighted
+    # p-n interface per MIXED atom; without it that crossing arrives labelled
+    # plain "averaged" and silently takes the color-blind -h/2 (bean qou-pin6).
+    crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter,
+                                          distinguish_color=True)
     chi_cache_label = _ATOM_CHI_LABEL_BY_ZN.get((Z, N, include_inter))
     q_pos = sp.Symbol("q", positive=True)
 

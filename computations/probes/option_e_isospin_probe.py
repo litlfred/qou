@@ -161,7 +161,7 @@ def main() -> int:
     for label, Z, N in ATOMS:
         A = Z + N
         n = 3 * A
-        crossings = atom_canonical_crossings(Z, N)
+        crossings = atom_canonical_crossings(Z, N, distinguish_color=True)
         partitions = height_le_6_partitions(n)
         print(f"  {label}  (Z={Z}, N={N}, A={A}, n={n}, "
               f"{len(crossings)} crossings, {len(partitions)} partitions)",

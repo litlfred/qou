@@ -117,13 +117,14 @@ def chi_lambda_numerical(shape, q_val, crossings):
         return mp.mpc(0), 0
     q = mp.mpc(q_val)
     h = q - 1 / q
-    # "averaged" p-n interface is color-weighted by default (matches the
-    # canonical atom_braid_word_3A default + the Rust χ cache): σ − h·(1/2 −
-    # δ/4), δ = flavor_split_subleading(q₀). Was the color-blind −h/2.
-    from canonical_braid_crossings import _avg_color_delta
-    _delta = _avg_color_delta()
-    d_map = {"sigma": mp.mpc(0), "sigma_inv": -h,
-             "averaged": -h * (mp.mpf(1) / 2 - _delta / 4)}
+    # 🛑 This applied the COLOR-WEIGHTED form to EVERY averaged crossing — the
+    # mirror of the color-blind bug, and wrong in the other direction. The
+    # canonical word has exactly ONE color-weighted p-n interface per mixed atom
+    # and the rest color-blind (bean qou-pin6), so neither blanket choice is
+    # right. The shared map handles both keys; the caller must pass
+    # `distinguish_color=True` for "averaged_pn" to appear at all.
+    from canonical_braid_crossings import crossing_d_map
+    d_map = crossing_d_map(h, one=mp.mpc(1), zero=mp.mpc(0))
     M = [[mp.mpc(1 if i == j else 0) for j in range(dim)] for i in range(dim)]
     for gen_idx, cross_type in crossings:
         sigma = sigmas[gen_idx]

@@ -38,7 +38,7 @@ def main():
     
     n = 6
     wmt = WenzlMarkovTrace(n)
-    word = atom_canonical_crossings(1, 1)
+    word = atom_canonical_crossings(1, 1, distinguish_color=True)
     qi = 1/q
     
     sum_betti = mpf(0)

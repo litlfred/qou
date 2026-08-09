@@ -82,7 +82,7 @@ def _hd(lam):
 def saturate(Z, N, q):
     """Bare operator-selection LP saturation (NO encoding constraint)."""
     n = 3 * (Z + N)
-    cr = atom_canonical_crossings(Z, N)
+    cr = atom_canonical_crossings(Z, N, distinguish_color=True)
     P = list(_parts(n))
     y = {p: float(y_lambda_wenzl_bridge_numeric(list(p), q)) for p in P}
     chi = {p: float(chi_numpy(p, cr, q)) for p in P}

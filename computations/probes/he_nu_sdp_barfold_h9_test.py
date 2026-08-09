@@ -11,7 +11,7 @@ serious challenge to ρ_F=2). If no → the count match (D=1, T=2, ³He=2) is co
 
 Pipeline (all reused canonical machinery, validated on the deuteron first):
   • y_λ        ← y_lambda_wenzl_bridge.y_lambda_wenzl_bridge_numeric  (Markov weight)
-  • χ^λ(β)     ← hoefsmit_numpy.chi_numpy(λ, atom_canonical_crossings(Z,N), q₀)
+  • χ^λ(β)     ← hoefsmit_numpy.chi_numpy(λ, atom_canonical_crossings(Z,N, distinguish_color=True), q₀)
   • cost t_λ = y_λ·χ^λ ;  Gram diag = y_λ·dim = tr_M(P_λ) ;  n_target = tr_M(β) = Σt_λ
   • bar-fold:  min t·x  s.t.  Σx=n_target,  x_λ=x_λ' (conjugate fold),  diag(tr_M)·x ≥ 0
     (= encoding 1 of deuteron_real_sdp.py — the §7b symmetry regulariser, NO fit)
@@ -81,7 +81,7 @@ def _hook_dim(lam):
 
 def barfold(Z, N):
     n = 3 * (Z + N)
-    cr = atom_canonical_crossings(Z, N)
+    cr = atom_canonical_crossings(Z, N, distinguish_color=True)
     P = list(_parts(n))
     idx = {p: i for i, p in enumerate(P)}
     y = {p: float(y_lambda_wenzl_bridge_numeric(list(p), Q0)) for p in P}
