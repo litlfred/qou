@@ -1,54 +1,52 @@
 #!/usr/bin/env python3
-"""l2_row_independence_probe — how many INDEPENDENT failures are on the L2 list?
+"""l2_row_independence_probe — how many INDEPENDENT failures does L2 list?
 
 ## The question
 
-The per-observable 100x dashboard reports 7 observables, 5 of them failing:
-m_p (437x), m_n (420x), Delta_pn (163x), Q_beta (164x), m_mu (964x).  Read
-as a scoreboard that says "five separate things are broken" — and therefore
-as five places to look for a fix.
+The per-observable 100x dashboard reports 7 observables. Read as a scoreboard,
+its fail list says "several separate things are broken", and therefore
+"several separate places to look for a fix". It does not.
 
-It does not.  Three of those five rows are algebraically dependent on the
-other two, in BOTH the prediction and the comparison target:
+The distinction that matters is **which side** of each comparison is
+redundant — the framework's prediction, or the experimental target. They are
+answered separately here, because the answers differ and only one of them
+bears on where the physics work is.
 
-    Delta_pn  ==  Q_beta + m_e            (definitionally, both sides)
-    m_n       ==  m_p + Q_beta + m_e      (definitionally, both sides)
+## Side 1 — the PREDICTIONS are exactly redundant (this is the load-bearing one)
 
-The target side is dependent because `M_N_MEV_AME_DERIVED` is *constructed*
-as `M_P_MEV + M_E_MEV + Q_BETA_MEV_AME` — the neutron "measurement" the
-dashboard scores against is built from the proton registry and the AME
-beta-decay Q-value, not measured independently of them.
+    Delta_pn_pred  ==  Q_beta_pred + m_e
+    m_n_pred       ==  m_p_pred + Q_beta_pred + m_e
 
-So `m_n` and `Delta_pn` contribute no information the {m_p, Q_beta} rows do
-not already carry.  Combined with the companion finding that the `m_p` row
-is a registry-vintage artifact (codata_registry_triangulation_probe.py), the
-five failures reduce to **two independent physical failures**: Q_beta and
-m_mu.
+Both hold to ~1e-11 MeV, i.e. exactly, by construction of Path C. So the
+framework contributes **nothing** to m_n and Delta_pn beyond what it already
+contributes to m_p and Q_beta. Combined with m_p being a pin-anchor
+round-trip (see codata_registry_triangulation_probe), the framework has
+exactly **two** independent quantities on the fail list: **Q_beta and m_mu**.
 
-## Why this matters
+That is the number that governs planning: two levers, not five fronts.
 
-L2 planning that treats the list as five fronts will over-count the work and
-mis-rank it.  There are two levers: the Q_beta / Habiro closure (bean `kehn`)
-and the mu-p substrate tension.  Everything else on the fail list is those
-two, re-expressed.
+## Side 2 — the TARGETS are no longer redundant (changed 2026-08-09)
 
-## What this probe does NOT claim
+Before the CODATA vintage fix, the neutron target was
+`M_N_MEV_AME_DERIVED`, *constructed* as `M_P + M_E + Q_BETA` — so the target
+side was redundant too, and the m_n row tested literally nothing new. The fix
+repointed it at `M_N_MEV_CODATA_DIRECT`, an independent CODATA determination.
 
-- It does not claim the dependent rows are *wrong* to report. Reporting m_n
-  in MeV is useful; the point is only that it is not an independent test.
-- It does not claim m_mu and Q_beta are the only *possible* failures — only
-  that they are the only independent ones among the rows currently scored.
-- It says nothing about whether the corpus holds a genuinely independent
-  neutron measurement. `M_N_MEV_CODATA_DIRECT` exists and IS independent;
-  it is simply not what the dashboard scores against (see the companion
-  probe's L2 projection, which uses it).
+The target-side residual is now ~1.5e-7 MeV rather than ~0, so m_n and
+Delta_pn now do carry a small amount of genuinely independent experimental
+information (~0.16 ppb on the neutron). This is a real improvement in the
+dashboard's information content, and it is *why* the two sides are reported
+separately rather than collapsed into one verdict.
 
-AUDIT-ONLY.  Changes no prediction and re-scores nothing.
+**It does not change the planning conclusion.** Independent *targets* do not
+create independent *framework levers*: a better measurement to compare
+against still compares against the same two predicted quantities.
+
+AUDIT-ONLY. Re-scores nothing.
 
 Refs:
-- computations/codata_registry_triangulation_probe.py  (companion finding)
+- computations/codata_registry_triangulation_probe.py  (companion guard)
 - docs/audits/2026-08-09-codata-registry-vintage-straddle.md
-- AGENTS.md SS"Precision goals" (the L2 leg)
 """
 from __future__ import annotations
 
@@ -69,6 +67,11 @@ import codata_2022_source as CS  # noqa: E402
 COMPUTE_DPS = set_compute_dps()
 _UPSTREAM: list = []
 
+#: The dashboard serializes pred_MeV / codata_MeV to ~12 significant figures,
+#: so an exact identity appears as a residual at that granularity (~1e-9 MeV
+#: on a ~1e3 MeV quantity), not as a bitwise zero. Score against that.
+SER_TOL_MEV = mpf("1e-8")
+
 
 def main() -> int:
     mp.dps = COMPUTE_DPS
@@ -84,12 +87,6 @@ def main() -> int:
     def targ(o):
         return mpf(rows[o]["codata_MeV"])
 
-    # The dashboard serializes pred_MeV / codata_MeV to ~12 significant
-    # figures, so an exact identity shows up as a residual at that granularity
-    # (~1e-9 MeV on a ~1e3 MeV quantity), NOT as a bitwise zero. Score against
-    # that granularity, not against zero.
-    ser_tol_MeV = mpf("1e-8")
-
     checks = [
         ("Delta_pn == Q_beta + m_e",
          pred("Delta_pn") - (pred("Q_beta") + m_e),
@@ -100,81 +97,111 @@ def main() -> int:
     ]
 
     print("=" * 78)
-    print("  L2 row independence — how many INDEPENDENT failures are listed?")
+    print("  L2 row independence — how many INDEPENDENT levers does the list have?")
     print("=" * 78)
     print(f"\n  compute dps = {COMPUTE_DPS}")
-    print(f"  identity tolerance = {n(ser_tol_MeV)} MeV"
+    print(f"  identity tolerance = {n(SER_TOL_MEV)} MeV"
           f"  (the dashboard's own ~12-sig-fig serialization)\n")
 
     print("  SCORED ROWS (as published):")
-    for o in ("m_p", "m_n", "Delta_pn", "Q_beta", "m_mu"):
+    for o in ("m_p", "m_mu", "Q_beta", "m_n", "Delta_pn"):
         r = rows[o]
-        print(f"    {o:9s} err {r['err_ppb']:>9s} ppb   miss {r['miss_factor']:>8s}x")
+        print(f"    {o:9s} err {r['err_ppb']:>9s} ppb   miss {r['miss_factor']:>22s}")
 
-    print("\n  DEPENDENCE CHECKS (must hold on BOTH sides to be redundant):")
-    all_dep = True
-    for label, dp, dt in checks:
-        ok = abs(dp) < ser_tol_MeV and abs(dt) < ser_tol_MeV
-        all_dep &= ok
-        print(f"    {label}")
-        print(f"      prediction side residual = {n(dp, 4):>10s} MeV")
-        print(f"      target     side residual = {n(dt, 4):>10s} MeV"
-              f"   <- target is CONSTRUCTED, not independently measured")
-        print(f"      => {'REDUNDANT' if ok else 'independent'}")
+    preds_redundant = True
+    targets_redundant = True
+    print("\n  SIDE 1 — PREDICTIONS (the load-bearing check):")
+    for label, dp, _ in checks:
+        ok = abs(dp) < SER_TOL_MEV
+        preds_redundant &= ok
+        print(f"    {label:32s} residual {n(dp, 4):>10s} MeV"
+              f"  -> {'REDUNDANT' if ok else 'independent'}")
 
-    print("\n  CONCLUSION:")
-    print("    m_p       artifact  — pin-anchor round-trip vs a stale registry")
-    print("                          (see codata_registry_triangulation_probe)")
-    print("    m_n       redundant — == m_p + Q_beta + m_e on both sides")
-    print("    Delta_pn  redundant — == Q_beta + m_e on both sides")
-    print("    Q_beta    INDEPENDENT FAILURE  (lever: Habiro closure, bean kehn)")
-    print("    m_mu      INDEPENDENT FAILURE  (lever: mu-p substrate tension)")
-    print("\n    => 5 reported failures are 2 independent ones.")
+    print("\n  SIDE 2 — TARGETS (repointed by the 2026-08-09 CODATA fix):")
+    for label, _, dt in checks:
+        ok = abs(dt) < SER_TOL_MEV
+        targets_redundant &= ok
+        print(f"    {label:32s} residual {n(dt, 4):>10s} MeV"
+              f"  -> {'REDUNDANT' if ok else 'independent'}")
+    if not targets_redundant:
+        print("    the neutron target is now M_N_MEV_CODATA_DIRECT (an independent")
+        print("    CODATA determination), not the constructed M_P + M_E + Q_BETA.")
+        print("    Pre-fix both sides were redundant and the m_n row tested nothing new.")
+
+    print("\n  CONCLUSION — framework levers on the fail list:")
+    print("    m_p       anchor round-trip, reported but NOT scored")
+    print("    m_n       prediction adds nothing beyond {m_p, Q_beta}")
+    print("    Delta_pn  prediction adds nothing beyond {Q_beta}")
+    print("    Q_beta    INDEPENDENT LEVER  (Habiro closure, bean kehn)")
+    print("    m_mu      INDEPENDENT LEVER  (mu-p substrate tension)")
+    print("\n    => TWO independent levers, not five fronts.")
+    print("       (Targets being partly independent does not create a third")
+    print("        lever — it improves what the same two are measured against.)")
 
     w = WitnessBuilder("l2-row-independence", engine="mpmath")
     w.set_description(
-        "Shows that 3 of the 5 failing rows on the per-observable 100x L2 "
-        "dashboard are algebraically dependent on the other 2, in both the "
-        "prediction and the comparison target (the neutron target is "
-        "constructed as M_P + M_E + Q_BETA, not measured independently). With "
-        "the m_p row separately shown to be a registry-vintage artifact, the "
-        "five reported failures reduce to two independent ones: Q_beta and "
-        "m_mu. Audit-only; re-scores nothing."
+        "Separates prediction-side from target-side redundancy on the L2 "
+        "dashboard. The PREDICTIONS for m_n and Delta_pn are exactly "
+        "Q_beta/m_p plus m_e, so the framework has only two independent "
+        "quantities on the fail list (Q_beta, m_mu) once m_p is recognised as "
+        "an unscored anchor round-trip. The TARGETS stopped being redundant on "
+        "2026-08-09 when the CODATA vintage fix repointed the neutron at the "
+        "independent direct determination — a gain in the dashboard's "
+        "information content that does not add a third lever. Audit-only."
     )
     w.set_audit_only("docs/audits/2026-08-09-codata-registry-vintage-straddle.md")
     w.add_parameter("compute_dps", COMPUTE_DPS)
-    w.add_parameter("identity_tolerance_MeV", str(ser_tol_MeV))
+    w.add_parameter("identity_tolerance_MeV", str(SER_TOL_MEV))
 
     for label, dp, dt in checks:
         key = label.split(" ==")[0].strip()
         w.add_data(f"residual_pred_{key}_MeV", n(dp, 6))
         w.add_data(f"residual_target_{key}_MeV", n(dt, 6))
-    w.add_data("independent_failures", ["Q_beta", "m_mu"])
-    w.add_data("redundant_rows", ["m_n", "Delta_pn"])
-    w.add_data("artifact_rows", ["m_p"])
+    w.add_data("predictions_redundant", bool(preds_redundant))
+    w.add_data("targets_redundant", bool(targets_redundant))
+    w.add_data("independent_framework_levers", ["Q_beta", "m_mu"])
+    w.add_data("prediction_redundant_rows", ["m_n", "Delta_pn"])
+    w.add_data("anchor_roundtrip_rows", ["m_p"])
     w.add_data(
         "caveat",
-        "Redundant does not mean wrong to report — m_n in MeV is a useful "
-        "number. It means the row is not an independent test, so L2 planning "
-        "must not count it as a separate front. M_N_MEV_CODATA_DIRECT IS an "
-        "independent neutron value; it is simply not what this dashboard "
-        "scores against.",
+        "Prediction-redundant does not mean wrong to publish — m_n in MeV is a "
+        "useful number. It means the row is not an independent test OF THE "
+        "FRAMEWORK, so L2 planning must not count it as a separate front.",
+    )
+    w.add_data(
+        "target_side_change_2026_08_09",
+        "Pre-fix the neutron target was M_N_MEV_AME_DERIVED, constructed as "
+        "M_P + M_E + Q_BETA, so the target side was redundant too and the m_n "
+        "row tested nothing new. It now points at M_N_MEV_CODATA_DIRECT, so "
+        "~0.16 ppb of independent experimental information enters.",
     )
 
     w.add_assertion(
-        name="dependent_rows_are_redundant_on_both_sides",
-        computed=1 if all_dep else 0,
+        name="predictions_for_m_n_and_delta_pn_add_no_framework_content",
+        computed=1 if preds_redundant else 0,
         expected=1,
-        source="Indicator (1 = both Delta_pn == Q_beta + m_e and "
-               "m_n == m_p + Q_beta + m_e hold, on the prediction side AND "
-               "the target side, to the dashboard's serialization "
-               "granularity). Residuals are ~1e-10 MeV, i.e. the rounding of "
-               "the stored 12-significant-figure strings — not physics.",
+        source="Indicator (1 = both Delta_pn == Q_beta + m_e and m_n == m_p + "
+               "Q_beta + m_e hold on the PREDICTION side to the dashboard's "
+               "serialization granularity). Residuals are ~1e-11 MeV. This is "
+               "the load-bearing claim: the framework has two independent "
+               "quantities on the fail list, not five.",
+    )
+    w.add_assertion(
+        name="targets_are_no_longer_redundant_after_the_codata_fix",
+        computed=1 if not targets_redundant else 0,
+        expected=1,
+        source="Indicator (1 = the TARGET side is no longer an exact identity). "
+               "Pre-fix it was, because the neutron target was constructed from "
+               "the proton and Q_beta. Repointing it at the independent CODATA "
+               "direct determination is a gain in information content — "
+               "asserted so a regression back to the constructed target would "
+               "fail here rather than pass silently.",
     )
 
     path = w.save(extra={"upstream": _UPSTREAM} if _UPSTREAM else None)
     print(f"\n  Witness: {path}")
-    return 0 if all_dep else 1
+    ok = preds_redundant and not targets_redundant
+    return 0 if ok else 1
 
 
 if __name__ == "__main__":

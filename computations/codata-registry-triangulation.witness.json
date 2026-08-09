@@ -1,51 +1,51 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T20:38:07.207569+00:00",
-  "commitSha": "b7b7c9589868347730a4c853969c0e7ca27377f4",
+  "computedAt": "2026-08-09T21:11:51.109482+00:00",
+  "commitSha": "92047cba5eb08f92e2e1f277d085ad94f8c15fec",
   "assertions": [
     {
-      "name": "dashboard_m_p_error_equals_triangulation_residual",
+      "name": "registry_triple_consistent",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "q_0 is Newton-pinned so that m_p_pred == m_e * MASS_RATIO_P_E identically; the scored row must therefore reproduce leg 1 exactly. It does, to within the dashboard's own 4-significant-figure serialization of err_ppb (which is the limiting term here, not the physics). The m_p row measures registry inconsistency and nothing else."
+      "source": "Indicator (1 = |m_e*(m_p/m_e) - m_p| is inside the KNOWN_TRIPLE_RESIDUAL_PPB ceiling). Live residual is ~0.0029 ppb, about a quarter of m_p's last printed digit — the floor any same-edition triple can reach. The defect this guards against was 1.35 ppb, 27x the ceiling, and invisible to every float64/precision audit because nothing about it was imprecise."
     },
     {
-      "name": "proton_triple_inconsistent_beyond_printed_granularity",
+      "name": "ame_neutron_equals_its_definition",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "Indicator (1 = residual exceeds 10x the last printed digit of m_p; see leg1_residual_in_printed_units for the magnitude). Within one CODATA adjustment the triple is a single correlated fit output, so a same-edition triple agrees to its last printed digit. The residual is ~126x that unit, which rounding cannot explain — the registries are mixed-vintage. (Against the measurement sigma this is only ~3.1 sigma; that weaker framing is recorded in the data block but is not the test.)"
+      "source": "Indicator (1 = M_N_MEV_AME_DERIVED - (M_P + M_E + Q_BETA_AME) vanishes to the stored literal's last digit). It is a derived quantity; the old value outlived the 2018 proton it was built from, which is how a 1.5 ppb 'tension between two competing authoritative neutrons' was manufactured. Now 0.16 ppb."
     },
     {
-      "name": "artifact_does_not_explain_mu_p_tension",
+      "name": "m_p_row_reported_but_not_scored",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "Indicator (1 = correcting the muon-electron ratio to its 2022 value does NOT reduce the m_mu miss). It moves 963.6x -> 970.2x, i.e. marginally worse. The single largest L2 miss is genuine physics — the mu-p substrate tension — and is untouched by this registry finding."
+      "source": "Indicator (1 = the dashboard marks m_p is_anchor_roundtrip and leaves beats_100x None so it is excluded from the count). q_0 is pinned from m_p/m_e, so m_p_pred == m_e*MASS_RATIO_P_E identically and the residual is CODATA's own rounding. Scoring it would have flipped the headline to 3/7 on a tautology; the count correctly stays 2/7 (AGENTS.md q_0-anchor rule 1)."
     },
     {
-      "name": "qbeta_miss_is_genuine_despite_contaminated_target",
+      "name": "fix_does_not_explain_mu_p_tension",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "Indicator (1 = Q_beta misses its 100x target against EVERY available experimental determination). The stale proton explains 89% of the 1814 ppb disagreement between the two determinations — but the prediction misses by 139x-164x either way, so Q_beta remains a genuine L2 lever. Note the trap this removes: scored against the stale-derived target the miss reads 68.7x, ~2.4x too optimistic."
+      "source": "Indicator (1 = the m_mu miss did NOT improve). It moved 963.6x -> 970.2x, i.e. worse. Recorded as measured rather than suppressed: a correction that degrades an observable is still the correct value. The mu-p substrate tension is genuine."
     },
     {
-      "name": "neutron_leg_favours_ratio_consistent_proton",
+      "name": "qbeta_miss_survives_the_fix",
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "Indicator (1 = the ratio-derived proton lands inside 1 sigma of the stored CODATA direct neutron while the stored proton falls outside it). m_p + m_e + Q_beta must reproduce that independently-stored neutron: the ratio-derived proton lands at 0.32 sigma, the stored proton misses by 2.96 sigma (9.3x worse). An independent observable therefore picks out the stored m_p as the stale member."
+      "source": "Indicator (1 = Q_beta still misses its 100x target). It does, at 164x. The fix reconciled Q_beta's two experimental determinations (1814 -> 194 ppb, 2.33 -> 0.25 sigma) but left the prediction's residual intact, so Q_beta remains one of the two genuine L2 levers."
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 15,
   "computation": "codata-registry-triangulation",
   "scriptFile": "codata_registry_triangulation_probe.py",
-  "scriptHash": "53d23e2eaac4",
-  "scriptCommitSha": "ff01fdd7771d4e1bc51d2e13b68b60b51b41c9fd",
+  "scriptHash": "a3aa09b8e360",
+  "scriptCommitSha": "51ccb91d87ba61762fc184add7f50c1a9d4eb533",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,53 +60,33 @@
     "mpmath": "1.3.0",
     "clarabel": "0.11.1"
   },
-  "description": "Internal triangulation of the over-determined CODATA registries (m_e, m_p/m_e, m_p) plus independent neutron and muon legs. Shows the corpus registries are mutually inconsistent at ~1.35 ppb — far outside their own quoted uncertainties — and that this inconsistency accounts for 100% of the m_p row's scored L2 error, which is therefore bookkeeping, not a theory residual. Audit-only: changes no prediction.",
+  "description": "Regression guard for the CODATA registry vintage straddle fixed on 2026-08-09 (PR #4860). Seven mass literals labelled 'CODATA 2022' held CODATA-2018 values; the ~1.3 ppb straddle was 100% of the m_p row's reported L2 error and contaminated Q_beta's comparison target and the AME-derived neutron. Detected from internal inconsistency alone, then confirmed against RMP 97, 025002. This probe now asserts the corrected state. Audit-only; changes no prediction.",
   "auditOnly": "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
   "parameters": {
     "compute_dps": 70,
-    "output_dps": 25
+    "primary_source": "Mohr, Newell, Taylor & Tiesinga, Rev. Mod. Phys. 97, 025002 (2025) — uploads/RevModPhys.97.025002.pdf.pdf"
   },
   "data": {
-    "m_e_MeV": "0.51099895069",
-    "mass_ratio_p_e": "1836.152673426",
-    "m_p_registry_MeV": "938.27208816",
-    "m_p_from_ratio_MeV": "938.27208942732424736394",
-    "leg1_residual_ppb": "1.35070014696",
-    "leg1_m_p_printed_granularity_ppb": "0.010657889",
-    "leg1_residual_in_printed_units": "126.73242",
-    "leg1_quoted_sigma_ppb": "0.43044855",
-    "leg1_n_sigma_context_only": "3.1378899",
-    "leg2_neutron_via_registry_ppb": "-1.510602633",
-    "leg2_neutron_via_ratio_ppb": "-0.1617617561",
-    "leg2_neutron_sigma_ppb": "0.51087448",
-    "leg3_muon_residual_ppb_NON_DISCRIMINATING": "1.40994942015",
-    "leg3_muon_n_sigma_NON_DISCRIMINATING": "0.045296945",
-    "leg4_m_mu_miss_ratio_as_stored_2018": "963.56639",
-    "leg4_m_mu_miss_ratio_corrected_2022": "970.2316",
-    "leg4_verdict": "Correcting the vintage makes m_mu WORSE (963.6x -> 970.2x). Recorded as-measured: a correction that degrades an observable is reported, not suppressed. The mu-p substrate tension is genuine and this finding does not reach it.",
-    "dashboard_m_p_err_ppb": "1.351",
-    "leg5_qbeta_target_spread_stale_ppb": "1814.2009",
-    "leg5_qbeta_target_spread_consistent_ppb": "194.27235",
-    "leg5_qbeta_spread_fraction_explained": "0.892916",
-    "leg5_qbeta_miss_by_target": {
-      "AME": "163.98",
-      "via_stale_m_p": "68.69377",
-      "via_consistent_m_p": "139.0643"
-    },
-    "l2_projection_audit_only": {
-      "note": "What the affected rows would read against a self-consistent registry. PROJECTION ONLY — the dashboard is unmodified. m_p is excluded on purpose: it is the pin anchor, so a corrected round-trip is a calibration tautology, not a pass.",
-      "m_n": {
-        "err_ppb": "0.90254492",
-        "sigma_exp_ppb": "0.51087448",
-        "miss_factor": "176.66667",
-        "verdict": "FAIL (genuine — Q_beta-driven residual survives)"
-      },
-      "Delta_pn": {
-        "err_ppb": "655.89803",
-        "sigma_exp_ppb": "433.61084",
-        "miss_factor": "151.26421",
-        "verdict": "FAIL (genuine — Q_beta-driven residual survives)"
-      }
+    "m_p_MeV": "938.27208943",
+    "triple_residual_ppb": "-0.0028517875",
+    "triple_residual_in_printed_units": "0.267575",
+    "triple_ceiling_ppb": "0.05",
+    "ame_neutron_definitional_residual_MeV": "-6.9e-10",
+    "ame_vs_direct_neutron_ppb": "-0.15964828",
+    "m_p_row_is_anchor_roundtrip": true,
+    "m_p_roundtrip_residual_ppb": "0.002852",
+    "m_mu_miss_now": "970.2",
+    "qbeta_miss_now": "164.0",
+    "qbeta_target_spread_ppb_now": "190.85213",
+    "historical_pre_fix": {
+      "stale_m_p_MeV": "938.27208816",
+      "triple_residual_ppb": "1.3507",
+      "m_p_dashboard_miss": "437.0",
+      "m_n_miss": "420.1",
+      "delta_pn_miss": "163.3",
+      "qbeta_target_spread_ppb": "1814.2",
+      "ame_vs_direct_neutron_ppb": "-1.511",
+      "m_mu_miss": "963.566"
     }
   },
   "q0Anchor": "proton",
@@ -114,11 +94,11 @@
   "upstream": [
     {
       "path": "per-observable-100x-status.witness.json",
-      "sha256": "cc088e0483e3e3b1a85c1ad13e07cead4829bed1140e4f0236b82da6d7f800cf",
-      "size_bytes": 10280,
-      "commitSha": "87c627a7cca603ce78725fa0152b3e008769c8b5",
-      "scriptCommitSha": "87c627a7cca603ce78725fa0152b3e008769c8b5",
-      "computedAt": "2026-08-08T18:48:03.854968+00:00"
+      "sha256": "eea3d26d1b28e5f3dedfa89b2ba9749100b7c24ec7be043dc0e262c2302b0b10",
+      "size_bytes": 11210,
+      "commitSha": "92047cba5eb08f92e2e1f277d085ad94f8c15fec",
+      "scriptCommitSha": "4e3cfd3121dfc9eca5cba5906667f4b87c7f45e0",
+      "computedAt": "2026-08-09T21:09:59.867239+00:00"
     }
   ]
 }
