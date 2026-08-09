@@ -324,6 +324,25 @@ def entropy_analysis(census_size: int, n_functionals: int, n_exponents: int,
     }
 
 
+
+def _witness_default(o):
+    """JSON encoder fallback for mpmath types.
+
+    The witness convention in this corpus is that high-precision values are
+    serialized as **full-precision decimal strings** (see `substrate_q0`,
+    `hbar_q`), never as float64 -- per AGENTS.md the serialization target is
+    50 dps.  Without this hook `json.dumps` raises
+    `TypeError: Object of type mpf is not JSON serializable` and the run dies
+    *after* all the compute, emitting no witness.
+    """
+    if isinstance(o, mp.mpf):
+        return mp.nstr(o, 50, strip_zeros=False)
+    if isinstance(o, mp.mpc):
+        return {"re": mp.nstr(o.real, 50, strip_zeros=False),
+                "im": mp.nstr(o.imag, 50, strip_zeros=False)}
+    raise TypeError(f"Object of type {o.__class__.__name__} is not JSON serializable")
+
+
 def main() -> None:
     started = time.time()
     print(f"[m_tau_complex_volume] q_0    = {fmt(Q0, 30)}")
@@ -474,7 +493,7 @@ def main() -> None:
         witness["scriptCommitSha"] = sha
         print(f"[witness] canonical stamp unavailable ({e}); stamped provenance manually")
     witness["scriptFile"] = os.path.basename(__file__)
-    wpath.write_text(json.dumps(witness, indent=2) + "\n")
+    wpath.write_text(json.dumps(witness, indent=2, default=_witness_default) + "\n")
     print(f"\n[witness] wrote {wpath}")
     print(f"[conclusion] {conclusion}")
     print(f"[done] elapsed {witness['duration_sec']}s")

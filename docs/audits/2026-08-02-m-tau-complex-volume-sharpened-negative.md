@@ -153,3 +153,37 @@ derivability of $m_\tau$ in general.
 - [`2026-06-03-m-tau-knot-prediction-falsification.md`](2026-06-03-m-tau-knot-prediction-falsification.md) — the refuted real-volume 25-knot search (this audit executes its extension #1)
 - [`rem:m-tau-knot-prediction`](../../content/quantum-observable-universe/observations/m-tau-knot-prediction.md) — the paper's forward-reference block
 - PR #1805 — PSLQ search-entropy precedent
+
+---
+
+## Independent re-run (2026-08-09)
+
+Re-verified from scratch on a clean SnapPy 3.3.2 install, at the rebased HEAD.
+**The negative reproduces exactly.** Of the witness's 199 keys, all but two
+volatile provenance fields (`commitSha`, `computedAt`) are bit-identical to
+the committed run:
+
+- Part A — the derived carriers `T(2,7)`, `T(3,5)`, `T(3,4)=8_19` return
+  degenerate solutions (Seifert-fibered ⟹ Gromov norm 0). Scope-(b), invariant
+  cited.
+- Part B — 0 hits at `<1%` for every `(F, k)`; the closest remains `1.33%`.
+  Composite search: 496 pairs, 0 hits.
+- Entropy — search `N = 23760` = **14.54 bits**; a match at the experimental
+  `5e-5` carries **13.29 bits**, so `identifiable = False` with an expected
+  **2.38 chance hits**. The census cannot identify `m_τ` even in principle.
+
+### Two defects found and fixed by the re-run
+
+1. **The probe could not regenerate its own witness.** `json.dumps` raised
+   `TypeError: Object of type mpf is not JSON serializable` *after* all compute
+   completed, so the run died emitting nothing. Fixed with a `default=` hook
+   (`_witness_default`) serializing `mpf`/`mpc` as full-precision decimal
+   strings, matching the convention already used for `substrate_q0` and
+   `hbar_q`.
+2. **A float64 leak in the witness.** With the serializer fixed,
+   `muon_sanity.vol_4_1` now records
+   `2.0298832128193072500424051085490405718833786150606` (50 dps) where the
+   committed witness held the float64-truncated `2.029883212819307`. This is
+   the raw-float64 class tracked by bean `qou-gqt5`.
+
+Neither defect touches a result: every scored number is unchanged.
