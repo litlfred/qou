@@ -204,7 +204,14 @@ def main():
     # and could fail to create its parents).
     import os as _os
     _scratch = _Path(_os.environ.get("QOU_SCRATCHPAD", "/tmp/qou-scratchpad"))
-    ycache = _scratch / "y_lambda_symbolic_cache.json"
+    # Cache key carries the CONVENTION. Before 2026-08-09 the key was bare
+    # existence, so a C-era cache would have been reused verbatim past the C
+    # excision and silently reintroduced C weights into the deficit. Naming the
+    # convention makes a stale cache a MISS rather than a wrong answer.
+    ycache = _scratch / "y_lambda_symbolic_cache_conventionD.json"
+    _stale = _scratch / "y_lambda_symbolic_cache.json"
+    if _stale.exists():
+        _log(f"ignoring pre-excision (convention C) cache at {_stale}")
     import json as _json2
 
     def _unify_q(e):

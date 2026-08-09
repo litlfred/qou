@@ -150,13 +150,17 @@ def y_lambda_at(
     if q_val is not None:
         _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)
         return {sh: sp.Float(_mp.nstr(v, 30), 30) for sh, v in _y.items()}
-    # Symbolic q: no D closed form wired yet; the C symbolic solver below is
-    # NOT a valid substitute, so refuse rather than silently return C.
-    raise NotImplementedError(
-        "y_lambda_at(q_val=None) returned the symbolic CONVENTION C weights, "
-        "which were excised 2026-08-09. A symbolic convention-D solver is not "
-        "wired; pass a numeric q_val, or use y_lambda_su_n(n, q, N) directly."
-    )
+    # Symbolic q: route to the EXACT convention-D solver (wired 2026-08-09).
+    # This path previously RAISED — the excision left it with no D
+    # implementation, and returning the C solver below would have silently
+    # reintroduced C. `y_lambda_su_n_symbolic` is the same hook-content formula
+    # as the numeric branch, over sympy, so the two agree to round-off
+    # (measured 5.35e-51 at 50 dps) and `z` comes out as `q³/(q²+1)` exactly.
+    #
+    # It is also far cheaper than the C path it replaces: C needed an ~18 min
+    # linear solve at n=4, this is a product formula and returns instantly.
+    from y_lambda_su_n import y_lambda_su_n_symbolic as _y_su_n_sym
+    return _y_su_n_sym(n, Q_SYM, 2)
 
 
 def _y_lambda_at_convention_C_HISTORICAL(

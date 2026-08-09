@@ -3,9 +3,13 @@
 """y_λ for the SU(N) Markov trace — the N-generalisation of `y_lambda_at`.
 
 `wedderburn_jones_markov.y_lambda_at(n, q)` computes ONE member of the Ocneanu
-family: convention **C** of `docs/coordination/trace-convention-registry.md`, the
-full-Hecke Ocneanu / Wenzl z-trace at `z = 1/(q^{1/2}+q^{-1/2})`. There is no `N`
-argument, and no `z` argument — the member is baked in.
+family. Until 2026-08-09 that was convention **C** of
+`docs/coordination/trace-convention-registry.md`, the full-Hecke Ocneanu / Wenzl
+z-trace at `z = 1/(q^{1/2}+q^{-1/2})`; C was then excised and it returns
+convention **D** (`z = q³/(q²+1)`), which is the `N = 2` member of the family
+below. There is still no `N` argument and no `z` argument — the member is baked
+in, and both of its paths now route here (numeric via `y_lambda_su_n`, symbolic
+via `y_lambda_su_n_symbolic`).
 
 The eightfold-way chapter needs a *different* member. Every flavour statement
 there — meson octet, baryon decuplet, the quark rows of the dictionary — is
@@ -175,6 +179,63 @@ def y_lambda_su_n(n: int, q: "mp.mpf", N: int | float) -> dict:
     return {sh: s[sh] / Z for sh in shapes}
 
 
+# ── symbolic (exact) convention-D weights ────────────────────────────────
+# Added 2026-08-09. `wedderburn_jones_markov.y_lambda_at(n, q_val=None)` — the
+# symbolic path, ~155 consumers — was made to RAISE when convention C was
+# excised, because returning C silently would have been worse. That left
+# `deltalambda/a4_brunnian_deficit_closed_form.py` (which calls
+# `y_lambda_at(4, None)`) with nowhere to go. These three functions are the
+# missing symbolic D solver: the same hook-content formula as above, over
+# `sympy` instead of `mpmath`, so the answer is an exact rational function of q.
+#
+# It is also strictly faster than the C path it replaces: C needed an ~18 min
+# linear solve at n=4 (hence that producer's file cache); this is a product
+# formula and returns instantly.
+
+
+def q_int_sym(m, q):
+    """Symbolic `[m]_q = (q^m − q^{−m})/(q − q^{−1})`, exactly.
+
+    Balanced convention, matching `q_int`. For integer `m` the result is a
+    Laurent polynomial; `cancel` puts it in canonical rational form.
+    """
+    import sympy as sp
+    return sp.cancel(sp.together((q ** m - q ** (-m)) / (q - 1 / q)))
+
+
+def schur_principal_sym(shape: tuple[int, ...], N: int, q):
+    """Symbolic `s_λ(1, q, …, q^{N-1})` up to a q-power, by hook-content.
+
+    Returns exactly `0` when `λ` has more than `N` rows: the cell `(N+1, 1)` has
+    content `−N`, so the numerator picks up `[N + (−N)]_q = [0]_q = 0`. The row
+    cap is therefore automatic here too, not imposed.
+    """
+    import sympy as sp
+    num = sp.Integer(1)
+    for c in contents(shape):
+        num *= q_int_sym(N + c, q)
+    den = sp.Integer(1)
+    for h in hooks(shape):
+        den *= q_int_sym(h, q)
+    return sp.cancel(num / den)
+
+
+def y_lambda_su_n_symbolic(n: int, q, N: int = 2) -> dict:
+    """`{λ: y_λ}` for the SU(N) Markov trace on `H_n(q)`, EXACT in `q`.
+
+    Symbolic twin of `y_lambda_su_n`, same normalisation `Σ_λ y_λ f^λ = 1`.
+    `N = 2` is registry convention **D**; at that value `z_from_weights` returns
+    `q³/(q²+1)` identically, which the self-test checks symbolically.
+    """
+    import sympy as sp
+    shapes = partitions_of(n)
+    s = {sh: schur_principal_sym(sh, N, q) for sh in shapes}
+    Z = sp.cancel(sp.together(sum(s[sh] * f_lambda(sh) for sh in shapes)))
+    if Z == 0:
+        raise ValueError(f"degenerate normalisation at n={n}, N={N}")
+    return {sh: sp.cancel(s[sh] / Z) for sh in shapes}
+
+
 def z_from_weights(q: "mp.mpf", y: dict) -> "mp.mpf":
     """The Markov parameter implied by an `n = 2` weight system.
 
@@ -255,7 +316,38 @@ def self_test() -> int:
         chk(f"production ≠ SU({N})",
             abs(y[(3,)] - prod[(3,)]) > mp.mpf("1e-3"))
 
-    total = 33
+    # ── symbolic convention-D twin (added 2026-08-09) ────────────────────
+    import sympy as sp
+    qs = sp.Symbol("q", positive=True)
+    qf = sp.Float(_Q, 50)
+    # Compare at 50 dps, not the self-test's working 30: at dps=30 the NUMERIC
+    # side is only good to ~1e-31, so a 30-dps comparison would cap the test's
+    # resolution at round-off (measured 9.86e-32) and could not tell a correct
+    # symbolic form from one wrong in the 32nd digit.
+    _dps_save = mp.mp.dps
+    mp.mp.dps = 50
+    q50 = mp.mpf(_Q)
+    for n_ in (2, 3, 4):
+        ysym = y_lambda_su_n_symbolic(n_, qs, 2)
+        ynum = y_lambda_su_n(n_, q50, 2)
+        worst = max(abs(mp.mpf(str(sp.N(ysym[sh].subs(qs, qf), 50))) - ynum[sh])
+                    for sh in ysym)
+        chk(f"symbolic == numeric at n={n_} (worst {mp.nstr(worst, 3)})",
+            worst < mp.mpf("1e-45"))
+        chk(f"symbolic normalisation Sum y_l f^l = 1 at n={n_}",
+            sp.simplify(sum(ysym[sh] * f_lambda(sh) for sh in ysym)) == 1)
+        capped = [sh for sh in ysym if len(sh) > 2]
+        chk(f"symbolic row cap: y_l = 0 for l with >2 rows at n={n_} "
+            f"({len(capped)} shapes)",
+            all(sp.simplify(ysym[sh]) == 0 for sh in capped))
+    # the registry D value must fall out of the n=2 symbolic weights EXACTLY
+    mp.mp.dps = _dps_save
+    y2s = y_lambda_su_n_symbolic(2, qs, 2)
+    zsym = sp.simplify(y2s[(2,)] * qs + y2s[(1, 1)] * (-1 / qs))
+    chk("symbolic z == q^3/(q^2+1) EXACTLY (registry convention D)",
+        sp.simplify(zsym - qs ** 3 / (qs ** 2 + 1)) == 0)
+
+    total = 43
     print(f"\n{total - fails}/{total} passed")
     return 1 if fails else 0
 
