@@ -1,7 +1,7 @@
 ---
 # rvnc
 title: 'Rivin concavity of the volume functional — qou-krvm (iv), the last untouched hypothesis'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -10,7 +10,8 @@ tags:
     - angle-structures
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-09T19:15:46Z
+branch: claude/fivetwo-level7-ladder-numerators
+updated_at: 2026-08-09T19:22:00Z
 ---
 
 `M004AngleStructure.lean` lists four hypotheses of `SymmetricOptimum.optima_coincide`
@@ -58,3 +59,31 @@ boundary. Any proof that wants a uniform constant will fail; keep it pointwise.
 **Control.** The trefoil `3₁` is not hyperbolic (`KnotRegistry.trefoil_volume_zero`,
 `Vol_q(β_{3₁}) = 0`). Any concavity/optimum machinery must yield *no positively-oriented
 solution* for `3₁`. If a route hands the trefoil a volume, the route is wrong.
+
+---
+**2026-08-09 — the algebraic half is DONE.** `QOU/Knot/RivinConcavity.lean`,
+sorry-free, axioms `[propext, Classical.choice, Quot.sound]`, `lake build` exit 0
+at 3089 jobs with the `.olean` deleted first, zero warnings.
+
+* `sos_identity` — the sum-of-squares identity as pure algebra (no trig, no
+  angles): `field_simp; ring`. Verified symbolically in sympy (exact, residual 0)
+  before being written, which is why it went in first try.
+* `cot_quadratic_pos` — **the Hessian fact**: for `α,β,γ > 0` summing to `π` and
+  `u+v+w = 0` not all zero, `cot α·u² + cot β·v² + cot γ·w² > 0`. No case split
+  on which angle is obtuse — the SOS absorbs it.
+
+That is the negative-definiteness of the Hessian of `Λ(α)+Λ(β)+Λ(γ)` on the
+tangent space of the constraint, i.e. the mathematical content of Rivin
+concavity for one tetrahedron.
+
+**What is still owed — and it is Mathlib-gap work, tracked in `mlgp`.** The
+analytic half: that the Hessian *is* `diag(−cot α, −cot β, −cot γ)`, i.e.
+`Λ″ = −cot`. `QOU/Knot/Clausen.lean` has the first derivative
+(`hasDerivAt_clausen : Cl₂′(θ) = −log(2 sin(θ/2))`, via FTC); the second
+derivative is one more differentiation and does not exist yet. Mathlib has
+**neither** Clausen nor Lobachevsky at all (checked: no file matches).
+
+Until that lands, `cot_quadratic_pos` is a statement about a quadratic form that
+is *known* to be the Hessian rather than *proved* to be. Do not describe
+`qou-krvm` (iv) as discharged; describe it as half-discharged, with the half
+that is done being the one that was actually in doubt.

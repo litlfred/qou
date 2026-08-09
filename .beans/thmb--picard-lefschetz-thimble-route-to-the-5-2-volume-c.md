@@ -68,3 +68,51 @@ would carry that as one order symbol. That is an ergonomics win, not a soundness
 **Control.** The trefoil `3₁` is a torus knot, not hyperbolic — `Vol = 0`,
 `Vol_q(β_{3₁}) = 0`. Its Kashaev sum does not grow. Any thimble/asymptotic story must
 reproduce *no exponential growth* for `3₁`; if it hands the trefoil a volume, it is wrong.
+
+---
+**2026-08-09 — Task 1 SETTLED, and the identification is better than expected.**
+
+The paper was uploaded to `main` (`uploads/10.4171-qt-83.pdf`, blob `632e54ac`,
+commit `21e1e81`) and read here, 67 pages. **Ohtsuki 2016 is confirmed**:
+*On the asymptotic expansion of the Kashaev invariant of the 5₂ knot*, Quantum
+Topol. **7** (2016) 669–735, DOI 10.4171/QT/83. The 5₂ volume conjecture is a
+**published theorem**. So route C is "formalise a known theorem", not "prove
+something open" — reprice accordingly. (A second commit `7f95cbf` was also
+pointed at; it is an **empty** commit, tree identical to its parent, same blob.
+Nothing extra in it.)
+
+Structure: §2 the invariant, **§3 the saddle point method**, §4 Poisson
+summation, §5 proof of Thm 1.1, App. A properties of φ, App. B convergence,
+**App. C critical points**, App. D.
+
+**THE FINDING.** Ohtsuki's potential (p. 671) is
+`V̂(x,y) = Li₂(xy) + Li₂(1/(xy)) + Li₂(y) − Li₂(1/y) − Li₂(1/x) − Li₂(1)` and his
+critical system (App. C) is `(1−x)y = 1`, `x(y−1)² = 1`. Eliminating gives
+`x³ = (1−x)²` — which **is the corpus's own saddle cubic `y² = (1−y)³` under
+`x = 1 − y`**, exactly. The exchange is the reflection `z ↦ 1−z` already proved
+in Lean here as `cRogersL_add_one_sub`.
+
+Now in Lean, sorry-free: `QOU/QBeta/FiveTwoOhtsukiCriticalPoint.lean` —
+`ohtsuki_elim` (polynomial, over any `CommRing`, needing **no** `1−x ≠ 0`),
+`ohtsuki_cubic_iff_saddle_cubic`, `saddle_cubic_of_ohtsuki_system`. Axioms
+standard; `ohtsuki_elim` needs only `[propext, Quot.sound]`.
+
+**AND THE VOLUME.** Probe `qbeta_5two_route71_ohtsuki_critical_point_probe.py`,
+80 dps, 5 gates all passing: at the **complex** critical point,
+`Im V̂ = Vol(5₂)` — residual `4.9e-50`, which is the precision floor of the
+corpus's own SnapPy HP 50-dps constant. Extended here to 79 dps:
+`2.8281220883307831627638988092766349427709813173006494770435203272588025483`.
+G4 is the control: the **real** critical point gives `1.7668…`, not the volume,
+so branch selection is analytic input that no algebraic statement supplies.
+
+**Method lesson, recorded because it nearly became a false report.** The first
+run showed a `3.8e-13` mismatch, *stable* across dps 40/60/80/120 — so not a
+precision artifact, and it looked like a real gap. The cause was a `Vol(5₂)`
+constant typed from memory, wrong from the 12th digit. The corpus's recorded
+value is authoritative and its own docstring already warns a 15-dps literature
+anchor (`2.82812208833410`) was wrong. **A residual that does not shrink with dps
+is evidence about the inputs, not about the identity.**
+
+**Still not done:** the asymptotic. §3–§5 is where the oscillatory control lives,
+and none of it is formalised. The identification above is a bridge to the
+*critical value*, not to the *limit*.

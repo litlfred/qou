@@ -138,6 +138,7 @@ import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
+import QOU.Knot.RivinConcavity
 import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
 import QOU.Knot.WhiteheadSaddleClausen
@@ -483,6 +484,7 @@ import QOU.QBeta.FiveTwoLevelSevenAssembly
 import QOU.QBeta.FiveTwoSaddleSumRule
 import QOU.QBeta.FiveTwoComplexPentagon
 import QOU.QBeta.FiveTwoFlattenedPentagon
+import QOU.QBeta.FiveTwoOhtsukiCriticalPoint
 import QOU.QBeta.FiveTwoDTSpectrumSplit
 import QOU.QBeta.FiveTwoSaddleCurve
 import QOU.QBeta.FiveTwoStokesMatrixIdentities
