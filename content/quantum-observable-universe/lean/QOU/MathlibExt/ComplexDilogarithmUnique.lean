@@ -45,7 +45,8 @@ So `cLiTwoExt` is not merely *an* analytic function extending the series — it 
 **the** one, and `cLiTwoExt y₁` at `‖y₁‖ = 1.52` is the value the sum rule's
 `Li₂(y₁)` refers to, with no choice left open.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** `qou-clx8` is explicit
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. `qou-clx8` is explicit
 that closing it does not move the sum rule; Route 5 is a restatement, and even
 the whole chain leaves an unevaluated real integral.
 -/

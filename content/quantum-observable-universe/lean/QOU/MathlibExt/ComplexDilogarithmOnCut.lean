@@ -167,7 +167,8 @@ Note (2) is plausible precisely because Route 35 G1 measured the `Re` jump
 across the cut to be **zero** — but measured is not proved, and `x = 1` is the
 branch point rather than an interior point of the cut, so G1 does not cover it.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.MathlibExt

@@ -35,7 +35,8 @@ Still open and untouched here: **Gap A** (`qou-glbl`), the globally
 differentiable root labelling — the one remaining hypothesis in the transport
 that would connect `S(π)` to `S(0)`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoLevelSevenAssembly

@@ -79,7 +79,8 @@ the hypothesis, with the same value `Y′/Y`:
 `hasDerivAt_log_neg_of_slitPlane` off the cut, and `hasDerivAt_log_neg_ofReal`
 on it via `log(−t) = log t + iπ`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

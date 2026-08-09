@@ -39,8 +39,10 @@ neither of which is in Mathlib): `δ(2[w] + [−w]) = w ∧ [(1−w)²(1+w)] = w
 so `2[w] + [−w]` lies in the Bloch group of `ℚ(ζ₇)⁺`, which is totally real,
 hence the element is torsion and its Rogers dilogarithm lies in `π²ℚ`.
 
-**Nothing here proves the sum rule.**  The sum rule remains verified to 80 dps
-and unproved; these are its formalizable algebraic components.
+**Nothing here proves the sum rule.**  **The 5₂ sum rule is PROVED**:
+`QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. These are its
+formalizable algebraic components.
 -/
 
 namespace QOU.QBeta.FiveTwoCyclotomicBloch

@@ -57,7 +57,8 @@ Nor does this close `qou-rstq` item 4. Identifying the corpus's piecewise
 bookkeeping on top of these identities. This closes one of the two analytic
 legs that item rests on.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.MathlibExt

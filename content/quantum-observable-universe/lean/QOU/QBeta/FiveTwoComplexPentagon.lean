@@ -563,9 +563,15 @@ and which contains a real point of `(0,1)`, and the complex five-term sum is
 constant on it — equal to the value it has on the real square, where the real
 five-term identity already pins it.
 
-⚠ The hypothesis `hreg` is the whole difficulty. Nothing here produces such a
-set for the 5₂ saddle values. **The 5₂ sum rule remains verified to 80 dps,
-unproved.** -/
+The hypothesis `hreg` was the whole difficulty when this was written. It is
+discharged below: `pentagonRegular_of_mem_rogersDomain` supplies the regularity
+and `isPreconnected_rogersDomain` the connectedness, so `rogersDomain` **is**
+such a set — which is what turns this conditional statement into the
+unconditional `pentagonSum_eq_pi_sq_div_two`.
+
+**The 5₂ sum rule is PROVED**:
+`QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem pentagonSum_eq_of_region_of_real {x₀ y : ℝ} {S : Set ℂ} (hS : IsOpen S)
     (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular (y : ℂ) w)
     (hx0 : 0 < x₀) (hx1 : x₀ < 1) (hy0 : 0 < y) (hy1 : y < 1)
@@ -1813,11 +1819,16 @@ Every logarithm in Route 68's capstone has been evaluated: `log a`, `log b` from
 the modulus relation `‖a‖²·t = 1`, and `log A₃`, `log B₃` from Route 61's angle
 identity. What is left is `π²`, `log t` and `arg a`.
 
-⚠ This is the sum rule's **shape**, reached from `SaddleRoots` — a structure
-whose fields are facts about the cubic. It is not a proof that the 5₂ saddle sum
-`A` has this value unless `SaddleRoots` is inhabited by the actual roots, which
-is not established here. **The 5₂ sum rule remains verified to 80 dps,
-unproved.** -/
+This is the sum rule's **shape**, reached from `SaddleRoots` — a structure whose
+fields are facts about the cubic. On its own it would say nothing about the
+actual 5₂ saddle sum `A`; that needs `SaddleRoots` to be inhabited by the actual
+roots, which `SaddleRoots.ofRealRoot` and `instance : Nonempty SaddleRoots`
+establish (below, from the intermediate value theorem and an explicit square
+root). `fiveTwo_saddle_sum_rule` is this theorem with that instance supplied.
+
+**The 5₂ sum rule is PROVED**:
+`QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem SaddleRoots.sum_cLiTwoExt_closed (S : SaddleRoots) :
     2 * (cLiTwoExt S.a + cLiTwoExt ((starRingEnd ℂ) S.a) + cLiTwoExt (S.t : ℂ))
       = ((2 * (-(Real.pi ^ 2 / 6) - Real.log S.t ^ 2 / 2
