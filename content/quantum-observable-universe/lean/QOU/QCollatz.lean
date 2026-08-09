@@ -1,4 +1,5 @@
 import QOU.Basic
+import QOU.MathlibExt.QIntegerCanonical
 import QOU.QuantumObservableUniverse.CategoricalFoundations
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
@@ -44,6 +45,18 @@ namespace QOU.Substrate
 /-- The q-integer `[k]_q = (qᵏ - 1)/(q - 1)` -/
 noncomputable def qInt (q : ℝ) (k : ℕ) : ℝ :=
   (q ^ k - 1) / (q - 1)
+
+/-- **Bridge to the canonical GEOMETRIC bracket** — note which one.
+
+This site is `(qᵏ − 1)/(q − 1)`, the geometric form, *not* the balanced
+`[k]_q` that most of the corpus means.  Tying it to `qIntBal` would be a
+mis-consolidation, and the module's `qIntGeo` docstring says why: the geometric
+form is bar-*covariant* with weight `−(k−1)`, not bar-even, so it cannot carry a
+bar-even quantity.  The `q ≠ 1` hypothesis is `geom_sum_eq`'s and is real —
+at `q = 1` the closed form is `0/0 = 0` while the sum is `k`. -/
+theorem qInt_eq_canonical (q : ℝ) (k : ℕ) (hq : q ≠ 1) :
+    qInt q k = QOU.QInteger.qIntGeo q k := by
+  rw [qInt, QOU.QInteger.qIntGeo_def, geom_sum_eq hq]
 
 /-- `[2]_q = q + 1` for `q ≠ 1`. -/
 theorem qInt_two (q : ℝ) (hq : q ≠ 1) :
