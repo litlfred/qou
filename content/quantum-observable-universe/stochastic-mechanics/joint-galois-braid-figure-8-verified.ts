@@ -8,7 +8,10 @@ export default proposition({
     ref: "qou:QOU.AlgebraicSubstrate.JointGaloisBraidFigure8.figure_8_joint_action",
     validation: "not_checked",
   },
-  uses: [],
+  uses: [
+    "conj:joint-galois-braid-action",
+    "def:hq-bi-filtration",
+  ],
   cites: [],
   tags: [
     "joint-action",

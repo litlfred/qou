@@ -10,6 +10,7 @@ export default proposition({
   },
   uses: [
     "rem:np-discrepancy-resolution",
+    "prop:chirality-from-frobenius-self-pairing",
   ],
   tags: [
     "mass-formula",

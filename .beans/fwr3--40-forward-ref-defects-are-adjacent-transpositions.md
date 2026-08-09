@@ -1,11 +1,11 @@
 ---
 # fwr3
 title: '40 forward-ref defects are adjacent-block transpositions'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-09T21:35:00Z
-updated_at: 2026-08-09T21:35:00Z
+updated_at: 2026-08-09T23:10:00Z
 parent: fwr1
 ---
 Forty of the 236 surviving forward references point at a block within two
@@ -63,3 +63,36 @@ Full list (chapter: source (pos) ↔ target (pos)):
 - stochastic-mechanics: rem:markov-closure-map-axiomatic (19) ↔ rem:F3-eps6-leading-eq-neg-2b-cubed (20)
 - stochastic-mechanics: rem:classical-limit-topology-free (27) ↔ def:classical-limit-obstruction (29)
 - stochastic-mechanics: rem:qou-obstruction-millennium-specializations (34) ↔ tbl:qou-obstruction-reduction-table4-data (35)
+
+---
+
+**Outcome: 24 within-section moves applied; forward references 236 → 211.**
+
+Done as a constrained search over within-section orderings, scored by the exact
+`detangler-no-forward-ref` rule, with three rounds of narrative review as the
+gate. The raw metric wanted far more: an unconstrained search claimed −66, and
+review found **18 of its 53 moves made the paper worse**. That pass was reverted
+whole. The sequence of honest numbers is −66 → −52 (guards derived from the
+data) → −36 (round-one vetoes) → **−25, three-times reviewed, zero bad.**
+
+Guards the search now respects, each traceable to a specific failure:
+
+| guard | what it prevents |
+|---|---|
+| section opener + `meta.position: "opening"` pinned | a block landing above the framing prose it presupposes |
+| a block may not precede one it `interprets` (1027 declare it) | splitting a narrative pair whose slugs share no prefix |
+| forward refs over inline `(#label)` **and** backticked `kind:slug` prose may not rise | stranding a block from a dependency `uses[]` never declared |
+| a unit headed by a descendant of a block in the section is pinned | an already-detached `-proof` wandering further from its proposition |
+| comments never move; the entry beneath one is pinned | a note re-attaching to a block it was not written about |
+| families atomic (`X`, `X-proof`, `X-interpretation`, `X-tableN-data`) | a proposition separated from its proof |
+
+What no guard sees, and why this needed readers: section intros that narrate
+order ("**First** … **Second** …", hand-numbered arcs, "**Finally**, …"), bare
+anaphora ("**These axioms** carry…"), definite articles pointing above ("**the**
+terminal Skein resolution"), and a block closing by announcing the next. Those
+28 verdicts are recorded per block with their reason in
+`.beans/fwr3-immovable-blocks.txt`, so a rerun does not rediscover them.
+
+Verified: the in-memory model and the real checker agree exactly; slug multisets
+per manifest unchanged; comments byte-identical; graph acyclic; `run-validate`
+✓ Valid on the same 5 pre-existing issues.

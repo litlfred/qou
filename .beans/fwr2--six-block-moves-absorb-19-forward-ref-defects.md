@@ -1,11 +1,11 @@
 ---
 # fwr2
 title: 'six block moves absorb 19 forward-ref defects'
-status: open
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-09T21:35:00Z
-updated_at: 2026-08-09T21:35:00Z
+updated_at: 2026-08-09T23:10:00Z
 parent: fwr1
 ---
 Six blocks each sit late in their chapter while three or more earlier blocks
@@ -32,3 +32,29 @@ subsection" when it is 21 sections and ~309 blocks away.
 
 Moving a block changes chapter order, so re-run `detangler` after each: a move
 that fixes three forward edges can create new ones behind it.
+
+---
+
+**Outcome: 5 of 6 moved, forward references 211 → 200 (measured −11, exactly as
+costed).**
+
+Reading changed two of the six. **Two destinations proposed above were wrong and
+would have been dependency-violating**: `def:quantum-bloch-group` before position
+61 states the Bloch group ahead of `def:habiro-ring`, which it uses; and
+`def:archimedean-realization-functor` before 10 puts the π∞ : 𝔸 → ℝ projection
+ahead of `def:adelic-substrate`, its own domain. Both landed in corrected slots
+instead. The `rem:motivic-mass-rationale` false locator ("the next subsection")
+turns out to be a **prose** defect — no ordering fixes it without breaking the
+adelic dependency.
+
+**`def:categorical-instanton` was kept.** The move scores −3 at zero cost but
+decapitates `sec:instanton`, the section named after it, and strands five
+declared dependents. The right remedy is a section-level move of all 13 blocks,
+which absorbs 2 of the 3 at zero cost and keeps the section whole — left for
+fwr4, where the section-level questions live.
+
+Three prose follow-ups the moves oblige, each a section intro announcing a block
+that has now left: `orbital-symmetry-embedding-intro`,
+`intro-archimedean-realization-kashaev`, and the `rem:motivic-mass-rationale`
+locator. Also visible once the blocks are adjacent: `rem:beta-decay-energy-scale`
+and `rem:energy-scale-planck` both derive E₀ ≈ 4.186 MeV from CAL-1/CAL-2.

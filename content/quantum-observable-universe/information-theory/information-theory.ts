@@ -183,8 +183,8 @@ section({
       label: "sec:stat-mech",
       blocks: [
         "stat-mech-intro",
-        "quantum-temperature",
         "quantum-entropy",
+        "quantum-temperature",
         "quantum-temperature-interpretation",
         "quantum-pressure",
         "quantum-pressure-interpretation",
