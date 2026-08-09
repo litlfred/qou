@@ -45,6 +45,14 @@ Everything counted here -- occupancies, capacities, singly-occupied sites -- is
 objective, related by `primal_obj = Z * y_0`. That needs a natural-number cast
 and a product, nothing ordered and nothing archimedean, so the LP scalars are a
 generic `[Semiring R]`; the substrate evaluation is `R := ℝ`.
+
+The module is now **entirely pre-archimedean**: the three
+`*_unconstrained_false` refutation witnesses below were formerly stated at
+`ShellFillingRuleContext ℝ`, but their counterexamples live in the `ℕ`-valued
+occupancy / capacity / `singly` fields (and, for the LP conjunct, in `1 ≠ 0`),
+so they are stated over the same generic `[Semiring R]` — with `[Nontrivial R]`
+where `1 ≠ 0` is needed. Each is strictly stronger than its former `ℝ` form,
+which it recovers by instantiating `R := ℝ`. No `ℝ` remains in the file.
 -/
 
 namespace QOU.Molecular
@@ -148,9 +156,15 @@ theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :
 
 /-- **Refutable as written.** The class bounds `occupancy ≤ capacity`; the
     theorem asserts *equality*. Carrying hypotheses is not enough — they must
-    be strong enough for the conclusion (bean qou-octr, §10). -/
+    be strong enough for the conclusion (bean qou-octr, §10).
+
+    Stated over the generic `[Semiring R]` of the module (§7c): the
+    counterexample lives entirely in the `ℕ`-valued occupancy/capacity
+    fields, so no ordering and no archimedean structure is used.  This
+    is strictly stronger than the former `R := ℝ` form, which it
+    recovers by instantiation. -/
 theorem shell_filling_inner_shells_unconstrained_false :
-    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+    ¬ ∀ ctx : ShellFillingRuleContext R,
         ∀ n : ℕ, n < ctx.n_val → ctx.occupancy n = ctx.capacity n := by
   intro h
   have := h { Z := 0, N := 0, n_val := 2, occupancy := fun _ => 0,
@@ -161,9 +175,12 @@ theorem shell_filling_inner_shells_unconstrained_false :
   norm_num at this
 
 /-- **Refutable as written** — the class never relates the fields the
-    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`). -/
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`).
+
+    Generic `[Semiring R]` (§7c): the witness separates the two valence
+    configurations through the `ℕ`-valued `singly` field alone. -/
 theorem shell_filling_hund_rule_unconstrained_false :
-    ¬ ∀ ctx : ShellFillingRuleContext ℝ,
+    ¬ ∀ ctx : ShellFillingRuleContext R,
         ∀ c : ctx.ValenceConfig, ctx.singly c ≤ ctx.singly ctx.ground := by
   intro h
   have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
@@ -175,15 +192,21 @@ theorem shell_filling_hund_rule_unconstrained_false :
   norm_num at this
 
 /-- **Refutable as written** — the class never relates the fields the
-    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`). -/
-theorem shell_filling_lp_strong_duality_unconstrained_false :
-    ¬ ∀ ctx : ShellFillingRuleContext ℝ, ctx.primal_obj = (ctx.Z : ℝ) * ctx.y_0 := by
+    conclusion names (bean qou-octr, §10 `proof-unclosable-context-sorry`).
+
+    Generic `[Semiring R]` (§7c).  The LP scalars are the only non-`ℕ`
+    data, so this witness does need `1 ≠ 0`; that is supplied by the
+    purely algebraic `[Nontrivial R]`, **not** by an ordering — no
+    archimedean structure is used, and `R := ℝ` recovers the former
+    statement. -/
+theorem shell_filling_lp_strong_duality_unconstrained_false [Nontrivial R] :
+    ¬ ∀ ctx : ShellFillingRuleContext R, ctx.primal_obj = (ctx.Z : R) * ctx.y_0 := by
   intro h
   have := h { Z := 0, N := 0, n_val := 0, occupancy := fun _ => 0,
               capacity := fun n => 2 * n ^ 2, capacity_def := fun _ => rfl,
               occupancy_le_capacity := fun _ => Nat.zero_le _,
               ValenceConfig := Unit, ground := (), singly := fun _ => 0,
               y_0 := 0, primal_obj := 1 }
-  norm_num at this
+  simp at this
 
 end QOU.Molecular

@@ -17,12 +17,21 @@ one sorry-free Lean file:
     "incomplete topological states lowering the energy budget".
 (C) KL classical-limit functor placeholder — `H_n(R, q) → ℤ[S_n]`
     at `q = 1` via Kazhdan-Lusztig basis specialisation.
-(D) Minimal `BlochGroup` carrier — free abelian group on `ℝ` modulo
-    the 5-term pentagon relation as a quotient hypothesis.
+(D) Minimal `BlochGroup` carrier — free abelian group on `F^×`, for
+    a generic field `F`, modulo the 5-term pentagon relation as a
+    quotient hypothesis.
 (E) Pentagon-identity surrogate for `BlochWigner_unit_circle`
     (Cl_2 form) — sketched as a class hypothesis pending Mathlib's
     Fourier-series infrastructure for full Cl_2 functional
     equations.
+
+Base ring (§7c). (A)–(D) are substrate-side: (A) is over `ℕ`, (B) and
+(D) quantify over a generic carrier, and (C) is now generic over a
+`CommRing` ground ring (it used to be typed `ℝ → ℝ`, which mislabelled
+the `q = 1` Hecke specialisation as archimedean). The residual `ℝ` is
+confined to (E): `Cl_2` is the real Clausen function, so the pentagon
+functional equation is genuinely archimedean and cannot be stated over
+a generic ring.
 
 Each piece is small and focused; together they deepen the §3b-cond
 scaffolding for the four open mass-tower problems and the BlochGroup
@@ -84,17 +93,24 @@ class IsDemazureSubCrystal
 
 /-! ## (C) Kazhdan-Lusztig classical-limit functor -/
 
-/-- The **classical-limit specialisation** sends a real-valued
-    Hecke trace at substrate parameter `q` to its `q → 1` value.
+/-- The **classical-limit specialisation** sends a Hecke trace over the
+    ground ring `R`, at substrate parameter `q`, to its `q = 1` value.
     Below this is a placeholder; the substantive content is the
     KL-basis specialisation `b_w → C_w ∈ ℤ[S_n]` which produces
-    *integer ±1 permutation signs* in the limit. -/
+    *integer ±1 permutation signs* in the limit.
+
+    Ground ring generic (§7c): the `q = 1` specialisation of
+    `H_n(R, q) → ℤ[S_n]` is a ring homomorphism of the Hecke ground
+    ring and uses no archimedean structure — no ordering, no limit, no
+    `Real.*`. It was previously typed `ℝ → ℝ`, which mislabelled a
+    substrate-side operation as archimedean; `CommRing` is the §7c
+    class for the intended instance `ℤ[q, q⁻¹]`. -/
 -- Ref: [manuscript] conj:kazhdan-lusztig-classical-limit
-noncomputable def KLClassicalLimit (f : ℝ → ℝ) : ℝ := f 1
+def KLClassicalLimit {R : Type*} [CommRing R] (f : R → R) : R := f 1
 
 /-- Trivial property of the classical-limit functor: applied to
     a constant, returns the constant. -/
-@[simp] theorem KLClassicalLimit_const (c : ℝ) :
+@[simp] theorem KLClassicalLimit_const {R : Type*} [CommRing R] (c : R) :
     KLClassicalLimit (fun _ => c) = c := rfl
 
 /-! ## (D) Minimal `BlochGroup` carrier -/

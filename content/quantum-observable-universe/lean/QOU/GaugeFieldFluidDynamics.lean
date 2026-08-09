@@ -2,6 +2,7 @@ import QOU.Basic
 import QOU.QuantumObservableUniverse
 import Mathlib.Data.Real.Basic
 import QOU.MathlibExt.QIntegerCanonical
+import QOU.FluidDynamics.observability_q_independent
 
 /-!
 # Gauge Field Fluid Dynamics
@@ -735,42 +736,20 @@ theorem topological_obstruction_nonzero (κ : ℕ) (hκ : κ ≥ 4) :
 -- §15  Observability is q-independent (the key structural theorem)
 -- ════════════════════════════════════════════════════════════════
 
-/-- **Observability data** for a QOU: the vanishing of Hom(1, Ad(A)).
-
-    The Hom space is computed in the underlying monoidal category `C`;
-    the substrate parameter enters only through the differential `d_q`,
-    never through the objects, morphisms, or Hom spaces.  This is
-    captured *structurally*: the rank is a single `ℕ` with **no**
-    substrate-section argument — q-independence is then provable by
-    `rfl` rather than assumed (md: "the morphism space in the underlying
-    monoidal category is the same for all q").
-
-    LaTeX: `\label{thm:observability-q-independent}` -/
-structure ObservabilityData (C : Type*) where
-  /-- The rank of Hom(1, Ad(A)), computed in `C` (no substrate-section
-      argument — `q` cannot enter). -/
-  hom_rank : ℕ
-  /-- Observability: rank = 0. -/
-  observable : hom_rank = 0
-
-/-- The Hom-rank "as seen at substrate section `q`".  By construction the
-    section is **not consumed**: `Hom(1, Ad(A))` involves no differential,
-    so the assignment is the constant function of `q`.  Generic section
-    type `R` per §7c — no `ℝ`, no ordering. -/
-def ObservabilityData.homRankAt {C R : Type*}
-    (obs : ObservabilityData C) (_q : R) : ℕ :=
-  obs.hom_rank
-
-/-- Observability is a base property, independent of the substrate
-    section ([`thm:observability-q-independent`]): for any two sections
-    `q₁ q₂` the Hom-rank agrees — *derived* by `rfl`, formalising the
-    md's proof that `q` does not appear in the construction — and the
-    observability axiom holds at every section. -/
--- Ref: [manuscript] Ch 5 §8 Observability is q-independent
-theorem observability_q_independent (C : Type*) {R : Type*}
-    (obs : ObservabilityData C) (q₁ q₂ : R) :
-    obs.homRankAt q₁ = obs.homRankAt q₂ ∧ obs.homRankAt q₁ = 0 :=
-  ⟨rfl, obs.observable⟩
+/-! **§7c split (2026-08-09).**  `ObservabilityData`,
+    `ObservabilityData.homRankAt` and `observability_q_independent` are
+    entirely **pre-archimedean** — the substrate section is a bare
+    `{R : Type*}` with no typeclass, and the Hom-rank is an `ℕ` that
+    carries no section argument, so `q`-independence is *derived* by
+    `rfl`.  They used to sit here, inside a module whose body is
+    genuinely archimedean (`Real.exp` enstrophy bounds, `Real.pi` vortex
+    separation, Sobolev exponents), which made this file a mixed
+    substrate/archimedean placement.  Per §7c the generic half now lives
+    in [`QOU.FluidDynamics.observability_q_independent`], imported above;
+    the analytic half stays here and consumes it.  `ObservabilityData` is
+    re-exported so the pre-existing `QOU.GaugeFieldFluidDynamics.*` name
+    keeps resolving for `NSSingularityDescartes` below. -/
+export QOU.FluidDynamics (ObservabilityData)
 
 -- ════════════════════════════════════════════════════════════════
 -- §16  NS-singularity of the Descartes universe (main theorem)
