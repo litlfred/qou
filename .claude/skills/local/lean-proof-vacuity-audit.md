@@ -494,6 +494,33 @@ small-instance check of §9 lifted from parameters to classes: **instantiate the
 class with numbers chosen to disagree** and see whether it compiles. Two
 minutes per statement, and the answer is a proof either way.
 
+**#1 and #10 are adjacent, and the naive fix for #1 produces #10.** Deleting a
+conclusion-bearing field removes the self-assuming projection and leaves the
+theorem with nothing to derive from — vacuous becomes unclosable. Observed
+in-repo: `QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean`'s
+`obstruction_trace_gap` says so in its own docstring —
+
+> The two conjuncts were previously carried as class fields
+> (`kappa0_eq_chi_A`, `phi_1_image_eq_chi_A`) and projected here, which made
+> this theorem assume exactly what it claims … Fields deleted; the gap is now
+> real.
+
+The gap became real *and* impossible to close. Deleting the field is half a
+repair; the other half is putting back the hypotheses the derivation needs. When
+fixing a #1, check the result against #10 before calling it done.
+
+**A class that constrains nothing refutes both a statement and its opposite.**
+`bare_is_lp_unstable` (`∃ X, …`) and `dressed_is_lp_stable` (`¬ ∃ X, …`) share
+`AtomicLPStabilityContext` and are both refutable — `Candidate := Empty` kills
+the first, one satisfying candidate kills the second. If you find one of a
+±pair, check its sibling.
+
+**Where they concentrate.** Measured over the whole qou corpus (bean qou-o7qo):
+18 context-class `sorry`s among the 822 modules that no build ever reached,
+against 3 among the 870 that always compiled — six times the density. A module
+that compiles gets read and its `sorry`s reported every build. Sweep
+never-built modules first.
+
 **Fix.** Add to the class the hypothesis the derivation actually needs — for
 the example above, whatever relates `B` to its two components — so the theorem
 composes it, per the exemplar. Restating the theorem to dodge the gap moves the

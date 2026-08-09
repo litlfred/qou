@@ -122,4 +122,28 @@ theorem atomic_lp_stability [ctx : AtomicLPStabilityContext] :
     (¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0) :=
   ⟨bare_is_lp_unstable, dressed_is_lp_stable⟩
 
+/-- **Both statements above are refutable, by opposite instances.**
+
+    `Candidate`, `normalised`, `bareVolume` and `dressedVolume` are free
+    fields, so the class constrains neither the existence claim nor its
+    negation: `Candidate := Empty` kills the `∃`, and a single candidate with
+    both predicates satisfied kills the `¬∃`. A class this unconstrained
+    refutes a statement *and* its structural opposite (bean qou-octr, §10). -/
+theorem bare_is_lp_unstable_unconstrained_false :
+    ¬ ∀ ctx : AtomicLPStabilityContext,
+        ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.bareVolume X = 0 := by
+  intro h
+  obtain ⟨X, _⟩ := h { Candidate := Empty, bareVolume := fun x => x.elim,
+                       dressedVolume := fun x => x.elim,
+                       normalised := fun _ => True }
+  exact X.elim
+
+theorem dressed_is_lp_stable_unconstrained_false :
+    ¬ ∀ ctx : AtomicLPStabilityContext,
+        ¬ ∃ X : ctx.Candidate, ctx.normalised X ∧ ctx.dressedVolume X = 0 := by
+  intro h
+  exact h { Candidate := Unit, bareVolume := fun _ => 0,
+            dressedVolume := fun _ => 0, normalised := fun _ => True }
+       ⟨(), trivial, rfl⟩
+
 end QOU.ParticleInteractions
