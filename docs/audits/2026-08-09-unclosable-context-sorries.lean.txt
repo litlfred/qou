@@ -273,3 +273,61 @@ theorem four_term_pair_nucleon_unconstrained_false :
   norm_num [protonNetTarget] at this
 
 end RefuteProbe9
+import QOU.WedderburnMass.confinement_categorical
+
+namespace InhabProbe
+open QOU.Hecke QOU.Shared
+
+/-- `Generator n` is `Fin (n-1)` with ℕ subtraction, so at `n = 0` it is empty:
+    `embed` is trivial and the three relations hold vacuously. Taking `A := R`
+    makes `spans` the statement `⊥ = ⊤` in `Subalgebra ℤ ℤ`, which is a
+    subsingleton. -/
+noncomputable instance degenerateInv : Inv ℤ := ⟨fun _ => 0⟩
+
+noncomputable instance degenerateHecke : HeckeAlgebra ℤ 0 0 ℤ where
+  embed := fun i => absurd i.idx.isLt (by omega)
+  quadratic := fun i => absurd i.idx.isLt (by omega)
+  braid := fun i _ _ => absurd i.idx.isLt (by omega)
+  farCommute := fun i _ _ => absurd i.idx.isLt (by omega)
+  spans := Subsingleton.elim _ _
+
+noncomputable instance degenerateMarkov : MarkovTrace 0 (0 : ℤ) ℤ where
+  trace := LinearMap.id
+  normalised := rfl
+  cyclic := fun x y => by simp [mul_comm]
+  z_param := 0
+  trace_gen := fun i => absurd i.idx.isLt (by omega)
+  trace_prod_gen := fun i _ _ => absurd i.idx.isLt (by omega)
+
+/-- **`MarkovTraceContext` IS inhabited.** -/
+noncomputable def witness : MarkovTraceContext where
+  R := ℤ; ringR := inferInstance; invR := degenerateInv
+  q := 0; n := 0; A := ℤ; ringA := inferInstance; algebraA := inferInstance
+  heckeInst := degenerateHecke; markovInst := degenerateMarkov
+
+
+
+open QOU.WedderburnMass in
+/-- A concrete `ConfinementCategoricalContext`, built on the witness above. -/
+noncomputable def ccWitness : ConfinementCategoricalContext.{0} :=
+  { toMarkovTraceContext := witness
+    n_blocks := 0
+    e_block := fun _ => (0 : ℤ)
+    E_infinity_00 := (1 : ℤ)
+    integral := fun _ => (0 : ℤ)
+    pi_centre := fun x => x
+    observable := fun _ => True }
+
+open QOU.WedderburnMass in
+/-- With the class inhabited, the free fields refute the first conjunct:
+    `n_blocks := 0` makes the sum empty while `E_infinity_00 := 1`. -/
+theorem confinement_categorical_unconstrained_false :
+    ¬ ∀ ctx : ConfinementCategoricalContext.{0},
+        haveI := ctx.ringR
+        ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum (fun lam => ctx.e_block lam) := by
+  intro h
+  have := h ccWitness
+  simp only [ccWitness, witness, Finset.range_zero, Finset.sum_empty] at this
+  exact absurd this (by decide)
+
+end InhabProbe
