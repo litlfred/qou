@@ -528,6 +528,28 @@ GATE](.claude/skills/local/formalizer.md). History: added 2026-06-25 after
 a gratuitous `(q : ℝ)` / `SL₂(ℝ)` landed on a purely-algebraic τ-kernel
 lemma in a library file (no sidecar ⇒ unswept); the owner caught it by eye.
 
+**Precision preflight — run before every commit that touches a witness or a
+`computations/` script (STRICT, 2026-08-09).**
+[`scripts/precision-gates.sh`](scripts/precision-gates.sh) runs the whole
+NO-FLOAT64 family in one pass — the two ratchets (raw-float64, float64-padding),
+the three source-level gates (`mpf(<float>)`, `mp.dps` no-op, module-const), the
+q₀ anchor-flip and drift gates, plus the no-free-parameter certificate as
+advisory. Use `--changed` to make it a no-op when nothing precision-relevant was
+touched. It exits 1 on any blocking red and does **not** stop at the first
+failure.
+
+Why it is a hand-run preflight and not "CI will catch it": these gates *were*
+already strict in `.github/workflows/witness-staleness.yml`, and three dirty
+witnesses reached `main` anyway (bean `qou-mnrd`). That workflow is
+`workflow_dispatch:` only under the 2026-06-30 Actions-billing directive, so on
+a push it never runs. Re-enabling the trigger is an owner decision about
+billing; running the gate yourself is not.
+
+**Never make a red run green by widening a baseline.** Fix at the producer —
+carry the value as `mpmath.mpf` from its source and serialize with
+`_precision.fmt`. Adding a file to `raw-float64-baseline.json`, `--rebaseline`,
+or hand-editing a number defeats the mechanism. Baselines drain, never grow.
+
 **Render-QA gate for math-bearing `.md` (STRICT, 2026-06-30).** Any commit
 that creates or edits a `.md` content block containing math (`$…$`,
 `$$…$$`, or fenced ` ```tex ` blocks) **must** be render-QA'd before commit

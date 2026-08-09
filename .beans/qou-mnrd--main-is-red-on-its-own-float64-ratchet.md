@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-08T22:45:00Z
+updated_at: 2026-08-09T01:00:00Z
 ---
 
 ## The finding
@@ -67,3 +67,100 @@ This branch does not fix them. They are other sessions' witnesses and draining
 them is their arc's work, not this one's. Recorded so that
 `claude/drain-float64-ratchet` is not read as having regressed the gate it is
 named after — it did not; it inherited a red main.
+
+## CORRECTION — the ratchet IS wired into CI, and strictly. 2026-08-09
+
+The bean's item 2 asks "why did these land? ... If it is not wired into CI as
+blocking, three more will land next week." **The premise is wrong.**
+`.github/workflows/witness-staleness.yml` has run
+`witness_raw_float64_audit.py --self-test` + `--strict` as a real blocking step
+since the pipefail fix; six sibling precision gates sit beside it, all strict.
+It is wired, and correctly.
+
+What is missing is a **trigger**:
+
+    on:
+      # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
+      workflow_dispatch: {}
+
+No push, no pull_request. The workflow has not run on a push since 2026-06-30.
+That is the whole explanation for three witnesses from three sessions landing
+undrained, and it explains why nothing caught them at any point in between.
+
+**This is not an agent decision to reverse.** Re-enabling the trigger spends the
+owner's Actions budget against an explicit directive. Flagged for the owner as a
+decision, not fixed unilaterally; the durable fix available to agents is
+elsewhere.
+
+## What was actually done, and where the enforcement now lives
+
+`scripts/precision-gates.sh` — one runner for the whole NO-FLOAT64 family, in
+the same order as the workflow: q0-anchor flip, `mpf(<float>)` source,
+float64-padding ratchet, `mp.dps` no-op, module-const precision, raw-float64
+ratchet, q0-value drift, plus the no-free-parameter certificate as ADVISORY
+(red by design on `A_omega = 3`, exactly as the workflow declares).
+
+  * exits 1 on any blocking red, and does NOT stop at the first failure -- a
+    preflight that hides four reds behind one is worse than none;
+  * `--changed` short-circuits to a no-op unless the change touches a witness
+    or a `computations/` script, so it is cheap enough to be a commit-time rule;
+  * reports witnesses the RUN ITSELF dirtied separately from ones the agent
+    dirtied -- those are audits whose committed output is stale, a different
+    finding from a failing gate.
+
+Wired at the two choke points agents actually pass through:
+
+    AGENTS.md  §"QA is agent-owned; CI is a backup"  -> before every commit
+    .claude/commands/prepare-merge.md  step 4b       -> BLOCKING, before push
+
+and cross-referenced from the workflow header, with an explicit instruction to
+keep the workflow's step list and the script's `GATES` array in sync.
+
+## Two findings the bean did not have
+
+**1. A SECOND gate was red, and it was this arc's own defect.**
+`module_const_precision_audit.py --strict` exited 1 on
+`computations/probes/one_loop_c_sigma_tetrahedral_probe.py:110`:
+
+    VOL_41 = mpf("2.0298832128193072500424051085486440883603983786944…")
+
+built at module scope, above `set_compute_dps()` in `main()`. mpmath was still
+at its default 15 dps when the literal was parsed, so the 60 digits were
+truncated to 53 bits at construction and no later dps setting can recover them.
+Fixed by calling the idempotent `set_compute_dps()` at module scope above the
+constant. LOSSY 1 -> 0. The probe still passes 4/4 and no assertion value moved
+(the constant reaches the hot loop through `float()`), so this was latent rather
+than active -- which is exactly the kind of defect a static gate exists for.
+
+Worth naming: this landed in `e33b84aef`, on this same arc, in the window when
+the trigger was off. The three qbeta witnesses were not an unlucky sibling; the
+gap catches everyone including the session that opened the bean about it.
+
+**2. Two committed audit witnesses are STALE, one substantively.**
+Running the family regenerates them:
+
+    computations/audits/q0-anchor-consistency-audit.witness.json
+        Q0_ANCHOR_MISSING 1787 -> 1814   (27 newer witnesses carry no anchor;
+        NOT a failure -- a witness gains its anchor when next produced via
+        WitnessBuilder -- but the committed count was wrong)
+
+    computations/q0-value-drift-audit.witness.json
+        proton-pin 581 -> 582, canonical 697 -> 696
+        computations/audits/braid-encoding-audit.witness.json parameters.q_0
+        moved 1.1099785955573347 -> 1.1099785827513808, i.e. canonical -> the
+        proton pin, 11.5 ppb apart.
+
+The reclassification is a sibling re-running that audit without
+`QOU_Q0_ANCHOR=ideal`. Per AGENTS.md §q₀ anchor convention proton-pinned values
+are the documented physical-observations layer and NOT drift, so the gate is
+green either way -- but the value in a committed witness moved by 11.5 ppb and
+nothing recorded it. Both regenerated here so the committed record is accurate;
+the braid-encoding witness itself is that arc's to decide on, and is not touched.
+
+## Still not claimed
+
+The three qbeta witnesses are NOT drained. They are other sessions' arcs, the
+bean said so at the outset, and adding them to the baseline remains the one
+move that is explicitly forbidden. `raw-float64 ratchet` is still RED on this
+branch and on `main`, and `/prepare-merge` step 4b now tells agents to say so in
+the PR rather than silence it.

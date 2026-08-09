@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T17:00:17.197952+00:00",
-  "commitSha": "e33b84aefecd547ea97391d00939fcaf1e00c2c2",
+  "computedAt": "2026-08-09T00:55:29.339665+00:00",
+  "commitSha": "8c56a0c17543ebd3c02c25dd3bd25e3c87704573",
   "assertions": [
     {
       "name": "c_sigma_4_1_derived_equals_3_pow_minus_quarter",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "one-loop-c-sigma-tetrahedral",
   "scriptFile": "one_loop_c_sigma_tetrahedral_probe.py",
-  "scriptHash": "cf8809d8185b",
-  "scriptCommitSha": "e33b84aefecd547ea97391d00939fcaf1e00c2c2",
+  "scriptHash": "d9792afcd91e",
+  "scriptCommitSha": "a7d17d3427a4c4c0a957e1778230efa0046a5971",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

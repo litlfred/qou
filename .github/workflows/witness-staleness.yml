@@ -8,6 +8,21 @@
 #
 # NOTE: this branch predates the CI reorg on `main`. At merge, reconcile
 # with `main`'s witness-pipeline rather than duplicating this job.
+#
+# THE PRECISION STEPS HERE DO NOT PROTECT `main`, AND CANNOT.
+# Every gate in the precision family below is strict and correct. None of them
+# has run on a push since 2026-06-30, because the trigger is `workflow_dispatch`
+# only (owner directive, Actions billing — see `on:` below). Three witnesses
+# carrying raw float64 reached `main` in that window, from three different
+# sessions (bean `qou-mnrd`).
+#
+# The enforcing copy is therefore agent-side: `scripts/precision-gates.sh` runs
+# the same family, in the same order, and is required before every commit that
+# touches a witness or a `computations/` script (AGENTS.md §"QA is agent-owned")
+# and again at `/prepare-merge` step 4b. KEEP THE TWO LISTS IN SYNC — if you add,
+# remove or re-scope a precision step here, edit the `GATES` array in that script
+# in the same change. Re-enabling this workflow's push trigger is an owner
+# decision about billing, not an agent one; do not flip it unasked.
 name: witness-staleness
 
 on:

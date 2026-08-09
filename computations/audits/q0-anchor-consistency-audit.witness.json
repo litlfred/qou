@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T11:27:15.803310+00:00",
-  "commitSha": "25b857344639324c2cae11d581a58f3d75fd05c2",
+  "computedAt": "2026-08-09T00:56:39.986541+00:00",
+  "commitSha": "8c56a0c17543ebd3c02c25dd3bd25e3c87704573",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 15,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
@@ -36,7 +36,7 @@
     "counts": {
       "Q0_OK": 566,
       "Q0_AMBIGUOUS": 23,
-      "Q0_ANCHOR_MISSING": 1787,
+      "Q0_ANCHOR_MISSING": 1814,
       "Q0_VALUE_MISSING": 0,
       "Q0_AUDIT_EXEMPT": 65,
       "Q0_PARSE_ERROR": 1,
@@ -3162,6 +3162,10 @@
           "detail": ""
         },
         {
+          "witness": "ocneanu-param-from-fibre-dimension.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "ocneanu-parameter-is-fibre-qdim.witness.json",
           "detail": ""
         },
@@ -3627,6 +3631,10 @@
         },
         {
           "witness": "brane-tower-two-avenues-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "bring-golden-jones.witness.json",
           "detail": ""
         },
         {
@@ -4110,6 +4118,14 @@
           "detail": ""
         },
         {
+          "witness": "kashaev-endpoint-split.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "kashaev-reflection.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "keystone-colored-lr-modulus-s013.witness.json",
           "detail": ""
         },
@@ -4238,6 +4254,14 @@
           "detail": ""
         },
         {
+          "witness": "laplace-higher-remainder.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "laplace-sum-theta-exactness.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "light-series-open-loop-decomposition.witness.json",
           "detail": ""
         },
@@ -4279,6 +4303,30 @@
         },
         {
           "witness": "nv-categorical-derivation-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "one-loop-c-sigma-tetrahedral.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "one-loop-cusp-normalisation-tension.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "one-loop-dglz-prefactor-identification.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "one-loop-prefactor-exponent.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "one-loop-twisted-framing.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "one-loop-vdv-constant-closed-form.witness.json",
           "detail": ""
         },
         {
@@ -5226,7 +5274,39 @@
           "detail": ""
         },
         {
+          "witness": "c1-determinant-end-consistency.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c1-inf-degree-law-proof-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-bar-parity-twist-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-connection-invariant.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-connection-matrix.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-inf-recursion-derivation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-invariant-structure.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "c3-w2-c1-parity-artifact.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-pole-divisor.witness.json",
           "detail": ""
         },
         {
@@ -5235,6 +5315,22 @@
         },
         {
           "witness": "c3-w2-c1-ramification-leading-blocks.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-side-recursions-derived.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-theta-canonical.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-theta-zero-count.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-newton-slope-is-qgevrey-level.witness.json",
           "detail": ""
         },
         {
@@ -5247,6 +5343,10 @@
         },
         {
           "witness": "c3_w2_inf_formal_solution.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "cauchymul-order-cancellation-witness.witness.json",
           "detail": ""
         },
         {
@@ -5363,6 +5463,10 @@
         },
         {
           "witness": "qbeta-c3-barodd-pole-seed-newton.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-c3-barodd-sleak.witness.json",
           "detail": ""
         },
         {
@@ -6331,6 +6435,10 @@
         },
         {
           "witness": "qbeta_imq_anchor_carrier.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qborel-growth-budget-probe.witness.json",
           "detail": ""
         },
         {

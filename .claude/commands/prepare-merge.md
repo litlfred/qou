@@ -243,6 +243,31 @@ surface the duplicates in step 6) saves a full review cycle.
 - The Lean build must be green and the audit must report 100%
   coverage before continuing.
 
+## 4b. Precision gates (BLOCKING)
+
+- Run [`scripts/precision-gates.sh`](../../scripts/precision-gates.sh). It runs
+  the whole NO-FLOAT64 family in one pass — the raw-float64 and float64-padding
+  ratchets, the three source-level gates (`mpf(<float>)`, `mp.dps` no-op,
+  module-const), the q₀ anchor-flip and drift gates — and exits 1 on any
+  blocking red. The no-free-parameter certificate runs as advisory only (red by
+  design on `A_omega = 3`; see the workflow's own note).
+- **This step exists because the CI copy does not run.** The same gates are
+  strict in `.github/workflows/witness-staleness.yml`, but that workflow is
+  `workflow_dispatch:` only under the 2026-06-30 Actions-billing directive, so
+  a push triggers nothing. Three dirty witnesses reached `main` that way
+  (bean `qou-mnrd`). Do not treat "CI will catch it" as true here.
+- If the run is red on witnesses **this branch introduced**, fix at the
+  producer before pushing (`mpmath.mpf` from source, serialize with
+  `_precision.fmt`). Never add a file to a baseline, never `--rebaseline`, and
+  never hand-edit a number to go green.
+- If the run is red on witnesses **inherited from `main`**, that is not this
+  branch's regression. Say so explicitly in the PR with the file list, and do
+  not silence it — draining another arc's witnesses is that arc's work.
+- If the run reports **stale committed audit witnesses**, check whether a
+  *count* moved (substantive — commit the regenerated witness and name the
+  count) or only `computedAt`/`commitSha`/`durationMs`/`scriptHash` (drift —
+  revert it).
+
 ## 5. Final rebase pass
 
 - After all fixes above, rebase once more onto the current `origin/main`

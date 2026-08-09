@@ -106,6 +106,14 @@ HERE = pathlib.Path(__file__).resolve().parent
 COMP = HERE.parent
 DISSOLUTION = COMP / "one-loop-c-sigma-percusp-dissolution.witness.json"
 
+# Raise precision BEFORE building the module-scope constant below.  Without
+# this line `mpf("2.0298…")` is constructed at mpmath's default 15 dps and its
+# 60 digits are truncated to 53 bits the moment it is built — the call in
+# main() runs too late to recover them, and no later dps setting can.  Caught
+# by computations/module_const_precision_audit.py; idempotent, so it composes
+# with the call in main() rather than replacing it.
+set_compute_dps()
+
 # Vol(4_1) = 4 Lambda(pi/6) = 6 Lambda(pi/3); the standard 60-digit value.
 VOL_41 = mpf("2.0298832128193072500424051085486440883603983786944"
              "38195202545")

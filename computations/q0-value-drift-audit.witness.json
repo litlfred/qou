@@ -6,8 +6,8 @@
     "counts": {
       "STALE": 327,
       "unknown": 25,
-      "proton-pin": 581,
-      "canonical": 697
+      "proton-pin": 582,
+      "canonical": 696
     },
     "stale_total": 327,
     "new_stale": 0,
@@ -1807,9 +1807,9 @@
       {
         "file": "computations/audits/braid-encoding-audit.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/audits/brundan-kleshchev-audit.witness.json",
