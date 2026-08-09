@@ -184,9 +184,27 @@ draining plan (§5) rather than an open-ended deferral. Corpus effect:
 | exempt / tracked | 78 | **162** |
 | files flagged | 157 | 217 |
 
-Tracked-not-counted still enters the **review ledger**, so `--check-ledger`
-now demands a fresh agent verdict on each of the 84 — which is the whole
-point, and is what the name gate was silently denying them.
+Tracked-not-counted now enters the **review ledger**, so `--check-ledger`
+demands a fresh agent verdict on each of the 84 — which is the whole point,
+and is what the name gate was silently denying them.
+
+**That required a second fix, and the first version of this section was wrong
+about it.** Ledger seeding skipped every exempt hit (`if (h.exempt) continue`),
+on the reasonable principle that an exemption *is* a verdict — a shadow stub, an
+`@marker` opt-out, a legitimate iff-from-directions derive need no human call.
+But an exemption reading *"tracked, triage pending"* asserts the opposite: that
+the call is still owed. Under the blanket skip, emitting EXEMPT would have
+**buried** the 84 rather than queued them — the exact failure mode this audit
+exists to catch, reintroduced by the fix for it. Seeding now keeps exempt hits
+whose reason matches `triage pending`. Ledger: 128 → 212 entries, of which 92
+are self-assuming (8 non-exempt + the 84).
+
+Consequence to expect: **`--check-ledger` now exits 1** until those verdicts are
+written. That is the gate working, not a regression — but it is a real
+transition from green, and it is why §5 is the immediate follow-on rather than a
+someday item. The 47 deferred `§3b placeholder` exemptions are deliberately
+*not* swept in by the `triage pending` predicate; whether they should be is §5
+step 2's decision.
 
 One parsing gap was found and fixed while wiring this. `DECL_START` requires a
 name after the keyword, so an **anonymous `instance : C where`** — idiomatic

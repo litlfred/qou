@@ -1137,6 +1137,14 @@ function detectProvableAxiom(d: Decl, rawLines: string[]): Hit | undefined {
   return h;
 }
 
+/**
+ * Exemption reasons that still owe an agent verdict. An exemption normally
+ * *is* the verdict, so exempt hits sit outside the `--check-ledger`
+ * agent-inspection gate; these ones explicitly defer the call instead of
+ * making it, so they must remain inside it.
+ */
+const LEDGER_TRACKED_EXEMPT = /triage pending/;
+
 function mk(
   d: Decl,
   category: Category,
@@ -2070,7 +2078,15 @@ function main() {
       if (!shaCache.has(f)) shaCache.set(f, hashFile(f));
       const sha = shaCache.get(f);
       for (const h of hits) {
-        if (h.exempt) continue;
+        // Exempt hits are normally out of scope for the agent-inspection gate:
+        // the exemption IS the verdict (a shadow stub, an `@marker` opt-out, a
+        // legitimate iff-from-directions derive). But an exemption that says
+        // "tracked, triage pending" asserts the opposite — that a human call is
+        // still owed. Blanket-skipping those would make EXEMPT a way to bury a
+        // candidate rather than queue it, which is the failure mode this whole
+        // audit exists to catch. So they stay in the ledger.
+        if (h.exempt && !LEDGER_TRACKED_EXEMPT.test(h.exempt_reason ?? ""))
+          continue;
         const decl = h.decl ?? "file";
         candidates.push({
           key: `${rel}::${decl}::${h.category}`,
