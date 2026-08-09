@@ -1,0 +1,562 @@
+{
+  "probe": "qbeta_route75_multiknot_gluing_symbolic",
+  "beans": [
+    "qou-m015",
+    "qou-mlgp",
+    "qou-kmmr"
+  ],
+  "snappy_version": "3.3.2",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "CALIBRATION. The gated identifier reproduces the two shape fields the corpus has ALREADY PROVED in Lean -- 4_1's x^2-x+1 (FigureEightTriangulation.w_sq_sub) and 5_2's x^3-2x^2+3x-1 (FiveTwoVolumeConstant / Route 74). The identifier is thus checked OFF the configuration it is then used on",
+      "calibration": [
+        {
+          "knot": "4_1",
+          "expected": "x^2 - x + 1",
+          "identified": "x^2 - x + 1",
+          "match": true
+        },
+        {
+          "knot": "5_2",
+          "expected": "x^3 - 2*x^2 + 3*x - 1",
+          "identified": "x^3 - 2*x^2 + 3*x - 1",
+          "match": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE TRAP, RECORDED SO IT CANNOT RECUR. Asked for degree 2 at 150 digits, algdep returns a degree-2 annihilator of the 5_2 shape with a huge coefficient height and a TINY residual -- yet the 5_2 shape is provably CUBIC. A residual test alone accepts this artifact, because the residual scales with coefficient height. The precision-stability + height gate rejects it. This bit during development of this probe",
+      "true_degree_of_5_2_shape": 3,
+      "bogus_degree_requested": 2,
+      "bogus_coefficient_height_digits": 329,
+      "bogus_residual": "5.54619928489410121520715188651210961571129387390406855674018009785088247262437376819392405053523085605687482427065404387901291414757821E-165",
+      "residual_test_alone_would_accept": true,
+      "height_gate_digits": 25,
+      "gate_rejects_it": true,
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE SHAPE FIELDS. 6_1 and 7_2 are NEW to the corpus. Note 7_2: four tetrahedra but a QUINTIC shape field -- the degree is not bounded by the tetrahedron count",
+      "fields": [
+        {
+          "knot": "4_1",
+          "num_tetrahedra": 2,
+          "identified": true,
+          "shape_field_degree": 2,
+          "minimal_polynomial": "x^2 - x + 1",
+          "discriminant": "-3",
+          "shapes_in_field": [
+            "x",
+            "x"
+          ],
+          "coords_stable": true,
+          "num_equations": 4,
+          "all_residuals_zero": true,
+          "volume_snappy_300bit": "2.02988321281930725004240510854904057188",
+          "volume_from_algebraic_shapes": "2.02988321281930725004240510855",
+          "volume_matches_geometric_solution": true,
+          "new_to_corpus": false
+        },
+        {
+          "knot": "5_2",
+          "num_tetrahedra": 3,
+          "identified": true,
+          "shape_field_degree": 3,
+          "minimal_polynomial": "x^3 - 2*x^2 + 3*x - 1",
+          "discriminant": "-23",
+          "shapes_in_field": [
+            "x",
+            "x**2 - x + 2",
+            "x"
+          ],
+          "coords_stable": true,
+          "num_equations": 5,
+          "all_residuals_zero": true,
+          "volume_snappy_300bit": "2.82812208833078316276389880927663494277",
+          "volume_from_algebraic_shapes": "2.82812208833078316276389880928",
+          "volume_matches_geometric_solution": true,
+          "new_to_corpus": false
+        },
+        {
+          "knot": "6_1",
+          "num_tetrahedra": 4,
+          "identified": true,
+          "shape_field_degree": 4,
+          "minimal_polynomial": "x^4 - 3*x^3 + 6*x^2 - 5*x + 2",
+          "discriminant": "257",
+          "shapes_in_field": [
+            "x",
+            "x**3 - 2*x**2 + 4*x - 1",
+            "x**2 - x + 1",
+            "-x**3/2 + 3*x**2/2 - 2*x + 3/2"
+          ],
+          "coords_stable": true,
+          "num_equations": 6,
+          "all_residuals_zero": true,
+          "volume_snappy_300bit": "3.16396322888314398399101471597315448481",
+          "volume_from_algebraic_shapes": "3.16396322888314398399101471597",
+          "volume_matches_geometric_solution": true,
+          "new_to_corpus": true
+        },
+        {
+          "knot": "7_2",
+          "num_tetrahedra": 4,
+          "identified": true,
+          "shape_field_degree": 5,
+          "minimal_polynomial": "x^5 - 2*x^4 + x^3 + 3*x^2 - 5*x + 3",
+          "discriminant": "4409",
+          "shapes_in_field": [
+            "x",
+            "x**4/3 - 2*x**3/3 + x**2/3 + x - 2/3",
+            "x**4 - x**3 + 3*x - 2",
+            "x**4/9 + 4*x**3/9 - 2*x**2/9 + 13/9"
+          ],
+          "coords_stable": true,
+          "num_equations": 6,
+          "all_residuals_zero": true,
+          "volume_snappy_300bit": "3.33174423164111482391456910802971279554",
+          "volume_from_algebraic_shapes": "3.33174423164111482391456910803",
+          "volume_matches_geometric_solution": true,
+          "new_to_corpus": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "THE MAIN RESULT, AND IT IS EXACT. For each knot, every gluing equation (edge and cusp) reduces to EXACTLY 0 in Q[x]/(P): the product minus 1, denominators cleared, taken mod the minimal polynomial. No floating point in this gate. Plus a Bloch-Wigner volume cross-check pinning the GEOMETRIC root rather than a Galois conjugate",
+      "equations_by_knot": {
+        "4_1": [
+          {
+            "kind": "edge",
+            "exponents": [
+              2,
+              1,
+              0,
+              2,
+              1,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              0,
+              1,
+              2,
+              0,
+              1,
+              2
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              -1
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              1,
+              1,
+              1,
+              1,
+              -1,
+              -3
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          }
+        ],
+        "5_2": [
+          {
+            "kind": "edge",
+            "exponents": [
+              1,
+              0,
+              1,
+              1,
+              2,
+              0,
+              1,
+              0,
+              1
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              2,
+              0,
+              1,
+              1
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              -1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              2,
+              0,
+              -3,
+              1,
+              0,
+              -2,
+              0,
+              0,
+              1
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          }
+        ],
+        "6_1": [
+          {
+            "kind": "edge",
+            "exponents": [
+              1,
+              0,
+              1,
+              1,
+              2,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              0,
+              1,
+              1,
+              0,
+              0,
+              2,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              -1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              -1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              -2
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          }
+        ],
+        "7_2": [
+          {
+            "kind": "edge",
+            "exponents": [
+              1,
+              1,
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              2
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              1,
+              0,
+              1,
+              0,
+              2,
+              1,
+              0,
+              1,
+              1,
+              1,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "edge",
+            "exponents": [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0,
+              1,
+              2,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              0,
+              0,
+              0,
+              -1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          },
+          {
+            "kind": "cusp",
+            "exponents": [
+              0,
+              -2,
+              -1,
+              -2,
+              2,
+              2,
+              0,
+              3,
+              -2,
+              0,
+              0,
+              0
+            ],
+            "residual_mod_minpoly": "0",
+            "zero": true
+          }
+        ]
+      },
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "NEGATIVE CONTROL, which bean m015 asks for explicitly. The trefoil 3_1 is a TORUS knot -- its complement is Seifert fibred, not hyperbolic -- so the same pipeline must find NO positively-oriented solution. It does not: SnapPy reports flat tetrahedra and volume 0. This is the check that the pipeline is detecting geometry rather than solving a linear system and calling the answer a volume",
+      "trefoil_solution_type": "contains flat tetrahedra",
+      "trefoil_volume": "0",
+      "trefoil_all_positively_oriented": false,
+      "hyperbolic_knots_solution_types": {
+        "4_1": "all tetrahedra positively oriented",
+        "5_2": "all tetrahedra positively oriented",
+        "6_1": "all tetrahedra positively oriented",
+        "7_2": "all tetrahedra positively oriented"
+      },
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "FULLY FLOAT-FREE DERIVATION, and its ceiling. For 4_1 and 5_2 the shape field's minimal polynomial is DERIVED from SnapPy's integer exponent matrix alone, by Groebner elimination on the saturated gluing ideal -- no numerics at any step, not even to identify the shape. It reproduces x^2-x+1 and x^3-2x^2+3x-1. This does NOT scale: at 4 tetrahedra (6_1, 7_2) the lex elimination does not finish, which is why those knots go through the gated-LLL identification of G3 plus the exact verification of G4",
+      "derived": [
+        {
+          "knot": "4_1",
+          "derived_minimal_polynomial": "z0**2 - z0 + 1",
+          "expected": "x^2 - x + 1",
+          "match": true
+        },
+        {
+          "knot": "5_2",
+          "derived_minimal_polynomial": "z0**3 - 2*z0**2 + 3*z0 - 1",
+          "expected": "x^3 - 2*x^2 + 3*x - 1",
+          "match": true
+        }
+      ],
+      "scales_to_four_tetrahedra": false,
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "SCOPE, UNCHANGED FROM ROUTE 74. Verified here: that the identified ALGEBRAIC shapes satisfy SnapPy's gluing equations exactly, for four knots. NOT verified, and not statable in Lean today: that any of these is a triangulation OF the corresponding knot complement. That is Thurston hyperbolisation plus Mostow rigidity and needs hyperbolic 3-manifolds, which neither Mathlib nor QOU has. No volume conjecture is touched",
+      "gluing_equations_verified_symbolically": true,
+      "is_triangulation_of_the_manifold": "not statable in Lean today",
+      "vol_conjecture_formalized": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "knots_verified_exactly": [
+      "4_1",
+      "5_2",
+      "6_1",
+      "7_2"
+    ],
+    "new_shape_fields": [
+      "6_1 (quartic)",
+      "7_2 (quintic)"
+    ],
+    "negative_control": "3_1 (torus knot) admits no positively-oriented solution",
+    "method": "shape field identified by precision-stable, height-gated LLL; gluing equations then verified EXACTLY over Q[x]/(P) with integer exponents",
+    "not_established": "that any of these is a triangulation of the knot complement"
+  }
+}

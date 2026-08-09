@@ -11,7 +11,7 @@ tags:
     - 5_2
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-09T19:15:46Z
+updated_at: 2026-08-09T22:30:00Z
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -98,3 +98,76 @@ that is Thurston hyperbolisation plus Mostow rigidity, needing hyperbolic
 Lean and prove `SatisfiesEdgeEquations` — the symbolic reduction above says it is
 provable by `field_simp` + `linear_combination` against `fiveTwoShape_cubic`.
 That would make the 5₂ triangulation *certified* rather than merely defined.
+
+---
+**2026-08-09 (later) — gluing extended to 6₁ and 7₂; the NEGATIVE CONTROL this bean
+asked for is DONE; and an LLL artifact that would have faked an identification.**
+
+Probe `qbeta_route75_multiknot_gluing_symbolic_probe.py`, 7 gates, all passing.
+Guard clean, run in place with the changed files passed explicitly.
+
+**The negative control, which this bean asked for and which is now discharged.**
+The trefoil `3₁` is a torus knot — Seifert fibred, not hyperbolic — and the same
+pipeline finds **no positively-oriented solution**: SnapPy reports
+`contains flat tetrahedra`, volume `0`. All four hyperbolic knots report
+`all tetrahedra positively oriented`. So the pipeline is detecting geometry, not
+solving a linear system and calling the answer a volume. (Gate G5.)
+
+**Coverage extended — 6₁ and 7₂ are new to the corpus.**
+
+| knot | tets | shape field | disc | equations, all exact |
+|---|---|---|---|---|
+| 4₁ | 2 | `x² − x + 1` | −3 | 4 |
+| 5₂ | 3 | `x³ − 2x² + 3x − 1` | −23 | 5 |
+| 6₁ | 4 | `x⁴ − 3x³ + 6x² − 5x + 2` | 257 | 6 |
+| 7₂ | 4 | `x⁵ − 2x⁴ + x³ + 3x² − 5x + 3` | 4409 | 6 |
+
+**`7₂` has four tetrahedra but a QUINTIC shape field** — the degree is not bounded
+by the tetrahedron count. Worth knowing before anyone plans a Lean encoding sized
+to the tetrahedron count.
+
+**The method is stronger than Route 74's.** Route 74 was *told* 5₂'s shapes were
+`(y, 1/(1−y), y)`. Here nothing about the shapes is assumed: the field is
+identified from the numerics under a gate, and then every equation is verified
+EXACTLY in `ℚ[x]/(P)`. As an independent check, 5₂'s shapes came out as
+`(x, x²−x+2, x)` — and `x²−x+2 = 1/(1−x)` mod the cubic, so Route 74's assumed
+shapes are re-derived rather than re-assumed.
+
+**⚠ The trap, which bit during development and is now gate G2.** `algdep(z, d)`
+ALWAYS returns a polynomial. Asked for degree **2** at 150 digits against the 5₂
+shape — which is provably **cubic** — it returns a degree-2 annihilator with ~100-digit
+coefficients and residual **5.5e-165**. A residual test alone accepts it, because
+**the residual scales with coefficient height**: make the coefficients huge and any
+residual gets small. My first pass through this reported degree-2 shape fields for
+5₂, 6₁, 7₂ and 6₂ — all garbage — and it was caught only because 4₁ and 5₂ have
+answers already proved in Lean to check against.
+
+The acceptance test now used: the same polynomial at two very different working
+precisions, **and** a coefficient height ≤ 25 digits. G1 calibrates the identifier
+against the two fields the corpus has already PROVED (`FigureEightTriangulation.w_sq_sub`,
+`FiveTwoVolumeConstant`), so it is checked off the configuration it is then used on.
+
+Companion lesson to the one recorded at Route 71: *a residual that does not shrink
+with dps is evidence about the inputs.* This is the dual — **a tiny residual with
+large coefficients is a lattice artifact, not an identification.**
+
+**Answering "can we do symbolic now?" precisely (gate G7).** For 4₁ and 5₂ the
+minimal polynomial can be **derived** from SnapPy's integer exponent matrix alone,
+by Gröbner elimination on the saturated gluing ideal — *no numerics at any step*,
+not even to identify the shape. It reproduces `x²−x+1` and `x³−2x²+3x−1`. It does
+**not** scale: at 4 tetrahedra the lex elimination does not finish, which is why 6₁
+and 7₂ go through gated identification plus exact verification. So: the
+**verification** is always exact; the **derivation** is fully float-free up to 3
+tetrahedra.
+
+**Galois check.** With degree-4 and degree-5 fields there are conjugate roots, so a
+Bloch–Wigner volume cross-check pins the *geometric* root: `Σ D(z_j)` against
+SnapPy's volume at 300 bits. (The default `M.volume()` is double precision; comparing
+it to a 60-digit sum at a 1e-25 tolerance can never pass, which is how this gate
+first failed.)
+
+**⚠ Still not done, unchanged.** That the algebraic shapes satisfy the gluing
+equations does not say any of these is a triangulation *of* the corresponding knot
+complement — Thurston hyperbolisation plus Mostow rigidity, needing hyperbolic
+3-manifolds neither Mathlib nor QOU has. Gate G6. And the angle-structure polytope
+proper (the `m015` deliverable) is still not built; this is the gluing-data half.
