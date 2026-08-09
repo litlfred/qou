@@ -2,24 +2,42 @@
 
 **Date:** 2026-08-02
 **Branch:** `claude/charm-mass-projection-2026-08-02` (PR #4594)
-**Scope:** `conj:complex-mass-constituent-functional`
-(QOU.MassTheory.ComplexMassConstituent).
-**Trigger:** author request — the principled follow-up to the same-day charm-mass
-negative (`docs/audits/2026-08-02-charm-mass-tower-negative.md`, PR #4584): attack
-`m_c` as the **Frobenius/Wedderburn charm-BLOCK projection** of a composite
-braid's complex volume, `tr_M = Σ_λ y_λ χ_λ`, **not** the raw volume.
+**Scope:** the charm-block reading of the complex-mass constituent functional.
+
+> **Forward-reference note.** The block this audit is scoped against —
+> `conj:complex-mass-constituent-functional`
+> (`QOU.MassTheory.ComplexMassConstituent`) — is **not yet on `main`**: it lives
+> on the **open draft** PR #4584. Nothing in this PR imports or depends on it;
+> the probe's `consumes` field and this scope line are forward references, and
+> the negative below stands on its own compute (the $H_3$ irreps and $y_\lambda$
+> are built self-contained). If #4584 lands under a different label, update the
+> two references rather than treating them as resolved.
+
+**Trigger:** author request — attack `m_c` as the **Frobenius/Wedderburn
+charm-BLOCK projection** of a composite braid's complex volume,
+`tr_M = Σ_λ y_λ χ_λ`, **not** the raw volume.
 
 ## Prior state (read first)
 
-The 2026-08-02 tower/volume audit established two facts:
+Two facts frame the block reading. The first is a classical invariant, restated
+here with its citation so this audit does not depend on an external document;
+the second is recorded as an observation of this session's own sweep.
 
-- **(b) Carrier excluded.** The carrier $T_{3,5}$ is a torus knot ⟹
-  $\mathrm{Vol}=0$, $\mathrm{CS}\in\mathbb{Q}$ (scope-(b), invariant cited).
-- **(a) Raw composite volume fails.** No parameter-free composite-baryon volume
-  reproduces $m_c$; the one 4 % near-coincidence
+- **(b) The $T_{3,5}$ carrier supplies no hyperbolic volume — structural
+  exclusion, invariant cited.** Torus knots are Seifert-fibred, hence not
+  hyperbolic (Thurston's geometrisation of knot complements: a knot complement
+  is hyperbolic iff the knot is neither a torus knot nor a satellite). So
+  $\mathrm{Vol}(T_{3,5}) = 0$ and its Gromov norm vanishes. This is a genuine
+  **scope-(b)** exclusion per AGENTS §"Before declaring refuted": a proved
+  invariant forbids the ingredient, and the invariant is named. It excludes
+  $T_{3,5}$ *as a volume carrier*; it says nothing about other carriers.
+- **(a) Raw composite volume fails — scope-limited.** No parameter-free
+  composite-baryon volume examined reproduced $m_c$; the one 4 % near-coincidence
   ($\mathrm{Vol}((\sigma_1\sigma_2^{-1})^5)/\mathrm{Vol}(\mathcal{B}_3)=2.33$ vs
   $\Lambda_c/p=2.44$) is topologically disqualified ($(\sigma_1\sigma_2^{-1})^5$
   is a **knot**, not a 3-quark baryon) and non-repeating (bottom misses 40 %).
+  This is **scope-(a)**: it constrains magnitudes over the carriers tried, not
+  the raw-volume reading as such.
 
 The surviving OPEN handle: the mass is the **charm-block share** of the Markov
 trace, $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi_\lambda$ — the fraction of the
@@ -99,8 +117,10 @@ knob is flagged; Reading (B) is **not canonical**.
 
 ## Structural reason (why the block ratio is $O(1)$, not $O(100)$)
 
-The generation hierarchy cannot live in the $H_3$ Frobenius block ratio of a
-**writhe-balanced** baryon braid:
+Why the block ratio of a **writhe-balanced** baryon braid comes out $O(1)$.
+Item 1 is Lean-proved; item 2 follows from it; item 3 is a **size estimate, not
+a proof** — so the combination is a scope-(a) sharpening (see §Scope
+classification), not a structural exclusion:
 
 1. The two **1-dimensional** block characters are pure writhe monomials —
    $\chi_{[3]}(\beta)=q^{\,w(\beta)}$ and $\chi_{[1^3]}(\beta)=(-q^{-1})^{\,w(\beta)}$,
@@ -114,8 +134,9 @@ The generation hierarchy cannot live in the $H_3$ Frobenius block ratio of a
    characters are pinned to **1**, independent of $q$ — they carry no
    winding/generation information at all.
 3. The remaining $[2,1]$ block has $\dim=2$, so its character is $O(2)$ on a
-   short balanced braid. Three comparable $O(1)$ numbers cannot produce an
-   $O(100)$ ratio.
+   short balanced braid — an **estimate**, not a proved bound. With the two
+   1-dim blocks pinned to $1$, an $O(100)$ ratio would have to come entirely
+   from this one $2$-dimensional character; the computed value is $1.35$.
 
 This is the *forward* (formalize-first) prune: **don't search for the
 generation hierarchy in the block ratio of a writhe-balanced braid.** It also

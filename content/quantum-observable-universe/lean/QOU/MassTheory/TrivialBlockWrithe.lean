@@ -19,10 +19,14 @@ sign $[1^n]$ block ($\sigma_i\mapsto -q^{-1}$) — are **pure writhe monomials**
 
 Consequently, on a **writhe-balanced** braid (writhe $= 0$, e.g. the Borromean
 baryon $(\sigma_1\sigma_2^{-1})^3$) *both* 1-dim block characters collapse to `1`
-independent of `q` — they carry no winding / generation information — so the
-block ratio cannot source a large hierarchy. This is the forward (formalize-first)
-prune: do not search the generation hierarchy in the block ratio at balanced
-writhe.
+independent of `q` — they carry no winding / generation information, so their
+mutual ratio is pinned to `1` and any hierarchy would have to come entirely from
+the remaining 2-dimensional `[2,1]` block. That last step is **not** proved here
+(no bound on the `[2,1]` character is claimed), so this is a **scope-(a)
+sharpening** of the block-ratio negative, not a structural exclusion of the
+complex-mass functional: it says do not look for the generation hierarchy in the
+*1-dim* blocks at balanced writhe, and it measures how much the 2-dim block
+would have to supply.
 
 A braid word is modelled as `List ℤ`: each letter is a **signed generator**
 (nonzero integer; the *sign* is the crossing sign $\pm$, the magnitude is the
@@ -34,7 +38,12 @@ Base ring (§7c): generic `[DivisionRing R]` — the identities are pure algebra
 `-q⁻¹`), no archimedean construct. `q ≠ 0` is the only hypothesis (a Hecke
 eigenvalue is a unit).
 
--- Ref: [manuscript] quantum-observable-universe/mass-theory/complex-mass-constituent-functional.md
+This file is **sorry-free** and self-contained: it imports only Mathlib and
+depends on no QOU block. The route it prunes is scoped against
+`conj:complex-mass-constituent-functional`, which is **not yet on `main`** (open
+draft PR #4584) — that is a forward reference for the reader, not a dependency.
+
+-- Ref: [manuscript] docs/audits/2026-08-02-charm-mass-frobenius-block-projection-negative.md
 -/
 
 namespace QOU.MassTheory.TrivialBlockWrithe
