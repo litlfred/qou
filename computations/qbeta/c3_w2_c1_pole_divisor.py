@@ -177,12 +177,17 @@ def main() -> None:
             ratios.append(abs(tot) / mx)
             print(f"      eps={eps_s}   |sum|/max = {mp.nstr(abs(tot) / mx, 8)}")
         # linear decay => each 10x smaller eps gives 10x smaller leftover
-        decay = [float(ratios[i] / ratios[i + 1]) for i in range(len(ratios) - 1)]
+        # `ratios` are mpf at the working precision; the decay factors were
+        # float()-ed here and then round()-ed into the witness, so a 10x-linearity
+        # check computed at 50 dps was published — and tested — at f64.
+        decay = [ratios[i] / ratios[i + 1] for i in range(len(ratios) - 1)]
         conv[name] = decay
-        print(f"      decay factors per 10x eps : {[round(d, 3) for d in decay]}"
+        print(f"      decay factors per 10x eps : "
+              f"{[round(float(d), 3) for d in decay]}"
               f"   (10 = exactly linear)")
-    res["residue_decay_factors"] = {k: [round(x, 4) for x in v] for k, v in conv.items()}
-    linear_ok = all(abs(d - 10) < 1.0 for v in conv.values() for d in v)
+    res["residue_decay_factors"] = {k: [mp.nstr(x, 12) for x in v]
+                                    for k, v in conv.items()}
+    linear_ok = all(abs(d - 10) < 1 for v in conv.values() for d in v)
     print()
 
     print("=" * 74)
@@ -243,7 +248,7 @@ def main() -> None:
         "checks": [
             {"name": "all_three_poles_in_one_fundamental_domain",
              "detail": "radii ratio < p, so the residue theorem applies to them together",
-             "passed": bool(ratio < float(p))},
+             "passed": bool(ratio < p)},          # mpf vs mpf, not mpf vs f64
             {"name": "poles_are_genuine",
              "detail": "|f| blows up at each candidate relative to just off it",
              "passed": bool(min(blow.values()) > mp.mpf(10) ** 6)},
