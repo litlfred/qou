@@ -235,6 +235,73 @@ theorem alpha_upper_bound (a mu B : ℝ) (ha : 0 < a) (hmu : 0 < mu)
 
 end EnergyFloor
 
+section WeightsDetermineZ
+
+variable {R : Type*} [Field R]
+
+/-- **The Markov parameter is not a free choice — the weights fix it.**
+
+At `n = 2` the two irreps are `(2)` and `(1,1)`, both one-dimensional, with
+`χ^{(2)}(σ) = q` and `χ^{(1,1)}(σ) = −q⁻¹`. Given only the Markov normalisation
+`Σ_λ y_λ d_λ = 1` (here `y₂ + y₁₁ = 1`) and the pairing
+`tr_M(σ) = Σ_λ y_λ χ^λ(σ)`, the parameter `z := tr_M(σ)` is a *function of the
+weights*:
+
+    z = y₂·(q + q⁻¹) − q⁻¹.
+
+`y_lambda_at(n, q)` takes only `q` — there is no `z` argument — so `z` is a
+consequence of the Jones–Markov hook-length weights, not an input beside them.
+Checked numerically at q₀: `tr_M(σ)` from `y_λ` equals `1/(√q + 1/√q)` to
+7.3e-31 (the 30-digit `y_λ` cap). Consequently z **cannot be retuned** to close
+²H without contradicting `y_λ`. -/
+theorem markov_param_determined (q y₂ y₁₁ z : R)
+    (hnorm : y₂ + y₁₁ = 1)
+    (htr : y₂ * q + y₁₁ * (-q⁻¹) = z) :
+    z = y₂ * (q + q⁻¹) - q⁻¹ := by
+  have hy : y₁₁ = 1 - y₂ := by linear_combination hnorm
+  rw [← htr, hy]; ring
+
+/-- **…and inverting it reproduces the isospin projector scalar.** Solving
+`markov_param_determined` for `y₂` gives exactly `μ₊ = (z + q⁻¹)/(q + q⁻¹)`, the
+symmetric-channel interface scalar from `proj_add_eq_one`. So the eightfold-way
+projector weights and the `n = 2` Wedderburn weights are the *same object*, not
+two constructions that happen to agree numerically (they match to 3.6e-31). -/
+theorem weight_eq_proj_scalar (q y₂ z : R) (hs : q + q⁻¹ ≠ 0)
+    (h : z = y₂ * (q + q⁻¹) - q⁻¹) :
+    y₂ = (z + q⁻¹) / (q + q⁻¹) := by
+  rw [eq_div_iff hs]
+  linear_combination -h
+
+end WeightsDetermineZ
+
+section Mirror
+
+/-- **The mirror splitting sees only `L_nn − L_pp`; the p–n bond cancels.**
+
+On the chain topology ³H = `pnn` carries bonds `{pn, nn}` and ³He = `ppn`
+carries `{pp, pn}`, so the predicted splitting is `α(L_nn − L_pp)` regardless of
+what the p–n bond is. Combined with `charge_independence_iff` (`L_pp = L_nn ⟺
+h = 0`) this says the model's mirror splitting is nonzero **precisely because**
+the σ/σ⁻¹ templates are charge-assigned — it is an artifact, not isospin
+physics. Measured: `α(L_nn − L_pp) = 2.27077 MeV` against nature's 0.7638, which
+is mostly Coulomb. Giving all three bonds the same template sends it to zero. -/
+theorem mirror_split_eq_L_diff {R : Type*} [CommRing R] (a L_pp L_pn L_nn : R) :
+    a * (L_pn + L_nn) - a * (L_pp + L_pn) = a * (L_nn - L_pp) := by ring
+
+/-- **The nucleon identity cancels out of the binding.** Since
+`tr_atom = tr_free · μ`, the binding `−α·log tr_atom − (−α·log tr_free)` is
+`−α·log μ`: `tr_free`, and with it `tr_M(p)` and `tr_M(n)`, drops out entirely.
+
+This is why *all* isospin physics must live in the interface — nothing else
+survives the difference. In particular any assignment with `d_pp = d_nn` gives
+identically zero mirror splitting no matter how the proton and neutron words
+differ, which is what `mirror_split_eq_L_diff` sees from the other side. -/
+theorem binding_indep_of_free_trace (a trf mu : ℝ) (hf : 0 < trf) (hm : 0 < mu) :
+    -a * Real.log (trf * mu) - -a * Real.log trf = -a * Real.log mu := by
+  rw [Real.log_mul (ne_of_gt hf) (ne_of_gt hm)]; ring
+
+end Mirror
+
 section Projectors
 
 variable {R A : Type*} [CommRing R] [Ring A] [Algebra R A]
