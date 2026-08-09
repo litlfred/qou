@@ -1160,6 +1160,125 @@ theorem saddle_branch_eq_upper {y : ℂ} (hy : y ≠ 0) (h1y : (1 : ℂ) - y ≠
     (by push_cast; nlinarith)
   simpa using h
 
+/-- **The branch integer at the lower complex root is `−1`** — the mirror of
+`saddle_branch_eq_upper`, from `Im y < 0` and `Re y ≤ 1`. The expression lies in
+`(−7π/2, 0) ⊂ (−4π, 0)`. -/
+theorem saddle_branch_eq_lower {y : ℂ} (hy : y ≠ 0) (h1y : (1 : ℂ) - y ≠ 0)
+    (hcube : y ^ 3 - 2 * y ^ 2 + 3 * y - 1 = 0)
+    (him : y.im < 0) (hre : y.re ≤ 1) :
+    2 * Complex.log y - 3 * Complex.log (1 - y) = -(2 * (Real.pi : ℂ) * Complex.I) := by
+  have hpi : (0 : ℝ) < Real.pi := Real.pi_pos
+  have hargy_neg : y.arg < 0 := Complex.arg_neg_iff.mpr him
+  have hargy_gt : -Real.pi < y.arg := Complex.neg_pi_lt_arg y
+  have him1 : 0 < ((1 : ℂ) - y).im := by simpa [Complex.sub_im] using him
+  have hre1 : 0 ≤ ((1 : ℂ) - y).re := by
+    simp only [Complex.sub_re, Complex.one_re]; linarith
+  have harg1_pos : 0 < ((1 : ℂ) - y).arg := by
+    refine lt_of_le_of_ne (Complex.arg_nonneg_iff.mpr him1.le) ?_
+    intro hc
+    exact absurd (Complex.arg_eq_zero_iff.mp hc.symm).2 (ne_of_gt him1)
+  have harg1_le : ((1 : ℂ) - y).arg ≤ Real.pi / 2 :=
+    Complex.arg_le_pi_div_two_iff.mpr (Or.inl hre1)
+  have h := saddle_branch_eq (n := -1) hy h1y hcube (by push_cast; nlinarith)
+    (by push_cast; nlinarith)
+  push_cast at h
+  linear_combination h
+
+/-! #### The root data, packaged
+
+Every hypothesis Route 64's capstone still carries is a consequence of one
+bundle: the saddle cubic has a real root in `(0,1)` and a conjugate pair. Stating
+that once and deriving the rest keeps the inputs auditable — each field is a
+checkable fact about the cubic, and nothing numeric appears. -/
+
+/-- **The 5₂ saddle cubic's roots as data**: a real root `t ∈ (0,1)` and a
+conjugate pair whose upper member is `a`. The three symmetric functions are the
+cubic `X³ − 2X² + 3X − 1`. -/
+structure SaddleRoots where
+  /-- the real root -/
+  t : ℝ
+  /-- the root in the upper half plane -/
+  a : ℂ
+  ht0 : 0 < t
+  ht1 : t < 1
+  hsum : a + (starRingEnd ℂ) a + (t : ℂ) = 2
+  hp2 : a * (starRingEnd ℂ) a + a * (t : ℂ) + (starRingEnd ℂ) a * (t : ℂ) = 3
+  hprod : a * (starRingEnd ℂ) a * (t : ℂ) = 1
+  him : 0 < a.im
+
+namespace SaddleRoots
+
+variable (S : SaddleRoots)
+
+theorem cubic_t : (S.t : ℂ) ^ 3 - 2 * (S.t : ℂ) ^ 2 + 3 * (S.t : ℂ) - 1 = 0 := by
+  linear_combination (S.t : ℂ) ^ 2 * S.hsum - (S.t : ℂ) * S.hp2 + S.hprod
+
+theorem cubic_a : S.a ^ 3 - 2 * S.a ^ 2 + 3 * S.a - 1 = 0 := by
+  linear_combination S.a ^ 2 * S.hsum - S.a * S.hp2 + S.hprod
+
+theorem ne_zero : S.a ≠ 0 := fun hc => absurd (by rw [hc]; simp : S.a.im = 0) (ne_of_gt S.him)
+
+theorem one_sub_ne_zero : (1 : ℂ) - S.a ≠ 0 := by
+  intro hc
+  have : ((1 : ℂ) - S.a).im = 0 := by rw [hc]; simp
+  simp only [Complex.sub_im, Complex.one_im, zero_sub, neg_eq_zero] at this
+  exact absurd this (ne_of_gt S.him)
+
+/-- `2·Re a = 2 − t`, from the trace. -/
+theorem two_re : 2 * S.a.re = 2 - S.t := by
+  have h := congrArg Complex.re S.hsum
+  simp only [Complex.add_re, Complex.conj_re, Complex.ofReal_re] at h
+  norm_num at h
+  linarith
+
+theorem re_le_one : S.a.re ≤ 1 := by
+  have := S.two_re
+  have := S.ht0
+  linarith
+
+/-- **The branch integer at the real root is `0`.** -/
+theorem branch_real :
+    2 * Complex.log (S.t : ℂ) - 3 * Complex.log (1 - (S.t : ℂ)) = 0 :=
+  saddle_branch_eq_real S.ht0 S.ht1 S.cubic_t
+
+/-- **The branch integer at the upper root is `+1`** — the value the corpus
+records as `ε₁`, now proved rather than measured. -/
+theorem branch_upper :
+    2 * Complex.log S.a - 3 * Complex.log (1 - S.a) = 2 * (Real.pi : ℂ) * Complex.I :=
+  saddle_branch_eq_upper S.ne_zero S.one_sub_ne_zero S.cubic_a S.him S.re_le_one
+
+/-- The pair relation the angle identity needs. -/
+theorem pair_rel :
+    S.a ^ 2 * (S.t : ℂ) + S.a * (S.t : ℂ) ^ 2 - 2 * (S.a * (S.t : ℂ)) + 1 = 0 :=
+  saddle_pair_rel S.hsum S.hprod
+
+/-- `|a|²·t = 1` — the modulus fact, immediate from the norm. -/
+theorem normSq_mul : ((Complex.normSq S.a : ℝ) : ℂ) * (S.t : ℂ) = 1 := by
+  rw [← Complex.mul_conj]
+  linear_combination S.hprod
+
+/-- **The branch integer at the lower root is `−1`.** With `branch_upper` and
+`branch_real` this is the full branch datum `ε = (+1, −1, 0)` the corpus records
+for the 5₂ saddle — **proved**, where it had been measured. -/
+theorem branch_lower :
+    2 * Complex.log ((starRingEnd ℂ) S.a) - 3 * Complex.log (1 - (starRingEnd ℂ) S.a)
+      = -(2 * (Real.pi : ℂ) * Complex.I) := by
+  have hcube : ((starRingEnd ℂ) S.a) ^ 3 - 2 * ((starRingEnd ℂ) S.a) ^ 2
+      + 3 * ((starRingEnd ℂ) S.a) - 1 = 0 := by
+    have h := congrArg (starRingEnd ℂ) S.cubic_a
+    simpa [map_ofNat] using h
+  have hne : ((starRingEnd ℂ) S.a) ≠ 0 := by
+    simpa using S.ne_zero
+  have h1ne : (1 : ℂ) - (starRingEnd ℂ) S.a ≠ 0 := by
+    intro hc
+    apply S.one_sub_ne_zero
+    have := congrArg (starRingEnd ℂ) hc
+    simpa using this
+  refine saddle_branch_eq_lower hne h1ne hcube (by simpa using S.him) ?_
+  simpa using S.re_le_one
+
+end SaddleRoots
+
 end SaddleStructure
 
 /-! ### Complex Rogers reflection

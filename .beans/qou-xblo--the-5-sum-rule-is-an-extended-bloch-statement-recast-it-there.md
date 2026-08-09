@@ -1220,3 +1220,48 @@ root data — and it is the conjugate-pair structure of a real cubic with one re
 root, not anything about dilogarithms.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 66 — the root data, packaged; the branch datum `ε = (+1, −1, 0)` PROVED
+
+Every hypothesis Route 64's capstone still carried is a consequence of one
+bundle. `SaddleRoots` states it once:
+
+    t : ℝ,  a : ℂ,  0 < t < 1,  Im a > 0
+    a + conj a + t = 2,   a·conj a + a·t + conj a·t = 3,   a·conj a·t = 1
+
+— a real root in `(0,1)` and a conjugate pair, with the three symmetric functions
+being `X³ − 2X² + 3X − 1`. Each field is a checkable fact about the cubic and
+nothing numeric appears anywhere.
+
+### Derived from it, sorry-free
+
+| fact | how |
+|---|---|
+| `cubic_t`, `cubic_a` | Vieta, one `linear_combination` each |
+| `ne_zero`, `one_sub_ne_zero` | from `Im a > 0` |
+| `two_re : 2·Re a = 2 − t` | the trace, real part |
+| `re_le_one : Re a ≤ 1` | `two_re` and `t > 0` |
+| `pair_rel` | Route 62 |
+| `normSq_mul : \|a\|²·t = 1` | `Complex.mul_conj` and the product |
+
+### The branch datum, proved
+
+| | value | route |
+|---|---|---|
+| `branch_real` | `ε₃ = 0` | no window needed — both arguments vanish |
+| `branch_upper` | `ε₁ = +1` | window, from `Im a > 0` and `Re a ≤ 1` |
+| `branch_lower` | `ε₂ = −1` | the mirror, `saddle_branch_eq_lower` |
+
+`ε = (+1, −1, 0)` was **measured** when this lane started, and the corpus's
+`branch_data_of_cubic` proved only that the `ε` are *integers*. Their **values**
+are now theorems, from the cubic and two sign conditions.
+
+### What Route 64's capstone still needs
+
+Only the two pentagon values (theorems) and the identification of its abstract
+`A₃`, `B₃`, `a`, `b`, `c` with the `SaddleRoots` data. Every hypothesis in
+between is now derived.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
