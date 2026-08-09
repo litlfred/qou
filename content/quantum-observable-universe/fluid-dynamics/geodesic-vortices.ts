@@ -6,7 +6,6 @@ export default remark({
   title: "Geodesic vortices: variational characterisation and stability",
   uses: [
     "rem:geometric-drag",
-    "prop:discrete-vortex-spectrum",
   ],
   tags: ["vortex", "geodesic", "variational", "stability", "morse-index"],
 });
