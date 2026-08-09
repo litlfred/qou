@@ -410,14 +410,35 @@ def cross_check_tr_M() -> dict:
         chain = json.loads(chain_path.read_text())
         chain_value = chain.get("target_value")
 
+    def _s3(key):
+        """Strategy-3 tr_M for one nucleon, or None if the upstream row lacks it.
+
+        This used to be `float(row.get("term1_atomic_total", "nan"))` — the
+        DEFAULT was the string "nan", so a missing upstream key turned silently
+        into a NaN float, which json.dump then wrote as a bare NaN token. That
+        made this witness invalid JSON and presented "upstream did not supply
+        this" as though it were a computed number.
+        """
+        raw = s3_rows.get(key, {}).get("term1_atomic_total")
+        if raw is None:
+            return None
+        try:
+            return float(raw)
+        except (TypeError, ValueError):
+            return None
+
     out["proton"] = {
-        "strategy_3_tr_M": float(s3_rows.get("p", {}).get("term1_atomic_total", "nan")),
+        "strategy_3_tr_M": _s3("p"),
+        "strategy_3_tr_M_missing": s3_rows.get("p", {}).get(
+            "term1_atomic_total") is None,
         "phase_1_6_closed_form": ob_at_q0.get("proton"),
         "markov_trace_assembly_chain": chain_value,
         "axiomatic_content_block": 1.63315,   # from markov-trace-axiomatic-closed-form.md
     }
     out["neutron"] = {
-        "strategy_3_tr_M": float(s3_rows.get("n", {}).get("term1_atomic_total", "nan")),
+        "strategy_3_tr_M": _s3("n"),
+        "strategy_3_tr_M_missing": s3_rows.get("n", {}).get(
+            "term1_atomic_total") is None,
         "phase_1_6_closed_form": None,        # not computed there
         "axiomatic_content_block": "(σ₁⁷σ₂⁴ used for proton; udd encoding differs — needs separate closed form)",
     }
