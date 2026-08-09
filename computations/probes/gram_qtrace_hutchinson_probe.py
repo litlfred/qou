@@ -170,8 +170,18 @@ def run_isotope(name, Z, N, *, exact_dim, samples):
     out = {"iso": name, "Z": Z, "N": N, "n": n}
     for tag, qv in (("q0", q0), ("qi", 1 / q0)):
         y = y_lambda_at(n, q_val=float(qv))
-        wa = atom_braid_word_3A(Z, N, include_inter=True, q=qv)
-        wf = atom_braid_word_3A(Z, N, include_inter=False, q=qv)
+        # Build the word at FULL precision (the guard is satisfied honestly:
+        # q0 is now parsed at 50 dps, see the set_compute_dps note at the top),
+        # then cast at the f64 boundary. `gram_qtrace_multi` runs a scipy.sparse
+        # / Hutchinson kernel that is float64-only — scipy.sparse rejects
+        # dtype=object outright — and the same `float(qv)` is already passed to
+        # it as `q`. So the cast is declared HERE, at the one point where the
+        # precision is actually lost, instead of being hidden by feeding the
+        # kernel a q0 that was quietly truncated at parse time.
+        wa = [(float(c), float(d), g)
+              for (c, d, g) in atom_braid_word_3A(Z, N, include_inter=True, q=qv)]
+        wf = [(float(c), float(d), g)
+              for (c, d, g) in atom_braid_word_3A(Z, N, include_inter=False, q=qv)]
         (Ga, sa), (Gf, sf) = gram_qtrace_multi(
             [wa, wf], n, y, q=float(qv), exact_dim=exact_dim,
             samples=samples, label=f"{name}:{tag}")
