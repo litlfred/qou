@@ -117,6 +117,21 @@ HBAR_C_MEV_FM = mp.mpf("197.3269804152")
 # → +11.0 %). It is now the default; the empirical constant is retained below
 # as `R0_FM_EMPIRICAL` for comparison only.
 #
+# NOT NEW WORK, and A^{1/3} IS NOT DERIVED. `deltalambda/mirror_split_continuum_em_probe.py`
+# already uses exactly this radius law (`R(A) = λ̄_π·A^{1/3}`, its line 15) and
+# already classifies both of its steps, more carefully than this module did:
+#   * `A^{1/3}` — "radius law from VOLUME EXTENSIVITY … **WEAK STEP (named)**:
+#     the hyperbolic volume of the link complement is a topological invariant,
+#     NOT a Euclidean spatial volume … an archimedean identification the corpus
+#     does not derive". Tier: CONDITIONAL/PARTIAL. (:39-49)
+#   * `R(A) = 1·λ̄_π·A^{1/3}` — "**THE UNDERIVED STEP**. The packing radius equal
+#     to the pion Compton wavelength at coefficient EXACTLY 1 is a SELECTION
+#     among the framework's four mass scales". (:50-53)
+# So A^{1/3} is a saturation/liquid-drop assumption, not a derivation, and
+# measurement agrees: solving R = λ̄_π·A^x for x gives 0.9679 (²H), 0.4314 (³H),
+# 0.5326 (³He), 0.3067 (⁴He) — it would need 0.3333 throughout. Size tracks
+# BINDING, not nucleon count. Bean qou-usft.
+#
 # HONEST LIMIT. The COEFFICIENT is not derived. The corpus probe's GAP 1 asks
 # why the packing length is λ̄_π "at coefficient EXACTLY 1" and reports it
 # MEASURED at 0.985 ± 0.069 — consistent with 1, not proved to be 1. And GAP 2,
