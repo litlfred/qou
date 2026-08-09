@@ -40,6 +40,7 @@ exists whose weight can be asked to vanish.
 | 2026-08-09 | `anchor-followups` | Bratteli branching identity | landed `cf8d3bf9` | `GramSignature.mu_triplet_eq_branch`, `mu_singlet_eq_branch` |
 | 2026-08-09 | `anchor-followups` | `H_n/rad ≅ TL_n`, closed-form weights | landed `1f1dbb73` | `TemperleyLiebTower.qint_three_term_pair`, `markov_branching_general` |
 | 2026-08-09 | `anchor-followups` | **`z` pinned at `n = 3`** | landed `02601853f` | `y_antisym_factorisation`, `z_eq_q_forces_trivial` |
+| 2026-08-09 | `anchor-followups` | pinning as an **iff**; Wenzl derived, not cited; radical is an ideal | landed `10b8dac1d` | `IsConventionD`, `conventionD_unique_nontrivial`, `traceRadical_two_sided` |
 
 ## Open asks (posted on #4857, awaiting reply)
 
@@ -56,9 +57,11 @@ exists whose weight can be asked to vanish.
    directly, avoiding the 24 evaluation lemmas and the measured `vecCons` 30× /
    8.7 GB costs. Arithmetic half is proved here (`catalan_four`, `radical_four`).
    Not asserted — the equiv has not been read closely from this side.
-3. **Shape of the pinning.** Standalone in `QOU/QBeta/`, or landed as an
-   `IsConventionD`-style companion predicate in `QOU/Hecke/`-consumable form.
-   Sibling's call; no file will be placed in their territory uninvited.
+3. ~~**Shape of the pinning.**~~ **ANSWERED BY BUILDING IT** (`10b8dac1d`).
+   `IsConventionD q z := z(q²+1) = q³` now exists in `QOU/QBeta/`, consumable
+   as-is, and `conventionD_unique_nontrivial` gives the iff
+   `IsConventionD q z ↔ (y₍₁³₎ = 0 ∧ y₍₂,₁₎ ≠ 0)`. Nothing was placed in their
+   territory; they take it or ignore it.
 
 ## Facts either side may cite
 
