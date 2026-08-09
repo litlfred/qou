@@ -163,3 +163,99 @@ nothing wired, no ordering recommended. Bean stays OPEN.
   wins for A <= 3. Helper and proposition disagree at A = 3.
 - mass-table-comprehensive.witness.json has NO 3He (2,1) and NO 4He (2,2) rows,
   though 5He..12He are present.
+
+---
+
+## Update — PR #4854 (2026-08-09): both "small separate items" settled. Bean stays OPEN.
+
+Diagnostic only. Production untouched; **no published number changed**.
+Probe `computations/probes/ground_state_ordering_a3_probe.py` ->
+`ground-state-ordering-a3.witness.json`; audit
+`docs/audits/2026-08-09-ordering-loose-ends-a3-helper-and-missing-he-rows.md`;
+Lean `QOU/MassTheory/TransferFactorCommute.lean`.
+
+### Item 1 — helper vs prop rule (iii) at A=3: classification (a), the HELPER is defective
+
+Computed the proposition's OWN objective `Phi_q = sum_i log|V_i|` via the corpus
+implementation `_phi1_from_ordering_sym`, over EVERY arrangement, at the experimental
+proton anchor:
+
+    3He (2,1)   Phi_1(ppn) = -2.37519810839658325   <- argmin; = sorted; = rule (iii)
+                Phi_1(npp) = -1.98321927125222633
+                Phi_1(pnp) = -1.71732004705805955   <- the helper; LAST of 3
+    T   (1,2)   Phi_1(pnn) = -2.46308887937445802   <- argmin = sorted = helper (no dispute)
+
+Not only at A=3. The helper performs NO variational search -- it is a fixed
+interleaving generator, bit-identical to `_alternating_ordering_sym` -- and is the
+Phi_1 argmin in only **5/16** swept cases, the strict WORST of every arrangement at
+(3,3), (5,5) and (7,7). Candidate (c) tested and rejected: it is the extremum of no
+other objective the corpus states (phi_nuc 10/16, -phi_1 5/16, |phi_1| 5/16).
+
+**Caveat, proved in Lean.** On the BARE NUCLEON chain `ppn` and `pnp` are EXACTLY
+degenerate (both -0.878523297318204006). The transfer factors `T(d) = S + d.1` all
+COMMUTE, so the chain product -- and the readout -- depends on the crossing
+coefficients ONLY as a MULTISET. Rule (iii)'s "sorted BEATS interleaving" is therefore
+a TIE at 3He, strict only after the electron tail is appended, and that separation is
+generated entirely by `_crossing_coeff_sym` having NO `(n, e)` case (returns `None`,
+silently skipped). Both readings put sorted at the optimum; neither supports `pnp`.
+The same theorem explains why `atom_V_full_sym` is EXACTLY ordering-independent.
+
+**NOT FIXED.** A fix leaves V0/V1 untouched but moves the Hecke NF vector: worst
+relative delta 0.049 at (2,1), 2.52 at (2,2), 0.80 at (3,3) -- and `build_atom_nf_sym`
+/ `build_atom_nf_mp` feed committed witnesses. Crosses the scope bar; left for the owner.
+
+### Item 2 — 3He/4He absent from the mass table: GENERATOR BUG (false-premise guard)
+
+`mass_table_comprehensive.py:153`:
+
+    if a > 4:  # Avoid duplicates with explicitly added H, He isotopes
+
+The premise is FALSE: `ISOTOPES = [("p",1,0), ("n",0,1), ("D",1,1), ("T",1,2)]` is
+H-chain only (every Z <= 1) and the filtered grid starts at z = 2, so the intersection
+is empty. Measured: 14974 grid rows -> 14968 kept, **6 dropped**, ZERO of them actual
+duplicates:
+
+    (2,0) 2He diproton (unbound)   (2,1) 3He BOUND   (2,2) 4He BOUND
+    (3,0) 3Li (unbound)            (3,1) 4Li (unbound)   (4,0) 4Be (unbound)
+
+Both the list and the guard were introduced in the same commit -- not drift. No
+documented reason found in content/, computations/, docs/audits/, docs/coordination/.
+
+**Collateral.** The witness's SOLE assertion `all_A_leq_4_masses_computed` ("All A <= 4
+isotopes have absolute mass predictions") ranges over the POST-filter rows = {p,n,D,T}.
+It passes precisely because the filter removed the rows it claims to cover -- true of
+the emitted rows, false of its own wording.
+
+**NOT REGENERATED** (moves published numbers).
+
+### Three corrections to PR #4851 §2 / §3.4 — do not propagate
+
+1. Rust `HeckeEngine.ground_state_ordering` **does not exist** (no `ground_state`
+   symbol in `tools/hecke-engine/src/`; `hecke_rust_bridge.compute_nucleus` is absent
+   from the live tree -- only `_deprecated/`). The Rust path returns `None` always.
+2. `ordering_cache.get_ordering` falls back to **SORTED** (`[1]*Z + [0]*N`) off-cache,
+   NOT interleaved.
+3. The committed cache matches **neither** the proposition's formula **nor** the Phi_1
+   argmin: (2,2)->`nppn` vs `npnp`; (3,3)->`npnppn` vs `npnpnp`; (6,6)->`npnpnpnpnppn`
+   vs `npnpnpnpnpnp` (final two strands swapped each time). Argmin in 5/12 cases.
+
+So there are **four** mutually inconsistent artefacts, not two conventions.
+
+### Scope
+
+scope-(a) throughout; **no scope-(b) exclusion is claimed** in this update. The
+classification of both items is settled; WHICH arrangement production should use is
+NOT determined and no ordering is recommended. `prop:ground-state-ordering` remains
+stated-not-proved. free_parameters = 0; q0 = experimental proton anchor, layer-pure.
+
+### Added to "what would close it"
+
+5. Either make `_ground_state_ordering` actually minimise Phi_1 (a suffix-multiset DP,
+   cheap given `chainProd_perm`) or RENAME it `_interleaved_ordering` so it stops
+   claiming a variational status it does not have. The rename is free and honest; the
+   fix moves witnesses and needs owner sign-off.
+6. Decide whether Phi_1 or Phi_nuc is the ordering objective, and close the `(n, e)`
+   hole in `_crossing_coeff_sym` deliberately. At 3He the whole strict/tie question
+   turns on it.
+7. Fix the `a > 4` guard, regenerate the mass table with the 3He/4He rows restored,
+   and restate `all_A_leq_4_masses_computed` so its wording matches its range.
