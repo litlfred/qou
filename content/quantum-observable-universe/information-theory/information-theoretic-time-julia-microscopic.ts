@@ -13,6 +13,5 @@ export default remark({
   ],
   uses: [
     "def:information-theoretic-time",
-    "rem:information-theoretic-time-properties",
   ],
 });
