@@ -82,3 +82,50 @@ of trading one for the other.
 Drain build started; seed to be re-run from the enriched tree afterwards. Note
 the seeder deletes its `mktemp -d` on exit, so the parts do not survive the run —
 the final seed must be the one that pushes.
+
+---
+
+## Seeded and verified 2026-08-09 — NOT yet promoted
+
+Seeded from the fully-drained tree (bean qou-rc7b: `lake build` exit 0,
+1681/1681 modules).
+
+    branch:  lake-cache/qou-v4-24-0-test
+    oleans:  5267  (3590 deps + 1677 own)
+    traces:  5267/5267 (100%)
+    verify:  clean-clone restore replayed all 5267 — own=1677, traces=100% OK
+
+**Not a downgrade.** Candidate tarball is 1.84 GB / 21 parts against
+production's 1.53 GB / 18. An earlier note in this session worried the reseed
+would shrink Mathlib coverage; that was measured pre-drain at 888 own oleans
+and no longer holds.
+
+### Why it had never been promotable
+
+`scripts/reseed-lean-cache.sh` phase 5 parsed the OLD status format
+(`traces: N (P% coverage)`) while `lake-cache.sh status` prints
+`traced: N/M oleans (P%)`. The capture came back empty, `${cov:-0}` made it 0,
+and the gate died with "verify FAILED: trace coverage 0%" — on a tree whose
+own output two lines above read 100%. Since `--promote` implies verify,
+**the reseed workflow could not publish at all.**
+
+Phase 2 reads the same line and had already been fixed; its comment even warns
+the two are coupled. Fixed in folio-assistant (`claude/agent-stalled-pickup-n79db3`,
+commit 46febe3) by routing both phases plus the two regression-check counts
+through three shared readers. Verify now reports `own=1677, traces=100% OK`.
+
+### Remaining
+
+Promotion force-pushes the production branch and was **blocked by the sandbox
+permission classifier** — correctly; it rewrites a branch everyone pulls. The
+run is one command, gated on verify + the no-shrink check:
+
+    bash scripts/reseed-lean-cache.sh --repo /workspace/qou --package qou --auto-promote --yes
+
+Note the no-shrink guard is inert here: it reads counts from the production
+branch's commit message, and the incumbent's message
+(`seed lean cache @ v4-24-0: lake-oleans.tgz.part17 ...`) predates count
+recording, so `prod_counts` returns empty and the check passes by default. The
+manual size comparison above is what actually establishes no regression.
+
+Incumbent backed up at `lake-cache/qou-v4-24-0-pre-2026-08-08` -> 3068be7b23.
