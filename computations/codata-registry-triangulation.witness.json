@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T10:45:56.762588+00:00",
-  "commitSha": "5db09b43dd463fa30781c2559d90c59dfadadc04",
+  "computedAt": "2026-08-09T10:50:40.891730+00:00",
+  "commitSha": "f275e0988852d02bc3de8663dcdb6352ea8bc4d3",
   "assertions": [
     {
       "name": "dashboard_m_p_error_equals_triangulation_residual",
@@ -21,6 +21,14 @@
       "source": "Indicator (1 = residual exceeds 10x the last printed digit of m_p; see leg1_residual_in_printed_units for the magnitude). Within one CODATA adjustment the triple is a single correlated fit output, so a same-edition triple agrees to its last printed digit. The residual is ~126x that unit, which rounding cannot explain — the registries are mixed-vintage. (Against the measurement sigma this is only ~3.1 sigma; that weaker framing is recorded in the data block but is not the test.)"
     },
     {
+      "name": "artifact_does_not_explain_mu_p_tension",
+      "computed": 1.0,
+      "expected": 1.0,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "Indicator (1 = correcting the muon-electron ratio to its 2022 value does NOT reduce the m_mu miss). It moves 963.6x -> 970.2x, i.e. marginally worse. The single largest L2 miss is genuine physics — the mu-p substrate tension — and is untouched by this registry finding."
+    },
+    {
       "name": "neutron_leg_favours_ratio_consistent_proton",
       "computed": 1.0,
       "expected": 1.0,
@@ -30,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 11,
   "computation": "codata-registry-triangulation",
   "scriptFile": "codata_registry_triangulation_probe.py",
-  "scriptHash": "3fb204c09391",
-  "scriptCommitSha": "5db09b43dd463fa30781c2559d90c59dfadadc04",
+  "scriptHash": "261352ed3133",
+  "scriptCommitSha": "f275e0988852d02bc3de8663dcdb6352ea8bc4d3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -68,6 +76,9 @@
     "leg2_neutron_sigma_ppb": "0.51087448",
     "leg3_muon_residual_ppb_NON_DISCRIMINATING": "1.40994942015",
     "leg3_muon_n_sigma_NON_DISCRIMINATING": "0.045296945",
+    "leg4_m_mu_miss_ratio_as_stored_2018": "963.56639",
+    "leg4_m_mu_miss_ratio_corrected_2022": "970.2316",
+    "leg4_verdict": "Correcting the vintage makes m_mu WORSE (963.6x -> 970.2x). Recorded as-measured: a correction that degrades an observable is reported, not suppressed. The mu-p substrate tension is genuine and this finding does not reach it.",
     "dashboard_m_p_err_ppb": "1.351",
     "l2_projection_audit_only": {
       "note": "What the affected rows would read against a self-consistent registry. PROJECTION ONLY — the dashboard is unmodified. m_p is excluded on purpose: it is the pin anchor, so a corrected round-trip is a calibration tautology, not a pass.",
