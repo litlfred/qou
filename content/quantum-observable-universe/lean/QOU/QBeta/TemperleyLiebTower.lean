@@ -878,6 +878,36 @@ and `yw q (n+1) m` to "the two ways of adding a box to a two-row diagram". That
 is a bookkeeping step between `m = n − 2k + 1` and the `covers` Finset, not a
 new mathematical fact. -/
 
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **One factor cancelled against a power — the tower's recurring shape.**
+
+`c · x / c^(n+1) = x / c^n`. Every level of the tower divides by `[2]_qⁿ`, and
+every branching step produces one extra factor of `[2]_q` upstairs, so this is
+the cancellation that appears each time.
+
+**Do not reach for `field_simp` here.** Under a *variable* exponent it rewrites
+the base — `(q + q⁻¹)^n` became `(q²q⁻¹ + q⁻¹)^n` — after which `ring` cannot
+reconcile two different bases raised to the same `n`, and the goal is
+unprovable-looking rather than merely unproved.
+
+A named lemma rather than a tactic macro, deliberately: the hand-rolled version
+was `rw [pow_succ, mul_comm]` followed by `mul_div_mul_left`, and the bare
+`mul_comm` rewrites whichever multiplication it meets first — fine in a
+two-factor goal, wrong in a larger one. The lemma applies at a named position
+and cannot pick the wrong redex. -/
+theorem mul_div_pow_succ (c x : R) (hc : c ≠ 0) (n : ℕ) :
+    c * x / c ^ (n + 1) = x / c ^ n := by
+  rw [pow_succ, mul_comm (c ^ n) c]
+  exact mul_div_mul_left _ _ hc
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- The same with the extra factor on the right, for goals that come out of
+`ring_nf` in the other orientation. -/
+theorem mul_div_pow_succ' (c x : R) (hc : c ≠ 0) (n : ℕ) :
+    x * c / c ^ (n + 1) = x / c ^ n := by
+  rw [mul_comm x c]
+  exact mul_div_pow_succ c x hc n
+
 /-- **`[m+2]_q + [m]_q = [2]_q · [m+1]_q`, on the defined `qint`.** -/
 theorem qint_three_term (q : R) (hq : q ≠ 0) (m : ℕ) :
     qint q (m + 2) + qint q m = (q + q⁻¹) * qint q (m + 1) := by
@@ -898,13 +928,8 @@ every level of the tower, and it is what `hbranch` of `vanishing_step` asks for
 once the shapes are indexed. -/
 theorem yw_branching (q : R) (hq : q ≠ 0) (hs : q + q⁻¹ ≠ 0) (n m : ℕ) :
     yw q (n + 1) (m + 2) + yw q (n + 1) m = yw q n (m + 1) := by
-  -- `field_simp` is wrong here: it rewrites the base of `(q + q⁻¹) ^ n` and
-  -- then `ring` cannot reconcile two different bases under a variable exponent.
-  -- Cancel the single factor directly instead.
   unfold yw
-  rw [← add_div, qint_three_term q hq m, pow_succ,
-    mul_comm ((q + q⁻¹) ^ n) (q + q⁻¹)]
-  exact mul_div_mul_left _ _ hs
+  rw [← add_div, qint_three_term q hq m, mul_div_pow_succ _ _ hs]
 
 end Weights
 
