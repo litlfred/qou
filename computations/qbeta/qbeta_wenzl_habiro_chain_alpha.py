@@ -48,6 +48,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
+REASON_TEXT = "target below the 1e-30 precision floor — relative error undefined"
+
+
 def quantum_int(n: int, q: mpf) -> mpf:
     """[n]_q = (q^n - q^{-n}) / (q - q^{-1})."""
     return (q ** n - q ** (-n)) / (q - q ** (-1))
@@ -146,7 +149,13 @@ def main() -> int:
             value = formula(k, q)
             target = targets[k]
             if abs(target) < mpf("1e-30"):
-                err_ppm = float("nan")
+                # A RELATIVE error against a target of zero is undefined, which
+                # the code already knew — hence ok_str "n/a". It recorded that
+                # as float("nan"), which json.dump writes as a bare NaN token;
+                # JSON has none, so this witness did not parse under a strict
+                # loader. null, not an "nan" marker: undefined-by-construction
+                # is a MISSING value, not a pole.
+                err_ppm = None
                 ok = True  # target is below precision floor — any value OK
                 ok_str = "n/a"
             else:
@@ -159,11 +168,13 @@ def main() -> int:
                     max_err_ppm = err_ppm
             print(f"    k={k}: tr_M(p_k) = {mp.nstr(value, 14):>20}  "
                   f"target = {mp.nstr(target, 14):>14}  "
-                  f"err = {err_ppm:>12.2f} ppm  {ok_str}")
+                  f"err = {'         n/a' if err_ppm is None else f'{err_ppm:>12.2f}'} ppm  {ok_str}")
             row["k_results"][str(k)] = {
                 "computed": mp.nstr(value, 30),
                 "target": mp.nstr(target, 30),
                 "err_ppm": err_ppm,
+                "err_ppm_undefined_reason": (None if err_ppm is not None
+                                             else "%s" % REASON_TEXT),
                 "passed": ok,
             }
         row["all_passed"] = passed_all
