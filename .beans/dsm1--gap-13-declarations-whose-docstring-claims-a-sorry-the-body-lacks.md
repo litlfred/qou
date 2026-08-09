@@ -1,6 +1,6 @@
 ---
 # dsm1
-title: 'GAP: 13 declarations whose docstring claims a `sorry` the body does not have'
+title: 'GAP: declarations whose docstring claims a `sorry` the body does not have (9 live)'
 status: todo
 type: task
 priority: high
@@ -29,23 +29,34 @@ fixed; the detector fires on both pre-fix versions, which is how it was validate
 The new criterion reads only the doc block and the body, so no naming choice can
 dodge it.
 
-## The 13
+## The queue — 9 on `main` @ 2026-08-09 (was 13 when first run)
 
-| file | declaration |
+| file (under `content/quantum-observable-universe/lean/`) | declaration |
 |---|---|
-| `AlgebraicSubstrate/JointGaloisBraidFigure8.lean:134` | `kappa_commutes_bar` |
-| `AlgebraicSubstrate/qou_obstruction_reduction.lean:90` | `kappa_vanishes_iff_chi` |
-| `BraidKnot/OVTopAssembly.lean:203` | `identityB_general` |
-| `BraidKnot/volume_perturbation.lean:80` | `volume_perturbation` |
-| `BraidsKnots/mobius_frobenius_kernel.lean:78` | `mobius_frobenius_kernel` |
-| `BraidsKnots/nsi_q_deformed_kernel.lean:159` | `nsi_q_kernel_identification` |
-| `BraidsKnots/skein_mass_from_linking.lean:93` | `skein_mass_from_linking` |
-| `FeynmanPathIntegrals/markov_identification.lean:88` | `markovTrace_branching` |
-| `Interactions/ConfinementSDP.lean:141` | `ConfinementSDP` |
-| `Molecular/shell_filling_rule.lean:145` | `shell_filling_rule` |
-| `ParticleInteractions/four_term_pair_nucleon.lean:114` | `four_term_pair_nucleon` |
-| `ParticleInteractions/mass_categorical_descent.lean:75` | `mass_categorical_descent` |
-| `Torsion/neutron_proton_splitting.lean:91` | `neutron_proton_splitting` |
+| `QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean:134` | `kappa_commutes_bar` |
+| `QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean:90` | `kappa_vanishes_iff_chi` |
+| `QOU/BraidKnot/OVTopAssembly.lean:203` | `identityB_general` |
+| `QOU/BraidsKnots/mobius_frobenius_kernel.lean:78` | `mobius_frobenius_kernel` |
+| `QOU/BraidsKnots/nsi_q_deformed_kernel.lean:159` | `nsi_q_kernel_identification` |
+| `QOU/BraidsKnots/skein_mass_from_linking.lean:93` | `skein_mass_from_linking` |
+| `QOU/Interactions/ConfinementSDP.lean:141` | `ConfinementSDP` |
+| `QOU/Molecular/shell_filling_rule.lean:145` | `shell_filling_rule` |
+| `QOU/ParticleInteractions/mass_categorical_descent.lean:75` | `mass_categorical_descent` |
+
+**Four dropped between the first run and the rebase** — `volume_perturbation`,
+`markov_identification`, `four_term_pair_nucleon`, `neutron_proton_splitting` —
+fixed on `main` by other sessions in the intervening ~78 commits.
+
+`volume_perturbation` was one of the three I had confirmed by reading, and it was
+resolved independently. That is corroboration of the verdict, not a false
+positive retracted.
+
+**This list is a snapshot and will go stale the same way.** Re-run the detector
+rather than working from this table:
+
+```
+bun run content/pipeline/lean-vacuity-axiom-audit.ts content/quantum-observable-universe/lean
+```
 
 ## Three were spot-checked; all three were true positives
 
@@ -64,7 +75,7 @@ Two of them assert the **precise opposite** of their own code:
   cited `obstruction_trace_gap` is `exact ⟨ctx.kappa0_eq_chi_A,
   ctx.phi_1_image_eq_chi_A⟩`.
 
-The remaining 10 are **unread**. Do not assume they follow the same pattern.
+The remaining entries are **unread**. Do not assume they follow the same pattern.
 
 ## This one touches live work
 
