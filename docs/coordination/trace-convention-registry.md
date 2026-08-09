@@ -45,6 +45,15 @@ $h = q - q^{-1}$.
 | **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715967$ | pinned-by-definition |
 | **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646524$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787266$ | forced-given-premise |
 
+> **Registry gap closed 2026-08-09.**
+> `computations/wedderburn_jones_markov.py::y_lambda_at` is convention **C** and
+> was **not listed**. Measured `y_λ(3, q₀) = (0.4153957954, 0.2809296310,
+> 0.0227449426)` — the C row above, to every digit shown. It is the widest C
+> surface in the repo by a wide margin (**155 consumers**, against 62 for
+> `binding_canonical`, 46 for `closed_form_tau_M`, 27 for `tr_M_element`), so any
+> C→D migration driven off the previously-listed implementations alone would
+> have missed most of the change.
+
 - **C and the "Wenzl-bridge $z$-trace" are one convention, not two** — proved as
   a rational-function identity in
   [`probe_convention_d_vs_c_borromean.py`](../../computations/probes/probe_convention_d_vs_c_borromean.py).

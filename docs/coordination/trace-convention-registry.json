@@ -48,7 +48,9 @@
       "weights_at_q0": null,
       "value_at_beta_bor": null,
       "value_note": "never evaluated on beta_Bor in-repo; the A infrastructure is an A>=4 chi encoding, not an H_3 z-trace",
-      "implementations": ["computations/chi_via_matrix_m_mpfr (native bindings)"],
+      "implementations": [
+        "computations/chi_via_matrix_m_mpfr (native bindings)"
+      ],
       "lean": null,
       "forcing_status": "not-a-z-trace",
       "verify": null,
@@ -63,7 +65,9 @@
       "weights_at_q0": null,
       "value_at_beta_bor": null,
       "value_note": "deprecated before any beta_Bor evaluation",
-      "implementations": ["computations/mass_at_3A_proper.py::markov_trace_3A"],
+      "implementations": [
+        "computations/mass_at_3A_proper.py::markov_trace_3A"
+      ],
       "lean": null,
       "forcing_status": "deprecated",
       "verify": null,
@@ -89,13 +93,15 @@
       "implementations": [
         "computations/markov/markov_trace_canonical.py::tr_M_element",
         "computations/closed_form_tau_M.py::markov_z + y_lambda_wenzl_bridge_numeric",
-        "computations/binding_canonical.py"
+        "computations/binding_canonical.py",
+        "computations/wedderburn_jones_markov.py::y_lambda_at"
       ],
       "lean": "QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.trC_borromean_derived",
       "forcing_status": "pinned-by-definition",
       "forcing_note": "z is written down, not derived: rem:markov-axioms-primitive (content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md line 5) states axioms 1-3 with z = 1/(q^{1/2}+q^{-1/2}) as a given. No free parameter and no derivation of that value.",
       "verify": "probe_writhe0",
-      "source": "docs/audits/2026-06-09-binding-trace-convention-split.md; docs/audits/2026-08-08-borromean-trace-convention-forcing.md"
+      "source": "docs/audits/2026-06-09-binding-trace-convention-split.md; docs/audits/2026-08-08-borromean-trace-convention-forcing.md",
+      "implementations_note": "y_lambda_at added 2026-08-09: it was UNREGISTERED but is convention C \u2014 measured y_lambda(3, q0) = (0.4153957954, 0.2809296310, 0.0227449426), matching this entry's weights_at_q0 to every digit shown. It is by far the widest C surface (155 consumers vs 62 for binding_canonical), so a C-to-D migration that used only the three previously-listed implementations would have missed the bulk of the change."
     },
     {
       "id": "D",
@@ -129,7 +135,10 @@
   ],
   "gaps": [
     {
-      "pair": ["D", "C"],
+      "pair": [
+        "D",
+        "C"
+      ],
       "at": "beta_Bor, proton-pin q0",
       "absolute": "0.000195541251071",
       "relative_ppm": "195.82281",
@@ -143,16 +152,17 @@
     {
       "id": "mass",
       "description": "absolute nucleon / atom mass via the muon-anchored Hecke energy",
-      "definitional_convention": "C",
-      "definitional_source": "prop:categorical-mass-markov (content/quantum-observable-universe/mass-endomorphism/categorical-mass-markov.md line 13: 'the Jones-Markov trace, functioning as the Frobenius integral on A' with A = H_n(R,q)) + rem:markov-axioms-primitive line 5 (z = 1/(q^{1/2}+q^{-1/2}))",
+      "definitional_convention": "D",
+      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md \u2014 lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise. Feeding that into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C \u2014 rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
       "production_convention": "D",
       "production_source": "computations/m_p_substrate_identity_50dps.py::trM_borromean -> F_Bor -> m-p-substrate-identity-50dps.witness.json -> computations/canonical_mass.py",
-      "status": "disputed",
-      "open_item": {
-        "bean": "qou-3qrv",
-        "audit": "docs/audits/2026-08-08-borromean-trace-convention-forcing.md",
-        "blast_radius": "~30 F_Bor consumers; -197 ppm on m_p",
-        "note": "OWNER DECISION. No agent may switch the production trace to close this. D is the value that lands on CODATA, which is exactly why deciding by match is forbidden here."
+      "status": "agreed",
+      "open_item": null,
+      "resolution": {
+        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
+        "numerical_impact_on_this_channel": "NONE. Production was already D; only the definitional side moved. m_p unchanged.",
+        "forcing": "docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md",
+        "not_decided_by": "CODATA match \u2014 the forcing is the fibre dimension (row cap), which is independent of any measured value."
       }
     },
     {
@@ -183,7 +193,12 @@
       "line": 310,
       "reason": "NOT a Borromean trace and NOT a trace convention. It traces atom_braid_word_3A (computations/mass_at_3A_proper.py:256), which for (Z,N)=(1,0) is an 11-crossing word whose core is sigma_0^3 sigma_1^-3 -- a different braid closure from the 6-crossing interleaved beta_Bor = (sigma_0 sigma_1^-1)^3. Comparing it to a beta_Bor value measures a braid-word difference, not a convention difference.",
       "incident": "produced a false 6.7 % 'fifth convention' alarm on 2026-08-08 (bean qou-3qrv section 1)",
-      "aliases": ["tr_M_atomic_fast", "tr_M_atomic_rust", "tr_M_atomic_at_q0", "tr_M_atomic_lq"]
+      "aliases": [
+        "tr_M_atomic_fast",
+        "tr_M_atomic_rust",
+        "tr_M_atomic_at_q0",
+        "tr_M_atomic_lq"
+      ]
     }
   ],
   "entry_points": [
@@ -235,11 +250,11 @@
     },
     {
       "file": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md",
-      "quote": "z = 1/(q^{1/2} + q^{-1/2})",
+      "quote": "z = q^3/(q^2+1)",
       "about_channel": "mass",
       "layer": "definition",
-      "names_convention": "C",
-      "note": "this block IS the definitional pin; it is the reason the mass channel's definitional_convention is C"
+      "names_convention": "D",
+      "note": "this block IS the definitional pin. Moved C -> D by owner ruling 2026-08-09. It no longer STIPULATES the loop value: the fibre being 2-dimensional (lem:feynman-eigenbasis-decomposition, row cap ell(lambda) <= 2) forces y_(1^3) = 0, and markovWeights_eq_jones_of_threeRow_eq_zero then forces z = q^3/(q^2+1) uniquely. Previously the note read 'a stipulation of this definition, not a consequence of it'."
     }
   ],
   "production_files": [
@@ -283,7 +298,9 @@
       "description": "the mislabel that produced the false 6.7 % alarm: listing tr_M_atomic as a Borromean trace convention",
       "convention_row": {
         "id": "X",
-        "implementations": ["computations/markov/markov_peel.py::tr_M_atomic"]
+        "implementations": [
+          "computations/markov/markov_peel.py::tr_M_atomic"
+        ]
       },
       "must_error_with": "excluded tracer"
     },
