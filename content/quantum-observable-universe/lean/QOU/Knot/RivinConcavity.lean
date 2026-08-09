@@ -367,7 +367,7 @@ theorem deriv2_tetVolLine_neg {α β γ u v w t : ℝ}
         = (fun s : ℝ => α + s * u) ⁻¹' (Set.Ioi 0)
           ∩ ((fun s : ℝ => β + s * v) ⁻¹' (Set.Ioi 0)
             ∩ (fun s : ℝ => γ + s * w) ⁻¹' (Set.Ioi 0)) := by
-      ext s; simp [tetLineDomain, and_assoc]
+      ext s; simp [tetLineDomain]
     rw [this]
     exact ((isOpen_Ioi.preimage (by fun_prop)).inter
       ((isOpen_Ioi.preimage (by fun_prop)).inter (isOpen_Ioi.preimage (by fun_prop))))

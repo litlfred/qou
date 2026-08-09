@@ -59,7 +59,7 @@ theorem w_cube : w ^ 3 = -1 := by
   have h2 : (3 : ℂ) * (((π / 3 : ℝ) : ℂ) * Complex.I) = ((π : ℝ) : ℂ) * Complex.I := by
     push_cast; ring
   rw [h1, h2]
-  simpa using Complex.exp_pi_mul_I
+  exact Complex.exp_pi_mul_I
 
 theorem w_im_pos : 0 < w.im := by
   unfold w

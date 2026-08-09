@@ -59,7 +59,7 @@ theorem ray_im (hφ0 : 0 < φ) (hφ1 : φ < π) (hr : 0 < r) : 0 < (ray φ r).im
   unfold ray
   rw [Complex.exp_mul_I, ← Complex.ofReal_cos, ← Complex.ofReal_sin]
   simp only [Complex.mul_im, Complex.add_re, Complex.add_im, Complex.ofReal_re,
-    Complex.ofReal_im, Complex.I_re, Complex.I_im, mul_zero, sub_zero, zero_mul,
+    Complex.ofReal_im, Complex.I_re, Complex.I_im, mul_zero, zero_mul,
     add_zero, zero_add, mul_one]
   exact mul_pos hr (Real.sin_pos_of_pos_of_lt_pi hφ0 hφ1)
 
@@ -242,7 +242,7 @@ theorem eq_of_hasDerivAt_zero_Ioi {f : ℝ → ℝ} {a : ℝ}
   have hF : HasFDerivAt f (ContinuousLinearMap.smulRight (1 : ℝ →L[ℝ] ℝ) (0 : ℝ)) z :=
     hf z hz
   rw [fderivWithin_of_isOpen isOpen_Ioi hz, hF.fderiv]
-  ext t
+  ext
   simp
 
 /-- **The Kummer defect is constant along every ray**, because both sides move at

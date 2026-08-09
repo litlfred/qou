@@ -173,8 +173,12 @@ theorem shape_cycle₂ (hz0 : T.shape ≠ 0) (h1z : (1:ℂ) - T.shape ≠ 0) :
   ring
 
 /-- `1 − 1/(1/(1−z)) = z`: the third edge parameter of the rotated tetrahedron is
-the first of the original. -/
-theorem shape_cycle₃ (h1z : (1:ℂ) - T.shape ≠ 0) :
+the first of the original.
+
+Needs **no** non-vanishing hypothesis, which the unused-variable linter caught:
+Lean's `1/0 = 0` makes both sides `1` in the degenerate case `1 − z = 0`, so the
+identity holds unconditionally. -/
+theorem shape_cycle₃ :
     1 - 1 / (1 / (1 - T.shape)) = T.shape := by
   field_simp
   ring
@@ -195,7 +199,7 @@ theorem rotate_angles :
     rw [T.shape_cycle₂ T.shape_ne_zero T.one_sub_shape_ne_zero]
   · show tetAngle₃ (1 / (1 - T.shape)) = tetAngle₁ T.shape
     unfold tetAngle₃ tetAngle₁
-    rw [T.shape_cycle₃ T.one_sub_shape_ne_zero]
+    rw [T.shape_cycle₃]
 
 /-- **The volume is invariant under relabelling** — the three `Λ` terms are
 merely permuted. -/

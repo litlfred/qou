@@ -111,7 +111,7 @@ theorem eq_of_hasDerivAt_zero_Ioo {f : ℝ → ℝ} {a b : ℝ}
   have hF : HasFDerivAt f (ContinuousLinearMap.smulRight (1 : ℝ →L[ℝ] ℝ) (0 : ℝ)) z :=
     hf z hz
   rw [fderivWithin_of_isOpen isOpen_Ioo hz, hF.fderiv]
-  ext t
+  ext
   simp
 
 /-! ### The unit circle sits inside `notCut` -/
@@ -200,8 +200,8 @@ theorem im_cLiTwoExt_exp {θ : ℝ} (h0 : 0 < θ) (h2 : θ < 2 * π) :
   have hconst := eq_of_hasDerivAt_zero_Ioo hzero hθ hpi
   -- at `θ = π` the point is `-1`
   have hval : g π = 0 := by
-    have hneg : Complex.exp (((π : ℝ) : ℂ) * Complex.I) = -1 := by
-      simpa using Complex.exp_pi_mul_I
+    have hneg : Complex.exp (((π : ℝ) : ℂ) * Complex.I) = -1 :=
+      Complex.exp_pi_mul_I
     simp only [hg]
     rw [hneg, QOU.Archimedean.cLiTwoExt_neg_one, Cl_2_pi]
     simp [← Complex.ofReal_pow]
