@@ -23,6 +23,11 @@ export default conjecture({
     },
     {
       kind: "note",
+      date: "2026-07-25",
+      body: "**Part B remains the genuine open content — and why it is hard.** Part A closes only the elementary $q\\to1^-$ convergence for fixed $x\\in(0,1)$. Part B — the substrate continuation $q\\to1^+$ (to $q_0\\approx1.11$) and the $x\\to1^-$ uniformity — is untouched, and it is not more of the same estimate: there the factors $1-xq^k$ **change sign**, so the poles of $\\Phi_n$ approach the $\\mathrm{Li}_2$ branch cut and the Frobenius-pairing pole cancellation must do real work. The conjecture as a whole (the full Faddeev/Kashaev cross-cusp statement) stays open.",
+    },
+    {
+      kind: "note",
       date: "2026-07-19",
       body: "**Part A ingredients (superseded by the 2026-07-24 closure above).** Two analytic ingredients of Part A (the elementary $q\\to1^-$ side) landed sorry-free in `QOU.Archimedean.DilogReflection`: the dilogarithm derivative `hasDerivAt_LiTwo` ($d/dx\\,\\mathrm{Li}_2 = -\\log(1-x)/x$, which Mathlib lacked), and the integral representation `LiTwo_eq_integral` ($\\mathrm{Li}_2(x)=\\int_0^x -\\log(1-t)/t$) — the integral-representation bottleneck named in the 2026-06-07 Part-A audit. The Euler reflection `LiTwo_reflection'` also landed.",
     },
