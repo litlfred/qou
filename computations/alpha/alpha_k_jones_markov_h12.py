@@ -238,20 +238,26 @@ def main() -> int:
         "tr_M(β_⁴He) via Σ y_λ · χ_λ vs the multiplicative formula "
         "tr_M(β_𝓑_3)^4 on 4 disjoint Borromean copies."
     )
-    w.add_parameter("q_0_f64", q0_f64)
-    w.add_parameter("z_mark_f64", z_f64)
+    # Every number below comes off the float64 numpy path: the 77x77 chi
+    # matrix is np.float64 and y is np.linalg.solve of it, so widening these
+    # would read as precision the solve never had. Written at binary64's own
+    # round-trip width (repr) — exact, and not raw float64 in the JSON.
+    # `_f` also covers numpy scalars, which repr as "np.float64(...)".
+    _f = lambda x: repr(float(x))                   # noqa: E731
+    w.add_parameter("q_0_f64", _f(q0_f64))
+    w.add_parameter("z_mark_f64", _f(z_f64))
     w.add_parameter("n_partitions", len(shapes))
-    w.add_parameter("chi_matrix_condition_number", float(cond))
-    w.add_parameter("sum_y_dim_check", float(sum_y_dim))
-    w.add_parameter("elapsed_seconds", float(elapsed))
-    w.add_parameter("tr_M_he4_via_y_lambda", float(tr_M_he4))
-    w.add_parameter("tr_M_he4_multiplicative", float(tr_M_he4_mult))
+    w.add_parameter("chi_matrix_condition_number", _f(cond))
+    w.add_parameter("sum_y_dim_check", _f(sum_y_dim))
+    w.add_parameter("elapsed_seconds", f"{elapsed:.2f}")
+    w.add_parameter("tr_M_he4_via_y_lambda", _f(tr_M_he4))
+    w.add_parameter("tr_M_he4_multiplicative", _f(tr_M_he4_mult))
     w.add_data("y_lambda_table", [
-        {"partition": sh, "dim_S_lambda": d, "y_lambda": float(yv)}
+        {"partition": sh, "dim_S_lambda": d, "y_lambda": _f(yv)}
         for sh, d, yv in zip(shapes, dims, y)
     ])
-    w.add_data("candidate_B_4He_MeV", {n: float(v) for n, v in candidates.items()})
-    w.add_data("B_4He_AME_MeV", B_AME)
+    w.add_data("candidate_B_4He_MeV", {n: _f(v) for n, v in candidates.items()})
+    w.add_data("B_4He_AME_MeV", repr(B_AME))
     w.add_assertion(
         "all_77_y_lambda_computed",
         computed=len(y),
@@ -262,9 +268,9 @@ def main() -> int:
     )
     w.add_assertion(
         "markov_normalization_holds",
-        computed=float(sum_y_dim),
-        expected=1.0,
-        tolerance=1e-6,
+        computed=_f(sum_y_dim),          # strings: the add_assertion convention
+        expected="1.0",
+        tolerance="1e-6",
         unit="dimensionless",
         source="Σ y_λ · dim_λ on identity braid",
     )
