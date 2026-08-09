@@ -1385,6 +1385,82 @@ theorem pentagon_lower :
   linear_combination h
 
 
+/-! ##### The four logarithms, evaluated
+
+`log a`, `log b`, `log t`, `log A₃`, `log B₃` in terms of `log t` and `arg a`
+alone. With these, Route 68's capstone becomes the sum rule's stated form. -/
+
+theorem norm_sq_eq : ‖S.a‖ ^ 2 * S.t = 1 := by
+  have h' : Complex.normSq S.a * S.t = 1 := by exact_mod_cast S.normSq_mul
+  rwa [← Complex.normSq_eq_norm_sq]
+
+theorem norm_pos : 0 < ‖S.a‖ := norm_pos_iff.mpr S.ne_zero
+
+theorem log_norm : Real.log ‖S.a‖ = -(Real.log S.t) / 2 := by
+  have hns := S.norm_sq_eq
+  have h := congrArg Real.log hns
+  rw [Real.log_mul (pow_pos S.norm_pos 2).ne' S.ht0.ne', Real.log_pow] at h
+  simp only [Real.log_one, Nat.cast_ofNat] at h
+  linarith
+
+/-- `log a = −½·log t + i·arg a`. -/
+theorem log_a : Complex.log S.a
+    = -((Real.log S.t : ℝ) : ℂ) / 2 + ((S.a.arg : ℝ) : ℂ) * Complex.I := by
+  rw [Complex.log, S.log_norm]
+  push_cast
+  ring
+
+/-- `log t` is real. -/
+theorem log_t : Complex.log (S.t : ℂ) = ((Real.log S.t : ℝ) : ℂ) :=
+  clog_of_eq_ofReal S.ht0 rfl
+
+/-- `log (conj a) = −½·log t − i·arg a`. -/
+theorem log_conj_a : Complex.log ((starRingEnd ℂ) S.a)
+    = -((Real.log S.t : ℝ) : ℂ) / 2 - ((S.a.arg : ℝ) : ℂ) * Complex.I := by
+  rw [Complex.log_conj _ (arg_ne_pi_of_im_ne_zero (ne_of_gt S.him)), S.log_a]
+  simp only [map_add, map_div₀, map_neg, map_mul, map_ofNat, Complex.conj_ofReal,
+    Complex.conj_I]
+  ring
+
+theorem den_comm : (1 : ℂ) - (S.t : ℂ) * S.a = 1 - S.a * (S.t : ℂ) := by ring
+
+theorem A3_alt : (1 - (S.t : ℂ)) / (1 - (S.t : ℂ) * S.a) = S.A3 := by
+  rw [S.den_comm]; rfl
+
+/-- `3·log A₃ + log a = log t + iπ` — Route 61's angle identity, instantiated. -/
+theorem three_log_A3 : 3 * Complex.log S.A3 + Complex.log S.a
+    = ((Real.log S.t : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  have h := saddle_clog_cube_of_roots (a := S.a) (b := (starRingEnd ℂ) S.a) (t := S.t)
+    S.ht0 S.hsum S.hprod S.cubic_t S.ne_zero
+    (by rw [S.den_comm]; exact S.den_ne_zero)
+    (fun hc => S.one_sub_ne_zero (by linear_combination -hc))
+    (by rw [S.A3_alt]; exact ne_zero_of_mem_rogersDomain S.mem_A3)
+    (by
+      have e1 : (1 : ℂ) - (S.t : ℂ) * ((starRingEnd ℂ) S.a)
+          = 1 - ((starRingEnd ℂ) S.a) * (S.t : ℂ) := by ring
+      rw [e1, ← S.B3_eq, S.A3_alt]
+      rfl)
+    (by rw [S.A3_alt]; exact S.A3_im_pos.le) S.him.le
+  rwa [S.A3_alt] at h
+
+/-- `log A₃ = ½·log t + i·(π − arg a)/3`. -/
+theorem log_A3 : Complex.log S.A3
+    = ((Real.log S.t : ℝ) : ℂ) / 2 + (((Real.pi - S.a.arg) / 3 : ℝ) : ℂ) * Complex.I := by
+  have h := S.three_log_A3
+  rw [S.log_a] at h
+  push_cast
+  linear_combination h / 3
+
+/-- `log B₃ = ½·log t − i·(π − arg a)/3`. -/
+theorem log_B3 : Complex.log S.B3
+    = ((Real.log S.t : ℝ) : ℂ) / 2 - (((Real.pi - S.a.arg) / 3 : ℝ) : ℂ) * Complex.I := by
+  have harg : S.A3.arg ≠ Real.pi := arg_ne_pi_of_im_ne_zero (ne_of_gt S.A3_im_pos)
+  show Complex.log ((starRingEnd ℂ) S.A3) = _
+  rw [Complex.log_conj _ harg, S.log_A3]
+  simp only [map_add, map_div₀, map_mul, map_ofNat, Complex.conj_ofReal, Complex.conj_I]
+  ring
+
+
 end SaddleRoots
 
 end SaddleStructure
@@ -1693,6 +1769,31 @@ theorem SaddleRoots.sum_cLiTwoExt_root_data (S : SaddleRoots) :
   · rw [S.branch_upper]; ring
   · rw [S.branch_lower]; ring
   · rw [S.branch_real]; ring
+
+/-- **The sum rule's stated form, from the root data.**
+
+    Σ Li₂ = −π²/6 − ½·log²t + (2/3)·(arg a − π)²
+
+Every logarithm in Route 68's capstone has been evaluated: `log a`, `log b` from
+the modulus relation `‖a‖²·t = 1`, and `log A₃`, `log B₃` from Route 61's angle
+identity. What is left is `π²`, `log t` and `arg a`.
+
+⚠ This is the sum rule's **shape**, reached from `SaddleRoots` — a structure
+whose fields are facts about the cubic. It is not a proof that the 5₂ saddle sum
+`A` has this value unless `SaddleRoots` is inhabited by the actual roots, which
+is not established here. **The 5₂ sum rule remains verified to 80 dps,
+unproved.** -/
+theorem SaddleRoots.sum_cLiTwoExt_closed (S : SaddleRoots) :
+    2 * (cLiTwoExt S.a + cLiTwoExt ((starRingEnd ℂ) S.a) + cLiTwoExt (S.t : ℂ))
+      = ((2 * (-(Real.pi ^ 2 / 6) - Real.log S.t ^ 2 / 2
+          + (2 / 3) * (S.a.arg - Real.pi) ^ 2) : ℝ) : ℂ) := by
+  have h := S.sum_cLiTwoExt_root_data
+  rw [S.log_A3, S.log_B3, S.log_a, S.log_conj_a, S.log_t] at h
+  rw [h]
+  have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+  push_cast
+  linear_combination (-((Real.pi : ℂ) ^ 2) / 3 + (8 / 3) * (Real.pi : ℂ) * (S.a.arg : ℂ)
+    - (4 / 3) * (S.a.arg : ℂ) ^ 2) * hI
 
 end Reflection
 

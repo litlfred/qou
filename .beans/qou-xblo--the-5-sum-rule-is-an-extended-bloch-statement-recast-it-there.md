@@ -1339,3 +1339,45 @@ with nothing assumed but the cubic's root structure; what is not done is the las
 substitution into the sum rule's stated form.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 69 — the sum rule's stated form, from `SaddleRoots`. And the one gap that is left.
+
+`SaddleRoots.sum_cLiTwoExt_closed`:
+
+    Σ Li₂ = −π²/6 − ½·log²t + (2/3)·(arg a − π)²
+
+for **every** `S : SaddleRoots`. Every logarithm in Route 68's capstone is
+evaluated:
+
+* `log a = −½·log t + i·arg a` — from `‖a‖²·t = 1` (`norm_sq_eq`, `log_norm`);
+* `log b = conj` of it;
+* `log A₃ = ½·log t + i·(π − arg a)/3` — from Route 61's angle identity
+  (`three_log_A3`), instantiated at the root data;
+* `log B₃ = conj` of it.
+
+What is left after substitution is `π²`, `log t`, `arg a` — the sum rule's target
+expression, exactly as the corpus records it.
+
+## ⚠⚠ THE GAP: `SaddleRoots` IS NOT PROVED INHABITED
+
+A theorem `∀ S : SaddleRoots, …` is worth exactly what the inhabitation is worth,
+and **inhabitation is not established anywhere in this chain**. Nothing here
+proves that `X³ − 2X² + 3X − 1` has a real root in `(0,1)` together with a
+conjugate pair — it is true (numerically `t = 0.4301597…`, `a = 0.78492 +
+1.30714i`), and the probes have measured it since Route 42, but it is not a Lean
+theorem.
+
+That is now the whole gap, and it is a **root-existence** problem, not a
+dilogarithm one:
+
+* the real root: IVT on `f(0) = −1 < 0`, `f(1) = 1 > 0` — `intermediate_value_Ioo`;
+* the conjugate pair: the residual quadratic `x² + (t−2)x + 1/t` has discriminant
+  `(t−2)² − 4/t ≈ −6.84 < 0`, so its roots are non-real conjugates;
+* then the three symmetric functions are Vieta.
+
+Until that is done, `sum_cLiTwoExt_closed` proves the sum rule's **shape** holds
+of any `SaddleRoots`, and says nothing about the actual 5₂ saddle sum.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
