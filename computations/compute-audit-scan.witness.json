@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T10:44:41.102493+00:00",
-  "commitSha": "b4eb7ac9fbb8290d32a073cabe8b8ed8738c79b5",
+  "computedAt": "2026-08-09T19:06:30.860457+00:00",
+  "commitSha": "caff0ce59f6cdeb133323996cb325a78467c61ec",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 16,
   "computation": "compute-audit-scan",
   "scriptFile": "compute_audit_scan.py",
   "scriptHash": "8a602c238718",
@@ -26,7 +26,7 @@
   "description": "Static scan of computations/ for the performance patterns P11/P14/P15/P16/P21/P30/P31 from .claude/skills/local/compute-audit.md.",
   "auditOnly": "docs/audits/2026-05-08-compute-audit-workplan.md",
   "parameters": {
-    "files_scanned": 1283,
+    "files_scanned": 1284,
     "patterns": [
       "P15",
       "P16",
@@ -40,7 +40,7 @@
       "P15": 282,
       "P16": 613,
       "P21": 25,
-      "P30": 153,
+      "P30": 154,
       "P31": 1
     },
     "top_files": [
@@ -1948,6 +1948,13 @@
         "line": 364,
         "snippet": "sp.simplify(...)",
         "note": "sp.simplify on a 5000-op trace expression can exceed 30 minutes and is purely cosmetic before numerical evalf at q0. Add `simplify=False` param and default-True for back-compat. Ref: 2834792d."
+      },
+      {
+        "pattern": "P30",
+        "file": "charm_frobenius_block_projection_probe.py",
+        "line": 1,
+        "snippet": "json.dump → .witness.json without WitnessBuilder",
+        "note": "Hand-written .witness.json files lack scriptHash and are silently treated as current by run_pipeline.py. Use witness_base.WitnessBuilder. Ref: workflow memory; witness_base.py:136-330."
       },
       {
         "pattern": "P30",
