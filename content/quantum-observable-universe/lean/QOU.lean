@@ -292,6 +292,7 @@ import QOU.Archimedean.LobachevskyMaximum
 import QOU.Archimedean.HyperbolicVolumeMeasure
 import QOU.Archimedean.HyperbolicVolumeFubini
 import QOU.Archimedean.IdealTetrahedronRegion
+import QOU.Archimedean.OrthoschemeBaseIntegral
 import QOU.Archimedean.DilogPartBBranchPointLimit
 import QOU.Archimedean.DilogPartBBranchPhase
 import QOU.Archimedean.DilogPartBBranchPointSum
