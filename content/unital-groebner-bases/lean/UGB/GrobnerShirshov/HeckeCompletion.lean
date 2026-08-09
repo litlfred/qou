@@ -47,15 +47,17 @@ system uses.
 The completed system is defined and the §4e obstruction is checked to be
 resolved by it. Neither of the two harder statements is proved:
 
-* the general leading monomial `lm (bokutShiaoRelation i' i j) = bsWord₁ i j`.
-  The one lemma it needs is **`descWord i j = ⟨i⟩ :: descWord i' j`** (for
-  `i' + 1 = i`, `j ≤ i'`) — dropping the top index drops the first letter. Given
-  that, both halves are immediate and *no length computation is needed*: the two
-  words become `⟨i⟩ :: (descWord i' j ++ [⟨i⟩])` and `⟨i'⟩ :: ⟨i⟩ :: descWord i' j`,
-  which visibly have the same length, and the lex comparison is one
-  `List.Lex.rel` on the first letters. The lemma itself is a statement about
-  `List.finRange n` being sorted. Routine, not done;
-* that the completed system **is** a Gröbner–Shirshov basis. That is the whole
+* **DONE (§4h).** The general leading monomial
+  `bokutShiaoRelation_lm : lm (bokutShiaoRelation i' i j) = bsWord₁ i j`, via
+  `descWord_cons : descWord i j = ⟨i⟩ :: descWord i' j`. As predicted, no length
+  computation was needed: the cons lemma gives both words a visible common tail
+  (`σᵢ :: (w ++ [σᵢ])` against `σᵢ₋₁ :: σᵢ :: w`, same `w`), so the lengths agree
+  by `simp` and the comparison is one `List.Lex.rel` on the first letter.
+  `descWord_cons` reduces to a statement about `List.finRange n` being
+  `Pairwise (· < ·)`: once the head is `i` every later index exceeds it and both
+  filters annihilate the tail, and before the head is reached the two predicates
+  agree because `a < i = i' + 1` forces `a ≤ i'`.
+* * that the completed system **is** a Gröbner–Shirshov basis. That is the whole
   of Bokut & Shiao's theorem, and it needs the overlap analysis re-run against
   the completed rule set — a strictly larger set of compositions, since the new
   family overlaps itself. Resolving the one overlap that refutes the
@@ -194,5 +196,90 @@ theorem spoly_not_isNormalForm_completed (hp : HeckeParams) :
   rw [bs31_lm]
 
 end Completion
+
+/-! ## §4h  The general leading monomial
+
+The cons lemma the module docstring names as the one thing missing. With it,
+`bokutShiaoRelation_lm` needs no length computation: both words acquire a visible
+common tail and the deg-lex comparison is one `List.Lex.rel` on the first letter. -/
+
+/-- `List.finRange n` is `Pairwise (· < ·)`, so once the head is `i` every later
+index exceeds it and both filters annihilate the tail; before the head is reached
+the two predicates agree, because `a < i = i' + 1` forces `a ≤ i'`. -/
+theorem filter_desc_cons {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    ∀ l : List (Fin n), l.Pairwise (fun a b => a.val < b.val) → i ∈ l →
+      l.filter (fun k => decide (j.val ≤ k.val ∧ k.val ≤ i.val))
+        = l.filter (fun k => decide (j.val ≤ k.val ∧ k.val ≤ i'.val)) ++ [i] := by
+  intro l
+  induction l with
+  | nil => intro _ hm; simp at hm
+  | cons a t ih =>
+    intro hp hm
+    rw [List.pairwise_cons] at hp
+    obtain ⟨halt, hpt⟩ := hp
+    rcases List.mem_cons.mp hm with hai | hmt
+    · -- the head is `i`; every later index is strictly larger, so both tails die
+      subst hai
+      have h1 : t.filter (fun k => decide (j.val ≤ k.val ∧ k.val ≤ i.val)) = [] := by
+        refine List.filter_eq_nil_iff.mpr (fun b hb hd => ?_)
+        have := halt b hb
+        have hd' := of_decide_eq_true hd
+        omega
+      have h2 : t.filter (fun k => decide (j.val ≤ k.val ∧ k.val ≤ i'.val)) = [] := by
+        refine List.filter_eq_nil_iff.mpr (fun b hb hd => ?_)
+        have := halt b hb
+        have hd' := of_decide_eq_true hd
+        omega
+      simp only [List.filter_cons, h1, h2, decide_eq_true_eq]
+      rw [if_pos (by omega : j.val ≤ i.val ∧ i.val ≤ i.val),
+        if_neg (by omega : ¬ (j.val ≤ i.val ∧ i.val ≤ i'.val))]
+      rfl
+    · -- the head is below `i`, so the two predicates agree on it
+      have hlt : a.val < i.val := halt i hmt
+      simp only [List.filter_cons, decide_eq_true_eq]
+      by_cases hpos : j.val ≤ a.val ∧ a.val ≤ i.val
+      · rw [if_pos hpos, if_pos (by omega : j.val ≤ a.val ∧ a.val ≤ i'.val)]
+        simp only [List.cons_append]
+        exact congrArg (a :: ·) (ih hpt hmt)
+      · rw [if_neg hpos, if_neg (by omega : ¬ (j.val ≤ a.val ∧ a.val ≤ i'.val))]
+        exact ih hpt hmt
+
+/-- **The cons lemma**: dropping the top index drops the first letter. -/
+theorem descWord_cons {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    descWord i j = (⟨i⟩ : HeckeGen n) :: descWord i' j := by
+  simp only [descWord, filter_desc_cons hi hj (List.finRange n)
+    (List.pairwise_lt_finRange n) (List.mem_finRange i),
+    List.reverse_append, List.reverse_cons, List.reverse_nil, List.nil_append,
+    List.singleton_append, List.map_cons]
+
+/-- Both Bokut–Shiao words in cons form, sharing a visible tail. This is what
+makes the leading-monomial comparison a one-letter lex step with no length
+arithmetic: `σᵢ :: (w ++ [σᵢ])` against `σᵢ₋₁ :: σᵢ :: w`, same `w`. -/
+theorem bsWord₁_cons {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    bsWord₁ i j = (⟨i⟩ : HeckeGen n) :: (descWord i' j ++ [⟨i⟩]) := by
+  simp [bsWord₁, descWord_cons hi hj]
+
+/-- **The general leading monomial** `lm(bokutShiaoRelation i' i j) = bsWord₁ i j`.
+
+Both words have length `|descWord i' j| + 2` — visible from `bsWord₁_cons`, with
+no length computation — and deg-lex ranks `σᵢ` above `σᵢ₋₁`, so the word starting
+with `σᵢ` is the larger. Compare `Completion.bs31_lm`, which is this at
+`(i', i, j) = (2, 3, 1)` and was proved by `fin_cases` before this existed. -/
+theorem bokutShiaoRelation_lm {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    (bokutShiaoRelation i' i j).lm (heckeOrder n) = bsWord₁ i j := by
+  apply leadingMonomial_eq_of_max
+  · simp [bokutShiaoRelation, AlgElement.ofTerms]
+  · intro m hm hne
+    simp [bokutShiaoRelation, AlgElement.ofTerms] at hm
+    rcases hm with rfl | rfl
+    · exact absurd rfl hne
+    · refine heckeOrder_lt_of_lex ?_ ?_
+      · simp [bsWord₁_cons hi hj, bsWord₂]
+      · rw [bsWord₁_cons hi hj]
+        exact List.Lex.rel (by simp only [HeckeGen.rank]; omega)
 
 end UGB.GrobnerShirshov.Hecke
