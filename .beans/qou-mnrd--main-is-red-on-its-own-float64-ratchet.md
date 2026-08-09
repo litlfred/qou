@@ -551,3 +551,75 @@ again as a side effect of the χ-helper declaration — it imports `chi_atom`.
 `threerow_n12_isospin_control.py` is broken for an unrelated reason (it does
 `import _path_bridge` without first putting `computations/` on `sys.path`, so it
 fails from every cwd). Pre-existing, produces no witness, not touched.
+
+---
+
+## DONE — the `deltalambda/threerow-*` four are drained. 18 NEW -> 14 NEW
+
+Branch `claude/drain-deltalambda-threerow` (cut fresh from `main` at
+`25387e2a4`; #4729's branch was merged and must not be built on). Pushed.
+
+    threerow-qcross-trend            126 -> 0
+    threerow-crossing-a-dependence    82 -> 0
+    threerow-4he-completion           73 -> 0
+    threerow-sign-crossing            15 -> 0
+                                     ----
+                                     296 fields
+
+Ratchet re-run on the result: `new_not_baselined` 18 -> 14, `total_fields`
+541,817 -> 541,521 (-296, exactly these four). `regressed` unchanged at 2 —
+neither is this branch's. **Still exits 1.** That was the stated expectation
+before starting, and it is met, not beaten: this was a fifth of the fields.
+
+**Nothing baselined, no `--rebaseline`, no number hand-edited.** The audit
+witness is regenerated because its COUNTS moved.
+
+### How each drain was verified
+
+Not "the ratchet went green" — that is the weakest possible check, and as
+recorded above a wrong drain can make it green while degrading the witness.
+Each producer was diffed leaf-by-leaf against a pre-drain copy:
+
+    witness                          fields  worst value move   assertions
+    threerow-sign-crossing            15/15   9.0e-17           3/3 identical
+    threerow-crossing-a-dependence    82/82   5.8e-15           6/6 identical
+    threerow-4he-completion           73/73   2.9e-15           4/4 identical
+    threerow-qcross-trend            126/126  1.1e-15           5/5 identical
+
+Every assertion record is byte-identical to the pre-drain witness, and every
+verdict is unchanged: D crosses and the n=9 crossings lie above the Wenzl pole;
+⁴He's physical sign +1 -> -1 with a crossing at 1.02092; q₀'s position
+COINCIDENTAL at 0.852 bits with 54 natural constants in the window.
+
+The largest moves are all in the character-free blocks, and they are moves
+TOWARD precision: those values were being truncated to f64 and now carry their
+real 50 dps. The f64-derived blocks did not move at all — they are byte-equal
+at 17 digits to what the float64 held.
+
+`threerow-sign-crossing` is the strongest evidence the frozen witnesses were
+correct: after only the `allow_float64` declaration and before any
+serialization change, it regenerated with all 51 data leaves IDENTICAL.
+
+### Cost, for the next person sizing the rest
+
+Wall clock, on this container, single runs:
+
+    threerow-sign-crossing              7 s
+    threerow-crossing-a-dependence     ~3 min
+    threerow-4he-completion            ~35 min   (n=12, 18-step bisection)
+    threerow-qcross-trend            5013 s      (n=12 grid + 30-step bisection)
+
+So ~1.5 h of compute for 296 fields. The `nastokes-*` + `alpha/*` numpy ports
+(1092 fields, 5 producers) are a different and larger job — a real port, not a
+serialization split — and nothing here reduces them.
+
+### Still open on this bean
+
+  * `nastokes-*` (4 files, 1001 fields) + `alpha/*` (1, 91) — numpy ports
+  * the qbeta trio (3 files, 35) — the bean's original three, still undrained
+  * 7 further small ones, and the 2 REGRESSED
+  * `gram_qtrace_hutchinson_probe.py` — dps-ordering fix applied, witness not
+    yet regenerated (its q₀ moves in the 17th digit)
+  * `gram_norm_binding_probe.py`, `gram_transfer_quadratic.py`,
+    `threerow_isospin_parity_probe.py` — never established whether the guard
+    breaks them; each exceeded a 4-minute probe budget before reaching a verdict
