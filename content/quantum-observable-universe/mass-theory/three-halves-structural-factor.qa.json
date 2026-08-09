@@ -8,10 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/three-halves-structural-factor.lean"
   },
   "source_hashes": {
-    "md": "f46a0826bbb6",
-    "ts": "b418b683ea7c",
-    "lean": "74835a14da3b",
-    "lean_statement": "e4d8662fbe81"
+    "md": "e155f881aa9c",
+    "ts": "8a72b202bce5",
+    "lean": "e1d78826a61a",
+    "lean_statement": "08197018c87a"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -781,10 +781,10 @@
     "wall-side-correct": [
       {
         "field_hash": {
-          "md": "f46a0826bbb6",
-          "ts": "b418b683ea7c",
-          "lean": "74835a14da3b",
-          "lean_statement": "e4d8662fbe81"
+          "md": "e155f881aa9c",
+          "ts": "8a72b202bce5",
+          "lean": "e1d78826a61a",
+          "lean_statement": "08197018c87a"
         },
         "result": "pass",
         "reviewer": {
@@ -794,17 +794,17 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T23:10:33.318Z",
+        "reviewed_sha": "d90f2785469939b91833aa2f1c631cc16b8aacf1"
       }
     ],
     "wall-base-ring-minimal": [
       {
         "field_hash": {
-          "md": "f46a0826bbb6",
-          "ts": "b418b683ea7c",
-          "lean": "74835a14da3b",
-          "lean_statement": "e4d8662fbe81"
+          "md": "e155f881aa9c",
+          "ts": "8a72b202bce5",
+          "lean": "e1d78826a61a",
+          "lean_statement": "08197018c87a"
         },
         "result": "warn",
         "reviewer": {
@@ -814,8 +814,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T23:10:33.318Z",
+        "reviewed_sha": "d90f2785469939b91833aa2f1c631cc16b8aacf1"
       }
     ],
     "q-usage-regime-detected": [
@@ -1761,5 +1761,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T23:10:33.318Z"
 }
