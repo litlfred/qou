@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "214b0cd662ca",
     "ts": "08d6f4716e14",
-    "lean": "010e1b20589d",
-    "lean_statement": "854a4ba4e8ab"
+    "lean": "b5ef1088082a",
+    "lean_statement": "5df9022a1ea4"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -802,8 +802,8 @@
         "field_hash": {
           "md": "214b0cd662ca",
           "ts": "08d6f4716e14",
-          "lean": "010e1b20589d",
-          "lean_statement": "854a4ba4e8ab"
+          "lean": "b5ef1088082a",
+          "lean_statement": "5df9022a1ea4"
         },
         "result": "pass",
         "reviewer": {
@@ -813,8 +813,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T22:53:30.877Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "wall-base-ring-minimal": [
@@ -822,10 +822,10 @@
         "field_hash": {
           "md": "214b0cd662ca",
           "ts": "08d6f4716e14",
-          "lean": "010e1b20589d",
-          "lean_statement": "854a4ba4e8ab"
+          "lean": "b5ef1088082a",
+          "lean_statement": "5df9022a1ea4"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
@@ -833,8 +833,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T22:53:30.877Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "q-usage-regime-detected": [
@@ -1775,5 +1775,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T22:53:30.877Z"
 }
