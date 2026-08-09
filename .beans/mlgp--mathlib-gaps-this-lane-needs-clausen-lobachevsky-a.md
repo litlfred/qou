@@ -127,3 +127,33 @@ classes) and the gluing equations they impose. `IdealTriangulation` carries only
 the shapes, so it cannot currently express "this triangulation is *of* that
 manifold". Adding the gluing equations is the natural next increment, and is
 where `qou-m015` (the 5₂ angle-structure polytope) would attach.
+
+**Gap 6, second increment — the GLUING EQUATIONS (2026-08-09).**
+
+`IdealTriangulation.lean` now also carries the combinatorial layer, sorry-free,
+build exit 0 / 3252 jobs:
+
+* `IdealTetrahedron.param : Fin 3 → ℂ` — the three edge parameters
+  `z`, `z′ = 1/(1−z)`, `z″ = 1 − 1/z`;
+* `param_prod` — **`z·z′·z″ = −1`**, "pure algebra, and the source of the `π`"
+  (reusing the corpus's `tet_shape_prod`);
+* `param_im_pos` — all three lie in the upper half plane, so the two Möbius maps
+  preserve it; `arg_param` — their arguments *are* the three dihedral angles;
+* `GluingData n e` — exponent data `exp k i j`: how many times edge-pair `j` of
+  tetrahedron `i` meets edge class `k`;
+* `SatisfiesEdgeEquations` — `∏ param^exp = 1`, the full gluing equation;
+* `SatisfiesAngleEquations` — the dihedral angles around each edge sum to `2π`.
+
+**The two conditions are deliberately kept apart, because they are NOT
+equivalent.** The product form constrains modulus *and* argument; the angle form
+is the argument half only — and the angle form is exactly the *angle-structure*
+condition of Casson–Rivin, i.e. what the corpus's m004/L6a4 polytopes encode.
+That is the seam where `qou-m015` and `qou-rvnc` attach to this layer.
+
+**⚠ What is STILL not modelled, unchanged:** neither condition, alone or
+together, certifies that a triangulation **is** a triangulation of a given
+manifold. That is topology — Thurston hyperbolisation, Mostow rigidity — and
+needs hyperbolic 3-manifolds, which neither Mathlib nor QOU has. No claim here
+is about `S³ ∖ 5₂`, and the 5₂ triangulation defined in
+`FiveTwoVolumeConstant.lean` is **not** asserted to satisfy any gluing data —
+that would need the actual SnapPy combinatorics (`qou-m015`).

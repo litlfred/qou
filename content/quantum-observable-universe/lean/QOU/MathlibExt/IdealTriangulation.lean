@@ -20,7 +20,10 @@
   * `IdealTetrahedron.volume` — its volume, `D(z)`, in **both** the Lobachevsky
     (angle) form and the dilogarithm form, proved equal via `KummerRadial.kummer`;
   * `IdealTriangulation n` — `n` ideal tetrahedra;
-  * `IdealTriangulation.volume` — the sum.
+  * `IdealTriangulation.volume` — the sum;
+  * edge parameters `z, z′ = 1/(1−z), z″ = 1 − 1/z` with `z·z′·z″ = −1`, and the
+    **gluing equations** in both their product form (`SatisfiesEdgeEquations`)
+    and their angle / Casson–Rivin form (`SatisfiesAngleEquations`).
 
   With that, `volume (5₂ triangulation) = 3·D(y₁)` becomes a **theorem about a
   defined object** rather than a sentence with no subject.
@@ -115,6 +118,44 @@ theorem law_of_sines :
     ‖T.shape‖ = Real.sin T.angle₂ / Real.sin T.angle₃ :=
   QOU.Knot.IdealTet.norm_eq_sin_div_sin T.im_pos
 
+/-! #### Edge parameters
+
+Each of the three edge-pairs carries its own shape: `z`, `z′ = 1/(1−z)`,
+`z″ = 1 − 1/z`.  These are what the gluing equations multiply. -/
+
+/-- The three edge parameters, indexed to match `angle`. -/
+noncomputable def param : Fin 3 → ℂ
+  | 0 => T.shape
+  | 1 => 1 / (1 - T.shape)
+  | 2 => 1 - 1 / T.shape
+
+@[simp] theorem param_zero : T.param 0 = T.shape := rfl
+@[simp] theorem param_one : T.param 1 = 1 / (1 - T.shape) := rfl
+@[simp] theorem param_two : T.param 2 = 1 - 1 / T.shape := rfl
+
+theorem shape_ne_zero : T.shape ≠ 0 := QOU.Knot.IdealTet.ne_zero_of_im_pos T.im_pos
+
+theorem one_sub_shape_ne_zero : (1 : ℂ) - T.shape ≠ 0 :=
+  QOU.Knot.IdealTet.one_sub_ne_zero T.im_pos
+
+/-- **`z · z′ · z″ = −1`** — pure algebra, and the source of the `π` in the angle
+sum. -/
+theorem param_prod : T.param 0 * T.param 1 * T.param 2 = -1 :=
+  tet_shape_prod _ T.shape_ne_zero T.one_sub_shape_ne_zero
+
+/-- Every edge parameter lies in the upper half plane: the upper half plane is
+preserved by the two Möbius maps. -/
+theorem param_im_pos : ∀ i, 0 < (T.param i).im
+  | 0 => T.im_pos
+  | 1 => (tet_im_pos _ T.im_pos).1
+  | 2 => (tet_im_pos _ T.im_pos).2
+
+/-- The argument of the `i`-th edge parameter is the `i`-th dihedral angle. -/
+theorem arg_param : ∀ i, (T.param i).arg = ![T.angle₁, T.angle₂, T.angle₃] i
+  | 0 => rfl
+  | 1 => rfl
+  | 2 => rfl
+
 end IdealTetrahedron
 
 /-! ### Ideal triangulations -/
@@ -122,8 +163,10 @@ end IdealTetrahedron
 /-- An **ideal triangulation** by `n` ideal tetrahedra.
 
 Only the geometric data is carried here — the shapes.  The *combinatorial* data
-(face pairings, edge classes) and the gluing equations they impose are not
-modelled; see the module header for why that matters and what it costs. -/
+(face pairings, edge classes) lives separately in `GluingData`, and the
+conditions it imposes are `SatisfiesEdgeEquations` / `SatisfiesAngleEquations`
+below.  Neither certifies that the triangulation is *of* a given manifold; see
+the module header. -/
 structure IdealTriangulation (n : ℕ) where
   /-- The tetrahedra. -/
   tet : Fin n → IdealTetrahedron
@@ -153,5 +196,49 @@ noncomputable def const (n : ℕ) (S : IdealTetrahedron) : IdealTriangulation n 
   simp [volume, const]
 
 end IdealTriangulation
+
+/-! ### Gluing equations
+
+The combinatorics of *how* the tetrahedra are glued, expressed as exponent data:
+for each edge class `k`, each tetrahedron `i` and each edge-pair `j`, how many
+times that edge-pair is glued around `k`.
+
+Two conditions are recorded, and they are **not equivalent**:
+
+* `SatisfiesEdgeEquations` — the full gluing equation, `∏ param^exp = 1`.  This
+  constrains modulus *and* argument.
+* `SatisfiesAngleEquations` — the dihedral angles around each edge sum to `2π`.
+  This is the *angle-structure* condition (Casson–Rivin, and what the corpus's
+  m004/L6a4 polytopes encode).  It is the argument half only.
+
+⚠ Neither condition, alone or together, certifies that a triangulation **is** a
+triangulation of a given manifold.  That is topology, and is not modelled here —
+see the module header. -/
+
+/-- Edge-gluing exponent data: `exp k i j` is the multiplicity with which the
+`j`-th edge-pair of tetrahedron `i` meets edge class `k`. -/
+structure GluingData (n e : ℕ) where
+  /-- The exponents. -/
+  exp : Fin e → Fin n → Fin 3 → ℕ
+
+variable {n e : ℕ}
+
+/-- **The edge gluing equations**, in product form. -/
+def SatisfiesEdgeEquations (T : IdealTriangulation n) (G : GluingData n e) : Prop :=
+  ∀ k, (∏ i, ∏ j, (T.tet i).param j ^ G.exp k i j) = 1
+
+/-- **The angle (Casson–Rivin) form**: the dihedral angles around each edge sum
+to `2π`. -/
+def SatisfiesAngleEquations (T : IdealTriangulation n) (G : GluingData n e) : Prop :=
+  ∀ k, (∑ i, ∑ j, (G.exp k i j : ℝ) * ![(T.tet i).angle₁, (T.tet i).angle₂,
+    (T.tet i).angle₃] j) = 2 * π
+
+/-- Every edge parameter is nonzero, so the products above are units. -/
+theorem param_ne_zero (T : IdealTriangulation n) (i : Fin n) (j : Fin 3) :
+    (T.tet i).param j ≠ 0 := by
+  intro h
+  have := (T.tet i).param_im_pos j
+  rw [h] at this
+  simp at this
 
 end QOU.MathlibExt
