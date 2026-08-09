@@ -1,80 +1,68 @@
 ---
 # qou-ece6
-title: 'refresh-authors-note.ts emits 670/95.2% but main says 661/93.9% — the script silently reverts #4862'
-status: todo
+title: 'RETRACTED: there is no authors-note script/file divergence — do not commit generated stats from a branch'
+status: completed
 type: task
-priority: high
+priority: low
 created_at: 2026-08-09T12:05:00Z
-updated_at: 2026-08-09T12:05:00Z
+updated_at: 2026-08-09T19:05:00Z
 ---
 
-**A booby trap: running a documented maintenance command reverts a landed
-correction, and nothing flags it.**
+**This bean's original claim was wrong and is retracted.** Kept rather than
+deleted so the wrong version does not get rediscovered and re-filed — it was
+asserted in a pushed commit message and a PR body before being checked.
 
-## What happened
+## What I claimed
 
-PR #4862 corrected the authors-note Lean-coverage headline by hand:
+That `scripts/refresh-authors-note.ts` had diverged from the committed file:
+the script emitting **670/704 (95.2%)** while #4862 had **hand-corrected**
+`authors-note.md` to **661/704 (93.9%)** without touching the script — making
+`check-sidecars.sh`'s "run the refresh script" hint a booby trap that silently
+reverts a landed correction.
 
-> `docs(authors-note): the Lean-coverage headline overclaims by 23 proofs`
-> — 97.2% → **93.9%**, i.e. **661 of 704** provable claims sorry-free.
+## Why it is wrong
 
-It changed **only** `authors-note.md` and `lean-coverage.json` (2 files,
-6 insertions). It did **not** change `scripts/refresh-authors-note.ts`.
+#4862 did **not** hand-edit anything. Its own commit message says so plainly:
 
-The script still computes **670 of 704 (95.2%)**. So the generator and the
-committed file now disagree by 9 proofs, with the *file* being the corrected
-side and the *script* being the wrong side.
+> Scope is the two generated files only. No prose was hand-edited; both are
+> `refresh-authors-note.ts` output.
 
-## Why it is a trap rather than mere drift
+The stale, overclaiming value was the **committed** one (684/704, 97.2%);
+#4862 ran the script and committed its output (661/704). It even records that
+the script returned **670/704 at an earlier commit** and 661 at its own — and
+attributes the movement to the corpus growing, having explicitly ruled out a
+platform path-resolution change by running two platform versions.
 
-The normal preflight actively steers agents into it. `scripts/check-sidecars.sh`
-reports:
+Verified independently here on the current corpus:
 
-```
-▸ authors-note Lean-coverage stats STALE (proved-counts drifted)
-    → bun run scripts/refresh-authors-note.ts   (rewrites note + lean-coverage.json; commit both)
-```
+| | value |
+|---|---|
+| committed on `main` | 661 / 704 (93.9%) |
+| script, run now | **662 / 705 (93.9%)** |
 
-An agent that follows that instruction regenerates 670/95.2%, silently undoing
-#4862. There is no conflict, no warning, and the diff looks like a routine
-chore refresh — which is exactly how it reads in a review.
+The script tracks the corpus. There is no generator/file disagreement, and
+never was. My 670 was simply the same script run against an older tree.
 
-Caught on PR #4846: that branch had run the refresh as an idle-time chore
-*before* #4862 landed, then rebased. Git reported **zero conflicts** (the two
-edits never met in a three-way merge), so merging would have reverted the
-correction invisibly. The commit was dropped from the branch instead. It was
-only noticed because that PR happened to be auditing this exact class of
-silent loss.
+## The one real (mild) residue
 
-## What needs deciding (do not guess)
+Dropping the chore commit from PR #4846 was still right, but for a duller
+reason than claimed: **a regenerated statistic committed on a feature branch
+goes stale against `main`, and rebasing produces no conflict**, so a
+stale-but-later-looking number can quietly overwrite a fresher one.
 
-Which side is right? The two possibilities need different fixes:
+Practice, not a defect to fix:
 
-1. **The script overcounts by 9.** Then fix the counting logic in
-   `scripts/refresh-authors-note.ts` so it emits 661, and #4862's file stands.
-   Likely candidates: what counts as a "provable claim", whether conditional
-   `sorry`-carrying declarations are excluded, whether orphaned modules (see
-   `qou-kljb` — 785 QOU modules are never built) are being counted as proved
-   without ever having been elaborated.
-2. **#4862 undercounted.** Then the file should go back to the script's number
-   and #4862's reasoning needs revisiting.
+- **Do not commit `refresh-authors-note.ts` output from a feature branch.**
+  It is a whole-corpus statistic; a branch is the wrong place to snapshot it.
+- If `check-sidecars.sh` flags the note as stale on your branch, that is
+  expected background noise from corpus movement — **ignore it** unless the
+  note is your PR's actual subject.
+- Refreshing it deserves its own small PR off current `main`, exactly as
+  #4862 did.
 
-Read #4862's rationale first — it claims a specific overclaim of 23 proofs
-against the *then-current* headline, so its arithmetic is the primary evidence.
+## Lesson
 
-## Until it is resolved
-
-- **Do not run `scripts/refresh-authors-note.ts`** and commit the result. If
-  `check-sidecars.sh` tells you the authors-note is stale, that warning is
-  currently untrustworthy — leave the file alone and reference this bean.
-- Consider making the script refuse to write when its computed value disagrees
-  with the committed file by more than a threshold, so the divergence surfaces
-  as an error instead of a silent overwrite.
-
-## Interaction with qou-kljb
-
-If the script counts declarations in modules that `lake build QOU` never
-elaborates (785 of 1659 — see `qou-kljb`), then "sorry-free" is being asserted
-for files nothing ever checked. That would make the script's number wrong in a
-way that matters well beyond the headline, and it is the first hypothesis worth
-testing under option 1.
+Same shape as the `qou-kljb` miss earlier the same day: I inferred a mechanism
+from circumstantial evidence (two numbers differing) instead of reading the
+source of record (#4862's commit message, which answered it in one line).
+Read the rationale before theorising about it.
