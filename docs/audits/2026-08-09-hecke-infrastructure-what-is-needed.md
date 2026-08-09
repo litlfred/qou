@@ -173,9 +173,80 @@ generator pattern that would do it.
 2. ~~Prove `H3.mul` associativity; derive `Ring`/`Algebra`; instantiate at
    `n = 3`.~~ **DONE** — `QOU/Hecke/InstanceH3.lean`, bean qou-jr3k. See below.
 3. `MarkovTrace` on `H2` (bean qou-ghak) — independent of the above and cheap.
-4. H4 multiplication, reconciled with `MarkovTraceH4`'s normal form. With the
-   induction in place this is the rung `H₄` free of rank `4` over `H₃`, not a
-   24-dimensional computation.
+4. ~~H4 multiplication~~ **Instance DONE** — `QOU/Hecke/InstanceH4.lean`. Rank
+   `24 = 4!` still open (bean qou-awp7). See below.
+
+## How far up does the ladder need to go? — **stop at 4**
+
+Asked and answered with evidence, because it decides how much of this is worth
+building.
+
+1. **No site asks for a specific `n`.** Every `[HeckeAlgebra R n q A]` binder in
+   the tree has `n` as a *variable* — `QuantumBloch/PentagonUvCommutation.lean`,
+   `Hecke/MarkovTrace.lean`, `Machinery/MarkovTraceOnHecke.lean`. Nothing is
+   waiting on `H₁₂`.
+
+2. **Three axiom shapes, and `n = 4` exhausts them.** `Generator n` carries
+   `idx : Fin (n - 1)`.
+
+   | level | first satisfiable |
+   |---|---|
+   | `n = 2` | quadratic only — one index, so braid and far-commutativity are unsatisfiable |
+   | `n = 3` | **braid** (`Generator.adjacent ⟨0⟩ ⟨1⟩`) |
+   | `n = 4` | **far-commutativity** — needs indices differing by `≥ 2`, so `n - 1 ≥ 3` |
+   | `n ≥ 5` | nothing new |
+
+   Machine-checked: `∀ i j : Generator 3, ¬ Generator.farCommuting i j`, and
+   `Generator.farCommuting (⟨0⟩ : Generator 4) ⟨2⟩`.
+
+3. **The corpus's `n = 12` content never touches the algebra.**
+   `wedderburn_n12_via_witness` (`p(12) = 77`, `12! = 479001600`),
+   `TwoRowStratum`, `WenzlBridgeConcrete`, `RSKSubstrateInstances`,
+   `witness_12C` — combinatorics and numerics, discharged by witness-supplying
+   factories. The physics levels (`H₆` ²H, `H₉` ³H/³He, `H₁₂` ⁴He, `H₁₈` ⁶Li, up
+   to `H₁₂₀`) live in `computations/`, with explicit matrices.
+
+4. **There is no ladder to 12 anyway.** `H3.mul_assoc` was 6 components over 18
+   variables. `H₄` is 24 over 72 — at the edge, and only reachable because Python
+   generated the tables. `H₅` is 120; `H₁₂` is 479 001 600 basis elements.
+
+If `H₁₂` is ever needed it comes generically — one
+`instance : HeckeAlgebra R n q (H R n q)` by induction on `n`, discharging every
+site at every `n` at once. The rank half of that induction is done
+(`FullRank.lean`); the multiplication half needs Coxeter word reduction /
+Matsumoto, and Mathlib at rev `f897ebcf` has `GroupTheory/Coxeter/{Basic,
+Inversion,Length,Matrix}` but **no Hecke algebras at all**. Mathlib-scale, not a
+session.
+
+## H4, done — via the operator algebra
+
+The obvious route died on measurement. Putting a `Ring` on `Fin 24 → R` with
+`MarkovTraceH4`'s `mulNF` (as `InstanceH3` does with `H3.mul`) hits the depth-6
+`whnf` wall that module's docstring names: `mulNF` composes up to six `mulσ`s, so
+associativity unfolds to depth twelve. Measured — `simp` exhausts 4 000 000
+heartbeats after **seven minutes** without closing one generator case.
+
+`QOU/Hecke/InstanceH4.lean` uses the **right regular representation** instead:
+each `mulσk` is an `R`-linear endomorphism of `Fin 24 → R`, and the algebra is
+the subalgebra of `Module.End R (Fin 24 → R)` they generate. Associativity is
+function composition — free, never unfolded. What remains is exactly the Hecke
+presentation, at depth ≤ 3:
+
+| lemma | depth | relation |
+|---|---|---|
+| `mulσ_sq0/1/2` | 2 | `σₖ² = 1 + h·σₖ` |
+| `mulσ_farcomm02` | 2 | `σ₀σ₂ = σ₂σ₀` — the point of `n = 4` |
+| `mulσ_braid01/12` | 3 | `σᵢσⱼσᵢ = σⱼσᵢσⱼ` |
+
+All six in 13 seconds. They are independently valuable: until now the claim that
+`mulσ0/1/2` satisfy the Hecke presentation rested on the Python generator's
+cross-validation, not on anything Lean had checked.
+
+`not_commutative` (the two products send the identity basis vector to normal-form
+positions 8 and 7) excludes every commutative model, `rankOneModel` included,
+before any rank computation. Full rank `24 = 4!` is bean qou-awp7 — and with the
+six relations proved, its `3 × 24` closure table is symbolic word rewriting
+rather than coordinate expansion.
 
 Step 3 is a day or less. Step 4 is the real infrastructure work the manuscript
 cites — but the inductive framing is what makes it finite: each level is `n+1`
