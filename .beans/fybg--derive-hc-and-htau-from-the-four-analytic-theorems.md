@@ -763,3 +763,95 @@ step 5 bounds `<4_1>_N / g_{k*}` above and below, step 6 evaluates
   2. `hc : c^2 |cot theta| = (2 sin theta)^2`, which at `theta* = 5pi/6`
      reduces to `c^2 sqrt3 = 1`;
   3. `htau`.
+
+---
+
+## Step 7 -- `log <4_1>_N` absolutely (`QOU/Knot/KashaevLogAsymptotic.lean`)
+
+Eight theorems, all `[propext, Classical.choice, Quot.sound]`. The sandwich
+stops being relative to the peak.
+
+**The saddle index, concretely.** `argmax_angle_eq` gives the exact identity
+
+    theta_{k*} = 5pi/6 - r pi/(6N),   r = 5N mod 6 in [0, 5]
+
+from `Nat.div_add_mod` and nothing else. Two corollaries feed
+`log_kashaevProd_saddle`'s two hypotheses: `argmax_offset_le`
+(`|theta_{k*} - 5pi/6| <= pi/N`, in fact <= 5pi/6N) and `argmax_angle_mem`
+(`theta_{k*} in [pi/6, 5pi/6]`).
+
+The DIRECTION matters and is worth stating: `floor` undershoots, so
+`theta_{k*} <= 5pi/6` always -- the saddle index approaches the saddle angle
+from below, never above. That is what puts the whole interval inside
+`[pi/6, 5pi/6]`, where `half_le_sin` (step 1) already gives `sin >= 1/2`, hence
+`M = 4`. And `M = 4` is SHARP for that interval, not an estimate: `1/sin^2` is
+exactly 4 at both endpoints. `log_kashaevProd_argmax` is the peak value with
+every constant explicit.
+
+**Logging the sandwich.** `kashaevUpperConst N w` names the constant from
+`kashaev_le_argmax_mul` so it can be logged; `four_le_kashaevUpperConst` gives
+its positivity (the two window terms alone contribute 4). Then
+
+    le_log_kashaev :  log g* + log m - 1     <= log <4_1>_N
+    log_kashaev_le :  log <4_1>_N <= log g* + log C(N,w)
+
+Pure monotonicity; the only content is positivity of both sides, from
+`sq_le_kashaevProd_argmax` and `kashaev_pos`.
+
+### The hypotheses are satisfiable only from N = 18
+
+`log_kashaev_le` needs `2N+3 <= 3w` (secant window) AND `2 <= 5N/6 - w` (two
+steps of gap). Those pull against each other, and below `N = 18` there is no
+`w` at all -- at `N = 12` the constraints ask for `w >= 9` and `w <= 8`.
+Probe part (v-a) pins the threshold at exactly 18 and asserts it, so that if a
+future edit to the hypotheses moves it, the probe says so instead of silently
+covering fewer `N`.
+
+This is a real restriction, not slack I can argue away: the below-window
+collapse (step 5, part 10) genuinely needs `D = k* - w >= 2` for
+`1/(D(D-1))` to be finite.
+
+### What the bracket delivers -- and what it does NOT
+
+With `m ~ sqrt(N/(sqrt3 pi))` and `w = ceil((2N+3)/3)`, probe part (vi):
+
+    N     log<4_1>_N - N Vol/(2pi) - (3/2)log N
+    18    -0.2409
+    96    -0.2688
+    768   -0.2739          target  log(3^(-1/4)) = -0.274653
+
+Monotone, gap `7.2e-4` at `N = 768`. **`c_sigma = 3^(-1/4)` is confirmed to
+four digits by the assembled main term** -- the volume `N Vol/(2pi)`, the
+`(3/2) log N`, and the constant all come out of the formalised pieces.
+
+But the Lean sandwich only brackets `c_sigma` in `[0.146, 1.670]`. The width
+does not shrink to 0, and no amount of tuning `m` and `w` will close it. The
+reason is structural: step 5's Gaussian sums are one-sided-crude (peel the
+first term, compare the rest to an integral), which is enough for
+`Theta(sqrt N)` and loses the constant. **Pinning `c_sigma` needs a two-sided
+Laplace with matching leading constant -- i.e. `qou-mlgp` gap (B), which is not
+closed.** The Jacobi theta route (`hasSum_gaussian_theta`,
+`hasSum_gaussian_theta_tilt`, already in-repo) is where I would go: it gives
+`sum_{d in Z} e^{-a d^2} = sqrt(pi/a) * (1 + exponentially small)`, which is
+the sharp constant rather than a bound.
+
+So the honest state after step 7: **the growth ORDER
+`<4_1>_N = Theta(N^{3/2} e^{N Vol/2pi})` is formalised with explicit
+constants on both sides. The CONSTANT `c_sigma` is not.**
+
+### Probe
+
+`computations/probes/kashaev_log_asymptotic_probe.py` -- all assertions pass.
+Parts (i)-(iv) check the four saddle-index theorems and `M = 4`'s sharpness;
+(v-a) the `N >= 18` threshold; (v-b) the sandwich against the true
+`<4_1>_N = sum_k g_k` for `N` up to 768; (vi) the residual against
+`log(3^(-1/4))`, asserted both to be within `2e-3` and to be still
+approaching (not sitting at some other constant).
+
+### Remaining before `hc`
+
+  1. gap (B) -- sharp two-sided Laplace, to pin `c_sigma` rather than bracket
+     it. This is now the ONLY thing between step 7 and the constant.
+  2. `hc : c^2 |cot theta| = (2 sin theta)^2`, at `theta* = 5pi/6` reducing to
+     `c^2 sqrt3 = 1`.
+  3. `htau`.
