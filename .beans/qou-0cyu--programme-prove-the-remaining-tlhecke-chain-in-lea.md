@@ -223,3 +223,45 @@ case). So at n = 3 and n = 4 specifically:
 REVISED PRIORITY. This is no longer the cheapest item in this bean -- step 1 is
 a substantial explicit construction. G2 (recipe fully specified above, both
 ingredients proved) is now the cheapest real progress. Do G2 first.
+
+
+## G2: THE STATEMENT IS NOW VERIFIED CORRECT BEFORE PROVING IT
+
+Formulating a general theorem and then discovering mid-proof that it is subtly
+false is the expensive failure here, so I checked first, at 40 dps, n = 0..12:
+
+    [2]_q^n  =  sum_{j in Finset.range (n+1)} ballot n j * qint q (n + 1 - 2*j)
+
+with NATURAL SUBTRACTION semantics on the index (clamp to 0) and qint q 0 = 0.
+Residual is pure round-off throughout -- 0.0 at n = 0 rising to 4.7e-37 at
+n = 12, tracking the magnitude of [2]^12 = 4371.97, not a defect.
+
+Also swept for counterexamples to the two ingredients over the same range:
+ballot_succ_succ for all n <= 12 and all j, and ballot_boundary_zero for
+j <= 7. NONE.
+
+So the exact Lean statement to prove is:
+
+    theorem qdim_normalisation (q : R) (hq : q != 0) (h1 : q - q⁻¹ != 0) (n : N) :
+        (q + q⁻¹) ^ n
+          = sum j in Finset.range (n + 1),
+              ((ballot n j : Z) : R) * qint q (n + 1 - 2 * j)
+
+Base case n = 0: range 1, ballot 0 0 = 1, qint q 1 = 1 (needs h1).
+
+Induction step, in the order the Finset lemmas want it:
+  1. pow_succ, then ih, then Finset.mul_sum -- pushes (q + q⁻¹) inside.
+  2. Per term: for 2j <= n the index is (n - 2j) + 1, so qint_three_term
+     rewrites (q+q⁻¹) * qint(n+1-2j) = qint(n+3-2j) + qint(n-1-2j)... CAREFUL,
+     write it as m = n - 2j and use qint(m+2) + qint(m) = (q+q⁻¹) qint(m+1).
+     For 2j > n the factor qint(n+1-2j) is qint 0 = 0 and the term dies.
+  3. Split the sum in two; reindex the lower half by j -> j+1
+     (Finset.sum_range_succ' is the lemma that shifts the base, not the top).
+  4. Recombine with ballot_succ_succ; the j = 0 term uses ballot_zero on both
+     sides. The surplus top term is killed by ballot_boundary_zero (even n) or
+     is absent (odd n) -- and with the natural-subtraction form it is killed by
+     qint 0 = 0 as well, so the parity split may not even be needed. TRY WITHOUT
+     IT FIRST.
+
+That last remark is the payoff of the natural-subtraction trick and is worth
+testing before writing any parity case analysis.
