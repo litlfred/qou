@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A: BOTH obligations CLOSED — he_j at the pair (k=0) and hcont at phi=pi. What remains is feeding hasDerivAt_envelopeS.'
+title: 'Gap A: S-prime = 2phi PROVED at the concrete labelling on Ioo 0 phi0. Two NEW obligations, both found by doing the assembly.'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T19:05:00Z
+updated_at: 2026-08-09T20:40:00Z
 ---
 
 ## What is open
@@ -691,6 +691,73 @@ with non-degeneracy from `|∂p/∂y| ≥ 1.75` at the real root (Route 32 G8). 
 Note the pieces now sit on both sides of `φ₀`: `continuous_otherRoots` handles
 the collision, the IFT handles everything else, and `envelopeS_total` glues them
 with one point excluded.
+
+## ✅ THE ASSEMBLY IS DONE — and it found two things
+
+    hasDerivAt_envelopeS_concrete (hd : pairDisc φ < 0) (hlo : 0 < φ) (hhi : φ < π) :
+      HasDerivAt (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2)) (2*φ) φ
+
+`FiveTwoEnvelopeInstance.lean`, `lake`-verified, sorry-free, warning-free, axioms
+`[propext, Classical.choice, Quot.sound]`. All **fourteen** hypotheses of
+`hasDerivAt_envelopeS` are now theorems about `Yreal` / `Ypair`; nothing about
+the labelling is left for a caller to supply.
+
+This bean predicted that assembly is "exactly where unexamined regions hide". It
+was right, twice.
+
+### ✅ FINDING 1 — `envelopeS_total`'s `Ico` was too strong, and `φ = 0` dissolves
+
+    total_of_deriv_on_ioo (hc0 : 0 < c) (hcb : c < b)
+      (hcont : ContinuousOn f (Icc 0 b))
+      (hderiv : ∀ φ ∈ Ioo 0 b, φ ≠ c → HasDerivAt f (2*φ) φ) :
+      f b = f 0 + b²
+    envelopeS_total_of_ioo …   -- same conclusion as envelopeS_total, Ico → Ioo
+
+`envelopeS_total` demanded the derivative on `Ico 0 π`, **including `φ = 0`** —
+where three inputs (`vSide_*`, `logSumA_concrete`, `logSumB_concrete`) all carry
+`sin φ ≠ 0` and stop. That looked like the last obstruction.
+
+It is not an obstruction; it is a hypothesis that was never needed.
+`intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le` wants the derivative on
+the **open** interval with continuity on the closed one, so splitting at the
+exceptional point disposes of `φ₀` **and both endpoints at once**. The `Ico` form
+was written when the exceptional point was the only endpoint in view.
+
+⚠ Record this shape: *a blocker that is really an over-strong hypothesis in your
+own upstream lemma.* Three of this lane's four "blockers" have now dissolved on
+contact, and two of them were mine to begin with.
+
+### ⚠ FINDING 2 — the REAL-pair regime has no derivative lemma at all
+
+`hasDerivAt_Ypair_fst` / `_snd` both carry `pairDisc φ < 0`, so
+`hasDerivAt_envelopeS_concrete` holds on **`Ioo 0 φ₀`** only —
+`φ₀ = 137.9206708879635° = 2.4068…` rad. Past the collision the pair is **real**
+(Route 36 G5: at 46 of 199 arc points all three roots are real), `otherRoots` is
+in its `√d` branch, and *nothing in the tree differentiates it there*.
+
+This was invisible until the assembly was attempted: every statement about the
+pair had been written with `pairDisc φ < 0` in it, so the gap never surfaced as
+a missing hypothesis — it surfaced as a theorem that silently covers only part
+of the arc.
+
+**It should be cheap.** `√` is differentiable away from `0`, and `pairDisc φ > 0`
+is exactly what keeps it away, mirroring `hasDerivAt_Ypair_fst`'s use of
+`pairNegDisc φ > 0`. The `heⱼ` side is already proved for it —
+`abs_argSum_lt_of_real_neg` is regime 4, and Route 38 G12 measures its 186
+checks — but instantiating that needs *both real roots negative*, which follows
+from `sum = 2c − t < 0` and `product = pairGamma > 0` past the crossing.
+
+## What remains, exactly
+
+| piece | status |
+|---|---|
+| `S′ = 2φ` on `Ioo 0 φ₀` | ✅ `hasDerivAt_envelopeS_concrete` |
+| the `Ico`/`Ioo` glue | ✅ `envelopeS_total_of_ioo` |
+| `S′ = 2φ` on `Ioo φ₀ π` (real pair) | ⏳ **finding 2** — needs `hasDerivAt_Ypair_*` for `pairDisc φ > 0`, then regime 4 |
+| `hcont : ContinuousOn (envelopeS …) (Icc 0 π)` | ⏳ the `Li₂` half is done (`continuousAt_re_cLiTwoExt`); the composition is not written |
+
+Both are bookkeeping over proved parts — and this bean's own record says that is
+not a reason to call them trivial.
 
 ## What the hypotheses actually demand — measured, not assumed
 

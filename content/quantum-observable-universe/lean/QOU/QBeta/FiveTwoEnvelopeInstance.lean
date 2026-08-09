@@ -428,4 +428,104 @@ theorem he_Ypair {φ : ℝ} (h : pairDisc φ < 0) (hlo : 0 ≤ φ) (hhi : φ < R
   · rw [dVdy_Ypair_fst_eq_zero h hlo hhi, zero_mul, Complex.zero_re]
   · rw [dVdy_Ypair_snd_eq_zero h hlo hhi, zero_mul, Complex.zero_re]
 
+/-! ## The assembly — `hasDerivAt_envelopeS` at the concrete labelling
+
+Every hypothesis of `hasDerivAt_envelopeS` is now a theorem about `Yreal` and
+`Ypair`, so the transport's derivative follows with no hypothesis about the
+labelling left for a caller to supply. -/
+
+/-- `Yreal`'s derivative in the form the transport consumes — the same statement
+as `hasDerivAt_Yreal`, with the value written as `realRootPath'` rather than
+expanded, so it matches `hasDerivAt_log_neg_Yreal`'s numerator on the nose. -/
+theorem hasDerivAt_Yreal' (φ : ℝ) :
+    HasDerivAt Yreal (((realRootPath' φ : ℝ) : ℂ)) φ :=
+  (hasDerivAt_realRootPath' φ).ofReal_comp
+
+/-- **`heⱼ` at the real branch.** No `k`-pinning is needed here and that is not an
+accident: `arg y ≡ 0` along a real branch, so the `2πi·k` leak is annihilated by
+`Y′` being real whatever `k` is. It is the pair, where `arg y` moves, that forced
+`k = 0`. -/
+theorem he_Yreal {φ : ℝ} (hs : Real.sin φ ≠ 0) :
+    (dVdy (arcX φ) (Yreal φ) * ((realRootPath' φ : ℝ) : ℂ)).re = 0 := by
+  have hv := vSide_Yreal hs
+  exact re_dVdy_mul_eq_zero_of_real (arcX_ne_zero φ) (ne_of_gt (realRootPath_pos φ))
+    (one_sub_ne_zero_of_mem_notCut hv.hc₁) (one_sub_ne_zero_of_mem_notCut hv.hc₂)
+    (one_sub_ne_zero_of_mem_notCut hv.hc₃) (curve_Yreal (arcX_normSq φ) (arcX_re φ))
+
+/-- **`S′ = 2φ` at the concrete labelling.**
+
+`hasDerivAt_envelopeS` took fourteen hypotheses about an arbitrary labelling;
+all fourteen are now theorems about `Yreal` / `Ypair`, and this is what closes
+Gap A's construction half.
+
+⚠ **`Ioo 0 π`, and the two ends fail for different reasons.** At `φ = π` `VSide`
+is FALSE (`x·y = 2.2469796` on Li₂'s cut, Route 36 G7) and so is `heⱼ`
+(`argSum = 2π`, Route 38 G15) — that end is genuinely out of reach and
+`envelopeS_total` is built not to need it. At `φ = 0` the *statement* is fine —
+`arcX 0 = 1`, so `hA` and `hB` reduce to `∏(1−yⱼ) = 1` and the conjugate pair's
+arguments cancel — but three inputs (`vSide_*`, `logSumA_concrete`,
+`logSumB_concrete`) carry `sin φ ≠ 0` and do not reach it. That is a gap in the
+*route*, not in the mathematics, and it is the one thing between this and
+`envelopeS_total`. -/
+theorem hasDerivAt_envelopeS_concrete {φ : ℝ} (hd : pairDisc φ < 0)
+    (hlo : 0 < φ) (hhi : φ < π) :
+    HasDerivAt (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2))
+      (2 * φ) φ := by
+  have hsin : 0 < Real.sin φ := Real.sin_pos_of_pos_of_lt_pi hlo hhi
+  have hsn : Real.sin φ ≠ 0 := ne_of_gt hsin
+  exact hasDerivAt_envelopeS (by linarith [Real.pi_pos]) hhi.le
+    (hasDerivAt_Yreal' φ) (hasDerivAt_Ypair_fst hd) (hasDerivAt_Ypair_snd hd)
+    (vSide_Yreal hsn) (vSide_Ypair_fst hsn) (vSide_Ypair_snd hsn)
+    (hasDerivAt_log_neg_Yreal φ) (hasDerivAt_log_neg_Ypair_fst hd hsn)
+    (hasDerivAt_log_neg_Ypair_snd hd hsn)
+    (he_Yreal hsn) (he_Ypair hd hlo.le hhi _).1 (he_Ypair hd hlo.le hhi _).2
+    (logSumA_concrete hsin hlo.le hhi) (logSumB_concrete hsin hd hlo.le hhi)
+
+/-! ## `Ioo`, not `Ico` — the `φ = 0` endpoint dissolves
+
+`envelopeS_total` asks for the derivative on `Ico 0 π`, i.e. **including** the
+left endpoint. That is stronger than the mathematics needs, and it was the one
+thing standing between `hasDerivAt_envelopeS_concrete` and the transport: three
+of its inputs (`vSide_*`, `logSumA_concrete`, `logSumB_concrete`) carry
+`sin φ ≠ 0`, which fails at `φ = 0`.
+
+Mathlib's `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le` wants the
+derivative only on the **open** interval, with continuity on the closed one — so
+splitting at the exceptional point handles `φ₀` and the two endpoints in one
+stroke, and no endpoint derivative is needed at all.
+
+⚠ Worth stating plainly: this is not a workaround for a hard step, it is a
+hypothesis that was too strong to begin with. The `Ico` form was written when
+the exceptional point was the only endpoint anyone was thinking about. -/
+
+theorem total_of_deriv_on_ioo {f : ℝ → ℝ} {b c : ℝ} (hc0 : 0 < c) (hcb : c < b)
+    (hcont : ContinuousOn f (Set.Icc 0 b))
+    (hderiv : ∀ φ ∈ Set.Ioo (0 : ℝ) b, φ ≠ c → HasDerivAt f (2 * φ) φ) :
+    f b = f 0 + b ^ 2 := by
+  have hint : ∀ u v : ℝ, IntervalIntegrable (fun φ : ℝ => 2 * φ) MeasureTheory.volume u v :=
+    fun u v => (continuous_const.mul continuous_id).intervalIntegrable u v
+  have hval : ∀ u v : ℝ, (∫ φ in u..v, 2 * φ) = v ^ 2 - u ^ 2 := by
+    intro u v
+    rw [intervalIntegral.integral_const_mul, integral_id]
+    ring
+  -- left piece `[0, c]`
+  have hleft := intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le hc0.le
+    (hcont.mono (Set.Icc_subset_Icc le_rfl hcb.le))
+    (fun φ hφ => hderiv φ ⟨hφ.1, lt_trans hφ.2 hcb⟩ (ne_of_lt hφ.2)) (hint 0 c)
+  -- right piece `[c, b]`
+  have hright := intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le hcb.le
+    (hcont.mono (Set.Icc_subset_Icc hc0.le le_rfl))
+    (fun φ hφ => hderiv φ ⟨lt_trans hc0 hφ.1, hφ.2⟩ (ne_of_gt hφ.1)) (hint c b)
+  rw [hval] at hleft hright
+  linarith
+
+/-- **The transport, with the endpoint hypothesis removed.** Same conclusion as
+`envelopeS_total`, with `Ico` weakened to `Ioo`. -/
+theorem envelopeS_total_of_ioo {Y₁ Y₂ Y₃ : ℝ → ℂ} {c : ℝ} (hc0 : 0 < c) (hcπ : c < π)
+    (hcont : ContinuousOn (envelopeS Y₁ Y₂ Y₃) (Set.Icc 0 π))
+    (hderiv : ∀ φ ∈ Set.Ioo (0 : ℝ) π, φ ≠ c →
+      HasDerivAt (envelopeS Y₁ Y₂ Y₃) (2 * φ) φ) :
+    envelopeS Y₁ Y₂ Y₃ π = envelopeS Y₁ Y₂ Y₃ 0 + π ^ 2 :=
+  total_of_deriv_on_ioo hc0 hcπ hcont hderiv
+
 end QOU.QBeta.FiveTwoDeformedSaddle
