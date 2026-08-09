@@ -411,3 +411,60 @@ Both sorry-free, standard axioms, `lake build` exit 0.
    corpus).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 51 — the chain-rule assembly, and a non-vacuity check
+
+New module `QOU/QBeta/FiveTwoComplexPentagon.lean` (imports both halves; wired
+into `QOU.lean`). **Item 1 of "what is still owed" is done.**
+
+### What landed
+
+* `hasDerivAt_argThree/Four/Five` — the three chain-rule factors §7h *assumed*,
+  `(y−1)/(1−xy)²`, `−y`, `(1−y)y/(1−xy)²`, are now proved from
+  `HasDerivAt.div`. Nothing about the differentiation is on faith any more.
+* `hasDerivAt_pentagonSum` — for `L = cRogersL`, the five-term sum
+
+      L(x) + L(y) + L((1−x)/(1−xy)) + L(1−xy) + L((1−y)/(1−xy))
+
+  has `x`-derivative `0`, given four `rogersDomain` memberships and the five
+  branch conditions. §7h is invoked, not re-proved: the total is discharged by
+  `linear_combination pentagon_deriv_x_eq_zero`.
+* `rogersDomain = slitPlane ∩ notCut` in `ComplexRogersDilog.lean`, with
+  `one_sub_mem_slitPlane_iff`. This is a genuine simplification, not packaging:
+  `1 − z ∈ slitPlane` **is** `z ∈ notCut` (both say `z ∉ [1,∞)`), and
+  `z ∈ slitPlane` already gives `z ≠ 0`. So `hasDerivAt_cRogersL`'s four
+  hypotheses were two, and the domain is just the plane minus both real cuts.
+
+### The check that matters — the hypotheses are satisfiable
+
+Ten hypotheses that cannot hold together prove anything, and nothing in the
+statement of `hasDerivAt_pentagonSum` rules that out. So:
+`pentagon_branch_conditions_of_real` proves **all five branch conditions** on
+`0 < x, y < 1`, and `hasDerivAt_pentagonSum_of_real` discharges every hypothesis
+there. The theorem is not vacuous.
+
+The mechanism is one lemma, `clog_of_eq_ofReal`: a complex expression that
+equals a *positive real* has `Complex.log` the cast of `Real.log`, after which
+every expansion is `Real.log_mul` / `Real.log_div` and no branch is chosen.
+
+All sorry-free, standard axioms, per-module `lake build` exit 0 with the
+`.olean` deleted first.
+
+### ⚠ What this is not
+
+It is not the five-term identity for `cRogersL`. The **real** five-term identity
+on `(0,1)` was already proved sorry-free in the corpus
+(`FiveTwoAbelFiveTerm.rogersL_fiveTerm`, bean `qou-abel`) — so the real square is
+a region where the answer was already known. What the 5₂ lane needs is the
+complex identity, because `|y₁| = 1.52 > 1` and `y₁, y₂` are not real.
+
+### Still owed
+
+2. Continuation of the **branch conditions** off the real square. Unchanged and
+   still the delicate part: those expansions are where flattening enters, so it
+   is Routes 45–46 and Neumann's `ker ν` again.
+3. Connectedness + pinning the constant (the `Landen` pattern in the corpus).
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

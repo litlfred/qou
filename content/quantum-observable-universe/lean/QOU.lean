@@ -481,6 +481,7 @@ import QOU.QBeta.FiveTwoLevelSevenBridge
 import QOU.QBeta.FiveTwoExtendIdentification
 import QOU.QBeta.FiveTwoLevelSevenAssembly
 import QOU.QBeta.FiveTwoSaddleSumRule
+import QOU.QBeta.FiveTwoComplexPentagon
 import QOU.QBeta.FiveTwoDTSpectrumSplit
 import QOU.QBeta.FiveTwoSaddleCurve
 import QOU.QBeta.FiveTwoStokesMatrixIdentities

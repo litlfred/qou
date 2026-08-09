@@ -81,6 +81,59 @@ theorem hasDerivAt_cRogersL {z : ℂ} (hz : z ∈ notCut) (hz0 : z ≠ 0)
   field_simp
   ring
 
+/-! ## The domain, and the chain rule
+
+`hasDerivAt_cRogersL` takes four hypotheses, but only two of them are
+independent: `1 − z ∈ slitPlane` says exactly `z ∉ [1,∞)`, which is `notCut`,
+and `z ∈ slitPlane` already gives `z ≠ 0`. So the domain is the plane with
+**both** real cuts removed, and that is what `rogersDomain` names. -/
+
+/-- `1 − z ∈ slitPlane ↔ z ∈ notCut` — both say `z ∉ [1,∞)`. -/
+theorem one_sub_mem_slitPlane_iff {z : ℂ} : (1 : ℂ) - z ∈ slitPlane ↔ z ∈ notCut := by
+  rw [Complex.mem_slitPlane_iff, mem_notCut_iff]
+  simp only [Complex.sub_re, Complex.one_re, Complex.sub_im, Complex.one_im, zero_sub,
+    neg_ne_zero, sub_pos]
+  exact or_comm
+
+/-- **The domain of `cRogersL`**: `ℂ` with both real cuts `(−∞,0]` and `[1,∞)`
+removed. `slitPlane` handles `log z`, `notCut` handles both `cLiTwoExt` and
+`log (1−z)`. -/
+def rogersDomain : Set ℂ := Complex.slitPlane ∩ notCut
+
+theorem isOpen_rogersDomain : IsOpen rogersDomain :=
+  Complex.isOpen_slitPlane.inter isOpen_notCut
+
+theorem ne_zero_of_mem_rogersDomain {z : ℂ} (hz : z ∈ rogersDomain) : z ≠ 0 :=
+  Complex.slitPlane_ne_zero hz.1
+
+theorem one_sub_ne_zero_of_mem_rogersDomain {z : ℂ} (hz : z ∈ rogersDomain) :
+    (1 : ℂ) - z ≠ 0 :=
+  Complex.slitPlane_ne_zero (one_sub_mem_slitPlane_iff.mpr hz.2)
+
+/-- A real point of `(0,1)` is in the domain — the base region the pentagon is
+continued from. -/
+theorem ofReal_mem_rogersDomain {t : ℝ} (h0 : 0 < t) (h1 : t < 1) :
+    (t : ℂ) ∈ rogersDomain :=
+  ⟨Complex.ofReal_mem_slitPlane.2 h0, Or.inr (by simpa using h1)⟩
+
+/-- `hasDerivAt_cRogersL`, with the four hypotheses collapsed to membership of
+`rogersDomain`. -/
+theorem hasDerivAt_cRogersL_of_mem {z : ℂ} (hz : z ∈ rogersDomain) :
+    HasDerivAt cRogersL
+      (-(1 / 2) * (Complex.log (1 - z) / z + Complex.log z / (1 - z))) z :=
+  hasDerivAt_cRogersL hz.2 (ne_zero_of_mem_rogersDomain hz) hz.1
+    (one_sub_mem_slitPlane_iff.mpr hz.2)
+
+/-- **The chain rule for `cRogersL`.** This is what assembling the pentagon
+needs: each of its five arguments is a rational function of the differentiation
+variable, and the composite's derivative is `L′` at the argument times the
+argument's own derivative. -/
+theorem hasDerivAt_cRogersL_comp {f : ℂ → ℂ} {f' z : ℂ} (hf : HasDerivAt f f' z)
+    (hz : f z ∈ rogersDomain) :
+    HasDerivAt (fun w => cRogersL (f w))
+      (-(1 / 2) * (Complex.log (1 - f z) / f z + Complex.log (f z) / (1 - f z)) * f') z :=
+  (hasDerivAt_cRogersL_of_mem hz).comp z hf
+
 /-! ## The pentagon's log expansions, on the positive real region
 
 Assembling the five-term identity needs the three expansions
@@ -100,6 +153,14 @@ on a real interval and continues.
 
 ⚠ This does **not** give the expansions anywhere else. Off the real square they
 can and do fail, which is the whole content of Routes 45–46. -/
+
+/-- **The one move every branch condition on the real square makes**: a complex
+expression that happens to equal a *positive real* has complex logarithm the cast
+of the real logarithm. Everything else is then `Real.log_mul` / `Real.log_div`,
+with no branch left to choose. -/
+theorem clog_of_eq_ofReal {a : ℝ} (ha : 0 < a) {z : ℂ} (hz : z = (a : ℂ)) :
+    Complex.log z = ((Real.log a : ℝ) : ℂ) := by
+  rw [hz, ← Complex.ofReal_log ha.le]
 
 /-- `log(ab) = log a + log b` for positive reals, as complex logarithms. -/
 theorem clog_mul_of_pos {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
