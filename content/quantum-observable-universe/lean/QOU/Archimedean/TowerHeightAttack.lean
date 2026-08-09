@@ -260,4 +260,57 @@ theorem closed_above_window {D N : ℕ} (hDN : D ≤ N) {c : ℕ → ℝ} (hc0 :
     · exact hwin (n - k) (by omega) hlt
     · exact ih (n - k) (by omega) hge
 
+/-! ## §4  Jet-order independence does not transfer to algebraic independence
+
+`JetOrderIndependence` asserts that the order-`N` jet-coefficient Jacobian of
+`tr_M(4₁), tr_M(5₂), tr_M(𝓑₃)` has full rank `3` — **linear** independence of
+the coefficient vectors. The gap-closing reduction then wants to transfer this,
+via `JetTransportImpliesIndependence`, to **algebraic** independence of the
+volumes.
+
+That transfer cannot be a transfer *of independence*, because the jet series
+are algebraically **dependent** — necessarily so:
+
+* each `tr_M(K)` is a rational function of `u = √q` (verified: numerator /
+  denominator `u`-degrees `14/9`, `16/9`, `18/9` for `4₁ / 5₂ / 𝓑₃`), so all
+  three lie in `ℚ(u)`;
+* `ℚ(u)` has transcendence degree `1` over `ℚ`, so **any two** of them already
+  satisfy a polynomial relation, let alone all three.
+
+The minimal degree is not predicted by that argument; it is measured. The probe
+[`computations/jet_algebraic_independence_probe.py`](../../../../computations/jet_algebraic_independence_probe.py)
+finds, by exact null space over `ℚ`:
+
+| degree `d` | equations | null space | stable under more equations? |
+|---|---|---|---|
+| ≤ 6 | 93 → 385 | `0` | yes — no relation |
+| 7 | 129 → 421 | `3` | yes — **genuine**, 3-dimensional |
+
+So the minimal degree of an algebraic relation among the three canonical
+Markov-trace jets is exactly `7`.
+
+`linearIndependent_not_algebraicallyIndependent` below is the general reason a
+rank certificate cannot deliver algebraic independence, in the cheapest
+possible form: `t`, `t²`, `t³` are linearly independent yet satisfy the
+degree-2 relation `z = x·y`. Rank counts linear relations; it says nothing
+about polynomial ones. -/
+
+/-- **Linear independence does not imply algebraic independence.**
+
+`t`, `t²`, `t³` are linearly independent as functions, yet annihilated by
+`z − x·y`. So a full-rank jet Jacobian — which is exactly a linear-independence
+certificate — cannot by itself support an algebraic-independence conclusion. -/
+theorem linearIndependent_not_algebraicallyIndependent :
+    ∃ f g h : ℝ → ℝ,
+      (∀ a b c : ℝ, (∀ t : ℝ, a * f t + b * g t + c * h t = 0) →
+        a = 0 ∧ b = 0 ∧ c = 0) ∧
+      (∀ t : ℝ, h t - f t * g t = 0) := by
+  refine ⟨fun t => t, fun t => t ^ 2, fun t => t ^ 3, fun a b c hlin => ?_,
+          fun t => by ring⟩
+  have h1 := hlin 1
+  have h2 := hlin (-1)
+  have h3 := hlin 2
+  norm_num at h1 h2 h3
+  refine ⟨by linarith, by linarith, by linarith⟩
+
 end QOU.Archimedean.TowerHeight
