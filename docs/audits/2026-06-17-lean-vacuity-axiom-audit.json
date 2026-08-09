@@ -1,13 +1,13 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T00:00:14.297Z",
+  "generated": "2026-08-09T00:31:08.148Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1662,
-  "files_flagged": 124,
-  "total_defects": 99,
+  "files_flagged": 119,
+  "total_defects": 94,
   "total_exempt": 59,
   "categories": {
-    "proof-docstring-sorry-mismatch": 9,
+    "proof-docstring-sorry-mismatch": 4,
     "proof-no-trivial-true": 17,
     "proof-no-self-assuming-projection": 8,
     "proof-no-unused-hypothesis-rfl": 7,
@@ -706,17 +706,6 @@
     ]
   },
   "flagged": {
-    "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/JointGaloisBraidFigure8.lean": [
-      {
-        "line": 134,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem kappa_commutes_bar (D : DisjointTensorCell)",
-        "decl": "kappa_commutes_bar",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
       {
         "line": 90,
@@ -1581,39 +1570,6 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidsKnots/mobius_frobenius_kernel.lean": [
-      {
-        "line": 78,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]",
-        "decl": "mobius_frobenius_kernel",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsKnots/nsi_q_deformed_kernel.lean": [
-      {
-        "line": 159,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]",
-        "decl": "nsi_q_kernel_identification",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/BraidsKnots/skein_mass_from_linking.lean": [
-      {
-        "line": 93,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem skein_mass_from_linking [ctx : SkeinMassFromLinkingContext] :",
-        "decl": "skein_mass_from_linking",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean": [
       {
         "line": 202,
@@ -2299,17 +2255,6 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (su4_action, alpha_cluster_from_su4_quadruplets) — honestly framed; tracked not counted"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/mass_categorical_descent.lean": [
-      {
-        "line": 75,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :",
-        "decl": "mass_categorical_descent",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/QBeta/FMapStructuralPaths.lean": [
