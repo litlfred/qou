@@ -25,7 +25,7 @@ REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 sys.path.insert(0, str(COMP))
 import closed_form_tau_M as C  # noqa: E402
-from _li_2_q_util import flavor_split_subleading  # noqa: E402
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 
 Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 
@@ -33,7 +33,7 @@ Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 def main():
     z = C.markov_z(Q0)
     h = C.hecke_h(Q0)
-    delta = flavor_split_subleading(Q0)
+    delta = flavor_split_leading(Q0)
     facs = {
         "positive (z)": z,
         "negative (z-h)": z - h,

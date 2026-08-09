@@ -37,7 +37,7 @@ from _li_2_q_util import (  # noqa: E402
     vol_density_borromean,
     vol_density_borromean_bring_color_weighted,
     linking_weight_family_a,
-    flavor_split_subleading,
+    flavor_split_leading,
 )
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
@@ -55,9 +55,9 @@ m_avg_codata = (m_p_codata + m_n_codata) / 2
 
 print(f"=== bring_color_weighted base-scale probe at q_0 = {mp.nstr(q, 12)} ===\n")
 
-delta = flavor_split_subleading(q)
+delta = flavor_split_leading(q)
 base = linking_weight_family_a(q)
-print(f"δ = flavor_split_subleading(q_0) = {mp.nstr(delta, 12)}")
+print(f"δ = flavor_split_leading(q_0) = {mp.nstr(delta, 12)}")
 print(f"linking_weight_family_a (H_4 avg) = {mp.nstr(base, 12)}")
 print()
 

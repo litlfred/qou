@@ -268,3 +268,47 @@ possible. That is why the split has not produced a visible failure.
    appears anywhere in the trace, which is the N = 2 (SU(2)/Temperley–Lieb)
    Ocneanu member throughout. The `½` is a plain σ/σ⁻¹ midpoint and `δ/4` a
    small isospin tilt on it.
+
+### 2026-08-09 follow-up: the split is REAL and PRINCIPLED, not just drift
+
+The "STILL SPLIT AT THE CODE LEVEL" list above was worked through. Eight files
+were switched to `flavor_split_leading` and each verified to exit 0 afterwards:
+
+```
+tr_m_algebraic_q.py                                binding_bring_enhancement_compare.py
+binding_color_vs_charge_tn3he.py                   binding_combiner_markov_peel_fallback.py
+sweeps/mass_table_bring_phi_q_h4_sweep.py          probes/interface_factor_enhancing_check_probe.py
+probes/bring_color_weighted_base_scale_probe.py    probes/binding_color_vs_charge_tn3he_perknot_rerun.py
+```
+
+**Two files were deliberately NOT switched, and this is the substantive finding.**
+Both hid behind an aliased import (`from _li_2_q_util import
+flavor_split_subleading as _flavor_split`), which is why the first pass missed
+them — the same rename-evasion `f64_into_mpmath_audit` exists to catch.
+
+* `m_p_borromean_verification_50dps.py:347` carries a **regression gate**:
+  `substrate_flavor_split_ratio_within_1000ppm_of_codata`, `tolerance = 1000.0`
+  ppm, comment "current value ~305 ppm". Subleading gives 0.0305 % = 305 ppm and
+  passes; leading gives 0.128 % = **1280 ppm and would FAIL the gate**.
+* `atomic_mass_via_rho_k.py:121` derives `m_n = m_p·(1 + δ)` and says so
+  explicitly ("with (1+ℏ_q³) sub-leading correction"). Switching would move m_n
+  by ~0.1 %, i.e. ~1 MeV.
+
+**So the corpus is split for a reason, and the two halves are each right for
+their purpose:**
+
+| path | δ | why |
+|---|---|---|
+| trace / binding | `leading` | PROVENANCE — `prop:flavor-split-substrate` proves only the leading form; the subleading `(1+ℏ_q³)` is admittedly posited |
+| nucleon mass / flavour-split gate | `subleading` | ACCURACY — only it lands inside the 1000 ppm CODATA gate (305 vs 1280 ppm) |
+
+That is a genuine tension, not drift: the framework currently trades provenance
+against accuracy depending on which consumer is asking, and **nothing in the
+corpus states this**. It is also the sharpest available statement of what the
+posited `(1+ℏ_q³)` is buying — 4× on Δm/M_N, and a passing gate.
+
+Resolving it means deriving the subleading correction (the open
+Archimedean-mass-functor R&D that `flavor_split_subleading`'s own docstring
+already points to: "should be DERIVED from the 3-strand / 3-quark (spectator)
+categorical structure, not as an ℏ_q-power fit"). Until then the split should be
+DOCUMENTED where each side is used, not silently unified in either direction.

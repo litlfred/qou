@@ -58,7 +58,7 @@ from schur_weyl_symbolic import partitions_of  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     bring_color_weighted_linking_weight as bw,
     linking_weight_family_a,
-    flavor_split_subleading,
+    flavor_split_leading,
 )
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
@@ -91,7 +91,7 @@ def color_weight_perknot(Z: int, N: int) -> mp.mpf:
     """Base-free color weight (1 + δ·asym + δ²·sym) — the per-knot form
     committed in 2af340cd (any per-knot density base cancels identically,
     exactly as λ_A does)."""
-    delta = flavor_split_subleading(q0)
+    delta = flavor_split_leading(q0)
     A = Z + N
     asym = mp.mpf(N - Z) / (3 * A)
     sym = mp.mpf(2 * (2 * Z + N) * (Z + 2 * N)) / (9 * A * A)
@@ -116,7 +116,7 @@ def split_report(name: str, w: dict, B0: dict, need: mp.mpf) -> dict:
 
 
 def main() -> int:
-    delta = flavor_split_subleading(q0)
+    delta = flavor_split_leading(q0)
     lam_A = linking_weight_family_a(q0)
     print("=" * 88)
     print("  COLOR vs CHARGE (T−³He) — per-knot density re-run (bean x5az)")
