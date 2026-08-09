@@ -56,7 +56,11 @@ from q_parameter import Q as Q0, HBAR_Q
 def load_atom_braids() -> dict:
     """Build canonical braid words for D, T, ³He, ⁴He via the
     he4_compositional_braids helper + per-atom analogues."""
-    from probe_he4_jsj_topology import (
+    # Repointed 2026-08-09: these helpers moved to the live module
+    # `atom_braid_words` when `probe_he4_jsj_topology` was deprecated.
+    # `_path_bridge` skips `_deprecated/`, so the old import raised
+    # ImportError here at call time. Bodies are unchanged.
+    from atom_braid_words import (
         _proton_braid_word,
         _neutron_braid_word,
         he4_compositional_braids,

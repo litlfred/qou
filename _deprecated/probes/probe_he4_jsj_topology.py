@@ -20,6 +20,15 @@ depends on this convention.  Inverting averaged → σ⁻¹ would give a
 different (related by ambient isotopy in some cases) topology.
 
 Output: he4-jsj-topology.witness.json
+
+DEPRECATED — but note (2026-08-09): three helpers defined below
+(`hecke_word_to_braid_word`, `_proton_braid_word`, `_neutron_braid_word`,
+`he4_compositional_braids`) were still imported by two LIVE producers,
+`delta_lambda_jsj_phase3.py` and `delta_lambda_alexander_phase4.py`.
+`_path_bridge` skips `_deprecated/`, so those imports raised ImportError
+at call time. They now live in `computations/atom_braid_words.py`, which
+is the LIVE copy — change a convention THERE, not here. The copies below
+are frozen history for this SnapPy probe only.
 """
 from __future__ import annotations
 
