@@ -721,3 +721,10 @@ import QOU.BraidsAndKnots.DeltaLambdaJetOrderDegreeSelection
 import QOU.BraidsAndKnots.DeltaLambdaGradedConcentration
 import QOU.BraidsAndKnots.NStatConjugateGeneral
 import QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional
+-- qou-48is: the Φ_q transfer factors T(d) = S + d·1 all commute, so the chain
+-- product — and the readout V̂ = z·M₁₀ + M₁₁ — depends on the crossing
+-- coefficients ONLY as a multiset. Consequence: the two ³He arrangements ppn
+-- and pnp are EXACTLY degenerate on the bare nucleon chain, so rule (iii) of
+-- prop:ground-state-ordering is a tie there, not a strict win. Sorry-free,
+-- generic CommRing; derives no binding energy and no ordering.
+import QOU.MassTheory.TransferFactorCommute
