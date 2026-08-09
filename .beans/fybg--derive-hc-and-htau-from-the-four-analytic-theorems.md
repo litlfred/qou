@@ -855,3 +855,86 @@ approaching (not sitting at some other constant).
   2. `hc : c^2 |cot theta| = (2 sin theta)^2`, at `theta* = 5pi/6` reducing to
      `c^2 sqrt3 = 1`.
   3. `htau`.
+
+---
+
+## Step 8 -- the sharp Laplace sum (`QOU/MathlibExt/GaussianThetaBound.lean`)
+
+Five theorems, all `[propext, Classical.choice, Quot.sound]`. This is the
+first half of `qou-mlgp` gap (B) -- the half that says the Gaussian sum IS its
+integral, not merely `Theta` of it.
+
+    abs_tsum_gaussian_sub_sqrt_le :
+      | sum_{n in Z} e^{-a(n-c)^2}  -  sqrt(pi/a) |
+          <=  sqrt(pi/a) * 2q/(1-q),    q = e^{-pi^2/a}
+
+uniformly in the shift `c`. `GaussianThetaSum` already had the exact identity
+`sum = sqrt(pi/a) Re theta_2(-c, i pi/a)`; what was missing was the one
+estimate making it usable, `theta_2 = 1 + O(e^{-pi^2/a})`, which is
+`norm_jacobiTheta₂_sub_one_le`.
+
+The proof is Mathlib's own `norm_jacobiTheta₂_term_le` at `S = 0` -- the
+argument `-c` is real, so the theta series has no growth from the `z`
+direction, and THAT is what makes the bound uniform in `c` -- summed against a
+two-sided geometric series via `n^2 >= |n|`.
+
+Contrast with `GaussianSumBound`: `sum <= 1 + sqrt(pi/a)/2` is one-sided and
+carries an additive `1`; it proves `Theta(1/sqrt a)` and cannot see the
+constant. Step 8 has no additive slack at all and the relative error is
+exponential, not polynomial.
+
+### Where 3^(-1/4) comes from
+
+At `a = sqrt3 pi/N` (the Kashaev tail's exponent, `sqrt3 = Lambda''(5pi/6)`):
+
+    sqrt(pi/a) = sqrt(N/sqrt3) = N^(1/2) * 3^(-1/4)
+
+So `c_sigma = 3^(-1/4)` is not a separate fact to be derived -- it is the
+Gaussian width at the saddle, and the `3` is `Lambda''(5pi/6) = -cot(5pi/6)`.
+And the theta correction there is `e^{-pi N/sqrt3}` (probe part (iv):
+`1.1e-47` at N=60), so for the constant, replacing the sum by the integral is
+free. Everything that is lost is lost elsewhere.
+
+### Lean gotchas -- two, and both cost a cycle
+
+  * `HasSum.of_nat_of_neg` MUST be given `f` explicitly. Left to unification,
+    `?f (n:Z) =?= (if (n:Z) = 0 then 0 else q^(n:Z).natAbs)` is a higher-order
+    problem Lean searches at length: the step alone blew a 1000000-heartbeat
+    budget. With `(f := ...)` the whole theorem elaborates in 2.3s.
+  * `jacobiTheta₂_term 0 z tau = 1` costs more than 200000 heartbeats under
+    plain `simp`/`norm_num`, for no reason visible in the statement. Spelling
+    out the lemma list makes it instant.
+
+### A false "isolated success" -- worth recording
+
+While debugging the first gotcha I extracted the lemma to a scratch file, and
+`#print axioms` reported it CLEAN while the same text timed out in place. The
+scratch file had a failing `example` above it. **When an earlier declaration
+in a file errors, a later one can report clean axioms without having been
+checked.** Re-testing with the failing example deleted showed the timeout.
+Lesson: an axiom check is only evidence if the file it ran in is error-free.
+
+### Probe
+
+`computations/probes/gaussian_theta_bound_probe.py` -- all assertions pass.
+(i) the theta bound at four `a` and four `c`, including the check that it is
+NEAR-ATTAINED at `c = 0` (ratio 0.9999 at `a = 1`) so it cannot be dismissed as
+loose; (ii) the Laplace sum against its integral; (iii) `c = 1/2`, the worst
+shift, where the correction changes sign; (iv) the Kashaev regime.
+
+Part (ii)'s `a = 0.05` rows report `noise`, not `ok`: there the true difference
+is below mp roundoff at 60 digits, so the comparison against the bound is
+vacuous and only the tolerance made it pass. They assert instead that the sum
+is indistinguishable from the integral at working precision. Reporting `ok`
+would have been reporting a check that did not happen.
+
+### Remaining before `hc`
+
+Gap (B)'s SECOND half, which step 8 does not touch: uniform two-sided control
+of `g_{k*+d}/g_{k*}` against `e^{-a d^2}` for `|d| <~ N^{0.6}`, so that the
+Kashaev sum can be replaced by the Gaussian sum in the first place. Step 6
+(`log_kashaevProd_asymptotic`, error `O(1/N^2)` uniformly) is a much stronger
+tool for this than step 5's one-sided tangent/secant bounds -- the ratio's
+expansion is `-sqrt3 pi d^2/N + O(d^3/N^2) + O(1/N^2)` plus a linear term
+`O(d/N)` from `Lambda'(theta_{k*}) != 0` (it vanishes only at exactly `5pi/6`).
+Then `hc`, then `htau`.

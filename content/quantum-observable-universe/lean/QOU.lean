@@ -352,6 +352,7 @@ import QOU.MathlibExt.CompositeEulerMaclaurin
 import QOU.MathlibExt.SinCubeBounds
 import QOU.MathlibExt.TaylorRemainder
 import QOU.MathlibExt.GaussianSumBound
+import QOU.MathlibExt.GaussianThetaBound
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm
