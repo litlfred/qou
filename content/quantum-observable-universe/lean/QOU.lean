@@ -736,3 +736,12 @@ import QOU.MassTheory.NucleonOrderingSymmetry
 -- explicit strictly-better arrangement at A=5 (sorted pnnnn beats the prescribed
 -- npnnn on BOTH readouts), proved for an interval of q containing the anchor.
 import QOU.MassTheory.GroundStateOrderingRefutation
+-- qou-prjo (PR: germ gauge covariance): the germ q-curvature F_q = [dq_i, dq_j]
+-- is NOT gauge-covariant (connection law, concrete nonzero defect witness), so
+-- the transverse NA-Stokes Omega_2 has no basis-independent value; the covariant
+-- second-order object (the cup square) is identically a coboundary.
+import QOU.MassTheory.GermConnectionGaugeCovariance
+-- qou-prjo (doc-currency): PR #4848 / #4849's Lean files were never registered
+-- here, so nothing built them. Both verify lean-direct exit 0.
+import QOU.MassTheory.GermRootVectorGaugeFixing
+import QOU.MassTheory.TransversePairingClusterDecomposition
