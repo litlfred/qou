@@ -113,7 +113,7 @@ theorem inv (hD : IsDeriv D) (u : Rˣ) :
   have h := hD.leibniz ((u : R)) (((u⁻¹ : Rˣ) : R))
   rw [Units.mul_inv, hD.map_one] at h
   have h3 : (u : R) * D ((u⁻¹ : Rˣ) : R) = -(D (u : R) * ((u⁻¹ : Rˣ) : R)) :=
-    eq_neg_of_add_eq_zero_left h.symm
+    eq_neg_of_add_eq_zero_right h.symm
   calc D ((u⁻¹ : Rˣ) : R)
       = ((u⁻¹ : Rˣ) : R) * ((u : R) * D ((u⁻¹ : Rˣ) : R)) := by
         rw [← mul_assoc, Units.inv_mul, one_mul]
@@ -147,6 +147,27 @@ theorem adAct_curvComm (u : Rˣ) (x y : R) :
     adAct u (curvComm x y) = curvComm (adAct u x) (adAct u y) := by
   simp only [curvComm, adAct_sub, adAct_mul]
 
+theorem adAct_neg (u : Rˣ) (x : R) : adAct u (-x) = -adAct u x := by
+  simp only [adAct, neg_mul, mul_neg]
+
+theorem adAct_one (x : R) : adAct (1 : Rˣ) x = x := by
+  simp [adAct]
+
+theorem adAct_comp (b u : Rˣ) (x : R) : adAct (b * u) x = adAct b (adAct u x) := by
+  have hval : ((b * u : Rˣ) : R) = (b : R) * (u : R) := rfl
+  have hinv : (((b * u)⁻¹ : Rˣ) : R) = ((u⁻¹ : Rˣ) : R) * ((b⁻¹ : Rˣ) : R) := by
+    rw [mul_inv_rev]; rfl
+  simp only [adAct, hval, hinv]
+  noncomm_ring
+
+theorem adAct_inv_adAct (b : Rˣ) (x : R) : adAct b⁻¹ (adAct b x) = x := by
+  rw [← adAct_comp, inv_mul_cancel, adAct_one]
+
+/-- Conjugation is injective, so an identity of conjugates descends. -/
+theorem adAct_injective (b : Rˣ) {x y : R} (h : adAct b x = adAct b y) : x = y := by
+  have h' := congrArg (adAct b⁻¹) h
+  rwa [adAct_inv_adAct, adAct_inv_adAct] at h'
+
 /-- The **germ** (right logarithmic derivative) of a unit:
     `α(u) = (D u) u⁻¹`. Substrate reading: `δq_i = q (∂_q ρ(σ_i)) ρ(σ_i)⁻¹`. -/
 def germ (D : R → R) (u : Rˣ) : R := D (u : R) * ((u⁻¹ : Rˣ) : R)
@@ -179,6 +200,19 @@ def gaugePotential (D : R → R) (b : Rˣ) : R := ((b⁻¹ : Rˣ) : R) * D (b : 
 def gaugeShift (D : R → R) (b u : Rˣ) : R :=
     gaugePotential D b - adAct u (gaugePotential D b)
 
+/-- `α(b) = Ad(b) Θ` — the germ of the gauge element is its own potential,
+    conjugated. -/
+theorem germ_eq_adAct_gaugePotential {D : R → R} (b : Rˣ) :
+    germ D b = adAct b (gaugePotential D b) := by
+  simp only [germ, adAct, gaugePotential]
+  rw [← mul_assoc, Units.mul_inv, one_mul]
+
+/-- `α(b⁻¹) = −Θ`. -/
+theorem germ_inv {D : R → R} (hD : IsDeriv D) (b : Rˣ) :
+    germ D b⁻¹ = -gaugePotential D b := by
+  simp only [germ, gaugePotential, hD.inv b, inv_inv]
+  rw [neg_mul, mul_assoc, Units.inv_mul, mul_one]
+
 /-- **THE CONNECTION LAW.**
 
     Under the change of trivialisation `u ↦ b u b⁻¹` (a `q`-dependent change of
@@ -191,48 +225,10 @@ def gaugeShift (D : R → R) (b u : Rˣ) : R :=
     basis are both `q`-dependent, and differ by such a `b`. -/
 theorem germ_conj {D : R → R} (hD : IsDeriv D) (b u : Rˣ) :
     germ D (b * u * b⁻¹) = adAct b (germ D u + gaugeShift D b u) := by
-  have hb : ((b⁻¹ : Rˣ) : R) * (b : R) = 1 := Units.inv_mul b
-  have hbu : (b : R) * ((b⁻¹ : Rˣ) : R) = 1 := Units.mul_inv b
-  have h1 : germ D (b * u) = germ D b + adAct b (germ D u) := germ_mul hD b u
-  have h2 : germ D (b * u * b⁻¹) = germ D (b * u) + adAct (b * u) (germ D b⁻¹) :=
-    germ_mul hD (b * u) b⁻¹
-  -- `α(b⁻¹) = −Ad(b⁻¹) α(b)`, i.e. `Ad(b*u) α(b⁻¹) = −Ad(b u b⁻¹) α(b)`.
-  have h3 : germ D (b⁻¹ : Rˣ) = -(((b⁻¹ : Rˣ) : R) * D (b : R) * (b : R) *
-      ((b⁻¹ : Rˣ) : R)) := by
-    simp only [germ, hD.inv b, inv_inv]
-    rw [neg_mul]
-  rw [h2, h1, h3]
-  simp only [adAct, gaugeShift, gaugePotential, germ]
-  have hval : ((b * u : Rˣ) : R) = (b : R) * (u : R) := rfl
-  have hinv : (((b * u)⁻¹ : Rˣ) : R) = ((u⁻¹ : Rˣ) : R) * ((b⁻¹ : Rˣ) : R) := by
-    rw [mul_inv_rev]; rfl
-  rw [hval, hinv]
-  calc D (b : R) * ((b⁻¹ : Rˣ) : R) +
-        (b : R) * (D (u : R) * ((u⁻¹ : Rˣ) : R)) * ((b⁻¹ : Rˣ) : R) +
-        (b : R) * (u : R) *
-          (-(((b⁻¹ : Rˣ) : R) * D (b : R) * (b : R) * ((b⁻¹ : Rˣ) : R))) *
-          (((u⁻¹ : Rˣ) : R) * ((b⁻¹ : Rˣ) : R))
-      = (b : R) * (D (u : R) * ((u⁻¹ : Rˣ) : R)) * ((b⁻¹ : Rˣ) : R)
-        + (b : R) * (((b⁻¹ : Rˣ) : R) * D (b : R)) * ((b⁻¹ : Rˣ) : R)
-        - (b : R) * ((u : R) * (((b⁻¹ : Rˣ) : R) * D (b : R)) *
-            ((u⁻¹ : Rˣ) : R)) * ((b⁻¹ : Rˣ) : R) := by
-        rw [← mul_assoc (b : R) (((b⁻¹ : Rˣ) : R)) (D (b : R)), hbu, one_mul]
-        have hcancel : (b : R) * (u : R) *
-            (-(((b⁻¹ : Rˣ) : R) * D (b : R) * (b : R) * ((b⁻¹ : Rˣ) : R))) *
-            (((u⁻¹ : Rˣ) : R) * ((b⁻¹ : Rˣ) : R))
-            = -((b : R) * ((u : R) * (((b⁻¹ : Rˣ) : R) * D (b : R)) *
-                ((u⁻¹ : Rˣ) : R)) * ((b⁻¹ : Rˣ) : R)) := by
-          rw [show ((b⁻¹ : Rˣ) : R) * D (b : R) * (b : R) * ((b⁻¹ : Rˣ) : R)
-              = ((b⁻¹ : Rˣ) : R) * D (b : R) * ((b : R) * ((b⁻¹ : Rˣ) : R)) from by
-                noncomm_ring, hbu, mul_one]
-          noncomm_ring
-        rw [hcancel]
-        noncomm_ring
-    _ = (b : R) * (D (u : R) * ((u⁻¹ : Rˣ) : R) +
-          (((b⁻¹ : Rˣ) : R) * D (b : R) -
-            (u : R) * (((b⁻¹ : Rˣ) : R) * D (b : R)) * ((u⁻¹ : Rˣ) : R))) *
-          ((b⁻¹ : Rˣ) : R) := by
-        noncomm_ring
+  rw [germ_mul hD (b * u) b⁻¹, germ_mul hD b u, germ_inv hD b, adAct_comp,
+    germ_eq_adAct_gaugePotential (D := D) b, gaugeShift]
+  simp only [adAct_neg, adAct_add, adAct_sub]
+  abel
 
 /-! ## 4. The germ curvature is NOT a tensor -/
 
@@ -263,12 +259,7 @@ theorem germCurvature_covariant_iff {D : R → R} (hD : IsDeriv D) (b u v : Rˣ)
       ↔ gaugeDefect D b u v = 0 := by
   rw [germCurvature_conj hD]
   constructor
-  · intro h
-    have h1 : germCurvature D u v + gaugeDefect D b u v = germCurvature D u v := by
-      have := congrArg (fun x => ((b⁻¹ : Rˣ) : R) * x * (b : R)) h
-      simpa only [adAct, ← mul_assoc, Units.inv_mul, one_mul, mul_assoc,
-        Units.inv_mul, mul_one] using this
-    exact add_eq_left.mp h1
+  · intro h; exact add_eq_left.mp (adAct_injective b h)
   · intro h; rw [h, add_zero]
 
 /-! ## 5. The pairing inherits the failure exactly -/
@@ -298,12 +289,7 @@ theorem transversePairing_covariant_iff (b : Rˣ) (l l' : List R) :
     listPairing (l'.map (adAct b)) = adAct b (listPairing l)
       ↔ listPairing l' = listPairing l := by
   rw [listPairing_map_adAct]
-  constructor
-  · intro h
-    have := congrArg (fun x => ((b⁻¹ : Rˣ) : R) * x * (b : R)) h
-    simpa only [adAct, ← mul_assoc, Units.inv_mul, one_mul, mul_assoc,
-      Units.inv_mul, mul_one] using this
-  · intro h; rw [h]
+  exact ⟨fun h => adAct_injective b h, fun h => by rw [h]⟩
 
 /-! ## 6. The defect is not identically zero — a concrete witness -/
 
@@ -361,23 +347,23 @@ theorem gaugePotential_uW : gaugePotential dW uW = !![0, 1; 0, 0] := by
     simp [gaugePotential, uW, dW, Matrix.map_apply, Matrix.mul_apply, Fin.sum_univ_two]
 
 theorem gaugeShift_uW_uW : gaugeShift dW uW uW = 0 := by
+  simp only [gaugeShift, gaugePotential_uW, adAct]
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [gaugeShift, gaugePotential_uW, adAct, uW, Matrix.mul_apply,
-      Fin.sum_univ_two] <;> ring
+    simp [uW, Matrix.mul_apply, Fin.sum_univ_two]
 
-theorem gaugeShift_uW_vW : gaugeShift dW uW vW = !![X, 0; X ^ 2, -X] := by
+theorem gaugeShift_uW_vW : gaugeShift dW uW vW = !![X, 0; X * X, -X] := by
+  simp only [gaugeShift, gaugePotential_uW, adAct]
   ext i j
   fin_cases i <;> fin_cases j <;>
-    simp [gaugeShift, gaugePotential_uW, adAct, vW, Matrix.mul_apply,
-      Fin.sum_univ_two] <;> ring
+    simp [vW, Matrix.mul_apply, Fin.sum_univ_two] <;> ring
 
 /-- **THE WITNESS.** With the gauge `b = u` (a genuinely `X`-dependent basis
     change: `D b ≠ 0`), the covariance defect of the germ curvature is the
     explicit nonzero matrix `!![X², −2X; 0, −X²]`. -/
 theorem gaugeDefect_witness :
-    gaugeDefect dW uW uW vW = !![X ^ 2, -(2 * X); 0, -X ^ 2] := by
-  rw [gaugeDefect, gaugeShift_uW_uW, gaugeShift_uW_vW, germ_uW, germ_vW]
+    gaugeDefect dW uW uW vW = !![X * X, -(2 * X); 0, -(X * X)] := by
+  simp only [gaugeDefect, gaugeShift_uW_uW, gaugeShift_uW_vW, germ_uW, germ_vW]
   ext i j
   fin_cases i <;> fin_cases j <;>
     simp [curvComm, Matrix.mul_apply, Fin.sum_univ_two] <;> ring
@@ -390,17 +376,15 @@ theorem gaugeDefect_witness :
     `F_q = ⟦δq_i, δq_j⟧` has no basis-independent value, so neither does
     `Ω₂ = Σ J ⟦𝓕, 𝓕⟧` nor any norm of it. -/
 theorem gaugeDefect_ne_zero : gaugeDefect dW uW uW vW ≠ 0 := by
+  rw [gaugeDefect_witness]
   intro h
-  rw [gaugeDefect_witness] at h
   have h00 := congrFun (congrFun h 0) 0
   simp at h00
-  exact (pow_ne_zero 2 (Polynomial.X_ne_zero (R := ℚ))) h00
 
 theorem germCurvature_not_covariant :
     germCurvature dW (uW * uW * uW⁻¹) (uW * vW * uW⁻¹)
-      ≠ adAct uW (germCurvature dW uW vW) := by
-  rw [germCurvature_covariant_iff isDeriv_dW]
-  exact gaugeDefect_ne_zero
+      ≠ adAct uW (germCurvature dW uW vW) := fun h =>
+  gaugeDefect_ne_zero ((germCurvature_covariant_iff isDeriv_dW uW uW vW).mp h)
 
 end Witness
 
@@ -418,35 +402,34 @@ def coboundary (β : Rˣ → R) (u v : Rˣ) : R := adAct u (β v) - β (u * v) +
 /-- The **second germ** `β = D ∘ α`. Substrate reading: `q ∂_q (q ∂_q ρ · ρ⁻¹)`. -/
 def secondGerm (D : R → R) (u : Rˣ) : R := D (germ D u)
 
+/-- **A derivation fails to commute with the adjoint action by exactly one
+    bracket against the germ**: `D(Ad_u x) = Ad_u(D x) + ⟦α(u), Ad_u x⟧`. This
+    single identity is what makes the cup square a coboundary. -/
+theorem D_adAct {D : R → R} (hD : IsDeriv D) (u : Rˣ) (x : R) :
+    D (adAct u x) = adAct u (D x) + curvComm (germ D u) (adAct u x) := by
+  have hu : ((u⁻¹ : Rˣ) : R) * (u : R) = 1 := Units.inv_mul u
+  simp only [adAct, curvComm, germ]
+  rw [hD.leibniz, hD.leibniz, hD.inv u]
+  rw [show (D (u : R) * ((u⁻¹ : Rˣ) : R)) *
+        ((u : R) * x * ((u⁻¹ : Rˣ) : R))
+      = D (u : R) * x * ((u⁻¹ : Rˣ) : R) from by
+      rw [show (D (u : R) * ((u⁻¹ : Rˣ) : R)) * ((u : R) * x * ((u⁻¹ : Rˣ) : R))
+          = D (u : R) * (((u⁻¹ : Rˣ) : R) * (u : R)) * x * ((u⁻¹ : Rˣ) : R) from by
+          noncomm_ring, hu, mul_one]]
+  noncomm_ring
+
 /-- The second germ fails the cocycle law by exactly the cup square. -/
 theorem secondGerm_mul {D : R → R} (hD : IsDeriv D) (u v : Rˣ) :
     secondGerm D (u * v)
       = secondGerm D u + adAct u (secondGerm D v) + cupSq D u v := by
-  have hb : ((u⁻¹ : Rˣ) : R) * (u : R) = 1 := Units.inv_mul u
-  simp only [secondGerm, germ_mul hD, hD.map_add, adAct, cupSq, curvComm, germ]
-  rw [hD.leibniz, hD.leibniz, hD.inv u]
-  simp only [germ]
-  calc D (u : R) * ((u⁻¹ : Rˣ) : R) +
-        (D (u : R) * (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R)
-          + (u : R) * (D (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R)
-            + (D (v : R) * ((v⁻¹ : Rˣ) : R)) *
-              (-(((u⁻¹ : Rˣ) : R) * D (u : R) * ((u⁻¹ : Rˣ) : R)))))
-      = D (u : R) * ((u⁻¹ : Rˣ) : R)
-        + (u : R) * D (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R)
-        + ((D (u : R) * ((u⁻¹ : Rˣ) : R)) *
-            ((u : R) * (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R))
-          - ((u : R) * (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R)) *
-            (D (u : R) * ((u⁻¹ : Rˣ) : R))) := by
-        rw [show (D (u : R) * (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R))
-            = (D (u : R) * ((u⁻¹ : Rˣ) : R)) *
-              ((u : R) * (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R)) from by
-              rw [show (D (u : R) * ((u⁻¹ : Rˣ) : R)) *
-                    ((u : R) * (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R))
-                  = D (u : R) * (((u⁻¹ : Rˣ) : R) * (u : R)) *
-                    (D (v : R) * ((v⁻¹ : Rˣ) : R)) * ((u⁻¹ : Rˣ) : R) from by
-                    noncomm_ring, hb, mul_one]
-              noncomm_ring]
-        noncomm_ring
+  calc secondGerm D (u * v) = D (germ D u + adAct u (germ D v)) := by
+        rw [secondGerm, germ_mul hD]
+    _ = D (germ D u) + D (adAct u (germ D v)) := hD.map_add _ _
+    _ = D (germ D u)
+          + (adAct u (D (germ D v)) + curvComm (germ D u) (adAct u (germ D v))) := by
+        rw [D_adAct hD]
+    _ = secondGerm D u + adAct u (secondGerm D v) + cupSq D u v := by
+        simp only [secondGerm, cupSq]; abel
 
 /-- **THE COVARIANT SECOND-ORDER OBJECT IS A COBOUNDARY.**
 
