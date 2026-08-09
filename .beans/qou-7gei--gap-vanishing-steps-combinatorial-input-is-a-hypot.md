@@ -241,3 +241,64 @@ items high and the combinatorial item low, and the reverse was true. Item 1 fell
 to the (2,0) reduction, items 3 and 4 fell to simply defining the weights. Item
 2, which I listed as routine, is the one still standing. Do not carry the
 original ordering into planning.
+
+## UPDATE 3 -- ITEM 2 DONE. All four hypotheses discharged.
+
+  [x] 2. hpred INSTANTIATED on real Young diagrams. QOU.Mathlib.youngPred and
+         QOU.Mathlib.threeRow_vanishing_all_levels, sorry-free, axioms clean.
+         vanishing_step_dom and vanishing_all_levels_dom depend on NO AXIOMS.
+
+### THE OBSTACLE, and how it was dissolved rather than solved
+
+The blocker was NOT the combinatorics. It was that `vanishing_step` summed over
+a `Finset (Shape (n+1))`, and instantiating that on Young diagrams needs
+`Fintype {mu : YoungDiagram // mu.cells.card = n}` -- which Mathlib does not
+have and which is a genuine piece of work.
+
+It is not needed. The induction never uses the SUM; it uses only the
+consequence that each cover's weight is at most its parent's:
+
+    Cov n m l  ->  y[n+1] l <= y[n] m
+
+which follows from branching plus nonnegativity in one line
+(`dominates_of_branching`, via Finset.single_le_sum) and which makes `Cov` a
+bare Prop. No finiteness, no Finset, no decidability, same conclusion. New
+theorems vanishing_step_dom / vanishing_all_levels_dom.
+
+WEAKER HYPOTHESES PROVING THE SAME THING was the whole trick. Worth remembering:
+when an abstraction demands machinery, check whether the proof actually uses the
+part that demands it.
+
+Shapes are written INLINE as {mu : YoungDiagram // mu.cells.card = n} rather
+than behind a def, so subtype projections stay definitionally transparent and no
+unfolding lemmas are needed.
+
+### WHERE THE FOUR HYPOTHESES NOW COME FROM
+
+  hpred    QOU.Mathlib.youngPred                    (this bean, items 1 + 2)
+  hnn      TemperleyLiebTower.yw_nonneg             (item 4)
+  hdom     TemperleyLiebTower.dominates_of_branching applied to yw_branching
+                                                    (item 3)
+  base     TemperleyLiebTower.conventionD_kills_antisymmetriser  (qou-u2jg)
+
+### WHAT IS STILL NOT DONE -- do not overstate this
+
+threeRow_vanishing_all_levels is stated FOR AN ARBITRARY weight function y
+satisfying the four hypotheses. Wiring the framework's ACTUAL y_lambda into it
+requires indexing the closed form yw q n m by Young diagrams rather than by the
+integer m = n - 2k + 1, i.e. a map from two-row shapes to m. That is the last
+piece of glue and it is not written. So:
+
+  * the ARGUMENT is complete and every step of it is machine-checked;
+  * the CHAIN from conventionD_kills_antisymmetriser to "y_lambda = 0 for all
+    >= 3-row lambda at all n" is not yet a single Lean term.
+
+Say it that way in exposition. "Wenzl is a corollary, not a citation" is now
+true of the argument AND of every individual step, but the steps are not yet
+composed into one theorem about the framework's own weights.
+
+### A PROCESS NOTE
+
+I hit the `omit ... in` placement trap AGAIN -- it must precede the DOCSTRING,
+not sit between docstring and theorem. That is twice in one session on a rule I
+had already written down. The comment is now in the source at both sites.

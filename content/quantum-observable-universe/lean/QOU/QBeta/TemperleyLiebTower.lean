@@ -630,6 +630,86 @@ theorem vanishing_all_levels {Shape : ℕ → Type*}
       intro l hl
       exact vanishing_step y covers rows hnn hbranch hpred (n₀ + k) ih l hl
 
+/-! ### The domination form — the same induction without any `Finset`
+
+`vanishing_step` above sums over a `Finset` of covers. Instantiating it on real
+Young diagrams therefore needs `Fintype {μ : YoungDiagram // μ.card = n}`, which
+Mathlib does not have and which is a genuine piece of work to build.
+
+It is not needed. The induction never uses the *sum*; it uses only the
+consequence that **each cover's weight is at most its parent's** —
+
+    Cov n m l  →  y[n+1] l ≤ y[n] m,
+
+which follows from branching plus nonnegativity in one line
+(`dominates_of_branching`) and which makes `Cov` a bare `Prop`. No finiteness,
+no `Finset`, no decidability. The conclusion is unchanged.
+
+Weaker hypotheses proving the same thing is the right trade here, and it is what
+lets bean `qou-7gei` item 2 close against
+`QOU.Mathlib.exists_threeRow_corner` directly.
+-/
+
+section Domination
+
+variable {R : Type*} [AddCommMonoid R] [PartialOrder R] [CovariantClass R R (· + ·) (· ≤ ·)]
+
+/-- **A cover's weight is at most its parent's.** From `Σ_{l ∈ s} y l = y m` and
+nonnegativity: every other term is `≥ 0`, so the singled-out one cannot exceed
+the total. This is the only consequence of branching the induction needs. -/
+theorem dominates_of_branching {ι : Type*} (s : Finset ι) (y : ι → R) (total : R)
+    (hnn : ∀ i ∈ s, 0 ≤ y i) (hsum : ∑ i ∈ s, y i = total)
+    {i : ι} (hi : i ∈ s) : y i ≤ total :=
+  hsum ▸ Finset.single_le_sum hnn hi
+
+omit [CovariantClass R R (· + ·) (· ≤ ·)] in
+/-- **One level of propagation, `Finset`-free.**
+
+If every `≥ 3`-row weight vanishes at level `n`, each cover is dominated by its
+parent, and every `≥ 3`-row shape at `n+1` covers some `≥ 3`-row shape at `n`,
+then every `≥ 3`-row weight vanishes at `n+1`. -/
+theorem vanishing_step_dom {Shape : ℕ → Type*}
+    (y : ∀ n, Shape n → R) (Cov : ∀ n, Shape n → Shape (n + 1) → Prop)
+    (rows : ∀ n, Shape n → ℕ)
+    (hnn : ∀ n (l : Shape (n + 1)), 0 ≤ y (n + 1) l)
+    (hdom : ∀ n (m : Shape n) (l : Shape (n + 1)), Cov n m l → y (n + 1) l ≤ y n m)
+    (n : ℕ)
+    (hpred : ∀ l : Shape (n + 1), 3 ≤ rows (n + 1) l →
+      ∃ m : Shape n, 3 ≤ rows n m ∧ Cov n m l)
+    (hvan : ∀ m : Shape n, 3 ≤ rows n m → y n m = 0)
+    (l : Shape (n + 1)) (hl : 3 ≤ rows (n + 1) l) :
+    y (n + 1) l = 0 := by
+  obtain ⟨m, hm3, hcov⟩ := hpred l hl
+  have hle : y (n + 1) l ≤ y n m := hdom n m l hcov
+  rw [hvan m hm3] at hle
+  exact le_antisymm hle (hnn n l)
+
+omit [CovariantClass R R (· + ·) (· ≤ ·)] in
+/-- **…hence at every level above the base**, `Finset`-free.
+
+The `hpred` here carries an `n₀ ≤ n` guard, because the combinatorial fact is
+false at `n + 1 = 3`: `(1³)` covers only `(1²)`, which has two rows. That single
+exception is why the base is `n₀ = 3` and not lower, and the guard is what lets
+the concrete Young-diagram instantiation supply the `4 ≤ card` it needs. -/
+theorem vanishing_all_levels_dom {Shape : ℕ → Type*}
+    (y : ∀ n, Shape n → R) (Cov : ∀ n, Shape n → Shape (n + 1) → Prop)
+    (rows : ∀ n, Shape n → ℕ) (n₀ : ℕ)
+    (hnn : ∀ n (l : Shape (n + 1)), 0 ≤ y (n + 1) l)
+    (hdom : ∀ n (m : Shape n) (l : Shape (n + 1)), Cov n m l → y (n + 1) l ≤ y n m)
+    (hpred : ∀ n, n₀ ≤ n → ∀ l : Shape (n + 1), 3 ≤ rows (n + 1) l →
+      ∃ m : Shape n, 3 ≤ rows n m ∧ Cov n m l)
+    (base : ∀ m : Shape n₀, 3 ≤ rows n₀ m → y n₀ m = 0) :
+    ∀ k : ℕ, ∀ l : Shape (n₀ + k), 3 ≤ rows (n₀ + k) l → y (n₀ + k) l = 0 := by
+  intro k
+  induction k with
+  | zero => exact base
+  | succ k ih =>
+      intro l hl
+      exact vanishing_step_dom y Cov rows hnn hdom (n₀ + k)
+        (hpred (n₀ + k) (Nat.le_add_right n₀ k)) ih l hl
+
+end Domination
+
 end Propagation
 
 section RadicalIsIdeal

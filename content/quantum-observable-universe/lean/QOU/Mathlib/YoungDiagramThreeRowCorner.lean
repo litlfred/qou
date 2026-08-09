@@ -1,5 +1,6 @@
 import QOU.Mathlib.YoungDiagramCorner
 import Mathlib.Tactic.IntervalCases
+import QOU.QBeta.TemperleyLiebTower
 
 /-!
 # A removable corner that preserves "at least three rows"
@@ -162,5 +163,75 @@ theorem exists_threeRow_corner (μ : YoungDiagram)
       exact key _ _ (by simp)
   · -- case 1: the last-row corner already differs from `(2,0)`
     exact ⟨_, hlast, key _ hlast hcase⟩
+
+/-! ## Instantiating the propagation — bean `qou-7gei` item 2
+
+`QOU.QBeta.TemperleyLiebTower.vanishing_all_levels_dom` is stated on abstract
+`Shape`, `Cov` and `rows`, with the combinatorial predecessor fact as a
+hypothesis. Here that hypothesis is discharged on real Young diagrams, so the
+propagation is no longer conditional on it.
+
+Shapes are `{μ : YoungDiagram // μ.cells.card = n}` — written inline rather than
+behind a `def`, so subtype projections stay definitionally transparent and no
+unfolding lemmas are needed. `Cov` is the *converse* of corner removal: `l`
+covers `m` when deleting some removable corner of `l` gives `m`. `rows` is
+`colLen 0`.
+
+Note what this deliberately avoids. Phrasing covers as a `Finset (Shape (n+1))`
+would need `Fintype {μ : YoungDiagram // μ.cells.card = n}`, which Mathlib does
+not provide and which is real work to build. The domination form of the
+induction never sums, so `Cov` can be a bare `Prop` and the finiteness question
+never arises. -/
+
+/-- **The predecessor fact, on Young diagrams of a given size.**
+
+Every shape of size `n+1` with at least three rows covers a shape of size `n`
+with at least three rows, provided `3 ≤ n`. This is `hpred` of
+`vanishing_all_levels_dom`, discharged.
+
+The `3 ≤ n` guard is exactly the `4 ≤ card` of `exists_threeRow_corner`, and it
+is load-bearing: at `n = 2` the shape `(1³)` of size 3 covers only `(1²)`, which
+has two rows. That is the base case of the induction, not a step. -/
+theorem youngPred (n : ℕ) (hn : 3 ≤ n)
+    (l : {μ : YoungDiagram // μ.cells.card = n + 1}) (hl : 3 ≤ l.val.colLen 0) :
+    ∃ m : {μ : YoungDiagram // μ.cells.card = n}, 3 ≤ m.val.colLen 0 ∧
+      ∃ c, ∃ hc : IsCornerCell l.val c, eraseCorner l.val c hc = m.val := by
+  have hcard : 4 ≤ l.val.cells.card := by rw [l.property]; omega
+  obtain ⟨c, hc, hrows⟩ := exists_threeRow_corner l.val hl hcard
+  have hcard' : (eraseCorner l.val c hc).cells.card = n := by
+    have h := card_eraseCorner l.val c hc
+    rw [l.property] at h
+    omega
+  exact ⟨⟨eraseCorner l.val c hc, hcard'⟩, hrows, ⟨c, hc, rfl⟩⟩
+
+/-- **The propagation, with every combinatorial hypothesis discharged.**
+
+If the weights are nonnegative, each cover is dominated by its parent, and all
+`≥ 3`-row weights vanish at three strands, then they vanish at every level
+above. Nothing here is assumed about Young diagrams — `youngPred` supplies it.
+
+The two remaining hypotheses are the *analytic* ones and both are proved
+elsewhere on this branch for the actual Markov weights: `hnn` from
+`TemperleyLiebTower.yw_nonneg`, and `hdom` from
+`TemperleyLiebTower.dominates_of_branching` applied to `yw_branching`. The base
+case is `conventionD_kills_antisymmetriser`.
+
+So the `≥ 3`-row vanishing at all `n ≥ 3` now rests on the `n = 3` pinning plus
+proved facts, with no appeal to Wenzl's theorem. -/
+theorem threeRow_vanishing_all_levels {R : Type*} [AddCommMonoid R] [PartialOrder R]
+    [CovariantClass R R (· + ·) (· ≤ ·)]
+    (y : ∀ n, {μ : YoungDiagram // μ.cells.card = n} → R)
+    (hnn : ∀ n (l : {μ : YoungDiagram // μ.cells.card = n + 1}), 0 ≤ y (n + 1) l)
+    (hdom : ∀ n (m : {μ : YoungDiagram // μ.cells.card = n})
+      (l : {μ : YoungDiagram // μ.cells.card = n + 1}),
+      (∃ c, ∃ hc : IsCornerCell l.val c, eraseCorner l.val c hc = m.val) →
+        y (n + 1) l ≤ y n m)
+    (base : ∀ m : {μ : YoungDiagram // μ.cells.card = 3}, 3 ≤ m.val.colLen 0 → y 3 m = 0) :
+    ∀ k : ℕ, ∀ l : {μ : YoungDiagram // μ.cells.card = 3 + k},
+      3 ≤ l.val.colLen 0 → y (3 + k) l = 0 :=
+  QOU.QBeta.TemperleyLiebTower.vanishing_all_levels_dom
+    y (fun _ m l => ∃ c, ∃ hc : IsCornerCell l.val c, eraseCorner l.val c hc = m.val)
+    (fun _ m => m.val.colLen 0) 3 hnn hdom
+    (fun n hn l hl => youngPred n hn l hl) base
 
 end QOU.Mathlib
