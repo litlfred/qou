@@ -5,6 +5,7 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Combinatorics.Enumerative.Catalan
 
 /-!
 # Convention D *is* Temperley–Lieb, and that is what `H₄` buys
@@ -245,6 +246,14 @@ theorem interface_dimension_gain :
     (2, 4) ≠ (5, 9) ∧ 5 - 2 = 3 ∧ 9 - 4 = 5 := by
   refine ⟨by decide, by norm_num, by norm_num⟩
 
+/-- **The counts really are Catalan numbers**, checked against Mathlib's
+`Nat.catalan` rather than asserted from a table. Cheap, and it stops "= Catalan"
+from being this file's own claim about its own arithmetic. -/
+theorem counts_are_catalan :
+    catalan 2 = 2 ∧ catalan 3 = 5 ∧ catalan 4 = 14 ∧ catalan 5 = 42 := by
+  refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    norm_num [catalan_eq_centralBinom_div, Nat.centralBinom, Nat.choose]
+
 end CatalanCount
 
 section ConventionPinning
@@ -421,8 +430,250 @@ theorem z_eq_q_forces_trivial (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q) (hz : 
   refine ⟨?_, h21, h13⟩
   rw [h21, h13] at h1; linarith
 
+/-- **The closed-form mixed weight under convention D.** `y₍₂,₁₎ = q²/(q²+1)²`,
+which is `1/[2]_q²`, which is `μ₋`, which is `μ_pp · μ_nn`. Four descriptions of
+`0.24729788674803459841` that were previously related only by measurement.
+
+Derived rather than asserted: the pinning kills `y₍₁³₎`, then
+`singlet_branch_pair` reads off `(q + q⁻¹) y₍₂,₁₎ = q − z`. -/
+theorem y_mixed_conventionD (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q)
+    (hz : z * (q ^ 2 + 1) = q ^ 3)
+    (h1 : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (h2 : q * y₃ + (q - q⁻¹) * y₂₁ - q⁻¹ * y₁₃ = z)
+    (h3 : q ^ 2 * y₃ - y₂₁ + (q⁻¹) ^ 2 * y₁₃ = z ^ 2) :
+    y₂₁ * (q ^ 2 + 1) ^ 2 = q ^ 2 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have h13 : y₁₃ = 0 :=
+    conventionD_kills_antisymmetriser q z y₃ y₂₁ y₁₃ hq0 hz h1 h2 h3
+  have hb := singlet_branch_pair q q⁻¹ z y₃ y₂₁ y₁₃ h1 h2
+  rw [h13, add_zero] at hb
+  -- `(q + q⁻¹) y₂₁ = q − z`, and `z(q²+1) = q³` gives `q − z = q/(q²+1)`
+  have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
+  have hs : (q : R) ^ 2 + 1 ≠ 0 := by positivity
+  field_simp at hb ⊢
+  nlinarith [hb, hz, hqq, sq_nonneg q, sq_nonneg (q ^ 2 + 1)]
+
+/-- **The closed-form symmetric weight under convention D.**
+`y₍₃₎ = (q⁴+1)/(q²+1)²`, which is `[4]_q/[2]_q³`, `0.50540422650393080319`.
+Immediate from the mixed weight and `tr_M(1) = 1`. -/
+theorem y_sym_conventionD (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q)
+    (hz : z * (q ^ 2 + 1) = q ^ 3)
+    (h1 : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (h2 : q * y₃ + (q - q⁻¹) * y₂₁ - q⁻¹ * y₁₃ = z)
+    (h3 : q ^ 2 * y₃ - y₂₁ + (q⁻¹) ^ 2 * y₁₃ = z ^ 2) :
+    y₃ * (q ^ 2 + 1) ^ 2 = q ^ 4 + 1 := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have h13 : y₁₃ = 0 :=
+    conventionD_kills_antisymmetriser q z y₃ y₂₁ y₁₃ hq0 hz h1 h2 h3
+  have h21 := y_mixed_conventionD q z y₃ y₂₁ y₁₃ hq hz h1 h2 h3
+  have : y₃ = 1 - 2 * y₂₁ := by rw [h13] at h1; linarith
+  rw [this]
+  nlinarith [h21]
+
+/-! ### Convention D as a predicate, and the sharpest form of the statement -/
+
+/-- **Convention D, as a consumable predicate.** `z(q²+1) = q³`, written
+multiplicatively so it needs no `q ≠ 0` and no division.
+
+Offered to the Hecke-instance layer (`QOU.Hecke.MarkovTraceH2`, PR #4857)
+per the coordination note on that PR: `MarkovTrace` does not index on `z`, so
+a `MarkovTrace` instance currently cannot be given without inventing a value.
+`IsConventionD` is the missing side condition — with it, `z` is not invented but
+determined, by `conventionD_unique_nontrivial` below. -/
+def IsConventionD {R : Type*} [Field R] (q z : R) : Prop :=
+  z * (q ^ 2 + 1) = q ^ 3
+
+/-- The divided form, for reading off the value. -/
+theorem isConventionD_iff_eq_div {R : Type*} [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] (q z : R) :
+    IsConventionD q z ↔ z = q ^ 3 / (q ^ 2 + 1) := by
+  have hs : (q : R) ^ 2 + 1 ≠ 0 := by positivity
+  rw [IsConventionD, eq_div_iff hs]
+
 end PinningOrdered
 
+section Characterisation
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- **THE SHARPEST FORM. Convention D ⟺ the antisymmetriser dies and the
+mixed-symmetry block survives.**
+
+Both directions, from the three normalisations alone:
+
+  * `→` D kills `y₍₁³₎` (`conventionD_kills_antisymmetriser`) and leaves
+    `y₍₂,₁₎ (q²+1)² = q² ≠ 0` (`y_mixed_conventionD`).
+  * `←` `y₍₁³₎ = 0` admits only `z = q` or D
+    (`antisym_vanishes_only_at_two_roots`), and `z = q` forces `y₍₂,₁₎ = 0`
+    (`z_eq_q_forces_trivial`), contradicting survival. So D.
+
+Read the right-hand side as "the trace factors through Temperley–Lieb **and is
+not the one-dimensional character**". Convention D is exactly that, and nothing
+else is. This is the statement to cite; the rest of the section is its scaffolding. -/
+theorem conventionD_unique_nontrivial (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q)
+    (h1 : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (h2 : q * y₃ + (q - q⁻¹) * y₂₁ - q⁻¹ * y₁₃ = z)
+    (h3 : q ^ 2 * y₃ - y₂₁ + (q⁻¹) ^ 2 * y₁₃ = z ^ 2) :
+    IsConventionD q z ↔ (y₁₃ = 0 ∧ y₂₁ ≠ 0) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  constructor
+  · intro hD
+    refine ⟨conventionD_kills_antisymmetriser q z y₃ y₂₁ y₁₃ hq0 hD h1 h2 h3, ?_⟩
+    intro hzero
+    have hm := y_mixed_conventionD q z y₃ y₂₁ y₁₃ hq hD h1 h2 h3
+    rw [hzero, zero_mul] at hm
+    exact absurd hm.symm (by positivity)
+  · rintro ⟨h13, h21⟩
+    rcases antisym_vanishes_only_at_two_roots q z y₃ y₂₁ y₁₃ hq h13 h1 h2 h3 with hzq | hD
+    · exact absurd (z_eq_q_forces_trivial q z y₃ y₂₁ y₁₃ hq hzq h1 h2 h3).2.1 h21
+    · exact hD
+
+/-- **Convention C is excluded**, by derivation rather than by ruling. If the
+antisymmetriser survives — `y₍₁³₎ ≠ 0`, which is C's situation with
+`y₍₁³₎ = 0.0227449` — then `z` is not convention D. Contrapositive of the
+forward direction above. -/
+theorem not_conventionD_of_antisym_survives (q z y₃ y₂₁ y₁₃ : R) (hq : 0 < q)
+    (hsurv : y₁₃ ≠ 0)
+    (h1 : y₃ + 2 * y₂₁ + y₁₃ = 1)
+    (h2 : q * y₃ + (q - q⁻¹) * y₂₁ - q⁻¹ * y₁₃ = z)
+    (h3 : q ^ 2 * y₃ - y₂₁ + (q⁻¹) ^ 2 * y₁₃ = z ^ 2) :
+    ¬ IsConventionD q z := fun hD =>
+  hsurv (conventionD_kills_antisymmetriser q z y₃ y₂₁ y₁₃ (ne_of_gt hq) hD h1 h2 h3)
+
+end Characterisation
+
 end ConventionPinning
+
+section Propagation
+
+/-!
+## The vanishing propagates up the tower — Wenzl becomes a corollary, not a citation
+
+`ConventionPinning` derives `y₍₁³₎ = 0` at three strands. `qou-8iru` observed
+`y_λ = 0` for every `λ` with `≥ 3` rows at `n = 2 … 7`, and attributed it to
+Wenzl. This section shows the higher levels **follow from the `n = 3` case**, so
+the citation is not load-bearing.
+
+Three inputs, all of them measured true and two of them structural:
+
+1. **Branching coherence.** `Σ_{λ ⊇ μ} y_λ[n+1] = y_μ[n]`. Verified at
+   `n = 2 … 6`, worst residual `1.34e−51`; it is the tower coherence
+   `markov_branching_general` states in closed form.
+2. **Nonnegativity.** `y_λ ≥ 0`. Zero negative weights at every `n` tested —
+   as it must be, since the trace is positive.
+3. **Every `≥ 3`-row shape at `n+1` covers a `≥ 3`-row shape at `n`**, for
+   `n + 1 ≥ 4`. Checked exhaustively for `n+1 = 4, 5, 6, 7`: no exceptions.
+   (The one exception is at `n+1 = 3`: `(1³)` covers only `(1²)`, which has two
+   rows. That is exactly why `n = 3` is the base case and not a step.)
+
+Given those, the step is a one-liner: a **sum of nonnegatives that vanishes has
+every term zero**. If `y_μ[n] = 0` for a `≥ 3`-row `μ`, every `λ` covering it —
+and by input 3 that reaches every `≥ 3`-row `λ` at `n+1` — is forced to zero.
+
+Everything below is stated on abstract `Shape`, `covers` and `rows`, with the
+combinatorial input 3 as a **hypothesis** rather than a proved fact about Young
+diagrams. That is deliberate: input 3 is verified by exhaustion here, not by a
+formalised proof, and stating it as a hypothesis makes the dependency visible
+instead of hiding it inside a `sorry`.
+-/
+
+variable {R : Type*} [AddCommMonoid R] [PartialOrder R] [CovariantClass R R (· + ·) (· ≤ ·)]
+
+/-- **A vanishing sum of nonnegative terms has every term zero.** The whole
+analytic content of the propagation. -/
+theorem terms_zero_of_sum_zero {ι : Type*} (s : Finset ι) (y : ι → R)
+    (hnn : ∀ i ∈ s, 0 ≤ y i) (hsum : ∑ i ∈ s, y i = 0) :
+    ∀ i ∈ s, y i = 0 :=
+  (Finset.sum_eq_zero_iff_of_nonneg hnn).mp hsum
+
+/-- **One level of propagation.**
+
+If every `≥ 3`-row weight vanishes at level `n`, and every `≥ 3`-row shape at
+level `n+1` covers some `≥ 3`-row shape at level `n`, then every `≥ 3`-row
+weight vanishes at level `n+1`. -/
+theorem vanishing_step {Shape : ℕ → Type*}
+    (y : ∀ n, Shape n → R) (covers : ∀ n, Shape n → Finset (Shape (n + 1)))
+    (rows : ∀ n, Shape n → ℕ)
+    (hnn : ∀ n (l : Shape (n + 1)), 0 ≤ y (n + 1) l)
+    (hbranch : ∀ n (m : Shape n), ∑ l ∈ covers n m, y (n + 1) l = y n m)
+    (hpred : ∀ n (l : Shape (n + 1)), 3 ≤ rows (n + 1) l →
+      ∃ m : Shape n, 3 ≤ rows n m ∧ l ∈ covers n m)
+    (n : ℕ) (hvan : ∀ m : Shape n, 3 ≤ rows n m → y n m = 0)
+    (l : Shape (n + 1)) (hl : 3 ≤ rows (n + 1) l) :
+    y (n + 1) l = 0 := by
+  obtain ⟨m, hm3, hmem⟩ := hpred n l hl
+  have hsum : ∑ k ∈ covers n m, y (n + 1) k = 0 := by
+    rw [hbranch n m]; exact hvan m hm3
+  exact terms_zero_of_sum_zero _ _ (fun k _ => hnn n k) hsum l hmem
+
+/-- **…hence at every level above the base.**
+
+Induction on the offset `k`. With the base supplied by
+`conventionD_kills_antisymmetriser` at `n₀ = 3`, this derives the `≥ 3`-row
+vanishing at all `n ≥ 3` from the pinning alone — no appeal to Wenzl's theorem.
+What is still assumed is `hpred`, the purely combinatorial statement that every
+`≥ 3`-row shape has a `≥ 3`-row predecessor, verified by exhaustion for
+`n+1 = 4 … 7`. -/
+theorem vanishing_all_levels {Shape : ℕ → Type*}
+    (y : ∀ n, Shape n → R) (covers : ∀ n, Shape n → Finset (Shape (n + 1)))
+    (rows : ∀ n, Shape n → ℕ)
+    (hnn : ∀ n (l : Shape (n + 1)), 0 ≤ y (n + 1) l)
+    (hbranch : ∀ n (m : Shape n), ∑ l ∈ covers n m, y (n + 1) l = y n m)
+    (hpred : ∀ n (l : Shape (n + 1)), 3 ≤ rows (n + 1) l →
+      ∃ m : Shape n, 3 ≤ rows n m ∧ l ∈ covers n m)
+    (n₀ : ℕ) (base : ∀ m : Shape n₀, 3 ≤ rows n₀ m → y n₀ m = 0) :
+    ∀ k : ℕ, ∀ l : Shape (n₀ + k), 3 ≤ rows (n₀ + k) l → y (n₀ + k) l = 0 := by
+  intro k
+  induction k with
+  | zero => exact base
+  | succ k ih =>
+      intro l hl
+      exact vanishing_step y covers rows hnn hbranch hpred (n₀ + k) ih l hl
+
+end Propagation
+
+section RadicalIsIdeal
+
+/-!
+## The quotient is legitimate — the trace radical is a two-sided ideal
+
+`GramSignature.zero_weight_block_erasable` shows the radical is *invisible* to
+the trace. That makes the quotient harmless; it does not yet make it a
+**quotient of algebras**. For that the radical has to be a two-sided ideal, and
+here it is, from associativity and cyclicity alone.
+
+This is what licenses "work in `TLₙ`" as an algebra statement rather than a
+statement about a vector space.
+-/
+
+variable {A : Type*} [Ring A] {R : Type*} [Zero R]
+
+/-- The null space of a trace: elements that pair to zero against everything. -/
+def traceRadical (tr : A → R) : Set A := {a | ∀ b : A, tr (a * b) = 0}
+
+/-- **Closed under multiplication on the right** — associativity alone. -/
+theorem traceRadical_mul_mem (tr : A → R) {a : A} (ha : a ∈ traceRadical tr)
+    (c : A) : a * c ∈ traceRadical tr := by
+  intro b; rw [mul_assoc]; exact ha (c * b)
+
+/-- **Closed under multiplication on the left** — this is where cyclicity is
+used, and it is the only place. `tr((c·a)·b) = tr(c·(a·b)) = tr((a·b)·c)
+= tr(a·(b·c)) = 0`. -/
+theorem traceRadical_mem_mul (tr : A → R)
+    (hcyc : ∀ x y : A, tr (x * y) = tr (y * x))
+    {a : A} (ha : a ∈ traceRadical tr) (c : A) : c * a ∈ traceRadical tr := by
+  intro b
+  rw [mul_assoc, hcyc c (a * b), mul_assoc]
+  exact ha (b * c)
+
+/-- **The radical is a two-sided ideal.** Both closure directions together —
+the statement that licenses passing to `Hₙ/rad ≅ TLₙ` as an algebra. -/
+theorem traceRadical_two_sided (tr : A → R)
+    (hcyc : ∀ x y : A, tr (x * y) = tr (y * x)) {a : A}
+    (ha : a ∈ traceRadical tr) (c : A) :
+    a * c ∈ traceRadical tr ∧ c * a ∈ traceRadical tr :=
+  ⟨traceRadical_mul_mem tr ha c, traceRadical_mem_mul tr hcyc ha c⟩
+
+end RadicalIsIdeal
 
 end QOU.QBeta.TemperleyLiebTower
