@@ -63,7 +63,24 @@ if [ -n "$existing" ]; then
   exit 0
 fi
 
-if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
+# Fetch into a THROWAWAY gitdir — `git fetch --depth=1` against $REPO_ROOT
+# would mark the whole clone shallow, permanently, and every ancestry query
+# (rev-list --count, ahead/behind, merge-base) then returns confident wrong
+# answers with no warning. See scripts/lean-cache-restore.sh and bean
+# qou-70g5 for the incident. `--depth=1` cannot just be dropped: the cache
+# branches are not single-commit orphans.
+scratch="$(mktemp -d)"
+trap 'rm -rf "$scratch" "${tgz:-}"' EXIT
+
+origin_url="$(git -C "$REPO_ROOT" remote get-url origin 2>/dev/null)"
+if [ -z "$origin_url" ]; then
+  echo "lean-toolchain-cache-restore: cannot resolve 'origin' remote URL." >&2
+  exit 1
+fi
+
+git -C "$scratch" init -q 2>/dev/null
+git -C "$scratch" remote add origin "$origin_url" 2>/dev/null
+if ! git -C "$scratch" fetch --depth=1 origin "$branch" 2>/dev/null; then
   echo "lean-toolchain-cache-restore: branch '$branch' not found on origin." >&2
   echo "  Seed it first (on a machine WITH the toolchain installed):" >&2
   echo "    scripts/lean-toolchain-cache-seed.sh" >&2
@@ -74,12 +91,11 @@ if ! git -C "$REPO_ROOT" fetch --depth=1 origin "$branch" 2>/dev/null; then
 fi
 
 tgz="$(mktemp)"
-trap 'rm -f "$tgz"' EXIT
 # Payload is chunked into lean-toolchain.tgz.part* blobs; concatenate in
 # order back into one tarball (same scheme as the olean cache).
-git -C "$REPO_ROOT" ls-tree --name-only FETCH_HEAD \
+git -C "$scratch" ls-tree --name-only FETCH_HEAD \
   | grep '^lean-toolchain\.tgz\.part' | sort \
-  | while read -r p; do git -C "$REPO_ROOT" show "FETCH_HEAD:$p"; done > "$tgz"
+  | while read -r p; do git -C "$scratch" show "FETCH_HEAD:$p"; done > "$tgz"
 if [ ! -s "$tgz" ]; then
   echo "lean-toolchain-cache-restore: no 'lean-toolchain.tgz.part*' blobs on $branch." >&2
   exit 1

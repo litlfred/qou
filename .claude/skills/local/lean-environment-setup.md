@@ -661,6 +661,34 @@ ELAN_NO_OVERRIDE_NOTICE=1 nohup lake build -R QOU.Mass.MassVolDensity \
 
 ### 🗄️ PRESERVE THE BUILD — seed/restore the `lake-cache/*` orphan branch
 
+> **🛑 NEVER `git fetch --depth=1` into your working clone — use
+> [`scripts/lean-cache-restore.sh`](../../../scripts/lean-cache-restore.sh).**
+> `--depth=1` marks the **whole clone shallow, permanently**, as a side effect
+> of fetching the cache payload. A shallow clone then answers **every**
+> ancestry query wrongly and silently — `rev-list --count`, ahead/behind,
+> `merge-base` all return confident nonsense with no error. This is not
+> hypothetical: it corrupted a 41-PR triage sweep, which reported every branch
+> as "67 commits behind" because 67 was the entire history left in the clone
+> (bean `qou-70g5`). Recovery: `git fetch --unshallow origin`.
+>
+> `--depth=1` cannot simply be dropped — the `lake-cache/*` branches are
+> **not** single-commit orphans (`qou-v4-24-0` carries 18 commits, each re-seed
+> adding a ~1.4 GB generation). The fix is to shallow-fetch into a **throwaway
+> gitdir**, which both restore scripts now do:
+>
+> ```bash
+> SCRATCH=$(mktemp -d)
+> git -C "$SCRATCH" init -q
+> git -C "$SCRATCH" remote add origin "$(git -C "$ROOT" remote get-url origin)"
+> git -C "$SCRATCH" fetch --depth=1 origin "$BR"     # NOT git -C "$ROOT"
+> # …extract from $SCRATCH into $ROOT, then rm -rf "$SCRATCH"
+> ```
+>
+> **Every hand-rolled `git fetch --depth=1 origin lake-cache/...` recipe below
+> predates this fix.** They still describe the right payload layout, but route
+> the fetch through your real clone — apply the scratch-gitdir shape above to
+> any of them you copy, or just run the script.
+
 **Every agent rebuilding Mathlib from scratch is the waste to avoid.** Per
 the cache strategy ([`docs/workplans/2026-05-24-lean-cache-strategy.md`](../../../docs/workplans/2026-05-24-lean-cache-strategy.md)),
 durable cross-container preservation lives on **orphan branches**

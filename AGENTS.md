@@ -2625,16 +2625,32 @@ Only if the restore misses do Steps 1–3 (source clone + from-source build) —
 and **SEED the cache branch afterwards**. Full slug/seed rules:
 [`lean-environment-setup.md` §"PRESERVE THE BUILD"](.claude/skills/local/lean-environment-setup.md).
 
+> **🛑 Prefer the script — and never `git fetch --depth=1` into your own
+> clone.** Just run [`scripts/lean-cache-restore.sh`](scripts/lean-cache-restore.sh);
+> it does the below correctly. If you hand-roll it, fetch into a **throwaway
+> gitdir** as shown. `--depth=1` against your working clone marks the *whole
+> clone shallow, permanently*, and then every ancestry query — `rev-list
+> --count`, ahead/behind, `merge-base` — returns a confident wrong answer with
+> no error. It silently corrupted a 41-PR triage sweep (bean `qou-70g5`),
+> which reported every branch as "67 commits behind" because 67 was all the
+> history left. Recovery is `git fetch --unshallow origin`. `--depth=1` cannot
+> simply be dropped: the `lake-cache/*` branches are **not** single-commit
+> orphans (`qou-v4-24-0` carries 18 commits, each re-seed adding ~1.4 GB).
+
 ```bash
 # Step 0 (FASTEST — try before Steps 1–3): restore prebuilt oleans from the
 # lake-cache orphan branch whose slug is DERIVED from the pinned toolchain
 # (future-proof, works from any subdir, CRLF-safe).
-ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp)
+ROOT=$(git rev-parse --show-toplevel); TGZ=$(mktemp); SCRATCH=$(mktemp -d)
 SLUG=$(cut -d: -f2 "$ROOT/lean-toolchain" | tr -d '\r' | tr . -)   # v4.24.0 -> v4-24-0
-git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
-  && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
-     | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
-  && tar xzf "$TGZ" -C "$ROOT" && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
+# Shallow-fetch into $SCRATCH, NOT into $ROOT — see the warning above.
+git -C "$SCRATCH" init -q \
+  && git -C "$SCRATCH" remote add origin "$(git -C "$ROOT" remote get-url origin)" \
+  && git -C "$SCRATCH" fetch --depth=1 origin "lake-cache/qou-$SLUG" \
+  && git -C "$SCRATCH" ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
+     | while read -r p; do git -C "$SCRATCH" show "FETCH_HEAD:$p"; done > "$TGZ" \
+  && tar xzf "$TGZ" -C "$ROOT" && rm -rf "$SCRATCH" \
+  && echo "restored from lake-cache/qou-$SLUG — skip Steps 1–3"
 
 # Step 1: Shallow-clone mathlib locally (~144 MB).  [fallback if Step 0 misses]
 cd .. && git clone --depth 1 https://github.com/leanprover-community/mathlib4.git
