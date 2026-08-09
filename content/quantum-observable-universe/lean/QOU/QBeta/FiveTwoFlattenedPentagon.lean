@@ -290,4 +290,63 @@ theorem flatPentagonSum_eq_pi_sq_div_two {a : ℝ} (h0 : 0 < a) (h1 : a < 1)
     (fun _ hv => pentagonRegular_of_mem_rogersDomain h0 h1 hv) h0 h1 h0 h1
     (ofReal_mem_rogersDomain h0 h1) hw
 
+/-! ### Why `(y₁, ȳ₁)` is out of reach: it is ON the cut
+
+The region hypothesis is not a technicality to be discharged later, and it is not
+that the 5₂ conjugate pair lies in some awkward corner. It lies **on the boundary
+of the domain**, exactly:
+
+    y₃·(1 − y₁y₂) = y₃ − 1        [from `y₁y₂y₃ = 1`, one line]
+
+so `1 − y₁ȳ₁ = (y₃−1)/y₃`, and `y₃ = 0.4301597… ∈ (0,1)` makes that a **negative
+real** — numerically `−1.3247179…`, the negated plastic number, which is Route
+55's map showing up again. A negative real is not in `slitPlane`, so
+`PentagonRegular` fails at that configuration: `log(1 − xy)` sits on its branch
+cut.
+
+That is the whole obstruction, and it is sharper than "no region was found":
+
+* the straight segment from any real `a ∈ (0,1)` to `y₁`, with `ȳ₁` fixed, is
+  regular at **every** interior point — only the endpoint fails, and only in the
+  one argument `1 − wy`;
+* the approach is from the **upper** half-plane (`Im(1 − wȳ₁) = a(1−t)·Im y₁ > 0`),
+  which is the side on which the principal `Complex.log` is continuous.
+
+So what is missing is a **boundary-continuity** argument, not a region. Measured
+in `computations/probes/qbeta_5two_route57_on_the_cut_probe.py`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+
+section OnTheCut
+
+/-- `c·(1 − ab) = c − 1` whenever `abc = 1` — one line, and it is the whole
+obstruction. -/
+theorem one_sub_mul_of_prod_eq_one {a b c : ℂ} (hprod : a * b * c = 1) :
+    c * (1 - a * b) = c - 1 := by linear_combination -hprod
+
+/-- A negative real is off the slit plane. -/
+theorem not_mem_slitPlane_ofReal_neg {t : ℝ} (h : t < 0) :
+    ((t : ℝ) : ℂ) ∉ Complex.slitPlane := by
+  simp [Complex.ofReal_mem_slitPlane, h.not_gt]
+
+/-- **The pentagon is not regular at the 5₂ conjugate pair.**
+
+If the third root `c` is real in `(0,1)` — as `y₃ = 0.4301597…` is — then
+`1 − ab` is the negative real `(c−1)/c` and `PentagonRegular b a` fails outright.
+No choice of region reaches it; the configuration is on the boundary. -/
+theorem not_pentagonRegular_of_prod_eq_one {a b : ℂ} {c : ℝ}
+    (hprod : a * b * (c : ℂ) = 1) (h0 : 0 < c) (h1 : c < 1) :
+    ¬ PentagonRegular b a := by
+  intro h
+  have hc : ((c : ℝ) : ℂ) ≠ 0 := by exact_mod_cast h0.ne'
+  have hval : (1 : ℂ) - a * b = (((c - 1) / c : ℝ) : ℂ) := by
+    have := one_sub_mul_of_prod_eq_one hprod
+    push_cast
+    field_simp
+    linear_combination this
+  exact not_mem_slitPlane_ofReal_neg (div_neg_of_neg_of_pos (by linarith) h0)
+    (hval ▸ h.2.2.1.1)
+
+end OnTheCut
+
 end QOU.QBeta.FiveTwoFlattenedPentagon

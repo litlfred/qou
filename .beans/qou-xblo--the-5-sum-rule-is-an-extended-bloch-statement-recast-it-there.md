@@ -752,3 +752,57 @@ exists. But the question is now purely about regularity — all four arguments o
 both cuts along a path — with no branch bookkeeping in it at all.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 57 — Route 56's region does not exist: the pair is ON the cut
+
+Route 56 left exactly one item: a connected regular region joining the real
+square to `(y₁, ȳ₁)`. **It does not exist**, and the reason is one line.
+
+### The negative
+
+From `y₁y₂y₃ = 1`:
+
+    y₃·(1 − y₁y₂) = y₃ − 1        so    1 − y₁ȳ₁ = (y₃−1)/y₃
+
+and `y₃ = 0.4301597… ∈ (0,1)` makes that a **negative real** — `−1.3247179…`,
+minus the plastic number. Route 55's map `y ↦ 1 − 1/y` for the third time. A
+negative real is off `slitPlane`, so `log(1 − xy)` sits exactly on its branch cut
+and `PentagonRegular` **fails** at the pair `Vol(5₂)` needs. Not "hard to reach":
+on the boundary of the domain.
+
+Lean, sorry-free: `one_sub_mul_of_prod_eq_one` (`linear_combination -hprod`, one
+line) and `not_pentagonRegular_of_prod_eq_one`.
+
+### Why that is better news than it sounds
+
+On the boundary is not outside. Two measurements (Route 57 probe, 40 dps):
+
+* **G2** — the straight segment from *any* real `a ∈ (0,1)` to `y₁`, with `ȳ₁`
+  fixed, is regular at every interior point: 1500 samples each, five values of
+  `a`, zero interior failures. Only `t = 1` fails, and only in the single
+  argument `1 − wy`. (Sampled, not certified — the gate says so.)
+* **G3** — the approach is from the **upper** half-plane:
+  `Im(1 − w·ȳ₁) = a(1−t)·Im y₁ > 0`, decreasing to `0`. That is the side on which
+  the principal `Complex.log` (`arg ∈ (−π, π]`) is continuous at a negative real.
+
+So the residue is a **boundary-continuity argument at one point**, not a search
+for a region. Smaller problem, different problem. **Not done here.**
+
+### Also gated (G4), all equivalent to the cubic
+
+`(1−a)(1−b) = (1−ab)²` for any two roots, so `a₅ = 1/a₃`; here additionally
+`a₅ = ā₃`, hence **`|a₃| = 1`** — the two composite arguments sit on the unit
+circle. Gröbner-verified before measurement.
+
+### The ledger now
+
+1. ~~chain-rule assembly~~ (51) · 2. ~~branch conditions travel~~ (52) ·
+3. ~~constant pinned~~ (53) · 4. ~~region, one variable~~ (54) ·
+5. ~~flattening removes the branch hypotheses~~ (56)
+
+**Remaining: continuity of the flattened pentagon at a single boundary point,
+approached from the upper half-plane.** Everything else in the chain is proved.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
