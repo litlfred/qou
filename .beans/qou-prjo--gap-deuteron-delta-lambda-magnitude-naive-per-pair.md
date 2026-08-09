@@ -433,3 +433,74 @@ Files: docs/audits/2026-08-09-nastokes-multigenerator-cluster-additivity.md;
 QOU/MassTheory/TransversePairingClusterDecomposition.lean;
 computations/probes/nastokes_multigen_cluster_additivity_probe.py (+witness, 16
 assertions all passing, 40 s wall).
+
+---
+## Principle (i) RESOLVED — dissolved, not solved (PR #4850, 2026-08-09)
+
+Branch `claude/nastokes-orbit-symmetric-readout-2026-08-09`. Bean stays **OPEN**.
+
+#4849 named two principles as the price of reviving the transverse route:
+(i) a nucleon-symmetric readout, (ii) which germ observer pair. **(i) is now
+answered, and the answer removes the blocker rather than satisfying it.**
+
+**1. Is orbit-symmetry FORCED?  YES — and it is VACUOUS.**
+The corpus orbit identity `tr_M(beta) = tr_M(rep)` is over `S_Z x S_N` ONLY, and
+its **Lemma 1** (2026-05-30 orbit-trace proof) establishes it by showing such a
+permutation leaves the braid WORD unchanged: it fixes the ordering string and
+preserves every adjacency type. Measured: the `S_Z x S_N` orbit of ordering
+STRINGS is a SINGLE POINT for D/T/He3/He4 while |group| = Z!N! (up to 4). So
+symmetrization over the forced group is the **IDENTITY MAP** — Lean-proved
+sorry-free for an ARBITRARY readout into an ARBITRARY AddCommMonoid
+(`sum_symmetrize_eq_nsmul`). Every symmetry statement in the corpus
+(atom_orbit_reduction, IdenticalParticleSymmetrization.lean,
+symmetrized_binding_probe.py) is over `S_Z x S_N`; none covers a cross-species
+reordering.
+
+**2. Does R survive?  YES — trivially, by derivation.** The derived readout IS
+the readout on the canonical word. The NON-derived S_A counterfactual average
+does not cancel either: ||<R>||/mean = 0.9858 / 0.9957 / 0.9998 (T) and
+0.9746 / 0.9854 (He4) across all three of #4849's germ readings. He4 band-local
+4-body level reproduces #4849's empty result (1.5e-11).
+
+**3. #4849 section 5.1's ordering disqualifier is VOID.** The permutations it
+varied (pnn/npn/nnp) are CROSS-SPECIES: not in `S_Z x S_N`, not covered by any
+corpus identity, and not a symmetry at all (p and n are distinguishable).
+DECISIVE CONTROL — the corpus's OWN scalar observable is cross-species
+ordering-DEPENDENT:
+
+    T   tr_M(pnn) = tr_M(nnp) = 0.10407   tr_M(npn) = 0.14158   -> +36.0 %
+    He3 tr_M(ppn) = tr_M(npp) = 0.20658   tr_M(pnp) = 0.16336   -> -20.9 %
+    D   tr_M(pn)  = tr_M(np)                                    -> 1.5e-41 (null control)
+
+i.e. THREE TIMES the 13 % that #4849 treated as disqualifying. tr_M tracks the
+interface multiset exactly (bit-identical within a class). Computed from the
+certified Frobenius pairing sum_lambda y_lambda chi^lambda: tr_M(1) = 1, Markov
+M1 to 4e-16, and a CONSTANT M2 stabilisation ratio z = 0.499320334184 to 6e-16
+(M1 alone holds for any character weights; the constant M2 is what pins y_lambda
+as Jones-Markov weights). D is the null control — its two orderings share one
+interface multiset, so invariance there is required, and it holds to 1.5e-41 at
+40 dps: the machinery does not manufacture spurious ordering differences.
+
+**4. NET: blocker (i) is GONE; blocker (ii) is UNTOUCHED and STILL BINDING** —
+which two germ observers (16.4x spread, #4849 s4.4) plus the unpinned
+representation gauge of the connection-like germ (#4849 s2.3). The transverse
+route is STILL BLOCKED, now on one principle instead of two. No magnitude, no
+Delta_lambda, nothing wired, free_parameters = 0, no AME quantity and no g_2 in
+the compute, q0 = experimental proton anchor with live y_lambda_at_q0_mpmath
+(never the muon cache).
+
+scope-(b) for the vacuity claim ONLY (proved invariant cited: the word is a
+function of the species string). scope-(a) for everything else.
+
+**SEPARATE ITEM SPUN OUT (not a transverse-route matter).** The corpus's
+canonical cross-species ordering `p...pn...n` is a CHOICE: the orbit identity
+does not license it (it covers only `S_Z x S_N`, under which the arrangement
+never varies), "interface-minimal" is stated as a COST property rather than a
+physical selection rule, and item 3 measures that the canonical trace DEPENDS on
+it by O(10 %) for every A >= 3 mixed-species isotope. Filed as its own bean.
+
+Files: docs/audits/2026-08-09-nastokes-orbit-symmetric-readout.md;
+QOU/MassTheory/NucleonOrderingSymmetry.lean (exit 0, zero warnings, #print axioms
+clean on all 8 decls, purely combinatorial — no ring, no R);
+computations/probes/nastokes_orbit_symmetric_readout_probe.py (+witness, 17
+assertions all passing, 162 s wall).
