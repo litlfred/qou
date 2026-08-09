@@ -468,7 +468,7 @@ theorem hasDerivAt_pairDisc (φ : ℝ) : HasDerivAt pairDisc (-pairNegDisc' φ) 
   rw [hfun]
   exact (hasDerivAt_pairNegDisc φ).neg
 
-theorem Ypair_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
+theorem Ypair_of_disc_pos {φ : ℝ} (h : 0 ≤ pairDisc φ) :
     Ypair φ = ((((-pairBeta φ + Real.sqrt (pairDisc φ)) / 2 : ℝ) : ℂ),
                (((-pairBeta φ - Real.sqrt (pairDisc φ)) / 2 : ℝ) : ℂ)) := by
   have hle : 0 ≤ pairBeta φ ^ 2 - 4 * pairGamma φ := by unfold pairDisc at h; linarith
@@ -493,7 +493,7 @@ theorem hasDerivAt_Ypair_fst_real {φ : ℝ} (h : 0 < pairDisc φ) :
     Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ hr
   refine hb.congr_of_eventuallyEq ?_
   filter_upwards [eventually_disc_pos h] with u hu
-  rw [Ypair_of_disc_pos hu]
+  rw [Ypair_of_disc_pos hu.le]
 
 /-- **`Y₃` on the real branch.** -/
 theorem hasDerivAt_Ypair_snd_real {φ : ℝ} (h : 0 < pairDisc φ) :
@@ -511,7 +511,7 @@ theorem hasDerivAt_Ypair_snd_real {φ : ℝ} (h : 0 < pairDisc φ) :
     Complex.ofRealCLM.hasFDerivAt.comp_hasDerivAt φ hr
   refine hb.congr_of_eventuallyEq ?_
   filter_upwards [eventually_disc_pos h] with u hu
-  rw [Ypair_of_disc_pos hu]
+  rw [Ypair_of_disc_pos hu.le]
 
 /-! ### 5a'. Vieta for the concrete labelling
 

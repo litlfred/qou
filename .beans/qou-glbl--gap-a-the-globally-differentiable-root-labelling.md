@@ -1,6 +1,6 @@
 ---
 # qou-glbl
-title: 'Gap A CLOSED except hcont: S(pi) - S(0) = pi^2 now follows from continuity of S alone, at the concrete labelling.'
+title: 'Gap A CLOSED. S(pi) - S(0) = pi^2 at the concrete labelling, resting on ONE hypothesis: phi0 is the only zero of pairDisc.'
 status: todo
 type: task
 priority: high
@@ -10,7 +10,7 @@ tags:
     - qou-trns
     - envelope
 created_at: 2026-08-08T17:30:00Z
-updated_at: 2026-08-09T22:15:00Z
+updated_at: 2026-08-09T23:55:00Z
 ---
 
 ## What is open
@@ -802,8 +802,47 @@ from `sum = 2c − t < 0` and `product = pairGamma > 0` past the crossing.
 | `S′ = 2φ` on `Ioo φ₀ π` (real pair) | ✅ `hasDerivAt_envelopeS_concrete_real` |
 | both regimes joined | ✅ `hasDerivAt_envelopeS_concrete_of_ne` |
 | the whole transport, given continuity | ✅ `envelopeS_total_concrete` |
-| `hcont : ContinuousOn (envelopeS …) (Icc 0 π)` | ⏳ **the only piece left.** The `Li₂` half is done (`continuousAt_re_cLiTwoExt`, 2-D); composing it along the arc is not written |
-| `hcoll` — `φ₀` is the only zero of `pairDisc` | ⏳ measured (Route 32), carried as a hypothesis rather than assumed |
+| `hcont : ContinuousOn (envelopeS …) (Icc 0 π)` | ✅ `continuousOn_envelopeS_concrete` |
+| the transport, end to end | ✅ `envelopeS_total_concrete_of_unique_collision` |
+| `hcoll` — `φ₀` is the only zero of `pairDisc` | ⏳ **the only hypothesis left.** Measured (Route 32); carried, not assumed |
+
+### ✅✅✅ `hcont` IS CLOSED, and with it Gap A
+
+    continuousOn_envelopeS_concrete :
+      ContinuousOn (envelopeS Yreal Ypair.1 Ypair.2) (Icc 0 π)
+
+    envelopeS_total_concrete_of_unique_collision (hc0 : 0 < c) (hcπ : c < π)
+      (hcoll : ∀ φ ∈ Ioo 0 π, φ ≠ c → pairDisc φ ≠ 0) :
+      envelopeS … π = envelopeS … 0 + π²
+
+`lake`-verified per module, sorry-free, **warning-free**, axioms `[propext,
+Classical.choice, Quot.sound]`.
+
+Three composition lemmas do the work — `continuousAt_re_cLiTwoExt_comp`,
+`continuousAt_re_log_neg_sq_comp`, `continuousAt_re_deformedV_comp` — each taking
+the cut in its **two** admissible cases: off it, or strictly inside it. The
+second case is `continuousAt_re_cLiTwoExt`, and without it there is no `Icc 0 π`
+statement at all: at `φ = π` two of the nine `Li₂` arguments are
+`−Ypair.2 π = 2.2469796`, sitting **on** `[1,∞)`.
+
+**The endpoint is proved from the cubic alone.** `t³ + 2t² − t − 1 = 0` with
+`0 < t < 1` gives, by pure algebra and `nlinarith`:
+
+| fact | why |
+|---|---|
+| `t² + t − 1 > 0` | if `t² ≤ 1−t` then `t³ ≤ t − t²`, while the cubic says `t³ = 1 + t − 2t²`; together `t² ≥ 1`, against `t < 1` |
+| `pairDisc π > 0` | `t(t+2)² − 4 = 2t² + 5t − 3` after substituting the cubic, positive for `t > 1/2` |
+| `Ypair.2 π < −1` | `β = t + 2 > 2` |
+| `Ypair.1 π > −1` | `√d > t`, which *is* `t² + t − 1 > 0` |
+
+⚠ **No numeric bound on `t = 2cos(π/7) − 1 = 0.8019…` is used anywhere.** That
+value is *measured*; a proof leaning on the decimal would be leaning on a
+measurement, which is the failure this lane has retracted twice.
+
+⚠ `pairDisc 0 < 0` had to be proved too — the real-branch statements are false at
+`φ = 0`, and without it the `sin φ > 0` derivations would have been arguing at a
+point where their conclusion does not hold. It follows from `pairBeta_pos`
+contrapositively: `β 0 = t − 2 < 0`.
 
 Both are bookkeeping over proved parts — and this bean's own record says that is
 not a reason to call them trivial.

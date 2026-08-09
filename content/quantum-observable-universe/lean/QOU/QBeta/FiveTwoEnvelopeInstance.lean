@@ -1,6 +1,7 @@
 import QOU.QBeta.FiveTwoRootLabelling
 import QOU.QBeta.FiveTwoTransport
 import QOU.QBeta.FiveTwoPairSaddle
+import QOU.MathlibExt.ComplexDilogarithmInversion
 
 /-!
 # The transport's hypotheses, discharged at the *concrete* labelling — `qou-glbl`
@@ -453,7 +454,7 @@ theorem pairGamma_pos (φ : ℝ) : 0 < pairGamma φ := by
 If `β ≤ 0` then `2c ≥ t > 0`, so `β² = (2c−t)² ≤ (2−t)²` using `c ≤ 1`; and
 `4γ = 4/t > 4 > (2−t)²` for `t ∈ (0,1)`. So `pairDisc = β² − 4γ < 0`, against the
 hypothesis. No fact about where the discriminant crossing sits is used. -/
-theorem pairBeta_pos {φ : ℝ} (h : 0 < pairDisc φ) : 0 < pairBeta φ := by
+theorem pairBeta_pos {φ : ℝ} (h : 0 ≤ pairDisc φ) : 0 < pairBeta φ := by
   by_contra hb
   push_neg at hb
   have hγ : realRootPath φ * pairGamma φ = 1 := by
@@ -468,7 +469,7 @@ theorem pairBeta_pos {φ : ℝ} (h : 0 < pairDisc φ) : 0 < pairBeta φ := by
   rw [hd] at h
   nlinarith [hγ, ht0, ht1, hc, hb, hbe, sq_nonneg (realRootPath φ - 1)]
 
-theorem re_Ypair_neg_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
+theorem re_Ypair_neg_of_disc_pos {φ : ℝ} (h : 0 ≤ pairDisc φ) :
     ((Ypair φ).1).re < 0 ∧ ((Ypair φ).2).re < 0 ∧
       ((Ypair φ).1).im = 0 ∧ ((Ypair φ).2).im = 0 := by
   have hb : 0 < pairBeta φ := pairBeta_pos h
@@ -478,7 +479,7 @@ theorem re_Ypair_neg_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
       have : pairDisc φ = pairBeta φ ^ 2 - 4 * pairGamma φ := rfl
       linarith
     calc Real.sqrt (pairDisc φ) < Real.sqrt (pairBeta φ ^ 2) := by
-          exact Real.sqrt_lt_sqrt h.le hle
+          exact Real.sqrt_lt_sqrt h hle
       _ = pairBeta φ := by rw [Real.sqrt_sq hb.le]
   have hnn : 0 ≤ Real.sqrt (pairDisc φ) := Real.sqrt_nonneg _
   rw [Ypair_of_disc_pos h]
@@ -489,7 +490,7 @@ through the conjugacy `Ypair.2 = conj Ypair.1`, which is a complex-branch fact. 
 theorem im_div_Ypair_pos_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ)
     (hsin : 0 < Real.sin φ) :
     0 < ((Ypair φ).1 / arcX φ).im ∧ 0 < ((Ypair φ).2 / arcX φ).im := by
-  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h
+  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h.le
   refine ⟨?_, ?_⟩
   · rw [im_arcX_div, hi1]
     nlinarith [mul_pos hsin (neg_pos.mpr hp1)]
@@ -499,7 +500,7 @@ theorem im_div_Ypair_pos_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ)
 theorem im_mul_Ypair_neg_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ)
     (hsin : 0 < Real.sin φ) :
     (arcX φ * (Ypair φ).1).im < 0 ∧ (arcX φ * (Ypair φ).2).im < 0 := by
-  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h
+  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h.le
   refine ⟨?_, ?_⟩
   · rw [im_arcX_mul, hi1]
     nlinarith [mul_pos hsin (neg_pos.mpr hp1)]
@@ -513,7 +514,7 @@ theorem he_Ypair_real {φ : ℝ} (h : 0 < pairDisc φ) (hsin : 0 < Real.sin φ)
     (Y' : ℂ) :
     (dVdy (arcX φ) ((Ypair φ).1) * Y').re = 0
       ∧ (dVdy (arcX φ) ((Ypair φ).2) * Y').re = 0 := by
-  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h
+  obtain ⟨hp1, hp2, hi1, hi2⟩ := re_Ypair_neg_of_disc_pos h.le
   obtain ⟨hd1, hd2⟩ := im_div_Ypair_pos_of_disc_pos h hsin
   obtain ⟨hm1, hm2⟩ := im_mul_Ypair_neg_of_disc_pos h hsin
   have hv := vSide_Ypair_fst (φ := φ) (ne_of_gt hsin)
@@ -610,7 +611,7 @@ theorem hasDerivAt_envelopeS_concrete {φ : ℝ} (hd : pairDisc φ < 0)
 `Re > 0` rather than by `Im ≠ 0` — the opposite disjunct from the complex case. -/
 theorem neg_Ypair_mem_slitPlane_of_disc_pos {φ : ℝ} (h : 0 < pairDisc φ) :
     -(Ypair φ).1 ∈ Complex.slitPlane ∧ -(Ypair φ).2 ∈ Complex.slitPlane := by
-  obtain ⟨hp1, hp2, _, _⟩ := re_Ypair_neg_of_disc_pos h
+  obtain ⟨hp1, hp2, _, _⟩ := re_Ypair_neg_of_disc_pos h.le
   exact ⟨Or.inl (by simpa using hp1), Or.inl (by simpa using hp2)⟩
 
 theorem hasDerivAt_log_neg_Ypair_fst_real {φ : ℝ} (hd : 0 < pairDisc φ)
@@ -729,5 +730,274 @@ theorem envelopeS_total_concrete {c : ℝ} (hc0 : 0 < c) (hcπ : c < π)
       = envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) 0 + π ^ 2 :=
   envelopeS_total_of_ioo hc0 hcπ hcont
     (fun φ hφ hne => hasDerivAt_envelopeS_concrete_of_ne (hcoll φ hφ hne) hφ.1 hφ.2)
+
+/-! ## `hcont`: the composition lemmas
+
+`envelopeS` is `Re` of three copies of `deformedV`, and `deformedV` is three
+`cLiTwoExt`s and one `log(−y)²`. Each of those is continuous along a continuous
+path under one condition, and the conditions are exactly the two cases the cut
+admits: **off** it, or **strictly inside** it.
+
+That second case is what `continuousAt_re_cLiTwoExt` buys. Without it there would
+be no `Icc 0 π` statement at all — at `φ = π` two of the nine `Li₂` arguments
+land on `[1,∞)`. -/
+
+/-- `Re ∘ cLiTwoExt ∘ g` is continuous at `φ` when `g φ` is off the cut, or is a
+real number **strictly** greater than 1. The branch point `1` itself is in
+neither case, and is not covered — deliberately, since `cLiTwoExt` is genuinely
+singular in its derivative there. -/
+theorem continuousAt_re_cLiTwoExt_comp {g : ℝ → ℂ} {φ : ℝ} (hg : ContinuousAt g φ)
+    (h : g φ ∈ notCut ∨ ∃ r : ℝ, 1 < r ∧ g φ = (r : ℂ)) :
+    ContinuousAt (fun u => (cLiTwoExt (g u)).re) φ := by
+  rcases h with h | ⟨r, hr, hgr⟩
+  · exact (Complex.continuous_re.continuousAt.comp
+      (((analyticOnNhd_cLiTwoExt _ h).continuousAt).comp hg))
+  · have hc : ContinuousAt (fun w : ℂ => (cLiTwoExt w).re) (g φ) := by
+      rw [hgr]; exact continuousAt_re_cLiTwoExt hr
+    exact hc.comp hg
+
+/-- `Re ∘ (log(−·)²) ∘ g`, likewise. `−g φ ∈ slitPlane` is the ordinary case;
+`0 < Re (g φ)` is the one where `−g φ` sits **on** log's cut and only the real
+part of the square survives (`re_log_neg_sq`). The real branch `Yreal > 0` is
+always in the second case, and never in the first. -/
+theorem continuousAt_re_log_neg_sq_comp {q : ℝ → ℂ} {φ : ℝ} (hq : ContinuousAt q φ)
+    (h : -q φ ∈ Complex.slitPlane ∨ 0 < (q φ).re) :
+    ContinuousAt (fun u => (Complex.log (-q u) ^ 2).re) φ := by
+  rcases h with h | h
+  · -- pin `f`: bare `.comp` lets unification pick `Neg.neg` as the inner map
+    have hlog : ContinuousAt (fun u : ℝ => Complex.log (-q u)) φ :=
+      ContinuousAt.comp (f := fun u : ℝ => -q u) (continuousAt_clog h) hq.neg
+    exact Complex.continuous_re.continuousAt.comp (hlog.pow 2)
+  · exact (continuousAt_re_log_neg_sq h).comp hq
+
+/-- **`Re deformedV` along a path**, under the four conditions its four terms
+need. Stated for arbitrary `X Y` so it can be applied at each of the three
+branches without repetition. -/
+theorem continuousAt_re_deformedV_comp {X Y : ℝ → ℂ} {φ : ℝ}
+    (hX : ContinuousAt X φ) (hY : ContinuousAt Y φ) (hX0 : X φ ≠ 0)
+    (h1 : Y φ ∈ notCut ∨ ∃ r : ℝ, 1 < r ∧ Y φ = (r : ℂ))
+    (h2 : X φ * Y φ ∈ notCut ∨ ∃ r : ℝ, 1 < r ∧ X φ * Y φ = (r : ℂ))
+    (h3 : Y φ / X φ ∈ notCut ∨ ∃ r : ℝ, 1 < r ∧ Y φ / X φ = (r : ℂ))
+    (h4 : -Y φ ∈ Complex.slitPlane ∨ 0 < (Y φ).re) :
+    ContinuousAt (fun u => (deformedV (X u, Y u)).re) φ := by
+  have hmul : ContinuousAt (fun u => X u * Y u) φ := hX.mul hY
+  have hdiv : ContinuousAt (fun u => Y u / X u) φ := hY.div hX hX0
+  have e1 := continuousAt_re_cLiTwoExt_comp hY h1
+  have e2 := continuousAt_re_cLiTwoExt_comp hmul h2
+  have e3 := continuousAt_re_cLiTwoExt_comp hdiv h3
+  have e4 := continuousAt_re_log_neg_sq_comp hY h4
+  have hsum := ((e1.add e2).add e3).add e4
+  refine hsum.congr ?_
+  filter_upwards with u
+  simp [deformedV, Complex.add_re]
+
+/-! ### The endpoint `φ = π`, from the cubic alone
+
+Everything needed at `φ = π` follows from `t³ + 2t² − t − 1 = 0` and `0 < t < 1`
+by pure algebra — **no numeric bound on `t = 2cos(π/7) − 1 = 0.8019…` is used**,
+which matters: that value is measured, and a proof leaning on the decimal would
+be leaning on a measurement. -/
+
+theorem realRootPath_pi_cubic : realRootPath π ^ 3 + 2 * realRootPath π ^ 2
+    - realRootPath π - 1 = 0 := by
+  have h := unitCubic_realRootPath π
+  unfold unitCubic at h
+  rw [Real.cos_pi] at h
+  linarith [h]
+
+/-- `t² + t − 1 > 0` at `φ = π`, i.e. `t > (√5−1)/2`. If `t² ≤ 1 − t` then
+`t³ ≤ t − t²`, while the cubic gives `t³ = 1 + t − 2t²`; together they force
+`t² ≥ 1`, against `t < 1`. -/
+theorem realRootPath_pi_gt : 0 < realRootPath π ^ 2 + realRootPath π - 1 := by
+  have hc := realRootPath_pi_cubic
+  have ht0 : 0 < realRootPath π := realRootPath_pos π
+  have ht1 : realRootPath π < 1 := realRootPath_lt_one π
+  nlinarith [hc, ht0, ht1]
+
+theorem pairBeta_pi : pairBeta π = realRootPath π + 2 := by
+  unfold pairBeta
+  rw [Real.cos_pi]
+  ring
+
+theorem pairGamma_pi_rel : realRootPath π * pairGamma π = 1 := by
+  have hg := gamma_rel (unitCubic_realRootPath π)
+  unfold pairGamma
+  linarith [hg]
+
+/-- `pairDisc π > 0`: the pair is REAL at the endpoint. `t·(t+2)² − 4 = 2t² + 5t − 3`
+after substituting the cubic, and that is positive for `t > 1/2`, which
+`realRootPath_pi_gt` supplies. -/
+theorem pairDisc_pi_pos : 0 < pairDisc π := by
+  have hc := realRootPath_pi_cubic
+  have ht0 : 0 < realRootPath π := realRootPath_pos π
+  have hgt := realRootPath_pi_gt
+  have hγ := pairGamma_pi_rel
+  have hd : pairDisc π = pairBeta π ^ 2 - 4 * pairGamma π := rfl
+  rw [hd, pairBeta_pi]
+  nlinarith [hc, ht0, hgt, hγ]
+
+/-- The endpoint values, bracketed. `Ypair.2 π < −1` is `β > 2`, i.e. `t > 0`.
+`Ypair.1 π > −1` is the one that needs the cubic: it is `√d > t`, i.e.
+`t² + t − 1 > 0`. -/
+theorem Ypair_pi_bracket :
+    ((Ypair π).1).re > -1 ∧ ((Ypair π).2).re < -1 ∧
+      ((Ypair π).1).im = 0 ∧ ((Ypair π).2).im = 0 := by
+  have hd := pairDisc_pi_pos
+  have ht0 : 0 < realRootPath π := realRootPath_pos π
+  have hgt := realRootPath_pi_gt
+  have hγ := pairGamma_pi_rel
+  have hcub := realRootPath_pi_cubic
+  have hb : pairBeta π = realRootPath π + 2 := pairBeta_pi
+  have hsq : Real.sqrt (pairDisc π) ^ 2 = pairDisc π := Real.sq_sqrt hd.le
+  have hnn : 0 ≤ Real.sqrt (pairDisc π) := Real.sqrt_nonneg _
+  have hdd : pairDisc π = pairBeta π ^ 2 - 4 * pairGamma π := rfl
+  -- `√d > t` ⟺ `d > t²` ⟺ `t² + t − 1 > 0`
+  have hlow : realRootPath π < Real.sqrt (pairDisc π) := by
+    nlinarith [hsq, hnn, hdd, hb, hγ, ht0, hgt]
+  rw [Ypair_of_disc_pos hd.le]
+  refine ⟨?_, ?_, ?_, ?_⟩ <;> simp <;> nlinarith [hb, ht0, hnn, hlow]
+
+/-! ### `hcont`, assembled -/
+
+theorem arcX_pi : arcX π = -1 := by
+  simp [arcX]
+
+/-- The `snd` analogue of `notCut_Ypair_fst`, and the same for the real branch —
+both on the **closed** left endpoint, where `VSide` is unavailable. -/
+theorem notCut_Ypair_snd {φ : ℝ} (h : pairDisc φ < 0) (hlo : 0 ≤ φ)
+    (hhi : φ < π) :
+    (Ypair φ).2 ∈ notCut ∧ arcX φ * (Ypair φ).2 ∈ notCut
+      ∧ (Ypair φ).2 / arcX φ ∈ notCut := by
+  have hy : (Ypair φ).2 ∈ notCut := Or.inr (re_Ypair_lt_one h).2
+  rcases eq_or_lt_of_le (Real.sin_nonneg_of_nonneg_of_le_pi hlo hhi.le) with hs0 | hs0
+  · have hφ : φ = 0 := eq_zero_of_sin_eq_zero hlo hhi hs0.symm
+    subst hφ
+    refine ⟨hy, ?_, ?_⟩ <;> simpa [arcX_zero] using hy
+  · have hv := vSide_Ypair_snd (φ := φ) (ne_of_gt hs0)
+    exact ⟨hv.hc₁, hv.hc₂, hv.hc₃⟩
+
+theorem notCut_Yreal {φ : ℝ} (hlo : 0 ≤ φ) (hhi : φ < π) :
+    Yreal φ ∈ notCut ∧ arcX φ * Yreal φ ∈ notCut ∧ Yreal φ / arcX φ ∈ notCut := by
+  have hy : Yreal φ ∈ notCut := Or.inr (by
+    simpa [Yreal] using realRootPath_lt_one φ)
+  rcases eq_or_lt_of_le (Real.sin_nonneg_of_nonneg_of_le_pi hlo hhi.le) with hs0 | hs0
+  · have hφ : φ = 0 := eq_zero_of_sin_eq_zero hlo hhi hs0.symm
+    subst hφ
+    refine ⟨hy, ?_, ?_⟩ <;> simpa [arcX_zero] using hy
+  · have hv := vSide_Yreal (φ := φ) (ne_of_gt hs0)
+    exact ⟨hv.hc₁, hv.hc₂, hv.hc₃⟩
+
+/-- `−Ypair ∈ slitPlane` on the whole arc: by `Im ≠ 0` before the collision, by
+`Re < 0` at and after it. The two disjuncts, and neither covers both regimes. -/
+theorem neg_Ypair_mem_slitPlane_all (φ : ℝ) :
+    -(Ypair φ).1 ∈ Complex.slitPlane ∧ -(Ypair φ).2 ∈ Complex.slitPlane := by
+  rcases lt_or_ge (pairDisc φ) 0 with h | h
+  · exact neg_Ypair_mem_slitPlane h
+  · obtain ⟨h1, h2, _, _⟩ := re_Ypair_neg_of_disc_pos h
+    exact ⟨Or.inl (by simpa using h1), Or.inl (by simpa using h2)⟩
+
+/-- At `φ = 0` the pair is complex: `β = t − 2 < 0`, and `pairBeta_pos` says that
+forces `pairDisc < 0`. Needed because the real-branch statements would otherwise
+have to be argued at a point where they are false. -/
+theorem pairDisc_zero_neg : pairDisc 0 < 0 := by
+  by_contra hcon
+  push_neg at hcon
+  have hb := pairBeta_pos hcon
+  have : pairBeta 0 = realRootPath 0 - 2 := by unfold pairBeta; rw [Real.cos_zero]; ring
+  linarith [realRootPath_lt_one 0, this, hb]
+
+theorem continuousAt_Yreal (φ : ℝ) : ContinuousAt Yreal φ :=
+  (hasDerivAt_Yreal' φ).continuousAt
+
+theorem continuousAt_arcX (φ : ℝ) : ContinuousAt arcX φ := (hasDerivAt_arcX φ).continuousAt
+
+/-- **`hcont`.** `envelopeS` is continuous at every point of `Icc 0 π`, endpoint
+included — which is where `continuousAt_re_cLiTwoExt` earns its place: at `φ = π`
+the arguments `x·Ypair.2` and `Ypair.2/x` are both `−Ypair.2 π > 1`, sitting
+**on** Li₂'s cut, and no continuity statement about `cLiTwoExt` itself is true
+there. -/
+theorem continuousAt_envelopeS_concrete {φ : ℝ} (hlo : 0 ≤ φ) (hhi : φ ≤ π) :
+    ContinuousAt (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2)) φ := by
+  have hX := continuousAt_arcX φ
+  have hX0 := arcX_ne_zero φ
+  have hslit := neg_Ypair_mem_slitPlane_all φ
+  have hYr := continuousAt_Yreal φ
+  have hY1 : ContinuousAt (fun u => (Ypair u).1) φ := continuous_Ypair.fst.continuousAt
+  have hY2 : ContinuousAt (fun u => (Ypair u).2) φ := continuous_Ypair.snd.continuousAt
+  have hrpos : 0 < (Yreal φ).re := by simpa [Yreal] using realRootPath_pos φ
+  -- `sin φ > 0` whenever the pair is NOT complex: `pairDisc 0 < 0` rules out `φ = 0`
+  have hsin_of : 0 ≤ pairDisc φ → φ < π → 0 < Real.sin φ := by
+    intro hd hπ
+    rcases eq_or_lt_of_le hlo with h0 | h0
+    · rw [← h0] at hd; linarith [pairDisc_zero_neg]
+    · exact Real.sin_pos_of_pos_of_lt_pi h0 hπ
+  rcases eq_or_lt_of_le hhi with hπ | hπ
+  · -- the endpoint: `arcX π = −1`, so `x·y` and `y/x` are both `−y`
+    subst hπ
+    obtain ⟨hb1, hb2, hi1, hi2⟩ := Ypair_pi_bracket
+    have hcut : ∀ y : ℂ, y.im = 0 → -1 < y.re → y.re < 1 →
+        (y ∈ notCut ∧ arcX π * y ∈ notCut ∧ y / arcX π ∈ notCut) := by
+      intro y hyi h1 h2
+      rw [arcX_pi]
+      refine ⟨Or.inr h2, Or.inr ?_, Or.inr ?_⟩
+      · simp [Complex.neg_re]; linarith
+      · simp [Complex.div_re, Complex.normSq_apply, hyi]; linarith
+    have hn1 : ((Ypair π).1).re < 0 := (re_Ypair_neg_of_disc_pos pairDisc_pi_pos.le).1
+    refine ContinuousAt.add (ContinuousAt.add ?_ ?_) ?_
+    · obtain ⟨n1, n2, n3⟩ := hcut (Yreal π) (by simp [Yreal])
+        (by simpa [Yreal] using lt_trans (by norm_num) (realRootPath_pos π))
+        (by simpa [Yreal] using realRootPath_lt_one π)
+      exact continuousAt_re_deformedV_comp hX hYr hX0 (Or.inl n1) (Or.inl n2)
+        (Or.inl n3) (Or.inr hrpos)
+    · obtain ⟨n1, n2, n3⟩ := hcut _ hi1 hb1 (by linarith)
+      exact continuousAt_re_deformedV_comp hX hY1 hX0 (Or.inl n1) (Or.inl n2)
+        (Or.inl n3) (Or.inl hslit.1)
+    · have hpos : (1 : ℝ) < -((Ypair π).2).re := by linarith
+      have hval : arcX π * (Ypair π).2 = ((-((Ypair π).2).re : ℝ) : ℂ) := by
+        rw [arcX_pi]; apply Complex.ext <;> simp [hi2]
+      have hval' : (Ypair π).2 / arcX π = ((-((Ypair π).2).re : ℝ) : ℂ) := by
+        rw [arcX_pi]; apply Complex.ext <;>
+          simp [Complex.div_re, Complex.div_im, Complex.normSq_apply, hi2]
+      exact continuousAt_re_deformedV_comp hX hY2 hX0
+        (Or.inl (Or.inr (by linarith))) (Or.inr ⟨_, hpos, hval⟩)
+        (Or.inr ⟨_, hpos, hval'⟩) (Or.inl hslit.2)
+  · refine ContinuousAt.add (ContinuousAt.add ?_ ?_) ?_
+    · obtain ⟨n1, n2, n3⟩ := notCut_Yreal hlo hπ
+      exact continuousAt_re_deformedV_comp hX hYr hX0 (Or.inl n1) (Or.inl n2)
+        (Or.inl n3) (Or.inr hrpos)
+    · rcases lt_or_ge (pairDisc φ) 0 with hd | hd
+      · obtain ⟨n1, n2, n3⟩ := notCut_Ypair_fst hd hlo hπ
+        exact continuousAt_re_deformedV_comp hX hY1 hX0 (Or.inl n1) (Or.inl n2)
+          (Or.inl n3) (Or.inl hslit.1)
+      · have hv := vSide_Ypair_fst (ne_of_gt (hsin_of hd hπ))
+        exact continuousAt_re_deformedV_comp hX hY1 hX0 (Or.inl hv.hc₁)
+          (Or.inl hv.hc₂) (Or.inl hv.hc₃) (Or.inl hslit.1)
+    · rcases lt_or_ge (pairDisc φ) 0 with hd | hd
+      · obtain ⟨n1, n2, n3⟩ := notCut_Ypair_snd hd hlo hπ
+        exact continuousAt_re_deformedV_comp hX hY2 hX0 (Or.inl n1) (Or.inl n2)
+          (Or.inl n3) (Or.inl hslit.2)
+      · have hv := vSide_Ypair_snd (ne_of_gt (hsin_of hd hπ))
+        exact continuousAt_re_deformedV_comp hX hY2 hX0 (Or.inl hv.hc₁)
+          (Or.inl hv.hc₂) (Or.inl hv.hc₃) (Or.inl hslit.2)
+
+/-- **`hcont`** — the last hypothesis of `envelopeS_total_concrete`. -/
+theorem continuousOn_envelopeS_concrete :
+    ContinuousOn (envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2))
+      (Set.Icc 0 π) := fun _ hφ =>
+  (continuousAt_envelopeS_concrete hφ.1 hφ.2).continuousWithinAt
+
+/-- **The transport at the concrete labelling, with continuity supplied.**
+
+`S(π) − S(0) = π²` now rests on exactly one thing: that the collision `φ₀` is the
+**only** zero of `pairDisc` on the open arc. That is a statement about a quartic
+in `cos φ` — Route 32 measures its unique root at `c* = −0.7422176659` — and it
+is carried as a hypothesis rather than assumed, because measuring the number of
+roots of a quartic on a grid is exactly the shape of argument this lane has had
+to retract twice. -/
+theorem envelopeS_total_concrete_of_unique_collision {c : ℝ} (hc0 : 0 < c) (hcπ : c < π)
+    (hcoll : ∀ φ ∈ Set.Ioo (0 : ℝ) π, φ ≠ c → pairDisc φ ≠ 0) :
+    envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) π
+      = envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) 0 + π ^ 2 :=
+  envelopeS_total_concrete hc0 hcπ hcoll continuousOn_envelopeS_concrete
 
 end QOU.QBeta.FiveTwoDeformedSaddle
