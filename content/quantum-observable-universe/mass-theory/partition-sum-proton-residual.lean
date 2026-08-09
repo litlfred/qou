@@ -4,6 +4,7 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Proton tower residual = m_e · tr_M(C_Frob)
@@ -70,6 +71,18 @@ def qSubstrate : ℝ := 1.10998
 /-- The q-integer [2]_q = q + q⁻¹, evaluated at q = q_0.
     1.10998 + 1/1.10998 ≈ 2.01092. -/
 noncomputable def qInt2 : ℝ := qSubstrate + 1 / qSubstrate
+
+/-- **Bridge to the canonical balanced bracket at the substrate anchor.**
+
+Unlike the generic shorthand sites, this one is pinned at a *numeral*, so the
+`q − q⁻¹ ≠ 0` side condition of `qIntBal_two` is not carried as a hypothesis —
+it is discharged by `norm_num` at `q₀ = 1.10998` (where `q₀² ≈ 1.232 ≠ 1`).  The
+equation is therefore unconditional, which is what one wants of a site whose
+whole purpose is a numeric evaluation. -/
+theorem qInt2_eq_canonical : qInt2 = QOU.QInteger.qIntBal qSubstrate 2 := by
+  have hne : qSubstrate - qSubstrate⁻¹ ≠ 0 := by
+    rw [qSubstrate]; norm_num
+  rw [QOU.QInteger.qIntBal_two _ hne, qInt2, one_div]
 
 /-- The Markov trace of the Frobenius co-Casimir of H_n(q):
       tr_M(C_Frob) = Σ_{λ ⊢ n} 1/dim_q(λ).
