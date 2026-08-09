@@ -534,4 +534,42 @@ theorem genForced {R : Type*} [CommRing R] (q : R) (v : ℕ → R) (r : ℕ → 
   rw [hcyc] at hchain
   linear_combination hchain
 
+/-- The `q = 1` image of the `q`-Steiner numerator: `M₀ = 0`,
+    `M_{m+1} = 3·M_m + 2^{runSum m + m}`. This is `φ(N_m)` for any `q = 1`
+    evaluation `φ` (see `genSteinerNum_map`). -/
+def genSteinerNumZ (r : ℕ → ℕ) : ℕ → ℤ
+  | 0 => 0
+  | m + 1 => 3 * genSteinerNumZ r m + 2 ^ (runSum r m + m)
+
+/-- **The `q = 1` evaluation sends `N_m` to `M_m`.** For any ring hom
+    `φ : R →+* ℤ` with `φ q = 1`, `φ (genSteinerNum q r m) = genSteinerNumZ r m`. -/
+theorem genSteinerNum_map {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (r : ℕ → ℕ)
+    (hq : φ q = 1) (m : ℕ) : φ (genSteinerNum q r m) = genSteinerNumZ r m := by
+  induction m with
+  | zero => simp [genSteinerNum, genSteinerNumZ]
+  | succ n ih =>
+    simp only [genSteinerNum, genSteinerNumZ, map_add, map_mul, map_pow, map_one, hq]
+    rw [ih]; norm_num
+
+/-- **Uniform `q`-Steiner exclusion.** For any cyclic word of `m` odd steps whose
+    `q = 1` numerator height `M_m = genSteinerNumZ r m` is positive and strictly
+    below the denominator height `2^{runSum m + m} − 3^m`, there is no cycle: the
+    denominator cannot divide the smaller positive numerator. This is the uniform
+    engine — every rung's `no_*_cycle` is an instance (compute `M_m` and check the
+    gap). The remaining `q`-Steiner content is purely arithmetic: which
+    arrangements satisfy the gap. -/
+theorem genNoCycle {R : Type*} [CommRing R] (φ : R →+* ℤ) (q : R) (v : ℕ → R)
+    (r : ℕ → ℕ) (hq : φ q = 1)
+    (hrel : ∀ i, (q + 1) ^ (r i + 1) * v (i + 1) = (q ^ 2 + q + 1) * v i + 1)
+    (m : ℕ) (hcyc : v m = v 0)
+    (hpos : 0 < genSteinerNumZ r m)
+    (hlt : genSteinerNumZ r m < 2 ^ (runSum r m + m) - 3 ^ m) : False := by
+  refine no_cycle_of_q_one_height φ _ (v 0) _ (genForced q v r hrel m hcyc) ?_
+  intro hdvd
+  simp only [map_sub, map_pow, map_add, map_one, hq,
+    genSteinerNum_map φ q r hq] at hdvd
+  norm_num at hdvd
+  have hle := Int.le_of_dvd hpos hdvd
+  omega
+
 end QOU.AppendixSurreals
