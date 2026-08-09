@@ -354,7 +354,7 @@ class Assertion:
         name: str,
         computed: Union[float, str],
         expected: Union[float, str],
-        tolerance: Optional[float] = None,
+        tolerance: Union[float, str, None] = None,
         unit: Optional[str] = None,
         source: Optional[str] = None,
     ):
@@ -370,7 +370,12 @@ class Assertion:
         if self.tolerance is None:
             return self.computed == self.expected
         try:
-            return abs(float(self.computed) - float(self.expected)) <= self.tolerance
+            # `float()` on the tolerance too: producers draining raw float64
+            # (qou-t0rf) pass computed/expected/tolerance as precision-preserving
+            # STRINGS, and a str tolerance would otherwise make `<=` raise and
+            # silently fall through to string equality — a wrong verdict, not an
+            # error. Coercing here keeps the numeric check numeric.
+            return abs(float(self.computed) - float(self.expected)) <= float(self.tolerance)
         except (ValueError, TypeError):
             return str(self.computed) == str(self.expected)
 
@@ -391,6 +396,73 @@ class Assertion:
 
 
 # ── WitnessBuilder ───────────────────────────────────────────────
+
+# ── Raw-float64 guard (qou-t0rf) ──────────────────────────────────
+#
+# Every witness in this corpus is written through `WitnessBuilder.save`,
+# which makes it the one place a raw Python float can be stopped before
+# it reaches JSON. `computations/witness_raw_float64_audit.py` catches
+# these after the fact and has been red on `main` with a backlog fed by
+# several independent sessions; a check here is what prevents NEW ones.
+#
+# Deliberately OFF by default so this is not a breaking change while the
+# backlog is drained. Flip it on in CI (and eventually by default) once
+# the audit is green:
+#
+#     QOU_WITNESS_STRICT_FLOAT64=warn     report offending paths to stderr
+#     QOU_WITNESS_STRICT_FLOAT64=1        raise ValueError
+#
+# The fix a producer should make is never to stringify the float — that
+# is laundering, and `witness_float64_padding_audit.py` catches it. Carry
+# `mpmath.mpf` from the source and serialize with `_precision.fmt`.
+
+def _raw_float_paths(obj, path=""):
+    """Yield JSON paths of every raw (non-integer-valued) float in `obj`."""
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            yield from _raw_float_paths(v, f"{path}.{k}")
+    elif isinstance(obj, (list, tuple)):
+        for i, v in enumerate(obj):
+            yield from _raw_float_paths(v, f"{path}[{i}]")
+    elif isinstance(obj, float) and not isinstance(obj, bool):
+        yield path
+
+
+def _check_raw_float64(witness: dict, name: str) -> None:
+    """Guard the single point where a witness is written.
+
+    DEFAULT IS NOW `warn`, not off. The ratchet backlog it was staged behind
+    has cleared — `witness_raw_float64_audit.py --strict` reports 0 NEW and 0
+    REGRESSED and exits 0 — so a producer that starts emitting raw float64
+    should say so at the moment it does it, not a CI run later.
+
+    `warn` and not `raise`, deliberately: ~1580 baseline witnesses still carry
+    float64 from before the ratchet, and defaulting to `raise` would break
+    every one of their producers on re-run for a debt they are not adding to.
+    The audit gate is what ENFORCES (it fails CI on any new or regressed file);
+    this is what LOCATES, printing the exact JSON paths at the producer.
+
+      QOU_WITNESS_STRICT_FLOAT64=1     raise — use in CI and when draining
+      QOU_WITNESS_STRICT_FLOAT64=warn  print to stderr (the default)
+      QOU_WITNESS_STRICT_FLOAT64=0     silence entirely
+    """
+    mode = os.environ.get("QOU_WITNESS_STRICT_FLOAT64", "warn").strip().lower()
+    if mode in ("0", "off", "false"):
+        return
+    if mode == "":
+        mode = "warn"
+    paths = list(_raw_float_paths(witness))
+    if not paths:
+        return
+    head = ", ".join(paths[:8]) + (" …" if len(paths) > 8 else "")
+    msg = (f"{name}: {len(paths)} raw float64 field(s) would enter the "
+           f"witness — {head}. Carry mpmath.mpf from the source and "
+           f"serialize with _precision.fmt; do NOT stringify the float.")
+    if mode in ("warn", "warning"):
+        print(f"⚠ raw-float64: {msg}", file=sys.stderr)
+    else:
+        raise ValueError(f"raw-float64 guard: {msg}")
+
 
 class WitnessBuilder:
     """
@@ -537,11 +609,13 @@ class WitnessBuilder:
         name: str,
         computed: Union[float, str],
         expected: Union[float, str],
-        tolerance: Optional[float] = None,
+        tolerance: Union[float, str, None] = None,
         unit: Optional[str] = None,
         source: Optional[str] = None,
     ) -> "WitnessBuilder":
-        """Add a named assertion."""
+        """Add a named assertion. Pass `computed`/`expected`/`tolerance` as
+        STRINGS to keep a value out of float64 — that is the drained convention
+        (qou-t0rf); `passed` coerces with `float()` either way."""
         self.assertions.append(
             Assertion(name, computed, expected, tolerance, unit, source)
         )
@@ -1000,6 +1074,8 @@ class WitnessBuilder:
                   f"{'all passed' if witness['allPassed'] else 'FAILURES'}) "
                   f"[unchanged — kept on-disk commitSha for staleness]")
             return out_path
+
+        _check_raw_float64(witness, out_path.name)
 
         with open(out_path, "w", encoding="utf-8") as f:
             json.dump(witness, f, indent=2, ensure_ascii=False, default=str)

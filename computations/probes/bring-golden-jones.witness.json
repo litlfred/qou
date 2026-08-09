@@ -1,0 +1,124 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-08T17:46:11.394206+00:00",
+  "commitSha": "de9047e7afac18e68cf5a563b3b815a61e42e616",
+  "assertions": [
+    {
+      "name": "quantum_dimension_at_r5_is_the_golden_ratio",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "[2] = sin(2 pi/5)/sin(pi/5) against (1+sqrt5)/2, symbolically"
+    },
+    {
+      "name": "bring_knot_jones_values_are_golden",
+      "computed": "4",
+      "expected": "4",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|V|^2 at zeta_5 and zeta_10 for 3_1 and T_{2,5} against closed forms asserted before evaluation"
+    },
+    {
+      "name": "cinquefoil_golden_value_is_fibonacci_global_dimension",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|V(T_{2,5})(zeta_10)|^2 = 2 + phi = 1 + phi^2 = D^2_{Fib}"
+    },
+    {
+      "name": "cinquefoil_value_sits_on_the_keystone_dimension_tower",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|V(T_{2,5})(zeta_10)|^2 against D_Fib^2, D_SU(2)_3^2/2 and D_E8hat^2/4, exact Q(sqrt5) arithmetic"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "bring-golden-jones",
+  "scriptFile": "bring_golden_jones_probe.py",
+  "scriptHash": "b9c32a7aaedd",
+  "scriptCommitSha": "de9047e7afac18e68cf5a563b3b815a61e42e616",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Identifies the sqrt5 of the brings-surface chapter with the sqrt5 of the Jones polynomial at a fifth root of unity. At r = 5 the quantum dimension [2] = [3] = phi, and the Bring torus knots' Jones polynomials evaluate to golden-ratio algebraic integers, the cinquefoil's |V(zeta_10)|^2 = 2 + phi being the Fibonacci category's global dimension. Separates this from the c_sigma sqrt5 question: torus knots have zero volume and the hyperbolic closed forms live in the imaginary quadratic fields Q(i) and Q(sqrt-3), where a real sqrt5 cannot appear. Exact radicals throughout; closed forms asserted before evaluation.",
+  "auditOnly": "docs/audits/2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md",
+  "data": {
+    "quantum_dimensions_r5": {
+      "[1]": "1",
+      "[2]": "sqrt(5 - sqrt(5))*(sqrt(5) + 5)**(3/2)/20",
+      "[3]": "sqrt(5 - sqrt(5))*(sqrt(5) + 5)**(3/2)/20",
+      "[4]": "1"
+    },
+    "jones_evaluations": {
+      "3_1 (trefoil)": {
+        "zeta_10": {
+          "abs_V_squared": "sqrt(5)/2 + 3/2",
+          "closed_form": "sqrt(5)/2 + 3/2",
+          "reading": "phi^2",
+          "matches": true
+        },
+        "zeta_5": {
+          "abs_V_squared": "7/2 - sqrt(5)/2",
+          "closed_form": "7/2 - sqrt(5)/2",
+          "reading": "3 - 1/phi",
+          "matches": true
+        }
+      },
+      "T_{2,5} (cinquefoil)": {
+        "zeta_10": {
+          "abs_V_squared": "sqrt(5)/2 + 5/2",
+          "closed_form": "sqrt(5)/2 + 5/2",
+          "reading": "2 + phi = D^2 of the Fibonacci category",
+          "matches": true
+        },
+        "zeta_5": {
+          "abs_V_squared": "7/2 - 3*sqrt(5)/2",
+          "closed_form": "7/2 - 3*sqrt(5)/2",
+          "reading": "phi^{-4}",
+          "matches": true
+        }
+      }
+    },
+    "three_candidate_sqrt5_mechanisms": {
+      "1_gauss_sum": "sum_k zeta_5^{k^2} = sqrt5, the WRT invariant of a lens space; Sigma_2(T_{2,5}) = L(5,q) since |H_1| = |Delta(-1)| = 5. This is what the corpus states.",
+      "2_branched_cover": "Sigma_5(T_{2,3}) is the Poincare homology sphere Sigma(2,3,5) = S^3/2I, |2I| = 120 = |S_5| = |Aut(Bring)|. OPEN — needs lawrence-zagier-1999, unreadable here; see qou-lz235.",
+      "3_quantum_dimension": "[2]_{r=5} = phi and the Bring knots' Jones values are golden-ratio algebraic integers. IDENTIFIED with (1): both are Q(sqrt5) = Q(zeta_5)^+ via 2 cos(pi/5). NOTE the quantum-dimension half is PRIOR IN-REPO work (lr_modulus_identification_sigma235.py, keystone_valuemap_genuine_smatrix_s013.py); only the Jones-polynomial evaluations and the jones1985 link are added here."
+    },
+    "what_this_is_not": {
+      "not_c_sigma": "T_{2,3} and T_{2,5} are torus knots — zero simplicial volume, polynomial colored-Jones growth, no Lobachevsky saddle. c_sigma is a different object and the volume conjecture is vacuous on them.",
+      "field_obstruction": "the hyperbolic closed forms live in Q(i) (octahedral) and Q(sqrt-3) (tetrahedral), the two exceptional IMAGINARY quadratic fields. Q(sqrt5) is REAL, so it cannot appear there by that route at all."
+    },
+    "bridge_to_sigma235_keystone": {
+      "tower": {
+        "D_Fib_squared": "1 + (1 + sqrt(5))**2/4",
+        "D_SU2_level3_squared": "sqrt(5) + 5",
+        "D_E8hat_squared": "2*sqrt(5) + 10",
+        "sum_marks_squared": 120,
+        "ratios": {
+          "E8hat_over_SU2": "2",
+          "SU2_over_Fib": "2",
+          "E8hat_over_Fib": "4"
+        },
+        "core_identity": "80"
+      },
+      "identification": "|V(T_{2,5})(zeta_10)|^2 = D_Fib^2 = D_SU(2)_3^2/2 = D_E8hat^2/4 = (5+sqrt5)/2",
+      "why_it_matters": "lr_modulus_identification_sigma235.py carries D_E8hat^2 = 2 D_MTC^2 = 10 +/- 2 sqrt5 and the flat amplitudes A_m(alpha) = +/-(2/sqrt5) sin(alpha m pi/5) for Sigma(2,3,5). The Bring chapter's zeta_5 carrier lands on the bottom of that same tower, which links the torus-knot Jones values to the keystone rather than leaving them a separate coincidence",
+      "parallel_not_identical": "this is NOT the c_sigma law. c_sigma is the asymptotic constant of the colored Jones of a CUSPED complement with Vol > 0, power N^{3/2}, growth e^{Vol N/2pi}. Hikami's S_l is a flat-connection amplitude in the WRT invariant of a CLOSED manifold with Vol = 0, power sqrt(N), exponential a pure phase. Both constants are FORCED, by different mechanisms: k = 2^{-1/2} by the Gaussian saddle (the Hessian cancels before evaluation, k_sq_eq_half_of_saddle), and the keystone's sqrt2 by the 2:1 fold D_E8hat^2 = 2 D_MTC^2, a covering multiplicity. They share Q(sqrt5) by cyclotomy, not by mechanism"
+    }
+  }
+}

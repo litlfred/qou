@@ -54,6 +54,7 @@ import QOU.Mathlib.WeierstrassFactorEstimate
 -- lattice-basis determinant lemmas, and the proof that the per-cusp factor
 -- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
 import QOU.OneLoopEdgeLattice
+import QOU.OneLoopPrefactorInvariance
 -- Borel-Carathéodory inequality: a one-sided bound on Re f gives a two-sided
 -- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
 -- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
@@ -140,6 +141,26 @@ import QOU.Knot.NeumannZagierParity
 import QOU.Knot.PerNeutronLadder
 import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
+import QOU.Knot.KashaevProdEndpoint
+import QOU.Knot.KashaevReflectionTrapezoid
+import QOU.Knot.KashaevEndpointSplit
+import QOU.Knot.LogSincNearZero
+import QOU.Knot.LobNearZero
+import QOU.Knot.KashaevAsymptotic
+import QOU.Knot.KashaevArgmax
+import QOU.Knot.LobTaylorSaddle
+import QOU.Knot.KashaevTailBound
+import QOU.Knot.KashaevPeakValue
+import QOU.Knot.KashaevLogAsymptotic
+import QOU.Knot.KashaevRatioExpansion
+import QOU.Knot.KashaevWindowSum
+import QOU.Knot.KashaevWindowIndex
+import QOU.Knot.KashaevWindowAssembly
+import QOU.Knot.KashaevSaddleWindow
+import QOU.Knot.KashaevBeyondWindow
+import QOU.Knot.KashaevFullSum
+import QOU.Knot.KashaevAsymptoticBounds
+import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
@@ -371,6 +392,20 @@ import QOU.Infra
 import QOU.Observations.AlgebraicGnsEmbedding
 import QOU.Observations.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
+import QOU.MathlibExt.RootsOfUnityProduct
+import QOU.MathlibExt.GaussianThetaSum
+import QOU.MathlibExt.GaussianShearIntegral
+import QOU.MathlibExt.StirlingRobbins
+import QOU.MathlibExt.TrapezoidRule
+import QOU.MathlibExt.CorrectedTrapezoid
+import QOU.MathlibExt.CompositeEulerMaclaurin
+import QOU.MathlibExt.SinCubeBounds
+import QOU.MathlibExt.TaylorRemainder
+import QOU.MathlibExt.GaussianSumBound
+import QOU.MathlibExt.GaussianThetaBound
+import QOU.MathlibExt.GaussianTiltedSum
+import QOU.MathlibExt.GaussianTailBound
+import QOU.MathlibExt.GaussianWindowSum
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm

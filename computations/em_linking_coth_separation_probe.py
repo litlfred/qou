@@ -103,12 +103,12 @@ def main() -> None:
                             for r, v in zip(rows, vals)},
             "ratio_to_A_cbrt": [mp.nstr(x, 8) for x in ratios],
             "coefficient_mean": mp.nstr(mean, 8),
-            "rel_scatter_about_A_cbrt": float(rel_sd),
-            "rel_scatter_raw": float(raw_sd),
+            "rel_scatter_about_A_cbrt": mp.nstr(rel_sd, 8),
+            "rel_scatter_raw": mp.nstr(raw_sd, 8),
         }
 
     ranked = sorted(results.items(),
-                    key=lambda kv: kv[1]["rel_scatter_about_A_cbrt"])
+                    key=lambda kv: mpf(kv[1]["rel_scatter_about_A_cbrt"]))
     best_name, best = ranked[0]
     h_coth = results["H_coth: arccoth(kappa)"]
     h_wins = best_name.startswith("H_coth")
@@ -149,9 +149,9 @@ def main() -> None:
     # on kappa in [2, 3.3] (arccoth(k) = 1/k + 1/(3k^3) + ...), so the
     # present data CANNOT separate them. They diverge at large A, which
     # is where the discriminating measurement lies.
-    gap = abs(h_coth["rel_scatter_about_A_cbrt"]
-              - results["null: 1/kappa"]["rel_scatter_about_A_cbrt"])
-    indistinguishable = gap < 0.02
+    gap = abs(mpf(h_coth["rel_scatter_about_A_cbrt"])
+              - mpf(results["null: 1/kappa"]["rel_scatter_about_A_cbrt"]))
+    indistinguishable = gap < mpf("0.02")
     coeff = mpf(h_coth["coefficient_mean"])
     forecast = {}
     for A in (27, 41, 57):
@@ -166,7 +166,7 @@ def main() -> None:
             "null_1_over_kappa_kappa": mp.nstr(k_null, 6),
         }
     wb.add_data("discrimination", {
-        "H_coth_vs_1_over_kappa_scatter_gap": float(gap),
+        "H_coth_vs_1_over_kappa_scatter_gap": mp.nstr(gap, 8),
         "indistinguishable_on_present_data": bool(indistinguishable),
         "why": ("arccoth(k) = 1/k + 1/(3k^3) + ... , so on the observed "
                 "range k in [2.1, 3.2] the two transforms agree to a few "
@@ -219,7 +219,8 @@ def main() -> None:
     print(f"\nmonotone increasing (2% tol): {near_monotone}\n")
     print("scatter about the A^(1/3) law (lower = better):")
     for name, res in ranked:
-        print(f"  {res['rel_scatter_about_A_cbrt']*100:6.2f}%   {name}")
+        print(f"  {mp.nstr(mpf(res['rel_scatter_about_A_cbrt']) * 100, 4):>7}%"
+              f"   {name}")
     print(f"\nH_coth beats all null controls: {h_wins}")
     print(f"witness -> {out}")
 
