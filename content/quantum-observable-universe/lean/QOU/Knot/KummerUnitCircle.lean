@@ -35,9 +35,12 @@
     (`dD = log|z| d arg(1−z) − log|1−z| d arg z` against
     `dΛ(θ) = −log|2 sin θ| dθ`).  Nothing here does that.  **The 5₂ shape
     `y₁` has `|y₁| = 1.5236 ≠ 1`, so this file does not reach `Vol(5₂)`.**
-  * **`Im Li₂(e^{iθ}) = Cl₂(θ)` for the corpus's `cLiTwoExt`.**  This file proves
-    the Λ-side equals `Cl₂(θ)`; it does not connect that to `cLiTwoExt`.  The two
-    halves of Kummer meet only once that is done — see bean `qou-kmmr`.
+  * ~~`Im Li₂(e^{iθ}) = Cl₂(θ)` for the corpus's `cLiTwoExt`.~~  **Done** —
+    `QOU/Knot/KummerDilogHalf.lean` (`im_cLiTwoExt_exp`), which combines with
+    `blochWigner_lob_exp` below into `kummer_unit_circle`: the two halves of
+    Kummer now meet on `|z| = 1`.  This file still proves only the Λ-side, and
+    still states its own conclusion in terms of `Cl₂` alone — that separation is
+    deliberate, not stale.
 
   So what is delivered is the **geometric** side on `|z| = 1`, stated in terms of
   `Cl₂` alone, with no dilogarithm claim.
@@ -145,7 +148,9 @@ The tetrahedron is *isosceles* — angles `(θ, (π−θ)/2, (π−θ)/2)` — a
 identity is exactly Clausen duplication.
 
 ⚠ This is the Λ-side only, and only on `|z| = 1`.  It makes no claim about
-`Im Li₂`, and it does not reach the 5₂ shape, which has `|y₁| = 1.52`. -/
+`Im Li₂` — for that, and for the two halves combined, see
+`QOU/Knot/KummerDilogHalf.lean`.  Neither reaches the 5₂ shape, which has
+`|y₁| = 1.52`. -/
 theorem blochWigner_lob_exp {θ : ℝ} (h0 : 0 < θ) (h1 : θ < π) :
     BlochWigner_lob (Complex.exp ((θ : ℂ) * Complex.I)) = Cl_2 θ := by
   unfold BlochWigner_lob

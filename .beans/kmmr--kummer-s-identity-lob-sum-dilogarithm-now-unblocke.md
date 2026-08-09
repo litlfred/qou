@@ -117,3 +117,42 @@ cheaper of the two, and `QOU/Knot/Clausen.lean` already notes `Cl₂′` is
 point; (b) general `z`, which needs the two-variable argument
 `dD = log|z| d arg(1−z) − log|1−z| d arg z` against `dΛ(θ) = −log|2 sin θ| dθ`.
 Only (b) reaches the 5₂ shape.
+
+---
+**2026-08-09 — second increment: the dilogarithm half, so BOTH halves now meet
+on `|z| = 1`.**
+
+`QOU/Knot/KummerDilogHalf.lean`, sorry-free, standard axioms, `lake build`
+exit 0 / 3239 jobs with the `.olean` deleted first, zero `sorry`.
+
+* `im_cLiTwoExt_exp` — `Im cLiTwoExt(e^{iθ}) = Cl₂(θ)` on `(0, 2π)`.
+* `kummer_unit_circle` — the two halves combined:
+  `BlochWigner_lob(e^{iθ}) = Im cLiTwoExt(e^{iθ}) + log‖e^{iθ}‖·arg(1−e^{iθ})`.
+
+**The proof is the lane's standard move: same derivative, pin the constant.**
+Along `z = e^{iθ}`, `dz/dθ = iz`, so `hasDerivAt_cLiTwoExt'` gives
+`d/dθ cLiTwoExt(e^{iθ}) = −(log(1−z)/z)·(iz) = −i·log(1−z)`, whose imaginary
+part is `−log‖1−z‖ = −log(2 sin(θ/2))` — *verbatim* `Cl₂′(θ)`
+(`hasDerivAt_Cl_2_series`). Constant on `(0,2π)`, and `θ = π` kills it:
+`cLiTwoExt(−1) = −π²/12` is **real** so its imaginary part is `0`, and
+`Cl₂(π) = 0`.
+
+**A domain fact that made it cheap, and is worth remembering.** The *whole*
+punctured circle lies in `notCut = {w | w.im ≠ 0 ∨ w.re < 1}` — not by the
+obvious `sin θ ≠ 0` argument (which fails at `θ = π`), but because
+`cos θ = 1 − 2sin²(θ/2) < 1` on all of `(0, 2π)`. So the `re < 1` disjunct
+covers the entire interval and **no case split is needed at all**. That also
+keeps `θ = π` inside the domain, which is exactly the basepoint the proof needs.
+
+**Stale claims corrected in the same commit** — the previous increment's own:
+* Route 72's G3 asserted the dilogarithm half was "NOT proved in Lean for the
+  corpus's cLiTwoExt", with `"proved_in_lean_for_cLiTwoExt": False`. Now false;
+  gate text, flag, module docstring and VERDICT string all corrected, kept as
+  the numerical control.
+* `KummerUnitCircle.lean`'s header listed that half under "WHAT IS NOT PROVED".
+
+**Still open, and this is the one that matters:** Kummer for **general `z`**.
+Off the unit circle the tetrahedron is not isosceles and `log|z| ≠ 0`; it needs
+the two-variable argument `dD = log|z| d arg(1−z) − log|1−z| d arg z` against
+`dΛ(θ) = −log|2 sin θ| dθ`. **`|y₁| = 1.5236`, so nothing here reaches
+`Vol(5₂)`.** Only the general case would.

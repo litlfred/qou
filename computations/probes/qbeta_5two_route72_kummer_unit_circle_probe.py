@@ -22,12 +22,18 @@ Two jobs, and the second matters more.
 1. Control on the statement: the angles really are isosceles, and the Lambda
    identity really is duplication.
 2. **Mark the boundary.** A reader seeing "Kummer proved" could easily assume
-   the whole identity, or assume it reaches Vol(5_2). It does neither. G3 shows
-   the dilogarithm half is TRUE but NOT proved; G4 shows the 5_2 shape is off
-   the unit circle entirely, so this file cannot reach the volume.
+   the whole identity, or assume it reaches Vol(5_2). It does neither. G4 shows
+   the 5_2 shape is off the unit circle entirely, so nothing here reaches the
+   volume.
+
+UPDATED (Route 73). When written, G3 recorded the dilogarithm half as true but
+NOT proved. It is now proved -- `QOU/Knot/KummerDilogHalf.lean`,
+`im_cLiTwoExt_exp` and `kummer_unit_circle` -- so both halves of Kummer meet on
+|z| = 1. G3 is kept as the numerical control and its wording corrected rather
+than left to rot.
 
 **The 5_2 sum rule is PROVED** (`FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`).
-Kummer in general, and the 5_2 VOLUME, are NOT.
+Kummer for GENERAL z, and the 5_2 VOLUME, are NOT.
 """
 
 import json
@@ -100,14 +106,15 @@ def main() -> int:
         worst_dilog = max(worst_dilog, fabs(ls - D), fabs(im(polylog(2, z)) - clsin(2, th)))
     gates.append({
         "gate": "G3",
-        "claim": "THE BOUNDARY. The dilogarithm half -- Im Li_2(e^{i theta}) = Cl_2(theta), so "
-                 "that the Lambda-sum equals the Bloch-Wigner dilogarithm form -- is TRUE "
-                 "numerically but is NOT proved in Lean for the corpus's cLiTwoExt. The Lean "
-                 "theorem states its conclusion in terms of Cl_2 alone and makes NO dilogarithm "
-                 "claim. This gate exists so that boundary is recorded, not blurred",
+        "claim": "THE OTHER HALF -- NOW PROVED (Route 73). Im cLiTwoExt(e^{i theta}) = Cl_2(theta), "
+                 "so the Lambda-sum equals the Bloch-Wigner dilogarithm form on |z| = 1. When this "
+                 "gate was written that was numerically true but unproved; "
+                 "QOU/Knot/KummerDilogHalf.lean (im_cLiTwoExt_exp, kummer_unit_circle) now proves "
+                 "it, sorry-free. The gate is kept as the numerical control on the statement",
         "max_residual_lambda_vs_dilog": nstr(worst_dilog, 8),
         "numerically_true": bool(worst_dilog < tol),
-        "proved_in_lean_for_cLiTwoExt": False,
+        "proved_in_lean_for_cLiTwoExt": True,
+        "proved_by": "QOU/Knot/KummerDilogHalf.lean -- im_cLiTwoExt_exp, Route 73",
         "pass": bool(worst_dilog < tol),
     })
 
@@ -132,17 +139,21 @@ def main() -> int:
     out = {
         "probe": "qbeta_5two_route72_kummer_unit_circle",
         "beans": ["qou-kmmr"], "dps": mp.dps,
-        "lean": "QOU/Knot/KummerUnitCircle.lean -- blochWigner_lob_exp",
+        "lean": "QOU/Knot/KummerUnitCircle.lean -- blochWigner_lob_exp; "
+                "QOU/Knot/KummerDilogHalf.lean -- im_cLiTwoExt_exp, kummer_unit_circle",
         "gates": gates,
         "verdict": {
-            "proved": "Kummer's Lambda-side on |z| = 1: BlochWigner_lob(e^{i theta}) = Cl_2(theta), "
-                      "sorry-free, standard axioms. On the unit circle Kummer IS Clausen "
-                      "duplication.",
+            "proved": "Kummer's identity on |z| = 1, BOTH halves: "
+                      "BlochWigner_lob(e^{i theta}) = Cl_2(theta) = Im cLiTwoExt(e^{i theta}), "
+                      "sorry-free, standard axioms. The Lambda-side IS Clausen duplication; the "
+                      "dilogarithm side is same-derivative-plus-basepoint at theta = pi.",
             "not_proved": [
                 "Kummer for general z (needs the two-variable differential argument)",
-                "Im Li_2(e^{i theta}) = Cl_2(theta) for the corpus's cLiTwoExt",
                 "Vol(5_2) -- y_1 is off the unit circle",
             ],
+            "since_superseded": "G3's 'not proved in Lean' was true when written and is now "
+                                "false -- Route 73 proved it. Corrected here rather than left "
+                                "to rot.",
             "sum_rule_status": "PROVED",
         },
     }
@@ -154,8 +165,9 @@ def main() -> int:
     print(f"\nwitness -> {dest}")
     ok = all(g["pass"] for g in gates)
     print("VERDICT: " + (
-        "Kummer on |z| = 1 is PROVED (it is Clausen duplication). General Kummer, the "
-        "cLiTwoExt half, and Vol(5_2) are NOT -- the 5_2 shape is off the unit circle."
+        "Kummer on |z| = 1 is PROVED, BOTH halves -- the Lambda-side is Clausen duplication "
+        "and the cLiTwoExt side is Route 73. General Kummer and Vol(5_2) are NOT: the 5_2 "
+        "shape is off the unit circle."
         if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 
