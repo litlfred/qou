@@ -687,3 +687,79 @@ Concretely: `log <4_1>_N = log g_{k*} + log(Theta(sqrt N))`, and
 `log g_{k*} = 2 s_{k*}` expands via (A) to
 `-(2N/pi)Lambda(theta*) + log(2N sin theta*) + O(1/N)`. Combining gives the
 `N^{3/2}` and the `c_sigma`. Every ingredient exists; the combination does not.
+
+---
+
+## Step 6 -- the join (`QOU/Knot/KashaevPeakValue.lean`, sorry-free)
+
+The join above is no longer untouched. Two theorems, both
+`[propext, Classical.choice, Quot.sound]`.
+
+**`log_kashaevProd_asymptotic`** -- for `1 <= k < N`, `4 <= N`:
+
+    | log g_k - ( -(2N/pi) Lambda(theta_k) + log(2 N sin theta_k)
+                  + (pi/6N) cot theta_k ) |
+      <= 2*( 1/(144 k^2) + (7/12)(pi/N)^2 + (pi/N)^2/(12 sin^2 theta_k) )
+
+with `theta_k = k pi / N`. This is `kashaev_log_sum_asymptotic` (bean
+`qou-mlgp`, gap A) doubled through
+`log_kashaevProd : log g_k = 2 sum_{j=1}^{k} log(2 sin(j pi/N))`.
+
+The mathematical content is entirely in the two imported theorems; what this
+one costs is bookkeeping, and it is worth recording that the bookkeeping was
+the only thing standing between the two arcs for several sessions:
+
+  * index sets: `Finset.Icc 1 k` on the `log_kashaevProd` side vs
+    `Finset.Ico 1 (k+1)` on the Euler-Maclaurin side (`ext j; simp only
+    [Finset.mem_Icc, Finset.mem_Ico]; omega` -- NOT the deprecated
+    `Nat.Ico_succ_right`);
+  * the angle: `(j:R) * (pi/N)` vs `(j:R) * pi / N` (`mul_div_assoc`);
+  * the doubling itself: the target main term is EXACTLY twice (A)'s, term by
+    term, including `pi/(6N) = 2 * pi/(12N)`. `field_simp; ring` after `set`ing
+    the four big subterms opaque.
+
+**`log_kashaevProd_saddle`** -- the same, re-centred on the exact saddle angle
+`5pi/6` instead of `theta_k`, for any `k` with `|theta_k - 5pi/6| <= pi/N`
+(which `floor(5N/6)` and `ceil(5N/6)` both satisfy). Extra cost:
+
+    (2N/pi) * ( sqrt3 (pi/N)^2 / 2 + M (pi/N)^3 / 6 )
+
+where `M` dominates `1/sin^2` between the two angles. Via
+`abs_Lob_taylor_saddle`, whose linear term vanishes because
+`Lambda'(5pi/6) = -log(2 sin(5pi/6)) = 0`.
+
+**That penalty is `O(1/N)`, not `O(1/N^2)`, and that is not slack in the
+argument.** The `N` in front of `Lambda` amplifies the quadratic Taylor term
+`sqrt3 d^2/2 ~ 1/N^2` back up to `1/N`. Probe part (iii) pins it: at `N = 961`
+the true re-centring cost is `3.92e-3` against a bound of `5.68e-3`, and
+`penalty * N -> 5.455` against `sqrt3 pi = 5.441`. The bound is within 45% of
+the truth and converging to the right constant, so nothing is being thrown away
+here. It matters downstream: `c_sigma` is only visible after the `sqrt N` from
+the Gaussian window is divided out, and an `O(1/N)` term in the exponent is not
+smaller than that.
+
+### Probe
+
+`computations/probes/kashaev_peak_value_probe.py` -- all assertions pass.
+Part (i) at the saddle index for `N` up to 960; part (ii) at nine indices
+spread across `[1, N)` for `N in {60, 240}`; part (iii) the re-centring with
+`N` NOT divisible by 6 so the offset is genuinely nonzero; part (iii-b) the
+degenerate `6 | N` case, where `theta_{k*} = 5pi/6` to 35 digits and (II)
+collapses back to (I); part (iv) the sanity check that
+`-(2/pi) Lambda(5pi/6) = Vol(4_1)/(2 pi) = 0.323065947219`, i.e. that the
+leading term really is the hyperbolic volume.
+
+First draft of part (iii) used only `N` divisible by 6 -- every offset was
+exactly 0, so the Taylor penalty was never exercised and the test was vacuous
+while printing "ok". Caught by noticing the `true cost` column was all zeros.
+
+### What is left
+
+`log <4_1>_N = log g_{k*} + log(Theta(sqrt N))` now has BOTH halves:
+step 5 bounds `<4_1>_N / g_{k*}` above and below, step 6 evaluates
+`log g_{k*}`. Remaining before `hc`:
+
+  1. combine them -- take `log` of the step-5 sandwich and add step 6;
+  2. `hc : c^2 |cot theta| = (2 sin theta)^2`, which at `theta* = 5pi/6`
+     reduces to `c^2 sqrt3 = 1`;
+  3. `htau`.

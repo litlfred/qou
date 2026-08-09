@@ -125,6 +125,7 @@ import QOU.Knot.KashaevAsymptotic
 import QOU.Knot.KashaevArgmax
 import QOU.Knot.LobTaylorSaddle
 import QOU.Knot.KashaevTailBound
+import QOU.Knot.KashaevPeakValue
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
