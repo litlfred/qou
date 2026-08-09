@@ -351,16 +351,42 @@ The explicit list contains **no He isotope** — only `p`, `n`, `D`, `T`, whose
 empty.** Measured: `dropped rows that are actually duplicates of an explicit
 entry: NONE`.
 
-Both the list and the guard were introduced in the same commit that created the
-file, so this is not drift — the guard was written for a list that never
-existed. Correcting it means either dropping the guard for the `z ≥ 2` loop or
-deduplicating by name instead of by `A`.
+Both the list and the guard appear in the file's first commit in history
+(`c912f7fd94`) and neither has been touched since, so this is not drift — the
+guard was written for a list that never existed. Correcting it means either
+dropping the guard for the `z ≥ 2` loop or deduplicating by name instead of
+by `A`.
 
 Grep found **no documented reason** to exclude ³He/⁴He from this table anywhere
 in `content/`, `computations/`, `docs/audits/`, or `docs/coordination/`, and no
-alternative key under which the rows are emitted.
+alternative key under which the rows are emitted. The committed witness contains
+zero occurrences of `3He` or `4He` — and one of `5He`.
 
-### 5.3 The collateral: a witness assertion that passes because of the bug
+### 5.3 Decisive: the module provisions ³He and ⁴He and then never emits them
+
+This is what settles *deliberate exclusion* versus *bug*. The same file supplies
+reference data for both nuclides in **three** separate dicts, all of which the
+row loop consumes:
+
+| line | provisioned | consumed at |
+|---:|---|---|
+| 83 | `AME_BINDING["3He"] = 7.71804` | 441 `AME_BINDING.get(name, 0.0)` |
+| 84 | `AME_BINDING["4He"] = 28.2957` | 441 |
+| 112 | `CODATA_MASS["3He"] = None  # not in codata_constants; derive from AME` | 444 `CODATA_MASS.get(name)` |
+| 113 | `CODATA_MASS["4He"] = float(M_HE4_MEV_VALIDATION)` | 444 |
+| 122-123 | `ATLAS_TAG["3He"] / ["4He"] = "principled-derivation (Q-CLT proxy)"` | 471 `ATLAS_TAG[name]` |
+
+Every one of those lookups is keyed on `name`, which — because of the guard —
+can never be `"3He"` or `"4He"`. In particular `M_HE4_MEV_VALIDATION` is
+imported at line 65 **solely** to populate `CODATA_MASS["4He"]` and is therefore
+**dead**, and the `CODATA_MASS["3He"]` comment (*"derive from AME"*) describes a
+derivation the table never performs.
+
+An author excluding these two on purpose would not have written their AME
+binding energies, their atlas methodology tags, and a dedicated CODATA import
+for them. **The exclusion is unintended.**
+
+### 5.4 The collateral: a witness assertion that passes because of the bug
 
 `mass-table-comprehensive.witness.json` carries **exactly one** assertion:
 
@@ -459,3 +485,13 @@ audit.**
    ground-state search does not exist, `ordering_cache` falls back to *sorted*,
    and the committed cache matches neither the proposition's formula nor the
    `Φ₁` argmin.
+
+### 8.1 Done here (small, in-theme, zero risk)
+
+#4851's two Lean files — `QOU/MassTheory/CanonicalOrderingSaddle.lean` and
+`QOU/MassTheory/NucleonOrderingSymmetry.lean` — were **never registered in the
+`QOU` umbrella**, so nothing in the library imports them and no build would
+notice if they broke. Both verify `lean`-direct **exit 0** on this branch, so
+both are registered here alongside `TransferFactorCommute`. This changes no
+number; it only puts three ordering-related proofs under the umbrella that is
+supposed to cover them.

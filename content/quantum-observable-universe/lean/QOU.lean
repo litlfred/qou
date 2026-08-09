@@ -728,3 +728,7 @@ import QOU.BraidsAndKnots.DeltaLambdaGeneralNUnconditional
 -- prop:ground-state-ordering is a tie there, not a strict win. Sorry-free,
 -- generic CommRing; derives no binding energy and no ordering.
 import QOU.MassTheory.TransferFactorCommute
+-- qou-48is (doc-currency, PR #4854): PR #4851's two ordering Lean files were
+-- never registered here, so nothing built them. Both verify lean-direct exit 0.
+import QOU.MassTheory.CanonicalOrderingSaddle
+import QOU.MassTheory.NucleonOrderingSymmetry
