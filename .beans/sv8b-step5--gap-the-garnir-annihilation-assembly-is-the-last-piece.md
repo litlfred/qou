@@ -1,7 +1,7 @@
 ---
 # sv8b-step5
-title: 'GAP: sv8b step 5 — the Garnir annihilation assembly is the ONLY piece left'
-status: todo
+title: 'GAP: sv8b — base vector CLOSED; the residual is sn_isotypic_specht_split'
+status: completed
 type: task
 priority: high
 tags:
@@ -92,3 +92,50 @@ Verify with `scripts/lean-direct-cone.sh` (recovered on #4730), **not**
 `lake build` — the latter evicts the restored `lake-cache` oleans. The script
 passes `-DautoImplicit=false` to match the lakefiles; an axiom query is only as
 trustworthy as the olean tree under it (bean `qou-4r5y`).
+
+---
+
+## RESOLVED 2026-08-08 — and this bean's framing was wrong
+
+**Closed.** `seminormalVector_base_exists` is sorry-free:
+`#print axioms` → `[propext, Classical.choice, Quot.sound]`. `JucysMurphy.lean`
+now has **zero** sorries.
+
+**What this bean got wrong.** It said the Garnir annihilation "has not been
+attempted in Lean" and was "the ONLY piece left". By the time it was read, the
+annihilation had already landed (`colGarnir_annihilation`,
+`jm_eigen_colSuperstandard'`, both unconditional). What was actually left was
+never named here:
+
+1. **A type bridge.** `colSuperstandard μ` is a bare `Fin (nOf μ) ≃ μ.cells`;
+   the OV statement quantifies over `StandardYoungTableau μ`. Closed by
+   `ColSuperstandardSYT.colSuperstandardSYT` via the *pre-existing*
+   `sytOfStrict` / `sytToTableau_sytOfStrict`.
+2. **`polytabloid ≠ 0`.** No such lemma existed. It falls out of
+   `standardPolytabloid_linearIndependent .ne_zero`.
+3. **An import inversion.** The statement sat four modules *upstream* of its own
+   proof, so it could not be discharged in place. Fixed by splitting
+   `JucysMurphy.lean` at line 829 into `JucysMurphy` + `JucysMurphyOV`.
+
+The bean's honest-scoping paragraph flagged `hGclosed` as the risk. It was not
+the risk; none of the three items above appear in this bean at all.
+
+## The residual — a DIFFERENT and larger obligation
+
+This bean claimed the base vector gates **both** `PlancherelSnData` axioms. It
+gates them, but it is not the only thing that does. Measured after the fix:
+
+```
+#print axioms OVTopAssembly.sum_numSYT_sq_eq_factorial
+  → [propext, sorryAx, Classical.choice, Quot.sound]
+```
+
+The surviving `sorryAx` is `sn_isotypic_specht_split`
+(`SnWedderburnPartitionBridge.lean:250`) — the characteristic-0 rational
+Wedderburn split of `R[S_n]` indexed by partitions, with the isotypic alignment
+that sends `C₂` to the block-scalar family. Its own `-- Ref:` says Mathlib does
+not package this. That is a substantially bigger obligation than the base
+vector was, and it is now the sole blocker on the Plancherel axioms.
+
+Next agent: attack `sn_isotypic_specht_split`, not the OV base vector.
+

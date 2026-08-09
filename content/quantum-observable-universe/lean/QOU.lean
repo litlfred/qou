@@ -696,6 +696,17 @@ import QOU.MassTheory.ThreeRowExtensiveCumulant
 -- the missing surface-2-form data). Forward geometric, sorry-free, magnitude
 -- NOT derived.
 import QOU.MassTheory.TransverseSurfaceCurvature
+-- qou-prjo: a two-block dominance exchange forces a zero (IVT), and "block B
+-- overtook block A" and "the total went negative" are the same statement. The
+-- per-block dominance data are HYPOTHESES — the f64 numbers are not certified,
+-- and the two-block mechanism is realised at n=6 ONLY (n=9 is multi-block
+-- cancellation, n=12's total exceeds its largest term). Sorry-free.
+import QOU.BraidsAndKnots.ThreeRowSignCrossing
+-- qou-prjo: the Wenzl-level stratum degeneracy — s_λ = 0 at integer level r=k for
+-- every ℓ(λ) > k. Since r → 2⁺ as q → 1⁺, the whole ℓ≥3 stratum degenerates at
+-- q=1, which is WHY the ≥3-row trace is O(10⁻⁵) near q=1. Sorry-free, generic
+-- Field K.
+import QOU.BraidsAndKnots.WenzlLevelStratum
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):

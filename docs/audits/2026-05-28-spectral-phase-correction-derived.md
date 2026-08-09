@@ -121,3 +121,59 @@ Added `spectral_correction_borromean(q)` and
 leading-order `vol_density_borromean` (many consumers) — migrate
 deliberately. Dashboard rewiring deferred (it changes claimed precision
 and is coupled to the recalibration decision above).
+
+## Re-read against a canonical baseline (2026-08-09)
+
+Prompted by bean `qou-7loj`, which found that the canonical mass table's
+free-nucleon rows had been read out of the deprecated Vol·ρ witness. The
+question for this doc was whether its headline result survived. **It does.**
+
+**The arithmetic is exactly as reported.** Re-verified at 30 dps against the
+current corpus:
+
+| quantity | value |
+|---|--:|
+| spectral factor θ/(8ℏ_q²) | 0.971120 |
+| `m_e · Vol(𝓑₃)/ℏ_q² · lw_A` | 966.050 MeV (+2.890 % vs m_avg CODATA 938.919) |
+| × spectral | **938.150 MeV (−818.8 ppm)** |
+
+So −819 ppm and the ~35× improvement stand, unchanged.
+
+**What changed is the result's ROLE, not its validity.** This doc derives a
+correction *to the Vol·ρ·λ_A form*. Since the 2026-06-24 ruling that form is
+not the canonical absolute nucleon mass; the muon-anchored Hecke energy is,
+and it reaches m_avg on its own:
+
+| route | m_avg | error |
+|---|--:|--:|
+| canonical (`canonical_mass` facade) | 938.919 MeV | **+1.87 ppb** |
+| canonical × spectral | 911.802 MeV | **−2.888 %** |
+
+Applying the spectral factor on top of the canonical value double-corrects —
+it removes an excess that is not there. So the factor belongs to the
+deprecated route it was derived for, and must never be composed with the
+canonical one. Read as an *independent, coarser* derivation of m_avg (which is
+what the parenthetical above already says), the two routes now disagree at the
+819 ppm level; that disagreement is the interesting residue, not a defect in
+either arithmetic.
+
+**One call site had composed them.** `m_qclt_approx.py` multiplied the
+spectral factor into a leading term built from nucleon masses that, before
+`qou-7loj`, came from the deprecated witness — so the composition was
+self-consistent by accident. With those rows canonical, its
+`spectral_correction_reduces_residual_gt_20x` assertion failed, and it is
+restated as `spectral_correction_no_longer_improves_canonical_leading_term`
+(PR #4839). That was the **only** consumer: `vol_density_borromean_spectral`
+has no callers, and `e0_lambda_composite.py` only names the function in prose.
+
+**Correction to PR #4839's framing.** That PR said the ~35× closure "rested on
+the deprecated baseline" and that downstream citations were "suspect". Too
+strong, and wrong in the part that matters: this doc never claimed to correct
+the canonical route, its numbers are independent of the `qou-7loj` defect, and
+the citation sweep found one call site rather than a class. The accurate
+statement is the narrow one — *do not compose this factor with the canonical
+absolute mass.*
+
+**Unchanged:** the EXPLORATORY status banner at the top still governs. The
+"why θ/(8ℏ_q²) multiplies Geom" step remains a `True := by trivial` Lean stub,
+so this is an unproved ansatz that lands −819 ppm, not a derivation of record.

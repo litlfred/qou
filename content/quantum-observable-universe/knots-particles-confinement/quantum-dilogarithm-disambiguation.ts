@@ -20,4 +20,11 @@ export default definition({
     "disambiguation",
     "structural-discipline",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-09",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing.** The block's content is a *refutation*: \`¬ (∀ q z : ℝ, phi_q q z = − li2_q q (−z))\`, i.e. that the Faddeev quantum dilogarithm \`Φ_q\` and the Rogers \`Li₂^q\` are **not** related by that sign flip. Both are analytic functions of a real argument, \`towerTerm\` takes an absolute value \`|V|\`, and a disambiguation between two analytic functions has no meaning over a generic commutative ring — there is nothing there to disambiguate. This block sits on the observable side of the wall by construction.`,
+    },
+  ],
 });
