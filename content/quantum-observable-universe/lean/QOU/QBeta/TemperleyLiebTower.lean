@@ -797,6 +797,117 @@ theorem terms_zero_of_weighted_sum_zero {ι : Type*} (s : Finset ι) (y f : ι �
   · exact absurd h (ne_of_gt (hy i hi))
   · exact h
 
+/-! ### The weights themselves, and their signs
+
+Until now `qint` and `yw` appeared only in docstrings — the file reasoned about
+`[m]_q` through the abstracted numerators `X`, `Y` of `qint_three_term_pair`.
+That was enough for the recursion, but it means nothing in the file was actually
+*named* `y_λ`, so nothing could carry a sign.
+
+Defining them costs two lines and closes bean `qou-7gei` item 4: the
+nonnegativity hypothesis `hnn` of `vanishing_step`, which was **measured** (zero
+negative weights at `n = 2…7`), becomes a theorem for the surviving blocks. The
+vanishing blocks are `0` by `conventionD_kills_antisymmetriser`, so together
+every weight is `≥ 0`.
+-/
+
+section Weights
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- `[m]_q = (qᵐ − q⁻ᵐ)/(q − q⁻¹)`. -/
+noncomputable def qint (q : R) (m : ℕ) : R := (q ^ m - (q⁻¹) ^ m) / (q - q⁻¹)
+
+/-- `y₍ₙ₋ₖ,ₖ₎ = [m]_q / [2]_qⁿ` with `m = n − 2k + 1`, the closed form verified
+against `y_lambda_su_n` for every partition of `n = 2 … 7` at 50 dps (worst
+residual `1.34e−51`). -/
+noncomputable def yw (q : R) (n m : ℕ) : R := qint q m / (q + q⁻¹) ^ n
+
+theorem sub_inv_pos (q : R) (hq : 1 < q) : 0 < q - q⁻¹ := by
+  have hq0 : (0 : R) < q := lt_trans zero_lt_one hq
+  have : q⁻¹ < 1 := inv_lt_one_of_one_lt₀ hq
+  linarith
+
+theorem add_inv_pos (q : R) (hq : 1 < q) : 0 < q + q⁻¹ := by
+  have hq0 : (0 : R) < q := lt_trans zero_lt_one hq
+  have : (0 : R) < q⁻¹ := inv_pos.mpr hq0
+  linarith
+
+/-- **`[m]_q > 0` for `m ≥ 1`.** -/
+theorem qint_pos (q : R) (hq : 1 < q) {m : ℕ} (hm : 0 < m) : 0 < qint q m :=
+  div_pos (by linarith [qint_num_pos q hq hm]) (sub_inv_pos q hq)
+
+/-- **`[m]_q ≥ 0` for every `m`**, the `m = 0` case being `[0]_q = 0`. -/
+theorem qint_nonneg (q : R) (hq : 1 < q) (m : ℕ) : 0 ≤ qint q m := by
+  rcases Nat.eq_zero_or_pos m with h | h
+  · subst h; simp [qint]
+  · exact le_of_lt (qint_pos q hq h)
+
+/-- **Every surviving weight is strictly positive.**
+
+This is the input T4 needs, and it is also `hnn` of `vanishing_step` for the
+blocks that survive. Note it holds at *every* `n` simultaneously — no diagram
+basis, no meander determinant, no case analysis on the strand count. -/
+theorem yw_pos (q : R) (hq : 1 < q) (n : ℕ) {m : ℕ} (hm : 0 < m) :
+    0 < yw q n m :=
+  div_pos (qint_pos q hq hm) (pow_pos (add_inv_pos q hq) n)
+
+/-- **…and every weight is nonnegative.** The `≥ 3`-row blocks contribute `0`
+(`conventionD_kills_antisymmetriser`) and the surviving ones are positive, so
+`hnn` holds across the board. -/
+theorem yw_nonneg (q : R) (hq : 1 < q) (n m : ℕ) : 0 ≤ yw q n m :=
+  div_nonneg (qint_nonneg q hq m) (le_of_lt (pow_pos (add_inv_pos q hq) n))
+
+/-- At the physical pin `q₀ = 1.10997858…` the hypothesis `1 < q` holds with
+room, so nothing above is delicate. Recorded as a named fact so downstream
+statements can cite the condition rather than restating it. -/
+theorem weights_pos_of_pin (q : R) (hq : 1 < q) (n m : ℕ) (hm : 0 < m) :
+    0 < yw q n m ∧ 0 ≤ yw q n m :=
+  ⟨yw_pos q hq n hm, yw_nonneg q hq n m⟩
+
+/-! #### The recursion and the branching, now on the defined weights
+
+`qint_three_term_pair` proved the three-term recursion on abstracted numerators
+`X`, `Y`; `markov_branching_general` divided it by an abstracted denominator.
+Neither mentioned `qint` or `yw`, because neither existed. With the definitions
+in hand the two abstract statements can be discharged into concrete ones — which
+is bean `qou-7gei` item 3 at the closed-form level.
+
+What remains of item 3 after this is the *indexing*: relating `yw q (n+1) (m+2)`
+and `yw q (n+1) m` to "the two ways of adding a box to a two-row diagram". That
+is a bookkeeping step between `m = n − 2k + 1` and the `covers` Finset, not a
+new mathematical fact. -/
+
+/-- **`[m+2]_q + [m]_q = [2]_q · [m+1]_q`, on the defined `qint`.** -/
+theorem qint_three_term (q : R) (hq : q ≠ 0) (m : ℕ) :
+    qint q (m + 2) + qint q m = (q + q⁻¹) * qint q (m + 1) := by
+  have hqr : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
+  have hnum : q ^ (m + 2) - (q⁻¹) ^ (m + 2) + (q ^ m - (q⁻¹) ^ m)
+      = (q + q⁻¹) * (q ^ (m + 1) - (q⁻¹) ^ (m + 1)) := by
+    simp only [pow_succ]
+    linear_combination (-(q ^ m - (q⁻¹) ^ m)) * hqr
+  unfold qint
+  rw [← add_div, ← mul_div_assoc, hnum]
+
+/-- **Branching coherence on the defined weights.**
+
+`y[n+1](m+2) + y[n+1](m) = y[n](m+1)` — the two ways of adding a box to a
+two-row shape, summing to the weight one level down. This is
+`GramSignature.mu_triplet_eq_branch` / `mu_singlet_eq_branch` generalised to
+every level of the tower, and it is what `hbranch` of `vanishing_step` asks for
+once the shapes are indexed. -/
+theorem yw_branching (q : R) (hq : q ≠ 0) (hs : q + q⁻¹ ≠ 0) (n m : ℕ) :
+    yw q (n + 1) (m + 2) + yw q (n + 1) m = yw q n (m + 1) := by
+  -- `field_simp` is wrong here: it rewrites the base of `(q + q⁻¹) ^ n` and
+  -- then `ring` cannot reconcile two different bases under a variable exponent.
+  -- Cancel the single factor directly instead.
+  unfold yw
+  rw [← add_div, qint_three_term q hq m, pow_succ,
+    mul_comm ((q + q⁻¹) ^ n) (q + q⁻¹)]
+  exact mul_div_mul_left _ _ hs
+
+end Weights
+
 end StrictWeights
 
 end Definiteness

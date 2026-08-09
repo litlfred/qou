@@ -195,6 +195,71 @@ Whether $\kappa$ is *derived* is a separate, still-open question
 ([`rem:alpha-em-derivation-open-problems`](../../content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md));
 this row settles only *which matrix* the symbol denotes.
 
+## Content-layer C surface — what the 2026-08-09 errata pass did and did not touch
+
+The errata commit for decision 1 of the detangler review corrected the
+convention at the **normative** definition sites and at every block whose
+*claim* (not merely whose $z$) was falsified by the excision:
+
+- the symbol registers — `notation/notation-register-table3-data.md`,
+  `appendix-transfer-matrices/tm-notation-table1-data.md`,
+  `stochastic-mechanics/bar-involution-table2-data.md`;
+- the axiom statements — `thm:jones-markov-trace`,
+  `prf:trace-locality-meets-gs-nonlocality`, `prf:algebraic-gns-embedding`,
+  `prf:hecke-satisfies-blitvic-hypothesis`, `appendix-transfer-matrices/tm-notation.md`;
+- the blocks carrying a falsified claim — `prop:frobenius-gram-matrix`
+  (non-degeneracy, "indefinite"), `rem:confinement-nucleon-unit`,
+  `prop:confinement-lp`, `prop:toffoli-lp-stability` (+ proof),
+  `def:two-row-stratum`, `rem:y-lambda-sign-pattern`,
+  `prop:y-lambda-closed-form-wenzl-bridge` (+ tables 1–2, proof),
+  `prop:trm-hopf-sigma1-sq-closed-form` (+ tables 1–2, proof),
+  `prop:centered-hecke-variance-positive` (+ table, proof),
+  `prf:qbeta-canonical-markov-weights-explicit-instance`,
+  `braids-and-knots/bar-involution-c5-algebraic-identities.md`.
+
+**Not touched, and this is the tracked backlog: ~30 further content blocks
+still define $z$ as convention C.** They were left because each one's
+downstream numerals need a producer re-run, not an edit, and because changing
+the definition without the numerals would make a block internally inconsistent
+rather than merely stale. Enumerate them with
+
+```sh
+grep -rnE 'z[^\n]{0,40}=[^\n]{0,30}(1 */ *[\(\[]?q\^\{1/2\}|\(q\^\{1/2\} *\+ *q\^\{-1/2\}\)\^\{-1\}|1/\(\\sqrt\{q\}|1/\[q\^\{1/2\})' content --include='*.md'
+```
+
+Two cautions for whoever drains it.
+
+1. **`prop:markov-trace-frobenius-selection` is reserved.** Its lines defining
+   $z$ as C are owned by decision 2 of the same review, which restates its
+   selection criterion (non-degeneracy is provably false under D). Do not sweep
+   it ahead of that.
+2. **Not every $q^{1/2}+q^{-1/2}$ is convention C, and not every one that
+   isn't is correct.** Three distinct things wear that spelling:
+   Wenzl's positivity threshold $q^{1/2}+q^{-1/2} > 2$ (correct as written, and
+   its convention-D analogue is **not** yet derived — see the dated open note on
+   `prop:centered-hecke-variance-positive`); the Temperley–Lieb loop parameter
+   written $\delta = -(q^{1/2}+q^{-1/2})$ in four blocks; and convention C
+   itself. The middle one is **wrong in this paper's normalisation** and is a
+   separate erratum: under $\sigma_i^2 = (q-q^{-1})\sigma_i + \mathbf{1}$ the TL
+   generator is $e_i := q - \sigma_i$, satisfying $e_i^2 = [2]_q e_i$, so
+   $\delta = [2]_q = q + q^{-1}$, and $q^{1/2}+q^{-1/2}$ is the loop parameter of
+   the *other* ($g$-convention, $Q = q$) normalisation. Under convention D,
+   $\mathrm{tr}_M(e_i) = q - z = q/(q^2+1) = 1/[2]_q = 1/\delta$ **exactly** —
+   the Jones–Temperley–Lieb normalisation, on the nose. This is `loop_reciprocal`
+   in `QOU/QBeta/TemperleyLiebTower.lean`, sorry-free. That identity is the
+   cleanest one-line statement of why D and not C, and it is why C looked
+   plausible: it is a TL loop reciprocal, attached to the wrong element
+   ($\sigma_i$ rather than $e_i$) and evaluated at the wrong argument —
+   $1/(x+x^{-1})$ at $x = q^{1/2}$ instead of $x = q$, one square root and
+   $0.408\,\%$ apart ($1/\delta = 0.4972905456$ vs $z_C = 0.4993203342$). Bean
+   `qou-98g5` tracks the corpus instances of that conflation; it lists
+   `mass-theory/h3-markov-wenzl-weights-context.md:69` and
+   `docs/coordination/convention-slip-registry.json:79`. The errata pass found
+   and fixed a **third**, not on that list:
+   `braids-and-knots/bar-involution-c5-algebraic-identities.md:1`, which wrote
+   the same false identification in reciprocal form as "$1/z = q^{1/2}+q^{-1/2}$"
+   and so matched no search for the convention-C formula for $z$.
+
 ## What the validator checks
 
 | rule | check | severity |

@@ -187,3 +187,57 @@ closure is built. #4857's PR body describes a widened glob `["QOU", "QOU.+"]`,
 which is NOT present on this branch's lakefile -- so on main today, a module not
 imported from QOU.lean is genuinely never compiled. If their glob change merges
 the problem disappears; importing explicitly is correct and harmless either way.
+
+## UPDATE 2 -- ITEM 4 DONE, ITEM 3 MOSTLY DONE. Three of four hypotheses discharged.
+
+All sorry-free, lake build exit 0 no warnings, axioms clean;
+traceRadical_star_eq needs only [propext, Quot.sound].
+
+  [x] 4. hnn NONNEGATIVITY -- DONE, and it turned out nearly free once the
+         weights were actually DEFINED. Until now `qint` and `yw` existed only
+         in docstrings: the file reasoned through the abstracted numerators X, Y
+         of qint_three_term_pair, so nothing in it was named y_lambda and
+         nothing could carry a sign. Two definitions later:
+
+             qint q m := (q^m - (q^-1)^m)/(q - q^-1)
+             yw q n m := qint q m / (q + q^-1)^n
+
+             qint_pos    0 < [m]_q for m >= 1 and q > 1
+             yw_pos      EVERY SURVIVING WEIGHT IS STRICTLY POSITIVE, at every
+                         n simultaneously
+             yw_nonneg   and every weight is >= 0
+
+         yw_pos is doing double duty: it is hnn, and it is also the only new
+         input T4 needed.
+
+  [~] 3. hbranch -- the MATHEMATICAL half is done. qint_three_term proves
+         [m+2] + [m] = [2][m+1] on the DEFINED qint, and yw_branching proves
+             yw q (n+1) (m+2) + yw q (n+1) m = yw q n (m+1)
+         at every level. What remains is pure INDEXING: relating those two
+         summands to "the two ways of adding a box to a two-row diagram", i.e.
+         connecting m = n - 2k + 1 to the covers Finset. Bookkeeping, not a new
+         fact. I over-estimated this item twice; it was the smallest of the
+         three, not the largest.
+
+  [ ] 2. Instantiate hpred. Still open, and now the ONLY substantive item.
+
+## SNAG WORTH RECORDING -- field_simp is WRONG under a variable exponent
+
+`yw_branching` first attempt used `field_simp; ring` and failed: field_simp
+rewrote the BASE of `(q + q^-1)^n` into `(q^2 q^-1 + q^-1)^n`, after which ring
+cannot reconcile two different bases under the same variable exponent `n`. The
+fix is to cancel the single factor by hand:
+
+    rw [pow_succ, mul_comm ((q + q^-1)^n) (q + q^-1)]
+    exact mul_div_mul_left _ _ hs
+
+This will recur anywhere the tower is indexed by n. Reach for mul_div_mul_left,
+not field_simp, when a variable exponent is present.
+
+## CORRECTIONS TO MY OWN ESTIMATES IN THIS BEAN
+
+Twice now the estimate was wrong in the same direction -- I priced the algebraic
+items high and the combinatorial item low, and the reverse was true. Item 1 fell
+to the (2,0) reduction, items 3 and 4 fell to simply defining the weights. Item
+2, which I listed as routine, is the one still standing. Do not carry the
+original ordering into planning.

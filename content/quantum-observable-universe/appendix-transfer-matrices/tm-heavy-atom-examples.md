@@ -1,6 +1,6 @@
 The light-nucleus examples use only the bare transfer matrix product. For heavy nuclei, shell corrections from the magic number structure become essential. This section works through the full $Q$-value algorithm. These examples demonstrate the mechanics: a definite $Q$-value output from the substrate parameter $q$ alone. The worked numbers below are conditional on the three shell-structure conjectures [(C1)–(C3)](#rem:shell-construction-rules) — the magic-number set is observed, not yet derived from $q$; the dominant-binding-operator selection and the inner-shell cancellation are unproven. Where a residual remains, it is bracketed as an open direction under those conjectures, not absorbed into a free parameter.
 
-Recall: $s = q^{1/2} - q^{-1/2}$, $z = 1/(q^{1/2} + q^{-1/2})$, $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$, and $\mu_0$ the remaining conversion constant that carries the dimensionless bracket into MeV.
+Recall: $s = q^{1/2} - q^{-1/2}$, $z = q^3/(q^2+1) = q^2/[2]_q$ (convention D; the excised convention C wrote $1/(q^{1/2}+q^{-1/2})$), $\hbar_q = 1 - q^{-1}$, $E_{\times} = \frac{1}{2}(q - q^{-1})$, and $\mu_0$ the remaining conversion constant that carries the dimensionless bracket into MeV. **The worked numerals below have not been regenerated** — they were computed under convention C and are wrong by the $22.7\,\%$ convention gap in $z$ (2026-08-09).
 
 ## The magic number table
 

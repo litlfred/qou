@@ -30,8 +30,23 @@ $$
 - $g_{55} = (h^3+h)z^3 + 2h^2z^2 + 2hz + 1$ (from $e^- \cdot e^- = (h^3+h)e^- + h^2L_+ + h^2L_- + h\sigma_1 + h\sigma_0 + \gamma$)
 
 *The matrix is **symmetric** ($G_{ij} = G_{ji}$, by cyclicity of the
-Markov trace) and **non-degenerate** ($\det G \neq 0$ for $q \neq 0, 1$),
-but **not positive definite** — it has indefinite signature.*
+Markov trace). It is **degenerate**: under the production convention D the
+$(1^3)$ Wedderburn block carries $y_{(1^3)} = 0$ symbolically, so that block
+lies in the radical of the form and $\det G = 0$ identically — measured
+$2.89\times10^{-51}$ at 50 dps
+([`GramSignature.lean`](../lean/QOU/QBeta/GramSignature.lean)), against
+$\det G = -0.18920521914403668$ under the excised convention C. $G^{-1}$ does
+not exist. Any statement about the **signature** must name its pairing. On the
+bilinear pairing $\mathrm{tr}_M(b_i b_j)$ that this table builds, the spectrum
+at $q_0$ is $(-0.75270211,\ 0,\ +0.75270211^{\times 3},\ +4.23033920)$ under D
+and $(-0.85506726,\ +0.10179667,\ +0.85506726^{\times 3},\ +3.47694980)$ under
+C. On the **star** pairing $\mathrm{tr}_M(b_i b_j^*)$ — the correct one, since
+the Hecke star is $T_w^* = T_{w^{-1}}$, which swaps $L_+ \leftrightarrow L_-$
+on this basis — the form is positive: $(6,0,0)$ under C, $(5,0,1)$ under D.
+The earlier reading of this block as **indefinite** or **Lorentzian** is
+**withdrawn** (commit `748ba9b1`); it was an artefact of quoting the bilinear
+pairing without saying so. What survives both pairings is the single null
+direction under D.*
 
 The Markov-trace computation of the NF basis elements, the
 operator-identification via the Frobenius dual, and the annihilation
