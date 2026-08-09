@@ -1,10 +1,11 @@
 ---
 # qou-o3ta
 title: 'BLOCKER MERGE: the metric blocker and the colour-weight blocker are the SAME null vector, and convention D created it'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-09T13:52:13Z
-updated_at: 2026-08-09T13:52:13Z
+updated_at: 2026-08-09T13:53:17Z
 ---
 
 
