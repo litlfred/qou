@@ -1,6 +1,6 @@
 {
  "$schema": "lean-vacuity-review/v1",
- "updated_at": "2026-08-09T20:45:00Z",
+ "updated_at": "2026-08-09T21:10:00Z",
  "entries": {
   "content/quantum-observable-universe/lean/QOU/Archimedean/BetaDecay.lean::interaction_completeness::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -599,11 +599,12 @@
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 352,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "412f76c5e701",
-   "evidence": "Type-matched projection: `BranchingConverges.bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (2 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `BranchingConverges` is inhabited, nothing that inhabits it supplies content. Instances read by hand: inhabited only by a Fact-wrapper (`⟨hf.out⟩`, relabels the assumption) and `branchingConverges_refl` (the diagonal f_k = f_inf, where the bound is 0 ≤ … and closes by positivity); the theorem quantifies over arbitrary f_k, f_inf. (Automated shape test saw: branchingConverges_of_fact(fact-wrapper), branchingConverges_refl(degenerate-slice).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean::implies_single_irrational::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -627,51 +628,56 @@
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 71,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "0e83a2932cbf",
-   "evidence": "Type-matched projection: `Term7ShellCorrectionClass.alpha5_derived` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.alpha5_derived` has the conclusion's type and is returned verbatim, and though `Term7ShellCorrectionClass` is inhabited, nothing that inhabits it supplies content. Instances read by hand: single instance stipulates alpha5_value = -1 and closes by norm_num/rfl; its own docstring calls it a placeholder / 'sign witness only'. (Automated shape test saw: term7ShellCorrectionInstance(trivial-witness).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean::brane_tower_finite::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 171,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "0e83a2932cbf",
-   "evidence": "Type-matched projection: `ZHabiroConvergenceClass.uniform_bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.uniform_bound` has the conclusion's type and is returned verbatim, and though `ZHabiroConvergenceClass` is inhabited, nothing that inhabits it supplies content. Instances read by hand: single instance picks the constant bound `fun _ => 1` and closes by norm_num after `unfold brane_tower_pole`; the file's own prose says the substantive content 'remains' open. (Automated shape test saw: zHabiroConvergenceInstance(substantive).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean::skein_multiset_invariance_axiom::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 113,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "f8a11f21fc0a",
-   "evidence": "Type-matched projection: `SkeinMultisetInvariant.invariance` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.invariance` has the conclusion's type and is returned verbatim, and though `SkeinMultisetInvariant` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `skeinMultisetInvariant_refl config config … := ⟨rfl⟩` — the diagonal; the theorem takes two arbitrary configs, and is itself named `…_axiom`. (Automated shape test saw: skeinMultisetInvariant_refl(degenerate-slice).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qInt_ratio_bound_small::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 406,
-   "verdict": "needs-agent",
+   "verdict": "legit",
    "file_sha": "726fbbf3a076",
-   "evidence": "Type-matched projection: `QIntRatioBoundSmall.bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (4 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Accessor idiom, not a defect. Instances read by hand: four instances discharge m = 1,2,3,4 from qInt_ratio_bound_m1..m4 with real analytic work; the class binds `_hm4 : m ≤ 4`, so they EXHAUST its domain. (Automated shape test saw: qIntRatioBoundSmall_one(substantive), qIntRatioBoundSmall_two(substantive), qIntRatioBoundSmall_three(substantive), qIntRatioBoundSmall_four(substantive).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "no-fix"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::qFact_ratio_bound::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 599,
-   "verdict": "needs-agent",
+   "verdict": "legit",
    "file_sha": "726fbbf3a076",
-   "evidence": "Type-matched projection: `QFactRatioBound.bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (4 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Accessor idiom, not a defect. Instances read by hand: same shape as QIntRatioBoundSmall — four proved instances exhausting the bounded parameter domain. (Automated shape test saw: qFactRatioBound_zero(substantive), qFactRatioBound_one(substantive), qFactRatioBound_two(substantive), qFactRatioBound_three(substantive).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "no-fix"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean::wedderburn_weight_perturbation::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -687,11 +693,12 @@
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 795,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "726fbbf3a076",
-   "evidence": "Type-matched projection: `ConvergenceRate.bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (2 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceRate` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus diagonal, same shape as BranchingConverges. (Automated shape test saw: convergenceRate_of_fact(fact-wrapper), convergenceRate_refl(degenerate-slice).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::branch_31_to_3::proof-no-trivial-true": {
    "category": "proof-no-trivial-true",
@@ -718,21 +725,23 @@
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 1026,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "703edc6e9aab",
-   "evidence": "Type-matched projection: `ConvergenceBound.bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceBound` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `convergenceBound_refl … f f` — the diagonal, closed by simp/positivity. (Automated shape test saw: convergenceBound_refl(degenerate-slice).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::knot_invariant_convergence::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 1081,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "703edc6e9aab",
-   "evidence": "Type-matched projection: `KnotInvariantConvergence.bound` has a declared type identical to the conclusion. BUT the carrier is inhabited (2 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `KnotInvariantConvergence` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus `…_refl` diagonal; no instance supplies the general bound. (Automated shape test saw: knotInvariantConvergence_of_fact(fact-wrapper), knotInvariantConvergence_refl(degenerate-slice).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean::matrixChain_eq_buildChains_axiom::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -813,21 +822,23 @@
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 95,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "9d0ac9333141",
-   "evidence": "Type-matched projection: `NobleGasMultiOperator.multi` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.multi` has the conclusion's type and is returned verbatim, and though `NobleGasMultiOperator` is inhabited, nothing that inhabits it supplies content. Instances read by hand: sole instance is a Fact-wrapper `⟨hf.out⟩` from `[hf : Fact (bindingMultiplicity S q ≥ 2)]` — it relabels the assumption and supplies nothing. (Automated shape test saw: nobleGasMultiOperator_of_fact(fact-wrapper).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean::gb_residue_spectral_sum::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 94,
-   "verdict": "needs-agent",
+   "verdict": "legit",
    "file_sha": "53c5f560fc17",
-   "evidence": "Type-matched projection: `GBResidueSpectralSum.mass` has a declared type identical to the conclusion. BUT the carrier is inhabited (2 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Accessor idiom, not a defect. Instances read by hand: `fromCrystalData` is a general builder constructing the structure from arbitrary crystal data, so accessors on it are the ordinary idiom. (Automated shape test saw: residueAt(substantive), gradedMarkovTrace(substantive), fromCrystalData(substantive), (substantive), residueAt(substantive), gradedMarkovTrace(substantive), GBResidueSpectralSum.fromCrystalData(substantive).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "no-fix"
   },
   "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean::graded_trace_residue_split::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -907,9 +918,9 @@
    "line": 203,
    "verdict": "needs-agent",
    "file_sha": "6252ac8ed2f4",
-   "evidence": "Type-matched projection: `RogersCorrectionLeadingOrderH4.leading_h_order` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `RogersCorrectionLeadingOrderH4.leading_h_order`. Carrier is inhabited and the instances ((substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/lean/QOU/BraidKnot/SeminormalCharacterConnector.lean::not_sameRow12_and_sameCol12::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -922,11 +933,12 @@
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
    "line": 107,
-   "verdict": "needs-agent",
+   "verdict": "genuine",
    "file_sha": "7c84e56e6468",
-   "evidence": "Type-matched projection: `ShellClosureMonotone.monotone` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Self-assuming projection: `.monotone` has the conclusion's type and is returned verbatim, and though `ShellClosureMonotone` is inhabited, nothing that inhabits it supplies content. Instances read by hand: inhabited only at the degenerate slice. (Automated shape test saw: shellClosureMonotone_refl(degenerate-slice).)",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z",
+   "disposition": "restate-to-derive-or-demote"
   },
   "content/quantum-observable-universe/lean/QOU/BraidKnot/SytEntryMono.lean::content_ne_of_succ::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -1015,9 +1027,9 @@
    "line": 42,
    "verdict": "needs-agent",
    "file_sha": "4179705884ba",
-   "evidence": "Type-matched projection: `MassVolumeFactorization.markov_trace` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `MassVolumeFactorization.markov_trace`. Carrier is inhabited and the instances (canonical(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean::adjoint_vanishing_propagation::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -1165,9 +1177,9 @@
    "line": 157,
    "verdict": "needs-agent",
    "file_sha": "33d8c028c778",
-   "evidence": "Type-matched projection: `TheoremA.value_at_4` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `TheoremA.value_at_4`. Carrier is inhabited and the instances ((substantive), satisfies(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::sdp_lp_projection::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -1219,9 +1231,9 @@
    "line": 116,
    "verdict": "needs-agent",
    "file_sha": "19333222eaf9",
-   "evidence": "Type-matched projection: `VolumeConjecture41.limit_eq_vol` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `VolumeConjecture41.limit_eq_vol`. Carrier is inhabited and the instances (volumeConjecture41_of_literature(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/lean/QOU/Machinery/CoxeterCommutingTransversal.lean::simple_ne_of_reduced2::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -1369,9 +1381,9 @@
    "line": 169,
    "verdict": "needs-agent",
    "file_sha": "b74e5b3cc074",
-   "evidence": "Type-matched projection: `SDPPrimal.IsStrictlyFeasible` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `SDPPrimal.IsStrictlyFeasible`. Carrier is inhabited and the instances (nucleusEmptySDP(substantive), SDPPrimal.IsFeasible(substantive), SDPPrimal.IsStrictlyFeasible(substantive), SDPPrimal.objAt(substantive), SDPPrimal.dualSlack(substantive), SDPPrimal.dualObjAt(substantive), trivialStrongDualityPair(substantive), form.(substantive), instHasStrongDualityEmpty(substantive), trivialStrictComplementarityPair(substantive), ofSlater_via_rank_equality(substantive), ofDualSlackPosDef(substantive), ofActiveEmptyAndCostPosDef(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean::MobiusEnergy::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -1465,9 +1477,9 @@
    "line": 133,
    "verdict": "needs-agent",
    "file_sha": "b3dd7e5f4354",
-   "evidence": "Type-matched projection: `HasCategoricalIrreducibility.subsingleton` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `HasCategoricalIrreducibility.subsingleton`. Carrier is inhabited and the instances (hasCategoricalIrreducibility_of_subsingleton(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean::categorical_dq_squared_nonvanishing::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -1623,9 +1635,9 @@
    "line": 154,
    "verdict": "needs-agent",
    "file_sha": "5ac15f145fb0",
-   "evidence": "Type-matched projection: `HasHe4ChannelActiveSet.tDD` has a declared type identical to the conclusion. BUT the carrier is inhabited (1 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `HasHe4ChannelActiveSet.tDD`. Carrier is inhabited and the instances (exists(trivial-witness), (trivial-witness), he4_class_is_feasible_solution(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean::mass_anchor_stable_forward::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -1831,9 +1843,9 @@
    "line": 294,
    "verdict": "needs-agent",
    "file_sha": "d4b2ae555085",
-   "evidence": "Type-matched projection: `BorromeanQuark.Q_beta_A` has a declared type identical to the conclusion. BUT the carrier is inhabited (2 value declaration(s) of that type), so this may be the legitimate accessor idiom rather than a defect. Open question for the reviewer: is the instance SUBSTANTIVE (content genuinely lives in the instance's proof — e.g. QIntRatioBoundSmall's four instances, proved from qInt_ratio_bound_m1) or a PLACEHOLDER (a stipulated witness — e.g. Term7ShellCorrectionClass's alpha5_value = -1, which its own docstring calls a placeholder)? Substantive ⇒ legit; placeholder ⇒ genuine.",
+   "evidence": "Type-matched projection of `BorromeanQuark.Q_beta_A`. Carrier is inhabited and the instances (canonical(substantive), canonical(substantive)) look substantive under the automated shape test — no Fact-wrapper, no `_refl` diagonal, no constant-witness-closed-by-norm_num. NOT yet read by hand, and a wrong `legit` closes this gate on a real defect, so left open deliberately. To close: confirm the instances prove the property across the class's parameter domain (as QIntRatioBoundSmall's four do for `m ≤ 4`) rather than at a convenient slice.",
    "reviewer": "agent",
-   "reviewed_at": "2026-08-09T20:45:00Z"
+   "reviewed_at": "2026-08-09T21:10:00Z"
   },
   "content/quantum-observable-universe/observations/building-block-knots.lean::unknot_amphichiral::proof-no-unused-hypothesis-rfl": {
    "category": "proof-no-unused-hypothesis-rfl",

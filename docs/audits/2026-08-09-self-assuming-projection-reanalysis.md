@@ -259,7 +259,51 @@ For the 30 uninhabited **structures**, disposition: construct a witness
 instance and prove the property there, or drop the pseudo-theorem and project
 the field at use sites.
 
-### Why 23 are left open rather than blanket-blessed
+### The inhabited 20, adjudicated: 3 legit, 9 genuine, 8 still open
+
+Reading the instance bodies showed inhabitation splits three ways, and only
+one kind carries content:
+
+| instance shape | supplies content? | example |
+|---|---|---|
+| **`Fact`-wrapper** — `[hf : Fact P] … := ⟨hf.out⟩` | **no** | `branchingConverges_of_fact`, `nobleGasMultiOperator_of_fact` |
+| **degenerate slice** — `…_refl … f f` | **no** | `convergenceBound_refl`; the bound reads `0 ≤ …` and closes by `positivity` |
+| **trivial witness** — stipulates a constant, closes by `norm_num`/`rfl` | **no** | `term7ShellCorrectionInstance` (`alpha5_value = -1`), `zHabiroConvergenceInstance` (`fun _ => 1`) |
+| **substantive** — real proofs covering the class's parameter domain | **yes** | `QIntRatioBoundSmall`'s four instances |
+
+A `Fact`-wrapper is the sharpest of these: it relabels the assumption as an
+instance, so whoever must discharge `Fact P` is exactly where the gap already
+was. A `_refl` instance inhabits only the diagonal while the projected theorem
+quantifies over arbitrary arguments, so the general claim is untouched.
+
+**Legit (3):** `QIntRatioBoundSmall` and `QFactRatioBound` — four instances
+each, discharging `m = 1,2,3,4` from `qInt_ratio_bound_m1..m4` with real
+analytic work, and since the class binds `_hm4 : m ≤ 4` they **exhaust** its
+domain; `GBResidueSpectralSum` — `fromCrystalData` is a general builder.
+
+**Genuine (9):** `BranchingConverges`, `ConvergenceRate`,
+`KnotInvariantConvergence` (Fact-wrapper + diagonal), `ConvergenceBound`,
+`SkeinMultisetInvariant`, `ShellClosureMonotone` (diagonal only),
+`NobleGasMultiOperator` (Fact-wrapper only), `Term7ShellCorrectionClass`,
+`ZHabiroConvergenceClass` (trivial witness).
+
+**Still open (11):** 8 whose instances look substantive under the automated
+shape test but were **not read by hand**, plus 3 with an unresolved carrier. A
+wrong `legit` closes the gate on a real defect while a wrong `genuine` only
+makes work, so the unread ones stay open rather than being blessed by
+heuristic. Each records what would close it: confirm the instances prove the
+property across the class's parameter domain rather than at a convenient
+slice.
+
+Hand verdicts override the shape test in
+[`scripts/lean-self-assuming-adjudicate.mjs`](../../scripts/lean-self-assuming-adjudicate.mjs),
+because where the two disagreed the reading was right every time —
+`ZHabiroConvergenceClass`'s constant witness reads as substantive to the test
+only because `unfold brane_tower_pole` names an identifier.
+
+**Ledger now: 78 genuine, 3 legit, 11 needs-agent** across the 92.
+
+### Why the remaining ones are left open rather than blanket-blessed
 
 Inhabitation is necessary but **not sufficient**, and the remaining call
 differs case by case, so resolving it by rule would be the rubber stamp the
