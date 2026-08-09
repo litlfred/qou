@@ -85,3 +85,45 @@ a cohomological non-algebraicity condition tied to the genus-4 surface, and let
 the corpus's Bring-surface machinery (`genus-ideal-characterisation`,
 `embeddability-closure`) supply the candidate class — coordinating with #4141
 (which owns the P≠NP carrier) rather than proliferating a competing one.
+
+## Consolidation pass — 2026-08-09 (PR #4861, corrected)
+
+Rigor audit of the P≠NP leg + alignment of the three problems onto the shared
+`SkeinObservationSystem`.
+
+**Rigor verdict (P≠NP): not a proof, and honestly so.** `qou-p-neq-np` is a
+`conjecture` (`validation: stub`); the Lean carrier `class QouPNeqNp : Prop` has
+an un-instantiated `faithful` field (the open counting→decision transfer); the
+cone is sorry-free and axiom-free. What is *proved* is strictly weaker
+(`qou_physical_intractability_unconditional` → `geometry_of_incompleteness`).
+
+**R1 RETRACTED (honest correction).** An earlier revision of this PR "fixed
+dangling `QOU.PvsNPBoundary.*` refs" by creating three sibling `.lean` over
+`SkeinObservationSystem`. That was a **regression based on a false premise**: the
+three siblings
+(`p-vs-np-boundary.lean` / `computational-boundary.lean` /
+`polynomial-observable-subcategory.lean`) have existed on `main` since
+`2e7abbd47` (2026-07-18), are **sorry-free**, and already define
+`boundary_dichotomy` / `computationalBoundary` /
+`polynomialObservableSubcategory` (a resolution-tree Set model). The refs were
+**never dangling** — a mapping sub-agent reported them missing (it grepped the
+library tree and missed the content-block siblings), and the overwrite deleted
+~290 lines of landed sorry-free Lean. The overwrite is reverted; `main`'s
+versions stand. Lesson: verify sibling-file existence directly before declaring
+a `lean.ref` dangling.
+
+**What actually landed this pass:**
+- **R2** — fix the stale "single `sorry` on the Lean carrier" prose in
+  `qou-p-neq-np.md` → accurate sorry-free class-hypothesis description.
+- **Tier 2** — "Shared substrate" cross-refs on `q-collatz-conjecture.md`
+  (descent leg), `q-bkm-criterion.md` (regularity leg), `qou-p-neq-np.md`
+  (poly-rate leg), naming the one `len` filtration and `SkeinObservationSystem`.
+
+**Tier 3 — no Lean tie-through added; it is already on `main`**
+(`regular_and_halts_of_len_orbit_descent`, `vortexReductionSystem`,
+`PNeqNpWallUnification`). The two remaining ties are conjecture-adjacent, beaned
+`qou-gh14`, not laundered.
+
+**Separately:** the #P→P≠NP robustness (PR #4866) — the transfer is named,
+the Toda / algebrization / natural-proofs barriers recorded — and a sorry-free
+Toda-consistency barrier lemma (PR TBD).
