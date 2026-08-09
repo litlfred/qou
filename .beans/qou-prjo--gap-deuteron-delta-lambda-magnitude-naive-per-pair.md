@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-08T23:15:13Z
+updated_at: 2026-08-09T01:07:05Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -174,3 +174,24 @@ BELOW (~1.019). Any route modelling the ≥3-row sign from the `y_λ` weighting
 alone gets n=12 wrong.
 
 Audit: `docs/audits/2026-08-08-threerow-sign-crossing-a-dependence-4he-and-lean.md`
+
+
+### ⁴He completed + a correction to how the deuteron result should be read
+
+⁴He (n=12) ran to completion — full 70-partition ℓ≥3 sum, no truncation, no
+native kernel. It crosses at **q = 1.02092, BELOW q₀**, so the ladder is
+NON-MONOTONE: D 1.05365 (below) · ³He 1.42852 / T 1.46170 (above) · ⁴He 1.02092
+(below).
+
+**Correction worth carrying forward:** the per-λ decomposition shows three
+qualitatively DIFFERENT mechanisms, measured as leading-term/total at q₀:
+
+  n=6   ~1.2×   two-block overtake — one block sets the total
+  n=9   4–11×   multi-block cancellation — total is a small residue
+  n=12  0.34×   broad constructive accumulation — total EXCEEDS its largest term
+
+So #4829 §2's (4,1,1)→(3,2,1) overtake describes **n=6 and only n=6**, and the
+Lean lemma modelled on it is an n=6 statement (the theorems are true for a
+generic split; the empirical premise that one block dominates holds only for the
+deuteron). **Do not generalise the deuteron block story to larger A** — that is
+generalising the wrong object.
