@@ -85,6 +85,23 @@ except ImportError:
 # molecular.py, sdp.py and nine corpus consumers, is far worse than the
 # stale convention.
 #
+# AND THIS MODULE CANNOT SEE THE PROBLEM, because it is float64 end to end:
+# `_hm_dict` / `_reduce_nf` build the NF coefficients in f64 and prune at
+# `abs(c) > 1e-15`, so `G` carries ~16 good digits however much precision a
+# caller wraps around it. Measured: driving this same NF path at mpmath 60 dps
+# still bottoms out at |lambda_min| = 3.9e-17 and det = -5.3e-17 under D --
+# f64 noise, not a resolved eigenvalue. The true value is 0; the branch's
+# 50-dps figure (det = 2.89e-51, GramSignature.lean) comes from an exact NF,
+# not from here. So the degeneracy is INVISIBLE to this module's own
+# precision, and `np.linalg.inv` is inverting rounding noise -- which is
+# exactly the observed cond 4.9e16 and ||G G_INV - I|| = 1.64.
+#
+# The exactness itself does not rest on any determinant: under D,
+# y_(1^3) = 0 SYMBOLICALLY (verified three independent ways -- the sympy
+# Wenzl solve in markov_weights_symbolic, the mpmath product formula in
+# schur_principal_mpmath, and y_lambda_wenzl_bridge), so the (1^3)
+# Wedderburn block contributes nothing to the trace form and IS the radical.
+#
 # The Lean file names the repair — quotient by the radical. Post-retraction
 # that is a strictly better prospect than it first looked: the quotient is a
 # genuine positive-definite inner product, not a causal form. But it is still
