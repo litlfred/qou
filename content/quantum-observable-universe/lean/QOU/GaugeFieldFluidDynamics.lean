@@ -25,14 +25,15 @@ namespace QOU.GaugeFieldFluidDynamics
 -- said `unfold <local>` become `simp only [<local>, ...qIntBal]` -- `unfold`
 -- reduces through the alias and leaves the follow-up tactic nothing to act on.
 -- See QOU/MathlibExt/QIntegerCanonical.lean.
-noncomputable abbrev qInteger (q : ℝ) (k : ℕ) : ℝ := QOU.QInteger.qIntBal q k
+noncomputable abbrev qInteger {R : Type*} [Field R] (q : R) (k : ℕ) : R :=
+  QOU.QInteger.qIntBal q k
 
 /-- [0]_q = 0 for all q. -/
-theorem qInteger_zero (q : ℝ) : qInteger q 0 = 0 := by
+theorem qInteger_zero {R : Type*} [Field R] (q : R) : qInteger q 0 = 0 := by
   simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp
 
 /-- [1]_q = 1 for q ≠ q⁻¹. -/
-theorem qInteger_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qInteger_one {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 1 = 1 := by
   simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]; simp [pow_one]; exact div_self hq
 
@@ -72,7 +73,7 @@ theorem qInteger_ne_zero (q : ℝ) (k : ℕ) (hq : q > 1) (hk : k ≥ 1) :
 /-- `[2]_q = q + q⁻¹` for `q ≠ q⁻¹` — closed form of the second
     q-integer.  Used by the Markov-parameter substitution
     `z = 1/[2]_{q^{1/2}}`. -/
-theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qInteger_two {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 2 = q + q⁻¹ := by
   simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   rw [pow_two, pow_two, div_eq_iff hq]
@@ -81,7 +82,7 @@ theorem qInteger_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
 /-- `[3]_q = q² + 1 + q⁻²` for `q ≠ q⁻¹`.  Closed form of the
     third q-integer; uses the factorisation `q³ - q⁻³ =
     (q - q⁻¹)(q² + 1 + q⁻²)`. -/
-theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qInteger_three {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qInteger q 3 = q ^ 2 + 1 + (q⁻¹) ^ 2 := by
   have hq0 : q ≠ 0 := by rintro rfl; simp at hq
   have hqq : q * q⁻¹ = 1 := mul_inv_cancel₀ hq0
@@ -97,14 +98,14 @@ theorem qInteger_three (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     − q⁻^(n+1))/(q − q⁻¹)`, one rearranges the numerator
     `q^(n+1) − q⁻^(n+1) = q · (q^n − q⁻^n) + q⁻ⁿ · (q − q⁻¹)`
     which yields the recursion after dividing by `q − q⁻¹`. -/
-theorem qInteger_succ (q : ℝ) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (_hq0 : q ≠ 0) :
+theorem qInteger_succ {R : Type*} [Field R] (q : R) (n : ℕ) (hq : q - q⁻¹ ≠ 0) (_hq0 : q ≠ 0) :
     qInteger q (n + 1) = q * qInteger q n + q⁻¹ ^ n := by
   simp only [qInteger, QOU.Mass.QHookDimensionBalanced.qIntBal]
   rw [div_eq_iff hq, add_mul, mul_assoc, div_mul_cancel₀ _ hq]
   ring
 
 /-- The q-factorial `[n]_q! = ∏_{k=1..n} [k]_q`.  Returns 1 for n = 0. -/
-noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
+noncomputable def qFactorial {R : Type*} [Field R] (q : R) : ℕ → R
   | 0     => 1
   | n + 1 => qInteger q (n + 1) * qFactorial q n
 
@@ -118,34 +119,34 @@ noncomputable def qFactorial (q : ℝ) : ℕ → ℝ
     (the local `qInteger` ≡ that module's `qBracket`; verified). New code should use
     the canonical one; kept here for the existing local consumers
     (`WenzlBridgeConcrete`, `GroundRingAnnotations`). -/
-noncomputable def qBinomial (q : ℝ) (n k : ℕ) : ℝ :=
+noncomputable def qBinomial {R : Type*} [Field R] (q : R) (n k : ℕ) : R :=
   qFactorial q n / (qFactorial q k * qFactorial q (n - k))
 
 /-- `[n choose 0]_q = 1` whenever `[n]_q!` is non-zero. -/
-theorem qBinomial_zero (q : ℝ) (n : ℕ)
+theorem qBinomial_zero {R : Type*} [Field R] (q : R) (n : ℕ)
     (hfact : qFactorial q n ≠ 0) : qBinomial q n 0 = 1 := by
   have h0 : qFactorial q 0 = 1 := rfl
   unfold qBinomial
   rw [Nat.sub_zero, h0, one_mul, div_self hfact]
 
 /-- `[n choose n]_q = 1` whenever `[n]_q!` is non-zero. -/
-theorem qBinomial_self (q : ℝ) (n : ℕ)
+theorem qBinomial_self {R : Type*} [Field R] (q : R) (n : ℕ)
     (hfact : qFactorial q n ≠ 0) : qBinomial q n n = 1 := by
   have h0 : qFactorial q 0 = 1 := rfl
   unfold qBinomial
   rw [Nat.sub_self, h0, mul_one, div_self hfact]
 
 /-- `[0]_q! = 1` by convention. -/
-theorem qFactorial_zero (q : ℝ) : qFactorial q 0 = 1 := rfl
+theorem qFactorial_zero {R : Type*} [Field R] (q : R) : qFactorial q 0 = 1 := rfl
 
 /-- `[1]_q! = [1]_q = 1` (for `q ≠ q⁻¹`). -/
-theorem qFactorial_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qFactorial_one {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qFactorial q 1 = 1 := by
   show qInteger q 1 * qFactorial q 0 = 1
   rw [qInteger_one q hq, qFactorial_zero, mul_one]
 
 /-- `[2]_q! = [2]_q · [1]_q = q + q⁻¹` (for `q ≠ q⁻¹`). -/
-theorem qFactorial_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qFactorial_two {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qFactorial q 2 = q + q⁻¹ := by
   show qInteger q 2 * qFactorial q 1 = q + q⁻¹
   rw [qInteger_two q hq, qFactorial_one q hq, mul_one]
@@ -168,15 +169,15 @@ theorem markovParameter_pos (s : ℝ) (hs : s > 0) :
 /-- The q-hook product `H_q(λ) = ∏_{x ∈ λ} [h_x]_q` over a partition
     `λ` represented as the list of its hook lengths.  The `dim_q(λ)`
     formula is `[n]_q! / H_q(λ)`. -/
-noncomputable def qHookProduct (q : ℝ) : List ℕ → ℝ
+noncomputable def qHookProduct {R : Type*} [Field R] (q : R) : List ℕ → R
   | []        => 1
   | h :: rest => qInteger q h * qHookProduct q rest
 
 /-- The empty partition has hook product `1`. -/
-theorem qHookProduct_nil (q : ℝ) : qHookProduct q [] = 1 := rfl
+theorem qHookProduct_nil {R : Type*} [Field R] (q : R) : qHookProduct q [] = 1 := rfl
 
 /-- The hook product distributes over `cons`. -/
-theorem qHookProduct_cons (q : ℝ) (h : ℕ) (rest : List ℕ) :
+theorem qHookProduct_cons {R : Type*} [Field R] (q : R) (h : ℕ) (rest : List ℕ) :
     qHookProduct q (h :: rest) = qInteger q h * qHookProduct q rest := rfl
 
 /-- Hook lengths for the row partition `[n]` are `n, n-1, …, 1`. -/
@@ -194,13 +195,13 @@ theorem hooksRow_three : hooksRow 3 = [3, 2, 1] := rfl
     = (q + q⁻¹) · 1`.  At `q = q_0 ≈ 1.11` this gives a positive
     value; the genuine Wenzl-bridge `dim_q([2])` is then
     `[2]_q!/H_q([2]) = (q+q⁻¹)/(q+q⁻¹) = 1`. -/
-theorem qHookProduct_row_two (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qHookProduct_row_two {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qHookProduct q (hooksRow 2) = q + q⁻¹ := by
   show qInteger q 2 * (qInteger q 1 * 1) = q + q⁻¹
   rw [qInteger_two q hq, qInteger_one q hq]; ring
 
 /-- Hook product for the row partition `[3]` equals `[3]_q!`. -/
-theorem qHookProduct_row_three (q : ℝ) :
+theorem qHookProduct_row_three {R : Type*} [Field R] (q : R) :
     qHookProduct q (hooksRow 3) =
       qInteger q 3 * (qInteger q 2 * (qInteger q 1 * 1)) := rfl
 
@@ -210,7 +211,7 @@ def hooksLshape21 : List ℕ := [3, 1, 1]
 
 /-- Hook product for `λ = [2, 1]` is `[3]_q · [1]_q · [1]_q = [3]_q`
     (since `[1]_q = 1` whenever `q ≠ q⁻¹`). -/
-theorem qHookProduct_lshape21 (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
+theorem qHookProduct_lshape21 {R : Type*} [Field R] (q : R) (hq : q - q⁻¹ ≠ 0) :
     qHookProduct q hooksLshape21 = qInteger q 3 := by
   show qInteger q 3 * (qInteger q 1 * (qInteger q 1 * 1)) = qInteger q 3
   rw [qInteger_one q hq]; ring
@@ -220,7 +221,7 @@ theorem qHookProduct_lshape21 (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
 def hooksCol3 : List ℕ := [3, 2, 1]
 
 /-- Hook product for the column `[1,1,1]` equals `[3]_q!`. -/
-theorem qHookProduct_col3 (q : ℝ) :
+theorem qHookProduct_col3 {R : Type*} [Field R] (q : R) :
     qHookProduct q hooksCol3 =
       qInteger q 3 * (qInteger q 2 * (qInteger q 1 * 1)) := rfl
 
