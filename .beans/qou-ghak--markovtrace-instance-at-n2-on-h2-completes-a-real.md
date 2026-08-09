@@ -1,10 +1,11 @@
 ---
 # qou-ghak
 title: MarkovTrace instance at n=2 on H2 — completes a real MarkovTraceContext witness
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T12:04:21Z
-updated_at: 2026-08-09T12:04:21Z
+updated_at: 2026-08-09T13:35:05Z
 ---
 
 
