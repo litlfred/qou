@@ -204,6 +204,40 @@ theorem youngPred (n : ℕ) (hn : 3 ≤ n)
     omega
   exact ⟨⟨eraseCorner l.val c hc, hcard'⟩, hrows, ⟨c, hc, rfl⟩⟩
 
+/-- **At three cells there is exactly one shape with three rows, namely `(1³)`.**
+
+Three rows forces `(0,0), (1,0), (2,0) ∈ μ` — that is already three cells — and
+`card = 3` leaves no room for a fourth. So the base case of the induction is a
+statement about a *single* diagram, which is what lets the scalar pinning
+`TemperleyLiebTower.conventionD_kills_antisymmetriser` discharge it: there is
+nothing to quantify over.
+
+This is the glue between the scalar layer (which knows `y₍₁³₎ = 0`) and the
+diagram layer (which needs `∀ m of size 3 with ≥ 3 rows, y m = 0`). -/
+theorem card_three_threeRow_unique (μ : YoungDiagram)
+    (hcard : μ.cells.card = 3) (hrows : 3 ≤ μ.colLen 0) :
+    μ.cells = ({(0, 0), (1, 0), (2, 0)} : Finset (ℕ × ℕ)) := by
+  have h20 : (2, 0) ∈ μ := (threeRows_iff μ).mp hrows
+  have h10 : (1, 0) ∈ μ := μ.up_left_mem (by omega) (by omega) h20
+  have h00 : (0, 0) ∈ μ := μ.up_left_mem (by omega) (by omega) h20
+  have hsub : ({(0, 0), (1, 0), (2, 0)} : Finset (ℕ × ℕ)) ⊆ μ.cells := by
+    intro x hx
+    simp only [Finset.mem_insert, Finset.mem_singleton] at hx
+    rcases hx with h | h | h <;> subst h <;> assumption
+  have hc3 : ({(0, 0), (1, 0), (2, 0)} : Finset (ℕ × ℕ)).card = 3 := by decide
+  exact (Finset.eq_of_subset_of_card_le hsub (by omega)).symm
+
+/-- **Hence the base case needs only one scalar fact.** Any two size-3 shapes
+with three rows are equal, so `∀ m, 3 ≤ rows m → y m = 0` collapses to the
+single instance the pinning already provides. -/
+theorem threeRow_size_three_subsingleton
+    (m m' : {μ : YoungDiagram // μ.cells.card = 3})
+    (h : 3 ≤ m.val.colLen 0) (h' : 3 ≤ m'.val.colLen 0) : m = m' := by
+  have e : m.val.cells = m'.val.cells := by
+    rw [card_three_threeRow_unique m.val m.property h,
+      card_three_threeRow_unique m'.val m'.property h']
+  exact Subtype.ext (YoungDiagram.ext e)
+
 /-- **The propagation, with every combinatorial hypothesis discharged.**
 
 If the weights are nonnegative, each cover is dominated by its parent, and all
@@ -233,5 +267,42 @@ theorem threeRow_vanishing_all_levels {R : Type*} [AddCommMonoid R] [PartialOrde
     y (fun _ m l => ∃ c, ∃ hc : IsCornerCell l.val c, eraseCorner l.val c hc = m.val)
     (fun _ m => m.val.colLen 0) 3 hnn hdom
     (fun n hn l hl => youngPred n hn l hl) base
+
+/-- **The composed statement: one scalar in, vanishing at every level out.**
+
+`threeRow_vanishing_all_levels` still asks for a base case quantified over
+shapes. `threeRow_size_three_subsingleton` collapses that quantifier, so the
+input becomes a **single scalar fact** — the weight of the one three-row shape
+of size 3 is zero — which is exactly what
+`TemperleyLiebTower.conventionD_kills_antisymmetriser` delivers.
+
+That is as far as this layer can honestly go, and the boundary is worth naming.
+Going further means saying that the framework's `y_λ` *is* the Wedderburn weight
+of the Markov trace, i.e. `tr_M = Σ_λ y_λ χ_λ`. That is a statement about
+characters and the Wedderburn decomposition — the representation theory this
+module deliberately does not carry, and which the Hecke-instance layer
+(`QOU.Hecke`, PR #4857) is building. Until it lands, `y` here is any function
+satisfying the hypotheses, and the theorem is a genuine implication rather than
+a tautology: nothing below *defines* `y` to be zero anywhere.
+
+The one place a reader could be misled is `hpin`. It is an input, not a
+conclusion. What is proved is that a single zero at `n = 3` propagates to every
+level — not that the zero is there. -/
+theorem threeRow_vanishing_of_pinning {R : Type*} [AddCommMonoid R] [PartialOrder R]
+    [CovariantClass R R (· + ·) (· ≤ ·)]
+    (y : ∀ n, {μ : YoungDiagram // μ.cells.card = n} → R)
+    (hnn : ∀ n (l : {μ : YoungDiagram // μ.cells.card = n + 1}), 0 ≤ y (n + 1) l)
+    (hdom : ∀ n (m : {μ : YoungDiagram // μ.cells.card = n})
+      (l : {μ : YoungDiagram // μ.cells.card = n + 1}),
+      (∃ c, ∃ hc : IsCornerCell l.val c, eraseCorner l.val c hc = m.val) →
+        y (n + 1) l ≤ y n m)
+    (m₀ : {μ : YoungDiagram // μ.cells.card = 3}) (hm₀ : 3 ≤ m₀.val.colLen 0)
+    (hpin : y 3 m₀ = 0) :
+    ∀ k : ℕ, ∀ l : {μ : YoungDiagram // μ.cells.card = 3 + k},
+      3 ≤ l.val.colLen 0 → y (3 + k) l = 0 := by
+  refine threeRow_vanishing_all_levels y hnn hdom ?_
+  intro m hm
+  rw [threeRow_size_three_subsingleton m m₀ hm hm₀]
+  exact hpin
 
 end QOU.Mathlib

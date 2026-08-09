@@ -302,3 +302,55 @@ composed into one theorem about the framework's own weights.
 I hit the `omit ... in` placement trap AGAIN -- it must precede the DOCSTRING,
 not sit between docstring and theorem. That is twice in one session on a rule I
 had already written down. The comment is now in the source at both sites.
+
+## UPDATE 4 -- the base case collapses to ONE SCALAR. Boundary of this layer reached.
+
+  card_three_threeRow_unique        at 3 cells there is exactly ONE three-row
+                                    shape, namely (1^3): three rows forces
+                                    (0,0),(1,0),(2,0) in mu, that is already
+                                    three cells, and card = 3 leaves no room.
+  threeRow_size_three_subsingleton  hence any two such shapes are EQUAL
+  threeRow_vanishing_of_pinning     so `base` stops being a quantified statement
+                                    and becomes a SINGLE SCALAR INPUT -- exactly
+                                    what conventionD_kills_antisymmetriser gives
+
+All sorry-free, axioms clean, lake build exit 0 no warnings.
+
+## THE BOUNDARY, named rather than papered over
+
+This is as far as THIS LAYER can honestly go. Going further means asserting that
+the framework's y_lambda IS the Wedderburn weight of the Markov trace, i.e.
+tr_M = sum_lambda y_lambda chi_lambda. That is a statement about CHARACTERS and
+the WEDDERBURN DECOMPOSITION -- representation theory this module deliberately
+does not carry, and which the Hecke-instance layer (QOU.Hecke, PR #4857) is
+building. The seam is recorded in
+docs/coordination/hecke-tower-and-trace-parameter.md.
+
+WHY THE RESULT IS STILL NON-VACUOUS, and this matters: nothing here DEFINES y to
+be zero anywhere. y is any function satisfying the four hypotheses, and the
+theorem is a genuine implication -- a single zero at n = 3 propagates to every
+level. The one place a reader could be misled is `hpin`, which is an INPUT, not
+a conclusion. What is proved is the propagation, not the zero.
+
+I considered defining y as "yw on two-row shapes, 0 on >= 3-row shapes" to force
+a composition. That would have been VACUOUS -- the base case would hold by
+definition rather than by the pinning -- and it is exactly the failure mode this
+repo's vacuity-audit skill exists to catch. Rejected deliberately; recorded so
+nobody tries it later thinking it closes the gap.
+
+## STATUS OF THE BEAN
+
+  [x] 1. exists_threeRow_corner
+  [x] 2. hpred instantiated on Young diagrams (youngPred)
+  [x] 3. hbranch -- mathematical half (qint_three_term, yw_branching); the
+         remaining half is the same indexing question as the boundary above
+  [x] 4. hnn (yw_nonneg)
+  [x] 5. NEW -- base collapsed to one scalar (threeRow_vanishing_of_pinning)
+  [ ] 6. BLOCKED ON THE HECKE LAYER: identify y with the Wedderburn weights, so
+         the chain becomes one theorem about the framework's own y_lambda rather
+         than about an arbitrary y. Coordinate with PR #4857; do not build a
+         second Wedderburn apparatus here.
+
+Exposition wording, unchanged and still required: "Wenzl is a corollary, not a
+citation" is true of the ARGUMENT and of every individual step, and is NOT yet
+true of a single Lean term about the framework's weights.
