@@ -7,7 +7,7 @@ an element of the **commutative** Laurent polynomial ring
 $\mathbb{Z}[q^{\pm 1/2}, z]$ — the coefficients $a_i, b_i$ are
 polynomials in $q^{\pm 1/2}$ and $z$ is a single transcendental
 parameter (the Markov parameter, eliminated by
-$z = 1/(q^{1/2} + q^{-1/2})$ at the end of every Markov peel,
+$z = q^{3}/(q^{2}+1)$ (**convention D**) at the end of every Markov peel,
 [`thm:jones-markov-trace`](#thm:jones-markov-trace)).
 
 Two elements of a commutative ring commute. Hence

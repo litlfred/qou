@@ -151,7 +151,8 @@ type Detector =
   | "c-formula-unlabelled"
   | "convention-silent-value"
   | "unqualified-pairing"
-  | "gram-inverse-unqualified";
+  | "gram-inverse-unqualified"
+  | "gram-inverse-under-d";
 
 // ---------------------------------------------------------------------------
 // Exact decimal handling — BigInt digit strings, never a float.
@@ -352,6 +353,17 @@ const SIGNATURE_CLAIM =
 const PAIRING_NAMED =
   /\bbilinear\b|\bstar[\s-]*pairing\b|\bstar\s+form\b|b_j\^\{?\\?\*|\\ast|\*-pairing|\bHecke\s+star\b|\bsesquilinear\b|b_ib_j\^|b_i\s*b_j\^/i;
 
+/**
+ * The block already acknowledges the degeneracy — it names the radical, the
+ * Temperley–Lieb quotient, the corank, or says outright that `det G = 0`. That
+ * is the CORRECT end state of the excision for a Gram-inverse claim, so it
+ * clears rather than fires. Without this, a block repaired by relocating its
+ * claim to `H_n/rad` would keep failing forever and there would be no way to
+ * finish the job.
+ */
+const RADICAL_CAVEAT =
+  /\bradical\b|\bTemperley[\s–—-]*Lieb\b|\bTL_\{?[n0-9]|H_\{?[n0-9]\}?\s*\/\s*\\?mathrm\{?rad|\/\s*\\mathrm\{rad\}|\bcorank\b|\bsingular\b|\bdegenerate\b\s*(?:under|over)|\\det\s*G\s*=\s*0|\bquotient\b/i;
+
 /** Claims that the Markov–Gram is invertible / non-degenerate. */
 const GRAM_INVERSE =
   /G\^\{-1\}|G\^\{?-1\}?|\bnon-?degenerate\b|\binvertible\b|\bG_\{?\\mathrm\{inv|\bG_INV\b|\\det\s*G\s*(?:<|>|\\ne|\\neq|≠)\s*0/;
@@ -535,7 +547,33 @@ export function scanBlock(
       const win = windowAround(text, g.index, g[0].length);
       if (!MARKOV_GRAM.test(win)) continue;
       if (CS_GRAM.test(win)) continue;
-      if (CONVENTION_NAMED.test(win)) continue;
+      // The block already says the form is degenerate / has been moved to the
+      // quotient. That is the correct end state, not a defect.
+      if (RADICAL_CAVEAT.test(win)) continue;
+      // Labelled as convention-C arithmetic: historical, and true under C.
+      if (C_LABEL.test(win)) continue;
+      if (CONVENTION_NAMED.test(win)) {
+        // A convention IS named here and it is not C, so it is D — and under D
+        // the claim is FALSE, not merely unqualified. This case used to `continue`,
+        // which meant relabelling a wrong claim "convention D" silenced the
+        // detector instead of sharpening it. Naming the convention you are wrong
+        // under is worse than naming none.
+        hits.push({
+          detector: "gram-inverse-under-d",
+          severity: "critical",
+          file: tag,
+          line: lineOf(text, g.index),
+          evidence:
+            `“${g[0]}” asserted of the Markov–Gram with convention D named nearby ` +
+            `and no radical/quotient caveat. Under D this is false, not ambiguous: ` +
+            `y_(1^3) = 0 exactly, the (1^3) block IS the radical, det G = 0 and ` +
+            `G^{-1} does not exist. Move the claim to H_n/rad = TL_n, where the ` +
+            `induced pairing IS non-degenerate (QOU/QBeta/MarkovGramDegenerate.lean: ` +
+            `gram_det_eq_zero_of_radical_combination, pairing_descends). Context: ` +
+            `“${snippet(text, g.index, g[0].length)}”`,
+        });
+        continue;
+      }
       hits.push({
         detector: "gram-inverse-unqualified",
         severity: "major",
@@ -793,6 +831,24 @@ function selftest(fps: Fingerprint[]): number {
       expect: "gram-inverse-unqualified",
     },
     {
+      name: "G^{-1} claim RELABELLED 'convention D' → fires HARDER, not clears",
+      md: `Write $z = q^3/(q^2+1)$ (**convention D**). The Markov–Gram matrix $G_{ij} = \\mathrm{tr}_M(b_i b_j)$ is non-degenerate, and $G^{-1}$ gives the dual construction.`,
+      ts: SELFTEST_TS,
+      expect: "gram-inverse-under-d",
+    },
+    {
+      name: "…and moving the claim to the TL quotient clears it",
+      md: `Write $z = q^3/(q^2+1)$ (**convention D**). On $H_3$ the Markov–Gram is singular — the $(1^3)$ block is the radical and $\\det G = 0$ — so $G^{-1}$ is read on the quotient $H_3/\\mathrm{rad} \\cong \\mathrm{TL}_3$, where the induced pairing is non-degenerate.`,
+      ts: SELFTEST_TS,
+      expect: "clean",
+    },
+    {
+      name: "a G^{-1} claim explicitly labelled convention C stays historical → clears",
+      md: `Under the excised **convention C** the Markov–Gram matrix $G_{ij}$ was non-degenerate and $G^{-1}$ existed.`,
+      ts: SELFTEST_TS,
+      expect: "clean",
+    },
+    {
       name: "the Chern–Simons Gram is a different matrix → clears",
       md: `The Chern–Simons pairing Gram matrix $G_{\\mathrm{CS}}$ is non-degenerate and $G^{-1}$ exists; no Markov parameter enters it. The Markov trace is untouched.`,
       ts: SELFTEST_TS,
@@ -877,6 +933,7 @@ function buildMd(findings: Finding[], branch: string): string {
     "convention-silent-value",
     "unqualified-pairing",
     "gram-inverse-unqualified",
+    "gram-inverse-under-d",
   ];
   for (const d of dets) {
     L.push(`| \`${d}\` | ${fails.reduce((n, f) => n + f.hits.filter((h) => h.detector === d).length, 0)} |`);
@@ -1013,6 +1070,7 @@ function main() {
         convention_silent_value: f.hits.filter((h) => h.detector === "convention-silent-value").length,
         unqualified_pairing: f.hits.filter((h) => h.detector === "unqualified-pairing").length,
         gram_inverse_unqualified: f.hits.filter((h) => h.detector === "gram-inverse-unqualified").length,
+        gram_inverse_under_d: f.hits.filter((h) => h.detector === "gram-inverse-under-d").length,
       };
       const evidence =
         f.result === "n/a"
