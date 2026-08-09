@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T13:00:00Z
+updated_at: 2026-08-09T17:00:00Z
 ---
 
 ## Why this bean exists
@@ -1720,3 +1720,36 @@ discipline applied to that file's earlier "not formalised" claim.
 `k_sq_eq_half` already shows the Hessian cancels between `c_sigma` and `|tau|`
 before it is evaluated, so what is missing is the identification of `tau` with
 the Hessian, not any further analysis of the Kashaev sum.
+
+---
+
+## MERGED. 2026-08-09 — PR #4729, merge commit `25387e2a4`
+
+The `hc` half of this bean is **on `main`**. 15 Lean files, 14 probes, all
+sorry-free (`#print axioms` -> `[propext, Classical.choice, Quot.sound]`,
+re-verified in an error-free file immediately before merge -- see the "false
+isolated success" note above for why that qualifier is load-bearing).
+
+`OneLoopPrefactorInvariance`'s `hc` is no longer a hypothesis anywhere in the
+chain from the Kashaev sum to `c_sigma = 3^(-1/4)`:
+
+    cSigma_sq_mul_abs_cot     c^2 |cot th| = (2 sin th)^2   -- ANY th with cot != 0
+    cSigma_saddle_pow_four    c_sigma(5pi/6)^4 = 1/3        -- hc discharged
+    k_sq_eq_half              k^2 = 1/2                     -- hc discharged
+
+PR #4729's title and body were **rewritten before merging**. They claimed "the
+raw-float64 ratchet goes green -- 0 NEW, 0 REGRESSED", true when written and
+false against the main of 2026-08-09; and they did not mention this arc at all,
+which by then was most of the branch. The old wording is recorded in the new
+body rather than replaced. See `qou-mnrd` for the ratchet's live state.
+
+## Bean stays OPEN — `htau` only
+
+Nothing about `htau` changed. It is **not** one more step of this arc:
+`tau_DG` has no Lean definition to bridge to, `QOU.OneLoopEdgeLattice`'s own
+header says nothing there "proves that the multi-cusp construction computes the
+adjoint torsion", and `|tau(4_1)| = sqrt3/2` is in this corpus a SnapPy
+computation (`computations/one_loop_torsion.py`), DG's own worked example.
+Whoever picks it up needs the 1-loop invariant formalised first; the target is
+already pinned in Lean as `abs_cot_saddle_div_two` so the gap is a definite
+claim rather than prose.
