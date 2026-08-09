@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T23:47:37.807330+00:00",
-  "commitSha": "df6e9766b9dfa24c9ef4befe48ff8eadc3b79a91",
+  "computedAt": "2026-08-09T00:05:09.390821+00:00",
+  "commitSha": "00e7ea2924cb918a870097d16a6cf64c3d43f46b",
   "assertions": [
     {
       "name": "m_mu_error_is_the_pin_separation",
@@ -42,14 +42,21 @@
       "passed": true,
       "tolerance": 0.05,
       "source": "pin accounts for 30.4 of 1279 ppb"
+    },
+    {
+      "name": "closing_Q_beta_alone_leaves_m_n_open",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "source": "m_n abs error is dm_p + dQ_beta and the m_p term is larger"
     }
   ],
   "allPassed": true,
-  "durationMs": 32,
+  "durationMs": 15,
   "computation": "l2-gap-independence-decomposition",
   "scriptFile": "l2_gap_independence_decomposition.py",
-  "scriptHash": "cb0c286658be",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5812cbb17105",
+  "scriptCommitSha": "00e7ea2924cb918a870097d16a6cf64c3d43f46b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -125,7 +132,20 @@
         "m_n",
         "Delta_pn"
       ],
-      "scoreboard_if_Q_beta_closes": "5/7"
+      "scoreboard_if_Q_beta_closes": "4/7",
+      "scoreboard_if_Q_beta_and_m_p_close": "5/7",
+      "scoreboard_if_both_exact": "6/7",
+      "m_mu_never_closes_without_the_layer_question": true
+    },
+    "binding_constraints": {
+      "Q_beta_needed_ppb_set_by_m_n": "6.9020220825395147063960875708989598181675508399926",
+      "Q_beta_own_target_ppb": "7.797",
+      "m_n_is_tighter_by": "1.1296689443698779216907041952474141022530459219951",
+      "Q_beta_decades_needed": "2.2678942000259798764628110341542381437263776618593",
+      "m_p_decades_needed": "2.6405563439587256576953370174278340573747068129262",
+      "q0_layer_agreement_needed_ppb": "0.011971168734002181978381420903174244802408466735068",
+      "q0_layer_agreement_now_ppb": "11.537118",
+      "m_mu_decades_needed": "2.9839607823148287266446547977497796133956819365303"
     }
   }
 }

@@ -51,8 +51,30 @@ WHAT THIS SHOWS — four of the five failures are not derivation gaps
              the chain, or the calibration explains the other 97.6 %.
 
 SO: ONE unexplained derivation gap, Q_beta — plus a q₀-pin question (m_mu) and a
-calibration residual (m_p). Closing Q_beta closes Delta_pn and m_n with it, which
-takes the scoreboard from 2/7 to 5/7 on a single result.
+calibration residual (m_p).
+
+HOW CLOSE IS L2, THEN? (section E)
+
+    now                                    2/7
+    Q_beta at its target, m_p unchanged    4/7   Q_beta and Delta_pn close
+    Q_beta at target AND m_p exact         5/7   m_n comes within 1.13x
+    Q_beta exact AND m_p exact             6/7
+    m_mu                                   never, on any of these
+
+    🛑 Closing Q_beta alone gives 4/7, NOT 5/7. m_n's absolute error is
+    dm_p + dQ_beta, and the m_p term (1.268e-6 MeV) is the LARGER of the two
+    (1.001e-6 MeV) — so zeroing Q_beta still leaves m_n 236x out. An earlier
+    version of this file asserted 5/7 by reading the derivation chain without
+    checking which term dominates the budget.
+
+THE BINDING CONSTRAINTS (section F)
+
+    Q_beta   6.902 ppb — set by m_n, NOT by Q_beta's own 7.797 ppb target,
+             which m_n beats by 1.13x. 2.27 decades from 1279 ppb.
+    m_p      2.64 decades. A CAL-2 solve residual, not physics.
+    m_mu     the two q₀ layers must agree to 0.011971 ppb, against 11.537 ppb
+             today — 2.98 decades, and a different KIND of problem: no amount
+             of Q_beta or m_p work moves it.
 
 The propagation identities are proven in Lean, not just checked numerically:
 `QOU.MassTheory.DifferenceObservableErrorSplit`.
@@ -158,8 +180,52 @@ def main() -> int:
     print("=" * 80)
     print("  ONE unexplained derivation gap: Q_beta (pin explains 2.4 %).")
     print("  m_mu is a pin artifact; m_p a calibration residual; m_n and")
-    print("  Delta_pn are algebraic consequences of Q_beta. Closing Q_beta")
-    print("  takes the scoreboard 2/7 -> 5/7 on a single result.")
+    print("  Delta_pn are algebraic consequences.")
+    print("=" * 80)
+
+    # ── (E) the ladder: what does each fix actually buy? ────────────────
+    # 🛑 CORRECTION. An earlier version of this file claimed closing Q_beta
+    # takes the scoreboard 2/7 -> 5/7. It does NOT: it gives 4/7. `m_n`'s
+    # absolute error is dm_p + dQ_beta, and at 1.268e-6 vs 1.001e-6 MeV the
+    # m_p term is the LARGER of the two. Zeroing Q_beta leaves m_n at 1.356 ppb
+    # against a 0.005747 ppb target -- still 236x out. The claim was made by
+    # reading the derivation chain (m_n depends on Q_beta) without checking
+    # which term dominates the budget.
+    def _ladder(dp, dQ):
+        ap, aQ = dp / PPB * M_P, dQ / PPB * Q
+        r = {"m_p": dp, "Q_beta": dQ,
+             "m_n": (ap + aQ) / M_N * PPB, "Delta_pn": aQ / D * PPB}
+        return r, sum(1 for k in r if r[k] <= SIGMA[k] / 100)
+
+    print()
+    print("  (E) what each fix buys (m_e and m_K/m_pi already MET, so +2)")
+    for label, dp, dQ in (
+            ("now", ERR["m_p"], ERR["Q_beta"]),
+            ("Q_beta at its target, m_p unchanged", ERR["m_p"], SIGMA["Q_beta"] / 100),
+            ("Q_beta at target AND m_p exact", mp.mpf(0), SIGMA["Q_beta"] / 100),
+            ("Q_beta exact AND m_p exact", mp.mpf(0), mp.mpf(0))):
+        r, n = _ladder(dp, dQ)
+        print(f"      {label:<38} -> {n + 2}/7"
+              f"   (m_n {'MET' if r['m_n'] <= SIGMA['m_n'] / 100 else _s(r['m_n'] / (SIGMA['m_n'] / 100), 4) + 'x'})")
+    print("      m_mu fails in every row -- it is the q0 LAYER question, not a")
+    print("      derivation gap, and no amount of Q_beta or m_p work touches it.")
+    print()
+    # m_n, not Q_beta, sets the real target on Q_beta.
+    q_needed = (SIGMA["m_n"] / 100) / PPB * M_N / Q * PPB
+    sep_needed = (SIGMA["m_mu"] / 100) / abs(SENS["m_mu"])
+    print("  (F) the binding constraints, in decades")
+    print(f"      Q_beta: m_n demands {_s(q_needed, 5)} ppb, TIGHTER than Q_beta's")
+    print(f"              own {SIGMA['Q_beta'] / 100} ppb target by "
+          f"{_s((SIGMA['Q_beta'] / 100) / q_needed, 4)}x"
+          f"  -> {_s(ERR['Q_beta'] / q_needed, 5)}x = "
+          f"{_s(mp.log10(ERR['Q_beta'] / q_needed), 3)} decades")
+    print(f"      m_p:    {_s(ERR['m_p'] / (SIGMA['m_p'] / 100), 5)}x = "
+          f"{_s(mp.log10(ERR['m_p'] / (SIGMA['m_p'] / 100)), 3)} decades"
+          f"   (a CAL-2 solve residual, not physics)")
+    print(f"      m_mu:   the two q0 layers must agree to {_s(sep_needed, 5)} ppb,"
+          f" vs {SEPARATION_PPB} now")
+    print(f"              -> {_s(SEPARATION_PPB / sep_needed, 5)}x = "
+          f"{_s(mp.log10(SEPARATION_PPB / sep_needed), 3)} decades")
     print("=" * 80)
 
     wb = (
@@ -196,7 +262,19 @@ def main() -> int:
         "pin_artifact": ["m_mu"],
         "calibration_residual": ["m_p"],
         "algebraic_consequence": ["m_n", "Delta_pn"],
-        "scoreboard_if_Q_beta_closes": "5/7"})
+        "scoreboard_if_Q_beta_closes": "4/7",
+        "scoreboard_if_Q_beta_and_m_p_close": "5/7",
+        "scoreboard_if_both_exact": "6/7",
+        "m_mu_never_closes_without_the_layer_question": True})
+    wb.add_data("binding_constraints", {
+        "Q_beta_needed_ppb_set_by_m_n": str(q_needed),
+        "Q_beta_own_target_ppb": str(SIGMA["Q_beta"] / 100),
+        "m_n_is_tighter_by": str((SIGMA["Q_beta"] / 100) / q_needed),
+        "Q_beta_decades_needed": str(mp.log10(ERR["Q_beta"] / q_needed)),
+        "m_p_decades_needed": str(mp.log10(ERR["m_p"] / (SIGMA["m_p"] / 100))),
+        "q0_layer_agreement_needed_ppb": str(sep_needed),
+        "q0_layer_agreement_now_ppb": str(SEPARATION_PPB),
+        "m_mu_decades_needed": str(mp.log10(SEPARATION_PPB / sep_needed))})
 
     wb.add_assertion("m_mu_error_is_the_pin_separation",
                      computed=float(abs(pin["m_mu"]["ratio"] - 1)), expected=0.0,
@@ -215,6 +293,11 @@ def main() -> int:
                      computed=float(pin["Q_beta"]["ratio"]), expected=0.0,
                      tolerance=0.05,
                      source="pin accounts for 30.4 of 1279 ppb")
+    # The correction: closing Q_beta alone does NOT close m_n.
+    _r_qonly = (ERR["m_p"] / PPB * M_P + (SIGMA["Q_beta"] / 100) / PPB * Q) / M_N * PPB
+    wb.add_assertion("closing_Q_beta_alone_leaves_m_n_open",
+                     computed=str(bool(_r_qonly > SIGMA["m_n"] / 100)), expected="True",
+                     source="m_n abs error is dm_p + dQ_beta and the m_p term is larger")
     out = wb.save()
     print(f"\nWrote: {out}")
     return 0
