@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-09T01:07:05Z
+updated_at: 2026-08-09T01:30:00Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -195,3 +195,68 @@ Lean lemma modelled on it is an n=6 statement (the theorems are true for a
 generic split; the empirical premise that one block dominates holds only for the
 deuteron). **Do not generalise the deuteron block story to larger A** — that is
 generalising the wrong object.
+
+---
+## q_cross(n) trend + fixed-n isospin control — PR #4836 (2026-08-09)
+
+**Bean STAYS OPEN.** Nothing here touches the binding magnitude; this is SIGN
+structure of the value-only ≥3-row trace only.
+
+**Three negative answers, and the negatives are the result.**
+
+1. **`q_cross(n)` is NOT a structured sequence.** On the real-level branch,
+   crossings exist only for a sporadic subset of n (none for n ∈
+   {3,4,5,7,9,10,12,14,16}) and the values oscillate: 1.0244 (n=6) → 1.2604 (n=8)
+   → 1.1397 (n=11) → … → 1.1002 (n=18) → 1.1697 → 1.1512. Not monotone, not
+   convergent, not everywhere-defined.
+2. **Exactly algebraic, but no closed form.** `Q=u⁴` and `Q^r=u³/D(u)` are rational
+   in `u=√q` over ℤ, so each crossing is a root of an explicit integer polynomial.
+   Exact (sympy rational arithmetic + certified VAS/Sturm isolation, no floating
+   point): irreducible degree **54** (n=6), **110** (n=8), **224** (n=11) ⇒ not
+   expressible in radicals.
+3. **q₀'s position is COINCIDENTAL.** Window reproducing the identical isotope
+   sign-vector = (1.053650, 1.207893): **55.4 % of the branch, 0.852 bits, 54**
+   systematically-generated natural constants inside. Robust — sweeping the upper
+   bound over its full plausible range gives 41–81 % and 0.31–1.28 bits.
+
+**Two corrections to the sibling reads** (both by measurement; arithmetic reproduces):
+
+- **(A)** The Wenzl level eigenvalue has a **POLE** at `q* = 1.27844957657969`
+  (root of `−u⁶−u⁴+u³+u²+1`, `u=√q`); above it the effective level `r` is
+  **COMPLEX** (`r(1.45)=0.81+4.23i`). The n=9 crossings at q≈1.4285/1.4617 sit
+  there, so they are not comparable to `q_cross(6)=1.054` as one trend. On the
+  real-level branch T/³He have no crossing — which *extends* #4829's original
+  scope-(a) statement rather than overturning it.
+- **(B)** The **Z=N / Z≠N isospin pattern is an n-effect**, falsified by a fixed-n
+  control at BOTH n=6 and n=12. In {D,T,³He,⁴He} isospin and strand count are
+  confounded (Z=N ⟺ A even ⟺ n∈{6,12}), and ⁶Li/⁷Li *preserve* the confound.
+  Holding n fixed: n=6 → D(1,1) 1.05365, pp(2,0) 1.06577, nn(0,2) 1.05677;
+  n=12 → ⁴He(2,2) (1.02,1.03), ⁴Li(3,1) (1.01,1.02), ⁴H(1,3) (1.02,1.03).
+  **All below q₀ regardless of isospin.** No isospin argument is needed or
+  supported; the corpus mirror/isospin machinery was NOT invoked because there is
+  no surviving effect to explain.
+
+**⁶Li/⁷Li are unaffordable by a HARD BOUND, not a sandbox limit.** The trace costs
+`O(L·Σ_λ dim²)` and `Σ_{λ⊢n} dim² = n!` exactly, so n=18 is **1.34e7×** and n=21 is
+**1.07e11×** the n=12 cost (≈14 yr and ≈10⁵ yr per grid point). The sparse fix
+removed a dim³→dim² factor, not the factorial. **Do not queue those runs.**
+
+**The sequence that IS structured** (and it is not `q_cross`): `s_λ = 0` whenever a
+cell has `r + c(x) = 0`, so at integer level `r=k` every λ with `ℓ(λ)>k` drops out.
+Ladder `r(q_k)=k` solves `Σ_{j<k}u^{4j+3} = u^{4k}+u^{4k+2}`: `q_2 = 1` exactly,
+`q_3 = 1.15416065…`, increasing, accumulating at `q*`. Since `r→2⁺` as `q→1⁺` this
+explains the O(10⁻⁵) values #4829 saw near q=1. **`r(q₀) = 2.5995` — on no rung.**
+
+**Lean (sorry-free):** `QOU/BraidsAndKnots/WenzlLevelStratum.lean` — a partition
+with >k rows has a cell of content −k, hence the specialisation numerator vanishes
+for the whole `ℓ>k` stratum. Generic `Field K` (§7c, no ℝ); `lean`-direct exit 0;
+`#print axioms = [propext, Quot.sound]`; two `decide` guards show the row-positivity
+hypothesis is load-bearing.
+
+**Cross-validation** via an independent normaliser path (dual-Cauchy closed form
+`Z=((1−Q^r)/(1−Q))^n`, verified to 2.8e-41 — never `y_lambda_at_q0_mpmath`):
+D 1.053650 vs #4829's 1.05365; character-free n=6 1.024447 vs 1.02445; ⁴He 1.020923
+vs #4832's 1.02092; D's far diagnostic crossing 3.4101 vs #4832's late fix. ⁴He
+additionally has a **second** on-branch crossing at **1.207893**.
+
+Scope-(a) throughout; **no scope-(b) exclusion claimed anywhere**.
