@@ -289,6 +289,7 @@ import QOU.InformationTheory
 -- is the `faithful` class field, and **no instance is provided**, so every
 -- downstream use carries `[QouPNeqNp …]` visibly in its signature.
 import QOU.Information.SurrealBudgetGrade
+import QOU.Information.CountingDecisionBarrier
 import QOU.Information.GCTMultiplicityObstruction
 import QOU.Information.MagnitudeAxisBoundary
 import QOU.Information.CountingModuliGrade
