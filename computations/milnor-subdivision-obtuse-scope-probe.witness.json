@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T11:36:07+00:00",
-  "commitSha": "5737a38814e82fccb7bb135805ca3362267681cc",
+  "computedAt": "2026-08-09T11:50:12+00:00",
+  "commitSha": "0e6db56ff82637d81ca8a285e54e9b0df3a33ce4",
   "assertions": [
     {
       "name": "wedge_value_psi_0.30000",
@@ -123,14 +123,54 @@
       "passed": true,
       "tolerance": 1e-12,
       "source": "OBTUSE / RIGHT (circumcentre OUTSIDE the triangle, where Milnor's subdivision needs a signed piece): the IDENTITY still holds. Scope-(a): the argument degenerates, not the statement."
+    },
+    {
+      "name": "wedges_eq_triangle_1.047_1.047_1.047",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "SET-LEVEL check of the one remaining H4-5c-ii step: membership in milnorWedges vs membership in the open inscribed triangle, over 14161 interior sample points (boundary/spine skin excluded). 0 mismatches = the unproved Lean lemma is TRUE, worth proving."
+    },
+    {
+      "name": "wedges_eq_triangle_1.200_1.000_0.942",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "SET-LEVEL check of the one remaining H4-5c-ii step: membership in milnorWedges vs membership in the open inscribed triangle, over 14161 interior sample points (boundary/spine skin excluded). 0 mismatches = the unproved Lean lemma is TRUE, worth proving."
+    },
+    {
+      "name": "wedges_eq_triangle_1.400_1.100_0.642",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "SET-LEVEL check of the one remaining H4-5c-ii step: membership in milnorWedges vs membership in the open inscribed triangle, over 14161 interior sample points (boundary/spine skin excluded). 0 mismatches = the unproved Lean lemma is TRUE, worth proving."
+    },
+    {
+      "name": "wedges_eq_triangle_0.900_1.300_0.942",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "SET-LEVEL check of the one remaining H4-5c-ii step: membership in milnorWedges vs membership in the open inscribed triangle, over 14161 interior sample points (boundary/spine skin excluded). 0 mismatches = the unproved Lean lemma is TRUE, worth proving."
+    },
+    {
+      "name": "wedges_eq_triangle_1.500_1.500_0.142",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": 0,
+      "source": "SET-LEVEL check of the one remaining H4-5c-ii step: membership in milnorWedges vs membership in the open inscribed triangle, over 14161 interior sample points (boundary/spine skin excluded). 0 mismatches = the unproved Lean lemma is TRUE, worth proving."
     }
   ],
   "allPassed": true,
-  "durationMs": 1872,
+  "durationMs": 33648,
   "computation": "milnor-subdivision-obtuse-scope-probe",
   "scriptFile": "milnor_subdivision_obtuse_scope_probe.py",
-  "scriptHash": "36b0b3ed6156",
-  "scriptCommitSha": "",
+  "scriptHash": "ab6b5e266f46",
+  "scriptCommitSha": "0e6db56ff82637d81ca8a285e54e9b0df3a33ce4",
   "precisionMetadata": {
     "compute_dps": 30,
     "output_dps": 20,
