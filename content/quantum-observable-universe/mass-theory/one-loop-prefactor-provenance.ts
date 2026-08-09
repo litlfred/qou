@@ -7,7 +7,7 @@ export default proposition({
   chapter: "mass-theory",
   lean: {
     ref: "qou:QOU.OneLoopPrefactorInvariance.k_const_iff_exponent_neg_half",
-    validation: "checked",
+    validation: "validated",
   },
   uses: ["conj:b1-hyperbolic-rows-theorem"],
   cites: [
