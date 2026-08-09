@@ -149,6 +149,64 @@ go wrong (obtuse triangles put the circumcentre outside `T`, and the
 corresponding piece enters with a **minus** sign — Milnor handles this by signed
 areas; do not assume the acute case is general).
 
+> **H4-5b + H4-5c-i are DONE (2026-08-09, sorry-free) — PR #4864**, which also
+> carries #4842's five tiers forward onto current `main` (they had drifted ~388
+> commits behind). Files
+> [`OrthoschemeWedgePair.lean`](../content/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeWedgePair.lean)
+> and
+> [`OrthoschemeRotation.lean`](../content/quantum-observable-universe/lean/QOU/Archimedean/OrthoschemeRotation.lean).
+> H4-5 was **split**, because the "bookkeeping" framing above hid a real
+> infrastructure step:
+>
+> | step | statement | status |
+> |---|---|---|
+> | **H4-5b** the PAIR | `hypVolume (chimney (wedge R ψ) R) = Λ(ψ)` — a WHOLE `Λ`: two mirror orthoschemes at `½Λ` each | ✅ |
+> | **H4-5c-i** ROTATION | `hypVolume (chimney (wedgeAt R θ ψ) R) = Λ(ψ)` — the same, at ANY axis | ✅ |
+> | **H4-5c-ii** the TILING | the inscribed triangle IS the union of three `wedgeAt`s, up to null sets | ✗ **the only open step** |
+>
+> Two things worth carrying forward:
+>
+> 1. **Rotation invariance was NOT bookkeeping, and is now paid for.** `ℝ × ℝ`
+>    carries the PRODUCT (sup) norm, so a rotation is *not* a
+>    `LinearIsometryEquiv` and Mathlib's inner-product-space volume lemmas do
+>    **not** apply. The route that works is `det = 1` (norm-independent) via
+>    `Measure.map_linearMap_addHaar_eq_smul_addHaar`. Do not go looking for the
+>    isometry lemma — it is the wrong shelf. Note also that measure-preservation
+>    alone is insufficient: `lintegral_rotL_image` carries an explicit
+>    integrand-invariance hypothesis, discharged here by `rotL_normSq`.
+> 2. **`wedgeAt` is defined CARTESIAN** (dot products against the rotated frame),
+>    with `wedgeAt_eq_image` the theorem — same discipline as `orthoBase`. A
+>    definition-as-image would have made the rotation a definition rather than a
+>    theorem.
+>
+> What is left for H4-5c-ii is now **purely** the plane geometry: three axes at
+> the side-midpoints, half-angles = the inscribed angles (central = twice
+> inscribed), pairwise-null overlaps, union = the triangle.
+
+> **🟩 The obtuse case is a scope-(a) worry about the ARGUMENT, not the
+> STATEMENT (settled numerically 2026-08-09, PR #4864).** This bean and its
+> siblings have repeatedly flagged the obtuse case as "the place to go wrong"
+> in wording that reads as though the *identity* were acute-only. **It is not.**
+> Probe
+> [`milnor_subdivision_obtuse_scope_probe.py`](../computations/milnor_subdivision_obtuse_scope_probe.py)
+> (witness `milnor-subdivision-obtuse-scope-probe.witness.json`, 15/15) computes
+> both sides independently and finds `Λ(α)+Λ(β)+Λ(γ)` reproducing the base
+> integral to `~1e-17` for obtuse triangles **and** for the right-triangle
+> boundary `α = π/2` — the acute cases agree to `~2e-15`, limited by the log
+> singularities at the vertices, so the obtuse agreement is if anything cleaner.
+>
+> **Consequence for H4-5c-ii, and it is a narrowing:** the target statement is
+> **uniform in the three angles**. What the obtuse case needs is a **signed
+> assembly of the same wedges** (the circumcentre leaves the triangle, so one
+> wedge is subtracted rather than added), **not a different theorem**. The
+> long-standing "still wanting Ratcliffe §10.4 for the sign convention" is
+> therefore about *how to write the assembly*, not about *what is true* — and a
+> reader who cannot get Ratcliffe is not blocked on the mathematics.
+>
+> Scope note per AGENTS.md §"Before declaring refuted": this is scope-(a)
+> (an argument does not apply unchanged), and it **refutes** the stronger
+> reading that the identity is acute-only. It wires to nothing.
+
 ## Prerequisites still open
 
 * **H2** (`qou-5gai`) — the invariances. Strictly speaking H4 can be *stated*
