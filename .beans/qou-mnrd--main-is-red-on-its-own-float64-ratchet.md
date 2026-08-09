@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-09T01:00:00Z
+updated_at: 2026-08-09T01:20:00Z
 ---
 
 ## The finding
@@ -164,3 +164,34 @@ bean said so at the outset, and adding them to the baseline remains the one
 move that is explicitly forbidden. `raw-float64 ratchet` is still RED on this
 branch and on `main`, and `/prepare-merge` step 4b now tells agents to say so in
 the PR rather than silence it.
+
+## OWNER DECISION, 2026-08-09: leave the workflow dispatch-only
+
+Asked directly, with the failure cost on the table (three witnesses reached
+`main` in the trigger-off window) and three options offered: leave it
+dispatch-only, add a path-filtered `pull_request` trigger scoped to
+`computations/**` + `**/*.witness.json`, or restore full push+PR triggers.
+
+**Decision: leave it dispatch-only.** The 2026-06-30 Actions-billing directive
+stands, now reaffirmed with the cost known rather than by default.
+
+So `scripts/precision-gates.sh` is not a stopgap until CI comes back — it IS the
+gate. Treat a skipped run the way you would treat a skipped CI check. Do not
+propose re-enabling the trigger again without a new reason; this was asked and
+answered.
+
+## Bean stays OPEN — the title condition is still true
+
+`origin/main` is still RED on its own raw-float64 ratchet. The bean's item 2
+(the durable wiring) is done and the owner decision behind it is recorded; item
+1 is not, and was never this branch's to do:
+
+     16  computations/qbeta/qborel-growth-budget-probe.witness.json        6cd4f9567
+     15  computations/qbeta/cauchymul-order-cancellation-witness.witness.json  a62c65204
+      4  computations/qbeta/c3-w2-c1-pole-divisor.witness.json             54c41e4cd
+
+Whoever picks this up: fix each at its producer (carry `mpmath.mpf` from source,
+serialize with `_precision.fmt`; `jpsi_boundstate_mass_probe.py` is the worked
+conversion), re-run the producer, and re-run `scripts/precision-gates.sh`.
+Adding any of the three to `raw-float64-baseline.json` closes the bean and
+defeats the mechanism — the audit says so in its own output.

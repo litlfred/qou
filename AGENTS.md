@@ -542,8 +542,12 @@ Why it is a hand-run preflight and not "CI will catch it": these gates *were*
 already strict in `.github/workflows/witness-staleness.yml`, and three dirty
 witnesses reached `main` anyway (bean `qou-mnrd`). That workflow is
 `workflow_dispatch:` only under the 2026-06-30 Actions-billing directive, so on
-a push it never runs. Re-enabling the trigger is an owner decision about
-billing; running the gate yourself is not.
+a push it never runs. **Asked and answered (owner, 2026-08-09): leave it
+dispatch-only** — the directive was reaffirmed with that failure cost on the
+table, against a path-filtered trigger and against full push+PR triggers. So
+this script is not a stopgap until CI returns; it *is* the gate. Treat a skipped
+run the way you would treat a skipped CI check, and do not re-propose enabling
+the trigger without a new reason.
 
 **Never make a red run green by widening a baseline.** Fix at the producer —
 carry the value as `mpmath.mpf` from its source and serialize with
