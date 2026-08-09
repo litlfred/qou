@@ -1262,6 +1262,106 @@ theorem saddle_sum_cRogersL {a b c A3 B3 : ℂ}
   push_cast at P1 P2 e1 e2 e3 e4 ⊢
   linear_combination P1 + P2 - e1 - e2 - e3 - e4
 
+/-! ### The bridge from `Σ L` to `A` — Route 58's link G6
+
+`cRogersL` differs from `cLiTwoExt` by `½·log z·log(1−z)`, so the orbit sums
+differ by `½·Σ log y·log(1−y)`. That sum is **not** obviously elementary — but the
+saddle branch equation `2·log y − 3·log(1−y) = 2πi·ε` makes it so, because it
+turns each `log(1−y)` into a multiple of `log y`.
+
+The lemma below is stated for *any* three branch equations, with the `ε` free: it
+is the branch equation doing the work, not anything about the 5₂ cubic. -/
+
+/-- **The log·log sum, from three branch equations.**
+
+    Σ lⱼ·mⱼ = (2/3)·Σ lⱼ² − (2πi/3)·Σ εⱼ·lⱼ        given 2lⱼ − 3mⱼ = 2πi·εⱼ
+
+`lⱼ` stands for `log yⱼ` and `mⱼ` for `log(1−yⱼ)`. Nothing quadratic in `m`
+survives — that is the whole point, and it is why `A` inherits `Σ L`'s
+elementary shape. -/
+theorem sum_log_mul_log_one_sub {l₁ l₂ l₃ m₁ m₂ m₃ e₁ e₂ e₃ : ℂ}
+    (h₁ : 2 * l₁ - 3 * m₁ = 2 * (Real.pi : ℂ) * Complex.I * e₁)
+    (h₂ : 2 * l₂ - 3 * m₂ = 2 * (Real.pi : ℂ) * Complex.I * e₂)
+    (h₃ : 2 * l₃ - 3 * m₃ = 2 * (Real.pi : ℂ) * Complex.I * e₃) :
+    l₁ * m₁ + l₂ * m₂ + l₃ * m₃
+      = (2 / 3) * (l₁ ^ 2 + l₂ ^ 2 + l₃ ^ 2)
+        - (2 * (Real.pi : ℂ) * Complex.I / 3) * (e₁ * l₁ + e₂ * l₂ + e₃ * l₃) := by
+  linear_combination (-(l₁ / 3)) * h₁ + (-(l₂ / 3)) * h₂ + (-(l₃ / 3)) * h₃
+
+/-- `Σ Li₂ = Σ L − ½·Σ log·log`, by the definition of `cRogersL`. This is the
+whole of the `Σ L` ↔ `A` conversion; the content is in evaluating the second sum. -/
+theorem sum_cLiTwoExt_eq_sum_cRogersL_sub {a b c : ℂ} :
+    cLiTwoExt a + cLiTwoExt b + cLiTwoExt c
+      = (cRogersL a + cRogersL b + cRogersL c)
+        - (Complex.log a * Complex.log (1 - a) + Complex.log b * Complex.log (1 - b)
+            + Complex.log c * Complex.log (1 - c)) / 2 := by
+  unfold cRogersL
+  ring
+
+/-- **`A` from the orbit sum and the branch data**, with no dilogarithm on the
+right beyond the orbit sum itself:
+
+    2·Σ Li₂(yⱼ) = 2·Σ L(yⱼ) − (2/3)·Σ log²yⱼ + (2πi/3)·Σ εⱼ·log yⱼ
+
+Combined with `saddle_sum_cRogersL` this expresses `A` in **logarithms and `π²`
+alone** — which is Route 58's chain, end to end, modulo the branch equations
+themselves. -/
+theorem sum_cLiTwoExt_of_branch {a b c e₁ e₂ e₃ : ℂ}
+    (h₁ : 2 * Complex.log a - 3 * Complex.log (1 - a)
+      = 2 * (Real.pi : ℂ) * Complex.I * e₁)
+    (h₂ : 2 * Complex.log b - 3 * Complex.log (1 - b)
+      = 2 * (Real.pi : ℂ) * Complex.I * e₂)
+    (h₃ : 2 * Complex.log c - 3 * Complex.log (1 - c)
+      = 2 * (Real.pi : ℂ) * Complex.I * e₃) :
+    2 * (cLiTwoExt a + cLiTwoExt b + cLiTwoExt c)
+      = 2 * (cRogersL a + cRogersL b + cRogersL c)
+        - (2 / 3) * (Complex.log a ^ 2 + Complex.log b ^ 2 + Complex.log c ^ 2)
+        + (2 * (Real.pi : ℂ) * Complex.I / 3)
+          * (e₁ * Complex.log a + e₂ * Complex.log b + e₃ * Complex.log c) := by
+  have hbridge := sum_cLiTwoExt_eq_sum_cRogersL_sub (a := a) (b := b) (c := c)
+  have hll := sum_log_mul_log_one_sub h₁ h₂ h₃
+  linear_combination 2 * hbridge + (-1 : ℂ) * hll
+
+/-- **Route 58's chain, end to end.**
+
+    2·Σ Li₂(yⱼ) = 2π²/3 − (iπ/2)·(log A₃ − log B₃ + log b − log a)
+                  − (2/3)·Σ log²yⱼ + (2πi/3)·Σ εⱼ·log yⱼ
+
+The left side is twice the sum rule's `A`. The right side has **no dilogarithm in
+it at all** — only `π²` and logarithms of the roots. Everything on the way here is
+proved: the two pentagon instances are `pentagonSum_eq_pi_sq_div_two`, the four
+evaluations are the one-log forms, and the bridge is the branch equations.
+
+⚠ The inputs that remain are the two pentagon values (theorems), the branch
+equations (`hε`), and — to turn the right side into `−π²/6 − ½log²y₃ +
+(2/3)(θ−π)²` — the root-data facts `|y₁|²y₃ = 1`, `y₂ = conj y₁`, and
+`arg A₃ = (π − arg y₁)/3` (`saddle_clog_cube_of_roots`). None of the latter is
+discharged here.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+theorem sum_cLiTwoExt_eval {a b c A3 B3 e₁ e₂ e₃ : ℂ}
+    (P1 : cRogersL c + cRogersL a + cRogersL A3 + cRogersL (1 - b⁻¹) + cRogersL A3⁻¹
+      = ((Real.pi ^ 2 / 2 : ℝ) : ℂ))
+    (P2 : cRogersL c + cRogersL b + cRogersL B3 + cRogersL (1 - a⁻¹) + cRogersL B3⁻¹
+      = ((Real.pi ^ 2 / 2 : ℝ) : ℂ))
+    (hA3 : 0 < A3.im) (hB3 : B3.im < 0) (ha : 0 < a.im) (hb : b.im < 0)
+    (h₁ : 2 * Complex.log a - 3 * Complex.log (1 - a)
+      = 2 * (Real.pi : ℂ) * Complex.I * e₁)
+    (h₂ : 2 * Complex.log b - 3 * Complex.log (1 - b)
+      = 2 * (Real.pi : ℂ) * Complex.I * e₂)
+    (h₃ : 2 * Complex.log c - 3 * Complex.log (1 - c)
+      = 2 * (Real.pi : ℂ) * Complex.I * e₃) :
+    2 * (cLiTwoExt a + cLiTwoExt b + cLiTwoExt c)
+      = ((2 * Real.pi ^ 2 / 3 : ℝ) : ℂ)
+        - ((Real.pi : ℂ) * Complex.I / 2)
+          * (Complex.log A3 - Complex.log B3 + Complex.log b - Complex.log a)
+        - (2 / 3) * (Complex.log a ^ 2 + Complex.log b ^ 2 + Complex.log c ^ 2)
+        + (2 * (Real.pi : ℂ) * Complex.I / 3)
+          * (e₁ * Complex.log a + e₂ * Complex.log b + e₃ * Complex.log c) := by
+  have h := saddle_sum_cRogersL P1 P2 hA3 hB3 ha hb
+  have k := sum_cLiTwoExt_of_branch h₁ h₂ h₃
+  linear_combination k + h
+
 end Reflection
 
 

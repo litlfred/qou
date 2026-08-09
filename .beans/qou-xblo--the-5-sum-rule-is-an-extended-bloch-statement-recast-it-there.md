@@ -1121,3 +1121,52 @@ place. **G6 is the last link with its own input**, and it is the bridge from
 `Σ L` to `A`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 64 — link G6, and the chain end to end
+
+### The bridge, from the branch equation alone
+
+`cRogersL` and `cLiTwoExt` differ by `½·log z·log(1−z)`, so `Σ L` and `A` differ
+by `½·Σ log y·log(1−y)`. That sum looks like a period; the **saddle branch
+equation** makes it elementary, because it turns each `log(1−y)` into a multiple
+of `log y`:
+
+    Σ lⱼ·mⱼ = (2/3)·Σ lⱼ² − (2πi/3)·Σ εⱼ·lⱼ        given 2lⱼ − 3mⱼ = 2πi·εⱼ
+
+`sum_log_mul_log_one_sub` — stated for **any** three branch equations with the
+`ε` free, so it is the branch equation doing the work, not the 5₂ cubic. Nothing
+quadratic in `m` survives, which is why `A` inherits `Σ L`'s elementary shape.
+
+### The capstone — `sum_cLiTwoExt_eval`
+
+    2·Σ Li₂(yⱼ) = 2π²/3 − (iπ/2)·(log A₃ − log B₃ + log b − log a)
+                  − (2/3)·Σ log²yⱼ + (2πi/3)·Σ εⱼ·log yⱼ
+
+The left side is twice the sum rule's `A`. **The right side contains no
+dilogarithm at all** — only `π²` and logarithms of the roots. Checked at 50 dps:
+residual `2.7e-50` against `2A`, and the branch data comes out exactly
+`ε = (+1, −1, 0)`, the value already recorded.
+
+### ⚠ What is still input
+
+* the two pentagon values — **theorems** (`pentagonSum_eq_pi_sq_div_two`);
+* the three **branch equations** `2 log yⱼ − 3 log(1−yⱼ) = 2πi εⱼ` — hypotheses;
+* to turn the right side into `−π²/6 − ½log²y₃ + (2/3)(θ−π)²`: `|y₁|²y₃ = 1`,
+  `y₂ = conj y₁`, and `arg A₃ = (π − arg y₁)/3` (Route 61, proved from root data).
+
+None of the second and third groups is discharged. **The 5₂ sum rule is not
+proved.**
+
+### What changed over Routes 51–64
+
+The lane began with the complex five-term identity absent from Mathlib and from
+this corpus. It now has: the identity (one real variable, unconditional), its
+flattened form (Neumann's `ℬ̂(ℂ)` pentagon, no branch hypotheses), complex
+reflection and inversion, the anharmonic group's action completely tabulated, a
+single-point branch-window lemma, and a chain from the pentagon to `A` with no
+dilogarithm on the right. What separates that from the sum rule is the branch
+equations and three facts about the roots.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
