@@ -129,3 +129,92 @@ is another accidental discovery.
 Also: 96 witnesses were already owed regeneration from the original excision and
 never done -- and item 9 means several deltalambda paths read C weights WITHOUT
 touching the gated y_lambda_at, so regenerating witnesses alone will not clear them.
+
+---
+
+## 2026-08-09 — the C→D excision fixed the CODE and left the WITNESSES on C
+
+`b88aabc73` ("the Wenzl bridge was C under a D interface") changed
+`y_lambda_wenzl_bridge.py` at four `z` sites:
+
+    z = 1/(sqrt(q) + 1/sqrt(q))   convention C   (excised)
+    z = q**3/(q**2 + 1)           convention D
+
+and its own message lists the consumers moving with it as **"all previously
+C"**. But `git show --stat` on that commit is one file: **no consumer witness
+was regenerated**. So every witness that read the bridge before it landed still
+publishes convention-C numbers, and nothing in those files says so.
+
+### One is proven, and it is not a rounding difference
+
+`charm-frobenius-block-projection.witness.json` — computed
+`2026-08-09T12:31:08Z`, i.e. **59 minutes before** `b88aabc73` landed at
+`13:30:23Z`:
+
+    pred_charm_over_light   1.3486556457833476 -> 0.9757693178472477   (28%)
+    pred_top_over_light     0.05475486952775208 -> 0.0                (100%)
+    y_lambda (1, 1, 1)      0.02274494257734719 -> 0.0                (100%)
+    trM_borromean           0.998366622585716  -> 0.9985621638367873
+
+Identified by checking out the **pre-`b88aabc73` bridge** and re-running: it
+reproduces the committed values EXACTLY, all three blocks. That is the proof;
+everything else was inference. (I first assumed mpmath 1.4.1 vs 1.3.0 and
+tested it — downgrading to 1.3.0 gives the NEW values, so the interpreter was
+never the cause.)
+
+Regenerated under D on `claude/drain-main-inherited-float64` (`acf6609b4`).
+All 7 assertions still pass and the probe's parameter-free NEGATIVE reading is
+unchanged — 0.976 vs an observed ~372 is as far off as 1.349 was.
+
+### Why nothing caught it
+
+**Both conventions satisfy the Markov normalisation exactly.**
+
+    C:  0.4153958 + 2(0.2809296) + 0.0227449 = 1.000000
+    D:  0.5054042 + 2(0.2472979) + 0.0       = 1.000000
+
+So a normalisation self-check — the obvious local guard — passes under either.
+Under D the antisymmetric block is exactly zero, which is the visible signature
+to grep for.
+
+### Candidate set: 47 witnesses, membership NOT established
+
+58 live producers import `y_lambda_wenzl_bridge`. Of the witnesses they name,
+**47 were computed before 2026-08-09T13:30:23Z**. That is a CANDIDATE list, not
+a finding: predating the fix does not prove a witness's numbers depend on `z`.
+Only `charm` is established, by the checkout-and-rerun method above.
+
+Whoever picks this up: the method is cheap and decisive — restore
+`b88aabc73^:computations/y_lambda_wenzl_bridge.py`, re-run the producer, and
+compare. If the committed values come back, that witness is on C.
+
+Earliest candidates by `computedAt`:
+
+    2026-04-14  free-neutron-decay
+    2026-05-20  tau-M-proton-closed-form-phase5l1
+    2026-05-20  closed-form-tau-M-verification-phase5q
+    2026-06-01  phase5/phase3-deuteron-tritium-h-expansion
+    2026-06-22  y-lambda-at-q0            <- a CACHE other producers read, and
+                                             very likely the "second hybrid"
+                                             b88aabc73's own message names
+    2026-06-23  atomic-tr-m-mpfr-50dps
+    2026-07-03  probes/probe-convention-d-vs-c-borromean
+
+`y-lambda-at-q0.witness.json` deserves going first: it is consumed as a cache
+(`delta_lambda_empirical_tabulation.py:293` and others), so if it is on C it
+re-seeds C into everything that reads it, and its own `computedAt` is
+2026-06-22 — long before the excision.
+
+### A separate precision ceiling, found in the same probe
+
+`charm_frobenius_block_projection_probe.py` does `Q = mp.mpf(q_parameter.Q)` —
+`q_parameter.Q` is a **Python float**, not `Q_50_DIGIT_STR`. So the probe's
+whole computation is capped at 17 digits, and serializing q0 at 30 dps
+fabricates the rest:
+
+    mp.nstr(Q, 30) -> 1.10997858275138083783417641826
+    the real anchor   1.1099785827513808075916690956...
+
+diverging at the 17th digit. Written at its true f64 width in `acf6609b4`.
+Whether the probe should read `Q_50_DIGIT_STR` is a separate call — it would
+move values again.
