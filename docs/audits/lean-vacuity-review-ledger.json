@@ -7,12 +7,7 @@
    "pattern": "discharged-impossible-hyp",
    "line": 267,
    "verdict": "needs-agent",
-   "file_sha": "372f149b2ba1",
-   "reviewer": "agent",
-   "reviewed_at": "2026-06-28T02:00:00Z",
-   "disposition": "no-fix",
-   "evidence": "Honest negative result / genuine proof: the discharged premise is an impossible *sub-case* (e.g. 0≥1, a true output-equality fed to an injectivity hyp), not a vacuous whole-theorem premise. Agent-confirmed in re-verification swarm 2026-06-28; cannot be regex-cleared without audit-dodging (§3b).",
-   "stale_prev_verdict": "legit"
+   "file_sha": "372f149b2ba1"
   },
   "content/quantum-observable-universe/lean/QOU/Archimedean/chebyshev_degree_genus.lean::hecke_deg_monic::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -52,12 +47,7 @@
    "pattern": "native_decide",
    "line": 267,
    "verdict": "needs-agent",
-   "file_sha": "7741aa9a88de",
-   "reviewer": "agent",
-   "reviewed_at": "2026-06-28T07:00:00Z",
-   "disposition": "no-fix",
-   "evidence": "Real finite computation, not decide-masking of a non-fact. The theorem enumerates all ~1365 pure 3-braid words of length <6, computing each Kauffman/TL3 bracket (Laurent-polynomial arithmetic) to confirm none is simultaneously Brunnian and nontrivial while the Borromean (length 6) is — minimal crossing number = 6. Kernel decide is infeasible: re-verified 2026-06-28 that decide times out at 590s even with maxHeartbeats 4000000 (the docstring already notes nontriviality alone took ~45s by decide). native_decide compiles the decision procedure; its Lean.ofReduceBool/trustCompiler axioms are documented in the docstring and independently cross-checked against the Python enumeration oracle (both yield 6). Cannot be cleared by decide/norm_num/omega without audit-dodging (§1a); honest disposition is native_decide + documented axioms + oracle cross-check.",
-   "stale_prev_verdict": "legit"
+   "file_sha": "7741aa9a88de"
   },
   "content/quantum-observable-universe/lean/QOU/MathlibExt/PosSemidefTraceZero.lean::Matrix.PosSemidef.trace_mul_eq_zero_iff_mul_eq_zero::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -75,12 +65,7 @@
    "pattern": "discharged-impossible-hyp",
    "line": 128,
    "verdict": "needs-agent",
-   "file_sha": "4608190cff03",
-   "disposition": "no-fix",
-   "evidence": "Premise 0<n is satisfiable (any n>=1); Nat.not_lt_zero proves the filter over j<0 is EMPTY (an empty-sum computation), not that a hypothesis is impossible. Real anchor lemma X_0 = 0 for the Jucys-Murphy definition. | Re-verified 2026-07-13 (file_sha drift; decl re-read, substance unchanged — still legit).",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-13T10:28:57Z",
-   "stale_prev_verdict": "legit"
+   "file_sha": "4608190cff03"
   },
   "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean::diagram_card::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
@@ -110,36 +95,21 @@
    "pattern": "discharged-impossible-hyp",
    "line": 199,
    "verdict": "needs-agent",
-   "file_sha": "19a4e096cfbe",
-   "disposition": "no-fix",
-   "evidence": "absurd discharges only the none-branch of lam.get? i (impossible given hj); premise hj : j < (lam.get? i).getD 0 is satisfiable for genuine cells and is USED. Consumed by qDim_pos.",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "legit"
+   "file_sha": "19a4e096cfbe"
   },
   "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/KeystoneCanonicalAngleMap.lean::canonical_angle_map_unique::proof-no-false-premise": {
    "category": "proof-no-false-premise",
    "pattern": "discharged-impossible-hyp",
    "line": 145,
    "verdict": "needs-agent",
-   "file_sha": "b3548d2f7d3f",
-   "disposition": "no-fix",
-   "evidence": "Genuine uniqueness derivation on the finite enum: absurd (by decide) eliminates already-taken classes branch-by-branch; hypotheses are satisfiable (canonicalClassMap itself satisfies P1-P3+injective).",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "legit"
+   "file_sha": "b3548d2f7d3f"
   },
   "content/quantum-observable-universe/lean/QOU/Mathlib/NonAbelianStokes.lean::yekutieli_finite_slice_substrate::proof-no-trivial-true": {
    "category": "proof-no-trivial-true",
    "pattern": "exists-true-tautology",
    "line": 132,
    "verdict": "needs-agent",
-   "file_sha": "08595369b5ac",
-   "disposition": "queued",
-   "evidence": "Docstring itself concedes the existential is 'tautologically true given a default class instance' (the punit instance has stokes_holds := True). Honest self-documentation, but the theorem-titled statement carries no Stokes content — recommend restating as Nonempty of a content-bearing instance or demoting to a doc comment. Not blocking; tracked.",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "advisory"
+   "file_sha": "08595369b5ac"
   },
   "content/quantum-observable-universe/lean/QOU/Mathlib/PartitionsOfBridge.lean::mem_partsFuel_complete::proof-no-false-premise": {
    "category": "proof-no-false-premise",
@@ -179,48 +149,28 @@
    "pattern": "exists-true-tautology",
    "line": 138,
    "verdict": "needs-agent",
-   "file_sha": "c269b6e6c991",
-   "disposition": "no-fix",
-   "evidence": "Inhabitation witness of a SUBSTANTIVE upstream instance (canonical z^n braidSurfaceMultTrace); the existential-of-instance records the axiom-discharge. Content lives in the instance, statement = Nonempty.",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "legit"
+   "file_sha": "c269b6e6c991"
   },
   "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h1_to_h2_discharged::proof-no-trivial-true": {
    "category": "proof-no-trivial-true",
    "pattern": "exists-true-tautology",
    "line": 174,
    "verdict": "needs-agent",
-   "file_sha": "c269b6e6c991",
-   "disposition": "no-fix",
-   "evidence": "Witness is the concrete PROVED instance MarkovTraceRecursionWithMul.h1_to_h2 (carrier-level computation), not a default/trivial instance. Discharge record; statement = Nonempty.",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "legit"
+   "file_sha": "c269b6e6c991"
   },
   "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h2_to_h3_discharged::proof-no-trivial-true": {
    "category": "proof-no-trivial-true",
    "pattern": "exists-true-tautology",
    "line": 180,
    "verdict": "needs-agent",
-   "file_sha": "c269b6e6c991",
-   "disposition": "no-fix",
-   "evidence": "Same as h1_to_h2: concrete proved instance h2_to_h3 witnesses the existential. Not vacuous.",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "legit"
+   "file_sha": "c269b6e6c991"
   },
   "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::lie_valued_stokes_discharged::proof-no-trivial-true": {
    "category": "proof-no-trivial-true",
    "pattern": "exists-true-tautology",
    "line": 266,
    "verdict": "needs-agent",
-   "file_sha": "c269b6e6c991",
-   "disposition": "queued",
-   "evidence": "The witnessing instance LieValuedStokes_canonical sets stokes_identity := ((0:g) = 0) — a tautology despite the 'non-vacuous' framing — so this 'discharge' certifies no Stokes content. Recommend a content-bearing instance (real MI1/MI2 identity) before citing this as a discharge. Tracked.",
-   "reviewer": "agent",
-   "reviewed_at": "2026-07-03T19:59:05Z",
-   "stale_prev_verdict": "advisory"
+   "file_sha": "c269b6e6c991"
   },
   "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
    "category": "proof-claims-unencoded",
@@ -1680,22 +1630,24 @@
    "pattern": "field-projection",
    "line": 105,
    "verdict": "genuine",
-   "file_sha": "d14041c3d75e",
+   "file_sha": "c227b32fac9a",
    "reviewer": "agent",
    "reviewed_at": "2026-08-09T20:45:00Z",
    "disposition": "restate-to-derive-or-demote",
-   "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `pole_at_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_at_u_substrate` is outside CONCLUSION_FIELD."
+   "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `pole_at_u_substrate` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `pole_at_u_substrate` is outside CONCLUSION_FIELD.",
+   "stale_prev_verdict": "genuine"
   },
   "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean::bar_even_kernel_implies_direction_sanity::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",
    "pattern": "field-projection",
-   "line": 125,
+   "line": 132,
    "verdict": "genuine",
-   "file_sha": "d14041c3d75e",
+   "file_sha": "c227b32fac9a",
    "reviewer": "agent",
    "reviewed_at": "2026-08-09T20:45:00Z",
    "disposition": "restate-to-derive-or-demote",
-   "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `direction_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `direction_match` is outside CONCLUSION_FIELD."
+   "evidence": "Self-assuming projection. The conditional class `BarEvenKernel` carries field `direction_match` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `direction_match` is outside CONCLUSION_FIELD.",
+   "stale_prev_verdict": "genuine"
   },
   "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean::qbeta_direction_sanity_magnitude_match::proof-no-self-assuming-projection": {
    "category": "proof-no-self-assuming-projection",

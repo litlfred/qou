@@ -1,6 +1,6 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T20:46:56.198Z",
+  "generated": "2026-08-09T21:15:37.118Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 2701,
   "files_flagged": 217,
@@ -1312,7 +1312,7 @@
     ],
     "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean": [
       {
-        "line": 75,
+        "line": 86,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "def r_matrix_braiding_structure",
@@ -1322,7 +1322,7 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       },
       {
-        "line": 90,
+        "line": 108,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "def braid_rep_from_R_check",
@@ -2068,7 +2068,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean": [
       {
-        "line": 104,
+        "line": 112,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "def LevelSufficiency",
@@ -2584,7 +2584,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Braiding/r_matrix_braiding_structure.lean": [
       {
-        "line": 50,
+        "line": 59,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "def r_matrix_braiding_structure",
@@ -3884,7 +3884,7 @@
     ],
     "content/quantum-observable-universe/mass-endomorphism/conj-qbeta-c-k-closed-forms.lean": [
       {
-        "line": 120,
+        "line": 131,
         "category": "proof-no-self-assuming-projection",
         "pattern": "applied-tuple-projection",
         "snippet": "theorem qbeta_c_k_closed_forms_derived",
@@ -4093,7 +4093,7 @@
         "detail": "the projected field `hK.pole_at_u_substrate` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 115,
+        "line": 122,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "def bar_even_kernel_implies_q_one_shadow",
@@ -4103,7 +4103,7 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       },
       {
-        "line": 125,
+        "line": 132,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem bar_even_kernel_implies_direction_sanity",
@@ -4129,7 +4129,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean": [
       {
-        "line": 79,
+        "line": 86,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "def qbeta_q_eq_one_shadow_anchors",
