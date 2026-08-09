@@ -49,21 +49,38 @@ five-term identity**, at every point of the region including points where
 nothing is real.
 
 The branch bookkeeping is therefore reduced to a single geometric question:
-*does such a region exist?* That is the honest residue of Routes 45–46 — no
-longer bookkeeping, but a statement about a region.
+*does such a region exist?*
 
-## ⚠ What this does NOT do
+## The region, and the unconditional theorem
 
-It exhibits **no** region for the 5₂ saddle values `y₁, y₂`, and that is not an
-oversight: a regular region reaching the real square *forces* the naive log
-expansions, so where the flattening is non-trivial no such region can exist. The
-obstruction (Neumann's `ker ν`) and the missing region are the same fact seen
-twice.
+It does, when **one** variable is real. For a real `a ∈ (0,1)` in the fixed slot,
+all four `w`-dependent arguments inherit a non-zero imaginary part from `w`, and
+a point with non-zero imaginary part is off *both* cuts automatically; where
+`Im w = 0` the point is real in `(0,1)`. So the regular region is `rogersDomain`
+itself — open, connected, containing `(0,1)`. Hence
+`pentagonSum_eq_pi_sq_div_two`, with **no** region hypothesis and no branch
+hypothesis:
+
+    L(a) + L(w) + L((1−a)/(1−aw)) + L(1−aw) + L((1−w)/(1−aw)) = π²/2
+
+for every real `a ∈ (0,1)` and every `w` off both real cuts.
+
+## ⚠ Where it stops, and why that is the point
+
+**One** variable. With both variables non-real the identity is false — at
+`(2+0.5i, 1.5−0.9i)` the pentagon misses `π²/2` by `(−0.0780 + 0.2303i)·π²`,
+which is not even a *real* multiple of `π²`, so it is a genuine `2πi·(log)` term
+and not a flattening integer. Measured in
+`computations/probes/qbeta_5two_route54_complex_pentagon_probe.py`.
+
+For the 5₂ lane this locates the obstruction exactly. The theorem **reaches** the
+pair `(y₃, y₁)` — the saddle cubic's real root `y₃ = 0.4301597…` against a
+complex one — and **does not reach** `(y₁, ȳ₁)`, which is the pair
+`Vol(5₂) = 3·D(y₁)` needs. That is Routes 45–46's drift and Neumann's `ker ν`,
+now with an address.
 
 The **real** five-term identity on `(0,1)` is separately proved, sorry-free, in
-`QOU/QBeta/FiveTwoAbelFiveTerm.lean` (`rogersL_fiveTerm`); what this lane needs
-and does not have is the complex one *at the saddle*, because the 5₂ saddle roots
-`y₁, y₂` are complex with `|y₁| = 1.52 > 1`.
+`QOU/QBeta/FiveTwoAbelFiveTerm.lean` (`rogersL_fiveTerm`).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 
@@ -739,5 +756,140 @@ theorem hasDerivAt_pentagonSum_snd_of_region {x : ℂ} {S : Set ℂ} (hS : IsOpe
     HasDerivAt (fun w : ℂ => pentagonSum w x) 0 y := by
   rw [pentagonSum_swap]
   exact hasDerivAt_pentagonSum_of_region hS hSc hreg hy₀ hy b3 b3' b4' b5 b5'
+
+/-! ### The region exists — an unconditional complex five-term identity
+
+The region the previous section asks for is not exotic. It is `rogersDomain`
+itself, and the reason is a two-line computation: for a **real** `a ∈ (0,1)` in
+the other slot, every one of the four `w`-dependent arguments has non-zero
+imaginary part as soon as `w` does. Writing `w = u + iv`,
+
+    Im(1 − wa) = −av,        Im[(1−w)·conj(1−wa)] = v(a−1),
+    Im[(1−a)·conj(1−wa)] = (1−a)av
+
+and a point with non-zero imaginary part is off **both** cuts automatically. Where
+`v = 0` the point is real in `(0,1)` and `PentagonRegular.of_real` applies. So the
+whole of `rogersDomain` is regular, it is open, and it is connected (upper
+half-plane and lower half-plane, joined through the strip `0 < re < 1`).
+
+Hence `pentagonSum_eq_pi_sq_div_two`: **unconditional**, no region hypothesis.
+
+⚠ This is the *one-variable* statement, and that is exactly its limit. Move the
+**second** variable off the reals as well and it fails — checked numerically at
+`(2+0.5i, 1.5−0.9i)`, where the pentagon misses `π²/2` by `(−0.0780 + 0.2303i)π²`.
+That failure is the flattening, and it is why the 5₂ sum rule does not follow:
+`Vol(5₂)` needs the pair `(y₁, ȳ₁)`, both non-real.
+
+What it *does* reach is the pair `(y₃, y₁)` — the 5₂ cubic's real root
+`y₃ = 0.4301597…` against a complex one — since `y₃ ∈ (0,1)` and
+`Im y₁ ≠ 0`. Verified to 40 dps in
+`computations/probes/qbeta_5two_route54_complex_pentagon_probe.py`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+
+section Unconditional
+
+/-- Non-zero imaginary part puts a point off both cuts. -/
+theorem mem_rogersDomain_of_im_ne_zero {z : ℂ} (h : z.im ≠ 0) : z ∈ rogersDomain :=
+  ⟨Or.inr h, Or.inl h⟩
+
+/-- `Im(p/q) ≠ 0` from the numerator of `Complex.div_im`. -/
+theorem im_div_ne_zero {p q : ℂ} (hq : q ≠ 0)
+    (h : p.im * q.re - p.re * q.im ≠ 0) : (p / q).im ≠ 0 := by
+  rw [Complex.div_im, div_sub_div_same]
+  exact div_ne_zero h fun hc => hq (Complex.normSq_eq_zero.mp hc)
+
+/-- `rogersDomain` is the union of two convex-joined pieces: each half-plane
+glued to the strip `0 < re < 1`. -/
+theorem rogersDomain_eq_union :
+    rogersDomain = ({w : ℂ | 0 < w.im} ∪ {w : ℂ | 0 < w.re ∧ w.re < 1})
+      ∪ ({w : ℂ | w.im < 0} ∪ {w : ℂ | 0 < w.re ∧ w.re < 1}) := by
+  ext w
+  simp only [rogersDomain, Set.mem_inter_iff, Complex.mem_slitPlane_iff, mem_notCut_iff,
+    Set.mem_union, Set.mem_setOf_eq]
+  constructor
+  · rintro ⟨ha, hb⟩
+    rcases eq_or_ne w.im 0 with hz | hz
+    · exact Or.inl (Or.inr ⟨ha.resolve_right (not_not_intro hz),
+        hb.resolve_left (not_not_intro hz)⟩)
+    · rcases hz.lt_or_gt with h | h
+      · exact Or.inr (Or.inl h)
+      · exact Or.inl (Or.inl h)
+  · rintro ((h | ⟨h, h'⟩) | (h | ⟨h, h'⟩))
+    · exact ⟨Or.inr h.ne', Or.inl h.ne'⟩
+    · exact ⟨Or.inl h, Or.inr h'⟩
+    · exact ⟨Or.inr h.ne, Or.inl h.ne⟩
+    · exact ⟨Or.inl h, Or.inr h'⟩
+
+theorem isPreconnected_rogersDomain : IsPreconnected rogersDomain := by
+  have hstrip : Convex ℝ {w : ℂ | 0 < w.re ∧ w.re < 1} := by
+    have := (convex_halfSpace_re_gt (0 : ℝ)).inter (convex_halfSpace_re_lt (1 : ℝ))
+    simpa [Set.inter_def, and_comm] using this
+  have hA : IsPreconnected ({w : ℂ | 0 < w.im} ∪ {w : ℂ | 0 < w.re ∧ w.re < 1}) :=
+    IsPreconnected.union (⟨1 / 2, 1⟩ : ℂ) (by norm_num) (by norm_num)
+      (convex_halfSpace_im_gt (0 : ℝ)).isPreconnected hstrip.isPreconnected
+  have hB : IsPreconnected ({w : ℂ | w.im < 0} ∪ {w : ℂ | 0 < w.re ∧ w.re < 1}) :=
+    IsPreconnected.union (⟨1 / 2, -1⟩ : ℂ) (by norm_num) (by norm_num)
+      (convex_halfSpace_im_lt (0 : ℝ)).isPreconnected hstrip.isPreconnected
+  rw [rogersDomain_eq_union]
+  exact IsPreconnected.union (⟨1 / 2, 0⟩ : ℂ) (Or.inr (by norm_num)) (Or.inr (by norm_num)) hA hB
+
+/-- **Every point of `rogersDomain` is regular, against a real `a ∈ (0,1)`.**
+
+Two cases, and neither is delicate: `Im w ≠ 0` propagates to all four arguments,
+and `Im w = 0` puts `w` in `(0,1)` where `PentagonRegular.of_real` applies. -/
+theorem pentagonRegular_of_mem_rogersDomain {a : ℝ} (h0 : 0 < a) (h1 : a < 1)
+    {w : ℂ} (hw : w ∈ rogersDomain) : PentagonRegular (a : ℂ) w := by
+  rcases eq_or_ne w.im 0 with hz | hz
+  · have hre : w = ((w.re : ℝ) : ℂ) := by
+      apply Complex.ext <;> simp [hz]
+    rw [hre]
+    exact PentagonRegular.of_real (hw.1.resolve_right (not_not_intro hz))
+      (hw.2.resolve_left (not_not_intro hz)) h0 h1
+  · have hq : ((1 : ℂ) - w * (a : ℂ)).im = -(w.im * a) := by
+      simp [Complex.sub_im, Complex.mul_im]
+    have hqre : ((1 : ℂ) - w * (a : ℂ)).re = 1 - w.re * a := by
+      simp [Complex.sub_re, Complex.mul_re]
+    have hqim : ((1 : ℂ) - w * (a : ℂ)).im ≠ 0 := by
+      rw [hq]; simpa using mul_ne_zero hz h0.ne'
+    have hqne : (1 : ℂ) - w * (a : ℂ) ≠ 0 :=
+      ne_zero_of_mem_rogersDomain (mem_rogersDomain_of_im_ne_zero hqim)
+    have hnum3 : ((1 : ℂ) - w).im * ((1 : ℂ) - w * (a : ℂ)).re
+        - ((1 : ℂ) - w).re * ((1 : ℂ) - w * (a : ℂ)).im = w.im * (a - 1) := by
+      rw [hq, hqre]
+      simp only [Complex.sub_im, Complex.sub_re, Complex.one_re, Complex.one_im]
+      ring
+    have hnum5 : ((1 : ℂ) - (a : ℂ)).im * ((1 : ℂ) - w * (a : ℂ)).re
+        - ((1 : ℂ) - (a : ℂ)).re * ((1 : ℂ) - w * (a : ℂ)).im = (1 - a) * (w.im * a) := by
+      rw [hq, hqre]
+      simp only [Complex.sub_im, Complex.sub_re, Complex.one_re, Complex.one_im,
+        Complex.ofReal_re, Complex.ofReal_im]
+      ring
+    exact ⟨mem_rogersDomain_of_im_ne_zero hz,
+      mem_rogersDomain_of_im_ne_zero (im_div_ne_zero hqne
+        (by rw [hnum3]; exact mul_ne_zero hz (sub_ne_zero.mpr h1.ne))),
+      mem_rogersDomain_of_im_ne_zero hqim,
+      mem_rogersDomain_of_im_ne_zero (im_div_ne_zero hqne
+        (by rw [hnum5]
+            exact mul_ne_zero (sub_ne_zero.mpr h1.ne') (mul_ne_zero hz h0.ne')))⟩
+
+/-- **The complex five-term identity, unconditionally, in one variable.**
+
+    L(a) + L(w) + L((1−a)/(1−aw)) + L(1−aw) + L((1−w)/(1−aw)) = π²/2
+
+for `L = cRogersL`, every real `a ∈ (0,1)` and **every** `w` off both real cuts —
+`w` complex, `|w|` arbitrarily large, either side of either cut.
+
+⚠ One variable. With both variables non-real it is false; see the section
+header. -/
+theorem pentagonSum_eq_pi_sq_div_two {a : ℝ} (h0 : 0 < a) (h1 : a < 1)
+    {w : ℂ} (hw : w ∈ rogersDomain) :
+    pentagonSum (a : ℂ) w = ((Real.pi ^ 2 / 2 : ℝ) : ℂ) := by
+  rw [pentagonSum_eq_of_region_of_real isOpen_rogersDomain isPreconnected_rogersDomain
+      (fun v hv => pentagonRegular_of_mem_rogersDomain h0 h1 hv) h0 h1 h0 h1
+      (ofReal_mem_rogersDomain h0 h1) hw,
+    pentagonSum_ofReal h0 h1 h0 h1]
+
+end Unconditional
 
 end QOU.QBeta.FiveTwoComplexPentagon

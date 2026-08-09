@@ -589,3 +589,56 @@ where the flattening is non-trivial no such region exists. `ker ν` and the
 missing region are one fact seen twice.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 54 — the region exists in ONE variable. A complex five-term identity, unconditional.
+
+The "one remaining item" from Route 53 turned out to be answerable — for one
+variable — by a two-line computation, and the answer locates the obstruction
+exactly.
+
+### The region is `rogersDomain` itself
+
+Fix a **real** `a ∈ (0,1)` in the other slot and write `w = u + iv`. Then
+
+    Im(1 − wa) = −av        Im[(1−w)·conj(1−wa)] = v(a−1)
+                            Im[(1−a)·conj(1−wa)] = (1−a)av
+
+so every one of the four `w`-dependent arguments has non-zero imaginary part as
+soon as `v ≠ 0` — and a point with non-zero imaginary part is off **both** cuts
+automatically. Where `v = 0`, `w` is real in `(0,1)` and `PentagonRegular.of_real`
+applies. So the whole of `rogersDomain` is regular; it is open
+(`isOpen_rogersDomain`) and connected (`isPreconnected_rogersDomain`: two
+half-planes joined through the strip `0 < re < 1`), and it contains `(0,1)`.
+
+### The theorem — no hypotheses left
+
+`pentagonSum_eq_pi_sq_div_two`: for **every** real `a ∈ (0,1)` and **every** `w`
+off both real cuts,
+
+    L(a) + L(w) + L((1−a)/(1−aw)) + L(1−aw) + L((1−w)/(1−aw)) = π²/2
+
+with `L = cRogersL`. No branch hypothesis. No region hypothesis. Sorry-free,
+standard axioms, `lake build` exit 0 with the `.olean` deleted first.
+
+### ⚠ Where it stops — and the address of the obstruction
+
+**One** variable. Probe
+`computations/probes/qbeta_5two_route54_complex_pentagon_probe.py` (5 gates,
+40 dps):
+
+* G1 — 30 pairs, `|w|` to 40, `w` straddling both cuts, `w` within 1e-8 of the
+  real axis: exact.
+* G3 — **the negative**. With both variables non-real it is FALSE, and the
+  deviation is not even a *real* multiple of `π²` (at `(2+0.5i, 1.5−0.9i)`:
+  `(−0.0780 + 0.2303i)·π²`). So it is a genuine `2πi·(log)` term, not a
+  flattening integer, and no sharpening of the same argument reaches it.
+* G4 — the address. The theorem **reaches** `(y₃, y₁)`, the saddle cubic's real
+  root against a complex one, because `y₃ = 0.4301597… ∈ (0,1)`. It **does not
+  reach** `(y₁, ȳ₁)` — the pair `Vol(5₂) = 3·D(y₁)` needs.
+
+That is the whole story of this lane in one line: the five-term identity survives
+exactly as far as one real argument, and the volume lives one step past it.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
