@@ -491,7 +491,7 @@ probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
 
 ## q-Bessel Tricomi sub-route refuted WITH a source (2026-07-04, bean s013)
 
-Owner uploaded `uploads/014-026.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
+Owner uploaded `uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
 q-Legendre) in response to the redirect-(ii) source ask. It is a q-Bessel paper
 but **not** the Koelink–Swarttouw Plancherel source — it cites Koornwinder–
 Swarttouw [22] but contains no q-Hankel kernel / E_q(2) measure (scan: 0

@@ -244,7 +244,7 @@ search enormously but did not itself close the proof.
 ## 2026-08-07 (b) — Broadhurst READ. The volume side is classical; ours is not.
 
 Owner uploaded the non-paywalled sources (`uploads/9811173v1.pdf`,
-`uploads/2304.12545v1.pdf`, `uploads/fulltext.pdf`; commit `3a551a05`).
+`uploads/2304.12545v1.pdf`, `uploads/zagier-the-dilogarithm-function.pdf`; commit `3a551a05`).
 
 **Broadhurst hep-th/9811173 eq (73)** states, for the D = −23 field:
 
@@ -460,7 +460,7 @@ observation, and `b` is demystified.
 ## 2026-08-07 (night) — Route 6 tried and REFUTED (scope-a): Zagier's enhanced dilogarithm
 
 Owner supplied Zagier, *The Dilogarithm Function* (2007) as
-`uploads/fulltext.pdf`. §II.1 B defines the **enhanced dilogarithm**
+`uploads/zagier-the-dilogarithm-function.pdf`. §II.1 B defines the **enhanced dilogarithm**
 
     D̃(ẑ) = Li₂(z) + ½·u·v    on   X̃ = {(u,v) ∈ ℂ² : eᵘ + eᵛ = 1}
 
