@@ -224,13 +224,81 @@ candidate each way — the scanner additionally catches
 not diagnosed). 84 tracked either way; the disagreement is noise-level and
 recorded rather than papered over.
 
-## 5. Remaining steps
+## 5. Triage — 69 of 92 adjudicated
 
-1. **Triage the 84** per the #2477 rubric (restate-to-derive / queued-for-Lean
-   `sorry` + `-- Ref:` / demote to conjecture), library-tree cases first since
-   they have no sidecar coverage. Each verdict lands in the review ledger.
-2. **Decide the 47 deferred `§3b placeholder` exemptions** — the codification
+The ledger's self-assuming queue is 92 (the 84 new + the 8 the name gate
+already caught). Verdicts now written for **69**; **23 deliberately left
+`needs-agent`.**
+
+### The second discriminator: is the carrier ever inhabited?
+
+Type-match alone is not enough to call a defect. A `structure`/`class`
+bundling data with its defining properties, plus a `theorem` projecting one of
+them, is the ordinary Mathlib accessor idiom (`IsCompact.foo`) — perfectly
+legitimate, **provided something builds the bundle**. What turns it into the
+audit's target is that nothing does: the declaration is then a restatement
+presented as a result, quantified over a hypothesis nobody has exhibited.
+
+| | count | verdict |
+|---|---:|---|
+| carrier never inhabited — `class` (§3b-cond) | 38 | **genuine** |
+| carrier never inhabited — `structure` | 30 | **genuine** |
+| carrier never inhabited — kind unresolved | 1 | **genuine** |
+| carrier inhabited | 20 | `needs-agent` |
+| carrier unresolved | 3 | `needs-agent` |
+
+For the 38 uninhabited **classes**, uninhabited is *expected* — an open
+conjecture's instance is the gap — so that is not the defect. The defect is
+AGENTS.md §3b-cond item 5 directly: the class carries the **conclusion**
+rather than the hypotheses, so the theorem derives nothing. Disposition:
+restate so the class carries the genuine sub-hypotheses and the theorem
+composes them (exemplar `q_bkm_criterion.lean`); demote to conjecture only
+where no honest derivation exists — a claim change needing sign-off.
+
+For the 30 uninhabited **structures**, disposition: construct a witness
+instance and prove the property there, or drop the pseudo-theorem and project
+the field at use sites.
+
+### Why 23 are left open rather than blanket-blessed
+
+Inhabitation is necessary but **not sufficient**, and the remaining call
+differs case by case, so resolving it by rule would be the rubber stamp the
+ledger exists to prevent:
+
+- `QIntRatioBoundSmall` — **substantive.** Its four instances (`m = 1…4`) are
+  genuinely proved from `qInt_ratio_bound_m1`. The content lives in the
+  instances; `qInt_ratio_bound_small := hi.bound` is a real accessor. Legit.
+- `Term7ShellCorrectionClass` — **placeholder.** Its single instance
+  discharges `alpha5_derived` with a stipulated `alpha5_value = -1`, which its
+  own docstring calls a placeholder ("sign witness only"). The projection
+  inherits that emptiness. Genuine.
+
+Each of the 23 carries its open question in the ledger `evidence` field.
+
+Two counting corrections were made while doing this, both found by checking
+rather than by assumption, and both in the dangerous direction at first:
+
+1. A line-anchored inhabitation regex missed instances whose type sits on a
+   continuation line, reporting 79 uninhabited (over-reporting defects).
+2. Re-running it over whitespace-collapsed text then bridged from an
+   `instance` keyword to a **binder** `(d : C R)` in a later declaration,
+   reporting only 52 (under-reporting).
+
+Neither regex was right. The final count parses declarations and reads the
+conclusion at the first **top-level** colon — which by construction skips
+binder colons — and asks whether a value-producing declaration's conclusion
+head is the carrier. That is the 69/20 split above.
+
+## 6. Remaining steps
+
+1. **Fix the 69.** Not started — each needs its restate/demote decision
+   applied and `lean`-direct verification. The ledger holds the disposition
+   per candidate.
+2. **Adjudicate the 23** inhabited candidates (substantive vs. placeholder
+   instance).
+3. **Decide the 47 deferred `§3b placeholder` exemptions** — the codification
    of the honest-placeholder vs. dishonest-dodge line that the scanner comment
    defers to.
 
-Step 2 changes what the corpus claims, so it is an owner call.
+Steps 1 and 3 change what the corpus claims where demotion is involved, so
+those are owner calls.
