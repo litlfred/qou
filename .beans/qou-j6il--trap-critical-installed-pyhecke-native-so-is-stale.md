@@ -76,3 +76,72 @@ review cannot see the defect. The `trace-convention` axis walks `content/**`; th
 registry validator walks `computations/`, `tools/`, `qou-mass/`. **Nothing checks
 that a built artifact agrees with the source it claims to come from.** The guard
 above is the cheap fix and it belongs in CI, not in a bean.
+
+---
+
+## RESOLVED — three layers, covering all three paths a wheel can arrive by
+
+The container rebuild fixed *this* container and dies with it, so it was never
+the fix. The question is which paths a `pyhecke_native` can reach a producer by,
+and each now has a gate:
+
+| path | guard | where | commit |
+|---|---|---|---|
+| **the image** | wheel is **built in-image** from the same tree as the engine, then gated | `litlfred/folio-assistant` `adapters/mcp-server/Dockerfile` | `561d833` |
+| manual install | gate appended to the install script | `scripts/build-pyhecke-native.sh` | `550bf2d33` |
+| already installed | R9 registry evaluator, fires whenever the validator runs | `trace-convention-registry.json` | `87f6e3ec8` |
+
+**The image layer is the one that makes it structurally impossible rather than
+detectable.** The Dockerfile already built the hecke-engine binaries from source
+but never built the Python wheel *at all* — so whatever wheel a container ended
+up with came from outside the image and could drift arbitrarily from the engine
+shipped beside it. Now both artifacts come out of the same stage, from the same
+source. They cannot disagree.
+
+Built `--no-default-features`: that drops `clarabel-lp` (the litlfred
+Clarabel.rs fork, unreachable from restricted-network builders), which the Gram /
+seminormal / Markov-trace primitives do not need — only `operator_selection_lp`
+does.
+
+The install and gate are deliberately **not** failure-tolerated, unlike the
+`lake` steps beside them. A missing `pyhecke_native` degrades gracefully
+(producers have Python fallbacks); one carrying the wrong convention does not —
+it emits numbers indistinguishable from ordinary producer output.
+
+All three read `z_at_q0` from the registry rather than a literal, so changing the
+production convention re-arms them instead of grandfathering the old value.
+
+### Proven to fire, not just to pass
+
+A gate that cannot fail is worth nothing, so both failure modes were tested:
+
+```
+stale convention-C wheel : markov_z(q0)=0.4993203341836945  |d|=1.134e-01
+   -> FATAL: wheel is CONVENTION C            build fails  ✓
+neither convention       : markov_z(q0)=0.5               |d|=1.127e-01
+   -> FATAL: matches neither convention       build fails  ✓
+correct wheel            : |d|=0.000e+00      convention D confirmed  ✓
+```
+
+The two failure modes are distinguished rather than collapsed, because they need
+different responses: "stale, rebuild" versus "this is not either convention".
+
+- [x] Diagnosed: stale artifact, not a source defect
+- [x] Rebuilt and verified `markov_z(q0) = 0.612688037146465252`
+- [x] R9 registry evaluator for the compiled artifact
+- [x] Gate in the install script
+- [x] Gate in the image, wheel built in-image
+- [x] Other eight bindings checked — all live Rust is D; the sole C occurrence,
+      `hecke-engine/src/archive/v2.rs:205`, is in no module tree (`mod archive`
+      appears nowhere) and never compiles
+- [ ] Still open: the atom-table producer does not exist and must be written
+      before `prf:interface-knot-markov-z` can be regenerated
+
+### What generalises
+
+A compiled artifact is a convention surface, and the only one where source review
+cannot see the defect. The pattern worth reusing: **build the artifact and its
+consumer from one source in one stage, and gate the built artifact against the
+registry rather than against a literal.** Detection alone was not enough here —
+the whole point is that the detector would only have run if someone thought to
+run it.
