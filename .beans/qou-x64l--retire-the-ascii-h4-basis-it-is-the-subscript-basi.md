@@ -69,3 +69,51 @@ peak, and the reason a full `lake build` takes ~55 minutes instead of ~5. Retiri
 it after the transport removes that cost permanently, and removes a standing
 drift hazard — two hand-maintained tables for the same algebra, which is the
 defect class this whole audit keeps turning up.
+
+## 2026-08-09 — `QOU/Machinery/H4BasisBridge.lean`: the correspondence is proved, one step short of cyclicity
+
+Landed and axiom-clean:
+
+| declaration | content |
+|---|---|
+| `piIdx`, `invIdx` | the index permutation, with both round-trips (`fin_cases`) |
+| `phi`, `psi`, `psi_phi`, `phi_psi` | the relabelling and its inverse |
+| `phi_mulσ0/1/2` | **`phi` intertwines all three generator actions** — depth 1 each |
+| `phi_word_0 … _23` | **every word action corresponds** — by rewriting, no coordinate expansion; the 18 identical words close on the intertwiners alone, the 6 far-commutation swaps on one `rw [far_commute_σ₀σ₂]` each |
+| `trM4_phi` | `trM4 z h (phi u) = trM z h u` |
+
+That is the whole mathematical content of "the two bases are one basis": the
+generator actions correspond, hence every word action does, and the traces agree.
+
+## The one remaining step, and why it is stuck
+
+`phi_mulNF : phi (mulNF h u v) = mulNF₄ h (phi u) (phi v)`, from which
+
+```lean
+theorem trM4_cyclic (z : R) (x y : Fin 24 → R) :
+    trM4 z h (mulNF₄ h x y) = trM4 z h (mulNF₄ h y x) := by
+  have hx : x = phi (psi x) := (phi_psi x).symm
+  have hy : y = phi (psi y) := (phi_psi y).symm
+  rw [hx, hy, ← phi_mulNF, ← phi_mulNF, trM4_phi, trM4_phi]
+  exact trM_cyclic z h (psi x) (psi y)
+```
+
+**The obstacle is mechanical, not mathematical.** `mulNF` and `mulNF₄` are
+literal 24-term sums over exactly the word actions the `phi_word_*` lemmas relate,
+with coefficients matching because `(phi v) (piIdx i) = v i`. What fails is
+getting `simp` to apply `← phi_word_*` to the unfolded `mulNF₄`: the unused-simp-args
+linter reports **all 24 as unused**, so the rewrites never fire and `ring` is then
+left with two sums it cannot match.
+
+Tried and rejected:
+* `phi` in the same `simp only` as the `←` rewrites — `phi` unfolds first and
+  destroys the patterns;
+* a two-pass split (`simp only [mulNF₄, ← phi_word_*]` then unfold) — the
+  rewrites still do not fire.
+
+Cheapest things to try next: drop `phi_word_0` from the set (it is the degenerate
+`phi u = phi u` and may be poisoning it); use `conv` to target only the
+right-hand side; or abandon `simp` for an explicit `calc`/`rw` chain over the
+unfolded sum. The file carries this note inline so it is not rediscovered.
+
+Nothing is retired yet — the ASCII chain stays until `trM4_cyclic` lands.
