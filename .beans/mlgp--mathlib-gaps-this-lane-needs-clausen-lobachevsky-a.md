@@ -82,3 +82,48 @@ one and should not be started before Gaps 1–3.
 
 ~~Gap 2~~ (done) → **Gap 3** (now the critical path) → Gap 1 (upstream) → Gap 4 →
 Gap 5.
+
+---
+**2026-08-09 — new Gap 6, and it is PARTLY CLOSED: no volume functor.**
+
+Working `Vol(5₂)` surfaced something sharper than "unproved":
+**`Vol(5₂) = 3·D(y₁)` was not a statable Lean proposition at all.** The only
+objects named "volume" in Lean were decimal literals
+(`MassDerivation.vol_figure_eight := 2.029883212819307250042408`) and the
+placeholder `HyperbolicVolume : Knot → ℝ := fun k => 0 * (k : ℝ)`
+(`AppendixSurreals/Conjectures.lean`) — which **returns zero**. You cannot prove
+an equation against those, only write a false or vacuous one. That is a
+*definitional* gap, not a proof gap, and it is a different kind of work.
+
+Precedent confirming this is the real trap: `FigureEightVolumeLiterature.lean`
+records that the 4₁ volume conjecture was unstateable while `VOL_4_1` was "a
+truncated rational decimal ≈ 1e-30 away from `2·Cl₂(π/3)`, **making the statement
+literally false**" (`qou-yf47`).
+
+**Partly closed 2026-08-09**: `QOU/MathlibExt/IdealTriangulation.lean`,
+sorry-free, standard axioms, build exit 0 / 3252 jobs:
+
+* `IdealTetrahedron` — a shape with `0 < Im z` (degenerate/flat shapes excluded);
+  `angle₁/₂/₃`, `angle_sum` (`= π`), the three angle ranges, `law_of_sines`;
+* `IdealTetrahedron.volume := BlochWigner_lob shape`, with **both** forms proved
+  equal — `volume_eq_lob_sum` (angles) and `volume_eq_dilog` (Neumann–Zagier
+  eq. (38)/(39)), the latter being a direct consequence of `KummerRadial.kummer`
+  and *unwritable before it*;
+* `IdealTriangulation n`, `volume := ∑ volumes`, `volume_eq_dilog`, `const`.
+
+Consequence: `fiveTwoTriangulation_volume : fiveTwoTriangulation.volume = VOL_5_2`
+is now a **theorem about a defined object**, where before it was a sentence with
+no subject.
+
+**⚠ STILL OPEN, and this is the honest residue.** The step from an
+`IdealTriangulation` to a **topological 3-manifold** — Thurston hyperbolisation
+plus Mostow rigidity (volume is a topological invariant, independent of the
+triangulation). That needs hyperbolic 3-manifolds; neither Mathlib nor QOU has
+them, and this file deliberately does not pretend otherwise. `Vol(S³ ∖ 5₂) = …`
+remains a sentence with no subject.
+
+Note also what is **not** modelled: the combinatorial data (face pairings, edge
+classes) and the gluing equations they impose. `IdealTriangulation` carries only
+the shapes, so it cannot currently express "this triangulation is *of* that
+manifold". Adding the gluing equations is the natural next increment, and is
+where `qou-m015` (the 5₂ angle-structure polytope) would attach.

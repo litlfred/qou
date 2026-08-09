@@ -46,10 +46,16 @@
   ═══ ⚠ WHAT IS **NOT** PROVED ═══
 
   **That `VOL_5_2` is the hyperbolic volume of the 5₂ knot complement.**  That is
-  the *geometric* factor — that this particular triangulation's Λ-sum is that
-  manifold's volume — and it is cited to the literature, exactly as `VOL_4_1`
-  cites Thurston/Milnor.  Mathlib has no hyperbolic 3-manifolds and QOU defines
-  no volume functor, so it is not currently a statable Lean theorem at all.
+  the *geometric* factor, cited to the literature exactly as `VOL_4_1` cites
+  Thurston/Milnor.
+
+  The gap has been *narrowed but not closed*.  `QOU/MathlibExt/IdealTriangulation.lean`
+  now supplies `IdealTetrahedron` / `IdealTriangulation` with a `volume`, so
+  `fiveTwoTriangulation_volume : fiveTwoTriangulation.volume = VOL_5_2` **is** a
+  theorem about a defined object (below).  What is still missing is the step from
+  a triangulation to a **topological 3-manifold** — Thurston hyperbolisation plus
+  Mostow rigidity — which needs hyperbolic 3-manifolds, which neither Mathlib nor
+  QOU has.  So `Vol(S³ ∖ 5₂) = …` remains a sentence with no subject.
   Beans `qou-m015` / `qou-krvm`.
 
   Numerically `VOL_5_2 = 2.8281220883307831627638988092766349427709813173006…`,
@@ -66,6 +72,7 @@
 -/
 import QOU.Knot.KummerRadial
 import QOU.QBeta.FiveTwoComplexPentagon
+import QOU.MathlibExt.IdealTriangulation
 
 namespace QOU.Knot.FiveTwoVolume
 
@@ -137,5 +144,39 @@ theorem fiveTwoShape_angles_sum :
 theorem fiveTwoShape_law_of_sines :
     ‖fiveTwoShape‖ = Real.sin (tetAngle₂ fiveTwoShape) / Real.sin (tetAngle₃ fiveTwoShape) :=
   QOU.Knot.IdealTet.norm_eq_sin_div_sin fiveTwoShape_im_pos
+
+/-! ### The 5₂ triangulation, as a defined object
+
+`QOU/MathlibExt/IdealTriangulation.lean` supplies the layer that was missing:
+an `IdealTetrahedron` (a shape in the upper half plane) and an
+`IdealTriangulation` (finitely many of them) with a `volume`.  Against that,
+the statements below are theorems about a **defined object**, not sentences with
+no subject.
+
+⚠ Still nothing about `S³ ∖ 5₂`.  Connecting an `IdealTriangulation` to a knot
+complement is Thurston hyperbolisation plus Mostow rigidity, and needs hyperbolic
+3-manifolds, which neither Mathlib nor QOU has.  See that file's header. -/
+
+/-- The 5₂ ideal tetrahedron: shape `y₁`. -/
+noncomputable def fiveTwoTet : QOU.MathlibExt.IdealTetrahedron :=
+  ⟨fiveTwoShape, fiveTwoShape_im_pos⟩
+
+/-- **The 5₂ ideal triangulation**: three tetrahedra of shape `y₁`. -/
+noncomputable def fiveTwoTriangulation : QOU.MathlibExt.IdealTriangulation 3 :=
+  QOU.MathlibExt.IdealTriangulation.const 3 fiveTwoTet
+
+/-- **`volume (5₂ triangulation) = VOL_5_2`** — the statement that could not
+previously be written, now a theorem. -/
+theorem fiveTwoTriangulation_volume : fiveTwoTriangulation.volume = VOL_5_2 := by
+  unfold fiveTwoTriangulation VOL_5_2
+  rw [QOU.MathlibExt.IdealTriangulation.volume_const]
+  norm_num [fiveTwoTet, QOU.MathlibExt.IdealTetrahedron.volume]
+
+/-- And in dilogarithm form. -/
+theorem fiveTwoTriangulation_volume_dilog :
+    fiveTwoTriangulation.volume
+      = 3 * ((QOU.MathlibExt.cLiTwoExt fiveTwoShape).im
+        + Real.log ‖fiveTwoShape‖ * Complex.arg (1 - fiveTwoShape)) := by
+  rw [fiveTwoTriangulation_volume, VOL_5_2_eq_dilog]
 
 end QOU.Knot.FiveTwoVolume
