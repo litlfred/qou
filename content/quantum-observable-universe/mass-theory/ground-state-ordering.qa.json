@@ -8,9 +8,10 @@
     "lean": "content/quantum-observable-universe/lean/QOU/MassTheory/GroundStateOrderingRefutation.lean"
   },
   "source_hashes": {
-    "ts": "a209959f41c7",
     "md": "1e2685d31b3c",
-    "lean": "ba0668138f45"
+    "ts": "a209959f41c7",
+    "lean": "ba0668138f45",
+    "lean_statement": "d00a2bbb4915"
   },
   "criteria": {
     "voice-status-leak": [
@@ -300,11 +301,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
           "version": "v1",
-          "script_hash": "37b3fa59a3bc",
-          "script_commit_sha": "d6d1ee85e6b33f01016fb2fd5941ff7ae3a3527e"
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "wall-base-ring-minimal": [
@@ -320,11 +321,11 @@
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "c43b7731faf9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T07:06:56.704Z",
-        "reviewed_sha": "eb3025f5553f42e131a12c81a2b11b7c2a7784bb"
+        "reviewed_at": "2026-08-09T22:20:05.350Z",
+        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
       }
     ],
     "q-usage-regime-detected": [
@@ -2350,5 +2351,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-09T22:20:05.350Z"
 }
