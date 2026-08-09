@@ -212,6 +212,7 @@ import QOU.Mass.PaddedShapeLevelRational
 import QOU.Mass.QPlancherelSubNormalization
 import QOU.Mass.AdditiveCorrectionConfinement
 import QOU.Mass.QBetaProxyHReduction
+import QOU.Mass.QbetaC3Habiro
 import QOU.Mass.RogersSzegoInhabited
 import QOU.Mass.SelectionRuleQuantumIntegerForm
 import QOU.Mass.JetFiltrationExtensive
