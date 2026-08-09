@@ -864,3 +864,45 @@ cofactors are what a Gröbner reduction against both returns.
 4. `Σ log y log(1−y)` evaluation (the saddle branch equation).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 59 — Rogers inversion, proved. Link G3's analytic half is done.
+
+`cRogersL_add_inv` (Lean, sorry-free), on `ℂ ∖ [0,∞)` with `arg z ≠ π`:
+
+    L(z) + L(1/z) = −π²/6 − ½·log(−z)² + ½·log z·log(−z)
+
+Built on the corpus's **existing** complex inversion
+(`ComplexDilogarithmInversion.invCombo_eq`, `log_one_sub_inv_add_log_neg`) — no
+new analysis, just the two Rogers half-`log·log` terms added and the
+`log z·log(1−z)` pieces cancelled against each other. One `linear_combination`.
+
+Verified at six points first — both half-planes, negative reals, near and far —
+all off the 5₂ configuration, so nothing peculiar to that locus carries it.
+
+### What this leaves of link G3
+
+Route 58's G3 was `inv_a = (π² + πθ)/6 + iπ·log(y₃)/4`. It is now:
+
+* the **analytic** content — the inversion formula — **proved**;
+* the algebraic core of the angle identity — `a₃³·y₁ = −y₃`, `saddle_arg_cube` —
+  **proved**;
+* what remains is **branch pinning only**: from `a₃³y₁ = −y₃`,
+  `3·log a₃ + log y₁ = log(−y₃) + 2πik`, and `k = 0` needs
+  `3·arg a₃ + arg y₁ ∈ (−π, π]`. Numerically `3(0.70386) + 1.03002 = π` exactly.
+  Plus `log(−a₃) = log a₃ − iπ`, which needs `arg a₃ ∈ (0, π)`.
+
+So G3 is now a bounds problem on the arguments of two specific algebraic numbers,
+not a dilogarithm problem. `QOU/Archimedean/BranchIntegerPinning.lean` pins a
+branch integer along a *continuous family*; pinning one at a single algebraic
+point by an argument window is a different technique and is not in the corpus.
+
+### The open list, updated
+
+1. G3 — **analytic half done**; branch pinning of `arg a₃` remains.
+2. G4 — `L(1−1/z) − L(z)`, the anharmonic relation. Same shape: reflection plus
+   inversion, then branch pinning. Both ingredients now exist.
+3. G6 — `Σ log y log(1−y)`, from the saddle branch equation.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

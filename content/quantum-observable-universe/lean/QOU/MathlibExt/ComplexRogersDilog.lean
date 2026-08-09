@@ -35,6 +35,7 @@ formality.
 -- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5 (Rogers `R`, and `R(z;p,q)`)
 -/
 import QOU.MathlibExt.ComplexDilogarithmDeriv
+import QOU.MathlibExt.ComplexDilogarithmInversion
 
 namespace QOU.MathlibExt
 
@@ -205,5 +206,35 @@ theorem clog_pentagon_expansions {x y : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
         = Complex.log ((x : ℝ) : ℂ) + Complex.log ((y : ℝ) : ℂ) := by
   have hxy : x * y < 1 := by nlinarith
   exact ⟨clog_div_of_pos (by linarith) (by linarith), clog_mul_of_pos hx0 hy0⟩
+
+/-! ## Rogers inversion
+
+The `Li₂` inversion `Li₂(z) + Li₂(1/z) + ½log(−z)² = −π²/6` is already proved in
+`ComplexDilogarithmInversion`. Adding the two Rogers half-`log·log` terms, the
+`log z · log(1−z)` pieces cancel against each other through
+`log(1−1/z) + log(−z) = log(1−z)`, and what is left is quadratic in `log(−z)` but
+**not** in `log z` alone.
+
+That is why an inversion pair evaluates to `π²` plus `π` times an *angle* rather
+than to a `log²` — the shape Route 58's link G3 needs. -/
+
+/-- **Rogers inversion on `ℂ ∖ [0,∞)`.**
+
+    L(z) + L(1/z) = −π²/6 − ½·log(−z)² + ½·log z·log(−z)
+
+`z ∈ invDomain` is what both `cLiTwoExt` terms and `log(−z)` need; `arg z ≠ π`
+is what `log(1/z) = −log z` needs, and it excludes exactly the negative reals,
+where `invDomain` alone would not suffice. -/
+theorem cRogersL_add_inv {z : ℂ} (hz : z ∈ invDomain) (harg : z.arg ≠ Real.pi) :
+    cRogersL z + cRogersL z⁻¹
+      = -((Real.pi ^ 2 / 6 : ℝ) : ℂ) - Complex.log (-z) ^ 2 / 2
+        + Complex.log z * Complex.log (-z) / 2 := by
+  have hcomb := invCombo_eq hz
+  have hlog := log_one_sub_inv_add_log_neg hz
+  have hinv : Complex.log z⁻¹ = -Complex.log z := Complex.log_inv z harg
+  unfold invCombo at hcomb
+  unfold cRogersL
+  rw [hinv]
+  linear_combination hcomb - (Complex.log z / 2) * hlog
 
 end QOU.MathlibExt
