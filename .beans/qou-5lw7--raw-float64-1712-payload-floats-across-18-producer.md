@@ -91,3 +91,68 @@ recorded results, not a reformat. Several producers are long-running probes
   in PR #4879: `q0-value-drift-audit` (proton-pin 688 → 690, canonical 609 → 612)
   and `witness-raw-float64-audit` (dirty 1598 → 1600, new_not_baselined 18 → 20).
   Both moved from upstream content, not from that branch.
+
+---
+
+## 2026-08-09 (later) — two corrections, one of which changes the whole shape
+
+### 1. It is NOT a serialization sweep. The flagship case cannot be re-run at all.
+
+`deltalambda/threerow_qcross_trend_probe.py` — the file cited above as the clean
+mechanical example — was run end to end. After **586 seconds** it died:
+
+    TypeError: atom_braid_word_3A: q is an mpf holding only float64 information
+    (the `mpf(str(q_parameter.Q))` idiom) — ~17 real digits in a 50-dps path.
+    Pass q_parameter.Q_50_DIGIT_STR. allow_float64=True to declare a
+    deliberately f64 sweep.
+
+`pyhecke.atom.reject_float64_q` refuses it. So the 126 raw float64 fields in that
+witness are not a formatting mistake at the output — **the input `q` was
+float64-degraded and the entire computation ran at ~17 real digits inside a
+50-dps path.** The committed witness predates the guard.
+
+This inverts the earlier plan. Rewriting `float(x)` → `fmt(x)` there would emit
+50-digit strings carrying 17 digits of information — strictly worse than today,
+because the result would *look* precise and would pass the ratchet. The ratchet
+would go green on a witness that got less trustworthy.
+
+**The guard is the producer-side fix, already in the tree, already working.**
+
+### 2. The 13/4/4 classification was measured the wrong way
+
+It came from grepping top-level `import numpy` / `import mpmath`. That is not the
+same question as where the emitted numbers come from, and it is demonstrably
+unreliable: `threerow_qcross_trend_probe.py` contains no `import numpy` yet fails
+without numpy, because the dependency arrives transitively through
+`threerow_chi_sparse`. Treat the split as indicative. The threerow finding itself
+stands only because its emission sites were read directly.
+
+### The right first step, which is cheap
+
+Do **not** start editing. Run all 22 producers and collect the failures —
+`reject_float64_q` performs the classification for you, for free:
+
+* **fails the guard** → the q-anchor is degraded. Fixing it changes computed
+  results, needs the owning arc, and is not estimable from outside.
+* **runs clean** → serialization is genuinely the only problem, and it is cheap.
+
+Measured runtimes so far: `volume_binding_four_point` 0.9 s,
+`markov_z_fibre_rank_bar_covariance_probe` 1.8 s, `c3_w2_c1_pole_divisor` 6.5 s,
+`threerow_qcross_trend_probe` 586 s to reach its failure. So the audit is maybe an
+hour of wall time, mostly waiting on the two or three big probes.
+
+### Retracted estimate
+
+"30–60 min per mechanical file, 2–3 focused days" was based on the assumption
+that these are output-formatting defects. At least one is not, and the guard
+exists precisely because that class of defect is known here. No total can be
+given until the anchor audit above is run.
+
+### Environment note, and it is not incidental
+
+This sandbox had **no scientific Python stack at all** — `mpmath`, `sympy`,
+`numpy` and `scipy` were all absent. Nothing under `computations/` could run.
+That is the same failure the precision-gates preflight now catches for the gate
+scripts (four of five reds were phantom), one layer deeper: the gates could not
+evaluate, and the producers could not execute. Provision the stack before
+concluding anything about this queue.
