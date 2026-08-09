@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.IsotopeKnot",
     validation: "not_checked",
   },
-  uses: ["def:unstable-atom"],
+  uses: [],
   cites: [],
   tags: [
     "isotope",

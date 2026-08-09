@@ -9,4 +9,5 @@ export default remark({
     "def:adelic-substrate",
     "conj:motivic-perpetual-obstruction",
   ],
+  foreshadows: ["conj:motivic-perpetual-obstruction"],
 });

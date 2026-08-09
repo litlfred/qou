@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:categorical-neutrality-saturated-shells",
     "ex:brane-tower-levels",
     "prop:gb-spectral-sequence",
     "prop:graded-trace-residue-split",

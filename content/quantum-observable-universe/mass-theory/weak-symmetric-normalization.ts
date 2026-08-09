@@ -10,7 +10,6 @@ export default proposition({
   },
   uses: [
     "prop:gram-determinant-plancherel-ratio",
-    "prop:knot-operator-lp-selection",
   ],
   tags: [
     "plancherel",

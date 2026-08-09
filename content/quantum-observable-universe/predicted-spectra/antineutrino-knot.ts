@@ -15,5 +15,5 @@ export default definition({
   lean: { ref: "qou:QOU.Archimedean.Antineutrino",
     validation: "not_checked",
   },
-  uses: ["prop:parity-violation-skein"],
+  uses: [],
 });
