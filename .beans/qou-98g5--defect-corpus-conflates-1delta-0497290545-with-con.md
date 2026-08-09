@@ -88,3 +88,53 @@ sibling ledger asserts the conflation.
   [ ] Sweep for further sites: grep for "loop reciprocal", "delta^-1",
       "delta^{-1}", "1/delta", "Temperley" near any 0.4993 or q^{1/2} form.
       The three above came from one workflow angle, not an exhaustive pass.
+
+---
+
+## Update 2026-08-09 — `1/δ` now has a *derived* identity, not just a value
+
+`QOU/QBeta/JonesNormalisation.lean` (commit `cfe4921eb`) turns the distinction
+this bean records from a numeric coincidence into a theorem, which makes future
+conflations refutable rather than merely suspicious.
+
+Put `eᵢ := q − σᵢ`. From the Hecke quadratic relation alone (`tl_generator_sq`,
+no trace and no convention needed):
+
+    eᵢ² = [2]_q · eᵢ
+
+so `δ = [2]_q = q + q⁻¹` is **the Temperley–Lieb loop parameter**, full stop. And
+convention D is exactly the statement
+
+    tr_M(eᵢ) = q − z = 1/δ        i.e.  (q − z)·[2]_q = 1
+
+(`TemperleyLiebTower.loop_reciprocal`). So:
+
+* **`1/δ = 0.497290545604915556` is `tr_M(eᵢ)`** — the trace of the TL
+  *projector-scaled* generator. It is the loop reciprocal.
+* **`z = tr_M(σᵢ)`** — the trace of the *braid* generator. Under production D
+  that is `0.612688037146465252`, not `0.499320334183694452`.
+* **`z_C = 0.499320334183694452` is neither.** It is `1/[2]_{√q}`, the loop
+  reciprocal at *half* argument, and `q^{1/2}+q^{-1/2}` is not a Markov parameter
+  of the Hecke generator at all.
+
+The 0.408 % gap this bean measured is therefore the gap between `[2]_q` and
+`[2]_{√q}` — two different loop parameters — and the reason a C-era formula can
+look almost right is that those two numbers are close, not that the objects are
+related.
+
+### One site fixed by it
+
+`markov-pair-z2`'s Hopf-link normalisation
+`J_Hopf = -(q^{1/2}+q^{-1/2})·z²` was exactly this conflation, and is now
+retracted and replaced with the derived formula
+`V = q^{-2e}·[2]_q^{n-1}·tr_M(β)`, `t = q^{-2}` — no square roots anywhere,
+checked on four closures (`cfe4921eb`).
+
+### Still open on this bean
+
+The other conflation sites. **Grep for the half-argument form used as a loop
+value**, not for the numbers — the symbolic form is the larger surface, as the
+`c-formula-unlabelled` detector showed (`e6c7d599b`). A site is wrong when
+`q^{1/2}+q^{-1/2}` appears as *the loop parameter of `tr_M`* or as *the Markov
+parameter*; it is fine in a Wenzl positivity condition or a genuinely
+half-argument skein, where it is `[2]_{√q}` on purpose.
