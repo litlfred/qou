@@ -219,4 +219,65 @@ theorem fiveTwoTriangulation_volume_dilog :
         + Real.log ‖fiveTwoShape‖ * Complex.arg (1 - fiveTwoShape)) := by
   rw [fiveTwoTriangulation_volume, VOL_5_2_eq_dilog]
 
+/-! ### The edge gluing equations ARE the saddle cubic
+
+SnapPy's three 5₂ **edge** equations (`Manifold('5_2').gluing_equations()`, the
+first `N = 3` rows; the remaining two are cusp equations and carry negative
+exponents, so they need `ℤ`-valued data this API does not model):
+
+    [1,0,1, 1,2,0, 1,0,1]
+    [0,1,1, 0,0,2, 0,1,1]
+    [1,1,0, 1,0,0, 1,1,0]
+
+Reducing each `∏ z^a (z′)^b (z″)^c − 1` over `ℚ(y)`:
+
+* edges **0** and **2** have numerator `−(y³ − 2y² + 3y − 1)` — **exactly the
+  saddle cubic**;
+* edge **1** is `(z·z′·z″)² = (−1)² = 1`, identically, needing no cubic at all.
+
+So the geometric gluing condition and the algebraic branch equation
+`y² = (1−y)³` that this entire lane is built on are **the same equation**.  That
+is not a coincidence noticed numerically — it is what the reduction below
+proves. -/
+
+/-- SnapPy's three 5₂ edge-gluing equations, as exponent data. -/
+def fiveTwoGluing : QOU.MathlibExt.GluingData 3 3 :=
+  ⟨![![![1, 0, 1], ![1, 2, 0], ![1, 0, 1]],
+    ![![0, 1, 1], ![0, 0, 2], ![0, 1, 1]],
+    ![![1, 1, 0], ![1, 0, 0], ![1, 1, 0]]]⟩
+
+theorem fiveTwoShape_ne_zero : fiveTwoShape ≠ 0 :=
+  QOU.Knot.IdealTet.ne_zero_of_im_pos fiveTwoShape_im_pos
+
+theorem one_sub_fiveTwoShape_ne_zero : (1 : ℂ) - fiveTwoShape ≠ 0 :=
+  QOU.Knot.IdealTet.one_sub_ne_zero fiveTwoShape_im_pos
+
+/-- The branch form of the cubic: `y² = (1−y)³`. -/
+theorem fiveTwoShape_sq_eq_cube : fiveTwoShape ^ 2 = (1 - fiveTwoShape) ^ 3 :=
+  (QOU.QBeta.FiveTwo.cubic_iff_sq_eq_cube _).mp fiveTwoShape_cubic
+
+/-- **Edge 0** reduces to the saddle cubic: `y²·z′·(z″)⁴ = 1` iff `y² = (1−y)³`. -/
+theorem edge_zero :
+    fiveTwoShape ^ 2 * (1 / (1 - fiveTwoShape)) * (1 - 1 / fiveTwoShape) ^ 4 = 1 := by
+  have hy := fiveTwoShape_ne_zero
+  have h1y := one_sub_fiveTwoShape_ne_zero
+  field_simp
+  linear_combination (norm := ring_nf) (fiveTwoShape - 1) * fiveTwoShape_cubic
+
+/-- **Edge 1** holds identically — it is `(z·z′·z″)² = (−1)² = 1`, and needs no
+cubic at all. -/
+theorem edge_one :
+    fiveTwoShape ^ 2 * (1 / (1 - fiveTwoShape)) ^ 2 * (1 - 1 / fiveTwoShape) ^ 2 = 1 := by
+  have hy := fiveTwoShape_ne_zero
+  have h1y := one_sub_fiveTwoShape_ne_zero
+  field_simp
+  ring
+
+/-- **Edge 2** reduces to the saddle cubic: `y²·(z′)³ = 1` iff `y² = (1−y)³`. -/
+theorem edge_two :
+    fiveTwoShape ^ 2 * (1 / (1 - fiveTwoShape)) ^ 3 = 1 := by
+  have h1y := one_sub_fiveTwoShape_ne_zero
+  field_simp
+  linear_combination (norm := ring_nf) fiveTwoShape_cubic
+
 end QOU.Knot.FiveTwoVolume
