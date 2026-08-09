@@ -347,6 +347,29 @@ theorem not_pentagonRegular_of_prod_eq_one {a b : ℂ} {c : ℝ}
   exact not_mem_slitPlane_ofReal_neg (div_neg_of_neg_of_pos (by linarith) h0)
     (hval ▸ h.2.2.1.1)
 
+/-- **The flattened sum is symmetric in its two variables**, like the unflattened
+one: `x ↔ y` permutes the five triples `(argument, Λ, Λ')` rather than changing
+them (`1 ↔ 2`, `3 ↔ 5`, `4` fixed). So transport in the *second* variable is the
+same theorem — which is what reaching a pair with both entries non-real needs. -/
+theorem flatPentagonSum_symm (y x : ℂ) : flatPentagonSum y x = flatPentagonSum x y := by
+  unfold flatPentagonSum
+  rw [mul_comm x y, add_comm (Complex.log x) (Complex.log y)]
+  ring
+
+theorem flatPentagonSum_swap (x : ℂ) :
+    (fun w : ℂ => flatPentagonSum w x) = flatPentagonSum x :=
+  funext fun w => flatPentagonSum_symm w x
+
+/-- The flattened identity with the **complex** slot fixed: for any `v` off both
+cuts and any real `a ∈ (0,1)`, `Σ flatRogers = π²/2`. This is
+`flatPentagonSum_eq_pi_sq_div_two` read through the symmetry, and it is the base
+point a second transport would start from. -/
+theorem flatPentagonSum_eq_pi_sq_div_two' {a : ℝ} (h0 : 0 < a) (h1 : a < 1)
+    {v : ℂ} (hv : v ∈ rogersDomain) :
+    flatPentagonSum v ((a : ℝ) : ℂ) = ((Real.pi ^ 2 / 2 : ℝ) : ℂ) := by
+  rw [flatPentagonSum_symm]
+  exact flatPentagonSum_eq_pi_sq_div_two h0 h1 hv
+
 end OnTheCut
 
 end QOU.QBeta.FiveTwoFlattenedPentagon
