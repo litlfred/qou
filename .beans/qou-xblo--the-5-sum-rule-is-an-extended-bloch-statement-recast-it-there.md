@@ -28,8 +28,14 @@ where `ε = (+1, −1, 0)` is **not fitted** — it is the cubic's own branch da
 measured as exactly `(1, −1, 0)`. That those are integers is already a
 sorry-free Lean theorem on `main`: `branch_data_of_cubic` in
 `QOU/QBeta/FiveTwoSaddleSumRule.lean`, proved from the cubic alone with no
-dilogarithm involved. **The flattening the extended Bloch group needs is
-already a theorem in the corpus.**
+dilogarithm involved.
+
+> ⚠ **NARROWED by Route 44 — see the section at the end.** This bean originally
+> read "**the flattening the extended Bloch group needs is already a theorem in
+> the corpus**". That is too strong. The `y`-level identity above is exact and
+> unchanged, but the identification of the branch data *with* the flattening
+> does **not** generalise up the tower, and flattenings turn out to be a torsor
+> modulo the branch relation, so no single tuple is "the" flattening at all.
 
 Equivalent to the sum rule, not weaker: `Σ V_j` and `3·Σ R̂` differ by an
 elementary term computable from the cubic, verified to 50 dps.
@@ -93,5 +99,58 @@ over the `c^m` orbits. Anything reducing to an ordinary Bloch-group computation
 is blind here, for the reason above.
 
 Probe: `computations/probes/qbeta_5two_route43_flattened_rogers_probe.py`.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 44 — the flattening is a TORSOR, and Route 43's identification is narrowed
+
+Probe `computations/probes/qbeta_5two_route44_flattening_torsor_probe.py`
+(5 gates, all pass, dps 45).
+
+### What stands
+
+`Σ_σ R̂(y_σ; ε_σ, 0) = −π²/6` at the `y` level — exact, unchanged (G2).
+
+### What is narrowed — my own claim, by a test I ran to confirm it
+
+The tower carries a branch relation at **every** level, and all three are
+integral (G1):
+
+| level | relation | branch data |
+|---|---|---|
+| `y` | `2·log y − 3·log(1−y) = 2πi·ε` | `(+1, −1, 0)` |
+| `w` | `2·log(1−w) − 3·log w = 2πi·η` | `(−1, +1, 0)` |
+| `c` | `log(1−c) − 5·log c = 2πi·δ` | `(−2, +2, 0)` |
+
+So the raw material exists everywhere — which is what makes the failure real
+rather than a missing input. **Branch data in the `p` slot gives an integer
+multiple of `π²/6` only at `y`** (G3). At `w` the integer-valued flattening
+sits in the `q` slot instead; at `c` the single hit over `p,q ∈ [−3,3]` is
+`(1,−1)`, neither `+δ` nor `−δ`. The *placement* is not determined by the
+branch relation and does not transfer.
+
+### The structure that explains it
+
+The branch relation is a **null direction** of the flattening correction (G4):
+`3·log(1−y₃) − 2·log y₃ = 0` at the real root to 46 dps, so shifting `(p₃,q₃)`
+by `(3,−2)` changes the total by nothing. Flattenings form a **torsor** modulo
+the branch relation — which is why `(p₃,q₃) ∈ {(−3,2), (0,0), (3,−2)}` all give
+the identical sum, and why *"is ε the flattening"* was the wrong question. Only
+its **class** can be.
+
+Integer flattenings are rare but not unique (G5): 6 hits at `y`, 6 at `w`, 1 at
+`c`. Reported because Route 43 found `ε` by exactly this kind of search and only
+then recognised it.
+
+### Consequence for the plan
+
+Step 1 of this bean — "impose Neumann's parity/geometric conditions and check ε
+satisfies them" — is no longer a formality to tick off. It is **the blocking
+step**: without those conditions there is no distinguished flattening to check,
+only a torsor with several integer-valued representatives, and the `y`-level
+integer `−1` cannot be derived. Everything downstream (the lifted five-term
+relation, the rank computation in `ℬ̂(ℂ)`) waits on it.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
