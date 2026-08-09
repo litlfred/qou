@@ -11,6 +11,7 @@
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.ParticleInteractions
 
@@ -23,6 +24,13 @@ inductive KnotChannel where
 
 /-- The q-bracket `[2]_q = q + q⁻¹`. -/
 noncomputable def qBracket2 (q : ℝ) : ℝ := q + q⁻¹
+
+
+/-- **Bridge to the canonical bracket.** The longhand `q + q⁻¹` is this site's
+body and its proofs use it, so the consolidation is the identity, not an alias.
+Conditional: the two agree away from `q − q⁻¹ = 0`. -/
+theorem qBracket2_eq_canonical (q : ℝ) (h : q - q⁻¹ ≠ 0) :
+    qBracket2 q = QOU.QInteger.qIntBal q 2 := (QOU.QInteger.qIntBal_two q h).symm
 
 /-- Proton symmetric (trivial) channel factor, explicit from the
     per-nucleon table: `q · (½[2]_q)²`. -/
