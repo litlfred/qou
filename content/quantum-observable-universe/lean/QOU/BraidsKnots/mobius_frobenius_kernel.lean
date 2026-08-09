@@ -53,9 +53,6 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
       `tr(Δ(γ(s)) ⊗ Δ(γ(t)))` of the Frobenius pairing at deformation
       parameter `q`. -/
   K_FH : ℝ → ℝ → ℝ → ℝ
-  /-- Classical limit of the kernel. -/
-  classical_limit : ∀ s t, γ s ≠ γ t →
-    Filter.Tendsto (fun q => K_FH q s t) (nhdsWithin 1 {q : ℝ | q ≠ 1}) (nhds (1 / ‖γ s - γ t‖ ^ 2))
 
 /-- **Classical limit of the Frobenius–Hopf kernel is the repulsive
     `1/r²`** ([`lem:mobius-energy-frobenius-kernel`]) — the resolving
@@ -81,6 +78,8 @@ theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
     Filter.Tendsto (fun q => ctx.K_FH q s t)
       (nhdsWithin 1 {q : ℝ | q ≠ 1})
       (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
-  exact ctx.classical_limit s t _hst
+  -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel — reduction of the q-Hodge star to
+  -- the classical Hodge star and of ∫_A ∘ μ to the SU(2) Killing form at q = 1.
+  sorry
 
 end QOU.BraidsKnots
