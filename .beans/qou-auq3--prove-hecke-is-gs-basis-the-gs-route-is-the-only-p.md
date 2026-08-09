@@ -277,17 +277,25 @@ membership proof in the same `flatMap`/`filterMap` shape §4 already uses —
 
 ### NOT done, and neither is small
 
-* **The general leading monomial.** `lm (bokutShiaoRelation i' i j) = bsWord₁ i j`.
-  The one lemma it needs is **`descWord i j = ⟨i⟩ :: descWord i' j`** (for
-  `i' + 1 = i`, `j ≤ i'`) — dropping the top index drops the first letter. With
-  it, *no length computation is needed at all*: the two words become
-  `⟨i⟩ :: (descWord i' j ++ [⟨i⟩])` and `⟨i'⟩ :: ⟨i⟩ :: descWord i' j`, visibly
-  the same length, and the lex comparison is one `List.Lex.rel` on the first
-  letters. (An earlier note here said the missing piece was the *length*
-  `(descWord i j).length = i − j + 1`; the cons lemma is both easier and
-  strictly more useful.) It is a statement about `List.finRange n` being sorted.
-  Until it exists there is no `heckeCompletedRewritingSystem_lm_cases`, hence no
-  analogue of §4e's irreducibility machinery for the completed system.
+* **The general leading monomial — DONE (2026-08-09, §4h).**
+  `bokutShiaoRelation_lm : lm (bokutShiaoRelation i' i j) = bsWord₁ i j`, from
+  `descWord_cons : descWord i j = ⟨i⟩ :: descWord i' j`, both axiom-clean. The
+  prediction held exactly: with the cons lemma **no length computation was
+  needed**. Both words acquire a visible common tail — `σᵢ :: (w ++ [σᵢ])` versus
+  `σᵢ₋₁ :: σᵢ :: w` with the same `w` — so lengths agree by `simp` and the
+  comparison is one `List.Lex.rel` on the first letter.
+
+  `descWord_cons` is a statement about `List.finRange n` being
+  `Pairwise (· < ·)`: once the head is `i` every later index exceeds it and both
+  filters annihilate the tail; before the head is reached the two predicates
+  agree, because `a < i = i' + 1` forces `a ≤ i'`. Two traps worth recording —
+  `subst` on `i = a` eliminates `a`, so the head branch is stated in `i`; and
+  `List.filter_cons_of_pos` will not fire against a lambda predicate, so the
+  proof goes through `List.filter_cons` + `decide_eq_true_eq` + `if_pos/if_neg`.
+
+  This is step 1 of the path to `H_k` for `k > 4`; next is
+  `heckeCompletedRewritingSystem_lm_cases`, the completed-system analogue of
+  `heckeRewritingSystem_lm_cases`.
 * **That the completed system is a GS basis.** This is the whole of Bokut &
   Shiao's theorem. The new family overlaps *itself*, so the composition
   analysis is over a strictly larger set than the four families listed in this
