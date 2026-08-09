@@ -42,8 +42,36 @@ $h = q - q^{-1}$.
 |---|---|---|---|---|---|---|
 | **A** | matrix-M parabolic | — | — | — | never evaluated | not-a-$z$-trace |
 | **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated |
-| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715967$ | pinned-by-definition |
-| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646524$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787266$ | forced-given-premise |
+| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
+| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525160$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+
+> **Precision re-record, 2026-08-09 (bean `qou-wgta` item 12).** Every value in
+> the JSON twin had been computed from `meta.q0.value = "1.1099785827513808"`,
+> a **17-digit truncation** of the canonical
+> `q_parameter.Q_50_DIGIT_STR = 1.1099785827513808075916690956107688798744991218736`
+> — so the recorded $z(q_0)$, weights and $\mathrm{tr}_M$ were wrong in the
+> 18th significant figure against the code that uses the full constant
+> ($z_D$ was recorded $\ldots524365$, correct is $\ldots525160$). Nothing
+> noticed while the validator only compared strings; **R9 found it on its
+> first run.** All JSON values are now recomputed at 50 dps, cross-checked
+> two ways: D's weights against the closed forms $[4]_q/[2]_q^3$ and
+> $1/[2]_q^2$, and $\mathrm{tr}^D_M(\beta_{\mathrm{Bor}})$ against the Lean
+> closed form $(4+h^2-3h^4-h^6)/(h^2+4)$, both agreeing to $<10^{-60}$.
+
+> **Convention C has no live production implementation as of 2026-08-09.**
+> The four rows this file used to list under C —
+> `markov_trace_canonical::tr_M_element`, `closed_form_tau_M::markov_z` +
+> `y_lambda_wenzl_bridge_numeric`, `binding_canonical.py`, and
+> `wedderburn_jones_markov::y_lambda_at` — are **all convention D** now
+> (bean `qou-wgta`). C survives in exactly three places, and each is
+> deliberate: two explicitly-named historical functions in
+> `schur_principal_mpmath` that keep the excised convention *quotable* for the
+> D-vs-C comparison in `y_lambda_su_n.main()`, and one **blocked migration**,
+> `pyhecke/gram.py::z` (see `blocked_migrations` in the JSON twin — switching
+> it silently destroys `G_INV`, because the Markov–Gram form is degenerate
+> under D). R9 asserts all three are *still C*; the preserved reference
+> stopping being C without anyone noticing is precisely what happened to its
+> predecessor.
 
 > **Registry gap closed 2026-08-09.**
 > `computations/wedderburn_jones_markov.py::y_lambda_at` is convention **C** and
@@ -83,9 +111,20 @@ because those can differ, and the mass channel is the case where they do.
 
 | channel | definitional | production | status |
 |---|---|---|---|
-| `mass` | **C** — `prop:categorical-mass-markov` names the trace on the full $\mathrm{H}_n(R,q)$; `rem:markov-axioms-primitive` pins $z = 1/(q^{1/2}+q^{-1/2})$ | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | **disputed** (bean `qou-3qrv`) |
-| `binding` | C | C — `binding_canonical.py` → `closed_form_tau_M` → `markov_z` | agreed |
-| `borromean-binding-single-pipeline` | D | D — `borromean_binding_recompute.py` | agreed |
+| `mass` | **D** — owner ruling 2026-08-09 (the row cap $\ell(\lambda)\le 2$ forces it) | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | agreed |
+| `binding` | D | **D** — `binding_canonical.py` → `closed_form_tau_M` → `markov_z`, and `y_lambda_wenzl_bridge_numeric` | agreed |
+| `borromean-binding-single-pipeline` | D | **D** — `borromean_binding_recompute.py` | agreed |
+
+> **All three channels were carrying a convention the code did not supply,
+> and the table above said "agreed" throughout.** Found 2026-08-09
+> (`qou-wgta`): `closed_form_tau_M` declared C in its docstring while its
+> `markov_z` had returned D since `33a6c7aa` **and** its
+> `y_lambda_wenzl_bridge_numeric` constituent was still C — three different
+> answers in one call path. `borromean_binding_recompute` computed
+> $\tau$ from the Lean **D** closed form and its bond factors from a **C**
+> $z$, so the single-pipeline binding was reproducible under *neither*
+> convention. Both are fixed; see R9 below for why the validator could not
+> have told you.
 
 A channel whose two conventions differ **must** carry `status: "disputed"` and a
 non-null `open_item` naming a bean and an audit. R8 of the validator enforces
@@ -144,6 +183,7 @@ R7 makes listing an excluded symbol as a convention implementation an error.
 | R6 | **doc-vs-code** — each `doc_claims` row's `names_convention` must equal the channel's convention for the stated `layer`. *This is the defect that occurred.* A vanished `quote` is a staleness warning | error |
 | R7 | no excluded tracer appears as a convention implementation; `--lint-docs` also warns on doc lines pairing an excluded symbol with a Borromean convention claim | error |
 | R8 | a channel whose two conventions differ must be `disputed` **and** carry an `open_item` with a bean and an audit | error |
+| **R9** | **EVALUATION** — import every `evaluators` entry, **call it at $q_0$**, and compare against the declared convention's own `z_at_q0` / `weights_at_q0` at $10^{-40}$ absolute. Reports the convention the code *actually* implements. Entries declared **C** are checked just as hard: the preserved historical reference and the one blocked migration must **stay** C | error |
 | — | `--selftest` replays `regression_cases` and fails if any historical defect is **not** caught | error |
 
 Default is warn-only (`--strict` promotes warnings to failures), matching how
@@ -155,7 +195,40 @@ python3 docs/coordination/trace_convention_registry_validate.py --selftest --lin
 python3 docs/coordination/trace_convention_registry_validate.py --strict   # CI gate
 ```
 
-**Current baseline (2026-08-08):** `PASS`, 0 errors, **21 warnings** — all R5,
+### Why R9 exists (read before trusting a `PASS`)
+
+R3 checks two curated $\beta_{\mathrm{Bor}}$ values. **R4 and R5 compare a
+docstring string to a registry string and never look at a number.** On
+2026-08-09 a stale docstring and a stale registry agreed with each other, and
+this validator printed `PASS, 0 errors, 21 warnings` while the repo contained
+174 Python files, 61 Lean files and the entire Rust engine stack on the
+excised convention — including **four production entry points**, **three
+convention hybrids** (D in one factor and C in another *inside one function*),
+and a symbolic path serving convention C out of a **JSON witness cache**,
+where the string `sqrt` never appears at all. None of those is visible to a
+string comparison; none of them survives an evaluation.
+
+Demonstrated, not assumed: reintroducing C at a single definition site
+(`hecke_symbolic.z_markov`) and re-running gives
+
+```
+ERROR : R9 hecke_symbolic.z_markov: registry says convention D
+        (z = 0.61268803714646525159582986394589924802630839154509)
+        but the CODE returns 0.4993203341836944524134427
+        (|d| = 0.1134 > 1.0e-40) -- it is actually convention C
+```
+
+while **R4 stays silent**, because the docstring still says D. That is the
+original defect, reproduced and caught.
+
+R9 also found two things on its own first run: the 17-digit-q₀ precision
+defect described above, and that `wedderburn_jones_markov.y_lambda_at` — the
+widest surface in the repo, ~155 consumers — hard-truncates to **30
+significant digits** (`sp.Float(_mp.nstr(v, 30), 30)`, line 152) regardless of
+the dps requested, against a 50-dps production floor. That one carries a
+documented per-entry tolerance rather than a silent pass.
+
+**Current baseline (2026-08-09):** `PASS`, 0 errors, **21 warnings** — all R5,
 i.e. 21 Borromean tracers outside `production_files` that do not yet declare a
 convention. That is a tracked backlog, not a silent pass; drain it by adding a
 `convention <X>` line to each docstring after confirming which trace it computes
