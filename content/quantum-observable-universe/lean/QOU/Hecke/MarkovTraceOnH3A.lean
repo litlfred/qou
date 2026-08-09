@@ -44,10 +44,25 @@ of them by the bar law `bar(z) = z − h`, a condition this class has no field f
 
 `QOU.Machinery.HeckeH4StabilizationRung` has the level-4 trace `trM4` with
 `trM4_iota34_stabilizes` and `trM4_markov_σ₂`, but **no cyclicity theorem on the
-subscript basis**. `QOU.Machinery.MarkovTraceH4` has one on the *ASCII* basis and
-it rests on a cited `sorry` — which is precisely why `HeckeH4AlgebraLaws`
-declines to import that module. So the `n = 4` bridge is blocked on a genuine
-open lemma, not on bookkeeping, and is not attempted here.
+subscript basis** — which is what `H4A`, and hence
+`QOU.Hecke.InstanceOnH4A.instHeckeAlgebraH4A`, is built on.
+
+There *is* one on the **ASCII** basis, and it is sorry-free:
+`QOU.Machinery.H4.trM_cyclic` in `MarkovTraceH4Gram`, from `gram_symm` over the
+576-entry closure. (An earlier revision of this paragraph said it rested on a
+cited `sorry`, following stale docstrings in `MarkovTraceH4` and
+`MarkovTraceH4Gram` — both now corrected. `#print axioms` shows
+`[propext, Classical.choice, Quot.sound]`.) It does not transfer for free: the
+two 24-word bases are different tables, and relating cyclicity on one to the
+other needs the change of basis.
+
+The route that avoids both a second Gram closure and the basis change is
+`QOU.Machinery.BilinearTrace.gram_symm_of_rep_decomp`: if `trM4` decomposes as a
+finite weighted sum of representation traces, each multiplicative on `mulNF₄`,
+Gram symmetry follows with no per-pair computation. `HeckeH4Wedderburn.wedderburn₄`
+supplies exactly those representations — the five block projections of
+`H4A ≃ₐ K × K × M₂ × M₃ × M₃` — so what remains is identifying the Markov
+weights. Not attempted here.
 -/
 
 namespace QOU.Hecke.MarkovTraceOnH3A

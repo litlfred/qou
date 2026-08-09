@@ -25,9 +25,14 @@ reproduces the hardcoded `H3` block exactly).  Convention: `T_{s_i}² = 1 + h·T
 * `trM_markov_σ2` — the Markov reduction (M3) `tr(x·σ₂)=z·tr(x)` for `x ∈ H₃`
   (parabolic NF indices `{0,2,3,7,8,13}`), **sorry-free**.  This is the base case
   for the general-`n` Markov stabilization (τ-functor open item A).
-* `trM_cyclic` — cyclicity (M2): machine-validated in the compute infra but held as
-  a cited `sorry` (the `Fin 24` brute force is heartbeat-infeasible; structural proof
-  is follow-up).  Not vacuous, not laundered.
+* `trM_cyclic` — cyclicity (M2): **sorry-free**, in
+  `QOU.Machinery.MarkovTraceH4Gram`. This entry previously said it was "held as a
+  cited `sorry`"; that has not been true since the 576-entry Gram closure landed
+  in the `MarkovTraceH4Gram0..7` chain. `gram_symm` is discharged there by
+  `fin_cases i <;> fin_cases j` against the generated entries, and `trM_cyclic`
+  follows from it and the sorry-free reduction `trM_cyclic_of_gram_symm`.
+  Verified: `#print axioms QOU.Machinery.H4.trM_cyclic` →
+  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
 -/
 
 namespace QOU.Machinery.H4

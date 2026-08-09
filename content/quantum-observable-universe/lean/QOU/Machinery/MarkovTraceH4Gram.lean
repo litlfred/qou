@@ -97,11 +97,18 @@ theorem gram_symm (z h : R) :
 
 
 
-/-- **(M2) Trace cyclicity** `tr_M(u·v) = tr_M(v·u)` — the defining trace property.
-Derived (no new `sorry`) from the **sorry-free** bilinear reduction
-`trM_cyclic_of_gram_symm` and the single residual `gram_symm`.  The reduction —
-the Fin-24-free half — is genuinely proved; only the finite Gram-symmetry base
-`gram_symm` remains a cited `sorry` (closeable on demand; see its docstring). -/
+/-- **(M2) Trace cyclicity** `tr_M(u·v) = tr_M(v·u)` — the defining trace property,
+**sorry-free**.
+
+Both halves are proved: the Fin-24-free reduction `trM_cyclic_of_gram_symm`, and
+the finite Gram-symmetry base `gram_symm` above, discharged by
+`fin_cases i <;> fin_cases j` against the 576 generated entries of the
+`MarkovTraceH4Gram0..7` chain. An earlier revision of this docstring said
+`gram_symm` "remains a cited `sorry` (closeable on demand)" — that was written
+before the closure was committed and is no longer true, the same staleness the
+module header records. Verified:
+`#print axioms QOU.Machinery.H4.trM_cyclic` →
+`[propext, Classical.choice, Quot.sound]`. -/
 theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
     trM z h (mulNF h u v) = trM z h (mulNF h v u) :=
   trM_cyclic_of_gram_symm z h (gram_symm z h) u v
