@@ -6,7 +6,6 @@ export default proposition({
     "Additive Bring zero-mode form $1/\\alpha_{EM} = q\\cdot[9]_q\\cdot[10]_q + 2g/(4\\pi(g-1))$ (conditional)",
   uses: [
     "prop:exterior-square-borromean",
-    "conj:bring-hyperbolic-knot-bloch-decomposition",
   ],
   cites: ["jones1987", "kassel1995", "suslin1991", "bloch2000"],
   computation: {

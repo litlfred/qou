@@ -54,18 +54,24 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
     The conclusion is a **concrete existential over `AlgElement`** (a
     common `MultiStepReduction` target), not a bare `Prop`. Proved from
-    `confluence`. -/
+    `confluence`.
+    The manuscript's standing hypothesis that the algebra has **no
+    quasi-zeros** (Leitner–Pawloski; `monomial-basis.md`) is carried
+    explicitly as `hnqz`: it is what the S-polynomial half of the
+    composition lemma needs, and it is discharged for the free algebra on
+    any non-empty generating set by `noQuasiZerosFree_of_generator`. -/
 -- Ref: [manuscript] unital-groebner-bases/unital-groebner-bases-chapter/buchberger.ts
 theorem buchberger
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
     (f g₁ g₂ : AlgElement G k)
     (h₁ : MultiStepReduction ord sys f g₁)
     (h₂ : MultiStepReduction ord sys f g₂) :
     ∃ h : AlgElement G k,
       MultiStepReduction ord sys g₁ h ∧ MultiStepReduction ord sys g₂ h :=
   -- Confluence of a GS basis (Newman's lemma over the resolved S-polys).
-  confluence ord sys hgs f g₁ g₂ h₁ h₂
+  confluence ord sys hgs hnqz f g₁ g₂ h₁ h₂
 
 end UGB.UnitalGroebner

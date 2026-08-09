@@ -68,8 +68,10 @@ theorem generator_choice
     ∃ r : ReductionRule G k, r ∈ sys.rules ∧
       ∃ m : Monomial G, m ∈ f.support ∧
         (leadingMonomial ord r.relation r.nonzero) <:+: m := by
-  -- The reduction step carries its rule witness (the chosen generator).
-  obtain ⟨r, hr_mem, m, hm_supp, hm_infix, _⟩ := hstep.exists_witness
-  exact ⟨r, hr_mem, m, hm_supp, hm_infix⟩
+  -- The reduction step carries its rule witness (the chosen generator)
+  -- together with the contexts `a`, `b` locating the occurrence.
+  obtain ⟨r, hr_mem, a, b, _, hne, -, -⟩ := hstep.exists_witness
+  exact ⟨r, hr_mem, a ++ leadingMonomial ord r.relation r.nonzero ++ b,
+    AlgElement.mem_support_of_coeff_ne_zero hne, ⟨a, b, rfl⟩⟩
 
 end UGB.UnitalGroebner

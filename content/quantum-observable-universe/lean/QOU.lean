@@ -55,6 +55,7 @@ import QOU.Mathlib.WeierstrassFactorEstimate
 -- lattice-basis determinant lemmas, and the proof that the per-cusp factor
 -- 2^{(c-1)/2} cancels identically.  Sorry-free, so wired here for CI.
 import QOU.OneLoopEdgeLattice
+import QOU.OneLoopPrefactorInvariance
 -- Borel-Carathéodory inequality: a one-sided bound on Re f gives a two-sided
 -- bound on ‖f‖. A genuine Mathlib v4.24.0 gap and a PI-5 prerequisite for
 -- QOU.Mathlib.HadamardFactorization. Sorry-free, so wired here for CI.
@@ -107,6 +108,16 @@ import QOU.MathlibExt.OctonionSU3BracketClosure
 import QOU.MathlibExt.OctonionColourActionBaseModule
 import QOU.MathlibExt.OctonionComplexStructure
 import QOU.StandardModel.ColourStabilizerAction
+import QOU.StandardModel.ThetaQcdFramingCp
+import QOU.StandardModel.SecondCrossingInvariant
+-- Information content of the eightfold-way hypercharge battery: the RH half
+-- is entailed by Q (GMN at I3=0 pins Y uniquely, so it discriminates nothing);
+-- the LH half is exactly B - L. Reduces the open Y item to one condition.
+import QOU.StandardModel.HyperchargeBatteryReduction
+-- The strand-twist hypercharge battery reduces to the single equation T = 3Q:
+-- the nucleon check is entailed by charge additivity (and states one condition
+-- twice), and the '4 of 10,000 survivors' is 1x2x2x1 multiset counting.
+import QOU.StandardModel.TwistBatteryVacuity
 -- q-difference operator calculus (missing Mathlib infra for the q-difference D-module
 -- program): q-Leibniz product rule (clean), monomial q-chain rule (q→q^m), and the
 -- composition obstruction (no naive q-chain rule for non-monomial inner functions).
@@ -142,6 +153,26 @@ import QOU.Knot.KummerUnitCircle
 import QOU.Knot.RivinConcavity
 import QOU.Knot.SymmetricOptimum
 import QOU.Knot.WhiteheadVolumeConjecture
+import QOU.Knot.KashaevProdEndpoint
+import QOU.Knot.KashaevReflectionTrapezoid
+import QOU.Knot.KashaevEndpointSplit
+import QOU.Knot.LogSincNearZero
+import QOU.Knot.LobNearZero
+import QOU.Knot.KashaevAsymptotic
+import QOU.Knot.KashaevArgmax
+import QOU.Knot.LobTaylorSaddle
+import QOU.Knot.KashaevTailBound
+import QOU.Knot.KashaevPeakValue
+import QOU.Knot.KashaevLogAsymptotic
+import QOU.Knot.KashaevRatioExpansion
+import QOU.Knot.KashaevWindowSum
+import QOU.Knot.KashaevWindowIndex
+import QOU.Knot.KashaevWindowAssembly
+import QOU.Knot.KashaevSaddleWindow
+import QOU.Knot.KashaevBeyondWindow
+import QOU.Knot.KashaevFullSum
+import QOU.Knot.KashaevAsymptoticBounds
+import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
@@ -292,9 +323,11 @@ import QOU.InformationTheory
 -- is the `faithful` class field, and **no instance is provided**, so every
 -- downstream use carries `[QouPNeqNp …]` visibly in its signature.
 import QOU.Information.SurrealBudgetGrade
+import QOU.Information.CountingDecisionBarrier
 import QOU.Information.GCTMultiplicityObstruction
 import QOU.Information.MagnitudeAxisBoundary
 import QOU.Information.CountingModuliGrade
+import QOU.Information.SkeinSurrealGrade
 import QOU.Information.PolyGrowthAlgebra
 import QOU.Information.MagnitudeTraceCommutator
 import QOU.Information.CocenterTraceFactor
@@ -371,6 +404,20 @@ import QOU.Infra
 import QOU.Observations.AlgebraicGnsEmbedding
 import QOU.Observations.QCltNonCommutative
 import QOU.Observations.TraceLocalityMeetsGsNonLocality
+import QOU.MathlibExt.RootsOfUnityProduct
+import QOU.MathlibExt.GaussianThetaSum
+import QOU.MathlibExt.GaussianShearIntegral
+import QOU.MathlibExt.StirlingRobbins
+import QOU.MathlibExt.TrapezoidRule
+import QOU.MathlibExt.CorrectedTrapezoid
+import QOU.MathlibExt.CompositeEulerMaclaurin
+import QOU.MathlibExt.SinCubeBounds
+import QOU.MathlibExt.TaylorRemainder
+import QOU.MathlibExt.GaussianSumBound
+import QOU.MathlibExt.GaussianThetaBound
+import QOU.MathlibExt.GaussianTiltedSum
+import QOU.MathlibExt.GaussianTailBound
+import QOU.MathlibExt.GaussianWindowSum
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm
@@ -769,6 +816,11 @@ import QOU.BraidsAndKnots.ThreeRowSignCrossing
 -- q=1, which is WHY the ≥3-row trace is O(10⁻⁵) near q=1. Sorry-free, generic
 -- Field K.
 import QOU.BraidsAndKnots.WenzlLevelStratum
+-- 1-dim Hecke block characters are writhe monomials (chi_triv=q^writhe,
+-- chi_sign=(-q⁻¹)^writhe); writhe-0 baryon ⟹ both collapse to 1. Prunes the
+-- charm-mass Frobenius block-projection route (block ratio O(1) at balanced
+-- writhe). docs/audits/2026-08-02-charm-mass-frobenius-block-projection-negative.md
+import QOU.MassTheory.TrivialBlockWrithe
 import QOU.BraidKnot.ColoredJonesRecurrence
 import QOU.BraidKnot.KnotOperatorRecurrence
 -- Resurgent-bridge tranche (Δ_λ sign/magnitude → DT/3d-index unification):

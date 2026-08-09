@@ -183,4 +183,16 @@ theorem nsi_q_deformed_kernel {E : Type*} [NormedAddCommGroup E]
   ⟨nsi_q_kernel_identification s t hq1,
    nsi_q_kernel_hard_singularity hq0 hq1⟩
 
+/-- **Refutable as written.** `K_cat` is a free field, and at `q = 0` the
+    claimed right-hand side is the Mathlib junk value `_ / 0 = 0`: `ℏ_0 = 1 - 0⁻¹
+    = 1`, so the denominator `r² - ℏ_q²` vanishes at `r = 1`. A kernel that is
+    identically `1` then refutes the identity. Both defects at once — §9's junk
+    value and §10's unconstrained field (bean qou-octr). -/
+theorem nsi_q_kernel_identification_unconstrained_false :
+    ¬ ∀ (ctx : NsiQDeformedKernelContext ℝ) (s t : ℝ), ctx.q ≠ 1 →
+        ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
+  intro h
+  have := h { q := 0, ϱ := id, K_cat := fun _ _ => 1 } 0 1 (by norm_num)
+  simp [qDeformedKernel, hbarQ] at this
+
 end QOU.BraidsKnots

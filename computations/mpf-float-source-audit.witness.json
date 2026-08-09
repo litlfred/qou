@@ -5,8 +5,7 @@
   "data": {
     "counts": {
       "benign": 13,
-      "advisory-cast": 6,
-      "marked-cast": 1
+      "advisory-cast": 11
     },
     "defects": [],
     "rows": [
@@ -67,6 +66,14 @@
         "fix": null
       },
       {
+        "file": "computations/deltalambda/threerow_sign_crossing_probe.py",
+        "line": 125,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "return mp.mpf(float(np.trace(prod)))",
+        "fix": null
+      },
+      {
         "file": "computations/flavor_split_xq_refinement.py",
         "line": 189,
         "class": "benign",
@@ -124,10 +131,10 @@
       },
       {
         "file": "computations/witness_float64_padding_audit.py",
-        "line": 90,
-        "class": "marked-cast",
+        "line": 140,
+        "class": "advisory-cast",
         "arg": "float(...)",
-        "source": "return abs(x - mpf(float(x))) / abs(x) < F64_GAP",
+        "source": "if abs(x - mpf(float(x))) / abs(x) >= F64_GAP:",
         "fix": null
       },
       {
@@ -169,6 +176,30 @@
         "arg": "1.0",
         "source": "qi = mp.mpf(1.0) / q",
         "fix": "mpf(\"1.0\")"
+      },
+      {
+        "file": "tools/qou-substrate/python/qou_substrate/precision.py",
+        "line": 162,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if isinstance(value, mpf) and value == mpf(float(value)):",
+        "fix": null
+      },
+      {
+        "file": "tools/qou-substrate/tests/test_precision_true.py",
+        "line": 26,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "v = mpf(float(1.5597586581034242))          # numpy trace -> mpf",
+        "fix": null
+      },
+      {
+        "file": "tools/qou-substrate/tests/test_precision_true.py",
+        "line": 41,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "for v in (mpf(float(0.1)), mpf(1) / mpf(7), mpf(\"0.5\"), mpf(0), mpf(-2)):",
+        "fix": null
       }
     ]
   }

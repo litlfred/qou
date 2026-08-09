@@ -51,7 +51,7 @@ CENSUSES = [
     "LinkExteriors",
     "CensusKnots",
 ]
-BAND_REL = 0.01  # the block's stated 1% tolerance
+BAND_REL = mpf(1) / 100  # the block's stated 1% tolerance (exact, not a binary float)
 
 
 def ceiling_of(census, start: float = 60.0, step: float = 0.5,
@@ -67,27 +67,36 @@ def ceiling_of(census, start: float = 60.0, step: float = 0.5,
         try:
             ms = list(census[v:v + step])
         except Exception:
-            return (0.0, "", 0)
+            return (mpf(0), "", 0)
         if ms:
-            ms = sorted(ms, key=lambda m: -float(m.volume()))
+            ms = sorted(ms, key=lambda m: -_vol(m))
             top = ms[0]
-            return (float(top.volume()), top.name(), len(ms))
+            return (_vol(top), top.name(), len(ms))
         v -= step
-    return (0.0, "", 0)
+    return (mpf(0), "", 0)
+
+
+def _vol(m):
+    """Hyperbolic volume as mpf at working precision — never through float()."""
+    bits = int(mp.dps * 3.3219) + 16
+    return mpf(str(m.volume(bits_prec=bits)).replace(" ", ""))
 
 
 def main() -> None:
     set_compute_dps()
     target = M_TAU_OVER_M_E * HBAR_Q_MP**2
-    lo = float(target) * (1 - BAND_REL)
-    hi = float(target) * (1 + BAND_REL)
+    lo = target * (1 - BAND_REL)
+    hi = target * (1 + BAND_REL)
+    # SnapPy's census slice takes plain floats; that is an API constraint on
+    # the SEARCH BOUNDS, not on anything reported.
+    lo_f, hi_f = float(lo), float(hi)
 
     hits, ceilings = [], {}
     for name in CENSUSES:
         census = getattr(snappy, name)
         n_total = len(census)
         try:
-            band = list(census[lo:hi])
+            band = list(census[lo_f:hi_f])
         except Exception as exc:  # pragma: no cover - census API guard
             band = []
             ceilings[name] = {"error": str(exc)}
@@ -95,15 +104,14 @@ def main() -> None:
             hits.append({
                 "census": name,
                 "name": m.name(),
-                "volume": float(m.volume()),
+                "volume": mp.nstr(_vol(m), 20),
                 "num_cusps": m.num_cusps(),
-                "rel_error_vs_target": float(
-                    (mpf(str(m.volume())) - target) / target),
+                "rel_error_vs_target": mp.nstr((_vol(m) - target) / target, 12),
             })
         vol_max, top_name, _ = ceiling_of(census)
         ceilings[name] = {
             "manifolds": n_total,
-            "volume_ceiling": vol_max,
+            "volume_ceiling": mp.nstr(vol_max, 20),
             "ceiling_manifold": top_name,
             "reaches_band": vol_max >= lo,
         }
@@ -123,8 +131,8 @@ def main() -> None:
         "m_tau_over_m_e": str(M_TAU_OVER_M_E),
         "q0": mp.nstr(Q_MP, 20),
         "vol_target_k2": mp.nstr(target, 20),
-        "band_rel": BAND_REL,
-        "band": [lo, hi],
+        "band_rel": mp.nstr(BAND_REL, 12),
+        "band": [mp.nstr(lo, 20), mp.nstr(hi, 20)],
     })
     wb.add_data("censuses", ceilings)
     wb.add_data("hits", hits)
@@ -158,16 +166,16 @@ def main() -> None:
                 "sweep cannot refute the identity."))
     out = wb.save()
 
-    print(f"target Vol (k=2) = {mp.nstr(target, 12)}   band = [{lo:.4f}, {hi:.4f}]")
+    print(f"target Vol (k=2) = {mp.nstr(target, 12)}   band = [{mp.nstr(lo, 8)}, {mp.nstr(hi, 8)}]")
     for name, c in ceilings.items():
         print(f"  {name}: {c.get('manifolds','?')} manifolds, "
-              f"ceiling {c.get('volume_ceiling',0):.4f} "
+              f"ceiling {c.get('volume_ceiling','?')} "
               f"({c.get('ceiling_manifold','')}), reaches band: "
               f"{c.get('reaches_band')}")
     print(f"total searched: {total_searched}   hits in band: {len(hits)}")
     for h in hits:
-        print(f"    HIT {h['census']} {h['name']} Vol={h['volume']:.6f} "
-              f"rel={h['rel_error_vs_target']:+.4f}")
+        print(f"    HIT {h['census']} {h['name']} Vol={mp.nstr(mpf(h['volume']), 8)} "
+              f"rel={h['rel_error_vs_target']}")
     print(f"witness -> {out}")
 
 

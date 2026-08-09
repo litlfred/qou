@@ -1,0 +1,154 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T12:59:59.673499+00:00",
+  "commitSha": "c8bdca83b37aee0dedcbe65caf24d687b0bf2650",
+  "assertions": [
+    {
+      "name": "measured_N_power_is_cusp_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "p = 3/2 fitted at both c = 1 and c = 2, agreeing to better than 1e-5 — not assumed at either"
+    },
+    {
+      "name": "missing_step_is_trivial_at_c_1_and_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "g(2)/g(1) = 1 to ~17 digits, which excludes 2^((c-1)/2), 2^(c-1), c, sqrt(c) and c^(1/4); only g == 1 survives, so the exponent tension does not leak into the constant"
+    },
+    {
+      "name": "naive_dglz_count_disagrees_at_c_equals_2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "delta = c with a c-independent offset reproduces 3/2 at c = 1 and demands 2 at c = 2, a gap of 1/2 in the exponent — so the dictionary needs a c-dependent step that is not written down"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 33,
+  "computation": "one-loop-cusp-normalisation-tension",
+  "scriptFile": "one_loop_cusp_normalisation_tension_probe.py",
+  "scriptHash": "a13c2ded717e",
+  "scriptCommitSha": "c8bdca83b37aee0dedcbe65caf24d687b0bf2650",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Makes the c >= 2 normalisation gap concrete. DGLZ eq (2.1)/(2.2) give Z ~ N^(delta/2) with delta = h1 - h0, which for a hyperbolic manifold with c cusps at the geometric rep is delta = c — a cusp-DEPENDENT power. The corpus extracts c_sigma with a cusp-INDEPENDENT N^(-3/2), and the exponent is fitted rather than assumed (1.49999998 at c=1, 1.4999992 at c=2). The measurement is the solid side: a wrong exponent makes the limit diverge or vanish as a power of N rather than biasing it by a constant, and c_sigma(L5a1) converges to 20 digits. So a c-dependent step is missing from the dictionary between the corpus's c_sigma and DGLZ's S_1/s_1 — most plausibly in the colored-Jones normalisation for a link. This is the independent reason constants cannot be transported between the two. Derives nothing.",
+  "auditOnly": "docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md",
+  "data": {
+    "dglz_prediction": {
+      "eq_2_1_power": "Z ~ hbar^(-delta/2) ~ N^(delta/2)",
+      "eq_2_2": "delta(rho) = h1 - h0,  hi = dim H^i(M; E_rho)",
+      "standard_count": "hyperbolic, c cusps, discrete faithful rep, adjoint coefficients: h0 = 0, h1 = c => delta = c",
+      "count_is_my_inference": "DGLZ state (2.2) but do not evaluate h1 for a cusped manifold anywhere in the paper; the h1 = c count is standard but is MINE here, not theirs",
+      "consequence": "a CUSP-DEPENDENT observable power"
+    },
+    "corpus_measurement": {
+      "4_1": {
+        "cusps": 1,
+        "p_measured": "1.49999998391397",
+        "p_minus_three_halves": "-1.609e-8",
+        "naive_dglz_power_delta_over_2_plus_1": "1.5",
+        "discrepancy": "1.6086e-8"
+      },
+      "L5a1": {
+        "cusps": 2,
+        "p_measured": "1.499999207860905",
+        "p_minus_three_halves": "-7.921e-7",
+        "naive_dglz_power_delta_over_2_plus_1": "2.0",
+        "discrepancy": "0.500001"
+      }
+    },
+    "exponent_is_self_certifying": {
+      "why": "a wrong p does not bias c_sigma by a constant — the discrepancy is a positive power of N -> infinity, so the limit diverges or vanishes instead of converging",
+      "alternative_power_runaway_factor": {
+        "N=100": "10.000036",
+        "N=1000": "31.62295",
+        "N=10000": "100.00073"
+      },
+      "observed": "c_sigma(L5a1) converges to 20 digits at p = 3/2, so 3/2 is correct at c = 2 as a matter of measurement"
+    },
+    "bound_on_the_missing_step": {
+      "model": "k_measured(c) = k_true * g(c) for a missing dictionary step g",
+      "g2_over_g1": "0.99999999999999999548",
+      "g3_over_g1": "1.0034899245169215177",
+      "digits_pinning_g2_over_g1": 17,
+      "candidates": {
+        "2^((c-1)/2)  [the retracted per-cusp factor]": {
+          "predicted_ratio": "1.4142135623731",
+          "survives": false
+        },
+        "2^(c-1)": {
+          "predicted_ratio": "2.0",
+          "survives": false
+        },
+        "c": {
+          "predicted_ratio": "2.0",
+          "survives": false
+        },
+        "sqrt(c)": {
+          "predicted_ratio": "1.4142135623731",
+          "survives": false
+        },
+        "c^(1/4)": {
+          "predicted_ratio": "1.1892071150027",
+          "survives": false
+        },
+        "1  [no step]": {
+          "predicted_ratio": "1.0",
+          "survives": true
+        }
+      },
+      "only_trivial_survives": true,
+      "reading": "every non-trivial candidate dies on the c=1 -> c=2 ratio; only g == 1 survives. So whatever fixes the exponent bookkeeping contributes exactly 1 to the CONSTANT at c = 1 and c = 2 — the tension is in the power and does not leak into k at the cusp numbers tested. This PARTLY RELIEVES the concern this probe opens with.",
+      "c3_is_not_a_cusp_law": "L6a4 deviates 0.35%, but a systematic c-dependence would have shown at c = 2 and does not (17 digits). More likely specific to that computation, as its own witness says"
+    },
+    "what_is_missing": "a c-dependent step in the dictionary between the corpus's c_sigma normalisation and DGLZ's S_1/s_1. Most plausibly the colored-Jones normalisation for a LINK: c components each coloured by N, and the eq (4.4) ratio against the solid torus. Never worked out here.",
+    "bears_on": [
+      "the retraction of 'the DGLZ /2 is the corpus's k' — constants cannot be transported while this is open",
+      "the retracted 2^((c-1)/2) per-cusp factor, which lived here",
+      "L6a4's unexplained 0.35% at c = 3, which sits in the same territory"
+    ],
+    "scope": "no derivation and no new measurement. Two fitted exponents read from committed witnesses, one cohomology count that is an inference rather than a DGLZ statement, and the size of the gap.",
+    "upstream_witness_hashes": [
+      {
+        "path": "whitehead-c-sigma-fig8-calib.witness.json",
+        "sha256": "0f2d669df493c15a5e9110333b2a5a35b86647ff337d08bda8393b18df23f374",
+        "size_bytes": 900,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
+      },
+      {
+        "path": "whitehead-c-sigma.witness.json",
+        "sha256": "f4e17f64700872e010e1ccbab6c214788a4a8d8ffbadcd1035ee527d536d3631",
+        "size_bytes": 1188,
+        "commitSha": "ce0bd1120573fc7e5f3f5a0ba647ecf243e6e5ca",
+        "scriptCommitSha": null,
+        "computedAt": "2026-08-01T23:11:36+00:00"
+      },
+      {
+        "path": "one-loop-c-sigma-percusp-dissolution.witness.json",
+        "sha256": "9a148a00706c1b3b38e6dd398eee4adad241da8740231a7c2eb0447523ea94e8",
+        "size_bytes": 4345,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
+      }
+    ]
+  }
+}

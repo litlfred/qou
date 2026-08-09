@@ -137,4 +137,27 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
 
+/-- **Refutable as written — and the docstring above explains how it got that way.**
+
+    The two conjuncts used to be class fields (`kappa0_eq_chi_A`,
+    `phi_1_image_eq_chi_A`) projected by this theorem: the #1 self-assuming
+    projection. Deleting the fields removed that defect and introduced #10 —
+    `kappa0`, `chi_A` and `phi_1_image` are now free, the surviving hypotheses
+    (`vdb_duality`, `drinfeld_rigidity`, `kappa_vanishes_def`) mention none of
+    them, and the `sorry` is unclosable rather than merely open.
+
+    The two criteria are adjacent, and deleting fields moves a block from one to
+    the other. The fix for both is the same: carry the hypotheses the derivation
+    needs, not the conclusion and not nothing (bean qou-octr, §10). -/
+theorem obstruction_trace_gap_unconstrained_false :
+    ¬ ∀ ctx : QouObstructionReductionContext,
+        ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+  intro h
+  have := h { hhCohDim := fun _ => 1, hhHomDim := fun _ => 1,
+              vdb_duality := fun _ _ => rfl, drinfeld_rigidity := rfl,
+              chi_A := 0, phi_1_image := 0, kappa0 := 1,
+              kappa_vanishes := fun n => (n : ℤ) ∣ 1,
+              kappa_vanishes_def := fun _ => Iff.rfl }
+  simp at this
+
 end QOU.AlgebraicSubstrate

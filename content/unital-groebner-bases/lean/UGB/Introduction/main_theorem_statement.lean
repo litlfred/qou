@@ -72,7 +72,8 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 theorem main_theorem_statement
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k) :
     ∀ f : AlgElement G k,
       (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
       (∀ nf₁ nf₂ : AlgElement G k,
@@ -86,6 +87,6 @@ theorem main_theorem_statement
   · -- Uniqueness: fully discharged by the proved composition-lemma
     -- corollary `normal_form_unique` (confluence of a GS basis).
     intro nf₁ nf₂ h₁ h₂
-    exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs hnqz f nf₁ nf₂ h₁ h₂
 
 end UGB.Introduction

@@ -40,13 +40,28 @@ group algebra of `B_n` by the relation `(σ_i - q)(σ_i + q⁻¹) = 0`
 (AGENTS.md §7a Hecke-Skein convention). Mathlib has only a basic
 stub; here we axiomatise the structure for downstream consumers. -/
 
-/-- The **Iwahori-Hecke algebra** `H_n(q)` as an abstract type-class
-over a commutative ring `R` and parameter `q : R`. The instance is
-the open infrastructure work — Mathlib lacks `H_n(q)` for n ≥ 3. -/
-class HeckeAlgebra (R : Type*) [CommRing R] (q : R) (n : ℕ) (H : Type*) [Ring H] [Algebra R H] : Prop where
-  /-- Hecke algebra structure on `H` (opaque marker for the open
-  infrastructure work; instance gates the categorical promotion). -/
+/-! ### Removed: the `QOU.Machinery.HeckeAlgebra` marker class
+
+There used to be a second class of that name here:
+
+```lean
+class HeckeAlgebra (R) [CommRing R] (q : R) (n : ℕ) (H) [Ring H] [Algebra R H] : Prop where
   hecke_structure : True
+```
+
+described as an "opaque marker … instance gates the categorical promotion". It
+gated nothing: the sole field is `True`, so `⟨trivial⟩` instantiates it and any
+`[HeckeAlgebra …]` hypothesis drawn from it carries no content — the skill's
+`: True`-carrier pattern (`lean-proof-vacuity-audit.md` §7).
+
+It also collided by name with the real `QOU.Hecke.HeckeAlgebra`
+(`embed` / `quadratic` / `braid` / `farCommute` / `spans`), which is what every
+actual consumer in the tree uses.
+
+Removed rather than fixed, because it had **zero consumers**: all five importers
+of this module referenced it zero times, and no file reached it via
+`open QOU.Machinery`. The real class now also has a real instance at `n = 2`
+(`QOU.Hecke.InstanceH2`), so a contentless marker has nothing left to mark. -/
 
 /-! ## Markov trace as a linear functional -/
 

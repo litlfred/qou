@@ -269,12 +269,39 @@ def flattening(M, full_neumann: bool = True):
     return v[:N], v[N:2 * N], v[2 * N:]
 
 
+def _curve_row(R, ne, i, spec):
+    """Log row of the peripheral curve `spec` on cusp `i`.
+
+    `spec` is either the legacy `0` / `1` (meridian / longitude) or a pair
+    `(p, q)` meaning `p*meridian + q*longitude`. The log-form gluing equation
+    of a peripheral curve is LINEAR in its homology class, so the general row
+    is that integer combination of the two stored rows — no new geometry, and
+    `nz_pair` stays valid downstream because it is linear too.
+    """
+    mer, lon = R[ne + 2 * i], R[ne + 2 * i + 1]
+    if isinstance(spec, (tuple, list)):
+        p, q = int(spec[0]), int(spec[1])
+    elif spec == 0:
+        p, q = 1, 0
+    elif spec == 1:
+        p, q = 0, 1
+    else:
+        raise ValueError(f"curve spec {spec!r} must be 0, 1, or a pair (p, q)")
+    if (p, q) == (0, 0):
+        raise ValueError(f"curve spec on cusp {i} is (0, 0) — not a curve")
+    return [p * a + q * b for a, b in zip(mer, lon)]
+
+
 def one_loop(M, curves=None):
     """DG 1-loop invariant tau of a hyperbolic manifold with any cusp number.
 
-    `curves` picks the peripheral row per cusp: 0 = meridian (default), 1 =
-    longitude. Changing one entry multiplies tau by that cusp's shape
-    (conjugated); see the module docstring.
+    `curves` picks the peripheral row per cusp. Legacy form: 0 = meridian
+    (default), 1 = longitude; changing one entry multiplies tau by that cusp's
+    shape (conjugated), see the module docstring. General form: a pair
+    `(p, q)` meaning `p*meridian + q*longitude` — which is what a Dehn twist
+    along the cusp does to the framing, and is the only way to ask about the
+    SAME manifold carrying a different peripheral structure (bean qou-vdvT).
+    The two forms may be mixed across cusps.
 
     Returns an `mpc`. The sign is not determined — DG's tau is defined up to
     one — and at `c >= 2` the overall normalization is inherited from `c = 1`,
@@ -299,7 +326,8 @@ def one_loop(M, curves=None):
             f"edge lattice specialises to rank {len(keep)} < N - c = {N - c}; "
             "the triangulation may not be geometric"
         )
-    periph = [_specialise(nz_pair(R[ne + 2 * i + curves[i]], N), N, zeta, zetap)
+    periph = [_specialise(nz_pair(_curve_row(R, ne, i, curves[i]), N),
+                          N, zeta, zetap)
               for i in range(c)]
 
     rows = [spec[i] for i in keep] + periph

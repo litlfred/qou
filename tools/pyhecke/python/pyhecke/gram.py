@@ -312,7 +312,7 @@ __all__ = [
     # Gram matrix
     "G", "G_INV", "gram_matrix", "gram_inverse",
     # 50-dps mpmath Gram / trace (NO float64)
-    "z_mp", "tr_m_mp", "gram_matrix_mp",
+    "z_mp", "h_mp", "tr_m_mp", "hm_mp", "gram_matrix_mp",
     "gram_matrix_mp_strings", "tr_m_mp_strings",
     # Native-dispatched atom kernels
     "build_atom_nf", "atom_per_generator_volumes", "has_native",
@@ -430,7 +430,30 @@ def _nf_of_word_mp(word, h_mp):
     return nf
 
 
-def gram_matrix_mp(dps: int = _GRAM_MP_DPS) -> list:
+def h_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
+    """h = q_0 − q_0⁻¹ at 50-dps mpmath — the mpf counterpart of the float
+    module constant `h`, which callers need to express σ_gen⁻¹ = σ_gen − h·I."""
+    with _mp.workdps(dps):
+        q = _mp.mpf(_q0_50dps_str())
+        return +(q - 1 / q)
+
+
+def hm_mp(nf, c, d, gen, dps: int = _GRAM_MP_DPS) -> list:
+    """mpmath analogue of `hm`: NF × (c·σ_gen + d·I), NO float64.
+
+    The mp path already had `_nf_of_word_mp`, but that folds only plain
+    generators — it cannot express an INVERSE, which needs
+    σ_gen⁻¹ = σ_gen − h·I, i.e. (c, d) = (1, −h). This is the public
+    general-multiply the float side has exposed as `hm` all along; without
+    it a caller wanting braid words with inverses has to reach for the
+    private `_hm_mp` or re-implement the structure constants.
+    """
+    with _mp.workdps(dps):
+        return [+v for v in _hm_mp([_mp.mpf(x) for x in nf],
+                                   _mp.mpf(c), _mp.mpf(d), gen, h_mp(dps))]
+
+
+def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
     """6×6 Gram matrix G_{ij} = tr_M(b_i·b_j) at 50-dps mpmath — NO float64.
 
     Computed entirely at the TRUE substrate q_0 (Q_50_DIGIT_STR): the NF
@@ -444,11 +467,22 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS) -> list:
     `nf_of_word(..., exact=True)` / `hm_exact` Fraction path, which uses
     the *approximate* rational q = 111/100 (≈ 2e-4 from q_0) — see the
     `gram.py` 111/100-approximation audit note.
+
+    `q` rebuilds the Gram at a DIFFERENT modulus (both h and the Markov
+    weight z move with it), for controls that ask whether a property of G
+    is structural in q or an accident at q_0. Default `None` keeps q_0, so
+    every existing caller is unaffected. This is the supported replacement
+    for assigning to the module global `_gram.h` and calling `_build_gram()`:
+    that mutates shared state, is not thread-safe, and only ever gave the
+    float64 Gram.
     """
     with _mp.workdps(dps):
-        q = _mp.mpf(_q0_50dps_str())
-        h_mp = q - 1 / q
-        trm = tr_m_mp(dps)
+        q = _mp.mpf(_q0_50dps_str()) if q is None else _mp.mpf(q)
+        qi_ = 1 / q
+        h_mp = q - qi_
+        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        trm = [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
+               +(h_mp * z_ ** 2 + z_)]
         Gm = [[_mp.mpf(0)] * 6 for _ in range(6)]
         for i in range(6):
             for j in range(6):

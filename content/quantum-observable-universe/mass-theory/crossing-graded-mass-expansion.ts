@@ -16,6 +16,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.ParticleInteractions.CrossingGradedMassExpansion",
     validation: "not_checked",
   },
-  uses: ["conj:lifted-crossing-locality"],
+  uses: [],
   cites: ["thurston1978"],
 });

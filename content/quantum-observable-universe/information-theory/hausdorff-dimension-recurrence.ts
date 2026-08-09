@@ -14,6 +14,5 @@ export default remark({
   ],
   uses: [
     "def:gravitational-constant",
-    "rem:hausdorff-dimension-classical-comparison",
   ],
 });

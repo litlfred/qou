@@ -54,13 +54,56 @@ proposal must pass two batteries before instantiating the class:
 A candidate requiring a fitted scale to pass either battery is a fit,
 not a derivation, and does not instantiate this class.
 
-**Enumeration result (exploratory, not wired).**
+**Enumeration result, and why it carries no corroboration.**
 The battery has been run over all $10{,}000$ helon-style assignments (3
-strands per fermion, per-strand twist in $\{-1, 0, +1\}$). Only $4$
-survive the spectrum + nucleon-GMN battery (no fitted parameters, exact
-rational arithmetic). The $u$-quark twist $\{0, 1, 1\}$ and the electron
-twist $\{-1, -1, -1\}$ are \emph{uniquely determined}; the $d$-quark and
-neutrino each admit two options. This is candidate-space feasibility: the
-twist multisets are enumerated, not derived from the framework's braid
-words, so the conjecture remains open. See
+strands per fermion, per-strand twist in $\{-1, 0, +1\}$), of which $4$
+survive. That ratio must not be read as a $2500\!:\!1$ filter: the battery
+collapses to a single linear equation per flavour, and the surviving count
+is multiset counting. Proved sorry-free in
+\texttt{QOU/StandardModel/TwistBatteryVacuity.lean}:
+
+\begin{enumerate}
+\item \textbf{The spectrum battery is exactly $T = 3Q$.} Both the candidate
+  $Y_t = 2(Q_{\mathrm{twist}} - I_3)$ and the target $Y = 2(Q - I_3)$ carry
+  the same $-2I_3$, which cancels. What remains is
+  $Q_{\mathrm{twist}} = Q$ --- the defining equation of
+  $Q_{\mathrm{twist}}$, not a test of it. The battery constrains nothing
+  about isospin.
+\item \textbf{The nucleon-doublet check is entailed}, by charge additivity
+  alone: $T_{\mathfrak{p}} = 2T_u + T_d = 3(2Q_u + Q_d)$ follows from
+  $T = 3Q$ on the quarks, so no surviving assignment can fail it. As
+  implemented it also states one condition twice --- its second clause
+  $2(T_{\mathfrak{p}}/3 - 1/2) = 1$ clears to $T_{\mathfrak{p}} = 3$, which
+  is its own first clause.
+\item \textbf{The $\mathbb{Z}_6$ condition is not a filter.} In
+  \texttt{strand\_twist\_y\_battery.py} it is a function of the
+  Standard-Model table alone and never sees the candidate assignment; it
+  runs as an input assertion and cannot exclude any multiset.
+\end{enumerate}
+
+So each flavour is filtered independently by one equation, and $4 = 1
+\times 2 \times 2 \times 1$ counts the multisets of three twists from
+$\{-1,0,+1\}$ with the required totals $3Q = (2, -1, 0, -3)$. The $u$-quark
+twist $\{0,1,1\}$ and the electron twist $\{-1,-1,-1\}$ are the two totals
+admitting a single multiset --- a fact about writing $2$ and $-3$ as a sum
+of three elements of $\{-1,0,+1\}$, not about the framework; the $d$-quark
+and neutrino each admit two. Passing the battery is therefore equivalent to
+choosing $t$ with $\sum_i t_i = 3Q$, which is always possible.
+
+The open content is unchanged and is the whole question: whether the twist
+multisets are \emph{forced} by the framework's braid words rather than
+merely consistent with them. See
 \texttt{strand-twist-y-battery.witness.json}.
+
+**A derived-twist repair, tested and refuted (scope-(a)).**
+The defect above is that $t$ is a free label. The natural repair is to
+replace it with the \emph{canonical} twist of the ribbon category --- on a
+simple object the twist acts by a scalar whose exponent is the content sum
+$c(\lambda) = \sum_{(i,j) \in \lambda} (j - i)$, a derived per-block
+integer. Taking $Q = c(\lambda)/3$ is parameter-free. It does not work: at
+$n = 3$ the content sums are $\{3, 0, -3\}$, giving the \emph{integer}
+charges $\{+1, 0, -1\}$ with no third-integer charge at all, and no
+$n \le 8$ yields both quark charges $\{+2/3, -1/3\}$
+(\texttt{ribbon\_twist\_charge\_quantum\_probe.py}). This is scope-(a) for
+the plain content-sum reading, not an exclusion of the ribbon route: other
+normalisations remain untested.

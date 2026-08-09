@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.ConfinementLevel",
     validation: "not_checked",
   },
-  uses: ["def:knot-operator-energy"],
+  uses: [],
   cites: [],
   tags: [
     "confinement",

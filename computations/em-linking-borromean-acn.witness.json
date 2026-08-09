@@ -1,26 +1,35 @@
 {
-  "engine": "python-float64",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T21:45:10.443527+00:00",
-  "commitSha": "30268f147e2a037ddfbfc57f0c3fa232981a1094",
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T09:12:25.965105+00:00",
+  "commitSha": "6d27d1c8a45eead7b77f2d006aaf7c2a5bb89293",
   "assertions": [
     {
       "name": "signed_linking_number_vanishes",
-      "computed": 1.2887359374507897e-15,
-      "expected": 0.0,
+      "computed": "4.55e-32",
+      "expected": "0",
       "passed": true,
-      "tolerance": 1e-06,
+      "tolerance": "1e-6",
       "unit": "linking number",
       "source": "Brunnian control: the SIGNED Gauss integral over a Borromean component pair must vanish, validating both the quadrature and the realisation."
     },
     {
       "name": "acn_converged",
-      "computed": 3.680847791009967e-07,
-      "expected": 0.0,
+      "computed": "7.16e-22",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0.0001,
+      "tolerance": "1e-18",
       "unit": "ACN",
-      "source": "Grid refinement n=400 -> n=800 changes ACN by less than 1e-4."
+      "source": "Dropping the working precision by 10 dps moves the ACN by less than 1e-18 -- the quadrature, not the arithmetic, is what is being checked. The old form of this assertion compared two grid sizes at a 1e-4 tolerance and passed while the value was wrong in its 7th digit."
+    },
+    {
+      "name": "float64_midpoint_was_wrong_in_the_7th_digit",
+      "computed": "3.39e-8",
+      "expected": "3.4e-8",
+      "passed": true,
+      "tolerance": "1e-8",
+      "unit": "ACN",
+      "source": "The superseded n=800 midpoint value differs from the converged one by ~3.4e-8, against the 17 digits it was published with. Recorded as a measured claim so the regression cannot come back unnoticed."
     },
     {
       "name": "acn_nonnegative_above_unlink_bound",
@@ -42,11 +51,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 45,
   "computation": "em-linking-borromean-acn",
   "scriptFile": "em_linking_borromean_acn_probe.py",
-  "scriptHash": "93edc661ada2",
-  "scriptCommitSha": "ed155dd46581b6f1ca8ff78a0fca3c89eb8b51d6",
+  "scriptHash": "1a49382f3cfa",
+  "scriptCommitSha": "42e321adfd7b4c0fad2a4975e6da86e6dd44a33c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +64,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY first-principles computation of the average crossing number (ACN) of a Borromean component PAIR -- the quantity the Freedman-He template fit left uncomputed (beans qou-0hdx, qou-8aed). Gauss integral with |numerator| on the standard mutually-orthogonal-ellipse realisation; the signed integral is computed alongside as a control and must vanish (Brunnian). ACN is realisation-dependent and bounds the Freedman-He asymptotic crossing number from ABOVE, with the Borromean minimal crossing number (2 per pair) bounding it from below. Nothing wired.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -69,82 +80,93 @@
     "method": {
       "integral": "ACN = (1/4pi) int int |det[x'(s),y'(t),x-y]| / |x-y|^3 ds dt",
       "realisation": "three mutually orthogonal ellipses, semi-axes (a,b), cyclically permuted -- the standard Borromean model",
-      "quadrature": "midpoint rule on [0,2pi]^2 (spectral for smooth periodic)",
-      "precision": "float64; smooth integrand over disjoint curves, no singularity"
+      "numerator_closed_form": "det[x'(s),y'(t),x-y] = a*b*(b cos t - a sin s); the triple product's two surviving terms collapse by sin^2 s + cos^2 s = 1",
+      "quadrature": "mpmath adaptive quadrature, SPLIT at the kink b cos t = a sin s where |num| is only C^0; domain folded to a quarter using the two symmetries of the unsigned integrand",
+      "precision": "mpmath at 30 dps",
+      "control_not_folded": "the signed integral is computed on the FULL domain: it is odd under (s,t) -> (-s, pi-t), which preserves the quarter domain, so a folded control would vanish identically and test nothing"
     },
-    "convergence": {
-      "n=200": {
-        "linking": -3.947678561936733e-16,
-        "acn": 1.642640678970506
+    "precision_check": {
+      "acn_at_dps": {
+        "30": "1.642637681773124472637643",
+        "20": "1.64263768177312"
       },
-      "n=400": {
-        "linking": -1.7586563239426295e-15,
-        "acn": 1.6426373476085445
+      "agreement_between_them": "7.16e-22",
+      "superseded_float64_midpoint": {
+        "n=200": {
+          "linking": "-3.95e-16",
+          "acn": "1.6426406789705059"
+        },
+        "n=400": {
+          "linking": "-1.76e-15",
+          "acn": "1.6426373476085445"
+        },
+        "n=800": {
+          "linking": "-1.29e-15",
+          "acn": "1.6426377156933236"
+        }
       },
-      "n=800": {
-        "linking": -1.2887359374507897e-15,
-        "acn": 1.6426377156933236
-      }
+      "float64_n800_error": "3.39e-8",
+      "reading": "The old n=800 midpoint value was published to 17 digits and is wrong in its 7th: the |.| kink caps midpoint convergence at algebraic. Splitting at the kink removes the cap. The signed control shows the contrast in the same table -- with no absolute value the integrand is analytic and float64 already had it to ~1e-16."
     },
     "aspect_ratio_sweep": {
       "a/b=1.2000": {
-        "linking": 2.3341469964017145e-18,
-        "acn": 1.659995284455103
+        "linking": "1.96e-31",
+        "acn": "1.6599961191547910924"
       },
       "a/b=1.5000": {
-        "linking": -2.8312772532585075e-17,
-        "acn": 1.6351007310700219
+        "linking": "6.04e-32",
+        "acn": "1.6351011288428293434"
       },
       "a/b=1.6180": {
-        "linking": -1.7586563239426295e-15,
-        "acn": 1.6426373476085445
+        "linking": "4.55e-32",
+        "acn": "1.6426376817731244726"
       },
       "a/b=2.0000": {
-        "linking": 1.4633815515930108e-16,
-        "acn": 1.6792126031141343
+        "linking": "2.34e-32",
+        "acn": "1.6792121438909128791"
       },
       "a/b=3.0000": {
-        "linking": -1.863046320659943e-16,
-        "acn": 1.7640099547255943
+        "linking": "8.37e-33",
+        "acn": "1.7640103798453632622"
       }
     },
     "bounds": {
       "lower_bound_minimal_crossing_number_per_pair": 2,
-      "computed_ACN_golden_realisation": 1.6426377156933236,
+      "computed_ACN_golden_realisation": "1.6426376817731244726",
       "ACN_range_over_sweep": [
-        1.6351007310700219,
-        1.7640099547255943
+        "1.6351011288428293434",
+        "1.7640103798453632622"
       ],
       "reading": "2 <= C_true(pair) <= ACN(realisation); the ACN is an upper bound on Freedman-He's minimised asymptotic crossing number."
     },
     "comparison_to_template_fit": {
       "Vol~A": {
-        "target": 4.7929826,
-        "acn_over_target": 0.3427172290784706,
-        "rel_diff_pct": -65.72827709215294
+        "target": "4.7929826",
+        "acn_over_target": "0.342717222001",
+        "rel_diff_pct": "-65.7282777999"
       },
       "Vol~Z": {
-        "target": 3.9913751,
-        "acn_over_target": 0.4115468164576473,
-        "rel_diff_pct": -58.84531835423527
+        "target": "3.9913751",
+        "acn_over_target": "0.411546807959",
+        "rel_diff_pct": "-58.8453192041"
       }
     },
     "corrected_lower_bound": "The first version of this probe asserted ACN >= 2, taking the '2 crossings per pair' of the standard Borromean DIAGRAM as a lower bound. That assertion FAILED (ACN = 1.6426) and it was WRONG: a pair of Borromean components, considered on its own as a 2-component link, is the UNLINK -- minimal crossing number 0, not 2. The 2-per-pair count is a property of the 3-component diagram, not of the pair. So the correct bound is 0 <= C_true(pair) <= ACN, and the computed value violates nothing. The failure is recorded rather than deleted.",
     "total_link_reading": {
-      "ACN_pair": 1.6426377156933236,
-      "ACN_total_link_3_pairs": 4.927913147079971,
+      "ACN_pair": "1.6426376817731244726",
+      "ACN_total_link_3_pairs": "4.9279130453193734179",
       "comparison": {
         "Vol~A": {
-          "target": 4.7929826,
-          "rel_diff_pct": 2.815168723541171
+          "target": "4.7929826",
+          "rel_diff_pct": "2.81516660042"
         },
         "Vol~Z": {
-          "target": 3.9913751,
-          "rel_diff_pct": 23.464044937294183
+          "target": "3.9913751",
+          "rel_diff_pct": "23.4640423878"
         }
       },
-      "realisation_spread_pct": 7.847696569000457,
-      "status": "CANDIDATE ONLY -- explicitly not a result. The per-pair ACN (1.643) falls 59-66% short of the template-implied constant, so the simplest crossing-number hypothesis FAILS. Summing over all three pairs gives 4.928, which lands within 2.8% of the Vol~A target (4.793). There is a genuine physical argument for the total-link reading -- Brunnian-ness means a pair CANNOT be considered in isolation, since removing the third component unlinks it, so the energy attributable to a pair may legitimately involve the whole link's crossing structure. But two cautions bite hard: (i) the kappa data is already per-pair normalised, so multiplying by 3 risks double-counting, and (ii) the ACN varies by 7.8% across the aspect-ratio sweep, which is COMPARABLE TO the 2.8% agreement -- the match is within realisation noise and must not be read as a confirmation."
+      "realisation_spread_pct": "7.84769839587",
+      "status": "CANDIDATE ONLY -- explicitly not a result. The per-pair ACN (1.643) falls 59-66% short of the template-implied constant, so the simplest crossing-number hypothesis FAILS. Summing over all three pairs gives 4.928, which lands within 2.8% of the Vol~A target (4.793). There is a genuine physical argument for the total-link reading -- Brunnian-ness means a pair CANNOT be considered in isolation, since removing the third component unlinks it, so the energy attributable to a pair may legitimately involve the whole link's crossing structure. But two cautions bite hard: (i) the kappa data is already per-pair normalised, so multiplying by 3 risks double-counting, and (ii) the ACN varies by 7.85% across the aspect-ratio sweep, which is COMPARABLE TO the 2.8% agreement -- the match is within realisation noise and must not be read as a confirmation."
     }
   }
 }

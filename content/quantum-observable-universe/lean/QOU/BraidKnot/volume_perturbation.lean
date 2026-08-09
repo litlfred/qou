@@ -81,4 +81,18 @@ theorem volume_perturbation [ctx : VolumePerturbationContext] :
   -- Ref: [manuscript] quantum-observable-universe/mass-theory/volume-perturbation-formula.md
   sorry
 
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem volume_perturbation_unconstrained_false :
+    ¬ ∀ ctx : VolumePerturbationContext, ∀ k : ℕ, 4 ≤ k →
+        ctx.δΦ k = ctx.z ^ 2 * ctx.Vol_41 * qIntSym ctx.q ((k : ℤ) - 3) := by
+  intro h
+  have := h { q := 1, z := 1 / (Real.sqrt 1 + 1 / Real.sqrt 1), Vol_41 := 0,
+              δΦ := fun _ => 1, z_def := rfl } 4 (by norm_num)
+  norm_num at this
+
 end QOU.BraidKnot

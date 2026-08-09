@@ -87,7 +87,11 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
       exact normal_form_exists degLexOrder (qSerreRewritingSystem k qs) (qSerre_is_gs_basis k qs) f
     · -- Uniqueness against the q-Serre GS basis.
       intro nf₁ nf₂ h₁ h₂
+      -- The "no quasi-zeros" hypothesis (Leitner–Pawloski) is discharged
+      -- here: the ground algebra is the free algebra on `SU2Gen`, which has
+      -- generators, so left multiplication by one of them is injective.
       exact normal_form_unique degLexOrder (qSerreRewritingSystem k qs)
-        (qSerre_is_gs_basis k qs) f nf₁ nf₂ h₁ h₂
+        (qSerre_is_gs_basis k qs) (noQuasiZerosFree_of_generator SU2Gen.K)
+        f nf₁ nf₂ h₁ h₂
 
 end UGB.BuchbergerPBW

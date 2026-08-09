@@ -62,10 +62,10 @@ theorem buchberger_theorem
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k) :
     IsGrobnerShirshovBasis G k ord sys ↔
-      ((∀ oc : OverlapComposition G k,
+      ((∀ oc : OverlapComposition G k ord,
           oc.rule₁ ∈ sys.rules → oc.rule₂ ∈ sys.rules →
           ∃ nf, ReducesToNF ord sys oc.spoly nf ∧ nf.isZero) ∧
-       (∀ ic : InclusionComposition G k,
+       (∀ ic : InclusionComposition G k ord,
           ic.inner ∈ sys.rules → ic.outer ∈ sys.rules →
           ∃ nf, ReducesToNF ord sys ic.spoly nf ∧ nf.isZero)) := by
   constructor

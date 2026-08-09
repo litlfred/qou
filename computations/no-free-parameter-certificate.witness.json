@@ -60,30 +60,12 @@
         "untraceable": [
           {
             "module": "qbeta_t4_stokes3_crux_probe",
-            "line": 47,
+            "line": 60,
             "value": 3,
             "assigned_to": "A_omega",
             "class": "UNTRACEABLE",
             "verdict": null,
             "source": "A_omega = 3"
-          },
-          {
-            "module": "qbeta_t4_stokes3_crux_probe",
-            "line": 43,
-            "value": 0.00968298,
-            "assigned_to": "S_muon",
-            "class": "UNTRACEABLE",
-            "verdict": null,
-            "source": "S_muon = +0.00968298"
-          },
-          {
-            "module": "qbeta_t4_stokes3_crux_probe",
-            "line": 44,
-            "value": 0.03945936,
-            "assigned_to": "S_proton",
-            "class": "UNTRACEABLE",
-            "verdict": null,
-            "source": "S_proton = -0.03945936"
           }
         ]
       }
@@ -93,35 +75,17 @@
       "unresolved_imports": 0,
       "unit_or_structural_floats": 23,
       "adjudicated_legit": 0,
-      "untraceable": 3
+      "untraceable": 1
     },
     "untraceable": [
       {
         "module": "qbeta_t4_stokes3_crux_probe",
-        "line": 47,
+        "line": 60,
         "value": 3,
         "assigned_to": "A_omega",
         "class": "UNTRACEABLE",
         "verdict": null,
         "source": "A_omega = 3"
-      },
-      {
-        "module": "qbeta_t4_stokes3_crux_probe",
-        "line": 43,
-        "value": 0.00968298,
-        "assigned_to": "S_muon",
-        "class": "UNTRACEABLE",
-        "verdict": null,
-        "source": "S_muon = +0.00968298"
-      },
-      {
-        "module": "qbeta_t4_stokes3_crux_probe",
-        "line": 44,
-        "value": 0.03945936,
-        "assigned_to": "S_proton",
-        "class": "UNTRACEABLE",
-        "verdict": null,
-        "source": "S_proton = -0.03945936"
       }
     ],
     "adjudicated": []
