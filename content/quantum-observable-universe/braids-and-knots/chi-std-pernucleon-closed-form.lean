@@ -21,6 +21,7 @@ import Mathlib.Data.Real.Sqrt
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.ChiStdPerNucleon
 
@@ -63,6 +64,21 @@ instance : Add M2 := ⟨add⟩
 instance : One M2 := ⟨one⟩
 instance : HSMul ℝ M2 M2 := ⟨smul⟩
 
+/-! The four instances above are anonymous, so a goal states `X * Y` as
+`HMul.hMul X Y` rather than as `M2.mul X Y`.  Passing `M2.mul` to `simp` then
+matches nothing — `simp` reports it as an *unused* argument — and because the
+argument of a projection never becomes a constructor application, terms like
+`(1 • {a11 := q, ..}).a11` are left unreduced and the closed-form proofs below
+stall with a 24 kB goal.
+
+These three `rfl` bridges are what let `simp` cross the instance boundary.  They
+are deliberately **not** `@[simp]`: they are passed explicitly at the two call
+sites, so nothing else in the file changes behaviour. -/
+
+lemma mul_eq (X Y : M2) : X * Y = M2.mul X Y := rfl
+lemma one_eq : (1 : M2) = M2.one := rfl
+lemma smul_eq (c : ℝ) (X : M2) : c • X = M2.smul c X := rfl
+
 @[simp] lemma trace_one : (1 : M2).trace = 2 := by
   show (M2.one.a11 + M2.one.a22) = 2
   norm_num [M2.one]
@@ -86,6 +102,18 @@ noncomputable def hoefsmit_σ₂ (q : ℝ) : M2 :=
 /-- q-number `[k]_q := (q^k - q^{-k}) / (q - q⁻¹)` for `k ∈ ℕ, k ≥ 0`. -/
 noncomputable def qNum (q : ℝ) (k : ℕ) : ℝ :=
   (q^k - q^(-(k : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket**, unconditional — the local body
+differs from `qIntBal` only in writing the negative power as a `zpow`
+(`q ^ (-(k : ℤ))` rather than `q⁻¹ ^ k`), which is `zpow_neg` + `inv_pow`.
+
+This site was the one the `qou-qint` drain could not reach while the file was
+red on `main`; it is migrated now that the two closed-form theorems above are
+proved. -/
+theorem qNum_eq_canonical (q : ℝ) (k : ℕ) :
+    qNum q k = QOU.QInteger.qIntBal q k := by
+  simp [qNum, QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal,
+    zpow_neg, zpow_natCast, inv_pow]
 
 /-- Core closed-form: `(H_A / 4) · Σ_{k ∈ indices} [k]_q`. -/
 noncomputable def chiStdClosedForm (q : ℝ) (indices : List ℕ) : ℝ :=
@@ -167,10 +195,23 @@ noncomputable def neutronBraid (H_A : ℝ) : NucBraidWord :=
     `computations/chi-std-pernucleon.witness.json`.
 
     In Lean, the full matrix expansion produces expressions of degree
-    up to 22 in q that ring-normalise to the claimed Laurent form.
-    We use `sorry` for the matrix-expansion step and cite the sympy
-    verification.  The rest of the scaffolding (structure, index
-    sets, q-number definitions, ladder shape) is fully formalised. -/
+    up to 30 in q that ring-normalise to the claimed Laurent form.
+    **Both closed-form theorems below are now proved outright** — no
+    `sorry`, and the sympy run is corroboration rather than the
+    warrant.  What the proofs need beyond `simp`/`field_simp`/`ring`
+    is three ingredients, none of which the tactic block can find on
+    its own:
+
+      1. `M2.{mul,one,smul}_eq` — the anonymous `Mul`/`One`/`HSMul`
+         instances mean the goal says `HMul.hMul`, so passing `M2.mul`
+         to `simp` matches nothing and the structure projections never
+         reduce.  See the note beside those lemmas.
+      2. `Real.sq_sqrt` at the radicand `1 + q² + q⁴`, supplied at both
+         `√²` and `√⁴`.  Step 3's claim that the off-diagonal
+         `√(q⁴+q²+1)` contributions cancel is what this discharges;
+         the surviving even powers are polynomial.
+      3. `q ≠ 0` and `q² − 1 ≠ 0` for `field_simp`, the latter coming
+         from the `q − q⁻¹` in `qNum`. -/
 
 /- **Main theorem (proton)**: the per-nucleon χ_std closed form.
 
@@ -194,12 +235,12 @@ noncomputable def neutronBraid (H_A : ℝ) : NucBraidWord :=
     in q has terms at powers {±11, ±9, ±7, ±3}, which regroup into
     `(H_A / 4) · ([11]_q + [9]_q + [7]_q + [3]_q)`.
 
-    The matrix expansion in step 1-3 is verified symbolically by
-    sympy (see `chi_std_pernucleon_derivation.py`).  The Lean
-    formalization of steps 1-4 as a single `ring`/`field_simp`
-    computation is mechanical but voluminous; we record it as a
+    The matrix expansion in steps 1-3 is also verified symbolically by
+    sympy (see `chi_std_pernucleon_derivation.py`).  Steps 1-4 are now
+    discharged in Lean as a single `simp`/`ring_nf`/`field_simp`/`ring`
+    computation, so the sympy run is a cross-check rather than the
+    citation standing in for a proof.
     -- Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof.
-    sorry with this citation.
 
     Ref: [manuscript] docs/chi-std-pernucleon-theorem.md §Proof,
          computations/chi-std-pernucleon.witness.json.
@@ -211,7 +252,17 @@ noncomputable def neutronBraid (H_A : ℝ) : NucBraidWord :=
 theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (protonBraid (q - q⁻¹)) =
       chiStdClosedForm q protonIndices := by
-  simp [chiStdEval, evalWord, protonBraid, heckeFactorMat, hoefsmit_σ₁, hoefsmit_σ₂, M2.add, M2.mul, M2.smul, M2.one, M2.trace, chiStdClosedForm, protonIndices, qNum]
+  simp [chiStdEval, evalWord, protonBraid, heckeFactorMat, hoefsmit_σ₁, hoefsmit_σ₂, M2.mul_eq, M2.one_eq, M2.smul_eq,
+    M2.add, M2.mul, M2.smul, M2.one, M2.trace, chiStdClosedForm, protonIndices, qNum]
+  have hs : Real.sqrt (1 + q ^ 2 + q ^ 4) ^ 2 = 1 + q ^ 2 + q ^ 4 :=
+    Real.sq_sqrt (by positivity)
+  have hs4 : Real.sqrt (1 + q ^ 2 + q ^ 4) ^ 4 = (1 + q ^ 2 + q ^ 4) ^ 2 := by
+    rw [show (4 : ℕ) = 2 * 2 from rfl, pow_mul, hs]
+  have hq0 : q ≠ 0 := by positivity
+  have hne : (-1 : ℝ) + q ^ 2 ≠ 0 := by nlinarith
+  have hne' : q ^ 2 - 1 ≠ 0 := by nlinarith
+  ring_nf
+  simp only [hs, hs4]
   field_simp
   ring
 
@@ -220,7 +271,17 @@ theorem chi_std_proton_closed_form (q : ℝ) (hq : 1 < q) :
 theorem chi_std_neutron_closed_form (q : ℝ) (hq : 1 < q) :
     chiStdEval q (neutronBraid (q - q⁻¹)) =
       chiStdClosedForm q neutronIndices := by
-  simp [chiStdEval, evalWord, neutronBraid, heckeFactorMat, hoefsmit_σ₁, hoefsmit_σ₂, M2.add, M2.mul, M2.smul, M2.one, M2.trace, chiStdClosedForm, neutronIndices, qNum]
+  simp [chiStdEval, evalWord, neutronBraid, heckeFactorMat, hoefsmit_σ₁, hoefsmit_σ₂, M2.mul_eq, M2.one_eq, M2.smul_eq,
+    M2.add, M2.mul, M2.smul, M2.one, M2.trace, chiStdClosedForm, neutronIndices, qNum]
+  have hs : Real.sqrt (1 + q ^ 2 + q ^ 4) ^ 2 = 1 + q ^ 2 + q ^ 4 :=
+    Real.sq_sqrt (by positivity)
+  have hs4 : Real.sqrt (1 + q ^ 2 + q ^ 4) ^ 4 = (1 + q ^ 2 + q ^ 4) ^ 2 := by
+    rw [show (4 : ℕ) = 2 * 2 from rfl, pow_mul, hs]
+  have hq0 : q ≠ 0 := by positivity
+  have hne : (-1 : ℝ) + q ^ 2 ≠ 0 := by nlinarith
+  have hne' : q ^ 2 - 1 ≠ 0 := by nlinarith
+  ring_nf
+  simp only [hs, hs4]
   field_simp
   ring
 
