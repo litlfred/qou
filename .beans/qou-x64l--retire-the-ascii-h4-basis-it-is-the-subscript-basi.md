@@ -117,3 +117,31 @@ right-hand side; or abandon `simp` for an explicit `calc`/`rw` chain over the
 unfolded sum. The file carries this note inline so it is not rediscovered.
 
 Nothing is retired yet — the ASCII chain stays until `trM4_cyclic` lands.
+
+## 2026-08-09 (later) — third approach, third failure mode; stop guessing at `simp`
+
+`mulσ_farcomm02` (far-commutation on the **ASCII** generators) is now proved in
+`H4BasisBridge.lean` — it is needed regardless, and it was the fix implied by the
+second failure. It does not close `phi_mulNF`.
+
+Failure modes so far, all recorded in the file:
+
+1. `phi` in the same `simp only` as `← phi_word_*` — `phi` unfolds first, patterns destroyed.
+2. Two-pass split — the linter reports **all 24 `phi_word_*` unused**. `simp`
+   rewrites innermost-first, so the single-generator rewrites collapse each
+   composite step by step into the *subscript* word shape; for the 6 differing
+   words that is not the ASCII word, so the longer lemmas never match.
+3. Adding `mulσ_farcomm02` to normalise those 6 — still fails, and the RHS now
+   comes out with **70 terms instead of 24**, with coefficients indexed by
+   `invIdx j` rather than by literals. `simp` is mangling the coefficient vector,
+   not just failing to rewrite.
+
+**Recommendation: abandon the unfold-and-`ring` route.** Three attempts have each
+broken somewhere different, which is the signal that the shape is wrong rather
+than the tactic call. The tree already has the structured accessors —
+`mulNF₄_e_right`, `mulNF₄_expand_right`, `mulNF₄_sum_left/right`,
+`basis_decomp₄` — and `MarkovTraceH4` has the ASCII counterparts. Express both
+products as a `Finset.sum` over the basis and reindex along `piIdx` with
+`Finset.sum_nbij` / `Equiv.sum_comp`, so the 24 terms are never written out and
+`simp` never sees a 70-term polynomial. The `phi_word_*` lemmas are exactly the
+per-term input such a proof needs.
