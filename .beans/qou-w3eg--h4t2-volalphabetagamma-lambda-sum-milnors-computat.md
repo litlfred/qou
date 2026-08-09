@@ -99,17 +99,49 @@ tree, which is the one piece of luck here.
 >    factor of 2 in the `Λ' = −log(2 sin)` normalization would leave a residual
 >    `ψ·log 2` that no Λ-identity can absorb.
 
-> **H4-3 is now the ONLY joint between the two ends.** H4-2 supplies the 2-D
-> base integral, H4-4 evaluates the 1-D one; what is missing is the polar change
-> of variables between them — the statement that the 2-D integral over the right
-> triangle `{(r,φ) : 0 < φ < ψ, 0 < r < cos ψ / cos φ}` equals
-> `∫₀^ψ −¼·log((cos²φ − cos²ψ)/cos²φ) dφ`. `lintegral_comp_polarCoord_symm` and
-> `integral_comp_polarCoord_symm` are both present in the restored olean cache
-> (`polarCoord.target = Ioi 0 ×ˢ Ioo (−π) π`), so this is not blocked on
-> infrastructure; the cost is (a) describing the triangle in polar coordinates,
-> (b) the inner radial integral `∫₀^{r₀} r dr/(2(R²−r²)) = −¼·log(1 − r₀²/R²)`,
-> and (c) a second `∫⁻`/`∫` bridge, since H4-2's output is an `∫⁻` while H4-4 is
-> Bochner.
+> **H4-3 is DONE (2026-08-09, sorry-free) — PR #4842**, file
+> `QOU/Archimedean/OrthoschemePolarReduction.lean`. All three predicted costs
+> were real and none larger than predicted: the polar description of the
+> triangle, the radial integral, and a second `∫⁻`/`∫` bridge.
+>
+> **Composing H4-2 + H4-3 + H4-4 gives the tier's first three-dimensional
+> statement:**
+>
+>     hypVolume (chimney (orthoBase R ψ) R) = ENNReal.ofReal (Lob ψ / 2)
+>
+> (`hypVolume_chimney_orthoBase`) — a hyperbolic volume on the left, `Λ` on the
+> right. **Still not about ideal tetrahedra**: that a chimney over an inscribed
+> triangle *is* the ideal tetrahedron of the matching dihedral angles is
+> Milnor's geometric identification and is untouched.
+>
+> **Three things a later agent should not re-derive:**
+> 1. **The region is defined in CARTESIAN coordinates** (`orthoBase R ψ`, the
+>    open triangle with vertices `(0,0)`, `(R cos ψ, 0)`, `(R cos ψ, R sin ψ)`)
+>    and its polar description is a THEOREM (`mem_orthoBase_polar`). A
+>    polar-parameterised definition would have assumed the step being proved.
+> 2. **A single orthoscheme needs only the POINTWISE disk hypothesis.**
+>    `orthoBase_subset_disk`: the OPEN triangle lies strictly inside the disk
+>    (`x² + y² < x²/cos²ψ < R²`), so H4-2's `hypVolume_chimney_of_subset_disk`
+>    applies directly. The a.e. form (`hypVolume_chimney_of_ae_lt`) is still the
+>    one **H4-5** will need, because the CLOSED inscribed triangle has its three
+>    vertices *on* the circle.
+> 3. **The base integral carries no `R`.** The radial value depends only on
+>    `r₀/R = cos ψ / cos φ`. That is H2's dilation invariance surfacing, and it
+>    is why H4-4 could be stated with no radius in it.
+
+> **H4-5 is now the only open step of the tier** (H4-1 ✅ H4-2 ✅ H4-3 ✅
+> H4-4 ✅). What remains: cut the inscribed triangle at the circumcentre into
+> six orthoschemes, apply `hypVolume_chimney_orthoBase` to each, and pair the
+> halves into `Λ(α)+Λ(β)+Λ(γ)`. Two things make it more than bookkeeping:
+> (a) the six pieces must be shown to tile the triangle up to null sets, with
+> the angle at the circumcentre for the two pieces adjacent to a side equal to
+> the *inscribed* angle at the opposite vertex (central angle = twice inscribed
+> angle) — that is the geometric input that makes the six halves pair up;
+> (b) the **obtuse case** — with the circumcentre outside the triangle a piece
+> enters with a **minus** sign, and Milnor states the subdivision only "if all
+> three angles are acute". `ψ < π/2` in `hypVolume_chimney_orthoBase` is exactly
+> where that bites. Still wanting Ratcliffe §10.4 or full-text Thurston Ch. 7
+> for the sign convention.
 
 **H4-5 — assemble.** The 6 halves pair up into `Λ(α)+Λ(β)+Λ(γ)`. Bookkeeping
 once H4-4 is done, but the sign/orientation conventions are the classic place to
