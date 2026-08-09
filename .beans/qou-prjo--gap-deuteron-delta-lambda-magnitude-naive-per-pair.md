@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:09:10Z
-updated_at: 2026-08-09T01:30:00Z
+updated_at: 2026-08-09T02:45:00Z
 ---
 
 ## State (PR #4615, 2026-08-02)
@@ -260,3 +260,45 @@ vs #4832's 1.02092; D's far diagnostic crossing 3.4101 vs #4832's late fix. ⁴H
 additionally has a **second** on-branch crossing at **1.207893**.
 
 Scope-(a) throughout; **no scope-(b) exclusion claimed anywhere**.
+
+---
+## NA-Stokes trefoil discretization BUILT — route resolves NEGATIVE (PR #4798, 2026-08-08)
+
+Cherry-picked onto main 2026-08-09 (the PR's own branch carried a STALE copy of this
+bean, pre-dating the LEAD-1/LEAD-2/sign-crossing records, so only its two content
+files were taken and this record was written fresh).
+
+This BUILDS the thing the "Surviving direction" section above named as the wall:
+"needs a canonical discretization of the Yekutieli surface 2-form on the trefoil
+Seifert surface — data the corpus lacks." That data now exists.
+
+Construction (genus 1, trefoil σ₁³): Seifert matrix V=[[-1,1],[0,-1]], intersection
+form J = V − Vᵀ = [[0,1],[-1,0]]; germ q-curvature F_q=[δq₁,δq₂] built two
+principled ways (log germ; q-derivative germ) in the 2-dim Hecke rep; surface-ordered
+½∮∮[𝓕,𝓕] = J_ab[𝓕_a,𝓕_b] with 𝓕_k = U_k⁻¹ F_q U_k, across natural handle holonomies.
+
+RESULT = scope-(a) NEGATIVE, and it is the SHARP one for this route:
+- The transverse term IS genuinely nonzero on the single-generator σ₁³ channel — it
+  survives where the whole inter-crossing Magnus tower vanishes. So the object is real.
+- BUT c₂ = ‖Ω₂^⊥‖/h² ranges over 0 … 897 across the natural germ/handle choices and is
+  NEVER ≈ 1 (the g₂ ≈ 1.0087 that would close the deuteron). Sample: (q-deriv germ;
+  s₁,s₁²) → 0; (q-deriv; s₁,s₂) → 897; (log; s₁,s₂) → 617.
+- The surface→scalar map therefore carries O(100×) GAUGE FREEDOM the corpus does not
+  fix: the germ normalization plus the two H₁ handle holonomies.
+
+CONVERGENCE (why this matters beyond its own negative): this is the NUMERIC counterpart
+of #4818's Lean wall `transverse_nonzero_needs_noncommuting_curvature` — the Lean says a
+nonzero pairing forces position-dependent transported curvature; #4798 measures exactly
+how underdetermined that transport is. Same wall, two languages. Together with #4818's
+`listPairing_trace_zero` (and #4619's tr[A,B]=0), the picture is: the missing term is
+invisible to the scalar trace AND its transverse realization is gauge-underdetermined.
+
+REVIVING THE ROUTE needs a NEW PRINCIPLE fixing the germ + the two handle holonomies —
+not another discretization sweep. A c₂ selected because it lands near g₂ would be the
+forbidden fit. Honest scope: negative on the NATURAL discretizations tested; does NOT
+prove no discretization works (no invariant proved ⇒ scope-(a), not scope-(b)).
+
+Nothing wired, no fit, free_parameters=0. Bean stays OPEN.
+
+Files: docs/audits/2026-08-08-nastokes-surface-curvature-trefoil-negative.md;
+computations/probes/nastokes_surface_curvature_trefoil_probe.py.
