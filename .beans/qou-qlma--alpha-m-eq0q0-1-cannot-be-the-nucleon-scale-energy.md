@@ -107,3 +107,70 @@ step 3 of the bound above.
       unexamined default?
 - [ ] Lean: strengthen `QOU.QBeta.InterfaceScalar` with the universal floor
       (z <= 1/2 by AM-GM => B >= alpha ln 2), superseding `mu_unreachable`.
+
+## Item 3 RESOLVED: one-alpha is an unexamined default, not a claim
+
+The question was whether alpha is pinned tightly enough elsewhere that a
+different nuclear alpha would break something. Checked, and it is not.
+
+**The nucleon mass does not use alpha.** `canonical_mass.proton_neutron_mass_mev`
+returns the muon-anchored F_Bor identity from a witness, with — its own words —
+"deliberately NO formula fallback (owner directive 2026-07-19)". The dashboard's
++1.351 ppb / +2.389 ppb agreement for m_p/m_n is therefore NOT evidence for
+alpha; it is evidence for F_Bor. Changing the nuclear alpha cannot disturb it.
+
+**The meson path does use alpha, and it fails.** `meson_mass_from_hecke.py`
+builds `E_0 = m_e/(q0*(q0-1))`. Its witness records err_ppm of
+143220, 431487, 586718, 630059, 651679, 671777, 954572, 886388, 988878, 998158
+(i.e. 14% to 99.8%), with a single 1677 ppm (0.17%) outlier. That is not a
+success pinning alpha either.
+
+So nothing calibrated constrains alpha = 4.186 MeV. Its use as the
+nucleon-nucleon interface scale is a default that was never examined.
+
+## AND: the corpus already has TWO E_0 values in the same slot
+
+    E_0 = m_e/(q0(q0-1))        = 4.185981 MeV   DERIVED from q0
+    E_0_CALIBRATION_MEV = Q_b(n)= 0.782333 MeV   EXPERIMENTAL (CODATA 2022)
+    ratio                       = 5.350636
+
+Both are called "the E_0 calibration" and they are consumed by DISJOINT script
+families:
+
+    4.186  binding_canonical, derived_masses, meson_mass_from_hecke,
+           bar_pairing_binding_observable, deltalambda/{borromean_3body,
+           b4_nonsaturating, b4_multiplicative_cumulant, mu4_rhoF_cluster,
+           s5so3_geometric_wlambda_a4}, probes/{hecke_channel_binding,
+           binding_additive_linked_cluster, binding_triangle_3body}
+    0.782  pyhecke/constants.py (the package default!), qou-mass/hecke_characters,
+           canonical_tower, binding_block_multiplicative,
+           phase5/phase3_triton_binding_convention_b
+
+`mass_at_3A_proper`'s own CLI defaults to the 0.782 one
+(`--E0 default=E_0_CALIBRATION_MEV`, help text "β-decay Q = 0.78233341") while
+the binding path it feeds uses 4.186. That is a live inconsistency, not a
+historical one.
+
+EPISTEMIC NOTE, and it is the sharper half: 0.782333 is CODATA — an
+EXPERIMENTAL input. Adopting it as E_0 converts a derivation into a third
+calibration, which cuts against the framework's parameter-free claim. The fork
+is therefore not just numerical.
+
+## Where that leaves the deuteron
+
+    required E_0 for B(2H) = AME   =  2.394018 MeV
+    derived alpha  4.185981  ->  B = 3.889692   (+74.9%)
+    CODATA  Q_beta 0.782333  ->  B = 0.726959   (-67.3%)
+
+**Neither works, and the required value sits between them.** The bound from
+`bond_energy_floor` (alpha <= 3.209370) excludes the derived alpha and admits
+Q_beta, but Q_beta then undershoots by a factor of 3. So this is not a matter of
+picking the other existing constant — a nucleon-scale energy still has to be
+DERIVED, and its acceptance test is now two-sided:
+
+    2.394018 MeV to reproduce 2H exactly, and <= 3.209370 MeV to be admissible
+    at all.
+
+- [x] item 3 — is one-alpha a claim? No: unexamined default, nothing pins it
+- [ ] resolve the two-E_0 fork explicitly (which is THE E_0, and say so once)
+- [ ] `mass_at_3A_proper --E0` default disagrees with the path it feeds — fix
