@@ -59,3 +59,48 @@ shape** (quadratic n≥2, braid n≥3, far-commutativity n≥4; n≥5 adds nothi
 Every `[HeckeAlgebra R n q A]` site in the corpus is generic in `n`, so no
 theorem is waiting on this — it closes the honesty gap on the one instance that
 tests all three relations, and nothing beyond `n = 4` should be hand-built.
+
+## 2026-08-09 — the independence half is generated but NOT yet in the tree
+
+`computations/markov/gen_h4_word_operators.py` emits it:
+
+- `we{j}` — the 24 reduced-word operators, read out of `mulNF`'s word list so the
+  Lean and `hecke_regular_nf_table.py` cannot drift;
+- `we{j}_apply` — `we{j} R q (e0 R) = Pi.single j 1`;
+- `we{j}_mem` — membership in `H4Alg R q`, explicit `mul_mem` chains;
+- tail: `evalAtOne_comp_we`, `we_linearIndependent`, and
+  **`twentyFour_le_finrank : 24 ≤ Module.finrank R (H4Alg R q)`**.
+
+All 24 `_apply` and `_mem` lemmas compiled clean (≈2.5 min). The tail did not get
+a verified run — see below — so **nothing was added to the Lean tree**. The
+lakefile glob is `["QOU", "QOU.+"]`, so an unverified file dropped in `QOU/Hecke/`
+would be built by every `lake build`; it is parked in the session scratchpad
+instead.
+
+### Three measurements, in the order they were hit
+
+1. **`Matrix.vecCons` indexing costs 30×.** Indexing the words out of a
+   `![…] : Fin 24 → Module.End …` made a single evaluation lemma take about
+   **five minutes** — `simp` must reduce `WE R q 23` through twenty-three
+   `cons_val_succ` steps before it can touch the word. One `def` per word: about
+   **ten seconds**. Same theorem.
+
+2. **`show` hits the recursion wall at word length ≥ 3.** Opening an evaluation
+   lemma with `show <raw mulσ expression>` forces defeq through the `Module.End`
+   multiplications and exhausts `maxRecDepth` — the same wall
+   `InstanceH4.L0_L1_braid` hits, which is why that one is a tactic proof opening
+   with `simp only [Module.End.mul_apply, …]`. The generator emits that opening.
+
+3. **All 24 in one module peaked at ~8.7 GB RSS** and had not finished after
+   twelve minutes of CPU. It was killed to keep a concurrent full-tree build from
+   being OOM-killed — the two together were at 99% of 15 GB. This is the same
+   linear memory growth that forced `MarkovTraceH4` itself into the eight-module
+   `Gram0..Gram7` chain, and it wants the same remedy: `--chunks N` emits a
+   chained `H4Words0 … H4Words{N-1}`, each importing the previous.
+
+### Next step
+
+Run `python3 computations/markov/gen_h4_word_operators.py --chunks 4 --out
+content/quantum-observable-universe/lean/QOU/Hecke`, verify each chunk builds
+inside a sane memory ceiling, then commit. Only then is `24 ≤ finrank` in the
+tree. The upper bound (the `3 × 24` closure table) remains as described above.
