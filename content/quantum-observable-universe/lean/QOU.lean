@@ -129,6 +129,7 @@ import QOU.Knot.KashaevPeakValue
 import QOU.Knot.KashaevLogAsymptotic
 import QOU.Knot.KashaevRatioExpansion
 import QOU.Knot.KashaevWindowSum
+import QOU.Knot.KashaevWindowIndex
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
@@ -357,6 +358,7 @@ import QOU.MathlibExt.GaussianSumBound
 import QOU.MathlibExt.GaussianThetaBound
 import QOU.MathlibExt.GaussianTiltedSum
 import QOU.MathlibExt.GaussianTailBound
+import QOU.MathlibExt.GaussianWindowSum
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm

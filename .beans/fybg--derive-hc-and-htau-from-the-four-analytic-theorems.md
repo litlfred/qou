@@ -1271,3 +1271,69 @@ All the pieces now exist. What is left is assembly, in one file:
      `c_sigma = 3^{-1/4}`;
   4. `hc` -- already algebraically proved in `OneLoopPrefactorInvariance.lean`;
      then `htau`.
+
+---
+
+## Step 14 -- the finite window, and the index bridge
+
+Four theorems, all `[propext, Classical.choice, Quot.sound]`.
+
+**`QOU/MathlibExt/GaussianWindowSum.lean`** -- steps 12 and 13 combined into the
+statement the Kashaev assembly actually consumes:
+
+    | sum_{|n|<=W} e^{-an^2+2Ln}  -  e^{L^2/a} sqrt(pi/a) |
+      <= e^{L^2/a} ( sqrt(pi/a) * 2q/(1-q)  +  (tail beyond W) )
+
+The two errors are kept SEPARATE on purpose: one is sum-versus-integral
+(exponentially small in `1/a`, nothing to do with the window), the other is the
+tail (exponentially small in `aW^2`, nothing to do with sum-versus-integral),
+and they are optimised by opposite choices of `W`.
+
+Numerically at the Kashaev parameters they are not close to comparable --
+probe part (iii), `W = N^0.6`:
+
+    N        log10(theta err)   log10(tail)   decades apart
+    1e4          -7877.0             0.4          7877
+    1e6        -787721.8            -3.2        787719
+
+So the separation is about the STATEMENT, not the numbers; nobody should spend
+effort sharpening the theta half.
+
+**`QOU/Knot/KashaevWindowIndex.lean`** -- `sum_Icc_shift_int`, reindexing a
+symmetric `N`-window around `k*` as a symmetric `Z`-window around `0`. Needed
+twice with different `F` (on `kashaevProd` and on the model `e^{T}`), and both
+must be reindexed the same way or the comparison compares different sums.
+
+### `W <= k` is load-bearing, and its failure is SILENT
+
+Without it, Nat subtraction truncates `k - W` to `0` and `Int.toNat` clamps
+`(k+n).toNat` to `0`; the two sides then disagree and NEITHER errors. Probe
+part (iv) exhibits concrete disagreements (`k=3, W=10`: 0.1048 vs 0.2476), so
+the hypothesis is visibly not decorative.
+
+### Lean gotcha
+
+`Finset.sum_nbij'` leaves its five side goals with the maps un-beta-reduced, so
+`omega` sees `(fun j => ↑j - ↑k) j` as an opaque atom and reports a
+"counterexample" in terms of it. `simp only []` (or `simp only [Finset.mem_Icc]`,
+which also beta-reduces) before `omega` in every branch.
+
+### Probe gotcha -- the same display lie, caught again
+
+Part (iii) first printed the theta error directly. It is about `e^{-pi N/sqrt3}`,
+so `float()` underflows below 1e-308 and the column read a flat `0.0000e+00`
+with a `0.0000e+00` ratio beside it. mpmath's comparison was exact throughout;
+the display was not. Now printed as log10. (Same failure mode as step 11's raw
+window sums -- worth watching for whenever a quantity is exponentially large or
+small in `N`.)
+
+### Remaining before `hc`
+
+The assembly, now purely mechanical:
+
+  1. instantiate step 11's sandwich on `s = Icc (k*-W) (k*+W)` with
+     `T k = -a(k-k*)^2 + 2L(k-k*)`, `a = pi|cot th_k*|/N`;
+  2. `sum_Icc_shift_int` to move both sides to the `Z`-window;
+  3. `abs_sum_Icc_tilted_sub_le` to evaluate the model;
+  4. step 5 for everything outside the window;
+  5. step 7 for `log g_{k*}` -- and `c_sigma = 3^{-1/4}` follows.
