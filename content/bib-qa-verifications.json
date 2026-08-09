@@ -15135,7 +15135,25 @@
         "file": "uploads/0005296v1.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "Identified from front matter as arXiv:math/0005296v1 (math.QA, 31 May 2000) by Bang-He Li and Tian-Jun Li, a three-page note exhibiting two lens spaces to show that Ohtsuki's tau for rational homology spheres does not determine the full family of Kirby-Melvin SO(3) invariants {tau'_r, r odd >= 3}. Same subject area as the rest of this cohort — perturbative versus root-of-unity quantum 3-manifold invariants — but scope-(a): this document, as read, supplies nothing this folio can use. The reason is precise rather than impressionistic. The counterexample is s(6,25) = s(11,25), giving tau(L(25,11)) = tau(L(25,6)) while xi_r differs exactly when (r,25) is not 1; every branch of its formula (1) that produces a discrepancy requires c = gcd(p,r) > 1, hence |H_1(M,Z)| > 1. The corpus's only 3-manifold is the INTEGRAL homology sphere Sigma(2,3,5) (|H_1| = 0), where the c = 1 branch applies and the determination theorem the paper itself cites — Rozansky's proof of Lawrence's conjecture, i.e. the sibling document uploads/9504015v2.pdf — holds. So the obstruction is vacuous here. Independently, a grep of content/**/*.md for 'lens space' returns nothing: the corpus has no lens-space content for this to bear on. Citation status checked all three ways: no ref() id among the 481 registered (no Li, no Kirby-Melvin, no Ohtsuki lambda_n entry), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean, and a grep for '0005296' across the tree returns only the ledger row. Recording no key results, per the skill's rule that an empty list is the honest outcome when no named place here wants them; the verdict is not that the technique is excluded, only that this document supplies nothing usable at present. Should the corpus ever acquire a rational-homology-sphere object with non-trivial H_1, this note becomes the sharp statement of where the perturbative series stops determining the root-of-unity data, and the verdict should be revisited.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Read in full and judged to need nothing: the counterexample requires |H_1| > 1, the corpus's only 3-manifold is an integral homology sphere where the determination theorem holds instead, and the corpus has no lens-space content. Adding a ref() entry for a source nothing can cite would create a bib orphan rather than close one.",
+            "target": "docs/coordination/s5-so3-keystone.md"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "1714653ecfdf"
+      }
     },
     {
       "source": {
@@ -15143,7 +15161,65 @@
         "file": "uploads/04procbryden.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "core",
+        "rationale": "Identified from front matter as a conference-proceedings article on computations of the Ohtsuki series Z_inf(M) = sum lambda_m (q-1)^m of integer homology 3-spheres (NOT the figure-eight Kashaev kappa-tower that the corpus calls 'the Ohtsuki tower' in QOU/QBeta/OhtsukiTowerBarParity.lean — two distinct objects both named after Ohtsuki; conflating them is the main hazard when reading this document into the corpus). It is core because of Sigma(2,3,5) = S^3/2I, the corpus's own keystone manifold: the paper states the exact closed form of its Ohtsuki series and the growth rate of its coefficients, both of which are directly checkable against the live keystone probes computations/probes/keystone_colored_sigma235_wrt.py and computations/lr_modulus_identification_sigma235.py. Citation status checked all three ways: no ref() id matches (481 ids enumerated; nothing for Jacoby, Lawrence-Rozansky, or Ohtsuki's lambda_n papers — only lawrence-zagier-1999 and hikami2005brieskorn are registered), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean; grep for the surnames and for the filename stem returns only the ledger row. Corpus-grep for the gap this closes (docs/audits/, content/, computations/, docs/coordination/) finds no lambda_n / Casson-invariant / Ohtsuki-series axis anywhere: every 'Casson' hit in the tree is Casson-Rivin angle-structure duality, an unrelated object, and docs/audits/2026-05-19-delta-lambda-thread-closure.md line 64 records Seifert-piece Casson-type invariants as explicitly 'not in main'. Scope note on the 5_2 gap: this paper's family K(S/T) does include 5_2 at (S,T)=(3,2) and it prints 21 coefficients of Z_inf for the manifold obtained by +3/2 surgery on 5_2 (section 4.1, p.64), but that is the Ohtsuki series of a surgered 3-manifold, NOT the 5_2 knot's state-integral / Kashaev asymptotics. It is therefore NOT an independent source for the corpus's 5_2 DT-spectrum data (QOU/QBeta/FiveTwoDTSpectrumSplit.lean, GGM eqs 96/97/98) and must not be presented as one.",
+        "keyResults": [
+          {
+            "locator": "Section 1, p. 55",
+            "statement": "q(q-1) Z_inf(Sigma(2,3,5))(q) = 1 - (1/2) sum_{n>=1} chi(n) q^{(n^2-1)/120}, where chi : Z/60Z -> {-1,0,1} is odd and takes the value +1 precisely at 1, 11, 19, 29 and nowhere else.",
+            "useForFolio": "Independently confirms the support set {1,11,19,29} that computations/probes/keystone_colored_sigma235_wrt.py hardcodes, and simultaneously pins the exponent normalisation as (n^2-1)/120 — which makes every exponent an integer (n=1,11,19,29 give 0,1,3,7) — whereas that probe uses Psi(q) = sum chi(n) q^{n^2/120}. The two differ by an overall q^{-1/120}; at the probe's evaluation point that is a factor ~1.00088, i.e. it moves the operational number Psi(1/q0) = 2.32958 in its fourth significant digit. This is a normalisation cross-check to run, not a number to adopt.",
+            "targets": [
+              "computations/probes/keystone_colored_sigma235_wrt.py",
+              "computations/lr_modulus_identification_sigma235.py"
+            ]
+          },
+          {
+            "locator": "Section 4.3, p. 65",
+            "statement": "Defines the slope sigma(M) = lim_{n->inf} lambda_n(M) / (n lambda_{n-1}(M)); cites Lawrence-Rozansky that the slope exists for Seifert fibred manifolds and equals sigma(Sigma(Q_1/P_1,...,Q_N/P_N)) = ±P/pi^2 = ±(1/pi^2)(sum_i Q_i/P_i)^{-1}, so pi^2 sigma(M) is in Q for such manifolds and in Z when they are additionally integer homology spheres.",
+            "useForFolio": "For Sigma(2,3,5) both readings of P give |pi^2 sigma| = 30 = p1 p2 p3, the same 30 the keystone's McKay 2I <-> affine E8 derivation uses as h(E8) = sum of Coxeter marks (docs/coordination/s5-so3-keystone.md, 2026-07-12 row). So the growth rate of the perturbative coefficients is that same P: lambda_n grows like (30/pi^2)^n n!, i.e. Z_inf(Sigma(2,3,5)) is Gevrey-1 with zero radius of convergence. That is a quantitative reason why the keystone's h = q-1 expansion cannot simply be evaluated at the substrate (h_0 ~ 0.11) and why the bar-involution route into the disk (q -> 1/q, where the false theta converges) is the correct one — it corroborates a route the ledger already chose, and supplies the divergence rate the ledger currently does not record.",
+            "targets": [
+              "docs/coordination/s5-so3-keystone.md",
+              "computations/probes/keystone_colored_sigma235_wrt.py"
+            ]
+          },
+          {
+            "locator": "Section 4.2, p. 64-65",
+            "statement": "Z_K(Mbar)(q) = Z_K(M)(q^{-1}) at all roots of unity, hence Z_inf(Mbar) is obtained from Z_inf(M) by q -> q^{-1}, i.e. h -> -h/(1+h); together with lambda_1 = 6 lambda_Casson and explicit degree-2m polynomials for lambda_m(S,T).",
+            "useForFolio": "States the q -> q^{-1} bar involution at the level of the 3-manifold WRT/Ohtsuki series itself, which is exactly the involution the keystone uses to move from q0 ~ 1.10998 to 1/q0 ~ 0.901. Gives the keystone's bar step a literature statement at the right level of generality (manifold invariant, not just the false theta), and supplies the orientation-reversal bookkeeping any lambda_n cross-check needs.",
+            "targets": [
+              "docs/coordination/s5-so3-keystone.md"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "Orphan with no ref() entry, and it is the only registered-or-unregistered source in the tree stating the Sigma(2,3,5) Ohtsuki series in closed form with an explicit normalisation. Per the skill, creating the ref() entry is the first action, not the last; metadata (title, authors, year, venue) goes in content/schema/references.ts, never here.",
+            "target": "content/schema/references.ts",
+            "bean": "qou-eohf"
+          },
+          {
+            "action": "compute-check",
+            "rationale": "Cross-check the probe's Psi(q) = sum chi(n) q^{n^2/120} against this paper's q(q-1) Z_inf = 1 - (1/2) sum chi(n) q^{(n^2-1)/120}. The support set agrees (independent confirmation); the exponent offset q^{-1/120} and the q(q-1) prefactor do not obviously agree, and they move the operational Psi(1/q0) = 2.32958 in the fourth digit. A disagreement is a normalisation bug in the transcription; an agreement is an independent confirmation. Either way the external number is never adopted — only compared.",
+            "target": "computations/probes/keystone_colored_sigma235_wrt.py",
+            "bean": "qou-t8mi"
+          },
+          {
+            "action": "new-remark",
+            "rationale": "Record in the keystone ledger that the Ohtsuki series of Sigma(2,3,5) is Gevrey-1 with slope pi^2 sigma = ±30 = P = h(E8), so the h-expansion has zero radius of convergence and the bar-involution route into the disk is forced rather than merely convenient. This interprets an external result for the folio; it does not discharge any Lean hypothesis, so it is a remark and not an aid-proof.",
+            "target": "docs/coordination/s5-so3-keystone.md",
+            "bean": "qou-wupb"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "8baffbc6542c"
+      }
     },
     {
       "source": {
@@ -15167,7 +15243,55 @@
         "file": "uploads/1202.4698.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "supporting",
+        "rationale": "Identified from front matter (hep-th, v3). No ref() entry, no \\cite{} site, no Lean -- Ref:; the arXiv id is absent from content/ -> orphan on all three checks. Note the near-miss: `ponsot-teschner2001` IS registered and IS cited, at rem:channel-rotation-askey-lit item 2, for exactly the modular-double 6j object this document revisits -- so the corpus already has the earlier paper of this line and not this one. Subject: b-6j symbols of the modular double of U_q(sl(2,R)) with q = exp(i pi b^2), new natural normalisations, new integral representations, and a direct saddle-point demonstration that the b -> 0 limit reproduces the volume of a non-ideal hyperbolic tetrahedron. Relevant because rem:q-dilogarithm-pentagon-associator asserts that the quantum dilogarithm IS the quantum associator, equivalently the 6j-symbol, and rem:channel-rotation-askey-lit item 2 makes the b <-> 1/b map the driver of the 6j-level channel rotation: this document is the explicit modular-double instance of both, with the volume asymptotics attached. Supporting rather than core for two reasons, both hypothesis checks: (1) the volume it reproduces is that of a NON-IDEAL tetrahedron parameterised by six dihedral angles, whereas every QOU volume in play (Vol(4_1) = 2 Lambda(pi/3), Vol(Borromean)) comes from an IDEAL triangulation -- the formula does not specialise to those without taking the ideal limit, which the document does not do; (2) the results are physics-rigor direct calculations and outlined second proofs, not numbered theorems, so nothing here discharges a Lean obligation. No block consumes a result; the value is citation and framing.",
+        "keyResults": [
+          {
+            "locator": "Sec 3.1-3.2, eqs (3.1)-(3.4) and (3.10)-(3.11)",
+            "statement": "The b-6j symbol has b -> 0 saddle-point asymptotics exp(W_pm(A)/(2 pi i b^2)) with W_pm(A) = U(z_pm, A) + Delta(A) - (5/3) pi^2 -+ 2 pi^2 phi, whose imaginary part is the tetrahedron-volume formula (3.3) quoted from its ref [MY, Thm 2]; the potential U(u, A) is an alternating sum of eight dilogarithms in the dihedral-angle variables A_k = exp(i eta_k), and the saddles are the two roots of dU/du = -2 pi i / u.",
+            "useForFolio": "The explicit associator-to-volume computation behind the identification rem:q-dilogarithm-pentagon-associator states structurally ('the quantum dilogarithm is the quantum associator, equivalently the 6j-symbol'). Cite it there as the modular-double realisation, together with the caveat that the tetrahedra are non-ideal, so the QOU ideal-triangulation volumes are a limit of this family and not an instance of it.",
+            "targets": [
+              "rem:q-dilogarithm-pentagon-associator"
+            ]
+          },
+          {
+            "locator": "Sec 2 (normalisations) with eq (2.28) and Appendix B; second derivation in Sec 5, eq (5.17)",
+            "statement": "Natural normalisation conditions for the b-6j symbol are identified -- one of them shown to define a quantisation of Fenchel-Nielsen coordinates -- and new integral representations are derived from Spiridonov elliptic hypergeometric identities; Sec 5 then re-derives the volume asymptotics as the generating function of the canonical transformation between the (l_s, k_s) and (l_t, k_t) Darboux coordinates.",
+            "useForFolio": "rem:channel-rotation-askey-lit item 2 asserts that 'the map b <-> 1/b drives the 6j-level rotation' and that this is what divides Phi_q (Faddeev, non-compact) from Li_2^q (Rogers, compact), citing only `ponsot-teschner2001`. This supplies the normalisation-fixed version of that 6j object plus a second, coordinate-change derivation of its classical limit -- the natural companion citation at the same sentence.",
+            "targets": [
+              "rem:channel-rotation-askey-lit"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "Orphan, and the direct sequel to an already-registered and already-cited entry (`ponsot-teschner2001`) at the one block that invokes the 6j-level modular-double rotation.",
+            "target": "rem:channel-rotation-askey-lit",
+            "bean": "qou-7fhj"
+          },
+          {
+            "action": "cite-in-block",
+            "rationale": "rem:channel-rotation-askey-lit item 2 currently supports the b <-> 1/b 6j-level rotation claim with the 2001 Clebsch-Gordan/Racah paper alone; the normalisation-fixed b-6j symbol and its new integral representations belong at the same sentence.",
+            "target": "rem:channel-rotation-askey-lit",
+            "bean": "qou-7ji4"
+          },
+          {
+            "action": "new-remark",
+            "rationale": "rem:q-dilogarithm-pentagon-associator asserts the dilogarithm-associator-6j identification without a semiclassical anchor. A remark can record that in the modular double the b -> 0 limit of the 6j symbol is a hyperbolic tetrahedron volume, and must state the applicability check: the tetrahedra are non-ideal (six free dihedral angles), so this does not by itself supply Vol(4_1) or any ideal-triangulation volume the corpus uses -- what would need checking is the ideal limit of eq (3.3).",
+            "target": "rem:q-dilogarithm-pentagon-associator",
+            "bean": "qou-u800"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "54171c652161"
+      }
     },
     {
       "source": {
@@ -15175,7 +15299,80 @@
         "file": "uploads/2302.08363v2.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "core",
+        "rationale": "Identified from front matter (hep-th preprint, v2). No ref() entry, no \\cite{} site in content/**/*.md, no -- Ref: in content/**/*.lean; the arXiv id appears nowhere in content/ -> orphan on all three checks. Its Section 4 is the figure-eight (4_1) Andersen-Kashaev state integral written explicitly as a lateral Borel resummation of a trans-series, i.e. the QOU muon anchor. What it supplies that the corpus does not already have from `fantini-wheeler2024`: that reference proves Borel summability of the *perturbative* series; this document addresses the SECOND stage -- after each sector is Borel resummed, the trans-series is still an infinite sum over exponentially small corrections, which is a potential new divergence (the so-called divergence of the OPE). def:ecalle-borel-resummation stops at the single-series median sum and rem:st-is-median-resummation then asserts st = L^med for a *transseries*, so the corpus is currently silently assuming exactly the premise this document isolates. Epistemic scope, stated honestly: this is not a theorem-numbered result. For complex Chern-Simons (Sec 4) the convergence is DERIVED from exact expressions for M_1, M_2 that the document itself attributes as conjectural to its ref [41] (the GGM resurgent-structure paper, arXiv:2007.10190); for the integrable models (Sec 5) it is numerical evidence. Its eq (4.5) coefficients were cross-checked here against the q-series already self-checked in computations/probes/fourone_stokes_series_selfcheck.py and reproduce them exactly (see keyResults), which is what raises this from supporting to core: there is a concrete, named script that should carry the check.",
+        "keyResults": [
+          {
+            "locator": "Sec 2, eqs (2.5)-(2.8)",
+            "statement": "The Borel-resummed trans-series s_pm(Phi) = sum_l y^l s_pm(phi_l)(g) is itself an infinite sum over non-perturbative sectors and is a potential new source of divergence; reorganising by fixed power n of the coupling gives the partial series G_n(y) = sum_l a_{n,l} y^l, and convergence of the G_n with a common radius R (eq 2.8) is the property that makes the resummed trans-series a well-defined function.",
+            "useForFolio": "Supplies the second-stage premise that def:ecalle-borel-resummation does not define and rem:st-is-median-resummation silently uses. That remark identifies st(f~|_eps) with L^med(f~) for a transseries f~, citing Watson/Nevanlinna-Sokal uniqueness -- which is a one-series statement. The sum over sectors is a separate convergence question, and this gives the vocabulary (partial series, common radius R) to state it.",
+            "targets": [
+              "def:ecalle-borel-resummation",
+              "rem:st-is-median-resummation"
+            ]
+          },
+          {
+            "locator": "Sec 4, eqs (4.1)-(4.3), (4.8)-(4.10)",
+            "statement": "For the figure-eight complement the Andersen-Kashaev invariant I(tau) is written as a lateral Borel resummation of an explicit trans-series with two complex-instanton towers q~^l exp(-+ V/(2 pi tau)), q~ = exp(-2 pi i / tau), V = 2.029883... the hyperbolic volume, with perturbative series phi_g(tau) = 3^{-1/4}(1 + ...) and phi_c(tau) = phi_g(-tau); the partial series factorise as G^i_n(y) = a_n M_i(y), so the radius-1 convergence of M_{1,2} gives convergence of every partial series, with the same radius for all n.",
+            "useForFolio": "The 4_1 instance of the previous item, at the corpus's own muon anchor and with V = Vol(4_1) as the instanton action. The corpus has a 5_2 analogue (computations/probes/qbeta_5two_median_borel_resummation_probe.py, which records that the substrate ray misses every Stokes ray) but no 4_1 counterpart; this is the published trans-series a 4_1 probe would be written against.",
+            "targets": [
+              "rem:st-is-median-resummation",
+              "computations/probes/qbeta_5two_median_borel_resummation_probe.py"
+            ]
+          },
+          {
+            "locator": "Sec 4, eq (4.5)",
+            "statement": "M_1(q) = 1 - 8q - 9q^2 + 18q^3 + 46q^4 + O(q^5) and M_2(q) = -9q - 3q^2 + 39q^3 + 69q^4 + O(q^5), the power series in q~ multiplying the two 4_1 instanton towers, stated to be convergent with radius of convergence R = 1 and with exact expressions attributed to its ref [41].",
+            "useForFolio": "Independent published values for the same 4_1 object that computations/probes/fourone_stokes_series_selfcheck.py already self-checks from the `fantini-wheeler2024` eq (74) blocks g_0(q) = 1 - q - 2q^2 - 2q^3 - 2q^4 + ... and 2G_0(q) = 1 - 7q - 14q^2 - 8q^3 - 2q^4 + ... . Verified during this triage by exact rational power-series arithmetic: M_1 = g_0 * 2G_0 exactly through the printed order q^4 (product coefficients 1, -8, -9, 18, 46 reproduce eq (4.5) term by term). M_2 has no comparable factorisation at this order: M_2/g_0 = -9q - 12q^2 + 9q^3 + 36q^4, M_2/(g_0 * 2G_0) = -9q - 75q^2 - 642q^3 - 5580q^4. This turns the existing single-source self-check into a genuine cross-source consistency test between two independent papers' notations for the 4_1 Stokes data. Scope: 4 non-trivial coefficients matched, which is evidence of the identity, not a proof of it.",
+            "targets": [
+              "computations/probes/fourone_stokes_series_selfcheck.py"
+            ]
+          },
+          {
+            "locator": "Sec 4, sentence following eq (4.5)",
+            "statement": "The exact expressions for M_1, M_2 -- the entries carrying the 4_1 Stokes data -- are described as having been *conjectured* in the document's ref [41], not proved.",
+            "useForFolio": "Epistemic calibration for conj:stokes-dt-bps-bridge, whose .md currently reads 'proved by Garoufalidis--Gu--Mari{\\~n}o for the figure-eight 4_1' (same wording repeated at thm:aomega-fourone-dt-count Scope and at docs/audits/2026-08-02-aomega-conditional-gukov-stosic-bps-bridge.md:58-59). This document shares an author with `garoufalidis-gu-marino2023peacock` and, writing about the same 4_1 Stokes data, calls the exact expressions conjectural. Scope-(a): this is evidence about how the source literature describes its own status, not a demonstration that any particular GGM statement is false.",
+            "targets": [
+              "conj:stokes-dt-bps-bridge",
+              "thm:aomega-fourone-dt-count"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "Orphan on all three checks and carries the trans-series-convergence layer the resummation blocks depend on. The ref() entry is the prerequisite for the cite-in-block and new-remark actions below.",
+            "target": "def:ecalle-borel-resummation",
+            "bean": "qou-y7ss"
+          },
+          {
+            "action": "cite-in-block",
+            "rationale": "def:ecalle-borel-resummation defines the Borel transform, lateral sums, Stokes rays and the median average for a single Gevrey-1 series, and never mentions the sum over non-perturbative sectors. Its eqs (2.5)-(2.8) are the natural citation for that second layer.",
+            "target": "def:ecalle-borel-resummation",
+            "bean": "qou-ad5s"
+          },
+          {
+            "action": "new-remark",
+            "rationale": "rem:st-is-median-resummation asserts st = L^med as an identity of two selection rules for a transseries, justified by one-series uniqueness (Watson/Nevanlinna-Sokal) on the analytic side. A remark should record that for a transseries the identification additionally needs the sum over sectors to converge, cite the partial-series criterion, and note the 4_1 case where that convergence is argued (radius 1) rather than proved. What would need checking before any stronger claim: whether the QOU substrate transseries actually satisfies the eq (2.8) growth with a common radius.",
+            "target": "rem:st-is-median-resummation",
+            "bean": "qou-dmar"
+          },
+          {
+            "action": "compute-check",
+            "rationale": "Extend the existing 4_1 Stokes-series self-check with the independently published eq (4.5) coefficients and record the verified relation M_1 = g_0 * 2G_0 through q^4 (and the absence of a comparable form for M_2). Cross-check only; nothing to wire, and the relation is a consistency test between two sources' notations, not a QOU observable.",
+            "target": "computations/probes/fourone_stokes_series_selfcheck.py",
+            "bean": "qou-07m1"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "c2244e03b170"
+      }
     },
     {
       "source": {
@@ -15183,7 +15380,57 @@
         "file": "uploads/2312.00624v1.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "supporting",
+        "rationale": "Identified from front matter (hep-th preprint). No ref() entry, no \\cite{} site, no Lean -- Ref:, arXiv id absent from content/ -> orphan on all three checks. Subject is the SL(2,C) Chern-Simons wave function on hyperbolic knot complements, worked out for the figure-eight and the three-twist knot -- the corpus's own knots and the same state integral. Checked specifically against the brief's Stokes question and it does NOT bear on it in the way a title-level read would suggest: the words Stokes, Borel, resurgence and Donaldson-Thomas do not occur in the body at all (only in its bibliography), and its footnote 1 states explicitly that its resummation is of a *convergent* series and does not involve divergent-series resummation. Its integrality conjecture is about the holomorphic blocks of the resummed WKB q-series and the cancellation of the ll in 2 pi Q singularities, which is a different object from the resurgent Stokes constants of GGM Conjecture 3(d). So it neither proves nor refutes the statement the corpus over-claims. What it does supply is (i) a clean, quotable separation of the convergent-q-series layer from the Borel/resurgent layer, which rem:channel-rotation-askey-lit item 3 currently runs together, and (ii) a calibration datum on the BPS identification (see keyResults). Supporting, not core: no result here is consumed by any block, and the integrality conjecture itself is conjectural and unverified in this setting.",
+        "keyResults": [
+          {
+            "locator": "Sec 6 Conclusions, first open question (its ref [42] = `dimofte-gaiotto-gukov2013`)",
+            "statement": "The interpretation of the integrality structure of the resummed WKB wave function 'in terms of an enumerative problem, or a BPS counting problem, in the dual supersymmetric theory' is listed as an open question raised by the work, citing the same 3d-3d dictionary the corpus's bridge invokes.",
+            "useForFolio": "Calibration for conj:stokes-dt-bps-bridge, which adopts Stokes = DT = dim H_BPS(T[K]) and describes the first equality as 'proved ... for the figure-eight 4_1'. This document shares an author with `garoufalidis-gu-marino2023peacock` and, on the same knots, treats the BPS-counting reading of its integer invariants as open. IMPORTANT CAVEAT to carry with any use: those integers are the holomorphic-block integrality invariants of a convergent q-series, NOT the resurgent Stokes constants, so this is adjacent evidence about authorial stance and not a statement about Conjecture 3(d) itself. Scope-(a).",
+            "targets": [
+              "conj:stokes-dt-bps-bridge"
+            ]
+          },
+          {
+            "locator": "footnote 1, p. 2 (attached to Sec 1)",
+            "statement": "The q-series obtained by resumming the WKB expansion is a resummation of a convergent series and therefore does not involve the techniques of resummation of divergent series such as Borel resummation.",
+            "useForFolio": "rem:channel-rotation-askey-lit item 3 says the Andersen-Kashaev state integral 'factors into a q-series and a q~-series' whose leading asymptotics trace Vol + i CS, and the corpus's Stokes/Habiro discussion sits next to it. This is a one-line source for the fact that the q-series factorisation layer and the Borel/resurgent layer are analytically different regimes -- useful because conflating them is a live failure mode in the c_k and A_omega chains.",
+            "targets": [
+              "rem:channel-rotation-askey-lit"
+            ]
+          },
+          {
+            "locator": "Sec 1 eq (1.1) with Sec 3.2",
+            "statement": "The resummed WKB q-series wave function has apparent singularities at every ll in 2 pi Q (i.e. at roots of unity q = exp(i ll)), absent from the non-perturbative definition; a conjectured integrality of the holomorphic blocks makes them cancel against the anti-holomorphic blocks, leaving a finite wave function, with the epsilon-expansion mechanics in Appendix A.",
+            "useForFolio": "A stated cancellation mechanism at rational points, worked explicitly for the figure-eight in Sec 4.1 and Sec 5. Recorded against conj:stokes-dt-bps-bridge only as context for the same 4_1 wave function; there is no block that consumes it, which is why the verdict stays supporting.",
+            "targets": [
+              "conj:stokes-dt-bps-bridge"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "Orphan; same knots and same state integral as the corpus's A_omega / c_3 chain, and needed as the source for the calibration remark below.",
+            "target": "conj:stokes-dt-bps-bridge",
+            "bean": "qou-0ddm"
+          },
+          {
+            "action": "new-remark",
+            "rationale": "One remark covering both usable items: that a GGM co-author lists the BPS-counting interpretation as open (calibrating the bridge block's 'proved ... for the figure-eight' wording), and that the integrality in question is the convergent-q-series holomorphic-block kind, not the resurgent Stokes kind -- so it is adjacent evidence, not a refutation. State explicitly what remains unchecked: whether the holomorphic-block integers and the resurgent Stokes constants of the same knot are related at all.",
+            "target": "conj:stokes-dt-bps-bridge",
+            "bean": "qou-eqi3"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "bda867f7b84f"
+      }
     },
     {
       "source": {
@@ -15191,7 +15438,25 @@
         "file": "uploads/2410.14661v1.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "Identified from front matter (math.GT, v1). No ref() entry, no \\cite{} site, no Lean -- Ref:; arXiv id absent from content/ -> orphan on all three checks. Content: its Theorem 1.2 gives a full asymptotic expansion of the Reshetikhin-Turaev invariant RT_r(M_{p,q}) of the closed hyperbolic 3-manifold obtained by integral q-surgery along the twist knot K_p, at the root of unity exp(4 pi i / r) with r odd, including the exponential term exp((N + 1/2) zeta(p,q)) whose critical value is the complex volume, a one-loop prefactor omega(p,q) built from the Hessian H(p,q; z_1, z_2, z_3), and all higher corrections kappa_i(p,q)/r^i -- thereby proving the RT form of the volume conjecture for that family. HYPOTHESIS CHECK, which is why this is tangential rather than supporting: the theorem holds only for (p,q) in the set S of eq (1.2), whose condition (1.3) requires p >= 6 (with q >= 12..27 depending on p). Its own Sec 3 states K_{-1} = 4_1, K_1 = 3_1, K_2 = 5_2. So the two knots the corpus actually anchors on -- 4_1 (muon anchor) and 5_2 (saddle source) -- are BOTH outside the admissible set, and its Sec 1 attributes the figure-eight surgery cases to other authors (its refs [18] and [23]). The invariant is also the wrong object for this corpus: a closed-manifold RT invariant obtained by Dehn surgery, not the knot-complement Andersen-Kashaev state integral that the A_omega / c_3 / Stokes chain works with. Corpus-grep for a consumer: the only prose touching RT invariants together with the volume conjecture is mass-theory/intro-kashiwara-jones-quantum-dilog.md, which is an unlabelled prose() block with no label and no cites, so there is no citation site to attach to; no Turaev-Viro or Chen-Yang entry exists in content/schema/references.ts at all. Scope-(a) negative: this document, as read, supplies nothing this folio can consume. That is NOT a claim that saddle-point asymptotics of quantum invariants or the twist-knot family are excluded from future use -- only that this particular theorem's hypotheses do not reach the corpus's knots.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Read and judged to need nothing: the p >= 6 hypothesis excludes both 4_1 (= K_{-1}) and 5_2 (= K_2), and the corpus has no labelled block for the RT/Turaev-Viro volume conjecture to cite it from. Residue worth recording for a future sweep rather than acting on now: if a volume-conjecture context citation is ever wanted at conj:kashaev-volume-conjecture, this document's Sec 1 names the two works that DO cover figure-eight surgeries (its refs [18] and [23]), which would be the on-target citations instead of this one.",
+            "target": "conj:kashaev-volume-conjecture"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "3362fcd5e28e"
+      }
     },
     {
       "source": {
@@ -15199,7 +15464,51 @@
         "file": "uploads/9504015v2.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "supporting",
+        "rationale": "Identified from front matter as a 1995 Miami preprint (q-alg/9504015, report UMTG-183-95) by L. Rozansky relating the coefficients of the asymptotic expansion of the trivial-connection contribution to Witten's invariant of rational homology spheres to Ohtsuki's invariants extracted at prime K, and proving Ohtsuki's invariants are of finite type. Supporting rather than core: it supplies the machinery and the literature warrant for reading a perturbative Chern-Simons expansion as the Ohtsuki series, which is the framing the keystone's Beasley-Witten localization route assumes, but the corpus consumes no result of this paper today and none of its statements discharges a named obligation. Citation status checked all three ways: no ref() id (the only Rozansky among the 481 registered ids is khovanov-rozansky2008, a different author-pair and a different subject), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean, and a grep for '9504015' across content/, docs/ and computations/ returns only the ledger row. Deliberately NOT proposed as aid-proof: QOU/BraidKnot/KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons partition-function identification as an explicit named hypothesis, and this paper does not discharge it — Proposition 1.1 concerns only the trivial-connection sector of the asymptotic expansion, not the full finite-K identification, and its Seifert verification is a check rather than a Kirby-move-invariance proof. Scope-(a) on the two gaps it does not touch: this document, as read, supplies nothing bearing on the corpus's 5_2 DT-spectrum data or on the GGM Stokes-conjecture attribution, both of which concern non-perturbative Stokes constants of knot state integrals rather than the perturbative 3-manifold sector treated here.",
+        "keyResults": [
+          {
+            "locator": "Proposition 1.1, p. 5 (proved in Section 3; verified for lens spaces and Seifert manifolds in Section 4)",
+            "statement": "Ohtsuki's invariants lambda_n(M) and the loop corrections S_n(M) to the trivial-connection contribution determine each other through sum_n lambda_n(M) x^n = exp[ sum_{n>=1} (S_n(M) - S_n(S^3)) (i pi/K)^n ] evaluated at x = exp(2 pi i/K) - 1, with S_1(M) = 6 lambda_CW.",
+            "useForFolio": "Gives the keystone's Chern-Simons framing its literature warrant at exactly the manifold class it needs: the identification is verified in Section 4 for Seifert manifolds, the class containing S^3/2I = Sigma(2,3,5). It says the perturbative expansion of a localized CS partition function on that manifold is the exponential of the connected loop corrections whose resummation is the Ohtsuki series — the step the Beasley-Witten route (#2524) takes for granted.",
+            "targets": [
+              "content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryConstruction.lean",
+              "docs/coordination/s5-so3-keystone.md"
+            ]
+          },
+          {
+            "locator": "Equation (1.6), p. 3, with equation (4.28), Section 4",
+            "statement": "The Kirby-Melvin surgery formula for Z'(M;k) as a sum over odd colours of the framing-independent coloured Jones polynomial weighted by prod_j sin(pi alpha_j/K); and, for the Seifert surgery link of N unknots linked to a single unknot, the explicit sine-product coloured Jones J_{beta,alpha_1..alpha_N}(L;k) = prod_j sin(pi beta alpha_j/K) / [sin^{N-1}(pi beta/K) sin(pi/K)] up to normalisation.",
+            "useForFolio": "The per-colour weight sin(pi alpha/K) is the S-matrix vacuum row d_alpha/D that KeystoneRTSurgeryConstruction.lean proves the RT surgery sum weights each label by — so (1.6) is an explicit analytic instance of the assembly that file formalises abstractly. Equation (4.28) then gives the coloured Seifert link invariant in closed sine-product form, which is the machinery the colored-Sigma(2,3,5) step needs to lift the bare closed-manifold number to a lambda-indexed family. Useful as a cited construction to build against; it is not a substitute for the carried (RT) hypothesis.",
+            "targets": [
+              "content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryConstruction.lean",
+              "computations/probes/keystone_colored_sigma235_wrt.py"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "Orphan with no ref() entry, and the corpus currently registers no Lev-Rozansky 3-manifold source at all despite the keystone ledger repeatedly invoking Lawrence-Rozansky as '(LR)'. Metadata in references.ts only.",
+            "target": "content/schema/references.ts",
+            "bean": "qou-h3j1"
+          },
+          {
+            "action": "cite-in-block",
+            "rationale": "KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons identification as a named, cited-but-unformalised hypothesis whose '-- Ref:' list currently names only Reshetikhin-Turaev 1991 / Turaev 1994 and beasleywitten2005. Adding this paper documents the perturbative form of that identification and its explicit verification on the Seifert class the file's manifold belongs to, so a reader can see how far the cited literature actually goes. It documents the hypothesis; it does not discharge it, and the file's honest-scope banner should stay unchanged.",
+            "target": "content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryConstruction.lean",
+            "bean": "qou-cjkt"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "ea5588225a39"
+      }
     },
     {
       "source": {
@@ -15207,7 +15516,25 @@
         "file": "uploads/Di_Cairano_2022_J._Phys._Commun._6_015002.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "Classical non-equilibrium statistical mechanics: it recasts Zwanzig's derivation of a NONLINEAR generalized Langevin equation from the heat-bath Hamiltonian H(X,Y) = H_s(X) + (1/2)[Y - a(X)]^T K [Y - a(X)] (eq. 3), argues Zwanzig's kernel and noise definitions (eqs. 7-8) make the friction function ill-defined — a tautological fluctuation-dissipation relation and an unbounded kernel in the continuum limit — and supplies readjusted definitions plus a renormalization separating the equilibrium map's coupling-coefficient dependence from its system-variable dependence. Citation status checked three ways: no ref() entry (greps over content/schema/references.ts on the author surname, the DOI suffix, the ISSN and 'zwanzig' all return empty), no \\cite site in content/**/*.md, no '-- Ref:' in content/**/*.lean; the sole corpus occurrence of the string 'cairano' is this document's own row in content/bib-qa-verifications.json. Corpus-side grep is empty for 'langevin', 'zwanzig', 'memory kernel', 'fluctuation-dissipation', 'heat bath', 'colored noise', 'master equation', 'stochastic differential' across content/ and docs/. The adjacency is thematic and two removes deep: sec:brane-fluid asserts that the q-Laplacian's algebraically quantised eigenvalues [k]_q make 'the viscous dissipation rate algebraically quantised', and the stochastic-mechanics chapter intro claims the Markov trace acts as a transition kernel recovering Brownian motion at q -> 1 — both are dissipative/stochastic claims that a Zwanzig-Mori projection would be the classical template for deriving. But (i) the corpus reaches its classical limit by a completely different route, def:classical-limit-functor's monoidal functor with hbar_q = 1 - q^{-1} -> 0, with no bath, no projection operator and no memory kernel anywhere; and (ii) the template itself is Zwanzig's original paper, not this one, which is a technical correction to Zwanzig's kernel/noise bookkeeping. So there is no result here the folio can consume, and no named block that wants one. Scope-(a) negative: this document, as read, supplies nothing usable here; it is not a claim that Zwanzig-Mori coarse-graining is excluded as a route to brane-fluid dissipation.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Orphan with no citation site and no consumable statement; the corpus has zero GLE/memory-kernel/FDT content for it to attach to, so add-reference would be inflation. Revisit only if the folio starts an actual derivation of sec:brane-fluid's 'algebraically quantised viscous dissipation' from a substrate Hamiltonian by projection-operator coarse-graining — and then the primary source is Zwanzig, with this paper as the correction to his kernel/noise definitions.",
+            "target": "sec:brane-fluid"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "f75313b507f9"
+      }
     },
     {
       "source": {
@@ -15223,15 +15550,84 @@
         "file": "uploads/Maximal-Hoermander-q-Var-revised-v03.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "FALSE FRIEND — the 'q' in the filename is NOT the substrate deformation parameter. Def. 3.1 fixes 'q in [2, infinity)' as the exponent of the Lepingle-type q-VARIATION seminorm sup over increasing sequences of (sum |a(t_{k+1}) - a(t_k)|^q)^{1/q}; the paper is harmonic analysis (Hoermander spectral multipliers, UMD-lattice-valued L^p, maximal estimates for Schroedinger/wave propagators, Carleson pointwise convergence). It contains no q-deformation, no q-difference equation, no q-Borel transform, no summability level, and no Stokes data — so it does not touch the C1 degree-budget / multi-level question at all. Citation status checked three ways: no ref() entry (greps over content/schema/references.ts on both author surnames, the HAL id and the DOI suffix all return empty), no \\cite site in content/**/*.md, no '-- Ref:' in content/**/*.lean. Corpus-side grep is likewise empty for 'hoermander', 'spectral multiplier', 'UMD lattice', 'q-variation', 'maximal function' (only .lake/Mathlib vendor hits). The one genuine adjacency is that the corpus DOES carry a semigroup/functional-calculus object: prop:q-heat-equation-unique defines exp(-t Delta_q) and rem:q-resolvent-properties defines R_q(s) as its Laplace transform, diagonalising over SU_q(2) irreducibles with eigenvalues lambda_j(q) = [j]_q[j+1]_q(1-q^{-1})^2. But Thm 3.3 and Thm 5.1 are stated for a 0-sectorial operator A on L^p(Omega, Y) with Y a UMD Banach lattice, (Omega, mu) sigma-finite, and A carrying an R-bounded Hoermander H_2^alpha calculus (Def. 2.12, Prop. 2.14). The corpus establishes NONE of that scaffolding for Delta_q — it has no L^p(Omega, Y) setting, no sectoriality statement, no Gaussian/Davies-Gaffney bounds, and Delta_q's spectrum as recorded is a discrete algebraic family, not an operator on a Bochner space. So the hypotheses demonstrably do not hold as the corpus stands, and no block, script, or Lean declaration here consumes a maximal or variational estimate. Scope-(a) negative: this document, as read, supplies nothing this folio can currently use; that is not a claim that Hoermander-calculus technique is excluded from the folio's future analytic layer.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Orphan with no citation site and no consumable statement; adding a ref() entry now would be inflation. Worth recording once, though, that the filename's 'q' is a variation exponent (Def. 3.1) and not the substrate parameter — a future agent grepping uploads for 'q-' will otherwise re-open this paper expecting q-deformation machinery. If the folio ever builds an actual L^p / Banach-lattice analytic layer for Delta_q (sectoriality + Hoermander calculus), revisit against rem:q-resolvent-properties.",
+            "target": "rem:q-resolvent-properties"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "135332c04a1b"
+      }
     },
     {
       "source": {
         "kind": "upload",
-        "file": "uploads/Ohtsuki-99.pdf"
+        "file": "uploads/lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "core",
+        "rationale": "IDENTIFICATION FINDING: the filename says 'Ohtsuki-99' but the front matter identifies a 1999 Acta Mathematica Sinica (English Series) 15(3) 293-316 article by Xiaosong Lin and Zhenghan Wang, ON Ohtsuki's invariants — Ohtsuki is the subject, not an author. Anyone joining this row by filename will mis-key it. The paper gives explicit surgery formulae for Ohtsuki's rational invariants lambda_n of integral homology 3-spheres extracted from the Reshetikhin-Turaev SU(2) invariants, plus integrality results. It is core for one specific reason: it prints an independently computed numerical value of lambda_2 for the corpus's own keystone manifold, giving the Sigma(2,3,5) false-theta transcription a falsifiable external check it currently has none of. Citation status checked all three ways: no ref() id (no Lin, no Wang, no Ohtsuki lambda_n entry among the 481 ids), no cite{} in content/**/*.md, no '-- Ref:' in content/**/*.lean. Corpus-grep before declaring the gap: docs/audits/, content/, computations/, docs/coordination/ carry no Casson-invariant or Ohtsuki-series-of-a-3-manifold work at all (every 'Casson' hit is Casson-Rivin angle-structure duality), so no prior agent has already run this check. Note the same Ohtsuki-name collision as the sibling document: this is the lambda_n(M) series of homology spheres, not the 4_1 Kashaev kappa-tower of QOU/QBeta/OhtsukiTowerBarParity.lean.",
+        "keyResults": [
+          {
+            "locator": "Section 5, Example (1), p. 304",
+            "statement": "If M is the Poincare homology 3-sphere Sigma(2,3,5), realised as +1-surgery on the right-handed trefoil, then lambda_2(M) = 39. (Companion: Sigma(2,3,7) from +1-surgery on the left-handed trefoil has lambda_2 = 63.)",
+            "useForFolio": "A parameter-free external number for the second Ohtsuki coefficient of S^3/2I. Expanding the corpus's Sigma(2,3,5) false theta in h = q-1 must reproduce it (together with lambda_1 = 6 lambda_Casson = ±6, the trefoil having a_2 = 1). This is the falsifiable check the keystone transcription lacks. Caveat that must be settled before the comparison means anything: Lin-Wang's orientation is +1-surgery on the RIGHT-handed trefoil, and their own Remark on the same page gives lambda_2(Mbar) = lambda_2(M) + lambda_1(M) under orientation reversal — so the corpus's orientation convention has to be fixed first, or the check will fail for a bookkeeping reason rather than a mathematical one.",
+            "targets": [
+              "computations/probes/keystone_colored_sigma235_wrt.py",
+              "computations/lr_modulus_identification_sigma235.py"
+            ]
+          },
+          {
+            "locator": "Theorem 1.1 (p. 293) and Corollary 5.1 (p. 303), strengthened at Theorem 7.1",
+            "statement": "lambda_2(M) is an integer divisible by 3 for every integral homology 3-sphere M; lambda_1(M) is in 6Z (lambda_1 = 6 times the Casson invariant, Murakami).",
+            "useForFolio": "An integrality sieve on any lambda_n the corpus extracts from its own Sigma(2,3,5) series: a transcription that yields a non-integer, or an integer not divisible by 3 at n=2, is wrong independently of any numerical tolerance. Cheap, exact, and it fails loudly — the right kind of gate for a transcription check. Consistent with the quoted value (39 = 3 x 13).",
+            "targets": [
+              "computations/probes/keystone_colored_sigma235_wrt.py"
+            ]
+          },
+          {
+            "locator": "Theorem 5.1 (p. 302) with Theorem 5.2 and Corollary 5.3 (p. 303-304)",
+            "statement": "Explicit surgery formulae expressing lambda_1 and lambda_2 of a manifold obtained by Dehn surgery on a unit-framed algebraically split link as sums over sublinks; specialised to 1/n-surgery on a knot K these express lambda_2 through Vassiliev invariants read off the Conway and Jones polynomials of K, and give lambda_2(M)/3 = mu(M) mod 2 with mu the Rokhlin invariant.",
+            "useForFolio": "Supplies a second, independent route to the same numbers that does not pass through the false theta at all: it computes lambda_n(Sigma(2,3,5)) from the Jones polynomial of the trefoil, an object the corpus already has full machinery for (Markov trace on H_n(q)). Two independent in-corpus computations of the same lambda_2 would make the check self-contained rather than dependent on a quoted literature value.",
+            "targets": [
+              "computations/lr_modulus_identification_sigma235.py"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "Orphan with no ref() entry. The entry must be keyed on Lin and Wang, not Ohtsuki — the filename invites exactly the wrong join, and the sweep has already recorded one wrong-join incident of this shape in the ledger. Metadata belongs in references.ts only.",
+            "target": "content/schema/references.ts",
+            "bean": "qou-k8uf"
+          },
+          {
+            "action": "compute-check",
+            "rationale": "Expand the corpus's Sigma(2,3,5) series in h = q-1 and compare lambda_1 against ±6 and lambda_2 against 39, after fixing the orientation convention against Lin-Wang's right-handed-trefoil normalisation; apply the lambda_2 in 3Z sieve as a precondition. This validates the transcription that the whole colored-WRT keystone step rests on. The external values are comparison targets, never inputs to be wired.",
+            "target": "computations/probes/keystone_colored_sigma235_wrt.py",
+            "bean": "qou-5rou"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "3fb38d4cfd20"
+      }
     },
     {
       "source": {
@@ -15255,7 +15651,25 @@
         "file": "uploads/yanagihara-1980-meromorphic-solutions-difference-equations.pdf"
       },
       "id": null,
-      "status": "unreviewed"
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "READ VIA PAGE IMAGES (pdftoppm at 90-110 dpi; the PDF is an image-only scan, pdftotext yields ~18 chars), 18 pages, front matter and running heads legible. Subject: meromorphic solutions of the NONLINEAR ORDINARY difference equation y(x+1) = R(x, y(x)) with R = P/Q rational in y (eqs. 1.1-1.4), q_0 := max(deg P, deg Q) (eq. 1.5). Thm 1 (p. 311): a transcendental meromorphic solution has Nevanlinna characteristic T(r, y) >= K_1((1-eps) q_0)^r, hence order infinity unless q_0 = 1 — proved from Valiron's theorem T(r, R(x,y)) = q_0 T(r,y) + O(log r). Thm 3 (p. 313): a Picard-type value-distribution trichotomy driven by 'maximally fixed values / pairs' of R. Sec. 3 (p. 315) + Cor. 6: existence of meromorphic solutions for any rational R, with asymptotic expansions in x^{-1/m} carrying (log x / x)^k corrections, valid in the sectors D_1(R, eps); Sec. 4 (pp. 315-320) gives asymptotic behaviour in horizontal strips Sigma(eta; A, alpha) via Lemmas 14-16. DIRECT ANSWER TO THE QUESTION POSED: this is NOT the corpus's problem class, merely adjacent. Two mismatches, either one decisive. (1) OPERATOR: Yanagihara's is the ADDITIVE shift x -> x+1; the corpus's C1 object is the q-DILATION sigma acting through L1 = (q^2 x - 1) sigma^2 - (q-1) sigma - (q-1) (docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md), and sec:q-difference-viewpoint-method defines the folio's shift as sigma_q : q -> q zeta. (2) LINEARITY: Yanagihara's equation is nonlinear in y (that is the whole point — the Nevanlinna machinery exists to handle R(x,y) rational in y); the corpus's C1 operator is linear. Note also a notation trap: Yanagihara's 'q_0' (eq. 1.5) is max(deg P, deg Q), an integer degree, and has nothing to do with the substrate q_0 ~ 1.10998. On the C1 degree-budget question specifically: the growth Yanagihara controls is the Nevanlinna characteristic T(r, y) of a SOLUTION in the complex plane, not the q-degree of the COEFFICIENTS of a formal series; the corpus's budget is deg_q(c_n) = n^2 against the q-Borel kernel exponent, a different quantity for a different object, and the paper contains no Borel/q-Borel transform, no summability level, no slope filtration and no Stokes multipliers. Citation status checked three ways: no ref() entry (an author-surname grep over content/schema/references.ts returns empty), no \\cite site in content/**/*.md, no '-- Ref:' in content/**/*.lean; the corpus's only Nevanlinna hits are the unrelated Nevanlinna-Sokal Borel-summability criterion and the Nevanlinna parametrization of indeterminate moment problems. Scope-(a) negative: this document, as read, supplies nothing usable for the C1 infinity-residual; it is not a claim that difference-equation value-distribution theory is excluded from the folio.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Orphan with no citation site. The corpus's q-difference machinery is linear and dilation-type; this is nonlinear and additive-shift, so no statement here is consumable and add-reference would be inflation. Recording the classification is the useful output: a future search for 'meromorphic solutions of difference equations' should not re-open this file expecting q-difference content. If the folio ever needs value-distribution growth bounds it should look for the q-difference Nevanlinna literature instead, not this additive-shift paper.",
+            "target": "sec:q-difference-viewpoint-method"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T00:10:43.091Z",
+        "source_sha": "c5e4a39ec3d4"
+      }
     }
   ]
 }
