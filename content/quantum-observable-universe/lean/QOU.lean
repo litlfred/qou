@@ -800,6 +800,11 @@ import QOU.QBeta.BirkhoffBarOddPythagorasBridge
 -- leg 2x, and the lift 1+x² form a Pythagorean triple (lift = 2 − factor_sa); the branching's
 -- own x is too small to supply r*=1.585 (scope-(a) negative — s is genuinely transverse).
 import QOU.QBeta.A3BranchingModulusReflection
+-- qou-prjo: canonical discretization of the Yekutieli surface 2-form on the trefoil (genus-1)
+-- Seifert surface — ∑ V_ij ⁅A_i,A_j⁆; only the skew (intersection) part of the Seifert form
+-- survives, so the trefoil term = a single germ q-curvature ⁅A_a,A_b⁆, zero iff the handles
+-- commute (abelian H₂ ⇒ 0; nonzero only at the non-commutative germ/interface level).
+import QOU.QBeta.YekutieliTrefoilDiscretization
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
