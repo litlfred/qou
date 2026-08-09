@@ -906,3 +906,122 @@ before committing.
                                              no producer (see earlier entry)
     chi-helium-4-h12-at-q0-50dps        78   blocked: needs the owner decision
                                              above, not drain work
+
+---
+
+## The bare-literal issue: 20 live invalid witnesses -> 4, and WHY each happened
+
+A JSON-validity sweep of all 2841 witnesses under `computations/` found 25 that
+fail `json.load(..., parse_constant=raise)` — 20 live, 5 deprecated. `json.dump`
+emits bare `NaN` / `Infinity` / `-Infinity` by default and **JSON has no such
+tokens** (RFC 8259 numbers are finite decimals), so those files are not valid
+JSON. Python's own loader accepts them, which is exactly why nobody noticed: a
+producer round-trips its own output happily and only a non-Python consumer ever
+discovers the file is unreadable.
+
+**The causes are not one thing.** Sorting them turned out to be the whole job,
+because they want different fixes and conflating them is how a "cleanup" makes
+a witness worse:
+
+| cause | example | right fix |
+|---|---|---|
+| swallowed bug | habiro (18 fields) | fix the bug — do NOT serialize the NaN |
+| deliberate pole sentinel | casimir t=1 (27) | marker `"inf"` — the value is correct |
+| genuine divergence | term6 deuteron (5) | marker + a status that says so |
+| undefined by construction | qbeta k=4 (7), a-K u0=0 (4) | `null` + recorded reason |
+| f64 overflow | su4 heavy nuclei (10) | `null` + reason — not representable |
+| infeasible solve | frobenius-repose (30) | `null` — no solution exists |
+| missing upstream key | braid-encoding-audit (2) | `null` + a `_missing` flag |
+| hardcoded math fact | gap-a4 J(edge) = ∞ (1) | marker — it IS infinity |
+
+Two structural fixes, both in the substrate:
+
+  * **`qou_substrate.precision.json_safe_float`** — markers (`"inf"`, `"-inf"`,
+    `"nan"`), deliberately NOT `null` (a pole and a missing value are different
+    facts) and NOT `1e999` (that is how a non-finite becomes a silently wrong
+    finite number). Its absence is the structural reason these literals kept
+    appearing: **a producer with a legitimate infinity had no sanctioned way to
+    write one**, so it wrote the bare literal. Its docstring says explicitly not
+    to use it to launder a swallowed exception.
+  * **A `QOU_WITNESS_STRICT_NONFINITE` guard** at `WitnessBuilder.save`, same
+    warn-by-default shape as the raw-float64 guard beside it. It has already
+    earned its place: after I fixed su4's `W_lam` it caught the 8 DERIVED fields
+    (`B_lincomp` and everything computed from it) that I had missed.
+
+### The habiro bug is worth reading twice
+
+Nine witnesses carried NaN in `tr_M_at_q0_via_u_poly`. The cause:
+
+    sp.sympify(denom, locals={"check_q": u})
+
+maps the wrong NAME. `to_u_polynomial(expr, q, check_q)` renders its returned
+strings using whatever SYMBOL the caller passes, and the callers pass `u` — so
+modern strings say `"u"`, and that mapping parsed them into a FRESH
+`Symbol('u')` with no assumptions. `Symbol('u') != Symbol('u', positive=True,
+real=True)`, so `.subs(u, ...)` silently no-opped, `sp.N` returned an
+expression rather than a number, `mp.mpf(str(<expression>))` raised
+ValueError — and a bare `except Exception` wrote `float('nan')` and printed the
+reason to stdout, where it was lost.
+
+The cross-check had therefore been failing silently for months. With the
+mapping fixed it PASSES: proton now gives `1.0653061442544443` via the u-poly
+against `tr_M_at_q0 = 1.0653061442544502`. The handler now records `null` plus
+`tr_M_at_q0_check_error`, so the next failure is diagnosable.
+
+The mapping accepts BOTH names now: older witnesses in this family legitimately
+say `check_q`, from a caller that passed a symbol of that name.
+
+### Four left, none of them blocked on the fix
+
+    a-K-via-lp-dual        source FIXED, witness not regenerated: this container
+                           now has clarabel 0.11.1 (installed to match the alpha
+                           witness's environment) and this witness's environment
+                           does NOT. With clarabel present the LP takes a
+                           different solve path and x_star moves ~1e-6 — a
+                           different, still-valid optimum. That is #4729's "the
+                           probe was measuring its solver" finding again, and
+                           baking it in under cover of a JSON fix would repeat
+                           the mistake. Which solver this witness pins to is its
+                           owner's call. (Also: needs
+                           PYTHONPATH=tools/pyhecke/python to import at all.)
+    term6-full-pole-sum    source FIXED (status logic + markers). Producer is
+                           already broken on HEAD — dies in
+                           complex(float(re), float(im)), "Cannot convert
+                           expression to float". Verified by running the
+                           unmodified HEAD copy.
+    A-operator-rank-probe  not reached; producer exceeds a 200s budget.
+    habiro-...-oxygen-14   no live producer — oxygen-14 is not in any ATOMS list
+                           in the habiro extract scripts.
+
+### Re-running a witness is not free — three ways it silently changes
+
+Every one of these bit me at least once, and each is invisible to a naive
+"did the values move?" check:
+
+  1. **Anchor.** A bare re-run uses today's DEFAULT q0. casimir was computed at
+     the ideal-muon pin and a fresh run moved 182 values at ~1e-8; su4 the same,
+     285 values. Both re-run with `QOU_Q0_ANCHOR=ideal` to match. gap-a4 goes
+     the OTHER way and cannot be steered at all — it reads a HARDCODED
+     `Q_0_50DPS` constant, so `QOU_Q0_ANCHOR` has no effect and its committed
+     proton value could not have come from the current code.
+  2. **Environment.** `alpha`'s first regeneration recorded `clarabel: null` and
+     `mpmath 1.3.0` where the committed witness had `0.11.1` and `1.4.1` — a
+     provenance DOWNGRADE that no value diff would show. And installing clarabel
+     to fix that is what changed a-K's LP solution.
+  3. **Content-diff-aware save.** Once the new content is on disk, later runs
+     PRESERVE the existing file including its stale `environment` block. The
+     witness has to be DELETED to force a genuine rewrite.
+
+### Two pre-existing defects found while verifying
+
+  * `casimir_macdonald_probe` has ALWAYS exited 1, after writing its witness —
+    an f-string formats a tuple with `:<14`, so that print block has never run.
+  * `term6` reported a DIVERGENT Mittag-Leffler sum with
+    `status: "complete-simple-poles-only"`. The status only ever asked whether a
+    higher-order pole was unresolved, never whether the sum was finite.
+
+### Also: 5 deprecated witnesses are invalid, one for a different reason
+
+`_deprecated/qbeta-gb-filtration-residues.witness.json` is malformed in a way
+NaN does not explain — it contains hand-written `+20.27` and `+202689`, and
+JSON forbids a leading plus. Not touched (deprecated).
