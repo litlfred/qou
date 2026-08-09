@@ -231,3 +231,76 @@ green; `QOU.PhotonThreading` still builds against the repaired UGB. No
   `local_confluence`, `confluence`, `normal_form_unique`) are untouched. They
   are now *stated about repaired definitions*, which is a real change in what
   they assert, but they remain assumptions.
+
+---
+
+## 2026-08-09 (later) — the completion family, and one checkable claim about it
+
+New: `UGB/GrobnerShirshov/HeckeCompletion.lean`. Everything below is sorry-free
+and `#print axioms`-clean.
+
+### The counterexample *is* the missing rule
+
+This is the fact worth having. §4e refutes the GS property with the
+S-polynomial `σ₂σ₃σ₂σ₁ − σ₃σ₂σ₁σ₃`, both words irreducible. The Bokut–Shiao
+completion family is `σᵢσᵢ₋₁⋯σⱼσᵢ → σᵢ₋₁σᵢσᵢ₋₁⋯σⱼ`. At `(i, j) = (3, 1)` its two
+words are
+
+    bsWord₁ 3 1   = σ₃σ₂σ₁σ₃ = NotAGSBasis.w₂
+    bsWord₂ 2 3 1 = σ₂σ₃σ₂σ₁ = NotAGSBasis.w₁
+
+— machine-checked by `decide`, not asserted. So the refuting S-polynomial is,
+up to sign, the missing rule itself. `spoly_not_isNormalForm_completed` then
+follows: `w₂` carries coefficient `−1` in the S-polynomial (`spoly_coeff_w₂`,
+the mirror of §4e's `spoly_coeff_w₁ = 1`) and is `lm(bs31)`, so the
+S-polynomial is not a normal form for the completed system. Directly comparable
+to `NotAGSBasis.spoly_isNormalForm`, which is the same S-polynomial against the
+uncompleted system.
+
+### The family carries no `q`
+
+Worth recording because it is not obvious from the deformed presentation: the
+Bokut–Shiao words need **no** deformation term. The identity is a braid-group
+identity — `σᵢ` commutes past `σᵢ₋₂ ⋯ σⱼ`, then one braid move — and the
+quadratic relation is never used. So `bokutShiaoRelation` is the same two-term
+shape as `yangBaxterRelation`, which it subsumes at `j = i − 1`.
+
+### Indices without `Fin` arithmetic
+
+`bokutShiaoRelation i' i j` takes `i'` standing for `i − 1`, with the relation
+`i'.val + 1 = i.val` carried on the enumeration in
+`heckeCompletedRewritingSystem` rather than by subtracting inside `Fin n`.
+`descWord i j` is built by filtering `List.finRange n` on `j ≤ k ≤ i` and
+reversing. Both choices keep every word free of subtraction and every
+membership proof in the same `flatMap`/`filterMap` shape §4 already uses —
+`bs31_mem` is three `refine`s.
+
+### NOT done, and neither is small
+
+* **The general leading monomial.** `lm (bokutShiaoRelation i' i j) = bsWord₁ i j`.
+  The one lemma it needs is **`descWord i j = ⟨i⟩ :: descWord i' j`** (for
+  `i' + 1 = i`, `j ≤ i'`) — dropping the top index drops the first letter. With
+  it, *no length computation is needed at all*: the two words become
+  `⟨i⟩ :: (descWord i' j ++ [⟨i⟩])` and `⟨i'⟩ :: ⟨i⟩ :: descWord i' j`, visibly
+  the same length, and the lex comparison is one `List.Lex.rel` on the first
+  letters. (An earlier note here said the missing piece was the *length*
+  `(descWord i j).length = i − j + 1`; the cons lemma is both easier and
+  strictly more useful.) It is a statement about `List.finRange n` being sorted.
+  Until it exists there is no `heckeCompletedRewritingSystem_lm_cases`, hence no
+  analogue of §4e's irreducibility machinery for the completed system.
+* **That the completed system is a GS basis.** This is the whole of Bokut &
+  Shiao's theorem. The new family overlaps *itself*, so the composition
+  analysis is over a strictly larger set than the four families listed in this
+  bean's original plan. Resolving the one overlap that refutes the uncompleted
+  system is necessary, not sufficient, and nothing here claims otherwise.
+
+### Build-config hazard found on the way
+
+`ugb`'s `lean_lib` has **no `globs`**, so `lake build` in that project builds
+only `UGB.lean` and what it transitively imports. `UGB.GrobnerShirshov.HeckeGS`
+is imported by nothing in UGB — it is reached only because
+`QOU/PhotonThreading.lean` imports it and `qou` requires `ugb` by path. So the
+Hecke GS work has never been covered by UGB's own `lake build`, and
+`HeckeCompletion` would not be either. Measured: 26 modules, 24 reachable from
+the root, the 2 unreachable ones being exactly `HeckeGS` and `HeckeCompletion`.
+Same class of problem as qou-rc7b, and the same fix — `globs = ["UGB", "UGB.+"]`.
