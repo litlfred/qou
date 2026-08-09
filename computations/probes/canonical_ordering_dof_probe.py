@@ -587,6 +587,101 @@ def part6_crosscheck(results: dict, assertions: dict) -> None:
 
 
 # ---------------------------------------------------------------------------
+# Part 7 -- the corpus's OWN selection rule, and production's disagreement
+# ---------------------------------------------------------------------------
+
+def interleaved_ordering(Z: int, N: int) -> str:
+    """`hecke_core_symbolic._ground_state_ordering` transcribed.
+
+    That helper -- whose docstring reads *"Match hecke_core.build_atom_nf --
+    interleaved p/n ordering"* -- is the compute realisation of
+    `prop:ground-state-ordering`, the corpus's derived selection rule.
+    """
+    A = Z + N
+    out, pc, nc = [], 0, 0
+    for k in range(A):
+        if (k % 2 == 0 and pc < Z) or nc >= N:
+            out.append("p")
+            pc += 1
+        else:
+            out.append("n")
+            nc += 1
+    return "".join(out)
+
+
+def part7_two_conventions(results: dict, assertions: dict) -> None:
+    print("\n" + "=" * 78)
+    print("PART 7 -- the corpus DOES carry a selection rule, and production")
+    print("          does not implement it")
+    print("=" * 78)
+    print("  prop:ground-state-ordering (mass-theory/ground-state-ordering.md):")
+    print("    'the ground-state nucleon ordering -- the one minimising Phi_q --")
+    print("     is, for A >= 4, INTERLEAVED (+ tail-packed excess neutrons).")
+    print("     The sorted ordering (protons first) is optimal only for A <= 3.'")
+    print("  Realised in compute by hecke_core_symbolic._ground_state_ordering,")
+    print("  ordering_cache.get_ordering, HeckeEngine.ground_state_ordering.")
+    print("  The A >= 3 PRODUCTION binding chain uses SORTED for every A.")
+
+    alpha = mp.mpf(M_E_MEV) * 8 * mp.catalan
+    conv = "strict_averaged"
+    rows = []
+    all_less_bound = True
+    print(f"\n  {'atom':6s} {'Z':>3s} {'N':>3s} {'sorted (production)':>22s} "
+          f"{'interleaved (corpus rule)':>26s} {'tau ratio':>12s} {'dB':>9s}")
+    for name, Z, N in [("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2), ("6Li", 3, 3),
+                       ("7Li", 3, 4), ("9Be", 4, 5), ("12C", 6, 6), ("16O", 8, 8),
+                       ("40Ca", 20, 20), ("56Fe", 26, 30)]:
+        can = canonical(Z, N)
+        ilv = interleaved_ordering(Z, N)
+        P_can = ordered_interface_product(can, Q0, conv)
+        P_ilv = ordered_interface_product(ilv, Q0, conv)
+        ratio = P_ilv / P_can
+        dB = -alpha * mp.log(ratio)
+        A = Z + N
+        if A >= 4 and dB >= 0:
+            all_less_bound = False
+        rows.append({
+            "atom": name, "Z": Z, "N": N,
+            "production_sorted": can, "corpus_rule_interleaved": ilv,
+            "orderings_agree": can == ilv,
+            "tau_ratio_interleaved_over_sorted": mp.nstr(ratio, 12),
+            "dB_MeV_interleaved_minus_sorted": mp.nstr(dB, 8),
+        })
+        print(f"  {name:6s} {Z:3d} {N:3d} {can[:22]:>22s} {ilv[:26]:>26s} "
+              f"{float(ratio):12.6f} {float(dB):9.3f}")
+
+    print("\n  Under the PRODUCTION trace the corpus's own ground-state ordering is")
+    print("  strictly LESS bound than the sorted one at every A >= 4 tested "
+          f": {all_less_bound}")
+    print("  The two live conventions therefore do not merely differ -- on the")
+    print("  production readout they are OPPOSED in sign. (Phi_q and ln tau_M are")
+    print("  different functionals, so this is a disagreement between two corpus")
+    print("  objects, not an arithmetic error in either.)")
+    assertions["production_and_corpus_rule_disagree_for_A_ge_4"] = (
+        1 if all_less_bound else 0)
+    assertions["production_sorted_ne_corpus_interleaved"] = (
+        1 if any(not r["orderings_agree"] for r in rows) else 0)
+    results["two_live_conventions"] = {
+        "production": ("sorted p...pn...n -- mass_at_3A_proper.atom_braid_word_3A, "
+                       "closed_form_tau_M.closed_form_ratio (hardcoded), "
+                       "atom_orbit_reduction"),
+        "corpus_selection_rule": ("interleaved + tail packing -- "
+                                  "prop:ground-state-ordering "
+                                  "(mass-theory/ground-state-ordering.md), realised in "
+                                  "hecke_core_symbolic._ground_state_ordering, "
+                                  "ordering_cache.get_ordering, "
+                                  "HeckeEngine.ground_state_ordering"),
+        "corpus_rule_status": ("STATED, NOT PROVED -- "
+                               "QOU.ParticleInteractions.ground_state_ordering is a "
+                               "`def ... : Prop` with no discharging instance; the .md "
+                               "derivation is an eigenvalue heuristic plus exhaustive "
+                               "search for A <= 14. It is a candidate principle, not a "
+                               "closed one."),
+        "per_atom": rows,
+    }
+
+
+# ---------------------------------------------------------------------------
 
 def main() -> int:
     t0 = time.time()
@@ -606,6 +701,7 @@ def main() -> int:
     part4_multiset(results, assertions)
     part5_production_size(exposed, results, assertions)
     part6_crosscheck(results, assertions)
+    part7_two_conventions(results, assertions)
 
     dt = time.time() - t0
     print("\n" + "=" * 78)
@@ -615,12 +711,17 @@ def main() -> int:
     print("      hardcoded ['p']*Z + ['n']*N inside closed_form_ratio, and every")
     print("      mixed-species A>=3 row of mass-table-comprehensive.witness.json")
     print("      inherits it (Part 0, Part 5).")
-    print("  Q2  CANDIDATE 1 (extremal principle)      : REFUTED (Part 3) --")
-    print("      f_pn/f_pp < 1 < f_pn/f_nn, so the canonical is a saddle.")
+    print("  Q2  CANDIDATE 1 (extremal principle)      : REFUTED *for the sorted")
+    print("      ordering* (Part 3) -- f_pn/f_pp < 1 < f_pn/f_nn, so the sorted")
+    print("      arrangement production uses is a saddle, not an extremum.")
+    print("      BUT the corpus DOES carry a variational selection rule")
+    print("      (prop:ground-state-ordering, Part 7) -- and it selects the")
+    print("      INTERLEAVED arrangement for A >= 4, which production ignores.")
     print("      CANDIDATE 2 (multiset is the datum)   : premise TRUE (Part 2),")
     print("      but the multiset is not an isotope invariant (Part 4), so it")
     print("      re-coordinatises the DOF rather than removing it.")
-    print("      CANDIDATE 3 (genuine undeclared DOF)  : what survives.")
+    print("      CANDIDATE 3 (genuine undeclared DOF)  : survives, in the sharper")
+    print("      form 'two live conventions disagree and neither is proved'.")
     print(f"\n  wall {dt:.1f}s   assertions {sum(assertions.values())}/{len(assertions)}")
 
     w = WitnessBuilder("canonical-ordering-dof", engine="python")
