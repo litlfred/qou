@@ -149,3 +149,71 @@ cancellations rather than signal.
          q-Gaussian, that is a category error.
 - [ ] 4. Only then quote a CDE, with shape derived rather than assumed, and
          check it is not another cancellation before claiming anything.
+
+## STEP 1 DONE — derived alpha_EM wired (commit a188542f)
+
+  1/alpha_EM derived 137.035935094 vs CODATA 137.035999177 (468 ppb)
+  E_C(3He) 0.998413 -> 0.9984161199 (+3.625 ppm). mpmath end to end.
+Provenance fix, not numerical. Audit flag clear.
+
+Also de-vacuumed the audit's own regression test, which had been asserting the
+defect was PRESENT and so kept passing after the fix by matching the docstring
+prose describing the old behaviour. Scanner now skips triple-quoted regions.
+Second time today an audit passed for the wrong reason -- a test pinned to "the
+bug is still here" silently inverts the moment the bug is fixed.
+
+## STEP 2 — RETRACTION. The binding-length radius is NOT parameter-free.
+
+R1 above reported the binding length hbar c/sqrt(2 mu S_sep) cutting the 3He
+radius error from -31.8 % to -6.3 %. **That used AME separation energies**, i.e.
+an experimental input -- exactly the defect just fixed in step 1. With QOU's OWN
+predicted binding it goes the other way:
+
+    QOU chain binding (D + writhe):  2H +27.34 %, 3He -30.37 %, 3H -27.61 %
+
+              S_AME     S_QOU     R(from S_AME)      R(from S_QOU)
+    3He      5.49349   2.54159   2.3795 (-6.26 %)   3.4982 (+37.82 %)
+    3H       6.25725   3.30691   2.2295 (-1.83 %)   3.0668 (+35.04 %)
+
+Parameter-free, the binding-length radius is WORSE than r0*A^(1/3) and opposite
+in sign, because QOU's A=3 binding is ~30 % low. So NOT WIRED. Wiring it would
+have imported AME through the back door and looked like a win.
+
+The binding-length SCALING is still the right physics for A<=4 (size set by
+separation energy, not saturation). It becomes usable only when QOU's light
+binding is right, which makes it downstream of the NN sector, not a fix for it.
+
+## STEP 3 — the shape question, inverted into a target
+
+Rather than guess a q-deformed density, ask what f the CDE actually needs.
+With f defined by E_C = f*Z(Z-1)*alpha*hbar_c/r_rms and the measured
+r_rms(3He) = 1.9661:
+
+    required f (zero strong CSB)  0.5214134
+    Gaussian                      0.488602    0.937 x required
+    uniform ball                  0.464758    0.891 x
+    exponential                   0.454663    0.872 x
+
+THE REQUIRED f IS ABOVE ALL THREE CLASSICAL SHAPES. It needs a density MORE
+centrally concentrated than a Gaussian. So no classical shape closes the CDE by
+itself; either the density is more peaked than any classical option, or there is
+real strong CSB. Even the Gaussian -- the most peaked classical choice -- leaves
+6.29 % unaccounted, which is the Nolen-Schiffer anomaly appearing from the shape
+side rather than the radius side.
+
+That is the actionable target for the q-CLT: **f_qCLT must exceed 0.4886 to beat
+the best classical shape, and reach 0.5214 to close the CDE alone.** If the
+q-deformed density comes out LESS peaked than a Gaussian, the shape route is
+dead and the residual is strong CSB, which is the SM's own answer.
+
+CAUTION carried forward: Tsallis q and quantum-group q are different parameters.
+Do not feed q0 = 1.10998 into a Tsallis q-Gaussian.
+
+## STATE
+
+- [x] 1. derived alpha_EM wired, de-float64
+- [x] 2. binding-length radius EVALUATED and REJECTED as not parameter-free
+- [x] 3. shape target derived: f must reach 0.5214 (Gaussian 0.4886 is the
+         classical ceiling)
+- [ ] 4. compute f for the framework's own q-deformed density and compare
+- [ ] 5. only then quote a CDE
