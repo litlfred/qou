@@ -164,3 +164,62 @@ proved; the assembly is mechanical and specified above.
   3. G5 general -- route (b), direct induction on ballot_succ_succ, avoiding
      RSK. ballot_boundary_zero will very likely be needed there too.
   4. G3 (Temperley-Lieb) and G4 (Connes/Rieffel) still need their own decision.
+
+
+## CORRECTION -- I OVER-PROMISED THE WEDDERBURN ITEM. Read this before starting it.
+
+I listed "the Wedderburn instance from Mathlib's Artin-Wedderburn" as HIGHEST
+LEVERAGE and implied it could be assembled from existing pieces. I have now
+checked, and that was wrong in the way that matters.
+
+WHAT I GOT RIGHT. Mathlib does have Artin-Wedderburn, and this tree already has
+two Mathlib-gap fills around it that I had not noticed:
+
+    QOU/MathlibExt/MatrixSemisimple.lean   isSemisimpleRing_of_nonempty --
+      matrix rings over a division ring are semisimple. Fills Mathlib's own
+      `proof_wanted IsSemisimpleRing.matrix`. Bean qou-5mrn.
+    QOU/MathlibExt/EndSemisimple.lean      isSemisimpleRing_end -- endomorphism
+      rings of finite-dimensional vector spaces are semisimple. Fills Mathlib's
+      `proof_wanted IsSemisimpleRing.module_end`. Bean qou-ciun / epic qou-otbb.
+
+WHAT I GOT WRONG, and it is the blocker. EVERY Mathlib Wedderburn theorem --
+exists_algEquiv_pi_matrix_divisionRing, ..._finite, exists_ringEquiv_pi_matrix_*,
+all of them -- is stated under `variable (R) [IsSemisimpleRing R]`. Mathlib gives
+the STRUCTURE theorem; the SEMISIMPLICITY HYPOTHESIS is the hard part, and for
+H_n(q) it is the Tits deformation / Gyoja-Uno argument. It is not in Mathlib and
+it is not in this tree (grep for IsSemisimpleRing in QOU/ returns only the two
+MathlibExt files above and a comment). So there is no assembly; there is a
+research-grade prerequisite.
+
+AND A PHANTOM I PROPAGATED. Commit 47c4199bd's message says "the tree already
+had H3A/H4A and their Wedderburn isomorphisms". It does NOT. That commit touched
+only FullRank.lean, InstanceH3.lean and InstanceH4.lean -- rank and dimension --
+and grepping InstanceOnH3A/InstanceOnH4A for AlgEquiv or RingEquiv returns
+NOTHING. There is no concrete algebra isomorphism to a product of matrix
+algebras anywhere for H3A or H4A.
+
+I repeated that claim to the sibling as Ask 2 on litlfred/qou#4857 ("if that
+isomorphism is a usable Lean equiv, finrank = 24 follows directly"). I hedged it
+there -- "not asserted, the equiv has not been read closely from this side" --
+and the hedge was correct. Now it is settled: the equiv does not exist. If
+anyone acts on that ask, they will be chasing something that is not there.
+
+## THE ROUTE THAT WOULD ACTUALLY WORK, at low n only
+
+Semisimplicity transfers along a ring equivalence, and a finite product of
+matrix algebras over a field is semisimple (MatrixSemisimple gives the factor
+case). So at n = 3 and n = 4 specifically:
+
+  1. CONSTRUCT the concrete AlgEquiv H3A = M_1 x M_2 x M_1 (and H4A = M_1 x M_3
+     x M_2 x M_3 x M_1, or its TL quotient M_1 x M_3 x M_2). This is the real
+     work, and it does not exist yet.
+  2. Semisimplicity then FOLLOWS -- no Tits deformation needed at fixed n.
+  3. Mathlib's Wedderburn then applies, and the central idempotents pi_lambda
+     can be read off the product decomposition.
+  4. y_lambda and the block scaling still need the Markov trace's own structure;
+     see qou-luq7, where the block scaling is identified as the axiom the class
+     SHOULD have carried.
+
+REVISED PRIORITY. This is no longer the cheapest item in this bean -- step 1 is
+a substantial explicit construction. G2 (recipe fully specified above, both
+ingredients proved) is now the cheapest real progress. Do G2 first.
