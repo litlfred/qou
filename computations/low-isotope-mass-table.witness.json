@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-29T17:20:51.143157+00:00",
-  "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7",
+  "computedAt": "2026-08-09T00:13:51.664899+00:00",
+  "commitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 742,
+  "durationMs": 630,
   "computation": "low-isotope-mass-table",
   "scriptFile": "low_isotope_mass_table.py",
-  "scriptHash": "0be844c1ac00",
-  "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
+  "scriptHash": "fe01308fbd59",
+  "scriptCommitSha": "ce3c9e175c2262a0324f9711641668413b2af8bf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -115,17 +115,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "1.06530622861316705936528454643137255765066167413514838947453",
+        "tr_M_q0_canonical_50dps": "1.06530622861316705936528454643137255765066167413484369429758",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "965.3844755252369",
+        "prediction_MeV_50dps": "938.2720894273243",
         "B_AME_MeV": 938.27208816,
-        "err_MeV": 27.11238736523694,
-        "err_pct": 2.8896082178470994,
-        "err_ppb": 28896082.178470995,
-        "err_ppm": 28896.082178470995,
+        "err_MeV": 1.2673243645622279e-06,
+        "err_pct": 1.3507002718662518e-07,
+        "err_ppb": 1.350700271866252,
+        "err_ppm": 0.0013507002718662518,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via laurent_q_rust)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -213,17 +213,17 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.923233297186153557105253395990686040138662121901341259163501",
+        "tr_M_q0_canonical_50dps": "0.923233297186153557105253395990686040138662121901098037574883",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
         "prediction_type": "mass",
-        "prediction_MeV_50dps": "966.7147735905661",
+        "prediction_MeV_50dps": "939.5654227645324",
         "B_AME_MeV": 939.56542052,
-        "err_MeV": 27.14935307056612,
-        "err_pct": 2.8895649496700706,
-        "err_ppb": 28895649.496700704,
-        "err_ppm": 28895.649496700702,
+        "err_MeV": 2.244532424811041e-06,
+        "err_pct": 2.3889048870794015e-07,
+        "err_ppb": 2.388904887079401,
+        "err_ppm": 0.0023889048870794015,
         "derivation_chain_witness": null,
         "chi_cache_witness": "(computed live via laurent_q_rust)",
         "y_lambda_cache_witness": "y-lambda-at-q0.witness.json"
@@ -634,7 +634,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.104071069302087155715930731656888594077582419765481193981033",
+        "tr_M_q0_canonical_50dps": "0.104071069302087155706449026068381119976943088037765428852023",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -882,7 +882,7 @@
             "witness_ref": null
           }
         ],
-        "tr_M_q0_canonical_50dps": "0.206578475087402999475884105137140936875259423866238020984115",
+        "tr_M_q0_canonical_50dps": "0.206578475087402999457063156194875204017734288007641841464382",
         "wedderburn_blocks_active": [],
         "prediction_method": "canonical-trace",
         "calibration_source": "CAL-1",
@@ -901,10 +901,20 @@
     "n_atoms": 5,
     "derived_from": {
       "witness": "canonical-mass-table-extended.witness.json",
-      "scriptHash": "5457f04c7a7b",
-      "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
-      "computedAt": "2026-06-29T17:20:50.979783+00:00",
-      "commitSha": "ea19ddc940c3510b105bedd8d6cf7fba9ffc55c7"
-    }
+      "scriptHash": "24d485c288e4",
+      "scriptCommitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
+      "computedAt": "2026-08-09T00:13:51.537677+00:00",
+      "commitSha": "165aeb064f70a764d90070fc19b9435ad9473a48"
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "canonical-mass-table-extended.witness.json",
+        "sha256": "312147b4150a89f0823c8828624a7ed8bfad580a46d8c1dffc8b66aef142edac",
+        "size_bytes": 23985,
+        "commitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
+        "scriptCommitSha": "165aeb064f70a764d90070fc19b9435ad9473a48",
+        "computedAt": "2026-08-09T00:13:51.537677+00:00"
+      }
+    ]
   }
 }
