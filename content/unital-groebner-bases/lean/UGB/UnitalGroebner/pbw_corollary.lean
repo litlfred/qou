@@ -62,7 +62,8 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 theorem pbw_corollary
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k) :
     ∀ f : AlgElement G k,
       (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
       (∀ nf₁ nf₂ : AlgElement G k,
@@ -74,6 +75,6 @@ theorem pbw_corollary
     exact normal_form_exists ord sys hgs f
   · -- Uniqueness of the PBW representative: proved via normal_form_unique.
     intro nf₁ nf₂ h₁ h₂
-    exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs hnqz f nf₁ nf₂ h₁ h₂
 
 end UGB.UnitalGroebner

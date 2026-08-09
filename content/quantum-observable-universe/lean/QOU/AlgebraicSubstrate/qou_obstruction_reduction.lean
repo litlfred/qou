@@ -63,9 +63,26 @@ class QouObstructionReductionContext where
   /-- DEFINITIONAL — Kummer level-`n` vanishing *is* `n ∣ κ₀`
       (definition of the predicate, in terms of `κ₀`, NOT `χ(A)`). -/
   kappa_vanishes_def : ∀ n : ℕ, kappa_vanishes n ↔ (n : ℤ) ∣ kappa0
-  /-- Honest obstruction gap inputs -/
-  kappa0_eq_chi_A : kappa0 = chi_A
-  phi_1_image_eq_chi_A : phi_1_image = (chi_A : ℝ)
+
+/-- **The universal obstruction class `χ(A) ∈ HH²(U_q, Ad) ≅ ℤ`**, under the
+    name its consumers use.
+
+    A pure accessor for the existing `chi_A` field — it introduces no new datum
+    and no new hypothesis. `SkeinResolutionObstruction` is documented as being
+    "cross-wired to the **same** `QouObstructionReductionContext` … via
+    `obstruction_class_eq`", i.e. deliberately reading the one canonical class
+    rather than carrying a free field of its own; that wiring just had no name
+    on this side. Adding it here keeps the single-source-of-truth property the
+    de-axiomatisation (bean `7kzn`) was for. -/
+def QouObstructionReductionContext.obstruction_class
+    (ctx : QouObstructionReductionContext) : ℤ := ctx.chi_A
+
+/-- The obstruction class **is** `χ(A)`, definitionally. This is the equation
+    the downstream evaluations rewrite along, so that each is visibly an
+    evaluation of the one class rather than of a private copy. -/
+@[simp] theorem QouObstructionReductionContext.obstruction_class_eq
+    (ctx : QouObstructionReductionContext) :
+    ctx.obstruction_class = ctx.chi_A := rfl
 
 /-- **Residual cohomology gap.**  The Euler/trace pairing on the
     generator of the one-dimensional `HH²(U_q, Ad)` evaluates to `χ(A)`,
@@ -79,7 +96,11 @@ class QouObstructionReductionContext where
 -- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/qou-obstruction-reduction.md (parts b,c)
 theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
     ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
-  exact ⟨ctx.kappa0_eq_chi_A, ctx.phi_1_image_eq_chi_A⟩
+  -- The two conjuncts were previously carried as class fields
+  -- (`kappa0_eq_chi_A`, `phi_1_image_eq_chi_A`) and projected here, which made
+  -- this theorem assume exactly what it claims while the module docstring said
+  -- it was "left as `sorry`". Fields deleted; the gap is now real.
+  sorry
 
 /-- **Derived (conclusion (c)).**  Kummer level-`n` vanishing ⟺ `n ∣ χ(A)`.
     Composes the *definitional* `kappa_vanishes_def` (over `κ₀`) with the
@@ -115,5 +136,28 @@ theorem qou_obstruction_reduction [ctx : QouObstructionReductionContext] :
   -- (b),(c) reduce to the residual trace gap κ₀ = χ(A).
   obtain ⟨_, hphi⟩ := obstruction_trace_gap
   exact ⟨ha, hphi, fun n _ => kappa_vanishes_iff_chi n⟩
+
+/-- **Refutable as written — and the docstring above explains how it got that way.**
+
+    The two conjuncts used to be class fields (`kappa0_eq_chi_A`,
+    `phi_1_image_eq_chi_A`) projected by this theorem: the #1 self-assuming
+    projection. Deleting the fields removed that defect and introduced #10 —
+    `kappa0`, `chi_A` and `phi_1_image` are now free, the surviving hypotheses
+    (`vdb_duality`, `drinfeld_rigidity`, `kappa_vanishes_def`) mention none of
+    them, and the `sorry` is unclosable rather than merely open.
+
+    The two criteria are adjacent, and deleting fields moves a block from one to
+    the other. The fix for both is the same: carry the hypotheses the derivation
+    needs, not the conclusion and not nothing (bean qou-octr, §10). -/
+theorem obstruction_trace_gap_unconstrained_false :
+    ¬ ∀ ctx : QouObstructionReductionContext,
+        ctx.kappa0 = ctx.chi_A ∧ ctx.phi_1_image = (ctx.chi_A : ℝ) := by
+  intro h
+  have := h { hhCohDim := fun _ => 1, hhHomDim := fun _ => 1,
+              vdb_duality := fun _ _ => rfl, drinfeld_rigidity := rfl,
+              chi_A := 0, phi_1_image := 0, kappa0 := 1,
+              kappa_vanishes := fun n => (n : ℤ) ∣ 1,
+              kappa_vanishes_def := fun _ => Iff.rfl }
+  simp at this
 
 end QOU.AlgebraicSubstrate

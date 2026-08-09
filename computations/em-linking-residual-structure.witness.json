@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T21:29:48.901709+00:00",
-  "commitSha": "6a84c1450f3edacc9831f05caa7ebfa648e678c0",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T11:16:56.763961+00:00",
+  "commitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "assertions": [
     {
       "name": "both_hypotheses_analysed",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 11,
   "computation": "em-linking-residual-structure",
   "scriptFile": "em_linking_residual_structure_probe.py",
-  "scriptHash": "edc9663249b6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "c0031c757550",
+  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY residual-structure analysis of the extended mirror series (bean qou-dsui). Both surviving geometric hypotheses leave ~4% scatter; this asks whether that residual is noise or carries a nuclear signature -- above all SHELL CLOSURE, which no purely geometric factor (coth of a separation, or a Vol^(-1/3) template) can contain. A significant magic-number excess would redirect the attack away from geometry. Tests declared in advance: shell indicator, distance to nearest magic number, drift along the series, and Z parity.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -177,88 +179,197 @@
         "N": 20,
         "magic": true,
         "dist_to_magic": 0
+      },
+      {
+        "A": 43,
+        "Z": 22,
+        "N": 21,
+        "magic": false,
+        "dist_to_magic": 1
+      },
+      {
+        "A": 45,
+        "Z": 23,
+        "N": 22,
+        "magic": false,
+        "dist_to_magic": 2
+      },
+      {
+        "A": 47,
+        "Z": 24,
+        "N": 23,
+        "magic": false,
+        "dist_to_magic": 3
+      },
+      {
+        "A": 49,
+        "Z": 25,
+        "N": 24,
+        "magic": false,
+        "dist_to_magic": 3
+      },
+      {
+        "A": 51,
+        "Z": 26,
+        "N": 25,
+        "magic": false,
+        "dist_to_magic": 2
+      },
+      {
+        "A": 53,
+        "Z": 27,
+        "N": 26,
+        "magic": false,
+        "dist_to_magic": 1
+      },
+      {
+        "A": 55,
+        "Z": 28,
+        "N": 27,
+        "magic": true,
+        "dist_to_magic": 0
+      },
+      {
+        "A": 57,
+        "Z": 29,
+        "N": 28,
+        "magic": true,
+        "dist_to_magic": 0
+      },
+      {
+        "A": 59,
+        "Z": 30,
+        "N": 29,
+        "magic": false,
+        "dist_to_magic": 1
+      },
+      {
+        "A": 61,
+        "Z": 31,
+        "N": 30,
+        "magic": false,
+        "dist_to_magic": 2
+      },
+      {
+        "A": 63,
+        "Z": 32,
+        "N": 31,
+        "magic": false,
+        "dist_to_magic": 3
       }
     ],
     "analysis": {
       "H_coth": {
-        "constant": "0.21797807",
-        "rel_scatter": 0.0425039188464375,
+        "constant": "0.21944513",
+        "rel_scatter": "0.035046126",
         "residual_by_A": {
-          "3": 0.02379240735919509,
-          "7": 0.11366539531477773,
-          "11": -0.051495738313118766,
-          "13": 0.007475355689137988,
-          "15": -0.050145928128820925,
-          "17": 0.06958279450430473,
-          "19": 0.019036941591430205,
-          "21": 0.025844386988371628,
-          "23": -0.02466097552575817,
-          "25": 0.00145179802603868,
-          "27": -0.04941144364068609,
-          "29": -0.007998937203372348,
-          "31": -0.03949483705428216,
-          "33": -0.014290191019575653,
-          "35": -0.030713737237858474,
-          "37": -0.007784805953012035,
-          "39": -0.023568891265654333,
-          "41": 0.03871640586888291
+          "3": "0.01694807",
+          "7": "0.10622023",
+          "11": "-0.057836753",
+          "13": "0.00074010274",
+          "15": "-0.056495967",
+          "17": "0.062432336",
+          "19": "0.012224396",
+          "21": "0.018986332",
+          "23": "-0.031181388",
+          "25": "-0.0052431858",
+          "27": "-0.055766393",
+          "29": "-0.01463074",
+          "31": "-0.045916081",
+          "33": "-0.020879935",
+          "35": "-0.037193685",
+          "37": "-0.01441804",
+          "39": "-0.030096605",
+          "41": "0.031772298",
+          "43": "0.012985387",
+          "45": "0.018789618",
+          "47": "0.011232184",
+          "49": "0.012976192",
+          "51": "0.0016574238",
+          "53": "0.0087112293",
+          "55": "-0.012792736",
+          "57": "0.018415009",
+          "59": "0.0025608021",
+          "61": "0.034648969",
+          "63": "0.011150929"
         },
-        "magic_mean_resid": 0.011675357667581494,
-        "n_magic": 5,
-        "nonmagic_mean_resid": -0.004490522179839036,
-        "n_nonmagic": 13,
-        "magic_separation_sigma": 0.7203394999001033,
-        "pearson_resid_vs_dist_to_magic": -0.4133937085098503,
-        "pearson_resid_vs_A": -0.32931154271510343,
-        "lag1_autocorrelation": -0.1640894900788038,
-        "z_even_mean_resid": -0.01129968069007759,
-        "z_odd_mean_resid": 0.014124600862596986
+        "magic_mean_resid": "0.0043117722",
+        "n_magic": 7,
+        "nonmagic_mean_resid": "-0.0013719275",
+        "n_nonmagic": 22,
+        "magic_separation_sigma": "0.35910333",
+        "pearson_resid_vs_dist_to_magic": "-0.34212283",
+        "pearson_resid_vs_A": "0.048530703",
+        "lag1_autocorrelation": "-0.07459506",
+        "z_even_mean_resid": "-0.0095187615",
+        "z_odd_mean_resid": "0.011715399"
       },
       "H_FH_Z": {
-        "constant": "4.1775907",
-        "rel_scatter": 0.04518080039203278,
+        "constant": "4.260662",
+        "rel_scatter": "0.043903235",
         "residual_by_A": {
-          "3": -0.03083734557435999,
-          "7": -0.12374624035952944,
-          "11": 0.01171172688529701,
-          "13": -0.035778875849758696,
-          "15": 0.017674477336429125,
-          "17": -0.07223438596001293,
-          "19": -0.03034869636152939,
-          "21": -0.030284221202680737,
-          "23": 0.014254212853338026,
-          "25": -0.001586311463905233,
-          "27": 0.04466215950674427,
-          "29": 0.015652937063856655,
-          "31": 0.045671000280909285,
-          "33": 0.03019203146809379,
-          "35": 0.047822502444882016,
-          "37": 0.03466649132685276,
-          "39": 0.051360370216893686,
-          "41": 0.011148167388479787
+          "3": "-0.049733387",
+          "7": "-0.14083081",
+          "11": "-0.0080139057",
+          "13": "-0.054578571",
+          "15": "-0.0021674126",
+          "17": "-0.090323297",
+          "19": "-0.049254265",
+          "21": "-0.049191047",
+          "23": "-0.0055209913",
+          "25": "-0.021052668",
+          "27": "0.024294083",
+          "29": "-0.0041495384",
+          "31": "0.025283254",
+          "33": "0.010106083",
+          "35": "0.027392808",
+          "37": "0.014493303",
+          "39": "0.030861697",
+          "41": "-0.0085664773",
+          "43": "0.0086558163",
+          "45": "0.0092551189",
+          "47": "0.018817402",
+          "49": "0.022041738",
+          "51": "0.034047936",
+          "53": "0.033535091",
+          "55": "0.052478065",
+          "57": "0.035597482",
+          "59": "0.050170885",
+          "61": "0.033711313",
+          "63": "0.052640294"
         },
-        "magic_mean_resid": -0.0045777433185140645,
-        "n_magic": 5,
-        "nonmagic_mean_resid": 0.0017606705071207941,
-        "n_nonmagic": 13,
-        "magic_separation_sigma": -0.2758373822555737,
-        "pearson_resid_vs_dist_to_magic": 0.3730457083649167,
-        "pearson_resid_vs_A": 0.7091826603585862,
-        "lag1_autocorrelation": 0.3011378476340154,
-        "z_even_mean_resid": 0.004822416722907461,
-        "z_odd_mean_resid": -0.006028020903634326
+        "magic_mean_resid": "-0.0045504758",
+        "n_magic": 7,
+        "nonmagic_mean_resid": "0.0014478787",
+        "n_nonmagic": 22,
+        "magic_separation_sigma": "-0.29987952",
+        "pearson_resid_vs_dist_to_magic": "0.19368088",
+        "pearson_resid_vs_A": "0.79948217",
+        "lag1_autocorrelation": "0.52648437",
+        "z_even_mean_resid": "0.0043200918",
+        "z_odd_mean_resid": "-0.0053170361"
       }
     },
     "verdict": "NO significant shell signature: magic-configuration residuals sit within 2 sigma of the rest. The ~4% is consistent with noise plus whatever the held-fixed B_pp confound contributes, and does NOT by itself argue against a purely geometric factor. It also means the residuals carry no discriminating information between the two surviving hypotheses -- so the tie must be broken elsewhere (bean qou-gcmn: bound the A-dependence of B_pp). A systematic drift with A is also present, which points at an unmodelled monotone factor -- the prime suspect remains the A=3-fixed B_pp unit.",
     "discrimination_by_residual_drift": {
       "abs_pearson_resid_vs_A": {
-        "H_coth": 0.32931154271510343,
-        "H_FH_Z": 0.7091826603585862
+        "H_coth": "0.048530703",
+        "H_FH_Z": "0.79948217"
       },
       "cleanest_residuals": "H_coth",
-      "gap": 0.3798711176434828,
-      "reading": "This is the first test that SEPARATES the two survivors. Raw scatter left them tied (4.25% vs 4.52%), but their residuals behave differently: H_coth's residuals are essentially structureless (r = -0.33 vs A, lag-1 autocorrelation -0.16), while H_FH_Z's carry a strong systematic trend (r = +0.71, autocorrelation +0.30). A correctly-specified model should leave structureless residuals, so the drift counts AGAINST the Vol^(-1/3) reading and IN FAVOUR of coth-saturation.",
+      "gap": "0.75095147",
+      "reading": "This is the first test that SEPARATES the two survivors. Raw scatter left them close (3.5% vs 4.39%), but their residuals behave differently: H_coth's residuals are essentially structureless (r = 0.0485 vs A, lag-1 autocorrelation -0.0746), while H_FH_Z's carry a strong systematic trend (r = 0.799, autocorrelation 0.526). A correctly-specified model should leave structureless residuals, so the drift counts AGAINST the Vol^(-1/3) reading and IN FAVOUR of coth-saturation.",
       "caveat": "Not decisive, for one specific reason: the per-pair Coulomb unit is held at its A=3 value throughout, so any true A-dependence of the strong bond B_pp would appear as exactly this kind of drift -- and would land on whichever hypothesis does not happen to absorb it. Bounding B_pp (bean qou-gcmn) is required before this can be called a result rather than evidence."
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "2f63bcf2281c7d9c3977c6cc427071c931dc978c8fef05490c8eeaf138322b8a",
+        "size_bytes": 10565,
+        "commitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-08T11:16:56.186917+00:00"
+      }
+    ]
   }
 }

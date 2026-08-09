@@ -1,0 +1,204 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T21:55:48.107457+00:00",
+  "commitSha": "d13396b7698810fb488a70a74640b945fe653d1b",
+  "assertions": [
+    {
+      "name": "the_endpoint_split_is_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "seven (N,k) including k=1 and k=N-1, to working dps"
+    },
+    {
+      "name": "logsinc_sum_has_a_clean_O_h_cubed_euler_maclaurin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "residual . N^3 flat to within 5% across N = 100..800"
+    },
+    {
+      "name": "reassembly_gives_s_k_to_O_one_over_N_cubed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "residual . N^3 flat to within 5% across N = 400..1600"
+    },
+    {
+      "name": "dropping_robbins_term_leaves_exactly_one_over_12k",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "gap against -1/(12k) is itself O(1/N^3), N = 400..1600"
+    },
+    {
+      "name": "logsinc_is_even_and_vanishes_at_zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "|logSinc(x)| < x^2 and logSinc(-x) = logSinc(x) at four x"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "kashaev-endpoint-split",
+  "scriptFile": "kashaev_endpoint_split_probe.py",
+  "scriptHash": "fee2865cd9e8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "the_split": {
+      "statement": "sum_{j=1}^k log(2 sin(j pi/N)) = k log(2pi/N) + log(k!) + sum_{j=1}^k logSinc(j pi/N), logSinc x = log sin x - log x",
+      "lean": "QOU.Knot.FigureEightVolume.sum_log_two_sin_split, sorry-free; with logSinc_zero and logSinc_neg (evenness)",
+      "why": "the j=0 singularity is SUBTRACTED, not estimated. The left side is singular termwise as j/N -> 0; the right side is a closed form plus a factorial plus a sum of a function continuous at 0",
+      "rows": [
+        {
+          "N": 100,
+          "k": 1,
+          "L_k": "-2.7674576183973860151",
+          "split": "-2.7674576183973860151",
+          "abs_diff": "0.0"
+        },
+        {
+          "N": 100,
+          "k": 7,
+          "L_k": "-10.868944920513203125",
+          "split": "-10.868944920513203125",
+          "abs_diff": "1.44891e-70"
+        },
+        {
+          "N": 100,
+          "k": 50,
+          "L_k": "2.6491586832740183387",
+          "split": "2.6491586832740183387",
+          "abs_diff": "3.26004e-70"
+        },
+        {
+          "N": 200,
+          "k": 133,
+          "L_k": "24.278693465275129586",
+          "split": "24.278693465275129586",
+          "abs_diff": "5.79563e-69"
+        },
+        {
+          "N": 400,
+          "k": 333,
+          "L_k": "67.609301110857668794",
+          "split": "67.609301110857668794",
+          "abs_diff": "3.47738e-69"
+        },
+        {
+          "N": 1000,
+          "k": 500,
+          "L_k": "3.8004512297710411807",
+          "split": "3.8004512297710411807",
+          "abs_diff": "4.58942e-68"
+        },
+        {
+          "N": 1000,
+          "k": 999,
+          "L_k": "6.9077552789821370521",
+          "split": "6.9077552789821370521",
+          "abs_diff": "8.24429e-68"
+        }
+      ]
+    },
+    "the_logsinc_sum_is_a_clean_euler_maclaurin": {
+      "claim": "residual is O(h^3); residual . N^3 is flat in N",
+      "rows": [
+        {
+          "N": 100,
+          "residual": "2.22196833e-8",
+          "times_N_cubed": "0.0222196833"
+        },
+        {
+          "N": 200,
+          "residual": "2.777698419e-9",
+          "times_N_cubed": "0.02222158735"
+        },
+        {
+          "N": 400,
+          "residual": "3.472197421e-10",
+          "times_N_cubed": "0.0222220635"
+        },
+        {
+          "N": 800,
+          "residual": "4.340270027e-11",
+          "times_N_cubed": "0.02222218254"
+        }
+      ]
+    },
+    "reassembly": {
+      "prediction": "s_k = (N/pi)Lambda(th) - (1/2)log(2N sin th) - (pi/12N) cot(th) + O(1/N^3)",
+      "rows": [
+        {
+          "N": 400,
+          "k": 133,
+          "residual": "1.045384862e-9",
+          "times_N_cubed": "0.06690463118"
+        },
+        {
+          "N": 800,
+          "k": 266,
+          "residual": "1.30674842e-10",
+          "times_N_cubed": "0.06690551909"
+        },
+        {
+          "N": 1600,
+          "k": 533,
+          "residual": "1.622368308e-11",
+          "times_N_cubed": "0.06645220588"
+        }
+      ]
+    },
+    "the_cancellation_that_needs_robbins": {
+      "mechanism": "Stirling contributes +1/(12k); logSinc'(x) = cot x - 1/x contributes -(h/12)(cot th - 1/th) = -(h/12)cot th + 1/(12k). The 1/(12k) pair cancels identically, leaving exactly -(pi/12N) cot th",
+      "consequence": "the two halves are individually O(1/N) and only cancel together, so the refinement genuinely needs Robbins' 1/(12n) Stirling term — Mathlib's own docstring on le_log_factorial_stirling records that it is not formalised",
+      "rows": [
+        {
+          "N": 400,
+          "k": 133,
+          "gap": "-0.000626565370655",
+          "minus_one_over_12k": "-0.00062656641604",
+          "abs_diff": "1.0453849e-9"
+        },
+        {
+          "N": 800,
+          "k": 266,
+          "gap": "-0.000313283077345",
+          "minus_one_over_12k": "-0.00031328320802",
+          "abs_diff": "1.3067484e-10"
+        },
+        {
+          "N": 1600,
+          "k": 533,
+          "gap": "-0.0001563477011",
+          "minus_one_over_12k": "-0.000156347717323",
+          "abs_diff": "1.6223683e-11"
+        }
+      ]
+    },
+    "the_precise_mathlib_gap": {
+      "item_1": "Euler-Maclaurin summation for a smooth function on a compact interval. Mathlib has Polynomial.bernoulli and sum_range_pow_eq_bernoulli but no summation formula",
+      "item_2": "the 1/(12n) term of Stirling (Robbins). Mathlib has le_log_factorial_stirling (effective, one-sided) and factorial_isEquivalent_stirling (asymptotic) only",
+      "status": "(A) is no longer blocked on a singularity; it is blocked on these two standard, clearly-named pieces"
+    }
+  }
+}

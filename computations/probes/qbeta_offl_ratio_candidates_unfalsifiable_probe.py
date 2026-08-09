@@ -240,12 +240,12 @@ def main() -> int:
                 "no A_omega derived, no candidate endorsed, nothing wired")
     wb.add_data("verdict", verdict)
     wb.add_assertion("ratio_map_is_bijection",
-                     computed=1.0 if exhaustive else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="1" if exhaustive else "0", expected="1",
+                     tolerance="0.5",
                      source="rho(A) monotone decreasing, ->1 as A->infinity and "
                             "->infinity as A->A_crit+, hence onto (1, infinity)")
     wb.add_assertion("inversion_roundtrip_exact",
-                     computed=float(rt), expected=0.0, tolerance=1e-20,
+                     computed=mp.nstr(rt, 20), expected="0", tolerance="1e-20",
                      source="A_forced_by_ratio inverts theta_pair on the U1 "
                             "sample at full precision (relative error)")
     wb.save()

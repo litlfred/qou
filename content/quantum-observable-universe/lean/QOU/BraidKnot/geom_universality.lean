@@ -51,12 +51,12 @@ class GeomUniversalityContext where
     G' = Geom
 
 /-- The "additive functional" predicate. -/
-def IsAdditive
+def GeomUniversalityContext.IsAdditive
     [ctx : GeomUniversalityContext] (G : ctx.Knot → ℝ) : Prop :=
   ∀ K₁ K₂, G (ctx.connectSum K₁ K₂) = G K₁ + G K₂
 
 /-- The "normalised on unknot + 4₁" predicate. -/
-def IsNormalised
+def GeomUniversalityContext.IsNormalised
     [ctx : GeomUniversalityContext] (G : ctx.Knot → ℝ) : Prop :=
   G ctx.unknot = 0 ∧ G ctx.fourOne = ctx.Vol_4_1 / ctx.hbar_q_sq
 

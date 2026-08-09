@@ -1,0 +1,110 @@
+{
+  "probe": "qbeta_5two_route25_rogers_trace",
+  "bean": "qou-0yqu",
+  "dps": 120,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the identity is IRREDUCIBLY a sum over embeddings: at the real root alone, L(y_3) is not a rational multiple of pi^2 (PSLQ to coeff 1e10 at 120 dps finds nothing), and Li2(y_3) is not in the Q-span of {pi^2, L^2}. So no root-by-root ladder exists and the trace framing is forced",
+      "L_y3": "0.725471193740842954307391129947",
+      "L_y3_over_pi2": "0.0735056000482419533818637939126",
+      "pslq_L_pi2": null,
+      "pslq_L_pi2_L2": null,
+      "pslq_Li2_pi2_L2": null,
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "with GENUINE Rogers L on principal branches the trace is pi^2/2 - (2/3) pi th -- PSLQ gives [6,-3,4] on {tr, pi^2, pi*th}, and adding L^2, th^2 leaves their coefficients ZERO. Already a simplification: the Li2 form needs four terms, this needs two. But it is theta-dependent, so not yet a clean ladder",
+      "trace_principal": "2.7775344259781150640625374842775115",
+      "pslq_2term": [
+        6,
+        -3,
+        4
+      ],
+      "pslq_4term": [
+        6,
+        -3,
+        4,
+        0,
+        0
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "at m = -2 the trace is EXACTLY pi^2/2, to 120 dps (difference 0.0), and PSLQ returns [-2,1]. Unique in m: the trace moves by (2/3) pi th per unit step, so no other integer works. One clean equation where the Li2 form needed four terms",
+      "trace_minus_pi2_over_2_by_m": {
+        "-4": "4.31453554913",
+        "-3": "2.15726777457",
+        "-2": "0.0",
+        "-1": "-2.15726777457",
+        "0": "-4.31453554913",
+        "1": "-6.4718033237",
+        "2": "-8.62907109827"
+      },
+      "trace_at_m_eq_-2": "4.93480220054467930941724549993807556765684970362039531320667",
+      "pi2_over_2": "4.93480220054467930941724549993807556765684970362039531320667",
+      "difference": "0.0",
+      "pslq": [
+        -2,
+        1
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "HONESTY GATE. m = -2 is NOT a branch of log(1-y1). The principal branch has m = -1, so legitimate branches are m = -1 + 3k, i.e. {...,-4,-1,2,...}; -2 is not of that form. At m = -2, exp(lg)/(1-y1) is a primitive CUBE ROOT OF UNITY (arg = -2pi/3). So the object is Rogers L with 1-y twisted by omega, NOT Rogers L -- the twist being exactly the ambiguity in solving (1-y)^3 = y^2 for 1-y. Saying 'the Rogers-L trace is pi^2/2' would be FALSE",
+      "principal_branch_m": "-1.0",
+      "legitimate_m": "m = -1 + 3k",
+      "exp_lg_over_one_minus_y1": {
+        "-4": {
+          "ratio": "(1.0 + 6.12965951707e-121j)",
+          "abs": "1.0",
+          "arg_over_pi": "1.9511312e-121"
+        },
+        "-2": {
+          "ratio": "(-0.5 - 0.866025403784j)",
+          "abs": "1.0",
+          "arg_over_pi": "-0.66666667"
+        },
+        "-1": {
+          "ratio": "(1.0 + 1.08170462066e-121j)",
+          "abs": "1.0",
+          "arg_over_pi": "3.4431727e-122"
+        },
+        "2": {
+          "ratio": "(1.0 - 4.20356496771e-121j)",
+          "abs": "1.0",
+          "arg_over_pi": "-1.3380363e-121"
+        }
+      },
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "this is a REPACKAGING, not new information: expanding the trace gives I + L^2/2 - (2/3)th^2 + (4/3) pi th, and setting that to pi^2/2 returns Route 24's 6I = 3pi^2 - 3L^2 + 4th^2 - 8 pi th identically. It proves nothing. What it buys is a target of the right SHAPE -- a single trace equal to pi^2/2, which is what five-term functional equations produce",
+      "expanded_trace": "4.934802200544679309417245499938075567657",
+      "trace_at_m_eq_-2": "4.934802200544679309417245499938075567657",
+      "diff": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "flagged, NOT claimed: pi^2/2 is exactly the value of the corpus's PROVED level-7 identity `extended_sum` (sum_k (2L(w_k) + L(-w_k)) = pi^2/2). The fields differ -- disc -23 here, disc 49 (totally real, cyclotomic) there -- so it cannot be the same identity and the proved one cannot supply this one. Recorded because a shared constant is worth a look, not because it is evidence",
+      "this_trace": "4.93480220054467930941724549994",
+      "level7_extended_sum": "4.93480220054467930941724549994",
+      "disc_here": -23,
+      "disc_level7": 49,
+      "same_identity": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "reformulation": "sum over the three embeddings of [Li2(y) + (1/2) log y * log(omega (1-y))] = pi^2/2 exactly, with omega = 1 on the real embedding and a primitive cube root of unity on the complex pair. One equation where the Li2 form needed four terms.",
+    "what_the_object_is": "NOT Rogers L. m = -2 is not a branch of log(1-y) (legitimate branches are m = -1 + 3k); the ratio exp(lg)/(1-y) is a primitive cube root of unity. The twist is exactly the ambiguity in solving (1-y)^3 = y^2 for 1-y. With genuine Rogers L the trace is pi^2/2 - (2/3) pi th.",
+    "does_not_prove_anything": "G5: algebraically equivalent to Route 24's closed form. A repackaging. Its value is the SHAPE -- a single trace equal to pi^2/2 is what five-term functional equations produce, and rogersL_fiveTerm is already Lean-proved here.",
+    "why_a_trace_at_all": "G1: no root-by-root ladder exists -- L(y_3) is not a rational multiple of pi^2 and Li2(y_3) is not in span{pi^2, L^2}. The identity is irreducibly a sum over embeddings.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

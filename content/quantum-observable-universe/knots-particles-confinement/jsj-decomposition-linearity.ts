@@ -37,6 +37,11 @@ export default conjecture({
   cites: ["thurston1978"],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-08",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing by meaning.** \`Vol\` is the hyperbolic volume (Gromov norm; Thurston) of a knot complement, and \`Vol_p\` / \`Vol_n\` are the proton/neutron volume quanta. No ordering tactic appears — the arithmetic is \`ring\` — but a hyperbolic volume is a real number, not an element of a generic commutative ring, so this is not a gratuitous specialisation. Same class as the topological-mass cluster verdict (bean \`tmvac\`): a norm/volume is \`ℝ\` by what it *is*, not by what is done to it.`,
+    },
+    {
       kind: "caveat",
       date: "2026-07-12",
       body:

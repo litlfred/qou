@@ -76,4 +76,19 @@ theorem parity_regime_selection [ctx : ParityRegimeSelectionContext] :
   -- Ref: [manuscript] quantum-observable-universe/particle-interactions/parity-regime-selection.ts
   sorry
 
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem parity_regime_selection_unconstrained_false :
+    ¬ ∀ ctx : ParityRegimeSelectionContext,
+        ctx.sign_val = (-(1 : ℝ)) ^ (ctx.A - 1) := by
+  intro h
+  have := h { q := 2, q_gt_one := by norm_num, Z := 1, N := 0, A := 1,
+              A_eq := rfl, a := 0, b := 0, sign_val := 0, m_e := 0,
+              Q_value := 0, S_Delta := 0, Sigma_FP := 0 }
+  norm_num at this
+
 end QOU.ParticleInteractions

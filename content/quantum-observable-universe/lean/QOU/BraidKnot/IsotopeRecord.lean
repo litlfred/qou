@@ -97,10 +97,10 @@ structure IsotopeRecord where
 
 /-- Mass number `A = Z + N` — derived (computed), not a stored/overridable
     field, so `A = Z + N` holds definitionally for every record. -/
-def A (r : IsotopeRecord) : Nat := r.Z + r.N
+def IsotopeRecord.A (r : IsotopeRecord) : Nat := r.Z + r.N
 
 /-- Strand count `n_strands = 3·A` — derived (computed), not stored. -/
-def n_strands (r : IsotopeRecord) : Nat := 3 * (r.Z + r.N)
+def IsotopeRecord.n_strands (r : IsotopeRecord) : Nat := 3 * (r.Z + r.N)
 
 /-- A=Z+N derivation is by `rfl`. -/
 theorem A_eq_Z_plus_N (r : IsotopeRecord) :

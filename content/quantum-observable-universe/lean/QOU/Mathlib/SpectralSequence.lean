@@ -52,7 +52,7 @@ structure CellIndex where
 
 /-- The image of a cell under the `E_r`-differential `d_r`,
     bidegree `(r, 1 - r)` (cohomological convention). -/
-def next (c : CellIndex) : CellIndex :=
+def CellIndex.next (c : CellIndex) : CellIndex :=
   { r := c.r, p := c.p + (c.r : ℤ), q := c.q - (c.r : ℤ) + 1 }
 
 /-- Bidegree of `d_r` is `(r, 1 - r)`: `next.p − p = r` and

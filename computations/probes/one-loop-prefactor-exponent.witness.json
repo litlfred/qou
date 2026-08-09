@@ -1,0 +1,135 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T11:46:47.497280+00:00",
+  "commitSha": "1a7408ed1b65af12a5364a2f2587bf128f9d60e0",
+  "assertions": [
+    {
+      "name": "exponent_is_minus_one_half_on_tightest_pair",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the 4_1/L5a1 two-point determination gives p = -1/2 to better than 1e-15. NOT independent evidence: algebraically identical to the published k_1 = k_2, and asserted here only so the re-expression is machine-checked rather than asserted"
+    },
+    {
+      "name": "free_fit_recovers_minus_one_half",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "least squares over all four manifolds, p free, lands within 1e-2 of -1/2 across ~1 decade of |tau|"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11,
+  "computation": "one-loop-prefactor-exponent",
+  "scriptFile": "one_loop_prefactor_exponent_probe.py",
+  "scriptHash": "9f8353bf46d1",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Measures the exponent p in the prefactor form c_sigma = k*|tau|^p instead of assuming it. Every prior check in this arc computes k_c = c_sigma*|tau|^(1/2) and tests its constancy, which has p = -1/2 substituted in and so cannot see the exponent at all. Here p is free and -1/2 is a prediction. Four manifolds whose c_sigma is determined INDEPENDENTLY of tau (three from colored Jones asymptotics, 5_2 from Ohtsuki's Theorem 1.1), spanning ~1 decade in |tau|. Splits the single assumption recorded in the c_sigma derivation status audit into two, of which only one — that c_sigma depends on tau alone — is still assumed. Derives nothing new; nothing wired.",
+  "auditOnly": "docs/audits/2026-08-08-c-sigma-derivation-status.md",
+  "data": {
+    "inputs": {
+      "4_1": {
+        "tau_DG": "0.8660254037844386467637232",
+        "c_sigma_measured": "0.7598356856515925507718093",
+        "c_sigma_provenance": "colored Jones asymptotic (van der Veen exact + Neville), 17 digits"
+      },
+      "5_2": {
+        "tau_DG": "1.16116273813391007312872",
+        "c_sigma_measured": "0.6562033704714066236034233",
+        "c_sigma_provenance": "Ohtsuki Thm 1.1 |omega|, a rigorous theorem, 10 printed digits"
+      },
+      "L5a1": {
+        "tau_DG": "1.414213562373095048801689",
+        "c_sigma_measured": "0.5946035575013605333606037",
+        "c_sigma_provenance": "colored Jones asymptotic, 20 digits (whitehead-c-sigma-hiprec)"
+      },
+      "L6a4": {
+        "tau_DG": "8.0",
+        "c_sigma_measured": "0.2508724811292303805497315",
+        "c_sigma_provenance": "colored Jones asymptotic"
+      }
+    },
+    "independence_of_inputs": "c_sigma and tau must be measured independently or the test is circular. 4_1 / L5a1 / L6a4 take c_sigma from the colored Jones asymptotic (pure mpmath, exact colored Jones, no SnapPy and no determinant); 5_2 takes it from Ohtsuki's theorem. tau_DG is computed from the geometry in every case. In particular the L5a1 value used here is the 20-digit MEASURED c_sigma, NOT the 2^(-3/4) predicted by the form under test.",
+    "pairwise_exponents": {
+      "4_1 vs 5_2": {
+        "p": "-0.5000000002223717842",
+        "abs_dev_from_minus_half": "2.224e-10"
+      },
+      "4_1 vs L5a1": {
+        "p": "-0.50000000000000000923",
+        "abs_dev_from_minus_half": "9.227e-18"
+      },
+      "4_1 vs L6a4": {
+        "p": "-0.49843301571442573524",
+        "abs_dev_from_minus_half": "0.001567"
+      },
+      "5_2 vs L5a1": {
+        "p": "-0.49999999966922232526",
+        "abs_dev_from_minus_half": "3.308e-10"
+      },
+      "5_2 vs L6a4": {
+        "p": "-0.49819491533342299817",
+        "abs_dev_from_minus_half": "0.001805"
+      },
+      "L5a1 vs L6a4": {
+        "p": "-0.49798954740945208197",
+        "abs_dev_from_minus_half": "0.00201"
+      }
+    },
+    "free_least_squares": {
+      "p": "-0.49829625823394454309",
+      "k": "0.70699030151566106598",
+      "k_predicted_2_pow_minus_half": "0.7071067811865475244",
+      "rms_residual_log_c_sigma": "0.000303499",
+      "residuals": {
+        "4_1": "0.000409809",
+        "5_2": "-8.98356e-5",
+        "L5a1": "-0.000425731",
+        "L6a4": "0.000105758"
+      }
+    },
+    "tightest_determination": {
+      "pair": "4_1 vs L5a1",
+      "NOT_INDEPENDENT_EVIDENCE": "k_i = k_j and p_ij = -1/2 are algebraically the same statement, so this re-expresses the already-published k_1 = k_2 (rel diff 4.5e-18) rather than confirming it again. Recorded because the re-expression is the finding — it shows the exponent was pinned by data the corpus already had — not because it is new evidence.",
+      "why": "the c=1 and c=2 anchors the derivation turns on, and the two whose c_sigma carry the most digits",
+      "p": "-0.5000000000000000092268762",
+      "abs_dev_from_minus_half": "9.22688e-18",
+      "digits": 17
+    },
+    "what_is_still_assumed": "That c_sigma is a function of tau ALONE. A law c_sigma = k*|tau|^p*f(M) with f weakly varying across these four manifolds fits equally well and is not excluded by any data here. The EXPONENT is not the assumed part and never was — pairwise, it is the same statement as the k-constancy the corpus already measured. The functional dependence, and the universality of k across cusp number, are what carry the weight.",
+    "scope": "measures an exponent. Proves no form. Adds no manifold and no link beyond those already in the corpus, so it says nothing new about c-dependence. The L6a4 residual is not evidence against p = -1/2: that tower carries a documented normalisation+cusp offset flagged in its own witness.",
+    "upstream_witness_hashes": [
+      {
+        "path": "one-loop-c-sigma-percusp-dissolution.witness.json",
+        "sha256": "9a148a00706c1b3b38e6dd398eee4adad241da8740231a7c2eb0447523ea94e8",
+        "size_bytes": 4345,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
+      },
+      {
+        "path": "one-loop-ohtsuki-5-2-crosscheck.witness.json",
+        "sha256": "41b1a4b06f560eea762070d59771a9f0f91328db785f3d721443a044b089ce6d",
+        "size_bytes": 1891,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": null
+      }
+    ]
+  }
+}

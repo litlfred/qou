@@ -134,3 +134,87 @@ errors, which is worth fixing separately.
 A witness-level guard — flag any witness whose numeric fields sit within
 tolerance of a known deprecated magnitude while claiming a canonical
 `prediction_method`. That closes the fourth surface; this fixes one wire on it.
+
+## 2026-08-09 — WITNESSES REGENERATED; and the spectral correction was correcting the artifact
+
+Built the missing `pyhecke_native` wheel in-sandbox (`maturin build --release`,
+2m32s), so the producers ran end-to-end after all. The environment ended up
+matching the recorded one **exactly** — python 3.11.15 / numpy 2.4.6 / sympy
+1.14.0 / mpmath 1.3.0 / pyhecke_native 0.9.0. (My earlier note that the sandbox
+had mpmath 1.4.1 was overtaken: installing sympy 1.14 pinned mpmath back to
+1.3.0, so the version caveat no longer applies.)
+
+**Reproduction check.** Re-running `canonical_mass_table_extended.py` on the
+unfixed rows returned values **bit-identical** to the committed witness — only
+`computedAt` / hashes / `durationMs` moved. So the environment reproduces the
+corpus, and any number that *did* change is attributable to the fix.
+
+Regenerated:
+
+| witness | p / n before | after |
+|---|--:|--:|
+| `low-isotope-mass-table` | 965.384 / 966.715 (+2.89 %) | **938.2721 / 939.5654** (+1.35 / +2.39 ppb) |
+| `canonical-mass-table-extended` | (no p/n rows under default `branching`) | unchanged numerically; hashes refreshed |
+| `m-qclt-approx` | production gap **+2.89 %** | **1.35e-7 %** |
+
+Note the extended table never carried p/n under its default method — the
+nucleon rows appear only via the `auto` route the low-isotope wrapper uses,
+which is why the defect hid in the wrapper's output rather than the table's.
+(Wart, unrelated: the wrapper re-runs the producer restricted to 5 atoms and
+so **overwrites** the 7-atom extended witness; the full producer has to be
+re-run afterwards. Worth fixing separately.)
+
+### The consequence — a scope-(a) negative worth reading
+
+Regenerating `m-qclt-approx` failed exactly one assertion:
+`spectral_correction_reduces_residual_gt_20x`, sourced *"derived θ/(8ℏ²) ≈
+0.9711 closes +2.89% → ~-819 ppm"* (the 2026-05-28 audit's ~35× closure).
+
+That closure was measured against a leading term that was +2.89 % high **because
+of this defect**. The factor was removing an excess introduced by the deprecated
+baseline. Against the canonical leading term it overshoots the other way, to
+≈ **−2.89 %** — reduction 0.0028×, i.e. it makes the result worse by almost
+exactly the amount it used to "fix".
+
+The assertion is restated in the direction that is now true rather than
+deleted, so the finding is recorded. **Scope (a), not (b)**: this says the
+factor does not improve *this channel* as a multiplier on the canonical value.
+It is **not** a structural exclusion of θ/(8ℏ_q²) — no invariant forbids the
+quantity and its derivation is untouched. What is refuted is the +2.89 % →
+−819 ppm *closure claim*, which rested on the wrong baseline.
+
+**Follow-up:** `docs/audits/2026-05-28-spectral-phase-correction-derived.md`
+needs re-reading against a canonical baseline; any downstream citation of the
+"~35× closure" is suspect.
+
+### Deliberately NOT regenerated
+
+- `multi-layer-gap-decomposition` — its L1 layer *is* the deprecated nucleon
+  mass and its stated subject is "the +2.89–3.86 % multi-isotope gap". A blind
+  re-run would emit a decomposition of a gap that no longer exists under that
+  framing. Needs re-scoping first, not a re-run.
+- `lambda-scale-refinements-composed-predictions` — a λ_A refinements probe;
+  studying the deprecated route is guardrail §3 permitted and correct here.
+
+## 2026-08-09 — correction: the spectral audit's result was NOT invalidated
+
+I over-claimed above and in PR #4839. Re-read of
+[`2026-05-28-spectral-phase-correction-derived.md`](../docs/audits/2026-05-28-spectral-phase-correction-derived.md)
+against a canonical baseline, with the arithmetic re-verified at 30 dps:
+
+- `966.050 × 0.971120 = 938.150` → **−818.8 ppm** vs m_avg CODATA 938.919.
+  The audit's −819 ppm and ~35× are exactly right and **independent of this
+  defect** — it derives a correction *to the Vol·ρ·λ_A form*, and never
+  claimed to correct the canonical route.
+- What actually changed is the result's **role**: canonical m_avg is already
+  +1.87 ppb, so composing the factor with it double-corrects (→ 911.802,
+  −2.888 %). The narrow true statement is *do not compose this factor with the
+  canonical absolute mass* — not "the closure claim is refuted".
+- "Every downstream citation is suspect" was also wrong: the sweep found
+  **one** consumer, `m_qclt_approx.py`, already handled in #4839.
+  `vol_density_borromean_spectral` has no callers; `e0_lambda_composite.py`
+  only names the function in prose.
+
+The `m_qclt_approx` assertion text is accurate as written (it is scoped to
+that channel); the over-reach was in the PR summary and in this bean, and the
+audit now carries a dated §"Re-read against a canonical baseline".

@@ -1,7 +1,7 @@
 ---
 # qou-med65
-title: 'TASK: the 65 MED wall-side blocks — [LinearOrderedField R] vs ℝ, per block'
-status: todo
+title: 'TASK: wall-side §7c drain — COMPLETE (and the count and the framing were both wrong)'
+status: completed
 type: task
 priority: medium
 tags: [lean, wall-side, 7c]
@@ -91,3 +91,29 @@ stale number.
 land incrementally. Do NOT bulk-generate acknowledgements to clear the count —
 that clears the number while deciding nothing, which is the §1a audit-dodge the
 whole queue exists to prevent.
+
+---
+
+## RESOLVED 2026-08-08 — sweep is 1190/1190
+
+Two things in this bean's own title were wrong and are corrected by measurement:
+
+1. **"65 MED"** — the real count was **59**, independently derived twice from a
+   clean worktree (#4758, #4759).
+2. **"`[LinearOrderedField R]` vs `ℝ`"** — a port to `[LinearOrderedField R]`
+   **still FAILs**: `ARCHIMEDEAN_TYPE_RE = /ℝ|\bReal\b|LinearOrderedField/`
+   matches it. The bean's central framing could not have drained anything.
+
+The residual 13 were read per block: **4 ported** (collatz, nucleon-ordering,
+lr-tensor-character, habiro-ring), **9 acknowledged** with per-file evidence.
+
+## The finding that outlasts this bean
+
+`WALL_ACK_RE` is a **keyword** match — any note containing `§7c` or `base ring`
+passes the block. So **1190/1190 means "every block carries a note", not "every
+base ring is correct"**. `qou-infra-discharges-goncharov-zeta5` now passes while
+its acknowledgement says outright that its `ℝ` is *not* load-bearing.
+
+Do not quote the number without that caveat. Full write-up:
+`docs/audits/2026-08-08-wall-side-final-13-and-what-1190-means.md`.
+

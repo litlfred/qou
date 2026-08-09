@@ -129,7 +129,10 @@ theorem catalan_G_numerical_bounds :
     rw [h20] at hlow
     have hnum : (0.915 : ℝ) < ∑ i ∈ Finset.range 20, (-1 : ℝ) ^ i * f i := by
       norm_num [hf_def, Finset.sum_range_succ]
-    linarith
+    -- `linarith` does not connect these: it treats each partial sum as an
+    -- opaque atom and the two occurrences do not unify for it.  The chain is
+    -- plain transitivity, so state it directly.
+    exact lt_of_lt_of_le hnum hlow
   · -- upper: G ≤ S₉₃ (odd partial sum) and S₉₃ < 0.916
     have hup := hf_anti.tendsto_le_alternating_series hfl 46
     have h93 : ∑ i ∈ Finset.range (2 * 46 + 1), (-1 : ℝ) ^ i * f i =
@@ -137,7 +140,7 @@ theorem catalan_G_numerical_bounds :
     rw [h93] at hup
     have hnum : (∑ i ∈ Finset.range 93, (-1 : ℝ) ^ i * f i) < 0.916 := by
       norm_num [hf_def, Finset.sum_range_succ]
-    linarith
+    exact lt_of_le_of_lt hup hnum
 
 /-- Catalan's constant is positive. -/
 theorem catalan_G_pos : catalan_G > 0 := by

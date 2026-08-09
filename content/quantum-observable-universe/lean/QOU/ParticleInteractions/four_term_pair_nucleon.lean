@@ -121,4 +121,14 @@ theorem four_term_pair_nucleon [ctx : FourTermPairNucleonContext] :
   -- net values ≈ 0.999 / 0.811.
   sorry
 
+/-- **Refutable as written** — `confinedNet` is a free field and
+    `protonNetTarget = 0.999` (bean qou-octr, §10). -/
+theorem four_term_pair_nucleon_unconstrained_false :
+    ¬ ∀ ctx : FourTermPairNucleonContext, ∀ φ₀ φ₁ φ₀₁ : ℝ,
+        ctx.confinedNet φ₀ φ₁ φ₀₁ ctx.protonFlavours = protonNetTarget := by
+  intro h
+  have := h { confinedNet := fun _ _ _ _ => 0, protonFlavours := fun _ => true,
+              neutronFlavours := fun _ => false } 0 0 0
+  norm_num [protonNetTarget] at this
+
 end QOU.ParticleInteractions

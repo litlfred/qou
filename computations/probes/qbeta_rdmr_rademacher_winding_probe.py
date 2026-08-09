@@ -234,14 +234,14 @@ def main() -> int:
                 "for comparison only, never as a fit target")
     wb.add_data("verdict", verdict)
     wb.add_assertion("map_and_formula_gate",
-                     computed=1.0 if gate_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed="1" if gate_ok else "0", expected="1", tolerance="0.5",
                      source="sigma1 sigma2^-1 maps to RL and Phi(RL) agrees between "
                             "the Dedekind-sum formula and the RL-word count")
     wb.add_assertion("three_methods_agree",
-                     computed=1.0 if all_agree else 0.0, expected=1.0, tolerance=0.5,
+                     computed="1" if all_agree else "0", expected="1", tolerance="0.5",
                      source="Dedekind-sum Phi == RL-word count == n*Phi(RL) for both knots")
     wb.add_assertion("phi_vanishes_for_both",
-                     computed=1.0 if all_zero else 0.0, expected=1.0, tolerance=0.5,
+                     computed="1" if all_zero else "0", expected="1", tolerance="0.5",
                      source="Phi = 0 for (RL)^2 and (RL)^3 — the refutation")
     wb.save()
     print("  witness -> computations/probes/qbeta-rdmr-rademacher-winding.witness.json")

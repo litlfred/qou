@@ -63,12 +63,12 @@ structure MarkovTowerT2 (n : ℕ) (R : Type*) [CommRing R] where
   markov_gen : ∀ i, trGen i = z
 
 /-- The R-side single-generator stratum `T₂ = ∑_i z · tr_M(σᵢ)`. -/
-def value (M : MarkovTowerT2 n R) : R :=
+def MarkovTowerT2.value (M : MarkovTowerT2 n R) : R :=
   ∑ i, M.z * M.trGen i
 
 /-- **Closed form.** `T₂ = (n-1) • z²` — a function of the strand count `n`
 alone, derived from the Markov axiom.  No reference to the braid word survives. -/
-theorem value_eq (M : MarkovTowerT2 n R) :
+theorem MarkovTowerT2.value_eq (M : MarkovTowerT2 n R) :
     M.value = (n - 1 : ℕ) • M.z ^ 2 := by
   simp only [MarkovTowerT2.value, M.markov_gen, Finset.sum_const, Finset.card_univ,
     Fintype.card_fin, pow_two]

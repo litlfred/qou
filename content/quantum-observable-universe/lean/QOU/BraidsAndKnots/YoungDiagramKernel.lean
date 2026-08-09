@@ -309,4 +309,25 @@ anti-correlation; verified `k ≤ 30` computationally. Not proved.
 theorem covariance_kernel_conjecture (k : ℕ) : kernelValue k ≤ 0 := by
   sorry
 
+/-- **The conjecture holds on `k ≤ 8`** — proved in Lean, not sampled.
+
+    `kernelValue` is fully computable (a sum over `partsOf k`), so every
+    instance decides. Kernel evaluation only, **no `native_decide`**. This
+    upgrades part of the "verified `k ≤ 30` computationally" above from an
+    external Python check to a machine-checked statement.
+
+    Evaluated further out: `k = 0,1,2` give `0`, and the value is strictly
+    negative from `k = 3` —
+    `-4, -16, -320, -10400, -163520, -3224704, -106339296, -4722309120`
+    at `k = 3…10`. So the §9 small-instance check finds nothing here: this is a
+    **genuine open conjecture**, and the only survivor of the sweep in bean
+    `qou-octr`, where eight sibling `sorry`s all turned out to be refutable.
+
+    The general case is real mathematics: `Σ_{λ⊢k} (f^λ)³ · ω₃(λ) ≤ 0` carries
+    a *cubed* dimension, so it is not the Plancherel expectation of `ω₃` and
+    the standard `E_Planch[ω₃] = 0` identity does not reach it. -/
+theorem covariance_kernel_le_zero_of_le_eight (k : ℕ) (hk : k ≤ 8) :
+    kernelValue k ≤ 0 := by
+  interval_cases k <;> decide
+
 end QOU.BraidsAndKnots.YoungDiagramKernel

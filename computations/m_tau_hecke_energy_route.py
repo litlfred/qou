@@ -120,12 +120,12 @@ def main() -> None:
             "candidate": label,
             "value": mp.nstr(val, 10),
             "rel_error": mp.nstr(rel, 6),
-            "abs_rel_error_pct": float(fabs(rel) * 100),
+            "abs_rel_error_pct": mp.nstr(fabs(rel) * 100, 8),
             "rationale": why,
         })
-    rows.sort(key=lambda r: r["abs_rel_error_pct"])
+    rows.sort(key=lambda r: mpf(r["abs_rel_error_pct"]))
     best = rows[0]
-    any_close = best["abs_rel_error_pct"] < 1.0
+    any_close = mpf(best["abs_rel_error_pct"]) < 1
 
     wb = WitnessBuilder("m-tau-hecke-energy-route", engine="mpmath")
     wb.set_description(
@@ -155,7 +155,7 @@ def main() -> None:
     wb.add_data("verdict", (
         f"No pre-declared candidate reaches 1% of the target; the best "
         f"is {best['candidate']} at "
-        f"{best['abs_rel_error_pct']:.2f}% . The muon-anchored Hecke "
+        f"{best['abs_rel_error_pct']}% . The muon-anchored Hecke "
         f"route does NOT close m_tau with the corpus's existing "
         f"factor vocabulary — an honest negative. Closing it requires "
         f"a new structural ingredient (e.g. a genuine Markov trace of "
@@ -164,7 +164,7 @@ def main() -> None:
         f"subtraction), not another combination of these factors."
         if not any_close else
         f"Candidate {best['candidate']} lands within "
-        f"{best['abs_rel_error_pct']:.3f}% of the target. This is a "
+        f"{best['abs_rel_error_pct']}% of the target. This is a "
         f"CANDIDATE TO DERIVE, not a result: absent an independent "
         f"structural reason for exactly this combination it is "
         f"numerology (CAL-4), and nothing is wired on it."))
@@ -183,8 +183,8 @@ def main() -> None:
 
     print(f"target F_tau = m_tau/m_mu = {mp.nstr(target, 10)}")
     for r in rows:
-        print(f"  {r['abs_rel_error_pct']:9.3f}%  {r['candidate']} = {r['value']}")
-    print(f"\nbest: {best['candidate']} at {best['abs_rel_error_pct']:.3f}%")
+        print(f"  {r['abs_rel_error_pct']:>12}%  {r['candidate']} = {r['value']}")
+    print(f"\nbest: {best['candidate']} at {best['abs_rel_error_pct']}%")
     print(f"witness -> {out}")
 
 

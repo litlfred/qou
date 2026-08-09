@@ -146,8 +146,6 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
       of the filament (the `q`-deformed commutator's replacement of
       the classical `1/r²`). -/
   K_cat : ℝ → ℝ → ℝ
-  /-- Kernel identification conclusion. -/
-  kernel_ident : ∀ s t, q ≠ 1 → K_cat s t = qDeformedKernel q ‖ϱ s - ϱ t‖
 
 /-- **Identification of the inherited kernel** — the trace-side
     kernel of the filament's categorical mass equals the concrete
@@ -159,7 +157,9 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
 theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
     [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (_hq1 : ctx.q ≠ 1) :
     ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
-  exact ctx.kernel_ident s t _hq1
+  -- Ref: [manuscript] lem:nsi-q-deformed-kernel — the q-deformed commutator and q-Hodge star
+  -- are not yet formalised.
+  sorry
 
 /-- **`q`-deformed commutator replaces `1/r²` with a hard kernel at
     `r = ℏ_q`** ([`lem:nsi-q-deformed-kernel`]) — the resolving
@@ -182,5 +182,17 @@ theorem nsi_q_deformed_kernel {E : Type*} [NormedAddCommGroup E]
       (nhdsWithin (hbarQ ctx.q) {r : ℝ | r ≠ hbarQ ctx.q}) Filter.atTop :=
   ⟨nsi_q_kernel_identification s t hq1,
    nsi_q_kernel_hard_singularity hq0 hq1⟩
+
+/-- **Refutable as written.** `K_cat` is a free field, and at `q = 0` the
+    claimed right-hand side is the Mathlib junk value `_ / 0 = 0`: `ℏ_0 = 1 - 0⁻¹
+    = 1`, so the denominator `r² - ℏ_q²` vanishes at `r = 1`. A kernel that is
+    identically `1` then refutes the identity. Both defects at once — §9's junk
+    value and §10's unconstrained field (bean qou-octr). -/
+theorem nsi_q_kernel_identification_unconstrained_false :
+    ¬ ∀ (ctx : NsiQDeformedKernelContext ℝ) (s t : ℝ), ctx.q ≠ 1 →
+        ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
+  intro h
+  have := h { q := 0, ϱ := id, K_cat := fun _ _ => 1 } 0 1 (by norm_num)
+  simp [qDeformedKernel, hbarQ] at this
 
 end QOU.BraidsKnots

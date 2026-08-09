@@ -59,7 +59,7 @@ structure ZetaFamily where
 conjugation is the bar involution `q ↦ q⁻¹`, so conjugation
 equivariance forces `F(z⁻¹) = conj (F z)` — the family-level form of
 the ζ₄ bar edge realized by `rho_compat` for the τ-assignment. -/
-theorem bar_edge (F : ZetaFamily) {z : ℂ}
+theorem ZetaFamily.bar_edge (F : ZetaFamily) {z : ℂ}
     (hz : Complex.normSq z = 1) :
     F.toFun z⁻¹ = (starRingEnd ℂ) (F.toFun z) := by
   rw [← F.conj_equivariant z, Complex.inv_def, hz]

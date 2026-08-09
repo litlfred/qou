@@ -56,8 +56,6 @@ class MassCategoricalDescentContext where
   /-- The Bethe–Weizsäcker liquid-drop value, recovered as one
       phenomenology of the descent decomposition. -/
   B_BW : ℝ
-  /-- Mass categorical descent identity. -/
-  descent_ident : B = B_desc + B_trans
 
 /-- **Mass formula as descent decomposition**
     ([`prop:mass-categorical-descent`]) — the real manuscript identity,
@@ -74,6 +72,20 @@ class MassCategoricalDescentContext where
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
 theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
     ctx.B = ctx.B_desc + ctx.B_trans := by
-  exact ctx.descent_ident
+  -- Ref: [manuscript] quantum-observable-universe/mass-theory/mass-categorical-descent.ts
+  sorry
+
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem mass_categorical_descent_unconstrained_false :
+    ¬ ∀ ctx : MassCategoricalDescentContext, ctx.B = ctx.B_desc + ctx.B_trans := by
+  intro h
+  have := h { CategoricalObj := Unit, m_endo := id,
+              B := 0, B_desc := 1, B_trans := 0, B_BW := 0 }
+  norm_num at this
 
 end QOU.ParticleInteractions

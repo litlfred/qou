@@ -98,7 +98,7 @@ def main() -> None:
     ratio_check = {
         k: {"observed": mp.nstr(obs[k], 8),
             "net_ratio": mp.nstr(pred[k], 8),
-            "pred_over_obs": float(pred[k] / obs[k])}
+            "pred_over_obs": mp.nstr(pred[k] / obs[k], 8)}
         for k in obs
     }
     # The net ratios are O(1) while the mass ratios are O(10^2): the bare
@@ -259,7 +259,7 @@ def main() -> None:
     print("\nVALIDATION (does the ladder reproduce the lepton ratios?):")
     for k, v in ratio_check.items():
         print(f"  {k:8s} observed {v['observed']:>12}   "
-              f"net {v['net_ratio']:>10}   ratio {v['pred_over_obs']:.4f}")
+              f"net {v['net_ratio']:>10}   ratio {v['pred_over_obs']:>10}")
     print("  -> FAILED: net is a normal-form coefficient, not a mass.")
     print("  -> the n=9 vs LEP test is BLOCKED; that is the finding.")
     print(f"witness -> {out}")
