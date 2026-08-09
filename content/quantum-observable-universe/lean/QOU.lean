@@ -796,6 +796,10 @@ import QOU.QBeta.BirkhoffAmplitudeE
 -- quadrature fs²+s²; resolves the "real E vs unit phase" type tension, relocates the
 -- magnitude datum to the transverse slope s (qou-prjo). Conditional §3b, no instance.
 import QOU.QBeta.BirkhoffBarOddPythagorasBridge
+-- A=3 branching ↔ modulus-bridge composition: the branching reduction 1−x², the transverse
+-- leg 2x, and the lift 1+x² form a Pythagorean triple (lift = 2 − factor_sa); the branching's
+-- own x is too small to supply r*=1.585 (scope-(a) negative — s is genuinely transverse).
+import QOU.QBeta.A3BranchingModulusReflection
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
