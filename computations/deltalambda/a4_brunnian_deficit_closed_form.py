@@ -245,8 +245,19 @@ def main():
         Y3 = {tuple(k): sp.cancel(sp.radsimp(_unify_q(v)))
               for k, v in y_lambda_at(3, None).items()}
     for _lbl, _Y in (("y_λ(4)", Y4), ("y_λ(3)", Y3)):
+        # `!=`, not `is not`. The danger this guard exists for is a symbol
+        # `subs(qs, ...)` would MISS, and subs matches by `==`. A bare
+        # `Symbol('q')` from a str round-trip is `!= qs` and IS missed — caught.
+        # But `Symbol('q', positive=True)` (what `wedderburn_jones_markov.Q_SYM`
+        # is) is `== qs` while `is not qs`, because `positive=True` already
+        # implies `real=True`, so the two assumption sets are equivalent and
+        # sympy keeps them as distinct cached objects. Verified: `subs(qs, s**2)`
+        # on such an expression substitutes correctly. An identity test flags it
+        # anyway — a false alarm that blocked this producer when the symbolic
+        # convention-D path was wired in 2026-08-09. Note neither `subs` nor
+        # `xreplace` can repair it: both see nothing to replace.
         _stray = {str(sym) for v in _Y.values() for sym in v.free_symbols
-                  if sym is not qs}
+                  if sym != qs}
         assert not _stray, f"{_lbl} carries non-`qs` symbols {_stray} — q unification failed"
         ycache.parent.mkdir(parents=True, exist_ok=True)
         ycache.write_text(_json2.dumps({
