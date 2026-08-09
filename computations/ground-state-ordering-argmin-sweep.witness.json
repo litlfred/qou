@@ -8275,5 +8275,20 @@
       ]
     }
   ],
-  "wall_seconds": 130.5
+  "wall_seconds": 130.5,
+  "lean_bridge": {
+    "lean_module": "QOU.MassTheory.GroundStateOrderingRefutation",
+    "t_eq_sqrt_q0": "1.053555211059857464170469",
+    "hU_value_Anum_minus_Bnum_t12": "0.60468142081603603543",
+    "hU_satisfied": true,
+    "R_Anum_minus_Bnum": "1.8492217316783366294",
+    "abs_V0V1_sorted": "0.095948809633080208677",
+    "abs_V0V1_prescribed": "0.37096875011162952653",
+    "phi_sorted_from_lean_defs": "-3.643519585721097490585497",
+    "phi_prescribed_from_lean_defs": "-2.29121657442619518120844",
+    "phi_sorted_from_probe": "-3.643519585721097490585497",
+    "phi_prescribed_from_probe": "-2.29121657442619518120844",
+    "max_abs_diff_lean_vs_probe": "1.2446e-60",
+    "gap_nats": "-1.352303011"
+  }
 }
