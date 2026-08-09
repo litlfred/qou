@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T05:07:37.643027+00:00",
-  "commitSha": "106dbd0854687ee377ecce709af2d87d770fe0a0",
+  "computedAt": "2026-08-09T05:13:30.262365+00:00",
+  "commitSha": "1467751a1c15fc34497aa5433ba75850ba6fd92c",
   "assertions": [
     {
       "name": "closed_form_ratio_hardcodes_canonical_ordering",
@@ -123,14 +123,26 @@
       "computed": 1,
       "expected": 1,
       "passed": true
+    },
+    {
+      "name": "production_and_corpus_rule_disagree_for_A_ge_4",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "production_sorted_ne_corpus_interleaved",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "canonical-ordering-dof",
   "scriptFile": "canonical_ordering_dof_probe.py",
-  "scriptHash": "a577219beba1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "28c91eaeb54a",
+  "scriptCommitSha": "1467751a1c15fc34497aa5433ba75850ba6fd92c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -636,7 +648,114 @@
         "closed_form": "0.7907991311018845",
         "rel_diff": "3.05927e-13"
       }
-    ]
+    ],
+    "two_live_conventions": {
+      "production": "sorted p...pn...n -- mass_at_3A_proper.atom_braid_word_3A, closed_form_tau_M.closed_form_ratio (hardcoded), atom_orbit_reduction",
+      "corpus_selection_rule": "interleaved + tail packing -- prop:ground-state-ordering (mass-theory/ground-state-ordering.md), realised in hecke_core_symbolic._ground_state_ordering, ordering_cache.get_ordering, HeckeEngine.ground_state_ordering",
+      "corpus_rule_status": "STATED, NOT PROVED -- QOU.ParticleInteractions.ground_state_ordering is a `def ... : Prop` with no discharging instance; the .md derivation is an eigenvalue heuristic plus exhaustive search for A <= 14. It is a candidate principle, not a closed one.",
+      "per_atom": [
+        {
+          "atom": "T",
+          "Z": 1,
+          "N": 2,
+          "production_sorted": "pnn",
+          "corpus_rule_interleaved": "pnn",
+          "orderings_agree": true,
+          "tau_ratio_interleaved_over_sorted": "1.0",
+          "dB_MeV_interleaved_minus_sorted": "0.0"
+        },
+        {
+          "atom": "3He",
+          "Z": 2,
+          "N": 1,
+          "production_sorted": "ppn",
+          "corpus_rule_interleaved": "pnp",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "0.790655132103",
+          "dB_MeV_interleaved_minus_sorted": "0.87954885"
+        },
+        {
+          "atom": "4He",
+          "Z": 2,
+          "N": 2,
+          "production_sorted": "ppnn",
+          "corpus_rule_interleaved": "pnpn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "1.07539050386",
+          "dB_MeV_interleaved_minus_sorted": "-0.27216176"
+        },
+        {
+          "atom": "6Li",
+          "Z": 3,
+          "N": 3,
+          "production_sorted": "pppnnn",
+          "corpus_rule_interleaved": "pnpnpn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "1.15646473578",
+          "dB_MeV_interleaved_minus_sorted": "-0.54432353"
+        },
+        {
+          "atom": "7Li",
+          "Z": 3,
+          "N": 4,
+          "production_sorted": "pppnnnn",
+          "corpus_rule_interleaved": "pnpnpnn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "1.15646473578",
+          "dB_MeV_interleaved_minus_sorted": "-0.54432353"
+        },
+        {
+          "atom": "9Be",
+          "Z": 4,
+          "N": 5,
+          "production_sorted": "ppppnnnnn",
+          "corpus_rule_interleaved": "pnpnpnpnn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "1.2436511949",
+          "dB_MeV_interleaved_minus_sorted": "-0.81648529"
+        },
+        {
+          "atom": "12C",
+          "Z": 6,
+          "N": 6,
+          "production_sorted": "ppppppnnnnnn",
+          "corpus_rule_interleaved": "pnpnpnpnpnpn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "1.43823875052",
+          "dB_MeV_interleaved_minus_sorted": "-1.3608088"
+        },
+        {
+          "atom": "16O",
+          "Z": 8,
+          "N": 8,
+          "production_sorted": "ppppppppnnnnnnnn",
+          "corpus_rule_interleaved": "pnpnpnpnpnpnpnpn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "1.66327239661",
+          "dB_MeV_interleaved_minus_sorted": "-1.9051323"
+        },
+        {
+          "atom": "40Ca",
+          "Z": 20,
+          "N": 20,
+          "production_sorted": "ppppppppppppppppppppnnnnnnnnnnnnnnnnnnnn",
+          "corpus_rule_interleaved": "pnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "3.97885164129",
+          "dB_MeV_interleaved_minus_sorted": "-5.1710735"
+        },
+        {
+          "atom": "56Fe",
+          "Z": 26,
+          "N": 30,
+          "production_sorted": "ppppppppppppppppppppppppppnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
+          "corpus_rule_interleaved": "pnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnnnnn",
+          "orderings_agree": false,
+          "tau_ratio_interleaved_over_sorted": "6.15396368243",
+          "dB_MeV_interleaved_minus_sorted": "-6.8040441"
+        }
+      ]
+    }
   },
   "caveats": [
     "SCOPE-(b) for candidate 1 ONLY: 'the canonical ordering is not an extremum of the production interface product'. Cited invariant: the exact block factorisation (Part 2, verified on every ordering of every isotope with Z,N <= 6) together with f_pn/f_pp < 1 < f_pn/f_nn at the substrate anchor. The two base ratios lie on opposite sides of 1, so the canonical (1,1) is a saddle of a strictly monotone-in-each-argument function -- an exclusion by a proved structural property, not a failed search.",
