@@ -1016,3 +1016,65 @@ away from `pi`, or with a threshold on `N`. It is not free.
 `OneLoopPrefactorInvariance.lean`: `hc : c^2 |cot th| = (2 sin th)^2` is
 "Stirling factor squared over Gaussian width", and step 6 supplies the
 `2N sin th*` while steps 8-9 supply the `sqrt(N/|cot th*|)`.
+
+---
+
+## Step 10 -- absorbing the two extras (same file, +3 theorems)
+
+`abs_log_kashaevProd_ratio_taylor` left two pieces that are not part of the
+Gaussian: the variation of `log(2N sin th)` and of `cot th` across the window.
+Both are now bounded by mean value on the interval, via Mathlib's
+`Convex.norm_image_sub_le_of_norm_hasDerivWithin_le`:
+
+  * `abs_log_two_sin_sub_le` -- derivative `cot`, bound `K |b-a|`;
+  * `abs_cot_sub_le` -- derivative `-1/sin^2`, bound `M |b-a|`;
+  * `abs_log_kashaevProd_ratio_gaussian` -- the payoff:
+
+        | log(g_k'/g_k) - [ 2u log(2 sin th_k) + (pi u^2/N) cot th_k ] |
+          <= Err_k + Err_k' + M pi^2 |u|^3/(3N^2)
+             + K pi |u| / N + M pi^2 |u| / (6 N^2)
+
+`K` bounds `|cot|`, `M` bounds `1/sin^2`. They are not independent
+(`cot^2 <= 1/sin^2`, so `K <= sqrt M` always works) but keeping them separate
+avoids dragging a square root through the arithmetic for nothing.
+
+The `N` inside `log(2N sin th)` cancels out of the difference -- one
+`Real.log_mul` on each side -- so the mean-value bound is on `log(2 sin th)`,
+whose derivative is exactly `cot`.
+
+### Absorbing costs the RATE, and that is the number to remember
+
+Probe part (vii). The ratio itself is pinned to `O(1/N^2)`. But the absorbed
+`K pi |u| / N` term is `~ K pi / sqrt(N)` at `|u| ~ sqrt(N)`, so at the window
+edge the total error is `Theta(1/sqrt N)`, not `O(1/N^2)`:
+
+    N          960     3840    15360    61440
+    bound     0.783    0.341    0.160    0.077
+    x sqrt N  24.26    21.12    19.80    19.20   <- settling, so the rate is 1/sqrt(N)
+
+Still `-> 0`, so the Laplace step is licensed; but the eventual `c_sigma`
+statement will carry a relative error `O(1/sqrt N)` and no better unless the
+`log(2N sin th)` variation is kept rather than absorbed. That is a real choice
+made here, not an artefact: keeping it would mean carrying a `k`-dependent
+prefactor through the summation, which is more machinery for a better rate that
+the constant does not need (identifying `c_sigma` is a limit statement).
+
+### Lean gotchas
+
+  * `(convex_uIcc a b).norm_image_sub_le_of_norm_hasDerivWithin_le` -- dot
+    notation already supplies the `Convex ℝ s` argument. Passing
+    `convex_uIcc a b` again shifts `x`/`y` into the wrong slots and the error
+    surfaces as "Function expected at ..." with a nonsense type, not as an
+    arity complaint.
+  * `simpa [Real.norm_eq_abs] using hK x hx` FAILS where
+    `rw [Real.norm_eq_abs]; exact hK x hx` succeeds: simp rewrites
+    `|cos x / sin x|` into `|cos x| / |sin x|` and then no longer matches.
+
+### Remaining before `hc`
+
+  1. Exponentiate: `g_{k*+u}/g_{k*} = e^{tilt + quadratic} (1 + O(1/sqrt N))`
+     on `|u| <= c sqrt(N)`.
+  2. Sum over the window and apply step 8 in its TILTED form
+     (`hasSum_gaussian_theta_tilt`) -- the tilt is why that form exists.
+  3. Cut the tail beyond the window with step 5 (lossy is fine there).
+  4. Combine with step 7 for `c_sigma`, then `hc`, then `htau`.

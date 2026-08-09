@@ -174,4 +174,165 @@ theorem abs_log_kashaevProd_ratio_taylor {N k k' : ℕ} (hk : 1 ≤ k) (hkN : k 
     ring
   linarith
 
+/-! ## Absorbing the two non-Gaussian terms
+
+`abs_log_kashaevProd_ratio_taylor` leaves two pieces that are not part of the
+Gaussian: the variation of `log(2N sin θ)` and of `cot θ` across the window.
+Both are `O(u/N)` and `O(u/N²)` respectively, so both vanish on `|u| ≲ √N` —
+but they have to be bounded, not waved at, and the bound is a mean-value
+estimate on each.
+
+`K` bounds `|cot|` and `M` bounds `1/sin²`; they are not independent
+(`cot² ≤ 1/sin²`, so `K ≤ √M` always works) but keeping them separate avoids
+dragging a square root through the arithmetic for no gain. -/
+
+/-- Mean value on `log(2 sin ·)`, whose derivative is `cot`. -/
+theorem abs_log_two_sin_sub_le {a b K : ℝ}
+    (hmem : ∀ x ∈ Set.uIcc a b, 0 < x ∧ x < π)
+    (hK : ∀ x ∈ Set.uIcc a b, |Real.cos x / Real.sin x| ≤ K) :
+    |Real.log (2 * Real.sin b) - Real.log (2 * Real.sin a)| ≤ K * |b - a| := by
+  have hderiv : ∀ x ∈ Set.uIcc a b,
+      HasDerivWithinAt (fun y => Real.log (2 * Real.sin y))
+        (Real.cos x / Real.sin x) (Set.uIcc a b) x := by
+    intro x hx
+    exact (QOU.MathlibExt.hasDerivAt_log_two_sin
+      (ne_of_gt (Real.sin_pos_of_pos_of_lt_pi (hmem x hx).1
+        (hmem x hx).2))).hasDerivWithinAt
+  have hbound : ∀ x ∈ Set.uIcc a b, ‖Real.cos x / Real.sin x‖ ≤ K := by
+    intro x hx; rw [Real.norm_eq_abs]; exact hK x hx
+  have h := (convex_uIcc a b).norm_image_sub_le_of_norm_hasDerivWithin_le
+    hderiv hbound Set.left_mem_uIcc Set.right_mem_uIcc
+  simpa [Real.norm_eq_abs] using h
+
+/-- Mean value on `cot`, whose derivative is `−1/sin²`. -/
+theorem abs_cot_sub_le {a b M : ℝ}
+    (hmem : ∀ x ∈ Set.uIcc a b, 0 < x ∧ x < π)
+    (hM : ∀ x ∈ Set.uIcc a b, 1 / Real.sin x ^ 2 ≤ M) :
+    |Real.cos b / Real.sin b - Real.cos a / Real.sin a| ≤ M * |b - a| := by
+  have hderiv : ∀ x ∈ Set.uIcc a b,
+      HasDerivWithinAt (fun y => Real.cos y / Real.sin y)
+        (-(1 / Real.sin x ^ 2)) (Set.uIcc a b) x := by
+    intro x hx
+    exact (QOU.MathlibExt.hasDerivAt_cos_div_sin
+      (ne_of_gt (Real.sin_pos_of_pos_of_lt_pi (hmem x hx).1
+        (hmem x hx).2))).hasDerivWithinAt
+  have hbound : ∀ x ∈ Set.uIcc a b, ‖-(1 / Real.sin x ^ 2)‖ ≤ M := by
+    intro x hx
+    have hs : 0 < Real.sin x :=
+      Real.sin_pos_of_pos_of_lt_pi (hmem x hx).1 (hmem x hx).2
+    have hpos : (0 : ℝ) < 1 / Real.sin x ^ 2 := by positivity
+    rw [Real.norm_eq_abs, abs_neg, abs_of_pos hpos]
+    exact hM x hx
+  have h := (convex_uIcc a b).norm_image_sub_le_of_norm_hasDerivWithin_le
+    hderiv hbound Set.left_mem_uIcc Set.right_mem_uIcc
+  simpa [Real.norm_eq_abs] using h
+
+/-- **The ratio IS a tilted Gaussian.**  Everything but `2u·log(2 sin θ_k)`
+(the tilt) and `(πu²/N)·cot θ_k` (the Gaussian) is bounded by terms that vanish
+on `|u| ≲ √N`.
+
+This is the statement the Laplace step needs: `g_{k'}/g_k` is
+`e^{tilt + quadratic}` times `1 + o(1)`, with the `o(1)` uniform over the
+window.  Compare `KashaevTailBound`, where the corresponding statements are
+one-sided and carry different constants on the two sides — those can prove
+`Θ(√N)` and cannot produce `c_σ`. -/
+theorem abs_log_kashaevProd_ratio_gaussian {N k k' : ℕ} (hk : 1 ≤ k)
+    (hkN : k < N) (hk' : 1 ≤ k') (hk'N : k' < N) (hN : 4 ≤ N) {M K : ℝ}
+    (hmem : ∀ x ∈ Set.uIcc ((k : ℝ) * π / N) ((k' : ℝ) * π / N), 0 < x ∧ x < π)
+    (hM : ∀ x ∈ Set.uIcc ((k : ℝ) * π / N) ((k' : ℝ) * π / N),
+        1 / Real.sin x ^ 2 ≤ M)
+    (hK : ∀ x ∈ Set.uIcc ((k : ℝ) * π / N) ((k' : ℝ) * π / N),
+        |Real.cos x / Real.sin x| ≤ K) :
+    |(Real.log (kashaevProd N k') - Real.log (kashaevProd N k))
+        - (2 * ((k' : ℝ) - (k : ℝ)) * Real.log (2 * Real.sin ((k : ℝ) * π / N))
+           + (π * ((k' : ℝ) - (k : ℝ)) ^ 2 / (N : ℝ))
+             * (Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N)))|
+      ≤ logKashaevErr N k + logKashaevErr N k'
+        + M * π ^ 2 * |(k' : ℝ) - (k : ℝ)| ^ 3 / (3 * (N : ℝ) ^ 2)
+        + K * π * |(k' : ℝ) - (k : ℝ)| / (N : ℝ)
+        + M * π ^ 2 * |(k' : ℝ) - (k : ℝ)| / (6 * (N : ℝ) ^ 2) := by
+  have hpi := Real.pi_pos
+  have hNpos : (0 : ℝ) < N := by
+    have : 0 < N := by omega
+    exact_mod_cast this
+  have hbase := abs_log_kashaevProd_ratio_taylor hk hkN hk' hk'N hN hmem hM
+  -- the angle offset
+  have hoff : |(k' : ℝ) * π / N - (k : ℝ) * π / N|
+      = |(k' : ℝ) - (k : ℝ)| * (π / N) := by
+    rw [show (k' : ℝ) * π / N - (k : ℝ) * π / N = ((k' : ℝ) - (k : ℝ)) * (π / N) by
+      ring, abs_mul, abs_of_pos (by positivity : (0 : ℝ) < π / N)]
+  -- the `N` in `log(2N sin θ)` cancels out of the difference
+  have hsk : 0 < Real.sin ((k : ℝ) * π / N) :=
+    Real.sin_pos_of_pos_of_lt_pi (hmem _ Set.left_mem_uIcc).1
+      (hmem _ Set.left_mem_uIcc).2
+  have hsk' : 0 < Real.sin ((k' : ℝ) * π / N) :=
+    Real.sin_pos_of_pos_of_lt_pi (hmem _ Set.right_mem_uIcc).1
+      (hmem _ Set.right_mem_uIcc).2
+  have hNsplit : Real.log (2 * (N : ℝ) * Real.sin ((k' : ℝ) * π / N))
+        - Real.log (2 * (N : ℝ) * Real.sin ((k : ℝ) * π / N))
+      = Real.log (2 * Real.sin ((k' : ℝ) * π / N))
+        - Real.log (2 * Real.sin ((k : ℝ) * π / N)) := by
+    rw [show (2 : ℝ) * (N : ℝ) * Real.sin ((k' : ℝ) * π / N)
+        = (N : ℝ) * (2 * Real.sin ((k' : ℝ) * π / N)) by ring,
+      show (2 : ℝ) * (N : ℝ) * Real.sin ((k : ℝ) * π / N)
+        = (N : ℝ) * (2 * Real.sin ((k : ℝ) * π / N)) by ring,
+      Real.log_mul (ne_of_gt hNpos) (by positivity),
+      Real.log_mul (ne_of_gt hNpos) (by positivity)]
+    ring
+  -- the two mean-value bounds
+  have hlog := abs_log_two_sin_sub_le (a := (k : ℝ) * π / N)
+    (b := (k' : ℝ) * π / N) (K := K) hmem hK
+  have hcot := abs_cot_sub_le (a := (k : ℝ) * π / N)
+    (b := (k' : ℝ) * π / N) (M := M) hmem hM
+  rw [hoff] at hlog hcot
+  -- assemble
+  have hMnn : 0 ≤ M := by
+    have hpos : (0 : ℝ) < 1 / Real.sin ((k : ℝ) * π / N) ^ 2 := by positivity
+    linarith [hM _ Set.left_mem_uIcc]
+  have htri : ∀ x y : ℝ, |x - y| ≤ |x| + |y| := fun x y => by
+    simpa [sub_eq_add_neg, abs_neg] using abs_add_le x (-y)
+  have hextra : |(Real.log (2 * (N : ℝ) * Real.sin ((k' : ℝ) * π / N))
+        - Real.log (2 * (N : ℝ) * Real.sin ((k : ℝ) * π / N)))
+        + (π / (6 * (N : ℝ)))
+          * (Real.cos ((k' : ℝ) * π / N) / Real.sin ((k' : ℝ) * π / N)
+             - Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N))|
+      ≤ K * π * |(k' : ℝ) - (k : ℝ)| / (N : ℝ)
+        + M * π ^ 2 * |(k' : ℝ) - (k : ℝ)| / (6 * (N : ℝ) ^ 2) := by
+    refine le_trans (abs_add_le _ _) ?_
+    rw [hNsplit, abs_mul, abs_of_pos (by positivity : (0 : ℝ) < π / (6 * (N : ℝ)))]
+    have h2 : (π / (6 * (N : ℝ)))
+        * |Real.cos ((k' : ℝ) * π / N) / Real.sin ((k' : ℝ) * π / N)
+           - Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N)|
+        ≤ M * π ^ 2 * |(k' : ℝ) - (k : ℝ)| / (6 * (N : ℝ) ^ 2) := by
+      refine le_trans (mul_le_mul_of_nonneg_left hcot (by positivity)) (le_of_eq ?_)
+      field_simp
+    have h1 : |Real.log (2 * Real.sin ((k' : ℝ) * π / N))
+        - Real.log (2 * Real.sin ((k : ℝ) * π / N))|
+        ≤ K * π * |(k' : ℝ) - (k : ℝ)| / (N : ℝ) := by
+      refine le_trans hlog (le_of_eq ?_)
+      field_simp
+    linarith
+  have hsp : (Real.log (kashaevProd N k') - Real.log (kashaevProd N k))
+        - (2 * ((k' : ℝ) - (k : ℝ)) * Real.log (2 * Real.sin ((k : ℝ) * π / N))
+           + (π * ((k' : ℝ) - (k : ℝ)) ^ 2 / (N : ℝ))
+             * (Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N)))
+      = ((Real.log (kashaevProd N k') - Real.log (kashaevProd N k))
+          - (2 * ((k' : ℝ) - (k : ℝ)) * Real.log (2 * Real.sin ((k : ℝ) * π / N))
+             + (π * ((k' : ℝ) - (k : ℝ)) ^ 2 / (N : ℝ))
+               * (Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N))
+             + (Real.log (2 * (N : ℝ) * Real.sin ((k' : ℝ) * π / N))
+                - Real.log (2 * (N : ℝ) * Real.sin ((k : ℝ) * π / N)))
+             + (π / (6 * (N : ℝ)))
+               * (Real.cos ((k' : ℝ) * π / N) / Real.sin ((k' : ℝ) * π / N)
+                  - Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N))))
+        + ((Real.log (2 * (N : ℝ) * Real.sin ((k' : ℝ) * π / N))
+            - Real.log (2 * (N : ℝ) * Real.sin ((k : ℝ) * π / N)))
+           + (π / (6 * (N : ℝ)))
+             * (Real.cos ((k' : ℝ) * π / N) / Real.sin ((k' : ℝ) * π / N)
+                - Real.cos ((k : ℝ) * π / N) / Real.sin ((k : ℝ) * π / N))) := by
+    ring
+  rw [hsp]
+  refine le_trans (abs_add_le _ _) ?_
+  linarith
+
 end QOU.Knot.FigureEightVolume

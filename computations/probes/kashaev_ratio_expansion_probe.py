@@ -14,7 +14,11 @@ Checks `QOU/Knot/KashaevRatioExpansion.lean`:
 
 with `M` any bound on `1/sin^2` between the two angles.
 
-Parts (iii)-(v) are about SIZES rather than validity, because that is what
+  abs_log_kashaevProd_ratio_gaussian
+      the same with the two non-Gaussian terms absorbed, leaving only the tilt
+      `2u log(2 sin th_k)` and the Gaussian `(pi u^2/N) cot th_k`
+
+Parts (iii)-(vii) are about SIZES rather than validity, because that is what
 decides whether the expansion is usable:
 
   * the quadratic coefficient must approach `-sqrt3 pi/N`, i.e. `a = sqrt3 pi/N`
@@ -22,7 +26,9 @@ decides whether the expansion is usable:
   * the linear coefficient must be `O(1/N)` and NOT zero -- it is a tilt of the
     Gaussian, not a negligible perturbation;
   * the total error must go to 0 uniformly for `|u| <~ sqrt(N)`, or the
-    Gaussian replacement is not licensed on the window that carries the sum.
+    Gaussian replacement is not licensed on the window that carries the sum;
+  * and absorbing the two extras costs the RATE: the ratio itself is O(1/N^2),
+    but at the window edge the absorbed terms leave Theta(1/sqrt N).
 
 Run:  python3 computations/probes/kashaev_ratio_expansion_probe.py
 """
@@ -221,6 +227,83 @@ print(f"  bound: {[round(float(x[1]), 5) for x in bs]}  -- decreasing, "
       f"first below 1 at N={min(small)}")
 print(f"  M    : {[round(float(x[2]), 3) for x in bs]}  -- tends to 4, but "
       f"slowly: at N=60 the window's right edge is close to pi")
+
+def sup_abs_cot(N, k, k2, samples=400):
+    """sup of |cot| on the interval between th_k and th_k2."""
+    a, b = sorted((theta(N, k), theta(N, k2)))
+    if a == b:
+        return abs(cos(a) / sin(a))
+    return max(abs(cos(a + (b - a) * mpf(i) / samples)
+                   / sin(a + (b - a) * mpf(i) / samples))
+               for i in range(samples + 1))
+
+
+def gaussian_target(N, k, kp):
+    """tilt + quadratic only -- the two non-Gaussian terms absorbed."""
+    th = theta(N, k)
+    u = mpf(kp) - mpf(k)
+    return (2 * u * log(2 * sin(th))
+            + (pi * u ** 2 / mpf(N)) * (cos(th) / sin(th)))
+
+
+def gaussian_bound(N, k, kp):
+    u = abs(mpf(kp) - mpf(k))
+    M = sup_inv_sin_sq(N, k, kp)
+    K = sup_abs_cot(N, k, kp)
+    return (err_term(N, k) + err_term(N, kp)
+            + M * pi ** 2 * u ** 3 / (3 * mpf(N) ** 2)
+            + K * pi * u / mpf(N)
+            + M * pi ** 2 * u / (6 * mpf(N) ** 2))
+
+
+print()
+print("=== (vi) the pure tilted-Gaussian form (the two extras absorbed) ===")
+print(f"{'N':>6} {'u':>5} {'K':>8} {'|actual - tilt-gauss|':>22} {'bound':>13} "
+      f"{'ok':>4}")
+for N in (60, 240, 960):
+    ks = 5 * N // 6
+    for u in (-20, -5, 5, 20):
+        kp = ks + u
+        if not (1 <= kp < N):
+            continue
+        K = sup_abs_cot(N, ks, kp)
+        actual = abs((log_prod(N, kp) - log_prod(N, ks))
+                     - gaussian_target(N, ks, kp))
+        b = gaussian_bound(N, ks, kp)
+        ok = actual <= b + TOL
+        print(f"{N:6d} {u:5d} {float(K):8.4f} {float(actual):22.6e} "
+              f"{float(b):13.6e} {'ok' if ok else 'FAIL':>4}")
+        check(ok, f"tilted-Gaussian bound violated at N={N}, u={u}: "
+                  f"{actual} > {b}")
+
+print()
+print("=== (vii) the absorbed terms cost a 1/sqrt(N) rate at the window edge ===")
+# The `K pi |u| / N` term is the price of absorbing the log-sin variation.  At
+# u ~ sqrt(N) it is ~ K pi / sqrt(N), so the TOTAL error at the window edge
+# decays like 1/sqrt(N) -- slower than the O(1/N^2) of the ratio itself, and
+# that is the rate the Laplace step will have to live with.
+print(f"{'N':>6} {'u':>6} {'bound':>12} {'x sqrt(N)':>11}")
+rows = []
+for N in (960, 3840, 15360, 61440):
+    ks = 5 * N // 6
+    u = int(sqrt(mpf(N)))
+    if not (1 <= ks + u < N):
+        continue
+    b = gaussian_bound(N, ks, ks + u)
+    rows.append((N, b, b * sqrt(mpf(N))))
+    print(f"{N:6d} {u:6d} {float(b):12.6f} {float(b * sqrt(mpf(N))):11.5f}")
+check(all(rows[i + 1][1] < rows[i][1] for i in range(len(rows) - 1)),
+      f"the tilted-Gaussian error at u ~ sqrt(N) is not decreasing: "
+      f"{[float(r[1]) for r in rows]}")
+# bound * sqrt(N) should settle to a constant -- that IS the 1/sqrt(N) rate
+scaled = [r[2] for r in rows]
+check(max(scaled[1:]) - min(scaled[1:]) < mpf('3'),
+      f"bound * sqrt(N) is not settling to a constant, so the rate is not "
+      f"1/sqrt(N): {[float(x) for x in scaled]}")
+print(f"  bound * sqrt(N) -> {float(scaled[-1]):.4f}  -- so the error at the "
+      f"window edge is Theta(1/sqrt N), NOT O(1/N^2)")
+print(f"  (the ratio itself is O(1/N^2); absorbing the log-sin variation is "
+      f"what costs the rate)")
 
 print()
 if FAILURES:
