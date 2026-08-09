@@ -111,4 +111,19 @@ theorem skein_mass_torus_constituents [ctx : SkeinMassFromLinkingContext]
   have hmain := skein_mass_from_linking (ctx := ctx)
   simpa [h] using hmain
 
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem skein_mass_from_linking_unconstrained_false :
+    ¬ ∀ ctx : SkeinMassFromLinkingContext,
+        ctx.mass = ctx.Q * ctx.mass_Hopf +
+          (Finset.range ctx.n).sum (fun i => ctx.Vol_K i / ctx.hbar_q ^ 2) := by
+  intro h
+  have := h { q := 1, Q := 0, mass_Hopf := 0, n := 0, Vol_K := fun _ => 0,
+              hbar_q := 1 - (1 : ℝ)⁻¹, hbar_q_def := rfl, mass := 1 }
+  norm_num at this
+
 end QOU.BraidsKnots

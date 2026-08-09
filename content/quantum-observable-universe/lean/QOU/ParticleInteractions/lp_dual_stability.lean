@@ -88,4 +88,21 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
   -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
   sorry
 
+/-- **The statement above is refutable as written** — the class never relates
+    the fields its conclusion names, so `∀ instances` admits ones that simply
+    disagree. Not an open gap: the `sorry` cannot be discharged. Fixing it
+    means giving the class the hypotheses the derivation needs (bean qou-octr,
+    criterion §10 `proof-unclosable-context-sorry`). This refutation is the
+    evidence, not the fix. -/
+theorem lp_dual_stability_unconstrained_false :
+    ¬ ∀ ctx : LpDualStabilityContext,
+        (Finset.univ.sum fun j : Fin ctx.channels =>
+          ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 := by
+  intro h
+  have := h { q := 0, channels := 1, G := fun _ _ => 0, κ_G := 0,
+              y_star := fun _ => 0, t := fun _ => 0, t_norm := 0,
+              tr_M_x_star := 0, y_0_star := 0, n_target := 0,
+              x_star := fun _ => 0, x_partial := fun _ => 0, σ_0_idx := 0 }
+  norm_num at this
+
 end QOU.ParticleInteractions
