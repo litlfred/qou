@@ -188,8 +188,13 @@ the disagreement definitional. Measured across the same sweep:
 | `−Φ₁` (i.e. the *maximiser*) | 5 / 16 |
 | `|Φ₁|` (magnitude) | 5 / 16 |
 
-No objective the corpus states is extremised by the helper across the sweep. The
-disagreement is **not** definitional.
+**None of the four** is extremised by the helper across the sweep — neither of
+the two the corpus actually names (`Φ₁`, `Φ_nuc`) nor either sign/magnitude
+variant. So on the objectives available to test, the disagreement is **not**
+definitional. Scope note: this is a negative over four functionals, not a proof
+that no functional exists that the helper extremises; the positive statement it
+supports is the one in §1.1 — the helper optimises nothing *by construction*,
+because it never evaluates anything.
 
 ---
 
@@ -420,9 +425,12 @@ audit.**
   premise, the exact 6-row drop set, and the vacuous assertion are all read
   directly from source and reproduced mechanically.
 - **(a⁺) settled.** Loose end 1's *classification* is settled: the helper runs
-  no search, is the `Φ₁` argmin in 5/16 cases, is the argmin of no other stated
-  objective, and returns the strictly-worst arrangement at ³He under the
-  production objective.
+  no search (read from source, §1.1), is the `Φ₁` argmin in 5/16 cases, and
+  returns the strictly-worst arrangement at ³He under the production objective.
+  The candidate-(c) rejection is weaker in kind — a negative over **four**
+  functionals (§1.5), not over all conceivable ones. It does not need to be
+  stronger: a routine that evaluates nothing extremises nothing by
+  construction.
 - **(a⁻) not determined.** Which arrangement production *should* use is **not**
   determined here and no ordering is recommended. `prop:ground-state-ordering`
   remains **stated, not proved**; its `A > 14` rule remains an extrapolation;
