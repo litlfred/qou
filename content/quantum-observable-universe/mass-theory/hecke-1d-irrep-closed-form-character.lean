@@ -136,7 +136,7 @@ theorem trivial_action_averaged [CommRing R] [Invertible (2 : R)] (q : Rˣ) :
 
 /-- Sign-irrep averaged action equals `-[2]_q / 2`. -/
 theorem sign_action_averaged [CommRing R] [Invertible (2 : R)] (q : Rˣ) :
-    oneDimAction (-q⁻¹) q .Averaged = -(⅟(2 : R) * qInt2 q) := by
+    oneDimAction (-q⁻¹ : Rˣ) q .Averaged = -(⅟(2 : R) * qInt2 q) := by
   show ((-q⁻¹ : Rˣ) : R) - ⅟(2 : R) * heckeH q = -(⅟(2 : R) * qInt2 q)
   rw [Units.val_neg]
   unfold heckeH qInt2
@@ -233,11 +233,11 @@ theorem hecke_1d_trivial_character_closed_form [CommRing R] [Invertible (2 : R)]
     `χ_(1^n)_q(β) = (-q⁻¹)^w · (-[2]_q / 2)^m`. -/
 theorem hecke_1d_sign_character_closed_form [CommRing R] [Invertible (2 : R)]
     (q : Rˣ) (β : List CrossingType) :
-    oneDimCharacter (-q⁻¹) q β
+    oneDimCharacter (-q⁻¹ : Rˣ) q β
       = (((-q⁻¹) ^ (writhe β) : Rˣ) : R)
         * (-(⅟(2 : R) * qInt2 q)) ^ (averagedCount β) := by
   -- From oneDim_character_closed_form + sign_action_averaged.
-  rw [oneDim_character_closed_form (-q⁻¹) q β]
+  rw [oneDim_character_closed_form (-q⁻¹ : Rˣ) q β]
   congr 1
   exact congrArg (· ^ averagedCount β) (sign_action_averaged (R := R) q)
 
@@ -258,7 +258,7 @@ theorem hecke_1d_irrep_closed_form_character [CommRing R] [Invertible (2 : R)]
        = ((q ^ (writhe β) : Rˣ) : R) * (⅟(2 : R) * qInt2 q) ^ (averagedCount β))
     ∧
     -- Sign irrep
-    (oneDimCharacter (-q⁻¹) q β
+    (oneDimCharacter (-q⁻¹ : Rˣ) q β
        = (((-q⁻¹) ^ (writhe β) : Rˣ) : R)
          * (-(⅟(2 : R) * qInt2 q)) ^ (averagedCount β)) := by
   refine ⟨?_, ?_⟩

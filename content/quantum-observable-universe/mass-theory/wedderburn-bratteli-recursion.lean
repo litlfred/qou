@@ -32,6 +32,31 @@
   (`QOU.Calculations`).  Real.sqrt was removed; the formal square
   root `v` is now an explicit parameter.
 
+  **Base ring (§7c): the `Field` is essential here, not scaffolding.**
+  Adjudicated against `wall-base-ring-minimal`: the recursion is a
+  q-*rational* statement, not a q-Laurent one, and both of its divisions
+  are by elements that genuinely vanish somewhere.
+
+  * `markovZ' v = 1/(v + v⁻¹)` divides by `v + v⁻¹`, which is `0` at
+    `v² = −1`; so `v + v⁻¹` is not a unit and the quotient is not a
+    Laurent polynomial.
+  * `bratteliFactor = [c+1]_q / [c+h]_q` divides by a q-integer, which
+    vanishes at roots of unity — exactly the locus this file excludes by
+    working "at generic q".
+  * `qIntZ` is an abbreviation for the **canonical** `QOU.QInteger.qIntBalZ`,
+    whose own defining equation is `(q^k − q^{−k})/(q − q⁻¹)` over
+    `[Field R]`. That `Field` is a deliberate, documented upstream choice
+    ("algebraic inverse — §7c, NOT archimedean; no `ℝ`"), so it is
+    inherited here and cannot be weakened locally.
+
+  A division-free restatement is possible in principle by moving to the
+  relational R[h] form (`z·(v²+1) = v`, `F·[c+h]_q = [c+1]_q`), but that
+  converts `markovZ'`/`bratteliFactor` from functions into relations and
+  so changes the shape of `SatisfiesWedderburnBratteliRecursion` and every
+  consumer; it would have to start at `QOU.MathlibExt.QIntegerCanonical`,
+  not here.  Nothing in this file is archimedean, so it is already on the
+  correct side of the wall.
+
   Refs: prop:wedderburn-bratteli-recursion,
         prop:y-lambda-closed-form-wenzl-bridge,
         prop:hoefsmit-seminormal-form,
@@ -140,8 +165,12 @@ theorem wedderburn_bratteli_apply
   hrec e
 
 /-- Base case at H_1: the weight on the single partition `(1)` is 1.
-    This anchors the recursion via tr_M(1_1) = 1. -/
-theorem y_base_case_singleton {R : Type u} [Field R] (y : Partition → R)
+    This anchors the recursion via tr_M(1_1) = 1.
+
+    Stated over `CommRing` (§7c): this is the one statement in the file
+    that divides by nothing, so it does not inherit the `Field` the
+    q-integer quotients above require. -/
+theorem y_base_case_singleton {R : Type u} [CommRing R] (y : Partition → R)
     (hbase : y ⟨[1]⟩ = (1 : R)) :
     y ⟨[1]⟩ = (1 : R) :=
   hbase
