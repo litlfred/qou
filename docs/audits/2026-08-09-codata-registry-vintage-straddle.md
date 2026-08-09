@@ -161,6 +161,45 @@ inconsistency. It makes no claim about the substrate identity's accuracy —
 that question is simply not tested by a round-trip of its own anchor, which is
 the point.
 
+## Companion finding — the 5 L2 failures are 2 independent ones
+
+Probe: [`computations/l2_row_independence_probe.py`](../../computations/l2_row_independence_probe.py),
+witness `l2-row-independence.witness.json`.
+
+Removing the `m_p` artifact prompted the obvious next question: are the
+remaining rows independent? Three of the five are not. The identities hold on
+**both** the prediction side and the target side:
+
+```
+Delta_pn  ==  Q_beta + m_e             pred resid  2.0e-12 MeV   target resid -6.9e-10 MeV
+m_n       ==  m_p + Q_beta + m_e       pred resid  3.2e-11 MeV   target resid -6.9e-10 MeV
+```
+
+(Residuals are the rounding of the dashboard's own ~12-significant-figure
+serialized strings, not physics.)
+
+The target side is dependent because `M_N_MEV_AME_DERIVED` is *constructed*
+as `M_P_MEV + M_E_MEV + Q_BETA_MEV_AME` — the neutron value the dashboard
+scores against is built from the proton registry and the AME β-decay
+Q-value, not measured independently of them.
+
+| row | status |
+|---|---|
+| `m_p` | **artifact** — pin-anchor round-trip vs a stale registry |
+| `m_n` | **redundant** — `m_p + Q_β + m_e` on both sides |
+| `Δ_pn` | **redundant** — `Q_β + m_e` on both sides |
+| `Q_β` | **independent failure** — lever: Habiro closure (bean `kehn`) |
+| `m_μ` | **independent failure** — lever: μ–p substrate tension |
+
+**Five reported failures are two independent ones.** L2 planning that reads
+the list as five fronts over-counts the work and mis-ranks it.
+
+*Not claimed:* that the dependent rows are wrong to publish (m_n in MeV is a
+useful number — it is just not an independent test), nor that Q_β and m_μ are
+the only *possible* failures — only the only independent ones among the rows
+currently scored. `M_N_MEV_CODATA_DIRECT` **is** an independent neutron
+value; it is simply not what this dashboard scores against.
+
 ## Blast radius of the follow-up fix (scoping datum, not a defect count)
 
 Correcting `M_P_MEV` is a one-line edit with a long tail. Counting references
