@@ -14,12 +14,12 @@
     {
       "gate": "G1",
       "claim": "THE ANCHOR. The field is the 5_2 knot's TRACE FIELD, not merely a cubic field of discriminant -23: the knot's hyperbolic volume is 3*D(y_1) at the complex root of the saddle cubic, and 6*D(c_1) at the generator c = 1/rho. Checked against a PUBLISHED volume, so this identifies y_1 as the tetrahedron shape rather than restating a definition. The published constant's precision, not the identity's, is what bounds this gate",
-      "Vol_5_2_reference": "2.828122088330783157",
+      "Vol_5_2_reference": "2.828122088330783162",
       "D(y_1)": "0.9427073627769277209212996",
-      "Vol / D(y_1)": "2.999999999999999993951451",
-      "Vol / D(c_1)": "5.999999999999999987902902",
-      "relative_deviation_from_3": "2.0161829e-18",
-      "relative_deviation_from_6": "2.0161829e-18",
+      "Vol / D(y_1)": "2.999999999999999999189676",
+      "Vol / D(c_1)": "5.999999999999999998379351",
+      "relative_deviation_from_3": "2.7010814e-19",
+      "relative_deviation_from_6": "2.7010814e-19",
       "both_consistent_with_the_reference_precision": true,
       "pass": true
     },

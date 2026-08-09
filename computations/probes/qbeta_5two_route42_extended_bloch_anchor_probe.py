@@ -68,8 +68,19 @@ import pathlib
 from mpmath import (arg, fabs, im, log, mp, mpc, mpf, nstr, pi, polylog,
                     polyroots, re)
 
+# Raise precision BEFORE the module-scope constant below is built.  Without
+# this the `mpf` is constructed at the default dps=15 and truncated at birth --
+# the `module-const precision` gate flags it LOSSY, correctly.  Setting it here
+# is idempotent with the `mp.dps` assignment in `main()`.
+mp.dps = 60
+
 # Published hyperbolic volume of the 5_2 knot. Its precision -- not the
 # identity's -- is what limits G1, so the gate is set at that scale.
+#
+# NOTE (2026-08-09): the corpus's authoritative value is `_SNAPPY_HP_50` in
+# qou-mass/_internal/knot_volumes.py; Route 71 extended it to 79 dps. This
+# probe only needs the 19 digits its own gate is set at, but the constant is
+# now built at full precision rather than truncated.
 VOL_5_2 = mpf("2.828122088330783162")
 VOL_REF_DIGITS = 19
 
