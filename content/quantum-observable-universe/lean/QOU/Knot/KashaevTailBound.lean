@@ -56,11 +56,21 @@
   bounds it BELOW by `e^{−1}·m·g_{k*}` whenever `√3πm² ≤ N`.  The lower bound
   needs no decomposition at all — dropping terms only helps.
 
-  WHAT IS STILL MISSING.  The split's FIRST summand is `O(N)·max 1 g_w`, not
-  `O(√N)·g_{k*}`: collapsing it needs the numeric constant (`e^{−x} ≤ 1/x`
-  against `D = k*−w ≈ N/6`, threshold `N ≥ 62`), which is NOT assembled here.
-  So `⟨4₁⟩_N ≤ C√N·g_{k*}` is still not a theorem — what is proved is a bound in
-  three named pieces, one of which is not yet in the right shape.
+  Parts 10–11 collapse the below-window region against the peak — `N² ≤ g_{k*}`
+  and `g_w ≤ g_{k*}e^{−x}` with `e^{−x} ≤ 1/x` — and assemble
+  `kashaev_le_argmax_mul`:
+
+      ⟨4₁⟩_N ≤ g_{k*}·( w/N² + w√3N/(πD(D−1)) + (2 + ½√(√3N)) + (2 + ½√(N/√3)) )
+
+  with `D = k*−w`.  Together with `le_kashaev` the invariant is now bounded on
+  BOTH sides by explicit multiples of its own largest term.
+
+  WHAT IS STILL MISSING.  The bounds are RELATIVE to `g_{k*}`; nothing here
+  evaluates `g_{k*}` itself.  Turning them into `c_σ` means feeding
+  `log g_{k*} = 2·s_{k*}` through `kashaev_log_sum_asymptotic`, and that join is
+  untouched.  The constant is also left as an expression rather than a numeral:
+  collapsing it needs `√3 ≤ 1.8`, `π ≥ 3.14` and a threshold on `N`, which this
+  statement deliberately avoids.
 
   -- Ref: [manuscript] QOU/Knot/KashaevArgmax.lean
   -- Ref: [manuscript] QOU/Knot/LobTaylorSaddle.lean
@@ -926,5 +936,158 @@ theorem kashaev_le_split {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 * N)
         + kashaevProd N (5 * N / 6) * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
         + kashaevProd N (5 * N / 6) * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) :=
   sum_kashaevProd_le_split hN hw1 hw2 hwk
+
+/-! ## Part 10 — collapsing the below-window region against the peak
+
+`sum_kashaevProd_below_window_le` bounds that region by `w·max 1 g_w`, which is
+`O(N)` times an ENDPOINT value.  Two facts turn it into `O(1)` times the PEAK:
+
+  * `N² ≤ g_{k*}` (`sq_le_kashaevProd_argmax`), so the `1` costs `g_{k*}/N²`;
+  * `g_w ≤ g_{k*}·e^{−x}` with `x = πD(D−1)/(√3N)`, `D = k*−w`
+    (`kashaevProd_left_tail`), and `e^{−x} ≤ 1/x`.
+
+`e^{−x} ≤ 1/x` rather than a threshold on `N` is deliberate: it is `x ≤ e^x`,
+one line from `Real.add_one_le_exp`, and it keeps the statement free of any
+"for `N` large enough". -/
+
+/-- `e^{−x} ≤ 1/x` for `x > 0` — from `x + 1 ≤ e^x`. -/
+theorem exp_neg_le_one_div {x : ℝ} (hx : 0 < x) : Real.exp (-x) ≤ 1 / x := by
+  rw [Real.exp_neg, ← one_div]
+  exact one_div_le_one_div_of_le hx (by linarith [Real.add_one_le_exp x])
+
+/-- The endpoint value that dominates the below-window region, against the
+peak: `max 1 g_w ≤ g_{k*}·(1/N² + √3N/(πD(D−1)))`, `D = k*−w`. -/
+theorem max_one_kashaevProd_le {N w : ℕ} (hN : 6 ≤ N)
+    (hw1 : 6 * w ≤ 5 * N) (hw2 : 2 * N ≤ 3 * w) (hwk : w ≤ 5 * N / 6)
+    (hD : 2 ≤ 5 * N / 6 - w) :
+    max 1 (kashaevProd N w)
+      ≤ kashaevProd N (5 * N / 6) / (N : ℝ) ^ 2
+        + kashaevProd N (5 * N / 6)
+          * (Real.sqrt 3 * (N : ℝ)
+             / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))) := by
+  have hN0 : N ≠ 0 := by omega
+  have hpi := Real.pi_pos
+  have hNR : (0 : ℝ) < N := by exact_mod_cast Nat.pos_of_ne_zero hN0
+  have hs3 : (0 : ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hbk : 6 * (5 * N / 6) ≤ 5 * N := by
+    have hd := Nat.div_add_mod (5 * N) 6
+    omega
+  have hDR : (2 : ℝ) ≤ ((5 * N / 6 - w : ℕ) : ℝ) := by exact_mod_cast hD
+  have hxpos : (0 : ℝ) < π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1)
+      / (Real.sqrt 3 * (N : ℝ)) := by
+    have h1 : (0 : ℝ) < ((5 * N / 6 - w : ℕ) : ℝ) := by linarith
+    have h2 : (0 : ℝ) < ((5 * N / 6 - w : ℕ) : ℝ) - 1 := by linarith
+    positivity
+  have hgw : kashaevProd N w
+      ≤ kashaevProd N (5 * N / 6)
+        * Real.exp (-(π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1)
+            / (Real.sqrt 3 * (N : ℝ)))) := by
+    have h := kashaevProd_left_tail (N := N) (b := 5 * N / 6) hN0 hbk
+      (5 * N / 6 - w) (by omega) (by omega)
+    rwa [show 5 * N / 6 - (5 * N / 6 - w) = w from by omega] at h
+  have hgw' : kashaevProd N w
+      ≤ kashaevProd N (5 * N / 6)
+        * (Real.sqrt 3 * (N : ℝ)
+           / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))) := by
+    refine le_trans hgw (mul_le_mul_of_nonneg_left ?_ (kashaevProd_nonneg N _))
+    refine le_trans (exp_neg_le_one_div hxpos) (le_of_eq ?_)
+    field_simp
+  have hone : (1 : ℝ) ≤ kashaevProd N (5 * N / 6) / (N : ℝ) ^ 2 := by
+    rw [le_div_iff₀ (by positivity)]
+    simpa using sq_le_kashaevProd_argmax hN
+  have hsecond : (0 : ℝ) ≤ kashaevProd N (5 * N / 6)
+      * (Real.sqrt 3 * (N : ℝ)
+         / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))) := by
+    have h1 : (0 : ℝ) < ((5 * N / 6 - w : ℕ) : ℝ) := by linarith
+    have h2 : (0 : ℝ) < ((5 * N / 6 - w : ℕ) : ℝ) - 1 := by linarith
+    have h3 : (0 : ℝ) ≤ Real.sqrt 3 * (N : ℝ)
+        / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1)) := by
+      positivity
+    exact mul_nonneg (kashaevProd_nonneg N _) h3
+  have hfirst : (0 : ℝ) ≤ kashaevProd N (5 * N / 6) / (N : ℝ) ^ 2 := by
+    have := kashaevProd_nonneg N (5 * N / 6)
+    positivity
+  refine max_le ?_ ?_
+  · linarith [hone, hsecond]
+  · linarith [hgw', hfirst]
+
+/-- **The below-window region, against the peak.**  Everything below the secant
+window costs at most `g_{k*}·(w/N² + w√3N/(πD(D−1)))`, `D = k*−w`.
+
+Both summands are `O(1)`: `w ≤ N` makes the first `≤ 1/N`, and `D ≈ N/6` makes
+the second `≈ 36√3/π ≈ 20`.  Stated with `D` explicit rather than collapsed to a
+numeral, so no threshold on `N` is smuggled in. -/
+theorem sum_kashaevProd_below_window_le_argmax {N w : ℕ} (hN : 6 ≤ N)
+    (hw1 : 6 * w ≤ 5 * N) (hw2 : 2 * N ≤ 3 * w) (hwk : w ≤ 5 * N / 6)
+    (hD : 2 ≤ 5 * N / 6 - w) :
+    ∑ k ∈ Finset.range w, kashaevProd N k
+      ≤ kashaevProd N (5 * N / 6)
+        * ((w : ℝ) / (N : ℝ) ^ 2
+           + (w : ℝ) * (Real.sqrt 3 * (N : ℝ))
+             / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))) := by
+  have hN0 : N ≠ 0 := by omega
+  have hwR : (0 : ℝ) ≤ (w : ℝ) := Nat.cast_nonneg w
+  have hmax := max_one_kashaevProd_le hN hw1 hw2 hwk hD
+  refine le_trans (sum_kashaevProd_below_window_le hN0 hw1) ?_
+  calc (w : ℝ) * max 1 (kashaevProd N w)
+      ≤ (w : ℝ) * (kashaevProd N (5 * N / 6) / (N : ℝ) ^ 2
+          + kashaevProd N (5 * N / 6)
+            * (Real.sqrt 3 * (N : ℝ)
+               / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1)))) :=
+        mul_le_mul_of_nonneg_left hmax hwR
+    _ = kashaevProd N (5 * N / 6)
+        * ((w : ℝ) / (N : ℝ) ^ 2
+           + (w : ℝ) * (Real.sqrt 3 * (N : ℝ))
+             / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))) := by
+        ring
+
+/-! ## Part 11 — `⟨4₁⟩_N` against its own largest term, both sides -/
+
+/-- **`⟨4₁⟩_N ≤ g_{k*}·C(N,w)`**, with `C` an explicit expression and no
+threshold on `N`.
+
+Every summand of `C` is `O(√N)` or better: `w/N² ≤ 1/N`; the `D`-term is
+`≈ 36√3/π ≈ 20` at `D ≈ N/6`; the two window terms are the `√N`.  Collapsing
+`C` to a single numeral needs `√3 ≤ 1.8`, `π ≥ 3.14` and a threshold — which is
+exactly what this statement avoids, at the cost of being longer to read. -/
+theorem kashaev_le_argmax_mul {N w : ℕ} (hN : 6 ≤ N) (hw1 : 6 * w ≤ 5 * N)
+    (hw2 : 2 * N + 3 ≤ 3 * w) (hwk : w ≤ 5 * N / 6) (hD : 2 ≤ 5 * N / 6 - w) :
+    kashaev N
+      ≤ kashaevProd N (5 * N / 6)
+        * ((w : ℝ) / (N : ℝ) ^ 2
+           + (w : ℝ) * (Real.sqrt 3 * (N : ℝ))
+             / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))
+           + (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
+           + (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2)) := by
+  have hwR : (0 : ℝ) ≤ (w : ℝ) := Nat.cast_nonneg w
+  have hmax := max_one_kashaevProd_le hN hw1 (by omega) hwk hD
+  have hbelow : (w : ℝ) * max 1 (kashaevProd N w)
+      ≤ kashaevProd N (5 * N / 6)
+        * ((w : ℝ) / (N : ℝ) ^ 2
+           + (w : ℝ) * (Real.sqrt 3 * (N : ℝ))
+             / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))) := by
+    calc (w : ℝ) * max 1 (kashaevProd N w)
+        ≤ (w : ℝ) * (kashaevProd N (5 * N / 6) / (N : ℝ) ^ 2
+            + kashaevProd N (5 * N / 6)
+              * (Real.sqrt 3 * (N : ℝ)
+                 / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1)))) :=
+          mul_le_mul_of_nonneg_left hmax hwR
+      _ = _ := by ring
+  refine le_trans (kashaev_le_split hN hw1 hw2 hwk) ?_
+  have hring : kashaevProd N (5 * N / 6)
+        * ((w : ℝ) / (N : ℝ) ^ 2
+           + (w : ℝ) * (Real.sqrt 3 * (N : ℝ))
+             / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1))
+           + (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
+           + (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2))
+      = kashaevProd N (5 * N / 6)
+          * ((w : ℝ) / (N : ℝ) ^ 2
+             + (w : ℝ) * (Real.sqrt 3 * (N : ℝ))
+               / (π * ((5 * N / 6 - w : ℕ) : ℝ) * (((5 * N / 6 - w : ℕ) : ℝ) - 1)))
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2)
+        + kashaevProd N (5 * N / 6) * (2 + Real.sqrt ((N : ℝ) / Real.sqrt 3) / 2) := by
+    ring
+  rw [hring]
+  linarith [hbelow]
 
 end QOU.Knot.FigureEightVolume

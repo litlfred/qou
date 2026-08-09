@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T12:00:00Z
+updated_at: 2026-08-09T13:00:00Z
 ---
 
 ## Why this bean exists
@@ -642,3 +642,48 @@ After that, `hc` still needs the VALUE of `g_{k*}` -- these bounds are relative
 to it, and turning them into `c_sigma` needs
 `log g_{k*} = 2 s_{k*}` fed through `kashaev_log_sum_asymptotic`. That join is
 untouched.
+
+## Landed: the numeric collapse. `<4_1>_N` vs its own largest term, both sides. 2026-08-09
+
+`exp_neg_le_one_div`, `max_one_kashaevProd_le`,
+`sum_kashaevProd_below_window_le_argmax`, `kashaev_le_argmax_mul` -- all
+sorry-free.
+
+    <4_1>_N <= g_{k*} * ( w/N^2 + w sqrt3 N/(pi D (D-1))
+                          + (2 + sqrt(sqrt3 N)/2) + (2 + sqrt(N/sqrt3)/2) )
+
+with `D = k* - w`. With `le_kashaev` on the other side, the invariant is now
+bounded ABOVE and BELOW by explicit multiples of `g_{k*}`.
+
+**No threshold on N.** The earlier sketch in this bean proposed collapsing the
+below-window region to a numeral (`<= 32`, for `N >= 62`, via `sqrt3 <= 1.8` and
+`pi >= 3.14`). Leaving `D` symbolic instead costs a longer statement and buys
+the removal of the threshold entirely -- and the threshold was the ugliest thing
+in the plan. `e^{-x} <= 1/x` (one line from `Real.add_one_le_exp`) is what makes
+that possible: it converts an exponential into a rational function with no
+"for N large enough" anywhere.
+
+Every summand of the constant is `O(sqrt N)` or better: `w/N^2 <= 1/N`; the
+`D`-term is `~ 36 sqrt3/pi ~ 20` at `D ~ N/6`; the two window terms carry the
+`sqrt(N)`.
+
+### Lean gotchas
+
+  * A multi-line `nlinarith [a, b,\n c]` nested inside `by` inside `refine
+    max_le (by ...) (by ...)` does not parse -- "unexpected identifier;
+    expected ']'". Pull each branch out as its own `have`.
+  * `congr 1` on `Finset.sum s f = Finset.sum t f` leaves a FINSET equation that
+    `omega` cannot touch. Rewrite the range's Nat argument instead.
+
+### What is left -- and it is not a constant
+
+The bounds are RELATIVE to `g_{k*}`. Nothing in this file evaluates `g_{k*}`
+itself. Turning them into `c_sigma` means feeding
+`log g_{k*} = 2 s_{k*}` through `kashaev_log_sum_asymptotic` -- i.e. joining
+this arc to `qou-mlgp`'s (A). THAT JOIN IS UNTOUCHED, and it is the whole of
+what remains before `hc`.
+
+Concretely: `log <4_1>_N = log g_{k*} + log(Theta(sqrt N))`, and
+`log g_{k*} = 2 s_{k*}` expands via (A) to
+`-(2N/pi)Lambda(theta*) + log(2N sin theta*) + O(1/N)`. Combining gives the
+`N^{3/2}` and the `c_sigma`. Every ingredient exists; the combination does not.
