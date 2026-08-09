@@ -54,5 +54,45 @@ WHL="$(find "$ROOT/tools/pyhecke-native/target/wheels" -name 'pyhecke_native*.wh
 pip install --user --force-reinstall "$WHL"
 python3 -c "import pyhecke_native; print('[pyhecke-native] import OK:', pyhecke_native.__file__)"
 
+# ── Trace-convention gate ────────────────────────────────────────────────────
+# An import check cannot tell a fresh wheel from a stale one. On 2026-08-09 the
+# INSTALLED .so returned convention C (markov_z(q0) = 0.4993203341836945) while
+# its own source, tools/hecke-engine/src/gram.rs, read convention D — the wheel
+# predated b5f4cb5b9 ("the Rust engine stack C -> D, all nine bindings") by a
+# day. Source review could not see it, the content-layer axis passed, and the
+# registry was correct; only calling the binary exposes it.
+#
+# That matters most at exactly this moment. The standing rule in this repo is
+# "never hand-edit witness numbers, regenerate from the producer" — so a stale
+# artifact here turns the remediation into the reintroduction vector, stamping
+# fresh convention-C numbers into witnesses with a producer's authority.
+#
+# markov_z is re-exported through all nine language bindings and drives
+# trace_weights and the v_std quark-volume channel, so this one value gates the
+# whole native path. Compared against the registry rather than a literal, so a
+# convention change re-arms the gate automatically.
+echo "[pyhecke-native] trace-convention gate: markov_z(q0) must match the registry"
+python3 - "$ROOT" <<'PYGATE' || { echo "[pyhecke-native] ERROR: convention gate FAILED — do NOT run producers with this build" >&2; exit 1; }
+import json, sys, pathlib
+root = pathlib.Path(sys.argv[1])
+reg = json.loads((root / "docs/coordination/trace-convention-registry.json").read_text())
+q0 = float(reg["meta"]["q0"]["value"])
+want = float(next(c for c in reg["conventions"] if c["id"] == "D")["z_at_q0"])
+import pyhecke_native as pn
+got = pn.markov_z(q0)
+d = abs(got - want)
+print(f"  markov_z(q0) = {got!r}")
+print(f"  registry D   = {want!r}")
+print(f"  |difference| = {d:.3e}   (tolerance 1e-15, f64 path)")
+if d > 1e-15:
+    zc = 1.0 / (q0 ** 0.5 + q0 ** -0.5)
+    if abs(got - zc) <= 1e-15:
+        print("  -> this build is CONVENTION C. It is stale: rebuild from the current tree.")
+    else:
+        print("  -> matches neither convention D nor convention C.")
+    sys.exit(1)
+print("  -> convention D confirmed.")
+PYGATE
+
 echo "[pyhecke-native] done — Hecke-dependent producers now run at full precision."
 echo "[pyhecke-native] smoke test: cd computations && python3 -c \"import sys; sys.path[:0]=['.','../tools/pyhecke/python','../tools/qou-substrate/python']; import canonical_mass as c; print(c.proton_mass_mev())\""
