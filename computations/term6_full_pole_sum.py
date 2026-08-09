@@ -80,8 +80,25 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import math
+
 import mpmath
 import sympy as sp
+
+from _precision import json_safe_float  # noqa: E402
+
+
+def _json_safe(o):
+    """Recursively replace non-finite floats with their marker strings."""
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        return json_safe_float(o)
+    if isinstance(o, dict):
+        return {k: _json_safe(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_json_safe(v) for v in o]
+    return o
 
 from experimental_constants import M_E_MEV
 from q_parameter import Q as Q_0
@@ -333,7 +350,16 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
             for r in n_data["roots"])
         for n_data in per_n
     )
-    if higher_order_unresolved:
+    # A DIVERGENT total was previously reported as "complete-simple-poles-only":
+    # the status only ever asked about higher-order poles, never whether the
+    # Mittag-Leffler sum was finite. The deuteron's n=1 root (zeta = 1, the pole
+    # at q = 1) gives an infinite residue, so its total is +inf — and the witness
+    # called that complete, in bare `Infinity` tokens that made the file invalid
+    # JSON on top of it.
+    total_finite = bool(mpmath.isfinite(total))
+    if not total_finite:
+        status = "divergent-simple-pole-sum"
+    elif higher_order_unresolved:
         status = "incomplete-higher-order-pole-detected"
     elif higher_order_resolved:
         status = "complete-with-sqrt-sub-fallback"
@@ -349,7 +375,10 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     # Record term6_in_MeV as None only when an UNRESOLVED higher-order
     # pole remains (sqrt-sub fallback failed).  When resolved via
     # contour integration the partial sum IS the full Term-6.
-    term6_value = None if higher_order_unresolved else total * M_E_MEV
+    # None when there is no finite value to report — a divergent sum is not a
+    # number in MeV, and `inf` there read like one.
+    term6_value = (None if (higher_order_unresolved or not total_finite)
+                   else total * M_E_MEV)
     # Expose tr_M(T_w, q) symbolically so downstream consumers can
     # re-evaluate at any q without re-running the script.
     try:
@@ -366,12 +395,17 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
         "n_max": n_max,
         "tr_M_at_q0_polynomial": tr_M_at_q0_check,
         "tr_M_polynomial": tr_M_polynomial,
-        "term6_simple_residue_partial": total,
+        # `_json_safe` over the whole tree: the divergence shows up in
+        # per_n_breakdown roots too (residue_complex, contribution_real), and
+        # every one of them was a bare `Infinity` token. Markers keep the fact
+        # that the residue diverges — which is the RESULT here, not a failure —
+        # while making the witness parse.
+        "term6_simple_residue_partial": json_safe_float(float(total)),
         "term6_in_MeV": term6_value,
         "status": status,
         "higher_order_pole_unresolved": higher_order_unresolved,
         "higher_order_pole_resolved_via_sqrt_sub": higher_order_resolved,
-        "per_n_breakdown": per_n,
+        "per_n_breakdown": _json_safe(per_n),
     }
 
 
