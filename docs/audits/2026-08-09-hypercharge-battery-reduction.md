@@ -117,16 +117,42 @@ Per AGENTS.md §"Before declaring refuted": R1 is a **scope-(a)** statement
 about the battery's information content (with the invariant cited: GMN at
 `I₃ = 0` determines `Y`), *not* a scope-(b) exclusion of any invariant.
 
+## Division-free formulation (why there is no characteristic hypothesis)
+
+Gell-Mann–Nishijima is usually written `Q = I₃ + Y/2`. That form needs `2`
+to be invertible — a constraint on the base ring with no physical content.
+The first draft of this file stated the uniqueness result over a bare
+`Field K`, which is **false in characteristic 2** (`2 = 0`, so `Y/2` is
+junk). The first correction was to add `CharZero`, which is **far stronger
+than needed**: the honest requirement was only `2 ≠ 0` (equivalently
+`ringChar K ≠ 2`), which admits `𝔽₃`, `𝔽₅`, and every other odd
+characteristic.
+
+The better fix removes the question entirely. Clearing the denominator,
+
+```
+2Q = 2I₃ + Y
+```
+
+is equivalent to the familiar form whenever `2 ≠ 0`, and better behaved when
+it is not. In this form `Y` is *subtracted* out rather than *divided* out,
+so every result holds over an arbitrary `CommRing R` with **no
+characteristic hypothesis at all** — no `CharZero`, no `2 ≠ 0`, no field.
+
+The concrete tables store **six times** each quantum number (`sixQ = 6Q`,
+etc.), so the halves and thirds become integers and the whole battery is
+integer arithmetic closed by `decide`.
+
 ## Verification
 
 * `lean`-direct v4.24.0 against restored Mathlib oleans: **exit 0**,
-  0 `sorry`, 0 `native_decide`, 0 `axiom` declarations.
-* `#print axioms` on all four theorems: `[propext, Classical.choice,
-  Quot.sound]` only.
+  0 `sorry`, 0 `native_decide`, 0 `axiom` declarations, 0 `CharZero`
+  hypotheses, 0 divisions.
+* `#print axioms`: the three generic-`CommRing` theorems depend on
+  `[propext, Classical.choice, Quot.sound]`; the four concrete table
+  theorems **depend on no axioms at all** (pure `decide` computation).
+* `decide` here is a genuinely decidable finite integer computation, the
+  use AGENTS.md §6 permits; `native_decide` is not used.
 * Probe: all exact checks pass (`Fraction`, no floats).
 * CI unavailable repo-wide (auto-triggers disabled); the above is the
   verification gate per AGENTS.md §Phase-4.
-
-**Lean caught a real gap:** the first draft stated the uniqueness result
-over a bare `Field K`. It is **false in characteristic 2** (`2 = 0`, so
-`Y/2` is junk); `CharZero` is required, not decorative.
