@@ -108,3 +108,57 @@ Both halves of the residual are dynamical, not representational.
 The open lever is a SPACE index on the interface -- something carrying L, so
 that 3S1-3D1 mixing has somewhere to live. Until then the NN sector is
 sign-correct and magnitude-wrong by construction.
+
+## 2026-08-09 — THE DEUTERON IS REACHABLE UNDER D. It was NOT under C.
+
+Bean qou-c6gx's headline impossibility result was CONVENTION-C SPECIFIC and no
+longer holds. It recorded:
+
+    "Required mu = 0.587762445 => d = +0.088442110 = +0.42304594*h -- POSITIVE,
+     outside the Hecke range d in [-h, 0]."
+
+Recomputed under convention D with the writhe term wired (commit 0f608066):
+
+    required mu = 0.5877150637      current mu = 0.5082297894
+    required d  = mu_req - z_D = -0.02497297346
+    admissible  d in [-h, 0] = [-0.2090603, 0]
+    d_req / h   = -0.119453         ->  INSIDE RANGE
+
+The required offset is now NEGATIVE and sits at 12 % of the way down the Hecke
+interval. The floor theorem (`bond_energy_floor`, `mu_unreachable`) does not
+apply to D -- z_D = 0.6127 > 1/2, so AM-GM never bites -- and the scope
+correction already in InterfaceScalar.lean said so. This is the POSITIVE
+statement that correction implied but did not make: **no impossibility remains
+at the deuteron.**
+
+WHY IT FLIPPED: the required mu barely moved (0.58776 -> 0.58772; it is just
+exp(-B_AME/alpha) up to the writhe shift). What moved is the RANGE. Under C the
+band [z-h, z] = [0.290, 0.499] sat entirely BELOW the target; under D it is
+[0.404, 0.613] and CONTAINS it.
+
+## What remains, stated precisely
+
+Reachable is not derived. Writing d = -h*t, so t is the p-n colour weight:
+
+    derived   t = 1/2 - delta/4 = 0.499656   (colour-weighted, delta = 0.0013757)
+    required  t = 0.119453
+    ratio                        4.183
+
+So the deuteron needs a colour weight ~4.2x further from colour-blind than the
+derived one. The interface CAN reach AME; the derived weight does not put it
+there. That is a much better-posed gap than C's "no admissible element exists".
+
+NOT CHASED: 0.499656/0.119453 = 4.183 and alpha = 4.18598 MeV agree to 0.07 %.
+alpha is an ENERGY and t is DIMENSIONLESS -- units mismatch, numerology. Same
+class as the ln(1-h) coincidence dismissed in qou-4waf. Recorded so nobody
+re-finds it.
+
+## Consequences for the beans that assumed impossibility
+
+  * qou-c6gx: "The hard result: AME is below the model's floor" and "no crossing
+    sign, no colour weight, no crossing multiplicity, and no stacking can reach
+    the deuteron" are FALSE under D. The measurements stand; the conclusion was
+    C-specific.
+  * The A-scaling refutations in that bean (per-bond deficit changes sign,
+    spread 7.105 MeV/bond) were also computed under C and should be re-run
+    before being cited.
