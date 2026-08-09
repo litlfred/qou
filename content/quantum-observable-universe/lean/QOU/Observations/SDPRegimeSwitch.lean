@@ -1,4 +1,3 @@
-import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
 /-!
@@ -28,8 +27,9 @@ of the block — its quadratic form is non-negative for *every* test vector
 
   `(μ_λ − y₀ − y_λ)·x₀² + 2·c_{λλ'}·x₀x₁ + (μ_{λ'} − y₀ − y_{λ'})·x₁² ≥ 0`.
 
-This is Sylvester's criterion for a real symmetric `2×2` matrix
-(`d ≥ 0`, `d' ≥ 0`, `dd' ≥ c²` ⇒ PSD), proved over `ℝ` via the identity
+This is Sylvester's criterion for a symmetric `2×2` matrix
+(`d ≥ 0`, `d' ≥ 0`, `dd' ≥ c²` ⇒ PSD), proved over any linearly ordered
+commutative ring (§7c: nothing archimedean is used) via the identity
 `d·Q = (d·x₀ + c·x₁)² + (dd' − c²)·x₁²` (case `d > 0`) and the degenerate
 `d = 0 ⇒ c = 0` collapse. The "regime switch" of the manuscript — the
 isolated `(Z, N)` values where `c_{λλ'} = 0` — is exactly where the block
@@ -40,24 +40,27 @@ diagonalises; the PSD feasibility derived here holds throughout.
 
 namespace QOU.Observations
 
+variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
+
 /-- Dual-feasibility data for the SDP regime-switch block. All fields are
     *inputs* (the SDP solution and its slack); the block's
     positive-semidefiniteness is **derived** in `SDPRegimeSwitch`. -/
-class SDPRegimeSwitchContext where
-  /-- The substrate parameter `q : ℝ`. -/
-  q : ℝ
+class SDPRegimeSwitchContext (R : Type*) [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] where
+  /-- The substrate parameter `q`. -/
+  q : R
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
   N : ℕ
   /-- Per-partition q-Laplacian eigenvalue `μ_λ`. -/
-  μ : ℕ → ℝ
+  μ : ℕ → R
   /-- LP-dual variable `y_0`. -/
-  y_0 : ℝ
+  y_0 : R
   /-- Per-partition LP-dual variables `y_λ`. -/
-  y : ℕ → ℝ
+  y : ℕ → R
   /-- Per-conjugate-pair coupling `c_{λλ'}`. -/
-  c_couple : ℕ → ℕ → ℝ
+  c_couple : ℕ → ℕ → R
   /-- Dual feasibility (diagonal slack ≥ 0): the `2×2` block diagonal
       entries `μ − y₀ − y` are non-negative. -/
   diag_nonneg : ∀ l l' : ℕ,
@@ -81,7 +84,7 @@ class SDPRegimeSwitchContext where
     Proof: for `d > 0`, `d·Q = (d·x₀ + c·x₁)² + (dd' − c²)·x₁² ≥ 0`; for
     `d = 0`, `c² ≤ 0` forces `c = 0` and `Q = d'·x₁² ≥ 0`. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/sdp-regime-switch.md
-theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext] (l l' : ℕ) (x0 x1 : ℝ) :
+theorem SDPRegimeSwitch [ctx : SDPRegimeSwitchContext R] (l l' : ℕ) (x0 x1 : R) :
     0 ≤ (ctx.μ l - ctx.y_0 - ctx.y l) * x0 ^ 2
       + 2 * ctx.c_couple l l' * x0 * x1
       + (ctx.μ l' - ctx.y_0 - ctx.y l') * x1 ^ 2 := by

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:12:19.010561+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-09T01:08:16.630146+00:00",
+  "commitSha": "583fd1a5ba77e03d6516bb641c41188ee40b6ca0",
   "assertions": [
     {
       "name": "b_total_consistent_with_synthesis_band",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "kappa-writhe-side-decomposition-probe",
   "scriptFile": "kappa_writhe_side_decomposition_probe.py",
-  "scriptHash": "d3be22a39993",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "840ccce345d6",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,8 @@
   },
   "description": "Location probe for the writhe coefficient κ = b/4 of the canonical residual's bar-odd term: exact decomposition b_total = b_AME − b_pred using the per-member B_pred/B_AME already recorded in the IMME triplet (A=6,8,10,12) and quartet (A=9, same-T) witnesses. Answers WHERE κ lives (framework interface asymmetry z vs z−h, or experimental Coulomb) before any derivation attempt — the bar-odd analogue of the 2026-06-13 H1 location refutation. Post-processing only; no fit; not wired.",
   "parameters": {
-    "q0": "1.10997858275138080000000000000000000000000000000000000000000",
-    "swap_exponent_log_q0_z_over_z_minus_h": "5.19903107280035391780372310348099680353890329956297904671765"
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "swap_exponent_log_q0_z_over_z_minus_h": "5.19903107280035403236148105300608750305535139429259667255290"
   },
   "data": {
     "rows": [
@@ -110,6 +110,6 @@
       }
     ]
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

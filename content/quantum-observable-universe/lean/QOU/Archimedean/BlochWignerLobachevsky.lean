@@ -417,7 +417,39 @@ dihedral angles rather than through a complex dilogarithm:
 
     D(z) = Λ(arg z) + Λ(arg 1/(1−z)) + Λ(arg(1 − 1/z)).
 
-This extends `BlochWigner_unit_circle` past `|z| = 1`. -/
+This extends `BlochWigner_unit_circle` past `|z| = 1`.
+
+⚠ **THIS IS A DEFINITION, AND IT IS NOT THE STANDARD ONE** (recorded
+2026-08-08 after reading Neumann–Zagier 1985 §3). The literature's Bloch–Wigner
+function is
+
+    D(z) = Im Li₂(z) + log|z| · arg(1 − z)          (Neumann–Zagier eq. (39))
+
+i.e. it is built from the **dilogarithm**, not from `Λ`. That the Λ-sum above
+equals it is **Kummer's identity** (Lewin, *Polylogarithms*, p. 121 eq. (5.5)),
+which Neumann–Zagier invoke explicitly to pass from their eq. (37)
+`Vol(S(z)) = Λ(α)+Λ(β)+Λ(γ)` to eq. (38) `Vol(S(z)) = D(z)`. It is a **theorem,
+not a definitional unfolding**.
+
+So, precisely:
+
+* Nothing here proves `BlochWigner_lob = Im Li₂(z) + log|z|·arg(1−z)`, and it
+  **cannot currently be proved in this corpus**: Mathlib has no polylogarithm
+  or dilogarithm at all (checked 2026-08-08 across the restored olean tree —
+  zero `*polylog*` / `*dilog*` modules).
+* Therefore **do not transport dilogarithm facts onto this symbol** — the
+  five-term relation, the functional equations, or any N–Z result stated for
+  *their* `D` — without first proving Kummer's identity. The name is shared;
+  the objects are so far only numerically observed to agree.
+* The agreement IS observed, not assumed blindly:
+  `computations/qbeta/xi_classical_limit_probe.py` evaluates the **dilogarithm**
+  form and cross-checks it against this angle route at the substrate anchor,
+  where they match to the Λ-sum probe's ~1e-6 series accuracy. That is evidence
+  for Kummer, not a proof of it.
+
+Consequence for `qou-idvt` T2 / `qou-5gai` H4: the target factors as
+(geometric) `Vol = D` ∘ (analytic) `D = Λ-sum`. Proving Kummer would close the
+*analytic* factor only; the geometric one is still the whole of H4. -/
 -- Ref: [thurston1978], [milnor1982], [zagier1986]
 noncomputable def BlochWigner_lob (z : ℂ) : ℝ :=
   Lob (tetAngle₁ z) + Lob (tetAngle₂ z) + Lob (tetAngle₃ z)

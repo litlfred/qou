@@ -97,7 +97,7 @@ $$H_n^{5_2}(q) \;=\; (-1)^n q^{\frac{1}{2}n(n+3)} \sum_{k=0}^{n} q^{k(k+1)} \bin
 
 attributed there to Habiro [Hab02a] and **Masbaum [Mas03]** — the same
 Masbaum paper the corpus's `C52(n)` implements (uploaded as
-`uploads/Download.pdf`).
+`uploads/fujii-1992-on-totally-geodesic-boundaries-of-hyperbolic-3-manifolds.pdf`).
 
 **Machine-exact result** (`qbeta_5two_habiro_polynomial_match_probe.py`,
 4/4, integer-Laurent equality, no floats):

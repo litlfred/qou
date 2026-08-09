@@ -44,10 +44,16 @@ to avoid collision with the surreal infinitesimal $\varepsilon =
       this holds). -/
   residual_eq_zero : residual = 0
 
-axiom conj_diophantine_birthday : DiophantineBirthday
 
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/appendix-surreals/diophantine-birthday.ts
-noncomputable instance : DiophantineBirthday := conj_diophantine_birthday
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom conj_diophantine_birthday : DiophantineBirthday
+--     noncomputable instance : DiophantineBirthday := conj_diophantine_birthday
+-- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
+-- every downstream `[DiophantineBirthday]` resolved for free.  Removed, not completed — downstream
+-- results must take `[DiophantineBirthday]` as an explicit hypothesis.
+
 end QOU.AppendixSurreals

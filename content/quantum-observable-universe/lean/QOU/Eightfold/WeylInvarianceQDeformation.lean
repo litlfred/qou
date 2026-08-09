@@ -51,7 +51,18 @@ docs/audits/2026-08-03-eightfold-way-a2-q-deformation-dialog-assessment.md §1.
 
 Pure algebra. The q-independence of root data under Drinfeld–Jimbo
 quantisation is a theorem of Lusztig/Kashiwara, not a physics claim.
+
+## Namespace
+
+Added 2026-08-08 (bean `qou-ref10`).  The file previously declared everything
+at the root, which (a) violates AGENTS.md §2 — *all declarations live under the
+`QOU` root namespace* — and (b) made every content-block `lean.ref` into this
+module name a declaration that does not exist.  The namespace matches the
+module path, as in the three sibling files of this directory
+(`RowCapObstruction`, `GellMannOkuboIdentity`, `Sym2GateParity`).
 -/
+
+namespace QOU.Eightfold.WeylInvarianceQDeformation
 
 -- § 1. Gaussian binomial [2]_q (framed form avoids inverses)
 
@@ -150,3 +161,5 @@ theorem qSerre_eq_cartan_at_classical :
 theorem root_angle_ratio_A2 :
     (cartanMatrix_A2 0 1 : ℚ) / (cartanMatrix_A2 0 0 : ℚ) = -1 / 2 := by
   simp [cartanMatrix_A2]
+
+end QOU.Eightfold.WeylInvarianceQDeformation

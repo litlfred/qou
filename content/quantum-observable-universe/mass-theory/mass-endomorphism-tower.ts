@@ -41,5 +41,20 @@ export default proposition({
         "bounded-Rogers-continuation direction doc + the 2026-06-18 verdict.",
       see: "docs/audits/2026-06-22-zhabiro-bounded-rogers-continuation-direction.md",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "This block's Lean file **already implements the §7c split " +
+        "explicitly** and the archimedean half is the point of the block. " +
+        "`QOU.MassEndomorphism.Pre` is pre-archimedean and generic (`{R : " +
+        "Type u} [Field R]`, with `Φ_q` an opaque element of `R` and an " +
+        "abstract Frobenius norm); the sibling `Arch` tier is specialised to " +
+        "`ℝ` with `1 < q` because it is where the proton–electron ratio is " +
+        "compared to CODATA. `proton_electron_ratio` is the `ℝ`-side " +
+        "statement, so its `ℝ` is forced by the statement rather than chosen. " +
+        "(Its `sorry` is a proof-queue item, not a base-ring one.)",
+    },
   ],
 });

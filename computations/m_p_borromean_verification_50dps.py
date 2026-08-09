@@ -1,5 +1,29 @@
 #!/usr/bin/env python3
-"""
+"""DEPRECATED for absolute mass (owner ruling 2026-06-24) — superseded by the
+muon-anchored Hecke energy; retained as the record of the Family-A route.
+
+═══════════════════════════════════════════════════════════════════
+SUPERSESSION (2026-06-24): this script's m_p / m_n are NOT the
+canonical absolute nucleon masses.
+
+Everything below computes the `m_e · Vol(𝓑₃)/ℏ_q² · λ_A` form, which
+the 2026-06-24 ruling deprecated for absolute mass: it applies
+1/ℏ_q² to the *Borromean* volume, where the c_q² belongs in the
+*muon* anchor Vol(4₁). The canonical route is
+
+    m_p = 2·(m_μ·F_Bor − 6·m_e)  →  938.27 MeV (CODATA, +1.35 ppb)
+
+via the single facade `canonical_mass.py` (`proton_mass_mev()`).
+The ~2.9 % figures below are the deprecated form's, not the
+framework's live accuracy. See docs/canonical-mass-formula-guardrail.md.
+
+⚠ This script's witness `m-p-borromean-verification-50dps.witness.json`
+is still READ by `canonical_mass_table_extended.py`
+(`lookup_nucleon_mass_borromean`), so the +2.89 % values propagate into
+the canonical mass table's nucleon rows and everything projected from
+it. That is tracked separately — it is a compute-wiring defect, not a
+prose one, and is not fixed by this banner.
+
 ═══════════════════════════════════════════════════════════════════
 HONESTY UPDATE (2026-05-22): CAL-4 fit REMOVED FROM PRODUCTION.
 

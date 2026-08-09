@@ -25,4 +25,4 @@ categorical connections, jet objects, and the Hodge star
 universe to a *quantum observable universe* — adding observability,
 measurability, and the volume constraint that forces
 $\mathrm{SU}_2(R)$ as the gauge group — is the subject of
-[Chapter 2](#chap:qou).
+[Chapter 3](#chap:qou).

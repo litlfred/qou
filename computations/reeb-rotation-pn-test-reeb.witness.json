@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-06-22T14:32:24.760967+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-08T20:13:14.218321+00:00",
+  "commitSha": "8ebaee55993e8d63c7cb3b4196bcdbee4b275bab",
   "assertions": [
     {
       "name": "reeb_rotation_pn_difference",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 16,
+  "durationMs": 14,
   "computation": "reeb-rotation-pn-test-reeb",
   "scriptFile": "reeb_rotation_pn_test.py",
-  "scriptHash": "5f29301658f1",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "aa461182e88f",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,15 +27,17 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Decisive geometric-escape test: does the q-Reeb rotation (eigen-phase of the seminormal braid-word operator per Wedderburn block) distinguish the proton braid from the neutron braid at substrate q₀? Zero free parameters; no tuning to m_n−m_p.",
   "parameters": {
-    "q0": "1.1099785955573347",
-    "q_inv": "0.900918273561741",
-    "h": "0.20906032199559366"
+    "q0": "1.1099785827513808",
+    "q_inv": "0.9009182839557415",
+    "h": "0.20906029879563937"
   },
   "data": {
     "proton_braid_word": [
@@ -61,7 +63,7 @@
       ],
       [
         1.0,
-        -0.10453016099779683,
+        -0.10453014939781968,
         0
       ],
       [
@@ -76,22 +78,22 @@
       ],
       [
         1.0,
-        -0.20906032199559366,
+        -0.20906029879563937,
         1
       ],
       [
         1.0,
-        -0.20906032199559366,
+        -0.20906029879563937,
         1
       ],
       [
         1.0,
-        -0.20906032199559366,
+        -0.20906029879563937,
         1
       ],
       [
         1.0,
-        -0.10453016099779683,
+        -0.10453014939781968,
         1
       ]
     ],
@@ -113,17 +115,12 @@
       ],
       [
         1.0,
-        -0.10453016099779683,
+        -0.10453014939781968,
         0
       ],
       [
         1.0,
-        -0.10453016099779683,
-        0
-      ],
-      [
-        1.0,
-        0.0,
+        -0.10453014939781968,
         0
       ],
       [
@@ -133,22 +130,27 @@
       ],
       [
         1.0,
-        -0.20906032199559366,
+        0.0,
+        0
+      ],
+      [
+        1.0,
+        -0.20906029879563937,
         1
       ],
       [
         1.0,
-        -0.20906032199559366,
+        -0.20906029879563937,
         1
       ],
       [
         1.0,
-        -0.20906032199559366,
+        -0.20906029879563937,
         1
       ],
       [
         1.0,
-        -0.20906032199559366,
+        -0.20906029879563937,
         1
       ]
     ],
@@ -173,9 +175,9 @@
         ],
         "dim": 1,
         "proton": {
-          "trace": 1.3824945145590446,
+          "trace": 1.3824944633925964,
           "moduli": [
-            1.3824945145590446
+            1.3824944633925964
           ],
           "phases_rad": [
             0.0
@@ -185,9 +187,9 @@
           "n_unit_modulus_eig": 0
         },
         "neutron": {
-          "trace": 1.1221068372401566,
+          "trace": 1.1221068216024748,
           "moduli": [
-            1.1221068372401566
+            1.1221068216024748
           ],
           "phases_rad": [
             0.0
@@ -200,10 +202,10 @@
           "reeb_phase_unit_modulus": 0.0,
           "sum_abs_phase": 0.0,
           "moduli": [
-            0.260387677318888
+            0.26038764179012164
           ],
-          "trace": 0.260387677318888,
-          "log_det_writhe": 0.2086814637132749
+          "trace": 0.26038764179012164,
+          "log_det_writhe": 0.20868144063903915
         }
       },
       {
@@ -213,10 +215,10 @@
         ],
         "dim": 2,
         "proton": {
-          "trace": 1.8077033201613055,
+          "trace": 1.8077030637786238,
           "moduli": [
-            0.4522163036075692,
-            2.259919623768875
+            0.4522163445484565,
+            2.25991940832708
           ],
           "phases_rad": [
             0.0,
@@ -227,10 +229,10 @@
           "n_unit_modulus_eig": 0
         },
         "neutron": {
-          "trace": 1.7008888501492638,
+          "trace": 1.7008886061270454,
           "moduli": [
-            0.47062643557270295,
-            2.171515285721967
+            0.4706264771829345,
+            2.1715150833099797
           ],
           "phases_rad": [
             0.0,
@@ -244,11 +246,11 @@
           "reeb_phase_unit_modulus": 0.0,
           "sum_abs_phase": 0.0,
           "moduli": [
-            -0.018410131965133747,
-            0.08840433804690795
+            -0.018410132634477994,
+            0.0884043250171005
           ],
-          "trace": 0.1068144700120417,
-          "log_det_writhe": 2.220446049250313e-16
+          "trace": 0.10681445765157838,
+          "log_det_writhe": 6.661338147750939e-16
         }
       },
       {
@@ -259,9 +261,9 @@
         ],
         "dim": 1,
         "proton": {
-          "trace": -0.7392235469642613,
+          "trace": -0.7392235707764777,
           "moduli": [
-            0.7392235469642613
+            0.7392235707764777
           ],
           "phases_rad": [
             3.141592653589793
@@ -271,9 +273,9 @@
           "n_unit_modulus_eig": 0
         },
         "neutron": {
-          "trace": -0.9107622062303198,
+          "trace": -0.9107622145530778,
           "moduli": [
-            0.9107622062303198
+            0.9107622145530778
           ],
           "phases_rad": [
             3.141592653589793
@@ -286,10 +288,10 @@
           "reeb_phase_unit_modulus": 0.0,
           "sum_abs_phase": 0.0,
           "moduli": [
-            -0.1715386592660585
+            -0.1715386437766001
           ],
-          "trace": 0.1715386592660585,
-          "log_det_writhe": -0.20868146371327473
+          "trace": 0.1715386437766001,
+          "log_det_writhe": -0.20868144063903893
         }
       }
     ],
@@ -300,9 +302,9 @@
       "proton_total_sum_abs_phase": 6.283185307179586,
       "neutron_total_sum_abs_phase": 6.283185307179586,
       "delta_sum_abs_phase": 0.0,
-      "proton_total_log_modulus": 0.043469164269373084,
-      "neutron_total_log_modulus": 0.04346916426937271,
-      "delta_log_modulus_writhe": 3.7470027081099033e-16,
+      "proton_total_log_modulus": 0.04346915467383877,
+      "neutron_total_log_modulus": 0.043469154673837884,
+      "delta_log_modulus_writhe": 8.881784197001252e-16,
       "reeb_rotation_distinguishes_pn": false,
       "modulus_writhe_distinguishes_pn": true
     },
@@ -312,6 +314,6 @@
   "caveats": [
     "ESCAPE FAILS for the Reeb ROTATION channel: the eigen-phase (q-Reeb rotation) is bit-identical for proton and neutron. The p/n distinction lives entirely in the eigenvalue MODULI (writhe/growth amplitude), not the rotation phase. The proton/neutron canonical braids are not alternating, so their seminormal eigenvalues are real (|arg| ∈ {0, π}, a sign not a rotation); there is no genuine Reeb rotation to distinguish them."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

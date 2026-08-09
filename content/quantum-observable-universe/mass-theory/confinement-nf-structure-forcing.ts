@@ -37,6 +37,21 @@ import { conjecture } from "../../schema/builders";
  * @see docs/audits/2026-05-04-nh-knots-confinement-shift.md — full audit
  */
 export default conjecture({
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note.** The Lean class " +
+        "`ConfinementNfStructureForcing` carries `shiftNF`, `alphaShift`, " +
+        "`delta` and `dualityGap`, all `ℝ`. The conjecture's second half is a " +
+        "**duality-bounded** claim — the structural NF shift decomposes as " +
+        "`shift_NF(β) = α_shift(I) + Δ(β₁,β₂;A)` with the deviation bounded " +
+        "by the LP/SDP duality gap — so the content is an inequality between " +
+        "magnitudes, which has no generic-`CommRing` form. `dualityGap` is " +
+        "moreover a solver-reported numerical quantity. `ℝ` is load-bearing.",
+    },
+  ],
   label: "conj:confinement-nf-structure-forcing",
   title:
     "Confinement → NF-structure forcing: $\\mathrm{shift}_{\\mathrm{NF}}(\\beta_1 \\star I \\star \\beta_2) = \\alpha_{\\mathrm{shift}}(I) + \\Delta$ with $|\\Delta|$ bounded by the LP duality gap",

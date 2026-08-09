@@ -314,6 +314,14 @@ def closed_form_tau_M(
 ) -> mp.mpf:
     """Full closed-form tr_M(𝓑_K) at q.
 
+    TRACE CONVENTION: **convention C** — the full-Hecke Ocneanu / Wenzl
+    z-trace, z = 1/(q^{1/2}+q^{-1/2}) (`markov_z` below), weights from
+    `y_lambda_wenzl_bridge_numeric`, y_(1^3) != 0. This is the binding
+    channel's trace. It is NOT convention D (SU(2)/Temperley-Lieb, Jones
+    weights, z = q^3/(q^2+1)), which the production *mass* channel uses via
+    `m_p_substrate_identity_50dps.trM_borromean`; the two differ by 195.8 ppm
+    on beta_Bor. Registry: docs/coordination/trace-convention-registry.md.
+
     Inputs are the two H_3 Markov-trace building blocks:
       - tr_M^3(𝓑_p, q) — the proton's H_3 trace
       - tr_M^3(𝓑_n, q) — the neutron's H_3 trace

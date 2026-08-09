@@ -12,7 +12,7 @@
 
 Two prior q-Bessel refutations were partial: the single-argument row (2026-07-02
 §4) was un-sourced, and the 0th-order q-Bessel **Tricomi** $C_{0,q}$
-(2026-07-04, `uploads/014-026.pdf`) is the *confluent* q-Bessel — it lacks the
+(2026-07-04, `uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`) is the *confluent* q-Bessel — it lacks the
 Gaussian factor $q^{k(k-1)/2}$ and therefore has no discrete orthogonality, so
 it is **not** the Plancherel object. #3292 named the one form that would be
 genuinely falsifiable and still unbuilt: the **E_q(2) vacuum row** — the values

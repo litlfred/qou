@@ -1,5 +1,4 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
-import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -51,12 +50,16 @@ class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   /-- Number of Wedderburn blocks (partitions of `n`). -/
   n_blocks : ℕ
   /-- Per-block contribution to the `E_∞^{0,0}` page (`R · e_λ`
-      scalar coefficient). -/
-  e_block : ℕ → ℝ
+      scalar coefficient), valued in the inherited coefficient ring `R` of
+      the parent Markov-trace context — the very `R` the proposition's
+      `E_∞^{0,0} = Z(A) = ⊕_λ R·e_λ` names. -/
+  e_block : ℕ → R
   /-- Total `E_∞^{0,0}` contribution. -/
-  E_infinity_00 : ℝ
-  /-- Frobenius integral evaluated on an arbitrary algebra element. -/
-  integral : A → ℝ
+  E_infinity_00 : R
+  /-- Frobenius integral evaluated on an arbitrary algebra element.  `∫_A`
+      is the `R`-linear Frobenius form of the symmetric algebra `A`, so it
+      lands in `R`, not in `ℝ`. -/
+  integral : A → R
   /-- Projector onto the center of `A`. -/
   pi_centre : A → A
   /-- Predicate "`x : A` is a physical observable" — survives the
@@ -64,6 +67,7 @@ class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   observable : A → Prop
   /-- Categorical confinement identity. -/
   confinement_ident :
+    haveI := ringR;
     E_infinity_00 = (Finset.range n_blocks).sum (fun lam => e_block lam) ∧
     (∀ x : A, integral x = integral (pi_centre x)) ∧
     (∀ x : A, observable x → pi_centre x = x)
@@ -82,6 +86,7 @@ proposition, not a projection of class fields that posit it. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/confinement-categorical.md
 -- Ref: [manuscript] prop:spectral-sequence-collapse (HH^k(A)=0, k≥1, Whitehead's lemma)
 theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
+    haveI := ctx.ringR;
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
                           (fun lam => ctx.e_block lam) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧

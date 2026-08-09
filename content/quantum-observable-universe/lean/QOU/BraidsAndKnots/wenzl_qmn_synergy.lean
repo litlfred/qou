@@ -20,7 +20,13 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
-  /-- Speedup factor of Wenzl bridge vs linear-system solve. -/
+  /-- Speedup factor of Wenzl bridge vs linear-system solve.
+
+      Kept at `ℝ` deliberately (§7c): the speedup fields are *measured*
+      wall-clock ratios and their sub-claims are order comparisons
+      (`10000 ≤ …`), which is archimedean content sitting after the
+      substrate→archimedean wall.  Only the trace fields below move to the
+      inherited generic ring. -/
   wenzl_speedup : ℝ
   /-- Speedup factor of q-MN vs Hoefsmit characters. -/
   qmn_speedup : ℝ
@@ -47,19 +53,21 @@ class WenzlQmnSynergyContext extends QOU.Shared.MarkovTraceContext where
   /-- Length of a canonical permutation braid `T_w` (e.g. number of
       crossings in its reduced word). -/
   lengthW : ℕ
-  /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
-  z : ℝ
+  /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`, valued in the inherited
+      coefficient ring `R` of the parent Markov-trace context (§7c: `z` is
+      the Ocneanu parameter of `H_n(R, q)`, not a real number). -/
+  z : R
   /-- Markov trace value `tr_M(T_w)` on the canonical braid. -/
-  trM_Tw : ℝ
+  trM_Tw : R
   /-- Wenzl-bridge / q-MN reconstruction `Σ_λ y_λ(q) · χ_λ(T_w; q)`. -/
-  wenzlSum : ℝ
+  wenzlSum : R
   /-- Manuscript boxed identity: on any canonical permutation braid,
       the Markov trace equals `z^{ℓ(w)}` (Markov axiom + cyclicity). -/
-  claim_iv_canonical_trace_power : trM_Tw = z ^ lengthW
+  claim_iv_canonical_trace_power : haveI := ringR; trM_Tw = z ^ lengthW
   /-- Cross-validation identity: the Wenzl/q-MN reconstruction matches
       the closed-form `z^{ℓ(w)}`, giving an independent verification
       of both formulas at every `n` and every reduced word `w`. -/
-  claim_v_wenzl_qmn_cross_check : wenzlSum = z ^ lengthW
+  claim_v_wenzl_qmn_cross_check : haveI := ringR; wenzlSum = z ^ lengthW
 /-- **Proposition statement** (from manuscript):
 
 The Wenzl-bridge ([y-lambda-closed-form](#prop:y-lambda-closed-form-wenzl-bridge))
@@ -100,7 +108,8 @@ def wenzl_qmn_synergy [ctx : WenzlQmnSynergyContext] :
     ctx.claim_iii_atom_knot_identification ∧
     (ctx.combined_speedup = ctx.wenzl_speedup * ctx.qmn_speedup ∧
      1000000 ≤ ctx.combined_speedup) ∧
-    ctx.trM_Tw = ctx.z ^ ctx.lengthW ∧ ctx.wenzlSum = ctx.z ^ ctx.lengthW :=
+    (haveI := ctx.ringR; ctx.trM_Tw = ctx.z ^ ctx.lengthW) ∧
+    (haveI := ctx.ringR; ctx.wenzlSum = ctx.z ^ ctx.lengthW) :=
   ⟨ctx.claim_i_direct_verification_wenzl, ctx.claim_ii_mass_formula_compute,
    ctx.claim_iii_atom_knot_identification_holds, ctx.claim_combined_speedup_bound,
    ctx.claim_iv_canonical_trace_power, ctx.claim_v_wenzl_qmn_cross_check⟩

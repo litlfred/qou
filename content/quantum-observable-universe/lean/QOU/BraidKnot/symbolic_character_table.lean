@@ -40,6 +40,12 @@ open QOU.BraidKnot.SytSmallShapeCountsLarger
 
 namespace QOU.BraidKnot
 
+/-! §7c base ring. The whole table is Hecke seminormal-form algebra:
+`sigmaOneCharacter` is already generic over `[Field R]`, and
+`sigmaOneCharacter_eq_card_mul` additionally wants `(2 : R) ≠ 0` — the same
+characteristic condition the `meson-em-sinh-closed-form` port needed. -/
+variable {R : Type*} [Field R] [CharZero R]
+
 /-- The four self-conjugate partition labels recorded in the table. -/
 inductive SelfConjugatePartition
   | p21
@@ -66,7 +72,7 @@ def shapeOf : SelfConjugatePartition → YoungDiagram
 /-- **The concrete σ₁ seminormal character** of the self-conjugate shape (purely
     diagonal — the off-diagonal class is empty for the single generator). Replaces
     the former opaque class field. -/
-noncomputable def chiSigma (q h : ℝ) (lam : SelfConjugatePartition) : ℝ :=
+noncomputable def chiSigma (q h : R) (lam : SelfConjugatePartition) : R :=
   sigmaOneCharacter (shapeOf lam) q h
 
 /-- **`|R_row|(shapeOf λ) = c_λ`** — the same-row class count of each tabulated shape
@@ -86,8 +92,8 @@ theorem card_rowClass_shapeOf (lam : SelfConjugatePartition) :
     `|R_row| = |R_col|` (`sigmaOneCharacter_eq_card_mul`) and the per-shape counts
     `|R_row| = c_λ`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/symbolic-character-table.md
-theorem symbolic_character_table (q h : ℝ) (hq : q ≠ 0) (lam : SelfConjugatePartition) :
-    chiSigma q h lam = (cCoefficient lam : ℝ) * h := by
+theorem symbolic_character_table (q h : R) (hq : q ≠ 0) (lam : SelfConjugatePartition) :
+    chiSigma q h lam = (cCoefficient lam : R) * h := by
   have hsc : (shapeOf lam).transpose = shapeOf lam := by
     cases lam
     · exact mu21_transpose
@@ -102,7 +108,7 @@ theorem symbolic_character_table (q h : ℝ) (hq : q ≠ 0) (lam : SelfConjugate
     · exact card_ge_two_mu4111
   simp only [chiSigma]
   rw [sigmaOneCharacter_eq_card_mul hsc hge q h hq two_ne_zero]
-  have hc : ((rowClass (shapeOf lam)).card : ℝ) = (cCoefficient lam : ℝ) := by
+  have hc : ((rowClass (shapeOf lam)).card : R) = (cCoefficient lam : R) := by
     exact_mod_cast card_rowClass_shapeOf lam
   rw [hc]
 
@@ -112,26 +118,28 @@ The manuscript's exact-in-`q` character values for the self-conjugate partition
 `[3,1,1]`, encoded as real polynomials in `h = q − q⁻¹`. -/
 
 /-- Manuscript adjacent-pair character: `χ_{[3,1,1]}(σᵢσ_{i+1}) = h²`. -/
-def chi311_adjacentPair (h : ℝ) : ℝ := h ^ 2
+def chi311_adjacentPair (h : R) : R := h ^ 2
 
 /-- Manuscript far-commuting-pair character (`|i − j| ≥ 2`):
     `χ_{[3,1,1]}(σᵢσⱼ) = h² − 2`. -/
-def chi311_farPair (h : ℝ) : ℝ := h ^ 2 - 2
+def chi311_farPair (h : R) : R := h ^ 2 - 2
 
 /-- Manuscript triple character: `χ_{[3,1,1]}(σᵢσ_{i+1}σ_{i+2}) = −h`. -/
-def chi311_triple (h : ℝ) : ℝ := -h
+def chi311_triple (h : R) : R := -h
 
+omit [CharZero R] in
 /-- **Commutation defect**: the adjacent-pair and far-commuting-pair characters of
     `[3,1,1]` differ by exactly `2` — the braid-relation contribution lost when the
     generators commute. -/
-theorem chi311_pair_commutation_defect (h : ℝ) :
+theorem chi311_pair_commutation_defect (h : R) :
     chi311_adjacentPair h - chi311_farPair h = 2 := by
   unfold chi311_adjacentPair chi311_farPair
   ring
 
+omit [CharZero R] in
 /-- **Adjacent-pair character is the square of the triple character**:
     `χ(σᵢσ_{i+1}) = χ(σᵢσ_{i+1}σ_{i+2})²` (both `h²`). -/
-theorem chi311_adjacent_eq_triple_sq (h : ℝ) :
+theorem chi311_adjacent_eq_triple_sq (h : R) :
     chi311_adjacentPair h = (chi311_triple h) ^ 2 := by
   unfold chi311_adjacentPair chi311_triple
   ring
