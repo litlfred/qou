@@ -779,6 +779,7 @@ import QOU.Mathlib.YoungDiagramThreeRowCorner
 -- Ballot numbers m_j(n) = C(n,j) - C(n,j-1): the Mathlib-gap engine shared by
 -- the q-Clebsch-Gordan normalisation (qou-0cyu G2) and the Catalan sum (G5).
 import QOU.Mathlib.BallotNumbers
+import QOU.QBeta.QDimNormalisation
 import QOU.MassTheory.MirrorPairBondScaling
 import QOU.QBeta.CubicSaddleDiscriminant
 import QOU.QBeta.G3RealnessConjugationBrick
