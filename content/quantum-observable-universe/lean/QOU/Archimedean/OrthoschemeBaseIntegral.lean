@@ -183,6 +183,66 @@ theorem cos_sq_sub_cos_sq (ψ φ : ℝ) :
 Milnor's Appendix reports the value `Λ(a)/2` for the orthoscheme; this is that
 computation, in the reduced one-dimensional form. -/
 
+/-- **The three-log decomposition of the orthoscheme integrand**, valid pointwise
+on the OPEN interval `0 ≤ φ < ψ < π/2`.
+
+It fails at `φ = ψ` — there the left side is `log 0 = 0` by Lean's convention
+while the right side is not — which is exactly why the integral identity below
+needs an `a.e.` rewrite and why the integrability statement is about `Ioo`. -/
+theorem log_orthoscheme_eq {ψ φ : ℝ} (hψ : ψ < π / 2) (hφ0 : 0 ≤ φ) (hφψ : φ < ψ) :
+    Real.log ((Real.cos φ ^ 2 - Real.cos ψ ^ 2) / Real.cos φ ^ 2)
+      = Real.log (Real.sin (ψ + φ)) + Real.log (Real.sin (ψ - φ))
+        - 2 * Real.log (Real.cos φ) := by
+  have hπ : 0 < π := Real.pi_pos
+  have hcos : 0 < Real.cos φ := Real.cos_pos_of_mem_Ioo ⟨by linarith, by linarith⟩
+  have hs1 : 0 < Real.sin (ψ + φ) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  have hs2 : 0 < Real.sin (ψ - φ) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  rw [cos_sq_sub_cos_sq ψ φ,
+    Real.log_div (by positivity) (by positivity),
+    Real.log_mul (ne_of_gt hs1) (ne_of_gt hs2),
+    show Real.cos φ ^ 2 = Real.cos φ ^ (2 : ℕ) from rfl, Real.log_pow]
+  push_cast
+  ring
+
+/-! The three translated integrands, and their integrability.  Each is a
+translate or reflection of `log ∘ sin` or `log ∘ cos`, both of which Mathlib
+integrates on any interval. -/
+
+theorem intervalIntegrable_log_sin_add {ψ : ℝ} :
+    IntervalIntegrable (fun φ => Real.log (Real.sin (ψ + φ))) volume 0 ψ := by
+  have := (intervalIntegrable_log_sin (a := ψ) (b := 2 * ψ)).comp_add_left ψ
+  simpa [Function.comp, two_mul] using this
+
+theorem intervalIntegrable_log_sin_sub {ψ : ℝ} :
+    IntervalIntegrable (fun φ => Real.log (Real.sin (ψ - φ))) volume 0 ψ := by
+  have := (intervalIntegrable_log_sin (a := ψ) (b := 0)).comp_sub_left ψ
+  simpa [Function.comp] using this
+
+/-- **The orthoscheme integrand is integrable on the open interval `(0, ψ)`.**
+
+Stated for `Ioo` rather than `Icc`/`Ioc` on purpose: the three-log decomposition
+holds pointwise only where `φ < ψ` strictly, and `φ = ψ` is where the integrand
+blows up.  This is what makes the improper integral in `integral_orthoscheme` a
+real number rather than Lean's junk value. -/
+theorem integrableOn_orthoscheme {ψ : ℝ} (hψ0 : 0 < ψ) (hψ : ψ < π / 2) :
+    IntegrableOn
+      (fun φ => (-(1/4 : ℝ)) * Real.log ((Real.cos φ ^ 2 - Real.cos ψ ^ 2) / Real.cos φ ^ 2))
+      (Set.Ioo 0 ψ) volume := by
+  have hthree : IntegrableOn (fun φ => (-(1/4 : ℝ)) *
+      (Real.log (Real.sin (ψ + φ)) + Real.log (Real.sin (ψ - φ))
+        - 2 * Real.log (Real.cos φ))) (Set.Ioo 0 ψ) volume := by
+    have h : IntervalIntegrable (fun φ => (-(1/4 : ℝ)) *
+        (Real.log (Real.sin (ψ + φ)) + Real.log (Real.sin (ψ - φ))
+          - 2 * Real.log (Real.cos φ))) volume 0 ψ :=
+      (((intervalIntegrable_log_sin_add.add intervalIntegrable_log_sin_sub).sub
+        (intervalIntegrable_log_cos.const_mul 2)).const_mul _)
+    exact ((intervalIntegrable_iff_integrableOn_Ioc_of_le hψ0.le).mp h).mono_set
+      Set.Ioo_subset_Ioc_self
+  refine hthree.congr_fun (fun φ hφ => ?_) measurableSet_Ioo
+  rw [log_orthoscheme_eq hψ hφ.1.le hφ.2]
+
 /-- **H4-4 (reduced) — the orthoscheme base integral is `½Λ(ψ)`:**
 
     ∫₀^ψ −¼ · log( (cos²φ − cos²ψ) / cos²φ ) dφ  =  ½ Λ(ψ)   for 0 < ψ < π/2.
@@ -202,13 +262,10 @@ theorem integral_orthoscheme {ψ : ℝ} (hψ0 : 0 < ψ) (hψ : ψ < π / 2) :
         (-(1/4 : ℝ)) * Real.log ((Real.cos φ ^ 2 - Real.cos ψ ^ 2) / Real.cos φ ^ 2)
       = Lob ψ / 2 := by
   have hπ : 0 < π := Real.pi_pos
-  -- the three integrands, and their integrability
-  have hA : IntervalIntegrable (fun φ => Real.log (Real.sin (ψ + φ))) volume 0 ψ := by
-    have := (intervalIntegrable_log_sin (a := ψ) (b := 2 * ψ)).comp_add_left ψ
-    simpa [Function.comp, two_mul] using this
-  have hB : IntervalIntegrable (fun φ => Real.log (Real.sin (ψ - φ))) volume 0 ψ := by
-    have := (intervalIntegrable_log_sin (a := ψ) (b := 0)).comp_sub_left ψ
-    simpa [Function.comp] using this
+  have hA : IntervalIntegrable (fun φ => Real.log (Real.sin (ψ + φ))) volume 0 ψ :=
+    intervalIntegrable_log_sin_add
+  have hB : IntervalIntegrable (fun φ => Real.log (Real.sin (ψ - φ))) volume 0 ψ :=
+    intervalIntegrable_log_sin_sub
   have hC : IntervalIntegrable (fun φ => Real.log (Real.cos φ)) volume 0 ψ :=
     intervalIntegrable_log_cos
   -- (a) rewrite the integrand as three log-sin/log-cos terms, valid off `φ = ψ`
@@ -225,19 +282,7 @@ theorem integral_orthoscheme {ψ : ℝ} (hψ0 : 0 < ψ) (hψ : ψ < π / 2) :
     filter_upwards [hne] with φ hφne hmem
     rw [Set.uIoc_of_le hψ0.le] at hmem
     obtain ⟨hφ0, hφψ⟩ := hmem
-    have hφlt : φ < ψ := lt_of_le_of_ne hφψ hφne
-    have hcos : 0 < Real.cos φ :=
-      Real.cos_pos_of_mem_Ioo ⟨by linarith, by linarith⟩
-    have hs1 : 0 < Real.sin (ψ + φ) :=
-      Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
-    have hs2 : 0 < Real.sin (ψ - φ) :=
-      Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
-    rw [cos_sq_sub_cos_sq ψ φ,
-      Real.log_div (by positivity) (by positivity),
-      Real.log_mul (ne_of_gt hs1) (ne_of_gt hs2),
-      show Real.cos φ ^ 2 = Real.cos φ ^ (2 : ℕ) from rfl, Real.log_pow]
-    push_cast
-    ring
+    rw [log_orthoscheme_eq hψ hφ0.le (lt_of_le_of_ne hφψ hφne)]
   rw [hrw, intervalIntegral.integral_const_mul,
     intervalIntegral.integral_sub (hA.add hB) (hC.const_mul 2),
     intervalIntegral.integral_add hA hB, intervalIntegral.integral_const_mul]
