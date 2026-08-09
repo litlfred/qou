@@ -41,9 +41,24 @@
   sum to a `√N`-window.  The gain comes from using that the factors keep
   shrinking, i.e. from the linear bound on `f`, not from the first factor alone.
 
+  WHAT THE FILE CONTAINS, in order.  Parts 1–2 are the pointwise inequalities
+  (`cot` antitone; the tangent and the secant).  Parts 3–4 are the two tails.
+  Parts 5–6 turn the tails into UPPER bounds on the sum over each region, and
+  Part 6 handles the stretch below the secant's window with no analysis at all
+  (the down–up–down shape dominates it by its endpoints).  Parts 7–8 are the
+  matching LOWER bounds, which need the tangent again — on the rising side
+  concavity finally points the right way, so Part 7 carries NO window.
+
+  WHAT IS STILL MISSING: a bound on `⟨4₁⟩_N` itself.  The regions are all
+  bounded, above and (near the peak) below, but the numeric constant for the
+  below-window region is not assembled here, and neither is the recombination
+  into a single statement about the sum.  Do not read any theorem in this file
+  as bounding the Kashaev invariant.
+
   -- Ref: [manuscript] QOU/Knot/KashaevArgmax.lean
   -- Ref: [manuscript] QOU/Knot/LobTaylorSaddle.lean
   -- Ref: [manuscript] QOU/MathlibExt/GaussianThetaSum.lean
+  -- Ref: [manuscript] QOU/MathlibExt/GaussianSumBound.lean
 -/
 import QOU.Knot.KashaevArgmax
 import QOU.Knot.LobTaylorSaddle
@@ -711,5 +726,74 @@ theorem kashaevProd_ge_left {N : ℕ} (hN : 6 ≤ N) (d : ℕ) (hd : d ≤ 5 * N
             * Real.exp (-(-(2 * Real.sqrt 3)
                 * (((5 * N / 6 - n : ℕ) : ℝ) * π / N - 5 * π / 6))) :=
             mul_le_mul_of_nonneg_right hprev (le_of_lt (Real.exp_pos _))
+
+/-! ## Part 8 — the sum below the saddle is at least `m` terms' worth
+
+The mirror of Part 5/6's upper bounds.  It needs no integral comparison and no
+Gaussian integral: the exponent `d(d+1)` is monotone in `d`, so every term of
+`∑_{d<m}` is at least the LAST one, and the sum is at least `m` copies of it.
+Choosing `m ≈ √(N/(√3π))` makes that last term `≥ e^{−1}`, so the sum is
+`≥ e^{−1}·m·g_{k*}` — the `√N` from below. -/
+
+/-- **Lower bound for the window sum**, the mirror of
+`sum_kashaevProd_left_window_le`.  Every term is at least the last. -/
+theorem le_sum_kashaevProd_left {N : ℕ} (hN : 6 ≤ N) (m : ℕ) (hm : m ≤ 5 * N / 6) :
+    kashaevProd N (5 * N / 6)
+        * ((m : ℝ) * Real.exp (-(Real.sqrt 3 * π * (m : ℝ) * ((m : ℝ) - 1) / N)))
+      ≤ ∑ d ∈ Finset.range m, kashaevProd N (5 * N / 6 - d) := by
+  have hN0 : N ≠ 0 := by omega
+  have hpi := Real.pi_pos
+  have hNR : (0 : ℝ) < N := by exact_mod_cast Nat.pos_of_ne_zero hN0
+  have hs3 : (0 : ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hterm : ∀ d ∈ Finset.range m,
+      kashaevProd N (5 * N / 6)
+          * Real.exp (-(Real.sqrt 3 * π * (m : ℝ) * ((m : ℝ) - 1) / N))
+        ≤ kashaevProd N (5 * N / 6 - d) := by
+    intro d hd
+    rw [Finset.mem_range] at hd
+    have hdm : (d : ℝ) * ((d : ℝ) + 1) ≤ (m : ℝ) * ((m : ℝ) - 1) := by
+      have h1 : (d : ℝ) + 1 ≤ (m : ℝ) := by exact_mod_cast hd
+      have h0 : (0 : ℝ) ≤ (d : ℝ) := Nat.cast_nonneg d
+      nlinarith
+    have hmono : Real.exp (-(Real.sqrt 3 * π * (m : ℝ) * ((m : ℝ) - 1) / N))
+        ≤ Real.exp (-(Real.sqrt 3 * π * (d : ℝ) * ((d : ℝ) + 1) / N)) := by
+      refine Real.exp_le_exp.mpr ?_
+      rw [neg_le_neg_iff, div_le_div_iff_of_pos_right hNR]
+      nlinarith [mul_le_mul_of_nonneg_left hdm (mul_nonneg hs3.le hpi.le)]
+    refine le_trans (mul_le_mul_of_nonneg_left hmono (kashaevProd_nonneg N _)) ?_
+    exact kashaevProd_ge_left hN d (by omega)
+  have hcard := Finset.card_nsmul_le_sum (Finset.range m)
+    (fun d => kashaevProd N (5 * N / 6 - d))
+    (kashaevProd N (5 * N / 6)
+      * Real.exp (-(Real.sqrt 3 * π * (m : ℝ) * ((m : ℝ) - 1) / N))) hterm
+  rw [Finset.card_range, nsmul_eq_mul] at hcard
+  calc kashaevProd N (5 * N / 6)
+        * ((m : ℝ) * Real.exp (-(Real.sqrt 3 * π * (m : ℝ) * ((m : ℝ) - 1) / N)))
+      = (m : ℝ) * (kashaevProd N (5 * N / 6)
+          * Real.exp (-(Real.sqrt 3 * π * (m : ℝ) * ((m : ℝ) - 1) / N))) := by ring
+    _ ≤ _ := hcard
+
+/-- **The `√N` from below.**  When `√3·π·m² ≤ N` the last term is `≥ e^{−1}`, so
+the window sum is at least `e^{−1}·m·g_{k*}`.  Taking `m ≈ √(N/(√3π))` makes
+that `≥ c√N·g_{k*}` — the matching side of `sum_kashaevProd_right_le`.
+
+The caller chooses `m`; picking it as an explicit floor-of-a-square-root is
+Nat arithmetic that would obscure the one inequality doing the work. -/
+theorem le_sum_kashaevProd_left_of_sq {N m : ℕ} (hN : 6 ≤ N) (hm : m ≤ 5 * N / 6)
+    (hsq : Real.sqrt 3 * π * (m : ℝ) ^ 2 ≤ N) :
+    kashaevProd N (5 * N / 6) * ((m : ℝ) * Real.exp (-1))
+      ≤ ∑ d ∈ Finset.range m, kashaevProd N (5 * N / 6 - d) := by
+  have hN0 : N ≠ 0 := by omega
+  have hpi := Real.pi_pos
+  have hNR : (0 : ℝ) < N := by exact_mod_cast Nat.pos_of_ne_zero hN0
+  have hs3 : (0 : ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have hmR : (0 : ℝ) ≤ (m : ℝ) := Nat.cast_nonneg m
+  refine le_trans ?_ (le_sum_kashaevProd_left hN m hm)
+  refine mul_le_mul_of_nonneg_left ?_ (kashaevProd_nonneg N _)
+  refine mul_le_mul_of_nonneg_left ?_ hmR
+  refine Real.exp_le_exp.mpr ?_
+  rw [neg_le_neg_iff, div_le_one hNR]
+  have hmm : (m : ℝ) * ((m : ℝ) - 1) ≤ (m : ℝ) ^ 2 := by nlinarith
+  nlinarith [mul_le_mul_of_nonneg_left hmm (mul_nonneg hs3.le hpi.le), hsq]
 
 end QOU.Knot.FigureEightVolume

@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T09:00:00Z
+updated_at: 2026-08-09T10:00:00Z
 ---
 
 ## Why this bean exists
@@ -505,3 +505,54 @@ on the LEFT in the right-tail proof, and the two need different lemmas.
   * the sum lower bound (above -- elementary, three lines);
   * the numeric constant for the below-window region (recorded last round);
   * then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
+
+## Landed: the sum lower bound. The sqrt(N) now has BOTH sides. 2026-08-09
+
+`le_sum_kashaevProd_left` and `le_sum_kashaevProd_left_of_sq`, both sorry-free:
+
+    kashaevProd N k* * (m * exp(-sqrt3 pi m(m-1)/N))
+        <= sum_{d<m} kashaevProd N (k*-d)
+
+    and, when sqrt3 pi m^2 <= N,
+
+    kashaevProd N k* * (m * e^{-1}) <= sum_{d<m} kashaevProd N (k*-d)
+
+Taking `m ~ sqrt(N/(sqrt3 pi))` makes the second `>= c sqrt(N) g_{k*}` -- the
+matching side of `sum_kashaevProd_right_le`.
+
+**The overbuilt plan, corrected.** The previous round of this bean said the
+lower bound would need `AntitoneOn.integral_le_sum` and the Gaussian integral
+in the reverse direction. It needs neither. The exponent `d(d+1)` is monotone
+in `d`, so every term of `sum_{d<m}` is at least the LAST one, and
+`Finset.card_nsmul_le_sum` gives `m` copies of it. Three lines. The integral
+machinery was only ever needed for the UPPER bound, where the terms have to be
+summed against something that converges.
+
+The caller picks `m`; expressing it as an explicit floor-of-a-square-root is
+Nat arithmetic that would bury the one inequality doing the work
+(`sqrt3 pi m^2 <= N` makes the last term `>= e^{-1}`).
+
+### Lean note
+
+Two `nlinarith` failures, both the same shape: a hypothesis `X <= Y` needed to
+be scaled by `sqrt3 * pi >= 0`, and nlinarith would not find the product on its
+own. Passing `mul_le_mul_of_nonneg_left h (mul_nonneg hs3.le hpi.le)` as an
+explicit hint fixed both. Pattern for this file: when the goal is a hypothesis
+multiplied by a positive transcendental constant, hand nlinarith the product.
+
+### The file header now says what the file does and does not do
+
+`KashaevTailBound.lean` has grown to eight parts. Its header now lists them and
+states explicitly that NO theorem in the file bounds `<4_1>_N` -- the regions
+are all bounded, above and (near the peak) below, but the numeric constant for
+the below-window region is not assembled and the recombination into a single
+statement about the sum is not written.
+
+### What is left
+
+  1. the numeric constant for the below-window region (sketch recorded two
+     rounds ago; explicit threshold `N >= 62`);
+  2. recombination of the four regions into one statement about
+     `sum_{k<N} kashaevProd N k` -- needs an order-reversing reindex to move
+     the distance-indexed window sums onto `Finset.Ico`;
+  3. then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
