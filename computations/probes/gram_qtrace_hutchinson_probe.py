@@ -62,6 +62,16 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from gram_norm_binding_probe import _letters  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# MUST run before any `mp.mpf(<50-digit string>)` below. Without it mp.dps is
+# still mpmath's default 15, so the 50-digit substrate anchor is TRUNCATED as
+# it is parsed and the `mpf(str(Q_50_DIGIT_STR))` idiom below silently yields
+# a 15-digit value: 1.109978582751380837834176 instead of
+# 1.109978582751380807591669 — wrong from the 17th digit. That is what
+# `atom_braid_word_3A`'s NO-FLOAT64 guard was rejecting; the guard was right
+# and the comments below claiming a '50-dps source' were not.
+set_compute_dps(50)
 
 RNG = np.random.default_rng(20260704)   # fixed seed: reproducible witness
 
