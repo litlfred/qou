@@ -1303,3 +1303,39 @@ step to `−π²/6 − ½log²y₃ + (2/3)(θ−π)²` then needs `arg A₃ = (�
 (`normSq_mul`, proved, plus the argument).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 68 — the capstone, with every hypothesis discharged from the root data
+
+`SaddleRoots.sum_cLiTwoExt_root_data`:
+
+    2·Σ Li₂ = 2π²/3 − (iπ/2)(log A₃ − log B₃ + log b − log a)
+              − (2/3)·Σ log² + (2πi/3)·(1·log a + (−1)·log b + 0·log t)
+
+**No hypotheses beyond the `SaddleRoots` structure.** Every input Route 64 listed
+is now a theorem about it:
+
+| input | discharged by |
+|---|---|
+| pentagon at `(t, a)` | `pentagon_upper` (67) |
+| pentagon at `(t, conj a)` | `pentagon_lower` — the mirror, by conjugating `inv_A3` and `one_sub_inv_conj` |
+| `Im A₃ > 0`, `Im B₃ < 0` | `A3_im_pos`, `B3_im_neg` (`B₃ = conj A₃`, since `t` is real) |
+| the three branch equations | `branch_upper`, `branch_lower`, `branch_real` (66) |
+| the `ε` values | now literally `1`, `−1`, `0` in the statement |
+
+The mirror cost nothing: `B₃ = conj A₃`, and each `A₃` fact conjugates.
+
+### ⚠ What the right side still is
+
+**Logarithms**, not `−π²/6 − ½log²t + (2/3)(θ−π)²`. Turning it into that needs two
+substitutions, both already proved from root data but not yet applied here:
+
+* `arg A₃ = (π − arg a)/3` — `saddle_clog_cube_of_roots` (61, 62);
+* `log a = −½·log t + i·arg a` — `normSq_mul` (66) plus the argument.
+
+So the chain is complete from the pentagon to a logarithmic expression for `A`,
+with nothing assumed but the cubic's root structure; what is not done is the last
+substitution into the sum rule's stated form.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

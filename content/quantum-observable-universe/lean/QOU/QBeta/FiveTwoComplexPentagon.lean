@@ -1351,6 +1351,40 @@ theorem pentagon_upper :
       + cRogersL ((1 - S.a) / (1 - S.a * (S.t : ℂ))) = _
   linear_combination h
 
+/-- The lower composite argument, `B₃ = conj A₃` — the same expression at the
+conjugate root, since `t` is real. -/
+noncomputable def B3 : ℂ := (starRingEnd ℂ) S.A3
+
+theorem B3_eq : S.B3 = (1 - (S.t : ℂ)) / (1 - (starRingEnd ℂ) S.a * (S.t : ℂ)) := by
+  show (starRingEnd ℂ) ((1 - (S.t : ℂ)) / (1 - S.a * (S.t : ℂ))) = _
+  simp [map_div₀, map_sub, Complex.conj_ofReal]
+
+theorem B3_im_neg : S.B3.im < 0 := by
+  show ((starRingEnd ℂ) S.A3).im < 0
+  simpa using S.A3_im_pos
+
+theorem mem_conj_a : (starRingEnd ℂ) S.a ∈ rogersDomain :=
+  mem_rogersDomain_of_im_ne_zero (by simpa using ne_of_gt S.him)
+
+theorem inv_B3 :
+    (1 - (starRingEnd ℂ) S.a) / (1 - (starRingEnd ℂ) S.a * (S.t : ℂ)) = S.B3⁻¹ := by
+  have h := congrArg (starRingEnd ℂ) S.inv_A3
+  simpa [map_div₀, map_sub, map_inv₀, Complex.conj_ofReal, SaddleRoots.B3] using h
+
+theorem one_sub_inv_a : (1 : ℂ) - S.a⁻¹ = 1 - (starRingEnd ℂ) S.a * (S.t : ℂ) := by
+  have h := congrArg (starRingEnd ℂ) S.one_sub_inv_conj
+  simpa [map_sub, map_inv₀, Complex.conj_ofReal] using h
+
+/-- **The second pentagon instance**, the mirror of `pentagon_upper`. -/
+theorem pentagon_lower :
+    cRogersL (S.t : ℂ) + cRogersL ((starRingEnd ℂ) S.a) + cRogersL S.B3
+      + cRogersL (1 - S.a⁻¹) + cRogersL S.B3⁻¹ = ((Real.pi ^ 2 / 2 : ℝ) : ℂ) := by
+  have h := pentagonSum_eq_pi_sq_div_two S.ht0 S.ht1 S.mem_conj_a
+  unfold pentagonSum at h
+  rw [S.one_sub_inv_a, ← S.inv_B3, S.B3_eq]
+  linear_combination h
+
+
 end SaddleRoots
 
 end SaddleStructure
@@ -1626,6 +1660,39 @@ theorem sum_cLiTwoExt_eval {a b c A3 B3 e₁ e₂ e₃ : ℂ}
   have h := saddle_sum_cRogersL P1 P2 hA3 hB3 ha hb
   have k := sum_cLiTwoExt_of_branch h₁ h₂ h₃
   linear_combination k + h
+
+/-- **Route 64's capstone, with every hypothesis discharged from the root data.**
+
+    2·Σ Li₂ = 2π²/3 − (iπ/2)(log A₃ − log B₃ + log b − log a)
+              − (2/3)·Σ log² + (2πi/3)·Σ εⱼ·log yⱼ
+
+The pentagon values are `pentagon_upper` / `pentagon_lower`, the imaginary-part
+conditions are `A3_im_pos` / `B3_im_neg`, and the three branch equations are
+`branch_upper` / `branch_lower` / `branch_real` — all theorems about
+`SaddleRoots`. **Nothing is assumed beyond the structure.**
+
+⚠ The right side is still logarithms, not `−π²/6 − ½log²t + (2/3)(θ−π)²`. Turning
+it into that needs `arg A₃ = (π − arg a)/3` (`saddle_clog_cube_of_roots`, proved
+from root data) and `log a = −½log t + i·arg a` (`normSq_mul`, proved, plus the
+argument). Those substitutions are not made here.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+theorem SaddleRoots.sum_cLiTwoExt_root_data (S : SaddleRoots) :
+    2 * (cLiTwoExt S.a + cLiTwoExt ((starRingEnd ℂ) S.a) + cLiTwoExt (S.t : ℂ))
+      = ((2 * Real.pi ^ 2 / 3 : ℝ) : ℂ)
+        - ((Real.pi : ℂ) * Complex.I / 2)
+          * (Complex.log S.A3 - Complex.log S.B3
+              + Complex.log ((starRingEnd ℂ) S.a) - Complex.log S.a)
+        - (2 / 3) * (Complex.log S.a ^ 2 + Complex.log ((starRingEnd ℂ) S.a) ^ 2
+            + Complex.log (S.t : ℂ) ^ 2)
+        + (2 * (Real.pi : ℂ) * Complex.I / 3)
+          * ((1 : ℂ) * Complex.log S.a + (-1 : ℂ) * Complex.log ((starRingEnd ℂ) S.a)
+              + (0 : ℂ) * Complex.log (S.t : ℂ)) := by
+  refine sum_cLiTwoExt_eval S.pentagon_upper S.pentagon_lower S.A3_im_pos S.B3_im_neg
+    S.him (by simpa using S.him) ?_ ?_ ?_
+  · rw [S.branch_upper]; ring
+  · rw [S.branch_lower]; ring
+  · rw [S.branch_real]; ring
 
 end Reflection
 
