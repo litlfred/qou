@@ -1007,3 +1007,67 @@ about dilogarithms.
 | G6 `Σ log·log` | open — the saddle branch equation |
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 62 — the infrastructure, built out. Link G3 has no `arg` hypothesis left.
+
+Two general simplifications collapse both remaining evaluations, and the bounds
+problem turns out to be one exact algebraic fact.
+
+### The `log²` terms cancel completely
+
+Eliminating `log(−z)` in favour of `log z`:
+
+    L(z) + L(1/z)     =  π²/3 + (iπ/2)·log z        for Im z > 0
+    L(1 − 1/z) − L(z) = −π²/6 + (iπ/2)·log z        for Im z < 0
+
+**No quadratic term at all.** That is why Route 58's links G3 and G4 have values
+with no `log²` in them — it was never a coincidence of the saddle. Both verified
+at six points first, and both **fail** on the wrong side of the axis (residual
+2.92), which is the control.
+
+### The infra, in `MathlibExt` (the Mathlib-gap layer)
+
+* `arg_ne_pi_of_im_ne_zero`, `clog_neg_of_im_pos`, `clog_neg_of_im_neg`
+* `arg_nonneg_of_im_nonneg`, `arg_le_pi_div_two_of_re_nonneg`,
+  `mem_invDomain_of_im_ne_zero`
+* `clog_eq_of_exp_eq`, `im_eq_pi_of_exp_eq_neg_ofReal` (the window lemma),
+  `clog_cube_mul` (Route 61)
+* `cRogersL_add_inv` (59), `cRogersL_add_inv_of_im_pos`
+
+and in the 5₂ layer: `cRogersL_add_one_sub` (complex reflection, 60),
+`cRogersL_one_sub_inv_sub`, `cRogersL_one_sub_inv_sub_of_im_neg`,
+`inv_mem_rogersDomain_of_im_ne_zero`.
+
+### The bounds problem, solved
+
+`saddle_pair_rel`, `one_sub_mul_third`, `saddle_argThree_add_eq_one`:
+
+    (1−c)/(1−ca) + (1−c)/(1−cb) = 1
+
+for the three roots — cofactors `c·R − a·C`, from a Gröbner reduction. With
+`b = conj a` and `c` real this is **`Re a₃ = 1/2` exactly**, and that is the only
+one of the three sign conditions with any content. `saddle_arg_bounds` discharges
+all three.
+
+### Link G3 now
+
+`saddle_clog_cube_of_roots`:
+
+    3·log a₃ + log y₁ = log y₃ + iπ
+
+from **root data alone** — symmetric functions, the cubic, three non-vanishing
+conditions, the conjugate-pair structure, and two `Im ≥ 0` facts. No `arg`
+hypothesis survives. Nothing numeric enters anywhere.
+
+### What is left
+
+* **G3**: assemble — feed `saddle_clog_cube_of_roots` into
+  `cRogersL_add_inv_of_im_pos`. Mechanical.
+* **G4**: evaluate `log y₂ = −½log y₃ − iθ` — `|y₁|²y₃ = 1` and `arg(conj y₁) =
+  −arg y₁`; both are one-liners over Mathlib now.
+* **G6**: `Σ log y log(1−y)` from the saddle branch equation. Untouched, and the
+  only remaining link with its own input.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

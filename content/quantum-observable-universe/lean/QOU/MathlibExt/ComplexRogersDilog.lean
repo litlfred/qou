@@ -316,4 +316,60 @@ theorem clog_cube_mul {a b : ℂ} {t : ℝ} (ha : a ≠ 0) (hb : b ≠ 0) (ht : 
   rw [← hlog]
 
 
+/-! ## Infrastructure: off-the-real-axis logarithms, and argument bounds
+
+Every remaining evaluation in the 5₂ chain has the same two needs — move `log(−z)`
+to `log z`, and bound an argument crudely enough to pin a branch integer. Both
+are Mathlib-gap-shaped, so they live here rather than in the 5₂ modules. -/
+
+/-- `arg z ≠ π` as soon as `z` is off the real axis. -/
+theorem arg_ne_pi_of_im_ne_zero {z : ℂ} (h : z.im ≠ 0) : z.arg ≠ Real.pi := by
+  intro hc
+  exact h (Complex.arg_eq_pi_iff.mp hc).2
+
+/-- `log(−z) = log z − iπ` above the real axis. -/
+theorem clog_neg_of_im_pos {z : ℂ} (h : 0 < z.im) :
+    Complex.log (-z) = Complex.log z - (Real.pi : ℂ) * Complex.I := by
+  rw [Complex.log, Complex.log, Complex.arg_neg_eq_arg_sub_pi_of_im_pos h, norm_neg]
+  push_cast
+  ring
+
+/-- `log(−z) = log z + iπ` below the real axis. -/
+theorem clog_neg_of_im_neg {z : ℂ} (h : z.im < 0) :
+    Complex.log (-z) = Complex.log z + (Real.pi : ℂ) * Complex.I := by
+  rw [Complex.log, Complex.log, Complex.arg_neg_eq_arg_add_pi_of_im_neg h, norm_neg]
+  push_cast
+  ring
+
+/-- `0 ≤ arg z` from `0 ≤ Im z`. Named for readability at the use sites, where
+the whole point is that the bound needed is a crude sign condition. -/
+theorem arg_nonneg_of_im_nonneg {z : ℂ} (h : 0 ≤ z.im) : 0 ≤ z.arg :=
+  Complex.arg_nonneg_iff.mpr h
+
+/-- `arg z ≤ π/2` from `0 ≤ Re z`. -/
+theorem arg_le_pi_div_two_of_re_nonneg {z : ℂ} (h : 0 ≤ z.re) : z.arg ≤ Real.pi / 2 :=
+  Complex.arg_le_pi_div_two_iff.mpr (Or.inl h)
+
+/-- A point off the real axis is in `invDomain`. -/
+theorem mem_invDomain_of_im_ne_zero {z : ℂ} (h : z.im ≠ 0) : z ∈ invDomain :=
+  mem_invDomain_iff.mpr (Or.inr h)
+
+/-- **Rogers inversion, with the `log(−z)` eliminated.**
+
+    L(z) + L(1/z) = π²/3 + (iπ/2)·log z          for `Im z > 0`
+
+The `log²` terms cancel *completely* against the ones in `cRogersL_add_inv`, so
+an inversion pair above the real axis is `π²` plus `π` times a single logarithm —
+no quadratic term at all. This is the form Route 58's link G3 uses, and it is why
+that link's value has no `log²` in it. -/
+theorem cRogersL_add_inv_of_im_pos {z : ℂ} (h : 0 < z.im) :
+    cRogersL z + cRogersL z⁻¹
+      = ((Real.pi ^ 2 / 3 : ℝ) : ℂ) + ((Real.pi : ℂ) * Complex.I / 2) * Complex.log z := by
+  have hne : z.im ≠ 0 := ne_of_gt h
+  rw [cRogersL_add_inv (mem_invDomain_of_im_ne_zero hne) (arg_ne_pi_of_im_ne_zero hne),
+    clog_neg_of_im_pos h]
+  have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+  push_cast
+  linear_combination (-((Real.pi : ℂ) ^ 2) / 2) * hI
+
 end QOU.MathlibExt

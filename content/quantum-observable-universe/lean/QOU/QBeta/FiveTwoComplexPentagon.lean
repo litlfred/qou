@@ -1008,6 +1008,86 @@ theorem saddle_clog_cube {a : ℂ} {t : ℝ} (ht : 0 < t)
   push_cast
   ring
 
+/-! #### The bounds, algebraically
+
+Route 61 reduced link G3 to three sign conditions — `Im a₃ ≥ 0`, `Re a₃ ≥ 0`,
+`Im y₁ ≥ 0`. The second is the only one with content, and it is exact:
+`Re a₃ = 1/2`. What follows is that fact and the two relations it needs, all by
+`linear_combination` with cofactors a Gröbner reduction returns. -/
+
+/-- The pair relation `a²c + ac² − 2ac + 1 = 0` — "the third root is `1/(ac)` and
+the three sum to `2`" — from the symmetric functions. -/
+theorem saddle_pair_rel {a b c : ℂ} (hsum : a + b + c = 2) (hprod : a * b * c = 1) :
+    a ^ 2 * c + a * c ^ 2 - 2 * (a * c) + 1 = 0 := by
+  linear_combination (a * c) * hsum - hprod
+
+/-- `1 − cb = (a−1)/a`, since `cb = 1/a`. -/
+theorem one_sub_mul_third {a b c : ℂ} (hprod : a * b * c = 1) (ha : a ≠ 0) :
+    (1 : ℂ) - c * b = (a - 1) / a := by
+  field_simp
+  linear_combination -hprod
+
+/-- **`a₃` and its partner sum to `1`.**
+
+    (1−c)/(1−ca) + (1−c)/(1−cb) = 1
+
+for the three roots. With `b = conj a` and `c` real this says `Re a₃ = 1/2`,
+which is the one sign condition of link G3 with any content. -/
+theorem saddle_argThree_add_eq_one {a b c : ℂ} (hsum : a + b + c = 2)
+    (hprod : a * b * c = 1) (hC : c ^ 3 - 2 * c ^ 2 + 3 * c - 1 = 0)
+    (ha : a ≠ 0) (h1 : (1 : ℂ) - c * a ≠ 0) (h2 : a - 1 ≠ 0) :
+    (1 - c) / (1 - c * a) + (1 - c) / (1 - c * b) = 1 := by
+  have hR := saddle_pair_rel hsum hprod
+  rw [one_sub_mul_third hprod ha]
+  field_simp
+  linear_combination c * hR - a * hC
+
+/-- `z.re = 1/2` from `z + conj z = 1`. -/
+theorem re_eq_half_of_add_conj {z w : ℂ} (hw : w = (starRingEnd ℂ) z) (h : z + w = 1) :
+    z.re = 1 / 2 := by
+  rw [hw] at h
+  have := congrArg Complex.re h
+  simp [Complex.add_re, Complex.conj_re] at this
+  linarith
+
+/-- **The three sign conditions of link G3, discharged from the root data.**
+
+`Re a₃ = 1/2 > 0` gives `arg a₃ ≤ π/2`; `Im a₃ ≥ 0` and `Im y₁ ≥ 0` give the two
+non-negativity conditions. Nothing numeric is needed — the only quantitative
+input is that `Re a₃` is exactly `1/2`, which is `saddle_argThree_add_eq_one`. -/
+theorem saddle_arg_bounds {a b c : ℂ} (hsum : a + b + c = 2) (hprod : a * b * c = 1)
+    (hC : c ^ 3 - 2 * c ^ 2 + 3 * c - 1 = 0) (ha : a ≠ 0) (h1 : (1 : ℂ) - c * a ≠ 0)
+    (h2 : a - 1 ≠ 0)
+    (hconj : (1 - c) / (1 - c * b) = (starRingEnd ℂ) ((1 - c) / (1 - c * a)))
+    (him3 : 0 ≤ ((1 - c) / (1 - c * a)).im) (hima : 0 ≤ a.im) :
+    0 ≤ ((1 - c) / (1 - c * a)).arg ∧ ((1 - c) / (1 - c * a)).arg ≤ Real.pi / 2
+      ∧ 0 ≤ a.arg := by
+  refine ⟨arg_nonneg_of_im_nonneg him3, arg_le_pi_div_two_of_re_nonneg ?_,
+    arg_nonneg_of_im_nonneg hima⟩
+  rw [re_eq_half_of_add_conj hconj (saddle_argThree_add_eq_one hsum hprod hC ha h1 h2)]
+  norm_num
+
+/-- **Link G3's angle identity, with the argument bounds discharged.**
+
+    3·log a₃ + log y₁ = log y₃ + iπ
+
+from root data alone — the symmetric functions, the cubic, three non-vanishing
+conditions, the conjugate-pair structure, and two `Im ≥ 0` facts. **No `arg`
+hypothesis survives**, and nothing numeric enters: the only quantitative input is
+`Re a₃ = 1/2`, which is `saddle_argThree_add_eq_one`. -/
+theorem saddle_clog_cube_of_roots {a b : ℂ} {t : ℝ} (ht : 0 < t)
+    (hsum : a + b + (t : ℂ) = 2) (hprod : a * b * (t : ℂ) = 1)
+    (hC : (t : ℂ) ^ 3 - 2 * (t : ℂ) ^ 2 + 3 * (t : ℂ) - 1 = 0)
+    (ha : a ≠ 0) (h1 : (1 : ℂ) - (t : ℂ) * a ≠ 0) (h2 : a - 1 ≠ 0)
+    (ha0 : (1 - (t : ℂ)) / (1 - (t : ℂ) * a) ≠ 0)
+    (hconj : (1 - (t : ℂ)) / (1 - (t : ℂ) * b)
+      = (starRingEnd ℂ) ((1 - (t : ℂ)) / (1 - (t : ℂ) * a)))
+    (him3 : 0 ≤ ((1 - (t : ℂ)) / (1 - (t : ℂ) * a)).im) (hima : 0 ≤ a.im) :
+    3 * Complex.log ((1 - (t : ℂ)) / (1 - (t : ℂ) * a)) + Complex.log a
+      = ((Real.log t : ℝ) : ℂ) + (Real.pi : ℂ) * Complex.I := by
+  obtain ⟨b1, b2, b3⟩ := saddle_arg_bounds hsum hprod hC ha h1 h2 hconj him3 hima
+  exact saddle_clog_cube ht (saddle_pair_rel hsum hprod) hC h1 ha ha0 b1 b2 b3
+
 end SaddleStructure
 
 /-! ### Complex Rogers reflection
@@ -1093,6 +1173,33 @@ theorem cRogersL_one_sub_inv_sub {z : ℂ} (hz : z ∈ invDomain) (harg : z.arg 
   have h2 := cRogersL_add_inv hz harg
   push_cast at h1 h2 ⊢
   linear_combination h1 - h2
+
+/-- A point off the real axis has its inverse off both cuts. -/
+theorem inv_mem_rogersDomain_of_im_ne_zero {z : ℂ} (h : z.im ≠ 0) : z⁻¹ ∈ rogersDomain := by
+  refine mem_rogersDomain_of_im_ne_zero ?_
+  rw [Complex.inv_im]
+  have hz : z ≠ 0 := fun hc => h (by rw [hc]; simp)
+  exact div_ne_zero (neg_ne_zero.mpr h) (fun hc => hz (Complex.normSq_eq_zero.mp hc))
+
+/-- **The anharmonic relation, with the `log(−z)` eliminated.**
+
+    L(1 − 1/z) − L(z) = −π²/6 + (iπ/2)·log z          for `Im z < 0`
+
+As with inversion, the `log²` terms cancel completely: below the real axis the
+order-3 anharmonic step costs `π²` plus `π` times a single logarithm. This is the
+form Route 58's link G4 uses — its value has no `log²` for the same reason G3's
+does not. -/
+theorem cRogersL_one_sub_inv_sub_of_im_neg {z : ℂ} (h : z.im < 0) :
+    cRogersL (1 - z⁻¹) - cRogersL z
+      = -((Real.pi ^ 2 / 6 : ℝ) : ℂ)
+        + ((Real.pi : ℂ) * Complex.I / 2) * Complex.log z := by
+  have hne : z.im ≠ 0 := ne_of_lt h
+  rw [cRogersL_one_sub_inv_sub (mem_invDomain_of_im_ne_zero hne)
+      (arg_ne_pi_of_im_ne_zero hne) (inv_mem_rogersDomain_of_im_ne_zero hne),
+    clog_neg_of_im_neg h]
+  have hI : Complex.I ^ 2 = -1 := Complex.I_sq
+  push_cast
+  linear_combination (((Real.pi : ℂ) ^ 2) / 2) * hI
 
 end Reflection
 
