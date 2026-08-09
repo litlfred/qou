@@ -1141,3 +1141,61 @@ the whole probe to one line. Rewrote the file rather than trying to unpick it.
      its TILTED form, and subtract the tail. Step 8 gives
      `sqrt(pi/a)(1 + exp small)`; step 5 gives the tail.
   2. Combine with step 7 for `c_sigma`; then `hc`; then `htau`.
+
+---
+
+## Step 12 -- the tilted Gaussian sum (`QOU/MathlibExt/GaussianTiltedSum.lean`)
+
+Five theorems, all `[propext, Classical.choice, Quot.sound]`.
+
+Step 10's summand is `e^{-a u^2 + 2 L u}` -- a Gaussian with a linear tilt.
+Completing the square is the whole idea: `-a u^2 + 2 L u = L^2/a - a(u - L/a)^2`,
+so a TILT IS A SHIFT of the centre by `L/a` plus a factor `e^{L^2/a}`. And step
+8 was proved uniformly in the shift, which is exactly why it was stated that
+way. The tilt costs one line of algebra and an already-uniform estimate; no new
+analysis.
+
+    abs_tsum_tilted_gaussian_sub_le :
+      | sum_{n in Z} e^{-a n^2 + 2 L n}  -  e^{L^2/a} sqrt(pi/a) |
+        <= e^{L^2/a} sqrt(pi/a) * 2q/(1-q)
+
+`e^{L^2/a} sqrt(pi/a)` is exactly `int_R e^{-a x^2 + 2 L x} dx`, so this says
+the tilted Laplace sum is its tilted Laplace integral.
+
+### THE PAYOFF -- `c_sigma = 3^(-1/4)` from the formalised ingredients
+
+Probe part (iv) instantiates `a` and `L` with exactly what step 10 produces at
+the Kashaev saddle (`a = pi |cot th_k*| / N`, `L = log(2 sin th_k*)`,
+`k* = floor(5N/6)`) and divides the model sum by `sqrt(N)`:
+
+    N          241      961     3841    15361    61441
+    model/sqrtN  0.78153  0.76523  0.76118  0.76017  0.75992
+    gap        2.17e-2  5.39e-3  1.35e-3  3.37e-4  8.41e-5
+    gap x N      5.227    5.183    5.172    5.169    5.168
+
+against `3^(-1/4) = 0.7598356857`. **Computed from the Lean statements' own
+ingredients, not from the closed form.**
+
+And the `O(1/N)` decomposes completely, which is the part I find convincing:
+
+  * `sqrt(pi/(aN)) = |cot th_k*|^{-1/2}`, and `|cot th_k*| = sqrt3 - 10pi/(3N)`
+    (step 9), so this contributes a relative `+3.023/N`;
+  * `e^{L^2/a} = 1 + L^2/a + ...` with `L ~ 4.52/N` and `a ~ sqrt3 pi/N`, so
+    `L^2/a ~ 3.755/N` -- the TILT's contribution.
+
+`(3.023 + 3.755) * 3^(-1/4) = 5.15`, against the observed 5.168. Both halves of
+the `1/N` are accounted for, and neither is an error term -- one is the
+Hessian's offset from the saddle, the other is the tilt.
+
+### Remaining before `hc`
+
+Only the bookkeeping between "model sum over Z" and "the actual Kashaev sum":
+
+  1. window -> Z. The easy half is `sum_le_tsum_tilted_gaussian` (any finite
+     part <= the whole), already here. The other half needs a Gaussian tail
+     bound beyond the window -- `GaussianSumBound` is enough there, since
+     losing the constant on an exponentially small tail costs nothing.
+  2. Assemble: step 11's sandwich + step 12's evaluation + step 7's peak value
+     gives `<4_1>_N = c_sigma N^{3/2} e^{N Vol/2pi} (1 + o(1))`.
+  3. `hc` (already algebraically proved in `OneLoopPrefactorInvariance.lean` --
+     it is "Stirling factor squared over Gaussian width"), then `htau`.
