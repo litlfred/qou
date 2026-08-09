@@ -1,11 +1,11 @@
 ---
 # qou-kljb
-title: 785 of 1659 QOU library modules are never built — lake build QOU cannot see them
+title: 795 QOU library modules are never built — lake build QOU cannot see them (270 load-bearing)
 status: todo
 type: task
 priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-09T10:40:00Z
+updated_at: 2026-08-09T19:20:00Z
 ---
 
 Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
@@ -31,9 +31,9 @@ Import-closure walk from `content/quantum-observable-universe/lean/QOU.lean`:
 
 | | count |
 |---|---|
-| library modules under `lean/QOU/` | 1659 |
-| reachable from `QOU.lean` | 874 |
-| **unreachable** | **785 (47%)** |
+| library modules under `lean/QOU/` | 1776 |
+| reachable from `QOU.lean` | 981 |
+| **unreachable** | **795 (44%)** |
 
 `content/quantum-observable-universe/lean/lakefile.toml` declares
 
@@ -54,7 +54,7 @@ Confirmed by direct experiment rather than inference (throwaway package, root
 | no `globs` | builds `Lib.olean` only — **`Lib/Orphan.olean` NOT built** |
 | `globs = ["Lib", "Lib.+"]` | builds both |
 
-So `lake build QOU` never elaborates the 785. A module in that set can be
+So `lake build QOU` never elaborates them. A module in that set can be
 syntactically broken, carry an uncited `sorry`, or fail to typecheck, and no
 build will say so.
 
@@ -62,8 +62,8 @@ build will say so.
 
 The first version of this bean **denied** the orphan/CI claim. The reasoning
 was: against the restored `lake-cache/qou-v4-24-0` tree, orphaned modules carry
-`.olean` artifacts at 56% (440/785), statistically indistinguishable from
-reachable modules at 57% (502/874), and `TorusKnotMass.olean` is present — so
+`.olean` artifacts at 56% (440/785, as counted that morning), statistically indistinguishable from
+reachable modules at 57% (502/874, as counted that morning), and `TorusKnotMass.olean` is present — so
 orphan status appeared not to predict builtness.
 
 That inference was wrong. The oleans are **stale artifacts** left in the build
