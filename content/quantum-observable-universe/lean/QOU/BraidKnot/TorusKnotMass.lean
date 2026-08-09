@@ -139,9 +139,13 @@ end TorusKnotMass
 --     here rather than re-derived.
 --
 --     #3793 also attributed the non-compiling file's survival to this module
---     being orphaned from the `QOU` umbrella — it is indeed not imported by
---     `QOU.lean`.  That explanation is NOT restated as fact: orphaned modules
---     turn out to carry build artifacts at the same rate as reachable ones
---     (56% vs 57%), so orphan status does not by itself imply "unbuilt".
---     The open question is tracked in bean `qou-kljb`.
+--     being orphaned from the `QOU` umbrella.  That is CONFIRMED: this module
+--     is not imported by `QOU.lean`, the `[[lean_lib]] name = "QOU"` stanza
+--     declares no `globs`, and Lake's default is then `globs = #[.one "QOU"]`
+--     — only the root module and its import closure are built.  Verified by
+--     direct experiment on a throwaway package: with no `globs`, an unimported
+--     module is NOT built; adding `globs = ["Lib", "Lib.+"]` builds it.  So
+--     `lake build QOU` never elaborates this file, and a broken version of it
+--     cannot fail any build.  785 of 1659 QOU library modules are in that
+--     state; tracked in bean `qou-kljb`.
 end QOU.BraidKnot

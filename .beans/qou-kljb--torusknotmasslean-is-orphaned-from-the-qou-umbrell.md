@@ -1,93 +1,101 @@
 ---
 # qou-kljb
-title: 785 of 1659 QOU library modules are unreachable from QOU.lean — build coverage unknown
+title: 785 of 1659 QOU library modules are never built — lake build QOU cannot see them
 status: todo
 type: task
-priority: medium
+priority: high
 created_at: 2026-08-09T02:12:05Z
-updated_at: 2026-08-09T02:12:05Z
+updated_at: 2026-08-09T10:40:00Z
 ---
 
-Surfaced while verifying PR #4824's §1 consolidation claim using the
-three-way per-file drop check sibling #4840 proposed. PR #3793 had recorded,
-in a comment on `TorusKnotMass.lean`, that a fabricated
+Surfaced while verifying PR #4824's §1 consolidation claim with the three-way
+per-file drop check sibling #4840 proposed. PR #3793 had recorded, in a comment
+on `TorusKnotMass.lean`, that a fabricated
 `noncomputable instance : TorusKnotMass := ⟨0, rfl⟩` did not typecheck, and
-that the resulting non-compiling file "escaped CI only because it is
-orphaned from the `QOU` umbrella". That comment was dropped when the
-instance-removal reached main by a different route.
+that the resulting non-compiling file "escaped CI only because it is orphaned
+from the `QOU` umbrella". That comment was dropped when the instance-removal
+reached main by a different route.
 
-**Half of that claim checks out; the other half does not. Read both before
-acting.**
+**Both halves of #3793's claim are now confirmed.**
 
-## Verified
+## 1. The typecheck claim — verified
 
-1. **The typecheck claim is sound.** At #3793's base (`b759f24f`) the class
-   had **9 explicit fields** and `factors_distinct : gauge_mass_factor ≠
-   scalar_mass_factor`. `⟨0, rfl⟩` supplies 2 of 9, and `gauge_mass_factor = 0`
-   forces `factors_distinct : (0:ℝ) ≠ 0`, unprovable. So it could not have
-   elaborated.
+At #3793's base (`b759f24f`) the class had **9 explicit fields** including
+`factors_distinct : gauge_mass_factor ≠ scalar_mass_factor`. `⟨0, rfl⟩`
+supplies 2 of 9, and `gauge_mass_factor = 0` forces
+`factors_distinct : (0:ℝ) ≠ 0`, unprovable. It could not have elaborated.
 
-2. **The orphan count is real.** Import-closure walk from
-   `content/quantum-observable-universe/lean/QOU.lean`:
+## 2. The orphan/CI claim — verified by experiment
 
-   | | count |
-   |---|---|
-   | library modules under `lean/QOU/` | 1659 |
-   | reachable from `QOU.lean` | 874 |
-   | **not reachable** | **785 (47%)** |
+Import-closure walk from `content/quantum-observable-universe/lean/QOU.lean`:
 
-   `QOU.BraidKnot.TorusKnotMass` is one of the 785. The lakefile declares
-   `[[lean_lib]] name = "QOU"` with **no `globs` key**.
+| | count |
+|---|---|
+| library modules under `lean/QOU/` | 1659 |
+| reachable from `QOU.lean` | 874 |
+| **unreachable** | **785 (47%)** |
 
-## NOT established — the inference that orphan ⇒ unbuilt is refuted
+`content/quantum-observable-universe/lean/lakefile.toml` declares
 
-The obvious conclusion ("Lake's default glob is the root module, so these
-785 are never built, so nothing checks them") is **contradicted by the
-evidence**. Against the restored `lake-cache/qou-v4-24-0` build tree:
-
-| set | modules | with `.olean` |
-|---|---|---|
-| reachable | 874 | 502 (57%) |
-| **orphaned** | **785** | **440 (56%)** |
-
-Orphan status does **not** predict whether a module has a build artifact —
-the two rates are the same. `TorusKnotMass.olean` is present. So "nothing
-builds them" is not true as stated, and #3793's "escaped CI because
-orphaned" is an *unverified* explanation, not a finding. It has been left
-out of the repaired file comment for that reason.
-
-## The actual open question
-
-Why do orphaned modules have oleans at the same rate as reachable ones?
-Candidates, none yet tested:
-
-- **Stale artifacts** — built back when something did import them, and never
-  cleaned. Most likely, and would mean current coverage really is poor.
-- **A build path other than `lake build QOU`** — a CI job or seeding script
-  that enumerates modules directly.
-- **Lake glob behaviour differing from the assumed `#[.one "QOU"]` default.**
-
-The uniform ~56% in *both* sets also suggests the cache tarball is simply a
-partial snapshot, which would make the whole comparison weaker evidence than
-it looks. Do not draw conclusions from these percentages alone.
-
-## Next step — one cheap experiment settles it
-
-From a clean build dir, run `lake build QOU` and check whether an orphan's
-olean is produced:
-
-```bash
-rm -rf content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/TorusKnotMass.olean
-lake build QOU
-ls content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/TorusKnotMass.olean
+```toml
+[[lean_lib]]
+name = "QOU"
+srcDir = "."
 ```
 
-Present ⇒ orphans are built, no coverage gap, close this bean. Absent ⇒ the
-coverage gap is real and the 785 need triage (wire up, or delete the dead
-ones), which is a scoped tranche and **not** an idle-drain: turning on 785
-unbuilt modules at once could be very red.
+with **no `globs` key**. Lake's default is then `globs = #[.one "QOU"]` — only
+the root module and its transitive imports are built.
 
-Related standing gaps in AGENTS.md: a library `.lean` with no `.ts`/`.md`
-sibling has no `.qa.json` sidecar and is not covered by
-`lean-content-siblings.yml`; CI auto-triggers are disabled repo-wide
-(`build.yml` is `workflow_dispatch`-only).
+Confirmed by direct experiment rather than inference (throwaway package, root
+`Lib.lean` + unimported `Lib/Orphan.lean`, same toolchain `v4.24.0`):
+
+| lakefile | result |
+|---|---|
+| no `globs` | builds `Lib.olean` only — **`Lib/Orphan.olean` NOT built** |
+| `globs = ["Lib", "Lib.+"]` | builds both |
+
+So `lake build QOU` never elaborates the 785. A module in that set can be
+syntactically broken, carry an uncited `sorry`, or fail to typecheck, and no
+build will say so.
+
+### Correction — how this bean first read, and why
+
+The first version of this bean **denied** the orphan/CI claim. The reasoning
+was: against the restored `lake-cache/qou-v4-24-0` tree, orphaned modules carry
+`.olean` artifacts at 56% (440/785), statistically indistinguishable from
+reachable modules at 57% (502/874), and `TorusKnotMass.olean` is present — so
+orphan status appeared not to predict builtness.
+
+That inference was wrong. The oleans are **stale artifacts** left in the build
+directory from when those modules were imported or built explicitly; nothing
+prunes them, and a tarball snapshot of a long-lived build dir preserves them.
+Presence of an olean is evidence that a module was built *at some point*, not
+that the current `lake build QOU` builds it. The experiment above tests the
+mechanism directly and settles it.
+
+Lesson worth keeping: an artifact-presence survey cannot answer a
+"does-the-build-do-X" question. Test the build.
+
+## Why this matters
+
+For these 785 modules there is currently **no** automated check of any kind:
+
+- `lake build QOU` does not build them (above);
+- a library `.lean` with no `.ts`/`.md` sibling has no `.qa.json` sidecar and
+  is not covered by `lean-content-siblings.yml` (AGENTS.md);
+- CI auto-triggers are disabled repo-wide (`build.yml` is
+  `workflow_dispatch`-only).
+
+## Next steps (needs owner scoping — NOT an idle-drain)
+
+1. Triage the 785: genuinely dead, or merely unwired? Sample ~20 first.
+2. For the "should be built" set, either add
+   `globs = ["QOU", "QOU.+"]` to the lakefile or add the missing imports to
+   `QOU.lean`. **Expect breakage** — some have plausibly been red for months.
+   That is the point, but it makes this a scoped tranche.
+3. Delete genuinely dead modules rather than leaving them to rot.
+4. Add a cheap guard so a new orphan is visible at authoring time.
+
+Do **not** flip the glob on without step 1 — turning on 785 unbuilt modules at
+once could be very red, and would land that breakage on whoever is next to
+touch the file.

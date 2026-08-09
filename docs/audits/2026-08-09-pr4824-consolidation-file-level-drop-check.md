@@ -99,32 +99,73 @@ explanatory note were lost, in exactly the both-modified pattern that
 deliverable tracing cannot detect. Both are repaired here. The check costs
 minutes and should be standard for any consolidation claim.
 
-## A claim that did NOT survive checking
+## The orphan claim — refuted, then confirmed
 
 #3793's comment also attributed the non-compiling file's survival to the
-module being **orphaned from the `QOU` umbrella**. The orphan fact is real —
-an import-closure walk from `QOU.lean` finds **785 of 1659** library modules
-unreachable, and `lakefile.toml` declares `[[lean_lib]] name = "QOU"` with no
-`globs` key.
+module being **orphaned from the `QOU` umbrella**. This went through two
+rounds and the record of both is kept deliberately.
 
-The tempting inference — *unreachable ⇒ never built ⇒ escaped CI* — is
-**contradicted by the evidence**. Against the restored
-`lake-cache/qou-v4-24-0` tree, orphaned modules carry `.olean` artifacts at
-**56%** (440/785), statistically indistinguishable from reachable modules at
-**57%** (502/874). `TorusKnotMass.olean` is present. Orphan status does not
-predict builtness.
+**The fact.** An import-closure walk from `QOU.lean` finds **785 of 1659**
+library modules unreachable, `TorusKnotMass` among them, and
+`lakefile.toml` declares `[[lean_lib]] name = "QOU"` with no `globs` key.
 
-So the CI-escape explanation is **not restated as fact** in the repaired
-file comment, and the open question — why orphans are built at the same rate,
-and whether the artifacts are merely stale — is filed as bean `qou-kljb`
-with a one-command experiment that settles it. The uniform ~56% across both
-sets may simply mean the cache tarball is a partial snapshot, which would
-weaken the comparison further; that is called out in the bean.
+**Round 1 — refuted (wrong).** Against the restored `lake-cache/qou-v4-24-0`
+tree, orphaned modules carry `.olean` artifacts at **56%** (440/785),
+indistinguishable from reachable modules at **57%** (502/874), and
+`TorusKnotMass.olean` is present. That looked like orphan status failing to
+predict builtness, so the CI-escape claim was written up as unverified and
+left out of the repaired file comment.
 
-This is the scope discipline from AGENTS.md §"Before declaring
-'refuted'/'ruled out'" applied in the other direction: an inherited claim was
-re-scoped to what the evidence supports rather than propagated because it
-sounded right.
+**Round 2 — confirmed (correct).** The artifact survey cannot answer the
+question. Oleans persist: nothing prunes the build directory, so a module
+built once — back when something imported it, or by an explicit module-target
+build — keeps its olean indefinitely, and a tarball snapshot of a long-lived
+build dir preserves the lot. Presence proves a module was built *at some
+point*, not that `lake build QOU` builds it now.
+
+Testing the mechanism directly settles it. Throwaway package, same toolchain
+`v4.24.0`, root `Lib.lean` plus an unimported `Lib/Orphan.lean`:
+
+| lakefile | result |
+|---|---|
+| no `globs` | builds `Lib.olean` only — **`Lib/Orphan.olean` NOT built** |
+| `globs = ["Lib", "Lib.+"]` | builds both |
+
+So Lake's default really is `globs = #[.one <lib>]`, `lake build QOU` never
+elaborates the 785, and **#3793 was right**. The file comment now states the
+CI-escape mechanism as confirmed, and `qou-kljb` carries the triage plan.
+
+The methodological point is worth more than the result: *an artifact-presence
+survey cannot answer a "does-the-build-do-X" question.* The 56%/57% figures
+were real and the inference from them was still wrong. Test the build.
+
+## Extending the check beyond #4824's nine
+
+The same script was run against #4671's sources (**#4532**, **#4571**) — the
+consolidation whose drop #4840 originally found — and **#4821**.
+
+- **#4571** — clean, no modified-file divergence. Matches #4840's file-by-file
+  result.
+- **#4532** — four both-modified files. `QOU.lean` (`main` a strict superset)
+  and `WhiteheadVolumeConjecture.lean` (`main` **newer** — it records
+  `whitehead_vc_innerSum_half` as sorry-free downstream, which the branch
+  predates) are fine; the `qou-t2sc` bean shows no content divergence. The
+  fourth is `b1-hyperbolic-rows-theorem-audit.md` — **#4840's drop,
+  independently reproduced here**.
+- **#4821** — `QOU/ParticleInteractions/operator_selection_lp.lean` classifies
+  as a hard **DROP**: `main` never touched the file, and the branch's content
+  is absent. The branch replaces a `sorry` with a **sorry-free weak-duality
+  proof** that derives feasibility, optimality and strong duality from a dual
+  certificate. `main` still carries the `sorry`.
+
+**Both live findings are already owned by #4840** — it restored the b1
+paragraph (written against `main`'s current, stronger state) and independently
+verified #4821's proof (clean rebase, `lean`-direct exit 0, sorry-free axioms,
+genuine weak duality rather than a self-assuming projection). Neither is
+repaired here; duplicating settled mechanical work has one owner per
+AGENTS.md. What this run adds is independent corroboration by a different
+method, and the observation that #4821's drop is the *hard* kind — a lost Lean
+proof, not lost prose.
 
 ## Verification
 
