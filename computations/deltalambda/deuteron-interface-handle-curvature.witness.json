@@ -1,0 +1,185 @@
+{
+ "computation": "deuteron-interface-handle-curvature",
+ "scriptFile": "deuteron_interface_handle_curvature_probe.py",
+ "computedAt": "2026-08-09T02:23:17.467785+00:00",
+ "engine": "python+numpy (H\u2086 Hoefsmit seminormal, pure-python builder; 0 free params)",
+ "free_parameters": 0,
+ "inputs": {
+  "q0": 1.1099785955573347,
+  "h": 0.20906032199559366,
+  "deuteron_H6_word": "proton{\u03c30,\u03c31}\u00b7INTERFACE \u03c32\u00b7neutron{\u03c33,\u03c34}",
+  "interface_operator": "\u03c32 = \u03c3 \u2212 h(\u00bd\u2212\u03b4/4)\u00b7I (bring_color_weighted; dressing central \u21d2 drops out)",
+  "handles": "A_a=\u03c1_\u03bb(\u03c32) [interface], A_b=\u03c1_\u03bb(\u03c33) [neutron-adjacent] \u2014 the unique non-abelian pair"
+ },
+ "results": {
+  "per_partition": [
+   {
+    "lambda": [
+     6
+    ],
+    "dim": 1,
+    "y_lambda": 838.839384746497,
+    "Fq_raw_fro2": 0.0,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0,
+    "dFq2_over_h4": 0.0,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     5,
+     1
+    ],
+    "dim": 5,
+    "y_lambda": 30.779699485193813,
+    "Fq_raw_fro2": 6.087412436465803,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0008318176339036911,
+    "dFq2_over_h4": 0.4354533770775052,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     4,
+     2
+    ],
+    "dim": 9,
+    "y_lambda": 8.972456158661835,
+    "Fq_raw_fro2": 18.26223730939741,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0016720388158503545,
+    "dFq2_over_h4": 0.8753059796890642,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     4,
+     1,
+     1
+    ],
+    "dim": 10,
+    "y_lambda": 7.369320462221118,
+    "Fq_raw_fro2": 18.26223730939741,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0024954528888670347,
+    "dFq2_over_h4": 1.30636012450871,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     3,
+     3
+    ],
+    "dim": 5,
+    "y_lambda": 28.255814675935035,
+    "Fq_raw_fro2": 12.174824872931607,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0008402211819466634,
+    "dFq2_over_h4": 0.439852602611559,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     3,
+     2,
+     1
+    ],
+    "dim": 16,
+    "y_lambda": 2.788345277317709,
+    "Fq_raw_fro2": 36.52447461879483,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.00334407761436868,
+    "dFq2_over_h4": 1.750611950304877,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     3,
+     1,
+     1,
+     1
+    ],
+    "dim": 10,
+    "y_lambda": 7.369320462221118,
+    "Fq_raw_fro2": 18.262237309397417,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.002495452876022996,
+    "dFq2_over_h4": 1.3063601177849045,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     2
+    ],
+    "dim": 5,
+    "y_lambda": 28.255814675935046,
+    "Fq_raw_fro2": 12.174824872931612,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0008402211774586731,
+    "dFq2_over_h4": 0.4398526002621131,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     2,
+     2,
+     1,
+     1
+    ],
+    "dim": 9,
+    "y_lambda": 8.972456158661835,
+    "Fq_raw_fro2": 18.262237309397417,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0016720387985183255,
+    "dFq2_over_h4": 0.8753059706158127,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     2,
+     1,
+     1,
+     1,
+     1
+    ],
+    "dim": 5,
+    "y_lambda": 30.779699485193813,
+    "Fq_raw_fro2": 6.087412436465806,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0008318176210596524,
+    "dFq2_over_h4": 0.43545337035369963,
+    "far_commute_s0_s3_fro2": 0.0
+   },
+   {
+    "lambda": [
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "dim": 1,
+    "y_lambda": 838.839384746497,
+    "Fq_raw_fro2": 0.0,
+    "Fq_trace_abs": 0.0,
+    "dFq_deformation_fro2": 0.0,
+    "dFq2_over_h4": 0.0,
+    "far_commute_s0_s3_fro2": 0.0
+   }
+  ],
+  "all_Fq_traceless": true,
+  "all_proton_neutron_far_commute": true,
+  "singlet_reps_zero_curvature": true,
+  "wedderburn_weighted_Fq_raw_fro2": 1761.4742932420188,
+  "wedderburn_weighted_dFq_deformation_fro2": 0.17479707786900936,
+  "dFq_scales_as_h_squared": true
+ },
+ "verdict": "Interface handle holonomies COMPUTED in the real H\u2086 seminormal rep: F_q=[\u03c3\u2082,\u03c3\u2083] is nonzero, EXACTLY traceless (\u21d2 binding enters in quadrature, matching the A=3 Pythagorean bridge s\u00b2), \u03b4-independent (dressing central, Lean-proved). Proton\u2013neutron far-commutativity confirmed (only \u03c3\u2082 non-abelian); color-singlets give 0. The genuine q-curvature dF_q=F_q(q)\u2212F_q(1) scales as h\u00b2 (\u2016dF_q\u2016\u00b2~1.77\u00b7h\u2074) \u2014 the order-2 surface term the bean predicted. This is the qou-jqof/qou-dp32 'absent' object, now grounded and characterized.",
+ "scope": "scope-(a): computes + characterizes the interface germ curvature (the missing handle holonomies). Does NOT close the deuteron MeV binding \u2014 needs the pairing tr_M(\u03c1_deuteron\u00b7dF_q) (raw trace is 0) + \u03bb-weighting (open). No fit; nothing wired.",
+ "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
+ "wired": false,
+ "notes": "Feeds surface2Form(V_trefoil,[A_a,A_b])=[A_a,A_b]=F_q (Lean). Remaining: the canonical binding pairing (qou-jqof/qou-dp32)."
+}
