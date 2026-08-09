@@ -82,6 +82,14 @@ FORCING_STATUS = {
     "pinned-by-definition",
     "not-a-z-trace",
     "deprecated",
+    # Added 2026-08-08 with the convention-D ruling (qou-3qrv). A convention
+    # can be *excluded* on a proved ground while remaining a legitimate
+    # normalised Markov trace and still running in some channel -- which is
+    # exactly C's state after the re-pin: excluded as the M3 stabilisation
+    # parameter (bar-covariance), still the binding channel's production
+    # trace. None of the four original values says that: "deprecated" is
+    # false (it runs), "pinned-by-definition" is stale (the pin moved to D).
+    "excluded-by-proof",
 }
 CHANNEL_STATUS = {"agreed", "disputed"}
 CONV_DECL = re.compile(r"convention[\s:]+([A-D])\b", re.IGNORECASE)

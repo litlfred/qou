@@ -118,6 +118,22 @@ longer load-bearing for the convention.
 These are **not** a mechanical find-and-replace, and treating them as one would
 be a defect. The C form appears in at least three distinct roles:
 
+> **Correction (same day).** An earlier revision of this audit, and of the
+> registry rows it edits, described binding as simply "keeping C", as though
+> that were settled. It is not. Open sibling PR #4766 argues C is excluded for
+> **binding** too — the Wenzl bridge's own fractional rank inverts to
+> `N_eff ≈ 2.5995`, not an integer — and beans the live question as
+> `qou-rm47`: *which integer fibre dimension does the binding channel trace?*
+> So binding **runs** C today, and this PR changes nothing there, but "binding
+> is fine on C" is not a claim this audit makes or is entitled to.
+>
+> The two results converge rather than conflict, and this PR strengthens
+> #4766's: `QOU.BraidKnot.zC_not_fibre_family` proves C is the parameter of
+> **no** rank, for every `N`, functionally — turning a pointwise numerical
+> inversion at one `q₀` into a theorem. `zRank_eq_qpow_div_qInt` supplies the
+> bridge, proving this file's family is exactly `qᴺ/[N]_q`, the fibre quantum
+> dimension #4766 derives from the bridge code.
+
 1. **Genuinely C-specific and load-bearing on binding** — the Wenzl bridge
    (`y-lambda-closed-form-wenzl-bridge*`), `centered-hecke-variance-positive*`
    (whose whole statement is the Wenzl positivity regime

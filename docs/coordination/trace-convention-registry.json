@@ -22,7 +22,8 @@
       "forced-given-premise": "uniquely determined by a proved argument whose premise is NOT established (name the premise)",
       "pinned-by-definition": "the value of z is written down in a corpus definition block; no derivation, no free parameter",
       "not-a-z-trace": "the object is not a normalised Markov trace parametrised by an Ocneanu z (different construction entirely)",
-      "deprecated": "explicitly retired in-repo"
+      "deprecated": "explicitly retired in-repo",
+      "excluded-by-proof": "ruled out as the M3 stabilisation parameter by a proved, measurement-free argument, while remaining a legitimate normalised Markov trace that may still run in some channel"
     },
     "channel_status_values": {
       "agreed": "definitional_convention == production_convention",
@@ -92,8 +93,8 @@
         "computations/binding_canonical.py"
       ],
       "lean": "QOU.BraidsAndKnots.BorromeanCanonicalTraceDerivation.trC_borromean_derived",
-      "forcing_status": "pinned-by-definition",
-      "forcing_note": "z is written down, not derived: rem:markov-axioms-primitive (content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md line 5) states axioms 1-3 with z = 1/(q^{1/2}+q^{-1/2}) as a given. No free parameter and no derivation of that value.",
+      "forcing_status": "excluded-by-proof",
+      "forcing_note": "C was the definitional pin until 2026-08-08, when rem:markov-axioms-primitive was re-pinned to D by owner ruling (qou-3qrv). C is now EXCLUDED as the M3 stabilisation parameter on a proved, CODATA-free ground: bar-covariance of M3 requires bar(z) = z - h, and C, being invariant under the coefficient half alone, violates it by exactly h (QOU.BraidKnot.zC_ne_bar_sub). C is also the Markov parameter of NO fibre rank, functionally, for every N (QOU.BraidKnot.zC_not_fibre_family) -- which is the proved form of the N_eff ~ 2.5995 pointwise inversion. C remains a legitimate normalised Markov trace and still RUNS in the binding channel; open PR #4766 + bean qou-rm47 ask which integer fibre dimension binding should trace instead.",
       "verify": "probe_writhe0",
       "source": "docs/audits/2026-06-09-binding-trace-convention-split.md; docs/audits/2026-08-08-borromean-trace-convention-forcing.md"
     },
@@ -122,7 +123,7 @@
       "lean": "QOU.BraidsAndKnots.BorromeanMarkovTrace",
       "forcing_status": "forced-given-premise",
       "forcing_premise": "the mass fibre functor lands in Rep(SU_q(2)) ~ TL_3 rather than in the full H_3(q)",
-      "forcing_note": "TL => D is proved, sorry-free, uniquely (QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero; computations/probe3qrv_zpin.py): y_(1^3)(z) = 0 has exactly two roots, z = q (degenerate) and z = q^3/(q^2+1) (= D). The PREMISE is not established, and the corpus definition chain (prop:categorical-mass-markov + rem:markov-axioms-primitive) points the other way.",
+      "forcing_note": "Two independent steps, neither consulting a measured value. (1) Bar-covariance of M3 excludes C and every bar-even z: QOU.BraidKnot.zD_bar_sub / zC_ne_bar_sub. This step alone does NOT select D -- QOU.BraidKnot.bar_sub_of_bar_even shows its solution set is D plus any bar-even function. (2) TL => D is proved, sorry-free, uniquely (QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero; computations/probe3qrv_zpin.py): y_(1^3)(z) = 0 has exactly two roots, z = q (degenerate) and z = q^3/(q^2+1) (= D). Step (2) premise -- that the mass fibre functor lands in TL_3 -- remains unestablished as a categorical fact, but is no longer load-bearing for excluding C, which step (1) does on its own. The corpus definition chain now points AT D (re-pinned 2026-08-08).",
       "verify": "trM_borromean",
       "source": "docs/audits/2026-06-09-binding-trace-convention-split.md addendum; docs/audits/2026-08-08-borromean-trace-convention-forcing.md"
     }
@@ -163,7 +164,7 @@
       "id": "binding",
       "description": "per-isotope binding via the free-minus-bound trace difference",
       "definitional_convention": "C",
-      "definitional_source": "rem:markov-axioms-primitive, closing paragraph ('the trace the binding channel runs, and continues to run') + h3-markov-wenzl-weights-context.md ('binding channel uses the full-Hecke Ocneanu'). Re-pointed 2026-08-08: this channel previously inherited C from the block's line-5 pin, which now reads D. Binding's C is a channel-local selection stated in its own right, so the mass re-pin does not drag binding into a dispute. No binding production value changed.",
+      "definitional_source": "rem:markov-axioms-primitive, closing paragraph ('the trace the binding channel runs, and continues to run') + h3-markov-wenzl-weights-context.md ('binding channel uses the full-Hecke Ocneanu'). Re-pointed 2026-08-08: this channel previously inherited C from the block's line-5 pin, which now reads D. Binding's C is a channel-local selection stated in its own right, so the mass re-pin does not drag binding into a dispute. No binding production value changed. NOTE: this records what binding RUNS, not that C is right for binding -- open PR #4766 argues C is excluded for binding too (the Wenzl bridge's fractional rank inverts to N_eff ~ 2.5995, not an integer) and beans the live question as qou-rm47, which integer fibre dimension the binding channel traces. QOU.BraidKnot.zC_not_fibre_family proves C is the parameter of no rank for every N, functionally, upgrading that pointwise inversion to a theorem.",
       "production_convention": "C",
       "production_source": "computations/binding_canonical.py -> closed_form_tau_M.py::markov_z (= 1/(sqrt(q)+1/sqrt(q))) + y_lambda_wenzl_bridge_numeric",
       "status": "agreed",

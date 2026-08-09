@@ -164,6 +164,40 @@ theorem pow_two_mul_eq_one_of_zRank_bar_invariant
   · exact absurd h' hz
   · linear_combination h'
 
+/-- The quantum integer `[N]_q = (qᴺ - q⁻ᴺ)/(q - q⁻¹)`. -/
+noncomputable def qInt (N : ℕ) (q : R) : R := (q ^ N - (q ^ N)⁻¹) / (q - q⁻¹)
+
+/-- **`zRank` is the fibre quantum dimension.**  `zRank N q = qᴺ / [N]_q`.
+
+This is the bridge to the Wenzl-bridge form used on the binding side: the
+fractional-rank condition `X = Qᴺ` (with `Q = q²`, `X = qz/(1 - Q + qz)`) is
+equivalent to `z·[N]_q = qᴺ`, i.e. to `z = zRank N q`.  So the two
+descriptions of the family — the closed form above and "the Markov parameter
+of fibre rank `N`" — are the same object, and `zC_not_fibre_family` below is
+a statement about *that* family.
+
+Recorded so that the exclusion of C from the family is a theorem rather than
+a numerical inversion: solving `z_C = zRank N` pointwise at one `q₀` returns
+`N ≈ 2.5995`, which is a number, not a rank. -/
+theorem zRank_eq_qpow_div_qInt (N : ℕ) (q : R) (hq : q ≠ 0)
+    (hN : q ^ (2 * N) - 1 ≠ 0) :
+    zRank N q = q ^ N / qInt N q := by
+  have hqN : q ^ N ≠ 0 := pow_ne_zero _ hq
+  have hpow : q ^ (2 * N) ≠ 0 := pow_ne_zero _ hq
+  have hsub : q ^ N - (q ^ N)⁻¹ ≠ 0 := by
+    intro h
+    apply hN
+    have hmul : q ^ N * (q ^ N - (q ^ N)⁻¹) = q ^ (2 * N) - 1 := by
+      field_simp
+      ring
+    rw [h, mul_zero] at hmul
+    exact hmul.symm ▸ rfl
+  unfold zRank qInt
+  rw [div_div_eq_mul_div]
+  rw [div_eq_div_iff (by simpa using mul_ne_zero hq hN) hsub]
+  field_simp
+  ring
+
 /-! ### The full involution — `bar(z) = z - h` -/
 
 /-- **The Hecke relation makes `σ - h` the inverse of `σ`.**  In any ring,
