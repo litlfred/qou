@@ -31,8 +31,27 @@ Proof shape: bar-inversion turns each summand's `a`-exponent
 that verified (★) machine-exactly for n ≤ 32 is now discharged as a
 theorem for all n.
 
-Base ring (§7c): everything is algebraic over a generic `Field R` with
-`a ≠ 0` — no archimedean construct, pre-wall.
+## Base ring (§7c)
+
+No archimedean construct appears anywhere: the whole file is pre-wall.
+It is split at the weakest typeclass each part actually needs, following
+the convention already used by `QOU.QBeta.QCasoratianBarParity` and
+`QOU.QBeta.LevelMapValuation` in this same directory:
+
+* **`section BaseRing` — generic `CommRing R`, division-free.** The
+  Gaussian binomial, its Pascal recurrences, the Pochhammer, and *both
+  bar-inversion lemmas* live here. Bar-inversion needs only that `q` has
+  an inverse, which is carried as the **paired witness** `hq : q * qi = 1`
+  (the R[h] pattern) rather than as a field division — so the identities
+  hold verbatim over `ℤ[q, q⁻¹]`, which is where these coefficients
+  actually live. This is the mathematical heart of (★).
+* **`section FieldCompat` — `Field R`, `a ≠ 0`.** Only `masbaumC` and
+  `star` sit here, and only because the Masbaum coefficient carries
+  **negative integer powers** `a ^ (z : ℤ)` of a ring element, which need
+  a `GroupWithZero`/`Field` (or `a : Rˣ`) to be `zpow`. The two literal
+  `q⁻¹` bar-inversion lemmas are re-derived here from the division-free
+  ones for downstream convenience (`HabiroTailCorollaries`,
+  `LevelMapValuation` consume these signatures unchanged).
 -/
 import Mathlib.Tactic
 
@@ -40,7 +59,9 @@ namespace QOU.QBeta.HabiroTailStar
 
 open Finset
 
-variable {R : Type*} [Field R]
+section BaseRing
+
+variable {R : Type*} [CommRing R]
 
 /-- Gaussian binomial `[n,k]_q` by the Pascal recurrence
 `[n+1,k+1]_q = [n,k]_q + q^{k+1}·[n,k+1]_q` (the same recurrence the
@@ -149,12 +170,15 @@ lemma gaussBinom_succ_succ' (q : R) : ∀ n k : ℕ,
           + (q ^ (k + 1 + 1) * q ^ (n - (k + 1))
               - q ^ (n - k) * q ^ (k + 1)) * hz
 
-/-- **Bar-inversion** (the heart of (★)): for `q ≠ 0`,
-`[n,k]_q = q^{k(n−k)}·[n,k]_{q⁻¹}`, unconditional (both sides vanish
-for `k > n`). This is the lemma that collapses the quadratic exponents
-of the Masbaum transform. -/
-lemma gaussBinom_inv (q : R) (hq : q ≠ 0) : ∀ n k : ℕ,
-    gaussBinom q n k = q ^ (k * (n - k)) * gaussBinom q⁻¹ n k := by
+/-- **Bar-inversion** (the heart of (★)), division-free over a generic
+`CommRing`: whenever `qi` is a two-sided inverse of `q` (`hq : q * qi = 1`),
+`[n,k]_q = q^{k(n−k)}·[n,k]_{qi}`, unconditional (both sides vanish for
+`k > n`). This is the lemma that collapses the quadratic exponents of the
+Masbaum transform, and it needs no field — only the unit witness, so it
+holds verbatim over `ℤ[q, q⁻¹]`. The literal `q⁻¹` form is
+`gaussBinom_inv` below. -/
+lemma gaussBinom_inv' (q qi : R) (hq : q * qi = 1) : ∀ n k : ℕ,
+    gaussBinom q n k = q ^ (k * (n - k)) * gaussBinom qi n k := by
   intro n
   induction n with
   | zero =>
@@ -169,58 +193,77 @@ lemma gaussBinom_inv (q : R) (hq : q ≠ 0) : ∀ n k : ℕ,
     | k + 1 =>
       have e2 : (n + 1) - (k + 1) = n - k := by omega
       have h4 := gaussBinom_succ_succ q n k
-      have h5 := gaussBinom_succ_succ' q⁻¹ n k
+      have h5 := gaussBinom_succ_succ' qi n k
       have hik := ih k
       have hik1 := ih (k + 1)
       rw [e2]
       rcases Nat.lt_or_ge k n with hlt | hge
       · -- k < n: rewrite n−k = (n−(k+1))+1 so a single subtraction atom
-        -- remains, then close with the q·q⁻¹ = 1 power identity
+        -- remains, then close with the q·qi = 1 power identity
         have e3 : n - k = (n - (k + 1)) + 1 := by omega
         rw [e3] at h5 hik ⊢
-        have hu : q ^ ((n - (k + 1)) + 1) * q⁻¹ ^ ((n - (k + 1)) + 1)
+        have hu : q ^ ((n - (k + 1)) + 1) * qi ^ ((n - (k + 1)) + 1)
             = 1 := by
-          rw [← mul_pow, mul_inv_cancel₀ hq, one_pow]
+          rw [← mul_pow, hq, one_pow]
         linear_combination h4 - q ^ ((k + 1) * ((n - (k + 1)) + 1)) * h5
           + hik + q ^ (k + 1) * hik1
-          - q ^ (k * ((n - (k + 1)) + 1)) * gaussBinom q⁻¹ n k * hu
+          - q ^ (k * ((n - (k + 1)) + 1)) * gaussBinom qi n k * hu
       · -- k ≥ n: the (k+1)-column terms vanish on both sides
         have hzq : gaussBinom q n (k + 1) = 0 :=
           gaussBinom_eq_zero_of_lt q (Nat.lt_succ_of_le hge)
-        have hzi : gaussBinom q⁻¹ n (k + 1) = 0 :=
-          gaussBinom_eq_zero_of_lt q⁻¹ (Nat.lt_succ_of_le hge)
-        have hu0 : q ^ (n - k) * q⁻¹ ^ (n - k) = 1 := by
-          rw [← mul_pow, mul_inv_cancel₀ hq, one_pow]
+        have hzi : gaussBinom qi n (k + 1) = 0 :=
+          gaussBinom_eq_zero_of_lt qi (Nat.lt_succ_of_le hge)
+        have hu0 : q ^ (n - k) * qi ^ (n - k) = 1 := by
+          rw [← mul_pow, hq, one_pow]
         linear_combination h4 - q ^ ((k + 1) * (n - k)) * h5
-          + hik - q ^ (k * (n - k)) * gaussBinom q⁻¹ n k * hu0
+          + hik - q ^ (k * (n - k)) * gaussBinom qi n k * hu0
           + q ^ (k + 1) * hzq - q ^ ((k + 1) * (n - k)) * hzi
 
 /-- `(q;q)_n = ∏_{j=1..n} (1 − q^j)`. -/
 def qPoch (q : R) (n : ℕ) : R := ∏ j ∈ range n, (1 - q ^ (j + 1))
 
-/-- **Bar-inversion of the squared Pochhammer**:
-`(q;q)_n² = q^{n(n+1)}·(q⁻¹;q⁻¹)_n²` for `q ≠ 0`. (The unsquared form
-carries a `(−1)ⁿ` and the half-exponent `n(n+1)/2`; squaring clears
-both, and the square is what (★) needs.) -/
-lemma qPoch_sq_inv (q : R) (hq : q ≠ 0) : ∀ n : ℕ,
-    qPoch q n ^ 2 = q ^ (n * (n + 1)) * qPoch q⁻¹ n ^ 2 := by
+/-- **Bar-inversion of the squared Pochhammer**, division-free:
+`(q;q)_n² = q^{n(n+1)}·(qi;qi)_n²` whenever `q * qi = 1`. (The unsquared
+form carries a `(−1)ⁿ` and the half-exponent `n(n+1)/2`; squaring clears
+both, and the square is what (★) needs.) The literal `q⁻¹` form is
+`qPoch_sq_inv` below. -/
+lemma qPoch_sq_inv' (q qi : R) (hq : q * qi = 1) : ∀ n : ℕ,
+    qPoch q n ^ 2 = q ^ (n * (n + 1)) * qPoch qi n ^ 2 := by
   intro n
   induction n with
   | zero => simp [qPoch]
   | succ n ih =>
-    have hu : q ^ (n + 1) * q⁻¹ ^ (n + 1) = 1 := by
-      rw [← mul_pow, mul_inv_cancel₀ hq, one_pow]
+    have hu : q ^ (n + 1) * qi ^ (n + 1) = 1 := by
+      rw [← mul_pow, hq, one_pow]
     have hp : qPoch q (n + 1) = qPoch q n * (1 - q ^ (n + 1)) := by
       simp only [qPoch, Finset.prod_range_succ]
-    have hpi : qPoch q⁻¹ (n + 1) = qPoch q⁻¹ n * (1 - q⁻¹ ^ (n + 1)) := by
+    have hpi : qPoch qi (n + 1) = qPoch qi n * (1 - qi ^ (n + 1)) := by
       simp only [qPoch, Finset.prod_range_succ]
     have hsq : (1 - q ^ (n + 1)) ^ 2
-        = (q ^ (n + 1)) ^ 2 * (1 - q⁻¹ ^ (n + 1)) ^ 2 := by
+        = (q ^ (n + 1)) ^ 2 * (1 - qi ^ (n + 1)) ^ 2 := by
       linear_combination
-        (2 * q ^ (n + 1) - q ^ (n + 1) * q⁻¹ ^ (n + 1) - 1) * hu
+        (2 * q ^ (n + 1) - q ^ (n + 1) * qi ^ (n + 1) - 1) * hu
     have he : (n + 1) * (n + 1 + 1) = n * (n + 1) + 2 * (n + 1) := by ring
     rw [hp, hpi, mul_pow, mul_pow, ih, he, hsq]
     ring
+
+end BaseRing
+
+section FieldCompat
+
+variable {R : Type*} [Field R]
+
+/-- Literal-`q⁻¹` form of `gaussBinom_inv'`, for `q ≠ 0` in a field. The
+mathematical content is the division-free lemma; this is the shape the
+Masbaum transform and the downstream corollaries consume. -/
+lemma gaussBinom_inv (q : R) (hq : q ≠ 0) : ∀ n k : ℕ,
+    gaussBinom q n k = q ^ (k * (n - k)) * gaussBinom q⁻¹ n k :=
+  gaussBinom_inv' q q⁻¹ (mul_inv_cancel₀ hq)
+
+/-- Literal-`q⁻¹` form of `qPoch_sq_inv'`, for `q ≠ 0` in a field. -/
+lemma qPoch_sq_inv (q : R) (hq : q ≠ 0) : ∀ n : ℕ,
+    qPoch q n ^ 2 = q ^ (n * (n + 1)) * qPoch q⁻¹ n ^ 2 :=
+  qPoch_sq_inv' q q⁻¹ (mul_inv_cancel₀ hq)
 
 /-- The exact Masbaum coefficient `C_{5₂,n}(a)` (integer Laurent in `a`;
 DOI 10.2140/agt.2003.3.537), transcribed from the merged compute:
@@ -304,5 +347,7 @@ example (a : R) :
           * ∑ k ∈ range 1,
               ((a ^ 2)⁻¹) ^ (k * 1) * gaussBinom (a ^ 2)⁻¹ 0 k := by
   simp [masbaumC, qPoch, gaussBinom]
+
+end FieldCompat
 
 end QOU.QBeta.HabiroTailStar

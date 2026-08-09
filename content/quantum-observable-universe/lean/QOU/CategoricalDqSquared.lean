@@ -31,13 +31,22 @@ makes the directional asymmetry explicit; the original name is
 preserved here to keep the content-block URI
 `qou:QOU.categorical_dq_squared` resolvable.
 
-**Categorical layer.** This is the categorical (pre-archimedean)
-statement, over the canonical `CategoricalQExtDeriv` of
-`QOU.QuantumObservableUniverse.Instanton`, whose deformation parameter
-`q : ℝ` and whose `dq` are `ℝ`-linear (`[CategoryTheory.Linear ℝ C]`).
-The Laurent ground ring `R_q = ℤ[q, q⁻¹]` is recorded below for the
-narrative; the substrate specialisation `ι : R_q → ℝ, q ↦ q₀` is used
-for numerical evaluation downstream.
+**Categorical layer, and where the `ℝ` actually sits (§7c).** The
+vanishing argument is scalar-generic: it is `dq_sq_eq_zero_of_scalar_one`
+below, stated over an arbitrary `R`-linear preadditive category with
+`R` any ring — in particular over the Laurent ground ring
+`R_q = ℤ[q, q⁻¹]` recorded here.  The `ℝ` that remains in
+`categorical_dq_squared` is inherited from the *shared* structure
+`CategoricalQExtDeriv` of `QOU.QuantumObservableUniverse.Instanton`,
+whose deformation parameter is a field `q : ℝ` and whose `dq` is
+therefore `ℝ`-linear (`[CategoryTheory.Linear ℝ C]`).  That `ℝ` is
+carried by the structure, not by the mathematics: `categorical_dq_squared`
+is now literally the generic lemma instantiated at `R := ℝ`.  Moving the
+structure itself to a generic ground ring needs `q⁻¹` replaced by a
+carried inverse field (`Ring` has no `⁻¹`), which is a change to
+`Instanton.lean` and its four other consumers.  The substrate
+specialisation `ι : R_q → ℝ, q ↦ q₀` is used for numerical evaluation
+downstream.
 -/
 
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
@@ -53,6 +62,26 @@ def q_param : R_q := LaurentPolynomial.T 1
 def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 universe u v
+
+/-- **Scalar-generic core of `d_q² = 0` at `q = 1`** (pre-archimedean, §7c).
+
+    In the `.md` notation `a = q⁻¹`, `b = 1 - q⁻¹`, the q-exterior
+    derivative is `d_q = a·d + b·(π_V ≫ d)`.  The classical-limit
+    vanishing uses no property of the scalar ring beyond `1 - 1 = 0`:
+    `a = 1` forces `b = 0`, hence `d_q = d` and `d_q ≫ d_q = d ≫ d = 0`.
+
+    Stated over an arbitrary ring `R` and an `R`-linear preadditive
+    category, so the argument is available over the Laurent ground ring
+    `R_q = ℤ[q, q⁻¹]` above.  `Ring` is the weakest class that admits the
+    construction: `CategoryTheory.Linear` needs a `Semiring`, and the
+    coefficient `1 - a` needs subtraction; commutativity is never used. -/
+theorem dq_sq_eq_zero_of_scalar_one {R : Type*} [Ring R] {C : Type u}
+    [CategoryTheory.Category.{v} C] [CategoryTheory.Preadditive C]
+    [CategoryTheory.Linear R C] {X : C} (d πV : X ⟶ X) (a : R) (ha : a = 1)
+    (hd_sq : d ≫ d = 0) :
+    (a • d + (1 - a) • (πV ≫ d)) ≫ (a • d + (1 - a) • (πV ≫ d)) = 0 := by
+  subst ha
+  simpa using hd_sq
 
 /-- **Proposition (Non-vanishing of d_q²).**
     The composition `d_q ∘ d_q : Ωᵏ(A) → Ωᵏ⁺²(A)` does not vanish
@@ -71,9 +100,11 @@ theorem categorical_dq_squared {C : Type u} [CategoryTheory.Category.{v} C]
     (hq : cqd.q = 1)
     (hd_sq : cqd.d_classical ≫ cqd.d_classical = 0) :
     cqd.dq ≫ cqd.dq = 0 := by
-  -- When q = 1, d_q = d (by dq_classical), so d_q² = d² = 0.
-  rw [cqd.dq_classical hq]
-  exact hd_sq
+  -- The `ℝ` realisation of `dq_sq_eq_zero_of_scalar_one` at `R := ℝ`:
+  -- `dq`'s scalar is `a = q⁻¹`, which is `1` when `q = 1`.
+  unfold CategoricalQExtDeriv.dq
+  exact dq_sq_eq_zero_of_scalar_one cqd.d_classical cqd.proj_V cqd.q⁻¹
+    (by rw [hq, inv_one]) hd_sq
 
 end
 
