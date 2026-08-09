@@ -25,36 +25,56 @@
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 132,
-      "verdict": "needs-agent",
-      "file_sha": "08595369b5ac"
+      "verdict": "genuine",
+      "file_sha": "08595369b5ac",
+      "disposition": "restate-or-drop",
+      "evidence": "`\u2203 (_instance_data : NonAbelianStokes M G), True := \u27e8inferInstance, trivial\u27e9`. The witness is `inferInstance`, so the theorem says 'the instance that already resolves, resolves' \u2014 it adds nothing to the instance declaration it reads from. The `-- Ref:` to Yekutieli 2015 \u00a73 makes this read as an imported result. Fix: state a property the instance satisfies (the file's own following section lists three substantive candidates: piecewise-affine line integral, braid-surface multiplicative trace, the Stokes identity at finite slicing).",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::yekutieli_finite_slice_discharged::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 138,
-      "verdict": "needs-agent",
-      "file_sha": "c269b6e6c991"
+      "verdict": "genuine",
+      "file_sha": "c269b6e6c991",
+      "disposition": "restate-or-drop",
+      "evidence": "`\u2203 Y : YekutieliFiniteSliceMultTrace G z, True := \u27e8inferInstance, trivial\u27e9`. Same `inferInstance`-witnessed existence, same misleading `_discharged` name. Fix together with `lie_valued_stokes_discharged` \u2014 and audit the surrounding `Master discharge theorem` aggregate, which composes these and inherits the overclaim.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h1_to_h2_discharged::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 174,
-      "verdict": "needs-agent",
-      "file_sha": "c269b6e6c991"
+      "verdict": "genuine",
+      "file_sha": "c269b6e6c991",
+      "disposition": "restate-against-a-definition",
+      "evidence": "`\u2203 M : MarkovTraceRecursionWithMul \u211d 1 q z, True := \u27e8MarkovTraceRecursionWithMul.h1_to_h2 q z, trivial\u27e9`. Better than its `inferInstance` neighbours \u2014 the witness is a real construction, so this genuinely establishes `Nonempty` of the recursion structure at H\u2081\u2192H\u2082. But `\u2203 _, True` throws away everything the witness satisfies, which is the part the name `discharged` is claiming. Fix: state the recursion identity `h1_to_h2` actually proves.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::markov_axiom_h2_to_h3_discharged::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 180,
-      "verdict": "needs-agent",
-      "file_sha": "c269b6e6c991"
+      "verdict": "genuine",
+      "file_sha": "c269b6e6c991",
+      "disposition": "restate-against-a-definition",
+      "evidence": "`\u2203 M : MarkovTraceRecursionWithMul \u211d 2 q z, True := \u27e8MarkovTraceRecursionWithMul.h2_to_h3 q z, trivial\u27e9`. Identical to the H\u2081\u2192H\u2082 case: a real witness whose content is discarded by the `\u2203 _, True` conclusion. Fix the pair together, and re-check the aggregate that claims discharge 'at every level n \u2208 {1,2}'.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Mathlib/UpstreamSubstrateBridge.lean::lie_valued_stokes_discharged::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 266,
-      "verdict": "needs-agent",
-      "file_sha": "c269b6e6c991"
+      "verdict": "genuine",
+      "file_sha": "c269b6e6c991",
+      "disposition": "restate-or-drop",
+      "evidence": "`\u2203 S : LieValuedStokes M \ud835\udd24, True := \u27e8inferInstance, trivial\u27e9`. Same `inferInstance` shape as `yekutieli_finite_slice_substrate`, but the name is a stronger claim: `_discharged` asserts that a proof obligation has been closed, when all that has been shown is that an instance resolves. An obligation named in a conjecture is not discharged by exhibiting the instance that assumes it.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/quantum-observable-universes/categorical-reeb-derivation.lean::CategoricalReebDerivation::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -360,8 +380,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "exists-true-tautology",
       "line": 655,
-      "verdict": "needs-agent",
-      "file_sha": "aec21f0af216"
+      "verdict": "genuine",
+      "file_sha": "aec21f0af216",
+      "disposition": "restate-or-drop",
+      "evidence": "`[JonesBirthday K] : \u2203 _ : Knot, True`, proved from `JonesBirthday.knot_inhabited`. This is not vacuous in the strict sense \u2014 `\u2203 _ : Knot, True` is `Nonempty Knot`, which is falsifiable \u2014 but it is a verbatim re-export of a class field dressed as a result, and spelled in the `\u2203 _, True` idiom that makes the content easy to miss. Fix: write `Nonempty Knot` if the re-export is wanted, or drop it and project the field at use sites.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean::branching_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -533,8 +557,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology",
       "line": 18,
-      "verdict": "needs-agent",
-      "file_sha": "92ed1a087e59"
+      "verdict": "genuine",
+      "file_sha": "92ed1a087e59",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Literal `X = X`: `\u2200 N, 2 \u2264 N \u2192 cl3OrbitSumPredicted N zeta3 = cl3OrbitSumPredicted N zeta3`, closed by `rfl`. Both binders are decoration \u2014 the claim holds for every `N` and every `zeta3`, with or without `2 \u2264 N`. The file name (`CyclotomicCl3OrbitSum`) and the theorem name promise a general orbit-sum identity, so the intended statement equates the predicted sum to something else (a closed form, or the actual orbit sum). Banned outright by Strict Lean Discipline \u00a75.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicDepth3DimensionSynthesis.lean::dimension_synthesis_upper_bound::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -554,8 +582,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology",
       "line": 27,
-      "verdict": "needs-agent",
-      "file_sha": "77f3a1f1f706"
+      "verdict": "genuine",
+      "file_sha": "77f3a1f1f706",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Literal `X = X`: `\u2200 n, 2 \u2264 n \u2192 imLi3ZetaPredicted n = imLi3ZetaPredicted n`, closed by `rfl`. The name asserts that a closed form *holds*, which is precisely the claim a reflexive equality cannot make \u2014 a closed-form statement needs the predicted value on one side and the closed form on the other. Worse than a merely empty theorem: a reader grepping for whether the Im Li\u2083 closed form is established finds a green `closed_form_holds`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean::noble_gas_multi_operator::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -892,8 +924,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "placeholder-true",
       "line": 128,
-      "verdict": "needs-agent",
-      "file_sha": "42a41141d401"
+      "verdict": "genuine",
+      "file_sha": "42a41141d401",
+      "disposition": "restate-or-demote",
+      "evidence": "`theorem primitive_KS_is_pentagon : True := trivial`, with a trailing comment `-- Link to QOU.BraidKnot.QRogersPentagonArchimedean`. The canonical banned shape (\u00a71a / Strict Lean Discipline \u00a74), and not a shadow-stub or conjecture-block placeholder, so no carve-out applies. The comment shows the intent is a cross-reference; a cross-reference is not a theorem. Fix: state the primitive-KS = pentagon identity against the named declaration, or delete and cite it from prose.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/MathlibExt/SDP.lean::strong_duality::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
