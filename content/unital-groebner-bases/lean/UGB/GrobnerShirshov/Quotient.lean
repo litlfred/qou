@@ -249,4 +249,55 @@ def NormalFormBasis [DecidableEq k] (ord : AdmissibleOrder G)
     ∀ m : {m : Monomial G // NormalFormMonomial ord sys m},
       B m = toQuot sys (FreeAlg.mk (AlgElement.single m.val (1 : k)))
 
+
+/-! ## §6  The Composition–Diamond lemma, named and cited
+
+Bokut, Chen & Li, *Gröbner–Shirshov bases for categories*, arXiv:1101.1563,
+Theorem 4.4, proves for a small category `C(X)` that the following are
+equivalent:
+
+* **(i)** `S` is a Gröbner–Shirshov basis in `kC(X)`;
+* **(ii)** `f ∈ Id(S) ⇒ f̄ = a·s̄·b` for some `s ∈ S` and words `a, b`;
+* **(iii)** `Irr(S) = {u | u ≠ a·s̄·b}` is a linear basis of `kC(X)/Id(S)`.
+
+and closes with the Remark that decides its relevance here:
+
+> If the category in Theorem 4.4 has only one object, then Theorem 4.4 is exact
+> Composition-Diamond lemma for free associative algebras.
+
+**The one-object case is precisely this development's setting.** So Theorem 4.4
+is the statement UGB's five standing axioms (`normal_form_exists`,
+`reduction_well_founded`, `local_confluence`, `confluence`,
+`normal_form_unique`) collectively stand in for, and its clause (iii) is
+`NormalFormBasis` above — the paper's `Irr(S)` is `{u | u ≠ a·s̄·b}`, which is
+`NormalFormMonomial`'s "no rule's leading monomial is an infix", the same
+condition.
+
+Naming it gives the framework a single citable target in place of five
+assumptions, and makes the Hecke consequence below statable. -/
+
+/-- **Composition–Diamond lemma**, one-object case: being a Gröbner–Shirshov
+basis is equivalent to the normal-form monomials being a basis of the quotient.
+
+Bokut–Chen–Li 2011, Theorem 4.4 (i) ⟺ (iii), via the Remark on one-object
+categories. Stated, not proved — see the section note. -/
+def CompositionDiamond [DecidableEq k] (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k) : Prop :=
+  IsGrobnerShirshovBasis G k ord sys ↔ NormalFormBasis ord sys
+
+/-- **What a failed GS basis costs**, once the CD-lemma is available: the normal
+forms of a non-confluent system are *not* a basis of the algebra it presents.
+
+This is why the Bokut–Shiao completion is not optional for the Hecke route to
+`H_k`, `k > 4`. `UGB.GrobnerShirshov.Hecke.hecke_not_gs_basis_four` refutes
+clause (i) for the uncompleted system at `n = 4`; by Theorem 4.4 clause (iii)
+fails too, so its 24 reduced words cannot be assumed to be a basis of
+`kC(X)/Id(S)` — they have to be obtained some other way, which is exactly what
+`QOU.Machinery.HeckeH4AlgebraLaws` does by hand, and exactly what does not scale
+past `n = 4`. -/
+theorem not_normalFormBasis_of_not_gs [DecidableEq k] {ord : AdmissibleOrder G}
+    {sys : RewritingSystem G k} (hcd : CompositionDiamond ord sys)
+    (hnot : ¬ IsGrobnerShirshovBasis G k ord sys) : ¬ NormalFormBasis ord sys :=
+  fun hb => hnot (hcd.mpr hb)
+
 end UGB.GrobnerShirshov
