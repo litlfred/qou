@@ -171,3 +171,94 @@ but the other ten look like probes whose results are convention-scoped anyway.
 Lesson for the axis: the mechanical content sweep was right (12, and it stayed
 12). The two numbers I got wrong were both hand-greps done outside the
 instrument. Where a detector exists, quote the detector.
+
+---
+
+## Progress 2026-08-09 — content layer 31 → 17
+
+Two more detector findings after the first sweep, both of which changed the count:
+
+**`c-formula-unlabelled` (new detector).** The axis only saw decimal literals; a
+block writing `z = 1/(q^{1/2}+q^{-1/2})` quotes no number and passed. That
+symbolic form is the *larger* surface — 20 files against 1. Real starting point
+was **31 failing blocks, not 12**. Two bugs found while testing it:
+`TRACE_SURFACE` didn't know the phrase "Markov parameter" (so such blocks were
+out of scope and *no* detector could fire), and three new fixtures passed
+vacuously by being out of scope. `Case.scope` now asserts in-scope-ness.
+
+**`gram-inverse-under-d` (new, critical).** Found by my own repair going wrong.
+`gram-inverse-unqualified` cleared on "some convention is named nearby" — so
+after switching `frobenius-gram-matrix-context` to D, its still-false `G⁻¹` claim
+*passed*. Relabelling was a way to silence the detector. Split the rule:
+`RADICAL_CAVEAT` (already relocated to the quotient) clears; `C_LABEL` nearby
+clears (true under C); any other convention means D, and the claim is **false**,
+so it fires critical. Naming the convention you are wrong under is worse than
+naming none.
+
+### Repaired (14 blocks, all re-scanned clean)
+
+| block | kind of repair |
+|---|---|
+| `per-braid-mass-tower` | dropped the √q reason for ℝ; two valid reasons remain |
+| `hecke-satisfies-blitvic-hypothesis` | √q was its ONLY reason for ℝ — flagged, not generalised |
+| `markov-trace-product`, `vhat-pair-commutation-trace-proof`, `wedderburn-mass-formula-proof`, `prop-rigid-monoidal-…`, `markov-trace-axiomatic-closed-form` (.md+.ts), `rho-k-graded-expansion`, `markov-trace-factorization`, `mass-endomorphism-tower`, `volume-perturbation-formula` | straight z → D swap; safe (no residual √q, no z-dependent numbers) |
+| `frobenius-gram-matrix-context` | the real correction: det G = 0, corank 1, read G⁻¹ on TL₃ |
+| `h3-markov-wenzl-weights` | **a reversed owner adjudication** — see below |
+
+### The reversed adjudication (worth owner attention)
+
+`h3-markov-wenzl-weights`'s 2026-06-13 note scopes its closed forms to the
+Jones/TL trace and warns they "must not be read as the general tr_M y_λ", because
+the pipeline used a *different* trace (full-Hecke Ocneanu, y₍₁³₎ ≠ 0). It closes:
+**"Owner adjudication 2026-06-13 (full-Hecke canonical; scope the prop, do not
+re-normalize the pipeline)."**
+
+The 2026-08-09 ruling reversed exactly that. Convention D **is** the Jones/TL
+trace — registry name "SU(2)/Temperley-Lieb (Jones) decomposition";
+`thm:jones-markov-trace` says D "lands on the Jones–Temperley–Lieb normalisation
+exactly". So the pipeline no longer uses a different trace, it uses *this* one;
+y₍₁³₎ = 0 not ≠ 0; the traces no longer "diverge at q ≠ 1"; and the closed forms
+are the general ones. **Every clause of the caveat inverted.** There may be other
+artefacts of the 2026-06-13 adjudication still in place — worth a sweep for
+"full-Hecke canonical" as a phrase.
+
+### Remaining: 17 blocks
+
+**7 `c-formula`, all needing judgement rather than a swap:**
+
+- `markov-trace-recursive-reducer` — quotes z-dependent traces (proton
+  1.633154…, neutron 1.248248…). **Producer run, do not retype.** This is why the
+  safety test must check numbers as well as √q: it has zero residual √q mentions
+  and would have passed a √q-only filter.
+- `y-lambda-cyclotomic-factorization` (12 residual √q — built on `q̌ = q^{1/2}`),
+  `markov-pair-z2` (4), `conj-rho-k-pair-gen-canonical-form` (3),
+  `explicit-alpha-k-h3` (2), `shell-structure-eigenvalues` (2),
+  `qvalue-derivation-chain` (1) — each genuinely uses the half-argument variable,
+  so switching z is a substantive change, not a relabel.
+
+**19 `gram-inverse` hits across 9 blocks**, all refuted by
+`MarkovGramDegenerate.lean`. The `frobenius-gram-matrix-context` callout is the
+template — copy it and adjust:
+
+```
+climax-volume-mass/vertex-algebra-relations.md                      x1
+knots-particles-confinement/shell-closure-stability-proof.md        x1
+mass-theory/frobenius-dual-h3.md                                    x2
+mass-theory/gram-matrix-spectral-connection.md                      x8   ← worst
+mass-theory/operator-selection-lp-proof.md                          x1
+nuclear-interactions/confinement-frobenius-reciprocity-interpretation.md x3
+nuclear-interactions/garside-gram-intro.md                          x1
+predicted-spectra/e-hartree-categorical-derivation.md               x1
+predicted-spectra/knot-operator-selection-proof.md                  x1
+```
+
+`gram-matrix-spectral-connection` already contains its own refutation without
+noticing: it writes `G_{λμ} = δ_{λμ}·τ(e_λ)`, block-diagonal with the **weights**
+on the diagonal. Under D one weight is zero, so its own formula gives det G = 0 —
+two lines after it asserts `G⁻¹_{λμ} = δ_{λμ}·[n]_q!/(dim_q(λ)·dim(λ))`, which
+divides by zero for that block.
+
+**Stale q₀ (separate defect, not convention-related):**
+`frobenius-gram-matrix-context` carries `1.109978595554181`; canonical q₀ is
+`1.1099785827513808…`. Diverges at the 9th significant digit. Not fixed here —
+it is a witness value and needs a producer, and it is out of this axis's scope.
