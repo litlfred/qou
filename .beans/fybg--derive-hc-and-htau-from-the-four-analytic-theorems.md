@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T06:00:00Z
+updated_at: 2026-08-09T07:00:00Z
 ---
 
 ## Why this bean exists
@@ -362,3 +362,42 @@ and the rising stretch in between). Not done. This does NOT yet bound
   * a matching LOWER bound on the sum (only the largest term, `g_{k*}`, is
     available so far) -- Laplace needs both sides to pin `c_sigma`;
   * then `hc`, which is `c^2 sqrt3 = 1`, and step 4.
+
+## Landed: the left window too. Both sides of the peak are O(sqrt N). 2026-08-09
+
+`sum_kashaevProd_left_window_le`, sorry-free:
+
+    for m <= k* with 2N <= 3(k* - m):
+      sum_{d<m} kashaevProd N (k*-d)
+          <= kashaevProd N k* * (2 + sqrt(sqrt3 * N)/2)
+
+Note the constant: `sqrt(sqrt3 N)` here versus `sqrt(N/sqrt3)` on the right.
+They differ by a factor `sqrt3` because the secant's slope is `1/sqrt3` where
+the tangent's is `sqrt3` -- the left window is WIDER in `k` for the same decay,
+which is exactly what a shallower bound should give.
+
+**Indexed by DISTANCE, not by index.** The statement sums over `d` with terms
+`kashaevProd N (k*-d)`, which is how `kashaevProd_left_tail` is indexed, so the
+Gaussian sum bound applies with no reindexing at all. Stating it over
+`Ico (k*-m+1) (k*+1)` instead would have forced a `Finset.sum_range_reflect`
+dance for no gain. Worth remembering: match the summation variable to the
+lemma you are going to apply, not to the interval you are thinking about.
+
+### What is still missing from the bound on `<4_1>_N`
+
+Two things, and neither is the `sqrt(N)`:
+
+  1. the FAR-LEFT region `3k < 2N` -- outside the secant window. Sketch (not
+     done): `g_k <= 1` for `k <= N/6` against `g_{k*} >= N^2` from
+     `kashaevProd_endpoint` handles the bottom; the rising stretch in between
+     needs `g_k <= g_w` where `w = ceil(2N/3)`, and `g_w <= g_{k*} e^{-c N}`
+     from the left tail at `D = k*-w ~ N/6`. To avoid a transcendental
+     threshold use `e^{-x} <= 1/x` (from `Real.add_one_le_exp`), giving a bound
+     with no exponential in it. This region contributes `O(1) * g_{k*}`, not
+     `O(sqrt N)`, so it does not change the rate -- but it is not proved.
+  2. a matching LOWER bound on the sum. Only the single largest term is
+     available (`log_sup_le_log_kashaev`). Laplace needs both sides to pin
+     `c_sigma`; an upper bound alone gives an inequality, not a value.
+
+So: `<4_1>_N <= C sqrt(N) g_{k*}` is NOT yet a theorem. Both windows are, and
+they are the part that carries the `sqrt(N)`.

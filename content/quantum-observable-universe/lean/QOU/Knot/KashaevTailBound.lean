@@ -514,4 +514,48 @@ theorem sum_kashaevProd_right_le {N : ℕ} (hN : 6 ≤ N) :
     field_simp
   rwa [hval] at hb
 
+/-- **The window below the saddle is `O(√N)` times its largest term too.**
+
+Stated by DISTANCE `d` from the saddle rather than by index `k`, which is how
+`kashaevProd_left_tail` is indexed — so no reindexing is needed and the
+Gaussian sum bound applies directly.  The set `{k* − d : d < m}` is
+`Ico (k*−m+1) (k*+1)`; saying so is not needed to state or use the bound.
+
+The window hypothesis `2N ≤ 3(k*−m)` is the secant's domain `θ ≥ 2π/3`, so `m`
+reaches about `N/6` — far wider than the `√N` that matters. -/
+theorem sum_kashaevProd_left_window_le {N : ℕ} (hN : 6 ≤ N) (m : ℕ)
+    (hm : m ≤ 5 * N / 6) (hw : 2 * N ≤ 3 * (5 * N / 6 - m)) :
+    ∑ d ∈ Finset.range m, kashaevProd N (5 * N / 6 - d)
+      ≤ kashaevProd N (5 * N / 6)
+        * (2 + Real.sqrt (Real.sqrt 3 * (N : ℝ)) / 2) := by
+  have hN0 : N ≠ 0 := by omega
+  have hpi := Real.pi_pos
+  have hNR : (0 : ℝ) < N := by exact_mod_cast Nat.pos_of_ne_zero hN0
+  have hs3 : (0 : ℝ) < Real.sqrt 3 := Real.sqrt_pos.mpr (by norm_num)
+  have ha : (0 : ℝ) < π / (Real.sqrt 3 * N) := by positivity
+  have hbk : 6 * (5 * N / 6) ≤ 5 * N := by
+    have hd := Nat.div_add_mod (5 * N) 6
+    omega
+  have hrw : ∀ d : ℕ,
+      π * (d : ℝ) * ((d : ℝ) - 1) / (Real.sqrt 3 * (N : ℝ))
+        = π / (Real.sqrt 3 * (N : ℝ)) * (d : ℝ) * ((d : ℝ) - 1) := by
+    intro d; field_simp
+  have hterm : ∀ d ∈ Finset.range m,
+      kashaevProd N (5 * N / 6 - d)
+        ≤ kashaevProd N (5 * N / 6)
+          * Real.exp (-(π / (Real.sqrt 3 * (N : ℝ)) * (d : ℝ) * ((d : ℝ) - 1))) := by
+    intro d hd
+    rw [Finset.mem_range] at hd
+    have h := kashaevProd_left_tail (N := N) (b := 5 * N / 6) hN0 hbk d
+      (by omega) (by omega)
+    rwa [hrw d] at h
+  refine le_trans (Finset.sum_le_sum hterm) ?_
+  rw [← Finset.mul_sum]
+  refine mul_le_mul_of_nonneg_left ?_ (kashaevProd_nonneg N _)
+  have hb := QOU.MathlibExt.sum_exp_neg_mul_mul_pred_le
+    (a := π / (Real.sqrt 3 * (N : ℝ))) ha m
+  have hval : π / (π / (Real.sqrt 3 * (N : ℝ))) = Real.sqrt 3 * (N : ℝ) := by
+    field_simp
+  rwa [hval] at hb
+
 end QOU.Knot.FigureEightVolume
