@@ -252,3 +252,60 @@ exactly two things that are neither calibrated nor derived:
       dimensionless multiplier, target 0.531432 vs current 0.929219
 - [ ] retarget onto GAP 1 (z_m) — the one factor that is neither calibrated nor
       derived and that moves the multiplier
+
+## CORRECTION 2026-08-09: "z_m is the Temperley-Lieb / SU(2) value" is FALSE
+
+Stated twice above and in the 2026-06-29 colour-weighting audit. Wrong, and
+`docs/coordination/trace-convention-registry.md` says so explicitly — a
+registry that exists precisely because convention-silent trace values kept being
+compared. I did not read it before asserting.
+
+    C  full-Hecke Ocneanu / Wenzl z-trace   z = 1/(q^1/2+q^-1/2) = 0.49932033418369445
+       y_lambda at n=3 = (0.4153958, 0.2809296, 0.0227449)   <- PRODUCTION
+    D  SU(2) / Temperley-Lieb (Jones)       z = q^3/(q^2+1)     = 0.61268803714646524
+       y_lambda at n=3 = (0.5054042, 0.2472979, 0)
+
+`D != C` is **Lean-proved**
+(`QOU.BraidsAndKnots.BorromeanTraceConventionSplit.conventionD_ne_conventionC`);
+they differ by 195.8 ppm on beta_Bor. So the framework's z is convention C and
+the TL/SU(2) value is a DIFFERENT trace, not the same one.
+
+The consequence is bigger than the misnaming. **Convention C has
+y_(1^3) = 0.0227449 != 0**, whereas D has it exactly 0. That zero IS the row cap
+`dim V_(1^3) = C(N,3) = 0 <=> N < 3` which `RowCapObstruction.lean` proves
+sorry-free. So:
+
+  * the mass trace does NOT carry the N=2 row cap;
+  * the eightfold ledger's "framework supplies dim V = 2" is about the
+    single-fibre tower, NOT about the trace the masses are computed with.
+
+Also wrong above: the guess that the SU(N) family is `z = 1/[N]`. It is not —
+the SU(N) weights are quantum dimensions (hook-content), and `1/[3]_q = 0.3285`
+was a made-up rival, not SU(3).
+
+## AND: convention C is not SU(N) for ANY integer N
+
+New module `computations/y_lambda_su_n.py` (33/33 self-tests) implements the
+real SU(N) weights,
+
+    s_lambda  ∝  PROD_{(i,j)}  [N + j - i]_q / [h(i,j)]_q ,   normalised Σ y_λ f^λ = 1
+
+validated by reproducing registry convention D EXACTLY at N = 2, including
+y_(1^3) = 0 on the nose and the implied z = q^3/(q^2+1). At n = 3:
+
+    N=2   0.5054042   0.2472979   0.0            == convention D
+    N=3   0.3783707   0.2930825   0.0354643
+    N=4   0.3226034   0.3090941   0.0592084
+    C     0.4153958   0.2809296   0.0227449      <- production, between N=2 and N=3
+
+Solving for the real N reproducing C's y_(1^3)/y_(3):
+
+    N = 2.5995155
+
+NON-INTEGER. The mass channel is not an SU(N) quantum-group trace at all; it
+sits between SU(2) and SU(3). That reframes the eightfold "N = 3 problem": the
+mass trace is not at N = 2 either, so the flavour channel is not being asked to
+move from 2 to 3 — it is being asked to move from a non-SU(N) point to 3.
+
+Nothing wired. The module is the weight function the flavour channel would need,
+plus the measurement of where C actually sits.
