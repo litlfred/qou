@@ -34,6 +34,21 @@
  *       C was excised by the owner ruling of 2026-08-09; a C number that does
  *       not say so reads as production.
  *
+ *   `c-formula-unlabelled`   (critical)
+ *       `z` is DEFINED by the convention-C formula `1/(q^{1/2}+q^{-1/2})` with
+ *       no C/excision marker within ±400 characters. The blind spot the value
+ *       detectors cannot see: such a block quotes no number at all, so
+ *       `c-value-unlabelled` never fires. It is also the larger surface — 26
+ *       content files carry the symbolic form against 1 carrying an unlabelled
+ *       C value.
+ *
+ *       Narrow by design: it matches only `z` BOUND to that reciprocal, never
+ *       the expression alone. `q^{1/2} + q^{-1/2}` is `[2]_{√q}`, a legitimate
+ *       Temperley–Lieb loop parameter at half-argument (it appears in the Wenzl
+ *       positivity condition and in pair-skein formulas). 58 files contain the
+ *       expression; flagging those would repeat the loose-grep error that once
+ *       reported "70 producers" where the truth was 13.
+ *
  *   `convention-silent-value`   (major)
  *       A registry value (either convention) is quoted and the block never
  *       names a convention anywhere — no "convention C/D", no `convention-d`
@@ -133,6 +148,7 @@ type Result = "pass" | "fail" | "n/a";
 
 type Detector =
   | "c-value-unlabelled"
+  | "c-formula-unlabelled"
   | "convention-silent-value"
   | "unqualified-pairing"
   | "gram-inverse-unqualified";
@@ -251,9 +267,17 @@ export function normalise(text: string): string {
 
 const NUM_RE = /(?<![\w.])(-?\d*\.\d+)(?![\d])/g;
 
-/** In-scope: the block touches the Markov-trace surface at all. */
+/**
+ * In-scope: the block touches the Markov-trace surface at all.
+ *
+ * `Markov parameter` / `Markov weight` are here deliberately. Without them a
+ * block whose only trace vocabulary is "the Markov parameter $z$" fell out of
+ * scope entirely and no detector could fire on it — which is exactly the shape
+ * of the blocks `c-formula-unlabelled` exists to catch. The gap was found by a
+ * selftest fixture that silently passed for the wrong reason.
+ */
 const TRACE_SURFACE =
-  /\btr\}?_M\b|\btr_M\b|\\mathrm\{tr\}_\{?M|Markov[\s–—-]*trace|Markov[\s–—-]*Gram|Frobenius\s+Gram|Gram\s+matrix|Ocneanu|y_\{?\\?lambda|y_\{\(|\bWenzl\b|convention[\s-]*[CD]\b|trace[\s-]convention/i;
+  /\btr\}?_M\b|\btr_M\b|\\mathrm\{tr\}_\{?M|Markov[\s–—-]*trace|Markov[\s–—-]*Gram|Markov[\s–—-]*parameter|Markov[\s–—-]*weight|Frobenius\s+Gram|Gram\s+matrix|Ocneanu|y_\{?\\?lambda|y_\{\(|\bWenzl\b|convention[\s-]*[CD]\b|trace[\s-]convention/i;
 
 /**
  * A convention id attached to a trace symbol: `z_{\mathrm{C}}`, `y^C_{(2,1)}`,
@@ -331,6 +355,40 @@ const PAIRING_NAMED =
 /** Claims that the Markov–Gram is invertible / non-degenerate. */
 const GRAM_INVERSE =
   /G\^\{-1\}|G\^\{?-1\}?|\bnon-?degenerate\b|\binvertible\b|\bG_\{?\\mathrm\{inv|\bG_INV\b|\\det\s*G\s*(?:<|>|\\ne|\\neq|≠)\s*0/;
+
+/**
+ * **`z` defined by the convention-C formula.**
+ *
+ * The blind spot the value detectors cannot see. `c-value-unlabelled` fires on
+ * decimal literals; a block that writes `z = 1/(q^{1/2} + q^{-1/2})` quotes no
+ * number at all and sailed straight through. That symbolic form is the larger
+ * surface — 26 content files carry it against 1 carrying an unlabelled C value.
+ *
+ * Matching is deliberately narrow: **only `z` bound to the reciprocal of
+ * `q^{1/2} + q^{-1/2}`**, not the expression itself. `q^{1/2} + q^{-1/2}` is
+ * `[2]_{√q}`, a perfectly good Temperley–Lieb loop parameter at half-argument —
+ * it appears in the Wenzl positivity condition `q^{1/2} + q^{-1/2} > 2` and in
+ * pair-skein formulas that have nothing to do with the Markov parameter. 58
+ * files contain the expression; flagging those would be the same loose-grep
+ * mistake that produced a "70 producers" figure when the truth was 13.
+ * `bar-involution-c5-algebraic-identities` states the distinction outright: the
+ * half-argument loop parameter "is not a Markov parameter of the Hecke
+ * generator".
+ */
+const C_FORMULA = new RegExp(
+  [
+    // z := 1/(q^{1/2} + q^{-1/2})   and \frac{1}{...} spellings
+    String.raw`z\s*(?::=|=|\\coloneqq)\s*1\s*/\s*\(?\s*q\^\{?1/2\}?\s*\+\s*q\^\{?-1/2\}?`,
+    String.raw`z\s*(?::=|=|\\coloneqq)\s*\\d?frac\{1\}\{\s*q\^\{?1/2\}?\s*\+\s*q\^\{?-1/2\}?`,
+    // \sqrt{q} spellings
+    String.raw`z\s*(?::=|=|\\coloneqq)\s*1\s*/\s*\(?\s*\\sqrt\{q\}\s*\+\s*1\s*/\s*\\sqrt\{q\}`,
+    String.raw`z\s*(?::=|=|\\coloneqq)\s*\\d?frac\{1\}\{\s*\\sqrt\{q\}\s*\+`,
+    // python/ts producer spellings, so the axis also catches a `.ts` block
+    String.raw`z\s*=\s*1\s*/\s*\(\s*q\s*\*\*\s*0\.5\s*\+`,
+    String.raw`z\s*=\s*1\s*/\s*\(\s*q_half\s*\+\s*q_half_inv`,
+  ].join("|"),
+  "i",
+);
 
 interface Hit {
   detector: Detector;
@@ -423,6 +481,29 @@ export function scanBlock(
             `convention id anywhere: “${snippet(text, m.index, m[1].length)}”`,
         });
       }
+    }
+
+    // ── symbolic convention-C definition of `z` ────────────────────────
+    // Runs per-occurrence rather than once per block: a block may state the C
+    // formula in a labelled historical note AND again as a working definition,
+    // and only the second is a defect.
+    const cf = new RegExp(C_FORMULA.source, "gi");
+    let cfm: RegExpExecArray | null;
+    while ((cfm = cf.exec(text))) {
+      const win = windowAround(text, cfm.index, cfm[0].length);
+      if (C_LABEL.test(win)) continue;
+      hits.push({
+        detector: "c-formula-unlabelled",
+        severity: "critical",
+        file: tag,
+        line: lineOf(text, cfm.index),
+        evidence:
+          `z is defined by the convention-C formula 1/(q^{1/2}+q^{-1/2}) with no ` +
+          `convention-C / excision marker within ${WINDOW} chars. Production is ` +
+          `convention D, z = q^3/(q^2+1) = 0.61268803714646525160; the C value is ` +
+          `0.49932033418369445241, 22.7% lower. Context: ` +
+          `“${snippet(text, cfm.index, cfm[0].length)}”`,
+      });
     }
 
     // ── signature / pairing detector ───────────────────────────────────
@@ -620,6 +701,16 @@ interface Case {
   md: string;
   ts: string;
   expect: Detector | "clean";
+  /**
+   * Whether the fixture is expected to be IN SCOPE. Defaults to true, and it is
+   * checked — without this a `"clean"` case passes whenever the axis decides the
+   * block has no trace surface, which is passing for the wrong reason. Three
+   * `c-formula-unlabelled` fixtures did exactly that: they "cleared" only
+   * because `TRACE_SURFACE` did not yet know the phrase "Markov parameter".
+   * A clears-test that clears vacuously is the failure mode this whole selftest
+   * exists to prevent, so it is asserted rather than assumed.
+   */
+  scope?: boolean;
 }
 
 const SELFTEST_TS = `proposition({ label: "prop:selftest", title: "t" })`;
@@ -660,6 +751,30 @@ function selftest(fps: Fingerprint[]): number {
       expect: "convention-silent-value",
     },
     {
+      name: "z DEFINED by the C formula, no value quoted → fires",
+      md: `Write $h = q - q^{-1}$ and $z = 1/(q^{1/2} + q^{-1/2})$ for the Markov parameter.`,
+      ts: SELFTEST_TS,
+      expect: "c-formula-unlabelled",
+    },
+    {
+      name: "the same C formula in a labelled historical note → clears",
+      md: `Earlier versions of this theorem wrote $z = 1/(q^{1/2}+q^{-1/2})$, the excised convention C; production is convention D.`,
+      ts: SELFTEST_TS,
+      expect: "clean",
+    },
+    {
+      name: "z defined the D way → clears",
+      md: `Write $h = q - q^{-1}$ and $z = q^3/(q^2+1)$ for the Markov parameter (convention D).`,
+      ts: SELFTEST_TS,
+      expect: "clean",
+    },
+    {
+      name: "the half-argument loop parameter is NOT the Markov parameter → clears",
+      md: `Let $q > 0$ satisfy the Wenzl positivity condition $q^{1/2} + q^{-1/2} > 2$; the Markov trace $\\mathrm{tr}_M$ is then positive.`,
+      ts: SELFTEST_TS,
+      expect: "clean",
+    },
+    {
       name: "Lorentzian said of the Markov–Gram, pairing unnamed → fires",
       md: `The Markov–Gram matrix $G_{ij}$ carries an indefinite, Lorentzian signature.`,
       ts: SELFTEST_TS,
@@ -688,18 +803,27 @@ function selftest(fps: Fingerprint[]): number {
       md: `The nuclear radius scales as $r_0 A^{1/3}$, an empirical saturation law.`,
       ts: SELFTEST_TS,
       expect: "clean",
+      scope: false,
     },
   ];
 
   let failed = 0;
   for (const c of cases) {
-    const { hits } = scanBlock(c.md, c.ts, fps);
+    const { inScope, hits } = scanBlock(c.md, c.ts, fps);
     const got = hits.map((h) => h.detector);
+    const wantScope = c.scope ?? true;
+    const scopeOk = inScope === wantScope;
     const ok =
-      c.expect === "clean" ? got.length === 0 : got.includes(c.expect as Detector);
+      scopeOk &&
+      (c.expect === "clean" ? got.length === 0 : got.includes(c.expect as Detector));
     console.log(
       `  ${ok ? "ok  " : "FAIL"}  ${c.name}` +
-        (ok ? "" : `\n          expected ${c.expect}, got [${got.join(", ") || "none"}]`),
+        (ok
+          ? ""
+          : !scopeOk
+            ? `\n          expected inScope=${wantScope}, got ${inScope}` +
+              ` — a "clean" verdict here would be vacuous`
+            : `\n          expected ${c.expect}, got [${got.join(", ") || "none"}]`),
     );
     if (!ok) failed++;
   }
@@ -749,6 +873,7 @@ function buildMd(findings: Finding[], branch: string): string {
   L.push("|---|--:|");
   const dets: Detector[] = [
     "c-value-unlabelled",
+    "c-formula-unlabelled",
     "convention-silent-value",
     "unqualified-pairing",
     "gram-inverse-unqualified",
@@ -884,6 +1009,7 @@ function main() {
       const metrics: Record<string, number> = {
         registry_fingerprints: fps.length,
         c_value_unlabelled: f.hits.filter((h) => h.detector === "c-value-unlabelled").length,
+        c_formula_unlabelled: f.hits.filter((h) => h.detector === "c-formula-unlabelled").length,
         convention_silent_value: f.hits.filter((h) => h.detector === "convention-silent-value").length,
         unqualified_pairing: f.hits.filter((h) => h.detector === "unqualified-pairing").length,
         gram_inverse_unqualified: f.hits.filter((h) => h.detector === "gram-inverse-unqualified").length,
