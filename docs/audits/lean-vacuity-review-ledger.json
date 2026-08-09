@@ -788,10 +788,10 @@
       "category": "proof-no-trivial-true",
       "pattern": "axiom-true",
       "line": 68,
-      "verdict": "genuine",
+      "verdict": "advisory",
       "file_sha": "72c72df7840c",
-      "disposition": "restate-or-drop",
-      "evidence": "The worst shape in this group: an `axiom` whose conclusion is literally `True`. It therefore assumes nothing and proves nothing, while its name and comments assert a real fact (`Sym\u00b2(V)` irreducible of dim 6 for the SU(3) fundamental; equivalently V is complex type, V \u2247 V*). Anything downstream that cites it as support is citing a tautology. Fix: state the actual proposition \u2014 the comment already says it is standard, so a `-- Ref:` plus an honest `sorry`, or a `conjecture` demotion, are both acceptable; `axiom \u2026 : True` is not.",
+      "disposition": "defer-to-bean-qou-8fl1-do-not-re-derive",
+      "evidence": "CORRECTED 2026-08-09 (earlier verdict `genuine`/`restate-or-drop` was made without reading the module header). The vacuity is real \u2014 `axiom su3_sym2_irreducible : True` asserts nothing \u2014 but it is ALREADY DISCLOSED at the point of use: the file header carries a section titled `Outstanding: this file's representation-theoretic content is vacuous`, which names this axiom and both gate theorems, states that `corpus_T1_fails_sym2_gate` and `octonion_3_passes_sym2_gate` conclude arithmetic tautologies `whose representation-theoretic reading lives only in the docstrings`, assigns the repair to bean `qou-8fl1` item 3, and notes the chapter prose already labels the result honestly (`not excluded by the Sym\u00b2 gate`, `should not be cited as` a machine-checked pass). That is the honest-placeholder criterion satisfied. CRITICALLY, DO NOT REPAIR THIS FILE BY FORMALISING THE SELF-DUALITY ARGUMENT (singlet in Sym\u00b2 \u21d2 V self-dual \u21d2 not the SU(3) fundamental): that inference is REFUTED. The real criterion is formalised next door in `QOU.Eightfold.Sym2GateParity`, which proves `self_duality_does_not_decide_gate`, states `That inference is invalid`, and is explicitly written so that `the invalid inference cannot be re-derived from this file`. The correct gate is the parity criterion `gate_fails_iff_odd_dim` / `zero_mem_sym2Indices_iff`, both `by decide`. Leave this file disclosed; drain via the bean.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -799,10 +799,10 @@
       "category": "proof-no-provable-axiom",
       "pattern": "uncited-axiom",
       "line": 68,
-      "verdict": "genuine",
+      "verdict": "advisory",
       "file_sha": "72c72df7840c",
-      "disposition": "restate-or-drop",
-      "evidence": "The worst shape in this group: an `axiom` whose conclusion is literally `True`. It therefore assumes nothing and proves nothing, while its name and comments assert a real fact (`Sym\u00b2(V)` irreducible of dim 6 for the SU(3) fundamental; equivalently V is complex type, V \u2247 V*). Anything downstream that cites it as support is citing a tautology. Fix: state the actual proposition \u2014 the comment already says it is standard, so a `-- Ref:` plus an honest `sorry`, or a `conjecture` demotion, are both acceptable; `axiom \u2026 : True` is not.",
+      "disposition": "defer-to-bean-qou-8fl1-do-not-re-derive",
+      "evidence": "CORRECTED 2026-08-09 (earlier verdict `genuine`/`restate-or-drop` was made without reading the module header). The vacuity is real \u2014 `axiom su3_sym2_irreducible : True` asserts nothing \u2014 but it is ALREADY DISCLOSED at the point of use: the file header carries a section titled `Outstanding: this file's representation-theoretic content is vacuous`, which names this axiom and both gate theorems, states that `corpus_T1_fails_sym2_gate` and `octonion_3_passes_sym2_gate` conclude arithmetic tautologies `whose representation-theoretic reading lives only in the docstrings`, assigns the repair to bean `qou-8fl1` item 3, and notes the chapter prose already labels the result honestly (`not excluded by the Sym\u00b2 gate`, `should not be cited as` a machine-checked pass). That is the honest-placeholder criterion satisfied. CRITICALLY, DO NOT REPAIR THIS FILE BY FORMALISING THE SELF-DUALITY ARGUMENT (singlet in Sym\u00b2 \u21d2 V self-dual \u21d2 not the SU(3) fundamental): that inference is REFUTED. The real criterion is formalised next door in `QOU.Eightfold.Sym2GateParity`, which proves `self_duality_does_not_decide_gate`, states `That inference is invalid`, and is explicitly written so that `the invalid inference cannot be re-derived from this file`. The correct gate is the parity criterion `gate_fails_iff_odd_dim` / `zero_mem_sym2Indices_iff`, both `by decide`. Leave this file disclosed; drain via the bean.",
       "reviewed_at": "2026-08-09T22:30:00Z",
       "reviewer": "agent"
     },
@@ -1512,17 +1512,6 @@
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `ContactAffineChart` carries field `reeb_contraction` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `ContactAffineChart` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `reeb_contraction` is outside CONCLUSION_FIELD."
     },
-    "content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean::fiber_adjoint_involution_exists::proof-docstring-sorry-mismatch": {
-      "category": "proof-docstring-sorry-mismatch",
-      "pattern": "doc-claims-sorry-body-has-none",
-      "line": 82,
-      "verdict": "genuine",
-      "file_sha": "eb7ceecbdfc9",
-      "disposition": "restore-honest-sorry-or-build-witness",
-      "evidence": "AUDIT-DODGE (\u00a71a). The docstring makes two explicit promises and the body breaks both: it says the claim is inhabitation of the real bundle \u2014 `not the degenerate \u2203 inv, True` \u2014 and that `Constructing the witness ... needs categorical machinery beyond the current QOU.Basic API, so the body is an honest sorry`. There is no sorry. The body is `\u27e8{ adjointObj := \ud835\udfd9_ C, projLine := \ud835\udfd9_ C, orbit_embed := \ud835\udfd9 _, involution := \ud835\udfd9 _, involution_sq := Category.id_comp _, orbit_involution_compat := Category.comp_id _, orbit_mono := ... }\u27e9` \u2014 every field is the identity on the monoidal unit, which satisfies `involution_sq`, the compatibility and the mono condition trivially. The witness never mentions `fh`, so `Nonempty (FiberAdjointInvolution C fh)` is proved for every category and every Frobenius-Hopf datum without using either: exactly the degeneracy the docstring disclaims, reached by a different route than `\u2203 inv, True`. Carries `-- Ref: [lusztig1993]` and `prop:fiber-adjoint-involution`, so it reads as an established categorical result. Fix: restore the honest `sorry` + `-- Ref:` (the docstring already explains why), or construct the genuine coadjoint-orbit embedding. Do not leave the identity witness.",
-      "reviewed_at": "2026-08-09T22:30:00Z",
-      "reviewer": "agent"
-    },
     "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.lean::volume_form_is_nondegen::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
@@ -1555,6 +1544,17 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "construct-witness-or-drop-pseudo-theorem",
       "evidence": "Self-assuming projection. The structure `CategoricalJet` carries field `jetEval` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim. A projection like this is the legitimate Mathlib accessor idiom ONLY when something builds the bundle; `CategoricalJet` is never inhabited anywhere in the corpus (no def/abbrev/instance/example produces one), so the declaration is a restatement presented as a result, quantified over a hypothesis nobody has exhibited. Fix: construct a witness instance and prove the property there, or drop the pseudo-theorem and project the field at use sites. Detected by the type-match pass; the name gate missed it because `jetEval` is outside CONCLUSION_FIELD."
+    },
+    "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::octonion_3_passes_sym2_gate::proof-no-trivial-true": {
+      "category": "proof-no-trivial-true",
+      "pattern": "conjunction-of-tautologies",
+      "line": 82,
+      "verdict": "advisory",
+      "file_sha": "72c72df7840c",
+      "disposition": "defer-to-bean-qou-8fl1-do-not-re-derive",
+      "evidence": "Newly detected by the `conjunction-of-tautologies` arm added 2026-08-09 \u2014 it had escaped every check because the reflexive tests read the conclusion as one proposition, so `(6 : \u2115) = 6 \u2227 (0 : \u2115) = 0` parsed as lhs `(6:\u2115)` against rhs `6\u2227(0:\u2115)=0` and matched nothing. Both conjuncts are tautologies, so the theorem asserts nothing while its name and docstring claim the octonion G\u2082 route passes the Sym\u00b2 gate. Same disposition as its file-mates: the module header already carries an `Outstanding: this file's representation-theoretic content is vacuous` section naming this declaration explicitly (`conclude ... 6 = 6 \u2227 0 = 0 \u2014 arithmetic tautologies whose representation-theoretic reading lives only in the docstrings`), the repair is assigned to bean `qou-8fl1` item 3, and the chapter prose already labels the result honestly. DO NOT repair via the self-duality argument \u2014 `QOU.Eightfold.Sym2GateParity` proves `self_duality_does_not_decide_gate` and is written so the invalid inference cannot be re-derived; the correct criterion is the parity one (`gate_fails_iff_odd_dim`).",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     }
   }
 }

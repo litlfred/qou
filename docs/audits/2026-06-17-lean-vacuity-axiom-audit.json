@@ -1,17 +1,17 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T23:03:51.401Z",
+  "generated": "2026-08-09T23:16:01.706Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 2765,
-  "files_flagged": 171,
+  "files_flagged": 170,
   "total_defects": 57,
   "total_exempt": 162,
   "categories": {
-    "proof-no-trivial-true": 17,
+    "proof-no-trivial-true": 18,
     "proof-no-provable-axiom": 11,
     "proof-no-unused-hypothesis-rfl": 14,
     "proof-no-self-assuming-projection": 8,
-    "proof-docstring-sorry-mismatch": 3,
+    "proof-docstring-sorry-mismatch": 2,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
   },
@@ -2552,6 +2552,14 @@
         "snippet": "axiom su3_sym2_irreducible :",
         "decl": "su3_sym2_irreducible",
         "severity": "critical"
+      },
+      {
+        "line": 82,
+        "category": "proof-no-trivial-true",
+        "pattern": "conjunction-of-tautologies",
+        "snippet": "theorem octonion_3_passes_sym2_gate : (6 : ℕ) = 6 ∧ (0 : ℕ) = 0 := by",
+        "decl": "octonion_3_passes_sym2_gate",
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean": [
@@ -3785,17 +3793,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `chart.reeb_nonzero` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean": [
-      {
-        "line": 82,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]",
-        "decl": "fiber_adjoint_involution_exists",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
       }
     ],
     "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.lean": [

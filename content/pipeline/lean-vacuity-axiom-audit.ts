@@ -506,6 +506,48 @@ function isConjectureBlock(leanAbs: string): boolean {
 
 const TRIVIAL_BODY = /^\s*(trivial|by\s+trivial|sorry|by\s+sorry|⟨⟩|by\s+exact\s+trivial)\s*$/;
 
+/** Split on top-level `∧`, ignoring any nested inside brackets. */
+function splitTopLevelAnd(s: string): string[] {
+  const parts: string[] = [];
+  let depth = 0;
+  let cur = "";
+  for (const c of s) {
+    if ("([{⟨⦃".includes(c)) depth++;
+    else if (")]}⟩⦄".includes(c)) depth--;
+    if (c === "∧" && depth === 0) {
+      parts.push(cur);
+      cur = "";
+      continue;
+    }
+    cur += c;
+  }
+  parts.push(cur);
+  return parts.map((p) => p.trim()).filter((p) => p.length > 0);
+}
+
+/**
+ * Is this single proposition a tautology on its face — `True`, a reflexive
+ * `X = X`, or a reflexive equality hidden behind an ascribed numeric literal
+ * (`(0 : ℝ) = 0`)? Returns the shape, or `null` if it asserts something.
+ */
+function reflexiveKind(s: string): "plain" | "ascribed" | "true" | null {
+  const t = s.trim();
+  if (/^True$/.test(t)) return "true";
+  const eq = t.match(/^([^=]+?)=([^=].*)$/);
+  if (!eq) return null;
+  const lhs = eq[1].replace(/\s+/g, "");
+  const rhs = eq[2].replace(/\s+/g, "");
+  if (lhs && lhs === rhs) return "plain";
+  const unascribeLit = (x: string) => {
+    const m = x.match(/^\((-?\d+(?:\.\d+)?)\s*:[^():]*\)$/);
+    return m ? m[1] : x;
+  };
+  const nl = unascribeLit(lhs);
+  const nr = unascribeLit(rhs);
+  if (nl && nl === nr && (nl !== lhs || nr !== rhs)) return "ascribed";
+  return null;
+}
+
 function detectTrivialTrue(
   d: Decl,
   rawSrc: string,
@@ -620,6 +662,19 @@ function detectTrivialTrue(
       while (prev !== bare) { prev = bare; bare = bare.replace(/\([^()]*\)/g, ""); }
       if (/∨\s*True\b/.test(bare) || /\bTrue\s*∨/.test(bare)) {
         return mk(d, "proof-no-trivial-true", "or-true-tautology", false);
+      }
+      // (d) a CONJUNCTION of tautologies. The reflexive tests above read the
+      // conclusion as a single proposition, so `(6 : ℕ) = 6 ∧ (0 : ℕ) = 0`
+      // parses as lhs `(6:ℕ)` against rhs `6∧(0:ℕ)=0`, matches nothing, and
+      // escapes every check — which is how `octonion_3_passes_sym2_gate`
+      // shipped two tautologies as a representation-theoretic gate result
+      // (found by reading, not by this scanner, 2026-08-09). Flag only when
+      // EVERY conjunct is vacuous: one real conjunct makes the statement
+      // assert something, and `1 + 5 = 6 ∧ 1 > 0` is arithmetic, not a
+      // tautology, so its sibling `corpus_T1_fails_sym2_gate` stays unflagged.
+      const conjuncts = splitTopLevelAnd(conclTA);
+      if (conjuncts.length >= 2 && conjuncts.every((c) => reflexiveKind(c) !== null)) {
+        return mk(d, "proof-no-trivial-true", "conjunction-of-tautologies", false);
       }
     }
     return undefined;

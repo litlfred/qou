@@ -76,22 +76,24 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     Constructing the witness (the coadjoint-orbit embedding `P(V) ↪ Ad(A)`
     and the antipode-induced `τ_Ad` in a general monoidal category) needs
     categorical machinery beyond the current `QOU.Basic` API, so the body
-    is an honest `sorry`. -/
+    is an honest `sorry`.
+
+    The conclusion pins `adjointObj = fh.obj`: the adjoint bundle `Ad(A)` is
+    carried by the algebra object `A` itself. Without that constraint every
+    field can be taken to be the identity on `𝟙_ C`, which satisfies
+    `involution_sq`, `orbit_involution_compat` and `orbit_mono` trivially and
+    never mentions `fh` — so bare `Nonempty (FiberAdjointInvolution C fh)` is
+    provable for *every* category and datum, and asserts nothing. (That
+    degenerate witness was what this declaration shipped until 2026-08-09;
+    it is the same emptiness as `∃ inv, True`, reached by a different route.
+    See `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`.) -/
 -- Ref: [lusztig1993] Introduction to Quantum Groups
 -- Ref: [manuscript] prop:fiber-adjoint-involution
 theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
-    Nonempty (FiberAdjointInvolution C fh) := by
-  exact ⟨{
-    adjointObj := 𝟙_ C
-    projLine := 𝟙_ C
-    orbit_embed := 𝟙 _
-    involution := 𝟙 _
-    involution_sq := CategoryTheory.Category.id_comp _
-    orbit_involution_compat := CategoryTheory.Category.comp_id _
-    orbit_mono := fun f g h => by
-      rw [CategoryTheory.Category.comp_id, CategoryTheory.Category.comp_id] at h
-      exact h
-  }⟩
+    ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj := by
+  -- Ref: [lusztig1993] Introduction to Quantum Groups §3 (adjoint action,
+  --      antipode-induced involution on Ad(A))
+  sorry
 
 end QOU

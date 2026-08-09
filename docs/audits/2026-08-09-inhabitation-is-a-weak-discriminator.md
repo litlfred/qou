@@ -102,6 +102,57 @@ not that the conclusion is unrelated but that it is **identical**: the class fie
 honest (content-bearing, uninhabited — the correct open state per §3b-tax); only
 the wrapper is the defect.
 
+## Repairs applied, and one repair *not* applied
+
+**`fiber_adjoint_involution_exists` — fixed.** The all-identities witness is
+gone. The conclusion now pins `∃ inv, inv.adjointObj = fh.obj` — the adjoint
+bundle is carried by the algebra object `A` — which the identity-on-`𝟙_ C`
+witness cannot satisfy, and the body is the honest `sorry` + `-- Ref:` the
+docstring always claimed it was. `lean`-direct exit 0 with the expected
+`declaration uses 'sorry'`. Note that a bare `sorry` alone would not have been
+enough: the *statement* was also too weak, so queueing it unchanged would have
+queued a claim the unit object already satisfies.
+
+**`su3_sym2_irreducible` — deliberately NOT repaired, and an earlier verdict of
+mine corrected.** I first marked it `genuine` with disposition *"state the
+actual proposition"*, having read the declaration but not the module header.
+The header already carries a section titled *"Outstanding: this file's
+representation-theoretic content is vacuous"*, naming this axiom and both gate
+theorems, assigning the repair to bean `qou-8fl1` item 3, and noting the chapter
+prose labels the result honestly. More important: the repair I was about to
+write — singlet in `Sym²` ⇒ `V` self-dual ⇒ not the SU(3) fundamental — is
+**refuted**. `QOU.Eightfold.Sym2GateParity` proves
+`self_duality_does_not_decide_gate`, states *"That inference is invalid"*, and
+is written so that *"the invalid inference cannot be re-derived from this
+file."* The correct criterion there is parity (`gate_fails_iff_odd_dim`), all
+`by decide`.
+
+Re-verdicted `advisory` / `defer-to-bean-qou-8fl1-do-not-re-derive`. This is the
+corpus-grep discipline earning its keep in the forward direction: the file that
+looked most in need of repair was the one where repairing it would have
+reintroduced a refuted argument.
+
+## A detector gap found by reading, then closed
+
+`octonion_3_passes_sym2_gate : (6 : ℕ) = 6 ∧ (0 : ℕ) = 0` — two tautologies
+presented as a gate result — was flagged by **nothing**. The reflexive tests read
+the conclusion as a single proposition, so the `^([^=]+?)=([^=].*)$` match splits
+it as lhs `(6:ℕ)` against rhs `6∧(0:ℕ)=0` and finds no reflexivity.
+
+Added a `conjunction-of-tautologies` arm: split the conclusion on top-level `∧`
+(bracket-aware) and flag only when **every** conjunct is `True`, reflexive, or
+reflexive-behind-an-ascribed-literal. One real conjunct means the statement
+asserts something, so its file-mate `corpus_T1_fails_sym2_gate`
+(`1 + 5 = 6 ∧ 1 > 0` — arithmetic, not tautology) correctly stays unflagged.
+
+Verified on a 4-declaration probe (both vacuous shapes fire, both negatives
+quiet) and the corpus: **exactly one hit across 2765 files**, the declaration
+above. No false positives.
+
+Worth noting how this one surfaced: not from the scanner, but from reading a
+file the scanner had sent me to for a *different* criterion. The high-recall
+detectors find candidates; they do not bound what is there.
+
 ## What the drain does not do
 
 Recording 124 `genuine` verdicts is triage, not repair. Five declarations have
