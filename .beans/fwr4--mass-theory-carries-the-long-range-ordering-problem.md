@@ -1,11 +1,11 @@
 ---
 # fwr4
 title: 'mass-theory carries the paper''s long-range ordering problem'
-status: open
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T21:35:00Z
-updated_at: 2026-08-09T23:10:00Z
+updated_at: 2026-08-09T23:40:00Z
 parent: fwr1
 ---
 After the block moves (`fwr2`) and transpositions (`fwr3`) are taken out, 177
@@ -76,3 +76,14 @@ point at the cross-chapter statement rather than the in-chapter restatement,
 `prop:frobenius-s-classification` (447) at `thm:wedderburn-mass-formula`, and the
 two-row definitions (149/150) want `foreshadows:` for the notational `y_λ`.
 Deletions and retargetings both need the adversarial second read that fwr1 used.
+
+---
+
+**Claimed:** branch `claude/fwr4-mass-theory-consolidation-2026-08-09`.
+
+Applying A1-A4 under the same propose -> review -> apply gate the within-section
+pass used, since these are cross-section moves and the reviews on that pass are a
+sustained demonstration that satisfying the graph is not the same as reading well.
+A2 may already be discharged: fwr2 moved `def:quantum-bloch-group` into
+`sec:kashiwara-jones-quantum-dilog`, which is A2's destination. Verify before
+re-moving.
