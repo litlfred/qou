@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean"
   },
   "source_hashes": {
-    "md": "1926d9b25b97",
     "ts": "1a3750ee35a4",
-    "lean": "2507eaaad940",
-    "lean_statement": "060ded1a1f2c"
+    "md": "1926d9b25b97",
+    "lean": "2507eaaad940"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -44,25 +43,6 @@
       },
       {
         "field_hash": {
-          "md": "1926d9b25b97",
-          "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
-        },
-        "reviewed_at": "2026-07-12T00:35:24.688Z",
-        "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:55: archimedean tactic in categorical chapter — linarith | content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.lean:56: archimedean tactic in categorical chapter — · linarith"
-      },
-      {
-        "field_hash": {
           "ts": "1a3750ee35a4",
           "md": "1926d9b25b97",
           "lean": "882fbc1419cc"
@@ -75,6 +55,21 @@
         "reviewed_at": "2026-07-13T12:14:53Z",
         "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
         "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. `qInteger_pos` is an explicit archimedean specialisation (`1 < q` => `0 < [n]_q`), flagged as such in the block's own comment; `linarith` closes real order side-goals. Intrinsically archimedean. Re-affirms prior owner dispensation c0488b478cdbd79629bd6bcb88b5174c2f2375a7 (files drifted; rationale unchanged)."
+      },
+      {
+        "field_hash": {
+          "ts": "1a3750ee35a4",
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "voice-status-leak": [
@@ -391,115 +386,106 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "1926d9b25b97",
           "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:24.688Z",
-        "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"lifting-and-descent\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "1926d9b25b97",
           "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:24.688Z",
-        "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "1926d9b25b97",
           "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:24.688Z",
-        "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "1926d9b25b97",
           "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "1926d9b25b97",
           "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:24.688Z",
-        "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "1926d9b25b97",
           "ts": "1a3750ee35a4",
-          "lean": "882fbc1419cc"
+          "md": "1926d9b25b97",
+          "lean": "2507eaaad940"
         },
         "result": "warn",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:24.688Z",
-        "reviewed_sha": "5b033da1796b282f340988521da97793124f4faa"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md:1 — detected regime [real-gt-1, real-positive] is disjoint from chapter 'lifting-and-descent' expected [generic-R, na, symbolic]"
       }
     ],
     "canonical-calibration-count": [
@@ -2151,5 +2137,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:56.226Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

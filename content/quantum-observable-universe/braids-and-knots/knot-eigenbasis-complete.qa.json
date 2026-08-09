@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean"
   },
   "source_hashes": {
-    "md": "7a3f1d79d0b5",
     "ts": "805f33892b54",
-    "lean": "3d5757c4aa3c",
-    "lean_statement": "b16095bc31fc"
+    "md": "7a3f1d79d0b5",
+    "lean": "3d5757c4aa3c"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -44,25 +43,6 @@
       },
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
-          "ts": "805f33892b54",
-          "lean": "3d5757c4aa3c"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
-        },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:120: archimedean tactic in categorical chapter — (0 : ℚ) ≤ (a : ℚ) / 2 := by positivity | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:139: archimedean tactic in categorical chapter — have := bp.size_eq; simp [hr, List.sum_cons] at this; linarith | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:145: archimedean tactic in categorical chapter — have hab : (a : ℚ) - (b : ℚ) ≤ (bp.n : ℚ) := by linarith | content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean:146: archimedean tactic in categorical chapter — linarith"
-      },
-      {
-        "field_hash": {
           "ts": "805f33892b54",
           "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
@@ -75,6 +55,21 @@
         "reviewed_at": "2026-07-13T12:14:53Z",
         "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
         "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Spin labels are half-integers valued in Q; `spin_nonneg_single` is an order fact `0 <= a/2` closed by `positivity`. Ordering of rational spin values is intrinsic to the statement. Re-affirms prior owner dispensation c0488b478cdbd79629bd6bcb88b5174c2f2375a7 (files drifted; rationale unchanged)."
+      },
+      {
+        "field_hash": {
+          "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
+          "lean": "3d5757c4aa3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "voice-status-leak": [
@@ -390,115 +385,104 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
           "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
           "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
           "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
           "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
           "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "7a3f1d79d0b5",
           "ts": "805f33892b54",
+          "md": "7a3f1d79d0b5",
           "lean": "3d5757c4aa3c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "canonical-calibration-count": [
@@ -2152,5 +2136,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:19.171Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

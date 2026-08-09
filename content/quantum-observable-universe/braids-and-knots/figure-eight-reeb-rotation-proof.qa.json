@@ -7,8 +7,8 @@
     "md": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md"
   },
   "source_hashes": {
-    "md": "727b59d9885c",
-    "ts": "7638a08d534e"
+    "ts": "7638a08d534e",
+    "md": "727b59d9885c"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -818,40 +818,21 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "727b59d9885c",
-          "ts": "7638a08d534e"
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"real-positive\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
-      {
-        "field_hash": {
-          "md": "727b59d9885c",
-          "ts": "7638a08d534e"
-        },
-        "result": "fail",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
-        },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102: This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
-      },
       {
         "field_hash": {
           "ts": "7638a08d534e",
@@ -865,97 +846,102 @@
         "reviewed_at": "2026-07-13T12:14:53Z",
         "reviewed_sha": "d539da73180d5888f4a9dc765b90a0efbf32510d",
         "notes": "Owner-directed dispensation (directive \"can we address those QA issues\", 2026-07-13); transcribed by agent from source inspection, owner to confirm in PR review. Proof narrative evaluates the figure-eight (4_1) Reeb trace at the substrate modulus q_0 ~ 1.10998 to exhibit the unit-modulus / rotation-angle value. The fixed-q_0 mention is the intended archimedean specialisation of the closed-form trace, not a leak."
+      },
+      {
+        "field_hash": {
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/figure-eight-reeb-rotation-proof.md:102 — This proves the unit-modulus claim, with the rotation angle determined by the closed-form trace of Step 3. At $q = 1$ the trace is $-1$, so $\\theta = 2\\pi/3$ exactly (the eigenvalues are the primitive cube roots of unity); at the substrate value of $q$ the angle evaluates to $\\theta \\approx 117.09^{\\circ}$. The eigenvalue degenerates to $\\lambda = 1$ ($\\theta = 0$) exactly at the golden endpoints $q \\in \\{\\varphi^{-1}, \\varphi\\}$, where $\\mathrm{tr}(M_{4_1}) = 2$, and the boundary value $\\theta = \\pi$ is never attained on the real axis since $\\mathrm{tr}(M_{4_1}) + 2$ is a nonzero square. $\\square$"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "727b59d9885c",
-          "ts": "7638a08d534e"
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "08063de5128d",
-          "ts": "7638a08d534e"
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594",
-        "notes": "block has no .lean sibling"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "727b59d9885c",
-          "ts": "7638a08d534e"
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "727b59d9885c",
-          "ts": "7638a08d534e"
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "727b59d9885c",
-          "ts": "7638a08d534e"
+          "ts": "7638a08d534e",
+          "md": "727b59d9885c"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-trivial-skeleton": [
@@ -1386,5 +1372,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:19.171Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }

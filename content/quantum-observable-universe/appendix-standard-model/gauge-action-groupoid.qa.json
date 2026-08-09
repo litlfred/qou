@@ -974,18 +974,137 @@
         "reviewed_at": "2026-08-09T13:00:04.343Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "q-usage-regime-detected": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"appendix-standard-model\",\"expected\":null}"
+      }
+    ],
+    "q-usage-fixed-q0-leak": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-archimedean-in-categorical-chapter": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-positivity-implicit": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-modulus-vs-real-mismatch": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-root-of-unity-undeclared": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
+    ],
+    "q-usage-narrative-chapter-mismatch": [
+      {
+        "field_hash": {
+          "ts": "1a56bdc1b3ff",
+          "md": "4d188cb2e8e4",
+          "lean": "60bef8d2e4fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
+        },
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+      }
     ]
   },
-  "updated_at": "2026-08-09T13:00:04.343Z",
+  "updated_at": "2026-08-09T16:53:02.544Z",
   "paths": {
     "ts": "content/quantum-observable-universe/appendix-standard-model/gauge-action-groupoid.ts",
     "md": "content/quantum-observable-universe/appendix-standard-model/gauge-action-groupoid.md",
     "lean": "content/quantum-observable-universe/appendix-standard-model/gauge-action-groupoid.lean"
   },
   "source_hashes": {
-    "md": "4d188cb2e8e4",
     "ts": "1a56bdc1b3ff",
-    "lean": "60bef8d2e4fc",
-    "lean_statement": "f8711bf957ea"
+    "md": "4d188cb2e8e4",
+    "lean": "60bef8d2e4fc"
   }
 }

@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.lean"
   },
   "source_hashes": {
-    "md": "e33d6d454247",
     "ts": "20983b2e18e7",
-    "lean": "9a15c83f2569",
-    "lean_statement": "a9b32fbca45f"
+    "md": "e33d6d454247",
+    "lean": "9a15c83f2569"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -852,134 +851,123 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"fixed-q0\",\"generic-R\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
-        "result": "pass",
+        "result": "fail",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "severity": "major",
+        "evidence": "content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:21 — MeV/CODATA reference in categorical chapter — The strong fusion $[3]_q \\cdot [4]_q$ is framework-derived and Lean-proved; it supplies $\\approx 99.98\\%$ of the ratio (the EM term is a $\\approx 203$ ppm correction). | content/quantum-observable-universe/braids-and-knots/meson-em-sinh-closed-form.md:25 — MeV/CODATA reference in categorical chapter — An earlier version of this caveat stated that substituting \"the derived $\\alpha_{\\mathrm{em}}$\" degrades $m_K^2/m_\\pi^2$ from $\\approx 47$ ppb to $\\approx 363$ ppb and concluded the ratio's agreement is $\\alpha_{\\mathrm{em}}$-anchored rather than parameter-free. **That is incorrect and is withdrawn.** The value substituted there, $q\\,[9]_q\\,[10]_q \\approx 136.82$, is the *bare* coupling — the order-zero term — not the derived one. An order sweep reproduces the $363$ ppb figure exactly at order zero and gives $\\approx 47$ ppb at every order from one upward, including the exact resummation. The agreement is not $\\alpha_{\\mathrm{em}}$-anchored."
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "5036243976ff",
           "ts": "20983b2e18e7",
-          "lean": "104caf098b6b"
+          "md": "e33d6d454247",
+          "lean": "9a15c83f2569"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-12T00:35:06.658Z",
-        "reviewed_sha": "d425b4347e9353ba8ea2a35048d0b289e62d9594"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1789,5 +1777,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T13:00:19.171Z"
+  "updated_at": "2026-08-09T16:53:02.544Z"
 }
