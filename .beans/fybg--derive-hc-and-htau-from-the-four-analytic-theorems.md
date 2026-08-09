@@ -12,7 +12,7 @@ tags:
     - kashaev-invariant
     - formalization-gap
 created_at: 2026-08-09T00:00:00Z
-updated_at: 2026-08-09T02:00:00Z
+updated_at: 2026-08-09T03:00:00Z
 ---
 
 ## Why this bean exists
@@ -140,3 +140,74 @@ remainder of the `theta`-expansion has to be controlled uniformly in `k`, and
 (A)'s bound `1/(144k^2) + (7/12)h^2 + h^2/(12 sin^2 theta)` degrades near
 `theta -> 0, pi`. The argmax theorem helps: it confines the terms that matter
 to a neighbourhood of `k*`, where that bound is uniformly good.
+
+## Landed: step 2, the HESSIAN. 2026-08-09
+
+`QOU/Knot/LobTaylorSaddle.lean::abs_Lob_taylor_saddle`, sorry-free:
+
+    | Lambda(theta) - ( Lambda(th*) + (sqrt3/2)(theta - th*)^2 ) |
+        <= M |theta - th*|^3 / 6,      th* = 5 pi / 6
+
+for any `M` bounding `1/sin^2` between the two points.
+
+**The linear term is absent, not dropped.** `Lambda'(th*) = -log(2 sin th*) =
+-log 1 = 0` exactly -- the saddle condition again, and the same one
+`KashaevArgmax` locates discretely. The quadratic coefficient is
+`Lambda''(th*)/2 = -cot(th*)/2 = sqrt3/2`, so the Hessian of the Kashaev
+exponent `-(2N/pi)Lambda` at the saddle is `-(2N/pi)sqrt3` -- the `|cot th*|`
+that `c_sigma = 2 sin th* |cot th*|^{-1/2}` and `|tau_DG| = |cot th*|/2` are
+built from. `cot_five_pi_div_six : cos(5pi/6)/sin(5pi/6) = -sqrt3` is now a
+named lemma, matching `saddle_forces_cot`'s conclusion from the other side.
+
+### New Mathlib-gap infrastructure: `QOU/MathlibExt/TaylorRemainder.lean`
+
+Mathlib's `taylor_mean_remainder_lagrange` is stated through `ContDiffOn` and
+`iteratedDerivWithin`. Every function in this corpus arrives instead as an
+explicit chain of `HasDerivAt`s (`hasDerivAt_Lob`, `hasDerivAt_log_two_sin`,
+`hasDerivAt_cos_div_sin`), and restating those as a `ContDiffOn` is more work
+than the theorem. So:
+
+    taylor_two_integral_remainder
+        f b = f a + f1 a (b-a) + f2 a (b-a)^2/2 + int_a^b f3 t (b-t)^2/2 dt
+    abs_taylor_two_le
+        |f b - (quadratic model at a)| <= M |b-a|^3 / 6
+    integral_sq_weight
+        int_a^b (b-t)^2/2 dt = (b-a)^3/6
+
+ONE application of the FTC, against `F t = f t + f1 t (b-t) + f2 t (b-t)^2/2`,
+whose derivative is `f3 t (b-t)^2/2` because the two `f1` terms and the two
+`f2` terms cancel in pairs. Same trick as `TrapezoidRule.lean`'s
+`F := w f' - w' f`, and it works for the same reason: choose the primitive so
+the telescoping is visible and a three-step induction becomes a single FTC.
+`b` may be on either side of `a`; both orders are proved.
+
+### The constant 1/6 is sharp, and the probe shows it
+
+`computations/probes/lob_taylor_saddle_probe.py`: the bound holds at every
+offset tested, and `residual/|d|^3` converges to `0.6712 -> 2/3`, which is
+exactly `|Lambda'''(th*)|/6 = (1/sin^2 th*)/6 = 4/6`. The bound/residual ratio
+falls to 1.04x as `d` shrinks. So `1/6` is the true constant, not a slack
+estimate -- worth stating because the `O(1/N^2)` bound in (A) is loose by
+50x-20000x and it would be easy to assume every constant here is.
+
+### Lean gotcha recorded
+
+`have h : |b - a| = a - b := abs_of_nonpos (by linarith)` FAILS. `abs_of_nonpos`
+produces `-(b-a)`, which is not defeq to `a-b`, so unification never determines
+the implicit argument and the `by linarith` side goal is left with a
+metavariable -- the error surfaces as "linarith failed" on a goal it could
+prove in one step, with no goal shown. Write
+`by rw [abs_of_nonpos (by linarith : b - a <= 0)]; ring`.
+
+Also: rewrite `cot_five_pi_div_six` BEFORE `sin_five_pi_div_six`. Rewriting the
+sine first turns `cos th*/sin th*` into `cos th*/(1/2)` and the cot lemma no
+longer matches.
+
+### What is left
+
+Step 3 (the Gaussian sum, via `hasSum_gaussian_theta_tilt`) and step 4 (reading
+off `hc`/`htau`). Steps 1 and 2 are done. The join is the remaining work: (A)'s
+sum-to-integral bound and this expansion have independent error terms, and
+combining them needs the `theta`-remainder controlled uniformly over the `k`
+that matter. `KashaevArgmax` confines those to a neighbourhood of `k*`, where
+both bounds are uniformly good -- that is the shape of step 3's setup.

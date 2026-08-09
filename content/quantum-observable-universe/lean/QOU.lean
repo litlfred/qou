@@ -123,6 +123,7 @@ import QOU.Knot.LogSincNearZero
 import QOU.Knot.LobNearZero
 import QOU.Knot.KashaevAsymptotic
 import QOU.Knot.KashaevArgmax
+import QOU.Knot.LobTaylorSaddle
 import QOU.Knot.WhiteheadSaddleClausen
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
@@ -346,6 +347,7 @@ import QOU.MathlibExt.TrapezoidRule
 import QOU.MathlibExt.CorrectedTrapezoid
 import QOU.MathlibExt.CompositeEulerMaclaurin
 import QOU.MathlibExt.SinCubeBounds
+import QOU.MathlibExt.TaylorRemainder
 import QOU.MathlibExt.RpowAlgebra
 import QOU.Braiding.HnMarkovTrace
 import QOU.Braiding.TrMHopfSigma1SqClosedForm
