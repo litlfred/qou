@@ -5,13 +5,13 @@
   "paths": {
     "ts": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.ts",
     "md": "content/quantum-observable-universe/q-geometric-langlands/q-gl-fiber-functor.md",
-    "lean": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean"
+    "lean": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands/q_gl_fiber_functor.lean"
   },
   "source_hashes": {
     "md": "400473245959",
     "ts": "64cc48f765c5",
-    "lean": "375b4a6608f0",
-    "lean_statement": "0461406c890d"
+    "lean": "209c0ecb41fe",
+    "lean_statement": "253461d0b083"
   },
   "criteria": {
     "voice-status-leak": [
@@ -289,10 +289,10 @@
         "field_hash": {
           "md": "400473245959",
           "ts": "64cc48f765c5",
-          "lean": "375b4a6608f0",
-          "lean_statement": "0461406c890d"
+          "lean": "209c0ecb41fe",
+          "lean_statement": "253461d0b083"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -300,10 +300,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/QGeometricLanglands.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-08-09T23:00:51.848Z",
+        "reviewed_sha": "f900d61a00d822d0a35d147560ff3cc870894172"
       }
     ],
     "wall-base-ring-minimal": [
@@ -311,10 +309,10 @@
         "field_hash": {
           "md": "400473245959",
           "ts": "64cc48f765c5",
-          "lean": "375b4a6608f0",
-          "lean_statement": "0461406c890d"
+          "lean": "209c0ecb41fe",
+          "lean_statement": "253461d0b083"
         },
-        "result": "warn",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
@@ -322,8 +320,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T23:00:51.848Z",
+        "reviewed_sha": "f900d61a00d822d0a35d147560ff3cc870894172"
       }
     ],
     "q-usage-regime-detected": [
@@ -1812,5 +1810,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T23:00:51.848Z"
 }

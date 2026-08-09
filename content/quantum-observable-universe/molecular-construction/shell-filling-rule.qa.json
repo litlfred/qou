@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "470c9c3f8315",
     "ts": "910053cb3da7",
-    "lean": "fa53c7ee71f8",
-    "lean_statement": "18d66181b43b"
+    "lean": "ebe6dc59d742",
+    "lean_statement": "88a6d357cda1"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -303,10 +303,10 @@
         "field_hash": {
           "md": "470c9c3f8315",
           "ts": "910053cb3da7",
-          "lean": "fa53c7ee71f8",
-          "lean_statement": "18d66181b43b"
+          "lean": "ebe6dc59d742",
+          "lean_statement": "88a6d357cda1"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -314,10 +314,8 @@
           "script_hash": "5c1ec1e16bd8",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean:1: Lean file mixes a real-field type (ℝ / Real.* / LinearOrderedField) with generic-R (CommRing / {R : Type*}) markers — split into two files per CLAUDE.md §7c, OR acknowledge the specialisation (a §7c note in authorNotes/.md) if the ℝ realisation legitimately consumes the generic construction. | content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-08-09T23:00:32.445Z",
+        "reviewed_sha": "9d4618a251b22a9dd8e019055dea258df7172726"
       }
     ],
     "wall-base-ring-minimal": [
@@ -325,8 +323,8 @@
         "field_hash": {
           "md": "470c9c3f8315",
           "ts": "910053cb3da7",
-          "lean": "fa53c7ee71f8",
-          "lean_statement": "18d66181b43b"
+          "lean": "ebe6dc59d742",
+          "lean_statement": "88a6d357cda1"
         },
         "result": "pass",
         "reviewer": {
@@ -336,8 +334,8 @@
           "script_hash": "c32929b594d2",
           "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
         },
-        "reviewed_at": "2026-08-09T22:20:05.350Z",
-        "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+        "reviewed_at": "2026-08-09T23:00:32.445Z",
+        "reviewed_sha": "9d4618a251b22a9dd8e019055dea258df7172726"
       }
     ],
     "q-usage-regime-detected": [
@@ -2154,5 +2152,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T23:00:32.445Z"
 }
