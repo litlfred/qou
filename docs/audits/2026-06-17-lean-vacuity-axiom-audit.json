@@ -1,15 +1,15 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T22:12:44.663Z",
+  "generated": "2026-08-09T22:36:07.598Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 2765,
-  "files_flagged": 172,
-  "total_defects": 64,
+  "files_flagged": 171,
+  "total_defects": 57,
   "total_exempt": 162,
   "categories": {
-    "proof-no-trivial-true": 22,
+    "proof-no-trivial-true": 17,
     "proof-no-provable-axiom": 11,
-    "proof-no-unused-hypothesis-rfl": 16,
+    "proof-no-unused-hypothesis-rfl": 14,
     "proof-no-self-assuming-projection": 8,
     "proof-docstring-sorry-mismatch": 3,
     "proof-claims-unencoded": 3,
@@ -1777,31 +1777,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean": [
       {
-        "line": 951,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem branch_31_to_3 : (1 : ℕ) = 1 := rfl",
-        "decl": "branch_31_to_3",
-        "severity": "critical"
-      },
-      {
-        "line": 954,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem branch_31_to_21 : (1 : ℕ) = 1 := rfl",
-        "decl": "branch_31_to_21",
-        "severity": "critical"
-      },
-      {
-        "line": 957,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem branch_31_to_111 : (0 : ℕ) = 0 := rfl",
-        "decl": "branch_31_to_111",
-        "severity": "critical"
-      },
-      {
-        "line": 1026,
+        "line": 1037,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)",
@@ -1812,7 +1788,7 @@
         "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 1081,
+        "line": 1092,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem knot_invariant_convergence",
@@ -3704,42 +3680,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `inst.cpt_trace_preserved` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean": [
-      {
-        "line": 44,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem yangBaxter_energy_zero (step : DivisionStepType) (h : step = .yangBaxter) :",
-        "decl": "yangBaxter_energy_zero",
-        "severity": "critical"
-      },
-      {
-        "line": 44,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem yangBaxter_energy_zero (step : DivisionStepType) (h : step = .yangBaxter) :",
-        "decl": "yangBaxter_energy_zero",
-        "severity": "major",
-        "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `h` — absent from the conclusion, so the claim holds for every value of it"
-      },
-      {
-        "line": 49,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology-ascribed-literal",
-        "snippet": "theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :",
-        "decl": "farComm_energy_zero",
-        "severity": "critical"
-      },
-      {
-        "line": 49,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :",
-        "decl": "farComm_energy_zero",
-        "severity": "major",
-        "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean": [

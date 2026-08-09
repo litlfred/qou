@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-08-09T22:12:44.667Z",
+  "updated_at": "2026-08-09T22:36:07.600Z",
   "entries": {
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean::borromean_crossing_minimal::proof-no-decide-masking": {
       "category": "proof-no-decide-masking",
@@ -74,9 +74,9 @@
       "verdict": "genuine",
       "file_sha": "e04fbfcd5d7d",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `DeltaMaxNumericalScaleContext` carries field `holds` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `holds` is outside CONCLUSION_FIELD."
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "disposition": "restate-or-demote",
+      "evidence": "Doubly vacuous: a self-assuming projection (`ctx.holds`) whose conclusion is also a tautology `(1 : ℝ) = 1`. Even if the context class were inhabited, the theorem would assert nothing — `1 = 1` is provable by `rfl` without the class. The docstring claims a `numerical scale of the uniform bound`, so the intended content is a bound on Δ_max. Fix: state the bound with its actual numeral and either prove it or carry it as a `conjecture` with `-- Ref:`."
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean::plancherel_via_recipe::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -85,9 +85,9 @@
       "verdict": "genuine",
       "file_sha": "582b1a26e769",
       "reviewer": "agent",
-      "reviewed_at": "2026-08-09T20:45:00Z",
-      "disposition": "restate-to-derive-or-demote",
-      "evidence": "Self-assuming projection. The conditional class `PlancherelViaRecipeContext` carries field `holds` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `holds` is outside CONCLUSION_FIELD."
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "disposition": "restate-or-demote",
+      "evidence": "Doubly vacuous, same shape as `delta_max_numerical_scale`: `[ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 := ctx.holds`. The class is projected but the conclusion is a tautology, so the declaration is content-free with or without an instance. Fix: state the Plancherel identity the recipe is supposed to produce (a sum over partitions equalling 1 is the plausible intent — that is a real claim) and prove or demote it."
     },
     "content/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean::markov_gns_embedding::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -115,8 +115,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 69,
-      "verdict": "needs-agent",
-      "file_sha": "d3f87cee121c"
+      "verdict": "genuine",
+      "file_sha": "d3f87cee121c",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Tautology ascribed to a literal. The name asserts a count of colour sectors; the Lean proves `(3 : ℕ) = 3 := rfl`, which holds regardless of how many colour sectors exist. No definition of the sector set appears in the statement, so nothing connects the claim to the corpus. Fix: state `Fintype.card <sector type> = 3` (or the cardinality of whatever set Chapter 6 §Braid structure names) and discharge it; a `decide`/`rfl` on the real carrier is fine. Banned by Strict Lean Discipline §5 (`X = X := rfl`).",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/brings-surface/levi-form-defect.lean::matter_locus_nonempty::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -254,8 +258,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 37,
-      "verdict": "needs-agent",
-      "file_sha": "c05762810c54"
+      "verdict": "genuine",
+      "file_sha": "c05762810c54",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Tautology ascribed to a literal. The name asserts that H₂ has exactly two 1-dimensional irreps; the Lean proves `(2 : ℕ) = 2 := rfl`. The surrounding docstring works out the genuine C = bar computation on the two eigenvalues {q, −q⁻¹}, which is real content the statement never reaches. Fix: state the cardinality of the 1-dim irrep set (or the two-eigenvalue characterisation the docstring derives) and prove it.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/knots-particles-confinement/confinement-grading-correspondence-conditional.lean::HeckeAlgebra::proof-no-provable-axiom": {
       "category": "proof-no-provable-axiom",
@@ -321,8 +329,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 9,
-      "verdict": "needs-agent",
-      "file_sha": "e04fbfcd5d7d"
+      "verdict": "genuine",
+      "file_sha": "e04fbfcd5d7d",
+      "disposition": "restate-or-demote",
+      "evidence": "Doubly vacuous: a self-assuming projection (`ctx.holds`) whose conclusion is also a tautology `(1 : ℝ) = 1`. Even if the context class were inhabited, the theorem would assert nothing — `1 = 1` is provable by `rfl` without the class. The docstring claims a `numerical scale of the uniform bound`, so the intended content is a bound on Δ_max. Fix: state the bound with its actual numeral and either prove it or carry it as a `conjecture` with `-- Ref:`.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/AppendixSurreals/Conjectures.lean::exists_knot::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -426,48 +438,29 @@
       "reviewed_at": "2026-08-09T21:10:00Z",
       "disposition": "restate-to-derive-or-demote"
     },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::branch_31_to_3::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 951,
-      "verdict": "needs-agent",
-      "file_sha": "703edc6e9aab"
-    },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::branch_31_to_21::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 954,
-      "verdict": "needs-agent",
-      "file_sha": "703edc6e9aab"
-    },
-    "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::branch_31_to_111::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 957,
-      "verdict": "needs-agent",
-      "file_sha": "703edc6e9aab"
-    },
     "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::convergence_bound::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 1026,
-      "verdict": "genuine",
-      "file_sha": "703edc6e9aab",
+      "line": 1037,
+      "verdict": "needs-agent",
+      "file_sha": "1bd42f7c7b3c",
       "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `ConvergenceBound` is inhabited, nothing that inhabits it supplies content. Instances read by hand: only `convergenceBound_refl … f f` — the diagonal, closed by simp/positivity. (Automated shape test saw: convergenceBound_refl(degenerate-slice).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote"
+      "disposition": "restate-to-derive-or-demote",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean::knot_invariant_convergence::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
       "pattern": "field-projection",
-      "line": 1081,
-      "verdict": "genuine",
-      "file_sha": "703edc6e9aab",
+      "line": 1092,
+      "verdict": "needs-agent",
+      "file_sha": "1bd42f7c7b3c",
       "evidence": "Self-assuming projection: `.bound` has the conclusion's type and is returned verbatim, and though `KnotInvariantConvergence` is inhabited, nothing that inhabits it supplies content. Instances read by hand: Fact-wrapper plus `…_refl` diagonal; no instance supplies the general bound. (Automated shape test saw: knotInvariantConvergence_of_fact(fact-wrapper), knotInvariantConvergence_refl(degenerate-slice).)",
       "reviewer": "agent",
       "reviewed_at": "2026-08-09T21:10:00Z",
-      "disposition": "restate-to-derive-or-demote"
+      "disposition": "restate-to-derive-or-demote",
+      "stale_prev_verdict": "genuine"
     },
     "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean::matrixChain_eq_buildChains_axiom::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -646,8 +639,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 10,
-      "verdict": "needs-agent",
-      "file_sha": "582b1a26e769"
+      "verdict": "genuine",
+      "file_sha": "582b1a26e769",
+      "disposition": "restate-or-demote",
+      "evidence": "Doubly vacuous, same shape as `delta_max_numerical_scale`: `[ctx : PlancherelViaRecipeContext] : (1 : ℝ) = 1 := ctx.holds`. The class is projected but the conclusion is a tautology, so the declaration is content-free with or without an instance. Fix: state the Plancherel identity the recipe is supposed to produce (a sum over partitions equalling 1 is the plausible intent — that is a real claim) and prove or demote it.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean::a4_betti_magnitude_closure::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -678,8 +675,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 202,
-      "verdict": "needs-agent",
-      "file_sha": "a8cafd85a8ec"
+      "verdict": "genuine",
+      "file_sha": "a8cafd85a8ec",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Tautology ascribed to a literal. The statement's own comment block spells out the intended claim — the degree-0 dimension of Ω¹(A) is 0 because the symmetric channel sees σ_i → q and the restricted multiplication kernel is trivial — and then concludes `(0 : ℕ) = 0 := rfl`. The reasoning is in a comment; the Lean carries none of it. Fix: state the dimension of the degree-0 part of Ω¹(A) and prove it, or demote to a documented conjecture.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Eightfold/Sym2Gate.lean::su3_sym2_irreducible::proof-no-trivial-true": {
       "category": "proof-no-trivial-true",
@@ -732,8 +733,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 183,
-      "verdict": "needs-agent",
-      "file_sha": "55b48bdc9dc3"
+      "verdict": "genuine",
+      "file_sha": "55b48bdc9dc3",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Tautology ascribed to a literal. Docstring: `the degree-0 subspace has dimension 1 (the symmetric eigenspace)`; the Lean proves `(1 : ℕ) = 1 := rfl`. The neighbouring `degree-≥1 subspace has dimension 5` claim has the same shape. Fix: state `finrank` (or the relevant dimension function) of the graded piece and prove it.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean::habiro_flow_solutions_realise_synthesis::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
@@ -1105,8 +1110,12 @@
       "category": "proof-no-trivial-true",
       "pattern": "reflexive-tautology-ascribed-literal",
       "line": 62,
-      "verdict": "needs-agent",
-      "file_sha": "3e2de7d5f873"
+      "verdict": "genuine",
+      "file_sha": "3e2de7d5f873",
+      "disposition": "restate-against-a-definition",
+      "evidence": "Tautology ascribed to a literal. Docstring: `the squaring exponent equals the number of quark constituents`; the Lean proves `(2 : ℕ) = 2 := rfl`. That docstring names an *equality between two defined quantities*, which is a genuine and easily-stated proposition — the tautology drops both sides. Fix: define/locate the exponent and the constituent count and state their equality.",
+      "reviewed_at": "2026-08-09T22:30:00Z",
+      "reviewer": "agent"
     },
     "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean::nuclear_knot_classification::proof-no-unused-hypothesis-rfl": {
       "category": "proof-no-unused-hypothesis-rfl",
@@ -1250,34 +1259,6 @@
       "reviewed_at": "2026-08-09T20:45:00Z",
       "disposition": "restate-to-derive-or-demote",
       "evidence": "Self-assuming projection. The conditional class `CPTClosure` carries field `ClosedBraid` whose declared type is character-identical to the theorem's conclusion, and the body returns it verbatim — so the theorem derives nothing. This is the AGENTS.md §3b-cond item-5 failure directly (\"the class axiomatises hypotheses, not the conclusion; the theorem must DERIVE its conclusion from them\"). The class is never inhabited, which for an open conjecture is expected and is NOT itself the defect — carrying the conclusion is. Fix: restate so the class carries the genuine sub-hypotheses and the theorem composes them (exemplar: QOU/FluidDynamics/q_bkm_criterion.lean); if no honest derivation exists, demote to conjecture — a claim change needing owner sign-off. Detected by the type-match pass; the name gate missed it because `ClosedBraid` is outside CONCLUSION_FIELD."
-    },
-    "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean::yangBaxter_energy_zero::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 44,
-      "verdict": "needs-agent",
-      "file_sha": "497df1c0b6e2"
-    },
-    "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean::yangBaxter_energy_zero::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 44,
-      "verdict": "needs-agent",
-      "file_sha": "497df1c0b6e2"
-    },
-    "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean::farComm_energy_zero::proof-no-trivial-true": {
-      "category": "proof-no-trivial-true",
-      "pattern": "reflexive-tautology-ascribed-literal",
-      "line": 49,
-      "verdict": "needs-agent",
-      "file_sha": "497df1c0b6e2"
-    },
-    "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean::farComm_energy_zero::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 49,
-      "verdict": "needs-agent",
-      "file_sha": "497df1c0b6e2"
     },
     "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean::q_beta_spectral_conditional::proof-no-self-assuming-projection": {
       "category": "proof-no-self-assuming-projection",
