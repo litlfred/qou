@@ -468,3 +468,64 @@ complex identity, because `|y₁| = 1.52 > 1` and `y₁, y₂` are not real.
 3. Connectedness + pinning the constant (the `Landen` pattern in the corpus).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 52 — the branch conditions travel, and item 2 becomes a question about a region
+
+Same module, `QOU/QBeta/FiveTwoComplexPentagon.lean`. **Item 2 changes shape:**
+it is no longer bookkeeping, it is one geometric question.
+
+### The observation
+
+`log a₃ = log(1−x) − log(1−xy)` is not an identity, but the **defect**
+
+    d₃(w) = log a₃(w) − log(1−w) + log(1−wy)
+
+is holomorphic wherever the three logarithms are, and its derivative vanishes
+*identically as a rational function*:
+
+    a₃′/a₃ + 1/(1−w) − y/(1−wy)
+      = [(y−1) + (1−wy) − y(1−w)] / ((1−w)(1−wy)) = 0.
+
+All five defects go the same way (checked each: `d₃`, `d₃′`, `d₄′`, `d₅`, `d₅′`).
+So a defect that vanishes at one point of an open **connected** region vanishes
+on all of it — `eq_zero_of_hasDerivAt_zero`, over
+`IsOpen.is_const_of_deriv_eq_zero`.
+
+This avoids the discreteness argument (`exp(d) = 1` ⟹ `d ∈ 2πiℤ` ⟹ locally
+constant) entirely: the derivative is *already* zero, so the same machinery the
+pentagon itself uses does the transport.
+
+### What landed
+
+* `PentagonRegular y w` — the four `rogersDomain` memberships. Everything else
+  (`w ≠ 0`, `1−w ≠ 0`, `y ≠ 0`, `1−y ≠ 0`, `1−wy ≠ 0`, slit-plane membership for
+  each logarithm) is a **consequence**, proved in the namespace.
+* `hasDerivAt_defectThree/Three'/Four'/Five/Five'` — all five derivatives vanish.
+* `eq_zero_of_hasDerivAt_zero` — the propagation principle.
+* `defects_eq_zero_of_real` — a real base point supplies all five base values.
+* `pentagonSum_eq_of_region` / `..._of_real` — **on any open connected set of `x`
+  on which the pentagon stays regular and which contains a real point of
+  `(0,1)`, the complex five-term sum is constant.** No branch condition is
+  assumed at the far point; they are transported.
+
+Sorry-free, standard axioms, per-module `lake build` exit 0 with the `.olean`
+deleted first, no linter warnings.
+
+### ⚠ What is still owed — sharpened
+
+1. ~~chain-rule assembly~~ (Route 51).
+2. **A region.** Not "continue the branch conditions" any more, but: exhibit an
+   open connected set of `x` that stays `PentagonRegular` and reaches `(0,1)`.
+   For the 5₂ saddle values none is exhibited, and this is exactly where
+   flattening / `ker ν` can obstruct — a regular region reaching the real square
+   would *force* the naive expansions, so if the flattening is non-trivial no
+   such region can exist. The obstruction and the missing region are the same
+   fact seen twice.
+3. **Pinning the constant as a number.** "Constant on the region" does not yet
+   read `π²/2`, because `cRogersL` has not been identified with the corpus's real
+   `rogersL` on `(0,1)`. That identification is a separate, tractable job
+   (`cLiTwoExt` vs `LiTwo` on the unit interval).
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

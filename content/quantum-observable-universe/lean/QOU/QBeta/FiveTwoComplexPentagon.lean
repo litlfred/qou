@@ -21,25 +21,38 @@ factors `(y−1)/(1−xy)²`, `−y`, `(1−y)y/(1−xy)²` that §7h assumed ar
 (`hasDerivAt_argThree/Four/Five`), so nothing about the differentiation is taken
 on faith any more.
 
-## Why the branch conditions stay as hypotheses
+## Why the branch conditions are hypotheses — and how far they travel
 
 They are not identities. `log a₃ = log(1−x) − log(1−xy)` fails whenever the two
 sides land on different sheets, and Route 45 measured the pentagon sum drifting
-by exactly that amount. Making them hypotheses is the honest encoding: this
-module proves the pentagon is locally constant *wherever they hold*, and says
-nothing about where that is.
+by exactly that amount. So they enter as hypotheses. But they are not *stuck*
+there, and that is the second half of this module:
 
-`pentagon_branch_conditions_of_real` then shows the hypothesis set is
-**satisfiable** — every one of them holds on the positive real square
-`0 < x, y < 1`. That matters because an unsatisfiable hypothesis set would make
-`hasDerivAt_pentagonSum` vacuous, and nothing in its statement rules that out.
+* `pentagon_branch_conditions_of_real` — all five hold on the positive real
+  square `0 < x, y < 1`. This is first of all a **non-vacuity** check: an
+  unsatisfiable hypothesis set would make `hasDerivAt_pentagonSum` prove
+  anything, and nothing in its statement rules that out.
+* each **defect** `d₃ = log a₃ − log(1−w) + log(1−wy)` and its four companions is
+  holomorphic where the logarithms are, with derivative identically `0`
+  (`hasDerivAt_defectThree` …). Hence `eq_zero_of_hasDerivAt_zero`: a defect that
+  vanishes at one point of an open connected region vanishes on all of it.
+* so `pentagonSum_eq_of_region_of_real` — on **any** open connected set of `x` on
+  which the pentagon stays regular and which contains a real point of `(0,1)`,
+  the complex five-term sum is constant.
+
+The branch bookkeeping is therefore reduced to a single geometric question:
+*does such a region exist?* That is the honest residue of Routes 45–46 — no
+longer bookkeeping, but a statement about a region.
 
 ## ⚠ What this does NOT do
 
-It does not prove the five-term identity for `cRogersL`. Two things are still
-owed: continuation of the branch conditions off the real square (Neumann's
-`ker ν` again, not a formality), and pinning the constant. The **real** five-term
-identity on `(0,1)` is separately proved, sorry-free, in
+It does not prove the five-term identity for `cRogersL`, and it exhibits **no**
+region for the 5₂ saddle values `y₁, y₂` — exhibiting one is exactly where
+flattening (Neumann's `ker ν`) can obstruct. The constant is also still not
+pinned as a number: `cRogersL` has not been identified with the corpus's real
+`rogersL` on `(0,1)`, so "constant on the region" does not yet read `π²/2`.
+
+The **real** five-term identity on `(0,1)` is separately proved, sorry-free, in
 `QOU/QBeta/FiveTwoAbelFiveTerm.lean` (`rogersL_fiveTerm`); what this lane needs
 and does not have is the complex one, because the 5₂ saddle roots `y₁, y₂` are
 complex with `|y₁| = 1.52 > 1`.
@@ -291,5 +304,288 @@ theorem hasDerivAt_pentagonSum_of_real
   · rw [c5]; exact ofReal_mem_rogersDomain h5p h5lt
 
 end RealSquare
+
+/-! ### Continuing the branch conditions
+
+The branch conditions are the delicate input, and the reason is that they are
+**not** identities — `log a₃ = log(1−x) − log(1−xy)` compares two sheets and
+Route 45 measured the pentagon drifting when they disagree. But the *defect*
+
+    d₃(w) = log a₃(w) − log(1−w) + log(1−wy)
+
+is holomorphic wherever all three logarithms are, and its derivative vanishes
+identically: `a₃′/a₃ + 1/(1−w) − y/(1−wy) = 0` as a rational function. So `d₃` is
+locally constant, hence constant on any open connected region, hence `0`
+throughout a region containing one point where it vanishes.
+
+All five defects behave the same way, so the whole branch bookkeeping reduces to
+**one** geometric question: is there an open connected set of `x` on which the
+pentagon's arguments stay off both cuts and which reaches a base point? That is
+the honest residue of Routes 45–46 — not bookkeeping any more, but a statement
+about a region, and for the 5₂ saddle it is exactly where flattening can fail.
+
+⚠ No such region is exhibited here for the 5₂ saddle values. What is proved is
+the propagation principle and the base point. -/
+
+/-- The pentagon's analytic side conditions at `w`, for a fixed `y`: all four
+`x`-dependent arguments avoid both real cuts. Everything else the pentagon needs
+— `w ≠ 0`, `1−w ≠ 0`, `y ≠ 0`, `1−y ≠ 0`, `1−wy ≠ 0`, and slit-plane membership
+for each logarithm — is a consequence. -/
+def PentagonRegular (y w : ℂ) : Prop :=
+  w ∈ rogersDomain ∧ (1 - w) / (1 - w * y) ∈ rogersDomain
+    ∧ (1 : ℂ) - w * y ∈ rogersDomain ∧ (1 - y) / (1 - w * y) ∈ rogersDomain
+
+namespace PentagonRegular
+
+variable {y w : ℂ}
+
+theorem ne_zero (h : PentagonRegular y w) : w ≠ 0 := ne_zero_of_mem_rogersDomain h.1
+
+theorem one_sub_ne_zero (h : PentagonRegular y w) : (1 : ℂ) - w ≠ 0 :=
+  one_sub_ne_zero_of_mem_rogersDomain h.1
+
+theorem den_ne_zero (h : PentagonRegular y w) : (1 : ℂ) - w * y ≠ 0 :=
+  ne_zero_of_mem_rogersDomain h.2.2.1
+
+theorem mul_ne_zero' (h : PentagonRegular y w) : w * y ≠ 0 := by
+  have := one_sub_ne_zero_of_mem_rogersDomain h.2.2.1
+  simpa using this
+
+theorem y_ne_zero (h : PentagonRegular y w) : y ≠ 0 :=
+  fun hy => h.mul_ne_zero' (by simp [hy])
+
+theorem one_sub_y_ne_zero (h : PentagonRegular y w) : (1 : ℂ) - y ≠ 0 :=
+  fun hy => ne_zero_of_mem_rogersDomain h.2.2.2 (by rw [hy]; simp)
+
+/-- On the positive real square, every point is regular. -/
+theorem of_real {x y : ℝ} (hx0 : 0 < x) (hx1 : x < 1) (hy0 : 0 < y) (hy1 : y < 1) :
+    PentagonRegular (y : ℂ) (x : ℂ) := by
+  obtain ⟨-, hd, hdlt, h3p, h3lt, h5p, h5lt⟩ := pentagon_args_mem_Ioo hx0 hx1 hy0 hy1
+  have cD : (1 : ℂ) - (x : ℂ) * (y : ℂ) = ((1 - x * y : ℝ) : ℂ) := by push_cast; ring
+  have c3 : ((1 : ℂ) - (x : ℂ)) / (1 - (x : ℂ) * (y : ℂ))
+      = (((1 - x) / (1 - x * y) : ℝ) : ℂ) := by push_cast; ring
+  have c5 : ((1 : ℂ) - (y : ℂ)) / (1 - (x : ℂ) * (y : ℂ))
+      = (((1 - y) / (1 - x * y) : ℝ) : ℂ) := by push_cast; ring
+  exact ⟨ofReal_mem_rogersDomain hx0 hx1, by rw [c3]; exact ofReal_mem_rogersDomain h3p h3lt,
+    by rw [cD]; exact ofReal_mem_rogersDomain hd hdlt,
+    by rw [c5]; exact ofReal_mem_rogersDomain h5p h5lt⟩
+
+end PentagonRegular
+
+/-- **The propagation principle.** A defect that is holomorphic with vanishing
+derivative on an open connected set and vanishes somewhere on it vanishes
+everywhere on it. This is what turns a branch condition checked at one point into
+one that holds on a whole region. -/
+theorem eq_zero_of_hasDerivAt_zero {f : ℂ → ℂ} {S : Set ℂ} (hS : IsOpen S)
+    (hSc : IsPreconnected S) (hf : ∀ w ∈ S, HasDerivAt f 0 w)
+    {x₀ x : ℂ} (hx₀ : x₀ ∈ S) (hx : x ∈ S) (h0 : f x₀ = 0) : f x = 0 := by
+  have hd : DifferentiableOn ℂ f S := fun w hw => (hf w hw).differentiableAt.differentiableWithinAt
+  have hz : Set.EqOn (deriv f) 0 S := fun w hw => (hf w hw).deriv
+  rw [hS.is_const_of_deriv_eq_zero hSc hd hz hx hx₀, h0]
+
+/-! #### The five defects -/
+
+/-- `log a₃ − log(1−w) + log(1−wy)`; the branch condition `e3` is its vanishing. -/
+noncomputable def defectThree (y w : ℂ) : ℂ :=
+  Complex.log ((1 - w) / (1 - w * y)) - Complex.log (1 - w) + Complex.log (1 - w * y)
+
+/-- `log(1−a₃) − log w − log(1−y) + log(1−wy)`; the branch condition `e3'`. -/
+noncomputable def defectThree' (y w : ℂ) : ℂ :=
+  Complex.log (1 - (1 - w) / (1 - w * y)) - Complex.log w - Complex.log (1 - y)
+    + Complex.log (1 - w * y)
+
+/-- `log(wy) − log w − log y`; the branch condition `e4'`. -/
+noncomputable def defectFour' (y w : ℂ) : ℂ :=
+  Complex.log (1 - (1 - w * y)) - Complex.log w - Complex.log y
+
+/-- `log a₅ − log(1−y) + log(1−wy)`; the branch condition `e5`. -/
+noncomputable def defectFive (y w : ℂ) : ℂ :=
+  Complex.log ((1 - y) / (1 - w * y)) - Complex.log (1 - y) + Complex.log (1 - w * y)
+
+/-- `log(1−a₅) − log y − log(1−w) + log(1−wy)`; the branch condition `e5'`. -/
+noncomputable def defectFive' (y w : ℂ) : ℂ :=
+  Complex.log (1 - (1 - y) / (1 - w * y)) - Complex.log y - Complex.log (1 - w)
+    + Complex.log (1 - w * y)
+
+section Defects
+
+variable {y x : ℂ}
+
+/-- `d/dw log(1−w) = −(1−x)⁻¹`. -/
+theorem hasDerivAt_clog_one_sub (h : (1 : ℂ) - x ∈ Complex.slitPlane) :
+    HasDerivAt (fun w : ℂ => Complex.log (1 - w)) (-((1 - x)⁻¹)) x := by
+  have hinner : HasDerivAt (fun w : ℂ => 1 - w) (-1) x := by
+    simpa using (hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_id x)
+  have h1 : HasDerivAt (Complex.log ∘ fun w : ℂ => 1 - w) ((1 - x)⁻¹ * (-1)) x :=
+    (Complex.hasDerivAt_log h).comp x hinner
+  simpa using h1
+
+/-- `d/dw log(1−wy) = (1−xy)⁻¹·(−y)`. -/
+theorem hasDerivAt_clog_one_sub_mul (h : (1 : ℂ) - x * y ∈ Complex.slitPlane) :
+    HasDerivAt (fun w : ℂ => Complex.log (1 - w * y)) ((1 - x * y)⁻¹ * (-y)) x := by
+  have h1 : HasDerivAt (Complex.log ∘ fun w : ℂ => 1 - w * y) ((1 - x * y)⁻¹ * (-y)) x :=
+    (Complex.hasDerivAt_log h).comp x (hasDerivAt_argFour y x)
+  exact h1
+
+theorem hasDerivAt_defectThree (h : PentagonRegular y x) :
+    HasDerivAt (defectThree y) 0 x := by
+  have hd := h.den_ne_zero
+  have hd' : (1 : ℂ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have hx1 := h.one_sub_ne_zero
+  obtain ⟨hx, h3, h4, -⟩ := h
+  have L3 := (Complex.hasDerivAt_log h3.1).comp x (hasDerivAt_argThree y hd)
+  have L1 := hasDerivAt_clog_one_sub (one_sub_mem_slitPlane_iff.mpr hx.2)
+  have L2 := hasDerivAt_clog_one_sub_mul h4.1
+  refine ((L3.sub L1).add L2).congr_deriv ?_
+  field_simp
+  ring
+
+theorem hasDerivAt_defectThree' (h : PentagonRegular y x) :
+    HasDerivAt (defectThree' y) 0 x := by
+  have hd := h.den_ne_zero
+  have hd' : (1 : ℂ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have hx0 := h.ne_zero
+  have hx1 := h.one_sub_ne_zero
+  have hy1 := h.one_sub_y_ne_zero
+  obtain ⟨hx, h3, h4, -⟩ := h
+  have hinner : HasDerivAt (fun w : ℂ => 1 - (1 - w) / (1 - w * y))
+      (-((y - 1) / (1 - x * y) ^ 2)) x := by
+    simpa using (hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_argThree y hd)
+  have L3' := (Complex.hasDerivAt_log (one_sub_mem_slitPlane_iff.mpr h3.2)).comp x hinner
+  have L0 := Complex.hasDerivAt_log hx.1
+  have L2 := hasDerivAt_clog_one_sub_mul h4.1
+  refine (((L3'.sub L0).sub (hasDerivAt_const x (Complex.log (1 - y)))).add L2).congr_deriv ?_
+  rw [show (1 : ℂ) - (1 - x) / (1 - x * y) = x * (1 - y) / (1 - x * y) by field_simp; ring]
+  field_simp
+  ring
+
+theorem hasDerivAt_defectFour' (h : PentagonRegular y x) :
+    HasDerivAt (defectFour' y) 0 x := by
+  have hx0 := h.ne_zero
+  have hy0 := h.y_ne_zero
+  obtain ⟨hx, -, h4, -⟩ := h
+  have hinner : HasDerivAt (fun w : ℂ => 1 - (1 - w * y)) y x :=
+    ((hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_argFour y x)).congr_deriv (by ring)
+  have L4' := (Complex.hasDerivAt_log (one_sub_mem_slitPlane_iff.mpr h4.2)).comp x hinner
+  have L0 := Complex.hasDerivAt_log hx.1
+  refine ((L4'.sub L0).sub (hasDerivAt_const x (Complex.log y))).congr_deriv ?_
+  rw [show (1 : ℂ) - (1 - x * y) = x * y by ring]
+  field_simp
+  ring
+
+theorem hasDerivAt_defectFive (h : PentagonRegular y x) :
+    HasDerivAt (defectFive y) 0 x := by
+  have hd := h.den_ne_zero
+  have hd' : (1 : ℂ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have hy1 := h.one_sub_y_ne_zero
+  obtain ⟨-, -, h4, h5⟩ := h
+  have L5 := (Complex.hasDerivAt_log h5.1).comp x (hasDerivAt_argFive y hd)
+  have L2 := hasDerivAt_clog_one_sub_mul h4.1
+  refine ((L5.sub (hasDerivAt_const x (Complex.log (1 - y)))).add L2).congr_deriv ?_
+  field_simp
+  ring
+
+theorem hasDerivAt_defectFive' (h : PentagonRegular y x) :
+    HasDerivAt (defectFive' y) 0 x := by
+  have hd := h.den_ne_zero
+  have hd' : (1 : ℂ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have hx1 := h.one_sub_ne_zero
+  have hy0 := h.y_ne_zero
+  have hy1 := h.one_sub_y_ne_zero
+  obtain ⟨hx, -, h4, h5⟩ := h
+  have hinner : HasDerivAt (fun w : ℂ => 1 - (1 - y) / (1 - w * y))
+      (-((1 - y) * y / (1 - x * y) ^ 2)) x := by
+    simpa using (hasDerivAt_const x (1 : ℂ)).sub (hasDerivAt_argFive y hd)
+  have L5' := (Complex.hasDerivAt_log (one_sub_mem_slitPlane_iff.mpr h5.2)).comp x hinner
+  have L1 := hasDerivAt_clog_one_sub (one_sub_mem_slitPlane_iff.mpr hx.2)
+  have L2 := hasDerivAt_clog_one_sub_mul h4.1
+  refine ((((L5'.sub (hasDerivAt_const x (Complex.log y))).sub L1).add L2)).congr_deriv ?_
+  rw [show (1 : ℂ) - (1 - y) / (1 - x * y) = y * (1 - x) / (1 - x * y) by field_simp; ring]
+  field_simp
+  ring
+
+end Defects
+
+/-! #### The payoff: a regular region reaching a base point -/
+
+/-- **The pentagon's derivative vanishes throughout a regular region that reaches
+a point where the branch conditions hold.**
+
+No branch condition is assumed at `x` itself — only at the base point `x₀`, and
+they are *transported* by `eq_zero_of_hasDerivAt_zero`. This is what the phrase
+"continue the branch conditions" reduces to. -/
+theorem hasDerivAt_pentagonSum_of_region {y : ℂ} {S : Set ℂ} (hS : IsOpen S)
+    (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular y w)
+    {x₀ x : ℂ} (hx₀ : x₀ ∈ S) (hx : x ∈ S)
+    (b3 : defectThree y x₀ = 0) (b3' : defectThree' y x₀ = 0)
+    (b4' : defectFour' y x₀ = 0) (b5 : defectFive y x₀ = 0)
+    (b5' : defectFive' y x₀ = 0) :
+    HasDerivAt (pentagonSum y) 0 x := by
+  have e3 := eq_zero_of_hasDerivAt_zero hS hSc
+    (fun w hw => hasDerivAt_defectThree (hreg w hw)) hx₀ hx b3
+  have e3' := eq_zero_of_hasDerivAt_zero hS hSc
+    (fun w hw => hasDerivAt_defectThree' (hreg w hw)) hx₀ hx b3'
+  have e4' := eq_zero_of_hasDerivAt_zero hS hSc
+    (fun w hw => hasDerivAt_defectFour' (hreg w hw)) hx₀ hx b4'
+  have e5 := eq_zero_of_hasDerivAt_zero hS hSc
+    (fun w hw => hasDerivAt_defectFive (hreg w hw)) hx₀ hx b5
+  have e5' := eq_zero_of_hasDerivAt_zero hS hSc
+    (fun w hw => hasDerivAt_defectFive' (hreg w hw)) hx₀ hx b5'
+  unfold defectThree at e3
+  unfold defectThree' at e3'
+  unfold defectFour' at e4'
+  unfold defectFive at e5
+  unfold defectFive' at e5'
+  obtain ⟨h1, h3, h4, h5⟩ := hreg x hx
+  exact hasDerivAt_pentagonSum h1 (ne_zero_of_mem_rogersDomain h4) h3 h4 h5
+    (by linear_combination e3) (by linear_combination e3') (by linear_combination e4')
+    (by linear_combination e5) (by linear_combination e5')
+
+/-- **The complex pentagon sum is constant on such a region.**
+
+This is as far as the derivative argument reaches. What it still does not give is
+a *region*: for the 5₂ saddle values `y₁, y₂` none is exhibited, and exhibiting
+one is exactly where flattening — Neumann's `ker ν` — can obstruct. -/
+theorem pentagonSum_eq_of_region {y : ℂ} {S : Set ℂ} (hS : IsOpen S)
+    (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular y w)
+    {x₀ x : ℂ} (hx₀ : x₀ ∈ S) (hx : x ∈ S)
+    (b3 : defectThree y x₀ = 0) (b3' : defectThree' y x₀ = 0)
+    (b4' : defectFour' y x₀ = 0) (b5 : defectFive y x₀ = 0)
+    (b5' : defectFive' y x₀ = 0) :
+    pentagonSum y x = pentagonSum y x₀ := by
+  have hd : ∀ w ∈ S, HasDerivAt (pentagonSum y) 0 w := fun w hw =>
+    hasDerivAt_pentagonSum_of_region hS hSc hreg hx₀ hw b3 b3' b4' b5 b5'
+  exact hS.is_const_of_deriv_eq_zero hSc
+    (fun w hw => (hd w hw).differentiableAt.differentiableWithinAt)
+    (fun w hw => (hd w hw).deriv) hx hx₀
+
+/-- **A real base point supplies all five base values.** `0 < x₀, y < 1` makes
+every defect vanish, by `pentagon_branch_conditions_of_real`. -/
+theorem defects_eq_zero_of_real {x y : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
+    (hy0 : 0 < y) (hy1 : y < 1) :
+    defectThree (y : ℂ) (x : ℂ) = 0 ∧ defectThree' (y : ℂ) (x : ℂ) = 0
+      ∧ defectFour' (y : ℂ) (x : ℂ) = 0 ∧ defectFive (y : ℂ) (x : ℂ) = 0
+      ∧ defectFive' (y : ℂ) (x : ℂ) = 0 := by
+  obtain ⟨e3, e3', e4', e5, e5'⟩ := pentagon_branch_conditions_of_real hx0 hx1 hy0 hy1
+  unfold defectThree defectThree' defectFour' defectFive defectFive'
+  exact ⟨by linear_combination e3, by linear_combination e3', by linear_combination e4',
+    by linear_combination e5, by linear_combination e5'⟩
+
+/-- **The statement the 5₂ lane actually wants, with its one remaining input
+named.** Give an open connected set of `x` on which the pentagon stays regular
+and which contains a real point of `(0,1)`, and the complex five-term sum is
+constant on it — equal to the value it has on the real square, where the real
+five-term identity already pins it.
+
+⚠ The hypothesis `hreg` is the whole difficulty. Nothing here produces such a
+set for the 5₂ saddle values. **The 5₂ sum rule remains verified to 80 dps,
+unproved.** -/
+theorem pentagonSum_eq_of_region_of_real {x₀ y : ℝ} {S : Set ℂ} (hS : IsOpen S)
+    (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular (y : ℂ) w)
+    (hx0 : 0 < x₀) (hx1 : x₀ < 1) (hy0 : 0 < y) (hy1 : y < 1)
+    (hmem : ((x₀ : ℝ) : ℂ) ∈ S) {x : ℂ} (hx : x ∈ S) :
+    pentagonSum (y : ℂ) x = pentagonSum (y : ℂ) ((x₀ : ℝ) : ℂ) := by
+  obtain ⟨b3, b3', b4', b5, b5'⟩ := defects_eq_zero_of_real hx0 hx1 hy0 hy1
+  exact pentagonSum_eq_of_region hS hSc hreg hmem hx b3 b3' b4' b5 b5'
 
 end QOU.QBeta.FiveTwoComplexPentagon
