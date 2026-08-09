@@ -110,19 +110,38 @@ theorem baryon_vacuum_separating {S : Type*}
 (the Borromean baryon, per the s5-so3 audit), the writhe reading
 `I₃ = w/2` vanishes, so Gell-Mann–Nishijima forces `Y = 2Q`: the *entire*
 hypercharge is carried by the second invariant, not the writhe.  This is
-the sharp reason the writhe alone cannot supply `Y` on the baryon. -/
-theorem writheZero_Y_eq_twoQ {S : Type*}
+the sharp reason the writhe alone cannot supply `Y` on the baryon.
+
+Stated in **cleared (division-free)** form -- `2·I₃ = w` and
+`2Q = 2I₃ + Y` rather than `I₃ = w/2` and `Q = I₃ + Y/2` -- so it holds over
+an arbitrary `CommRing R` with **no characteristic hypothesis**.  Note the
+proof never needs `I₃ X = 0`, only `2·I₃ X = 0`, which is why no invertible
+`2` is required.  Matches the formulation in
+`QOU/StandardModel/HyperchargeBatteryReduction.lean`. -/
+theorem writheZero_Y_eq_twoQ {S : Type*} {R : Type*} [CommRing R]
+    (w : S → ℤ) (I3 Q Y : S → R)
+    (hI3 : ∀ X, 2 * I3 X = (w X : R))
+    (hgmn : ∀ X, 2 * Q X = 2 * I3 X + Y X)
+    (X : S) (hw : w X = 0) :
+    Y X = 2 * Q X := by
+  have h1 : 2 * I3 X = 0 := by rw [hI3 X, hw]; norm_num
+  have h2 := hgmn X
+  rw [h1, zero_add] at h2
+  exact h2.symm
+
+/-- The rational statement is recovered from the cleared one: over `ℚ` the
+familiar `I₃ = w/2`, `Q = I₃ + Y/2` hypotheses imply the cleared ones, so
+no content is lost by generalising. -/
+theorem writheZero_Y_eq_twoQ_rat {S : Type*}
     (w : S → ℤ) (I3 Q Y : S → ℚ)
     (hI3 : ∀ X, I3 X = (w X : ℚ) / 2)
     (hgmn : ∀ X, Q X = I3 X + Y X / 2)
     (X : S) (hw : w X = 0) :
-    Y X = 2 * Q X := by
-  have h1 : I3 X = 0 := by
-    rw [hI3 X, hw]
-    norm_num
-  have h2 := hgmn X
-  rw [h1, zero_add] at h2
-  linarith
+    Y X = 2 * Q X :=
+  writheZero_Y_eq_twoQ w I3 Q Y
+    (fun X => by rw [hI3 X]; ring)
+    (fun X => by rw [hgmn X]; ring)
+    X hw
 
 /-- **Conjecture class (primary): the second crossing invariant.**  Over a
 groupoid `S` of topological states with a derived charge `Q`, the writhe
