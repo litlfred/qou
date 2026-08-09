@@ -108,10 +108,28 @@ cancellation among several large opposite-sign terms:
 | ³He | 1.3857 (below cross) | −2.37·10² | `(5,3,1)` −1.091·10³ | 4.6× |
 | ³He | 1.4714 (above cross) | +1.33·10³ | `(5,3,1)` −5.342·10³ | 4.0× |
 
-An 4–11× cancellation is still ~13 orders of magnitude above the f64 noise floor,
+A 4–11× cancellation is still ~13 orders of magnitude above the f64 noise floor,
 so the located crossings are not precision artifacts. But the *structural reading*
 differs: the n=6 crossing is a two-block overtake, the n=9 crossing is a
 multi-block cancellation. Only the former is what the Lean of UNIT 3 formalises.
+
+### 1.3-bis Three distinct regimes — the deuteron mechanism is not *the* mechanism
+
+Adding ⁴He (§2.4) completes the picture. Measuring the leading ℓ≥3 term against
+the total at q₀:
+
+| n | leading/total at q₀ | regime |
+|---|---:|---|
+| 6 | ~1.2× | **two-block overtake** — one block essentially sets the total |
+| 9 | 4–11× | **multi-block cancellation** — the total is a small residue of large opposite-sign terms |
+| 12 | **0.34×** | **broad constructive accumulation** — the total *exceeds* its largest term; many blocks add coherently |
+
+These are qualitatively different, and it matters for how #4829 §2 should be read.
+The `(4,1,1) → (3,2,1)` overtake is a **correct description of n = 6 and of n = 6
+only**. It should not be carried over as the mechanism behind the ⁴He or n=9 sign,
+and the Lean lemma of UNIT 3 — which models exactly that two-block exchange — is
+correspondingly an n=6 statement. Any closure attempt that generalises the
+deuteron block story to larger A is generalising the wrong object.
 
 ### 1.4 A structural difference visible in Δ_λ alone
 
@@ -200,15 +218,41 @@ the trade entirely.
 | 1.05460 | −1.0121 |
 | **q₀ = 1.109979** | **−5.9469** |
 
-**Crossing on `(1, q₀]`: q = 1.02092** (bisected, f64 resolution) — the sign
+**Crossing on `(1, q₀]`: q = 1.0209229** (bisected, f64 resolution) — the sign
 change is bracketed between q = 1.01346 (F = +5.50·10⁻²) and q = 1.02710
 (F = −9.06·10⁻²).
 
-On the diagnostic ray above q₀, F_4He changes sign three further times (brackets
-`(1.1908, 1.2513)`, `(1.3311, 1.4361)`, `(2.7291, 3.2776)`) before running away as
-`−9.5·10²³` at q = 4. Those are beyond-substrate structure and carry no physical
-reading; they are recorded only so the ray is described honestly rather than
-truncated at the first zero.
+Per-λ decomposition at q₀ (top blocks of the 70-partition sum):
+
+| λ | Δ_λ | term |
+|---|---:|---:|
+| (8,3,1) | −891 | −1.9983 |
+| (7,3,2) | −1925 | −1.8918 |
+| (6,3,3) | −1650 | −1.5110 |
+| (6,4,1,1) | −3080 | −1.1892 |
+| (6,3,2,1) | +5632 | +0.9827 |
+| (7,3,1,1) | +2376 | +0.9802 |
+| (8,2,2) | +616 | −0.7426 |
+| (5,4,2,1) | −5775 | −0.5269 |
+| **TOTAL** | | **−5.9469** |
+
+Note the leading term (−1.998) is **smaller** than the total (−5.947): at n = 12
+the sign is set by many blocks adding coherently, not by one dominant block. See
+§1.3-bis.
+
+On the diagnostic ray above q₀, F_4He changes sign four further times — brackets
+`(1.1908, 1.2513)`, `(1.3311, 1.4361)`, `(1.9966, 2.3127)`, `(2.7291, 3.2776)` —
+before running away as `−9.5·10²³` at q = 4. Those are beyond-substrate structure
+and carry no physical reading; they are recorded only so the ray is described
+honestly rather than truncated at the first zero.
+
+**Ray crossings are reported as BRACKETS, not bisected values.** Their location is
+not load-bearing — only which side of q₀ the *first* one falls on matters — and at
+n = 12 each `F` evaluation costs ~32 s, so bisecting four of them at 30 iterations
+consumed >60 min of a 96-min first run to produce ~10⁻¹¹ resolution that the f64
+character path cannot support anyway. The probe now brackets them (see
+`why_not_bisected` in the witness). Only the physical crossing is bisected, at 18
+iterations (~5·10⁻⁸ on a 0.014-wide bracket).
 
 ---
 
@@ -254,6 +298,13 @@ The first is the shape of the measured deuteron data (`T₁` = the `(4,1,1)` ter
 drop either dominance hypothesis and the conclusion fails. The second is the
 formal content of the word *overtake* — `T₂` grows **relative to** `T₁`,
 monotonically, hence crosses it exactly once.
+
+**Scope of applicability: n = 6.** By §1.3-bis the two-block dominance picture
+holds at n = 6 and does **not** describe n = 9 (multi-block cancellation) or
+n = 12 (broad constructive accumulation). The theorems are stated for a *generic*
+`T₁, T₂, R` split, so they remain true statements regardless; but the *empirical
+premise* that one block dominates the rest is only satisfied by the deuteron. Do
+not read them as a general account of the ≥3-row sign.
 
 **Verification.** `lean`-direct against the real Mathlib import cone (restored
 oleans, `LEAN_PATH` set to the package build dirs): **exit 0**. `#print axioms` on
@@ -303,9 +354,31 @@ place.
 `y_λ(q)` is full 50-dps mpmath. `χ^λ(β_K;q)` is f64 (pure-Python Hoefsmit
 seminormal; no mpfr Rust kernel in this sandbox — the sparse reorganisation
 changes the *cost*, not the precision class). Decisive for the sign questions
-asked here: the smallest cancellation ratio observed is ~11×, leaving the totals
-~13 orders of magnitude above the f64 noise floor. Located crossing q values
-carry f64 resolution only.
+asked here: the largest cancellation observed is ~11× (T on the ray), leaving the
+totals ~13 orders of magnitude above the f64 noise floor; at q₀ the ⁴He noise
+floor is 4.4·10⁻¹⁶ against a total of 5.95. Located crossing q values carry f64
+resolution only, which is why ray crossings are reported as brackets (§2.4).
+
+## 7. Compute cost (per the long-compute logging discipline)
+
+| stage | cost |
+|---|---|
+| n=6, n=9 full sweep + ray + decomposition | ~2 min total |
+| n=12 single `F` evaluation (70-partition ℓ≥3 sum) | **~32 s** |
+| n=12 largest single partition `(5,3,2,1,1)`, dim 7700 | 3.5 s |
+| ⁴He full probe (11 physical + 13 ray + 18 bisect + decomposition) | **~23 min** |
+
+**Bottleneck and the mistake worth recording:** the first ⁴He run took **96 min**,
+of which **>60 min** was bisecting four *diagnostic-ray* crossings at 30 iterations
+each. That is ~10⁻¹¹ resolution on quantities that are not load-bearing and that
+the f64 character path cannot support. The probe now brackets ray crossings and
+bisects only the physical one (18 iterations), and memoizes `F`. Same numbers,
+~4× less wall clock.
+
+Second cost note: running the UNIT 2 and UNIT 1 probes concurrently on a 4-core
+box caused severe BLAS oversubscription — a T (n=9) sweep that takes 15 s alone
+took **985 s** under contention, and the UNIT 2 re-run was killed by its own
+30-minute `timeout`. Run these serially.
 
 ## References
 
