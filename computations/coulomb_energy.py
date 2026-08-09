@@ -100,17 +100,35 @@ import mpmath as mp  # noqa: E402
 # input being predicted, so it legitimately stays.
 HBAR_C_MEV_FM = mp.mpf("197.3269804152")
 
-# r₀ = 1.2 fm remains an EMPIRICAL saturation constant and is the module's
-# largest remaining import. It is a heavy-nucleus constant and FAILS badly for
-# light nuclei: at A = 3 it gives R = 1.7307 fm against a measured equivalent
-# 2.5382 fm, a −31.8 % error and the source of the +30.7 % E_C over-estimate.
-# A candidate replacement for A ≤ 4 is the binding length ℏc/√(2μS_sep), which
-# scores −6.3 % at ³He and −1.9 % at ³H. NOT WIRED, and not merely for lack of
-# time: those scores use AME separation energies, i.e. an experimental input.
-# With QOU's own predicted binding (³He −30 %, ³H −28 %) it inverts to +37.8 %
-# and +35.0 %, WORSE than r₀·A^{1/3} and opposite in sign. It becomes usable
-# only once the light-nucleus binding is right. Bean qou-usft.
-R0_FM = mp.mpf("1.2")
+# ── the nuclear length: CAL-3, not an empirical r₀ (2026-08-09, bean qou-usft) ──
+# `r₀ = 1.2 fm` is an EMPIRICAL saturation constant. The corpus's own rule is
+# that "all corpus lengths arise as Compton inversions ℏc/mass"
+# (`deltalambda/pion_radius_and_cusp_volume_gap_probe.py:56`), and CAL-3 is m_π,
+# so the framework's available nuclear length is the reduced pion Compton
+# wavelength λ̄_π = ℏc/m_π = 1.4138169 fm. Measured at A = 3:
+#
+#     radius model                     R (fm)      err      E_C      E_C err
+#     r₀·A^{1/3}, r₀ = 1.2 EMPIRICAL   1.730699  −31.81 %  0.998416  +30.72 %
+#     λ̄_π·A^{1/3}          CAL-3      2.039077  −19.67 %  0.847422  +10.95 %
+#     measured charge radius           2.538224    0.00 %  0.680774  −10.87 %
+#
+# So the CAL-3 length is both a PROVENANCE improvement (an empirical constant
+# replaced by a calibration-derived one) and a NUMERICAL one (E_C error +30.7 %
+# → +11.0 %). It is now the default; the empirical constant is retained below
+# as `R0_FM_EMPIRICAL` for comparison only.
+#
+# HONEST LIMIT. The COEFFICIENT is not derived. The corpus probe's GAP 1 asks
+# why the packing length is λ̄_π "at coefficient EXACTLY 1" and reports it
+# MEASURED at 0.985 ± 0.069 — consistent with 1, not proved to be 1. And GAP 2,
+# the hyperbolic-volume → Euclidean-radius step behind A^{1/3}, is also open. So
+# this is a better-sourced length, not a derived one.
+#
+# DO NOT read the near-symmetry of +10.95 % (λ̄_π) against −10.87 % (measured
+# radius) as meaningful. They have different causes: the first is a 19.7 %-small
+# radius, the second is the Nolen–Schiffer strong-CSB residual (bean qou-4waf).
+LAMBDA_BAR_PI_FM = HBAR_C_MEV_FM / mp.mpf("139.57039")   # CAL-3 Compton length
+R0_FM_EMPIRICAL = mp.mpf("1.2")      # retained for comparison; NOT the default
+R0_FM = LAMBDA_BAR_PI_FM
 
 # The uniform-BALL shape factor. Also an import: with the radius divided out,
 # the shape-only factor spans 0.4547 (exponential) → 0.4886 (Gaussian), a 7.3 %
@@ -136,10 +154,12 @@ def alpha_em_hbar_c_mev_fm() -> "mp.mpf":
 
 
 def nuclear_radius_fm(A: int) -> "mp.mpf":
-    """R = r₀ · A^{1/3} fm — the uniform-charged-sphere radius.
+    """R = λ̄_π · A^{1/3} fm — the uniform-charged-sphere radius.
 
-    Saturation scaling. Valid for heavy nuclei; see R0_FM above for why it is
-    wrong for A ≤ 4."""
+    The length is CAL-3 derived (ℏc/m_π), not the empirical r₀ = 1.2 fm; see the
+    block above. A^{1/3} is still saturation scaling and is still wrong for
+    A ≤ 4 — at A = 3 this lands −19.7 % against the measured equivalent radius,
+    which is better than the empirical constant's −31.8 % but not right."""
     return R0_FM * mp.mpf(A) ** (mp.mpf(1) / 3)
 
 
