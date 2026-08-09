@@ -1,10 +1,11 @@
 ---
 # qou-tsnp
 title: 'GAP: 12 conjecture carriers axiomatised as `holds : Prop` assert nothing'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-08-09T00:12:10Z
+updated_at: 2026-08-09T00:33:35Z
 ---
 
 
@@ -81,3 +82,38 @@ conjecture's claim cannot yet be stated against existing types (the
 `categorical-proton` failure mode — the type has no field for the
 asserted property), the honest outcome is to say so and leave the
 carrier, noting what type must grow first.
+
+## Progress
+
+**1 of 12 closed — `t-from-trace-cyclicity` (2026-08-09).**
+`holds : Prop` replaced by
+[`QOU/BraidsAndKnots/TFromTraceCyclicity.lean`](../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/TFromTraceCyclicity.lean):
+
+- **4 unconditional theorems** — `timeReversal_involutive` (T² = id),
+  `timeReversal_crossings`, `timeReversal_perm` (generator indices + signs
+  preserved), `timeReversal_append`. Verified `lean`-direct **exit 0**;
+  `#print axioms` = `[propext]` only, **no `sorryAx`**.
+- **1 conjectural class field** — `trace_reversal_invariant`, quantified
+  over every representation and every braid word (the shape of the claim,
+  not an opaque `Prop`).
+
+Sibling stub deleted; module wired into `QOU.lean`; `.ts` set to
+`validation: "validated"`.
+
+### Two findings from doing it
+
+1. **The block's stated derivation is a non-sequitur.** The `.md` gets
+   reversal invariance "by the Markov trace cyclicity axiom". Cyclicity
+   gives *rotation* invariance (`markovTrace_append_comm`); reversal is a
+   different operation and `tr(ABC) ≠ tr(CBA)` for non-commuting matrices.
+   The claim is plausible via the generator-fixing anti-automorphism, but
+   that route is not in the corpus — hence a class field, not a proof.
+   Recorded as an `authorNotes` caveat on the block.
+2. **`BraidWord` is overloaded** — `QOU.BraidWord` (a `structure` in
+   `PhotonThreading.lean`) vs `QOU.Archimedean.BraidWord (n : ℕ)`. A bare
+   `open QOU` silently resolves to the wrong one and the file will not
+   elaborate. Anything touching Hecke braid words must fully qualify.
+
+**11 remain.** Each needs the same treatment: read the `.md`, state the
+actual claim, prove what is unconditional, carry only the genuinely open
+part as a class field.
