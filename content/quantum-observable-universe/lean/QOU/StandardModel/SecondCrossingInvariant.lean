@@ -49,6 +49,24 @@ is such a pair, and (iii) on the writhe-`0` baryon sector `Y = 2Q` — the
 writhe contributes nothing, so `Y` is carried entirely by the second
 invariant.
 
+**Symbol disambiguation — two `μ̄`s in the corpus (do not conflate).**
+`QOU.MassTheory.MilnorExactCoefficient` (landed upstream) carries
+`mubarMeasured A = (3/4)·(−2)^{A−3}`, whose `A = 3` value is `3/4`, *not*
+`±1`.  That object is the **trace-normalised leading coefficient** of the
+A-component Brunnian Markov-trace deficit `1 − τ_A`, empirically extracted
+and explicitly *not* proved equal to the topological invariant (its own
+docstring: "that is the open Milnor μ̄(12…A) content, Route A").  The `μ̄₁₂₃`
+in *this* file is the **topological** Milnor triple linking number, which is
+`±1` on the Borromean rings.  Same glyph, different objects and different
+normalisations — per AGENTS.md §"Attributes do not transfer across
+overloaded symbols", no property of either transfers to the other.
+
+Relevant upstream negative: `cyclic_trace_kills_iterCommTower` proves a
+cyclic (Markov) trace annihilates the Lie iterated-commutator tower, so the
+leading coefficient is *not* recoverable from that tower via a trace.  This
+does not bear on the conjecture below — nothing here extracts `μ̄₁₂₃` from a
+trace — but it is why the exact-order law remains open upstream.
+
 **Honesty scope (AGENTS.md anti-laundering).** No instance is provided and
 no coefficient is fitted.  The class is OPEN.  The physics claim
 `μ̄₁₂₃ = B = Y` is a *conjecture*: `Y = B` closes only the non-strange
