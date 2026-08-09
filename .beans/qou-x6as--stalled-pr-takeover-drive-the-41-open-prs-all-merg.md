@@ -14,8 +14,18 @@ dispense all 1 2 3 4 5"*.
 Measured inventory + clusters + the two measurement traps:
 [`docs/coordination/2026-08-09-stalled-pr-takeover.md`](../docs/coordination/2026-08-09-stalled-pr-takeover.md).
 
-**Headline: 41 open PRs, all 41 merge cleanly into main.** Stale, not broken.
+**Headline: 41 open PRs — 26 merge cleanly, 15 CONFLICT with main.**
 Largest contributes 7,071 lines; median well under 500.
+
+Conflicting: `3807, 4133, 4409, 4548, 4515, 4565, 4582, 4596, 4594, 4600,
+4571, 4608, 4532, 4685, 4673`. They need a rebase before anything else can be
+said about them.
+
+> **CORRECTION.** This bean first said "all 41 merge cleanly". Wrong — it came
+> from `git merge-tree <base> <b1> <b2>`, git's **deprecated** trivial-merge
+> form, which does not reliably report conflicts. Use
+> `git merge-tree --write-tree origin/main origin/<branch>` and check the
+> **exit code**.
 
 ## Dispensed (PR #4834)
 
@@ -52,6 +62,10 @@ Largest contributes 7,071 lines; median well under 500.
 
 - `git fetch --depth=1` leaves the clone **shallow** and silently corrupts
   every ahead/behind count. `git fetch --unshallow` before measuring.
+- **`git merge-tree` has two forms and the old one lies.** `--write-tree` +
+  exit code. The 3-arg form reported 41/41 clean when the truth was 26.
+- **A branch's raw files are not what would land** when main also moved those
+  files. Verify the merged tree, or you check a version that will never exist.
 - PR size must be the **three-dot** diff. The two-dot diff reports ~22,000
   files for a four-file PR because it includes main's own progress.
 - `pytest computations/` **mutates the tree** — it regenerated four

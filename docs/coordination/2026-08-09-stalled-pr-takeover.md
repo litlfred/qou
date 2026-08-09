@@ -5,9 +5,27 @@ measured starting point, so the takeover survives the session that opened it.
 
 ## Headline
 
-**41 open PRs. All 41 merge cleanly into `main` — zero conflicts.** They are
-stale, not broken. Every one is small: the largest contributes 7,071 lines,
-the median well under 500.
+**41 open PRs: 26 merge cleanly, 15 conflict with `main`.** Every one is
+small — the largest contributes 7,071 lines, the median well under 500.
+
+> **CORRECTION (same session).** An earlier revision of this file claimed
+> *"all 41 merge cleanly — zero conflicts"*. That was **wrong**. It came from
+> `git merge-tree <base> <b1> <b2>` — git's **deprecated trivial-merge**
+> form, which does not reliably report conflicts and which I was grepping for
+> `^<<<<<<<` in stdout. The modern form is authoritative and **exits
+> non-zero** on conflict:
+>
+> ```bash
+> git merge-tree --write-tree origin/main origin/<branch> >/dev/null 2>&1 \
+>   && echo clean || echo CONFLICT
+> ```
+>
+> Caught when #4685's merged `PartitionHookProductBridge.lean` came out with
+> a `<<<` marker at line 44 — i.e. the "clean" verdict was demonstrably false
+> for a PR I was in the middle of verifying. Re-run gives **26 clean, 15
+> conflicted**. This is the third measurement error in this sweep from
+> trusting a plausible-looking git output; see also the shallow-clone and
+> two-dot-diff traps below.
 
 > **Measurement caveat, stated because it bit me.** A first pass reported
 > every PR as "67 commits behind, clean". That was an artifact: an earlier
@@ -78,6 +96,13 @@ git diff --shortstat origin/main...origin/<branch>
 | 4673 | 40 | 5641 | convention-systematic-audit |
 | 4565 | 82 | 7071 | generation-bridge |
 
+### The 15 that conflict
+
+`3807, 4133, 4409, 4548, 4515, 4565, 4582, 4596, 4594, 4600, 4571, 4608, 4532, 4685, 4673`
+
+These need a rebase before anything else can be said about them. The other 26
+can be verified as-is.
+
 ## Clusters
 
 1. **Infra** — 4718, 4409, 4451, 4568
@@ -99,7 +124,8 @@ git diff --shortstat origin/main...origin/<branch>
 CI auto-triggers are disabled repo-wide (AGENTS), so each PR needs its own
 agent-run evidence before merge, and **merging needs the owner's explicit
 per-PR go** (AGENTS §7). "Merges clean" in the table above is a statement
-about `git merge-tree`, not a claim that any PR is correct.
+about `git merge-tree --write-tree` (the modern form — the deprecated one lies),
+not a claim that any PR is correct.
 
 Two traps worth carrying into the remaining work, both hit in the first hour:
 
@@ -109,3 +135,10 @@ Two traps worth carrying into the remaining work, both hit in the first hour:
 - **Headline claims in stale PR descriptions have drifted.** 4718's was
   written 544 commits ago. Re-measure before repeating a number in a merge
   rationale.
+- **`git merge-tree` has two forms and the old one lies.** Use
+  `--write-tree` and check the exit code. The three-argument form reported 41
+  of 41 clean when the truth was 26.
+- **A branch's raw files are not what would land** when `main` has also moved
+  those files. Verify the *merged* tree
+  (`git merge-tree --write-tree`, then `git cat-file -p <tree>:<path>`), or
+  you are checking a version that will never exist.
