@@ -129,8 +129,13 @@ theorem finrank_H2 : Module.finrank R (H2 R q) = 2 := by
     heckePoly_natDegree]
 
 /-- **`H₂(q)` has the full Hecke rank**, `2 = 2!`. Together with
-`InstanceH2.instHeckeAlgebraH2` this is the first — and so far only — object in
-the tree that is a Hecke algebra in the honest sense. -/
+`InstanceH2.instHeckeAlgebraH2` this is the first object to satisfy the
+`HeckeAlgebra` class *and* have its dimension pinned.
+
+(The tree's `QOU.Machinery.HeckeH3AlgebraInstance.H3A` and `…HeckeH4AlgebraLaws.H4A`
+are honest Hecke algebras too, with sorry-free Wedderburn isomorphisms giving
+their dimensions — they simply had no `HeckeAlgebra` class instance. Wiring this
+predicate to them is the better route; bean qou-awp7.) -/
 instance instIsHeckeOfFullRankH2 : IsHeckeOfFullRank R 2 (H2 R q) where
   free := (heckePoly_monic R q).free_adjoinRoot
   finrank_eq := by rw [finrank_H2]; rfl

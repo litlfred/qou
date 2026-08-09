@@ -9,14 +9,22 @@ import Mathlib.LinearAlgebra.Dimension.Constructions
 for `n ≥ 3`": at `n = 2` the braid relation is vacuous. This file supplies `n = 3`,
 where it is not.
 
-## Where the content comes from
+## Where the content comes from, and what else the tree already has
 
 `QOU.Mathlib.HeckeAlgebra` already carried the concrete six-dimensional carrier
 `H3Carrier R = R⁶`, the two generator-action maps `H3.mulSigma1` / `H3.mulSigma2`,
 the full multiplication `H3.mul`, and machine-checked proofs of the quadratic and
-braid relations *in generator-action form*. What it lacked — and what blocked the
-`HeckeAlgebra` instance, since the class demands `[Ring A] [Algebra R A]` — was
-**associativity of `H3.mul`**.
+braid relations *in generator-action form*. What **that carrier** lacked, and what
+blocked a `HeckeAlgebra` instance on it since the class demands
+`[Ring A] [Algebra R A]`, was **associativity of `H3.mul`**.
+
+It is not the tree's only `H₃(q)`. `QOU.Machinery.HeckeH3AlgebraInstance` carries
+`H3A R h`, a `Ring`/`Algebra` on the H₃ normal-form basis, and
+`QOU.Machinery.HeckeH3Wedderburn.wedderburn₃` is a sorry-free `AlgEquiv` onto
+`K × K × M₂(K)` — dimension `1 + 1 + 4 = 6 = 3!`. Neither had a
+`QOU.Hecke.HeckeAlgebra` class instance, which is the gap this file closes; but
+`H3A` is the better carrier to close it on, because the Wedderburn equivalence
+hands over `IsHeckeOfFullRank` for free. Bean qou-awp7.
 
 `H3.mul_assoc` below closes it. Every coefficient of `H3.mul` is polynomial in the
 six components and the single scalar `q - q⁻¹`, so associativity is a polynomial
@@ -292,7 +300,13 @@ theorem generator_three_cases (g : Generator 3) : g = ⟨0⟩ ∨ g = ⟨1⟩ :=
 
 Unlike `InstanceH2.instHeckeAlgebraH2`, `braid` here is not vacuous: `Generator 3`
 has two indices, they are adjacent, and the relation is discharged by `braid`
-above — the first non-vacuous braid relation anywhere in the tree. -/
+above — the first non-vacuous discharge of the class's `braid` field.
+
+The braid *relation* itself was already proved in the tree, in generator-action
+form: `QOU.Mathlib.HeckeAlgebra.H3.braid_relation` (over `ℝ`) and
+`QOU.Machinery.HeckeH3AlgebraLaws` on the H₃ normal-form basis. What was missing
+was any object satisfying the `QOU.Hecke.HeckeAlgebra` class at a level where
+`Generator.adjacent` is satisfiable. -/
 instance instHeckeAlgebraH3 : HeckeAlgebra R 3 q (H3Alg R q) where
   embed := embed3
   quadratic := by
