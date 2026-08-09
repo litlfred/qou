@@ -832,7 +832,24 @@ const DOC_CLAIMS_SORRY =
 const SORRY_MENTION_IS_HISTORICAL =
   /sorry-free|no\s+longer|previously|formerly|used\s+to|was\s+`?sorry`?|removed|not\s+a\s+`?sorry`?|no\s+`?sorry`?|instead\s+of|rather\s+than|modulo/i;
 
-function detectDocstringSorryMismatch(d: Decl, doc: string): Hit | undefined {
+/**
+ * Wording that attributes the `sorry` to some OTHER declaration rather than to
+ * this body — a sub-theorem, an inherited lemma, an upstream brick.
+ *
+ * This is NOT sufficient to exempt on its own. The first drain (2026-08-09)
+ * found five declarations that delegated in exactly this language while the
+ * delegated-to declaration had no `sorry` either — delegation is precisely
+ * where an unproved claim goes unchecked. So the wording only *permits* an
+ * exemption; `fileHasSorry` below has to supply the evidence.
+ */
+const DOC_DELEGATES_SORRY =
+  /sub-?(theorem|lemma)|inherit|bricks?['’]?\s+own|named\s+sub|upstream|its\s+(own\s+)?cores?\b/i;
+
+function detectDocstringSorryMismatch(
+  d: Decl,
+  doc: string,
+  fileHasSorry: boolean,
+): Hit | undefined {
   // Only declarations that *can* carry a proof body.
   const provable = PROVABLE_KINDS.test(d.kind);
   const isDefProof =
@@ -850,6 +867,18 @@ function detectDocstringSorryMismatch(d: Decl, doc: string): Hit | undefined {
     (s) => DOC_CLAIMS_SORRY.test(s) && !SORRY_MENTION_IS_HISTORICAL.test(s),
   );
   if (!claim) return undefined;
+
+  // Evidence-gated delegation exemption. The claim points at another
+  // declaration AND this file genuinely contains a `sorry` — so the prose is
+  // plausibly true and the call is a judgement, not a defect. Tracked, not
+  // counted. Without the `fileHasSorry` half this would be a wording exemption,
+  // which the first drain proved unsafe.
+  if (DOC_DELEGATES_SORRY.test(claim) && fileHasSorry) {
+    const h = mk(d, "proof-docstring-sorry-mismatch", "doc-delegates-sorry", true);
+    h.exempt_reason =
+      "docstring attributes the `sorry` to another declaration and this file has one";
+    return h;
+  }
 
   const h = mk(d, "proof-docstring-sorry-mismatch", "doc-claims-sorry-body-has-none", false);
   h.detail =
@@ -1466,6 +1495,13 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     });
   }
 
+  // Does ANY declaration in this file carry a real `sorry` in code? This is the
+  // evidence half of the delegation exemption in `detectDocstringSorryMismatch`
+  // — a docstring that hands its `sorry` to a sub-theorem is believable only if
+  // a `sorry` actually exists nearby. `Decl.body` is comment-free, so prose
+  // mentions of the word do not count.
+  const fileHasSorryCode = decls.some((x) => /\bsorry\b/.test(x.body));
+
   for (let di = 0; di < decls.length; di++) {
     const d = decls[di];
     // The doc block is computed once up front so the trivial-true detector
@@ -1493,7 +1529,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     }
     push(tt);
     push(detectSelfAssuming(d));
-    push(detectDocstringSorryMismatch(d, doc));
+    push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));
     push(detectUnusedHypothesisRfl(d));
     push(detectDecideMasking(d));
     push(detectFalsePremise(d));

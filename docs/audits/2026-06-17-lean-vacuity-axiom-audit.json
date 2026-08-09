@@ -1,17 +1,17 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T00:31:08.148Z",
+  "generated": "2026-08-09T00:39:31.863Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 1662,
-  "files_flagged": 119,
-  "total_defects": 94,
-  "total_exempt": 59,
+  "files_flagged": 118,
+  "total_defects": 91,
+  "total_exempt": 61,
   "categories": {
-    "proof-docstring-sorry-mismatch": 4,
     "proof-no-trivial-true": 17,
     "proof-no-self-assuming-projection": 8,
     "proof-no-unused-hypothesis-rfl": 7,
     "proof-no-false-premise": 53,
+    "proof-docstring-sorry-mismatch": 1,
     "proof-no-provable-axiom": 1,
     "proof-claims-unencoded": 2,
     "lean-import-after-content": 1,
@@ -708,13 +708,14 @@
   "flagged": {
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
       {
-        "line": 90,
+        "line": 91,
         "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
+        "pattern": "doc-delegates-sorry",
         "snippet": "theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) :",
         "decl": "kappa_vanishes_iff_chi",
         "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+        "exempt": true,
+        "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Appendix/DeltaMaxNumericalScale.lean": [
@@ -1757,17 +1758,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean": [
-      {
-        "line": 141,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)",
-        "decl": "ConfinementSDP",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean": [
       {
         "line": 193,
@@ -2186,13 +2176,14 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
       {
-        "line": 145,
+        "line": 142,
         "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
+        "pattern": "doc-delegates-sorry",
         "snippet": "theorem shell_filling_rule [ctx : ShellFillingRuleContext R] :",
         "decl": "shell_filling_rule",
         "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+        "exempt": true,
+        "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean": [
