@@ -12,10 +12,14 @@
   half-angles his construction produces from a triangle with inscribed angles
   `(α, β, γ)`.
 
-  WHAT IS STILL OPEN, AND IT IS EXACTLY ONE THING: that this union **is** the
-  inscribed triangle.  `milnorWedges` is a union of three explicitly-described
-  regions, not a triangle, and nothing here says otherwise.  See the scope
-  section at the bottom.
+  WHAT WAS STILL OPEN HERE, AND IT WAS EXACTLY ONE THING: that this union
+  **is** the inscribed triangle.  `milnorWedges` is a union of three
+  explicitly-described regions, not a triangle, and nothing in THIS file says
+  otherwise.  That step — H4-5c-ii(b) — is now **proved**, in
+  `QOU.Archimedean.OrthoschemeTiling`
+  (`milnorWedges_ae_eq_inscribedTriangle`, and the Λ-sum restated on the
+  triangle as `hypVolume_chimney_inscribedTriangle`).  The scope section at the
+  bottom of this file records what that did and did not settle.
 
   THE DISJOINTNESS IS ALGEBRAIC, NOT ANGULAR — this is the technical point of
   the file, and it is what made the step tractable.  The obvious route is to
@@ -224,37 +228,42 @@ theorem hypVolume_chimney_milnorWedges {R t α β γ : ℝ} (hR : 0 < R)
   · -- wedge α meets wedge β along the ray to the third vertex
     exact disjoint_wedgeAt_adjacent hα0 hα hβ0 hβ (by ring)
 
-/-! ### 5. Scope — the one remaining step
+/-! ### 5. Scope — and what closed the remaining step
 
 `hypVolume_chimney_milnorWedges` is Milnor's value on Milnor's pieces.  What it
-is **not** is a statement about a triangle, and the gap is precise:
+is **not**, on its own, is a statement about a triangle.  The gap was precise:
 
     milnorWedges R t α β γ  =ᵐ  (the closed triangle inscribed in the circle
                                  of radius R with inscribed angles α, β, γ
                                  and first vertex at angle t)
 
-is **unproved**.  Both inclusions are genuine work:
+and it is now **proved** — `milnorWedges_ae_eq_inscribedTriangle` in
+`QOU.Archimedean.OrthoschemeTiling`, which also restates the Λ-sum on the
+triangle (`hypVolume_chimney_inscribedTriangle`).  Both inclusions were genuine
+work, and neither needed the machinery one might expect:
 
-* `⊆` — each wedge lies inside the triangle.  A wedge is cut off by ONE chord;
-  one must show the other two chord constraints are implied within that wedge's
-  angular range.
-* `⊇` — the three wedges cover.  Their angular ranges are consecutive and close
-  the circle (that is `α+β+γ = π`, used above), but "covers every direction"
-  plus "each is cut at the right radius" is what gives the triangle, and the
-  radial half of that is not done.
+* `⊆` — each wedge inside the triangle.  NOT a convexity argument: the single
+  identity `cos ψ · F = sin(ψ+ψ') · G₂ + cos ψ' · G₃` puts a wedge inside a
+  neighbour's chord half-plane as a two-term positive combination
+  (`wedgeAt_lt_chord_next` / `_prev`).
+* `⊇` — the three wedges cover.  NOT a covering computation: the sign relation
+  `sin 2α·x + sin 2β·y + sin 2γ·z = 0` (`perp_sign_relation`) has positive
+  coefficients, so the edge functionals are never all-positive or all-negative,
+  and the six surviving sign patterns each land in one sector.
 
-The exceptional set is the three segments from the circumcentre to the
-vertices, which is null — hence `=ᵐ` rather than `=`.
+The exceptional set taken there is the three edge LINES rather than the three
+spine segments — larger than necessary, but null for a cheaper reason (each is
+the kernel of a nonzero linear functional) — hence `=ᵐ`.
 
-**It is worth proving: the lemma is TRUE, checked at the SET level.**
-`computations/milnor_subdivision_obtuse_scope_probe.py` evaluates both
-memberships — `milnorWedges` by the definition above, the triangle by its three
-half-plane tests, independently — over a polar grid of interior points for five
-acute triangles, excluding a skin around the boundary and the spines.  **Zero
-mismatches.**  That is stronger than the Λ-sum agreement already proved, which
-would only pin the two down to equal MEASURE; the grid check says they are the
-same SET off the null part.  So whoever takes H4-5c-ii on is proving something
-true, not hunting a sign error.
+The pre-Lean set-level evidence that made it worth starting is in
+`computations/milnor_subdivision_obtuse_scope_probe.py`; the identities the
+proof actually rests on are certified in
+`computations/milnor_tiling_certificate_probe.py` (9/9 at 50 dps).
+
+What that step did **not** settle is the triangle's *definition*:
+`inscribedTriangle` is defined as an intersection of three chord half-planes,
+anchored to the intended triangle by `inscribedTriangle_vertex_incidence` and
+not by a `convexHull` identification.
 
 Beyond that, and unchanged: this says nothing about ideal tetrahedra.  That a
 chimney over the inscribed triangle IS the ideal tetrahedron of the
