@@ -352,3 +352,39 @@ the overlap analysis for the completed rule set, now has its foundation.
 `bokutShiaoRelation_lm` lives in §4h, so a §4i that uses it must come after §4h,
 not before §4g. Lean reports it as `Unknown identifier`, which reads like a typo
 rather than a section-ordering mistake.
+
+
+## …and the refuting overlap now **resolves**, not merely reduces
+
+`spoly_not_isNormalForm_completed` said only that the S-polynomial is no longer
+irreducible. The Gröbner–Shirshov condition asks for more — that it reduces to
+**zero** — and `refuting_overlap_resolves` proves it does, in a **single step**.
+
+The reason is worth seeing, because it is the sharpest form of "the counterexample
+is the missing rule":
+
+    oc.spoly       =  w₁ − w₂        (§4e: coeff w₁ = 1, coeff w₂ = −1)
+    bs31.relation  =  w₂ − w₁        (bsWord₁ 3 1 = w₂, bsWord₂ 2 3 1 = w₁)
+
+They are exact negatives. One application of `bs31` in **empty context** with
+coefficient `−1` annihilates the S-polynomial outright. The obstruction and its
+repair are the same two words with opposite signs.
+
+Supporting: `bs31_lc = 1`; `three_words_distinct` (`w₁`, `w₂` and the ambient
+`σ₃σ₂σ₃σ₁` are pairwise distinct — needed so the coefficient bookkeeping does not
+collide); `spoly_add_relation_eq_zero`, coefficient-by-coefficient cancellation
+over the three-word support that §4e's `spoly_support` pins down.
+
+Contrast `NotAGSBasis.spoly_isNormalForm`: the *same* S-polynomial against the
+uncompleted system, where no rule applies at all. The pair of theorems is the
+before/after of the completion at the one place the refutation lives.
+
+All axiom-clean, file warning-free.
+
+### Placement traps (two now, same family)
+
+Lean reports both as `Unknown identifier`, which reads like a typo:
+
+* a section using `bokutShiaoRelation_lm` (§4h) must come **after** §4h;
+* a section using `bs31` / `w₁` / `w₂` / `oc` must be **inside** `namespace
+  Completion`, not after `end Completion`.
