@@ -53,8 +53,8 @@
 
   ## Census status (`qou-qint`)
 
-  Of the 55 q-integer declarations, **47 are now tied to this module** by an
-  alias or a proved equation, and the remaining 8 are accounted for rather than
+  Of the 55 q-integer declarations, **48 are now tied to this module** by an
+  alias or a proved equation, and the remaining 7 are accounted for rather than
   outstanding:
 
   | # | disposition |
@@ -62,7 +62,13 @@
   | 3 | the canonical definitions themselves (`QHookDimension{,Balanced}`) |
   | 2 | continuous index — no equation exists (below) |
   | 2 | `StokesConstantQDimCategoricity`'s deliberate `Polynomial ℤ` pair |
-  | 1 | blocked: `surreal_enstrophy_finite_modes` is red on `main` (`qou-xo1e`) |
+
+  The census carries **no blocked row**.  `surreal_enstrophy_finite_modes` held
+  one — the file was red on `main` (`qou-xo1e`) — and it was fixed upstream by
+  the `Infinitesimal.*` / `IsFinite.*` namespacing commit, exactly the repair the
+  bean proposed.  Re-verified `exit 0` before migrating, so the tie rests on a
+  compiling file rather than on the bean's assumption.  Its site is geometric and
+  goes to `qIntGeo`, not `qIntBal`.
 
   **The two genuinely-different sites** are the continuous-index brackets:
   `climax-volume-mass/q-angular-momentum.qNumber`, whose index is a ring element
