@@ -1106,17 +1106,83 @@ function detectDecideMasking(d: Decl): Hit | undefined {
   return undefined;
 }
 
+/**
+ * Tactics that introduce a hypothesis or open a case. Their presence means a
+ * contradiction below them is *local* — an eliminated branch, or a negation
+ * being assumed in order to be refuted — and so says nothing about whether the
+ * statement's own premises are satisfiable.
+ */
+const LOCAL_CONTEXT_TACTIC =
+  /(^|[^\w'])(intro|rintro|rcases|obtain|cases|match|by_contra|induction|interval_cases|fin_cases|refine|constructor|exfalso|suffices|rsuffices|subst|letI|fun)\b|(^|\n)\s*[·|]/;
+
+/** A conclusion that *is* a negation: proving it means deriving a contradiction. */
+const NEGATIVE_CONCLUSION = /¬|≠|\bFalse\b/;
+
+/**
+ * The *whole body* is the contradiction — nothing else is proved. A nested
+ * `absurd` (inside a `letI`, a `fun … =>` argument, a `have`) is a sub-proof
+ * discharging some side condition, not the goal.
+ */
+const WHOLE_BODY_DISCHARGE =
+  /^(?:by\s+)?(?:exact\s+)?(?:absurd\b|Nat\.not_lt_zero\b|\(.*\bby\s+(?:norm_num|omega)\b.*\)\.elim\b)/;
+
 function detectFalsePremise(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body;
-  if (
+  const discharges =
     /\babsurd\b[\s\S]*?\bby\s+(norm_num|decide|simp|omega)\b/.test(body) ||
     /\bNat\.not_lt_zero\b/.test(body) ||
-    /\(by\s+(norm_num|omega)\)\.elim\b/.test(body)
-  ) {
-    return mk(d, "proof-no-false-premise", "discharged-impossible-hyp", false);
+    // Tolerates a type ascription inside the parens — `(by norm_num : ¬P).elim h`
+    // is the same discharge as `(by norm_num).elim h`, and the tighter original
+    // spelling silently missed it.
+    /\(.*\bby\s+(?:norm_num|omega)\b.*\)\.elim\b/.test(body);
+  if (!discharges) return undefined;
+
+  // A contradiction *inside a proof* is not the defect this criterion names.
+  // The defect is a VACUOUS STATEMENT — the theorem's own binders are
+  // unsatisfiable, so the goal falls straight out of `absurd` with nothing
+  // else to do:  `theorem foo (h : 0 = 1) : P := absurd h (by norm_num)`.
+  //
+  // Deriving a contradiction is also how one proves a negation, and how one
+  // kills an impossible branch of a case split. Both are idiomatic and carry
+  // the real content of the proof. Flagging them on the bare `absurd` made
+  // this criterion 0-for-56 across the corpus (agent adjudication 2026-08-09:
+  // every candidate `legit` — negation goals, `interval_cases` branches,
+  // empty-`Finset` arguments, and `letI` discharges of `i ≠ j` from
+  // `M i j = 3` against `M i i = 1`). The three conditions below are what the
+  // vacuity claim actually requires.
+  if (!WHOLE_BODY_DISCHARGE.test(body.trim().replace(/\s+/g, " "))) return undefined;
+  if (LOCAL_CONTEXT_TACTIC.test(body)) return undefined;
+  const concl = conclusionTypeAscription(d.sig);
+  if (NEGATIVE_CONCLUSION.test(concl)) return undefined;
+
+  // The discharged term must be one of the statement's own hypotheses — a
+  // contradiction built from locally-derived facts is a proof step, not a
+  // property of the premises.
+  const head = d.sig.slice(0, d.sig.length - concl.length);
+  const binders: string[] = [];
+  for (const m of head.matchAll(
+    /[({\[⦃]\s*([^(){}\[\]:]+?)\s*:\s*([^(){}]*(?:\([^()]*\)[^(){}]*)*)[)}\]⦄]/g,
+  )) {
+    if (!PROP_SHAPED.test(m[2])) continue; // data binder, not a hypothesis
+    for (const n of m[1].trim().split(/\s+/)) {
+      if (/^_?[a-zA-Z_][\w']*$/.test(n)) binders.push(n);
+    }
   }
-  return undefined;
+  // The body *is* the discharge (checked above), so any hypothesis it names is
+  // what the contradiction is built from — whether as `absurd h …`, `h.elim`,
+  // or the argument in `(…).elim h`.
+  const dischargedBinder = binders.find((n) =>
+    new RegExp(`(?:^|[^\\w'])${n}(?:[^\\w']|$)`).test(body),
+  );
+  if (!dischargedBinder) return undefined;
+
+  const h = mk(d, "proof-no-false-premise", "discharged-impossible-hyp", false);
+  h.detail =
+    `the entire goal is discharged by contradiction from the statement's own ` +
+    `hypothesis \`${dischargedBinder}\`, with no \`intro\` and no case split — so the ` +
+    `premises are unsatisfiable and the claim holds vacuously`;
+  return h;
 }
 
 function detectProvableAxiom(d: Decl, rawLines: string[]): Hit | undefined {
