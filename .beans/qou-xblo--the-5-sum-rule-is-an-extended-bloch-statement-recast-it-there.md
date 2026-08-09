@@ -906,3 +906,53 @@ point by an argument window is a different technique and is not in the corpus.
 3. G6 — `Σ log y log(1−y)`, from the saddle branch equation.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 60 — complex Rogers reflection, and the anharmonic relation. Both links' analytic halves done.
+
+The corpus had `Li₂` **inversion** on `ℂ` but no complex **reflection**. Both are
+now available for `cRogersL`, so the whole anharmonic group acts.
+
+### Reflection — `cRogersL_add_one_sub`
+
+    L(z) + L(1−z) = π²/6      for every z off both real cuts
+
+Cheap, once the pieces from Routes 51–54 exist:
+
+* `L′(z) − L′(1−z) = 0` **identically** as a rational expression — the Rogers
+  half is exactly what makes reflection differentiate to nothing;
+* `rogersDomain` is invariant under `z ↦ 1−z` (`one_sub_mem_rogersDomain_iff`):
+  it is `ℂ` minus both real cuts and the involution swaps them;
+* it is open (Route 51) and connected (Route 54), so constancy is immediate;
+* the constant is pinned at the **real** point `1/2`, by `cRogersL_ofReal`
+  (Route 53) and the corpus's real `rogersL_reflection`.
+
+No branch hypothesis anywhere.
+
+### The anharmonic relation — `cRogersL_one_sub_inv_sub`
+
+Reflection at `1/z` minus inversion:
+
+    L(1 − 1/z) − L(z) = π²/3 + ½·log(−z)² − ½·log z·log(−z)
+
+`z ↦ 1 − 1/z` is the order-3 anharmonic element — the same map Route 55 showed
+carries the saddle cubic onto `X³ − X + 1`. This is that map read on `L`.
+Verified at six points first, including both `y₁` and `y₂`.
+
+### Where Route 58's links stand now
+
+| link | analytic content | what remains |
+|---|---|---|
+| G3 `inv_a` | `cRogersL_add_inv` **proved** | evaluate `log a₃`: needs `arg a₃ = (π−θ)/3`, whose algebraic core `a₃³y₁ = −y₃` is **proved** — branch pinning only |
+| G4 anharmonic | `cRogersL_one_sub_inv_sub` **proved** | evaluate `log y₂ = −½log y₃ − iθ` — branch pinning only |
+| G6 `Σ log·log` | — | the saddle branch equation |
+
+So **every dilogarithm-level ingredient of links G3 and G4 is now proved**, and
+what is left of them is uniformly the same thing: pinning the argument of a
+specific algebraic number inside a `(−π, π]` window. That is a bounds problem,
+not an analysis problem, and it is not in the corpus —
+`Archimedean/BranchIntegerPinning.lean` pins a branch integer along a
+*continuous family*, which is a different technique.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

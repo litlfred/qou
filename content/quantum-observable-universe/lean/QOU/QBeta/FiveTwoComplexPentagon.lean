@@ -983,4 +983,91 @@ theorem saddle_arg_cube' {a c : ℂ}
 
 end SaddleStructure
 
+/-! ### Complex Rogers reflection
+
+The corpus had `Li₂` **inversion** on `ℂ` but no complex **reflection**. It is
+now available, and cheaply: `L′(z) − L′(1−z) = 0` *identically* as a rational
+expression — the Rogers half is exactly what makes reflection differentiate to
+nothing — and `rogersDomain` is invariant under `z ↦ 1−z` (it is `ℂ` minus both
+real cuts, and the involution swaps them). So constancy is immediate on an open
+connected set, and the constant is pinned at the real point `1/2` by the real
+reflection already proved in the corpus.
+
+With inversion (`MathlibExt.cRogersL_add_inv`) this makes the whole anharmonic
+group act on `cRogersL`, which is what Route 58's links G3 and G4 are
+evaluations in. -/
+
+section Reflection
+
+open QOU.QBeta.FiveTwoRogersReflection
+
+/-- `rogersDomain` is invariant under `z ↦ 1 − z`: the involution swaps the two
+cuts `(−∞,0]` and `[1,∞)`. -/
+theorem one_sub_mem_rogersDomain_iff {z : ℂ} :
+    (1 : ℂ) - z ∈ rogersDomain ↔ z ∈ rogersDomain := by
+  have key : (1 : ℂ) - ((1 : ℂ) - z) = z := by ring
+  have h1 : z ∈ Complex.slitPlane ↔ ((1 : ℂ) - z ∈ notCut) := by
+    have h := one_sub_mem_slitPlane_iff (z := (1 : ℂ) - z)
+    rwa [key] at h
+  constructor
+  · rintro ⟨hs, hn⟩
+    exact ⟨h1.mpr hn, one_sub_mem_slitPlane_iff.mp hs⟩
+  · rintro ⟨hs, hn⟩
+    exact ⟨one_sub_mem_slitPlane_iff.mpr hn, h1.mp hs⟩
+
+/-- **`L(z) + L(1−z)` has vanishing derivative** — identically, with no branch
+condition. This is the Rogers normalisation's whole point. -/
+theorem hasDerivAt_cRogersL_reflect {z : ℂ} (hz : z ∈ rogersDomain) :
+    HasDerivAt (fun w : ℂ => cRogersL w + cRogersL (1 - w)) 0 z := by
+  have hz' : (1 : ℂ) - z ∈ rogersDomain := one_sub_mem_rogersDomain_iff.mpr hz
+  have h0 : z ≠ 0 := ne_zero_of_mem_rogersDomain hz
+  have h1 : (1 : ℂ) - z ≠ 0 := one_sub_ne_zero_of_mem_rogersDomain hz
+  have hinner : HasDerivAt (fun w : ℂ => 1 - w) (-1) z := by
+    simpa using (hasDerivAt_const z (1 : ℂ)).sub (hasDerivAt_id z)
+  have d1 := hasDerivAt_cRogersL_of_mem hz
+  have d2 := hasDerivAt_cRogersL_comp hinner hz'
+  refine (d1.add d2).congr_deriv ?_
+  rw [show (1 : ℂ) - (1 - z) = z by ring]
+  field_simp
+  ring
+
+/-- **Complex Rogers reflection.** `L(z) + L(1−z) = π²/6` on all of
+`rogersDomain` — every `z` off both real cuts, no branch hypothesis.
+
+The constant is pinned at `z = 1/2`, where `cRogersL_ofReal` and the corpus's
+real `rogersL_reflection` give it outright. -/
+theorem cRogersL_add_one_sub {z : ℂ} (hz : z ∈ rogersDomain) :
+    cRogersL z + cRogersL (1 - z) = ((Real.pi ^ 2 / 6 : ℝ) : ℂ) := by
+  have hbase : ((1 / 2 : ℝ) : ℂ) ∈ rogersDomain :=
+    ofReal_mem_rogersDomain (by norm_num) (by norm_num)
+  have hconst := isOpen_rogersDomain.is_const_of_deriv_eq_zero isPreconnected_rogersDomain
+    (fun w hw => (hasDerivAt_cRogersL_reflect hw).differentiableAt.differentiableWithinAt)
+    (fun w hw => (hasDerivAt_cRogersL_reflect hw).deriv) hz hbase
+  rw [hconst, show (1 : ℂ) - ((1 / 2 : ℝ) : ℂ) = ((1 / 2 : ℝ) : ℂ) by push_cast; ring,
+    cRogersL_ofReal (by norm_num) (by norm_num)]
+  have hr := rogersL_reflection (x := (1 / 2 : ℝ)) (by norm_num) (by norm_num)
+  rw [show (1 : ℝ) - 1 / 2 = 1 / 2 by norm_num] at hr
+  rw [← Complex.ofReal_add, hr]
+
+/-- **The anharmonic relation, evaluated.** Reflection at `1/z` minus inversion:
+
+    L(1 − 1/z) − L(z) = π²/3 + ½·log(−z)² − ½·log z·log(−z)
+
+`z ↦ 1 − 1/z` is the order-3 element of the anharmonic group, and Route 55 showed
+it carries the 5₂ saddle cubic onto `X³ − X + 1`. This is that map read on `L`,
+and it is the analytic content of Route 58's link G4 — what remains there is
+evaluating the two logarithms, i.e. branch pinning. -/
+theorem cRogersL_one_sub_inv_sub {z : ℂ} (hz : z ∈ invDomain) (harg : z.arg ≠ Real.pi)
+    (hzi : z⁻¹ ∈ rogersDomain) :
+    cRogersL (1 - z⁻¹) - cRogersL z
+      = ((Real.pi ^ 2 / 3 : ℝ) : ℂ) + Complex.log (-z) ^ 2 / 2
+        - Complex.log z * Complex.log (-z) / 2 := by
+  have h1 := cRogersL_add_one_sub hzi
+  have h2 := cRogersL_add_inv hz harg
+  push_cast at h1 h2 ⊢
+  linear_combination h1 - h2
+
+end Reflection
+
+
 end QOU.QBeta.FiveTwoComplexPentagon
