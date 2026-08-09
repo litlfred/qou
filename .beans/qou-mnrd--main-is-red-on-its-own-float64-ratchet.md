@@ -803,3 +803,106 @@ The alpha change is **syntax-checked only**, flagged as such in its commit:
 the module cannot be imported here, so it has never been executed. Whoever
 re-runs it on a native-kernel host should diff the witness before committing,
 the same way every other drain in this branch was checked.
+
+---
+
+## Fourth batch: pyhecke_native BUILT. 3 NEW + 1 REGRESSED -> 1 NEW + 1 REGRESSED
+
+The three witnesses I had recorded as "cannot be regenerated in this container"
+were only blocked on a missing Rust extension, and the repo ships a script to
+build it: `scripts/build-pyhecke-native.sh`. It works, ~4 minutes.
+
+    pip install maturin; maturin build --release; pip install the wheel
+
+Its header explains the one non-obvious part, and it matters for any agent
+hitting this again: the Cargo graph pins a git fork
+(`github.com/litlfred/Clarabel.rs`), the sandbox rewrites every
+`https://github.com/...` to a local mirror that only serves `litlfred/qou`, so
+the fork 403s at `cargo metadata`. The script temporarily drops that one
+rewrite and restores it via a trap. **The wheel is EPHEMERAL** — it lives in
+the session's user site-packages and dies with the container, so re-run the
+script in any fresh session before Hecke-precision compute.
+
+    alpha-k-jones-markov-h12        91 -> 0   ZERO value differences
+    atomic-tr-m-mpfr-50dps-proton   20 -> 0   values CORRECTED, see below
+    chi-helium-4-h12-at-q0-50dps    78        NOT regenerated — see below
+
+### Match the environment before accepting a regenerated witness
+
+`alpha`'s first regeneration recorded `clarabel: null` and `mpmath: 1.3.0`
+where the committed witness had `0.11.1` and `1.4.1` — a provenance
+DOWNGRADE, from this container being thinner than the one that produced it.
+Fixed by installing both to match, after which the environment block is
+byte-identical and there are ZERO value differences across all 91 numbers.
+
+Two traps found doing that, both worth knowing:
+
+  * **`WitnessBuilder.save` is content-diff-aware**, so once the drained
+    content is on disk, later runs PRESERVE the existing file including its
+    stale `environment` block. Installing clarabel and re-running changed
+    nothing. The witness has to be DELETED to force a genuine rewrite.
+  * A version delta in `environment` is invisible in a normal "did the values
+    move?" diff, because no value moves. It has to be checked separately.
+
+### `atomic-tr-m-mpfr-50dps-proton`: the values were STALE, by 1h34m
+
+The drain is the lesser half of that commit. The committed witness agrees with
+a fresh run to only ~18 significant digits, then diverges:
+
+    proton  old 1.065306134791738413807655...
+            new 1.065306134791738450558029...
+
+Isolated before committing, because "my change moved a number" is the first
+thing to rule out: re-running the PRE-drain source produces the new value too.
+Then dated it —
+
+    witness computedAt   2026-08-08T17:55:45Z
+    efcaf79ed landed     2026-08-08T19:29:17Z   (1h34m later)
+      "NO FLOAT64: the braid word was f64 at source"
+
+So every digit past the ~17th in that 50-dps witness was computed from an
+f64-limited braid word and was never real. The new values are the correction,
+not a regression. Same q0, same anchor, same hoefsmit-python-fallback method,
+identical environment, deterministic across repeats.
+
+**This is the second witness in this bean found to predate a fix that changed
+its numbers** (the first being the threerow four, which predated the guard
+rather than a value change). The pattern to expect: anything computed in the
+window around 2026-08-08 may carry pre-`efcaf79ed` digits.
+
+### `chi-helium-4-h12-at-q0-50dps`: NOT a drain decision, so not made
+
+Its 78 fields are all `compute_time_sec`, and the obvious move — run
+`_b0vf_complete_he4_witness.py`, which advertises "rewrites the witness in
+place" — is WRONG, and I nearly did it. Running it produces:
+
+  * all 77 `chi_lambda` values different at the **7th** digit;
+  * `tr_M_at_q0` different at the 8th;
+  * a `_provenance` block the committed witness does not have;
+  * `producer` changing from `chi_at_q0_via_hoefsmit_mpfr.py` to
+    `branch-decomp + chi_lambda_all_partitions_mpfr`.
+
+The committed `tr_M_at_q0` is EXACTLY the new run's `markov_peel_scalar`. So
+the two scripts publish two DIFFERENT quantities under the same key — the
+markov-peel scalar vs the Wenzl Sigma y chi pairing — separated by the
+documented dual-path gap (1.94e-7, inside its own 4.80e-7 tolerance). Running
+the b0vf script would silently swap the semantics of a published field while
+appearing to be a float64 cleanup.
+
+**Which method owns this witness is a domain decision, not a drain.** So the
+witness is reverted and untouched. What IS done: the timing sinks are fixed in
+`chi_at_q0_via_hoefsmit_mpfr.py`, the producer the witness names in its own
+`producer` field — I had previously fixed only `chi_4he_via_rust_lossless.py`
+and the b0vf script, i.e. the wrong two.
+
+A regeneration via the correct owner (`--fresh`, n=12, 77 partitions in mpfr)
+is running but is slow; whoever finishes it should expect the same
+pre-`efcaf79ed` staleness question the atomic witness had, and should diff
+before committing.
+
+## State: 1 NEW + 1 REGRESSED, 541,817 -> 540,281 fields
+
+    ground-state-ordering-argmin-sweep   1   blocked: its lean_bridge block has
+                                             no producer (see earlier entry)
+    chi-helium-4-h12-at-q0-50dps        78   blocked: needs the owner decision
+                                             above, not drain work
