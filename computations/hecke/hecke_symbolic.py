@@ -43,7 +43,17 @@ q_half_inv = 1 / sp.sqrt(q)
 # Fundamental quantities in q
 HA = q - q_inv                          # q − q⁻¹
 s_skein = q_half - q_half_inv            # q^½ − q^{-½}
-z_markov = 1 / (q_half + q_half_inv)     # 1/(q^½ + q^{-½})
+
+# TRACE CONVENTION: **convention D** (SU(2)/Temperley–Lieb, Jones),
+# z = q³/(q² + 1).  Owner ruling 2026-08-09 excised convention C
+# (z = 1/(q^½ + q^{-½})), which this line carried until then.
+# Registry: docs/coordination/trace-convention-registry.md — D's weights at
+# n = 3 are ([4]_q/[2]_q³, 1/[2]_q², 0), i.e. y_(1³) = 0, forced by the mass
+# fibre's row cap ℓ(λ) ≤ 2 (markovWeights_eq_jones_of_threeRow_eq_zero).
+# This symbol is re-exported as `Z_SYMB` and is the DEFAULT z of
+# markov_trace_canonical.tr_M_element, so ~20 call sites that omit `z`
+# inherit it.  Do not revert without moving the registry with it.
+z_markov = q**3 / (q**2 + 1)             # convention D
 
 # Crossing coefficients — from Hecke inverse σ⁻¹ = σ − (q − q⁻¹)
 #
