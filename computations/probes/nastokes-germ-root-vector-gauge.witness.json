@@ -1,0 +1,102 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T03:04:54.900084+00:00",
+  "commitSha": "4357a5b7b2451ed94e12ffc4994a97fc8589aac9",
+  "assertions": [
+    {
+      "name": "braid_relation_holds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "hecke_relation_holds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "germs_are_q_independent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "germ_curvature_is_pure_root_vector",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "germ_curvature_nilpotent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "ad_sigma1_eigenvector_identity",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "pairing_vanishes_all_49_handle_pairs",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 22,
+  "computation": "nastokes-germ-root-vector-gauge",
+  "scriptFile": "nastokes_germ_root_vector_gauge_probe.py",
+  "scriptHash": "25b82aa53fb6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean qou-prjo. Resolves the gauge under-determination reported by PR #4798 for the transverse NA-Stokes surface-curvature pairing on the deuteron (σ₁³/trefoil) Seifert surface. Two corpus conventions — the germ (def:germ-commutator-q-curvature: δq is a germ-level increment of q, i.e. the logarithmic q-derivative) and the transport (Yekutieli path-ordering + Seifert bands↔letters) — fix both gauges. The q-derivative germs are q-independent constants (H−2E, −H); their commutator F_q = −4E is a pure root vector of the ρ(σ₁) torus with Ad(σ₁)F_q = −q²F_q, so every transported curvature is a scalar multiple of one element and the pairing vanishes for EVERY intersection form and EVERY handle-exponent assignment (checked exhaustively over 49 pairs). Determined c₂ = 0, not the g₂ ≈ 1.0087 that would close the deuteron. scope-(b) structural exclusion restricted to single-generator (2,L)-torus channels; A ≥ 3 multi-generator remains scope-(a) open. Lean (sorry-free): QOU/MassTheory/GermRootVectorGaugeFixing.lean. 0 free parameters; g₂ used only for the post-hoc comparison, never inverted.",
+  "auditOnly": true,
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
+    "q0_pin": "experimental/proton (qou_substrate.constants)",
+    "free_parameters": 0,
+    "channel_word": "sigma_1^3 (deuteron pn / trefoil, single generator)",
+    "germ_convention": "logarithmic q-derivative q*(d_q sigma)*sigma^-1",
+    "transport_convention": "Yekutieli ordered partial product along the braid word"
+  },
+  "data": {
+    "germ1": "[[1, -2], [0, -1]]",
+    "germ2": "[[-1, 0], [0, 1]]",
+    "germ_curvature": "[[0, -4], [0, 0]]",
+    "root_eigenvalue": "-q**2",
+    "h_squared_at_q0": "0.043706208532521989402",
+    "c2_determined": "2.68517634596e-51",
+    "c2_trefoil_derived_reading": "5.90210332063e-52",
+    "max_pairing_norm_over_49_handle_pairs": "1.17358877323e-52",
+    "g2_comparison_target_not_an_input": "1.0087",
+    "inadmissible_choices_from_pr4798": {
+      "qderiv;s1,s2 (uses sigma_2, absent from the word)": "896.71095",
+      "qderiv;s2,s1s2 (uses sigma_2, absent from the word)": "0.0"
+    },
+    "wrong_germ_choices_from_pr4798": {
+      "log-germ;s1,s1^2 (log sigma is the connection, not a q-germ)": "294.56942"
+    }
+  },
+  "caveats": [
+    "scope-(b) STRUCTURAL EXCLUSION restricted to single-generator (2,L)-torus channels. Cited invariant: the Ad(rho(sigma_1))-eigenvector property of the germ q-curvature. Multi-generator words (A >= 3) are NOT excluded — there the transports involve both generators and the eigenvector property fails; that case remains scope-(a) open.",
+    "'sorry-free != derived' seam: the step d_q sigma_i = ds_i is entrywise differentiation done by hand (sympy checks it here; Lean takes ds_i as supplied data). Everything downstream of it is machine-checked.",
+    "Every symbolic result is q-INDEPENDENT, so the q0 pin does not affect the conclusion; the experimental proton anchor is recorded for layer purity."
+  ]
+}
