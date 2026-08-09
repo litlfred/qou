@@ -132,11 +132,24 @@ def scan_file(path: Path) -> list[dict]:
     `set_compute_dps()` / `mp.dps = 50` is built at full precision and is
     correct. Only what precedes the raise is lossy — so this walks module
     statements in order and stops flagging once precision has been set.
+
+    ⚠ Every row this returns carries `file`. The three early-exit rows
+    (`unreadable` / `syntax-error` / `unparseable`) once omitted it, and
+    `main`'s per-file grouping does `r["file"]` — so the first unparseable file
+    in the tree crashed the whole audit with `KeyError: 'file'`. That is
+    *worse* than the silent `return []` this branch was added to replace: a
+    false clean at least reported the other files. Caught by running the script
+    against the real tree rather than against the one crafted bad file.
     """
+    try:
+        rel = path.relative_to(ROOT).as_posix()
+    except ValueError:
+        rel = path.as_posix()
     try:
         src = path.read_text(encoding="utf-8")
     except Exception as e:
-        return [{"line": 0, "kind": "unreadable", "text": f"{type(e).__name__}: {e}"}]
+        return [{"file": rel, "line": 0, "kind": "unreadable",
+                 "text": f"{type(e).__name__}: {e}"}]
     try:
         tree = ast.parse(src)
     except SyntaxError as e:
@@ -147,10 +160,11 @@ def scan_file(path: Path) -> list[dict]:
         # dict's opening brace and its first entry. This audit reported both as
         # having nothing wrong, because they no longer parsed. A checker that
         # goes quiet on the files it broke is worse than no checker.
-        return [{"line": e.lineno or 0, "kind": "syntax-error",
+        return [{"file": rel, "line": e.lineno or 0, "kind": "syntax-error",
                  "text": f"file does not parse: {e.msg}"}]
     except Exception as e:
-        return [{"line": 0, "kind": "unparseable", "text": f"{type(e).__name__}: {e}"}]
+        return [{"file": rel, "line": 0, "kind": "unparseable",
+                 "text": f"{type(e).__name__}: {e}"}]
     out: list[dict] = []
     for stmt in tree.body:                      # module scope only, in order
         if isinstance(stmt, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
@@ -163,10 +177,6 @@ def scan_file(path: Path) -> list[dict]:
         for node in ast.walk(stmt):
             if not (isinstance(node, ast.Call) and _is_mpf(node)):
                 continue
-            try:
-                rel = path.relative_to(ROOT).as_posix()
-            except ValueError:
-                rel = path.as_posix()
             lit = _literal_of(node)
             if lit is None:
                 # mpf(<expression>) — e.g. mpf(str(G_A_PDG_ERR)). Lossiness
@@ -258,13 +268,29 @@ def main() -> int:
     scope = "all scripts" if a.all else "witness-emitting scripts"
     lit = sum(1 for r in rows if r.get("kind") == "literal")
     exp = sum(1 for r in rows if r.get("kind") == "expr")
-    print(f"module-scope mpf built before precision is raised: {len(rows)}  [{scope}]")
+    # Files that do not parse (or do not read) are reported FIRST and on their
+    # own. Folding them into the ranked per-file list buried them: a broken file
+    # yields one row, so it never reached the top-25 cut and the report looked
+    # clean while the audit had in fact learned nothing about it. That is the
+    # same silent-lie shape this audit was written to remove, one layer up.
+    broken = [r for r in rows
+              if r.get("kind") in ("syntax-error", "unreadable", "unparseable")]
+    print(f"module-scope mpf built before precision is raised: {len(rows) - len(broken)}"
+          f"  [{scope}]")
     print(f"   proven lossy (literal arg): {lit}")
     print(f"   position-risky (expr arg, not statically provable): {exp}")
-    print(f"files affected: {len(by_file)}\n")
-    for f in sorted(by_file, key=lambda k: -len(by_file[k]))[:25]:
+    print(f"files affected: {len(by_file) - len(broken)}\n")
+    if broken:
+        print(f"⚠ {len(broken)} file(s) the audit could NOT read — "
+              f"NOT a clean result for them, no claim is made about their contents:")
+        for r in broken:
+            print(f"  {r['file']}:{r['line']}  [{r['kind']}]  {r.get('text', '')}")
+        print()
+    ranked = {f: rs for f, rs in by_file.items()
+              if any(r.get("kind") in ("literal", "expr") for r in rs)}
+    for f in sorted(ranked, key=lambda k: -len(ranked[k]))[:25]:
         print(f"  {f}  ({len(by_file[f])})")
-        for r in by_file[f][:3]:
+        for r in ranked[f][:3]:
             k = r.get("kind", "literal")
             arg = repr(r['literal']) if r.get('literal') is not None else '<expr>'
             print(f"      L{r['line']}: mpf({arg})  [{k}]")
@@ -274,7 +300,13 @@ def main() -> int:
               "set_compute_dps() at module level BEFORE it, or wrap "
               "construction in `with mp.workdps(max(50, mp.mp.dps)):`, or "
               "read it from codata_constants (already workdps-wrapped).")
-    if a.strict and rows:
+    # An unreadable file fails under `--strict` — that flag's help says "lossy
+    # constant", but a file the audit could not parse is precisely the case
+    # where it cannot say there is *no* lossy constant. It does NOT fail the
+    # default run: the two currently-unparseable files predate this branch and
+    # sit on `main`, and a survey tool that hard-fails on a pre-existing backlog
+    # stops being runnable, which is how a checker goes quiet in the first place.
+    if a.strict and (rows or broken):
         return 1
     return 0
 
