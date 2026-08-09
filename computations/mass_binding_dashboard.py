@@ -333,12 +333,39 @@ def _bond_type_L():
     with _mp.workdps(max(_mp.mp.dps, 60)):
         q0x = _mp.mpf(str(_Q50))
         hx = q0x - 1 / q0x
-        zx = 1 / (_mp.sqrt(q0x) + 1 / _mp.sqrt(q0x))
+        # CONVENTION D (fixed 2026-08-09). This read
+        # `zx = 1/(sqrt(q0)+1/sqrt(q0))` = 0.4993203 -- convention **C**, the
+        # full-Hecke Ocneanu z. C was excised (73311b57, 33a6c7aa) but the
+        # excision swept `wedderburn_jones_markov.y_lambda_at` and
+        # `closed_form_tau_M.markov_z` and MISSED this inline literal, so the
+        # binding dashboard was still reporting C bond energies afterwards.
+        # D is z = q^3/(q^2+1) = 0.6126880.
+        zx = q0x ** 3 / (q0x ** 2 + 1)
         dx = flavor_split_leading(q0x)
         d = {"pp": _mp.mpf(0),                                  # sigma
              "pn": -hx * (_mp.mpf(1) / 2 - dx / 4),             # colour-weighted
              "nn": -hx}                                         # sigma^-1
-        return {k: float(-_mp.log(zx + v)) for k, v in d.items()}
+        # WRITHE NORMALISATION (owner directive 2026-08-09: "want all derived
+        # bits in there even if negligible"). Lean-proved SORRY-FREE in
+        # QOU/QBeta/WritheNormalisation.lean: Markov invariance forces
+        # S_hat = S * A^(e-n) with A^2 = 1-h, i.e. the factor (1-h)^((e-n)/2),
+        # unique up to sign (`writhe_factor_sq`,
+        # `writhe_factor_unique_up_to_sign`) -- no freedom to tune.
+        #
+        # On the free/atom RATIO the strand count cancels (both n=6), so only
+        # the exponent-sum difference survives:
+        #     L_XY  ->  L_XY - (delta_e/2)*ln(1-h)
+        # with delta_e = +1 for sigma (pp), -1 for sigma^-1 (nn), and
+        # 2t-1 ~ -6.9e-4 for the p-n colour superposition at t ~ 0.4997.
+        #
+        # Bean qou-c6gx recorded this as "REAL but negligible ... 3.2e-4 MeV".
+        # That was the 2H (p-n) case ONLY, where delta_e ~ 0. For a PURE
+        # crossing delta_e = +/-1 and the shift is alpha*|ln(1-h)|/2 = 0.4909
+        # MeV -- NOT negligible, and equal-and-opposite on pp vs nn.
+        de = {"pp": _mp.mpf(1), "nn": _mp.mpf(-1),
+              "pn": 2 * (_mp.mpf(1) / 2 - dx / 4) - 1}
+        lw = _mp.log(1 - hx)
+        return {k: float(-_mp.log(zx + v) - de[k] / 2 * lw) for k, v in d.items()}
 
 
 def _nucleon_msym(alpha):
