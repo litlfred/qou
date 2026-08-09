@@ -345,10 +345,27 @@ with `Λ` the Lobachevsky function.  Three quantities come out of the saddle:
 
 giving `c_σ = 2 sin θ* · |cot θ*|^{−1/2}` and `|τ_DG| = |cot θ*| / 2`.
 
-WHAT IS AND IS NOT PROVED HERE.  The analytic input — the Euler–Maclaurin
-expansion of `s_k` and Laplace's method — is ASSUMED, as hypotheses `hc` and
-`hτ` below.  It is not formalised and Mathlib has no usable form of it.  What is
-proved is the algebra downstream of it, which is where the whole surprise lives:
+WHAT IS AND IS NOT PROVED HERE.  The algebra downstream of the saddle is proved
+here; the saddle itself still enters as hypotheses `hc` and `hτ`.  The two
+analytic inputs those hypotheses stand for are now BOTH formalised elsewhere in
+this corpus (bean `qou-mlgp`), so the reading "not formalised, Mathlib has no
+usable form" — which this header carried until 2026-08-09 — is out of date:
+
+  * the expansion, `QOU.Knot.FigureEightVolume.kashaev_log_sum_asymptotic`.
+    With `kashaev_factor_eq_sin_sq` giving `log g_k = 2·∑_{j≤k} log(2 sin jπ/N)`,
+    it says exactly the display above with the `O(1/N)` made explicit:
+    `log g_k = −(2N/π)Λ(θ) + log(2N sin θ) + (π/6N)cot θ + O(1/N²)`;
+  * Laplace's method for the sum,
+    `QOU.MathlibExt.hasSum_gaussian_theta` and `…_tilt` — an EXACT Jacobi-theta
+    identity for the Gaussian sum, so sum/integral `= 1 + O(e^{−π²/a})`.
+
+WHAT IS STILL ASSUMED is the LINK: nobody has yet derived `hc` and `hτ` from
+those two theorems.  That derivation — feeding the expansion into the theta
+identity, extracting the saddle condition, the Stirling factor and the Hessian —
+is the open step, and it is a smaller and much better-defined one than the
+analytic gaps it replaced.  Do not read this file as covering it.
+
+What is proved here is the algebra, which is where the whole surprise lives:
 
   * `saddle_forces_cot` — the saddle condition plus `θ ∈ (π/2, π)` pins
     `cot θ* = −√3`.  Nothing about `4₁` is used; one summation variable is the

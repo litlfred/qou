@@ -1,7 +1,7 @@
 ---
 # qou-mlgp
 title: 'The Mathlib gap that blocks formalising the analytic half of the c_sigma derivation'
-status: todo
+status: done
 type: task
 priority: normal
 tags:
@@ -11,7 +11,7 @@ tags:
     - one-loop
     - formalization-gap
 created_at: 2026-08-08T22:20:00Z
-updated_at: 2026-08-08T22:20:00Z
+updated_at: 2026-08-09T00:00:00Z
 ---
 
 ## What is and is not formalised
@@ -1381,3 +1381,28 @@ is the claim, not "sharp".
     is numerically exact to 1e-59.
   * `abs_of_nonpos (by positivity : -(1/h) <= 0)` does not work -- `positivity`
     proves positivity, not nonpositivity. `abs_neg` then `abs_of_pos`.
+
+## Bean status: (A) (B) (C) (D) all closed. What this bean does NOT close.
+
+All four analytic gaps this bean opened with are now machine-checked in-repo:
+
+    (A) Euler-Maclaurin for s_k WITH the constant   kashaev_log_sum_asymptotic
+    (B) Laplace's method for a sum                  hasSum_gaussian_theta{,_tilt}
+    (C) Lobachevsky function and derivatives        was already in-repo
+    (D) multivariate Gaussian, complex covariance   integral_vdv_step4
+
+The bean's own "Definition of done" asked for something weaker -- "(A) stated as
+a Lean hypothesis with a citation" -- and also demanded, correctly, that the
+Lean reading never cover more than it does. That clause now cuts the OTHER way:
+`OneLoopPrefactorInvariance.lean` and `one-loop-prefactor-provenance.md` both
+said the analytic input "is not formalised / Mathlib has no usable form", which
+UNDERSTATES as of today. Both updated in the same commit.
+
+**The gap that replaces it, stated exactly.** `hc` and `hτ` in
+`OneLoopPrefactorInvariance` are still hypotheses. Nobody has derived them from
+the four theorems above -- feeding the expansion into the theta identity,
+extracting the saddle condition, the Stirling factor and the Hessian. That is a
+different task from this bean's: it is assembly of formalised pieces, not a
+search for missing analysis, and it should get its own bean rather than keeping
+this one open. Do not read "the analytic gaps are closed" as "c_sigma(4_1) =
+3^{-1/4} is formalised end to end". It is not.
