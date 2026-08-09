@@ -1,11 +1,11 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T19:51:28.123Z",
+  "generated": "2026-08-09T20:26:02.333Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 2701,
-  "files_flagged": 157,
+  "files_flagged": 217,
   "total_defects": 128,
-  "total_exempt": 78,
+  "total_exempt": 162,
   "categories": {
     "proof-no-trivial-true": 22,
     "proof-no-provable-axiom": 11,
@@ -1297,6 +1297,19 @@
     ]
   },
   "flagged": {
+    "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean": [
+      {
+        "line": 303,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem knot_eigenbasis_density {H : HeckeAlgebra}",
+        "decl": "knot_eigenbasis_density",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `kec.summands_detected` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/braids-and-knots/r-matrix-braiding-structure.lean": [
       {
         "line": 75,
@@ -1329,6 +1342,108 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/brings-surface/levi-form-defect.lean": [
+      {
+        "line": 51,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem matter_locus_nonempty {R : Type*} [CommRing R]",
+        "decl": "matter_locus_nonempty",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `d.nondeg` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.lean": [
+      {
+        "line": 48,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem mi_sw_nonneg (data : MISWAbelianisation) : 0 ≤ data.mi_norm :=",
+        "decl": "mi_sw_nonneg",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `data.mi_nonneg` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 53,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem sw_determines_mi (data : MISWAbelianisation) :",
+        "decl": "sw_determines_mi",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `data.abelianisation` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean": [
+      {
+        "line": 62,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem uncertainty_vanishes (qr : QuaternionicResolvent) :",
+        "decl": "uncertainty_vanishes",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `qr.omega_zero_balanced` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/climax-volume-mass/mobius-energy-proof.lean": [
+      {
+        "line": 105,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :",
+        "decl": "MobiusEnergy",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `cme.classicalLimit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/climax-volume-mass/mobius-energy.lean": [
+      {
+        "line": 73,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem mobius_energy_nonneg (cme : CategoricalMobiusEnergy) :",
+        "decl": "mobius_energy_nonneg",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `cme.energy_classical_nonneg` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean": [
+      {
+        "line": 81,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem NonSelfIntersection.exclusionRadius_eq",
+        "decl": "NonSelfIntersection.exclusionRadius_eq",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `nsi.exclusionRadius_def` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean": [
+      {
+        "line": 67,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem noncocomm_iff_quantum (nsi : NonSelfIntersection) :",
+        "decl": "noncocomm_iff_quantum",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `nsi.noncocomm_pos` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/fluid-dynamics/acoustic-horizon-conditions.lean": [
       {
         "line": 98,
@@ -1341,6 +1456,41 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
+    "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean": [
+      {
+        "line": 106,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem core_levi_form",
+        "decl": "core_levi_form",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.cond_def` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 164,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem core_levi_cond_aspect_bound [ctx : CoreLeviContext] :",
+        "decl": "core_levi_cond_aspect_bound",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.cond_aspect_bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 172,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem core_levi_cond_bound",
+        "decl": "core_levi_cond_bound",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.cond_bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/fluid-dynamics/discrete-vortex-spectrum.lean": [
       {
         "line": 91,
@@ -1351,6 +1501,19 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+      }
+    ],
+    "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.lean": [
+      {
+        "line": 78,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem helicity_cwf_relation [ctx : HelicityContext] :",
+        "decl": "helicity_cwf_relation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.cwf` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/fluid-dynamics/root-of-unity-truncation.lean": [
@@ -1461,6 +1624,19 @@
         "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `h_q_ne_one` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
+    "content/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.lean": [
+      {
+        "line": 82,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem kappa_closed_form_is_categorical",
+        "decl": "kappa_closed_form_is_categorical",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `c.kappa_closed_eq_empirical` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean": [
       {
         "line": 111,
@@ -1521,6 +1697,19 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean": [
+      {
+        "line": 352,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem branching_convergence (k : ℕ) (hk : k ≥ 4)",
+        "decl": "branching_convergence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean": [
       {
         "line": 502,
@@ -1529,6 +1718,100 @@
         "snippet": "theorem implies_single_irrational",
         "decl": "implies_single_irrational",
         "severity": "critical"
+      },
+      {
+        "line": 699,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem tower_noncollapse_implies_independence",
+        "decl": "tower_noncollapse_implies_independence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.independence` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean": [
+      {
+        "line": 71,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem term7_structural [hT : Term7ShellCorrectionClass] :",
+        "decl": "term7_structural",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hT.alpha5_derived` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 171,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem brane_tower_finite [hZ : ZHabiroConvergenceClass] :",
+        "decl": "brane_tower_finite",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hZ.uniform_bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean": [
+      {
+        "line": 113,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem skein_multiset_invariance_axiom",
+        "decl": "skein_multiset_invariance_axiom",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.invariance` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean": [
+      {
+        "line": 406,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem qInt_ratio_bound_small (q : ℝ) (hq : q > 1) (hq2 : q < 3/2)",
+        "decl": "qInt_ratio_bound_small",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 599,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem qFact_ratio_bound (q : ℝ) (hq : q > 1) (hq2 : q < 2)",
+        "decl": "qFact_ratio_bound",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 709,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem wedderburn_weight_perturbation (q : ℝ) (hq : q > 1) (hq2 : q < 2)",
+        "decl": "wedderburn_weight_perturbation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 795,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem convergence_rate (q : ℝ) (hq : q > 1) (hq2 : q < 2)",
+        "decl": "convergence_rate",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean": [
@@ -1555,9 +1838,42 @@
         "snippet": "theorem branch_31_to_111 : (0 : ℕ) = 0 := rfl",
         "decl": "branch_31_to_111",
         "severity": "critical"
+      },
+      {
+        "line": 1026,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem convergence_bound (k : ℕ) (hk : k ≥ 4) (C_q : ℝ) (hC : C_q > 0)",
+        "decl": "convergence_bound",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 1081,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem knot_invariant_convergence",
+        "decl": "knot_invariant_convergence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean": [
+      {
+        "line": 317,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)",
+        "decl": "matrixChain_eq_buildChains_axiom",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.eq` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
       {
         "line": 405,
         "category": "proof-no-unused-hypothesis-rfl",
@@ -1578,6 +1894,19 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean": [
+      {
+        "line": 80,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "exact-field-projection",
+        "snippet": "theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :",
+        "decl": "knot_operator_selection",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.operator_selection` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Archimedean/spectrahedral_phase_collapse.lean": [
       {
         "line": 35,
@@ -1587,6 +1916,19 @@
         "decl": "nucleon_sdp_rank_drop",
         "severity": "major",
         "detail": "proof is `by\n  rfl`, which uses no hypothesis, yet the statement binds `hu_pos` — absent from the conclusion, so the claim holds for every value of it"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse.lean": [
+      {
+        "line": 136,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem descartes_universality (dc : ArchimedeanCondition) :",
+        "decl": "descartes_universality",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `dc.descartes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/Cl3Zeta5PslqIndependence.lean": [
@@ -1643,6 +1985,45 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean": [
+      {
+        "line": 95,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem noble_gas_multi_operator",
+        "decl": "noble_gas_multi_operator",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.multi` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean": [
+      {
+        "line": 94,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem gb_residue_spectral_sum [s : GBResidueSpectralSum] :",
+        "decl": "gb_residue_spectral_sum",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `s.spectral_decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean": [
+      {
+        "line": 91,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem graded_trace_residue_split",
+        "decl": "graded_trace_residue_split",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `s.split_identity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeBaerStarGeneric/hecke_baer_star_generic.lean": [
       {
         "line": 95,
@@ -1695,6 +2076,19 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean": [
+      {
+        "line": 158,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem theorem_3_via_class",
+        "decl": "theorem_3_via_class",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hyp.dualityGapZero` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/MassGapKeystone.lean": [
@@ -1750,6 +2144,19 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean": [
+      {
+        "line": 106,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem phi_q_tower_algebraic_stratification",
+        "decl": "phi_q_tower_algebraic_stratification",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `s.mass_sum` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QHeckeSeminormalCharacterClosure.lean": [
       {
         "line": 33,
@@ -1760,6 +2167,19 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean": [
+      {
+        "line": 203,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem rogers_correction_leading_h_order [c : RogersCorrectionLeadingOrderH4] :",
+        "decl": "rogers_correction_leading_h_order",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `c.leading_h_order_eq_four` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/S5bbGeometricIndex.lean": [
@@ -1783,6 +2203,19 @@
         "snippet": "theorem not_sameRow12_and_sameCol12 (T : StandardYoungTableau μ) (hn : 2 ≤ μ.cells.card) :",
         "decl": "not_sameRow12_and_sameCol12",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean": [
+      {
+        "line": 107,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem shell_closure_monotone",
+        "decl": "shell_closure_monotone",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.monotone` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellNeutrality.lean": [
@@ -2211,6 +2644,19 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean": [
+      {
+        "line": 877,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem a4_betti_magnitude_closure [fac : A4BettiTraceFactorization] :",
+        "decl": "a4_betti_magnitude_closure",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `fac.trace_factorization_closure` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/YoungDiagramKernelPincer.lean": [
       {
         "line": 814,
@@ -2315,7 +2761,31 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean": [
+      {
+        "line": 42,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem ReebBundleComplementEqualsVolume",
+        "decl": "ReebBundleComplementEqualsVolume",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `inst.factorization_identity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean": [
+      {
+        "line": 96,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem adjoint_vanishing_propagation",
+        "decl": "adjoint_vanishing_propagation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `jgcs.adjoint_vanishing` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
       {
         "line": 202,
         "category": "proof-no-trivial-true",
@@ -2353,7 +2823,31 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean": [
+      {
+        "line": 210,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem amplitude_finite_sum (fct : FeynmanCategoricalTrace) :",
+        "decl": "amplitude_finite_sum",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `fct.partitions_count` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean": [
+      {
+        "line": 122,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem dressed_mass_from_substrate_split",
+        "decl": "dressed_mass_from_substrate_split",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.split` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
       {
         "line": 132,
         "category": "proof-no-self-assuming-projection",
@@ -2457,6 +2951,67 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean": [
+      {
+        "line": 70,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem habiro_flow_solutions_realise_synthesis",
+        "decl": "habiro_flow_solutions_realise_synthesis",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `inst.all_hold` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HadronicMass.lean": [
+      {
+        "line": 443,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem proton_pair_skein_approx",
+        "decl": "proton_pair_skein_approx",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 470,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem neutron_pair_skein_approx",
+        "decl": "neutron_pair_skein_approx",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.bound` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 611,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem skein_mass_relation_holds [hi : SkeinMassRelationHolds] :",
+        "decl": "skein_mass_relation_holds",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.identity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean": [
+      {
+        "line": 57,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "exact-field-projection",
+        "snippet": "theorem pair_skein_mass_formula [ctx : PairSkeinMassContext] :",
+        "decl": "pair_skein_mass_formula",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.pair_skein_mass_ident` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Information/ChiMinusSix.lean": [
       {
         "line": 48,
@@ -2492,6 +3047,19 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean": [
+      {
+        "line": 157,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem beta3_via_class [h : TheoremA] :",
+        "decl": "beta3_via_class",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.value_at_4` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Interactions/AlgebraicPrimality.lean": [
       {
         "line": 149,
@@ -2502,7 +3070,31 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean": [
+      {
+        "line": 200,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem sdp_lp_projection (n : ℕ)",
+        "decl": "sdp_lp_projection",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hi.agrees` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean": [
+      {
+        "line": 168,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem trefoil_topological_mass_eq_codata [ctx : TrefoilElectronMassConj] :",
+        "decl": "trefoil_topological_mass_eq_codata",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.trefoil_mass_eq_m_e` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
       {
         "line": 193,
         "category": "proof-no-self-assuming-projection",
@@ -2518,6 +3110,19 @@
         "snippet": "theorem trefoil_crossing_count_eq_three [ctx : TrefoilElectronMassConj] :",
         "decl": "trefoil_crossing_count_eq_three",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean": [
+      {
+        "line": 116,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem saddle_eq_volume [h : VolumeConjecture41] :",
+        "decl": "saddle_eq_volume",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.limit_eq_vol` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Knots/KauffmanTL3.lean": [
@@ -2926,6 +3531,30 @@
         "exempt": true,
         "exempt_reason": "explicit @marker / opaque-tag opt-out",
         "detail": "opaque-marker field(s) `: True` (dual_feas, obj_eq) — honestly framed; tracked not counted"
+      },
+      {
+        "line": 169,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem strong_duality (sdp : SDPPrimal n R ι)",
+        "decl": "strong_duality",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hStrong.pair` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean": [
+      {
+        "line": 148,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem MobiusEnergy {M : Type*} (cme : CategoricalMobiusEnergy M) :",
+        "decl": "MobiusEnergy",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `cme.classicalLimit` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Molecular/shell_filling_rule.lean": [
@@ -2938,6 +3567,19 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "docstring attributes the `sorry` to another declaration and this file has one"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/MotivesArchimedean.lean": [
+      {
+        "line": 163,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}",
+        "decl": "factors_def",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `v.factors` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Observations/AlgebraicGnsEmbedding.lean": [
@@ -2959,6 +3601,19 @@
         "decl": "depthBasedRule_reaches_k3",
         "severity": "major",
         "detail": "proof is `by\n  unfold depthBasedRule\n  rfl`, which uses no hypothesis, yet the statement binds `h` — absent from the conclusion, so the claim holds for every value of it"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean": [
+      {
+        "line": 170,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem padic_frobenius_relation_preserved",
+        "decl": "padic_frobenius_relation_preserved",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `pq.fv_comm` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/ParticleInteractions/AtomicityRankOneOrderSeparation.lean": [
@@ -3068,6 +3723,117 @@
         "severity": "critical"
       }
     ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean": [
+      {
+        "line": 61,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem fiber_adjoint_involution_sq {C : Type u} [CategoryTheory.Category.{v} C]",
+        "decl": "fiber_adjoint_involution_sq",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `fai.involution_sq` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean": [
+      {
+        "line": 133,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem categorical_irreducible {C : Type u} [CategoryTheory.Category.{v} C]",
+        "decl": "categorical_irreducible",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.subsingleton` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 231,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem categorical_dq_squared_nonvanishing {C : Type u}",
+        "decl": "categorical_dq_squared_nonvanishing",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.nonvanishing` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 259,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem kernelIncl_exact {C : Type u}",
+        "decl": "kernelIncl_exact",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `cj.exact` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 279,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem categorical_jet_prolongation {C : Type u}",
+        "decl": "categorical_jet_prolongation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `jp.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean": [
+      {
+        "line": 71,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)",
+        "decl": "main_commutative_diagram",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `diag.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean": [
+      {
+        "line": 63,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem cat_eigenspace_decomposition [ctx : CatEigenspaceDecompositionContext] :",
+        "decl": "cat_eigenspace_decomposition",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/JetProlongation.lean": [
+      {
+        "line": 61,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem jet_prolongation_C (jp : JetProlongationQOU) :",
+        "decl": "jet_prolongation_C",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `jp.dim_preserved` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean": [
+      {
+        "line": 88,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem topological_mass_decomposition {M : Type*}",
+        "decl": "topological_mass_decomposition",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `tmd.decomposition` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/lifting-and-descent/ccg-cosimplicial-identities.lean": [
       {
         "line": 43,
@@ -3090,6 +3856,19 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+      }
+    ],
+    "content/quantum-observable-universe/lifting-and-descent/descent-lemma.lean": [
+      {
+        "line": 42,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem descent_surjective {R : Type*} [CommRing R]",
+        "decl": "descent_surjective",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `dl.surjective` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/mass-endomorphism/chi-v21-hoefsmit-matrix-derivation.lean": [
@@ -3168,6 +3947,58 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
+    "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [
+      {
+        "line": 275,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem rho_eq_qdim_via_canonical_knot",
+        "decl": "rho_eq_qdim_via_canonical_knot",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.rho_eq_qdim` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean": [
+      {
+        "line": 10,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "exact-field-projection",
+        "snippet": "theorem crystal_basis_reduction [ctx : CrystalBasisCorrespondence] :",
+        "decl": "crystal_basis_reduction",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.reduction_holds_proof` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/descended-level-zero.lean": [
+      {
+        "line": 20,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "exact-field-projection",
+        "snippet": "theorem descended_level_zero {R : Type u} [Zero R]",
+        "decl": "descended_level_zero",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.desc_contrib_zero` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean": [
+      {
+        "line": 154,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem he4_strong_duality_value",
+        "decl": "he4_strong_duality_value",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.strong_duality` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean": [
       {
         "line": 155,
@@ -3178,6 +4009,30 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "conjecture-block Lean placeholder (§3b)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean": [
+      {
+        "line": 95,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem mass_anchor_stable_forward",
+        "decl": "mass_anchor_stable_forward",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hC.swing_within_tolerance` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 177,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem mass_direction_sanity_forward",
+        "decl": "mass_direction_sanity_forward",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hC.magnitude_within_threshold` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/mass-theory/mass-tower-deeper-fillers.lean": [
@@ -3227,6 +4082,17 @@
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
       {
+        "line": 105,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem bar_even_kernel_implies_radius_of_convergence",
+        "decl": "bar_even_kernel_implies_radius_of_convergence",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hK.pole_at_u_substrate` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
         "line": 115,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
@@ -3235,6 +4101,30 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+      },
+      {
+        "line": 125,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem bar_even_kernel_implies_direction_sanity",
+        "decl": "bar_even_kernel_implies_direction_sanity",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hK.direction_match` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean": [
+      {
+        "line": 86,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem qbeta_direction_sanity_magnitude_match",
+        "decl": "qbeta_direction_sanity_magnitude_match",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hC.magnitude_match` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-q-eq-one-shadow-gate.lean": [
@@ -3247,6 +4137,32 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean": [
+      {
+        "line": 102,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem qbeta_g_simple_pole_at_u_substrate",
+        "decl": "qbeta_g_simple_pole_at_u_substrate",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `hC.pole_location_is_u_substrate` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean": [
+      {
+        "line": 71,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem shared_denominator_cusp_holonomy",
+        "decl": "shared_denominator_cusp_holonomy",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.cusp_complete_of_root` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/mass-theory/universal-braid-branching.lean": [
@@ -3307,6 +4223,45 @@
         "detail": "proof is `⟨0, rfl⟩`, which uses no hypothesis, yet the statement binds `_h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
+    "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean": [
+      {
+        "line": 63,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem main_commutative_diagram (cqou : CQuantumObservableUniverse)",
+        "decl": "main_commutative_diagram",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `diag.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/models-of-qous/main-commutative-diagram.lean": [
+      {
+        "line": 78,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "exact-field-projection",
+        "snippet": "theorem diagram_commutes (d : MainCommutativeDiagram) :",
+        "decl": "diagram_commutes",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `d.commutativity` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean": [
+      {
+        "line": 39,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem opening_eq_holonomy_of_conj (d : H2SChiralData)",
+        "decl": "opening_eq_holonomy_of_conj",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `h.angle_eq_holonomy` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/nuclear-interactions/bar-involution-invariance.lean": [
       {
         "line": 99,
@@ -3339,6 +4294,19 @@
         "snippet": "axiom isPairProductionOutput {n : ℕ} : HeckeNormalForm n → Prop",
         "decl": "isPairProductionOutput",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean": [
+      {
+        "line": 66,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "def cpt_closure {R : Type*} [CommRing R] [inst : CPTClosure R] :",
+        "decl": "cpt_closure",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `inst.cpt_trace_preserved` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/nuclear-interactions/groebner-shirshov-energy.lean": [
@@ -3377,6 +4345,19 @@
         "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `h` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
+    "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean": [
+      {
+        "line": 294,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem q_beta_spectral_conditional [inst : BorromeanQuark] :",
+        "decl": "q_beta_spectral_conditional",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `inst.forms_agree` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/observations/building-block-knots.lean": [
       {
         "line": 151,
@@ -3386,6 +4367,19 @@
         "decl": "unknot_amphichiral",
         "severity": "major",
         "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `hq` — absent from the conclusion, so the claim holds for every value of it"
+      }
+    ],
+    "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean": [
+      {
+        "line": 133,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem nu_selfConjugate",
+        "decl": "nu_selfConjugate",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `c.nuZN_selfConj` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/predicted-spectra/e-hartree-categorical-derivation.lean": [
@@ -3443,6 +4437,19 @@
         "detail": "doc enumerates 2 properties (Normalization, Periodicity); only 0 encoded as Prop field(s)"
       }
     ],
+    "content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean": [
+      {
+        "line": 66,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem ContactAffineChart.affineCoord_welldefined {M : Type*} {R : Type*} [Field R]",
+        "decl": "ContactAffineChart.affineCoord_welldefined",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `chart.reeb_nonzero` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
     "content/quantum-observable-universe/quantum-observable-universes/fiber-adjoint-involution.lean": [
       {
         "line": 82,
@@ -3452,6 +4459,43 @@
         "decl": "fiber_adjoint_involution_exists",
         "severity": "critical",
         "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
+      }
+    ],
+    "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.lean": [
+      {
+        "line": 53,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem volume_form_is_nondegen {C : Type u} [Category.{v} C]",
+        "decl": "volume_form_is_nondegen",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `vff.epsilon_epi` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      }
+    ],
+    "content/quantum-observable-universe/quantum-universes/categorical-jet.lean": [
+      {
+        "line": 55,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem CategoricalJet.kernelIncl_exact {C : Type u}",
+        "decl": "CategoricalJet.kernelIncl_exact",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `cj.exact` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
+      },
+      {
+        "line": 83,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem categorical_jet_prolongation {C : Type u}",
+        "decl": "categorical_jet_prolongation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `jp.commutes` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ]
   }

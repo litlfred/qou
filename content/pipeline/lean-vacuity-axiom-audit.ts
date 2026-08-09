@@ -742,7 +742,80 @@ function topLevelIff(concl: string): boolean {
 const TWO_FIELD_TUPLE =
   /^⟨\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*,\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*⟩$/;
 
-function detectSelfAssuming(d: Decl): Hit | undefined {
+/**
+ * Binder variable → carrier type name, for every `[v : C …]` / `(v : C …)`
+ * binder in a signature. This is what lets the type-match test below resolve
+ * `ctx.foo` to the field `foo` of the class `C` that `ctx` inhabits.
+ */
+function binderCarriers(sig: string): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const m of sig.matchAll(
+    /[[(]\s*([a-z][\w']*)\s*:\s*([A-Z][\w'.]*)[^)\]]*[\])]/g,
+  ))
+    out.set(m[1], m[2]);
+  return out;
+}
+
+/**
+ * The structural discriminator the name gate approximates: does the projected
+ * field's DECLARED TYPE match the theorem's CONCLUSION?
+ *
+ * `CONCLUSION_FIELD` is a *naming-convention* proxy for "this field is the
+ * conclusion". It is high-precision but leaks badly: any field named outside
+ * the convention is invisible however plainly it posits the conclusion (the
+ * `confinement_ident` / `factorization_ident` escape in
+ * `lean-proof-vacuity-audit.md` §8; measured at 84 corpus-wide in
+ * `docs/audits/2026-08-09-self-assuming-projection-reanalysis.md`). This test
+ * asks the question directly instead of guessing from the name.
+ *
+ * Comparison is character-exact after stripping the binder prefix (field types
+ * are written bare inside the carrier; the conclusion writes them `ctx.foo`)
+ * and collapsing whitespace. That is deliberately conservative — anything
+ * needing real unification is NOT reported, so this under-counts rather than
+ * over-counts.
+ */
+function projectionTypeMatchesConclusion(
+  d: Decl,
+  carriers: Map<string, Decl>,
+  variable: string,
+  fields: string[],
+): boolean {
+  const carrierName = binderCarriers(d.sig).get(variable);
+  if (!carrierName) return false;
+  const carrier = carriers.get(carrierName);
+  if (!carrier) return false; // declared in another file — stay conservative
+  // First declaration wins, and `name := value` assignment lines are dropped.
+  // `DECL_START` requires a name after the keyword, so an ANONYMOUS
+  // `instance : C where` (very common right below the class it instantiates)
+  // starts no new decl — the class's `text` swallows the instance body, and
+  // `classFields` then reads each `field := value` line as a re-declaration
+  // whose "type" is `= value`. Last-wins would silently replace the real field
+  // type with that, and the comparison below would miss a genuine projection.
+  const table = new Map<string, string>();
+  for (const f of classFields(carrier)) {
+    if (/^=/.test(f.type.trim())) continue; // `field := value` from an instance body
+    if (!table.has(f.name)) table.set(f.name, f.type);
+  }
+  const types = fields.map((f) => table.get(f));
+  if (types.some((t) => t === undefined)) return false;
+  const ws = (s: string) => s.replace(/\s+/g, " ").trim();
+  const concl = conclusionTypeAscription(d.sig);
+  if (!concl) return false;
+  const nc = ws(concl.replace(new RegExp(`\\b${variable}\\.`, "g"), ""));
+  if (types.length === 1) return ws(types[0]!) === nc;
+  // A tuple splits a conjunction across one field per conjunct.
+  const bare = ws(types.join(" ∧ "));
+  return (
+    bare === nc ||
+    ws(types.map((t) => `(${t})`).join(" ∧ ")) === nc ||
+    ws(bare.replace(/[()]/g, "")) === ws(nc.replace(/[()]/g, ""))
+  );
+}
+
+function detectSelfAssuming(
+  d: Decl,
+  carriers: Map<string, Decl>,
+): Hit | undefined {
   const provable = PROVABLE_KINDS.test(d.kind);
   // A Prop-valued `def` is a disguised provable claim (§1a def-disguised); it
   // escaped detection because `detectSelfAssuming` only scanned the provable
@@ -777,8 +850,34 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
     pat !== "applied-tuple-projection" &&
     field &&
     !CONCLUSION_FIELD.test(field)
-  )
+  ) {
+    // The field name escapes the convention — but the name was only ever a
+    // proxy. Ask the structural question before dropping it: if the field's
+    // declared type IS the conclusion, this is a self-assuming projection no
+    // matter what it is called.
+    //
+    // Emitted EXEMPT (tracked-not-counted) on landing, mirroring the §3b
+    // placeholder carve-out below: closing a 84-candidate blindspot must not
+    // turn the vacuity CI gate red in the same commit that discovers it. The
+    // point of tracking them is that EXEMPT hits still enter the review
+    // ledger, so `--check-ledger` now demands an agent verdict on each.
+    // Promoting these to hard failures is a deliberate follow-up.
+    const projVar = body.match(/([a-z][\w']*)\.[A-Za-z_][\w']*/)?.[1];
+    if (
+      projVar &&
+      projectionTypeMatchesConclusion(d, carriers, projVar, [field])
+    ) {
+      const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+      h.exempt_reason =
+        "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)";
+      h.detail =
+        `the projected field \`${projVar}.${field}\` has a declared type ` +
+        "character-identical to the conclusion — the theorem returns its own " +
+        "claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.";
+      return h;
+    }
     return undefined;
+  }
   // Newly-covered patterns (the def-disguised projections + applied-field
   // tuples) are the acknowledged §3b placeholder-canonical projections whose
   // docstrings honestly state the content is carried by the context-class
@@ -1502,6 +1601,17 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
   // mentions of the word do not count.
   const fileHasSorryCode = decls.some((x) => /\bsorry\b/.test(x.body));
 
+  // Carrier lookup for the self-assuming type-match test: it resolves a
+  // projection `ctx.foo` to the field `foo` of the class `ctx` inhabits, so it
+  // needs the file's `class`/`structure` declarations by name. Same-file only —
+  // a carrier declared elsewhere yields no match, which keeps the test
+  // conservative rather than guessing.
+  const carrierDecls = new Map<string, Decl>(
+    decls
+      .filter((x) => /^(class|structure)\b/.test(x.kind))
+      .map((x) => [x.name, x] as const),
+  );
+
   for (let di = 0; di < decls.length; di++) {
     const d = decls[di];
     // The doc block is computed once up front so the trivial-true detector
@@ -1528,7 +1638,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
         "docstring asserts a provable claim (Theorem/Lemma/Proposition) while the Lean concludes `True` — a genuine vacuity defect, not an honest open conjecture";
     }
     push(tt);
-    push(detectSelfAssuming(d));
+    push(detectSelfAssuming(d, carrierDecls));
     push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));
     push(detectUnusedHypothesisRfl(d));
     push(detectDecideMasking(d));

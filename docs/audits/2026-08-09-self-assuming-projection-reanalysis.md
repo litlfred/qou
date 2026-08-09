@@ -160,18 +160,59 @@ requires the per-candidate agent inspection the skill mandates.
   Phase 1 remainder**, and promoting them is an owner decision the scanner
   source explicitly reserves.
 
-## 4. Recommended next steps (not taken here)
+## 4. The test is now wired into the scanner
 
-1. **Wire the type-match test into the scanner** as an additional pattern,
-   emitting `EXEMPT` (tracked-not-counted) on first landing — the same
-   blindspot-closing-without-reddening-CI move PR #3363 used for the
-   def-disguised projections. This puts all 84 into the review ledger, which
-   is what makes the agent-inspection gate bite.
-2. **Then triage the 84** per the #2477 rubric (restate-to-derive /
-   queued-for-Lean `sorry` / demote to conjecture), library-tree cases first
-   since they have no sidecar coverage.
-3. **Decide the 47 deferred exemptions** — the codification the scanner
-   comment defers to.
+`detectSelfAssuming` no longer drops a projection at the name gate without
+asking the structural question. Where the field name escapes
+`CONCLUSION_FIELD`, the scanner now resolves the binder to its carrier,
+looks up the projected field's declared type, and compares it to the
+conclusion; on a match it emits
 
-Steps 1 and 3 change what CI reports and what the corpus claims, so both are
-owner calls rather than drain work.
+```
+EXEMPT(type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending))
+```
+
+**EXEMPT on landing, deliberately** — mirroring the §3b placeholder carve-out
+this document criticises above, and for the same stated reason: closing an
+84-candidate blindspot must not turn the CI gate red in the same commit that
+discovers it. The difference from that carve-out is that this one has a
+draining plan (§5) rather than an open-ended deferral. Corpus effect:
+
+| | before | after |
+|---|---:|---:|
+| non-exempt defects (the CI-relevant count) | 128 | **128** |
+| exempt / tracked | 78 | **162** |
+| files flagged | 157 | 217 |
+
+Tracked-not-counted still enters the **review ledger**, so `--check-ledger`
+now demands a fresh agent verdict on each of the 84 — which is the whole
+point, and is what the name gate was silently denying them.
+
+One parsing gap was found and fixed while wiring this. `DECL_START` requires a
+name after the keyword, so an **anonymous `instance : C where`** — idiomatic
+directly below the class it instantiates — starts no new declaration, and the
+class's text swallows the instance body. `classFields` then reads each
+`field := value` line as a re-declaration whose "type" is `= value`, so
+last-wins lookup silently replaced the real field type. The type-match helper
+therefore takes **first declaration wins** and drops `:=` assignment lines.
+This affected 3 of the 84 (e.g. `beta3_via_class` in
+[`Infra/Polylogarithm.lean`](../../content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean)).
+
+**Residual:** the wired pass and the standalone script disagree on exactly one
+candidate each way — the scanner additionally catches
+`MathlibExt/SDP.lean::strong_duality`, and does not yet catch
+`Encounter/MostowRigidity.lean::mass_eigenvalue_isolated` (field
+`mostow_gap_pos : 0 < mostow_gap` against conclusion `0 < h.mostow_gap`; cause
+not diagnosed). 84 tracked either way; the disagreement is noise-level and
+recorded rather than papered over.
+
+## 5. Remaining steps
+
+1. **Triage the 84** per the #2477 rubric (restate-to-derive / queued-for-Lean
+   `sorry` + `-- Ref:` / demote to conjecture), library-tree cases first since
+   they have no sidecar coverage. Each verdict lands in the review ledger.
+2. **Decide the 47 deferred `§3b placeholder` exemptions** — the codification
+   of the honest-placeholder vs. dishonest-dodge line that the scanner comment
+   defers to.
+
+Step 2 changes what the corpus claims, so it is an owner call.
