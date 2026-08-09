@@ -1,3 +1,7 @@
+import QOU.IwahoriHecke.Quotient
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.NoncommRing
+
 /-!
 # `QOU.IwahoriHecke.AvgCrossing` — Foundational identity for inter-nucleon Avg crossings
 
@@ -53,8 +57,6 @@ Refs:
 - [manuscript] docs/audits/2026-05-30-atom-braid-categorical-proof-feasibility.md
 -/
 
-import QOU.IwahoriHecke.Quotient
-import Mathlib.Tactic.LinearCombination
 
 namespace QOU.IwahoriHecke.AvgCrossing
 
@@ -77,20 +79,39 @@ variable {W : Type u} (R : Type v) [CommRing R] (q : R)
     scalar `h = q − 1` (not `q − q⁻¹`, which would require the
     symmetric form `(T − q)(T + q⁻¹) = 0`).
 
-    Proof: `linear_combination 4 * (Hecke quadratic)`.  Both
-    sides expand to `4·T² + (linear in T) + const`; using
-    `T² = (q − 1)·T + q` from the Hecke relation eliminates
-    the `T²` term, the linear-in-`T` coefficients cancel, and
-    the constant-term identity `4q + (q − 1)² = (q + 1)²` is
-    `ring`-true. -/
+    Proof: LHS − RHS factors as `4 · (T − q)(T + 1)`, which the
+    Hecke relation sends to `4 · 0 = 0`.  Both sides expand to
+    `4·T² + (linear in T) + const`; using `T² = (q − 1)·T + q`
+    from the Hecke relation eliminates the `T²` term, the
+    linear-in-`T` coefficients cancel, and the constant-term
+    identity `4q + (q − 1)² = (q + 1)²` is `ring`-true.
+
+    Note the expansion crosses `T·q̂` against `q̂·T`, so it is *not*
+    available to `linear_combination`, which needs a `CommSemiring`
+    — and `IwahoriHeckeQuot` is deliberately non-commutative.  What
+    makes the identity go through is narrower: `q̂ = algebraMap R _ q`
+    is **central** (`Algebra.commute_algebraMap_left`), so the two
+    cross terms merge even though the ambient algebra does not
+    commute. -/
 theorem T_avg_squares_to_scalar (s : S) :
     (2 * Quotient.T R q S s -
       (algebraMap R _ q - 1))^2 = (algebraMap R _ q + 1)^2 := by
   -- The Hecke quadratic relation:
   --   (T_s - algebraMap R _ q) * (T_s + 1) = 0
   have h := Quotient.T_hecke_quadratic_relation R q S s
-  -- Reduce LHS − RHS to 4 · (Hecke quadratic), which is `4 · 0 = 0`.
-  linear_combination 4 * h
+  -- The scalar `algebraMap R _ q` is central, so it commutes past `T_s`.
+  have hc : Quotient.T R q S s * algebraMap R (Quotient.IwahoriHeckeQuot R q S) q
+      = algebraMap R (Quotient.IwahoriHeckeQuot R q S) q * Quotient.T R q S s :=
+    (Algebra.commute_algebraMap_left q (Quotient.T R q S s)).symm.eq
+  -- LHS − RHS = 4 · (Hecke quadratic).
+  have key : (2 * Quotient.T R q S s - (algebraMap R _ q - 1))^2
+        - (algebraMap R _ q + 1)^2
+      = 4 * ((Quotient.T R q S s - algebraMap R _ q)
+              * (Quotient.T R q S s + 1)) := by
+    simp only [pow_two, sub_mul, mul_sub, add_mul, mul_add, mul_one, one_mul,
+      mul_assoc, hc]
+    noncomm_ring
+  rw [← sub_eq_zero, key, h, mul_zero]
 
 /-- **Corollary** — the centered Avg-crossing element
     `T_s − (q − 1)/2` is "scalar up to factor 2".  Stated here in

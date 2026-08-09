@@ -68,6 +68,11 @@ import QOU.Mathlib.RigidityReductionScope
 import QOU.MathlibExt.PosSemidefTraceZero
 import QOU.MathlibExt.PosSemidefDiagZero
 import QOU.MathlibExt.FrobeniusInnerProduct
+import QOU.MathlibExt.CauchyBinet
+import QOU.MathlibExt.RankMinor
+import QOU.MathlibExt.GramNondegenerate
+import QOU.MathlibExt.GroupAlgebraCenter
+import QOU.MathlibExt.RepresentationCharacter
 import QOU.MathlibExt.QPlancherel
 import QOU.MathlibExt.MonoidalCalcVar
 import QOU.MathlibExt.QGaussianBinomialPascal
@@ -308,6 +313,17 @@ import QOU.Archimedean.DilogNaStokesOrdering
 import QOU.Interactions
 import QOU.Encounter
 import QOU.BraidKnot
+-- The Specht irreducibility chain. Historically kept OUT of the umbrella
+-- because `SpechtIrreducible` carried an honest `sorry`; it no longer does
+-- (`specht_form_nondegenerate` and `specht_isSimple` are both proved), so it
+-- belongs in the build closure where CI can see it. Its own imports
+-- (`SpechtStandardBasisCore`) still carry the Garnir straightening stub —
+-- that is pre-existing and now visible in the package build rather than
+-- hidden outside it.
+import QOU.BraidKnot.SpechtBaseChange
+import QOU.BraidKnot.SpechtIrreducible
+import QOU.BraidKnot.SpechtCrossDominance
+import QOU.BraidKnot.SpechtCrossKappa
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain

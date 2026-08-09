@@ -32,6 +32,8 @@ This shows the upstream infrastructure is downstream-usable.
 
 namespace QOU.Mathlib.UpstreamSubstrateBridge
 
+universe u
+
 open QOU.Mathlib.SpectralSequence
 open QOU.Mathlib.HeckeAlgebra
 open QOU.Mathlib.RSKBridge

@@ -190,7 +190,7 @@ theorem vModel_isZeta4Faithful : IsZeta4Faithful vModel :=
     two ζ₄ rotations negate the assembly — recovering `vModel_zeta4_sq` from
     faithfulness *alone*, for any faithful `A`. This is the class's genuine
     provable content. -/
-theorem zeta4_sq {A : ℂ → ℂ} (h : IsZeta4Faithful A) (z : ℂ) :
+theorem IsZeta4Faithful.zeta4_sq {A : ℂ → ℂ} (h : IsZeta4Faithful A) (z : ℂ) :
     A (zeta4Rot (zeta4Rot z)) = -A z := by
   have h1 := h.1 z
   have h2 := h.2 z
