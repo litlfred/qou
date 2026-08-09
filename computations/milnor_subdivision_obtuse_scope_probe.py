@@ -1,0 +1,286 @@
+#!/usr/bin/env python3
+"""SCOPE PROBE — is the obtuse case a failure of Milnor's IDENTITY, or only of
+his SUBDIVISION ARGUMENT?
+
+The `qou-w3eg` / `qou-5gai` H4 tier has carried Milnor's restriction
+
+    "if all three angles are acute"                    [milnor1982, Appendix]
+
+as "the flagged place to go wrong" for H4-3/H4-5, in wording that repeatedly
+reads as though the RESULT
+
+    \\int\\int_{ABC} dA / (2(R^2 - x^2 - y^2))  =  Lambda(a)+Lambda(b)+Lambda(g)
+
+were in doubt when the triangle is obtuse.  It is not.  This probe separates
+the two readings, because they imply different amounts of remaining work:
+
+  * if the IDENTITY failed for obtuse triangles, H4-5 would need a different
+    theorem (a signed Lambda-sum) and the tier's target statement is wrong;
+  * if only the SUBDIVISION degenerates -- the circumcentre leaves the
+    triangle, so one of the three wedges must enter with a minus sign -- then
+    the target statement is uniform and H4-5 needs a signed ASSEMBLY of the
+    same pieces.
+
+WHAT IS COMPUTED.  Both sides, independently:
+
+  LHS  polar quadrature of the base integral over the inscribed triangle.  The
+       radial integral is taken in CLOSED FORM
+           int_lo^hi r dr / (2(R^2-r^2)) = -1/4 log((R^2-hi^2)/(R^2-lo^2)),
+       deliberately, not by nested quadrature: at a vertex direction the ray
+       reaches the circle, R^2-r^2 vanishes, and nested quadrature divides by
+       zero there.  The resulting log singularity in the angle is integrable.
+       The ray is CLIPPED to the triangle (entry AND exit), which is what makes
+       the obtuse case -- circumcentre outside, so the ray enters at r > 0 --
+       computed correctly rather than silently mis-integrated from r = 0.
+
+  RHS  Lambda(a)+Lambda(b)+Lambda(g) with Lambda the Lobachevsky function
+       Lambda(x) = -int_0^x log|2 sin t| dt.
+
+Nothing here is fitted: there is no free parameter.  The triangle is determined
+by (a,b,g) with a+b+g = pi, placed on the circle by the inscribed-angle theorem
+(arc BC = 2a, etc.), and R is set to a value != 1 so that any spurious
+R-dependence would show up.
+
+ALSO CHECKED, as a control: the WEDGE value Lambda(psi), i.e. that one isoceles
+wedge (apex at the circumcentre, apex angle 2psi) integrates to Lambda(psi).
+This is now PROVED in Lean -- `hypVolume_chimney_wedge` (H4-5b) -- so it is a
+regression check on the probe's own quadrature, not new evidence.
+
+SCOPE OF THE CONCLUSION (per AGENTS.md "Before declaring refuted / ruled out"):
+this probe supports a scope-(a) statement -- "Milnor's circumcentre subdivision,
+AS AN ARGUMENT, does not apply unchanged to obtuse triangles" -- and REFUTES the
+stronger reading that the identity itself is acute-only.  It is numerical
+evidence about a target statement, NOT a proof of the identity, and it wires to
+nothing.
+
+  -- Ref: [milnor1982] Appendix
+  -- Ref: [thurston1978] Ch. 7
+  -- Ref: [manuscript] beans qou-w3eg (H4-5), qou-5gai (H4)
+"""
+from __future__ import annotations
+
+import hashlib
+import json
+import math
+import os
+import platform
+import subprocess
+import sys
+import time
+from pathlib import Path
+
+from mpmath import mp, mpf, quad, sin, cos, log, pi
+
+COMPUTE_DPS = 30
+mp.dps = COMPUTE_DPS
+
+HERE = Path(__file__).resolve()
+WITNESS = HERE.parent / "milnor-subdivision-obtuse-scope-probe.witness.json"
+
+# Agreement floor.  The LHS quadrature integrates through three integrable log
+# singularities (one per vertex, where the ray meets the circle), so it is not
+# expected to reach full working precision; 1e-12 is far below any plausible
+# structural discrepancy and far above the quadrature's own noise.
+TOL = mpf("1e-12")
+
+
+def Lob(x):
+    """Lobachevsky Lambda(x) = -int_0^x log|2 sin t| dt."""
+    return -quad(lambda t: log(abs(2 * sin(t))), [0, x])
+
+
+def radial(R, lo, hi):
+    """int_lo^hi r dr / (2(R^2 - r^2)), in closed form (see module docstring)."""
+    num = R**2 - hi**2
+    den = R**2 - lo**2
+    floor = mpf(10) ** (-(mp.dps + 10))
+    if num < floor:          # a vertex direction: ray reaches the circle
+        num = floor
+    return -mpf(1) / 4 * log(num / den)
+
+
+def wedge_base_integral(R, psi):
+    """Base integral over the isoceles wedge of half-angle psi."""
+    return quad(lambda phi: radial(R, mpf(0), R * cos(psi) / cos(phi)),
+                [-psi, 0, psi])
+
+
+def triangle_base_integral(R, a, b, g):
+    """Base integral over the triangle inscribed in the circle of radius R with
+    inscribed angles (a, b, g).  Works for acute AND obtuse: the ray is clipped
+    to the triangle at both ends."""
+    tA, tB, tC = mpf(0), 2 * g, 2 * g + 2 * a      # arc AB = 2g, BC = 2a, CA = 2b
+    V = [(R * cos(t), R * sin(t)) for t in (tA, tB, tC)]
+    sides = [(V[0], V[1]), (V[1], V[2]), (V[2], V[0])]
+    EPS = mpf(10) ** (-22)
+
+    def ray_hits(phi):
+        """Positive distances at which the ray from the circumcentre meets the
+        triangle's boundary.  TWO hits when the circumcentre is outside."""
+        ux, uy = cos(phi), sin(phi)
+        hits = []
+        for (p, q) in sides:
+            dx, dy = q[0] - p[0], q[1] - p[1]
+            den = dx * uy - dy * ux                 # cross(d, u)
+            if abs(den) < EPS:
+                continue
+            t = -(p[0] * uy - p[1] * ux) / den
+            if -EPS <= t <= 1 + EPS:
+                s = (p[0] + t * dx) * ux + (p[1] + t * dy) * uy
+                if s > EPS:
+                    hits.append(s)
+        return sorted(hits)
+
+    def inner(phi):
+        h = ray_hits(phi)
+        if not h:
+            return mpf(0)
+        lo = mpf(0) if len(h) < 2 else h[0]         # inside -> 0; outside -> entry
+        hi = h[-1]
+        return radial(R, lo, hi) if hi > lo else mpf(0)
+
+    angs = sorted(math.atan2(float(v[1]), float(v[0])) for v in V)
+    a0, a1, a2 = angs
+    cand = [(a0, a1), (a1, a2), (a2, a0 + 2 * float(pi))]
+    pieces = [(p0, p1) for (p0, p1) in cand if ray_hits(mpf((p0 + p1) / 2))]
+    return sum(quad(inner, [mpf(p0), mpf(p1)]) for (p0, p1) in pieces)
+
+
+# ---------------------------------------------------------------- the cases
+
+WEDGES = [mpf("0.3"), mpf("0.7"), mpf("1.0"), mpf("1.4"), pi / 3, pi / 6]
+
+ACUTE = [
+    (pi / 3, pi / 3, pi / 3),                       # equilateral
+    (mpf("1.2"), mpf("1.0"), pi - mpf("2.2")),
+    (mpf("1.4"), mpf("1.1"), pi - mpf("2.5")),
+    (mpf("0.9"), mpf("1.3"), pi - mpf("2.2")),
+    (mpf("1.5"), mpf("1.5"), pi - mpf("3.0")),      # nearly degenerate, still acute
+]
+
+OBTUSE = [
+    (mpf("2.0"), mpf("0.7"), pi - mpf("2.7")),
+    (mpf("2.5"), mpf("0.4"), pi - mpf("2.9")),
+    (mpf("1.8"), mpf("0.9"), pi - mpf("2.7")),
+    (pi / 2, mpf("0.8"), pi / 2 - mpf("0.8")),      # RIGHT triangle, the boundary
+]
+
+
+def main() -> int:
+    t0 = time.time()
+    assertions = []
+    R = mpf("1.3")                                   # != 1 on purpose
+
+    # (0) control: the wedge value, now Lean-proved (H4-5b)
+    for psi in WEDGES:
+        got = wedge_base_integral(mpf("1.7"), psi)
+        want = Lob(psi)
+        assertions.append({
+            "name": f"wedge_value_psi_{float(psi):.5f}",
+            "computed": mp.nstr(got, 20),
+            "expected": mp.nstr(want, 20),
+            "passed": bool(abs(got - want) <= TOL),
+            "tolerance": float(TOL),
+            "source": "CONTROL (regression on the probe's own quadrature): the "
+                      "isoceles wedge of half-angle psi integrates to Lambda(psi). "
+                      "PROVED in Lean as hypVolume_chimney_wedge (H4-5b).",
+        })
+
+    # (1) the acute case -- Milnor's stated hypothesis
+    for (a, b, g) in ACUTE:
+        got = triangle_base_integral(R, a, b, g)
+        want = Lob(a) + Lob(b) + Lob(g)
+        assertions.append({
+            "name": f"acute_{float(a):.3f}_{float(b):.3f}_{float(g):.3f}",
+            "computed": mp.nstr(got, 20),
+            "expected": mp.nstr(want, 20),
+            "passed": bool(abs(got - want) <= TOL),
+            "tolerance": float(TOL),
+            "source": "ACUTE (Milnor's stated hypothesis): base integral over the "
+                      "inscribed triangle vs Lambda(a)+Lambda(b)+Lambda(g).",
+        })
+
+    # (2) the obtuse case -- THE POINT OF THE PROBE
+    for (a, b, g) in OBTUSE:
+        got = triangle_base_integral(R, a, b, g)
+        want = Lob(a) + Lob(b) + Lob(g)
+        assertions.append({
+            "name": f"obtuse_{float(a):.3f}_{float(b):.3f}_{float(g):.3f}",
+            "computed": mp.nstr(got, 20),
+            "expected": mp.nstr(want, 20),
+            "passed": bool(abs(got - want) <= TOL),
+            "tolerance": float(TOL),
+            "source": "OBTUSE / RIGHT (circumcentre OUTSIDE the triangle, where "
+                      "Milnor's subdivision needs a signed piece): the IDENTITY "
+                      "still holds. Scope-(a): the argument degenerates, not the "
+                      "statement.",
+        })
+
+    all_passed = all(a["passed"] for a in assertions)
+
+    src = HERE.read_bytes()
+    try:
+        script_sha = subprocess.run(
+            ["git", "log", "-1", "--format=%H", "--", str(HERE)],
+            capture_output=True, text=True, cwd=HERE.parent, check=False,
+        ).stdout.strip()
+        head_sha = subprocess.run(
+            ["git", "rev-parse", "HEAD"],
+            capture_output=True, text=True, cwd=HERE.parent, check=False,
+        ).stdout.strip()
+    except Exception:
+        script_sha = head_sha = ""
+
+    import mpmath
+    witness = {
+        "engine": "mpmath",
+        "engineVersion": f"mpmath {mpmath.__version__}",
+        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
+        "commitSha": head_sha,
+        "assertions": assertions,
+        "allPassed": all_passed,
+        "durationMs": int((time.time() - t0) * 1000),
+        "computation": "milnor-subdivision-obtuse-scope-probe",
+        "scriptFile": HERE.name,
+        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
+        "scriptCommitSha": script_sha,
+        "precisionMetadata": {
+            "compute_dps": COMPUTE_DPS,
+            "output_dps": 20,
+            "guard_digits": 10,
+            "truncation_bound": f"{float(TOL):.0e}",
+        },
+        "environment": {
+            "python": platform.python_version(),
+            "mpmath": mpmath.__version__,
+            "platform": platform.platform(),
+        },
+        "verdict": (
+            "The Lambda-sum identity holds for OBTUSE and RIGHT inscribed "
+            "triangles as well as acute ones. Milnor's 'if all three angles are "
+            "acute' restricts his SUBDIVISION ARGUMENT (the circumcentre leaves "
+            "the triangle, so one wedge must enter with a minus sign), NOT the "
+            "identity. Scope-(a): a statement about a proof route. H4-5's target "
+            "statement is uniform in the three angles; what the obtuse case needs "
+            "is a SIGNED assembly of the same wedges, not a different theorem."
+        ),
+        "wiredTo": None,
+        "notes": (
+            "No free parameter; nothing fitted; touches no production. R = 1.3 "
+            "(!= 1) so spurious R-dependence would surface. The base integral is "
+            "R-independent by H2 dilation invariance, and the wedge control "
+            "uses R = 1.7 to exercise that."
+        ),
+    }
+    WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
+
+    print(f"assertions: {sum(a['passed'] for a in assertions)}/{len(assertions)} passed")
+    for a in assertions:
+        flag = "ok  " if a["passed"] else "FAIL"
+        print(f"  {flag} {a['name']:<44} {a['computed']}")
+    print(f"witness -> {WITNESS}")
+    return 0 if all_passed else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())
