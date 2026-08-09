@@ -205,3 +205,70 @@ fine as a fast inner loop; **only `lake build` closes a module.**
 - Correct the premise sentence in
   `docs/audits/2026-06-28-content-sibling-compile-sweep.md` and
   `.github/workflows/lean-content-siblings.yml` (still open from above).
+
+---
+
+## DRAIN COMPLETE — 2026-08-09
+
+`lake build` **exit 0, 0 failing modules, 1675/1675.** The 47% blind spot is
+closed and the glob stays widened, so the closure cannot silently shrink again.
+
+Final tally: **50 modules fixed.** The section above ("Drain executed") was
+written one module short of done and understated two things.
+
+### The "~55 broken modules" estimate was right on rate, wrong on shape
+
+The stratified sample put 1/14 ≈ 7% and projected ~55. Roughly right for
+*count*, badly wrong for *concentration and kind*:
+
+- `QOU/Mathlib/HeckeAlgebra.lean` alone carried **101 errors**.
+- `exists_axiom_2_observability.lean` had **no `import` line at all**.
+- `MarkovTraceH4.lean` needed **~15 GB** and could not compile in the container
+  at any setting (bean qou-8hjy, resolved by splitting).
+- One module carried a **theorem that is false** (below).
+
+A 14-module sample cannot see any of those; they are tail events, and the tail
+is where the interesting failures were.
+
+### A fourth false statement, and the first that was not a `sorry`
+
+`QOU/BraidKnot/HiggsCategoricalMassFormula.lean` asserted the W- and
+Z-anchored Higgs predictions agree given `m_W/m_Z = P_3/P_2`. Substituting
+gives `m_Z·P_3·P_4·S/P_2^2` versus `m_Z·P_4·S/P_3` — equal only if
+`P_3^2 = P_2^2`, which holds only at `h = 0`. At `h = 1` the two predictions
+differ by a factor of **6.76**.
+
+Tranche 2 of this PR found three *cited `sorry`s* guarding false propositions.
+This is the same defect one step worse: a **theorem**, with a tactic proof that
+simply does not go through. It was invisible for exactly the reason all of this
+was invisible — the module was never built. Replaced by
+`higgs_W_Z_prediction_ratio`, stating the exact `(P_3/P_2)^2` discrepancy under
+the nonvanishing hypotheses the original never carried.
+
+**Consequence for the audit story:** a sorry census cannot find this class, and
+neither can a vacuity scanner. Only compiling the module can.
+
+### Method note, corrected
+
+An earlier note here said standalone `lean` gives false greens because the
+olean cache can be stale. True, and there is a second, larger reason: **a build
+that dies partway never reaches the modules after it.** `Summary.lean` and
+`HyperbolicVolumeTranscendence.lean` were both clean-looking for the whole
+sweep purely because every full build died on `MarkovTraceH4` first. Neither
+had ever been compiled. Only a build that runs to **exit 0** licenses any claim
+about the tree.
+
+### Census on the complete tree
+
+**34 `sorry`s across 28 modules.** Every corpus figure recorded before this —
+including the ones in qou-joo5 — was measured on 53% of the tree and is an
+undercount by construction.
+
+### Remaining from the original todo list
+
+- [x] Sweep for the mechanical signatures — done, 50 modules.
+- [x] Flip `globs = ["QOU", "QOU.+"]` — done, and now green.
+- [ ] Correct the premise sentence in
+      `docs/audits/2026-06-28-content-sibling-compile-sweep.md` and
+      `.github/workflows/lean-content-siblings.yml`.
+- [ ] Re-run the corpus sorry/vacuity audit (qou-joo5) against 34/28.
