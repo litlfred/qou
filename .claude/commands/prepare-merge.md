@@ -272,6 +272,25 @@ surface the duplicates in step 6) saves a full review cycle.
   Both lakefiles pin the same rev (`f897ebcf…`), so the cache applies. Check
   free disk before doing it — the root copy is a second full Mathlib build tree
   — and see AGENTS.md's RESTORE → build → SEED note.
+
+- **If the root cache is cold and `cache get` will not fetch, build per-paper
+  instead.** Measured in a sandbox with 9.2 GB free: the per-paper Mathlib build
+  tree is 3.3 GB, so the root workspace wants a second one, and `lake exe cache
+  get` there stalled — 4 seconds of CPU in 20 minutes, sitting on the network.
+
+  Per-paper builds are an equally valid gate, not a lesser one. They compile the
+  same sources against the same pinned Mathlib rev; only the `.lake` tree holding
+  the oleans differs. Run all three, and say in the PR that this is what you did:
+
+  ```bash
+  (cd content/quantum-observable-universe/lean && lake build)
+  (cd content/unital-groebner-bases/lean      && lake build)
+  (cd content/fred2005-formal-groups/lean     && lake build)
+  ```
+
+  What is *not* acceptable is the bare root `lake build`, which compiles nothing
+  at all — that is the defect this section documents. Dropping to per-paper is
+  the remedy for a cold cache, not a way around the gate.
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,
