@@ -529,3 +529,63 @@ deleted first, no linter warnings.
    (`cLiTwoExt` vs `LiTwo` on the unit interval).
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+---
+
+## Route 53 — the constant is pinned; a complex five-term identity, modulo one region
+
+Same module. **Item 3 is done**, and with it the three-item list from Route 51
+collapses to one.
+
+### The bridge that was missing
+
+`cRogersL` and the corpus's real `rogersL` were never connected. They are the
+same function on `(0,1)`:
+
+* `cLiTwo (t:ℂ) = ↑(LiTwo t)` — the complex and real `Li₂` series are *literally
+  the same series*, `∑' k, z^(k+1)/(k+1)²`, so `Complex.ofReal_tsum` plus a
+  termwise `push_cast` does it;
+* `cLiTwoExt (t:ℂ) = ↑(LiTwo t)` for `|t| < 1`, via `cLiTwoExt_eq_cLiTwo`;
+* `cRogersL_ofReal` — both logarithms are real on `(0,1)`, so
+  `cRogersL ↑t = ↑(rogersL t)`.
+
+### The real pentagon is `π²/2`
+
+`rogersL_pentagon`. Abel's relation (`FiveTwoAbelFiveTerm.rogersL_fiveTerm`,
+already sorry-free, bean `qou-abel`) is over `x, y, xy, x(1−y)/(1−xy),
+y(1−x)/(1−xy)`. Three reflections convert its last three into the pentagon's
+`1−xy`, `(1−x)/(1−xy)`, `(1−y)/(1−xy)`, since
+
+    1 − (1−x)/(1−xy) = x(1−y)/(1−xy)      1 − (1−y)/(1−xy) = y(1−x)/(1−xy)
+
+at a cost of `3·π²/6 = π²/2`, and Abel's zero absorbs the rest.
+
+### Result — a complex five-term identity
+
+`pentagonSum_eq_pi_sq_div_two_of_region`: on any open connected set `S` of `x`
+that stays `PentagonRegular` for a real `y ∈ (0,1)` and contains a real point of
+`(0,1)`,
+
+    L(x) + L(y) + L((1−x)/(1−xy)) + L(1−xy) + L((1−y)/(1−xy)) = π²/2
+
+for `L = cRogersL`, at **every** point of `S` — including points where nothing is
+real.
+
+Also `pentagonSum_symm : pentagonSum y x = pentagonSum x y` (the five arguments
+are permuted, not changed, by `x ↔ y` — this is §7g's `Z/2` again), so transport
+in the *second* variable is the same theorem, not a new one. That matters:
+reaching the 5₂ saddle needs both variables to move.
+
+### The list is now one item
+
+1. ~~chain-rule assembly~~ (Route 51).
+2. ~~continuation of the branch conditions~~ — reduced to a region (Route 52).
+3. ~~pinning the constant~~ (this route).
+
+**Remaining: exhibit an open connected regular region reaching `(0,1)`.** And
+this is not a technicality left for later — it is the obstruction itself. A
+regular region reaching the real square *forces* the naive log expansions, so
+where the flattening is non-trivial no such region exists. `ker ν` and the
+missing region are one fact seen twice.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.**

@@ -40,22 +40,30 @@ there, and that is the second half of this module:
   which the pentagon stays regular and which contains a real point of `(0,1)`,
   the complex five-term sum is constant.
 
+And the constant is a number. `cRogersL` at a real point of `(0,1)` **is** the
+corpus's real `rogersL` (`cRogersL_ofReal` — the complex and real `Li₂` series
+are literally the same series), and the real pentagon sum is `π²/2`
+(`rogersL_pentagon`, from `FiveTwoAbelFiveTerm.rogersL_fiveTerm` plus three
+reflections). So `pentagonSum_eq_pi_sq_div_two_of_region` is a **complex
+five-term identity**, at every point of the region including points where
+nothing is real.
+
 The branch bookkeeping is therefore reduced to a single geometric question:
 *does such a region exist?* That is the honest residue of Routes 45–46 — no
 longer bookkeeping, but a statement about a region.
 
 ## ⚠ What this does NOT do
 
-It does not prove the five-term identity for `cRogersL`, and it exhibits **no**
-region for the 5₂ saddle values `y₁, y₂` — exhibiting one is exactly where
-flattening (Neumann's `ker ν`) can obstruct. The constant is also still not
-pinned as a number: `cRogersL` has not been identified with the corpus's real
-`rogersL` on `(0,1)`, so "constant on the region" does not yet read `π²/2`.
+It exhibits **no** region for the 5₂ saddle values `y₁, y₂`, and that is not an
+oversight: a regular region reaching the real square *forces* the naive log
+expansions, so where the flattening is non-trivial no such region can exist. The
+obstruction (Neumann's `ker ν`) and the missing region are the same fact seen
+twice.
 
 The **real** five-term identity on `(0,1)` is separately proved, sorry-free, in
 `QOU/QBeta/FiveTwoAbelFiveTerm.lean` (`rogersL_fiveTerm`); what this lane needs
-and does not have is the complex one, because the 5₂ saddle roots `y₁, y₂` are
-complex with `|y₁| = 1.52 > 1`.
+and does not have is the complex one *at the saddle*, because the 5₂ saddle roots
+`y₁, y₂` are complex with `|y₁| = 1.52 > 1`.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
 
@@ -63,6 +71,7 @@ complex with `|y₁| = 1.52 > 1`.
 -/
 import QOU.MathlibExt.ComplexRogersDilog
 import QOU.QBeta.FiveTwoSaddleSumRule
+import QOU.QBeta.FiveTwoAbelFiveTerm
 
 namespace QOU.QBeta.FiveTwoComplexPentagon
 
@@ -587,5 +596,148 @@ theorem pentagonSum_eq_of_region_of_real {x₀ y : ℝ} {S : Set ℂ} (hS : IsOp
     pentagonSum (y : ℂ) x = pentagonSum (y : ℂ) ((x₀ : ℝ) : ℂ) := by
   obtain ⟨b3, b3', b4', b5, b5'⟩ := defects_eq_zero_of_real hx0 hx1 hy0 hy1
   exact pentagonSum_eq_of_region hS hSc hreg hmem hx b3 b3' b4' b5 b5'
+
+/-! ### Pinning the constant
+
+"Constant on the region" is only worth something once the constant is a number.
+It is `π²/2`, and the corpus already has every ingredient:
+
+* `cRogersL` at a real point of `(0,1)` **is** the corpus's real `rogersL`
+  (`cRogersL_ofReal`) — the complex and real `Li₂` series are literally the same
+  series, and both logarithms are real there;
+* the real pentagon sum is `π²/2` (`rogersL_pentagon`), from Abel's relation
+  `FiveTwoAbelFiveTerm.rogersL_fiveTerm` plus three applications of Rogers
+  reflection, since `1 − (1−x)/(1−xy) = x(1−y)/(1−xy)` and its two companions
+  turn the pentagon's arguments into Abel's.
+
+So `pentagonSum_eq_pi_sq_div_two_of_region` is a **complex five-term identity**,
+conditional on exactly one thing: the region. -/
+
+section Constant
+
+open QOU.QPochhammer QOU.QBeta.FiveTwoRogersReflection QOU.QBeta.FiveTwoAbelFiveTerm
+
+/-- The complex `Li₂` series at a real argument is the real one — same series,
+termwise. -/
+theorem cLiTwo_ofReal (t : ℝ) : cLiTwo (t : ℂ) = ((LiTwo t : ℝ) : ℂ) := by
+  unfold cLiTwo LiTwo
+  rw [Complex.ofReal_tsum]
+  refine tsum_congr fun k => ?_
+  push_cast
+  ring
+
+/-- `cLiTwoExt` at a real point of `(−1,1)` is the corpus's real `LiTwo`. -/
+theorem cLiTwoExt_ofReal {t : ℝ} (h : |t| < 1) :
+    cLiTwoExt (t : ℂ) = ((LiTwo t : ℝ) : ℂ) := by
+  rw [cLiTwoExt_eq_cLiTwo (by simpa using h), cLiTwo_ofReal]
+
+/-- **`cRogersL` is the corpus's real Rogers dilogarithm on `(0,1)`.**
+
+This is the bridge the lane was missing between the complex pentagon and the
+real five-term identity that was already proved. -/
+theorem cRogersL_ofReal {t : ℝ} (h0 : 0 < t) (h1 : t < 1) :
+    cRogersL (t : ℂ) = ((rogersL t : ℝ) : ℂ) := by
+  unfold cRogersL rogersL
+  rw [cLiTwoExt_ofReal (by rw [abs_of_pos h0]; exact h1), clog_of_eq_ofReal h0 rfl,
+    clog_of_eq_ofReal (show (0 : ℝ) < 1 - t by linarith)
+      (show (1 : ℂ) - (t : ℂ) = ((1 - t : ℝ) : ℂ) by push_cast; ring)]
+  push_cast
+  ring
+
+/-- **The real pentagon sum is `π²/2`.**
+
+Abel's relation gives the sum over `x, y, xy, x(1−y)/(1−xy), y(1−x)/(1−xy)`;
+reflection turns the last three into the pentagon's `1−xy`, `(1−x)/(1−xy)`,
+`(1−y)/(1−xy)`, at the cost of `3 · π²/6`. -/
+theorem rogersL_pentagon {x y : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
+    (hy0 : 0 < y) (hy1 : y < 1) :
+    rogersL x + rogersL y + rogersL ((1 - x) / (1 - x * y)) + rogersL (1 - x * y)
+      + rogersL ((1 - y) / (1 - x * y)) = Real.pi ^ 2 / 2 := by
+  obtain ⟨hxy, hd, -, -, -, -, -⟩ := pentagon_args_mem_Ioo hx0 hx1 hy0 hy1
+  have hdne : (1 : ℝ) - x * y ≠ 0 := hd.ne'
+  have hdne' : (1 : ℝ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have hb3 : (0 : ℝ) < x * (1 - y) / (1 - x * y) := div_pos (by nlinarith) hd
+  have hb3' : x * (1 - y) / (1 - x * y) < 1 := by rw [div_lt_one hd]; nlinarith
+  have hb5 : (0 : ℝ) < y * (1 - x) / (1 - x * y) := div_pos (by nlinarith) hd
+  have hb5' : y * (1 - x) / (1 - x * y) < 1 := by rw [div_lt_one hd]; nlinarith
+  have r3 := rogersL_one_sub hb3 hb3'
+  have r5 := rogersL_one_sub hb5 hb5'
+  have r4 := rogersL_one_sub (mul_pos hx0 hy0) hxy
+  rw [show (1 : ℝ) - x * (1 - y) / (1 - x * y) = (1 - x) / (1 - x * y) by
+    field_simp; ring] at r3
+  rw [show (1 : ℝ) - y * (1 - x) / (1 - x * y) = (1 - y) / (1 - x * y) by
+    field_simp; ring] at r5
+  have hab := rogersL_fiveTerm hx0 hx1 hy0 hy1
+  linarith [hab, r3, r4, r5]
+
+/-- **The constant, as a number.** On the positive real square the complex
+pentagon sum is `π²/2`. -/
+theorem pentagonSum_ofReal {x y : ℝ} (hx0 : 0 < x) (hx1 : x < 1)
+    (hy0 : 0 < y) (hy1 : y < 1) :
+    pentagonSum (y : ℂ) (x : ℂ) = ((Real.pi ^ 2 / 2 : ℝ) : ℂ) := by
+  obtain ⟨-, hd, hdlt, h3p, h3lt, h5p, h5lt⟩ := pentagon_args_mem_Ioo hx0 hx1 hy0 hy1
+  have cD : (1 : ℂ) - (x : ℂ) * (y : ℂ) = ((1 - x * y : ℝ) : ℂ) := by push_cast; ring
+  have c3 : ((1 : ℂ) - (x : ℂ)) / (1 - (x : ℂ) * (y : ℂ))
+      = (((1 - x) / (1 - x * y) : ℝ) : ℂ) := by push_cast; ring
+  have c5 : ((1 : ℂ) - (y : ℂ)) / (1 - (x : ℂ) * (y : ℂ))
+      = (((1 - y) / (1 - x * y) : ℝ) : ℂ) := by push_cast; ring
+  unfold pentagonSum
+  rw [c3, c5, cD, cRogersL_ofReal hx0 hx1, cRogersL_ofReal hy0 hy1,
+    cRogersL_ofReal h3p h3lt, cRogersL_ofReal hd hdlt, cRogersL_ofReal h5p h5lt,
+    ← rogersL_pentagon hx0 hx1 hy0 hy1]
+  push_cast
+  ring
+
+/-- **A complex five-term identity — conditional on the region.**
+
+On any open connected set `S` of `x` that stays `PentagonRegular` for a real
+`y ∈ (0,1)` and contains a real point of `(0,1)`,
+
+    L(x) + L(y) + L((1−x)/(1−xy)) + L(1−xy) + L((1−y)/(1−xy)) = π²/2
+
+for the complex Rogers dilogarithm `L = cRogersL`, at **every** point of `S` —
+including points where nothing is real.
+
+⚠ The hypothesis `hreg` is the entire remaining difficulty, and it is not a
+technicality: a regular region reaching the real square *forces* the naive log
+expansions, so where the flattening is non-trivial no such region can exist.
+That is the obstruction and the missing region seen twice.
+
+**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+theorem pentagonSum_eq_pi_sq_div_two_of_region {x₀ y : ℝ} {S : Set ℂ} (hS : IsOpen S)
+    (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular (y : ℂ) w)
+    (hx0 : 0 < x₀) (hx1 : x₀ < 1) (hy0 : 0 < y) (hy1 : y < 1)
+    (hmem : ((x₀ : ℝ) : ℂ) ∈ S) {x : ℂ} (hx : x ∈ S) :
+    pentagonSum (y : ℂ) x = ((Real.pi ^ 2 / 2 : ℝ) : ℂ) := by
+  rw [pentagonSum_eq_of_region_of_real hS hSc hreg hx0 hx1 hy0 hy1 hmem hx,
+    pentagonSum_ofReal hx0 hx1 hy0 hy1]
+
+end Constant
+
+/-! ### The `x ↔ y` symmetry
+
+The pentagon's five arguments are permuted, not changed, by `x ↔ y`
+(`[x, y, a₃, a₄, a₅] ↦ [y, x, a₅, a₄, a₃]`), so the sum is symmetric. Transport
+in the *second* variable is therefore the same theorem, not a new one — which
+matters because reaching the 5₂ saddle needs both variables to move. -/
+
+theorem pentagonSum_symm (y x : ℂ) : pentagonSum y x = pentagonSum x y := by
+  unfold pentagonSum
+  rw [mul_comm x y]
+  ring
+
+theorem pentagonSum_swap (x : ℂ) : (fun w : ℂ => pentagonSum w x) = pentagonSum x :=
+  funext fun w => pentagonSum_symm w x
+
+/-- Transport in `y`, for free from the symmetry. -/
+theorem hasDerivAt_pentagonSum_snd_of_region {x : ℂ} {S : Set ℂ} (hS : IsOpen S)
+    (hSc : IsPreconnected S) (hreg : ∀ w ∈ S, PentagonRegular x w)
+    {y₀ y : ℂ} (hy₀ : y₀ ∈ S) (hy : y ∈ S)
+    (b3 : defectThree x y₀ = 0) (b3' : defectThree' x y₀ = 0)
+    (b4' : defectFour' x y₀ = 0) (b5 : defectFive x y₀ = 0)
+    (b5' : defectFive' x y₀ = 0) :
+    HasDerivAt (fun w : ℂ => pentagonSum w x) 0 y := by
+  rw [pentagonSum_swap]
+  exact hasDerivAt_pentagonSum_of_region hS hSc hreg hy₀ hy b3 b3' b4' b5 b5'
 
 end QOU.QBeta.FiveTwoComplexPentagon
