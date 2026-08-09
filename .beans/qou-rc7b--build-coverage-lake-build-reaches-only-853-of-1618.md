@@ -272,3 +272,25 @@ undercount by construction.
       `docs/audits/2026-06-28-content-sibling-compile-sweep.md` and
       `.github/workflows/lean-content-siblings.yml`.
 - [ ] Re-run the corpus sorry/vacuity audit (qou-joo5) against 34/28.
+
+---
+
+## MERGED to main 2026-08-09 — `2aaac60320`
+
+PR #4785. Post-merge verification on `main` itself, not on the branch:
+**`lake build` exit 0, 0 failing, 1686/1686 modules, 45 `sorry` warnings.**
+
+Verifying on main mattered here: the merge commit is a state no branch was
+ever tested as (`main` moved 126 commits across two integrations during the
+prepare-merge, the last 26 of them conflicting in four files).
+
+Merge method: **merge commit**, not the AGENTS.md rule-8 default. GitHub
+refused `rebase` — the branch carries 5 merge commits and cannot be rebased.
+Squash was declined (rule 8 forbids it absent per-PR permission); a local
+linearizing rebase was probed on a scratch branch and abandoned — it conflicted
+on commit 1 of 52, since replaying the drain against 126 commits of sibling
+work means re-resolving by hand exactly what the merge commits already settled,
+and it would have force-pushed over public history. Merge commit taken on
+explicit owner instruction, per rule 8's own stated exception.
+
+The glob stays widened, so the import closure can no longer silently shrink.
