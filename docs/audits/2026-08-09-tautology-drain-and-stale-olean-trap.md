@@ -123,3 +123,23 @@ for a name you can grep in the tree is almost always a stale olean, not a
 corpus defect. **Compare `stat` on the source against its olean before reporting
 a compile failure** — reporting that one as broken would have been a fabricated
 defect in a file that is in fact clean.
+
+### And `-D autoImplicit=false` manufactures errors outside the Lake package
+
+Second false alarm, same shape. `markov-trace-recursive-reducer.lean` came back
+red with four `unknown universe level 'u'` errors and a stuck typeclass problem
+— none of them near the edit. Re-running **without** `-D autoImplicit=false`:
+exit 0.
+
+The environment-setup skill prescribes that flag "for a QOU file", to match the
+package `leanOptions`. It is right for files under
+`content/<paper>/lean/QOU/**`. It is **wrong for content-block siblings outside
+the Lake package** that rely on auto-bound universe variables: with
+`autoImplicit` off, a bare `u` in a signature stops being auto-bound and becomes
+an error the source never had. (Not every sibling is affected —
+`fiber-adjoint-involution.lean` is also outside the package and checks clean
+*with* the flag, because it binds its universes explicitly.)
+
+So: pick the flag by whether the file is inside the Lake package, and when a
+sibling reports universe or stuck-instance errors, re-run without it before
+believing them.
