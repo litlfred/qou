@@ -59,23 +59,24 @@ nothing.
 """
 from __future__ import annotations
 
-import hashlib
 import json
 import math
-import os
 import platform
-import subprocess
 import sys
 import time
 from pathlib import Path
 
 from mpmath import mp, mpf, quad, sin, cos, log, pi
 
+HERE = Path(__file__).resolve()
+sys.path.insert(0, str(HERE.parent / "substrate"))
+
+from witness_base import WitnessBuilder  # noqa: E402
+
 COMPUTE_DPS = 30
 mp.dps = COMPUTE_DPS
 
-HERE = Path(__file__).resolve()
-WITNESS = HERE.parent / "milnor-subdivision-obtuse-scope-probe.witness.json"
+WITNESS_NAME = "milnor-subdivision-obtuse-scope-probe"
 
 # Agreement floor.  The LHS quadrature integrates through three integrable log
 # singularities (one per vertex, where the ray meets the circle), so it is not
@@ -311,42 +312,17 @@ def main() -> int:
 
     all_passed = all(a["passed"] for a in assertions)
 
-    src = HERE.read_bytes()
-    try:
-        script_sha = subprocess.run(
-            ["git", "log", "-1", "--format=%H", "--", str(HERE)],
-            capture_output=True, text=True, cwd=HERE.parent, check=False,
-        ).stdout.strip()
-        head_sha = subprocess.run(
-            ["git", "rev-parse", "HEAD"],
-            capture_output=True, text=True, cwd=HERE.parent, check=False,
-        ).stdout.strip()
-    except Exception:
-        script_sha = head_sha = ""
-
     import mpmath
-    witness = {
-        "engine": "mpmath",
-        "engineVersion": f"mpmath {mpmath.__version__}",
-        "computedAt": time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime()),
-        "commitSha": head_sha,
+    payload = {
         "assertions": assertions,
         "allPassed": all_passed,
-        "durationMs": int((time.time() - t0) * 1000),
-        "computation": "milnor-subdivision-obtuse-scope-probe",
+        "computation": WITNESS_NAME,
         "scriptFile": HERE.name,
-        "scriptHash": hashlib.sha256(src).hexdigest()[:12],
-        "scriptCommitSha": script_sha,
         "precisionMetadata": {
             "compute_dps": COMPUTE_DPS,
             "output_dps": 20,
             "guard_digits": 10,
             "truncation_bound": f"{float(TOL):.0e}",
-        },
-        "environment": {
-            "python": platform.python_version(),
-            "mpmath": mpmath.__version__,
-            "platform": platform.platform(),
         },
         "verdict": (
             "The Lambda-sum identity holds for OBTUSE and RIGHT inscribed "
@@ -362,16 +338,41 @@ def main() -> int:
             "No free parameter; nothing fitted; touches no production. R = 1.3 "
             "(!= 1) so spurious R-dependence would surface. The base integral is "
             "R-independent by H2 dilation invariance, and the wedge control "
-            "uses R = 1.7 to exercise that."
+            "uses R = 1.7 to exercise that. No q0 anywhere: this is pure "
+            "hyperbolic geometry, so the muon/proton anchor question does not "
+            "arise."
         ),
     }
-    WITNESS.write_text(json.dumps(witness, indent=2) + "\n")
+    # Provenance via WitnessBuilder so the witness does not land as
+    # PROV_MISSING in the provenance audit -- check-sidecars P30.
+    #
+    # `stamp_staleness_metadata`, NOT `wrap_legacy().save()`: this payload
+    # carries a flat `assertions`/`allPassed` pair, and wrap_legacy builds its
+    # own (empty) assertion list, which silently replaces it -- all 20
+    # assertions vanish from the emitted witness while every other key survives,
+    # so the file still looks well-formed. That is the split the P30 message
+    # means by "(assertion-free payloads)" vs "(payloads carrying a flat
+    # 'assertions'/'allPassed')".
+    payload["durationMs"] = int((time.time() - t0) * 1000)
+    WitnessBuilder.stamp_staleness_metadata(
+        payload,
+        script_path=HERE,
+        engine="mpmath",
+        engine_version=f"mpmath {mpmath.__version__}",
+    )
+    payload["environment"] = {
+        "python": platform.python_version(),
+        "mpmath": mpmath.__version__,
+        "platform": platform.platform(),
+    }
+    out_path = HERE.parent / f"{WITNESS_NAME}.witness.json"
+    out_path.write_text(json.dumps(payload, indent=2) + "\n")
 
     print(f"assertions: {sum(a['passed'] for a in assertions)}/{len(assertions)} passed")
     for a in assertions:
         flag = "ok  " if a["passed"] else "FAIL"
         print(f"  {flag} {a['name']:<44} {a['computed']}")
-    print(f"witness -> {WITNESS}")
+    print(f"witness -> {out_path}")
     return 0 if all_passed else 1
 
 
