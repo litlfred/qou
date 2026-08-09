@@ -13,10 +13,16 @@ evaluation of `χ(A)`; cf. `thm:qou-obstruction-reduction`).
 
 **De-axiomatised (2026-07-06, bean `7kzn`).** The universal class is no longer
 a free field: it is cross-wired to the **same** `QouObstructionReductionContext`
-that `qou_obstruction_reduction` uses — `octx.obstruction_class` (`= χ(A)` via
-`obstruction_class_eq`). So this is literally the fourth evaluation of the one
-obstruction class, and the vanishing statements are derived through the shared
-context's `kappa_vanishes_iff`. Kept generic over the coefficient ring `R`
+that `qou_obstruction_reduction` uses — `octx.chi_A` **is** the universal class.
+So this is literally the fourth evaluation of the one obstruction class, and the
+vanishing statements are derived through the shared context's
+`kappa_vanishes_iff_chi`.
+
+**Repaired 2026-08-09.** This file did not compile on `main`: it referenced three
+members that no version of `QouObstructionReductionContext` has —
+`obstruction_class`, `obstruction_class_eq` and `kappa_vanishes_iff`. A rename to
+`chi_A` / `kappa_vanishes_def` was never propagated here, and with the class field
+and the class-consumer in different files nothing caught it. Kept generic over the coefficient ring `R`
 (§7c: no archimedean construct is used).
 -/
 
@@ -29,7 +35,7 @@ open QOU.AlgebraicSubstrate (QouObstructionReductionContext)
 
     A `definition` carrier: the additive resolution-tree restriction map `res`
     (from `HH² ≅ k = ℤ` to the coefficient ring `R`) and the obstruction
-    `κ = res(χ(A))`, where `χ(A) = octx.obstruction_class` is the **canonical**
+    `κ = res(χ(A))`, where `χ(A) = octx.chi_A` is the **canonical**
     universal class carried by `QouObstructionReductionContext`. -/
 structure SkeinResolutionObstruction (R : Type*) [CommRing R]
     [octx : QouObstructionReductionContext] where
@@ -38,7 +44,7 @@ structure SkeinResolutionObstruction (R : Type*) [CommRing R]
   /-- The Skein resolution obstruction `κ = res(χ(A))`. -/
   κ : R
   /-- `κ` is the restriction of the *canonical* universal obstruction class. -/
-  κ_def : κ = res octx.obstruction_class
+  κ_def : κ = res octx.chi_A
 
 namespace SkeinResolutionObstruction
 
@@ -47,10 +53,10 @@ variable {R : Type*} [CommRing R] [octx : QouObstructionReductionContext]
 
 /-- A vanishing Euler characteristic forces the resolution obstruction to
     vanish: if `χ(A) = 0` then `κ_c^comp(L,q) = 0` (the degree-0 answer is
-    extractable). Now derived through the shared context's
-    `obstruction_class_eq`, not a free-field hypothesis. -/
+    extractable). Now derived through the shared context's `chi_A`, not a
+    free-field hypothesis. -/
 theorem kappa_eq_zero_of_chi_zero (h : octx.chi_A = 0) : S.κ = 0 := by
-  rw [S.κ_def, octx.obstruction_class_eq, h, map_zero]
+  rw [S.κ_def, h, map_zero]
 
 /-- Consistency with the Kummer obstruction of `qou_obstruction_reduction`:
     when `χ(A) = 0` every Kummer level vanishes (`n ∣ 0`), so the Skein
@@ -58,7 +64,7 @@ theorem kappa_eq_zero_of_chi_zero (h : octx.chi_A = 0) : S.κ = 0 := by
     evaluations of the same class. -/
 theorem kummer_vanishes_of_chi_zero (h : octx.chi_A = 0) (n : ℕ) :
     octx.kappa_vanishes n := by
-  rw [octx.kappa_vanishes_iff, octx.obstruction_class_eq, h]
+  rw [QOU.AlgebraicSubstrate.kappa_vanishes_iff_chi n, h]
   exact dvd_zero _
 
 end SkeinResolutionObstruction
