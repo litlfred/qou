@@ -425,7 +425,9 @@ ISOTOPES = [("D", 1, 1), ("T", 1, 2), ("He3", 2, 1), ("He4", 2, 2)]
 # lambda |- 12, moderate dim, both 2-row and >= 3-row (the stratum Delta_lambda
 # lives on).  n = 12 = 3*4, so the A = 2, 3, 4 words all embed in ONE algebra
 # and their operators are directly comparable.
-SHAPES = [(11, 1), (10, 2), (10, 1, 1), (9, 1, 1, 1), (2, 2, 2, 2, 2, 2)]
+SHAPES = [(11, 1), (10, 2), (10, 1, 1)]
+# lambda-robustness spot check (T only, A = 3): larger and taller partitions.
+SHAPES_ROBUST = [(9, 1, 1, 1), (2, 2, 2, 2, 2, 2)]
 N_STRANDS = 12
 
 
@@ -556,9 +558,14 @@ def main() -> int:
     results["per_shape"] = per_shape
 
     # ---- verdict aggregation -------------------------------------------
-    # A germ pair (i, i+1) can only contribute to the k-nucleon cluster if its
-    # SUPPORT {i, i+1} meets the cluster's generator set.  Rows that do not
-    # overlap must give R_k = 0 exactly (a consistency check, not a failure).
+    # A germ pair (i, i+1) can contribute to the k-nucleon cluster only if its
+    # curvature FAILS to commute with the cluster's sub-algebra.  sigma_a and
+    # sigma_b commute iff |a - b| >= 2, so the curvature is central for the
+    # cluster exactly when every generator in its support {i, i+1} is at
+    # distance >= 2 from every generator the cluster's word uses -- and then all
+    # transported curvatures are equal and R_k = 0 identically.  (Support
+    # OVERLAP is the wrong criterion: a curvature just outside the cluster still
+    # fails to commute with the adjacent boundary generator.)
     def cluster_gens(k):
         G = set()
         for m in range(k):
@@ -568,46 +575,95 @@ def main() -> int:
         return G
 
     G3, G4 = cluster_gens(3), cluster_gens(4)
-    ov3, ov4, no3 = [], [], []
-    r3rel_all, tr_all = [], []
+
+    def coupled(sup, G):
+        return any(abs(a - b) < 2 for a in sup for b in G)
+
+    cp3, cp4, ce3 = [], [], []          # coupled-3, coupled-4, central-3
+    r3rel_all, r3rel_in, tr_all = [], [], []
     for s, d in per_shape.items():
         for nm, dd in d.items():
             for r in dd["constant_germ"]:
-                tr_all.append(abs(r["trace"]) / max(r["omega"], 1e-300))
+                if r["omega"] > TOL_ZERO:
+                    tr_all.append(abs(r["trace"]) / r["omega"])
                 sup = set(r["germ_pair"])
                 if "R3" in r:
-                    (ov3 if (sup & G3) else no3).append(r["R3"])
-                    if r.get("R3_rel") is not None and (sup & G3):
+                    (cp3 if coupled(sup, G3) else ce3).append(r["R3"])
+                    if r.get("R3_rel") is not None and coupled(sup, G3):
                         r3rel_all.append(r["R3_rel"])
-                if "R4" in r and (sup & G4):
-                    ov4.append(r["R4"])
+                        if sup <= G3:
+                            r3rel_in.append(r["R3_rel"])
+                if "R4" in r and coupled(sup, G4):
+                    cp4.append(r["R4"])
             bl = dd["band_local"]
-            tr_all.append(abs(bl["trace"]) / max(bl["omega"], 1e-300))
+            if bl["omega"] > TOL_ZERO:
+                tr_all.append(abs(bl["trace"]) / bl["omega"])
             if bl.get("R3_rel") is not None:
                 r3rel_all.append(bl["R3_rel"])
+                r3rel_in.append(bl["R3_rel"])
     print("\n" + "=" * W)
-    print("  [VERDICT AGGREGATION]  (constant-germ readings; support-overlapping only)")
-    print(f"    3-body Moebius residual ||R3||: min {min(ov3):.4e}  max {max(ov3):.4e}"
-          f"   ({len(ov3)} readings)")
-    print(f"    4-body Moebius residual ||R4||: min {min(ov4):.4e}  max {max(ov4):.4e}"
-          f"   ({len(ov4)} readings)")
-    print(f"    consistency: germ pairs whose support MISSES the cluster give "
-          f"||R3|| <= {max(no3):.2e}  ({len(no3)} readings, must be 0)")
-    print(f"    relative R3/||Omega||: min {min(r3rel_all):.4f}  max {max(r3rel_all):.4f}"
-          f"   -> spread {max(r3rel_all)/max(min(r3rel_all),1e-300):.1f}x  "
-          f"(the VALUE is not determined)")
+    print("  [VERDICT AGGREGATION]")
+    print(f"    3-body Moebius residual ||R3||, curvature COUPLED to the cluster:")
+    print(f"        min {min(cp3):.4e}  max {max(cp3):.4e}   ({len(cp3)} readings)")
+    print(f"    4-body Moebius residual ||R4||, coupled:")
+    print(f"        min {min(cp4):.4e}  max {max(cp4):.4e}   ({len(cp4)} readings)")
+    print(f"    consistency: curvature CENTRAL for the cluster (support distance >= 2)")
+    print(f"        gives ||R3|| <= {max(ce3):.2e}   ({len(ce3)} readings, must be 0)")
+    print(f"    relative R3/||Omega||: all coupled  min {min(r3rel_all):.4f}  "
+          f"max {max(r3rel_all):.4f}  -> spread {max(r3rel_all)/max(min(r3rel_all),1e-300):.0f}x")
+    print(f"                           support INSIDE the cluster  "
+          f"min {min(r3rel_in):.4f}  max {max(r3rel_in):.4f}  "
+          f"-> spread {max(r3rel_in)/max(min(r3rel_in),1e-300):.1f}x")
+    print(f"      (either way the VALUE is not determined by the germ convention)")
     print(f"    trace control max |tr(Omega)|/||Omega|| = {max(tr_all):.2e}  "
           f"(listPairing_trace_zero: must be 0)")
-    assertions["R3_nonzero_when_curvature_meets_cluster"] = 1 if min(ov3) > TOL_ZERO else 0
-    assertions["R4_nonzero_when_curvature_meets_cluster"] = 1 if min(ov4) > TOL_ZERO else 0
-    assertions["R3_zero_when_curvature_misses_cluster"] = \
-        1 if (not no3 or max(no3) < TOL_ZERO) else 0
-    assertions["trace_annihilates_pairing"] = 1 if max(tr_all) < 1e-10 else 0
-    results["R3_min"], results["R3_max"] = min(ov3), max(ov3)
+    assertions["R3_nonzero_when_curvature_couples_to_cluster"] = 1 if min(cp3) > TOL_ZERO else 0
+    assertions["R4_nonzero_when_curvature_couples_to_cluster"] = 1 if min(cp4) > TOL_ZERO else 0
+    assertions["R3_zero_when_curvature_central_for_cluster"] = \
+        1 if (not ce3 or max(ce3) < TOL_ZERO) else 0
+    assertions["trace_annihilates_pairing"] = 1 if max(tr_all) < 1e-12 else 0
+    results["R3_min"], results["R3_max"] = min(cp3), max(cp3)
     results["R3_rel_min"], results["R3_rel_max"] = min(r3rel_all), max(r3rel_all)
-    results["R4_min"], results["R4_max"] = min(ov4), max(ov4)
-    results["R3_offsupport_max"] = max(no3) if no3 else 0.0
+    results["R3_rel_inside_min"] = min(r3rel_in)
+    results["R3_rel_inside_max"] = max(r3rel_in)
+    results["R4_min"], results["R4_max"] = min(cp4), max(cp4)
+    results["R3_central_max"] = max(ce3) if ce3 else 0.0
     results["max_rel_trace"] = max(tr_all)
+
+    # ---- lambda-robustness spot check -----------------------------------
+    print("\n  [LAMBDA ROBUSTNESS -- T (A=3), three germ readings, taller/larger lambda]")
+    rob = {}
+    for shape in SHAPES + SHAPES_ROBUST:
+        sigr, germsr, dimr, hr = rep_and_germs(shape, Q0)
+        Fp = {(i, i + 1): germsr[i] @ germsr[i + 1] - germsr[i + 1] @ germsr[i]
+              for i in range(N_STRANDS - 2)}
+
+        def cv(g, _F=Fp):
+            return _F[(g, g + 1)] if (g, g + 1) in _F else _F[(g - 1, g)]
+
+        wt = [(float(c), float(d), g) for (c, d, g) in words["T"]]
+        cach = {}
+        row = {}
+        for label, F, co in (("(0,1)", Fp[(0, 1)], None), ("(3,4)", Fp[(3, 4)], None),
+                             ("band-local", None, cv)):
+            Om = fro(omega_for_subset(wt, (0, 1, 2), sigr, hr, dimr, F,
+                                      curvature_of=co, cache=cach))
+            R3 = fro(moebius_residual(wt, (0, 1, 2), sigr, hr, dimr, F,
+                                      curvature_of=co, cache=cach))
+            row[label] = R3 / Om if Om > TOL_ZERO else None
+        rob[str(shape)] = dict(dim=dimr, rows=len(shape), **row)
+        print(f"    lambda={str(shape):<22} dim={dimr:<4} rows={len(shape)}  "
+              + "  ".join(f"{k}: {v:.4f}" for k, v in row.items()))
+    spreads = {}
+    for k in ("(0,1)", "(3,4)", "band-local"):
+        vals = [v[k] for v in rob.values()]
+        spreads[k] = max(vals) / min(vals)
+    print("    -> spread of R3/||Omega|| across lambda: "
+          + "  ".join(f"{k}: {v:.3f}x" for k, v in spreads.items()))
+    results["lambda_robustness"] = rob
+    results["lambda_spread"] = spreads
+    assertions["R3_rel_lambda_robust_within_10pct"] = \
+        1 if max(spreads.values()) < 1.10 else 0
 
     # ---- cluster budget for He4 -----------------------------------------
     print("\n  [CLUSTER BUDGET -- He4, lambda=(10,1,1), band-local curvature]")
@@ -672,8 +728,11 @@ def main() -> int:
         (max(v["R3_rel"] for v in vals.values())
          - min(v["R3_rel"] for v in vals.values())) < 1e-6
         for vals in order_res.values())
-    assertions["R3_is_ordering_invariant"] = 1 if ordering_invariant else 0
-    print(f"    R3 invariant under nucleon relabelling: {ordering_invariant}")
+    # Stated as the FINDING, not as a failed hope: the object is expected to be
+    # ordering-DEPENDENT, and that is what disqualifies it as a nuclear observable.
+    assertions["R3_is_ordering_dependent"] = 0 if ordering_invariant else 1
+    print(f"    R3 invariant under nucleon relabelling: {ordering_invariant}  "
+          f"(a many-body binding term would have to be)")
 
     # ---- control 2: q-dependence ----------------------------------------
     print("\n  [CONTROL 2 -- q-dependence]  (#4848's single-generator result was "
@@ -681,8 +740,13 @@ def main() -> int:
     sigd, germsd, dimd, hd = rep_and_germs(shape, Q_DIAG)
     germ_drift = max(fro(germsd[i] - germs[i]) for i in range(len(germs)))
     Fd = germsd[gp[0]] @ germsd[gp[1]] - germsd[gp[1]] @ germsd[gp[0]]
+    # `allow_float64=True` is correct here and the guard is a false positive:
+    # Q_DIAG = 1.25 is EXACTLY representable, so `mpf("1.25")` loses nothing --
+    # the guard's heuristic ("an mpf holding only f64 information") cannot tell
+    # an exact dyadic from a truncated irrational.  This is a deliberate
+    # off-anchor diagnostic ray, never an anchor.
     wnp = [(float(c), float(d), g) for (c, d, g) in
-           atom_braid_word_3A(2, 2, q=Q_DIAG)]
+           atom_braid_word_3A(2, 2, q=Q_DIAG, allow_float64=True)]
     Omd = omega_for_subset(wnp, (0, 1, 2, 3), sigd, hd, dimd, Fd)
     R3d = fro(moebius_residual(wnp, (0, 1, 2), sigd, hd, dimd, Fd))
     base = per_shape[str(shape)]["He4"]["constant_germ"][0]
@@ -795,8 +859,7 @@ def main() -> int:
     w.save()
     print("witness -> nastokes-multigen-cluster-additivity.witness.json")
 
-    ok = all(v == 1 for k, v in assertions.items()
-             if k not in ("R3_is_ordering_invariant",))
+    ok = all(v == 1 for v in assertions.values())
     return 0 if ok else 1
 
 
