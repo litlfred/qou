@@ -504,3 +504,28 @@ QOU/MassTheory/NucleonOrderingSymmetry.lean (exit 0, zero warnings, #print axiom
 clean on all 8 decls, purely combinatorial — no ring, no R);
 computations/probes/nastokes_orbit_symmetric_readout_probe.py (+witness, 17
 assertions all passing, 162 s wall).
+
+---
+## Cross-reference 2026-08-09 — the #4850 §7 fallout item is resolved far enough to report (qou-48is / PR #4851)
+
+The ordering item spun out of this bean is now traced. Two results relevant here:
+
+1. **The deuteron is EXACTLY ordering-independent**, and provably so for every
+   weight function: A=2 has a single interface class, so the interface product is
+   arrangement-invariant (`ifaceProd_deuteron_ordering_independent`, sorry-free in
+   `QOU/MassTheory/CanonicalOrderingSaddle.lean`). The ordering ambiguity does NOT
+   reach the deuteron magnitude. Nothing in this bean needs an arrangement caveat.
+
+2. **#4849's ordering disqualifier is doubly void.** The 36% swing #4850 measured
+   on T is structural, not noise: the production interface product factorises as
+   P(o)/P(canonical) = (f_pn/f_pp)^(b_p-1) (f_pn/f_nn)^(b_n-1) over p-/n-block
+   counts, verified on all 3140 arrangements with Z,N<=6 to 8e-51, and reproduced
+   independently by two full H_{3A} Markov-trace pipelines (rel 1.1e-8, 3.4e-14).
+
+Also worth knowing for any A>=3 extension of this bean: production hardcodes the
+sorted arrangement while the corpus's own prop:ground-state-ordering selects the
+INTERLEAVED one for A>=4 (opposed in sign on the production readout). Anything
+reported at A>=3 must state which arrangement it used. See
+docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md.
+
+This bean (deuteron Delta_lambda magnitude) stays OPEN and is unaffected.
