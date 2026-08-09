@@ -42,6 +42,51 @@ except ImportError:
 # Scalar constants
 # ══════════════════════════════════════════════════════════════
 
+# ┌────────────────────────────────────────────────────────────────────┐
+# │ TRACE CONVENTION C — and the C → D migration is BLOCKED HERE.      │
+# │ Do not "finish the excision" on this line. Read this first.        │
+# └────────────────────────────────────────────────────────────────────┘
+#
+# Owner ruling 2026-08-09 excised convention C (z = 1/(q^1/2 + q^-1/2)) in
+# favour of convention D (z = q^3/(q^2 + 1)) repo-wide — registry
+# docs/coordination/trace-convention-registry.md, bean qou-wgta. This module
+# is a deliberate EXCEPTION, stopped at item 11 of that bean, because
+# switching this one line silently destroys `G_INV` twelve lines further
+# down and every consumer of it.
+#
+# WHY. `TR_M` below is the Markov trace on the NF basis, `G` its Gram matrix,
+# and `G_INV = np.linalg.inv(G)` runs unconditionally AT IMPORT. Under D that
+# Gram form is DEGENERATE — proved on this branch in
+# content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
+# which names this file by path. Measured here at the proton pin:
+#
+#     convention C   eigenvalues -0.855067 +0.101797 +0.855067 x3 +3.476950
+#                    det -0.18920521914403668     cond 3.4e+01
+#                    signature (5,1), Lorentzian but NON-degenerate
+#
+#     convention D   eigenvalues -0.752702  0.000000 +0.752702 x3 +4.230339
+#                    det  3.998e-17                cond 4.9e+16
+#                    signature (4,1) + a NULL DIRECTION
+#
+# And numpy does not protect you: `np.linalg.inv` on the D matrix RAISES
+# NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+# A silently wrong `G_INV`, exported at import into constants.py, atom.py,
+# molecular.py, sdp.py and nine corpus consumers, is far worse than the
+# stale convention.
+#
+# The Lean file names the repair — quotient by the radical, or use a
+# different seminorm. That is a design decision for the owner, not a swap.
+#
+# ALREADY SPLIT, AND WORSE AFTER A REBUILD. The Rust mirror
+# (tools/hecke-engine/src/gram.rs) IS now convention D. It survives the
+# degeneracy only because it still carries the pre-2026-05-19 `TR_M[5] = z^3`
+# bug that this file fixed. `build_atom_nf` / `atom_per_generator_volumes`
+# below dispatch to the compiled `pyhecke_native` wheel built from that
+# crate — so once that wheel is rebuilt from this branch, those two
+# functions return convention D while `z` / `TR_M` / `G` / `G_INV` in this
+# same module stay on C. tests/test_gram_values.py already measures the
+# native-vs-legacy split (2.6e-8 at the muon/proton anchor gap today; it
+# becomes the full 22.7 % convention gap after a rebuild).
 z = 1.0 / (q0 ** 0.5 + qi ** 0.5)
 
 # Wedderburn-Artin weights for H_3(q)
@@ -367,7 +412,14 @@ def _q0_50dps_str() -> str:
 
 
 def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
-    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64)."""
+    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64).
+
+    **Convention C.** Held here deliberately, in lockstep with the module's
+    float64 `z` — see the blocking note at that definition. Splitting the
+    mpmath mirror from the f64 original would be strictly worse than the
+    stale convention. Under D this would be q³/(q²+1), and rational, so the
+    "irrational" note would no longer apply.
+    """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
         qi_ = 1 / q
@@ -379,6 +431,9 @@ def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
 
     Mirrors the float64 `TR_M` exactly: [1, z, z, z², z², h·z²+z] with
     h = q − q⁻¹ and z the irrational Markov weight at 50 dps.
+
+    **Convention C**, in lockstep with the module's `z` — see the blocking
+    note at that definition (bean qou-wgta item 11).
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
