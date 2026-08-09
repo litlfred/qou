@@ -1591,3 +1591,71 @@ every smaller N asserted to fail). The binding one is again `k + W < N`.
      "Stirling factor squared over Gaussian width"); what step 18 supplies is
      the Gaussian width, and step 7 the Stirling factor;
   3. `htau`.
+
+---
+
+## Step 19 -- `<4_1>_N` with no `g_{k*}` left in it (`QOU/Knot/KashaevAsymptoticBounds.lean`)
+
+Three theorems, all `[propext, Classical.choice, Quot.sound]`. Step 18 gives
+`<4_1>_N = g_{k*}(model +- err)`; step 7 gives `log g_{k*}`. Combined:
+
+    e^{P-E}(model - err) <= <4_1>_N <= e^{P+E}(model + err)
+
+with `P = peakLogMain N`, `E = peakLogErr N`. The peak term is gone.
+
+`P` is where the volume enters: `-(2/pi)Lambda(5pi/6) = Vol(4_1)/2pi`, so `P`'s
+first term is `N Vol/2pi`.
+
+### The headline in final form
+
+Probe part (ii):
+
+    N       e^P model / (N^{3/2} e^{N Vol/2pi})    gap        gap x N
+    241            0.793267141197              3.343e-02      8.057
+    3841           0.761900986929              2.065e-03      7.933
+    61441          0.759964672874              1.290e-04      7.925
+
+against `3^(-1/4) = 0.759835685652`, `Vol/2pi = 0.323065947219`. Clean `O(1/N)`.
+(Step 18's headline had constant 0.536; this one uses the MODEL and step 7's
+MAIN term rather than the true values, so the constants differ.)
+
+### WHERE THE LOWER BOUND ACQUIRES CONTENT -- and it is late
+
+`err <= model` is a hypothesis of `kashaev_bounds_of_model`, and without it the
+lower bound is negative and says nothing. Probe part (iii):
+
+    N        W = N^0.6   err/model     best W   best err/model
+    1e4         251        19.4346       213         7.3234
+    1e5         999         3.6636       927         2.4511
+    1e6        3981         1.4522      3001         0.4996
+
+**With `W = N^0.6` the condition holds at no `N` tested.** Optimising `W` beats
+it everywhere and brings the threshold to `N = 1e6`. The exponent 0.6 is
+convenient for step 13's TAIL analysis; it is not the choice that makes the
+lower bound usable soonest, because the cubic remainder wants a SMALLER window
+than the tail does and the balance point moves with `N`. (`W = N^0.6` should
+come good near `N ~ 1e7`.)
+
+So the honest state: the UPPER bound is unconditional; the LOWER bound is a
+theorem whose hypothesis is first satisfiable around `N = 1e6` with a tuned
+window. The limit statement is untouched by this -- it is the finite-`N`
+content that arrives late.
+
+### Three guessed thresholds in a row, all wrong
+
+`M < 5` (step 16), `K < 1.85` (step 16), `gap < 1e-4` and `threshold = 1e5`
+(here). Every one was a tolerance I invented rather than derived, and every one
+was caught by the probe failing. The fix each time was the same: assert the
+RATE against a derived constant (`8 sqrt3 pi`, `gap x N` settling) instead of
+an absolute number. Worth doing that first next time.
+
+### Remaining before `hc`
+
+Only `hc` and `htau` now.
+
+`hc : c^2 |cot th| = (2 sin th)^2` is already proved as ALGEBRA in
+`OneLoopPrefactorInvariance.lean`. What steps 7-19 supply is its two
+ingredients at the Kashaev saddle: the Stirling factor `2 sin th_{k*}` (step 7,
+inside `P`) and the Gaussian width `sqrt(pi/a) = sqrt(N/|cot th*|)` (steps
+12-19, inside `model`). Writing `c_sigma = 2 sin th* |cot th*|^{-1/2}` and
+squaring gives `hc` directly.
