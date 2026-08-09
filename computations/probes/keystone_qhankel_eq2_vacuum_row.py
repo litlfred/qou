@@ -13,7 +13,7 @@ q-Bessel — independently reproduces this vector with NO free parameters.
 
 The single-argument form was refuted un-sourced (2026-07-02 §4); the
 0th-order q-Bessel TRICOMI C_{0,q} = Σ(-1)^k x^k/([k]_q!)^2 was refuted
-with a source (2026-07-04, uploads/014-026.pdf). BUT the Tricomi lacks the
+with a source (2026-07-04, uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf). BUT the Tricomi lacks the
 Gaussian q^{k(k-1)/2} that makes the THIRD q-Bessel entire-of-order-0 with
 DISCRETE orthogonality — i.e. the Tricomi is not the Plancherel object.
 

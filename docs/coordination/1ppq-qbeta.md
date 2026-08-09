@@ -2982,7 +2982,7 @@ integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`
 `Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
 
 *Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
-Zagier (2007) as `uploads/fulltext.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+Zagier (2007) as `uploads/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
 `{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
 `Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
 `−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would
