@@ -90,7 +90,10 @@ def h4CoordEquiv (R : Type u) [CommRing R] (h : R) : H4A R h ≃ₗ[R] (Fin 24 �
   left_inv _ := rfl
   right_inv _ := rfl
 
-/-- **`dim_K H₄(q) = 24 = 4!`.** This is what `QOU.Hecke.InstanceH4` left open. -/
+/-- **`dim_K H₄(q) = 24 = 4!`.** This is the half the retired `QOU.Hecke.InstanceH4`
+never had: it carried a `HeckeAlgebra R 4 q` instance on an operator algebra whose
+dimension was never pinned (bean qou-ti7p). Here the relations and the rank hold of
+one and the same carrier. -/
 theorem finrank_H4A (K : Type u) [Field K] (h : K) :
     Module.finrank K (H4A K h) = 24 := by
   rw [(h4CoordEquiv K h).finrank_eq, Module.finrank_fin_fun]

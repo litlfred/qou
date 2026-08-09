@@ -1,5 +1,6 @@
 import QOU.Machinery.MarkovTraceH4Gram
 import QOU.Machinery.HeckeH4AlgebraLaws
+import QOU.Machinery.H4AsciiPresentation
 
 /-!
 # `QOU.Machinery.H4BasisBridge` — the two `H₄` normal-form bases are one basis
@@ -222,13 +223,10 @@ theorem trM4_phi (z : R) (u : Fin 24 → R) : trM4 z h (phi u) = trM z h u := by
 composite to `phi (…)` one generator at a time — producing the *subscript* word
 shape. For the 6 words where the two bases differ that is not the ASCII word, and
 the two sides no longer match. Normalising needs `σ₀σ₂ = σ₂σ₀` on the ASCII
-generators as well; the subscript counterpart is
-`HeckeH4StabilizationRung.far_commute_σ₀σ₂`. -/
-
-theorem mulσ_farcomm02 (u : Fin 24 → R) :
-    mulσ0 h (mulσ2 h u) = mulσ2 h (mulσ0 h u) := by
-  funext i
-  fin_cases i <;> simp [mulσ0, mulσ2] <;> ring
+generators as well: `QOU.Machinery.H4.mulσ_farcomm02`, imported above, whose
+subscript counterpart is `HeckeH4StabilizationRung.far_commute_σ₀σ₂`. (This file
+carried its own copy until bean qou-ti7p folded the whole ASCII presentation into
+`H4AsciiPresentation`.) -/
 
 /-! ## What is NOT here yet: the product correspondence
 

@@ -536,6 +536,76 @@ theorem H3.one_mul {R : Type u} [Field R] (q : R) (y : H3Carrier R) :
   obtain ⟨_, _, _, _, _, _⟩ := y
   simp
 
+/-- Identity law on the other side: `x · 1 = x`.  Unlike `H3.one_mul`, which is
+immediate from the basis decomposition, this needs the six generator-action maps
+to send `1` to the right basis vector — which is exactly what makes the basis
+*ordering* above correct. -/
+theorem H3.mul_one {R : Type u} [Field R] (q : R) (x : H3Carrier R) :
+    H3.mul q x (H3.one R) = x := by
+  obtain ⟨a1, a2, a3, a4, a5, a6⟩ := x
+  simp only [H3.mul, H3.one, H3.mulSigma1, H3.mulSigma2, H3.smul, H3.add,
+    Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-- **Associativity of `H3.mul`.**  Each of the six output coefficients is a
+polynomial in the eighteen input coefficients and `q - q⁻¹`, so `ring` settles it
+componentwise.
+
+That it *is* an identity is the content: it fails for an arbitrary pair of `6 × 6`
+matrices, and holds here because `H3.mulSigma1` and `H3.mulSigma2` are a faithful
+transcription of left multiplication by `σ₁` and `σ₂` subject to the Hecke and
+braid relations.
+
+This is a statement about *this* table.  The tree's other `H₃(q)` —
+`QOU.Machinery.HeckeH3AlgebraInstance.H3A`, which is where the `Ring`, the
+`Algebra`, `wedderburn₃`, and the `QOU.Hecke.HeckeAlgebra` instance live — is a
+different normal-form basis with its own `mulNF₃_assoc`.  Neither implies the
+other without a change of basis. -/
+theorem H3.mul_assoc {R : Type u} [Field R] (q : R) (x y z : H3Carrier R) :
+    H3.mul q (H3.mul q x y) z = H3.mul q x (H3.mul q y z) := by
+  obtain ⟨a1, a2, a3, a4, a5, a6⟩ := x
+  obtain ⟨b1, b2, b3, b4, b5, b6⟩ := y
+  obtain ⟨c1, c2, c3, c4, c5, c6⟩ := z
+  simp only [H3.mul, H3.mulSigma1, H3.mulSigma2, H3.smul, H3.add, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-! ### The H_3 relations in `H3.mul` form, over an arbitrary field
+
+`H3.sigma1_sq_eq`, `H3.sigma2_sq_eq` and `H3.braid_relation` above are stated over
+`ℝ` and in *generator-action* form (`H3.mulSigma1 q (H3.sigma1 ℝ) = …`).  These
+three are their counterparts over an arbitrary field and as equations in the
+multiplication — the form a ring-level statement of the presentation asks for.
+
+They come from the retired `QOU.Hecke.InstanceH3` (bean qou-ti7p), which used
+them to discharge the relation fields of a `HeckeAlgebra` instance on a type
+synonym for `H3Carrier R`.  That carrier is gone —
+`QOU.Hecke.InstanceOnH3A.instHeckeAlgebraH3A` puts the class on `H3A`, where
+`IsHeckeOfFullRank K 3` holds of the same carrier — but the relations are about
+`H3.mul`, so they belong here. -/
+
+theorem H3.sigma1_sq_mul {R : Type u} [Field R] (q : R) :
+    H3.mul q (H3.sigma1 R) (H3.sigma1 R)
+      = (q - q⁻¹) • H3.sigma1 R + H3.one R := by
+  simp only [H3.mul, H3.sigma1, H3.one, H3.mulSigma1, H3.mulSigma2, H3.smul,
+    H3.add, Prod.smul_mk, smul_eq_mul, Prod.mk_add_mk, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+theorem H3.sigma2_sq_mul {R : Type u} [Field R] (q : R) :
+    H3.mul q (H3.sigma2 R) (H3.sigma2 R)
+      = (q - q⁻¹) • H3.sigma2 R + H3.one R := by
+  simp only [H3.mul, H3.sigma2, H3.one, H3.mulSigma1, H3.mulSigma2, H3.smul,
+    H3.add, Prod.smul_mk, smul_eq_mul, Prod.mk_add_mk, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-- **The braid relation** `σ₁σ₂σ₁ = σ₂σ₁σ₂` as an equation in `H3.mul`: both
+sides are the longest element of `S₃`, basis position 6. -/
+theorem H3.braid_mul {R : Type u} [Field R] (q : R) :
+    H3.mul q (H3.mul q (H3.sigma1 R) (H3.sigma2 R)) (H3.sigma1 R)
+      = H3.mul q (H3.mul q (H3.sigma2 R) (H3.sigma1 R)) (H3.sigma2 R) := by
+  simp only [H3.mul, H3.sigma1, H3.sigma2, H3.mulSigma1, H3.mulSigma2, H3.smul,
+    H3.add, Prod.mk.injEq]
+  refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
 /-! ### H_3 Wedderburn block decomposition (3 blocks)
 
     `H_3(q)` decomposes as `M_1(R) ⊕ M_2(R) ⊕ M_1(R)` at generic
