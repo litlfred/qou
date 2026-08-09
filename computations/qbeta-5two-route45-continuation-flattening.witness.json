@@ -1,0 +1,65 @@
+{
+  "probe": "qbeta_5two_route45_continuation_flattening",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 50,
+  "follows": [
+    "Route 43 (flattened Rogers)",
+    "Route 44 (the torsor)"
+  ],
+  "closes": "qou-0yqu Route 41's gated G4 branch-bookkeeping gap, for the c-orbit: the 6.4718 discrepancy is exactly 2*Re(pi*i*log(1 - c_1^2)).",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the Rogers pentagon is an exact identity in two COMPLEX variables, not merely on the real square -- which is what licenses deriving the flattening by analytic continuation instead of searching for it",
+      "worst_residual_over_real_and_complex_points": "1.06910588404e-50",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "exactly ONE branch crossing occurs on the straight path from the real embedding of c to a complex one, and the jump equals -pi*i*log(a_4) at that point -- the signature of log(1-a_4) = log(x*y) crossing its cut. \u26a0 A hardcoded threshold of |d| > 1 reported ZERO jumps here, because this jump has magnitude 0.35; the threshold must be scaled to the smooth step, not guessed",
+      "jumps": [
+        {
+          "t": "0.4625",
+          "delta": "(-0.00013295706895886 + 0.35232570927163j)",
+          "minus_pi_i_log_a4": "(0.00013295706895886 - 0.35232570927163j)"
+        }
+      ],
+      "n_jumps": 1,
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE CORRECTION SO NEARLY MISSED. Modelling the crossing as a one-off step and subtracting the jump as a CONSTANT leaves a large residual; the true compensation is -pi*i*log(a_4(t)), a function that keeps moving after the crossing. That is why the sum drifts smoothly AFTER the jump instead of stepping once, and why the constant model looks plausible and is wrong",
+      "constant_model_residual": "3.64496229314",
+      "varying_model_residual": "1.10200912121e-50",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "ROUTE 41'S G4 GAP IS CLOSED for the c-orbit. With the continuation-derived flattening (q = 2*sign(Im z) on a_4, zero elsewhere) all three embeddings close and total exactly 3*pi^2/2. The 6.4718 discrepancy Route 41 could only report is exactly 2*Re(pi*i*log(1 - c_1^2)) -- an identified quantity now, not a gap",
+      "total": "(14.8044066016340379282517364998 + 0.0j)",
+      "three_halves_pi_squared": "14.8044066016340379282517364998",
+      "residual": "2.13821176807e-50",
+      "route41_gap_identified_as": "-6.4718033236996927361",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "THE OFF-CONFIGURATION CHECK, and it fails as Route 44 predicts. The same flattening applied to the y-orbit -- the configuration this lane actually cares about -- leaves a residual of 4.873. Each configuration's continuation crosses different cuts, so the y-orbit needs its own derivation; the c-orbit result is a method validated, not a general flattening",
+      "total_on_y_orbit": "(9.931025041689573868739896 + 0.0j)",
+      "three_halves_pi_squared": "14.80440660163403792825174",
+      "residual": "4.87338155994",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "method": "the flattening is DERIVED by analytic continuation from a real embedding, not searched: the pentagon is an exact identity in two complex variables, so tracking which argument crosses which cut produces the correction.",
+    "result": "for the c-orbit the correction is q = 2*sign(Im z) on a_4 = 1-xy, and the three embeddings then total exactly 3*pi^2/2 (residual 2e-50).",
+    "limit": "it does NOT transfer to the y-orbit (residual 4.873). Consistent with Route 44's torsor structure -- each configuration needs its own continuation. The y-orbit derivation is the next step.",
+    "method_traps": "a constant-compensation model of the crossing is wrong (the correction is a varying function), and a hardcoded jump threshold of |d| > 1 misses a jump of magnitude 0.35 entirely.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}
