@@ -618,8 +618,13 @@ serialization split — and nothing here reduces them.
   * `nastokes-*` (4 files, 1001 fields) + `alpha/*` (1, 91) — numpy ports
   * the qbeta trio (3 files, 35) — the bean's original three, still undrained
   * 7 further small ones, and the 2 REGRESSED
-  * `gram_qtrace_hutchinson_probe.py` — dps-ordering fix applied, witness not
-    yet regenerated (its q₀ moves in the 17th digit)
+  * `gram_qtrace_hutchinson_probe.py` — dps-ordering fix applied and COMMITTED
+    (`02b612f96`); witness NOT regenerated. The producer gets past the guard now
+    but outruns this container: no output after 4 min, and a background run was
+    killed at ~10 min CPU (16 GB free, so slowness rather than memory). Its q₀
+    moves in the 17th digit, so its numbers will move — that needs its own
+    verification pass, and `gram-qtrace-hutchinson-probe.witness.json` is
+    known-stale until someone does it.
   * `gram_norm_binding_probe.py`, `gram_transfer_quadratic.py`,
     `threerow_isospin_parity_probe.py` — never established whether the guard
     breaks them; each exceeded a 4-minute probe budget before reaching a verdict
