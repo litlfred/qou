@@ -79,7 +79,8 @@ and `computations/whitehead-c-sigma-hiprec.witness.json`.
 
 Two cautions on that constant, both recorded after the note above was
 written. Its *geometric* derivation does **not** run through the adjoint
-torsion route of the same PR: the determinant used there is not a
+torsion route of `computations/whitehead_c_sigma_torsion.py`: the
+determinant computed there is not a
 triangulation invariant (8 distinct values for $5_2$ under retriangulation),
 and the per-cusp factor $2^{(c-1)/2}$ it introduced does not exist — against
 the corrected Dimofte–Garoufalidis invariant, $c_\sigma\,|\tau_{\mathrm{DG}}|^{1/2}$
