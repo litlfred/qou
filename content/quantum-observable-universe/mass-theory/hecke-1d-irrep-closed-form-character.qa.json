@@ -8,10 +8,10 @@
     "lean": "content/quantum-observable-universe/mass-theory/hecke-1d-irrep-closed-form-character.lean"
   },
   "source_hashes": {
-    "md": "fae38f8ac3b7",
+    "md": "4df07c849701",
     "ts": "7cc169f31e93",
-    "lean": "bd02ad2f2103",
-    "lean_statement": "7df8d0951d15"
+    "lean": "a6e6cacbdb2d",
+    "lean_statement": "34235bd4759b"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -3531,6 +3531,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93",
+          "lean": "a6e6cacbdb2d",
+          "lean_statement": "34235bd4759b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "c32929b594d2",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-09T22:52:48.944Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "wall-side-correct": [
@@ -3569,6 +3587,24 @@
         },
         "reviewed_at": "2026-08-09T22:20:05.350Z",
         "reviewed_sha": "06149434632aa4978e51e9c22517be8d13da9543"
+      },
+      {
+        "field_hash": {
+          "md": "4df07c849701",
+          "ts": "7cc169f31e93",
+          "lean": "a6e6cacbdb2d",
+          "lean_statement": "34235bd4759b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-voice.ts",
+          "version": "v1",
+          "script_hash": "5c1ec1e16bd8",
+          "script_commit_sha": "958c29ecc1974992b15c03e154461d184324ada3"
+        },
+        "reviewed_at": "2026-08-09T22:52:48.944Z",
+        "reviewed_sha": "da6ab6d46385a7a771d8a2acbdf3c712f8718cb9"
       }
     ],
     "wall-side-proof": [
@@ -3648,5 +3684,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-09T22:52:48.944Z"
 }

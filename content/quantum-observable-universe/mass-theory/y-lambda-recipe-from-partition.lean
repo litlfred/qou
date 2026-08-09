@@ -25,6 +25,31 @@
   The stub now parametrises in an abstract `(q, v) : R × R` with
   `v² = q` and replaces `constant` with `opaque` over `R`.
 
+  **Base ring (§7c): the `Field` is essential here, not scaffolding.**
+  Adjudicated against `wall-base-ring-minimal`.  The recipe is a
+  q-**rational** object — the header calls it that in its first line —
+  and *every* step of it is a genuine quotient by an element that
+  vanishes somewhere, so none of them is a unit and none is a Laurent
+  polynomial:
+
+  * `markovZ = v/(q+1)` — denominator zero at `q = −1`;
+  * `universalX = qv/(1 + q − q² − q³ + qv)` — denominator a non-unit
+    polynomial;
+  * `schurPrincipal` — one factor `1/(1 − Q^{h(i,j)})` per cell, each
+    zero at a root of unity;
+  * `yLambdaRecipe = s_λ / Z_n` — divided by the partition function.
+
+  The worked example `y_lambda_recipe_n2_partition_2` makes this
+  explicit rather than hypothetical: it must carry `hq2 : q² ≠ 1`,
+  `hq4 : q⁴ ≠ 1`, `hp1 : q + 1 ≠ 0`, `hp2 : q² + 1 ≠ 0`, `hX`, `hX1`
+  as hypotheses precisely because those denominators do vanish.  A
+  division-free restatement over `ℤ[q, q⁻¹]` is therefore not available:
+  the object being defined is not in that ring.  `Field` is the weakest
+  class in the §7c table that admits the construction.  Nothing here is
+  archimedean — no ordering, no `Real.*` — so the file is already on the
+  substrate side of the wall; the `Field` is an algebraic inverse, not a
+  post-τ one.
+
   Refs: prop:y-lambda-recipe-from-partition (this block),
         prop:y-lambda-closed-form-wenzl-bridge,
         prop:y-lambda-cyclotomic-factorization,
