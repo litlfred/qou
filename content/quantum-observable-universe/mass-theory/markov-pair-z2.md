@@ -16,17 +16,93 @@ The identity holds whether $(i,j)$ are adjacent ($j = i+1$)
 or non-adjacent ($j \ge i+2$).
 ## Operator interpretation
 
-The value $z^2$ is the **Jones polynomial of the Hopf link**
-(unknotted two-component linking) evaluated at the substrate
-parameter:
-$J_{\mathrm{Hopf}}(q) = -(q^{1/2} + q^{-1/2})\cdot z^2
-= -(q + q^{-1})/(q^{1/2} + q^{-1/2})$. Multiplying by the
-Markov normalization recovers the pair contribution to the
-categorical mass — the pair blow-up centre at coordinate
-$\hat V_i\hat V_j$ carries the same weight $z^2$ regardless
-of its position in the braid, matching the empirically-verified
-all-pairs set on atoms $A \ge 6$(cf. `adjacent-vs-full-canonical evaluation.witness.json`,
-[jet-tower remark](#rem:mass-endomorphism-jet-tower)).
+> **Retracted and replaced, 2026-08-09.** This section read:
+>
+> > The value $z^2$ is the **Jones polynomial of the Hopf link** (unknotted
+> > two-component linking) evaluated at the substrate parameter:
+> > $J_{\mathrm{Hopf}}(q) = -(q^{1/2} + q^{-1/2})\cdot z^2
+> > = -(q + q^{-1})/(q^{1/2} + q^{-1/2})$.
+>
+> That is wrong three times over, and only the third is about the convention.
+>
+> 1. **Wrong link.** $z^2 = \mathrm{tr}_M(\sigma_i\sigma_j)$. The closure of
+>    $\sigma_1\sigma_2$ in $B_3$ is the **unknot**; the closure of
+>    $\sigma_1\sigma_3$ in $B_4$ is the **two-component unlink**. Neither is the
+>    Hopf link, which is the closure of $\sigma_1^2$ in $B_2$ and has trace
+>    $\mathrm{tr}_M(\sigma_1^2) = hz + 1$, not $z^2$.
+> 2. **Wrong kind of object.** A raw Markov-trace value is not a Jones
+>    polynomial. Without the loop factor $\delta^{\,n-1}$ and the framing
+>    correction it is not even an invariant of the closure — it changes under
+>    Markov stabilisation, which is exactly what $z$ measures.
+> 3. **Wrong loop parameter.** $q^{1/2}+q^{-1/2}$ is $[2]_{\sqrt q} = 2.0027\ldots$
+>    at $q_0$; the Temperley–Lieb loop value of the production trace is
+>    $\delta = [2]_q = q+q^{-1} = 2.010896866707122\ldots$ — the same conflation
+>    as $1/\delta = 0.4972905456\ldots$ against the excised
+>    $z_{\mathrm{C}} = 0.4993203342\ldots$.
+
+**The correct normalisation.** For $\beta \in B_n$ with exponent sum $e$,
+
+$$
+  V_{\hat\beta}(t) \;=\; q^{-2e}\,[2]_q^{\,n-1}\,\mathrm{tr}_M(\beta),
+  \qquad t = q^{-2},
+$$
+
+with **no square roots anywhere**. The reason is that under convention D the
+element $e_i := q - \sigma_i$ is a Temperley–Lieb generator,
+
+$$
+  e_i^2 \;=\; q^2 - 2q\sigma_i + \sigma_i^2 \;=\; (q^2+1) - (q+q^{-1})\sigma_i
+       \;=\; [2]_q\,e_i ,
+$$
+
+and convention D is *precisely* the statement that $\mathrm{tr}_M(e_i) = 1/\delta$:
+
+$$
+  \mathrm{tr}_M(e_i) = q - z, \qquad (q-z)\,[2]_q = 1 .
+$$
+
+So $\mathrm{tr}_M$ is not merely compatible with the Jones–Temperley–Lieb trace —
+written in $e_i$ it **is** that trace, which is what the registry name
+"SU(2)/Temperley–Lieb (Jones) decomposition" means as an identity. The Kauffman
+variable is $A^2 = -q$, giving $\delta = -A^2-A^{-2}$ and $t = A^{-4} = q^{-2}$;
+the odd powers of $A$ in $\rho(\sigma_i) = (A/q)\sigma_i$ cancel against the
+writhe factor $(-A^3)^{-e}$, leaving $q^{-2e}$.
+
+Four closures, computed from the formula and checked against their known Jones
+polynomials:
+
+| closure | braid | $e$ | $n$ | $\mathrm{tr}_M$ | $V$ from the formula | known |
+|---|---|:-:|:-:|---|---|---|
+| unknot | $\widehat{\sigma_1}$, $B_2$ | 1 | 2 | $z$ | $1$ | $1$ |
+| unknot | $\widehat{\sigma_1\sigma_2}$, $B_3$ | 2 | 3 | $z^2$ | $1$ | $1$ |
+| Hopf link | $\widehat{\sigma_1^2}$, $B_2$ | 2 | 2 | $hz+1 = \tfrac{q^4+1}{q^2+1}$ | $q^{-1}+q^{-5}$ | $-t^{1/2}-t^{5/2}$ |
+| 2-unlink | $\widehat{\sigma_1\sigma_3}$, $B_4$ | 2 | 4 | $z^2$ | $[2]_q$ | $-t^{1/2}-t^{-1/2}$ |
+
+The last two rows are the point. Rows 2 and 4 have the **same** trace value
+$z^2$ and different links; only $n$ distinguishes them. Any account that reads a
+Jones polynomial off a raw trace value cannot tell them apart at all — which is
+how the retracted sentence came to call the unknot a Hopf link.
+
+For the Hopf row the sign sits entirely in the branch of $t^{1/2}$: with
+$t^{1/2} := A^{-2} = -q^{-1}$, $-t^{1/2}-t^{5/2} = q^{-1}+q^{-5}$. In $q$ there is
+no ambiguity, which is one practical reason to state the normalisation in $q$.
+
+Proved in
+[`JonesNormalisation.lean`](../lean/QOU/QBeta/JonesNormalisation.lean) —
+`tl_generator_sq`, `unknot_two_strand`, `unknot_three_strand`, `hopf_link`,
+`two_component_unlink`, `kauffman_loop`; sorry-free, and every hypothesis is
+`IsConventionD` plus $q \neq 0$ (that $q^2+1 \neq 0$ is *derived*, not assumed —
+`q_sq_add_one_ne_zero`). The identification of each closure is standard braid
+theory, taken as input rather than formalised; what is proved is that the
+normalisation returns the right invariant given it.
+
+**The proposition above is unaffected.** $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$
+follows from the Markov axiom alone and holds for any Markov parameter. So the
+pair blow-up centre at coordinate $\hat V_i\hat V_j$ still carries weight $z^2$
+regardless of its position in the braid, matching the empirically-verified
+all-pairs set on atoms $A \ge 6$ (cf. `adjacent-vs-full-canonical evaluation.witness.json`,
+[jet-tower remark](#rem:mass-endomorphism-jet-tower)). Only the knot-theoretic
+gloss was wrong.
 
 > **The proposition is convention-independent; the Hopf-link normalisation above
 > is not, and has NOT been re-derived.** Flagged 2026-08-09, not fixed.
