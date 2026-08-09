@@ -1,48 +1,51 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T10:50:40.891730+00:00",
-  "commitSha": "f275e0988852d02bc3de8663dcdb6352ea8bc4d3",
+  "computedAt": "2026-08-09T18:22:04.755387+00:00",
+  "commitSha": "50f692f41c1de1554db3fe769f62fc9fe3f1fdfe",
   "assertions": [
     {
       "name": "dashboard_m_p_error_equals_triangulation_residual",
-      "computed": 0.0002998530423853166,
-      "expected": 0.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0005,
       "source": "q_0 is Newton-pinned so that m_p_pred == m_e * MASS_RATIO_P_E identically; the scored row must therefore reproduce leg 1 exactly. It does, to within the dashboard's own 4-significant-figure serialization of err_ppb (which is the limiting term here, not the physics). The m_p row measures registry inconsistency and nothing else."
     },
     {
       "name": "proton_triple_inconsistent_beyond_printed_granularity",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
       "source": "Indicator (1 = residual exceeds 10x the last printed digit of m_p; see leg1_residual_in_printed_units for the magnitude). Within one CODATA adjustment the triple is a single correlated fit output, so a same-edition triple agrees to its last printed digit. The residual is ~126x that unit, which rounding cannot explain — the registries are mixed-vintage. (Against the measurement sigma this is only ~3.1 sigma; that weaker framing is recorded in the data block but is not the test.)"
     },
     {
       "name": "artifact_does_not_explain_mu_p_tension",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
       "source": "Indicator (1 = correcting the muon-electron ratio to its 2022 value does NOT reduce the m_mu miss). It moves 963.6x -> 970.2x, i.e. marginally worse. The single largest L2 miss is genuine physics — the mu-p substrate tension — and is untouched by this registry finding."
     },
     {
-      "name": "neutron_leg_favours_ratio_consistent_proton",
-      "computed": 1.0,
-      "expected": 1.0,
+      "name": "qbeta_miss_is_genuine_despite_contaminated_target",
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
+      "source": "Indicator (1 = Q_beta misses its 100x target against EVERY available experimental determination). The stale proton explains 89% of the 1814 ppb disagreement between the two determinations — but the prediction misses by 139x-164x either way, so Q_beta remains a genuine L2 lever. Note the trap this removes: scored against the stale-derived target the miss reads 68.7x, ~2.4x too optimistic."
+    },
+    {
+      "name": "neutron_leg_favours_ratio_consistent_proton",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
       "source": "Indicator (1 = the ratio-derived proton lands inside 1 sigma of the stored CODATA direct neutron while the stored proton falls outside it). m_p + m_e + Q_beta must reproduce that independently-stored neutron: the ratio-derived proton lands at 0.32 sigma, the stored proton misses by 2.96 sigma (9.3x worse). An independent observable therefore picks out the stored m_p as the stale member."
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 16,
   "computation": "codata-registry-triangulation",
   "scriptFile": "codata_registry_triangulation_probe.py",
-  "scriptHash": "261352ed3133",
-  "scriptCommitSha": "f275e0988852d02bc3de8663dcdb6352ea8bc4d3",
+  "scriptHash": "53d23e2eaac4",
+  "scriptCommitSha": "988b6ea771bd48767aff7500910f5155ef38385f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,6 +83,14 @@
     "leg4_m_mu_miss_ratio_corrected_2022": "970.2316",
     "leg4_verdict": "Correcting the vintage makes m_mu WORSE (963.6x -> 970.2x). Recorded as-measured: a correction that degrades an observable is reported, not suppressed. The mu-p substrate tension is genuine and this finding does not reach it.",
     "dashboard_m_p_err_ppb": "1.351",
+    "leg5_qbeta_target_spread_stale_ppb": "1814.2009",
+    "leg5_qbeta_target_spread_consistent_ppb": "194.27235",
+    "leg5_qbeta_spread_fraction_explained": "0.892916",
+    "leg5_qbeta_miss_by_target": {
+      "AME": "163.98",
+      "via_stale_m_p": "68.69377",
+      "via_consistent_m_p": "139.0643"
+    },
     "l2_projection_audit_only": {
       "note": "What the affected rows would read against a self-consistent registry. PROJECTION ONLY — the dashboard is unmodified. m_p is excluded on purpose: it is the pin anchor, so a corrected round-trip is a calibration tautology, not a pass.",
       "m_n": {

@@ -163,9 +163,8 @@ def main() -> int:
 
     w.add_assertion(
         name="dependent_rows_are_redundant_on_both_sides",
-        computed=1.0 if all_dep else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        computed=1 if all_dep else 0,
+        expected=1,
         source="Indicator (1 = both Delta_pn == Q_beta + m_e and "
                "m_n == m_p + Q_beta + m_e hold, on the prediction side AND "
                "the target side, to the dashboard's serialization "

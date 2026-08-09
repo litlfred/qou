@@ -192,6 +192,30 @@ def main() -> int:
         mu_miss[tag] = abs(_rel(mu_pred, tgt)) / ((mu_sig / tgt) / 100)
     mu_artifact_helps = mu_miss["corrected_2022"] < mu_miss["as_stored_2018"]
 
+    # ── LEG 5 — the stale proton reaches Q_beta's TARGET too ─────────
+    # Q_beta is one of the two independent L2 levers, so it matters whether
+    # its comparison target is sound. The corpus holds TWO experimental
+    # determinations: the AME2020 direct value, and m_n(direct) - m_p - m_e.
+    # The second is built on the stale proton, so the two disagree far more
+    # than they should — and a reader comparing against the "wrong" one gets a
+    # materially better-looking score.
+    q_ame = mpf(CS.Q_BETA_MEV_AME)
+    q_sig = mpf(CS.Q_BETA_MEV_AME_ERR)
+    q_via_stale = m_n_direct - m_p_reg - m_e
+    q_via_cons = m_n_direct - m_p_from_ratio - m_e
+    spread_stale = ppb(_rel(q_via_stale, q_ame))
+    spread_cons = ppb(_rel(q_via_cons, q_ame))
+    spread_explained = 1 - abs(spread_cons) / abs(spread_stale)
+
+    qb_row = next(r for r in dash["data"]["rows"] if r["obs"] == "Q_beta")
+    qb_pred = mpf(qb_row["pred_MeV"])
+    qb_sig = mpf(qb_row["sigma_exp_MeV"])
+    qb_scores = {
+        tag: abs(_rel(qb_pred, t)) / ((qb_sig / t) / 100)
+        for tag, t in (("AME", q_ame), ("via_stale_m_p", q_via_stale),
+                       ("via_consistent_m_p", q_via_cons))
+    }
+
     # ── L2 impact PROJECTION (audit-only; re-scores nothing) ─────────
     # What the affected dashboard rows would read against a self-consistent
     # registry. Reported so the finding is quantitative; the dashboard itself
@@ -267,6 +291,21 @@ def main() -> int:
           f"{'BETTER' if mu_artifact_helps else 'WORSE'}. "
           f"The mu-p tension is real; this finding does not touch it.")
 
+    print("\n  LEG 5 — the stale proton also contaminates Q_beta's TARGET:")
+    print(f"    two experimental determinations of Q_beta disagree by")
+    print(f"      using m_p as stored     : {n(spread_stale, 6)} ppb"
+          f"   ({n(abs(spread_stale) / ppb(q_sig / q_ame), 3)} sigma)")
+    print(f"      using consistent m_p    : {n(spread_cons, 6)} ppb"
+          f"   ({n(abs(spread_cons) / ppb(q_sig / q_ame), 3)} sigma)")
+    print(f"    => the stale proton explains {n(100 * spread_explained, 4)}%"
+          f" of the disagreement; the two then AGREE.")
+    print("    prediction scored against each target:")
+    for tag, m in qb_scores.items():
+        print(f"      vs {tag:20s} {n(m, 6):>9s}x")
+    print("    => Q_beta's miss is GENUINE either way (139x-164x, both >> 100x).")
+    print("       But an unwary comparison against the stale-derived target")
+    print("       reads 68.7x — nearly 2.4x too optimistic.")
+
     print("\n  L2 IMPACT PROJECTION (audit-only — this probe re-scores nothing):")
     print("    m_p  — NOT projected: it is the pin anchor, so a corrected")
     print("           round-trip is a calibration tautology, not a pass.")
@@ -315,6 +354,11 @@ def main() -> int:
         "finding does not reach it.",
     )
     w.add_data("dashboard_m_p_err_ppb", n(dash_err_ppb, 12))
+    w.add_data("leg5_qbeta_target_spread_stale_ppb", n(spread_stale, 8))
+    w.add_data("leg5_qbeta_target_spread_consistent_ppb", n(spread_cons, 8))
+    w.add_data("leg5_qbeta_spread_fraction_explained", n(spread_explained, 6))
+    w.add_data("leg5_qbeta_miss_by_target",
+               {k: n(v, 8) for k, v in qb_scores.items()})
     w.add_data(
         "l2_projection_audit_only",
         {
@@ -337,9 +381,8 @@ def main() -> int:
     # Assertion 1 (DECISIVE) — the scored m_p error IS the registry residual.
     w.add_assertion(
         name="dashboard_m_p_error_equals_triangulation_residual",
-        computed=float(identity_gap),
-        expected=0.0,
-        tolerance=5e-4,
+        computed=1 if identity_gap < mpf("5e-4") else 0,
+        expected=1,
         source="q_0 is Newton-pinned so that m_p_pred == m_e * MASS_RATIO_P_E "
                "identically; the scored row must therefore reproduce leg 1 "
                "exactly. It does, to within the dashboard's own 4-significant-"
@@ -353,9 +396,8 @@ def main() -> int:
     # computed-vs-expected within tolerance only). Magnitude is in `data`.
     w.add_assertion(
         name="proton_triple_inconsistent_beyond_printed_granularity",
-        computed=1.0 if leg1_in_ulps > 10 else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        computed=1 if leg1_in_ulps > 10 else 0,
+        expected=1,
         source="Indicator (1 = residual exceeds 10x the last printed digit of "
                "m_p; see leg1_residual_in_printed_units for the magnitude). "
                "Within one CODATA adjustment the triple is a single correlated "
@@ -370,9 +412,8 @@ def main() -> int:
     # A negative guard: it bounds the finding rather than extending it.
     w.add_assertion(
         name="artifact_does_not_explain_mu_p_tension",
-        computed=1.0 if not mu_artifact_helps else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        computed=1 if not mu_artifact_helps else 0,
+        expected=1,
         source="Indicator (1 = correcting the muon-electron ratio to its 2022 "
                "value does NOT reduce the m_mu miss). It moves 963.6x -> "
                "970.2x, i.e. marginally worse. The single largest L2 miss is "
@@ -380,12 +421,27 @@ def main() -> int:
                "untouched by this registry finding.",
     )
 
+    # Assertion 5 — the artifact reaches Q_beta's target, but Q_beta's miss
+    # survives it. A boundary in the other direction from assertion 4: here
+    # the artifact IS present, and the residual is still genuine.
+    w.add_assertion(
+        name="qbeta_miss_is_genuine_despite_contaminated_target",
+        computed=1 if min(qb_scores["AME"], qb_scores["via_consistent_m_p"]) > 100 else 0,
+        expected=1,
+        source="Indicator (1 = Q_beta misses its 100x target against EVERY "
+               "available experimental determination). The stale proton "
+               "explains 89% of the 1814 ppb disagreement between the two "
+               "determinations — but the prediction misses by 139x-164x "
+               "either way, so Q_beta remains a genuine L2 lever. Note the "
+               "trap this removes: scored against the stale-derived target "
+               "the miss reads 68.7x, ~2.4x too optimistic.",
+    )
+
     # Assertion 3 — independent neutron leg selects the ratio-consistent proton.
     w.add_assertion(
         name="neutron_leg_favours_ratio_consistent_proton",
-        computed=1.0 if abs(leg2_ratio) < m_n_sigma_rel < abs(leg2_registry) else 0.0,
-        expected=1.0,
-        tolerance=0.0,
+        computed=1 if abs(leg2_ratio) < m_n_sigma_rel < abs(leg2_registry) else 0,
+        expected=1,
         source="Indicator (1 = the ratio-derived proton lands inside 1 sigma of "
                "the stored CODATA direct neutron while the stored proton falls "
                "outside it). m_p + m_e + Q_beta must reproduce that "
