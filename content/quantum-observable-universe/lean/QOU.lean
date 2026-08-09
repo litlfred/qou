@@ -494,6 +494,7 @@ import QOU.QBeta.InterfaceScalar
 import QOU.QBeta.GramSignature
 import QOU.QBeta.TemperleyLiebTower
 import QOU.QBeta.WedderburnTraceDecomposition
+import QOU.QBeta.MarkovGramDegenerate
 -- 5₂ saddle sum rule lane (bean qou-0yqu). These were orphaned from the
 -- library root: `lake build` only builds `QOU.lean`'s import closure, so a
 -- module nothing imports is never compiled. See bean qou-orph.
