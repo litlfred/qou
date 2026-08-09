@@ -1,24 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T10:56:26.513016+00:00",
-  "commitSha": "13684c3650f61da84d4b78f82545b28edbf954ae",
+  "computedAt": "2026-08-09T18:22:31.236997+00:00",
+  "commitSha": "50f692f41c1de1554db3fe769f62fc9fe3f1fdfe",
   "assertions": [
     {
       "name": "dependent_rows_are_redundant_on_both_sides",
-      "computed": 1.0,
-      "expected": 1.0,
+      "computed": 1,
+      "expected": 1,
       "passed": true,
-      "tolerance": 0.0,
       "source": "Indicator (1 = both Delta_pn == Q_beta + m_e and m_n == m_p + Q_beta + m_e hold, on the prediction side AND the target side, to the dashboard's serialization granularity). Residuals are ~1e-10 MeV, i.e. the rounding of the stored 12-significant-figure strings — not physics."
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 16,
   "computation": "l2-row-independence",
   "scriptFile": "l2_row_independence_probe.py",
-  "scriptHash": "19749860b616",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "2ad63017b701",
+  "scriptCommitSha": "4b410db0ce37165850babb0ae884ca2c174f21a5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
