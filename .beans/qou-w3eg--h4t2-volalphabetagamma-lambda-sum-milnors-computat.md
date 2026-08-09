@@ -162,7 +162,33 @@ areas; do not assume the acute case is general).
 > |---|---|---|
 > | **H4-5b** the PAIR | `hypVolume (chimney (wedge R ψ) R) = Λ(ψ)` — a WHOLE `Λ`: two mirror orthoschemes at `½Λ` each | ✅ |
 > | **H4-5c-i** ROTATION | `hypVolume (chimney (wedgeAt R θ ψ) R) = Λ(ψ)` — the same, at ANY axis | ✅ |
-> | **H4-5c-ii** the TILING | the inscribed triangle IS the union of three `wedgeAt`s, up to null sets | ✗ **the only open step** |
+> | **H4-5c-ii(a)** the Λ-SUM | `hypVolume (chimney (milnorWedges R t α β γ) R) = Λ(α)+Λ(β)+Λ(γ)` | ✅ |
+> | **H4-5c-ii(b)** the TILING | `milnorWedges =ᵐ` the inscribed triangle | ✗ **the only open step** |
+>
+> **The Λ-sum landed** — `hypVolume_chimney_milnorWedges`, the first statement
+> in the tier with `Λ(α)+Λ(β)+Λ(γ)` on the right, for `0 < α,β,γ < π/2` with
+> `α+β+γ = π`. It is stated on the *explicit union of the three wedges*, not on
+> a triangle. The statement is falsifiable, not vacuous: the RHS is `ofReal` of
+> a positive number, so an empty union would refute it.
+>
+> **The disjointness trick, because it is the reusable part.** Do NOT read off
+> each wedge's angular interval and try to show the intervals are disjoint mod
+> `2π` — that drags in `arctan`, branch choices and modular angle arithmetic.
+> `inner_perp_rotL` gives
+>
+>     ⟨rot_θ v, (−sin(θ+ψ), cos(θ+ψ))⟩ = −v₁ sin ψ + v₂ cos ψ
+>
+> — **the `θ` cancels** — so each wedge lies strictly inside a half-plane through
+> each of its own edges, and two wedges sharing an edge direction are separated
+> by that one line. A linear inequality. `2π`-periodicity is needed in exactly
+> one place, the wrap-around pair.
+>
+> **Acuteness is now earned rather than imported.** A wedge fits strictly inside
+> a half-plane bounded by its own edge exactly when its opening `2ψ < π`. The
+> half-angles ARE the inscribed angles, so "`ψ < π/2` for all three" **is** "all
+> three angles acute" — Milnor's hypothesis, arrived at from the separation
+> argument. (Still not evidence the identity fails otherwise; see the green note
+> below.)
 >
 > Two things worth carrying forward:
 >
@@ -179,9 +205,20 @@ areas; do not assume the acute case is general).
 >    definition-as-image would have made the rotation a definition rather than a
 >    theorem.
 >
-> What is left for H4-5c-ii is now **purely** the plane geometry: three axes at
-> the side-midpoints, half-angles = the inscribed angles (central = twice
-> inscribed), pairwise-null overlaps, union = the triangle.
+> What is left is **one** set identity, `milnorWedges =ᵐ` the closed inscribed
+> triangle. Both inclusions are genuine work: `⊆` needs, within each wedge's
+> angular range, that the *other two* chord constraints follow from its own;
+> `⊇` needs that the three consecutive angular ranges close the circle (that is
+> `α+β+γ = π`, already used for the wrap-around disjointness) *and* that the
+> radial cut is right. The exceptional set is the three spines, hence `=ᵐ`.
+>
+> **It is worth proving — the lemma is TRUE, checked at the SET level.** The
+> probe evaluates both memberships independently (wedges by the Lean
+> definition, triangle by its three half-plane tests) over a polar grid of
+> interior points for five acute triangles, boundary/spine skin excluded:
+> **zero mismatches**. That is stronger than the Λ-sum agreement, which pins
+> the two only to equal *measure*. Whoever takes it on is proving something
+> true, not hunting a sign error.
 
 > **🟩 The obtuse case is a scope-(a) worry about the ARGUMENT, not the
 > STATEMENT (settled numerically 2026-08-09, PR #4864).** This bean and its
