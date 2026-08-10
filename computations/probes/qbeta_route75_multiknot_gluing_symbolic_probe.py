@@ -39,6 +39,35 @@ A genuine algebraic relation is precision-stable; an artifact is not. G1 calibra
 identifier against the two shape fields the corpus has ALREADY PROVED in Lean, so the
 identifier is checked off the configuration it is then used on.
 
+⚠ NONE OF THE MATHEMATICS HERE IS NEW. SAY SO.
+----------------------------------------------
+Checked against the literature 2026-08-09, because an earlier write-up of this work
+read as though the Groebner derivation might be a new result. It is not:
+
+  * The gluing equations and their variety are Thurston (1978) and Neumann-Zagier
+    (1985). The "gluing variety" / "deformation variety" is a standard object.
+  * Computing the shape field of a triangulation is exactly what `snap` does
+    (Coulson-Goodman-Hodgson-Neumann, *Computing arithmetic invariants of
+    3-manifolds*, Experiment. Math. 9 (2000)), and what SnapPy exposes as
+    `tetrahedra_field_gens().find_field()` -- which needs Sage, which is why this
+    probe re-implements the identification rather than calling it.
+  * By Neumann-Reid, the shape field of a cusped hyperbolic 3-manifold IS its
+    invariant trace field, so every field below is a published invariant.
+  * Exact/symbolic solution of gluing and Ptolemy varieties by Groebner bases is
+    standard: Garoufalidis-Goerner-Zickert, *Gluing equations for PGL(n,C)-
+    representations of 3-manifolds*, and SnapPy's `ptolemy` module (which drives
+    Magma/Sage Groebner engines).
+
+Garoufalidis-Goerner-Zickert state outright that Groebner computations are "usually
+impractical for the gluing equations even when the cusp equations are added" -- which
+is precisely the n=4 ceiling gate G7 measures empirically. G7 REDISCOVERS a documented
+fact; it does not establish one.
+
+What is genuinely new here is only the local infrastructure: this material is now in
+the corpus, gated, with a witness, calibrated against the two shape fields already
+proved in Lean, and with the negative control bean `m015` asked for. That is worth
+having. It is not a mathematical contribution and must not be described as one.
+
 WHAT IS EXACT AND WHAT IS NOT
 -----------------------------
 NOT exact: which algebraic number each shape is (G1/G3 -- LLL on high-precision
@@ -62,6 +91,17 @@ mp.dps = 80
 
 # Knots to run, with the shape-field degree the identifier must find.
 KNOTS = ["4_1", "5_2", "6_1", "7_2"]
+
+# G8's reach test.  Hyperbolic manifolds (must verify exactly) plus torus knots
+# (must be rejected as non-geometric).  8_2 is verified but excluded here for
+# runtime -- see `measured_but_excluded_from_this_gate_for_runtime` in G8.
+SCALE_SET = [
+    "3_1", "5_1", "7_1", "8_19",                      # torus knots: negative controls
+    "6_2", "6_3", "7_3", "7_4", "7_5", "7_6", "7_7",  # hyperbolic knots
+    "8_1", "8_3", "8_20", "8_21", "9_2", "9_35", "9_42", "10_1",
+    "12n242",                                          # (-2,3,7) pretzel
+    "s776", "m371", "v3227",                           # census manifolds
+]
 
 # The two shape fields ALREADY established in the corpus, in Lean:
 #   4_1 -> QOU/Knot/FigureEightTriangulation.lean, `w_sq_sub : w^2 - w + 1 = 0`
@@ -357,6 +397,59 @@ def main() -> int:
         "derived": derived,
         "scales_to_four_tetrahedra": False,
         "pass": all(d["match"] for d in derived),
+    })
+
+    # ---- G8: how far the method actually goes, and what stops it -----------------
+    # The limiting resource is the SHAPE FIELD DEGREE, not the tetrahedron count.
+    scaled, scale_ok = [], True
+    for name in SCALE_SET:
+        Mk = snappy.Manifold(name)
+        nk = Mk.num_tetrahedra()
+        soln = Mk.solution_type()
+        if "positively oriented" not in soln:
+            scaled.append({"manifold": name, "tets": nk, "solution_type": soln,
+                           "role": "negative control (torus knot / non-hyperbolic)",
+                           "verdict": "no positively-oriented solution", "pass": True})
+            continue
+        shk = Mk.tetrahedra_shapes("rect", bits_prec=2000)
+        gk = identify_minpoly(shk[0].real(), shk[0].imag())
+        if gk is None:
+            scaled.append({"manifold": name, "tets": nk, "identified": False,
+                           "verdict": "NOT IDENTIFIED", "pass": False})
+            scale_ok = False
+            continue
+        degk, pk = gk
+        rk = express_in_field(shk, degk, PREC_HI)
+        ek = [rel_to_poly(r, x) for r in rk]
+        rowsk = [[int(v) for v in r] for r in Mk.gluing_equations()]
+        _res, exactk = gluing_residuals(rowsk, nk, ek,
+                                        sp.sympify(pk.replace("^", "**")), x)
+        scale_ok = scale_ok and exactk
+        scaled.append({"manifold": name, "tets": nk, "shape_field_degree": degk,
+                       "minimal_polynomial": pk, "num_equations": len(rowsk),
+                       "all_residuals_zero": exactk,
+                       "verdict": "EXACT" if exactk else "FAILED", "pass": exactk})
+    gates.append({
+        "gate": "G8",
+        "claim": "HOW FAR THE METHOD GOES. Every hyperbolic manifold listed verifies "
+                 "EXACTLY; every torus knot listed is correctly rejected as non-geometric. "
+                 "The limiting resource is the SHAPE FIELD DEGREE, not the tetrahedron "
+                 "count: 9_35 has 9 tetrahedra but a CUBIC shape field and finishes in under "
+                 "a second, while 10_100 has 14 tetrahedra and a DEGREE-14 field and its "
+                 "exact reduction does not finish at all",
+        "scaled": scaled,
+        "measured_ceiling": {
+            "10_100": "14 tets, shape field degree 14 -- identification SUCCEEDS, exact "
+                      "verification does not finish (expression swell in Q[x]/(P))",
+            "11a1": "17 tets -- identification FAILS: degree exceeds the search bound 16 "
+                    "or the height cap 25",
+            "bottleneck": "shape field degree, via expression swell in the exact reduction",
+        },
+        "measured_but_excluded_from_this_gate_for_runtime": {
+            "8_2": "6 tets, degree 8 -- verified EXACT, but takes ~98s; excluded so this "
+                   "probe stays runnable. Recorded rather than silently dropped.",
+        },
+        "pass": bool(scale_ok),
     })
 
     # ---- G6: scope ---------------------------------------------------------------

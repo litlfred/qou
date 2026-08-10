@@ -11,7 +11,7 @@ tags:
     - 5_2
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-09T22:30:00Z
+updated_at: 2026-08-10T00:30:00Z
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -171,3 +171,66 @@ equations does not say any of these is a triangulation *of* the corresponding kn
 complement — Thurston hyperbolisation plus Mostow rigidity, needing hyperbolic
 3-manifolds neither Mathlib nor QOU has. Gate G6. And the angle-structure polytope
 proper (the `m015` deliverable) is still not built; this is the gluing-data half.
+
+---
+**2026-08-10 — the method extends to 23 manifolds; and a novelty claim withdrawn.**
+
+Two questions asked of the previous entry, answered.
+
+### 1. ⚠ NONE OF THIS IS A NEW RESULT. The previous entry read as though it might be.
+
+Checked against the literature. The Gröbner derivation of the shape field from the
+gluing ideal is standard, not new:
+
+- Gluing equations and their variety: **Thurston (1978)**, **Neumann–Zagier (1985)**.
+- Computing a triangulation's shape field is exactly what **`snap`** does
+  (Coulson–Goodman–Hodgson–Neumann, *Computing arithmetic invariants of 3-manifolds*,
+  Experiment. Math. 9 (2000)), and what SnapPy exposes as
+  `tetrahedra_field_gens().find_field()` — which needs Sage, which is the only reason
+  this probe re-implements identification instead of calling it.
+- By **Neumann–Reid**, the shape field of a cusped hyperbolic 3-manifold *is* its
+  invariant trace field — so every field in the table above is a **published
+  invariant**, not a discovery. That includes 6₁'s quartic and 7₂'s quintic.
+- Exact solution of gluing/Ptolemy varieties by Gröbner bases is standard:
+  **Garoufalidis–Goerner–Zickert**, *Gluing equations for PGL(n,ℂ)-representations of
+  3-manifolds*, and SnapPy's `ptolemy` module, which drives Magma/Sage Gröbner engines.
+
+Sharpest: Garoufalidis–Goerner–Zickert state outright that Gröbner computations are
+*"usually impractical for the gluing equations even when the cusp equations are
+added"* — which is **precisely the n=4 ceiling gate G7 measures**. G7 rediscovers a
+documented fact; it does not establish one. Corrected in the probe docstring.
+
+What is actually new is only local infrastructure: this material is now in-corpus,
+gated, witnessed, calibrated against the two shape fields already proved in Lean, and
+carrying the negative control. Worth having; **not** a mathematical contribution.
+
+### 2. Yes, the method extends — to 23 manifolds, and the bottleneck is not what I assumed.
+
+Gate G8. **19 hyperbolic manifolds all verify EXACTLY** (every gluing equation reduces
+to 0 in ℚ[x]/(P)), and **all 4 torus knots are correctly rejected** as non-geometric:
+
+- knots 6₂ 6₃ 7₃ 7₄ 7₅ 7₆ 7₇ 8₁ 8₃ 8₂₀ 8₂₁ 9₂ 9₃₅ 9₄₂ 10₁, plus 12n242
+  (the (−2,3,7) pretzel), plus census manifolds s776, m371, v3227
+- negative controls 3₁, 5₁, 7₁, 8₁₉ — all torus knots, all correctly non-geometric
+- reach: up to **9 tetrahedra** and shape field degree up to **9**
+
+**The bottleneck is the SHAPE FIELD DEGREE, not the tetrahedron count.** This is the
+thing I would have got wrong by guessing:
+
+| manifold | tets | degree | outcome |
+|---|---|---|---|
+| 9₃₅ | 9 | 3 | exact, 0.5s |
+| 7₇ | 8 | 4 | exact, 0.2s |
+| 8₂ | 6 | 8 | exact, but **98s** |
+| 10₁₀₀ | 14 | 14 | identification succeeds, **exact verification never finishes** |
+| 11a1 | 17 | >16 | **identification fails** (degree past the search bound / height cap) |
+
+So 9 tetrahedra at degree 3 is trivial while 6 tetrahedra at degree 8 is expensive:
+cost is driven by expression swell in the exact reduction, which scales with the field
+degree. 8₂ is verified but excluded from G8's set for runtime, and **recorded** in the
+gate rather than silently dropped.
+
+Raising the ceiling, if wanted later: the expensive step is sympy's `cancel`/`rem` over
+ℚ[x]/(P). Working in a proper number-field arithmetic (PARI `nfeltmul`, or `python-flint`)
+instead of generic sympy rational-function simplification is the obvious fix, and would
+likely carry this well past degree 14.
