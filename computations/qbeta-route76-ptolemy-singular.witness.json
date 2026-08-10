@@ -1,0 +1,146 @@
+{
+  "probe": "qbeta_route76_ptolemy_singular",
+  "beans": [
+    "qou-ptlm",
+    "qou-m015"
+  ],
+  "snappy_version": "3.3.2",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "CALIBRATION, no Magma and no network. Singular's minAssGTZ on the Ptolemy variety reproduces the two shape fields the corpus has ALREADY PROVED in Lean: 4_1's x^2-x+1 (FigureEightTriangulation.w_sq_sub) and 5_2's z^3-z^2+1 (BlochWignerLobachevsky.fiveTwoShapeCubic, the Landen image of the saddle cubic, related by `landen_root`)",
+      "calibration": [
+        {
+          "knot": "4_1",
+          "expected_generator": "c_0101_0^2-c_0101_0+1",
+          "found": true,
+          "decomposition": [
+            {
+              "obstruction_index": 0,
+              "num_variables": 3,
+              "num_equations": 4,
+              "components": [
+                {
+                  "index": 1,
+                  "dimension": -1,
+                  "generators": "1"
+                }
+              ]
+            },
+            {
+              "obstruction_index": 1,
+              "num_variables": 3,
+              "num_equations": 4,
+              "components": [
+                {
+                  "index": 1,
+                  "dimension": 0,
+                  "generators": "c_0101_0^2-c_0101_0+1,c_0011_0-1,t+c_0101_0-1"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "knot": "5_2",
+          "expected_generator": "c_0101_0^3-c_0101_0^2+1",
+          "found": true,
+          "decomposition": [
+            {
+              "obstruction_index": 0,
+              "num_variables": 4,
+              "num_equations": 5,
+              "components": [
+                {
+                  "index": 1,
+                  "dimension": -1,
+                  "generators": "1"
+                }
+              ]
+            },
+            {
+              "obstruction_index": 1,
+              "num_variables": 4,
+              "num_equations": 5,
+              "components": [
+                {
+                  "index": 1,
+                  "dimension": 0,
+                  "generators": "-c_0101_0^2+c_0101_2+1,c_0101_0^3-c_0101_0^2+1,c_0011_0-1,-c_0101_0^2+t+2*c_0101_0-1"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE OBSTRUCTION CLASS IS NOT OPTIONAL, and getting it wrong looks like a failure of the method rather than a mis-set flag. For BOTH 4_1 and 5_2 the class-0 Ptolemy variety is EMPTY -- Singular returns the unit ideal, dim = -1 -- and the geometric representation lives on class 1. A probe defaulting to obstruction_class=0 would report that these manifolds have no boundary-unipotent representations at all",
+      "class_zero_is_empty_for_both": true,
+      "detail": [
+        {
+          "knot": "4_1",
+          "classes": [
+            {
+              "obstruction_index": 0,
+              "dimensions": [
+                -1
+              ]
+            },
+            {
+              "obstruction_index": 1,
+              "dimensions": [
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "knot": "5_2",
+          "classes": [
+            {
+              "obstruction_index": 0,
+              "dimensions": [
+                -1
+              ]
+            },
+            {
+              "obstruction_index": 1,
+              "dimensions": [
+                0
+              ]
+            }
+          ]
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "HOW THIS RUNS WITHOUT MAGMA OR NETWORK. SnapPy's two solving paths are both unavailable here -- retrieve_solutions() gets a 403 from the agent proxy against ptolemy.unhyperbolic.org, and compute_solutions() needs Magma, which is proprietary licensed software, not open source, not on GitHub, and not installable. Neither is necessary: the equations come out of SnapPy offline and the primary decomposition is exactly Singular's minAssGTZ, the same engine Sage calls",
+      "magma_required": false,
+      "network_required": false,
+      "engine": "Singular 4.3.2",
+      "fully_symbolic": true,
+      "no_lll_no_height_gate": "unlike Route 75, so Route 75 gate G2's lattice-artifact risk does not arise here at all",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "SCOPE, UNCHANGED FROM ROUTES 74 AND 75. Solving the Ptolemy variety does NOT establish that a triangulation is a triangulation OF a knot complement -- that is Thurston hyperbolisation plus Mostow rigidity, needing hyperbolic 3-manifolds that neither Mathlib nor QOU has. No volume conjecture is touched. And none of this mathematics is new: the Ptolemy variety and its decomposition are Garoufalidis-Goerner-Zickert",
+      "is_triangulation_of_the_manifold": "not statable in Lean today",
+      "vol_conjecture_formalized": false,
+      "mathematics_is_new": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "method": "Ptolemy variety primary decomposition via Singular minAssGTZ",
+    "magma_required": false,
+    "network_required": false,
+    "reproduces": "4_1 x^2-x+1 and 5_2 z^3-z^2+1, both already proved in Lean",
+    "not_established": "that any triangulation is a triangulation of a manifold"
+  }
+}

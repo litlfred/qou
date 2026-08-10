@@ -134,3 +134,68 @@ mathematics.
 **Recommendation: (1).** It is a one-line policy change and would let the Ptolemy route be
 evaluated properly. Until then Route 75's gated-LLL pipeline remains the only working
 path, and its measured ceiling (identification, not verification) stands.
+
+---
+**2026-08-10 (later) — UNBLOCKED. The route runs locally with Singular. Magma was never
+required, and cannot be obtained anyway.**
+
+The previous entry recommended allowlisting `ptolemy.unhyperbolic.org`. Retested: still
+403, and the proxy's own `recentRelayFailures` records it as
+`connect_rejected … policy denial` for `ptolemy.unhyperbolic.org:443`. **That
+recommendation is now superseded — the network is not needed either.**
+
+### Magma cannot be cloned, and is not the point
+
+Magma is **proprietary, commercially licensed** software from the University of Sydney's
+Computational Algebra Group. It is not open source, is not on GitHub, and there is no
+legitimate way to obtain it by cloning. So "clone Magma" has no answer.
+
+But it is also **not necessary**. The step both papers use Magma for is *primary
+decomposition of a polynomial ideal*, and that is exactly what **Singular**'s `minAssGTZ`
+does — Singular being the engine **Sage itself calls** for `primary_decomposition()`.
+It is free, packaged, and installs in one command:
+
+    apt-get install singular          # 4.3.2, already in the archive
+
+### The route works, verified against results the corpus already proved
+
+`computations/probes/qbeta_route76_ptolemy_singular_probe.py`, 4 gates, all passing.
+SnapPy yields the Ptolemy equations **offline** (`equations_with_non_zero_condition`);
+Singular decomposes them.
+
+| knot | Singular result | matches |
+|---|---|---|
+| 4₁ | `c² − c + 1` | the shape field `x²−x+1`, `FigureEightTriangulation.w_sq_sub` |
+| 5₂ | `c³ − c² + 1` | **`fiveTwoShapeCubic`** — the corpus's own Landen image of the saddle cubic `y³−2y²+3y−1`, related by `landen_root` |
+
+That 5₂ agreement is the strongest calibration available: the Ptolemy route lands on the
+*shape* cubic the corpus already derived by a completely different path (Landen
+substitution from the saddle cubic), with `landen_root` already proved in Lean.
+
+**Fully symbolic end to end.** No LLL, no height cap, no precision-stability gate — so
+Route 75 gate G2's lattice-artifact risk **does not arise here at all**. This is the
+float-free derivation Route 75's G7 could only reach up to 3 tetrahedra.
+
+### ⚠ The obstruction class is not optional
+
+For **both** 4₁ and 5₂ the class-**0** Ptolemy variety is **empty** — Singular returns
+the unit ideal, `dim = −1` — and the geometric representation lives on class **1**. A
+probe defaulting to `obstruction_class=0` would conclude these manifolds have no
+boundary-unipotent representations at all, and it would look like the *method* failing
+rather than a mis-set flag. Pinned as gate G2.
+
+(Noticed by hand first: with `c_0011_0 = 1`, class 0's two relations give `c²+c−1 = 0`
+and `c²−c−1 = 0`, forcing `c = 0` and then `−1 = 0`. The Singular `dim = −1` confirmed it.)
+
+### ⚠ NOT YET MEASURED: whether it beats Route 75's ceiling
+
+GGZ claim Gröbner is feasible for Ptolemy varieties "even for many simplices". **This is
+not yet confirmed here.** A scaling run over 6₁, 7₂, 10_100 and 11a1 produced **no output
+after ~15 minutes** — 6₁ alone had not finished. That is *not* evidence of a ceiling
+(the run may simply be slow, and `minAssGTZ` has known bad cases), and it must not be
+recorded as one.
+
+**Next:** re-run the scaling test with per-manifold timeouts and record what completes,
+including the negative results. Also try `primdecGTZ` vs `minAssGTZ`, and a `degrevlex`
+ring, before drawing any conclusion about reach. Until then the only verified claim is
+that the route **runs**, on 4₁ and 5₂, without Magma or network.
