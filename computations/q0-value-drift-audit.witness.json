@@ -6,7 +6,7 @@
     "counts": {
       "STALE": 321,
       "unknown": 25,
-      "proton-pin": 704,
+      "proton-pin": 705,
       "canonical": 616
     },
     "stale_total": 321,
@@ -9902,6 +9902,13 @@
         "value": "1.1099785827513808075916690956",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/ck-qgevrey-slope.witness.json",
+        "field": "anchors.q0",
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
