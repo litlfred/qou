@@ -35,8 +35,18 @@
 # DO NOT MAKE A RED RUN GREEN BY WIDENING A BASELINE.
 #   Each gate says so in its own output. Fix at the producer: carry the value as
 #   mpmath.mpf from its source and serialize with _precision.fmt. Adding a file
-#   to raw-float64-baseline.json, or --rebaseline'ing to go green, defeats the
-#   mechanism the gate exists to provide. Baselines drain, never grow.
+#   to raw-float64-baseline.json or mpf-import-time-dps-baseline.json, or
+#   --rebaseline'ing to go green, defeats the mechanism the gate exists to
+#   provide. Baselines drain, never grow.
+#
+# A GATE OUTSIDE THIS ARRAY IS A GATE NOBODY RUNS. (2026-08-10, bean qou-j6gb)
+#   `mpf_import_time_dps_audit.py` was written 2026-08-07, worked from the start,
+#   and was in no array — not here, so nothing ran it. Its defect class then
+#   landed five more times, each caught instead by a different gate reacting to a
+#   downstream symptom. It was added here as a ratchet (baseline 91 files / 185
+#   proven-lossy / 103 position-risky) rather than pass/fail, because a gate that
+#   is red on arrival gets skipped, which is how a checker goes quiet. When you
+#   write a detector, wiring it here is the half that makes it a gate.
 set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
@@ -46,6 +56,7 @@ cd "$ROOT"
 GATES=(
   "q0-anchor flip|computations/audits/q0_anchor_consistency_audit.py|--strict|no|yes"
   "mpf(<float>) source|computations/mpf_float_source_audit.py|--strict|yes|yes"
+  "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
   "float64-padding ratchet|computations/witness_float64_padding_audit.py|--strict|yes|yes"
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
