@@ -6,7 +6,7 @@
     "counts": {
       "STALE": 321,
       "unknown": 25,
-      "proton-pin": 697,
+      "proton-pin": 699,
       "canonical": 619
     },
     "stale_total": 321,
@@ -7447,6 +7447,13 @@
         "ppb_vs_canonical": -11.537117889987831
       },
       {
+        "file": "computations/milnor-tiling-certificate-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/mirror-pair-coulomb-sign-correction.witness.json",
         "field": "parameters.q_0_50dps",
         "value": "1.1099785955573347",
@@ -9881,6 +9888,13 @@
         "value": "1.1099785827513808075916690956",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/ck-qgevrey-slope.witness.json",
+        "field": "anchors.q0",
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/qbeta/qbeta-alpha-eff-hoefsmit-symbolic-probe.witness.json",
