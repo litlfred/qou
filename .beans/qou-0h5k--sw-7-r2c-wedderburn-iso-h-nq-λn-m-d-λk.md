@@ -51,3 +51,10 @@ c₃=c₆-c₄(q-q⁻¹), this is a 4×4 in (c₁,c₂,c₄,c₆); clear denomin
 `linear_combination`/`nlinarith`. The coefficients are the only thing left to
 compute. This closure gives dim H_3(q)=6 AND, since the 3 reps then biject,
 the SW-7 Wedderburn iso H_3(q)≅ℝ×ℝ×M₂ = R2-inst at n=3.
+
+## ✅ dim H_3(q) = 6 — BOTH BOUNDS PROVEN (2026-08-10)
+- dim ≤ 6: HeckeDim3.span_sixWords_eq_top (sorry-free).
+- dim ≥ 6: HeckeDim3Indep.sixWords_indep (sorry-free, qou-pymd closed).
+Next for the SW-7 Wedderburn ISO (R2-inst at n=3): assemble the six words into a
+Basis (finrank=6) and package ρ=(triv,sign,seminormalRep21) as the iso H_3(q)≅ℝ×ℝ×M₂.
+The hard dimension theorem is done; remaining is finrank/Basis + iso plumbing.
