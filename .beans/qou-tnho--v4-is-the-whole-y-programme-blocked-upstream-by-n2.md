@@ -1,11 +1,11 @@
 ---
 # qou-tnho
 title: 'V4: is the whole Y programme blocked upstream by N=2 (row cap)?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T18:23:24Z
-updated_at: 2026-08-10T18:23:25Z
+updated_at: 2026-08-10T18:25:40Z
 ---
 
 STRATEGIC / do this first if cheap. #4640 proved sorry-free that N=2 cannot host
