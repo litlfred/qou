@@ -3170,6 +3170,27 @@ export const references: CSLData[] = [
       "expansion of the categorical mass endomorphism.",
   }),
 
+  // ── Rivin 1994 ────────────────────────────────────────────────
+  ref({
+    id: "rivin1994",
+    type: "article-journal",
+    title: "Euclidean structures on simplicial surfaces and hyperbolic volume",
+    author: [{ family: "Rivin", given: "Igor" }],
+    "container-title": "Annals of Mathematics",
+    volume: "139",
+    issue: "3",
+    page: "553-580",
+    issued: { "date-parts": [[1994]] },
+    DOI: "10.2307/2118572",
+    note:
+      "Strict concavity of the total volume functional on the space of " +
+      "angle structures, and the characterization of the complete " +
+      "hyperbolic structure as its critical point. The concavity is the " +
+      "statement formalized in `QOU.Knot.Rivin`; note that the summand " +
+      "$\\Lambda$ is itself NOT concave on $(0,\\pi)$ — the result is a " +
+      "property of the constrained sum.",
+  }),
+
   // ── Bring 1786 ────────────────────────────────────────────────
   ref({
     id: "bring1786",
