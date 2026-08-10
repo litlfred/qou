@@ -127,6 +127,11 @@ import QOU.StandardModel.LeptonNumberCarrierChirality
 -- function of the writhe (Y = w^2/4 reproduces both rows). Independence needs
 -- the converse pattern: equal writhe, different Y.
 import QOU.StandardModel.WritheIndependenceCriterion
+-- Chiral-fermion braid words from the chi=-6 torus-knot constraint: T(2,n) is the
+-- closure of sigma_1^n. L = sign(writhe) matches all 6 corpus rows; the mirror
+-- moves every carrier (discharging the chirality obstruction); and the derived
+-- writhe-0 pair (baryon vs gluon unit) shows Y = B - L does not factor through w.
+import QOU.StandardModel.ChiralFermionBraidWords
 -- The strand-twist hypercharge battery reduces to the single equation T = 3Q:
 -- the nucleon check is entailed by charge additivity (and states one condition
 -- twice), and the '4 of 10,000 survivors' is 1x2x2x1 multiset counting.
