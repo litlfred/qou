@@ -51,6 +51,19 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
+REASON_TEXT = "target below the 1e-30 precision floor — relative error undefined"
+
+
+def _err_str(err_ppm, value):
+    """Print-safe error column: None -> n/a, non-finite value -> inf."""
+    import mpmath as _mp
+    if _mp.isnan(value):
+        return f"{'inf':>12}"
+    if err_ppm is None:
+        return f"{'n/a':>12}"
+    return f"{err_ppm:>12.2f}"
+
+
 def q_pochhammer(a: mpf, q: mpf, n: int) -> mpf:
     """(a; q)_n = Π_{k=0}^{n-1} (1 − a·q^k)."""
     result = mpf(1)
@@ -162,7 +175,11 @@ def main() -> int:
                 continue
             target = targets[k]
             if abs(target) < mpf("1e-30"):
-                err_ppm = float("nan")
+                # See the alpha chain: a relative error against a zero target is
+                # undefined (ok_str "n/a" already said so). float("nan") wrote a
+                # bare NaN token and made the witness invalid JSON. null, because
+                # undefined-by-construction is a MISSING value, not a pole.
+                err_ppm = None
                 ok_str = "n/a"
                 ok = True
             else:
@@ -176,15 +193,22 @@ def main() -> int:
                     ok_str = "PASS" if ok else "FAIL"
                 if not ok:
                     passed_all = False
-                if err_ppm > max_err_ppm and not mp.isnan(value):
+                if (err_ppm is not None and err_ppm > max_err_ppm
+                        and not mp.isnan(value)):
                     max_err_ppm = err_ppm
             print(f"    k={k}: K_k(q₀)  = {mp.nstr(value, 14):>22}  "
                   f"target = {mp.nstr(target, 14):>14}  "
-                  f"err = {err_ppm if not mp.isnan(value) else float('inf'):>12.2f} ppm  {ok_str}")
+                  f"err = {_err_str(err_ppm, value)} ppm  {ok_str}")
+            # A non-finite `value` means the formula itself blew up; that is a
+            # DIVERGENCE (marker), distinct from the undefined-relative-error
+            # case above (null). Both were bare JSON tokens before.
+            _diverged = bool(mp.isnan(value))
             row["k_results"][str(k)] = {
-                "computed": mp.nstr(value, 30) if not mp.isnan(value) else "nan",
+                "computed": "nan" if _diverged else mp.nstr(value, 30),
                 "target": mp.nstr(target, 30),
-                "err_ppm": err_ppm if not mp.isnan(value) else float("inf"),
+                "err_ppm": ("inf" if _diverged else err_ppm),
+                "err_ppm_undefined_reason": (
+                    REASON_TEXT if (err_ppm is None and not _diverged) else None),
                 "passed": ok,
             }
         row["all_passed"] = passed_all

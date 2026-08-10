@@ -59,7 +59,14 @@ from mpmath import mp, mpf, fabs, mpmathify
 
 HERE = Path(__file__).parent
 HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
-PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m.witness.json", HERE)
+# This gate is muon-canonical (it refuses to run off the muon pin, see the
+# guard in main()), so it must read the MUON peel witness. That is the
+# `-muon` file: `markov_peel_atomic_witness` is tagged `physical_proton`, so
+# its base-name output is proton-built, and six non-anchor-aware consumers
+# depend on that base name — see `_witness_name()` there for why the layers
+# are NOT named the way the bridge witnesses are. Reading the base name here
+# is what made this gate red on `main` (mixed pin, audit 2026-07-18).
+PEEL_PATH = _pb.witness_path("markov-peel-atomic-tr-m-muon.witness.json", HERE)
 # Third path landed via PR #681's Step 2 + this PR's combiner: the
 # canonical Σ_λ y_λ(q_0) · χ^λ(β; q_0) trace built from per-irrep
 # chi caches (`per_irrep_pole_atom.py` chi-{atom}-h{n} caches).

@@ -58,7 +58,8 @@ false because Lean's junk values (`tsum` of a non-summable family is `0`) were
 read as if they were the mathematical values. Stating the closed form as
 primitive would have repeated it.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** `qou-clx8` is explicit
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. `qou-clx8` is explicit
 that closing it does not move the sum rule; Route 5 is a restatement.
 -/
 

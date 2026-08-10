@@ -68,7 +68,8 @@ Everything here is generic in `f` and `c`: no dilogarithm is involved, so this
 file builds off basic `Mathlib` order/field lemmas alone and does not wait on
 the `DilogReflection` cone.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoRogersExtend

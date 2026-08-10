@@ -1,0 +1,63 @@
+{
+  "probe": "qbeta_5two_route55_saddle_is_plastic",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 60,
+  "follows": "Route 54 (the unconditional one-variable pentagon)",
+  "lean": "QOU/QBeta/FiveTwoComplexPentagon.lean -- saddle_to_plastic, plastic_of_saddle, saddle_of_plastic, pentagon_arg_reciprocal",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE NEGATIVE THAT MATTERS. The anharmonic map y -> 1 - 1/y carries the 5_2 saddle cubic ONTO X^3-X+1 (roots = negated plastic numbers), and it does so as an identity of RATIONAL FUNCTIONS -- checked at generic points where the cubic does not vanish, so it is not a modular coincidence. Routes 41/47/48 closed their alphabets under 1-z and 1/z, which generate that group, so every relation Route 54's pentagon produces at (y_3,y_1) was ALREADY inside them. Route 54's theorem does not add rank; it explains the plastic tower of Routes 40-48",
+      "max_residual_at_roots": "1.5557538e-61",
+      "max_residual_generic": "3.1115076e-60",
+      "plastic_neg_roots": [
+        "-1.32471795724474603",
+        "(0.662358978622373013 + 0.562279512062301244j)",
+        "(0.662358978622373013 - 0.562279512062301244j)"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the pentagon's fourth argument lands there: a_4 = 1 - y_3*y_1 = 1 - 1/y_2 is a root of X^3-X+1, i.e. minus a plastic number. This is the concrete face of G1",
+      "a4": "(0.6623589786223730129804544 - 0.5622795120623012438991821j)",
+      "distance_to_nearest_plastic_neg_root": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the two composite arguments are exceptional, all four facts exact and verified symbolically by Groebner reduction against a+b+c=2, ab+ac+bc=3, abc=1: a_5 = 1/a_3 (equivalent to the cubic itself), 1-a_3 = conj(a_3), and |a_3|^2 = y_3. So L(a_3)+L(a_5) is elementary by inversion and the degree-6 elements CANCEL out of the relation, leaving only the degree-3 orbit -- which is why the degree-6 field does not rescue the rank either",
+      "a3": "(0.5 + 0.4244522458439190943334516j)",
+      "a5_minus_inv_a3": "7.7787691e-62",
+      "re_a3_minus_half": "3.8893845e-62",
+      "abs_a3_sq_minus_y3": "3.8893845e-62",
+      "minpoly_a3": "X^6 - 3X^5 + 5X^4 - 5X^3 + 5X^2 - 3X + 1  (palindromic)",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the relation Route 54 proves, written out at (y_3,y_1): L(y_3)+L(y_1)+L(a_4) = pi^2/2 - [L(a_3)+L(1/a_3)], with a_4 minus a plastic number and the bracket elementary. Route 47's closed form for the y-orbit sum is re-verified alongside it at 60 dps, unchanged",
+      "pentagon_minus_pi_sq_over_2": "6.4145373e-61",
+      "L_y3_plus_L_y1_plus_L_a4": "(2.750551190054811811606153 + 0.6625608876641954953468716j)",
+      "pi_sq_over_2_minus_inversion": "(2.750551190054811811606153 + 0.6625608876641954953468716j)",
+      "sum_L_over_y_cubic": "2.777534425978115064062537",
+      "route47_closed_form": "2.777534425978115064062537",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the target is unmoved, and this route moves it FURTHER from reach, not closer: G1 says the relation Route 54 proved was already in the alphabets whose rank gap has been exactly 1 four times over. A = sum Li2(y_j) still has no proof",
+      "A": "0.971730681468648259127774169939",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "structural": "y -> 1 - 1/y carries the 5_2 saddle cubic onto X^3-X+1 as an identity of rational functions. The saddle orbit and the (negated) plastic orbit are ONE anharmonic orbit.",
+    "negative": "so Route 54's pentagon relation was already inside the alphabets of Routes 41/47/48, all closed under 1-z and 1/z. It does not add rank.",
+    "explains": "why the plastic tower kept surfacing through Routes 40-48 -- same orbit, not a coincidence.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

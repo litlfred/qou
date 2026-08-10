@@ -1,11 +1,28 @@
 """Numerical-regression tests for the Gram matrix and Markov trace.
 
-These tests pin the exact values at q_0 = 1.1099785955541805 so any
-future change to pyhecke.gram that would alter downstream witnesses is
-caught immediately.
+These tests pin the exact values at the substrate q_0 so any future change
+to pyhecke.gram that would alter downstream witnesses is caught immediately.
 
 Baseline values were captured from the pre-inversion hecke_core.py and
 round-trip-verified on every committed certificate-*.json.
+
+REPAIRED 2026-08-09 (bean qou-wgta, items 11/15/16). Three of these tests
+had been failing since 2026-05-19 and one header claim was wrong:
+
+* The header said q_0 = 1.1099785955541805. That is the MUON pin. The
+  module reads `q_parameter.Q`, the PROTON pin 1.1099785827513808 (AGENTS.md
+  owner directive 2026-08-07). The two are 11.54 ppb apart, which is 1.5e-10
+  on z -- four orders of magnitude past the 1e-14 tolerance the z test used.
+* `docs/audits/2026-05-19-trm5-markov-bug.md` corrected TR_M[5] from `z**3`
+  to `h*z**2 + z` in the module and updated NEITHER the test asserting
+  `z**3` NOR the determinant pin that followed from it (nor the Rust
+  mirror -- see tools/hecke-engine/src/gram.rs).
+
+CONVENTION. Every value below is **convention C** (z = 1/(q^1/2+q^-1/2)),
+because pyhecke.gram is still on C: the C -> D migration is BLOCKED here,
+see the note at pyhecke/gram.py's `z`. When that unblocks, every literal
+in this file moves; they are labelled so a grep for the convention finds
+them.
 """
 
 from __future__ import annotations
@@ -23,15 +40,34 @@ except ImportError:  # pragma: no cover
 
 
 def test_z_markov_value():
-    """z = 1 / (q^{1/2} + q^{-1/2}) at q_0 ≈ 1.1099785955541805."""
-    assert abs(pyhecke_gram.z - 0.4993203340335982) < 1e-14
+    """z = 1/(q^{1/2}+q^{-1/2}) -- **convention C** -- at the PROTON pin
+    q_0 = 1.1099785827513808 (`q_parameter.Q`).
+
+    Was pinned to 0.4993203340335982, the value at the MUON pin
+    1.1099785955541805, and had been failing by 1.5e-10 against a 1e-14
+    tolerance. Under convention D this becomes 0.6126880371464652.
+    """
+    assert abs(pyhecke_gram.z - 0.4993203341836945) < 1e-14
 
 
 def test_tr_m_weights_shape_and_start():
+    """TR_M = [1, z, z, z^2, z^2, h*z^2 + z] on the NF basis.
+
+    The last entry asserted `z**3` until 2026-08-09. `h*z^2 + z` is the
+    correct Markov trace of e- = sigma_0 sigma_1 sigma_0 (cyclicity plus
+    sigma_0^2 = h*sigma_0 + 1); `z**3` is the bug that
+    docs/audits/2026-05-19-trm5-markov-bug.md fixed IN THE MODULE while
+    leaving this assertion behind, so the test has been red ever since.
+    """
+    h = pyhecke_gram.h
+    z = pyhecke_gram.z
     assert pyhecke_gram.TR_M.shape == (6,)
     assert abs(pyhecke_gram.TR_M[0] - 1.0) < 1e-15
-    assert abs(pyhecke_gram.TR_M[1] - pyhecke_gram.z) < 1e-15
-    assert abs(pyhecke_gram.TR_M[5] - pyhecke_gram.z ** 3) < 1e-15
+    assert abs(pyhecke_gram.TR_M[1] - z) < 1e-15
+    assert abs(pyhecke_gram.TR_M[3] - z ** 2) < 1e-15
+    assert abs(pyhecke_gram.TR_M[5] - (h * z ** 2 + z)) < 1e-15
+    # Guard the regression directly: e- is NOT z^3.
+    assert abs(pyhecke_gram.TR_M[5] - z ** 3) > 1e-3
 
 
 def test_nf_basis_is_canonical_ordering():
@@ -40,11 +76,22 @@ def test_nf_basis_is_canonical_ordering():
 
 
 def test_gram_shape_and_determinant():
+    """det G at the proton pin, convention C, with the corrected TR_M[5].
+
+    Was pinned to -0.36080112. That is the determinant you get with the
+    pre-2026-05-19 `TR_M[5] = z**3` -- it is still what
+    tools/hecke-engine/src/gram.rs produces, because the fix was never
+    ported there. With the module's actual (correct) `h*z^2 + z` the value
+    is -0.1892052191440367.
+
+    Under convention D this determinant is ZERO -- the Markov-Gram form is
+    degenerate, proved in QOU/QBeta/GramSignature.lean. That is why the
+    C -> D switch is blocked here; see pyhecke/gram.py.
+    """
     G = pyhecke_gram.G
     assert G.shape == (6, 6)
-    # Pre-inversion determinant captured from hecke_core for regression.
     det = numpy.linalg.det(G)
-    assert abs(det - (-0.36080112)) < 1e-6
+    assert abs(det - (-0.1892052191440367)) < 1e-9
 
 
 def test_gram_inverse_identity():

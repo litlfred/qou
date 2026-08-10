@@ -2,7 +2,9 @@
 to a pair-partition sum by induction on word length.
 
 **Setup.** Let $\tilde\sigma_i := \sigma_i - z \cdot 1$ where
-$z = 1/(q^{1/2}+q^{-1/2}) = \mathrm{tr}_M(\sigma_i)$, so that
+$z = q^3/(q^2+1) = \mathrm{tr}_M(\sigma_i)$ (**convention D**; under the
+excised convention C the shift $\sigma_i - z\cdot 1$ was not centred at all,
+leaving $\mathrm{tr}_M(\tilde\sigma_i) = 0.1134$ rather than $0$), so that
 $\mathrm{tr}_M(\tilde\sigma_i) = 0$. The argument uses only joint
 $\mathrm{tr}_M$-moments of the $\tilde\sigma_i$; no adjoint structure
 is required. (Note that

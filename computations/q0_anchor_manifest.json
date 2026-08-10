@@ -1,6 +1,6 @@
 {
   "_schema": "q0-anchor-manifest/v1",
-  "_convention": "ideal=muon (CAL-2 \ud835\udd07_\u03b2); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
+  "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). q_parameter auto-selects by the running producer's stem; QOU_Q0_ANCHOR env var overrides.",
   "ideal_muon": [
     "alpha_basis_knot_couplings",
     "alpha_em_4pi_fixed_point_solve",
@@ -293,6 +293,7 @@
     "chi_at_q0_via_hoefsmit_mpfr",
     "chirality_avg_content_atomic",
     "chirality_weighted_3body_cluster_probe",
+    "codata_registry_triangulation_probe",
     "constit_factor_and_volhyp_test",
     "constit_factor_residual_phase5k",
     "convergence_safe_vhat_tower",
@@ -328,6 +329,7 @@
     "kaon_pion_ratio_7_8_probe",
     "kappa_writhe_side_decomposition_probe",
     "keystone_qhankel_eq2_vacuum_row",
+    "l2_row_independence_probe",
     "li6_h18_amplification_discriminator_probe",
     "low_isotope_binding_model_comparison",
     "m_p_bring_plus_phi_q_h4_probe",

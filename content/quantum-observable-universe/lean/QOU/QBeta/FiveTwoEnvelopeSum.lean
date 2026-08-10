@@ -42,7 +42,8 @@ open (see this bean's earlier entries). Stating it with the pinned sums as
 hypotheses is the honest factoring — the algebra is separable from the analysis,
 and only the algebra is done here.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

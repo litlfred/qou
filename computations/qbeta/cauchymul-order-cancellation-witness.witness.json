@@ -5,118 +5,163 @@
     "script": "qbeta/cauchymul_order_cancellation_witness.py"
   },
   "witness": {
-    "scriptCommitSha": "uncommitted"
+    "scriptCommitSha": "a62c6520478c8a3a2262776aac13d4c5597d1184"
   },
   "setup": {
     "q": 2,
     "n_max": 14,
     "a": "a_n = q^(n^2)",
     "b": "formal inverse of a (a_0 = 1)",
-    "arithmetic": "exact integers; floats used only for the display ratio"
+    "arithmetic": "exact integers throughout; the log_q|b_n|/n^2 ratio is an exact Fraction, serialized as p/q plus a 50-dps decimal. No float64 anywhere (it used to be float64, and the verdicts were decided on it)."
   },
   "results": {
     "product_is_unit_sequence": true,
     "b_has_positive_order": true,
     "ratio_increasing": true,
-    "final_ratio_log_q_abs_b_over_n2": 0.9948979591836735,
+    "final_ratio_log_q_abs_b_over_n2": {
+      "exact": "195/196",
+      "decimal": "0.99489795918367346938775510204081632653061224489796"
+    },
     "rows": [
       {
         "n": 1,
         "log_q_abs_a": 1,
         "n_squared": 1,
         "log_q_abs_b": 1,
-        "ratio_b_over_n2": 1.0
+        "ratio_b_over_n2": {
+          "exact": "1/1",
+          "decimal": "1.0"
+        }
       },
       {
         "n": 2,
         "log_q_abs_a": 4,
         "n_squared": 4,
         "log_q_abs_b": 3,
-        "ratio_b_over_n2": 0.75
+        "ratio_b_over_n2": {
+          "exact": "3/4",
+          "decimal": "0.75"
+        }
       },
       {
         "n": 3,
         "log_q_abs_a": 9,
         "n_squared": 9,
         "log_q_abs_b": 8,
-        "ratio_b_over_n2": 0.8888888888888888
+        "ratio_b_over_n2": {
+          "exact": "8/9",
+          "decimal": "0.88888888888888888888888888888888888888888888888889"
+        }
       },
       {
         "n": 4,
         "log_q_abs_a": 16,
         "n_squared": 16,
         "log_q_abs_b": 15,
-        "ratio_b_over_n2": 0.9375
+        "ratio_b_over_n2": {
+          "exact": "15/16",
+          "decimal": "0.9375"
+        }
       },
       {
         "n": 5,
         "log_q_abs_a": 25,
         "n_squared": 25,
         "log_q_abs_b": 24,
-        "ratio_b_over_n2": 0.96
+        "ratio_b_over_n2": {
+          "exact": "24/25",
+          "decimal": "0.96"
+        }
       },
       {
         "n": 6,
         "log_q_abs_a": 36,
         "n_squared": 36,
         "log_q_abs_b": 35,
-        "ratio_b_over_n2": 0.9722222222222222
+        "ratio_b_over_n2": {
+          "exact": "35/36",
+          "decimal": "0.97222222222222222222222222222222222222222222222222"
+        }
       },
       {
         "n": 7,
         "log_q_abs_a": 49,
         "n_squared": 49,
         "log_q_abs_b": 48,
-        "ratio_b_over_n2": 0.9795918367346939
+        "ratio_b_over_n2": {
+          "exact": "48/49",
+          "decimal": "0.97959183673469387755102040816326530612244897959184"
+        }
       },
       {
         "n": 8,
         "log_q_abs_a": 64,
         "n_squared": 64,
         "log_q_abs_b": 63,
-        "ratio_b_over_n2": 0.984375
+        "ratio_b_over_n2": {
+          "exact": "63/64",
+          "decimal": "0.984375"
+        }
       },
       {
         "n": 9,
         "log_q_abs_a": 81,
         "n_squared": 81,
         "log_q_abs_b": 80,
-        "ratio_b_over_n2": 0.9876543209876543
+        "ratio_b_over_n2": {
+          "exact": "80/81",
+          "decimal": "0.98765432098765432098765432098765432098765432098765"
+        }
       },
       {
         "n": 10,
         "log_q_abs_a": 100,
         "n_squared": 100,
         "log_q_abs_b": 99,
-        "ratio_b_over_n2": 0.99
+        "ratio_b_over_n2": {
+          "exact": "99/100",
+          "decimal": "0.99"
+        }
       },
       {
         "n": 11,
         "log_q_abs_a": 121,
         "n_squared": 121,
         "log_q_abs_b": 120,
-        "ratio_b_over_n2": 0.9917355371900827
+        "ratio_b_over_n2": {
+          "exact": "120/121",
+          "decimal": "0.99173553719008264462809917355371900826446280991736"
+        }
       },
       {
         "n": 12,
         "log_q_abs_a": 144,
         "n_squared": 144,
         "log_q_abs_b": 143,
-        "ratio_b_over_n2": 0.9930555555555556
+        "ratio_b_over_n2": {
+          "exact": "143/144",
+          "decimal": "0.99305555555555555555555555555555555555555555555556"
+        }
       },
       {
         "n": 13,
         "log_q_abs_a": 169,
         "n_squared": 169,
         "log_q_abs_b": 168,
-        "ratio_b_over_n2": 0.9940828402366864
+        "ratio_b_over_n2": {
+          "exact": "168/169",
+          "decimal": "0.99408284023668639053254437869822485207100591715976"
+        }
       },
       {
         "n": 14,
         "log_q_abs_a": 196,
         "n_squared": 196,
         "log_q_abs_b": 195,
-        "ratio_b_over_n2": 0.9948979591836735
+        "ratio_b_over_n2": {
+          "exact": "195/196",
+          "decimal": "0.99489795918367346938775510204081632653061224489796"
+        }
       }
     ]
   },

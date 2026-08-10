@@ -42,6 +42,82 @@ except ImportError:
 # Scalar constants
 # ══════════════════════════════════════════════════════════════
 
+# ┌────────────────────────────────────────────────────────────────────┐
+# │ TRACE CONVENTION C — and the C → D migration is BLOCKED HERE.      │
+# │ Do not "finish the excision" on this line. Read this first.        │
+# └────────────────────────────────────────────────────────────────────┘
+#
+# Owner ruling 2026-08-09 excised convention C (z = 1/(q^1/2 + q^-1/2)) in
+# favour of convention D (z = q^3/(q^2 + 1)) repo-wide — registry
+# docs/coordination/trace-convention-registry.md, bean qou-wgta. This module
+# is a deliberate EXCEPTION, stopped at item 11 of that bean, because
+# switching this one line silently destroys `G_INV` twelve lines further
+# down and every consumer of it.
+#
+# WHY. `TR_M` below is the Markov trace on the NF basis, `G` its Gram matrix,
+# and `G_INV = np.linalg.inv(G)` runs unconditionally AT IMPORT. Under D that
+# Gram form is SINGULAR — established on this branch in
+# content/quantum-observable-universe/lean/QOU/QBeta/GramSignature.lean,
+# which names this file by path.
+#
+# Measured here at the proton pin, on the BILINEAR form this module actually
+# builds (`_build_gram` pairs b_i with b_j, no star):
+#
+#     convention C   eigenvalues -0.855067 +0.101797 +0.855067 x3 +3.476950
+#                    det -0.18920521914403668     cond 3.4e+01   NON-singular
+#
+#     convention D   eigenvalues -0.752702  0.000000 +0.752702 x3 +4.230339
+#                    det  3.998e-17                cond 4.9e+16  SINGULAR
+#
+# READ THE LEAN FILE'S OWN RETRACTION (commit 748ba9b1) BEFORE QUOTING THE
+# SIGNATURE. Its original "(5,1) / (4,1) + null, LORENTZIAN" reading is
+# WITHDRAWN: that used the bilinear pairing, and the Hecke *-structure is
+# T_w* = T_{w^-1}, which on this NF basis swaps L+ <-> L-. Under the correct
+# star pairing the form is C (6,0,0) POSITIVE DEFINITE, D (5,0,1) POSITIVE
+# SEMIDEFINITE. What does NOT change, and is the only thing this note relies
+# on: under D there is exactly ONE null direction, the row-cap one, under
+# BOTH pairings. So det G = 0 and G_INV does not exist. C stays invertible
+# either way, because y_(1^3) = 0.0227 != 0.
+#
+# And numpy does not protect you: `np.linalg.inv` on the D matrix RAISES
+# NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+# A silently wrong `G_INV`, exported at import into constants.py, atom.py,
+# molecular.py, sdp.py and nine corpus consumers, is far worse than the
+# stale convention.
+#
+# AND THIS MODULE CANNOT SEE THE PROBLEM, because it is float64 end to end:
+# `_hm_dict` / `_reduce_nf` build the NF coefficients in f64 and prune at
+# `abs(c) > 1e-15`, so `G` carries ~16 good digits however much precision a
+# caller wraps around it. Measured: driving this same NF path at mpmath 60 dps
+# still bottoms out at |lambda_min| = 3.9e-17 and det = -5.3e-17 under D --
+# f64 noise, not a resolved eigenvalue. The true value is 0; the branch's
+# 50-dps figure (det = 2.89e-51, GramSignature.lean) comes from an exact NF,
+# not from here. So the degeneracy is INVISIBLE to this module's own
+# precision, and `np.linalg.inv` is inverting rounding noise -- which is
+# exactly the observed cond 4.9e16 and ||G G_INV - I|| = 1.64.
+#
+# The exactness itself does not rest on any determinant: under D,
+# y_(1^3) = 0 SYMBOLICALLY (verified three independent ways -- the sympy
+# Wenzl solve in markov_weights_symbolic, the mpmath product formula in
+# schur_principal_mpmath, and y_lambda_wenzl_bridge), so the (1^3)
+# Wedderburn block contributes nothing to the trace form and IS the radical.
+#
+# The Lean file names the repair — quotient by the radical. Post-retraction
+# that is a strictly better prospect than it first looked: the quotient is a
+# genuine positive-definite inner product, not a causal form. But it is still
+# a design decision for the owner, not a one-line swap, because `G_INV` is
+# exported at import and every consumer expects a 6x6 inverse.
+#
+# ALREADY SPLIT, AND WORSE AFTER A REBUILD. The Rust mirror
+# (tools/hecke-engine/src/gram.rs) IS now convention D. It survives the
+# degeneracy only because it still carries the pre-2026-05-19 `TR_M[5] = z^3`
+# bug that this file fixed. `build_atom_nf` / `atom_per_generator_volumes`
+# below dispatch to the compiled `pyhecke_native` wheel built from that
+# crate — so once that wheel is rebuilt from this branch, those two
+# functions return convention D while `z` / `TR_M` / `G` / `G_INV` in this
+# same module stay on C. tests/test_gram_values.py already measures the
+# native-vs-legacy split (2.6e-8 at the muon/proton anchor gap today; it
+# becomes the full 22.7 % convention gap after a rebuild).
 z = 1.0 / (q0 ** 0.5 + qi ** 0.5)
 
 # Wedderburn-Artin weights for H_3(q)
@@ -367,7 +443,14 @@ def _q0_50dps_str() -> str:
 
 
 def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
-    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64)."""
+    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64).
+
+    **Convention C.** Held here deliberately, in lockstep with the module's
+    float64 `z` — see the blocking note at that definition. Splitting the
+    mpmath mirror from the f64 original would be strictly worse than the
+    stale convention. Under D this would be q³/(q²+1), and rational, so the
+    "irrational" note would no longer apply.
+    """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
         qi_ = 1 / q
@@ -379,6 +462,9 @@ def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
 
     Mirrors the float64 `TR_M` exactly: [1, z, z, z², z², h·z²+z] with
     h = q − q⁻¹ and z the irrational Markov weight at 50 dps.
+
+    **Convention C**, in lockstep with the module's `z` — see the blocking
+    note at that definition (bean qou-wgta item 11).
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())

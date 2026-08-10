@@ -46,7 +46,8 @@ because `∂V/∂y = 0` — and that is already free, since
 envelope never needs the *value* of `dyⱼ/dx`, only that it exists; this file
 supplies the value anyway because the IFT gives it for nothing.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** This is one hypothesis
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. This is one hypothesis
 of the envelope step, not the envelope step.
 -/
 

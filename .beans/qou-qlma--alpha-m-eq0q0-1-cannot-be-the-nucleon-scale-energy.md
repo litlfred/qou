@@ -252,3 +252,116 @@ exactly two things that are neither calibrated nor derived:
       dimensionless multiplier, target 0.531432 vs current 0.929219
 - [ ] retarget onto GAP 1 (z_m) — the one factor that is neither calibrated nor
       derived and that moves the multiplier
+
+## CORRECTION 2026-08-09: "z_m is the Temperley-Lieb / SU(2) value" is FALSE
+
+Stated twice above and in the 2026-06-29 colour-weighting audit. Wrong, and
+`docs/coordination/trace-convention-registry.md` says so explicitly — a
+registry that exists precisely because convention-silent trace values kept being
+compared. I did not read it before asserting.
+
+    C  full-Hecke Ocneanu / Wenzl z-trace   z = 1/(q^1/2+q^-1/2) = 0.49932033418369445
+       y_lambda at n=3 = (0.4153958, 0.2809296, 0.0227449)   <- PRODUCTION
+    D  SU(2) / Temperley-Lieb (Jones)       z = q^3/(q^2+1)     = 0.61268803714646524
+       y_lambda at n=3 = (0.5054042, 0.2472979, 0)
+
+`D != C` is **Lean-proved**
+(`QOU.BraidsAndKnots.BorromeanTraceConventionSplit.conventionD_ne_conventionC`);
+they differ by 195.8 ppm on beta_Bor. So the framework's z is convention C and
+the TL/SU(2) value is a DIFFERENT trace, not the same one.
+
+The consequence is bigger than the misnaming. **Convention C has
+y_(1^3) = 0.0227449 != 0**, whereas D has it exactly 0. That zero IS the row cap
+`dim V_(1^3) = C(N,3) = 0 <=> N < 3` which `RowCapObstruction.lean` proves
+sorry-free. So:
+
+  * the mass trace does NOT carry the N=2 row cap;
+  * the eightfold ledger's "framework supplies dim V = 2" is about the
+    single-fibre tower, NOT about the trace the masses are computed with.
+
+Also wrong above: the guess that the SU(N) family is `z = 1/[N]`. It is not —
+the SU(N) weights are quantum dimensions (hook-content), and `1/[3]_q = 0.3285`
+was a made-up rival, not SU(3).
+
+## AND: convention C is not SU(N) for ANY integer N
+
+New module `computations/y_lambda_su_n.py` (33/33 self-tests) implements the
+real SU(N) weights,
+
+    s_lambda  ∝  PROD_{(i,j)}  [N + j - i]_q / [h(i,j)]_q ,   normalised Σ y_λ f^λ = 1
+
+validated by reproducing registry convention D EXACTLY at N = 2, including
+y_(1^3) = 0 on the nose and the implied z = q^3/(q^2+1). At n = 3:
+
+    N=2   0.5054042   0.2472979   0.0            == convention D
+    N=3   0.3783707   0.2930825   0.0354643
+    N=4   0.3226034   0.3090941   0.0592084
+    C     0.4153958   0.2809296   0.0227449      <- production, between N=2 and N=3
+
+Solving for the real N reproducing C's y_(1^3)/y_(3):
+
+    N = 2.5995155
+
+NON-INTEGER. The mass channel is not an SU(N) quantum-group trace at all; it
+sits between SU(2) and SU(3). That reframes the eightfold "N = 3 problem": the
+mass trace is not at N = 2 either, so the flavour channel is not being asked to
+move from 2 to 3 — it is being asked to move from a non-SU(N) point to 3.
+
+Nothing wired. The module is the weight function the flavour channel would need,
+plus the measurement of where C actually sits.
+
+## What happens under convention D — the impossibility is C-SPECIFIC
+
+Asked directly, and it changes the headline. Registry channels:
+
+    mass     definitional C, production D  -> DISPUTED (bean qou-3qrv, OWNER decision,
+                                              agents explicitly forbidden from switching)
+    binding  C / C                         -> agreed   <- where all of the above lives
+
+So C is "out" for MASS but is current for BINDING. Recomputed the binding
+channel under D (actual D weights on the 6-strand word, not just the closed
+form; 7 of 11 blocks vanish under D, normalisation still exactly 1, and the
+closed form tr_atom = tr_free*(z+d) still holds to 2.56e-42):
+
+    convention   z            admissible B band       AME 2.224566
+    C            0.4993203    [2.9071952, 5.1779672]  OUTSIDE, 30.4% below floor
+    D            0.6126880    [2.0507097, 3.7977829]  INSIDE
+
+**Under D the deuteron is reachable.** Required d = -0.0249256 = -0.1192*h,
+comfortably inside [-h, 0]. The reason is exact: z_C = 1/(x+1/x) <= 1/2 by
+AM-GM, which is what `markov_param_le_half` and `bond_energy_floor` rest on;
+z_D = q^3/(q^2+1) = 0.6127 > 1/2, so the theorem simply does not apply.
+
+CORRECTED IN THE LEAN AS A RESULT. The `bond_energy_floor` docstring claimed the
+floor holds "for every N in an SU(N) choice of z (larger N shrinks z and
+increases the floor)". FALSE — that assumed the family is z = 1/[N]. SU(2) IS
+convention D at z = 0.6127 > 1/2. The theorems are unaffected; the scope claim
+was wrong and is now marked. The impossibility is specific to convention C.
+
+### But D is NOT better, and must not be adopted on this basis
+
+    atom     B_C     errC %      B_D     errD %     B_AME
+    2H     3.8897    +74.85    2.8332    +27.36    2.224566
+    3H     9.0677     +6.91    6.6309    -21.82    8.481798
+    3He    6.7969    -11.94    4.8839    -36.72    7.718043
+    4He   11.9749    -57.68    8.6817    -69.32   28.295673
+    6Li   20.0600    -37.30   14.5301    -54.59   31.994564
+    7Li   25.2380    -35.69   18.3279    -53.30   39.244524
+
+    mean |err|   C 37.39 %   D 43.85 %      mirror split: C 2.2708, D 1.7471 (nature 0.7638)
+
+D fixes 2H's REACHABILITY and improves the mirror split, but under-binds
+everywhere else and is worse on average. The registry's own rule applies with
+full force here: "D is the value that lands on CODATA, which is precisely why
+deciding by match is forbidden." The same forbids adopting D for binding because
+it flatters 2H.
+
+WHAT IS ACTUALLY LEARNED: the 2H impossibility I proved is a property of
+convention C, not of the framework. That converts the headline from "no Markov
+trace can bind the deuteron" to "**the production binding trace cannot, and a
+neighbouring one can**" — which makes the convention choice load-bearing physics
+rather than bookkeeping, and puts it in the same owner-decision class as the
+already-disputed mass channel.
+
+- [ ] does the binding channel's C assignment have a forcing argument, or is it
+      inherited from the definitional doc the way the mass channel's was?

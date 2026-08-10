@@ -230,7 +230,7 @@ theorem wellfounded_at_level (n : ℕ) :
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
 -- Ref: [manuscript] §3/ordering-jet-compatibility
 theorem direct_limit_terminates (n : ℕ) (w : List ℕ)
-    (hw : ∀ g ∈ w, g < n) :
+    (_hw : ∀ g ∈ w, g < n) :
     Acc degLexNat w :=
   degLexNat_wf.apply w
 
@@ -419,7 +419,7 @@ structure JetReductionConfig (G : Type u) (k : Type v) [Ring k] [DecidableEq G] 
     - Savings:         `m choose 2 ≈ O(m²)` pairs skipped -/
 def spolyCountNaive (m k : ℕ) : ℕ := (m + k) * (m + k - 1) / 2
 def spolyCountStratified (m k : ℕ) : ℕ := m * k + k * (k - 1) / 2
-def spolySavings (m k : ℕ) : ℕ := m * (m - 1) / 2
+def spolySavings (m _k : ℕ) : ℕ := m * (m - 1) / 2
 
 /-! ## §7  Correctness of the Combined Algorithm -/
 

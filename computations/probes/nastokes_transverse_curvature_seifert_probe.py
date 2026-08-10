@@ -58,6 +58,24 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from fractions import Fraction  # noqa: E402
+import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402
+
+set_compute_dps(50)
+
+
+def _mpf(x):
+    """mpf view of an mpf or an exact Fraction.
+
+    The combinatorial ratios are exact Fractions and the AME ratios are mpf;
+    Python will not compare the two directly. Converting the Fraction (exact
+    numerator and denominator) to mpf at the working precision loses nothing
+    a 50-dps comparison could see, and it keeps the bracketing test off f64.
+    """
+    if isinstance(x, Fraction):
+        return mp.mpf(x.numerator) / mp.mpf(x.denominator)
+    return mp.mpf(x)
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
@@ -78,11 +96,13 @@ def main() -> None:
     b1_link = betti_one(s_tref, c_tref)          # = 2  (per-link genus unit)
     assert b1_link == 2
 
+    # The AME constants are mpf; float()-ing them here capped the only
+    # measured quantity in this probe at 17 digits before it was used.
     isotopes = {  # A, AME binding (validation MeV)
-        "D":  (2, float(AME_B_DEUTERON_MEV_VALIDATION)),
-        "T":  (3, float(AME_B_TRITIUM_MEV_VALIDATION)),
-        "3He": (3, float(AME_B_HE3_MEV_VALIDATION)),
-        "4He": (4, float(AME_B_HE4_MEV_VALIDATION)),
+        "D":  (2, mp.mpf(AME_B_DEUTERON_MEV_VALIDATION)),
+        "T":  (3, mp.mpf(AME_B_TRITIUM_MEV_VALIDATION)),
+        "3He": (3, mp.mpf(AME_B_HE3_MEV_VALIDATION)),
+        "4He": (4, mp.mpf(AME_B_HE4_MEV_VALIDATION)),
     }
     B_D = isotopes["D"][1]
 
@@ -92,12 +112,14 @@ def main() -> None:
         b1 = b1_link * links                     # = 2(A−1)  (pure geometry)
         m_diag = b1                              # ∝ b₁            (additive env.)
         m_off = comb(b1, 2) if b1 >= 2 else 0    # ∝ C(b₁,2)       (upper env.)
+        # diag/off are INTEGER over INTEGER — pure combinatorics, exact.
         rows[iso] = {
             "A": A, "links": links, "betti_one": b1,
             "ame_MeV": B,
             "ratio_ame_to_D": B / B_D,
-            "ratio_diag_to_D": m_diag / (b1_link),          # M_diag(A)/M_diag(D)
-            "ratio_off_to_D": (m_off / comb(b1_link, 2)) if comb(b1_link, 2) else 0.0,
+            "ratio_diag_to_D": Fraction(m_diag, b1_link),   # M_diag(A)/M_diag(D)
+            "ratio_off_to_D": (Fraction(m_off, comb(b1_link, 2))
+                               if comb(b1_link, 2) else Fraction(0)),
         }
 
     # normalize both envelopes so D = 1, compare to AME ratio
@@ -110,16 +132,17 @@ def main() -> None:
         ame = r["ratio_ame_to_D"]
         dia = r["ratio_diag_to_D"]
         off = r["ratio_off_to_D"]
-        bracketed = dia <= ame <= off or off <= ame <= dia
+        dia_m, off_m, ame_m = _mpf(dia), _mpf(off), _mpf(ame)
+        bracketed = dia_m <= ame_m <= off_m or off_m <= ame_m <= dia_m
         print(f"  {iso:4s}{r['A']:>3d}{r['links']:>7d}{r['betti_one']:>7d}"
-              f"{ame:>9.3f}{dia:>9.3f}{off:>9.3f}   "
+              f"{float(ame_m):>9.3f}{float(dia_m):>9.3f}{float(off_m):>9.3f}   "
               f"{'AME bracketed [diag,off]' if bracketed else 'NOT bracketed'}")
 
     # ---- forward structural findings (facts, not fits) ------------------------
     # 1. additive envelope undershoots 4He; off-diagonal overshoots ⇒ AME between.
     he4 = rows["4He"]
-    additive_undershoots_he4 = he4["ratio_diag_to_D"] < he4["ratio_ame_to_D"]
-    offdiag_overshoots_he4 = he4["ratio_off_to_D"] > he4["ratio_ame_to_D"]
+    additive_undershoots_he4 = _mpf(he4["ratio_diag_to_D"]) < _mpf(he4["ratio_ame_to_D"])
+    offdiag_overshoots_he4 = _mpf(he4["ratio_off_to_D"]) > _mpf(he4["ratio_ame_to_D"])
     ame_bracketed_he4 = additive_undershoots_he4 and offdiag_overshoots_he4
 
     # 2. additive envelope is EXACTLY linear in links (pairwise cap;
@@ -136,15 +159,17 @@ def main() -> None:
     )
     t_he3_ame_differ = abs(
         rows["T"]["ratio_ame_to_D"] - rows["3He"]["ratio_ame_to_D"]
-    ) > 0.05
+    ) > mp.mpf("0.05")
 
     print()
     print("  FINDINGS (forward, no fit):")
     print(f"   1. additive (diagonal) envelope undershoots 4He: "
-          f"{he4['ratio_diag_to_D']:.2f} < {he4['ratio_ame_to_D']:.2f}  "
+          f"{float(_mpf(he4['ratio_diag_to_D'])):.2f} < "
+          f"{float(_mpf(he4['ratio_ame_to_D'])):.2f}  "
           f"= {additive_undershoots_he4}")
     print(f"   2. off-diagonal envelope overshoots 4He: "
-          f"{he4['ratio_off_to_D']:.2f} > {he4['ratio_ame_to_D']:.2f}  "
+          f"{float(_mpf(he4['ratio_off_to_D'])):.2f} > "
+          f"{float(_mpf(he4['ratio_ame_to_D'])):.2f}  "
           f"= {offdiag_overshoots_he4}")
     print(f"   3. AME magnitude BRACKETED between the two envelopes at 4He: "
           f"{ame_bracketed_he4}")
@@ -178,7 +203,21 @@ def main() -> None:
     )
     wb.add_parameter("betti_link_unit_trefoil", b1_link)
     wb.add_parameter("link_count_model", "spanning tree, L = A-1")
-    wb.add_data("per_isotope", rows)
+    # Serialize at the sink: mpf keeps its 50 dps, the two combinatorial
+    # ratios keep their exactness as "p/q". Neither was ever a float64
+    # measurement, and neither is one now.
+    wb.add_data("per_isotope", {
+        iso: {
+            "A": r["A"], "links": r["links"], "betti_one": r["betti_one"],
+            "ame_MeV": str_at_true_precision(r["ame_MeV"]),
+            "ratio_ame_to_D": str_at_true_precision(r["ratio_ame_to_D"]),
+            "ratio_diag_to_D": f"{r['ratio_diag_to_D'].numerator}"
+                               f"/{r['ratio_diag_to_D'].denominator}",
+            "ratio_off_to_D": f"{r['ratio_off_to_D'].numerator}"
+                              f"/{r['ratio_off_to_D'].denominator}",
+        }
+        for iso, r in rows.items()
+    })
     wb.add_caveat(
         "AME used ONLY as comparison ratios; never inverted. The link count "
         "(A-1) and per-link b₁=2 (trefoil) are pure geometry, not fitted."

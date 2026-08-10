@@ -52,9 +52,34 @@ For $n > 3$, the LP dimensions grow as $d = n!$:
 | $4$ | $24$ | Tetraquark / exotic meson candidates |
 | $5$ | $120$ | Pentaquark states |
 
-At each strand number, the Frobenius Gram matrix $G \in \mathbb{R}^{d \times d}$
-is symmetric and non-degenerate (for $q \neq 0, 1$), so the LP is
-well-posed.  The optimal vertex $x^*$ identifies the minimum-action
+At each strand number, the Frobenius Gram matrix $G$ is symmetric, and it is
+non-degenerate — for $q \neq 0, 1$ — **on the quotient
+$H_n/\mathrm{rad}\,\mathrm{tr}_M \cong \mathrm{TL}_n$, not on $H_n$ itself**, so
+that is where the LP is well-posed.
+
+> **The LP dimension is Catalan, not $n!$ (convention D).** Corrected 2026-08-09.
+> Posed on all of $H_n$ with $d = n!$ the statement above is false: under the
+> production convention D the weights $y_\lambda$ vanish for every $\lambda$ with
+> $\ell(\lambda) \geq 3$, so $G \in \mathbb{R}^{n! \times n!}$ is **singular** and
+> the LP is degenerate rather than well-posed. Its rank is the surviving
+> $\sum \dim^2 = C_n$:
+>
+> | $n$ | $d = n!$ (as tabled) | $\operatorname{rank} G = C_n$ | corank |
+> |:---:|:---:|:---:|:---:|
+> | $2$ | $2$   | $2$  | $0$ |
+> | $3$ | $6$   | $5$  | $1$ |
+> | $4$ | $24$  | $14$ | $10 = 3^2 + 1^2$ |
+> | $5$ | $120$ | $42$ | $78 = 6^2+5^2+4^2+1^2$ |
+>
+> So the pentaquark row is a $42$-dimensional program, not a $120$-dimensional
+> one, and the tetraquark row is $14$, not $24$. The optimal vertex $x^*$ and the
+> active set $\mathcal{A}$ are well defined on the quotient; on $H_n$ the LP has
+> a $\operatorname{corank} G$-dimensional space of optima differing by radical
+> directions the trace cannot see. Proved in
+> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)
+> (`gram_det_eq_zero_of_radical_combination`, `RankAccounting`).
+
+  The optimal vertex $x^*$ identifies the minimum-action
 operator, and the active set $\mathcal{A}$ identifies the saturated
 demand channels.
 

@@ -82,7 +82,8 @@ now the sole open analytic input to the level-7 numerators. This file shows the
 three hypotheses are instances *of* it, and that they follow *from* it; it does
 not show it holds.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoFiveTermArguments

@@ -24,7 +24,10 @@ fn main() {
     let q0 = compute_q0();
     let qi = 1.0 / q0;
     let ha = q0 - qi;
-    let z = 1.0 / (q0.sqrt() + qi.sqrt());
+    // z: trace convention D (SU(2)/Temperley-Lieb), z = q^3/(q^2+1).
+    // Convention C (1/(q^{1/2}+q^{-1/2})) excised 2026-08-09; registry
+    // docs/coordination/trace-convention-registry.md.
+    let z = q0 * q0 * q0 / (q0 * q0 + 1.0);
 
     // Wedderburn weights for H₃(q) = 3 irreps of S₃
     // Integer: w_sym = 1/6, w_std = 4/6, w_alt = 1/6

@@ -108,3 +108,119 @@ Read first, in order:
   docs/audits/2026-07-12-c3-wall-resolution-capstone.md  (+ its "do not re-chase")
   docs/audits/2026-07-12-c3-hypersensitivity-is-ladder-1-over-u3.md
   computations/qbeta/qbeta-dladder-*.witness.json  (~20 arms, check before probing)
+
+---
+
+# SECOND FRONT-STATE CORRECTION (2026-08-09) — the resummation arm is DISSOLVED,
+# not blocked. The premise was false.
+
+I took the "ACTUAL open gate" above at face value ("identify the Borel-plane
+instanton action for the exp(Bk + Ck log k) class") and went at it analytically
+rather than by scanning, as instructed. There is no such class.
+
+**The D-ladder is CONVERGENT.** Radius
+
+    rho  = u~(q*) = 0.14279999664468968890572088577932032058109273315046...
+    1/rho          = 7.0028012849899955047002755670642702546578912740699...
+
+where q* = 1.4898947996883652482253115227781736826531279179281... is the unique
+real root > 1 of the irreducible degree-12 factor of the Delta_net numerator --
+i.e. **a zero of Q_b**, at which log R has a plain logarithmic branch point.
+
+    d_k = -(1/(2h*)) * rho^-k / k * (1 + O(1/k)),   h* = q* - 1/q* = 0.8187064713519...
+    1/(2h*) = 0.61071949165658530740674396151590239...
+
+Amplitude predicted from the residue BEFORE looking at any d_k. Measured
+k|d_k|rho^k / (1/(2h*)) = 0.9763 (k=21), 0.9874 (k=41), 0.9950 (k=101),
+0.9975 (k=201), correction -0.51/k, no oscillation. Ladder extended to k=201
+(the k=41 block was sympy `radsimp∘cancel∘together` per coefficient plus two
+O(ORD^3) steps -- purely computational; a numeric-coefficient rebuild of the
+same pipeline does ORD 403 in 53 s and matches the exact Q(sqrt3) ladder to
+200+ digits for every k <= 41).
+
+**What the 2026-07-12 divergence correction missed:** its singularity search
+covered the sqrt branch points, the u~'=0 folds, the Q_A zeros and the
+cos(alpha_eff) zeros -- but not the zeros of **Q_b**. The three nearest
+singularities in the u~ plane are all Q_b zeros (0.14280, 0.25754, 0.25754).
+The original PR #3716 Domb-Sykes "rho ~ 0.143" was RIGHT.
+
+Every published diagnostic reproduces exactly and is re-explained by the
+convergent law -- root test 5.91@21 / 6.08@27, log|d|/(k log k)=0.4963972525@41,
+log|d|/k^2=0.04496114563@41, C=0.077/0.062/0.048 (the SAME C comes out of
+fitting A+Bk+Ck log k to the exact convergent law: 0.084/0.072/0.051), and
+|O_31 - O_21| = 6.94484e-29 which is not saturation but geometric convergence
+(next increments 7.79e-41, 9.63e-53, 7.56e-124).
+
+Cheap discriminator nobody ran: **k^2 * Delta^2 log|d_k| -> 1** (measured 0.960,
+0.975, 0.987, 0.990 at k=20,40,80,99) while **k * Delta^2 -> 0** => Gevrey index
+kappa = 0. The single-instanton probe fit Delta^2 = m/k + b and read b->0 as
+"ordinary Gevrey", but both hypotheses give b->0; 1/k vs 1/k^2 is the test.
+
+**Named invariant / falsifier** (so this negative is reusable): any claim of
+Gevrey growth, a nonzero instanton action, or a Stokes ambiguity in D must first
+exhibit a singularity of log R(q) - log R(1/q) strictly inside |u~| < rho. The
+complete singular set is enumerated in the audit; none is.
+
+**Payoff, and its limit.** At the CAL-2/muon pin u~(q0) = 0.00945395003124 is
+15.10x INSIDE rho, so h*D(u~0) = -0.003486063636129187405605313929674524979867
+is already pinned to 38 digits by the committed k<=41 ladder with a rigorous
+tail bound. But this does NOT derive c_3, does NOT change its cal-anchored tier,
+and does NOT close L2: the mu-p anchor swing on Q_beta is 29.96 ppb = 3.84x the
+7.797 ppb target, and this bean's own earlier note stands -- the carrier is
+anchor-BLIND (spread 1.23e-9) and is therefore not the swinging empirical S.
+
+**So: the resummation arm was never the gate; it was an artifact.** The gate is
+still the map from a bar-odd, anchor-blind fibre-level object to an
+anchor-DEPENDENT number. Do not open another Borel/Leroy/Stokes/Ecalle probe on
+this ladder.
+
+Full write-up, with the singularity inventory, the exact minimal polynomials,
+the reproduction recipe, and the corrections owed to registry row KC22 and
+docs/precision-goals.md §"Open compute levers" (i):
+  docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md
+
+## OWED CORRECTIONS: 2 of 3 LANDED (foreground session, 2026-08-09)
+
+Independently re-verified the reversal before acting on it. Decisive check, on
+the CONVERGENT closed form with zero free parameters (|d_k| = AMP*rho^-k/k),
+against the committed witness values as targets:
+
+    diagnostic                    witness         convergent law    rel.err
+    log|d|/(k log k) @k=41        0.4963972525    0.4964783325      1.6e-4
+    log|d|/k^2       @k=41        0.04496114563   0.04496848945     1.6e-4
+    root test |d|^(1/k) @21       5.9103783       5.917128064       1.1e-3
+    root test |d|^(1/k) @27       6.0817125       6.085924273       6.9e-4
+
+A purely convergent law reproduces ALL FOUR published "Gevrey" diagnostics to
+~1e-4 with NO fitted parameter. Those diagnostics never discriminated convergent
+from divergent -- they measured geometric growth against the wrong yardstick.
+Curvature discriminator on the closed form: k^2 D^2 log|d_k| = 1.0011 (k=21),
+1.0003 (41), 1.00005 (101) -> 1, while k D^2 -> 0. kappa = 0. CONFIRMED.
+
+LANDED:
+  1. docs/precision-goals.md "Open compute levers" (i) -- lever WITHDRAWN.
+     Replaced with rho, q*, the Q_b-zero explanation, the closed form, the
+     clause-by-clause supersession of the old text, and the 38-digit pinned
+     h*D(u~0). Explicitly restates that this does NOT derive c_3, does NOT
+     change its tier, and does NOT close L2.
+  2. registry row KC22 -- exact non-holonomicity, 2-adic parity grading and
+     Lean anchors kept VERBATIM; "super-exponentially divergent (q-Gevrey,
+     radius -> 0; the ~0.143 ratio is the (k!)^C shadow, not a radius)" and the
+     "=> transcendental/resurgent (Ecalle acceleration class)" inference struck.
+     Added a note that non-holonomicity is UNAFFECTED by the radius correction.
+
+STILL OWED (3rd item), now enumerated but NOT executed:
+  3. Re-tier the resummation witnesses. Audit section 6 (appended) is the ledger
+     of all 29: 6 UNAFFECTED (arithmetic/holonomicity/2-adic), 11 ILL-POSED
+     (divergent-series estimators on a convergent series), 1 PARTIAL
+     (extension-singularity: the exact k=31 data stands, its "Divergence-class C
+     0.07737->0.06134" reading is the spurious 1/log k decay), 4 NOT ASSESSED
+     (the deformed-meridian / odd-channel-Stokes family -- DIFFERENT OBJECT, the
+     radius result does NOT automatically transfer, no claim made).
+
+     The 11 should move from scope-(a) NEGATIVE to scope-(b) CLOSED/ILL-POSED so
+     nobody reads "gate fails, needs more terms" as an open lever. Do NOT delete
+     them -- they are the evidence the arm was exhausted properly, and their
+     input (the exact ladder) is live. NO witness file was edited; all 29 still
+     report allPassed:true, which is exactly why a bulk re-run would not have
+     caught this.

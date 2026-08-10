@@ -264,6 +264,16 @@ def _anchor_layer_check(cache: dict) -> dict:
     }
 
 
+#: Observables whose "prediction" is a re-evaluation of the quantity that
+#: pinned q_0, so the framework content cancels and the residual is CODATA's
+#: own rounding. They are reported with their numbers but NOT scored — a
+#: calibration reproducing itself is not an accuracy result.
+#: AGENTS.md §"q_0 anchor convention" STRICT rule 1; the same treatment the
+#: m_p sourcing comment below has always called for ("treat it like m_e, not
+#: a precision win"), which until 2026-08-09 was documented but not enforced.
+ANCHOR_ROUNDTRIP_OBSERVABLES = {"m_p"}
+
+
 def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     """Build one row of the per-observable status table."""
     codata, sigma_exp, role, sigma_source = OBSERVABLES[obs]
@@ -281,6 +291,13 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
     from qou_substrate.precision import OUTPUT_DPS
     truncation_ppb = mpf(10) ** (-OUTPUT_DPS) / abs(pred) * mpf("1e9") if pred != 0 else mpf(0)
 
+    # An anchor round-trip is reported but never scored. Leaving beats_* as
+    # None (rather than True like m_e, or False) keeps it out of the counts
+    # without asserting either "met" or "failed" about a tautology.
+    is_anchor_roundtrip = obs in ANCHOR_ROUNDTRIP_OBSERVABLES
+    if is_anchor_roundtrip:
+        beats_1x = beats_100x = None
+
     return {
         "obs": obs,
         "role": role,
@@ -290,7 +307,16 @@ def _row_for(obs: str, pred: mpf, source_witness: str) -> dict:
         "err_ppb": fmt(err_ppb, 4),
         "sigma_exp_ppb": fmt(sig_ppb, 4),
         "target_100x_ppb": fmt(target_ppb, 4),
-        "miss_factor": fmt(miss_factor, 4),
+        "miss_factor": ("N/A (anchor round-trip)" if is_anchor_roundtrip
+                        else fmt(miss_factor, 4)),
+        "roundtrip_residual_ppb": fmt(err_ppb, 4) if is_anchor_roundtrip else None,
+        "is_anchor_roundtrip": is_anchor_roundtrip,
+        "note": (
+            "NOT SCORED. q_0 is pinned from m_p/m_e, so this 'prediction' is "
+            "m_e x (m_p/m_e) re-evaluated through the identity that pinned it "
+            "— the framework content cancels and the residual is CODATA's own "
+            "rounding, not accuracy. Reported for round-trip auditing only."
+        ) if is_anchor_roundtrip else None,
         "beats_1x_experimental": beats_1x,
         "beats_100x_experimental": beats_100x,
         "source_witness": source_witness,

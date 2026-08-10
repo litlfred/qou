@@ -43,9 +43,11 @@ regular, so it converges anyway. No complex dilogarithm, no branch cut.
 **NOT proved here** (and not stubbed — no `sorry`, no axiom):
 
 * that the integral equals `A` (needs `∫₀¹ log(1−yz)/z = −Li₂(y)`);
-* the closed-form evaluation of the integral, i.e. the sum rule itself. That
-  remains **verified to 80 dps, unproved**; routes 1–4 in `qou-0yqu` are dead
-  and Route 5 is a restatement, not a solution.
+* the closed-form evaluation of the integral, i.e. the sum rule itself. **The 5₂ sum
+rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. Routes 1–4 in
+`qou-0yqu` are dead and Route 5 is a restatement, not a solution; the route that
+worked was the complex five-term identity (Routes 51–70).
 
 -- Ref: [manuscript] bean qou-0yqu Route 5; docs/coordination/1ppq-qbeta.md
 -/

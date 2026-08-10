@@ -1,10 +1,11 @@
 ---
 # qou-ti7p
 title: HeckeAlgebra class instances on H3A/H4A; retire the redundant InstanceH3/H4 carriers
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-09T15:01:49Z
-updated_at: 2026-08-09T15:01:49Z
+updated_at: 2026-08-09T18:36:30Z
 ---
 
 
@@ -82,8 +83,50 @@ The braid relations cannot be quoted at `v = (s0).v`. `braid_σ₀σ₁ h v` is
 Quoting it at the wrong `v` also drives `isDefEq` past its heartbeat limit rather
 than failing cleanly.
 
-### Still open: retire the duplicate carriers
+### DONE: the duplicate carriers are retired
 
-`QOU/Hecke/InstanceH3.H3Alg` and `QOU/Hecke/InstanceH4.H4Alg` are now redundant
-carriers. Separate what is genuinely theirs before removing anything — see the
-list above.
+`QOU/Hecke/InstanceH3.lean` and `QOU/Hecke/InstanceH4.lean` are **deleted**.
+Nothing imported either — the only references anywhere in the tree were three
+docstring lines, now repointed. What was genuinely theirs moved to where it
+belongs, which in both cases is next to the table it is about, not next to the
+class it was fed to.
+
+| was | is now | why there |
+|---|---|---|
+| `InstanceH3.H3.mul_assoc`, `H3.mul_one` | `QOU/Mathlib/HeckeAlgebra.lean`, right after `H3.one_mul` | they are the ring laws of `H3.mul`, which is defined nine lines above; `one_mul` without `mul_one`/`mul_assoc` was conspicuously partial |
+| `H3.sigma1_sq_carrier`, `H3.sigma2_sq_carrier`, `H3.braid_carrier` | same file, renamed `H3.sigma1_sq_mul` / `H3.sigma2_sq_mul` / `H3.braid_mul` | the arbitrary-field, `H3.mul`-form counterparts of the ℝ-only generator-action `H3.sigma1_sq_eq` / `H3.sigma2_sq_eq` / `H3.braid_relation` sitting thirty lines above them |
+| `InstanceH4.mulσ_sq0/1/2`, `mulσ_braid01/12`, `mulσ_farcomm02`, the `e0` noncommutativity witness | new `QOU/Machinery/H4AsciiPresentation.lean`, namespace `QOU.Machinery.H4` | they are the Hecke presentation on `MarkovTraceH4`'s **ASCII** table, which nothing else checks |
+
+Dropped outright, as pure carrier scaffolding: `H3.mul_add`, `H3.add_mul`,
+`H3.zero_mul`, `H3.mul_zero`, `H3.smul_mul`, `H3.mul_smul` (existed only to fill
+`Ring`/`Algebra` fields); `H3Alg` and its instances; `sigma1_sq` / `sigma2_sq` /
+`braid` / `sigma1_mul_sigma2` / `sigma2_mul_sigma1` /
+`sigma1_mul_sigma2_mul_sigma1` / `decompose` / `embed3` / `instHeckeAlgebraH3` /
+`finrank_H3Alg` / `instIsHeckeOfFullRankH3`; `L0` / `L1` / `L2` and their
+`Module.End` relation transports, `H4Alg`, `embed4`, `instHeckeAlgebraH4`.
+
+### `mulσ_farcomm02` was a literal duplicate
+
+`H4BasisBridge` had proved it a second time — same statement, same table, same
+four-line proof — because it needs `σ₀σ₂ = σ₂σ₀` on the ASCII generators to
+normalise the six words where the two bases differ. That copy is gone; the bridge
+imports `H4AsciiPresentation`. This is the only place in the retirement where two
+proofs were genuinely the same proof.
+
+### Base ring widened on the way out
+
+The six ASCII relations were stated over `[Field R]` only because `InstanceH4`'s
+carrier needed a field for the `Algebra` structure. None of them inverts anything,
+so in `H4AsciiPresentation` they are `[CommRing R]`; the noncommutativity witness
+adds `[Nontrivial R]` and nothing else. (Related: qou-yax5.)
+
+### The point of the exercise, stated plainly
+
+`instHeckeAlgebraH4` was a real `HeckeAlgebra R 4 q` instance whose **dimension was
+never pinned** — `IsHeckeOfFullRank R 4 (H4Alg R q)` was left open, and the module
+said so. `InstanceH3` had both halves but on a carrier with no Wedderburn
+decomposition and no Markov trace. The pairs that now carry the load —
+`instHeckeAlgebraH3A` + `isHeckeOfFullRank_H3A`, `instHeckeAlgebraH4A` +
+`isHeckeOfFullRank_H4A` — hold of the same carriers that also carry `wedderburn₃` /
+`wedderburn₄` and, at `n = 3`, `markovTraceH3A`. That is the whole reason to prefer
+them, and the reason these two files had to go rather than sit alongside.

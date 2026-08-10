@@ -15670,6 +15670,374 @@
         "assessed_at": "2026-08-09T00:10:43.091Z",
         "source_sha": "c5e4a39ec3d4"
       }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/0910.0096v1.pdf"
+      },
+      "id": "chenliu2009",
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "supporting",
+        "rationale": "Groebner-Shirshov bases for Coxeter GROUPS W = sgp<Sigma | (s s')^m = 1>. None of the folio's live fronts (Hecke -> TL Wedderburn weights, meander/Gram determinant, Connes spectral distance, Young-lattice corners, NN binding, Kashaev spine) appears in it. It is supporting rather than tangential because it lands on a named, live piece of folio machinery: the Groebner-Shirshov warrant for H_n(q). Two things it supplies. (1) Example 3.2 (pp. 4-5) refutes by explicit counterexample the Bokut-Shiao conjecture that a GS basis of an arbitrary Coxeter group is obtainable from S = {(1),(2),(3')} using only the commuting relations, and its introduction restricts the known positive results to FINITE Coxeter groups; type A_{n-1} is finite, so the folio's own case is untouched, and recording that is the point so nobody later invokes 'GS bases for Coxeter groups' generically. (2) Its bibliography, entry [4] on p. 21, supplies the coordinates for the refid [bokut2001], which was cited at QOU/Archimedean/MassGapGm.lean:46 and named in the References block of UGB/GrobnerShirshov/HeckeGS.lean with no entry in references.ts; that entry was created in the same commit as this row, from three agreeing bibliographies in this batch. WRITER CORRECTION to the triage that produced this row: it described a live axiom hecke_is_gs_basis at HeckeGS.lean:153-158, justified in an axiom-budget table as 'Bokut & Shiao 2001, Thm 3.5' and carrying an inline '-- Ref: [bokutchen2014]'. On this branch that axiom does NOT exist. It was deleted as FALSE, and NotAGSBasis.hecke_not_gs_basis_four machine-refutes it at n = 4; the module header says so and names the missing Bokut-Shiao completion family sigma_i sigma_{i-1} ... sigma_j sigma_i -> sigma_{i-1} sigma_i sigma_{i-1} ... sigma_j. The document's value survives the correction and sharpens: the live consumer is bean qou-auq3 (complete the system), and the scope note belongs there. What this document does NOT do, and why it is not core: it proves nothing about H_n(q), never mentions a deformation parameter, and so cannot license the transfer from C[W] to the Hecke algebra that qou-auq3 needs. Scope-(a) negative: as read, it supplies no lemma that closes a gap in the folio's own argument; its value is scoping and bibliographic hygiene.",
+        "keyResults": [
+          {
+            "locator": "Example 3.2 (pp. 4-5)",
+            "statement": "For Sigma = {s1<s2<s3<s4} with m12 = m23 = m24 = infinity, m13 = 3, m14 = 2, m34 = 5, the set S = {(1),(2),(3')} is NOT a Groebner-Shirshov basis of W; the corrected basis (1) u (2) u (3'') is exhibited.",
+            "useForFolio": "Fixes the scope of the folio's Groebner-Shirshov warrant: there is no general-Coxeter theorem to appeal to, only a finite-type one. Type A_{n-1} is finite so nothing the folio asserts is affected, but bean qou-auq3 must cite the finite-type result and not a general claim.",
+            "targets": [
+              "UGB.GrobnerShirshov.Hecke.NotAGSBasis",
+              "def:hecke-normal-form"
+            ]
+          },
+          {
+            "locator": "Thm 3.19 (p. 17) with Example 3.20 (pp. 20-21)",
+            "statement": "S = {(1),(2),(3')} is a Groebner-Shirshov basis of W whenever no f in (3') has any of the four inclusion-composition properties C1-C4; three explicit families of Coxeter matrices satisfy this, including (i) all m_ij >= 3 for i > j.",
+            "useForFolio": "Unconditional, non-finiteness-based warrant for the q=1 shadow of the smallest case: the rank-2 matrix m12 = 3 (W = S_3, whose six elements index the normal forms of def:hecke-normal-form) satisfies (i). For n >= 4 none of the three families applies (m_13 = 2 kills (i) and (ii), m_21 = 3 kills (iii)), so there the warrant reverts to the finite-type theorem. Either way this is W, not H_n(q), and any remark must say so.",
+            "targets": [
+              "def:hecke-normal-form"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "new-remark",
+            "rationale": "Record in the HeckeGS.lean module header and in qou-auq3 that (a) there is no general-Coxeter GS theorem -- Example 3.2 refutes the conjecture and the positive results are finite-type, which does cover type A_{n-1} -- and (b) this document, like the Bokut-Shiao paper it follows, treats the Coxeter GROUP and never H_n(q), so the transfer to the deformation is an open point qou-auq3 must not assume. Deliberately NOT aid-proof: nothing here discharges anything.",
+            "target": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean (module header / References block; bean qou-auq3)",
+            "bean": "qou-bq5e"
+          },
+          {
+            "action": "add-reference",
+            "rationale": "The q-deformed type-A statement that qou-auq3 actually needs is not in this document and not in [bokut2001]; two other documents in this batch attribute it to Kang-Lee-Lee-Oh, J. Algebra 252 (2002) 258-292 §6. Obtain and triage that paper before citing it as load-bearing.",
+            "target": "content/schema/references.ts",
+            "bean": "qou-qspu"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "805a75c33759"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/1101.1563v1.pdf"
+      },
+      "id": null,
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "A Composition-Diamond lemma for the free partial algebra kC(X) on a free category over an oriented multigraph (Thm 4.4), plus Groebner-Shirshov bases for the simplicial category (Thm 5.1) and the cyclic category (Thm 5.4), with Cor. 5.2/5.3 reproving Mac Lane VIII.5.1/5.2. Everything new is the MULTI-OBJECT ('monoid with several objects') generalisation. The folio's Groebner-Shirshov machinery is entirely single-object associative: H_n(q) normal forms (UGB/GrobnerShirshov/HeckeGS.lean, def:hecke-normal-form), U_q(su(2)) q-Serre rewriting, transfer-matrix and MBA GS reduction, KS finiteness via Bergman's diamond lemma. The paper's own Remark after Thm 4.4 states that the one-object case 'is exact Composition-Diamond lemma for free associative algebras' -- exactly what the folio already cites via bokutchen2014 (8 sites) and bokut2005 (5 sites) -- and its Sec. 2 survey is a shorter version of bokutchen2014's. Corpus-grep: 'cyclic category', 'path algebra', 'partial algebra', 'Composition-Diamond' all 0 hits in content/; 'quiver' only in unrelated DT/BPS and glossary prose. Full-text scan of the document: Temperley-Lieb 0, Hecke 0, Catalan 0, Young 0, Jones 0; 'braid' (4) and 'Markov' (1) occur only as bibliography pointers to other papers by the same authors, not as results proved here. Closest hook, checked and rejected: def:ccg-cosimplicial-identities defers 'the deeper categorical identities (delta^j . delta^i = delta^i . delta^(j-1) for i < j)', and Thm 5.1's relation family is exactly that identity with Cor. 5.2 giving the unique canonical form; but that block's stated obstruction is a Lean dependent-typing scope limit ('would require richer types for the face maps'), not a missing mathematical statement, and maclane1971 is already in references.ts as the natural source for the presentation this document reproves. Scope-(a) negative: as read, it supplies nothing this folio can consume -- not a claim that categorical Groebner-Shirshov methods are irrelevant in principle. Revisit if the folio ever formalises a GS basis over a genuinely multi-object structure (the brane-tower crossed groupoid, or a Temperley-Lieb/tangle category rather than the TL_n algebras).",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "def:groebner-basis and the whole UGB GrobnerShirshov cluster work over free associative algebras (one object). Thm 4.4's one-object specialisation is, by the document's own Remark, the classical associative CD-lemma already sourced at 13 sites via bokutchen2014 and bokut2005, so registering this preprint would add a bibliography entry with no load-bearing citation site.",
+            "target": "def:groebner-basis"
+          },
+          {
+            "action": "no-action",
+            "rationale": "Checked as the one specific hook: Thm 5.1's coface relation and Cor. 5.2's canonical form are literally the deferred cosimplicial identities and normal form for the simplicial category. Rejected because the deferral there is a Lean dependent-typing scope limit, not an unsourced mathematical claim, and maclane1971 (already in references.ts) is the presentation this document reproves. Reopen only if a Lean formalisation of the simplicial normal form is attempted, where a confluent rewriting system would be worth more than a presentation.",
+            "target": "def:ccg-cosimplicial-identities"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "0c45b250fc4a"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/1203.6531v1.pdf"
+      },
+      "id": null,
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "Buchberger-Shirshov algorithm applied to the AFFINE Weyl group A~_n: a reduced Groebner-Shirshov basis G' (Lemma 4, families g_1..g_10, deglex with r_0 > ... > r_n), a classification of reduced words as r.w with w an 'arranged word' (Def. 12, Thm 13), and a generating-function count matched against the known Poincare polynomial of A~_n to certify G' via Composition-Diamond (Thm 18). Same machinery as the folio's Groebner-Shirshov strand (def:hecke-normal-form, tagged groebner-shirshov; trace-locality-meets-gs-nonlocality; ks-finiteness-via-diamond-lemma; sourced by bergman1978/bokut2005/bokutchen2014/lecouvey2007) but no consumable result: every Coxeter object in this folio is FINITE type A_{n-1} (B_n -> H_n(q) -> S_n), and corpus-grep over content/ excluding .lake gives 'affine weyl' 0 hits, 'affine hecke' 0 hits, 'affine braid' 0 hits, 'Poincare polynomial' 0 hits. Checked against all five live fronts: no Temperley-Lieb/Hecke-trace/Wenzl content, no meander or Gram determinant, no Lip-norm or spectral distance, nothing nuclear. The axis needing a careful rather than keyword ruling is Young-diagram combinatorics, and it was checked directly: Def. 15 'basic partitions' (k,1^l) are hooks and Thm 16 bijects chains of connected basic partitions with partitions in a fixed n x n box via the shifted sum (+)a_i = sum sigma^{i-1}(a_i), a principal-hook/Frobenius-style decomposition proved by induction on the number of hooks. That is NOT bean qou-7gei's need, which is the corner-DELETION covering relation over the repo's IsCornerCell/eraseCorner API in QOU/Mathlib/YoungDiagramCorner.lean; this document has no removable-corner notion and no covering relation, and its partitions sit in a fixed box rather than differing by one cell. The folio also already owns a proved hook decomposition (QOU/Mass/PaddedShapeLevelRational.lean section HookSplit; bean 0bt9 completed). Its q-binomial (Def. 17) is the standard Gaussian binomial already carried in QOU/MathlibExt/QGaussianBinomialPascal.lean, not the ballot-multiplicity identity [2]^n = sum_k m_k [n-2k+1] with m_k = C(n,k)-C(n,k-1) that the TL/Hecke work wants. Scope-(a) negative: as read, it supplies nothing usable here; that is not a claim that Groebner-Shirshov methods are excluded. Incidental and deliberately NOT actioned on this row because it belongs to other documents: def:hecke-normal-form's confluence claim is both unsourced and false as stated (see the rows for uploads/fd58d8e182edda805fed0946606c5ab82f81.pdf and uploads/0910.0096v1.pdf, and bean qou-43co).",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Read in full and judged: the affine A~_n basis is not the finite type A_{n-1} rewriting system def:hecke-normal-form rests on, and no block in content/ mentions affine Weyl groups. Orphan stays an orphan; no ref() entry should be created. Recorded so a later search for 'Groebner-Shirshov basis for Coxeter groups' does not re-open this file expecting the type-A source.",
+            "target": "def:hecke-normal-form"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "29541f28c1c6"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/1502.06472v1.pdf"
+      },
+      "id": "bokutchen2015pbw",
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "supporting",
+        "rationale": "A 13-page survey of Groebner-Shirshov / Composition-Diamond machinery organised around eight PBW theorems; it proves nothing new, and a full-text keyword scan returns zero hits for Hecke, Temperley, Iwahori, Catalan, Young and quantum group, so it bears on NONE of the branch's five live fronts. Its bearing is on the other chapter, unital-groebner-bases, and it is specific. Sec. 3.7 (p. 6, read and verified in the PDF) collects the counterexamples to PBW for Lie algebras over a commutative algebra: Shirshov 1953 and Cartier 1958 unconditionally, plus Cohn's 1963 family L_p = Lie_K(x1,x2,x3 | y3x3 = y2x2 + y1x1) over K = k[y1,y2,y3 | y_i^p = 0], proved for p = 2, 3, 5 by Bokut-Chen-Chen. Both folio copies of the PBW corollary -- cor:pbw and cor:ugb-pbw -- state Ug isomorphic to Sg as an R-module for a Lie algebra over an arbitrary commutative ring with unity and carry NO freeness hypothesis, while both proofs open by choosing a well-ordered basis for g (verified in the working tree: pbw-corollary.md and pbw-corollary-proof.md in unital-groebner-bases-chapter, and pbw-corollary.md in buchberger-and-pbw). Every neighbouring block in that chapter states 'free as an R-module' explicitly, so the omission reads as a drafting slip. Cohn's K is a commutative ring with unity and L_p is not K-free, so the counterexample family sits inside the corollary's stated hypotheses, and a module isomorphism compatible with the canonical map would force g -> Ug injective. Graded supporting rather than core because the document is a secondary source: it reports the counterexamples in one paragraph and proves none of them, so the primary citations belong to Cartier 1958 / Shirshov 1953 / Bokut-Chen-Chen 2011, none of which is in references.ts or has been read. It supplies nothing toward the one open sorry in the PBW Lean files (normal_form_exists, the termination half), so no aid-proof is proposed.",
+        "keyResults": [
+          {
+            "locator": "Sec. 3.7, p. 6",
+            "statement": "Shirshov (1953) and Cartier (1958) give counterexamples to PBW for Lie algebras over a commutative algebra; Cohn (1963) conjectures that L_p = Lie_K(x1,x2,x3 | y3x3 = y2x2 + y1x1) over K = k[y1,y2,y3 | y_i^p = 0] does not embed into its universal enveloping associative algebra, and Bokut-Chen-Chen prove the conjecture for p = 2, 3, 5.",
+            "useForFolio": "Names the counterexamples showing the missing 'free as an R-module' hypothesis in cor:pbw / cor:ugb-pbw cannot simply be dropped, and supplies the citation for both the hypothesis fix and a sharpness remark.",
+            "targets": [
+              "cor:pbw",
+              "cor:ugb-pbw",
+              "prf:pbw"
+            ]
+          },
+          {
+            "locator": "Sec. 3.1, p. 4",
+            "statement": "For L = Lie_k(X|S) with U(L) = k<X | S^(-)>: S is a Lie GS basis iff S is an associative GS basis, and in that case U(L) has linear basis {u_1 ... u_t : u_1 <= ... <= u_t, u_i in Irr(S) intersect ALSW(X)}.",
+            "useForFolio": "prf:pbw asserts 'the argument that G is a Groebner-Shirshov basis is exactly as in the classical setting' and cites nothing at all (pbw-corollary-proof.ts has no cites field). This is the classical field-case statement that sentence defers to.",
+            "targets": [
+              "prf:pbw"
+            ]
+          },
+          {
+            "locator": "Sec. 1, pp. 2-3",
+            "statement": "Over a commutative algebra K one works in the double-free algebra M_{k[Y]}(X) with lcm(u_Y u_X, v_Y v_X) = lcm(u_Y,v_Y) lcm(u_X,v_X); a composition relative to a trivial lcm(u_X,v_X) is automatically trivial over a field but NOT over a commutative algebra when lcm(u_Y,v_Y) != u_Y v_Y, so a given pair generally has infinitely many compositions.",
+            "useForFolio": "Candidate one-line remark on why the commutative ground ring costs this chapter nothing -- the folio requires unit leading coefficients (LC in R^x, lambda in R^*) plus a monomial basis, so coefficients never entangle with the word monoid. GATED: it must first be checked that those unit conditions genuinely exclude the non-trivial trivial-lcm compositions rather than merely making them unreachable in the worked examples.",
+            "targets": [
+              "thm:buchberger",
+              "thm:ugb-buchberger",
+              "def:s-polynomial"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "cite-in-block",
+            "rationale": "cor:pbw states the isomorphism over an arbitrary commutative ring with unity with no hypothesis on g, but its proof begins 'Choose a well-ordered basis {x_i | i in I} for g'. Add 'which is free as an R-module' to the statement, matching the wording every other block in the chapter uses, and cite Sec. 3.7 for why it cannot be dropped. The joined bean covers both copies plus the Lean docstrings.",
+            "target": "cor:pbw",
+            "bean": "qou-pwd4"
+          },
+          {
+            "action": "cite-in-block",
+            "rationale": "Same defect in the second copy: buchberger-and-pbw/pbw-corollary.md states the corollary with no freeness hypothesis and then proves it by 'Choosing a well-ordered basis {x_i | i in I} for g'. Fix both copies in one change so they do not drift apart.",
+            "target": "cor:ugb-pbw",
+            "bean": "qou-pwd4"
+          },
+          {
+            "action": "new-remark",
+            "rationale": "A sharpness remark recording that the freeness hypothesis is not cosmetic: over a commutative ring PBW genuinely fails, and Cohn's family is the standard witness. Must be phrased as reported-by-survey unless the primaries are read first; none of Cohn, Cartier, Shirshov or Bokut-Chen-Chen is in references.ts.",
+            "target": "cor:pbw",
+            "bean": "qou-tvsp"
+          },
+          {
+            "action": "new-remark",
+            "rationale": "One-line remark on why the commutative ground ring costs nothing here, gated on the check named in the third keyResult. Drop the remark if the check fails -- in which case thm:buchberger has a defect and needs its own item.",
+            "target": "thm:buchberger",
+            "bean": "qou-bzj5"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "381cd869fcc0"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/1808.05026v1.pdf"
+      },
+      "id": null,
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "VERDICT CHANGED BY THE WRITER from supporting to tangential, on evidence the single-document pass could not have: this is the arXiv sibling of the published document assessed at uploads/fd58d8e182edda805fed0946606c5ab82f81.pdf (registered as kimlee2018), by the same two authors in the same year, and its Sec. 3 -- the only folio-relevant part of either -- is VERBATIM the same type A_{n-1} review, down to Prop. 3.1, the monomial order, the standard-monomial description and Example 3.2 with |M_{T(A_3)}| = C_4 = 14. Both quote that proposition from Kang-Lee-Lee-Oh, J. Algebra 252 (2002) Prop. 6.2. The two documents differ only in their own theorems: the published one does type B, this one does types B and D (dim T(B_n) = (n+2)C_n - 1, dim T(D_n) = ((n+3)/2)C_n - 1), and the folio is strictly type A -- corpus-grep for 'Coxeter type', 'type B_n', 'type D_n' over content/ returns nothing outside .lake. So this document contributes no citable content the published sibling does not already carry, and registering it would create a bibliography entry with no load-bearing citation site. Tangential is the honest verdict on THIS row and it should be read together with the kimlee2018 row rather than as a judgement on the mathematics, which is identical. The Sec. 3 content that does matter to the folio -- dim TL_n = Catalan(n) from an explicit standard-monomial basis, and the convention check that the loop parameter enters only through E_i^2 = delta E_i with E_iE_jE_i = E_i un-rescaled and delta a free complex parameter -- is recorded on the kimlee2018 row and now cited from there. A reviewer who wants type D in the bibliography should register this separately and say what cites it; do not register it unattached.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "The document's own theorems (GS bases and dimensions for Temperley-Lieb of types B and D) have no consumer: the folio's Hecke tower is the type-A Artin braid group throughout, and no block, Lean declaration or script mentions a Coxeter type other than A.",
+            "target": "prop:markov-trace-frobenius-selection"
+          },
+          {
+            "action": "no-action",
+            "rationale": "No ref() entry for this document. Its Sec. 3 is verbatim the published sibling's, which was registered as kimlee2018 in the same commit as this row and is the citable venue; a second entry would be a bib orphan by construction. Recorded so a later pass does not re-open the question or mint a colliding refid -- both triage passes independently proposed the id 'kimlee2018' for these two distinct documents.",
+            "target": "content/schema/references.ts"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "2781e0b34e78"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/1809.08419v1.pdf"
+      },
+      "id": null,
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "Groebner-Shirshov bases and standard-monomial bases for the GROUP ALGEBRAS C[W] of the NON-crystallographic Coxeter groups of type H: H2 = I2(5) (Prop 3.1, 10 monomials), H3 the full icosahedral group (Thm 3.3, 10 x 12 = 120 = |H3|), and H4 (Thm 4.17, 10 x 12 x 120 = 14400 = |H4|), certified by counting standard monomials against |W| or by closure under composition. The folio's Groebner-Shirshov thread is large and real, but every instance is TYPE A and q-DEFORMED: H_n(q) with sigma_i^2 -> (q - q^-1) sigma_i + 1, whose normal forms index S_n. Type H appears nowhere in content/: '600-cell', '120-cell', 'noncrystallographic', 'non-crystallographic', 'Coxeter group of type H' all return zero hits outside references.ts. The tempting bridges do not survive checking. |H3| = 120 coincides with |S5| = |Aut(Bring's curve)| and with 2 x |A5|, but H3 = A5 x C2 has a centre and S5 does not, so the icosahedral A5 that conj:klein-bring-icosahedral-bridge and the Lean theorem icosahedral_235_realizable work with is not this group; and a monomial enumeration of C[H3] does not bear on a (2,3,5)-relation realizability proof, so aid-proof would fail its hypothesis check and is not proposed. The quasicrystal framing touches rem:fivefold-crystallographic-obstruction thematically, but this document proves nothing about the crystallographic restriction -- it only cites others for it. Scope-(a) negative: as read, it supplies nothing the folio consumes; that is not a claim that Groebner-Shirshov methods for Coxeter groups are irrelevant here, since the type-A member of that literature is load-bearing. What the reading did surface, and what makes it worth the row, is the dangling refid [bokut2001] cited at QOU/Archimedean/MassGapGm.lean:46 with no entry in references.ts; that entry was created in the same commit as this row from three agreeing bibliographies in this batch, including this document's. WRITER CORRECTION to the triage that produced this row: it described that refid as the justification of a live axiom hecke_is_gs_basis in HeckeGS.lean. No such axiom exists on this branch -- it was deleted as false and is machine-refuted at n = 4 by NotAGSBasis.hecke_not_gs_basis_four. The scope question the triage raised (does the Bokut-Shiao theorem cover H_n(q) or only C[W]?) is real and is now carried by beans qou-bq5e and qou-qspu.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "add-reference",
+            "rationale": "rem:fivefold-crystallographic-obstruction states the crystallographic restriction (rotational order k in {1,2,3,4,6} for n = 2,3) and ties 5-fold symmetry to aperiodicity, citing only shechtman1984 -- an experimental discovery paper, not a source for the algebraic mechanism. This document's reference list names two candidates (Patera & Twarock, J. Phys. A 35 (2002) 1551-1574; Chen-Moody-Patera, Fields Inst. Monogr. 10 (1998) 135-178), neither in references.ts. SECOND-ORDER AND UNVERIFIED: the proposal comes from seeing the works cited, not from reading them. Read Patera-Twarock before adding, and drop the action if it does not support the block's claim.",
+            "target": "rem:fivefold-crystallographic-obstruction",
+            "bean": "qou-b4fe"
+          },
+          {
+            "action": "no-action",
+            "rationale": "No ref() entry should be created for this document itself: GS bases for type H2/H3/H4 group algebras at q = 1 have no consumer in a folio whose Coxeter/Hecke machinery is entirely type A and q-deformed. Recording the read so the row is not re-triaged.",
+            "target": "content/schema/references.ts"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "7ebca632544a"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/2002.07369v2.pdf"
+      },
+      "id": null,
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "Groebner-Shirshov bases for the finite Coxeter GROUPS of the exceptional types G2, F4, E6, E7, E8, computed by Shirshov's algorithm over K<X> under deg-lex: a re-labelled presentation of E_n (Def 3.1, p. 6), then GB(E6) (Thm 3.2, pp. 6-7), GB(E7) (Thm 3.3, p. 8), GB(E8) (Thm 3.4, p. 10), with GB(G2) and GB(F4) in Appendix A (Thms A.3, A.4, p. 12) and a remark that n = 9 in the same presentation is the affine group. Sec. 2 is textbook GS setup and adds nothing the folio does not already have via bokutchen2014. The stated contribution is completing the exceptional types after the classical A_n, B_n, D_n cases. Two independent mismatches with this folio, either decisive. (1) TYPE: every GS object here is type A -- H_n(q) on braid generators, the normal-form words spanning H_3(q), the GS confinement filtration on T_w, the plactic/crystal bridge in type A_n. This document proves nothing in type A; the A_5 relations quoted at the head of the Thm 3.2 proof are cited, not proved. (2) DEFORMATION: its object is the Coxeter group as a semigroup presentation over a field, never the Iwahori-Hecke algebra. The folio's E6/E7/E8 sightings are affine-E8 Coxeter MARKS via McKay (cyclotomic-boundary-at-keystone) and ADE labels on ALE singularities, not normal forms in W(E8); grep for 'Coxeter group of type' and 'Weyl group of E8' over content returns nothing. None of the live fronts touches an exceptional Coxeter group. One fact worth carrying forward, reported here rather than proved here (p. 2): Chen and Liu produced a counter-example to the general Bokut conjecture on GS bases of arbitrary Coxeter groups -- that document is uploads/0910.0096v1.pdf in this same batch, now registered as chenliu2009, and is the primary for the caution. Scope-(a) negative: as read, this document supplies nothing this folio can consume; that is not a claim that GS bases for Coxeter groups are irrelevant here -- the type-A member of that literature is load-bearing, it is simply a different paper.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Orphan in an adjacent literature the folio genuinely uses, but for types the folio never touches, and at q = 1. add-reference would be inflation and cite-in-block has no honest site. Recording the classification is the useful output: a future search for 'Groebner-Shirshov bases for Coxeter groups' should not re-open this file expecting the type-A source, which is [bokut2001] for the group case and, for the deformation, Kang-Lee-Lee-Oh 2002 (bean qou-qspu).",
+            "target": "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/HeckeGS.lean"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "6b8b1e509553"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/2008.09788v2.pdf"
+      },
+      "id": null,
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "tangential",
+        "rationale": "An expository survey on the edge of algebra, logic and geometry: universal algebraic geometry over algebraic systems and logical rigidity (Sec. 2.1), Plotkin's problem on Aut(End(W(X))) for free commutative/associative algebras (Sec. 2.2), nonstandard analysis (ultraproducts at an infinite prime) applied to the Belov-Kontsevich isomorphism and to Plotkin's conjecture for polynomial symplectomorphisms (Sec. 2.3), a universal Turing machine realised inside a finitely presented algebra so that nilpotency and zero-divisor problems become undecidable (Sec. 3.1), and undecidability of the embeddability problem for varieties over a characteristic-zero field via a Matiyasevich family (Sec. 3.2). Measured against what the folio needs, it supplies nothing: a full-text search finds zero occurrences of Hecke, Temperley-Lieb, Young/partition diagram, Catalan, Wenzl, meander, Gram determinant, Connes, Rieffel, Lip-norm, Kantorovich, deuteron/nuclear, Kashaev, dilogarithm or hyperbolic volume; the two 'Markov' hits are A. A. Markov's 1947 word-problem paper and an author name, not the Markov trace. Two adjacencies were checked and both fail to be load-bearing. (a) The folio's unital-Groebner-bases chapter is about UNITAL GS bases over an arbitrary commutative ground ring; Sec. 3.1 works over a field and is about algorithmic undecidability, not ground-ring generality or PBW, and the chapter's existing citations already cover the background. (b) The information-theory chapter (rem:skein-turing-machine, thm:geometry-of-incompleteness, prop:incompleteness-implies-horizon) asserts a Turing-complete braid/Skein substrate, and Thms 3.1-3.2 are a genuine algebraic instance of computation embedded in an algebra -- but the folio makes no claim about the decidability of any algebraic property of a presented algebra, so no block wants it, and this document explicitly defers those proofs ('The entire proofs can be found at [29]') to Ivanov-Pogodaev and Malev, J. Algebra 508 (2018) 575-588, which is what should be cited if that fact is ever wanted. Scope-(a) negative: as read, it supplies nothing usable here; that is not a claim that model-theoretic or undecidability methods are irrelevant to the folio in principle.",
+        "keyResults": [],
+        "proposedActions": [
+          {
+            "action": "no-action",
+            "rationale": "Nearest live hook checked: rem:skein-turing-machine encodes a Turing machine as a braid and carries no citations, and Sec. 3.1's Thms 3.1-3.2 are the closest external analogue in the corpus. But the remark claims computation-in-a-braid, not undecidability of an algebraic property, so nothing there is unsourced; and this is a survey that defers the proofs to a different paper. Citing it would register a bibliography entry whose load-bearing content lives elsewhere.",
+            "target": "rem:skein-turing-machine"
+          },
+          {
+            "action": "no-action",
+            "rationale": "Second hook checked: the unital-Groebner-bases chapter. Sec. 3.1's noncommutative Groebner-basis material is over a field and about undecidability; it does not touch the arbitrary-commutative-ground-ring generality that thm:unital-groebner-decomposition and cor:pbw assert, which leitnerpawloski2004 already sources.",
+            "target": "thm:unital-groebner-decomposition"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "460f4f5432cb"
+      }
+    },
+    {
+      "source": {
+        "kind": "upload",
+        "file": "uploads/fd58d8e182edda805fed0946606c5ab82f81.pdf"
+      },
+      "id": "kimlee2018",
+      "status": "unreviewed",
+      "relevance": {
+        "verdict": "supporting",
+        "rationale": "Identified from the running head and title page, not the filename (the filename is an opaque hash). A Groebner-Shirshov basis and standard monomials for the Temperley-Lieb algebra of type B_n, after a review of type A_{n-1}, with dim T(B_n) = (n+2)C_n - 1. A document about presentations and counting, not about traces, forms or specialisations, and against the folio's live fronts it supplies almost nothing: no Markov trace, no Wedderburn weights, no q-integers, no SU(2) specialisation, nothing resembling [2]^n = sum_k m_k [n-2k+1] or sum_k m_k^2 = Catalan(n); no bilinear form of any kind, hence nothing on the meander/TL Gram determinant or positive-definiteness at real delta; nothing on Lip-norms; nothing on the Young-lattice covering relation for qou-7gei; nothing nuclear. Wenzl is not cited anywhere in it, so it neither confirms nor denies the Invent. Math. 92 (1988) attribution the branch wants. What makes it supporting is Sec. 3, and it has two live homes. First, Prop. 3.1 is a published explicit linear basis and normal form for TL_n with cardinality C_n, i.e. dim TL_n = Catalan(n) at general n from the literature, at a moment when thm:jones-markov-trace asserts H_n(q)/rad = TL_n(q) and that Catalan count with an EMPTY cites list (its own title reads '(Jones, 1987)'), and when the folio's support for the general-n count is TemperleyLiebTower.lean's catalan_three/four/five checking the folio's own table against Mathlib -- internal consistency, not a source. Second, and more consequential, Prop. 3.1's basis needs TWO FAMILIES BEYOND the defining relations (E_{i,j}E_i - E_{i-2,j}E_i and E_jE_{i,j} - E_jE_{i,j+2}), i.e. the presentation must be COMPLETED before it is confluent -- which is exactly the phenomenon that makes def:hecke-normal-form's uncited assertion 'This reduction is confluent' FALSE for the folio's three-rule system, as NotAGSBasis.hecke_not_gs_basis_four machine-refutes at n = 4. Sec. 3 also serves as an external convention check: the loop parameter enters only through E_i^2 = delta E_i, the E_iE_jE_i = E_i relation is un-rescaled and delta is a free complex parameter, which is the convention the folio adopted (e_i := q - sigma_i, e_i^2 = [2]_q e_i, delta = [2]_q) with no square root. WRITER CORRECTION to the triage that produced this row: it reported the GS basis as E_i^2 - E_i, 'the idempotent normalisation in which delta does not appear'. That was a text-extraction artifact -- the delta glyph is dropped by pypdf on this PDF. The relation is E_i^2 - delta E_i, verified against the same verbatim Sec. 3 in the sibling document uploads/1808.05026v1.pdf, whose text layer renders delta correctly. Two caveats keep it out of core: Prop. 3.1 is quoted from Kang-Lee-Lee-Oh, J. Algebra 252 (2002) Prop. 6.2, which is the primary and is not yet in references.ts; and dim TL_n = C_n does not by itself give the open identity sum_k m_k^2 = Catalan(n), which additionally needs semisimplicity of TL_n at delta = 2.0108969 and the two-row indexing of the Wedderburn blocks, neither of which this document states. The document's own theorem (type B) is deliberately not recorded as a key result: the folio's type-B cluster is about partition-content cancellation and folded crystals and has no site that wants a type-B TL dimension.",
+        "keyResults": [
+          {
+            "locator": "Prop. 3.1, p. 14 (quoted from Kang-Lee-Lee-Oh [9, Prop. 6.2])",
+            "statement": "Under degree-lex with E_1 < ... < E_{n-1}, T(A_{n-1}) has the Groebner-Shirshov basis {E_i^2 - delta E_i; E_iE_j - E_jE_i for i > j+1; E_{i,j}E_i - E_{i-2,j}E_i for i > j; E_jE_{i,j} - E_jE_{i,j+2} for i > j} (with E_{i,j} = E_i E_{i-1} ... E_j), and its standard monomials E_{i1,j1}...E_{ip,jp} with strictly increasing i's and j's and i_k >= j_k number the nth Catalan number, so dim T(A_{n-1}) = C_n.",
+            "useForFolio": "Two uses. (a) A literature source for dim TL_n = Catalan(n) at general n, asserted uncited at thm:jones-markov-trace and at markov-trace-frobenius-selection.md:82 and supported today only by fixed-n Lean instances. (b) The basis needs two families beyond the defining relations, which is the completion phenomenon that def:hecke-normal-form's confluence claim ignores and that NotAGSBasis.hecke_not_gs_basis_four refutes at n = 4 for the Hecke system.",
+            "targets": [
+              "thm:jones-markov-trace",
+              "def:hecke-normal-form",
+              "qou:QOU.QBeta.TemperleyLiebTower.counts_are_catalan"
+            ]
+          },
+          {
+            "locator": "Sec. 3, defining relations of T(A_{n-1}), pp. 13-14",
+            "statement": "The loop parameter enters only through E_i^2 = delta E_i; the relation E_iE_jE_i = E_i for j = i +/- 1 is un-rescaled, and delta is a free complex parameter.",
+            "useForFolio": "External convention check for the notation register's delta = [2]_q = q + q^-1 ruling: the standard presentation in the literature is the one the folio adopted, with no q^{1/2} and no delta-scaling of the E_iE_jE_i relation, which is exactly the excised convention-C error the register warns against.",
+            "targets": [
+              "tbl:notation-register-table3-data"
+            ]
+          },
+          {
+            "locator": "Remark (1), p. 14",
+            "statement": "The product of two standard monomials of T(A_{n-1}) is again a standard monomial up to a scalar, so the multiplication table closes on the basis.",
+            "useForFolio": "The concrete multiplication rule on the 14-element TL_4 basis, needed only if the C5 / H_4 interface claim recorded as arithmetic in TemperleyLiebTower.interface_dimension_gain is ever exhibited explicitly rather than counted. Not needed today, and qou-8iru is explicit that the H_4 interface must not be fitted.",
+            "targets": [
+              "qou:QOU.QBeta.TemperleyLiebTower.interface_dimension_gain"
+            ]
+          }
+        ],
+        "proposedActions": [
+          {
+            "action": "cite-in-block",
+            "rationale": "def:hecke-normal-form asserts, with no cites field at all, that the three-rule rewriting system on H_n(q) is confluent -- which the folio's own sorry-free NotAGSBasis.hecke_not_gs_basis_four refutes at n = 4. This is a defect fix, not merely a missing citation: Prop. 3.1 here shows the same completion is needed on the Temperley-Lieb quotient, and [bokut2001] names the Coxeter-side completion family. Cite only after the block is corrected, and note that the q-deformed primary is Kang-Lee-Lee-Oh 2002, not this document.",
+            "target": "def:hecke-normal-form",
+            "bean": "qou-43co"
+          },
+          {
+            "action": "cite-in-block",
+            "rationale": "thm:jones-markov-trace has an empty cites list while asserting H_n(q)/rad = TL_n(q), that the vanishing blocks span the radical of the trace form, and that the surviving sum of dim^2 is Catalan(n); its own title names Jones 1987. jones1987 is already in references.ts and is the primary missing citation; this document's Prop. 3.1 is the secondary source for dim TL_n = Catalan(n) with an explicit basis.",
+            "target": "thm:jones-markov-trace",
+            "bean": "qou-uyud"
+          },
+          {
+            "action": "add-reference",
+            "rationale": "Kang-Lee-Lee-Oh, J. Algebra 252 (2002) 258-292 is the source Prop. 3.1 is quoted from and, per this document's and its sibling's introductions, the paper that computes GS bases for Hecke algebras AND Temperley-Lieb algebras of type A -- i.e. the q-deformed statement that def:hecke-normal-form and bean qou-auq3 actually need and that [bokut2001] (a Coxeter-group theorem) does not supply. NOT READ: this is a lead from two bibliographies, not a triaged source. Obtain and triage before citing it as load-bearing.",
+            "target": "content/schema/references.ts",
+            "bean": "qou-qspu"
+          }
+        ],
+        "assessed_by": {
+          "kind": "agent",
+          "model": "claude-opus-5"
+        },
+        "assessed_at": "2026-08-09T19:30:00Z",
+        "source_sha": "292cb048e709"
+      }
     }
   ]
 }

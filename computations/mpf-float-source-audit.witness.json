@@ -67,7 +67,7 @@
       },
       {
         "file": "computations/deltalambda/threerow_sign_crossing_probe.py",
-        "line": 125,
+        "line": 133,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "return mp.mpf(float(np.trace(prod)))",

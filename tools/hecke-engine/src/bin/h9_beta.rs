@@ -71,7 +71,9 @@ struct HeckeEngine {
 impl HeckeEngine {
     fn new(q: f64) -> Self {
         let qi = 1.0 / q;
-        Self { ha: q - qi, _s: q.sqrt() - qi.sqrt(), z: 1.0 / (q.sqrt() + qi.sqrt()), q, qi }
+        // z: trace convention D (SU(2)/Temperley-Lieb), z = q^3/(q^2+1),
+        // matching gram::markov_z. C excised 2026-08-09.
+        Self { ha: q - qi, _s: q.sqrt() - qi.sqrt(), z: q * q * q / (q * q + 1.0), q, qi }
     }
 
     #[inline]

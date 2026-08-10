@@ -21,7 +21,7 @@ import { proposition } from "../../schema/builders";
  *
  * Markov-trace values on the H₃ basis (axiom-determined):
  *   tr_M(1)          = 1,
- *   tr_M(σ_i)        = z,                  z = 1/(q^{1/2}+q^{-1/2}),
+ *   tr_M(σ_i)        = z,                  z = q^{3}/(q^{2}+1)   (convention D),
  *   tr_M(σ_1 σ_2)    = z²,
  *   tr_M(σ_1 σ_2 σ_1) = z(1 + h z) = z + h z²,
  *

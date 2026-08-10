@@ -1,0 +1,103 @@
+{
+  "probe": "qbeta_5two_route58_proof_path",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 60,
+  "follows": "Routes 54-57",
+  "lean_input": "QOU/QBeta/FiveTwoComplexPentagon.lean -- pentagonSum_eq_pi_sq_div_two",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the starting point is PROVED, not assumed. Route 54's FiveTwoComplexPentagon.pentagonSum_eq_pi_sq_div_two (Lean, sorry-free, standard axioms) applies at BOTH (y_3,y_1) and (y_3,y_2), since y_3 = 0.4301597 lies in (0,1) and y_1, y_2 are off both cuts. Both instances evaluate to pi^2/2",
+      "y3": "0.4301597090019467340886",
+      "y3_in_unit_interval": true,
+      "residual_at_y3_y1": "6.4145373e-61",
+      "residual_at_y3_y2": "6.4145373e-61",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "adding the two instances and using a_5 = 1/a_3 (Route 55, exact and equivalent to the cubic) gives Sum_y L + L(y_3) + inv_a + inv_b + L(a_4) + L(b_4) = pi^2, with a_4 = 1 - y_3 y_1 = 1 - 1/y_2. Pure bookkeeping on G1 -- no new input",
+      "a5_minus_inv_a3": "7.7787691e-62",
+      "a4_minus_one_minus_inv_y2": "0.0",
+      "residual": "2.4892061e-60",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "LINK 1, OPEN. inv_a = L(a_3) + L(1/a_3) = (pi^2 + pi*th)/6 + i*pi*log(y_3)/4. The log-squared terms cancel in an inversion pair, leaving only pi^2 and pi times a log or an angle -- which is why the shape has no log^2. Rests on the angle identity arg(a_3) = (pi - arg y_1)/3 and on |a_3|^2 = y_3. NOT PROVED, here or in Lean; elementary but open",
+      "inv_a": "(2.184251010489867497811092 - 0.6625608876641954953468716j)",
+      "predicted": "(2.184251010489867497811092 - 0.6625608876641954953468716j)",
+      "residual_a": "3.2072687e-61",
+      "residual_b": "3.2072687e-61",
+      "arg_a3": "0.7038577213014765174917608",
+      "arg_a3_pslq_vs_[arg_y1, pi]": [
+        3,
+        1,
+        -1
+      ],
+      "arg_identity_residual": "7.7787691e-62",
+      "abs_a3_sq_minus_y3": "3.8893845e-62",
+      "proved": false,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "LINK 2, OPEN. L(a_4) - L(y_2) = (3 pi*th - pi^2)/6 - i*pi*log(y_3)/4, i.e. the anharmonic relation L(1 - 1/z) - L(z) with its branch pinned. Route 55 showed y -> 1 - 1/y carries the saddle cubic onto X^3-X+1 as an identity of rational functions, so this is that map read on L. NOT PROVED; elementary but open",
+      "L_a4_minus_L_y2": "(-0.02698323592330325245638415 + 0.6625608876641954953468716j)",
+      "predicted": "(-0.02698323592330325245638415 + 0.6625608876641954953468716j)",
+      "residual_a": "2.7148533e-61",
+      "residual_b": "2.7148533e-61",
+      "proved": false,
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "G2 + G3 + G4 collapse to Sum_y L = pi^2/2 - (2 pi/3) arg(y_1) -- Route 47's closed form, until now a numerical observation with no derivation. It is now the consequence of a PROVED theorem and two elementary links",
+      "sum_y_L": "2.7775344259781150640625374842775",
+      "derived": "2.7775344259781150640625374842775",
+      "residual": "9.3345229e-61",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "LINK 3, OPEN. Sum log y log(1-y) = log(y_3)^2 - (4/3) th^2 + (4 pi/3) th. This follows from the saddle branch equation 2 log y - 3 log(1-y) = 2 pi i eps with eps = (+1,-1,0), plus |y_1|^2 = 1/y_3: it reduces to (2/3) Sum log^2 y - (2 pi i/3) Sum eps log y. NOT PROVED here; the integrality of eps IS a sorry-free theorem on main (branch_data_of_cubic), the evaluation is not",
+      "sum_log_log": "3.61160748901893360986952662868",
+      "predicted": "3.61160748901893360986952662868",
+      "residual": "3.1115076e-61",
+      "bridge_identity_residual": "1.5557538e-61",
+      "proved": false,
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "the chain reaches the sum rule's STATED target: A = -pi^2/6 - log(y_3)^2/2 + (2/3)(th - pi)^2, the same expression the corpus already records. So the chain is not a new statement -- it is a route to the existing one",
+      "A_measured": "0.97173068146864825912777416993855",
+      "A_from_chain": "0.97173068146864825912777416993855",
+      "A_corpus_target": "0.97173068146864825912777416993855",
+      "residual_chain": "6.2230153e-61",
+      "residual_corpus": "1.5557538e-61",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "THE GATE THAT MATTERS. Links G3, G4, G6 and the angle identity arg(a_3) = (pi - arg y_1)/3 are NOT PROVED, here or in Lean. Each is elementary -- inversion, the anharmonic relation, and the saddle branch equation, with branches pinned -- and none is deep, but open is open. The 5_2 sum rule is NOT proved by this probe and must not be reported as proved",
+      "open_links": [
+        "inv_a evaluation (G3)",
+        "arg(a_3) = (pi - arg y_1)/3 (G3)",
+        "L(1-1/z) - L(z) evaluation (G4)",
+        "Sum log y log(1-y) evaluation (G6)"
+      ],
+      "proved_input": "FiveTwoComplexPentagon.pentagonSum_eq_pi_sq_div_two (Lean, sorry-free)",
+      "sum_rule_proved": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "chain": "the PROVED one-variable five-term identity, applied at (y_3,y_1) and (y_3,y_2), plus four elementary evaluations, gives Route 47's closed form and then the sum rule's stated target for A.",
+    "open": "those four evaluations are not proved. They are branch bookkeeping on inversion, the anharmonic relation and the saddle branch equation.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

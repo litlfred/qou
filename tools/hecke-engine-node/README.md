@@ -22,7 +22,7 @@ Mirrors `pyhecke-native`'s top-level surface:
 
 | Function | Returns | Notes |
 |---|---|---|
-| `markovZ(q)` | `number` | Markov parameter `z = 1/(q^{1/2}+q^{-1/2})` |
+| `markovZ(q)` | `number` | Markov parameter `z = q^3/(q^2+1)` (trace convention D) |
 | `heckeH(q)` | `number` | Hecke relation coefficient `h = q − q⁻¹` |
 | `traceWeights(q)` | `number[6]` | Markov-trace weights on the NF basis |
 | `gramMatrix(q)` | `number[6][6]` | Gram matrix `G_ij = tr_M(b_i · b_j)` |
