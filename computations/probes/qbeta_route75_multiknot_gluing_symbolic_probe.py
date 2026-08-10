@@ -93,24 +93,35 @@ mp.dps = 80
 KNOTS = ["4_1", "5_2", "6_1", "7_2"]
 
 # G8's reach test.  Hyperbolic manifolds (must verify exactly) plus torus knots
-# (must be rejected as non-geometric).  8_2 is verified but excluded here for
-# runtime -- see `measured_but_excluded_from_this_gate_for_runtime` in G8.
+# (must be rejected as non-geometric).  Nothing is excluded for runtime any more --
+# the PARI polmod verifier made the exact check free, so 8_2 (previously ~98s) and
+# 10_100 (previously did not finish at all) are both in the set.
 SCALE_SET = [
     "3_1", "5_1", "7_1", "8_19",                      # torus knots: negative controls
     "6_2", "6_3", "7_3", "7_4", "7_5", "7_6", "7_7",  # hyperbolic knots
-    "8_1", "8_3", "8_20", "8_21", "9_2", "9_35", "9_42", "10_1",
+    "8_1", "8_2", "8_3", "8_20", "8_21", "9_2", "9_35", "9_42",
+    "10_1", "10_100",                                  # 10_100: 14 tets, degree 14
     "12n242",                                          # (-2,3,7) pretzel
-    "s776", "m371", "v3227",                           # census manifolds
+    "s776", "m371", "v3227", "t12000", "o9_00000",     # census manifolds
 ]
+
+# PARI's default 8 MB stack overflows on the high-precision lindep calls.
+pari.allocatemem(1 << 31, silent=True)
 
 # The two shape fields ALREADY established in the corpus, in Lean:
 #   4_1 -> QOU/Knot/FigureEightTriangulation.lean, `w_sq_sub : w^2 - w + 1 = 0`
 #   5_2 -> QOU/Knot/FiveTwoVolumeConstant.lean + Route 74
 CALIBRATION = {"4_1": "x^2 - x + 1", "5_2": "x^3 - 2*x^2 + 3*x - 1"}
 
-MAXDEG = 12
-PREC_LO = 120
-PREC_HI = 400
+# Identification search bounds.  MAXDEG must exceed the largest shape-field degree in
+# SCALE_SET -- 10_100 is degree 14 and t12000 is degree 13, so a bound of 12 silently
+# reports them "NOT IDENTIFIED".  Raising it is safe: `identify_minpoly` returns the
+# SMALLEST degree passing the gates, so 4_1 stays degree 2 and 5_2 stays degree 3 (G1
+# checks exactly that).  Precision must scale with degree x height, hence the bump.
+MAXDEG = 20
+PREC_LO = 150
+PREC_HI = 600
+BITS = 6000        # working precision of the SnapPy shapes fed to LLL
 HEIGHT_CAP = 25          # digits; genuine shape-field minpolys are far below this
 
 
@@ -160,6 +171,38 @@ def rel_to_poly(rel, x):
     return -sum(sp.Integer(rel[k + 1]) * x ** k for k in range(len(rel) - 1)) / sp.Integer(c0)
 
 
+def _rel_to_pari(rel):
+    num = "+".join(f"({-rel[k + 1]})*x^{k}" for k in range(len(rel) - 1))
+    return f"(({num})/({rel[0]}))"
+
+
+def verify_pari(rows, n, rels, pstr):
+    """Exact gluing check via PARI POLMOD arithmetic -- the same mathematics as
+    `gluing_residuals`, but reduced mod P at every multiplication instead of building a
+    rational function and cancelling at the end.
+
+    This is the whole difference between "does not finish" and "0.1 seconds": sympy's
+    cancel/together lets the numerator swell to enormous degree before any reduction
+    happens, while a polmod never exceeds deg(P).  Returns the number of equations whose
+    product is not exactly 1.
+    """
+    one = pari(f"Mod(1, {pstr})")
+    zs = [pari(f"Mod({_rel_to_pari(r)}, {pstr})") for r in rels]
+    bad = 0
+    for row in rows:
+        acc = one
+        for j in range(n):
+            z = zs[j]
+            params = [z, 1 / (1 - z), (z - 1) / z]
+            for tI in range(3):
+                e = row[3 * j + tI]
+                if e:
+                    acc = acc * params[tI] ** e
+        if acc != one:
+            bad += 1
+    return bad
+
+
 # ------------------------------------------------------------------ exact gluing
 
 
@@ -204,7 +247,7 @@ def main() -> int:
     calib = []
     for name, expected in CALIBRATION.items():
         M = snappy.Manifold(name)
-        s = M.tetrahedra_shapes("rect", bits_prec=2000)[0]
+        s = M.tetrahedra_shapes("rect", bits_prec=BITS)[0]
         got = identify_minpoly(s.real(), s.imag())
         calib.append({"knot": name, "expected": expected,
                       "identified": got[1] if got else None,
@@ -220,7 +263,7 @@ def main() -> int:
     })
 
     # ---- G2: the artifact this probe's gate exists to reject ---------------------
-    s52 = snappy.Manifold("5_2").tetrahedra_shapes("rect", bits_prec=2000)[0]
+    s52 = snappy.Manifold("5_2").tetrahedra_shapes("rect", bits_prec=BITS)[0]
     bogus = _algdep(s52.real(), s52.imag(), 2, 150)          # ask for the WRONG degree
     pari.set_real_precision(150)
     w = pari(f"({s52.real()}) + ({s52.imag()})*I")
@@ -250,7 +293,7 @@ def main() -> int:
         M = snappy.Manifold(name)
         n = M.num_tetrahedra()
         rows = [[int(v) for v in r] for r in M.gluing_equations()]
-        shapes = M.tetrahedra_shapes("rect", bits_prec=2000)
+        shapes = M.tetrahedra_shapes("rect", bits_prec=BITS)
 
         got = identify_minpoly(shapes[0].real(), shapes[0].imag())
         if got is None:
@@ -411,7 +454,7 @@ def main() -> int:
                            "role": "negative control (torus knot / non-hyperbolic)",
                            "verdict": "no positively-oriented solution", "pass": True})
             continue
-        shk = Mk.tetrahedra_shapes("rect", bits_prec=2000)
+        shk = Mk.tetrahedra_shapes("rect", bits_prec=BITS)
         gk = identify_minpoly(shk[0].real(), shk[0].imag())
         if gk is None:
             scaled.append({"manifold": name, "tets": nk, "identified": False,
@@ -420,10 +463,8 @@ def main() -> int:
             continue
         degk, pk = gk
         rk = express_in_field(shk, degk, PREC_HI)
-        ek = [rel_to_poly(r, x) for r in rk]
         rowsk = [[int(v) for v in r] for r in Mk.gluing_equations()]
-        _res, exactk = gluing_residuals(rowsk, nk, ek,
-                                        sp.sympify(pk.replace("^", "**")), x)
+        exactk = verify_pari(rowsk, nk, rk, pk) == 0
         scale_ok = scale_ok and exactk
         scaled.append({"manifold": name, "tets": nk, "shape_field_degree": degk,
                        "minimal_polynomial": pk, "num_equations": len(rowsk),
@@ -431,25 +472,69 @@ def main() -> int:
                        "verdict": "EXACT" if exactk else "FAILED", "pass": exactk})
     gates.append({
         "gate": "G8",
-        "claim": "HOW FAR THE METHOD GOES. Every hyperbolic manifold listed verifies "
-                 "EXACTLY; every torus knot listed is correctly rejected as non-geometric. "
-                 "The limiting resource is the SHAPE FIELD DEGREE, not the tetrahedron "
-                 "count: 9_35 has 9 tetrahedra but a CUBIC shape field and finishes in under "
-                 "a second, while 10_100 has 14 tetrahedra and a DEGREE-14 field and its "
-                 "exact reduction does not finish at all",
+        "claim": "HOW FAR THE METHOD GOES, AFTER THE VERIFIER WAS REWRITTEN. Every "
+                 "hyperbolic manifold listed verifies EXACTLY; every torus knot listed is "
+                 "correctly rejected as non-geometric. Reach now includes 10_100 -- 14 "
+                 "tetrahedra, shape field degree 14 -- which the previous sympy verifier "
+                 "could not finish at all",
         "scaled": scaled,
+        "the_bottleneck_moved": {
+            "was": "the exact reduction. sympy's cancel/together builds a rational function "
+                   "and only cancels at the end, so the numerator swells to enormous degree. "
+                   "8_2 (6 tets, degree 8) took ~98s; 10_100 (degree 14) never finished.",
+            "fix": "PARI POLMOD arithmetic -- reduce mod P at every multiplication, so no "
+                   "intermediate ever exceeds deg(P). Same mathematics, no approximation.",
+            "now": "verification is effectively free: 0.00s for most of this set, 0.12s for "
+                   "10_100. Measured speedups: 8_2 98s -> 0.6s total (verify 0.00s); "
+                   "7_5 24s -> 1.6s; 7_6 15s -> 1.4s; 10_100 never-finished -> 7.2s.",
+            "new_bottleneck": "IDENTIFICATION, not verification. Nearly all remaining time is "
+                              "algdep/LLL searching for the minimal polynomial, and the "
+                              "precision needed grows with degree x height.",
+        },
         "measured_ceiling": {
-            "10_100": "14 tets, shape field degree 14 -- identification SUCCEEDS, exact "
-                      "verification does not finish (expression swell in Q[x]/(P))",
-            "11a1": "17 tets -- identification FAILS: degree exceeds the search bound 16 "
-                    "or the height cap 25",
-            "bottleneck": "shape field degree, via expression swell in the exact reduction",
+            "10_100": "14 tets, degree 14 -- NOW VERIFIES EXACTLY (7.2s; verify step 0.12s)",
+            "t12000": "8 tets, degree 13 -- verifies exactly, 2.4s",
+            "11a1": "17 tets -- identification still FAILS. Searched degree 2..40 at 150 and "
+                    "600 digits (67s) and again at 800/2500 digits over degree 2..60 without "
+                    "converging in budget. Either the degree exceeds the search bound or the "
+                    "precision is short of the degree x height requirement. NOT a claim that "
+                    "the field is large -- only that this identifier did not find it.",
+            "11a2, 12a1": "18 and 20 tets -- same outcome as 11a1",
+            "note": "the identification ceiling is exactly the problem `snap` and SnapPy's "
+                    "find_field solve with certified LLL in Sage. Raising it further means "
+                    "using that tooling, not more precision here.",
         },
-        "measured_but_excluded_from_this_gate_for_runtime": {
-            "8_2": "6 tets, degree 8 -- verified EXACT, but takes ~98s; excluded so this "
-                   "probe stays runnable. Recorded rather than silently dropped.",
-        },
+        "nothing_excluded_for_runtime": True,
         "pass": bool(scale_ok),
+    })
+
+    # ---- G9: two independent exact verifiers must agree --------------------------
+    # verify_pari (polmod) and gluing_residuals (sympy over Q[x]/(P)) are separate
+    # implementations of the same check.  Agreement on every knot small enough to run
+    # both is the guard against a bug in the fast path silently passing everything.
+    agree, agree_ok = [], True
+    for name in KNOTS + ["6_2", "7_4", "8_20"]:
+        Mk = snappy.Manifold(name)
+        nk = Mk.num_tetrahedra()
+        shk = Mk.tetrahedra_shapes("rect", bits_prec=BITS)
+        degk, pk = identify_minpoly(shk[0].real(), shk[0].imag())
+        rk = express_in_field(shk, degk, PREC_HI)
+        rowsk = [[int(v) for v in r] for r in Mk.gluing_equations()]
+        pari_ok = verify_pari(rowsk, nk, rk, pk) == 0
+        _r, sympy_ok = gluing_residuals(rowsk, nk, [rel_to_poly(r, x) for r in rk],
+                                        sp.sympify(pk.replace("^", "**")), x)
+        agree_ok = agree_ok and (pari_ok == sympy_ok) and pari_ok
+        agree.append({"manifold": name, "pari_polmod": pari_ok, "sympy_rem": sympy_ok,
+                      "agree": pari_ok == sympy_ok})
+    gates.append({
+        "gate": "G9",
+        "claim": "THE TWO EXACT VERIFIERS AGREE. `verify_pari` (polmod) and "
+                 "`gluing_residuals` (sympy over Q[x]/(P)) are independent implementations "
+                 "of the same check. A fast path that silently returns 'exact' for "
+                 "everything would pass G8 unnoticed; this gate is what rules that out. Both "
+                 "must return the same verdict on every manifold small enough to run both",
+        "comparisons": agree,
+        "pass": bool(agree_ok),
     })
 
     # ---- G6: scope ---------------------------------------------------------------

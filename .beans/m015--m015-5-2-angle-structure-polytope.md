@@ -11,7 +11,7 @@ tags:
     - 5_2
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-10T00:30:00Z
+updated_at: 2026-08-10T01:15:00Z
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -234,3 +234,56 @@ Raising the ceiling, if wanted later: the expensive step is sympy's `cancel`/`re
 ℚ[x]/(P). Working in a proper number-field arithmetic (PARI `nfeltmul`, or `python-flint`)
 instead of generic sympy rational-function simplification is the obvious fix, and would
 likely carry this well past degree 14.
+
+---
+**2026-08-10 (later) — ceiling raised: PARI polmod arithmetic. The bottleneck MOVED.**
+
+Acting on the previous entry's own recommendation ("replace sympy `cancel`/`rem` with
+real number-field arithmetic"). Gate G8 rewritten, new gate G9.
+
+**The change.** `verify_pari` multiplies PARI **polmods** — reduced mod `P` at every
+step — instead of building a rational function and cancelling at the end. Same
+mathematics, no approximation, but no intermediate ever exceeds `deg(P)`. sympy's
+`cancel`/`together` let the numerator swell to enormous degree before any reduction
+happens; that swell *was* the ceiling.
+
+| manifold | tets | deg | sympy | PARI |
+|---|---|---|---|---|
+| 7₅ | 7 | 8 | 24.4s | 1.6s |
+| 7₆ | 8 | 9 | 14.9s | 1.4s |
+| 8₂ | 6 | 8 | **98.4s** | 0.6s (verify 0.00s) |
+| 10₁₀₀ | 14 | 14 | **never finished** | **7.2s** (verify 0.12s) |
+
+Whole probe: 48s → **18s**, while going from 19 manifolds to **27** and adding the two
+that previously could not be done at all. Nothing is excluded for runtime any more.
+
+**Reach now: 23 hyperbolic manifolds all EXACT, 4 torus knots correctly rejected**, up
+to **14 tetrahedra** and shape field **degree 14**.
+
+**⚠ The bottleneck moved, and that is the real result.** Verification is now
+effectively free (0.00s for most of the set, 0.12s at degree 14). Essentially all
+remaining time is **identification** — `algdep`/LLL — whose precision requirement grows
+with degree × height. So the honest statement is no longer "degree is the bottleneck via
+expression swell"; it is:
+
+> exact verification is free; finding the field is the whole cost.
+
+**Where it still stops, stated as a limit of this identifier and not of the manifolds.**
+11a1 (17 tets), 11a2 (18), 12a1 (20): searched degree 2..40 at 150/600 digits (67s each)
+and again degree 2..60 at 800/2500 digits without converging in budget. That is **not**
+a claim that these shape fields are large — only that this identifier did not find them.
+Raising this further means using certified LLL in `snap`/Sage (`find_field`), which is
+the tool the literature already points at; it is not a matter of more precision here.
+
+**A trap I nearly shipped.** After the rewrite, G8 reported 10₁₀₀ and t12000 as "NOT
+IDENTIFIED" — not because identification failed, but because the probe's `MAXDEG = 12`
+was **below their degrees (14 and 13)**. A search bound silently masquerading as a
+negative result. Raised to 20, with precision scaled to match, and the reason is now a
+comment at the constant. G1's calibration is what makes raising it safe: the identifier
+returns the *smallest* degree passing the gates, so 4₁ stays degree 2 and 5₂ degree 3.
+
+**New gate G9 — the two exact verifiers must agree.** `verify_pari` (polmod) and
+`gluing_residuals` (sympy over ℚ[x]/(P)) are independent implementations of the same
+check. A fast path that silently returned "exact" for everything would sail through G8
+unnoticed; G9 is what rules that out. Both agree on all 7 manifolds small enough to run
+both. **Do not delete the slow verifier** — it is the only check on the fast one.
