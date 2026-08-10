@@ -355,6 +355,45 @@ def work_list():
     return items, orphans
 
 
+def work_list_from(path: pathlib.Path):
+    """[(witness, producer)] from an explicit set, e.g. the D blast radius.
+
+    `work_list()` answers "which witnesses are convention C **by content**".
+    That is the wrong question after an upstream migration: a downstream
+    witness recording a number derived from a migrated trace is stale without
+    any convention-C content of its own. This takes the producer set as given
+    (schema `convention-d-blast-radius/v1`) and reuses everything else --
+    dependency ordering, per-producer timeout, journal, drift classification.
+
+    Producers whose file is missing are dropped with a warning rather than
+    silently, since a shrinking sweep that still says "done" is exactly the
+    failure this harness exists to stop.
+    """
+    doc = json.loads(pathlib.Path(path).read_text())
+    index = {q.name: q for q in (REPO / "computations").rglob("*.py")}
+    items, missing = [], []
+    for row in doc.get("producers", []):
+        prod = row["producer"]
+        src = index.get(pathlib.Path(prod).name)
+        if src is None:
+            missing.append(prod)
+            continue
+        rel = str(src.relative_to(REPO))
+        for w in row.get("writes", []):
+            wp = (REPO / "computations" / w)
+            if not wp.exists():
+                hits = list((REPO / "computations").rglob(w))
+                if not hits:
+                    continue
+                wp = hits[0]
+            items.append((str(wp.relative_to(REPO)), rel))
+    if missing:
+        print(f"  ! {len(missing)} producer(s) in the set have no file on disk: "
+              f"{', '.join(pathlib.Path(m).name for m in missing[:5])}"
+              + (" ..." if len(missing) > 5 else ""), flush=True)
+    return items, []
+
+
 #: Witness basenames referenced in a producer's source.
 #: [.-] because 13 witnesses are `foo-witness.json`, including the
 #: y_lambda family that five producers read. A `\.witness\.json`
@@ -572,8 +611,8 @@ class SerialLock:
         return False
 
 
-def run_all(timeout: int):
-    items, orphans = work_list()
+def run_all(timeout: int, source: pathlib.Path | None = None):
+    items, orphans = work_list_from(source) if source else work_list()
     # One producer may own several witnesses; run it once.
     by_producer = {}
     for w, p in items:
@@ -738,10 +777,22 @@ def main() -> int:
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--timeout", type=int, default=900)
+    ap.add_argument("--from", dest="source", metavar="JSON",
+                    help="run an explicit producer set (convention-d-blast-radius/v1) "
+                         "instead of the convention-C content scan")
+    ap.add_argument("--journal", metavar="PATH",
+                    help="journal file for this sweep; a distinct sweep needs a "
+                         "distinct clock, or done_set() skips it as already run")
     ap.add_argument("--stale", action="store_true",
                     help="list producers that ran before an upstream witness "
                          "they read was rewritten (exit 1 if any)")
     a = ap.parse_args()
+    if a.journal:
+        # A distinct sweep needs a distinct clock. done_set() keys off this
+        # file, so reusing the convention-C journal would mark most of a D
+        # sweep "already done" and skip it -- silently, and looking finished.
+        global LOG
+        LOG = pathlib.Path(a.journal)
     if a.stale:
         rows = stale_readers()
         if not rows:
@@ -754,7 +805,8 @@ def main() -> int:
                 print(f"      reads a witness written later by  {u}")
         return 1
     if a.plan:
-        items, orphans = work_list()
+        items, orphans = (work_list_from(pathlib.Path(a.source)) if a.source
+                          else work_list())
         by = {}
         for w, p in items:
             by.setdefault(p, []).append(w)
@@ -766,7 +818,7 @@ def main() -> int:
         return 0
     if a.run:
         with SerialLock(REPO / ".work" / "convention-c-regen.lock"):
-            run_all(a.timeout)
+            run_all(a.timeout, pathlib.Path(a.source) if a.source else None)
         return 0
     if a.report:
         report()
