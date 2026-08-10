@@ -160,7 +160,36 @@ regime and the framework already threads `q ↔ q⁻¹` (bar-even/odd, the prove
 sufficient** — convergence also needs the `f_k`, which nothing here bounds. Needs
 a specific Σ(2,3,5) series before it counts.
 
-Ordered reading list, the domain claim first because everything turns on it:
+**ROUTE SELECTED (2026-08-10, all six papers read).** The two candidate routes
+separate cleanly, in opposite directions:
+
+* **Habiro / unified WRT — cannot reach q₀, structurally.** Confirmed above, and
+  *strengthened* by the newest extension: 2412.04241 (Garoufalidis–Scholze–
+  Wheeler–Zagier) still defines elements as "collections of power series at each
+  complex root of unity", and the convergence it adds is **p-adic** on
+  `{q ∈ C_p : |q|_p = 1}`. On the complex side it says the series are
+  "**factorially divergent series over the complex numbers**". The substrate
+  anchor is archimedean and real, so this is the wrong analytic world entirely.
+* **State integrals — the anchor IS in the domain.** 1411.6062 §1.1 states
+  `I_{A,B}(b) = ∫ Φ_b(x)^B e^{−Aπix²} dx` is "an absolutely convergent integral
+  ... for b with `b² ∉ ℝ≤0`". Mapping `q₀` through `q = e^{2πiτ}`, `τ = b²` gives
+  `b² = −0.0166063414046 i`, purely imaginary ⇒ **converges**
+  ([probe](../../computations/probes/state_integral_domain_substrate_anchor_probe.py)).
+
+⇒ **Attack the keystone's archimedean continuation on the analytic/state-integral
+side, not the Habiro side.** The corpus already holds the kernel (Faddeev `Φ_q`,
+cheat-sheet §4). Caveats that keep this from being more than route selection:
+convergence ≠ identification of `W_λ`; the paper's *evaluation* theorem is at
+rational `b²` (roots of unity again) and does not transfer to our purely-imaginary
+`b²`; and `τ = b²` is the standard convention, inferred rather than quoted.
+
+Carried as a question, NOT a correspondence: the paper's headline 4₁ identity is
+`I_{1,2}(1) = (e^{iπ/6}/√3)·2·sinh(V/2π)` with `V` verified to be the corpus's own
+`Vol(4₁) = 2·Cl₂(π/3)` (the CAL-2 anchor) to 3.9e-31 — the anchor volume appearing
+inside a **sinh**, next to a framework that carries a bar-odd sinh / bar-even cosh
+split. At `b=1`, not the anchor, matched to nothing. Anti-numerology applies.
+
+Ordered reading list (all six now read), the domain claim first because everything turned on it:
 [math/0605314](https://arxiv.org/abs/math/0605314),
 [1106.6298](https://arxiv.org/abs/1106.6298),
 [1511.05628](https://arxiv.org/abs/1511.05628),
