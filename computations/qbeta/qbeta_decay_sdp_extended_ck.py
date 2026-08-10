@@ -209,16 +209,31 @@ def main() -> None:
     resolved: dict[int, bool] = {}
 
     def _record(k: int, R_at_rung: mpf) -> None:
-        """Log rung `k`'s residual and decide whether it is resolved."""
+        """Log the residual `|R-1|` as it stands *before* rung `k` is divided out."""
         residual[k] = abs(R_at_rung - 1)
-        prev = residual.get(k - 1)
-        if prev is None:
-            resolved[k] = True          # first rung has no predecessor to beat
-        else:
+
+    def _settle_resolution() -> None:
+        """Decide, per rung, whether imposing THAT rung's factor bought anything.
+
+        Attribution matters and is easy to get backwards (it was, in the first
+        version of this guard, 2026-08-10). `residual[k]` is the residual
+        *before* rung `k` is applied, so the reduction achieved BY rung `k` is
+        `residual[k] / residual[k+1]` — not `residual[k-1] / residual[k]`, which
+        is what the *previous* rung bought. Crediting a rung with its
+        predecessor's drop marks one rung too many as resolved.
+
+        The final rung has no successor, so there is no evidence either way and
+        it is recorded unresolved.
+        """
+        ks = sorted(residual)
+        for k in ks:
+            nxt = residual.get(k + 1)
+            if nxt is None or nxt == 0:
+                resolved[k] = False     # no successor ⇒ no evidence
+                continue
             resolved[k] = (
-                residual[k] > 0
-                and prev / residual[k] >= MIN_RESIDUAL_DROP
-                and resolved[k - 1]     # a floor never un-floors
+                residual[k] / nxt >= MIN_RESIDUAL_DROP
+                and resolved.get(k - 1, True)   # a floor never un-floors
             )
 
     # ── Replay k=2..7 to advance R sequentially ─────────────────
@@ -285,6 +300,8 @@ def main() -> None:
     c_k[10] = (R - 1) / (b ** 10 * hbar_q_sq ** 10)
     _record(10, R)
 
+    _settle_resolution()
+
     # Print summary
     print("Sequential c_k extraction (k=2..10, 50dps):")
     print(f"{'k':>3} {'c_k extracted (15dps)':>26} {'note':>40}")
@@ -314,11 +331,11 @@ def main() -> None:
     print(f"  a contributing rung should drop the residual by ~1/u; "
           f"threshold is {mp.nstr(MIN_RESIDUAL_DROP, 3)}x")
     print()
-    print(f"{'k':>3} {'|R_k - 1|':>14} {'drop vs prev':>14} {'resolved':>10}")
+    print(f"{'k':>3} {'|R_k - 1|':>14} {'drop BY c_k':>14} {'resolved':>10}")
     print("-" * 78)
     for k in range(2, 11):
-        prev = residual.get(k - 1)
-        drop = "—" if prev is None else f"{float(prev / residual[k]):.3g}x"
+        nxt = residual.get(k + 1)
+        drop = "—" if not nxt else f"{float(residual[k] / nxt):.3g}x"
         print(f"{k:>3} {float(residual[k]):>14.4g} {drop:>14} "
               f"{'yes' if resolved[k] else 'NO':>10}")
     print()

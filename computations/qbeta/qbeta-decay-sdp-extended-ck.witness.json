@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T03:34:42.346579+00:00",
-  "commitSha": "c504d143f3993a29cb8f68267da7d5267b11764e",
+  "computedAt": "2026-08-10T03:44:30.686823+00:00",
+  "commitSha": "3926badf24119b33a68b700cbb0949f1ade02d8f",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "4acf7908db30",
-  "scriptCommitSha": "be7266653dadecb5e1c03d56f9253bd2a17de8a2",
+  "scriptHash": "305df5e6cc71",
+  "scriptCommitSha": "3926badf24119b33a68b700cbb0949f1ade02d8f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -58,7 +58,7 @@
     "c_k_extracted_50dps": {
       "c_2": "-1.0172173285667249513240662532242009198014962646275",
       "c_3": "-2.0216155770600061205300249700296445660947408177192",
-      "c_4": "-2.5378659117940255569454500193524358506536471385217",
+      "c_4": null,
       "c_5": null,
       "c_6": null,
       "c_7": null,
@@ -69,7 +69,7 @@
     "c_k_extracted_float": {
       "c_2": -1.017217328566725,
       "c_3": -2.021615577060006,
-      "c_4": -2.5378659117940257,
+      "c_4": null,
       "c_5": null,
       "c_6": null,
       "c_7": null,
@@ -82,8 +82,8 @@
       "one_over_u": "117.40897634209195493",
       "min_residual_drop_threshold": "10.0",
       "expected_drop_if_rung_contributes": "~1/u",
-      "last_resolved_rung": 4,
-      "n_unresolved": 6,
+      "last_resolved_rung": 3,
+      "n_unresolved": 7,
       "per_rung": {
         "c_2": {
           "residual_abs_R_minus_1": "0.000073792316967279762255",
@@ -98,7 +98,7 @@
         "c_4": {
           "residual_abs_R_minus_1": "1.3355601927065391939e-8",
           "drop_vs_prev": "93.5257510481",
-          "resolved": true
+          "resolved": false
         },
         "c_5": {
           "residual_abs_R_minus_1": "7.3925161367259318736e-9",
@@ -134,6 +134,7 @@
       "why_unresolved_rungs_are_null": "c_k := (R_k - 1)/u^k is a valid extraction only while R_k - 1 IS the rung-k contribution. Once the residual stops dropping it is the model's accuracy floor; dividing a fixed floor by an ever-smaller u^k manufactures c_k ~ floor/u^k, a geometric blow-up with ratio exactly 1/u and flat |c_k u^k|. Emitting those as numbers is what let them read as data."
     },
     "c_k_unresolved_raw_quotient": {
+      "c_4": "-2.5378659117940255569454500193524358506536471385217",
       "c_5": "-164.92966962997120315189506117224341793666720626325",
       "c_6": "-19217.145207925212509908947239063591863338276085142",
       "c_7": "-2256618.8430159516520727812660641237219777899347218",
