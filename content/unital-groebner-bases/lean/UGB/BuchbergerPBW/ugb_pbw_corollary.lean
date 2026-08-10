@@ -37,10 +37,14 @@ concrete consequences:
   (`normal_form_unique` against `qSerre_is_gs_basis`).
 
 The `R`-linear bijection `U𝔤 ≅ S𝔤` itself is not assembled (raw
-`AlgElement` data type). The single `sorry` is the existence/termination
-half of `ReducesToNF`; the PBW-normality and uniqueness halves are
-discharged by `NormalForms.lean`'s `pbw_monomials_are_normal_forms` and
-`normal_form_unique`.
+`AlgElement` data type). The existence/termination half of `ReducesToNF` is
+now proved — `normal_form_exists`, from termination plus the
+unit-leading-coefficient hypothesis `hlc` (bean qou-lzoo; the axiom it
+replaced was **false**). `hlc` is a hypothesis here rather than discharged,
+because `qSerreRewritingSystem` is itself an axiom and its rules cannot be
+inspected; see the note at the use site. The PBW-normality and uniqueness
+halves are discharged by `NormalForms.lean`'s
+`pbw_monomials_are_normal_forms` and `normal_form_unique`.
 -/
 
 namespace UGB.BuchbergerPBW
@@ -63,7 +67,9 @@ variable {k : Type v} [Field k]
     The conclusion is a **concrete conjunction over real `SU2Gen`
     types** (`isNormalForm` + `ReducesToNF` + uniqueness). -/
 -- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/pbw-corollary.ts
-theorem ugb_pbw_corollary (qs : QSerreRelations k) :
+theorem ugb_pbw_corollary (qs : QSerreRelations k)
+    (hlc : ∀ r ∈ (qSerreRewritingSystem k qs).rules,
+      IsUnit (r.lc degLexOrder)) :
     (∀ m : PBWMonomial,
        isNormalForm degLexOrder (qSerreRewritingSystem k qs)
          ⟨fun w => if w = m.toMonomial then (1 : k) else 0,
@@ -82,9 +88,20 @@ theorem ugb_pbw_corollary (qs : QSerreRelations k) :
     exact pbw_monomials_are_normal_forms k qs m
   · intro f
     refine ⟨?_, ?_⟩
-    · -- Existence of the normal form (termination half). Remaining step.
-      -- Ref: [manuscript] unital-groebner-bases — existence of PBW normal form
-      exact normal_form_exists degLexOrder (qSerreRewritingSystem k qs) (qSerre_is_gs_basis k qs) f
+    · -- Existence of the normal form — now proved, from termination plus `hlc`
+      -- (bean qou-lzoo); it used to invoke an axiom that is in fact false.
+      --
+      -- Unlike the "no quasi-zeros" hypothesis below, `hlc` is NOT discharged
+      -- here, and deliberately so. `qSerreRewritingSystem` is itself an axiom,
+      -- so its rules cannot be inspected to show their leading coefficients are
+      -- units — and asserting monicity as a fresh axiom in order to discharge
+      -- this one would be assuming the thing, not proving it. The honest place
+      -- to close this is a strengthened specification of
+      -- `qSerreRewritingSystem` that carries monic rules (the q-Serre relations
+      -- are monic by construction, each oriented so its leading monomial has
+      -- coefficient 1); until that lands, the dependency stays visible in the
+      -- type rather than hidden in an axiom.
+      exact normal_form_exists degLexOrder (qSerreRewritingSystem k qs) hlc f
     · -- Uniqueness against the q-Serre GS basis.
       intro nf₁ nf₂ h₁ h₂
       -- The "no quasi-zeros" hypothesis (Leitner–Pawloski) is discharged

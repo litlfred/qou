@@ -760,84 +760,110 @@ theorem isGrobnerShirshovBasis_of_single_letter_rule {G : Type u} {k : Type v}
     exact ⟨ic.spoly, ⟨MultiStepReduction.refl _,
       fun r' _ m hm => absurd (hzero m) hm⟩, hzero⟩
 
-/-! ## §6  Existence of Normal Forms -/
+/-! ## §6  Existence of Normal Forms
 
-/-- **⚠ REFUTED — this axiom is FALSE. Do not build on it; do not discharge it.**
+**The `normal_form_exists` axiom that used to stand here was FALSE, and is
+gone** (bean qou-lzoo). `NormalFormExistsRefutation.normal_form_exists_false`
+proves its negation at `G = SU2Gen`, `k = ℤ`, sorry-free and depending on no
+framework axiom. The counterexample is the one-rule system with relation `2·K`:
+it *is* a Gröbner–Shirshov basis, and the element `K` is **stuck** — not in
+normal form, because `isNormalForm` is a condition on monomials and the rule's
+leading monomial occurs; yet admitting no step, because a step must also solve
+`c · lc(r) = 1` with `lc(r) = 2`, and `2` is not a unit in `ℤ`.
 
-    `UGB.GrobnerShirshov.NormalFormExistsRefutation.normal_form_exists_false`
-    proves the negation of this statement at `G = SU2Gen`, `k = ℤ`, sorry-free
-    and depending on no other framework axiom.
+The error was to read termination as "the stuck element is in normal form".
+Termination gives only "no infinite reduction sequence"; the two coincide
+exactly when every rule has an invertible leading coefficient — the hypothesis
+Bergman 1978 Thm 1.2 carries and the axiom dropped. `hgs` was a red herring: the
+counterexample satisfies it, so no confluence hypothesis could have rescued it.
 
-    The counterexample is the one-rule system with relation `2·K`. It **is** a
-    Gröbner–Shirshov basis (by this file's own
-    `isGrobnerShirshovBasis_of_single_letter_rule`), and the element `K` has no
-    normal form: it is not in normal form, because `isNormalForm` is a condition
-    on *monomials* and the rule's leading monomial `K` occurs; but no step
-    applies, because a step must additionally solve `c · lc(r) = 1` with
-    `lc(r) = 2`, and `2` is not a unit in `ℤ`.
+`normal_form_exists` is now a **theorem** with that hypothesis, and `reduce` is
+built from it, so nothing in the development rests on the false statement. -/
 
-    The justification below is where it went wrong: the termination argument is
-    fine, but termination gives "no infinite reduction sequence", **not** "the
-    stuck element is in normal form". Those coincide only when every rule has an
-    invertible leading coefficient. Note also that `hgs` is a red herring — the
-    counterexample satisfies it, so no confluence hypothesis can rescue the
-    statement.
+/-- **Termination**: every sequence of single-step reductions is finite.
 
-    **Use `CompositionLemma.normal_form_exists_of_unit_lc` instead**: the same
-    conclusion, *proved*, from `reduction_well_founded` plus
-    `∀ r ∈ sys.rules, IsUnit (r.lc ord)`, and without the unused `hgs`.
+    Each `SingleStepReduction` strictly decreases the multiset of monomials in
+    the support under the Dershowitz–Manna ordering, which inherits
+    well-foundedness from `ord.wf`.
 
-    This axiom is retained only because `reduce` below is defined from it and
-    threading the unit-leading-coefficient hypothesis through `reduce` and its
-    consumers (`composition_lemma`, `retraction_property`, `buchberger`,
-    `pbw_corollary`, `main_theorem_statement`, `heckeCost_well_defined`) is a
-    migration, not a local edit. Until that lands, every result routed through
-    `reduce` is formally unsound.
+    Axiomatised because the proof requires a `Multiset (Monomial G)`
+    representation of `AlgElement` support, a proof that a step strictly
+    decreases it, and the Dershowitz–Manna theorem — components that need
+    subtraction and support extraction not available at this level.
 
-    Original justification (retained for the record, and incorrect as an
-    argument for this statement): the admissible order `ord` is well-founded,
-    and each single-step reduction eliminates the monomial it targets while
-    changing only strictly smaller ones.  By well-founded induction on the
-    Dershowitz–Manna multiset ordering, iterated reduction terminates in a
-    normal form.
+    Lives here rather than in `CompositionLemma` because it is stated purely in
+    this file's vocabulary and `normal_form_exists` below needs it.
 
-    Reference: Bergman 1978, Theorem 1.2 (existence part) — where the rules are
-    monic, which is exactly the hypothesis this statement dropped. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (existence of normal forms via well-founded reduction)
-axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §2 Thm 1.1 (reduction is well-founded / terminating)
+axiom reduction_well_founded {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k) :
+    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
+
+/-- **Existence of normal forms** — the repaired statement, and a theorem.
+
+    Two differences from the axiom this replaces, and both matter:
+
+    1. It carries `hlc`: every rule has a **unit leading coefficient**. Without
+       it the statement is false (see the section note).
+    2. It does **not** take `hgs`. Existence of normal forms is pure termination
+       — reduce until stuck — and has nothing to do with confluence. The axiom's
+       `hgs` argument was never used by the content, and carrying it obscured
+       that the real missing hypothesis was elsewhere.
+
+    Proof: well-founded induction on `reduction_well_founded`. At `x`, either `x`
+    is already normal (done, in zero steps), or
+    `exists_singleStep_of_not_isNormalForm` produces a step `x → y`, and the
+    induction hypothesis applies at `y` precisely because `x → y`.
+
+    Reference: Bergman 1978, Theorem 1.2 (existence part), where the rules are
+    monic — which is what `hlc` restores. -/
+-- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (existence of normal forms via well-founded reduction, monic rules)
+theorem normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    ∃ (nf : AlgElement G k), ReducesToNF ord sys f nf
+    ∃ (nf : AlgElement G k), ReducesToNF ord sys f nf := by
+  induction (reduction_well_founded ord sys f) with
+  | intro x _ ih =>
+    by_cases hnf : isNormalForm ord sys x
+    · exact ⟨x, MultiStepReduction.refl x, hnf⟩
+    · obtain ⟨y, hxy⟩ := exists_singleStep_of_not_isNormalForm hlc hnf
+      obtain ⟨nf, hred, hnorm⟩ := ih y hxy
+      exact ⟨nf, MultiStepReduction.head hxy hred, hnorm⟩
 
-/-- **Reduction function**: given a GS basis, select *the* normal form
-    of each element.  Well-defined by normal_form_exists (existence)
-    and normal_form_unique (uniqueness, proved in CompositionLemma.lean). -/
+/-- **Reduction function**: select *the* normal form of each element.
+
+    Takes `hlc` (unit leading coefficients) rather than `hgs`: what makes the
+    choice possible is existence, which is termination plus invertibility.
+    Well-definedness of the *value* — that the choice does not matter — is
+    `normal_form_unique`, and that is where `hgs` is genuinely needed. -/
 noncomputable def reduce {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
     AlgElement G k → AlgElement G k :=
-  fun f => (normal_form_exists ord sys hgs f).choose
+  fun f => (normal_form_exists ord sys hlc f).choose
 
 /-- The reduction function produces normal forms. -/
 theorem reduce_is_normal {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    isNormalForm ord sys (reduce ord sys hgs f) :=
-  (normal_form_exists ord sys hgs f).choose_spec.is_normal
+    isNormalForm ord sys (reduce ord sys hlc f) :=
+  (normal_form_exists ord sys hlc f).choose_spec.is_normal
 
 /-- The reduction function witnesses multi-step reduction. -/
 theorem reduce_reduces {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    MultiStepReduction ord sys f (reduce ord sys hgs f) :=
-  (normal_form_exists ord sys hgs f).choose_spec.reduces
+    MultiStepReduction ord sys f (reduce ord sys hlc f) :=
+  (normal_form_exists ord sys hlc f).choose_spec.reduces
 
 /-! ## §7  Algebras without quasi-zeros  (bean qou-k6ks)
 

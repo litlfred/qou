@@ -33,63 +33,29 @@ universe u v
 
 variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 
-/-! ## §1  Termination -/
+/-! ## §1  Termination
 
-/-- Every sequence of single-step reductions is finite: the reduction
-    relation is well-founded.
+`reduction_well_founded` and `normal_form_exists` **moved to `Basic.lean` §6**
+(bean qou-lzoo). The axiom is stated purely in `Basic`'s vocabulary, and
+`normal_form_exists` — now a theorem carrying `∀ r ∈ sys.rules, IsUnit (r.lc ord)`
+— needs it in order for `reduce` to be defined there rather than from the false
+axiom it replaced. Both remain in the `UGB.GrobnerShirshov` namespace, so uses
+elsewhere in this file are unqualified as before. -/
 
-    Each `SingleStepReduction` strictly decreases the multiset of
-    monomials in the support under the Dershowitz–Manna ordering,
-    which inherits well-foundedness from `ord.wf`.
+/-- Compatibility alias for the name this theorem carried while it lived here.
 
-    Axiomatised because the proof requires:
-    1. A `Multiset (Monomial G)` representation of `AlgElement` support
-    2. A proof that `SingleStepReduction` strictly decreases this multiset
-       under `ord.lt`
-    3. The Dershowitz–Manna theorem (`Multiset.wellFoundedLT`) lifting
-       element well-foundedness to multiset well-foundedness
-
-    These components require `AlgElement` subtraction and support extraction
-    operations that are not available at the abstract level.
-
-    Reference: Bergman 1978, §2, proof of Theorem 1.1 (termination). -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 §2 Thm 1.1 (reduction is well-founded / terminating)
-axiom reduction_well_founded
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k) :
-    ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
-
-/-- **Existence of normal forms, repaired.**
-
-    Two differences from the `normal_form_exists` axiom in `Basic.lean`, and both
-    matter:
-
-    1. It carries `hlc` — every rule has a **unit leading coefficient**. Without
-       it the statement is not merely unproved, it is **false**; see
-       `UGB.GrobnerShirshov.NormalFormExistsRefutation`, which exhibits a
-       Gröbner–Shirshov system over `ℤ` and an element with no normal form.
-    2. It does **not** take `hgs`. Existence of normal forms is pure termination
-       — reduce until stuck — and has nothing to do with confluence. The axiom's
-       `hgs` argument was never used by the statement's content, and taking it
-       obscured that the real missing hypothesis was elsewhere.
-
-    Proof: well-founded induction on `reduction_well_founded`. At `x`, either `x`
-    is already normal (done, zero steps), or `exists_singleStep_of_not_isNormalForm`
-    produces a step `x → y`, and the induction hypothesis applies at `y` because
-    `x → y`. -/
+    It is now `Basic.normal_form_exists`: once the false axiom of that name was
+    removed, the repaired statement could take the plain name, and the `_of_unit_lc`
+    suffix stopped earning its keep. Retained so the migration does not break
+    references. -/
+@[deprecated normal_form_exists (since := "2026-08-10")]
 theorem normal_form_exists_of_unit_lc
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (f : AlgElement G k) :
-    ∃ nf, ReducesToNF ord sys f nf := by
-  induction (reduction_well_founded ord sys f) with
-  | intro x _ ih =>
-    by_cases hnf : isNormalForm ord sys x
-    · exact ⟨x, MultiStepReduction.refl x, hnf⟩
-    · obtain ⟨y, hxy⟩ := exists_singleStep_of_not_isNormalForm hlc hnf
-      obtain ⟨nf, hred, hnorm⟩ := ih y hxy
-      exact ⟨nf, MultiStepReduction.head hxy hred, hnorm⟩
+    ∃ nf, ReducesToNF ord sys f nf :=
+  normal_form_exists ord sys hlc f
 
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
@@ -239,27 +205,33 @@ theorem normal_form_unique
 
     Proof: `reduce f` is in normal form (by `reduce_is_normal`), so it
     reduces to itself in zero steps.  By `normal_form_unique`, the
-    chosen normal form of `reduce f` must equal `reduce f`. -/
+    chosen normal form of `reduce f` must equal `reduce f`.
+
+    Carries `hlc` (unit leading coefficients) since `reduce` does — see
+    `Basic.lean` §6. Both hypotheses are load-bearing and for different reasons:
+    `hlc` is what makes `reduce` defined at all, `hgs` is what makes its value
+    canonical. -/
 theorem composition_lemma
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (hnqz : NoQuasiZerosFree G k) :
+    (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
     ∀ (f : AlgElement G k),
-      reduce ord sys hgs (reduce ord sys hgs f) = reduce ord sys hgs f := by
+      reduce ord sys hlc (reduce ord sys hlc f) = reduce ord sys hlc f := by
   intro f
-  set nf := reduce ord sys hgs f
-  set nf' := reduce ord sys hgs nf
+  set nf := reduce ord sys hlc f
+  set nf' := reduce ord sys hlc nf
   -- nf is in normal form
-  have h_nf_normal := reduce_is_normal ord sys hgs f
+  have h_nf_normal := reduce_is_normal ord sys hlc f
   -- nf' is in normal form
-  have h_nf'_normal := reduce_is_normal ord sys hgs nf
+  have h_nf'_normal := reduce_is_normal ord sys hlc nf
   -- nf reduces to itself (zero steps, already normal)
   have h_nf_self : ReducesToNF ord sys nf nf :=
     ⟨MultiStepReduction.refl nf, h_nf_normal⟩
   -- nf' is a normal form of nf (via reduce)
   have h_nf'_red : ReducesToNF ord sys nf nf' :=
-    ⟨reduce_reduces ord sys hgs nf, h_nf'_normal⟩
+    ⟨reduce_reduces ord sys hlc nf, h_nf'_normal⟩
   -- By uniqueness: nf' = nf
   exact normal_form_unique ord sys hgs hnqz nf nf' nf h_nf'_red h_nf_self
 
@@ -275,13 +247,14 @@ theorem retraction_property
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
     (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (embed : AlgElement G k → AlgElement G k)
-    (h_embed : ∀ f, embed (reduce ord sys hgs f) = reduce ord sys hgs f) :
+    (h_embed : ∀ f, embed (reduce ord sys hlc f) = reduce ord sys hlc f) :
     ∀ (f : AlgElement G k),
-      reduce ord sys hgs (embed (reduce ord sys hgs f)) =
-      reduce ord sys hgs f := by
+      reduce ord sys hlc (embed (reduce ord sys hlc f)) =
+      reduce ord sys hlc f := by
   intro f
   rw [h_embed]
-  exact composition_lemma ord sys hgs hnqz f
+  exact composition_lemma ord sys hgs hnqz hlc f
 
 end UGB.GrobnerShirshov
