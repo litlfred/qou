@@ -11,16 +11,38 @@ the textbook Coulomb energy and runs the bean's kill-switch:
     ΔB(lo − hi)  ?=  ΔE_C(hi − lo)        [charge-symmetric strong core ⇒ split is all Coulomb]
 
 with the uniform-charged-sphere energy
-    E_C(Z) = (3/5) · Z(Z−1) · α_EM · ℏc / R,   R = r_0 · A^{1/3},   r_0 = 1.2 fm (standard),
-    α_EM ℏc = 1.43996 MeV·fm   (CODATA; the framework's derived α_EM ≈ 1/137 substitutes 1:1).
+    E_C(Z) = (3/5) · Z(Z−1) · α_EM · ℏc / R,   R = R₀ · A^{1/3},
+taken from the CANONICAL `coulomb_energy` module: α_EM DERIVED from q₀ (not CODATA) and
+R₀ = λ̄_π = ℏc/m_π the CAL-3 length (not the empirical 1.2 fm). NOT a fit.
 
-NOT a fit: r_0 = 1.2 fm and α_EM are standard textbook inputs, not tuned to these binding data.
-The comparison is against the production ΔB_sym (σ/σ⁻¹) over-split as the baseline the kill-switch
-must beat. Verdict scale: the uniform-sphere model is known to over-estimate the Coulomb
-displacement energy of light nuclei by ~20–40% (the Nolen–Schiffer anomaly); the kill-switch PASSES
-if (CS-core + Coulomb) lands within that known model error of ΔB_AME while the production σ/σ⁻¹
-B_sym overshoots by ~200–350%. (a) scope-limited: confirms the mechanism (split = Coulomb on a
-charge-symmetric core), does not rewire production (owner-gated).
+STATUS (2026-08-10) — two corrections, both material.
+
+(1) The inputs were stale. This probe carried its own copy of the Coulomb constants
+    (`ALPHA_HBAR_C_MEV_FM = 1.43996` CODATA, `R0_FM = 1.2` empirical, both float64) which
+    bean qou-usft had already replaced in `coulomb_energy.py`. The fix never propagated.
+    Importing the canonical functions improves every pair:
+
+        pair       residual (CS+Coulomb − AME), MeV      worst-case error
+        3H/3He     +0.235  ->  +0.084
+        7Li/7Be    +0.614  ->  +0.272                    37 %  ->  17 %
+        13C/13N    +0.672  ->  +0.116
+
+(2) The verdict prose was stale and contradicted the committed numbers. It asserted
+    "CS+Coulomb 20–40 % vs production 200–350 %". The production σ/σ⁻¹ figure has not been
+    200–350 % since `_bond_type_L` changed on 2026-08-08 (the Reeb-override removal); it is
+    now 0–53 %, and at 3H/3He it is 0.002 MeV — near-exact. All verdict figures are now
+    COMPUTED from the rows; do not re-hardcode them.
+
+Consequently the headline assertion — CS+Coulomb beats production on EVERY pair — is
+currently FALSE, failing on 3H/3He alone, and is left failing rather than weakened. Read it
+with the spread: the σ/σ⁻¹ form that lands 0.002 MeV out at 3H/3He is 0.652 and 1.589 MeV out
+at the other two, so the single hit is a coincidence, not support for a strong-CSB mechanism.
+What the probe does establish on its own terms is the second assertion: the derived Coulomb
+term reproduces all three splits to 17 % worst-case, inside the Nolen–Schiffer band.
+
+(a) scope-limited throughout: this constrains these constructions as evaluated; it excludes
+no ingredient. Does not rewire production (owner-gated; the strong core's charge symmetry is
+gated on `conj:s5-so3-fiber-action`).
 """
 from __future__ import annotations
 
@@ -36,24 +58,36 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from math import comb  # noqa: E402
 
 import mass_binding_dashboard as mbd  # noqa: E402
+import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
-# Standard nuclear-physics inputs (NOT fit to these data).
-ALPHA_HBAR_C_MEV_FM = 1.43996       # α_EM · ℏc  (= e²/4πε₀ in Gaussian-natural MeV·fm; CODATA)
-R0_FM = 1.2                          # nuclear radius constant R = r_0 · A^{1/3}
+# ── Coulomb inputs now come from the CANONICAL module (2026-08-10) ────────
+# This probe used to carry its own copy:
+#
+#     ALPHA_HBAR_C_MEV_FM = 1.43996   # CODATA, float64
+#     R0_FM = 1.2                     # empirical saturation constant, float64
+#
+# Both defects were fixed in `coulomb_energy.py` by bean qou-usft — α_EM is
+# DERIVED from q₀ (not CODATA), the length is the CAL-3 reduced pion Compton
+# wavelength λ̄_π = ℏc/m_π (not the empirical 1.2 fm), and everything is mpmath.
+# The fix never propagated here, so this probe kept consuming an experimental
+# α_EM and an empirical radius while the dashboard next to it used neither.
+# That is exactly the provenance leak the fix existed to close: a PREDICTED
+# observable quietly depending on experimental inputs.
+#
+# Importing the canonical functions instead of redefining them is the whole
+# point — `mirror_displacement_mev` was written for this probe's kill-switch.
+from coulomb_energy import (  # noqa: E402
+    alpha_em_hbar_c_mev_fm,
+    coulomb_energy_mev,
+    mirror_displacement_mev,
+    R0_FM,
+)
 
 # Mirror pairs as (lower-Z member, Z, N, higher-Z member, Z, N).
 # The lower-Z member is the more-bound one (less Coulomb repulsion).
 MIRROR_PAIRS = [("3H", 1, 2, "3He", 2, 1), ("7Li", 3, 4, "7Be", 4, 3),
                 ("13C", 6, 7, "13N", 7, 6)]
-
-
-def coulomb_energy_mev(Z, A):
-    """Uniform-charged-sphere electrostatic energy E_C = (3/5) Z(Z−1) α ℏc / (r_0 A^{1/3})."""
-    if Z < 2:
-        return 0.0
-    R = R0_FM * A ** (1.0 / 3.0)
-    return 0.6 * Z * (Z - 1) * ALPHA_HBAR_C_MEV_FM / R
 
 
 def run():
@@ -75,7 +109,7 @@ def run():
         # Strong-core charge-symmetric split is 0 by the gg result (L_pp=L_pn=L_nn);
         # the higher-Z member loses ΔE_C of binding to extra Coulomb repulsion.
         dB_strong_cs = 0.0
-        dE_coulomb = coulomb_energy_mev(Zhi, A) - coulomb_energy_mev(Zlo, A)  # > 0
+        dE_coulomb = float(mirror_displacement_mev(Zhi, Zlo, A))  # > 0
         dB_pred = dB_strong_cs + dE_coulomb          # B(lo) − B(hi) predicted
         dB_ame = None
         blo, bhi = bame(Zlo, A), bame(Zhi, A)
@@ -84,20 +118,26 @@ def run():
         dB_prod = Bsym_prod(Zlo, Nlo) - Bsym_prod(Zhi, Nhi)  # production σ/σ⁻¹, same orientation
         rows.append({
             "pair": f"{lo}-{hi}", "lo": lo, "hi": hi, "A": A,
-            "E_C_lo": coulomb_energy_mev(Zlo, A), "E_C_hi": coulomb_energy_mev(Zhi, A),
+            # No per-row R_fm: it is exactly R0_FM·A^{1/3}, and both are already
+            # recorded (`data.r0_fm`, `data.rows[].A`). Adding it would push this
+            # witness's raw-float64 count 28 -> 31, i.e. a ratchet REGRESSION, to
+            # carry a number the reader can already reconstruct.
+            "E_C_lo": float(coulomb_energy_mev(Zlo, A)),
+            "E_C_hi": float(coulomb_energy_mev(Zhi, A)),
             "dE_coulomb": dE_coulomb, "dB_pred_cs_plus_coulomb": dB_pred,
             "dB_AME": dB_ame, "dB_prod_sigma": dB_prod,
             "resid_cs_coulomb": (dB_pred - dB_ame) if dB_ame is not None else None,
             "resid_prod": (dB_prod - dB_ame) if dB_ame is not None else None,
         })
-    return {"q0": q0, "E0_MeV": E0, "alpha_hbar_c": ALPHA_HBAR_C_MEV_FM,
-            "r0_fm": R0_FM, "rows": rows}
+    return {"q0": q0, "E0_MeV": E0,
+            "alpha_hbar_c": float(alpha_em_hbar_c_mev_fm()),
+            "r0_fm": float(R0_FM), "rows": rows}
 
 
 def report(res):
     print("# Coulomb kill-switch — charge-symmetric core + Coulomb vs production σ/σ⁻¹ (bean 754x)\n")
-    print(f"E₀ = {res['E0_MeV']:.4f} MeV   α_EM·ℏc = {res['alpha_hbar_c']} MeV·fm   "
-          f"r₀ = {res['r0_fm']} fm  (standard inputs, not fit)\n")
+    print(f"E₀ = {res['E0_MeV']:.4f} MeV   α_EM·ℏc = {res['alpha_hbar_c']:.7f} MeV·fm (DERIVED from q₀)"
+          f"   R₀ = λ̄_π = {res['r0_fm']:.7f} fm (CAL-3)  — no CODATA α_EM, no empirical r₀\n")
     print("Mirror split B(lower-Z) − B(higher-Z), MeV — positive: lower-Z is more bound:\n")
     print("| pair | A | ΔE_Coulomb | CS-core + Coulomb | ΔB_AME | production σ/σ⁻¹ |")
     print("|---|--:|--:|--:|--:|--:|")
@@ -119,15 +159,28 @@ def report(res):
     rows_ok = [r for r in res["rows"] if r["resid_cs_coulomb"] is not None]
     frac = [abs(r["resid_cs_coulomb"] / r["dB_AME"]) for r in rows_ok if r["dB_AME"]]
     fracp = [abs(r["resid_prod"] / r["dB_AME"]) for r in rows_ok if r["dB_AME"]]
-    print(f"- Charge-symmetric core + standard Coulomb reproduces all three mirror splits to "
-          f"{min(frac) * 100:.0f}–{max(frac) * 100:.0f}% — within the known uniform-sphere / "
-          f"Nolen–Schiffer model over-estimate for light nuclei (Coulomb runs slightly high).")
-    print(f"- The production σ/σ⁻¹ B_sym over-splits by {min(fracp) * 100:.0f}–{max(fracp) * 100:.0f}% "
-          f"— the wrong mechanism (strong charge asymmetry where the physics is electrostatic).")
-    print(f"- Kill-switch PASSES: the mirror split is Coulomb on a charge-symmetric strong core. "
-          f"Disposition (step 5): B_sym should be re-scoped to (gg charge-symmetric core + Coulomb); "
-          f"the σ/σ⁻¹ flavor-only split is a (a) scope-limited artifact, not a derived strong CSB. "
-          f"Owner-gated — no production rewire here.")
+    # Every figure below is computed from the rows above. It used to be prose
+    # asserting "CS+Coulomb 20–40 % vs production 200–350 %"; those constants went
+    # stale when `_bond_type_L` changed on 2026-08-08 (the Reeb-override removal),
+    # and the committed text then contradicted the committed numbers. Do not
+    # re-hardcode them.
+    wins = [r for r in rows_ok
+            if abs(r["resid_cs_coulomb"]) < abs(r["resid_prod"])]
+    print(f"- Charge-symmetric core + DERIVED Coulomb reproduces the three mirror splits to "
+          f"{min(frac) * 100:.0f}–{max(frac) * 100:.0f}%.")
+    print(f"- The production σ/σ⁻¹ B_sym splits are off by "
+          f"{min(fracp) * 100:.0f}–{max(fracp) * 100:.0f}%.")
+    print(f"- CS+Coulomb beats production on {len(wins)}/{len(rows_ok)} pairs.")
+    if len(wins) == len(rows_ok):
+        print("- Kill-switch PASSES on every pair: the mirror split is Coulomb on a "
+              "charge-symmetric strong core.")
+    else:
+        lost = [r["pair"] for r in rows_ok if r not in wins]
+        print(f"- Kill-switch does NOT pass on: {', '.join(lost)}. The σ/σ⁻¹ form happens to "
+              f"land closer there, so this run does NOT establish the Coulomb mechanism on "
+              f"those pairs. Reported as measured — scope-(a), no ingredient excluded either way.")
+    print("- Disposition unchanged and owner-gated: no production rewire here. The strong "
+          "core's charge symmetry is gated on `conj:s5-so3-fiber-action` (s5-so3 keystone).")
 
 
 def main(argv=None):
@@ -136,12 +189,17 @@ def main(argv=None):
     w = WitnessBuilder("coulomb-mirror-killswitch-probe", engine="python")
     w.set_description(
         "Bean 754x step 4 kill-switch: tests whether a charge-symmetric strong core (gg result: "
-        "mirror ΔB_sym=0) plus textbook uniform-sphere Coulomb E_C=(3/5)Z(Z-1)·alpha·hbar_c/(r0·A^1/3) "
-        "(r0=1.2fm, alpha·hbar_c=1.43996 MeV·fm — standard, not fit) reproduces the AME mirror-nucleus "
-        "binding splits for 3H/3He, 7Li/7Be, 13C/13N. CS-core+Coulomb matches ΔB_AME to ~20-40% "
-        "(within the known Nolen-Schiffer / uniform-sphere over-estimate for light nuclei), while the "
-        "production sigma/sigma^-1 B_sym over-splits by ~200-350%. Confirms the mirror split is Coulomb "
-        "on a charge-symmetric core, not strong charge-symmetry breaking. (a) scope-limited; no "
+        "mirror dB_sym=0) plus uniform-sphere Coulomb E_C=(3/5)Z(Z-1)*alpha*hbar_c/(R0*A^1/3) "
+        "reproduces the AME mirror-nucleus binding splits for 3H/3He, 7Li/7Be, 13C/13N. "
+        "REWIRED 2026-08-10 onto the canonical `coulomb_energy` module: alpha_EM DERIVED from q0 "
+        "(was CODATA 1.43996) and R0 = lambda_bar_pi = hbar_c/m_pi, the CAL-3 length (was the "
+        "empirical 1.2 fm) - both float64 copies that bean qou-usft had already fixed upstream but "
+        "which never propagated here. Every pair improves; worst-case error 37% -> 17%, inside the "
+        "Nolen-Schiffer band. The verdict figures are now COMPUTED, not asserted: the old prose "
+        "claimed production over-splits by 200-350%, which went stale when _bond_type_L changed on "
+        "2026-08-08; it is now 0-53%. The every-pair assertion consequently FAILS on 3H/3He, where "
+        "the sigma/sigma^-1 form lands 0.002 MeV out by coincidence (it is 0.652 and 1.589 MeV out "
+        "on the other two pairs); left failing rather than weakened. (a) scope-limited; no "
         "production rewire (owner-gated)."
     )
     w.add_data("q0", res["q0"])
@@ -159,13 +217,33 @@ def main(argv=None):
         (abs(r["resid_cs_coulomb"] / r["dB_AME"]) for r in res["rows"] if r["dB_AME"]),
         default=1.0,
     )
+    # KEPT AS-IS AND CURRENTLY FAILING (2026-08-10). Do not weaken it to go green.
+    # It fails on exactly one pair, 3H/3He, where the production sigma/sigma^-1
+    # form lands 0.002 MeV from AME - near-exact, and by coincidence: that same
+    # form is 0.652 and 1.589 MeV out on the other two pairs. A single accidental
+    # hit is not evidence for the sigma mechanism, but the assertion as written
+    # says "every pair", so it is false and is reported false.
     w.add_assertion(
         "cs_core_plus_coulomb_beats_production_on_every_mirror_pair",
         computed=1 if ok else 0, expected=1, tolerance=0,
-        source="Charge-symmetric core + standard Coulomb has a SMALLER residual to ΔB_AME than the "
-               "production sigma/sigma^-1 B_sym on every mirror pair (3H/3He, 7Li/7Be, 13C/13N) — the "
-               f"split is Coulomb, not strong CSB. CS+Coulomb worst-case error {worst_frac * 100:.0f}% "
-               "(Nolen-Schiffer-scale) vs production's ~200-350%.",
+        source="Charge-symmetric core + DERIVED Coulomb has a SMALLER residual to ΔB_AME than the "
+               "production sigma/sigma^-1 B_sym on every mirror pair (3H/3He, 7Li/7Be, 13C/13N). "
+               f"Currently {'PASSES' if ok else 'FAILS'}: beats production on "
+               f"{sum(1 for r in res['rows'] if r['resid_cs_coulomb'] is not None and r['resid_prod'] is not None and abs(r['resid_cs_coulomb']) < abs(r['resid_prod']))}"
+               f"/{len(res['rows'])} pairs. CS+Coulomb worst-case error {worst_frac * 100:.0f}%.",
+    )
+    # The independent, positive claim this probe now supports on its own terms:
+    # the DERIVED Coulomb term lands every mirror split inside the Nolen-Schiffer
+    # scale. This is a separate test, not a relaxation of the one above - it says
+    # nothing about beating the sigma form.
+    w.add_assertion(
+        "derived_coulomb_reproduces_every_mirror_split_within_nolen_schiffer_scale",
+        computed=1 if worst_frac < 0.20 else 0, expected=1, tolerance=0,
+        source="With alpha_EM DERIVED from q0 and the CAL-3 length R0 = lambda_bar_pi (canonical "
+               "`coulomb_energy` module, not this probe's former CODATA/empirical copy), the "
+               "charge-symmetric core + Coulomb reproduces all three mirror splits to "
+               f"{worst_frac * 100:.0f}% worst-case - inside the ~20% uniform-sphere / "
+               "Nolen-Schiffer band for light nuclei. Was 37% worst-case on the old inputs.",
     )
     out = w.save()
     print(f"\nwitness → {out.name}")
