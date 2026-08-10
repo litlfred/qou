@@ -64,10 +64,22 @@ VOLATILE = {"computedAt", "durationMs", "scriptHash", "commitSha",
 
 NUM = re.compile(r"-?\d+\.\d{6,}(?:[eE][+-]?\d+)?")
 
-#: sys.path additions producers expect when run from `computations/`.
-SYS_PATHS = [".", "substrate", "hecke", "markov", "alpha", "probes", "qbeta",
-             "deltalambda", "phase5", "sweeps",
-             "../tools/pyhecke/python", "../tools/qou-substrate/python"]
+#: sys.path additions producers expect. ABSOLUTE, deliberately.
+#:
+#: These were relative on the first run ("..", "../tools/pyhecke/python"), which
+#: is correct only for a producer sitting directly in `computations/`. Each
+#: producer runs from its OWN directory, so for `computations/alpha/foo.py` the
+#: entry `../tools/pyhecke/python` resolved to `computations/tools/...` and the
+#: producer died with `ModuleNotFoundError: No module named 'pyhecke'`. Four
+#: failures were the harness's fault, not the producer's — which is exactly the
+#: kind of thing that would otherwise be written up as "pre-existing breakage".
+SYS_PATHS = [str(REPO / "computations" / d) if d else str(REPO / "computations")
+             for d in ("", "substrate", "hecke", "markov", "alpha", "probes",
+                       "qbeta", "deltalambda", "phase5", "sweeps", "audits")] + [
+    str(REPO / "tools" / "pyhecke" / "python"),
+    str(REPO / "tools" / "qou-substrate" / "python"),
+    str(REPO / "qou-mass" / "src"),
+]
 
 
 def numeric_fields(obj, out=None, path=""):
