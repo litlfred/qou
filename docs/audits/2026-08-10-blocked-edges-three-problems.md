@@ -127,16 +127,18 @@ to fix rather than a finding to report:
 | this branch as committed | 0 cycles | 0 cycles |
 | **if the held edges landed** | **2 cycles** | **3 cycles** |
 
-So the branch is clean, and these four are a reason the edges were right to
+So the branch is clean, and these five are a reason the edges were right to
 hold — the sweep that caught them caught something real.
 
-`conj:p-vs-np-qou` is worth singling out because tranche 2 edited it. The
-three edges added there (`def:reeb-epsilon`, `lem:surreal-squeeze`,
-`prop:surreal-rate-calculus`) are **not** in the cycle. The cycle would come
-from a held edge, and the `.md` supports reading the dependency the other
-way: line 24 is *"See [Surreal bound for P vs NP] for the squeeze-inequality
-statement **implied by** this conjecture"* — the bound depends on the
-conjecture, not the reverse.
+For the two `conj:p-vs-np-qou` cycles the `.md` already says which direction
+is real: line 24 is *"See [Surreal bound for P vs NP] for the
+squeeze-inequality statement **implied by** this conjecture"*. The bound
+depends on the conjecture, not the reverse — so the held edge
+`conj:p-vs-np-qou -> rem:p-vs-np-surreal-bound` is simply backwards, and
+both cycles dissolve by dropping it rather than by any reordering. The three
+edges tranche 2 added to that block (`def:reeb-epsilon`,
+`lem:surreal-squeeze`, `prop:surreal-rate-calculus`) are in none of the
+cycles.
 
 ## Group 3 — 17 edges: cross-chapter, ungated, and a bigger question
 
