@@ -1,7 +1,7 @@
 ---
 # ptlm
 title: 'Read the uploaded Ptolemy papers: verify the novelty assessment, and price the Ptolemy route past the Gröbner ceiling'
-status: in-progress
+status: todo
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - ptolemy
 parent: m015
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T01:35:00Z
+updated_at: 2026-08-10T06:00:00Z
 ---
 
 Two primary sources were uploaded to the repo at
@@ -65,3 +65,72 @@ That would make the whole pipeline float-free end to end, at every size — not 
 
 - `m015` — the gluing-data lane; Route 75's measured ceiling is recorded there.
 - `glnl` — Lean-proving the equations; unaffected by which method produced the shapes.
+
+---
+**2026-08-10 — both papers read. Novelty assessment CONFIRMED against the primary
+sources; Ptolemy route priced and BLOCKED in this container.**
+
+### 1. The quote is real, and G7's citation is correct
+
+Verbatim from **1207.6711 §1.3** (Garoufalidis–Goerner–Zickert):
+
+> *"For the Ptolemy varieties exact computations are possible for n = 2 even when there
+> are many simplices, and there are often several components of representations besides
+> the geometric one. We should point out that while Gröbner basis computations are
+> feasible for the Ptolemy varieties even for many simplices, **they are usually
+> impractical for the gluing equations even when the cusp equations are added.** However,
+> the monomial map µ can be used to obtain shapes from Ptolemy coordinates. All our tools
+> will be available in the upcoming release of SnapPy."*
+
+So Route 75's gate G7 cites this correctly and **the novelty assessment stands as
+written**: G7 rediscovers a documented fact. No correction needed to the probe docstring,
+bean `m015`, or the PR. Extra detail worth carrying: *"often several components besides
+the geometric one"* — which is precisely why Route 75 needs its Bloch–Wigner volume
+cross-check to pin the geometric root.
+
+### ⚠ A near-miss worth recording as a method lesson
+
+My first pass grepped both PDFs for `[Gg]r[oö]bner` and got **zero hits in both**, and I
+was one step from recording "the citation is misattributed". The extractor renders the
+umlaut as `Gr¨ obner` — diacritic split off, with a space inserted — so the pattern could
+not match.
+
+> **A zero-hit grep over PDF-extracted text is not evidence of absence.** Ligatures,
+> diacritics and hyphenation routinely break naive patterns. Search for a
+> diacritic-free substring (`impractical`, `bner`) before concluding a source does not
+> say something.
+
+Same family as the standing rule that negative claims cannot come from a grid. It would
+have produced a confident, wrong correction to a citation that was right.
+
+### 2. The Ptolemy route: real, and NOT runnable here
+
+Both papers use **Magma** for the primary decomposition — 1207.6711 §14 computes the
+decomposition of the gluing+Ptolemy ideal with it, and 1507.03238's Algorithm (Step 3)
+is "compute the primary decomposition of the reduced Ptolemy variety `P(T,E)red`".
+
+Tested directly. `snappy.Manifold("4_1").ptolemy_variety(2, obstruction_class=0)` builds
+fine, then **both** solution paths fail:
+
+- `retrieve_solutions()` → `RuntimeError: Problem connecting to server … <urlopen error
+  Tunnel connection failed: 403 Forbidden>` for
+  `https://ptolemy.unhyperbolic.org/data/pgl2/LinkExteriors/02_tetrahedra/4_1__sl2_c0.magma_out.gz`
+  — the precomputed database is **network-blocked by the agent proxy**.
+- `compute_solutions()` → `ValueError: Sorry, could not find the Magma executable`.
+
+So the answer to this bean's practical question is **no**: the Ptolemy route cannot clear
+Route 75's ceilings in this environment. It is blocked on infrastructure, not on
+mathematics.
+
+**To unblock, one of:**
+1. allowlist `ptolemy.unhyperbolic.org` in the environment's network policy — cheapest by
+   far, since the database is precomputed and covers the census;
+2. install Magma (licensed) or run SnapPy inside Sage, which would also give
+   `tetrahedra_field_gens().find_field()` and retire Route 75's hand-rolled LLL
+   identification along with gate G2's artifact trap;
+3. implement primary decomposition over ℚ locally — a much larger job, and not obviously
+   worth it given (1).
+
+**Recommendation: (1).** It is a one-line policy change and would let the Ptolemy route be
+evaluated properly. Until then Route 75's gated-LLL pipeline remains the only working
+path, and its measured ceiling (identification, not verification) stands.
