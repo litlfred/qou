@@ -356,7 +356,11 @@ def work_list():
 
 
 #: Witness basenames referenced in a producer's source.
-_WITNESS_REF = re.compile(r"[A-Za-z0-9._-]+\.witness\.json")
+#: [.-] because 13 witnesses are `foo-witness.json`, including the
+#: y_lambda family that five producers read. A `\.witness\.json`
+#: pattern silently drops those dependency edges, which is the same
+#: class of bug as ordering producers alphabetically.
+_WITNESS_REF = re.compile(r"[A-Za-z0-9._-]+[.-]witness\.json")
 
 
 def dependency_order(by_producer: dict) -> list:
