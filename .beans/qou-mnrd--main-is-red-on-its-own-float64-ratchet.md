@@ -1169,3 +1169,86 @@ nothing outside metadata.
                                         (producer broken on HEAD), oxygen-14
                                         (no live producer), A-operator-rank
                                         (>200s budget)
+
+---
+
+## Two more producers revived; the bare-literal count is 20 live -> 3
+
+### `term6_full_pole_sum` was DEAD on main, for the habiro bug's mirror image
+
+I recorded earlier that term6's producer "is already broken on HEAD" and left
+its witness. The cause turns out to be the same defect as the habiro NaNs,
+seen from the consumer side:
+
+    term6 reads p_in_u / denom_in_u out of
+    habiro/habiro-coefficients-atomic.witness.json and does
+    `sp.sympify(s)` with NO locals, then `.subs(u, sqrt(q))`.
+
+That witness (2026-07-18) stores those polynomials in terms of **`check_q`**,
+because `to_u_polynomial(expr, q, check_q)` renders its strings using whatever
+SYMBOL the caller passed. So the sympified expression got its own free symbol,
+the subs no-opped, the expression stayed symbolic, and
+`float(complex(sp.N(...)))` raised "Cannot convert expression to float".
+
+Fixed with `locals={"u": u, "check_q": u}` — the same both-names fix applied to
+the habiro extract. **The producer runs for the first time**, and the status
+logic committed earlier finally takes effect:
+
+    term6_simple_residue_partial  Infinity  ->  "inf"   (marker)
+    term6_in_MeV                  Infinity  ->  null
+    status   "complete-simple-poles-only"  ->  "divergent-simple-pole-sum"
+
+Drained in the same pass, 72 raw float64 -> 0.
+
+Proton/neutron MeV move ~1.3e-9 and that is INHERITED: `m_e_MeV` was refined
+upstream from 0.51099895 to 0.51099895069, which is exactly that ratio.
+
+**Three instances of the sympify-locals bug now** (habiro extract ×2 sites,
+term6 consumer). The root is that `to_u_polynomial`'s output variable name is
+whatever the caller passed, so every string it produces is only parseable if
+you know which symbol that was. Worth fixing at the source — have it always
+render in one name, or record the name alongside the string — rather than
+teaching each consumer both.
+
+### `A-operator-rank`: a deliberate sentinel, like casimir
+
+`drop_ratio = smallest_nonzero / next_zero if next_zero > 0 else inf`. The
+`inf` means the next singular value is exactly zero, i.e. the rank gap is
+perfectly clean — and `status` reads `rank_determined` on it, correctly. The
+value is right; the bare `Infinity` token was not. Marker applied; producer
+re-running (it exceeds a 200 s budget, hence the earlier "not reached").
+
+### `oxygen-14` is an ORPHAN, and provably so
+
+No live producer names it: `_habiro_coefficient_extract.ATOMS` stops at A=10
+(carbon-10) and oxygen-14 is A=14; the helium extract and
+`habiro_coefficients_interpolate.py` do not mention it either.
+
+Its history says why: the witness's `computedAt` is 2026-06-29, but the ONLY
+commit touching the file is `d156e8d50` (2026-08-02) — a docs+bean commit about
+the saddle-offset probe, nothing to do with habiro. So it sat uncommitted for a
+month and was swept into an unrelated commit from someone's working tree.
+
+Its 2 NaN fields are exactly the ones the habiro fix repairs, so re-running
+would fix it — but nothing runs it. Either add (8, 6) to ATOMS deliberately
+(A=14 means 16·16 = 256 strands, a real cost) or drop the file. Not a call to
+make silently.
+
+### `a-K-via-lp-dual`: the solver question has a concrete answer
+
+Earlier I left this as "which solver it pins to is its owner's call". The
+mechanism is now known and narrows the question: `solve_operator_selection_lp`
+takes `backend="auto"`, documented as *"clarabel MPFR at ~50 dps when its
+binary or wheel is available, else scipy HiGHS f64"*.
+
+The committed witness's `environment` has **no clarabel**, so it was computed on
+the scipy/HiGHS **f64** path. This container has the clarabel wheel, so "auto"
+takes a different branch — which is why `x_star` moves ~1e-6.
+
+So the decision is not "pick a solver", it is: **should this witness be pinned
+to the f64 fallback, or regenerated on the higher-precision path now that
+clarabel is available?** One caution against assuming the latter is simply
+better: the strong_duality residuals did NOT improve (2.7e-15 -> 1.2e-14) when
+they should be ~1e-50 if MPFR were really active, so it is worth confirming the
+wheel actually enables the MPFR path rather than a second f64 backend, before
+treating the new numbers as more precise. Not resolved here.
