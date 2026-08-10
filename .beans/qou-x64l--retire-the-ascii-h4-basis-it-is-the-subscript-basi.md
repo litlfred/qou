@@ -552,3 +552,76 @@ edge is a clean single-term product `σᵢ · b_inner = b_j`, no quadratic fold.
         -- `trM_cyclic` (ASCII) still has consumers; the deletion needs the
            relabelling permutation above to carry them onto `trM4_cyclic`,
            and that is a separate step from proving cyclicity.
+
+---
+
+## 2026-08-10 — the two step-4 routes converge, and re-verification on a moved main
+
+PR #4915 sat with `mergeable_state: dirty` against a `main` that had advanced
+**346 commits**. Rebased; the *only* conflict was this bean file, where two
+sections had been appended at the same place — #4911's weights section and this
+branch's claim. Both kept, in date order.
+
+### The routes did not collide, and both stand
+
+[#4911](https://github.com/litlfred/qou/pull/4911) (merged) identified the five
+Markov weights in exact closed form for `gram_symm_of_rep_decomp`, and recorded
+that the remaining work was *"the Lean wiring."* This branch closed the same
+target — `trM4_cyclic`, sorry-free, axiom-clean — by a different route that
+needs **none** of it: the trace-central elements form a subalgebra, so cyclicity
+is a 72-fact check on generators. The overlap was productive rather than wasted:
+
+* #4911 verified **Gram symmetry on all 576 basis pairs** symbolically with `h`
+  and `z` free — an independent confirmation that the theorem this branch proves
+  in Lean is true, arrived at by an unrelated method.
+* The weights remain the input to `gram_symm_of_rep_decomp`, which is still the
+  route for anything else wanting the rep-decomposition; they are simply not
+  needed *for cyclicity*.
+
+So the remaining open item is unchanged and unaffected by either: retiring the
+ASCII chain still needs the relabelling permutation to carry `trM_cyclic`'s
+consumers onto `trM4_cyclic`.
+
+### Re-verified against the rebased main — and the recorded timings were off
+
+The cone is 3 QOU modules (`MarkovTraceOnHecke` → `HeckeH4StabilizationRung` →
+`HeckeH4AlgebraLaws`); **nothing under `Machinery/` changed on main**, and the
+whole chain rebuilt clean. `lean`-direct, full Mathlib restored from
+`lake-cache/qou-v4-24-0` (6990 oleans — the *complete* set, not the partial one
+the skill's cache-gap note describes):
+
+| module | this session | PR #4915 recorded |
+|---|---|---|
+| `HeckeH4StabilizationRung` | 47 s | — (not measured) |
+| `HeckeH4AlgebraLaws` | **341 s** | 456 s |
+| `H4GeneratorAction` | **188 s** | 146 s |
+| `H4WordAction` | 7 s | 4 s |
+| `H4Cyclicity` | 9 s | 6 s |
+
+All exit 0. `#print axioms` on `trM4_cyclic`, `traceCentral_mul`,
+`traceCentral_all` → `[propext, Classical.choice, Quot.sound]`; no `sorryAx`.
+The bean's own **">25 min each at ~6 GB"** cost warning is about
+`HeckeH4BlockMap211`/`31`, which this cone does not touch — worth stating
+plainly, because that warning reads as if any H4 Lean work pays it, and this
+route's whole cone is under 10 minutes.
+
+### The emitter was never committed — the claim is now checkable again
+
+`H4Cyclicity`'s docstring and the PR both cite an emitter that reads the tables
+out of the Lean sources and checks the 72 identities in sympy. **That emitter is
+not in the tree and is gone with its container**, so as landed the provenance
+claim pointed at an artifact no reader could run.
+
+Replaced by [`computations/h4_cyclicity_generator_route_check.py`](../computations/h4_cyclicity_generator_route_check.py),
+which — unlike `h4_markov_weights_closed_form.py`, which says it *transcribes*
+the same three generator actions — **parses** them, so it doubles as a drift
+check on that producer. Exact over `ℚ[z,h]`, all zero failures: presentation
+re-derived from the parsed actions; 72 cyclicity identities; 23 single-term
+word-tree edges; and the 72 committed `mulσᵢ_e₄_j` statements re-checked against
+the tables.
+
+Its scope is worth being honest about: Lean already machine-checks every one of
+those statements, so the script cannot make the theorem more true. It checks the
+layer Lean cannot see — that the committed statements are *about* the tables
+these modules claim to be about. A sorry-free file enumerating the wrong 72
+facts is the only failure mode it closes.
