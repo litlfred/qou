@@ -64,6 +64,12 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP as Q0  # noqa: E402
+# The canonical serializer, NOT a canonical algorithm import: the primitives
+# below stay a deliberate local mirror, but anything this probe writes as TEXT
+# goes out in the canonical `u` (bean qou-0ndb). Today its `u` IS U_CANONICAL,
+# so every string here is already right — by luck of the caller's variable
+# name, which is precisely the property that failed four times in this family.
+from habiro_coefficients_atomic import str_in_u  # noqa: E402
 
 # 50-dps for q₀ verification
 mp.mp.dps = 50
@@ -85,11 +91,11 @@ def to_u_polynomial(expr_in_q, q, u):
     poly = sp.Poly(p_expanded, u)
     monoms = poly.monoms()
     if not monoms:
-        return sp.Integer(0), 0, str(den)
+        return sp.Integer(0), 0, str_in_u(den, u)
     min_pow = min(int(m[0]) for m in monoms)
     shift = -min_pow if min_pow < 0 else 0
     p_shifted = sp.expand(p_expanded * u ** shift)
-    return p_shifted, shift, str(sp.expand(den))
+    return p_shifted, shift, str_in_u(sp.expand(den), u)
 
 
 def cyclotomic_expansion(p_in_u, u, max_m=30):
@@ -189,7 +195,7 @@ def habiro_of_z_pow_k(k, u, q, max_m=20):
 
     return {
         "k": k,
-        "p_in_u_factored": str(sp.factor(p_u)),
+        "p_in_u_factored": str_in_u(sp.factor(p_u), u),
         "shift": shift,
         "denom_in_u": denom_str,
         "num_coeffs": len(coeffs),
@@ -250,7 +256,7 @@ def habiro_of_z_diff(u, q, max_m=20):
     log(f"    Σ a_m · (u;u)_m for (z²−z) = {str(factored)[:200]}")
     log(f"    Cyclotomic factor map: {cy_counts}")
     return {
-        "diff_p_in_u": str(sp.factor(p_u)),
+        "diff_p_in_u": str_in_u(sp.factor(p_u), u),
         "habiro_sum_factored": str(factored),
         "cyclotomic_counts": cy_counts,
         "phi8_power": cy_counts.get(8, 0),
