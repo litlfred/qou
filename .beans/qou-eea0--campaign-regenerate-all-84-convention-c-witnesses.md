@@ -3,8 +3,9 @@
 title: 'CAMPAIGN: regenerate all 84 convention-C witnesses under D and report total impact'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-10T01:15:27Z
-updated_at: 2026-08-10T01:15:27Z
+updated_at: 2026-08-10T03:11:02Z
 ---
 
 
@@ -181,3 +182,66 @@ Producer runtimes are heavily skewed — `bond_extensivity_equal_weight` 0.8 s,
 `binding_k_enumerator` 452 s, `delta_lambda_2row_stratum_analysis` hit the 600 s
 timeout. Budgeting by average would have been wrong; the timeout is doing real
 work and timed-out producers are recorded as such rather than silently skipped.
+
+---
+
+## REOPENED: the work list was built on the wrong test
+
+The impact report published under this bean is **not total**. The work list
+selected witnesses by grepping for known convention-C decimals —
+`0.49932033418369`, `0.41539579536`, `0.2809296`, `0.02274491`. Those are the
+`n = 3` values. A witness computed at `n = 6`, `9` or `12` contains none of them.
+
+| | |
+|---|---|
+| fingerprint-detected | 46 |
+| structurally convention C | 53 |
+| overlap | **12** |
+| **missed** | **41** |
+
+The missed set is the nuclear layer: deuteron at `H₆`, helium-3 at `H₉`,
+helium-4 at `H₁₂`, the `a_K` LP duals, the `binding-a3plus` assemblies.
+
+It surfaced only by accident. Fixing the co-Casimir producer to use
+`live_channels` made it print `live channels = 11 of 11 (dead: [])` — impossible
+under convention D at `n = 6`, where 7 of 11 must be dead. The weights came from
+an upstream witness (`rho-k-h3a-refinement.witness.json`) that is convention C
+and carries **no fingerprint at all**.
+
+Two lessons, and the second is the one worth keeping:
+
+- **Producers read each other's witnesses.** A stale upstream witness
+  propagates into a freshly-migrated downstream producer, and the downstream
+  output looks clean. Migration order matters, and the dependency graph between
+  producers and witnesses is not currently written down anywhere.
+- **A detector built from a list of known values can only find what is already
+  on the list.** The fingerprint test could not have found these no matter how
+  carefully it was run, because the constants it looks for do not occur at
+  `n > 3`. That is not a tuning problem.
+
+### The replacement test is structural
+
+> A witness recording a nonzero `y_λ` on a three-or-more-row partition is
+> convention C — at any `n`, whatever numbers it contains.
+
+A property of the physics (Schur–Weyl on a two-dimensional fibre), not of a
+decimal expansion, so it needs no maintained list.
+`scripts/convention-c-witness-audit.py`, selftest 7/7, including the
+underscore-encoded partitions in `binding-a3plus-*` that a naive parse drops.
+
+`work_list()` in the regeneration harness now applies both tests. Pass 2: 54
+producers, 22 not previously run.
+
+### Orphans after the structural pass — 14
+
+| resolution | count | note |
+|---|---|---|
+| live producer, by slug | 3 | `alpha_k_jones_markov_h4`, `e0_lambda_tryall`, `ocneanu_param_from_fibre_dimension` |
+| producer in `_deprecated/` | 2 | witness outlived the script — retire rather than regenerate |
+| **Rust binary** | 4 | `rust-chi-q-via-gp-lossless`, `matrix-m-chi-q-via-gp` |
+| genuinely unresolved | 5 | `chi-dineutron-h6`, `chi-diproton-h6`, `wenzl-y-lambda-h9`, `wenzl-y-lambda-h12`, `y-lambda-jones-markov` |
+
+The four Rust-produced ones matter more than their count: that is the layer where
+`qou-j6il` found a binary silently returning convention C while its source read
+D. They should not be regenerated until the convention gate has been applied to
+whatever binary produces them.

@@ -189,8 +189,75 @@ def diff(before: dict, after: dict):
     return rows
 
 
+def _is_convention_c(raw: str, doc) -> bool:
+    """Is this witness convention C?
+
+    TWO tests, because the first one is not sufficient and I shipped a campaign
+    that assumed it was.
+
+    1. **Fingerprint** — the witness contains a known convention-C decimal.
+       Those constants are the `n = 3` values (`z_C` and the three `y_λ` at
+       three strands), so this catches nothing computed at `n = 6`, `9` or `12`.
+
+    2. **Structural** — the witness records a nonzero `y_λ` on a partition with
+       three or more rows. Under convention D every such weight is *exactly*
+       zero (Schur-Weyl on a two-dimensional fibre), so a nonzero one is
+       convention C at any `n`, whatever numbers it happens to contain.
+
+    Measured when test 2 was added: 46 witnesses matched test 1, 53 matched
+    test 2, and only 12 matched both — the first work list missed 41, the whole
+    nuclear layer among them. Test 2 is a property of the physics rather than of
+    a decimal expansion, which is why it does not need a maintained list.
+    """
+    if any(c in raw for c in C_FINGERPRINTS):
+        return True
+    if "partition" not in raw:
+        return False
+    return bool(_structural_hits(doc))
+
+
+def _structural_hits(doc, tol: float = 1e-30):
+    """Nonzero y_lambda on a 3+ row block. Mirrors convention-c-witness-audit.py."""
+    found = []
+
+    def part_of(node):
+        part = node.get("partition")
+        if part is None:
+            return None
+        if isinstance(part, (list, tuple)):
+            cleaned = [x for x in part if x not in ("_", "", None)]
+            try:
+                return tuple(int(x) for x in cleaned)
+            except (TypeError, ValueError):
+                return None
+        return None
+
+    def walk(node):
+        if found:
+            return
+        if isinstance(node, dict):
+            p = part_of(node)
+            if p is not None and len(p) >= 3:
+                for k, v in node.items():
+                    if "y_lambda" in k or "y_lam" in k:
+                        try:
+                            if abs(float(v)) > tol:
+                                found.append(True)
+                                return
+                        except (TypeError, ValueError):
+                            pass
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    walk(doc)
+    return found
+
+
 def work_list():
-    """[(witness, producer)] for every witness with a C fingerprint."""
+    """[(witness, producer)] for every convention-C witness."""
     index = {p.name: p for p in (REPO / "computations").rglob("*.py")}
     items, orphans = [], []
     for w in sorted((REPO / "computations").rglob("*.json")):
@@ -200,7 +267,11 @@ def work_list():
             raw = w.read_text()
         except OSError:
             continue
-        if not any(c in raw for c in C_FINGERPRINTS):
+        try:
+            _doc = json.loads(raw)
+        except json.JSONDecodeError:
+            _doc = {}
+        if not _is_convention_c(raw, _doc):
             continue
         try:
             doc = json.loads(raw)
