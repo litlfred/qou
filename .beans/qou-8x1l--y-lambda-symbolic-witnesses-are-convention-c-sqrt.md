@@ -74,3 +74,55 @@ what decides it.
    record which cause it was.
 
 Blocks the `qou-eea0` convergence criterion (`--stale` empty).
+
+## Producers identified — both are DEPRECATED, and that is the point
+
+| witness | producer |
+|---|---|
+| `y-lambda-symbolic-witness.json` | `computations/_deprecated/y_lambda_symbolic.py` |
+| `y-lambda-wenzl-bridge-symbolic-witness.json` | `computations/_deprecated/y_lambda_wenzl_bridge_extended.py` |
+
+`qou-eea0` already ruled on this class:
+
+> their producers are in `_deprecated/`. The witness outlived the script.
+> These cannot be regenerated without un-deprecating, and probably should be
+> **retired rather than regenerated**: a witness whose producer was
+> deliberately retired is history, and history is allowed to be convention C
+> provided it says so.
+
+**That disposition does not hold for these two.** It assumed such witnesses
+are no longer consumed. These are read — as live input — by six live
+producers:
+
+    delta_lambda_empirical_tabulation.py
+    per_irrep_pole_atom_crystal.py
+    phase5/phase1c_proton_h3_symbolic_decomposition.py
+    rho_k_co_casimir_extended.py
+    rho_k_h3a_refinement.py
+    sigma_shell_from_beta_chain.py
+
+(13 live files name them; the other 7 only in docstrings/comments. The six
+above do `read_text`/`json.load` on them.)
+
+So the deprecation boundary has been crossed in the direction that matters: a
+**retired** producer's convention-C output is current input to live compute,
+and `rho_k_h3a_refinement`'s Schur–Weyl check is the alarm that has been
+going off about it.
+
+This also means the campaign's orphan triage undercounted: "producer in
+`_deprecated/` → retire" is only safe once the witness has no live readers,
+and that condition was never checked.
+
+## Revised close condition
+
+Step 1 of the plan above is not "find the producer" — it is a decision the
+owner may want to take:
+
+1. **Un-deprecate and migrate** `y_lambda_wenzl_bridge_extended.py` to D
+   (sqrt-free, `y_λ = 0` for `ℓ(λ) ≥ 3`), regenerate, or
+2. **Re-point the six live readers** at a D-convention `y_λ` source that
+   already exists, if one covers n = 6 symbolically, or
+3. **Retire for real** — delete the witness and fix the six readers.
+
+Not chosen here; each has a different blast radius and (1) resurrects a file
+someone deliberated over retiring.
