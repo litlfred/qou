@@ -256,9 +256,51 @@ def _structural_hits(doc, tol: float = 1e-30):
     return found
 
 
+def _resolve_producer(doc, witness: pathlib.Path, index, stems):
+    """Find the .py that writes this witness, over three keys and a slug.
+
+    `scriptFile` alone leaves 23 witnesses unowned, 11 of them wrongly: the
+    corpus records a producer under three different keys and sometimes not at
+    all. Resolution order, weakest assumption last:
+
+    1. ``scriptFile`` / ``script`` / ``producer`` — a path or a bare filename.
+       ``producer`` is the one that was being skipped, and it is not a rare
+       spelling: it owns the whole `chi_at_q0_via_hoefsmit_mpfr` family.
+    2. **slug match** on the witness basename, `-` to `_`. `e0-lambda-tryall`
+       to `e0_lambda_tryall.py`. Only accepted on an exact stem hit, so it
+       cannot silently bind a witness to a near-neighbour script.
+
+    A `producer` naming a **Rust binary** (`rust-chi-q-via-gp-lossless`,
+    `matrix-m-chi-q-via-gp`) resolves to nothing here by design — that layer
+    needs the hecke-engine CLI, and is where `qou-j6il` found a binary
+    returning convention C while its source read D. Better unowned and visible
+    than bound to a Python script that does not produce it.
+
+    `_deprecated/` is never a resolution: a witness whose producer was retired
+    is history, and history may stay convention C provided it says so.
+    """
+    for key in ("scriptFile", "script", "producer"):
+        val = doc.get(key) or ""
+        if not isinstance(val, str) or not val:
+            continue
+        hit = index.get(pathlib.Path(val).name)
+        if hit and "_deprecated" not in str(hit):
+            return hit
+    base = witness.name
+    for suffix in (".witness.json", "-witness.json", ".json"):
+        if base.endswith(suffix):
+            base = base[: -len(suffix)]
+            break
+    hit = stems.get(base.replace("-", "_"))
+    if hit and "_deprecated" not in str(hit):
+        return hit
+    return None
+
+
 def work_list():
     """[(witness, producer)] for every convention-C witness."""
     index = {p.name: p for p in (REPO / "computations").rglob("*.py")}
+    stems = {p.stem: p for p in (REPO / "computations").rglob("*.py")}
     items, orphans = [], []
     for w in sorted((REPO / "computations").rglob("*.json")):
         if "_deprecated" in str(w):
@@ -277,8 +319,7 @@ def work_list():
             doc = json.loads(raw)
         except json.JSONDecodeError:
             doc = {}
-        sf = doc.get("scriptFile") or doc.get("script") or ""
-        src = index.get(pathlib.Path(sf).name) if sf else None
+        src = _resolve_producer(doc, w, index, stems)
         (items if src else orphans).append(
             (str(w.relative_to(REPO)), str(src.relative_to(REPO)) if src else None))
     return items, orphans
