@@ -266,3 +266,89 @@ instead, the rung would not have been touched at all; they are placed next to
 mentioning `s0` — "did not find an occurrence" — even though the two are
 definitionally equal. `show traceMap K q z (b K q 1 * s1 K q) = z * z` first;
 `show` goes through `isDefEq`, `rw` does not. Cost me three identical errors.
+
+---
+
+## 2026-08-10 — step 4: the Markov weights are identified, in closed form
+
+The blocker recorded above was *"what remains is identifying the Markov weights.
+Not attempted."* They are now identified, exactly, and verified.
+
+Producer: [`computations/h4_markov_weights_closed_form.py`](../computations/h4_markov_weights_closed_form.py)
+→ `computations/h4-markov-weights-closed-form.witness.json`.
+
+With `A = q²+1`, `B = q⁴+q²+1`, `C = q⁴+1`:
+
+| λ | d | w_λ |
+|---|---|---|
+| `(4)` | 1 | `(qz+1)(qAz+1)(qBz+1) / (A²BC)` |
+| `(3,1)` | 3 | `−q (z−q)(qz+1)(qAz+1) / (A²C)` |
+| `(2,2)` | 2 | `−q³(z−q)(qz+1) / (A²B)` |
+| `(2,1,1)` | 3 | `q²(z−q)(qz+1)(Az−q³) / (A²C)` |
+| `(1,1,1,1)` | 1 | `−q³(z−q)(Az−q³)(Bz−q⁵) / (A²BC)` |
+
+**A, B, C are exactly the `wedderburn₄` genericity hypotheses `h2`, `h3`, `h4`.**
+The weights are singular precisely off that locus — which is the consistency
+check that they belong to that decomposition, not merely that they fit.
+
+Every weight carries `(z−q)` except `(4)` and `(qz+1)` except `(1,1,1,1)`; `q`
+and `−q⁻¹` are the two Hecke eigenvalues.
+
+### What was verified, and how
+
+Nothing here is fitted. The centre is computed as the nullspace of the
+commutator system, a generic central element is diagonalised to give the five
+central primitive idempotents, and the characters are read off as
+`χ_λ(x) = tr(R_x·P_λ)/d_λ`, the weights as `w_λ = tr_M(z_λ)/d_λ`. The closed
+forms above were then *recognised* from those and re-checked. At each of
+`q = 2, 3, 5/2, 7/3, 4`, exactly:
+
+* block dims `1,1,2,3,3`, `Σd² = 24`;
+* all 5 closed forms match the spectral weights;
+* `χ_λ(1) = d_λ`;
+* **`tr_M(b_i) = Σ_λ w_λ χ_λ(b_i)` on all 24 basis elements** — this is
+  precisely the `hdecomp` hypothesis of `gram_symm_of_rep_decomp`.
+
+Arithmetic is exact (sympy `Rational` + symbolic `z`); no float64 in the
+derivation.
+
+### Independent confirmation, and a label correction
+
+`computations/alpha-k-jones-markov-h4.witness.json` already carried these five
+weights as **floats** at the substrate anchor, from a different method (a
+numerical constraint system, `status: exploratory`). The closed forms reproduce
+all five to ≤ 2.1e-14 relative, and `Σ_λ w_λ d_λ = 1 = tr_M(1)` exactly.
+
+That cross-check also **fixed the partition labelling**, which the spectral
+computation alone does not determine — my first reading had the two `d=1` blocks
+and the two `d=3` blocks swapped. The table above is the corrected one.
+
+### Also established, independently of the weights
+
+The same script's sibling probe verified **Gram symmetry on all 576 basis
+pairs** of `trM4` symbolically in full generality (`h`, `z` free) — i.e.
+`trM4_cyclic` on the subscript basis is true and reachable by
+`cyclic_of_gram_symm` alone. That is a 576-entry closure, which is the thing the
+rep-decomposition route exists to avoid, but it is worth recording that the
+target theorem is confirmed independently of the ASCII chain.
+
+The transcription of the three generator actions was checked by re-deriving the
+whole Hecke presentation from them (both quadratics, both braid relations, far
+commutation).
+
+### What remains for step 4
+
+The Lean wiring. `gram_symm_of_rep_decomp` needs the five `ρ_λ` as maps
+`(Fin 24 → R) → Matrix (dim λ) (dim λ) R` with `ρ_λ (mulNF₄ h u v) = ρ_λ u * ρ_λ v`,
+plus `hdecomp`. `HeckeH4Wedderburn` supplies the `ρ_λ` (`chiNF₄ q`,
+`chiNF₄ (-q⁻¹)`, `blockOf22`, `blockOf31`, `blockOf211`) and `wedderburnHom₄`
+is already an `AlgHom`, so multiplicativity should come from that rather than
+from a fresh computation. `hdecomp` is the 24 equations verified above.
+
+**Cost warning, measured this session:** the H4 machinery is *absent from the
+`lake-cache/qou-v4-24-0-new` olean set* — `HeckeH4StabilizationRung`,
+`HeckeH4AlgebraLaws`, `HeckeH4Wedderburn`, `H4BasisBridge` and the three
+`HeckeH4BlockMap*` are all missing. So the Lean side of step 4 starts with a
+from-source build of that cone, and the bean's own measurement says
+`HeckeH4BlockMap211` and `HeckeH4BlockMap31` are >25 min each at ~6 GB. Budget
+for that before starting, and seed the cache branch afterwards.
