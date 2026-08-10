@@ -50,9 +50,11 @@ gives dim 0, agreeing with the non-zero-condition form.  Gate G7b pins it.
 """
 
 import json
+import os
 import pathlib
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
@@ -63,16 +65,32 @@ warnings.filterwarnings("ignore")
 
 
 def singular(code, timeout):
-    """Run Singular; return (status, elapsed_seconds, stdout)."""
+    """Run Singular in its OWN PROCESS GROUP; return (status, elapsed_seconds, stdout).
+
+    The process group is not decoration.  `modStd` forks ~15 parallel modular jobs, and
+    `subprocess.run(timeout=)` kills only the direct child -- so a timeout leaves the
+    forks orphaned, reparented to init, and still burning every core.  Measured live:
+    13 orphans survived an 11a1 timeout and were competing with the NEXT measurement
+    until they were reaped by hand, which silently inflates whatever runs after a
+    timeout.  Timings taken by a harness with this bug are not trustworthy in any run
+    that follows a timeout.  start_new_session + killpg closes it.
+    """
     with tempfile.NamedTemporaryFile("w", suffix=".sing", delete=False) as f:
         f.write(code + "\nquit;\n")
         path = f.name
     t0 = time.time()
+    proc = subprocess.Popen(["Singular", "-q", "--no-warn", path],
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                            text=True, start_new_session=True)
     try:
-        r = subprocess.run(["Singular", "-q", "--no-warn", path],
-                           capture_output=True, text=True, timeout=timeout)
-        return "ok", time.time() - t0, r.stdout
+        stdout, _ = proc.communicate(timeout=timeout)
+        return "ok", time.time() - t0, stdout
     except subprocess.TimeoutExpired:
+        try:
+            os.killpg(os.getpgid(proc.pid), signal.SIGKILL)
+        except (ProcessLookupError, PermissionError):
+            proc.kill()
+        proc.communicate()
         return "timeout", time.time() - t0, ""
     finally:
         pathlib.Path(path).unlink(missing_ok=True)
