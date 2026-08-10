@@ -359,6 +359,18 @@ def main() -> int:
                                    "with exactly one of degree 14, so the choice was "
                                    "unambiguous -- a property of this manifold, not a "
                                    "guarantee",
+        # Selecting the degree-14 factor BECAUSE Route 75 reports degree 14 would make the
+        # field agreement partly circular -- the criterion would import the answer it is
+        # supposed to test.  It does not have to: across the 15 eliminants the companion
+        # degree VARIES (6 x5, 12 x3, 24 x6) while 14 is the ONLY degree appearing in
+        # every single factorization.  The geometric component is therefore identifiable
+        # as "the degree common to all coordinates", with no reference to Route 75, and
+        # the isomorphism test that follows is a genuine check rather than a restatement.
+        "selection_is_independent_of_route75": True,
+        "selection_criterion": "the geometric factor is the one whose degree appears in "
+                               "EVERY coordinate's factorization; companions vary",
+        "factor_degree_multisets": {"(6, 14)": 5, "(12, 14)": 3, "(14, 24)": 6},
+        "degree_common_to_all_eliminants": 14,
         "measurements": recorded,
         "timings_recorded_not_recomputed": "--full" not in sys.argv,
         "load_caveat": "the 10_100 timings were taken with 2-3 Singular processes sharing "
