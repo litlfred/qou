@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/braids-and-knots/three-strand-color-winding-rigidity.lean"
   },
   "source_hashes": {
-    "md": "a198a968c2d7",
     "ts": "3105d62e4f95",
-    "lean": "45c9c7230a51",
-    "lean_statement": "7898ffffa15b"
+    "md": "a198a968c2d7",
+    "lean": "45c9c7230a51"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -401,121 +400,121 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"generic-R\",\"root-of-unity\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71",
+        "notes": "{\"regimes\":[\"generic-R\",\"root-of-unity\",\"symbolic\"],\"chapter\":\"braids-and-knots\",\"expected\":[\"generic-R\",\"mod-gt-1\",\"mod-lt-1\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "ts": "a3851edd5911",
-          "md": "450135f66597",
-          "lean": "7ab018669b27"
+          "ts": "3105d62e4f95",
+          "md": "a198a968c2d7",
+          "lean": "45c9c7230a51"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:01.225Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1349,5 +1348,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-10T04:34:13.080Z"
+  "updated_at": "2026-08-10T04:58:01.225Z"
 }

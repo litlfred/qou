@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.lean"
   },
   "source_hashes": {
-    "md": "53c2c0d94c3d",
     "ts": "d48edbe07ae0",
-    "lean": "d4ec87d7d2b8",
-    "lean_statement": "031ce8da3049"
+    "md": "53c2c0d94c3d",
+    "lean": "d4ec87d7d2b8"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -823,16 +822,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71",
         "notes": "{\"regimes\":[\"real-positive\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
@@ -841,16 +840,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -858,16 +857,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -875,16 +874,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -892,16 +891,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -909,16 +908,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -926,16 +925,16 @@
         "field_hash": {
           "ts": "d48edbe07ae0",
           "md": "53c2c0d94c3d",
-          "lean": "72af75939ac1"
+          "lean": "d4ec87d7d2b8"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1530,5 +1529,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-10T04:37:59.671Z"
+  "updated_at": "2026-08-10T04:58:50.052Z"
 }
