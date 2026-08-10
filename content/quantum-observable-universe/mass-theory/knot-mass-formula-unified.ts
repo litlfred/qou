@@ -10,7 +10,6 @@ export default theorem({
   },
   uses: [
     "thm:frobenius-codim-universal",
-    "prop:partition-sum-proton-residual",
     "conj:knot-factor-frobenius-pairing",
   ],
   cites: ["kassel1995"],

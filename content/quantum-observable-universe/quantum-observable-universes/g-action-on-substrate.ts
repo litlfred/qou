@@ -7,7 +7,6 @@ export default conjecture({
   lean: { ref: "qou:QOU.QuantumObservableUniverses.GActionOnSubstrate", validation: "stub" },
   uses: [
     "def:frobenius-hopf-substrate",
-    "def:categorical-action",
     "rem:hecke-algebra-from-braiding",
   ],
   tags: [

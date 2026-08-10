@@ -10,7 +10,6 @@ export default conjecture({
   uses: [
     "prop:nuclear-knot-classification",
     "rem:fibre-functor-rigidity",
-    "prop:mass-coefficient-shadow-price",
     "prop:confinement-frobenius-reciprocity",
     "def:q-casimir",
     "rem:adjoint-trace",

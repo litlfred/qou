@@ -14,7 +14,7 @@ export default proposition({
     validation: "not_checked",
   },
   cites: ["diaconis-ram2000", "bufetov2020"],
-  uses: ["prop:feynman-categorical-trace"],
+  uses: [],
   computation: {
     engine: "mpmath",
     script: "computations/probes/hecke_markov_transition_probe.py",

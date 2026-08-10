@@ -39,6 +39,9 @@ export default proposition({
     ref: "qou:QOU.BraidKnot.rhoKGradedExpansion",
     validation: "not_checked",
   },
+  uses: [
+    "prop:atomic-mass-gb-nf",
+  ],
   tags: [
     "mass",
     "categorical-density",
