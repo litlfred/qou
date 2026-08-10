@@ -451,6 +451,41 @@ noncomputable def OverlapComposition.spoly {G : Type u} {k : Type v} [Ring k]
     (AlgElement.smul (oc.rule₁.lc ord)
       (AlgElement.contextMul oc.left oc.rule₂.relation []))
 
+/-- **A rule composed with itself over its whole leading monomial is vacuous.**
+
+`OverlapComposition` places no condition on `left` or `right`, so `left = right =
+[]` — the two rules leading on the *same* word — is a legal composition, and it
+is legal in particular when the two rules are the same rule. Then the two halves
+of the S-polynomial are literally the same element and it is zero.
+
+Worth having explicitly rather than as an aside: in any completeness proof the
+degenerate shapes are as much a proof obligation as the genuine overlaps, and
+this discharges every one of them whose two rules coincide. What it does *not*
+cover is two **distinct** rules leading on the same word — see
+`UGB.GrobnerShirshov.Hecke.DegenerateYbBs`, where that case is inhabited. -/
+theorem OverlapComposition.spoly_isZero_of_self {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (oc : OverlapComposition G k ord)
+    (hrule : oc.rule₁ = oc.rule₂) (hleft : oc.left = []) (hright : oc.right = []) :
+    oc.spoly.isZero := by
+  intro m
+  simp only [OverlapComposition.spoly, hrule, hleft, hright, AlgElement.sub_coeff,
+    AlgElement.smul_coeff, AlgElement.contextMul_nil_nil_coeff, sub_self]
+
+/-- An element that is zero is in normal form: `isNormalForm` only constrains
+monomials with a non-zero coefficient, of which there are none. -/
+theorem isNormalForm_of_isZero {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f : AlgElement G k}
+    (hf : f.isZero) : isNormalForm ord sys f :=
+  fun _ _ m hm => absurd (hf m) hm
+
+/-- …so an element that is zero reduces to zero, in no steps. This is the
+Gröbner–Shirshov obligation for a composition whose S-polynomial vanishes
+outright. -/
+theorem reducesToNF_self_of_isZero {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k} {f : AlgElement G k}
+    (hf : f.isZero) : ∃ nf, ReducesToNF ord sys f nf ∧ nf.isZero :=
+  ⟨f, ⟨MultiStepReduction.refl f, isNormalForm_of_isZero hf⟩, hf⟩
+
 /-- **Inclusion composition**: when the leading monomial of one rule
     entirely contains that of another as a subword.
 

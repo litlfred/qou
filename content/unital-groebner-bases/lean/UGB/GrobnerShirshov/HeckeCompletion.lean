@@ -627,4 +627,137 @@ theorem overlapTriples_four_proper_count :
     ((overlapTriples 4).filter (fun t => !t.1.isEmpty && !t.2.2.isEmpty)).length = 45 := by
   decide
 
+/-! ## §4l  The degenerate shapes resolve
+
+Thirteen of the fifty-eight shapes are degenerate: both contexts empty, the two
+rules leading on the same word. They are still proof obligations —
+`OverlapComposition` admits them — and they split in two.
+
+*When the two rules coincide* the S-polynomial is the difference of an element
+with itself: `OverlapComposition.spoly_isZero_of_self`, proved in the framework
+because nothing about it is Hecke-specific.
+
+*When they do not*, something has to be checked, and at `n = 4` the case is
+inhabited: §4j puts the Yang–Baxter rule and the Bokut–Shiao rule at `j = i − 1`
+on the same leading monomial `σᵢσᵢ₋₁σᵢ`. It resolves for a sharper reason than
+the first case — the two rules are **exact negatives**, and the leading
+coefficients are `−1` and `+1`, so the S-polynomial
+
+    lc₂ • YB − lc₁ • BS  =  1 • YB − (−1) • BS  =  YB + BS
+
+vanishes identically. Both orderings of the pair, since the sign flips with them.
+
+Together these cover every degenerate shape at `n = 4`: ten of the thirteen words
+carry a single rule, and at the other three the only pair of distinct rules is
+the Yang–Baxter/Bokut–Shiao one. That last sentence is a fact about the rule
+list, not something proved here — the rule-level converse of
+`heckeCompletedRewritingSystem_lm_cases` — so what is machine-checked is the two
+mechanisms, not the covering claim. -/
+
+namespace DegenerateYbBs
+
+variable {n : ℕ} {i' i : Fin n}
+
+theorem ne_of_succ (hi : i'.val + 1 = i.val) : i' ≠ i := by
+  intro h; subst h; omega
+
+/-- The Yang–Baxter rule leads with coefficient `−1`: deg-lex picks the word
+starting with the larger generator, which is the *subtracted* term. -/
+theorem yangBaxter_lc (hi : i'.val + 1 = i.val) :
+    (yangBaxterRelation i' i).lc (heckeOrder n) = -1 := by
+  show (yangBaxterRelation i' i).relation.coeff
+    ((yangBaxterRelation i' i).lm (heckeOrder n)) = -1
+  rw [yangBaxterRelation_lm i' i (by omega)]
+  simp [yangBaxterRelation, AlgElement.ofTerms_coeff, ne_of_succ hi]
+
+/-- The Bokut–Shiao rule at `j = i − 1` leads with coefficient `+1` on the same
+word — it is oriented the other way round. -/
+theorem bokutShiao_lc (hi : i'.val + 1 = i.val) :
+    (bokutShiaoRelation i' i i').lc (heckeOrder n) = 1 := by
+  show (bokutShiaoRelation i' i i').relation.coeff
+    ((bokutShiaoRelation i' i i').lm (heckeOrder n)) = 1
+  rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi,
+    bokutShiaoRelation_at_pred hi]
+  simp [AlgElement.ofTerms_coeff, (ne_of_succ hi).symm]
+
+/-- The two relations sum to zero, coefficient by coefficient. -/
+theorem relations_add_eq_zero (hi : i'.val + 1 = i.val) (m : Monomial (HeckeGen n)) :
+    (yangBaxterRelation i' i).relation.coeff m
+      + (bokutShiaoRelation i' i i').relation.coeff m = 0 := by
+  rw [bokutShiaoRelation_at_pred hi]
+  show (AlgElement.ofTerms [([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], (1 : ℝ)),
+        ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩], -1)]).coeff m + _ = 0
+  rw [AlgElement.ofTerms_coeff, AlgElement.ofTerms_coeff]
+  have hne := ne_of_succ hi
+  by_cases h₁ : ([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩] : Monomial (HeckeGen n)) = m
+  · subst h₁; simp [hne]
+  · by_cases h₂ : ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] : Monomial (HeckeGen n)) = m
+    · subst h₂; simp [hne, hne.symm]
+    · simp [h₁, h₂]
+
+/-- The degenerate composition of the two rules that share a leading monomial,
+Yang–Baxter first. -/
+noncomputable def ybBsOverlap (hi : i'.val + 1 = i.val) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := yangBaxterRelation i' i
+  rule₂ := bokutShiaoRelation i' i i'
+  left := []
+  overlap := [⟨i⟩, ⟨i'⟩, ⟨i⟩]
+  right := []
+  lm₁_decomp := by rw [yangBaxterRelation_lm i' i (by omega)]; simp
+  lm₂_decomp := by rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi]; simp
+  overlap_nonempty := by simp
+
+/-- …and the same pair the other way round. -/
+noncomputable def bsYbOverlap (hi : i'.val + 1 = i.val) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := bokutShiaoRelation i' i i'
+  rule₂ := yangBaxterRelation i' i
+  left := []
+  overlap := [⟨i⟩, ⟨i'⟩, ⟨i⟩]
+  right := []
+  lm₁_decomp := by rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi]; simp
+  lm₂_decomp := by rw [yangBaxterRelation_lm i' i (by omega)]; simp
+  overlap_nonempty := by simp
+
+/-- **The Yang–Baxter/Bokut–Shiao S-polynomial is zero.** Not "reduces to zero" —
+zero. -/
+theorem ybBsOverlap_spoly_isZero (hi : i'.val + 1 = i.val) :
+    (ybBsOverlap hi).spoly.isZero := by
+  intro m
+  show (bokutShiaoRelation i' i i').lc (heckeOrder n)
+      * (AlgElement.contextMul [] (yangBaxterRelation i' i).relation []).coeff m
+    - (yangBaxterRelation i' i).lc (heckeOrder n)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i' i i').relation []).coeff m = 0
+  rw [AlgElement.contextMul_nil_nil_coeff, AlgElement.contextMul_nil_nil_coeff,
+    bokutShiao_lc hi, yangBaxter_lc hi]
+  have := relations_add_eq_zero hi m
+  linarith
+
+/-- The other ordering, for the same reason with the signs exchanged. -/
+theorem bsYbOverlap_spoly_isZero (hi : i'.val + 1 = i.val) :
+    (bsYbOverlap hi).spoly.isZero := by
+  intro m
+  show (yangBaxterRelation i' i).lc (heckeOrder n)
+      * (AlgElement.contextMul [] (bokutShiaoRelation i' i i').relation []).coeff m
+    - (bokutShiaoRelation i' i i').lc (heckeOrder n)
+      * (AlgElement.contextMul [] (yangBaxterRelation i' i).relation []).coeff m = 0
+  rw [AlgElement.contextMul_nil_nil_coeff, AlgElement.contextMul_nil_nil_coeff,
+    bokutShiao_lc hi, yangBaxter_lc hi]
+  have := relations_add_eq_zero hi m
+  linarith
+
+/-- **The Gröbner–Shirshov obligation for these compositions, discharged.** -/
+theorem ybBsOverlap_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (ybBsOverlap hi).spoly nf ∧ nf.isZero :=
+  reducesToNF_self_of_isZero (ybBsOverlap_spoly_isZero hi)
+
+theorem bsYbOverlap_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (bsYbOverlap hi).spoly nf ∧ nf.isZero :=
+  reducesToNF_self_of_isZero (bsYbOverlap_spoly_isZero hi)
+
+end DegenerateYbBs
+
 end UGB.GrobnerShirshov.Hecke
