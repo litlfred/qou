@@ -1,10 +1,10 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: in-progress
+status: todo
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-10T02:20:00Z
+updated_at: 2026-08-10T02:55:00Z
 ---
 
 
@@ -764,3 +764,25 @@ The remaining 49 are the 4-, 5-, 6-, 8-, 9-, 10-, 12-, 15-, 19- and 25-step
 chains: `Q × R` (the mirror of §4p, and *not* symmetric to it — the quadratic
 rule on the left produces a different chain), then BS × BS and BS × F at
 `j₀ ≥ j`.
+
+## RELEASED 2026-08-10 — PR #4892 merged, claim dropped
+
+Merged to main as `1d3f71c43c` (rebase). Landed: §4k enumeration, §4l degenerate
+shapes, §4m the inclusion half + the two structural facts, §4n quadratic
+self-overlap, §4o BS/YB × far-commutation, §4p cyclic × quadratic, and
+`computations/hecke_gs_confluence_n4.py`.
+
+Rule-level at n = 4: **43 of 92 overlap compositions and 22 of 22 inclusion
+compositions proved.** §4n/§4o/§4p are general in `n`.
+
+Back to `todo` — I stepped off to qou-x64l, so this is claimable. **Next step,
+for whoever takes it:** `Q × R`, the mirror of §4p. It is *not* symmetric to
+§4p — the quadratic rule on the **left** gives a different chain (the surviving
+term is `[σₓ] ++ v` rather than `v ++ [σₓ]`), so it needs its own theorem, not a
+corollary. 9 rule-level compositions, also 3 steps each, and the cyclic-position
+hypothesis it needs is the *other* one: `v = u'' ++ [σ_z]` where `u = σₓ :: u''`,
+which holds for far-commutation and Yang–Baxter but **not** for general
+Bokut–Shiao — which is why `Q2 × B120` is 8 steps, not 3.
+
+`AlgElement.contextMul_ofTerms_coeff` and `contextMul_coeff_congr` are already in
+place and are what make each such family mechanical.
