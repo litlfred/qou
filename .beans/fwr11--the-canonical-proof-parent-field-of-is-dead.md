@@ -63,15 +63,50 @@ never names, that declares no `proofs[]`, and that is marked scaffolding. Their
 `of:` may itself be mis-aimed: the "edge is wrong, not the position" case
 `fwr7` was about, where one reader is known to get it wrong.
 
+## The second reader: 6 keep, 3 revert
+
+Ran after the fact, briefed to refute and told explicitly that *"when in doubt,
+keep"* is not an acceptable tie-break. It overturned three, and **two of the
+three expose errors in my reasoning, not differences of judgement**:
+
+- `prf:jackson-q-bessel-contiguity` — I argued it "matches the parent's wording
+  of the recurrence." That is an argument for *dropping* the edge. A block that
+  restates its parent has shown the reader need not leave it. The block also
+  carries no argument at all, deferring to `QBesselContiguityRecurrence.lean`.
+- `prf:terminal-resolution` — I argued it "derives the CODATA masses the
+  parent's table asserts." Wrong on the facts: it derives only p and n, by a
+  route the table does not use, and never touches the deuteron or binding-energy
+  rows. See bean `trm1` — the proposition over-claims against its own proof.
+- `prf:categorical-archimedean-bridge` — the proof states its own goal
+  self-containedly and closes against `ex:q-ext-deriv`; its unmet prerequisites
+  are the definitions of `d_q` and the weight decomposition, not the parent.
+
+The six that survived did so on positive evidence of a lean: two point at the
+parent without restating it; four are structurally parasitic on it — `α_k` in
+`phi-q`, "both characterisations" in `genus-filtration`, the bare Taylor line in
+`observation-energy`, and the answer-key headings in `vertex-is-exceptional-divisor`
+and `transfer-matrix-level-independence`.
+
+**The standard earned its cost.** A 3-of-9 overturn on a batch I judged the
+*weakest* possible editorial claim (restating an edge the author had already
+declared in a dead field) says the bar is right where the repo puts it.
+
+**Independence flaw, mine.** I committed the nine before dispatching the reader,
+so my rationale was visible in `git log` and the reader said so unprompted. It
+read all eighteen `.md` files and diverged from me on two of the three on its
+own reasoning, which mitigates but does not erase the leak. Dispatch before the
+commit next time.
+
 ## Open
 
-1. **No second reader ran.** `fwr7` put eight single-reader proposals to two
-   independent readers and all eight fell. That precedent applies to these nine.
-   The mitigating difference — stated to be weighed, not to be taken — is that
-   `fwr7`'s eight asserted an author-declared edge was *wrong*, while these
-   assert an edge the author already declared, in a field that turned out dead,
-   should also exist where the graph reads. Authorial intent is not in dispute
-   for any of the nine. Weaker claim; not a zero one.
+1. **The reader's other findings, unfixed** — `prf:quantum-dilogarithm-stratified`
+   and `prf:phi-q-categorical-truncation` now declare *only* the parent while
+   naming seven or eight other blocks in prose; `prf:terminal-resolution` has a
+   raw relative-path link (`../braids-and-knots/...md`) no cross-ref check will
+   resolve; `prop:transfer-matrix-level-independence` declares a §3b-cond
+   conditional banner without declaring the conjecture in `uses[]` (rule 4
+   violation); `prop:jackson-q-bessel-contiguity-recurrence` declares no
+   `proofs[]` and its proof is named off-convention.
 2. **Upstream fix, `litlfred/folio-assistant`.** Either `of` goes into
    `ProofSchema` and `content-graph.ts` reads it, or the docstring calling it
    canonical stops saying so. Until then every `of:` in the corpus is decoration.
