@@ -597,6 +597,9 @@ export default chapter({
       blocks: [
                 "mass-geometric-face-intro",
 "thurston-volume-additivity",
+        "flat-tetrahedron-zero-volume",
+        "gluing-equations-do-not-detect-hyperbolicity",
+        "hyperbolic-knot-shape-fields",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",

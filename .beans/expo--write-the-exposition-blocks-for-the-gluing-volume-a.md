@@ -1,7 +1,7 @@
 ---
 # expo
 title: 'Write the exposition blocks for the gluing / volume / surreal-transfer arc'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -57,3 +57,59 @@ touched. Route 75 gate G6 is the wording to reuse.
 `snap`, Garoufalidis–Goerner–Zickert — see bean `ptlm`. What is new is the corpus's
 formalisation and gating, which is worth exposition on its own terms and must not be
 dressed up as a mathematical contribution.
+
+---
+**2026-08-10 — first three blocks written, and a trap that would have made them invisible.**
+
+Blocks added to `mass-theory/`, each with `lean.ref` wired to a real, built, sorry-free
+theorem **as the prose was written** (the discipline this bean demands):
+
+| block | `lean.ref` |
+|---|---|
+| `thm:flat-tetrahedron-zero-volume` | `QOU.Knot.FlatTet.BlochWigner_lob_ofReal` |
+| `thm:gluing-equations-do-not-detect-hyperbolicity` | `QOU.Knot.FlatTet.edge_equations_do_not_detect_hyperbolicity` |
+| `prop:hyperbolic-knot-shape-fields` | `QOU.Knot.GeneratedGluing.K61.edge_0` |
+
+All three refs verified to resolve via `lake env lean` before the blocks were committed.
+`validation: "leanok"`.
+
+### ⚠ THE TRAP: dropping files in the directory is not enough
+
+`validateObjects` loads `blockNames ?? discoverManifests(dir)`, and `blockNames` comes
+from the **chapter manifest** (`<dir>/<dirname>.ts`). A block file sitting in the
+directory but absent from `mass-theory.ts` is **never loaded by any checker** — it looks
+present, and is invisible.
+
+I nearly shipped exactly that. Caught by a positive control rather than by reading:
+removing the `lean` block from one `.ts` produced **no** warning, when it should have
+produced "no Lean declaration yet". After registering the three blocks in
+`mass-theory.ts` the same experiment produced
+
+    ⚠ [flat-tetrahedron-zero-volume]: thm:flat-tetrahedron-zero-volume: no Lean declaration yet
+
+and the issue count moved 4 → 5, returning to 4 on revert.
+
+> **A validator reporting "✓ Valid" over your new file proves nothing until you have made
+> it fail on purpose.** This is the same failure the sibling detangler bug had — *"a `]`
+> inside a manifest comment hid 45 blocks from the checker"* — reached from the other
+> direction.
+
+### ⚠ CORRECTION to a claim in merged PR #4891
+
+That PR, and the prepare-merge report, said `content_validate` "could not run … a
+cross-repo wiring problem in this container". **That was wrong, and it was my
+invocation.** `content/pipeline/validate.ts` uses `resolve(import.meta.dir, "../..")` —
+`import.meta.dir` is a **Bun** API, `undefined` under `npx tsx`, which produced exactly
+the `TypeError [ERR_INVALID_ARG_TYPE]: paths[0]` I reported as a wiring failure.
+
+Run with `bun run scripts/run-validate.ts` it works, resolves the platform
+(`c9ae256`), and passes: **`✓ Valid — 4 issue(s)`**, all four pre-existing and none in
+this arc's blocks. The gate was fine; the caller was not. #4891 is merged and cannot be
+amended, so the correction lives here.
+
+### Still to write
+
+The 5₂ saddle sum rule; Kummer's identity and the ideal-tetrahedron law of sines; Rivin
+concavity; the volume functor and `rotate_angles`/`volume_rotate`; the ℝ* limit transfer
+and the two-valued-birthday defect (beans `hypr`, `bday`). Each needs a manifest entry as
+well as a file — see the trap above.
