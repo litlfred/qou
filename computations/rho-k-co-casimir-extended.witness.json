@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:25:09.868368+00:00",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "computedAt": "2026-08-10T16:44:07.339479+00:00",
+  "commitSha": "367ca15c3dcebc778b97d4a8c95d93ce506adc09",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 26286,
+  "durationMs": 20964,
   "computation": "rho-k-co-casimir-extended",
   "scriptFile": "rho_k_co_casimir_extended.py",
   "scriptHash": "6b46797533d4",
@@ -223,7 +223,7 @@
             "contribution_y_chi_Delta": "0.00000841958852569676645960563957061921662687959405632501811542676"
           }
         ],
-        "compute_wall_sec": 0.68,
+        "compute_wall_sec": 0.59,
         "status": "ok"
       },
       {
@@ -702,7 +702,7 @@
             "contribution_y_chi_Delta": "-0.0000000594926249927513772744478020992959082137891279750933507244409"
           }
         ],
-        "compute_wall_sec": 13.6,
+        "compute_wall_sec": 11.11,
         "status": "ok"
       },
       {
@@ -1181,7 +1181,7 @@
             "contribution_y_chi_Delta": "-0.0000000391926595893983343131952519247167813569616866404457786154855"
           }
         ],
-        "compute_wall_sec": 11.67,
+        "compute_wall_sec": 8.84,
         "status": "ok"
       }
     ],
@@ -1204,19 +1204,19 @@
       },
       {
         "path": "rho-k-h3a-refinement.witness.json",
-        "sha256": "bafafa5dbb5c5b1c89266da558d5a1878c0a889bd0daa1701406defc425862bf",
+        "sha256": "9af77d4fb52ad28d6107c9373f9e1ad878c042ee77fa9be7166ec8de77e3efdf",
         "size_bytes": 13983,
-        "commitSha": "f0180ce6db22cc59f129c68bfdb65bfb9ec240d8",
+        "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
         "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-        "computedAt": "2026-08-10T13:05:01.309272+00:00"
+        "computedAt": "2026-08-10T14:39:50.476838+00:00"
       },
       {
         "path": "rho-k-h3a-co-casimir.witness.json",
-        "sha256": "e96fa1c83a26ec887f979848f3903faa79c41f98adc1f1d721958b7391409bc9",
-        "size_bytes": 16037,
-        "commitSha": "883c88b62407e292721fecfd9d939375e750a45f",
-        "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
-        "computedAt": "2026-08-10T02:46:20.999149+00:00"
+        "sha256": "aac89fd9975123fd16f95ff1318b40562e3c4da1b8ccbcbc112ddc842306feab",
+        "size_bytes": 16034,
+        "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+        "scriptCommitSha": "63db388851425a23a623cecaaef1ae8c05ce6878",
+        "computedAt": "2026-08-10T14:39:44.884347+00:00"
       }
     ]
   },
