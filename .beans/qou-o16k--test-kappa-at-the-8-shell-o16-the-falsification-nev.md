@@ -244,6 +244,48 @@ masses needs the binding decomposition that isolates the magic-shell term from
 Coulomb and pairing, and that is not in the corpus (established earlier in this
 bean). The prediction is stated, not confirmed.
 
+## Test design for the remaining step — and where the fit would sneak in
+
+Scoping the last item before running it, per formalize-first: find the
+structural constraint before the wide search.
+
+**The mirror-pair route is the right shape.** For a single-magic mirror pair,
+
+    ΔB  :=  B(Z=m, N=m−1) − B(Z=m−1, N=m)
+
+the isoscalar bulk cancels by construction — it depends on `A`, which is equal
+across the pair. Under the conjecture the magic-shell term contributes
+`κ·(+1) − κ·(−1) = 2κ ≈ −2.1408 MeV` to `ΔB`, **the same at every shell**, since
+both factors were shown shell-invariant. So the test is:
+
+    ΔB_observed − ΔB_Coulomb  ≈  −2.1408 MeV   at m = 2, 8, 20, 28, 50, 82, 126
+
+Seven independent evaluations of one number, with no free parameter — a genuine
+falsification test rather than a fit.
+
+**And here is exactly where a fit would enter.** `ΔB_Coulomb` needs a charge
+radius. The textbook form `ΔE_C ≈ 0.6 e²(2Z−1)/R` with `R = r₀A^{1/3}` carries
+`r₀ ≈ 1.2 fm`, which is *empirical*. Three ways to treat it, and they are not
+equally honest:
+
+1. **Measured radii, no tuning** — take charge radii from experiment per
+   nuclide. Legitimate: an independent measured input used to *test* a
+   prediction, not adjusted to make it pass. This is the option I would take.
+2. **Fitted `r₀`** — choose `r₀` so the residual lands on `−2.1408`. **This is
+   the fit the demotion removed**, re-entering through the test rather than the
+   derivation. Forbidden.
+3. **Derived radius** — from the framework's own `Vol(K)` machinery. Best if it
+   exists, but it must be checked that the radius route is not itself
+   κ-anchored, or the test is circular.
+
+The distinction matters because option 2 *looks* like option 1 in a commit diff.
+Whoever runs this should state which was used and why, in the witness.
+
+**Not run here.** Choosing between (1) and (3) is a scope call on someone else's
+machinery, and running (1) needs a charge-radius table that is not in the tree.
+The design is recorded so the next pass starts from a stated method rather than
+improvising one at the keyboard — which is how (2) happens.
+
 ## Next
 
 1. **Recover or rebuild the binding decomposition** — now the only thing between
