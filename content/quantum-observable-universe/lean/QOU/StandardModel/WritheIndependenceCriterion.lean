@@ -36,10 +36,12 @@ independent of it.
 * `injective_writhe_map_is_falsified` — what the p/n test *does* establish:
   no **injective** function of the writhe can do it.  This is the honest
   content of the original argument.
-* `equal_writhe_distinct_Y_forces_non_factoring` — the criterion that *would*
-  establish independence: two states with the **same** writhe and
-  **different** `Y`.  This is the converse pattern, and it is the one the
-  chapter needs.
+The general criterion is **not** restated here: `sm-hypercharge-invariant.lean`
+already proves `factors_through_iff` (`Y` factors through `w` iff `Y` is
+constant on the fibres of `w`) and
+`HyperchargeInvariant.exists_writhe_degenerate_pair`.  What that file lacks,
+and this one supplies, is the demonstration that the *published p/n argument*
+does not establish the hypothesis those theorems consume.
 
 ## Status of the requirement itself
 
@@ -48,8 +50,7 @@ fails, not necessarily the conclusion.  The corpus already contains the right
 shape of argument: `SecondCrossingInvariant.lean`'s
 `baryon_vacuum_separating` exhibits two states of **equal writhe** (`0`, the
 Borromean baryon per the s5-so3 audit) with **different** baryon number
-(`1` vs `0`).  Under `Y = B` on the non-strange sector that is exactly the
-`equal_writhe_distinct_Y_forces_non_factoring` pattern.
+(`1` vs `0`) — the hypothesis `exists_writhe_degenerate_pair` needs.
 
 But that lemma takes its writhe and `B` values as **hypotheses**; it does not
 derive them from the framework.  So independence is currently *supported by a
@@ -100,20 +101,11 @@ theorem injective_writhe_map_is_falsified
   apply hinj
   rw [← hfac p, ← hfac n, hY]
 
-/-- **The criterion that would establish independence.**
-
-If two states share a writhe but differ in `Y`, then `Y` cannot be *any*
-function of the writhe.  This is the converse pattern to the p/n test, and it
-is what the chapter's requirement needs.
-
-`SecondCrossingInvariant.lean`'s `baryon_vacuum_separating` has exactly this
-shape (baryon and vacuum both at writhe `0`, baryon number `1` vs `0`) — but
-supplies those values as hypotheses rather than deriving them. -/
-theorem equal_writhe_distinct_Y_forces_non_factoring
-    {S : Type*} (w : S → ℤ) (Y : S → ℚ) (x y : S)
-    (hw : w x = w y) (hY : Y x ≠ Y y) :
-    ¬ ∃ f : ℤ → ℚ, ∀ s, Y s = f (w s) := by
-  rintro ⟨f, hf⟩
-  exact hY (by rw [hf x, hf y, hw])
+-- NOTE: the general criterion is NOT restated here.  It is already proved in
+-- `content/quantum-observable-universe/appendix-standard-model/sm-hypercharge-invariant.lean`
+-- as `factors_through_iff` (`Y` factors through `w` iff `Y` is constant on the
+-- fibres of `w`) with the corollary `HyperchargeInvariant.exists_writhe_degenerate_pair`.
+-- This file supplies only what that file lacks: the demonstration that the
+-- *published p/n argument* does not establish the hypothesis those theorems need.
 
 end QOU.StandardModel
