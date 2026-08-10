@@ -6698,6 +6698,28 @@ export const references: CSLData[] = [
     DOI: "10.1007/s13373-014-0054-6",
   }),
 
+  // ── Bokut, Chen & Li 2011 — Composition-Diamond lemma for categories ──
+  // Added 2026-08-09. Local copy: uploads/1101.1563v1.pdf. Cited by
+  // UGB/GrobnerShirshov/Quotient.lean §6: Theorem 4.4 is the statement UGB's
+  // five standing axioms stand in for, and its clause (iii) is the module's
+  // NormalFormBasis. The paper's closing Remark to Thm 4.4 is what makes it
+  // applicable — "if the category has only one object, then Theorem 4.4 is
+  // exact Composition-Diamond lemma for free associative algebras", and the
+  // one-object case is precisely UGB's setting.
+  ref({
+    id: "bokutchenli2011",
+    type: "article",
+    title: "Gröbner-Shirshov bases for categories",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Yuqun" },
+      { family: "Li", given: "Yu" },
+    ],
+    issued: { "date-parts": [[2011]] },
+    URL: "https://arxiv.org/abs/1101.1563",
+    note: "Establishes the Composition-Diamond lemma for small categories presented by a graph (quiver) plus defining relations, working in the free category partial algebra kC(X) of uniform (matching source/target) partial words. Theorem 4.4: S is a Gröbner-Shirshov basis <=> every f in Id(S) has leading word divisible as a·s̄·b <=> Irr(S) is a linear basis of kC(X)/Id(S). Also gives GS bases for the simplicial and cyclic categories. arXiv:1101.1563v1 [math.RA].",
+  }),
+
   // ── Khovanov 2000 (categorification of Jones polynomial) ──────
   // Added 2026-05-20 — cited in conj-qbeta-c-k-closed-forms.lean
   // alongside khovanov-rozansky2008 and khovanovlauda2009.

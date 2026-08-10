@@ -7,7 +7,6 @@ export default remark({
   uses: [
     "rem:breit-wheeler-vertex",
     "rem:pair-creation-energy",
-    "prop:crossing-energy-decomposition",
   ],
   tags: [
     "breit-wheeler", "pair-creation", "polarisation",

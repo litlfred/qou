@@ -9,7 +9,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "thm:knot-mass-formula-unified",
     "conj:confinement-grading-correspondence",
   ],
   tags: [

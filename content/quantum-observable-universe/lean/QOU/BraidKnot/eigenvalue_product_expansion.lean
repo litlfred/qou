@@ -1,4 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.eigenvalue_product_expansion — `Λ_sym(Z, N) = q^{(Z−N)(A−1)/2} · ([2]_q/2)^{ZN}`
@@ -23,6 +24,13 @@ namespace QOU.BraidKnot
 
 /-- The q-integer `[2]_q = q + q⁻¹`. -/
 noncomputable def qInt2 (q : ℝ) : ℝ := q + q⁻¹
+
+
+/-- **Bridge to the canonical bracket.** The longhand `q + q⁻¹` is this site's
+body and its proofs use it, so the consolidation is the identity, not an alias.
+Conditional: the two agree away from `q − q⁻¹ = 0`. -/
+theorem qInt2_eq_canonical (q : ℝ) (h : q - q⁻¹ ≠ 0) :
+    qInt2 q = QOU.QInteger.qIntBal q 2 := (QOU.QInteger.qIntBal_two q h).symm
 
 /-- The symmetric-channel eigenvalue product
     `Λ_sym(Z, N) = q^{(Z−N)(A−1)/2} · ([2]_q/2)^{Z·N}`. -/

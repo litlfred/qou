@@ -67,6 +67,28 @@ mp.mp.dps = 50
 
 # Experimental (proton) substrate q_0 -- the standing default for new compute.
 from q_parameter import Q as Q0  # noqa: E402
+from _precision import json_safe_float  # noqa: E402
+
+
+def f64_json(o):
+    """Serialize an f64 result tree: floats become their repr strings.
+
+    The readings here mix mpmath with a snappy (float64) volume/Chern-Simons
+    kernel and are float()-ed at every sink, so repr is exactly the digits
+    produced. It round-trips bit-exactly and keeps raw float64 out of the
+    witness; non-finite values go through json_safe_float so they cannot
+    become bare JSON tokens.
+    """
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        v = json_safe_float(o)
+        return v if isinstance(v, str) else repr(v)
+    if isinstance(o, dict):
+        return {k: f64_json(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [f64_json(v) for v in o]
+    return o
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
     partitions_of,
@@ -302,16 +324,18 @@ def main():
         if "resid" in _k:
             assertions.append({
                 "name": _k,
-                "computed": float(_v),
-                "expected": 0.0,
-                "tolerance": float(_TOL),
+                # STRINGS: the documented convention for keeping an
+                # assertion value out of float64.
+                "computed": repr(float(_v)),
+                "expected": "0.0",
+                "tolerance": mp.nstr(_TOL, 8),
                 "passed": abs(mp.mpf(_v)) <= _TOL,
             })
     assertions.append({
         "name": "trM_identity_eq_one",
-        "computed": float(val["trM_identity"]),
-        "expected": 1.0,
-        "tolerance": 1e-30,
+        "computed": repr(float(val["trM_identity"])),
+        "expected": "1.0",
+        "tolerance": "1e-30",
         "passed": abs(mp.mpf(val["trM_identity"]) - 1) <= mp.mpf("1e-30"),
     })
     all_passed = all(a["passed"] for a in assertions)
@@ -335,12 +359,23 @@ def main():
                        "vs the charm mass hierarchy (derive-then-check).",
         "producer": "computations/charm_frobenius_block_projection_probe.py",
         "consumes": ["conj:complex-mass-constituent-functional"],
-        "q0": q0f,
+        # `Q = mp.mpf(q_parameter.Q)` — and `q_parameter.Q` is a PYTHON FLOAT,
+        # not Q_50_DIGIT_STR. So Q carries 17 real digits in an mpf, and
+        # printing it at 30 dps fabricates the rest:
+        #     mp.nstr(Q, 30) -> 1.10997858275138083783417641826
+        #     the real anchor  1.1099785827513808075916690956...
+        # diverging at the 17th digit. Written at its true f64 width instead.
+        # (That the probe reads q_parameter.Q rather than Q_50_DIGIT_STR is a
+        # real precision ceiling on everything downstream, recorded on qou-mnrd;
+        # changing it would move values and is not this commit's business.)
+        "q0": repr(float(Q)),
         "q0_anchor": "experimental-proton (q_parameter.Q; AGENTS 2026-08-07 default)",
-        "validation": val,
-        "y_lambda": {str(lam): float(Y[lam]) for lam in PARTS},
-        "reading_A_scale_free_block_ratio": readingA,
-        "reading_B_snappy_complex_volume": readingB,
+        "validation": f64_json(val),
+        # Y is computed at dps=50 but from the f64-limited Q above, so its
+        # ACCURACY is f64; written at that width rather than padded.
+        "y_lambda": {str(lam): repr(float(Y[lam])) for lam in PARTS},
+        "reading_A_scale_free_block_ratio": f64_json(readingA),
+        "reading_B_snappy_complex_volume": f64_json(readingB),
         "snappy_error": snappy_err,
         "verdict": verdict,
         "scope": "(a) scope-limited negative: block ratio is O(1), charm/light is "

@@ -23,6 +23,6 @@ export default definition({
     ref: "qou:QOU.FluidDynamics.QNavierStokes",
     validation: "not_checked",
   },
-  uses: ["rem:planck-reynolds"],
+  uses: [],
   tags: ["navier-stokes", "q-deformation", "dissipation", "fluid-dynamics"],
 });

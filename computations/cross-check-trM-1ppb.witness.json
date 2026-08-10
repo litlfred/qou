@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-09T22:08:42.957916+00:00",
-  "commitSha": "c0522ed84a86dac236ead0e5de00885eed00b58a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-10T00:47:53.491432+00:00",
+  "commitSha": "7ed2346c18318294b21e3d0e9c68f1d64fc6f050",
   "assertions": [
     {
       "name": "all_atoms_within_1ppQ",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 19,
   "computation": "cross-check-trM-1ppb",
   "scriptFile": "cross_check_trM_1ppb.py",
-  "scriptHash": "3474caa11688",
-  "scriptCommitSha": "4e3cfd3121dfc9eca5cba5906667f4b87c7f45e0",
+  "scriptHash": "c384baaf7323",
+  "scriptCommitSha": "dbd91b5ffc1439796846050731bcc14e4ce3f98e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,15 +36,15 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "parameters": {
     "description": "Pairwise comparison of tr_M(β_atom) @ q_0 across four paths. 1 ppQ (1e-15) certification rests on the two FLOAT-CLEAN color-weighted methods (markov_peel + chi-cache) agreeing at q_0 (~1e-50); peel evaluates its exact-in-q trace at the full 50-digit q_0 (the float64 q_0 leak was fixed 2026-06-29). The Hoefsmit (mpfr 50-dps) and Habiro legs are color-blind (sign-only) cross-checks: they diverge ~1.8e-4 at A≥2 by the color-weighting (informational, not gated). An atom with only one color-weighted method (⁴He: partial chi-cache, bean b0vf) is reported UNCERTIFIED, not divergent.",
-    "tolerance_1ppQ_exact_methods": "0.000000000000001000000000000000077705399876661079238307185601195",
-    "tolerance_peel_float_check": "0.00000000000099999999999999997988664762925561536725284350612952",
+    "tolerance_1ppQ_exact_methods": "0.000000000000001",
+    "tolerance_peel_float_check": "0.000000000001",
     "working_precision_dps": 50
   },
   "data": {

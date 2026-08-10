@@ -149,14 +149,55 @@ user's last message, not the most recently mentioned file.
    when the user explicitly says so ("stop", "drop that", "switch
    to X first"). Inferred urgency is not enough.
 
-3. **Parallelize independent tasks.** When two queued tasks have no
+3. **Say which bean you are on — every turn.** Claiming a bean records
+   the work; *reporting* it is what lets the user steer and a sibling
+   session avoid you. Both are required.
+
+   **When you begin work on a bean**, open that turn by naming it and
+   what you are attempting — before the first tool call, not after the
+   work lands:
+
+   > **Starting `fwr7`** — retargeting the seven edges the forward-ref
+   > arc left alone, because the edge is wrong rather than the block's
+   > position.
+
+   **End every turn** with the beans you touched and what is next. One
+   line each, **up to 50 words** — enough to act on without opening the
+   file:
+
+   > **Beans**
+   > - **worked** `fwr8` — Re-baselined both endpoints with the fixed
+   >   parser: the arc is 274 → 195, not 274 → 192. Corrected my own
+   >   claim that the start was understated; only post-mid-arc figures
+   >   are short by 3.
+   > - **next** `fwr7` — Retarget seven mis-aimed edges. Two are now
+   >   confirmed detangler findings rather than reader reports, which
+   >   raises their priority.
+
+   What makes the report worth reading:
+
+   - **A name and five words is not a synopsis.** Say what changed, or
+     why the next item is next. "Retarget seven edges" is a title;
+     "two are now confirmed findings, which raises their priority" is
+     a reason.
+   - **"Next" is your judgement, not a fact.** Beans carry no priority
+     order beyond what an agent asserts — so say why, and expect to be
+     overruled.
+   - **Prefix across repos** (`qou/fwr7`, `fa/fsl7`) when a turn spans
+     both this repo and folio-assistant.
+   - **Report unclaimed work as unclaimed.** If you did durable work
+     without a bean, say so and open one. That omission is the failure
+     this exists to catch — a manifest-parser bug was found, fixed,
+     tested and merged before anyone noticed it had never been claimed.
+
+4. **Parallelize independent tasks.** When two queued tasks have no
    dependency between them (e.g. one Lean fix + one .md edit on
    different blocks), batch them into a single response with
    parallel tool calls. Use background `Agent(run_in_background=true)`
    for independent research / triage that does not block the
    foreground task.
 
-4. **Work the queue while idle.** When you are waiting on a
+5. **Work the queue while idle.** When you are waiting on a
    long-running script, a background agent, a Lean build, or a CI
    run, pull the next pending todo and work on it. Never just sleep
    or poll. (Exception: if the only remaining todos depend on the
@@ -240,7 +281,7 @@ user's last message, not the most recently mentioned file.
    and "pause-mode TICK" acks, you are idle and the trigger
    fires.
 
-5. **Update the plan when upstream lands.** The session-start hook
+6. **Update the plan when upstream lands.** The session-start hook
    arms `local/watch` on `origin/main` (and `local/coordinate`
    triages sibling PRs). Whenever a `<github-webhook-activity>` or
    watcher event reports a new commit / PR / review comment that
@@ -249,7 +290,7 @@ user's last message, not the most recently mentioned file.
    (do not push to the bottom blindly, do not jump above the
    current in-progress task unless it is a blocker).
 
-6. **End-of-session: surface the plan.** If the session ends with
+7. **End-of-session: surface the plan.** If the session ends with
    pending todos and the next step is **not unambiguous**, show the
    remaining todo list to the author before closing — even if the
    user said "we're done". Use a numbered list so they can reply
@@ -1449,10 +1490,19 @@ The repo uses a **single root Lake workspace** (`/lakefile.toml`,
 **Preferred build commands** (always run from repo root):
 
 ```bash
-lake build           # build every paper package
-lake build QOU       # single paper library
-lake exe cache get   # fetch Mathlib cache for the workspace
+lake build QOU UGB Fred2005   # build every paper package
+lake build QOU                # single paper library
+lake exe cache get            # fetch Mathlib cache for the workspace
 ```
+
+**Name the targets.** A bare `lake build` at the root is a **no-op**: it exits 0
+with "Build completed successfully (0 jobs)" having examined nothing. The root
+package aggregates the three paper packages and declares no library of its own,
+so its default target set is empty; `defaultTargets` cannot reference another
+package's target, and a root aggregator module would under-build because each
+paper's library is glob-declared (`globs = ["QOU", "QOU.+"]`) and a glob library
+is built only by naming the library target. The root `lakefile.toml` carries the
+same note.
 
 Per-paper `cd content/<paper>/lean && lake build` still works, but
 root-workspace commands are the standardized entry point used by CI

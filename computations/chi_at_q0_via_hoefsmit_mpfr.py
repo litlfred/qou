@@ -187,7 +187,9 @@ def build_chi_cache_at_q0(
             "n_partitions_total": len(list(parts_of(n))),
             "partial": result["n_partitions_used"] < len(list(parts_of(n))),
             "convention": convention,
-            "compute_time_sec": round(elapsed, 2),
+            # wall clock, not a measurement: string keeps raw float64 out of
+            # the witness and stops per-run jitter rewriting the file
+            "compute_time_sec": f"{elapsed:.2f}",
             "tr_M_at_q0": result["tr_M"],
             "by_partition": result["by_partition"],
         }
@@ -385,7 +387,7 @@ def build_chi_cache_at_q0(
                 "y_lambda": str(y_lam),
                 "chi_lambda": str(chi),
                 "contribution": str(contrib),
-                "compute_time_sec": round(time.time() - t_part, 2),
+                "compute_time_sec": f"{time.time() - t_part:.2f}",
             }
             per_partition.append(entry)
             # Incremental save (atomic rename — interrupt-safe).
@@ -409,12 +411,13 @@ def build_chi_cache_at_q0(
                 "n_partitions": len(per_partition),
                 "n_partitions_total": len(shapes),
                 "partial": len(per_partition) < len(shapes),
-                "compute_time_sec_so_far": round(time.time() - t0, 2),
+                "compute_time_sec_so_far": f"{time.time() - t0:.2f}",
                 "tr_M_at_q0": str(running_total),
                 "by_partition": per_partition,
             }
             _save_partial(out_path, payload)
-            print(f"    λ={shape_t!s:20} dim={dim:>3}  +{entry['compute_time_sec']:>5.1f}s  "
+            print(f"    λ={shape_t!s:20} dim={dim:>3}  "
+                  f"+{float(entry['compute_time_sec']):>5.1f}s  "
                   f"({len(per_partition)}/{len(shapes)})")
 
     elapsed = time.time() - t0
@@ -426,7 +429,7 @@ def build_chi_cache_at_q0(
         "n_partitions_total": len(shapes),
         "partial": len(per_partition) < len(shapes),
         "convention": convention,
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "tr_M_at_q0": str(running_total),
         "by_partition": per_partition,
     }
@@ -536,7 +539,7 @@ def main() -> int:
         tr_m_short = record["tr_M_at_q0"][:22]
         print(f"  {atom_name:>9}  {record['n_strands']:>3}  "
               f"{n_parts:>14}  {tr_m_short:>22}  "
-              f"{record['compute_time_sec']:>9.2f}s")
+              f"{float(record['compute_time_sec']):>9.2f}s")
     print()
     return 0
 

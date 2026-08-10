@@ -5,8 +5,8 @@ export default remark({
   label: "rem:q-ns-proof-strategy",
   title: "Proof strategy: three mechanisms for $q$-deformed regularity",
   uses: [
-    "thm:quantum-peter-weyl",
     "prop:q-ns-nonlinear-uniqueness",
+    "thm:quantum-peter-weyl",
   ],
   tags: ["proof-strategy", "regularity", "enstrophy", "UV-damping"],
 });

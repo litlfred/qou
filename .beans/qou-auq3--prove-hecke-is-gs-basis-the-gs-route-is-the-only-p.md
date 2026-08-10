@@ -1,10 +1,10 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-09T16:10:13Z
+updated_at: 2026-08-10T02:20:00Z
 ---
 
 
@@ -231,3 +231,536 @@ green; `QOU.PhotonThreading` still builds against the repaired UGB. No
   `local_confluence`, `confluence`, `normal_form_unique`) are untouched. They
   are now *stated about repaired definitions*, which is a real change in what
   they assert, but they remain assumptions.
+
+---
+
+## 2026-08-09 (later) — the completion family, and one checkable claim about it
+
+New: `UGB/GrobnerShirshov/HeckeCompletion.lean`. Everything below is sorry-free
+and `#print axioms`-clean.
+
+### The counterexample *is* the missing rule
+
+This is the fact worth having. §4e refutes the GS property with the
+S-polynomial `σ₂σ₃σ₂σ₁ − σ₃σ₂σ₁σ₃`, both words irreducible. The Bokut–Shiao
+completion family is `σᵢσᵢ₋₁⋯σⱼσᵢ → σᵢ₋₁σᵢσᵢ₋₁⋯σⱼ`. At `(i, j) = (3, 1)` its two
+words are
+
+    bsWord₁ 3 1   = σ₃σ₂σ₁σ₃ = NotAGSBasis.w₂
+    bsWord₂ 2 3 1 = σ₂σ₃σ₂σ₁ = NotAGSBasis.w₁
+
+— machine-checked by `decide`, not asserted. So the refuting S-polynomial is,
+up to sign, the missing rule itself. `spoly_not_isNormalForm_completed` then
+follows: `w₂` carries coefficient `−1` in the S-polynomial (`spoly_coeff_w₂`,
+the mirror of §4e's `spoly_coeff_w₁ = 1`) and is `lm(bs31)`, so the
+S-polynomial is not a normal form for the completed system. Directly comparable
+to `NotAGSBasis.spoly_isNormalForm`, which is the same S-polynomial against the
+uncompleted system.
+
+### The family carries no `q`
+
+Worth recording because it is not obvious from the deformed presentation: the
+Bokut–Shiao words need **no** deformation term. The identity is a braid-group
+identity — `σᵢ` commutes past `σᵢ₋₂ ⋯ σⱼ`, then one braid move — and the
+quadratic relation is never used. So `bokutShiaoRelation` is the same two-term
+shape as `yangBaxterRelation`, which it subsumes at `j = i − 1`.
+
+### Indices without `Fin` arithmetic
+
+`bokutShiaoRelation i' i j` takes `i'` standing for `i − 1`, with the relation
+`i'.val + 1 = i.val` carried on the enumeration in
+`heckeCompletedRewritingSystem` rather than by subtracting inside `Fin n`.
+`descWord i j` is built by filtering `List.finRange n` on `j ≤ k ≤ i` and
+reversing. Both choices keep every word free of subtraction and every
+membership proof in the same `flatMap`/`filterMap` shape §4 already uses —
+`bs31_mem` is three `refine`s.
+
+### NOT done, and neither is small
+
+* **The general leading monomial — DONE (2026-08-09, §4h).**
+  `bokutShiaoRelation_lm : lm (bokutShiaoRelation i' i j) = bsWord₁ i j`, from
+  `descWord_cons : descWord i j = ⟨i⟩ :: descWord i' j`, both axiom-clean. The
+  prediction held exactly: with the cons lemma **no length computation was
+  needed**. Both words acquire a visible common tail — `σᵢ :: (w ++ [σᵢ])` versus
+  `σᵢ₋₁ :: σᵢ :: w` with the same `w` — so lengths agree by `simp` and the
+  comparison is one `List.Lex.rel` on the first letter.
+
+  `descWord_cons` is a statement about `List.finRange n` being
+  `Pairwise (· < ·)`: once the head is `i` every later index exceeds it and both
+  filters annihilate the tail; before the head is reached the two predicates
+  agree, because `a < i = i' + 1` forces `a ≤ i'`. Two traps worth recording —
+  `subst` on `i = a` eliminates `a`, so the head branch is stated in `i`; and
+  `List.filter_cons_of_pos` will not fire against a lambda predicate, so the
+  proof goes through `List.filter_cons` + `decide_eq_true_eq` + `if_pos/if_neg`.
+
+  This is step 1 of the path to `H_k` for `k > 4`; next is
+  `heckeCompletedRewritingSystem_lm_cases`, the completed-system analogue of
+  `heckeRewritingSystem_lm_cases`.
+* **That the completed system is a GS basis.** This is the whole of Bokut &
+  Shiao's theorem. The new family overlaps *itself*, so the composition
+  analysis is over a strictly larger set than the four families listed in this
+  bean's original plan. Resolving the one overlap that refutes the uncompleted
+  system is necessary, not sufficient, and nothing here claims otherwise.
+
+### Build-config hazard found on the way
+
+`ugb`'s `lean_lib` has **no `globs`**, so `lake build` in that project builds
+only `UGB.lean` and what it transitively imports. `UGB.GrobnerShirshov.HeckeGS`
+is imported by nothing in UGB — it is reached only because
+`QOU/PhotonThreading.lean` imports it and `qou` requires `ugb` by path. So the
+Hecke GS work has never been covered by UGB's own `lake build`, and
+`HeckeCompletion` would not be either. Measured: 26 modules, 24 reachable from
+the root, the 2 unreachable ones being exactly `HeckeGS` and `HeckeCompletion`.
+Same class of problem as qou-rc7b, and the same fix — `globs = ["UGB", "UGB.+"]`.
+
+
+## 2026-08-09 (later still) — step 2: the completed system's rules are classified
+
+`heckeCompletedRewritingSystem_lm_cases` — the analogue of
+`heckeRewritingSystem_lm_cases` for the completed system. Every rule is one of
+**four** families and its leading monomial is explicit:
+
+| family | leading monomial |
+|---|---|
+| quadratic | `[σᵢ, σᵢ]` |
+| Yang–Baxter (`j = i+1`) | `[σⱼ, σᵢ, σⱼ]` |
+| far-commutation (`j+1 < i`) | `[σᵢ, σⱼ]` |
+| **Bokut–Shiao** (`i'+1 = i`, `j ≤ i'`) | **`bsWord₁ i j`** |
+
+The first three are the original classification verbatim — the completed system
+keeps every original rule, so `List.mem_append` hands them straight over. The
+fourth needed `bokutShiaoRelation_lm` from step 1, which is why the general
+leading monomial had to come first.
+
+Also `heckeCompletedRewritingSystem_lm_ne_nil`: no rule has an empty leading
+monomial. That is not decoration — `gs_basis_of_empty_lm` proves an empty leading
+monomial collapses the whole GS property, and it was the defect behind the
+removed sentinel. Re-established for the larger rule set. `bsWord₁ i j` ends in
+`σᵢ`, so it is never empty.
+
+Both axiom-clean, file warning-free.
+
+### Why this is the gate for everything downstream
+
+§4e's irreducibility machinery — `no_rule_infix_w₁`, `no_sq_infix_w₁`,
+`no_rule_infix_w₂` and the rest — all dispatch on the *classification*. None of
+that can be redone against the completed system without this. So the next step,
+the overlap analysis for the completed rule set, now has its foundation.
+
+### Ordering trap
+
+`bokutShiaoRelation_lm` lives in §4h, so a §4i that uses it must come after §4h,
+not before §4g. Lean reports it as `Unknown identifier`, which reads like a typo
+rather than a section-ordering mistake.
+
+
+## …and the refuting overlap now **resolves**, not merely reduces
+
+`spoly_not_isNormalForm_completed` said only that the S-polynomial is no longer
+irreducible. The Gröbner–Shirshov condition asks for more — that it reduces to
+**zero** — and `refuting_overlap_resolves` proves it does, in a **single step**.
+
+The reason is worth seeing, because it is the sharpest form of "the counterexample
+is the missing rule":
+
+    oc.spoly       =  w₁ − w₂        (§4e: coeff w₁ = 1, coeff w₂ = −1)
+    bs31.relation  =  w₂ − w₁        (bsWord₁ 3 1 = w₂, bsWord₂ 2 3 1 = w₁)
+
+They are exact negatives. One application of `bs31` in **empty context** with
+coefficient `−1` annihilates the S-polynomial outright. The obstruction and its
+repair are the same two words with opposite signs.
+
+Supporting: `bs31_lc = 1`; `three_words_distinct` (`w₁`, `w₂` and the ambient
+`σ₃σ₂σ₃σ₁` are pairwise distinct — needed so the coefficient bookkeeping does not
+collide); `spoly_add_relation_eq_zero`, coefficient-by-coefficient cancellation
+over the three-word support that §4e's `spoly_support` pins down.
+
+Contrast `NotAGSBasis.spoly_isNormalForm`: the *same* S-polynomial against the
+uncompleted system, where no rule applies at all. The pair of theorems is the
+before/after of the completion at the one place the refutation lives.
+
+All axiom-clean, file warning-free.
+
+### Placement traps (two now, same family)
+
+Lean reports both as `Unknown identifier`, which reads like a typo:
+
+* a section using `bokutShiaoRelation_lm` (§4h) must come **after** §4h;
+* a section using `bs31` / `w₁` / `w₂` / `oc` must be **inside** `namespace
+  Completion`, not after `end Completion`.
+
+
+## §4j — the family subsumes Yang–Baxter
+
+At `j = i − 1` the Bokut–Shiao words *are* the braid words:
+
+    bsWord₁ i i'   = σᵢ σᵢ₋₁ σᵢ        (`bsWord₁_at_pred`)
+    bsWord₂ i' i i' = σᵢ₋₁ σᵢ σᵢ₋₁      (`bsWord₂_at_pred`)
+
+so `bokutShiaoRelation i' i i'` is `yangBaxterRelation i' i` up to the sign
+convention (`bokutShiaoRelation_at_pred`), and the two share a leading monomial
+(`bokutShiao_lm_eq_yangBaxter_lm`).
+
+**Why this matters for the overlap analysis ahead.** It means YB × BS overlaps
+are a *special case* of BS × BS, not a separate family to enumerate. The
+composition set for the completed system is smaller than a naive four-families
+count suggests.
+
+Needed `descWord_self : descWord i i = [σᵢ]`, proved via `filter_desc_self` —
+the same `Pairwise (· < ·)` induction as `filter_desc_cons`, and worth having
+separately since it is the base case of the descending words.
+
+### An asymmetry worth keeping
+
+`bsWord₂_at_pred` needs **no** relation between `i'` and `i`. `bsWord₂ i' i j`
+is `σᵢ₋₁ σᵢ` followed by `descWord i' j`, so at `j = i'` the tail collapses by
+`descWord_self` whatever `i` is. Only the *left* word needs `i' + 1 = i`, since
+that is where `descWord_cons` is used. The linter caught the unused hypothesis;
+it was carrying a false suggestion that both sides need the relation.
+
+### The recorded trap caught me anyway
+
+`filter_desc_self`'s head branch was written with `a.val` after `subst`, exactly
+the mistake this bean already records for `filter_desc_cons`. Writing the trap
+down did not stop me repeating it — the fix is that the head branch of any such
+induction must be stated in `i`, because `subst` on `i = a` eliminates `a`.
+
+## §4k — the overlap set, counted
+
+The estimate ("four families, and the new family overlaps itself") was a shape.
+It is now a number, kernel-checked with no `native_decide`:
+
+    16 rules
+    13 distinct leading monomials     (the three lost are the Yang–Baxter words)
+    58 overlap shapes                 at n = 4
+       13 degenerate (left = right = [], lm₁ = lm₂)
+       45 with both contexts non-empty — `NotAGSBasis.oc` is one of these
+
+The move that makes it computable: an `OverlapComposition` is pinned by
+`(left, overlap, right)` alone — the *rules* never enter, only their leading
+monomials, and `Monomial (HeckeGen n)` is `List` of a `DecidableEq` type. So
+
+* `quadLMs / yangBaxterLMs / farCommLMs / bokutShiaoLMs` — the four families as
+  explicit word lists. The Bokut–Shiao rule is indexed by `(i', i, j)` but its
+  leading monomial depends only on `(i, j)`, and `i' + 1 = i ∧ j ≤ i'` collapses
+  to `j < i`, so the list has exactly one entry per rule.
+* `completedLMWords` / `completedLMSet` (its `dedup`).
+* `heckeCompletedRewritingSystem_lm_mem` — soundness: every rule leads on a word
+  in the list. This is `_lm_cases` with the existentials discharged into list
+  membership, and it is what makes the count a statement about the rule set
+  rather than about a list someone typed.
+* `overlapTriples` — the shapes, computed.
+* `mem_overlapTriples` — the bridge. Stated on **words**, not on compositions, so
+  it covers a composition of *any two rules* with those leading monomials,
+  including two distinct rules leading on the same word.
+
+The five counts depend on **no axioms at all** (`#print axioms`: "does not depend
+on any axioms") — pure kernel computation.
+
+### Why the degenerate shapes are kept
+
+`OverlapComposition` places no condition on `left` or `right`. `left = right = []`
+is therefore a legal composition, and §4j makes it an *inhabited* one: the
+Yang–Baxter and Bokut–Shiao rules at `j = i − 1` lead on the same word. Dropping
+the degenerate shapes would have silently dropped a real obligation.
+
+## §4l — the degenerate shapes resolve
+
+Two mechanisms, both machine-checked:
+
+* `OverlapComposition.spoly_isZero_of_self` (framework, `Basic.lean` §4) — a rule
+  composed with itself over its whole leading monomial has S-polynomial the
+  difference of an element with itself. Nothing Hecke-specific, so it lives with
+  `spoly`.
+* `DegenerateYbBs.{ybBs,bsYb}Overlap_spoly_isZero` — the Yang–Baxter and
+  Bokut–Shiao relations are **exact negatives**, and their leading coefficients
+  are `−1` and `+1` (deg-lex picks the word starting with the larger generator,
+  which is the *subtracted* term in `yangBaxterRelation` and the *added* term in
+  `bokutShiaoRelation`). So
+
+      lc₂ • YB − lc₁ • BS  =  1 • YB − (−1) • BS  =  YB + BS  =  0
+
+  identically, in both orderings of the pair. Not "reduces to zero" — zero.
+
+Supporting, in the framework: `isNormalForm_of_isZero` (a zero element is in
+normal form vacuously) and `reducesToNF_self_of_isZero`, which turns "the
+S-polynomial vanishes" straight into the Gröbner–Shirshov obligation.
+
+**What is not proved.** That these two mechanisms *cover* all thirteen degenerate
+shapes. That needs the rule-level converse of `_lm_cases` — at each of the ten
+singleton words the only rule is the obvious one, and at the three coincident
+words the only distinct pair is YB/BS. The covering claim is true at n = 4 and is
+stated as prose in the §4l docstring, explicitly flagged as unproved.
+
+## What remains for the completeness proof
+
+The 45 non-degenerate shapes. §4g does one of them (`NotAGSBasis.oc`, the very
+overlap that refutes the *un*completed system). The remaining 44 are the work,
+and `mem_overlapTriples` is how any of them gets connected back to a composition
+of actual rules.
+
+## §4m — two structural facts, and the inclusion half
+
+Both decided by the kernel at n = 4.
+
+* `overlapTriples_four_proper_overlap_length_one` — **every proper overlap is a
+  single letter.** Not one of the 45 non-degenerate shapes overlaps in two or
+  more generators. The reason is visible in the four families: every leading
+  monomial is descending after its first letter (`σᵢσᵢ`, `σⱼσᵢσⱼ` with `j = i+1`,
+  `σᵢσⱼ` with `j < i`, `bsWord₁`), so a suffix of length ≥ 2 ends low-then-high
+  while every prefix of length ≥ 2 starts high-then-low. Only one letter can be
+  both. Every composition is "`lm₁` ends with `x`, `lm₂` begins with `x`".
+* `completedLMSet_four_infix_antichain` — **no leading monomial is a proper
+  factor of another.**
+
+The antichain settles the **inclusion half** of `IsGrobnerShirshovBasis`
+structurally. `inclusion_contexts_empty` proves that *every* inclusion
+composition of the completed system at n = 4 has both contexts empty and equal
+leading monomials — with **no hypothesis about which rules are involved**,
+because `decomposition` exhibits `inner.lm` as an infix of `outer.lm` and lengths
+do the rest. So the inclusion half is exactly the shared-leading-monomial case,
+which is handled by
+
+* `InclusionComposition.spoly_isZero_of_self` (framework) — no context hypothesis
+  needed there either: `lm = left ++ lm ++ right` forces both empty.
+* `InclusionComposition.spoly_isZero_of_scaled` (framework) — the general form,
+  `lc(inner) • outer = lc(outer) • inner` coefficientwise.
+* `DegenerateYbBs.{ybBs,bsYb}Inclusion_spoly_isZero` — the YB/BS pair, via
+  `relations_add_eq_zero`.
+
+Cross-check worth noting: the antichain *implies* there are no shapes with one
+context empty and the other not (`left = []` would make `a` a proper prefix of
+`b`). And indeed 13 + 45 = 58 exactly — the enumeration has no third kind.
+
+## Computational discharge of the whole n = 4 obligation set
+
+`computations/hecke_gs_confluence_n4.py` →
+`computations/hecke-gs-confluence-n4.witness.json`.
+
+Exact over ℤ[h] with `h = q − q⁻¹` a free symbol; **no float is formed anywhere**
+(verified: 0 raw floats in the witness). Builds the 16 rules to mirror the Lean
+definitions one-for-one — the correspondence table is in the script docstring and
+is the thing to check if the witness is ever doubted.
+
+    rules                          16
+    distinct leading monomials     13
+    overlap shapes                 58   (13 degenerate, 45 proper)
+    overlap compositions           92   failing: 0
+    inclusion compositions         22   failing: 0
+    proper-overlap reduction steps 428  (max chain 25)
+
+**Every composition resolves.** So the completed system *is* confluent at n = 4,
+and the Lean obligation set is known to be reachable rather than hoped to be.
+The witness independently reproduces 13 / 58 / 13 / 45 — the same numbers Lean's
+kernel decided by a completely different route.
+
+It is a **witness, not a proof**, and the bean should not be read as if the
+theorem were formalised. What it buys:
+
+* No counterexample is lurking. Before this, "the completed system is a GS basis
+  at n = 4" was Bokut & Shiao's claim specialised by hand.
+* A cost estimate for the Lean side: **428 single reduction steps** across the 70
+  proper-overlap compositions, max chain 25, histogram concentrated at 3 and 8.
+* A blueprint: each chain entry is `(target monomial, rule, left, right,
+  coefficient)`, which is exactly the data a `SingleStepReduction` witness needs.
+
+### Cheap cases the witness identifies
+
+* **4 compositions have S-polynomial identically zero**: the quadratic
+  self-overlaps `σᵢσᵢσᵢ` (`Q_i` against itself, left = overlap = right = `[σᵢ]`).
+  Reason: `heckeRelation i` is a polynomial in the single generator `σᵢ`, so
+  left- and right-multiplication by `σᵢ` agree on every monomial of it. Not yet
+  formalised — the obstacle is purely that `contextMul` is defined through
+  `excise`, so a general-`m` case split is needed rather than a rewrite.
+* **5 compositions resolve in one step**, all of the same shape as the §4g one:
+  `Y12×F20`, `B121×F20`, `Y23×F31`, `B232×F31` (→ `B120`/`B231`) and
+  `B231×F30` (→ `B230`). Braid-word-against-far-commutation, repaired by a single
+  Bokut–Shiao rule.
+
+## Revised remaining work
+
+*Closed*: the inclusion half at n = 4 (structurally, down to the same covering
+claim as §4l), the 13 degenerate overlap shapes, and 1 of the 45 proper shapes
+(#4879's `refuting_overlap_resolves`).
+
+*Open*: 44 proper overlap shapes at n = 4 ≈ 420 reduction steps, then the whole
+of general `n`.
+
+## §4n — the quadratic self-overlap, for every n
+
+The 4 identically-zero compositions the witness flagged are now proved, and
+proved **generally in n**, not at n = 4:
+
+* `AlgElement.contextMul_gen_comm` (framework, `Elem.lean`) — if every monomial
+  of `f` commutes with `x` *as a word* (`w ++ [x] = [x] ++ w`), then
+  `contextMul [] f [x] = contextMul [x] f []`. Proof is two applications of
+  `contextMul_shape` in opposite directions; no case split on the shape of `m`,
+  which is what made the direct attempt through `excise` unpleasant.
+* `heckeRelation_coeff_comm` — every monomial of the quadratic relation is a
+  power of the one generator `σᵢ` (`σᵢσᵢ`, `σᵢ`, the empty word), so it commutes
+  with `σᵢ`.
+* `quadSelfOverlap` / `_spoly_isZero` / `_resolves` — the composition of the
+  quadratic rule with itself over `σᵢσᵢσᵢ`, S-polynomial identically zero.
+
+By §4m this is the *only* way the quadratic family meets itself: the overlap must
+be a single letter, and `σᵢσᵢ` has just the one proper suffix.
+
+### Trap
+
+`rw` closes a goal by `rfl` only at *reducible* transparency, so
+`[σᵢ,σᵢ] ++ [σᵢ] = [σᵢ] ++ [σᵢ,σᵢ]` — true by `rfl` at default transparency —
+is left open after the rewrite that produces it. Four goals in this section
+failed that way; each needed an explicit `; rfl`. Reads as "unsolved goals" on a
+line that looks finished.
+
+## §4o — Bokut–Shiao against far-commutation, as a family
+
+§4g's `refuting_overlap_resolves` is one composition at `(i,j) = (3,1)`, proved by
+`decide` on concrete words. It is not isolated: it is the `n = 4`, `j = i−1`
+instance of a family that resolves for every `n`, and the family is now proved.
+
+**The shape.** `bsWord₁ i j` ends in `σᵢ`; `farCommRelation i j₀` begins with
+`σᵢ`. They overlap in that one letter (§4m: every proper overlap is one letter),
+over `descWord i j ++ [σᵢ, σ_{j₀}]`, with `j₀ + 1 = j` — the far-commutation rule
+extends the descending run by exactly one step.
+
+**Why it resolves.** The ambient word cancels *identically*:
+`bsWord₁ i j ++ [σ_{j₀}]` **is** `descWord i j ++ [σᵢ, σ_{j₀}]`, so no
+word-distinctness argument is needed anywhere in the proof. What survives is
+turned into the Bokut–Shiao words one index lower by `descWord_snoc`:
+
+    descWord i j ++ [σ_{j₀}] ++ [σᵢ]  =  descWord i j₀ ++ [σᵢ]  =  bsWord₁ i j₀
+    bsWord₂ i' i j ++ [σ_{j₀}]                                  =  bsWord₂ i' i j₀
+
+So the S-polynomial **is** `bokutShiaoRelation i' i j₀`, and one application of
+that rule in empty context annihilates it. *The obstruction at depth `j` is
+repaired by the rule at depth `j−1`: the family completes itself downwards.*
+
+`YangBaxterFarComm.oc` is the same composition with `yangBaxterRelation i' i` in
+place of `bokutShiaoRelation i' i i'` — §4j puts them on the same leading
+monomial, so the completed system carries two rules in this shape and both are
+obligations. They differ by a sign and nothing else, so the S-polynomial is the
+negative and the same rule kills it with coefficient `−1`.
+`Completion.refuting_overlap_resolves` is *this* one at `(i',i,j₀) = (2,3,1)`.
+
+### New infrastructure
+
+* `AlgElement.contextMul_ofTerms_pair_coeff` (framework, `Elem.lean`) — a
+  two-term relation in context is the same two terms in context. **Every** rule
+  in this presentation is two-term and every S-polynomial is two such
+  context-multiplications, so this is the lemma that stops each composition
+  re-deriving the `excise` case split. It is what made §4o mechanical, and it is
+  reusable for all 40 remaining shapes.
+* `filter_desc_snoc` / `descWord_snoc` — the bottom-end mirror of §4h's
+  `filter_desc_cons` / `descWord_cons`.
+* `bokutShiaoRelation_lc = 1`, `farCommRelation_lc = 1`, and
+  `bokutShiaoRelation_mem` (the general form of `Completion.bs31_mem`).
+
+### Coverage at n = 4
+
+The witness listed 5 single-step compositions.  `BokutShiaoFarComm.oc` covers
+`B121×F20`, `B232×F31`, `B231×F30`; `YangBaxterFarComm.oc` covers `Y12×F20` and
+`Y23×F31` (the latter being §4g's, now subsumed by a general theorem). All 5.
+
+### Running total, of the 45 proper shapes at n = 4
+
+    4   quadratic self-overlap        §4n, general in n, spoly identically zero
+    5   BS/YB against far-commutation §4o, general in n, one step
+    ---
+    9   proved
+    36  remaining
+
+## CLAIM
+
+`in-progress`, branch `claude/gs-completed-lm-cases`, PR #4892.
+
+Claimed late: §4k–§4p and `computations/hecke_gs_confluence_n4.py` were all
+written while this bean still said `todo`. Recorded here rather than quietly
+fixed — that gap is exactly what a sibling session would have collided with.
+
+## §4p — any two-term rule against the quadratic rule: 12 compositions, 3 steps
+
+§4n resolves in *no* steps and §4o in *one*. This is the first family needing a
+real reduction chain, and it is the largest single block left.
+
+**The observation that makes it one family.** Every two-term rule of the
+completed system has its two words in **cyclic position** — leading monomial
+`u' ++ [σₓ]`, other word `σ_y :: u'`, the *same* `u'`:
+
+    farCommRelation i j        u' = [σᵢ]           x = j   y = j    c =  1
+    yangBaxterRelation i' i    u' = [σᵢ, σᵢ₋₁]     x = i   y = i−1  c = −1
+    bokutShiaoRelation i' i j  u' = descWord i j   x = i   y = i−1  c =  1
+
+The last because `descWord i j = σᵢ :: descWord i₋₁ j` (§4h), so
+`bsWord₂ i' i j = σᵢ₋₁ :: descWord i j`. Nothing else about the rule is used —
+the family theorem takes `r` abstractly.
+
+**The chain.** The leading monomial ends in `σₓ`, so it meets `σₓσₓ` in that one
+letter (§4m), over `u' ++ [σₓ, σₓ]`. The ambient word cancels and
+
+    spoly = c · [ −(σ_y :: u' ++ [σₓ]) + h·(u' ++ [σₓ]) + u' ]
+
+1. `σ_y :: u' ++ [σₓ]` **is** `σ_y ·(leading monomial)`, so `r` applies in the
+   context `(σ_y, ε)` → `σ_yσ_y u'`;
+2. which begins `σ_yσ_y`, so the quadratic rule **at `y`** applies — *a different
+   generator from the one the composition is about*, which is precisely why this
+   needs a chain rather than a one-rule annihilation — leaving `h·(σ_y :: u') + u'`;
+3. what is left is `h` times `r`'s own relation, killed by `r` in empty context.
+
+**Step 3 needs `h ≠ 0`**, and that is where `HeckeParams` finally earns its
+`q > 0 ∧ q ≠ 1`: `HeckeParams.h_ne_zero`. The composition does **not** resolve at
+`q = 1`. Worth stating plainly — it is the first place in this arc where the
+deformation is load-bearing rather than carried along.
+
+### Two things the proof taught
+
+* **Only three conditions need words distinguished.** Every `CoeffEq` in the
+  chain holds *unconditionally*: the cancellations are between coefficients and
+  do not care whether two words happen to coincide. Only the three "the targeted
+  coefficient is non-zero" side conditions need distinctness, and two of those
+  are lengths. The third — leading monomial vs the other word, same length — is
+  `word_ne`, derived from `lc = c ≠ 0`: were they equal the terms would cancel
+  and the leading coefficient would be `0`.
+* **`ofTerms` is a representation, not an element.** `yangBaxterRelation` lists
+  its two terms in the opposite order to the family's normal form, and
+  `ofTerms [a,b] ≠ ofTerms [b,a]` as *values* (different `support`, different
+  `coeff` term) though they denote the same element. So `hrel` is stated
+  **coefficientwise**, and `AlgElement.contextMul_coeff_congr` carries that
+  through `contextMul`. Stating it structurally would have silently excluded
+  Yang–Baxter from its own family.
+
+### New framework lemmas (`Elem.lean`)
+
+* `AlgElement.contextMul_ofTerms_coeff` — general `L`, subsuming the pair version
+  §4o introduced; needed because the quadratic rule has **three** terms.
+* `AlgElement.contextMul_coeff_congr` — `contextMul` respects `CoeffEq`.
+
+### Coverage
+
+`CyclicQuad.{farComm,yangBaxter,bokutShiao}_quad_resolves` are the three
+instances; together they are the 12 three-step compositions the witness listed
+(`Y01×Q1`, `B010×Q1`, `Y12×Q2`, `B121×Q2`, `Y23×Q3`, `B232×Q3`, `F20×Q0`,
+`F30×Q0`, `F31×Q1`, `B120×Q2`, `B230×Q3`, `B231×Q3`).
+
+## Running total at n = 4 — counted at *rule* level, which is what the GS
+## predicate quantifies over
+
+    overlap compositions      92
+      degenerate              22   §4l  (all, modulo the covering claim)
+      quadratic self-overlap   4   §4n  general in n
+      BS/YB × far-commutation  5   §4o  general in n
+      cyclic × quadratic      12   §4p  general in n
+      ---------------------------
+      proved                  43
+      remaining               49
+
+    inclusion compositions    22   §4m  (all, modulo the same covering claim)
+
+In *shape* terms (58 shapes: 13 degenerate + 45 proper) that is 13 + 16 = 29 of
+58. The two counts differ because three words carry two rules each (§4j), and
+the rule-level count is the honest one.
+
+The remaining 49 are the 4-, 5-, 6-, 8-, 9-, 10-, 12-, 15-, 19- and 25-step
+chains: `Q × R` (the mirror of §4p, and *not* symmetric to it — the quadratic
+rule on the left produces a different chain), then BS × BS and BS × F at
+`j₀ ≥ j`.

@@ -13,6 +13,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.BraidsAndKnots
 
@@ -20,6 +21,11 @@ variable (q : ℝ) (hq : q ≠ 0)
 
 /-- The q-integer [n]_q = (qⁿ−q⁻ⁿ)/(q−q⁻¹). -/
 noncomputable def qInteger (n : ℕ) : ℝ := (q^n - q⁻¹^n) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.** The body is already the
+canonical one; aliasing was refused only because a proof below rewrites with the
+local name, so the consolidation is recorded as this (definitional) equation. -/
+theorem qInteger_eq_canonical (n : ℕ) : qInteger q n = QOU.QInteger.qIntBal q n := rfl
 
 /-- h·[n]_q = qⁿ−q⁻ⁿ: the Hecke parameter times the q-integer
   equals the numerator of the q-integer definition. -/

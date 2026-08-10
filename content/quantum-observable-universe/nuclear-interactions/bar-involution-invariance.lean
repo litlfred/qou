@@ -30,6 +30,7 @@ import Mathlib.Algebra.Group.Basic
 import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.ParticleInteractions
 
@@ -53,6 +54,14 @@ The standard q-integer `[k]_q = (q^k − q^{−k}) / (q − q^{−1})`. -/
 /-- The q-integer `[k]_q = (q^k − q^{−k}) / (q − q^{−1})`. -/
 noncomputable def qInteger (k : ℕ) (q : ℝ) : ℝ :=
   (q ^ k - q ^ (-(k : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.** This site writes the inverse
+as the `zpow` `q ^ (-(k : ℤ))`; `qIntBal` writes `q⁻¹ ^ k`. Equal, but not
+definitionally, so the consolidation is this equation. -/
+theorem qInteger_eq_canonical (k : ℕ) (q : ℝ) :
+    qInteger k q = QOU.QInteger.qIntBal q k := by
+  simp [qInteger, QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal,
+    zpow_neg, zpow_natCast, inv_pow]
 
 /-- **Step (1) base lemma**: `[k]_{q^{-1}} = [k]_q` for `q > 0, q ≠ 1`.
 

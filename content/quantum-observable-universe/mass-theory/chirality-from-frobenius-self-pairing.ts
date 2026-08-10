@@ -21,7 +21,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:mass-formula-regime-switching",
     "def:frobenius-self-pairing-chirality",
   ],
   tags: [

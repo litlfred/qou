@@ -69,6 +69,7 @@ import time
 from pathlib import Path
 
 import mpmath as mp
+from _precision import json_safe_float  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import Q_50_DIGIT_STR, MASS_RATIO_MU_E_STR  # type: ignore
@@ -125,10 +126,25 @@ def part_a_derived_carriers() -> list[dict]:
             M = snappy.Link(braid_closure=torus_braid_word(p, q)).exterior()
             vol = M.volume()
             sol = str(M.solution_type())
-            rec["snappy_volume"] = float(vol)
+            _degenerate = ("degenerate" in sol or "flat" in sol)
+            # A torus-knot complement is Seifert-fibred, not hyperbolic, so its
+            # hyperbolic volume is EXACTLY zero — this module's own docstring
+            # says so. What SnapPy returns is the residual of a degenerate
+            # solve, and it is NONDETERMINISTIC: two consecutive calls in one
+            # process gave -4.335420911161236e-14 and -2.4684863123708434e-07.
+            # Publishing 17 digits of that made the witness unreproducible for a
+            # value that is not a measurement at all. The exact 0 is recorded
+            # instead; `solution_type` carries the degeneracy, and the
+            # `hyperbolic` verdict below is unaffected (its threshold is 1e-4,
+            # far above any residual seen).
+            rec["snappy_volume"] = ("0" if _degenerate
+                                    else repr(float(vol)))
+            rec["snappy_volume_note"] = (
+                "exact 0: Seifert-fibred, not hyperbolic; SnapPy's degenerate "
+                "solve returns a nondeterministic residual which is not recorded"
+                if _degenerate else None)
             rec["solution_type"] = sol
-            rec["hyperbolic"] = bool(abs(float(vol)) > 1e-4 and "degenerate"
-                                     not in sol and "flat" not in sol)
+            rec["hyperbolic"] = bool(abs(float(vol)) > 1e-4 and not _degenerate)
         except Exception as e:  # pragma: no cover
             rec["error"] = str(e)
             rec["hyperbolic"] = False
@@ -325,6 +341,28 @@ def entropy_analysis(census_size: int, n_functionals: int, n_exponents: int,
 
 
 
+def _f64_json(o):
+    """Recursively write plain Python floats as their repr strings.
+
+    `_witness_default` below already serializes mpmath values at 50 dps, but it
+    is only a FALLBACK — json handles a plain `float` natively, so every f64
+    value in this witness went out as a raw JSON number and the file was on the
+    raw-float64 ratchet. These are genuinely f64 (snappy volumes, census scores,
+    entropy bits), so repr is exactly the digits produced: it round-trips
+    bit-exactly and invents nothing.
+    """
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        return json_safe_float(o) if o != o or o in (float("inf"), float("-inf")) \
+            else repr(o)
+    if isinstance(o, dict):
+        return {k: _f64_json(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_f64_json(v) for v in o]
+    return o
+
+
 def _witness_default(o):
     """JSON encoder fallback for mpmath types.
 
@@ -493,7 +531,8 @@ def main() -> None:
         witness["scriptCommitSha"] = sha
         print(f"[witness] canonical stamp unavailable ({e}); stamped provenance manually")
     witness["scriptFile"] = os.path.basename(__file__)
-    wpath.write_text(json.dumps(witness, indent=2, default=_witness_default) + "\n")
+    wpath.write_text(
+        json.dumps(_f64_json(witness), indent=2, default=_witness_default) + "\n")
     print(f"\n[witness] wrote {wpath}")
     print(f"[conclusion] {conclusion}")
     print(f"[done] elapsed {witness['duration_sec']}s")

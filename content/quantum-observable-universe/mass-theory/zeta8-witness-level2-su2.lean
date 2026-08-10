@@ -1,5 +1,6 @@
 import Mathlib.RingTheory.RootsOfUnity.Basic
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Level-2 SU(2) Verlinde witness at a primitive 8th root of unity
@@ -107,6 +108,22 @@ theorem hecke_eigenvalues (σ : R) (h : (σ - ζ) * (σ + ζ⁻¹) = 0) :
 /-- The quantum integer `[n]_q = (q^n − q^(−n)) / (q − q^(−1))`. -/
 noncomputable def qInt (q : R) (n : ℕ) : R :=
   if q = q⁻¹ then (n : R) else (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical singular-locus-guarded bracket.**
+
+The guard here is written `q = q⁻¹`, which is the same locus as
+`q − q⁻¹ = 0` (`sub_eq_zero`) — so this is the two-sided `qIntBalClSing`, not
+the one-sided `qIntBalCl`.  That matters in this file specifically: the roots of
+unity it works with sit exactly where the balanced denominator degenerates, so
+which guard is in force is not a formality here. -/
+theorem qInt_eq_canonical (q : R) (n : ℕ) :
+    qInt q n = QOU.QInteger.qIntBalClSing q n := by
+  unfold qInt QOU.QInteger.qIntBalClSing
+  rw [← sub_eq_zero (a := q) (b := q⁻¹)]
+  split_ifs with h
+  · rfl
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 /-- **Identity (3): `[4]_q = 0` at `q = ζ`** (first vanishing quantum
     integer).

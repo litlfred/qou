@@ -9,10 +9,8 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:wigner-2-coefficient",
     "prop:markov-pair-z2",
     "prop:shell-schur-weyl-self-duality",
-    "prop:gb-residue-spectral-sum",
   ],
   tags: [
     "schur-weyl",

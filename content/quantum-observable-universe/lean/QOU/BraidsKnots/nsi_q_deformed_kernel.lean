@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Topology.Algebra.Order.Field
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidsKnots.nsi_q_deformed_kernel
@@ -60,6 +61,13 @@ noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The `q`-integer `[2]_q = q + q⁻¹`. -/
 noncomputable def qInt2 (q : ℝ) : ℝ := q + q⁻¹
+
+
+/-- **Bridge to the canonical bracket.** The longhand `q + q⁻¹` is this site's
+body and its proofs use it, so the consolidation is the identity, not an alias.
+Conditional: the two agree away from `q − q⁻¹ = 0`. -/
+theorem qInt2_eq_canonical (q : ℝ) (h : q - q⁻¹ ≠ 0) :
+    qInt2 q = QOU.QInteger.qIntBal q 2 := (QOU.QInteger.qIntBal_two q h).symm
 
 /-- The `q`-deformed Möbius kernel of
     [`lem:nsi-q-deformed-kernel`]: `[2]_q / (r² − ℏ_q²)` as a

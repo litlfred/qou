@@ -197,7 +197,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
     coeffs = cyclotomic_expansion(p_u, u, max_m=max_m)
     n_nonzero = sum(
         1 for c in coeffs
-        if sp.sympify(c["a_m"], locals={"check_q": u}) != 0
+        if sp.sympify(c["a_m"], locals={"u": u, "check_q": u}) != 0
     )
     print(f"  Habiro coefficients: {len(coeffs)} terms ({n_nonzero} nonzero)")
     print(f"    elapsed: {time.perf_counter() - t0:.2f} s")
@@ -217,11 +217,20 @@ def analyse_atom(label: str, Z: int, N: int, q,
         ))))
     except Exception:
         tr_M_at_q0 = float('nan')
+    check_error = None
     try:
         p_in_u_at_u0 = mp.mpf(str(sp.N(
             p_u.subs(u, sp.Rational(str(u0))), 30
         )))
-        denom_expr = sp.sympify(denom, locals={"check_q": u})
+        # BOTH names deliberately. `to_u_polynomial(expr, q, check_q)` renders
+        # its returned strings using whatever SYMBOL the caller passes, and the
+        # callers pass `u` — so current strings say "u". Older witnesses in this
+        # family say "check_q", from a caller that passed a symbol of that name.
+        # The previous mapping was {"check_q": u} ALONE, which meant a modern
+        # "u"-string parsed to a fresh Symbol('u') with no assumptions; that is
+        # NOT equal to Symbol('u', positive=True, real=True), so `.subs` silently
+        # no-opped and the NaN below was published instead of a value.
+        denom_expr = sp.sympify(denom, locals={"u": u, "check_q": u})
         denom_at_u0 = mp.mpf(str(sp.N(
             denom_expr.subs(u, sp.Rational(str(u0))), 30
         )))
@@ -232,11 +241,30 @@ def analyse_atom(label: str, Z: int, N: int, q,
         else:
             rel_err = 0.0
     except Exception as exc:
+        # Record WHY, and as null rather than NaN.
+        #
+        # This handler used to write float('nan') into both fields and print the
+        # reason to stdout, where it was lost. Two consequences, both real: the
+        # witness became invalid JSON (there is no NaN token in JSON, so a
+        # strict parser rejected the whole file), and a silent failure looked
+        # like a computed value.
+        #
+        # The failure it was hiding: `sp.sympify(denom, locals={"check_q": u})`
+        # mapped the wrong NAME, so the parsed expression got a fresh
+        # `Symbol('u')` with no assumptions, which is NOT equal to the
+        # `Symbol('u', positive=True, real=True)` used here. `.subs(u, ...)`
+        # then silently no-opped, `sp.N` returned an expression rather than a
+        # number, and `mp.mpf(str(<expression>))` raised ValueError. Fixed at
+        # the sympify sites; this handler stays for anything else, but now says
+        # what happened.
         print(f"  numerical check FAILED: {exc}")
-        tr_M_via_u = float('nan')
-        rel_err = float('nan')
-    print(f"  tr_M @ q_0 = {tr_M_at_q0:+.6e}, via u-poly = {tr_M_via_u:+.6e}, "
-          f"rel diff = {rel_err:.3e}")
+        tr_M_via_u = None
+        rel_err = None
+        check_error = f"{type(exc).__name__}: {exc}"
+    _fmt = lambda v, f: (f"{v:{f}}" if v is not None else "n/a")   # noqa: E731
+    print(f"  tr_M @ q_0 = {_fmt(tr_M_at_q0, '+.6e')}, "
+          f"via u-poly = {_fmt(tr_M_via_u, '+.6e')}, "
+          f"rel diff = {_fmt(rel_err, '.3e')}")
     print(f"    elapsed: {time.perf_counter() - t0:.2f} s")
 
     return {
@@ -254,6 +282,7 @@ def analyse_atom(label: str, Z: int, N: int, q,
         "reconstruction_matches": recon_matches,
         "tr_M_at_q0": tr_M_at_q0,
         "tr_M_at_q0_via_u_poly": tr_M_via_u,
+        "tr_M_at_q0_check_error": check_error,
         "tr_M_at_q0_rel_err": rel_err,
     }
 
@@ -311,7 +340,7 @@ def _write_witness(path: Path, slug: str, body: dict, q0_float: float,
 
 
 def _coeff_to_sympy(a_m_str: str, u: sp.Symbol) -> sp.Expr:
-    return sp.sympify(a_m_str, locals={"check_q": u})
+    return sp.sympify(a_m_str, locals={"u": u, "check_q": u})
 
 
 def _multiplicity(expr: sp.Expr, factor: sp.Expr, u: sp.Symbol) -> int:

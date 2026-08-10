@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:27.983789+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-09T21:42:54.430573+00:00",
+  "commitSha": "0e99a96f8ef861938aa143e0f1044a928c28083f",
   "assertions": [
     {
       "name": "zero_macdonald_candidates_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "durationMs": 32,
   "computation": "casimir-macdonald-probe",
   "scriptFile": "casimir_macdonald_probe.py",
-  "scriptHash": "d1faf8a501d4",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "f63e99ab4313",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +29,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Empirical Macdonald-norm probe for Casimir prefactor via Cherednik DAHA-derived candidates.  Computes Macdonald norm ⟨P_λ, P_λ⟩_{q,t} via the arm-leg formula for all partitions λ of size 1..5 at substrate q ≈ 1.110 and seven t-specializations (t=q, q², q^½, 1, q⁻¹, q^{1/3}, q^{2/3}).  Then forms three natural Cherednik-zeta candidate combinations: Σ⟨P_λ⟩^{-1}, Σ⟨P_λ⟩, and alternating-sign Σ.  Tests direct match vs π²/720 AND geometric-multiplier-applied match vs π²/720.  Reports count of sub-1% matches.  Null result reinforces sub-problem 3's genuine open status — even the Macdonald-norm route doesn't easily yield the Casimir prefactor at substrate.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
@@ -101,41 +104,41 @@
         "(1, 1, 1, 1, 1)": 6.863045356375789
       },
       "t=1  (Hall-Littlewood)": {
-        "(1,)": Infinity,
-        "(2,)": Infinity,
-        "(1, 1)": Infinity,
-        "(3,)": Infinity,
-        "(2, 1)": Infinity,
-        "(1, 1, 1)": Infinity,
-        "(4,)": Infinity,
-        "(3, 1)": Infinity,
-        "(2, 2)": Infinity,
-        "(2, 1, 1)": Infinity,
-        "(1, 1, 1, 1)": Infinity,
-        "(5,)": Infinity,
-        "(4, 1)": Infinity,
-        "(3, 2)": Infinity,
-        "(3, 1, 1)": Infinity,
-        "(2, 2, 1)": Infinity,
-        "(2, 1, 1, 1)": Infinity,
-        "(1, 1, 1, 1, 1)": Infinity
+        "(1,)": "inf",
+        "(2,)": "inf",
+        "(1, 1)": "inf",
+        "(3,)": "inf",
+        "(2, 1)": "inf",
+        "(1, 1, 1)": "inf",
+        "(4,)": "inf",
+        "(3, 1)": "inf",
+        "(2, 2)": "inf",
+        "(2, 1, 1)": "inf",
+        "(1, 1, 1, 1)": "inf",
+        "(5,)": "inf",
+        "(4, 1)": "inf",
+        "(3, 2)": "inf",
+        "(3, 1, 1)": "inf",
+        "(2, 2, 1)": "inf",
+        "(2, 1, 1, 1)": "inf",
+        "(1, 1, 1, 1, 1)": "inf"
       },
       "t=q⁻¹": {
         "(1,)": -1.1099785955573347,
-        "(2,)": Infinity,
+        "(2,)": "inf",
         "(1, 1)": 0.0,
-        "(3,)": Infinity,
+        "(3,)": "inf",
         "(2, 1)": -1.3675518842842065,
         "(1, 1, 1)": 0.0,
-        "(4,)": Infinity,
-        "(3, 1)": Infinity,
-        "(2, 2)": Infinity,
+        "(4,)": "inf",
+        "(3, 1)": "inf",
+        "(2, 2)": "inf",
         "(2, 1, 1)": 0.0,
         "(1, 1, 1, 1)": 0.0,
-        "(5,)": Infinity,
-        "(4, 1)": Infinity,
-        "(3, 2)": Infinity,
-        "(3, 1, 1)": Infinity,
+        "(5,)": "inf",
+        "(4, 1)": "inf",
+        "(3, 2)": "inf",
+        "(3, 1, 1)": "inf",
         "(2, 2, 1)": 0.0,
         "(2, 1, 1, 1)": 0.0,
         "(1, 1, 1, 1, 1)": 0.0
@@ -531,5 +534,7 @@
     },
     "sub_one_pct_matches_direct": [],
     "sub_one_pct_matches_geom_multiplied": []
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

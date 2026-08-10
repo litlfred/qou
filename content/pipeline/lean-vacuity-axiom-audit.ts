@@ -506,6 +506,48 @@ function isConjectureBlock(leanAbs: string): boolean {
 
 const TRIVIAL_BODY = /^\s*(trivial|by\s+trivial|sorry|by\s+sorry|⟨⟩|by\s+exact\s+trivial)\s*$/;
 
+/** Split on top-level `∧`, ignoring any nested inside brackets. */
+function splitTopLevelAnd(s: string): string[] {
+  const parts: string[] = [];
+  let depth = 0;
+  let cur = "";
+  for (const c of s) {
+    if ("([{⟨⦃".includes(c)) depth++;
+    else if (")]}⟩⦄".includes(c)) depth--;
+    if (c === "∧" && depth === 0) {
+      parts.push(cur);
+      cur = "";
+      continue;
+    }
+    cur += c;
+  }
+  parts.push(cur);
+  return parts.map((p) => p.trim()).filter((p) => p.length > 0);
+}
+
+/**
+ * Is this single proposition a tautology on its face — `True`, a reflexive
+ * `X = X`, or a reflexive equality hidden behind an ascribed numeric literal
+ * (`(0 : ℝ) = 0`)? Returns the shape, or `null` if it asserts something.
+ */
+function reflexiveKind(s: string): "plain" | "ascribed" | "true" | null {
+  const t = s.trim();
+  if (/^True$/.test(t)) return "true";
+  const eq = t.match(/^([^=]+?)=([^=].*)$/);
+  if (!eq) return null;
+  const lhs = eq[1].replace(/\s+/g, "");
+  const rhs = eq[2].replace(/\s+/g, "");
+  if (lhs && lhs === rhs) return "plain";
+  const unascribeLit = (x: string) => {
+    const m = x.match(/^\((-?\d+(?:\.\d+)?)\s*:[^():]*\)$/);
+    return m ? m[1] : x;
+  };
+  const nl = unascribeLit(lhs);
+  const nr = unascribeLit(rhs);
+  if (nl && nl === nr && (nl !== lhs || nr !== rhs)) return "ascribed";
+  return null;
+}
+
 function detectTrivialTrue(
   d: Decl,
   rawSrc: string,
@@ -620,6 +662,19 @@ function detectTrivialTrue(
       while (prev !== bare) { prev = bare; bare = bare.replace(/\([^()]*\)/g, ""); }
       if (/∨\s*True\b/.test(bare) || /\bTrue\s*∨/.test(bare)) {
         return mk(d, "proof-no-trivial-true", "or-true-tautology", false);
+      }
+      // (d) a CONJUNCTION of tautologies. The reflexive tests above read the
+      // conclusion as a single proposition, so `(6 : ℕ) = 6 ∧ (0 : ℕ) = 0`
+      // parses as lhs `(6:ℕ)` against rhs `6∧(0:ℕ)=0`, matches nothing, and
+      // escapes every check — which is how `octonion_3_passes_sym2_gate`
+      // shipped two tautologies as a representation-theoretic gate result
+      // (found by reading, not by this scanner, 2026-08-09). Flag only when
+      // EVERY conjunct is vacuous: one real conjunct makes the statement
+      // assert something, and `1 + 5 = 6 ∧ 1 > 0` is arithmetic, not a
+      // tautology, so its sibling `corpus_T1_fails_sym2_gate` stays unflagged.
+      const conjuncts = splitTopLevelAnd(conclTA);
+      if (conjuncts.length >= 2 && conjuncts.every((c) => reflexiveKind(c) !== null)) {
+        return mk(d, "proof-no-trivial-true", "conjunction-of-tautologies", false);
       }
     }
     return undefined;
@@ -742,7 +797,80 @@ function topLevelIff(concl: string): boolean {
 const TWO_FIELD_TUPLE =
   /^⟨\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*,\s*[a-z][\w']*\.[A-Za-z_][\w']*\s*⟩$/;
 
-function detectSelfAssuming(d: Decl): Hit | undefined {
+/**
+ * Binder variable → carrier type name, for every `[v : C …]` / `(v : C …)`
+ * binder in a signature. This is what lets the type-match test below resolve
+ * `ctx.foo` to the field `foo` of the class `C` that `ctx` inhabits.
+ */
+function binderCarriers(sig: string): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const m of sig.matchAll(
+    /[[(]\s*([a-z][\w']*)\s*:\s*([A-Z][\w'.]*)[^)\]]*[\])]/g,
+  ))
+    out.set(m[1], m[2]);
+  return out;
+}
+
+/**
+ * The structural discriminator the name gate approximates: does the projected
+ * field's DECLARED TYPE match the theorem's CONCLUSION?
+ *
+ * `CONCLUSION_FIELD` is a *naming-convention* proxy for "this field is the
+ * conclusion". It is high-precision but leaks badly: any field named outside
+ * the convention is invisible however plainly it posits the conclusion (the
+ * `confinement_ident` / `factorization_ident` escape in
+ * `lean-proof-vacuity-audit.md` §8; measured at 84 corpus-wide in
+ * `docs/audits/2026-08-09-self-assuming-projection-reanalysis.md`). This test
+ * asks the question directly instead of guessing from the name.
+ *
+ * Comparison is character-exact after stripping the binder prefix (field types
+ * are written bare inside the carrier; the conclusion writes them `ctx.foo`)
+ * and collapsing whitespace. That is deliberately conservative — anything
+ * needing real unification is NOT reported, so this under-counts rather than
+ * over-counts.
+ */
+function projectionTypeMatchesConclusion(
+  d: Decl,
+  carriers: Map<string, Decl>,
+  variable: string,
+  fields: string[],
+): boolean {
+  const carrierName = binderCarriers(d.sig).get(variable);
+  if (!carrierName) return false;
+  const carrier = carriers.get(carrierName);
+  if (!carrier) return false; // declared in another file — stay conservative
+  // First declaration wins, and `name := value` assignment lines are dropped.
+  // `DECL_START` requires a name after the keyword, so an ANONYMOUS
+  // `instance : C where` (very common right below the class it instantiates)
+  // starts no new decl — the class's `text` swallows the instance body, and
+  // `classFields` then reads each `field := value` line as a re-declaration
+  // whose "type" is `= value`. Last-wins would silently replace the real field
+  // type with that, and the comparison below would miss a genuine projection.
+  const table = new Map<string, string>();
+  for (const f of classFields(carrier)) {
+    if (/^=/.test(f.type.trim())) continue; // `field := value` from an instance body
+    if (!table.has(f.name)) table.set(f.name, f.type);
+  }
+  const types = fields.map((f) => table.get(f));
+  if (types.some((t) => t === undefined)) return false;
+  const ws = (s: string) => s.replace(/\s+/g, " ").trim();
+  const concl = conclusionTypeAscription(d.sig);
+  if (!concl) return false;
+  const nc = ws(concl.replace(new RegExp(`\\b${variable}\\.`, "g"), ""));
+  if (types.length === 1) return ws(types[0]!) === nc;
+  // A tuple splits a conjunction across one field per conjunct.
+  const bare = ws(types.join(" ∧ "));
+  return (
+    bare === nc ||
+    ws(types.map((t) => `(${t})`).join(" ∧ ")) === nc ||
+    ws(bare.replace(/[()]/g, "")) === ws(nc.replace(/[()]/g, ""))
+  );
+}
+
+function detectSelfAssuming(
+  d: Decl,
+  carriers: Map<string, Decl>,
+): Hit | undefined {
   const provable = PROVABLE_KINDS.test(d.kind);
   // A Prop-valued `def` is a disguised provable claim (§1a def-disguised); it
   // escaped detection because `detectSelfAssuming` only scanned the provable
@@ -777,8 +905,34 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
     pat !== "applied-tuple-projection" &&
     field &&
     !CONCLUSION_FIELD.test(field)
-  )
+  ) {
+    // The field name escapes the convention — but the name was only ever a
+    // proxy. Ask the structural question before dropping it: if the field's
+    // declared type IS the conclusion, this is a self-assuming projection no
+    // matter what it is called.
+    //
+    // Emitted EXEMPT (tracked-not-counted) on landing, mirroring the §3b
+    // placeholder carve-out below: closing a 84-candidate blindspot must not
+    // turn the vacuity CI gate red in the same commit that discovers it. The
+    // point of tracking them is that EXEMPT hits still enter the review
+    // ledger, so `--check-ledger` now demands an agent verdict on each.
+    // Promoting these to hard failures is a deliberate follow-up.
+    const projVar = body.match(/([a-z][\w']*)\.[A-Za-z_][\w']*/)?.[1];
+    if (
+      projVar &&
+      projectionTypeMatchesConclusion(d, carriers, projVar, [field])
+    ) {
+      const h = mk(d, "proof-no-self-assuming-projection", pat, true);
+      h.exempt_reason =
+        "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)";
+      h.detail =
+        `the projected field \`${projVar}.${field}\` has a declared type ` +
+        "character-identical to the conclusion — the theorem returns its own " +
+        "claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it.";
+      return h;
+    }
     return undefined;
+  }
   // Newly-covered patterns (the def-disguised projections + applied-field
   // tuples) are the acknowledged §3b placeholder-canonical projections whose
   // docstrings honestly state the content is carried by the context-class
@@ -787,7 +941,18 @@ function detectSelfAssuming(d: Decl): Hit | undefined {
   // the vacuity CI gate red on ~99 files. Promoting these to a hard failure —
   // once the honest-placeholder vs. dishonest-dodge line is codified — is a
   // deliberate follow-up, not a silent side effect of closing the blindspot.
-  if (isDefProof || pat === "applied-tuple-projection") {
+  //
+  // NARROWED 2026-08-09: `isDefProof` no longer overrides a `CONCLUSION_FIELD`
+  // name-gate match. The gate above runs FIRST but only *diverts* candidates
+  // whose field name escapes the convention; a `def` whose field name the gate
+  // MATCHES — `ctx.claim_yang_baxter`, `ctx.claim_pslq_independence` — fell
+  // straight through to here and was exempted anyway. So the §3b carve-out was
+  // swallowing the strongest signal the detector has: the author named the
+  // field `claim_*`. A matched name means the projection is self-assuming on
+  // the detector's own primary criterion, and the §3b deferral does not apply.
+  // Recommendation 4 of `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
+  const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
+  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
       "canonical §3b placeholder projection (tracked; derivation pending)";
@@ -1007,17 +1172,83 @@ function detectDecideMasking(d: Decl): Hit | undefined {
   return undefined;
 }
 
+/**
+ * Tactics that introduce a hypothesis or open a case. Their presence means a
+ * contradiction below them is *local* — an eliminated branch, or a negation
+ * being assumed in order to be refuted — and so says nothing about whether the
+ * statement's own premises are satisfiable.
+ */
+const LOCAL_CONTEXT_TACTIC =
+  /(^|[^\w'])(intro|rintro|rcases|obtain|cases|match|by_contra|induction|interval_cases|fin_cases|refine|constructor|exfalso|suffices|rsuffices|subst|letI|fun)\b|(^|\n)\s*[·|]/;
+
+/** A conclusion that *is* a negation: proving it means deriving a contradiction. */
+const NEGATIVE_CONCLUSION = /¬|≠|\bFalse\b/;
+
+/**
+ * The *whole body* is the contradiction — nothing else is proved. A nested
+ * `absurd` (inside a `letI`, a `fun … =>` argument, a `have`) is a sub-proof
+ * discharging some side condition, not the goal.
+ */
+const WHOLE_BODY_DISCHARGE =
+  /^(?:by\s+)?(?:exact\s+)?(?:absurd\b|Nat\.not_lt_zero\b|\(.*\bby\s+(?:norm_num|omega)\b.*\)\.elim\b)/;
+
 function detectFalsePremise(d: Decl): Hit | undefined {
   if (!PROVABLE_KINDS.test(d.kind)) return undefined;
   const body = d.body;
-  if (
+  const discharges =
     /\babsurd\b[\s\S]*?\bby\s+(norm_num|decide|simp|omega)\b/.test(body) ||
     /\bNat\.not_lt_zero\b/.test(body) ||
-    /\(by\s+(norm_num|omega)\)\.elim\b/.test(body)
-  ) {
-    return mk(d, "proof-no-false-premise", "discharged-impossible-hyp", false);
+    // Tolerates a type ascription inside the parens — `(by norm_num : ¬P).elim h`
+    // is the same discharge as `(by norm_num).elim h`, and the tighter original
+    // spelling silently missed it.
+    /\(.*\bby\s+(?:norm_num|omega)\b.*\)\.elim\b/.test(body);
+  if (!discharges) return undefined;
+
+  // A contradiction *inside a proof* is not the defect this criterion names.
+  // The defect is a VACUOUS STATEMENT — the theorem's own binders are
+  // unsatisfiable, so the goal falls straight out of `absurd` with nothing
+  // else to do:  `theorem foo (h : 0 = 1) : P := absurd h (by norm_num)`.
+  //
+  // Deriving a contradiction is also how one proves a negation, and how one
+  // kills an impossible branch of a case split. Both are idiomatic and carry
+  // the real content of the proof. Flagging them on the bare `absurd` made
+  // this criterion 0-for-56 across the corpus (agent adjudication 2026-08-09:
+  // every candidate `legit` — negation goals, `interval_cases` branches,
+  // empty-`Finset` arguments, and `letI` discharges of `i ≠ j` from
+  // `M i j = 3` against `M i i = 1`). The three conditions below are what the
+  // vacuity claim actually requires.
+  if (!WHOLE_BODY_DISCHARGE.test(body.trim().replace(/\s+/g, " "))) return undefined;
+  if (LOCAL_CONTEXT_TACTIC.test(body)) return undefined;
+  const concl = conclusionTypeAscription(d.sig);
+  if (NEGATIVE_CONCLUSION.test(concl)) return undefined;
+
+  // The discharged term must be one of the statement's own hypotheses — a
+  // contradiction built from locally-derived facts is a proof step, not a
+  // property of the premises.
+  const head = d.sig.slice(0, d.sig.length - concl.length);
+  const binders: string[] = [];
+  for (const m of head.matchAll(
+    /[({\[⦃]\s*([^(){}\[\]:]+?)\s*:\s*([^(){}]*(?:\([^()]*\)[^(){}]*)*)[)}\]⦄]/g,
+  )) {
+    if (!PROP_SHAPED.test(m[2])) continue; // data binder, not a hypothesis
+    for (const n of m[1].trim().split(/\s+/)) {
+      if (/^_?[a-zA-Z_][\w']*$/.test(n)) binders.push(n);
+    }
   }
-  return undefined;
+  // The body *is* the discharge (checked above), so any hypothesis it names is
+  // what the contradiction is built from — whether as `absurd h …`, `h.elim`,
+  // or the argument in `(…).elim h`.
+  const dischargedBinder = binders.find((n) =>
+    new RegExp(`(?:^|[^\\w'])${n}(?:[^\\w']|$)`).test(body),
+  );
+  if (!dischargedBinder) return undefined;
+
+  const h = mk(d, "proof-no-false-premise", "discharged-impossible-hyp", false);
+  h.detail =
+    `the entire goal is discharged by contradiction from the statement's own ` +
+    `hypothesis \`${dischargedBinder}\`, with no \`intro\` and no case split — so the ` +
+    `premises are unsatisfiable and the claim holds vacuously`;
+  return h;
 }
 
 function detectProvableAxiom(d: Decl, rawLines: string[]): Hit | undefined {
@@ -1037,6 +1268,14 @@ function detectProvableAxiom(d: Decl, rawLines: string[]): Hit | undefined {
   h.decl = d.name;
   return h;
 }
+
+/**
+ * Exemption reasons that still owe an agent verdict. An exemption normally
+ * *is* the verdict, so exempt hits sit outside the `--check-ledger`
+ * agent-inspection gate; these ones explicitly defer the call instead of
+ * making it, so they must remain inside it.
+ */
+const LEDGER_TRACKED_EXEMPT = /triage pending/;
 
 function mk(
   d: Decl,
@@ -1502,6 +1741,17 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
   // mentions of the word do not count.
   const fileHasSorryCode = decls.some((x) => /\bsorry\b/.test(x.body));
 
+  // Carrier lookup for the self-assuming type-match test: it resolves a
+  // projection `ctx.foo` to the field `foo` of the class `ctx` inhabits, so it
+  // needs the file's `class`/`structure` declarations by name. Same-file only —
+  // a carrier declared elsewhere yields no match, which keeps the test
+  // conservative rather than guessing.
+  const carrierDecls = new Map<string, Decl>(
+    decls
+      .filter((x) => /^(class|structure)\b/.test(x.kind))
+      .map((x) => [x.name, x] as const),
+  );
+
   for (let di = 0; di < decls.length; di++) {
     const d = decls[di];
     // The doc block is computed once up front so the trivial-true detector
@@ -1528,7 +1778,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
         "docstring asserts a provable claim (Theorem/Lemma/Proposition) while the Lean concludes `True` — a genuine vacuity defect, not an honest open conjecture";
     }
     push(tt);
-    push(detectSelfAssuming(d));
+    push(detectSelfAssuming(d, carrierDecls));
     push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));
     push(detectUnusedHypothesisRfl(d));
     push(detectDecideMasking(d));
@@ -1960,7 +2210,15 @@ function main() {
       if (!shaCache.has(f)) shaCache.set(f, hashFile(f));
       const sha = shaCache.get(f);
       for (const h of hits) {
-        if (h.exempt) continue;
+        // Exempt hits are normally out of scope for the agent-inspection gate:
+        // the exemption IS the verdict (a shadow stub, an `@marker` opt-out, a
+        // legitimate iff-from-directions derive). But an exemption that says
+        // "tracked, triage pending" asserts the opposite — that a human call is
+        // still owed. Blanket-skipping those would make EXEMPT a way to bury a
+        // candidate rather than queue it, which is the failure mode this whole
+        // audit exists to catch. So they stay in the ledger.
+        if (h.exempt && !LEDGER_TRACKED_EXEMPT.test(h.exempt_reason ?? ""))
+          continue;
         const decl = h.decl ?? "file";
         candidates.push({
           key: `${rel}::${decl}::${h.category}`,
