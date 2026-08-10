@@ -23,19 +23,28 @@ import subprocess
 import sys
 from pathlib import Path
 
-import snappy
+import _path_bridge  # noqa: F401
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+import snappy  # noqa: E402
+from mpmath import mpf  # noqa: E402
+
+# SnapPy computes volume at a requested bit precision; 230 bits ~ 69 dps,
+# covering the repo's compute default with margin. `float(M.volume())`
+# discards everything past the 16th digit of a number SnapPy already has.
+BITS_PREC = 230
 
 
 def braid_volume(word, nstrands, name):
     L = snappy.Link(braid_closure=word)
     M = L.exterior()
     try:
-        vol = float(M.volume())
+        vol = mpf(str(M.volume(bits_prec=BITS_PREC)))
     except Exception:
         vol = None
     sol = M.solution_type()
     hyperbolic = (sol == "all tetrahedra positively oriented"
-                  and vol is not None and vol > 1e-3)
+                  and vol is not None and vol > mpf("1e-3"))
     return {
         "name": name,
         "n_strands": nstrands,
@@ -47,6 +56,7 @@ def braid_volume(word, nstrands, name):
 
 
 def main():
+    set_compute_dps()
     results = []
     # 3-strand Borromean baryon knot and its family
     results.append(braid_volume([1, -2, 1, -2, 1, -2], 3,
@@ -65,13 +75,13 @@ def main():
         "borromean_hyperbolic": borromean["hyperbolic"],
         "borromean_vol_matches_2_voct":
             borromean["volume"] is not None
-            and abs(borromean["volume"] - 7.32772475342) < 1e-6,
+            and abs(borromean["volume"] - mpf("7.32772475342")) < mpf("1e-6"),
         "all_two_strand_non_hyperbolic":
             all(not r["hyperbolic"] for r in two_strand),
         "gluon_T29_vol_zero":
             next(r for r in two_strand if "T(2,9)" in r["name"])["volume"]
             in (0, None) or abs(next(r for r in two_strand
-                                     if "T(2,9)" in r["name"])["volume"]) < 1e-3,
+                                     if "T(2,9)" in r["name"])["volume"]) < mpf("1e-3"),
     }
 
     script_path = Path(__file__).resolve()
@@ -107,8 +117,22 @@ def main():
         ],
     }
 
+    # Volumes are carried as mpf through the checks above and serialized only
+    # here, via _precision.fmt -- a raw float64 in a witness is a NO-FLOAT64
+    # violation, and json.dumps would emit one for any mpf left in the tree.
+    def _ser(o):
+        if isinstance(o, dict):
+            return {k: _ser(v) for k, v in o.items()}
+        if isinstance(o, list):
+            return [_ser(v) for v in o]
+        if isinstance(o, bool) or isinstance(o, int) or o is None:
+            return o
+        if isinstance(o, str):
+            return o
+        return fmt(o)
+
     out = script_path.parent / "meson-fluxtube-topology.witness.json"
-    out.write_text(json.dumps(witness, indent=2) + "\n")
+    out.write_text(json.dumps(_ser(witness), indent=2) + "\n")
     print(json.dumps(checks, indent=2))
     print(f"all_checks_pass={witness['all_checks_pass']}  -> {out.name}")
     return 0 if witness["all_checks_pass"] else 1
