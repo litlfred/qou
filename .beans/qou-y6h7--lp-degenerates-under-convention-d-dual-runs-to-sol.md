@@ -196,3 +196,54 @@ Is the `1e-40` identity supposed to hold under D at all? It was established
 under C, where `y_(1^3) ≈ 0.0227` and every channel is live. If the correct
 convention-D program has one fewer channel, the identity may need restating
 rather than re-satisfying.
+
+---
+
+## Third instance — and now it is a class, not three bugs
+
+`rho_k_h3a_counit_canonical_integral.py:61` dies under convention D:
+
+```python
+delta = 1 / y          # counit block weight
+ZeroDivisionError
+```
+
+Same root as the other two: **convention D's defining property is that
+`y_λ = 0` exactly for `ℓ(λ) ≥ 3`**, so any code that assumes every Wedderburn
+block carries a nonzero weight breaks. Under C every block was live
+(`y_(1^3) ≈ 0.0227`), so the assumption was invisible.
+
+The three instances, all one pattern:
+
+| site | shape | outcome |
+|---|---|---|
+| `rho_k_h3a_gg_trajectory` | `1/(dim_q · max(y, 1e-15))` | sentinel `999999999999998.8` published as a dual |
+| `rho_k_h3a_lp_dual` | Schur–Weyl gate at `1e-40` | exits 2 |
+| `rho_k_h3a_counit_canonical_integral` | `1 / y`, unguarded | `ZeroDivisionError` |
+
+### The class is SMALL — checked, not assumed
+
+Grepping every `y_lambda` consumer for divisions by the weight finds only three
+sites, and two are already fine:
+
+* `probe_binding_measure_search.py:125` — guarded:
+  `(1 / y[lam] if y[lam] != 0 else mpf(0))`
+* `rho_k_counit_defect_form.py:123` — a *label*, `lambda l: mpf(1)`; no division
+* `rho_k_h3a_counit_canonical_integral.py:61` — the one unguarded site
+
+So this is a narrow repair, not a systemic rewrite. Worth stating, because
+"convention D breaks reciprocals of block weights" sounds like it should be
+everywhere and is not.
+
+### Do NOT fix it by copying the guard
+
+`else mpf(0)` is what the sibling does, and it may well be wrong here. `Δ = 1/y`
+is the *counit block weight*; when `y = 0` the block is **absent**, and an
+absent block is not the same as a block of weight zero — that is precisely the
+sentinel-instead-of-exclusion error this bean was opened about. Deciding
+between "exclude the block from the sum" and "contribute 0" is a modelling
+question about what the counit integral is over, and it should be answered
+rather than defaulted.
+
+Note the sibling's guard has the same latent ambiguity and was presumably
+written for the same reason; whichever answer is right probably applies to both.
