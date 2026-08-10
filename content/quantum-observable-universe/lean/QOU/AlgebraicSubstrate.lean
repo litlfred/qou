@@ -1,3 +1,4 @@
+import QOU.AlgebraicSubstrate.KernelGrowthBound
 import QOU.AlgebraicSubstrate.PolyhedralDomination
 import QOU.AlgebraicSubstrate.OhtsukiKappaDependence
 import QOU.AlgebraicSubstrate.DominationTowers
