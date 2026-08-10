@@ -59,9 +59,15 @@ def qInt2 [CommRing R] (q : Rˣ) : R := (q : R) + ((q⁻¹ : Rˣ) : R)
 
 /-- **Bridge to the canonical bracket.** The longhand `q + q⁻¹` is this site's
 body and its proofs use it, so the consolidation is the identity, not an alias.
-Conditional: the two agree away from `q − q⁻¹ = 0`. -/
-theorem qInt2_eq_canonical (q : ℝ) (h : q - q⁻¹ ≠ 0) :
-    qInt2 q = QOU.QInteger.qIntBal q 2 := (QOU.QInteger.qIntBal_two q h).symm
+
+`qInt2` above carries `q` as a **unit** over `CommRing`; the canonical
+`qIntBal` is a guarded division and stays over a field, so the bridge is where
+the two meet. Conditional: they agree away from `q − q⁻¹ = 0`. -/
+theorem qInt2_eq_canonical {S : Type*} [Field S] (q : Sˣ)
+    (h : (q : S) - (q : S)⁻¹ ≠ 0) :
+    qInt2 q = QOU.QInteger.qIntBal (q : S) 2 := by
+  unfold qInt2
+  rw [QOU.QInteger.qIntBal_two (q : S) h, Units.val_inv_eq_inv_val]
 
 /-! ## Typed-braid encoding
 
