@@ -141,7 +141,10 @@ def chi_numeric(shape, crossings, q_mp):
 
     q = mp.mpf(q_mp)
     h = q - mp.mpf(1) / q
-    d_lookup = {"sigma": mp.mpf(0), "sigma_inv": -h, "averaged": -h / 2}
+    # Canonical map. Was inline {"sigma": 0, "sigma_inv": -h,
+    # "averaged": -h/2}, which silently sent the colour-weighted p-n
+    # interface to -h/2 -- the whole residual Schur-Weyl failure.
+    from canonical_braid_crossings import d_for_ctype
     eye = mp.eye(dim)
 
     M = mp.eye(dim)
@@ -149,7 +152,7 @@ def chi_numeric(shape, crossings, q_mp):
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = d_lookup[ctype]
+        d_val = d_for_ctype(ctype, h)
         cross = sigma + d_val * eye
         M = M * cross
 

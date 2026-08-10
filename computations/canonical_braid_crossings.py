@@ -119,9 +119,17 @@ def classify_crossing(
     # "averaged" p-n interface: color-blind −h/2, OR color-weighted
     # −h·(1/2 − δ/4) (bring_color_weighted default, mass_at_3A_proper).
     delta = float(_avg_color_delta())                # float-context comparison
-    if (abs(d - (-h_val / 2.0)) < 1e-9
-            or abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9):
+    if abs(d - (-h_val / 2.0)) < 1e-9:
         return "averaged"
+    if abs(d - (-h_val * (0.5 - delta / 4.0))) < 1e-9:
+        # DISTINCT from "averaged". Both used to return it, and every consumer
+        # maps that label to -h/2, so the colour-weighted p-n interface was
+        # silently replaced by the colour-blind one: 6.879e-4 on the crossing,
+        # 7e-5..3.9e-4 per chi^lambda, and the whole residual Schur-Weyl
+        # failure in rho_k_h3a_refinement after the convention-D migration.
+        # This is the proton-neutron colour asymmetry (bring_color_weighted);
+        # collapsing it into "averaged" de-asymmetrises the nucleus.
+        return "averaged_weighted"
     raise ValueError(
         f"Unrecognised crossing (c, d)=({c}, {d}); expected d ∈ "
         f"{{0, -h, -h/2, -h·(1/2-δ/4)}} with h≈{h_val:.6f}, "
@@ -164,4 +172,30 @@ def atom_canonical_crossings(
     return out
 
 
-__all__ = ["atom_canonical_crossings", "classify_crossing"]
+def d_for_ctype(ctype: str, h_val):
+    """The Hecke shift `d` a ctype denotes, in the caller's numeric type.
+
+    Consumers used to hardcode `{"sigma": 0, "sigma_inv": -h, "averaged": -h/2}`
+    inline. That is how the colour-weighted interface got lost: a private
+    lookup cannot know about a label it predates, and there were at least two
+    such lookups plus two validators with their own `{0, -h, -h/2}` vocabulary.
+    Centralised here so a new crossing type is a one-line change with one
+    place to audit.
+
+    `h_val` is passed in rather than recomputed so the caller's precision
+    (mpmath mpf, sympy expression, float) carries through unchanged -- do not
+    coerce it.
+    """
+    if ctype == "sigma":
+        return 0 * h_val
+    if ctype == "sigma_inv":
+        return -h_val
+    if ctype == "averaged":
+        return -h_val / 2
+    if ctype == "averaged_weighted":
+        # -h(1/2 - delta/4), written so h_val's type drives the arithmetic.
+        return -h_val * (1 - _avg_color_delta() / 2) / 2
+    raise ValueError(f"unknown ctype {ctype!r}")
+
+
+__all__ = ["atom_canonical_crossings", "classify_crossing", "d_for_ctype"]
