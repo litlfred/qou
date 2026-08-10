@@ -156,3 +156,34 @@ birthday trajectory satisfies … while for transcendental it does not" — whic
 will need a **lower** bound on birthday, hence strengthened axioms. Until then the class
 should be labelled a placeholder, not an open conjecture, because a reader cannot tell
 the difference and the comment actively misleads.
+
+---
+**2026-08-10 (later) — reconciled with the sibling vacuity campaign.**
+
+Merging `origin/main` brought in `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`
+(branch `claude/issue-2472-analysis-qgqk7u`), which is directly on point and **sharpens
+the `DiophantineBirthday` finding above rather than contradicting it**. Its conclusion:
+
+> the useful test is not *"is the carrier inhabited?"* but **"is the instance
+> non-degenerate?"**
+
+with four named degeneracies that each satisfy inhabitation on a technicality: the
+reflexive diagonal, the trivial index, the empty constraint index, and **"stipulates the
+answer"**.
+
+`DiophantineBirthday` is a clean instance of the last one — `residual := 0` with
+`residual_eq_zero := rfl` stipulates exactly what the conjecture is supposed to assert,
+the same shape their ledger marks `genuine` for
+`rogers_correction_leading_h_order` (`leading_h_order := 4; … := rfl`).
+
+**Adopt their vocabulary, not mine.** The finding is not "trivially inhabited, therefore
+the label is false" — inhabitation alone is a weak discriminator, which is their point.
+It is: *the only available instance is degenerate (stipulates the answer), so withholding
+it encodes nothing.*
+
+**Checked: `DiophantineBirthday` is NOT in `docs/audits/lean-vacuity-review-ledger.json`**
+(178 entries, 0 birthday/diophantine hits). The campaign's queue is reported drained
+(`--check-ledger` exits 0), so this is a **new entry**, not a duplicate — and it suggests
+the campaign's scan did not reach `AppendixSurreals/`. Worth checking whether
+`scripts/lean-carrier-inhabitation-scan.mjs` covers that directory at all; if it does not,
+the "drained" status is scoped narrower than it reads.
