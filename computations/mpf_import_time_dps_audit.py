@@ -45,15 +45,52 @@ sibling `binding_depth_stratified.py` reads its constants from
 `codata_constants` (workdps-wrapped); the three that re-padded hand-typed
 the same numbers at module scope.
 
+RATCHET, not pass/fail (2026-08-10, bean qou-j6gb)
+--------------------------------------------------
+This audit was written 2026-08-07, worked from the start, and was wired to
+NOTHING — it is absent from `scripts/precision-gates.sh`'s `GATES` array, and
+since `witness-staleness.yml` is `workflow_dispatch:` only under the owner's
+2026-06-30 Actions-billing directive, that script IS the gate. So the detector
+for this defect class sat unrun while the class itself landed five more times
+(`VOL_41`, `gram_qtrace`'s q0, `TOLERANCE_PPQ`, `REG_ZC`/`REG_ZD`) — each caught
+instead by a different gate reacting to a downstream symptom.
+
+The reason it was never wired is the obvious one: 288 findings across 91 files
+makes a blocking pass/fail gate red on day one, and a gate that is red on
+arrival gets skipped, which is how a checker goes quiet in the first place.
+
+So it enforces the same shape as `witness_raw_float64_audit.py`: the existing
+backlog is recorded in `mpf-import-time-dps-baseline.json` and tolerated; a file
+NOT in the baseline fails, and a baselined file whose count INCREASES fails.
+The backlog may only shrink.
+
+  * per-FILE granularity, deliberately. Per-line churns on every edit above the
+    constant and is unreviewable; per-file is stable and still pins the count.
+  * `literal` and `expr` counts are baselined and compared SEPARATELY. A
+    `literal` finding is statically certain — the decimal string was parsed at
+    15 dps and the digits are gone. An `expr` finding is only position-risky and
+    some are fine. Summing them would let a proven defect hide behind an
+    unproven one drained in the same file.
+  * a file the audit CANNOT PARSE is never baselined and always fails `--strict`.
+    That case is not "no findings", it is "no information", and treating the two
+    alike is the exact bug bean qou-brkp records this audit having had once
+    already. There are zero such files at baseline time.
+
+Do not add a file to the baseline to silence a failure — fix it at the source.
+The fix is one line: call the idempotent `set_compute_dps()` at module scope
+ABOVE the constant.
+
 Usage:
     python3 computations/mpf_import_time_dps_audit.py            # report
-    python3 computations/mpf_import_time_dps_audit.py --strict   # exit 1 on defects
+    python3 computations/mpf_import_time_dps_audit.py --strict   # exit 1 on NEW/REGRESSED
+    python3 computations/mpf_import_time_dps_audit.py --rebaseline   # draining only
     python3 computations/mpf_import_time_dps_audit.py --self-test
 """
 from __future__ import annotations
 
 import argparse
 import ast
+import json
 import sys
 from pathlib import Path
 
@@ -61,6 +98,8 @@ from mpmath import mp
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
+BASELINE = HERE / "mpf-import-time-dps-baseline.json"
+BROKEN_KINDS = ("syntax-error", "unreadable", "unparseable")
 
 # Directories whose constants never reach a committed witness.
 SKIP_DIRS = {"_deprecated", "__pycache__", "data"}
@@ -256,6 +295,8 @@ def main() -> int:
                     help="exit 1 if any import-time-lossy constant is found")
     ap.add_argument("--all", action="store_true",
                     help="include scripts that emit no witness (candidates, not defects)")
+    ap.add_argument("--rebaseline", action="store_true",
+                    help="regenerate the baseline (draining only — counts must go DOWN)")
     a = ap.parse_args()
     if a.self_test:
         return self_test()
@@ -300,13 +341,118 @@ def main() -> int:
               "set_compute_dps() at module level BEFORE it, or wrap "
               "construction in `with mp.workdps(max(50, mp.mp.dps)):`, or "
               "read it from codata_constants (already workdps-wrapped).")
-    # An unreadable file fails under `--strict` — that flag's help says "lossy
-    # constant", but a file the audit could not parse is precisely the case
-    # where it cannot say there is *no* lossy constant. It does NOT fail the
-    # default run: the two currently-unparseable files predate this branch and
-    # sit on `main`, and a survey tool that hard-fails on a pre-existing backlog
-    # stops being runnable, which is how a checker goes quiet in the first place.
-    if a.strict and (rows or broken):
+
+    # ── RATCHET (bean qou-j6gb) ────────────────────────────────────────────
+    # `--all` widens the scan to scripts that emit no witness, i.e. candidates
+    # rather than defects. Those are not what the baseline records, so a widened
+    # run reports but never ratchets — otherwise `--all` would look like 100+
+    # NEW files against a baseline that never claimed to cover them.
+    found = {f: {"literal": sum(1 for r in rs if r.get("kind") == "literal"),
+                 "expr": sum(1 for r in rs if r.get("kind") == "expr")}
+             for f, rs in by_file.items()
+             if any(r.get("kind") in ("literal", "expr") for r in rs)}
+    prior: dict[str, dict] = {}
+    if BASELINE.exists():
+        prior = json.loads(BASELINE.read_text())["files"]
+
+    new_files = {f: c for f, c in found.items() if f not in prior}
+    grew = {f: (prior[f], c) for f, c in found.items()
+            if f in prior and (c["literal"] > prior[f].get("literal", 0)
+                               or c["expr"] > prior[f].get("expr", 0))}
+    drained = {f: (prior[f], found.get(f, {"literal": 0, "expr": 0}))
+               for f in prior
+               if (found.get(f, {}).get("literal", 0) < prior[f].get("literal", 0)
+                   or found.get(f, {}).get("expr", 0) < prior[f].get("expr", 0))}
+
+    if prior:
+        b_lit = sum(c.get("literal", 0) for c in prior.values())
+        b_exp = sum(c.get("expr", 0) for c in prior.values())
+        print(f"\n  baseline files                 : {len(prior)}")
+        print(f"  baseline literal / expr        : {b_lit:,} / {b_exp:,}")
+        print(f"  now      literal / expr        : {lit:,} / {exp:,}"
+              f"   ({lit - b_lit:+,} / {exp - b_exp:+,})")
+        print(f"  NEW files (not baselined)      : {len(new_files)}")
+        print(f"  REGRESSED (count increased)    : {len(grew)}")
+        print(f"  drained since baseline         : {len(drained)} file(s)")
+
+    if new_files:
+        print("\n  NEW files building mpf before precision is raised — fix AT THE"
+              "\n  SOURCE (idempotent set_compute_dps() at module scope, ABOVE the"
+              "\n  constant). Do NOT add the file to the baseline to silence this.")
+        for f, c in sorted(new_files.items(),
+                           key=lambda kv: -(kv[1]["literal"] + kv[1]["expr"]))[:25]:
+            print(f"    literal={c['literal']:<4d} expr={c['expr']:<4d}  {f}")
+        if len(new_files) > 25:
+            print(f"    ... and {len(new_files) - 25} more")
+
+    if grew:
+        print("\n  REGRESSED — these files gained import-time constants:")
+        for f, (was, now) in sorted(grew.items())[:25]:
+            print(f"    literal {was.get('literal', 0)} -> {now['literal']}, "
+                  f"expr {was.get('expr', 0)} -> {now['expr']}  {f}")
+
+    if drained:
+        print(f"\n  Drained (progress): {len(drained)} file(s)")
+        for f, (was, now) in sorted(drained.items())[:10]:
+            print(f"    literal {was.get('literal', 0)} -> {now['literal']}, "
+                  f"expr {was.get('expr', 0)} -> {now['expr']}  {f}")
+
+    if a.rebaseline:
+        if a.all:
+            print("\nRefusing to --rebaseline under --all: that scan includes "
+                  "scripts emitting no witness, which the baseline does not "
+                  "cover. Re-run without --all.")
+            return 1
+        BASELINE.write_text(json.dumps(
+            {"note": "Files building an mpf constant at module scope before "
+                     "mp.dps is raised, by count. The backlog is tolerated; it "
+                     "must only SHRINK. Regenerate ONLY when draining. Adding a "
+                     "file here to silence a failure defeats the gate — fix at "
+                     "the source instead (set_compute_dps() above the constant).",
+             "enforced_rule": "AGENTS.md: NO-FLOAT64. String-sourcing an mpf is "
+                              "necessary but not sufficient; the TIMING matters "
+                              "too — at import mp.dps is still 15.",
+             "granularity": "per-file, with `literal` and `expr` counted "
+                            "separately: `literal` is statically proven lossy, "
+                            "`expr` is only position-risky. Summing them would "
+                            "let a proven defect hide behind an unproven one.",
+             "drain_owner": "bean qou-j6gb (do the `literal` ones first)",
+             "files_count": len(found),
+             "literal_count": lit,
+             "expr_count": exp,
+             "files": dict(sorted(found.items()))}, indent=2) + "\n")
+        print(f"\nRebaselined: {len(found)} files / {lit:,} literal / "
+              f"{exp:,} expr recorded.")
+
+    out = HERE / "mpf-import-time-dps-audit.witness.json"
+    out.write_text(json.dumps({
+        "schema": "witness/v1",
+        "name": "mpf-import-time-dps-audit",
+        "description": "Files building an mpf constant at module scope while "
+                       "mp.dps is still mpmath's default 15. String-sourcing is "
+                       "necessary but not sufficient — the timing matters too. "
+                       "Ratchet only; drain owner is bean qou-j6gb.",
+        "data": {
+            "files_with_findings": len(found),
+            "literal_findings": lit,
+            "expr_findings": exp,
+            "baseline_files": len(prior),
+            "new_not_baselined": len(new_files),
+            "regressed": len(grew),
+            "drained_files": len(drained),
+            "unparseable_files": len(broken),
+        },
+    }, indent=2) + "\n")
+    print(f"\nWrote {out.name}")
+
+    # A file the audit could not parse is never baselined and always fails
+    # --strict. That case is not "no findings", it is "no information" — and
+    # treating the two alike is exactly the bug bean qou-brkp records this audit
+    # having had once already (a parse failure returned zero rows, so the audit
+    # reported clean for the two files its own remediation had just broken).
+    # There are zero such files at baseline time, so this cannot be red on
+    # arrival; if one appears, that is a real regression and worth the stop.
+    if a.strict and (new_files or grew or broken):
         return 1
     return 0
 

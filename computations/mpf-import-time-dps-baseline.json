@@ -1,0 +1,375 @@
+{
+  "note": "Files building an mpf constant at module scope before mp.dps is raised, by count. The backlog is tolerated; it must only SHRINK. Regenerate ONLY when draining. Adding a file here to silence a failure defeats the gate \u2014 fix at the source instead (set_compute_dps() above the constant).",
+  "enforced_rule": "AGENTS.md: NO-FLOAT64. String-sourcing an mpf is necessary but not sufficient; the TIMING matters too \u2014 at import mp.dps is still 15.",
+  "granularity": "per-file, with `literal` and `expr` counted separately: `literal` is statically proven lossy, `expr` is only position-risky. Summing them would let a proven defect hide behind an unproven one.",
+  "drain_owner": "bean qou-j6gb (do the `literal` ones first)",
+  "files_count": 91,
+  "literal_count": 185,
+  "expr_count": 103,
+  "files": {
+    "computations/a4_interface_kl_subpath_closure.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/a4_option_e_color_tube_closure.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/a_operator/a_operator_categorical.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/a_operator/cyclic_intertwiner_verify.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/bar_pairing_binding_observable.py": {
+      "literal": 4,
+      "expr": 0
+    },
+    "computations/binding_block_multiplicative.py": {
+      "literal": 14,
+      "expr": 0
+    },
+    "computations/binding_bstar_bridge.py": {
+      "literal": 1,
+      "expr": 1
+    },
+    "computations/binding_fewbody_bondcount.py": {
+      "literal": 1,
+      "expr": 2
+    },
+    "computations/binding_wn_frobenius_dual_probe.py": {
+      "literal": 1,
+      "expr": 1
+    },
+    "computations/binding_wn_multianchor_tower_refute.py": {
+      "literal": 1,
+      "expr": 2
+    },
+    "computations/borromean_binding_recompute.py": {
+      "literal": 0,
+      "expr": 3
+    },
+    "computations/borromean_chi_independent_crosscheck.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/chi_4he_binding_lossless.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/crt_markov.py": {
+      "literal": 0,
+      "expr": 4
+    },
+    "computations/delta_lambda_categorical_verification.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/deltalambda/deuteron_naive_z_physical_probe.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/deltalambda/perknot_pn_bond_resolved_extensivity_probe.py": {
+      "literal": 6,
+      "expr": 0
+    },
+    "computations/em_linking_fh_link_bound_correction.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/em_linking_invariant_probe.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/flavor_split_xq_refinement.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/fr_pullback_borromean_h3a_test.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/fr_pullback_k3_test.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/frobenius_partition_sum.py": {
+      "literal": 0,
+      "expr": 3
+    },
+    "computations/gb_residue_tower.py": {
+      "literal": 0,
+      "expr": 2
+    },
+    "computations/generation_count_t29_truncation_probe.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/gram_matrix_seminormal_n.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/habiro/habiro_interpolate_cross_validator.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/hecke/hecke_character_symbolic.py": {
+      "literal": 0,
+      "expr": 2
+    },
+    "computations/homflypt_reference_qa.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/inverse-markov-qvalues.py": {
+      "literal": 8,
+      "expr": 40
+    },
+    "computations/l2_row_independence_probe.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/lepton_linear_readout_rigidity.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/lepton_net_to_mass_bridge_exclusion.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/lepton_tower_additive_screening.py": {
+      "literal": 4,
+      "expr": 0
+    },
+    "computations/lepton_tower_bend_screening.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/lever1_binding_classical_kernel_derive.py": {
+      "literal": 1,
+      "expr": 1
+    },
+    "computations/lever1_borel_half_singularity_probe.py": {
+      "literal": 1,
+      "expr": 1
+    },
+    "computations/lever1_gevrey_order_pin.py": {
+      "literal": 1,
+      "expr": 1
+    },
+    "computations/lever1_sw_period_lw_rate_refine.py": {
+      "literal": 2,
+      "expr": 1
+    },
+    "computations/log_delta_categorical_derivation.py": {
+      "literal": 4,
+      "expr": 0
+    },
+    "computations/log_delta_full_mass_subtract.py": {
+      "literal": 4,
+      "expr": 0
+    },
+    "computations/log_delta_per_depth_binding.py": {
+      "literal": 4,
+      "expr": 0
+    },
+    "computations/m_tau_complex_volume_search.py": {
+      "literal": 5,
+      "expr": 3
+    },
+    "computations/m_tau_knot_prediction.py": {
+      "literal": 5,
+      "expr": 2
+    },
+    "computations/markov/markov_peel.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/mass_per_knot_density.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/mass_vol_density.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/meson_gen3_eta_phi.py": {
+      "literal": 8,
+      "expr": 0
+    },
+    "computations/meson_mass_from_hecke.py": {
+      "literal": 12,
+      "expr": 2
+    },
+    "computations/mn_flavor_split_h3_plancherel.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/mn_flavor_split_plancherel_channel.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/probe_9b_alphak_structure.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/probe_9b_perlambda_brane_tower.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probe_he4_canonical_tr_m_fingerprint.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/probe_k_ud_bring_color_tube_empirical_baseline.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probe_k_ud_fractional_and_alt_ansatz.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/chirality_weighted_3body_cluster_probe.py": {
+      "literal": 2,
+      "expr": 3
+    },
+    "computations/probes/em_coupling_projection_probe.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/probes/flavor_split_substrate_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/he4_qreeb_phase_falsification_probe.py": {
+      "literal": 4,
+      "expr": 3
+    },
+    "computations/probes/ksel2_favard_jacobi_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/ksel2id_sw_identification_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/m_pi_hecke_prediction_probe.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/probes/one_loop_cusp_normalisation_tension_probe.py": {
+      "literal": 0,
+      "expr": 3
+    },
+    "computations/probes/pairwise_magnitude_gap_probe.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/probes/qbeta_5two_gbar_pole_ladder_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py": {
+      "literal": 4,
+      "expr": 0
+    },
+    "computations/probes/qbeta_5two_v3_from_borel_poles_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/r2core_schwinger_measure_explore_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/rep_tightness_probe.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/probes/rho_k_markov_multiplicativity_probe.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/probes/tau_dictionary_hauptmodul_validator.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/probes/yardstick_free_phase_binding_probe.py": {
+      "literal": 6,
+      "expr": 2
+    },
+    "computations/pyhecke_jones_markov_atlas.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/pyhecke_n_generic.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/qbeta/c1_chi_magnitude_vs_r_star.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/qbeta/qbeta_composite_crossanchor_2factor_sweep.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/qbeta/qbeta_cosh_avatar_crossanchor_multicoeff_probe.py": {
+      "literal": 1,
+      "expr": 0
+    },
+    "computations/qbeta/qbeta_fmap_phi_b_channel_separation_probe.py": {
+      "literal": 3,
+      "expr": 0
+    },
+    "computations/qbeta/qbeta_reeb_sinh_fmap_brane_tower_probe.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/shadow_price_c_321_q0.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/su2_spinor_multiplicity_resolution.py": {
+      "literal": 1,
+      "expr": 1
+    },
+    "computations/substrate/binding_manybody_series.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/substrate/bring_picard_fuchs_kernel.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/substrate/q_parameter.py": {
+      "literal": 0,
+      "expr": 3
+    },
+    "computations/substrate/sl2_tau_solver.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/substrate/sw_period_residue.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/substrate/sw_prolongation_symbol.py": {
+      "literal": 0,
+      "expr": 1
+    },
+    "computations/sweeps/paper_six_term_isotope_sweep.py": {
+      "literal": 0,
+      "expr": 2
+    },
+    "computations/u1_hypercharge_assignment.py": {
+      "literal": 2,
+      "expr": 0
+    },
+    "computations/whitehead_c_sigma_torsion.py": {
+      "literal": 1,
+      "expr": 0
+    }
+  }
+}
