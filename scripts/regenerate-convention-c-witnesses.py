@@ -786,8 +786,8 @@ def convention_coverage(paths):
     total = len(have) + len(missing)
     if not total:
         return
-    print(f"convention provenance: {len(have)}/{total} witnesses declare a "
-          f"`convention` field")
+    print(f"trace-convention provenance: {len(have)}/{total} witnesses declare "
+          f"a `markov_convention` field")
     for rel, conv in sorted(have):
         print(f"    {conv:<4} {rel.replace('computations/', '')}")
     if missing:

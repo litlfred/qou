@@ -1,7 +1,7 @@
 {
   "computation": "y-lambda-wenzl-bridge-symbolic",
   "description": "Symbolic y_lambda(q) for H_n(q), n=2..12, under convention D (z_D = q^3/(q^2+1), the unique non-trivial Markov trace on H_3 whose radical contains the three-strand antisymmetriser). y_lambda = [n-2k+1]_q/[2]_q^n on two-row partitions, exactly 0 on three-or-more rows.",
-  "convention": "D",
+  "markov_convention": "D",
   "markov_parameter_symbolic": "q**3/(q**2 + 1)",
   "scriptFile": "computations/regenerate_y_lambda_symbolic_convention_d.py",
   "references": [
