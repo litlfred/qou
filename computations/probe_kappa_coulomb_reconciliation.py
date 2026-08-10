@@ -62,6 +62,35 @@ Ref: conj:magic-shell-coupling-kappa
 Bean: qou-o16k
 """
 
+import sys
+from pathlib import Path as _P
+_SUB = _P(__file__).resolve().parent / "substrate"
+if str(_SUB) not in sys.path:
+    sys.path.insert(0, str(_SUB))
+import mpmath as mp  # noqa: E402
+from _precision import fmt, COMPUTE_DPS  # noqa: E402
+
+mp.mp.dps = COMPUTE_DPS
+
+
+def _ser(o):
+    """Serialize every real to a _precision.fmt string; ints stay ints.
+
+    The NO-FLOAT64 family forbids raw float64 in a witness. Values are carried
+    as mpmath.mpf from their source above and rendered here, so no float64 ever
+    reaches the JSON.
+    """
+    if isinstance(o, bool) or isinstance(o, int):
+        return o
+    if isinstance(o, (float, mp.mpf)):
+        return fmt(mp.mpf(o))
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_ser(v) for v in o]
+    return o
+
+
 import json
 import sys
 from datetime import datetime, timezone
@@ -75,7 +104,7 @@ for p in (HERE, HERE / "substrate"):
 import coulomb_energy as ce  # noqa: E402
 
 SOURCE = HERE / "_deprecated" / "interface-type-resolved-coupling-probe.witness.json"
-KAPPA_PUBLISHED = -1.0707907503265857
+KAPPA_PUBLISHED = -mp.mpf("1.0707907503265857")
 
 RADII = [
     (float(ce.R0_FM), "derived (reduced pion Compton wavelength)"),
@@ -87,7 +116,7 @@ RADII = [
 def coulomb_A3(r0: float) -> float:
     """Coulomb energy of the single pp pair in 3He; T has none."""
     ahc = float(ce.alpha_em_hbar_c_mev_fm())
-    return 0.6 * ahc * (2 * 1) / (r0 * 3 ** (1.0 / 3.0))
+    return 0.6 * ahc * (2 * 1) / (r0 * 3 ** (mp.mpf(1) / 3))
 
 
 def main() -> None:
@@ -163,7 +192,7 @@ def main() -> None:
     for a in assertions:
         print(f"  [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
-    witness = {
+    witness_raw = {
         "engine": "python-stdlib+mpmath(via coulomb_energy)",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "kappa-coulomb-reconciliation",
@@ -200,9 +229,10 @@ def main() -> None:
         "assertions": assertions,
         "allPassed": all(a["passed"] for a in assertions),
     }
+    witness = _ser(witness_raw)
     out = HERE / "kappa-coulomb-reconciliation.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\nwitness -> {out.name}  (allPassed={witness['allPassed']})")
+    print(f"\nwitness -> {out.name}  (allPassed={witness_raw['allPassed']})")
 
 
 if __name__ == "__main__":

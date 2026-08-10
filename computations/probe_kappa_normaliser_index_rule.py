@@ -31,16 +31,45 @@ Ref: conj:magic-shell-coupling-kappa
 Bean: qou-o16k
 """
 
+import sys
+from pathlib import Path as _P
+_SUB = _P(__file__).resolve().parent / "substrate"
+if str(_SUB) not in sys.path:
+    sys.path.insert(0, str(_SUB))
+import mpmath as mp  # noqa: E402
+from _precision import fmt, COMPUTE_DPS  # noqa: E402
+
+mp.mp.dps = COMPUTE_DPS
+
+
+def _ser(o):
+    """Serialize every real to a _precision.fmt string; ints stay ints.
+
+    The NO-FLOAT64 family forbids raw float64 in a witness. Values are carried
+    as mpmath.mpf from their source above and rendered here, so no float64 ever
+    reaches the JSON.
+    """
+    if isinstance(o, bool) or isinstance(o, int):
+        return o
+    if isinstance(o, (float, mp.mpf)):
+        return fmt(mp.mpf(o))
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_ser(v) for v in o]
+    return o
+
+
 import json
 import math
 from datetime import datetime, timezone
 from pathlib import Path
 
 # Experimental (proton) pin -- the standing default for new compute.
-Q0 = 1.1099785827513808
+Q0 = mp.mpf("1.1099785827513808")
 Q0_PIN = "proton (experimental layer), m_p/m_e"
-M_E_MEV = 0.51099895000
-KAPPA_EMPIRICAL = -1.0707907503265857
+M_E_MEV = mp.mpf("0.51099895000")
+KAPPA_EMPIRICAL = -mp.mpf("1.0707907503265857")
 
 
 def bracket(q: float, n: int) -> float:
@@ -50,7 +79,7 @@ def bracket(q: float, n: int) -> float:
 def kappa_with_normaliser(q: float, m_e: float, norm: float) -> float:
     h = q - 1 / q
     e0 = m_e / (q * (q - 1))
-    return -e0 * math.log(1 / h) / norm
+    return -e0 * mp.log(1 / h) / norm
 
 
 # (rule id, description, index function of (A_magic, A))
@@ -69,7 +98,7 @@ ANCHORS = [
 
 
 def main() -> None:
-    quantum = (M_E_MEV / (Q0 * (Q0 - 1))) * math.log(1 / (Q0 - 1 / Q0))
+    quantum = (M_E_MEV / (Q0 * (Q0 - 1))) * mp.log(1 / (Q0 - 1 / Q0))
 
     results = []
     for label, magic, a, status in ANCHORS:
@@ -144,7 +173,7 @@ def main() -> None:
     for a in assertions:
         print(f"  [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
-    witness = {
+    witness_raw = {
         "engine": "python-stdlib",
         "engineVersion": "3",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -168,9 +197,10 @@ def main() -> None:
         "assertions": assertions,
         "allPassed": all(a["passed"] for a in assertions),
     }
+    witness = _ser(witness_raw)
     out = Path(__file__).with_name("kappa-normaliser-index-rule.witness.json")
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\nwitness -> {out.name}  (allPassed={witness['allPassed']})")
+    print(f"\nwitness -> {out.name}  (allPassed={witness_raw['allPassed']})")
 
 
 if __name__ == "__main__":

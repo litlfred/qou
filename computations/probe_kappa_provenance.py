@@ -61,6 +61,35 @@ Ref: conj:magic-shell-coupling-kappa
 Bean: qou-o16k
 """
 
+import sys
+from pathlib import Path as _P
+_SUB = _P(__file__).resolve().parent / "substrate"
+if str(_SUB) not in sys.path:
+    sys.path.insert(0, str(_SUB))
+import mpmath as mp  # noqa: E402
+from _precision import fmt, COMPUTE_DPS  # noqa: E402
+
+mp.mp.dps = COMPUTE_DPS
+
+
+def _ser(o):
+    """Serialize every real to a _precision.fmt string; ints stay ints.
+
+    This probe reads values out of a deprecated witness, where they were stored
+    as raw float64. They are lifted to mpmath.mpf on the way in and rendered
+    here, so no float64 reaches the JSON.
+    """
+    if isinstance(o, bool) or isinstance(o, int):
+        return o
+    if isinstance(o, (float, mp.mpf)):
+        return fmt(mp.mpf(o))
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_ser(v) for v in o]
+    return o
+
+
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -71,6 +100,11 @@ DEP = HERE / "_deprecated"
 COUPLING = DEP / "interface-type-resolved-coupling-probe.witness.json"
 COMPOSITION = DEP / "canonical-braid-interface-composition.witness.json"
 
+# Deliberately a float64: the assertion below is that the published value equals
+# the 3He arm BIT-FOR-BIT as recorded in the source witness, which is a claim
+# about float64 identity. Lifting it to mpf via a decimal string would change
+# the value and break a true assertion. Serialization still goes through
+# _precision.fmt, so no float64 reaches the emitted witness.
 KAPPA_AS_PUBLISHED = -1.0707907503265857
 
 
@@ -142,7 +176,7 @@ def main() -> None:
     for a in assertions:
         print(f"  [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
-    witness = {
+    witness_raw = {
         "engine": "python-stdlib",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "kappa-provenance",
@@ -188,9 +222,10 @@ def main() -> None:
         "assertions": assertions,
         "allPassed": all(a["passed"] for a in assertions),
     }
+    witness = _ser(witness_raw)
     out = HERE / "kappa-provenance.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\nwitness -> {out.name}  (allPassed={witness['allPassed']})")
+    print(f"\nwitness -> {out.name}  (allPassed={witness_raw['allPassed']})")
 
 
 if __name__ == "__main__":

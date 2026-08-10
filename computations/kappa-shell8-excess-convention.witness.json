@@ -1,16 +1,16 @@
 {
   "engine": "python-stdlib",
   "engineVersion": "3",
-  "computedAt": "2026-08-10T17:43:34.271646+00:00",
+  "computedAt": "2026-08-10T17:56:04.774214+00:00",
   "computation": "kappa-shell8-excess-convention",
   "scriptFile": "probe_kappa_shell8_excess_convention.py",
   "contentBlock": "conj:magic-shell-coupling-kappa",
   "description": "Structural probe, no fit. Shows (a) kappa_closed carries no shell index, (b) every anchor kappa has been evaluated at lies in the A_magic = 2 shell, and (c) the corpus's two excess conventions coincide on exactly those anchors and diverge from shell 8 onward.",
   "parameters": {
-    "q_0": 1.1099785827513808,
+    "q_0": "1.10997858275138080000000000000000000000000000000000000000000",
     "q_0_pin": "proton (experimental layer), m_p/m_e",
-    "m_e_MeV": 0.51099895,
-    "kappa_empirical_MeV": -1.0707907503265857,
+    "m_e_MeV": "0.510998950000000000000000000000000000000000000000000000000000",
+    "kappa_empirical_MeV": "-1.07079075032658570000000000000000000000000000000000000000000",
     "magic_anchors": [
       2,
       8,
@@ -22,7 +22,7 @@
     ]
   },
   "data": {
-    "kappa_closed_MeV": -1.070424123445266,
+    "kappa_closed_MeV": "-1.07042412344526659292470694082205348394497366208071650200970",
     "kappa_closed_is_shell_independent": true,
     "excess_table": [
       {
@@ -33,9 +33,9 @@
         "role": "cross-check anchor (single-magic)",
         "excess_C1_interface": 1,
         "excess_C2_pairs": 1,
-        "C2_over_C1": 1.0,
-        "binding_term_C1_MeV": -1.070424123445266,
-        "binding_term_C2_MeV": -1.070424123445266,
+        "C2_over_C1": "1.00000000000000000000000000000000000000000000000000000000000",
+        "binding_term_C1_MeV": "-1.07042412344526659292470694082205348394497366208071650200970",
+        "binding_term_C2_MeV": "-1.07042412344526659292470694082205348394497366208071650200970",
         "conventions_agree": true
       },
       {
@@ -46,9 +46,9 @@
         "role": "cross-check anchor (single-magic)",
         "excess_C1_interface": -1,
         "excess_C2_pairs": -1,
-        "C2_over_C1": 1.0,
-        "binding_term_C1_MeV": 1.070424123445266,
-        "binding_term_C2_MeV": 1.070424123445266,
+        "C2_over_C1": "1.00000000000000000000000000000000000000000000000000000000000",
+        "binding_term_C1_MeV": "1.07042412344526659292470694082205348394497366208071650200970",
+        "binding_term_C2_MeV": "1.07042412344526659292470694082205348394497366208071650200970",
         "conventions_agree": true
       },
       {
@@ -60,8 +60,8 @@
         "excess_C1_interface": 0,
         "excess_C2_pairs": 0,
         "C2_over_C1": null,
-        "binding_term_C1_MeV": -0.0,
-        "binding_term_C2_MeV": -0.0,
+        "binding_term_C1_MeV": "0.0",
+        "binding_term_C2_MeV": "0.0",
         "conventions_agree": true
       },
       {
@@ -72,9 +72,9 @@
         "role": "NEVER TESTED",
         "excess_C1_interface": 1,
         "excess_C2_pairs": 7,
-        "C2_over_C1": 7.0,
-        "binding_term_C1_MeV": -1.070424123445266,
-        "binding_term_C2_MeV": -7.492968864116863,
+        "C2_over_C1": "7.00000000000000000000000000000000000000000000000000000000000",
+        "binding_term_C1_MeV": "-1.07042412344526659292470694082205348394497366208071650200970",
+        "binding_term_C2_MeV": "-7.49296886411686615047294858575437438761481563456501551406789",
         "conventions_agree": false
       },
       {
@@ -85,9 +85,9 @@
         "role": "NEVER TESTED",
         "excess_C1_interface": -1,
         "excess_C2_pairs": -7,
-        "C2_over_C1": 7.0,
-        "binding_term_C1_MeV": 1.070424123445266,
-        "binding_term_C2_MeV": 7.492968864116863,
+        "C2_over_C1": "7.00000000000000000000000000000000000000000000000000000000000",
+        "binding_term_C1_MeV": "1.07042412344526659292470694082205348394497366208071650200970",
+        "binding_term_C2_MeV": "7.49296886411686615047294858575437438761481563456501551406789",
         "conventions_agree": false
       },
       {
@@ -99,8 +99,8 @@
         "excess_C1_interface": 0,
         "excess_C2_pairs": 0,
         "C2_over_C1": null,
-        "binding_term_C1_MeV": -0.0,
-        "binding_term_C2_MeV": -0.0,
+        "binding_term_C1_MeV": "0.0",
+        "binding_term_C2_MeV": "0.0",
         "conventions_agree": true
       },
       {
@@ -112,8 +112,8 @@
         "excess_C1_interface": 0,
         "excess_C2_pairs": 0,
         "C2_over_C1": null,
-        "binding_term_C1_MeV": -0.0,
-        "binding_term_C2_MeV": -0.0,
+        "binding_term_C1_MeV": "0.0",
+        "binding_term_C2_MeV": "0.0",
         "conventions_agree": true
       },
       {
@@ -124,9 +124,9 @@
         "role": "NEVER TESTED",
         "excess_C1_interface": -1,
         "excess_C2_pairs": -19,
-        "C2_over_C1": 19.0,
-        "binding_term_C1_MeV": 1.070424123445266,
-        "binding_term_C2_MeV": 20.338058345460055,
+        "C2_over_C1": "19.0000000000000000000000000000000000000000000000000000000000",
+        "binding_term_C1_MeV": "1.07042412344526659292470694082205348394497366208071650200970",
+        "binding_term_C2_MeV": "20.3380583454600652655694318756190161949544995795336135381843",
         "conventions_agree": false
       }
     ],

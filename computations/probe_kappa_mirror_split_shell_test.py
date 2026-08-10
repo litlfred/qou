@@ -54,6 +54,35 @@ Ref: conj:magic-shell-coupling-kappa
 Bean: qou-o16k
 """
 
+import sys
+from pathlib import Path as _P
+_SUB = _P(__file__).resolve().parent / "substrate"
+if str(_SUB) not in sys.path:
+    sys.path.insert(0, str(_SUB))
+import mpmath as mp  # noqa: E402
+from _precision import fmt, COMPUTE_DPS  # noqa: E402
+
+mp.mp.dps = COMPUTE_DPS
+
+
+def _ser(o):
+    """Serialize every real to a _precision.fmt string; ints stay ints.
+
+    The NO-FLOAT64 family forbids raw float64 in a witness. Values are carried
+    as mpmath.mpf from their source above and rendered here, so no float64 ever
+    reaches the JSON.
+    """
+    if isinstance(o, bool) or isinstance(o, int):
+        return o
+    if isinstance(o, (float, mp.mpf)):
+        return fmt(mp.mpf(o))
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_ser(v) for v in o]
+    return o
+
+
 import json
 import math
 import sys
@@ -68,9 +97,9 @@ for p in (HERE, HERE / "substrate"):
 import coulomb_energy as ce  # noqa: E402
 from codata_constants import _ame_binding_mev as ame_binding  # noqa: E402
 
-Q0 = 1.1099785827513808
+Q0 = mp.mpf("1.1099785827513808")
 Q0_PIN = "proton (experimental layer), m_p/m_e"
-M_E_MEV = 0.51099895000
+M_E_MEV = mp.mpf("0.51099895000")
 
 
 def bracket(n: int) -> float:
@@ -80,7 +109,7 @@ def bracket(n: int) -> float:
 def kappa_magnitude() -> float:
     h = Q0 - 1 / Q0
     e0 = M_E_MEV / (Q0 * (Q0 - 1))
-    return abs(-e0 * math.log(1 / h) / (bracket(2) * bracket(3)))
+    return abs(-e0 * mp.log(1 / h) / (bracket(2) * bracket(3)))
 
 
 # Single-magic mirror pairs with AME coverage: (Z_lo, Z_hi, A, shell, label)
@@ -101,7 +130,7 @@ RADII = [
 def coulomb_displacement(z_hi: int, z_lo: int, a: int, r0: float) -> float:
     """Uniform-sphere displacement, (3/5)*alpha*hbar*c*[Z(Z-1)]/R, R = r0*A^(1/3)."""
     ahc = float(ce.alpha_em_hbar_c_mev_fm())
-    return 0.6 * ahc * (z_hi * (z_hi - 1) - z_lo * (z_lo - 1)) / (r0 * a ** (1.0 / 3.0))
+    return 0.6 * ahc * (z_hi * (z_hi - 1) - z_lo * (z_lo - 1)) / (r0 * a ** (mp.mpf(1) / 3))
 
 
 def main() -> None:
@@ -191,7 +220,7 @@ def main() -> None:
     for a in assertions:
         print(f"  [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
-    witness = {
+    witness_raw = {
         "engine": "python-stdlib+mpmath(via coulomb_energy)",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "computation": "kappa-mirror-split-shell-test",
@@ -228,9 +257,10 @@ def main() -> None:
         "assertions": assertions,
         "allPassed": all(a["passed"] for a in assertions),
     }
+    witness = _ser(witness_raw)
     out = HERE / "kappa-mirror-split-shell-test.witness.json"
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\nwitness -> {out.name}  (allPassed={witness['allPassed']})")
+    print(f"\nwitness -> {out.name}  (allPassed={witness_raw['allPassed']})")
 
 
 if __name__ == "__main__":
