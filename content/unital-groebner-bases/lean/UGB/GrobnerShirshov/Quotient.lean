@@ -48,9 +48,12 @@ the quotient `QuotAlg`.
 monomials form a `k`-basis of `QuotAlg`. It is a definition here, so that
 `composition_lemma`'s comment becomes something a theorem can conclude and a
 consumer can require. Proving it *is* the diamond lemma, and it additionally
-needs the framework's five standing axioms (`normal_form_exists`,
-`reduction_well_founded`, `local_confluence`, `confluence`, `normal_form_unique`).
-Nothing here discharges those.
+needs the framework's standing axioms. Those were five when this file was
+written; they are now **two** — `reduction_well_founded` and `local_confluence`.
+`confluence` and `normal_form_unique` were proved from them (Newman's lemma),
+and `normal_form_exists` turned out to be **false** and was replaced by a
+theorem carrying the unit-leading-coefficient hypothesis it had dropped
+(beans qou-ch3j, qou-lzoo). Nothing here discharges the remaining two.
 -/
 
 namespace UGB.GrobnerShirshov
@@ -226,7 +229,7 @@ theorem relation_eq_zero {sys : RewritingSystem G k}
 
 This is the statement `composition_lemma`'s docstring makes in prose. It is a
 *definition* here, not a theorem: proving it is the diamond lemma, and it rests
-on the framework's five standing axioms. Having it as a proposition is what lets
+on the framework's two remaining standing axioms. Having it as a proposition is what lets
 a theorem conclude it and a consumer require it — which a comment cannot do. -/
 
 /-- The monomials in normal form for `sys`: those no rule's leading monomial
@@ -266,9 +269,11 @@ and closes with the Remark that decides its relevance here:
 > Composition-Diamond lemma for free associative algebras.
 
 **The one-object case is precisely this development's setting.** So Theorem 4.4
-is the statement UGB's five standing axioms (`normal_form_exists`,
-`reduction_well_founded`, `local_confluence`, `confluence`,
-`normal_form_unique`) collectively stand in for, and its clause (iii) is
+is the statement UGB's two remaining standing axioms
+(`reduction_well_founded`, `local_confluence`) collectively stand in for —
+five when this was written, before Newman's lemma discharged `confluence` and
+`normal_form_unique` and the false `normal_form_exists` was replaced by a
+theorem. Its clause (iii) is
 `NormalFormBasis` above — the paper's `Irr(S)` is `{u | u ≠ a·s̄·b}`, which is
 `NormalFormMonomial`'s "no rule's leading monomial is an infix", the same
 condition.

@@ -1,6 +1,8 @@
 import UGB.GrobnerShirshov.Basic
 import UGB.GrobnerShirshov.CompositionLemma
 import UGB.GrobnerShirshov.NormalForms
+import UGB.GrobnerShirshov.NormalFormExistsRefutation
+import UGB.GrobnerShirshov.Quotient
 import UGB.GrobnerShirshov.Flatness
 import UGB.GrobnerShirshov.StrongMultiplicativity
 import UGB.GrobnerShirshov.JetOrder
@@ -18,6 +20,8 @@ provides the algebraic engine behind the QOU lifting mechanism.
 | `Basic` | Monomial orders, rewriting systems, S-polynomials |
 | `CompositionLemma` | Diamond lemma / confluence proof |
 | `NormalForms` | PBW-type bases for `U_q(su(2))` and `Dist(G)` |
+| `NormalFormExistsRefutation` | proof that the `normal_form_exists` axiom is **false** |
+| `Quotient` | the quotient algebra `k⟨G⟩ / (Σ)` and `NormalFormBasis` |
 | `Flatness` | Flat deformation from GS confluence |
 | `StrongMultiplicativity` | Frobenius preservation under deformation |
 | `JetOrder` | Jet-stratified reduction: ordering extension + complexity |

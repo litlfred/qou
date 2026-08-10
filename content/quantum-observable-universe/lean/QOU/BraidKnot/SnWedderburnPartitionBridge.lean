@@ -50,10 +50,16 @@ a precisely-named structural core, with all the surrounding plumbing proved.
   so the file has a **single** core, not two.  This statement folds in the pieces of content absent
   from the pinned Mathlib:
   - **(a) ℚ-rationality / absolute irreducibility.** The division rings collapse to `R` itself —
-    `S_n`-representations are defined over `ℚ`, so no genuine division-ring factors appear. Mathlib
-    has the matrix-product form only for an **algebraically closed** base
-    (`WedderburnSn.sn_wedderburnArtin_algClosed`); the char-0 (Maschke + rationality) descent is the
-    missing input.
+    `S_n`-representations are defined over `ℚ`, so no genuine division-ring factors appear. This is
+    the genuinely missing input: the char-0 (Maschke + rationality) **descent**.
+    *Correction (2026-08-09).* An earlier wording of this bullet said Mathlib "has the matrix-product
+    form only for an algebraically closed base". That is inaccurate, and it contradicted
+    §"Whether Mathlib offers…" two paragraphs below, which correctly cites the general
+    division-ring form. Mathlib's `IsSemisimpleRing.exists_algEquiv_pi_matrix_divisionRing` gives the
+    `∏ Matrix` decomposition as an **algebra** equivalence over *any* base — algebraic closure is
+    needed only to collapse the `𝔇 i`, which is exactly (and only) what is missing here. That rung is
+    now wired as `WedderburnSn.sn_wedderburnArtin_alg` (sorry-free), so what this core still owes on
+    the (a) front is the collapse `𝔇 i ≃ R` alone, not the algebra-form split.
   - **(b) the partition labelling** of the block set (`SpechtClassification.PartitionIndex n`).
   - **(c) the Okounkov–Vershik identification** of block `i` with `S^{λ_i}` — matrix size
     `= dim_R S^{λ_i} = #SYT(λ_i)`.
@@ -72,12 +78,22 @@ a precisely-named structural core, with all the surrounding plumbing proved.
 
 ## Whether Mathlib offers any `S_n`-rationality support
 
-It does **not**. Mathlib (pinned v4.24.0) provides the *abstract* Wedderburn–Artin theorem
-(`IsSemisimpleRing.exists_ringEquiv_pi_matrix_divisionRing`) and its algebraically-closed
-specialisation (`…_of_isAlgClosed`, where division rings collapse to the base field by Schur +
-algebraic closure), but **nothing** about the rationality of the symmetric group's representations —
-no statement that `S_n`-irreducibles are defined over `ℚ`, no Specht-module ↔ Wedderburn-block
+It does **not**. Mathlib (pinned v4.24.0) provides the *abstract* Wedderburn–Artin theorem in three
+forms — ring (`IsSemisimpleRing.exists_ringEquiv_pi_matrix_divisionRing`), **algebra over an
+arbitrary base** (`…exists_algEquiv_pi_matrix_divisionRing`), and the algebraically-closed
+specialisation (`…_of_isAlgClosed`, where the division rings collapse to the base field by Schur +
+algebraic closure) — but **nothing** about the rationality of the symmetric group's representations:
+no statement that `S_n`-irreducibles are defined over `ℚ`, no Specht module at all (a name search
+over the full import closure returns **0** hits for `Specht`), no Specht-module ↔ Wedderburn-block
 identification, no `dim(λ) = #SYT(λ)` at the block level. The core is therefore genuine.
+
+**Measured residual (2026-08-09).** With `WedderburnSn.sn_wedderburnArtin_alg` in place, the delta
+between what Mathlib + this corpus supply and what `sn_isotypic_specht_split` asserts is exactly
+four items, none of them the Wedderburn step itself:
+1. the division-ring collapse `𝔇 i ≃ R` (ℚ is a splitting field for `S_n`);
+2. the reindexing `Fin N ≃ SpechtClassification.PartitionIndex n`;
+3. the size identification `𝔫 i = dim_R S^{λ_i}`;
+4. the `C₂ = Σₖ Xₖ²` block-scalar alignment `↦ contentSqSum λᵢ • 1` (the isotypic clause).
 
 ## Base ring (§7c)
 
