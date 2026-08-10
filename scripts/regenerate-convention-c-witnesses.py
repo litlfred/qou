@@ -358,6 +358,11 @@ def _resolve_producer(doc, witness: pathlib.Path, index, stems):
     `_deprecated/` is never a resolution: a witness whose producer was retired
     is history, and history may stay convention C provided it says so.
     """
+    # Some files under computations/ are top-level JSON *lists*, not objects.
+    # No convention-C witness is one today, so work_list() never hit this, but
+    # any caller scanning the tree more broadly crashes on `.get`.
+    if not isinstance(doc, dict):
+        doc = {}
     for key in ("scriptFile", "script", "producer"):
         val = doc.get(key) or ""
         if not isinstance(val, str) or not val:
@@ -402,6 +407,91 @@ def work_list():
         (items if src else orphans).append(
             (str(w.relative_to(REPO)), str(src.relative_to(REPO)) if src else None))
     return items, orphans
+
+
+#: A witness filename as it appears inside producer source.
+_WITNESS_REF = re.compile(r"[\w.-]+\.witness\.json|[\w.-]+-witness\.json")
+
+
+def witness_owners():
+    """{witness basename: producer} over the whole tree, not just convention-C."""
+    index = {p.name: p for p in (REPO / "computations").rglob("*.py")}
+    stems = {p.stem: p for p in (REPO / "computations").rglob("*.py")}
+    out = {}
+    for w in (REPO / "computations").rglob("*.json"):
+        if "_deprecated" in str(w):
+            continue
+        try:
+            doc = json.loads(w.read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        src = _resolve_producer(doc, w, index, stems)
+        if src:
+            out[w.name] = str(src.relative_to(REPO))
+    return out
+
+
+def dependency_edges(by_producer):
+    """{producer: {upstream producers whose witnesses it reads}}.
+
+    Derived by scanning each producer's source for witness filenames and
+    mapping each back to whatever writes it. Approximate by construction — a
+    filename built at runtime from an f-string is invisible — but it captures
+    the literal `open("...witness.json")` reads that the propagation problem
+    actually travels through.
+    """
+    owner = witness_owners()
+    edges = {}
+    for producer, witnesses in by_producer.items():
+        try:
+            text = (REPO / producer).read_text()
+        except OSError:
+            edges[producer] = set()
+            continue
+        mine = {pathlib.Path(w).name for w in witnesses}
+        edges[producer] = {
+            owner[ref] for ref in set(_WITNESS_REF.findall(text))
+            if ref not in mine and owner.get(ref) not in (None, producer)
+            and owner.get(ref) in by_producer
+        }
+    return edges
+
+
+def topo_order(by_producer):
+    """Producers ordered so every upstream runs before its consumers.
+
+    THE reason the first two passes did not take. Producers read each other's
+    witnesses — `rho_w_crystal_vertex_trace` takes its `y_lambda` straight out
+    of `chi-deuteron-h6-at-q0-50dps.witness.json`, and the whole `rho_k_h3a_*`
+    family reads `rho-k-h3a-refinement.witness.json` — but the run order was
+    `sorted()`, i.e. alphabetical. So `aK_via_lp_dual` ran FIRST and its
+    upstream `chi_at_q0_via_hoefsmit_mpfr` ran 20 producers later; the
+    downstream faithfully re-emitted the convention-C weights it had just read,
+    exited 0, and the harness recorded a successful regeneration.
+
+    That is why 28 witnesses were still convention C after a 98-minute pass in
+    which almost every producer succeeded. The producers were not wrong and the
+    witnesses were not unfixable — they were simply regenerated in an order
+    that guaranteed the stale values propagated forward.
+
+    Kahn's algorithm, alphabetical tie-break so the order is deterministic.
+    A cycle cannot be ordered; its members are appended alphabetically and
+    named, because silently dropping them would under-run the campaign.
+    """
+    edges = dependency_edges(by_producer)
+    pending = {p: set(u) for p, u in edges.items()}
+    ordered, cycles = [], []
+    while pending:
+        ready = sorted(p for p, u in pending.items() if not u)
+        if not ready:
+            ready = [sorted(pending)[0]]
+            cycles.append(ready[0])
+        for p in ready:
+            ordered.append(p)
+            pending.pop(p, None)
+        for u in pending.values():
+            u.difference_update(ready)
+    return ordered, edges, cycles
 
 
 def done_set(ok_only: bool = False):
@@ -518,10 +608,14 @@ def run_all(timeout: int, retry_failed: bool = False):
         by_producer.setdefault(p, []).append(w)
 
     already = done_set(ok_only=retry_failed)
-    todo = [(p, ws) for p, ws in sorted(by_producer.items()) if p not in already]
+    order, edges, cycles = topo_order(by_producer)
+    todo = [(p, by_producer[p]) for p in order if p not in already]
     LOG.parent.mkdir(parents=True, exist_ok=True)
 
+    n_edges = sum(len(u) for u in edges.values())
     print(f"producers: {len(by_producer)}   already done: {len(already)}   to run: {len(todo)}")
+    print(f"dependency order: {n_edges} edge(s) among them"
+          + (f"; {len(cycles)} cycle-broken: {', '.join(cycles)}" if cycles else ""))
     print(f"orphan witnesses (no scriptFile): {len(orphans)}")
     print(f"log: {LOG}\n", flush=True)
 
