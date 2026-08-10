@@ -1,7 +1,7 @@
 ---
 # ptlm
 title: 'Read the uploaded Ptolemy papers: verify the novelty assessment, and price the Ptolemy route past the Gröbner ceiling'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
@@ -9,9 +9,9 @@ tags:
     - hyperbolic-volume
     - gluing-equations
     - ptolemy
-parent: m015
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T06:00:00Z
+updated_at: 2026-08-10T12:11:25Z
+parent: m015
 ---
 
 Two primary sources were uploaded to the repo at

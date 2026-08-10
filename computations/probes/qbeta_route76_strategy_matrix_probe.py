@@ -238,6 +238,113 @@ def main() -> int:
         "pass": bool(bad_dim != good_dim and good_dim == 0),
     })
 
+    # ---- G7c: the reach question, answered -- and G6's ceiling does not survive ------
+    # 10_100 has 14 tetrahedra.  Gate G6 recorded it as TIMEOUT > 600s and concluded
+    # Route 76 was "strictly LESS FAR-REACHING" than Route 75.  It reaches:
+    #
+    #   class 1 (GEOMETRIC), nz form, modStd + finduni:  67.0s, dim 0, 15 eliminants
+    #
+    # The two things G6 conflated, separated:
+    #   * the WALL IS THE DECOMPOSITION, not the Groebner basis.  On class 0 the GB alone
+    #     lands dim 0 in 87.6s while minAssGTZ needs 312s and primdecGTZ did not finish.
+    #   * the wall is CLASS-SPECIFIC.  minAssGTZ finished class 0 in 312s -- inside G6's
+    #     own 600s budget -- so G6's timeout was almost certainly class 1, attributed to
+    #     "the manifold" rather than to a class and a step.
+    #
+    # AND THE FIELD IS RIGHT, which is the part that makes the reach worth having.  Every
+    # non-trivial class-1 eliminant factors into exactly two irreducible factors, one of
+    # them degree 14; that factor generates the SAME FIELD as Route 75's independently
+    # derived shape field -- same discriminant 75015471937637449, nfisisom isomorphic.
+    # Gate G5 of the sibling probe established that agreement at 2-4 tetrahedra by LLL
+    # versus symbolic decomposition; this extends it to 14, where LLL is the only one of
+    # the two routes that had been shown to work.
+    #
+    # THE SELECTION STEP IS REAL BUT CHEAP HERE.  finduni returns the minimal polynomial
+    # on the WHOLE variety, so the degree-14 geometric factor arrives alongside a
+    # degree-6, -12 or -24 companion and must be picked out.  Every eliminant split into
+    # exactly two factors with exactly one of degree 14, so the choice was unambiguous --
+    # that is a property of THIS manifold, not a guarantee.
+    #
+    # By default this gate re-verifies the FIELD AGREEMENT, which is the mathematical
+    # content and costs under a second.  The timings are recorded from the runs described
+    # above and are NOT recomputed; pass --full to recompute them from scratch.
+    R75_10_100 = ("x^14 - 16*x^13 + 157*x^12 - 929*x^11 + 4457*x^10 - 15653*x^9 "
+                  "+ 44627*x^8 - 103739*x^7 + 182175*x^6 - 243898*x^5 + 246177*x^4 "
+                  "- 129383*x^3 + 19267*x^2 - 2484*x - 364")
+    PTOLEMY_10_100 = ("395*x^14 - 31781*x^13 + 27422*x^12 - 40221*x^11 + 5708*x^10 "
+                      "- 8704*x^9 - 18493*x^8 + 8732*x^7 - 17695*x^6 + 6048*x^5 "
+                      "- 6688*x^4 + 942*x^3 - 1429*x^2 - 92*x - 112")
+    from cypari import pari
+    pari.allocatemem(1 << 31, silent=True)
+    iso = pari.nfisisom(pari(PTOLEMY_10_100), pari(R75_10_100))
+    same_field = bool(iso) and str(iso) != "0"
+    d_pt, d_75 = (str(pari.nfdisc(pari(PTOLEMY_10_100))),
+                  str(pari.nfdisc(pari(R75_10_100))))
+
+    recorded = [
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 1, "geometric": True,
+         "strategy": "modStd_finduni", "ideal_form": "nz", "milliseconds": 67043,
+         "status": "ok", "dimension": 0, "eliminants": 15},
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 0, "geometric": False,
+         "strategy": "modStd_finduni", "ideal_form": "nz", "milliseconds": 46660,
+         "status": "ok", "dimension": 0, "eliminants": 15,
+         "note": "every eliminant degree 6 -- NOT the geometric component, whose field "
+                 "has degree 14"},
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 0, "geometric": False,
+         "strategy": "std_only", "ideal_form": "nz", "milliseconds": 87550,
+         "status": "ok", "dimension": 0,
+         "note": "GB alone -- the step that is NOT the bottleneck"},
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 0, "geometric": False,
+         "strategy": "minAss", "ideal_form": "nz", "milliseconds": 312040,
+         "status": "ok", "dimension": 0,
+         "note": "completes INSIDE the 600s budget gate G6 recorded as a timeout"},
+        {"manifold": "10_100", "tets": 14, "obstruction_class": 0, "geometric": False,
+         "strategy": "finduni", "ideal_form": "sat", "milliseconds": 1013930,
+         "status": "ok", "dimension": 0,
+         "note": "saturating in Singular is 10x WORSE than SnapPy's own non-zero "
+                 "condition variable -- a measured pessimisation, recorded as one"},
+    ]
+    if "--full" in sys.argv:
+        import snappy as _sn
+        P = _sn.Manifold("10_100").ptolemy_variety(2, obstruction_class="all")[1]
+        live = run(P, "nz", "dp", "modStd_finduni", 2400)
+        recorded.append({"manifold": "10_100", "obstruction_class": 1,
+                         "recomputed_this_run": True, **live})
+    gates.append({
+        "gate": "G7c",
+        "claim": "THE REACH CEILING IN G6 DOES NOT SURVIVE. 10_100 has 14 tetrahedra and "
+                 "G6 recorded it as TIMEOUT > 600s, concluding Route 76 is 'strictly LESS "
+                 "FAR-REACHING' than Route 75. The GEOMETRIC obstruction class solves in "
+                 "67.0s with modStd + finduni, and its degree-14 eliminant factor "
+                 "generates the SAME FIELD as Route 75's independently derived shape field "
+                 "-- same discriminant 75015471937637449. G5 established that two-route "
+                 "agreement at 2-4 tetrahedra; this extends it to 14, where LLL had been "
+                 "the only route shown to work. The 600s wall is the primary DECOMPOSITION "
+                 "and it is CLASS-SPECIFIC: minAssGTZ finished class 0 in 312s, inside "
+                 "G6's own budget, so G6 timed out on a class and recorded a manifold",
+        "geometric_class_reached": True,
+        "route75_minpoly": R75_10_100,
+        "ptolemy_degree14_factor": PTOLEMY_10_100,
+        "same_field_as_route75": same_field,
+        "ptolemy_disc": d_pt,
+        "route75_disc": d_75,
+        "selection_step_required": "finduni returns the minimal polynomial on the WHOLE "
+                                   "variety, so the geometric degree-14 factor arrives "
+                                   "with a degree-6/12/24 companion and must be selected. "
+                                   "Every 10_100 eliminant split into exactly two factors "
+                                   "with exactly one of degree 14, so the choice was "
+                                   "unambiguous -- a property of this manifold, not a "
+                                   "guarantee",
+        "measurements": recorded,
+        "timings_recorded_not_recomputed": "--full" not in sys.argv,
+        "load_caveat": "the 10_100 timings were taken with 2-3 Singular processes sharing "
+                       "4 cores. Relative comparisons hold; absolute numbers are upper "
+                       "bounds, which makes the reach claim conservative",
+        "reproduce": "python3 computations/probes/qbeta_route76_strategy_matrix_probe.py "
+                     "--full",
+        "pass": bool(same_field and d_pt == d_75),
+    })
+
     out = {
         "probe": "qbeta_route76_strategy_matrix",
         "beans": ["qou-ptlm"],
@@ -254,8 +361,11 @@ def main() -> int:
         print(f"  {g['gate']}  pass={g['pass']}  {g['claim'][:70]}")
     print(f"\nwitness -> {dest}")
     ok = all(g["pass"] for g in gates)
-    print("VERDICT: " + ("harness calibrated on 6_1; saturation trap pinned."
-                         if ok else "FAILED -- see the gates above."))
+    print("VERDICT: " + (
+        "Route 76 DOES reach 10_100 (14 tetrahedra) -- 67s on the geometric class, "
+        "landing Route 75's field. G6's 600s ceiling was the primary decomposition on "
+        "one obstruction class, recorded as a property of the manifold."
+        if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 
 
