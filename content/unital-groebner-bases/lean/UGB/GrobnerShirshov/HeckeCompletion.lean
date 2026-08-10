@@ -938,4 +938,302 @@ theorem quadSelfOverlap_resolves {n : ℕ} (hn : 0 < n) (i : Fin n) (hp : HeckeP
       (quadSelfOverlap i hp).spoly nf ∧ nf.isZero :=
   reducesToNF_self_of_isZero (quadSelfOverlap_spoly_isZero i hp)
 
+/-! ## §4o  Bokut–Shiao against far-commutation — the family §4g does one case of
+
+`refuting_overlap_resolves` (§4g) is one composition at `(i,j) = (3,1)`, proved by
+`decide` on concrete words. It is not an isolated fact: it is the `n = 4`,
+`j = i − 1` instance of a family that resolves for every `n` and for the same
+reason, and this section proves the family.
+
+**The shape.** `bsWord₁ i j` ends in `σᵢ`; the far-commutation rule `σᵢσ_{j₀}`
+begins with `σᵢ`. They overlap in that single letter (§4m says every proper
+overlap is one letter), over the ambient word `descWord i j ++ [σᵢ, σ_{j₀}]`. Take
+`j₀` to be the index just below `j`, so that the far-commutation rule extends the
+descending run by exactly one step.
+
+**Why it resolves.** Write out the S-polynomial:
+
+    lc₂ • (BS · σ_{j₀}) − lc₁ • (descWord i j · FC)
+      = (bsWord₁ i j ++ [σ_{j₀}] − bsWord₂ i' i j ++ [σ_{j₀}])
+        − (descWord i j ++ [σᵢ, σ_{j₀}] − descWord i j ++ [σ_{j₀}, σᵢ])
+
+`bsWord₁ i j ++ [σ_{j₀}]` *is* `descWord i j ++ [σᵢ, σ_{j₀}]`, so those cancel
+without any word-distinctness argument. What survives is
+`descWord i j ++ [σ_{j₀}, σᵢ] − bsWord₂ i' i j ++ [σ_{j₀}]`, and `descWord_snoc`
+turns both into the Bokut–Shiao words one index lower:
+
+    descWord i j ++ [σ_{j₀}] ++ [σᵢ] = descWord i j₀ ++ [σᵢ] = bsWord₁ i j₀
+    bsWord₂ i' i j ++ [σ_{j₀}]                                = bsWord₂ i' i j₀
+
+So the S-polynomial **is** `bokutShiaoRelation i' i j₀`, and one application of
+that rule in empty context annihilates it. The obstruction at depth `j` is
+repaired by the rule at depth `j₀ = j − 1`: the family completes itself
+downwards. -/
+
+/-- The mirror of `filter_desc_cons` at the bottom end. `List.finRange n` is
+`Pairwise (· < ·)`, so once the head is `j₀` every later index is at least
+`j = j₀ + 1` and the two predicates agree on the tail; before the head is
+reached both fail, because `a < j₀ < j`. -/
+theorem filter_desc_snoc {n : ℕ} {i j j₀ : Fin n}
+    (hj : j₀.val + 1 = j.val) (hij : j.val ≤ i.val) :
+    ∀ l : List (Fin n), l.Pairwise (fun a b => a.val < b.val) → j₀ ∈ l →
+      l.filter (fun k => decide (j₀.val ≤ k.val ∧ k.val ≤ i.val))
+        = j₀ :: l.filter (fun k => decide (j.val ≤ k.val ∧ k.val ≤ i.val)) := by
+  intro l
+  induction l with
+  | nil => intro _ hm; simp at hm
+  | cons a t ih =>
+    intro hp hm
+    rw [List.pairwise_cons] at hp
+    obtain ⟨halt, hpt⟩ := hp
+    rcases List.mem_cons.mp hm with haj | hmt
+    · -- the head is `j₀`; every later index is at least `j`, so the tails agree
+      subst haj
+      have htail : t.filter (fun k => decide (j₀.val ≤ k.val ∧ k.val ≤ i.val))
+          = t.filter (fun k => decide (j.val ≤ k.val ∧ k.val ≤ i.val)) := by
+        refine List.filter_congr (fun b hb => ?_)
+        have := halt b hb
+        simp only [decide_eq_decide]
+        omega
+      simp only [List.filter_cons, decide_eq_true_eq, htail]
+      rw [if_pos (by omega : j₀.val ≤ j₀.val ∧ j₀.val ≤ i.val),
+        if_neg (by omega : ¬ (j.val ≤ j₀.val ∧ j₀.val ≤ i.val))]
+    · -- the head is below `j₀`, so both predicates fail on it
+      have hlt : a.val < j₀.val := halt _ hmt
+      simp only [List.filter_cons, decide_eq_true_eq]
+      rw [if_neg (by omega : ¬ (j₀.val ≤ a.val ∧ a.val ≤ i.val)),
+        if_neg (by omega : ¬ (j.val ≤ a.val ∧ a.val ≤ i.val))]
+      exact ih hpt hmt
+
+/-- **The snoc lemma**: extending the descending range one index lower appends
+that letter. Dual to `descWord_cons`, and the only new word identity §4o needs. -/
+theorem descWord_snoc {n : ℕ} {i j j₀ : Fin n}
+    (hj : j₀.val + 1 = j.val) (hij : j.val ≤ i.val) :
+    descWord i j₀ = descWord i j ++ [(⟨j₀⟩ : HeckeGen n)] := by
+  simp only [descWord, filter_desc_snoc hj hij (List.finRange n)
+    (List.pairwise_lt_finRange n) (List.mem_finRange j₀),
+    List.reverse_cons, List.map_append, List.map_cons, List.map_nil]
+
+/-! ### Leading coefficients, and membership -/
+
+/-- The Bokut–Shiao rule is monic: deg-lex picks `bsWord₁`, which carries `+1`. -/
+theorem bokutShiaoRelation_lc {n : ℕ} {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    (bokutShiaoRelation i' i j).lc (heckeOrder n) = 1 := by
+  have hii' : i' ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
+  have hne : bsWord₂ i' i j ≠ bsWord₁ i j := by
+    rw [bsWord₁_cons hi hj, bsWord₂]
+    simp [hii']
+  show (bokutShiaoRelation i' i j).relation.coeff
+    ((bokutShiaoRelation i' i j).lm (heckeOrder n)) = 1
+  rw [bokutShiaoRelation_lm hi hj]
+  simp [bokutShiaoRelation, AlgElement.ofTerms_coeff, hne]
+
+/-- The far-commutation rule is monic. -/
+theorem farCommRelation_lc {n : ℕ} (i j : Fin n) (hij : j.val < i.val) :
+    (farCommRelation i j).lc (heckeOrder n) = 1 := by
+  have hji : j ≠ i := fun hcon => absurd (congrArg Fin.val hcon) (by omega)
+  show (farCommRelation i j).relation.coeff
+    ((farCommRelation i j).lm (heckeOrder n)) = 1
+  rw [farCommRelation_lm i j hij]
+  simp [farCommRelation, AlgElement.ofTerms_coeff, hji]
+
+/-- Every Bokut–Shiao rule really is a rule of the completed system. The `(3,1)`
+instance is `Completion.bs31_mem`; this is it for all indices. -/
+theorem bokutShiaoRelation_mem {n : ℕ} (hn : 0 < n) (hp : HeckeParams) {i' i j : Fin n}
+    (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val) :
+    bokutShiaoRelation i' i j ∈ (heckeCompletedRewritingSystem n hn hp).rules := by
+  refine List.mem_append_right _ ?_
+  refine List.mem_flatMap.mpr ⟨i, List.mem_finRange i, ?_⟩
+  refine List.mem_flatMap.mpr ⟨i', List.mem_finRange i', ?_⟩
+  exact List.mem_filterMap.mpr ⟨j, List.mem_finRange j, by rw [if_pos ⟨hi, hj⟩]⟩
+
+/-! ### The composition, and its S-polynomial -/
+
+namespace BokutShiaoFarComm
+
+variable {n : ℕ} {i' i j j₀ : Fin n}
+
+/-- The composition of `bokutShiaoRelation i' i j` with `farCommRelation i j₀`,
+overlapping in the single letter `σᵢ`. -/
+noncomputable def oc (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val)
+    (hj0 : j₀.val + 1 = j.val) : OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := bokutShiaoRelation i' i j
+  rule₂ := farCommRelation i j₀
+  left := descWord i j
+  overlap := [⟨i⟩]
+  right := [⟨j₀⟩]
+  lm₁_decomp := by rw [bokutShiaoRelation_lm hi hj]; rfl
+  lm₂_decomp := by rw [farCommRelation_lm i j₀ (by omega)]; rfl
+  overlap_nonempty := by simp
+
+/-- **The S-polynomial is the Bokut–Shiao relation one index lower.** Coefficient
+by coefficient — the ambient word cancels identically, so no word-distinctness
+argument is needed anywhere. -/
+theorem oc_spoly_coeff (hi : i'.val + 1 = i.val) (hj : j.val ≤ i'.val)
+    (hj0 : j₀.val + 1 = j.val) (m : Monomial (HeckeGen n)) :
+    (oc hi hj hj0).spoly.coeff m = (bokutShiaoRelation i' i j₀).relation.coeff m := by
+  have wA : ([] ++ bsWord₁ i j ++ [(⟨j₀⟩ : HeckeGen n)])
+      = descWord i j ++ [(⟨i⟩ : HeckeGen n), ⟨j₀⟩] := by
+    simp [bsWord₁]
+  have wB : ([] ++ bsWord₂ i' i j ++ [(⟨j₀⟩ : HeckeGen n)]) = bsWord₂ i' i j₀ := by
+    rw [bsWord₂, bsWord₂, descWord_snoc hj0 hj]
+    simp
+  have vA : (descWord i j ++ [(⟨i⟩ : HeckeGen n), ⟨j₀⟩] ++ ([] : Monomial (HeckeGen n)))
+      = descWord i j ++ [(⟨i⟩ : HeckeGen n), ⟨j₀⟩] := by simp
+  have vB : (descWord i j ++ [(⟨j₀⟩ : HeckeGen n), ⟨i⟩] ++ ([] : Monomial (HeckeGen n)))
+      = bsWord₁ i j₀ := by
+    rw [bsWord₁, descWord_snoc hj0 (by omega : j.val ≤ i.val)]
+    simp
+  show (farCommRelation i j₀).lc (heckeOrder n)
+      * (AlgElement.contextMul []
+          (AlgElement.ofTerms [(bsWord₁ i j, (1 : ℝ)), (bsWord₂ i' i j, -1)])
+          [⟨j₀⟩]).coeff m
+    - (bokutShiaoRelation i' i j).lc (heckeOrder n)
+      * (AlgElement.contextMul (descWord i j)
+          (AlgElement.ofTerms
+            [([(⟨i⟩ : HeckeGen n), ⟨j₀⟩], (1 : ℝ)), ([(⟨j₀⟩ : HeckeGen n), ⟨i⟩], -1)])
+          []).coeff m
+    = (AlgElement.ofTerms [(bsWord₁ i j₀, (1 : ℝ)), (bsWord₂ i' i j₀, -1)]).coeff m
+  rw [farCommRelation_lc i j₀ (by omega), bokutShiaoRelation_lc hi hj, one_mul, one_mul,
+    AlgElement.contextMul_ofTerms_pair_coeff, AlgElement.contextMul_ofTerms_pair_coeff,
+    wA, wB, vA, vB, AlgElement.ofTerms_coeff, AlgElement.ofTerms_coeff,
+    AlgElement.ofTerms_coeff]
+  simp only [List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  split_ifs <;> norm_num
+
+/-- **One step, to zero** — the general form of `refuting_overlap_resolves`. -/
+theorem oc_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val) (hj0 : j₀.val + 1 = j.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hi hj hj0).spoly AlgElement.zero := by
+  have hj0i' : j₀.val ≤ i'.val := by omega
+  have hlm : (bokutShiaoRelation i' i j₀).lm (heckeOrder n) = bsWord₁ i j₀ :=
+    bokutShiaoRelation_lm hi hj0i'
+  have hcoeff : (oc hi hj hj0).spoly.coeff ([] ++ bsWord₁ i j₀ ++ []) = 1 := by
+    rw [show ([] ++ bsWord₁ i j₀ ++ [] : Monomial (HeckeGen n)) = bsWord₁ i j₀ by simp,
+      oc_spoly_coeff hi hj hj0, ← hlm]
+    exact bokutShiaoRelation_lc hi hj0i'
+  refine ⟨bokutShiaoRelation i' i j₀, bokutShiaoRelation_mem hn hp hi hj0i', [], [], 1,
+    ?_, ?_, ?_⟩
+  · rw [hlm, hcoeff]; norm_num
+  · rw [hlm, hcoeff, bokutShiaoRelation_lc hi hj0i']; norm_num
+  · intro m
+    show (0 : ℝ) = (oc hi hj hj0).spoly.coeff m
+      - 1 * (AlgElement.contextMul [] (bokutShiaoRelation i' i j₀).relation []).coeff m
+    rw [AlgElement.contextMul_nil_nil_coeff, oc_spoly_coeff hi hj hj0]
+    ring
+
+theorem oc_reduces_to_zero (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val)
+    (hj : j.val ≤ i'.val) (hj0 : j₀.val + 1 = j.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hi hj hj0).spoly nf ∧ nf.isZero :=
+  ⟨AlgElement.zero,
+    ⟨MultiStepReduction.step (MultiStepReduction.refl _) (oc_resolves hn hp hi hj hj0),
+      isNormalForm_of_isZero AlgElement.isZero_zero⟩,
+    AlgElement.isZero_zero⟩
+
+end BokutShiaoFarComm
+
+/-! ### The Yang–Baxter rule against far-commutation
+
+§4j puts `yangBaxterRelation i' i` and `bokutShiaoRelation i' i i'` on the same
+leading monomial, so the completed system carries *two* rules that compose with
+`farCommRelation i j₀` in the shape above, and both are obligations. The second
+one is `BokutShiaoFarComm.oc` at `j = i − 1`; this is the first.
+
+They differ by a sign and nothing else: the two relations are exact negatives and
+their leading coefficients are `+1` and `−1`, so the S-polynomial here is the
+negative of the one there, and the same rule annihilates it with coefficient `−1`
+in place of `+1`. `Completion.refuting_overlap_resolves` — §4e's obstruction — is
+this composition at `n = 4`, `(i', i, j₀) = (2, 3, 1)`. -/
+
+namespace YangBaxterFarComm
+
+variable {n : ℕ} {i' i j₀ : Fin n}
+
+/-- `descWord i (i−1) = σᵢσᵢ₋₁`. -/
+theorem descWord_at_pred (hi : i'.val + 1 = i.val) :
+    descWord i i' = [(⟨i⟩ : HeckeGen n), ⟨i'⟩] := by
+  rw [descWord_cons hi (le_refl _), descWord_self]
+
+/-- The composition of `yangBaxterRelation i' i` with `farCommRelation i j₀`. -/
+noncomputable def oc (hi : i'.val + 1 = i.val) (hj0 : j₀.val + 1 = i'.val) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := yangBaxterRelation i' i
+  rule₂ := farCommRelation i j₀
+  left := descWord i i'
+  overlap := [⟨i⟩]
+  right := [⟨j₀⟩]
+  lm₁_decomp := by rw [yangBaxterRelation_lm i' i (by omega), descWord_at_pred hi]; rfl
+  lm₂_decomp := by rw [farCommRelation_lm i j₀ (by omega)]; rfl
+  overlap_nonempty := by simp
+
+/-- **The S-polynomial is minus the Bokut–Shiao relation at `j₀`.** -/
+theorem oc_spoly_coeff (hi : i'.val + 1 = i.val) (hj0 : j₀.val + 1 = i'.val)
+    (m : Monomial (HeckeGen n)) :
+    (oc hi hj0).spoly.coeff m = -((bokutShiaoRelation i' i j₀).relation.coeff m) := by
+  have hdesc : descWord i j₀ = descWord i i' ++ [(⟨j₀⟩ : HeckeGen n)] :=
+    descWord_snoc hj0 (by omega)
+  have wA : ([] ++ [(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩] ++ [(⟨j₀⟩ : HeckeGen n)])
+      = bsWord₂ i' i j₀ := by
+    rw [bsWord₂, descWord_snoc hj0 (le_refl _), descWord_self]
+    simp
+  have wB : ([] ++ [(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] ++ [(⟨j₀⟩ : HeckeGen n)])
+      = descWord i i' ++ [(⟨i⟩ : HeckeGen n), ⟨j₀⟩] ++ ([] : Monomial (HeckeGen n)) := by
+    rw [descWord_at_pred hi]; simp
+  have vB : (descWord i i' ++ [(⟨j₀⟩ : HeckeGen n), ⟨i⟩] ++ ([] : Monomial (HeckeGen n)))
+      = bsWord₁ i j₀ := by
+    rw [bsWord₁, hdesc]; simp
+  show (farCommRelation i j₀).lc (heckeOrder n)
+      * (AlgElement.contextMul []
+          (AlgElement.ofTerms [([(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩], (1 : ℝ)),
+                               ([(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩], -1)]) [⟨j₀⟩]).coeff m
+    - (yangBaxterRelation i' i).lc (heckeOrder n)
+      * (AlgElement.contextMul (descWord i i')
+          (AlgElement.ofTerms
+            [([(⟨i⟩ : HeckeGen n), ⟨j₀⟩], (1 : ℝ)), ([(⟨j₀⟩ : HeckeGen n), ⟨i⟩], -1)])
+          []).coeff m
+    = -((AlgElement.ofTerms [(bsWord₁ i j₀, (1 : ℝ)), (bsWord₂ i' i j₀, -1)]).coeff m)
+  rw [farCommRelation_lc i j₀ (by omega), DegenerateYbBs.yangBaxter_lc hi, one_mul,
+    AlgElement.contextMul_ofTerms_pair_coeff, AlgElement.contextMul_ofTerms_pair_coeff,
+    wA, wB, vB, AlgElement.ofTerms_coeff, AlgElement.ofTerms_coeff,
+    AlgElement.ofTerms_coeff]
+  simp only [List.filter_cons, List.filter_nil, decide_eq_true_eq]
+  split_ifs <;> norm_num
+
+/-- **One step, to zero**, with coefficient `−1` where the Bokut–Shiao version
+uses `+1`. -/
+theorem oc_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val)
+    (hj0 : j₀.val + 1 = i'.val) :
+    SingleStepReduction (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hi hj0).spoly AlgElement.zero := by
+  have hj0i' : j₀.val ≤ i'.val := by omega
+  have hlm : (bokutShiaoRelation i' i j₀).lm (heckeOrder n) = bsWord₁ i j₀ :=
+    bokutShiaoRelation_lm hi hj0i'
+  have hcoeff : (oc hi hj0).spoly.coeff ([] ++ bsWord₁ i j₀ ++ []) = -1 := by
+    rw [show ([] ++ bsWord₁ i j₀ ++ [] : Monomial (HeckeGen n)) = bsWord₁ i j₀ by simp,
+      oc_spoly_coeff hi hj0, ← hlm]
+    exact congrArg Neg.neg (bokutShiaoRelation_lc hi hj0i')
+  refine ⟨bokutShiaoRelation i' i j₀, bokutShiaoRelation_mem hn hp hi hj0i', [], [], -1,
+    ?_, ?_, ?_⟩
+  · rw [hlm, hcoeff]; norm_num
+  · rw [hlm, hcoeff, bokutShiaoRelation_lc hi hj0i']; norm_num
+  · intro m
+    show (0 : ℝ) = (oc hi hj0).spoly.coeff m
+      - (-1) * (AlgElement.contextMul [] (bokutShiaoRelation i' i j₀).relation []).coeff m
+    rw [AlgElement.contextMul_nil_nil_coeff, oc_spoly_coeff hi hj0]
+    ring
+
+theorem oc_reduces_to_zero (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val)
+    (hj0 : j₀.val + 1 = i'.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (oc hi hj0).spoly nf ∧ nf.isZero :=
+  ⟨AlgElement.zero,
+    ⟨MultiStepReduction.step (MultiStepReduction.refl _) (oc_resolves hn hp hi hj0),
+      isNormalForm_of_isZero AlgElement.isZero_zero⟩,
+    AlgElement.isZero_zero⟩
+
+end YangBaxterFarComm
+
 end UGB.GrobnerShirshov.Hecke

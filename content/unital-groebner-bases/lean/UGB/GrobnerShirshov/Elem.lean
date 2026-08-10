@@ -435,6 +435,33 @@ theorem ofTerms_coeff [DecidableEq G] (terms : List (Monomial G × k))
     (ofTerms terms).coeff m = ((terms.filter (fun p => p.1 = m)).map Prod.snd).sum :=
   rfl
 
+/-- **A two-term relation in context is the same two terms, in context.**
+
+Every rule in a two-term presentation — braid, far-commutation, Bokut–Shiao —
+has this shape, and an S-polynomial is built out of exactly two such
+context-multiplications. Computing one from the `excise` definition each time is
+the same case split every time; this does it once.
+
+The proof is the only place the shape condition has to be reasoned about: on the
+shape `a ++ w ++ b` both sides reduce to append-cancellation, and off it both
+sides are zero because a matching term would exhibit the missing `w`. -/
+theorem contextMul_ofTerms_pair_coeff [DecidableEq G] (a b w₁ w₂ : Monomial G)
+    (c₁ c₂ : k) (m : Monomial G) :
+    (contextMul a (ofTerms [(w₁, c₁), (w₂, c₂)]) b).coeff m
+      = (ofTerms [(a ++ w₁ ++ b, c₁), (a ++ w₂ ++ b, c₂)]).coeff m := by
+  by_cases hs : ∃ w : Monomial G, m = a ++ w ++ b
+  · obtain ⟨w, rfl⟩ := hs
+    rw [contextMul_coeff_middle, ofTerms_coeff, ofTerms_coeff]
+    simp only [List.filter_cons, List.filter_nil, decide_eq_true_eq,
+      List.append_assoc, List.append_cancel_left_eq, List.append_cancel_right_eq]
+    split_ifs <;> rfl
+  · rw [contextMul_coeff_of_not_shape _ (fun w hw => hs ⟨w, hw⟩), ofTerms_coeff]
+    have h₁ : ¬ (a ++ w₁ ++ b = m) := fun h => hs ⟨w₁, h.symm⟩
+    have h₂ : ¬ (a ++ w₂ ++ b = m) := fun h => hs ⟨w₂, h.symm⟩
+    rw [List.filter_cons, if_neg (by simpa using h₁), List.filter_cons,
+      if_neg (by simpa using h₂), List.filter_nil]
+    rfl
+
 end AlgElement
 
 end UGB.GrobnerShirshov

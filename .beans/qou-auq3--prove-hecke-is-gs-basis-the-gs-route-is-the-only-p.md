@@ -612,3 +612,60 @@ be a single letter, and `σᵢσᵢ` has just the one proper suffix.
 is left open after the rewrite that produces it. Four goals in this section
 failed that way; each needed an explicit `; rfl`. Reads as "unsolved goals" on a
 line that looks finished.
+
+## §4o — Bokut–Shiao against far-commutation, as a family
+
+§4g's `refuting_overlap_resolves` is one composition at `(i,j) = (3,1)`, proved by
+`decide` on concrete words. It is not isolated: it is the `n = 4`, `j = i−1`
+instance of a family that resolves for every `n`, and the family is now proved.
+
+**The shape.** `bsWord₁ i j` ends in `σᵢ`; `farCommRelation i j₀` begins with
+`σᵢ`. They overlap in that one letter (§4m: every proper overlap is one letter),
+over `descWord i j ++ [σᵢ, σ_{j₀}]`, with `j₀ + 1 = j` — the far-commutation rule
+extends the descending run by exactly one step.
+
+**Why it resolves.** The ambient word cancels *identically*:
+`bsWord₁ i j ++ [σ_{j₀}]` **is** `descWord i j ++ [σᵢ, σ_{j₀}]`, so no
+word-distinctness argument is needed anywhere in the proof. What survives is
+turned into the Bokut–Shiao words one index lower by `descWord_snoc`:
+
+    descWord i j ++ [σ_{j₀}] ++ [σᵢ]  =  descWord i j₀ ++ [σᵢ]  =  bsWord₁ i j₀
+    bsWord₂ i' i j ++ [σ_{j₀}]                                  =  bsWord₂ i' i j₀
+
+So the S-polynomial **is** `bokutShiaoRelation i' i j₀`, and one application of
+that rule in empty context annihilates it. *The obstruction at depth `j` is
+repaired by the rule at depth `j−1`: the family completes itself downwards.*
+
+`YangBaxterFarComm.oc` is the same composition with `yangBaxterRelation i' i` in
+place of `bokutShiaoRelation i' i i'` — §4j puts them on the same leading
+monomial, so the completed system carries two rules in this shape and both are
+obligations. They differ by a sign and nothing else, so the S-polynomial is the
+negative and the same rule kills it with coefficient `−1`.
+`Completion.refuting_overlap_resolves` is *this* one at `(i',i,j₀) = (2,3,1)`.
+
+### New infrastructure
+
+* `AlgElement.contextMul_ofTerms_pair_coeff` (framework, `Elem.lean`) — a
+  two-term relation in context is the same two terms in context. **Every** rule
+  in this presentation is two-term and every S-polynomial is two such
+  context-multiplications, so this is the lemma that stops each composition
+  re-deriving the `excise` case split. It is what made §4o mechanical, and it is
+  reusable for all 40 remaining shapes.
+* `filter_desc_snoc` / `descWord_snoc` — the bottom-end mirror of §4h's
+  `filter_desc_cons` / `descWord_cons`.
+* `bokutShiaoRelation_lc = 1`, `farCommRelation_lc = 1`, and
+  `bokutShiaoRelation_mem` (the general form of `Completion.bs31_mem`).
+
+### Coverage at n = 4
+
+The witness listed 5 single-step compositions.  `BokutShiaoFarComm.oc` covers
+`B121×F20`, `B232×F31`, `B231×F30`; `YangBaxterFarComm.oc` covers `Y12×F20` and
+`Y23×F31` (the latter being §4g's, now subsumed by a general theorem). All 5.
+
+### Running total, of the 45 proper shapes at n = 4
+
+    4   quadratic self-overlap        §4n, general in n, spoly identically zero
+    5   BS/YB against far-commutation §4o, general in n, one step
+    ---
+    9   proved
+    36  remaining
