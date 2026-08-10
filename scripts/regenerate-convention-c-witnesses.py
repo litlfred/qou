@@ -82,6 +82,24 @@ SYS_PATHS = [str(REPO / "computations" / d) if d else str(REPO / "computations")
 ]
 
 
+#: Producers that take required positional arguments.
+#:
+#: The harness invokes every producer bare, which is right for the ~50 that
+#: write their witness on import-and-run. A few instead take the object to
+#: compute as argv and exit 2 on argparse before doing anything. That reads in
+#: the journal as a producer failure, which it is not — the atom is simply not
+#: recoverable from the witness path by the resolver.
+#:
+#: Keyed by producer path, valued by the argv that regenerates exactly the
+#: in-scope witnesses. For `per_irrep_pole_atom` those are
+#: `per-irrep-pole-proton-h3` and `per-irrep-pole-deuteron-h6`, so the atoms
+#: are `proton` and `deuteron` and no others — passing the full ATOMS list
+#: would rewrite six witnesses this campaign has not audited.
+PRODUCER_ARGV = {
+    "computations/per_irrep_pole_atom.py": ["proton", "deuteron"],
+}
+
+
 def numeric_fields(obj, out=None, path=""):
     """Flatten every high-precision number in a witness, keyed by JSON path."""
     out = {} if out is None else out
@@ -409,7 +427,8 @@ def run_all(timeout: int):
         proc = None
         try:
             proc = subprocess.Popen(
-                [sys.executable, str(pathlib.Path(producer).name)],
+                [sys.executable, str(pathlib.Path(producer).name)]
+                + PRODUCER_ARGV.get(producer, []),
                 cwd=str((REPO / producer).parent), env=env,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
                 start_new_session=True)
