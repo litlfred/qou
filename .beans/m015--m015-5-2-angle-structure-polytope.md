@@ -11,7 +11,7 @@ tags:
     - 5_2
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-10T02:45:00Z
+updated_at: 2026-08-10T03:30:00Z
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -378,3 +378,70 @@ That is precisely why positivity is the hyperbolicity detector and the equations
 one gluing layer rather than two, with `IdealTetrahedron extends Shape`, and mark
 `BlochWigner_lob_real_eq_zero` as subsumed. Kept additive here to avoid a refactor of a
 module `FiveTwoVolumeConstant` and `FigureEightTriangulation` both depend on.
+
+---
+**2026-08-10 — the paper block already said it; its Lean sidecar AXIOMATISED it. Both
+axioms now discharged.**
+
+Asked whether this arc is expounded in the paper and whether it is all Lean-proved.
+Checking produced a better result than either answer.
+
+### The exposition already exists — and asserts exactly what was just proved
+
+`content/quantum-observable-universe/mass-theory/thurston-volume-additivity.md` states:
+
+> *"Flat tetrahedra ($z_i \in \mathbb{R}$) contribute zero volume."*
+> *"Torus knots project entirely onto a surface, forcing every $z_c$ to be real. Their
+> hyperbolic volume vanishes identically."*
+
+That is `BlochWigner_lob_ofReal` and the trefoil result, in prose, already in the folio.
+
+### But its Lean sidecar axiomatised both, and the recorded blocker was false
+
+`thurston-volume-additivity.lean` carried `axiom blochWigner : ℂ → ℝ` and
+`axiom blochWigner_real (x : ℝ) : blochWigner ↑x = 0`, with this note:
+
+> *"Proof note (2026-08-03): Attempted to prove this using `Complex.ofReal_im`, but
+> `blochWigner` is declared as an opaque `axiom` with no body, so there is nothing to
+> unfold or apply lemmas to. Retaining axiom."*
+
+**Right about the mechanism, wrong about the conclusion.** The opacity was a choice made
+*in that file*, not a constraint — the corpus has a real, non-opaque
+`QOU.Archimedean.BlochWigner_lob`. A textbook instance of the standing rule that *a
+recorded blocker naming a TECHNIQUE may be false*.
+
+Discharged: `blochWigner` is now a `def` pointing at `BlochWigner_lob`, and
+`blochWigner_real` is a `theorem` proved by `QOU.Knot.FlatTet.BlochWigner_lob_ofReal`.
+Verified in place with `#print axioms`: `blochWigner_real` now depends on
+`[propext, Classical.choice, Quot.sound]` only — the two custom axioms are gone from the
+dependency set. `thurstonVolumeAdditivity` unchanged and still clean.
+
+Note the older `BlochWigner_lob_real_eq_zero` (`0 < x < 1`) could **not** have discharged
+this — the block's own torus-knot conclusion needs shapes like `−1` and `2`. The general
+form was necessary, not just tidier.
+
+### ⚠ A QA gate was silently non-functional
+
+`scripts/lean-axiom-guard.py` — the keystone `#print axioms` gate — could not run.
+`scripts/lean-direct-env.sh` built `LEAN_PATH` from `find .lake …`, i.e. **relative**
+paths, and the guard writes its probe to a **temp file** and runs `lean` there, so every
+entry missed. It failed with
+
+    error: unknown module prefix 'QOU'
+    No directory 'QOU' or file 'QOU.olean' in the search path entries: …
+
+while `QOU.olean` sat in a listed directory the whole time. Fixed: the env script now
+roots its `find` at the script's own repo and emits absolute paths, which fixes every
+consumer at once.
+
+With that fixed the guard gets further and reports a genuinely missing olean
+(`QOU.BraidsAndKnots.PlancherelNormalisation`) — i.e. this container's build state is
+incomplete for the full `QOU` root import. **Separate, pre-existing, not fixed here.**
+
+### Still NOT in the paper
+
+No block cites any of this arc's Lean modules — `FiveTwoComplexPentagon`, `KummerRadial`,
+`IdealTriangulation`, `FiveTwoVolumeConstant`, `FigureEightTriangulation`,
+`RivinConcavity`, `FlatTetrahedra`, `HyperrealLimitTransfer`. The 27 shape fields, the
+5₂ sum rule, Kummer's identity and the gluing results exist only as Lean modules, probes
+and beans. Writing those blocks is the next exposition increment.
