@@ -355,6 +355,82 @@ theorem bokutShiaoRelation_lm {n : ℕ} {i' i j : Fin n}
       · rw [bsWord₁_cons hi hj]
         exact List.Lex.rel (by simp only [HeckeGen.rank]; omega)
 
+/-! ## §4j  The family subsumes Yang–Baxter
+
+At `j = i − 1` the Bokut–Shiao words are the braid words. So the completed
+system's Yang–Baxter rules are not new information relative to the family — which
+matters for the overlap analysis ahead, since it means YB × BS overlaps are a
+special case of BS × BS rather than a separate family to enumerate. -/
+
+/-- The filter that defines `descWord i i` keeps exactly the one index `i`:
+everything after `i` in a `Pairwise (· < ·)` list exceeds it, and everything
+before it is below. Same shape as `filter_desc_cons`. -/
+theorem filter_desc_self {n : ℕ} (i : Fin n) :
+    ∀ l : List (Fin n), l.Pairwise (fun a b => a.val < b.val) → i ∈ l →
+      l.filter (fun k => decide (i.val ≤ k.val ∧ k.val ≤ i.val)) = [i] := by
+  intro l
+  induction l with
+  | nil => intro _ hm; simp at hm
+  | cons a t ih =>
+    intro hp hm
+    rw [List.pairwise_cons] at hp
+    obtain ⟨halt, hpt⟩ := hp
+    rcases List.mem_cons.mp hm with hai | hmt
+    · subst hai
+      have h1 : t.filter (fun k => decide (i.val ≤ k.val ∧ k.val ≤ i.val)) = [] := by
+        refine List.filter_eq_nil_iff.mpr (fun b hb hd => ?_)
+        have := halt b hb
+        have hd' := of_decide_eq_true hd
+        omega
+      simp only [List.filter_cons, h1, decide_eq_true_eq]
+      rw [if_pos (by omega : i.val ≤ i.val ∧ i.val ≤ i.val)]
+    · have hlt : a.val < i.val := halt i hmt
+      simp only [List.filter_cons, decide_eq_true_eq]
+      rw [if_neg (by omega : ¬ (i.val ≤ a.val ∧ a.val ≤ i.val))]
+      exact ih hpt hmt
+
+/-- The descending word from `i` down to `i` is the single letter `σᵢ`. -/
+theorem descWord_self {n : ℕ} (i : Fin n) : descWord i i = [(⟨i⟩ : HeckeGen n)] := by
+  simp only [descWord, filter_desc_self i (List.finRange n)
+    (List.pairwise_lt_finRange n) (List.mem_finRange i),
+    List.reverse_cons, List.reverse_nil, List.nil_append, List.map_cons, List.map_nil]
+
+/-- At `j = i − 1` the left Bokut–Shiao word is the braid word `σᵢσᵢ₋₁σᵢ`. -/
+theorem bsWord₁_at_pred {n : ℕ} {i' i : Fin n} (hi : i'.val + 1 = i.val) :
+    bsWord₁ i i' = [(⟨i⟩ : HeckeGen n), ⟨i'⟩, ⟨i⟩] := by
+  rw [bsWord₁, descWord_cons hi (le_refl _), descWord_self]
+  rfl
+
+/-- …and the right one is `σᵢ₋₁σᵢσᵢ₋₁`.
+
+Note this needs **no** relation between `i'` and `i`: `bsWord₂ i' i j` is
+`σᵢ₋₁ σᵢ` followed by `descWord i' j`, so at `j = i'` the tail collapses by
+`descWord_self` whatever `i` is. It is the *left* word that needs `i' + 1 = i`,
+because that is where `descWord_cons` is used. -/
+theorem bsWord₂_at_pred {n : ℕ} (i' i : Fin n) :
+    bsWord₂ i' i i' = [(⟨i'⟩ : HeckeGen n), ⟨i⟩, ⟨i'⟩] := by
+  rw [bsWord₂, descWord_self]
+
+/-- **The Bokut–Shiao rule at `j = i − 1` is the Yang–Baxter rule**, up to the
+sign convention: its relation is `σᵢσᵢ₋₁σᵢ − σᵢ₋₁σᵢσᵢ₋₁`, and
+`yangBaxterRelation i' i` is the negative of that.
+
+So the family really does extend the presentation rather than sit beside it, and
+the two rules share a leading monomial (`bokutShiao_lm_eq_yangBaxter_lm`). -/
+theorem bokutShiaoRelation_at_pred {n : ℕ} {i' i : Fin n} (hi : i'.val + 1 = i.val) :
+    (bokutShiaoRelation i' i i').relation
+      = AlgElement.ofTerms [([⟨i⟩, ⟨i'⟩, ⟨i⟩], (1 : ℝ)), ([⟨i'⟩, ⟨i⟩, ⟨i'⟩], -1)] := by
+  show AlgElement.ofTerms [(bsWord₁ i i', (1 : ℝ)), (bsWord₂ i' i i', -1)] = _
+  rw [bsWord₁_at_pred hi, bsWord₂_at_pred i' i]
+
+/-- Both rules lead on `σᵢσᵢ₋₁σᵢ` — deg-lex ranks `σᵢ` above `σᵢ₋₁`, so the word
+starting with the larger generator wins, exactly as in `yangBaxterRelation_lm`. -/
+theorem bokutShiao_lm_eq_yangBaxter_lm {n : ℕ} {i' i : Fin n} (hi : i'.val + 1 = i.val) :
+    (bokutShiaoRelation i' i i').lm (heckeOrder n)
+      = (yangBaxterRelation i' i).lm (heckeOrder n) := by
+  rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi,
+    yangBaxterRelation_lm i' i (by omega)]
+
 /-! ## §4i  Every rule of the completed system, classified
 
 The analogue of `heckeRewritingSystem_lm_cases` for the completed system. That
