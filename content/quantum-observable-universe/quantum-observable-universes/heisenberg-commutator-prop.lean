@@ -18,6 +18,20 @@ LaTeX label: `prop:heisenberg-commutator`
 Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
+
+**Base ring (§7c): a commutative ring, no field.** `ℏ_q = 1 − q⁻¹` is an
+algebraic (Laurent) expression, so the only structure it needs is that `q`
+be invertible — supplied by carrying `q : Rˣ` as a unit. The inverse
+parameter is additionally exposed on its own as `hbarOfInv u = 1 − u`, which
+is what the two limit statements actually talk about:
+
+* `q → 1` is `u = 1`, giving `ℏ = 0`;
+* `q → ∞` is `u → 0`, giving `ℏ = 1`.
+
+The second limit was previously written `hbar_q (0 : K) = 1`, true only via
+the field/`GroupWithZero` junk convention `0⁻¹ = 0` — the field was carrying
+a limit that the convention, not the mathematics, supplied. Stating it at
+`u = 0` says the same thing directly and needs no inverse at all.
 -/
 
 namespace QOU.ArchimedeanUniverse
@@ -34,19 +48,25 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 end
 
-/-- The q-deformed Planck constant: ℏ_q = 1 - q⁻¹.
-    Classical limit: q → 1 gives ℏ_q → 0.
-    Maximal uncertainty: q → ∞ gives ℏ_q → 1.
+variable {R : Type*} [CommRing R]
 
-    Stated over a field `K`, the archimedean specialisation of the
-    ground ring `R_q = ℤ[q, q⁻¹]` via `ι : R_q → K, q ↦ q₀`, so that
-    the inverse `q⁻¹` is the genuine field inverse (`ι(q⁻¹) = ι(q)⁻¹`). -/
-noncomputable def hbar_q {K : Type*} [Field K] (q : K) : K := 1 - q⁻¹
+/-- The q-Planck constant **as a function of the inverse parameter** `u = q⁻¹`:
+    `ℏ = 1 − u`.
+
+    Carrying `u` instead of forming `q⁻¹` keeps this division-free over a
+    commutative ring (§7c) and makes each limit point an ordinary evaluation
+    rather than an appeal to a junk-value convention. -/
+def hbarOfInv (u : R) : R := 1 - u
+
+/-- The q-deformed Planck constant: `ℏ_q = 1 - q⁻¹`, for a substrate parameter
+    carried as a unit `q : Rˣ`.
+    Classical limit: q → 1 gives ℏ_q → 0.
+    Maximal uncertainty: q → ∞ gives ℏ_q → 1. -/
+def hbar_q (q : Rˣ) : R := hbarOfInv ((q⁻¹ : Rˣ) : R)
 
 /-- Classical limit: as q → 1, the q-Planck constant vanishes. -/
-theorem hbar_q_classical_limit {K : Type*} [Field K] : hbar_q (1 : K) = 0 := by
-  unfold hbar_q
-  simp
+theorem hbar_q_classical_limit : hbar_q (1 : Rˣ) = (0 : R) := by
+  simp [hbar_q, hbarOfInv]
 
 /-- The q-deformed Heisenberg commutator relation:
     `[X, P]_q = J · ℏ_q(p)` where `ℏ_q = 1 - q⁻¹`.
@@ -54,10 +74,9 @@ theorem hbar_q_classical_limit {K : Type*} [Field K] : hbar_q (1 : K) = 0 := by
     This captures the structural content of the commutator on the
     fibre `P¹(ℂ)`, where `J` is the complex structure on the Levi
     distribution (`J² = -Id`) and `q` is the substrate parameter.
-    Encoded over a field `K` (the archimedean specialisation of the
-    ground ring), the commutator is `J` scaled by the q-Planck
-    constant `ℏ_q(q) = 1 - q⁻¹`, so the statement reduces to the
-    definition of `hbar_q`.
+    Encoded over a commutative ring with `q` a unit, the commutator is `J`
+    scaled by the q-Planck constant `ℏ_q(q) = 1 - q⁻¹`, so the statement
+    reduces to the definition of `hbar_q`.
 
     The full categorical proof — that this scalar relation lifts to
     the q-deformed operator algebra on the state bundle, via the
@@ -65,17 +84,15 @@ theorem hbar_q_classical_limit {K : Type*} [Field K] : hbar_q (1 : K) = 0 := by
     requires machinery beyond this scalar fibre statement. -/
 -- Ref: [manuscript] Ch. 6, §archimedean-models
 -- Ref: [heisenberg1958]
-theorem heisenberg_commutator {K : Type*} [Field K] (J q : K) :
-    J * hbar_q q = J * (1 - q⁻¹) := by
+theorem heisenberg_commutator (J : R) (q : Rˣ) :
+    J * hbar_q q = J * (1 - ((q⁻¹ : Rˣ) : R)) := by
   rfl
 
 /-- Maximal-uncertainty limit: as `q → ∞` the inverse `q⁻¹ → 0`, so
-    `ℏ_q → 1`.  Encoded at the formal limit point `q⁻¹ = 0`
-    (equivalently `q = 0` in the field, where `0⁻¹ = 0`), giving
-    `ℏ_q = 1`. -/
-theorem hbar_q_maximal_uncertainty {K : Type*} [Field K] :
-    hbar_q (0 : K) = 1 := by
-  unfold hbar_q
-  simp
+    `ℏ_q → 1`.  Stated at the formal limit point `u = 0` of the inverse
+    parameter, where it is an evaluation of `hbarOfInv` over the base ring —
+    no inverse, and no `0⁻¹ = 0` convention, is involved. -/
+theorem hbar_q_maximal_uncertainty : hbarOfInv (0 : R) = 1 := by
+  simp [hbarOfInv]
 
 end QOU.ArchimedeanUniverse

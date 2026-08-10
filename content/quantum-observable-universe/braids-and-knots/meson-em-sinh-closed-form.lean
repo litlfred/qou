@@ -54,7 +54,9 @@ variable {R : Type*} [CommRing R] [Invertible (2 : R)]
 def hbarQ (q : Rˣ) : R := ((q : R) - 1) * ((↑q⁻¹ : R))
 
 omit [Invertible (2 : R)] in
-/-- `ℏ_q = 1 − q⁻¹` — the division-free normal form used by the proofs below. -/
+/-- `ℏ_q = 1 − q⁻¹` — the division-free normal form of the Planck quantum,
+    the identity `(q − 1)·q⁻¹ = 1 − q⁻¹` that the unit relation `q·q⁻¹ = 1`
+    supplies. -/
 theorem hbarQ_eq (q : Rˣ) : hbarQ q = 1 - ((↑q⁻¹ : R)) := by
   unfold hbarQ
   rw [sub_mul, q.mul_inv, one_mul]

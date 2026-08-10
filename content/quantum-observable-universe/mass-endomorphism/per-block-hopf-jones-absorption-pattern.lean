@@ -1,4 +1,6 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.Ring.Units
+import Mathlib.Algebra.Ring.Invertible
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidKnot.per_block_hopf_jones_absorption
