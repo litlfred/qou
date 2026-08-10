@@ -758,6 +758,184 @@ theorem bsYbOverlap_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = 
       (bsYbOverlap hi).spoly nf ∧ nf.isZero :=
   reducesToNF_self_of_isZero (bsYbOverlap_spoly_isZero hi)
 
+/-! ### The same two rules, as an *inclusion* composition
+
+`IsGrobnerShirshovBasis` has two halves. The inclusion half asks about a rule
+whose leading monomial is a factor of another's — and a shared leading monomial
+is the degenerate instance of that, with both contexts empty. So the Yang–Baxter
+/ Bokut–Shiao pair appears there too, and resolves for the same reason. -/
+
+/-- The inclusion composition of the two rules that share a leading monomial. -/
+noncomputable def ybBsInclusion (hi : i'.val + 1 = i.val) :
+    InclusionComposition (HeckeGen n) ℝ (heckeOrder n) where
+  inner := yangBaxterRelation i' i
+  outer := bokutShiaoRelation i' i i'
+  left := []
+  right := []
+  decomposition := by
+    rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi,
+      yangBaxterRelation_lm i' i (by omega)]
+    simp
+
+/-- …and the other way round. -/
+noncomputable def bsYbInclusion (hi : i'.val + 1 = i.val) :
+    InclusionComposition (HeckeGen n) ℝ (heckeOrder n) where
+  inner := bokutShiaoRelation i' i i'
+  outer := yangBaxterRelation i' i
+  left := []
+  right := []
+  decomposition := by
+    rw [bokutShiaoRelation_lm hi (le_refl _), bsWord₁_at_pred hi,
+      yangBaxterRelation_lm i' i (by omega)]
+    simp
+
+theorem ybBsInclusion_spoly_isZero (hi : i'.val + 1 = i.val) :
+    (ybBsInclusion hi).spoly.isZero := by
+  refine (ybBsInclusion hi).spoly_isZero_of_scaled rfl rfl ?_
+  intro m
+  show (yangBaxterRelation i' i).lc (heckeOrder n)
+      * (bokutShiaoRelation i' i i').relation.coeff m
+    = (bokutShiaoRelation i' i i').lc (heckeOrder n)
+      * (yangBaxterRelation i' i).relation.coeff m
+  rw [yangBaxter_lc hi, bokutShiao_lc hi]
+  have := relations_add_eq_zero hi m
+  linarith
+
+theorem bsYbInclusion_spoly_isZero (hi : i'.val + 1 = i.val) :
+    (bsYbInclusion hi).spoly.isZero := by
+  refine (bsYbInclusion hi).spoly_isZero_of_scaled rfl rfl ?_
+  intro m
+  show (bokutShiaoRelation i' i i').lc (heckeOrder n)
+      * (yangBaxterRelation i' i).relation.coeff m
+    = (yangBaxterRelation i' i).lc (heckeOrder n)
+      * (bokutShiaoRelation i' i i').relation.coeff m
+  rw [yangBaxter_lc hi, bokutShiao_lc hi]
+  have := relations_add_eq_zero hi m
+  linarith
+
+theorem ybBsInclusion_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (ybBsInclusion hi).spoly nf ∧ nf.isZero :=
+  reducesToNF_self_of_isZero (ybBsInclusion_spoly_isZero hi)
+
+theorem bsYbInclusion_resolves (hn : 0 < n) (hp : HeckeParams) (hi : i'.val + 1 = i.val) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (bsYbInclusion hi).spoly nf ∧ nf.isZero :=
+  reducesToNF_self_of_isZero (bsYbInclusion_spoly_isZero hi)
+
 end DegenerateYbBs
+
+/-! ## §4m  Two structural facts, and what they leave
+
+Both decided by the kernel at `n = 4`. Together they say the remaining work has a
+much narrower shape than the enumeration alone suggests.
+
+**Every proper overlap is a single letter.** Not one of the forty-five
+non-degenerate shapes overlaps in two or more generators. The reason is visible
+in the four families: every leading monomial is *descending after its first
+letter* (`σᵢσᵢ`, `σⱼσᵢσⱼ` with `j = i+1`, `σᵢσⱼ` with `j < i`, and `bsWord₁`),
+so a suffix of length ≥ 2 ends low-then-high while every prefix of length ≥ 2
+starts high-then-low. Only a single letter can be both. Every composition is
+therefore "`lm₁` ends with `x`, `lm₂` begins with `x`" — one shared generator.
+
+**The leading monomials form an infix antichain**: none is a proper factor of
+another. This is the stronger statement, and it settles the *inclusion* half of
+`IsGrobnerShirshovBasis` structurally — `inclusion_contexts_empty` below shows
+every inclusion composition of the completed system has both contexts empty,
+with no hypothesis about which rules are involved. The inclusion half is then
+exactly the shared-leading-monomial case, which `DegenerateYbBs` and
+`InclusionComposition.spoly_isZero_of_self` between them handle.
+
+What is left after this section is the forty-five proper overlap shapes, minus
+the one #4879 resolved. -/
+
+/-- **Every proper overlap is a single letter.** -/
+theorem overlapTriples_four_proper_overlap_length_one :
+    ((overlapTriples 4).filter (fun t => !t.1.isEmpty && !t.2.2.isEmpty)).all
+      (fun t => t.2.1.length == 1) = true := by decide
+
+/-- **No leading monomial of the completed system is a proper factor of
+another.** -/
+theorem completedLMSet_four_infix_antichain :
+    ∀ a ∈ completedLMSet 4, ∀ b ∈ completedLMSet 4, a <:+: b → a = b := by decide
+
+/-- **Every inclusion composition of the completed system has empty contexts.**
+
+No hypothesis about *which* rules: `decomposition` exhibits `inner.lm` as an
+infix of `outer.lm`, the antichain forces them equal, and lengths do the rest.
+So the inclusion half of the Gröbner–Shirshov condition at `n = 4` is entirely
+the shared-leading-monomial case — `InclusionComposition.spoly_isZero_of_self`
+when the two rules coincide, `DegenerateYbBs.ybBsInclusion_spoly_isZero` when
+they are the Yang–Baxter/Bokut–Shiao pair. -/
+theorem inclusion_contexts_empty (hn : 0 < 4) (hp : HeckeParams)
+    (ic : InclusionComposition (HeckeGen 4) ℝ (heckeOrder 4))
+    (hin : ic.inner ∈ (heckeCompletedRewritingSystem 4 hn hp).rules)
+    (hout : ic.outer ∈ (heckeCompletedRewritingSystem 4 hn hp).rules) :
+    ic.left = [] ∧ ic.right = [] ∧
+      ic.inner.lm (heckeOrder 4) = ic.outer.lm (heckeOrder 4) := by
+  have heq : ic.inner.lm (heckeOrder 4) = ic.outer.lm (heckeOrder 4) :=
+    completedLMSet_four_infix_antichain _ (heckeCompletedRewritingSystem_lm_mem hn hp _ hin)
+      _ (heckeCompletedRewritingSystem_lm_mem hn hp _ hout)
+      ⟨ic.left, ic.right, ic.decomposition.symm⟩
+  have hlen := congrArg List.length ic.decomposition
+  rw [heq] at hlen
+  simp only [List.length_append] at hlen
+  exact ⟨List.eq_nil_of_length_eq_zero (by omega),
+    List.eq_nil_of_length_eq_zero (by omega), heq⟩
+
+/-! ## §4n  The quadratic self-overlap, for every `n`
+
+`σᵢσᵢ` overlaps `σᵢσᵢ` in the single letter `σᵢ`, over the ambient word `σᵢσᵢσᵢ`.
+By §4m that is the *only* way the quadratic family meets itself, and there is one
+such composition per generator — four of the forty-five proper shapes at `n = 4`.
+
+They resolve for the strongest available reason: the S-polynomial is identically
+zero. `heckeRelation i` is a polynomial in the single generator `σᵢ`, so every
+monomial of its relation commutes with `σᵢ` as a word, and the two halves of the
+S-polynomial are that relation slid past the same letter
+(`AlgElement.contextMul_gen_comm`). Nothing here is specific to `n = 4`. -/
+
+/-- Every monomial of the quadratic relation commutes with `σᵢ`: they are `σᵢσᵢ`,
+`σᵢ` and the empty word, all powers of the one generator. -/
+theorem heckeRelation_coeff_comm {n : ℕ} (i : Fin n) (hp : HeckeParams)
+    (w : Monomial (HeckeGen n)) (hw : (heckeRelation i hp).relation.coeff w ≠ 0) :
+    w ++ [(⟨i⟩ : HeckeGen n)] = [(⟨i⟩ : HeckeGen n)] ++ w := by
+  by_cases h1 : w = [(⟨i⟩ : HeckeGen n), ⟨i⟩]
+  · rw [h1]; rfl
+  · by_cases h2 : w = [(⟨i⟩ : HeckeGen n)]
+    · rw [h2]
+    · by_cases h3 : w = ([] : Monomial (HeckeGen n))
+      · rw [h3]; rfl
+      · exact absurd (by
+          simp [heckeRelation, AlgElement.ofTerms_coeff, Ne.symm h1, Ne.symm h2,
+            Ne.symm h3]) hw
+
+/-- The composition of the quadratic rule with itself over `σᵢσᵢσᵢ`. -/
+noncomputable def quadSelfOverlap {n : ℕ} (i : Fin n) (hp : HeckeParams) :
+    OverlapComposition (HeckeGen n) ℝ (heckeOrder n) where
+  rule₁ := heckeRelation i hp
+  rule₂ := heckeRelation i hp
+  left := [⟨i⟩]
+  overlap := [⟨i⟩]
+  right := [⟨i⟩]
+  lm₁_decomp := by rw [heckeRelation_lm]; rfl
+  lm₂_decomp := by rw [heckeRelation_lm]; rfl
+  overlap_nonempty := by simp
+
+/-- **The quadratic self-overlap has S-polynomial identically zero** — for every
+`n` and every generator. -/
+theorem quadSelfOverlap_spoly_isZero {n : ℕ} (i : Fin n) (hp : HeckeParams) :
+    (quadSelfOverlap i hp).spoly.isZero := by
+  intro m
+  show (heckeRelation i hp).lc (heckeOrder n)
+      * (AlgElement.contextMul [] (heckeRelation i hp).relation [⟨i⟩]).coeff m
+    - (heckeRelation i hp).lc (heckeOrder n)
+      * (AlgElement.contextMul [⟨i⟩] (heckeRelation i hp).relation []).coeff m = 0
+  rw [AlgElement.contextMul_gen_comm ⟨i⟩ _ (heckeRelation_coeff_comm i hp) m, sub_self]
+
+theorem quadSelfOverlap_resolves {n : ℕ} (hn : 0 < n) (i : Fin n) (hp : HeckeParams) :
+    ∃ nf, ReducesToNF (heckeOrder n) (heckeCompletedRewritingSystem n hn hp)
+      (quadSelfOverlap i hp).spoly nf ∧ nf.isZero :=
+  reducesToNF_self_of_isZero (quadSelfOverlap_spoly_isZero i hp)
 
 end UGB.GrobnerShirshov.Hecke

@@ -514,6 +514,39 @@ noncomputable def InclusionComposition.spoly {G : Type u} {k : Type v} [Ring k]
     (AlgElement.smul (ic.outer.lc ord)
       (AlgElement.contextMul ic.left ic.inner.relation ic.right))
 
+/-- **An inclusion whose two contexts are empty is vacuous once the relations are
+proportional by the two leading coefficients.**
+
+With `left = right = []` the S-polynomial is `lc(inner) • outer − lc(outer) •
+inner`, so it vanishes exactly when the hypothesis below holds coefficient by
+coefficient. Both ways a shared leading monomial arises in practice satisfy it:
+the two rules are the same rule, or they are negatives of each other with
+leading coefficients of opposite sign. -/
+theorem InclusionComposition.spoly_isZero_of_scaled {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (ic : InclusionComposition G k ord)
+    (hleft : ic.left = []) (hright : ic.right = [])
+    (h : ∀ m, ic.inner.lc ord * ic.outer.relation.coeff m
+            = ic.outer.lc ord * ic.inner.relation.coeff m) :
+    ic.spoly.isZero := by
+  intro m
+  simp only [InclusionComposition.spoly, hleft, hright, AlgElement.sub_coeff,
+    AlgElement.smul_coeff, AlgElement.contextMul_nil_nil_coeff]
+  rw [h m, sub_self]
+
+/-- **A rule included in itself is vacuous.** Unlike the overlap case this needs
+no hypothesis on the contexts: `decomposition` says `lm = left ++ lm ++ right`,
+and lengths force both contexts empty. -/
+theorem InclusionComposition.spoly_isZero_of_self {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} (ic : InclusionComposition G k ord)
+    (hrule : ic.inner = ic.outer) : ic.spoly.isZero := by
+  have hlen := congrArg List.length ic.decomposition
+  rw [hrule] at hlen
+  simp only [List.length_append] at hlen
+  refine ic.spoly_isZero_of_scaled (List.eq_nil_of_length_eq_zero (by omega))
+    (List.eq_nil_of_length_eq_zero (by omega)) ?_
+  intro m
+  rw [hrule]
+
 /-! ### §4.1  The leading terms of an S-polynomial cancel
 
 This is the sanity check on the definitions above: an S-polynomial is built so
