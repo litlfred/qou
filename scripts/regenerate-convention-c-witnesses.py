@@ -108,8 +108,36 @@ def snapshot(witness: pathlib.Path):
     }
 
 
+#: Below this a value is numerically indistinguishable from zero, so a RELATIVE
+#: change against it is meaningless — dividing by something at the level of
+#: machine noise manufactures astronomical ppm. The first draft of this report
+#: led with "1.3e20 ppm" for 3.47e-18 -> 4.6e-4, which is not a physics result,
+#: it is a division by epsilon.
+NOISE_FLOOR = 1e-12
+
+
 def classify(before: str, after: str):
-    """Return (kind, relative_change) for one value."""
+    """Return (kind, relative_change) for one value.
+
+    Kinds, and why each is kept separate:
+
+    ``structural_zero``  became exactly 0. Convention D sends every ``y_lambda``
+                         with ``ell(lambda) >= 3`` to zero identically; that is
+                         the convention working, not a shift, and rendering it
+                         as "-100%" would drown the real numbers.
+    ``emerged``          was at or below the noise floor, now is not. A
+                         quantity that was numerically zero acquiring a value is
+                         a qualitative change and no ppm describes it.
+    ``vanished``         the reverse: was real, now at the noise floor without
+                         being exactly zero.
+    ``noise``            both sides at the floor. Nothing happened.
+    ``q0_refresh``       moved by less than 1e-7 relative, roughly the ninth
+                         digit. No convention content -- a witness simply stale
+                         against its q0. Kept separate because a witness
+                         regenerated BEFORE its producer was migrated moves
+                         exactly this much and looks like a result.
+    ``shift``            a genuine relative move, reported in ppm. The physics.
+    """
     try:
         b, a = float(before), float(after)
     except ValueError:
@@ -118,8 +146,12 @@ def classify(before: str, after: str):
         return ("same", 0.0)
     if a == 0.0:
         return ("structural_zero", None)
-    if b == 0.0:
-        return ("became_nonzero", None)
+    if abs(b) <= NOISE_FLOOR < abs(a):
+        return ("emerged", None)
+    if abs(a) <= NOISE_FLOOR < abs(b):
+        return ("vanished", None)
+    if abs(b) <= NOISE_FLOOR and abs(a) <= NOISE_FLOOR:
+        return ("noise", None)
     rel = abs(a - b) / abs(b)
     if rel < 1e-7:                      # ~digit 8 and below
         return ("q0_refresh", rel)
@@ -358,10 +390,15 @@ def report():
             elif w["c_after"]:
                 still_c += 1
             for d in w["deltas"]:
-                kinds[d["kind"]] = kinds.get(d["kind"], 0) + 1
-                if d["kind"] == "shift":
-                    shifts.append((d["rel"], r["producer"], w["path"], d))
-                elif d["kind"] == "structural_zero":
+                # RECLASSIFY from the raw values rather than trusting the stored
+                # `kind`: records written before the noise-floor rule existed
+                # carry the old labels, and a report that mixes the two is worse
+                # than one that is merely wrong.
+                kind, rel = classify(d["before"], d["after"])
+                kinds[kind] = kinds.get(kind, 0) + 1
+                if kind == "shift":
+                    shifts.append((rel, r["producer"], w["path"], d))
+                elif kind == "structural_zero":
                     zeros += 1
 
     print(f"producers run : {len(recs)}   ok {len(ok)}   failed {len(bad)}")
@@ -370,12 +407,44 @@ def report():
     print(f"\ndelta kinds   : " + ", ".join(f"{k}={v}" for k, v in sorted(kinds.items())))
     print(f"structural zeros (y_lambda -> 0, ell(lambda)>=3): {zeros}")
 
-    shifts.sort(reverse=True)
-    print(f"\nlargest genuine shifts (ppm):")
-    for rel, prod, wpath, d in shifts[:25]:
-        print(f"  {rel*1e6:14.1f} ppm  {wpath}")
-        print(f"                  {d['field']}")
-        print(f"                  {d['before'][:26]} -> {d['after'][:26]}")
+    # Key on the magnitude only: two shifts can tie on `rel`, and the
+    # tuple comparison then falls through to comparing dicts, which raises.
+    # Magnitude distribution first. A list of extremes answers "what moved
+    # most"; only the distribution answers "how much of the corpus moved", and
+    # that is the question "total impact" is actually asking.
+    buckets = [("< 1 ppm", 0), ("1 ppm - 100 ppm", 0), ("100 ppm - 1%", 0),
+               ("1% - 10%", 0), ("10% - 100%", 0), ("> 100% (order-of-magnitude)", 0)]
+    counts = [0] * 6
+    for rel, *_ in shifts:
+        if   rel < 1e-6:  counts[0] += 1
+        elif rel < 1e-4:  counts[1] += 1
+        elif rel < 1e-2:  counts[2] += 1
+        elif rel < 1e-1:  counts[3] += 1
+        elif rel < 1.0:   counts[4] += 1
+        else:             counts[5] += 1
+    print("\nshift magnitude distribution:")
+    for (label, _), n in zip(buckets, counts):
+        bar = "#" * min(40, n // max(1, max(counts) // 40 or 1))
+        print(f"  {label:<30} {n:5d}  {bar}")
+
+    shifts.sort(key=lambda t: t[0], reverse=True)
+    print(f"\nlargest RELATIVE shifts:")
+    for rel, prod, wpath, d in shifts[:12]:
+        print(f"  {rel*1e6:16.1f} ppm  {wpath.split('/')[-1]}")
+        print(f"        {d['field']}")
+        print(f"        {d['before'][:26]} -> {d['after'][:26]}")
+
+    def absdelta(t):
+        try:
+            return abs(float(t[3]["after"]) - float(t[3]["before"]))
+        except ValueError:
+            return 0.0
+    shifts.sort(key=absdelta, reverse=True)
+    print(f"\nlargest ABSOLUTE shifts (what actually moved in magnitude):")
+    for rel, prod, wpath, d in shifts[:12]:
+        print(f"  {absdelta((rel,prod,wpath,d)):18.9g}  ({rel*1e6:.1f} ppm)  {wpath.split('/')[-1]}")
+        print(f"        {d['field']}")
+        print(f"        {d['before'][:26]} -> {d['after'][:26]}")
 
     if bad:
         print(f"\nFAILURES ({len(bad)}):")
