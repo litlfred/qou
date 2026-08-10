@@ -92,15 +92,51 @@ plainly not a bare mirror-pair slope and other terms are in play.
 **Reconstructing the decomposition by guesswork would be a new fit** — precisely
 what the demotion was about. Blocker recorded instead.
 
+## Step 1 done — the normaliser's index rule is undetermined too, by 32×
+
+[`probe_kappa_normaliser_index_rule.py`](../computations/probe_kappa_normaliser_index_rule.py)
+→ `kappa-normaliser-index-rule.witness.json`, 4/4. **No rule selected** —
+choosing one on the numbers would be a new fit.
+
+The producer's phrase fixes the normaliser's *value* at A=3 but not its *rule*.
+At least three readings reproduce `[2]_q[3]_q` there:
+
+| | index rule | at A=3 | at ¹⁵O (A_magic=8, A=15) | κ there |
+|---|---|---|---|---|
+| **R1** | `(A_magic, A)` | (2,3) | `[8]_q[15]_q` = 195.7 | −0.0335 |
+| **R2** | fixed `(2,3)`, sl₂ irreps | (2,3) | `[2]_q[3]_q` = 6.12 | −1.0704 |
+| **R3** | `(A_magic, A_magic+1)` | (2,3) | `[8]_q[9]_q` = 92.7 | −0.0707 |
+
+All three **agree exactly at A=3** — the only place κ has ever been evaluated —
+and spread by **32×** at the 8 shell, 1700× at the 20 shell.
+
+## The two ambiguities compound: the ¹⁵O prediction is undetermined by 224×
+
+The index rule (3 readings) and the excess convention (2 readings) are
+independent, and *both* degenerate at A=3. The binding term `κ · (n_pp − n_nn)`
+at ¹⁵O across the six live combinations:
+
+| | C1 (interface) | C2 (pairs) |
+|---|---|---|
+| **R1** | −0.0335 | −0.2343 |
+| **R2** | −1.0704 | **−7.4929** |
+| **R3** | −0.0707 | −0.4947 |
+
+**Range −0.0335 … −7.4929 MeV — a factor of 224**, every entry equally
+consistent with everything κ has been tested against.
+
+This is the sharpest statement of the conjecture's current standing, and it is
+stronger than "the shape was fitted". The shape was fitted **at a point where
+every competing reading of its own structure coincides**, so the 0.034 %
+agreement constrains almost nothing about the object away from A=3. Any 8-shell
+test must therefore *first* fix the rule and the convention; run before that, it
+would measure the choice rather than the physics.
+
 ## Next
 
-1. **Recompute the normaliser from the shell-8 channels** — the reframed test
-   from finding 1, and the one genuinely derivation-shaped step available. It
-   needs no AME data and no fit: identify the two magic-shell channels at
-   `A_magic = 8` as the producer did at A=3, take their LR fusion, and read off
-   the bracket product. If κ is structural, the slope should track the shell.
-   Ranking this first because it is the only item here that could *close* rather
-   than merely characterise.
+1. **Fix the index rule and the excess convention** — both need an owner call or
+   a derivation; the anchors provably cannot supply either. This now blocks the
+   8-shell test rather than following it, which reverses the order I had.
 2. **Name the excess convention** in the block — a one-line fix that makes the
    conjecture determinate. Needs an owner call on which of C1/C2 κ was fitted
    against; the anchors provably cannot say.
