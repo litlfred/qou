@@ -6,8 +6,8 @@
     "counts": {
       "STALE": 321,
       "unknown": 26,
-      "proton-pin": 735,
-      "canonical": 616
+      "proton-pin": 736,
+      "canonical": 615
     },
     "stale_total": 321,
     "new_stale": 0,
@@ -8709,9 +8709,9 @@
       {
         "file": "computations/probes/coulomb-mirror-killswitch-probe.witness.json",
         "field": "data.q0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/probes/d14-theta-bar-side.witness.json",
