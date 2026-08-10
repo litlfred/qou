@@ -57,3 +57,95 @@ Two things, neither of them "fix a degeneracy":
 under D is `C_n` (2, 5, 14, 42). That claim is corrected in the content and
 proved in `MarkovGramDegenerate`, but no producer has yet been re-posed on the
 quotient. That is real work; it just is not what this witness shows.
+
+## What a "dead channel" is, and how one got into an LP
+
+### What it is
+
+A **channel** is one Wedderburn block `λ ⊢ n` of `H_n(q)`. The Markov trace
+restricted to that block is the scalar multiple `y_λ · χ^λ`, so `y_λ` is exactly
+"how much this block contributes to any trace".
+
+A **dead channel** is a block with `y_λ = 0`. The trace cannot see it at all — it
+contributes nothing to `tr_M`, to any mass, to any binding. It is not small; it
+is absent.
+
+Under convention D they die for a structural reason, stated in
+`thm:jones-markov-trace`:
+
+> Under convention D that scalar **vanishes** precisely when `ℓ(λ) ≥ 3`: the
+> fibre `V` is the two-dimensional fundamental of `SU_q(2)`, so no partition with
+> three or more rows survives Schur–Weyl, and `tr_M` is faithful on the two-row
+> stratum and on nothing else.
+
+A two-dimensional fibre cannot antisymmetrise three ways. So every block with
+three or more rows is dead, and the dead fraction grows fast:
+
+| n | blocks enumerated | live under D | dead |
+|---|---|---|---|
+| 3 | 3 | 2 | 1 |
+| 4 | 5 | 3 | 2 |
+| 5 | 7 | 3 | 4 |
+| 6 | 11 | 4 | **7** |
+
+The survivors are what `H_n/rad ≅ TL_n` means, and `Σ dim² = C_n` counts them.
+
+### How one was allowed into an LP
+
+Not a bug anyone introduced — a distinction that did not need to exist under
+convention C.
+
+`rho_k_h3a_gg_trajectory.py:205` enumerates its channels as
+
+```python
+parts = [(3,), (2, 1), (1, 1, 1)]  # all partitions of 3
+```
+
+That is **convention-independent**: it is the block list of `H_3`, and it is
+correct as a block list. But *which blocks are observable* is
+**convention-dependent**. Under C, `y_(1^3) = 0.0227449…` — small, nonzero,
+live. All three blocks were channels, the enumeration was right, and no code
+needed to tell "block" and "channel" apart.
+
+Under D the two sets stop coinciding, and nothing in the pipeline notices,
+because nothing anywhere expresses the difference.
+
+What absorbed it was a guard written for something else:
+
+```python
+_yc_floor = 1e-15   # "Guard against near-zero |y_λ χ^λ| (set to a large finite
+                    #  cost so the LP naturally avoids that channel)."
+```
+
+Under C that branch never executed. Under D it executes on every three-row
+channel at every `n` — at `n = 6`, on 7 of 11. **A numerical safety net silently
+became the semantic mechanism for excluding dead channels**, and it excludes them
+by pricing them at `1e15` rather than by removing them, which is how a sentinel
+ended up published in a field named `y_star`.
+
+### So the honest answer to "how was it allowed"
+
+Three things had to line up:
+
+1. The code enumerates **blocks**, not **channels**, and has no vocabulary for
+   the difference.
+2. Under C the two coincided, so the missing distinction cost nothing and was
+   invisible for as long as C was production.
+3. A guard for "near-zero, shouldn't happen" quietly became "this is the normal
+   path", which is the failure mode guards are worst at announcing.
+
+### Siblings with the same shape
+
+Two more producers enumerate all partitions and weight by `y_λ`:
+
+- `rho_k_h3a_co_casimir.py:222` — `parts = partitions_of(6)`; **7 of 11 dead**
+- `deltalambda/he4_stage2_ranking_seminormal_xcheck.py:117` — `pn.partitions_of(N)`
+
+Neither has the `_yc_floor` guard, so whatever they do with a zero weight is a
+*different* behaviour and needs checking on its own — division, a silent zero
+term, or a rank-deficient matrix. Not assumed either way here.
+
+- [ ] check `rho_k_h3a_co_casimir.py` behaviour on the 7 dead blocks at n=6
+- [ ] check `he4_stage2_ranking_seminormal_xcheck.py` likewise
+- [ ] give the pipeline a name for "live channel" so the distinction is
+      expressible rather than implicit
