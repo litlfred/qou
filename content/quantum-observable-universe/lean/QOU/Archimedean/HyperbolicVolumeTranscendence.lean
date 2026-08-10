@@ -469,7 +469,7 @@ class HyperbolicVolumeIndependence where
   irrationality ⟸ ℚ-linear independence ⟸ algebraic independence -/
 
 /-- **Conjecture (Irrationality of a single volume).**
-    Vol(4₁) = 3 Cl₂(π/3) is irrational.
+    Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) is irrational.
 
     LaTeX: `\label{conj:single-volume-irrationality}` -/
 class SingleVolumeIrrational where

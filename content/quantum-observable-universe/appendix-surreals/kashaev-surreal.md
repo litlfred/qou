@@ -141,7 +141,7 @@ For the figure-eight knot the two question marks collapse:
        2 \pi \cdot \frac{\log |J_{4_1}(\zeta_\omega, \omega)|}{\omega}
      \right)
      \;=\; \mathrm{Vol}(S^3 \setminus 4_1)
-     \;=\; 2\Lambda(\pi/3),
+     \;=\; 2\,\mathrm{Cl}_2(\pi/3),
    $$
 
    conditional only on the transfer equivalence, not on any open

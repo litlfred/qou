@@ -275,7 +275,7 @@ theorem borromean_crossing_minimal :
 The Kauffman/`TL₃` bracket is not Borromean-specific: applied to *any* 3-braid
 closure it computes the Jones invariant. The figure-eight knot
 `4₁ = closure of (σ₁σ₂⁻¹)²` is the natural cross-check — it is the
-**q₀-calibration knot** (`m_μ/m_e = Vol(4₁)/ℏ_q²`, `Vol(4₁) = 2Λ(π/3)`,
+**q₀-calibration knot** (`m_μ/m_e = Vol(4₁)/ℏ_q²`, `Vol(4₁) = 2·Cl₂(π/3)`,
 canonical-derivation cheat-sheet CAL-2), and as a 1-component closure of a
 length-4 3-braid it is directly in range. Reproducing its *exact* Jones
 polynomial validates the bracket against a literature invariant — a stronger
