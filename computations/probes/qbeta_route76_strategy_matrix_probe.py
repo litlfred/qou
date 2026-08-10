@@ -457,7 +457,39 @@ def main() -> int:
         "measurements": [
             {"manifold": "11a1", "tets": 17, "obstruction_class": 1, "geometric": True,
              "strategy": "modStd_finduni", "ideal_form": "nz", "status": "timeout",
-             "budget_seconds": 2700, "milliseconds": 2700140}],
+             "budget_seconds": 2700, "milliseconds": 2700140,
+             "note": "under load; re-run clean below, same outcome"},
+            {"manifold": "11a1", "tets": 17, "obstruction_class": 0, "geometric": False,
+             "strategy": "modStd_finduni", "ideal_form": "nz", "status": "timeout",
+             "budget_seconds": 1800, "milliseconds": 1800110,
+             "note": "even the NON-geometric class does not finish, against 46.7s for "
+                     "10_100's class 0"},
+            {"manifold": "11a1", "tets": 17, "obstruction_class": 1, "geometric": True,
+             "strategy": "std_only", "ideal_form": "nz", "status": "timeout",
+             "budget_seconds": 3600, "milliseconds": 3600120,
+             "machine": "idle", "note": "THE DISCRIMINATING RUN -- see "
+                                        "bottleneck_migrates below"}],
+        # THE BOTTLENECK MIGRATES, and that is the substantive finding at 17 tetrahedra.
+        # At 14 tets the Groebner basis is cheap (87.6s) and the primary DECOMPOSITION is
+        # the wall -- which is what G7c used to overturn G6's ceiling.  At 17 tets the GB
+        # ALONE does not finish in an hour.  So 11a1 is not "10_100 but harder": the two
+        # manifolds fail at DIFFERENT STEPS, and the reach story is two curves rather
+        # than one.  A strategy that beats the decomposition -- which is exactly what
+        # finduni and modStd do -- cannot help at 17 tets, because the step it replaces
+        # is no longer the expensive one.
+        "bottleneck_migrates": {
+            "10_100_14_tets": {"groebner_basis": "87.6s", "decomposition": "312s "
+                               "(minAssGTZ) / did not finish (primdecGTZ)",
+                               "wall": "decomposition"},
+            "11a1_17_tets": {"groebner_basis": "TIMEOUT > 3600s", "decomposition": "not "
+                             "reached -- there is no basis to decompose",
+                             "wall": "Groebner basis"},
+            "consequence": "the eliminant strategies that won at 14 tets attack the "
+                           "decomposition, so they cannot help at 17. Any route past "
+                           "11a1 has to make the GB itself cheaper -- a different "
+                           "ordering, a different ideal presentation, or a different "
+                           "algorithm -- not a better decomposition",
+        },
         "route75_on_11a1": "identification fails (sibling probe G6)",
         "reached_by_either_route": False,
         "measurement_caveats": [
@@ -500,6 +532,9 @@ def main() -> int:
             "orphan_fix_confirmed_live": "this timeout left ZERO orphaned Singular "
                                          "processes, against 13 from the equivalent "
                                          "pre-fix timeout. The process-group kill works",
+            "std_only_clean": "the GB-alone diagnostic ALSO timed out, at 3600s on the "
+                              "idle machine. That is the run that shows the bottleneck "
+                              "has migrated -- see bottleneck_migrates",
         },
         "unaffected_by_the_confound": "the 10_100 reach result in G7c. Its 67.0s "
                                       "class-1 solve ran at ~12:20 UTC, BEFORE lake "
