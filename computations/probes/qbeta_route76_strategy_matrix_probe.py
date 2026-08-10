@@ -477,10 +477,30 @@ def main() -> int:
             "are kept because 'did not finish in 45 minutes' remains true as stated, but "
             "they are NOT clean-machine measurements and must not be cited as though they "
             "were"],
-        "remeasurement": "11a1 class 1 is being re-run on a verified-idle machine (lean "
-                         "build killed, loadavg recorded at start) for both "
-                         "modStd_finduni and std_only. Until that lands, treat the "
-                         "timeouts above as upper bounds taken under load",
+        "remeasurement": {
+            "done": True,
+            "result": "THE NEGATIVE HOLDS. Re-run on a verified-idle machine -- lean "
+                      "build killed, zero Singular/lean/lake processes confirmed before "
+                      "launch -- 11a1 class 1 with modStd + finduni timed out again at "
+                      "2700s. Removing the confound did not change the outcome, so the "
+                      "scope-(a) negative stands as recorded; what changed is that it is "
+                      "now honestly measured",
+            "milliseconds": 2700130,
+            "status": "timeout",
+            "machine": "idle (background lake build killed and verified absent)",
+            "loadavg_caveat": "the probe recorded loadavg_at_start = 4.08, which looks "
+                              "like contention and is NOT. Load average is an "
+                              "exponentially-weighted moving average with a ~1 minute "
+                              "time constant, so immediately after killing ~15 processes "
+                              "it still reads high while the machine is in fact idle. "
+                              "The trustworthy evidence of idleness is the process count "
+                              "(zero Singular, zero lean, zero lake), not the load "
+                              "average -- recorded here because the number in the "
+                              "witness invites exactly the wrong reading",
+            "orphan_fix_confirmed_live": "this timeout left ZERO orphaned Singular "
+                                         "processes, against 13 from the equivalent "
+                                         "pre-fix timeout. The process-group kill works",
+        },
         "unaffected_by_the_confound": "the 10_100 reach result in G7c. Its 67.0s "
                                       "class-1 solve ran at ~12:20 UTC, BEFORE lake "
                                       "started at ~12:41",
