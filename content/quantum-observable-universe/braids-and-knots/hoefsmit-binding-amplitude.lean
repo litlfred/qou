@@ -48,21 +48,27 @@ def qInt2 : R := (q : R) + (↑q⁻¹ : R)
 /-- The quantum integer [3]_q = q² + 1 + q⁻². -/
 def qInt3 : R := (q : R) ^ 2 + 1 + (↑q⁻¹ : R) ^ 2
 
-/-- **Bridge to the canonical balanced bracket** for the `[2]_q` shorthand. -/
-theorem qInt2_eq_canonical (h : q - q⁻¹ ≠ 0) :
-    qInt2 q = QOU.QInteger.qIntBal q 2 :=
-  (QOU.QInteger.qIntBal_two q h).symm
+/-- **Bridge to the canonical balanced bracket** for the `[2]_q` shorthand.
 
-/-- **Bridge to the canonical balanced bracket** for the `[3]_q` shorthand —
-and it needs one hypothesis more than `[2]_q` does.
+The canonical `qIntBal` is a guarded division and stays over a field; this is
+where the unit-valued shorthand above meets it. -/
+theorem qInt2_eq_canonical {S : Type*} [Field S] (q : Sˣ)
+    (h : (q : S) - (q : S)⁻¹ ≠ 0) :
+    qInt2 q = QOU.QInteger.qIntBal (q : S) 2 := by
+  unfold qInt2
+  rw [QOU.QInteger.qIntBal_two (q : S) h, Units.val_inv_eq_inv_val]
 
-`q ≠ 0` is not boilerplate here: the middle term of `q² + 1 + q⁻²` is `1 = q·q⁻¹`,
-which is `0` rather than `1` when `q = 0` under Lean's `0⁻¹ = 0`.  So the
-longhand and the canonical bracket agree *away from the degenerate locus*, not
-everywhere — the distinction a body swap would have buried. -/
-theorem qInt3_eq_canonical (hq : q ≠ 0) (h : q - q⁻¹ ≠ 0) :
-    qInt3 q = QOU.QInteger.qIntBal q 3 :=
-  (QOU.QInteger.qIntBal_three q hq h).symm
+/-- **Bridge to the canonical balanced bracket** for the `[3]_q` shorthand.
+
+Over a field the field-valued form needed `q ≠ 0` on top of `q − q⁻¹ ≠ 0`: the
+middle term of `q² + 1 + q⁻²` is `1 = q·q⁻¹`, which is `0` rather than `1` at
+`q = 0` under Lean's `0⁻¹ = 0`.  Carrying `q` as a **unit** discharges that
+hypothesis at the type level, so only the denominator guard survives. -/
+theorem qInt3_eq_canonical {S : Type*} [Field S] (q : Sˣ)
+    (h : (q : S) - (q : S)⁻¹ ≠ 0) :
+    qInt3 q = QOU.QInteger.qIntBal (q : S) 3 := by
+  unfold qInt3
+  rw [QOU.QInteger.qIntBal_three (q : S) q.ne_zero h, Units.val_inv_eq_inv_val]
 
 /-- Key identity: [2]_q² = h² + 4.
   Proof: (q+q⁻¹)² = q² + 2 + q⁻² = (q-q⁻¹)² + 4 = h² + 4. -/
