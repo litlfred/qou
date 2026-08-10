@@ -41,7 +41,7 @@ not acceptable. Declaring a forward reference because nothing is watching is
 the same move as copying an `interprets` label into `uses[]` to make a
 checker see it — gaming the gate rather than recording a dependency.
 
-## Group 1 — 35 edges: fixed by reordering, no editorial decision
+## Group 1 — 34 edges: fixed by reordering, no editorial decision
 
 Restricting each chapter's block graph to its intra-chapter edges **and
 adding every held edge**, then testing for cycles:
@@ -51,7 +51,7 @@ adding every held edge**, then testing for cycles:
 | `mass-theory` | 753 | 802 | **acyclic** |
 | `predicted-spectra` | 295 | 269 | **acyclic** |
 | `fluid-dynamics` | 96 | 123 | 2 cycles (3 blocks) |
-| `appendix-surreals` | 98 | 99 | 2 cycles (4 blocks) |
+| `appendix-surreals` | 98 | 99 | **3** cycles (4 blocks) |
 
 An acyclic dependency graph **always** admits an ordering with zero forward
 references — that is what a topological sort is. So for every held edge not
@@ -72,24 +72,45 @@ Those are not four obstructions. They are one chain, and a topological sort
 moves the whole chain in a single pass. Only 6 targets are free to move
 individually (12 edges); the other 23 need the chain moved with them.
 
-## Group 2 — 4 edges: genuinely circular, and only the author can resolve them
+## Group 2 — 5 cycles: genuinely circular, and only the author can resolve them
 
-Four held edges do not merely point forward. They close a **cycle**:
+Some held edges do not merely point forward. They close a **cycle**. Marking
+each leg by whether it is already on the branch or still held:
 
 ```
-prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes
-                              -> rem:planck-reynolds
-                              -> prop:discrete-vortex-spectrum
+fluid-dynamics
+  prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes
+                                -> rem:planck-reynolds
+                                -> prop:discrete-vortex-spectrum
+  rem:vortex-intensity-modes    -> rem:planck-reynolds
+                                -> rem:vortex-intensity-modes
 
-rem:vortex-intensity-modes    -> rem:planck-reynolds
-                              -> rem:vortex-intensity-modes
-
-conj:archimedean-stpart       -> conj:classical-limit-stpart
-                              -> conj:archimedean-stpart
-
-conj:p-vs-np-qou              -> rem:p-vs-np-surreal-bound
-                              -> conj:p-vs-np-qou
+appendix-surreals
+  conj:archimedean-stpart  --committed-->  conj:classical-limit-stpart
+                           <--held-------
+  conj:p-vs-np-qou         --held------->  rem:p-vs-np-surreal-bound
+                           <--committed--
+  conj:p-vs-np-qou         --held------->  rem:p-vs-np-surreal-bound
+                           --held------->  rem:millennium-unification
+                           --committed-->  conj:p-vs-np-qou
 ```
+
+**The third appendix cycle runs through an edge tranche 2 landed**
+(`rem:millennium-unification -> conj:p-vs-np-qou`, from *"The fourth row is
+conditional on [P vs NP in the QOU]"*). It closes only if **two** held edges
+also land, so the branch stays acyclic — but it is worth stating that a
+landed edge is one leg of a potential cycle.
+
+Both held legs are edges independent reading had already flagged:
+
+| held leg | prior verdict |
+|---|---|
+| `rem:p-vs-np-surreal-bound -> rem:millennium-unification` | **rejected in tranche 1** — *"a '(see X)' filing note, and the dependency runs the other way: the aggregator cites the instance"* |
+| `conj:p-vs-np-qou -> rem:p-vs-np-surreal-bound` | a "see X" pointer, the form tranche 1 rejects |
+
+Cycle detection and editorial reading agree here, by different routes. That
+is the useful result: the cycles are not arbitrary: they form precisely
+where a citation was read in the wrong direction.
 
 **No ordering fixes a cycle.** Reordering is a relabelling; a cycle is
 invariant under it. Each of these says two blocks each depend on the other,
@@ -104,7 +125,7 @@ to fix rather than a finding to report:
 |---|---|---|
 | `origin/main` | 0 cycles | 0 cycles |
 | this branch as committed | 0 cycles | 0 cycles |
-| **if the held edges landed** | **2 cycles** | **2 cycles** |
+| **if the held edges landed** | **2 cycles** | **3 cycles** |
 
 So the branch is clean, and these four are a reason the edges were right to
 hold — the sweep that caught them caught something real.
@@ -132,11 +153,11 @@ the paper, not a bookkeeping nit.
 
 ## Recommendation
 
-1. **Group 1 (35) — produce the topological reorder as a reviewable diff.**
+1. **Group 1 (34) — produce the topological reorder as a reviewable diff.**
    Mechanical to compute, but it changes reading order, so it is proposed
    and not applied. Sequencing note: land the reorder *first*, then declare
    the edges, so no intermediate commit is red.
-2. **Group 2 (4) — author call, one question each.** Which direction is
+2. **Group 2 (5 cycles) — author call, one question each.** Which direction is
    real? Cheap to answer, impossible to compute.
 3. **Group 3 (17) — hold.** Do not declare against an unwired checker.
 4. **Wire `detangler-no-xchapter-fwd`** (separate bean). Until it runs,
