@@ -188,6 +188,10 @@ with open(out_path, "w") as fp:
         "X_in_r": str(X_factored),
         "results": results,
         "precision": "symbolic_q",
-        "truncation_eps": 0.0,
+        # String, not 0.0: this computation is exact and symbolic in q, so
+        # there is no truncation at all.  Emitting it as a float put the
+        # only raw float64 in the witness — an exact zero that nonetheless
+        # tripped the raw-float64 ratchet.
+        "truncation_eps": "0",
     }, fp, indent=2, default=str)
 print(f"Witness: {out_path}")

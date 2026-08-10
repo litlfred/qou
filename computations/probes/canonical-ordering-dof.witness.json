@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T01:58:56.094140+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "computedAt": "2026-08-10T08:42:08.519442+00:00",
+  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
   "assertions": [
     {
       "name": "closed_form_ratio_hardcodes_canonical_ordering",
@@ -138,11 +138,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "canonical-ordering-dof",
   "scriptFile": "canonical_ordering_dof_probe.py",
-  "scriptHash": "28c91eaeb54a",
-  "scriptCommitSha": "140e96c00aa1bf528755be55454c0235a043e6aa",
+  "scriptHash": "87418d646ff1",
+  "scriptCommitSha": "30835c30e73372a6be797072a0472d3770d01d94",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -151,12 +151,8 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0"
   },
   "description": "Is the canonical cross-species nucleon ordering p...pn...n derivable, or a free degree of freedom? Q1: it is LIVE IN PRODUCTION -- the A>=3 binding chain (mass_table_comprehensive -> binding_canonical -> closed_form_tau_M -> closed_form_ratio) iterates a hardcoded ['p']*Z + ['n']*N, so every mixed-species A>=3 row of mass-table-comprehensive.witness.json inherits the choice. Q2: the interface product factorises as P(o)/P(canonical) = (f_pn/f_pp)^(b_p-1) * (f_pn/f_nn)^(b_n-1) over the p-/n-BLOCK counts; at the substrate anchor f_pn/f_pp < 1 < f_pn/f_nn, so the canonical arrangement is a SADDLE -- no extremal principle can select it (candidate 1 REFUTED). The trace IS a function of the interface multiset, but the multiset is not determined by (Z, N), so candidate 2 re-coordinatises the DOF without removing it. What survives is candidate 3: a genuine undeclared degree of freedom. free_parameters = 0; no AME quantity selects anything; nothing is wired; no ordering is recommended.",
   "auditOnly": true,
@@ -465,15 +461,15 @@
           "Z": 1,
           "N": 2,
           "in_production_table": true,
-          "B_pred_MeV_production": 8.473201,
-          "B_AME_MeV": 8.481821,
+          "B_pred_MeV_production": "8.473201",
+          "B_AME_MeV": "8.481821",
           "n_reachable_multisets": 2,
           "ratio_min": "1.0",
           "ratio_max": "1.258976625",
           "dB_min_MeV": "-0.86234602",
           "dB_max_MeV": "0.0",
           "spread_MeV": "0.86234602",
-          "spread_pct_of_B_AME": 10.167
+          "spread_pct_of_B_AME": "10.166991510875856"
         },
         {
           "atom": "3He",
@@ -510,111 +506,111 @@
           "Z": 3,
           "N": 3,
           "in_production_table": true,
-          "B_pred_MeV_production": 18.131442,
-          "B_AME_MeV": 31.994,
+          "B_pred_MeV_production": "18.131442",
+          "B_AME_MeV": "31.994",
           "n_reachable_multisets": 7,
           "ratio_min": "0.8293909085",
           "ratio_max": "1.314602954",
           "dB_min_MeV": "-1.0242396",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "1.724692",
-          "spread_pct_of_B_AME": 5.391
+          "spread_pct_of_B_AME": "5.3906733827448001"
         },
         {
           "atom": "7Li",
           "Z": 3,
           "N": 4,
           "in_production_table": true,
-          "B_pred_MeV_production": 23.062339,
-          "B_AME_MeV": 39.2445,
+          "B_pred_MeV_production": "23.062339",
+          "B_AME_MeV": "39.2445",
           "n_reachable_multisets": 8,
           "ratio_min": "0.8293909085",
           "ratio_max": "1.372687065",
           "dB_min_MeV": "-1.1861332",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "1.8865856",
-          "spread_pct_of_B_AME": 4.807
+          "spread_pct_of_B_AME": "4.8072611745543449"
         },
         {
           "atom": "9Be",
           "Z": 4,
           "N": 5,
           "in_production_table": true,
-          "B_pred_MeV_production": 30.356908,
-          "B_AME_MeV": 58.165,
+          "B_pred_MeV_production": "30.356908",
+          "B_AME_MeV": "58.165",
           "n_reachable_multisets": 11,
           "ratio_min": "0.8293909085",
           "ratio_max": "1.43333755",
           "dB_min_MeV": "-1.3480267",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "2.0484792",
-          "spread_pct_of_B_AME": 3.522
+          "spread_pct_of_B_AME": "3.5218416250676324"
         },
         {
           "atom": "12C",
           "Z": 6,
           "N": 6,
           "in_production_table": true,
-          "B_pred_MeV_production": 40.015149,
-          "B_AME_MeV": 92.162,
+          "B_pred_MeV_production": "40.015149",
+          "B_AME_MeV": "92.162",
           "n_reachable_multisets": 16,
           "ratio_min": "0.8293909085",
           "ratio_max": "1.496667802",
           "dB_min_MeV": "-1.5099203",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "2.2103728",
-          "spread_pct_of_B_AME": 2.398
+          "spread_pct_of_B_AME": "2.3983558850645569"
         },
         {
           "atom": "16O",
           "Z": 8,
           "N": 8,
           "in_production_table": true,
-          "B_pred_MeV_production": 54.604288,
-          "B_AME_MeV": 127.619,
+          "B_pred_MeV_production": "54.604288",
+          "B_AME_MeV": "127.619",
           "n_reachable_multisets": 22,
           "ratio_min": "0.8293909085",
           "ratio_max": "1.631846446",
           "dB_min_MeV": "-1.8337074",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "2.5341599",
-          "spread_pct_of_B_AME": 1.986
+          "spread_pct_of_B_AME": "1.9857230427588478"
         },
         {
           "atom": "40Ca",
           "Z": 20,
           "N": 20,
           "in_production_table": true,
-          "B_pred_MeV_production": 142.139118,
-          "B_AME_MeV": 342.052,
+          "B_pred_MeV_production": "142.139118",
+          "B_AME_MeV": "342.052",
           "n_reachable_multisets": 58,
           "ratio_min": "0.8293909085",
           "ratio_max": "2.741590184",
           "dB_min_MeV": "-3.7764303",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "4.4768827",
-          "spread_pct_of_B_AME": 1.309
+          "spread_pct_of_B_AME": "1.3088310329452003"
         },
         {
           "atom": "56Fe",
           "Z": 26,
           "N": 30,
           "in_production_table": true,
-          "B_pred_MeV_production": 205.630123,
-          "B_AME_MeV": 492.254,
+          "B_pred_MeV_production": "205.630123",
+          "B_AME_MeV": "492.254",
           "n_reachable_multisets": 77,
           "ratio_min": "0.8293909085",
           "ratio_max": "3.710573999",
           "dB_min_MeV": "-4.9096853",
           "dB_max_MeV": "0.70045245",
           "spread_MeV": "5.6101377",
-          "spread_pct_of_B_AME": 1.14
+          "spread_pct_of_B_AME": "1.1396835194468661"
         }
       ],
       "n_exposed_rows": 14968,
       "n_rows_spread_gt_1pct_of_B_AME": 60,
       "largest_spread_atom": "237Og",
-      "largest_spread_MeV": 20.504346,
+      "largest_spread_MeV": "20.504346112497961",
       "AME_ROLE": "denominator only -- used to express the size of an already-computed spread. No ordering is selected by it."
     },
     "crosscheck_full_trace": [
