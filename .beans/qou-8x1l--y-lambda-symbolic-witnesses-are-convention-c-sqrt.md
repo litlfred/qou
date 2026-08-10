@@ -369,3 +369,46 @@ same class of straddle this whole bean is about.
 2. Or reduce `Σ y_λ(q)·χ^λ(β_D,q) − tr_M_peel(q)` symbolically to a rational
    function in q and check it is identically zero. No q₀ needed; decides
    whether `r = 2` is the right Wenzl-bridge solution.
+
+## SYMBOLIC RESULT: the D weights ARE correctly Markov-normalised
+
+Tested the normalisation identity symbolically — no q₀, no braid word, no
+second implementation to agree with:
+
+    n=2: sum_lambda y_lambda(q)*dim(lambda) = 1
+    n=3: = 1     n=4: = 1     n=5: = 1     n=6: = 1
+
+Exact, identically in q, at every n from 2 to 6, via `cancel`/`together` on
+the convention-D symbolic witness.
+
+**This is the check the three earlier validations missed.** Rust
+`trace_weights_n` (1.2e-15), the 3+-row vanishing, and the two table
+evaluations (~1e-50) all compare the weights against each other or against a
+shared convention. This one tests the defining property directly — and it
+passes.
+
+So the previous entry's self-critique is half retracted: the gap was real
+(normalisation was untested) but the answer is clean. `z = q³/(q²+1) ⟹ r = 2`
+yields correctly normalised Markov weights **as a function of q**, not merely
+numbers agreeing at one pin. The convention-D migration stands.
+
+### Consequence for the 8.71e-8
+
+If `y_λ(q)` is correctly normalised, the residual is NOT in the weights. It
+must be in `χ^λ(β_D)` or in the peel recursion on that specific braid — the
+two factors this test does not touch, since it evaluates at the identity
+braid where `χ^λ(1) = dim V_λ`.
+
+`Σ y_λ·χ^λ(β) = tr_M(β)` for a general β is strictly stronger and remains
+untested symbolically.
+
+### Formalize-first (owner point, 2026-08-10)
+
+Per AGENTS.md §Formalize-first this identity is a structural invariant and
+belongs in Lean, not in a probe:
+
+    ∑ λ ⊢ n, y_λ * dim V_λ = 1
+
+and then the general `Σ y_λ·χ^λ(β) = tr_M(β)`. That should gate the weights,
+rather than numerical agreement at a pin. That it took eight refutations to
+notice the defining property was never checked is the argument for the policy.
