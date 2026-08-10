@@ -95,6 +95,34 @@ def is_c_form(node: ast.AST) -> bool:
     return ("0.5" in src or "sqrt" in src.lower()) and "**3" not in src
 
 
+def is_c_form_halfarg(node: ast.AST):
+    """Convention C written in the HALF-ARGUMENT variable: ``z = r/(r**2 + 1)``.
+
+    With ``r = q^{1/2}``,
+
+        1/(q^{1/2} + q^{-1/2}) = 1/(r + 1/r) = r/(r² + 1)
+
+    so this is the same convention with no square root visible anywhere — no
+    ``sqrt`` call, no ``0.5`` exponent, nothing for `is_c_form` to match. It was
+    a false-negative class of the audit until `y_lambda_cyclotomic_factor.py:48`
+    turned up still on C after the surface had been reported clear.
+
+    The trap is that it looks like convention D. D is ``q**3/(q**2+1)``; this is
+    ``r**1/(r**2+1)``, and in the half-argument variable D reads
+    ``r**6/(r**4+1)``. Same silhouette, different exponents.
+
+    Returns the base symbol source, or None.
+    """
+    if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+        return None
+    num = ast.unparse(node.left)
+    den = node.right
+    if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
+        return None
+    d = "".join(ast.unparse(den).split())
+    return num if d in (f"{num}**2+1", f"1+{num}**2") else None
+
+
 def classify(path: str) -> str:
     if path.startswith(BLOCKED_BY_DESIGN):
         return "tools/pyhecke — BLOCKED on C by design (registry)"
@@ -129,7 +157,9 @@ def scan(roots=ROOTS):
                 names = [t.id for t in targets if isinstance(t, ast.Name)]
                 if not any("z" in nm.lower() for nm in names):
                     continue
-                if n.value is None or not is_c_form(n.value):
+                if n.value is None:
+                    continue
+                if not (is_c_form(n.value) or is_c_form_halfarg(n.value)):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
@@ -155,6 +185,12 @@ def selftest() -> int:
         "1 / (q0 ** mpf('0.5') + q0 ** mpf('-0.5'))",
         "1 / (mp.sqrt(q0) + mp.sqrt(qi))",
     ]
+    half = [
+        ("t / (t ** 2 + 1)", True),        # convention C in r = sqrt(q)
+        ("r/(r**2 + 1)", True),
+        ("t ** 6 / (t ** 4 + 1)", False),  # convention D in r = sqrt(q)
+        ("q ** 3 / (q ** 2 + 1)", False),  # convention D in q
+    ]
     should_not = [
         "q ** 3 / (q ** 2 + 1)",          # convention D
         "q0**3 / (q0**2 + 1)",            # convention D
@@ -171,7 +207,13 @@ def selftest() -> int:
         ok = not is_c_form(ast.parse(src, mode="eval").body)
         print(f"  {'ok  ' if ok else 'FAIL'}  rejects: {src}")
         bad += not ok
-    total = len(should_match) + len(should_not)
+    for src, want in half:
+        got = is_c_form_halfarg(ast.parse(src, mode="eval").body) is not None
+        ok = got == want
+        verb = "flags" if want else "clears"
+        print(f"  {'ok  ' if ok else 'FAIL'}  half-arg {verb}: {src}")
+        bad += not ok
+    total = len(should_match) + len(should_not) + len(half)
     print(f"selftest: {total - bad}/{total}"
           + ("" if bad else " — matcher accepts every corpus spelling and rejects convention D."))
     return bad
