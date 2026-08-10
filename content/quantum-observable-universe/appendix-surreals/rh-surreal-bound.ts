@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "conj:classical-riemann-hypothesis",
     "def:reeb-epsilon",
-    "lem:surreal-squeeze",
     "prop:surreal-rate-calculus",
     "rem:conway-normal-form",
   ],

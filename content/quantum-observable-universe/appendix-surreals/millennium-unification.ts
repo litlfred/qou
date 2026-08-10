@@ -8,14 +8,9 @@ export default remark({
   uses: [
     "conj:p-vs-np-qou",
     "conj:q-birch-swinnerton-dyer",
-    "def:categorical-reeb-derivation",
-    "def:reeb-epsilon",
-    "prop:surreal-rate-calculus",
     "rem:adelic-tate-squeeze",
     "rem:collatz-surreal-bound",
-    "rem:conway-normal-form",
     "rem:yang-mills-surreal-bound",
-    "thm:quantum-gap-collapse",
   ],
   tags: [
     "millennium-problems",
