@@ -479,4 +479,152 @@ theorem heckeCompletedRewritingSystem_lm_ne_nil {n : ℕ} (hn : 0 < n) (hp : Hec
     ⟨i, h⟩ | ⟨i, j, -, h⟩ | ⟨i, j, -, h⟩ | ⟨i', i, j, -, -, h⟩ <;> rw [h] <;>
     simp [bsWord₁]
 
+/-! ## §4k  The overlap set of the completed system, enumerated
+
+§4g resolves **one** overlap. Completeness needs every one of them, and until now
+"how many are there" was prose: four families, and the new family overlaps
+itself — a shape, not a number. This section produces the number.
+
+An `OverlapComposition` is pinned by three words: `lm₁ = left ++ overlap`,
+`lm₂ = overlap ++ right`, `overlap ≠ []`. The *rules* never enter, only their
+leading monomials — so once those are a list, the overlap shapes are a
+computation, and `mem_overlapTriples` is the bridge carrying any composition of
+the completed system into that list.
+
+Two rules with the same leading monomial give the same shape, and §4j says that
+is not hypothetical: at `j = i − 1` the Bokut–Shiao and Yang–Baxter rules lead on
+the same word. `completedLMSet` deduplicates, so `overlapTriples` counts
+*shapes*; the rule-level multiplicity at those three words is a separate
+question.
+
+At `n = 4` the numbers are **16 rules, 13 distinct leading monomials, 58 overlap
+shapes** — of which 13 are the degenerate `lm₁ = lm₂` self-pairings with both
+contexts empty and 45 have both contexts non-empty. `NotAGSBasis.oc` is one of
+the 45. -/
+
+/-- Leading monomials of the quadratic family, `σᵢσᵢ`. -/
+def quadLMs (n : ℕ) : List (Monomial (HeckeGen n)) :=
+  (List.finRange n).map (fun i => [(⟨i⟩ : HeckeGen n), ⟨i⟩])
+
+/-- Leading monomials of the Yang–Baxter family, `σⱼσᵢσⱼ` with `j = i + 1`
+(`yangBaxterRelation_lm`: deg-lex puts the larger generator first). -/
+def yangBaxterLMs (n : ℕ) : List (Monomial (HeckeGen n)) :=
+  (List.finRange n).flatMap (fun i =>
+    (List.finRange n).filterMap (fun j =>
+      if j.val = i.val + 1 then some [(⟨j⟩ : HeckeGen n), ⟨i⟩, ⟨j⟩] else none))
+
+/-- Leading monomials of the far-commutation family, `σᵢσⱼ` with `j + 1 < i`. -/
+def farCommLMs (n : ℕ) : List (Monomial (HeckeGen n)) :=
+  (List.finRange n).flatMap (fun i =>
+    (List.finRange n).filterMap (fun j =>
+      if j.val + 1 < i.val then some [(⟨i⟩ : HeckeGen n), ⟨j⟩] else none))
+
+/-- Leading monomials of the Bokut–Shiao family, `bsWord₁ i j`.
+
+The rule is indexed by `(i', i, j)` with `i' + 1 = i` and `j ≤ i'`, but its
+leading monomial depends only on `(i, j)` and the two side conditions collapse to
+`j < i` — so this list has exactly one entry per rule. -/
+def bokutShiaoLMs (n : ℕ) : List (Monomial (HeckeGen n)) :=
+  (List.finRange n).flatMap (fun i =>
+    (List.finRange n).filterMap (fun j =>
+      if j.val < i.val then some (bsWord₁ i j) else none))
+
+/-- Every leading monomial of the completed system, as an explicit list, with the
+duplicates the four families produce between them still present. -/
+def completedLMWords (n : ℕ) : List (Monomial (HeckeGen n)) :=
+  quadLMs n ++ yangBaxterLMs n ++ farCommLMs n ++ bokutShiaoLMs n
+
+/-- The *distinct* leading monomials. §4j is why this is shorter than
+`completedLMWords`. -/
+def completedLMSet (n : ℕ) : List (Monomial (HeckeGen n)) :=
+  (completedLMWords n).dedup
+
+/-- **Soundness of the enumeration**: every rule of the completed system leads on
+a word in the list. This is `heckeCompletedRewritingSystem_lm_cases` with the
+existentials discharged into list membership, which is what makes the overlap
+count downstream a statement about the actual rule set. -/
+theorem heckeCompletedRewritingSystem_lm_mem {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    (r : ReductionRule (HeckeGen n) ℝ)
+    (hr : r ∈ (heckeCompletedRewritingSystem n hn hp).rules) :
+    r.lm (heckeOrder n) ∈ completedLMSet n := by
+  refine List.mem_dedup.mpr ?_
+  rcases heckeCompletedRewritingSystem_lm_cases hn hp r hr with
+    ⟨i, h⟩ | ⟨i, j, hji, h⟩ | ⟨i, j, hji, h⟩ | ⟨i', i, j, hi, hj, h⟩
+  · exact List.mem_append_left _ (List.mem_append_left _ (List.mem_append_left _
+      (List.mem_map.mpr ⟨i, List.mem_finRange i, h.symm⟩)))
+  · refine List.mem_append_left _ (List.mem_append_left _ (List.mem_append_right _
+      (List.mem_flatMap.mpr ⟨i, List.mem_finRange i,
+        List.mem_filterMap.mpr ⟨j, List.mem_finRange j, ?_⟩⟩)))
+    rw [if_pos hji, h]
+  · refine List.mem_append_left _ (List.mem_append_right _
+      (List.mem_flatMap.mpr ⟨i, List.mem_finRange i,
+        List.mem_filterMap.mpr ⟨j, List.mem_finRange j, ?_⟩⟩))
+    rw [if_pos hji, h]
+  · refine List.mem_append_right _
+      (List.mem_flatMap.mpr ⟨i, List.mem_finRange i,
+        List.mem_filterMap.mpr ⟨j, List.mem_finRange j, ?_⟩⟩)
+    rw [if_pos (show j.val < i.val by omega), h]
+
+/-- **The overlap shapes** of the completed system at rank `n`: every triple
+`(left, overlap, right)` whose `left ++ overlap` and `overlap ++ right` are both
+leading monomials and whose `overlap` is non-empty.
+
+The degenerate shapes are deliberately kept. `OverlapComposition` places no
+condition on `left` or `right`, so `left = right = []` (the two rules lead on the
+*same* word) is a legal composition, and at the three words of §4j it is an
+inhabited one. -/
+def overlapTriples (n : ℕ) :
+    List (Monomial (HeckeGen n) × Monomial (HeckeGen n) × Monomial (HeckeGen n)) :=
+  (completedLMSet n).flatMap (fun a =>
+    (completedLMSet n).flatMap (fun b =>
+      (a.tails.filter (fun o => !o.isEmpty && o.isPrefixOf b)).map (fun o =>
+        (a.take (a.length - o.length), o, b.drop o.length))))
+
+/-- **The bridge.** Any splitting of two leading monomials that meets the
+`OverlapComposition` conditions is in the enumerated list. Stated on words rather
+than on compositions so that it applies to a composition of *any* two rules with
+those leading monomials — including two distinct rules leading on the same
+word. -/
+theorem mem_overlapTriples {n : ℕ} {a b left o right : Monomial (HeckeGen n)}
+    (ha : a ∈ completedLMSet n) (hb : b ∈ completedLMSet n)
+    (hne : o ≠ []) (hA : a = left ++ o) (hB : b = o ++ right) :
+    (left, o, right) ∈ overlapTriples n := by
+  have hlen : a.length - o.length = left.length := by
+    rw [hA, List.length_append]; omega
+  refine List.mem_flatMap.mpr ⟨a, ha, List.mem_flatMap.mpr ⟨b, hb, ?_⟩⟩
+  refine List.mem_map.mpr ⟨o, List.mem_filter.mpr ⟨(List.mem_tails o a).mpr ⟨left, hA.symm⟩, ?_⟩, ?_⟩
+  · simp only [Bool.and_eq_true, Bool.not_eq_eq_eq_not, Bool.not_true,
+      List.isEmpty_eq_false_iff, List.isPrefixOf_iff_prefix]
+    exact ⟨hne, ⟨right, hB.symm⟩⟩
+  · rw [hlen, hA, hB, List.take_left', List.drop_left'] <;> rfl
+
+/-! ### The count at `n = 4`
+
+Kernel-checked, no `native_decide`. -/
+
+/-- Sixteen rules — 4 quadratic, 3 Yang–Baxter, 3 far-commutation, 6
+Bokut–Shiao. -/
+theorem completedLMWords_four_length : (completedLMWords 4).length = 16 := by decide
+
+/-- …but only thirteen distinct leading monomials. The three lost are exactly the
+Yang–Baxter words, which §4j identifies with the Bokut–Shiao rules at
+`j = i − 1`. -/
+theorem completedLMSet_four_length : (completedLMSet 4).length = 13 := by decide
+
+/-- **Fifty-eight overlap shapes at `n = 4`.** The number the completeness proof
+has to work through, in place of an estimate. -/
+theorem overlapTriples_four_length : (overlapTriples 4).length = 58 := by decide
+
+/-- Thirteen of the fifty-eight are the degenerate self-pairings, one per
+leading monomial: `left = right = []`, `overlap = lm₁ = lm₂`. -/
+theorem overlapTriples_four_degenerate_count :
+    ((overlapTriples 4).filter (fun t => t.1.isEmpty && t.2.2.isEmpty)).length = 13 := by
+  decide
+
+/-- The other forty-five have both contexts non-empty. `NotAGSBasis.oc` — the
+composition that refutes the uncompleted system — is one of them. -/
+theorem overlapTriples_four_proper_count :
+    ((overlapTriples 4).filter (fun t => !t.1.isEmpty && !t.2.2.isEmpty)).length = 45 := by
+  decide
+
 end UGB.GrobnerShirshov.Hecke
