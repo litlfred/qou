@@ -183,7 +183,61 @@ theorem qSerre_is_gs_basis_of_critical_pairs (qs : QSerreRelations k)
   · intro ic h₁ h₂
     exact qSerre_inclusion_resolves qs ic h₁ h₂
 
-/-! ## §5  What remains
+/-! ## §5  The eight critical pairs, enumerated in Lean -/
+
+set_option maxHeartbeats 4000000 in
+/-- **Exactly eight ordered rule pairs admit a length-1 overlap, and here they
+are.**
+
+Of the 49 ordered pairs, 41 admit none: a length-1 overlap forces
+`lm₁ = [a,b]` and `lm₂ = [b,c]` sharing the letter `b`, and for those 41 the
+second letter of `lm₁` differs from the first of `lm₂`, so the decomposition
+equations are contradictory.
+
+This reproduces, inside Lean, the enumeration
+`computations/qserre_gs_basis_check.py` arrived at symbolically — the two agree
+that there are 8, and on which 8. Bean qou-18s7 verified that all 8 resolve;
+the reduction chains witnessing that are what remains (§6). -/
+theorem qSerre_overlap_enumeration (qs : QSerreRelations k)
+    (oc : OverlapComposition SU2Gen k degLexOrder)
+    (h₁ : oc.rule₁ ∈ (qSerreRewritingSystem k qs).rules)
+    (h₂ : oc.rule₂ ∈ (qSerreRewritingSystem k qs).rules)
+    (hov : oc.overlap.length = 1) :
+    (oc.rule₁ = qSerreRule1 ∧ oc.rule₂ = qSerreRule2 ∧
+       oc.left = [K] ∧ oc.overlap = [K_inv] ∧ oc.right = [K]) ∨
+    (oc.rule₁ = qSerreRule1 ∧ oc.rule₂ = qSerreRule6 qs ∧
+       oc.left = [K] ∧ oc.overlap = [K_inv] ∧ oc.right = [E_plus]) ∨
+    (oc.rule₁ = qSerreRule1 ∧ oc.rule₂ = qSerreRule7 qs ∧
+       oc.left = [K] ∧ oc.overlap = [K_inv] ∧ oc.right = [E_minus]) ∨
+    (oc.rule₁ = qSerreRule2 ∧ oc.rule₂ = qSerreRule1 ∧
+       oc.left = [K_inv] ∧ oc.overlap = [K] ∧ oc.right = [K_inv]) ∨
+    (oc.rule₁ = qSerreRule2 ∧ oc.rule₂ = qSerreRule3 qs ∧
+       oc.left = [K_inv] ∧ oc.overlap = [K] ∧ oc.right = [E_plus]) ∨
+    (oc.rule₁ = qSerreRule2 ∧ oc.rule₂ = qSerreRule4 qs ∧
+       oc.left = [K_inv] ∧ oc.overlap = [K] ∧ oc.right = [E_minus]) ∨
+    (oc.rule₁ = qSerreRule3 qs ∧ oc.rule₂ = qSerreRule5 qs ∧
+       oc.left = [K] ∧ oc.overlap = [E_plus] ∧ oc.right = [E_minus]) ∨
+    (oc.rule₁ = qSerreRule6 qs ∧ oc.rule₂ = qSerreRule5 qs ∧
+       oc.left = [K_inv] ∧ oc.overlap = [E_plus] ∧ oc.right = [E_minus]) := by
+  obtain ⟨hov1, hl1, hr1⟩ | ⟨hov2, -, -⟩ := qSerre_overlap_shape qs oc h₁ h₂
+  · obtain ⟨a, ha⟩ := List.length_eq_one_iff.mp hl1
+    obtain ⟨b, hb⟩ := List.length_eq_one_iff.mp hov1
+    obtain ⟨c, hc⟩ := List.length_eq_one_iff.mp hr1
+    have e1 : oc.rule₁.lm degLexOrder = [a, b] := by
+      rw [oc.lm₁_decomp, ha, hb]; rfl
+    have e2 : oc.rule₂.lm degLexOrder = [b, c] := by
+      rw [oc.lm₂_decomp, hb, hc]; rfl
+    have m1 := h₁; have m2 := h₂
+    simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons,
+      List.not_mem_nil, or_false] at m1 m2
+    rcases m1 with h1|h1|h1|h1|h1|h1|h1 <;> rcases m2 with h2|h2|h2|h2|h2|h2|h2 <;>
+      rw [h1] at e1 <;> rw [h2] at e2 <;>
+      simp only [qSerre_lm_1, qSerre_lm_2, qSerre_lm_3, qSerre_lm_4, qSerre_lm_5,
+        qSerre_lm_6, qSerre_lm_7, List.cons.injEq, and_true] at e1 e2 <;>
+      obtain ⟨rfl, rfl⟩ := e1 <;> simp_all
+  · omega
+
+/-! ## §7  What remains
 
 The `|overlap| = 1` case. By §3 that means `left = [a]`, `overlap = [b]`,
 `right = [c]` with `lm₁ = [a,b]` and `lm₂ = [b,c]`, and since every rule is monic

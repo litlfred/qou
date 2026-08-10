@@ -113,3 +113,33 @@ Both are sorry-free and depend on nothing but the standard three.
 The 49-case enumeration (41 pairs admit no length-1 overlap and close by
 contradiction), and the 6 chains — now expressible as arithmetic over `two`/`four`
 rather than fights with `excise`.
+
+---
+
+## 2026-08-10 (third pass) — the enumeration is proved in Lean
+
+`qSerre_overlap_enumeration`: of the 49 ordered rule pairs, exactly **8** admit a
+length-1 overlap, and the theorem names all 8 with their `left/overlap/right`.
+Sorry-free, `[propext, Classical.choice, Quot.sound]`.
+
+This is the half #4927 listed as remaining alongside the chains, and it is an
+**independent cross-check of the Python**: the Lean case analysis and
+`qserre_gs_basis_check.py` agree both on the count (8) and on which 8.
+
+The 41 impossible pairs close because a length-1 overlap forces `lm₁ = [a,b]`,
+`lm₂ = [b,c]` sharing `b`, and for those the second letter of `lm₁` differs from
+the first of `lm₂`.
+
+**Tactic note worth keeping.** The whole 49-case bash closes with
+`obtain ⟨rfl, rfl⟩ := e1 <;> simp_all` — but only after the `rcases`/`rw`/
+`simp only` prep. Earlier attempts using `first | … | …` silently *accepted* a
+branch that simplified a hypothesis without closing the goal (`first` backtracks
+on error, not on leftover goals), which produced a confusing "unsolved goals
+⊢ False" that looked like a maths failure and was not. Prefer `simp_all` over a
+`first`-chain here, or append `done` to every alternative.
+
+### Still open
+
+The 6 reduction chains (2 of the 8 have literally-zero S-polynomials). The
+bridge (§6) and this enumeration (§5) are both in place, so what remains is the
+per-chain arithmetic.
