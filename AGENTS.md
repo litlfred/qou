@@ -143,6 +143,22 @@ user's last message, not the most recently mentioned file.
    is one trivial task, you may skip — but any time there are ≥ 2
    distinct steps, create the beans.
 
+   **Check before you create (STRICT).** `beans create` is **not**
+   idempotent — it mints a fresh ID on every call and dedupes on
+   nothing, so re-entering this step duplicates the entire plan
+   instead of no-op'ing. Before **every** `beans create`, including
+   the session milestone, run the exact-title existence check in
+   [`local/todo-manager` §Check before you
+   create](.claude/skills/local/todo-manager.md); on a match, claim
+   the existing bean with `beans update <id> --status in-progress`
+   rather than creating a second one. History: an unguarded re-run of
+   this very step ~980 times on 2026-08-04 produced **14,688**
+   duplicate beans — 92 % of every open bean — which starved the
+   §4 idle-backlog policy of signal, left an already-proved core at
+   `todo`, collided with the IDs of 15 real beans, and corrupted a
+   later agent's corpus-grep badly enough to nearly land a false
+   correction in a PR body (bean `qou-2ryn`).
+
 2. **Queue, do not pivot.** When a new request, review comment, or
    sibling-PR ask arrives mid-session, **append** it to the plan in
    priority order — do not abandon the in-progress task. Pivot only
