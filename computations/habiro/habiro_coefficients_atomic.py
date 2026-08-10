@@ -155,6 +155,32 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     return total_u.subs(u_int, sp.sqrt(q))
 
 
+# The canonical output symbol for anything this module SERIALIZES (bean
+# qou-0ndb). The witness fields are named `p_in_u` / `denom_in_u`, so their
+# strings must say `u` — regardless of which symbol the caller happened to
+# compute with. Before this, the name in the string was a property of the CALL
+# SITE: `_habiro_coefficient_extract` passes `u`, `analyse_atomic_braid` passes
+# `check_q`, and the same two field names therefore carried two different
+# symbols. Every consumer then had to know which producer wrote the file, and
+# the ones that guessed wrong failed SILENTLY — `sympify` mints a fresh symbol,
+# `.subs` no-ops, and the expression stays symbolic until something far away
+# tries to make a number of it. Four instances (bean qou-0ndb), the worst of
+# which published `phi_8_mult: 0` for a documented scaling law (bean qou-s41x).
+U_CANONICAL = sp.Symbol('u', positive=True, real=True)
+
+
+def str_in_u(expr, sym) -> str:
+    """Serialize `expr` (written in `sym`) as a string in the canonical `u`.
+
+    Use this for ANY expression leaving this module as text. Keeping the
+    in-memory expression in the caller's symbol is fine and intended — only the
+    SERIALIZED form is normalised, which is what consumers parse.
+    """
+    if sym == U_CANONICAL:
+        return str(expr)
+    return str(sp.sympify(expr).subs(sym, U_CANONICAL))
+
+
 def to_u_polynomial(expr_in_q, q, check_q):
     """Substitute q → u² and clear ALL check_q-denominators (including any
     cyclotomic / Markov-normalisation factors).  Returns
@@ -185,11 +211,13 @@ def to_u_polynomial(expr_in_q, q, check_q):
     # Determine min and max exponent
     monoms = poly.monoms()
     if not monoms:
-        return Integer(0), 0, str(den)
+        return Integer(0), 0, str_in_u(den, check_q)
     min_pow = min(int(m[0]) for m in monoms)
     shift = -min_pow if min_pow < 0 else 0
     p_shifted = sp.expand(p_expanded * check_q ** shift)
-    return p_shifted, shift, str(sp.expand(den))
+    # The EXPRESSION keeps the caller's symbol (callers go on computing with
+    # it); only the serialized denom is normalised to `u`. See str_in_u.
+    return p_shifted, shift, str_in_u(sp.expand(den), check_q)
 
 
 def cyclotomic_expansion(p_in_u, check_q, max_m=20):
@@ -223,8 +251,12 @@ def cyclotomic_expansion(p_in_u, check_q, max_m=20):
         quotient, a_m = sp.div(current, next_factor, check_q)
         a_m_expr = a_m.as_expr()
         coeffs.append({
+            # Normalised to the canonical `u` (bean qou-0ndb). This is THE field
+            # the breakage rode on: `reconstruct` and every `load_a_m` parse it,
+            # and until now its variable name depended on which symbol this
+            # function was handed.
             "m": m,
-            "a_m": str(a_m_expr),
+            "a_m": str_in_u(a_m_expr, check_q),
             "deg_a_m": int(a_m.degree()) if a_m.as_expr() != 0 else 0,
             "integral": all(c.is_Integer for c in a_m.all_coeffs())
                           if a_m.as_expr() != 0 else True,
@@ -323,7 +355,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
         "tr_M_in_q": str(p_q),
         "shift": int(shift),
         "denom_in_u": denom,
-        "p_in_u": str(p_u),
+        "p_in_u": str_in_u(p_u, check_q),
         "deg_p_u": deg_p,
         "habiro_coefficients": coeffs,
         "all_integral": all(c["integral"] for c in coeffs),
