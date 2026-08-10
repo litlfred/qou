@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 13,
-    "distinct_values": 10,
-    "files": 6,
-    "live_files": 1,
-    "new_not_baselined": 0,
+    "occurrences": 48,
+    "distinct_values": 23,
+    "files": 9,
+    "live_files": 4,
+    "new_not_baselined": 35,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -86,6 +86,216 @@
         "field": "data.rows[26].hits[4].literal",
         "value": "0.51099894999999995182093925905064679682254791259766",
         "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "parameters.alpha_em_hbar_c_MeV_fm",
+        "value": "1.43996521992482051643946761032566428184509277343750000000000",
+        "real_value": "1.4399652199248205"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "parameters.radius_models[0].r0_fm",
+        "value": "1.41381693076303638356705505429999902844429016113281250000000",
+        "real_value": "1.4138169307630364"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "parameters.radius_models[1].r0_fm",
+        "value": "1.19999999999999995559107901499373838305473327636718750000000",
+        "real_value": "1.2"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "parameters.radius_models[2].r0_fm",
+        "value": "1.76000000000000000888178419700125232338905334472656250000000",
+        "real_value": "1.76"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.by_radius_model[0].r0_fm",
+        "value": "1.41381693076303638356705505429999902844429016113281250000000",
+        "real_value": "1.4138169307630364"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.by_radius_model[0].t_residual_MeV",
+        "value": "-0.202309473388694427420375632209470495581626892089843750000000",
+        "real_value": "-0.20230947338869443"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.by_radius_model[1].r0_fm",
+        "value": "1.19999999999999995559107901499373838305473327636718750000000",
+        "real_value": "1.2"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.by_radius_model[1].t_residual_MeV",
+        "value": "-0.202309473388694427420375632209470495581626892089843750000000",
+        "real_value": "-0.20230947338869443"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.by_radius_model[2].r0_fm",
+        "value": "1.76000000000000000888178419700125232338905334472656250000000",
+        "real_value": "1.76"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.by_radius_model[2].t_residual_MeV",
+        "value": "-0.202309473388694427420375632209470495581626892089843750000000",
+        "real_value": "-0.20230947338869443"
+      },
+      {
+        "file": "computations/kappa-coulomb-reconciliation.witness.json",
+        "field": "data.he4_residual_MeV",
+        "value": "0.0222529111087397570012402781003402196802198886871337890625000",
+        "real_value": "0.022252911108739757"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "parameters.radius_models[0].r0_fm",
+        "value": "1.41381693076303638356705505429999902844429016113281250000000",
+        "real_value": "1.4138169307630364"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "parameters.radius_models[1].r0_fm",
+        "value": "1.19999999999999995559107901499373838305473327636718750000000",
+        "real_value": "1.2"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "parameters.radius_models[2].r0_fm",
+        "value": "1.76000000000000000888178419700125232338905334472656250000000",
+        "real_value": "1.76"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "parameters.alpha_em_hbar_c_MeV_fm",
+        "value": "1.43996521992482051643946761032566428184509277343750000000000",
+        "real_value": "1.4399652199248205"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[0].delta_B_observed_MeV",
+        "value": "0.763754879999999580775238428032025694847106933593750000000000",
+        "real_value": "0.7637548799999996"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[0].by_radius_model.derived (reduced pion Compton wavelength).r0_fm",
+        "value": "1.41381693076303638356705505429999902844429016113281250000000",
+        "real_value": "1.4138169307630364"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[0].by_radius_model.empirical heavy-nucleus saturation constant.r0_fm",
+        "value": "1.19999999999999995559107901499373838305473327636718750000000",
+        "real_value": "1.2"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[0].by_radius_model.implied by the measured 3He charge radius.r0_fm",
+        "value": "1.76000000000000000888178419700125232338905334472656250000000",
+        "real_value": "1.76"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[1].delta_B_observed_MeV",
+        "value": "3.53653199999999401370587293058633804321289062500000000000000",
+        "real_value": "3.536531999999994"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[1].by_radius_model.derived (reduced pion Compton wavelength).r0_fm",
+        "value": "1.41381693076303638356705505429999902844429016113281250000000",
+        "real_value": "1.4138169307630364"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[1].by_radius_model.empirical heavy-nucleus saturation constant.r0_fm",
+        "value": "1.19999999999999995559107901499373838305473327636718750000000",
+        "real_value": "1.2"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[1].by_radius_model.implied by the measured 3He charge radius.r0_fm",
+        "value": "1.76000000000000000888178419700125232338905334472656250000000",
+        "real_value": "1.76"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[2].delta_B_observed_MeV",
+        "value": "7.30683329999999386927811428904533386230468750000000000000000",
+        "real_value": "7.306833299999994"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[2].by_radius_model.derived (reduced pion Compton wavelength).r0_fm",
+        "value": "1.41381693076303638356705505429999902844429016113281250000000",
+        "real_value": "1.4138169307630364"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[2].by_radius_model.empirical heavy-nucleus saturation constant.r0_fm",
+        "value": "1.19999999999999995559107901499373838305473327636718750000000",
+        "real_value": "1.2"
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "data.mirror_pairs[2].by_radius_model.implied by the measured 3He charge radius.r0_fm",
+        "value": "1.76000000000000000888178419700125232338905334472656250000000",
+        "real_value": "1.76"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "parameters.published_kappa_MeV",
+        "value": "-1.07079075032658566080101536499569192528724670410156250000000",
+        "real_value": "-1.0707907503265857"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.anchors.3He.slope_MeV",
+        "value": "-1.07079075032658566080101536499569192528724670410156250000000",
+        "real_value": "-1.0707907503265857"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.anchors.3He.slope_in_h_E0_units",
+        "value": "-1.22358955707030436776960868883179500699043273925781250000000",
+        "real_value": "-1.2235895570703044"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.anchors.T.slope_MeV",
+        "value": "0.202309473388694427420375632209470495581626892089843750000000",
+        "real_value": "0.20230947338869443"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.anchors.T.slope_in_h_E0_units",
+        "value": "0.231178462140525176060634748864686116576194763183593750000000",
+        "real_value": "0.23117846214052518"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.anchors.4He.residual_MeV",
+        "value": "0.0222529111087397570012402781003402196802198886871337890625000",
+        "real_value": "0.022252911108739757"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.original_verdict.he3_slope",
+        "value": "-1.22358955707030436776960868883179500699043273925781250000000",
+        "real_value": "-1.2235895570703044"
+      },
+      {
+        "file": "computations/kappa-provenance.witness.json",
+        "field": "data.original_verdict.t_slope",
+        "value": "0.231178462140525176060634748864686116576194763183593750000000",
+        "real_value": "0.23117846214052518"
       }
     ]
   }
