@@ -72,7 +72,23 @@ class LpDualResult:
     duality_gap_str: Optional[str] = None
 
     def to_dict(self) -> dict:
-        return {
+        """Serialize both sides of the LP.
+
+        The numeric fields are kept verbatim: every existing consumer does
+        arithmetic on them (`sum(r["y_star"] ...)`, `r["duality_gap"] < 1e-6`),
+        so turning them into strings here would break readers silently rather
+        than loudly.
+
+        When the clarabel-MPFR backend supplied full-precision decimals, they
+        are emitted ALONGSIDE as `*_str`. Before this, `_lp_result_from_dict`
+        kept them on the dataclass (bean `qou-t0rf`) but `to_dict` dropped them
+        again, so a ~50-dps solve still reached its witness as f64 — the same
+        truncation qou-t0rf fixed one layer up, re-applied at the last step.
+        `None` on the scipy path, which has nothing beyond f64 to report; the
+        key is omitted rather than emitted as null, so a reader can use
+        `"y_star_str" in d` to ask "was this solved at precision?".
+        """
+        d = {
             "x_star": list(self.x_star),
             "y0_star": float(self.y0_star),
             "y_star": list(self.y_star),
@@ -82,6 +98,17 @@ class LpDualResult:
             "duality_gap": float(self.duality_gap),
             "feasible": bool(self.feasible),
         }
+        for key, val in (
+            ("x_star_str", self.x_star_str),
+            ("y0_star_str", self.y0_star_str),
+            ("y_star_str", self.y_star_str),
+            ("primal_obj_str", self.primal_obj_str),
+            ("dual_obj_str", self.dual_obj_str),
+            ("duality_gap_str", self.duality_gap_str),
+        ):
+            if val is not None:
+                d[key] = list(val) if isinstance(val, (list, tuple)) else str(val)
+        return d
 
 
 def solve_frobenius_dual_lp(
