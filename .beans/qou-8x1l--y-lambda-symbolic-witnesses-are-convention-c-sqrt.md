@@ -177,3 +177,35 @@ D sum 0.5750909 — a 1.4e-4 relative gap that is far too large to be precision
 and is not explained. Candidates: a different braid normalisation in the peel
 path, a writhe/framing factor, or a third convention. Which of peel / bridge /
 Σ y^D χ is canonical D is **not** established here.
+
+## The D-looking `z` in the tr_M bridge is in its SELF-TEST
+
+`tr_m_wenzl_bridge_mpfr.py:573` reads `z = q**3 / (q**2 + 1)` — convention D
+— which is why I first read the module as already migrated. It is inside
+`if __name__ == "__main__":`. The library function actually called by
+`atomic_tr_m_mpfr_50dps.py` is `tr_M_via_wenzl_bridge_mpfr` at line 373, and
+it does not use that `z`.
+
+So the module **greps as convention D while the live path is not**. Any
+text-or-grep-based convention audit clears it falsely. This is the same
+lesson as the symbolic blind spot, one level further out: the detector sees
+the bytes, not the execution.
+
+Re-running the producer confirms it — the regenerated witness still records
+the bridge value (0.38835718…), not peel (0.57517233…). Regeneration with
+current code does **not** move this witness to D.
+
+**Reverted my re-run.** It changed the committed deuteron value by 1.8e-4
+(0.38828647 → 0.38835718) without resolving anything, and I could not state
+what that shift means. A witness whose number I cannot explain should not be
+committed.
+
+## Where this leaves the chain
+
+- `y_λ` symbolic: **migrated to D and independently validated** (Rust,
+  1.2e-15). Landed.
+- `tr_M`: still bridge/C-side. Its producer's two internal paths disagree by
+  48% every run, and which one is canonical D is **not** established.
+- `rho_k_h3a_refinement`: still exit 2. It cannot pass until the `tr_M` layer
+  is decided, and that decision is above what I should take unilaterally —
+  it changes the nucleon-mass inputs.
