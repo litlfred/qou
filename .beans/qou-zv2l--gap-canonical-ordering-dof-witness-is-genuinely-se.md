@@ -1,10 +1,11 @@
 ---
 # qou-zv2l
 title: 'GAP: canonical-ordering-dof witness is genuinely self-stale on scriptHash (producer re-run needed)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-10T12:56:59Z
-updated_at: 2026-08-10T12:56:59Z
+updated_at: 2026-08-10T14:37:08Z
 ---
 
 
