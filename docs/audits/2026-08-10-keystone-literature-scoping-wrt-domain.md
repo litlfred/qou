@@ -3,10 +3,13 @@
 **Date:** 2026-08-10
 **Audit type:** literature scoping for `conj:s5-so3-fiber-action` (the s5-so3 keystone)
 **Bean:** follow-on to `qou-1nvh`; PR #4952
-**Tier — READ THIS FIRST:** everything below is at **search-result tier**, not
-read-tier. I searched, I did not read the papers. No claim here is a corpus
-finding, nothing is refuted, and nothing should be cited as established until
-someone reads the sources. What this doc is for is *aiming* that reading.
+**Tier — UPGRADED 2026-08-10 (same day).** This doc was written at search tier.
+The owner then uploaded three of the six papers (commit
+[`95accb15`](https://github.com/litlfred/qou/commit/95accb153a132df290605fd2ad27930b2a47b8f9):
+1106.6298, 1511.05628, 2605.15740), so **§3(b) is now READ TIER and confirmed by
+direct quotation** — see §7. The rest of the doc (the reading list, the route
+table) remains a plan. Items 1 (math/0605314), 4 (1411.6062) and 5 (2412.04241)
+are still unread, and item 5 is still the one most likely to change the picture.
 
 ---
 
@@ -156,3 +159,104 @@ query in this sandbox, including the trivial control query "knot theory"**. That
 is a broken/blocked tool, not a null result — do not read its silence as "no such
 literature". `WebSearch` with `allowed_domains: ["arxiv.org"]` worked and produced
 everything above.
+
+
+---
+
+## §7 READ-TIER CONFIRMATION (2026-08-10, owner-supplied papers)
+
+Three of the six arrived as [`95accb15`](https://github.com/litlfred/qou/commit/95accb153a132df290605fd2ad27930b2a47b8f9).
+§3(b) survives contact with the sources, and the mechanism turns out to be
+sharper than "native domain".
+
+### 7.1 The domain statement, quoted
+
+**Beliakova–Le, arXiv:1106.6298 §1** defines the Habiro ring as the
+`(q;q)_k`-adic completion
+
+    Ẑ[q] := lim←_k  Z[q] / ((q;q)_k),      (q;q)_k = ∏_{j=1..k} (1 − q^j)
+
+and states:
+
+> "Every element f(q) ∈ Ẑ[q] can be considered as a function whose domain is the
+> set of roots of unity. Moreover, there is a natural Taylor series for f at
+> every root of unity. [...] two elements f, g ∈ Ẑ[q] are the same if and only if
+> their Taylor series at a root of unity coincide."
+
+and, for the invariant itself:
+
+> "For any integral homology 3-sphere M, Habiro constructed a unified invariant
+> J_M whose evaluation at any root of unity coincides with the value of the WRT
+> invariant at that root."
+
+So §3(b) is confirmed as written.
+
+### 7.2 The mechanism — why, not just that
+
+An element is an infinite sum `Σ_k f_k(q)·(q;q)_k`, so `(q;q)_k` governs
+convergence, and it does three different things. Measured at the canonical
+50-dps `q₀` by
+[`habiro_domain_substrate_anchor_probe.py`](../../computations/probes/habiro_domain_substrate_anchor_probe.py):
+
+| k | \|(q₀;q₀)_k\| — substrate, q₀ ≈ 1.10998 | \|(1/q₀;1/q₀)_k\| — bar-conjugate ≈ 0.9009 |
+|--:|--:|--:|
+| 5 | 0.0033 | 0.00070 |
+| 20 | 1.165×10⁴ | 3.55×10⁻⁶ |
+| 30 | 1.953×10¹⁵ | 1.66×10⁻⁶ |
+| 80 | **7.334×10¹⁴⁰** | 1.11×10⁻⁶ |
+
+with `(1/q₀;1/q₀)_∞ = 1.109×10⁻⁶` (converges, nonzero), and at a primitive 5th
+root of unity `|(z;z)_k| = 5.0, 7.5×10⁻⁴¹, 8.9×10⁻⁴¹` for k = 4, 5, 6 — i.e.
+**exactly zero for k ≥ 5**, so the sum terminates.
+
+Three regimes, then:
+
+- **root of unity** — terminates. This is *why* the domain is the roots of unity;
+  it is not a convention.
+- **|q| < 1** — bounded, so convergence is possible (necessary, not sufficient).
+- **|q| > 1, the substrate anchor** — diverges super-exponentially.
+
+**Consequence, and it is the point of this section.** The `(q;q)_k`-adic
+completion that makes roots of unity evaluable is the *same* one that makes real
+`q > 1` diverge. So "continue the unified-WRT element to `q₀`" is not a harder
+evaluation of a thing we have — it asks for something the object does not have.
+Scope-(a) on the Habiro/unified-WRT route; it excludes no ingredient elsewhere,
+and says nothing about state integrals.
+
+### 7.3 The other two uploads keep everything at roots of unity
+
+- **Dimofte–Garoufalidis, arXiv:1511.05628 §1**: a quantum modular form is "a
+  complex valued function f on the set of complex roots of unity that comes
+  equipped with a suitable formal power series expansion φ_ζ(ℏ) ∈ C[[ℏ]] at each
+  complex root of unity ζ", appearing "in the asymptotics of the Kashaev
+  invariant at each root of unity". Confirms the route table's middle row:
+  asymptotics *near* roots of unity, not values at `|q| > 1`.
+- **Lovejoy–Osburn–Störzer, arXiv:2605.15740 (2026)**: "Habiro's construction of
+  the unified WRT invariant subsequently recast this result as an identity for a
+  q-hypergeometric series **at roots of unity**. This motivated Hikami to prove
+  analogous q-series identities involving the unified WRT invariants of certain
+  **Brieskorn homology spheres**." So the newest paper covers the keystone's own
+  manifold family — and still at roots of unity.
+
+### 7.4 A lead this opens — the bar-conjugate point
+
+`1/q₀ ≈ 0.9009` is in the convergent regime, and the framework already threads a
+bar-involution `q ↔ q⁻¹` throughout (bar-even/bar-odd channels, the proved
+`θ_{λ′} = θ_λ⁻¹` chirality law, the Q_β cosh/sinh split). Whether the unified-WRT
+series converges at the bar-conjugate of the substrate anchor, and can be
+bar-transported back, is a sharp question that nothing here answers.
+
+**Stated as a lead, with its caveat.** Bounded `(q;q)_k` is **necessary, not
+sufficient**: convergence of `Σ_k f_k·(q;q)_k` also needs the `f_k` not to grow
+faster, and a Habiro element is only specified up to the completion, so a
+convergent evaluation at `|q| < 1` is not automatic and is *not* implied by
+anything measured above. Do not record this as a route until someone bounds the
+`f_k` for a specific Σ(2,3,5) series.
+
+### 7.5 What is still unread
+
+math/0605314 (the foundational unified-WRT paper), 1411.6062 (state integrals at
+rational points — the analytic route, and the one that could still reach `q₀`),
+and 2412.04241 (*The Habiro ring of a number field*, Dec 2024 — still the most
+likely to have relaxed the domain restriction). The §5 prohibitions continue to
+apply to those three.
