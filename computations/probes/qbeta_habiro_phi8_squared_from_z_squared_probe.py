@@ -286,7 +286,20 @@ def extract_helium_witnesses(u):
         result = {}
         for e in coeffs_list:
             m = e["m"]
-            a_m = sp.sympify(e["a_m"].replace("^", "**"), locals={"check_q": u})
+            # BOTH names, and this function in particular must have both: it
+            # is applied to the atomic witness (strings in `check_q`) AND to
+            # helium-3 / helium-4 (strings in `u`), and the pairs below
+            # SUBTRACT one from the other. With `check_q` mapped alone, a
+            # "u"-string parsed to a fresh Symbol('u') carrying no
+            # assumptions — not equal to the `u` above, which is positive and
+            # real — so the two operands were different symbols that both
+            # print as "u", and the difference never collected:
+            #     he3.a_1 − D.a_1  =  -3392*u + 1072*u - 2288   (2 symbols)
+            #     correct          =  -2320*u - 2288            (1 symbol)
+            # The wrong form reads as merely uncollected terms, which is why
+            # it survived: nothing raises, and the display looks plausible.
+            a_m = sp.sympify(e["a_m"].replace("^", "**"),
+                             locals={"u": u, "check_q": u})
             result[m] = a_m
         return result
 
