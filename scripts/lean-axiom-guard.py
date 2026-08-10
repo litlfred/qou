@@ -83,6 +83,18 @@ QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.rotate_angle
 QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.volume_eq_dilog | clean
 QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTriangulation.volume_eq_dilog | clean
 QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.param_prod | clean
+# The birthday-axiom DEFECT REPORT (same PR).  These are proofs that a two-valued
+# `flatBirthday` satisfies the six SurrealField birthday axioms — i.e. that the
+# axioms admit a model that is not Conway's birthday.  A NEGATIVE result, so it is
+# worth pinning for the opposite reason to the others: if one of these ever fails,
+# the axioms were strengthened and the defect report needs re-checking, not
+# quietly deleting.  The last two are the birthday-free analytic content.
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_add_le | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_neg | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_ofReal_le_omega | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.tendstoReal_le_of_eventuallyLE' | clean
 """
 
 

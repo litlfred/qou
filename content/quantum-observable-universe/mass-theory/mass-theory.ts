@@ -604,6 +604,7 @@ export default chapter({
         "ideal-tetrahedron-law-of-sines",
         "kummer-identity-radial-reduction",
         "ideal-tetrahedron-volume-well-defined",
+        "birthday-axioms-underdetermine",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
