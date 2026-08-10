@@ -130,3 +130,54 @@ is already convention D — so it is available as soon as the muon table is.
 2. Re-run `atomic_tr_m_mpfr_50dps.py`.
 3. Re-run `rho_k_h3a_lp_dual.py`; compare `sw_err` against the **symbolic**
    `tr_M`, not the bridge one, for an independent verdict on the weights.
+
+## Second producer-level `z` site — `binding_k_enumerator.py:150`
+
+```python
+def stabilization_factor_z(q: float = Q0) -> float:
+    """z = 1/(q^{1/2} + q^{-1/2}) — the Jones–Markov stabilization factor."""
+    return 1.0 / (q ** 0.5 + q ** (-0.5))
+```
+
+Convention C, hardcoded, in a producer — and invisible to
+`convention-c-producer-audit.py` for the same reason `regenerate_y_lambda_mpfr`'s
+`z` was: **the audit keys on `y_lambda`, not on `z`.** That is now two confirmed
+producer-level `z` sites found only by reading code, which is the strongest
+evidence yet that "the producer layer is fully convention D, 178 actionable → 0"
+is measuring a narrower thing than its name suggests.
+
+**But do not "fix" this one blind.** Its only use is line 351:
+
+```python
+historical_markov_at_braid * (z ** (n_0 - n_braid))
+```
+
+and `historical_markov_at_braid` is exactly the *preserved historical field*
+`qou-eea0` already documented in this witness (alongside
+`stabilization_z: 0.4993203341836945`). Scaling a historical convention-C value
+by the convention-C stabilization factor may be precisely correct — history is
+allowed to stay convention C provided it says so.
+
+What **is** wrong regardless of that:
+
+* the docstring states `z = 1/(q^{1/2} + q^{-1/2})` as *the* Jones–Markov
+  stabilization factor, flatly, as general fact — under convention D it is
+  `z_D = q³/(q²+1)`;
+* the function name `stabilization_factor_z` is generic, so any future caller
+  wanting "the" stabilization factor silently gets convention C.
+
+Minimum repair: rename to `stabilization_factor_z_conventionC` (or add an
+explicit `convention` argument) and make the docstring say the value is
+convention C, retained for the historical comparison. That keeps the number and
+removes the trap.
+
+### This does NOT explain the timeout
+
+`binding_k_enumerator` ran 616 s pre-migration and now exceeds 3600 s, and that
+is still unexplained. The `z` above is a single scalar multiply and cannot cost
+time. The likelier candidate is the PSD admissibility filter — `psd =
+K_eval["alpha_gap"] <= 1e-6` (line 403) over the `L` enumeration (line 218) — no
+longer pruning as hard once the convention-D weights put exact zeros into the
+matrices, so more candidates survive to the expensive `eigvalsh` stage. That is
+a hypothesis from reading, **not** a measurement; it needs the producer run with
+timing instrumentation to confirm or kill.
