@@ -308,6 +308,65 @@ def reconstruct(coeffs_data, check_q, max_m=20):
     return sp.expand(total)
 
 
+class HabiroReconstructionFailed(RuntimeError):
+    """A witness was asked for its coefficients while flagging its own
+    reconstruction check as failed."""
+
+
+def load_a_m(slug, sym, witness_dir=None, *, allow_failed_reconstruction=False):
+    """Load `habiro-coefficients-<slug>.witness.json` as {m: a_m expression}.
+
+    REFUSES a witness whose own `reconstruction_matches` is false (owner
+    ruling, bean qou-s41x). That flag is the producer's statement that the
+    coefficients it is handing you do not rebuild the polynomial they came
+    from; a reader that takes them anyway is building on something the
+    producer already disowned. Every previous reader ignored it — three
+    verbatim copies of this function, none of which looked at the flag,
+    while 21 of 25 witnesses advertised a failed self-check.
+
+    Refuse rather than warn: the consumers compose these into a mirror
+    difference and read off a cyclotomic multiplicity, and a warning on
+    stderr in a long batch run is indistinguishable from no warning at all.
+    That is how `phi_8_mult: 0` stayed published against a documented
+    scaling law.
+
+    `allow_failed_reconstruction=True` is the deliberate override, for
+    diagnosing a bad witness rather than computing with it. It exists so
+    that the escape hatch has to be written down at the call site.
+
+    Both symbol names are mapped onto `sym` for the reason in `reconstruct`
+    above: whether a string says `u` or `check_q` is a property of which
+    producer wrote the file, not of the format (bean qou-0ndb).
+    """
+    import json
+    from pathlib import Path
+
+    base = Path(witness_dir) if witness_dir is not None else Path(__file__).resolve().parent
+    path = Path(base) / f"habiro-coefficients-{slug}.witness.json"
+    if not path.exists():                       # cluster subdir layout
+        alt = Path(base).parent / f"habiro-coefficients-{slug}.witness.json"
+        if alt.exists():
+            path = alt
+    data = json.loads(path.read_text())
+
+    matches = data.get("reconstruction_matches")
+    if matches is False and not allow_failed_reconstruction:
+        raise HabiroReconstructionFailed(
+            f"{path.name} carries reconstruction_matches: false — its own "
+            f"check says these coefficients do not rebuild p(u). Refusing to "
+            f"hand them to a caller. Regenerate the witness from its "
+            f"producer; pass allow_failed_reconstruction=True only to "
+            f"diagnose the file, not to compute with it."
+        )
+
+    out = {}
+    for c in data.get("habiro_coefficients", []):
+        out[c["m"]] = sp.sympify(
+            c["a_m"].replace("^", "**"), locals={"u": sym, "check_q": sym}
+        )
+    return out
+
+
 def analyse_atomic_braid(label, Z, N, include_inter, q):
     print(f"\n── {label} (Z={Z}, N={N}) ──")
     p_q = markov_trace_symbolic(Z, N, q, include_inter=include_inter)

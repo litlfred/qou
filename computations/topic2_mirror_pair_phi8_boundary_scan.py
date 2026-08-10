@@ -50,6 +50,7 @@ if str(HERE) not in sys.path:
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
 
 
 MIRROR_PAIRS = [
@@ -73,13 +74,10 @@ def main() -> int:
     cyc_8_sq = cyc_8 ** 2
 
     def load_a_m(slug):
-        d = json.load(open(HERE / f"habiro-coefficients-{slug}.witness.json"))
-        out = {}
-        for c in d.get('habiro_coefficients', []):
-            m = c['m']
-            a_m_str = c['a_m'].replace('^', '**')
-            out[m] = sp.sympify(a_m_str, locals={'u': u, 'check_q': u})
-        return out
+        # Delegates to the shared loader, which REFUSES a witness flagging its
+        # own reconstruction_matches false (bean qou-s41x). This was one of
+        # three byte-identical copies, none of which consulted that flag.
+        return _load_a_m(slug, u, witness_dir=HERE)
 
     def q_poch(m):
         if m == 0:
