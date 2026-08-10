@@ -113,8 +113,17 @@ def bar_idempotent_transposition_partition
     integer `[k]_q = (q^k - q^{-k}) / (q - q^{-1})` vanishes,
     Hoefsmit projectors fail, and the Jacobson radical becomes
     non-trivial.
+
+    Base ring (AGENTS.md §7c): the locus is cut out by the root-of-unity
+    equations `q^{2k} = 1` alone, which need only a multiplicative
+    monoid — no inverses, no field.  It is therefore stated over
+    `[Monoid R]`, the weakest class admitting the construction; the
+    Baer-* statements below still instantiate it at their `[Field R]`.
+    (The *reason* the locus matters — the vanishing of `[k]_q`, which
+    does involve a quotient — lives in the surrounding theory, not in
+    this definition.)
     -/
-def failure_locus (n : ℕ) (R : Type*) [Field R] : Set R :=
+def failure_locus (n : ℕ) (R : Type*) [Monoid R] : Set R :=
   { q : R | ∃ k : ℕ, 2 ≤ k ∧ k ≤ n ∧ q ^ (2 * k) = 1 }
 
 /- The Volume Conjecture asymptotic regime is contained in the
