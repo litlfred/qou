@@ -209,3 +209,33 @@ committed.
 - `rho_k_h3a_refinement`: still exit 2. It cannot pass until the `tr_M` layer
   is decided, and that decision is above what I should take unilaterally —
   it changes the nucleon-mass inputs.
+
+## Provenance detector built (landed) — 695 suspect, not 55
+
+`scripts/convention-c-taint.py`. Seeds from the three content tests, then
+fixpoints "a producer that reads a tainted witness emits tainted witnesses".
+
+Three configurations, because the first two fail in opposite directions:
+
+| edges followed | suspect | verdict |
+|---|---|---|
+| witness refs in the producer's own text | 272 | **misses** `atomic-tr-m` |
+| + every ref in imported modules | 1964 (75%) | no signal |
+| + only refs in a **read context** | **695** | catches it at depth 1 |
+
+Import-following is required because the filename literal is usually one
+module away: `atomic_tr_m_mpfr_50dps.py` names no witness at all — the
+`y-lambda-mpfr-witness.json` read lives inside
+`tr_m_wenzl_bridge_mpfr._load_y_lambda`.
+
+**The selftest paid for itself immediately** by failing on a real bug rather
+than on the test: `WITNESS_REF` matched `\.witness\.json`, but 13 witnesses
+are named `foo-witness.json` — the `y_λ` family among them. The **harness
+carried the identical regex**, so its dependency ordering has been silently
+dropping exactly the edges that matter most here. Fixed in both; orphans
+27 → 26, seeds 47 → 53.
+
+Calibration: a taint is provenance-**suspect**, not proved C — a producer may
+read a tainted witness and never use the affected field. It is a review queue
+ordered by distance from a seed; the script exits 0 by design. The strong half
+is the converse: untainted *and* failing no content test is clean on both axes.
