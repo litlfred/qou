@@ -1,0 +1,1387 @@
+{
+  "schema": "convention-d-blast-radius/v1",
+  "changed_upstreams": [
+    "atomic-tr-m-mpfr-50dps.witness.json",
+    "y-lambda-mpfr-proton-witness.json",
+    "y-lambda-mpfr-witness.json",
+    "y-lambda-wenzl-bridge-symbolic-witness.json"
+  ],
+  "direct_reader_count": 146,
+  "note": "Producers that read a witness moved to convention D. Their committed witnesses are stale as of that migration. This is a regeneration QUEUE, not a verdict: a reader may not use the affected field.",
+  "producers": [
+    {
+      "producer": "_habiro_coefficient_extract.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "habiro-coefficients-beryllium-10.witness.json",
+        "habiro-coefficients-beryllium-6.witness.json",
+        "habiro-coefficients-beryllium-7.witness.json",
+        "habiro-coefficients-beryllium-8.witness.json",
+        "habiro-coefficients-beryllium-9.witness.json",
+        "habiro-coefficients-boron-10.witness.json",
+        "habiro-coefficients-boron-12.witness.json",
+        "habiro-coefficients-boron-8.witness.json",
+        "habiro-coefficients-boron-9.witness.json",
+        "habiro-coefficients-carbon-10.witness.json",
+        "habiro-coefficients-carbon-14.witness.json",
+        "habiro-coefficients-deuteron.witness.json",
+        "habiro-coefficients-helium-3.witness.json",
+        "habiro-coefficients-helium-4.witness.json",
+        "habiro-coefficients-helium-5.witness.json",
+        "habiro-coefficients-helium-6.witness.json",
+        "habiro-coefficients-lithium-5.witness.json",
+        "habiro-coefficients-lithium-6.witness.json",
+        "habiro-coefficients-lithium-7.witness.json",
+        "habiro-coefficients-lithium-8.witness.json",
+        "habiro-coefficients-mass-table-summary.witness.json",
+        "habiro-coefficients-neutron.witness.json",
+        "habiro-coefficients-nitrogen-12.witness.json",
+        "habiro-coefficients-oxygen-14.witness.json",
+        "habiro-coefficients-proton.witness.json",
+        "habiro-coefficients-tritium.witness.json"
+      ]
+    },
+    {
+      "producer": "atom_vhyp_bar_trace_test.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "atom-vhyp-bar-trace-test.witness.json"
+      ]
+    },
+    {
+      "producer": "atomic_mass_via_rho_k.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "atomic-mass-via-rho-k.witness.json"
+      ]
+    },
+    {
+      "producer": "atomic_tr_m_helium4.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "atomic-tr-m-helium4.witness.json"
+      ]
+    },
+    {
+      "producer": "atomic_tr_m_helium4_canonical.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "atomic-tr-m-helium4-canonical.witness.json"
+      ]
+    },
+    {
+      "producer": "atomic_tr_m_mpfr_50dps.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "atomic-tr-m-mpfr-50dps-proton.witness.json",
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ]
+    },
+    {
+      "producer": "averaged_block_swap_binding.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "averaged-block-swap-binding.witness.json"
+      ]
+    },
+    {
+      "producer": "b4_connected_bar_parity_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "b4-connected-bar-parity.witness.json"
+      ]
+    },
+    {
+      "producer": "b4_exchange_perron_frobenius_constraint.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "b4-exchange-perron-frobenius-constraint.witness.json"
+      ]
+    },
+    {
+      "producer": "b4_multiplicative_cumulant_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "b4-multiplicative-cumulant.witness.json"
+      ]
+    },
+    {
+      "producer": "b4_nonsaturating_mstar_diagnostic.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "b4-nonsaturating-mstar-diagnostic.witness.json"
+      ]
+    },
+    {
+      "producer": "b_pred_mirror_slope_closed_form.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "b-pred-mirror-slope-closed-form.witness.json"
+      ]
+    },
+    {
+      "producer": "bar_pairing_binding_observable.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "bar-pairing-binding-observable-extension.witness.json",
+        "chi-deuteron-free-h6-at-q0-50dps.witness.json",
+        "chi-helium-4-free-h12-at-q0-50dps.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_K_direct.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-K-direct.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_bring_enhancement_compare.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "binding-bring-enhancement-compare.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_canonical.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "ame-2020-binding-energies.witness.json",
+        "binding-canonical.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_color_vs_charge_tn3he.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "binding-color-vs-charge-tn3he.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_color_vs_charge_tn3he_perknot_rerun.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "binding-color-vs-charge-tn3he-perknot-rerun.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_combiner_markov_peel_fallback.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "binding-combiner-markov-peel-fallback.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_error_source.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-error-source.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_factor_f_pair_count.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-factor-f-pair-count.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_factor_f_sequence.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-factor-f-sequence.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_link_volumes.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-link-volumes.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_log_free_energy.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-log-free-energy.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_log_scale_investigation.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-log-scale-investigation.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_multibond_wenzl.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-multibond-wenzl.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_observe_last.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-observe-last.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_perblock_bond_type_a3.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "binding-perblock-bond-type-a3.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_qbeta_aw_recurrence_probe.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-qbeta-aw-recurrence-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_shell_enhancement_derivation.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-shell-enhancement-derivation.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_triangle_3body_cluster_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "binding-triangle-3body-cluster.witness.json"
+      ]
+    },
+    {
+      "producer": "binding_volume_difference_probe.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "binding-volume-difference-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "block_swap_binding.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "block-swap-binding.witness.json"
+      ]
+    },
+    {
+      "producer": "borromean_markov_trace_h_expansion_50dps.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "borromean-markov-trace-h-expansion-50dps.witness.json"
+      ]
+    },
+    {
+      "producer": "build_six_term_substrate_model_b.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "build-six-term-substrate-model-b.witness.json"
+      ]
+    },
+    {
+      "producer": "c_alpha_alpha_categorical_via_jones_markov.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "c-alpha-alpha-categorical-via-jones-markov.witness.json"
+      ]
+    },
+    {
+      "producer": "canonical_ordering_dof_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "canonical-ordering-dof.witness.json"
+      ]
+    },
+    {
+      "producer": "canonical_tr_m_three_path_comparison.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "canonical-tr-m-three-path-comparison.witness.json"
+      ]
+    },
+    {
+      "producer": "cap_free_trm_prototype.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "cap-free-trm-prototype.witness.json"
+      ]
+    },
+    {
+      "producer": "casimir_n_unknot_construction.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "casimir-n-unknot-construction.witness.json"
+      ]
+    },
+    {
+      "producer": "casimir_xi_2_dig_deeper.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "casimir-xi-2-dig-deeper.witness.json"
+      ]
+    },
+    {
+      "producer": "charge_coulomb_tn3he_derived.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "charge-coulomb-tn3he-derived.witness.json"
+      ]
+    },
+    {
+      "producer": "charm_frobenius_block_projection_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "charm-frobenius-block-projection.witness.json"
+      ]
+    },
+    {
+      "producer": "chi_4he_via_rust_lossless.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "chi-at-q0-rust-lossless-helium-4.witness.json"
+      ]
+    },
+    {
+      "producer": "chi_at_q0_via_matrix_m_mpfr.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "chi-at-q0-matrix-m-deuteron.witness.json",
+        "chi-at-q0-matrix-m-tritium.witness.json"
+      ]
+    },
+    {
+      "producer": "chi_via_rust_lossless.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
+        "chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+        "chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+        "chi-tritium-h9-at-q0-50dps-matrix-m.witness.json",
+        "chi-via-rust-lossless-general.witness.json"
+      ]
+    },
+    {
+      "producer": "closed_form_tau_M_verification_phase5q.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "closed-form-tau-M-verification-phase5q.witness.json"
+      ]
+    },
+    {
+      "producer": "complex_volume_witness.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "complex-volume-unification.witness.json"
+      ]
+    },
+    {
+      "producer": "computations/probes/binding_additive_linked_cluster_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "binding-additive-linked-cluster-scan.witness.json"
+      ]
+    },
+    {
+      "producer": "computations/probes/interface_factor_categorical_derivation_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "interface-factor-categorical-derivation.witness.json"
+      ]
+    },
+    {
+      "producer": "connected_magnitude_charge_symmetric.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "connected-magnitude-charge-symmetric.witness.json"
+      ]
+    },
+    {
+      "producer": "constit_factor_varying_q_phase5k2.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "constit-factor-varying-q-phase5k2.witness.json"
+      ]
+    },
+    {
+      "producer": "cross_check_trM_1ppb.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "cross-check-trM-1ppb.witness.json"
+      ]
+    },
+    {
+      "producer": "cross_check_trM_wenzl_lr_1ppb.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "cross-check-trM-wenzl-lr-1ppb.witness.json"
+      ]
+    },
+    {
+      "producer": "d_from_scratch.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "d-from-scratch.witness.json"
+      ]
+    },
+    {
+      "producer": "delta_lambda_empirical_tabulation.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "delta-lambda-empirical-tabulation.witness.json"
+      ]
+    },
+    {
+      "producer": "delta_lambda_imme_quartet.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "delta-lambda-imme-quartet.witness.json"
+      ]
+    },
+    {
+      "producer": "delta_lambda_imme_triplet.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "delta-lambda-imme-triplet.witness.json"
+      ]
+    },
+    {
+      "producer": "derive_binding_bond_type.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "derive-binding-bond-type.witness.json"
+      ]
+    },
+    {
+      "producer": "derive_binding_chain_cooperative.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "derive-binding-chain-cooperative.witness.json"
+      ]
+    },
+    {
+      "producer": "derive_m_n_hecke_path_a.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "neutron-m_n-derivation.witness.json"
+      ]
+    },
+    {
+      "producer": "derive_m_p_hecke_full_tower_50dps.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "proton-mass-full-tower-50dps.witness.json"
+      ]
+    },
+    {
+      "producer": "deuteron_delta_i_audit.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "deuteron-delta-i-audit.witness.json"
+      ]
+    },
+    {
+      "producer": "deuteron_from_scratch_ledger.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "deuteron-from-scratch-ledger.witness.json"
+      ]
+    },
+    {
+      "producer": "deuteron_tr_M_symbolic.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "deuteron_tr_M_symbolic.witness.json"
+      ]
+    },
+    {
+      "producer": "flavor_split_partial_derivation_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "flavor-split-partial-derivation-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "gap_a3_deuteron_mixed_plethystic_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "gap-a3-deuteron-mixed-plethystic-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "gap_a4_He3_residual_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "gap-a4-He3-residual-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "gap_a4_L1_light_series_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "gap-a4-L1-light-series-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "gap_a4_S_K_additive_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "gap-a4-S-K-additive-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "gap_a4_T2_per_knot_vol_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "gap-a4-T2-per-knot-vol-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "graded_hecke_energy_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "graded-hecke-energy-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "gs_filtration_binding_components.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "gs-filtration-binding-components.witness.json"
+      ]
+    },
+    {
+      "producer": "habiro_coefficients_atomic.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "habiro-coefficients-atomic.witness.json"
+      ]
+    },
+    {
+      "producer": "habiro_coefficients_extended.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "habiro-coefficients-extended.witness.json"
+      ]
+    },
+    {
+      "producer": "habiro_coefficients_interpolate.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "habiro-coefficients-interpolate.witness.json"
+      ]
+    },
+    {
+      "producer": "he3_pairknot_clambda_coulomb_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "he3-pairknot-clambda-coulomb-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "he4_binding_k_stage2_probe.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "he4-binding-k-stage2.witness.json"
+      ]
+    },
+    {
+      "producer": "he_nu_sdp_barfold_h9_test.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "he-nu-sdp-barfold-h9-test.witness.json"
+      ]
+    },
+    {
+      "producer": "he_nu_sdp_psd_count_test.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "he-nu-sdp-psd-count-test.witness.json"
+      ]
+    },
+    {
+      "producer": "he_nu_sdp_saturation_obstruction.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "he-nu-sdp-saturation-obstruction.witness.json"
+      ]
+    },
+    {
+      "producer": "interface_4body_assembly_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "interface-4body-assembly.witness.json"
+      ]
+    },
+    {
+      "producer": "interface_factor_enhancing_check_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "interface-factor-enhancing-check.witness.json"
+      ]
+    },
+    {
+      "producer": "interface_operator_pairwise_ceiling_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "interface-operator-pairwise-ceiling.witness.json"
+      ]
+    },
+    {
+      "producer": "items_1_2_3_mw_strongforce_anchor_asymmetry.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "items-1-2-3-mw-strongforce-anchor-asymmetry.witness.json"
+      ]
+    },
+    {
+      "producer": "iterative_lp_dual_h6_deuteron.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "iterative-lp-dual-h6-deuteron.witness.json"
+      ]
+    },
+    {
+      "producer": "ka_additive_cluster_derivation_probe.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "ka-additive-cluster-derivation.witness.json"
+      ]
+    },
+    {
+      "producer": "linking_weight_canonical_object_lwfix.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "linking-weight-canonical-object-lwfix.witness.json"
+      ]
+    },
+    {
+      "producer": "markov_peel_atomic_witness.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "markov-peel-atomic-tr-m-muon.witness.json",
+        "markov-peel-atomic-tr-m.witness.json"
+      ]
+    },
+    {
+      "producer": "markov_trace_axiomatic_multi_atom.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "markov-trace-axiomatic-multi-atom.witness.json"
+      ]
+    },
+    {
+      "producer": "markov_trace_h4_natural_elements_prescreen.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "markov-trace-h4-natural-elements-50dps.witness.json"
+      ]
+    },
+    {
+      "producer": "mass_endomorphism.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "mass-endomorphism.witness.json"
+      ]
+    },
+    {
+      "producer": "mass_formula_6term_mpfr_50dps.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "mass-formula-6term-mpfr-50dps.witness.json"
+      ]
+    },
+    {
+      "producer": "mass_table_comprehensive.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "mass-table-comprehensive.witness.json"
+      ]
+    },
+    {
+      "producer": "meson_character_shortcut_l1.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "meson-character-shortcut-l1.witness.json"
+      ]
+    },
+    {
+      "producer": "meson_spectrum_predictions.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "meson-spectrum-predictions.witness.json"
+      ]
+    },
+    {
+      "producer": "meson_symmetry_and_bar_involution.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "meson-symmetry-bar-involution.witness.json"
+      ]
+    },
+    {
+      "producer": "mirror_split_milnor_one_third_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "mirror-split-milnor-one-third.witness.json"
+      ]
+    },
+    {
+      "producer": "option_e_isospin_probe.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "option-e-isospin-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "paper_six_term_isotope_sweep.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "paper-six-term-isotope-sweep.witness.json"
+      ]
+    },
+    {
+      "producer": "per_irrep_pole_atom.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "chi-helium-3-h9.witness.json",
+        "chi-neutron-h3.witness.json",
+        "chi-proton-h3.witness.json",
+        "chi-tritium-h9.witness.json",
+        "per-irrep-pole-deuteron-h6.witness.json",
+        "per-irrep-pole-neutron-h3.witness.json",
+        "per-irrep-pole-proton-h3.witness.json"
+      ]
+    },
+    {
+      "producer": "per_irrep_pole_atom_crystal.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "per-irrep-pole-atom-crystal.witness.json"
+      ]
+    },
+    {
+      "producer": "per_irrep_pole_deuteron_h6.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "chi-deuteron-h6.witness.json"
+      ]
+    },
+    {
+      "producer": "per_knot_mass_table_demonstration.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "per-knot-mass-table-demonstration.witness.json"
+      ]
+    },
+    {
+      "producer": "phase1a_symbolic_trace_dominant_h_expansion.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "phase1a-per-partition-h-expansion.witness.json"
+      ]
+    },
+    {
+      "producer": "phase1b_two_row_closed_form_character.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "phase1b-two-row-transfer-matrix.witness.json"
+      ]
+    },
+    {
+      "producer": "phase1c_proton_h3_symbolic_decomposition.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "phase1c-proton-h3-symbolic-decomposition.witness.json"
+      ]
+    },
+    {
+      "producer": "phase3_deuteron_tritium_h_expansion.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "phase3-deuteron-tritium-h-expansion.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_9b_alphak_structure.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-9b-alphak-structure.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_9b_gate_interface_algebra.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-9b-gate-interface-algebra.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_9b_laurent_degree_10a5.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-9b-laurent-degree-10a5.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_9b_manybody_expansion.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-9b-manybody-expansion.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_9b_perlambda_brane_tower.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-9b-perlambda-brane-tower.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_convention_d_vs_c_borromean.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-convention-d-vs-c-borromean.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_d_symbolic_prospects.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-d-symbolic-prospects.witness.json"
+      ]
+    },
+    {
+      "producer": "probe_path_a_net_vs_trm_leading_order.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "probe-path-a-net-vs-trm-leading-order.witness.json"
+      ]
+    },
+    {
+      "producer": "q_block_rmatrix_spectrum.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "q-block-rmatrix-spectrum.witness.json"
+      ]
+    },
+    {
+      "producer": "qbeta_ck_from_operator_markov_trace_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "qbeta-ck-from-operator-markov-trace-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "qbeta_ck_local_taylor_around_u0_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "qbeta-ck-local-taylor-around-u0-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "qbeta_h4_stagec_markov_infra.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "qbeta-h4-stagec-markov-infra.witness.json"
+      ]
+    },
+    {
+      "producer": "qbeta_multiblock_ck_lambda_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "qbeta-multiblock-ck-lambda-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "qbeta_perlambda_collapse_cancellation_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "qbeta-perlambda-collapse-cancellation.witness.json"
+      ]
+    },
+    {
+      "producer": "qbeta_route_alpha_lift_prediction.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "qbeta-route-alpha-lift-prediction.witness.json"
+      ]
+    },
+    {
+      "producer": "regenerate_y_lambda_mpfr.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "y-lambda-mpfr-proton-witness.json",
+        "y-lambda-mpfr-witness.json"
+      ]
+    },
+    {
+      "producer": "rho_constit_equals_tau_M_proton_phase5l.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "rho-constit-equals-tau-M-proton-phase5l.witness.json"
+      ]
+    },
+    {
+      "producer": "rho_k_co_casimir_extended.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "rho-k-co-casimir-extended.witness.json"
+      ]
+    },
+    {
+      "producer": "rho_k_h3a_crystal.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "rho-k-h3a-crystal.witness.json"
+      ]
+    },
+    {
+      "producer": "rho_k_h3a_lp_dual.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "rho-k-h3a-lp-dual.witness.json"
+      ]
+    },
+    {
+      "producer": "rho_k_h3a_refinement.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "rho-k-h3a-refinement.witness.json"
+      ]
+    },
+    {
+      "producer": "rho_k_h3a_wenzl_bridge.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "rho-k-h3a-wenzl-bridge.witness.json"
+      ]
+    },
+    {
+      "producer": "rho_k_markov_multiplicativity_probe.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "rho-k-markov-multiplicativity.witness.json"
+      ]
+    },
+    {
+      "producer": "sigma_shell_from_beta_chain.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "sigma-shell-from-beta-chain.witness.json"
+      ]
+    },
+    {
+      "producer": "su4_1111_markov_trace_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "su4-1111-markov-trace.witness.json"
+      ]
+    },
+    {
+      "producer": "su4_connected_1111_magnitude_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "su4-connected-1111-magnitude.witness.json"
+      ]
+    },
+    {
+      "producer": "symmetrized_constituent_general.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "symmetrized-constituent-general.witness.json"
+      ]
+    },
+    {
+      "producer": "tau_M_proton_closed_form_phase5l1.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "tau-M-proton-closed-form-phase5l1.witness.json"
+      ]
+    },
+    {
+      "producer": "torus_knot_markov_trace_closed_form.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "torus-knot-markov-trace-closed-form.witness.json"
+      ]
+    },
+    {
+      "producer": "tr_m_jones_markov_cross_check.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "tr-m-jones-markov-cross-check.witness.json"
+      ]
+    },
+    {
+      "producer": "tr_m_q_hecke_seminormal.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json"
+      ],
+      "writes": [
+        "tr-m-q-hecke-seminormal.witness.json"
+      ]
+    },
+    {
+      "producer": "trace_convention_reconciliation.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "trace-convention-reconciliation.witness.json"
+      ]
+    },
+    {
+      "producer": "tritium_8_11_jones_markov_probe.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "tritium-8-11-jones-markov-probe.witness.json"
+      ]
+    },
+    {
+      "producer": "y_lambda_at_q0_cache.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "y-lambda-at-q0.witness.json"
+      ]
+    },
+    {
+      "producer": "y_lambda_macdonald_telescope.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "y-lambda-macdonald-telescope.witness.json"
+      ]
+    },
+    {
+      "producer": "y_lambda_tower_infra.py",
+      "reads_changed": [
+        "y-lambda-mpfr-witness.json"
+      ],
+      "writes": [
+        "y-lambda-tower-infra.witness.json"
+      ]
+    },
+    {
+      "producer": "yekutieli_mi_h2_extraction.py",
+      "reads_changed": [
+        "atomic-tr-m-mpfr-50dps.witness.json",
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "yekutieli-mi-h2-extraction.witness.json"
+      ]
+    },
+    {
+      "producer": "yekutieli_volume_join.py",
+      "reads_changed": [
+        "y-lambda-wenzl-bridge-symbolic-witness.json"
+      ],
+      "writes": [
+        "yekutieli-volume-join.witness.json"
+      ]
+    }
+  ]
+}

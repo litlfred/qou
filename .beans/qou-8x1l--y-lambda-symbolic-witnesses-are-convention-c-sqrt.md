@@ -278,3 +278,33 @@ both **without** touching anchor selection.
 3. **Downstream regeneration.** tr_M moved +7.5% to +120% into the
    mass/binding layer. Every consumer needs re-running; the taint queue
    (`scripts/convention-c-taint.py`, 695 suspect) is how to enumerate them.
+
+## Blast radius of the D migration: 146 producers, 188 witnesses
+
+`.work/convention-d-blast-radius.json` (schema `convention-d-blast-radius/v1`).
+Every producer that reads one of the four witnesses moved to D
+(`atomic-tr-m-mpfr-50dps`, `y-lambda-mpfr`, `y-lambda-mpfr-proton`,
+`y-lambda-wenzl-bridge-symbolic`), with what each reads and writes.
+
+It is a regeneration **queue**, not a verdict — a reader may not touch the
+affected field. But `tr_M` moved +7.5% to +120%, so the ones that do are
+materially wrong now.
+
+Not swept in this session: 146 producers is beyond what one session can run
+(one alone, `per_irrep_pole_atom`, times out at 1800s), and #4928 owns bulk
+regeneration. Handing off the list rather than starting a sweep I cannot
+finish.
+
+## A blind spot in `--stale`, found by using it on my own change
+
+`--stale` reported the same 7 producers as before my migration — nothing new.
+Correct, and useless here: it uses the **journal's** append order as its
+clock, so it only sees producers run *through the harness*. I regenerated
+`y_λ` and `tr_M` **by hand**, so the migration is invisible to it.
+
+That is a real limitation of the mechanism, not of this run: any hand-run
+regeneration — which is how most one-off fixes happen — leaves `--stale`
+silently clean. Options are to stamp hand-runs into the journal, or to derive
+staleness from witness mtime/`scriptHash` against the graph instead of from
+run order. Not fixed here; recorded so the next agent does not trust a clean
+`--stale` as proof of consistency.
