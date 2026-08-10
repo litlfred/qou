@@ -14,8 +14,8 @@ export default remark({
   ],
   uses: [
     "def:information-speed-of-light",
-    "def:one-dim-qou-channel",
     "rem:photon-propagation-1d",
+    "def:one-dim-qou-channel",
   ],
   cites: [
     "amelinocamelia2001",

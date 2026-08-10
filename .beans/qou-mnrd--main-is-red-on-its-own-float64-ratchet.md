@@ -1,7 +1,7 @@
 ---
 # qou-mnrd
-title: 'origin/main is RED on its own raw-float64 ratchet — three witnesses landed undrained'
-status: todo
+title: 'main is RED on its own raw-float64 ratchet — 18 NEW + 2 REGRESSED (was 3 when opened)'
+status: in-progress
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-09T01:20:00Z
+updated_at: 2026-08-09T17:00:00Z
 ---
 
 ## The finding
@@ -319,3 +319,709 @@ Not 1485 undifferentiated fields. Roughly:
 The cheap half is a fifth of the fields and would take the ratchet from 18 NEW
 to 14 NEW — which does not make it green, so it does not on its own change the
 decision on #4729.
+
+---
+
+## 2026-08-09 — #4729 is MERGED; this bean is now the live item
+
+PR #4729 merged as `25387e2a4` with its title and body rewritten to say the
+ratchet is red, rather than the "goes green" claim it was opened with. So the
+one thing that was holding the honest statement out of `main` is gone: **`main`
+now carries the guard, the 15 drains, and an accurate account of what is still
+dirty.**
+
+Re-measured on `main` at `25387e2a4`:
+
+    NEW dirty witnesses : 18   (1,556 fields)
+    REGRESSED           : 2
+    drained since baseline : 6 file(s), -1,483 field(s)
+    exit code           : 1
+
+Unchanged from the pre-merge measurement, as expected — #4729 drained its own
+15 and none of the 18 is one of them. The `drained (progress)` line is #4729's
+work showing up against the baseline:
+
+    38 -> 0    computations/inverse-markov-qvalues.witness.json
+    30 -> 0    computations/jpsi-boundstate-mass.witness.json
+    73 -> 61   computations/multi-layer-gap-decomposition.witness.json
+    28 -> 21   computations/markov-free-energy-qvalues.witness.json
+    11 ->  4   computations/qbeta/qbeta-per-block-paper-closed-forms.witness.json
+    37 -> 36   computations/binding-canonical.witness.json
+
+## CLAIMED — the `deltalambda/threerow-*` cluster
+
+Working the cheap half (category 2, mpmath downcast): 4 producers, 296 fields.
+
+    126  computations/deltalambda/threerow-qcross-trend.witness.json
+     82  computations/deltalambda/threerow-crossing-a-dependence.witness.json
+     73  computations/deltalambda/threerow-4he-completion.witness.json
+     15  computations/deltalambda/threerow-sign-crossing.witness.json
+
+Branch: `claude/drain-deltalambda-threerow`, cut fresh from `main` at
+`25387e2a4` (#4729's branch is merged and must not be built on).
+
+**Not** claimed by this session: the `nastokes-*` + `alpha/*` numpy ports
+(1092 fields, 5 producers) and the residual 9 small ones including the qbeta
+trio. Those stay open for whoever takes them; do not assume this branch covers
+them.
+
+Expected outcome, stated up front so it can be checked rather than claimed:
+this takes 18 NEW -> 14 NEW. **It does not make the ratchet green.**
+
+---
+
+## CORRECTION — the `deltalambda/threerow-*` cluster is not what I said it was
+
+Above I claimed the four `threerow-*` witnesses were "the cheap half ... mpmath
+downcast ... no numpy at all ... same shape as the em-linking drains this PR
+already did". **Wrong on the diagnosis, and it hid a worse problem.** Checked by
+reading the producers and running them, not by grepping for `numpy`:
+
+**1. The f64 IS upstream, through a shared helper.** All four route χ^λ through
+one of two helpers (`threerow_sign_crossing_probe.chi_atom`,
+`threerow_chi_sparse.chi_atom_sparse`), and both call
+`hecke_characters.build_seminormal_matrices`, which does `q_local = float(q)`
+and returns numpy/scipy arrays. Each braid letter is then
+`float(c)·σ + float(d)·I`. So χ is f64 END TO END, whatever precision `q`
+carries in. Only 1 of the 4 files imports numpy itself — which is why a grep
+for numpy said "no" and the grep was measuring the wrong thing.
+
+**2. But the cluster is MIXED, not uniformly category 3.** Each witness carries
+two kinds of block:
+
+  * character-free (`G(q) = Σ y_λ(q)·Δ_λ`, `S_free`, the level ladder, the q
+    grids) — genuine 50-dps mpmath, `float()`-ed only at the sink. float64 was
+    discarding ~34 real digits.
+  * character-dressed (`F_K = Σ y_λ·χ^λ·Δ_λ` and everything derived from it) —
+    f64-limited by χ.
+
+So the drain is per-FIELD, not per-file, and both categories appear in every
+one of the four witnesses.
+
+## The thing that actually mattered: NONE of the four producers would run
+
+Not "carries float64" — **could not regenerate its own witness at all**, on
+`main`, today:
+
+    threerow_sign_crossing_probe.py         TypeError from reject_float64_q
+    threerow_crossing_a_dependence_probe.py TypeError from reject_float64_q
+    threerow_qcross_trend_probe.py          ModuleNotFoundError: scipy, then the same
+    threerow_4he_completion_probe.py        ModuleNotFoundError: scipy, then the same
+
+`reject_float64_q` landed in `efcaf79ed` (2026-08-08T19:29Z, "NO FLOAT64: the
+braid word was f64 at source"). It rejects any mpf equal to its own float64 —
+which includes the grid endpoint `q_lo = mpf("1.0001")`. Every one of these
+probes sweeps a grid that starts there, so every one of them dies on its first
+evaluation.
+
+The guard is RIGHT and is not the defect: a 50-dps pipeline must not be
+silently capped at 17 digits. Its own docstring prescribes the answer —
+"`allow_float64=True` is the escape for paths that are legitimately f64 ...  so
+the loss is declared at the call site instead of hidden" — and these probes are
+exactly that case, already saying so in prose in their PRECISION notes and
+witness caveats. What was missing was the machine-readable declaration. Added at
+the two χ helpers.
+
+**The frozen witnesses were CORRECT, just unreproducible.** After the
+declaration, `threerow-sign-crossing` regenerated with all 51 data leaves
+byte-identical. So this was not silent numeric drift; it was a producer that had
+stopped being runnable and nothing noticing for a day.
+
+### Why nothing noticed
+
+Same root as the rest of this bean. `witness-staleness.yml` is dispatch-only by
+owner decision, so no push has re-run these producers since 2026-06-30. A guard
+that breaks four producers is exactly what a push-triggered run catches on the
+next commit. This is the second concrete cost of the trigger-off window recorded
+in this bean (the first was the three qbeta witnesses); it is recorded as cost,
+not as an argument to re-open a decision that was asked and answered.
+
+### The blast radius is wider than these four
+
+`atom_braid_word_3A(..., q=...)` has 8 call sites across 6 files. Confirmed
+also broken by the same guard, and NOT fixed here:
+
+    computations/probes/gram_qtrace_hutchinson_probe.py
+
+Not established either way (both exceeded a 4-minute probe budget before
+reaching a verdict): `gram_norm_binding_probe.py`,
+`gram_transfer_quadratic.py`, `threerow_isospin_parity_probe.py`. Whoever picks
+those up: the fix is only `allow_float64=True` IF that call site's path really is
+f64 — check it, do not copy the annotation across on faith.
+
+## A gap in `str_at_true_precision`, found by diffing my own output
+
+The obvious drain is `float(x)` -> `str_at_true_precision(x)`, and it is WRONG
+here in the expensive direction. That helper's test is representational and
+exact — "is this mpf equal to its own float64?" — which is right for a pure f64
+kernel output. But `F = Σ y_λ(q)·χ^λ(β;q)·Δ_λ` MIXES a 50-dps mpmath weight with
+an f64 character, so the product is not a 53-bit dyadic, the helper keeps all 50
+digits, and ~34 of them are dyadic tail the χ kernel never supplied:
+
+    was (raw float64) : -0.1949663511459454
+    str_at_true_prec  : -0.19496635114594539089654509922868564866657011668554
+    correct           : -0.19496635114594539
+
+That middle line reads as measured and is WORSE than the float64 it replaced —
+a drain that makes the ratchet green while degrading the witness. Caught only by
+diffing every leaf against the pre-drain copy, which is now the routine for the
+rest of this cluster.
+
+Handled with a local `fmt_f64_limited` (= `fmt(x, 17)`) applied to whatever
+passes through the χ kernel, `str_at_true_precision` to everything else. NOTE
+the distinction it does not resolve: 17 digits is the f64 REPRESENTATION width,
+while the ACCURACY of this χ path is the ~1.5e-6 the probes measure themselves
+in `chi_vs_witness_max_rel_at_q0`. Serializing at 17 keeps the witness
+reproducible; the accuracy lives in a caveat. Both are stated in the witness.
+
+**This is a general hazard, not a threerow one.** Any producer combining an
+mpmath weight with an f64 kernel hits it, and `str_at_true_precision` cannot see
+it. Worth a follow-up: either teach the helper about mixed products (it would
+need provenance, which it deliberately does not track) or document the limit in
+its docstring so the next drain does not walk into it.
+
+## Two verdicts that were being decided in float64
+
+Not sink coercions — these reached into the computation, and are the reason the
+"just fix the sink" framing was wrong:
+
+  * `threerow_crossing_a_dependence_probe.scan_crossings` returned `float()`, so
+    the PHYSICAL vs DIAGNOSTIC classification (`q <= q₀`) compared an f64
+    crossing against a 50-dps q₀. No classification changes, but it was decided
+    at 1e-17 on a value resolved to ~1e-16.
+  * `threerow_qcross_trend_probe.exact_crossing_polys` had
+    `bool(float(a)**2 < float(Q_STAR))` where `a` is an EXACT sympy rational
+    bounding an isolated root — an exact bound round-tripped through f64 to be
+    compared with a 50-dps q*. Now decided in mpf.
+
+A third was latent: `qcross`'s monotonicity assertion reads the first crossing
+back out of the witness dict. Serializing crossings to strings would have made
+`seq[i+1] > seq[i]` a LEXICOGRAPHIC comparison and silently changed an
+assertion's meaning. The mpf values are kept in a parallel structure.
+
+## Undeclared dependency
+
+`threerow_chi_sparse.py` imports `scipy.sparse` at module scope with no
+fallback, so two of the four producers hard-require scipy. The repo has no
+top-level `requirements.txt` or `pyproject.toml` declaring it (only
+`qou-mass/pyproject.toml`, unrelated), and scipy was absent from this container
+until installed by hand. Recorded, not fixed: adding a dependency manifest is a
+structural change beyond this drain.
+
+### CORRECTION to the blast-radius note above: `gram_qtrace` is a DIFFERENT defect
+
+Above I wrote that `gram_qtrace_hutchinson_probe.py` is "confirmed also broken
+by the same guard" and told whoever picks it up that "the fix is only
+`allow_float64=True` IF that call site's path really is f64". **That advice
+would have been wrong here, and would have papered over a live wrong number.**
+
+Diagnosed properly: this probe never calls `set_compute_dps` at all. So `mp.dps`
+is still mpmath's default 15 when it runs
+
+    q0 = mp.mpf(str(_Q50))        # _Q50 = q_parameter.Q_50_DIGIT_STR
+
+and the 50-digit substrate anchor is TRUNCATED as it is parsed:
+
+    built at dps=15 : 1.109978582751380837834176      <- what the probe used
+    built at dps=50 : 1.109978582751380807591669      <- the anchor
+                                     ^ diverges at the 17th digit
+
+The guard is not a false positive and the sweep is not "deliberately f64" — it
+is catching a real truncation of q₀. The probe's own comment at that line claims
+the opposite ("50-dps source: `mpf(str(q_parameter.Q))` ... atom_braid_word_3A
+now rejects it"), i.e. someone already tried to fix this and the fix was
+ineffective because dps was never raised. `allow_float64=True` here would have
+silenced a correct guard and frozen the wrong anchor in place.
+
+Correct fix: `set_compute_dps(50)` before the first `mp.mpf(<50-digit string>)`.
+Applied. **This is the same defect class the bean already recorded once** — the
+`VOL_41` constant built at module scope above `set_compute_dps` in
+`one_loop_c_sigma_tetrahedral_probe.py`. Second instance, different producer,
+found by a different gate. A static `module_const_precision_audit` catches the
+module-scope form; this one is inside a function, so only running the producer
+finds it.
+
+**Not yet re-run**, so its witness is not regenerated here: the value of q₀ moves
+in the 17th digit, so its numbers will move and that needs its own verification
+pass rather than being folded into a drain commit.
+
+`threerow_sign_crossing_decomp.py` was ALSO blocked by the guard and now runs
+again as a side effect of the χ-helper declaration — it imports `chi_atom`.
+
+`threerow_n12_isospin_control.py` is broken for an unrelated reason (it does
+`import _path_bridge` without first putting `computations/` on `sys.path`, so it
+fails from every cwd). Pre-existing, produces no witness, not touched.
+
+---
+
+## DONE — the `deltalambda/threerow-*` four are drained. 18 NEW -> 14 NEW
+
+Branch `claude/drain-deltalambda-threerow` (cut fresh from `main` at
+`25387e2a4`; #4729's branch was merged and must not be built on). Pushed.
+
+    threerow-qcross-trend            126 -> 0
+    threerow-crossing-a-dependence    82 -> 0
+    threerow-4he-completion           73 -> 0
+    threerow-sign-crossing            15 -> 0
+                                     ----
+                                     296 fields
+
+Ratchet re-run on the result: `new_not_baselined` 18 -> 14, `total_fields`
+541,817 -> 541,521 (-296, exactly these four). `regressed` unchanged at 2 —
+neither is this branch's. **Still exits 1.** That was the stated expectation
+before starting, and it is met, not beaten: this was a fifth of the fields.
+
+**Nothing baselined, no `--rebaseline`, no number hand-edited.** The audit
+witness is regenerated because its COUNTS moved.
+
+### How each drain was verified
+
+Not "the ratchet went green" — that is the weakest possible check, and as
+recorded above a wrong drain can make it green while degrading the witness.
+Each producer was diffed leaf-by-leaf against a pre-drain copy:
+
+    witness                          fields  worst value move   assertions
+    threerow-sign-crossing            15/15   9.0e-17           3/3 identical
+    threerow-crossing-a-dependence    82/82   5.8e-15           6/6 identical
+    threerow-4he-completion           73/73   2.9e-15           4/4 identical
+    threerow-qcross-trend            126/126  1.1e-15           5/5 identical
+
+Every assertion record is byte-identical to the pre-drain witness, and every
+verdict is unchanged: D crosses and the n=9 crossings lie above the Wenzl pole;
+⁴He's physical sign +1 -> -1 with a crossing at 1.02092; q₀'s position
+COINCIDENTAL at 0.852 bits with 54 natural constants in the window.
+
+The largest moves are all in the character-free blocks, and they are moves
+TOWARD precision: those values were being truncated to f64 and now carry their
+real 50 dps. The f64-derived blocks did not move at all — they are byte-equal
+at 17 digits to what the float64 held.
+
+`threerow-sign-crossing` is the strongest evidence the frozen witnesses were
+correct: after only the `allow_float64` declaration and before any
+serialization change, it regenerated with all 51 data leaves IDENTICAL.
+
+### Cost, for the next person sizing the rest
+
+Wall clock, on this container, single runs:
+
+    threerow-sign-crossing              7 s
+    threerow-crossing-a-dependence     ~3 min
+    threerow-4he-completion            ~35 min   (n=12, 18-step bisection)
+    threerow-qcross-trend            5013 s      (n=12 grid + 30-step bisection)
+
+So ~1.5 h of compute for 296 fields. The `nastokes-*` + `alpha/*` numpy ports
+(1092 fields, 5 producers) are a different and larger job — a real port, not a
+serialization split — and nothing here reduces them.
+
+### Still open on this bean
+
+  * `nastokes-*` (4 files, 1001 fields) + `alpha/*` (1, 91) — numpy ports
+  * the qbeta trio (3 files, 35) — the bean's original three, still undrained
+  * 7 further small ones, and the 2 REGRESSED
+  * `gram_qtrace_hutchinson_probe.py` — dps-ordering fix applied and COMMITTED
+    (`02b612f96`); witness NOT regenerated. The producer gets past the guard now
+    but outruns this container: no output after 4 min, and a background run was
+    killed at ~10 min CPU (16 GB free, so slowness rather than memory). Its q₀
+    moves in the 17th digit, so its numbers will move — that needs its own
+    verification pass, and `gram-qtrace-hutchinson-probe.witness.json` is
+    known-stale until someone does it.
+  * `gram_norm_binding_probe.py`, `gram_transfer_quadratic.py`,
+    `threerow_isospin_parity_probe.py` — never established whether the guard
+    breaks them; each exceeded a 4-minute probe budget before reaching a verdict
+
+---
+
+## Second batch: 14 NEW -> 7 NEW, 2 REGRESSED -> 1
+
+Everything drainable in this container is now drained. Running total for the
+branch: **18 NEW + 2 REGRESSED -> 7 NEW + 1 REGRESSED**, 541,817 -> 541,393
+fields.
+
+Drained and verified this batch (all leaf-diffed against a pre-drain copy,
+assertions byte-identical):
+
+    keystone-colored-sigma235-wrt   36 -> 0   (was REGRESSED at 52)
+    qborel-growth-budget            16 -> 0
+    cauchymul-order-cancellation    15 -> 0
+    canonical-ordering-dof          25 -> 0
+    markov-z-fibre-rank-bar-cov      6 -> 0
+    crossing-energy-channel-basis    5 -> 0
+    volume-binding-four-point        5 -> 0
+    c3-w2-c1-pole-divisor            4 -> 0
+
+### The qbeta trio — this bean's ORIGINAL three — are done
+
+And the reason they landed undrained is now concrete: **all three write their
+own `json.dump` and never pass `WitnessBuilder.save`**, so #4729's guard could
+not see them. That is the bypass #4729's own PR body flagged as its known
+limit; the trio is the worked example of it.
+
+All three turned out to be EXACT RATIONAL computations done in float64 —
+integer kernel degrees over integers, `log_q` values over `n^2`. Fixed with
+`fractions.Fraction`, verdicts decided exactly, serialized as both `p/q` and a
+50-dps decimal. The noise was real: `abs_diff` was `0.0012499999999999734` for
+a quantity that is exactly `1/800`, and the final Cauchy ratio was
+`0.9948979591836735` for exactly `195/196`.
+
+### Three more things that were decided in float64
+
+  * `keystone`'s `qint_value_map_refuted` compared f64 shadows of mpf ratios,
+    and its colored-support residue was `int(round(float(val))) % 60` — an
+    integer residue pulled through an f64 round-trip.
+  * `c3-w2-c1`'s decay factors were `round(x, 4)`-ed into the witness AND
+    tested there: two of the four printed as exactly `10.0` — the one value
+    that would mean "exactly linear" — where they are 9.99997 and 9.99998.
+  * `canonical-ordering-dof`'s 1%-of-B_AME test ran on a `float()`-ed spread.
+
+### A gap in the ratchet's model: inherited float64
+
+`canonical-ordering-dof` reads `B_pred_MeV` / `B_AME_MeV` out of
+`mass-table-comprehensive.witness.json`, which **is in the baseline** with
+75,112 raw float64 fields. The baseline covers the SOURCE of those numbers; it
+does not cover a COPY of them into a new witness. So a baselined witness
+quietly seeds new ratchet debt in every downstream consumer, and the consumer
+gets flagged for the producer's debt. Worth deciding deliberately: either
+consumers must re-serialize inherited values (what was done here — `repr` at
+the true f64 width, declaring the inheritance), or the audit needs a notion of
+provenance it currently has no way to express.
+
+## What is left, and why each is left
+
+**Drainable, but not in this container (3 files, 99 fields).** Regenerating
+these here would DESTROY data, so the source is fixed and the witness is
+deliberately not re-run:
+
+    atomic-tr-m-mpfr-50dps-proton   20   needs pyhecke_native (absent). A bare
+                                         run nulls n_crossings_canonical and
+                                         drops the rust tr_M values. Also needs
+                                         QOU_Q0_ANCHOR=proton --anchor proton.
+    chi-helium-4-h12-at-q0-50dps    78   same native kernel. All 78 are
+                                         compute_time_sec — the 1 -> 78
+                                         "regression" was a completion pass
+                                         adding per-partition timings, not a
+                                         precision loss.
+    ground-state-ordering-argmin      1   its witness carries a `lean_bridge`
+                                         block NO producer writes (added by
+                                         7c60b2f38, cited by
+                                         docs/audits/2026-08-09-ground-state-
+                                         ordering-truth-value.md). Re-running
+                                         deletes it. The probe also defaults to
+                                         --max-a 14 while the witness is
+                                         max_A=16, so a bare run shrinks the
+                                         sweep 62 -> 47 cases.
+
+All three timing fixes are committed, so they land the moment someone re-runs
+on a host with the native kernel (and, for ground-state, once the lean_bridge
+block has a producer).
+
+**The real remaining work: the numpy ports (5 files, 1092 fields).**
+
+    nastokes-multigen-cluster-additivity   835
+    nastokes-orbit-symmetric-readout        98
+    alpha-k-jones-markov-h12                91
+    nastokes-germ-gauge-covariance          52
+    nastokes-transverse-curvature-seifert   16
+
+These are category 3 in #4729's taxonomy — the linear algebra itself is
+float64 (`trace=float(np.trace(Om))`). Not a serialization split; a port. They
+are 78% of the remaining fields and none of this batch's technique applies.
+
+### Reproducibility defects found along the way (not float64, but worse)
+
+Recording these because a witness nobody can regenerate is a bigger problem
+than one carrying float64:
+
+  * `ground-state-ordering-argmin-sweep` — producer deletes a published block
+    (above), and its default flag shrinks the sweep.
+  * `atomic-tr-m-mpfr-50dps` — bare run silently degrades to the non-native
+    path; the `--anchor proton` guard is good and DID fire.
+  * `threerow_n12_isospin_control.py` — `import _path_bridge` without putting
+    `computations/` on `sys.path`; fails from every cwd. No witness, untouched.
+  * scipy is undeclared repo-wide (no top-level requirements.txt/pyproject).
+
+---
+
+## Third batch: the numpy cluster. 7 NEW -> 3 NEW
+
+    nastokes-multigen-cluster-additivity   835 -> 0
+    nastokes-orbit-symmetric-readout        98 -> 0
+    nastokes-germ-gauge-covariance          52 -> 0
+    nastokes-transverse-curvature-seifert   16 -> 0
+    alpha-k-jones-markov-h12                91 -> (source fixed, cannot run here)
+
+**Branch total: 18 NEW + 2 REGRESSED -> 3 NEW + 1 REGRESSED**, 541,817 ->
+540,392 fields (-1,425).
+
+### These were NOT ported to mpmath, and that is the right answer
+
+My earlier note sized this cluster as "a real port, the expensive kind". That
+was wrong about what the fix should be. Reading the producers:
+
+  * `nastokes-transverse-curvature-seifert` imports **no numpy at all** — it
+    was in the cluster by name only. Its floats were mpf AME constants being
+    `float()`-ed on the way in, plus two exact integer-over-integer
+    combinatorial ratios. Fixed exactly, worst value move 0.0.
+  * The three real numpy probes each already carry their own precision
+    control: multigen re-runs R_3 at 40 dps in mpmath at dim 11, and says so
+    in its own caveat. The verdicts are 0-vs-O(1e3) questions, not
+    1-part-per-quadrillion questions.
+
+Porting a dim-77 sweep over ten germ pairs and four isotopes to mpmath would
+cost hours per run to produce digits the question does not use — and it would
+publish precision the numpy kernel never had. So each numeric field is written
+at **binary64's own round-trip width** (`repr`), applied once at the single
+`add_data` sink rather than at ~30 call sites, so a field added later cannot
+quietly miss it.
+
+Verified harder than a leaf diff: every one of the 985 values round-trips to a
+**bit-identical** float, leaf counts unchanged (1135 / 170 / 71), and 16/16,
+17/17, 15/15 assertions byte-identical.
+
+### A witness that was not valid JSON
+
+`nastokes-orbit-symmetric-readout` contained a bare `NaN` literal at
+`part_C.He4.band-local.SA_average_over_mean`. `json.dump` emits that by
+default, but **JSON has no such token** — any strict parser rejected the file.
+Confirmed: the pre-drain witness fails `json.load(..., parse_constant=raise)`
+and the drained one passes. The NaN value itself is unchanged and still says
+what it said; it is simply no longer smuggled through as an invalid literal.
+Worth a sweep of the other witnesses for the same thing.
+
+## What remains, and none of it is drain work
+
+    alpha-k-jones-markov-h12        91   pyhecke_native absent (module-scope
+                                         import — the probe will not even load)
+    atomic-tr-m-mpfr-50dps-proton   20   pyhecke_native
+    chi-helium-4-h12-at-q0-50dps    78   pyhecke_native   [REGRESSED]
+    ground-state-ordering-argmin     1   its lean_bridge block has no producer
+
+All four have their **producer sinks already fixed and committed**. They land
+the moment someone re-runs on a host with `pyhecke_native` — except
+ground-state, which needs the `lean_bridge` block to get a producer first.
+
+The alpha change is **syntax-checked only**, flagged as such in its commit:
+the module cannot be imported here, so it has never been executed. Whoever
+re-runs it on a native-kernel host should diff the witness before committing,
+the same way every other drain in this branch was checked.
+
+---
+
+## Fourth batch: pyhecke_native BUILT. 3 NEW + 1 REGRESSED -> 1 NEW + 1 REGRESSED
+
+The three witnesses I had recorded as "cannot be regenerated in this container"
+were only blocked on a missing Rust extension, and the repo ships a script to
+build it: `scripts/build-pyhecke-native.sh`. It works, ~4 minutes.
+
+    pip install maturin; maturin build --release; pip install the wheel
+
+Its header explains the one non-obvious part, and it matters for any agent
+hitting this again: the Cargo graph pins a git fork
+(`github.com/litlfred/Clarabel.rs`), the sandbox rewrites every
+`https://github.com/...` to a local mirror that only serves `litlfred/qou`, so
+the fork 403s at `cargo metadata`. The script temporarily drops that one
+rewrite and restores it via a trap. **The wheel is EPHEMERAL** — it lives in
+the session's user site-packages and dies with the container, so re-run the
+script in any fresh session before Hecke-precision compute.
+
+    alpha-k-jones-markov-h12        91 -> 0   ZERO value differences
+    atomic-tr-m-mpfr-50dps-proton   20 -> 0   values CORRECTED, see below
+    chi-helium-4-h12-at-q0-50dps    78        NOT regenerated — see below
+
+### Match the environment before accepting a regenerated witness
+
+`alpha`'s first regeneration recorded `clarabel: null` and `mpmath: 1.3.0`
+where the committed witness had `0.11.1` and `1.4.1` — a provenance
+DOWNGRADE, from this container being thinner than the one that produced it.
+Fixed by installing both to match, after which the environment block is
+byte-identical and there are ZERO value differences across all 91 numbers.
+
+Two traps found doing that, both worth knowing:
+
+  * **`WitnessBuilder.save` is content-diff-aware**, so once the drained
+    content is on disk, later runs PRESERVE the existing file including its
+    stale `environment` block. Installing clarabel and re-running changed
+    nothing. The witness has to be DELETED to force a genuine rewrite.
+  * A version delta in `environment` is invisible in a normal "did the values
+    move?" diff, because no value moves. It has to be checked separately.
+
+### `atomic-tr-m-mpfr-50dps-proton`: the values were STALE, by 1h34m
+
+The drain is the lesser half of that commit. The committed witness agrees with
+a fresh run to only ~18 significant digits, then diverges:
+
+    proton  old 1.065306134791738413807655...
+            new 1.065306134791738450558029...
+
+Isolated before committing, because "my change moved a number" is the first
+thing to rule out: re-running the PRE-drain source produces the new value too.
+Then dated it —
+
+    witness computedAt   2026-08-08T17:55:45Z
+    efcaf79ed landed     2026-08-08T19:29:17Z   (1h34m later)
+      "NO FLOAT64: the braid word was f64 at source"
+
+So every digit past the ~17th in that 50-dps witness was computed from an
+f64-limited braid word and was never real. The new values are the correction,
+not a regression. Same q0, same anchor, same hoefsmit-python-fallback method,
+identical environment, deterministic across repeats.
+
+**This is the second witness in this bean found to predate a fix that changed
+its numbers** (the first being the threerow four, which predated the guard
+rather than a value change). The pattern to expect: anything computed in the
+window around 2026-08-08 may carry pre-`efcaf79ed` digits.
+
+### `chi-helium-4-h12-at-q0-50dps`: NOT a drain decision, so not made
+
+Its 78 fields are all `compute_time_sec`, and the obvious move — run
+`_b0vf_complete_he4_witness.py`, which advertises "rewrites the witness in
+place" — is WRONG, and I nearly did it. Running it produces:
+
+  * all 77 `chi_lambda` values different at the **7th** digit;
+  * `tr_M_at_q0` different at the 8th;
+  * a `_provenance` block the committed witness does not have;
+  * `producer` changing from `chi_at_q0_via_hoefsmit_mpfr.py` to
+    `branch-decomp + chi_lambda_all_partitions_mpfr`.
+
+The committed `tr_M_at_q0` is EXACTLY the new run's `markov_peel_scalar`. So
+the two scripts publish two DIFFERENT quantities under the same key — the
+markov-peel scalar vs the Wenzl Sigma y chi pairing — separated by the
+documented dual-path gap (1.94e-7, inside its own 4.80e-7 tolerance). Running
+the b0vf script would silently swap the semantics of a published field while
+appearing to be a float64 cleanup.
+
+**Which method owns this witness is a domain decision, not a drain.** So the
+witness is reverted and untouched. What IS done: the timing sinks are fixed in
+`chi_at_q0_via_hoefsmit_mpfr.py`, the producer the witness names in its own
+`producer` field — I had previously fixed only `chi_4he_via_rust_lossless.py`
+and the b0vf script, i.e. the wrong two.
+
+A regeneration via the correct owner (`--fresh`, n=12, 77 partitions in mpfr)
+is running but is slow; whoever finishes it should expect the same
+pre-`efcaf79ed` staleness question the atomic witness had, and should diff
+before committing.
+
+## State: 1 NEW + 1 REGRESSED, 541,817 -> 540,281 fields
+
+    ground-state-ordering-argmin-sweep   1   blocked: its lean_bridge block has
+                                             no producer (see earlier entry)
+    chi-helium-4-h12-at-q0-50dps        78   blocked: needs the owner decision
+                                             above, not drain work
+
+---
+
+## The bare-literal issue: 20 live invalid witnesses -> 4, and WHY each happened
+
+A JSON-validity sweep of all 2841 witnesses under `computations/` found 25 that
+fail `json.load(..., parse_constant=raise)` — 20 live, 5 deprecated. `json.dump`
+emits bare `NaN` / `Infinity` / `-Infinity` by default and **JSON has no such
+tokens** (RFC 8259 numbers are finite decimals), so those files are not valid
+JSON. Python's own loader accepts them, which is exactly why nobody noticed: a
+producer round-trips its own output happily and only a non-Python consumer ever
+discovers the file is unreadable.
+
+**The causes are not one thing.** Sorting them turned out to be the whole job,
+because they want different fixes and conflating them is how a "cleanup" makes
+a witness worse:
+
+| cause | example | right fix |
+|---|---|---|
+| swallowed bug | habiro (18 fields) | fix the bug — do NOT serialize the NaN |
+| deliberate pole sentinel | casimir t=1 (27) | marker `"inf"` — the value is correct |
+| genuine divergence | term6 deuteron (5) | marker + a status that says so |
+| undefined by construction | qbeta k=4 (7), a-K u0=0 (4) | `null` + recorded reason |
+| f64 overflow | su4 heavy nuclei (10) | `null` + reason — not representable |
+| infeasible solve | frobenius-repose (30) | `null` — no solution exists |
+| missing upstream key | braid-encoding-audit (2) | `null` + a `_missing` flag |
+| hardcoded math fact | gap-a4 J(edge) = ∞ (1) | marker — it IS infinity |
+
+Two structural fixes, both in the substrate:
+
+  * **`qou_substrate.precision.json_safe_float`** — markers (`"inf"`, `"-inf"`,
+    `"nan"`), deliberately NOT `null` (a pole and a missing value are different
+    facts) and NOT `1e999` (that is how a non-finite becomes a silently wrong
+    finite number). Its absence is the structural reason these literals kept
+    appearing: **a producer with a legitimate infinity had no sanctioned way to
+    write one**, so it wrote the bare literal. Its docstring says explicitly not
+    to use it to launder a swallowed exception.
+  * **A `QOU_WITNESS_STRICT_NONFINITE` guard** at `WitnessBuilder.save`, same
+    warn-by-default shape as the raw-float64 guard beside it. It has already
+    earned its place: after I fixed su4's `W_lam` it caught the 8 DERIVED fields
+    (`B_lincomp` and everything computed from it) that I had missed.
+
+### The habiro bug is worth reading twice
+
+Nine witnesses carried NaN in `tr_M_at_q0_via_u_poly`. The cause:
+
+    sp.sympify(denom, locals={"check_q": u})
+
+maps the wrong NAME. `to_u_polynomial(expr, q, check_q)` renders its returned
+strings using whatever SYMBOL the caller passes, and the callers pass `u` — so
+modern strings say `"u"`, and that mapping parsed them into a FRESH
+`Symbol('u')` with no assumptions. `Symbol('u') != Symbol('u', positive=True,
+real=True)`, so `.subs(u, ...)` silently no-opped, `sp.N` returned an
+expression rather than a number, `mp.mpf(str(<expression>))` raised
+ValueError — and a bare `except Exception` wrote `float('nan')` and printed the
+reason to stdout, where it was lost.
+
+The cross-check had therefore been failing silently for months. With the
+mapping fixed it PASSES: proton now gives `1.0653061442544443` via the u-poly
+against `tr_M_at_q0 = 1.0653061442544502`. The handler now records `null` plus
+`tr_M_at_q0_check_error`, so the next failure is diagnosable.
+
+The mapping accepts BOTH names now: older witnesses in this family legitimately
+say `check_q`, from a caller that passed a symbol of that name.
+
+### Four left, none of them blocked on the fix
+
+    a-K-via-lp-dual        source FIXED, witness not regenerated: this container
+                           now has clarabel 0.11.1 (installed to match the alpha
+                           witness's environment) and this witness's environment
+                           does NOT. With clarabel present the LP takes a
+                           different solve path and x_star moves ~1e-6 — a
+                           different, still-valid optimum. That is #4729's "the
+                           probe was measuring its solver" finding again, and
+                           baking it in under cover of a JSON fix would repeat
+                           the mistake. Which solver this witness pins to is its
+                           owner's call. (Also: needs
+                           PYTHONPATH=tools/pyhecke/python to import at all.)
+    term6-full-pole-sum    source FIXED (status logic + markers). Producer is
+                           already broken on HEAD — dies in
+                           complex(float(re), float(im)), "Cannot convert
+                           expression to float". Verified by running the
+                           unmodified HEAD copy.
+    A-operator-rank-probe  not reached; producer exceeds a 200s budget.
+    habiro-...-oxygen-14   no live producer — oxygen-14 is not in any ATOMS list
+                           in the habiro extract scripts.
+
+### Re-running a witness is not free — three ways it silently changes
+
+Every one of these bit me at least once, and each is invisible to a naive
+"did the values move?" check:
+
+  1. **Anchor.** A bare re-run uses today's DEFAULT q0. casimir was computed at
+     the ideal-muon pin and a fresh run moved 182 values at ~1e-8; su4 the same,
+     285 values. Both re-run with `QOU_Q0_ANCHOR=ideal` to match. gap-a4 goes
+     the OTHER way and cannot be steered at all — it reads a HARDCODED
+     `Q_0_50DPS` constant, so `QOU_Q0_ANCHOR` has no effect and its committed
+     proton value could not have come from the current code.
+  2. **Environment.** `alpha`'s first regeneration recorded `clarabel: null` and
+     `mpmath 1.3.0` where the committed witness had `0.11.1` and `1.4.1` — a
+     provenance DOWNGRADE that no value diff would show. And installing clarabel
+     to fix that is what changed a-K's LP solution.
+  3. **Content-diff-aware save.** Once the new content is on disk, later runs
+     PRESERVE the existing file including its stale `environment` block. The
+     witness has to be DELETED to force a genuine rewrite.
+
+### Two pre-existing defects found while verifying
+
+  * `casimir_macdonald_probe` has ALWAYS exited 1, after writing its witness —
+    an f-string formats a tuple with `:<14`, so that print block has never run.
+  * `term6` reported a DIVERGENT Mittag-Leffler sum with
+    `status: "complete-simple-poles-only"`. The status only ever asked whether a
+    higher-order pole was unresolved, never whether the sum was finite.
+
+### Also: 5 deprecated witnesses are invalid, one for a different reason
+
+`_deprecated/qbeta-gb-filtration-residues.witness.json` is malformed in a way
+NaN does not explain — it contains hand-written `+20.27` and `+202689`, and
+JSON forbids a leading plus. Not touched (deprecated).

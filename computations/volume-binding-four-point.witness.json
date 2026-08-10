@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T17:38:04.959835+00:00",
-  "commitSha": "a6e9db6efcb19fafd754f26f7d73655668288227",
+  "computedAt": "2026-08-09T19:13:39.276970+00:00",
+  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
   "assertions": [
     {
       "name": "usable_points_of_four",
@@ -14,27 +14,27 @@
     },
     {
       "name": "deuteron_volume_is_zero",
-      "computed": 0.0,
-      "expected": 0.0,
+      "computed": "0.0",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 0,
+      "tolerance": "0",
       "source": "Hopf link L2a1 is Seifert-fibred."
     },
     {
       "name": "mirror_pair_ratio_of_ratios",
-      "computed": 1.0289911805499992,
-      "expected": 1.029,
+      "computed": "1.02899118054999910285050879126",
+      "expected": "1.0290",
       "passed": true,
-      "tolerance": 0.001,
+      "tolerance": "1e-3",
       "source": "Reproduces the 2026-08-07 ledger's scratch-float64 2.90% at 70 dps."
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 14,
   "computation": "volume-binding-four-point",
   "scriptFile": "volume_binding_four_point.py",
-  "scriptHash": "2267f0590d74",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "97023a026b63",
+  "scriptCommitSha": "da09290333c8c5ae1723c77777a86ab68034636d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,6 +44,7 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },

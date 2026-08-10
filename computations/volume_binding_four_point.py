@@ -162,11 +162,11 @@ def main() -> None:
     w.add_assertion("usable_points_of_four", len(usable), 2, tolerance=0,
                     source="Reading 2 registry has n_atoms=3; deuteron->Hopf "
                            "has Vol=0; 4He has no SDP link at all.")
-    w.add_assertion("deuteron_volume_is_zero", float(TARGETS[0][4]), 0.0,
-                    tolerance=0,
+    w.add_assertion("deuteron_volume_is_zero", str(TARGETS[0][4]), "0.0",
+                    tolerance="0",
                     source="Hopf link L2a1 is Seifert-fibred.")
-    w.add_assertion("mirror_pair_ratio_of_ratios", float(ratio_of_ratios),
-                    1.0290, tolerance=1e-3,
+    w.add_assertion("mirror_pair_ratio_of_ratios",
+                    nstr(ratio_of_ratios, 30), "1.0290", tolerance="1e-3",
                     source="Reproduces the 2026-08-07 ledger's scratch-float64 "
                            "2.90% at 70 dps.")
     w.add_data("targets", [

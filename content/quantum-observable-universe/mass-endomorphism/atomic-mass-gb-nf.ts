@@ -5,7 +5,6 @@ export default proposition({
   title: "Atomic mass as Markov trace of the Gröbner–Shirshov normal form",
   uses: [
     "prop:alpha-shift-torus-knot",
-    "prop:rho-k-graded-expansion",
     "unital-groebner-bases:cor:pbw",
   ],
   cites: ["kassel1995", "jones1987"],

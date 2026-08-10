@@ -115,98 +115,98 @@ theorem finrank_range_evOct_e1 :
       · have hv : evOct (Pi.single 1 1) (octDer 0) = wE1 3 := by
           show (octDerMat 0).mulVec (Pi.single 1 (1:ℚ)) = wE1 3
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨3, rfl⟩
       -- i=1 : +e₄ = wE1 2
       · have hv : evOct (Pi.single 1 1) (octDer 1) = wE1 2 := by
           show (octDerMat 1).mulVec (Pi.single 1 (1:ℚ)) = wE1 2
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨2, rfl⟩
       -- i=2 : -e₃ = -wE1 1
       · have hv : evOct (Pi.single 1 1) (octDer 2) = -wE1 1 := by
           show (octDerMat 2).mulVec (Pi.single 1 (1:ℚ)) = -wE1 1
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.neg_mem _ (Submodule.subset_span ⟨1, rfl⟩)
       -- i=3 : +e₆ = wE1 4
       · have hv : evOct (Pi.single 1 1) (octDer 3) = wE1 4 := by
           show (octDerMat 3).mulVec (Pi.single 1 (1:ℚ)) = wE1 4
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨4, rfl⟩
       -- i=4 : -e₃ = -wE1 1
       · have hv : evOct (Pi.single 1 1) (octDer 4) = -wE1 1 := by
           show (octDerMat 4).mulVec (Pi.single 1 (1:ℚ)) = -wE1 1
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.neg_mem _ (Submodule.subset_span ⟨1, rfl⟩)
       -- i=5 : +e₂ = wE1 0
       · have hv : evOct (Pi.single 1 1) (octDer 5) = wE1 0 := by
           show (octDerMat 5).mulVec (Pi.single 1 (1:ℚ)) = wE1 0
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨0, rfl⟩
       -- i=6 : 0 (stabilizer)
       · have hv : evOct (Pi.single 1 1) (octDer 6) = 0 := by
           show (octDerMat 6).mulVec (Pi.single 1 (1:ℚ)) = 0
           funext k; fin_cases k <;>
-            simp [octDerMat, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.zero_mem _
       -- i=7 : 0
       · have hv : evOct (Pi.single 1 1) (octDer 7) = 0 := by
           show (octDerMat 7).mulVec (Pi.single 1 (1:ℚ)) = 0
           funext k; fin_cases k <;>
-            simp [octDerMat, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.zero_mem _
       -- i=8 : +e₇ = wE1 5
       · have hv : evOct (Pi.single 1 1) (octDer 8) = wE1 5 := by
           show (octDerMat 8).mulVec (Pi.single 1 (1:ℚ)) = wE1 5
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨5, rfl⟩
       -- i=9 : 0
       · have hv : evOct (Pi.single 1 1) (octDer 9) = 0 := by
           show (octDerMat 9).mulVec (Pi.single 1 (1:ℚ)) = 0
           funext k; fin_cases k <;>
-            simp [octDerMat, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.zero_mem _
       -- i=10 : 0
       · have hv : evOct (Pi.single 1 1) (octDer 10) = 0 := by
           show (octDerMat 10).mulVec (Pi.single 1 (1:ℚ)) = 0
           funext k; fin_cases k <;>
-            simp [octDerMat, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.zero_mem _
       -- i=11 : 0
       · have hv : evOct (Pi.single 1 1) (octDer 11) = 0 := by
           show (octDerMat 11).mulVec (Pi.single 1 (1:ℚ)) = 0
           funext k; fin_cases k <;>
-            simp [octDerMat, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.zero_mem _
       -- i=12 : -e₂ = -wE1 0
       · have hv : evOct (Pi.single 1 1) (octDer 12) = -wE1 0 := by
           show (octDerMat 12).mulVec (Pi.single 1 (1:ℚ)) = -wE1 0
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.neg_mem _ (Submodule.subset_span ⟨0, rfl⟩)
       -- i=13 : +e₄ = wE1 2
       · have hv : evOct (Pi.single 1 1) (octDer 13) = wE1 2 := by
           show (octDerMat 13).mulVec (Pi.single 1 (1:ℚ)) = wE1 2
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨2, rfl⟩
     · rw [Submodule.span_le]
@@ -216,42 +216,42 @@ theorem finrank_range_evOct_e1 :
       · have hv : wE1 0 = evOct (Pi.single 1 1) (octDer 5) := by
           show wE1 0 = (octDerMat 5).mulVec (Pi.single 1 (1:ℚ))
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨5, rfl⟩
       -- wE1 1 = e₃ = -evOct e₁ (octDer 2)
       · have hv : wE1 1 = -evOct (Pi.single 1 1) (octDer 2) := by
           show wE1 1 = -(octDerMat 2).mulVec (Pi.single 1 (1:ℚ))
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
-              Matrix.of_apply, Pi.single_apply]
+            simp [octDerMat, wE1, embE1,
+              Matrix.of_apply]
         exact hv ▸Submodule.neg_mem _ (Submodule.subset_span ⟨2, rfl⟩)
       -- wE1 2 = e₄ = evOct e₁ (octDer 1)
       · have hv : wE1 2 = evOct (Pi.single 1 1) (octDer 1) := by
           show wE1 2 = (octDerMat 1).mulVec (Pi.single 1 (1:ℚ))
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨1, rfl⟩
       -- wE1 3 = e₅ = evOct e₁ (octDer 0)
       · have hv : wE1 3 = evOct (Pi.single 1 1) (octDer 0) := by
           show wE1 3 = (octDerMat 0).mulVec (Pi.single 1 (1:ℚ))
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨0, rfl⟩
       -- wE1 4 = e₆ = evOct e₁ (octDer 3)
       · have hv : wE1 4 = evOct (Pi.single 1 1) (octDer 3) := by
           show wE1 4 = (octDerMat 3).mulVec (Pi.single 1 (1:ℚ))
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨3, rfl⟩
       -- wE1 5 = e₇ = evOct e₁ (octDer 8)
       · have hv : wE1 5 = evOct (Pi.single 1 1) (octDer 8) := by
           show wE1 5 = (octDerMat 8).mulVec (Pi.single 1 (1:ℚ))
           funext k; fin_cases k <;>
-            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct, Fin.sum_univ_eight,
+            simp [octDerMat, wE1, embE1, Matrix.mulVec, dotProduct,
               Matrix.of_apply, Pi.single_apply]
         exact hv ▸Submodule.subset_span ⟨8, rfl⟩
   rw [hspan, finrank_span_eq_card wE1_linearIndependent, Fintype.card_fin]

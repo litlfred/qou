@@ -9,7 +9,7 @@ tags:
     - float64
     - precision
 created_at: 2026-08-07T18:40:00Z
-updated_at: 2026-08-07T21:20:00Z
+updated_at: 2026-08-09T17:00:00Z
 ---
 
 ## The defect
@@ -132,3 +132,10 @@ Two things this did NOT touch, both known and neither blocking the gate:
 the ~1580 baseline witnesses (540k fields), and the fact that the guard sits at
 `WitnessBuilder.save()` — a producer writing its own `json.dump` bypasses it,
 which is exactly how `inverse-markov-qvalues` regressed unnoticed.
+
+---
+
+## Merged 2026-08-09 — PR #4729, `25387e2a4`
+
+Shipped with the guard at `WitnessBuilder.save` (default `warn`) and 15 drains.
+The follow-on debt main accrued in the meantime is `qou-mnrd`, not this bean.

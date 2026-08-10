@@ -126,11 +126,16 @@ inventory entries.
 
 ## 1a. Migrate any legacy `lean.ref` shapes pulled in from upstream
 
-- After every rebase / merge, **run the lean-ref migration script**:
-  `cd content && bun run migrate-lean-refs`. The script is idempotent
-  (no-op when there is nothing to migrate) — running it unconditionally
-  is the standardized post-rebase workflow described in
-  AGENTS.md §0b.
+- **The `bun run migrate-lean-refs` alias no longer exists in qou** — it fails
+  with `Script not found "migrate-lean-refs"`. The pipeline moved to
+  `litlfred/folio-assistant` (`content/pipeline/migrate-lean-refs.ts`) and miga
+  pruned the qou aliases; AGENTS.md §0b has said so since 2026-06-23, and adds
+  that the migration is **corpus-complete** (0 legacy `decl:` shapes remain), so
+  running it is historical rather than routine.
+- What is still worth doing after every rebase is the *verification* below,
+  which needs no script: it is what would catch a legacy shape arriving from
+  upstream. If it ever reports a non-zero count, run the migration from a
+  folio-assistant checkout per that repo's docs.
 - This catches blocks that landed on `origin/main` while the branch was
   in flight and still use the legacy `lean: { decl: "...", file? }`
   shape (Zod will hard-fail validation on those).
@@ -138,28 +143,32 @@ inventory entries.
   result before continuing (`git add` + `git commit --amend --no-edit`
   on the topmost integration commit, or as a follow-up commit if the
   rebase was non-trivial).
-- **Verify** the migration is complete (all three counts must be 0):
+- **Verify** no legacy shape is present (both counts must be 0):
 
   ```bash
-  # 1. Dry-run reports nothing left to migrate
-  cd content && bun run migrate-lean-refs:dry | tail -3
-  # Expected: "Migrated 0 lean refs across 0 files."
-
-  # 2. No legacy `lean: { decl: ... }` shape remains
+  # 1. No legacy `lean: { decl: ... }` shape remains
   grep -rln 'lean:\s*{[^}]*decl:' content/*/*.ts 2>/dev/null \
     | grep -v schema/ | grep -v pipeline/ | wc -l
   # Expected: 0
 
-  # 3. Every `lean.ref` URI uses a registered package prefix
+  # 2. Every `lean.ref` URI uses a registered package prefix.
+  #
+  # NOTE the `lean:\s*{` anchor. This pattern used to be a bare `ref:\s*"…:`,
+  # which matches EVERY `ref:` field in a content block, not just `lean.ref`.
+  # `simulator: { ref: "sim:…" }` is schema-valid — `sim:` is a registered
+  # namespace (folio-assistant/schemas/constraints.ts) — so the old pattern
+  # reported four "unregistered package prefixes" on a clean corpus. Combined
+  # with the "if any check is non-zero, do not proceed" rule below, that made
+  # this gate unpassable: no qou branch could ever reach Step 2.
   python3 -c "
-  import re, glob, json
+  import re, glob
   pkgs = re.findall(r'name:\s*\"(\w+)\"', open('folio-assistant/schemas/lean-packages.ts').read())
   bad = []
   for f in glob.glob('content/*/*/*.ts'):
       txt = open(f).read()
-      for m in re.finditer(r'ref:\s*\"([^:\"]+):', txt):
+      for m in re.finditer(r'lean:\s*{\s*ref:\s*\"([^:\"]+):', txt):
           if m.group(1) not in pkgs: bad.append(f'{f} → {m.group(1)}')
-  print(f'Unregistered package prefixes: {len(bad)}')
+  print(f'Unregistered lean.ref package prefixes: {len(bad)}')
   for b in bad: print(f'  {b}')
   "
   # Expected: 0
@@ -231,9 +240,57 @@ surface the duplicates in step 6) saves a full review cycle.
 
 ## 4. 100% Lean — build + resolutions
 
-- Run `lake build` from the **repo root** (the standardized root Lake
-  workspace builds every paper package — `qou`, `ugb`, `fred2005` —
-  in one pass; see AGENTS.md §0).
+- Run **`lake build QOU UGB Fred2005`** from the repo root. Name the three
+  library targets; do **not** run a bare `lake build` there.
+
+  A bare `lake build` at the root **builds nothing and exits 0**
+  — "Build completed successfully (0 jobs)", having examined not one Lean file.
+  The root package aggregates the three paper packages and declares no library
+  of its own, so its default target set is empty. `defaultTargets` cannot fix
+  it (it names targets of the root package only; `["QOU", …]` and
+  `["qou/QOU", …]` are both rejected), and neither can a root aggregator module,
+  because each paper's library is declared with globs (`["QOU", "QOU.+"]`) and a
+  glob library is built by naming the library target and no other way. The root
+  `lakefile.toml` carries the same note.
+
+  This step said "the standardized root Lake workspace builds every paper
+  package in one pass" and named the bare command. It did not, and it reported
+  success while doing so — the same defect shape as the three gates in
+  folio-assistant PR #88: *a gate that can report success without examining
+  anything is not a gate.*
+
+- **Warm the root workspace's Mathlib cache first: `lake exe cache get`.**
+
+  The root workspace has its *own* `.lake/packages/mathlib`, separate from each
+  paper's. A sandbox that has been building per-paper (`cd content/<paper>/lean
+  && lake build`) has a warm cache in the **paper's** checkout and a cold one at
+  the root, so the first `lake build QOU UGB Fred2005` there starts compiling
+  Mathlib **from source** — observed going through
+  `Mathlib/Algebra/Order/AbsoluteValue/Basic.lean` and friends, which is hours,
+  not minutes, and silently: the output looks like ordinary build progress.
+
+  Both lakefiles pin the same rev (`f897ebcf…`), so the cache applies. Check
+  free disk before doing it — the root copy is a second full Mathlib build tree
+  — and see AGENTS.md's RESTORE → build → SEED note.
+
+- **If the root cache is cold and `cache get` will not fetch, build per-paper
+  instead.** Measured in a sandbox with 9.2 GB free: the per-paper Mathlib build
+  tree is 3.3 GB, so the root workspace wants a second one, and `lake exe cache
+  get` there stalled — 4 seconds of CPU in 20 minutes, sitting on the network.
+
+  Per-paper builds are an equally valid gate, not a lesser one. They compile the
+  same sources against the same pinned Mathlib rev; only the `.lake` tree holding
+  the oleans differs. Run all three, and say in the PR that this is what you did:
+
+  ```bash
+  (cd content/quantum-observable-universe/lean && lake build)
+  (cd content/unital-groebner-bases/lean      && lake build)
+  (cd content/fred2005-formal-groups/lean     && lake build)
+  ```
+
+  What is *not* acceptable is the bare root `lake build`, which compiles nothing
+  at all — that is the defect this section documents. Dropping to per-paper is
+  the remedy for a cold cache, not a way around the gate.
 - If the build fails, route to `lean-build-fix` and resolve.
 - Run `lean-completeness-audit`: every `sorry` must carry a `-- Ref:`
   citation, every `definition` block must have its `.lean` sibling,

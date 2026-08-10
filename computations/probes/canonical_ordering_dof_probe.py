@@ -479,24 +479,31 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
         dB_lo = -alpha * mp.log(hi)      # largest ratio  -> smallest B
         spread = dB_hi - dB_lo
         B_ame = r.get("B_AME_MeV") or 0.0
-        pct = float(spread) / B_ame * 100 if B_ame else float("nan")
+        # B_pred/B_AME are read out of mass-table-comprehensive.witness.json,
+        # which is IN the raw-float64 baseline (75,112 fields). They arrive as
+        # Python floats, so `pct` is f64-limited however `spread` was computed.
+        # Serialized as strings at their true f64 width: the baseline covers the
+        # SOURCE of these numbers, not a copy of them into a new witness, and a
+        # copy is exactly what this probe makes.
+        pct = (mp.mpf(spread) / mp.mpf(repr(B_ame)) * 100) if B_ame else None
         table.append({
             "atom": name, "Z": Z, "N": N,
             "in_production_table": bool(r),
-            "B_pred_MeV_production": r.get("B_pred_MeV"),
-            "B_AME_MeV": B_ame or None,
+            "B_pred_MeV_production": (None if r.get("B_pred_MeV") is None
+                                      else repr(r["B_pred_MeV"])),
+            "B_AME_MeV": repr(B_ame) if B_ame else None,
             "n_reachable_multisets": len(reachable_blocks(Z, N)),
             "ratio_min": mp.nstr(lo, 10), "ratio_max": mp.nstr(hi, 10),
             "dB_min_MeV": mp.nstr(dB_lo, 8), "dB_max_MeV": mp.nstr(dB_hi, 8),
             "spread_MeV": mp.nstr(spread, 8),
-            "spread_pct_of_B_AME": round(pct, 3) if B_ame else None,
+            "spread_pct_of_B_AME": mp.nstr(pct, 17) if B_ame else None,
         })
         bp = r.get("B_pred_MeV")
         print(f"  {name:6s} {Z:3d} {N:3d} "
               f"{(f'{bp:10.3f}' if bp is not None else '       n/a')} "
               f"{(f'{B_ame:10.3f}' if B_ame else '       n/a')} "
               f"{float(dB_lo):9.3f} {float(dB_hi):9.3f} {float(spread):9.3f} "
-              f"{(f'{pct:8.2f}' if B_ame else '     n/a')}")
+              f"{(f'{float(pct):8.2f}' if B_ame else '     n/a')}")
 
     # whole-table aggregate
     worst = None
@@ -504,16 +511,16 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
     for r in exposed:
         Z, N = r["Z"], r["N"]
         lo, hi = ratio_range(Z, N)
-        spread = float(-alpha * mp.log(lo) + alpha * mp.log(hi))
+        spread = -alpha * mp.log(lo) + alpha * mp.log(hi)     # stays mpf
         B_ame = r.get("B_AME_MeV") or 0.0
-        if B_ame and spread / B_ame > 0.01:
+        if B_ame and spread / mp.mpf(repr(B_ame)) > mp.mpf("0.01"):
             n_moved_1pct += 1
         if worst is None or spread > worst[1]:
             worst = (r["atom"], spread)
     print(f"\n  exposed rows                                  : {len(exposed)}")
     print(f"  rows whose spread exceeds 1 % of B_AME        : {n_moved_1pct}")
     print(f"  largest absolute spread                       : {worst[0]} "
-          f"{worst[1]:.3f} MeV")
+          f"{float(worst[1]):.3f} MeV")
 
     # the single-swap unit, which is what the light isotopes actually see
     print(f"\n  UNIT of the DOF (one block swap, {conv}):")
@@ -534,7 +541,7 @@ def part5_production_size(exposed, results: dict, assertions: dict) -> None:
         "n_exposed_rows": len(exposed),
         "n_rows_spread_gt_1pct_of_B_AME": n_moved_1pct,
         "largest_spread_atom": worst[0],
-        "largest_spread_MeV": round(worst[1], 6),
+        "largest_spread_MeV": mp.nstr(worst[1], 17),
         "AME_ROLE": ("denominator only -- used to express the size of an "
                      "already-computed spread. No ordering is selected by it."),
     }

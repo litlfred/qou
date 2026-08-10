@@ -118,8 +118,28 @@ def _variant_b(t, G, Ginv, nf):
     if not np.isfinite(net_consistent):
         return {"feasible": False, "overflow": True, "active_count": None}
     res = solve_frobenius_dual_lp(t, G, net_consistent, nf, dual_tol=DUAL_TOL)
+    # An INFEASIBLE LP has no solution, and the solver signals that by filling
+    # x_star / y_star / the objectives with NaN. Those were published verbatim,
+    # which did two bad things: it wrote bare `NaN` tokens (JSON has none, so
+    # this witness did not parse under a strict loader), and it presented "no
+    # solution exists" as if it were a computed vector.
+    #
+    # null, not a "nan" marker: an infeasible LP is a MISSING value, not a pole.
+    # `feasible`, `active_set` and `net_rhs_used` carry the real information and
+    # are kept.
+    if not res.feasible:
+        return {
+            "feasible": False, "overflow": False,
+            "net_rhs_used": net_consistent,
+            "x_star": None, "primal_obj": None,
+            "y0_star": None, "y_star": None,
+            "active_set": list(res.active_set),
+            "active_count": len(res.active_set),
+            "duality_gap": None,
+            "solution_undefined_reason": "LP infeasible — no primal/dual point",
+        }
     return {
-        "feasible": bool(res.feasible), "overflow": False,
+        "feasible": True, "overflow": False,
         "net_rhs_used": net_consistent,
         "x_star": list(res.x_star),
         "primal_obj": float(res.primal_obj),

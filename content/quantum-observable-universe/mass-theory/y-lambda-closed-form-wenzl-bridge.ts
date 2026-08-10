@@ -12,7 +12,6 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
-    "prop:explicit-alpha-k-h3",
     "prop:alpha-k-derivation-procedure",
   ],
   cites: ["wenzl1988", "orellana1998", "chlouveraki2016"],

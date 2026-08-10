@@ -55,10 +55,11 @@ import _path_bridge  # noqa: F401,E402
 
 import mpmath as mp  # noqa: E402
 
+from threerow_sign_crossing_probe import fmt_f64_limited  # noqa: E402
 from threerow_chi_sparse import chi_atom_sparse, self_check  # noqa: E402
 from threerow_sign_crossing_probe import delta_lambda, bisect_cross, Q0, Q_LO, ZN  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath, partitions_of  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 warnings.filterwarnings("ignore")
@@ -122,18 +123,18 @@ def geom(lo: mp.mpf, hi: mp.mpf, npts: int) -> list[mp.mpf]:
     return [1 + mp.e ** (a + (b - a) * k / (npts - 1)) for k in range(npts)]
 
 
-def validate_4he_chi() -> float | None:
+def validate_4he_chi() -> mp.mpf | None:
     """Cross-check χ^λ(β_4He;q₀) against the canonical atom-chi-rust-4he witness."""
     wf = COMP / "atom-chi-rust-4he.witness.json"
     if not wf.exists():
         return None
     ref = json.loads(wf.read_text())["data"]["atom"]["by_partition"]
-    worst = 0.0
+    worst = mp.mpf(0)
     for e in ref:
         lam = tuple(e["partition"])
         r = mp.mpf(e["chi_lambda"])
         mine = chi_atom_sparse(lam, 2, 2, Q0)
-        worst = max(worst, float(abs(mine - r) / (abs(r) + mp.mpf("1e-40"))))
+        worst = max(worst, abs(mine - r) / (abs(r) + mp.mpf("1e-40")))
     return worst
 
 
@@ -160,7 +161,7 @@ def main() -> int:
     if chi_rel is None:
         print("  (no atom-chi-rust-4he witness present — convention gate SKIPPED)")
     else:
-        print(f"  max rel diff = {chi_rel:.3e}  "
+        print(f"  max rel diff = {float(chi_rel):.3e}  "
               f"({'OK' if chi_rel < 1e-5 else 'FAIL'})   ({time.time()-t0:.0f}s)")
 
     # ── 2. physical interval ───────────────────────────────────────────────
@@ -182,11 +183,12 @@ def main() -> int:
     for i in range(len(grid_p) - 1):
         a, b = vals_p[i], vals_p[i + 1]
         if a != 0 and b != 0 and (a > 0) != (b > 0):
-            cross_p.append(float(bisect_cross(f, grid_p[i], grid_p[i + 1], a, b,
-                                              iters=N_BISECT_PHYS)))
+            cross_p.append(bisect_cross(f, grid_p[i], grid_p[i + 1], a, b,
+                                        iters=N_BISECT_PHYS))
     print(f"\n   ⁴He  F(q_lo)={float(vals_p[0]):+.6e}   F(q₀)={float(vals_p[-1]):+.6e}"
           f"   sign {int(mp.sign(vals_p[0])):+d}→{int(mp.sign(vals_p[-1])):+d}")
-    print(f"   crossings on (1,q₀] (PHYSICAL): {cross_p if cross_p else 'none'}")
+    print(f"   crossings on (1,q₀] (PHYSICAL): "
+          f"{[float(c) for c in cross_p] if cross_p else 'none'}")
 
     # ── 3. diagnostic ray ──────────────────────────────────────────────────
     print("\n" + "─" * 88)
@@ -211,9 +213,9 @@ def main() -> int:
     for i in range(len(seq_g) - 1):
         a, b = seq_q[i], seq_q[i + 1]
         if a != 0 and b != 0 and (a > 0) != (b > 0):
-            cross_r_brackets.append([float(seq_g[i]), float(seq_g[i + 1])])
+            cross_r_brackets.append([seq_g[i], seq_g[i + 1]])
     print(f"\n   sign changes on (q₀,4] (DIAGNOSTIC ONLY, reported as BRACKETS): "
-          f"{[f'({lo:.4f},{hi:.4f})' for lo, hi in cross_r_brackets] if cross_r_brackets else 'none'}")
+          f"{[f'({float(lo):.4f},{float(hi):.4f})' for lo, hi in cross_r_brackets] if cross_r_brackets else 'none'}")
 
     # ── 4. per-λ decomposition at q₀ ───────────────────────────────────────
     print("\n" + "─" * 88)
@@ -223,25 +225,28 @@ def main() -> int:
     rows = []
     for lam in lams:
         t = y0[lam] * chi_atom_sparse(lam, Z, N, Q0) * delta_lambda(lam)
-        rows.append((lam, delta_lambda(lam), float(t)))
+        rows.append((lam, delta_lambda(lam), t))
     rows.sort(key=lambda r: -abs(r[2]))
     for lam, d, t in rows[:8]:
-        print(f"     {str(lam):24s} Δ={d:+7d}  term={t:+.6e}")
+        print(f"     {str(lam):24s} Δ={d:+7d}  term={float(t):+.6e}")
     print(f"     {'TOTAL':24s} {'':>9}  term={float(vals_p[-1]):+.6e}")
     # cancellation ratio: |leading term| / |total| — how delicate is the sign?
-    canc = abs(rows[0][2]) / (abs(float(vals_p[-1])) + 1e-300)
-    print(f"     leading/total magnitude ratio = {canc:.2f}×  "
-          f"(f64 noise floor ≈ {abs(rows[0][2])*2.2e-16:.2e})")
+    canc = abs(rows[0][2]) / (abs(vals_p[-1]) + mp.mpf("1e-300"))
+    print(f"     leading/total magnitude ratio = {float(canc):.2f}×  "
+          f"(f64 noise floor ≈ {float(abs(rows[0][2])*mp.mpf('2.2e-16')):.2e})")
 
     # ── verdict ────────────────────────────────────────────────────────────
     print("\n" + "=" * 88)
     print(" VERDICT (⁴He, n=12)")
     print(f"   sign on the PHYSICAL interval: {int(mp.sign(vals_p[0])):+d} → "
-          f"{int(mp.sign(vals_p[-1])):+d}   crossings: {cross_p if cross_p else 'none'}")
+          f"{int(mp.sign(vals_p[-1])):+d}   crossings: "
+          f"{[float(c) for c in cross_p] if cross_p else 'none'}")
     print(f"   first DIAGNOSTIC sign change above q₀ (bracket): "
-          f"{cross_r_brackets[0] if cross_r_brackets else 'none on (q₀,4]'}")
+          + (f"[{float(cross_r_brackets[0][0]):.6f}, "
+             f"{float(cross_r_brackets[0][1]):.6f}]"
+             if cross_r_brackets else "none on (q₀,4]"))
     print("   A-ladder (first crossing q):  n=6 ≈ 1.0537 [≤q₀] · n=9 ≈ 1.43–1.46 [>q₀] · "
-          f"n=12 {'≈ %.5f [≤q₀]' % cross_p[0] if cross_p else '— none ≤ q₀'}")
+          f"n=12 {'≈ %.5f [≤q₀]' % float(cross_p[0]) if cross_p else '— none ≤ q₀'}")
     print("=" * 88)
 
     # ── witness ────────────────────────────────────────────────────────────
@@ -268,20 +273,28 @@ def main() -> int:
                                   "(exact reorganisation of the #4829 dense path)")
     w.add_parameter("chi_precision", "f64 (no mpfr Rust kernel; precision class unchanged "
                                      "by the reorganisation)")
-    w.add_data("kernel_gate_max_rel_vs_dense", kernel_rel)
-    w.add_data("chi_vs_rust_witness_max_rel_at_q0", chi_rel)
+    w.add_data("kernel_gate_max_rel_vs_dense", fmt_f64_limited(kernel_rel))
+    w.add_data("chi_vs_rust_witness_max_rel_at_q0",
+               fmt_f64_limited(chi_rel) if chi_rel is not None else None)
     w.add_data("physical_interval", {
-        "q_grid": [float(q) for q in grid_p],
-        "F_values": [float(v) for v in vals_p],
-        "F_at_qlo": float(vals_p[0]), "F_at_q0": float(vals_p[-1]),
+        # q_grid is a pure-mpmath geometric grid; F comes off the f64 χ kernel.
+        "q_grid": [str_at_true_precision(q) for q in grid_p],
+        "F_values": [fmt_f64_limited(v) for v in vals_p],
+        "F_at_qlo": fmt_f64_limited(vals_p[0]),
+        "F_at_q0": fmt_f64_limited(vals_p[-1]),
         "sign_qlo": int(mp.sign(vals_p[0])), "sign_q0": int(mp.sign(vals_p[-1])),
-        "crossings": cross_p,
+        "crossings": [fmt_f64_limited(c) for c in cross_p],
     })
     w.add_data("diagnostic_ray_above_q0", {
-        "q_grid": [float(q) for q in grid_r],
-        "F_values": [float(v) for v in vals_r],
-        "sign_change_brackets": cross_r_brackets,
-        "first_sign_change_bracket": cross_r_brackets[0] if cross_r_brackets else None,
+        "q_grid": [str_at_true_precision(q) for q in grid_r],
+        "F_values": [fmt_f64_limited(v) for v in vals_r],
+        "sign_change_brackets": [[str_at_true_precision(lo),
+                                  str_at_true_precision(hi)]
+                                 for lo, hi in cross_r_brackets],
+        "first_sign_change_bracket":
+            [str_at_true_precision(cross_r_brackets[0][0]),
+             str_at_true_precision(cross_r_brackets[0][1])]
+            if cross_r_brackets else None,
         "n_sign_changes": len(cross_r_brackets),
         "bisected": False,
         "why_not_bisected": (
@@ -291,11 +304,12 @@ def main() -> int:
             "for digits the f64 character path cannot support anyway. Brackets are "
             "reported instead: cheaper, and honest about the available resolution."
         ),
-        "ray_max_q": float(Q_RAY_MAX),
+        "ray_max_q": str_at_true_precision(Q_RAY_MAX),
     })
     w.add_data("per_partition_at_q0_top8", [
-        {"partition": list(l), "delta": int(d), "term": t} for l, d, t in rows[:8]])
-    w.add_data("leading_over_total_ratio_at_q0", float(canc))
+        {"partition": list(l), "delta": int(d), "term": fmt_f64_limited(t)}
+        for l, d, t in rows[:8]])
+    w.add_data("leading_over_total_ratio_at_q0", fmt_f64_limited(canc))
     w.add_assertion("kernel_matches_dense_path", 1 if kernel_rel < 1e-12 else 0, 1)
     if chi_rel is not None:
         w.add_assertion("chi_convention_matches_rust_witness",

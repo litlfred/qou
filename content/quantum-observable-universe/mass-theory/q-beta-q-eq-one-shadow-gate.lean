@@ -74,7 +74,14 @@ class QOneShadowGateClass (c2 c3 : ℝ → ℝ) : Prop where
 
     Routine restatement of the class fields; the value of formalising
     is composition with downstream checks (cross-anchor swing, radius
-    of convergence, bar-evenness). -/
+    of convergence, bar-evenness).
+
+    **Assumed, not derived here.** "Routine restatement" is exact: the body
+    is `⟨hC.c2_at_one_eq_neg_one, hC.c3_at_one_eq_jones_hopf⟩`, both
+    conjuncts projected verbatim from `QOneShadowGateClass`. The anchors are
+    hypotheses on `c2`/`c3`, which are arbitrary functions here, so the
+    statement is genuinely conditional and may not be strengthened to a
+    global `axiom`. -/
 -- Ref: [manuscript] prop:q-beta-q-eq-one-shadow-gate
 def qbeta_q_eq_one_shadow_anchors
     (c2 c3 : ℝ → ℝ) [hC : QOneShadowGateClass c2 c3] :

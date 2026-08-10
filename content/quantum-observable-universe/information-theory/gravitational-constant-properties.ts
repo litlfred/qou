@@ -20,6 +20,7 @@ export default remark({
     "prop:descent-eigenspaces",
     "rem:julia-hausdorff-dimension-prediction",
   ],
+  foreshadows: ["rem:julia-hausdorff-dimension-prediction"],
   cites: [
     "jacobson1995",
     "bekenstein1981",

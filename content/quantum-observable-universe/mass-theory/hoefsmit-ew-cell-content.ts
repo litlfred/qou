@@ -8,7 +8,7 @@ export default theorem({
     ref: "qou:QOU.IwahoriHecke.Hoefsmit.HoefsmitSeminormalBasis",
     validation: "not_checked",
   },
-  uses: ["prop:knot-operator-lp-selection"],
+  uses: [],
   tags: [
     "hoefsmit",
     "cell-content",
