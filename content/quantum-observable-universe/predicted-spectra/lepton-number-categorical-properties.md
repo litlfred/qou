@@ -40,13 +40,20 @@ This is a scope-(b) exclusion of *one construction*, with its invariant
 cited (the defining disjointness of homogeneous components); it does not
 touch lepton number itself, the Skein module, or the $Y = B - L$ route.
 
-**What the correct structure appears to be: a filtration.** An inhomogeneous
-relation is exactly what a *filtration* tolerates — the skein relation lowers
-the filtration degree by one rather than preserving a grade. That is the
-Vassiliev / finite-type filtration, and the corpus already carries it under
-`QOU/KnotTheory/Vassiliev/` (`finiteTypeSubmodule_mono` is the increasing
-family). Whether lepton number is recovered as a filtration degree there is
-**open** and is not claimed here; see bean `qou-kl39`.
+**What this leaves.** An inhomogeneous relation is what a *filtration*
+tolerates rather than a grading, but the corpus's Vassiliev filtration
+(`QOU/KnotTheory/Vassiliev/`) grades **invariants** `v : K \to R`, not states,
+so it does not by itself supply a state-valued $L$.
+
+The separate constraint proved in
+`QOU/StandardModel/LeptonNumberCarrierChirality.lean` says where $L$ *can*
+live: not on the unframed knot type, since the mirror must move the carrier
+and the unknot is amphichiral. The carrier labels in the table above are
+therefore to be read at **braid / framing** level — consistent with
+`AntiparticleCrossingReversalContext`, whose mirror is $\sigma_i \mapsto
+\sigma_i^{-1}$ on braid words and which records that the mirror *preserves
+the knot type*. Recovering $L$ as a state function remains **open**; see bean
+`qou-kl39`.
 
 **Individual lepton assignments.**
 
