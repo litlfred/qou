@@ -297,7 +297,10 @@ that factor of 2. Nothing in the corpus states it; a candidate that pins
 ## 3. Two corroborations of surrounding machinery
 
   * NZ prove the cusp shape `tau_i(u)` is an EVEN function of each `u_i` — the
-    source of the corpus's `V_41_even` and `no_cubic_rung`. Those are faithful.
+    source of the corpus's `no_cubic_rung` and `no_odd_rung`
+    (`QOU/Knot/NeumannZagierParity.lean`). Those are faithful. (An earlier draft
+    of this line cited `V_41_even`; no such declaration exists anywhere in the
+    corpus — see the verification section at the end of this bean.)
   * `u` is a local coordinate valid only "in a neighborhood of 0 in C^h", and
     deformations are parametrized `2^h : 1`. That is exactly why the Murakami
     substrate-matched meridian at `|u| >= 2*pi` is off the controlled
@@ -390,3 +393,86 @@ rediscovered — which was the point of noticing the two arcs are one question.
 A first draft of the Lean asserted `K = 1e7` would clear the bound. It does not —
 the threshold is `1.07e7`. The guess was wrong by that factor and `norm_num`
 caught it; the file now brackets the threshold rather than asserting one side.
+
+---
+
+# FILTER VERIFICATION — all four exclusions confirmed Lean-backed (2026-08-10)
+
+This bean's pruning strategy is its most reusable output: a later agent is meant
+to inherit four exclusions as settled and not re-run them. That only works if
+they are real, so they were checked against `origin/main` @ 69fb34e4 rather than
+taken from this bean's own prose.
+
+## The four filter files — all clean
+
+| file | lines | real sorries | axioms |
+|---|---|---|---|
+| `QBeta/ThetaLipschitzObstruction.lean` | 195 | **0** | 0 |
+| `QBeta/CompleteStructureExclusion.lean` | 166 | **0** | 0 |
+| `QBeta/ChannelMeridianIdentification.lean` | 195 | **0** | 0 |
+| `QBeta/SLeakZeroCrossing.lean` | 147 | **0** | 0 |
+
+("real sorries" = `\bsorry\b` occurrences minus the phrase *"sorry-free"*, which
+otherwise inflates the count — the trap that made `SeminormalBaseExists` look
+sorry-bearing under `qou-2ryn`.)
+
+## Declaration-level check — 10 of 11 cited names resolve
+
+Every filter lemma this bean tells a successor to apply exists:
+
+    ✓ opposite_sides_of_diagonal          CompleteStructureExclusion:145
+    ✓ u_ne_zero_of_S_ne_zero              CompleteStructureExclusion:117
+    ✓ color_eq_one_of_re_eq_log           ChannelMeridianIdentification:109
+    ✓ winding_eq_zero_of_boost_dominated  ChannelMeridianIdentification:136
+    ✓ no_sign_flip_of_theta_zero          ChannelMeridianIdentification:173
+    ✓ channelFree                         ChannelMeridianIdentification:86
+    ✓ ratio_attained                      AfreeThetaConstraint:107
+    ✓ exists_angle_assignment             AfreeThetaConstraint:156
+    ✓ signflip_forces_diagonal_cross      Knot/FigureEightComplexVolume:204
+    ✓ no_cubic_rung                       Knot/NeumannZagierParity:86
+    ✗ V_41_even                           DOES NOT EXIST
+
+## The one defect: this bean carried its own phantom citation
+
+`V_41_even` appears nowhere in the corpus — the sole occurrence was this bean's
+own line 300. The *substance* is fine and lives under different names:
+`no_cubic_rung` (coeff 3 = 0) and `no_odd_rung` (every odd coefficient vanishes),
+both sorry-free over a generic `[CommRing R] [NoZeroDivisors R] [NeZero (2:R)]`
+— correct §7c hygiene, no gratuitous `ℝ`. The citation is now corrected in place.
+
+Worth naming plainly: this is the same defect class the bean itself polices two
+sections earlier, where it faults `hRe` for resting on `meridian_holonomy_boost`,
+"which does not exist". A bean that catches a phantom citation can carry one.
+
+## `meridian_holonomy_boost` — the bean's claim is right, and already recorded
+
+Confirmed absent, and the corpus does not merely lack it, it *documents* the
+absence in two docstrings:
+
+  * `ChannelMeridianIdentification.lean:40` — "...to a lemma
+    `meridian_holonomy_boost`, which does not [exist]"
+  * `DeltaLambdaT5Assembly.lean:27` — "an earlier version of this docstring
+    attributed it to a lemma `meridian_holonomy_boost`; no such [lemma]"
+
+So AV3's premise (`hRe` is undischarged with a phantom citation) is sound and
+independently corroborated on main.
+
+## The Lipschitz result is exemplary, and its self-correction is in the file
+
+`ThetaLipschitzObstruction.lean` brackets the threshold rather than asserting one
+side of it — `bound_excludes_K_1e7` and `bound_clears_K_1p1e7` are both proved,
+pinning the forced constant to `[1e7, 1.1e7]`. The file records its own wrong
+guess in a docstring: *"a draft asserted `K = 1e7` would clear. It does not — the
+threshold is ≈ 1.07e7, and the guess was wrong."* It also carries the explicit
+**scope (a)** label per AGENTS.md's refutation-scoping rule, so it excludes
+"Lipschitz-with-moderate-constant ϑ", not "any ϑ".
+
+## What this changes about the bean's state
+
+Nothing about the open question. ϑ_K still has no definition; the fibre-level
+route recommended in §"THE ACTIONABLE REORIENTATION" is still the live one, and
+this pass produced **no** progress toward it. What changed is only that the four
+filters can now be inherited on evidence instead of on assertion — which is what
+saves the next agent the nine-reading search this bean was opened to stop.
+
+Status stays `todo`.
