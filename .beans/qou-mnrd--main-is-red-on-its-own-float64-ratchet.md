@@ -1352,3 +1352,59 @@ closes it, which is the structural point this bean has been making since the
 
 PR: https://github.com/litlfred/qou/pull/4895 (branch
 `claude/drain-main-inherited-float64`, 15 commits, base `main`).
+
+---
+
+## CORRECTION 2026-08-10 — `a-K-via-lp-dual` was an ANCHOR, not a solver
+
+The entry above ("the solver question has a concrete answer") reasoned from
+`solve_operator_selection_lp`'s `backend="auto"` default and concluded the
+committed witness was scipy-f64 while this container would take clarabel-MPFR,
+offering the unimproved duality residuals as a caution. **All of that was wrong,
+and it was wrong at the first step:**
+
+    computations/aK_via_lp_dual_hecke_basis.py:161
+    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+
+The call site has pinned scipy since the file's first commit. `auto` is the
+*function* default — I read the docstring instead of the call. Clarabel was never
+in play in either run, so the residuals (2.7e-15 vs 1.2e-14, both f64 noise about
+a ~1e-15 objective, tolerance 1e-6) were never evidence about MPFR.
+
+What actually moved was the q₀ anchor: `t_i` = z at muon in the committed
+witness, z at proton in the re-run, matching to f64 epsilon (6.4e-17 / 9.5e-17).
+11.5 ppb in q₀ → 3.0e-10 in z → ~4.2e-7 in `x_star`. Fixed by declaring the
+producer `ideal_muon` in `q0_anchor_manifest.json`; regenerated 235/240 fields
+identical, 4 NaN → null, 1 field moved one ulp in its 50th decimal digit.
+Raw float64 101 vs baseline 105, so a drain. Commit `0a5b2b6c7`.
+
+**The generalisable part is now its own bean: `qou-po7i`.** The anchor is chosen
+by `sys.argv[0]`'s stem, 2384 of 2785 producers are undeclared, and 1887
+witnesses record no anchor at all — so a silent 11.5 ppb re-anchoring gets
+attributed to whatever else changed, which is exactly the mistake above.
+
+## CORRECTION 2026-08-10 — `habiro-coefficients-oxygen-14` is NOT orphaned
+
+The entry above ("provably orphaned, and provably so") is wrong on both its
+pieces of evidence:
+
+  * **"No live producer names it."** I checked `_habiro_coefficient_extract.ATOMS`,
+    which stops at A=10 — the wrong list. `extend_even_a_mirror_pair_test.py`
+    carries its OWN atom list, `EVEN_A_OPEN`, including
+    `("¹⁴O (oxygen-14, A=14)", "oxygen-14", 8, 6, 224)`, and calls `analyse_atom`
+    + `_write_witness` directly (lines 84-97). It is a live producer.
+  * **"The only commit touching the file is an unrelated docs commit."** That is
+    an artifact of a SHALLOW CLONE (`git rev-parse --is-shallow-repository` →
+    true). The history needed to make that claim is not in this container. The
+    "swept in from a working tree" story rests on nothing.
+
+Worse, the file has TWO live readers — `extend_even_a_mirror_pair_test.py:117`
+and `topic2_mirror_pair_phi8_boundary_scan.py:76`, both via
+`load_a_m("oxygen-14")` — so dropping it breaks them. Its 2 NaN fields are
+exactly the ones the sympify-locals fix repairs, so the resolution is
+regeneration, not deletion.
+
+**Method note for both corrections:** each rested on a grep whose ABSENCE of a
+match I read as proof, in a repo where the thing I was grepping for lives in more
+than one list and the history is truncated. A negative grep is evidence about the
+grep. Confirm an orphan by finding the readers, not by failing to find the writer.
