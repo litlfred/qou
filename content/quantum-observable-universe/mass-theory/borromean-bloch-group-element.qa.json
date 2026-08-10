@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.lean"
   },
   "source_hashes": {
-    "md": "4734c7b0ffd5",
     "ts": "0b2df8c66840",
-    "lean": "c3e7b74131f9",
-    "lean_statement": "4fa57b9b36da"
+    "md": "4734c7b0ffd5",
+    "lean": "c3e7b74131f9"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -822,120 +821,122 @@
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71",
+        "notes": "{\"regimes\":[\"root-of-unity\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
           "ts": "0b2df8c66840",
-          "md": "57cdaeb56f56",
+          "md": "4734c7b0ffd5",
           "lean": "c3e7b74131f9"
         },
-        "result": "pass",
+        "result": "warn",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T04:58:50.052Z",
+        "reviewed_sha": "95469c0521f73d12cf57515b3f476cbc0c17ff71",
+        "severity": "minor",
+        "evidence": "content/quantum-observable-universe/mass-theory/borromean-bloch-group-element.md:1 — detected regime [root-of-unity] is disjoint from chapter 'mass-theory' expected [fixed-q0, generic-R, na, real-gt-1, real-positive, symbolic]"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1530,5 +1531,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-10T04:35:32.060Z"
+  "updated_at": "2026-08-10T04:58:50.052Z"
 }
