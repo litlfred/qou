@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T23:12:26.796077+00:00",
-  "commitSha": "9f7eb39f1b8b240996a769a06e10b90274f4506b",
+  "computedAt": "2026-08-10T02:28:09.919860+00:00",
+  "commitSha": "db2880d27f67f345442ec503d0ca6ef7e1c2cbca",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
@@ -37,9 +37,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 580,
+      "Q0_OK": 581,
       "Q0_AMBIGUOUS": 17,
-      "Q0_ANCHOR_MISSING": 1889,
+      "Q0_ANCHOR_MISSING": 1888,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 65,
       "Q0_PARSE_ERROR": 1,
@@ -54,10 +54,6 @@
         },
         {
           "witness": "a-K-via-lp-dual-full.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "a-K-via-lp-dual-hecke-basis.witness.json",
           "detail": ""
         },
         {
@@ -7606,6 +7602,10 @@
         }
       ],
       "Q0_OK": [
+        {
+          "witness": "a-K-via-lp-dual-hecke-basis.witness.json",
+          "detail": ""
+        },
         {
           "witness": "cyclic-intertwiner-verify.witness.json",
           "detail": ""

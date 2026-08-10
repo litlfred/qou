@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-06-29T12:54:16.650730+00:00",
-  "commitSha": "03e9f0aa1857ec3e777ab18d39e8f8b98bf46323",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-10T02:24:45.472801+00:00",
+  "commitSha": "f1ea7bd7e748a9f3b15592fe6a34485e17ef4735",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "habiro-coefficients-oxygen-14",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "023b70899dce",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "36597aa909ec",
+  "scriptCommitSha": "f984de819840e43b1215313f8f523b7d94b374bd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Canonical Phase 5q Habiro coefficients for ¹⁴O (oxygen-14, A=14). Strict-mirror partner for the refined 2⌊(A−1)/2⌋ scaling-law test on the open even-A pairs (⁶He−⁶Be, ¹²N−¹²B, ¹⁴O−¹⁴C).",
   "data": {
@@ -41,7 +42,7 @@
     "thm:knot-mass-formula-unified"
   ],
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "pn_convention": "chi_lambda_braid (legacy production marshalling)",
     "source": "habiro-coefficients-atomic.witness.json (τ_p, τ_n)",
     "generator": "_habiro_coefficient_extract.py"
@@ -313,7 +314,7 @@
   "n_nonzero": 34,
   "all_integral": true,
   "reconstruction_matches": false,
-  "tr_M_at_q0": 8.177763552600644e-06,
-  "tr_M_at_q0_via_u_poly": NaN,
-  "tr_M_at_q0_rel_err": NaN
+  "tr_M_at_q0": 8.17775810558832e-06,
+  "tr_M_at_q0_via_u_poly": 8.17775810558832e-06,
+  "tr_M_at_q0_rel_err": 0.0
 }

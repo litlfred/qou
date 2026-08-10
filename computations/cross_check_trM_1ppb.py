@@ -56,6 +56,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 from mpmath import mp, mpf, fabs, mpmathify
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).parent
 HOEF_PATH = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
@@ -86,6 +87,15 @@ OUT_PATH = HERE / "cross-check-trM-1ppb.witness.json"
 # (mpfr 50 dps) and Habiro legs are SIGN-ONLY (color-blind): they match peel
 # at A=1 and diverge ~1.8e-4 at A≥2 by the color-weighting, which is expected
 # and reported informationally via TOLERANCE_PEEL, not gated.
+# MUST precede the mpf() literals below. They are parsed at module import, and
+# `mp.dps = args.dps` in main() runs long afterwards — so without this they are
+# built at mpmath's default 15 dps and later PRINT their binary64 expansion:
+#     str(TOLERANCE_PPQ) -> 0.000000000000001000000000000000077705399876661079238307
+# which is what the float64-padding ratchet flags. Built at full precision the
+# same literal serializes as 0.000000000000001. `set_compute_dps` is idempotent
+# and safe alongside the call in main().
+set_compute_dps(50)
+
 TOLERANCE_PPQ = mpf("1e-15")   # L1 gate on the color-weighted exact methods (1 part/quadrillion)
 TOLERANCE_PEEL = mpf("1e-12")  # color-blind-leg informational flag threshold (cb≠)
 TOLERANCE = TOLERANCE_PPQ      # back-compat alias
