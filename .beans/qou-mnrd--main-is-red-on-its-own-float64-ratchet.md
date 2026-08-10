@@ -1093,3 +1093,79 @@ prepare-merge does not mistake them for new:
 
     float64-padding ratchet   cross-check-trM-1ppb.witness.json  (dbd91b5ff)
     module-const precision    y_lambda_su_n.py REG_ZC / REG_ZD
+
+---
+
+## THE RATCHET IS GREEN. 0 NEW, 0 REGRESSED — and so are the other two gates
+
+`scripts/precision-gates.sh`: **All blocking precision gates green.**
+
+From 18 NEW + 2 REGRESSED when this bean's arc started, through 21 NEW + 2 that
+`main` accrued in parallel. **Nothing baselined, no `--rebaseline`, no number
+hand-edited** — every entry fixed at its producer and verified by diffing the
+regenerated witness against a pre-drain copy.
+
+### The last entry was stuck on a destructive producer, not on float64
+
+`ground-state-ordering-argmin-sweep` sat at 1 field for the whole arc because
+re-running it DELETED a published result: its witness carries a `lean_bridge`
+block **no producer writes** (added by `7c60b2f38`, cited by
+`docs/audits/2026-08-09-ground-state-ordering-truth-value.md`), and the write
+was a plain overwrite.
+
+Fixed by making the write MERGE — any top-level block already on disk that the
+run does not compute is carried forward, and the run prints which. A producer
+that silently drops published data is a worse defect than a stale field. Run
+with `--max-a 16` to match the committed sweep (the script's default 14 would
+shrink it 62 -> 47 cases). `lean_bridge` byte-identical, zero non-timing
+differences.
+
+### The other two gates: one root cause, inherited from main
+
+Both were the same defect — an `mpf()` literal parsed at module import while
+mpmath is still at its DEFAULT 15 dps, with the real precision set later inside
+a function:
+
+    float64-padding    cross_check_trM_1ppb.py  TOLERANCE_PPQ = mpf("1e-15")
+                       at module scope; mp.dps = args.dps in main(). str()
+                       then printed the binary64 expansion
+                       0.000000000000001000000000000000077705399876661079...
+                       for a value that is exactly 1e-15.
+
+    module-const       y_lambda_su_n.py  REG_ZC / REG_ZD, the
+                       trace-convention-registry reference constants, rounded
+                       to 53 bits before self_test() raises dps to 30 —
+                       "already wrong when built".
+
+Both fixed as the gate's own message prescribes: idempotent
+`set_compute_dps()` at module scope above the constants.
+
+**This is now the FOURTH instance of that defect class in this bean** —
+`VOL_41` in the tetrahedral probe, `gram_qtrace`'s q0, and now these two. It is
+the single most repeated precision bug in the corpus, it is invisible until
+something prints the value at high dps, and the fix is one line every time.
+Worth a lint rule rather than a fifth discovery.
+
+### `m-tau`: the value that "did not reproduce" was NONDETERMINISTIC
+
+Not staleness. `snappy_volume` for the torus carriers returned
+`-4.335420911161236e-14` on one call and `-2.4684863123708434e-07` on the next,
+**in the same process**, with `solution_type` = "contains degenerate
+tetrahedra". A torus-knot complement is Seifert-fibred, not hyperbolic, so the
+volume is exactly zero — the module's own docstring says so — and SnapPy was
+returning the residual of a degenerate solve.
+
+17 digits of solver noise were being published as a measurement, which is why
+the witness could never reproduce. Now the exact 0 with a note; `solution_type`
+still carries the degeneracy; the `hyperbolic` verdict is untouched (threshold
+1e-4, orders above any residual). Two consecutive full runs now differ in
+nothing outside metadata.
+
+## Open, and none of it is drain work
+
+    charm-frobenius-block-projection   RESOLVED — was convention C, see qou-wgta
+    the C cache + 15 direct readers     qou-wgta P0, recorded there
+    4 witnesses still not valid JSON    a-K (solver-pinning decision), term6
+                                        (producer broken on HEAD), oxygen-14
+                                        (no live producer), A-operator-rank
+                                        (>200s budget)
