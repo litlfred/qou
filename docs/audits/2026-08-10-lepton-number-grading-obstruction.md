@@ -109,3 +109,65 @@ degree supplies one, and whether it returns 0 on a single quark."
 `lepton-number-categorical-properties.md` asserted the grading as fact. That
 paragraph is replaced with the obstruction, the scope note, and the pointer
 to the filtration.
+
+---
+
+## Follow-up (same day): a stronger obstruction, and a correction to this audit
+
+Testing the filtration direction suggested above turned up two things, one of
+which corrects this document.
+
+### 1. The Vassiliev filtration grades *invariants*, not *states*
+
+`FiniteTypeInvariant.lean` defines `IsFiniteType (m : ℕ) (v : K → R)` and
+`finiteTypeSubmodule m : Submodule R (K → R)`. The filtration is on the space
+of **invariants** — functions `K → R` — not on knots. So it does not, on its
+own, supply the state→`L` map that `Y = B − L` needs. The suggestion in
+§"Where the repair probably lives" above was structurally confused on this
+point, and is withdrawn in that form.
+
+### 2. No function of the unframed knot type can work at all
+
+Sharper, and it subsumes the grading obstruction. The corpus's own carrier
+table assigns
+
+| particle | carrier | `L` |
+|---|---|---|
+| `νₑ` | `K_{0₁}` (unknot) | `+1` |
+| `ν̄ₑ` | `K_{0₁}^σ` (mirror unknot) | `-1` |
+
+The unknot is **amphichiral** — it bounds a disk, so it is isotopic to its
+mirror. The two rows therefore assign `+1` and `-1` to **the same knot**. No
+function of the knot type can do that.
+
+Proved in
+[`LeptonNumberCarrierChirality.lean`](../../content/quantum-observable-universe/lean/QOU/StandardModel/LeptonNumberCarrierChirality.lean):
+
+| Theorem | Statement | Axioms |
+|---|---|---|
+| `no_lepton_number_on_amphichiral_carrier` | `mirror x = x` ⟹ no `L` with `L x = 1`, `L (mirror x) = -1` | **none** |
+| `mirror_must_move_the_carrier` | such an `L` forces `mirror x ≠ x` | **none** |
+| `chiral_carrier_admits_lepton_number` | `mirror x ≠ x` ⟹ such an `L` exists | `[propext]` |
+
+The third theorem is what keeps this honest: the obstruction is **exactly**
+amphichirality and nothing more. It rules out the unknot as the neutrino
+carrier, not the idea of a knot-valued lepton number.
+
+Note the charged rows are unaffected — the trefoil is chiral, so `T(2,3)` and
+its mirror are genuinely different knots.
+
+### The two repairs, and only two
+
+1. **Give the neutrino a chiral carrier.** The unknot cannot work.
+2. **Let `L` see the framing.** A framed unknot with framing `+n` and one with
+   `-n` are distinct framed objects even though the underlying knot is
+   amphichiral, so the mirror acts freely there.
+
+Route 2 is the more interesting: the framing datum is `T(t)`
+(`def:strand-twist-datum`), the same object the eightfold-way chapter carries
+for hypercharge. If `L` needs framing and `Y` needs a framing-independent
+second invariant, that is a constraint worth having explicit. Neither route is
+pursued here.
+
+`qou-kl39` stays open. Its next step is now: **pick a chiral neutrino carrier,
+or define `L` on framed knots** — not "search for a state→`L` map".
