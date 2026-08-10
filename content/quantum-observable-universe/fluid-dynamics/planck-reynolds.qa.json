@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "d22f46897eba",
-    "ts": "985bd64eeec2"
+    "ts": "33c115ad82be"
   },
   "criteria": {
     "voice-status-leak": [
@@ -592,18 +592,19 @@
       {
         "field_hash": {
           "md": "d22f46897eba",
-          "ts": "985bd64eeec2"
+          "ts": "33c115ad82be",
+          "graph": "c8e75b3b517f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b700e5efee85",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-10T19:23:09.443Z",
+        "reviewed_sha": "9a4063625f690e945850d1d9413903f44e66357e"
       }
     ],
     "detangler-section-band": [
@@ -696,18 +697,19 @@
       {
         "field_hash": {
           "md": "d22f46897eba",
-          "ts": "985bd64eeec2"
+          "ts": "33c115ad82be",
+          "graph": "c8e75b3b517f"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "cef9fe7e54b9",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-10T19:23:09.443Z",
+        "reviewed_sha": "9a4063625f690e945850d1d9413903f44e66357e",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1232,7 +1234,26 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "d22f46897eba",
+          "ts": "33c115ad82be",
+          "graph": "c8e75b3b517f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "296e68ad2618",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
+        },
+        "reviewed_at": "2026-08-10T19:23:09.443Z",
+        "reviewed_sha": "9a4063625f690e945850d1d9413903f44e66357e"
+      }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-10T19:23:09.443Z"
 }

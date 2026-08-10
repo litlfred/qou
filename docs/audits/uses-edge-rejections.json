@@ -21,58 +21,72 @@
       "settled": "2026-08-10",
       "by": "owner"
     },
-
     {
       "source": "rem:q-metric-contact-deformation",
       "target": "def:ns-obstruction",
       "reason": "overview-source",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:q-metric-contact-deformation",
       "target": "prop:core-levi-form",
       "reason": "overview-source",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:q-metric-contact-deformation",
       "target": "rem:hyperbolic-overlap-saturation",
       "reason": "overview-source",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:q-metric-contact-deformation",
       "target": "rem:townsend-biot-savart-strain",
       "reason": "overview-source",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:q-metric-contact-deformation",
       "target": "thm:q-ns-wellposedness",
       "reason": "overview-source",
       "note": "This block sits at fluid-dynamics §0 and names five results developed across §3-§6. Satisfying these five proposed moving def:ns-obstruction from §4 to before position 9 -- a definition relocated ahead of the introduction that previews it.",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:planck-reynolds",
       "target": "prop:discrete-vortex-spectrum",
       "reason": "overview-source",
       "note": "Also one leg of a would-be cycle; rejecting it dissolves both fluid-dynamics cycles.",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:planck-reynolds",
       "target": "rem:vortex-intensity-modes",
       "reason": "overview-source",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
     },
     {
       "source": "rem:hecke-charge-mass-duality",
       "target": "def:vertex-operator",
       "reason": "overview-source",
-      "settled": "2026-08-10"
+      "settled": "2026-08-10",
+      "refiled_as": "none",
+      "refiled_note": "NOT re-filed with the other seven. On re-reading, this one does not read as a preview: the block writes Y(a, z) as the object it is describing (\"the result is the vertex operator Y(a,z)\") and gives its mode expansion, rather than pointing a reader forward. foreshadows[] requires the prose to frame the reference as deferred, and this prose does not. Left as an open question: either a genuine uses[] dependency pointing forward (an ordering problem) or a self-contained mention needing no edge at all."
     },
-
     {
       "source": "rem:bsd-surreal-bound",
       "target": "rem:rh-surreal-bound",
@@ -80,7 +94,6 @@
       "note": "bsd-surreal-bound.md line 27: 'The BSD bound generalizes the RH bound ... RH is the r = 0 specialization'. The BSD argument closes on lem:surreal-squeeze and prop:surreal-rate-calculus, both already declared and both backward.",
       "settled": "2026-08-10"
     },
-
     {
       "source": "conj:p-vs-np-qou",
       "target": "rem:p-vs-np-surreal-bound",
@@ -95,7 +108,6 @@
       "note": "A '(see X)' filing note; the aggregator cites the instance, not the reverse.",
       "settled": "2026-08-10"
     },
-
     {
       "source": "rem:bsd-surreal-bound",
       "target": "def:q-from-epsilon",
@@ -167,5 +179,6 @@
       "note": "The cited section 'Frobenius duality of strata' appears zero times in the proposition and at line 32 of prf:spectral-sequence-collapse. The same edge is ACCEPTED for prf:phi-q-categorical-truncation, whose Step 1 uses what the one-sentence proposition states.",
       "settled": "2026-08-10"
     }
-  ]
+  ],
+  "refiling_note": "Seven overview-source rows carry refiled_as: \"foreshadows\" -- rejected as dependencies, re-declared as forward pointers. A row with refiled_as absent or \"none\" has NOT been re-declared anywhere and remains simply rejected. Scans must keep filtering on ALL rows regardless of refiled_as: the point is that none of them is a uses[] edge."
 }
