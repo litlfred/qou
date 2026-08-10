@@ -110,7 +110,8 @@ INTERFACE_COEFS: dict[str, tuple[str, str]] = {
     # d-coefficient is "0", "-h", or "-h/2" — resolved against h at q_0.
     "pp": ("1", "0"),
     "nn": ("1", "-h"),
-    "pn": ("1", "-h/2"),
+    # colour-WEIGHTED p-n (qou-gdtb); was "-h/2", the colour-blind form.
+    "pn": ("1", "-h*(1/2-delta/4)"),
 }
 
 
