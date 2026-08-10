@@ -71,11 +71,18 @@ noncomputable def QuantumSu2.qInt (qs : QuantumSu2) (n : ℕ) : R_q :=
 theorem QuantumSu2.qInt_one (qs : QuantumSu2) : qs.qInt 1 = 1 := by
   unfold qInt; simp [pow_one, div_self (sub_ne_zero.mpr qs.q_ne_one)]
 
-/-- [2]_q = q + 1. -/
+/-- [2]_q = q + 1.
+
+    Proved through the *multiplicative relation* `q² − 1 = (q + 1)(q − 1)`
+    (`div_eq_iff`) rather than by `field_simp`: the content is a
+    division-free identity in `ℤ[q]`, and only the quotient presentation of
+    `[n]_q` needs the field.  (§7c R[h] pattern; see the ground-ring note in
+    the module header for why `R_q = ℚ(q)` itself is not reducible here.) -/
 -- Ref: [lusztig1993]
 theorem QuantumSu2.qInt_two (qs : QuantumSu2) : qs.qInt 2 = qs.q + 1 := by
   unfold qInt
   have h : qs.q - 1 ≠ 0 := sub_ne_zero.mpr qs.q_ne_one
-  field_simp; ring
+  rw [div_eq_iff h]
+  ring
 
 end QOU

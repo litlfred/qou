@@ -53,20 +53,29 @@ def IsBarSymmetric {R : Type*} [CommRing R] [BarInvolution R] (x : R) : Prop :=
 def IsBarAntiSymmetric {R : Type*} [CommRing R] [BarInvolution R] (x : R) : Prop :=
   BarInvolution.bar x = -x
 
-/-- `P_avg = (1 + bar)/2`. Requires `2 ≠ 0` in `R`. -/
-noncomputable def barSymmetricProjection {R : Type*} [Field R] [BarInvolution R]
-    (x : R) : R := (x + BarInvolution.bar x) / 2
+/-! ### The `P_avg` / `P_skew` projections
 
-/-- `P_skew = (1 - bar)/2`. Requires `2 ≠ 0` in `R`. -/
-noncomputable def barSkewProjection {R : Type*} [Field R] [BarInvolution R]
-    (x : R) : R := (x - BarInvolution.bar x) / 2
+§7c base ring: these need only that **`2` is invertible**, which is an
+`Invertible (2 : R)` instance over a `CommRing` — not a field. The division by
+`2` is carried as the unit `⅟(2 : R)`, so the projections exist over e.g.
+`ℤ[1/2][q, q⁻¹]`, which is where the bar-graded Hecke coefficients live. A
+field instance is recovered for free: `[Field R] [CharZero R]` supplies
+`Invertible (2 : R)` via Mathlib's `invertibleTwo`, so the earlier signature is
+the special case. -/
+
+/-- `P_avg = (1 + bar)/2`, written with the unit `⅟2`. -/
+def barSymmetricProjection {R : Type*} [CommRing R] [Invertible (2 : R)]
+    [BarInvolution R] (x : R) : R := ⅟(2 : R) * (x + BarInvolution.bar x)
+
+/-- `P_skew = (1 - bar)/2`, written with the unit `⅟2`. -/
+def barSkewProjection {R : Type*} [CommRing R] [Invertible (2 : R)]
+    [BarInvolution R] (x : R) : R := ⅟(2 : R) * (x - BarInvolution.bar x)
 
 /-- Every element decomposes as `x = P_avg(x) + P_skew(x)`. -/
-theorem decompose {R : Type*} [Field R] [CharZero R] [BarInvolution R] (x : R) :
-    x = barSymmetricProjection x + barSkewProjection x := by
+theorem decompose {R : Type*} [CommRing R] [Invertible (2 : R)] [BarInvolution R]
+    (x : R) : x = barSymmetricProjection x + barSkewProjection x := by
   unfold barSymmetricProjection barSkewProjection
-  field_simp
-  ring
+  linear_combination (-x) * invOf_mul_self (2 : R)
 
 /-! ## Bar-grading algebraic structure (all PROVED, no `sorry`)
 
@@ -201,37 +210,38 @@ theorem isBarSymmetric_natCast (n : ℕ) : IsBarSymmetric ((n : R)) :=
 
 end BarOnScalars
 
-/-! ## Projection identities (require `Field` for division by 2)
+/-! ## Projection identities (need only `Invertible (2 : R)`, not a field)
 
 `P_avg` acts as the identity on bar-symmetric, kills bar-anti-symmetric.
-`P_skew` is the complementary projection. -/
+`P_skew` is the complementary projection.
+
+§7c: the whole section runs over a `CommRing` with `2` invertible; the sole
+inverse used is the unit `⅟(2 : R)`. The one statement here that genuinely
+needs a field — `bar_inv`, which inverts an element that may *vanish* — is
+isolated in its own `section FieldInverse` below. -/
 
 section Projections
-variable {R : Type*} [Field R] [CharZero R] [BarInvolution R]
+variable {R : Type*} [CommRing R] [Invertible (2 : R)] [BarInvolution R]
 
-/-- `bar (x⁻¹) = (bar x)⁻¹` over a field. From `bar(x · x⁻¹) = bar 1 = 1`
-    and the multiplicativity of bar. -/
-theorem bar_inv (x : R) :
-    BarInvolution.bar x⁻¹ = (BarInvolution.bar x)⁻¹ := by
-  by_cases hx : x = 0
-  · rw [hx, inv_zero, BarInvolution.bar_zero, inv_zero]
-  · have h_bar_ne : BarInvolution.bar x ≠ 0 := by
-      intro h
-      apply hx
-      have hbb : BarInvolution.bar (BarInvolution.bar x) =
-          BarInvolution.bar 0 := by rw [h]
-      rw [BarInvolution.bar_involutive, BarInvolution.bar_zero] at hbb
-      exact hbb
-    have h1 : BarInvolution.bar x * BarInvolution.bar x⁻¹ = 1 := by
-      rw [← BarInvolution.bar_mul, mul_inv_cancel₀ hx, BarInvolution.bar_one]
-    exact eq_inv_of_mul_eq_one_left (by rw [mul_comm]; exact h1)
+/-- `bar(⅟2) = ⅟2`. Foundation for `barSymmetricProjection` idempotency.
+    Over a `CommRing`: `bar(⅟2)·2 = bar(⅟2·2) = bar 1 = 1`, and the inverse
+    of `2` is unique — no division, and no field. -/
+theorem bar_invOf_two : BarInvolution.bar (⅟(2 : R)) = ⅟(2 : R) := by
+  have hb2 : BarInvolution.bar (2 : R) = 2 := bar_two
+  have h : BarInvolution.bar (⅟(2 : R)) * 2 = 1 := by
+    have hmul : BarInvolution.bar (⅟(2 : R) * (2 : R))
+        = BarInvolution.bar (⅟(2 : R)) * BarInvolution.bar (2 : R) :=
+      BarInvolution.bar_mul _ _
+    rw [invOf_mul_self, BarInvolution.bar_one, hb2] at hmul
+    exact hmul.symm
+  calc BarInvolution.bar (⅟(2 : R))
+      = BarInvolution.bar (⅟(2 : R)) * (2 * ⅟(2 : R)) := by
+        rw [mul_invOf_self, mul_one]
+    _ = BarInvolution.bar (⅟(2 : R)) * 2 * ⅟(2 : R) := by ring
+    _ = ⅟(2 : R) := by rw [h, one_mul]
 
-/-- `bar(1/2) = 1/2`. Foundation for `barSymmetricProjection` idempotency. -/
-theorem bar_half : BarInvolution.bar ((1 : R) / 2) = 1 / 2 := by
-  rw [one_div, bar_inv, bar_two]
-
-/-- Every integer scalar is bar-symmetric (over a CommRing — restated
-    here in the Field section for convenient downstream consumption). -/
+omit [Invertible (2 : R)] in
+/-- Every integer scalar is bar-symmetric (pure `CommRing` content). -/
 theorem isBarSymmetric_intCast (n : ℤ) : IsBarSymmetric ((n : R)) := by
   unfold IsBarSymmetric
   induction n using Int.rec with
@@ -245,7 +255,8 @@ theorem barSymmetricProjection_of_sym {x : R} (hx : IsBarSymmetric x) :
     barSymmetricProjection x = x := by
   unfold barSymmetricProjection
   unfold IsBarSymmetric at hx
-  rw [hx]; ring
+  rw [hx]
+  linear_combination x * invOf_mul_self (2 : R)
 
 /-- `P_avg(x) = 0` when `x` is bar-anti-symmetric. -/
 theorem barSymmetricProjection_of_antisym {x : R} (hx : IsBarAntiSymmetric x) :
@@ -259,7 +270,8 @@ theorem barSkewProjection_of_antisym {x : R} (hx : IsBarAntiSymmetric x) :
     barSkewProjection x = x := by
   unfold barSkewProjection
   unfold IsBarAntiSymmetric at hx
-  rw [hx]; ring
+  rw [hx]
+  linear_combination x * invOf_mul_self (2 : R)
 
 /-- `P_skew(x) = 0` when `x` is bar-symmetric. -/
 theorem barSkewProjection_of_sym {x : R} (hx : IsBarSymmetric x) :
@@ -303,10 +315,8 @@ theorem barSkewProjection_pow_odd_of_antisym
 theorem barSymmetricProjection_isBarSymmetric (x : R) :
     IsBarSymmetric (barSymmetricProjection x) := by
   unfold IsBarSymmetric barSymmetricProjection
-  rw [show (x + BarInvolution.bar x) / 2 =
-        (x + BarInvolution.bar x) * (1 / 2) by ring,
-      BarInvolution.bar_mul, BarInvolution.bar_add,
-      BarInvolution.bar_involutive, bar_half]
+  rw [BarInvolution.bar_mul, bar_invOf_two, BarInvolution.bar_add,
+      BarInvolution.bar_involutive]
   ring
 
 /-- **`P_avg` is idempotent**: applying twice = applying once.
@@ -320,9 +330,7 @@ theorem barSymmetricProjection_idempotent (x : R) :
 theorem barSkewProjection_isBarAntiSymmetric (x : R) :
     IsBarAntiSymmetric (barSkewProjection x) := by
   unfold IsBarAntiSymmetric barSkewProjection
-  rw [show (x - BarInvolution.bar x) / 2 =
-        (x - BarInvolution.bar x) * (1 / 2) by ring,
-      BarInvolution.bar_mul, bar_half,
+  rw [BarInvolution.bar_mul, bar_invOf_two,
       show x - BarInvolution.bar x =
         x + (-1) * BarInvolution.bar x by ring,
       BarInvolution.bar_add, BarInvolution.bar_mul,
@@ -339,5 +347,40 @@ theorem barSkewProjection_idempotent (x : R) :
   barSkewProjection_of_antisym (barSkewProjection_isBarAntiSymmetric x)
 
 end Projections
+
+/-! ## The one genuinely field-requiring statement
+
+`bar (x⁻¹) = (bar x)⁻¹` quantifies over **every** `x : R`, including `x = 0`,
+so it needs a total inverse on `R` — a `GroupWithZero`/`Field`, not a unit.
+This is the §7c "inverse of something that can vanish" case: it is *not*
+restatable over `CommRing` with `x : Rˣ` without dropping the `x = 0` branch
+that the proof explicitly discharges. It therefore keeps its own field section,
+and nothing above depends on it. -/
+
+section FieldInverse
+variable {R : Type*} [Field R] [BarInvolution R]
+
+/-- `bar (x⁻¹) = (bar x)⁻¹` over a field. From `bar(x · x⁻¹) = bar 1 = 1`
+    and the multiplicativity of bar. -/
+theorem bar_inv (x : R) :
+    BarInvolution.bar x⁻¹ = (BarInvolution.bar x)⁻¹ := by
+  by_cases hx : x = 0
+  · rw [hx, inv_zero, BarInvolution.bar_zero, inv_zero]
+  · have h_bar_ne : BarInvolution.bar x ≠ 0 := by
+      intro h
+      apply hx
+      have hbb : BarInvolution.bar (BarInvolution.bar x) =
+          BarInvolution.bar 0 := by rw [h]
+      rw [BarInvolution.bar_involutive, BarInvolution.bar_zero] at hbb
+      exact hbb
+    have h1 : BarInvolution.bar x * BarInvolution.bar x⁻¹ = 1 := by
+      rw [← BarInvolution.bar_mul, mul_inv_cancel₀ hx, BarInvolution.bar_one]
+    exact eq_inv_of_mul_eq_one_left (by rw [mul_comm]; exact h1)
+
+/-- `bar(1/2) = 1/2` — the field-division form of `bar_invOf_two`. -/
+theorem bar_half : BarInvolution.bar ((1 : R) / 2) = 1 / 2 := by
+  rw [one_div, bar_inv, bar_two]
+
+end FieldInverse
 
 end QOU.BraidKnot.BarInvolutionDef

@@ -1,5 +1,6 @@
 import QOU.QBeta.BarParityZeta4Swap
 import QOU.QBeta.CuspShapeBarParity
+import Mathlib.Tactic.LinearCombination
 
 /-!
 # Cusp-shape bar-parity: the figure-eight modulus split `𝔙 = Vol + i·CS`
@@ -66,12 +67,17 @@ been moved to their natural home, the base module `QOU.QBeta.BarParityZeta4Swap`
 
 /-- **Boost hyperbola.** The meridian holonomy `q` (any nonzero field element)
 satisfies `barEven q ² − barOdd q ² = 4` — the `cosh² − sinh² = 1` identity.
-One meridian turn is a hyperbolic rotation. -/
+One meridian turn is a hyperbolic rotation.
+
+§7c note: the difference is `4·q·q⁻¹`, so the proof is a single explicit
+unit witness (`q · q⁻¹ = 1`) rather than a `field_simp` denominator clear.
+The `[Field R]` on the section variable is *not* removable here — it is
+inherited from `barEven` / `barOdd`, which are defined with the ring
+inverse `x⁻¹` in `QOU.QBeta.BarParityZeta4Swap`. -/
 theorem holonomy_hyperbola {q : R} (hq : q ≠ 0) :
     barEven q ^ 2 - barOdd q ^ 2 = 4 := by
   simp only [barEven, barOdd]
-  field_simp
-  ring
+  linear_combination (4 : R) * mul_inv_cancel₀ hq
 
 /-- **Cusp bar-parity split (paper statement).** The figure-eight cusp shape
 `ω` (root of `Φ₆`) splits under the bar involution into a rational Volume part

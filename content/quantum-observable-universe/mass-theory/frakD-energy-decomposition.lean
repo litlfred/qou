@@ -33,7 +33,12 @@
   -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
 
-import Mathlib.Tactic
+import Mathlib.Algebra.Ring.Hom.Defs
+import Mathlib.Data.Nat.Cast.Basic
+import Mathlib.Algebra.Ring.Invertible
+import Mathlib.Logic.Function.Basic
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 namespace QOU.MassTheory.FrakD
 

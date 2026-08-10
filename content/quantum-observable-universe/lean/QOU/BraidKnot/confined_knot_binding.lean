@@ -1,4 +1,7 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.Ring.Units
+import Mathlib.Algebra.Ring.Invertible
+import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.BraidKnot.confined_knot_binding
