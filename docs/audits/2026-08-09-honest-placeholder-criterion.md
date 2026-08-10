@@ -188,6 +188,66 @@ Split the exemption rather than promoting or keeping it wholesale:
 Steps 2 and 4 change what the corpus asserts and what CI reports respectively,
 so both are owner calls. Step 3 is editorial and could proceed without one.
 
+## Outcome (2026-08-09, owner-authorised)
+
+Steps 3 and 4 were both authorised. Step 2 was already executed — see
+§"Outcome for the 9" above: disclosure, **not** axiom conversion.
+
+### Step 4 applied: `isDefProof` narrowed
+
+The branch no longer overrides a `CONCLUSION_FIELD` name-gate match:
+
+```ts
+const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
+if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
+```
+
+Measured before/after on the full corpus (2765 `.lean`):
+
+| | before | after |
+|---|---:|---:|
+| non-exempt `proof-no-self-assuming-projection` | 56 | **94** |
+| exempt | 162 | **124** |
+
+**38 declarations flipped exempt → non-exempt** and are seeded into the review
+ledger as `needs-agent`, so `--check-ledger` exits 1 again. That is the gate
+working — the same posture as PR #4882 §3, not a regression. Drain tracked in
+bean `qou-nbz9`, which carries the full list.
+
+### Step 3 re-measured, then beaned rather than swept
+
+Before writing the disclosure sentences the classification was recomputed, and
+**the "19" turned out to be an artifact of scope**. The original measurement
+covered only the 52 §3b-exempt declarations. Re-running the same disclosure
+test across **all 147** `proof-no-self-assuming-projection` hits (exempt *and*
+non-exempt):
+
+| class | count |
+|---|---:|
+| discloses — premise holds | 22 |
+| asserts `**Theorem/Proposition**`, no disclosure | 3 |
+| literature-cited, no disclosure | 24 |
+| bare, no disclosure | 98 |
+
+**125 of 147 (85%)** carry no disclosure — not 19. The §3b subset discloses at
+24/52 ≈ 46% against 22/147 ≈ 15% corpus-wide, which is unsurprising: that
+subset was carved out partly *because* it disclosed. Quoting 19 as the size of
+the disclosure backlog understates it by roughly 6×.
+
+Tracked as epic `qou-5p7n` with four children, split by class and by current
+exempt status, rather than applied as one sweep:
+
+| bean | scope | priority |
+|---|---|---|
+| `qou-ajfl` | 3 asserting `**Theorem/Proposition**` (all non-exempt) | high |
+| `qou-hxzl` | 24 literature-cited (5 non-exempt, 19 exempt) | high |
+| `qou-bvo3` | 20 bare + non-exempt — live scanner defects | normal |
+| `qou-pqmw` | 78 bare + exempt — tracked, triage pending | low |
+
+`qou-hxzl` carries the standing warning that these must **not** be
+bulk-converted to cited `axiom`s, with the unsoundness argument from
+§"Outcome for the 9".
+
 ## Method
 
 Counts are from

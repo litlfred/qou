@@ -1,17 +1,17 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-08-09T23:16:01.706Z",
+  "generated": "2026-08-10T01:51:53.104Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 2765,
-  "files_flagged": 170,
-  "total_defects": 57,
-  "total_exempt": 162,
+  "files_flagged": 169,
+  "total_defects": 94,
+  "total_exempt": 124,
   "categories": {
+    "proof-no-self-assuming-projection": 46,
     "proof-no-trivial-true": 18,
     "proof-no-provable-axiom": 11,
     "proof-no-unused-hypothesis-rfl": 14,
-    "proof-no-self-assuming-projection": 8,
-    "proof-docstring-sorry-mismatch": 2,
+    "proof-docstring-sorry-mismatch": 1,
     "proof-claims-unencoded": 3,
     "proof-no-decide-masking": 1
   },
@@ -1316,9 +1316,7 @@
         "pattern": "field-projection",
         "snippet": "def r_matrix_braiding_structure",
         "decl": "r_matrix_braiding_structure",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       },
       {
         "line": 108,
@@ -1326,9 +1324,7 @@
         "pattern": "field-projection",
         "snippet": "def braid_rep_from_R_check",
         "decl": "braid_rep_from_R_check",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/brings-surface/descartes-braid-structure.lean": [
@@ -1865,9 +1861,7 @@
         "pattern": "field-projection",
         "snippet": "def pslq_independence [ctx : Cl3Zeta5PslqIndependenceContext] :",
         "decl": "pslq_independence",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/CyclotomicCl3OrbitSum.lean": [
@@ -1968,9 +1962,7 @@
         "pattern": "field-projection",
         "snippet": "def grid_placement [ctx : KnotIndexedConvolutionGridContext] :",
         "decl": "grid_placement",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/LevelSufficiency.lean": [
@@ -1980,9 +1972,7 @@
         "pattern": "field-projection",
         "snippet": "def LevelSufficiency",
         "decl": "LevelSufficiency",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean": [
@@ -2051,9 +2041,7 @@
         "pattern": "field-projection",
         "snippet": "def character_closure_holds",
         "decl": "character_closure_holds",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean": [
@@ -2114,9 +2102,7 @@
         "pattern": "field-projection",
         "snippet": "def binding_assembly [ctx : BindingAssemblyContext] :",
         "decl": "binding_assembly",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/SpechtClassification.lean": [
@@ -2136,9 +2122,7 @@
         "pattern": "field-projection",
         "snippet": "def g_eq_pi_h_substrate_hypothesis [ctx : SubstrateEWDerivations] :",
         "decl": "g_eq_pi_h_substrate_hypothesis",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       },
       {
         "line": 144,
@@ -2146,9 +2130,7 @@
         "pattern": "field-projection",
         "snippet": "def v_ratio_eq_log_S3_hypothesis [ctx : SubstrateEWDerivations] :",
         "decl": "v_ratio_eq_log_S3_hypothesis",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       },
       {
         "line": 165,
@@ -2156,9 +2138,7 @@
         "pattern": "field-projection",
         "snippet": "def scalar_gauge_ratio_eq_six_fifths_hypothesis [ctx : SubstrateEWDerivations] :",
         "decl": "scalar_gauge_ratio_eq_six_fifths_hypothesis",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/UnstableAtom/decay_channel.lean": [
@@ -2168,9 +2148,7 @@
         "pattern": "tuple-projection",
         "snippet": "def decay_channel [ctx : DecayChannelContext] :",
         "decl": "decay_channel",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/algebraic_quantum_volume_specialization.lean": [
@@ -2180,9 +2158,7 @@
         "pattern": "tuple-projection",
         "snippet": "def algebraic_quantum_volume_specialization [ctx : AlgebraicQuantumVolumeSpecializationContext] :",
         "decl": "algebraic_quantum_volume_specialization",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/e_infinity_identifications.lean": [
@@ -2192,9 +2168,7 @@
         "pattern": "tuple-projection",
         "snippet": "def e_infinity_identifications [ctx : EInfinityIdentificationsContext] :",
         "decl": "e_infinity_identifications",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/hoefsmit_scattering_pipeline.lean": [
@@ -2204,9 +2178,7 @@
         "pattern": "tuple-projection",
         "snippet": "def hoefsmit_scattering_pipeline {R : Type*} [Field R]",
         "decl": "hoefsmit_scattering_pipeline",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/jet_prefix_gb_filtration.lean": [
@@ -2216,9 +2188,7 @@
         "pattern": "field-projection",
         "snippet": "def jet_prefix_gb_filtration [ctx : JetPrefixGbFiltrationContext] :",
         "decl": "jet_prefix_gb_filtration",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/joint_tower_sdp_confinement.lean": [
@@ -2228,9 +2198,7 @@
         "pattern": "tuple-projection",
         "snippet": "def joint_tower_sdp_confinement [ctx : JointTowerSdpConfinementContext] :",
         "decl": "joint_tower_sdp_confinement",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_factor_spectral_derivation.lean": [
@@ -2240,9 +2208,7 @@
         "pattern": "field-projection",
         "snippet": "def plancherelWeight_sum_eq_one",
         "decl": "plancherelWeight_sum_eq_one",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       },
       {
         "line": 72,
@@ -2250,9 +2216,7 @@
         "pattern": "field-projection",
         "snippet": "def knot_factor_spectral_derivation",
         "decl": "knot_factor_spectral_derivation",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/knot_mass_unified.lean": [
@@ -2262,9 +2226,7 @@
         "pattern": "field-projection",
         "snippet": "def knot_mass_unified {R : Type*} [AddCommGroup R] [ctx : KnotMassUnifiedContext R] :",
         "decl": "knot_mass_unified",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/mass_formula_regime_switching.lean": [
@@ -2274,9 +2236,7 @@
         "pattern": "tuple-projection",
         "snippet": "def mass_formula_regime_switching [ctx : MassFormulaRegimeSwitchingContext] :",
         "decl": "mass_formula_regime_switching",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/schur_weyl_mass_decomposition.lean": [
@@ -2286,9 +2246,7 @@
         "pattern": "field-projection",
         "snippet": "def schur_weyl_mass_decomposition",
         "decl": "schur_weyl_mass_decomposition",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/six_term_mass_formula_complete.lean": [
@@ -2298,9 +2256,7 @@
         "pattern": "field-projection",
         "snippet": "def six_term_mass_formula_complete {R : Type*} [AddCommMonoid R]",
         "decl": "six_term_mass_formula_complete",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/sorting_color_energy.lean": [
@@ -2310,9 +2266,7 @@
         "pattern": "field-projection",
         "snippet": "def sorting_color_energy {R : Type*} [Field R] [ctx : SortingColorEnergyContext R] :",
         "decl": "sorting_color_energy",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/spectral_sequence_h3_explicit.lean": [
@@ -2322,9 +2276,7 @@
         "pattern": "tuple-projection",
         "snippet": "def spectral_sequence_h3_explicit [ctx : SpectralSequenceH3ExplicitContext] :",
         "decl": "spectral_sequence_h3_explicit",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/terms_2_6_higher_operations.lean": [
@@ -2334,9 +2286,7 @@
         "pattern": "tuple-projection",
         "snippet": "def terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :",
         "decl": "terms_2_6_higher_operations",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/wedderburnWeightCanonical.lean": [
@@ -2346,9 +2296,7 @@
         "pattern": "tuple-projection",
         "snippet": "def wedderburnWeightCanonical {R : Type*} [Field R] [ctx : WedderburnWeightCanonicalContext R] :",
         "decl": "wedderburnWeightCanonical",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidKnot/wigner2_coefficient.lean": [
@@ -2358,9 +2306,7 @@
         "pattern": "tuple-projection",
         "snippet": "def wigner2_coefficient {R : Type*} [Field R] [ctx : Wigner2CoefficientContext R] :",
         "decl": "wigner2_coefficient",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Braiding/beta_stability.lean": [
@@ -2370,9 +2316,7 @@
         "pattern": "field-projection",
         "snippet": "def beta_stability [ctx : BetaStabilityContext] :",
         "decl": "beta_stability",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Braiding/fermion_boson_knot_link.lean": [
@@ -2382,9 +2326,7 @@
         "pattern": "tuple-projection",
         "snippet": "def fermion_boson_knot_link [ctx : FermionBosonKnotLinkContext] :",
         "decl": "fermion_boson_knot_link",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Braiding/r_matrix_braiding_structure.lean": [
@@ -2394,9 +2336,7 @@
         "pattern": "field-projection",
         "snippet": "def r_matrix_braiding_structure",
         "decl": "r_matrix_braiding_structure",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Braiding/reidemeister_mass_invariance.lean": [
@@ -2406,9 +2346,7 @@
         "pattern": "field-projection",
         "snippet": "def reidemeister_mass_invariance [ctx : ReidemeisterMassInvarianceContext] :",
         "decl": "reidemeister_mass_invariance",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/PlancherelViaRecipe.lean": [
@@ -2449,9 +2387,7 @@
         "pattern": "tuple-projection",
         "snippet": "def demazure_fiber_markov_trace [ctx : DemazureFiberMarkovTraceContext] :",
         "decl": "demazure_fiber_markov_trace",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/ew_interface_knot.lean": [
@@ -2461,9 +2397,7 @@
         "pattern": "tuple-projection",
         "snippet": "def ew_interface_knot [ctx : EwInterfaceKnotContext] :",
         "decl": "ew_interface_knot",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/explicit_alpha_k_h4.lean": [
@@ -2473,9 +2407,7 @@
         "pattern": "field-projection",
         "snippet": "def explicit_alpha_k_h4 [ctx : ExplicitAlphaKH4Context] :",
         "decl": "explicit_alpha_k_h4",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/qmn_recursive_memoized.lean": [
@@ -2485,9 +2417,7 @@
         "pattern": "tuple-projection",
         "snippet": "def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :",
         "decl": "qmn_recursive_memoized",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/wedderburn_bratteli_recursion.lean": [
@@ -2497,9 +2427,7 @@
         "pattern": "tuple-projection",
         "snippet": "def wedderburn_bratteli_recursion [ctx : WedderburnBratteliRecursionContext] :",
         "decl": "wedderburn_bratteli_recursion",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean": [
@@ -2781,9 +2709,7 @@
         "pattern": "tuple-projection",
         "snippet": "noncomputable def toffoli_transfer_matrix [ctx : ToffoliTransferMatrixContext] :",
         "decl": "toffoli_transfer_matrix",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean": [
@@ -3329,17 +3255,6 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       }
     ],
-    "content/quantum-observable-universe/mass-endomorphism/markov-trace-recursive-reducer.lean": [
-      {
-        "line": 180,
-        "category": "proof-docstring-sorry-mismatch",
-        "pattern": "doc-claims-sorry-body-has-none",
-        "snippet": "theorem markovTrace_disjointProduct",
-        "decl": "markovTrace_disjointProduct",
-        "severity": "critical",
-        "detail": "docstring states the body is `sorry` but the body contains none — the prose and `#print axioms` disagree about whether a proof exists. Check whether a class field is being projected: this is how a self-assuming projection reads when the field name escapes `CONCLUSION_FIELD`"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/a8-partition-function-identity.lean": [
       {
         "line": 170,
@@ -3357,9 +3272,7 @@
         "pattern": "field-projection",
         "snippet": "def strong_duality (lp : OperatorSelectionLP)",
         "decl": "strong_duality",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
+        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [

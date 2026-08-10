@@ -941,7 +941,18 @@ function detectSelfAssuming(
   // the vacuity CI gate red on ~99 files. Promoting these to a hard failure —
   // once the honest-placeholder vs. dishonest-dodge line is codified — is a
   // deliberate follow-up, not a silent side effect of closing the blindspot.
-  if (isDefProof || pat === "applied-tuple-projection") {
+  //
+  // NARROWED 2026-08-09: `isDefProof` no longer overrides a `CONCLUSION_FIELD`
+  // name-gate match. The gate above runs FIRST but only *diverts* candidates
+  // whose field name escapes the convention; a `def` whose field name the gate
+  // MATCHES — `ctx.claim_yang_baxter`, `ctx.claim_pslq_independence` — fell
+  // straight through to here and was exempted anyway. So the §3b carve-out was
+  // swallowing the strongest signal the detector has: the author named the
+  // field `claim_*`. A matched name means the projection is self-assuming on
+  // the detector's own primary criterion, and the §3b deferral does not apply.
+  // Recommendation 4 of `docs/audits/2026-08-09-honest-placeholder-criterion.md`.
+  const nameGateMatched = !!field && CONCLUSION_FIELD.test(field);
+  if ((isDefProof && !nameGateMatched) || pat === "applied-tuple-projection") {
     const h = mk(d, "proof-no-self-assuming-projection", pat, true);
     h.exempt_reason =
       "canonical §3b placeholder projection (tracked; derivation pending)";
