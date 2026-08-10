@@ -9,9 +9,20 @@ Its `qou-0hu2` disposition for #4600 ends *"NOT COMPILED … lean-direct pass is
 the gate before landing."* That pass is done here, along with the equivalent
 gate for each of the other four PRs.
 
-Nothing was merged and nothing was pushed to any of the five PR branches. The
-conflict resolution for #4600 exists as a local commit only, pending the owner's
-call.
+**Outcome: all five merged to `main`** on the owner's explicit go-ahead, after
+the gates below. Rebase-merge throughout, per the default in AGENTS.md rule 8.
+
+| PR | merge sha |
+|---|---|
+| #4935 | `265b24f3` |
+| #4905 | `66faf81b` |
+| #4913 | `0c11a233` |
+| #4584 | `52710702` |
+| #4600 | `200ef38a` |
+
+Two branch-side fixes to #4600 were pushed with the owner's approval before it
+merged: the conflict resolution below, and the `qou-mpq5` fold-in. #4600 and
+#4584 were also undrafted.
 
 ## Method note — the shallow clone lies about conflicts
 
@@ -143,7 +154,28 @@ fails to compile.
 
 `beans check` reports 13 issues, all broken `parent:` links (`0yqu`, `krvm`).
 Those beans are on `main`; the condition is pre-existing and not introduced by
-any of the five PRs.
+any of the five PRs, and the count was unchanged by the `qou-mpq5` fold-in.
+
+## #4600 could not be rebase-merged as it stood
+
+GitHub rejected `merge_method: "rebase"` with **405 "This branch can't be
+rebased"** — the branch carried a merge commit (the `main` merge that resolved
+the `qou-ahbp` conflict).
+
+Rule 8's documented exception would have allowed a merge commit here, but
+linearizing is the better outcome and turned out to be cheap: rebasing the 17
+commits onto `main` drops the merge commit, keeps every per-commit boundary
+that rule 4 asks for, and leaves nothing for a reader to navigate around. The
+`qou-ahbp` conflict resurfaced once during the replay and was resolved the same
+way. Re-verified after the rebase — `YoungTableaux`, `HeckeAlgebra`,
+`HoefsmitRep` and `QSchurWeyl` all still exit 0, no conflict markers anywhere,
+zero merge commits remaining — then force-pushed with `--force-with-lease` and
+rebase-merged.
+
+Worth knowing before the next stalled PR: **resolving a conflict by merging
+`main` into a branch makes that branch un-rebase-mergeable.** Rebasing the
+branch onto `main` instead resolves the same conflict and keeps the default
+merge method available.
 
 ## What remains open, honestly
 
