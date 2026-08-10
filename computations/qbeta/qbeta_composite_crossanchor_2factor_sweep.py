@@ -91,6 +91,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL_CLOSURE = mpf("1e-6")   # 1 ppm at BOTH anchors → structural closure
 TOL_NEAR = mpf("1e-2")      # 1 % at proton → flag as a near-match
 

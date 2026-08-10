@@ -102,6 +102,12 @@ ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821),
        ("12C", 6, 6, 92.161728), ("16O", 8, 8, 127.619),
        ("56Fe", 26, 30, 492.254)]
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL_EXACT = mp.mpf("1e-40")
 TOL_CROSS = mp.mpf("1e-25")
 

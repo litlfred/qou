@@ -69,6 +69,12 @@ from codata_constants import (  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Verification tolerance on the relative error vs the CODATA split. The
 # leading substrate form misses by ≈ 0.13 % (the block reports −0.10 %);
 # we require < 0.2 % (2e-3), an honest archimedean-agreement gate that

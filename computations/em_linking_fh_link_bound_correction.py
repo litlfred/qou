@@ -83,6 +83,12 @@ from em_linking_borromean_acn_probe import (  # noqa: E402
 
 N_COMPONENTS = 3
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Per-pair Gauss ACN for the golden-ratio Borromean realisation, from
 # em-linking-borromean-acn.witness.json (recomputed below as a check).
 # 8 significant digits is all these carry, and nothing derived from them is
