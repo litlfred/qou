@@ -65,6 +65,12 @@ from typing import Iterable, List, Tuple
 from canonical_braid_crossings import _avg_color_delta  # color-weighted averaged d
 
 
+
+def _pn_delta():
+    """Colour-weighting delta for the p-n interface (qou-gdtb)."""
+    from canonical_braid_crossings import _avg_color_delta
+    return _avg_color_delta()
+
 def marshal_to_chi_lambda_braid(
     word_tuples: Iterable[Tuple[float, float, int]],
     h_val: float,
@@ -100,7 +106,12 @@ def marshal_to_chi_lambda_braid(
             out.append((1, gen + 1))            # σ (positive crossing)
         elif abs(df + h_val) < eps:
             out.append((-1, gen + 1))           # σ⁻¹ (Hecke skein)
-        elif abs(df + h_val / 2) < eps:
+        elif (abs(df + h_val / 2) < eps
+              or abs(df + h_val * (0.5 - _pn_delta() / 4)) < 1e-9):
+            # BOTH averaged interfaces → σ convention. The colour-weighted
+            # one, -h(1/2 - delta/4), used to fall through to the raise
+            # below: this marshaller drops d entirely (it emits signs), so
+            # the two belong in the same channel. qou-gdtb.
             out.append((1, gen + 1))            # averaged → σ convention
         else:
             # Per Copilot PR #863 review: raise on unknown (c,d) rather
