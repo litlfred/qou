@@ -1,6 +1,6 @@
 {
   "computation": "rho-k-h3a-crystal",
-  "computedAt": "2026-08-10T14:39:46.926137+00:00",
+  "computedAt": "2026-08-10T16:58:49.274106+00:00",
   "description": "Option E for the H_{3A} per-block binding fraction Delta_lambda(K): plug in the Kashiwara symmetric-crystal weight c_lambda(q) := s_lambda(1, q, ..., q^{n-1}) (Macdonald hook-content; equals the Demazure character D_{w_0}(lambda) at principal specialisation, verified by demazure-markov-trace.witness.json) as Delta_lambda. Independent of Occam single-partition heuristic in rho_k_h3a_refinement.py; deuteron-only proof of concept. Reports residual honestly (no scaling).",
   "engine": "mpmath",
   "scriptFile": "rho_k_h3a_crystal.py",
@@ -492,7 +492,7 @@
   "honest_reporting": "Per protocol: c_lambda is NOT scaled to force the mass equation to close. The residual (target - sum) and the diagnostic scalar alpha_E (the would-close-it factor) are both reported. If alpha_E differs significantly from 1, the Kashiwara crystal weights are NOT the correct closed form for Delta_lambda; a flat-transport correction (q -> 0 -> q_0 connection curvature, per rem:ontological-agnosticism) would have to make up the difference, OR a different structural weight (Plancherel-truncated, jet-knot, ...) applies.",
   "follow_up": "If option E shows |alpha_E - 1| << 1 (close to closure), extend to (T, 3He) at n=9 and 4He at n=12. If alpha_E is far from 1, compare the residual to the four other options (A: crystal-truncated minimum-norm, B: Plancherel bound, C: jet-knot Hochschild, D: Type-B fold-orbit projection) in the parent PR #600 brief; the smallest residual wins.",
   "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "commitSha": "367ca15c3dcebc778b97d4a8c95d93ce506adc09",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
