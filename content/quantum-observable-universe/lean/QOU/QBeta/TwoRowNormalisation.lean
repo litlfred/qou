@@ -83,11 +83,22 @@ carried up unchanged.
 
 `hbdry` says the last dimension meets no shape above it. Without it the claim is
 false, not merely unprovable: the reindexed sum exceeds the target by exactly
-`d N * f (N + 1)`. -/
+`d N * f (N + 1)`.
+
+**`hd` and `hg` are range-local, and must be.** They were universally
+quantified in the first version, which is unusable at the intended instance.
+The weight family is `f k = yw q (n+1) (n − 2k + 2)`, and `hg` is exactly
+`yw_branching` at `m = n − 2k` — but only while `n − 2k` is the intended
+integer. Past `k = n/2` the **ℕ** subtraction `n − 2k` truncates to `0`, so the
+universally-quantified hypothesis would assert
+`yw (n+1) 2 + yw (n+1) 0 = yw n 1` for every large `k`, which is a different
+(and false) claim about q-integers rather than a vacuous one. Off-shape indices
+have to be excluded by the range, not by hoping the arithmetic degenerates
+harmlessly. -/
 theorem level_sum_step (N : ℕ) (d d' f g : ℕ → R)
     (hd0 : d' 0 = d 0)
-    (hd : ∀ k, d' (k + 1) = d (k + 1) + d k)
-    (hg : ∀ k, g k = f k + f (k + 1))
+    (hd : ∀ k ∈ range N, d' (k + 1) = d (k + 1) + d k)
+    (hg : ∀ k ∈ range (N + 1), g k = f k + f (k + 1))
     (hbdry : d N * f (N + 1) = 0) :
     ∑ k ∈ range (N + 1), d' k * f k = ∑ k ∈ range (N + 1), d k * g k := by
   -- Right-hand side: split the branching, then peel the last term of the
@@ -96,7 +107,7 @@ theorem level_sum_step (N : ℕ) (d d' f g : ℕ → R)
       = (∑ k ∈ range (N + 1), d k * f k)
         + ((∑ k ∈ range N, d k * f (k + 1)) + d N * f (N + 1)) := by
     rw [← Finset.sum_range_succ (fun k => d k * f (k + 1)) N, ← Finset.sum_add_distrib]
-    exact Finset.sum_congr rfl fun k _ => by rw [hg k]; ring
+    exact Finset.sum_congr rfl fun k hk => by rw [hg k hk]; ring
   -- Left-hand side: peel the FIRST term, so `hd` applies to every remaining one.
   have hlhs : ∑ k ∈ range (N + 1), d' k * f k
       = (∑ k ∈ range (N + 1), d k * f k) + ∑ k ∈ range N, d k * f (k + 1) := by
@@ -104,7 +115,7 @@ theorem level_sum_step (N : ℕ) (d d' f g : ℕ → R)
         Finset.sum_range_succ' (fun k => d k * f k) N]
     have : ∀ k ∈ range N, d' (k + 1) * f (k + 1)
         = d (k + 1) * f (k + 1) + d k * f (k + 1) := by
-      intro k _; rw [hd k]; ring
+      intro k hk; rw [hd k hk]; ring
     rw [Finset.sum_congr rfl this, Finset.sum_add_distrib, hd0]
     ring
   rw [hlhs, hrhs, hbdry, add_zero]
