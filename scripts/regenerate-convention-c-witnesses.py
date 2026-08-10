@@ -66,9 +66,27 @@ LOG = REPO / ".work" / "convention-c-regen.jsonl"
 C_FINGERPRINTS = ["0.49932033418369", "0.41539579536", "0.2809296", "0.02274491"]
 
 #: Fields that churn on every run and carry no numeric meaning.
+#:
+#: The wall-clock names below were missing, and their absence was not
+#: cosmetic: `elapsed_seconds`, `sweep_wall_seconds`, `compute_wall_sec` and
+#: `compute_time_sec` contributed 11 entries to the "largest shifts" table at
+#: up to 4.2e6 ppm, purely because the machine was busier on the second run
+#: (`3He 0.035 s -> 0.185 s`). A report whose top movers are its own timings
+#: is not measuring the migration.
+#:
+#: Deliberately an explicit list rather than a `_sec` / `_seconds` suffix
+#: rule. In this corpus a duration CAN be the physics -- the framework
+#: predicts decay lifetimes, and a `tau_sec` or `lifetime_seconds` is exactly
+#: the sort of quantity the impact report exists to surface. A suffix rule
+#: would silence it.
+#:
+#: `computed` is NOT here and must not be added: it is `.assertions[N].computed`,
+#: the value an assertion evaluated to, and it moved on real physics.
 VOLATILE = {"computedAt", "durationMs", "scriptHash", "commitSha",
             "scriptCommitSha", "engineVersion", "hostname", "elapsed",
-            "elapsedMs", "timestamp", "generatedAt"}
+            "elapsedMs", "timestamp", "generatedAt",
+            "elapsed_seconds", "sweep_wall_seconds", "compute_wall_sec",
+            "compute_time_sec", "wall_seconds", "wall_sec", "runtime_seconds"}
 
 NUM = re.compile(r"-?\d+\.\d{6,}(?:[eE][+-]?\d+)?")
 
@@ -605,7 +623,51 @@ def report():
 
     print(f"producers run : {len(recs)}   ok {len(ok)}   failed {len(bad)}")
     print(f"wall time     : {total_secs/60:.1f} min")
-    print(f"witnesses     : C cleared {cleared}   still C {still_c}")
+    print(f"witnesses     : fingerprint cleared {cleared}   fingerprint still present {still_c}")
+
+    # The line above is the FINGERPRINT metric only, and on its own it is
+    # misleading in both directions. A witness can keep the string
+    # legitimately -- an audit *of* convention C evaluates the C formula on
+    # purpose -- and, far more importantly, a witness computed at n = 6, 9 or
+    # 12 never contained those n = 3 decimals to begin with, so it can migrate
+    # completely without the count moving at all. That is what reopened this
+    # bean.
+    #
+    # So re-test every witness the campaign touched against the LIVE file with
+    # the structural rule as well: a nonzero y_lambda on a three-or-more-row
+    # partition is convention C at any n. This is the number that answers
+    # "did the campaign work".
+    touched = sorted({w["path"] for r in recs for w in r["witnesses"]})
+    still_struct, gone, missing = [], [], []
+    for rel in touched:
+        p = REPO / rel
+        try:
+            raw = p.read_text()
+        except OSError:
+            missing.append(rel)
+            continue
+        try:
+            doc = json.loads(raw)
+        except json.JSONDecodeError:
+            doc = {}
+        (still_struct if _is_convention_c(raw, doc) else gone).append(rel)
+    print(f"                structural test on live files: "
+          f"{len(gone)} now clean, {len(still_struct)} still convention C"
+          + (f", {len(missing)} unreadable" if missing else ""))
+    if still_struct:
+        print("                still C:")
+        for rel in still_struct:
+            why = []
+            raw = (REPO / rel).read_text()
+            if any(c in raw for c in C_FINGERPRINTS):
+                why.append("fingerprint")
+            try:
+                if _structural_hits(json.loads(raw)):
+                    why.append("structural")
+            except json.JSONDecodeError:
+                why.append("unparseable")
+            print(f"                  {rel.replace('computations/', ''):<58} "
+                  f"{'+'.join(why)}")
     print(f"\ndelta kinds   : " + ", ".join(f"{k}={v}" for k, v in sorted(kinds.items())))
     # `structural_zero` requires the value to land on exactly 0.0. Producers
     # that carry the weight through mpmath arithmetic instead land it at ~1e-40,
