@@ -1,167 +1,150 @@
-# The 61 blocked edges are three problems, not one
+# The blocked edges are four problems, not one
 
-Generated 2026-08-10. Bean: `cnd4`. PR #4921.
+Generated 2026-08-10, re-measured after rebasing onto `main` (+53 commits).
+Bean: `cnd4`. PR #4921.
 
-Two defects on this branch each produced correct `uses[]` edges that were
-held rather than declared, because declaring them would add a forward
-reference — a block depending on something stated later. This audit
-measures what the held set actually consists of, and what would fix each
-part. **The answer is not "61 decisions". It is three groups with three
-different fixes, and only one of them needs the author.**
+Two defects on this branch each produced correct-looking `uses[]` edges that
+were held rather than declared, because declaring them would add a forward
+reference — a block depending on something stated later. This audit measures
+what the held set consists of and what would fix each part.
 
-## The set
+**Headline: it is not one decision, and most of it is not the author's.**
+The largest single category turns out to be edges that should never be
+declared at all — for a reason that has nothing to do with ordering.
 
-| origin | edges | what it is |
+## Re-measure after the rebase
+
+| | before rebase | after |
 |---|---|---|
-| `cnd4` | 19 | §3b-cond rule 4: an `.md` banner says "conditional on `conj:X`" but the manifest does not declare it |
-| `prn1` corroborated scan | 37 | pruned edges the source's own prose still names |
-| `prn1` tranche 1 | 5 | restored, went red on the sweep, reverted |
-| **total** | **61** | |
+| blocked forward edges | 56 | **50** |
+| same-chapter (gated) | 39 | **33** |
+| cross-chapter (stub) | 17 | 17 |
 
-The 5 are already reverted and not re-litigated below; the live measurement
-covers the 56.
+Six edges stopped pointing forward on their own when `main`'s 53 commits
+landed. Any figure quoted from the pre-rebase pass is stale; this one
+supersedes it.
 
-## The split that matters
+## The four groups
 
-A forward reference is checked by two different criteria, and only one of
-them is wired:
-
-| | edges | criterion | state |
+| group | edges | resolution | needs the author? |
 |---|---|---|---|
-| **same-chapter** | 39 | `detangler-no-forward-ref` | **live** — this is what turned three blocks red |
-| **cross-chapter** | 17 | `detangler-no-xchapter-fwd` | **unwired stub** — `return { result: "n/a" }`, TODO since written |
+| **1. Overview-source** | 8 | **reject the edge** | no |
+| **2. Reorder** | 22 | 11 block moves | no (diff needs review) |
+| **3. Cross-chapter** | 17 | hold | no |
+| **4. Circular** | 3 legs → **1** real | editorial | **yes, one question** |
 
-`qa-checkers-extended.ts:1359` is the stub. Its sibling
-`checkDetanglerArchimedeanWall` is a stub too. So cross-chapter forward
-references are currently **unmeasured corpus-wide**, not merely unenforced
-here.
+### Group 1 — 8 edges whose source is a chapter overview
 
-**This is not a licence.** That the checker is off makes those 17 invisible,
-not acceptable. Declaring a forward reference because nothing is watching is
-the same move as copying an `interprets` label into `uses[]` to make a
-checker see it — gaming the gate rather than recording a dependency.
+Every one of these has its source in **§0**, the chapter's overview section,
+and every source is a `remark`:
 
-## Group 1 — 34 edges: fixed by reordering, no editorial decision
-
-Restricting each chapter's block graph to its intra-chapter edges **and
-adding every held edge**, then testing for cycles:
-
-| chapter | blocks | intra edges | result |
-|---|---|---|---|
-| `mass-theory` | 753 | 802 | **acyclic** |
-| `predicted-spectra` | 295 | 269 | **acyclic** |
-| `fluid-dynamics` | 96 | 123 | 2 cycles (3 blocks) |
-| `appendix-surreals` | 98 | 99 | **3** cycles (4 blocks) |
-
-An acyclic dependency graph **always** admits an ordering with zero forward
-references — that is what a topological sort is. So for every held edge not
-caught in a cycle, the edge is not the problem and never was: the block
-order is. Reordering makes them all backward at once, and would take a bite
-out of the paper's existing forward-reference count as a side effect.
-
-This also explains why the per-block "just move it" test looked worse than
-it is. Moving one target often exposes one of *its* dependencies:
-
-```
-conj:critical-exponent  -> blocked by conj:regularity-breakdown
-conj:q-aubin-lions      -> blocked by conj:ns-counterexample
-conj:ns-counterexample  -> blocked by prop:universality
-```
-
-Those are not four obstructions. They are one chain, and a topological sort
-moves the whole chain in a single pass. Only 6 targets are free to move
-individually (12 edges); the other 23 need the chain moved with them.
-
-## Group 2 — 5 cycles: genuinely circular, and only the author can resolve them
-
-Some held edges do not merely point forward. They close a **cycle**. Marking
-each leg by whether it is already on the branch or still held:
-
-```
-fluid-dynamics
-  prop:discrete-vortex-spectrum -> rem:vortex-intensity-modes
-                                -> rem:planck-reynolds
-                                -> prop:discrete-vortex-spectrum
-  rem:vortex-intensity-modes    -> rem:planck-reynolds
-                                -> rem:vortex-intensity-modes
-
-appendix-surreals
-  conj:archimedean-stpart  --committed-->  conj:classical-limit-stpart
-                           <--held-------
-  conj:p-vs-np-qou         --held------->  rem:p-vs-np-surreal-bound
-                           <--committed--
-  conj:p-vs-np-qou         --held------->  rem:p-vs-np-surreal-bound
-                           --held------->  rem:millennium-unification
-                           --committed-->  conj:p-vs-np-qou
-```
-
-**The third appendix cycle runs through an edge tranche 2 landed**
-(`rem:millennium-unification -> conj:p-vs-np-qou`, from *"The fourth row is
-conditional on [P vs NP in the QOU]"*). It closes only if **two** held edges
-also land, so the branch stays acyclic — but it is worth stating that a
-landed edge is one leg of a potential cycle.
-
-Both held legs are edges independent reading had already flagged:
-
-| held leg | prior verdict |
+| source (§0) | pulls in |
 |---|---|
-| `rem:p-vs-np-surreal-bound -> rem:millennium-unification` | **rejected in tranche 1** — *"a '(see X)' filing note, and the dependency runs the other way: the aggregator cites the instance"* |
-| `conj:p-vs-np-qou -> rem:p-vs-np-surreal-bound` | a "see X" pointer, the form tranche 1 rejects |
+| `rem:q-metric-contact-deformation` | `def:ns-obstruction`, `prop:core-levi-form`, `rem:hyperbolic-overlap-saturation`, `rem:townsend-biot-savart-strain`, `thm:q-ns-wellposedness` |
+| `rem:planck-reynolds` | `prop:discrete-vortex-spectrum`, `rem:vortex-intensity-modes` |
+| `rem:hecke-charge-mass-duality` | `def:vertex-operator` |
 
-Cycle detection and editorial reading agree here, by different routes. That
-is the useful result: the cycles are not arbitrary: they form precisely
-where a citation was read in the wrong direction.
+A chapter overview that surveys what is coming **names** later results; it
+does not **depend** on them. The minimal-move computation exposed this by
+reductio: to satisfy these edges it proposed moving `def:ns-obstruction`
+from §4 to before position 9 — i.e. relocating a definition to sit ahead of
+the chapter introduction that previews it. When the fix is absurd, the
+constraint is wrong.
 
-**No ordering fixes a cycle.** Reordering is a relabelling; a cycle is
-invariant under it. Each of these says two blocks each depend on the other,
-which cannot both be true as stated. One edge in each pair is wrong, or the
-two blocks are really one block, or one of them is stating a consequence as
-a premise.
+These are **corroborated** — the prose does name the targets — and still
+wrong. That is exactly the caveat the corroboration audit carried:
 
-Verified against three states, because a cycle I introduced would be my bug
-to fix rather than a finding to report:
+> Corroboration is evidence for a **reading**, never a licence to populate:
+> relatedness is not dependency.
 
-| | `fluid-dynamics` | `appendix-surreals` |
+This is the first concrete instance of that caveat biting, and it is the
+largest single category in the held set. `rem:q-metric-contact-deformation`
+was 5/6 corroborated — high on the priority list by fraction — and all five
+of its held edges are rejected here.
+
+### Group 2 — 22 edges fixed by 11 block moves
+
+With Group 1 removed and the cycle legs set aside, the remainder is a
+genuine ordering problem. `mass-theory` (753 blocks) and `predicted-spectra`
+are acyclic; an acyclic graph always admits a zero-forward-reference
+ordering. The minimal move set:
+
+| chapter | edges | moves |
 |---|---|---|
-| `origin/main` | 0 cycles | 0 cycles |
-| this branch as committed | 0 cycles | 0 cycles |
-| **if the held edges landed** | **2 cycles** | **3 cycles** |
+| `fluid-dynamics` | 12 | 4 |
+| `mass-theory` | 8 | 5 |
+| `appendix-surreals` | 1 | 1 |
+| `predicted-spectra` | 1 | 1 |
+| **total** | **22** | **11** |
 
-So the branch is clean, and these five are a reason the edges were right to
-hold — the sweep that caught them caught something real.
+The `fluid-dynamics` case is the clearest and accounts for over half:
 
-For the two `conj:p-vs-np-qou` cycles the `.md` already says which direction
-is real: line 24 is *"See [Surreal bound for P vs NP] for the
-squeeze-inequality statement **implied by** this conjecture"*. The bound
-depends on the conjecture, not the reverse — so the held edge
-`conj:p-vs-np-qou -> rem:p-vs-np-surreal-bound` is simply backwards, and
-both cycles dissolve by dropping it rather than by any reordering. The three
-edges tranche 2 added to that block (`def:reeb-epsilon`,
-`lem:surreal-squeeze`, `prop:surreal-rate-calculus`) are in none of the
-cycles.
+```
+conj:critical-exponent      §6 -> §4
+conj:ns-counterexample      §6 -> §4
+conj:q-aubin-lions          §6 -> §4
+conj:regularity-breakdown   §6 -> §4
+```
 
-## Group 3 — 17 edges: cross-chapter, ungated, and a bigger question
+Four **conjectures** sit in §6 ("NS obstruction tower, specialisations, and
+observable MTC") while propositions in §4 ("Global regularity for `q > 1`")
+and §5 ("NS obstruction: statement and observability") declare themselves
+conditional on them. A conditional result should follow the conjecture it is
+conditional on, so the conjectures move up. Moving the whole of §6 would be
+wrong — the tower genuinely builds on the statement; only the conjectural
+inputs belong earlier.
 
-These are not reachable by reordering blocks within a chapter; they would
-need a block moved **between** chapters, or a chapter moved. That is an
-editorial act of a different size, and the gate that would measure it does
-not run.
+This also corrects the per-block "just move it" reading from the first pass.
+`critical-exponent` blocked by `regularity-breakdown`, `q-aubin-lions` by
+`ns-counterexample` is **one chain**, not separate obstructions; the four
+move together.
 
-The largest gaps sit here — `conj:magic-numbers-bring` at 1008 positions,
-`rem:building-block-knots` at 1022, `thm:knot-mass-formula-unified` at 1119.
-A `mass-theory` proposition declaring itself conditional on a conjecture
-stated 1008 blocks later in `observations` is a real structural claim about
-the paper, not a bookkeeping nit.
+### Group 3 — 17 cross-chapter, and a checker that does not run
+
+`detangler-no-xchapter-fwd` is an **unwired stub**
+(`qa-checkers-extended.ts:1359`, `return { result: "n/a" }`; its sibling
+`checkDetanglerArchimedeanWall` likewise). Cross-chapter forward references
+are **unmeasured corpus-wide**.
+
+That makes these 17 invisible, **not** acceptable. Declaring a forward
+reference because nothing is watching is the same move as copying an
+`interprets` label into `uses[]` so a checker sees it. Held.
+
+### Group 4 — three cycle legs, one real question
+
+No ordering fixes a cycle: reordering is a relabelling and a cycle is
+invariant under it. Five surfaced initially; four dissolve without the
+author:
+
+| cycle | resolution |
+|---|---|
+| `prop:discrete-vortex-spectrum` ↔ `rem:vortex-intensity-modes` ↔ `rem:planck-reynolds` | dissolved — its legs are Group-1 overview edges |
+| `rem:vortex-intensity-modes` ↔ `rem:planck-reynolds` | same |
+| `conj:p-vs-np-qou` ↔ `rem:p-vs-np-surreal-bound` | dissolved — the `.md` says which way it runs |
+| `conj:p-vs-np-qou` → `rem:p-vs-np-surreal-bound` → `rem:millennium-unification` → back | same leg |
+| **`conj:archimedean-stpart` ↔ `conj:classical-limit-stpart`** | **open — author** |
+
+For the p-vs-np pair, `p-vs-np-conjecture.md` line 24 reads *"See [Surreal
+bound for P vs NP] for the squeeze-inequality statement **implied by** this
+conjecture"*. The bound depends on the conjecture; the held edge is
+backwards, and dropping it kills both cycles.
+
+The remaining one is a genuine mutual dependency between two conjectures,
+one leg already committed and one held. It needs a reading, not a
+computation.
+
+Verified the branch causes none of these: **0 cycles on `main`, 0 as
+committed**; they appear only if held edges land.
 
 ## Recommendation
 
-1. **Group 1 (34) — produce the topological reorder as a reviewable diff.**
-   Mechanical to compute, but it changes reading order, so it is proposed
-   and not applied. Sequencing note: land the reorder *first*, then declare
-   the edges, so no intermediate commit is red.
-2. **Group 2 (5 cycles) — author call, one question each.** Which direction is
-   real? Cheap to answer, impossible to compute.
-3. **Group 3 (17) — hold.** Do not declare against an unwired checker.
-4. **Wire `detangler-no-xchapter-fwd`** (separate bean). Until it runs,
-   nobody knows the corpus-wide cross-chapter figure, and Group 3 cannot be
-   prioritised against anything.
+1. **Reject Group 1 (8).** Overview sections preview; they do not depend.
+   Worth a general rule: a `uses[]` edge whose source is a §0 overview block
+   is suspect by construction.
+2. **Apply Group 2 (22 edges / 11 moves) as a reviewable diff.** Reorder
+   lands first, then the edges, so no intermediate commit is red.
+3. **Hold Group 3 (17)** until the cross-chapter checker runs.
+4. **One question (Group 4):** which of `conj:archimedean-stpart` /
+   `conj:classical-limit-stpart` depends on the other?
+5. **Wire `detangler-no-xchapter-fwd`** — separate bean. Until it runs,
+   Group 3 cannot be prioritised against anything.
