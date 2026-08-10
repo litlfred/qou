@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:58:54.567645+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-10T03:34:42.346579+00:00",
+  "commitSha": "c504d143f3993a29cb8f68267da7d5267b11764e",
   "assertions": [
     {
       "name": "c_8_extracted_finite",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 2,
+  "durationMs": 5,
   "computation": "qbeta-decay-sdp-extended-ck",
   "scriptFile": "qbeta_decay_sdp_extended_ck.py",
-  "scriptHash": "d9041db4fdd2",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptHash": "4acf7908db30",
+  "scriptCommitSha": "be7266653dadecb5e1c03d56f9253bd2a17de8a2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,12 +42,9 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.3.0"
   },
   "description": "EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β. Continues qbeta_decay_sdp_full_ck.py beyond k=7 to test the PR #814 prediction that averaging-resonance rungs carry 1/2 fingerprints. Pell-Lucas-clean test at silver ratio classifies each rung as pure-σ or averaging-resonance.",
   "parameters": {
@@ -62,23 +59,87 @@
       "c_2": "-1.0172173285667249513240662532242009198014962646275",
       "c_3": "-2.0216155770600061205300249700296445660947408177192",
       "c_4": "-2.5378659117940255569454500193524358506536471385217",
+      "c_5": null,
+      "c_6": null,
+      "c_7": null,
+      "c_8": null,
+      "c_9": null,
+      "c_10": null
+    },
+    "c_k_extracted_float": {
+      "c_2": -1.017217328566725,
+      "c_3": -2.021615577060006,
+      "c_4": -2.5378659117940257,
+      "c_5": null,
+      "c_6": null,
+      "c_7": null,
+      "c_8": null,
+      "c_9": null,
+      "c_10": null
+    },
+    "c_k_resolution": {
+      "ladder_variable_u": "0.008517236340484921439933112902299396082389042230275",
+      "one_over_u": "117.40897634209195493",
+      "min_residual_drop_threshold": "10.0",
+      "expected_drop_if_rung_contributes": "~1/u",
+      "last_resolved_rung": 4,
+      "n_unresolved": 6,
+      "per_rung": {
+        "c_2": {
+          "residual_abs_R_minus_1": "0.000073792316967279762255",
+          "drop_vs_prev": null,
+          "resolved": true
+        },
+        "c_3": {
+          "residual_abs_R_minus_1": "1.2490927009279029536e-6",
+          "drop_vs_prev": "59.0767337864",
+          "resolved": true
+        },
+        "c_4": {
+          "residual_abs_R_minus_1": "1.3355601927065391939e-8",
+          "drop_vs_prev": "93.5257510481",
+          "resolved": true
+        },
+        "c_5": {
+          "residual_abs_R_minus_1": "7.3925161367259318736e-9",
+          "drop_vs_prev": "1.80663818381",
+          "resolved": false
+        },
+        "c_6": {
+          "residual_abs_R_minus_1": "7.3363672306864742311e-9",
+          "drop_vs_prev": "1.00765350265",
+          "resolved": false
+        },
+        "c_7": {
+          "residual_abs_R_minus_1": "7.3375166415947472394e-9",
+          "drop_vs_prev": "0.999843351509",
+          "resolved": false
+        },
+        "c_8": {
+          "residual_abs_R_minus_1": "7.3374906291678441678e-9",
+          "drop_vs_prev": "1.00000354514",
+          "resolved": false
+        },
+        "c_9": {
+          "residual_abs_R_minus_1": "7.3374906919297101175e-9",
+          "drop_vs_prev": "0.999999991446",
+          "resolved": false
+        },
+        "c_10": {
+          "residual_abs_R_minus_1": "7.3374906905093403971e-9",
+          "drop_vs_prev": "1.00000000019",
+          "resolved": false
+        }
+      },
+      "why_unresolved_rungs_are_null": "c_k := (R_k - 1)/u^k is a valid extraction only while R_k - 1 IS the rung-k contribution. Once the residual stops dropping it is the model's accuracy floor; dividing a fixed floor by an ever-smaller u^k manufactures c_k ~ floor/u^k, a geometric blow-up with ratio exactly 1/u and flat |c_k u^k|. Emitting those as numbers is what let them read as data."
+    },
+    "c_k_unresolved_raw_quotient": {
       "c_5": "-164.92966962997120315189506117224341793666720626325",
       "c_6": "-19217.145207925212509908947239063591863338276085142",
       "c_7": "-2256618.8430159516520727812660641237219777899347218",
       "c_8": "-264946369.0809749418316620596552190900680213585986",
       "c_9": "-31107082245.428488701150349050271676018490685326017",
       "c_10": "-3652250682718.0302448331440574991158032911030226467"
-    },
-    "c_k_extracted_float": {
-      "c_2": -1.017217328566725,
-      "c_3": -2.021615577060006,
-      "c_4": -2.5378659117940257,
-      "c_5": -164.92966962997122,
-      "c_6": -19217.145207925212,
-      "c_7": -2256618.8430159516,
-      "c_8": -264946369.08097494,
-      "c_9": -31107082245.42849,
-      "c_10": -3652250682718.0303
     },
     "silver_ratio_test": {
       "method": "Substitute b² = 7/8 (exact at silver q = 1+√2) into natural pattern continuation of the c_k closed form, reduce to a rational a/b in lowest terms, and test the REDUCED numerator |a| via the refined Pell-Lucas-cleanness criterion in ck_sector_classifier.is_pell_lucas_clean (|a| of the form a_n^j · 2^t for some Pell-Lucas a_n > 1, j ∈ {0..4}, t ≥ 0). The `scaled_numerator` field per rung below records |a|·32 for legacy display only — the actual test does not multiply by any common denominator.",
@@ -145,11 +206,11 @@
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "4a13e8e61f6dcbbb58e8e101d8d60c0e6bdf6fce263ec134981ab5daf6c720d6",
-        "size_bytes": 5201,
-        "commitSha": null,
-        "scriptCommitSha": null,
-        "computedAt": null
+        "sha256": "91beff98ef672777d26f345705ca569bfdeec4f388a9d2bb0b9fd6df015ab0db",
+        "size_bytes": 5551,
+        "commitSha": "7f9474204b81a19d3044c75259238003c8c47037",
+        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+        "computedAt": "2026-07-18T17:30:49.888071+00:00"
       }
     ]
   },
