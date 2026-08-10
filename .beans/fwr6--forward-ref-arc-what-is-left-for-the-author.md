@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-10T00:45:00Z
-updated_at: 2026-08-10T00:45:00Z
+updated_at: 2026-08-10T02:45:00Z
 parent: fwr1
 ---
 Closes out the `fwr1`-`fwr5` arc. **Forward `uses[]` references went 274 -> 193**
@@ -93,3 +93,34 @@ often an artefact rather than a judgement: `def:q-navier-stokes` links **eight**
 prior blocks inline and declared none of them — its only entry was a single
 forward reference, which was spurious. That is the `uses-editorial-completeness`
 axis, and it is a much larger pass than this arc was.
+
+---
+
+**Item 5, first prose defect: fixed — and both prior diagnoses were wrong.**
+
+`em-coupling-projection-discussion.md:57` read "See `prop:em-coupling-bring-zero-mode`
+for the repair routes". Two things had been said about it, and neither survived
+reading:
+
+1. The pointer aims at a block whose **prose never mentions repair at all**. The
+   discussion exists only in that block's `.ts` `authorNotes`, which the
+   `AuthorNote` contract renders as SKIP — so the pointer sent a reader to text
+   they cannot see. That part of `fwr5`'s finding was right.
+2. `fwr5` then proposed the routes live in `rem:alpha-em-derivation-open-problems`.
+   **They do not.** That block's closing section derives the $2/(3\pi)$
+   correction from the photon infrared zero-mode; it contains no repair route and
+   not the word.
+
+The `authorNotes` names the real destination outright: *"The repair route comes
+from `prop:archimedean-functor-uniqueness`."* That block — in `mass-theory`, not
+`predicted-spectra` — opens on the Bloch-Suslin pentagon-uniqueness theorem and
+carries eleven mentions of Bloch / pentagon / pre-archimedean. It is the route.
+
+Repointed there, with the mechanism named inline so the sentence stands on its
+own rather than promising something a reader has to go and confirm. Left as prose
+only: "see X for the repair route" is a pointer, not a prerequisite, so it earns
+no `uses[]` edge.
+
+Worth recording as method: a keyword search settled nothing here — *neither*
+candidate block contains "repair", and the correct one is identified only by what
+it argues. The same lesson overturned a deletion earlier in the arc.
