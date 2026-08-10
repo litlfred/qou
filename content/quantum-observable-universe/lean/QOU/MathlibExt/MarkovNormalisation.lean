@@ -83,8 +83,34 @@ theorem markov_normalisation_three (q : R) (hq : q ^ 2 + 1 ≠ 0) :
   field_simp
   ring
 
-/-- The sign weight vanishes: the `n = 3` witness that convention D is a
-two-dimensional fibre. Convention C gives a nonzero weight here. -/
-theorem ySign_eq_zero (q : R) : ySign q = 0 := rfl
+/-! ### Why the sign weight vanishes
+
+`ySign := 0` above is a *definition*, so any lemma concluding `ySign q = 0`
+by `rfl` would prove nothing about convention D — it would restate the
+definition. The content is that convention D **forces** that zero, and that
+is what the next lemma derives.
+
+In the Wenzl bridge the weight of `λ` carries the factor `∏_{x ∈ λ} (1 - X ·
+Q^{c(x)})` with `Q = q²` and `X = Q^r`. Convention D pins `r = 2`, so
+`X = Q²`. A partition with a third row has a cell at `(i,j) = (2,0)`, whose
+content is `c = j - i = -2`, contributing the factor `1 - Q² · Q^{-2} = 0`
+and annihilating the whole product. -/
+theorem wenzl_factor_vanishes_on_third_row (Q : R) (hQ : Q ≠ 0) :
+    1 - Q ^ 2 * Q ^ (-2 : ℤ) = 0 := by
+  rw [zpow_neg, zpow_ofNat, mul_inv_cancel₀ (pow_ne_zero 2 hQ), sub_self]
+
+/-- Convention C does **not** vanish there. With `z = 1/(q^{1/2} + q^{-1/2})`
+the bridge solves to a non-integer `r`, so `X ≠ Q²` and the `(2,0)` factor
+`1 - X·Q^{-2}` is nonzero — which is why every convention-C weight on a
+three-row partition is live. Stated as the contrapositive so it is
+falsifiable rather than definitional. -/
+theorem wenzl_factor_nonzero_of_ne (Q X : R) (hQ : Q ≠ 0) (hX : X ≠ Q ^ 2) :
+    1 - X * Q ^ (-2 : ℤ) ≠ 0 := by
+  rw [zpow_neg, zpow_ofNat]
+  intro h
+  apply hX
+  field_simp at h
+  rw [mul_zero, sub_eq_zero] at h
+  exact h.symm
 
 end QOU.MathlibExt.MarkovNormalisation
