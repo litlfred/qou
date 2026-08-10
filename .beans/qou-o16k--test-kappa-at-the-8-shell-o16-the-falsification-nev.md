@@ -244,6 +244,65 @@ masses needs the binding decomposition that isolates the magic-shell term from
 Coulomb and pairing, and that is not in the corpus (established earlier in this
 bean). The prediction is stated, not confirmed.
 
+
+## THE TEST RAN — and the additive term is not in the data (2026-08-10)
+
+The bean's original goal is **complete**. It did not need the escalation I
+flagged: [`coulomb_energy.py`](../computations/coulomb_energy.py) already derives
+its radius scale from the reduced pion Compton wavelength (`R0_FM =
+LAMBDA_BAR_PI_FM`; the empirical 1.2 fm is retained only for comparison) and
+derives `α_EM` from `q₀` rather than importing CODATA. Option (3) of the recorded
+test design existed all along; option (1) was unnecessary and option (2) — the
+forbidden one — never arose.
+
+[`probe_kappa_mirror_split_shell_test.py`](../computations/probe_kappa_mirror_split_shell_test.py)
+→ witness, 4/4.
+
+| pair | shell | ΔB_obs | ΔE_C | residual | pred/resid |
+|---|---|---|---|---|---|
+| ³H/³He | 2 | 0.7638 | 0.8474 | **−0.0837** | 25.6× |
+| ¹⁵N/¹⁵O | **8** | 3.5365 | 3.4690 | **+0.0675** | 31.7× |
+| ³⁹K/³⁹Ca | 20 | 7.3068 | 6.8476 | **+0.4592** | 4.7× |
+
+**The radius was swept, not chosen** — derived, empirical 1.2 fm, and the value
+implied by the measured ³He charge radius. The conclusion holds under all three,
+and for a *structural* reason rather than a numerical one: **the residual is not
+constant in A**, while the prediction is a single shell-independent number. Under
+the derived radius it changes sign between A=3 and A=15. No radius choice turns a
+varying residual into a constant one.
+
+Sharpest at A=3, where κ was fixed: at most ≈0.23 MeV of room under any radius
+model, against 2.14 MeV predicted — short by ≥9×.
+
+### Scope (a), not (b)
+
+Says the additive shell-independent form, against an electrostatic baseline, is
+not in the mirror-split data. Does **not** structurally exclude κ from another
+decomposition — no invariant forbidding that is proved, and none is claimed.
+
+**What it does establish:** κ ≈ −1.0708 was recorded as the observed slope at the
+single-magic anchors, but those anchors leave an order of magnitude too little
+room for it. That value did not come from this decomposition, and the one it came
+from is not in the corpus. The 0.034 % agreement is agreement with a quantity of
+**unrecorded provenance** — weaker than it has been carrying.
+
+### Independent corroboration
+
+`mirror_split_coulomb_diagnosis.py` records the #2089 kernel's categorical mirror
+split of 2.27 MeV overshooting by ~3× vs the total split and ~32× vs the
+post-Coulomb residual. Same magnitude, same overshoot, reached by a different
+route and before this bean existed.
+
+### Next
+
+1. **Locate the decomposition κ was actually fitted in**, or accept that it is
+   unrecoverable and re-scope the conjecture's evidence claim accordingly. Ranked
+   first because the 0.034 % agreement is the conjecture's *only* evidence, and it
+   is now known to be agreement with an unprovenanced number.
+2. The dangling reference chain (`def:hecke-e0`, `prop:h7a-magic-shell-quantum`,
+   `prop:magic-shell-coupling-witness` — 0 files each) is likely part of the same
+   loss and worth resolving together.
+
 ## Test design for the remaining step — and where the fit would sneak in
 
 Scoping the last item before running it, per formalize-first: find the
