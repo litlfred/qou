@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-10T01:17:53.882701+00:00",
-  "commitSha": "159149ee41b669610b3c8c7d76509fbc4b56a7b4",
+  "computedAt": "2026-08-10T08:54:04.325418+00:00",
+  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -96,7 +96,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7645,
+  "durationMs": 485,
   "computation": "a-K-via-lp-dual-full",
   "scriptFile": "aK_via_lp_dual_full.py",
   "scriptHash": "45566a99e53c",
@@ -112,9 +112,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1"
   },
   "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",
@@ -2377,7 +2375,7 @@
             "self_conjugate": false,
             "content_sum": 6,
             "y_lambda": "-0.00000040799758671879900012207465028279921400533675927738",
-            "chi_lambda": "5.4160202507326783177266597675146161889184446512587",
+            "chi_lambda": "5.4160202507326783177266597675146161889184446512586",
             "contribution": "-0.0000022097231919190774258145754131256401581682431060425",
             "x_star": -0.0,
             "u_lambda_star": 0.9997908283214797,
@@ -2559,8 +2557,8 @@
             "self_conjugate": true,
             "content_sum": 0,
             "y_lambda": "0.0000017080153082102963485414029422025300461921907128112",
-            "chi_lambda": "-6.1493408410039581656739678815748871446717776464094",
-            "contribution": "-0.000010503168291837538560362389558541976264757168267602",
+            "chi_lambda": "-6.1493408410039581656739678815748871446717776464091",
+            "contribution": "-0.000010503168291837538560362389558541976264757168267601",
             "x_star": -0.0,
             "u_lambda_star": 0.9999559931349974,
             "is_active": true
