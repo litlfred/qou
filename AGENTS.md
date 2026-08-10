@@ -291,7 +291,19 @@ user's last message, not the most recently mentioned file.
       next merge (bean `qou-wsha`). Refresh genuine `scriptHash`
       staleness by re-running the producer with
       `2>&1 | tee /tmp/<script>.log` per the compute-audit
-      long-compute logging discipline. Cap at ≤ 10 sidecars /
+      long-compute logging discipline. **Diff the producer first**
+      (`git diff <witness.commitSha> -- <producer>`): `scriptHash`
+      is a whole-file hash, so a comment- or docstring-only edit
+      drifts it while the recomputed payload is byte-identical.
+      This is a far weaker false-positive class than
+      `scriptCommitSha` — it needs a real edit, not merely a merge —
+      but it is the same waste when the producer is expensive. Cheap
+      probes: just re-run. Long-compute producer with a comment-only
+      diff: claim it as a bean rather than spend the idle pass
+      recomputing numbers that cannot change. Worked case:
+      `canonical-ordering-dof` drifted `87418d646ff1` →
+      `894cafe018ee` on +21 lines that are **all comment**
+      (bean `qou-zv2l`). Cap at ≤ 10 sidecars /
       ≤ 3 witnesses per idle pass. Every refresh that changes a
       sidecar or witness gets a `chore(qa-sweep|witness)` commit
       naming the producer + criterion + count. Full discipline:

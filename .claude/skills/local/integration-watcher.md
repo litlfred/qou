@@ -253,6 +253,15 @@ waiting for the user to prompt. Walk the priority order:
      true positives beyond `scriptHash`. Treat it as informational
      provenance; do not mass-refresh it. Full finding + the
      graft-aware measurement recipe: bean `qou-wsha`.
+   - **Diff the producer before re-running it.** `scriptHash` is a
+     whole-file hash, so a comment- or docstring-only edit drifts it
+     while the recomputed payload is byte-identical. Run
+     `git diff <witness.commitSha> -- <producer>` first. A weaker
+     false-positive class than `scriptCommitSha` (it needs a real
+     edit, not just a merge), but the same waste on an expensive
+     producer: cheap probes just re-run; a long-compute producer with
+     a comment-only diff gets a bean, not the idle pass. Worked case:
+     `canonical-ordering-dof`, +21 lines all comment (`qou-zv2l`).
    - **Detection budget** — capped at ≤ 10 sidecars / ≤ 3
      witnesses per idle pass to avoid burying the visible
      queue items above; remaining stale entries get logged for
