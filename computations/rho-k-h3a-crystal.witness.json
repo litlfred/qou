@@ -1,6 +1,6 @@
 {
   "computation": "rho-k-h3a-crystal",
-  "computedAt": "2026-07-18T17:58:50.377208+00:00",
+  "computedAt": "2026-08-10T13:04:58.211676+00:00",
   "description": "Option E for the H_{3A} per-block binding fraction Delta_lambda(K): plug in the Kashiwara symmetric-crystal weight c_lambda(q) := s_lambda(1, q, ..., q^{n-1}) (Macdonald hook-content; equals the Demazure character D_{w_0}(lambda) at principal specialisation, verified by demazure-markov-trace.witness.json) as Delta_lambda. Independent of Occam single-partition heuristic in rho_k_h3a_refinement.py; deuteron-only proof of concept. Reports residual honestly (no scaling).",
   "engine": "mpmath",
   "scriptFile": "rho_k_h3a_crystal.py",
@@ -111,20 +111,20 @@
     "n_crossings": 23,
     "n_partitions": 11,
     "compute_status": "deuteron",
-    "M_codata_MeV": "1875.61294257",
+    "M_codata_MeV": "1875.612945",
     "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
-    "m_p_MeV": "938.27208816",
+    "m_p_MeV": "938.27208943",
     "m_n_MeV": "939.56542052"
   },
   "data": {
     "abs_tr_M_at_q0_50dps": "0.38828647155940888266862350656245905232933814141657",
-    "rho_K_LO": "9464.239934557638777438030206230108525842652327530648640601590220747686",
-    "rho_K_codata": "9453.028193755781643554773320988830834549370824190595911129891391946862",
-    "delta_rho_residual": "-11.21174080185713388325688524127769129328150334005272947169882880082401",
-    "M_LO_pred_MeV": "1877.8375086799999751130235381424427032470703125",
-    "M_LO_err_pct": "0.1186047536519892502003859288949448639691209155335424626995780221382353",
-    "binding_gap_MeV": "2.224566109999975113023538142442703247070312499999999999999999999999962",
-    "target_sum_y_chi_Delta": "-4.353367275991764156441458195751864249430505029203972079132750219022197",
+    "rho_K_LO": "9464.2399409583974486913288224113258904819080861067297200920785049906",
+    "rho_K_codata": "9453.028206002902565716596657461553823583537354379475456926652439750232",
+    "delta_rho_residual": "-11.21173495549488297473216494977206689837073172725426316542606524036745",
+    "M_LO_pred_MeV": "1877.8375099499999751130235381424427032470703125",
+    "M_LO_err_pct": "0.1186046916518789068724164804931383776022249889088923941074633604642762",
+    "binding_gap_MeV": "2.224564949999975113023538142442703247070312499999999999999999999999976",
+    "target_sum_y_chi_Delta": "-4.35336500592839429304687628074452719199636073131365266760676564795065",
     "schur_weyl_check": {
       "sum_y_chi": "0.3882864240747888767115375131293520934425994727551320342915232693121429",
       "tr_M": "0.38828647155940888266862350656245905232933814141657",
@@ -442,21 +442,21 @@
     ],
     "crystal_q0": {
       "sum_y_chi_c_lambda_at_q0": "1796.734747235916364916971430877350903813043958165167145720909794074958",
-      "residual_target_minus_sum": "-1801.08811451190812907341288907310276806247446319437111780004254429398",
-      "alpha_E_diagnostic": "-0.002422932646395887113138288290575781661157767517863317497406957275670253",
-      "ratio_sum_over_target": "-412.7229873630619643758050877652774427450681926267811315152051442964288",
-      "M_pred_MeV": "2795.967079185815615466195068293476881182458895057245685123780788907789",
-      "closure_err_MeV": "920.3541366158156154661950682934768811824588950572456851237807889077894",
-      "closure_err_ppm": "490695.1299636102592999367459539063769100033541027591039544064415257046"
+      "residual_target_minus_sum": "-1801.088112241844759210018307158095431005040318896480798388516559722909",
+      "alpha_E_diagnostic": "-0.002422931382957656536452709637253678321629818860300976786373079553226223",
+      "ratio_sum_over_target": "-412.7232025775763084758659623585922082088462568435202862928428276936182",
+      "M_pred_MeV": "2795.967080455815615466195068293476881182458895057245685123780788907789",
+      "closure_err_MeV": "920.3541354558156154661950682934768811824588950572456851237807889077895",
+      "closure_err_ppm": "490695.1287094127063972652781480332986198593841850700625889425117546251"
     },
     "crystal_at_one": {
       "sum_y_chi_c_lambda_at_one": "330.3465596195567451709588957117468967005537584894330775688653435629872",
-      "residual_target_minus_sum": "-334.6999268955485093274003539074987609499842635186370496479980937820094",
-      "alpha_E_diagnostic": "-0.01317818257591456326457206548590349819983430564110059216085144559734375",
-      "ratio_sum_over_target": "-75.8829978443063267216872807655683929299928974230914571298476526796258",
-      "M_pred_MeV": "2046.644254009644997498295258512266508167917106230036168882973168295095",
-      "closure_err_MeV": "171.0313114396449974982952585122665081679171062300361688829731682950952",
-      "closure_err_ppm": "91186.89019350372454830189347229105912658561860567624846221481589224005"
+      "residual_target_minus_sum": "-334.6999246254851394640057719924914238925501192207467302364721092109379",
+      "alpha_E_diagnostic": "-0.01317817570415124755845245534966646000762613353834544450755665349540733",
+      "ratio_sum_over_target": "-75.8830374135162521933278166614860199726980477374204101778871791134023",
+      "M_pred_MeV": "2046.644255279644997498295258512266508167917106230036168882973168295095",
+      "closure_err_MeV": "171.0313102796449974982952585122665081679171062300361688829731682950952",
+      "closure_err_ppm": "91186.88945689964701021790959768968120867661543572688920792939414005546"
     },
     "outcome": "WRONG_SIGN",
     "comparison_to_occam": {
@@ -468,9 +468,9 @@
       "occam_M_pred_MeV": "1875.61294257",
       "occam_closure_err_MeV": "0.0",
       "balanced_321_Delta_lambda": "301.5215540090910128166103788693461804844372502201474209088791160033776",
-      "crystal_q0_M_pred_MeV": "2795.967079185815615466195068293476881182458895057245685123780788907789",
-      "crystal_q0_closure_err_MeV": "920.3541366158156154661950682934768811824588950572456851237807889077894",
-      "crystal_q0_ratio_sum_over_target": "-412.7229873630619643758050877652774427450681926267811315152051442964288",
+      "crystal_q0_M_pred_MeV": "2795.967080455815615466195068293476881182458895057245685123780788907789",
+      "crystal_q0_closure_err_MeV": "920.3541354558156154661950682934768811824588950572456851237807889077895",
+      "crystal_q0_ratio_sum_over_target": "-412.7232025775763084758659623585922082088462568435202862928428276936182",
       "interpretation": "Occam reproduces M(D) exactly because it solves 1 equation in 1 unknown (free Delta_lambda for the selected partition). Option E is over-determined: Delta_lambda is FIXED by the crystal weight c_lambda, leaving NO free parameter, so the mass equation has a residual measuring the gap between the structural prediction and the empirical binding. A residual of 0 ppm would be an exact match; the magnitude reported is the falsification metric for this option."
     }
   },
@@ -491,10 +491,10 @@
   "notes": "Definition: c_lambda(q) := s_lambda(1, q, ..., q^{n_strands-1}) = principal q-specialisation of the Schur polynomial = Macdonald hook-content formula = Demazure character D_{w_0}(lambda) at x_i := q^{i-1} (verified by demazure-markov-trace witness). At q -> 1 this equals dim V_lambda for sl_n = |B(lambda, n)| from crystal_basis.crystal_B (Weyl dimension formula). We report BOTH the q-deformed (q_0) and the q -> 1 variants, since AGENTS.md sec.7b shortcut #3 leaves the choice open for the symmetric-crystal case (the Type-B fold-orbit closure work uses crystal *cardinality* at q=1, while the Demazure-fiber Markov-trace functional uses the q-deformed character).",
   "honest_reporting": "Per protocol: c_lambda is NOT scaled to force the mass equation to close. The residual (target - sum) and the diagnostic scalar alpha_E (the would-close-it factor) are both reported. If alpha_E differs significantly from 1, the Kashiwara crystal weights are NOT the correct closed form for Delta_lambda; a flat-transport correction (q -> 0 -> q_0 connection curvature, per rem:ontological-agnosticism) would have to make up the difference, OR a different structural weight (Plancherel-truncated, jet-knot, ...) applies.",
   "follow_up": "If option E shows |alpha_E - 1| << 1 (close to closure), extend to (T, 3He) at n=9 and 4He at n=12. If alpha_E is far from 1, compare the residual to the four other options (A: crystal-truncated minimum-norm, B: Plancherel bound, C: jet-knot Hochschild, D: Type-B fold-orbit projection) in the parent PR #600 brief; the smallest residual wins.",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "af6ce13124b1a2d61b203aa42f60ee4bc9c8ea12",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "commitSha": "f0180ce6db22cc59f129c68bfdb65bfb9ec240d8",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
