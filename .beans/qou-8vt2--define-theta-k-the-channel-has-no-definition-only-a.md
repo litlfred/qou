@@ -579,3 +579,110 @@ this is a beans-only pass.
 
 Status stays `todo`. No derivation attempted; this records the route and its
 one keystone.
+
+---
+
+# μ_λ FIRST FILTER — the parity law forces a half-integer power, and prunes the
+# obvious candidate (2026-08-10)
+
+Formalize-first pass on the keystone identified above, per AGENTS.md §3.3: find
+the invariant that prunes the class **before** running any search. One was
+available for free, from the recursion prop's own asserted law. No anchor input,
+no numerics.
+
+## The derivation
+
+`prop:q-beta-c-k-recursion-from-habiro-q-difference` asserts two things:
+
+  (i)  the rates `r_λ = (q−1)·μ_λ` are **bar-odd**;
+  (ii) `a_j = e_j({r_λ})` **alternates bar-parity**.
+
+Note first that `(q−1)` is *not itself* bar-odd: under `q ↦ 1/q` it goes to
+`−(q−1)/q`, i.e. it is bar-anti-homogeneous of weight −1. So (i) is a constraint
+on `μ_λ`, and solving it gives
+
+    **μ_λ(1/q) = q · μ_λ(q)**
+
+For a pure power `μ = q^a` this forces `−a = 1 + a`, i.e. **a = −1/2**. The
+general solution is
+
+    **μ_λ(q) = q^{−1/2} · g_λ(q),  with g_λ bar-even.**
+
+Verified symbolically (sympy) on `g ∈ {1, q+q⁻¹, [3]_q}` — all bar-even, all
+satisfy the μ-law and make `r_λ` exactly bar-odd — and falsified on `g = q`,
+which is not bar-even.
+
+## Claim (ii) is what forces the strict reading
+
+There is a weaker reading in which `μ_λ` is merely bar-even and `r_λ` is
+"bar-odd up to weight". The two readings are distinguished by (ii), and the test
+is decisive:
+
+| reading | `a_j` behaviour under bar | matches claim (ii)? |
+|---|---|---|
+| **strict**: `μ = q^{−1/2}·(bar-even)` | `a_j(1/q) = (−1)^j a_j(q)` — clean | **yes**, j = 1,2,3 |
+| weak: `μ` bar-even | `a_j(1/q) = (−1)^j q^{−j} a_j(q)` | no — carries `q^{−j}` |
+
+So the block's own clean-alternation claim **commits it to the strict reading**,
+hence to the half-integer power.
+
+## Consequence, and a fork the corpus should resolve
+
+Strictly read, the per-mode rates live in `ℤ[q^{±1/2}]`, **not** `ℤ[q^{±1}]`.
+That is in real tension with AGENTS.md §7a, which fixes the Hecke convention as
+eigenvalues `(q, −q⁻¹)` — integer powers — and names Kauffman's
+`(q^{1/2}, −q^{−1/2})` as the *wrong* convention for this corpus.
+
+Two honest resolutions, and they give **different** filters, so this is a fork
+rather than a detail:
+
+  (a) the rates genuinely carry `q^{−1/2}` — the framing/Kauffman normalisation
+      enters at the heat-kernel level even though the Hecke generators do not
+      need it. Then every candidate `μ_λ` must be built in `ℤ[q^{±1/2}]`.
+  (b) "bar-odd" in (i) is loose and the clean alternation in (ii) is the
+      misstatement. Then `μ_λ` is bar-even and the alternation carries `q^{−j}`.
+
+As written the block asserts both (i) and (ii), and only (a) makes both true.
+Not silently picking one: this is flagged for the owner. Per
+§"Conditional-proved ≠ premise-established", everything below is **conditional on
+(a)**, which the corpus asserts and has *not* proved.
+
+## The prune — and it hits the obvious candidate
+
+The natural first guess for an on-chain `μ_λ` is the `C₂` / Jucys–Murphy block
+scalar: `C₂ = Σ_k X_k²` acts on block λ as `contentSqSum λ · 1`. It is exactly
+the object PR #4876's residual item 4 names, and it is squarely on the chain.
+
+It is **excluded**, conditional on (a): `contentSqSum` is
+`(μ : YoungDiagram) : ℤ` (`QOU/BraidKnot/JucysMurphy.lean:175`) — a plain
+integer, entirely `q`-independent. A constant is bar-even, which is the *weak*
+reading, so it cannot make `r_λ` bar-odd and breaks (ii).
+
+**Scope: (a)-conditional, not structural.** The invariant used is the corpus's
+asserted parity law, not a Lean theorem. If the owner resolves the fork toward
+(b), this prune dissolves and `contentSqSum` returns as a live candidate. Stated
+that way deliberately — this bean exists because nine readings were tested
+against an undefined target, and a prune resting on an unproved premise must
+wear that premise.
+
+## What a surviving candidate looks like
+
+`μ_λ(q) = q^{−1/2} · g_λ(q)` with `g_λ` bar-even. Bar-even objects already on the
+chain: `[n]_q` (verified bar-even), the Wenzl/Hoefsmit q-dimensions `d_λ(q)`, and
+sums of squares of `[content]_q` (bar-even, being a sum of squares of bar-even
+terms). So the shape to try first is the **q-deformed** content-square sum,
+
+    μ_λ(q) = q^{−1/2} · Σ_{c ∈ λ} [cellContent c]_q²,
+
+which is the minimal q-deformation of the excluded candidate that satisfies the
+forced law. That is a *prediction of shape*, not a fit — no anchor was used to
+obtain it.
+
+## Guard, restated
+
+If this shape is then tuned to reproduce the measured `c₃`, it becomes a fit and
+closes nothing. The next step is to **derive** `μ_λ` from the q-heat-kernel
+construction and check whether it lands in this class — not to select within the
+class by matching.
+
+Status stays `todo`.
