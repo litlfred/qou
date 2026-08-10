@@ -62,6 +62,29 @@ theorem qBracket_eq_canonical (q : ℝ) (n : ℕ) :
   · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
       zpow_natCast, inv_pow]
 
+/-- **The normaliser is a q-factorial, not a two-channel fusion.**
+
+`[2]_q · [3]_q = [3]_q!`.  The recovered producer described this denominator as
+*"the quantum dimension of `V_2 ⊗ V_3`, the LR fusion of the two relevant
+magic-shell channels for A = 3 anchors"*, which reads as a rule about **two**
+channel indices.  It is a **one**-index object, and one already load-bearing
+elsewhere in the corpus: `F_Bor = |tr_M(β_Bor)| · [3]_q! / q³`, and the q-Schur
+Markov weight of the trivial partition, `y_{(3)}(q) = q³ / [3]_q!`.  So the
+normaliser is `q³ / y_{(3)}(q)` — the inverse Markov weight of `(3) ⊢ 3`.
+
+Why this matters for the conjecture rather than being a notational nicety: a
+two-index rule admits several continuations off `A = 3` that all coincide there
+(`(A_magic, A)`, a fixed `(2,3)`, `(A_magic, A_magic+1)`, …), and those spread by
+32× at the 8 shell.  A q-factorial has one index, so the continuation question
+narrows to which `n` the factorial is taken at — a strictly smaller search, and
+one with a categorical handle via the Markov weight.
+
+The hypothesis is the singular locus, inherited from `[1]_q = 1`. -/
+theorem qBracket_normaliser_eq_qFactorial {q : ℝ} (h : q - q⁻¹ ≠ 0) :
+    qBracket q 2 * qBracket q 3 = QOU.QInteger.qFactBal q 3 := by
+  rw [qBracket_eq_canonical, qBracket_eq_canonical,
+    QOU.QInteger.qFactBal_three h]
+
 /-- The Hecke deformation parameter `h = q − q⁻¹`. -/
 noncomputable def hParam (q : ℝ) : ℝ := q - q⁻¹
 
