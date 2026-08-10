@@ -104,6 +104,26 @@ $$
 
 the same value at $A_{\mathrm{magic}} = 2, 8, 20, 28, 50, 82, 126$. Neither factor varies with the shell: the first because it counts strands inside a nucleon, the second because it counts interfaces adjacent to a closed shell.
 
-This is what makes the conjecture testable rather than merely unrefuted. It is a single number, fixed without reference to any anchor beyond $A = 3$, and any single-magic mirror pair at a higher shell can contradict it.
+The prediction is a single number, fixed without reference to any anchor beyond $A = 3$. Any single-magic mirror pair at a higher shell can contradict it.
 
-Testing it against measured masses is a separate matter, and is not done here: isolating the magic-shell term from the Coulomb and pairing contributions requires a binding decomposition that is not present in the corpus. The prediction is stated; it is not claimed to be verified.
+## The test, and its outcome
+
+The mirror pair is the right probe, because the isoscalar bulk cancels: both nuclides share $A$, so their binding difference isolates the charge-asymmetric terms. Subtracting the electrostatic displacement leaves
+
+$$
+  \text{residual} \;:=\; \bigl[B(Z{=}m{-}1) - B(Z{=}m)\bigr] \;-\; \Delta E_{\mathrm{Coulomb}},
+$$
+
+which the prediction says should be $\approx -2.14\;\text{MeV}$ at every shell.
+
+It is not. Measured against AME binding energies, with the electrostatic term taken from the framework's own Coulomb module (whose $\alpha_{\mathrm{EM}}$ is derived from $q_0$ rather than imported), the residual is between $0.07$ and $1.81\;\text{MeV}$ in magnitude, depending on shell and on the radius model — three to thirty times smaller than predicted.
+
+The radius scale is the one genuinely uncertain input, so it was swept rather than chosen: the derived value $\bar\lambda_\pi$, the empirical heavy-nucleus constant $1.2\;\text{fm}$, and the value implied by the measured ${}^{3}$He charge radius. The conclusion does not depend on which is used, and the reason is structural rather than numerical: **the residual is not constant in $A$**, while the prediction is a single shell-independent number. Under the derived radius it changes sign between $A = 3$ and $A = 15$. No choice of radius converts a varying residual into a constant one.
+
+The $A = 3$ anchor is the sharpest case, because it is where $\kappa$ was fixed. There the residual is at most $\approx 0.23\;\text{MeV}$ under any radius model, against a predicted $2.14\;\text{MeV}$ — short by at least a factor of nine.
+
+## What this establishes, and what it does not
+
+This is a scope-limited negative. It says that the additive, shell-independent term $\kappa \cdot (n_{pp} - n_{nn})$, set against an electrostatic baseline, does not appear in the mirror-split data. It does **not** exclude $\kappa$ as an ingredient of some other decomposition: no invariant forbidding that has been proved, and none is claimed here.
+
+What it does establish is narrower and more useful. The empirical value $\kappa \approx -1.0708\;\text{MeV}$ was recorded as the observed slope at the single-magic anchors, but those anchors leave an order of magnitude too little room for it once electrostatics is accounted for. So that value did not come from this decomposition, and the decomposition it did come from is not in the corpus. The $0.034\%$ agreement between the closed form and that value is therefore agreement with a quantity of unrecorded provenance — which is a weaker statement than it has been carrying.
