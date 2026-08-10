@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:43:43.825723+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-10T14:03:37.732615+00:00",
+  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
   "assertions": [
     {
       "name": "residual_0_is_9500ppm",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 24,
   "computation": "habiro-h9-spectral-decomposition",
   "scriptFile": "habiro_h9_spectral_decomposition.py",
   "scriptHash": "d7311aedf066",
-  "scriptCommitSha": "35f094e9969675234f9a0cc5dd46c15c6d4de452",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "H₉ spectral decomposition of Habiro normalization residual (319 ppm). Decomposes per-partition content sums, moments M_k = Σ y_λ c(λ)^k, and tests structural candidates for the ℏ⁴ coefficient c₄ ≈ −3.31.",
   "auditOnly": "docs/audits/2026-05-28-habiro-product-correction-7ppm.md",
