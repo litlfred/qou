@@ -35,7 +35,14 @@ meaningless:
 
     python3 scripts/regenerate-convention-c-witnesses.py --plan
     python3 scripts/regenerate-convention-c-witnesses.py --run [--timeout 900]
+    python3 scripts/regenerate-convention-c-witnesses.py --run --retry-failed
     python3 scripts/regenerate-convention-c-witnesses.py --report
+
+A plain `--run` resumes past everything already recorded, *including
+failures* — so a producer you have just fixed stays skipped. `--retry-failed`
+narrows the skip-set to producers that actually succeeded. It is not the
+default because a producer broken for its own reasons would then be retried,
+at its full timeout, on every subsequent run.
 """
 
 from __future__ import annotations
@@ -326,15 +333,26 @@ def work_list():
     return items, orphans
 
 
-def done_set():
+def done_set(ok_only: bool = False):
+    """Producers already attempted, so a resume can skip them.
+
+    `ok_only` narrows this to producers that actually succeeded, which is what
+    `--retry-failed` needs. A failure is recorded like any other outcome, so a
+    plain resume skips it forever -- and a failure is usually the thing you
+    just fixed. Not the default: a producer broken for its own reasons would
+    then be retried, at its full timeout, on every subsequent run.
+    """
     if not LOG.exists():
         return set()
     out = set()
     for line in LOG.read_text().splitlines():
         try:
-            out.add(json.loads(line)["producer"])
-        except Exception:
-            pass
+            rec = json.loads(line)
+        except Exception:                                        # noqa: BLE001
+            continue
+        if ok_only and rec.get("status") != "ok":
+            continue
+        out.add(rec.get("producer"))
     return out
 
 
@@ -421,14 +439,14 @@ class SerialLock:
         return False
 
 
-def run_all(timeout: int):
+def run_all(timeout: int, retry_failed: bool = False):
     items, orphans = work_list()
     # One producer may own several witnesses; run it once.
     by_producer = {}
     for w, p in items:
         by_producer.setdefault(p, []).append(w)
 
-    already = done_set()
+    already = done_set(ok_only=retry_failed)
     todo = [(p, ws) for p, ws in sorted(by_producer.items()) if p not in already]
     LOG.parent.mkdir(parents=True, exist_ok=True)
 
@@ -623,6 +641,8 @@ def main() -> int:
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--timeout", type=int, default=900)
+    ap.add_argument("--retry-failed", action="store_true",
+                    help="also re-run producers whose last recorded status was not ok")
     a = ap.parse_args()
     if a.plan:
         items, orphans = work_list()
@@ -637,7 +657,7 @@ def main() -> int:
         return 0
     if a.run:
         with SerialLock(REPO / ".work" / "convention-c-regen.lock"):
-            run_all(a.timeout)
+            run_all(a.timeout, retry_failed=a.retry_failed)
         return 0
     if a.report:
         report()
