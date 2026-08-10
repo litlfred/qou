@@ -334,7 +334,39 @@ def _structural_hits(doc, tol: float = 1e-30):
                                 found.append(True)
                                 return
                         except (TypeError, ValueError):
-                            pass
+                            # A SYMBOLIC y_lambda -- a q-expression string, not a
+                            # number. float() raises and the value was silently
+                            # skipped, which made the detector blind to the one
+                            # place the convention is actually *defined*.
+                            #
+                            # y-lambda-wenzl-bridge-symbolic-witness.json stores
+                            # `y_lambda_symbolic` for every partition and is the
+                            # terminal root of the whole cascade: it is evaluated
+                            # at q0 by regenerate_y_lambda_mpfr.py into
+                            # y-lambda-mpfr[-proton]-witness.json, which
+                            # tr_m_wenzl_bridge_mpfr serves to
+                            # chi_at_q0_via_hoefsmit_mpfr, which feeds 7
+                            # producers, which feed 8 more. It scored 0
+                            # fingerprints and 0 structural hits throughout.
+                            #
+                            # Its entry for the 3-row partition [1,1,1] at n=3 is
+                            # a rational function of q that sympy confirms is NOT
+                            # identically zero, and which evaluates at the proton
+                            # q0 to 0.0227449425770... -- i.e. the registry
+                            # fingerprint 0.02274491. Under convention D that
+                            # weight must vanish identically.
+                            #
+                            # Syntactic screen only: any non-trivially-zero
+                            # expression string counts. Deciding whether an
+                            # arbitrary q-expression is identically zero needs a
+                            # CAS, which does not belong in a detector run over
+                            # a 7 MB witness -- so this over-reports rather than
+                            # under-reports, which is the right direction for a
+                            # test whose failure mode was silence.
+                            if isinstance(v, str) and v.strip() not in (
+                                    "", "0", "0.0", "-0", "-0.0"):
+                                found.append(True)
+                                return
             for v in node.values():
                 walk(v)
         elif isinstance(node, list):
