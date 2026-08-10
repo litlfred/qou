@@ -354,6 +354,35 @@ theorem MultiStepReduction.head {G : Type u} {k : Type v} [Ring k] [DecidableEq 
   | refl => exact MultiStepReduction.step (MultiStepReduction.refl f) hstep
   | step _ hlast ih => exact MultiStepReduction.step ih hlast
 
+/-- Runs compose. -/
+theorem MultiStepReduction.trans {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g h : AlgElement G k}
+    (h₁ : MultiStepReduction ord sys f g)
+    (h₂ : MultiStepReduction ord sys g h) :
+    MultiStepReduction ord sys f h := by
+  induction h₂ with
+  | refl => exact h₁
+  | step _ hlast ih => exact MultiStepReduction.step ih hlast
+
+/-- **Head decomposition**: a run is either empty, or a first step followed by a
+    run.
+
+    `MultiStepReduction` is generated at the *tail* — `step` appends a step to a
+    run — so this is the dual view, and it is the one Newman's lemma needs: the
+    induction there is on the source of the fork, so the first step has to be the
+    one exposed. -/
+theorem MultiStepReduction.cases_head {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g : AlgElement G k} (h : MultiStepReduction ord sys f g) :
+    g = f ∨ ∃ a, SingleStepReduction ord sys f a ∧ MultiStepReduction ord sys a g := by
+  induction h with
+  | refl => exact Or.inl rfl
+  | step _ hlast ih =>
+    rcases ih with rfl | ⟨a, hfa, hag⟩
+    · exact Or.inr ⟨_, hlast, MultiStepReduction.refl _⟩
+    · exact Or.inr ⟨a, hfa, MultiStepReduction.step hag hlast⟩
+
 /-- An element is in **normal form** with respect to a rewriting system
     if no leading monomial of any rule divides (appears as a subword of)
     any monomial actually occurring in the element.
