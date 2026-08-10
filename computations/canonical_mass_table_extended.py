@@ -67,7 +67,7 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 # package rather than via the witness_base back-compat shim (which
 # re-exports the identical class). Bootstrap the in-repo package path —
 # mirrors low_isotopes_binding_sweep.py.
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 

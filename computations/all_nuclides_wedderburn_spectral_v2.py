@@ -71,7 +71,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-_ROOT = Path(__file__).resolve().parents[2]
+_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_ROOT / "tools" / "pyhecke" / "python"))
 sys.path.insert(0, str(_ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(Path(__file__).parent))

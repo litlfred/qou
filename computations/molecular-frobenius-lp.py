@@ -39,7 +39,7 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 # z/NF_BASIS/TR_M now owned by pyhecke.gram (M2b inversion). Keep local
 # bootstrap for dev mode; the installed-pyhecke path is preferred.
 import sys as _sys, pathlib as _pl
-_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[2] / "tools" / "pyhecke" / "python"))
+_sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
 
 from witness_base import WitnessBuilder

@@ -193,7 +193,7 @@ def classify(script: Path) -> dict:
         ok, missing, opted_out = _witness_has_required(w)
         witness_status.append(
             {
-                "witness": str(w.relative_to(script.parent.parent.parent)),
+                "witness": str(w.relative_to(Path(__file__).resolve().parents[1])),
                 "ok": ok,
                 "missing_fields": missing,
                 "opted_out_raw_trace": opted_out,
@@ -223,7 +223,7 @@ def main() -> int:
     args = parser.parse_args()
 
     here = Path(__file__).resolve()
-    repo_root = here.parents[2]
+    repo_root = here.parents[1]
     scan_dir = (repo_root / args.root).resolve()
     out_path = (repo_root / args.report).resolve()
 
