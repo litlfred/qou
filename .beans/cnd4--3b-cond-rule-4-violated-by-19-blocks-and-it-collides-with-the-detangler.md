@@ -94,6 +94,32 @@ scattered hundreds of positions ahead of it.
   so it is invisible to the detangler either way. That is the `fwr8` parser
   class, and a separate defect.
 
+## The same collision, from the other direction (added 2026-08-10)
+
+`prn1` tranche 1 hit this independently. Of 21 pruned edges restored after
+adversarial review, **5 point forward** and turned three blocks red on
+`detangler-no-forward-ref`:
+
+| source | target | forward by |
+|---|---|---|
+| `prf:phi-q-categorical-truncation` | `prop:unified-curvature-rank-mass-formula` | +248 |
+| `rem:hecke-charge-mass-duality` | `def:vertex-operator` | +244 |
+| `prf:quantum-dilogarithm-stratified` | `prop:curvature-rank-gb-stratification` | +222 |
+| `prf:phi-q-categorical-truncation` | `prop:spectral-sequence-collapse` | +221 |
+| `prf:phi-q-categorical-truncation` | `prop:curvature-rank-gb-stratification` | +216 |
+
+Held for the same reason as the 19 above, and the reading is the same: an
+adversarial reader confirmed each of these as load-bearing, so *the edge is
+right and the ordering is wrong.* Two proofs cannot legitimately depend on a
+proposition stated ~220 blocks after them.
+
+That makes **24 edges across two independent defects** blocked on one decision:
+whether a correct dependency may be declared when declaring it costs a forward
+reference. `prop:curvature-rank-gb-stratification` alone is depended on by two
+proofs that precede it — see also `msc1` §2, which finds that those same proofs
+attribute to it a claim it does not contain. Its position and its content are
+both in question.
+
 ## Not to be confused with
 
 This is **not** the `prn1` prune damage. These edges were never pruned — the
