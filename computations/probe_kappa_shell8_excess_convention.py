@@ -43,6 +43,8 @@ if str(_SUB) not in sys.path:
     sys.path.insert(0, str(_SUB))
 import mpmath as mp  # noqa: E402
 from _precision import fmt, COMPUTE_DPS  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402
 
 mp.mp.dps = COMPUTE_DPS
 
@@ -74,9 +76,15 @@ from pathlib import Path
 # AGENTS.md "ALL AGENTS AND ALL PRODUCTION CODE DEFAULT TO THE EXPERIMENTAL
 # (PROTON) ANCHOR".  Recorded explicitly so a later reader can tell which layer
 # this witness belongs to without inferring it from a call site.
-Q0 = mp.mpf("1.1099785827513808")
+#
+# Both come from the canonical modules rather than being re-typed here.  The
+# literals they replace were `mp.mpf("1.1099785827513808")` and
+# `mp.mpf("0.51099895000")`.  Carrying them as mpf kept float64 out of the
+# witness, but the second is CODATA's electron mass TRUNCATED to 9 significant
+# figures (0.51099895069) -- wrapping a truncated constant in mpf preserves the
+# error in the value while removing the float from the JSON.
+Q0 = Q_MP
 Q0_PIN = "proton (experimental layer), m_p/m_e"
-M_E_MEV = mp.mpf("0.51099895000")
 
 # The empirical slope the conjecture is measured against (PR #656 v6 fit).
 KAPPA_EMPIRICAL = -mp.mpf("1.0707907503265857")
