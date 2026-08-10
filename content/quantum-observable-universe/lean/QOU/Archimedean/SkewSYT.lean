@@ -911,7 +911,7 @@ theorem branching_1111_check : 0 * 1 + 0 * 2 + 1 * 1 = (1 : ℕ) := by decide
 
 /-! ## §10  Explicit branching: H₅(q) → H₃(q) -/
 
-/-- Branching table H₅ → H₃ (verified by SYT enumeration):
+/-! Branching table H₅ → H₃ (verified by SYT enumeration):
 
     | lam ⊢ 5       | m_{(3)} | m_{(2,1)} | m_{(1,1,1)} |
     |--------------|---------|-----------|-------------|
@@ -947,14 +947,25 @@ theorem branching_1111_check : 0 * 1 + 0 * 2 + 1 * 1 = (1 : ℕ) := by decide
 -- These are the fundamental combinatorial inputs for the
 -- jet convergence theorem.
 
--- (3,1) ⊢ 4 → (3) ⊢ 3: one cell at (1,0). m = 1.
-theorem branch_31_to_3 : (1 : ℕ) = 1 := rfl
+/-- `(3,1) ⊢ 4`, the source of the branching row below. -/
+def p31 : Partition := ⟨[3, 1], by decide⟩
+/-- `(3) ⊢ 3`. -/
+def p3 : Partition := ⟨[3], by decide⟩
+/-- `(2,1) ⊢ 3`. -/
+def p21 : Partition := ⟨[2, 1], by decide⟩
+/-- `(1,1,1) ⊢ 3`. -/
+def p111 : Partition := ⟨[1, 1, 1], by decide⟩
 
--- (3,1) ⊢ 4 → (2,1) ⊢ 3: one cell at (0,2). m = 1.
-theorem branch_31_to_21 : (1 : ℕ) = 1 := rfl
+/-- `(3,1) ⊢ 4 → (3) ⊢ 3`: the skew shape is the single cell `(1,0)`. -/
+theorem skewCells_31_3 : skewCells p31 p3 = {⟨1, 0⟩} := by decide
 
--- (3,1) ⊢ 4 → (1,1,1) ⊢ 3: not contained. m = 0.
-theorem branch_31_to_111 : (0 : ℕ) = 0 := rfl
+/-- `(3,1) ⊢ 4 → (2,1) ⊢ 3`: the skew shape is the single cell `(0,2)`. -/
+theorem skewCells_31_21 : skewCells p31 p21 = {⟨0, 2⟩} := by decide
+
+/-- `(3,1) ⊢ 4 → (1,1,1) ⊢ 3`: not contained, so the multiplicity is `0`. -/
+theorem branch_31_to_111 : branchingMult p31 p111 = 0 := by
+  rw [branchingMult]
+  exact dif_neg (by decide)
 
 /-! ## §11  Convergence theorem with error estimates -/
 

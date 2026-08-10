@@ -95,7 +95,15 @@ instance levelSufficient_refl
   ⟨rfl⟩
 
 /-- **Level sufficiency (headline)** (per-instance form).
-    Backed by `LevelSufficient`. -/
+    Backed by `LevelSufficient`.
+
+    **Assumed, not derived here** — the body projects
+    `LevelSufficient.trace_eq`, so the trace equality is a hypothesis carried
+    by the instance argument, not a result established below. Jones is cited
+    for the Markov-trace theory the statement is about; it is not the source
+    of a proof performed here. The statement is genuinely conditional (`P`,
+    `P'`, `q` are arbitrary), so it may not be strengthened to a global
+    `axiom`. -/
 -- Ref: [manuscript] braids-and-knots/level-sufficiency
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
