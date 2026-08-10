@@ -1,7 +1,7 @@
 ---
 # vred
-title: 'Content validation is RED on main — 32 issues, of which 10 are mechanical and 22 editorial'
-status: todo
+title: Content validation is RED on main — 32 issues, of which 10 are mechanical and 22 editorial
+status: completed
 type: bug
 priority: high
 tags:
@@ -9,7 +9,7 @@ tags:
     - verification
     - content
 created_at: 2026-08-08T16:35:00Z
-updated_at: 2026-08-08T16:35:00Z
+updated_at: 2026-08-10T13:56:58Z
 ---
 
 `bun run scripts/run-validate.ts content/quantum-observable-universe` on clean
