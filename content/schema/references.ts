@@ -3170,6 +3170,25 @@ export const references: CSLData[] = [
       "expansion of the categorical mass endomorphism.",
   }),
 
+  // ── Neumann 2004 ──────────────────────────────────────────────
+  ref({
+    id: "neumann2004",
+    type: "article-journal",
+    title: "Extended Bloch group and the Cheeger-Chern-Simons class",
+    author: [{ family: "Neumann", given: "Walter D." }],
+    "container-title": "Geometry & Topology",
+    volume: "8",
+    page: "413-474",
+    issued: { "date-parts": [[2004]] },
+    DOI: "10.2140/gt.2004.8.413",
+    URL: "https://arxiv.org/abs/math/0307092",
+    note:
+      "The extended Bloch group, its flattenings, and the log-branch " +
+      "bookkeeping behind the five-term relation. Prop 2.5 and §2 are the " +
+      "input to `QOU.QBeta.FiveTwoComplexPentagon`; the flattening signs " +
+      "$b_j$ in the $5_2$ saddle sum rule are the $\\varepsilon$ data of §2.",
+  }),
+
   // ── Rivin 1994 ────────────────────────────────────────────────
   ref({
     id: "rivin1994",

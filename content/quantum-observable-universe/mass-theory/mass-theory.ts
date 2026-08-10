@@ -605,6 +605,7 @@ export default chapter({
         "kummer-identity-radial-reduction",
         "ideal-tetrahedron-volume-well-defined",
         "birthday-axioms-underdetermine",
+        "five-two-saddle-sum-rule",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",

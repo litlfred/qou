@@ -95,6 +95,13 @@ QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTran
 QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_ofReal_le_omega | clean
 QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal | clean
 QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.tendstoReal_le_of_eventuallyLE' | clean
+# The 5_2 saddle sum rule (same PR).  `fiveTwoSaddleSumRule_holds` INHABITS a
+# conjecture class the corpus declared with no instance and "the statement is
+# open" — so its axiom status is exactly what distinguishes a discharged
+# conjecture from a relabelled one.  Pin it.
+QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule | clean
+QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_sum_V | clean
+QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwoSaddleSumRule_holds | clean
 """
 
 
