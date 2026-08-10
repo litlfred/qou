@@ -88,3 +88,47 @@ No live (non-`_deprecated/`, non-audit) producer or witness carries
 convention-C material retained for historical reasons; the
 `binding_k_enumerator` question is answered by the owner and applied; and the
 three `y-lambda-*` witnesses have followed their deprecated producers.
+
+## Applied: `binding_k_enumerator` (owner chose option 2)
+
+Producer and witness moved to `computations/_deprecated/`. Nothing imported the
+module — all four apparent consumers referenced it in **comments and
+docstrings** only, and an earlier grep matched that prose and overstated the
+blast radius. Work list dropped 45 → 43 witnesses; future cascades no longer
+burn 3600 s timing it out.
+
+**Retiring the producer did not retire its output.** The K it selected is
+already a literal in live compute:
+
+- `gap_a1_binding_k_sdp_feasibility.py:288` — *"only K = σ_3^2 is taken from
+  binding_k_enumerator.py"*
+- `multiterm_cost_deuteron_hopf_probe.py:36` — *"From
+  binding-k-enumerator.witness.json for K = [3, 3]"*
+
+So a canonical object selected by a convention-C ranking is still in the corpus,
+now with its provenance deprecated out from under it. Deciding whether
+`K = σ_3²` survives convention D is a separate question from deprecating the
+thing that chose it, and it is not answered by this move.
+
+## NOT applied: the three `y-lambda-*` witnesses — they are not clear-cut
+
+I said these were straightforward (producers already in `_deprecated/`, so the
+witnesses follow). **They are not.** `y-lambda-jones-markov-witness.json` has
+live consumers, including *paper content*:
+
+| consumer | kind |
+|---|---|
+| `computations/binding_a3plus_joint_ji_combiner.py` | live producer |
+| `mass-theory/alpha-k-derivation-procedure-proof.md` | content block |
+| `mass-theory/wedderburn-bratteli-recursion.lean` | content block sibling |
+| `mass-theory/wedderburn-bratteli-recursion-proof.md` | content block |
+
+Moving it breaks content references, which is a different order of change from
+retiring an unused producer. The other two were not checked — the sweep timed
+out — so their status is unknown, not clear.
+
+This is the same shape as `qou-rohl` (a convention-C witness with no producer
+feeding six live consumers): **a witness whose producer is deprecated is not
+thereby unused.** The ruling says history leaves the corpus; it does not say
+what to do when the corpus is still reading it. That needs answering per
+witness, with the content blocks in scope.
