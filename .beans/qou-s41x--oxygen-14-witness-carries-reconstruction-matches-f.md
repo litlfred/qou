@@ -1,10 +1,11 @@
 ---
 # qou-s41x
 title: 'oxygen-14 witness carries reconstruction_matches: false — pre-existing, undecided, two live readers'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-10T02:36:17Z
-updated_at: 2026-08-10T02:36:17Z
+updated_at: 2026-08-10T12:14:06Z
 ---
 
 
@@ -261,3 +262,79 @@ to 160) — a deliberate producer run, and one that now also has to absorb the
 padding-ratchet consequence recorded on `qou-j6gb` (68 producers build their
 constants at 50 dps, so latent float64 becomes visible padding). Sequence that
 deliberately; do not fold it into an unrelated change.
+
+---
+
+## REGENERATED — the zeros are gone, and the coefficients never moved
+
+PR #4926, stacked on #4903. The full ATOMS run took 513 s / 0 failures.
+
+Φ_8 now matches `2⌊(A−1)/2⌋` on **all seven** mirror pairs (was 0 on all
+seven):
+
+    A    pair                            Φ_8   2⌊(A−1)/2⌋
+    1    proton − neutron                 0       0
+    3    helium-3 − tritium               2       2
+    5    lithium-5 − helium-5             4       4
+    7    beryllium-7 − lithium-7          6       6
+    8    boron-8 − lithium-8              6       6
+    9    boron-9 − beryllium-9            8       8
+   10    carbon-10 − beryllium-10         8       8
+
+`reconstruction_matches` is True on all 20 atoms; `tr_M_at_q0_rel_err`
+stayed 0.0 throughout.
+
+**The decisive check: all 25 per-atom witnesses carry byte-identical
+`habiro_coefficients` before and after.** So this was a corrected *check*,
+never corrected mathematics — which is also why nothing downstream of the
+coefficients needs re-litigating.
+
+Φ_2 came back 1 at A=1, matching the value
+`docs/audits/2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md`
+recorded independently from the two standalone scripts. An independent
+source agreeing on a value the witness had zeroed is the strongest
+confirmation available that the regenerated numbers are the real ones.
+
+### An observation, explicitly NOT a law
+
+Φ_2 also comes back **1 at A=8 and A=10** — even-A pairs that audit doc did
+not have when it wrote that Φ_2 is "specific to A = 1". Present pattern:
+Φ_2 = 1 at A ∈ {1, 8, 10}, 0 at A ∈ {3, 5, 7, 9}. That reads as "even A, plus
+A=1", but three even-A points are not a scaling claim and it has not been
+tested. Do not cite it as one; the doc's A=1-specific wording is now known
+to be incomplete, which is a different statement from knowing the rule.
+
+## The qou-j6gb prediction was right, in its function-scope form
+
+`main()` had `q0_mp = mp.mpf(str(_Q_CANONICAL))` at the default 15 dps.
+`analyse_atom` then raised dps to 50 and built `sp.Rational(str(q0))` — an
+*exact* rational from a value whose last 34 digits were the binary64
+expansion:
+
+    1.1099785827513799496557567181298509240150451660156   was
+    1.1099785827513808075916690956107688798744991218736   is
+
+7.7e-16 relative, anchoring tr_M_at_q0 in all 20 witnesses. Fixed BEFORE the
+run (sourced from `Q_50_DIGIT_STR`), so the table did not need computing
+twice. Same anchor layer throughout — `parameters.q_0` unchanged at the
+proton pin; no straddle.
+
+Because it was fixed first, the ratchets did **not** go red: all blocking
+precision gates green, counts identical to the pre-run baseline. Two audit
+witnesses moved in the right direction — `Q0_OK` 581 → 602,
+`Q0_ANCHOR_MISSING` 1888 → 1867, as the 21 regenerated witnesses now record
+`q0Value` at 50 digits with `q0Anchor: "proton"`.
+
+## oxygen-14 — this bean's original subject
+
+It is the **only** remaining `reconstruction_matches: false` in the family,
+and the reason is ordering, not anything about A=14. Its producer is
+`extend_even_a_mirror_pair_test.py` (its own `EVEN_A_OPEN` list, not
+`ATOMS`), and it was regenerated at `64b1389eb` — *before* the `reconstruct`
+fix landed at `a417b821e`. So it missed the fix by two commits.
+
+The remaining question this bean opened — "should `load_a_m` refuse, or at
+least warn, on a witness whose own reconstruction check failed" — is
+untouched and still live. It is now a smaller question (0 or 1 offenders
+rather than 21), but the structural point stands: a published caveat that
+every reader ignores is the `qou-po7i` shape.
