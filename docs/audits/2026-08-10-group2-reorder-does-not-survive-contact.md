@@ -86,22 +86,88 @@ Both `prop:blowup-yekutieli` and `rem:c-substrate-via-levi` are absent from the
 chapter manifest entirely, so the block's declared and undeclared dependencies
 already reach outside the chapter.
 
+## The other three chapters, checked
+
+The two edges called "genuinely local single-position moves" were then read as
+well. **Neither is mechanical either, and they fail in two different ways.**
+
+### `appendix-surreals` (1 edge) — the edge is wrong, not the position
+
+The blocked edge is `rem:bsd-surreal-bound` (78) → `rem:rh-surreal-bound` (79),
+one position apart. Line 27 of `bsd-surreal-bound.md`:
+
+> The BSD bound **generalizes** the RH bound ([RH surreal bound]) from the
+> trivial rank-zero case (Dedekind ζ) to higher ranks. RH is the `r = 0`
+> **specialization** …
+
+A generalisation does not depend on its own special case. The BSD argument
+closes on `lem:surreal-squeeze` and `prop:surreal-rate-calculus`, both already
+declared and both backward; the RH mention is a comparative remark siting the
+result against its neighbour. **Relatedness, not dependency — reject the edge.**
+No move required, and moving `rem:rh-surreal-bound` earlier would have
+enshrined a dependency that is not there.
+
+This edge was never editorially read before, because it points forward and so
+went straight to the held set. That is a gap in the procedure: *forward*
+candidates were triaged by direction and never by content, so a wrong edge
+could sit in the "correct but blocked" pile indefinitely.
+
+### `predicted-spectra` (1 edge) — the wrong end moves
+
+The blocked edge is `rem:em-completeness-interpretation` (56) →
+`prop:em-coupling-projection` (57). The neighbourhood:
+
+| pos | block |
+|---|---|
+| 56 | `rem:em-completeness-interpretation` |
+| **57** | **`prop:em-coupling-projection`** |
+| 58–62 | its companions: discussion, interpretation, two tables, Chern–Simons remark |
+
+The remark genuinely consumes the proposition (*"the singlet weight `w_−` equals
+`α_EM`"*), so the edge is real. But the minimal-move rule says "move the target
+above its earliest dependent" — i.e. move the proposition to 56 — which would
+wedge the remark **between the proposition and its own tables**, splitting a
+six-block cluster to save one position.
+
+The correct fix moves the **remark later**, past the cluster. Same defect as the
+§0-overview case in the companion audit: the metric knows the pair is out of
+order and has no idea which of the two is misplaced.
+
+### `mass-theory` (8 edges) — not attempted
+
+Pre-existing intra-chapter forward edges per chapter, for scale:
+
+| chapter | blocks | pre-existing fwd edges | of which cross-section |
+|---|---|---|---|
+| `mass-theory` | 743 | 55 | 44 |
+| `predicted-spectra` | 295 | 14 | 9 |
+| `fluid-dynamics` | 96 | **12** | 8 |
+| `appendix-surreals` | 98 | 3 | 2 |
+
+`fluid-dynamics` is the densest per block (12 / 96) and it took a chapter
+restructuring. `mass-theory` has the largest absolute load and its moves span
+§20–§46 with 200+ position jumps. One of its five movers,
+`prop:curvature-rank-gb-stratification`, is already filed under `msc1` for a
+phantom hook-length attribution — moving a block whose *content* is in question
+is premature regardless.
+
 ## Correction to the recommendation
 
-Group 2 should not be described as needing only a reviewer. Split it:
+**Group 2 does not survive contact.** All four chapters have now been examined
+and none of the 22 edges is a mechanical reorder:
 
-- **`appendix-surreals` (1 edge) and `predicted-spectra` (1 edge)** — genuinely
-  local, single-position moves within one section. Still mechanical.
-- **`mass-theory` (8 edges, 5 moves)** — spans §20–§46 with jumps of 200+
-  positions. Not re-verified here; assume it has the same character as
-  `fluid-dynamics` until someone checks, and note that one of its movers,
-  `prop:curvature-rank-gb-stratification`, is already filed under `msc1` for a
-  phantom hook-length attribution. Moving a block whose *content* is in
-  question is premature.
-- **`fluid-dynamics` (12 edges)** — an editorial question about the chapter,
-  not a diff to approve. The question is whether §6's conjectural inputs
-  belong ahead of §4–§5's conditional results, which is the same question as
-  whether §6 and §4 should be one section.
+| chapter | edges | what it actually is |
+|---|---|---|
+| `fluid-dynamics` | 12 | chapter restructuring — "should §6 merge into §4?" |
+| `mass-theory` | 8 | unattempted; heaviest tangle, and one mover's content is in question |
+| `appendix-surreals` | 1 | **the edge is wrong** — relatedness, not dependency |
+| `predicted-spectra` | 1 | real edge, but the **other** block is the one misplaced |
+
+The category was an artefact of measuring positions without reading blocks. Of
+the 50 held edges, the honest tally is now **9 rejected outright** (8 overview
++ 1 generalisation), **1 needing a move in the opposite direction to the one
+computed**, **20 needing genuine editorial decisions**, **17 held behind an
+unwired checker**, and **1 real cycle** for the author.
 
 ## What is safe to do now
 
