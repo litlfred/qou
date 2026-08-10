@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-09T17:00:00Z
+updated_at: 2026-08-10T02:10:00Z
 ---
 
 ## The finding
@@ -1252,3 +1252,103 @@ better: the strong_duality residuals did NOT improve (2.7e-15 -> 1.2e-14) when
 they should be ~1e-50 if MPFR were really active, so it is worth confirming the
 wheel actually enables the MPFR path rather than a second f64 backend, before
 treating the new numbers as more precise. Not resolved here.
+
+---
+
+## 2026-08-10 — the ratchet is GREEN. PR #4895 open.
+
+The bean's title condition is finally addressable. Measured on
+`claude/drain-main-inherited-float64` @ `32ffd6fe7`, committed as
+`computations/witness-raw-float64-audit.witness.json`:
+
+    new_not_baselined : 0     (was 18)
+    regressed         : 0     (was 2)
+    drained_files     : 18
+    total_fields      : 540,028
+    baseline_files    : 1,582
+
+`scripts/precision-gates.sh` — **all blocking precision gates green**, not the
+ratchet alone. The other two that were red are both one root cause, the
+mpf-literal-before-`mp.dps` defect: `cross_check_trM_1ppb.py`'s
+`TOLERANCE_PPQ` (float64-padding) and `y_lambda_su_n.py`'s `REG_ZC`/`REG_ZD`
+(module-const). That is the **fourth and fifth** instance of that class in this
+bean; the lint-rule note above stands and is now the highest-value durable item
+left in it.
+
+**Nothing baselined, no `--rebaseline`, no number hand-edited.** Every entry was
+fixed at its producer and verified by diffing the regenerated witness against a
+pre-drain copy, field by field.
+
+### The four that closed since the last entry, and why each was NOT a drain
+
+None of these four was float64 discipline. Each was a distinct defect the
+ratchet merely surfaced:
+
+    charm-frobenius-block-projection  79  computed under trace convention C,
+                                          which b88aabc73 excised 59 minutes
+                                          AFTER the witness's computedAt.
+                                          Proven by checking out the pre-fix
+                                          bridge and reproducing the committed
+                                          values exactly. See qou-wgta.
+    delta-lambda-alexander-phase4     67  reproduced exactly beforehand, so the
+                                          drain is the only change. 67/67
+                                          round-trip bit-identically.
+    m-tau-complex-volume-search       54  published a NONDETERMINISTIC field
+                                          (degenerate SnapPy solve residual).
+                                          Now exact 0 + note.
+    ground-state-ordering-argmin-sweep 1  its producer DELETED a published,
+                                          cited block (`lean_bridge`, written by
+                                          no producer, cited by an audit doc).
+                                          The write now merges.
+
+The `ground-state` one is worth generalising: it sat at 1 field for the entire
+arc because **re-running it destroyed data**, so nobody could re-run it to drain
+it. Any witness carrying a hand-added block has this property. A plain overwrite
+in a producer is a data-loss bug whenever the witness has ever been edited by
+something other than that producer.
+
+### Bare `NaN`/`Infinity`: 20 live invalid witnesses -> 2
+
+Two more producers revived (`term6_full_pole_sum`, `A-operator-rank`), both
+documented above. The marker (`"inf"` / `"-inf"` / `"nan"` strings from
+`json_safe_float`, plus the `QOU_WITNESS_STRICT_NONFINITE` guard at
+`WitnessBuilder.save`) is now the convention.
+
+**One hazard the marker introduces, recorded because it will recur:** a marker
+is a `str` where a `float` used to be, so any code that READS the field back
+breaks. In `A-operator-rank` that was not just a `:.2e` print — `n_exact_drop`
+read `drop_ratio` back out of the dict and compared it to `1e6`, and that count
+feeds an **assertion**. Left alone it would have changed what the witness
+asserts, not merely crashed. Same read-back hazard as `qcross`'s monotonicity
+check. When applying the marker, grep for readers of the field, not just
+writers.
+
+### Still open, and none of it is drain work
+
+    a-K-via-lp-dual           source fixed, witness NOT regenerated. Needs the
+                              clarabel/MPFR question answered first: duality
+                              residuals did not improve (2.7e-15 -> 1.2e-14)
+                              when MPFR should give ~1e-50, so confirm the wheel
+                              actually enables that path before treating the new
+                              numbers as more precise. Owner decision.
+    habiro-coefficients-      provably orphaned (no live ATOMS entry covers
+      oxygen-14               A=14; swept in from a working tree). Either add
+                              (8, 6) to ATOMS deliberately — 256 strands, a real
+                              cost — or drop the file. Owner decision.
+    the C cache + its 17      qou-wgta P0. `y-lambda-at-q0.witness.json` is
+      direct readers          verified C; `wedderburn_jones_markov` refuses to
+                              serve it, but 17 files open the JSON directly and
+                              bypass that guard. Recorded there with the
+                              blast radius.
+
+### Bean status
+
+Stays **in-progress**. The title condition — "`main` is RED on its own
+raw-float64 ratchet" — is false on this branch and will be false on `main` only
+once #4895 merges. Do not close it before then, and re-measure rather than
+assume: `main` accrues float64 debt from sibling arcs faster than any single PR
+closes it, which is the structural point this bean has been making since the
+3 -> 18 revision.
+
+PR: https://github.com/litlfred/qou/pull/4895 (branch
+`claude/drain-main-inherited-float64`, 15 commits, base `main`).
