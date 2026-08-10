@@ -70,6 +70,7 @@ from habiro_coefficients_atomic import (  # noqa: E402
     to_u_polynomial,
     cyclotomic_expansion,
     reconstruct,
+    str_in_u,
 )
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
@@ -274,7 +275,10 @@ def analyse_atom(label: str, Z: int, N: int, q,
         "tr_M_in_q": str(tr_M_q),
         "shift": int(shift),
         "denom_in_u": denom,
-        "p_in_u": str(p_u),
+        # `u` here IS the canonical symbol, so this is already normalised —
+        # routed through str_in_u anyway so the invariant is stated at every
+        # serialization site rather than held in someone's head (bean qou-0ndb).
+        "p_in_u": str_in_u(p_u, u),
         "deg_p_u": deg_p,
         "habiro_coefficients": coeffs,
         "n_nonzero": n_nonzero,
