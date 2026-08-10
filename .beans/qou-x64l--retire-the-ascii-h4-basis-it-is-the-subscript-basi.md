@@ -402,3 +402,72 @@ warning recorded above applies to edits *in* the rung; this is not one.
 the `y_λ` name. They are not in `QOU/Mathlib/HeckeAlgebra.lean` under `y_`, so
 either they live elsewhere or they have to be computed from the block traces.
 Deriving them from the 24 equations needs no external formula either way.
+
+## 2026-08-10 — a better route than the one this bean recommends, and a cost measurement
+
+### The recommended route (representation decomposition) is not the cheapest
+
+`gram_symm_of_rep_decomp` works, and `hmul` is free (above). But `hdecomp` needs
+the five Markov weights, and getting them means reading `tr(ρ_λ(e₄ j))` off
+`blockOf31` / `blockOf22` / `blockOf211` — whose diagonal entries are single
+linear forms in `v 0 … v 23` running to **thousands of characters each**, with
+`(q⁴+q²+1)⁻¹` and `(q²+1)⁻¹` denominators throughout. Any Lean proof of
+`hdecomp` unfolds those 24 times. That plausibly costs more than the Gram chain
+being deleted.
+
+### The cheaper route: cyclicity only has to be checked on the generators
+
+`{y | ∀ x, tr(xy) = tr(yx)}` is a **subalgebra**, not merely a subspace:
+
+    tr(x·y₁y₂) = tr((x y₁)·y₂) = tr(y₂·(x y₁)) = tr((y₂ x)·y₁)
+               = tr(y₁·(y₂ x)) = tr(y₁y₂·x)
+
+It contains `1`, is closed under `+` and `•`, and `mulNF₄_assoc` is already
+proved. So cyclicity follows from the **three generators**, and by linearity in
+`x` from basis vectors only:
+
+    ∀ g ∈ {1, 2, 6}, ∀ i : Fin 24,
+      trM4 z h (wordAction h g (e₄ i)) = trM4 z h (wordAction h i (e₄ g))
+
+using `mulNF₄_e_right : mulNF₄ h u (e₄ j) = wordAction h j u` on both sides.
+
+**72 identities, not 576**, and none of them mentions Wedderburn, a block map,
+or a Markov weight. Everything needed is already in the tree:
+
+* `mulσ₀/₁/₂` and `wordAction` — `HeckeH4StabilizationRung`, `HeckeH4AlgebraLaws`
+* `mulNF₄_e_right`, `mulNF₄_sum_left`, `basis_decomp₄`, `mulNF₄_assoc`
+* `b_tree_1 … b_tree_23` — `QOU/Hecke/InstanceOnH4A.lean`, the complete word
+  tree: every basis vector is `b j' * s_g` for an earlier `j'`, so the induction
+  that lifts the generator cases to all 24 basis vectors is already written down.
+
+### Measured: the naive tactic script does not work
+
+Two probes, both run to completion, neither of which should be repeated:
+
+1. `fin_cases i <;> simp [wordAction, mulσ₀, mulσ₁, mulσ₂, e₄, trM4, TRM4,
+   Fin.sum_univ_succ, Pi.single_apply] <;> ring` over all 24 `i` at once —
+   **4m16s, then `maximum recursion depth` on six goals and a heartbeat timeout
+   at 1 000 000 on another.** One `simp` set cannot simultaneously unfold
+   six-deep `mulσ` composites and expand a 24-term sum.
+2. Staged (`simp only` for the actions, then `simp only` for the sum), two
+   individual goals, `maxRecDepth 4000`, `maxHeartbeats 2000000` — **4m09s and
+   still open.** The residue shows exactly what is missing: `Pi.single_apply`
+   leaves `if (3 : ℕ) = 0 then 1 else 0` unresolved, and `![…] 2` applications
+   are not reduced. So it needs `Matrix.cons_val_succ` and a decision procedure
+   on the `Fin` literals, not more heartbeats.
+
+**~2 minutes per goal × 72 is not viable.** The fix is to stop expanding
+`trM4`'s sum at all:
+
+* `mulσ_g h (e₄ i)` has **at most two** non-zero entries — visible directly in
+  the tables, whose entries are `v k` or `v k + h * v k'`. So each action of a
+  generator on a basis vector is a two-term combination of basis vectors, and
+  `trM4` of it collapses through `trM4_e₄` to at most two table entries. Proving
+  those 72 small identities (`funext k; fin_cases k <;> simp`) never builds a
+  24-term sum.
+* The composite side (`wordAction h i (e₄ g)` for long words) should be reached
+  by *iterating* that lemma along the word, not by unfolding the composite.
+
+**Next**: build the 72 `mulσ_g (e₄ i) = <two-term combination>` lemmas first and
+measure one, before writing any of the cyclicity statement. If a single one is
+not sub-second, this route is no better than the last and the bean should say so.
