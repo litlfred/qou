@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T03:33:56.108822+00:00",
-  "commitSha": "dcf83fb9a1ce769f2faab70e86d9431bb9bb3f22",
+  "computedAt": "2026-08-10T08:37:22.008887+00:00",
+  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "4584fdd6d939ab0c849db352d1356fa892a96b84",
+  "scriptCommitSha": "2499cd7cc41dafa6909e61ffe7e19955e9758d84",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,9 +33,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 582,
+      "Q0_OK": 586,
       "Q0_AMBIGUOUS": 17,
-      "Q0_ANCHOR_MISSING": 1892,
+      "Q0_ANCHOR_MISSING": 1889,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 65,
       "Q0_PARSE_ERROR": 1,
@@ -173,7 +173,7 @@
           "detail": ""
         },
         {
-          "witness": "alpha-k-jones-markov-h3.witness.json",
+          "witness": "alpha-k-macdonald-closed-form.witness.json",
           "detail": ""
         },
         {
@@ -3009,10 +3009,6 @@
           "detail": ""
         },
         {
-          "witness": "markov_weights_symbolic.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "markov-trace-weights-wenzl.witness.json",
           "detail": ""
         },
@@ -4466,10 +4462,6 @@
         },
         {
           "witness": "pentagon-multipair-borromean-h4-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "pentagon-to-borromean-h4-probe.witness.json",
           "detail": ""
         },
         {
@@ -6273,10 +6265,6 @@
           "detail": ""
         },
         {
-          "witness": "qbeta-perlambda-collapse-cancellation.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "qbeta-phi-b-real-form-pin.witness.json",
           "detail": ""
         },
@@ -7097,10 +7085,6 @@
           "detail": ""
         },
         {
-          "witness": "deuteron-tower-fusion-frame-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "e-unit-decay-width-reconcile-probe.witness.json",
           "detail": ""
         },
@@ -7577,6 +7561,10 @@
           "detail": ""
         },
         {
+          "witness": "y-lambda-at-q0.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "y-lambda-cyclotomic-factor.witness.json",
           "detail": ""
         },
@@ -7651,11 +7639,11 @@
           "detail": ""
         },
         {
-          "witness": "alpha-k-jones-markov-h4.witness.json",
+          "witness": "alpha-k-jones-markov-h3.witness.json",
           "detail": ""
         },
         {
-          "witness": "alpha-k-macdonald-closed-form.witness.json",
+          "witness": "alpha-k-jones-markov-h4.witness.json",
           "detail": ""
         },
         {
@@ -8995,6 +8983,10 @@
           "detail": ""
         },
         {
+          "witness": "markov_weights_symbolic.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "markov-free-energy-qvalues.witness.json",
           "detail": ""
         },
@@ -9064,6 +9056,10 @@
         },
         {
           "witness": "milnor-subdivision-obtuse-scope-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "milnor-tiling-certificate-probe.witness.json",
           "detail": ""
         },
         {
@@ -9435,6 +9431,10 @@
           "detail": ""
         },
         {
+          "witness": "pentagon-to-borromean-h4-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "phi-q-regularization-probe.witness.json",
           "detail": ""
         },
@@ -9607,6 +9607,10 @@
           "detail": ""
         },
         {
+          "witness": "qbeta-perlambda-collapse-cancellation.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-rung1-div25-framing-squared-test.witness.json",
           "detail": ""
         },
@@ -9759,6 +9763,10 @@
           "detail": ""
         },
         {
+          "witness": "deuteron-tower-fusion-frame-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "lever1-binding-core-characterization.witness.json",
           "detail": ""
         },
@@ -9892,10 +9900,6 @@
         },
         {
           "witness": "wedderburn-lp-ew-wiring.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "y-lambda-at-q0.witness.json",
           "detail": ""
         },
         {
