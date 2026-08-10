@@ -1,8 +1,8 @@
 {
   "engine": "python+numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:01:38.947798+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "computedAt": "2026-08-10T14:20:39.435513+00:00",
+  "commitSha": "d02494991e7bbb86996eab1f1d4aa2d7f95f2b69",
   "assertions": [
     {
       "name": "wenzl_bridge_unique_solvability",
@@ -26,7 +26,7 @@
   "computation": "rho-k-h3a-wenzl-bridge",
   "scriptFile": "rho_k_h3a_wenzl_bridge.py",
   "scriptHash": "ca129e160b16",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptCommitSha": "63db388851425a23a623cecaaef1ae8c05ce6878",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,7 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
@@ -355,7 +355,7 @@
         5,
         1
       ],
-      "occam_Delta_lambda": "-22.95945076892241172063687511081847073185705034325700994220031826202048",
+      "occam_Delta_lambda": "-22.95943879671678823826909421428973015982324846497600806695761945101309",
       "wenzl_bridge_uniform_Delta": "-11.211734955494882974732164949772066898370731727242",
       "interpretation": "Option A picks a single block (Occam minimum |Δ|); Option F distributes binding proportionally to y_λ across ALL 11 blocks.  Both reproduce M(D) exactly; they correspond to different priors on the categorical structure of the bound state."
     }
