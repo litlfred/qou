@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:41:26.749016+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-10T02:46:20.999149+00:00",
+  "commitSha": "883c88b62407e292721fecfd9d939375e750a45f",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rho-k-h3a-co-casimir",
   "scriptFile": "rho_k_h3a_co_casimir.py",
-  "scriptHash": "a2d312e8ebce",
-  "scriptCommitSha": "ca475e2f67a526f36a0e8357313105d93f61d7c5",
+  "scriptHash": "91cddf67ec2b",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,12 +17,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Option B for the underdetermined Δ_λ(K) selector in prop:rho-k-h3a-refinement (deuteron, A=2, n=6).  Replaces the Occam single-partition heuristic (rho_k_h3a_refinement.py) with the Frobenius co-Casimir per-isotypic restriction Δ_λ := tr_M(C_dim_q · 1_λ) = 1/dim_q(λ), forced by thm:frobenius-codim-universal (no free parameters).  Computes the resulting mass-equation residual; honest reporting — no rescaling applied to Δ_λ^B.",
   "engine_note": "sympy q-hook-length symbolic dim_q + 50-dps mpmath evaluation; y_λ(q_0) and χ^λ(β_D) reused verbatim from rho-k-h3a-refinement.witness.json (Occam baseline).",
@@ -50,9 +51,9 @@
     "n_strands": 6,
     "n_partitions": 11,
     "compute_status": "deuteron",
-    "M_codata_MeV": "1875.61294257",
+    "M_codata_MeV": "1875.612945",
     "m_e_MeV": "0.51099895069",
-    "m_p_MeV": "938.27208816",
+    "m_p_MeV": "938.27208943",
     "m_n_MeV": "939.56542052",
     "occam_witness_loaded": "rho-k-h3a-refinement.witness.json",
     "occam_schur_weyl_match_1e_40": false
@@ -283,8 +284,8 @@
       "sum_contributions_signed": "0.1449592180808256094490409527509642265047796775103692925033821064050428",
       "rho_K_pred": "9464.613265149092686632867420237424811124054327520646991121040853721528",
       "M_pred_MeV": "1877.911582688332119875060877818325283835699982401475357387850423919515",
-      "residual_MeV": "-2.298640118332119875060877818325283835699982401475357387850423919514671",
-      "residual_pct_of_M_codata": "-0.1225540763854231093092961871480995341178348009609596211867551764179588",
+      "residual_MeV": "-2.298637688332119875060877818325283835699982401475357387850423919514686",
+      "residual_pct_of_M_codata": "-0.1225539466689978445985228481308697640546505399319131585461745637245368",
       "closure_gap_LHS_minus_RHS": "4.498326494072589765890499148502828475935284706714341371636132325427238",
       "diagnostic_closure_rescaler": "-30.03166913858790405135281654233581766645350069415482666967906907568669"
     },
