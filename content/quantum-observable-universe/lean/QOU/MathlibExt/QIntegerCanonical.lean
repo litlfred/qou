@@ -432,6 +432,27 @@ theorem qFactBal_three {q : R} (h : q - q⁻¹ ≠ 0) :
     Finset.prod_range_succ, Finset.prod_range_zero, one_mul,
     qIntBal_one_of_ne_sing h, one_mul]
 
+/-- **The content-shifted Markov weight of the trivial partition** `(n) ⊢ n`:
+`y_{(n)}(q) = qⁿ / [n]_q!`.
+
+The corpus states this identification at `n = 3` in `f-bor-borromean-observable`
+(`y_{(3)}(q) := q³ / [3]_q!`), where it turns the Borromean observable into
+`F_Bor = |tr_M(β_Bor)| / y_{(3)}(q)`.  Named here so the relation to `qFactBal`
+is machine-checked rather than carried in prose. -/
+noncomputable def yTrivial (q : R) (n : ℕ) : R := q ^ n / qFactBal q n
+
+/-- **`[n]_q! = qⁿ / y_{(n)}(q)`** — the q-factorial *is* the inverse trivial
+Markov weight, content-shifted.
+
+Only `q ≠ 0` is needed — the content shift must be invertible.  A first draft also
+carried `[n]_q! ≠ 0`, on the reasoning that the singular locus collapses the
+product; writing the proof showed that hypothesis is not used.  The identity
+survives `[n]_q! = 0`, because Lean's `x / 0 = 0` sends both sides to `0` there. -/
+theorem qFactBal_eq_pow_div_yTrivial {q : R} {n : ℕ} (hq : q ≠ 0) :
+    qFactBal q n = q ^ n / yTrivial q n := by
+  rw [yTrivial, div_div_eq_mul_div, mul_comm, mul_div_assoc,
+    div_self (pow_ne_zero n hq), mul_one]
+
 end QFactorial
 
 end QOU.QInteger

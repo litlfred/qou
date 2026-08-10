@@ -168,13 +168,44 @@ a different object of the same name), and it presents a one-index q-factorial as
 a two-index product. The correction changes what the denominator *is*, not what
 it evaluates to.
 
+## The index is the nucleon's strand count — the ambiguity resolves
+
+**The 3 is not a nuclear quantity.** The nucleon *is* the Borromean link, carried
+by the braid word `(σ₁σ₂⁻¹)³` (`fundamental-knots-operator-basis`). That word
+uses `σ₁, σ₂`, so `β_Bor ∈ B_3` and its Markov trace lives in `H_3(q)`. The 3 is
+the strand count **internal to one nucleon**, identical for every nucleus
+regardless of `A` or `A_magic`.
+
+Corroborated by the normalisation already in use: `f-bor-borromean-observable`
+gives `F_Bor = |tr_M(β_Bor)| / y_{(3)}(q)` — the trace of that same 3-strand
+braid, over that same weight. So κ's normaliser is the Markov normalisation of
+the **nucleon's own braid**, not of the nucleus, and κ is shell-independent —
+exactly what `kappaClosed` already encodes by carrying no shell index. **R1 and
+R3 are excluded; R2 stands.**
+
+**The symmetric-vs-mixed tension dissolves.** I flagged that `(3)` is fully
+symmetric while the A=3 anchors are `ppn`/`pnn` of mixed symmetry `(2,1)`. The
+two partitions index different sets: `(2,1)` partitions the three *nucleons* of
+the nucleus, `(3)` partitions the three *strands* of one nucleon. Both being
+partitions of 3 at these anchors is a coincidence of the anchors, not a conflict.
+
+**Status: identification, not theorem.** Two quantities numerically equal, both
+normalising a Markov trace at `n = 3`. It cannot be promoted to a Lean theorem
+because `fBor` in `ProtonBorromeanAssembly` is an abstract structure field, not
+the `[3]_q!/q³` formula. What it buys is falsifiability: a three-way ambiguity
+becomes the single prediction *κ does not vary with the shell*.
+
+New Lean (sorry-free, exit 0): `QOU.QInteger.yTrivial` and
+`qFactBal_eq_pow_div_yTrivial`, pinning `[n]_q! = qⁿ / y_{(n)}(q)` so the
+Markov-weight relation is machine-checked rather than prose. Writing that proof
+also removed a hypothesis I had assumed was needed — the identity survives
+`[n]_q! = 0`, since Lean's `x/0 = 0` sends both sides to `0`.
+
 ## Next
 
-1. **Identify the partition whose Markov weight is the normaliser** — the
-   derivation-shaped successor to the index-rule question, now that the object
-   is `q^n / y_{(n)}(q)` rather than an opaque bracket pair. Ranked first: it is
-   the only route here that could *close* rather than characterise, and it runs
-   on machinery the framework already has.
+1. **Fix the excess convention** — now the *only* remaining ambiguity, and it
+   still spans 7× at the 8 shell. Ranked first because with the index settled it
+   is the single thing standing between here and a falsifiable shell-8 test.
 2. **Fix the index rule and the excess convention** — both need an owner call or
    a derivation; the anchors provably cannot supply either. This now blocks the
    8-shell test rather than following it, which reverses the order I had.
