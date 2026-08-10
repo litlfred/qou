@@ -35,40 +35,59 @@ are crossing C→D for the first time. The trace weights themselves change by te
 of percent — `y_(3)` 0.4154 → 0.5054, `y_(2,1)` 0.2809 → 0.2473 — so anything
 linear in them moves on that scale.
 
-## THE FINDING: an LP degenerates under D, exactly as predicted
+## RETRACTED: this was reported as an LP degeneration. It is not.
 
-`rho-k-h3a-gg-trajectory.witness.json` — the only witness with values blowing past
-1e13:
+`rho-k-h3a-gg-trajectory.witness.json` is the only witness with values past 1e13:
 
 ```
 .data.nucleons.n.lp_dual.y_star[2]   47.232917966806724 -> 999999999999998.8
 .data.nucleons.p.lp_dual.y_star[2]   58.496430716462120 -> 999999999999998.8
 ```
 
-`999999999999998.8` is a solver bound, not a result. The LP still reports
-`feasible: true`, but a **dual variable has run to infinity in one coordinate**.
+**I first wrote this up as "a dual variable has run to infinity — the LP has
+degenerated under convention D, exactly as `MarkovGramDegenerate` predicts."
+That was wrong**, and it is corrected here rather than quietly dropped because
+it reached a commit message and a pull-request body before I checked the
+producer.
 
-This is not a migration bug. It is the predicted consequence:
+`999999999999998.8` is not a solver bound. It is the producer's own sentinel.
+`rho_k_h3a_gg_trajectory.py` builds the LP cost as
 
-> Under convention D, `y_(1^3) = 0` exactly, so the antisymmetric block *is* the
-> radical of the trace form and `det G = 0`. The Markov–Gram is singular.
-> — `QOU/QBeta/MarkovGramDegenerate.lean`, `gram_det_eq_zero_of_radical_combination`
+```python
+_yc_floor = 1e-15
+t_arr = [1.0 / (dim_q[lam] * max(y_chi_abs[lam], _yc_floor)) for lam in parts]
+```
 
-A singular Gram gives the dual a free direction, so the dual optimum is not
-unique and a solver walks it to its bound. This is the same statement already
-written into `prf:operator-selection-lp`: *"on `H_n` the LP has a
-corank-dimensional space of optima differing by radical directions the trace
-cannot distinguish."* Here it is, empirically, in a solver.
+with the comment *"Guard against near-zero |y_λ χ^λ| (set to a large finite cost
+so the LP naturally avoids that channel)."* Under convention D,
+`y_(1^3) = 0` exactly, so `max(0, 1e-15)` selects the floor and the cost becomes
+`1/(dim_q · 1e-15) ≈ 1e15` — `dim_q((1,1,1)) ≈ 1`, which reproduces the observed
+`999999999999998.8` to the digit.
 
-**The fix is not to this witness.** The LP must be posed on the non-degenerate
-quotient `H_n/rad ≅ TL_n`, where the rank is `C_n` rather than `n!` — 14 not 24
-at `n = 4`, 42 not 120 at `n = 5`. Until it is, this witness records a degenerate
-program and should be read as evidence, not as a result.
+So the actual chain is: the antisymmetric weight vanishes under D (correct, and
+the point of the convention) → the guard prices that channel out of the program
+(by design) → the LP avoids it → the dual of an unused channel equals its cost
+(ordinary LP behaviour). **Nothing degenerated.** `feasible: true` is accurate.
 
-Also in the same family, `rho-k-h3a-wenzl-bridge.witness.json`:
-`max_observed_offset` 0.0080 → 31614.6, and `Delta_minus_delta_rho` entries
-moving from ~1e-7 to O(10). A model whose residuals were tuned under C does not
-survive the weights changing by tens of percent; that is information, not error.
+What is genuinely true, and was true before this regeneration, is the *structural*
+statement: `det G = 0` under D, so the Markov–Gram is singular and the LP posed
+over all `n!` basis elements has a corank-dimensional space of optima. That is
+proved (`gram_det_eq_zero_of_radical_combination`) and written into
+`prf:operator-selection-lp`. But **this witness is not evidence for it.** The
+producer sidesteps the singularity with a cost floor rather than running into it,
+and I mistook the sentinel for the symptom.
+
+The remaining defect here is cosmetic but real: a witness that publishes `1e15`
+as a dual variable invites exactly the misreading I made. Better to record the
+channel as excluded than to price it at a sentinel — tracked in `qou-y6h7`.
+
+### The one genuine large mover
+
+`rho-k-h3a-wenzl-bridge.witness.json`: `max_observed_offset` 0.0080 → 31614.6,
+and `Delta_minus_delta_rho` entries moving from ~1e-7 to O(10). No sentinel
+involved. A model whose residuals were tuned against convention-C weights does
+not survive those weights moving tens of percent. That is information about the
+model, not an error in the migration.
 
 ## Failures (7)
 
