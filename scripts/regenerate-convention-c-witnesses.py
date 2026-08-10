@@ -483,6 +483,7 @@ def dependency_edges(by_producer):
     actually travels through.
     """
     owner = witness_owners()
+    local = {p.stem: p for p in (REPO / "computations").rglob("*.py")}
     edges = {}
     for producer, witnesses in by_producer.items():
         try:
@@ -490,6 +491,22 @@ def dependency_edges(by_producer):
         except OSError:
             edges[producer] = set()
             continue
+        # Follow local imports one level. The edge that matters most is
+        # invisible otherwise: chi_at_q0_via_hoefsmit_mpfr reads
+        # y-lambda-mpfr-witness.json through `load_y_lambda_for_q0`, which
+        # lives in tr_m_wenzl_bridge_mpfr — so the filename never appears in
+        # the producer's own source and the whole chi family looked like a
+        # dependency root. One level is enough for every case observed here
+        # and keeps the scan cheap; it remains an under-approximation, not a
+        # claim of completeness.
+        for mod in set(re.findall(r"^\s*(?:from|import)\s+([A-Za-z_][\w.]*)",
+                                  text, re.M)):
+            helper = local.get(mod.split(".")[0])
+            if helper is not None and helper != (REPO / producer):
+                try:
+                    text += "\n" + helper.read_text()
+                except OSError:
+                    pass
         mine = {pathlib.Path(w).name for w in witnesses}
         edges[producer] = {
             owner[ref] for ref in set(_WITNESS_REF.findall(text))
