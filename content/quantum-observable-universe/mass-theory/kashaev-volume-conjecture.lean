@@ -100,7 +100,7 @@ end QOU.Kashaev
 /-! ## Conditional theorems (downstream of the Volume Conjecture)
 
 These previously concluded `: True := trivial` — vacuous (they asserted
-nothing, despite docstrings claiming `Vol(4₁)=2Λ(π/3)` etc.). They are now
+nothing, despite docstrings claiming `Vol(4₁)=2·Cl₂(π/3)` etc.). They are now
 **real conditional theorems**: given `[VolumeConjecture q]`, the specific
 braid's hyperbolic volume equals its Kashaev limit — a direct, honest instance
 of the universal `kvc_holds` field.
@@ -109,7 +109,7 @@ of the universal `kvc_holds` field.
 universal (`∀ β, hypVolume β = kashaevLimit β`), so a per-knot instance for the
 figure-eight (where the volume conjecture *is* a theorem — Andersen–Hansen 2006)
 cannot be constructed without discharging *all* braids. The specific numeric
-values `Vol(4₁)=2Λ(π/3)`, `Vol(B₃)=8G` are literature theorems, **not** derivable
+values `Vol(4₁)=2·Cl₂(π/3)`, `Vol(B₃)=8G=8·Cl₂(π/2)` are literature theorems, **not** derivable
 from the abstract class, so they are cited, not asserted here. -/
 
 namespace QOU.Kashaev
@@ -130,7 +130,7 @@ def borromeanBraid : Braid :=
 
 /-- **CONDITIONAL** (from `kvc_holds`). If the Volume Conjecture holds, the
     figure-eight braid's hyperbolic volume equals its Kashaev limit. (The value
-    `Vol(4₁)=2·Λ(π/3)≈2.029883` — connecting to `m_μ/m_e = Vol(4₁)/ℏ_q²` — is the
+    `Vol(4₁)=2·Cl₂(π/3)=6·Λ(π/3)≈2.029883` — connecting to `m_μ/m_e = Vol(4₁)/ℏ_q²` — is the
     Andersen–Hansen theorem, cited, not derived from the abstract class.) -/
 -- Ref: [thurston1978] Thurston's geometry and topology of three-manifolds — hyperbolic structure on figure-eight complement
 -- Ref: [kashaev1997] — original volume conjecture

@@ -19,7 +19,7 @@ The framework requires the conversion factor $m_e(\text{MeV})/m_e(\text{natural}
 
 CAL-2 fixes $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.
 
-- $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299$ is pure cohomology (no CODATA input).
+- $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3) \approx 2.0299$ is pure cohomology (no CODATA input).
 - $\hbar_q = (q-1)/q$ is pure algebra (no CODATA input).
 - $q_0 \approx 1.10998$ is pinned by matching $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ to the CODATA value $206.7682830$.
 
@@ -40,7 +40,7 @@ The derived $\mathfrak{Q}_\beta$ fixes the hadronic scale $\mathfrak{E}_0$ via $
 | CAL | Pinned quantity | Cohomological derivation candidate | Status |
 |---|---|---|---|
 | CAL-1 | $m_e$ | $\mathrm{Li}_2(q^{-2}) / \hbar_q^2$ | **unit-choice + derived** |
-| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ | **open** |
+| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | **open** |
 | CAL-3 | $m_\pi$ | independent of $(m_e,q_0)$ | **genuine input** |
 | *(derived)* | $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta$ | Khovanov-Rozansky strata | **open** |
 

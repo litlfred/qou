@@ -21,7 +21,7 @@ Alexander-Briggs-indexed volumes through to the substrate parameter `q`.
 
 ## Data Sources
 
-- Vol(4₁): SnapPy census, Bloch-Wigner dilogarithm, 3·Cl₂(π/3) (OEIS A091518)
+- Vol(4₁): SnapPy census, Bloch-Wigner dilogarithm, 2·Cl₂(π/3) = 6·Λ(π/3) (OEIS A091518)
   Ref: [turaev2010] https://doi.org/10.1515/9783110221831
 - m_μ/m_e: NIST CODATA 2022 recommended value 206.7682827(46)
   Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme
