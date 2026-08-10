@@ -62,6 +62,19 @@ QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_facto
 QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
 QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
 QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+
+# --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
+# Three content blocks assert these are proved; the assertion is only as good as an
+# axiom check, so the check is pinned here rather than left as a one-off.  Measured
+# 2026-08-10: all six depend on [propext, Classical.choice, Quot.sound] and nothing
+# else.  A `sorry` appearing anywhere upstream regresses this gate, which is the
+# point — the blocks would then be claiming more than the Lean delivers.
+QOU.Knot.RivinConcavity | QOU.Knot.Rivin.strictConcaveOn_tetVolLine | clean
+QOU.Knot.RivinConcavity | QOU.Knot.Rivin.cot_quadratic_pos | clean
+QOU.Knot.RivinConcavity | QOU.Knot.Rivin.deriv_deriv_Lob | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.norm_eq_sin_div_sin | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.log_sin_sub_log_sin | clean
+QOU.Knot.KummerRadial | QOU.Knot.KummerRadial.kummer | clean
 """
 
 
