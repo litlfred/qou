@@ -3,7 +3,9 @@ import { proof } from "../../schema/builders";
 export default proof({
   label: "prf:terminal-resolution",
   title: "Proof of Terminal Resolution of Hadronic Mass",
+  of: "prop:terminal-resolution",
   uses: [
+    "prop:terminal-resolution",
     "prop:skein-generation",
     "prf:knot-volumes-verification",
   ],
