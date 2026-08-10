@@ -338,3 +338,21 @@ least warn, on a witness whose own reconstruction check failed" — is
 untouched and still live. It is now a smaller question (0 or 1 offenders
 rather than 21), but the structural point stands: a published caveat that
 every reader ignores is the `qou-po7i` shape.
+
+## Landed on main (c16eb6dcb, via PR #4926)
+
+Everything above is on `main`. Φ_8 matches the law on all seven pairs,
+`reconstruction_matches` is True on all 26 witnesses, and oxygen-14 — this
+bean's original subject — is fixed.
+
+**Deliberately left in-progress, not completed.** The bean opened two
+questions and only one is answered. The second is untouched:
+
+> should `load_a_m` refuse, or at least warn, on a witness whose own
+> reconstruction check failed?
+
+It is now a *smaller* question — 0 offenders rather than 21 — but "there
+are currently no offenders" is not an answer to "should a reader trust a
+witness that flagged itself". It is a design call about consumer contracts,
+and closing this bean on the strength of the count would quietly convert an
+open decision into a decision nobody made. Left for the owner.
