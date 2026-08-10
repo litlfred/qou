@@ -22,14 +22,26 @@ vector (`H4WordAction`, `H4GeneratorAction`) followed by `ring` on the
 
 ## Provenance
 
-The tables and the word tree are read out of the Lean sources by the
-emitter, never transcribed, and the emitter verifies the structural fact the
-induction rests on: for every tree edge, `σᵢ · b_inner = b_j` on the nose —
-a single term, no quadratic fold — so `b_j = b_inner · σᵢ` really is a
-product of a shorter word with a generator. All 72 identities were also
-checked symbolically in `sympy` against the same tables before any Lean was
-written, so a failure here would be a Lean-side transcription problem rather
-than a mathematical surprise.
+This file and `H4WordAction` were emitted by a generator script rather than
+typed by hand. **That emitter was not committed and no longer exists**, so the
+checkable form of its provenance claim is
+[`computations/h4_cyclicity_generator_route_check.py`](../../../../../../computations/h4_cyclicity_generator_route_check.py),
+which re-derives the same content from the same single source of truth.
+
+It *parses* — never transcribes — `mulσ₀/₁/₂` and `TRM4` out of
+`HeckeH4StabilizationRung` and the 24 words out of `wordAction`, then checks:
+the Hecke presentation re-derived from the parsed actions alone; all 72
+identities symbolically over `ℚ[z, h]`; the structural fact the induction rests
+on — for every tree edge `σᵢ · b_inner = b_j` on the nose, a single term with no
+quadratic fold, so `b_j = b_inner · σᵢ` really is a shorter word times a
+generator (23 edges); and the 72 `mulσᵢ_e₄_j` statements of `H4GeneratorAction`
+re-checked against the parsed tables.
+
+What that adds is narrow, and worth stating: Lean already machine-checks every
+statement here, so the script cannot make the theorem more true. It checks the
+layer Lean cannot see — that the committed statements are *about* the tables
+these modules claim to be about, computed by an independent implementation. A
+sorry-free file enumerating the wrong 72 facts is the failure mode it closes.
 
 ## Relation to the existing route
 
