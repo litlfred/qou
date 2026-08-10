@@ -111,10 +111,31 @@ theorem ne_of_val_lt {a b : A} (h : D.val a < D.val b) : a ≠ b := by
   rintro rfl
   exact lt_irrefl _ h
 
+/-- Two terms strictly below a common bound stay strictly below it when added.
+Stated against an arbitrary grade `g`, which is what the tower arguments need
+(the bound is a grade, not always the value of some element). -/
+theorem lt_val_add' {g : WithTop Γ} {b c : A} (hb : g < D.val b) (hc : g < D.val c) :
+    g < D.val (b + c) :=
+  lt_of_lt_of_le (lt_min hb hc) (D.le_val_add b c)
+
 /-- Two strictly deeper terms stay strictly deeper when added. -/
 theorem lt_val_add {a b c : A} (hb : D.val a < D.val b) (hc : D.val a < D.val c) :
     D.val a < D.val (b + c) :=
-  lt_of_lt_of_le (lt_min hb hc) (D.le_val_add b c)
+  D.lt_val_add' hb hc
+
+/-- A finite collection of terms strictly deeper than the **grade** `γ` sums to
+something strictly deeper than `γ`.
+
+Stated against a grade rather than an element: that makes the empty-list case
+free (`val 0 = ⊤ > γ`) and is the form the tower arguments need. -/
+theorem lt_val_sum_grade {γ : Γ} (s : List A)
+    (h : ∀ b ∈ s, (γ : WithTop Γ) < D.val b) : (γ : WithTop Γ) < D.val s.sum := by
+  induction s with
+  | nil => simp [D.val_zero]
+  | cons c t ih =>
+      rw [List.sum_cons]
+      exact D.lt_val_add' (h c (List.mem_cons_self ..))
+        (ih fun b hb => h b (List.mem_cons_of_mem _ hb))
 
 /-- A finite collection of strictly deeper terms sums to something strictly
 deeper. (`ha` rules out `a = 0`, for which the empty sum is a counterexample.) -/
