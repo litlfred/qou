@@ -8,6 +8,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Molecular.h2_lp_dual_binding", validation: "not_checked" },
   title: "LP dual gives optimal $H_2$ binding",
   uses: [
+    "conj:q-integer-mass-formula",
     "def:h2-molecular-braid",
     "prop:shell-filling-rule",
   ],

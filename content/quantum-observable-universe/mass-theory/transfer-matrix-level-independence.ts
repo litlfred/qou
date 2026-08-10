@@ -11,6 +11,7 @@ export default proposition({
     "markov-trace", "level-independence",
   ],
   uses: [
+    "conj:crystal-graph-realization",
     "def:categorical-transfer-matrix",
     "def:bundle-isotopy-equivalence",
   ],
