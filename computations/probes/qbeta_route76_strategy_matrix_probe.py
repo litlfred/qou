@@ -304,12 +304,36 @@ def main() -> int:
          "note": "saturating in Singular is 10x WORSE than SnapPy's own non-zero "
                  "condition variable -- a measured pessimisation, recorded as one"},
     ]
+    live_ok = None
     if "--full" in sys.argv:
+        # Recomputing the TIMINGS without re-deriving the FIELD would leave the
+        # mathematical claim resting on a hardcoded polynomial. Re-factor the live
+        # eliminants and require a degree-14 factor isomorphic to Route 75's field, so
+        # --full is a genuine end-to-end re-verification rather than a re-timing.
         import snappy as _sn
         P = _sn.Manifold("10_100").ptolemy_variety(2, obstruction_class="all")[1]
         live = run(P, "nz", "dp", "modStd_finduni", 2400)
+        live_deg14 = []
+        for u in live["univariate_eliminants"]:
+            names = re.findall(r"[A-Za-z][A-Za-z_0-9]*", u)
+            if not names:
+                continue
+            var = sorted(set(names), key=len)[-1]
+            try:
+                fac = pari.factor(pari(u.replace(var, "x")))
+            except Exception:
+                continue
+            for i in range(len(fac[0])):
+                if int(pari.poldegree(fac[0][i])) == 14:
+                    live_deg14.append(str(fac[0][i]))
+        live_ok = any(
+            bool(pari.nfisisom(pari(p), pari(R75_10_100)))
+            and str(pari.nfisisom(pari(p), pari(R75_10_100))) != "0"
+            for p in live_deg14)
         recorded.append({"manifold": "10_100", "obstruction_class": 1,
-                         "recomputed_this_run": True, **live})
+                         "recomputed_this_run": True,
+                         "live_degree14_factors": len(live_deg14),
+                         "live_field_matches_route75": bool(live_ok), **live})
     gates.append({
         "gate": "G7c",
         "claim": "THE REACH CEILING IN G6 DOES NOT SURVIVE. 10_100 has 14 tetrahedra and "
@@ -341,8 +365,12 @@ def main() -> int:
                        "4 cores. Relative comparisons hold; absolute numbers are upper "
                        "bounds, which makes the reach claim conservative",
         "reproduce": "python3 computations/probes/qbeta_route76_strategy_matrix_probe.py "
-                     "--full",
-        "pass": bool(same_field and d_pt == d_75),
+                     "--full -- recomputes the 10_100 class-1 solve AND re-factors its "
+                     "live eliminants, requiring a degree-14 factor isomorphic to Route "
+                     "75's field. Without --full the gate verifies the recorded factor "
+                     "against Route 75, which is the same field claim but does not "
+                     "re-derive the factor",
+        "pass": bool(same_field and d_pt == d_75 and (live_ok is not False)),
     })
 
     out = {
