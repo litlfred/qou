@@ -99,7 +99,11 @@ is its *geometric origin*.
 
 ## Literature scoping — the WRT domain question (2026-08-10, PR #4952)
 
-**Search tier, not read tier. Nothing here is a corpus finding or a refutation.**
+**UPGRADED TO READ TIER 2026-08-10** — the owner supplied three of the six papers
+([`95accb15`](https://github.com/litlfred/qou/commit/95accb153a132df290605fd2ad27930b2a47b8f9)),
+and the domain finding below is now confirmed by direct quotation + measurement.
+The reading list and route table remain a plan; math/0605314, 1411.6062 and
+2412.04241 are still unread.
 
 Counting `references.ts`: the corpus is deep on the q-Bessel/`E_q(2)` side
 (Koelink 12, Woronowicz 12, Hahn 12, Exton 8) and on quantum modularity
@@ -127,6 +131,34 @@ Actionable consequence *if* (2) survives reading: the framework already carries
 `Φ_q` (cheat-sheet §4 sorts it against `Li₂^q`), and `Φ_q` is the state-integral
 kernel — so the question would become *which* state integral, not how to continue
 a Habiro element.
+
+**CONFIRMED (read tier).** Beliakova–Le arXiv:1106.6298 §1 defines
+`Ẑ[q] := lim←_k Z[q]/((q;q)_k)` and states verbatim: *"Every element f(q) ∈ Ẑ[q]
+can be considered as a function whose domain is the set of roots of unity"*, with
+`J_M` evaluating at any root of unity to the WRT value. Dimofte–Garoufalidis
+arXiv:1511.05628 §1 defines a quantum modular form on *"the set of complex roots
+of unity"* with formal `φ_ζ(ℏ) ∈ C[[ℏ]]` — asymptotics near, not values at
+`|q|>1`. Lovejoy–Osburn–Störzer arXiv:2605.15740 (2026) recasts unified WRT as *"an
+identity for a q-hypergeometric series at roots of unity"*, covering Hikami's
+**Brieskorn** cases — the keystone's own family, still at roots of unity.
+
+**And the mechanism is sharper than "native domain."** An element is
+`Σ_k f_k(q)·(q;q)_k`, so `(q;q)_k` decides convergence. Measured at the canonical
+q₀ ([`habiro_domain_substrate_anchor_probe.py`](../../computations/probes/habiro_domain_substrate_anchor_probe.py)):
+at a 5th root of unity it is **exactly 0 for k ≥ 5** (the sum terminates — that is
+*why* the domain is what it is); at `1/q₀ ≈ 0.9009` it converges to `1.109e-6`; at
+the substrate `q₀ ≈ 1.10998` it **diverges super-exponentially**, `|(q₀;q₀)_80| ≈
+7.3e140`. The `(q;q)_k`-adic completion that makes roots of unity evaluable is the
+same one that makes real `q>1` diverge — so continuing a unified-WRT element to q₀
+is not a harder evaluation, it asks for something the object does not have.
+Scope-(a) on this route; nothing excluded elsewhere, and nothing said about state
+integrals.
+
+**LEAD, not a route (do not record it as one).** `1/q₀ < 1` is in the convergent
+regime and the framework already threads `q ↔ q⁻¹` (bar-even/odd, the proved
+`θ_{λ′}=θ_λ⁻¹`, the Q_β cosh/sinh split). But bounded `(q;q)_k` is **necessary, not
+sufficient** — convergence also needs the `f_k`, which nothing here bounds. Needs
+a specific Σ(2,3,5) series before it counts.
 
 Ordered reading list, the domain claim first because everything turns on it:
 [math/0605314](https://arxiv.org/abs/math/0605314),
