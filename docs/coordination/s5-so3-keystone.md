@@ -97,6 +97,53 @@ is its *geometric origin*.
 > MTC hosts `W_λ`; the arena is the non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction and the
 > sharpened object is the colored Σ(2,3,5) WRT q-series. See the 2026-06-22 update banner above.
 
+## Literature scoping — the WRT domain question (2026-08-10, PR #4952)
+
+**Search tier, not read tier. Nothing here is a corpus finding or a refutation.**
+
+Counting `references.ts`: the corpus is deep on the q-Bessel/`E_q(2)` side
+(Koelink 12, Woronowicz 12, Hahn 12, Exton 8) and on quantum modularity
+(Garoufalidis 48, Habiro 29, Zagier 24), but thin exactly where the open object
+lives — WRT 4, Brieskorn 4, Seifert 3, and **Beliakova 0**. Beliakova at zero is
+the signal: a principal author of the *unified WRT* programme, and Σ(2,3,5) is a
+Brieskorn sphere.
+
+Two search-tier findings, the second load-bearing:
+
+1. The unified-WRT programme (Habiro; extended by Beliakova, Le, Blanchet,
+   Buehler) covers **Seifert fibered spaces**, with Brieskorn spheres
+   `Σ(p₁,p₂,p₃)` studied in that context — the keystone's manifold family has an
+   existing named construction.
+2. Its **native domain is the roots of unity**: a Habiro-ring element is "a
+   function whose domain is the set of roots of unity", quantum invariants being
+   "analytic functions defined on the set of roots of unity". If that holds as
+   stated, the substrate anchor `q₀ ≈ 1.10998` (real, `>1`) is **off** that domain
+   — so the archimedean continuation this ledger names is not a gap a better
+   construction closes, it is a request to leave the object's native domain, and
+   the analytic route (state integrals / Faddeev `Φ_q`) is a different literature
+   from the Habiro one.
+
+Actionable consequence *if* (2) survives reading: the framework already carries
+`Φ_q` (cheat-sheet §4 sorts it against `Li₂^q`), and `Φ_q` is the state-integral
+kernel — so the question would become *which* state integral, not how to continue
+a Habiro element.
+
+Ordered reading list, the domain claim first because everything turns on it:
+[math/0605314](https://arxiv.org/abs/math/0605314),
+[1106.6298](https://arxiv.org/abs/1106.6298),
+[1511.05628](https://arxiv.org/abs/1511.05628),
+[1411.6062](https://arxiv.org/abs/1411.6062),
+[2412.04241](https://arxiv.org/abs/2412.04241) (Dec 2024 — most likely to have
+relaxed the domain restriction, if anything has),
+[2605.15740](https://arxiv.org/abs/2605.15740).
+
+Full scoping + what must not be concluded:
+[`2026-08-10-keystone-literature-scoping-wrt-domain.md`](../audits/2026-08-10-keystone-literature-scoping-wrt-domain.md).
+
+**Tooling:** `mcp__paper-search-mcp__search_arxiv` returned empty for every query
+including the control "knot theory" — broken/blocked, not a null result. Use
+`WebSearch` with `allowed_domains: ["arxiv.org"]`.
+
 ## Refutations not to re-walk (canonical-no-negative-result discipline)
 
 1. **210 ppb muon via (1,1,1) sign-block / Wedderburn projector** — the correction is O(16 %) (sign-block)
