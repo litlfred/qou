@@ -601,6 +601,7 @@ export default chapter({
         "gluing-equations-do-not-detect-hyperbolicity",
         "hyperbolic-knot-shape-fields",
         "rivin-concavity-one-tetrahedron",
+        "ideal-tetrahedron-law-of-sines",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
