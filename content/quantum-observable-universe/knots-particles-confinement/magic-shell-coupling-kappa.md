@@ -45,7 +45,17 @@ Two things are worth separating here. The anchors $(2,1)$ and $(1,2)$ were **not
 The two factors carry the following readings, which motivate the shape but do not derive it.
 
 1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the per-shell magic-coupling magnitude, read as the logarithm of the Hecke deformation.
-2. **q-deformed dimension product** $[2]_q \cdot [3]_q$ — the quantum dimension of the $V_2 \otimes V_3$ Schur–Weyl tensor product, normalizing the H7a quantum to a per-excess slope.
+2. **q-factorial normalization** $[2]_q \cdot [3]_q = [3]_q!$, normalizing the H7a quantum to a per-excess slope.
+
+The second factor was previously described as the quantum dimension of a $V_2 \otimes V_3$ Schur–Weyl tensor product. That description does not survive inspection, in two ways. It collides with the eightfold chapter's Schur–Weyl decomposition, which at $n = 3$ has $\mathfrak{gl}_3$ factors of dimension $10$, $8$ and $1$ — a different object sharing the name. And it presents as a product of *two* channel indices what is a *single* q-factorial: $[2]_q [3]_q = [3]_q!$, proved in the Lean sibling as `qBracket_normaliser_eq_qFactorial`.
+
+The q-factorial reading connects the normalization to objects already load-bearing elsewhere in the framework. The Borromean observable is $F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| \cdot [3]_q! / q^3$, and the q-Schur Markov weight of the trivial partition is $y_{(3)}(q) = q^3 / [3]_q!$. So the normalization is
+
+$$
+  [2]_q \cdot [3]_q \;=\; [3]_q! \;=\; \frac{q^3}{y_{(3)}(q)},
+$$
+
+the inverse Markov weight of $(3) \vdash 3$. This is a reading of the existing expression, not a new claim about $\kappa$: it changes what the denominator *is*, not what it evaluates to.
 
 $$
   \kappa \;=\; \underbrace{-E_0 \cdot \log(1/h)}_{\text{H7a quantum}}
@@ -56,4 +66,8 @@ The negative sign tracks the orientation convention for the $(n_{pp} - n_{nn})$ 
 
 ## What would settle it
 
-The conjecture is discharged by a derivation of the closed form from the substrate that does not consult a magic anchor at any step. Two structural facts already available constrain such a derivation: the sign is forced, as above; and the $q$-brackets appearing in the denominator are the canonical balanced brackets, tied to `QOU.QInteger.qIntBal` by `qBracket_eq_canonical` in the Lean sibling, so the normalization is not free to be reinterpreted as a geometric or rescaled bracket.
+The conjecture is discharged by a derivation of the closed form from the substrate that does not consult a magic anchor at any step. Three structural facts already available constrain such a derivation.
+
+The sign is forced, as above. The $q$-brackets in the denominator are the canonical balanced brackets, tied to `QOU.QInteger.qIntBal` by `qBracket_eq_canonical`, so the normalization is not free to be reinterpreted as a geometric or rescaled bracket. And the denominator is the q-factorial $[3]_q!$, hence $q^3 / y_{(3)}(q)$, which gives the missing piece a categorical handle: a derivation must say which partition's Markov weight appears, and why.
+
+That last point also delimits what the present agreement establishes. Both the index of the q-factorial and the definition of the excess $(n_{pp} - n_{nn})$ admit more than one reading in the corpus, and every reading coincides at the $A = 3$ anchors — the only anchors $\kappa$ has been evaluated at. The readings diverge from the $A_{\mathrm{magic}} = 8$ shell upward. So the $0.034\%$ agreement is evidence about the value at $A = 3$ and carries little information about $\kappa$ away from it; a shell-8 evaluation performed before those two readings are fixed would measure the choice rather than the physics.

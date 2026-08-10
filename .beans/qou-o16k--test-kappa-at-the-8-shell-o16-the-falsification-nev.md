@@ -132,9 +132,50 @@ agreement constrains almost nothing about the object away from A=3. Any 8-shell
 test must therefore *first* fix the rule and the convention; run before that, it
 would measure the choice rather than the physics.
 
+## Derivation step — the normaliser is a q-factorial, and that halves the problem
+
+Formalize-first, Lean before numerics. **`[2]_q · [3]_q = [3]_q!`**, proved
+sorry-free:
+
+- `QOU.QInteger.qFactBal` — the canonical q-factorial `∏_{i=1}^n [i]_q`
+- `QOU.QInteger.qIntBal_one_of_ne_sing` — `[1]_q = 1` off the singular locus
+  (the hypothesis is not removable: at `q = ±1` and `q = 0` it is `0/0 = 0`,
+  and every q-factorial collapses — the same locus `qIntBalClSing` guards)
+- `QOU.QInteger.qFactBal_three` — the identity
+- `QOU.BraidKnot.qBracket_normaliser_eq_qFactorial` — the κ-side corollary
+
+**Why this is a derivation step and not a notational nicety.** The producer's
+phrase describes a rule about **two** channel indices, which is what admits R1 /
+R2 / R3 and the 32× spread. The object is **one**-index. So the continuation
+question narrows from *"which pair of channels?"* to *"which `n` in `[n]_q!`?"*
+— a strictly smaller search.
+
+And the one index has a categorical handle. `[3]_q!` is already load-bearing in
+the corpus twice over: `F_Bor = |tr_M(β_Bor)| · [3]_q! / q³`, and the q-Schur
+Markov weight of the trivial partition, `y_{(3)}(q) = q³ / [3]_q!`. So
+
+    normaliser = [3]_q! = q³ / y_{(3)}(q)
+
+is the **inverse Markov weight of `(3) ⊢ 3`**. A derivation now has something
+concrete to produce: *which partition's Markov weight appears at a magic anchor,
+and why*. That is a categorical question with existing machinery
+(`wedderburn_jones_markov.y_lambda_at`), not a shape hunt.
+
+The `.md` is corrected accordingly — it described the denominator as the quantum
+dimension of a `V_2 ⊗ V_3` Schur–Weyl tensor product, which fails twice: it
+collides with the eightfold chapter's gl₃ Schur–Weyl decomposition (dims 10/8/1,
+a different object of the same name), and it presents a one-index q-factorial as
+a two-index product. The correction changes what the denominator *is*, not what
+it evaluates to.
+
 ## Next
 
-1. **Fix the index rule and the excess convention** — both need an owner call or
+1. **Identify the partition whose Markov weight is the normaliser** — the
+   derivation-shaped successor to the index-rule question, now that the object
+   is `q^n / y_{(n)}(q)` rather than an opaque bracket pair. Ranked first: it is
+   the only route here that could *close* rather than characterise, and it runs
+   on machinery the framework already has.
+2. **Fix the index rule and the excess convention** — both need an owner call or
    a derivation; the anchors provably cannot supply either. This now blocks the
    8-shell test rather than following it, which reverses the order I had.
 2. **Name the excess convention** in the block — a one-line fix that makes the
