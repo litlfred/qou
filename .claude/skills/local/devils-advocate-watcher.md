@@ -205,7 +205,7 @@ criterion that fired; the `da-referee-verdict` is the rollup.
 | `da-definitional-ambiguity` | A key term is undefined, admits multiple incompatible readings, or names a construction not shown well-defined ("the unique X" without uniqueness; a regime/base-ring left implicit). |
 | `da-empirical-fragility` | A numerical match lives inside fit noise, relies on cherry-picked precision, hides a cross-anchor swing, or is stale against the current q_0 pin. |
 | `da-physical-implausibility` | A physics claim a domain expert rejects: wrong units, broken conservation law, or contradiction with an established measurement. |
-| `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash`/`scriptCommitSha` drift), or its value contradicts the prose `≈`. |
+| `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash` drift — **not** `scriptCommitSha`, which rebase-merge rewrites; bean `qou-wsha`), or its value contradicts the prose `≈`. |
 | `da-referee-verdict` | Rollup: `clean` / `survivable-objection` / `open-objection` + the strongest objection's one-line referee argument. |
 
 ### Sidecar schema (pre-adopted)
