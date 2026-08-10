@@ -5,6 +5,16 @@ The producers are all convention D (`convention-c-producer-audit.py` reports 0
 actionable sites); their committed outputs are not. This closes that gap by
 re-running each producer and recording exactly how far every number moved.
 
+**Re-running a producer is necessary but not sufficient.** Producers read each
+other's witnesses — `rho_w_crystal_vertex_trace` takes its `y_λ` out of
+`chi-deuteron-h6-at-q0-50dps.witness.json`, the `rho_k_h3a_*` family reads
+`rho-k-h3a-refinement.witness.json`, eight producers read
+`y-lambda-at-q0.witness.json` — so a convention-D producer fed a convention-C
+upstream re-emits convention C, exits 0, and looks like a successful
+regeneration. Order is therefore part of correctness, not an optimisation, and
+`topo_order()` supplies it. The first two passes ran alphabetically and left 28
+witnesses convention C with 3-row weights at 3–100 % of their own table max.
+
 ## Constraints this is built around
 
 **Strictly serial.** Standing owner directive: never two producers concurrently
@@ -686,6 +696,70 @@ def run_all(timeout: int, retry_failed: bool = False):
     print("\nrun complete", flush=True)
 
 
+def impact_vs_main(base: str = "origin/main"):
+    """Total impact: every witness's CURRENT state against its state on `base`.
+
+    The per-run JSONL records a single pass's before/after. Once the campaign
+    needs more than one pass — and it does, because the first two ran in the
+    wrong dependency order — those deltas answer "what did pass 3 change",
+    which is not the question. A witness that moved in pass 1 and settled in
+    pass 3 shows almost nothing in the pass-3 record while having moved a long
+    way from what is committed on main.
+
+    So measure the thing actually being asked for: committed-on-`base` versus
+    on-disk-now, classified with the same rules. Independent of how many passes
+    it took, and it stays correct if a pass has to be re-run.
+    """
+    changed = subprocess.run(
+        ["git", "diff", "--name-only", base, "--", "computations"],
+        cwd=str(REPO), capture_output=True, text=True).stdout.split()
+    witnesses = [f for f in changed if f.endswith(".json")]
+    print(f"impact vs {base}: {len(witnesses)} witness file(s) differ\n")
+
+    kinds, shifts, per_witness = {}, [], []
+    for rel in witnesses:
+        old = subprocess.run(["git", "show", f"{base}:{rel}"], cwd=str(REPO),
+                             capture_output=True, text=True)
+        if old.returncode != 0:          # added on this branch, no base version
+            per_witness.append((rel, "new", 0, None))
+            continue
+        try:
+            before = {"numbers": numeric_fields(json.loads(old.stdout))}
+            after = {"numbers": numeric_fields(json.loads((REPO / rel).read_text()))}
+        except (json.JSONDecodeError, OSError):
+            per_witness.append((rel, "unreadable", 0, None))
+            continue
+        rows = diff(before, after)
+        worst = 0.0
+        for d in rows:
+            kind, rel_change = classify(d["before"], d["after"])
+            kinds[kind] = kinds.get(kind, 0) + 1
+            if kind == "shift":
+                shifts.append((rel_change, rel, d))
+                worst = max(worst, rel_change or 0.0)
+        per_witness.append((rel, "changed" if rows else "provenance only",
+                            len(rows), worst))
+
+    print("delta kinds : " + (", ".join(f"{k}={v}" for k, v in sorted(kinds.items()))
+                              or "none"))
+    collapse = kinds.get("structural_zero", 0) + kinds.get("vanished", 0)
+    print(f"convention-D collapse: {collapse} "
+          f"(exactly 0: {kinds.get('structural_zero', 0)}, "
+          f"below floor: {kinds.get('vanished', 0)})")
+
+    print(f"\n{'witness':<62} {'deltas':>7} {'worst ppm':>14}")
+    for rel, state, n, worst in sorted(per_witness, key=lambda t: -(t[3] or 0)):
+        w = f"{worst*1e6:14.1f}" if worst else ("" if state != "changed" else "0.0")
+        print(f"  {rel.replace('computations/', '')[:60]:<60} {n:7d} {w:>14}"
+              + ("" if state == "changed" else f"  [{state}]"))
+
+    shifts.sort(key=lambda t: t[0] or 0, reverse=True)
+    print("\nlargest shifts overall:")
+    for rel_change, rel, d in shifts[:10]:
+        print(f"  {rel_change*1e6:14.1f} ppm  {rel.split('/')[-1]}  {d['field']}")
+        print(f"        {d['before'][:26]} -> {d['after'][:26]}")
+
+
 def report():
     if not LOG.exists():
         print("no log yet")
@@ -855,6 +929,9 @@ def main() -> int:
     ap.add_argument("--plan", action="store_true")
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--impact-vs-main", action="store_true",
+                    help="classify current witnesses against origin/main "
+                         "(total impact across all passes)")
     ap.add_argument("--timeout", type=int, default=900)
     ap.add_argument("--retry-failed", action="store_true",
                     help="also re-run producers whose last recorded status was not ok")
@@ -876,6 +953,9 @@ def main() -> int:
         return 0
     if a.report:
         report()
+        return 0
+    if a.impact_vs_main:
+        impact_vs_main()
         return 0
     ap.print_help()
     return 1
