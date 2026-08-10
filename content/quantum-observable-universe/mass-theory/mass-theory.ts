@@ -602,6 +602,7 @@ export default chapter({
         "hyperbolic-knot-shape-fields",
         "rivin-concavity-one-tetrahedron",
         "ideal-tetrahedron-law-of-sines",
+        "kummer-identity-radial-reduction",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
