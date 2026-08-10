@@ -7,7 +7,6 @@ export default proof({
     "prop:quantum-dilogarithm-stratified",
     "cor:quantum-dilogarithm",
     "prop:categorical-mass-markov",
-    "prop:curvature-rank-gb-stratification",
   ],
   tags: [
     "quantum-dilogarithm",
