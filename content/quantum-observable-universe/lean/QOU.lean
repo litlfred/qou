@@ -403,6 +403,16 @@ import QOU.PhotonThreading
 import QOU.QBirchSwinnertonDyer
 import QOU.QCollatz
 import QOU.QGeometricLanglands
+-- The four §3b conjecture-class carriers for the `conj:q-gl-*` blocks.
+-- They sat outside the import graph, so `lake build` never compiled them:
+-- nothing verified that the open conjectures the paper cites even
+-- elaborate. They could not be added before PR #4886 renamed the
+-- aggregate's four same-named theorems — importing both was a hard
+-- `already declared`.
+import QOU.QGeometricLanglands.q_gl_fiber_functor
+import QOU.QGeometricLanglands.q_oper_hecke
+import QOU.QGeometricLanglands.q_gl_kummer_filtration
+import QOU.QGeometricLanglands.q_gl_classical_limit
 import QOU.AppendixQValues.ProtonBorromeanAssembly
 import QOU.AppendixSurreals
 import QOU.AlgebraicSubstrate
