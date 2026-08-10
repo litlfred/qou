@@ -1,7 +1,7 @@
 {
   "engine": "python-stdlib",
   "engineVersion": "3",
-  "computedAt": "2026-08-10T18:47:41.626944+00:00",
+  "computedAt": "2026-08-10T19:01:08.525416+00:00",
   "computation": "kappa-shell8-excess-convention",
   "scriptFile": "probe_kappa_shell8_excess_convention.py",
   "contentBlock": "conj:magic-shell-coupling-kappa",
@@ -33,7 +33,7 @@
         "role": "cross-check anchor (single-magic)",
         "excess_C1_interface": 1,
         "excess_C2_pairs": 1,
-        "C2_over_C1": "1.00000000000000000000000000000000000000000000000000000000000",
+        "C2_over_C1": "1.0",
         "binding_term_C1_MeV": "-1.07042412489065621508476511398704418909443631426005041038731",
         "binding_term_C2_MeV": "-1.07042412489065621508476511398704418909443631426005041038731",
         "conventions_agree": true
@@ -46,7 +46,7 @@
         "role": "cross-check anchor (single-magic)",
         "excess_C1_interface": -1,
         "excess_C2_pairs": -1,
-        "C2_over_C1": "1.00000000000000000000000000000000000000000000000000000000000",
+        "C2_over_C1": "1.0",
         "binding_term_C1_MeV": "1.07042412489065621508476511398704418909443631426005041038731",
         "binding_term_C2_MeV": "1.07042412489065621508476511398704418909443631426005041038731",
         "conventions_agree": true
@@ -72,7 +72,7 @@
         "role": "NEVER TESTED",
         "excess_C1_interface": 1,
         "excess_C2_pairs": 7,
-        "C2_over_C1": "7.00000000000000000000000000000000000000000000000000000000000",
+        "C2_over_C1": "7.0",
         "binding_term_C1_MeV": "-1.07042412489065621508476511398704418909443631426005041038731",
         "binding_term_C2_MeV": "-7.49296887423459350559335579790930932366105419982035287271117",
         "conventions_agree": false
@@ -85,7 +85,7 @@
         "role": "NEVER TESTED",
         "excess_C1_interface": -1,
         "excess_C2_pairs": -7,
-        "C2_over_C1": "7.00000000000000000000000000000000000000000000000000000000000",
+        "C2_over_C1": "7.0",
         "binding_term_C1_MeV": "1.07042412489065621508476511398704418909443631426005041038731",
         "binding_term_C2_MeV": "7.49296887423459350559335579790930932366105419982035287271117",
         "conventions_agree": false
@@ -124,7 +124,7 @@
         "role": "NEVER TESTED",
         "excess_C1_interface": -1,
         "excess_C2_pairs": -19,
-        "C2_over_C1": "19.0000000000000000000000000000000000000000000000000000000000",
+        "C2_over_C1": "19.0",
         "binding_term_C1_MeV": "1.07042412489065621508476511398704418909443631426005041038731",
         "binding_term_C2_MeV": "20.3380583729224680866105371657538395927942899709409577973589",
         "conventions_agree": false

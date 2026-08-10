@@ -73,6 +73,25 @@ from _precision import fmt, COMPUTE_DPS  # noqa: E402
 mp.mp.dps = COMPUTE_DPS
 
 
+
+def _true_precision(v):
+    """`fmt`, except a 53-bit value is not printed as if it were measured.
+
+    Wrapping a float64 in `mpf` and running it through `fmt` emits the binary64
+    expansion — 30+ digits of dyadic tail that read as measured and are not.
+    That is the float64-PADDING gate, and satisfying the raw-float64 gate by
+    naive `fmt` lands squarely on it (bean qou-3jwy).
+
+    The test is exact and per value, matching
+    `qou_substrate.precision.str_at_true_precision`: an mpf equal to its own
+    float64 carries 53 bits and nothing more, so it is printed short. A
+    genuinely high-precision result that happens to be representable is
+    unharmed, because the short form is then exact.
+    """
+    if v == mp.mpf(float(v)):
+        return fmt(float(v))
+    return fmt(v)
+
 def _ser(o):
     """Serialize every real to a _precision.fmt string; ints stay ints.
 
@@ -83,7 +102,7 @@ def _ser(o):
     if isinstance(o, bool) or isinstance(o, int):
         return o
     if isinstance(o, (float, mp.mpf)):
-        return fmt(mp.mpf(o))
+        return _true_precision(mp.mpf(o))
     if isinstance(o, dict):
         return {k: _ser(v) for k, v in o.items()}
     if isinstance(o, (list, tuple)):
@@ -107,16 +126,16 @@ SOURCE = HERE / "_deprecated" / "interface-type-resolved-coupling-probe.witness.
 KAPPA_PUBLISHED = -mp.mpf("1.0707907503265857")
 
 RADII = [
-    (float(ce.R0_FM), "derived (reduced pion Compton wavelength)"),
-    (1.2, "empirical heavy-nucleus saturation constant"),
-    (1.76, "implied by the measured 3He charge radius"),
+    (ce.R0_FM, "derived (reduced pion Compton wavelength)"),
+    (mp.mpf("1.2"), "empirical heavy-nucleus saturation constant"),
+    (mp.mpf("1.76"), "implied by the measured 3He charge radius"),
 ]
 
 
 def coulomb_A3(r0: float) -> float:
     """Coulomb energy of the single pp pair in 3He; T has none."""
-    ahc = float(ce.alpha_em_hbar_c_mev_fm())
-    return 0.6 * ahc * (2 * 1) / (r0 * 3 ** (mp.mpf(1) / 3))
+    ahc = ce.alpha_em_hbar_c_mev_fm()
+    return mp.mpf("0.6") * ahc * 2 / (r0 * mp.mpf(3) ** (mp.mpf(1) / 3))
 
 
 def main() -> None:
@@ -168,9 +187,9 @@ def main() -> None:
     )
     check(
         "the_3He_arm_was_dominated_by_coulomb",
-        abs(coulomb_A3(float(ce.R0_FM))) > 0.6 * abs(KAPPA_PUBLISHED),
-        f"the derived Coulomb energy {coulomb_A3(float(ce.R0_FM)):.4f} MeV is "
-        f"{100 * coulomb_A3(float(ce.R0_FM)) / abs(KAPPA_PUBLISHED):.0f}% of the "
+        abs(coulomb_A3(ce.R0_FM)) > 0.6 * abs(KAPPA_PUBLISHED),
+        f"the derived Coulomb energy {coulomb_A3(ce.R0_FM):.4f} MeV is "
+        f"{100 * coulomb_A3(ce.R0_FM) / abs(KAPPA_PUBLISHED):.0f}% of the "
         "published kappa -- the fitted 'coupling' is mostly electrostatics",
     )
 
@@ -208,7 +227,7 @@ def main() -> None:
         ),
         "parameters": {
             "published_kappa_MeV": KAPPA_PUBLISHED,
-            "alpha_em_hbar_c_MeV_fm": float(ce.alpha_em_hbar_c_mev_fm()),
+            "alpha_em_hbar_c_MeV_fm": ce.alpha_em_hbar_c_mev_fm(),
             "alpha_em_provenance": "derived from q_0 in coulomb_energy, not CODATA",
             "radius_models": [{"r0_fm": r, "name": n} for r, n in RADII],
             "source_witness": str(SOURCE.relative_to(HERE.parent)),

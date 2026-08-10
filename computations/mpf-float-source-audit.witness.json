@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "benign": 13,
-      "advisory-cast": 11
+      "advisory-cast": 17
     },
     "defects": [],
     "rows": [
@@ -103,6 +103,54 @@
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "chi_re = mp.mpf(float(chi_lambda_fast(shape, word, q_val=q0_chi,",
+        "fix": null
+      },
+      {
+        "file": "computations/probe_kappa_coulomb_reconciliation.py",
+        "line": 91,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if v == mp.mpf(float(v)):",
+        "fix": null
+      },
+      {
+        "file": "computations/probe_kappa_excess_convention_resolution.py",
+        "line": 64,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if v == mp.mpf(float(v)):",
+        "fix": null
+      },
+      {
+        "file": "computations/probe_kappa_mirror_split_shell_test.py",
+        "line": 83,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if v == mp.mpf(float(v)):",
+        "fix": null
+      },
+      {
+        "file": "computations/probe_kappa_normaliser_index_rule.py",
+        "line": 60,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if v == mp.mpf(float(v)):",
+        "fix": null
+      },
+      {
+        "file": "computations/probe_kappa_provenance.py",
+        "line": 90,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if v == mp.mpf(float(v)):",
+        "fix": null
+      },
+      {
+        "file": "computations/probe_kappa_shell8_excess_convention.py",
+        "line": 67,
+        "class": "advisory-cast",
+        "arg": "float(...)",
+        "source": "if v == mp.mpf(float(v)):",
         "fix": null
       },
       {

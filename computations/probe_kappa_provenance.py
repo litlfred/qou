@@ -72,6 +72,25 @@ from _precision import fmt, COMPUTE_DPS  # noqa: E402
 mp.mp.dps = COMPUTE_DPS
 
 
+
+def _true_precision(v):
+    """`fmt`, except a 53-bit value is not printed as if it were measured.
+
+    Wrapping a float64 in `mpf` and running it through `fmt` emits the binary64
+    expansion — 30+ digits of dyadic tail that read as measured and are not.
+    That is the float64-PADDING gate, and satisfying the raw-float64 gate by
+    naive `fmt` lands squarely on it (bean qou-3jwy).
+
+    The test is exact and per value, matching
+    `qou_substrate.precision.str_at_true_precision`: an mpf equal to its own
+    float64 carries 53 bits and nothing more, so it is printed short. A
+    genuinely high-precision result that happens to be representable is
+    unharmed, because the short form is then exact.
+    """
+    if v == mp.mpf(float(v)):
+        return fmt(float(v))
+    return fmt(v)
+
 def _ser(o):
     """Serialize every real to a _precision.fmt string; ints stay ints.
 
@@ -82,7 +101,7 @@ def _ser(o):
     if isinstance(o, bool) or isinstance(o, int):
         return o
     if isinstance(o, (float, mp.mpf)):
-        return fmt(mp.mpf(o))
+        return _true_precision(mp.mpf(o))
     if isinstance(o, dict):
         return {k: _ser(v) for k, v in o.items()}
     if isinstance(o, (list, tuple)):
