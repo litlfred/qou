@@ -172,3 +172,53 @@ Both requirements are now explicit; the compatibility question is open.
 
 `qou-kl39` stays open. Next step: define `L` at braid/framing level and check
 it returns `0` on a single quark — not "search for a knot invariant".
+
+---
+
+## Resolution (2026-08-10): the carrier is the braid word, and it was never missing
+
+`sm-open-problems.md` records "framework braid words per chiral fermion still
+missing" as the blocker. They are fixed by the corpus's own `chi = -6`
+constraint: `T(2,n)` with odd `n <= 7` exhausts the fermion spectrum, and
+`T(2,n)` **is** the closure of `sigma_1^n`. So the carriers are
+`nu_e = sigma_1`, `e- = sigma_1^3`, antiparticles `sigma_1^-1`, `sigma_1^-3`;
+the hadron words (`gluon unit sigma_0 sigma_1^-1`, `B_3 = its cube`) were
+already there.
+
+Proved in `ChiralFermionBraidWords.lean` (all `[propext]` only except one):
+
+| Theorem | Content |
+|---|---|
+| `writhe_sigma1Pow_carriers`, `writhe_gluon`, `writhe_borromean` | writhes **derived** from the words; gluon unit and `B_3` are writhe `0` |
+| `mirror_moves_carrier` | on all four carriers `n ∈ {1,3,5,7}` the mirror changes the writhe — the chirality obstruction is **discharged** |
+| `leptonNumber_matches_corpus` | `L = sign(writhe)` reproduces **6/6** stated rows |
+| `Y_not_factoring_through_writhe` | baryon and gluon unit at **equal derived writhe 0** with different `B` ⟹ `Y` is not a function of `w` |
+| `Y_eq_B_sub_L_left_handed` | conditional on the quark writhe, the four LH rows come out right |
+
+Two consequences worth recording.
+
+**The chirality obstruction is discharged, exactly as predicted.** `nu` and
+`nubar` are `sigma_1` and `sigma_1^-1` — different braid words that both close
+to the amphichiral unknot. The braid word is the carrier; the knot type is the
+projection that loses the distinction.
+
+**The writhe-independence requirement is now closed from derived premises.**
+`sm-hypercharge-invariant.lean`'s `exists_writhe_degenerate_pair` and
+`SecondCrossingInvariant.lean`'s `baryon_vacuum_separating` both *assumed* a
+writhe-degenerate pair. The gluon unit and `B_3` supply one with the writhes
+**computed from the braid words**. So the requirement stands — on a correct
+argument, replacing the p/n non-sequitur documented in
+`2026-08-10-writhe-independence-criterion.md`.
+
+**The framing collision dissolves.** `L = sign(w)` is writhe-*dependent*, which
+is consistent: `Y = B - L` still does not factor through `w` because `B` varies
+at fixed `w`. The invariant that must be independent of the writhe is `B`
+(`mu-bar_123`), not `L` — and `L` needs the braid word, which carries writhe,
+not a free framing datum. So `tr_M`'s writhe prefactor and the strand-twist
+datum `T(t)` are answering different questions, and `L` needs neither.
+
+**Not a closure.** `sign` is a choice, not derived. The **quark braid word is
+still genuinely absent** — every quark row rests on assuming its writhe is `0`.
+Chirality `u_L` vs `u_R` is unrepresented. `qou-kl39` stays open, with the
+blocker narrowed from "braid words per chiral fermion" to "the quark braid word
+and a chirality grading".
