@@ -16,10 +16,13 @@ smooth-plus-oscillating nuclear-energy decomposition.
 **Pre-Archimedean stub.** The opaque trace declarations were
 previously typed `q : ℝ` and `... : ℝ`; both are wall breaches
 since the Markov trace and GB residue both live in the Laurent
-ring `ℤ[q^±1]` (or, generically, in the field of fractions
-`ℚ(q)`).  We declare them polymorphic in an abstract field
-`R ⊇ ℚ(q)`.  The Archimedean evaluation `R = ℝ` at `q = q₀`
-remains downstream (per `QOU.GroundRingAnnotations`).
+ring `ℤ[q^±1]`.  Base ring (§7c): nothing here divides — the
+split is an additive identity in the coefficient ring — so the
+carrier is a generic `[CommRing R]`, matching the formal-chain
+twin `QOU.BraidKnot.GradedTraceResidueSplit`; the manuscript's
+`R_q = ℤ[q^±1]` is an instance, with no passage to `ℚ(q)`
+needed.  The Archimedean evaluation `R = ℝ` at `q = q₀` remains
+downstream (per `QOU.GroundRingAnnotations`).
 
 Ref: [manuscript] Chapter 6, §Nuclear Binding and Beta Stability
 LaTeX label: `prop:graded-trace-residue-split`
@@ -30,21 +33,21 @@ namespace QOU.BraidKnot
 universe u
 
 /-- The symbol map `σ: J^ℓ → J^ℓ/J^{ℓ+1}`.  Concrete model: identity. -/
-def symbolMap {_R : Type u} [Field _R]
+def symbolMap {_R : Type u} [CommRing _R]
     (_ℓ : ℕ) (_q : _R) : Unit → Unit := id
 
 /-- The Markov trace on the associated graded algebra.  Concrete
     model: returns 0. -/
-def gradedTrace {R : Type u} [Field R]
+def gradedTrace {R : Type u} [CommRing R]
     (_q : R) (_x : Unit) : R := 0
 
 /-- The total residue contribution from GB rewriting defects.
     Concrete model: returns 0. -/
-def gbResidue {R : Type u} [Field R]
+def gbResidue {R : Type u} [CommRing R]
     (_q : R) (_x : Unit) : R := 0
 
 /-- The full Markov trace on `H_n(q)`.  Concrete model: returns 0. -/
-def markovTrace {R : Type u} [Field R]
+def markovTrace {R : Type u} [CommRing R]
     (_q : R) (_x : Unit) : R := 0
 
 /-- **Graded-trace residue split.**
@@ -58,10 +61,10 @@ def markovTrace {R : Type u} [Field R]
     is the sum of residues at root-of-unity poles (oscillating,
     Strutinsky-shell analogue).
 
-    Polymorphic in the ground field `R`.
+    Polymorphic in the ground ring `R` (§7c: `[CommRing R]`).
 
     Ref: [manuscript] `conj:mass-endomorphism`. -/
-class GradedTraceResidueSplit (R : Type u) [Field R] where
+class GradedTraceResidueSplit (R : Type u) [CommRing R] where
   q : R
   element : Unit
   smooth : R       -- tr_gr(σ(element), q)
@@ -80,7 +83,7 @@ class GradedTraceResidueSplit (R : Type u) [Field R] where
     the graded trace.  This recovers the pure-descended regime.
 
     Ref: [manuscript] `prop:categorical-mass-markov`. -/
-theorem level_zero_pure_descended {R : Type u} [Field R]
+theorem level_zero_pure_descended {R : Type u} [CommRing R]
     (S : GradedTraceResidueSplit R) (h : S.oscillating = 0) :
     S.total = S.smooth := by
   rw [S.split_identity, h, add_zero]
@@ -92,7 +95,7 @@ theorem level_zero_pure_descended {R : Type u} [Field R]
     `rem:strutinsky-from-graded-trace`.
 
     Ref: [manuscript] §Nuclear Binding and Beta Stability. -/
-theorem strutinsky_analogue {R : Type u} [Field R]
+theorem strutinsky_analogue {R : Type u} [CommRing R]
     (S : GradedTraceResidueSplit R) :
     -- The split exists and is canonical; the physics interpretation
     -- is developed in the Physical Observations chapter.

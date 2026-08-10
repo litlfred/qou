@@ -34,31 +34,48 @@
   Ref: [manuscript] prop:pn-averaging-uniqueness
        [audit] docs/canonical-derivation-cheat-sheet.md Phase 5q
 -/
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Group.Units.Defs
+import Mathlib.Tactic.Ring
 
 namespace QOU.BraidKnot
 
 universe u
 
+/-! ### Base ring (AGENTS.md §7c)
+
+Nothing in this file needs a field.  The ground ring is a bare
+`CommRing R`; the substrate parameter is carried as a **unit** `q : Rˣ`
+wherever the bar-involution `q ↔ q⁻¹` is invoked, so the inverse is the
+units inverse and never a field inverse.  The one genuine division —
+the `1/9` of the 9-pair colour average — is carried by the R[h]
+pattern: the class supplies the element `ninth` together with its
+defining *multiplicative* relation `9 · ninth = 1`, and uniqueness of a
+two-sided inverse makes it agree across instances.  The pre-Archimedean
+home is `ℤ[1/9][q, q⁻¹]`; Archimedean realisation is post-τ. -/
+
 /-- A p-n interface averaging functional acts as a `q`-rational
     expression: it takes the substrate parameter `q` and returns the
-    averaging weight in the ground field `R ⊇ ℚ(q)`.  Pre-Arch: `R`
+    averaging weight in the ground ring `R`.  Pre-Arch: `R`
     abstract; Archimedean realisation is post-τ. -/
-def PnAveragingForm (R : Type u) [Field R] : Type u := R → R
+def PnAveragingForm (R : Type u) [CommRing R] : Type u := R → R
 
 /-- **Bar-invariance.**  σ_{pn} is fixed under the substrate
     bar-involution q ↔ q⁻¹.  This is the structural floor that any
     Hecke-algebra averaging functional respecting the Skein
-    self-duality must satisfy. -/
-class BarInvariant (R : Type u) [Field R] (σ_pn : PnAveragingForm R) where
-  bar : ∀ q : R, q ≠ 0 → σ_pn q = σ_pn q⁻¹
+    self-duality must satisfy.
+
+    The substrate parameter ranges over the **units** `Rˣ`, which over
+    a field is exactly the old `q ≠ 0` side condition. -/
+class BarInvariant (R : Type u) [CommRing R] (σ_pn : PnAveragingForm R) where
+  bar : ∀ q : Rˣ, σ_pn (q : R) = σ_pn (↑q⁻¹ : R)
 
 /-- **Standard normalisation.**  At the Hecke generator level
     σ_{pn} matches the Markov closure z = 1/(q^{1/2} + q^{-1/2}).
     The class is parametrised by the normalisation function `z` to
     keep the substrate model abstract — see
     `q_pinning_50_digit.Z_MARKOV` for the canonical `z`. -/
-class StandardNorm (R : Type u) [Field R] (σ_pn : PnAveragingForm R)
+class StandardNorm (R : Type u) [CommRing R] (σ_pn : PnAveragingForm R)
     (z : R → R) where
   norm : ∀ q : R, σ_pn q = z q
 
@@ -97,7 +114,7 @@ inductive QuarkType where
     `w(_, _, q) = 1 / (1 − h_q · q^{10})` at the substrate value
     (independent of the quark-type pair, modulo the higher-order
     `h_q^4` correction tracked in that probe). -/
-abbrev ColorPairWeight (R : Type u) [Field R] : Type u :=
+abbrev ColorPairWeight (R : Type u) [CommRing R] : Type u :=
   QuarkType → QuarkType → R → R
 
 /-- **Color-flavor compatibility (refined predicate).**  σ_{pn}
@@ -126,18 +143,37 @@ abbrev ColorPairWeight (R : Type u) [Field R] : Type u :=
     "10" in the closed-form Bring weight is derived; the
     remaining open math is the residue calculation giving the
     resolvent `1/(1 − ·)` form. -/
-class ColorFlavorCompatible (R : Type u) [Field R] (σ_pn : PnAveragingForm R) where
+class ColorFlavorCompatible (R : Type u) [CommRing R] (σ_pn : PnAveragingForm R) where
   /-- The per-pair color-tube weighting function.  Pinning this to
       the canonical Bring color-tube form is the open math. -/
   weight : ColorPairWeight R
+  /-- The reciprocal of the 9-pair count, carried as ring data (§7c
+      R[h] pattern) rather than as a field division `1/9`. -/
+  ninth : R
+  /-- …pinned by its defining multiplicative relation.  A two-sided
+      inverse is unique, so `ninth` is determined by `R`, not chosen. -/
+  ninth_spec : (9 : R) * ninth = 1
   /-- σ_{pn}(q) decomposes as the 9-pair weighted average across the
       p-n boundary with the quark-type-pair multiplicities forced by
       p = uud × n = udd. -/
-  factors : ∀ q : R, σ_pn q = (1 / 9 : R) * (
+  factors : ∀ q : R, σ_pn q = ninth * (
       2 * weight QuarkType.u QuarkType.u q +
       4 * weight QuarkType.u QuarkType.d q +
       1 * weight QuarkType.d QuarkType.u q +
       2 * weight QuarkType.d QuarkType.d q)
+
+/-- The carried reciprocal of `9` is unique: any two `ColorFlavorCompatible`
+    instances over the same ring supply the same `ninth`.  (A two-sided
+    inverse in a monoid is unique — this is the reason the R[h] carrying
+    loses nothing relative to a field's `1/9`.) -/
+theorem ninth_eq_ninth {R : Type u} [CommRing R]
+    {σ_pn σ_pn' : PnAveragingForm R}
+    (hcf : ColorFlavorCompatible R σ_pn) (hcf' : ColorFlavorCompatible R σ_pn') :
+    hcf.ninth = hcf'.ninth :=
+  calc hcf.ninth
+      = hcf.ninth * ((9 : R) * hcf'.ninth) := by rw [hcf'.ninth_spec, mul_one]
+    _ = (9 : R) * hcf.ninth * hcf'.ninth := by ring
+    _ = hcf'.ninth := by rw [hcf.ninth_spec, one_mul]
 
 /-- **Uniqueness theorem (via the color-pair weight).**  Two p-n
     averagings sharing the same color-pair weight function `w` are
@@ -150,14 +186,14 @@ class ColorFlavorCompatible (R : Type u) [Field R] (σ_pn : PnAveragingForm R) w
     structural form (the 9-pair decomposition with quark-type
     multiplicities) and shifts the open math to selecting `w`. -/
 theorem pn_averaging_unique_via_weight
-    {R : Type u} [Field R]
+    {R : Type u} [CommRing R]
     {σ_pn σ_pn' : PnAveragingForm R}
     [hcf : ColorFlavorCompatible R σ_pn]
     [hcf' : ColorFlavorCompatible R σ_pn']
     (hw : hcf.weight = hcf'.weight) :
     σ_pn = σ_pn' := by
   funext q
-  rw [hcf.factors q, hcf'.factors q, hw]
+  rw [hcf.factors q, hcf'.factors q, hw, ninth_eq_ninth hcf hcf']
 
 /-- **Uniqueness theorem (via standard normalisation, original).**
     Two p-n averagings sharing a common standard normalisation `z`
@@ -165,7 +201,7 @@ theorem pn_averaging_unique_via_weight
     Bring color-tube weighted form on the open `ColorFlavorCompatible`
     instance. -/
 theorem pn_averaging_unique
-    {R : Type u} [Field R]
+    {R : Type u} [CommRing R]
     (σ_pn σ_pn' : PnAveragingForm R) (z : R → R)
     [BarInvariant R σ_pn] [ColorFlavorCompatible R σ_pn]
     [hN : StandardNorm R σ_pn z]
@@ -179,7 +215,7 @@ theorem pn_averaging_unique
     `BarInvariant` + `ColorFlavorCompatible` + `StandardNorm` with a
     common `z` is a subsingleton. -/
 theorem pn_averaging_subsingleton
-    {R : Type u} [Field R] (z : R → R) :
+    {R : Type u} [CommRing R] (z : R → R) :
     Subsingleton {σ_pn : PnAveragingForm R //
       ∃ (_bar : BarInvariant R σ_pn) (_cf : ColorFlavorCompatible R σ_pn),
         ∀ q, σ_pn q = z q} := by

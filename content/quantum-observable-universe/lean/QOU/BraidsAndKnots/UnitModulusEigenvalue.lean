@@ -1,5 +1,9 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Ring.Int.Defs
+import Mathlib.Algebra.Group.Units.Basic
+import Mathlib.Algebra.GroupWithZero.Basic
+import Mathlib.Tactic.Ring
 
 /-!
 # Unit-modulus eigenvalues on V_{(2,1)} and Borromean fixed point
@@ -34,11 +38,23 @@ assertion.
 
 ## Base ring (§7c)
 
-The determinant/eigenvalue facts are pure field identities, so they are
-stated over a generic `{R : Type*} [Field R]`; only the integer
-determinant `(−1)^{2k}` uses `ℤ`. No archimedean structure is needed —
-`|λ| = 1` is the narrative reading of `λ₁λ₂ = 1` with `|tr| ≤ 2`, not a
-Lean hypothesis here.
+Neither result needs a field; both are stated over the weakest class that
+admits them, and the previous `[Field R]` is gone.
+
+* `hecke_generator_det_neg_one` is a **units** identity: the eigenvalue
+  `−q⁻¹` only makes sense when `q` is invertible, so `q` is carried as a
+  unit `q : Rˣ` over a `CommRing` and the inverse is `Units.inv`, not field
+  division. Over a field this is exactly the old `q ≠ 0` hypothesis, so no
+  generality is lost and `ℤ[q, q⁻¹]` (where `q` *is* a unit) is now in
+  scope.
+* `borromean_eigenvalue_neg_one` needs only that `(λ+1)² = 0 ⇒ λ+1 = 0`,
+  i.e. **no zero divisors** — `[CommRing R] [NoZeroDivisors R]`. A field is
+  one such ring, but so is `ℤ[q, q⁻¹]`. The hypothesis is genuinely
+  required: over `ZMod 4`, `λ = 1` satisfies `(λ+1)² = 0` yet `λ ≠ −1`.
+
+Only the integer determinant `(−1)^{2k}` uses `ℤ`. No archimedean structure
+is needed — `|λ| = 1` is the narrative reading of `λ₁λ₂ = 1` with
+`|tr| ≤ 2`, not a Lean hypothesis here.
 
 -- Ref: [manuscript] Hecke algebra Wedderburn decomposition
 -/
@@ -50,11 +66,16 @@ namespace QOU.BraidsAndKnots
 /-- The Hecke relation `σ² = h·σ + 1` forces `det(σ) = −1` on every
     2-dimensional Wedderburn block: the eigenvalues of `σ` are `q` and
     `−q⁻¹` (roots of `x² − h·x − 1`), with product `q·(−q⁻¹) = −1`.
-    Generic over any field (pure field identity, §7c). -/
+
+    §7c: a **units** identity over a plain `CommRing` — the second
+    eigenvalue is only defined when `q` is invertible, so `q` is carried as
+    `q : Rˣ` and the inverse is `Units.inv`. Over a field this is exactly
+    the old `q ≠ 0`; unlike the field version it also applies over
+    `ℤ[q, q⁻¹]`, where `q` is a unit but no division is available. -/
 -- Ref: [manuscript] Iwahori-Hecke algebra, det on standard rep
-theorem hecke_generator_det_neg_one {R : Type*} [Field R] {q : R} (hq : q ≠ 0) :
-    q * (-q⁻¹) = -1 := by
-  rw [mul_neg, mul_inv_cancel₀ hq]
+theorem hecke_generator_det_neg_one {R : Type*} [CommRing R] (q : Rˣ) :
+    (q : R) * (-(↑q⁻¹ : R)) = -1 := by
+  rw [mul_neg, Units.mul_inv]
 
 /-! ## Unit modulus for even-length braids -/
 
@@ -73,18 +94,24 @@ theorem even_braid_det_one (n : ℕ) : (-1 : ℤ) ^ (2 * n) = 1 := by
     `λ² − tr·λ + det` with the Borromean data `tr = −2`, `det = 1` —
     then `λ = −1` (the degenerate fixed point).
 
-    Over any field the characteristic polynomial is `(λ + 1)²`, and a
-    field has no zero divisors, so `(λ + 1)² = 0 ⇒ λ + 1 = 0 ⇒ λ = −1`.
+    The characteristic polynomial is `(λ + 1)²`, so the only structure the
+    argument uses is the absence of zero divisors:
+    `(λ + 1)² = 0 ⇒ λ + 1 = 0 ⇒ λ = −1`.  §7c: stated over
+    `[CommRing R] [NoZeroDivisors R]` rather than `[Field R]` — the weakest
+    class that admits it.  `NoZeroDivisors` is not removable: over
+    `ZMod 4`, `λ = 1` satisfies `λ² + 2λ + 1 = 0` but `λ ≠ −1`.
     The data `tr = −2` is the Hoefsmit / Markov-trace input (carried as
     a hypothesis, not asserted here); `det = 1` is `even_braid_det_one`
     for the 6-generator word. -/
 -- Ref: [manuscript] BorromeanMarkovTrace.lean closed form (tr_{(2,1)}(β_Bor) = −2)
-theorem borromean_eigenvalue_neg_one {R : Type*} [Field R]
+theorem borromean_eigenvalue_neg_one {R : Type*} [CommRing R] [NoZeroDivisors R]
     (lam tr det : R) (h_tr : tr = -2) (h_det : det = 1)
     (h_root : lam ^ 2 - tr * lam + det = 0) : lam = -1 := by
   subst h_tr; subst h_det
-  have hsq : (lam + 1) * (lam + 1) = 0 := by linear_combination h_root
+  have hsq : (lam + 1) * (lam + 1) = 0 := by
+    calc (lam + 1) * (lam + 1) = lam ^ 2 - (-2) * lam + 1 := by ring
+      _ = 0 := h_root
   have h1 : lam + 1 = 0 := mul_self_eq_zero.mp hsq
-  linear_combination h1
+  exact eq_neg_of_add_eq_zero_left h1
 
 end QOU.BraidsAndKnots

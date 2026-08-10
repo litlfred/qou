@@ -62,9 +62,15 @@ theorem lepton_mass_ratio_electron_eq_one
     lepton_mass_ratio q LeptonType.electron = 1 := by
   rfl
 
-/-- Hecke amplitude `h = q - q⁻¹`. -/
-noncomputable def heckeH {R : Type*} [Field R] (q : R) : R :=
-  q - q⁻¹
+/-- Hecke amplitude `h = q - q⁻¹`.
+
+    §7c: `q` is carried as a **unit** `q : Rˣ`, so `q⁻¹` is the ring
+    element `↑q⁻¹` of `ℤ[q, q⁻¹]` rather than a field inverse — the rest
+    of this file is already generic over `[CommRing R]`, and this
+    definition now matches it.  Every field instance is recovered by
+    `Units.mk0 q hq`. -/
+def heckeH {R : Type*} [CommRing R] (q : Rˣ) : R :=
+  (q : R) - (↑q⁻¹ : R)
 
 /-- **THEOREM (algebraic).** Trefoil σ_1³ reduction in H_2(q):
     σ_1³ = (h² + 1) σ_1 + h

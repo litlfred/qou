@@ -1,5 +1,5 @@
+import Mathlib.Algebra.Ring.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 /-!
 # Meson GMOR fusion identity: [3]_q · [4]_q = [2]_q + [4]_q + [6]_q
@@ -21,24 +21,39 @@ context.
 
 namespace QOU.BraidKnot
 
-variable {R : Type*}
+variable {R : Type*} [CommRing R]
 
 /- The unnormalised q-integer `[n]_q · (q − q⁻¹) = q^n − q^{-n}`, stated as a
 polynomial identity in `q` and its inverse `qi`. Working with `q` and `qi`
 as independent ring variables subject to `q · qi = 1` (the unit hypothesis)
-keeps the proof entirely within `CommRing` + a single `qi_inv` rewrite.
+keeps the proof entirely within `CommRing` — no field, no division.
 
 The classical Clebsch–Gordan content here is `(q-q⁻¹) · [n]_q = q^n - q^{-n}`. -/
 
 /-- q-Clebsch–Gordan fusion in the **multiplied-through** form: clearing
 the denominator `(q − q⁻¹)` from `[3]_q · [4]_q = [2]_q + [4]_q + [6]_q`
 yields a ring identity. This is the math-exact derived piece behind the
-meson GMOR fusion `m_K²/m_π² = [3]_q · [4]_q`. -/
-theorem meson_qCG_3x4 [Field R] (q : R) (hq : q ≠ 0) :
-    (q^3 - q⁻¹^3) * (q^4 - q⁻¹^4)
-    = (q - q⁻¹) *
-      ((q^2 - q⁻¹^2) + (q^4 - q⁻¹^4) + (q^6 - q⁻¹^6)) := by
-  field_simp
+meson GMOR fusion `m_K²/m_π² = [3]_q · [4]_q`.
+
+Base ring (AGENTS.md §7c): stated over a bare `CommRing` with the inverse
+carried as the companion variable `qi` subject to the unit relation
+`q · qi = 1` — the division-free `ℤ[q, q⁻¹]` form the module docstring
+above describes.  A field instance is recovered by taking `qi = q⁻¹` and
+`hq = mul_inv_cancel₀`.  The difference of the two sides factors through
+the unit relation, so the proof is one `ring` identity plus `hq`; no
+`field_simp`, no inverse. -/
+theorem meson_qCG_3x4 (q qi : R) (hq : q * qi = 1) :
+    (q^3 - qi^3) * (q^4 - qi^4)
+    = (q - qi) *
+      ((q^2 - qi^2) + (q^4 - qi^4) + (q^6 - qi^6)) := by
+  refine sub_eq_zero.mp ?_
+  have key :
+      (q^3 - qi^3) * (q^4 - qi^4)
+        - (q - qi) * ((q^2 - qi^2) + (q^4 - qi^4) + (q^6 - qi^6))
+      = (q^3 + q^5 + qi^3 + qi^5 - (q + qi) * (q * qi) * (1 + q * qi))
+          * (q * qi - 1) := by
+    ring
+  rw [key, hq]
   ring
 
 /-- Decategorified form: at `q = 1` the q-Clebsch–Gordan reduces to the
