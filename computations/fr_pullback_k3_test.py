@@ -46,6 +46,12 @@ from mass_at_3A_proper import dim_q, qfac  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 B_AME = {
     "D":   mp.mpf("2.22456607"),
     "T":   AME_B_TRITIUM_MEV_VALIDATION,
