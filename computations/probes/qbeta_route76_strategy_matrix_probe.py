@@ -465,8 +465,25 @@ def main() -> int:
             "oversubscription, so the 2700s is wall-clock, not CPU-time",
             "subprocess.run(timeout=) kills the Singular parent but NOT modStd's forked "
             "children -- 15 orphans survived at load average 12.5 and would have inflated "
-            "every later timing had they not been reaped. Re-measurement must kill the "
-            "process group"],
+            "every later timing had they not been reaped. Now fixed: singular() runs in "
+            "its own process group and SIGKILLs the group on timeout",
+            "CONFOUND, disclosed rather than discovered later: BOTH 11a1 timeouts above "
+            "were measured while a background `lake build` -- armed by the SessionStart "
+            "hook, not by this probe -- was compiling Mathlib and spawning lean workers "
+            "at 25-70% CPU. `lake` started ~12:41 UTC; the class-1 run was 12:43-13:28 "
+            "and the class-0 run 13:32-14:02, so both sit inside that window. Contention "
+            "makes a TIMEOUT MORE LIKELY, so it weakens these negatives -- the same class "
+            "of configuration artifact this probe exists to correct in G6. The numbers "
+            "are kept because 'did not finish in 45 minutes' remains true as stated, but "
+            "they are NOT clean-machine measurements and must not be cited as though they "
+            "were"],
+        "remeasurement": "11a1 class 1 is being re-run on a verified-idle machine (lean "
+                         "build killed, loadavg recorded at start) for both "
+                         "modStd_finduni and std_only. Until that lands, treat the "
+                         "timeouts above as upper bounds taken under load",
+        "unaffected_by_the_confound": "the 10_100 reach result in G7c. Its 67.0s "
+                                      "class-1 solve ran at ~12:20 UTC, BEFORE lake "
+                                      "started at ~12:41",
         "pass": True,
     })
 
