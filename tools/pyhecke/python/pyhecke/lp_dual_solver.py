@@ -234,14 +234,49 @@ def _lp_result_from_dict(out: dict, d: int) -> LpDualResult:
         dual_obj=float(out["dual_obj"]),
         duality_gap=float(out["duality_gap"]),
         feasible=True,
-        # keep what the solver actually computed, alongside the f64 view
-        x_star_str=[str(v) for v in out["x_star"]],
-        y0_star_str=str(out["y0_star"]),
-        y_star_str=[str(v) for v in out["y_star"]],
-        primal_obj_str=str(out["primal_obj"]),
-        dual_obj_str=str(out["dual_obj"]),
-        duality_gap_str=str(out["duality_gap"]),
+        # Keep what the solver actually computed, alongside the f64 view.
+        #
+        # This used to read `str(out["y0_star"])` -- the *f64* key -- while
+        # the genuine MPFR decimals sat right beside it under `y0_star_str`.
+        # Both transports emit them (the CLI formats them from the MPFR
+        # values; the PyO3 binding returns them as `str`/`list[str]`
+        # alongside its f64 convenience view), so the digits were always
+        # there and always discarded:
+        #
+        #   y0_star      0.9999999999997836                    (f64, 17 sig)
+        #   y0_star_str  9.999999999997835691118368666860018…e-1  (52 sig)
+        #
+        # So `qou-t0rf` -- which added these fields to stop `float()`
+        # throwing ~35 digits away -- fixed the storage and kept the wrong
+        # source, and every `*_str` since has been f64 wearing a string.
+        # That is worse than an absent field: a reader takes `*_str` as the
+        # authoritative value precisely because it is a string.
+        **_str_fields_if_decimal(out),
     )
+
+
+_STR_KEYS = ("x_star", "y0_star", "y_star", "primal_obj", "dual_obj",
+             "duality_gap")
+
+
+def _str_fields_if_decimal(out: dict) -> dict:
+    """`*_str` kwargs, taken only from a source that really sent decimals.
+
+    Reads the solver's own `*_str` key first -- that is the MPFR value, and
+    reading the f64 key instead was the defect this replaces. Falls back to
+    the plain key only when it is itself a string. A float is DROPPED rather
+    than stringified: `str(0.9999999999997836)` fabricates an authoritative
+    -looking field carrying no digits beyond f64. Absent is honest.
+    """
+    def _pick(key):
+        val = out.get(f"{key}_str", out.get(key))
+        if isinstance(val, str):
+            return val
+        if isinstance(val, (list, tuple)):
+            return list(val) if all(isinstance(v, str) for v in val) else None
+        return None
+
+    return {f"{k}_str": v for k in _STR_KEYS if (v := _pick(k)) is not None}
 
 
 def _solve_operator_selection_lp_clarabel(
