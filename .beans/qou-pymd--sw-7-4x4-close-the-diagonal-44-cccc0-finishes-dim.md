@@ -1,10 +1,11 @@
 ---
 # qou-pymd
 title: 'SW-7-4x4: close the diagonal 4×4 (c₁=c₂=c₄=c₆=0) — finishes dim H_3(q)≥6 ⇒ dim=6 ⇒ Wedderburn iso (R2-inst)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-10T18:45:50Z
-updated_at: 2026-08-10T18:45:50Z
+updated_at: 2026-08-10T19:44:44Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k
@@ -43,3 +44,12 @@ Everything except the exact hqi-correction coefficients in steps 2,4,5 is settle
 An agent should extract each hyp's post-simp form with a `have DIAG:True:=by exact e`
 probe (as done here) and tune. Est: ~1 focused session. Result: dim H_3(q)=6 ⇒
 SW-7 iso H_3(q)≅ℝ×ℝ×M₂ = R2-inst at n=3.
+
+## ✅ CLOSED (2026-08-10) — sixWords_indep now sorry-free
+
+The 4×4 closure compiled. Robust recipe that worked: `subst c₅` (=c₄); derive
+hPz/hQz by multiply-by-denominator with `linear_combination (norm := (field_simp; ring))`
+(ring alone can't cancel (q³+q)·(1/(q³+q)) — field_simp uses the ≠0 hyps); then the
+q⁻¹-free cascade hS→hU,hT→ c₆(q²+1)²=0 ⇒ c₆=0, c₄=0, c₃=0, then c₂(q+q⁻¹)=0⇒c₂=0, c₁=0.
+Axiom-clean [propext, Classical.choice, Quot.sound]; lean-direct exit 0; 0 sorries.
+dim H_3(q) ≥ 6 proven; with span_sixWords_eq_top (dim ≤ 6) ⇒ dim H_3(q) = 6.

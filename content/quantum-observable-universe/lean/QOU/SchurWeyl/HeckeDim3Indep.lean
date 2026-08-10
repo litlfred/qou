@@ -73,15 +73,52 @@ theorem sixWords_indep (hq : q ≠ 0)
     rcases mul_eq_zero.mp hfac with h | h
     · linarith [h]
     · exact absurd h hqi_ne
-  -- and the `c₃` relation.
-  have h36 : c₃ = c₆ - c₄ * (q - q⁻¹) := by linear_combination hC - q⁻¹ * h45
-  -- GAP: the final closure `c₁=c₂=c₄=c₆=0` (then `c₃=c₅=0` via `h45`,`h36`) comes from the
-  --   two seminormal DIAGONAL entries `m00`,`m11` (coefficients `c00=-1/(q³+q)`, `c11=q³/(q²+1)`)
-  --   together with `et` (triv) and `es` (sign): a 4×4 system that clears to a polynomial
-  --   identity in `q`.  The explicit `linear_combination` coefficients remain to be computed.
-  --   Tracked as bean `qou-pymd` (parent `qou-0h5k`, epic `qou-59vq`).
-  -- Ref: [kassel1995] Ch. XII — `dim H_n(q) = n!`.
-  sorry
+  -- Eliminate `c₅` (= c₄) throughout.
+  subst c₅
+  have h36 : c₃ = c₆ - c₄ * (q - q⁻¹) := by linear_combination hC
+  -- Nonzero denominators / factors.
+  have hq3q : q ^ 3 + q ≠ 0 := by
+    have : q ^ 3 + q = q * (q ^ 2 + 1) := by ring
+    rw [this]; exact mul_ne_zero hq (by positivity)
+  have hnum : (q ^ 4 + q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  have hq21 : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  -- `et - m00` cancels c₁,c₂ (both carry `c₁ + c₂ q`); factor out `q⁴+q²+1 ≠ 0`.
+  have hPz : c₃ + q * (c₄ + c₄) + q ^ 2 * c₆ = 0 := by
+    have h1 : (q ^ 4 + q ^ 2 + 1) * (c₃ + q * (c₄ + c₄) + q ^ 2 * c₆) = 0 := by
+      linear_combination (norm := (field_simp; ring)) (q ^ 3 + q) * et - (q ^ 3 + q) * m00
+    exact (mul_eq_zero.mp h1).resolve_left hnum
+  -- `es - m11` cancels c₁,c₂ (both carry `c₁ - c₂ q⁻¹`); clear q⁻¹ (×q³(q²+1), hqi).
+  have hQz : c₃ * q ^ 2 - q * (c₄ + c₄) + c₆ = 0 := by
+    have h1 : (q ^ 4 + q ^ 2 + 1) * (c₃ * q ^ 2 - q * (c₄ + c₄) + c₆) = 0 := by
+      linear_combination (norm := (field_simp; ring)) q ^ 3 * (q ^ 2 + 1) * m11 - q ^ 3 * (q ^ 2 + 1) * es
+    exact (mul_eq_zero.mp h1).resolve_left hnum
+  -- c₃ + c₆ = 0.
+  have hS : c₃ + c₆ = 0 := by
+    have hR : (1 + q ^ 2) * (c₃ + c₆) = 0 := by linear_combination hPz + hQz
+    exact (mul_eq_zero.mp hR).resolve_left (by positivity)
+  -- q⁻¹-free relations, then `c₆·(q²+1)² = 0`.
+  have hU : 2 * q * c₄ + c₆ * (q ^ 2 - 1) = 0 := by linear_combination hPz - hS
+  have hT : c₄ * (q ^ 2 - 1) - 2 * c₆ * q = 0 := by
+    linear_combination q * h36 - q * hS + c₄ * hqi
+  have hc6 : c₆ = 0 := by
+    have hV : c₆ * (q ^ 2 + 1) ^ 2 = 0 := by
+      linear_combination (q ^ 2 - 1) * hU - 2 * q * hT
+    exact (mul_eq_zero.mp hV).resolve_right (by positivity)
+  have hc4 : c₄ = 0 := by
+    have : 2 * q * c₄ = 0 := by linear_combination hU - (q ^ 2 - 1) * hc6
+    have h2q : (2 : ℝ) * q ≠ 0 := by simp [hq]
+    exact (mul_eq_zero.mp this).resolve_left h2q
+  have hc3 : c₃ = 0 := by linear_combination hS - hc6
+  -- c₁, c₂ from et, es with c₃ = c₄ = c₆ = 0.
+  have hc2 : c₂ = 0 := by
+    have h2 : c₂ * (q + q⁻¹) = 0 := by
+      linear_combination et - es
+        - hc3 * (q - -q⁻¹) - hc4 * (q * q - -q⁻¹ * -q⁻¹) - hc4 * (q * q - -q⁻¹ * -q⁻¹)
+        - hc6 * (q * q * q - -q⁻¹ * -q⁻¹ * -q⁻¹)
+    exact (mul_eq_zero.mp h2).resolve_right hqi_ne
+  have hc1 : c₁ = 0 := by
+    linear_combination et - hc2 * q - hc3 * q - hc4 * (q * q) - hc4 * (q * q) - hc6 * (q * q * q)
+  exact ⟨hc1, hc2, hc3, hc4, hc4, hc6⟩
 
 end Indep
 
