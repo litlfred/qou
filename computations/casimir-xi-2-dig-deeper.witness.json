@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T21:31:28.240561+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "computedAt": "2026-08-10T17:36:23.069255+00:00",
+  "commitSha": "56e9680162560f9e3c8639adba2ffda1ade01318",
   "assertions": [
     {
       "name": "normalized_markov_trace_identity_is_one",
@@ -18,7 +18,7 @@
   "computation": "casimir-xi-2-dig-deeper",
   "scriptFile": "casimir_xi_2_dig_deeper.py",
   "scriptHash": "778f84d3b86d",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,9 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Resolves the ξ_2 flip-flop on conj:casimir-epsilon-vacuum. Shows the ξ_k=0 calibration is circular and that ξ_2 is gated on the N_⊙ construction: normalized Markov trace of identity ≡ 1 ∀q (tautological ξ_k=0), unnormalized weight sum diverges with n.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
@@ -80,42 +79,42 @@
           "sum_y_dim": "1.0",
           "sum_y_unnorm": "1.0",
           "sum_y_unnorm_classical": "1.0",
-          "h2coef_unnorm_rel": "-3.0576481e-50"
+          "h2coef_unnorm_rel": "0.0"
         },
         {
           "n": 3,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.719070366019",
+          "sum_y_unnorm": "0.752702113845",
           "sum_y_unnorm_classical": "0.75",
-          "h2coef_unnorm_rel": "-0.94356166"
+          "h2coef_unnorm_rel": "0.082432629"
         },
         {
           "n": 4,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.50761403668",
+          "sum_y_unnorm": "0.566560472187",
           "sum_y_unnorm_classical": "0.5625",
-          "h2coef_unnorm_rel": "-2.2325209"
+          "h2coef_unnorm_rel": "0.16516225"
         },
         {
           "n": 5,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.312924316301",
+          "sum_y_unnorm": "0.380418830529",
           "sum_y_unnorm_classical": "0.375",
-          "h2coef_unnorm_rel": "-3.7874509"
+          "h2coef_unnorm_rel": "0.33062148"
         },
         {
           "n": 6,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.189837600817",
+          "sum_y_unnorm": "0.255433433367",
           "sum_y_unnorm_classical": "0.25",
-          "h2coef_unnorm_rel": "-5.5060723"
+          "h2coef_unnorm_rel": "0.49726868"
         },
         {
           "n": 7,
           "sum_y_dim": "1.0",
-          "sum_y_unnorm": "0.107062718715",
+          "sum_y_unnorm": "0.161356660724",
           "sum_y_unnorm_classical": "0.15625",
-          "h2coef_unnorm_rel": "-7.2026044"
+          "h2coef_unnorm_rel": "0.74777983"
         }
       ],
       "verdict": "q-dependent; relative h²-coefficient grows with n. A divergent, n-dependent ξ_2 is inadmissible for a single observable → naive 'prefactor = Markov trace on H_n(q)' needs ζ-regularization (the q-independent step)."
