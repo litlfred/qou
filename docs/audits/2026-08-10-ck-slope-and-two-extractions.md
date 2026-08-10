@@ -120,11 +120,55 @@ under `c_k_unresolved_raw_quotient` so nothing is hidden; and a new
 `c_k_resolution` block records the residual, the drop, and the verdict per
 rung. The printed table flags each unresolved rung inline.
 
-### Residual disagreement at k = 4, still open
+### The k=4 conflict is moot — and the first guard was off by one
 
-With k ≥ 5 disposed of, one genuine conflict survives: at k = 4 both
-extractions are *resolved* yet disagree — A gives −1.133, B gives −2.538, a
-factor 2.2. That is not a floor artifact and needs settling on the merits.
+Chasing the surviving k = 4 disagreement produced two corrections, one to this
+audit's own fix.
+
+**(i) `R` carries exactly one degree of freedom.** At 70 dps,
+`R₀ − 1 = −7.379e-05`, and
+
+```
+c₂ := (R₀ − 1)/u²  =  −1.01721732856672495132406625322
+R₀ / (1 + c₂u²) − 1  =  0.0        exactly
+```
+
+One rung consumes `R` completely; a self-consistent chain then extracts
+`c_k = 0` for every `k ≥ 3`. `R(q₀)` is a **single scalar**, so **at most one
+`c_k` can ever be determined by this procedure.** What the later rungs do is
+not measurement: the canonical `c_k` are *imposed*, and the extraction reports
+the leftover. Those impositions are still genuine *tests* — a wrong canonical
+leaves the residual high — but a test is not an extraction.
+
+**(ii) The guard credited each rung with its predecessor's drop.** `residual[k]`
+is the residual *before* rung `k` is applied, so the reduction achieved **by**
+rung `k` is `residual[k]/residual[k+1]`, not `residual[k−1]/residual[k]`.
+Attributed correctly:
+
+| canonical imposed | residual before → after | drop |
+|---|---|---|
+| `c₂ = −1` | 7.379e-05 → 1.249e-06 | **59.1×** |
+| `c₃ = −2` | 1.249e-06 → 1.336e-08 | **93.5×** |
+| `c₄ = −2b⁴ = −1.133` | 1.336e-08 → 7.393e-09 | **1.81×** |
+| `c₅` | → 7.336e-09 | 1.01× |
+| `c₆, c₇` | → 7.337e-09 | 1.00× |
+
+So **only `c₂` and `c₃` are supported by the data.** `c₄` buys 1.81× against a
+~117× expectation — it is already inside the floor. The corrected witness emits
+values for `c₂, c₃` and `null` for `c₄ … c₁₀` (`last_resolved_rung: 3`,
+`n_unresolved: 7`).
+
+**Therefore the k=4 conflict needs no adjudication.** `−1.133` (closed form)
+versus `−2.538` (extraction) is a disagreement between a prediction and a
+leftover; neither is a measurement of `c₄`, because this procedure cannot
+measure `c₄`.
+
+**What survives.** `c₂ = −1` and `c₃ = −2` are tested and pass convincingly
+against `R(q₀)`. Everything above is unconstrained by this datum and must come
+from the Habiro/q-difference structure — which is exactly what
+`prop:q-beta-c-k-recursion-from-habiro-q-difference` says, and why it insists
+`R` *"cannot be fixed by fitting the `Bₙ`"*. The extraction was doing the thing
+that proposition forbids.
 
 ### Do not "fix" this by renaming
 
