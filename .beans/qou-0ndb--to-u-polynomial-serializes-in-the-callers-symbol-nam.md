@@ -45,3 +45,35 @@ So the workaround **stays**. It is not yet a cleanup that can be done
 safely, and the file that pins it is now identified rather than merely
 suspected. Retiring it means regenerating the atomic witness first and
 re-running everything downstream of it — a larger, separate arc.
+
+## Consumer survey: which `check_q`-only readers are armed, and which are safe
+
+Following the PR #4926 catch, surveyed every remaining consumer that
+sympifies with `locals={"check_q": u}` alone. The discriminator is whether
+the reader's own `u` carries sympy assumptions:
+
+    sympify("3*u + 1") mints Symbol('u') with NO assumptions
+      == sp.Symbol('u')                        ->  True   (SAFE)
+      == sp.Symbol('u', positive=True, real=True) -> False (ARMED)
+
+So a `check_q`-only reader breaks on a `u`-string **only if its own symbol
+is assumption-bearing**. Survey:
+
+    markov/markov_substrate_realizer.py       u = sp.symbols("u")     SAFE
+    probes/habiro_frobenius_probe.py          u = sp.symbols("u")     SAFE
+    probes/habiro_expansion_atomic_probe.py   u = sp.Symbol("u")      SAFE
+    probes/probe_direct_cyclotomic_map.py     u = sp.Symbol('u')      SAFE
+    probes/qbeta_habiro_phi8_squared…probe.py u = sp.Symbol("u", …)   ARMED  <- fixed
+
+All four survivors read only `habiro-coefficients-atomic*.witness.json`,
+which still says `check_q`, AND all four are assumption-free. The one
+reader with an assumption-bearing `u` was the one that got caught.
+
+**Consequence for the retirement condition.** Regenerating the atomic
+witness (migrating it `check_q` -> `u`) will NOT break these four: a fresh
+assumption-free `Symbol('u')` equals theirs. That removes the objection
+that made the atomic migration look risky. It is still a real arc — the
+atomic witness is the upstream every per-atom extract loads τ_p / τ_n
+from — but the blocker is now scoped rather than open-ended.
+
+The two-name `locals` still stays until that migration actually happens.
