@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/information-theory/gravitational-constant.lean"
   },
   "source_hashes": {
-    "md": "8fe14e67ff4a",
     "ts": "1290d0055194",
-    "lean": "e9886c1362e3",
-    "lean_statement": "3f9034980708"
+    "md": "8fe14e67ff4a",
+    "lean": "e9886c1362e3"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -834,17 +833,17 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
-        "notes": "{\"regimes\":[\"real-gt-1\",\"real-positive\"],\"chapter\":\"information-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6",
+        "notes": "{\"regimes\":[\"generic-R\",\"real-gt-1\",\"real-positive\"],\"chapter\":\"information-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-positive\",\"symbolic\"]}"
       }
     ],
     "q-usage-fixed-q0-leak": [
@@ -852,16 +851,16 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -869,16 +868,16 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -886,16 +885,16 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -903,16 +902,16 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -920,16 +919,16 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -937,16 +936,16 @@
         "field_hash": {
           "ts": "1290d0055194",
           "md": "8fe14e67ff4a",
-          "lean": "768ff3c9a17f"
+          "lean": "e9886c1362e3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1550,5 +1549,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-10T03:16:48.395Z"
+  "updated_at": "2026-08-10T03:43:05.281Z"
 }
