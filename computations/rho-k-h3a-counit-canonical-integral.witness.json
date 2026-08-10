@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T13:04:56.829150+00:00",
-  "commitSha": "f0180ce6db22cc59f129c68bfdb65bfb9ec240d8",
+  "computedAt": "2026-08-10T14:39:45.166263+00:00",
+  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
@@ -22,6 +22,7 @@
     "scipy": "1.17.1",
     "sympy": "1.12",
     "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "Δ_λ counit/canonical-integral candidate (Δ_λ=1/y_λ, ω=G^{-1}𝟙) tested at the deuteron. Parameter-free; genuinely distinct from all six refuted ansätze; REFUTED on sign (vortex-blind), but first candidate in the correct magnitude regime. audit_only; no new anchor, no fit.",
@@ -31,15 +32,15 @@
     "candidate": "counit / canonical-integral, Δ_λ = 1/y_λ (ω = G^{-1}·𝟙)",
     "free_parameters": 0,
     "distinct_from_six_refuted": true,
-    "target_signed_m_e": "-4.35336727599176416",
+    "target_signed_m_e": "-4.35336500592839429",
     "tol_m_e": 1,
     "trM_mass_reading_sum_y_chi": "0.388286424074788877",
     "counit_sum_chi": "4.92667752364677132",
-    "magnitude_ratio_abs_counit_over_abs_target": "1.13169351707",
+    "magnitude_ratio_abs_counit_over_abs_target": "1.13169410719",
     "right_sign": false,
-    "signed_miss_vs_target": "9.28004479964",
+    "signed_miss_vs_target": "9.28004252958",
     "closes_deuteron_gate": false,
-    "sign_flipped_reading_miss_B_eq_minus_eps": "0.573310247655",
+    "sign_flipped_reading_miss_B_eq_minus_eps": "0.573312517718",
     "verdict": "REFUTED (parameter-free, on SIGN). Counit Σ_λ χ^λ(β_D) = +4.92668 > 0 > target −4.35337; same vortex-blind failure as co-Casimir. First candidate in the correct magnitude regime (13%, 30× closer than co-Casimir) — residual localised to the vortex (Hopf/L±) sign-content. Scope-(a): counit ALONE insufficient; NOT excluded as an ingredient (counit + vortex is the lead). A fitted c to close (c=−0.884) would be the barred 7th fit-based ansatz.",
     "per_lambda": [
       {

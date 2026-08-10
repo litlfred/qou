@@ -1,11 +1,11 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:49:47.481241+00:00",
-  "commitSha": "576d19cd00392d6a67b0dd24d2ef3d7bcf3b8792",
+  "computedAt": "2026-08-10T13:54:09.349634+00:00",
+  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 116,
+  "durationMs": 64,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
   "scriptHash": "9dec1cdfee64",
@@ -22,6 +22,7 @@
     "scipy": "1.17.1",
     "sympy": "1.12",
     "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "Lossless per-λ χ(q₀) caches via Rust chi_q_via_gp for arbitrary nuclides (generalizes chi_4he_via_rust_lossless.py). χ_λ is dim-independent (~20 ms/λ) so any H_n is seconds; consumes the closed-form y_λ tower for n>12. Produces the canonical chi-{atom}-h{n}-...-matrix-m.witness.json the active-set / binding consumers read. Sign-only convention; matches the matrix-M backend to the 50-dps floor (#2062 §8).",
@@ -54,6 +55,6 @@
         "reused": true
       }
     ],
-    "total_time_sec": 0.12
+    "total_time_sec": 0.06
   }
 }

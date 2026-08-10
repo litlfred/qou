@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:50:08.770896+00:00",
-  "commitSha": "576d19cd00392d6a67b0dd24d2ef3d7bcf3b8792",
+  "computedAt": "2026-08-10T14:25:09.868368+00:00",
+  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13580,
+  "durationMs": 26286,
   "computation": "rho-k-co-casimir-extended",
   "scriptFile": "rho_k_co_casimir_extended.py",
   "scriptHash": "6b46797533d4",
@@ -22,6 +22,7 @@
     "scipy": "1.17.1",
     "sympy": "1.12",
     "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
   "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B for every L1 atom — incremental save.",
@@ -222,7 +223,7 @@
             "contribution_y_chi_Delta": "0.00000841958852569676645960563957061921662687959405632501811542676"
           }
         ],
-        "compute_wall_sec": 0.61,
+        "compute_wall_sec": 0.68,
         "status": "ok"
       },
       {
@@ -701,7 +702,7 @@
             "contribution_y_chi_Delta": "-0.0000000594926249927513772744478020992959082137891279750933507244409"
           }
         ],
-        "compute_wall_sec": 8.13,
+        "compute_wall_sec": 13.6,
         "status": "ok"
       },
       {
@@ -1180,7 +1181,7 @@
             "contribution_y_chi_Delta": "-0.0000000391926595893983343131952519247167813569616866404457786154855"
           }
         ],
-        "compute_wall_sec": 4.54,
+        "compute_wall_sec": 11.67,
         "status": "ok"
       }
     ],
@@ -1203,11 +1204,11 @@
       },
       {
         "path": "rho-k-h3a-refinement.witness.json",
-        "sha256": "7e65c3339b2dd1d05be2a485d36858b01f7ef90bdeec8fcd97c88b8c86555397",
-        "size_bytes": 13621,
-        "commitSha": "a1d21fc9e6705b2cf989d517cf56224a46b25d8a",
-        "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-        "computedAt": "2026-07-18T17:56:31.859354+00:00"
+        "sha256": "bafafa5dbb5c5b1c89266da558d5a1878c0a889bd0daa1701406defc425862bf",
+        "size_bytes": 13983,
+        "commitSha": "f0180ce6db22cc59f129c68bfdb65bfb9ec240d8",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T13:05:01.309272+00:00"
       },
       {
         "path": "rho-k-h3a-co-casimir.witness.json",
