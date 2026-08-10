@@ -54,6 +54,7 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 set_compute_dps()
 
@@ -97,21 +98,32 @@ def q0_for(anchor: str) -> str:
     raise SystemExit(f"unknown anchor {anchor!r}: expected 'proton' or 'ideal'")
 
 
-def evaluate_y_at_q0(symbolic_str: str, q0_str_50dps: str) -> str:
-    """Evaluate a symbolic y_λ expression at q_0 to 50 dps.
+def evaluate_y_at_q0(partition, q0_str_50dps: str) -> str:
+    """Evaluate y_λ at q_0 to 50 dps, from the LIVE formula.
 
     Returns the value as a 50-dp decimal string (mpf-roundtrip safe).
+
+    CONVENTION (2026-08-10, bean `qou-eea0` / `qou-toi3`).  This took the
+    `y_lambda_symbolic` string from
+    `y-lambda-wenzl-bridge-symbolic-witness.json` and `sp.sympify`'d it.
+    That witness is convention C — its entries carry `sqrt(q)` / `q**(3/2)`,
+    the half-argument variable of `z = 1/(q^{1/2}+q^{-1/2})`, which D never
+    produces because D stays inside ℚ(q).
+
+    `y_lambda_wenzl_bridge` guards that cache (`_cached_symbolic_agrees`,
+    bean `qou-wgta` item 3), but the guard is on the module's symbolic entry
+    point and this script opened the JSON itself — so the guard never ran.
+    Four scripts shared that shape; this is one of them.
+
+    Takes the number from the module's numeric entry point instead, which is
+    convention D.  Anchor-neutral: q₀ still arrives from the caller, so
+    `--anchor proton` / `--anchor ideal` keep writing their own caches.
     """
-    expr = sp.sympify(symbolic_str)
-    free = expr.free_symbols
-    if free:
-        qsym = next(iter(free))
-        sub = expr.subs(qsym, sp.sympify(q0_str_50dps))
-    else:
-        sub = expr
-    val = sub.evalf(mp.mp.dps)
-    # Roundtrip via mp.mpf to canonicalise the string format.
-    return mp.nstr(mp.mpf(str(val)), mp.mp.dps, strip_zeros=False)
+    with mp.workdps(mp.mp.dps):
+        val = y_lambda_wenzl_bridge_numeric(
+            list(partition), mp.mpf(q0_str_50dps), dps=mp.mp.dps
+        )
+    return mp.nstr(val, mp.mp.dps, strip_zeros=False)
 
 
 def main() -> int:
@@ -143,14 +155,23 @@ def main() -> int:
         src = sym_tables[n_str]
         weights = src["weights"]
         print(f"  Evaluating n={n}: {len(weights)} partitions ...", flush=True)
-        # z = 1 / (q^{1/2} + q^{-1/2}) at 50 dps
+        # Markov parameter at 50 dps, convention D: z = q^3 / (q^2 + 1).
+        #
+        # Was `1 / (sqrt(q) + 1/sqrt(q))` — convention C — emitted verbatim
+        # into the witness's `z` field. The producer audit reports this file
+        # clean because it looks for C in the *y_λ* computation; this is a
+        # separate scalar written beside it. D needs no `mp.sqrt`, which is
+        # the same portability tell the migration found from the other side:
+        # C must reach for a square root, D never leaves ℚ(q).
         q = mp.mpf(q0_str)
-        z = mp.mpf(1) / (mp.sqrt(q) + mp.mpf(1) / mp.sqrt(q))
+        z = q ** 3 / (q ** 2 + 1)
 
         out_weights = []
         for w in weights:
             lam = w["partition"]
-            y_str = evaluate_y_at_q0(w["y_lambda_symbolic"], q0_str)
+            # partition only — the y_lambda_symbolic beside it is
+            # convention C and is deliberately not read (see above).
+            y_str = evaluate_y_at_q0(lam, q0_str)
             out_weights.append({
                 "partition": lam,
                 "depth": max(0, len(lam) - 1),
