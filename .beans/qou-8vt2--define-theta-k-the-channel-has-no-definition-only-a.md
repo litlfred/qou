@@ -476,3 +476,106 @@ filters can now be inherited on evidence instead of on assertion — which is wh
 saves the next agent the nine-reading search this bean was opened to stop.
 
 Status stays `todo`.
+
+---
+
+# THE FIBRE-LEVEL ROUTE — what theory exists to derive from (2026-08-10)
+
+Answering the owner's question directly: *what theory do we have to derive a
+fibre-level element with?* Surveyed the corpus rather than reasoning from
+memory. The answer is that **almost the whole apparatus exists and is proved;
+exactly one object is missing, and it is a better-placed object than ϑ_K.**
+
+## What exists, verified
+
+**The fibre home.** `def:habiro-ring`, `def:z-habiro-ring`,
+`def:qz-bicompletion` — the cyclotomic completion `ℤ[q,q⁻¹]^` where an element
+can have different archimedean evaluations at each anchor. This is the formal
+home AGENTS.md's fibre-vs-observable table demands.
+
+**The engine.** `prop:q-beta-c-k-recursion-from-habiro-q-difference` states the
+implication we need: if `F(qξ) = R(q,ξ)·F(ξ)` has depth `d`, then
+
+    c_{k+1} = Σ_{j=1..d} a_j(q₀)·c_{k+1-j},   a_j ∈ ℚ(q₀) extracted from R.
+
+**The engine's lower half is PROVED, sorry-free, over a generic ring.**
+`QOU/BraidKnot/QBetaPreArchHeatDepthOneKernel.lean` (0 real sorries, 0 axioms,
+`{R : Type*} [CommRing R]` — correct §7c, no gratuitous `ℝ`):
+
+    jackson_fixed_shift_kernel          the fixed q-shift kernel
+    heat_mode_depth_one_kernel          each heat mode is depth-1 Jackson
+    two_mode_depth_two_composition      two depth-1s compose to depth-2
+    heat_two_mode_composition           …for the heat modes specifically
+
+So "the q-difference equation derives from the depth-1 Jackson equations of each
+mode" is not a hope — the mode-level and two-mode composition steps are theorems.
+Kernel-side constraints additionally live in
+`QOU/BraidKnot/QBetaCKRecursionKernelConstraints.lean`.
+
+**Free filters on any candidate kernel**, all already in the corpus:
+  * bar-parity law — `a_j = e_j({r_λ})`, `r_λ = (q−1)μ_λ` bar-odd, so `a_j`
+    alternates bar-parity;
+  * cyclotomic self-reciprocality `Φ_n(1/q)·q^{φ(n)} = Φ_n(q)` ⇒ period-3 closure;
+  * `prop:q-beta-q-eq-one-shadow-gate` + the machine-checked rule that
+    `parity: exactly-odd` with a nonzero q=1 shadow is impossible
+    (`fixed_eval_two_mul_kills_bar_odd`);
+  * the proved seed `c₂ = −1` (Taylor-exact);
+  * the worked precedent AGENTS.md points at: `prop:alpha-em-habiro-bar-involution`,
+    i.e. `[2]_q(1 − h²α)`.
+
+## The one missing object — and why its placement matters
+
+The author's own status note on the recursion prop is explicit:
+
+> "the compute scaffold demonstrates two toy kernels (depth-1 geometric, depth-2
+> **underdetermined-from-seeds-alone**). The categorical `F(q)` construction
+> remains the **open keystone** for the 1 ppQ target."
+
+So `c₂ = −1` does not close even a depth-2 recursion; the `a_j` are needed, hence
+the per-mode rates `μ_λ(q)` and the mode set `Λ` (which fixes `d = |Λ|`).
+
+**Why this is a materially better position than the geometric route.** This bean
+already established that `ϑ_K` "appears at **no step** of the canonical chain" —
+it is a cross-link *between* two chains, which is precisely why it has no
+definition and why nine readings had nothing to be right or wrong about.
+
+`μ_λ` is not like that. It is a **Hecke/Wedderburn spectral quantity — squarely
+ON the chain**, at the step that already produces `y_λ`, `χ_λ`, `d_λ`:
+
+    … → H_n(q) Hecke → Wedderburn (λ ⊢ n) → Frobenius tr_M = Σ_λ y_λ χ_λ → …
+
+So the fibre route converts *"undefined off-chain bridge"* into *"not-yet-extracted
+on-chain spectrum"*. That is the whole gain, and it is why this route deserves the
+next session rather than another ϑ search.
+
+## Concrete next step (formalize-first order)
+
+1. **Derive `μ_λ(q)`** as the q-heat-kernel rates over the Wedderburn blocks,
+   from the Hecke module structure — not from the anchors.
+2. `a_j = e_j({(q−1)μ_λ})` is then **forced**, and `d = |Λ|`.
+3. **Filter before any numerics**, using the already-proved constraints above:
+   the derived `a_j` must alternate bar-parity, must respect the q=1 shadow gate,
+   and must satisfy period-3 closure. Any of these kills a wrong `μ_λ` for free —
+   the formalize-first pruning AGENTS.md §3.3 asks for.
+4. Only then evaluate at both anchors and compare to `c₃`, carrying this bean's
+   ϑ-side filters across via `ϑ² = ln²q₀ − (c₃ + Vol(4₁))/(A_ω·κ)`.
+
+**Guard, unchanged and it applies here too:** a `μ_λ` fitted to reproduce the
+measured `c₃` is a fit, is covered by `ratio_attained`, and closes nothing. The
+Lipschitz obstruction already forbids a smooth real `ϑ(q₀)`, so a `μ_λ` that is a
+smooth real function of `q₀` inherits that exclusion — check it early.
+
+## Defect found while surveying
+
+`prop:q-beta-c-k-recursion-from-habiro-q-difference` carries
+`lean: { ref: "qou:QOU.QBeta.CKRecursion.CKRecursion", validation: "not_checked" }`.
+**No such declaration exists.** The only occurrence of that name is a *comment*
+in `QBetaPerBlockChiClosedForms.lean:1108` describing it as a "Sibling on main
+(2026-06-03)". The real, verifiable Lean is the two files named above. So the
+note's "working recursion engine" is not checkable at the cited ref — the
+manifest's own `not_checked` is the honest flag, and the ref should be repointed
+to what exists. Not fixed here: repointing a `lean.ref` is a content change and
+this is a beans-only pass.
+
+Status stays `todo`. No derivation attempted; this records the route and its
+one keystone.
