@@ -1,13 +1,13 @@
 {
   "engine": "mpmath+snappy",
-  "engineVersion": "mpmath 1.3.0; snappy 3.3.2",
-  "computedAt": "2026-08-09T12:31:08.153569+00:00",
-  "durationMs": 3101,
+  "engineVersion": "mpmath 1.4.1; snappy 3.3.2",
+  "computedAt": "2026-08-10T01:32:55.072905+00:00",
+  "durationMs": 11716,
   "computation": "charm-frobenius-block-projection",
   "scriptFile": "charm_frobenius_block_projection_probe.py",
   "scriptHash": "69650ef30c15",
-  "scriptCommitSha": "ecfa9281df7b60282d55fda3194fe0af3169ecc5",
-  "commitSha": "34981e8882d05a3032dc8d7b81c02f9f0a2f9b27",
+  "scriptCommitSha": "a570a65844db70e62c89a100674fde40a53f36dd",
+  "commitSha": "5f881d3ad7b1b9e330b0b3a77ff1b9a11898d63e",
   "assertions": [
     {
       "name": "hecke_resid_(3,)",
@@ -77,31 +77,31 @@
     "trM_identity": 1.0
   },
   "y_lambda": {
-    "(3,)": 0.4153957953606134,
-    "(2, 1)": 0.2809296310310197,
-    "(1, 1, 1)": 0.02274494257734719
+    "(3,)": 0.5054042265039308,
+    "(2, 1)": 0.2472978867480346,
+    "(1, 1, 1)": 0.0
   },
   "reading_A_scale_free_block_ratio": {
     "braid": "borromean (s1 s2^-1)^3",
     "y_chi_block": {
-      "(3,)": 0.4153957953606134,
-      "(2, 1)": 0.5602258846477554,
-      "(1, 1, 1)": 0.02274494257734719
+      "(3,)": 0.5054042265039308,
+      "(2, 1)": 0.49315793733285646,
+      "(1, 1, 1)": 0.0
     },
     "y_chi_block_gen": {
-      "gen1 (u/d, light)": 0.4153957953606134,
-      "gen2 (c/s)": 0.5602258846477554,
-      "gen3 (t/b)": 0.02274494257734719
+      "gen1 (u/d, light)": 0.5054042265039308,
+      "gen2 (c/s)": 0.49315793733285646,
+      "gen3 (t/b)": 0.0
     },
-    "trM_borromean": 0.998366622585716,
-    "pred_charm_over_light": 1.3486556457833476,
-    "pred_top_over_light": 0.05475486952775208,
+    "trM_borromean": 0.9985621638367873,
+    "pred_charm_over_light": 0.9757693178472477,
+    "pred_top_over_light": 0.0,
     "obs_charm_over_light": 371.8887262079063,
     "obs_top_over_light": 50532.94289897511
   },
   "reading_B_snappy_complex_volume": {
     "note": "twist count k is a KNOB (winding-5 \u27f9 needs k tuned) \u2014 FIT if used to hit m_c; reported for completeness, NOT canonical.",
-    "light_anchor_proj_re (proton [3] block)": 3.0488860337158195,
+    "light_anchor_proj_re (proton [3] block)": 3.708795701616559,
     "candidates": {
       "k=0 (winding 3 on strand1)": {
         "word": [
@@ -116,12 +116,12 @@
         "chern_simons": -2.2497822192399436e-17,
         "components": 3,
         "block_frac_re": {
-          "(3,)": 0.4160754035273741,
-          "(2, 1)": 0.5611424420387777,
-          "(1, 1, 1)": 0.022782154433848168
+          "(3,)": 0.5061319613413051,
+          "(2, 1)": 0.4938680386586949,
+          "(1, 1, 1)": 0.0
         },
-        "charm_block_proj_re": 4.111897362720838,
-        "charm_block_proj_im": -1.2624482885597228e-17
+        "charm_block_proj_re": 3.618929051801194,
+        "charm_block_proj_im": -1.1110955320252368e-17
       },
       "k=1 (winding 5 on strand1)": {
         "word": [
@@ -134,16 +134,16 @@
           1,
           1
         ],
-        "vol": 9.802001165794124,
-        "chern_simons": -0.14232109876142515,
+        "vol": 9.802001165794122,
+        "chern_simons": -0.1423210987614251,
         "components": 3,
         "block_frac_re": {
-          "(3,)": 0.4648194439627773,
-          "(2, 1)": 0.518413815683928,
-          "(1, 1, 1)": 0.016766740353294732
+          "(3,)": 0.5534234463348039,
+          "(2, 1)": 0.44657655366519616,
+          "(1, 1, 1)": 0.0
         },
-        "charm_block_proj_re": 5.081492825697643,
-        "charm_block_proj_im": -0.07378122386123957
+        "charm_block_proj_re": 4.3773438996425735,
+        "charm_block_proj_im": -0.06355726579872123
       },
       "k=2 (winding 7 on strand1)": {
         "word": [
@@ -158,16 +158,16 @@
           1,
           1
         ],
-        "vol": 10.448618163634743,
-        "chern_simons": -0.21323378701260304,
+        "vol": 10.448618163634746,
+        "chern_simons": -0.2132337870126032,
         "components": 3,
         "block_frac_re": {
-          "(3,)": 0.5036932648940182,
-          "(2, 1)": 0.4843373428532121,
-          "(1, 1, 1)": 0.011969392252769632
+          "(3,)": 0.5897236745145122,
+          "(2, 1)": 0.41027632548548776,
+          "(1, 1, 1)": 0.0
         },
-        "charm_block_proj_re": 5.06065595786266,
-        "charm_block_proj_im": -0.10327708580821192
+        "charm_block_proj_re": 4.286820666576989,
+        "charm_block_proj_im": -0.08748477460488596
       },
       "k=3 (winding 9 on strand1)": {
         "word": [
@@ -184,16 +184,16 @@
           1,
           1
         ],
-        "vol": 10.684477168690778,
-        "chern_simons": 0.24797973246763122,
+        "vol": 10.684477168690776,
+        "chern_simons": 0.24797973246763153,
         "components": 3,
         "block_frac_re": {
-          "(3,)": 0.5330625030452413,
-          "(2, 1)": 0.4585925093908888,
-          "(1, 1, 1)": 0.008344987563869883
+          "(3,)": 0.6163570218053254,
+          "(2, 1)": 0.38364297819467463,
+          "(1, 1, 1)": 0.0
         },
-        "charm_block_proj_re": 4.899821196319563,
-        "charm_block_proj_im": 0.11372164779041227
+        "charm_block_proj_re": 4.099024641449534,
+        "charm_block_proj_im": 0.09513568309580081
       },
       "k=4 (winding 11 on strand1)": {
         "word": [
@@ -212,20 +212,20 @@
           1,
           1
         ],
-        "vol": 10.794664454363986,
-        "chern_simons": 0.22397763498608353,
+        "vol": 10.794664454363984,
+        "chern_simons": 0.22397763498608347,
         "components": 3,
         "block_frac_re": {
-          "(3,)": 0.5543565049651875,
-          "(2, 1)": 0.43992636182680644,
-          "(1, 1, 1)": 0.005717133208006066
+          "(3,)": 0.6352573116956504,
+          "(2, 1)": 0.36474268830434964,
+          "(1, 1, 1)": 0.0
         },
-        "charm_block_proj_re": 4.748857460549497,
-        "charm_block_proj_im": 0.09853366609000017
+        "charm_block_proj_re": 3.937274932428125,
+        "charm_block_proj_im": 0.08169420470487444
       }
     }
   },
   "snappy_error": null,
-  "verdict": "Reading (A) [PARAMETER-FREE, scale-free]: the H_3 Wedderburn-block ratio y_[2,1]\u03c7_[2,1] / y_[3]\u03c7_[3] on the Borromean baryon predicts m_charm/m_light = 1.3487, vs observed ~372 (current) \u2014 a 276x UNDERSHOOT. The block projection is O(1), not O(100): the charm/light hierarchy is NOT the Frobenius block ratio of the proton braid. Scope-(a) negative, no knob. Reading (B) needs a tuned twist count (=FIT) to move the number and is NOT canonical. m_c stays OPEN.",
+  "verdict": "Reading (A) [PARAMETER-FREE, scale-free]: the H_3 Wedderburn-block ratio y_[2,1]\u03c7_[2,1] / y_[3]\u03c7_[3] on the Borromean baryon predicts m_charm/m_light = 0.9758, vs observed ~372 (current) \u2014 a 381x UNDERSHOOT. The block projection is O(1), not O(100): the charm/light hierarchy is NOT the Frobenius block ratio of the proton braid. Scope-(a) negative, no knob. Reading (B) needs a tuned twist count (=FIT) to move the number and is NOT canonical. m_c stays OPEN.",
   "scope": "(a) scope-limited negative: block ratio is O(1), charm/light is O(100). No parameter-free block projection reproduces m_c."
 }

@@ -1,15 +1,15 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:58:48.462698+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-10T01:57:38.919389+00:00",
+  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 24,
   "computation": "mass-endomorphism",
   "scriptFile": "mass_endomorphism.py",
-  "scriptHash": "25d4613c5c6d",
-  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
+  "scriptHash": "28266c000178",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -17,64 +17,65 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
-  "description": "Mass endomorphism via Φ_q tower with z²-weighted cross-term. m_p/m_e = 1869.8502 (CODATA: 1836.152, error 1.84%). Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra.",
+  "description": "Mass endomorphism via Φ_q tower with z²-weighted cross-term. m_p/m_e = 9310.3278 (CODATA: 1836.152, error 407.06%). Cross-term weight z² = tr_M(σ₀σ₁) derived from Hecke algebra.",
   "parameters": {
     "q0": "1.1099785827513808",
     "w_sym": "0.1654613850336069",
     "w_std": "0.6690772299327862",
     "w_alt": "0.1654613850336069",
-    "z_markov": "0.4993203341836945",
-    "z_squared": "0.24932079612931635"
+    "z_markov": "0.6126880371464652",
+    "z_squared": "0.3753866308623884"
   },
   "data": {
     "electron": {
       "vols": [
         {
-          "std": 0.7302040316296949,
-          "full": 0.5938489697813897
+          "std": 0.8485266070590096,
+          "full": 0.6730159107881487
         }
       ],
       "n_generators": 1,
-      "descended": 0.5938489697813897,
-      "single": 629.9356375310335,
+      "descended": 0.6730159107881487,
+      "single": 1892.517847618993,
       "cross": 0.0,
-      "total": 630.5294865008149
+      "total": 1893.1908635297812
     },
     "proton": {
       "vols": [
         {
-          "std": 1.1461014324641614,
-          "full": 0.9890072284466807
+          "std": 1.2824204700738204,
+          "full": 1.0802151925176546
         },
         {
-          "std": 0.9295042428871252,
-          "full": 0.9710701534759849
+          "std": 0.893435280545192,
+          "full": 0.9469372320656941
         }
       ],
       "n_generators": 2,
       "crossings": "3σ(B₃)+1σ(uu)+1½(ud)+2σ(gluon) | 3σ⁻¹(B₃)+1½(ud)",
-      "descended": 0.9603954011165766,
-      "single": 1096978.5786418715,
-      "cross": 82016.12011462562,
-      "total": 1178995.6591518982
+      "descended": 1.0228959844379788,
+      "single": 16969232.98215735,
+      "cross": 656993.5756665008,
+      "total": 17626227.580719836
     },
-    "ratio": 1869.8501567228047,
+    "ratio": 9310.32782814957,
     "codata": 1836.152,
-    "error_pct": 1.8352596475022056,
+    "error_pct": 407.0564870527914,
     "atomic_tr_m_recursive_ascent_at_q0": {
-      "proton": "+1.0653061442544502e+00",
-      "neutron": "+9.2323322991163737e-01",
-      "deuteron": "+3.8835714119779147e-01",
-      "tritium": "+1.0407105735473102e-01",
-      "helium-3": "+2.0657843351067215e-01",
-      "helium-4": "+5.5358415544599027e-02"
+      "proton": "+1.1457596924573010e+00",
+      "neutron": "+9.8774368811580959e-01",
+      "deuteron": "+5.7517224391777233e-01",
+      "tritium": "+2.2931010210455682e-01",
+      "helium-3": "+4.0376703685142784e-01",
+      "helium-4": "+1.6097414544240865e-01"
     }
   },
   "q0Anchor": "proton",

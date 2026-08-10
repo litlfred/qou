@@ -1,6 +1,6 @@
 {
   "computation": "y-lambda-mpfr-witness",
-  "computedAt": "2026-08-08T17:49:01.030292+00:00",
+  "computedAt": "2026-08-10T02:01:35.029014+00:00",
   "description": "y_\u03bb values at H_n(R, q_0) evaluated to true 50 dps from the exact symbolic y_\u03bb expressions in y-lambda-wenzl-bridge-symbolic-witness.json. Replaces the f64-truncated witness produced by _deprecated/y_lambda_mpfr_witness.py (line 152: q_str = str(Q0_FLOAT) truncates to 16 digits). The previous witness's claimed '50 dps' values matched true 50 dps only to ~14 digits; this regeneration uses mp.nstr(Q_MP, 50) for q and sympy subs+evalf for each y_\u03bb, giving full 50-dps precision.",
   "engine": "python+mpmath",
   "scriptFile": "regenerate_y_lambda_mpfr.py",
@@ -2945,8 +2945,8 @@
   "audit_reference": "AUDIT-DEEP-2026-05.md \u00a77; PR #564 convention/precision audit",
   "pr": "#564",
   "auditOnly": "AUDIT-DEEP-2026-05.md",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
-  "commitSha": "1c6d981e75e031e5f871a898551d88c205dd8e3a",
+  "scriptCommitSha": "e49bc1fa7705cd8e11561f87dfc30fbda5179267",
+  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0 + mpmath 1.4.1",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
