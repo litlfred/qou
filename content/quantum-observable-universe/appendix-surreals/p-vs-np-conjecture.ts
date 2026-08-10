@@ -25,7 +25,6 @@ export default conjecture({
   },
   uses: [
     "def:reeb-epsilon",
-    "lem:surreal-squeeze",
     "prop:surreal-rate-calculus",
   ],
   tags: [
