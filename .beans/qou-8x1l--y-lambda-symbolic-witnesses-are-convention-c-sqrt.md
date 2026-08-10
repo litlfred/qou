@@ -239,3 +239,42 @@ Calibration: a taint is provenance-**suspect**, not proved C — a producer may
 read a tainted witness and never use the affected field. It is a review queue
 ordered by distance from a seed; the script exits 0 by design. The strong half
 is the converse: untainted *and* failing no content test is clean on both axes.
+
+## RESOLVED — tr_M aligned to D (owner instruction, 2026-08-10)
+
+The chain was already wired: `y-lambda-mpfr-witness.json` declares
+`source_witness = y-lambda-wenzl-bridge-symbolic-witness.json`, the file
+migrated to D. Regenerating propagated D into `_load_y_lambda` and thence
+into `tr_M` — the dependency order the harness computes.
+
+**The 48% split closed to machine-exact.** Bridge vs peel on the deuteron,
+which had disagreed by 0.1868 every run:
+
+    |bridge - peel| = 3.63e-51        (and 2.29e-50, 2.16e-50 on the others)
+
+The peel side was right. My earlier 1.4e-4 "unexplained gap vs peel" was my
+own ad-hoc `Σ y^D χ`, not peel — a correction to my own prior claim.
+
+Canonical tr_M at q₀, C → D: proton 1.06531 → 1.14576, neutron 0.92323 →
+0.98774, deuteron 0.38829 → 0.57517, tritium 0.10405 → 0.22931, helium-3
+0.20654 → 0.40377. Both anchor tables regenerated; convention aligned on
+both **without** touching anchor selection.
+
+## Still open, and now precisely located
+
+1. **`rho_k_h3a_refinement` SW: 0.1868 → 8.15e-5, still failing 1e-40.**
+   NOT convention. Its `y_λ` match the bridge's to **1.14e-8 = 11.4 ppb** —
+   the documented μ–p straddle (it evaluates symbolic weights at the *proton*
+   q₀ while the bridge defaults to the *muon*-pinned ideal table). 1e-8 cannot
+   produce 1.4e-4, so by elimination the residual is in the refinement's own
+   **live χ path**. Separate defect; needs its own bean.
+
+2. **`_Y_LAMBDA_DEFAULT` points at the ideal (muon) table**, against the
+   2026-08-07 proton-default directive. Deliberately so — it carries an
+   explicit *"the default name stays the IDEAL (muon) one so existing
+   consumers are untouched"* comment, and **13 files** read that table.
+   Flipping it is a decision with a blast radius, not a fix. Owner call.
+
+3. **Downstream regeneration.** tr_M moved +7.5% to +120% into the
+   mass/binding layer. Every consumer needs re-running; the taint queue
+   (`scripts/convention-c-taint.py`, 695 suspect) is how to enumerate them.
