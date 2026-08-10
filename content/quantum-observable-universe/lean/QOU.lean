@@ -119,6 +119,10 @@ import QOU.StandardModel.HyperchargeBatteryReduction
 -- would make L identically 0. Scope-(b); the repair is a FILTRATION
 -- (QOU/KnotTheory/Vassiliev), untested. bean qou-kl39
 import QOU.StandardModel.LeptonNumberGradingObstruction
+-- Stronger: NO function of the unframed knot type reproduces the corpus L
+-- table. The unknot is amphichiral, so the nu / nubar rows assign +1 and -1
+-- to the SAME knot. The carrier must be chiral, or L must see framing.
+import QOU.StandardModel.LeptonNumberCarrierChirality
 -- The strand-twist hypercharge battery reduces to the single equation T = 3Q:
 -- the nucleon check is entailed by charge additivity (and states one condition
 -- twice), and the '4 of 10,000 survivors' is 1x2x2x1 multiset counting.
