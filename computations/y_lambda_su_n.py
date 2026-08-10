@@ -104,6 +104,7 @@ sys.path.insert(0, str(HERE))
 
 import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def q_int(m, q: "mp.mpf") -> "mp.mpf":
@@ -259,6 +260,14 @@ def z_from_weights(q: "mp.mpf", y: dict) -> "mp.mpf":
 
 
 # ── self-test ────────────────────────────────────────────────────────────
+# MUST precede the mpf() literals below. `mp.mp.dps` is only raised inside
+# self_test() (line ~271), which runs long after import — so without this the
+# registry constants are parsed at mpmath's default 15 dps, rounded to 53 bits,
+# and are ALREADY WRONG when built. `module_const_precision_audit --strict`
+# flags exactly REG_ZC / REG_ZD for this. Idempotent, and safe alongside the
+# dps juggling inside the self-test.
+set_compute_dps(50)
+
 _Q = "1.1099785827513808075916690956107688798744991218736"
 # docs/coordination/trace-convention-registry.md, at the proton pin
 REG_C = (mp.mpf("0.4153958"), mp.mpf("0.2809296"), mp.mpf("0.0227449"))

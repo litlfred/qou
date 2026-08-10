@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-09T17:00:00Z
+updated_at: 2026-08-10T02:10:00Z
 ---
 
 ## The finding
@@ -1025,3 +1025,413 @@ Every one of these bit me at least once, and each is invisible to a naive
 `_deprecated/qbeta-gb-filtration-residues.witness.json` is malformed in a way
 NaN does not explain — it contains hand-written `+20.27` and `+202689`, and
 JSON forbids a leading plus. Not touched (deprecated).
+
+---
+
+## MERGED — PR #4893, `8cf939a3b`. Ratchet on `main`: 4 NEW, 0 REGRESSED
+
+From 18 NEW + 2 REGRESSED when this branch started. **Both REGRESSED entries
+are gone.** Rebase-merged as 47 linear commits per AGENTS.md rule 8.
+
+Two mechanical notes for the next merge of this kind:
+
+  * **A branch containing a merge commit cannot be rebase-merged** — GitHub
+    returns `405 This branch can't be rebased`. Integrating `origin/main` with
+    `git merge` therefore forecloses the repo's DEFAULT merge method. Fix:
+    `git rebase origin/main` locally to linearize, then rebase-merge. Verified
+    the linearization was content-neutral (`git diff backup HEAD` empty) before
+    force-pushing with an explicit `--force-with-lease=<ref>:<sha>`.
+  * The `witness-raw-float64-audit` witness conflicts on EVERY such merge and
+    rebase, because both sides carry a stale snapshot of its own counts.
+    Neither side is the answer: resolve by taking either and **re-running the
+    producer**, which is what the file is for.
+
+## STALE PUBLISHED VALUES — `charm-frobenius-block-projection` (NOT a drain issue)
+
+Found while sizing the three witnesses main brought in. This one's committed
+numbers **do not reproduce from current `main`**, and not by a little:
+
+    pred_charm_over_light          1.3486556457833476 -> 0.9757693178472477   (28%)
+    pred_top_over_light            0.05475486952775208 -> 0.0                 (100%)
+    y_chi_block.(1, 1, 1)          0.02274494257734719 -> 0.0                 (100%)
+    y_chi_block.(3,)               0.4153957953606134 -> 0.5054042265039308   (22%)
+    y_chi_block.(2, 1)             0.5602258846477554 -> 0.49315793733285646  (12%)
+
+38 fields move by more than 1e-9. Two go to exactly zero.
+
+**I first assumed mpmath 1.4.1 vs 1.3.0 and I was wrong** — downgrading to
+1.3.0 and re-running gives the same new values, so the interpreter environment
+is not the cause. The producer's own inputs or code changed under a witness
+that was never re-run.
+
+NOT regenerated here, deliberately: a 28% move in a published physics ratio is
+not something to bundle into a float64-serialization commit. It needs its arc's
+owner to say which number is right. Recorded as its own open item.
+
+`m-tau-complex-volume-search` has a smaller version of the same: `snappy_volume`
+-4.34e-14 -> -1.48e-8. Both are numerically zero, but the committed one is not
+what a fresh run produces.
+
+## Drained since the merge
+
+    delta-lambda-alexander-phase4   67 -> 0   (branch
+                                    claude/drain-main-inherited-float64)
+
+It is the only one of main's three that reproduces EXACTLY before the drain, so
+the drain is the sole change. Every value is f64-limited by construction (sympy
+`.evalf()` then `complex()`), so it is written at binary64's round-trip width;
+all 67 round-trip bit-identically.
+
+## Open
+
+    charm-frobenius-block-projection   79   values stale by up to 28% — owner
+    m-tau-complex-volume-search        54   snappy_volume does not reproduce
+    ground-state-ordering-argmin-sweep  1   lean_bridge block has no producer
+
+Inherited reds on `main` that are NOT this bean's arc, recorded so the next
+prepare-merge does not mistake them for new:
+
+    float64-padding ratchet   cross-check-trM-1ppb.witness.json  (dbd91b5ff)
+    module-const precision    y_lambda_su_n.py REG_ZC / REG_ZD
+
+---
+
+## THE RATCHET IS GREEN. 0 NEW, 0 REGRESSED — and so are the other two gates
+
+`scripts/precision-gates.sh`: **All blocking precision gates green.**
+
+From 18 NEW + 2 REGRESSED when this bean's arc started, through 21 NEW + 2 that
+`main` accrued in parallel. **Nothing baselined, no `--rebaseline`, no number
+hand-edited** — every entry fixed at its producer and verified by diffing the
+regenerated witness against a pre-drain copy.
+
+### The last entry was stuck on a destructive producer, not on float64
+
+`ground-state-ordering-argmin-sweep` sat at 1 field for the whole arc because
+re-running it DELETED a published result: its witness carries a `lean_bridge`
+block **no producer writes** (added by `7c60b2f38`, cited by
+`docs/audits/2026-08-09-ground-state-ordering-truth-value.md`), and the write
+was a plain overwrite.
+
+Fixed by making the write MERGE — any top-level block already on disk that the
+run does not compute is carried forward, and the run prints which. A producer
+that silently drops published data is a worse defect than a stale field. Run
+with `--max-a 16` to match the committed sweep (the script's default 14 would
+shrink it 62 -> 47 cases). `lean_bridge` byte-identical, zero non-timing
+differences.
+
+### The other two gates: one root cause, inherited from main
+
+Both were the same defect — an `mpf()` literal parsed at module import while
+mpmath is still at its DEFAULT 15 dps, with the real precision set later inside
+a function:
+
+    float64-padding    cross_check_trM_1ppb.py  TOLERANCE_PPQ = mpf("1e-15")
+                       at module scope; mp.dps = args.dps in main(). str()
+                       then printed the binary64 expansion
+                       0.000000000000001000000000000000077705399876661079...
+                       for a value that is exactly 1e-15.
+
+    module-const       y_lambda_su_n.py  REG_ZC / REG_ZD, the
+                       trace-convention-registry reference constants, rounded
+                       to 53 bits before self_test() raises dps to 30 —
+                       "already wrong when built".
+
+Both fixed as the gate's own message prescribes: idempotent
+`set_compute_dps()` at module scope above the constants.
+
+**This is now the FOURTH instance of that defect class in this bean** —
+`VOL_41` in the tetrahedral probe, `gram_qtrace`'s q0, and now these two. It is
+the single most repeated precision bug in the corpus, it is invisible until
+something prints the value at high dps, and the fix is one line every time.
+Worth a lint rule rather than a fifth discovery.
+
+### `m-tau`: the value that "did not reproduce" was NONDETERMINISTIC
+
+Not staleness. `snappy_volume` for the torus carriers returned
+`-4.335420911161236e-14` on one call and `-2.4684863123708434e-07` on the next,
+**in the same process**, with `solution_type` = "contains degenerate
+tetrahedra". A torus-knot complement is Seifert-fibred, not hyperbolic, so the
+volume is exactly zero — the module's own docstring says so — and SnapPy was
+returning the residual of a degenerate solve.
+
+17 digits of solver noise were being published as a measurement, which is why
+the witness could never reproduce. Now the exact 0 with a note; `solution_type`
+still carries the degeneracy; the `hyperbolic` verdict is untouched (threshold
+1e-4, orders above any residual). Two consecutive full runs now differ in
+nothing outside metadata.
+
+## Open, and none of it is drain work
+
+    charm-frobenius-block-projection   RESOLVED — was convention C, see qou-wgta
+    the C cache + 15 direct readers     qou-wgta P0, recorded there
+    4 witnesses still not valid JSON    a-K (solver-pinning decision), term6
+                                        (producer broken on HEAD), oxygen-14
+                                        (no live producer), A-operator-rank
+                                        (>200s budget)
+
+---
+
+## Two more producers revived; the bare-literal count is 20 live -> 3
+
+### `term6_full_pole_sum` was DEAD on main, for the habiro bug's mirror image
+
+I recorded earlier that term6's producer "is already broken on HEAD" and left
+its witness. The cause turns out to be the same defect as the habiro NaNs,
+seen from the consumer side:
+
+    term6 reads p_in_u / denom_in_u out of
+    habiro/habiro-coefficients-atomic.witness.json and does
+    `sp.sympify(s)` with NO locals, then `.subs(u, sqrt(q))`.
+
+That witness (2026-07-18) stores those polynomials in terms of **`check_q`**,
+because `to_u_polynomial(expr, q, check_q)` renders its strings using whatever
+SYMBOL the caller passed. So the sympified expression got its own free symbol,
+the subs no-opped, the expression stayed symbolic, and
+`float(complex(sp.N(...)))` raised "Cannot convert expression to float".
+
+Fixed with `locals={"u": u, "check_q": u}` — the same both-names fix applied to
+the habiro extract. **The producer runs for the first time**, and the status
+logic committed earlier finally takes effect:
+
+    term6_simple_residue_partial  Infinity  ->  "inf"   (marker)
+    term6_in_MeV                  Infinity  ->  null
+    status   "complete-simple-poles-only"  ->  "divergent-simple-pole-sum"
+
+Drained in the same pass, 72 raw float64 -> 0.
+
+Proton/neutron MeV move ~1.3e-9 and that is INHERITED: `m_e_MeV` was refined
+upstream from 0.51099895 to 0.51099895069, which is exactly that ratio.
+
+**Three instances of the sympify-locals bug now** (habiro extract ×2 sites,
+term6 consumer). The root is that `to_u_polynomial`'s output variable name is
+whatever the caller passed, so every string it produces is only parseable if
+you know which symbol that was. Worth fixing at the source — have it always
+render in one name, or record the name alongside the string — rather than
+teaching each consumer both.
+
+### `A-operator-rank`: a deliberate sentinel, like casimir
+
+`drop_ratio = smallest_nonzero / next_zero if next_zero > 0 else inf`. The
+`inf` means the next singular value is exactly zero, i.e. the rank gap is
+perfectly clean — and `status` reads `rank_determined` on it, correctly. The
+value is right; the bare `Infinity` token was not. Marker applied; producer
+re-running (it exceeds a 200 s budget, hence the earlier "not reached").
+
+### `oxygen-14` is an ORPHAN, and provably so
+
+No live producer names it: `_habiro_coefficient_extract.ATOMS` stops at A=10
+(carbon-10) and oxygen-14 is A=14; the helium extract and
+`habiro_coefficients_interpolate.py` do not mention it either.
+
+Its history says why: the witness's `computedAt` is 2026-06-29, but the ONLY
+commit touching the file is `d156e8d50` (2026-08-02) — a docs+bean commit about
+the saddle-offset probe, nothing to do with habiro. So it sat uncommitted for a
+month and was swept into an unrelated commit from someone's working tree.
+
+Its 2 NaN fields are exactly the ones the habiro fix repairs, so re-running
+would fix it — but nothing runs it. Either add (8, 6) to ATOMS deliberately
+(A=14 means 16·16 = 256 strands, a real cost) or drop the file. Not a call to
+make silently.
+
+### `a-K-via-lp-dual`: the solver question has a concrete answer
+
+Earlier I left this as "which solver it pins to is its owner's call". The
+mechanism is now known and narrows the question: `solve_operator_selection_lp`
+takes `backend="auto"`, documented as *"clarabel MPFR at ~50 dps when its
+binary or wheel is available, else scipy HiGHS f64"*.
+
+The committed witness's `environment` has **no clarabel**, so it was computed on
+the scipy/HiGHS **f64** path. This container has the clarabel wheel, so "auto"
+takes a different branch — which is why `x_star` moves ~1e-6.
+
+So the decision is not "pick a solver", it is: **should this witness be pinned
+to the f64 fallback, or regenerated on the higher-precision path now that
+clarabel is available?** One caution against assuming the latter is simply
+better: the strong_duality residuals did NOT improve (2.7e-15 -> 1.2e-14) when
+they should be ~1e-50 if MPFR were really active, so it is worth confirming the
+wheel actually enables the MPFR path rather than a second f64 backend, before
+treating the new numbers as more precise. Not resolved here.
+
+---
+
+## 2026-08-10 — the ratchet is GREEN. PR #4895 open.
+
+The bean's title condition is finally addressable. Measured on
+`claude/drain-main-inherited-float64` @ `32ffd6fe7`, committed as
+`computations/witness-raw-float64-audit.witness.json`:
+
+    new_not_baselined : 0     (was 18)
+    regressed         : 0     (was 2)
+    drained_files     : 18
+    total_fields      : 540,028
+    baseline_files    : 1,582
+
+`scripts/precision-gates.sh` — **all blocking precision gates green**, not the
+ratchet alone. The other two that were red are both one root cause, the
+mpf-literal-before-`mp.dps` defect: `cross_check_trM_1ppb.py`'s
+`TOLERANCE_PPQ` (float64-padding) and `y_lambda_su_n.py`'s `REG_ZC`/`REG_ZD`
+(module-const). That is the **fourth and fifth** instance of that class in this
+bean; the lint-rule note above stands and is now the highest-value durable item
+left in it.
+
+**Nothing baselined, no `--rebaseline`, no number hand-edited.** Every entry was
+fixed at its producer and verified by diffing the regenerated witness against a
+pre-drain copy, field by field.
+
+### The four that closed since the last entry, and why each was NOT a drain
+
+None of these four was float64 discipline. Each was a distinct defect the
+ratchet merely surfaced:
+
+    charm-frobenius-block-projection  79  computed under trace convention C,
+                                          which b88aabc73 excised 59 minutes
+                                          AFTER the witness's computedAt.
+                                          Proven by checking out the pre-fix
+                                          bridge and reproducing the committed
+                                          values exactly. See qou-wgta.
+    delta-lambda-alexander-phase4     67  reproduced exactly beforehand, so the
+                                          drain is the only change. 67/67
+                                          round-trip bit-identically.
+    m-tau-complex-volume-search       54  published a NONDETERMINISTIC field
+                                          (degenerate SnapPy solve residual).
+                                          Now exact 0 + note.
+    ground-state-ordering-argmin-sweep 1  its producer DELETED a published,
+                                          cited block (`lean_bridge`, written by
+                                          no producer, cited by an audit doc).
+                                          The write now merges.
+
+The `ground-state` one is worth generalising: it sat at 1 field for the entire
+arc because **re-running it destroyed data**, so nobody could re-run it to drain
+it. Any witness carrying a hand-added block has this property. A plain overwrite
+in a producer is a data-loss bug whenever the witness has ever been edited by
+something other than that producer.
+
+### Bare `NaN`/`Infinity`: 20 live invalid witnesses -> 2
+
+Two more producers revived (`term6_full_pole_sum`, `A-operator-rank`), both
+documented above. The marker (`"inf"` / `"-inf"` / `"nan"` strings from
+`json_safe_float`, plus the `QOU_WITNESS_STRICT_NONFINITE` guard at
+`WitnessBuilder.save`) is now the convention.
+
+**One hazard the marker introduces, recorded because it will recur:** a marker
+is a `str` where a `float` used to be, so any code that READS the field back
+breaks. In `A-operator-rank` that was not just a `:.2e` print — `n_exact_drop`
+read `drop_ratio` back out of the dict and compared it to `1e6`, and that count
+feeds an **assertion**. Left alone it would have changed what the witness
+asserts, not merely crashed. Same read-back hazard as `qcross`'s monotonicity
+check. When applying the marker, grep for readers of the field, not just
+writers.
+
+### Still open, and none of it is drain work
+
+    a-K-via-lp-dual           source fixed, witness NOT regenerated. Needs the
+                              clarabel/MPFR question answered first: duality
+                              residuals did not improve (2.7e-15 -> 1.2e-14)
+                              when MPFR should give ~1e-50, so confirm the wheel
+                              actually enables that path before treating the new
+                              numbers as more precise. Owner decision.
+    habiro-coefficients-      provably orphaned (no live ATOMS entry covers
+      oxygen-14               A=14; swept in from a working tree). Either add
+                              (8, 6) to ATOMS deliberately — 256 strands, a real
+                              cost — or drop the file. Owner decision.
+    the C cache + its 17      qou-wgta P0. `y-lambda-at-q0.witness.json` is
+      direct readers          verified C; `wedderburn_jones_markov` refuses to
+                              serve it, but 17 files open the JSON directly and
+                              bypass that guard. Recorded there with the
+                              blast radius.
+
+### Bean status
+
+Stays **in-progress**. The title condition — "`main` is RED on its own
+raw-float64 ratchet" — is false on this branch and will be false on `main` only
+once #4895 merges. Do not close it before then, and re-measure rather than
+assume: `main` accrues float64 debt from sibling arcs faster than any single PR
+closes it, which is the structural point this bean has been making since the
+3 -> 18 revision.
+
+PR: https://github.com/litlfred/qou/pull/4895 (branch
+`claude/drain-main-inherited-float64`, 15 commits, base `main`).
+
+---
+
+## CORRECTION 2026-08-10 — `a-K-via-lp-dual` was an ANCHOR, not a solver
+
+The entry above ("the solver question has a concrete answer") reasoned from
+`solve_operator_selection_lp`'s `backend="auto"` default and concluded the
+committed witness was scipy-f64 while this container would take clarabel-MPFR,
+offering the unimproved duality residuals as a caution. **All of that was wrong,
+and it was wrong at the first step:**
+
+    computations/aK_via_lp_dual_hecke_basis.py:161
+    result = solve_operator_selection_lp(t, G, n_target, backend="scipy")
+
+The call site has pinned scipy since the file's first commit. `auto` is the
+*function* default — I read the docstring instead of the call. Clarabel was never
+in play in either run, so the residuals (2.7e-15 vs 1.2e-14, both f64 noise about
+a ~1e-15 objective, tolerance 1e-6) were never evidence about MPFR.
+
+What actually moved was the q₀ anchor: `t_i` = z at muon in the committed
+witness, z at proton in the re-run, matching to f64 epsilon (6.4e-17 / 9.5e-17).
+11.5 ppb in q₀ → 3.0e-10 in z → ~4.2e-7 in `x_star`. Fixed by declaring the
+producer `ideal_muon` in `q0_anchor_manifest.json`; regenerated 235/240 fields
+identical, 4 NaN → null, 1 field moved one ulp in its 50th decimal digit.
+Raw float64 101 vs baseline 105, so a drain. Commit `0a5b2b6c7`.
+
+**The generalisable part is now its own bean: `qou-po7i`.** The anchor is chosen
+by `sys.argv[0]`'s stem, 2384 of 2785 producers are undeclared, and 1887
+witnesses record no anchor at all — so a silent 11.5 ppb re-anchoring gets
+attributed to whatever else changed, which is exactly the mistake above.
+
+## CORRECTION 2026-08-10 — `habiro-coefficients-oxygen-14` is NOT orphaned
+
+The entry above ("provably orphaned, and provably so") is wrong on both its
+pieces of evidence:
+
+  * **"No live producer names it."** I checked `_habiro_coefficient_extract.ATOMS`,
+    which stops at A=10 — the wrong list. `extend_even_a_mirror_pair_test.py`
+    carries its OWN atom list, `EVEN_A_OPEN`, including
+    `("¹⁴O (oxygen-14, A=14)", "oxygen-14", 8, 6, 224)`, and calls `analyse_atom`
+    + `_write_witness` directly (lines 84-97). It is a live producer.
+  * **"The only commit touching the file is an unrelated docs commit."** That is
+    an artifact of a SHALLOW CLONE (`git rev-parse --is-shallow-repository` →
+    true). The history needed to make that claim is not in this container. The
+    "swept in from a working tree" story rests on nothing.
+
+Worse, the file has TWO live readers — `extend_even_a_mirror_pair_test.py:117`
+and `topic2_mirror_pair_phi8_boundary_scan.py:76`, both via
+`load_a_m("oxygen-14")` — so dropping it breaks them. Its 2 NaN fields are
+exactly the ones the sympify-locals fix repairs, so the resolution is
+regeneration, not deletion.
+
+**Method note for both corrections:** each rested on a grep whose ABSENCE of a
+match I read as proof, in a repo where the thing I was grepping for lives in more
+than one list and the history is truncated. A negative grep is evidence about the
+grep. Confirm an orphan by finding the readers, not by failing to find the writer.
+
+## 2026-08-10 — invalid JSON is now ZERO, and oxygen-14 was regenerated not dropped
+
+Strict-JSON sweep of every live witness: **2552 scanned, 0 invalid.** The arc's
+count went 20 → 2 → 0. (One parse error remains under `_deprecated/`,
+`qbeta-gb-filtration-residues.witness.json`, and it is not a nonfinite token —
+Python's own loader rejects it too. Out of scope, recorded here so it is not
+rediscovered as a regression.)
+
+The last two:
+
+  * **`a-K-via-lp-dual-hecke-basis`** — a q₀ anchor, not a solver. Corrected
+    above; the systemic half is `qou-po7i`.
+  * **`habiro-coefficients-oxygen-14`** — regenerated. `tr_M_at_q0_via_u_poly`
+    NaN → 8.17775810558832e-06 and `tr_M_at_q0_rel_err` NaN → **0.0**. The
+    rel_err is the load-bearing one: tr_M at q₀ computed two independent ways,
+    directly and through the reconstructed u-polynomial, now agrees exactly.
+    That is a cross-check passing, not a crash avoided. 216/220 fields identical.
+
+`reconstruction_matches: False` in that witness is **pre-existing and unchanged**
+(n_nonzero 34, all_integral true, both before and after). Not this arc's, and not
+investigated here — but it is a false in a committed witness that two live
+scripts read, so someone should decide whether it is expected for A=14.
+
+Branch rebased onto `origin/main` (35 commits, zero file overlap, clean) and all
+blocking precision gates re-run green on the integrated tree: ratchet 0 NEW /
+0 REGRESSED, drained_files 19, total_fields 540,024.
