@@ -273,10 +273,23 @@ user's last message, not the most recently mentioned file.
       `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
-      `witness.scriptCommitSha` (producer file's `git log -1
-      --format=%H -- <path>`) or `witness.scriptHash` (SHA-256
-      prefix of producer file content) drift; refresh by
-      re-running the producer with
+      `witness.scriptHash` (SHA-256 prefix of producer file
+      content) drifts from a freshly-computed hash of the current
+      producer. **Do NOT treat `witness.scriptCommitSha` drift as
+      staleness** — rebase-merge (rule 8) rewrites every branch
+      commit sha, so that field is stale-on-arrival for any
+      producer committed on a branch and no branch-side refresh
+      can fix it (the merge *is* the rewrite). It is informational
+      provenance only; the enforcement paths already ignore it
+      (`witness_dependency_drift.py` keys self-staleness on
+      `scriptHash` alone; `witness.py` masks `scriptCommitSha` in
+      `_EPHEMERAL_META_FIELDS`). Measured cost of the old wording:
+      two false positives and zero true positives on the
+      reliably-measurable sample — i.e. it spent the idle-pass
+      witness budget on producer re-runs that fix nothing. Never
+      mass-refresh the field; it would be correct only until the
+      next merge (bean `qou-wsha`). Refresh genuine `scriptHash`
+      staleness by re-running the producer with
       `2>&1 | tee /tmp/<script>.log` per the compute-audit
       long-compute logging discipline. Cap at ≤ 10 sidecars /
       ≤ 3 witnesses per idle pass. Every refresh that changes a
