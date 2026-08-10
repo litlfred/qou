@@ -59,6 +59,38 @@ axiom reduction_well_founded
     (sys : RewritingSystem G k) :
     ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
 
+/-- **Existence of normal forms, repaired.**
+
+    Two differences from the `normal_form_exists` axiom in `Basic.lean`, and both
+    matter:
+
+    1. It carries `hlc` — every rule has a **unit leading coefficient**. Without
+       it the statement is not merely unproved, it is **false**; see
+       `UGB.GrobnerShirshov.NormalFormExistsRefutation`, which exhibits a
+       Gröbner–Shirshov system over `ℤ` and an element with no normal form.
+    2. It does **not** take `hgs`. Existence of normal forms is pure termination
+       — reduce until stuck — and has nothing to do with confluence. The axiom's
+       `hgs` argument was never used by the statement's content, and taking it
+       obscured that the real missing hypothesis was elsewhere.
+
+    Proof: well-founded induction on `reduction_well_founded`. At `x`, either `x`
+    is already normal (done, zero steps), or `exists_singleStep_of_not_isNormalForm`
+    produces a step `x → y`, and the induction hypothesis applies at `y` because
+    `x → y`. -/
+theorem normal_form_exists_of_unit_lc
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
+    (f : AlgElement G k) :
+    ∃ nf, ReducesToNF ord sys f nf := by
+  induction (reduction_well_founded ord sys f) with
+  | intro x _ ih =>
+    by_cases hnf : isNormalForm ord sys x
+    · exact ⟨x, MultiStepReduction.refl x, hnf⟩
+    · obtain ⟨y, hxy⟩ := exists_singleStep_of_not_isNormalForm hlc hnf
+      obtain ⟨nf, hred, hnorm⟩ := ih y hxy
+      exact ⟨nf, MultiStepReduction.head hxy hred, hnorm⟩
+
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
 /-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
@@ -90,23 +122,66 @@ axiom local_confluence
 
 /-! ## §3  Confluence (Newman's Lemma) -/
 
-/-- **Newman's lemma**: a terminating, locally confluent rewriting
-    system is confluent.
+/-- **Newman's lemma**, in the form the induction actually needs: local
+    confluence plus accessibility of `f` under reduction gives confluence at `f`.
 
-    Since our reduction terminates (§1) and is locally confluent when
-    all S-polynomials resolve (§2), any two multi-step reducts of the
-    same element have a common reduct.
+    The hypothesis is taken as a plain function rather than as
+    `IsGrobnerShirshovBasis`, because nothing in the argument looks at *why* the
+    system is locally confluent — this is the abstract rewriting content, and
+    keeping it separate is what makes `confluence` below a one-line instantiation.
 
-    Axiomatised because the full proof requires well-founded induction
-    on `MultiStepReduction` derivation height, composing local confluence
-    at each fork.  The argument is entirely standard (Newman 1942) and
-    has been verified in Lean's `Mathlib.Order.WellFounded` for abstract
-    relations; instantiating it here requires an explicit derivation-height
-    measure on `MultiStepReduction` that we do not carry.
+    The proof is the standard tiling argument. Given `x →* g₁` and `x →* g₂`,
+    expose the first step of each (`MultiStepReduction.cases_head`); if either run
+    is empty the other is the common reduct. Otherwise `x → a →* g₁` and
+    `x → b →* g₂`, and:
+
+    * local confluence at the fork `a ← x → b` gives `c` with `a →* c`, `b →* c`;
+    * the induction hypothesis at `a` — legitimate because `x → a` — applied to
+      `a →* g₁` and `a →* c` gives `d` with `g₁ →* d` and `c →* d`;
+    * the induction hypothesis at `b`, applied to `b →* g₂` and `b →* c →* d`,
+      gives `e` with `g₂ →* e` and `d →* e`.
+
+    Then `e` is the common reduct: `g₁ →* d →* e` and `g₂ →* e`. Note that the
+    two induction steps are *not* symmetric — the second consumes the output of
+    the first — which is why local confluence alone does not suffice and
+    termination is doing real work.
 
     Reference: Newman (1942); Bergman 1978, Corollary to Theorem 1.2. -/
--- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Cor. to Thm 1.2 (Newman's lemma: termination + local confluence ⟹ confluence)
-axiom confluence
+theorem newman
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (hlc : ∀ f g₁ g₂ : AlgElement G k,
+      SingleStepReduction ord sys f g₁ → SingleStepReduction ord sys f g₂ →
+      ∃ h, MultiStepReduction ord sys g₁ h ∧ MultiStepReduction ord sys g₂ h)
+    (f : AlgElement G k)
+    (hacc : Acc (fun g h => SingleStepReduction ord sys h g) f) :
+    ∀ g₁ g₂ : AlgElement G k,
+      MultiStepReduction ord sys f g₁ → MultiStepReduction ord sys f g₂ →
+      ∃ h, MultiStepReduction ord sys g₁ h ∧ MultiStepReduction ord sys g₂ h := by
+  induction hacc with
+  | intro x _ ih =>
+    intro g₁ g₂ h₁ h₂
+    rcases h₁.cases_head with rfl | ⟨a, hxa, hag₁⟩
+    · exact ⟨g₂, h₂, MultiStepReduction.refl _⟩
+    rcases h₂.cases_head with rfl | ⟨b, hxb, hbg₂⟩
+    · exact ⟨g₁, MultiStepReduction.refl _, MultiStepReduction.head hxa hag₁⟩
+    obtain ⟨c, hac, hbc⟩ := hlc _ a b hxa hxb
+    obtain ⟨d, hg₁d, hcd⟩ := ih a hxa g₁ c hag₁ hac
+    obtain ⟨e, hg₂e, hde⟩ := ih b hxb g₂ d hbg₂ (hbc.trans hcd)
+    exact ⟨e, hg₁d.trans hde, hg₂e⟩
+
+/-- **Confluence**: any two multi-step reducts of the same element have a common
+    reduct.
+
+    Was an axiom. It is not one: it is `newman` applied to `local_confluence`
+    (§2) and `reduction_well_founded` (§1), and those two are the only
+    assumptions it ever needed. The previous docstring's reason for
+    axiomatising — that an explicit derivation-height measure on
+    `MultiStepReduction` was missing — is not in fact what the argument induct
+    on; it inducts on the accessibility of the *source*, which §1 already
+    supplies. `MultiStepReduction.cases_head` is the one piece that was missing,
+    and it is three lines. -/
+theorem confluence
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
@@ -116,7 +191,9 @@ axiom confluence
     (h₂ : MultiStepReduction ord sys f g₂) :
     ∃ (h : AlgElement G k),
       MultiStepReduction ord sys g₁ h ∧
-      MultiStepReduction ord sys g₂ h
+      MultiStepReduction ord sys g₂ h :=
+  newman ord sys (fun _ _ _ s₁ s₂ => local_confluence ord sys hgs hnqz _ _ _ s₁ s₂)
+    f (reduction_well_founded ord sys f) g₁ g₂ h₁ h₂
 
 /-! ## §4  Uniqueness of Normal Forms -/
 
@@ -127,13 +204,15 @@ axiom confluence
     Since both are in normal form (no reduction applies), `h = nf₁`
     and `h = nf₂`, hence `nf₁ = nf₂`.
 
-    Axiomatised because the full proof requires:
-    1. Confluence (which depends on algebra operations for S-poly reduction).
-    2. The fact that normal forms are irreducible under →.
+    Was an axiom. Its own docstring gave the two-line proof and then listed as
+    the reason for axiomatising exactly the two things that are available:
+    confluence (§3, now a theorem) and irreducibility of normal forms
+    (`MultiStepReduction.eq_of_isNormalForm`, proved in `Basic.lean` since the
+    reduction relation was repaired).
 
     Justified by Bergman 1978, Theorem 1.2. -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (uniqueness of normal forms from confluence)
-axiom normal_form_unique
+theorem normal_form_unique
     {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
@@ -142,7 +221,11 @@ axiom normal_form_unique
     (f nf₁ nf₂ : AlgElement G k)
     (hred₁ : ReducesToNF ord sys f nf₁)
     (hred₂ : ReducesToNF ord sys f nf₂)
-    : nf₁ = nf₂
+    : nf₁ = nf₂ := by
+  obtain ⟨h, hh₁, hh₂⟩ :=
+    confluence ord sys hgs hnqz f nf₁ nf₂ hred₁.reduces hred₂.reduces
+  exact (MultiStepReduction.eq_of_isNormalForm hred₁.is_normal hh₁).symm.trans
+    (MultiStepReduction.eq_of_isNormalForm hred₂.is_normal hh₂)
 
 /-! ## §5  The Composition Lemma (Main Theorem) -/
 

@@ -354,6 +354,35 @@ theorem MultiStepReduction.head {G : Type u} {k : Type v} [Ring k] [DecidableEq 
   | refl => exact MultiStepReduction.step (MultiStepReduction.refl f) hstep
   | step _ hlast ih => exact MultiStepReduction.step ih hlast
 
+/-- Runs compose. -/
+theorem MultiStepReduction.trans {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
+    {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g h : AlgElement G k}
+    (h₁ : MultiStepReduction ord sys f g)
+    (h₂ : MultiStepReduction ord sys g h) :
+    MultiStepReduction ord sys f h := by
+  induction h₂ with
+  | refl => exact h₁
+  | step _ hlast ih => exact MultiStepReduction.step ih hlast
+
+/-- **Head decomposition**: a run is either empty, or a first step followed by a
+    run.
+
+    `MultiStepReduction` is generated at the *tail* — `step` appends a step to a
+    run — so this is the dual view, and it is the one Newman's lemma needs: the
+    induction there is on the source of the fork, so the first step has to be the
+    one exposed. -/
+theorem MultiStepReduction.cases_head {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    {f g : AlgElement G k} (h : MultiStepReduction ord sys f g) :
+    g = f ∨ ∃ a, SingleStepReduction ord sys f a ∧ MultiStepReduction ord sys a g := by
+  induction h with
+  | refl => exact Or.inl rfl
+  | step _ hlast ih =>
+    rcases ih with rfl | ⟨a, hfa, hag⟩
+    · exact Or.inr ⟨_, hlast, MultiStepReduction.refl _⟩
+    · exact Or.inr ⟨a, hfa, MultiStepReduction.step hag hlast⟩
+
 /-- An element is in **normal form** with respect to a rewriting system
     if no leading monomial of any rule divides (appears as a subword of)
     any monomial actually occurring in the element.
@@ -375,6 +404,35 @@ theorem not_singleStep_of_isNormalForm {G : Type u} {k : Type v} [Ring k]
     ¬ SingleStepReduction ord sys f g := by
   rintro ⟨r, hr, a, b, c, hne, -, -⟩
   exact hnf r hr _ hne ⟨a, b, rfl⟩
+
+/-- **The converse, with the hypothesis it actually needs**: if every rule has a
+    *unit* leading coefficient, then an element not in normal form admits a step.
+
+    The hypothesis is not cosmetic bookkeeping. `isNormalForm` is a condition on
+    **monomials** — no rule's leading monomial is an infix of one carrying a
+    non-zero coefficient — whereas taking a step additionally requires solving
+
+    `c · lc(r) = f.coeff (a ++ lm(r) ++ b)`
+
+    for `c`. When `lc(r)` is not invertible those two conditions come apart, and
+    an element can be **stuck**: reducible-looking (so not in normal form), yet
+    with no reduction available (so unable to reach one). That is not a gap in
+    this proof — it is a true statement about the reduction relation, and
+    `NormalFormExistsRefutation` exhibits it concretely over `ℤ`. -/
+theorem exists_singleStep_of_not_isNormalForm {G : Type u} {k : Type v} [Ring k]
+    [DecidableEq G] {ord : AdmissibleOrder G} {sys : RewritingSystem G k}
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
+    {f : AlgElement G k} (hnf : ¬ isNormalForm ord sys f) :
+    ∃ g, SingleStepReduction ord sys f g := by
+  rw [isNormalForm] at hnf
+  push_neg at hnf
+  obtain ⟨r, hr, m, hm, a, b, hab⟩ := hnf
+  subst hab
+  obtain ⟨u, hu⟩ := hlc r hr
+  refine ⟨AlgElement.sub f (AlgElement.smul (f.coeff (a ++ r.lm ord ++ b) * ↑u⁻¹)
+      (AlgElement.contextMul a r.relation b)),
+    ⟨r, hr, a, b, f.coeff (a ++ r.lm ord ++ b) * ↑u⁻¹, hm, ?_, fun _ => rfl⟩⟩
+  rw [← hu, mul_assoc, Units.inv_mul, mul_one]
 
 /-- An element `f` **reduces to normal form** `nf` if `f →* nf` and
     `nf` is in normal form. -/
@@ -704,19 +762,47 @@ theorem isGrobnerShirshovBasis_of_single_letter_rule {G : Type u} {k : Type v}
 
 /-! ## §6  Existence of Normal Forms -/
 
-/-- **Existence of normal forms**: given a GS basis and any element `f`,
-    there exists a normal form reachable from `f`.
+/-- **⚠ REFUTED — this axiom is FALSE. Do not build on it; do not discharge it.**
 
-    Justification: the admissible order `ord` is well-founded, and each
-    single-step reduction eliminates the monomial it targets while changing
-    only strictly smaller ones.  By well-founded induction on the
+    `UGB.GrobnerShirshov.NormalFormExistsRefutation.normal_form_exists_false`
+    proves the negation of this statement at `G = SU2Gen`, `k = ℤ`, sorry-free
+    and depending on no other framework axiom.
+
+    The counterexample is the one-rule system with relation `2·K`. It **is** a
+    Gröbner–Shirshov basis (by this file's own
+    `isGrobnerShirshovBasis_of_single_letter_rule`), and the element `K` has no
+    normal form: it is not in normal form, because `isNormalForm` is a condition
+    on *monomials* and the rule's leading monomial `K` occurs; but no step
+    applies, because a step must additionally solve `c · lc(r) = 1` with
+    `lc(r) = 2`, and `2` is not a unit in `ℤ`.
+
+    The justification below is where it went wrong: the termination argument is
+    fine, but termination gives "no infinite reduction sequence", **not** "the
+    stuck element is in normal form". Those coincide only when every rule has an
+    invertible leading coefficient. Note also that `hgs` is a red herring — the
+    counterexample satisfies it, so no confluence hypothesis can rescue the
+    statement.
+
+    **Use `CompositionLemma.normal_form_exists_of_unit_lc` instead**: the same
+    conclusion, *proved*, from `reduction_well_founded` plus
+    `∀ r ∈ sys.rules, IsUnit (r.lc ord)`, and without the unused `hgs`.
+
+    This axiom is retained only because `reduce` below is defined from it and
+    threading the unit-leading-coefficient hypothesis through `reduce` and its
+    consumers (`composition_lemma`, `retraction_property`, `buchberger`,
+    `pbw_corollary`, `main_theorem_statement`, `heckeCost_well_defined`) is a
+    migration, not a local edit. Until that lands, every result routed through
+    `reduce` is formally unsound.
+
+    Original justification (retained for the record, and incorrect as an
+    argument for this statement): the admissible order `ord` is well-founded,
+    and each single-step reduction eliminates the monomial it targets while
+    changing only strictly smaller ones.  By well-founded induction on the
     Dershowitz–Manna multiset ordering, iterated reduction terminates in a
     normal form.
 
-    This is axiomatised at the abstract level because the constructive
-    proof requires the multiset-order machinery on `AlgElement` supports.
-
-    Reference: Bergman 1978, Theorem 1.2 (existence part). -/
+    Reference: Bergman 1978, Theorem 1.2 (existence part) — where the rules are
+    monic, which is exactly the hypothesis this statement dropped. -/
 -- Ref: [bergman1978] https://doi.org/10.1016/0001-8708(78)90010-5 Thm 1.2 (existence of normal forms via well-founded reduction)
 axiom normal_form_exists {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
     (ord : AdmissibleOrder G)
@@ -804,5 +890,49 @@ theorem noQuasiZerosFree_of_generator {G : Type u} {k : Type v} [Ring k]
   intro f hf m
   have h := hf [g] [] (by rintro ⟨h1, -⟩; exact List.cons_ne_nil g [] h1) ([g] ++ m ++ [])
   rwa [AlgElement.contextMul_coeff_middle] at h
+
+/-- **`NoQuasiZerosFree` says exactly `Nonempty G` — and therefore carries no
+    algebraic content in this development** (bean qou-k6ks).
+
+    The hypothesis is threaded through `local_confluence` and its consequences to
+    record the manuscript's standing assumption. This equivalence measures what
+    that threading actually buys, and the answer is: nothing beyond "the
+    generating set is non-empty".
+
+    * `←` is `noQuasiZerosFree_of_generator`: one generator gives an injective
+      context, which is all the condition asks.
+    * `→` is the degenerate direction. With `G` empty every monomial is `[]`, so
+      *no* non-trivial context exists, the premise `¬(a = [] ∧ b = [])` is never
+      satisfiable, and the condition degenerates to "every element is zero" —
+      false for non-trivial `k`. So the property fails precisely when there is
+      no generator.
+
+    The reason it cannot do real work here is structural and worth stating:
+    Leitner–Pawloski's `A` is the **quotient** `R⟨X⟩/I`, and a quasi-zero is a
+    phenomenon of the quotient. This development's Gröbner–Shirshov framework
+    works entirely in the free algebra, where — as this theorem shows — the
+    condition is automatic. `Quotient.lean` now supplies `QuotAlg`, but only as a
+    `Submodule` quotient; there is no ring structure on it yet, so the chapter's
+    `NoQuasiZeros` cannot even be *stated* there. That, not the threading, is the
+    missing piece. -/
+theorem noQuasiZerosFree_iff_nonempty {G : Type u} {k : Type v} [Ring k]
+    [Nontrivial k] [DecidableEq G] [DecidableEq k] :
+    NoQuasiZerosFree G k ↔ Nonempty G := by
+  constructor
+  · intro h
+    by_contra hemp
+    rw [not_nonempty_iff] at hemp
+    have hnil : ∀ m : Monomial G, m = [] := by
+      intro m
+      cases m with
+      | nil => rfl
+      | cons g _ => exact (hemp.false g).elim
+    have hzero := h (AlgElement.singleton ([] : Monomial G))
+      (fun a b hab => absurd ⟨hnil a, hnil b⟩ hab)
+    have h0 := hzero ([] : Monomial G)
+    rw [AlgElement.singleton_coeff_self] at h0
+    exact one_ne_zero h0
+  · rintro ⟨g⟩
+    exact noQuasiZerosFree_of_generator g
 
 end UGB.GrobnerShirshov
