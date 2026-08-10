@@ -185,6 +185,76 @@ def main() -> int:
         "pass": True,
     })
 
+    # ---- G5: two INDEPENDENT routes land on the same fields -------------------------
+    # Route 75 identifies the shape field by LLL from high-precision numerics.  Route 76
+    # decomposes the Ptolemy ideal symbolically.  They share no step and produce DIFFERENT
+    # minimal polynomials -- so agreement of the FIELDS is a real cross-check, not a
+    # tautology.  `nfisisom` decides it; the discriminants corroborate.
+    from cypari import pari
+    pari.allocatemem(1 << 30, silent=True)
+    PAIRS = {
+        "4_1": ("x^2-x+1", "x^2-x+1"),
+        "5_2": ("x^3-x^2+1", "x^3-2*x^2+3*x-1"),
+        "6_1": ("x^4-x^3+x^2+1", "x^4-3*x^3+6*x^2-5*x+2"),
+        "7_2": ("x^5-x^4-x^3+x-1", "x^5-2*x^4+x^3+3*x^2-5*x+3"),
+    }
+    fields, fields_ok = [], True
+    for k, (pt, sh) in PAIRS.items():
+        iso = pari.nfisisom(pari(pt), pari(sh))
+        same = bool(iso) and str(iso) != "0"
+        d_pt, d_sh = str(pari.nfdisc(pari(pt))), str(pari.nfdisc(pari(sh)))
+        fields_ok = fields_ok and same and d_pt == d_sh
+        fields.append({"knot": k, "ptolemy_minpoly": pt, "route75_shape_minpoly": sh,
+                       "ptolemy_disc": d_pt, "shape_disc": d_sh,
+                       "same_field": bool(same)})
+    gates.append({
+        "gate": "G5",
+        "claim": "TWO INDEPENDENT ROUTES, SAME FIELDS. Route 75 identifies the shape field "
+                 "by LLL from high-precision numerics; Route 76 decomposes the Ptolemy "
+                 "ideal symbolically. They share no step and return DIFFERENT minimal "
+                 "polynomials, so agreement of the FIELDS is a genuine cross-check rather "
+                 "than a tautology. nfisisom says isomorphic in all four cases and the "
+                 "discriminants match: -3, -23, 257, 4409",
+        "fields": fields,
+        "pass": bool(fields_ok),
+    })
+
+    # ---- G6: the measured reach, including what did NOT finish ---------------------
+    gates.append({
+        "gate": "G6",
+        "claim": "MEASURED REACH, AND IT DOES NOT BEAT ROUTE 75. Garoufalidis-Goerner-"
+                 "Zickert say Groebner is feasible for Ptolemy varieties 'even for many "
+                 "simplices', and that is a comparison against the GLUING equations, not an "
+                 "absolute claim. Measured here with a 600s budget: Ptolemy+Singular "
+                 "succeeds through 4 tetrahedra and TIMES OUT on 10_100 (14 tets) and 11a1 "
+                 "(17 tets) -- while Route 75's LLL+PARI pipeline verifies 10_100 exactly "
+                 "in 7.2s. So Route 76 is strictly MORE RIGOROUS (fully symbolic, no LLL, "
+                 "no height gate) and strictly LESS FAR-REACHING on this set. That is the "
+                 "opposite of what the quoted sentence led this lane to expect",
+        "measured": [
+            {"manifold": "4_1", "tets": 2, "ptolemy_singular": "exact",
+             "route75": "exact"},
+            {"manifold": "5_2", "tets": 3, "ptolemy_singular": "exact",
+             "route75": "exact"},
+            {"manifold": "6_1", "tets": 4, "ptolemy_singular": "exact, quartic",
+             "route75": "exact"},
+            {"manifold": "7_2", "tets": 4, "ptolemy_singular": "exact, quintic",
+             "route75": "exact"},
+            {"manifold": "10_100", "tets": 14, "ptolemy_singular": "TIMEOUT > 600s",
+             "route75": "exact, 7.2s"},
+            {"manifold": "11a1", "tets": 17, "ptolemy_singular": "TIMEOUT > 600s",
+             "route75": "identification fails"},
+        ],
+        "caveat": "this measures THIS CONFIGURATION, not the method's limit: 600s budget, "
+                  "minAssGTZ (not primdecGTZ), degree-reverse-lex `dp` ordering, default "
+                  "options, single core. A different engine setting may well do better, and "
+                  "no claim is made that the Ptolemy route cannot reach these manifolds",
+        "reproduce": "the 6_1/7_2 successes and the 10_100/11a1 timeouts are from a direct "
+                     "run of `decompose()` with timeout=600 on each manifold",
+        "beats_route_75_reach": False,
+        "pass": True,
+    })
+
     # ---- G4: scope -----------------------------------------------------------------
     gates.append({
         "gate": "G4",

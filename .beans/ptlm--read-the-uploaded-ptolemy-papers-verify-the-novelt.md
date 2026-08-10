@@ -199,3 +199,58 @@ recorded as one.
 including the negative results. Also try `primdecGTZ` vs `minAssGTZ`, and a `degrevlex`
 ring, before drawing any conclusion about reach. Until then the only verified claim is
 that the route **runs**, on 4₁ and 5₂, without Magma or network.
+
+---
+**2026-08-10 (later still) — reach MEASURED. It does not beat Route 75, and that
+corrects the expectation this bean itself set.**
+
+The previous entry left reach unmeasured and said so. The scaling run has now finished.
+
+### Two independent routes, same fields (gate G5)
+
+| knot | Ptolemy minpoly (Singular) | Route 75 shape minpoly (LLL) | disc | same field? |
+|---|---|---|---|---|
+| 4₁ | `x² − x + 1` | `x² − x + 1` | −3 | yes |
+| 5₂ | `x³ − x² + 1` | `x³ − 2x² + 3x − 1` | −23 | yes |
+| 6₁ | `x⁴ − x³ + x² + 1` | `x⁴ − 3x³ + 6x² − 5x + 2` | 257 | yes |
+| 7₂ | `x⁵ − x⁴ − x³ + x − 1` | `x⁵ − 2x⁴ + x³ + 3x² − 5x + 3` | 4409 | yes |
+
+`nfisisom` says isomorphic in all four cases, discriminants match. The routes **share no
+step** and return **different minimal polynomials**, so this is a real cross-check, not a
+tautology — symbolic ideal decomposition and LLL-from-numerics independently land on the
+same number fields.
+
+### ⚠ The reach result, which is the opposite of what I implied (gate G6)
+
+| manifold | tets | Ptolemy + Singular | Route 75 LLL + PARI |
+|---|---|---|---|
+| 4₁, 5₂, 6₁, 7₂ | 2–4 | exact | exact |
+| 10₁₀₀ | 14 | **TIMEOUT > 600s** | **exact, 7.2s** |
+| 11a1 | 17 | **TIMEOUT > 600s** | identification fails |
+
+**Route 76 is strictly more rigorous and strictly less far-reaching.** It is fully
+symbolic — no LLL, no height cap, no precision gate, so Route 75's gate-G2 artifact risk
+cannot arise — but on this set it reaches *fewer* manifolds, and in particular fails on
+the one (10₁₀₀, degree 14) that Route 75 handles in seconds.
+
+**I set the wrong expectation.** Earlier entries in this bean, and the Route 75/PR text,
+read as though the Ptolemy route would "clear both of Route 75's measured ceilings at
+once". It does not. Garoufalidis–Goerner–Zickert's "feasible even for many simplices" is
+a comparison **against the gluing equations**, which are worse still — not an absolute
+claim, and not a promise about 14 tetrahedra.
+
+**Caveat, stated so this is not over-read the other way.** This measures *this
+configuration*: 600s budget, `minAssGTZ` rather than `primdecGTZ`, `dp` ordering, default
+options, single core. It is **not** a claim that the Ptolemy route cannot reach these
+manifolds. Trying `primdecGTZ`, other orderings, and a longer budget is the obvious next
+step and is not done.
+
+### Standing conclusion
+
+Use **both**, for different purposes:
+
+- **Route 76** where rigour matters most and the manifold is small — it is float-free end
+  to end and needs no artifact gate.
+- **Route 75** for reach — it verifies to 14 tetrahedra and degree 14.
+
+And G5 makes them mutually checking, which is worth more than either alone.
