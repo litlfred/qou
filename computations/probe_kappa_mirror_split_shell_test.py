@@ -60,22 +60,38 @@ _SUB = _P(__file__).resolve().parent / "substrate"
 if str(_SUB) not in sys.path:
     sys.path.insert(0, str(_SUB))
 import mpmath as mp  # noqa: E402
-from _precision import fmt, COMPUTE_DPS  # noqa: E402
+from _precision import fmt, str_at_true_precision, COMPUTE_DPS  # noqa: E402
 
 mp.mp.dps = COMPUTE_DPS
 
 
 def _ser(o):
-    """Serialize every real to a _precision.fmt string; ints stay ints.
+    """Serialize every real; ints stay ints.
 
-    The NO-FLOAT64 family forbids raw float64 in a witness. Values are carried
-    as mpmath.mpf from their source above and rendered here, so no float64 ever
-    reaches the JSON.
+    The NO-FLOAT64 family forbids raw float64 in a witness, and this hook does
+    prevent that — but satisfying it by wrapping a float in `mpf` and rendering
+    at OUTPUT_DPS trades one gate for the other. `fmt` writes ~50 digits, so a
+    53-bit input comes out wearing 30+ digits it never had:
+
+        mp.mpf(1.2)  ->  1.19999999999999995559107901499373838305473328
+
+    which is what the float64-padding audit reads as fake precision. This
+    file's previous version did exactly that, and its docstring asserted the
+    opposite ("no float64 ever reaches the JSON") — true of the *output* type,
+    false of the *information content*, which is why it went unnoticed.
+
+    So: an `mpf` is rendered with `fmt` (it earned those digits); a bare
+    `float` is rendered with `str_at_true_precision`, which prints what a
+    53-bit value actually knows. Nothing here converts a float into apparent
+    precision. Values that SHOULD be full precision are fixed at their source
+    below, not laundered here (bean qou-3jwy).
     """
     if isinstance(o, bool) or isinstance(o, int):
         return o
-    if isinstance(o, (float, mp.mpf)):
-        return fmt(mp.mpf(o))
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, float):
+        return str_at_true_precision(o)
     if isinstance(o, dict):
         return {k: _ser(v) for k, v in o.items()}
     if isinstance(o, (list, tuple)):
@@ -120,24 +136,42 @@ PAIRS = [
 ]
 
 # Radius models, swept rather than chosen.
+#
+# `ce.R0_FM` is ALREADY an mpf carrying full working precision; the previous
+# `float()` here threw that away and the serializer then padded the binary64
+# remains back up to 50 digits:
+#     genuine   1.41381693076303648646392691171816600928033518
+#     via float 1.41381693076303638356705505429999902844429016   <- what shipped
+# The two model constants are exact as written, so `mpf("1.2")` is 1.2 while
+# `mpf(1.2)` is the binary64 neighbour — string-construct them (bean qou-3jwy).
 RADII = [
-    (float(ce.R0_FM), "derived (reduced pion Compton wavelength)"),
-    (1.2, "empirical heavy-nucleus saturation constant"),
-    (1.76, "implied by the measured 3He charge radius"),
+    (ce.R0_FM, "derived (reduced pion Compton wavelength)"),
+    (mp.mpf("1.2"), "empirical heavy-nucleus saturation constant"),
+    (mp.mpf("1.76"), "implied by the measured 3He charge radius"),
 ]
 
 
-def coulomb_displacement(z_hi: int, z_lo: int, a: int, r0: float) -> float:
+def coulomb_displacement(z_hi: int, z_lo: int, a: int, r0):
     """Uniform-sphere displacement, (3/5)*alpha*hbar*c*[Z(Z-1)]/R, R = r0*A^(1/3)."""
-    ahc = float(ce.alpha_em_hbar_c_mev_fm())
-    return 0.6 * ahc * (z_hi * (z_hi - 1) - z_lo * (z_lo - 1)) / (r0 * a ** (mp.mpf(1) / 3))
+    # No float() cast: alpha_em_hbar_c_mev_fm() already returns a full-precision
+    # mpf. 3/5 as an exact mp rational rather than the literal 0.6, which is not
+    # 3/5 in binary and would reintroduce a 53-bit factor into an mp product.
+    ahc = ce.alpha_em_hbar_c_mev_fm()
+    return (mp.mpf(3) / 5) * ahc * (z_hi * (z_hi - 1) - z_lo * (z_lo - 1)) / (
+        r0 * a ** (mp.mpf(1) / 3)
+    )
 
 
 def main() -> None:
     pred = 2 * kappa_magnitude()
     rows = []
     for z_lo, z_hi, a, shell, label in PAIRS:
-        d_b = float(ame_binding(z_lo, a)) - float(ame_binding(z_hi, a))
+        # `ame_binding` returns an mpf of the tabulated AME value; casting each
+        # side to float first made the DIFFERENCE a 53-bit quantity, which the
+        # serializer then padded (delta_B_observed_MeV was the visible symptom:
+        # claimed 3.53653199999999401370587293058633804321289062500000…,
+        # really 3.536531999999994). Subtract in mp.
+        d_b = ame_binding(z_lo, a) - ame_binding(z_hi, a)
         per_radius = {}
         for r0, name in RADII:
             d_c = coulomb_displacement(z_hi, z_lo, a, r0)
@@ -238,7 +272,7 @@ def main() -> None:
             "m_e_MeV": M_E_MEV,
             "predicted_contribution_MeV": pred,
             "radius_models": [{"r0_fm": r, "name": n} for r, n in RADII],
-            "alpha_em_hbar_c_MeV_fm": float(ce.alpha_em_hbar_c_mev_fm()),
+            "alpha_em_hbar_c_MeV_fm": ce.alpha_em_hbar_c_mev_fm(),
             "alpha_em_provenance": "derived from q_0 in coulomb_energy, not CODATA",
         },
         "data": {

@@ -67,22 +67,36 @@ _SUB = _P(__file__).resolve().parent / "substrate"
 if str(_SUB) not in sys.path:
     sys.path.insert(0, str(_SUB))
 import mpmath as mp  # noqa: E402
-from _precision import fmt, COMPUTE_DPS  # noqa: E402
+from _precision import fmt, str_at_true_precision, COMPUTE_DPS  # noqa: E402
 
 mp.mp.dps = COMPUTE_DPS
 
 
 def _ser(o):
-    """Serialize every real to a _precision.fmt string; ints stay ints.
+    """Serialize every real; ints stay ints.
 
-    This probe reads values out of a deprecated witness, where they were stored
-    as raw float64. They are lifted to mpmath.mpf on the way in and rendered
-    here, so no float64 reaches the JSON.
+    This probe reads values out of a deprecated witness where they were stored
+    as raw float64 — so they ARE 53-bit, and the old docstring said as much
+    before concluding that lifting them to `mpf` made them safe. It removed the
+    float64 TYPE and kept the float64 information, then `fmt` printed the
+    result at OUTPUT_DPS:
+
+        published_kappa_MeV
+          claims -1.0707907503265856608010153649956919252872467041015…
+          really -1.0707907503265857
+
+    An `mpf` computed here is rendered with `fmt`; a value that arrived as a
+    float is rendered with `str_at_true_precision`, which prints what 53 bits
+    actually determine. These particular values cannot be fixed at the source —
+    the source is a committed deprecated witness — so honest rendering is the
+    whole fix (bean qou-3jwy).
     """
     if isinstance(o, bool) or isinstance(o, int):
         return o
-    if isinstance(o, (float, mp.mpf)):
-        return fmt(mp.mpf(o))
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, float):
+        return str_at_true_precision(o)
     if isinstance(o, dict):
         return {k: _ser(v) for k, v in o.items()}
     if isinstance(o, (list, tuple)):

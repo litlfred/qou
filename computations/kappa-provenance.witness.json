@@ -1,35 +1,35 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-08-10T17:56:04.633488+00:00",
+  "computedAt": "2026-08-10T19:26:56.568563+00:00",
   "computation": "kappa-provenance",
   "scriptFile": "probe_kappa_provenance.py",
   "contentBlock": "conj:magic-shell-coupling-kappa",
   "description": "Locates the fit that produced the published kappa. It survives under computations/_deprecated/. The published value is the 3He arm alone; the T arm has the opposite sign; and the producing witness records hypothesis_supported=false. The fit was to Delta_coupling, not to binding energy as the content block states.",
   "parameters": {
-    "published_kappa_MeV": "-1.07079075032658566080101536499569192528724670410156250000000",
+    "published_kappa_MeV": "-1.0707907503265857",
     "source_witness": "computations/_deprecated/interface-type-resolved-coupling-probe.witness.json",
     "corroborating_witness": "computations/_deprecated/canonical-braid-interface-composition.witness.json"
   },
   "data": {
     "anchors": {
       "3He": {
-        "slope_MeV": "-1.07079075032658566080101536499569192528724670410156250000000",
-        "slope_in_h_E0_units": "-1.22358955707030436776960868883179500699043273925781250000000",
+        "slope_MeV": "-1.0707907503265857",
+        "slope_in_h_E0_units": "-1.2235895570703044",
         "excess": 1
       },
       "T": {
-        "slope_MeV": "0.202309473388694427420375632209470495581626892089843750000000",
-        "slope_in_h_E0_units": "0.231178462140525176060634748864686116576194763183593750000000",
+        "slope_MeV": "0.20230947338869443",
+        "slope_in_h_E0_units": "0.23117846214052518",
         "excess": -1
       },
       "4He": {
-        "residual_MeV": "0.0222529111087397570012402781003402196802198886871337890625000",
+        "residual_MeV": "0.022252911108739757",
         "excess": 0
       }
     },
     "original_verdict": {
-      "he3_slope": "-1.22358955707030436776960868883179500699043273925781250000000",
-      "t_slope": "0.231178462140525176060634748864686116576194763183593750000000",
+      "he3_slope": "-1.2235895570703044",
+      "t_slope": "0.23117846214052518",
       "slope_consistent_to_5pct": false,
       "he4_residual_small": true,
       "hypothesis_supported": false,
