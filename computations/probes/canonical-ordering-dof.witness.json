@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T08:42:08.519442+00:00",
-  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
+  "computedAt": "2026-08-10T14:27:29.260659+00:00",
+  "commitSha": "86c58229a346314c979196d92743e032c6e1c5fa",
   "assertions": [
     {
       "name": "closed_form_ratio_hardcodes_canonical_ordering",
@@ -138,11 +138,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 6,
   "computation": "canonical-ordering-dof",
   "scriptFile": "canonical_ordering_dof_probe.py",
-  "scriptHash": "87418d646ff1",
-  "scriptCommitSha": "30835c30e73372a6be797072a0472d3770d01d94",
+  "scriptHash": "894cafe018ee",
+  "scriptCommitSha": "736b82c5693c8c589b94f76c6282ccc5b43c5d3f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -151,8 +151,7 @@
   },
   "environment": {
     "python": "3.11.15",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1"
   },
   "description": "Is the canonical cross-species nucleon ordering p...pn...n derivable, or a free degree of freedom? Q1: it is LIVE IN PRODUCTION -- the A>=3 binding chain (mass_table_comprehensive -> binding_canonical -> closed_form_tau_M -> closed_form_ratio) iterates a hardcoded ['p']*Z + ['n']*N, so every mixed-species A>=3 row of mass-table-comprehensive.witness.json inherits the choice. Q2: the interface product factorises as P(o)/P(canonical) = (f_pn/f_pp)^(b_p-1) * (f_pn/f_nn)^(b_n-1) over the p-/n-BLOCK counts; at the substrate anchor f_pn/f_pp < 1 < f_pn/f_nn, so the canonical arrangement is a SADDLE -- no extremal principle can select it (candidate 1 REFUTED). The trace IS a function of the interface multiset, but the multiset is not determined by (Z, N), so candidate 2 re-coordinatises the DOF without removing it. What survives is candidate 3: a genuine undeclared degree of freedom. free_parameters = 0; no AME quantity selects anything; nothing is wired; no ordering is recommended.",
   "auditOnly": true,
