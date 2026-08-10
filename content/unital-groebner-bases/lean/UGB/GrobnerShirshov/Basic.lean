@@ -891,4 +891,48 @@ theorem noQuasiZerosFree_of_generator {G : Type u} {k : Type v} [Ring k]
   have h := hf [g] [] (by rintro ⟨h1, -⟩; exact List.cons_ne_nil g [] h1) ([g] ++ m ++ [])
   rwa [AlgElement.contextMul_coeff_middle] at h
 
+/-- **`NoQuasiZerosFree` says exactly `Nonempty G` — and therefore carries no
+    algebraic content in this development** (bean qou-k6ks).
+
+    The hypothesis is threaded through `local_confluence` and its consequences to
+    record the manuscript's standing assumption. This equivalence measures what
+    that threading actually buys, and the answer is: nothing beyond "the
+    generating set is non-empty".
+
+    * `←` is `noQuasiZerosFree_of_generator`: one generator gives an injective
+      context, which is all the condition asks.
+    * `→` is the degenerate direction. With `G` empty every monomial is `[]`, so
+      *no* non-trivial context exists, the premise `¬(a = [] ∧ b = [])` is never
+      satisfiable, and the condition degenerates to "every element is zero" —
+      false for non-trivial `k`. So the property fails precisely when there is
+      no generator.
+
+    The reason it cannot do real work here is structural and worth stating:
+    Leitner–Pawloski's `A` is the **quotient** `R⟨X⟩/I`, and a quasi-zero is a
+    phenomenon of the quotient. This development's Gröbner–Shirshov framework
+    works entirely in the free algebra, where — as this theorem shows — the
+    condition is automatic. `Quotient.lean` now supplies `QuotAlg`, but only as a
+    `Submodule` quotient; there is no ring structure on it yet, so the chapter's
+    `NoQuasiZeros` cannot even be *stated* there. That, not the threading, is the
+    missing piece. -/
+theorem noQuasiZerosFree_iff_nonempty {G : Type u} {k : Type v} [Ring k]
+    [Nontrivial k] [DecidableEq G] [DecidableEq k] :
+    NoQuasiZerosFree G k ↔ Nonempty G := by
+  constructor
+  · intro h
+    by_contra hemp
+    rw [not_nonempty_iff] at hemp
+    have hnil : ∀ m : Monomial G, m = [] := by
+      intro m
+      cases m with
+      | nil => rfl
+      | cons g _ => exact (hemp.false g).elim
+    have hzero := h (AlgElement.singleton ([] : Monomial G))
+      (fun a b hab => absurd ⟨hnil a, hnil b⟩ hab)
+    have h0 := hzero ([] : Monomial G)
+    rw [AlgElement.singleton_coeff_self] at h0
+    exact one_ne_zero h0
+  · rintro ⟨g⟩
+    exact noQuasiZerosFree_of_generator g
+
 end UGB.GrobnerShirshov
