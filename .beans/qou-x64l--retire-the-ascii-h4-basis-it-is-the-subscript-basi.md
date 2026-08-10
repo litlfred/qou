@@ -1,10 +1,10 @@
 ---
 # qou-x64l
 title: Retire the ASCII H4 basis — it is the subscript basis relabelled, and the permutation is explicit
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-09T17:21:10Z
-updated_at: 2026-08-09T17:21:10Z
+updated_at: 2026-08-10T02:55:00Z
 ---
 
 
@@ -352,3 +352,53 @@ from a fresh computation. `hdecomp` is the 24 equations verified above.
 from-source build of that cone, and the bean's own measurement says
 `HeckeH4BlockMap211` and `HeckeH4BlockMap31` are >25 min each at ~6 GB. Budget
 for that before starting, and seed the cache branch afterwards.
+
+## CLAIM 2026-08-10
+
+`in-progress`, branch `claude/x64l-retire-ascii-h4-chain`.
+
+Steps 1–3 are done and merged. **Step 4 only**: an independent proof of `trM4`
+cyclicity on the subscript basis, so the ASCII Gram chain stops being a
+dependency of the theorem and can be deleted. Route as recorded above —
+`gram_symm_of_rep_decomp` over `wedderburn₄`'s five representations; the open
+part is identifying the Markov weights.
+
+### Scoping, before any code: `hmul` is already proved — only `hdecomp` is open
+
+`gram_symm_of_rep_decomp` needs two hypotheses. Checking what the tree already
+has, rather than assuming:
+
+* **`hmul` — done.** `ρ_λ (mulNF₄ u v) = ρ_λ u * ρ_λ v` exists for all three
+  matrix blocks, as the `map_mul'` field of the block algebra homs:
+
+      QOU/Machinery/HeckeH4BlockMap211.lean:518  blockOf211_mulNF₄
+      QOU/Machinery/HeckeH4BlockMap22.lean:343   blockOf22_mulNF₄
+      QOU/Machinery/HeckeH4BlockMap31.lean:518   blockOf31_mulNF₄
+
+  and `wedderburn₄` packages all five as
+  `H4A ≃ₐ[K] K × K × M₂ × M₃ × M₃`, so the two one-dimensional blocks come with
+  the same field. **Nothing has to be built for `hmul`.**
+
+* **`hdecomp` — the whole remaining task.**
+  `trM4 z h x = ∑_λ w_λ · (ρ_λ x).trace`.
+
+**Why that is smaller than it looks.** `trM4` is linear (`trM4_add`,
+`trM4_smul`, both already present), so `hdecomp` need only hold on the 24 basis
+vectors, and `trM4 z h (e₄ j) = TRM4 z h j` collapses each left side to a single
+table entry (`trM4_e₄`, already proved). So the identity is 24 scalar equations
+
+    TRM4 z h j  =  ∑_λ w_λ · (ρ_λ (e₄ j)).trace       (j : Fin 24)
+
+in **five** unknowns. Five of them determine the weights; the other nineteen are
+then checks, not solves. That is the shape of the "identify the Markov weights"
+step, and it is finite and mechanical rather than open-ended.
+
+**And it does not touch the build pole.** All of this is downstream of
+`HeckeH4StabilizationRung`, so it goes in a new leaf module and does **not**
+invalidate `HeckeH4BlockMap211`/`31` (>25 min each at ~6 GB RSS). The cost
+warning recorded above applies to edits *in* the rung; this is not one.
+
+**Not yet checked:** whether the corpus already carries these five weights under
+the `y_λ` name. They are not in `QOU/Mathlib/HeckeAlgebra.lean` under `y_`, so
+either they live elsewhere or they have to be computed from the block traces.
+Deriving them from the 24 equations needs no external formula either way.
