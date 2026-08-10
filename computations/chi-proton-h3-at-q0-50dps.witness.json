@@ -12,7 +12,7 @@
   "Z": 1,
   "N": 0,
   "n_partitions": 3,
-  "compute_time_sec": 0.01,
+  "compute_time_sec": "0.00",
   "tr_M_at_q0": "1.0653061442544499756666334037445034130528872534934",
   "by_partition": [
     {
@@ -23,7 +23,7 @@
       "y_lambda": "0.41539579536061340131043751972541446062496615551882",
       "chi_lambda": "1.3824944633925928759010066186910068575145333016307",
       "contribution": "0.57428238720261054553308605310815991986809859908061",
-      "compute_time_sec": 0.0
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -34,7 +34,7 @@
       "y_lambda": "0.28092963103101970777815130637822107959502749332953",
       "chi_lambda": "1.8077030637786210288109844137955337992663530400168",
       "contribution": "0.50783735472097189210079185791533256739134888072342",
-      "compute_time_sec": 0.0
+      "compute_time_sec": "0.00"
     },
     {
       "partition": [
@@ -46,14 +46,14 @@
       "y_lambda": "0.022744942577347183133259867518143380184978857822109",
       "chi_lambda": "-0.73922357077647486081682637872259067950821434399694",
       "contribution": "-0.016813597669132461967244507278989074206560226310639",
-      "compute_time_sec": 0.0
+      "compute_time_sec": "0.00"
     }
   ],
-  "scriptHash": "f33904ef3e71",
-  "scriptCommitSha": "e49bc1fa7705cd8e11561f87dfc30fbda5179267",
-  "commitSha": "7e7bc9f93001300480eb2fcf5c12228ecac583b6",
+  "scriptHash": "c36a8a393fcd",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "commitSha": "fd518978d40fbc8fc461c3fc0329117e6c31977d",
   "engine": "python+mpmath",
-  "computedAt": "2026-08-08T19:12:01.700256+00:00",
+  "computedAt": "2026-08-10T15:14:16.448415+00:00",
   "durationMs": 0,
   "engineVersion": "python 3.11 + mpmath 1.4.1",
   "q0Anchor": "proton",

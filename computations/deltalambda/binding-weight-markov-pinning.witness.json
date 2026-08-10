@@ -13,7 +13,7 @@
     "pinning": {
       "binding_trace": "J_L = tr_M(\u03c1(\u03b2_L)) \u2014 Markov trace (\u00a77a); unique up to normalization",
       "derived_weight": "y_\u03bb (Wenzl Schur principal specialization), solved from the Markov axiom (wedderburn_jones_markov / markov_weights_symbolic.solve_y_lambda)",
-      "y_lambda_source": "canonical-module",
+      "y_lambda_source": "verified-cache",
       "schur_weyl_is_not_markov": "the d_q\u00b2/[n]! form is 'NOT the Markov-trace weight' (canonical module docstring)"
     },
     "check1_y_ne_W": {
@@ -65,5 +65,5 @@
     "bean": "qou-3q7t",
     "no_fit": true
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c"
 }

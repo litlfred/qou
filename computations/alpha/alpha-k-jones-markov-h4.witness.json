@@ -3,9 +3,9 @@
     "tr_m_at_substrate": 2.086641217277176,
     "word_description": "(\u03c3_0 \u03c3_1 \u03c3_2)^4 (T(4,5)-style)"
   },
-  "commitSha": "d9950116da9b570a4a8c33f3292128dafdd0b0de",
+  "commitSha": "fd518978d40fbc8fc461c3fc0329117e6c31977d",
   "compute": "h4_wedderburn_atlas",
-  "computedAt": "2026-08-10T14:49:55.902061+00:00",
+  "computedAt": "2026-08-10T15:22:47.322820+00:00",
   "description": "Jones-Markov weights y_\u03bb at H_4(q) = canonical extension of alpha_k_jones_markov_h3.py to the 4-strand Wedderburn case. Closes the gap identified in PR #1231 BIG review: 'H_4 framework exists; gap is absence of explicit production knot atlas for H_4 (only H_3 in use).' Production consumer for Higgs T(2,8) projection to H_4 + 4-strand structures.",
   "durationMs": 0,
   "engine": "mpmath",
