@@ -11,7 +11,7 @@ tags:
     - stale-claim-corrected
 parent: hypr
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T01:35:00Z
+updated_at: 2026-08-10T04:15:00Z
 ---
 
 Follows from the finding proved in `QOU/AppendixSurreals/HyperrealLimitTransfer.lean`
@@ -87,3 +87,72 @@ These are complementary, not alternatives: (2) makes the limit-transfer content 
 ⚠ **Do not promote `surrealFieldHyperreal` or `surrealLimitTransferHyperreal` to global
 instances** while doing this. They are `def`s deliberately; a global instance would make
 every `SurrealField`-generic theorem silently apply to `ℝ*` under a two-valued birthday.
+
+---
+**2026-08-10 — audit run. One relief, one real correction, one sharp principle.**
+
+### 1. RELIEF: no claim outside the surreals appendix is affected
+
+The four `QOU/Information` modules flagged as highest-risk — `PNeqNpWallUnification`,
+`MagnitudeAxisBoundary`, `MagnitudeTraceCommutator`, `SkeinSurrealGrade` — **do not
+import `QOU.AppendixSurreals` at all.** Every "birthday" occurrence in them is *prose*:
+motivational language in docstrings, not term-level dependence on `SurrealField.birthday`.
+`SkeinObservationBridge` does import the appendix but never mentions birthday.
+
+So the worry that a live claim outside the appendix rests on vacuous axioms is
+**unfounded**. Good news, and it narrows the blast radius to `AppendixSurreals/`.
+
+### 2. THE SHARP PRINCIPLE, which is what the flat model actually buys
+
+`flatBirthday ≤ 1` always. Therefore:
+
+> **No lower bound on birthday is derivable from the current axioms.** Any statement of
+> the form `birthday x ≥ f(x)` with `f` unbounded is refuted by the flat model.
+
+Upper bounds are unaffected — which is why `SignSequence.birthday_gonshorIn_le_omega`
+(`≤ ω`) survives: it is an upper bound, proved directly from
+`birthday_ofReal_le_omega`. It is true, weak, and consistent with the flat model. The
+sharper `birthday (gonshorIn K s) ≤ s.length` that `Basic.lean` reserves "for future
+induction proofs" is *also* an upper bound and *also* satisfied by the flat model — so
+the flat model neither refutes it nor helps prove it.
+
+This is the precise statement to carry forward: **the axioms constrain birthday only
+from above, and the interesting content is all below.**
+
+### 3. THE CORRECTION: `DiophantineBirthday` is trivially inhabited
+
+`QOU/AppendixSurreals/DiophantineBirthday.lean` carries, in comments:
+
+> *"**No instance is provided — that is the honest open state** (AGENTS.md §3b-tax)"*
+> *"The `sorry` represents the **open conjecture** per §3b — not a missing proof."*
+
+But the class's actual fields are
+
+```lean
+class DiophantineBirthday where
+  residual : ℝ
+  residual_eq_zero : residual = 0
+```
+
+**Verified in Lean: `example : DiophantineBirthday := ⟨0, rfl⟩` typechecks, exit 0.**
+
+So the class is **trivially inhabited**, and withholding the instance encodes *nothing*.
+Any downstream result taking `[DiophantineBirthday]` as a hypothesis is **unconditional
+in disguise** — the hypothesis can be discharged in one line by anyone who tries.
+
+Note the file's own docstring admits the shape is provisional — *"Field schema below is a
+structural placeholder; refine per §3b to match the conjecture's actual content"* — so
+this is a known-incomplete formalisation whose **epistemic labelling overstates it**. The
+history comment records that an `axiom`-asserted global instance was removed as
+dishonest; removing it did not achieve what the comment claims, because the class was
+trivially satisfiable either way.
+
+Note also: the class does **not** mention `birthday` in its formal content, so it is not
+a victim of the vacuous axioms — it is a separate, and worse, problem.
+
+**Fix required (not done here):** give `DiophantineBirthday` content that is actually the
+conjecture — a separation statement of the form "for algebraic `α` of degree `d`, the
+birthday trajectory satisfies … while for transcendental it does not" — which by §2 above
+will need a **lower** bound on birthday, hence strengthened axioms. Until then the class
+should be labelled a placeholder, not an open conjecture, because a reader cannot tell
+the difference and the comment actively misleads.
