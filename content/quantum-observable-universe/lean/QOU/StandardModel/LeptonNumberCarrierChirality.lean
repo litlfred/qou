@@ -1,16 +1,17 @@
 /-
 Copyright (c) 2026 QOU contributors. All rights reserved.
 
-# Lepton number needs a chiral carrier: the neutrino cannot be the unknot
+# Lepton number cannot factor through the unframed knot type
 
 Companion to `LeptonNumberGradingObstruction.lean`.  That file showed the
 *stated* bridge from transition-count to state-function (a `ℤ`-grading on the
-Skein module) cannot exist.  This file shows something stronger and more
-useful: **no function of the unframed knot type can reproduce the corpus's
-own lepton-number table**, and it identifies exactly what extra data is
-needed.
+Skein module) cannot exist.  This file locates the *level* at which `L` can live: **it cannot factor
+through the unframed knot type**, because the mirror must move the carrier
+and the unknot is amphichiral.  The corpus already works one level down
+(braid words, framing), so this is a constraint that its model satisfies —
+not a defect in it.
 
-## The inconsistency
+## What this does and does not say (corrected 2026-08-10)
 
 `lepton-number-categorical-properties.md` assigns
 
@@ -21,12 +22,30 @@ needed.
 | `νₑ` | `K_{0₁}` (unknot) | `+1` |
 | `ν̄ₑ` | `K_{0₁}^σ` (mirror unknot) | `-1` |
 
-The charged rows are fine: the trefoil is **chiral**, so `T(2,3)` and its
-mirror are genuinely different knots and may carry different `L`.
+Read as *topological knot types*, the neutral rows are inconsistent: the
+unknot is amphichiral (it bounds a disk, so it is isotopic to its mirror),
+and the rows would assign `+1` and `-1` to the same knot.
 
-The neutral rows are not.  The unknot is **amphichiral** — it bounds a disk,
-so its mirror is itself, `K_{0₁}^σ = K_{0₁}`.  The table therefore assigns
-`+1` and `-1` to *the same knot*.  No function of the knot type can do that.
+**That reading is wrong, and this file does not assert it.**  The corpus's own
+antiparticle operation
+(`QOU/Torsion/antiparticle_crossing_reversal.lean`,
+`AntiparticleCrossingReversalContext`) is `mirror : Braid → Braid`, the
+involution `σᵢ ↦ σᵢ⁻¹` on **braid words**, and it explicitly records
+`impl_topological_mass_invariance` — *"the mirror preserves the knot type"*.
+What separates particle from antiparticle there is the **crossing energy**
+under the bar involution `q ↔ q⁻¹` (`E_anti = -E_bar`) and the Coulomb
+charge, both valued in the coefficient ring `R` — not the knot type.
+
+So `K_{0₁}` and `K_{0₁}^σ` are braid-level (framed) objects, and the label
+"unknot" is a *projection* that discards precisely the writhe / framing data
+distinguishing them.  On that reading the mirror moves the carrier and the
+obstruction below does not fire.
+
+What the theorems therefore establish is a **positive constraint**, not a
+refutation: any `L` separating particle from antiparticle by mirroring must
+be defined at a level where the mirror acts freely — braid word, framing, or
+the `q`-side — and *cannot* factor through the unframed knot type.  The
+corpus already works at that level; this file pins down why it must.
 
 ## What is proved
 
@@ -42,31 +61,33 @@ so its mirror is itself, `K_{0₁}^σ = K_{0₁}`.  The table therefore assigns
   required values exists.  So this is a sharp characterisation, not merely a
   necessary condition.
 
-## Consequence: what `L` must actually be
+## Consequence: which level `L` lives on
 
-Two repairs are available, and they are the only two:
+`L` must be defined where the mirror acts freely.  Two such levels exist, and
+the corpus already uses both:
 
-1. **Give the neutrino a chiral carrier.** The unknot cannot work; the
-   carrier must be a knot that its mirror does not fix.
-2. **Let `L` see more than the knot type.** The natural candidate is the
-   *framing*: a framed unknot with framing `+n` and one with framing `-n` are
-   distinct framed objects even though the underlying knot is amphichiral, so
-   the mirror acts freely there.  This is the same per-strand framing datum
-   `T(t)` (`def:strand-twist-datum`) that the eightfold-way chapter carries
-   for hypercharge.
+1. **The braid word.** `mirror : Braid → Braid` is `σᵢ ↦ σᵢ⁻¹`; distinct
+   braid words can present the same knot, and the mirror moves them.
+2. **The framing / writhe.** A framed unknot with framing `+n` and one with
+   `-n` are distinct framed objects even though the underlying knot is
+   amphichiral.  This is the per-strand framing datum `T(t)`
+   (`def:strand-twist-datum`) the eightfold-way chapter carries for
+   hypercharge.
 
-Route 2 is the more interesting one, because it would put `L` and the
-hypercharge framing datum in the same structure.  Neither route is pursued
-here.
+Level 2 carries a tension worth stating: if `L` requires framing while the
+chapter's hypercharge programme requires a *framing-independent* second
+invariant, the two cannot be the same datum.  Not resolved here.
 
 ## Honest scope
 
-**Scope-(b)** with the invariant cited (amphichirality of the unknot: it
-bounds a disk, so it is isotopic to its mirror).  It excludes exactly one
-thing — `L` as a function of the *unframed* knot type, given the corpus's own
-carrier assignment.  It does **not** refute lepton number, the `Y = B - L`
-reduction, `μ̄₁₂₃`, or route 2 above; `chiral_carrier_admits_lepton_number`
-makes precise that the obstruction vanishes the moment the carrier is chiral.
+**Scope-(a)** — a statement about which *level* `L` can live on, with the
+invariant cited (amphichirality of the unknot: it bounds a disk, so it is
+isotopic to its mirror).  It excludes one thing: `L` as a function of the
+**unframed knot type**.  It does **not** refute lepton number, the corpus
+table (whose carriers are braid-level, see above), the `Y = B - L` reduction,
+or `μ̄₁₂₃`.  `chiral_carrier_admits_lepton_number` makes the limit precise —
+the obstruction vanishes the moment the mirror moves the carrier, which at
+braid/framing level it does.
 
 Amphichirality of the unknot is taken as a **hypothesis** here
 (`hamphi : mirror x = x`), not asserted as a Lean fact about a knot type —
@@ -89,8 +110,10 @@ variable {K : Type*}
 If the mirror involution fixes a carrier `x`, no `ℤ`-valued function of the
 carrier can assign `+1` to the particle and `-1` to its mirror image.
 
-Applied to the corpus table with `x = K_{0₁}` the unknot (amphichiral, so
-`mirror x = x`), this refutes the neutrino / antineutrino rows. -/
+Applied to a carrier the mirror fixes — e.g. the unknot read as a bare knot
+type — this shows `L` cannot be a function of that carrier alone.  It is not
+a statement about the corpus table, whose carriers are braid-level; see the
+module docstring. -/
 theorem no_lepton_number_on_amphichiral_carrier
     (mirror : K → K) (L : K → ℤ) (x : K)
     (hamphi : mirror x = x)

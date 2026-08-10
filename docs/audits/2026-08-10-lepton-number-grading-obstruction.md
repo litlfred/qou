@@ -126,21 +126,29 @@ own, supply the state→`L` map that `Y = B − L` needs. The suggestion in
 §"Where the repair probably lives" above was structurally confused on this
 point, and is withdrawn in that form.
 
-### 2. No function of the unframed knot type can work at all
+### 2. A level constraint — and a correction I had to make
 
-Sharper, and it subsumes the grading obstruction. The corpus's own carrier
-table assigns
+My first reading of this was wrong, and the author caught it. I claimed the
+corpus's carrier table was internally inconsistent: it sends `νₑ` to the
+unknot with `L = +1` and `ν̄ₑ` to the *mirror* unknot with `L = -1`, and the
+unknot is amphichiral, so those rows appeared to assign `+1` and `-1` to the
+same knot.
 
-| particle | carrier | `L` |
-|---|---|---|
-| `νₑ` | `K_{0₁}` (unknot) | `+1` |
-| `ν̄ₑ` | `K_{0₁}^σ` (mirror unknot) | `-1` |
+**That reading is wrong.** The corpus's antiparticle operation
+(`QOU/Torsion/antiparticle_crossing_reversal.lean`) is
+`mirror : Braid → Braid`, the involution `σᵢ ↦ σᵢ⁻¹` on **braid words**, and
+it explicitly records `impl_topological_mass_invariance` — *"the mirror
+preserves the knot type"*. What separates particle from antiparticle there is
+the crossing energy under the bar involution `q ↔ q⁻¹` (`E_anti = -E_bar`)
+and the Coulomb charge, both valued in `R`. The corpus therefore already
+holds that the knot type does *not* distinguish them, and the labels
+`K_{0₁}` / `K_{0₁}^σ` denote braid-level (framed) objects. "Unknot" is a
+projection that discards exactly the writhe/framing data doing the work.
 
-The unknot is **amphichiral** — it bounds a disk, so it is isotopic to its
-mirror. The two rows therefore assign `+1` and `-1` to **the same knot**. No
-function of the knot type can do that.
+At `q₀ ≈ 1.11 > 1` the bar involution is non-trivial, so nothing here is
+fixed by the mirror and the obstruction does not fire.
 
-Proved in
+What survives is a **level constraint**, proved in
 [`LeptonNumberCarrierChirality.lean`](../../content/quantum-observable-universe/lean/QOU/StandardModel/LeptonNumberCarrierChirality.lean):
 
 | Theorem | Statement | Axioms |
@@ -149,25 +157,18 @@ Proved in
 | `mirror_must_move_the_carrier` | such an `L` forces `mirror x ≠ x` | **none** |
 | `chiral_carrier_admits_lepton_number` | `mirror x ≠ x` ⟹ such an `L` exists | `[propext]` |
 
-The third theorem is what keeps this honest: the obstruction is **exactly**
-amphichirality and nothing more. It rules out the unknot as the neutrino
-carrier, not the idea of a knot-valued lepton number.
+Read correctly this is **scope-(a)**, not scope-(b): `L` cannot factor
+through the *unframed knot type*, so it must be defined where the mirror acts
+freely — braid word, framing, or the `q`-side. The corpus already works
+there. The third theorem bounds the claim: the obstruction is *exactly*
+mirror-fixedness and vanishes the moment the carrier moves.
 
-Note the charged rows are unaffected — the trefoil is chiral, so `T(2,3)` and
-its mirror are genuinely different knots.
+### The tension worth recording
 
-### The two repairs, and only two
+If `L` needs **framing** to separate particle from antiparticle, while the
+eightfold-way hypercharge programme needs a second invariant *independent* of
+the framing/writhe, then `L` and that invariant cannot be the same datum.
+Both requirements are now explicit; the compatibility question is open.
 
-1. **Give the neutrino a chiral carrier.** The unknot cannot work.
-2. **Let `L` see the framing.** A framed unknot with framing `+n` and one with
-   `-n` are distinct framed objects even though the underlying knot is
-   amphichiral, so the mirror acts freely there.
-
-Route 2 is the more interesting: the framing datum is `T(t)`
-(`def:strand-twist-datum`), the same object the eightfold-way chapter carries
-for hypercharge. If `L` needs framing and `Y` needs a framing-independent
-second invariant, that is a constraint worth having explicit. Neither route is
-pursued here.
-
-`qou-kl39` stays open. Its next step is now: **pick a chiral neutrino carrier,
-or define `L` on framed knots** — not "search for a state→`L` map".
+`qou-kl39` stays open. Next step: define `L` at braid/framing level and check
+it returns `0` on a single quark — not "search for a knot invariant".
