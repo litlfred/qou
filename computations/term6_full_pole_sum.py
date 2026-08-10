@@ -89,11 +89,12 @@ from _precision import json_safe_float  # noqa: E402
 
 
 def _json_safe(o):
-    """Recursively replace non-finite floats with their marker strings."""
+    """Recursively: non-finite floats -> marker strings, finite floats -> repr."""
     if isinstance(o, bool) or o is None:
         return o
     if isinstance(o, float):
-        return json_safe_float(o)
+        v = json_safe_float(o)
+        return v if isinstance(v, str) else repr(v)
     if isinstance(o, dict):
         return {k: _json_safe(v) for k, v in o.items()}
     if isinstance(o, (list, tuple)):
@@ -317,8 +318,17 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
         return None
     u = sp.Symbol("u")
     try:
-        p_in_u = sp.sympify(p_in_u_str)
-        denom_in_u = sp.sympify(denom_in_u_str)
+        # BOTH names. `to_u_polynomial(expr, q, check_q)` renders its returned
+        # strings using whatever SYMBOL the caller passed, so the habiro
+        # witnesses carry either — habiro-coefficients-atomic.witness.json
+        # (2026-07-18) says "check_q", newer ones say "u". Sympifying with no
+        # locals gave the string its OWN fresh symbol, `.subs(u, sqrt_q)` below
+        # then no-opped, the expression stayed symbolic, and
+        # `float(complex(...))` raised "Cannot convert expression to float" —
+        # which is why this producer has been dead on main.
+        _loc = {"u": u, "check_q": u}
+        p_in_u = sp.sympify(p_in_u_str, locals=_loc)
+        denom_in_u = sp.sympify(denom_in_u_str, locals=_loc)
     except Exception as e:
         print(f"    SKIP: sympify failed: {e}")
         return None
@@ -469,10 +479,16 @@ def main():
             "now resolves to ≈ 0.057 MeV."
         )
         .set_content_block("prop:full-pole-structure-mass-trace")
-        .add_parameter("q_0", Q_0)
-        .add_parameter("m_e_MeV", M_E_MEV)
+        # `_json_safe` also carries floats to their repr strings: every number
+        # in this witness comes off a float64/sympy-N path (the residues are
+        # evaluated numerically), so repr is exactly the digits produced and it
+        # round-trips bit-exactly. Non-finite values become markers rather than
+        # bare JSON tokens — the deuteron's divergent sum is the one that
+        # matters and it is a RESULT, not a failure.
+        .add_parameter("q_0", _json_safe(Q_0))
+        .add_parameter("m_e_MeV", _json_safe(M_E_MEV))
         .add_parameter("n_max_cutoff", n_max)
-        .add_data("atoms", out_atoms)
+        .add_data("atoms", _json_safe(out_atoms))
         .add_caveat(
             "CONVENTION: this script reads habiro-coefficients-atomic."
             "witness.json, populated by markov_trace_symbolic in "
