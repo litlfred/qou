@@ -363,6 +363,59 @@ def dependency_order(by_producer: dict) -> list:
     return ordered
 
 
+def stale_readers():
+    """Producers that ran BEFORE an upstream witness they read was rewritten.
+
+    `dependency_order` fixes the order of work still pending. It cannot fix
+    what already ran: a producer recorded early in the journal may have read a
+    witness that a later producer then rewrote, so its committed output is
+    against data that no longer exists.
+
+    The journal is append-ordered, which is the only clock available — records
+    carry no timestamp — and it is sufficient: if Q writes a witness P reads,
+    and Q appears after P, then P read Q's pre-run value.
+
+    Returns [(reader, [upstreams])] in journal order. An empty list is the
+    campaign's real convergence criterion, and it is stronger than "every
+    producer ran": a run can be 52-for-52 green and still be internally
+    inconsistent.
+    """
+    items, _ = work_list()
+    by_producer = {}
+    for w, p in items:
+        by_producer.setdefault(p, []).append(w)
+    writes = {p: {pathlib.Path(w).name for w in ws} for p, ws in by_producer.items()}
+    owner = {w: p for p, ws in writes.items() for w in ws}
+
+    order, seen = [], set()
+    for line in LOG.read_text().splitlines() if LOG.exists() else []:
+        try:
+            p = json.loads(line)["producer"]
+        except Exception:                                        # noqa: BLE001
+            continue
+        if p not in seen:                # first run is the one that matters
+            seen.add(p)
+            order.append(p)
+    pos = {p: i for i, p in enumerate(order)}
+
+    out = []
+    for p in order:
+        if p not in by_producer:
+            continue
+        try:
+            src = (REPO / p).read_text()
+        except OSError:
+            continue
+        late = sorted({
+            owner[w] for w in set(_WITNESS_REF.findall(src))
+            if w in owner and owner[w] != p
+            and (owner[w] not in pos or pos[owner[w]] > pos[p])
+        })
+        if late:
+            out.append((p, late))
+    return out
+
+
 def done_set():
     if not LOG.exists():
         return set()
@@ -624,7 +677,21 @@ def main() -> int:
     ap.add_argument("--run", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--timeout", type=int, default=900)
+    ap.add_argument("--stale", action="store_true",
+                    help="list producers that ran before an upstream witness "
+                         "they read was rewritten (exit 1 if any)")
     a = ap.parse_args()
+    if a.stale:
+        rows = stale_readers()
+        if not rows:
+            print("no stale readers — every producer ran after its upstreams")
+            return 0
+        print(f"{len(rows)} producer(s) ran against an upstream that changed after:")
+        for p, ups in rows:
+            print(f"  {p}")
+            for u in ups:
+                print(f"      reads a witness written later by  {u}")
+        return 1
     if a.plan:
         items, orphans = work_list()
         by = {}
