@@ -29,3 +29,25 @@ lean-direct exit 0. On PR #4942.
 `dim ≥ 6` (the six words linearly INDEPENDENT), via ρ=(triv,sign,seminormalRep21):
 either the 6×6 independence of ρ(sixWords) in ℝ×ℝ×M₂, or ρ surjective (then
 dim≥6 from spanning ⇒ dim=6 ⇒ ρ iso = R2-inst). That is the next increment.
+
+## Independence (dim ≥ 6) — reductions VERIFIED, messy 4×4 tail remains (2026-08-10)
+
+WIP saved (compiles, one Ref'd GAP sorry): scratchpad `HeckeDim3Indep.WIP.lean`.
+Route: specialize K=ℝ, qi=q⁻¹; apply the three reps to a linear relation
+Σcᵢwᵢ=0 and read off 6 equations (et=triv, es=sign, m00/m01/m10/m11=seminormal
+M₂ entries). **VERIFIED sorry-free reductions:**
+- `hqi := mul_inv_cancel₀ hq` (q·q⁻¹=1); `hqi_ne : q+q⁻¹≠0`; `hK : K≠0` (K=(q⁴+q²+1)/(q²+1)²).
+- `hD : c₃ - c₄q⁻¹ + c₅q - c₆ = 0` — from `m10 = K·(…)`, factor K≠0.
+  (`linear_combination m10 + c₆*K*hqi` — the c₆ term needs the q·q⁻¹=1 correction.)
+- `hC : c₃ + c₄q - c₅q⁻¹ - c₆ = 0` — `linear_combination m01 + c₆*hqi`.
+- `h45 : c₄ = c₅` — from `hC - hD = (c₄-c₅)(q+q⁻¹)=0`, q+q⁻¹≠0.
+- `h36 : c₃ = c₆ - c₄(q-q⁻¹)` — `linear_combination hC - q⁻¹*h45`.
+
+**Remaining (the GAP):** close `c₁=c₂=c₄=c₆=0` (then c₃=c₅=0 via h45,h36) from the
+2 DIAGONAL seminormal entries `m00` (coeff c00=-1/(q³+q)) and `m11` (coeff
+c11=q³/(q²+1)) together with `et`, `es`. After substituting c₅=c₄ and
+c₃=c₆-c₄(q-q⁻¹), this is a 4×4 in (c₁,c₂,c₄,c₆); clear denominators
+(×(q³+q), ×(q²+1)) to a polynomial identity in q and finish with
+`linear_combination`/`nlinarith`. The coefficients are the only thing left to
+compute. This closure gives dim H_3(q)=6 AND, since the 3 reps then biject,
+the SW-7 Wedderburn iso H_3(q)≅ℝ×ℝ×M₂ = R2-inst at n=3.
