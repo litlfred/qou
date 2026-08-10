@@ -5,7 +5,7 @@ status: open
 type: task
 priority: normal
 created_at: 2026-08-10T00:45:00Z
-updated_at: 2026-08-10T02:45:00Z
+updated_at: 2026-08-10T03:25:00Z
 parent: fwr1
 ---
 Closes out the `fwr1`-`fwr5` arc. **Forward `uses[]` references went 274 -> 193**
@@ -124,3 +124,49 @@ no `uses[]` edge.
 Worth recording as method: a keyword search settled nothing here — *neither*
 candidate block contains "repair", and the correct one is identified only by what
 it argues. The same lesson overturned a deletion earlier in the arc.
+
+---
+
+**Item 2 is closed, and this bean was wrong about it.**
+
+Section 2 above lists seven edges as "wanting an edit, not a move", and states
+that two of them were "verified directly against the text". `fwr7` put all seven
+plus one newcomer to two independent readers. **Both returned keep on all eight**,
+agreeing row for row, every refutation resting on positive evidence of a lean
+rather than on the tie-break.
+
+Both of the "verified" ones were wrong, and wrong the same way — a keyword search
+over the `.md` alone, missing a lean carried by an extracted child:
+
+- `prop:gram-determinant-plancherel-ratio`: the source's **proof child** cites the
+  target by label for the exact identity the boxed formula is built from, and
+  that proof declares no `uses[]` of its own. The entry this bean proposed
+  deleting is the sole record of a real dependency.
+- `prop:markov-pair-z2`: the "(cf. ...)" carries the sentence's only non-trivial
+  claim, and the target's **table child** is the all-pairs data it points at.
+
+A third proposal here — retarget `rem:motivic-mass-rationale` at "the
+cross-chapter statement" — asked for a block that **does not exist**. One
+manifest in the corpus carries that label.
+
+What survived was the opposite of what was proposed: `prop:frobenius-s-classification`
+turned out to be **missing** `thm:wedderburn-mass-formula` rather than needing a
+swap, and that was added in `fwr9`.
+
+**Item 5, second prose defect: fixed.** `rem:motivic-mass-rationale` deferred to
+the archimedean realization functor "of the next subsection". The source sits in
+`sec:transfer-matrix-mass` (manifest line 47) and the functor in
+`sec:mass-algebraic-bifiltration-adelic` (line 226). Reworded to say what is
+true: the functor is constructed later in the chapter, once the adelic substrate
+it projects from is in place.
+
+**Deliberately not paired with a `foreshadows[]` declaration.** The locator is
+now honest, which arguably makes the deferral genuine — but declaring it would
+permanently exempt a ~300-block jump from `detangler-no-forward-ref`, and the
+ordering defect is real whether or not the prose owns up to it. Fixing the
+sentence and hiding the finding are different acts; only the first was wanted.
+
+Remaining in this bean, all still author decisions: item 1 (the 49-block chain),
+item 3 (the section title), item 4 (two duplications), item 5's third defect (the
+duplicated E0 derivation), and item 6 (the completeness pass, which is agent-doable
+but much larger than this arc).
