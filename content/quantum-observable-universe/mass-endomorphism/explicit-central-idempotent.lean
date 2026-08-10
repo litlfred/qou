@@ -60,7 +60,7 @@ def qContent {R : Type*} [CommRing R] (i j : ℤ) (q : Rˣ) : R :=
     placeholder fixes the signature to return a value in the
     underlying ring `R`, allowing element-level identities
     (orthogonality, self-adjointness, bar-pairing) to typecheck. -/
-opaque centralIdempotent {R : Type*} [CommRing R]
+noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
     (lam : List ℕ) (q : R) : R
 
 /-- **Theorem (`prop:explicit-central-idempotent`).** The central
