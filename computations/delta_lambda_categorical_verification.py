@@ -43,6 +43,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -63,6 +64,12 @@ from witness_base import WitnessBuilder, record_upstream
 _UPSTREAM_RECORDS: list = []
 from codata_constants import M_E_MEV
 from q_parameter import Q as Q0
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
 

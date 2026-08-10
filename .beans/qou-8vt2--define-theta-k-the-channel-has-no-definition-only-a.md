@@ -686,3 +686,98 @@ construction and check whether it lands in this class — not to select within t
 class by matching.
 
 Status stays `todo`.
+
+---
+
+# OWNER RULING + the q-content convention is now FORCED (2026-08-10)
+
+## 🟧 Owner ruling: the heat-kernel rates MAY live in ℤ[q^{±1/2}]
+
+Asked and answered. The fork left open by the previous section resolves to **(a)**:
+half-integer powers of `q` are permitted for the per-mode rates, notwithstanding
+AGENTS.md §7a fixing the Hecke *generator* eigenvalues at `(q, −q⁻¹)`. §7a governs
+the generators; it does not forbid `q^{1/2}` in the heat-kernel layer.
+
+Consequences, no longer conditional on the fork:
+
+  * `μ_λ(1/q) = q·μ_λ(q)`, i.e. **μ_λ = q^{−1/2}·g_λ(q) with g_λ bar-even** — stands.
+  * The `contentSqSum` prune stands: `contentSqSum : YoungDiagram → ℤ` is
+    q-independent, hence bar-even, hence the weak reading; it cannot make `r_λ`
+    bar-odd.
+
+## Which q-content convention can supply `g_λ`? — measured
+
+The corpus already has a q-deformation of cell content, and it is **`q^{cellContent}`**:
+
+    QOU/MathlibExt/WenzlSchurElement.lean:78     a * (1 - X * Q ^ (cellContent i j))
+    QOU/BraidKnot/QSchurWeightsGeneral.lean:54   weight λ = weight μ * q ^ cellContent i j / …
+    QOU/HeckeAlgebra/JonesMarkovWenzl.lean:220   q ^ ((n : ℝ) * (cellContent λ i j : ℝ))
+
+(The corpus's `jucysMurphy` at `JucysMurphy.lean:123` is over
+`MonoidAlgebra k (Equiv.Perm (Fin n))` — the **classical S_n** element. That is
+*why* `contentSqSum` is q-independent, and it is consistent with the prune.)
+
+Tested both candidate conventions for bar-evenness, symbolically, over
+λ ∈ {(1),(2),(1,1),(2,1),(3),(1³),(2,2),(3,1),(2,1,1)}:
+
+| convention | bar-even? |
+|---|---|
+| `Σ_{c∈λ} q^c` — the corpus's | **only when λ is self-conjugate** |
+| `Σ_{c∈λ} [c]_q²` — bracket form | **bar-even for every λ** |
+
+The reason is structural, not numerical: the content multisets of `λ` and `λ'`
+are negatives of one another, so `Σ q^c` is bar-invariant exactly on the
+transpose-fixed partitions. `[c]_q = (q^c − q^{−c})/(q − q⁻¹)` is bar-even for
+every `c`, so any sum of its even powers is bar-even unconditionally.
+
+## The self-conjugate branch is REFUTED — scope (b), structural
+
+That left a genuinely interesting possibility: keep the corpus's `q^c`
+convention and let the parity law **select** the mode set, restricting `Λ` to
+self-conjugate λ. It even resonates with AGENTS.md §7b (Type B folding; "stable
+matter = fixed points of the folded crystal").
+
+It is false, and cheaply:
+
+| n | partitions | self-conjugate |
+|---|---|---|
+| 1 | 1 | 1 |
+| **2** | **2** | **0** |
+| 3 | 3 | 1 |
+| 4 | 5 | 1 |
+| 8 | 22 | 2 |
+
+**`n = 2` admits no self-conjugate partition at all** — `(2)` and `(1,1)` are
+each other's transpose. A mode set restricted to self-conjugate λ is therefore
+*empty* at n = 2, making `Z_q ≡ 0` and the depth `|Λ| = 0`: no recursion, no
+`c_k`, nothing. This is a **scope (b) structural exclusion** — an orbit-count
+bound, which AGENTS.md accepts as justifying (b) — not merely a bad fit.
+
+## Conclusion: the bracket form is forced
+
+Given (i)+(ii), the owner's ℤ[q^{±1/2}] ruling, and non-emptiness of `Λ` at
+n = 2, the per-mode rates **cannot** use the corpus's `q^{cellContent}`
+convention. They must be built from **bar-even q-brackets**. The minimal
+candidate in the forced class is
+
+    **μ_λ(q) = q^{−1/2} · Σ_{c ∈ λ} [cellContent c]_q²**
+
+— the bracket-form q-deformation of the (excluded) classical `contentSqSum`.
+
+Reached with **no anchor input and no numerics against `c₃`**: purely from the
+asserted parity law, the owner's ruling, and a partition count. That is the
+formalize-first narrowing §3.3 asks for.
+
+**Residual scope.** This narrows the *form*; it does not derive `μ_λ`. Two things
+are still open and must not be conflated with the above:
+  1. the actual q-heat-kernel generator whose block eigenvalue `μ_λ` *is* — the
+     candidate above is shape-forced, not constructed;
+  2. whether `[c]_q` or some other bar-even bracket (e.g. `[c]_q` vs `[2c]_q`,
+     or a `q^{−1/2}`-twisted variant) is the right one — the parity law fixes
+     bar-evenness, not the specific bracket.
+
+**Guard.** Selecting among bar-even brackets by matching the measured `c₃` would
+be a fit and closes nothing. The next step is to construct the generator and read
+`μ_λ` off it, then check it lands in this class.
+
+Status stays `todo`.

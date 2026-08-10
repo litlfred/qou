@@ -45,6 +45,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import sys
 from pathlib import Path
 
@@ -72,6 +73,12 @@ def _agreement_rtol_for(working_dps: int) -> mp.mpf:
     """
     return mp.mpf(10) ** -min(working_dps - 18, 12)
 
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # AGREEMENT_RTOL is set in `main()` from the active `mp.mp.dps` so a
 # higher-precision rerun of this script automatically tightens the

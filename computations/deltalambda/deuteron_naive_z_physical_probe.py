@@ -52,6 +52,12 @@ import mpmath as mp
 # difference (this is a magnitude-class probe, not a precision probe).
 Q0_STR = "1.10997859555733471"
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 ME_MEV = mp.mpf("0.51099895069")        # CODATA electron mass
 B_AME_2H = mp.mpf("2.2245662")          # AME2020 deuteron binding (diagnostic only)
 S_D_MASTER = mp.mpf("0.7438")           # |Sum_lambda y_lambda chi^lambda sgn f^lambda|(D)

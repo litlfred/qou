@@ -155,6 +155,32 @@ def markov_trace_symbolic(Z, N, q, include_inter=True):
     return total_u.subs(u_int, sp.sqrt(q))
 
 
+# The canonical output symbol for anything this module SERIALIZES (bean
+# qou-0ndb). The witness fields are named `p_in_u` / `denom_in_u`, so their
+# strings must say `u` — regardless of which symbol the caller happened to
+# compute with. Before this, the name in the string was a property of the CALL
+# SITE: `_habiro_coefficient_extract` passes `u`, `analyse_atomic_braid` passes
+# `check_q`, and the same two field names therefore carried two different
+# symbols. Every consumer then had to know which producer wrote the file, and
+# the ones that guessed wrong failed SILENTLY — `sympify` mints a fresh symbol,
+# `.subs` no-ops, and the expression stays symbolic until something far away
+# tries to make a number of it. Four instances (bean qou-0ndb), the worst of
+# which published `phi_8_mult: 0` for a documented scaling law (bean qou-s41x).
+U_CANONICAL = sp.Symbol('u', positive=True, real=True)
+
+
+def str_in_u(expr, sym) -> str:
+    """Serialize `expr` (written in `sym`) as a string in the canonical `u`.
+
+    Use this for ANY expression leaving this module as text. Keeping the
+    in-memory expression in the caller's symbol is fine and intended — only the
+    SERIALIZED form is normalised, which is what consumers parse.
+    """
+    if sym == U_CANONICAL:
+        return str(expr)
+    return str(sp.sympify(expr).subs(sym, U_CANONICAL))
+
+
 def to_u_polynomial(expr_in_q, q, check_q):
     """Substitute q → u² and clear ALL check_q-denominators (including any
     cyclotomic / Markov-normalisation factors).  Returns
@@ -185,11 +211,13 @@ def to_u_polynomial(expr_in_q, q, check_q):
     # Determine min and max exponent
     monoms = poly.monoms()
     if not monoms:
-        return Integer(0), 0, str(den)
+        return Integer(0), 0, str_in_u(den, check_q)
     min_pow = min(int(m[0]) for m in monoms)
     shift = -min_pow if min_pow < 0 else 0
     p_shifted = sp.expand(p_expanded * check_q ** shift)
-    return p_shifted, shift, str(sp.expand(den))
+    # The EXPRESSION keeps the caller's symbol (callers go on computing with
+    # it); only the serialized denom is normalised to `u`. See str_in_u.
+    return p_shifted, shift, str_in_u(sp.expand(den), check_q)
 
 
 def cyclotomic_expansion(p_in_u, check_q, max_m=20):
@@ -223,8 +251,12 @@ def cyclotomic_expansion(p_in_u, check_q, max_m=20):
         quotient, a_m = sp.div(current, next_factor, check_q)
         a_m_expr = a_m.as_expr()
         coeffs.append({
+            # Normalised to the canonical `u` (bean qou-0ndb). This is THE field
+            # the breakage rode on: `reconstruct` and every `load_a_m` parse it,
+            # and until now its variable name depended on which symbol this
+            # function was handed.
             "m": m,
-            "a_m": str(a_m_expr),
+            "a_m": str_in_u(a_m_expr, check_q),
             "deg_a_m": int(a_m.degree()) if a_m.as_expr() != 0 else 0,
             "integral": all(c.is_Integer for c in a_m.all_coeffs())
                           if a_m.as_expr() != 0 else True,
@@ -239,16 +271,100 @@ def cyclotomic_expansion(p_in_u, check_q, max_m=20):
 
 
 def reconstruct(coeffs_data, check_q, max_m=20):
-    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify."""
+    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify.
+
+    `max_m` is VESTIGIAL — the loop iterates `coeffs_data`, not `range(max_m)`.
+    Kept only because callers pass it positionally. Do not read it as a bound.
+
+    BOTH symbol names, and that is the whole bug this function had (bean
+    qou-s41x; root cause is bean qou-0ndb). `cyclotomic_expansion` renders its
+    `a_m` strings using WHATEVER SYMBOL the caller handed it, so the name in the
+    string is a property of the call site:
+
+        habiro_coefficients_atomic.analyse_atomic_braid  passes `check_q`
+        _habiro_coefficient_extract.analyse_atom         passes `u`
+
+    Sympifying with only `check_q` in `locals` therefore left the `u`-rendered
+    strings referring to a FRESH `Symbol('u')` — same name, but no assumptions,
+    so not the caller's `Symbol('u', positive=True, real=True)`. The two never
+    cancel:
+
+        sympify("8 - 3*u**2", locals={"check_q": u}) - (8 - 3*u**2)
+            ->  -3*u**2 + 3*u**2          # not 0
+
+    which made `diff == 0` false for EVERY atom regardless of size, and so
+    `reconstruction_matches` false corpus-wide. Mapping both names onto the
+    caller's symbol is the fix; it cannot misfire, because a given string uses
+    one name or the other and both resolve to the same object.
+    """
     total = Integer(0)
     for entry in coeffs_data:
         m = entry["m"]
-        a_m = sp.sympify(entry["a_m"], locals={"check_q": check_q})
+        a_m = sp.sympify(entry["a_m"], locals={"u": check_q, "check_q": check_q})
         poch = Integer(1)
         for k in range(1, m + 1):
             poch *= 1 - check_q ** k
         total += sp.expand(a_m * poch)
     return sp.expand(total)
+
+
+class HabiroReconstructionFailed(RuntimeError):
+    """A witness was asked for its coefficients while flagging its own
+    reconstruction check as failed."""
+
+
+def load_a_m(slug, sym, witness_dir=None, *, allow_failed_reconstruction=False):
+    """Load `habiro-coefficients-<slug>.witness.json` as {m: a_m expression}.
+
+    REFUSES a witness whose own `reconstruction_matches` is false (owner
+    ruling, bean qou-s41x). That flag is the producer's statement that the
+    coefficients it is handing you do not rebuild the polynomial they came
+    from; a reader that takes them anyway is building on something the
+    producer already disowned. Every previous reader ignored it — three
+    verbatim copies of this function, none of which looked at the flag,
+    while 21 of 25 witnesses advertised a failed self-check.
+
+    Refuse rather than warn: the consumers compose these into a mirror
+    difference and read off a cyclotomic multiplicity, and a warning on
+    stderr in a long batch run is indistinguishable from no warning at all.
+    That is how `phi_8_mult: 0` stayed published against a documented
+    scaling law.
+
+    `allow_failed_reconstruction=True` is the deliberate override, for
+    diagnosing a bad witness rather than computing with it. It exists so
+    that the escape hatch has to be written down at the call site.
+
+    Both symbol names are mapped onto `sym` for the reason in `reconstruct`
+    above: whether a string says `u` or `check_q` is a property of which
+    producer wrote the file, not of the format (bean qou-0ndb).
+    """
+    import json
+    from pathlib import Path
+
+    base = Path(witness_dir) if witness_dir is not None else Path(__file__).resolve().parent
+    path = Path(base) / f"habiro-coefficients-{slug}.witness.json"
+    if not path.exists():                       # cluster subdir layout
+        alt = Path(base).parent / f"habiro-coefficients-{slug}.witness.json"
+        if alt.exists():
+            path = alt
+    data = json.loads(path.read_text())
+
+    matches = data.get("reconstruction_matches")
+    if matches is False and not allow_failed_reconstruction:
+        raise HabiroReconstructionFailed(
+            f"{path.name} carries reconstruction_matches: false — its own "
+            f"check says these coefficients do not rebuild p(u). Refusing to "
+            f"hand them to a caller. Regenerate the witness from its "
+            f"producer; pass allow_failed_reconstruction=True only to "
+            f"diagnose the file, not to compute with it."
+        )
+
+    out = {}
+    for c in data.get("habiro_coefficients", []):
+        out[c["m"]] = sp.sympify(
+            c["a_m"].replace("^", "**"), locals={"u": sym, "check_q": sym}
+        )
+    return out
 
 
 def analyse_atomic_braid(label, Z, N, include_inter, q):
@@ -298,7 +414,7 @@ def analyse_atomic_braid(label, Z, N, include_inter, q):
         "tr_M_in_q": str(p_q),
         "shift": int(shift),
         "denom_in_u": denom,
-        "p_in_u": str(p_u),
+        "p_in_u": str_in_u(p_u, check_q),
         "deg_p_u": deg_p,
         "habiro_coefficients": coeffs,
         "all_integral": all(c["integral"] for c in coeffs),

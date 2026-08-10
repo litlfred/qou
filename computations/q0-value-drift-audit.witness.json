@@ -6,8 +6,8 @@
     "counts": {
       "STALE": 321,
       "unknown": 25,
-      "proton-pin": 705,
-      "canonical": 616
+      "proton-pin": 737,
+      "canonical": 615
     },
     "stale_total": 321,
     "new_stale": 0,
@@ -4458,6 +4458,13 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/charm-mass-tower.witness.json",
+        "field": "inputs.q0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
         "field": "q_0_50dps",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -5872,6 +5879,13 @@
         "ppb_vs_canonical": 0.0
       },
       {
+        "file": "computations/even-a-mirror-pair-phi8-scaling-test.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/ew-couplings-substrate-derivation-probe.witness.json",
         "field": "parameters.Q_0",
         "value": "1.1097",
@@ -6222,6 +6236,13 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/h6-deuteron-free-word-chi-lambda.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro/habiro-coefficients-atomic.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
@@ -6292,11 +6313,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-beryllium-10.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-beryllium-6.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-beryllium-6.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-beryllium-7.witness.json",
@@ -6306,11 +6341,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-beryllium-7.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-beryllium-8.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-beryllium-8.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-beryllium-9.witness.json",
@@ -6320,11 +6369,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-beryllium-9.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-boron-10.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-boron-10.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-boron-12.witness.json",
@@ -6334,11 +6397,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-boron-12.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-boron-8.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-boron-8.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-boron-9.witness.json",
@@ -6348,11 +6425,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-boron-9.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-carbon-10.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-carbon-10.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-carbon-14.witness.json",
@@ -6362,11 +6453,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-carbon-14.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-deuteron.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-deuteron.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-helium-3.witness.json",
@@ -6376,11 +6481,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-helium-3.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-helium-4.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-helium-4.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-helium-5.witness.json",
@@ -6390,11 +6509,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-helium-5.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-helium-6.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-helium-6.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-lithium-5.witness.json",
@@ -6404,11 +6537,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-lithium-5.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-lithium-6.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-lithium-6.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-lithium-7.witness.json",
@@ -6418,11 +6565,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-lithium-7.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-lithium-8.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-lithium-8.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-mass-table-summary.witness.json",
@@ -6432,11 +6593,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-mass-table-summary.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-neutron.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-neutron.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-nitrogen-12.witness.json",
@@ -6446,11 +6621,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-nitrogen-12.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-oxygen-14.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-oxygen-14.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-coefficients-proton.witness.json",
@@ -6460,11 +6649,25 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/habiro-coefficients-proton.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro-coefficients-tritium.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/habiro-coefficients-tritium.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/habiro-interpolation-wlambda.witness.json",
@@ -6581,9 +6784,9 @@
       {
         "file": "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
@@ -6824,11 +7027,32 @@
         "ppb_vs_canonical": -0.0028416943465287684
       },
       {
-        "file": "computations/kappa-shell8-excess-convention.witness.json",
+        "file": "computations/kappa-excess-convention-resolution.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785827513808",
+        "value": "1.10997858275138080000000000000000000000000000000000000000000",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/kappa-mirror-split-shell-test.witness.json",
+        "field": "parameters.q_0",
+        "value": "1.10997858275138080000000000000000000000000000000000000000000",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/kappa-normaliser-index-rule.witness.json",
+        "field": "parameters.q_0",
+        "value": "1.10997858275138080000000000000000000000000000000000000000000",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/kappa-shell8-excess-convention.witness.json",
+        "field": "parameters.q_0",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/keystone-habiro-wrt-s3-2i.witness.json",
@@ -8492,9 +8716,9 @@
       {
         "file": "computations/probes/coulomb-mirror-killswitch-probe.witness.json",
         "field": "data.q0",
-        "value": "1.1099785955573347",
-        "class": "canonical",
-        "ppb_vs_canonical": -1.792806032488518e-08
+        "value": "1.1099785827513808",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
       },
       {
         "file": "computations/probes/d14-theta-bar-side.witness.json",
@@ -10585,16 +10809,9 @@
       {
         "file": "computations/rho-w-crystal-vertex-trace.witness.json",
         "field": "q_0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/rho-w-crystal-vertex-trace.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.1099785955573347198997632204832250266562084087802",
+        "class": "canonical",
+        "ppb_vs_canonical": 4.172458118041393e-41
       },
       {
         "file": "computations/rt-binomial-trace-evaluation-probe.witness.json",

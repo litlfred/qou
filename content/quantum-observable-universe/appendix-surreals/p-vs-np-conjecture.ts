@@ -23,6 +23,10 @@ export default conjecture({
     ref: "qou:QOU.AlgebraicSubstrate.PvsNPQou",
     validation: "not_checked",
   },
+  uses: [
+    "def:reeb-epsilon",
+    "prop:surreal-rate-calculus",
+  ],
   tags: [
     "tier:famous",
     "p-vs-np",

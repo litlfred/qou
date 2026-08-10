@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:06:22.551783+00:00",
-  "commitSha": "0b6fd2dadaa656df26c0a149349c6766de898e76",
+  "computedAt": "2026-08-10T18:58:43.710962+00:00",
+  "commitSha": "ab74db85855714687ad33d386dc3c8ab4e20808a",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 27,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "4584fdd6d939ab0c849db352d1356fa892a96b84",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,17 +27,21 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 586,
+      "Q0_OK": 613,
       "Q0_AMBIGUOUS": 17,
-      "Q0_ANCHOR_MISSING": 1892,
+      "Q0_ANCHOR_MISSING": 1874,
       "Q0_VALUE_MISSING": 1,
-      "Q0_AUDIT_EXEMPT": 65,
+      "Q0_AUDIT_EXEMPT": 66,
       "Q0_PARSE_ERROR": 1,
       "Q0_FLIP": 0
     },
@@ -1017,7 +1021,15 @@
           "detail": ""
         },
         {
+          "witness": "charm-composite-volume.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "charm-frobenius-block-projection.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "charm-mass-tower.witness.json",
           "detail": ""
         },
         {
@@ -2101,10 +2113,6 @@
           "detail": ""
         },
         {
-          "witness": "even-a-mirror-pair-phi8-scaling-test.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "ew-couplings-substrate-derivation-probe.witness.json",
           "detail": ""
         },
@@ -2237,10 +2245,6 @@
           "detail": ""
         },
         {
-          "witness": "h6-deuteron-free-word-chi-lambda.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "habiro-coefficients-atomic.witness.json",
           "detail": ""
         },
@@ -2346,110 +2350,6 @@
         },
         {
           "witness": "habiro-borromean-cyclotomic-coefficients.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-beryllium-10.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-beryllium-6.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-beryllium-7.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-beryllium-8.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-beryllium-9.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-boron-10.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-boron-12.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-boron-8.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-boron-9.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-carbon-10.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-carbon-14.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-deuteron.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-helium-3.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-helium-4.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-helium-5.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-helium-6.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-lithium-5.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-lithium-6.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-lithium-7.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-lithium-8.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-mass-table-summary.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-neutron.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-nitrogen-12.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-oxygen-14.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-proton.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-tritium.witness.json",
           "detail": ""
         },
         {
@@ -2654,6 +2554,26 @@
         },
         {
           "witness": "k-star-variance-phase5d-5b.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "kappa-coulomb-reconciliation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "kappa-excess-convention-resolution.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "kappa-mirror-split-shell-test.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "kappa-normaliser-index-rule.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "kappa-provenance.witness.json",
           "detail": ""
         },
         {
@@ -4085,6 +4005,10 @@
           "detail": ""
         },
         {
+          "witness": "gswz_epsm_global_symbols.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_kummer_level.witness.json",
           "detail": ""
         },
@@ -5422,6 +5346,10 @@
         },
         {
           "witness": "c3-w2-c1-side-recursions-derived.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-stokes-pair-prony.witness.json",
           "detail": ""
         },
         {
@@ -6914,6 +6842,10 @@
         },
         {
           "witness": "rho-k-leading-order-verification.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rho-w-crystal-vertex-trace.witness.json",
           "detail": ""
         },
         {
@@ -8711,6 +8643,10 @@
           "detail": ""
         },
         {
+          "witness": "even-a-mirror-pair-phi8-scaling-test.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "flavor-dependent-cusp-shape.witness.json",
           "detail": ""
         },
@@ -8819,6 +8755,10 @@
           "detail": ""
         },
         {
+          "witness": "h6-deuteron-free-word-chi-lambda.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-exact-qbeta.witness.json",
           "detail": ""
         },
@@ -8828,6 +8768,110 @@
         },
         {
           "witness": "qbeta-h4-stagec-markov-infra.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-beryllium-10.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-beryllium-6.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-beryllium-7.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-beryllium-8.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-beryllium-9.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-boron-10.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-boron-12.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-boron-8.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-boron-9.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-carbon-10.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-carbon-14.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-deuteron.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-helium-3.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-helium-4.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-helium-5.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-helium-6.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-lithium-5.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-lithium-6.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-lithium-7.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-lithium-8.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-mass-table-summary.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-neutron.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-nitrogen-12.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-oxygen-14.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-proton.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-tritium.witness.json",
           "detail": ""
         },
         {
@@ -9703,10 +9747,6 @@
           "detail": ""
         },
         {
-          "witness": "rho-w-crystal-vertex-trace.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "rt-c23-singlet-sign-core.witness.json",
           "detail": ""
         },
@@ -10224,6 +10264,10 @@
         },
         {
           "witness": "mpf-float-source-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "mpf-import-time-dps-audit.witness.json",
           "detail": ""
         },
         {

@@ -47,6 +47,12 @@ import mpmath as mp
 # Reuse the authoritative, merged connection-matrix + theta machinery.
 from c3_w2_c1_connection_invariant import build, Pmat, chi_of, theta, Q_STR, DPS
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 # The A=3 lift target (real magnitude > 1). Value from option-e.md / the A=3
 # magnitude program; ~ mu3/c3. We only COMPARE against it, never solve for it.
 R_STAR = mp.mpf("1.585")

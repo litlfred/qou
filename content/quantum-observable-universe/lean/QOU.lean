@@ -318,6 +318,7 @@ import QOU.ParticleInteractions.AtomicityGroupRank
 import QOU.ParticleInteractions.AtomicityRankOneToSingleObject
 import QOU.ParticleInteractions.AtomicitySelfDualToSymplectic
 import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
+import QOU.ParticleInteractions.WeakIsospinT3Grading
 import QOU.Elaboration
 import QOU.PathIntegrals
 import QOU.MobiusEnergy
@@ -529,6 +530,7 @@ import QOU.Information.p_bandwidth_bound
 import QOU.ParticleInteractions.atomic_lp_stability
 import QOU.ParticleInteractions.silver_ratio_beta_decay_null
 import QOU.ParticleInteractions.delta_pre_archimedean
+import QOU.ParticleInteractions.even_tower_continuant_harmonics
 import QOU.FluidDynamics.q_bkm_criterion
 import QOU.FluidDynamics.TwoVortexChannelAlgebra
 import QOU.QBeta.BarOddLadderShape

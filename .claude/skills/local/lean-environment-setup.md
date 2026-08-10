@@ -659,6 +659,63 @@ ELAN_NO_OVERRIDE_NOTICE=1 nohup lake build -R QOU.Mass.MassVolDensity \
 > failure. Prefer `grep -c … ; true` or read the explicit "Build completed"
 > line.
 
+### 🕳️ The restored cache is PARTIAL — fill a gap, don't diagnose a defect (2026-08-10)
+
+**Measured on `lake-cache/qou-v4-24-0-new`: it carries 2970 of Mathlib's 6996
+modules at the pinned rev. 4026 are absent — 58%.** The seed captures the import
+cone QOU needed *at seed time*, so any file importing outside that cone fails
+with
+
+```
+error: object file '.../Mathlib/Foo/Bar.olean' of module Mathlib.Foo.Bar does not exist
+```
+
+**That is a cache gap, not a defect in the file under test.** Before reporting a
+Lean file as failing to compile, check whether the missing module is a
+**Mathlib** module. If it is, the file is fine and the cache is short.
+
+**Do not reach for `lake build`** — it re-resolves the dep graph, rebuilds from
+source through the ~3000-module `import Mathlib.Tactic` closure, and wipes the
+restored oleans. Use
+[`scripts/build-missing-oleans.py`](../../../scripts/build-missing-oleans.py),
+which walks the import graph from one target and builds bottom-up **only what is
+absent**:
+
+```bash
+# 1. Mathlib SOURCES are not in the cache — it ships oleans only, so restoring
+#    it cannot fill its own holes. Clone at the pinned rev (github egress works):
+REV=$(grep -A3 '"mathlib"' lakefile.toml | grep 'rev' | cut -d'"' -f2)
+mkdir -p ../mathlib-src && (cd ../mathlib-src && git init -q \
+  && git remote add origin https://github.com/leanprover-community/mathlib4 \
+  && git fetch --depth 1 origin $REV && git checkout -q FETCH_HEAD)
+
+# 2. Fill the gap, then verify the blocked file normally.
+export LEAN_PATH=<restored build/lib/lean dirs, colon-separated>
+python3 -u scripts/build-missing-oleans.py Mathlib.Algebra.Module.LinearMap.Polynomial
+lean content/quantum-observable-universe/lean/QOU/MathlibExt/EndBaseChange.lean
+```
+
+**Worked case (bean `qou-py7e`).** `QOU/MathlibExt/EndBaseChange.lean` — merged
+in #4913 — could not be verified for a whole session because
+`Mathlib.Algebra.Module.LinearMap.Polynomial` was absent. Closing it took **13
+modules, 0 failures**, against 46 of its cone already present; the file then
+gave `lean`-direct **exit 0** with both declarations axiom-clean. Minutes, versus
+the 40-minute `lake build` storm the naive route triggers.
+
+Two traps the script already works around, both of which cost time here:
+
+- **Do not symlink the source tree** into `.lake/packages/mathlib/Mathlib` —
+  `lean` rejects an input file resolving outside the root directory.
+- **Running `lean` from outside the repo** hits `no default toolchain
+  configured`, because elan's override is per-directory. Invoke the toolchain
+  binary by absolute path (`~/.elan/toolchains/*/bin/lean`) instead of relying
+  on the override.
+
+And one about these sandboxes generally: they run as **root**, so `~` is `/root`
+while the repo and any sibling clone live under `/home/user`. A script defaulting
+to `~/mathlib-src` reports "sources not found" on a machine that has them — the
+script searches candidate locations for exactly this reason.
+
 ### 🗄️ PRESERVE THE BUILD — seed/restore the `lake-cache/*` orphan branch
 
 **Every agent rebuilding Mathlib from scratch is the waste to avoid.** Per

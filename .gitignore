@@ -204,3 +204,9 @@ lake-oleans.tgz
 /amalgamated_input/
 /_deprecated/
 /scratch/
+
+# convention-C regeneration harness runtime lock (SerialLock, O_EXCL). Carries
+# an internal slash, so it is already anchored to this file's directory by
+# gitignore semantics — consistent with the leading-slash rule above, which
+# only needs stating for patterns that have no slash of their own.
+.work/*.lock

@@ -4,38 +4,57 @@ import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.MagicShellCouplingKappa
-  — Magic-shell coupling slope κ closed-form
+  — the expression κ_closed and its proved properties
 
-The per-(n_pp − n_nn) excess slope of the magic-shell coupling
-correction is **conjectured** to admit the closed categorical form
+**The physical identification this file once carried has been withdrawn.**  What
+remains is an expression and four facts about it, all of which are true
+independently of any claim about nature.
 
-  κ = −E₀ · log(1/h) / ([2]_q · [3]_q)
+  κ_closed(q, m_e) = −E₀ · log(1/h) / ([2]_q · [3]_q)
 
-where E₀ = m_e/(q(q-1)), h = q − q⁻¹, and [n]_q is the q-bracket.
+with E₀ = m_e/(q(q-1)), h = q − q⁻¹, and [n]_q the balanced q-bracket.
 
-Both factors of the right-hand side — the `E₀·log(1/h)` magic-shell quantum and
-the `[2]_q·[3]_q` normalisation — were identified against the (2,2) doubly-magic
-anchor, so the shape is an anchor-identified form rather than a derived one.
-The three-calibration discipline admits no CAL-4 slot to declare such a form
-into, which is why the content block carries the kind `conjecture`.
+## Why the identification was withdrawn
 
-The file proves the properties of the *expression* outright: the bracket's tie
-to the canonical `qIntBal` (`qBracket_eq_canonical`), positivity of `E₀` and `h`,
-and the forced sign (`kappaClosed_neg`).  What is conjectural is only that this
-expression is the observed slope — `MagicShellSlopeIsCategorical`, stated
-against an `opaque` measured datum and left without an instance.
+`κ_closed` was proposed as the per-(n_pp − n_nn) excess slope of a magic-shell
+coupling.  The value it was matched against, `≈ −1.0708 MeV`, turned out to be
+**the Coulomb energy of ³He's pp pair**, attributed to the proton–neutron
+interface asymmetry.
 
-At q₀ the closed form agrees with the observed slope to a relative residual of
-≈ 3.4·10⁻⁴ at the single-magic anchors, which were not used to fix the shape.
-That residual is carried explicitly in the conjecture's `tol` parameter rather
-than rounded away.  No production compute reads this value: the verifier
-`computations/probe_kappa_categorical_h7a_closed.py` is not in the tree and its
-witnesses are under `computations/_deprecated/`.
+The original fit ran at two anchors and disagreed with itself — ³He gave
+−1.0708 MeV, ³H gave **+0.2023 MeV**, opposite signs — and its own witness
+recorded `hypothesis_supported: false`.  Those two nuclides differ in exactly one
+respect besides the sign of the excess: ³He has a pp pair.  Restoring that
+electrostatic energy makes both residuals negative under every radius model,
+agreeing to 0.021 MeV — essentially the ⁴He residual of 0.022 MeV, measured where
+the excess vanishes identically.  A term proportional to the excess must change
+sign between anchors of excess +1 and −1; this one does not.  **The excess
+coefficient is zero.**
 
-LaTeX: `\label{conj:magic-shell-coupling-kappa}`
+  `computations/probe_kappa_provenance.py`
+  `computations/probe_kappa_coulomb_reconciliation.py`
+  `computations/probe_kappa_mirror_split_shell_test.py`
 
-Ref: [manuscript] conj:magic-shell-coupling-kappa
-Ref: [manuscript] prop:compound-beta-shell-calibration (parent)
+## What survives, and why it is worth keeping
+
+Everything below concerns the *expression*, not the physics, so none of it is
+touched by the withdrawal:
+
+* `qBracket_eq_canonical` — the bracket is the canonical `qIntBal`, so this file
+  introduces no competing q-integer convention.
+* `qBracket_normaliser_eq_qFactorial` — `[2]_q·[3]_q = [3]_q!`, hence
+  `q³/y_{(3)}(q)`, the inverse Markov weight of the trivial partition `(3) ⊢ 3`.
+  This is the reusable observation: the denominator is a q-factorial, and the 3
+  is the Borromean strand count of a single nucleon.
+* `hParam_pos`, `E0_pos`, `kappaClosed_neg` — positivity of the Hecke deformation
+  and energy scale, and the forced sign of the expression.
+
+Nothing here is wired to production, and nothing reads the withdrawn value.
+
+LaTeX: `\label{def:magic-shell-coupling-kappa}`
+
+Ref: [manuscript] def:magic-shell-coupling-kappa
+Ref: [manuscript] prop:compound-beta-shell-calibration (formerly parent)
 -/
 
 namespace QOU.BraidKnot
@@ -62,62 +81,47 @@ theorem qBracket_eq_canonical (q : ℝ) (n : ℕ) :
   · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
       zpow_natCast, inv_pow]
 
+/-- **The normaliser is a q-factorial, not a two-channel fusion.**
+
+`[2]_q · [3]_q = [3]_q!`.  The recovered producer described this denominator as
+*"the quantum dimension of `V_2 ⊗ V_3`, the LR fusion of the two relevant
+magic-shell channels for A = 3 anchors"*, which reads as a rule about **two**
+channel indices.  It is a **one**-index object, and one already load-bearing
+elsewhere in the corpus: `F_Bor = |tr_M(β_Bor)| · [3]_q! / q³`, and the q-Schur
+Markov weight of the trivial partition, `y_{(3)}(q) = q³ / [3]_q!`.  So the
+normaliser is `q³ / y_{(3)}(q)` — the inverse Markov weight of `(3) ⊢ 3`.
+
+Why this matters rather than being a notational nicety: a
+two-index rule admits several continuations off `A = 3` that all coincide there
+(`(A_magic, A)`, a fixed `(2,3)`, `(A_magic, A_magic+1)`, …), and those spread by
+32× at the 8 shell.  A q-factorial has one index, so the continuation question
+narrows to which `n` the factorial is taken at — a strictly smaller search, and
+one with a categorical handle via the Markov weight.
+
+The hypothesis is the singular locus, inherited from `[1]_q = 1`. -/
+theorem qBracket_normaliser_eq_qFactorial {q : ℝ} (h : q - q⁻¹ ≠ 0) :
+    qBracket q 2 * qBracket q 3 = QOU.QInteger.qFactBal q 3 := by
+  rw [qBracket_eq_canonical, qBracket_eq_canonical,
+    QOU.QInteger.qFactBal_three h]
+
 /-- The Hecke deformation parameter `h = q − q⁻¹`. -/
 noncomputable def hParam (q : ℝ) : ℝ := q - q⁻¹
 
 /-- The Hecke energy scale `E₀ = m_e / (q(q−1))`. -/
 noncomputable def E0 (q m_e : ℝ) : ℝ := m_e / (q * (q - 1))
 
-/-- The categorical magic-shell coupling slope.
+/-- The expression `κ_closed q m_e := −E₀(q, m_e) · log(1/h(q)) / ([2]_q · [3]_q)`.
 
-    `κ_closed q m_e := −E₀(q, m_e) · log(1/h(q)) / ([2]_q · [3]_q)`
+    At the substrate parameter `q₀ ≈ 1.10998` it evaluates to `−1.0704239`.
 
-    At the substrate parameter `q₀ ≈ 1.10998`, evaluates to
-    `−1.0704239 MeV` — agrees with empirical PR #656 v6 fit
-    `κ_emp ≈ −1.0707908 MeV` within 0.035 %. -/
+    **No physical quantity is claimed for this value.**  It was proposed as a
+    magic-shell coupling slope and matched to `−1.0707908`, a number since
+    identified as the Coulomb energy of ³He's pp pair; see the module header.
+    The name is retained because the corpus refers to it, not because the
+    identification stands. -/
 noncomputable def kappaClosed (q m_e : ℝ) : ℝ :=
   -E0 q m_e * Real.log (1 / hParam q) /
     (qBracket q 2 * qBracket q 3)
-
-/-- The **observed** per-excess magic-shell coupling slope, as a function of the
-substrate parameter and the electron mass.
-
-`opaque` by design.  This is a measured datum, so nothing in this file may
-compute it and no instance may choose it.  That is the whole repair over the
-superseded `HasMagicShellCouplingKappaClosedForm`, which carried the observed
-slope as a *field* `kappa_empirical` alongside the equation asserting the closed
-form equalled it — so `⟨q, m_e, kappaClosed q m_e, rfl⟩` discharged the class
-outright.  The class asserted nothing, and the theorem projecting it asserted
-nothing either: the §3b-cond rule-5 self-assuming projection, where the carrier
-holds the conclusion instead of the hypotheses. -/
-opaque observedMagicShellSlope : ℝ → ℝ → ℝ
-
-/-- **Primary conjecture (`conj:magic-shell-coupling-kappa`) — the magic-shell
-slope has a categorical closed form.**
-
-An instance asserts that `kappaClosed` reproduces the observed slope to within a
-relative `tol`, at every admissible substrate point rather than at one.
-
-*Not* proved, and no instance is supplied: the shape of `kappaClosed` was read
-off the (2,2) doubly-magic anchor, so it is an anchor-identified form.  The
-three-calibration discipline has no CAL-4 slot to declare it into, which is why
-the content block is a `conjecture` rather than a `proposition` carrying a
-fitted-result banner.
-
-The `tol` parameter is what keeps the statement honest in both directions.  At
-`q₀` the measured relative residual is `≈ 3.4·10⁻⁴`, so this class is expected
-to hold for `tol ≥ 3.4·10⁻⁴` and is **known to fail** below it — an exact-equality
-formulation would have been contradicted by the very data offered in its support.
-A derivation discharging this conjecture must therefore also account for the
-residual, or replace the form with one that has none.
-
-Content-bearing per §3b-tax: the field is parameter-quantified in the shape of
-the claim, the right-hand side is opaque, and no instance exists. -/
-class MagicShellSlopeIsCategorical (tol : ℝ) : Prop where
-  /-- The closed form agrees with the observed slope to relative `tol`. -/
-  leading_order : ∀ q m_e : ℝ, 1 < q → 0 < m_e →
-    |kappaClosed q m_e - observedMagicShellSlope q m_e| ≤
-      tol * |observedMagicShellSlope q m_e|
 
 -- ────────────────────────────────────────────────────────────────
 -- Structural lemmas about the closed-form components
@@ -162,8 +166,8 @@ theorem E0_pos {q m_e : ℝ} (hq : 1 < q) (hm : 0 < m_e) :
     The sign follows structurally: `E₀ > 0` (Hecke energy positive),
     `log(1/h) > 0` since `0 < h < 1` for `q` slightly above `1`, and
     the q-brackets `[2]_q, [3]_q > 0` for `q > 1`.  The leading
-    negative sign therefore forces `κ < 0`, matching the empirical
-    PR #656 v6 fit `κ_emp ≈ −1.07 MeV`.
+    negative sign therefore forces `κ_closed < 0` — a property of the
+    expression, asserted of nothing else.
 
     The `hhParam_lt_one` hypothesis holds for `q ∈ (1, φ)` where
     `φ = (1 + √5)/2` is the golden ratio (the unique positive root
@@ -194,37 +198,5 @@ theorem kappaClosed_neg {q m_e : ℝ}
         (qBracket q 2 * qBracket q 3)) := by ring
   rw [h_eq]
   linarith
-
-/-- **The observed slope inherits the forced sign** — a genuine consequence of
-the conjecture, not a projection of it.
-
-`MagicShellSlopeIsCategorical` supplies only a *bound* on the discrepancy; the
-negativity of the observed slope is derived here from that bound together with
-`kappaClosed_neg`, which is proved outright.  This is what §3b-cond rule 5 asks
-of a conditional result: the class carries hypotheses and the theorem does work
-with them, rather than storing the conclusion and reading it back.
-
-The hypothesis `tol ≤ 1` is doing real work and is not boilerplate — a bound
-allowed to exceed the magnitude of the observed slope permits the two to differ
-in sign, and the conclusion genuinely fails.  At the physically relevant
-`tol ≈ 3.4·10⁻⁴` it is satisfied with enormous margin. -/
-theorem observedMagicShellSlope_neg {q m_e tol : ℝ}
-    [c : MagicShellSlopeIsCategorical tol] (htol : tol ≤ 1)
-    (hq : 1 < q) (hm : 0 < m_e)
-    (hhParam_lt_one : hParam q < 1)
-    (h_brackets_pos : 0 < qBracket q 2 * qBracket q 3) :
-    observedMagicShellSlope q m_e < 0 := by
-  have hc : kappaClosed q m_e < 0 :=
-    kappaClosed_neg hq hm hhParam_lt_one h_brackets_pos
-  have hbound := c.leading_order q m_e hq hm
-  by_contra hcon
-  push_neg at hcon
-  rw [abs_of_nonneg hcon] at hbound
-  have hdiff : |kappaClosed q m_e - observedMagicShellSlope q m_e|
-      = observedMagicShellSlope q m_e - kappaClosed q m_e := by
-    rw [abs_sub_comm]
-    exact abs_of_nonneg (by linarith)
-  rw [hdiff] at hbound
-  nlinarith
 
 end QOU.BraidKnot

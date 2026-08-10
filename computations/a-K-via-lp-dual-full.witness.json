@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-10T08:54:04.325418+00:00",
-  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
+  "computedAt": "2026-08-10T15:36:54.633837+00:00",
+  "commitSha": "35d8644dee1c0208d2dd7520d5f6ec551fe8c685",
   "assertions": [
     {
       "name": "lp_feasible[proton]",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 485,
+  "durationMs": 630,
   "computation": "a-K-via-lp-dual-full",
   "scriptFile": "aK_via_lp_dual_full.py",
   "scriptHash": "45566a99e53c",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -111,8 +111,10 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Item B (B.1a-rev.4) — full LP-dual extraction for a_K. Solves the operator-selection LP per `prop:mass-coefficient-shadow-price` for each of proton/neutron/D/T/³He/⁴He at f64 precision (scipy linprog via lp_dual_solver.solve_operator_selection_lp) and extracts literal u_λ^* dual variables. Compares the chirality-active dual sum to closed-form C = (1+h, 1-h², (1-h²)²) at A=2,3,4. Emits witness with all required LP-dual fields per AGENTS.md §LP/SDP duals first-class infra. Note: this is f64-precision verification; MPFR-50dps follow-on would be a future iteration.",
   "contentBlock": "conj:knot-factor-frobenius-pairing",

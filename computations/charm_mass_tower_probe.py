@@ -16,61 +16,89 @@ REFUTED (scope-(a)) as the sole hierarchy mechanism — it yields a nearly
 geometric ~5.85x-per-generation ladder that matches NEITHER scheme
 (undershoots current masses by ~100x, overshoots constituent by ~30%).
 
-Pure Python (no numpy/sympy). Emits charm-mass-tower.witness.json.
+PRECISION (2026-08-10). The first version of this probe ran in float64 and
+hardcoded a truncated `q0 = 1.10998`. Both are defects under the NO-FLOAT64
+family and the q0-anchor rule, and both reached `main` because the precision
+gate was never run on the PR that introduced them. Now: every quantity is
+`mpmath.mpf` at the repo compute precision, q0 is read from `q_parameter.Q_MP`
+(the experimental / proton pin, the standing default for compute per the
+2026-08-07 owner directive), and every serialized number goes through
+`_precision.fmt`.
+
+The verdict is unchanged by the repair — the mismatch is ~100x and ~30%, which
+no sixth-digit shift in q0 can touch.
+
+Emits charm-mass-tower.witness.json.
 """
+from __future__ import annotations
+
 import json
 
+import _path_bridge  # noqa: F401
+from _precision import fmt, set_compute_dps  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
 
-def morgan_voyce_B(n: int, X: float) -> float:
+from mpmath import mpf  # noqa: E402
+
+
+def morgan_voyce_B(n: int, X):
     """F_0=0, F_1=1, F_{n+1} = X*F_n + F_{n-1} (Fibonacci polynomial = the
     T(2,n) Morgan-Voyce continuant, evaluated at argument X)."""
-    a, b = 0.0, 1.0
+    a, b = mpf(0), mpf(1)
     for _ in range(n):
         a, b = b, X * b + a
     return a
 
 
-def cont_ratio(n: int, X: float) -> float:
+def cont_ratio(n: int, X):
     """contRatio(n) = b_n / b_{n-2}: the scaffold's two-step tower ratio."""
     return morgan_voyce_B(n, X) / morgan_voyce_B(n - 2, X)
 
 
-def X_for_ratio(target: float) -> float:
-    """X > 0 such that contRatio(5, X) = target (monotone bisection)."""
-    lo, hi = 0.0, 60.0
-    for _ in range(200):
-        mid = 0.5 * (lo + hi)
+def X_for_ratio(target):
+    """X > 0 such that contRatio(5, X) = target (monotone bisection).
+
+    Iteration count is tied to the working precision rather than fixed at 200:
+    bisection gains ~1 bit per step, so `4*dps` steps clear `10^-dps` with
+    room to spare.
+    """
+    lo, hi = mpf(0), mpf(60)
+    for _ in range(4 * set_compute_dps()):
+        mid = (lo + hi) / 2
         if cont_ratio(5, mid) < target:
             lo = mid
         else:
             hi = mid
-    return 0.5 * (lo + hi)
+    return (lo + hi) / 2
 
 
 def main() -> None:
-    q0 = 1.10998                       # substrate modulus (documented pin)
-    X_bracket = q0 + 1.0 / q0          # [2]_q at substrate ~ 2.011 (candidate arg)
+    set_compute_dps()
+
+    q0 = Q_MP                          # substrate modulus, experimental (proton) pin
+    X_bracket = q0 + 1 / q0            # [2]_q at substrate ~ 2.011 (candidate arg)
 
     cr5 = cont_ratio(5, X_bracket)     # gen1 -> gen2
     cr7 = cont_ratio(7, X_bracket)     # gen2 -> gen3
 
     # Observed charm/light hierarchy, two schemes (PDG central values, MeV).
+    # String-constructed so no float64 intermediate ever exists.
     targets = {
-        "current_mc_over_mu": 1270.0 / 2.2,          # ~577
-        "current_mc_over_md": 1270.0 / 4.7,          # ~270
-        "constituent_mc_over_mlight": 1500.0 / 336.0,  # ~4.46
+        "current_mc_over_mu": mpf("1270.0") / mpf("2.2"),            # ~577
+        "current_mc_over_md": mpf("1270.0") / mpf("4.7"),            # ~270
+        "constituent_mc_over_mlight": mpf("1500.0") / mpf("336.0"),  # ~4.46
     }
     needed_X = {k: X_for_ratio(v) for k, v in targets.items()}
 
-    print(f"substrate X = [2]_q = {X_bracket:.4f}")
-    print(f"contRatio(5) = {cr5:.3f}   contRatio(7) = {cr7:.3f}   "
+    print(f"substrate X = [2]_q = {fmt(X_bracket, 6)}")
+    print(f"contRatio(5) = {fmt(cr5, 5)}   contRatio(7) = {fmt(cr7, 5)}   "
           f"(nearly n-independent -> ~geometric ladder)")
     for k, v in targets.items():
-        print(f"  target {k:28s} = {v:8.2f}   needs X ~ {needed_X[k]:.2f}")
+        print(f"  target {k:28s} = {fmt(v, 6):>12s}   needs X ~ {fmt(needed_X[k], 4)}")
 
     verdict = (
         "scope-(a) REFUTED as sole hierarchy mechanism: contRatio(5) ~ "
-        f"{cr5:.2f} at substrate X=[2]_q~{X_bracket:.2f} gives a nearly "
+        f"{fmt(cr5, 4)} at substrate X=[2]_q~{fmt(X_bracket, 4)} gives a nearly "
         "geometric per-generation ladder that matches neither scheme "
         "(current mc/mu~577 needs X~24, off ~100x; constituent mc/mlight~4.46 "
         "is overshot by ~30%). The observed hierarchy is not a constant "
@@ -86,12 +114,20 @@ def main() -> None:
                        "observed charm/light hierarchy (derive-then-check).",
         "producer": "computations/charm_mass_tower_probe.py",
         "consumes": ["conj:complex-mass-constituent-functional"],
-        "inputs": {"q0": q0, "X_substrate_bracket_2q": X_bracket},
+        "precision": {
+            "engine": "mpmath",
+            "dps": set_compute_dps(),
+            "q0_anchor": "experimental (proton), q_parameter.Q_MP",
+        },
+        "inputs": {
+            "q0": fmt(q0),
+            "X_substrate_bracket_2q": fmt(X_bracket),
+        },
         "results": {
-            "contRatio_5_at_substrate": cr5,
-            "contRatio_7_at_substrate": cr7,
-            "targets": targets,
-            "X_needed_for_target": needed_X,
+            "contRatio_5_at_substrate": fmt(cr5),
+            "contRatio_7_at_substrate": fmt(cr7),
+            "targets": {k: fmt(v) for k, v in targets.items()},
+            "X_needed_for_target": {k: fmt(v) for k, v in needed_X.items()},
         },
         "verdict": verdict,
         "scope": "(a) scope-limited negative: continuant-ratio contRatio alone; "

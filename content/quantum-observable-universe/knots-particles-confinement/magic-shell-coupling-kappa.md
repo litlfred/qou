@@ -1,59 +1,51 @@
-*The per-unit-excess magic-shell coupling slope $\kappa$, which controls the $(n_{pp} - n_{nn})$ excess contribution to atomic binding at the single-magic anchors $(Z, N) = (2, 1)$ and $(1, 2)$, is conjectured to admit the closed categorical form*
+*Define, for a substrate parameter $q$ and a mass scale $m_e$,*
 
 $$
-  \boxed{\,
-  \kappa \;=\; -\,\frac{E_0 \cdot \log(1/h)}{[2]_q \cdot [3]_q}
-  \,}
+  \kappa_{\mathrm{closed}}(q, m_e)
+  \;=\; -\,\frac{E_0 \cdot \log(1/h)}{[2]_q \cdot [3]_q},
+  \qquad
+  E_0 = \frac{m_e}{q(q-1)}, \quad h = q - q^{-1},
 $$
 
-*where $E_0 = m_e / (q(q-1))$ is the Hecke energy scale, $h = q - q^{-1}$ is the Hecke deformation parameter, and $[n]_q = (q^n - q^{-n}) / (q - q^{-1})$ is the q-bracket.*
+*where $[n]_q = (q^n - q^{-n}) / (q - q^{-1})$ is the balanced q-bracket. At the substrate parameter this evaluates to $\kappa_{\mathrm{closed}} \approx -1.0704$.*
 
-## Why this is a conjecture and not a proposition
+**No physical quantity is claimed for this expression.** It was formerly proposed as the per-excess slope of a magic-shell coupling; that identification is withdrawn, for the reason recorded below. The name is retained because the corpus refers to it, not because the identification stands.
 
-The shape of the right-hand side was not derived from the categorical substrate. Both of its factors were identified against the $(2,2)$ doubly-magic anchor: the magic-shell quantum $E_0 \cdot \log(1/h)$ and the normalization $[2]_q \cdot [3]_q$ were selected so that the expression reproduced the coupling slope measured there. An expression obtained that way is a fit, whatever the structural motivation attached to its factors afterwards.
+## Why the identification was withdrawn
 
-The three-calibration discipline admits exactly three inputs — $m_e$, $\mathfrak{D}_\beta$, and $\mathfrak{D}_\pi$ — so there is no fourth calibration slot into which an anchor-identified form could be declared. That leaves two dispositions for a block of this kind, and only one of them is honest: demote it to a conjecture. The alternative, a provable block kind carrying an acknowledgement that its content was fitted, states a fit in the voice of a derivation.
+The expression was matched, to $3.4 \times 10^{-4}$, against a measured value of $\approx -1.0708\;\text{MeV}$. That value is the electrostatic energy of ${}^{3}$He's $pp$ pair, attributed to the proton–neutron interface asymmetry.
 
-What remains open is therefore not the arithmetic but the derivation: whether $-E_0 \log(1/h) / ([2]_q [3]_q)$ can be obtained from the substrate without consulting the anchor at all.
+The fit that produced it ran at two anchors and disagreed with itself:
 
-## Numerical evidence
+| anchor | excess $(n_{pp} - n_{nn})$ | slope |
+|---|---|---|
+| ${}^{3}$He $(2,1)$ | $+1$ | $-1.0707908\;\text{MeV}$ |
+| ${}^{3}$H $(1,2)$ | $-1$ | $+0.2023095\;\text{MeV}$ |
 
-Evaluating at the substrate parameter $q_0 = 1.109978595554181\ldots$:
+Opposite signs, a factor of $5.3$ apart. The hypothesis under test was that a single coefficient holds across the anchors, and the producing computation recorded that it does not. The ${}^{3}$He arm became the published value; the ${}^{3}$H arm was not carried forward.
 
-$$
-  \kappa_{\mathrm{categorical}} \approx -\frac{4.1860 \cdot 1.5651}{6.1206}
-  \approx -1.0704239\;\text{MeV}
-$$
+Those two nuclides differ in exactly one respect besides the sign of the excess: ${}^{3}$He contains a $pp$ pair and ${}^{3}$H does not. Restoring that electrostatic energy removes the discord. Both residuals become negative — under every radius model tried, including the one derived from $\bar\lambda_\pi$ and two independent alternatives — and under the derived radius they agree to $0.021\;\text{MeV}$, essentially the ${}^{4}$He residual of $0.022\;\text{MeV}$ measured where the excess vanishes identically.
 
-Against the observed physical value at the single-magic anchors:
+A term proportional to $(n_{pp} - n_{nn})$ must change sign between anchors of excess $+1$ and $-1$. What survives the correction does not: it is an excess-*independent* offset of order $0.2\;\text{MeV}$, three to fifteen times smaller than the matched value. **The excess coefficient is zero.**
 
-$$
-  \kappa_{\mathrm{observed}} \approx -1.0707908\;\text{MeV}
-$$
+That single diagnosis accounts for the two independent negatives found before it. No term of this form and size appears in mirror-split binding data at $A = 3$, $15$, $39$ — because the coefficient vanishes. And the original fit contradicted itself — because it was describing an electrostatic energy with a categorical form, and only one of its two anchors has one.
 
-The ratio is $0.999657$, a relative residual of
+## What is proved about the expression
 
-$$
-  \delta \;=\; \left| \frac{\kappa_{\mathrm{categorical}} - \kappa_{\mathrm{observed}}}{\kappa_{\mathrm{observed}}} \right|
-  \;\approx\; 3.4 \times 10^{-4}.
-$$
+The following hold independently of any physical reading, and are unaffected by the withdrawal.
 
-Two things are worth separating here. The anchors $(2,1)$ and $(1,2)$ were **not** used to fix the form — that was done at $(2,2)$ — so the agreement at them is a genuine cross-check rather than a restatement of the fit. That is the whole of the evidence for the conjecture. But $\delta \approx 3.4 \times 10^{-4}$ is not zero, and nothing in the present account says what it is. It is recorded here as an open quantity, not absorbed into the word "agreement": a derivation of the closed form would have to either predict $\delta$ or predict a corrected form that removes it.
+The bracket is the canonical balanced q-integer: $[n]_q$ as written here equals `QOU.QInteger.qIntBal`, unconditionally and including on the degenerate locus, so this definition introduces no competing q-integer convention.
 
-## Structural motivation
-
-The two factors carry the following readings, which motivate the shape but do not derive it.
-
-1. **H7a energy quantum** $E_0 \cdot \log(1/h)$ — the per-shell magic-coupling magnitude, read as the logarithm of the Hecke deformation.
-2. **q-deformed dimension product** $[2]_q \cdot [3]_q$ — the quantum dimension of the $V_2 \otimes V_3$ Schur–Weyl tensor product, normalizing the H7a quantum to a per-excess slope.
+The denominator is a q-factorial. $[2]_q \cdot [3]_q = [3]_q!$, hence
 
 $$
-  \kappa \;=\; \underbrace{-E_0 \cdot \log(1/h)}_{\text{H7a quantum}}
-  \;\cdot\; \underbrace{\frac{1}{[2]_q \cdot [3]_q}}_{\text{LR-fusion normalization}}
+  [2]_q \cdot [3]_q \;=\; [3]_q! \;=\; \frac{q^3}{y_{(3)}(q)},
 $$
 
-The negative sign tracks the orientation convention for the $(n_{pp} - n_{nn})$ excess. Unlike the shape itself, the sign is not fitted: it follows from $E_0 > 0$, $\log(1/h) > 0$ for $0 < h < 1$, and $[2]_q, [3]_q > 0$ at $q > 1$, and is proved in the Lean sibling as `kappaClosed_neg`.
+the inverse Markov weight of the trivial partition $(3) \vdash 3$. This is the reusable content of the block. The index $3$ is the strand count of a single nucleon — the nucleon is the Borromean link, carried by the braid word $(\sigma_1 \sigma_2^{-1})^3 \in B_3$ — and the same normalization appears in the Borromean observable $F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| / y_{(3)}(q)$.
 
-## What would settle it
+The sign is forced. For $q > 1$, $m_e > 0$, and $0 < h < 1$: $E_0 > 0$, $\log(1/h) > 0$, and $[2]_q, [3]_q > 0$, so $\kappa_{\mathrm{closed}} < 0$. This is a property of the expression and is asserted of nothing else.
 
-The conjecture is discharged by a derivation of the closed form from the substrate that does not consult a magic anchor at any step. Two structural facts already available constrain such a derivation: the sign is forced, as above; and the $q$-brackets appearing in the denominator are the canonical balanced brackets, tied to `QOU.QInteger.qIntBal` by `qBracket_eq_canonical` in the Lean sibling, so the normalization is not free to be reinterpreted as a geometric or rescaled bracket.
+## A separate question, deliberately not attached here
+
+After the electrostatic correction, an excess-independent offset of order $0.2\;\text{MeV}$ remains at $A = 3$ that the same form does not exhibit at $A = 4$, where its residual is $0.022\;\text{MeV}$. That is a real and unexplained baseline. It is not the quantity this block was about, and giving it this block's name would repeat the error the withdrawal corrects.

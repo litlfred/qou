@@ -1,61 +1,63 @@
-import { conjecture } from "../../schema/builders";
+import { definition } from "../../schema/builders";
 
 /**
- * Magic-shell coupling slope κ — conjectured categorical closed form.
+ * The expression κ_closed, and its proved properties.
  *
- * Demoted from `proposition` to `conjecture` (2026-08-09). The closed-form
- * *shape* was read off the (2,2) doubly-magic anchor, which makes it an
- * anchor-identified form — a fit — and the three-calibration discipline
- * admits no CAL-4. A banner acknowledging the fit would have left a fitted
- * result carrying a provable block kind; demotion is the honest disposition.
+ * Split from the former `conj:magic-shell-coupling-kappa` (2026-08-10). The
+ * physical identification — that this expression is the per-(n_pp − n_nn)
+ * excess slope of a magic-shell coupling — is **withdrawn**. The value it was
+ * matched against, ≈ −1.0708 MeV, was the Coulomb energy of ³He's pp pair.
  *
- * Nothing is unwired by this change: the producer
- * `probe_kappa_categorical_h7a_closed.py` was already removed and all three
- * κ witnesses sit under `computations/_deprecated/`, so no production compute
- * reads this value. The `KAPPA` in `pyhecke/constants.py` is a different
- * object (the binding scale `m_e`), not this slope.
+ * What survives is an expression and four proved facts about it, none of which
+ * depend on any claim about nature:
+ *   - `qBracket_eq_canonical` — the bracket is the canonical `qIntBal`
+ *   - `qBracket_normaliser_eq_qFactorial` — `[2]_q·[3]_q = [3]_q!`, hence
+ *     `q³/y_(3)(q)`, the inverse Markov weight of the trivial partition
+ *   - `hParam_pos`, `E0_pos` — positivity of the Hecke deformation and scale
+ *   - `kappaClosed_neg` — the forced sign of the expression
  *
- * Lean: the superseded `HasMagicShellCouplingKappaClosedForm` carried the
- * conclusion as a *field* (`kappa_empirical`), so `⟨q, m_e, kappaClosed q m_e,
- * rfl⟩` discharged it and the theorem projecting it asserted nothing — the
- * §3b-cond rule-5 self-assuming projection. The replacement is a
- * content-bearing primary conjecture class over an `opaque` observed slope,
- * with no instance.
+ * Evidence for the withdrawal, in order of decisiveness:
+ *   - `probe_kappa_coulomb_reconciliation.py` — the two anchors reconcile once
+ *     ³He's electrostatic energy is restored; the surviving residual is
+ *     excess-INDEPENDENT, so it cannot be a coupling to the p/n asymmetry
+ *   - `probe_kappa_provenance.py` — the original fit recorded
+ *     `hypothesis_supported: false`; the published value is one of its two arms
+ *   - `probe_kappa_mirror_split_shell_test.py` — no term of this form and size
+ *     appears in mirror-split binding data at A = 3, 15, 39
+ *
+ * The removed Lean (`observedMagicShellSlope`, `MagicShellSlopeIsCategorical`,
+ * `observedMagicShellSlope_neg`) carried the withdrawn claim and nothing else.
  */
-export default conjecture({
-  label: "conj:magic-shell-coupling-kappa",
+export default definition({
+  label: "def:magic-shell-coupling-kappa",
   title:
-    "Magic-shell coupling slope $\\kappa = -E_0 \\cdot \\log(1/h) / ([2]_q [3]_q)$ — conjectured categorical closed form",
+    "The expression $\\kappa_{\\mathrm{closed}} = -E_0 \\log(1/h) / [3]_q!$ and its proved properties",
   lean: {
     ref: "qou:QOU.BraidKnot.MagicShellCouplingKappa",
     validation: "not_checked",
   },
-  uses: [
-    "prop:compound-beta-shell-calibration",
-  ],
+  uses: [],
   cites: [],
   tags: [
-    "magic-shell",
-    "coupling-slope",
-    "categorical-closed-form",
-    "kappa",
-    "h7a",
     "q-bracket",
-    "anchor-identified-form",
+    "q-factorial",
+    "markov-weight",
+    "hecke-energy-scale",
+    "withdrawn-identification",
   ],
   authorNotes: [
-    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
+    { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). The bracket content is generic; `Real.log` and the ordering are what force $\\mathbb{R}$." },
     {
       kind: "status",
-      date: "2026-08-09",
+      date: "2026-08-10",
       body:
-        "**Demoted `proposition` → `conjecture`.** The $E_0 \\cdot \\log(1/h)$ magic-shell quantum and the $[2]_q [3]_q$ normalization were identified against the $(2,2)$ doubly-magic anchor, so the form is fitted, not derived. Under the three-calibration discipline there is no CAL-4 to acknowledge, which leaves demotion rather than a banner. The $0.034\\%$ agreement at the single-magic $(2,1)$ / $(1,2)$ anchors is retained as the supporting evidence, and the residual is now stated as an open quantity rather than absorbed as agreement.",
+        "**Split `conjecture` → `definition`.** The physical identification is withdrawn: the matched value $\\approx -1.0708$ MeV is the Coulomb energy of ${}^{3}$He's $pp$ pair, and the excess coefficient is zero. What remains is the expression and its proved properties, which are untouched by the withdrawal. The block was previously demoted `proposition` → `conjecture` (2026-08-09) for being anchor-identified; that demotion is superseded by this split rather than reversed.",
     },
     {
-      kind: "caveat",
-      date: "2026-06-30",
+      kind: "note",
+      date: "2026-08-10",
       body:
-        "The producer `computations/probe_kappa_categorical_h7a_closed.py` was removed and its witness `kappa-categorical-h7a-closed.witness.json` is now under `computations/_deprecated/`. Numerical values are recorded in the committed table `tbl:magic-shell-coupling-kappa-table-data`. A fresh witness is only worth building against a derivation, not against the anchor-identified form.",
+        "A separate open question was surfaced and deliberately **not** attached to this block: after the electrostatic correction, an excess-*independent* offset of order $0.2$ MeV survives at $A = 3$ that the H7a form does not exhibit at $A = 4$. That is a real unexplained baseline, but it is not $\\kappa$ and should not inherit this block's name.",
     },
   ],
 });

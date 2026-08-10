@@ -51,6 +51,7 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 del _sys, _Path, _bridge
 
 import sys
@@ -70,6 +71,12 @@ from sublemma_2_1_deuteron_branching import (  # noqa: E402
     partitions_of,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # Near-zero tolerance for direct character values; module-level to avoid
 # re-parsing the literal into an mpf on every loop iteration.

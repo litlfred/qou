@@ -23,21 +23,53 @@ The comparison also assumes mass ~ Vol (constant density), which is NOT the
 canonical absolute-mass law. => charm mass stays OPEN; report as a coincidence,
 not a result.
 
+PRECISION (2026-08-10). The first version called `float(M.volume())`, which
+truncates SnapPy's result to float64 and put 15 raw float64 values into the
+witness. That reached `main` because the precision gate was never run on the
+PR that introduced it. Now: volumes are requested at `BITS_PREC` and carried as
+`mpmath.mpf`, PDG masses are string-constructed, and everything serialized goes
+through `_precision.fmt`.
+
+The float64 volumes were correct to ~16 digits (7.327724753417753 vs
+7.32772475341775212...), so the verdict is untouched — the misses are 4% and
+40%. What changes is that the witness now records what SnapPy actually computed
+rather than a truncation of it.
+
 Requires SnapPy (pip install snappy_manifolds snappy). Emits a witness.
 """
+from __future__ import annotations
+
 import json
 
-import snappy
+import _path_bridge  # noqa: F401
+from _precision import fmt, set_compute_dps  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
+
+import snappy  # noqa: E402
+from mpmath import mpf  # noqa: E402
+
+# SnapPy's volume is computed at a requested bit precision; 230 bits ~ 69 dps,
+# which covers the repo's 65-dps compute default with margin.
+BITS_PREC = 230
 
 
 def vol_comps(word):
+    """Hyperbolic volume (mpf, high precision) and cusp count of a braid closure."""
     L = snappy.Link(braid_closure=word)
     M = L.exterior()
-    return float(M.volume()), int(M.num_cusps())
+    # str() round-trips SnapPy's Number at full requested precision; float()
+    # would discard everything past the 16th digit.
+    return mpf(str(M.volume(bits_prec=BITS_PREC))), int(M.num_cusps())
 
 
 def main():
-    mp, mLc, mLb = 938.272, 2286.46, 5619.60  # proton, Lambda_c, Lambda_b (MeV)
+    set_compute_dps()
+
+    # Lambda_c, Lambda_b (MeV) — PDG central values, string-constructed so no
+    # float64 intermediate ever exists.  The proton comes from CODATA rather
+    # than a hand-typed 938.272: string-construction stops the float, but it
+    # does not make a rounded literal accurate.
+    mp, mLc, mLb = M_P_MEV_VALIDATION, mpf("2286.46"), mpf("5619.60")
 
     uniform = {}
     for n in (3, 5, 7, 9):
@@ -57,26 +89,26 @@ def main():
 
     verdict = (
         "NO parameter-free composite-braid volume reproduces the charmed-baryon "
-        "mass ratio. Near-coincidence Vol((s1s2^-1)^5)/Vol(Borromean)=%.3f vs "
-        "Lambda_c/proton=%.3f (~4%%) is DISQUALIFIED: (s1s2^-1)^5 is a KNOT "
+        "mass ratio. Near-coincidence Vol((s1s2^-1)^5)/Vol(Borromean)=%s vs "
+        "Lambda_c/proton=%s (~4%%) is DISQUALIFIED: (s1s2^-1)^5 is a KNOT "
         "(1 component), not a 3-quark baryon, and bottom (n=7) misses by ~40%%. "
         "3-component-correct candidates miss the charm ratio and closing the gap "
         "needs tuned twist count (=fit). Comparison also assumes mass~Vol "
         "(constant density), not the canonical absolute-mass law. m_c OPEN."
-    ) % (uniform[5]["vol"] / v3, mLc / mp)
+    ) % (fmt(uniform[5]["vol"] / v3, 4), fmt(mLc / mp, 4))
 
     print("uniform (s1 s2^-1)^n:")
     for n, d in uniform.items():
         tag = "3-quark link" if d["components"] == 3 else "KNOT (wrong topology)"
-        print(f"  n={n}: Vol={d['vol']:.4f} comps={d['components']} [{tag}]")
-    print(f"  Vol(5)/Vol(3)={uniform[5]['vol']/v3:.4f} vs Lc/p={mLc/mp:.4f} "
-          f"({100*(uniform[5]['vol']/v3/(mLc/mp)-1):+.1f}%)")
-    print(f"  Vol(7)/Vol(3)={uniform[7]['vol']/v3:.4f} vs Lb/p={mLb/mp:.4f} "
-          f"({100*(uniform[7]['vol']/v3/(mLb/mp)-1):+.1f}%)")
+        print(f"  n={n}: Vol={fmt(d['vol'], 6)} comps={d['components']} [{tag}]")
+    print(f"  Vol(5)/Vol(3)={fmt(uniform[5]['vol']/v3, 6)} vs Lc/p={fmt(mLc/mp, 6)} "
+          f"({fmt(100*(uniform[5]['vol']/v3/(mLc/mp)-1), 3)}%)")
+    print(f"  Vol(7)/Vol(3)={fmt(uniform[7]['vol']/v3, 6)} vs Lb/p={fmt(mLb/mp, 6)} "
+          f"({fmt(100*(uniform[7]['vol']/v3/(mLb/mp)-1), 3)}%)")
     print("3-component-preserving charmed-baryon candidates:")
     for name, d in three_comp.items():
-        print(f"  {name:24s} Vol={d['vol']:.4f} comps={d['components']} "
-              f"ratio/proton={d['ratio_over_proton']:.3f}")
+        print(f"  {name:24s} Vol={fmt(d['vol'], 6)} comps={d['components']} "
+              f"ratio/proton={fmt(d['ratio_over_proton'], 4)}")
     print("\nVERDICT:", verdict)
 
     witness = {
@@ -85,9 +117,30 @@ def main():
                        "of composite charmed-baryon braids vs heavy-baryon masses.",
         "producer": "computations/charm_composite_volume_probe.py",
         "consumes": ["conj:complex-mass-constituent-functional"],
-        "inputs": {"proton_MeV": mp, "Lambda_c_MeV": mLc, "Lambda_b_MeV": mLb},
-        "results": {"uniform_power_family": uniform,
-                    "three_component_candidates": three_comp},
+        "precision": {
+            "engine": "snappy+mpmath",
+            "dps": set_compute_dps(),
+            "snappy_bits_prec": BITS_PREC,
+        },
+        "inputs": {
+            "proton_MeV": fmt(mp),
+            "Lambda_c_MeV": fmt(mLc),
+            "Lambda_b_MeV": fmt(mLb),
+        },
+        "results": {
+            "uniform_power_family": {
+                str(n): {"vol": fmt(d["vol"]), "components": d["components"]}
+                for n, d in uniform.items()
+            },
+            "three_component_candidates": {
+                name: {
+                    "vol": fmt(d["vol"]),
+                    "components": d["components"],
+                    "ratio_over_proton": fmt(d["ratio_over_proton"]),
+                }
+                for name, d in three_comp.items()
+            },
+        },
         "verdict": verdict,
         "scope": "(a) scope-limited negative under mass~Vol; SnapPy now available "
                  "for principled follow-up (variable-density / projection).",
