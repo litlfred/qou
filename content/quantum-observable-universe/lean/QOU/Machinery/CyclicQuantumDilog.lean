@@ -43,8 +43,9 @@ not the conclusions; nothing wired.
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -/
-import Mathlib.Algebra.BigOperators.Basic
+import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Intervals
+import Mathlib.Tactic.Ring
 
 namespace QOU.Machinery.CyclicQuantumDilog
 
@@ -108,19 +109,18 @@ theorem cyclicQDilog_shift (m r : ℕ) (ζ x : R) (hζ : ζ ^ m = 1)
         = (∏ j ∈ Finset.Ico r m, (1 - ζ ^ j * x) ^ j)
           * ∏ t ∈ Finset.range r, (1 - ζ ^ t * x) ^ (m + t) := by
     unfold cyclicQDilog
-    rw [← Finset.range_eq_Ico, ← Finset.prod_Ico_consecutive _ (Nat.zero_le r) hr,
-      Finset.range_eq_Ico]
+    rw [← Finset.prod_range_mul_prod_Ico (fun k => (1 - ζ ^ k * x) ^ k) hr]
     have hlow :
         (∏ k ∈ Finset.range r, (1 - ζ ^ k * x) ^ m)
-            * ∏ k ∈ Finset.Ico 0 r, (1 - ζ ^ k * x) ^ k
+            * ∏ k ∈ Finset.range r, (1 - ζ ^ k * x) ^ k
           = ∏ t ∈ Finset.range r, (1 - ζ ^ t * x) ^ (m + t) := by
-      rw [← Finset.range_eq_Ico, ← Finset.prod_mul_distrib]
-      exact Finset.prod_congr rfl fun t _ => by rw [pow_add]
+      rw [← Finset.prod_mul_distrib]
+      exact Finset.prod_congr rfl fun t _ => by rw [← pow_add]
     calc (∏ k ∈ Finset.range r, (1 - ζ ^ k * x) ^ m)
-          * ((∏ k ∈ Finset.Ico 0 r, (1 - ζ ^ k * x) ^ k)
+          * ((∏ k ∈ Finset.range r, (1 - ζ ^ k * x) ^ k)
             * ∏ k ∈ Finset.Ico r m, (1 - ζ ^ k * x) ^ k)
         = ((∏ k ∈ Finset.range r, (1 - ζ ^ k * x) ^ m)
-            * ∏ k ∈ Finset.Ico 0 r, (1 - ζ ^ k * x) ^ k)
+            * ∏ k ∈ Finset.range r, (1 - ζ ^ k * x) ^ k)
           * ∏ k ∈ Finset.Ico r m, (1 - ζ ^ k * x) ^ k := by ring
       _ = (∏ t ∈ Finset.range r, (1 - ζ ^ t * x) ^ (m + t))
           * ∏ k ∈ Finset.Ico r m, (1 - ζ ^ k * x) ^ k := by rw [hlow]
