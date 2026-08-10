@@ -21,10 +21,13 @@ export default remark({
     "prop:core-levi-form",
     "rem:hyperbolic-overlap-saturation",
     "rem:townsend-biot-savart-strain",
-    // Moved out of uses[]: same-chapter, pos 9 -> 95, and the prose names it
-    // as the programme this chapter builds toward rather than as something
-    // the reader needs first. This retires one of fluid-dynamics' twelve
-    // pre-existing forward edges by classifying it correctly.
+    // Reclassified from a dependency: same-chapter, pos 9 -> 95, and the
+    // prose names it as the programme this chapter builds toward rather than
+    // as something the reader needs first. This retires one of
+    // fluid-dynamics' twelve pre-existing forward edges by classifying it
+    // correctly. NOTE: never write a closing square bracket inside a comment
+    // in this array — the manifest parsers match it non-greedily and stop at
+    // the first one, silently dropping every entry after this point.
     "rem:q-ns-research-programme",
     "thm:q-ns-wellposedness",
   ],
