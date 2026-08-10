@@ -155,6 +155,12 @@ def one_loop_torsion(name: str):
     return abs(det), det, z
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 if __name__ == "__main__":
     mp.mp.dps = int(sys.argv[1]) if len(sys.argv) > 1 else 40
 

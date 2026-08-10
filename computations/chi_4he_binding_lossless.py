@@ -42,6 +42,12 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 GATE_F64 = mp.mpf("1e-5")   # f64 char vs the 50-dps matrix-M reference (rel·|χ|)
 
 
