@@ -68,22 +68,30 @@ _SUB = _P(__file__).resolve().parent / "substrate"
 if str(_SUB) not in sys.path:
     sys.path.insert(0, str(_SUB))
 import mpmath as mp  # noqa: E402
-from _precision import fmt, COMPUTE_DPS  # noqa: E402
+from _precision import fmt, str_at_true_precision, COMPUTE_DPS  # noqa: E402
 
 mp.mp.dps = COMPUTE_DPS
 
 
 def _ser(o):
-    """Serialize every real to a _precision.fmt string; ints stay ints.
+    """Serialize every real; ints stay ints.
 
-    The NO-FLOAT64 family forbids raw float64 in a witness. Values are carried
-    as mpmath.mpf from their source above and rendered here, so no float64 ever
-    reaches the JSON.
+    The claim this docstring used to make — "no float64 ever reaches the JSON" —
+    was true of the output TYPE and false of its information content, which is
+    why the padding went unnoticed. An `mpf` is rendered with `fmt` because it
+    earned those digits; a bare `float` is rendered with `str_at_true_precision`
+    because it did not. Values that should be full precision are fixed at their
+    source below rather than laundered here (bean qou-3jwy).
     """
     if isinstance(o, bool) or isinstance(o, int):
         return o
-    if isinstance(o, (float, mp.mpf)):
-        return fmt(mp.mpf(o))
+    if isinstance(o, mp.mpf):
+        return fmt(o)
+    if isinstance(o, float):
+        # NOT fmt(mp.mpf(o)): that renders a 53-bit value at OUTPUT_DPS and
+        # emits 30+ digits it never had, which trades the raw-float64 gate for
+        # the padding gate (bean qou-3jwy).
+        return str_at_true_precision(o)
     if isinstance(o, dict):
         return {k: _ser(v) for k, v in o.items()}
     if isinstance(o, (list, tuple)):
@@ -106,17 +114,23 @@ import coulomb_energy as ce  # noqa: E402
 SOURCE = HERE / "_deprecated" / "interface-type-resolved-coupling-probe.witness.json"
 KAPPA_PUBLISHED = -mp.mpf("1.0707907503265857")
 
+# `ce.R0_FM` and `alpha_em_hbar_c_mev_fm()` are already full-precision mpf; the
+# float() casts threw that away and the serializer padded the binary64 remains
+# back to 50 digits. The two model constants are exact as written, so
+# string-construct them — mpf(1.2) is the binary64 neighbour, mpf("1.2") is 1.2
+# (bean qou-3jwy).
 RADII = [
-    (float(ce.R0_FM), "derived (reduced pion Compton wavelength)"),
-    (1.2, "empirical heavy-nucleus saturation constant"),
-    (1.76, "implied by the measured 3He charge radius"),
+    (ce.R0_FM, "derived (reduced pion Compton wavelength)"),
+    (mp.mpf("1.2"), "empirical heavy-nucleus saturation constant"),
+    (mp.mpf("1.76"), "implied by the measured 3He charge radius"),
 ]
 
 
-def coulomb_A3(r0: float) -> float:
+def coulomb_A3(r0):
     """Coulomb energy of the single pp pair in 3He; T has none."""
-    ahc = float(ce.alpha_em_hbar_c_mev_fm())
-    return 0.6 * ahc * (2 * 1) / (r0 * 3 ** (mp.mpf(1) / 3))
+    # 3/5 as an exact mp rational, not the literal 0.6 (not 3/5 in binary).
+    ahc = ce.alpha_em_hbar_c_mev_fm()
+    return (mp.mpf(3) / 5) * ahc * (2 * 1) / (r0 * 3 ** (mp.mpf(1) / 3))
 
 
 def main() -> None:
@@ -168,9 +182,9 @@ def main() -> None:
     )
     check(
         "the_3He_arm_was_dominated_by_coulomb",
-        abs(coulomb_A3(float(ce.R0_FM))) > 0.6 * abs(KAPPA_PUBLISHED),
-        f"the derived Coulomb energy {coulomb_A3(float(ce.R0_FM)):.4f} MeV is "
-        f"{100 * coulomb_A3(float(ce.R0_FM)) / abs(KAPPA_PUBLISHED):.0f}% of the "
+        abs(coulomb_A3(ce.R0_FM)) > 0.6 * abs(KAPPA_PUBLISHED),
+        f"the derived Coulomb energy {coulomb_A3(ce.R0_FM):.4f} MeV is "
+        f"{100 * coulomb_A3(ce.R0_FM) / abs(KAPPA_PUBLISHED):.0f}% of the "
         "published kappa -- the fitted 'coupling' is mostly electrostatics",
     )
 
@@ -208,7 +222,7 @@ def main() -> None:
         ),
         "parameters": {
             "published_kappa_MeV": KAPPA_PUBLISHED,
-            "alpha_em_hbar_c_MeV_fm": float(ce.alpha_em_hbar_c_mev_fm()),
+            "alpha_em_hbar_c_MeV_fm": ce.alpha_em_hbar_c_mev_fm(),
             "alpha_em_provenance": "derived from q_0 in coulomb_energy, not CODATA",
             "radius_models": [{"r0_fm": r, "name": n} for r, n in RADII],
             "source_witness": str(SOURCE.relative_to(HERE.parent)),
