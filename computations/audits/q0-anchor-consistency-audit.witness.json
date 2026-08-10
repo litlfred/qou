@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T18:49:22.620035+00:00",
-  "commitSha": "85f0101d88131ea21900ab353a5d5e0fdd2daad1",
+  "computedAt": "2026-08-10T18:58:43.710962+00:00",
+  "commitSha": "ab74db85855714687ad33d386dc3c8ab4e20808a",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 27,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
@@ -28,8 +28,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
@@ -2239,10 +2242,6 @@
         },
         {
           "witness": "h4-residual-vs-fine-structure-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "h6-deuteron-free-word-chi-lambda.witness.json",
           "detail": ""
         },
         {
@@ -6846,6 +6845,10 @@
           "detail": ""
         },
         {
+          "witness": "rho-w-crystal-vertex-trace.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "rigid-monoidal-gap-invariance.witness.json",
           "detail": ""
         },
@@ -8752,6 +8755,10 @@
           "detail": ""
         },
         {
+          "witness": "h6-deuteron-free-word-chi-lambda.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-exact-qbeta.witness.json",
           "detail": ""
         },
@@ -9737,10 +9744,6 @@
         },
         {
           "witness": "rho-prefactor-structural-verifier.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "rho-w-crystal-vertex-trace.witness.json",
           "detail": ""
         },
         {
