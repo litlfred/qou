@@ -1,9 +1,0 @@
----
-# qou-n43j
-title: Prove Specht.specht_isSimple
-status: todo
-type: task
-created_at: 2026-08-04T09:57:19Z
-updated_at: 2026-08-04T09:57:19Z
----
-

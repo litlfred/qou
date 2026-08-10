@@ -1,9 +1,0 @@
----
-# qou-oc8q
-title: Prove StandardYoungTableau.numSYT_mul_hookProduct
-status: todo
-type: task
-created_at: 2026-08-04T10:23:06Z
-updated_at: 2026-08-04T10:23:06Z
----
-
