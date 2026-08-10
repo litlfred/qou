@@ -388,3 +388,39 @@ Lean reports both as `Unknown identifier`, which reads like a typo:
 * a section using `bokutShiaoRelation_lm` (§4h) must come **after** §4h;
 * a section using `bs31` / `w₁` / `w₂` / `oc` must be **inside** `namespace
   Completion`, not after `end Completion`.
+
+
+## §4j — the family subsumes Yang–Baxter
+
+At `j = i − 1` the Bokut–Shiao words *are* the braid words:
+
+    bsWord₁ i i'   = σᵢ σᵢ₋₁ σᵢ        (`bsWord₁_at_pred`)
+    bsWord₂ i' i i' = σᵢ₋₁ σᵢ σᵢ₋₁      (`bsWord₂_at_pred`)
+
+so `bokutShiaoRelation i' i i'` is `yangBaxterRelation i' i` up to the sign
+convention (`bokutShiaoRelation_at_pred`), and the two share a leading monomial
+(`bokutShiao_lm_eq_yangBaxter_lm`).
+
+**Why this matters for the overlap analysis ahead.** It means YB × BS overlaps
+are a *special case* of BS × BS, not a separate family to enumerate. The
+composition set for the completed system is smaller than a naive four-families
+count suggests.
+
+Needed `descWord_self : descWord i i = [σᵢ]`, proved via `filter_desc_self` —
+the same `Pairwise (· < ·)` induction as `filter_desc_cons`, and worth having
+separately since it is the base case of the descending words.
+
+### An asymmetry worth keeping
+
+`bsWord₂_at_pred` needs **no** relation between `i'` and `i`. `bsWord₂ i' i j`
+is `σᵢ₋₁ σᵢ` followed by `descWord i' j`, so at `j = i'` the tail collapses by
+`descWord_self` whatever `i` is. Only the *left* word needs `i' + 1 = i`, since
+that is where `descWord_cons` is used. The linter caught the unused hypothesis;
+it was carrying a false suggestion that both sides need the relation.
+
+### The recorded trap caught me anyway
+
+`filter_desc_self`'s head branch was written with `a.val` after `subst`, exactly
+the mistake this bean already records for `filter_desc_cons`. Writing the trap
+down did not stop me repeating it — the fix is that the head branch of any such
+induction must be stated in `i`, because `subst` on `i = a` eliminates `a`.
