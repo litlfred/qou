@@ -35,7 +35,7 @@
        docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md
 -/
 
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Data.Finset.Powerset
@@ -45,7 +45,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Expand
 import Mathlib.Algebra.Polynomial.Reverse
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 
 namespace QOU.QBeta.CKRecursion
 
@@ -69,7 +69,7 @@ universe u
 
     Instantiation requires specifying the kernel.  The seed value
     $c_2 = -1$ (PR #1602) is supplied to `applyRecursion` as input. -/
-structure CKRecursion (R : Type u) [Field R] where
+structure CKRecursion (R : Type u) [CommRing R] where
   depth : ℕ
   kernel : Fin depth → R
 
@@ -87,7 +87,7 @@ namespace CKRecursion
     categorical $f$-construction of `rem:markov-trace-inductive-limit`),
     every $c_k$ for $k \ge 2 + \text{depth}$ follows by repeated
     application from the seed values. -/
-def applyRecursion {R : Type u} [Field R] (rec : CKRecursion R)
+def applyRecursion {R : Type u} [CommRing R] (rec : CKRecursion R)
     (history : Fin rec.depth → R) : R :=
   Finset.sum (Finset.univ : Finset (Fin rec.depth))
     (fun j => rec.kernel j * history j)
@@ -96,7 +96,7 @@ def applyRecursion {R : Type u} [Field R] (rec : CKRecursion R)
     `h1, h2` and applying the recursion gives the same result as
     applying the recursion separately to each and adding.  Pure
     structural identity — `Finset.sum_add_distrib` + `mul_add`. -/
-theorem applyRecursion_linear {R : Type u} [Field R] (rec : CKRecursion R)
+theorem applyRecursion_linear {R : Type u} [CommRing R] (rec : CKRecursion R)
     (h1 h2 : Fin rec.depth → R) :
     rec.applyRecursion (fun j => h1 j + h2 j) =
       rec.applyRecursion h1 + rec.applyRecursion h2 := by
@@ -196,35 +196,43 @@ theorem esymm_bar_even {R : Type u} [CommRing R] {n : ℕ} (bar : R →+* R)
   the bar-ODD projection of a single ζ₆-carrier still carries ζ₆ — closing
   period-3/ζ₆ with no cross-mode cancellation.
 
+  **§7c base ring.** The bar involution `q ↦ q⁻¹` only ever needs `q` to be a
+  *unit* of the fibre ring, never a nonzero element of a field: the statements
+  below carry `q : Rˣ` over a bare `CommRing R` and evaluate at the coercion
+  `↑q⁻¹`. No ordering, radical, or `Real.*` construct occurs, so nothing here
+  crosses the substrate→archimedean wall; the archimedean evaluation at the
+  substrate `q_0` happens downstream by instantiating `R := ℝ` with
+  `q := Units.mk0 q_0 _`.
+
   Ref: docs/audits/2026-06-13-qbeta-root-of-unity-residue-program.md -/
 
 open Polynomial in
-/-- `Φ_2` is self-reciprocal: `Φ_2(1/q)·q = Φ_2(q)` (`φ(2)=1`). -/
-theorem cyclotomic_two_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
-    (cyclotomic 2 R).eval (1 / q) * q ^ 1 = (cyclotomic 2 R).eval q := by
+/-- `Φ_2` is self-reciprocal: `Φ_2(q⁻¹)·q = Φ_2(q)` (`φ(2)=1`). -/
+theorem cyclotomic_two_bar_stable {R : Type*} [CommRing R] (q : Rˣ) :
+    (cyclotomic 2 R).eval ((↑q⁻¹ : R)) * (q : R) ^ 1 = (cyclotomic 2 R).eval (q : R) := by
+  have h : (↑q⁻¹ : R) * (q : R) = 1 := q.inv_mul
   rw [cyclotomic_two]
   simp only [eval_add, eval_X, eval_one, pow_one]
-  field_simp
-  ring
+  linear_combination h
 
 open Polynomial in
-/-- `Φ_3` is self-reciprocal: `Φ_3(1/q)·q² = Φ_3(q)` (`φ(3)=2`). -/
-theorem cyclotomic_three_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
-    (cyclotomic 3 R).eval (1 / q) * q ^ 2 = (cyclotomic 3 R).eval q := by
+/-- `Φ_3` is self-reciprocal: `Φ_3(q⁻¹)·q² = Φ_3(q)` (`φ(3)=2`). -/
+theorem cyclotomic_three_bar_stable {R : Type*} [CommRing R] (q : Rˣ) :
+    (cyclotomic 3 R).eval ((↑q⁻¹ : R)) * (q : R) ^ 2 = (cyclotomic 3 R).eval (q : R) := by
+  have h : (↑q⁻¹ : R) * (q : R) = 1 := q.inv_mul
   rw [cyclotomic_three]
   simp only [eval_add, eval_pow, eval_X, eval_one]
-  field_simp
-  ring
+  linear_combination ((↑q⁻¹ : R) * (q : R) + 1 + (q : R)) * h
 
 open Polynomial in
-/-- `Φ_6` is self-reciprocal: `Φ_6(1/q)·q² = Φ_6(q)` (`φ(6)=2`) — the period-3/ζ₆
+/-- `Φ_6` is self-reciprocal: `Φ_6(q⁻¹)·q² = Φ_6(q)` (`φ(6)=2`) — the period-3/ζ₆
     carrier whose bar-stability closes the period-3 constraint. -/
-theorem cyclotomic_six_bar_stable {R : Type*} [Field R] (q : R) (hq : q ≠ 0) :
-    (cyclotomic 6 R).eval (1 / q) * q ^ 2 = (cyclotomic 6 R).eval q := by
+theorem cyclotomic_six_bar_stable {R : Type*} [CommRing R] (q : Rˣ) :
+    (cyclotomic 6 R).eval ((↑q⁻¹ : R)) * (q : R) ^ 2 = (cyclotomic 6 R).eval (q : R) := by
+  have h : (↑q⁻¹ : R) * (q : R) = 1 := q.inv_mul
   rw [cyclotomic_six]
   simp only [eval_add, eval_sub, eval_pow, eval_X, eval_one]
-  field_simp
-  ring
+  linear_combination ((↑q⁻¹ : R) * (q : R) + 1 - (q : R)) * h
 
 open Polynomial in
 /-- **General prime case** — subsumes `cyclotomic_two_bar_stable` and
@@ -236,16 +244,18 @@ open Polynomial in
     composite `d` (4, 6, 8, 9, …) need the general palindrome
     `reverse (cyclotomic d) = cyclotomic d`, which Mathlib does not yet carry;
     `cyclotomic_six_bar_stable` covers the one composite (`ζ_6`) the program uses. -/
-theorem cyclotomic_prime_bar_stable {R : Type*} [Field R] (p : ℕ) [Fact p.Prime]
-    (q : R) (hq : q ≠ 0) :
-    (cyclotomic p R).eval (1 / q) * q ^ (p - 1) = (cyclotomic p R).eval q := by
-  rw [one_div, cyclotomic_prime, eval_finset_sum, eval_finset_sum, Finset.sum_mul]
+theorem cyclotomic_prime_bar_stable {R : Type*} [CommRing R] (p : ℕ) [Fact p.Prime]
+    (q : Rˣ) :
+    (cyclotomic p R).eval ((↑q⁻¹ : R)) * (q : R) ^ (p - 1)
+      = (cyclotomic p R).eval (q : R) := by
+  rw [cyclotomic_prime, eval_finset_sum, eval_finset_sum, Finset.sum_mul]
   simp only [eval_pow, eval_X]
-  rw [← Finset.sum_range_reflect (fun i => q ^ i) p]
+  rw [← Finset.sum_range_reflect (fun i => (q : R) ^ i) p]
   refine Finset.sum_congr rfl (fun i hi => ?_)
   rw [Finset.mem_range] at hi
-  rw [inv_pow, pow_sub₀ q hq (by omega : i ≤ p - 1)]
-  field_simp
+  have hsplit : (q : R) ^ (p - 1) = (q : R) ^ i * (q : R) ^ (p - 1 - i) := by
+    rw [← pow_add]; congr 1; omega
+  rw [hsplit, ← mul_assoc, ← mul_pow, q.inv_mul, one_pow, one_mul]
 
 open Polynomial Finset in
 /-- Auxiliary: `reverse` is multiplicative across a `Finset` product over an
@@ -321,16 +331,17 @@ theorem cyclotomic_self_reverse {R : Type*} [CommRing R] [IsDomain R] :
 open Polynomial in
 /-- **General bar-stability — all `d > 1`** (eval form). Subsumes the explicit
     `cyclotomic_two/three/six_bar_stable` and `cyclotomic_prime_bar_stable`: for
-    every `n > 1`, `Φ_n` is self-reciprocal, `Φ_n(1/q)·q^{φ(n)} = Φ_n(q)`, so
+    every `n > 1`, `Φ_n` is self-reciprocal, `Φ_n(q⁻¹)·q^{φ(n)} = Φ_n(q)`, so
     divisibility by `Φ_n` is invariant under the bar involution `q ↦ q⁻¹`.
     Derived from `cyclotomic_self_reverse` via the reverse↔eval bridge
-    `eval₂_reverse_mul_pow`. -/
-theorem cyclotomic_bar_stable_general {R : Type*} [Field R] (n : ℕ) (hn : 1 < n)
-    (q : R) (hq : q ≠ 0) :
-    (cyclotomic n R).eval (1 / q) * q ^ n.totient = (cyclotomic n R).eval q := by
-  letI : Invertible q := invertibleOfNonzero hq
-  have h := eval₂_reverse_mul_pow (RingHom.id R) q (cyclotomic n R)
+    `eval₂_reverse_mul_pow`, whose `[Invertible x]` hypothesis is supplied by
+    `Units.invertible` — a unit, not a field inverse (§7c). -/
+theorem cyclotomic_bar_stable_general {R : Type*} [CommRing R] [IsDomain R]
+    (n : ℕ) (hn : 1 < n) (q : Rˣ) :
+    (cyclotomic n R).eval ((↑q⁻¹ : R)) * (q : R) ^ n.totient
+      = (cyclotomic n R).eval (q : R) := by
+  have h := eval₂_reverse_mul_pow (RingHom.id R) ((q : R)) (cyclotomic n R)
   rw [cyclotomic_self_reverse n hn] at h
-  simpa [eval₂_id, natDegree_cyclotomic, invOf_eq_inv, one_div] using h
+  simpa [eval₂_id, natDegree_cyclotomic, invOf_units] using h
 
 end QOU.QBeta.CKRecursion

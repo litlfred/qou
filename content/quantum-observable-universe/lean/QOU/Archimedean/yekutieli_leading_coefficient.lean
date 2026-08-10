@@ -55,10 +55,24 @@ and the scalar `raw_normalised`.
 
 ## Base ring (§7c)
 
-Generic `{R : Type*} [Field R]` with `q ≠ 0` — the formula needs `q⁻¹`, and
-the non-vanishing / normalisation are algebraic (no ordering, no `Real.*`).
-The monic-Chebyshev machinery needs only `[CommRing R] [Nontrivial R]`.
-Mirrors `dq-squared.lean`.
+Generic `{R : Type*} [CommRing R]` with the substrate carried as a **unit**
+`q : Rˣ` — the formula needs `q⁻¹`, and unit-hood is exactly the algebraic
+content of the former `q ≠ 0` (no ordering, no `Real.*`).  No field and no
+division are required, so the manuscript's own ground ring
+`R_q = ℤ[q, q⁻¹]` (`LaurentPolynomial ℤ`, in which `q = T 1` is a unit) is
+a direct instance.  The monic-Chebyshev machinery needs only
+`[CommRing S] [Nontrivial S]`.
+
+`[IsDomain R]` is required — and is genuinely load-bearing, not decorative
+— by exactly two things: the product non-vanishing
+`yekutieliObstructionData_kappaRaw_ne_zero` (`mul_ne_zero`) and the
+leading-coefficient extraction `leadingCoeff_C_mul_monicCheb`
+(`Polynomial.leadingCoeff_mul`, which needs `NoZeroDivisors`).  Over a
+`CommRing` with zero divisors the non-vanishing is false: in `R = ZMod 6`
+take `q = 5` (a unit, `q⁻¹ = 5`, `q ≠ 1`), `weight = 3 ≠ 0`,
+`wedge = 1 ≠ 0`; then `κ_raw = 5·2·3·1 = 30 = 0`.  `ℤ[q, q⁻¹]` and every
+field are domains, so nothing downstream is lost.  Mirrors
+`dq-squared.lean`.
 -/
 
 open Polynomial
@@ -73,11 +87,11 @@ namespace QOU.Archimedean
     nonzero).  The nonzero witnesses are geometric-nondegeneracy inputs,
     carried as data so the non-vanishing theorem below is non-vacuous. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
-structure YekutieliObstructionData (R : Type*) [Field R] where
-  /-- The substrate parameter `q`. -/
-  q : R
-  /-- `q ≠ 0` (algebraic invertibility — not the archimedean `0 < q`). -/
-  q_ne_zero : q ≠ 0
+structure YekutieliObstructionData (R : Type*) [CommRing R] where
+  /-- The substrate parameter `q`, carried as a **unit** of the ground
+      ring: algebraic invertibility (the old `q ≠ 0`), not the
+      archimedean `0 < q`. -/
+  q : Rˣ
   /-- The `T`-action weight `w` of the top Seifert cycle `γ₅` (the `5`). -/
   weight : R
   /-- The weight of a genuine top cycle is nonzero. -/
@@ -87,7 +101,7 @@ structure YekutieliObstructionData (R : Type*) [Field R] where
   /-- The `q`-wedge of the two independent `1`-forms is nondegenerate. -/
   wedge_ne_zero : wedge ≠ 0
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R]
 
 /-- The **raw curvature value** of the Yekutieli obstruction,
     `κ_raw = q⁻¹(1 − q⁻¹) · w · ν` — the `d_q²` formula of the narrative
@@ -95,7 +109,7 @@ variable {R : Type*} [Field R]
     free field) so that `..._kappaRaw_ne_zero` is non-vacuous. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
 def YekutieliObstructionData.kappaRaw (d : YekutieliObstructionData R) : R :=
-  d.q⁻¹ * (1 - d.q⁻¹) * d.weight * d.wedge
+  ((d.q⁻¹ : Rˣ) : R) * (1 - ((d.q⁻¹ : Rˣ) : R)) * d.weight * d.wedge
 
 /-- **Raw obstruction non-vanishing (sorry-free).**
 
@@ -104,13 +118,14 @@ def YekutieliObstructionData.kappaRaw (d : YekutieliObstructionData R) : R :=
     universal `d_q²` coefficient `q⁻¹(1 − q⁻¹)` vanishes iff `q = 1`, and the
     geometric factors `w`, `ν` are nonzero by nondegeneracy. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient-proof.md
-theorem yekutieliObstructionData_kappaRaw_ne_zero
+theorem yekutieliObstructionData_kappaRaw_ne_zero [IsDomain R]
     (d : YekutieliObstructionData R) (hq : d.q ≠ 1) :
     d.kappaRaw ≠ 0 := by
   unfold YekutieliObstructionData.kappaRaw
-  have hinv_ne_one : d.q⁻¹ ≠ 1 := fun h => hq (inv_eq_one.mp h)
-  have h_inv : d.q⁻¹ ≠ 0 := inv_ne_zero d.q_ne_zero
-  have h_sub : (1 - d.q⁻¹) ≠ 0 := sub_ne_zero.mpr (Ne.symm hinv_ne_one)
+  have hinv_ne_one : ((d.q⁻¹ : Rˣ) : R) ≠ 1 := fun h =>
+    hq (inv_eq_one.mp (Units.val_eq_one.mp h))
+  have h_inv : ((d.q⁻¹ : Rˣ) : R) ≠ 0 := Units.ne_zero _
+  have h_sub : (1 - ((d.q⁻¹ : Rˣ) : R)) ≠ 0 := sub_ne_zero.mpr (Ne.symm hinv_ne_one)
   exact mul_ne_zero (mul_ne_zero (mul_ne_zero h_inv h_sub) d.weight_ne_zero)
     d.wedge_ne_zero
 
@@ -173,7 +188,7 @@ theorem leadingChebyshev_eq_one (S : Type*) [CommRing S] [Nontrivial S]
     coordinate reads off the scale from a monic expansion.  This is the
     proved bridge that turns the polynomial Stokes expansion below into the
     scalar identity `obstruction = κ_raw`. -/
-theorem leadingCoeff_C_mul_monicCheb (c : R) (n : ℕ) :
+theorem leadingCoeff_C_mul_monicCheb [IsDomain R] (c : R) (n : ℕ) :
     (Polynomial.C c * monicCheb R n).leadingCoeff = c := by
   rw [leadingCoeff_mul, leadingCoeff_C, (monicCheb_monic R n).1.leadingCoeff,
     mul_one]
@@ -203,7 +218,7 @@ theorem leadingCoeff_C_mul_monicCheb (c : R) (n : ℕ) :
     discharged (`leadingChebyshev_eq_one`). -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
-class YekutieliStokesNormalisation (R : Type*) [Field R]
+class YekutieliStokesNormalisation (R : Type*) [CommRing R]
     (d : YekutieliObstructionData R) (p : ℕ) where
   /-- The genus generating polynomial of the obstruction class. -/
   genusPoly : R[X]
@@ -226,7 +241,8 @@ noncomputable def obstructionCoord (d : YekutieliObstructionData R) (p : ℕ)
     genus coordinate is the raw `d_q²` curvature, obtained from the polynomial
     `stokes_expansion` by the leading-coefficient extraction.  (Was the
     axiom `stokes_identity` in the earlier revision.) -/
-theorem obstructionCoord_eq_kappaRaw (d : YekutieliObstructionData R) (p : ℕ)
+theorem obstructionCoord_eq_kappaRaw [IsDomain R]
+    (d : YekutieliObstructionData R) (p : ℕ)
     [nrm : YekutieliStokesNormalisation R d p] :
     obstructionCoord d p = d.kappaRaw := by
   unfold obstructionCoord
@@ -243,7 +259,8 @@ theorem obstructionCoord_eq_kappaRaw (d : YekutieliObstructionData R) (p : ℕ)
     block's `lean.ref`. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
-theorem yekutieli_leading_coefficient (d : YekutieliObstructionData R)
+theorem yekutieli_leading_coefficient [IsDomain R]
+    (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (_hq_ne : d.q ≠ 1)
     [nrm : YekutieliStokesNormalisation R d p] :
     obstructionCoord d p = leadingChebyshev R p ∧ obstructionCoord d p = 1 := by
@@ -257,7 +274,8 @@ theorem yekutieli_leading_coefficient (d : YekutieliObstructionData R)
     the normalisation `raw_normalised`, so the non-vanishing rests on
     genuinely proved content. -/
 -- Ref: [manuscript] quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.md
-theorem yekutieli_obstruction_ne_zero (d : YekutieliObstructionData R)
+theorem yekutieli_obstruction_ne_zero [IsDomain R]
+    (d : YekutieliObstructionData R)
     (p : ℕ) (_hp_odd : Odd p) (hq_ne : d.q ≠ 1)
     [nrm : YekutieliStokesNormalisation R d p] :
     obstructionCoord d p ≠ 0 := by

@@ -41,6 +41,13 @@
   pair — a ~25 % rise from the deuteron's ρ ≈ 14.7 MeV/rad, consistent
   with a per-λ jump in pole order.
 
+  **Base ring (AGENTS.md §7c).**  Nothing here divides: the class field is
+  the product `B A = m_e · ρ_0 · (α_shift A : R)` and both theorems are pure
+  rewriting.  So the carrier is the weakest typeclass that admits the
+  statement — a generic `{R : Type u} [Semiring R]` (multiplication plus the
+  `ℕ`-cast of the pole order).  The previous `[Field R]` was gratuitous, as
+  was the `Mathlib.Data.Real.Basic` import.
+
   Ref: [manuscript] prop:binding-alpha-shift-extension
        [manuscript] prop:alpha-shift-torus-knot
        [audit] docs/audits/2026-05-28-binding-endomorphism-analogy.md
@@ -48,8 +55,8 @@
        [probe] computations/binding_rotation_phase_lead.py
        [probe] computations/binding_qhamiltonian_rotational_scale.py
 -/
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Data.Nat.Cast.Defs
 
 namespace QOU.BraidKnot
 
@@ -84,7 +91,7 @@ end CandidateForceCarrierKnots
     Per AGENTS.md §3b-cond: the binding closure is gated on the
     **per-rep Reeb phase axiom** (substrate identity) and the
     **force-carrier knot identification** (Phase 3 open math).  -/
-class BindingPerRepReebPhase {R : Type u} [Field R]
+class BindingPerRepReebPhase {R : Type u} [Semiring R]
     (B : ℕ → R) (m_e ρ_0 : R) where
   /-- B(A) factors through α_shift at the binding-specific torus
       knot.  The function `αShiftAt` records, per nucleus index A,
@@ -125,7 +132,7 @@ class BindingForceCarrierKnot
     aligning the Lean structure with the audit's §3b-cond gating
     intent. -/
 theorem binding_unique_via_alpha_shift
-    {R : Type u} [Field R]
+    {R : Type u} [Semiring R]
     (B B' : ℕ → R) (m_e ρ_0 : R) (p k : ℕ → ℕ)
     [hB : BindingPerRepReebPhase B m_e ρ_0]
     [hB' : BindingPerRepReebPhase B' m_e ρ_0]
@@ -143,7 +150,7 @@ theorem binding_unique_via_alpha_shift
     to consume the force-carrier class rather than an ad-hoc
     equality. -/
 theorem binding_subsingleton
-    {R : Type u} [Field R] (m_e ρ_0 : R) (p k : ℕ → ℕ) :
+    {R : Type u} [Semiring R] (m_e ρ_0 : R) (p k : ℕ → ℕ) :
     Subsingleton {B : ℕ → R //
       ∃ (hB : BindingPerRepReebPhase B m_e ρ_0),
         BindingForceCarrierKnot hB.αShiftAt p k} := by

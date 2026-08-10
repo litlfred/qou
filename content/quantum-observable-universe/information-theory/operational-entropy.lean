@@ -1,5 +1,5 @@
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Group.Units.Defs
 import Mathlib.Tactic.Ring
 
 
@@ -17,29 +17,34 @@ LaTeX label: `def:operational-entropy`
 
 namespace QOU.Information
 
+/-! §7c: `q` enters only through `q` and `q⁻¹`, so it is carried as a **unit**
+`q : kˣ` of a bare `CommRing k` and `q⁻³` is the coercion `(↑q⁻¹)³` — no field
+inverse of a possibly-zero element, hence no `[Field k]` and no `q ≠ 0`
+side-condition. Nothing here is archimedean; the numerical evaluation at the
+substrate `q_0` happens downstream by instantiating `k := ℝ`. -/
+
 /-- **Operational entropy** of the Reeb dynamics at substrate parameter q.
 
-    η_q := (2q - 1) / q³
+    η_q := (2q - 1) · q⁻³
 
     Measures the information generated per f_q-iteration in nats. -/
 -- Ref: [manuscript] §9/operational-entropy
-noncomputable def operationalEntropy {k : Type*} [Field k] (q : k) : k :=
-  (2 * q - 1) / (q * q * q)
+def operationalEntropy {k : Type*} [CommRing k] (q : kˣ) : k :=
+  (2 * (q : k) - 1) * ((↑q⁻¹ : k) * (↑q⁻¹ : k) * (↑q⁻¹ : k))
 
-/-- The q-deformed Hausdorff dimension d_{H,q} = η_q / χ_q = (2q-1)² / q³. -/
+/-- The q-deformed Hausdorff dimension d_{H,q} = η_q / χ_q = (2q-1)² · q⁻³. -/
 -- Ref: [manuscript] §9/operational-entropy
-noncomputable def qHausdorffDimension {k : Type*} [Field k] (q : k) : k :=
-  (2 * q - 1) ^ 2 / (q * q * q)
+def qHausdorffDimension {k : Type*} [CommRing k] (q : kˣ) : k :=
+  (2 * (q : k) - 1) ^ 2 * ((↑q⁻¹ : k) * (↑q⁻¹ : k) * (↑q⁻¹ : k))
 
 /-- Operational entropy relates to Hausdorff dimension via
     d_{H,q} = η_q · (2q - 1). -/
 -- Ref: [manuscript] §9/operational-entropy
-theorem hausdorff_eq_entropy_mul_lyapunov {k : Type*} [Field k] (q : k)
-    (hq : q ≠ 0) :
-    qHausdorffDimension q = operationalEntropy q * (2 * q - 1) := by
+theorem hausdorff_eq_entropy_mul_lyapunov {k : Type*} [CommRing k] (q : kˣ) :
+    qHausdorffDimension q = operationalEntropy q * (2 * (q : k) - 1) := by
   -- Ref: [manuscript] §9/operational-entropy
-  -- d_{H,q} = (2q-1)²/q³ = ((2q-1)/q³) · (2q-1) = η_q · (2q-1)
+  -- d_{H,q} = (2q-1)²·q⁻³ = ((2q-1)·q⁻³) · (2q-1) = η_q · (2q-1)
   unfold qHausdorffDimension operationalEntropy
-  field_simp [hq]
+  ring
 
 end QOU.Information

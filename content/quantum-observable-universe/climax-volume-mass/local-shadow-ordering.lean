@@ -23,8 +23,12 @@ universe u
     with `nbhd` standing in for the open set `U` (the topological
     openness of `U` is an external hypothesis — for `ℝ` the Euclidean
     topology, for `ℚ_p` the `p`-adic — but the *order content*, the
-    pointwise magnitude inequality on `U`, is encoded here). -/
-structure LocalShadowOrdering (R : Type u) [Field R] [LinearOrder R]
+    pointwise magnitude inequality on `U`, is encoded here).
+
+    §7c: only the ordered-ring structure is used — `|·|` needs a `Neg` and a
+    lattice order, nothing here divides — so `[CommRing R]` is the weakest
+    typeclass admitting the construction; no field is required. -/
+structure LocalShadowOrdering (R : Type u) [CommRing R] [LinearOrder R]
     [IsStrictOrderedRing R] where
   /-- Partition λ₁ ⊢ k₁. -/
   partition_low  : List ℕ
