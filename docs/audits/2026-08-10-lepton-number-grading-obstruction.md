@@ -222,3 +222,31 @@ still genuinely absent** — every quark row rests on assuming its writhe is `0`
 Chirality `u_L` vs `u_R` is unrepresented. `qou-kl39` stays open, with the
 blocker narrowed from "braid words per chiral fermion" to "the quark braid word
 and a chirality grading".
+
+### Red-team pass: the candidate is refuted as a link function
+
+`L = sign(writhe)` matching 6/6 rows is weaker evidence than it looks, and it
+fails a test the corpus itself imposes.
+
+**It is close to circular.** The carriers were assigned as `sigma_1^n` for
+particles and the mirror `sigma_1^-n` for antiparticles, and `L = ±1` *is* the
+particle/antiparticle label. So `sign(writhe)` recovering it is largely the
+assignment read back out — the same definition-unfolding failure mode caught in
+`TwistBatteryVacuity.lean`. The only rows carrying independent content are the
+two writhe-`0` hadrons.
+
+**It is refuted as a state function on links.** Markov II sends `β` to `βσ_n`
+with the same closure and raises the writhe by `1`. The baryon has writhe `0`,
+so its stabilisation has writhe `1` and `L` jumps `0 → 1`. Conservation clause 3
+of `lepton-number-categorical-properties.md` requires `ΔL = 0` under Markov
+moves. Proved: `leptonNumber_not_markov_invariant`.
+
+**The one escape** is that states are Gröbner–Shirshov normal forms
+(`mba-step02-gs-reduction.md`: "every downstream algorithm consumes `NF(w)`, not
+the raw braid"), fixing a canonical representative so Markov moves do not act
+within the state space. Then `L = sign(writhe)` is well-defined — but clause 3
+is then about a different object, and which one is unresolved.
+
+Net: the braid-word carriers and the derived writhe-`0` pair stand (they close
+the writhe-independence requirement). `L = sign(writhe)` does **not** stand as a
+link invariant.
