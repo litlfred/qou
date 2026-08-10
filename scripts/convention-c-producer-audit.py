@@ -123,6 +123,124 @@ def is_c_form_halfarg(node: ast.AST):
     return num if d in (f"{num}**2+1", f"1+{num}**2") else None
 
 
+def blocked_symbols(repo: pathlib.Path):
+    """The (module, symbol) pairs the registry deliberately leaves on C.
+
+    Read from `blocked_migrations` rather than hardcoded, so a registry edit
+    re-arms this automatically — the same rule the content axis follows.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        rows = json.loads(reg.read_text()).get("blocked_migrations", [])
+    except (OSError, json.JSONDecodeError):
+        return []
+    out = []
+    for r in rows:
+        f, sym = r.get("file", ""), r.get("symbol", "")
+        if not f or not sym:
+            continue
+        # tools/pyhecke/python/pyhecke/gram.py -> pyhecke.gram.
+        # The LAST occurrence of the package name is the package root; the
+        # first is the containing directory, which yields the nonsense
+        # `pyhecke.python.pyhecke.gram`. The selftest caught that.
+        parts = pathlib.Path(f).with_suffix("").parts
+        pkg = next((p for p in reversed(parts[:-1]) if (pathlib.Path(*parts[:parts.index(p) + 1])).name == p
+                    and p not in ("python", "src", "tools")), None)
+        if pkg and pkg in parts:
+            i = len(parts) - 1 - parts[::-1].index(pkg)
+            mod = ".".join(parts[i:])
+        else:
+            mod = parts[-1]
+        out.append((mod, sym, r.get("reason", ""), r.get("bean", "")))
+    return out
+
+
+def scan_reexports(roots=ROOTS, repo: pathlib.Path = None):
+    """Find where a registry-BLOCKED convention-C symbol escapes its module.
+
+    `blocked_migrations` records a symbol that stays on convention C for a
+    stated reason — for `pyhecke.gram.z` it is that `G_INV = np.linalg.inv(G)`
+    runs at module import and the Markov–Gram is singular under D, so flipping
+    the line silently corrupts every consumer of `G_INV`.
+
+    That exception is only sound while the symbol stays *inside* the blocked
+    module. It does not:
+
+        computations/substrate/hecke_core.py:61
+            from pyhecke.gram import (z, W_SYM, W_STD, W_ALT, ...)
+
+    and then production computations do `from hecke_core import z as Z_MARKOV`
+    and use it as the Markov parameter. The registry's containment is a
+    statement about one file; nothing checked that the file kept it.
+
+    `is_c_form` cannot see this — there is no `1/(sqrt(q) + ...)` anywhere, just
+    an import. So the audit reported the producer surface clear while the
+    shared substrate module was handing convention C to every caller that asked
+    for `z`.
+
+    Two levels are reported: modules importing the blocked symbol directly, and
+    modules importing it from *those* (the actual consumer surface).
+    """
+    repo = repo or pathlib.Path(".")
+    blocked = blocked_symbols(repo)
+    if not blocked:
+        return []
+
+    direct, out = {}, []
+    for mod, sym, reason, bean in blocked:
+        tail = mod.rsplit(".", 1)[-1]
+        for r in roots:
+            base = pathlib.Path(r)
+            if not base.exists():
+                continue
+            for p in sorted(base.rglob("*.py")):
+                sp = str(p)
+                if "_deprecated" in sp or sp.startswith(BLOCKED_BY_DESIGN):
+                    continue
+                try:
+                    tree = ast.parse(p.read_text())
+                except (SyntaxError, UnicodeDecodeError, OSError):
+                    continue
+                for n in ast.walk(tree):
+                    if not isinstance(n, ast.ImportFrom) or not n.module:
+                        continue
+                    if not (n.module == mod or n.module.endswith(f".{tail}") or n.module == tail):
+                        continue
+                    for a in n.names:
+                        if a.name != sym:
+                            continue
+                        out.append((sp, n.lineno, f"{mod}.{sym}", a.asname or sym,
+                                    "direct", reason, bean))
+                        direct[pathlib.Path(sp).stem] = a.asname or sym
+
+    # Second hop: who imports the re-exported name from the leaking module.
+    for r in roots:
+        base = pathlib.Path(r)
+        if not base.exists():
+            continue
+        for p in sorted(base.rglob("*.py")):
+            sp = str(p)
+            if "_deprecated" in sp or sp.startswith(BLOCKED_BY_DESIGN):
+                continue
+            if pathlib.Path(sp).stem in direct:
+                continue
+            try:
+                tree = ast.parse(p.read_text())
+            except (SyntaxError, UnicodeDecodeError, OSError):
+                continue
+            for n in ast.walk(tree):
+                if not isinstance(n, ast.ImportFrom) or not n.module:
+                    continue
+                src = n.module.rsplit(".", 1)[-1]
+                if src not in direct:
+                    continue
+                for a in n.names:
+                    if a.name == direct[src]:
+                        out.append((sp, n.lineno, f"{src}.{a.name}", a.asname or a.name,
+                                    "via " + src, "", ""))
+    return out
+
+
 def classify(path: str) -> str:
     if path.startswith(BLOCKED_BY_DESIGN):
         return "tools/pyhecke — BLOCKED on C by design (registry)"
@@ -213,7 +331,27 @@ def selftest() -> int:
         verb = "flags" if want else "clears"
         print(f"  {'ok  ' if ok else 'FAIL'}  half-arg {verb}: {src}")
         bad += not ok
-    total = len(should_match) + len(should_not) + len(half)
+    # The re-export detector. `is_c_form` is blind to these by construction --
+    # there is no arithmetic to shape-match, only an import -- so it needs its
+    # own fixtures or it could silently match nothing forever.
+    repo = pathlib.Path(__file__).resolve().parent.parent
+    bl = blocked_symbols(repo)
+    checks = [
+        ("registry yields at least one blocked (module, symbol)", bool(bl)),
+        ("the blocked file path resolves to an importable module path",
+         any(m == "pyhecke.gram" and s == "z" for m, s, _, _ in bl)),
+    ]
+    if bl:
+        leaks = scan_reexports(repo=repo)
+        checks.append(("the known hecke_core re-export is detected",
+                       any("hecke_core.py" in l[0] and l[4] == "direct" for l in leaks)))
+        checks.append(("pyhecke's own modules are NOT reported as leaking",
+                       not any(l[0].startswith(BLOCKED_BY_DESIGN) for l in leaks)))
+    for name, ok in checks:
+        print(f"  {'ok  ' if ok else 'FAIL'}  reexport: {name}")
+        bad += not ok
+
+    total = len(should_match) + len(should_not) + len(half) + len(checks)
     print(f"selftest: {total - bad}/{total}"
           + ("" if bad else " — matcher accepts every corpus spelling and rejects convention D."))
     return bad
@@ -245,6 +383,21 @@ def main() -> int:
 
     actionable = sum(v for k, v in buckets.items() if not k.startswith("tools/pyhecke"))
     print(f"\n  ACTIONABLE (excludes blocked-by-design): {actionable} sites")
+
+    leaks = scan_reexports(repo=pathlib.Path("."))
+    if leaks:
+        direct = [l for l in leaks if l[4] == "direct"]
+        hops = [l for l in leaks if l[4] != "direct"]
+        print(f"\n  BLOCKED-SYMBOL LEAKS: {len(direct)} module(s) re-export a registry-blocked "
+              f"convention-C symbol; {len(hops)} further consumer(s) import it from them.")
+        print("  The registry exempts a symbol INSIDE its module. Nothing kept it there.")
+        for path, line, sym, asname, how, reason, bean in direct:
+            print(f"    {path}:{line}   {sym}  ->  {asname}   [{bean or 'no bean'}]")
+        if args.list:
+            for path, line, sym, asname, how, _, _ in hops:
+                print(f"      {how:16s} {path}:{line}   {sym} -> {asname}")
+        elif hops:
+            print(f"    (--list to see the {len(hops)} downstream consumers)")
 
     if args.list:
         print()
