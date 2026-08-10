@@ -545,7 +545,7 @@ noncomputable def borromean_mass_ratio : ℝ :=
 
 | Link           | Lean Declaration     | Volume                       | Exact Form               |
 |----------------|----------------------|------------------------------|--------------------------|
-| Figure-eight 4₁| `vol_figure_eight`   | 2.02988321281931 (OEIS A091518)| 3 · Cl₂(π/3)           |
+| Figure-eight 4₁| `vol_figure_eight`   | 2.02988321281931 (OEIS A091518)| 2 · Cl₂(π/3) = 6 · Λ(π/3)|
 | Borromean 6₂³  | `vol_borromean`      | 7.32772475341775             | 8 · G (Catalan const)    |
 | Hopf L2a1      | `vol_hopf_link`      | 0                            | torus link               |
 

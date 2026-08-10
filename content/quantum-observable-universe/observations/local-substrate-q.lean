@@ -42,7 +42,8 @@ namespace QOU.Experimental
 -- Ref: CODATA 2018, [manuscript] §11
 structure LocalSubstrateQ where
   /-- Hyperbolic volume of the figure-eight knot.
-      `Vol(4₁) = 3 Cl₂(π/3) ≈ 2.02988`. -/
+      `Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) ≈ 2.02988` — two regular ideal
+      tetrahedra, each of volume `Cl₂(π/3) = 3 Λ(π/3)`. -/
   vol_figure_eight : ℝ
   /-- The CODATA muon-electron mass ratio. -/
   muon_electron_ratio : ℝ

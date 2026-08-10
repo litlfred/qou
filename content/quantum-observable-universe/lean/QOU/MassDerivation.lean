@@ -97,7 +97,10 @@ theorem topological_mass_conjecture (tmf : TopologicalMassFormula) :
 /-! ## Section 2: Experimental & Topological Constants -/
 
 /-- The Hyperbolic Volume of the Figure-Eight Knot (4₁).
-    Exact: 3 · Cl₂(π/3) where Cl₂ is the Clausen function (OEIS A091518).
+    Exact: `2 · Cl₂(π/3) = 6 · Λ(π/3)`, where `Cl₂` is the Clausen function
+    and `Λ` the Lobachevsky function, `Λ(θ) = Cl₂(2θ)/2` (OEIS A091518).
+    The complement decomposes into two regular ideal tetrahedra, each of
+    volume `Cl₂(π/3) = 3 · Λ(π/3) ≈ 1.01494`.
     Computed by SnapPy; value from Bloch-Wigner dilogarithm. -/
 noncomputable def vol_figure_eight : ℝ := 2.029883212819307250042408
 
