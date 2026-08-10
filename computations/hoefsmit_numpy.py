@@ -146,7 +146,7 @@ def chi_numpy(
 
     q = float(q_value)
     h = q - 1.0 / q
-    d_lookup = {"sigma": 0.0, "sigma_inv": -h, "averaged": -h / 2.0}
+    from canonical_braid_crossings import d_for_ctype
     eye = np.eye(dim, dtype=np.float64)
 
     M = np.eye(dim, dtype=np.float64)
@@ -154,7 +154,7 @@ def chi_numpy(
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = d_lookup[ctype]
+        d_val = d_for_ctype(ctype, h)
         cross = sigma + d_val * eye
         M = M @ cross   # numpy matmul (C-level BLAS)
 
