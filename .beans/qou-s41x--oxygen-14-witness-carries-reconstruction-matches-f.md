@@ -127,3 +127,50 @@ values are stale artifacts and the whole family needs regenerating; if it stays
 The consumer question from the original write-up is unchanged and is now more
 pressing, not less: two live readers pull these coefficients and neither consults
 the flag, and 21 of 25 witnesses are advertising a failed self-check.
+
+## Step 2 — the probe, and it settles it the other way round
+
+Ran `analyse_atom` in memory (writing nothing, so no witness moved) and compared
+today's `reconstruction_matches` against the committed value.
+
+    atom        max_m   committed   TODAY    n_nonzero   hi_m
+    proton         48     false      false        9        8
+    neutron        48     false      false        9        8
+    deuteron       64     false      false       13       12
+    helium-6       96     TRUE       false       23       22     ← reverses
+
+The 21 `false` reproduce. But **a committed `true` comes back `false`**, with
+*identical* `n_nonzero` and `hi_m`. Same inputs, same derived coefficients,
+opposite verdict — so what changed is the CODE, not the data.
+
+**Conclusion: today the check is false universally, and the four `true` values
+are stale artifacts of an older code state.** That is the reverse of both earlier
+framings — the original bean asked why oxygen-14 is `false`, my first correction
+asked why four files are `true`, and the answer is that neither is the anomaly:
+the flag regressed at some point and every witness written since records `false`.
+The four `true` files are simply the ones not regenerated since.
+
+This also means the earlier refutation needs qualifying rather than discarding.
+`reconstruct(coeffs, u)` dropping `max_m` (defaults to 20 while extraction runs
+to 96–224) was refuted as an explanation of the true/false SPLIT — correctly,
+since the split turns out to be temporal, not structural. As an explanation of
+today's UNIVERSAL false it is back in play and now fits helium-6 exactly
+(hi_m=22 > 20, so a 20-term reconstruction cannot match). It still does **not**
+fit proton (hi_m=8, comfortably inside 20, yet `false`), so it is at most part of
+the cause. Something else fails for the small atoms.
+
+`boron-12` (max_m=192, committed `true`) was still running when this was written;
+it is a confirmation, not a decision point — helium-6 alone establishes the
+reversal.
+
+## What this changes about priority
+
+It goes UP. Previously: "21 of 25 witnesses advertise a failed self-check that
+two readers ignore." Now: **the self-check itself is broken**, so it is not
+telling anyone anything about any witness, and the 4 `true` values actively
+mislead — they read as "verified" when today's code would not verify them.
+
+Next: find when it regressed. `reconstruct`'s missing `max_m` is one candidate
+and fits the large atoms; the small-atom failure needs its own look. Fixing the
+check must come before re-running any of the 25, or the regeneration just
+rewrites `false` everywhere and buries the four remaining pieces of evidence.

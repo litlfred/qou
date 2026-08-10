@@ -12,6 +12,7 @@ violation.
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 #!/usr/bin/env python3
 """
 Q-value from INVERSE Markov trace — vortex tube resistance.
@@ -147,6 +148,12 @@ def find_gs_quark(Z, N):
 # ══════════════════════════════════════════════════════════════
 #  Q-VALUE COMPUTATIONS
 # ══════════════════════════════════════════════════════════════
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 decays = [
     (0, 1, 1, 0, Q_NEUTRON_MEV,  'n→p'),

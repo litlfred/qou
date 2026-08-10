@@ -207,3 +207,101 @@ Largest remaining, all literal counts:
      8  computations/meson_gen3_eta_phi.py
      6  computations/deltalambda/perknot_pn_bond_resolved_extensivity_probe.py
      6  computations/probes/yardstick_free_phase_binding_probe.py
+
+## Drain COMPLETE for the proven-lossy class — 185 → 0
+
+    literal (proven lossy)   185 -> 0     (-185)
+    expr    (position-risky) 103 -> 51    (-52, incidental)
+    files drained             68
+    NEW / REGRESSED            0 / 0      throughout all three passes
+
+Pass 3 took the last 26, where the name `set_compute_dps` was neither imported
+nor defined. Two routes, chosen per file from what the file can actually reach:
+
+    route 1  (19 files)  imports `_path_bridge`, so `from _precision import
+                         set_compute_dps` is reachable — canonical, matches the
+                         other 152 producers.
+    route 2  ( 7 files)  no bridge; assign dps directly.
+
+Route 2 has a trap worth recording: **both `mp.dps = 50` and `mp.mp.dps = 50`
+satisfy the audit's `_raises_dps`, but only one works at runtime**, and which
+depends on the import style —
+
+    from mpmath import mp   ->  mp.dps = 50
+    import mpmath as mp     ->  mp.mp.dps = 50
+
+so the alias is read off the AST rather than guessed. A gate that accepts both
+forms cannot tell you that you picked the wrong one; the source check would go
+green on a file whose constants are still built at 15 dps.
+
+Which is why pass 3 was verified at RUNTIME, not just by parsing:
+
+    26 files: import OK 26/26, and mpmath.mp.dps >= 50 after import 26/26
+
+with dps reset to 15 before each import, so one module's raise cannot mask
+another's failure. That check is what proves the alias detection right; parsing
+and importing would both have passed a wrong alias silently.
+
+## Remaining: 51 `expr` findings, and they are a different question
+
+Not statically provable — `mpf(<expr>)` where the argument is computed. Some are
+genuinely fine (an expression over already-high-precision values), some are the
+same defect wearing a different sleeve. They need reading, not a fourth
+automated pass, and the ratchet holds the line at 51 meanwhile.
+
+Bean stays in-progress on that account. The class it was opened for — the one
+that landed five times unnoticed — is closed and cannot recur silently: the gate
+is wired in both lists, the proven-lossy count is 0, and anything new fails.
+
+## CORRECTION — the drain does NOT only drain the padding ratchet
+
+The pass-1 commit (`e089dcd1a`) claimed:
+
+> Committed witnesses still carry values computed with the lossy constants;
+> they correct themselves when their producers are next run, and that can only
+> DRAIN the padding ratchet, never regress it — a constant that gains digits
+> removes padding rather than adding it.
+
+**Wrong, and caught by the gate rather than by me.** The reasoning holds for the
+constant itself and stops there. Raising module-scope dps also raises the OUTPUT
+precision of everything else the producer serializes — including values that are
+genuinely float64. Those were previously printed at ~15 digits and looked clean;
+at 50 dps they print the binary64 expansion, which is exactly what the padding
+audit is built to catch.
+
+Observed, on three producers whose witnesses got rewritten when the pass-3
+verification imported them (they write at import time, no `__main__` guard):
+
+    inverse-markov-qvalues   nucleon_results[*].Q_exp, quark_results[*].Q_exp
+    meson-mass-from-hecke
+    u1-hypercharge-assignment
+
+    committed  "0.782333409310022"                     (15 digits, dps=15)
+    after fix  "0.78233340931002215423717416342697..."  (binary64 expansion)
+
+    float64-padding ratchet: 13 baseline -> 18 found, 5 NEW  → RED
+
+The underlying `Q_exp` was **always float64**. Nothing became less precise; the
+drain removed the mask. Those three witnesses were reverted here — they were
+written by an import side effect, not by a deliberate producer run — and the
+padding ratchet is back to 13/13, 0 NEW.
+
+### What this means for the rest of the drain
+
+68 producers now build their constants at 50 dps. Any of them that ALSO carries
+a genuine float64 will go red on the padding ratchet the first time it is
+deliberately re-run. That is the drain working — a hidden float64 becoming
+visible is the point — but it is a **downstream cost that has to be planned**,
+not discovered one producer at a time. Three are already identified above.
+
+Concretely, before re-running any of the 68: expect padding findings, and fix
+them at the producer (carry the value as a string/mpf from its source) rather
+than reverting the dps fix. Reverting would re-hide the float64.
+
+### Method note
+
+The witnesses were rewritten by the verification step itself, because those
+three producers write at import time. An import smoke test is not side-effect
+free in this corpus. It is still the right check — it is what proved route 2's
+alias detection correct — but it needs a `git status` sweep afterwards, which is
+how these were caught.

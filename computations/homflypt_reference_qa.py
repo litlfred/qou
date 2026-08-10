@@ -140,6 +140,12 @@ _CASES = [
     ("cinquefoil 5₁ (σ₁⁵)",        5),
 ]
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 TOL = mp.mpf("1e-6")
 
 

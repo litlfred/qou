@@ -27,6 +27,7 @@ for d in ("", "hecke", "habiro", "substrate"):
     if p not in sys.path:
         sys.path.insert(0, p)
 import _path_bridge  # noqa: E402,F401
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
@@ -35,6 +36,12 @@ from codata_constants import M_E_MEV  # noqa: E402
 
 q0 = mp.mpf(str(Q0)); q0f = float(Q0)
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 ATOMS = {  # name: (Z, N, n_strands, B_AME_MeV, sum_abs_dtheta_rad)
     "T":   (1, 2, 9,  mp.mpf("8.481798"),  mp.mpf("8.2233")),
