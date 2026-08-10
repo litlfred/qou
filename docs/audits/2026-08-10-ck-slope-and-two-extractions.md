@@ -1,0 +1,115 @@
+# The c_k slope tension, and two extractions of the same c_k that disagree
+
+**Date:** 2026-08-10
+**Beans:** `qou-0etg` (the slope tension), `qou-ai9u` (the kernel survey)
+**Probe:** [`computations/qbeta/ck_qgevrey_slope_probe.py`](../../computations/qbeta/ck_qgevrey_slope_probe.py)
+→ `ck-qgevrey-slope.witness.json`
+
+## 1. The slope tension — settled
+
+[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../content/quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md)
+asserts two things about the same `c_k`:
+
+- **(a)** they satisfy a **constant-kernel** linear recursion
+  `c_{k+1} = Σ_j a_j(q₀)·c_{k+1−j}` with `a_j(q₀) ∈ ℚ(q₀)`, fixed in `k`;
+- **(b)** they obey the **Hahn–Exton q-Bessel second-order q-difference
+  equation**.
+
+Constant-kernel solutions are geometric — q-Gevrey order `s = 0`. A genuine
+second-order q-difference equation generically has `s > 0`, i.e.
+`|c_k| ∼ C^k q^{s k²/2}`, **super-geometric**. Different growth classes, so at
+most one reading can describe the growth.
+
+`QOU.Mathlib.QGevreyOrder.IsQGevreyOrder` supplies the test:
+`s = lim_k 2·log_q|c_k| / k²`. Measured on both committed datasets:
+
+| dataset | `s` estimates, k = 2…10 | turning over? |
+|---|---|---|
+| A closed-form | 0, 1.48, 0.15, 0.17, 0.59, 0.81, 0.25, 0.43, 0.10 | yes |
+| B SDP | 0.08, 1.5, 1.12, 3.91, 5.25, 5.72, **5.81**, 5.72, 5.54 | yes, from k=8 |
+
+**Verdict: (a) is right; (b) does not describe these `c_k`'s growth.** Neither
+dataset carries a positive slope. B's apparent `s ≈ 5.8` is the finite-`k`
+artifact of purely geometric growth — `2·log_q(A)/k → 0` — and is already
+turning over by `k = 8`. Scope-(a): a statement about the measured growth of
+these sequences, not a refutation of the q-Bessel identification as a
+*fibre-level structural* claim, which this probe does not test.
+
+## 2. Where the truncation constant `2.07` comes from — it is derived
+
+AGENTS.md frames the ladder `Q_β = Q_base·∏(1 + c_k u^k)` as convergent with
+truncation order `N ≥ log₁₀(1/ε)/2.07 − 1`. The `2.07` has been carried as a
+bare constant. It is
+
+```
+log₁₀(1/u) = 2.0697013928582786        u = 0.008517234550156142
+```
+
+So the rule is **derived, not fitted** — the ladder term at rung `k` is
+`O(u^k)` and `log₁₀(1/u)` digits are gained per rung. That closes the
+`qou-ai9u` target for this rule, **conditional on `c_k = O(1)`**.
+
+## 3. The serious finding: two extractions of the same `c_k` disagree
+
+The two committed datasets are **not different objects**. Dataset B's own
+description: *"EXTENDED c_k extraction at rungs k=8, 9, 10 via SDP-T_β.
+Continues `qbeta_decay_sdp_full_ck.py` beyond k=7."* Same ladder, second method.
+
+| k | A `closed_form_c_k_at_q0` | B `c_k_extracted_50dps` | ratio |
+|---|---|---|---|
+| 2 | −1.0 | −1.0172 | 1.02 |
+| 3 | −2.0 | −2.0216 | 1.01 |
+| 4 | −1.1331 | −2.5379 | 2.2 |
+| 5 | −1.2527 | −164.93 | **132** |
+| 10 | 1.7058 | −3.652×10¹² | **2×10¹²** |
+
+They agree to ~2 % at k = 2, 3 and then part company completely.
+
+### Why B is the suspect one
+
+B's ratio `c_{k+1}/c_k` locks to **117.4** from k = 6, and `1/u = 117.409`. So
+`c_k ∼ C·u^{−k}`, and therefore
+
+```
+|c_k u^k|  =  7.34e-09   for k = 6, 7, 8, 9, 10   — FLAT
+```
+
+whereas A's ladder terms decay `7.2e-05 → 3.4e-21`.
+
+Flat ladder terms are the signature of an extractor **solving for `c_k` to
+absorb a fixed residual at each order**: the `u^{−k}` is exactly what cancels
+the `u^k`, so every rung contributes the same `7.34e-09` and the ladder stops
+converging. Under B the convergence premise behind §2's truncation rule fails
+outright.
+
+**Flagged, not diagnosed.** This probe reads committed numbers; it does not
+inspect the SDP extractor. Confirming the mechanism means reading
+`qbeta_decay_sdp_full_ck.py`.
+
+### Do not "fix" this by renaming
+
+The obvious tidy-up — call B's sequence `cl_k` and declare a notation clash —
+would be wrong. There is no notational discrepancy: both **are** the Q_β ladder
+coefficients, by B's own description. Renaming would launder a numerical
+contradiction into a naming convention and let both live in the corpus
+unreconciled. One of the two extractions is wrong (or they are anchored
+differently, see below) and that has to be settled on the merits.
+
+### Secondary defect: neither witness records its q₀ anchor
+
+Neither `qbeta-decay-sdp-extended-ck.witness.json` nor
+`qbeta-closed-form-wiring-n4-to-n10.witness.json` records a `q0Anchor` or a q₀
+value anywhere. So an anchor mismatch can be neither blamed nor excluded from
+the witnesses alone — and AGENTS.md §"q₀ anchor convention" rule 4 requires it:
+*"Say which pin you used. Any new witness must record its q₀ so a later reader
+can tell which layer it belongs to."* A sibling probe
+(`qbeta-ck-recursion-kernel-constraint-probe`) does record `q0Anchor: muon`,
+so the field is in use elsewhere. Note an anchor difference could not plausibly
+produce a 10¹² divergence by itself.
+
+## What is NOT claimed
+
+Nothing here says which extraction is correct, and nothing here bears on
+whether the ladder is the right object. §1 settles only which growth class the
+committed numbers exhibit; §3 identifies a contradiction and its likelier
+suspect without opening the extractor.
