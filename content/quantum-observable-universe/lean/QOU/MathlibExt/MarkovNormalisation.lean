@@ -5,6 +5,7 @@ Released under Apache 2.0 license.
 import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
+import Mathlib.Algebra.BigOperators.Ring.Finset
 
 /-!
 # Markov normalisation of the Jones–Markov weights (convention D, n = 3)
@@ -98,6 +99,25 @@ and annihilating the whole product. -/
 theorem wenzl_factor_vanishes_on_third_row (Q : R) (hQ : Q ≠ 0) :
     1 - Q ^ 2 * Q ^ (-2 : ℤ) = 0 := by
   rw [zpow_neg, zpow_ofNat, mul_inv_cancel₀ (pow_ne_zero 2 hQ), sub_self]
+
+/-- **The vanishing, for any partition shape.**
+
+The Wenzl-bridge weight of `λ` carries `∏_{x ∈ λ} (1 - X · Q^{c(x)})` over the
+cells of `λ`. Under convention D, `X = Q²`. This says: if *any* cell has
+content `-2`, the whole product is zero — so the conclusion does not depend on
+the shape of `λ` beyond it having such a cell.
+
+Every partition with three or more rows has one, at `(i,j) = (2,0)` where
+`c = j - i = -2`. Cells are left abstract (`s : Finset ι` with contents
+`c : ι → ℤ`) precisely so the lemma is about the *content*, not about a
+particular encoding of Young diagrams. -/
+theorem wenzl_prod_vanishes_of_content_neg_two {ι : Type*} (s : Finset ι)
+    (c : ι → ℤ) (Q : R) (hQ : Q ≠ 0) (x₀ : ι) (hx₀ : x₀ ∈ s)
+    (hc : c x₀ = -2) :
+    ∏ x ∈ s, (1 - Q ^ 2 * Q ^ (c x)) = 0 := by
+  refine Finset.prod_eq_zero hx₀ ?_
+  rw [hc]
+  exact wenzl_factor_vanishes_on_third_row Q hQ
 
 /-- Convention C does **not** vanish there. With `z = 1/(q^{1/2} + q^{-1/2})`
 the bridge solves to a non-integer `r`, so `X ≠ Q²` and the `(2,0)` factor
