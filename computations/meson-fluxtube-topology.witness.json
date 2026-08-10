@@ -4,8 +4,8 @@
   "description": "Borromean baryon knot is hyperbolic (Vol=2 V_oct); every 2-strand T(2,k) closure has Vol=0. The naive Y-junction -> single-tube (3->2 strand) reduction cannot yield a hyperbolic meson mass-knot. Verification, not fit.",
   "witness": {
     "engine": "snappy-3.3.2",
-    "scriptHash": "39c1f90759c7",
-    "scriptCommitSha": "defc037151ca6ac36f734f2bd34b696a7233142e",
+    "scriptHash": "56515c1c31ba",
+    "scriptCommitSha": "a421bda5d09a89f8fb8304b3ec40e98f148a5b5a",
     "producer": "computations/meson_fluxtube_topology_probe.py"
   },
   "results": [
@@ -20,7 +20,7 @@
         1,
         -2
       ],
-      "volume": 7.327724753417753,
+      "volume": "7.32772475341775212043682811945907288619319499425337707413198",
       "solution_type": "all tetrahedra positively oriented",
       "hyperbolic": true
     },
@@ -41,7 +41,7 @@
         1,
         -2
       ],
-      "volume": 21.63159867919266,
+      "volume": "21.6315986791926589697402486963383730138606009577835325648575",
       "solution_type": "all tetrahedra positively oriented",
       "hyperbolic": true
     },
@@ -64,7 +64,7 @@
         1,
         -2
       ],
-      "volume": 26.054401507265517,
+      "volume": "26.0544015072655349676603681235921943115993129893142224279008",
       "solution_type": "all tetrahedra positively oriented",
       "hyperbolic": true
     },
@@ -75,7 +75,7 @@
         1,
         1
       ],
-      "volume": -6.46126794490165e-06,
+      "volume": null,
       "solution_type": "contains degenerate tetrahedra",
       "hyperbolic": false
     },
@@ -87,7 +87,7 @@
         1,
         1
       ],
-      "volume": 0.0,
+      "volume": "0.0",
       "solution_type": "contains flat tetrahedra",
       "hyperbolic": false
     },
@@ -100,7 +100,7 @@
         1,
         1
       ],
-      "volume": 0.0,
+      "volume": "0.0",
       "solution_type": "contains flat tetrahedra",
       "hyperbolic": false
     },
@@ -114,7 +114,7 @@
         1,
         1
       ],
-      "volume": -8.018195884335055e-08,
+      "volume": null,
       "solution_type": "contains degenerate tetrahedra",
       "hyperbolic": false
     },
@@ -129,7 +129,7 @@
         1,
         1
       ],
-      "volume": 0.0,
+      "volume": "0.0",
       "solution_type": "contains flat tetrahedra",
       "hyperbolic": false
     },
@@ -147,7 +147,7 @@
         1,
         1
       ],
-      "volume": 0.0,
+      "volume": "0.0",
       "solution_type": "contains flat tetrahedra",
       "hyperbolic": false
     },
@@ -166,7 +166,7 @@
         1,
         1
       ],
-      "volume": 0.0,
+      "volume": "0.0",
       "solution_type": "contains flat tetrahedra",
       "hyperbolic": false
     }
