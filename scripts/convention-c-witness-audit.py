@@ -42,9 +42,22 @@ This is a property of the physics rather than of a decimal expansion, so it
 cannot be evaded by a different `n`, a different precision, a different variable
 name, or a value nobody thought to add to a fingerprint list.
 
-Proved: `MarkovGramDegenerate.wedderburnGram_det_eq_zero_of_dead` and
-`TemperleyLiebTower.conventionD_kills_antisymmetriser`. Named in compute by
-`computations/live_channels.py`.
+Proved, and the claim above is quantified over ALL `n`, so it takes both halves:
+
+- `TemperleyLiebTower.conventionD_kills_antisymmetriser` — the **base case**,
+  `n = 3`. From the three Markov moment equations plus `z·(q²+1) = q³` (which
+  *is* convention D), `y₍₁³₎ = 0`. Sorry-free.
+- `YoungDiagramThreeRowCorner.threeRow_vanishing_all_levels` — the **lift** to
+  every `n > 3`, given non-negativity and branching domination. Its
+  combinatorial input is discharged by `card_three_threeRow_unique`: at three
+  cells `(1³)` is the only three-row shape, so the base case has nothing to
+  quantify over. Sorry-free.
+
+Only the base case was cited here before, while the test it justifies runs at
+`n = 6, 9, 12`. The lift is what carries it there.
+
+Also `MarkovGramDegenerate.wedderburnGram_det_eq_zero_of_dead` for the
+consequence on `det G`. Named in compute by `computations/live_channels.py`.
 
 ## Usage
 
