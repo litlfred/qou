@@ -302,6 +302,67 @@ def work_list():
     return items, orphans
 
 
+#: Witness basenames referenced in a producer's source.
+_WITNESS_REF = re.compile(r"[A-Za-z0-9._-]+\.witness\.json")
+
+
+def dependency_order(by_producer: dict) -> list:
+    """Order producers so an upstream witness is rewritten before its readers.
+
+    Producers read each other's witnesses. Alphabetical order therefore
+    regenerates downstream producers against *stale* upstream data and the
+    output looks clean — nothing in the run reports it, because each producer
+    individually succeeded.
+
+    This is not hypothetical. `rho-k-h3a-refinement.witness.json` is read by
+    five producers (`rho_k_co_casimir_extended`, `rho_k_h3a_co_casimir`,
+    `rho_k_h3a_crystal`, `rho_k_h3a_frobenius_pairing`, `rho_k_h3a_lp_dual`)
+    and written by `rho_k_h3a_refinement`, which sorts **last**. Every one of
+    the five read convention-C weights while being counted as migrated. It is
+    also how the campaign's first work list came to be wrong: a freshly
+    migrated co-Casimir producer printed `live channels = 11 of 11`, impossible
+    under convention D at n = 6, because its weights came from a stale upstream.
+
+    Edges come from the source text (which witness names a producer mentions),
+    not from a maintained list, so a new dependency orders itself.
+
+    A cycle cannot be ordered; those producers are emitted in the original
+    order with a warning rather than dropped, since a mutually-referential pair
+    still needs running — it just needs running twice, which is a judgement for
+    the operator, not something to silently paper over.
+    """
+    writes = {p: {pathlib.Path(w).name for w in ws} for p, ws in by_producer.items()}
+    reads = {}
+    for p in by_producer:
+        try:
+            src = (REPO / p).read_text()
+        except OSError:
+            src = ""
+        reads[p] = set(_WITNESS_REF.findall(src)) - writes[p]
+
+    # owner[witness] = the producer that writes it (within this run).
+    owner = {w: p for p, ws in writes.items() for w in ws}
+    deps = {p: {owner[w] for w in reads[p] if w in owner and owner[w] != p}
+            for p in by_producer}
+
+    ordered, placed = [], set()
+    while True:
+        ready = sorted(p for p in by_producer
+                       if p not in placed and deps[p] <= placed)
+        if not ready:
+            break
+        ordered.extend(ready)
+        placed.update(ready)
+
+    stuck = sorted(p for p in by_producer if p not in placed)
+    if stuck:
+        print(f"  ! {len(stuck)} producer(s) in a witness-dependency cycle; "
+              f"running in name order: {', '.join(pathlib.Path(s).name for s in stuck)}",
+              flush=True)
+        ordered.extend(stuck)
+    return ordered
+
+
 def done_set():
     if not LOG.exists():
         return set()
@@ -405,7 +466,8 @@ def run_all(timeout: int):
         by_producer.setdefault(p, []).append(w)
 
     already = done_set()
-    todo = [(p, ws) for p, ws in sorted(by_producer.items()) if p not in already]
+    todo = [(p, by_producer[p]) for p in dependency_order(by_producer)
+            if p not in already]
     LOG.parent.mkdir(parents=True, exist_ok=True)
 
     print(f"producers: {len(by_producer)}   already done: {len(already)}   to run: {len(todo)}")
