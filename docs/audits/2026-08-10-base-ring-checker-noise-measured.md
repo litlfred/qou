@@ -112,6 +112,53 @@ Note the sidecars record only a verdict, never a hit count, so the axis could
 be *read* before this script existed but not *worked*: there was no way to get
 a prioritised list or to confirm a de-specialisation moved the number.
 
+## Outcome of the round the prune enabled
+
+The 8-agent swarm ran against the 103-file worklist, not the 146-file one:
+
+| | files | hits |
+|---|---|---|
+| worklist in | 103 | 381 |
+| worklist out | 48 warn (55 cleared) | **132** |
+
+−65 % of hits, 55 files fully to zero. Per batch, summing exactly to 132:
+
+| B7 | B6 | B4 | B2 | B5 | B8 | B3 | B1 |
+|---|---|---|---|---|---|---|---|
+| 47→2 | 47→8 | 48→10 | 48→14 | 48→17 | 47→18 | 48→23 | 48→40 |
+
+The change is one shape throughout: `[Field R]` → `[CommRing R]` with the
+inverted element carried as a unit (`q : Rˣ`, `↑q⁻¹`), `field_simp`
+replaced by `linear_combination` or an explicit `Units.inv_mul` witness,
+and `/2` by `⅟(2:R)` under `[Invertible (2:R)]`. Several results came out
+**strictly stronger**: non-vanishing hypotheses disappear into the types
+rather than being assumed.
+
+**Two batches returned counterexamples instead of edits**, which is worth
+more than the hits they would have cleared:
+
+- `partialProduct_succ` cleared to `(1 − xqⁿ)·Φ_{n+1} = Φ_n` is **false**
+  without a non-vanishing hypothesis — at `1 − xqⁿ = 0` the LHS is `0`
+  while the RHS need not be. Clearing it would have *added* a hypothesis
+  to satisfy a regex.
+- `toroidal_locus_forced` over bare `CommRing` fails in `ℤ[1/2] × ℤ[1/2]`
+  at `α = (−1/2,−1/2)`, `β = (−3/2,1/2)`. `IsDomain` is the honest floor;
+  the same shape (`ZMod 6`, `q = 5`) pins it in `categorical-dq-squared`
+  and `yekutieli_leading_coefficient`.
+
+Both are recorded in the files' own docstrings so a later agent does not
+retry them.
+
+A **fourth** checker defect surfaced during the round and is worth adding
+to the list above, though its blast radius on this axis is small:
+`ARCHIMEDEAN_LEAN_RE` still tests for the token `LinearOrderedField`,
+which is no longer a Mathlib class — the modern spelling is
+`[Field R] [LinearOrder R] [IsStrictOrderedRing R]`. 271 `.lean` files in
+`content/` use `IsStrictOrderedRing`, but only **3 files / 4 hits** of the
+true worklist are affected, because most such files already trip the
+narrow regex via `Real.*` and skip anyway. (An agent initially reported
+this as "39 content files"; that figure is corpus-wide, not axis-relevant.)
+
 ## A third finding, incidental
 
 `resolveCanonicalLean` accepts an optional `LakeTreeCache` "for bulk" callers.
