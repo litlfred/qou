@@ -24,12 +24,19 @@ _HERE = _Path(__file__).resolve().parent
 _sys.path.insert(0, str(_HERE.parent))  # computations/
 _sys.path.insert(0, str(_HERE))         # substrate/
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 
 import mpmath as mp  # noqa: E402
 
 from sw_hyperbolicity_gate import vol_component  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from _precision import COMPUTE_DPS  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # AME binding energies (MeV) — comparison anchors, NOT inputs.
 B_DEUTERON_AME = mp.mpf("2.224566")

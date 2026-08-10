@@ -52,10 +52,17 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import _path_bridge  # noqa: F401, E402
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 from homfly_ocneanu_trace import _chi  # noqa: E402 — signed seminormal character
 from witness_base import WitnessBuilder  # noqa: E402
 
 BETA_BOR = [-1, 2, -1, 2, -1, 2]   # (σ₁⁻¹σ₂)³, content convention
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Gate matches the observed worst deviation headroom: agreement is ≤ 4e-50 at
 # dps=50, so 1e-45 is a tight-but-safe regression threshold (was 1e-40).
 TOL = mp.mpf("1e-45")
