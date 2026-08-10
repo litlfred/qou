@@ -1,8 +1,8 @@
 {
   "engine": "pyhecke-native + python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:03:15.822723+00:00",
-  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
+  "computedAt": "2026-08-10T18:20:42.412049+00:00",
+  "commitSha": "054ac86b33f2f253562c414012984571cc239497",
   "assertions": [
     {
       "name": "sweep_ran_to_completion",
@@ -13,7 +13,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1716,
+  "durationMs": 1913,
   "computation": "derived-chi-catalogue-sweep",
   "scriptFile": "derived_chi_catalogue_sweep.py",
   "scriptHash": "302c1358ca37",
@@ -21666,7 +21666,7 @@
         "crossings": 0,
         "partitions_swept": 3,
         "cells_emitted": 3,
-        "elapsed_seconds": 0.034417569999277475
+        "elapsed_seconds": 0.045579033001558855
       },
       "n": {
         "Z": 0,
@@ -21676,7 +21676,7 @@
         "crossings": 0,
         "partitions_swept": 3,
         "cells_emitted": 3,
-        "elapsed_seconds": 0.018106372999682208
+        "elapsed_seconds": 0.030463082999631297
       },
       "D": {
         "Z": 1,
@@ -21686,7 +21686,7 @@
         "crossings": 23,
         "partitions_swept": 11,
         "cells_emitted": 11,
-        "elapsed_seconds": 0.06808946399996785
+        "elapsed_seconds": 0.04290665699954843
       },
       "T": {
         "Z": 1,
@@ -21696,7 +21696,7 @@
         "crossings": 35,
         "partitions_swept": 30,
         "cells_emitted": 30,
-        "elapsed_seconds": 0.11680523599989101
+        "elapsed_seconds": 0.17407654999988154
       },
       "3He": {
         "Z": 2,
@@ -21706,7 +21706,7 @@
         "crossings": 35,
         "partitions_swept": 30,
         "cells_emitted": 30,
-        "elapsed_seconds": 0.1850844069995219
+        "elapsed_seconds": 0.19055452999964473
       },
       "4He": {
         "Z": 2,
@@ -21716,10 +21716,10 @@
         "crossings": 47,
         "partitions_swept": 77,
         "cells_emitted": 77,
-        "elapsed_seconds": 1.2767574969993802
+        "elapsed_seconds": 1.4140229939985147
       }
     },
-    "sweep_wall_seconds": 1.7021210980001342,
+    "sweep_wall_seconds": 1.9008098230005999,
     "backend": "pyhecke_native.chi_q_via_gp (Rust)"
   }
 }

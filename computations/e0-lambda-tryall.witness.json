@@ -1,7 +1,7 @@
 {
   "computation": "e0-lambda-tryall",
   "description": "Falsification harness for 5 substrate-derived \u03c7^\u03bb\u2192M_\u03bb (per-block energy E_0^\u03bb) maps. Each candidate produces a per-block weight w_\u03bb from cached substrate data (q\u2080, \u03c7^\u03bb, y_\u03bb, dim, content-sum, dim_q, ribbon twist, seminormal eigenphases) \u2014 NEVER from B_AME or the deprecated fit_three_E0. The per-block ENERGY scale E_0^\u03bb maps the genuine per-block STRUCTURAL masses m^\u03bb(particle) (from per_block_phi_q.mass_per_block \u2014 orders-of-magnitude different across e\u207b in H_2 vs p,n in H_3) onto observed MeV: M(particle) = C\u00b7\u03a3_\u03bb E_0^\u03bb\u00b7m^\u03bb(particle). ONE global C is pinned from the proton; the electron AND neutron residuals are the test. PASS = one positive C fits all three within 1%; LATENT-FIT = nucleons fit but the electron (different Hecke order) needs a separate scale (hidden parameter); FAIL = one C fails even on nucleons or C \u2264 0. The {e\u207b,p,n} observed masses are the falsification test, NOT fit targets. No tuning, no back-solve. If all fail, that is the reported result \u2014 no 6th fit (the \u0394_\u03bb gate already exhausted six ans\u00e4tze).",
-  "timestamp": "2026-08-10T15:14:18Z",
+  "timestamp": "2026-08-10T18:21:16Z",
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "h_50dps": "0.20906029879563931543084621312967494385975749526306",
   "m_e_MeV": "0.51099895069",
@@ -16,21 +16,21 @@
     "(3,)": {
       "dim": 1,
       "chi_lambda": "1.1221068216024720738",
-      "y_lambda": "0.41539579536061340131",
+      "y_lambda": "0.50540422650393080319",
       "content_sum": 3,
       "dim_q": "10.669048245665018946"
     },
     "(2, 1)": {
       "dim": 2,
       "chi_lambda": "1.7008886061270429792",
-      "y_lambda": "0.28092963103101970778",
+      "y_lambda": "0.24729788674803459841",
       "content_sum": 0,
       "dim_q": "8.2641474838594202344"
     },
     "(1, 1, 1)": {
       "dim": 1,
       "chi_lambda": "-0.91076221455307436649",
-      "y_lambda": "0.022744942577347183133",
+      "y_lambda": "0.0",
       "content_sum": -3,
       "dim_q": "1.0"
     }
