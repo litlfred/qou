@@ -6236,6 +6236,13 @@
         "ppb_vs_canonical": -11.537117896827304
       },
       {
+        "file": "computations/h6-deuteron-free-word-chi-lambda.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
         "file": "computations/habiro/habiro-coefficients-atomic.witness.json",
         "field": "parameters.q_0",
         "value": "1.1099785827513808",
@@ -6777,9 +6784,9 @@
       {
         "file": "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785955573347198997632204832250266562084087802",
-        "class": "canonical",
-        "ppb_vs_canonical": 4.172458118041393e-41
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/he4-canonical-tr-m-block-fingerprint.witness.json",
@@ -10802,16 +10809,9 @@
       {
         "file": "computations/rho-w-crystal-vertex-trace.witness.json",
         "field": "q_0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
-      },
-      {
-        "file": "computations/rho-w-crystal-vertex-trace.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117889987831
+        "value": "1.1099785955573347198997632204832250266562084087802",
+        "class": "canonical",
+        "ppb_vs_canonical": 4.172458118041393e-41
       },
       {
         "file": "computations/rt-binomial-trace-evaluation-probe.witness.json",
