@@ -15,10 +15,27 @@
 #                   Says nothing about the file. Retry after the build.
 #   ERROR         — a real elaboration/type error in the file. Actionable.
 #
+# A MISSING-OLEAN naming a QOU.* module is a THIRD situation, distinct from
+# both of the above: the paper-dir QOU olean tree is a dated snapshot
+# (2026-07-19), so any module added or changed since then has no olean
+# anywhere, and modules that DO have one can be stale enough to produce a
+# false ERROR — `KnotFactorAmphicheiral` reports an `Application type
+# mismatch: HeckeExpansion R` against the snapshot that vanishes when the
+# upstream module is rebuilt from current source. Restoring a complete
+# Mathlib does not help; this is QOU staleness, not Mathlib staleness.
+#
+# `--build-missing` handles it: on a MISSING-OLEAN naming a QOU module, it
+# compiles that module from CURRENT source into a scratch olean root and
+# retries, looping until the cone resolves. Because the upstream is built
+# from current source, the result is real-import-cone verification AND free
+# of stale-snapshot contamination. Scratch oleans are kept out of the shared
+# .lake tree so a concurrent `lake build` is not disturbed.
+#
 # Usage:
 #   scripts/lean-verify-changed.sh                 # every .lean changed vs HEAD~1
 #   scripts/lean-verify-changed.sh <file.lean>...  # explicit list
 #   REF=origin/main scripts/lean-verify-changed.sh # changed vs another ref
+#   scripts/lean-verify-changed.sh --build-missing ...   # rebuild stale QOU deps
 #
 # Exit 0 iff every file checked reached exit 0. MISSING-OLEAN counts as a
 # failure for the exit code — an unverified file is not a verified one.
@@ -36,6 +53,13 @@ fi
 # Resolve explicit arguments to absolute paths BEFORE cd-ing into the Lake
 # root — otherwise a repo-relative path silently stops resolving and every
 # file reports "SKIP (gone)", which is a false all-clear.
+BUILD_MISSING=0
+args=()
+for a in "$@"; do
+  if [ "$a" = "--build-missing" ]; then BUILD_MISSING=1; else args+=("$a"); fi
+done
+set -- ${args+"${args[@]}"}
+
 files=()
 if [ "$#" -gt 0 ]; then
   for f in "$@"; do
@@ -68,7 +92,22 @@ done
 for p in "$LEAN_ROOT"/.lake/packages/*/.lake/build/lib/lean; do
   [ -d "$p" ] && LP="$LP:$p"
 done
+SCRATCH="${LEAN_SCRATCH_OLEANS:-${TMPDIR:-/tmp}/qou-scratch-oleans}"
+if [ "$BUILD_MISSING" = "1" ]; then
+  mkdir -p "$SCRATCH"
+  LP="$SCRATCH:$LP"          # scratch wins over the dated snapshot
+fi
 export LEAN_PATH="$LP"
+
+# Compile one QOU module from CURRENT source into the scratch olean root.
+build_qou_module() {
+  local mod="$1" rel src
+  rel="$(printf '%s' "$mod" | tr '.' '/')"
+  src="$LEAN_ROOT/$rel.lean"
+  [ -f "$src" ] || return 1
+  mkdir -p "$SCRATCH/$(dirname "$rel")"
+  timeout "${LEAN_TIMEOUT:-600}" lean "$src" -o "$SCRATCH/$rel.olean" >/dev/null 2>&1
+}
 
 if [ "${#files[@]}" -eq 0 ]; then
   ref="${REF:-HEAD~1}"
@@ -93,6 +132,19 @@ for f in "${files[@]}"; do
   # No pipe: $? is lean's own status.
   timeout "${LEAN_TIMEOUT:-600}" lean "$f" >"$log" 2>&1
   rc=$?
+  # --build-missing: rebuild stale QOU upstreams from current source, retry.
+  if [ "$rc" -ne 0 ] && [ "$BUILD_MISSING" = "1" ]; then
+    for _ in $(seq 1 12); do
+      grep -q "does not exist" "$log" || break
+      mod=$(grep -o "of module [A-Za-z0-9_.]*" "$log" | head -1 | sed 's/of module //')
+      case "$mod" in QOU.*) ;; *) break ;; esac   # only QOU; Mathlib gaps are the build's job
+      build_qou_module "$mod" || break
+      printf '%-70s  ..built upstream %s\n' "" "$mod"
+      timeout "${LEAN_TIMEOUT:-600}" lean "$f" >"$log" 2>&1
+      rc=$?
+      [ "$rc" -eq 0 ] && break
+    done
+  fi
   if [ "$rc" -eq 0 ]; then
     ok=$((ok+1)); printf '%-70s exit 0\n' "$(basename "$f")"
   elif grep -q "does not exist" "$log"; then
