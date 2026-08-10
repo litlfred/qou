@@ -1,0 +1,147 @@
+{
+  "engine": "python-stdlib+mpmath(via coulomb_energy)",
+  "computedAt": "2026-08-10T12:52:45.711999+00:00",
+  "computation": "kappa-mirror-split-shell-test",
+  "scriptFile": "probe_kappa_mirror_split_shell_test.py",
+  "contentBlock": "conj:magic-shell-coupling-kappa",
+  "description": "The 8-shell test, run. The additive shell-independent term kappa*(n_pp - n_nn) is not present in single-magic mirror-split data at A = 3, 15, 39, under any of three radius models. Scope-(a) negative: the form as reconstructed, not kappa as an ingredient.",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "q_0_pin": "proton (experimental layer), m_p/m_e",
+    "m_e_MeV": 0.51099895,
+    "predicted_contribution_MeV": 2.140848246890532,
+    "radius_models": [
+      {
+        "r0_fm": 1.4138169307630366,
+        "name": "derived (reduced pion Compton wavelength)"
+      },
+      {
+        "r0_fm": 1.2,
+        "name": "empirical heavy-nucleus saturation constant"
+      },
+      {
+        "r0_fm": 1.76,
+        "name": "implied by the measured 3He charge radius"
+      }
+    ],
+    "alpha_em_hbar_c_MeV_fm": 1.43996521992482,
+    "alpha_em_provenance": "derived from q_0 in coulomb_energy, not CODATA"
+  },
+  "data": {
+    "mirror_pairs": [
+      {
+        "pair": "3H / 3He",
+        "Z_lo": 1,
+        "Z_hi": 2,
+        "A": 3,
+        "shell": 2,
+        "delta_B_observed_MeV": 0.7637548799999996,
+        "by_radius_model": {
+          "derived (reduced pion Compton wavelength)": {
+            "r0_fm": 1.4138169307630366,
+            "coulomb_MeV": 0.8474218392918695,
+            "residual_MeV": -0.08366695929186996,
+            "predicted_over_residual": 25.587738158646832
+          },
+          "empirical heavy-nucleus saturation constant": {
+            "r0_fm": 1.2,
+            "coulomb_MeV": 0.9984161199076653,
+            "residual_MeV": -0.23466123990766574,
+            "predicted_over_residual": 9.123143846563288
+          },
+          "implied by the measured 3He charge radius": {
+            "r0_fm": 1.76,
+            "coulomb_MeV": 0.6807382635734082,
+            "residual_MeV": 0.08301661642659142,
+            "predicted_over_residual": 25.788189630489295
+          }
+        }
+      },
+      {
+        "pair": "15N / 15O",
+        "Z_lo": 7,
+        "Z_hi": 8,
+        "A": 15,
+        "shell": 8,
+        "delta_B_observed_MeV": 3.536531999999994,
+        "by_radius_model": {
+          "derived (reduced pion Compton wavelength)": {
+            "r0_fm": 1.4138169307630366,
+            "coulomb_MeV": 3.4690270857737593,
+            "residual_MeV": 0.06750491422623472,
+            "predicted_over_residual": 31.713961441617904
+          },
+          "empirical heavy-nucleus saturation constant": {
+            "r0_fm": 1.2,
+            "coulomb_MeV": 4.087141022618749,
+            "residual_MeV": -0.5506090226187546,
+            "predicted_over_residual": 3.888145960101475
+          },
+          "implied by the measured 3He charge radius": {
+            "r0_fm": 1.76,
+            "coulomb_MeV": 2.786687060876419,
+            "residual_MeV": 0.7498449391235749,
+            "predicted_over_residual": 2.855054605546546
+          }
+        }
+      },
+      {
+        "pair": "39K / 39Ca",
+        "Z_lo": 19,
+        "Z_hi": 20,
+        "A": 39,
+        "shell": 20,
+        "delta_B_observed_MeV": 7.306833299999994,
+        "by_radius_model": {
+          "derived (reduced pion Compton wavelength)": {
+            "r0_fm": 1.4138169307630366,
+            "coulomb_MeV": 6.847606608548306,
+            "residual_MeV": 0.45922669145168804,
+            "predicted_over_residual": 4.6618549982863
+          },
+          "empirical heavy-nucleus saturation constant": {
+            "r0_fm": 1.2,
+            "coulomb_MeV": 8.06771846530871,
+            "residual_MeV": -0.7608851653087161,
+            "predicted_over_residual": 2.8136285795793112
+          },
+          "implied by the measured 3He charge radius": {
+            "r0_fm": 1.76,
+            "coulomb_MeV": 5.500717135437757,
+            "residual_MeV": 1.806116164562237,
+            "predicted_over_residual": 1.1853325322568202
+          }
+        }
+      }
+    ],
+    "residual_spread_by_radius_MeV": {
+      "derived (reduced pion Compton wavelength)": 0.542893650743558,
+      "empirical heavy-nucleus saturation constant": 0.5262239254010503,
+      "implied by the measured 3He charge radius": 1.7230995481356457
+    },
+    "verdict": "scope-(a) negative. The additive shell-independent form does not appear in the data at any tested shell under any tested radius. The residual is not constant in A, which no radius choice can repair, so the failure is not a normalisation artefact. This does NOT structurally exclude kappa; it establishes that the decomposition kappa was fitted in is not the strong+Coulomb mirror-split decomposition."
+  },
+  "assertions": [
+    {
+      "name": "residual_is_not_shell_independent_under_any_radius_model",
+      "passed": true,
+      "detail": "the prediction is ONE number at every shell; the residual varies by derived: 0.543 MeV, empirical heavy-nucleus saturation constant: 0.526 MeV, implied by the measured 3He charge radius: 1.723 MeV across A = 3, 15, 39 -- so no constant fits, whatever the radius"
+    },
+    {
+      "name": "A3_anchor_leaves_no_room_for_the_predicted_term",
+      "passed": true,
+      "detail": "at the anchor kappa was fitted at, the post-Coulomb residual is at most ~0.235 MeV under any radius model, against a predicted 2.141 MeV -- short by at least 9x"
+    },
+    {
+      "name": "residual_changes_sign_under_the_derived_radius",
+      "passed": true,
+      "detail": "under the framework's own derived radius the residual is negative at A=3 and positive at A=15 -- not a constant of either sign"
+    },
+    {
+      "name": "negative_is_scope_a_not_scope_b",
+      "passed": true,
+      "detail": "no proved invariant forbids kappa as an ingredient; this excludes the additive shell-independent form against a Coulomb baseline, nothing more"
+    }
+  ],
+  "allPassed": true
+}
