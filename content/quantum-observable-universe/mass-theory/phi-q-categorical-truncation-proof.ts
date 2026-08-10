@@ -6,9 +6,6 @@ export default proof({
   uses: [
     "prop:phi-q-categorical-truncation",
     "prop:categorical-mass-markov",
-    "prop:curvature-rank-gb-stratification",
-    "prop:spectral-sequence-collapse",
-    "prop:unified-curvature-rank-mass-formula",
   ],
   tags: [
     "brane-tower",
