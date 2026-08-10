@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/lifting-and-descent/cosimplicial-crossed-groupoid.lean"
   },
   "source_hashes": {
-    "md": "36155b68d7f6",
     "ts": "7e8a7e796a9e",
-    "lean": "3ab413b4f6c3",
-    "lean_statement": "085bf45e171c"
+    "md": "36155b68d7f6",
+    "lean": "3ab413b4f6c3"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -363,16 +362,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6",
         "notes": "{\"regimes\":[\"symbolic\"],\"chapter\":\"lifting-and-descent\",\"expected\":[\"generic-R\",\"na\",\"symbolic\"]}"
       }
     ],
@@ -381,16 +380,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -398,16 +397,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -415,16 +414,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -432,16 +431,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -449,16 +448,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -466,16 +465,16 @@
         "field_hash": {
           "ts": "7e8a7e796a9e",
           "md": "36155b68d7f6",
-          "lean": "93395e9f22c3"
+          "lean": "3ab413b4f6c3"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1779,5 +1778,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-10T03:21:26.371Z"
+  "updated_at": "2026-08-10T03:43:05.281Z"
 }

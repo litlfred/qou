@@ -8,10 +8,9 @@
     "lean": "content/quantum-observable-universe/mass-theory/lepton-mass-tower-canonical.lean"
   },
   "source_hashes": {
-    "md": "140b4690483f",
     "ts": "49f1cb98311a",
-    "lean": "09869e7b3fb6",
-    "lean_statement": "03e8380922be"
+    "md": "140b4690483f",
+    "lean": "09869e7b3fb6"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -841,16 +840,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6",
         "notes": "{\"regimes\":[\"fixed-q0\",\"generic-R\",\"symbolic\"],\"chapter\":\"mass-theory\",\"expected\":[\"fixed-q0\",\"generic-R\",\"na\",\"real-gt-1\",\"real-positive\",\"symbolic\"]}"
       }
     ],
@@ -859,16 +858,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
@@ -876,16 +875,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-positivity-implicit": [
@@ -893,16 +892,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
@@ -910,16 +909,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
@@ -927,16 +926,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
@@ -944,16 +943,16 @@
         "field_hash": {
           "ts": "49f1cb98311a",
           "md": "140b4690483f",
-          "lean": "5ad9087f92d2"
+          "lean": "09869e7b3fb6"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "q-usage-audit",
-          "script_hash": "7d97addec5f5"
+          "script_hash": "dfa383eb00c0"
         },
-        "reviewed_at": "2026-08-09T16:53:02.544Z",
-        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
+        "reviewed_at": "2026-08-10T03:43:05.281Z",
+        "reviewed_sha": "6758162b18703e7bdbf440e28ae0a099e57b38b6"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1550,5 +1549,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-10T03:28:15.190Z"
+  "updated_at": "2026-08-10T03:43:05.281Z"
 }
