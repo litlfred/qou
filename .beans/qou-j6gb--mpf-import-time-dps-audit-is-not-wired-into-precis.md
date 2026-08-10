@@ -83,3 +83,82 @@ Not wired, not baselined. Wiring a new blocking gate changes what every agent's
 pre-commit and `/prepare-merge` must pass, which is a scoped decision rather than
 a drive-by — and the 288 number should be re-measured at the moment it is
 baselined, not taken from this bean.
+
+---
+
+## DONE — wired as a ratchet, 2026-08-10
+
+Owner said "do ratchet". Implemented exactly the shape recommended above, in the
+same idiom as `witness_raw_float64_audit.py`.
+
+### Baseline
+
+    computations/mpf-import-time-dps-baseline.json
+    91 files / 185 literal / 103 expr
+
+Matches the pre-wiring measurement exactly, so nothing was reclassified on the
+way in.
+
+### `literal` and `expr` are baselined and compared SEPARATELY
+
+Per the recommendation above, and it is the one design point worth defending: a
+`literal` finding is statically certain (a decimal string parsed at 15 dps —
+the digits are gone), an `expr` finding is only position-risky and some are
+fine. If the ratchet summed them, a file could gain a proven defect and drain an
+unproven one in the same edit and show no change. Separate counts make that
+impossible.
+
+### Unparseable files are never baselined and always fail
+
+Not a stylistic choice. Bean `qou-brkp` records this audit having reported
+*clean* for two files its own remediation had just broken, because `scan_file`
+returned zero rows on a parse failure — "no information" rendered as "no
+findings". The parse bug is fixed, but the ratchet would have re-introduced the
+same hole if a broken file could be baselined at zero. There are **0** such
+files at baseline time, so this cannot be red on arrival; if one appears it is a
+real regression.
+
+### Verified by making it fail, not only by watching it pass
+
+A ratchet that has never been seen to fire is a no-op — the same principle the
+`--self-test` flags in this family exist for. Three cases:
+
+    A  new file with a lossy module-scope mpf   → exit 1, listed by name   ✓
+    B  baselined file gains one constant        → exit 1, REGRESSED shown  ✓
+    C  probe removed / file restored            → exit 0                   ✓
+
+Plus `--self-test` green (8 cases) and `--strict` green at baseline
+(0 NEW, 0 REGRESSED, +0/+0).
+
+`--rebaseline` refuses to run under `--all`: that scan includes scripts emitting
+no witness, which the baseline does not cover, so rebaselining from it would
+silently widen the tolerated set by ~100 files.
+
+### Wired in BOTH lists
+
+    scripts/precision-gates.sh   GATES[]  →  "import-time dps ratchet|…|--strict|yes|yes"
+    .github/workflows/witness-staleness.yml  →  matching step
+
+The script's header carries an instruction to keep those two in sync, and the
+whole point of this bean is that a detector in neither list is not a gate. Added
+a note to that header saying so in as many words, with this bean as the worked
+example.
+
+## Still open — the 185
+
+The ratchet stops a sixth instance; it does not fix the five that landed. The
+backlog is now a visible, shrinking number instead of an unrun script.
+
+**Do the 185 `literal` ones first.** Each is statically proven lossy and the fix
+is one line — `set_compute_dps()` at module scope above the constant. The 103
+`expr` ones are not statically provable and some will be fine; working them
+first would spend effort on maybes while certainties sit.
+
+Largest single offenders at baseline:
+
+    48  computations/inverse-markov-qvalues.py
+    14  computations/binding_block_multiplicative.py
+    14  computations/meson_mass_from_hecke.py
+     8  computations/m_tau_complex_volume_search.py
+
+Bean stays open with status in-progress until the `literal` count reaches 0.
