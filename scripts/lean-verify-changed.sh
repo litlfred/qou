@@ -51,8 +51,23 @@ if [ "$#" -gt 0 ]; then
 fi
 
 cd "$LEAN_ROOT" || exit 2
-LP=".lake/build/lib/lean"
-for p in .lake/packages/*/.lake/build/lib/lean; do LP="$LP:$p"; done
+
+# TWO olean trees exist and they are NOT interchangeable:
+#   $ROOT/.lake/packages/...                  the ROOT Lake workspace
+#   $LEAN_ROOT/.lake/packages/...             the per-paper workspace
+# The root workspace is typically the complete one (~6990 mathlib oleans);
+# the per-paper tree is often a partial rebuild. Using the per-paper tree
+# alone makes files fail with MISSING-OLEAN on `Mathlib.Tactic` and friends
+# and reads as "cannot verify" when verification was available all along.
+# Put the ROOT packages FIRST so the complete tree wins, and keep the
+# per-paper build dir first overall so this paper's own oleans are found.
+LP="$LEAN_ROOT/.lake/build/lib/lean"
+for p in "$ROOT"/.lake/build/lib/lean "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
+  [ -d "$p" ] && LP="$LP:$p"
+done
+for p in "$LEAN_ROOT"/.lake/packages/*/.lake/build/lib/lean; do
+  [ -d "$p" ] && LP="$LP:$p"
+done
 export LEAN_PATH="$LP"
 
 if [ "${#files[@]}" -eq 0 ]; then
