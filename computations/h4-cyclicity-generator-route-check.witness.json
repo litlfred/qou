@@ -9,6 +9,9 @@
     ]
   },
   "description": "Independent symbolic re-derivation of the H4 generator-route cyclicity content: the 72 atomic identities tr(sigma_i . b_j) = tr(b_j . sigma_i), the word-tree single-term edge property the induction rests on, and a re-check of the committed H4GeneratorAction statements against the generator-action tables parsed out of the Lean sources.",
+  "q0Anchor": "proton",
+  "q0Note": "Recorded for layer identification only. This computation is exact in symbolic z and h and is evaluated at no substrate pin, so no result here depends on this value.",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "results": {
     "all_ok": true,
     "cyclicity_identities_checked": 72,
