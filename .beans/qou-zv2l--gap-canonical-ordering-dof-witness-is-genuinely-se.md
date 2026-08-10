@@ -34,3 +34,31 @@ the refreshed witness with a `chore(witness)` message naming the producer.
 Scope note: this is one witness, from the n=3 reliably-measurable sample of a
 shallow clone — **not** a claim about the corpus-wide self-staleness backlog,
 which was not measured.
+
+## REFINEMENT (agent-4912 session, 2026-08-10, before merging #4931)
+
+**The staleness is REAL but COMMENT-ONLY.**
+
+```
+git diff f471f7f46ff5 -- computations/probes/canonical_ordering_dof_probe.py
+  -> 21 insertions, 0 deletions; EVERY added line is a '#' comment
+```
+
+The added block is the `STALE — CONVENTION C, pending pass 2 (bean qou-eea0)`
+note explaining why `part6_crosscheck` is deliberately left red. The producer's
+executable content is unchanged, so a re-run yields a **byte-identical payload**.
+
+Consequences for whoever drains this:
+
+1. **The refresh is a formality, not a recompute.** `durationMs=3` on the
+   recorded witness — trivially cheap. Just re-run and commit.
+2. **`allPassed: false` is BY DESIGN** — it is the red cross-check the comment
+   block documents. Do NOT "fix" the red assertion while refreshing; silencing
+   it is the exact failure that comment warns against.
+3. **Generalised into the idle-backlog policy on #4931.** `scriptHash` is a
+   whole-file hash, so comment/docstring-only edits drift it with no payload
+   change. Both sites now say: diff the producer before re-running it. Cheap
+   probes re-run; expensive producers with a comment-only diff get a bean
+   rather than the idle pass.
+
+Still open: #4931 stayed docs-only, so the witness itself is **not** refreshed.
