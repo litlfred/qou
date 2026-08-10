@@ -61,3 +61,31 @@ the bean before inspecting it. The two matches turned out to be unrelated
 (`qou-78pt` A1 volume term, `qou-840k` float64 excision — my grep hit body
 text, not titles), so this is not a duplicate. Wrong order all the same; the
 check exists to be read, not counted.
+
+## Build infra RESTORED and verified (2026-08-10)
+
+`lake-cache/qou-v4-24-0` restored: 1.65 GB, **6990 oleans** (well above the
+~2919 the skill doc cites). Toolchain `leanprover/lean4:v4.24.0` already
+present. Total ~3 min, against a 30-60 min from-source Mathlib build.
+
+**Working `lean`-direct recipe — note the `lean/` component:**
+
+```bash
+export PATH="$HOME/.elan/bin:$PATH"
+LP=$(ls -d .lake/packages/*/.lake/build/lib/lean | tr '\n' ':')   # 8 dirs
+LEAN_PATH="$LP" lean <file>        # exit 0 = checks, sorry-free
+```
+
+`lean-environment-setup.md` implies `.lake/build/lib`; on v4.24.0 the oleans
+are under `.lake/build/lib/**lean**/Mathlib/...`. Using the documented path
+fails with *"unknown module prefix 'Mathlib'"* even though 6990 oleans are
+present — a confusing failure that looks like a bad restore rather than a bad
+search path. Smoke-tested: a `CommRing` lemma importing
+`Mathlib.Algebra.Ring.Defs` compiles, exit 0.
+
+**Do NOT `lake build` to verify.** It re-resolves the dep graph, rebuilds
+Mathlib from source, and drops the restored oleans (~40 min lost, per the
+skill doc's own history note). `lean`-direct is the verification path.
+
+Next agent: environment is ready; write theorem 1 and check it with the
+recipe above. Re-seed the cache branch if a build materially extends it.
