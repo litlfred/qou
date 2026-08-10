@@ -162,3 +162,48 @@ Largest single offenders at baseline:
      8  computations/m_tau_complex_volume_search.py
 
 Bean stays open with status in-progress until the `literal` count reaches 0.
+
+## Drain pass 1+2 — 185 → 80 proven-lossy, 42 files
+
+    literal (proven lossy)   185 -> 80    (-105)
+    expr    (position-risky) 103 -> 90    (-13, incidental: same files)
+    files drained             42
+    NEW / REGRESSED            0 / 0      throughout
+
+Applied via AST, not text anchoring — see the commit for why (`qou-brkp`'s
+insertion-inside-a-dict-literal). Verified three ways each pass: every changed
+file parses, every changed file **imports** (the check `qou-brkp`'s breakage
+would have failed), and the full gate family stays green.
+
+Pass 2 widened one refusal that was too narrow. Pass 1 skipped any file that did
+not *import* `set_compute_dps`; but `a4_interface_kl_subpath_closure.py` and
+`a4_option_e_color_tube_closure.py` **define their own** local
+`set_compute_dps()` and never call it at module scope. The name was available
+all along. Genuine findings, not false positives — and worth remembering as a
+shape: a helper defined and never invoked reads as "handled" to a grep.
+
+## Remaining: 80 literal across 26 files, and they need a decision
+
+Every one of the 26 is blocked on the same thing — the name `set_compute_dps` is
+neither imported nor defined, so the one-line fix has nowhere to land. Two routes,
+and they are not equivalent:
+
+  * **add `from _precision import set_compute_dps`** — canonical, and what the
+    other 152 producers do. Needs `computations/substrate` on `sys.path`, which
+    is what `_path_bridge` provides; ~19 of the 26 already import it.
+  * **insert `mp.dps = 50` at module scope** — no import needed, accepted by the
+    audit's `_raises_dps`, and already the idiom in the option_e and probe
+    families. But it hard-codes the precision instead of deferring to
+    `_precision`, so it drifts if the canonical value ever changes.
+
+Route 1 where `_path_bridge` is present, route 2 elsewhere, is the obvious split
+— but adding an import to 19 files is a wider blast radius than inserting a call,
+and it should be someone's deliberate call rather than a third automated pass.
+
+Largest remaining, all literal counts:
+
+    12  computations/meson_mass_from_hecke.py
+     8  computations/inverse-markov-qvalues.py
+     8  computations/meson_gen3_eta_phi.py
+     6  computations/deltalambda/perknot_pn_bond_resolved_extensivity_probe.py
+     6  computations/probes/yardstick_free_phase_binding_probe.py
