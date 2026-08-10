@@ -82,9 +82,49 @@ the `u^k`, so every rung contributes the same `7.34e-09` and the ladder stops
 converging. Under B the convergence premise behind §2's truncation rule fails
 outright.
 
-**Flagged, not diagnosed.** This probe reads committed numbers; it does not
-inspect the SDP extractor. Confirming the mechanism means reading
-`qbeta_decay_sdp_full_ck.py`.
+### DIAGNOSED AND FIXED (same day, bean `qou-8ofm`)
+
+Opened `qbeta_decay_sdp_extended_ck.py`. `R` **is** correctly divided by each
+rung's factor — that was not the bug. The bug is that the script emits
+`c_k := (R_k − 1)/u^k` **unconditionally**, including after `R_k − 1` has
+stopped dropping. Instrumented, the residual reads:
+
+| k | \|R_k − 1\| | drop vs prev | resolving? |
+|---|---|---|---|
+| 2 | 7.379e-05 | — | yes |
+| 3 | 1.249e-06 | 59.1× | yes |
+| 4 | 1.336e-08 | 93.5× | yes |
+| 5 | 7.393e-09 | **1.81×** | no |
+| 6 | 7.336e-09 | 1.01× | no |
+| 7–10 | 7.337e-09 | 1.00× | no |
+
+A contributing rung should drop the residual by ~`1/u ≈ 117×`. After k = 4 it
+drops by 1×: that is the model's **accuracy floor**, not a rung contribution.
+Dividing a fixed floor by an ever-smaller `u^k` is precisely what manufactures
+`c_k ∼ floor/u^k` — hence ratio exactly `1/u` and flat `|c_k u^k| = 7.34e-09`.
+
+**Only `c_2, c_3, c_4` are determined by this extraction. `c_5 … c_10` were
+artifacts of the floor.**
+
+The script's own docstring already said the leverage was gone — *"the extracted
+values are essentially noise floor / numerically ambiguous"*, *"not as a
+precision claim at q₀"* — but it emitted the numbers anyway and the witness
+recorded them where they read as data. Prose caveats do not stop downstream
+consumption; the emission has to.
+
+**Fix applied.** Per-rung residual tracking with a floor detector
+(`MIN_RESIDUAL_DROP = 10×`, far more permissive than the ~117× a real rung
+gives, so only an unambiguous stall is rejected). Unresolved rungs now emit
+`null` in `c_k_extracted_50dps` / `_float`; the raw quotients are preserved
+under `c_k_unresolved_raw_quotient` so nothing is hidden; and a new
+`c_k_resolution` block records the residual, the drop, and the verdict per
+rung. The printed table flags each unresolved rung inline.
+
+### Residual disagreement at k = 4, still open
+
+With k ≥ 5 disposed of, one genuine conflict survives: at k = 4 both
+extractions are *resolved* yet disagree — A gives −1.133, B gives −2.538, a
+factor 2.2. That is not a floor artifact and needs settling on the merits.
 
 ### Do not "fix" this by renaming
 
