@@ -10,7 +10,7 @@ tags:
     - gluing-equations
     - ptolemy
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T12:11:25Z
+updated_at: 2026-08-10T13:01:55Z
 parent: m015
 ---
 
@@ -254,3 +254,40 @@ Use **both**, for different purposes:
 - **Route 75** for reach — it verifies to 14 tetrahedra and degree 14.
 
 And G5 makes them mutually checking, which is worth more than either alone.
+
+
+---
+
+## Reach measured (2026-08-10, PR #4925) — the ceiling was one step on one class
+
+**Route 76 DOES reach 14 tetrahedra.** 10_100's geometric obstruction class solves in
+**67.0s** with `modStd` + `finduni`, and its degree-14 eliminant factor generates the
+**same field** as Route 75's independently derived shape field (disc `75015471937637449`,
+`nfisisom` isomorphic). Gate G5 had that two-route agreement at 2–4 tets; it now holds
+at 14, where LLL had been the only route shown to work.
+
+So the earlier entry in this bean — "Ptolemy+Singular times out at 14 tetrahedra",
+"strictly less far-reaching" — is **superseded**. Two attribution errors produced it:
+
+1. the 600s wall is the primary **decomposition**, not the Gröbner basis (GB alone lands
+   dim 0 in 87.6s);
+2. the wall is **class-specific** — `minAssGTZ` finished class 0 in 312s, *inside* the
+   original 600s budget. The earlier run timed out on a **class** and recorded a
+   **manifold**.
+
+Route 76 is slower on 10_100 (67.0s vs Route 75's 7.2s) but not less far-reaching.
+
+Three traps pinned so they do not recur:
+
+- **`I = sat(I,J)[1]` silently mangles the ideal** — reports dim 3 for a dim-0 ideal,
+  reading as "the saturated formulation is worse" rather than as a scripting bug.
+- **`dp` in Singular already IS degree-reverse-lex** — this bean's recorded next step
+  "try a degrevlex ring" was the configuration that timed out. `lp` is the alternative.
+- **Saturating in Singular is a pessimisation here**, 1014s vs 102s. Measured negative.
+
+Selection step is real: `finduni` returns the minimal polynomial on the *whole* variety,
+so the geometric degree-14 factor arrives with a companion and must be picked out. Every
+10_100 eliminant split into exactly two factors with exactly one of degree 14 — unambiguous
+for this manifold, not guaranteed in general.
+
+**Still open:** 11a1 (17 tets), where Route 75's identification fails.
