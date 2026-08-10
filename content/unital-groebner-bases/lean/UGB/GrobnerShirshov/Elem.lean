@@ -435,6 +435,54 @@ theorem ofTerms_coeff [DecidableEq G] (terms : List (Monomial G × k))
     (ofTerms terms).coeff m = ((terms.filter (fun p => p.1 = m)).map Prod.snd).sum :=
   rfl
 
+/-- `contextMul` sees only the coefficient function, so it respects `CoeffEq`.
+
+Needed because `ofTerms` is a *representation*: the same element written with its
+terms in a different order is a different value of `AlgElement` (different
+`support`, different `coeff` term), so a rule can only be matched against a
+normal form up to coefficients. -/
+theorem contextMul_coeff_congr [DecidableEq G] (a b : Monomial G)
+    {f g : AlgElement G k} (h : ∀ w, f.coeff w = g.coeff w) (m : Monomial G) :
+    (contextMul a f b).coeff m = (contextMul a g b).coeff m := by
+  show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0)
+     = (if a ++ excise a m b ++ b = m then g.coeff (excise a m b) else 0)
+  rw [h]
+
+/-- **A relation in context is the same terms, in context.**
+
+`contextMul` is defined through `excise`, so reading a coefficient off it is a
+case split on whether the monomial has the shape `a ++ _ ++ b`. That split is the
+same every time; this does it once, for a relation given by an explicit term
+list. Every rule in a finite presentation is such a list, and every S-polynomial
+is two context-multiplications of them, so this is the lemma that keeps a
+composition's proof to word identities plus `split_ifs`.
+
+The shape case split is the outer `by_cases`; the induction on `L` inside it only
+has to push `List.filter` through `List.map`, because `w ↦ a ++ w ++ b` is
+injective and append-cancellation is `simp`. -/
+theorem contextMul_ofTerms_coeff [DecidableEq G] (a b : Monomial G)
+    (L : List (Monomial G × k)) (m : Monomial G) :
+    (contextMul a (ofTerms L) b).coeff m
+      = (ofTerms (L.map (fun p => (a ++ p.1 ++ b, p.2)))).coeff m := by
+  by_cases hs : ∃ w : Monomial G, m = a ++ w ++ b
+  · obtain ⟨w, rfl⟩ := hs
+    rw [contextMul_coeff_middle, ofTerms_coeff, ofTerms_coeff]
+    induction L with
+    | nil => rfl
+    | cons p t ih =>
+      simp only [List.map_cons, List.filter_cons, decide_eq_true_eq,
+        List.append_cancel_left_eq, List.append_cancel_right_eq]
+      split_ifs
+      · simp only [List.map_cons, List.sum_cons, ih]
+      · exact ih
+  · rw [contextMul_coeff_of_not_shape _ (fun w hw => hs ⟨w, hw⟩), ofTerms_coeff]
+    induction L with
+    | nil => rfl
+    | cons p t ih =>
+      rw [List.map_cons, List.filter_cons,
+        if_neg (by simpa using (fun h => hs ⟨p.1, h.symm⟩ : ¬ (a ++ p.1 ++ b = m)))]
+      exact ih
+
 /-- **A two-term relation in context is the same two terms, in context.**
 
 Every rule in a two-term presentation — braid, far-commutation, Bokut–Shiao —

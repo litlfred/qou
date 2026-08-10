@@ -1,10 +1,10 @@
 ---
 # qou-auq3
 title: Prove hecke_is_gs_basis — the GS route is the only path from n<=4 to general n
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-09T16:10:13Z
-updated_at: 2026-08-09T16:10:13Z
+updated_at: 2026-08-10T02:20:00Z
 ---
 
 
@@ -669,3 +669,98 @@ The witness listed 5 single-step compositions.  `BokutShiaoFarComm.oc` covers
     ---
     9   proved
     36  remaining
+
+## CLAIM
+
+`in-progress`, branch `claude/gs-completed-lm-cases`, PR #4892.
+
+Claimed late: §4k–§4p and `computations/hecke_gs_confluence_n4.py` were all
+written while this bean still said `todo`. Recorded here rather than quietly
+fixed — that gap is exactly what a sibling session would have collided with.
+
+## §4p — any two-term rule against the quadratic rule: 12 compositions, 3 steps
+
+§4n resolves in *no* steps and §4o in *one*. This is the first family needing a
+real reduction chain, and it is the largest single block left.
+
+**The observation that makes it one family.** Every two-term rule of the
+completed system has its two words in **cyclic position** — leading monomial
+`u' ++ [σₓ]`, other word `σ_y :: u'`, the *same* `u'`:
+
+    farCommRelation i j        u' = [σᵢ]           x = j   y = j    c =  1
+    yangBaxterRelation i' i    u' = [σᵢ, σᵢ₋₁]     x = i   y = i−1  c = −1
+    bokutShiaoRelation i' i j  u' = descWord i j   x = i   y = i−1  c =  1
+
+The last because `descWord i j = σᵢ :: descWord i₋₁ j` (§4h), so
+`bsWord₂ i' i j = σᵢ₋₁ :: descWord i j`. Nothing else about the rule is used —
+the family theorem takes `r` abstractly.
+
+**The chain.** The leading monomial ends in `σₓ`, so it meets `σₓσₓ` in that one
+letter (§4m), over `u' ++ [σₓ, σₓ]`. The ambient word cancels and
+
+    spoly = c · [ −(σ_y :: u' ++ [σₓ]) + h·(u' ++ [σₓ]) + u' ]
+
+1. `σ_y :: u' ++ [σₓ]` **is** `σ_y ·(leading monomial)`, so `r` applies in the
+   context `(σ_y, ε)` → `σ_yσ_y u'`;
+2. which begins `σ_yσ_y`, so the quadratic rule **at `y`** applies — *a different
+   generator from the one the composition is about*, which is precisely why this
+   needs a chain rather than a one-rule annihilation — leaving `h·(σ_y :: u') + u'`;
+3. what is left is `h` times `r`'s own relation, killed by `r` in empty context.
+
+**Step 3 needs `h ≠ 0`**, and that is where `HeckeParams` finally earns its
+`q > 0 ∧ q ≠ 1`: `HeckeParams.h_ne_zero`. The composition does **not** resolve at
+`q = 1`. Worth stating plainly — it is the first place in this arc where the
+deformation is load-bearing rather than carried along.
+
+### Two things the proof taught
+
+* **Only three conditions need words distinguished.** Every `CoeffEq` in the
+  chain holds *unconditionally*: the cancellations are between coefficients and
+  do not care whether two words happen to coincide. Only the three "the targeted
+  coefficient is non-zero" side conditions need distinctness, and two of those
+  are lengths. The third — leading monomial vs the other word, same length — is
+  `word_ne`, derived from `lc = c ≠ 0`: were they equal the terms would cancel
+  and the leading coefficient would be `0`.
+* **`ofTerms` is a representation, not an element.** `yangBaxterRelation` lists
+  its two terms in the opposite order to the family's normal form, and
+  `ofTerms [a,b] ≠ ofTerms [b,a]` as *values* (different `support`, different
+  `coeff` term) though they denote the same element. So `hrel` is stated
+  **coefficientwise**, and `AlgElement.contextMul_coeff_congr` carries that
+  through `contextMul`. Stating it structurally would have silently excluded
+  Yang–Baxter from its own family.
+
+### New framework lemmas (`Elem.lean`)
+
+* `AlgElement.contextMul_ofTerms_coeff` — general `L`, subsuming the pair version
+  §4o introduced; needed because the quadratic rule has **three** terms.
+* `AlgElement.contextMul_coeff_congr` — `contextMul` respects `CoeffEq`.
+
+### Coverage
+
+`CyclicQuad.{farComm,yangBaxter,bokutShiao}_quad_resolves` are the three
+instances; together they are the 12 three-step compositions the witness listed
+(`Y01×Q1`, `B010×Q1`, `Y12×Q2`, `B121×Q2`, `Y23×Q3`, `B232×Q3`, `F20×Q0`,
+`F30×Q0`, `F31×Q1`, `B120×Q2`, `B230×Q3`, `B231×Q3`).
+
+## Running total at n = 4 — counted at *rule* level, which is what the GS
+## predicate quantifies over
+
+    overlap compositions      92
+      degenerate              22   §4l  (all, modulo the covering claim)
+      quadratic self-overlap   4   §4n  general in n
+      BS/YB × far-commutation  5   §4o  general in n
+      cyclic × quadratic      12   §4p  general in n
+      ---------------------------
+      proved                  43
+      remaining               49
+
+    inclusion compositions    22   §4m  (all, modulo the same covering claim)
+
+In *shape* terms (58 shapes: 13 degenerate + 45 proper) that is 13 + 16 = 29 of
+58. The two counts differ because three words carry two rules each (§4j), and
+the rule-level count is the honest one.
+
+The remaining 49 are the 4-, 5-, 6-, 8-, 9-, 10-, 12-, 15-, 19- and 25-step
+chains: `Q × R` (the mirror of §4p, and *not* symmetric to it — the quadratic
+rule on the left produces a different chain), then BS × BS and BS × F at
+`j₀ ≥ j`.
