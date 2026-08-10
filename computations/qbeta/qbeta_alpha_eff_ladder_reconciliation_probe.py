@@ -57,7 +57,7 @@ from qbeta_utils import c3_target_at  # noqa: E402
 def substrate(q: mpf) -> dict[str, mpf]:
     """On-main N=3 closed forms (probe_q_beta_operator_valued_N3.py)."""
     h = q - 1 / q
-    z = 1 / (sqrt(q) + 1 / sqrt(q))
+    z = q**3 / (q**2 + 1)
     hbar_q2 = ((q - 1) / q) ** 2
     alpha = (z - 1) * h / 2
     d1 = q ** 3 / (q ** 2 + 1)

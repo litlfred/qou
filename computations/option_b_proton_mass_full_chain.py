@@ -79,7 +79,7 @@ from lp_dual_solver import (
 
 q = sp.symbols("q", positive=True)
 h_q = q - 1 / q                    # Hecke parameter h = q − q^{-1}
-z_q = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))  # Markov parameter z
+z_q = q**3 / (q**2 + 1)  # Markov parameter z
 
 # ─────────────────────────────────────────────────────────────────
 # Phase B — Hecke quadratic recurrence

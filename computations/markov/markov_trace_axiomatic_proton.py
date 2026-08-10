@@ -57,7 +57,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 q = sp.symbols("q", positive=True)
 h = q - 1 / q
-z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+z = q**3 / (q**2 + 1)
 
 
 # Direct Markov-trace values on H_3 basis (derived from axioms):

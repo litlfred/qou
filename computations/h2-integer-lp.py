@@ -26,7 +26,7 @@ from q_parameter import Q as q0, Q_INV as qi0, HA as h, q_int
 from witness_base import WitnessBuilder
 from mpmath import mp  # noqa: F401
 
-z = 1.0 / (q0**0.5 + qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # Wedderburn weights for H₃(q) — from the gluon branch fix
 # w_sym = w_alt = q²/(q⁴+4q²+1), w_std = (q²+1)²/(q⁴+4q²+1)

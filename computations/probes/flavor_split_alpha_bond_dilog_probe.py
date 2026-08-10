@@ -56,7 +56,7 @@ def _muon_q0():
 
 def analyze(q, label):
     h = q - 1 / q
-    zmkv = 1 / (sqrt(q) + 1 / sqrt(q))
+    zmkv = q**3 / (q**2 + 1)
     lead = flavor_split_leading(q)
     a_true = (CODATA / lead - 1) / lead
     f0 = zmkv - h / 2

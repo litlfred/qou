@@ -62,7 +62,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 # ── Shared symbols (AGENTS.md §7a conventions) ───────────────────
 Q = sp.Symbol("q", positive=True)
 H = Q - 1 / Q                          # Hecke parameter: s^2 = h s + 1
-Z = 1 / (sp.sqrt(Q) + 1 / sp.sqrt(Q))  # Markov parameter
+Z = Q**3 / (Q**2 + 1)  # Markov parameter
 
 # NF basis order: b0=1, b1=s0, b2=s1, b3=s0s1, b4=s1s0, b5=s0s1s0.
 BASIS_NAMES = ["1", "s0", "s1", "s0*s1", "s1*s0", "s0*s1*s0"]

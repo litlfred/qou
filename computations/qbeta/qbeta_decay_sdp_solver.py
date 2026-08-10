@@ -61,7 +61,7 @@ from q_parameter import Q as Q_0  # noqa: E402
 import sympy as sp  # noqa: E402
 
 q_sym = sp.Symbol("q", positive=True)
-z_sym = 1 / (sp.sqrt(q_sym) + 1 / sp.sqrt(q_sym))
+z_sym = q_sym**3 / (q_sym**2 + 1)
 h_sym = q_sym - 1 / q_sym
 
 # NF basis t_i(q) Markov-trace functions on H_3(q) (post-2026-05-19 fix):

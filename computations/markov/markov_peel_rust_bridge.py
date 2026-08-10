@@ -255,7 +255,7 @@ def tr_M_atomic_rust_recursive(Z: int, N: int, *,
     # We accumulate in mpmath.mpf at `dps`.
     with mp.workdps(dps):
         q = mp.mpf(Q_50_DIGIT_STR)
-        z_mp = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+        z_mp = q**3 / (q**2 + 1)
         h_mp = q - 1 / q
         total = mp.mpf(0)
         for w_tuple, lq_coef in reduced.terms.items():
@@ -454,7 +454,7 @@ if __name__ == "__main__":
         from markov_peel import tr_M_atomic
         import sympy as sp
         from hecke_symbolic import q as q_sym, HA as h_sym, z_markov as z_sym
-        z_val = 1.0 / (q_val ** 0.5 + q_val ** (-0.5))
+        z_val = q_val**3 / (q_val**2 + 1)
         h_val = q_val - 1.0 / q_val
         t0 = time.time()
         tr_sym_expr = tr_M_atomic(Z, N)

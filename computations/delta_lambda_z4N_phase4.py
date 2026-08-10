@@ -79,7 +79,7 @@ def main() -> int:
     )
 
     q = mp.mpf(str(Q0))
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     inv_z = mp.sqrt(q) + 1 / mp.sqrt(q)
     builder.add_parameter("q0", str(q))
     builder.add_parameter("z", str(z))

@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:48:18.347341+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-10T02:01:39.775688+00:00",
+  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 451,
+  "durationMs": 198,
   "computation": "rho-prefactor-structural-verifier",
   "scriptFile": "rho_prefactor_structural_verifier.py",
   "scriptHash": "f9cea6b0091f",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,14 +21,15 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Structural ρ(Z, N) rule verifier — operator-selection LP / shadow-price / primal-dual / lp-duality evaluation of the rule ρ(𝔥) = dim_q(λ*(T_w)) per conj:rho-prefactor-structural (issue #604 deliverable 4 / closes-or-narrows GAP-A-4). For each canonical T_w ∈ H_3(q_0) of {proton, neutron, ²H/6_2, ³He/L₆ₐ₄}, decomposes into Wedderburn blocks via Hoefsmit seminormal form, evaluates |y_λ · χ_λ(T_w)| per partition λ ⊢ 3, identifies the dominant λ*, and tests five candidate rules (exact dim_q / round / floor / hook-special-case / classical d_λ) against the observed ρ ∈ {1, 1, 1, 2}.  The rule that matches all four observations is reported as the structural form of ρ(Z, N) at B_3.  Tritium (B_5 / 8_11) deferred — needs Hoefsmit at H_5 (consistent with the joint_tower_sdp_solver_v2.py / R5-full prototype posture).",
   "contentBlock": "conj:rho-prefactor-structural",
   "parameters": {
     "q_0": 1.1099785955573347,
-    "m_e_MeV": 0.51099895,
+    "m_e_MeV": 0.51099895069,
     "registry_size": 4
   },
   "data": {
@@ -210,23 +211,23 @@
         },
         "lp_dual": {
           "x_star": [
-            1.0,
-            -0.0,
-            -0.0
+            0.9999999999996283,
+            2.477770685521275e-13,
+            1.2392639539389515e-13
           ],
-          "y0_star": -0.560225889798053,
+          "y0_star": -0.5602258897982713,
           "y_star": [
-            0.0,
-            0.1448301034634864,
-            0.5374809440923477
+            2.1825831281290064e-13,
+            0.14483010346370465,
+            0.537480944092566
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.560225889798053,
-          "dual_obj": -0.560225889798053,
-          "duality_gap": 0.0,
+          "primal_obj": -0.5602258897979505,
+          "dual_obj": -0.5602258897982713,
+          "duality_gap": 3.207502408906272e-13,
           "feasible": true,
           "channel_lambdas": [
             [
@@ -338,23 +339,23 @@
         },
         "lp_dual": {
           "x_star": [
-            1.0,
-            -0.0,
-            -0.0
+            0.9999999999996283,
+            2.477770685521275e-13,
+            1.2392639539389515e-13
           ],
-          "y0_star": -0.560225889798053,
+          "y0_star": -0.5602258897982713,
           "y_star": [
-            0.0,
-            0.1448301034634864,
-            0.5374809440923477
+            2.1825831281290064e-13,
+            0.14483010346370465,
+            0.537480944092566
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.560225889798053,
-          "dual_obj": -0.560225889798053,
-          "duality_gap": 0.0,
+          "primal_obj": -0.5602258897979505,
+          "dual_obj": -0.5602258897982713,
+          "duality_gap": 3.207502408906272e-13,
           "feasible": true,
           "channel_lambdas": [
             [
@@ -465,23 +466,23 @@
         },
         "lp_dual": {
           "x_star": [
-            1.0,
-            -0.0,
-            -0.0
+            0.9999999999998176,
+            1.2008827576481532e-13,
+            6.232111920846431e-14
           ],
-          "y0_star": -0.5117894098131848,
+          "y0_star": -0.5117894098132311,
           "y_star": [
-            0.0,
-            0.26986491086883946,
-            0.4933283896642777
+            4.631136166392789e-14,
+            0.2698649108688858,
+            0.493328389664324
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.5117894098131848,
-          "dual_obj": -0.5117894098131848,
-          "duality_gap": 0.0,
+          "primal_obj": -0.5117894098131216,
+          "dual_obj": -0.5117894098132311,
+          "duality_gap": 1.0946288307081625e-13,
           "feasible": true,
           "channel_lambdas": [
             [
@@ -593,23 +594,23 @@
         },
         "lp_dual": {
           "x_star": [
-            1.0,
-            -0.0,
-            -0.0
+            0.9999999999996283,
+            2.477770685521275e-13,
+            1.2392639539389515e-13
           ],
-          "y0_star": -0.560225889798053,
+          "y0_star": -0.5602258897982713,
           "y_star": [
-            0.0,
-            0.1448301034634864,
-            0.5374809440923477
+            2.1825831281290064e-13,
+            0.14483010346370465,
+            0.537480944092566
           ],
           "active_set": [
             1,
             2
           ],
-          "primal_obj": -0.560225889798053,
-          "dual_obj": -0.560225889798053,
-          "duality_gap": 0.0,
+          "primal_obj": -0.5602258897979505,
+          "dual_obj": -0.5602258897982713,
+          "duality_gap": 3.207502408906272e-13,
           "feasible": true,
           "channel_lambdas": [
             [

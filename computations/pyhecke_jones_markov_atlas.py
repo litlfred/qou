@@ -105,7 +105,7 @@ def solve_jones_markov_h_n(n: int, q: float = Q0_F64, verbose: bool = False) -> 
     shapes = partitions_of_descending(n)
     P = len(shapes)
 
-    z_mark = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z_mark = q**3 / (q**2 + 1)
 
     if verbose:
         print(f"  H_{n}(q): {P} partitions, building {P}×{P} χ-matrix (rayon-parallel)...")

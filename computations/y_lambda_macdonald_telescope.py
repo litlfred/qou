@@ -180,7 +180,7 @@ def emit_closed_forms(ns) -> dict:
     """
     q = sp.Symbol("q", positive=True)
     Q = q ** 2
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     X = q * z / (1 - Q + q * z)
     out = {}
     for n in ns:
@@ -213,7 +213,7 @@ def cross_check_mpfr(witness_path: Path) -> dict:
 
     def y_numeric(p, q0):
         Qn = q0 ** 2
-        zn = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+        zn = q0**3 / (q0**2 + 1)
         Xn = q0 * zn / (1 - Qn + q0 * zn)
         cells = hook_lengths(p)
         n = sum(p)

@@ -561,6 +561,27 @@ def part6_crosscheck(results: dict, assertions: dict) -> None:
     #  (b) PR #4850 part B, y_lambda_at_q0_mpmath x Hoefsmit chi on
     #      atom_braid_word_3A's word, whose pn default is bring_color_weighted.
     # Each is compared against the closed form under ITS OWN convention.
+    #
+    # STALE — CONVENTION C, pending pass 2 (bean qou-eea0).  These eight
+    # decimals are hardcoded readings taken from full-trace pipelines that
+    # ran under the OLD Markov parameter z = 1/(q^{1/2}+q^{-1/2}).  The
+    # closed form they are checked against, interface_factors(), now
+    # evaluates under z = q^3/(q^2+1), so this assertion FAILS by design
+    # until the readings are retaken:
+    #
+    #     T_npn_over_pnn     measured 1.36013 / 1.36037   closed 1.25898   rel 8.0%
+    #     He3_pnp_over_ppn   measured 0.79066 / 0.79080   closed 0.82939   rel 4.7%
+    #
+    # The two independent sources agree with EACH OTHER to ~1e-4 while both
+    # differ from the closed form by the same 8.0% / 4.7% — the signature of
+    # a convention shift in the closed form, not of an error in either
+    # pipeline.  They cannot be retaken here: they come from the nuclear
+    # layer (n = 9 H_3A words, He-3), which is exactly the set the
+    # fingerprint work list missed and pass 2 has not yet regenerated.
+    #
+    # Deliberately left RED rather than retuned or muted.  A convention
+    # migration that silences its own cross-check is the failure this whole
+    # branch is about; the honest state is a red assertion naming its cause.
     meas = [
         ("wenzl_bridge_strict", "strict_averaged",
          [("T_npn_over_pnn", "0.141523950364895566", "0.104052096421142611", "nn"),

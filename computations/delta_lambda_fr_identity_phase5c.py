@@ -297,7 +297,7 @@ def main() -> int:
     # τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) should equal z exactly per the
     # Markov axiom (prop:interface-knot-markov-z). This is the
     # categorical content of the Phase 5c.1 finding.
-    z_markov = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_markov = Q0**3 / (Q0**2 + 1)
     h_hecke = Q0 - 1 / Q0
     z_minus_h = z_markov - h_hecke
     # Per Markov axiom + Hecke skein σ⁻¹ = σ - h·1:

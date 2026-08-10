@@ -44,8 +44,13 @@ t = sp.symbols("r", positive=True)
 q = t ** 2  # q = r²
 Q = q ** 2  # Q = q² = r⁴
 
-# Markov parameter z = 1/(q^{1/2} + q^{-1/2}) = 1/(r + 1/r) = r/(r²+1)
-z = t / (t ** 2 + 1)
+# Markov parameter, trace convention D (SU(2)/Temperley-Lieb, Jones):
+#   z = q^3/(q^2+1),  and with t = q^{1/2} that is t^6/(t^4+1).
+# Owner ruling 2026-08-09 excised convention C, which in this same
+# half-argument variable read z = t/(t^2+1) -- note how close the two look
+# here: same silhouette, different exponents. Still a rational function of
+# t, so the cyclotomic factorisation below is unaffected in kind.
+z = t ** 6 / (t ** 4 + 1)
 
 # X = Q^ℓ = (q · z) / (1 - Q + q · z)  (Wenzl level expressed in r)
 qz = q * z  # = r² · r/(r²+1) = r³/(r²+1)
@@ -183,6 +188,10 @@ with open(out_path, "w") as fp:
         "X_in_r": str(X_factored),
         "results": results,
         "precision": "symbolic_q",
-        "truncation_eps": 0.0,
+        # String, not 0.0: this computation is exact and symbolic in q, so
+        # there is no truncation at all.  Emitting it as a float put the
+        # only raw float64 in the witness — an exact zero that nonetheless
+        # tripped the raw-float64 ratchet.
+        "truncation_eps": "0",
     }, fp, indent=2, default=str)
 print(f"Witness: {out_path}")

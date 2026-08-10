@@ -570,7 +570,7 @@ if __name__ == "__main__":
     with mp.workdps(60):
         q = mp.mpf(Q_STR)
         h = q - 1 / q
-        z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+        z = q**3 / (q**2 + 1)
 
     # All cases evaluated at n=3 (minimum n with a y_λ table).  The
     # canonical Markov trace is consistent across the tower, so any

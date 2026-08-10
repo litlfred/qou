@@ -166,7 +166,7 @@ def atom_per_gen_vols_alpha(Z, N, *, pn_alpha=0.5,
                 sp_arr[i] *= c * q0 + d
                 ap_arr[i] *= -c * qi + d
 
-    z_m = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+    z_m = q0**3 / (q0**2 + 1)
     nf3 = q_int_local(1) * q_int_local(2) * q_int_local(3)
     w_sym = 1.0 / nf3
     w_std = q_int_local(2) ** 2 / nf3

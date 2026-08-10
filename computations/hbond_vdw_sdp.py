@@ -74,7 +74,7 @@ except Exception:
 def sigma1_power_traces(q: float) -> list[float]:
     """T_k = tr_M(σ₁^k), k=0..4, via the Hecke recursion σ₁² = hσ₁ + 1."""
     h = q - 1.0 / q
-    z = 1.0 / (sqrt(q) + 1.0 / sqrt(q))      # tr_M(σ₁)
+    z = q**3 / (q**2 + 1)      # tr_M(σ₁)
     T0 = 1.0
     T1 = z
     T2 = h * z + 1.0                          # = 1 + (q−1)/√q

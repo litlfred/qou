@@ -115,7 +115,7 @@ def sigma_pow_markov_trace(k):
     """tr_M(sigma^k) in H_2 via the Hecke recursion sigma^2 = h sigma + 1,
     tr(sigma^k) = a_k z + b_k, z = 1/(sqrt q + 1/sqrt q). The (2,k) torus link."""
     h = Q0 - 1 / Q0
-    z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z = Q0**3 / (Q0**2 + 1)
     a, b = mp.mpf(0), mp.mpf(1)
     for _ in range(k):
         a, b = h * a + b, a

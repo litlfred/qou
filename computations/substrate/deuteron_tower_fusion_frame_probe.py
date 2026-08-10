@@ -83,7 +83,7 @@ import pyhecke.gram as gram  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402  (canonical q0, via substrate path)
 
 z_live = float(gram.z)
-z_formula = 1.0 / (float(Q0) ** 0.5 + float(Q0) ** (-0.5))
+z_formula = Q0**3 / (Q0**2 + 1)
 z_canonical_ok = abs(z_live - z_formula) < 1e-12
 
 # symbolic: [2]_v as bracket

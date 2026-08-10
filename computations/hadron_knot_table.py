@@ -50,7 +50,7 @@ from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
 
 # Markov parameter z = 1/(q^{1/2} + q^{-1/2}) for cross-channel weight
-_z = 1.0 / (Q**0.5 + Q_INV**0.5)
+_z = Q**3 / (Q**2 + 1)
 _Z2 = _z * _z
 
 # ── q0 canonical per-generator volumes (mpmath, true substrate) ──────────
@@ -64,7 +64,7 @@ mp.dps = 50
 _Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
-_z_q0 = 1 / (mp.sqrt(_Q0) + mp.sqrt(_QI0))
+_z_q0 = _Q0**3 / (_Q0**2 + 1)
 _HE = HeckeEngine(111, 100)  # ground-state ordering only (q-independent)
 
 

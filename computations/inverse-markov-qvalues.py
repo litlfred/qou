@@ -59,7 +59,7 @@ M_N_MEV = mp.mpf(repr(_M_N_MEV))
 Q_TRITIUM_MEV = mp.mpf(repr(_Q_TRITIUM_MEV))
 Q_NEUTRON_MEV = mp.mpf(repr(_Q_NEUTRON_MEV))
 
-z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+z = q**3 / (q**2 + 1)
 ln_q = LN_Q
 
 print("INVERSE MARKOV TRACE Q-VALUES")

@@ -76,7 +76,7 @@ Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 M_E = mp.mpf("0.51099895069")
 E0 = M_E / (Q0 * (Q0 - 1))                       # interface energy scale (MeV)
 H = Q0 - 1 / Q0
-Z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))          # Markov z (for the g-channel)
+Z = Q0**3 / (Q0**2 + 1)          # Markov z (for the g-channel)
 
 
 def tau_borromean(h):

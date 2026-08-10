@@ -260,7 +260,7 @@ def R2mp(r):
 
 def chain(q0):
     """The N3-producer chain at anchor q0 → dict of mpf quantities."""
-    zq = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    zq = q0**3 / (q0**2 + 1)
     H = q0 - 1 / q0
     alpha = (zq - 1) * H / 2
     hbar = (q0 - 1) / q0

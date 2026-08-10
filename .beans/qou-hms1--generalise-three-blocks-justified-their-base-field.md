@@ -3,8 +3,9 @@
 title: 'GENERALISE?: three blocks justified their base field / R codomain by a square root convention D does not have'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T21:10:17Z
-updated_at: 2026-08-09T21:10:17Z
+updated_at: 2026-08-10T00:48:35Z
 ---
 
 

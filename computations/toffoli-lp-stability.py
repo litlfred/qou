@@ -116,7 +116,7 @@ def reduce_nf(terms, ha):
 def gram_matrix(q):
     """6×6 Gram matrix G_{ij} = tr_M(b_i · b_j) on the NF basis."""
     ha = q - 1.0 / q
-    z = 1.0 / (float(mp.sqrt(q)) + 1.0 / float(mp.sqrt(q)))
+    z = q**3 / (q**2 + 1)
     # tr_M of each basis element: tr_M(σ_i₁ σ_i₂ ... σ_iₖ) = z^(k reduced)
     # Precompute tr_M for each NF basis element length
     tr_basis = np.array([1.0, z, z, z ** 2, z ** 2, z ** 3])

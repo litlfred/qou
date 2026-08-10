@@ -67,7 +67,7 @@ ZN = {"p": (1, 0), "n": (0, 1), "D": (1, 1), "T": (1, 2),
 
 
 def alpha_k(k):
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3): return mp.mpf(1)
     if k == 2: return z_mark ** 2

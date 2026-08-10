@@ -103,7 +103,7 @@ def derive_h3_plancherel_weights_at_q(q_val):
     # σ_1 σ_2 σ_1 = trefoil
     chi_tre = {p: chi_lambda_fast(p, [(1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 0)], q_val=q_val).real for p in parts}
 
-    z = 1.0 / (q_val ** 0.5 + 1.0 / q_val ** 0.5)
+    z = q_val**3 / (q_val**2 + 1)
 
     # Solve the linear system y · M = b where M[i, j] = chi^{λ_j}(w_i)
     # and b = (1, z, z^2). Three equations, three unknowns.

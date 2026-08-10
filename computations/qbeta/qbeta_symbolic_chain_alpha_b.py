@@ -110,7 +110,7 @@ def main() -> int:
     q = sp.Symbol("q", positive=True)
 
     # --- Closed forms (from probe_q_beta_operator_valued_N3.py) -----------
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))                  # Markov-Jones
+    z = q**3 / (q**2 + 1)                  # Markov-Jones
     h = q - 1 / q                                          # Hecke skein
     alpha = (z - 1) * h / 2                                # eigenphase
 

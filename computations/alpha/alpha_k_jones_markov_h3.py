@@ -50,7 +50,7 @@ from codata_constants import M_E_MEV as m_e
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 h_amp = Q0 - QI
-z_mark = 1/(mp.sqrt(Q0) + 1/mp.sqrt(Q0))
+z_mark = Q0**3 / (Q0**2 + 1)
 
 
 # Build seminormal matrices for each partition of 3

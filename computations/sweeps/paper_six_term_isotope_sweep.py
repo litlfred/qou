@@ -1083,7 +1083,7 @@ def q_beta_substrate_cos_tightened_MeV() -> float:
     here is the empirically-solid substrate-derived Q_β.
     """
     q = Q_MP  # Q at 50 dps mpmath (was: mp.mpf(repr(Q0_FLOAT)) — f64-quantised)
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     Q_A = mp.mpf(repr(M_E_MEV)) * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     return float(Q_A * mp.cos((z - 1) * h / 2))

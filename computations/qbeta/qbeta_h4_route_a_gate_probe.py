@@ -154,7 +154,7 @@ def ladder_cks(dnet, kc=KC, ns=NS, label=""):
     hbar = (q - 1) / q
     b = sp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
     u = b * hbar**2
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     alpha_eff = (z - 1) * h / 2 - u / 2
     QA_over_me = (2 * q + 1 - q**2) * (q + 1) / (2 * q**3)

@@ -54,7 +54,7 @@ import json  # noqa: E402
 def main() -> None:
     q = sp.Symbol("q", positive=True)
     h = q - 1 / q
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     eps = sp.Symbol("eps")
 
     # Symbolic seminormal matrices for each Wedderburn block of H_3(q)

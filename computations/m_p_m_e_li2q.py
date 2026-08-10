@@ -41,7 +41,7 @@ from mass_endomorphism import (
 def mass_from_tower_F(vols, F_func):
     """𝔪 = |∏ V| + Σ F(|V|) + Σ_{i<j} z² F(|V_i V_j|), with F = q-dilog."""
     n = len(vols)
-    z_mark = 1.0 / (Q0 ** 0.5 + (1.0 / Q0) ** 0.5)
+    z_mark = Q0**3 / (Q0**2 + 1)
     desc = 1.0
     for v in vols:
         desc *= v["full"]

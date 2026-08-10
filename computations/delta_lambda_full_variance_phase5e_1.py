@@ -89,7 +89,7 @@ KNOT_TO_PARTICLE = {
 # α_k weights per binding_depth_stratified_rust.py
 def alpha_k(k: int) -> mp.mpf:
     Q0 = mp.mpf(str(Q0_STR))
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     M_E_MEV = mp.mpf("0.51099894999999995")
     if k in (0, 1, 3):

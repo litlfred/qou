@@ -139,7 +139,7 @@ def main():
     # ---- W2: does the full GS net match the production cos-ladder? ----
     ratio_A = ser(sp.cancel(dnet / counit))     # Q_beta^GS / Q_A
     # production cos-dressed base Q_N1/Q_A
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     alpha = (z - 1) * h / 2
     b = sp.sqrt((h ** 2 + 3) / (h ** 2 + 4))
     hbar = (q - 1) / q

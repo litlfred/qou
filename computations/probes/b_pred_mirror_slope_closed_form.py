@@ -85,7 +85,7 @@ def nucleon_word(g0, g1):
 def main() -> int:
     set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR); h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q)); lnq = mp.log(q)
+    z = q**3 / (q**2 + 1); lnq = mp.log(q)
     tau_p = mp.mpf(tr_M_via_wenzl_bridge_mpfr(
         nucleon_word(_PROTON_G0, _PROTON_G1), 3, Q_50_DIGIT_STR, dps=50))
     tau_n = mp.mpf(tr_M_via_wenzl_bridge_mpfr(

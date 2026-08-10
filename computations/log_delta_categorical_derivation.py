@@ -80,7 +80,7 @@ def depth(lam: list[int]) -> int:
 def alpha_k(k: int) -> mp.mpf:
     """Structural prefactor α_k per prop:unified-curvature-rank-mass-formula
     + prop:plancherel-term-7-formulation."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k == 0: return mp.mpf(1)
     if k == 1: return mp.mpf(1)

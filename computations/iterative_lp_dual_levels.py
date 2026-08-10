@@ -57,7 +57,7 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 q = sp.symbols("q", positive=True)
 h_q = q - 1 / q
-z_q = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+z_q = q**3 / (q**2 + 1)
 
 
 def hecke_power_recurrence(k_max: int) -> list[tuple[sp.Expr, sp.Expr]]:

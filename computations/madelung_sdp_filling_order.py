@@ -43,7 +43,7 @@ from pyhecke.lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 
 q0, qi0 = float(q0), float(qi0)
 lam_plus = 0.5 * ((q0 - qi0) + ((q0 - qi0) ** 2 + 4) ** 0.5)   # top eigenvalue of T_γe
-z = 1.0 / (q0 ** 0.5 + qi0 ** 0.5)                             # Markov parameter
+z = q0**3 / (q0**2 + 1)                             # Markov parameter
 z2 = z ** 2                                                    # canonical T_ee weight scale
 
 

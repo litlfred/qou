@@ -99,6 +99,15 @@ content/todos/
 # event logs — keep them gitignored (matching the prior todos/ semantics).
 .beans/*-ledger.md
 
+# Harness runtime noise under .work/ (the directory itself is tracked). The
+# convention-C regeneration journal .work/convention-c-regen.jsonl IS
+# committed — it is the resume point for the serial regeneration harness and
+# the evidence behind
+# docs/audits/2026-08-10-convention-c-witness-regeneration-impact.md.
+# Its rotation backup and the stdout logs are not.
+.work/*.bak
+.work/*.log
+
 # Local agent state (per-machine, not shared)
 .claude/local-state/
 .claude/worktrees/
