@@ -62,3 +62,16 @@ Consequences for whoever drains this:
    rather than the idle pass.
 
 Still open: #4931 stayed docs-only, so the witness itself is **not** refreshed.
+
+## DRAINED 2026-08-10 — PR #4935
+
+Producer re-run landed. **The comment-only prediction was confirmed
+empirically**: every non-metadata key equal, `assertions` equal, `data` equal.
+Only `scriptHash` (`87418d646ff1` → `894cafe018ee`) and `scriptCommitSha`
+moved. `allPassed: false` (21/22) preserved deliberately — it is the red
+cross-check the added comment block documents.
+
+**Correction to the refinement above:** I read `durationMs: 3` as "3 ms probe".
+That field is not wall time — the probe takes **46 s** (`durationMs` itself went
+3 → 6). Cheap either way, so the "just re-run it" call was right, but the
+number was wrong.
