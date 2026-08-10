@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T12:23:37.146899+00:00",
-  "commitSha": "18d7b4a3c798ecf64cbe6b9a900284f83ab1db99",
+  "computedAt": "2026-08-10T12:59:37.965693+00:00",
+  "commitSha": "7254172552155f52e53c25daa6e4c99bd8f7d740",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -34,9 +34,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 602,
+      "Q0_OK": 608,
       "Q0_AMBIGUOUS": 17,
-      "Q0_ANCHOR_MISSING": 1867,
+      "Q0_ANCHOR_MISSING": 1861,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 66,
       "Q0_PARSE_ERROR": 1,
@@ -2102,10 +2102,6 @@
           "detail": ""
         },
         {
-          "witness": "even-a-mirror-pair-phi8-scaling-test.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "ew-couplings-substrate-derivation-probe.witness.json",
           "detail": ""
         },
@@ -2343,26 +2339,6 @@
         },
         {
           "witness": "habiro-borromean-cyclotomic-coefficients.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-boron-12.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-carbon-14.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-helium-6.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-nitrogen-12.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "habiro-coefficients-oxygen-14.witness.json",
           "detail": ""
         },
         {
@@ -8612,6 +8588,10 @@
           "detail": ""
         },
         {
+          "witness": "even-a-mirror-pair-phi8-scaling-test.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "flavor-dependent-cusp-shape.witness.json",
           "detail": ""
         },
@@ -8756,6 +8736,10 @@
           "detail": ""
         },
         {
+          "witness": "habiro-coefficients-boron-12.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "habiro-coefficients-boron-8.witness.json",
           "detail": ""
         },
@@ -8765,6 +8749,10 @@
         },
         {
           "witness": "habiro-coefficients-carbon-10.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-carbon-14.witness.json",
           "detail": ""
         },
         {
@@ -8781,6 +8769,10 @@
         },
         {
           "witness": "habiro-coefficients-helium-5.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-helium-6.witness.json",
           "detail": ""
         },
         {
@@ -8805,6 +8797,14 @@
         },
         {
           "witness": "habiro-coefficients-neutron.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-nitrogen-12.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "habiro-coefficients-oxygen-14.witness.json",
           "detail": ""
         },
         {

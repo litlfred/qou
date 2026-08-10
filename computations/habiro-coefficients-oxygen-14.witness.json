@@ -1,15 +1,15 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:24:45.472801+00:00",
-  "commitSha": "f1ea7bd7e748a9f3b15592fe6a34485e17ef4735",
+  "computedAt": "2026-08-10T12:46:58.441867+00:00",
+  "commitSha": "7254172552155f52e53c25daa6e4c99bd8f7d740",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 0,
+  "durationMs": 1,
   "computation": "habiro-coefficients-oxygen-14",
   "scriptFile": "_habiro_coefficient_extract.py",
-  "scriptHash": "36597aa909ec",
-  "scriptCommitSha": "f984de819840e43b1215313f8f523b7d94b374bd",
+  "scriptHash": "eec999ddb8d7",
+  "scriptCommitSha": "ee9e28c7ae7fc18916ce9965ccd5fa25790726e4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,11 +19,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1"
   },
   "description": "Canonical Phase 5q Habiro coefficients for ¹⁴O (oxygen-14, A=14). Strict-mirror partner for the refined 2⌊(A−1)/2⌋ scaling-law test on the open even-A pairs (⁶He−⁶Be, ¹²N−¹²B, ¹⁴O−¹⁴C).",
   "data": {
@@ -313,8 +310,10 @@
   "deg_p_u": 590,
   "n_nonzero": 34,
   "all_integral": true,
-  "reconstruction_matches": false,
-  "tr_M_at_q0": 8.17775810558832e-06,
-  "tr_M_at_q0_via_u_poly": 8.17775810558832e-06,
-  "tr_M_at_q0_rel_err": 0.0
+  "reconstruction_matches": true,
+  "tr_M_at_q0": 8.177758105588686e-06,
+  "tr_M_at_q0_via_u_poly": 8.177758105588686e-06,
+  "tr_M_at_q0_rel_err": 0.0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
