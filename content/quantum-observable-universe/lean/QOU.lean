@@ -319,6 +319,7 @@ import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.YoungTableaux
 import QOU.QuantumObservableUniverses.VirtualProjection
 import QOU.QuantumObservableUniverses.QDifferentialGeometry
