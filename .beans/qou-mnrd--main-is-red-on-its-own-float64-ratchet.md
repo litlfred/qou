@@ -1435,3 +1435,41 @@ scripts read, so someone should decide whether it is expected for A=14.
 Branch rebased onto `origin/main` (35 commits, zero file overlap, clean) and all
 blocking precision gates re-run green on the integrated tree: ratchet 0 NEW /
 0 REGRESSED, drained_files 19, total_fields 540,024.
+
+## Fresh measurement 2026-08-10 (agent-4912 session, off PR #4935)
+
+Re-measured on `origin/main` @ `86c58229a3` while running
+`precision-gates.sh --changed` for an unrelated one-witness metadata refresh.
+**The composition has changed and the count is well down** from this bean's
+title figure (18 NEW + 2 REGRESSED):
+
+```
+witnesses carrying raw float64 : 1577
+total raw float64 fields       : 540,512
+baseline files / fields        : 1582 / 540,334
+drained since baseline         : 21 file(s), -178 field(s)
+
+NEW dirty witnesses            : 1
+      25  computations/kappa-shell8-excess-convention.witness.json
+REGRESSED (count increased)    : 1
+     395 -> 867  computations/a-K-via-lp-dual-full.witness.json
+```
+
+Notes:
+
+- **None of the three qbeta witnesses this bean opened on are still NEW** —
+  they have been drained. The drain counter (`21 file(s), -178 field(s)`)
+  corroborates.
+- The surviving REGRESSED entry is `a-K-via-lp-dual-full`, which is
+  **`qou-ftuv`'s** scope (LP-dual witnesses carry raw float64 by construction;
+  draining needs the shared contract changed). Not independently actionable
+  here.
+- The surviving NEW entry is `kappa-shell8-excess-convention` (25 fields),
+  adjacent to `qou-o16k`.
+- Confirmed inherited, not branch damage, by the same test this bean used:
+  both files are byte-identical to `origin/main` (`git diff origin/main -- <f>`
+  empty) and neither is touched by the measuring branch.
+
+So the remaining red is **two known-owned items**, not a broad regression.
+Nothing was baselined, `--rebaseline` was not run, and no number was
+hand-edited to reach this reading.
