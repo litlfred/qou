@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
-  "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-10T02:14:21.968228+00:00",
-  "commitSha": "6940d78cc970c14db7ad135b1649af19086b48ce",
+  "engineVersion": "sympy 1.12",
+  "computedAt": "2026-08-10T14:55:14.648793+00:00",
+  "commitSha": "60ea02de1d99a88bbf865dc79f13894a13f3b787",
   "assertions": [
     {
       "name": "Z_0_identity",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 19044,
+  "durationMs": 19487,
   "computation": "y-lambda-macdonald-telescope",
   "scriptFile": "y_lambda_macdonald_telescope.py",
   "scriptHash": "97e35a240ddc",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptCommitSha": "63db388851425a23a623cecaaef1ae8c05ce6878",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -149,7 +149,7 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
