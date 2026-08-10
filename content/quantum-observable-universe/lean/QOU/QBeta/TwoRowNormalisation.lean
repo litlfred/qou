@@ -142,6 +142,40 @@ weight, which is what `hbdry` asserts when `n` is even. -/
 theorem yw_zero (q : R) (n : ℕ) : TemperleyLiebTower.yw q n 0 = 0 := by
   simp [TemperleyLiebTower.yw, qint_zero]
 
+/-- **`yw q n 1 = yw q (n+1) 2`** — one level up, two steps along, same weight.
+
+`[1]_q = 1` and `[2]_q` is exactly the factor each level of the tower divides
+by, so the two cancel.
+
+This is not decoration. In the `k`-indexing the branching hypothesis of
+`level_sum_step` is `yw q n (n − 2k + 1) = yw q (n+1) (n − 2k + 2) + yw q (n+1) (n − 2k)`,
+which is `yw_branching` at `m = n − 2k` **while `2k ≤ n`**. At the top index of
+an odd level, `2k = n + 1` and the ℕ subtraction truncates `n − 2k` to `0`, so
+the required identity degenerates to `yw q n 1 = yw q (n+1) 2 + yw q (n+1) 0`.
+By `yw_zero` the second term drops, and this lemma says what is left is true —
+so the hypothesis survives the truncation rather than being violated by it.
+
+That is luck rather than design, and it is worth having as a named fact instead
+of a coincidence rediscovered inside a proof. -/
+theorem yw_one_succ (q : R) (hq : q - q⁻¹ ≠ 0) (hs : q + q⁻¹ ≠ 0) (n : ℕ) :
+    TemperleyLiebTower.yw q n 1 = TemperleyLiebTower.yw q (n + 1) 2 := by
+  -- `hq` is the denominator of `qint` and cannot be dropped: `[1]_q` is
+  -- `(q − q⁻¹)/(q − q⁻¹)`, which is `1` only away from that zero.
+  have h1 : TemperleyLiebTower.qint q 1 = 1 := by
+    simp [TemperleyLiebTower.qint, div_self hq]
+  have h2 : TemperleyLiebTower.qint q 2 = q + q⁻¹ := by
+    unfold TemperleyLiebTower.qint
+    rw [div_eq_iff hq]
+    ring
+  simp only [TemperleyLiebTower.yw, h1, h2]
+  -- Deliberately NOT `field_simp`: under the variable exponent `n` it rewrites
+  -- the base of `(q + q⁻¹) ^ n` and leaves two different bases at the same
+  -- power, which `ring` cannot reconcile. TemperleyLiebTower says so at
+  -- `mul_div_pow_succ`, which is the lemma to use instead.
+  have h := TemperleyLiebTower.mul_div_pow_succ (q + q⁻¹) 1 hs n
+  rw [mul_one] at h
+  exact h.symm
+
 /-- The ballot / Catalan-triangle number `d(n,k) = dim` of the two-row irrep
 `(n−k, k)`, carried in `R`.
 
