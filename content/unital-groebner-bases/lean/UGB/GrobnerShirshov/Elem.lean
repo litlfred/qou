@@ -303,6 +303,33 @@ theorem contextMul_shape [DecidableEq G] {a b m : Monomial G}
     show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0) = 0
     exact if_neg hs
 
+/-- **Sliding a single generator across an element that commutes with it.**
+
+If every monomial of `f` commutes with `x` *as a word* — `w ++ [x] = [x] ++ w` —
+then multiplying on the right by `x` and multiplying on the left by `x` give the
+same element.
+
+This is the shape of a rule composed with itself over `xxx` when its relation is
+a polynomial in the one generator `x`: the two halves of the S-polynomial are
+this element slid past the same letter, so the S-polynomial vanishes outright
+rather than merely reducing to zero. -/
+theorem contextMul_gen_comm [DecidableEq G] (x : G) (f : AlgElement G k)
+    (hf : ∀ w : Monomial G, f.coeff w ≠ 0 → w ++ [x] = [x] ++ w) (m : Monomial G) :
+    (contextMul [] f [x]).coeff m = (contextMul [x] f []).coeff m := by
+  by_cases hL : (contextMul [] f [x]).coeff m = 0
+  · by_cases hR : (contextMul [x] f []).coeff m = 0
+    · rw [hL, hR]
+    · exfalso
+      obtain ⟨w, hm, hw⟩ := contextMul_shape hR
+      have hcomm := hf w hw
+      rw [show m = [] ++ w ++ [x] by rw [hm]; simp [hcomm], contextMul_coeff_middle] at hL
+      exact hw hL
+  · obtain ⟨w, hm, hw⟩ := contextMul_shape hL
+    have hcomm := hf w hw
+    rw [hm, contextMul_coeff_middle,
+      show ([] ++ w ++ [x] : Monomial G) = [x] ++ w ++ [] by simp [hcomm],
+      contextMul_coeff_middle]
+
 @[simp] theorem contextMul_nil_nil_coeff [DecidableEq G] (f : AlgElement G k)
     (m : Monomial G) : (contextMul [] f []).coeff m = f.coeff m := by
   have := contextMul_coeff_middle ([] : Monomial G) ([] : Monomial G) m f

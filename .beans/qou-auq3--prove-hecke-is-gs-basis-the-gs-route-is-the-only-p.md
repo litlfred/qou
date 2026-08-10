@@ -498,3 +498,117 @@ The 45 non-degenerate shapes. §4g does one of them (`NotAGSBasis.oc`, the very
 overlap that refutes the *un*completed system). The remaining 44 are the work,
 and `mem_overlapTriples` is how any of them gets connected back to a composition
 of actual rules.
+
+## §4m — two structural facts, and the inclusion half
+
+Both decided by the kernel at n = 4.
+
+* `overlapTriples_four_proper_overlap_length_one` — **every proper overlap is a
+  single letter.** Not one of the 45 non-degenerate shapes overlaps in two or
+  more generators. The reason is visible in the four families: every leading
+  monomial is descending after its first letter (`σᵢσᵢ`, `σⱼσᵢσⱼ` with `j = i+1`,
+  `σᵢσⱼ` with `j < i`, `bsWord₁`), so a suffix of length ≥ 2 ends low-then-high
+  while every prefix of length ≥ 2 starts high-then-low. Only one letter can be
+  both. Every composition is "`lm₁` ends with `x`, `lm₂` begins with `x`".
+* `completedLMSet_four_infix_antichain` — **no leading monomial is a proper
+  factor of another.**
+
+The antichain settles the **inclusion half** of `IsGrobnerShirshovBasis`
+structurally. `inclusion_contexts_empty` proves that *every* inclusion
+composition of the completed system at n = 4 has both contexts empty and equal
+leading monomials — with **no hypothesis about which rules are involved**,
+because `decomposition` exhibits `inner.lm` as an infix of `outer.lm` and lengths
+do the rest. So the inclusion half is exactly the shared-leading-monomial case,
+which is handled by
+
+* `InclusionComposition.spoly_isZero_of_self` (framework) — no context hypothesis
+  needed there either: `lm = left ++ lm ++ right` forces both empty.
+* `InclusionComposition.spoly_isZero_of_scaled` (framework) — the general form,
+  `lc(inner) • outer = lc(outer) • inner` coefficientwise.
+* `DegenerateYbBs.{ybBs,bsYb}Inclusion_spoly_isZero` — the YB/BS pair, via
+  `relations_add_eq_zero`.
+
+Cross-check worth noting: the antichain *implies* there are no shapes with one
+context empty and the other not (`left = []` would make `a` a proper prefix of
+`b`). And indeed 13 + 45 = 58 exactly — the enumeration has no third kind.
+
+## Computational discharge of the whole n = 4 obligation set
+
+`computations/hecke_gs_confluence_n4.py` →
+`computations/hecke-gs-confluence-n4.witness.json`.
+
+Exact over ℤ[h] with `h = q − q⁻¹` a free symbol; **no float is formed anywhere**
+(verified: 0 raw floats in the witness). Builds the 16 rules to mirror the Lean
+definitions one-for-one — the correspondence table is in the script docstring and
+is the thing to check if the witness is ever doubted.
+
+    rules                          16
+    distinct leading monomials     13
+    overlap shapes                 58   (13 degenerate, 45 proper)
+    overlap compositions           92   failing: 0
+    inclusion compositions         22   failing: 0
+    proper-overlap reduction steps 428  (max chain 25)
+
+**Every composition resolves.** So the completed system *is* confluent at n = 4,
+and the Lean obligation set is known to be reachable rather than hoped to be.
+The witness independently reproduces 13 / 58 / 13 / 45 — the same numbers Lean's
+kernel decided by a completely different route.
+
+It is a **witness, not a proof**, and the bean should not be read as if the
+theorem were formalised. What it buys:
+
+* No counterexample is lurking. Before this, "the completed system is a GS basis
+  at n = 4" was Bokut & Shiao's claim specialised by hand.
+* A cost estimate for the Lean side: **428 single reduction steps** across the 70
+  proper-overlap compositions, max chain 25, histogram concentrated at 3 and 8.
+* A blueprint: each chain entry is `(target monomial, rule, left, right,
+  coefficient)`, which is exactly the data a `SingleStepReduction` witness needs.
+
+### Cheap cases the witness identifies
+
+* **4 compositions have S-polynomial identically zero**: the quadratic
+  self-overlaps `σᵢσᵢσᵢ` (`Q_i` against itself, left = overlap = right = `[σᵢ]`).
+  Reason: `heckeRelation i` is a polynomial in the single generator `σᵢ`, so
+  left- and right-multiplication by `σᵢ` agree on every monomial of it. Not yet
+  formalised — the obstacle is purely that `contextMul` is defined through
+  `excise`, so a general-`m` case split is needed rather than a rewrite.
+* **5 compositions resolve in one step**, all of the same shape as the §4g one:
+  `Y12×F20`, `B121×F20`, `Y23×F31`, `B232×F31` (→ `B120`/`B231`) and
+  `B231×F30` (→ `B230`). Braid-word-against-far-commutation, repaired by a single
+  Bokut–Shiao rule.
+
+## Revised remaining work
+
+*Closed*: the inclusion half at n = 4 (structurally, down to the same covering
+claim as §4l), the 13 degenerate overlap shapes, and 1 of the 45 proper shapes
+(#4879's `refuting_overlap_resolves`).
+
+*Open*: 44 proper overlap shapes at n = 4 ≈ 420 reduction steps, then the whole
+of general `n`.
+
+## §4n — the quadratic self-overlap, for every n
+
+The 4 identically-zero compositions the witness flagged are now proved, and
+proved **generally in n**, not at n = 4:
+
+* `AlgElement.contextMul_gen_comm` (framework, `Elem.lean`) — if every monomial
+  of `f` commutes with `x` *as a word* (`w ++ [x] = [x] ++ w`), then
+  `contextMul [] f [x] = contextMul [x] f []`. Proof is two applications of
+  `contextMul_shape` in opposite directions; no case split on the shape of `m`,
+  which is what made the direct attempt through `excise` unpleasant.
+* `heckeRelation_coeff_comm` — every monomial of the quadratic relation is a
+  power of the one generator `σᵢ` (`σᵢσᵢ`, `σᵢ`, the empty word), so it commutes
+  with `σᵢ`.
+* `quadSelfOverlap` / `_spoly_isZero` / `_resolves` — the composition of the
+  quadratic rule with itself over `σᵢσᵢσᵢ`, S-polynomial identically zero.
+
+By §4m this is the *only* way the quadratic family meets itself: the overlap must
+be a single letter, and `σᵢσᵢ` has just the one proper suffix.
+
+### Trap
+
+`rw` closes a goal by `rfl` only at *reducible* transparency, so
+`[σᵢ,σᵢ] ++ [σᵢ] = [σᵢ] ++ [σᵢ,σᵢ]` — true by `rfl` at default transparency —
+is left open after the rewrite that produces it. Four goals in this section
+failed that way; each needed an explicit `; rfl`. Reads as "unsolved goals" on a
+line that looks finished.
