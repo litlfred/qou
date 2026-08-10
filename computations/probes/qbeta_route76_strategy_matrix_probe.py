@@ -373,6 +373,60 @@ def main() -> int:
         "pass": bool(same_field and d_pt == d_75 and (live_ok is not False)),
     })
 
+    # ---- G7d: 11a1 (17 tetrahedra) -- a NEGATIVE, scoped as one ---------------------
+    # The configuration that reached 10_100 in 67.0s does NOT reach 11a1: modStd + finduni
+    # on the geometric class ran out a 2700s budget without returning.
+    #
+    # SCOPE, EXPLICITLY (a) NOT (b), per AGENTS.md "Before declaring refuted/ruled out":
+    # this says THIS CONFIGURATION AT THIS BUDGET did not finish. It does NOT say the
+    # Ptolemy route cannot reach 17 tetrahedra, and no invariant is offered that would
+    # justify the stronger claim. G6 made exactly this error one manifold earlier -- it
+    # recorded a 600s timeout and concluded "strictly less far-reaching", which G7c then
+    # disproved -- so the same over-reading is not repeated here.
+    #
+    # Two measurement caveats that matter for reading the number:
+    #   * modStd FORKS ~15 parallel modular jobs. On 4 cores that is ~4x self-
+    #     oversubscription, so 2700s of WALL is considerably more CPU-time than a serial
+    #     run would be. The timeout is a wall-clock statement.
+    #   * `subprocess.run(timeout=)` kills the Singular parent but NOT modStd's forked
+    #     children. 15 orphans survived the timeout at load average 12.5 and would have
+    #     silently inflated every subsequent timing had they not been reaped. Any
+    #     re-measurement must kill the process group, not the child.
+    #
+    # Where this leaves 11a1: unreached by EITHER route. Route 75's identification fails
+    # there (sibling probe G6's own table), and Route 76 does not finish in 45 minutes.
+    # So the honest joint statement is that 17 tetrahedra is past both routes as measured,
+    # not that either route is bounded there.
+    gates.append({
+        "gate": "G7d",
+        "claim": "11a1 (17 TETRAHEDRA) IS NOT REACHED BY THE CONFIGURATION THAT REACHED "
+                 "10_100 -- recorded as a scope-(a) negative, not a ceiling. modStd + "
+                 "finduni on the geometric class exhausted a 2700s budget without "
+                 "returning. This states that THIS CONFIGURATION AT THIS BUDGET did not "
+                 "finish; it does NOT state that the Ptolemy route cannot reach 17 "
+                 "tetrahedra, and no invariant is offered that would justify the stronger "
+                 "claim. Gate G6 made precisely that over-reading one manifold earlier and "
+                 "G7c disproved it. Since Route 75's identification ALSO fails on 11a1, "
+                 "the joint statement is that 17 tetrahedra is past both routes as "
+                 "measured -- not that either route is bounded there",
+        "scope": "(a) scope-limited negative -- this configuration, this budget",
+        "not_claimed": "that the Ptolemy route cannot reach 17 tetrahedra",
+        "measurements": [
+            {"manifold": "11a1", "tets": 17, "obstruction_class": 1, "geometric": True,
+             "strategy": "modStd_finduni", "ideal_form": "nz", "status": "timeout",
+             "budget_seconds": 2700, "milliseconds": 2700140}],
+        "route75_on_11a1": "identification fails (sibling probe G6)",
+        "reached_by_either_route": False,
+        "measurement_caveats": [
+            "modStd forks ~15 parallel modular jobs; on 4 cores that is ~4x self-"
+            "oversubscription, so the 2700s is wall-clock, not CPU-time",
+            "subprocess.run(timeout=) kills the Singular parent but NOT modStd's forked "
+            "children -- 15 orphans survived at load average 12.5 and would have inflated "
+            "every later timing had they not been reaped. Re-measurement must kill the "
+            "process group"],
+        "pass": True,
+    })
+
     out = {
         "probe": "qbeta_route76_strategy_matrix",
         "beans": ["qou-ptlm"],
@@ -392,7 +446,9 @@ def main() -> int:
     print("VERDICT: " + (
         "Route 76 DOES reach 10_100 (14 tetrahedra) -- 67s on the geometric class, "
         "landing Route 75's field. G6's 600s ceiling was the primary decomposition on "
-        "one obstruction class, recorded as a property of the manifold."
+        "one obstruction class, recorded as a property of the manifold. It does NOT "
+        "reach 11a1 (17 tets) at a 2700s budget -- recorded as a scope-(a) negative, "
+        "not a ceiling; Route 75 fails there too."
         if ok else "FAILED -- see the gates above."))
     return 0 if ok else 1
 
