@@ -30,10 +30,10 @@
     "B_D_AME_MeV": 2.224573
   },
   "markov_trace": {
-    "tr_M_bound": 0.38835712256235444,
-    "tr_M_free": 0.9835260151847,
-    "delta_tr_M_free_minus_bound": 0.5951688926223455,
-    "B_pred_single_trace_MeV": 0.4656205092911634,
+    "tr_M_bound": 0.5751722439177743,
+    "tr_M_free": 1.1317169043222148,
+    "delta_tr_M_free_minus_bound": 0.5565446604044405,
+    "B_pred_single_trace_MeV": 0.4354034819914979,
     "note": "single-trace B under-predicts AME; audit only, not wired"
   },
   "characters": [
@@ -42,10 +42,10 @@
         6
       ],
       "dim": 1,
-      "chi_bound": 1.55987019956416,
-      "chi_free": 1.5513064682004851,
-      "delta_chi_bound_minus_free": 0.008563731363674831,
-      "y_lambda": 0.05918771693112389
+      "chi_bound": 1.5598701995641606,
+      "chi_free": 1.5513064682004862,
+      "delta_chi_bound_minus_free": 0.008563731363674387,
+      "y_lambda": 0.11532422490206616
     },
     {
       "partition": [
@@ -53,10 +53,10 @@
         1
       ],
       "dim": 5,
-      "chi_bound": 3.2163173422358935,
-      "chi_free": 5.931211488316361,
-      "delta_chi_bound_minus_free": -2.7148941460804674,
-      "y_lambda": 0.05896068140092541
+      "chi_bound": 3.216317342235895,
+      "chi_free": 5.931211488316364,
+      "delta_chi_bound_minus_free": -2.7148941460804688,
+      "y_lambda": 0.07895296247592667
     },
     {
       "partition": [
@@ -64,10 +64,10 @@
         2
       ],
       "dim": 9,
-      "chi_bound": 1.6743952620342584,
-      "chi_free": 9.005913032758372,
-      "delta_chi_bound_minus_free": -7.331517770724114,
-      "y_lambda": 0.040284386965704785
+      "chi_bound": 1.674395262034259,
+      "chi_free": 9.005913032758373,
+      "delta_chi_bound_minus_free": -7.331517770724115,
+      "y_lambda": 0.046032434692020424
     },
     {
       "partition": [
@@ -76,10 +76,10 @@
         1
       ],
       "dim": 10,
-      "chi_bound": -0.4698058863776963,
+      "chi_bound": -0.4698058863776971,
       "chi_free": 5.365995034013455,
-      "delta_chi_bound_minus_free": -5.835800920391152,
-      "y_lambda": 0.010133463492312672
+      "delta_chi_bound_minus_free": -5.8358009203911525,
+      "y_lambda": 0.0
     },
     {
       "partition": [
@@ -87,10 +87,10 @@
         3
       ],
       "dim": 5,
-      "chi_bound": 4.249402022917671,
-      "chi_free": 4.626008012642499,
-      "delta_chi_bound_minus_free": -0.37660598972482795,
-      "y_lambda": 0.014120874004911362
+      "chi_bound": 4.2494020229176686,
+      "chi_free": 4.626008012642498,
+      "delta_chi_bound_minus_free": -0.3766059897248297,
+      "y_lambda": 0.01512381009802332
     },
     {
       "partition": [
@@ -102,7 +102,7 @@
       "chi_bound": -1.9722724461515564,
       "chi_free": 7.6255835144642345,
       "delta_chi_bound_minus_free": -9.59785596061579,
-      "y_lambda": 0.007318454352481824
+      "y_lambda": 0.0
     },
     {
       "partition": [
@@ -112,10 +112,10 @@
         1
       ],
       "dim": 10,
-      "chi_bound": -0.4901256523230277,
-      "chi_free": -1.9176345806380826,
-      "delta_chi_bound_minus_free": 1.4275089283150548,
-      "y_lambda": -0.0006853088854846304
+      "chi_bound": -0.4901256523230281,
+      "chi_free": -1.9176345806380828,
+      "delta_chi_bound_minus_free": 1.4275089283150546,
+      "y_lambda": 0.0
     },
     {
       "partition": [
@@ -124,10 +124,10 @@
         2
       ],
       "dim": 5,
-      "chi_bound": -3.497294406512964,
-      "chi_free": 3.7479584408122326,
-      "delta_chi_bound_minus_free": -7.2452528473251965,
-      "y_lambda": 0.0007731867369322183
+      "chi_bound": -3.497294406512962,
+      "chi_free": 3.74795844081223,
+      "delta_chi_bound_minus_free": -7.245252847325192,
+      "y_lambda": 0.0
     },
     {
       "partition": [
@@ -137,10 +137,10 @@
         1
       ],
       "dim": 9,
-      "chi_bound": -0.8196549485044766,
-      "chi_free": 0.8442338462765667,
-      "delta_chi_bound_minus_free": -1.6638887947810432,
-      "y_lambda": -0.0003420517708714601
+      "chi_bound": -0.8196549485044775,
+      "chi_free": 0.8442338462765663,
+      "delta_chi_bound_minus_free": -1.6638887947810437,
+      "y_lambda": 0.0
     },
     {
       "partition": [
@@ -151,10 +151,10 @@
         1
       ],
       "dim": 5,
-      "chi_bound": 2.155255337448733,
-      "chi_free": -2.230467698165446,
-      "delta_chi_bound_minus_free": 4.385723035614179,
-      "y_lambda": 9.86355761029728e-05
+      "chi_bound": 2.155255337448731,
+      "chi_free": -2.2304676981654445,
+      "delta_chi_bound_minus_free": 4.385723035614175,
+      "y_lambda": 0.0
     },
     {
       "partition": [
@@ -166,22 +166,24 @@
         1
       ],
       "dim": 1,
-      "chi_bound": -0.6768766834329435,
-      "chi_free": 0.6732568963702186,
-      "delta_chi_bound_minus_free": -1.350133579803162,
-      "y_lambda": -1.2437986973190192e-05
+      "chi_bound": -0.6768766834329429,
+      "chi_free": 0.6732568963702182,
+      "delta_chi_bound_minus_free": -1.350133579803161,
+      "y_lambda": 0.0
     }
   ],
   "witness": {
-    "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+    "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
     "scriptHash": "3ad153be9365",
     "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py"
   },
   "scriptHash": "3ad153be9365",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "58abb081414b74321a6be9450d00f24bfbc0f56c",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "commitSha": "576d19cd00392d6a67b0dd24d2ef3d7bcf3b8792",
   "engine": "python",
-  "computedAt": "2026-07-18T17:13:08.395795+00:00",
+  "computedAt": "2026-08-10T12:49:51.934832+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "h6_deuteron_free_word_chi_lambda_probe.py"
 }
