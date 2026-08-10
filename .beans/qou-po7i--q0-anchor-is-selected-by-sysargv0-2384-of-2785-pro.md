@@ -102,3 +102,52 @@ Related: bean `tnjb` holds the muon→proton migration posture and the owner's
 that this does **not** authorise a bulk rewrite. This bean is the *recording*
 problem, not the *migration* problem — a witness should say which anchor it used
 whichever anchor that is. Keep them separate.
+
+## Second instance, same day — and it points the OTHER way
+
+`habiro-coefficients-oxygen-14` hit this on regeneration: committed at
+ideal/muon, re-run took proton, and `tr_M_at_q0` moved 6.7e-7 with it.
+
+**The decisive method is the family survey, not the single file.** All 26
+sibling `habiro-coefficients-*.witness.json` carry PROTON — including the four
+other `EVEN_A_OPEN` members the change did not touch. The committed oxygen-14
+was the only one at muon. So here the re-run brought the file INTO line, and the
+right declaration is `physical_proton` — the opposite of a-K, where the committed
+witness matched the family and the re-run was the outlier.
+
+Two instances, two opposite answers, same bug. That is the argument against any
+rule of the form "prefer the committed value" or "prefer the current default":
+neither would have got both right. What got both right was comparing the
+committed value against q₀/z at both anchors (decisive to f64 epsilon) and then
+checking what the file's siblings do.
+
+## The mechanism's two halves key on DIFFERENT stems
+
+Worth its own line, because it means declaring one stem can fix half the problem
+and leave the other silently broken:
+
+    anchor SELECTION  →  q_parameter, keyed on `sys.argv[0]`'s stem
+                         (the invoked script — a driver, a test runner, a wrapper)
+    anchor STAMPING   →  WitnessBuilder, keyed on the `script_path` it was given
+                         (for habiro that is `_write_witness(script_path=__file__)`,
+                          i.e. `_habiro_coefficient_extract`)
+
+For oxygen-14 those are `extend_even_a_mirror_pair_test` and
+`_habiro_coefficient_extract` respectively — neither of which is the witness's
+own name. Both had to be declared. A checker that verifies "every producer that
+writes a witness is declared" will not catch this on its own; it has to know
+which stem each half consults.
+
+I walked into it myself: the driver I used to regenerate a single atom had stem
+`regen_oxygen14`, which matches nothing, so selection silently took proton
+regardless of what either real stem was declared as.
+
+## Declared so far
+
+    ideal_muon        aK_via_lp_dual_hecke_basis
+    physical_proton   _habiro_coefficient_extract
+    physical_proton   extend_even_a_mirror_pair_test
+
+`physical_proton` membership cannot change a value — `q_parameter` tests only
+`ideal_muon` membership and treats everything else as proton — so those two are
+stamping-only declarations, safe to make on evidence without a re-run.
