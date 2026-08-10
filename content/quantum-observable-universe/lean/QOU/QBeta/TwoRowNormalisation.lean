@@ -120,4 +120,51 @@ theorem level_sum_step (N : ℕ) (d d' f g : ℕ → R)
     ring
   rw [hlhs, hrhs, hbdry, add_zero]
 
+/-! ### The two ingredients `hbdry` needs
+
+The boundary term `d N * f (N + 1)` dies for a *different* reason in each
+parity, and both reasons are supplied here. See the bean `qou-f1qs` note: with
+`N = ⌊(n+1)/2⌋` (the **upper** level's shape count),
+
+* `n` odd — the lower level stops one shape earlier, so `d N = 0`;
+* `n` even — `d N ≠ 0` but the weight above it is `yw q (n+1) 0`, which
+  vanishes because `[0]_q = 0`.
+
+Picking `N = ⌊n/2⌋` instead makes `hbdry` false for odd `n`. -/
+
+/-- **`[0]_q = 0`**, hence the weight at argument `0` vanishes. This is what
+kills the boundary term in the even case. -/
+theorem qint_zero (q : R) : TemperleyLiebTower.qint q 0 = 0 := by
+  simp [TemperleyLiebTower.qint]
+
+/-- **`yw q n 0 = 0`.** The shape "one past the end of the row" carries no
+weight, which is what `hbdry` asserts when `n` is even. -/
+theorem yw_zero (q : R) (n : ℕ) : TemperleyLiebTower.yw q n 0 = 0 := by
+  simp [TemperleyLiebTower.yw, qint_zero]
+
+/-- The ballot / Catalan-triangle number `d(n,k) = dim` of the two-row irrep
+`(n−k, k)`, carried in `R`.
+
+Defined by cases on `k` rather than as `C(n,k) − C(n,k−1)` with truncating
+subtraction: at `k = 0` that expression would read `C(n,0) − C(n,0) = 0`,
+because `0 - 1 = 0` in `ℕ`, where the true dimension is `1`. -/
+noncomputable def ballot (n : ℕ) : ℕ → R
+  | 0 => 1
+  | (k + 1) => (n.choose (k + 1) : R) - (n.choose k : R)
+
+/-- **Pascal for the ballot numbers**, `d(n+1,k+1) = d(n,k+1) + d(n,k)`.
+
+Two applications of Pascal's rule for binomials, and the `k = 0` case works out
+because the two `−C(n,0)` terms cancel against the `+1` of `ballot n 0`. This
+is the dimension half of `level_sum_step`'s `hd`. -/
+theorem ballot_pascal (n k : ℕ) :
+    ballot (n + 1) (k + 1) = ballot n (k + 1) + (ballot n k : R) := by
+  cases k with
+  | zero =>
+      simp [ballot, Nat.choose_one_right]
+  | succ j =>
+      simp only [ballot, Nat.choose_succ_succ n (j + 1), Nat.choose_succ_succ n j]
+      push_cast
+      ring
+
 end QOU.QBeta.TwoRowNormalisation
