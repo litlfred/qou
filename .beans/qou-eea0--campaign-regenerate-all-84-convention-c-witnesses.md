@@ -138,3 +138,46 @@ Two mechanisms added, because "I was careful" is not one:
 (The first attempt to *test* the signal path signalled the bash wrapper rather
 than the python process and so proved nothing — noted so the test is not
 mistaken for evidence.)
+
+## "Ran OK but the C fingerprint survived" — three different reasons
+
+Not a single failure mode, and worth separating before the impact report treats
+them as one:
+
+**1. An audit OF convention C.** `audits/weight-factor-audit.witness.json` holds
+
+```json
+"check": "C8",
+"name": "Markov parameter z = 1/(q^0.5 + q^-0.5) at q_0",
+"computed_z": "0.49932033418369445241344268025766630375194816404153194527617"
+```
+
+This is not a stale production number — it is a check that deliberately
+evaluates the C formula. The *check itself* is now auditing the wrong
+convention, which is a real defect, but a different one: the fix is to migrate
+the audit's C8 criterion, not to regenerate a number. `changed=False`, as
+expected, since the formula is written into the audit.
+
+**2. A stored value the producer does not recompute.**
+`bond-extensivity-equal-weight.witness.json` carries `f_bond.pp =
+0.4993203341836944`. The producer ran clean and changed nothing
+(`changed=False`, 0 deltas), so this value is stored rather than derived on each
+run. That a *bond fraction* equals `z_C` to sixteen digits is not a coincidence
+and wants explaining on its own terms — flagged, not assumed.
+
+**3. A preserved historical field.**
+`binding-k-enumerator.witness.json` has `stabilization_z: 0.4993203341836945`
+sitting immediately beside `historical_markov_at_braid`. The producer did rewrite
+the witness (41 deltas) but carries this section through deliberately.
+
+**Consequence for the report:** "C fingerprint cleared" is the wrong headline
+metric on its own. A witness can be fully migrated and still contain the string,
+legitimately. The report must count *deltas by kind* and treat surviving
+fingerprints as a triage queue rather than a failure count.
+
+## Run notes
+
+Producer runtimes are heavily skewed — `bond_extensivity_equal_weight` 0.8 s,
+`binding_k_enumerator` 452 s, `delta_lambda_2row_stratum_analysis` hit the 600 s
+timeout. Budgeting by average would have been wrong; the timeout is doing real
+work and timed-out producers are recorded as such rather than silently skipped.
