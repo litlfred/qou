@@ -17,8 +17,36 @@ Lepton number is conserved by construction:
 
 Every process expressed as a sequence of Skein relations and Hecke reductions conserves lepton number.
 
-**Lepton number as a $\mathbb{Z}$-grading.**
-The Skein module $\mathcal{K}(S^3; q)$ admits a natural $\mathbb{Z}$-grading by the smoothing count. Links in the nuclear sector have grade $0$. Each smoothing shifts the grade by $+1$. Hecke relations act within a fixed grade. Reidemeister moves leave the smoothing count invariant. Both preserve the grade.
+**Lepton number is not a $\mathbb{Z}$-grading (proved).**
+An earlier version of this section asserted that the Skein module
+$\mathcal{K}(S^3; q)$ admits a natural $\mathbb{Z}$-grading by the smoothing
+count, with the nuclear sector in grade $0$ and each smoothing shifting the
+grade by $+1$. **That is false**, and the obstruction is proved sorry-free in
+`QOU/StandardModel/LeptonNumberGradingObstruction.lean`.
+
+The skein relation is *inhomogeneous* for such a grading. Writing it as
+$$
+  L_+ - L_- = (q - q^{-1})\,L_0 ,
+$$
+the left-hand side is a difference of grade-$g$ classes, hence grade $g$,
+while the right-hand side carries one further smoothing, hence grade $g+1$
+(scalars are grade-preserving). An element lying in two distinct homogeneous
+components is $0$, so the relation forces $(q - q^{-1})L_0 = 0$ and
+$L_+ = L_-$. Imposing the grading therefore annihilates every smoothing:
+it would make lepton number identically $0$, which is the one value it
+cannot take.
+
+This is a scope-(b) exclusion of *one construction*, with its invariant
+cited (the defining disjointness of homogeneous components); it does not
+touch lepton number itself, the Skein module, or the $Y = B - L$ route.
+
+**What the correct structure appears to be: a filtration.** An inhomogeneous
+relation is exactly what a *filtration* tolerates — the skein relation lowers
+the filtration degree by one rather than preserving a grade. That is the
+Vassiliev / finite-type filtration, and the corpus already carries it under
+`QOU/KnotTheory/Vassiliev/` (`finiteTypeSubmodule_mono` is the increasing
+family). Whether lepton number is recovered as a filtration degree there is
+**open** and is not claimed here; see bean `qou-kl39`.
 
 **Individual lepton assignments.**
 

@@ -114,6 +114,11 @@ import QOU.StandardModel.SecondCrossingInvariant
 -- is entailed by Q (GMN at I3=0 pins Y uniquely, so it discriminates nothing);
 -- the LH half is exactly B - L. Reduces the open Y item to one condition.
 import QOU.StandardModel.HyperchargeBatteryReduction
+-- Lepton number cannot be a Z-grading by smoothing count: the skein relation
+-- is inhomogeneous, so imposing the grading annihilates every smoothing and
+-- would make L identically 0. Scope-(b); the repair is a FILTRATION
+-- (QOU/KnotTheory/Vassiliev), untested. bean qou-kl39
+import QOU.StandardModel.LeptonNumberGradingObstruction
 -- The strand-twist hypercharge battery reduces to the single equation T = 3Q:
 -- the nucleon check is entailed by charge additivity (and states one condition
 -- twice), and the '4 of 10,000 survivors' is 1x2x2x1 multiset counting.
