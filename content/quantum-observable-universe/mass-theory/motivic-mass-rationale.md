@@ -16,5 +16,6 @@ exceptional divisor of that blow-up.
 The motivic mass $\mathfrak{m}_{\mathrm{mot}}(\beta)$ is a class in
 $\widehat{\mathcal{M}}$ — a *motive*, not yet a real number. The
 real-valued physical mass is recovered by applying the
-[archimedean realization functor](#def:archimedean-realization-functor)
-of the next subsection.
+[archimedean realization functor](#def:archimedean-realization-functor),
+constructed later in this chapter once the adelic substrate it projects
+from is in place.
