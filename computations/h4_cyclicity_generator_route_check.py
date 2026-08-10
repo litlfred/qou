@@ -57,11 +57,15 @@ the tables the modules claim to be about, computed by an independent
 implementation. A Lean file can be sorry-free and internally consistent while
 enumerating the wrong 72 facts; that is the failure mode this closes.
 
-Arithmetic
-----------
-Exact throughout — sympy ``Poly`` over ``ℚ[z, h]``. No floats, no anchor: the
-identities hold identically in ``z`` and ``h``, so this computation has no
-substrate pin to record.
+Arithmetic and anchor
+---------------------
+Exact throughout — sympy over ``ℚ[z, h]``; no floats. The identities hold
+identically in ``z`` and ``h``, so **nothing here is evaluated at a substrate
+pin**. The canonical experimental (proton) anchor is still recorded, read live
+from ``qou_substrate.constants`` rather than transcribed, per the 2026-08-07
+owner directive: a reader must be able to tell which layer a witness belongs to
+without inferring it from a call site. Same convention as the sibling producer
+``h4_markov_weights_closed_form.py``.
 """
 
 from __future__ import annotations
@@ -74,6 +78,7 @@ from pathlib import Path
 import sympy as sp
 
 REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 LEAN = REPO / "content/quantum-observable-universe/lean/QOU/Machinery"
 RUNG = LEAN / "HeckeH4StabilizationRung.lean"
 LAWS = LEAN / "HeckeH4AlgebraLaws.lean"
@@ -325,8 +330,25 @@ def main() -> int:
 
     all_fails = pres_fails + cyc_fails + tree_fails + lean_fails
     ok = not all_fails
+    # The canonical experimental (proton) pin, read live — never transcribed.
+    # Nothing below is evaluated at it; it is recorded so the witness declares
+    # which layer it belongs to (owner directive 2026-08-07).
+    try:
+        import qou_substrate.witness as _qw
+
+        q0_value = _qw._q0_value_for_anchor("proton")
+    except Exception:  # noqa: BLE001
+        q0_value = None
+
     witness = {
         "schema": "witness/v1",
+        "q0Anchor": "proton",
+        "q0Value": q0_value,
+        "q0Note": (
+            "Recorded for layer identification only. This computation is exact in "
+            "symbolic z and h and is evaluated at no substrate pin, so no result "
+            "here depends on this value."
+        ),
         "description": (
             "Independent symbolic re-derivation of the H4 generator-route cyclicity "
             "content: the 72 atomic identities tr(sigma_i . b_j) = tr(b_j . sigma_i), "
