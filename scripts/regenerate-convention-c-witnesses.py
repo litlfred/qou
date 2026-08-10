@@ -135,6 +135,13 @@ def snapshot(witness: pathlib.Path):
 #: it is a division by epsilon.
 NOISE_FLOOR = 1e-12
 
+#: Lines of producer stderr kept per record. Was 3, which is shorter than a
+#: Python traceback and shorter than the DeprecationWarnings several producers
+#: emit before failing -- three rho_k_h3a_* producers exited 2 with nothing in
+#: the record but an unrelated warning, so the actual error was unrecoverable
+#: from the log and each had to be re-run by hand to be diagnosed at all.
+TAIL_LINES = 25
+
 
 def classify(before: str, after: str):
     """Return (kind, relative_change) for one value.
@@ -476,14 +483,14 @@ def run_all(timeout: int, retry_failed: bool = False):
             _CHILDREN.append(proc)
             out, err = proc.communicate(timeout=timeout)
             status = "ok" if proc.returncode == 0 else f"exit{proc.returncode}"
-            tail = (err or out or "").strip().splitlines()[-3:]
+            tail = (err or out or "").strip().splitlines()[-TAIL_LINES:]
         except subprocess.TimeoutExpired:
             _kill_group(proc)
             try:
                 out, err = proc.communicate(timeout=15)
             except Exception:                                    # noqa: BLE001
                 out = err = ""
-            status, tail = "timeout", (err or out or "").strip().splitlines()[-2:]
+            status, tail = "timeout", (err or out or "").strip().splitlines()[-TAIL_LINES:]
         except Exception as e:                                   # noqa: BLE001
             _kill_group(proc)
             status, tail = f"error:{type(e).__name__}", [str(e)[:200]]
