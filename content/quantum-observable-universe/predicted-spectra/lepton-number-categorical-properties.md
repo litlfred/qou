@@ -66,7 +66,15 @@ $$
 reproduces every row of the table below, hadrons included. It is a
 **candidate**, not a derivation: $\mathrm{sign}$ is a choice of function, the
 quark braid word is still absent from the corpus, and chirality ($u_L$ vs
-$u_R$) is not yet represented. See bean `qou-kl39`.
+$u_R$) is not yet represented.
+
+**And it is refuted as a function of the link.** Markov II (stabilisation)
+raises the writhe by $1$ without changing the link, so $L$ jumps from $0$ to
+$1$ on the baryon --- violating conservation clause 3 above, which requires
+$\Delta L = 0$ under Markov moves (`leptonNumber_not_markov_invariant`). The
+candidate survives only if states are Gröbner--Shirshov normal forms, where a
+canonical representative is fixed; on that reading clause 3 is about a
+different object and the corpus should say which. See bean `qou-kl39`.
 
 **Individual lepton assignments.**
 

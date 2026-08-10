@@ -56,6 +56,12 @@ distinct word for the two, which is what a genuine left-handed statement would
 need.  So this is a **candidate** for `L`, matching every stated row, not a
 derivation of it.
 
+**And it is refuted as a state function on Markov classes** — see
+`leptonNumber_not_markov_invariant` below.  Stabilisation raises the writhe by
+`1`, flipping `L` from `0` to `1` on the baryon, which violates the corpus's own
+`ΔL = 0` under Markov moves.  It survives only if states are
+Gröbner–Shirshov normal forms.
+
 `L = sign(w)` is writhe-*dependent*, and that is consistent: `Y = B - L` still
 does not factor through `w` (proved below), because `B` varies at fixed `w`.
 The invariant required to be independent of the writhe is `B`, not `L`.
@@ -180,5 +186,30 @@ theorem Y_eq_B_sub_L_left_handed
   have hL : leptonNumber quark = 0 := by
     unfold leptonNumber; rw [hq]; rfl
   refine ⟨by rw [hL]; ring, ?_, ?_⟩ <;> decide
+
+
+/-! ### REFUTATION: `sign(writhe)` is not Markov-invariant -/
+
+/-- **The candidate fails the corpus's own conservation axiom.**
+
+Markov II (stabilization) sends `β ∈ B_n` to `βσ_n ∈ B_{n+1}` with the *same*
+link closure, and raises the writhe by `1`.  The Borromean baryon has writhe `0`
+(`writhe_borromean`), so its stabilisation has writhe `1` — and therefore
+`L = sign(writhe)` jumps from `0` to `1`.
+
+`lepton-number-categorical-properties.md` conservation clause 3 requires
+`ΔL = 0` under Markov moves.  This is `ΔL = 1`.  So `L = sign(writhe)` is **not
+a function of the link**, only of the braid word, and it is refuted as a state
+function on Markov classes.
+
+The one surviving reading is that states are **Gröbner–Shirshov normal forms**
+(`mba-step02-gs-reduction.md`: "every downstream algorithm consumes `NF(w)`, not
+the raw braid"), where a canonical representative is fixed and Markov moves do
+not act within the state space.  On that reading `L = sign(writhe)` is
+well-defined — but then conservation clause 3 is about a different object than
+this `L`, and the corpus should say which. -/
+theorem leptonNumber_not_markov_invariant :
+    leptonNumber borromean = 0 ∧ leptonNumber (borromean ++ [3]) = 1 := by
+  refine ⟨by decide, by decide⟩
 
 end QOU.StandardModel.BraidWords
