@@ -745,6 +745,59 @@ def run_all(timeout: int, retry_failed: bool = False):
     print("\nrun complete", flush=True)
 
 
+def convention_coverage(paths):
+    """How many of these witnesses actually SAY which convention they are.
+
+    The detector finds convention C two ways — a known decimal, or a nonzero
+    `y_λ` on a three-or-more-row partition — and **both key on `y_λ` tables**.
+    A convention-dependent quantity that is not a `y_λ` table is invisible to
+    it. `tr_M(β)` is the case that bit: it is the Markov trace at parameter `z`,
+    so it is fully convention-dependent, it carries no partition structure, and
+    `atomic-tr-m-mpfr-50dps.witness.json` therefore never appeared in the work
+    list at all. Everything derived downstream — ρ, Δρ, binding, mass — inherits
+    the same invisibility.
+
+    No syntactic rule fixes that: a bare trace value looks identical under
+    either convention. The only thing that can distinguish them is
+    **provenance** — the producer saying which convention it computed in.
+
+    So rather than pretend to detect the undetectable, this counts how much of
+    the corpus is even *capable* of answering the question. A witness with no
+    `convention` field is not evidence of convention C; it is evidence that the
+    work-list count is a lower bound of unknown slack, which is worth printing
+    next to that count instead of leaving implied.
+    """
+    have, missing = [], []
+    for rel in paths:
+        try:
+            doc = json.loads((REPO / rel).read_text())
+        except (OSError, json.JSONDecodeError):
+            continue
+        # `markov_convention` specifically, NOT `convention`: the latter is
+        # already used corpus-wide for the CROSSING convention
+        # ("colour-weighted-averaged-crossing", "sign-only-crossings", …),
+        # an orthogonal axis. Counting those as trace-convention provenance
+        # would report seven witnesses as answered when none of them
+        # addresses the question.
+        if isinstance(doc, dict) and doc.get("markov_convention"):
+            have.append((rel, doc["markov_convention"]))
+        else:
+            missing.append(rel)
+    total = len(have) + len(missing)
+    if not total:
+        return
+    print(f"convention provenance: {len(have)}/{total} witnesses declare a "
+          f"`convention` field")
+    for rel, conv in sorted(have):
+        print(f"    {conv:<4} {rel.replace('computations/', '')}")
+    if missing:
+        print(f"  {len(missing)} declare nothing — for these the work-list "
+              f"count is a LOWER BOUND, not a total.\n"
+          f"  (A trace or a derived scalar looks the same under either "
+          f"convention; only the producer knows.)")
+    print()
+
+
 def impact_vs_main(base: str = "origin/main"):
     """Total impact: every witness's CURRENT state against its state on `base`.
 
@@ -764,6 +817,7 @@ def impact_vs_main(base: str = "origin/main"):
         cwd=str(REPO), capture_output=True, text=True).stdout.split()
     witnesses = [f for f in changed if f.endswith(".json")]
     print(f"impact vs {base}: {len(witnesses)} witness file(s) differ\n")
+    convention_coverage(witnesses)
 
     kinds, shifts, per_witness = {}, [], []
     for rel in witnesses:

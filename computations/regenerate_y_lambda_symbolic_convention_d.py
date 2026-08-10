@@ -202,7 +202,14 @@ def main() -> int:
             "y_lambda = [n-2k+1]_q/[2]_q^n on two-row partitions, exactly 0 on "
             "three-or-more rows."
         ),
-        "convention": "D",
+        # NOT "convention": that key is already taken, corpus-wide, for the
+        # CROSSING convention -- chi-*-at-q0-50dps witnesses carry
+        # "colour-weighted-averaged-crossing", "averaged-crossings",
+        # "sign-only-crossings". Those describe how inter-nucleon crossings
+        # are built and are orthogonal to which Markov trace is being taken.
+        # Reusing the key would collide two independent axes under one name,
+        # which is the overloaded-symbol failure AGENTS.md warns about.
+        "markov_convention": "D",
         "markov_parameter_symbolic": "q**3/(q**2 + 1)",
         "scriptFile": f"computations/{Path(__file__).name}",
         "references": [
