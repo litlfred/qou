@@ -1,11 +1,69 @@
 ---
 # qou-o16k
 title: 'Test κ at the 8-shell (¹⁶O) — the falsification the anchor-identified form has never faced'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-10T02:32:00Z
-updated_at: 2026-08-10T02:32:00Z
+updated_at: 2026-08-10T03:05:00Z
 ---
+
+## Result (2026-08-10) — the test is sharper than expected, and partly blocked
+
+[`probe_kappa_shell8_excess_convention.py`](../computations/probe_kappa_shell8_excess_convention.py)
+→ `kappa-shell8-excess-convention.witness.json`, 4/4 assertions. No fit, no
+tuning; arithmetic only.
+
+**The κ fit is convention-blind by construction.** The corpus carries two
+inequivalent definitions of the excess `(n_pp − n_nn)`:
+
+| | definition | in Z |
+|---|---|---|
+| **C1** | `def:canonical-braid-interface-composition` — `n_pp = max(0, Z−1)` | linear |
+| **C2** | `prop:derived-mass-formula-light-isotopes` — `n_pp = Z(Z−1)/2` | quadratic |
+
+They **agree on every anchor κ has ever seen** and diverge everywhere else:
+
+| nuclide | Z | N | shell | C1 | C2 | C2/C1 | role for κ |
+|---|---|---|---|---|---|---|---|
+| ³He | 2 | 1 | 2 | 1 | 1 | 1× | cross-check |
+| ³H | 1 | 2 | 2 | −1 | −1 | 1× | cross-check |
+| ⁴He | 2 | 2 | 2 | 0 | 0 | — | identification |
+| ¹⁵O | 8 | 7 | 8 | 1 | **7** | **7×** | never tested |
+| ¹⁵N | 7 | 8 | 8 | −1 | **−7** | **7×** | never tested |
+| ³⁹K | 19 | 20 | 20 | −1 | **−19** | **19×** | never tested |
+
+So the fit that fixed κ **could not have distinguished the two conventions** —
+it lives entirely inside the region where they coincide. Since `kappa_closed`
+carries **no shell index** (it is a function of `q` and `m_e` alone, verified),
+the conjecture predicts one constant for every shell, and that constant
+multiplies an excess that differs by 7× at shell 8 depending on which
+convention is meant. The block does not say which.
+
+That is a second defect, independent of the anchor-identification one: even
+granting the closed form, **the conjecture is not yet a determinate statement**
+until the convention is named.
+
+## Blocked, and stated rather than guessed
+
+Extracting an *observed* slope at the 8 shell needs the binding decomposition
+the removed producer `probe_kappa_categorical_h7a_closed.py` carried. Checked:
+the naive route (mirror-pair ΔB over Δexcess for ³He/³H) gives −0.382 MeV,
+about 2.8× off `κ_emp = −1.0708`, so κ is plainly not a bare mirror-pair slope
+and other terms are in play. **Reconstructing that decomposition by guesswork
+would be a new fit** — precisely what the demotion was about. Blocker recorded
+instead.
+
+## Next
+
+1. **Name the convention** in the block — a one-line fix that makes the
+   conjecture determinate, and a prerequisite for any 8-shell test. Requires an
+   owner call on which of C1/C2 κ was fitted against; the anchors cannot say.
+2. **Recover the binding decomposition** (git history of the removed producer),
+   then run the 8-shell prediction with no re-tuning.
+3. Corroboration for the premise, from the corpus itself:
+   `def:canonical-braid-interface-composition` already states *"A linear fit
+   across the interfaces evaluates the 4-atom set, requiring evaluation against
+   larger $A$ to verify structural predictions."*
 
 Follow-up to `qou-k4dm`. Answers the owner's question *"deprecated magic shell —
 did any align with 8-fold? anything in paper corpus to relook at?"*

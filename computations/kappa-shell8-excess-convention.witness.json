@@ -1,0 +1,158 @@
+{
+  "engine": "python-stdlib",
+  "engineVersion": "3",
+  "computedAt": "2026-08-10T02:48:22.208503+00:00",
+  "computation": "kappa-shell8-excess-convention",
+  "scriptFile": "probe_kappa_shell8_excess_convention.py",
+  "contentBlock": "conj:magic-shell-coupling-kappa",
+  "description": "Structural probe, no fit. Shows (a) kappa_closed carries no shell index, (b) every anchor kappa has been evaluated at lies in the A_magic = 2 shell, and (c) the corpus's two excess conventions coincide on exactly those anchors and diverge from shell 8 onward.",
+  "parameters": {
+    "q_0": 1.1099785827513808,
+    "q_0_pin": "proton (experimental layer), m_p/m_e",
+    "m_e_MeV": 0.51099895,
+    "kappa_empirical_MeV": -1.0707907503265857,
+    "magic_anchors": [
+      2,
+      8,
+      20,
+      28,
+      50,
+      82,
+      126
+    ]
+  },
+  "data": {
+    "kappa_closed_MeV": -1.070424123445266,
+    "kappa_closed_is_shell_independent": true,
+    "excess_table": [
+      {
+        "nuclide": "3He",
+        "Z": 2,
+        "N": 1,
+        "shell": 2,
+        "role": "cross-check anchor (single-magic)",
+        "excess_C1_interface": 1,
+        "excess_C2_pairs": 1,
+        "C2_over_C1": 1.0,
+        "binding_term_C1_MeV": -1.070424123445266,
+        "binding_term_C2_MeV": -1.070424123445266,
+        "conventions_agree": true
+      },
+      {
+        "nuclide": "3H",
+        "Z": 1,
+        "N": 2,
+        "shell": 2,
+        "role": "cross-check anchor (single-magic)",
+        "excess_C1_interface": -1,
+        "excess_C2_pairs": -1,
+        "C2_over_C1": 1.0,
+        "binding_term_C1_MeV": 1.070424123445266,
+        "binding_term_C2_MeV": 1.070424123445266,
+        "conventions_agree": true
+      },
+      {
+        "nuclide": "4He",
+        "Z": 2,
+        "N": 2,
+        "shell": 2,
+        "role": "identification anchor (doubly magic)",
+        "excess_C1_interface": 0,
+        "excess_C2_pairs": 0,
+        "C2_over_C1": null,
+        "binding_term_C1_MeV": -0.0,
+        "binding_term_C2_MeV": -0.0,
+        "conventions_agree": true
+      },
+      {
+        "nuclide": "15O",
+        "Z": 8,
+        "N": 7,
+        "shell": 8,
+        "role": "NEVER TESTED",
+        "excess_C1_interface": 1,
+        "excess_C2_pairs": 7,
+        "C2_over_C1": 7.0,
+        "binding_term_C1_MeV": -1.070424123445266,
+        "binding_term_C2_MeV": -7.492968864116863,
+        "conventions_agree": false
+      },
+      {
+        "nuclide": "15N",
+        "Z": 7,
+        "N": 8,
+        "shell": 8,
+        "role": "NEVER TESTED",
+        "excess_C1_interface": -1,
+        "excess_C2_pairs": -7,
+        "C2_over_C1": 7.0,
+        "binding_term_C1_MeV": 1.070424123445266,
+        "binding_term_C2_MeV": 7.492968864116863,
+        "conventions_agree": false
+      },
+      {
+        "nuclide": "16O",
+        "Z": 8,
+        "N": 8,
+        "shell": 8,
+        "role": "NEVER TESTED (doubly magic)",
+        "excess_C1_interface": 0,
+        "excess_C2_pairs": 0,
+        "C2_over_C1": null,
+        "binding_term_C1_MeV": -0.0,
+        "binding_term_C2_MeV": -0.0,
+        "conventions_agree": true
+      },
+      {
+        "nuclide": "40Ca",
+        "Z": 20,
+        "N": 20,
+        "shell": 20,
+        "role": "NEVER TESTED (doubly magic)",
+        "excess_C1_interface": 0,
+        "excess_C2_pairs": 0,
+        "C2_over_C1": null,
+        "binding_term_C1_MeV": -0.0,
+        "binding_term_C2_MeV": -0.0,
+        "conventions_agree": true
+      },
+      {
+        "nuclide": "39K",
+        "Z": 19,
+        "N": 20,
+        "shell": 20,
+        "role": "NEVER TESTED",
+        "excess_C1_interface": -1,
+        "excess_C2_pairs": -19,
+        "C2_over_C1": 19.0,
+        "binding_term_C1_MeV": 1.070424123445266,
+        "binding_term_C2_MeV": 20.338058345460055,
+        "conventions_agree": false
+      }
+    ],
+    "blocker": "Extracting an OBSERVED slope at the 8 shell requires the binding decomposition carried by the removed producer probe_kappa_categorical_h7a_closed.py. Stated as a blocker rather than reconstructed by guesswork -- a reconstructed decomposition would be a new fit, which is what the demotion to conjecture was about."
+  },
+  "assertions": [
+    {
+      "name": "kappa_closed_is_shell_independent",
+      "passed": true,
+      "detail": "kappa_closed(q, m_e) takes no Z, N or A argument -- the conjecture predicts one constant for every magic shell"
+    },
+    {
+      "name": "conventions_agree_on_every_tested_anchor",
+      "passed": true,
+      "detail": "C1 and C2 give the same excess on 3He, 3H and 4He -- the anchors that fixed kappa cannot distinguish them"
+    },
+    {
+      "name": "conventions_diverge_at_shell_8",
+      "passed": true,
+      "detail": "C1 and C2 disagree on 15O/15N/39K -- the discriminating measurement lies entirely outside the region kappa was fitted in"
+    },
+    {
+      "name": "every_kappa_anchor_is_in_shell_2",
+      "passed": true,
+      "detail": "identification (2,2) and cross-check (2,1)/(1,2) are all A_magic = 2; shells 8, 20, 28, 50, 82, 126 are declared by the parent block and never evaluated"
+    }
+  ],
+  "allPassed": true
+}
