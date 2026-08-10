@@ -303,6 +303,67 @@ route and before this bean existed.
    `prop:magic-shell-coupling-witness` — 0 files each) is likely part of the same
    loss and worth resolving together.
 
+
+## PROVENANCE FOUND — and I was wrong that it was missing (2026-08-10)
+
+**Correction to this bean.** I recorded twice that the PR #656 fit was "not in
+the tree in any form". It is: `computations/_deprecated/interface-type-resolved-coupling-probe.witness.json`.
+I had searched for the *producer*, which is gone, and concluded the *fit* was
+too. The witness survived.
+
+[`probe_kappa_provenance.py`](../computations/probe_kappa_provenance.py) → witness, 5/5.
+
+### The decomposition
+
+    Delta_coupling(Z,N) ~ [A-2]_q * E_0 * log(1/h) + (n_pp - n_nn) * kappa * h * E_0
+
+Fitted to **Δ_coupling**, not to binding energy — which is what the block's
+opening sentence attributes to κ. Different observables.
+
+### The fit refuted itself at the time
+
+The hypothesis was that ONE κ holds across the anchors. Stated criterion in the
+witness: *"If ³He and T give the same κ to ≤ 5% AND ⁴He has residual ≤ 5% of
+base, the hypothesis is supported."*
+
+| anchor | excess | slope (MeV) | slope (h·E₀ units) |
+|---|---|---|---|
+| ³He (2,1) | +1 | **−1.0707908** | −1.2235896 |
+| ³H (1,2) | −1 | **+0.2023095** | +0.2311785 |
+
+**Opposite signs, factor 5.3.** The witness records
+`slope_consistent_to_5pct: false` and **`hypothesis_supported: false`**.
+
+**κ ≈ −1.0708 is the ³He arm alone.** The ³H arm was not carried forward, and
+the block reports the value as measured "at the single-magic anchors" — plural.
+
+### Why this is stronger than the mirror-split negative
+
+The two findings are independent. The mirror-split test says no term of this
+form and size appears in the binding data — repairable in principle by finding
+the right decomposition. The provenance says the number being matched to
+0.034 % was one arm of a measurement its own computation reported inconsistent
+— **not repairable**, because it concerns the number itself.
+
+### Bonus: C1 confirmed by a third route
+
+`canonical-braid-interface-composition.witness.json` sweeps using
+`n_pp = max(0, Z−1)`, `n_nn = max(0, N−1)` — convention **C1**, the one selected
+earlier on corpus-structure grounds. Reached here independently.
+
+### Next
+
+The technical work on this bean is done. What remains is an owner call on the
+block's disposition, and it is genuinely a judgement rather than a derivation:
+
+1. **Keep as a conjecture with the evidence restated** (done — the `.md` now
+   records the discordant anchors and the `hypothesis_supported: false`), or
+2. **Retire the block**, on the grounds that a conjecture whose sole numerical
+   support is one arm of a self-refuted two-arm fit has no evidential basis left.
+
+I have done (1) rather than (2) — restating evidence is inside an agent's remit;
+removing a block from the corpus is not.
+
 ## Test design for the remaining step — and where the fit would sneak in
 
 Scoping the last item before running it, per formalize-first: find the
