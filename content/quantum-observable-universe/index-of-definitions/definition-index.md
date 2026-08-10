@@ -491,7 +491,7 @@
 | [prop:toffoli-lp-stability](#prop:toffoli-lp-stability) | LP-dual stability of the $q$-Toffoli braid and the golden-ratio threshold | Ch 18 | `qou:QOU.Information.toffoli_lp_stable` |
 | [prop:macdonald-hook-telescope](#prop:macdonald-hook-telescope) | Macdonald hook-content telescope for $Z_n$ and clean $y_\lambda$ closed form | Ch 10 | `qou:QOU.BraidsAndKnots.macdonald_hook_telescope` |
 | [prop:magic-numbers-from-q](#prop:magic-numbers-from-q) | Magic numbers emerge from per-partition nuclear character at $q_0$ | Ch 13 | `qou:QOU.AtomicMass.magic_numbers_from_q` |
-| [conj:magic-shell-coupling-kappa](#conj:magic-shell-coupling-kappa) | Magic-shell coupling slope $\kappa = -E_0 \cdot \log(1/h) / ([2]_q [3]_q)$ — conjectured categorical closed form | Ch 8 | `qou:QOU.BraidKnot.MagicShellCouplingKappa` |
+| [def:magic-shell-coupling-kappa](#def:magic-shell-coupling-kappa) | The expression $\kappa_{\mathrm{closed}} = -E_0 \cdot \log(1/h) / [3]_q!$ and its proved properties — physical identification withdrawn | Ch 8 | `qou:QOU.BraidKnot.MagicShellCouplingKappa` |
 | [prop:main-commutative-diagram](#prop:main-commutative-diagram) | Main Commutative Diagram | Ch 3 | `qou:QOU.main_commutative_diagram` |
 | [prop:algebraic-gns-embedding](#prop:algebraic-gns-embedding) | Markov-trace GNS embedding $H_\infty(q) \hookrightarrow L(\mathcal{H})$ — operator-algebra route to the Archimedean side | Ch 13 | `qou:QOU.Observations.AlgebraicGnsEmbedding.HasMarkovGnsEmbedding` |
 | [prop:photon-threading-mass](#prop:photon-threading-mass) | Mass as photon threading cost | Ch 18 | `qou:QOU.Information.photon_threading_mass` |

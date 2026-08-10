@@ -1,7 +1,7 @@
 ---
 # qou-o16k
 title: 'Test κ at the 8-shell (¹⁶O) — the falsification the anchor-identified form has never faced'
-status: in-progress
+status: completed
 type: task
 created_at: 2026-08-10T02:32:00Z
 updated_at: 2026-08-10T03:05:00Z
@@ -363,6 +363,37 @@ block's disposition, and it is genuinely a judgement rather than a derivation:
 
 I have done (1) rather than (2) — restating evidence is inside an agent's remit;
 removing a block from the corpus is not.
+
+
+## SPLIT LANDED (owner call, 2026-08-10) — bean complete
+
+Owner chose option 4: keep the proved content, drop the physical claim.
+
+**Removed** (the withdrawn identification, and nothing else):
+`observedMagicShellSlope`, `MagicShellSlopeIsCategorical`,
+`observedMagicShellSlope_neg`.
+
+**Kept** (true regardless of physics): `qBracket_eq_canonical`,
+`qBracket_normaliser_eq_qFactorial`, `hParam_pos`, `E0_pos`, `kappaClosed_neg`,
+and `kappaClosed` itself as a named expression.
+
+**Block kind** `conjecture` → `definition`; label `conj:` → `def:`. The
+2026-08-09 `proposition` → `conjecture` demotion is *superseded* by this split,
+not reversed — the block was demoted for being anchor-identified, and is now
+split because the anchor turned out to be electrostatic.
+
+The `.md` leads with the withdrawal so a reader meeting the boxed formula cannot
+re-attach the physics, and the `.lean` header carries the same statement.
+Downstream updated: the table's `uses[]` and title, and the definition index.
+
+**Deliberately not done.** The refuted-class ledger row (option 3) was not part
+of the instruction and is not an agent action; without it the negative is
+recorded on the block but is not independently discoverable. Worth doing.
+
+**Deliberately not attached.** The excess-independent ≈ 0.2 MeV offset at A=3 —
+real, unexplained, and absent at A=4 — is noted in the block's `authorNotes` as
+a separate question. Giving it this block's name would repeat the error the
+withdrawal corrects. It wants its own bean.
 
 ## Test design for the remaining step — and where the fit would sneak in
 
