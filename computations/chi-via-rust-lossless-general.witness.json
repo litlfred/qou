@@ -1,14 +1,14 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T16:13:21.222528+00:00",
-  "commitSha": "367ca15c3dcebc778b97d4a8c95d93ce506adc09",
+  "computedAt": "2026-08-10T17:54:24.772371+00:00",
+  "commitSha": "ad4c2520ac19f1e33ebaf094b7e3ad2bcec7d855",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 70,
+  "durationMs": 81,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
-  "scriptHash": "9dec1cdfee64",
+  "scriptHash": "fa6f74b15644",
   "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -39,7 +39,7 @@
         "N": 2,
         "n_partitions": 176,
         "tr_M_at_q0": "0.72219067572428003906546700725859846608796048795124",
-        "compute_time_sec": 66.86,
+        "compute_time_sec": 66,
         "cache_path": "/home/user/qou/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       },
@@ -50,11 +50,11 @@
         "N": 3,
         "n_partitions": 385,
         "tr_M_at_q0": "0.58892244002696787134345006247120330799639569324758",
-        "compute_time_sec": 1381.75,
+        "compute_time_sec": 1381,
         "cache_path": "/home/user/qou/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       }
     ],
-    "total_time_sec": 0.07
+    "total_time_sec": 0
   }
 }

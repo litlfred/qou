@@ -86,7 +86,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
             return {"atom": atom, "n_strands": n, "Z": Z, "N": N,
                     "n_partitions": cached["n_partitions"],
                     "tr_M_at_q0": cached["tr_M_at_q0"],
-                    "compute_time_sec": cached.get("compute_time_sec", 0.0),
+                    "compute_time_sec": int(cached.get("compute_time_sec", 0) or 0),
                     "cache_path": str(out), "reused": True}
 
     _ensure_y_lambda(n)                 # arbitrary n: extend the y_λ tower on-demand
@@ -112,7 +112,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
             "y_lambda": str(y_lam),
             "chi_lambda": mp.nstr(chi, 50),
             "contribution": mp.nstr(contrib, 50),
-            "compute_time_sec": round(time.monotonic() - t1, 4),
+            "compute_time_sec": int(time.monotonic() - t1),
         })
         if (i + 1) % 40 == 0:
             print(f"     [{i+1}/{len(shapes)}] {time.monotonic()-t0:.1f}s", flush=True)
@@ -141,7 +141,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
         "n_skipped_max_dim": 0,
         "tr_M_partial": False,
         "partial": False,
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": int(elapsed),
         "tr_M_at_q0": str(running),
         "by_partition": per_partition,
     }
@@ -151,7 +151,7 @@ def compute_atom(atom: str, q: mp.mpf) -> dict:
           flush=True)
     return {"atom": atom, "n_strands": n, "Z": Z, "N": N,
             "n_partitions": len(per_partition), "tr_M_at_q0": str(running),
-            "compute_time_sec": round(elapsed, 2), "cache_path": str(out)}
+            "compute_time_sec": int(elapsed), "cache_path": str(out)}
 
 
 def main() -> int:
@@ -183,7 +183,7 @@ def main() -> int:
     )
     wb.add_data("atoms", [r["atom"] for r in results])
     wb.add_data("results", results)
-    wb.add_data("total_time_sec", round(time.monotonic() - t0, 2))
+    wb.add_data("total_time_sec", int(time.monotonic() - t0))
     out = wb.save()
     print("-" * 84)
     print(f" done: {len(results)} nuclide(s) in {time.monotonic()-t0:.1f}s")
