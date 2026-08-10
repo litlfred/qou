@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-09T00:37:55.959359+00:00",
-  "commitSha": "74074440e60b2e843d7494aceb29387d5d6ce029",
+  "computedAt": "2026-08-10T17:21:10.291372+00:00",
+  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
   "assertions": [
     {
       "name": "color_too_small_for_tn3he",
-      "computed": 1,
+      "computed": 0,
       "expected": 1,
-      "passed": true,
+      "passed": false,
       "tolerance": 0
     }
   ],
-  "allPassed": true,
-  "durationMs": 21,
+  "allPassed": false,
+  "durationMs": 16,
   "computation": "binding-color-vs-charge-tn3he",
   "scriptFile": "binding_color_vs_charge_tn3he.py",
   "scriptHash": "37bf5bd99a95",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,19 +28,18 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
+    "sympy": "1.12",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "data": {
-    "q_0": "1.10997859555733471989976322048",
+    "q_0": "1.1099785955573347198997632204832250266562084087802",
     "delta_flavor_split": 0.001375711249976612,
     "alpha_em": 0.007297352573756914,
     "B0_bonds_MeV": {
-      "pp": 2.286087624393146,
-      "pn": 2.304836559563573,
-      "nn": 2.249727484827445
+      "pp": 2.1288011828915003,
+      "pn": 2.3303470219657654,
+      "nn": 2.4364640130528943
     },
     "color_weights": {
       "pp": 0.9995422707306493,
@@ -48,8 +47,8 @@
       "nn": 1.0004594115639671
     },
     "needed_split_MeV": 0.7637962,
-    "color_split_MeV": -0.0342801795254114,
-    "color_fraction_of_needed": -0.04488131719614656,
+    "color_split_MeV": 0.3097565845142178,
+    "color_fraction_of_needed": 0.40554873736504293,
     "verdict": "Color-weighting (bring_color_weighted) gives the right SIGN for the bond asymmetry but is ~2 orders too small (Δm_pn scale 0.14%) for the T-vs-³He split (9.5%). That split is CHARGE/Coulomb (α_EM sector). Color averaging must still be wired everywhere for completeness."
   },
   "q0Anchor": "muon",
