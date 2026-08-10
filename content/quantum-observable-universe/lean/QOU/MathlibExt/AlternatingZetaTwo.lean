@@ -24,7 +24,8 @@ literally `Σ' (−1)^{k+1}/(k+1)²` and the statement below matches it termwise
 This file imports **only Mathlib**, so it can go upstream unchanged — the same
 discipline `ComplexDilogarithm.lean` follows.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.MathlibExt

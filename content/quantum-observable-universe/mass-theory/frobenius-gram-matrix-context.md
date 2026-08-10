@@ -5,9 +5,34 @@ basis encodes all interaction pairings, and its inverse
 $G^{-1}$ gives the explicit dual construction
 $K^\vee = \sum_{i,j} c_i (G^{-1})_{ij} b_j$.
 
+> **$G$ is singular on $H_3$ under convention D — read $G^{-1}$ on the
+> quotient.** Corrected 2026-08-09. The paragraph above, and the dual
+> construction it defines, presuppose $\det G \neq 0$. That holds under the
+> excised **convention C**, where the antisymmetric weight
+> $y_{(1^3)} = 0.0227449\ldots$ is small but nonzero. It fails under the
+> production **convention D**: the pin $z(q^2+1) = q^3$ forces
+> $y_{(1^3)} = 0$ exactly, so the $(1^3)$ block **is** the radical of the trace
+> form and $\det G = 0$ — not "numerically singular", zero. A $G^{-1}$ computed
+> under C is therefore not an approximation to one under D; the latter does not
+> exist, and at $n = 3$ the corank is exactly $1$.
+>
+> The Frobenius structure itself is not lost, only relocated: the radical is a
+> two-sided ideal, so $\mathrm{tr}_M$ descends to
+> $H_3/\mathrm{rad} \cong \mathrm{TL}_3$ and the induced pairing there **is**
+> non-degenerate. Every use of $G^{-1}$ and of $K^\vee$ below should be read on
+> that $5$-dimensional quotient ($\sum \dim^2 = C_3 = 5$), not on the
+> $6$-dimensional $H_3$.
+>
+> Proved in
+> [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean):
+> `block_mem_radical` (a zero-weight block lies in the radical) →
+> `gram_det_eq_zero_of_radical_combination` ($\det G = 0$), with
+> `pairing_descends` and `mem_radical_of_pairing_zero` giving the descent.
+> Sorry-free.
+
 ## Markov trace of NF basis elements
 
-Write $h = q - q^{-1}$ and $z = 1/(q^{1/2} + q^{-1/2})$.
+Write $h = q - q^{-1}$ and $z = q^{3}/(q^{2}+1)$ (**convention D**).
 
 See [Table 1](#tbl:frobenius-gram-matrix-table1-data).
 

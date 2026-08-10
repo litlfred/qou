@@ -6698,6 +6698,28 @@ export const references: CSLData[] = [
     DOI: "10.1007/s13373-014-0054-6",
   }),
 
+  // ── Bokut, Chen & Li 2011 — Composition-Diamond lemma for categories ──
+  // Added 2026-08-09. Local copy: uploads/1101.1563v1.pdf. Cited by
+  // UGB/GrobnerShirshov/Quotient.lean §6: Theorem 4.4 is the statement UGB's
+  // five standing axioms stand in for, and its clause (iii) is the module's
+  // NormalFormBasis. The paper's closing Remark to Thm 4.4 is what makes it
+  // applicable — "if the category has only one object, then Theorem 4.4 is
+  // exact Composition-Diamond lemma for free associative algebras", and the
+  // one-object case is precisely UGB's setting.
+  ref({
+    id: "bokutchenli2011",
+    type: "article",
+    title: "Gröbner-Shirshov bases for categories",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Yuqun" },
+      { family: "Li", given: "Yu" },
+    ],
+    issued: { "date-parts": [[2011]] },
+    URL: "https://arxiv.org/abs/1101.1563",
+    note: "Establishes the Composition-Diamond lemma for small categories presented by a graph (quiver) plus defining relations, working in the free category partial algebra kC(X) of uniform (matching source/target) partial words. Theorem 4.4: S is a Gröbner-Shirshov basis <=> every f in Id(S) has leading word divisible as a·s̄·b <=> Irr(S) is a linear basis of kC(X)/Id(S). Also gives GS bases for the simplicial and cyclic categories. arXiv:1101.1563v1 [math.RA].",
+  }),
+
   // ── Khovanov 2000 (categorification of Jones polynomial) ──────
   // Added 2026-05-20 — cited in conj-qbeta-c-k-closed-forms.lean
   // alongside khovanov-rozansky2008 and khovanovlauda2009.
@@ -8225,6 +8247,85 @@ export const references: CSLData[] = [
     issued: { "date-parts": [[2002]] },
     URL: "https://arxiv.org/abs/physics/0203048",
     note: "arXiv:physics/0203048. Read in full 2026-08-01. Constructs H⁽³⁾ = ∫A¹·A²×A³ via the SU(2) Chern–Simons split (not Massey products). Independently confirms obstruction O1 from the physics side, naming it outright: 'the antisymmetry of H⁽³⁾ seems to be one of the key problems'. Its Conclusions also state the scaling trap — 'only expressions quadratic and cubic in magnetic flux can be obtained' — with the quadratic slot occupied by cross-helicity, which vanishes for Brunnian configurations. No energy content; requires a simply-connected domain with boundary, so it does not address O2. Uploaded uploads/0203048v1.pdf.",
+  }),
+
+  // ── Bokut & Shiao — GS bases for Coxeter groups ───────────────
+  // Added 2026-08-09: this refid was DANGLING. `[bokut2001]` is cited at
+  // QOU/Archimedean/MassGapGm.lean:46 and the work is named in the
+  // References block of UGB/GrobnerShirshov/HeckeGS.lean, with no entry
+  // here. Bibliographic data taken from three independent bibliographies
+  // in the 2026-08-09 upload batch (uploads/0910.0096v1.pdf ref [4],
+  // uploads/1808.05026v1.pdf ref [3], uploads/fd58d8e18…pdf ref [3]),
+  // which agree exactly. No DOI recorded — none of the three prints one
+  // and no lookup was performed; do not synthesise one.
+  ref({
+    id: "bokut2001",
+    type: "article-journal",
+    title: "Gröbner-Shirshov bases for Coxeter groups",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Shiao", given: "L.-S." },
+    ],
+    "container-title": "Communications in Algebra",
+    volume: "29",
+    page: "4305-4319",
+    issued: { "date-parts": [[2001]] },
+    note: "NOT READ — metadata only, reconciled from three agreeing bibliographies (see comment above). TWO SCOPE CAVEATS, both established from other documents rather than from this one. (1) COXETER GROUPS, NOT H_n(q): every document that cites it describes it as constructing GS bases for Coxeter groups W = sgp⟨Σ | (ss′)^m = 1⟩ at q = 1; none mentions the Iwahori–Hecke deformation. The q-deformed type-A statement appears to be Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292 §6 (not yet held; bean qou-qspu). (2) NOT GENERAL COXETER: [chenliu2009] Example 3.2 refutes the Bokut–Shiao conjecture that a GS basis of an arbitrary Coxeter group follows from S = {(1),(2),(3′)} with commuting relations; the positive results are for finite Coxeter groups, which does cover type A_{n-1}. It is cited in this folio for the COMPLETION family σᵢσᵢ₋₁⋯σⱼσᵢ → σᵢ₋₁σᵢσᵢ₋₁⋯σⱼ that HeckeGS.lean §4e names as missing from `heckeRewritingSystem`; the axiom `hecke_is_gs_basis` that formerly cited 'Bokut & Shiao 2001, Thm 3.5' was deleted as FALSE for the uncompleted system (NotAGSBasis.hecke_not_gs_basis_four).",
+  }),
+
+  // ── Chen & Liu — GS bases for Coxeter groups I ────────────────
+  // Added 2026-08-09 from relevance triage (verdict: supporting);
+  // uploads/0910.0096v1.pdf. Cited for the scope of [bokut2001].
+  ref({
+    id: "chenliu2009",
+    type: "article",
+    title: "Gröbner-Shirshov bases for Coxeter groups I",
+    author: [
+      { family: "Chen", given: "Yuqun" },
+      { family: "Liu", given: "Cihua" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2009]] },
+    URL: "https://arxiv.org/abs/0910.0096",
+    note: "arXiv:0910.0096v1 [math.GR], 21 pp. No journal venue or DOI is printed on the preprint and none was sought; the title's 'I' promises a sequel that was not located. Read 2026-08-09. Example 3.2 (pp. 4-5) refutes by explicit counterexample — Σ = {s₁<s₂<s₃<s₄}, m₁₂ = m₂₃ = m₂₄ = ∞, m₁₃ = 3, m₁₄ = 2, m₃₄ = 5 — the Bokut–Shiao conjecture that a GS basis of an ARBITRARY Coxeter group is obtainable from S = {(1),(2),(3′)} using only the commuting relations, and exhibits the corrected basis. Its introduction restricts the known positive results to FINITE Coxeter groups, which is why the folio's type A_{n-1} case is unaffected. Thm 3.19 with Example 3.20 give three sufficient families, of which (i) all m_ij ≥ 3 covers the rank-2 case m₁₂ = 3 (W = S₃) but not n ≥ 4. Like [bokut2001] it works with the Coxeter GROUP and never mentions H_n(q).",
+  }),
+
+  // ── Bokut & Chen — GS bases and PBW theorems (survey) ─────────
+  // Added 2026-08-09 from relevance triage (verdict: supporting);
+  // uploads/1502.06472v1.pdf. Distinct from bokut2005 and bokutchen2014
+  // (same pair, different papers).
+  ref({
+    id: "bokutchen2015pbw",
+    type: "article",
+    title: "Gröbner-Shirshov bases and PBW theorems",
+    author: [
+      { family: "Bokut", given: "L. A." },
+      { family: "Chen", given: "Yuqun" },
+    ],
+    "container-title": "arXiv preprint",
+    issued: { "date-parts": [[2015]] },
+    URL: "https://arxiv.org/abs/1502.06472",
+    note: "arXiv:1502.06472v1 [math.RA], 13 pp., survey. YEAR CAVEAT: the arXiv banner rendered on p. 1 reads '8 Nov 2014' but the 1502.* identifier is a February 2015 posting; recorded as 2015 with the printed banner date noted here. No DOI or journal line on the preprint; no published version sought. Read 2026-08-09 for §3.7 (p. 6), verified in the PDF: Shirshov 1953 and Cartier 1958 give counterexamples to PBW for Lie algebras over a commutative algebra, and Cohn's 1963 family L_p = Lie_K(x₁,x₂,x₃ | y₃x₃ = y₂x₂ + y₁x₁) over K = k[y₁,y₂,y₃ | yᵢᵖ = 0] is proved not to embed in its universal enveloping algebra for p = 2, 3, 5 (Bokut–Chen–Chen, J. Algebra 337 (2011) 82-102). That paragraph is why cor:pbw / cor:ugb-pbw cannot drop the 'free as an R-module' hypothesis their proofs use (bean qou-pwd4). §3.7 REPORTS those counterexamples and proves none of them — the primaries have not been read and are not in this file, so cite this entry as the collecting source, not as the proof.",
+  }),
+
+  // ── Kim & Lee — GS bases for Temperley-Lieb algebras ──────────
+  // Added 2026-08-09 from relevance triage (verdict: supporting);
+  // uploads/fd58d8e182edda805fed0946606c5ab82f81.pdf.
+  ref({
+    id: "kimlee2018",
+    type: "article-journal",
+    title: "Gröbner-Shirshov bases for Temperley-Lieb algebras",
+    author: [
+      { family: "Kim", given: "Sungsoon" },
+      { family: "Lee", given: "Dong-il" },
+    ],
+    "container-title": "Palestine Journal of Mathematics",
+    volume: "7",
+    issue: "Special Issue: I",
+    page: "11-17",
+    publisher: "Palestine Polytechnic University-PPU",
+    issued: { "date-parts": [[2018]] },
+    note: "No DOI, ISSN or URL is printed on the article; venue read off the title page and running head, no lookup performed. Read in full 2026-08-09. The folio-relevant part is §3, the type A_{n-1} review: T(A_{n-1}) generated by E₁,…,E_{n-1} with E_i² = δE_i, E_iE_j = E_jE_i for i > j+1, E_iE_jE_i = E_i for j = i±1 (δ ∈ ℂ a free parameter, the E_iE_jE_i relation UN-rescaled — the convention this folio adopted, e_i := q − σ_i with e_i² = [2]_q e_i and δ = [2]_q). Prop. 3.1 gives a Gröbner–Shirshov basis whose standard monomials number C_n, i.e. dim TL_n = Catalan(n), and note that the basis needs two families BEYOND the defining relations (E_{i,j}E_i − E_{i−2,j}E_i and E_jE_{i,j} − E_jE_{i,j+2}) — the same completion phenomenon that makes def:hecke-normal-form's confluence claim false (bean qou-43co). Prop. 3.1 is QUOTED from Kang–Lee–Lee–Oh, J. Algebra 252 (2002) 258-292, Prop. 6.2, the primary, which is not yet in this file (bean qou-qspu). The paper's own theorem (dim T(B_n) = (n+2)C_n − 1) has no consumer here. A close sibling exists — the same authors' arXiv:1808.05026, 'GS bases for Temperley-Lieb algebras of types B and D', whose §3 is verbatim this same review — deliberately NOT registered separately; see the ledger row for uploads/1808.05026v1.pdf.",
   }),
 
 ];

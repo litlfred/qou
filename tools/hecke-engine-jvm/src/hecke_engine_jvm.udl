@@ -12,7 +12,8 @@ namespace hecke_engine_jvm {
     // Engine version (matches Cargo.toml + package metadata).
     string version();
 
-    // Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
+    // Markov parameter z = q^3 / (q^2 + 1) -- trace convention D.
+    // Convention C excised 2026-08-09.
     f64 markov_z(f64 q);
 
     // Hecke relation coefficient h = q − q⁻¹.

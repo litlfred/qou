@@ -84,7 +84,8 @@ So `hcont` is not yet a theorem end to end. What was "measured, not proved" is
 now "proved, except for the standard continuity packaging" — a different and much
 smaller debt.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoCutAvoidance

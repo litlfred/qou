@@ -119,7 +119,60 @@ def y_lambda_at(
     q_val: sp.Expr | float | None = None,
     workers: int | None = None,
 ) -> dict[tuple, sp.Expr]:
-    """Jones-Markov y_λ(q) at H_n.
+    """Jones-Markov y_λ(q) at H_n — registry convention **D** since 2026-08-09.
+
+    OWNER RULING: convention C excised. Every path below returned C
+    (`y_λ(3,q₀) = (0.4153958, 0.2809296, 0.0227449)`, `z = 1/(√q+1/√q)`); this
+    function now returns D (`(0.5054042, 0.2472979, 0)`, `z = q³/(q²+1)`).
+
+    D's weights are the SU(2) quantum dimensions, computed by the hook-content
+    principal specialisation in `y_lambda_su_n` and normalised `Σ y_λ f^λ = 1`.
+    The defining difference is the row cap: `y_λ = 0` for `ℓ(λ) > 2`, which under
+    C was nonzero — and that zero is exactly what
+    `markovWeights_eq_jones_of_threeRow_eq_zero` needs to force D uniquely.
+
+    THE THREE C FAST PATHS BELOW ARE NOW DEAD and are retained only as the
+    historical record of what C was; the D result returns before any of them is
+    reached. In particular `y-lambda-at-q0.witness.json` holds C weights and must
+    NOT be served — that cache is why the switch has to happen here rather than
+    only at `markov_z`.
+
+    Scale note, because it governs the migration: this function has ~155
+    consumers, more than twice the other three C implementations combined, and
+    it was *unregistered* as a C implementation until 2026-08-09.
+
+    The mass channel is unaffected — `m_p_substrate_identity_50dps.trM_borromean`
+    uses the Lean closed form `(4+h²−3h⁴−h⁶)/(h²+4)` directly and never calls
+    this. Verified: m_p unchanged.
+    """
+    from y_lambda_su_n import y_lambda_su_n as _y_su_n
+    import mpmath as _mp
+    if q_val is not None:
+        _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)
+        return {sh: sp.Float(_mp.nstr(v, 30), 30) for sh, v in _y.items()}
+    # Symbolic q: route to the EXACT convention-D solver (wired 2026-08-09).
+    # This path previously RAISED — the excision left it with no D
+    # implementation, and returning the C solver below would have silently
+    # reintroduced C. `y_lambda_su_n_symbolic` is the same hook-content formula
+    # as the numeric branch, over sympy, so the two agree to round-off
+    # (measured 5.35e-51 at 50 dps) and `z` comes out as `q³/(q²+1)` exactly.
+    #
+    # It is also far cheaper than the C path it replaces: C needed an ~18 min
+    # linear solve at n=4, this is a product formula and returns instantly.
+    from y_lambda_su_n import y_lambda_su_n_symbolic as _y_su_n_sym
+    return _y_su_n_sym(n, Q_SYM, 2)
+
+
+def _y_lambda_at_convention_C_HISTORICAL(
+    n: int,
+    q_val: sp.Expr | float | None = None,
+    workers: int | None = None,
+) -> dict[tuple, sp.Expr]:
+    """DEAD — convention C, excised 2026-08-09. Kept as the historical record.
+
+    Original docstring follows.
+
+    Jones-Markov y_λ(q) at H_n.
 
     If `q_val` is None (default): returns symbolic y_λ via
     `markov_weights_symbolic.solve_y_lambda(n)` — fast for n ≤ 3,

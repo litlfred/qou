@@ -70,8 +70,14 @@ universe u v
     - **Cyclicity (trace property):** `τ(x · y) = τ(y · x)`.
 
     The Jones–Markov trace `τ_M` on the Iwahori–Hecke algebra `H_n(R, q)`
-    is the canonical example (Wenzl 1988, Jones 1987; uniqueness by
-    `QOU.BraidKnot.MarkovTraceUniqueness`). -/
+    is the canonical example (Wenzl 1988, Jones 1987; uniqueness at a
+    fixed Ocneanu parameter `z`, and the derivation of `z` itself, in
+    `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero`).
+
+    **Updated 2026-08-09.** This used to cite
+    `QOU.BraidKnot.MarkovTraceUniqueness`, retired that day as
+    unsatisfiable — see the retraction note at the head of
+    `markov-trace-frobenius-selection.lean`. -/
 structure NormalizedTrace (R : Type u) [CommSemiring R]
     (A : Type v) [Semiring A] [Algebra R A] where
   tau : A →ₗ[R] R
@@ -100,10 +106,16 @@ class PSDTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     `τ(X · X) = 0 ⇒ X = 0`.  Stronger than PSD; equivalent under
     PSD to "the Frobenius form has trivial radical on squares".
 
-    For Jones–Markov `τ_M` on `H_n(R, q)`: established as
-    `tau_M_non_degenerate` in
-    `markov-trace-frobenius-selection.lean` (on `main` after
-    PR #1750). -/
+    **Not available for Jones–Markov `τ_M` on `H_n(R, q)` (corrected
+    2026-08-09).**  This docstring used to cite `tau_M_non_degenerate`
+    in `markov-trace-frobenius-selection.lean` as establishing the
+    hypothesis.  That declaration is retired: under production
+    convention D, `z = q³/(q²+1)`, the Markov–Frobenius form is
+    degenerate on `H_n(R, q)` for `n ≥ 3`, with radical exactly the
+    Temperley–Lieb ideal `I_n`.  The class is satisfied instead by
+    `A = TL_n(q) = H_n(q)/I_n`, on which the descended pairing *is*
+    non-degenerate.  The lemmas below are unaffected — they take this
+    class as a hypothesis and never claimed to discharge it. -/
 class NonDegTrace (R : Type u) [Field R] [LinearOrder R] [IsStrictOrderedRing R]
     (A : Type v) [Ring A] [Algebra R A] (τ : NormalizedTrace R A) :
     Prop where

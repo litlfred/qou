@@ -32,7 +32,7 @@ Mirrors `pyhecke-native` + `hecke-engine-node`:
 | Function | Returns | Notes |
 |---|---|---|
 | `version()` | `String` | Package version |
-| `markov_z(q)` | `Double` | Markov parameter `z = 1/(q^{1/2}+q^{-1/2})` |
+| `markov_z(q)` | `Double` | Markov parameter `z = q^3/(q^2+1)` (trace convention D) |
 | `hecke_h(q)` | `Double` | Hecke relation coefficient `h = q − q⁻¹` |
 | `trace_weights(q)` | `List<Double>` (6 elements) | Markov-trace weights on NF basis |
 | `gram_matrix_flat(q)` | `List<Double>` (36 elements, row-major) | Gram matrix — UniFFI doesn't support `[[f64; 6]; 6]` natively; consumers reshape |

@@ -21,7 +21,7 @@
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **CERTIFIED (2026-07-13) — 6/6 production atoms** (p, n, D, T, ³He, ⁴He). `cross_check_trM_1ppb.py` reports `allPassed=True` (`all_atoms_within_1ppQ`, `character_engine_matches_closed_form`); worst closed-form χ-anchor \|Δ\| = **5.6e-50** (proton 9.3e-50, neutron 3.3e-50), no float64 in the hot path. The last gap (⁴He, H₁₂) closed by building `pyhecke-native` from source. See [`audits/2026-07-13-l1-4he-certification-complete.md`](audits/2026-07-13-l1-4he-certification-complete.md). **Supersedes** the 2026-06-17 gap ([`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md)): the float64-limited `markov_peel` witness and the Habiro-divergence were replaced by the mpf / native-Rust path. *(The aggregate `onepb-status-dashboard.witness.json`, dated 2026-07-06, is stale and predates this certification.)* |
-| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **2/7 meet** — one calibration anchor (m_e) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442 — **caveat:** the ~47 ppb precision is *two-term-truncation-dependent*: `(3q²−1)/(2q²)` is the leading 2 terms of `1+log(1+ℏ_q)` and the full series fits *worse* (~103 ppb), so the EM factor is not yet a converged derivation — deriving why `(3q²−1)/(2q²)` is the physical object is the open successor, bean `qou-v6oz`; the `[3]_q[4]_q` core (99.98 %) is exact/Lean-proved and α_em is derived, so the ratio itself is parameter-free); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_count=2`). |
+| **L2. Per-observable accuracy** | for each predicted observable O with experimental uncertainty σ_O: `σ_pred(O) ≤ σ_O / 100` (i.e. **100× more precise than experimental**) | **2/7 meet** — one calibration anchor (m_e) + **m_K/m_π**, the first genuine prediction to meet (closed via the meson EM correction `(3q²−1)/(2q²)`, PR #1442 — **caveat RESOLVED 2026-08-09, owner directive** — the EM factor is now the **full series** `1 + log(1+ℏ_q)`, not the two-term truncation `(3q²−1)/(2q²)`. The truncation scored better (46.80 vs 102.86 ppb on the ratio², i.e. 23.40 vs 51.43 ppb on the ratio) but was not converging on anything: 3 terms gives 107.00 ppb and 4 terms 102.53 ppb, so the series converges to ~102.9 and the 2-term stop lands closer only because under-counting the EM term partially cancels the model's own positive residual. A truncation chosen because it matches is a fit. **It still MEETS L2**: σ_exp(m_K/m_π) = 26364.6 ppb ⇒ target 263.6 ppb, and the full series sits at 51.43 ppb — 5.13× margin (was 11.27×). So the caveat is retired at no cost to the scorecard, and `qou-v6oz`'s question ("why is `(3q²−1)/(2q²)` the physical object?") is **dissolved rather than answered** — it is not the physical object, it was where the series happened to be stopped; the `[3]_q[4]_q` core (99.98 %) is exact/Lean-proved and α_em is derived, so the ratio itself is parameter-free); the other 5 **miss** (m_p ~437×, m_μ ~964×, m_n ~416×, Q_β ~160×, Δ_pn ~159×). The de-fitted honest state — m_p dropped from "meet" 2026-07-04 when the fitted Habiro tower (that landed it on CODATA) was removed; live source `per-observable-100x-status.witness.json` (`beats_100x_count=2`). |
 
 Both legs apply. Hitting L1 alone is not sufficient; hitting L2 alone is not
 the framework's working precision discipline.
@@ -421,15 +421,47 @@ derivation lands"* — points at a route the owner **permanently gated** on
 read as *unfixable*, which is precisely the over-narrowing the refuted-scope
 discipline exists to prevent.
 
-**Open compute levers** (unchanged, plus the current state of the first): (i) the
-c₃ D-ladder resummation — the two-variable form `log R = E(ũ) + h·D(ũ)` holds
-exactly and the ladder is **divergent** (Gevrey `exp(Bk + Ck·log k)`), so closing
-it needs genuine Écalle/Φ_b resummation; numerical extraction of the instanton
-action is **length-blocked at k=41** (growth form unresolved), and the
-fibre-branch Stokes probe localises `A_ω = Δ_ω log Φ_b` to the **fibre**, not the
-substrate meridian (see `qou-qb8e`); and (ii) the α_EM per-loop theta-factor
-(#3911). The listed dead ends stay dead as **scope-(a)** results
-(fixed-order/anchor-invariant resummation; geometric q₀; ratio-based W_λ).
+**Open compute levers**: (i) **WITHDRAWN 2026-08-09 — the c₃ D-ladder
+resummation was never a lever.** The two-variable form `log R = E(ũ) + h·D(ũ)`
+still holds exactly, but the ladder is **convergent**, with radius
+
+    ρ = ũ(q*) = 0.14279999664468968890572088577932032058109273315046
+    q*        = 1.4898947996883652482253115227781736826531279179281
+
+`q*` being the unique real root > 1 of the irreducible degree-12 factor of the
+`Δ_net` numerator — a **zero of `Q_b`**, where `log R` has a plain logarithmic
+branch point. The 2026-07-12 singularity search covered the sqrt branch points,
+the `ũ′ = 0` folds, the `Q_A` zeros and the `cos α_eff` zeros, but **not the
+`Q_b` zeros**; all three nearest singularities are `Q_b` zeros. Closed form
+`D(w) = φ(w)·log(1 − w/ρ) + ψ(w)` with `φ(ρ) = 1/(2h*)`, `h* = q* − 1/q* =
+0.818706471352`, giving `d_k = −(1/(2h*))·ρ^{−k}/k·(1 + O(1/k))` with no free
+parameters.
+
+There is therefore **nothing to resum**: Écalle/Φ_b resummation, the instanton
+action, and the Stokes ambiguity were answering an ill-posed question. The old
+text read "the ladder is **divergent** (Gevrey `exp(Bk + Ck·log k)`) … numerical
+extraction of the instanton action is **length-blocked at k=41** … the
+fibre-branch Stokes probe localises `A_ω = Δ_ω log Φ_b` to the **fibre**". Each
+clause is superseded: `C` is a spurious parameter decaying like `1/log k`; the
+k=41 wall was tooling cost, not information (k ≤ 21 already suffices); the
+Stokes probe's "structural threshold `r* = 0.147`" is the ratio-test estimate of
+`ρ` itself, and "ambiguity unsuppressed on the fibre" is the series diverging
+outside its disk. The discriminator that settles it on the committed k ≤ 21
+data: **`k²Δ²log|d_k| → 1` while `kΔ² → 0`, i.e. `κ = 0`.**
+
+Practical consequence, and it is a gain: at the CAL-2/muon pin `ũ₀ = 0.0094540`
+sits **15.10× inside `ρ`**, so `h·D(ũ₀) = −0.003486063636129187405605313929674524979867`
+is pinned to 38 digits by the already-committed ladder with a rigorous tail
+bound. **This does not derive c₃, does not change its `cal-anchored` tier, and
+does not close L2** — the μ–p anchor swing remains 29.96 ppb = 3.84× the target,
+and the carrier is still anchor-blind (spread 1.23e-9). The real gate is
+unchanged: the map from a bar-odd, anchor-blind fibre object to an
+anchor-*dependent* number.
+[`docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md).
+
+Remaining lever: (ii) the α_EM per-loop theta-factor (#3911). The listed dead
+ends stay dead as **scope-(a)** results (fixed-order/anchor-invariant
+resummation; geometric q₀; ratio-based W_λ).
 
 This is a *ceiling record*, not a target change: the L2 targets stand. Full
 analysis: [`docs/audits/2026-07-18-1ppq-action-plan.md`](audits/2026-07-18-1ppq-action-plan.md);

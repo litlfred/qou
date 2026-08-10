@@ -21,8 +21,16 @@ validity audit) into the atom braid-word binding calculation:
 where tr_M is the Markov-axioms-satisfying trace matching
 prop:categorical-mass-markov's explicit values table — NOT the
 Plancherel-weighted form used in hecke_core.atom_markov_trace and
-mass_at_3A_proper.binding_3A (both deviate from the prop's z =
-1/(q^{1/2} + q^{-1/2}) ≈ 0.499).
+mass_at_3A_proper.binding_3A (both deviate from the prop's z).
+
+TRACE CONVENTION: **convention D** (SU(2)/Temperley-Lieb, Jones),
+z = q^3/(q^2+1) ≈ 0.612688, y_(1^3) = 0. This module holds no z of its
+own — it inherits the default of `markov_trace_canonical.tr_M_element`
+(l.318-319 call it without `z`), which is `hecke_symbolic.z_markov`,
+switched C -> D on 2026-08-09 (bean qou-wgta item 4). This prose said
+"the prop's z = 1/(q^{1/2} + q^{-1/2}) ≈ 0.499" — convention C, excised
+by owner ruling the same day. Registry:
+docs/coordination/trace-convention-registry.md.
 
 Result is compared to:
   • binding_3A (Plancherel)         — current best H_{3A} path

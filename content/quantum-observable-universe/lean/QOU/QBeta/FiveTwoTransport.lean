@@ -60,7 +60,8 @@ at the positive real root, where `∂V/∂y = 2πi/t` because `−t` sits on `lo
 cut — see `FiveTwoEnvelopeWiring`'s docstring and Route 30 G2. The weaker form
 holds at all three roots, and real parts are all `S` ever sees.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

@@ -9,7 +9,10 @@ Implements the unique trace satisfying
   (M1) tr_M(ab) = tr_M(ba)         (cyclicity)
   (M2) tr_M(x · σ_{n-2}) = z · tr_M(x)   for x ∈ H_{n-1}
   (M3) tr_M(1) = 1
-where z = 1/(q^{1/2} + q^{-1/2}) is the Markov parameter.
+where z = q^3/(q^2 + 1) is the Markov parameter -- **convention D**
+(SU(2)/Temperley-Lieb, Jones). Convention C's z = 1/(q^{1/2}+q^{-1/2})
+was excised by owner ruling 2026-08-09; see
+docs/coordination/trace-convention-registry.md.
 
 This is the CANONICAL trace referenced in prop:categorical-mass-markov
 explicit-values table:
@@ -17,7 +20,17 @@ explicit-values table:
   tr_M(σ_0)       = z
   tr_M(σ_0σ_1)    = z²
   tr_M(σ_0σ_1σ_0) = hz² + z      (where h = q − q⁻¹)
-  tr_M((σ_0σ_1⁻¹)²) ≈ 0.182     (figure-8)
+  tr_M((σ_0σ_1⁻¹)²) ≈ 0.280     (figure-8)
+
+PUBLISHED-VALUE CHANGE (2026-08-09, bean qou-wgta). The figure-8 entry read
+0.182 above, and `prop:categorical-mass-markov` still publishes that. 0.182
+is the CONVENTION-C value; measured at the proton pin, 40 dps:
+    C  0.1823044859381152055431166494555094402144
+    D  0.2801956422726949814331225775762076206173   (+53.70 %)
+The exact form under D is (q^8-q^6+q^4-q^2+1)/(q^6+2q^4+q^2), with
+chi^(2,1)(fig8) = q^4 - 2q^2 + 1 - 2q^-2 + q^-4. The content block has NOT
+been updated -- that is bean item 19 (the paper) and needs an owner pass over
+the table, not a silent edit here.
 
 Differs from the Plancherel-weighted trace
   tr_Pl(x) = Σ_λ (d_q(λ)²/[n]_q!) χ_λ(x)/d_λ
@@ -313,13 +326,19 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
                   simplify: bool = True):
     """Canonical Markov trace of a SymbolicHeckeElement.
 
-    TRACE CONVENTION: **convention C** — the full-Hecke Ocneanu trace with the
-    axiom-pinned z = 1/(q^{1/2}+q^{-1/2}) of `rem:markov-axioms-primitive`
-    (y_(1^3) != 0, so this is NOT the trace whose closure is the Jones
-    polynomial, despite the "Jones-Markov" name). Convention D
-    (SU(2)/Temperley-Lieb, z = q^3/(q^2+1)) is a different trace and differs by
-    195.8 ppm on beta_Bor. Registry:
-    docs/coordination/trace-convention-registry.md.
+    TRACE CONVENTION: **convention D** — SU(2)/Temperley-Lieb (Jones),
+    z = q^3/(q^2+1), y_(1^3) = 0. The default `z=Z_SYMB` is
+    `hecke_symbolic.z_markov`, switched C -> D on 2026-08-09 (bean qou-wgta
+    item 4), so every call site that omits `z` gets D.
+
+    Convention C (the full-Hecke Ocneanu trace with the axiom-pinned
+    z = 1/(q^{1/2}+q^{-1/2}) of `rem:markov-axioms-primitive`, y_(1^3) != 0)
+    was EXCISED by owner ruling 2026-08-09; the two differ by 195.8 ppm on
+    beta_Bor. Registry: docs/coordination/trace-convention-registry.md.
+
+    Note the name: under D this IS the trace whose closure gives the Jones
+    polynomial, so "Jones-Markov" is now accurate. Under C it was not, and
+    this docstring said so.
 
     Uses the recursive Markov-axiom reduction tr_M_word.  For braid
     words that the recursion cannot handle directly (e.g., multiple
@@ -384,8 +403,16 @@ def tr_M_element(elem, n: int, z=Z_SYMB, h=H_SYMB,
 # ── Prop table sanity ───────────────────────────────────────────
 
 if __name__ == "__main__":
-    from q_parameter import Q as q0_num, HA as h_num
-    z_num = 1.0 / (q0_num ** 0.5 + q0_num ** (-0.5))
+    from q_parameter import Q_50_DIGIT_STR
+    import mpmath as _mp
+    # NO FLOAT64 (standing owner directive). This block prints the
+    # prop:categorical-mass-markov values table, so it runs at 50 dps.
+    # It was `z_num = 1.0/(q0_num**0.5 + q0_num**(-0.5))` with an f64
+    # `HA` -- convention C *and* float64 in one line. Both fixed here.
+    _mp.mp.dps = 50
+    q0_num = _mp.mpf(Q_50_DIGIT_STR)
+    h_num = q0_num - 1 / q0_num
+    z_num = q0_num ** 3 / (q0_num ** 2 + 1)   # convention D
 
     print("=" * 80)
     print("CANONICAL MARKOV TRACE — prop:categorical-mass-markov table")
@@ -399,7 +426,7 @@ if __name__ == "__main__":
         ("σ₀σ₁ (gluon)",          (0, 1),            z_num ** 2),
         ("σ₀σ₁σ₀ (electron)",    (0, 1, 0),        h_num * z_num ** 2 + z_num),
         ("σ₁σ₀σ₁ (braid-equiv)", (1, 0, 1),        h_num * z_num ** 2 + z_num),
-        ("σ₀² = hσ₀ + 1",        (0, 0),           h_num * z_num + 1.0),
+        ("σ₀² = hσ₀ + 1",        (0, 0),           h_num * z_num + 1),
     ]
 
     print(f"\n  {'Word':>24} {'Computed':>14} {'Expected':>14} "
@@ -407,10 +434,13 @@ if __name__ == "__main__":
     print("  " + "-" * 68)
     for name, word, expected in TESTS:
         n = max(word) + 2 if word else 1
-        computed = float(tr_M_word(word, n, z_num, h_num))
-        match = "✓" if abs(computed - expected) < 1e-9 else "✗"
-        print(f"  {name:>24} {computed:>+14.6f} {expected:>+14.6f} "
-              f"{match:>6}")
+        computed = _mp.mpf(str(tr_M_word(word, n, z_num, h_num)))
+        expected = _mp.mpf(str(expected))
+        # 1e-40, not 1e-9: at 50 dps a 1e-9 gate would pass a convention flip
+        # (C vs D differ by 0.11 on z) AND an f64 regression.
+        match = "✓" if abs(computed - expected) < _mp.mpf("1e-40") else "✗"
+        print(f"  {name:>24} {float(computed):>+14.6f} "
+              f"{float(expected):>+14.6f} {match:>6}")
 
     # Additional: figure-8 (σ₀σ₁⁻¹)². σ₁⁻¹ = σ₁ - h in our convention.
     print("\nFigure-8 (σ₀σ₁⁻¹)² via tr_M_element (symbolic q, eval at q₀):")

@@ -1,0 +1,109 @@
+{
+  "probe": "qbeta_5two_route47_rogers_closed_form",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 60,
+  "follows": "Route 46 (the diagonal pentagon closes raw on the y-orbit)",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE FORM. The Rogers-L Galois sum over the 5_2 saddle roots is pi^2/2 - (2pi/3)*arg(y_1) -- only pi^2 and pi times an ANGLE, with NO log-squared term, unlike every previous form of the sum rule. Equivalently 11pi^2/6 - 2 pi Theta via 3*Theta = 2pi + arg(y_1), also gated",
+      "P": "2.777534425978115064062537484277511516526",
+      "pi_sq_over_2_minus_two_pi_over_3_arg_y1": "2.777534425978115064062537484277511516526",
+      "residual": "9.33452291679e-61",
+      "eleven_pi_sq_over_6_minus_two_pi_Theta": "2.777534425978115064062537484277511516526",
+      "residual_theta_form": "3.11150763893e-60",
+      "three_Theta_minus_2pi_minus_arg_y1": "3.11150763893e-61",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "it is EQUIVALENT to the sum rule, not a weakening: L = Li2 + log*log/2, so P = A + (1/2)*sum log y log(1-y) with the log-product Galois sum elementary. A is checked against the value the sum rule forces, so the chain from this form back to the original statement is closed",
+      "A": "0.971730681468648259127774169939",
+      "A_from_the_sum_rule": "0.971730681468648259127774169939",
+      "A_residual": "5.87265951772e-57",
+      "P_minus_A_minus_half_logprod": "1.55575381947e-61",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the diagonal pentagon 2P + 2Q + R = 3pi^2/2 holds exactly, but does NOT decompose: P is elementary with small coefficients while PSLQ finds nothing for Q or for R at maxcoeff 1e7. So the relation says only that 2Q + R is elementary -- one equation in two unknowns, closing nothing. (Absence of a PSLQ hit is evidence, not proof, and is reported as such)",
+      "pentagon_residual": "2.48920611114e-60",
+      "pslq": {
+        "P": {
+          "relation": [
+            -6,
+            11,
+            0,
+            0,
+            -12,
+            0,
+            0
+          ],
+          "small_coefficients": true
+        },
+        "Q": {
+          "relation": [
+            -3055478,
+            68436,
+            -918723,
+            -2062549,
+            2508168,
+            891509,
+            -1499728
+          ],
+          "small_coefficients": false
+        },
+        "R": {
+          "relation": [
+            704938,
+            1706395,
+            357528,
+            677354,
+            -284614,
+            -2695350,
+            -1420241
+          ],
+          "small_coefficients": false
+        }
+      },
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the diagonal pentagon LEAVES the unit tower of Routes 40-41: N(1+y) = 7, so 1/(1+y) is not an algebraic integer and its minimal polynomial 7x^3-10x^2+5x-1 is not monic. The prime 7 enters here -- worth flagging in a lane named for a level-7 ladder, though no connection to that ladder is measured",
+      "norm_of_one_plus_y": "7.0",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the five-to-three collapse is a Z/2, NOT an S3: the x<->y swap induces (0 1)(2 4)(3) on the five arguments -- cycle type [1,2,2], a reflection -- and on the diagonal its orbits become multiplicities [2,2,1]. The S3 in this subject is the anharmonic group <z->1-z, z->1/z> acting on a SINGLE argument, which is a different action entirely",
+      "swap_permutation": [
+        1,
+        0,
+        4,
+        3,
+        2
+      ],
+      "cycle_type": [
+        1,
+        2,
+        2
+      ],
+      "diagonal_multiplicities": [
+        2,
+        2,
+        1
+      ],
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "form": "sum_sigma L(y_sigma) = pi^2/2 - (2pi/3)*arg(y_1), residual 9e-61 -- the cleanest statement of the sum rule so far, with no log-squared term, only pi^2 and pi times an angle.",
+    "why_it_matters": "that is the shape a Chern-Simons / flattening statement takes, which is formal support for the extended-Bloch framing of Routes 42-46 rather than another reformulation for its own sake.",
+    "what_it_does_not_give": "the pentagon it came from does not decompose -- Q and R are individually non-elementary, so 2Q + R = elementary is one equation in two unknowns. And the diagonal leaves the unit tower: N(1+y) = 7.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

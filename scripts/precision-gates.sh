@@ -79,6 +79,49 @@ if [ "${1:-}" = "--changed" ]; then
   echo
 fi
 
+# ---------------------------------------------------------------------------
+# Preflight: an unimportable dependency is NOT a red gate.
+#
+# Every gate runs `python3 <script>`, and a missing module makes that exit
+# non-zero. The loop below cannot tell that apart from a detector that genuinely
+# fired, so it lands in the same RED list.
+#
+# Measured, 2026-08-09, on a tree with `mpmath` absent:
+#
+#   RED: q0-anchor flip  mpf(<float>) source (self-test)
+#        float64-padding ratchet (self-test)  raw-float64 ratchet
+#        q0-value drift ratchet
+#
+# Five blocking failures. Four of them vanished the moment `mpmath` was
+# installed — q0-anchor flip went green with 573 Q0_OK — and only raw-float64
+# was real (and inherited from main). An agent following prepare-merge §4b would
+# have treated four phantoms as merge blockers, or "fixed" them at a producer
+# that was never wrong.
+#
+# The self-test mechanism exists on exactly this principle: "a detector that
+# cannot be shown to fire is a no-op." The same applies in the other direction —
+# a gate that reports failure without examining anything is not a gate either.
+# So: check the imports up front, and exit 2 with a different message, so
+# "cannot evaluate" can never be read as "found a defect".
+missing=$(python3 - <<'PREFLIGHT_PY'
+import importlib.util
+# Third-party modules the gate scripts import. Extend when a gate gains a dep.
+need = ["mpmath"]
+print(" ".join(m for m in need if importlib.util.find_spec(m) is None))
+PREFLIGHT_PY
+)
+if [ -n "$missing" ]; then
+  echo "PREFLIGHT FAILED — the precision gates could not be evaluated."
+  echo "  missing Python module(s): $missing"
+  echo
+  echo "  This is NOT a gate failure. Nothing was examined, so nothing is known"
+  echo "  about the tree's precision hygiene. Do not report it as red, and do"
+  echo "  not go looking for a producer to fix."
+  echo
+  echo "    pip install $missing"
+  exit 2
+fi
+
 # Witnesses that are dirty BEFORE the run are the agent's own work; witnesses
 # that the run itself dirties are audits whose committed output is stale. The
 # two are different findings and are reported separately.

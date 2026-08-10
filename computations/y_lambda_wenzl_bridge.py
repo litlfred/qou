@@ -26,6 +26,21 @@ Earlier session claim "no closed-form exists for our generic z" was
 WRONG — it confused integer-N Wenzl SU_q(N) (which our z is not)
 with the analytic continuation in X (which IS valid).
 
+TRACE CONVENTION (2026-08-09, owner ruling; bean qou-wgta item 3).
+This module is **convention D**, z = q³/(q² + 1). It was convention C
+(z = 1/(√q + 1/√q)) in four places — the numeric norm, the per-partition
+numeric value, the symbolic value, and the Markov target — while its
+principal consumer `closed_form_tau_M.markov_z` had already been switched
+to D. The binding channel's production trace was therefore a HYBRID:
+interface D, constituent C. Registry:
+docs/coordination/trace-convention-registry.md.
+
+One consequence is worth stating because it undoes the paragraph above:
+under D, X = q·z/(1−Q+q·z) collapses to q⁴ = Q² EXACTLY, so r = 2 and this
+is the ordinary integer-level Wenzl SU_q(2) specialisation. The "fractional
+Wenzl" / non-integer-r analytic continuation was an artefact of C's z, not
+a feature of the framework.
+
 References:
 - Macdonald, "Symmetric Functions and Hall Polynomials", I.3 ex.1
   (principal specialisation of Schur functions)
@@ -114,14 +129,45 @@ def y_lambda_wenzl_bridge_numeric(partition, q_val, dps: int = 50):
     )
 
 
+def markov_z_numeric(q):
+    """Markov parameter z(q) = q³/(q² + 1) — **trace convention D**
+    (SU(2)/Temperley–Lieb, Jones).
+
+    Owner ruling 2026-08-09 excised convention C (z = 1/(√q + 1/√q)), which
+    every z in this module carried until then. Registry:
+    docs/coordination/trace-convention-registry.md.
+
+    Single source of z for the numeric paths, so the norm and the
+    per-partition Schur value cannot drift apart — they were separate copies
+    of the same expression at l.122 and l.140.
+    """
+    return q ** 3 / (q ** 2 + 1)
+
+
+def _wenzl_X_Q(q):
+    """(X, Q) for the Wenzl bridge: Q = q², X = q·z/(1 − Q + q·z) = Q^r.
+
+    Under convention D this collapses to X = q⁴ = Q² exactly, i.e. the
+    integral Wenzl level r = 2 — the SU(2) level, equivalently the row cap
+    ℓ(λ) ≤ 2 that makes y_λ = 0 for every partition with three or more rows.
+    Under C, X was not a power of Q (1.7202517512 at q₀ against Q² =
+    1.5179532498) and y_(1³) ≠ 0.
+
+    That also retires the module docstring's "fractional Wenzl" framing: the
+    analytic continuation to non-integer r was needed only because C's z
+    forced it.
+    """
+    z = markov_z_numeric(q)
+    Q = q ** 2
+    return q * z / (1 - Q + q * z), Q
+
+
 @functools.lru_cache(maxsize=None)
 def _wenzl_norm_numeric_cached(n: int, q_str: str, dps: int):
     """Cached Wenzl normalization Σ_µ d_µ · s_{µ,r}(Q) at numerical q."""
     mp.mp.dps = dps
     q = mp.mpf(q_str)
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
-    Q = q ** 2
-    X = q * z / (1 - Q + q * z)
+    X, Q = _wenzl_X_Q(q)
     parts = partitions_of(n)
     return sum(classical_dim(mu) * schur_principal(mu, X, Q) for mu in parts)
 
@@ -137,9 +183,7 @@ def _y_lambda_wenzl_bridge_numeric_impl(partition: tuple, q_str: str, dps: int):
     """
     mp.mp.dps = dps
     q = mp.mpf(q_str)
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
-    Q = q ** 2
-    X = q * z / (1 - Q + q * z)
+    X, Q = _wenzl_X_Q(q)
     s_self = schur_principal(list(partition), X, Q)
     norm = _wenzl_norm_numeric_cached(sum(partition), q_str, dps)
     return s_self / norm
@@ -182,12 +226,57 @@ def _y_lambda_wenzl_bridge_symbolic_cached(partition: tuple) -> "sp.Expr":
     if partition in witness_strings:
         q_pos = sp.Symbol("q", positive=True)
         try:
-            return sp.sympify(witness_strings[partition], locals={"q": q_pos})
+            cached = sp.sympify(witness_strings[partition],
+                                locals={"q": q_pos})
         except (sp.SympifyError, SyntaxError, ValueError):
-            pass
+            cached = None
+        if cached is not None and _cached_symbolic_agrees(partition, cached):
+            return cached
     return sp.cancel(
         _schur_self_unnormalized(partition) / _wenzl_norm_for_n(sum(partition))
     )
+
+
+def _cached_symbolic_agrees(partition: tuple, expr: "sp.Expr") -> bool:
+    """Does the committed symbolic string still agree with THIS module's
+    numeric y_λ at q₀?
+
+    A CONVENTION GATE, added 2026-08-09 (bean qou-wgta item 3).
+    `y-lambda-wenzl-bridge-symbolic-witness.json` was written under
+    convention C and is served verbatim, so before this check the symbolic
+    entry point returned C while the numeric entry point in the same module
+    returned D — a hybrid produced by a cache, not by a formula, and
+    invisible to any inspection of the source.
+
+    The check is NUMERIC on purpose. A convention tag in the witness, or a
+    docstring, can be stale or absent (this witness has neither); evaluating
+    the cached expression and comparing it to the live code cannot be. Any
+    future change to `markov_z_numeric` automatically invalidates the cache
+    instead of silently serving it.
+
+    Falls back to recompute on disagreement — correct but slower (~6 s at
+    n=3, >60 s at n=6 per the docstring above), which is the right trade
+    until the witness is regenerated under D.
+    """
+    try:
+        q_pos = sp.Symbol("q", positive=True)
+        q0 = mp.mpf(_q0_50dps_for_gate())
+        with mp.workdps(50):
+            live = y_lambda_wenzl_bridge_numeric(list(partition), q0, dps=50)
+            cached_val = mp.mpf(
+                str(sp.N(expr.subs(q_pos, sp.Float(str(q0), 50)), 40))
+            )
+            scale = max(abs(live), abs(cached_val), mp.mpf("1e-30"))
+            return abs(live - cached_val) / scale < mp.mpf("1e-20")
+    except Exception:
+        # A gate that cannot evaluate must not silently approve.
+        return False
+
+
+def _q0_50dps_for_gate() -> str:
+    """q₀ as a 50-dps string, for the cache gate only."""
+    from q_parameter import Q_50_DIGIT_STR
+    return Q_50_DIGIT_STR
 
 
 # Lazy witness map: partition tuple → raw sympy-string (parsed on first
@@ -246,9 +335,13 @@ def _schur_self_unnormalized(partition: tuple) -> "sp.Expr":
     """schur_principal(partition, X, Q) with X, Q as the canonical Wenzl
     substitutions in q.  Cached per partition shape."""
     q = sp.Symbol("q", positive=True)
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    # Convention D, mirroring markov_z_numeric. Under D, X = q**4 = Q**2
+    # exactly (Wenzl level r = 2); under C it was q^(3/2)-laden and
+    # non-integral. Keeping this in lockstep with the numeric path is the
+    # whole point of the shared formula.
+    z = q ** 3 / (q ** 2 + 1)
     Q = q ** 2
-    X = q * z / (1 - Q + q * z)
+    X = sp.cancel(q * z / (1 - Q + q * z))
     return schur_principal(list(partition), X, Q)
 
 
@@ -469,7 +562,7 @@ def markov_trace_target_numeric(n: int, mu, q_val, dps: int = 50):
     """z^{n-len(μ)} at mpmath precision (the RHS of the defining identity)."""
     mp.mp.dps = dps
     q = mp.mpf(str(q_val))
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = markov_z_numeric(q)   # convention D
     return z ** (n - len(tuple(mu)))
 
 

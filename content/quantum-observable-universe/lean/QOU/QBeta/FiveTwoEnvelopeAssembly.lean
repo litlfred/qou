@@ -52,7 +52,8 @@ Route 26 G8 also measured that the section-2 identities hold on `[0,π)` and
 `x = −1`. Harmless — `π` is an endpoint and section 3 needs the derivative only
 on the half-open interval — but it is why the statements below are on `Ico`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

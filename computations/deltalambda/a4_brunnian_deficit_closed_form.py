@@ -204,7 +204,14 @@ def main():
     # and could fail to create its parents).
     import os as _os
     _scratch = _Path(_os.environ.get("QOU_SCRATCHPAD", "/tmp/qou-scratchpad"))
-    ycache = _scratch / "y_lambda_symbolic_cache.json"
+    # Cache key carries the CONVENTION. Before 2026-08-09 the key was bare
+    # existence, so a C-era cache would have been reused verbatim past the C
+    # excision and silently reintroduced C weights into the deficit. Naming the
+    # convention makes a stale cache a MISS rather than a wrong answer.
+    ycache = _scratch / "y_lambda_symbolic_cache_conventionD.json"
+    _stale = _scratch / "y_lambda_symbolic_cache.json"
+    if _stale.exists():
+        _log(f"ignoring pre-excision (convention C) cache at {_stale}")
     import json as _json2
 
     def _unify_q(e):
@@ -238,8 +245,19 @@ def main():
         Y3 = {tuple(k): sp.cancel(sp.radsimp(_unify_q(v)))
               for k, v in y_lambda_at(3, None).items()}
     for _lbl, _Y in (("y_λ(4)", Y4), ("y_λ(3)", Y3)):
+        # `!=`, not `is not`. The danger this guard exists for is a symbol
+        # `subs(qs, ...)` would MISS, and subs matches by `==`. A bare
+        # `Symbol('q')` from a str round-trip is `!= qs` and IS missed — caught.
+        # But `Symbol('q', positive=True)` (what `wedderburn_jones_markov.Q_SYM`
+        # is) is `== qs` while `is not qs`, because `positive=True` already
+        # implies `real=True`, so the two assumption sets are equivalent and
+        # sympy keeps them as distinct cached objects. Verified: `subs(qs, s**2)`
+        # on such an expression substitutes correctly. An identity test flags it
+        # anyway — a false alarm that blocked this producer when the symbolic
+        # convention-D path was wired in 2026-08-09. Note neither `subs` nor
+        # `xreplace` can repair it: both see nothing to replace.
         _stray = {str(sym) for v in _Y.values() for sym in v.free_symbols
-                  if sym is not qs}
+                  if sym != qs}
         assert not _stray, f"{_lbl} carries non-`qs` symbols {_stray} — q unification failed"
         ycache.parent.mkdir(parents=True, exist_ok=True)
         ycache.write_text(_json2.dumps({

@@ -62,9 +62,10 @@ import mpmath as mp  # noqa: E402
 
 from threerow_sign_crossing_probe import (  # noqa: E402
     chi_atom, delta_lambda, F_iso, G_char_free, bisect_cross, Q0, Q_LO, ZN,
+    F64_SIG_DIGITS, fmt_f64_limited,
 )
 from schur_principal_mpmath import y_lambda_at_q0_mpmath, partitions_of  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 warnings.filterwarnings("ignore")
@@ -81,14 +82,20 @@ def ray_grid(lo: mp.mpf, hi: mp.mpf, npts: int) -> list[mp.mpf]:
     return [1 + mp.e ** (a + (b - a) * k / (npts - 1)) for k in range(npts)]
 
 
-def scan_crossings(f, grid: list[mp.mpf]) -> tuple[list[float], list[mp.mpf]]:
-    """Evaluate f on grid; bisect every bracketed sign change. Returns (qs, vals)."""
+def scan_crossings(f, grid: list[mp.mpf]) -> tuple[list[mp.mpf], list[mp.mpf]]:
+    """Evaluate f on grid; bisect every bracketed sign change. Returns (qs, vals).
+
+    `qs` stays mpf. It used to be `float(...)`, which put the physical/diagnostic
+    split (`q <= q₀`) on the f64 side of a comparison against a 50-dps q₀ — a
+    classification decided at 1e-17 when the located crossing is itself only
+    f64-resolved. Serialization happens at the witness sink, not here.
+    """
     vals = [f(q) for q in grid]
     qs = []
     for i in range(len(grid) - 1):
         a, b = vals[i], vals[i + 1]
         if a != 0 and b != 0 and (a > 0) != (b > 0):
-            qs.append(float(bisect_cross(f, grid[i], grid[i + 1], a, b, iters=40)))
+            qs.append(bisect_cross(f, grid[i], grid[i + 1], a, b, iters=40))
     return qs, vals
 
 
@@ -148,32 +155,36 @@ def main() -> int:
     print("─" * 88)
     grid = ray_grid(Q_LO, Q_RAY_MAX, RAY_NPTS)
     iso = {}
+    iso_mpf = {}          # the mpf crossings, kept out of the witness dict
     for name in ("D", "T", "3He"):
         Z, N = ZN[name]
         n = 3 * (Z + N)
         f = lambda q, Z=Z, N=N: F_iso(Z, N, q)
         t0 = time.time()
         qs, vals = scan_crossings(f, grid)
-        below = [q for q in qs if q <= float(Q0)]
-        above = [q for q in qs if q > float(Q0)]
+        below = [q for q in qs if q <= Q0]          # mpf vs mpf, not f64 vs 50-dps
+        above = [q for q in qs if q > Q0]
         f_q0 = f(Q0)
+        iso_mpf[name] = {"first_above": above[0] if above else None}
         iso[name] = {
             "n_strands": n,
-            "F_at_qlo": float(vals[0]),
-            "F_at_q0": float(f_q0),
+            "F_at_qlo": fmt_f64_limited(vals[0]),
+            "F_at_q0": fmt_f64_limited(f_q0),
             "sign_qlo": int(mp.sign(vals[0])),
             "sign_q0": int(mp.sign(f_q0)),
-            "crossings_below_or_at_q0": below,
-            "diagnostic_crossings_above_q0": above,
-            "diagnostic_first_crossing_above_q0": above[0] if above else None,
-            "diagnostic_ray_max_q": float(Q_RAY_MAX),
+            "crossings_below_or_at_q0": [fmt_f64_limited(q) for q in below],
+            "diagnostic_crossings_above_q0": [fmt_f64_limited(q) for q in above],
+            "diagnostic_first_crossing_above_q0":
+                fmt_f64_limited(above[0]) if above else None,
+            "diagnostic_ray_max_q": str_at_true_precision(Q_RAY_MAX),
             "diagnostic_n_crossings_on_ray": len(qs),
         }
         print(f"\n  {name:4s} n={n:2d}  F(q_lo)={float(vals[0]):+.5e}  F(q₀)={float(f_q0):+.5e}"
               f"   ({time.time()-t0:.0f}s)")
-        print(f"        crossings ≤ q₀ (PHYSICAL INTERVAL): {below if below else 'none'}")
+        print(f"        crossings ≤ q₀ (PHYSICAL INTERVAL): "
+              f"{[float(q) for q in below] if below else 'none'}")
         print(f"        crossings > q₀ (DIAGNOSTIC ONLY)  : "
-              f"{[f'{q:.6f}' for q in above] if above else 'none'}")
+              f"{[f'{float(q):.6f}' for q in above] if above else 'none'}")
 
     # ── 2. what happens at the n=9 crossing: which block overtakes? ────────
     print("\n" + "─" * 88)
@@ -183,23 +194,24 @@ def main() -> int:
     decomp = {}
     for name in ("T", "3He"):
         Z, N = ZN[name]
-        qc = iso[name]["diagnostic_first_crossing_above_q0"]
+        qc = iso_mpf[name]["first_above"]     # the mpf, not the serialized string
         # sample: q→1⁺, q₀, and (if a diagnostic crossing exists) either side of it
         samples = [("q_lo", Q_LO), ("q0", Q0)]
         if qc is not None:
-            samples += [("diag_below_cross", mp.mpf(repr(qc)) * mp.mpf("0.97")),
-                        ("diag_above_cross", mp.mpf(repr(qc)) * mp.mpf("1.03"))]
+            samples += [("diag_below_cross", qc * mp.mpf("0.97")),
+                        ("diag_above_cross", qc * mp.mpf("1.03"))]
         rec = {}
         print(f"\n  --- {name} (n=9) ---")
         for tag, q in samples:
             lam_star, t_star, tot, rows = dominant_partition(Z, N, q)
             rec[tag] = {
-                "q": float(q),
+                "q": str_at_true_precision(q),
                 "dominant_partition": list(lam_star),
                 "dominant_delta": int(delta_lambda(lam_star)),
-                "dominant_term": float(t_star),
-                "total": float(tot),
-                "top4": [{"partition": list(l), "delta": int(d), "term": float(t)}
+                "dominant_term": fmt_f64_limited(t_star),
+                "total": fmt_f64_limited(tot),
+                "top4": [{"partition": list(l), "delta": int(d),
+                          "term": fmt_f64_limited(t)}
                          for l, d, t in rows[:4]],
                 "beyond_substrate": bool(q > Q0),
             }
@@ -219,16 +231,19 @@ def main() -> int:
     for n in (6, 9, 12):
         f = lambda q, n=n: G_char_free(n, q)
         qs, vals = scan_crossings(f, grid)
-        below = [q for q in qs if q <= float(Q0)]
-        above = [q for q in qs if q > float(Q0)]
+        below = [q for q in qs if q <= Q0]
+        above = [q for q in qs if q > Q0]
+        # G is character-free: no χ kernel, so these keep their full 50 dps.
         cf[str(n)] = {
-            "G_at_qlo": float(vals[0]), "G_at_q0": float(f(Q0)),
-            "crossings_below_or_at_q0": below,
-            "diagnostic_crossings_above_q0": above,
+            "G_at_qlo": str_at_true_precision(vals[0]),
+            "G_at_q0": str_at_true_precision(f(Q0)),
+            "crossings_below_or_at_q0": [str_at_true_precision(q) for q in below],
+            "diagnostic_crossings_above_q0": [str_at_true_precision(q) for q in above],
         }
         print(f"  n={n:2d}  G(q_lo)={float(vals[0]):+.4e}  G(q₀)={float(f(Q0)):+.4e}"
-              f"   ≤q₀: {below if below else 'none'}   >q₀ (diag): "
-              f"{[f'{q:.5f}' for q in above] if above else 'none'}")
+              f"   ≤q₀: {[float(q) for q in below] if below else 'none'}"
+              f"   >q₀ (diag): "
+              f"{[f'{float(q):.5f}' for q in above] if above else 'none'}")
 
     # ── verdict ────────────────────────────────────────────────────────────
     n9_above = [name for name in ("T", "3He")

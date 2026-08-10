@@ -57,7 +57,8 @@ on `|x| = 1`) and `x⁻¹ = conj x`. Hence `k₂ = −k₁`: **there is only one
 integer, not two.** It fails at `φ = π` exactly because `1 − x·y₁` sits on the
 cut there and `log(conj z) ≠ conj(log z)`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** This file does not
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. This file does not
 close `hcont`; it exchanges it for a different, arguably more tractable set of
 obligations, and says so.
 -/

@@ -284,16 +284,20 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
                         "abs_delta": fmt(delta),
                         "rel_diff": fmt(rel),
                         "agree_at_25dps": agree_25,
-                        "python_wall_sec": float(bridge_t_python),
+                        # Wall-clock timings, not measurements. Written as
+                        # fixed-precision STRINGS: it keeps raw float64 out of
+                        # the witness, and it stops a timing jitter in the 16th
+                        # digit from rewriting the file on every run.
+                        "python_wall_sec": f"{bridge_t_python:.4f}",
                         "speedup_vs_python":
-                            float(bridge_t_python / bridge_t_rust)
+                            f"{bridge_t_python / bridge_t_rust:.1f}"
                             if bridge_t_rust > 0 else None,
                     }
                     print(f"    [crosscheck] python = {tr_python}  "
                           f"({bridge_t_python:.2f}s)")
                     print(f"    [crosscheck] |Δ| = {fmt(delta)}  "
                           f"rel = {fmt(rel)}  "
-                          f"speedup = {rust_crosscheck['speedup_vs_python']:.1f}×")
+                          f"speedup = {rust_crosscheck['speedup_vs_python']}×")
                     # Enforce the gate (Copilot PR #895 review fix):
                     # cross-check mode is a verification mode, so a
                     # failing agreement must surface as a hard error.
@@ -345,7 +349,7 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
                 print(f"    |bridge - sympy|   = {diff}")
                 symbolic_check = {
                     "nf_terms": stats["n_terms_nf"],
-                    "elapsed_sec": dt_sym,
+                    "elapsed_sec": f"{dt_sym:.4f}",
                     "tr_M_at_q0_50dps": fmt(tr_sym_mpf),
                     "abs_diff_vs_bridge": fmt(diff),
                 }
@@ -376,7 +380,7 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
             print(f"    [peel]  tr_M(q_0) = {tr_peel_mpf}  ({dt_peel:.2f}s)")
             print(f"    |bridge - peel|    = {diff_peel}")
             peel_check = {
-                "elapsed_sec": dt_peel,
+                "elapsed_sec": f"{dt_peel:.4f}",
                 "tr_M_at_q0_50dps": fmt(tr_peel_mpf),
                 "abs_diff_vs_bridge": fmt(diff_peel),
             }
@@ -420,14 +424,16 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
             "n_crossings_canonical": n_crossings_canonical,
             "tr_M_at_q0_50dps": fmt(tr_at_q0_mpf),
             "term1_b_pred_mev_50dps": fmt(b_term1),
-            "bridge_elapsed_sec": bridge_t,
+            "bridge_elapsed_sec": f"{bridge_t:.4f}",
             # `method` is the user-requested kernel; `effective_method`
             # reflects what actually produced `tr_M_at_q0_50dps` after
             # any fallback (Copilot PR #895 review).
             "method": method,
             "effective_method": effective_method,
-            "rust_canonical_chi_elapsed_sec": bridge_t_rust,
-            "python_hoefsmit_elapsed_sec": bridge_t_python,
+            "rust_canonical_chi_elapsed_sec":
+                None if bridge_t_rust is None else f"{bridge_t_rust:.6f}",
+            "python_hoefsmit_elapsed_sec":
+                None if bridge_t_python is None else f"{bridge_t_python:.4f}",
             "rust_crosscheck": rust_crosscheck,
             "symbolic_cross_check": symbolic_check,
             "peel_cross_check": peel_check,

@@ -28,7 +28,8 @@ lemmas with an unwritten join is not a proof. Recorded here rather than folded
 silently into a larger file, because "assembly of proved parts" is exactly the
 phrase under which a missing step hides.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

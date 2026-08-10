@@ -71,9 +71,15 @@ struct HeckeEngine {
 }
 
 impl HeckeEngine {
+    /// `z` is **trace convention D** (SU(2)/Temperley–Lieb): z = q³/(q² + 1),
+    /// matching `gram::markov_z`. Convention C (z = 1/(q^{1/2}+q^{-1/2})) was
+    /// excised by owner ruling 2026-08-09;
+    /// see `docs/coordination/trace-convention-registry.md`.
+    /// `s` (the skein variable q^{1/2} − q^{-1/2}) is unrelated to the trace
+    /// convention and is unchanged.
     fn new(q: f64) -> Self {
         let qi = 1.0/q;
-        Self { ha: q-qi, s: q.sqrt()-qi.sqrt(), z: 1.0/(q.sqrt()+qi.sqrt()), q, qi }
+        Self { ha: q-qi, s: q.sqrt()-qi.sqrt(), z: q*q*q/(q*q+1.0), q, qi }
     }
 
     /// Crossing coefficients (c, d) for T(c,d) = c·σ + d·𝟏.

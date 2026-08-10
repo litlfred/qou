@@ -139,6 +139,9 @@ what the coordinate route costs, but the route itself is not needed.
    `wedderburn₄`.
 3. Then `QOU/Hecke/InstanceH3.H3Alg` and `InstanceH4.H4Alg` are redundant carriers
    and should be reduced to what is genuinely theirs, or dropped.
+   **Done — qou-ti7p.** Both files deleted; the `H3.mul` ring laws and the
+   arbitrary-field relations moved into `QOU/Mathlib/HeckeAlgebra.lean`, the ASCII
+   presentation into a new `QOU/Machinery/H4AsciiPresentation.lean`.
 
 ### What was wrongly claimed, and where it was corrected
 
@@ -194,7 +197,9 @@ the basis, and it costs one `decide` each.
 
 ### What is still open
 
-`HeckeAlgebra R 3 q (H3A …)` and `HeckeAlgebra R 4 q (H4A …)` — the *class*
-instances on these carriers, built from the presentation lemmas already proved on
-their bases. Once those land, `QOU/Hecke/InstanceH3.H3Alg` and
-`InstanceH4.H4Alg` are redundant carriers and should be reduced or dropped.
+Nothing. Both halves landed in qou-ti7p: `instHeckeAlgebraH3A` /
+`instHeckeAlgebraH4A` (`QOU/Hecke/InstanceOnH3A.lean`, `InstanceOnH4A.lean`) and
+`isHeckeOfFullRank_H3A` / `_H4A` (`FullRankFromWedderburn.lean`, via the
+coordinate equivalence rather than transport along `wedderburn₃/₄` — see that
+bean for why the transport route would not compile). `QOU/Hecke/InstanceH3.lean`
+and `InstanceH4.lean` are deleted.

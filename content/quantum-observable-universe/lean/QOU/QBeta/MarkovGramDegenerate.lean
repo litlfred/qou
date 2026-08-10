@@ -1,0 +1,197 @@
+import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
+import Mathlib.Algebra.BigOperators.Ring.Finset
+import QOU.QBeta.TemperleyLiebTower
+
+/-!
+# The Markov–Gram matrix is singular under convention D
+
+**The excision's mathematical half.** Eleven content blocks assert that the
+Markov pairing `⟨x, y⟩_τ := τ(x·y)` on `H_n(q)` is non-degenerate, that
+`det G ≠ 0`, and that the inverse `G⁻¹` enters the Frobenius co-Casimir
+`C = Σ_{i,j} (G⁻¹)_{ij} b_i b_j`. Under the production convention **D** every
+one of those claims is **false as stated about `H_n`**: `det G = 0` exactly,
+because the antisymmetric block carries weight `y₍₁³₎ = 0` and is therefore *in*
+the radical of the trace form.
+
+Those blocks are not wrong about the mathematics; they are wrong about the
+object. The Frobenius structure is real — it lives on the quotient
+`H_n / rad τ ≅ TL_n(δ)`, not on `H_n`. This file proves both halves of that
+sentence, so the content can be repaired by *citation* rather than by deletion.
+
+## The chain, end to end
+
+1. `TemperleyLiebTower.conventionD_kills_antisymmetriser` — the pin `z(q²+1) = q³`
+   forces `y₍₁³₎ = 0`. *(already proved)*
+2. `block_mem_radical` — a Wedderburn block whose weight is `0` lies in the trace
+   radical. Three lines, and it is where cyclicity is spent.
+3. `gram_det_eq_zero_of_radical_combination` — a nonzero radical element in the
+   span of the basis puts a nonzero vector in the kernel of `G`, so `det G = 0`.
+4. `TemperleyLiebTower.traceRadical_two_sided` — the radical is a two-sided
+   ideal, so the quotient is a ring. *(already proved)*
+5. `pairing_descends` — the pairing is constant on radical cosets, hence
+   descends to that quotient.
+6. `mem_radical_of_pairing_zero` — and on the quotient it is non-degenerate.
+
+Steps 1–3 refute the eleven blocks; steps 4–6 tell them where to move the claim.
+
+## Why `det G = 0` is exact, not approximate
+
+This is worth being sharp about, because the C-convention numbers made it look
+like a small perturbation. Under **C** the antisymmetric weight is
+`y₍₁³₎ = 0.0227449…` — small, nonzero, and `G` is invertible with a large but
+finite condition number. Under **D** the weight is `0`, full stop: not `10⁻¹⁶`,
+not "numerically singular". The rank drops by exactly the dimension of the
+discarded blocks (`24 − 14 = 3² + 1²` at `n = 4`,
+`TemperleyLiebTower.radical_four`), and `Σ dim² = Catalan n` counts what
+survives. A `G⁻¹` computed under C is not an approximation to a `G⁻¹` under D,
+because the latter does not exist.
+-/
+
+namespace QOU.QBeta.MarkovGramDegenerate
+
+open Matrix QOU.QBeta.TemperleyLiebTower
+
+section Radical
+
+variable {R : Type*} [CommRing R] {A : Type*} [Ring A]
+
+/-- **A zero-weight Wedderburn block lies in the trace radical.**
+
+If the trace restricted to the block `p` is `τ(x·p) = y·χ(x)` and the weight `y`
+vanishes, then `p` pairs to zero against everything, which is exactly membership
+in `traceRadical`.
+
+Cyclicity is the whole content: `traceRadical` is stated with the radical
+element on the **left** (`τ(p·b) = 0`), while the block hypothesis is stated
+with it on the **right**. For the Markov trace cyclicity is the defining
+property, so this costs nothing — but it is a real hypothesis and the proof
+would not go through without it. -/
+theorem block_mem_radical (tau : A → R) (p : A) (y : R) (chi : A → R)
+    (hcyc : ∀ x z : A, tau (x * z) = tau (z * x))
+    (hblock : ∀ x : A, tau (x * p) = y * chi x)
+    (hy : y = 0) : p ∈ traceRadical tau := by
+  intro b
+  rw [hcyc, hblock, hy, zero_mul]
+
+/-- **The pairing is constant on radical cosets**, hence descends to `A / rad τ`.
+
+With `traceRadical_two_sided` (the radical is a two-sided ideal, so the quotient
+is a ring) this is the statement that the Frobenius pairing the content blocks
+want is well defined — on the quotient. -/
+theorem pairing_descends {R : Type*} [CommRing R] {A : Type*} [Ring A] [Algebra R A]
+    (tau : A →ₗ[R] R) {a a' : A}
+    (h : a - a' ∈ traceRadical (⇑tau)) (b : A) :
+    tau (a * b) = tau (a' * b) := by
+  have hz : tau ((a - a') * b) = 0 := h b
+  rw [sub_mul, map_sub, sub_eq_zero] at hz
+  exact hz
+
+/-- **Non-degeneracy after the quotient.**
+
+An element pairing to zero against everything *is* in the radical, so its class
+in `A / rad τ` is zero. This is definitional — `traceRadical` is defined by that
+very condition — and it is stated anyway because it is the half of the descent
+the content blocks actually cite: "the induced pairing on the quotient is
+non-degenerate" is not an extra theorem to prove, it is what quotienting by the
+radical *means*. Saying so explicitly is what stops the claim drifting back onto
+`H_n`. -/
+theorem mem_radical_of_pairing_zero (tau : A → R) {a : A}
+    (h : ∀ b : A, tau (a * b) = 0) : a ∈ traceRadical tau := h
+
+end Radical
+
+section GramMatrix
+
+variable {R : Type*} [CommRing R] [IsDomain R]
+variable {A : Type*} [Ring A] [Algebra R A]
+variable {ι : Type*} [Fintype ι] [DecidableEq ι]
+
+/-- **The Markov–Gram matrix** `G_{ij} = τ(b_i · b_j)` of a linear functional
+against a finite family. No basis hypothesis: the family may be dependent, and
+the statements below are about the matrix regardless. -/
+def gram (tau : A →ₗ[R] R) (b : ι → A) : Matrix ι ι R := fun i j => tau (b i * b j)
+
+omit [IsDomain R] [Fintype ι] [DecidableEq ι] in
+@[simp] theorem gram_apply (tau : A →ₗ[R] R) (b : ι → A) (i j : ι) :
+    gram tau b i j = tau (b i * b j) := rfl
+
+-- `omit ... in` must precede the docstring, not sit between it and the theorem.
+omit [IsDomain R] [DecidableEq ι] in
+/-- **`G` applied to a coefficient vector is the pairing against the combination.**
+
+`(G *ᵥ c)_i = τ(b_i · Σ_j c_j b_j)`. The bridge between the matrix picture the
+content blocks use and the algebra picture the radical lives in. -/
+theorem gram_mulVec (tau : A →ₗ[R] R) (b : ι → A) (c : ι → R) (i : ι) :
+    (gram tau b *ᵥ c) i = tau (b i * ∑ j, c j • b j) := by
+  rw [Finset.mul_sum, map_sum]
+  simp only [gram_apply, Matrix.mulVec, dotProduct, mul_smul_comm, map_smul, smul_eq_mul]
+  exact Finset.sum_congr rfl fun j _ => mul_comm _ _
+
+/-- **The Markov–Gram determinant vanishes when the radical meets the span.**
+
+If some nonzero coefficient vector `c` produces a combination `a = Σ c_j b_j`
+lying in the trace radical, then `c` is a nonzero kernel vector of `G`, so
+`det G = 0`.
+
+This is the theorem that refutes the eleven `gram-inverse-unqualified` blocks.
+Under convention **D** its hypothesis is *met*, by `block_mem_radical` applied to
+the antisymmetric block that `conventionD_kills_antisymmetriser` sends to zero —
+so `G⁻¹` does not exist and the co-Casimir `Σ (G⁻¹)_{ij} b_i b_j` is not a
+well-formed expression on `H_n`.
+
+Note the hypothesis is about `τ(b_i · a)`, the radical element on the **right**;
+`traceRadical` is stated with it on the left, and `traceRadical_star_eq` /
+cyclicity is what connects the two. It is taken as a hypothesis here rather than
+derived so the theorem holds for a bare linear functional, cyclic or not. -/
+theorem gram_det_eq_zero_of_radical_combination
+    (tau : A →ₗ[R] R) (b : ι → A) (c : ι → R) (hc : c ≠ 0)
+    (hrad : ∀ i : ι, tau (b i * ∑ j, c j • b j) = 0) :
+    (gram tau b).det = 0 := by
+  refine Matrix.exists_mulVec_eq_zero_iff.mp ⟨c, hc, ?_⟩
+  ext i
+  rw [Pi.zero_apply, gram_mulVec tau b c i]
+  exact hrad i
+
+/-- **Contrapositive, the form the content blocks should cite.**
+
+`det G ≠ 0` *implies* no basis combination lies in the radical. So a block that
+wants `G⁻¹` is committing to a trace with trivial radical — which convention D
+is not. Stating it this way makes the dependency visible at the point of use
+instead of buried in a normalisation. -/
+theorem no_radical_combination_of_det_ne_zero
+    (tau : A →ₗ[R] R) (b : ι → A)
+    (hdet : (gram tau b).det ≠ 0) (c : ι → R) (hc : c ≠ 0) :
+    ∃ i : ι, tau (b i * ∑ j, c j • b j) ≠ 0 := by
+  by_contra hcon
+  push_neg at hcon
+  exact hdet (gram_det_eq_zero_of_radical_combination tau b c hc hcon)
+
+end GramMatrix
+
+section RankAccounting
+
+/-! ### What the rank drop is, exactly
+
+The corank of `G` is the dimension of the radical, and the tower already counts
+both sides. These are the arithmetic checks that tie the abstract statement to
+the numbers the content blocks quote; the block dimensions themselves come from
+`TemperleyLiebTower.catalan_four` / `radical_four`. -/
+
+/-- **`n = 3`: `dim H₃ = 6`, `dim TL₃ = 5`, so `G₃` has corank `1`.** The single
+lost direction is the antisymmetriser — the one-dimensional `(1³)` block. -/
+theorem corank_three : 6 - (1 ^ 2 + 2 ^ 2) = 1 ^ 2 := by norm_num
+
+/-- **`n = 4`: `dim H₄ = 24`, `dim TL₄ = 14`, so `G₄` has corank `10`** — the
+`(2,1,1)` block of dimension `3` and the `(1⁴)` block of dimension `1`,
+contributing `3² + 1² = 10`. Same statement as
+`TemperleyLiebTower.radical_four`, written as a corank. -/
+theorem corank_four : 24 - (1 ^ 2 + 3 ^ 2 + 2 ^ 2) = 3 ^ 2 + 1 ^ 2 := by norm_num
+
+/-- **`n = 5`: `dim H₅ = 120`, `dim TL₅ = 42`, corank `78`.** The three-row and
+lower blocks of `S₅` — dimensions `6, 5, 4, 1` — give `6² + 5² + 4² + 1² = 78`. -/
+theorem corank_five : 120 - (1 ^ 2 + 4 ^ 2 + 5 ^ 2) = 6 ^ 2 + 5 ^ 2 + 4 ^ 2 + 1 ^ 2 := by
+  norm_num
+
+end RankAccounting
+
+end QOU.QBeta.MarkovGramDegenerate

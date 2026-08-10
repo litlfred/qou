@@ -151,7 +151,9 @@ pub fn qou_lr_coefficient(lambda_json: &str, mu_json: &str, nu_json: &str) -> Re
 // > double precision can still serialise the braid word and POST
 // it to a server-side endpoint backed by the native crate.
 
-/// Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
+/// Markov parameter `z = q^3 / (q^2 + 1)` — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+/// `docs/coordination/trace-convention-registry.md`.
 #[wasm_bindgen]
 pub fn qou_markov_z(q: f64) -> f64 {
     hecke_engine::gram::markov_z(q)

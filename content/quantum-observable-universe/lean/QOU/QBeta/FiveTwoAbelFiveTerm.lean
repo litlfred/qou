@@ -49,7 +49,9 @@ for the corpus's `rogersL` given only reflection, which
 It does **not** close the 5₂ sum rule. The transport `x = 1 → x = -1` is still
 unformalized (`qou-trns`), and `extend` is still not identified with the analytic
 continuation in Lean (`qou-rstq` item 4 — closed on paper by Route 15, not in
-Lean). **The 5₂ sum rule remains verified to 80 dps, unproved.**
+Lean). **The 5₂ sum rule is PROVED**:
+`QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoAbelFiveTerm
