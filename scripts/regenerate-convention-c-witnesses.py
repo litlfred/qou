@@ -43,6 +43,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import os
 import pathlib
 import re
@@ -529,7 +530,14 @@ def report():
     print(f"wall time     : {total_secs/60:.1f} min")
     print(f"witnesses     : C cleared {cleared}   still C {still_c}")
     print(f"\ndelta kinds   : " + ", ".join(f"{k}={v}" for k, v in sorted(kinds.items())))
-    print(f"structural zeros (y_lambda -> 0, ell(lambda)>=3): {zeros}")
+    # `structural_zero` requires the value to land on exactly 0.0. Producers
+    # that carry the weight through mpmath arithmetic instead land it at ~1e-40,
+    # which classify() calls `vanished`. Both are the convention-D collapse;
+    # reporting only the first prints "structural zeros: 0" next to
+    # "vanished=70" and reads as though nothing collapsed at all.
+    vanished = kinds.get("vanished", 0)
+    print(f"convention-D collapse: {zeros + vanished}"
+          f"   (exactly 0: {zeros}, below noise floor {NOISE_FLOOR:g}: {vanished})")
 
     # Key on the magnitude only: two shifts can tie on `rel`, and the
     # tuple comparison then falls through to comparing dicts, which raises.
@@ -550,6 +558,37 @@ def report():
     for (label, _), n in zip(buckets, counts):
         bar = "#" * min(40, n // max(1, max(counts) // 40 or 1))
         print(f"  {label:<30} {n:5d}  {bar}")
+
+    # Per-quantity rollup. The extremes lists answer "which single number moved
+    # most"; they cannot answer "did quantity X move by the order the registry
+    # predicts", because one quantity appears under many JSON paths and at many
+    # array indices. Group by the leaf field name, with array indices and the
+    # enclosing path stripped, and report the spread.
+    #
+    # A tight spread within a group is the signal worth having: the registry
+    # records the migration as ~195.8 ppm on beta_Bor and ~-197 ppm on m_p, so a
+    # group whose median lands there and whose max is close to its median has
+    # moved coherently. A group spanning orders of magnitude has not, and is
+    # either mixing two quantities under one name or is not a convention effect.
+    groups: dict[str, list[float]] = {}
+    for rel, _prod, _wpath, d in shifts:
+        leaf = re.sub(r"\[\d+\]", "", d["field"]).split(".")[-1].strip()
+        groups.setdefault(leaf or "(unnamed)", []).append(rel)
+    if groups:
+        print("\nper-quantity rollup (leaf field, indices stripped):")
+        print(f"  {'quantity':<34} {'n':>5} {'median ppm':>14} {'max ppm':>14}  spread")
+        ranked = sorted(groups.items(), key=lambda kv: max(kv[1]), reverse=True)
+        for name, rels in ranked[:20]:
+            rs = sorted(rels)
+            med = rs[len(rs) // 2]
+            mx = rs[-1]
+            # Orders of magnitude between the smallest and largest move in the
+            # group. 0 means every member moved together.
+            span = ""
+            if rs[0] > 0:
+                decades = math.log10(mx / rs[0])
+                span = "coherent" if decades < 1 else f"{decades:.0f} decades"
+            print(f"  {name[:34]:<34} {len(rs):5d} {med*1e6:14.1f} {mx*1e6:14.1f}  {span}")
 
     shifts.sort(key=lambda t: t[0], reverse=True)
     print(f"\nlargest RELATIVE shifts:")
