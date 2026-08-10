@@ -1,20 +1,35 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-18T18:07:27.521842+00:00",
-  "commitSha": "7ed5bd92a83eb3187638d475d54804ab137b5e7b",
+  "computedAt": "2026-08-10T15:57:17.226244+00:00",
+  "commitSha": "915931722efe40315fb6c709965969b9e3c17ad6",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 6,
   "computation": "categorical-bypass-volmatch-demo",
   "scriptFile": "categorical_bypass_volmatch_demo.py",
-  "scriptHash": "2996305e1614",
-  "scriptCommitSha": "deeead4ec85e681e22a1567ac3ad828427b2f855",
+  "scriptHash": "8a619d2ecfe8",
+  "scriptCommitSha": "67b2d3d8df8dfd813fd64527bb9c995ffe2ced3e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
   "description": "Bypass demo: compute B(𝔥) directly from joint-tower SDP Wedderburn blocks via tr_M = Σ_λ y_λ · χ_λ at q_0, without using volume-match knot identification. Surfaces a 27%–15× discrepancy with mass-table-ppb's volume-match B = m_e · ρ · Vol_hyp(K), establishing that the regular Markov trace at q_0 ≠ Vol_hyp(K). The canonical chain in PR #442 step (5)–(7) needs further resolution before sub-percent accuracy is possible.",
   "contentBlock": "prop:atom-knot-mass-derivation",
   "parameters": {
-    "q_0": 1.1099785955541805,
-    "m_e_MeV": 0.51099895
+    "q_0": 1.1099785827513808,
+    "m_e_MeV": 0.51099895069
   },
   "data": {
     "rows": [
@@ -25,11 +40,11 @@
         "n_native": 2,
         "rho": 1,
         "tr_M_direct": 0.729319922671296,
-        "B_pred_direct_MeV": 0.3726817146991134,
+        "B_pred_direct_MeV": 0.37268171520234417,
         "B_volmatch_MeV": null,
         "B_AME_MeV": 1.0,
         "ratio_direct_to_volmatch": null,
-        "ratio_direct_to_AME": 0.3726817146991134,
+        "ratio_direct_to_AME": 0.37268171520234417,
         "wedderburn_terms": [
           {
             "partition": [
@@ -60,11 +75,11 @@
         "n_native": 3,
         "rho": 1,
         "tr_M_direct": 0.28787966790047687,
-        "B_pred_direct_MeV": 0.14710620802349236,
+        "B_pred_direct_MeV": 0.14710620822212936,
         "B_volmatch_MeV": 2.2488207948647343,
-        "B_AME_MeV": 2.22456612,
-        "ratio_direct_to_volmatch": 0.06541482022907955,
-        "ratio_direct_to_AME": 0.06612804479081627,
+        "B_AME_MeV": 2.2245662000000004,
+        "ratio_direct_to_volmatch": 0.06541482031740894,
+        "ratio_direct_to_AME": 0.0661280425020075,
         "wedderburn_terms": [
           {
             "partition": [
@@ -106,11 +121,11 @@
         "n_native": 5,
         "rho": 2,
         "tr_M_direct": 0.012891768633494205,
-        "B_pred_direct_MeV": 0.013175360470716945,
+        "B_pred_direct_MeV": 0.013175360488507587,
         "B_volmatch_MeV": 8.46859838653302,
-        "B_AME_MeV": 8.4817984,
-        "ratio_direct_to_volmatch": 0.0015557899748403156,
-        "ratio_direct_to_AME": 0.001553368737308935,
+        "B_AME_MeV": 8.481796200000002,
+        "ratio_direct_to_volmatch": 0.0015557899769410933,
+        "ratio_direct_to_AME": 0.0015533691423177069,
         "wedderburn_terms": [
           {
             "partition": [
@@ -198,11 +213,11 @@
         "n_native": 3,
         "rho": 2,
         "tr_M_direct": 0.9983824519777768,
-        "B_pred_direct_MeV": 1.0203447693181387,
+        "B_pred_direct_MeV": 1.0203447706959066,
         "B_volmatch_MeV": 7.48891930977096,
-        "B_AME_MeV": 7.7180375,
-        "ratio_direct_to_volmatch": 0.136247264406611,
-        "ratio_direct_to_AME": 0.13220261877687672,
+        "B_AME_MeV": 7.71804132,
+        "ratio_direct_to_volmatch": 0.13624726459058517,
+        "ratio_direct_to_AME": 0.13220255352246632,
         "wedderburn_terms": [
           {
             "partition": [
