@@ -299,6 +299,7 @@ import QOU.QuantumObservableUniverses.QBetaEnergyDictionary
 import QOU.QuantumObservableUniverses.QExpEntire
 import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
+import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.Irreducibility
