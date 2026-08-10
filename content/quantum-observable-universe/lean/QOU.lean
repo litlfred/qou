@@ -301,6 +301,7 @@ import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.HeckeAlgebra
+import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.YoungTableaux
