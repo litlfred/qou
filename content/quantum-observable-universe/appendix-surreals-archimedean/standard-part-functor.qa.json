@@ -443,89 +443,6 @@
         "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
-    "proof-no-bare-sorries": [
-      {
-        "field_hash": {
-          "md": "d4d2721055d6",
-          "ts": "ebc4aec1446a",
-          "lean": "83fe55c55020",
-          "lean_statement": "888d3d2f5902"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "5f54e3f82f73",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:00:07.160Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "proof-build-green": [
-      {
-        "field_hash": {
-          "md": "d4d2721055d6",
-          "ts": "ebc4aec1446a",
-          "lean": "83fe55c55020",
-          "lean_statement": "888d3d2f5902"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "492c533d3fbe",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
-        },
-        "reviewed_at": "2026-08-09T13:00:07.160Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "proof-no-trivial-skeleton": [
-      {
-        "field_hash": {
-          "md": "d4d2721055d6",
-          "ts": "ebc4aec1446a",
-          "lean": "83fe55c55020",
-          "lean_statement": "888d3d2f5902"
-        },
-        "result": "pass",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "78239d5e66a5",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "21d9ff417741"
-        },
-        "reviewed_at": "2026-08-09T13:00:07.160Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
-      }
-    ],
-    "proof-lean-compiles": [
-      {
-        "field_hash": {
-          "md": "d4d2721055d6",
-          "ts": "ebc4aec1446a",
-          "lean": "83fe55c55020",
-          "lean_statement": "888d3d2f5902"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-extended.ts",
-          "version": "v1",
-          "script_hash": "badf9b8e012f",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860",
-          "deps_hash": "16d8c7a8984e"
-        },
-        "reviewed_at": "2026-08-09T13:00:07.160Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "stale: cached lean_sha 9f23b8e1795d != current 83fe55c55020; re-run content/pipeline/lean-compile-audit.ts to refresh"
-      }
-    ],
     "canonical-calibration-count": [
       {
         "field_hash": {
@@ -967,165 +884,6 @@
         }
       }
     ],
-    "proof-narrative-lean-equiv": [
-      {
-        "result": "pass",
-        "notes": "Heuristic check: Both Lean and MD files exist and appear substantive. (Resolved via paths fallback)",
-        "reviewed_at": "2026-07-08T00:54:12.000Z",
-        "reviewed_sha": "2d27509d46140959fa502e6297efcd396d4c2290",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-statement-integrity": [
-      {
-        "result": "pass",
-        "notes": "Heuristic: No recent signature drift detected.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-self-assuming-projection": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-trivial-true": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-false-premise": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-decide-masking": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-no-unused-hypotheses": [
-      {
-        "result": "pass",
-        "notes": "No vacuity script candidate found. Agent confirms clean.",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        }
-      }
-    ],
-    "proof-rater-strategy-clarity": [
-      {
-        "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        },
-        "score": {
-          "value": 0.85
-        }
-      }
-    ],
-    "proof-rater-goal-plausibility": [
-      {
-        "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        },
-        "score": {
-          "value": 0.85
-        }
-      }
-    ],
-    "proof-rater-novelty": [
-      {
-        "result": "pass",
-        "notes": "Heuristic score",
-        "reviewed_at": "2026-07-08T00:35:07.000Z",
-        "reviewed_sha": "e62336dabc1d49e8f14a8c00d959d1c14c0f8481",
-        "reviewer": {
-          "kind": "agent",
-          "id": "local/qa-agent-drain-heuristic",
-          "agent_skill": "local/qa-agent-drain-heuristic",
-          "agent_model": "gemini-3.1-pro",
-          "agent_date": "2026-07-08"
-        },
-        "score": {
-          "value": 0.85
-        }
-      }
-    ],
     "fit-section-chapter": [
       {
         "result": "pass",
@@ -1469,28 +1227,6 @@
         }
       }
     ],
-    "proof-compile-cost": [
-      {
-        "field_hash": {
-          "md": "d4d2721055d6",
-          "ts": "ebc4aec1446a",
-          "lean": "83fe55c55020",
-          "lean_statement": "888d3d2f5902"
-        },
-        "result": "n/a",
-        "reviewer": {
-          "kind": "script",
-          "id": "content/pipeline/qa-checkers-cost.ts",
-          "version": "v1",
-          "script_hash": "3eb5d65c22b2",
-          "script_commit_sha": "6f3cf6a0c1d29dd9e8c3da3f6073a776ad58c456",
-          "deps_hash": "4df6f652b039"
-        },
-        "reviewed_at": "2026-08-09T13:00:07.160Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "notes": "no docs/audits/lean-profile.json"
-      }
-    ],
     "uses-editorial-hygiene": [
       {
         "field_hash": {
@@ -1567,5 +1303,43 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T16:53:02.544Z"
+  "updated_at": "2026-08-09T16:53:02.544Z",
+  "_stale_note": {
+    "date": "2026-08-10",
+    "reason": "standard-part-functor.lean rewritten: archimedean_mass_commutes was a tautology (subst; rfl) whose entire advertised content sat in a discarded hypothesis, and it stated an equality where the .md claims an A->infty LIMIT. The proof-* criteria below reviewed the OLD Lean; deleted rather than left falsely green. qa-sweep could not be re-run: folio-assistant absent in this sandbox.",
+    "dropped_criteria": [
+      "proof-no-bare-sorries",
+      "proof-build-green",
+      "proof-no-trivial-skeleton",
+      "proof-lean-compiles",
+      "proof-narrative-lean-equiv",
+      "proof-statement-integrity",
+      "proof-no-self-assuming-projection",
+      "proof-no-trivial-true",
+      "proof-no-false-premise",
+      "proof-no-decide-masking",
+      "proof-no-unused-hypotheses",
+      "proof-rater-strategy-clarity",
+      "proof-rater-goal-plausibility",
+      "proof-rater-novelty",
+      "proof-compile-cost"
+    ],
+    "old_verdicts_on_the_tautology": {
+      "proof-no-bare-sorries": null,
+      "proof-build-green": null,
+      "proof-no-trivial-skeleton": null,
+      "proof-lean-compiles": null,
+      "proof-narrative-lean-equiv": null,
+      "proof-statement-integrity": null,
+      "proof-no-self-assuming-projection": null,
+      "proof-no-trivial-true": null,
+      "proof-no-false-premise": null,
+      "proof-no-decide-masking": null,
+      "proof-no-unused-hypotheses": null,
+      "proof-rater-strategy-clarity": null,
+      "proof-rater-goal-plausibility": null,
+      "proof-rater-novelty": null,
+      "proof-compile-cost": null
+    }
+  }
 }
