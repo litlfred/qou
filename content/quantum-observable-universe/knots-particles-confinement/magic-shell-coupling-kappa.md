@@ -82,6 +82,28 @@ This also dissolves an apparent tension. The trivial partition $(3)$ is fully sy
 
 It is an identification rather than a theorem — two quantities that are numerically equal and that both normalize a Markov trace at $n = 3$. What it buys is falsifiability: it converts a three-way ambiguity into the single prediction that $\kappa$ does not vary with the shell, which a shell-8 evaluation can test once the excess convention is settled.
 
-## What the present agreement does not establish
+## What the excess counts
 
-The definition of the excess $(n_{pp} - n_{nn})$ still admits two readings in the corpus, and both give $\pm 1$ at the $A = 3$ anchors while differing by a factor of $7$ at the $8$ shell. So the $0.034\%$ agreement remains evidence about the value at $A = 3$ and carries little information about $\kappa$ away from it. A shell-8 evaluation performed before the excess convention is fixed would measure the choice rather than the physics.
+Two definitions of $(n_{pp}, n_{nn})$ appear in the corpus: the canonical-braid interface counts $n_{pp} = \max(0, Z-1)$, and the unordered pair counts $n_{pp} = Z(Z-1)/2$. They agree at the $A = 3$ anchors and differ by a factor of $7$ at the $8$ shell, so the anchors cannot separate them. The corpus can.
+
+They are not competing definitions of one quantity. They are different quantities sharing a symbol. The **difference** $(n_{pp} - n_{nn})$ occurs nowhere in the corpus except here; the pair counts occur only in the **sum** $(n_{pp} + n_{nn})$, inside the isovector term $\Delta_{T=1}$, under a different normalization and a different partition. No block forms the difference of the pair counts.
+
+The interface counts, by contrast, are introduced for exactly this purpose: their defining block states that they *encode the $Z \leftrightarrow N$ asymmetry directly*, and that *the interface asymmetry isolates the ${}^{3}$He anomaly*. A difference is what measures an asymmetry; a sum is not.
+
+The categorical layers agree with that reading. The interface counts are a braid object — the $A-1$ inter-nucleon interface generators $\sigma_{3k+2}$ of the canonical atomic braid $\beta(Z, N) \in H_{3A}(q)$ — which is the layer $\kappa$'s normalization was placed in above. The pair count is a combinatorial quantity with no braid-generator realization in the canonical ordering.
+
+So $\kappa$ multiplies the interface excess. Since $\max(0, m-1) - \max(0, m-2) = 1$ for every $m \geq 2$, that excess is $\pm 1$ at every single-magic mirror pair $(m, m-1)$ and $(m-1, m)$, at every shell — it does not grow with $Z$.
+
+## The resulting prediction
+
+With the normalization's index fixed by the nucleon's strand count and the excess fixed to the interface counts, $\kappa$'s contribution to the binding at a single-magic mirror pair is
+
+$$
+  \kappa \cdot (n_{pp} - n_{nn}) \;\approx\; \mp\,1.0704\;\text{MeV},
+$$
+
+the same value at $A_{\mathrm{magic}} = 2, 8, 20, 28, 50, 82, 126$. Neither factor varies with the shell: the first because it counts strands inside a nucleon, the second because it counts interfaces adjacent to a closed shell.
+
+This is what makes the conjecture testable rather than merely unrefuted. It is a single number, fixed without reference to any anchor beyond $A = 3$, and any single-magic mirror pair at a higher shell can contradict it.
+
+Testing it against measured masses is a separate matter, and is not done here: isolating the magic-shell term from the Coulomb and pairing contributions requires a binding decomposition that is not present in the corpus. The prediction is stated; it is not claimed to be verified.
