@@ -424,3 +424,77 @@ it was carrying a false suggestion that both sides need the relation.
 the mistake this bean already records for `filter_desc_cons`. Writing the trap
 down did not stop me repeating it — the fix is that the head branch of any such
 induction must be stated in `i`, because `subst` on `i = a` eliminates `a`.
+
+## §4k — the overlap set, counted
+
+The estimate ("four families, and the new family overlaps itself") was a shape.
+It is now a number, kernel-checked with no `native_decide`:
+
+    16 rules
+    13 distinct leading monomials     (the three lost are the Yang–Baxter words)
+    58 overlap shapes                 at n = 4
+       13 degenerate (left = right = [], lm₁ = lm₂)
+       45 with both contexts non-empty — `NotAGSBasis.oc` is one of these
+
+The move that makes it computable: an `OverlapComposition` is pinned by
+`(left, overlap, right)` alone — the *rules* never enter, only their leading
+monomials, and `Monomial (HeckeGen n)` is `List` of a `DecidableEq` type. So
+
+* `quadLMs / yangBaxterLMs / farCommLMs / bokutShiaoLMs` — the four families as
+  explicit word lists. The Bokut–Shiao rule is indexed by `(i', i, j)` but its
+  leading monomial depends only on `(i, j)`, and `i' + 1 = i ∧ j ≤ i'` collapses
+  to `j < i`, so the list has exactly one entry per rule.
+* `completedLMWords` / `completedLMSet` (its `dedup`).
+* `heckeCompletedRewritingSystem_lm_mem` — soundness: every rule leads on a word
+  in the list. This is `_lm_cases` with the existentials discharged into list
+  membership, and it is what makes the count a statement about the rule set
+  rather than about a list someone typed.
+* `overlapTriples` — the shapes, computed.
+* `mem_overlapTriples` — the bridge. Stated on **words**, not on compositions, so
+  it covers a composition of *any two rules* with those leading monomials,
+  including two distinct rules leading on the same word.
+
+The five counts depend on **no axioms at all** (`#print axioms`: "does not depend
+on any axioms") — pure kernel computation.
+
+### Why the degenerate shapes are kept
+
+`OverlapComposition` places no condition on `left` or `right`. `left = right = []`
+is therefore a legal composition, and §4j makes it an *inhabited* one: the
+Yang–Baxter and Bokut–Shiao rules at `j = i − 1` lead on the same word. Dropping
+the degenerate shapes would have silently dropped a real obligation.
+
+## §4l — the degenerate shapes resolve
+
+Two mechanisms, both machine-checked:
+
+* `OverlapComposition.spoly_isZero_of_self` (framework, `Basic.lean` §4) — a rule
+  composed with itself over its whole leading monomial has S-polynomial the
+  difference of an element with itself. Nothing Hecke-specific, so it lives with
+  `spoly`.
+* `DegenerateYbBs.{ybBs,bsYb}Overlap_spoly_isZero` — the Yang–Baxter and
+  Bokut–Shiao relations are **exact negatives**, and their leading coefficients
+  are `−1` and `+1` (deg-lex picks the word starting with the larger generator,
+  which is the *subtracted* term in `yangBaxterRelation` and the *added* term in
+  `bokutShiaoRelation`). So
+
+      lc₂ • YB − lc₁ • BS  =  1 • YB − (−1) • BS  =  YB + BS  =  0
+
+  identically, in both orderings of the pair. Not "reduces to zero" — zero.
+
+Supporting, in the framework: `isNormalForm_of_isZero` (a zero element is in
+normal form vacuously) and `reducesToNF_self_of_isZero`, which turns "the
+S-polynomial vanishes" straight into the Gröbner–Shirshov obligation.
+
+**What is not proved.** That these two mechanisms *cover* all thirteen degenerate
+shapes. That needs the rule-level converse of `_lm_cases` — at each of the ten
+singleton words the only rule is the obvious one, and at the three coincident
+words the only distinct pair is YB/BS. The covering claim is true at n = 4 and is
+stated as prose in the §4l docstring, explicitly flagged as unproved.
+
+## What remains for the completeness proof
+
+The 45 non-degenerate shapes. §4g does one of them (`NotAGSBasis.oc`, the very
+overlap that refutes the *un*completed system). The remaining 44 are the work,
+and `mem_overlapTriples` is how any of them gets connected back to a composition
+of actual rules.
