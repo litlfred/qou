@@ -10,7 +10,7 @@ tags:
     - gluing-equations
     - ptolemy
 created_at: 2026-08-10T01:35:00Z
-updated_at: 2026-08-10T13:01:55Z
+updated_at: 2026-08-10T16:22:07Z
 parent: m015
 ---
 
@@ -291,3 +291,28 @@ so the geometric degree-14 factor arrives with a companion and must be picked ou
 for this manifold, not guaranteed in general.
 
 **Still open:** 11a1 (17 tets), where Route 75's identification fails.
+
+
+### Reach question CLOSED (2026-08-10, PR #4925)
+
+**10₁₀₀ (14 tets): reached, 67.0s**, geometric class, `modStd`+`finduni`; degree-14
+eliminant factor generates Route 75's field (disc `75015471937637449`). Selection of that
+factor is independent of Route 75 — 14 is the only degree common to all 15 eliminants.
+
+**11a1 (17 tets): not reached** — three timeouts on an idle machine (2700s geometric,
+1800s class 0, 3600s GB-alone). Scope-(a).
+
+**The bottleneck MIGRATES**, which is the substantive finding:
+
+| | Gröbner basis | decomposition | wall |
+|---|---|---|---|
+| 10₁₀₀ (14 tets) | 87.6s | 312s minAss | **decomposition** |
+| 11a1 (17 tets) | **TIMEOUT > 3600s** | never reached | **Gröbner basis** |
+
+So 11a1 is not "10₁₀₀ but harder" — they fail at different steps. The eliminant
+strategies that won at 14 tets attack the decomposition and therefore **cannot** help at
+17. Any route past 11a1 must make the GB cheaper (ordering, ideal presentation,
+algorithm), not the decomposition. A longer `finduni` budget is the wrong direction.
+
+Confound found and removed mid-run: a background `lake build` (SessionStart hook) was
+competing during both original 11a1 timeouts. Re-measured clean — negative holds.
