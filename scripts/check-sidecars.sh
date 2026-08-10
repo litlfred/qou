@@ -41,7 +41,20 @@ echo
 for f in "${files[@]}"; do
   [ -f "$f" ] || continue
   case "$f" in
-    content/*/lean/*.lean|content/*lean*/*.lean)
+    # ANY .lean under content/ — the branch below already distinguishes a
+    # content-block sibling (has .md/.ts) from standalone library Lean, so
+    # the path pattern must not pre-filter.
+    #
+    # It used to read `content/*/lean/*.lean|content/*lean*/*.lean`, which
+    # requires the literal path component `lean/`. Content-block Lean does
+    # NOT live under one — it sits beside its .md/.ts, e.g.
+    # `content/<paper>/braids-and-knots/bar-involution.lean`. Those matched
+    # no branch at all (there is no default `*.lean` case), so a .lean-only
+    # edit to a content block silently escaped the sidecar-staleness gate:
+    # 941 sidecar-carrying blocks were invisible to it. Caught when a
+    # 53-file swarm reported "0 blocks needing refresh" while every one of
+    # those 53 sidecars was in fact stale on source_hashes.lean.
+    content/*.lean)
       base="${f%.lean}"
       if [ -f "$base.md" ] || [ -f "$base.ts" ]; then
         # Content-block Lean — has (or should have) a .qa.json sidecar.
