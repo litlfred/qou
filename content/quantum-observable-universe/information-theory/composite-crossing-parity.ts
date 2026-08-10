@@ -18,6 +18,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "conj:borromean-quark",
     "prop:shell-structure-eigenvalues",
     "prop:noble-gas-characterization",
   ],
