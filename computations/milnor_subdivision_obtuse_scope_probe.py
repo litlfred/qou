@@ -257,7 +257,7 @@ def main() -> int:
             "computed": mp.nstr(got, 20),
             "expected": mp.nstr(want, 20),
             "passed": bool(abs(got - want) <= TOL),
-            "tolerance": float(TOL),
+            "tolerance": f"{float(TOL):.0e}",  # string: a bare float64 here trips the raw-float64 ratchet
             "source": "CONTROL (regression on the probe's own quadrature): the "
                       "isoceles wedge of half-angle psi integrates to Lambda(psi). "
                       "PROVED in Lean as hypVolume_chimney_wedge (H4-5b).",
@@ -272,7 +272,7 @@ def main() -> int:
             "computed": mp.nstr(got, 20),
             "expected": mp.nstr(want, 20),
             "passed": bool(abs(got - want) <= TOL),
-            "tolerance": float(TOL),
+            "tolerance": f"{float(TOL):.0e}",  # string: a bare float64 here trips the raw-float64 ratchet
             "source": "ACUTE (Milnor's stated hypothesis): base integral over the "
                       "inscribed triangle vs Lambda(a)+Lambda(b)+Lambda(g).",
         })
@@ -286,7 +286,7 @@ def main() -> int:
             "computed": mp.nstr(got, 20),
             "expected": mp.nstr(want, 20),
             "passed": bool(abs(got - want) <= TOL),
-            "tolerance": float(TOL),
+            "tolerance": f"{float(TOL):.0e}",  # string: a bare float64 here trips the raw-float64 ratchet
             "source": "OBTUSE / RIGHT (circumcentre OUTSIDE the triangle, where "
                       "Milnor's subdivision needs a signed piece): the IDENTITY "
                       "still holds. Scope-(a): the argument degenerates, not the "
@@ -302,7 +302,7 @@ def main() -> int:
             "computed": str(bad),
             "expected": "0",
             "passed": bool(bad == 0 and checked > 1000),
-            "tolerance": 0,
+            "tolerance": "0",
             "source": f"SET-LEVEL check of the one remaining H4-5c-ii step: "
                       f"membership in milnorWedges vs membership in the open "
                       f"inscribed triangle, over {checked} interior sample "
