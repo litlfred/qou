@@ -1,7 +1,7 @@
 {
   "computation": "alpha-k-jones-markov-h3",
   "description": "Solve for Jones-Markov weights y_\u03bb at H_3 via constraints tr_M(1)=1, tr_M(\u03c3_i)=z, tr_M(\u03c3_i\u03c3_j)=z\u00b2.  Then explicitly compute \u03b1_k on each surviving E_\u221e class with correct normalization.  Confirms \u03b1_2 = z\u00b2 structurally derived; \u03b1_1 = 0 vanishes; \u03b1_3 has q-rational form related to z\u00b3.",
-  "timestamp_utc": "2026-08-10T02:17:49.679073+00:00",
+  "timestamp_utc": "2026-08-10T12:55:12.171227+00:00",
   "q_0": 1.1099785827513808,
   "z": 0.6126880371464652,
   "jones_markov_weights": {
@@ -29,10 +29,10 @@
     }
   },
   "scriptHash": "cba7373fdc4f",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
-  "commitSha": "6940d78cc970c14db7ad135b1649af19086b48ce",
+  "scriptCommitSha": "63db388851425a23a623cecaaef1ae8c05ce6878",
+  "commitSha": "576d19cd00392d6a67b0dd24d2ef3d7bcf3b8792",
   "engine": "mpmath",
-  "computedAt": "2026-08-10T02:17:49.692468+00:00",
+  "computedAt": "2026-08-10T12:55:12.204864+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
