@@ -253,10 +253,61 @@ convergent evaluation at `|q| < 1` is not automatic and is *not* implied by
 anything measured above. Do not record this as a route until someone bounds the
 `f_k` for a specific Σ(2,3,5) series.
 
-### 7.5 What is still unread
+### 7.5 The remaining three, also read (2026-08-10, second upload)
 
-math/0605314 (the foundational unified-WRT paper), 1411.6062 (state integrals at
-rational points — the analytic route, and the one that could still reach `q₀`),
-and 2412.04241 (*The Habiro ring of a number field*, Dec 2024 — still the most
-likely to have relaxed the domain restriction). The §5 prohibitions continue to
-apply to those three.
+All six are now read. Both open questions resolve, and in opposite directions.
+
+**2412.04241 — *The Habiro Ring of a Number Field* (Garoufalidis–Scholze–Wheeler–Zagier).
+Does NOT relax the domain; it goes p-adic.** The abstract defines elements as
+"collections of power series **at each complex root of unity**". The extension it
+provides is explicitly p-adic: the collection "can be used to define a single
+**p-adic analytic function on the disconnected domain {q ∈ C_p | |q|_p = 1}**,
+which is the union of the (not all distinct) open unit discs centred at roots of
+unity." And decisively for the archimedean question, on the complex side:
+
+> "f_m(x) are formal series with **no convergence properties assumed**. In fact,
+> in examples ... coming from perturbative knot invariants, the associated series
+> will be **factorially divergent series over the complex numbers**, whereas at
+> the same time they are always **p-adically convergent**."
+
+So the newest and most authoritative extension **strengthens** §7.2 rather than
+overturning it: the convergence it recovers is p-adic, and the complex-analytic
+behaviour is factorially divergent. The substrate anchor is archimedean and real.
+
+**1411.6062 — state integrals. The substrate anchor IS in the domain.**
+Garoufalidis–Kashaev §1.1: `I_{A,B}(b) = ∫ Φ_b(x)^B e^{−Aπix²} dx` is
+"an **absolutely convergent** integral ... for a complex number b with
+`b² ∉ ℝ≤0`". Mapping the anchor through `q = e^{2πiτ}` with the Faddeev
+convention `τ = b²`
+([`state_integral_domain_substrate_anchor_probe.py`](../../computations/probes/state_integral_domain_substrate_anchor_probe.py)):
+
+    q₀ real > 1  ⇒  τ = b² = −0.0166063414046 i   (purely imaginary)
+    b² ∈ ℝ≤0 ?   No  ⇒  converges
+
+So the route table's third row is confirmed positively: **the analytic route
+reaches the substrate anchor where the Habiro route provably cannot.**
+
+Three caveats, none of them small:
+1. **Convergence is not identification.** Nothing here says a state integral
+   reproduces `W_λ`.
+2. **The paper's evaluation theorem does not transfer.** Its results are at
+   *rational* `b² = M/N`, via Rogers + cyclic dilogarithm and finite state-sums
+   at roots of unity. Our `b²` is purely imaginary, not rational — only the
+   convergence statement carries over.
+3. **`τ = b²` is inferred**, not quoted from the extracted text; it is the standard
+   Faddeev convention and is consistent with the paper's own `b = √(M/N)`
+   rational-point setup. A different normalisation moves the arithmetic.
+
+**An observation, explicitly not a result.** The paper's headline identity is
+`I_{1,2}(1) = (e^{iπ/6}/√3)·2·sinh(V/2π)` with `V = 2·Im(Li₂(e^{iπ/3})) =
+2.0298832…` — verified here to be *the corpus's own* `Vol(4₁) = 2·Cl₂(π/3)` to
+3.9e-31. So the CAL-2 muon-anchor volume appears in the literature inside a
+**sinh**, and the framework independently carries a bar-odd `sinh` / bar-even
+`cosh` split (`Q_β` is "the bar-odd sinh partner of the bar-even cosh meson scale
+`m_π`"). This is at `b = 1`, *not* the substrate anchor, and `2·sinh(V/2π) =
+0.6574…` is matched to nothing. Per anti-numerology discipline: a question to
+carry, not a correspondence. Two objects containing `Vol(4₁)` is the expected
+state of affairs when one of them is *defined* by the figure-eight knot.
+
+**math/0605314** (foundational unified-WRT) was read for the domain statement;
+1106.6298 §1 already carried it verbatim, so it adds no new constraint here.
