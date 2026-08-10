@@ -308,3 +308,64 @@ silently clean. Options are to stamp hand-runs into the journal, or to derive
 staleness from witness mtime/`scriptHash` against the graph instead of from
 run order. Not fixed here; recorded so the next agent does not trust a clean
 `--stale` as proof of consistency.
+
+## The 8.71e-8 residual: eight hypotheses, eight refutations, and where it points
+
+Every component of `Σ_λ y_λ·χ^λ = tr_M` was tested individually. All pass.
+
+| # | hypothesis | verdict |
+|---|---|---|
+| 1 | peel is muon-anchored | refuted — imports `Q_MP` (proton) |
+| 2 | peel shares the y_λ table (self-agreement) | refuted — no table reads, symbolic recursion |
+| 3 | the proton y_λ table is wrong | refuted — 2.75e-50 vs symbolic, 1.25e-15 vs Rust |
+| 4 | peel is *substituted* at muon | refuted — `q60 = sp.Float(q_str,60)`, q_str proton |
+| 5 | peel bakes numerics at build time | refuted — pure sympy `Add`, free symbols `{q}`, 0 decimals |
+| 6 | the braid word is muon-anchored | refuted — matches `−h(proton)` to 4.57e-18 |
+| 7 | the bridge's χ is cached / anchor-locked | refuted — χ tracks `q_str` (rel ~1e-7) |
+| 8 | the muon table's values aren't muon | refuted — matches symbolic@muon to ~1e-50 |
+
+### The measurement that matters
+
+    bridge(proton y, proton χ) = 0.575172243917771870826535   = refinement's Σy·χ
+    bridge(proton y, muon χ)   = 0.575172395398020063703615
+    peel (proton, symbolic)    = 0.575172331017883851919791796687
+    bridge(muon y,  proton χ)  = peel  to 3.63e-51
+
+**Mixing anchors satisfies the identity exactly; matching them misses by 8.71e-8.**
+Since `Σ y_λ(q)·χ^λ(β,q) = tr_M(β,q)` must hold *identically in q*, this is not
+an anchor question. It says the symbolic `y_λ(q)` is not quite the Markov weight
+function, off by something that cancels in that one mixed pairing.
+
+### What this says about the convention-D migration (self-critique)
+
+The D migration was validated three ways — Rust `trace_weights_n` at 1.2e-15,
+all 3+-row weights vanishing, and both table evaluations at ~1e-50. Every one
+of those tests the weights **against each other or against a shared
+convention**. *None* tests the Markov identity itself, which is the property
+`y_λ` actually has to satisfy.
+
+peel is the only object in the chain that computes `tr_M` **without** going
+through `Σ y·χ` — which is exactly why it is the one disagreeing.
+
+So: the migration is verified as an **evaluation** and unverified as a
+**normalisation**. The 3.63e-51 I twice cited as confirmation was measuring the
+wrong property, and its exactness is a clue about `y_λ(q)`'s functional form,
+not about q₀.
+
+### Obstacle to the obvious next test
+
+Testing the identity *identically in q* is not a substitution: the braid word's
+`d` values are **numeric and pinned** (verified proton-derived). `χ^λ(β_D,q)`
+therefore cannot be evaluated at an arbitrary q without **rebuilding the word
+at that q**. Any "check it at a third anchor" probe must regenerate the word
+first, or it silently pairs a proton-built word with foreign-q matrices — the
+same class of straddle this whole bean is about.
+
+### To close
+
+1. Rebuild `atom_braid_word_3A(1,1)` at a third q (neither pin) and test
+   `Σ y_λ(q)·χ^λ(q) − tr_M_peel(q)`. Failure there ⇒ `y_λ(q)` is wrong and the
+   muon agreement is coincidence; success ⇒ the defect is anchor-specific.
+2. Or reduce `Σ y_λ(q)·χ^λ(β_D,q) − tr_M_peel(q)` symbolically to a rational
+   function in q and check it is identically zero. No q₀ needed; decides
+   whether `r = 2` is the right Wenzl-bridge solution.
