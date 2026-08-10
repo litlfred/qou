@@ -148,9 +148,19 @@ def main() -> int:
                 "B_model_per_A_MeV": B / A,
             }
 
+        # The ACTUAL L2 target for this isotope. L2 is `sigma_pred <= sigma_exp/100`,
+        # so the target is set by AME2020's own uncertainty on the mass — it is NOT
+        # 1 ppQ. 1 ppQ is the L1 *compute* target and is a different leg entirely
+        # (see docs/precision-goals.md: "'1 ppQ' by itself is ambiguous").
+        sigma_B = _f(r.get("sigma_AME"))
+        sigma_rel = (sigma_B / M_meas) if sigma_B else None
+        l2_target_rel = (sigma_rel / 100.0) if sigma_rel else None
+
         out.append({
             "iso": r["name"], "Z": Z, "N": N, "A": A,
             "M_meas_MeV": M_meas,
+            "sigma_exp_rel_mass": sigma_rel,
+            "l2_target_rel_mass": l2_target_rel,
             "B_AME_MeV": B_AME,
             "B_AME_per_A_MeV": B_AME / A,
             "sigma_exp_B_MeV": _f(r.get("sigma_AME")),
@@ -188,6 +198,25 @@ def main() -> int:
               f"{f['B_model_MeV']:>6.2f} | {o['delta_const_MeV']:>+13.3e} | "
               f"{f['delta_bind_MeV']:>+12.3f} | {f['bind_over_const_ratio']:>10,.0f} | "
               f"{f['rel_err_M']:>+.3e} | {f['rel_err_M_over_ppq_target']:>13.3e} |")
+    print("\nL2 — the real per-isotope target is sigma_exp/100 on the MASS, not 1 ppQ:")
+    print("| iso | A | σ_exp(M) | L2 target | δM/M (B_sym) | L2 miss | binding accuracy L2 needs |")
+    print("| --- | --: | -------: | --------: | -----------: | ------: | ------------------------: |")
+    for o in out:
+        f = o["forms"].get("B_sym")
+        t = o.get("l2_target_rel_mass")
+        if not f or not t:
+            continue
+        miss = abs(f["rel_err_M"]) / t
+        # What L2 demands of the BINDING term specifically: the whole mass-error
+        # budget has to fit inside the target, and binding is the only live leg.
+        # Note this is BRUTAL: sigma_exp is quoted on the mass, but binding is
+        # only ~0.1-0.8 % of the mass, so the budget in eV is tiny compared to B.
+        need_B_eV = t * o["M_meas_MeV"] * 1e6
+        need_B_rel = need_B_eV / (o["B_AME_MeV"] * 1e6)
+        print(f"| {o['iso']:<3} | {o['A']:>2} | {o['sigma_exp_rel_mass']:.2e} | {t:.2e} | "
+              f"{f['rel_err_M']:+.2e} | {miss:>7.1e} | {need_B_eV:>8.4f} eV of "
+              f"{o['B_AME_MeV']:>5.1f} MeV ({need_B_rel:.1e} rel) |")
+
     print(f"\nB/A plateau — experiment vs the trace form (MeV per nucleon):")
     print("| iso | A | B_AME/A | B_sym/A |")
     print("| --- | --: | ------: | ------: |")
