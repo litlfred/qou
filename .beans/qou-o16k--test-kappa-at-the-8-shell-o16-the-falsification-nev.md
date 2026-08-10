@@ -43,24 +43,72 @@ That is a second defect, independent of the anchor-identification one: even
 granting the closed form, **the conjecture is not yet a determinate statement**
 until the convention is named.
 
+## Producer recovered — and it reframes the test
+
+The removed `probe_kappa_categorical_h7a_closed.py` **is** recoverable: it lived
+at `folio-assistant/computations/` before the miga migration, and the witness's
+`scriptCommitSha` (`4e17b6b4b5`) fetches into a shallow clone. Three things it
+settles:
+
+**1. The normaliser is explicitly A=3-specific, so κ was never a shell-universal
+constant even by its own construction.** The producer's own words:
+
+> `[2]_q · [3]_q` — the quantum dimension of `V_2 ⊗ V_3` (the LR fusion of the
+> two relevant magic-shell channels **for A=3 anchors**)
+
+But `kappaClosed q m_e` takes no shell index. At shell 8 the "relevant
+magic-shell channels" are different channels, so the bracket product should be a
+*different* product — the construction says so, and the Lean does not. **This
+changes what the 8-shell test is.** It is not "does the same constant hold at
+shell 8" (which the construction never claimed); it is *"recompute the normaliser
+from the shell-8 channels and see whether the resulting slope matches"*. That is
+a derivation-shaped test rather than a fit-shaped one, and it is the better
+version of this bean.
+
+**2. The producer never computed the excess or the binding.** It evaluates the
+closed form and compares it to a constant. So the decomposition is not hiding in
+it — the empirical κ traces to a *"PR #656 v6 single-magic anchor fit"* that is
+not in the tree in any form.
+
+**3. The whole cited reference chain is gone from the corpus.** The producer
+cites `def:hecke-e0`, `prop:h7a-magic-shell-quantum` and
+`prop:magic-shell-coupling-witness`; grep over `content/**/*.ts` returns
+**0 files for each**. The `.md` still speaks of the "H7a energy quantum" as a
+named structure whose defining block no longer exists. The block's only surviving
+`uses[]` edge is `prop:compound-beta-shell-calibration`.
+
+Also worth recording for the demotion's file: the producer's docstring asserted
+*"This closes user work-list item #4: κ derivation — **no empirical fit, purely
+from QOU substrate parameters**"* — the overclaim the demotion corrects, now
+documented at its source rather than inferred.
+
 ## Blocked, and stated rather than guessed
 
-Extracting an *observed* slope at the 8 shell needs the binding decomposition
-the removed producer `probe_kappa_categorical_h7a_closed.py` carried. Checked:
-the naive route (mirror-pair ΔB over Δexcess for ³He/³H) gives −0.382 MeV,
-about 2.8× off `κ_emp = −1.0708`, so κ is plainly not a bare mirror-pair slope
-and other terms are in play. **Reconstructing that decomposition by guesswork
-would be a new fit** — precisely what the demotion was about. Blocker recorded
-instead.
+Extracting an *observed* slope at the 8 shell needs a binding decomposition that
+**exists nowhere in the tree** — see finding 2 above; it traces to a PR #656 fit,
+not to any surviving producer. Checked: the naive route (mirror-pair ΔB over
+Δexcess for ³He/³H) gives −0.382 MeV, about 2.8× off `κ_emp = −1.0708`, so κ is
+plainly not a bare mirror-pair slope and other terms are in play.
+**Reconstructing the decomposition by guesswork would be a new fit** — precisely
+what the demotion was about. Blocker recorded instead.
 
 ## Next
 
-1. **Name the convention** in the block — a one-line fix that makes the
-   conjecture determinate, and a prerequisite for any 8-shell test. Requires an
-   owner call on which of C1/C2 κ was fitted against; the anchors cannot say.
-2. **Recover the binding decomposition** (git history of the removed producer),
-   then run the 8-shell prediction with no re-tuning.
-3. Corroboration for the premise, from the corpus itself:
+1. **Recompute the normaliser from the shell-8 channels** — the reframed test
+   from finding 1, and the one genuinely derivation-shaped step available. It
+   needs no AME data and no fit: identify the two magic-shell channels at
+   `A_magic = 8` as the producer did at A=3, take their LR fusion, and read off
+   the bracket product. If κ is structural, the slope should track the shell.
+   Ranking this first because it is the only item here that could *close* rather
+   than merely characterise.
+2. **Name the excess convention** in the block — a one-line fix that makes the
+   conjecture determinate. Needs an owner call on which of C1/C2 κ was fitted
+   against; the anchors provably cannot say.
+3. **Decide the fate of the dangling reference chain** — `def:hecke-e0`,
+   `prop:h7a-magic-shell-quantum`, `prop:magic-shell-coupling-witness` are all
+   absent while the `.md` still names the H7a quantum. Either they were renamed
+   (find the successors) or the conjecture rests on vanished blocks.
+4. Corroboration for the premise, from the corpus itself:
    `def:canonical-braid-interface-composition` already states *"A linear fit
    across the interfaces evaluates the 4-atom set, requiring evaluation against
    larger $A$ to verify structural predictions."*
