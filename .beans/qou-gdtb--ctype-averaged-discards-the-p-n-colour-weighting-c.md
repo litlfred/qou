@@ -78,3 +78,26 @@ independent validation is **bridge vs peel**, which now passes at 3.6e-51.
 2. Audit the other consumers of `atom_canonical_crossings` for the same loss.
 3. Re-run `rho_k_h3a_refinement`; expect SW at 1e-40 once χ uses exact `d`,
    while recording that the check is self-consistency, not independent.
+
+## Corroboration from the D sweep: it also CRASHES consumers
+
+`bar_pairing_binding_observable.py` is the first failure of the 146-producer
+convention-D regeneration sweep:
+
+    ValueError: unrecognised d=-0.104458247769726289017834066290005644128
+                (expected 0, -h0, or -h0/2)
+
+That is the same colour-weighted interface value `-h(1/2 - δ/4)`, rejected by
+a validator whose vocabulary is only `{0, -h, -h/2}` — it does not even carry
+`classify_crossing`'s `averaged` tolerance branch.
+
+So this defect has two faces, and I under-scoped it as one:
+
+- **silent** in the χ path — 6.879e-4 on the crossing, 7e-5…3.9e-4 per λ,
+  the whole residual Schur–Weyl failure;
+- **fatal** in consumers that validate `d` against the narrow set.
+
+Raises the priority: the colour-weighted p–n interface is not merely
+approximated downstream, it is unrepresentable in more than one place. Any
+fix has to settle the representation across every `d` consumer, not just the
+two behind the χ discrepancy.
