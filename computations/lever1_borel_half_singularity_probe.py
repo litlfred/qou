@@ -51,6 +51,12 @@ try:
     set_compute_dps()
 except Exception:
     mp.mp.dps = 60
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 try:
     from q_parameter import Q_50_DIGIT_STR as Q0
     q = mp.mpf(Q0)

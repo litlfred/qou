@@ -100,6 +100,12 @@ from codata_constants import (  # noqa: E402
 
 # ── PDG 2024 reference for charged pion ─────────────────────────
 M_PI_PDG_MEV = M_PI_PM_MEV_VALIDATION       # PDG 2024 (codata_constants registry)
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 M_PI_PDG_ERR_MEV = mpf("0.00018")           # ±0.00018 MeV (1.3 ppb)
 
 
