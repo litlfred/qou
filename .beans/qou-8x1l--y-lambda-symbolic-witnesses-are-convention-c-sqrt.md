@@ -126,3 +126,54 @@ owner may want to take:
 
 Not chosen here; each has a different blast radius and (1) resurrects a file
 someone deliberated over retiring.
+
+## A FOURTH class the detectors cannot see: derived-value witnesses
+
+Migrating the `y_λ` producer to D (done, cross-validated against the Rust
+engine to 1.2e-15) did **not** fix `rho_k_h3a_refinement`. The Schur–Weyl
+residual got *worse*: 4.75e-8 → 0.1868.
+
+That is informative rather than disappointing. `χ^λ` is a Hecke character —
+it depends on `q` but not on `z`, so it is convention-independent. Only `y_λ`
+and `tr_M` carry the convention. C's `y_λ` agreed with the stored `tr_M` to
+1.2e-7; D's `y_λ` against the *same* stored `tr_M` is off by 0.19. So the
+stored `tr_M` is the **C partner**, and the original 4.75e-8 was never mostly
+convention — it is a separate, smaller defect (the anchor-straddle hypothesis
+is still live for it).
+
+`computations/atomic-tr-m-mpfr-50dps.witness.json` is convention C **by
+construction** — its own description says `tr_M` is computed "via the Hoefsmit
++ Wenzl bridge (Σ_λ y_λ · χ_λ)", i.e. over the C weights. But it stores only
+trace *values*: no partitions, no weights, no sqrt. All three detectors clear
+it:
+
+    _is_convention_c -> False     fingerprint -> False
+    structural       -> False     symbolic    -> False
+
+It is not in the work list and never was.
+
+**The general defect:** convention propagates through the *dependency graph*,
+while every detector so far is *content-based*. A witness that merely records
+a number derived from convention-C inputs is undetectable from its own bytes.
+The fix has to be provenance-based — taint a witness if its producer reads a
+tainted witness — which the ordering graph already built for `--stale` can
+supply.
+
+## And the producer has been printing a 48% internal disagreement
+
+Re-running `atomic_tr_m_mpfr_50dps.py` (whose bridge module
+`tr_m_wenzl_bridge_mpfr.py:573` *already* reads `z = q**3/(q**2+1)`, i.e. the
+code is D while the committed witness is stale C) prints, for the deuteron:
+
+    [peel]  tr_M(q_0)   = 0.57517233101788385191979179668715365887545302563801
+    |bridge - peel|     = 0.18681514229410284461801930172180759299709038862953
+
+So its two internal paths disagree by 48%, every run, and the witness records
+the bridge (C-side) one. My convention-D sum `Σ_λ y_λ^D χ^λ = 0.5750909`
+lands on the **peel** side.
+
+**Unresolved, and I am not asserting otherwise:** peel gives 0.5751723 vs my
+D sum 0.5750909 — a 1.4e-4 relative gap that is far too large to be precision
+and is not explained. Candidates: a different braid normalisation in the peel
+path, a writhe/framing factor, or a third convention. Which of peel / bridge /
+Σ y^D χ is canonical D is **not** established here.
