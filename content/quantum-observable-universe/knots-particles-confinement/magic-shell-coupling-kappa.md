@@ -149,3 +149,19 @@ This is a scope-limited negative. It says that the additive, shell-independent t
 What it does establish is narrower and more useful. The empirical value $\kappa \approx -1.0708\;\text{MeV}$ was recorded as the observed slope at the single-magic anchors, but those anchors leave an order of magnitude too little room for it once electrostatics is accounted for. So that value did not come from this decomposition — and indeed it did not: it came from a fit to $\Delta_{\mathrm{coupling}}$, a different observable, as recorded above.
 
 The two negatives are independent, which is what makes them worth having together. The mirror-split test says no term of this form and size appears in the binding data. The provenance says the value being matched was one arm of a measurement its own computation reported as inconsistent. The first could have been repaired by finding the right decomposition; the second cannot, because it concerns the number itself.
+
+## What the discordant anchors were measuring
+
+The two anchors differ in one respect besides the sign of the excess: ${}^{3}$He contains a $pp$ pair and ${}^{3}$H does not, so ${}^{3}$He carries an electrostatic energy that ${}^{3}$H does not. Restoring it — same derived $\alpha_{\mathrm{EM}}$, radius again swept rather than chosen — removes the discord.
+
+| radius model | ${}^{3}$He residual | ${}^{3}$H residual |
+|---|---|---|
+| derived $\bar\lambda_\pi$ | $-0.2234$ | $-0.2023$ |
+| empirical $1.2\;\text{fm}$ | $-0.0724$ | $-0.2023$ |
+| implied by measured ${}^{3}$He radius | $-0.3901$ | $-0.2023$ |
+
+The anchors carry excesses $+1$ and $-1$, so a term proportional to $(n_{pp} - n_{nn})$ must change sign between them. After the electrostatic energy is restored, both residuals are negative under every radius model, and under the derived radius they agree to $0.021\;\text{MeV}$ — essentially the ${}^{4}$He residual of $0.022\;\text{MeV}$, measured where the excess vanishes identically and no such term exists by construction.
+
+What survives is an excess-*independent* offset of order $0.2\;\text{MeV}$: a baseline the H7a form does not capture, not a coupling to the proton–neutron asymmetry. It is three to fifteen times smaller than the value the conjecture was matched against.
+
+So $\kappa \approx -1.0708\;\text{MeV}$ was electrostatic energy attributed to the interface asymmetry. That single diagnosis accounts for both negatives: the mirror-split test found no room for the term because its coefficient is zero, and the original fit disagreed with itself because it was describing a Coulomb energy with a categorical form, and only one of its two anchors has one.
