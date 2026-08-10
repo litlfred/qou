@@ -1,6 +1,5 @@
 import Mathlib.Algebra.Ring.Defs
-import Mathlib.Algebra.Field.Defs
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.Group.Units.Basic
 
 
 /-!
@@ -42,18 +41,22 @@ structure AlgebraicMassData (R : Type*) [CommRing R] where
 /-- **Algebraic topological mass formula.**
 
     Given the algebraic-side data, the mass identity
-      mass_alg = phi1 / hbar_sq
-    is an equality in the coefficient ring (modulo invertibility
-    of `hbar_sq`). The Archimedean version
+      mass_alg = phi1 · ℏ_q⁻²
+    is an equality in the coefficient ring, with the invertibility
+    of `hbar_sq` carried explicitly as a **unit** `u : Rˣ` with
+    `↑u = hbar_sq` (§7c: the `Units` form over `[CommRing R]`
+    rather than `x ≠ 0` over a field — the ring the narrative names,
+    `ℤ[q^{±1/2}]` localised at `ℏ_q`, is not a field).  Taking
+    `R` a field and `u = Units.mk0 hbar_sq h` recovers the divided
+    form `mass_alg = phi1 / hbar_sq`.  The Archimedean version
     `prop:topological-mass-formula` is the specialisation under
     `τ_arch` at `q = q₀`. -/
 -- Ref: [manuscript] prop:topological-mass-formula-algebraic
 theorem AlgebraicMassFormula
-    {R : Type*} [Field R] (D : AlgebraicMassData R)
-    (h_phi1 : D.phi1 = D.mass_alg * D.hbar_sq)
-    (h_hbar_ne : D.hbar_sq ≠ 0) :
-    D.mass_alg = D.phi1 / D.hbar_sq := by
-  rw [h_phi1]
-  field_simp
+    {R : Type*} [CommRing R] (D : AlgebraicMassData R)
+    (u : Rˣ) (hu : (u : R) = D.hbar_sq)
+    (h_phi1 : D.phi1 = D.mass_alg * D.hbar_sq) :
+    D.mass_alg = D.phi1 * ↑u⁻¹ := by
+  rw [h_phi1, ← hu, mul_assoc, u.mul_inv, mul_one]
 
 end QOU.Torsion

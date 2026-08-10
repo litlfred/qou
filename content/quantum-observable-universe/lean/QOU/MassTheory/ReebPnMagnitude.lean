@@ -1,8 +1,8 @@
 import Mathlib.LinearAlgebra.Matrix.Notation
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Units
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 
 /-!
@@ -15,7 +15,10 @@ Formalizes the exact algebraic content behind the landed pn-bond magnitude
 §2b and `computations/probes/reeb_g_structural_identity_probe.py`.
 
 Three statements, all generic over the base ring per AGENTS.md §7c (no `ℝ`,
-no `Real.sqrt` — the square-root-free forms carry the full content):
+no `Real.sqrt`, no field — the square-root-free forms carry the full content;
+the one quantity that has to be inverted, `v`, is carried as a **unit**
+`v : Rˣ`, so `↑v⁻¹` is a `Units` coercion over the same `[CommRing R]` as the
+rest of the file):
 
 * `deformation_eq_ceiling` (**I1**): with `v² = q`, the deformation identity
   `5 + (v − v⁻¹)² = 1 + (v + v⁻¹)²` — i.e. `(a+b)² − (a−b)² = 4ab` at
@@ -43,7 +46,6 @@ namespace ReebPnMagnitude
 
 open Matrix
 
-variable {K : Type*} [Field K]
 variable {R : Type*} [CommRing R]
 
 /-- **I1** — the deformation identity: `5 + (v − v⁻¹)² = 1 + (v + v⁻¹)²`
@@ -51,10 +53,10 @@ for any invertible `v`.  It is `(a+b)² − (a−b)² = 4ab` with `ab = 1`;
 with `v = √q` the left side is `5 + (q−1)²/q` and the right side is
 `1 + [2]_v²` — the landed pn-magnitude radicand equals the q-deformed
 ss-ceiling eigenvalue squared. -/
-theorem deformation_eq_ceiling (v : K) (hv : v ≠ 0) :
-    5 + (v - v⁻¹) ^ 2 = 1 + (v + v⁻¹) ^ 2 := by
-  field_simp
-  ring
+theorem deformation_eq_ceiling (v : Rˣ) :
+    5 + ((v : R) - (↑v⁻¹ : R)) ^ 2 = 1 + ((v : R) + (↑v⁻¹ : R)) ^ 2 := by
+  have h : (v : R) * (↑v⁻¹ : R) = 1 := v.mul_inv
+  linear_combination (-4 : R) * h
 
 /-- The 2×2 ss-sector exchange matrix `[[1, b], [b, −1]]`:
 `1` is the pp−nn bar asymmetry, `b` the (quantum-counted) pn degree. -/

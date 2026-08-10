@@ -1,6 +1,6 @@
-import Mathlib.Algebra.Field.Basic
-import Mathlib.Algebra.GroupWithZero.Basic
-import Mathlib.Data.Int.Basic
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.GroupWithZero.Units.Basic
 import Mathlib.Tactic.Ring
 
 
@@ -21,57 +21,64 @@ LaTeX label: `prop:categorical-dq-squared`
 - [manuscript] §1-quantum-observable-universe/categorical-dq-squared
 
 **Base ring** (AGENTS.md §7c): the obstruction formula
-`q⁻¹(1 - q⁻¹) · [ξ, α]` requires an inverse `q⁻¹`, so the carrier is a
-generic `{R : Type*} [Field R]` with `q : R`, `q ≠ 0`. The combinatorial
-content stays generic — no archimedean ordering is used (the `q = 1`
-disjunct is an *algebraic* identity, not the archimedean `0 < q`). The
-ground ring `R_q = ℤ[q, q⁻¹]` of the manuscript embeds into its fraction
-field `Frac(R_q)`, which is the canonical `[Field R]` instance; specialise
-via `ι : Frac(R_q) → ℝ, q ↦ q₀` for numerical evaluation.
+`q⁻¹(1 - q⁻¹) · [ξ, α]` needs `q` invertible, so `q` is carried as a
+**unit** `q : Rˣ` — the exact algebraic content of the former `q ≠ 0` —
+over a generic `[CommRing R]`.  No field, no division: the manuscript's
+own ground ring `R_q = ℤ[q, q⁻¹]` (`LaurentPolynomial ℤ`, in which
+`q = T 1` *is* a unit) is now a direct instance, with no passage to
+`Frac(R_q)`.  Specialise via `ι : R_q → ℝ, q ↦ q₀` for numerical
+evaluation.
 
-**Design note.** The obstruction is a `def` of the data (`dqSquared`),
+`[IsDomain R]` is the one genuinely load-bearing extra hypothesis, and it
+is *essential*, not decorative: the `←` direction of the iff needs
+`mul_eq_zero`.  Over a `CommRing` with zero divisors the statement is
+false — in `R = ZMod 6` take `q = 5` (a unit, `q⁻¹ = 5`, `q ≠ 1`) and
+`reeb_bracket = 3 ≠ 0`; then `q⁻¹(1 - q⁻¹)·3 = 5·2·3 = 30 = 0`, so the
+obstruction vanishes with neither disjunct holding.  `ℤ[q, q⁻¹]` and
+every field are domains, so nothing downstream is lost.
+
+**Design note.** The obstruction is a `def` of the data (`obstruction`),
 *not* a free structure field. A free field would be logically
-independent of `q`/`reeb_bracket`, making `dqSquared = 0 ↔ …` vacuous;
+independent of `q`/`reeb_bracket`, making `obstruction = 0 ↔ …` vacuous;
 defining it functionally is what lets the iff be a genuine theorem.
 -/
 
 namespace QOU
 
-/-- **dq² obstruction data**: the substrate `q` (with invertibility
-    witness) and the Reeb-bracket value `[ξ, α]`. -/
+/-- **dq² obstruction data**: the substrate `q` (as a unit of the ground
+    ring) and the Reeb-bracket value `[ξ, α]`. -/
 -- Ref: [manuscript] §1
-structure DqSquaredObstruction (R : Type*) [Field R] where
-  /-- The substrate parameter q. -/
-  q : R
-  /-- q ≠ 0 (algebraic invertibility — not the archimedean `0 < q`). -/
-  q_ne_zero : q ≠ 0
+structure DqSquaredObstruction (R : Type*) [CommRing R] where
+  /-- The substrate parameter q, carried as a unit — algebraic
+      invertibility (the old `q ≠ 0`), not the archimedean `0 < q`. -/
+  q : Rˣ
   /-- The Reeb-bracket value [ξ, α] (scalar representative). -/
   reeb_bracket : R
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R]
 
 /-- The dq² obstruction: `dq²(α) = q⁻¹(1 - q⁻¹) · [ξ, α]`.
     Defined as a function of the data so the vanishing theorems below are
     non-vacuous. -/
 -- Ref: [manuscript] §1
 def DqSquaredObstruction.obstruction (obs : DqSquaredObstruction R) : R :=
-  obs.q⁻¹ * (1 - obs.q⁻¹) * obs.reeb_bracket
+  ((obs.q⁻¹ : Rˣ) : R) * (1 - ((obs.q⁻¹ : Rˣ) : R)) * obs.reeb_bracket
 
 /-- dq² vanishes iff q = 1 or the form is Reeb-invariant. -/
 -- Ref: [manuscript] §1
-theorem dq_squared_vanishes_iff (obs : DqSquaredObstruction R) :
+theorem dq_squared_vanishes_iff [IsDomain R] (obs : DqSquaredObstruction R) :
     obs.obstruction = 0 ↔ (obs.q = 1 ∨ obs.reeb_bracket = 0) := by
   unfold DqSquaredObstruction.obstruction
   constructor
   · intro h
     rcases mul_eq_zero.mp h with h1 | h3
     · rcases mul_eq_zero.mp h1 with h2 | h4
-      · -- q⁻¹ = 0 contradicts q ≠ 0
-        exact absurd (inv_eq_zero.mp h2) obs.q_ne_zero
+      · -- a unit is never 0 in a nontrivial ring
+        exact absurd h2 (Units.ne_zero _)
       · -- 1 - q⁻¹ = 0 ⟹ q⁻¹ = 1 ⟹ q = 1
         left
-        have hinv : obs.q⁻¹ = 1 := (sub_eq_zero.mp h4).symm
-        exact inv_eq_one.mp hinv
+        have hinv : ((obs.q⁻¹ : Rˣ) : R) = 1 := (sub_eq_zero.mp h4).symm
+        exact inv_eq_one.mp (Units.val_eq_one.mp hinv)
     · right; exact h3
   · intro h
     rcases h with hq1 | hreeb
@@ -85,7 +92,7 @@ theorem dq_squared_vanishes_iff (obs : DqSquaredObstruction R) :
     q-deformed de Rham complex is *not* a cochain complex. This is the
     decl named by the content block's `lean.ref`. -/
 -- Ref: [manuscript] §1
-theorem categorical_dq_squared (obs : DqSquaredObstruction R) :
+theorem categorical_dq_squared [IsDomain R] (obs : DqSquaredObstruction R) :
     obs.obstruction = 0 ↔ (obs.q = 1 ∨ obs.reeb_bracket = 0) :=
   dq_squared_vanishes_iff obs
 
@@ -98,7 +105,7 @@ theorem dq_squared_zero_on_invariant (obs : DqSquaredObstruction R)
 
 /-- For q ≠ 1, dq² ≠ 0 on generic (non-Reeb-invariant) forms. -/
 -- Ref: [manuscript] §1
-theorem dq_squared_nonzero_generic (obs : DqSquaredObstruction R)
+theorem dq_squared_nonzero_generic [IsDomain R] (obs : DqSquaredObstruction R)
     (hq : obs.q ≠ 1) (h_gen : obs.reeb_bracket ≠ 0) :
     obs.obstruction ≠ 0 := by
   rw [Ne, categorical_dq_squared obs, not_or]
