@@ -214,7 +214,13 @@ def probe(d: int, margin: int = 8, verbose: bool = True) -> dict:
         "test_meaningful": bool(meaningful),
         "nullspace_dim": len(ns),
         "annihilator_found": bool(len(ns) > 0),
-        "elapsed_sec": round(elapsed, 2),
+        # Whole seconds, as an int.  This is diagnostic wall-clock, not a
+        # computed quantity, so sub-second digits carry no information and
+        # would be the only float64 in a witness whose entire point is that
+        # the computation is exact over Q.  Emitting an int keeps the file
+        # clean under the NO-FLOAT64 raw-float64 ratchet at the producer,
+        # rather than by way of a baseline entry.
+        "elapsed_sec": int(round(elapsed)),
     }
     if ns:
         result["example_annihilator"] = [
