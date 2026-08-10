@@ -182,3 +182,15 @@ lake-oleans.tgz
 # qou-vbw1 A2 verification aid (resumable I-cache + log); see qbeta_3bp8_a2_sample_point_delta_check.py
 .a2_icache.json
 .a2_run.log
+
+# Agent scratch state — never repository content. A sandbox accumulates these
+# as untracked directories; a `git add -A` then sweeps them into a commit whose
+# message describes something else entirely. That is how commit 85ea8e55
+# ("Hecke: rank axiom") came to add 46,155 files / 11.4M insertions, including
+# 14,688 duplicate beans. None of these is listed in AGENTS.md §Project
+# structure. (`uploads/` IS a documented intake pipeline — deliberately absent.)
+.agents/
+amalgamated_done/
+amalgamated_input/
+_deprecated/
+scratch/
