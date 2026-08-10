@@ -142,6 +142,52 @@ NOISE_FLOOR = 1e-12
 #: from the log and each had to be re-run by hand to be diagnosed at all.
 TAIL_LINES = 25
 
+#: Atom names as they appear in witness basenames, longest first so
+#: "helium-3" is matched before any shorter prefix of it.
+_ATOM_NAMES = ("beryllium-9", "beryllium-8", "lithium-7", "lithium-6",
+               "lithium-5", "helium-4", "helium-3", "deuteron", "tritium",
+               "neutron", "proton")
+
+
+def _atoms_from_witnesses(witnesses):
+    """Atom names implied by the witnesses a producer owns, in ATOMS order."""
+    found = []
+    for name in _ATOM_NAMES:
+        if any(name in pathlib.Path(w).name for w in witnesses):
+            found.append(name)
+    return found
+
+
+#: Producers the harness must NOT run bare, and what to pass instead.
+#:
+#: Running every producer with no arguments is wrong in two different ways,
+#: and the quiet one is the dangerous one:
+#:
+#: * `per_irrep_pole_atom.py` takes `atoms` as a REQUIRED positional, so bare
+#:   invocation exits 2 with an argparse usage message. Loud, and was recorded
+#:   as a producer failure when it is really a harness limitation.
+#: * `chi_at_q0_via_hoefsmit_mpfr.py` takes `atoms` as OPTIONAL, defaulting to
+#:   `["tritium", "helium-3"]` — two of the six witnesses it owns. Bare
+#:   invocation exits 0 having regenerated a third of its output, the harness
+#:   records `ok`, and the four untouched witnesses stay convention C while
+#:   the report implies the producer was covered. Silent under-coverage is
+#:   exactly what this campaign was reopened to eliminate.
+#:
+#: Each entry derives its arguments from the witnesses the producer actually
+#: owns, so adding a witness extends the invocation automatically instead of
+#: silently falling outside a hardcoded list.
+#:
+#: `--fresh` on the chi producer is not optional. Its symbolic cache IS the
+#: `chi-{atom}-h{n}.witness.json` it writes (module docstring, line 28), and
+#: the resume check compares only the stored q0 — it has no notion of
+#: convention. Without `--fresh` the producer resumes from precisely the
+#: convention-C data this pass exists to replace and reports success.
+PRODUCER_ARGS = {
+    "per_irrep_pole_atom.py": _atoms_from_witnesses,
+    "chi_at_q0_via_hoefsmit_mpfr.py":
+        lambda ws: _atoms_from_witnesses(ws) + ["--fresh"],
+}
+
 
 def classify(before: str, after: str):
     """Return (kind, relative_change) for one value.
@@ -466,6 +512,8 @@ def run_all(timeout: int, retry_failed: bool = False):
 
     for n, (producer, witnesses) in enumerate(todo, 1):
         before = {w: snapshot(REPO / w) for w in witnesses}
+        arg_rule = PRODUCER_ARGS.get(pathlib.Path(producer).name)
+        extra_args = list(arg_rule(witnesses)) if arg_rule else []
         t0 = time.time()
         # Own process group, so a kill of this harness takes the producer with
         # it. Killing the harness alone used to ORPHAN the producer: it kept
@@ -476,7 +524,7 @@ def run_all(timeout: int, retry_failed: bool = False):
         proc = None
         try:
             proc = subprocess.Popen(
-                [sys.executable, str(pathlib.Path(producer).name)],
+                [sys.executable, str(pathlib.Path(producer).name)] + extra_args,
                 cwd=str((REPO / producer).parent), env=env,
                 stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True,
                 start_new_session=True)
@@ -502,6 +550,10 @@ def run_all(timeout: int, retry_failed: bool = False):
 
         rec = {
             "producer": producer, "status": status, "seconds": secs,
+            # How it was actually invoked. Without this the log cannot
+            # distinguish "regenerated all six witnesses" from "regenerated the
+            # two the default covers", which is the whole point of PRODUCER_ARGS.
+            "args": extra_args,
             "witnesses": [
                 {"path": w,
                  "c_before": before[w].get("c_fingerprint"),
