@@ -11,7 +11,7 @@ tags:
     - 5_2
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-10T01:15:00Z
+updated_at: 2026-08-10T02:00:00Z
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -287,3 +287,41 @@ returns the *smallest* degree passing the gates, so 4₁ stays degree 2 and 5₂
 check. A fast path that silently returned "exact" for everything would sail through G8
 unnoticed; G9 is what rules that out. Both agree on all 7 manifolds small enough to run
 both. **Do not delete the slow verifier** — it is the only check on the fast one.
+
+---
+**2026-08-10 — CORRECTION to what the negative control proves. "No shape field" was
+loose, and "finds no solution" was wrong.**
+
+Asked what "no shape field" meant for the torus knots — whether it meant zero. It does
+not, and answering it properly corrected the gate.
+
+**The torus knots DO have shapes, and those shapes DO satisfy the gluing equations.**
+Verified exactly:
+
+| knot | flat shapes | field | gluing equations |
+|---|---|---|---|
+| 3₁ | `−1`, `2` | **ℚ** (rational!) | all 4 satisfied EXACTLY |
+| 5₁ | `−(1+√5)/2`, `(3−√5)/2`, `(1−√5)/2` | ℚ(√5) | all 5 satisfied EXACTLY |
+| 8₁₉ | `1+√2`, `−1+√2`, `−1` | ℚ(√2) | all 5 satisfied EXACTLY |
+| 7₁ | roots of `x³+3x²−4x+1` etc. | real cubic (real subfield of ℚ(ζ₇)) | — |
+
+**So the gluing equations ALONE DO NOT DETECT HYPERBOLICITY.** A degenerate solution
+exists and the equations are perfectly happy with it. Every shape is **real**, so every
+tetrahedron is **flat**, every Bloch–Wigner term is 0, and the volume is 0. What fails is
+**positivity**: `Im(z_j) > 0`.
+
+That is a sharper and more useful statement than the one G5 previously carried, which
+said the pipeline "must find NO positively-oriented solution … It does not", surrounded
+by narrative that read as *no solution*. Corrected in the gate, with the exact rational
+trefoil shapes and their exact verification now recorded as data so the point cannot be
+lost again.
+
+**And "no shape field" should have said**: no shape field *in the Neumann–Reid sense* —
+that notion is the **invariant trace field of a hyperbolic structure**, and these
+manifolds have none. The real fields above are the fields of a degenerate solution. The
+probe reports no field for them because it **gates on positive orientation and stops
+before identification**, not because no field exists.
+
+Note the pleasing arithmetic: the (2,q) and (p,q) torus knots throw up exactly the
+cyclotomic real subfields you would expect — ℚ(√5) for 5₁ (the (2,5) knot), ℚ(√2) for
+8₁₉ (the (3,4) knot), the real cubic of conductor 7 for 7₁ (the (2,7) knot).
