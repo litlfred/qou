@@ -387,16 +387,20 @@ def stale_readers():
     writes = {p: {pathlib.Path(w).name for w in ws} for p, ws in by_producer.items()}
     owner = {w: p for p, ws in writes.items() for w in ws}
 
-    order, seen = [], set()
-    for line in LOG.read_text().splitlines() if LOG.exists() else []:
+    # The LAST record is the one that matters: a producer's committed witness
+    # comes from its most recent run, so P is stale iff last(Q) > last(P).
+    # Keying on the first record would flag a producer that was re-run after
+    # its upstream — a false positive, and precisely the case a drain creates.
+    # Today a second record only exists after a purge removes the first (the
+    # harness skips producers already in the journal), so first and last
+    # coincide; this keeps the check correct once that stops being true.
+    pos = {}
+    for i, line in enumerate(LOG.read_text().splitlines() if LOG.exists() else []):
         try:
-            p = json.loads(line)["producer"]
+            pos[json.loads(line)["producer"]] = i
         except Exception:                                        # noqa: BLE001
             continue
-        if p not in seen:                # first run is the one that matters
-            seen.add(p)
-            order.append(p)
-    pos = {p: i for i, p in enumerate(order)}
+    order = sorted(pos, key=pos.get)
 
     out = []
     for p in order:
