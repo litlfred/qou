@@ -226,12 +226,65 @@ def _is_convention_c(raw: str, doc) -> bool:
     test 2, and only 12 matched both — the first work list missed 41, the whole
     nuclear layer among them. Test 2 is a property of the physics rather than of
     a decimal expansion, which is why it does not need a maintained list.
+
+    THREE tests now — test 2 has the same shape of blind spot test 1 had.
+
+    3. **Symbolic** — a weight held as an EXPRESSION carrying a half-integer
+       power of `q`. Test 2 calls `float(v)` and skips what does not parse, so
+       a sympy-valued weight is invisible to it. C is
+       `z = 1/(q^{1/2} + q^{-1/2})`; D is `z = q^3/(q^2 + 1)`, rational and
+       sqrt-free — so `q^{k/2}` in a weight expression is C at any `n`.
+
+    Test 3 finds two witnesses the other two miss, and they are not inert:
+    `y-lambda-wenzl-bridge-symbolic-witness.json` evaluates to nonzero `y_λ`
+    on 3-, 4-, 5- and 6-row partitions at q₀ and feeds
+    `rho_k_h3a_refinement`, whose Schur-Weyl check fails at 4.75e-8 and which
+    is itself the upstream of five more producers.
     """
     if any(c in raw for c in C_FINGERPRINTS):
+        return True
+    if ("**" in raw or "sqrt" in raw) and _symbolic_hits(doc):
         return True
     if "partition" not in raw:
         return False
     return bool(_structural_hits(doc))
+
+
+#: Half-integer power of q — see test 3 above.
+_SQRT_Q = re.compile(r"q\s*\*\*\s*\(?\s*-?\d+\s*/\s*2\s*\)?"
+                     r"|sqrt\(\s*q\s*\)"
+                     r"|q\s*\*\*\s*-?0\.5")
+
+_SYMBOLIC_WEIGHT_KEYS = ("y_lambda", "y_lam", "y_at_q0", "weight_lambda")
+
+
+def _symbolic_hits(doc) -> bool:
+    """A weight expression built under convention C. Mirrors the audit's test 3."""
+    hit = False
+
+    def walk(node):
+        nonlocal hit
+        if hit:
+            return
+        if isinstance(node, dict):
+            for k, v in node.items():
+                if isinstance(v, str) and any(w in k for w in _SYMBOLIC_WEIGHT_KEYS):
+                    try:
+                        float(v)
+                        continue
+                    except (TypeError, ValueError):
+                        pass
+                    if _SQRT_Q.search(v):
+                        hit = True
+                        return
+            for v in node.values():
+                walk(v)
+        elif isinstance(node, list):
+            for v in node:
+                walk(v)
+
+    walk(doc)
+    return hit
 
 
 def _structural_hits(doc, tol: float = 1e-30):
