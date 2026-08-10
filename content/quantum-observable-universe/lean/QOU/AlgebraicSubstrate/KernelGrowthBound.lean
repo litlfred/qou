@@ -19,12 +19,36 @@ standard-part map — the bound falls out of the recursion by induction.
 
 That is the shape asked for: *most of the work on the algebraic side.*
 
-## Why depth 2
+## ⚠ This is the **slope-0** case — corrected 2026-08-10
 
-Depth 2 is not a toy. The colored Jones function of a knot is q-holonomic
-(Garoufalidis–Lê) and for the figure-eight `4₁` the minimal recursion has order
-2 — so a depth-2 kernel is exactly the `4₁` case. Depth `d` is the same
-induction with a wider window; only the bookkeeping grows.
+An earlier draft of this docstring claimed *"the minimal colored-Jones recursion
+for `4₁` has order 2, so a depth-2 kernel is exactly the `4₁` case."* **That was
+an overclaim and is withdrawn.** Two independent reasons:
+
+1. **Constant vs. `n`-dependent coefficients.** The theorem below fixes `a₀, a₁`
+   once and for all. The colored-Jones recursion's coefficients are functions of
+   `qⁿ`, so it is *not* an instance of this theorem regardless of its order.
+2. **Wrong growth shape — the slope.** For a genuine q-difference equation the
+   relevant invariant is the **q-Gevrey order** (the Newton polygon's *q-slope*),
+   and `QOU.Mathlib.QGevreyOrder.IsQGevreyOrder q s a` records what that means:
+   `‖aₙ‖ ∼ Cⁿ · q^{s·n²/2}` — **super-geometric**, with `n²` in the exponent.
+   `growth_bound_depth2` concludes `|Bₙ| ≤ C·Rⁿ`, which is purely geometric. So
+   it is precisely the **`s = 0`** corner of that scale and says nothing about a
+   positive-slope solution.
+
+**Where it does apply, and it is not vacuous:** a recursion whose kernel is
+*constant in the index*. The corpus has one —
+[`prop:q-beta-c-k-recursion-from-habiro-q-difference`](../../../quantum-observable-universe/mass-theory/q-beta-c-k-recursion-from-habiro-q-difference.md):
+`c_{k+1} = Σ_{j=1}^{d} a_j(q₀)·c_{k+1-j}` with `a_j(q₀) ∈ ℚ(q₀)`, fixed in `k`.
+That is slope 0 and squarely in scope.
+
+**A tension that same block raises**, worth settling with the slope: it also says
+the `c_k` *"obey the q-Bessel second-order q-difference equation"* (Hahn–Exton,
+fibre-level). A constant-kernel linear recursion has slope 0; a genuine
+second-order q-difference equation generically does not. Those are different
+growth classes, so either the q-Bessel equation degenerates at `q₀` or the two
+sentences describe different objects. The q-Gevrey order is exactly the
+invariant that decides it. Recorded, not resolved here.
 
 ## Newton-polygon reading
 
@@ -34,6 +58,17 @@ that face already bounds the growth exponent. Sharper faces (the actual lower
 hull, giving the characteristic roots) give sharper exponents; that refinement
 is the content of `PolyhedralDomination.Face`, and picking the face is picking
 which bound you get.
+
+**Worked calibration of exactly that, already in the corpus.** The Morgan–Voyce
+continuant of the lepton tower ([`lepton-continuant-recurrence`](../../../quantum-observable-universe/predicted-spectra/lepton-continuant-recurrence.md))
+is `b_{n+1} = h·b_n + b_{n-1}` with `h = q − q⁻¹` — constant kernel, slope 0, in
+scope here. The `ℓ¹` face gives `R = 1 + |h| ≈ 1.209` at `q₀`. The *sharp* face
+gives the characteristic roots of `x² − (q−q⁻¹)x − 1`, which are exactly `q` and
+`−q⁻¹` — the Hecke eigenvalues — so the true rate is `q₀ ≈ 1.110`.
+`QOU.Archimedean.lepton_continuant_binet` already proves the resulting exact
+Binet form `bₙ·(q+q⁻¹) = qⁿ − (−1)ⁿq⁻ⁿ`, sorry-free. That is **stronger than
+anything this file provides for that sequence**, and is the concrete measure of
+how much the crude face costs.
 
 ## Connection to the surreal side (`ordω` as a growth tracker)
 
