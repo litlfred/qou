@@ -1,10 +1,10 @@
 ---
 # qou-dr1c
 title: 'division-ring collapse for k[S_n] (residual item 1 of sn_isotypic_specht_split)'
-status: todo
+status: in-progress
 type: task
 created_at: 2026-08-10T03:55:00Z
-updated_at: 2026-08-10T03:55:00Z
+updated_at: 2026-08-10T12:30:00Z
 ---
 
 Residual item 1 from PR #4876: prove the Wedderburn division rings of `k[S_n]`
@@ -32,3 +32,22 @@ into one construction.
 
 Mathlib has nothing upstream (all 6990 modules scanned): 0 for `Specht`,
 `AbsolutelyIrreducible`, `SchurIndex`, `numSYT`.
+
+## 2026-08-10 — remaining item 2 landed (the module-level rung)
+
+`QOU.MathlibExt.EndBaseChange` proves
+`A ⊗[R] End R M ≃ₐ[R] End A (A ⊗[R] M)` for finite free `M`, sorry-free
+(`[propext, Classical.choice, Quot.sound]` on all three declarations), with
+`endBaseChangeEquiv_tmul` identifying it with the canonical map
+`a ⊗ₜ f ↦ a • f.baseChange A` so it is wireable rather than a bare existence
+claim. Built through matrices (`toMatrixAlgEquiv` / `matrixEquivTensor`), so
+every step is an existing Mathlib equivalence.
+
+Still open for item 1, in order:
+- the EQUIVARIANT version `K ⊗_k End_{k[G]}(V) ≅ End_{K[G]}(K ⊗_k V)`. Does
+  NOT follow formally from the module-level rung: it needs that G-invariants
+  commute with the base change. For finite G in char 0 the averaging idempotent
+  should give it, since extension of scalars preserves the image of an
+  idempotent. This is the next concrete step.
+- the tensor comparison `S^mu_k ⊗_k K ≅ S^mu_K`;
+- the linkage `D i ≃ End(S_i)^op`, shared with residual items 2 and 3.
