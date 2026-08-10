@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T18:21:36.798418+00:00",
-  "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+  "computedAt": "2026-08-10T19:03:50.195509+00:00",
+  "commitSha": "c37cbd50ef545778a49904278ec8f8e4e426596f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 19446,
+  "durationMs": 2552837,
   "computation": "rho-k-co-casimir-extended",
   "scriptFile": "rho_k_co_casimir_extended.py",
   "scriptHash": "6b46797533d4",
@@ -25,11 +25,19 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B for every L1 atom — incremental save.",
+  "description": "Substrate-derived ρ_K^pred via the Frobenius co-Casimir Option B (Δ_λ := 1/dim_q(λ), forced by thm:frobenius-codim-universal — zero free parameters, τ-invariant). Loads y_λ from EITHER the symbolic Wenzl-bridge witness (n=2..12, sp.Expr in q) OR the numeric Wenzl witness (n=2..30, mp.mpf at q_0) — picks whichever covers the requested n. Per repo-owner directive 2026-05-19 'all nucleotides', DEFAULT_ATOMS extended to A ≤ 10 (5Li, 6Li, 7Li, 7Be, 8Be, 9Be, 10B); gate via --max-A (default 4). Generalises rho_k_h3a_co_casimir.py from D-only. Witness MeV scaling: rows use m_e (CAL-1) as the natural scale for ρ_K^LO and the co-Casimir correction; per-atom 'M_pred_MeV' = ρ_K_pred · m_e · |tr_M|. Note: binding-via-interface-knot.witness.json uses E_0 = Q_β(n) instead — different scale by ~m_e/E_0 ≈ 0.65×.",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "m_e_MeV": "0.510998950690000000000000000000000000000000000000000565443472",
-    "n_ok": 3
+    "atoms_attempted": [
+      "proton",
+      "neutron",
+      "deuteron",
+      "tritium",
+      "helium-3",
+      "helium-4"
+    ],
+    "n_ok": 4
   },
   "data": {
     "per_atom": [
@@ -1182,6 +1190,1273 @@
           }
         ],
         "compute_wall_sec": 9.45,
+        "status": "ok"
+      },
+      {
+        "label": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "abs_tr_M_at_q0": "0.0553584262667831064648084527393493030521290255609457472078877",
+        "rho_K_LO": "132765.202454834194483291701726093588328618697626849183463727",
+        "constituent_sum_MeV": "3755.67502273999999999999999999999999999999999999999806550046",
+        "delta_rho_pred_co_casimir": "0.214890208979969526683997443491342348883502254988327408710394",
+        "rho_K_pred_co_casimir": "132765.417345043174452818385723537079670967581129104171791136",
+        "M_pred_MeV": "3755.68110157523374286190893109409157039389098645215360536231",
+        "M_codata_MeV": "3755.67502273999999999999999999999999999999999999999806550046",
+        "err_MeV": "0.00607883523374286190893109409157039389098645215553986184989929",
+        "err_ppm": "1.61857327828859141449899826951564585386133396492857625288469",
+        "n_partitions": 77,
+        "per_lambda": [
+          {
+            "partition": [
+              12
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1.0",
+            "Delta_lambda_co_casimir": "1.0",
+            "y_lambda_at_q0": "0.00396575801612310679845045466137947802832249800215701637024789",
+            "chi_lambda_at_q0": "2.4196636951475528",
+            "y_chi_product_signed": "0.0095958006953534646761054958207972762453085304257419170753836",
+            "contribution_y_chi_Delta": "0.0095958006953534646761054958207972762453085304257419170753836"
+          },
+          {
+            "partition": [
+              11,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "13.5546431999950488791977211003171625405054733362161869861315",
+            "Delta_lambda_co_casimir": "0.0737754572544089741293308216353239495734171572651932428628704",
+            "y_lambda_at_q0": "0.00310034854941414499362627923685004691504854144032802131976148",
+            "chi_lambda_at_q0": "7.390199346502315",
+            "y_chi_product_signed": "0.0229121938238098139869027638399145737403153997408067631889071",
+            "contribution_y_chi_Delta": "0.00169035757605321423373658781709267216924685888379458780720725"
+          },
+          {
+            "partition": [
+              10,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "79.1745029842320171433917585693425163185443144431296068859357",
+            "Delta_lambda_co_casimir": "0.0126303287334706074118670630653500517396913855730520134970784",
+            "y_lambda_at_q0": "0.00237044356292937986540937798785655283244144151270553367604678",
+            "chi_lambda_at_q0": "10.461118039526953",
+            "y_chi_product_signed": "0.0247974899178410801734207905632526180430200710254439638981539",
+            "contribution_y_chi_Delta": "0.000313200449427255886793148015021632074510573005702502576543698"
+          },
+          {
+            "partition": [
+              10,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "80.1745029842320171433917585693425163185443144431296068859357",
+            "Delta_lambda_co_casimir": "0.0124727932544423853829198847440439111450490070166363880793924",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "2.0411902988492674",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              9,
+              3
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "259.431583088401793611472944246142486542808362227784922627473",
+            "Delta_lambda_co_casimir": "0.0038545808035224768425680093797656804866808063592841512045339",
+            "y_lambda_at_q0": "0.00174414167712058062479743519724490369138614892968837673457832",
+            "chi_lambda_at_q0": "27.33118390932372",
+            "y_chi_product_signed": "0.0476694569412988995771891657557735337103232259538611624577863",
+            "contribution_y_chi_Delta": "0.000183745773640272023544879702121948580408822433782185522091125"
+          },
+          {
+            "partition": [
+              9,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "537.052871869338501077543225108882138919952458078687394183328",
+            "Delta_lambda_co_casimir": "0.00186201406300885315531359941763863235406050170004295836981529",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-7.9318224178568055",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              9,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "272.986226288396842490670665346459649083313835564001109613604",
+            "Delta_lambda_co_casimir": "0.00366318848242382752388677847283762318375221422716764024988503",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-3.3063661078919973",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              8,
+              4
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "514.044188529586195087728398234566856896092840125938356710863",
+            "Delta_lambda_co_casimir": "0.00194535804958807399731823721874025299222018136068327065227928",
+            "y_lambda_at_q0": "0.00119406961116227611775288513274581597159796810601956614106599",
+            "chi_lambda_at_q0": "30.262858756171408",
+            "y_chi_product_signed": "0.0361359599876404759301158806229383936463733720795488694204332",
+            "contribution_y_chi_Delta": "0.0000702973806415489588057053025547376486540047805049156439391671"
+          },
+          {
+            "partition": [
+              8,
+              3,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1668.15333738250372908071824894106870522014477796383363647919",
+            "Delta_lambda_co_casimir": "0.000599465275517835862267634926256137226122737153532228515762259",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "12.767950141723874",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              8,
+              2,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1154.10914885291753399298985070650184832405193783789527976833",
+            "Delta_lambda_co_casimir": "0.000866469173209407096308093480320643171343586351447470973044017",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-22.753539435790728",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              8,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1747.32784036673574622411000751041122153868909240696324336513",
+            "Delta_lambda_co_casimir": "0.000572302447713599203439618117643134696901471037545913659604702",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-22.331692311570016",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              8,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "594.218691513818212231120156803909373214637154569067963596799",
+            "Delta_lambda_co_casimir": "0.00168288210095246655156603305908111964908975914413650232083126",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "11.354456041899121",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              7,
+              5
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "594.971198894295513214495047674932621284631171078857997980446",
+            "Delta_lambda_co_casimir": "0.00168075362615605062164648037649804683317738141014972274633781",
+            "y_lambda_at_q0": "0.000696185800631777497284906110283604714768700386145329176774192",
+            "chi_lambda_at_q0": "21.773336677043673",
+            "y_chi_product_signed": "0.0151582878269328953792233751874871487599925130608575029763724",
+            "contribution_y_chi_Delta": "0.0000254773472314345846057974873810046316826063503499398502935443"
+          },
+          {
+            "partition": [
+              7,
+              4,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "2849.81312895226071948514837808077963175131717231438766946199",
+            "Delta_lambda_co_casimir": "0.000350900201083588917360288886643846328739245580231547744639155",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "1.6877396005243739",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              7,
+              3,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3919.76275973831612220755820106393164485072549346281736863959",
+            "Delta_lambda_co_casimir": "0.00025511748064741554196215026144974836290291653538920873751957",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "16.727924462732798",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              7,
+              3,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4774.16554172101342903352619298500675267816502676946028924751",
+            "Delta_lambda_co_casimir": "0.000209460688210554873791626141059091108109453999542934278289431",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-23.126941426930852",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              7,
+              2,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4179.19434282671791581903114531007413139353385569060229126706",
+            "Delta_lambda_co_casimir": "0.000239280568925067344179103575070958034230220644996508043873144",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-25.099804114054333",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              7,
+              2,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3386.86600082159922056269160318966177067126963039307506364532",
+            "Delta_lambda_co_casimir": "0.000295258212092659137704278045845026350860192623125316286061397",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "11.763007872331306",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              7,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "867.95742518269235570516571302139227036794500664285910759405",
+            "Delta_lambda_co_casimir": "0.00115213024393392868510404569574263281867459920558075271798743",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "5.933574810021562",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              6
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "273.738733668874143474045556217482897153307852073791143997251",
+            "Delta_lambda_co_casimir": "0.00365311838261676900074611655918308484506847998506466727313849",
+            "y_lambda_at_q0": "0.000228729631881072123068852392075537818220405495875624690800801",
+            "chi_lambda_at_q0": "20.470380034462448",
+            "y_chi_product_signed": "0.0046821824897482441159275809620643007993650158830275256756816",
+            "contribution_y_chi_Delta": "0.00001710456692406566214763137365716512943031486114029747256458"
+          },
+          {
+            "partition": [
+              6,
+              5,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "2449.50742077510857575603158619668286063841836149954483634596",
+            "Delta_lambda_co_casimir": "0.000408245344153138157358359880360896469005667207576791214099228",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "3.0433684689748883",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              4,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "5752.80522689010109220857043230807082525238689101784268096274",
+            "Delta_lambda_co_casimir": "0.000173828238669673899177380423999015360286311809141211081739309",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "4.649678675095339",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              4,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "6540.58814908856143077034438676012057930178758321757218167085",
+            "Delta_lambda_co_casimir": "0.000152891449087701870298001216857294983276706352601271765248318",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-32.40863732991228",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              3,
+              3
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3577.03653978386665992658440232887086176727638159208898861403",
+            "Delta_lambda_co_casimir": "0.000279561024573828496030819905781269622784562518307690572006673",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "63.61873944176364",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              3,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "12027.4689563986175553960118472456477510705315661900741595237",
+            "Delta_lambda_co_casimir": "0.0000831430123515720788087109089381457205810798710938648473448049",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-23.678679357201517",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              3,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "7694.69729794147896476333423746662242762583952105546746143918",
+            "Delta_lambda_co_casimir": "0.000129959628206235562819874957100360464977143362766813631856804",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "17.947804497911825",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              2,
+              2,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4091.08072831345285501431280056343771866336922171802734532489",
+            "Delta_lambda_co_casimir": "0.000244434189010063798866128691243728377479396336397619608794501",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "5.420639083586166",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              2,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "7420.95856427260482128928868124913953047253166898167631744193",
+            "Delta_lambda_co_casimir": "0.000134753481149240055418964859692631018659144226543716477705337",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "11.941416649272368",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": true,
+            "dim_q_at_q0": "4196.83526114184432198014159370709408217710745390650807971109",
+            "Delta_lambda_co_casimir": "0.00023827478034673376600205570505103753011988658983109813572846",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "4.771546988182143",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              6,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "867.95742518269235570516571302139227036794500664285910759405",
+            "Delta_lambda_co_casimir": "0.00115213024393392868510404569574263281867459920558075271798743",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-8.286255496468975",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              5,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "2920.53175622046553572980804448161567494767449428600717219167",
+            "Delta_lambda_co_casimir": "0.000342403398925586567468969982061170595458786851892598394253997",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-17.560701170816877",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              5,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3241.76422144588690547025753593906539907899781329107402617487",
+            "Delta_lambda_co_casimir": "0.000308474007265704682315415436871265146948568504730524614782466",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-7.606877971015736",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              4,
+              3
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4747.90889867707616691293380467176503611474406385913942843661",
+            "Delta_lambda_co_casimir": "0.000210619036999347848428238349804525118375398681056714631502853",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "15.480627972234277",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              4,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "12787.5096436339089783521921154766100420775879051721355518179",
+            "Delta_lambda_co_casimir": "0.0000782013095487937054733465319184296949388291316972274009455265",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-20.522481259066883",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              4,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "7597.7220276293368863980821827525446678660612361735270978986",
+            "Delta_lambda_co_casimir": "0.000131618397772841773821970268249241305902623943700910505010792",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "8.960943277425727",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              3,
+              3,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "9272.00668851914792940788902332006174584528223980727038164578",
+            "Delta_lambda_co_casimir": "0.000107851518403047242014409684441553416093090076268167743569268",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "23.6146406961484",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              3,
+              2,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "9866.97788741344344262238407099499436712991341088612837962622",
+            "Delta_lambda_co_casimir": "0.000101348154562667489038245705314003154931778262792356556516105",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "1.3368595651783908",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              3,
+              2,
+              1,
+              1
+            ],
+            "self_dual": true,
+            "dim_q_at_q0": "16707.2724033722251005597503165405416869283133986349529204575",
+            "Delta_lambda_co_casimir": "0.0000598541746286580118214839712570216339791592221991305564757376",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-6.146077641006361",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "7420.95856427260482128928868124913953047253166898167631744193",
+            "Delta_lambda_co_casimir": "0.000134753481149240055418964859692631018659144226543716477705337",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "19.137971454532018",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "7597.7220276293368863980821827525446678660612361735270978986",
+            "Delta_lambda_co_casimir": "0.000131618397772841773821970268249241305902623943700910505010792",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "38.56980669708847",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "7694.69729794147896476333423746662242762583952105546746143918",
+            "Delta_lambda_co_casimir": "0.000129959628206235562819874957100360464977143362766813631856804",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-9.264922547041886",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3386.86600082159922056269160318966177067126963039307506364532",
+            "Delta_lambda_co_casimir": "0.000295258212092659137704278045845026350860192623125316286061397",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-17.21461367072642",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              5,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "594.218691513818212231120156803909373214637154569067963596799",
+            "Delta_lambda_co_casimir": "0.00168288210095246655156603305908111964908975914413650232083126",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "6.300997299589391",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              4,
+              4
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1065.99553433965247318827150595986543559388730386532033382615",
+            "Delta_lambda_co_casimir": "0.000938090233763939326248916769458644414116687847489552813050574",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-12.169539255663349",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              4,
+              3,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "6760.9656830749337426695761269510563196718931620805017268579",
+            "Delta_lambda_co_casimir": "0.000147907865070717695891015285453803954742349849432685509537877",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-6.641339782580033",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              4,
+              2,
+              2
+            ],
+            "self_dual": true,
+            "dim_q_at_q0": "5968.708882404155412955350177208673781231313710288972537029",
+            "Delta_lambda_co_casimir": "0.000167540421170148742378430049533825848615957657719008610280469",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "9.662181202901987",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              4,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "9866.97788741344344262238407099499436712991341088612837962622",
+            "Delta_lambda_co_casimir": "0.000101348154562667489038245705314003154931778262792356556516105",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-4.709646988834652",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              4,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4091.08072831345285501431280056343771866336922171802734532489",
+            "Delta_lambda_co_casimir": "0.000244434189010063798866128691243728377479396336397619608794501",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "2.302967497697604",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              3,
+              3,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "6760.9656830749337426695761269510563196718931620805017268579",
+            "Delta_lambda_co_casimir": "0.000147907865070717695891015285453803954742349849432685509537877",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "19.423117028761038",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              3,
+              3,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "9272.00668851914792940788902332006174584528223980727038164578",
+            "Delta_lambda_co_casimir": "0.000107851518403047242014409684441553416093090076268167743569268",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-17.215700451679155",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "12787.5096436339089783521921154766100420775879051721355518179",
+            "Delta_lambda_co_casimir": "0.0000782013095487937054733465319184296949388291316972274009455265",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-17.426021190759705",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              3,
+              2,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "12027.4689563986175553960118472456477510705315661900741595237",
+            "Delta_lambda_co_casimir": "0.0000831430123515720788087109089381457205810798710938648473448049",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "18.712335731586393",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4179.19434282671791581903114531007413139353385569060229126706",
+            "Delta_lambda_co_casimir": "0.000239280568925067344179103575070958034230220644996508043873144",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-8.884545759221476",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              2,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3241.76422144588690547025753593906539907899781329107402617487",
+            "Delta_lambda_co_casimir": "0.000308474007265704682315415436871265146948568504730524614782466",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "14.05997472447322",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "6540.58814908856143077034438676012057930178758321757218167085",
+            "Delta_lambda_co_casimir": "0.000152891449087701870298001216857294983276706352601271765248318",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "2.528791380711297",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4774.16554172101342903352619298500675267816502676946028924751",
+            "Delta_lambda_co_casimir": "0.000209460688210554873791626141059091108109453999542934278289431",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-11.859235795466466",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1747.32784036673574622411000751041122153868909240696324336513",
+            "Delta_lambda_co_casimir": "0.000572302447713599203439618117643134696901471037545913659604702",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "2.840671981725285",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              4,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "272.986226288396842490670665346459649083313835564001109613604",
+            "Delta_lambda_co_casimir": "0.00366318848242382752388677847283762318375221422716764024988503",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "2.797191335755876",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3,
+              3
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1065.99553433965247318827150595986543559388730386532033382615",
+            "Delta_lambda_co_casimir": "0.000938090233763939326248916769458644414116687847489552813050574",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "23.622861749031067",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "4747.90889867707616691293380467176503611474406385913942843661",
+            "Delta_lambda_co_casimir": "0.000210619036999347848428238349804525118375398681056714631502853",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-16.91740271067337",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              3,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3577.03653978386665992658440232887086176727638159208898861403",
+            "Delta_lambda_co_casimir": "0.000279561024573828496030819905781269622784562518307690572006673",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "7.55995980976659",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              2,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "2920.53175622046553572980804448161567494767449428600717219167",
+            "Delta_lambda_co_casimir": "0.000342403398925586567468969982061170595458786851892598394253997",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "1.086380480661961",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "5752.80522689010109220857043230807082525238689101784268096274",
+            "Delta_lambda_co_casimir": "0.000173828238669673899177380423999015360286311809141211081739309",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-4.17290244858788",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "3919.76275973831612220755820106393164485072549346281736863959",
+            "Delta_lambda_co_casimir": "0.00025511748064741554196215026144974836290291653538920873751957",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "0.6355500429120877",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1154.10914885291753399298985070650184832405193783789527976833",
+            "Delta_lambda_co_casimir": "0.000866469173209407096308093480320643171343586351447470973044017",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-0.7120074809570862",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2,
+              2,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "2449.50742077510857575603158619668286063841836149954483634596",
+            "Delta_lambda_co_casimir": "0.000408245344153138157358359880360896469005667207576791214099228",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-0.844045131614465",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "2849.81312895226071948514837808077963175131717231438766946199",
+            "Delta_lambda_co_casimir": "0.000350900201083588917360288886643846328739245580231547744639155",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-6.905084425897317",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1668.15333738250372908071824894106870522014477796383363647919",
+            "Delta_lambda_co_casimir": "0.000599465275517835862267634926256137226122737153532228515762259",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "5.3164168217616865",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "537.052871869338501077543225108882138919952458078687394183328",
+            "Delta_lambda_co_casimir": "0.00186201406300885315531359941763863235406050170004295836981529",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "3.726368412128842",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "80.1745029842320171433917585693425163185443144431296068859357",
+            "Delta_lambda_co_casimir": "0.0124727932544423853829198847440439111450490070166363880793924",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-3.8746488043289364",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "273.738733668874143474045556217482897153307852073791143997251",
+            "Delta_lambda_co_casimir": "0.00365311838261676900074611655918308484506847998506466727313849",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-14.998809132461403",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "594.971198894295513214495047674932621284631171078857997980446",
+            "Delta_lambda_co_casimir": "0.00168075362615605062164648037649804683317738141014972274633781",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-3.5287929743578665",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "514.044188529586195087728398234566856896092840125938356710863",
+            "Delta_lambda_co_casimir": "0.00194535804958807399731823721874025299222018136068327065227928",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "12.179573321882188",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "259.431583088401793611472944246142486542808362227784922627473",
+            "Delta_lambda_co_casimir": "0.0038545808035224768425680093797656804866808063592841512045339",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-4.454550198344874",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "79.1745029842320171433917585693425163185443144431296068859357",
+            "Delta_lambda_co_casimir": "0.0126303287334706074118670630653500517396913855730520134970784",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-2.489759838572641",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "13.5546431999950488791977211003171625405054733362161869861315",
+            "Delta_lambda_co_casimir": "0.0737754572544089741293308216353239495734171572651932428628704",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "2.200274105562814",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          },
+          {
+            "partition": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            "self_dual": false,
+            "dim_q_at_q0": "1.0",
+            "Delta_lambda_co_casimir": "1.0",
+            "y_lambda_at_q0": "0.0",
+            "chi_lambda_at_q0": "-0.45574448631301256",
+            "y_chi_product_signed": "0.0",
+            "contribution_y_chi_Delta": "0.0"
+          }
+        ],
+        "compute_wall_sec": 2533.2,
         "status": "ok"
       }
     ],
