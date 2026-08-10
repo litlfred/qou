@@ -87,3 +87,50 @@ two-row shapes and their dimensions indexed properly; and the `ℓ(λ) ≥ 3`
 vanishing at `z_D` either proved for general `n` or explicitly downgraded to a
 conditional class with the TL identification as its named hypothesis (§3b-cond),
 rather than left as an unstated assumption.
+
+---
+
+## Progress (PR #4928)
+
+`QOU/QBeta/TwoRowNormalisation.lean` — `level_sum_step`, sorry-free,
+`#print axioms` = `[propext, Classical.choice, Quot.sound]`, verified with
+`lean`-direct against its real import cone. It is the arithmetic core: given
+Pascal for the dimensions and branching for the weights, the two level sums
+agree.
+
+Hypotheses `hd` and `hg` are **range-local**. They were universal in the first
+draft and that is unusable — see the docstring; past `k = n/2` the ℕ
+subtraction `n − 2k` truncates and a universal `hg` asserts a false q-integer
+identity rather than a vacuous one.
+
+## The parity split, worked out — this is what the instantiation turns on
+
+The two sums in `level_sum_step` run over the **same** `range (N + 1)`, but
+levels `n` and `n + 1` do not always carry the same number of two-row shapes:
+level `n` has `⌊n/2⌋ + 1`, level `n+1` has `⌊(n+1)/2⌋ + 1`, and those differ
+exactly when `n` is odd.
+
+Take **`N := ⌊(n+1)/2⌋`**, the upper level's count. Then `hbdry`,
+`d N * f (N + 1) = 0`, holds in both parities but *for different reasons*:
+
+* **`n` odd.** `N = (n+1)/2` while the lower level stops at `(n−1)/2 = N − 1`,
+  so `d N = 0` — there is no such shape downstairs. The boundary term dies on
+  the dimension.
+* **`n` even.** `N = n/2` and `d N ≠ 0`, so the weight must vanish instead:
+  `f (N + 1) = yw q (n+1) (n − 2N) = yw q (n+1) 0`, and `[0]_q = 0` gives
+  `yw q m 0 = 0`. The boundary term dies on the q-integer.
+
+Both cases are already available: `qint` at `0` is definitionally `0`, and the
+dimension vanishing is the statement that `(n−k, k)` is not a partition once
+`2k > n`. Neither needs new mathematics — but the proof does need the case
+split, and picking `N = ⌊n/2⌋` instead makes `hbdry` FALSE for odd `n`.
+
+## Remaining, in order
+
+1. Ballot dimensions as `ℕ → ℕ → R` (in `R`, per the truncation trap above),
+   with Pascal proved on the valid range.
+2. `hbdry` by the parity split above.
+3. Instantiate `level_sum_step` with `f k = yw q (n+1) (n − 2k + 2)`,
+   `g k = yw q n (n − 2k + 1)`, `hg` discharged by `yw_branching`.
+4. Base case and induction to `Σ_λ dim_λ · y_λ = 1` for all `n`.
+5. Separately: general-`n` vanishing for `ℓ(λ) ≥ 3` at `z_D`.
