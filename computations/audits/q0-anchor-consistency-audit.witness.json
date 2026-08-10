@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T18:02:10.045839+00:00",
-  "commitSha": "647b88a14da28f3b5c5e0e9871d0e8af271b086c",
+  "computedAt": "2026-08-10T18:49:22.620035+00:00",
+  "commitSha": "85f0101d88131ea21900ab353a5d5e0fdd2daad1",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -18,7 +18,7 @@
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "99e16a9c8cd9",
-  "scriptCommitSha": "b8eb7d9e66db36b80193fd976fa81bc5f9e57b49",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,7 +36,7 @@
     "counts": {
       "Q0_OK": 613,
       "Q0_AMBIGUOUS": 17,
-      "Q0_ANCHOR_MISSING": 1872,
+      "Q0_ANCHOR_MISSING": 1874,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 66,
       "Q0_PARSE_ERROR": 1,
@@ -4006,6 +4006,10 @@
           "detail": ""
         },
         {
+          "witness": "gswz_epsm_global_symbols.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_epsm_kummer_level.witness.json",
           "detail": ""
         },
@@ -5343,6 +5347,10 @@
         },
         {
           "witness": "c3-w2-c1-side-recursions-derived.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "c3-w2-c1-stokes-pair-prony.witness.json",
           "detail": ""
         },
         {

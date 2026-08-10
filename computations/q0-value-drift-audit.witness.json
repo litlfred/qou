@@ -5,8 +5,8 @@
   "data": {
     "counts": {
       "STALE": 321,
-      "unknown": 26,
-      "proton-pin": 736,
+      "unknown": 25,
+      "proton-pin": 737,
       "canonical": 615
     },
     "stale_total": 321,
@@ -4460,9 +4460,9 @@
       {
         "file": "computations/charm-mass-tower.witness.json",
         "field": "inputs.q0",
-        "value": "1.10998",
-        "class": "unknown",
-        "ppb_vs_canonical": 1265.288061320598
+        "value": "1.10997858275138080759166909561076887987449912187357763605672",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
@@ -7043,9 +7043,9 @@
       {
         "file": "computations/kappa-shell8-excess-convention.witness.json",
         "field": "parameters.q_0",
-        "value": "1.10997858275138080000000000000000000000000000000000000000000",
+        "value": "1.10997858275138080759166909561076887987449912187357763605672",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.537117896827304
+        "ppb_vs_canonical": -11.537117889987831
       },
       {
         "file": "computations/keystone-habiro-wrt-s3-2i.witness.json",
