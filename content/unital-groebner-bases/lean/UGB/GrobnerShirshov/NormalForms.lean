@@ -53,26 +53,37 @@ inductive SU2Gen where
 open SU2Gen
 
 /-- Numeric rank of each generator for the lexicographic order:
-    `E_- < K_inv < E_+ < K` (ascending).
+    `E_- < E_+ < K_inv < K` (ascending).
 
-    **Corrected 2026-08-10 (bean qou-ix9e): `K` and `E_+` were the other way
-    round, which mis-oriented the third q-Serre rule.** The rules of §3 are
-    written so that the left-hand side is the *larger* monomial, and rule 3 is
-    `K·E_+ → q²·E_+·K`. That needs `[K, E_+] > [E_+, K]`, i.e.
-    `rank K > rank E_+`; with the old ranking (`K = 2 < E_+ = 3`) the
-    inequality ran the other way, so the rule's leading monomial was `[E_+, K]`
-    — the right-hand side — and the system rewrote in the direction opposite to
-    the one its own docstring claimed.
+    **Corrected twice, both times because the rules constrain it and nothing
+    was checking.**
 
-    The three constraints the rules impose are `rank K > rank E_+`,
-    `rank K > rank E_-` and `rank E_+ > rank E_-`; `K_inv` is unconstrained by
-    them. This ranking satisfies all three, and `qSerre_lm_*` in §3 proves each
-    leading monomial outright, so the orientation is now checked rather than
-    asserted. -/
+    * qou-ix9e: originally `K = 2 < E_+ = 3`, which made rule 3's leading
+      monomial `[E_+, K]` — its own right-hand side — so the system rewrote in
+      the direction opposite to the one its docstring claimed.
+    * qou-18s7: the five-rule system turned out not to be a Gröbner–Shirshov
+      basis at all (see §3), and completing it adds the two `K⁻¹` commutation
+      rules, which impose two further constraints that the previous ranking
+      violated.
+
+    The five orientation constraints, one per non-inverse rule:
+
+    | rule | needs |
+    |---|---|
+    | 3 `K·E_+ → q²·E_+·K` | `rank K > rank E_+` |
+    | 4 `K·E_- → q⁻²·E_-·K` | `rank K > rank E_-` |
+    | 5 `E_+·E_- → E_-·E_+ + …` | `rank E_+ > rank E_-` |
+    | 6 `K⁻¹·E_+ → q⁻²·E_+·K⁻¹` | `rank K_inv > rank E_+` |
+    | 7 `K⁻¹·E_- → q²·E_-·K⁻¹` | `rank K_inv > rank E_-` |
+
+    Rules 1 and 2 constrain nothing: their leading monomials beat `[]` on
+    length. This ranking satisfies all five, and `qSerre_lm_1 … qSerre_lm_7`
+    prove every leading monomial outright, so the orientation is checked rather
+    than asserted. -/
 def SU2Gen.rank : SU2Gen → ℕ
   | E_minus => 0
-  | K_inv   => 1
-  | E_plus  => 2
+  | E_plus  => 1
+  | K_inv   => 2
   | K       => 3
 
 theorem SU2Gen.rank_injective : ∀ a b : SU2Gen, a.rank = b.rank → a = b := by
@@ -450,6 +461,17 @@ def qSerreRule5 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
         [K] (-(qs.q - qs.q⁻¹)⁻¹) [K_inv] ((qs.q - qs.q⁻¹)⁻¹),
    four_support_nonempty _ _ _ _ _ _ _ _⟩
 
+/-- **Rule 6**: `K⁻¹·E_+ → q⁻²·E_+·K⁻¹`.
+
+    One of the two rules the original five were missing; without it the system
+    is not confluent — see the completion note in §3. -/
+def qSerreRule6 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨two [K_inv, E_plus] 1 [E_plus, K_inv] (-(qs.q ^ 2)⁻¹), two_support_nonempty _ _ _ _⟩
+
+/-- **Rule 7**: `K⁻¹·E_- → q²·E_-·K⁻¹`. The other missing rule. -/
+def qSerreRule7 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
+  ⟨two [K_inv, E_minus] 1 [E_minus, K_inv] (-(qs.q ^ 2)), two_support_nonempty _ _ _ _⟩
+
 @[simp] theorem qSerre_lm_1 : (qSerreRule1 (k := k)).lm degLexOrder = [K, K_inv] :=
   two_lm _ _ (Or.inl (by simp))
 
@@ -469,6 +491,14 @@ def qSerreRule5 (qs : QSerreRelations k) : ReductionRule SU2Gen k :=
   four_lm _ _ _ _
     (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
     (Or.inl (by simp)) (Or.inl (by simp))
+
+@[simp] theorem qSerre_lm_6 (qs : QSerreRelations k) :
+    (qSerreRule6 qs).lm degLexOrder = [K_inv, E_plus] :=
+  two_lm _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
+
+@[simp] theorem qSerre_lm_7 (qs : QSerreRelations k) :
+    (qSerreRule7 qs).lm degLexOrder = [K_inv, E_minus] :=
+  two_lm _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
 
 /-- The leading coefficient of a two-term element is `c₁`. -/
 theorem two_lc {m₁ m₂ : Monomial SU2Gen} (c₁ c₂ : k) (hlt : degLexLt m₂ m₁) :
@@ -495,17 +525,23 @@ theorem qSerre_rule_lc_eq_one (qs : QSerreRelations k) :
     (qSerreRule2 (k := k)).lc degLexOrder = 1 ∧
     (qSerreRule3 qs).lc degLexOrder = 1 ∧
     (qSerreRule4 qs).lc degLexOrder = 1 ∧
-    (qSerreRule5 qs).lc degLexOrder = 1 :=
+    (qSerreRule5 qs).lc degLexOrder = 1 ∧
+    (qSerreRule6 qs).lc degLexOrder = 1 ∧
+    (qSerreRule7 qs).lc degLexOrder = 1 :=
   ⟨two_lc _ _ (Or.inl (by simp)),
    two_lc _ _ (Or.inl (by simp)),
    two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩),
    two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩),
    four_lc _ _ _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)
-     (Or.inl (by simp)) (Or.inl (by simp))⟩
+     (Or.inl (by simp)) (Or.inl (by simp)),
+   two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩),
+   two_lc _ _ (Or.inr ⟨by simp, by simp [lexLt, SU2Gen.rank]⟩)⟩
 
-/-- The five rules. -/
+/-- The seven rules — the five of the original presentation, **plus the two
+`K⁻¹` commutation rules it was missing**. See the completion note in §3. -/
 def qSerreRules (qs : QSerreRelations k) : List (ReductionRule SU2Gen k) :=
-  [qSerreRule1, qSerreRule2, qSerreRule3 qs, qSerreRule4 qs, qSerreRule5 qs]
+  [qSerreRule1, qSerreRule2, qSerreRule3 qs, qSerreRule4 qs, qSerreRule5 qs,
+   qSerreRule6 qs, qSerreRule7 qs]
 
 end QSerreConstruction
 
@@ -523,43 +559,60 @@ opaque (bean qou-lzoo left it hanging deliberately rather than assert a monicity
 axiom; this proves it instead). -/
 theorem qSerre_rules_monic (k : Type v) [Field k] (qs : QSerreRelations k) :
     ∀ r ∈ (qSerreRewritingSystem k qs).rules, IsUnit (r.lc degLexOrder) := by
-  obtain ⟨h1, h2, h3, h4, h5⟩ := qSerre_rule_lc_eq_one qs
+  obtain ⟨h1, h2, h3, h4, h5, h6, h7⟩ := qSerre_rule_lc_eq_one qs
   intro r hr
   simp only [qSerreRewritingSystem, qSerreRules, List.mem_cons, List.not_mem_nil,
     or_false] at hr
-  rcases hr with rfl | rfl | rfl | rfl | rfl
+  rcases hr with rfl | rfl | rfl | rfl | rfl | rfl | rfl
   · rw [h1]; exact isUnit_one
   · rw [h2]; exact isUnit_one
   · rw [h3]; exact isUnit_one
   · rw [h4]; exact isUnit_one
   · rw [h5]; exact isUnit_one
+  · rw [h6]; exact isUnit_one
+  · rw [h7]; exact isUnit_one
 
 /-- **Theorem** (Bokut–Malcolmson 1996):
     The `q`-Serre relations form a Gröbner–Shirshov basis for
     `U_q(su(2))` under the deg-lex order.
 
-    The six S-polynomial computations are:
-    - (1,3): `K·K⁻¹` vs `K·E_+`  → overlap at `K` → reduces to 0
-    - (1,4): `K·K⁻¹` vs `K·E_-`  → overlap at `K` → reduces to 0
-    - (2,3): `K⁻¹·K` vs `K·E_+`  → no overlap
-    - (3,4): `K·E_+` vs `K·E_-`  → overlap at `K` → reduces to 0
-    - (3,5): `K·E_+` vs `E_+·E_-` → overlap at `E_+` → reduces to 0
-    - (4,5): `K·E_-` vs `E_+·E_-` → no overlap (wrong orientation)
+    **The overlap analysis this docstring used to carry was wrong, and the
+    five-rule system it described was not a Gröbner–Shirshov basis** (bean
+    qou-18s7). It listed six "S-polynomial computations", of which three —
+    `(1,3)`, `(1,4)`, `(3,4)` — are not ambiguities at all: those pairs share a
+    *first* letter, and an overlap requires a proper **suffix** of one leading
+    word to equal a proper **prefix** of the other. It also recorded `(2,3)` as
+    "no overlap", when `[K⁻¹,K]` followed by `[K,E_+]` overlaps at `K` and is in
+    fact one of the two ambiguities that **fail**.
 
-    **⚠ This axiom is now falsifiable, and is not verified.** While
-    `qSerreRewritingSystem` was itself an axiom, this said nothing checkable —
-    an opaque system trivially "has" whatever property one asserts of it. Now
-    that the system is built (§3.1), this is a concrete claim about five
-    explicit rules, and it could be false: the six S-polynomial computations
-    listed above have **not** been carried out against this construction.
+    The real analysis, computed exactly over `ℚ(q)` by
+    `computations/qserre_gs_basis_check.py`:
 
-    That is a strict improvement in auditability — the claim can now be
-    attacked — but it is a live risk, and the sibling axiom
-    `pbw_monomials_are_normal_forms` shows the risk is real: it was refuted the
-    moment it became checkable (`pbw_monomials_are_not_all_normal_forms`).
-    Discharging the six computations is the natural next step; until then this
-    is a cited-literature assumption about a construction that has not been
-    matched against the citation.
+    * the **five**-rule system has exactly **5** overlap ambiguities, and two of
+      them do not resolve — both decisively, with each pair of reducts genuinely
+      irreducible:
+
+      | ambiguity | word | one way | the other |
+      |---|---|---|---|
+      | R2/R3 | `K⁻¹ K E_+` | `E_+` | `q²·K⁻¹ E_+ K` |
+      | R2/R4 | `K⁻¹ K E_-` | `E_-` | `q⁻²·K⁻¹ E_- K` |
+
+      Both are instances of the same gap: nothing rewrites `K⁻¹` past `E_±`, so
+      `K⁻¹ E_± K` is stuck.
+
+    * adding the two missing rules (6 and 7, the `K⁻¹` commutation rules) gives
+      **8** ambiguities, and **all 8 resolve**.
+
+    So this axiom is now stated of the **completed seven-rule system**, where the
+    critical-pair check passes. That check is a symbolic computation, not a Lean
+    proof: the axiom records a verified-but-not-formalised claim, which is a
+    materially better position than the unverified one it was in, and materially
+    worse than a theorem. Formalising the eight resolutions is the way to remove
+    it.
+
+    History worth keeping: this is the third claim in this file to be examined by
+    making it checkable, and the second to be found false — see
+    `pbw_monomials_are_not_all_normal_forms` for the other.
 
     Reference: Bokut & Malcolmson, Israel J. Math. 96 (1996). -/
 -- Ref: [bokut2005] https://doi.org/10.1142/S0218196705002347 (q-Serre relations form a GS basis for U_q(su(2)))
