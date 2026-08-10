@@ -90,11 +90,21 @@ def load_sdp_certificates():
 
 
 def load_volmatch_predictions():
-    """Pull mass-table-ppb predicted B values for comparison."""
+    """Pull mass-table-ppb predicted B values for comparison.
+
+    mass-table-ppb is written through WitnessBuilder, which nests the payload
+    under `data`; this loader read `rows` at top level and so raised KeyError
+    on every run. The two sibling witnesses read above keep their payload at
+    top level, so accept either shape rather than assuming one.
+    """
     with open(MASS_TABLE_WITNESS) as f:
         d = json.load(f)
+    payload = d.get("data") if isinstance(d.get("data"), dict) else d
+    if "rows" not in payload:
+        raise KeyError(
+            f"{MASS_TABLE_WITNESS.name}: no 'rows' at top level or under 'data'")
     out = {}
-    for row in d["rows"]:
+    for row in payload["rows"]:
         out[row["sym"]] = {
             "B_AME_MeV": row["B_AME_MeV"],
             "B_pred_MeV": row["B_pred_MeV"],
