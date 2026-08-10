@@ -75,6 +75,14 @@ QOU.Knot.RivinConcavity | QOU.Knot.Rivin.deriv_deriv_Lob | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.norm_eq_sin_div_sin | clean
 QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.log_sin_sub_log_sin | clean
 QOU.Knot.KummerRadial | QOU.Knot.KummerRadial.kummer | clean
+# The volume functor's definitional layer (same PR).  `volume_rotate` is the
+# well-definedness that makes "the volume of an ideal tetrahedron" a property of
+# the tetrahedron rather than of a chosen edge label.
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.volume_rotate | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.rotate_angles | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.volume_eq_dilog | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTriangulation.volume_eq_dilog | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.param_prod | clean
 """
 
 

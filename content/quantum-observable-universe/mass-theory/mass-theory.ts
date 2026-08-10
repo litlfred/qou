@@ -603,6 +603,7 @@ export default chapter({
         "rivin-concavity-one-tetrahedron",
         "ideal-tetrahedron-law-of-sines",
         "kummer-identity-radial-reduction",
+        "ideal-tetrahedron-volume-well-defined",
         "mass-volume-factorization",
         "frobenius-packing-density",
         "crossing-graded-mass-expansion",
