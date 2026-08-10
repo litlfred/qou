@@ -1,7 +1,7 @@
 ---
 # glnl
 title: 'Lean-prove the gluing equations for every identified shape field (generator with exact certificates)'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

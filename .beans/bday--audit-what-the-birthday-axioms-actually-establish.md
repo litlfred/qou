@@ -1,7 +1,7 @@
 ---
 # bday
 title: 'Audit what the birthday axioms actually establish — they admit a two-valued model'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:

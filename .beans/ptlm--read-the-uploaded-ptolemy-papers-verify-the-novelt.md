@@ -1,7 +1,7 @@
 ---
 # ptlm
 title: 'Read the uploaded Ptolemy papers: verify the novelty assessment, and price the Ptolemy route past the Gröbner ceiling'
-status: todo
+status: in-progress
 type: task
 priority: high
 tags:
