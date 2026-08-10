@@ -60,6 +60,12 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 
 
+
+def _pn_delta():
+    """Colour-weighting delta for the p-n interface (qou-gdtb)."""
+    from canonical_braid_crossings import _avg_color_delta
+    return _avg_color_delta()
+
 def _q_inv_str(dps: int) -> str:
     """50+ dps decimal-string of q_0^{-1}."""
     with mp.workdps(dps + 5):
@@ -103,7 +109,10 @@ def _word_to_signed(word, *, dps: int = 50):
                 sgn = 1
             elif abs(d_mpf + h0) < tol:
                 sgn = -1
-            elif abs(d_mpf + h0 / 2) < tol:
+            elif (abs(d_mpf + h0 / 2) < tol
+                  or abs(d_mpf + h0 * (mp.mpf(1) / 2 - _pn_delta() / 4)) < tol):
+                # Both averaged interfaces are the sgn-0 channel; the
+                # colour-weighted one used to hit the raise below. qou-gdtb.
                 sgn = 0
             else:
                 raise ValueError(
