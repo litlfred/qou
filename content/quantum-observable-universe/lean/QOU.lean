@@ -123,6 +123,10 @@ import QOU.StandardModel.LeptonNumberGradingObstruction
 -- table. The unknot is amphichiral, so the nu / nubar rows assign +1 and -1
 -- to the SAME knot. The carrier must be chiral, or L must see framing.
 import QOU.StandardModel.LeptonNumberCarrierChirality
+-- The p/n same-Y test falsifies only an INJECTIVE writhe->Y map, not every
+-- function of the writhe (Y = w^2/4 reproduces both rows). Independence needs
+-- the converse pattern: equal writhe, different Y.
+import QOU.StandardModel.WritheIndependenceCriterion
 -- The strand-twist hypercharge battery reduces to the single equation T = 3Q:
 -- the nucleon check is entailed by charge additivity (and states one condition
 -- twice), and the '4 of 10,000 survivors' is 1x2x2x1 multiset counting.
