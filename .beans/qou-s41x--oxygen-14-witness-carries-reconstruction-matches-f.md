@@ -174,3 +174,90 @@ Next: find when it regressed. `reconstruct`'s missing `max_m` is one candidate
 and fits the large atoms; the small-atom failure needs its own look. Fixing the
 check must come before re-running any of the 25, or the regeneration just
 rewrites `false` everywhere and buries the four remaining pieces of evidence.
+
+## SOLVED — and it is `qou-0ndb`'s bug, biting the verifier
+
+`habiro_coefficients_atomic.reconstruct` sympified with **one** name:
+
+    a_m = sp.sympify(entry["a_m"], locals={"check_q": check_q})
+
+but `cyclotomic_expansion` renders its `a_m` strings using WHATEVER SYMBOL the
+caller handed it, and the two call sites hand it different ones:
+
+    habiro_coefficients_atomic.analyse_atomic_braid   passes `check_q`  → strings say check_q
+    _habiro_coefficient_extract.analyse_atom          passes `u`        → strings say u
+
+So every `u`-rendered string resolved to a **fresh** `Symbol('u')` — same name,
+no assumptions, therefore not the caller's `Symbol('u', positive=True,
+real=True)`. Demonstrated in three lines:
+
+    sp.sympify("8 - 3*u**2", locals={"check_q": u}) - (8 - 3*u**2)
+        ->  -3*u**2 + 3*u**2        # NOT 0
+
+`diff == 0` was therefore false for every atom regardless of size — which is why
+`proton` (hi_m=8) failed just as surely as `helium-6` (hi_m=22), the fact that
+killed both earlier hypotheses.
+
+Fix: `locals={"u": check_q, "check_q": check_q}`. It cannot misfire — a given
+string uses one name or the other, and both now resolve to the caller's symbol.
+
+### Verified
+
+    atom        committed   before fix   AFTER FIX
+    proton        false       false        TRUE
+    neutron       false       false        TRUE
+    deuteron      false       false        TRUE
+    helium-6      TRUE        false        TRUE      ← the reversal, reversed back
+    boron-12      TRUE        false        TRUE
+
+So the four committed `true` values were **right all along**, and the 21 `false`
+are the artifacts. Exactly opposite to this bean's opening framing, and opposite
+again to my first correction. The check regressed; the witnesses recording
+`true` are the ones that predate the regression.
+
+### The expensive part: it also corrupted the Φ₈ multiplicities
+
+`mirror_pair_diff` (`_habiro_coefficient_extract.py:382`) uses the same
+`reconstruct`, then divides the result by cyclotomic polynomials in the CALLER's
+`u`. With the two symbols mixed, the division is never exact, so the
+multiplicity comes back 0. `habiro-coefficients-mass-table-summary.witness.json`
+publishes exactly that — `phi_8_mult: 0` for all 7 mirror pairs and all 7 rows of
+`phi_k_scaling_table`.
+
+Recomputed on the committed coefficients with the fix:
+
+    pair                            A    phi_8   2⌊(A−1)/2⌋
+    proton − neutron                1      0         0
+    helium-3 − tritium              3      2         2
+    lithium-5 − helium-5            5      4         4
+    boron-9 − beryllium-9           9      8         8
+    carbon-10 − beryllium-10       10      8         8
+
+Five for five against **the repo's own refined scaling law** (see
+`docs/audits/2026-06-01-qbeta-habiro-phi8-mirror-multiplicity-scaling.md` and
+`extend_even_a_mirror_pair_test.py`'s docstring). The published witness reports 0
+for the quantity that law is about.
+
+Why nobody caught it: `extend_even_a_mirror_pair_test.py` and
+`topic2_mirror_pair_phi8_boundary_scan.py` do **not** use the shared helper —
+they carry their own `load_a_m` with `locals={'u': u, 'check_q': u}` already
+correct, and their own `cyc_mult`. So the two scripts whose whole purpose is
+testing this law were computing it correctly, while the shared-helper path
+published zeros beside them. A uniform 0 across A=1..10, for a quantity a
+documented law says varies with A, was the tell.
+
+### Correction to this bean's own earlier note
+
+`reconstruct`'s `max_m=20` is **vestigial** — the loop iterates `coeffs_data`,
+not `range(max_m)`, so it never truncated anything. The "verification examines a
+fifth of what was computed" concern recorded above is withdrawn; it was wrong.
+Marked as such in the code.
+
+## Not done here
+
+`habiro-coefficients-mass-table-summary.witness.json` still publishes the zeros.
+Regenerating it means running the full ATOMS table (proton … carbon-10, max_m up
+to 160) — a deliberate producer run, and one that now also has to absorb the
+padding-ratchet consequence recorded on `qou-j6gb` (68 producers build their
+constants at 50 dps, so latent float64 becomes visible padding). Sequence that
+deliberately; do not fold it into an unrelated change.

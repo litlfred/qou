@@ -239,11 +239,36 @@ def cyclotomic_expansion(p_in_u, check_q, max_m=20):
 
 
 def reconstruct(coeffs_data, check_q, max_m=20):
-    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify."""
+    """Reconstruct p(check_q) = Σ a_m · (check_q;check_q)_m from the list to verify.
+
+    `max_m` is VESTIGIAL — the loop iterates `coeffs_data`, not `range(max_m)`.
+    Kept only because callers pass it positionally. Do not read it as a bound.
+
+    BOTH symbol names, and that is the whole bug this function had (bean
+    qou-s41x; root cause is bean qou-0ndb). `cyclotomic_expansion` renders its
+    `a_m` strings using WHATEVER SYMBOL the caller handed it, so the name in the
+    string is a property of the call site:
+
+        habiro_coefficients_atomic.analyse_atomic_braid  passes `check_q`
+        _habiro_coefficient_extract.analyse_atom         passes `u`
+
+    Sympifying with only `check_q` in `locals` therefore left the `u`-rendered
+    strings referring to a FRESH `Symbol('u')` — same name, but no assumptions,
+    so not the caller's `Symbol('u', positive=True, real=True)`. The two never
+    cancel:
+
+        sympify("8 - 3*u**2", locals={"check_q": u}) - (8 - 3*u**2)
+            ->  -3*u**2 + 3*u**2          # not 0
+
+    which made `diff == 0` false for EVERY atom regardless of size, and so
+    `reconstruction_matches` false corpus-wide. Mapping both names onto the
+    caller's symbol is the fix; it cannot misfire, because a given string uses
+    one name or the other and both resolve to the same object.
+    """
     total = Integer(0)
     for entry in coeffs_data:
         m = entry["m"]
-        a_m = sp.sympify(entry["a_m"], locals={"check_q": check_q})
+        a_m = sp.sympify(entry["a_m"], locals={"u": check_q, "check_q": check_q})
         poch = Integer(1)
         for k in range(1, m + 1):
             poch *= 1 - check_q ** k
