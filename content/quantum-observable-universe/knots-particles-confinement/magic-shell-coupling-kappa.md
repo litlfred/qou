@@ -70,4 +70,18 @@ The conjecture is discharged by a derivation of the closed form from the substra
 
 The sign is forced, as above. The $q$-brackets in the denominator are the canonical balanced brackets, tied to `QOU.QInteger.qIntBal` by `qBracket_eq_canonical`, so the normalization is not free to be reinterpreted as a geometric or rescaled bracket. And the denominator is the q-factorial $[3]_q!$, hence $q^3 / y_{(3)}(q)$, which gives the missing piece a categorical handle: a derivation must say which partition's Markov weight appears, and why.
 
-That last point also delimits what the present agreement establishes. Both the index of the q-factorial and the definition of the excess $(n_{pp} - n_{nn})$ admit more than one reading in the corpus, and every reading coincides at the $A = 3$ anchors — the only anchors $\kappa$ has been evaluated at. The readings diverge from the $A_{\mathrm{magic}} = 8$ shell upward. So the $0.034\%$ agreement is evidence about the value at $A = 3$ and carries little information about $\kappa$ away from it; a shell-8 evaluation performed before those two readings are fixed would measure the choice rather than the physics.
+## What the index counts
+
+The q-factorial's index admits several readings that all give $3$ at the $A = 3$ anchors — the mass number $A$, the magic number plus one $A_{\mathrm{magic}} + 1$, or a constant — and they diverge from the $A_{\mathrm{magic}} = 8$ shell upward. The evidence favours the constant, and identifies what the constant counts.
+
+The nucleon is the Borromean link, carried by the braid word $(\sigma_1 \sigma_2^{-1})^3$. That word uses the generators $\sigma_1, \sigma_2$, so $\beta_{\mathrm{Bor}} \in B_3$ and its Markov trace lives in $H_3(q)$. **The $3$ is the strand count internal to a single nucleon**, and it is the same $3$ for every nucleus, because every nucleon carries the same Borromean structure regardless of $A$ or $A_{\mathrm{magic}}$.
+
+The identification is supported by the normalization already in use elsewhere: the Borromean observable is $F_{\mathrm{Bor}} = |\mathrm{tr}_M(\beta_{\mathrm{Bor}})| / y_{(3)}(q)$, normalizing the trace of that same 3-strand braid by that same weight. On this reading $\kappa$'s normalization is not a nuclear quantity at all — it is the Markov normalization of the nucleon's own braid — and $\kappa$ is therefore shell-independent, which is what the Lean sibling encodes by giving `kappaClosed` no shell index.
+
+This also dissolves an apparent tension. The trivial partition $(3)$ is fully symmetric, whereas the flavour content of the $A = 3$ anchors is $\mathfrak{p}\mathfrak{p}\mathfrak{n}$ or $\mathfrak{p}\mathfrak{n}\mathfrak{n}$, of mixed symmetry $(2,1)$. The two partitions index different things: $(2,1)$ partitions the three *nucleons* of the nucleus, $(3)$ partitions the three *strands* of one nucleon. That they are both partitions of $3$ at these anchors is a coincidence of the anchors, not a conflict.
+
+It is an identification rather than a theorem — two quantities that are numerically equal and that both normalize a Markov trace at $n = 3$. What it buys is falsifiability: it converts a three-way ambiguity into the single prediction that $\kappa$ does not vary with the shell, which a shell-8 evaluation can test once the excess convention is settled.
+
+## What the present agreement does not establish
+
+The definition of the excess $(n_{pp} - n_{nn})$ still admits two readings in the corpus, and both give $\pm 1$ at the $A = 3$ anchors while differing by a factor of $7$ at the $8$ shell. So the $0.034\%$ agreement remains evidence about the value at $A = 3$ and carries little information about $\kappa$ away from it. A shell-8 evaluation performed before the excess convention is fixed would measure the choice rather than the physics.
