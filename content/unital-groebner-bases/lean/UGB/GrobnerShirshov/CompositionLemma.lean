@@ -59,6 +59,38 @@ axiom reduction_well_founded
     (sys : RewritingSystem G k) :
     ∀ (f : AlgElement G k), Acc (fun g h => SingleStepReduction ord sys h g) f
 
+/-- **Existence of normal forms, repaired.**
+
+    Two differences from the `normal_form_exists` axiom in `Basic.lean`, and both
+    matter:
+
+    1. It carries `hlc` — every rule has a **unit leading coefficient**. Without
+       it the statement is not merely unproved, it is **false**; see
+       `UGB.GrobnerShirshov.NormalFormExistsRefutation`, which exhibits a
+       Gröbner–Shirshov system over `ℤ` and an element with no normal form.
+    2. It does **not** take `hgs`. Existence of normal forms is pure termination
+       — reduce until stuck — and has nothing to do with confluence. The axiom's
+       `hgs` argument was never used by the statement's content, and taking it
+       obscured that the real missing hypothesis was elsewhere.
+
+    Proof: well-founded induction on `reduction_well_founded`. At `x`, either `x`
+    is already normal (done, zero steps), or `exists_singleStep_of_not_isNormalForm`
+    produces a step `x → y`, and the induction hypothesis applies at `y` because
+    `x → y`. -/
+theorem normal_form_exists_of_unit_lc
+    (ord : AdmissibleOrder G)
+    (sys : RewritingSystem G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
+    (f : AlgElement G k) :
+    ∃ nf, ReducesToNF ord sys f nf := by
+  induction (reduction_well_founded ord sys f) with
+  | intro x _ ih =>
+    by_cases hnf : isNormalForm ord sys x
+    · exact ⟨x, MultiStepReduction.refl x, hnf⟩
+    · obtain ⟨y, hxy⟩ := exists_singleStep_of_not_isNormalForm hlc hnf
+      obtain ⟨nf, hred, hnorm⟩ := ih y hxy
+      exact ⟨nf, MultiStepReduction.head hxy hred, hnorm⟩
+
 /-! ## §2  Local Confluence from S-Polynomial Resolution -/
 
 /-- **Local confluence**: if all S-polynomials reduce to zero (i.e., the
