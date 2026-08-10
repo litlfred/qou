@@ -218,3 +218,69 @@ fabricates the rest:
 diverging at the 17th digit. Written at its true f64 width in `acf6609b4`.
 Whether the probe should read `Q_50_DIGIT_STR` is a separate call — it would
 move values again.
+
+### The cache is confirmed C, and 15 producers read it AROUND the guard
+
+`wedderburn_jones_markov.py` already knows: its docstring says
+`y-lambda-at-q0.witness.json` "holds C weights and must NOT be served — that
+cache is why the switch has to happen here rather than only at `markov_z`."
+That guard works. **It only covers callers that go through that function.**
+
+The cache itself, verified by reading it:
+
+    0.41539578633234285396775579738846403626500771799236    y_(3,)
+    0.28092963398059057548223798645901560186893685925826    y_(2,1)
+    0.022744945706475995067768229693504759997118563491127   y_(1,1,1)
+
+Zero convention-D markers anywhere in the file. These are exactly the C values
+`wedderburn_jones_markov`'s own docstring quotes, and exactly what the charm
+witness turned out to be carrying.
+
+**17 live files open that JSON directly rather than calling the guarded
+function**, so the guard never runs for them:
+
+    delta_lambda_empirical_tabulation.py        probe_theta_carry_binding.py
+    binding_heat_kernel_weight_probe.py         probe_content_energy_signed_phase.py
+    probe_1b_li6_orthogonality.py               probe_1_project_4he_on_dominant.py
+    chi_4he_binding_lossless.py                 probe_full_theta_binding.py
+    derive_binding_per_block_archimedean.py     probe_binding_measure_search.py
+    derive_binding_bond_sum.py                  probe_binding_measure_search.py
+    probes/pauli_young_spin_isospin_delta_lambda_probe.py
+    qbeta/qbeta_per_block_paper_closed_forms.py
+    qbeta/qbeta_per_block_symbolic.py
+    qbeta/qbeta_per_block_uniform_rule_verify.py
+    schur_principal_mpmath.py                   witness_upstream_declaration_audit.py
+
+**Two of the 17 are NOT contaminated** and should not be counted as such —
+they read the cache deliberately, knowing it is C:
+
+  * `schur_principal_mpmath.py` — only in its `__main__` self-audit, and it
+    prints "witness y-lambda-at-q0.witness.json is still convention C; this
+    module is convention D. The last column is therefore the C-vs-D GAP, not an
+    error, until that witness is regenerated."
+  * `witness_upstream_declaration_audit.py` — an audit of who declares it.
+
+**Three are verified to serve C weights straight into computation**, by reading
+the code at the call site — each loads `by_n[n]` and returns
+`{partition: mpf(y_at_q0_50dps)}` as the weights:
+
+    chi_4he_binding_lossless.py:49   docstring calls it "the framework reference"
+    derive_binding_bond_sum.py:65
+    probe_theta_carry_binding.py:68
+
+The remaining 12 need the same one-line check (does the loaded value feed a
+computation, or only a comparison?) — I have not done it, so do not treat 15 as
+a confirmed count.
+
+**Why this is the highest-leverage item on this bean.** The excision closed one
+door and left these open, and the cache re-seeds C into whatever reads it. Any
+witness produced by those 15 since 2026-08-09 is on C no matter how new it is —
+`computedAt` is not a safe filter for them, unlike the 47-witness candidate set
+above.
+
+Cheapest durable fix, in order:
+  1. regenerate `y-lambda-at-q0.witness.json` under D (it is the single
+     upstream), then
+  2. re-run the direct readers, then
+  3. make the direct reads go through the guarded accessor so the next
+     convention change has exactly one door again.
