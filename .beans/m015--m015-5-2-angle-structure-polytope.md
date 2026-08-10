@@ -11,7 +11,7 @@ tags:
     - 5_2
 parent: krvm
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-10T02:00:00Z
+updated_at: 2026-08-10T02:45:00Z
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -325,3 +325,56 @@ before identification**, not because no field exists.
 Note the pleasing arithmetic: the (2,q) and (p,q) torus knots throw up exactly the
 cyclotomic real subfields you would expect — ℚ(√5) for 5₁ (the (2,5) knot), ℚ(√2) for
 8₁₉ (the (3,4) knot), the real cubic of conductor 7 for 7₁ (the (2,7) knot).
+
+---
+**2026-08-10 — the flat case is now statable in Lean; and the mass/binding side checked.**
+
+Two questions asked: are flat shapes wired into mass/binding appropriately, and are the
+corpus's geometry equations stated generally enough to admit them.
+
+### Mass/binding — YES, already correct, and honestly so
+
+`computations/binding_link_volumes.py` handles the degenerate case explicitly:
+`"2H": {"link": "Hopf (L2a1)", "vol": mpf("0"), "hyperbolic": False}` — the deuteron's
+binding link is the **Hopf link, which is Seifert fibred**, exactly the non-hyperbolic
+case. The zero volume triggers a documented substitution to `Vol(𝓑₃) = 8G`
+(`v_eff = v if v > 0.01 else VOL_B3`), printed as `→ 8G (Hopf=0)` so it is visible in
+output, and the docstring records the whole thing as an **honest negative**: the
+endomorphism matches the deuteron at +0.2% *via that substitution* but gives −60% for
+A ≥ 3, so the A-dependence cannot live in a single binding-link volume.
+
+⚠ One fragility worth a later fix, not a bug today: the substitution tests
+`v > 0.01` — the **volume** — when the semantic flag `"hyperbolic": False` is right there
+in the same dict. It is safe in practice because Cao–Meyerhoff put the minimum cusped
+orientable hyperbolic volume at 2.0298832…, so no genuinely hyperbolic link can fall
+under 0.01. But it is testing the wrong thing, and would silently mis-fire if the
+threshold or the registry ever changed. Prefer `if not rec["hyperbolic"]`.
+
+### Lean geometry — NO, it was too strong. Fixed in `QOU/Knot/FlatTetrahedra.lean`.
+
+`IdealTetrahedron` carries `im_pos : 0 < shape.im` as a **structure field**, so the whole
+gluing layer built on it excluded flat shapes by construction. Concrete cost: **Route 75's
+own G5 finding was not statable in Lean.** New module, sorry-free, standard axioms:
+
+- `BlochWigner_lob_ofReal (x : ℝ) : BlochWigner_lob ↑x = 0` — **no hypotheses.**
+  Generalises the corpus's `BlochWigner_lob_real_eq_zero`, which assumed `0 < x < 1` and
+  therefore could not see the trefoil's shapes `−1` and `2` at all. Includes the two
+  junk-value cases (`x = 0`, `x = 1`), where Lean's `1/0 = 0` still lands on `arg = 0`.
+- `Shape` — `IdealTetrahedron` minus `im_pos`: any `z ∈ ℂ ∖ {0,1}`. `param_ne_zero` and
+  `param_prod` (`z z′ z″ = −1`) now proved from `z ≠ 0, 1` **alone**. Note
+  `IdealTriangulation.param_ne_zero` proves the same from `param_im_pos` — positivity was
+  never what made the parameters units.
+- `ShapedTriangulation.SatisfiesEdgeEquations` — the edge equations over possibly-flat
+  shapes. `IdealTetrahedron.toShape` keeps every existing result available.
+- Trefoil worked: `trefoil_edge_zero` (exponents `[1,2,2, 2,1,2]`), `trefoil_edge_one`
+  (`z₀·z₁′ = (−1)(−1) = 1`), `trefoil_flat`, `trefoil_volume_zero`, and
+  `edge_equations_do_not_detect_hyperbolicity` stating all three together.
+
+**The split is the mathematical content, not packaging.** The **edge** equations descend
+to flat shapes; the **angle** equations do not (they need `angle_sum`, hence `im_pos`).
+That is precisely why positivity is the hyperbolicity detector and the equations are not.
+
+**Follow-on:** fold `Shape` back into `QOU/MathlibExt/IdealTriangulation.lean` so there is
+one gluing layer rather than two, with `IdealTetrahedron extends Shape`, and mark
+`BlochWigner_lob_real_eq_zero` as subsumed. Kept additive here to avoid a refactor of a
+module `FiveTwoVolumeConstant` and `FigureEightTriangulation` both depend on.
