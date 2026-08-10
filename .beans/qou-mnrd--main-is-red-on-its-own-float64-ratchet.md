@@ -1408,3 +1408,30 @@ regeneration, not deletion.
 match I read as proof, in a repo where the thing I was grepping for lives in more
 than one list and the history is truncated. A negative grep is evidence about the
 grep. Confirm an orphan by finding the readers, not by failing to find the writer.
+
+## 2026-08-10 — invalid JSON is now ZERO, and oxygen-14 was regenerated not dropped
+
+Strict-JSON sweep of every live witness: **2552 scanned, 0 invalid.** The arc's
+count went 20 → 2 → 0. (One parse error remains under `_deprecated/`,
+`qbeta-gb-filtration-residues.witness.json`, and it is not a nonfinite token —
+Python's own loader rejects it too. Out of scope, recorded here so it is not
+rediscovered as a regression.)
+
+The last two:
+
+  * **`a-K-via-lp-dual-hecke-basis`** — a q₀ anchor, not a solver. Corrected
+    above; the systemic half is `qou-po7i`.
+  * **`habiro-coefficients-oxygen-14`** — regenerated. `tr_M_at_q0_via_u_poly`
+    NaN → 8.17775810558832e-06 and `tr_M_at_q0_rel_err` NaN → **0.0**. The
+    rel_err is the load-bearing one: tr_M at q₀ computed two independent ways,
+    directly and through the reconstructed u-polynomial, now agrees exactly.
+    That is a cross-check passing, not a crash avoided. 216/220 fields identical.
+
+`reconstruction_matches: False` in that witness is **pre-existing and unchanged**
+(n_nonzero 34, all_integral true, both before and after). Not this arc's, and not
+investigated here — but it is a false in a committed witness that two live
+scripts read, so someone should decide whether it is expected for A=14.
+
+Branch rebased onto `origin/main` (35 commits, zero file overlap, clean) and all
+blocking precision gates re-run green on the integrated tree: ratchet 0 NEW /
+0 REGRESSED, drained_files 19, total_fields 540,024.
