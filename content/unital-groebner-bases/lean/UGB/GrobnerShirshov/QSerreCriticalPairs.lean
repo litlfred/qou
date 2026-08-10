@@ -201,4 +201,76 @@ Formalising those 8 chains is the whole of the remaining gap in
 per chain is dominated by the `CoeffEq` obligation in `SingleStepReduction`,
 which is an equality of coefficient functions at every monomial. -/
 
+/-! ## §6  Bridge: `contextMul` of an explicit element is an explicit element
+
+The cost driver in every critical-pair chain is `contextMul` at a *general*
+monomial: its coefficient is stated through `excise`, so `contextMul_coeff_middle`
+(which matches only the literal shape `a ++ w ++ b`) does not fire. These two
+lemmas evaluate it once and for all, turning `a · (explicit element) · b` back
+into an explicit element, after which a chain step is ordinary arithmetic. -/
+
+section Bridge
+
+open AlgElement
+
+/-- Cancelling a common context on both sides. -/
+theorem context_cancel {a b w u : Monomial SU2Gen} :
+    a ++ w ++ b = a ++ u ++ b ↔ w = u := by
+  constructor
+  · intro h; exact List.append_cancel_left (List.append_cancel_right h)
+  · intro h; rw [h]
+
+/-- `a · (c₁·m₁ + c₂·m₂) · b = c₁·(a m₁ b) + c₂·(a m₂ b)`. -/
+theorem contextMul_two_coeffEq (a b m₁ m₂ : Monomial SU2Gen) (c₁ c₂ : k) :
+    CoeffEq (contextMul a (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k) b)
+      (two (a ++ m₁ ++ b) c₁ (a ++ m₂ ++ b) c₂) := by
+  intro m
+  show (if a ++ excise a m b ++ b = m then
+          (two m₁ c₁ m₂ c₂ : AlgElement SU2Gen k).coeff (excise a m b) else 0)
+      = (if m = a ++ m₁ ++ b then c₁ else if m = a ++ m₂ ++ b then c₂ else 0)
+  by_cases hs : a ++ excise a m b ++ b = m
+  · have hm : m = a ++ excise a m b ++ b := hs.symm
+    have e : ∀ u : Monomial SU2Gen, (m = a ++ u ++ b) ↔ (excise a m b = u) := by
+      intro u
+      constructor
+      · intro h; rw [h, excise_middle]
+      · intro h; rw [hm, h]
+    rw [if_pos hs]
+    show (if excise a m b = m₁ then c₁ else if excise a m b = m₂ then c₂ else 0) = _
+    simp only [e]
+  · rw [if_neg hs, if_neg, if_neg]
+    · intro h; exact hs (by rw [h, excise_middle])
+    · intro h; exact hs (by rw [h, excise_middle])
+
+/-- The four-term counterpart. -/
+theorem contextMul_four_coeffEq (a b m₁ m₂ m₃ m₄ : Monomial SU2Gen)
+    (c₁ c₂ c₃ c₄ : k) :
+    CoeffEq (contextMul a (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k) b)
+      (four (a ++ m₁ ++ b) c₁ (a ++ m₂ ++ b) c₂
+            (a ++ m₃ ++ b) c₃ (a ++ m₄ ++ b) c₄) := by
+  intro m
+  show (if a ++ excise a m b ++ b = m then
+          (four m₁ c₁ m₂ c₂ m₃ c₃ m₄ c₄ : AlgElement SU2Gen k).coeff
+            (excise a m b) else 0)
+      = (if m = a ++ m₁ ++ b then c₁ else if m = a ++ m₂ ++ b then c₂ else
+         if m = a ++ m₃ ++ b then c₃ else if m = a ++ m₄ ++ b then c₄ else 0)
+  by_cases hs : a ++ excise a m b ++ b = m
+  · have hm : m = a ++ excise a m b ++ b := hs.symm
+    have e : ∀ u : Monomial SU2Gen, (m = a ++ u ++ b) ↔ (excise a m b = u) := by
+      intro u
+      constructor
+      · intro h; rw [h, excise_middle]
+      · intro h; rw [hm, h]
+    rw [if_pos hs]
+    show (if excise a m b = m₁ then c₁ else if excise a m b = m₂ then c₂ else
+          if excise a m b = m₃ then c₃ else if excise a m b = m₄ then c₄ else 0) = _
+    simp only [e]
+  · rw [if_neg hs, if_neg, if_neg, if_neg, if_neg]
+    · intro h; exact hs (by rw [h, excise_middle])
+    · intro h; exact hs (by rw [h, excise_middle])
+    · intro h; exact hs (by rw [h, excise_middle])
+    · intro h; exact hs (by rw [h, excise_middle])
+
+end Bridge
+
 end UGB.GrobnerShirshov

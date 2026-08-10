@@ -71,3 +71,45 @@ over the ~6 concrete words in play.
 letter of `lm₁` differs from the first of `lm₂`); those close by contradiction
 from the decomposition equations. That enumeration is not yet written — it is
 part of discharging `hcp`.
+
+---
+
+## 2026-08-10 (later) — the cost driver is built; the chains are NOT
+
+**Not done: the 6 chains are still not formalised, and `qSerre_is_gs_basis`
+remains an axiom.** What landed is the piece that was blocking them.
+
+### `contextMul` at a general monomial — the actual blocker
+
+The previous note guessed the expense was the final `isZero`. On attempting it,
+the real obstruction was one level down: `contextMul a f b` defines its
+coefficient through `excise`, so `contextMul_coeff_middle` — which matches only
+the literal shape `a ++ w ++ b` — never fires on a *general* `m`. Every chain
+step needs exactly that.
+
+`contextMul_two_coeffEq` and `contextMul_four_coeffEq` evaluate it once and for
+all:
+
+  `a · (c₁·m₁ + c₂·m₂) · b  =  c₁·(a m₁ b) + c₂·(a m₂ b)`
+
+and the four-term counterpart, with `context_cancel` (`a ++ w ++ b = a ++ u ++ b
+↔ w = u`) underneath. After these, `a · (explicit) · b` is an explicit element
+again and a chain step is ordinary arithmetic on `two`/`four`.
+
+Both are sorry-free and depend on nothing but the standard three.
+
+### Two Lean traps recorded, since they cost the attempt
+
+* `List.append_cancel_left` wants `a ++ (w ++ b)`, but `a ++ w ++ b` parses as
+  `(a ++ w) ++ b`. Cancel **right first**, then left:
+  `List.append_cancel_left (List.append_cancel_right h)`. The other order gives a
+  type mismatch that reads as if the lemma is wrong for the goal.
+* `rw` cannot rewrite a proposition sitting in an `if` condition — the
+  `Decidable` instance depends on it and the motive fails to typecheck. Use
+  `simp only [h]` with `h` an `Iff`; simp handles the instance.
+
+### Remaining, unchanged in substance
+
+The 49-case enumeration (41 pairs admit no length-1 overlap and close by
+contradiction), and the 6 chains — now expressible as arithmetic over `two`/`four`
+rather than fights with `excise`.
