@@ -4,7 +4,7 @@ title: 'division-ring collapse for k[S_n] (residual item 1 of sn_isotypic_specht
 status: in-progress
 type: task
 created_at: 2026-08-10T03:55:00Z
-updated_at: 2026-08-10T12:30:00Z
+updated_at: 2026-08-10T13:20:00Z
 ---
 
 Residual item 1 from PR #4876: prove the Wedderburn division rings of `k[S_n]`
@@ -51,3 +51,26 @@ Still open for item 1, in order:
   idempotent. This is the next concrete step.
 - the tensor comparison `S^mu_k ⊗_k K ≅ S^mu_K`;
 - the linkage `D i ≃ End(S_i)^op`, shared with residual items 2 and 3.
+
+## 2026-08-10 (later) — second rung: invariants cross the base change
+
+`QOU.MathlibExt.IdempotentBaseChange` proves
+`A ⊗[R] range e ≃ₗ[A] range (e.baseChange A)` for idempotent `e`, sorry-free.
+No finiteness, freeness or flatness hypothesis: the argument is purely formal
+(`e` splits as `subtype ∘ₗ proj`; base change is functorial; a split injection
+stays one).
+
+This is the step that carries G-invariants across the base change, since for
+finite G in char 0 the equivariant endomorphisms are the image of the averaging
+idempotent on `End_k V`.
+
+Remaining for the EQUIVARIANT statement, and hence for item 1:
+- identify `range (averaging idempotent) = End_{k[G]}(V)`;
+- show that under `EndBaseChange.endBaseChangeEquiv` the averaging idempotent
+  for V corresponds to the averaging idempotent for K ⊗_k V. This is the
+  fiddly one -- it needs the representation base change to interact correctly
+  with the conjugation action.
+Then the two rungs compose to give the equivariant iso.
+
+Still open beyond that: the tensor comparison `S^mu_k ⊗_k K ≅ S^mu_K`, and the
+linkage `D i ≃ End(S_i)^op` shared with residual items 2 and 3.
