@@ -38,7 +38,27 @@ $$
   \;\approx\; 3.4 \times 10^{-4}.
 $$
 
-Two things are worth separating here. The anchors $(2,1)$ and $(1,2)$ were **not** used to fix the form — that was done at $(2,2)$ — so the agreement at them is a genuine cross-check rather than a restatement of the fit. That is the whole of the evidence for the conjecture. But $\delta \approx 3.4 \times 10^{-4}$ is not zero, and nothing in the present account says what it is. It is recorded here as an open quantity, not absorbed into the word "agreement": a derivation of the closed form would have to either predict $\delta$ or predict a corrected form that removes it.
+That comparison needs a caveat larger than the residual it reports.
+
+$\kappa_{\mathrm{observed}}$ is not a value measured at the single-magic anchors. It is the value measured at **one** of them. The fit that produced it ran at both, in the decomposition
+
+$$
+  \Delta_{\mathrm{coupling}}(Z, N) \;\approx\; [A-2]_q \cdot E_0 \log(1/h)
+  \;+\; (n_{pp} - n_{nn}) \cdot \kappa \cdot h \cdot E_0,
+$$
+
+and the two anchors did not agree:
+
+| anchor | excess | slope |
+|---|---|---|
+| ${}^{3}$He $(2,1)$ | $+1$ | $-1.0707908\;\text{MeV}$ |
+| ${}^{3}$H $(1,2)$ | $-1$ | $+0.2023095\;\text{MeV}$ |
+
+They differ in sign and by a factor of $5.3$. The hypothesis under test was that a single $\kappa$ holds across the anchors, and the producing computation recorded that it does not. The ${}^{3}$He arm is what became $\kappa_{\mathrm{observed}}$; the ${}^{3}$H arm was not carried forward.
+
+Two further points follow. The fit was to $\Delta_{\mathrm{coupling}}$, which is not the atomic binding this block's opening sentence attributes to $\kappa$. And $\delta \approx 3.4 \times 10^{-4}$ is agreement with one arm of an inconsistent pair, so it measures much less than its size suggests: a residual of $3.4 \times 10^{-4}$ against a quantity whose companion measurement differs by $130\%$ carries no evidential weight of that order.
+
+This is the whole of the numerical evidence for the conjecture.
 
 ## Structural motivation
 
@@ -126,4 +146,6 @@ The $A = 3$ anchor is the sharpest case, because it is where $\kappa$ was fixed.
 
 This is a scope-limited negative. It says that the additive, shell-independent term $\kappa \cdot (n_{pp} - n_{nn})$, set against an electrostatic baseline, does not appear in the mirror-split data. It does **not** exclude $\kappa$ as an ingredient of some other decomposition: no invariant forbidding that has been proved, and none is claimed here.
 
-What it does establish is narrower and more useful. The empirical value $\kappa \approx -1.0708\;\text{MeV}$ was recorded as the observed slope at the single-magic anchors, but those anchors leave an order of magnitude too little room for it once electrostatics is accounted for. So that value did not come from this decomposition, and the decomposition it did come from is not in the corpus. The $0.034\%$ agreement between the closed form and that value is therefore agreement with a quantity of unrecorded provenance — which is a weaker statement than it has been carrying.
+What it does establish is narrower and more useful. The empirical value $\kappa \approx -1.0708\;\text{MeV}$ was recorded as the observed slope at the single-magic anchors, but those anchors leave an order of magnitude too little room for it once electrostatics is accounted for. So that value did not come from this decomposition — and indeed it did not: it came from a fit to $\Delta_{\mathrm{coupling}}$, a different observable, as recorded above.
+
+The two negatives are independent, which is what makes them worth having together. The mirror-split test says no term of this form and size appears in the binding data. The provenance says the value being matched was one arm of a measurement its own computation reported as inconsistent. The first could have been repaired by finding the right decomposition; the second cannot, because it concerns the number itself.
