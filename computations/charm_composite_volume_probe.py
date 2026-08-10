@@ -43,6 +43,7 @@ import json
 
 import _path_bridge  # noqa: F401
 from _precision import fmt, set_compute_dps  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 
 import snappy  # noqa: E402
 from mpmath import mpf  # noqa: E402
@@ -64,9 +65,11 @@ def vol_comps(word):
 def main():
     set_compute_dps()
 
-    # proton, Lambda_c, Lambda_b (MeV) — PDG central values, string-constructed
-    # so no float64 intermediate ever exists.
-    mp, mLc, mLb = mpf("938.272"), mpf("2286.46"), mpf("5619.60")
+    # Lambda_c, Lambda_b (MeV) — PDG central values, string-constructed so no
+    # float64 intermediate ever exists.  The proton comes from CODATA rather
+    # than a hand-typed 938.272: string-construction stops the float, but it
+    # does not make a rounded literal accurate.
+    mp, mLc, mLb = M_P_MEV_VALIDATION, mpf("2286.46"), mpf("5619.60")
 
     uniform = {}
     for n in (3, 5, 7, 9):
