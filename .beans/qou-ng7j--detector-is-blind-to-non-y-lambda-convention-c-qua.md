@@ -83,3 +83,50 @@ be called complete on that number.
 below tolerance, or the failure is traced to a named cause; and the detector
 either covers non-`y_λ` convention-C quantities or says in its docstring that it
 does not.
+
+## Chain traced to the end — and the fix is already written
+
+`atomic_tr_m_mpfr_50dps.py` has two paths, and they differ in convention status:
+
+**The symbolic / legacy path is ALREADY convention D.** It calls
+`tr_M_element(elem, n, Z_SYMB, H_SYMB)` from
+`computations/markov/markov_trace_canonical.py`, and
+`hecke/hecke_symbolic.py:56` reads
+
+```python
+z_markov = q**3 / (q**2 + 1)             # convention D
+```
+
+so `Z_SYMB` is not an independent symbol — it is the convention-D expression in
+`q`. (Recorded because it looks alarming at first glance:
+`atomic_tr_m_mpfr_50dps.py:344` substitutes `q60` for **every** free symbol,
+which would set `z := q₀` — the *trivial* branch — if `z` were free. It is not;
+`free_symbols` is `{q}`. No defect there.)
+
+**The primary path is not.** For the deuteron the published `tr_M` comes from
+`_bridge_tr_M`, the Hoefsmit + Wenzl bridge, which is
+`tr_M(W) = Σ_λ y_λ(q) · χ_λ(W)` reading **`y-lambda-mpfr-witness.json`** — the
+**muon/ideal** table. That table is *still convention C*, because
+`regenerate_y_lambda_mpfr.py` defaulted to `--anchor proton` and refreshed only
+the proton cache (fixed in PR #4928, **not yet re-run**).
+
+So the Schur–Weyl failure is fully explained without implicating the shipped
+weights: `rho_k_h3a_lp_dual` forms `Σ_λ y_λ χ^λ` from the migrated table and
+compares it against a `tr_M` built from the un-migrated muon one. Two
+conventions, one identity.
+
+### Consequence for the test's value
+
+Because the primary `tr_M` is *itself* `Σ_λ y_λ χ_λ`, once both sides read the
+same table the check is **near-tautological** on that path and confirms little.
+The check that would actually confirm the weights is the **symbolic/legacy**
+path, which computes the Markov trace directly from the braid word at
+`z_markov` and never touches `y_λ`. That is the independent comparison, and it
+is already convention D — so it is available as soon as the muon table is.
+
+### Next action, concretely
+
+1. Re-run `regenerate_y_lambda_mpfr.py` (now defaults to `--anchor both`).
+2. Re-run `atomic_tr_m_mpfr_50dps.py`.
+3. Re-run `rho_k_h3a_lp_dual.py`; compare `sw_err` against the **symbolic**
+   `tr_M`, not the bridge one, for an independent verdict on the weights.
