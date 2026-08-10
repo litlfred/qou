@@ -201,12 +201,58 @@ Markov-weight relation is machine-checked rather than prose. Writing that proof
 also removed a hypothesis I had assumed was needed — the identity survives
 `[n]_q! = 0`, since Lean's `x/0 = 0` sends both sides to `0`.
 
+## The excess resolves too — on corpus evidence, not on numbers
+
+I expected this one to need an owner ruling. It does not.
+
+**C1 and C2 are not competing definitions of one quantity — they are different
+quantities sharing a glyph** (the registry §2 overloaded-symbol pattern):
+
+- Corpus-wide, the **difference** `(n_pp − n_nn)` occurs **only** in κ's own
+  block. C2's counts occur **only** in the **sum** `(n_pp + n_nn)`, inside
+  `Δ_{T=1}`, under a different normalisation (`1/A`) and a different partition
+  (`(2,2) ⊢ 4`). **No block forms C2's difference.**
+- C1's block states its purpose outright: *"The asymmetric counts `(n_pp, n_nn)`
+  encode the Z ↔ N asymmetry directly"*, and *"The interface asymmetry isolates
+  the ³He anomaly"*. A difference measures an asymmetry; a sum does not.
+- **The layers agree.** C1 is a braid object — the `A−1` interface generators
+  `σ_{3k+2}` of `β(Z,N) ∈ H_{3A}(q)` — the same categorical layer κ's normaliser
+  was just placed in. C2 is a combinatorial pair count with no braid-generator
+  realisation in the canonical pppnnn ordering.
+
+No value was consulted in choosing C1, and none of the numbers below were used
+to make the choice.
+
+## The 224× band collapses to one number
+
+`probe_kappa_excess_convention_resolution.py` → witness, 3/3.
+
+Since `max(0, m−1) − max(0, m−2) = 1` identically, the C1 excess is **±1 at
+every single-magic mirror pair `(m, m−1)` / `(m−1, m)`, at every shell** — it
+does not grow with `Z`. With the index already shell-independent, both factors
+are shell-invariant and
+
+    κ · (n_pp − n_nn)  ≈  ∓1.0704 MeV   at A_magic = 2, 8, 20, 28, 50, 82, 126
+
+**From 224× undetermined to a single falsifiable number**, via two structural
+arguments and no fitting. The first factor does not vary because it counts
+strands inside a nucleon; the second because it counts interfaces adjacent to a
+closed shell.
+
+**Still not verified, and not claimed to be.** Testing this against measured
+masses needs the binding decomposition that isolates the magic-shell term from
+Coulomb and pairing, and that is not in the corpus (established earlier in this
+bean). The prediction is stated, not confirmed.
+
 ## Next
 
-1. **Fix the excess convention** — now the *only* remaining ambiguity, and it
-   still spans 7× at the 8 shell. Ranked first because with the index settled it
-   is the single thing standing between here and a falsifiable shell-8 test.
-2. **Fix the index rule and the excess convention** — both need an owner call or
+1. **Recover or rebuild the binding decomposition** — now the only thing between
+   the prediction and a test. Ranked first because everything upstream of it is
+   settled: the conjecture is no longer underdetermined, only unverified, and
+   this is the single remaining step. Note it must be *rebuilt as a derivation*,
+   not reconstructed to fit — reconstructing it against AME would re-import the
+   fit the demotion removed.
+2. **Historical — superseded by the two resolutions above.** Fix the index rule and the excess convention — both need an owner call or
    a derivation; the anchors provably cannot supply either. This now blocks the
    8-shell test rather than following it, which reverses the order I had.
 2. **Name the excess convention** in the block — a one-line fix that makes the
