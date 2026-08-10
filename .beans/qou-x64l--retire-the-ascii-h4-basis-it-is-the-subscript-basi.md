@@ -4,7 +4,7 @@ title: Retire the ASCII H4 basis — it is the subscript basis relabelled, and t
 status: in-progress
 type: task
 created_at: 2026-08-09T17:21:10Z
-updated_at: 2026-08-10T02:55:00Z
+updated_at: 2026-08-10T05:20:00Z
 ---
 
 
@@ -508,3 +508,47 @@ so it is verified rather than assumed; and Lean re-checks each statement against
     [ ] Cyc is a subalgebra; b_tree_1..23 lifts it to all 24 basis vectors
     [ ] trM4_cyclic without H4.trM_cyclic
     [ ] delete MarkovTraceH4 + MarkovTraceH4Gram0..7 + H4AsciiPresentation
+
+### `H4WordAction` + `H4Cyclicity` — cyclicity landed, without the Gram chain
+
+`trM4_cyclic` is proved. `#print axioms QOU.Machinery.H4.trM4_cyclic` →
+`[propext, Classical.choice, Quot.sound]`; no `sorryAx`, no custom axiom, no
+`sorry`. Both files: `lean`-direct exit 0 on the real import cone, no errors,
+**no warnings**, 4 s and 6 s.
+
+**Correction to this bean's own claim.** The line above — *"wordAction's
+definition IS the nested composite, so `wordAction h 3 u = mulσ₀ h
+(wordAction h 2 u)` and friends are `rfl`"* — is true as mathematics and
+false as a proof tactic. `wordAction h j` is a `Matrix.cons` lookup, so
+forcing the peel by `show mulσᵢ h (wordAction h inner (e₄ g)) = _` makes the
+elaborator do that lookup against an already-applied argument: **50 of the 72
+failed** — `maximum recursion depth`, `whnf` timeout, `isDefEq` timeout — and
+not only at deep indices. Written generically in `u` the identical peel is
+`simp [wordAction]` and costs well under a second.
+
+So the fix is to pay the index lookup **once per word** (24
+`wordAction_step_j`) instead of once per fact (72). That also collapsed the
+cost the previous session projected: 72 facts in **4 s total**, against the
+~16 s each (~19 min) measured with the `show` form. The `module` closer was
+never needed — `simp only` with linearity plus the atomic facts closes all 27
+two-term cases.
+
+**The subalgebra step is where the win is, and it is cheap.** Trace-centrality
+closed under `+`, `•`, `·` — the last from `mulNF₄_assoc` alone —
+`traceCentral_of_basis`, and the basis expansion together typecheck in **4 s**.
+That is what replaces `gram_symm`'s 576 entries (~15 GB, >1 h as one module,
+the reason the ASCII chain is 8 modules).
+
+**Checked before writing Lean.** All 72 identities were verified symbolically
+in sympy against the same parsed tables, so the Lean confirmed a known-true
+statement. The emitter also verifies the fact the induction needs: every tree
+edge is a clean single-term product `σᵢ · b_inner = b_j`, no quadratic fold.
+
+    [x] wordAction h i (e₄ g)                     H4WordAction, 72 facts, 4 s
+    [x] the 72 generator-cyclicity identities     H4Cyclicity
+    [x] Cyc is a subalgebra; lifts to all 24      traceCentral_{mul,of_basis,all}
+    [x] trM4_cyclic without H4.trM_cyclic         axiom-clean
+    [ ] delete MarkovTraceH4 + MarkovTraceH4Gram0..7 + H4AsciiPresentation
+        -- `trM_cyclic` (ASCII) still has consumers; the deletion needs the
+           relabelling permutation above to carry them onto `trM4_cyclic`,
+           and that is a separate step from proving cyclicity.
