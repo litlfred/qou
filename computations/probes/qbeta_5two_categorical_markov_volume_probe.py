@@ -21,7 +21,7 @@ the conjugate-pair 1-dim blocks (3)/(1,1,1); the self-conjugate (2,1) block is
 bar-even. (An extra Markov-weight subtlety was also caught: `τ(σ₁σ₂σ₁) = h·z²+z`,
 `h=q−q⁻¹`, **not** `z³`.)
 
-Object (H₃(q), canonical 5₂ 3-braid `β = σ₁³σ₂⁻¹σ₁σ₂⁻¹`, `[1,1,1,−2,1,−2]`):
+Object (H₃(q), canonical 5₂ 3-braid `β = σ₁³σ₂σ₁⁻¹σ₂`, `[1,1,1,−2,1,−2]`):
   χ_(3)(β)   = q^e            (1-dim, σ↦q)                       e = exponent sum
   χ_(1,1,1)(β) = (−q⁻¹)^e     (1-dim, σ↦−q⁻¹)                    (writhe)
   χ_(2,1)(β) = tr of the 2×2 Hoefsmit seminormal product       (self-conjugate)
@@ -35,7 +35,7 @@ FINDINGS (scope-(a); q-exact; no fit; nothing wired; no tier change):
      chirality (the binding/Vol channel).
 
   2. **AMPHICHIRAL CONTROL PASSES.** The bar-odd (CS) datum, the conjugate-pair
-     combination, is **0 for 4₁** (`e=0`, amphichiral) and **½(q²−q⁻²) ≠ 0 for
+     combination, is **0 for 4₁** (`e=0`, amphichiral) and **½(q⁴−q⁻⁴) ≠ 0 for
      5₂** (`e=2`, chiral) — the genuine bar-odd sinh-object 4₁ structurally
      lacks, matching the reeb-trace writhe result exactly. This is the gate the
      raw-trace route fails.
@@ -69,7 +69,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 
 # canonical 3-braids (generators 1,2 ↦ σ₁,σ₂; negatives = inverses)
-BRAID_5_2 = [1, 1, 1, -2, 1, -2]   # σ₁³σ₂⁻¹σ₁σ₂⁻¹, chiral, writhe 2
+# CORRECTED 2026-08-11 (bean qou-9mum).  This file previously used
+# [1, 1, 1, -2, 1, -2], which is the braid word for 6₂, not 5₂:
+# its Alexander determinant |Δ(-1)| is 11 (6₂), where 5₂ is 7.  Seven
+# sibling probes had already been moved to the correct word (see
+# qbeta_5two_capstone_carrier_falsification_probe.py:206 and
+# docs/coordination/1ppq-qbeta.md); this one and the categorical-Markov
+# probe were missed.  The writhe changes 2 -> 4, so the bar-odd datum
+# changes ½(q²-q⁻²) -> ½(q⁴-q⁻⁴) and its anchor value moves by 2.04x.
+BRAID_5_2 = [1, 1, 1, 2, -1, 2]   # σ₁³σ₂σ₁⁻¹σ₂, chiral, writhe 4
 BRAID_4_1 = [1, -2, 1, -2]         # (σ₁σ₂⁻¹)², amphichiral, writhe 0 — control
 
 _q = sp.symbols("q", positive=True)
@@ -175,7 +183,7 @@ def main() -> int:
     chiral_nonzero = (sp.simplify(odd["5_2"]) != 0)
     print(f"    → 4₁ (amphichiral) control: bar-odd == 0  [{control_pass}]")
     print(f"    → 5₂ (chiral):              bar-odd != 0  [{chiral_nonzero}]  "
-          f"= ½(q²−q⁻²) (reeb-trace match)")
+          f"= ½(q⁴−q⁻⁴) (reeb-trace match)")
 
     # ---- FINDING 3: anchor SHAPE of the 5₂ bar-odd datum ----
     odd_fn = sp.lambdify(_q, odd["5_2"], "mpmath")
@@ -240,7 +248,7 @@ def main() -> int:
         "object is tr_M=Σ_λ W_λ χ_λ with the bar-odd in the (3)/(1,1,1) conjugate pair "
         "and the self-conjugate (2,1) block bar-even. Also caught: τ(σ₁σ₂σ₁)=h·z²+z, not "
         "z³. FINDINGS (q-exact): (1) χ_(2,1) bar-even for 4₁ and 5₂ (Vol channel). (2) "
-        "AMPHICHIRAL CONTROL PASSES: bar-odd (CS) datum = 0 for 4₁ (e=0), ½(q²−q⁻²)≠0 for "
+        "AMPHICHIRAL CONTROL PASSES: bar-odd (CS) datum = 0 for 4₁ (e=0), ½(q⁴−q⁻⁴)≠0 for "
         "5₂ (e=2) — matches the reeb-trace writhe result; the gate the raw route fails. "
         "(3) the 5₂ bar-odd is anchor-smooth (d ln|odd|/dq O(10⁰)) — odd ingredient, not "
         "the 3.84e6 swing value (proved measurement-limited); a fifth anchor-smoothness "
@@ -258,7 +266,7 @@ def main() -> int:
         "bar_odd_5_2": str(sp.simplify(odd["5_2"])),
         "control_pass_4_1_zero": bool(control_pass),
         "chiral_5_2_nonzero": bool(chiral_nonzero),
-        "verdict": "4₁ amphichiral bar-odd=0 (control), 5₂ chiral bar-odd=½(q²−q⁻²) "
+        "verdict": "4₁ amphichiral bar-odd=0 (control), 5₂ chiral bar-odd=½(q⁴−q⁻⁴) "
                    "(reeb-trace match); raw-trace route FAILS this control (framing-contaminated)"})
     wb.add_data("finding3_anchor_shape", {
         "odd_proton": mp.nstr(op, 12), "odd_muon": mp.nstr(om, 12),
