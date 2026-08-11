@@ -1,10 +1,11 @@
 ---
 # qou-im9l
 title: 'SW-4-gen: general-λ Hoefsmit seminormal rep + braid (Yang-Baxter/axial-distance) — the residual sorry in HoefsmitRep.lean'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T20:13:08Z
-updated_at: 2026-08-02T20:13:08Z
+updated_at: 2026-08-11T01:03:45Z
 parent: qou-59vq
 blocked_by:
     - qou-rsbf
