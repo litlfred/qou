@@ -345,4 +345,113 @@ theorem whiteheadFunctional2_saddle :
   rw [clausen_pi, h32]
   ring
 
+/-! ## W6b — the per-term grid ceiling -/
+
+/-- The empty window: `S_{0,k} = 1`. -/
+theorem whiteheadTerm_zero_left (N k : ℕ) : whiteheadTerm N 0 k = 1 := by
+  unfold whiteheadTerm whiteheadNum whiteheadDen
+  rw [Finset.Icc_eq_empty (by omega : ¬k + 1 ≤ k + 0),
+    Finset.Icc_eq_empty (by omega : ¬(1:ℕ) ≤ 0)]
+  simp
+
+set_option maxHeartbeats 1000000 in
+/-- **W6b — the per-term ceiling (sorry-free).**  Every majorant grid term
+    obeys `(2π/N)·log S_{n,k} ≤ 4·clausen(π/2) + 10·masterErr N`: interior
+    terms by the generic W4b deviation landing exactly on
+    `whiteheadFunctional2` (no grid-shift slack), the `n = 0` row by
+    `S_{0,k} = 1`, the `k = 0` column by the bare `s_n` deviation plus
+    antisymmetry. -/
+theorem whiteheadLink_term_ceiling {N n k : ℕ} (hN : 4 ≤ N)
+    (hnk : n + k ≤ N - 1) :
+    (2 * π / N) * Real.log (whiteheadTerm N n k)
+      ≤ 4 * clausen (π / 2) + 10 * masterErr N := by
+  have hpi := Real.pi_pos
+  have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+  have hh : (0:ℝ) < π / N := by positivity
+  have hfield : (N:ℝ) * (π / N) = π := by field_simp
+  have hsp : 0 ≤ clausen (π / 2) :=
+    QOU.Knot.WhiteheadSaddle.clausen_nonneg (by positivity) (by linarith)
+  have hme := masterErr_nonneg N
+  rcases Nat.eq_zero_or_pos n with hn0 | hn1
+  · -- n = 0 row: the term is 1, its log is 0
+    subst hn0
+    rw [whiteheadTerm_zero_left, Real.log_one, mul_zero]
+    linarith
+  rcases Nat.eq_zero_or_pos k with hk0 | hk1
+  · -- k = 0 column: log S_{n,0} = s_n
+    subst hk0
+    have hdev := abs_deviation_le_masterErr (N := N) (k := n) hN
+      (by omega) (by omega)
+    rw [abs_le] at hdev
+    have hlogT := log_whiteheadTerm (N := N) (M := n) (k := 0) (by omega)
+    have hS0 : ∑ j ∈ Finset.Icc (1:ℕ) 0,
+        Real.log (2 * Real.sin ((j : ℝ) * (π / N))) = 0 := by
+      rw [Finset.Icc_eq_empty (by omega : ¬(1:ℕ) ≤ 0)]
+      exact Finset.sum_empty
+    have hlogT' : Real.log (whiteheadTerm N n 0)
+        = ∑ j ∈ Finset.Icc 1 n,
+            Real.log (2 * Real.sin ((j : ℝ) * (π / N))) := by
+      rw [hlogT, hS0]
+      simp only [Nat.zero_add]
+      ring
+    -- −clausen(θ_n) = clausen(2π−θ_n) ≤ 2·clausen(π/2)
+    have hθn1 : (0:ℝ) ≤ 2 * ((n : ℝ) * (π / N)) := by positivity
+    have hθn2 : 2 * ((n : ℝ) * (π / N)) ≤ 2 * π := by
+      have hn' : (n:ℝ) ≤ (N:ℝ) := by exact_mod_cast (by omega : n ≤ N)
+      nlinarith [mul_le_mul_of_nonneg_right hn' hh.le]
+    have hanti := clausen_two_pi_sub_eq (x := 2 * ((n : ℝ) * (π / N)))
+      hθn1 hθn2
+    have hbound := clausen_le_double_saddle
+      (y := 2 * π - 2 * ((n : ℝ) * (π / N))) (by linarith) (by linarith)
+    rw [hanti] at hbound
+    have hkey : (π / N) * Real.log (whiteheadTerm N n 0)
+        ≤ -clausen (2 * ((n:ℝ) * (π / N))) / 2 + masterErr N := by
+      rw [hlogT']
+      linarith [hdev.2]
+    have h2key := mul_le_mul_of_nonneg_left hkey (by norm_num : (0:ℝ) ≤ 2)
+    calc (2 * π / N) * Real.log (whiteheadTerm N n 0)
+        = 2 * ((π / N) * Real.log (whiteheadTerm N n 0)) := by ring
+      _ ≤ 2 * (-clausen (2 * ((n:ℝ) * (π / N))) / 2 + masterErr N) := h2key
+      _ = -clausen (2 * ((n:ℝ) * (π / N))) + 2 * masterErr N := by ring
+      _ ≤ 2 * clausen (π / 2) + 2 * masterErr N := by linarith [hbound]
+      _ ≤ 4 * clausen (π / 2) + 10 * masterErr N := by linarith
+  · -- interior: W4b deviation lands exactly on the 2D functional
+    have hdev := abs_log_whiteheadTerm_deviation (N := N) (M := n) (k := k)
+      hN hn1 hk1 (by omega)
+    rw [abs_le] at hdev
+    have hG := whiteheadFunctional2_le
+      (u := 2 * ((n:ℝ) * (π / N))) (v := 2 * ((k:ℝ) * (π / N)))
+      (by positivity) (by positivity)
+      (by
+        have hnk' : (n:ℝ) + (k:ℝ) ≤ (N:ℝ) - 1 := by
+          have h : ((n + k : ℕ) : ℝ) ≤ ((N - 1 : ℕ) : ℝ) := by
+            exact_mod_cast hnk
+          rw [Nat.cast_sub (by omega), Nat.cast_one] at h
+          push_cast at h
+          linarith
+        nlinarith [mul_le_mul_of_nonneg_right hnk' hh.le, hfield, hh])
+    have hpsi : 2 * (2 * ((-clausen (2 * (((k:ℝ) + (n:ℝ)) * (π / N))) / 2)
+            - (-clausen (2 * ((k:ℝ) * (π / N))) / 2))
+         - (-clausen (2 * ((n:ℝ) * (π / N))) / 2))
+        = whiteheadFunctional2 (2 * ((n:ℝ) * (π / N)))
+            (2 * ((k:ℝ) * (π / N))) := by
+      unfold whiteheadFunctional2
+      rw [show 2 * ((n:ℝ) * (π / N)) + 2 * ((k:ℝ) * (π / N))
+          = 2 * (((k:ℝ) + (n:ℝ)) * (π / N)) by ring]
+      ring
+    have h2 := mul_le_mul_of_nonneg_left hdev.2 (by norm_num : (0:ℝ) ≤ 2)
+    calc (2 * π / N) * Real.log (whiteheadTerm N n k)
+        = 2 * ((π / N) * Real.log (whiteheadTerm N n k)) := by ring
+      _ ≤ 2 * ((2 * ((-clausen (2 * (((k:ℝ) + (n:ℝ)) * (π / N))) / 2)
+              - (-clausen (2 * ((k:ℝ) * (π / N))) / 2))
+           - (-clausen (2 * ((n:ℝ) * (π / N))) / 2)) + 5 * masterErr N) := by
+            linarith [h2]
+      _ = 2 * (2 * ((-clausen (2 * (((k:ℝ) + (n:ℝ)) * (π / N))) / 2)
+              - (-clausen (2 * ((k:ℝ) * (π / N))) / 2))
+           - (-clausen (2 * ((n:ℝ) * (π / N))) / 2)) + 10 * masterErr N := by
+            ring
+      _ = whiteheadFunctional2 (2 * ((n:ℝ) * (π / N)))
+            (2 * ((k:ℝ) * (π / N))) + 10 * masterErr N := by rw [hpsi]
+      _ ≤ 4 * clausen (π / 2) + 10 * masterErr N := by linarith [hG]
+
 end QOU.Knot.FigureEightVolume
