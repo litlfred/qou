@@ -23,3 +23,9 @@ TRACTABLE ENTRY POINT (handed over by qou-rt0a): the surviving cross-knot readin
  3. Only a genuine categorical formula F(Hecke/Bring data) → DT spectrum counts as a derivation (anti-laundering). Importing GGM's count is not it.
 
 Reference: docs/audits/2026-08-11-aomega-internal-derivation-attack-options.md §3 (Route C) + §5 (Route A verdict).
+
+## 2026-08-11 update — scalar avenue PROVABLY exhausted; Route C is now REQUIRED
+
+Route A's R1 (#connections = A-poly L-degree) is the best scalar candidate — it hits the dtMax vector (4_1,5_2)↦(3,4) exactly, and it is a NEW scalar not in the Driver14CharacterVarietyDTMenu menu. BUT Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum (sorry-free) proves the 5_2 DT datum is a 2-element SET {3,4} (chirality split), so NO scalar — R1 included — can equal it. The scalar family is proved insufficient.
+
+So Route C is not optional: the internal A_ω count must be a chirality-refined, set-valued Behrend-weighted DT moduli / BPS Hilbert space (the "driver-14" object). The tractable-scalar-shadow entry point is closed (proved). Forward work = the genuine categorification (CoHA / BPS cohomology producing a chirality-graded count) — research programme, out of session scope. R1 stays recorded as the sharpest scalar shadow.
