@@ -45,6 +45,31 @@ standard statement anyway — vdV's own route (cell defects + Stirling for
 the singular part) avoids it, which is why the sub-bricks follow his
 proof rather than a textbook summation formula.
 
+## UPDATE (same day, after `qou-q8lc` was opened): Euler–Maclaurin is not needed at all
+
+Building the third sub-brick surfaced a sharper decomposition than this
+note anticipated, and it removes the summation-formula question entirely.
+Split the cell integrand at the singularity:
+
+    log(2 sin x_j) − log(2 sin u) = (log x_j − log u) + (φ(x_j) − φ(u)),
+    φ(x) := log(2 sin x / x),   φ smooth at 0 (removable, φ(0⁺) = log 2).
+
+* The **singular half telescopes EXACTLY** — no asymptotics, no
+  hypothesis on `n`, every `h > 0`:
+  `Σ_{j≤n} ( ∫_{(j−1)h}^{jh} log u du − h·log(jh) ) = h·(n·log n − n − log(n!))`
+  (`log_cell_telescope`, `LogSineSingularPart.lean`, sorry-free). Mathlib's
+  `integral_log` is **hypothesis-free** in the current version, so the first
+  cell `[0, h]` passes through the singularity for free.
+* Stirling (L4-1b) turns that right-hand side into
+  `h·(½·log n + ½·log 2π + o(1))` — which is exactly why L4-1b was the right
+  second brick.
+* What remains is a **`C¹` Riemann-sum defect for the smooth `φ`** — a
+  mean-value bound on `φ'`, not a summation formula.
+
+So the owner's standing offer to build Euler–Maclaurin infrastructure is
+**not needed for this front**; recorded here so a later agent does not
+build it on this file's account. (It may of course be wanted elsewhere.)
+
 ## Order of attack
 
 `qou-me9q` (exact, self-contained) → `qou-itg0` (Stirling glue) →
