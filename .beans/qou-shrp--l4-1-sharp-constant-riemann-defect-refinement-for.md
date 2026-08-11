@@ -1,11 +1,11 @@
 ---
 # qou-shrp
 title: 'L4-1 sharp constant: Riemann-defect refinement for phi (the 1/2 the antitone squeeze cannot pin)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-11T12:00:00Z
-updated_at: 2026-08-11T12:00:00Z
+updated_at: 2026-08-11T12:30:00Z
 ---
 
 Reopens the sharp half of L4-1 after the correction recorded in
@@ -33,3 +33,20 @@ Candidate simplification: phi extends to an even analytic function of x on
 phi' is odd and phi'(0) = 0. If Mathlib carries analyticity of `sinc` or of
 `sin x / x`, the first-cell difficulty may again evaporate — check before
 hand-rolling a cot bound.
+
+REFRAMED (LogSineRiemannForm.lean, sorry-free): the smooth half is EXACTLY a
+right-endpoint Riemann-sum defect,
+  sum_i int_cell (phi(x_{i+1}) - phi(u)) du = h sum_i phi(x_{i+1}) - int_0^{nh} phi,
+so the missing 1/2 is precisely the FIRST EULER-MACLAURIN CORRECTION
+(h/2)(phi(nh) - phi(0)). Mathlib has no E-M formula => genuine infra gap,
+owner-authorised to add ("add mathlib infra if needed", 2026-08-11).
+
+INFRA TO ADD (in order):
+ 1. Real.sinc differentiability — Mathlib has continuous_sinc + sinc_zero but
+    NO deriv/analyticity. Needed so phi = log 2 + log(sinc) is C^1 at 0
+    (phi' odd, phi'(0)=0). Route: HasDerivAt sinc 0 0 via |sin x - x| <= x^3/6
+    (Real.sin_bound), and the quotient rule off 0.
+ 2. First E-M correction for C^1 f on a uniform grid:
+    h*sum_{j=1}^n f(jh) - int_0^{nh} f = (h/2)(f(nh) - f(0)) + O(h^2 * modulus).
+ 3. Apply to phi; combine with the exact singular telescope + Stirling to get
+    L4-1's sharp statement.
