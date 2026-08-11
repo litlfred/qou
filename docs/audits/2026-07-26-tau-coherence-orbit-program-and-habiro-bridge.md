@@ -764,3 +764,42 @@ obstruction on [ζ₂₄] and the open (−1)^{c₁} parity live.
 |---|---|---|---|---|
 | 2 | (1, 0) | integral — no choice | +1 | **+1, well-defined** (x₁-flip invariant) |
 | 3 | (0, 1) | fractional in (1−z₂) = α | 1 | pinning-dependent; only ν invariant at this layer |
+
+## Addendum 19 (2026-08-11) — the c_k payoff run: named corpus candidates through the gate stack, twisted p = 5 leg executed (PR #4968)
+
+`ck_membership_payoff_run_probe.py`, **7/7**, exact sympy/cyclotomic
+arithmetic. This executes the "twisted test" queued on `qou-9p9y` by
+the classical gate run (`habiro_tail_membership_gate_probe.py`) and
+the U2 payoff promised on `qou-1hlh`.
+
+**Candidates (the corpus's actual named fibre-level objects):**
+J_Hopf(q) = −(q+1/q) (the c₃ fibre candidate); [2]_q (the α_EM
+element's q-factor); D(4) (binding Habiro tail control). Exact anchor:
+the corpus's two c₃ q-forms, −2 − ℏ_q²q and J_Hopf(q), are **the same
+Laurent element** (verified exactly).
+
+**Gates:** G1 integer-Laurent (global); G2 bar-even symmetrization
+3-integral (GSWZ pattern); G3 the p = 2 Frobenius edge
+F(ζ₈)² ≡ F(ζ₄) mod 2 in Z[ζ₈]; **G4 the twisted p = 5 leg
+F(ζ₅)⁵ ≡ F(1) mod 5 in Z[ζ₅]** — the Frobenius-endomorphism
+congruence at the prime where the whole 5₂/GSWZ program lives.
+
+**Result table (all signatures predicted in advance and asserted):**
+
+| candidate | G1 | G2 | G3 (p=2) | G4 (p=5) |
+|---|---|---|---|---|
+| J_Hopf (c₃) | ✓ | ✓ | ✓ | ✓ |
+| [2]_q (α_EM) | ✓ | ✓ | ✓ | ✓ |
+| D(4) (binding tail) | ✓ | ✓ | ✓ | ✓ |
+| swing-fit (×(1+149/5000)) | ✗ | ✓ | ✗ | ✗ |
+| denom-7 | ✗ | ✓ | ✓ | ✓ |
+
+The two controls fail **per-prime, exactly where their denominators
+live**: the 2.98%-swing-sized fitted shape (denominator 2³·5⁴) breaks
+the global, p = 2 and p = 5 gates while passing the 3-gate; the
+denominator-7 shape breaks only the global gate — every local gate at
+p ∉ {7} passes. This is "coefficient integrality away from Δ" made
+operational: a fitted c₃-shape is refuted by arithmetic alone, no
+anchor inversion anywhere. VALUE-level c₃ verdicts (near-match,
+2.98% swing — SETTLED 2026-05-31) are untouched; this is
+element-level arithmetic.
