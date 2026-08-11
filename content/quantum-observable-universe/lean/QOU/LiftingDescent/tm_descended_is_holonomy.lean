@@ -77,27 +77,27 @@ opaque descendedMIdisc : ℕ → ℝ
     Yekutieli's multiplicative surface integral is multiplicative over
     `Σ = Σ₀ ∪ ⋃ D_i`; not in Mathlib. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-axiom descended_MI_factorises :
+theorem descended_MI_factorises :
     descendedMI
       = descendedMIcore
-          * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i
-
+          * ∏ i ∈ Finset.range descendedBlowupCount, descendedMIdisc i :=
+  sorry
 
 /-- **Open input 2 — the descended term is trivial on exceptional
     discs.**  `τ̂ₙ(α)` is base-level (descended), so it carries no
     contribution over the blow-up discs `D_i`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.md
-axiom descended_exceptional_disc_trivial :
-    ∀ i : ℕ, descendedMIdisc i = 1
-
+theorem descended_exceptional_disc_trivial :
+    ∀ i : ℕ, descendedMIdisc i = 1 :=
+  sorry
 
 /-- **Open input 3 — non-abelian Stokes on the spanning disc.**
     The multiplicative integral of the descended term over `Σ₀` is the
     boundary holonomy of the unknot core `ϱ₀`. -/
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-axiom descended_core_stokes :
-    descendedMIcore = unknotHolonomy
-
+theorem descended_core_stokes :
+    descendedMIcore = unknotHolonomy :=
+  sorry
 
 /-- **Descended term = unknot-core holonomy**
     ([`lem:topological-mass-holonomy`]).
