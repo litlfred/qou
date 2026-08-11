@@ -454,4 +454,322 @@ theorem whiteheadLink_term_ceiling {N n k : ℕ} (hN : 4 ≤ N)
             (2 * ((k:ℝ) * (π / N))) + 10 * masterErr N := by rw [hpsi]
       _ ≤ 4 * clausen (π / 2) + 10 * masterErr N := by linarith [hG]
 
+/-! ## W6c — the squeeze -/
+
+set_option maxHeartbeats 1000000 in
+/-- **W6c — the majorant volume rate (sorry-free).**  The phase-free
+    Whitehead-link majorant obeys the volume growth law:
+    `(2π/N)·log(whiteheadLinkMajorant N) → 4·clausen(π/2) = 4G`.  Upper
+    envelope: at most `2N³` terms, each below the W6b ceiling; lower
+    envelope: the single grid term at `(⌊N/2⌋, ⌊N/4⌋)`, whose deviation
+    target converges to the saddle value by continuity of `clausen`. -/
+theorem tendsto_two_pi_log_whiteheadLinkMajorant :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) * Real.log (whiteheadLinkMajorant N))
+      Filter.atTop (nhds (4 * clausen (π / 2))) := by
+  have hpi := Real.pi_pos
+  -- (2π/N)·log N → 0 and (2π·log 2)/N → 0
+  have hlogN : Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log N)
+      Filter.atTop (nhds 0) := by
+    have h1 : Filter.Tendsto (fun x : ℝ => Real.log x / x)
+        Filter.atTop (nhds 0) :=
+      Real.isLittleO_log_id_atTop.tendsto_div_nhds_zero
+    have h2 := Filter.Tendsto.const_mul (2 * π)
+      (h1.comp tendsto_natCast_atTop_atTop)
+    rw [mul_zero] at h2
+    refine h2.congr (fun N => ?_)
+    simp only [Function.comp_apply]
+    ring
+  have hlog2 : Filter.Tendsto (fun N : ℕ => (2 * π / N) * Real.log 2)
+      Filter.atTop (nhds 0) := by
+    have h := tendsto_const_div_atTop_nhds_zero_nat (2 * π * Real.log 2)
+    refine h.congr (fun N => ?_)
+    ring
+  -- the moving grid angles
+  have hA : Filter.Tendsto
+      (fun N : ℕ => 2 * ((↑(N / 2) : ℝ) * (π / N)))
+      Filter.atTop (nhds π) := by
+    have h0 := tendsto_const_div_atTop_nhds_zero_nat π
+    have hlow := Filter.Tendsto.const_sub π h0
+    rw [sub_zero] at hlow
+    refine tendsto_of_tendsto_of_tendsto_of_le_of_le' hlow tendsto_const_nhds
+      ?_ ?_
+    · filter_upwards [Filter.eventually_ge_atTop 1] with N hN1
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN1
+      have hh : (0:ℝ) < π / N := by positivity
+      have h6 : N ≤ 2 * (N / 2) + 1 := by omega
+      have h6' : (N:ℝ) ≤ 2 * ((↑(N / 2) : ℝ)) + 1 := by exact_mod_cast h6
+      have hfield : (N:ℝ) * (π / N) = π := by field_simp
+      nlinarith [mul_le_mul_of_nonneg_right h6' (le_of_lt hh), hfield, hh]
+    · filter_upwards [Filter.eventually_ge_atTop 1] with N hN1
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN1
+      have hh : (0:ℝ) < π / N := by positivity
+      have h6 : 2 * (N / 2) ≤ N := by omega
+      have h6' : (2:ℝ) * ((↑(N / 2) : ℝ)) ≤ (N:ℝ) := by exact_mod_cast h6
+      have hfield : (N:ℝ) * (π / N) = π := by field_simp
+      nlinarith [mul_le_mul_of_nonneg_right h6' (le_of_lt hh), hfield]
+  have hB : Filter.Tendsto
+      (fun N : ℕ => 2 * ((↑(N / 4) : ℝ) * (π / N)))
+      Filter.atTop (nhds (π / 2)) := by
+    have h0 := tendsto_const_div_atTop_nhds_zero_nat (3 * π / 2)
+    have hlow := Filter.Tendsto.const_sub (π / 2) h0
+    rw [sub_zero] at hlow
+    refine tendsto_of_tendsto_of_tendsto_of_le_of_le' hlow tendsto_const_nhds
+      ?_ ?_
+    · filter_upwards [Filter.eventually_ge_atTop 1] with N hN1
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN1
+      have hh : (0:ℝ) < π / N := by positivity
+      have h6 : N ≤ 4 * (N / 4) + 3 := by omega
+      have h6' : (N:ℝ) ≤ 4 * ((↑(N / 4) : ℝ)) + 3 := by exact_mod_cast h6
+      have hfield : (N:ℝ) * (π / N) = π := by field_simp
+      have hdivN : (3:ℝ) * π / 2 / (N:ℝ) = 3 / 2 * (π / N) := by ring
+      rw [hdivN]
+      nlinarith [mul_le_mul_of_nonneg_right h6' (le_of_lt hh), hfield]
+    · filter_upwards [Filter.eventually_ge_atTop 1] with N hN1
+      have hNpos : (0:ℝ) < N := by exact_mod_cast hN1
+      have hh : (0:ℝ) < π / N := by positivity
+      have h6 : 4 * (N / 4) ≤ N := by omega
+      have h6' : (4:ℝ) * ((↑(N / 4) : ℝ)) ≤ (N:ℝ) := by exact_mod_cast h6
+      have hfield : (N:ℝ) * (π / N) = π := by field_simp
+      nlinarith [mul_le_mul_of_nonneg_right h6' (le_of_lt hh), hfield]
+  have hC : Filter.Tendsto
+      (fun N : ℕ => 2 * (((↑(N / 4) : ℝ) + (↑(N / 2) : ℝ)) * (π / N)))
+      Filter.atTop (nhds (3 * π / 2)) := by
+    have hsum := hB.add hA
+    have hval : π / 2 + π = 3 * π / 2 := by ring
+    rw [hval] at hsum
+    refine hsum.congr (fun N => ?_)
+    ring
+  -- clausen along the moving angles
+  have h32 : clausen (3 * π / 2) = -clausen (π / 2) := by
+    have h := clausen_two_pi_sub_eq (x := π / 2) (by positivity) (by linarith)
+    rw [show 2 * π - π / 2 = 3 * π / 2 by ring] at h
+    linarith [h]
+  have hcA : Filter.Tendsto
+      (fun N : ℕ => clausen (2 * ((↑(N / 2) : ℝ) * (π / N))))
+      Filter.atTop (nhds 0) := by
+    have h := (continuous_clausen.tendsto π).comp hA
+    rw [clausen_pi] at h
+    exact h
+  have hcB : Filter.Tendsto
+      (fun N : ℕ => clausen (2 * ((↑(N / 4) : ℝ) * (π / N))))
+      Filter.atTop (nhds (clausen (π / 2))) :=
+    (continuous_clausen.tendsto (π / 2)).comp hB
+  have hcC : Filter.Tendsto
+      (fun N : ℕ => clausen (2 * (((↑(N / 4) : ℝ) + (↑(N / 2) : ℝ)) * (π / N))))
+      Filter.atTop (nhds (-clausen (π / 2))) := by
+    have h := (continuous_clausen.tendsto (3 * π / 2)).comp hC
+    rw [h32] at h
+    exact h
+  -- lower envelope limit: 2Ψ(⌊N/2⌋,⌊N/4⌋) − 10E → 4·clausen(π/2)
+  have hglim : Filter.Tendsto
+      (fun N : ℕ => 2 * (2 * ((-clausen (2 * (((↑(N / 4) : ℝ)
+              + (↑(N / 2) : ℝ)) * (π / N))) / 2)
+            - (-clausen (2 * ((↑(N / 4) : ℝ) * (π / N))) / 2))
+          - (-clausen (2 * ((↑(N / 2) : ℝ) * (π / N))) / 2))
+        - 10 * masterErr N)
+      Filter.atTop (nhds (4 * clausen (π / 2))) := by
+    have h1 := (hcC.neg).div_const 2
+    have h2 := (hcB.neg).div_const 2
+    have h3 := (hcA.neg).div_const 2
+    have h4 := Filter.Tendsto.const_mul (2:ℝ)
+      ((Filter.Tendsto.const_mul (2:ℝ) (h1.sub h2)).sub h3)
+    have h5 := Filter.Tendsto.const_mul (10:ℝ) tendsto_masterErr
+    have h6 := h4.sub h5
+    have hval : (2:ℝ) * (2 * (-(-clausen (π / 2)) / 2
+        - -clausen (π / 2) / 2) - -(0:ℝ) / 2) - 10 * 0
+        = 4 * clausen (π / 2) := by ring
+    rw [hval] at h6
+    exact h6
+  -- upper envelope limit
+  have hhlim : Filter.Tendsto
+      (fun N : ℕ => ((2 * π / N) * Real.log 2
+          + 3 * ((2 * π / N) * Real.log N))
+        + (4 * clausen (π / 2) + 10 * masterErr N))
+      Filter.atTop (nhds (4 * clausen (π / 2))) := by
+    have hconst : Filter.Tendsto
+        (fun _ : ℕ => 4 * clausen (π / 2)) Filter.atTop
+        (nhds (4 * clausen (π / 2))) := tendsto_const_nhds
+    have h1 := (hlog2.add (Filter.Tendsto.const_mul (3:ℝ) hlogN)).add
+      (hconst.add (Filter.Tendsto.const_mul (10:ℝ) tendsto_masterErr))
+    have hval : ((0:ℝ) + 3 * 0) + (4 * clausen (π / 2) + 10 * 0)
+        = 4 * clausen (π / 2) := by ring
+    rw [hval] at h1
+    exact h1
+  refine tendsto_of_tendsto_of_tendsto_of_le_of_le' hglim hhlim ?_ ?_
+  · -- lower envelope: the single saddle grid term
+    filter_upwards [Filter.eventually_ge_atTop 4] with N hN4
+    set n₀ := N / 2 with hn₀def
+    set k₀ := N / 4 with hk₀def
+    have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have h2πN : (0:ℝ) ≤ 2 * π / N := by positivity
+    have hTpos : 0 < whiteheadTerm N n₀ k₀ := whiteheadTerm_pos (by omega)
+    -- term ≤ inner sum ≤ (2n₀+1)·inner ≤ majorant
+    have hinner_le : whiteheadTerm N n₀ k₀
+        ≤ ∑ k ∈ Finset.range (N - n₀), whiteheadTerm N n₀ k := by
+      apply Finset.single_le_sum
+        (f := fun k => whiteheadTerm N n₀ k)
+      · intro i hi
+        have hi' := Finset.mem_range.mp hi
+        exact (whiteheadTerm_pos (by omega)).le
+      · exact Finset.mem_range.mpr (by omega)
+    have hinner_nonneg : 0 ≤ ∑ k ∈ Finset.range (N - n₀),
+        whiteheadTerm N n₀ k := le_trans hTpos.le hinner_le
+    have hrow_le : (∑ k ∈ Finset.range (N - n₀), whiteheadTerm N n₀ k)
+        ≤ ((2 * n₀ + 1 : ℕ) : ℝ)
+          * (∑ k ∈ Finset.range (N - n₀), whiteheadTerm N n₀ k) := by
+      have h1 : (1:ℝ) ≤ ((2 * n₀ + 1 : ℕ) : ℝ) := by
+        exact_mod_cast (by omega : 1 ≤ 2 * n₀ + 1)
+      nlinarith [hinner_nonneg]
+    have hmaj_ge : ((2 * n₀ + 1 : ℕ) : ℝ)
+          * (∑ k ∈ Finset.range (N - n₀), whiteheadTerm N n₀ k)
+        ≤ whiteheadLinkMajorant N := by
+      unfold whiteheadLinkMajorant
+      apply Finset.single_le_sum
+        (f := fun n => ((2 * n + 1 : ℕ) : ℝ)
+          * (∑ k ∈ Finset.range (N - n), whiteheadTerm N n k))
+      · intro i hi
+        have hi' := Finset.mem_range.mp hi
+        have hnn : 0 ≤ ∑ k ∈ Finset.range (N - i), whiteheadTerm N i k := by
+          apply Finset.sum_nonneg
+          intro k hk
+          have hk' := Finset.mem_range.mp hk
+          exact (whiteheadTerm_pos (by omega)).le
+        positivity
+      · exact Finset.mem_range.mpr (by omega)
+    have hle : whiteheadTerm N n₀ k₀ ≤ whiteheadLinkMajorant N :=
+      le_trans hinner_le (le_trans hrow_le hmaj_ge)
+    have hlog := Real.log_le_log hTpos hle
+    have hmul := mul_le_mul_of_nonneg_left hlog h2πN
+    have hdev := abs_log_whiteheadTerm_deviation (N := N) (M := n₀) (k := k₀)
+      (by omega) (by omega) (by omega) (by omega)
+    rw [abs_le] at hdev
+    calc 2 * (2 * ((-clausen (2 * (((↑k₀ : ℝ) + (↑n₀ : ℝ)) * (π / N))) / 2)
+            - (-clausen (2 * ((↑k₀ : ℝ) * (π / N))) / 2))
+          - (-clausen (2 * ((↑n₀ : ℝ) * (π / N))) / 2))
+        - 10 * masterErr N
+        ≤ 2 * ((π / N) * Real.log (whiteheadTerm N n₀ k₀)) := by
+          linarith [hdev.1]
+      _ = (2 * π / N) * Real.log (whiteheadTerm N n₀ k₀) := by ring
+      _ ≤ (2 * π / N) * Real.log (whiteheadLinkMajorant N) := hmul
+  · -- upper envelope: 2N³ terms, each below the W6b ceiling
+    filter_upwards [Filter.eventually_ge_atTop 4] with N hN4
+    have hNpos : (0:ℝ) < N := by exact_mod_cast (by omega : 0 < N)
+    have h2πN : (0:ℝ) ≤ 2 * π / N := by positivity
+    set S := ((Finset.range N) ×ˢ (Finset.range N)).filter
+      (fun p : ℕ × ℕ => p.1 + p.2 ≤ N - 1) with hSdef
+    have hne : S.Nonempty := by
+      refine ⟨(0, 0), ?_⟩
+      simp only [hSdef, Finset.mem_filter, Finset.mem_product,
+        Finset.mem_range]
+      omega
+    obtain ⟨p₀, hp₀, hEq⟩ := Finset.exists_mem_eq_sup' hne
+      (fun p : ℕ × ℕ => whiteheadTerm N p.1 p.2)
+    have hp₀' : p₀.1 + p₀.2 ≤ N - 1 := by
+      have := Finset.mem_filter.mp hp₀
+      exact this.2
+    have hT0 : 0 < whiteheadTerm N p₀.1 p₀.2 :=
+      whiteheadTerm_pos (by omega)
+    set T := whiteheadTerm N p₀.1 p₀.2 with hTdef
+    -- every valid term is ≤ T
+    have hterm_le : ∀ n k : ℕ, n < N → k < N - n →
+        whiteheadTerm N n k ≤ T := by
+      intro n k hn hk
+      have hmem : ((n, k) : ℕ × ℕ) ∈ S := by
+        simp only [hSdef, Finset.mem_filter, Finset.mem_product,
+          Finset.mem_range]
+        omega
+      have h := Finset.le_sup'
+        (f := fun p : ℕ × ℕ => whiteheadTerm N p.1 p.2) hmem
+      rw [hEq] at h
+      simpa using h
+    -- majorant ≤ 2·N³·T
+    have hsum : whiteheadLinkMajorant N ≤ 2 * (N:ℝ) ^ 3 * T := by
+      unfold whiteheadLinkMajorant
+      have hrow : ∀ n ∈ Finset.range N,
+          ((2 * n + 1 : ℕ) : ℝ)
+            * (∑ k ∈ Finset.range (N - n), whiteheadTerm N n k)
+          ≤ (2 * (N:ℝ)) * ((N:ℝ) * T) := by
+        intro n hn
+        have hn' := Finset.mem_range.mp hn
+        have hinner : (∑ k ∈ Finset.range (N - n), whiteheadTerm N n k)
+            ≤ (N:ℝ) * T := by
+          have hb1 : (∑ k ∈ Finset.range (N - n), whiteheadTerm N n k)
+              ≤ ∑ _k ∈ Finset.range (N - n), T := by
+            refine Finset.sum_le_sum fun k hk => ?_
+            exact hterm_le n k hn' (Finset.mem_range.mp hk)
+          rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul] at hb1
+          have hc : ((N - n : ℕ) : ℝ) ≤ (N:ℝ) := by
+            exact_mod_cast (by omega : N - n ≤ N)
+          nlinarith [hT0, hb1]
+        have hcoef : ((2 * n + 1 : ℕ) : ℝ) ≤ 2 * (N:ℝ) := by
+          exact_mod_cast (by omega : 2 * n + 1 ≤ 2 * N)
+        have hinner_nn : 0 ≤ ∑ k ∈ Finset.range (N - n),
+            whiteheadTerm N n k := by
+          apply Finset.sum_nonneg
+          intro k hk
+          have hk' := Finset.mem_range.mp hk
+          exact (whiteheadTerm_pos (by omega)).le
+        have hcoef_nn : (0:ℝ) ≤ ((2 * n + 1 : ℕ) : ℝ) := by positivity
+        exact mul_le_mul hcoef hinner hinner_nn (by positivity)
+      have hb := Finset.sum_le_sum hrow
+      rw [Finset.sum_const, Finset.card_range, nsmul_eq_mul] at hb
+      have hring : (N:ℝ) * ((2 * (N:ℝ)) * ((N:ℝ) * T)) = 2 * (N:ℝ) ^ 3 * T := by
+        ring
+      linarith [hb, hring]
+    have hMpos : 0 < whiteheadLinkMajorant N :=
+      whiteheadLinkMajorant_pos (by omega)
+    have hlogle : Real.log (whiteheadLinkMajorant N)
+        ≤ Real.log 2 + 3 * Real.log N + Real.log T := by
+      calc Real.log (whiteheadLinkMajorant N)
+          ≤ Real.log (2 * (N:ℝ) ^ 3 * T) := Real.log_le_log hMpos hsum
+        _ = Real.log (2 * (N:ℝ) ^ 3) + Real.log T := by
+            rw [Real.log_mul (by positivity) hT0.ne']
+        _ = Real.log 2 + 3 * Real.log N + Real.log T := by
+            rw [Real.log_mul (by norm_num) (by positivity), Real.log_pow]
+            push_cast
+            ring
+    have hceil := whiteheadLink_term_ceiling (N := N) (n := p₀.1)
+      (k := p₀.2) (by omega) hp₀'
+    have hmul := mul_le_mul_of_nonneg_left hlogle h2πN
+    calc (2 * π / N) * Real.log (whiteheadLinkMajorant N)
+        ≤ (2 * π / N) * (Real.log 2 + 3 * Real.log N + Real.log T) := hmul
+      _ = (2 * π / N) * Real.log 2 + 3 * ((2 * π / N) * Real.log N)
+          + (2 * π / N) * Real.log T := by ring
+      _ ≤ (2 * π / N) * Real.log 2 + 3 * ((2 * π / N) * Real.log N)
+          + (4 * clausen (π / 2) + 10 * masterErr N) := by
+            linarith [hceil]
+      _ = ((2 * π / N) * Real.log 2 + 3 * ((2 * π / N) * Real.log N))
+          + (4 * clausen (π / 2) + 10 * masterErr N) := by ring
+
+/-- The majorant rate in `Vol_Borromean/2 = 4G` form — the exact input shape
+    of the scaffold's conditional squeeze. -/
+theorem tendsto_log_whiteheadLinkMajorant_vol :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) * Real.log (whiteheadLinkMajorant N))
+      Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2)) := by
+  have hpi := Real.pi_pos
+  have hb : QOU.Archimedean.Vol_Borromean / 2 = 4 * clausen (π / 2) := by
+    have hV : QOU.Archimedean.Vol_Borromean
+        = 8 * QOU.Archimedean.Cl_2 (π / 2) := rfl
+    have h12 : clausen (π / 2) = QOU.Archimedean.Cl_2 (π / 2) :=
+      clausen_eq_series ⟨by positivity, by linarith⟩
+    rw [hV, h12]
+    ring
+  rw [hb]
+  exact tendsto_two_pi_log_whiteheadLinkMajorant
+
+/-- **The Whitehead-link volume limit, conditional ONLY on vdV Lemma 4.**
+    With the majorant rate discharged sorry-free (W6), the scaffold's
+    conditional squeeze needs nothing but the named `VdVWhiteheadLemma4`
+    class: `(2π/N)·log ‖J_N(W)‖ → 4·Cl₂(π/2) = 4G = Vol(L5a1)`.  The
+    Gaussian/erfc non-cancellation is now the SOLE open input on the
+    `b = 1` front. -/
+theorem whiteheadLink_volume_of_lemma4 [VdVWhiteheadLemma4] :
+    Filter.Tendsto
+      (fun N : ℕ => (2 * π / N) * Real.log ‖whiteheadLinkKashaev N‖)
+      Filter.atTop (nhds (QOU.Archimedean.Vol_Borromean / 2)) :=
+  tendsto_log_norm_whiteheadLinkKashaev_of_majorant
+    tendsto_log_whiteheadLinkMajorant_vol
+
 end QOU.Knot.FigureEightVolume
