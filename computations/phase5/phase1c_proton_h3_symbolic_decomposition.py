@@ -144,7 +144,8 @@ def main():
 
     # Load symbolic y_λ for n=3
     import json
-    witness_path = HERE / "y-lambda-wenzl-bridge-symbolic-witness.json"
+    import _path_bridge as _pb
+    witness_path = _pb.witness_path("y-lambda-wenzl-bridge-symbolic-witness.json", HERE)
     y_sym_map = {}
     if witness_path.exists():
         doc = json.load(open(witness_path))
