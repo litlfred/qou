@@ -111,6 +111,110 @@ theorem markovTrace3_σ1 (hq : q ≠ 0) (w₀ w₁ w₂ : ℝ) :
   rw [markovTrace3, rhoTriv_σ, rhoSign_σ, char21_σ1]
   ring
 
+/-- The Markov trace on the length-two element `σ₀σ₁`:
+`tr_M(σ₀σ₁) = w₀ q² + w₁ q⁻² - w₂` (from `χ_{(3)}(σ₀σ₁) = q²`,
+`χ_{(1³)}(σ₀σ₁) = q⁻²`, `χ_{(2,1)}(σ₀σ₁) = -1`). -/
+theorem markovTrace3_σ0σ1 (hq : q ≠ 0) (w₀ w₁ w₂ : ℝ) :
+    markovTrace3 q hq w₀ w₁ w₂ (t₀ * t₁)
+      = w₀ * q ^ 2 + w₁ * (q⁻¹) ^ 2 - w₂ := by
+  rw [markovTrace3, char21_σ0σ1]
+  simp only [map_mul, rhoTriv_σ, rhoSign_σ]
+  ring
+
+/-! ## Canonical Ocneanu/HOMFLY Markov weights for `H_3(q)` (bean `qou-tpl5`)
+
+The three `n = 3` character constraints leave the weight vector `(w₀, w₁, w₂)`
+free along a one-parameter family; the **canonical** (Ocneanu/Jones–HOMFLY)
+trace fixes the family by the *recursive Markov property*
+
+  `tr_M(x · σ_{n-1}) = z · tr_M(x)`   for `x ∈ H_{n-1}`,
+
+with `z` the Markov parameter, together with the normalisation `tr_M(1) = 1`.
+
+**Derivation.**  `H_2 = ⟨σ₀⟩ ⊂ H_3` has basis `{1, σ₀}`.  The Markov property
+applied one level down (`x = 1`, generator `σ₀`) gives `tr_M(σ₀) = z·tr_M(1) = z`;
+applied at the top level to `x ∈ {1, σ₀}` (generator `σ₁`) gives
+`tr_M(σ₁) = z` and `tr_M(σ₀σ₁) = z·tr_M(σ₀) = z²`.  Writing each of the three
+values `tr_M(1) = 1`, `tr_M(σ₀) = z`, `tr_M(σ₀σ₁) = z²` as the weighted
+character sum and solving the resulting `3×3` linear system
+
+```
+  w₀ + w₁ + 2 w₂           = 1
+  w₀ q - w₁ q⁻¹ + w₂(q-q⁻¹) = z
+  w₀ q² + w₁ q⁻² - w₂       = z²
+```
+
+yields the closed forms below.  All denominators — `q²+1` and `q⁴+q²+1` — are
+strictly positive for real `q`, so the weights are defined for every `q ≠ 0`;
+`z` remains the free Ocneanu parameter.
+
+These are **derived, then checked**: the normalisation `markovWeights_one`, the
+one-level `markovWeights_σ0`, and the two top-level Markov relations
+`markovWeights_markov_σ1`, `markovWeights_markov_σ0σ1` are all proved below as
+concrete field identities, so a wrong weight would fail the check.
+
+References: Jones (1987) `[jones1987]`, Wenzl (1988) `[wenzl1988]`. -/
+
+/-- Canonical Markov weight `w_{(3)} = w₀` of the trivial block, as a rational
+function of the substrate modulus `q` and the Markov parameter `z`. -/
+noncomputable def markovWeight0 (q z : ℝ) : ℝ :=
+  (q * z + 1) * (q ^ 3 * z + q * z + 1) / ((q ^ 2 + 1) * (q ^ 4 + q ^ 2 + 1))
+
+/-- Canonical Markov weight `w_{(1³)} = w₁` of the sign block. -/
+noncomputable def markovWeight1 (q z : ℝ) : ℝ :=
+  q ^ 2 * (z - q) * (z * (q ^ 2 + 1) - q ^ 3) / ((q ^ 2 + 1) * (q ^ 4 + q ^ 2 + 1))
+
+/-- Canonical Markov weight `w_{(2,1)} = w₂` of the `2`-dimensional block. -/
+noncomputable def markovWeight2 (q z : ℝ) : ℝ :=
+  -q * (z - q) * (q * z + 1) / (q ^ 4 + q ^ 2 + 1)
+
+/-- **Normalisation** (derive-then-check): the canonical weights give `tr_M(1) = 1`. -/
+theorem markovWeights_one (hq : q ≠ 0) (z : ℝ) :
+    markovTrace3 q hq (markovWeight0 q z) (markovWeight1 q z) (markovWeight2 q z) 1 = 1 := by
+  rw [markovTrace3_one]
+  simp only [markovWeight0, markovWeight1, markovWeight2]
+  have h2 : (q ^ 2 + 1) ≠ 0 := by positivity
+  have h4 : (q ^ 4 + q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **`tr_M(σ₀) = z`** for the canonical weights (derive-then-check): the Markov
+property one level down, `tr_M(σ₀) = z·tr_M(1)`. -/
+theorem markovWeights_σ0 (hq : q ≠ 0) (z : ℝ) :
+    markovTrace3 q hq (markovWeight0 q z) (markovWeight1 q z) (markovWeight2 q z) t₀ = z := by
+  rw [markovTrace3_σ0]
+  simp only [markovWeight0, markovWeight1, markovWeight2]
+  have h2 : (q ^ 2 + 1) ≠ 0 := by positivity
+  have h4 : (q ^ 4 + q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **Top-level Markov relation for `σ₁`**: `tr_M(σ₁) = z · tr_M(1)`.  This is the
+recursive Markov property `tr_M(1·σ₁) = z·tr_M(1)`, PROVED as a field identity
+for the canonical weights. -/
+theorem markovWeights_markov_σ1 (hq : q ≠ 0) (z : ℝ) :
+    markovTrace3 q hq (markovWeight0 q z) (markovWeight1 q z) (markovWeight2 q z) t₁
+      = z * markovTrace3 q hq (markovWeight0 q z) (markovWeight1 q z) (markovWeight2 q z) 1 := by
+  rw [markovTrace3_σ1, markovTrace3_one]
+  simp only [markovWeight0, markovWeight1, markovWeight2]
+  have h2 : (q ^ 2 + 1) ≠ 0 := by positivity
+  have h4 : (q ^ 4 + q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-- **Top-level Markov relation for `σ₀σ₁`**: `tr_M(σ₀σ₁) = z · tr_M(σ₀)`.  This is
+the recursive Markov property `tr_M(σ₀·σ₁) = z·tr_M(σ₀)` with `x = σ₀ ∈ H_2`,
+PROVED as a field identity for the canonical weights. -/
+theorem markovWeights_markov_σ0σ1 (hq : q ≠ 0) (z : ℝ) :
+    markovTrace3 q hq (markovWeight0 q z) (markovWeight1 q z) (markovWeight2 q z) (t₀ * t₁)
+      = z * markovTrace3 q hq (markovWeight0 q z) (markovWeight1 q z) (markovWeight2 q z) t₀ := by
+  rw [markovTrace3_σ0σ1, markovTrace3_σ0]
+  simp only [markovWeight0, markovWeight1, markovWeight2]
+  have h2 : (q ^ 2 + 1) ≠ 0 := by positivity
+  have h4 : (q ^ 4 + q ^ 2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
+
 end Markov3
 
 end QOU.SchurWeyl
