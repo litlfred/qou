@@ -31,3 +31,33 @@ NEXT ACTION (now fully specified, no lit needed — we have every paper):
  2. Form Ind^rot(0,x;q) = sum_e I(0,e) x^e and verify against eq (200) COEFFICIENT-WISE
     in BOTH x and q (a 2-variable check — much stronger than the x=1 tower alone).
  3. Then the dictionary S+_11 = Ind^rot is confirmed in-corpus and Route C M2 unblocks.
+
+## 2026-08-11 — M1 EXECUTED from the block definitions. PARTIAL: one localized q^1 discrepancy.
+
+Implemented S+_11(x;q) directly from the q-Hahn Bessel holomorphic blocks (GGM eq 127a/b) and
+evaluated the eq-(200) bilinear symbolically (exact truncated q-series over rational functions
+of x): computations/probes/qbeta_m1_rotated_index_from_blocks.py, witness alongside, 3/4.
+
+  q^0   computed 1                                    == printed          EXACT
+  q^2   computed -(x^-2 + 2x^-1 + 3 + 2x + x^2)       == printed          EXACT
+  x=1   computed tower [1,-8,-9]                      == eq (61)          EXACT
+  q^1   computed -(x^-2 + 2x^-1 + 2 + 2x + x^2)
+        printed  -(2x^-2 + x^-1 + 2 + x + 2x^2)                           DIFFERS
+
+Both q^1 readings sum to -8 at x=1 — the discrepancy is the DISTRIBUTION over the fugacity,
+not the total, which is why the eq-(61) tower still matches.
+
+PROVENANCE CHECKED (this is not an OCR artifact): re-extracted page 39 at SPAN level, using
+font size 8 = superscript. Confirms the block arguments
+   S+(x;q)_1,1 = J(x,x^-1;q) J(x,x^-1;q^-1) + J(x^-2,x^-1;q) J(x^2,x;q^-1)
+(exactly what the probe implements) AND the printed q^1 coefficient as read.
+
+TWO LIVE EXPLANATIONS, NOT ADJUDICATED (do not tune either way):
+ (a) a typo in the paper's q^1 coefficient — note q^2 is palindromic (1,2,3,2,1) and the
+     computed q^1 is the analogous (1,2,2,2,1), while the printed (2,1,2,1,2) breaks that
+     pattern; or
+ (b) a branch subtlety in the |q|<1 vs |q|>1 convention for J(.;q^-1) hitting this order.
+
+NEXT ACTION to adjudicate: compute I_{4_1}(0,e)(q) independently in the DGG flux basis and
+form sum_e I(0,e) x^e; that settles which q^1 distribution is correct without relying on the
+printed line. If (a), it is a publishable erratum and should be reported upstream.
