@@ -671,3 +671,50 @@ hold vacuously at these field sizes (disclosed in probe + witness).
 `P(ξ) = a·b^m, a ∈ F_n^×` — extracting the base-field class of `a`
 via the Galois norm/transfer from F down to `Q₂₅(ζ_m)` is the
 precisely-defined next increment (bean `y3xv` stays in-progress).
+
+## Addendum 17 (2026-08-11) — the descent EXECUTED at m = 2: ν = +1, ε₂(ξ) = +1 (PR #4968)
+
+The increment-2 spec (Addendum 16 / PR #4946) is now implemented and
+run: `gswz_epsm_descent_m2_probe.py`, **11/11 checks**, the first
+genuinely **descended** ε_m value of the program.
+
+**Setup.** F = Q₅(μ₁₂₄₈) (degree 8 unramified), base B = Q₂₅,
+Γ = ⟨σ⟩ = ⟨φ₅²⟩ of order 4. σ is the Hensel-lifted Frobenius
+(checked: h(σx) = 0 and σ⁴ = id). P(ξ) = D(x₁)²·D(x₂)·D(1)⁻³ from
+the Addendum-16 machinery, with the Lean-proved shift/class-difference
+backbone (`QOU.Machinery.CyclicQuantumDilog`, PR #4964) behind the
+root-difference law.
+
+**The descent chain, each link falsifiable:**
+
+1. c = √(σ(P)/P) exists in F (Tonelli–Shanks on the 2-Sylow of order
+   2⁵ in F^×/(1+5R), Newton on the unit part); c² = σ(P)/P exact.
+2. **Obstruction ν = N_{F/B}(c) = +1** ∈ μ₂, root-choice invariant
+   (c → −c fixes ν: the norm over the order-4 group squares the
+   ambiguity). Unobstructed — descent proceeds.
+3. Hilbert-90 resolvent b = Σ_k c_k σ^k(θ) (c_k = ∏_{i<k} σ^i(c))
+   found as a unit at the first θ sweep; **splice law c·σ(b) = b
+   holds exactly** — not approximately, in (Z/5⁸)[x]/(h).
+4. **Descent certificate: σ(a) = a** for a = P·b⁻² (the orientation
+   is adjudicated by the certificate itself, both orientations tried,
+   exactly one fixed).
+5. **ε₂(ξ) = χ_B(a) = teich(a)³¹² = +1**, with χ_B non-vacuous
+   (χ_B(ζ₆₂₄) = −1 checked).
+
+**Why this is new information.** Addendum 16's collapse finding showed
+every F-level Kummer class is structurally vacuous (624m | 5^d − 1
+forces χ to kill μ₆₂₄). ε₂(ξ) = +1 is *not* that vacuity: it is the
+base-level class of the σ-fixed descended element, gated by the
+certificate. No printed target exists; the value is falsifiable
+against any independent computation.
+
+**Honesty note.** The obstructed branch (ν = −1) adds *no*
+hardcoded-True padding to `checks` — the check count differs by
+outcome by design (the #4588 Copilot lesson applied at authoring
+time); in that branch the carried invariant would be ν itself.
+
+**Next.** m = 3 needs the cube-root variant (3-Sylow of 5^d − 1;
+ν ∈ μ₃ with a χ_B-ambiguity subtlety since χ_B does not kill μ₃ —
+the root-choice sweep must quotient by it), then remaining m | 24;
+the m = 24 case is where the #4533 −1 obstruction on [ζ₂₄] and the
+open (−1)^{c₁} parity live.
