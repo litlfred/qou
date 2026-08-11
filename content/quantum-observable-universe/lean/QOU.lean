@@ -325,6 +325,7 @@ import QOU.SchurWeyl.HeckeDim3Indep
 import QOU.SchurWeyl.HeckeMarkov3
 import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.YoungTableaux
 import QOU.QuantumObservableUniverses.VirtualProjection
