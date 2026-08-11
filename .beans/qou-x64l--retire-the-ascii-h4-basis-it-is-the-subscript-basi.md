@@ -693,3 +693,46 @@ the load-bearing verification above is 48 s. Budget for the consumer build
 separately, and do not run it concurrently with another `lean` build against the
 same olean tree: doing so killed the first attempt silently, 0-byte log, no OOM
 (15 GB free).
+
+### The rest of the ASCII side is now orphaned — and is kept deliberately
+
+Worth recording precisely, because this bean's *title* says "retire the ASCII H₄
+basis" and a later agent will reasonably read that as unfinished work.
+
+After the arrow reversal, `MarkovTraceOnH4A` uses nothing from `H4BasisBridge` in
+code — only two docstring mentions and a now-vestigial
+`open QOU.Machinery.H4Bridge`. The remainder of the ASCII side is a closed
+cluster:
+
+    MarkovTraceH4 ← H4AsciiPresentation ← H4BasisBridge ← MarkovTraceOnH4A
+
+so dropping that one import orphans all three, and they could be deleted. (The
+import is not free to drop: the bridge also supplies the *subscript* side
+transitively, so it must be replaced by `import QOU.Machinery.H4Cyclicity`.)
+
+**Decision: keep them.** The economics changed when the Gram chain went. What
+made the ASCII side worth retiring was 6604 generated lines, ~700 KB and ~4.3 GB
+peak — the build pole — and that is already deleted. What remains is ~35 KB
+carrying real content:
+
+* `H4BasisBridge` proves the two 24-word normal-form bases **are one basis**,
+  with an explicit isomorphism (`phi_mulNF`, `trM4_phi`, the 24 `phi_word_*`) —
+  a theorem, not scaffolding;
+* the ASCII `TRM` table is an independent cross-check on `TRM4`;
+* `H4.trM_cyclic` is a genuine statement about that basis, now cheap to hold.
+
+Deleting proved mathematics to satisfy a title, for no measurable build gain,
+costs more than it returns. So the state to record is: **the ASCII side is
+retained by choice, not by necessity** — which is materially different from
+where this bean started, when it was retained because it held the only `n = 4`
+cyclicity proof.
+
+If a future agent does want it gone, the move is exactly: swap
+`MarkovTraceOnH4A`'s bridge import for `H4Cyclicity`, drop the `open`, delete the
+three modules. Nothing else blocks it.
+
+### Measured, for the cost table
+
+`HeckeH4BlockMap31` rebuilt from source in **1504 s** (25.1 min) — this bean's
+">25 min each at ~6 GB" figure is confirmed, not folklore. Peak RSS tracked ~7 GB
+of 15 GB.
