@@ -3,8 +3,9 @@
 title: LP-dual witnesses carry raw float64 by construction — draining needs the shared contract changed
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-10T09:13:32Z
-updated_at: 2026-08-10T09:13:32Z
+updated_at: 2026-08-11T00:15:38Z
 ---
 
 
@@ -111,3 +112,54 @@ Not an implementation. A choice between:
    reason that is understood and recorded.
 
 Owner call. Recorded so the next agent does not re-derive the four routes.
+
+
+
+---
+
+## 2026-08-11 — route 2 taken (owner decision). Rule landed; gate still red.
+
+Owner chose **route 2**: teach the audit that an f64 with a full-precision
+`*_str` sibling is a shadow, not a defect. Implemented in
+`witness_raw_float64_audit.py`; see PR.
+
+**The rule.** `<key>` as f64 beside `<key>_str` as a companion string ⇒ the
+value is present at full precision in the same witness, so the float is skipped.
+Both shapes: scalar (`y0_star`) and list (`y_star`), the latter being what the
+LP duals use.
+
+**The guard.** A companion counts only if it carries **more than 17 significant
+digits**. Without that the rule is a laundering hole — `x_str = str(x)` would
+silence the ratchet. Not hypothetical: `qou-t0rf` records `_lp_result_from_dict`
+building `*_str` from the f64 key, so every `*_str` for a period was f64 wearing
+a string. An unguarded rule would have certified that bug as a fix. Self-test
+extended 12 → 18 cases, the guard among them.
+
+**Measured effect:**
+
+    total raw float64   540,487 -> 540,333   (154 reclassified)
+    dirty witnesses       1,576 -> 1,574
+    vs baseline            -153 -> +1        now marginally BELOW baseline
+
+Real pairs, not a blanket exemption: rho-prefactor 126→86, frobenius-repose
+347→317, casimir-macdonald 303→276.
+
+**The gate is STILL RED, and this bean stays open.** a-K-via-lp-dual-full — the
+witness this bean is about — is unchanged at 395 → 867. It has **zero** `*_str`
+fields: `engine: numpy`, the scipy path, which per `to_dict()` "has nothing
+beyond f64 to report". Measured, not assumed.
+
+**What remains is the other half of route 2**, and it was NOT taken
+unilaterally: run a-K on the clarabel-MPFR backend so its floats acquire `*_str`
+companions the new rule can shadow. Blockers to weigh first:
+
+- the Rust binary `clarabel-operator-selection-lp` is **not built** (cargo IS
+  available here; the pip `clarabel` package is a different thing and does not
+  supply this path);
+- the backend is **opt-in** (`backend="clarabel"`), scipy is the default;
+- its own docstring says it is **"NOT yet cross-checked against the scipy
+  backend to 1e-25"** — so moving a production witness onto it trades a known
+  f64 for an unvalidated MPFR path, which is a real decision, not plumbing.
+
+Route 3 (a named carve-out) remains available and would close the last red
+without touching the solver.
