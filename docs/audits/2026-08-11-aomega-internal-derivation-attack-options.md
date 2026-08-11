@@ -196,3 +196,33 @@ sidesteps categorification but demands a Bring→triangulation dictionary.
   landed) until Route A/B/C actually produces `F`. Claiming otherwise violates the
   anti-laundering rule. "DT count imported and proven-for-`4₁`" ≠ "derived from the
   13 drivers."
+
+## 5. Route A — EXECUTED (2026-08-11): partial, and it refutes its own slope leg
+
+Probe `computations/probes/qbeta_g3_aomega_route_a_newton_polygon.py`
+(audit-only, scope-(a); 4/5 assertions — the one FAIL is the intended
+falsification). Airtight on `4₁`:
+
+- The DT integers `{3,4}` **are** Newton-polygon data of `A_{4₁}`:
+  `3 = full-A L-degree = #boundary-parabolic connections {0,g,ḡ}`;
+  `4 = |max boundary slope|` (hull `(0,1),(4,0),(8,1),(4,2)`, edge slopes `±4`).
+- **The QOU C1 binding carrier is NOT the quantum A-polynomial of `4₁`** — its
+  Newton polygon (hull `(−1,2),(0,0),(1,2)`) has slopes `±½`, not `±4`. Route A
+  must use the true colored-Jones recursion `Â_K`, not the binding carrier.
+
+Cross-knot gate (5₂ boundary data literature-recalled — verify with SnapPy):
+
+- **Slope reading R2 (DT integer = boundary slope) is REFUTED on 5₂** (max slope
+  `10 ∉ {3,4}`) — the `4 = slope` match on `4₁` is a single-knot coincidence.
+- **L-degree reading R1 (DT integer = #connections = A-poly L-degree) SURVIVES**
+  (`4₁→3`, `5₂→4`, both `∈ {3,4}`).
+
+**Verdict.** Route A does **not** close the gap; it *narrows* it: the internal
+handle is the **connection count / A-polynomial L-degree — a motivic
+Euler-characteristic datum — not the Newton-polygon slope**, read off `Â_K` not
+the binding carrier. That surviving `R1` reading is precisely the
+**decategorified shadow of Route C** (its `χ`; the categorification is the
+BPS-cohomology / CoHA of Route C). Honest pivot (owner "if not then C"):
+**Route C, entered through its Euler-characteristic shadow R1**; the companion
+`4` still needs the motivic weight R1's bare count lacks. Tracked in beans
+`qou-rt0a` / `qou-rtec` / `qou-52sn`.
