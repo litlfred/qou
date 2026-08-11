@@ -11,7 +11,7 @@
     "md": "1d5523eaea25",
     "ts": "9483045ba9e2",
     "lean": "f8545ec8a6eb",
-    "lean_statement": "035849c12d06"
+    "lean_statement": "742d2f1255d3"
   },
   "criteria": {
     "voice-branch-jargon": [
@@ -1446,18 +1446,19 @@
           "md": "1d5523eaea25",
           "ts": "9483045ba9e2",
           "lean": "f8545ec8a6eb",
-          "lean_statement": "742d2f1255d3"
+          "lean_statement": "742d2f1255d3",
+          "graph": "428065608641"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "df7a68d30c46",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-10T19:59:29.342Z",
+        "reviewed_sha": "b9f131ef50fbfca8bc63c2642c6f9cb2f6cf9a4f"
       }
     ],
     "detangler-section-band": [
@@ -1526,27 +1527,28 @@
           "md": "1d5523eaea25",
           "ts": "9483045ba9e2",
           "lean": "f8545ec8a6eb",
-          "lean_statement": "742d2f1255d3"
+          "lean_statement": "742d2f1255d3",
+          "graph": "428065608641"
         },
         "result": "warn",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "ac7512959351",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "080654c93cc4",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-10T19:59:29.342Z",
+        "reviewed_sha": "b9f131ef50fbfca8bc63c2642c6f9cb2f6cf9a4f",
         "metrics": {
           "fwd_emitted": 2,
           "fwd_received": 0,
           "tanglement_score": 2,
           "out_degree": 3,
           "in_degree": 7,
-          "cone_size": 32,
+          "cone_size": 25,
           "depth": 11,
-          "pagerank": 0.000798,
+          "pagerank": 0.000843,
           "edge_span_max": 0,
           "edge_span_mean": 0,
           "worst_target": "emits fwd-ref to quantum-observable-universe/mass-theory: def:qz-bicompletion"
@@ -1559,18 +1561,19 @@
           "md": "1d5523eaea25",
           "ts": "9483045ba9e2",
           "lean": "f8545ec8a6eb",
-          "lean_statement": "742d2f1255d3"
+          "lean_statement": "742d2f1255d3",
+          "graph": "428065608641"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "d8d7fa2bb342",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:59.271Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-10T19:59:29.342Z",
+        "reviewed_sha": "b9f131ef50fbfca8bc63c2642c6f9cb2f6cf9a4f",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1752,5 +1755,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-10T19:59:29.342Z"
 }
