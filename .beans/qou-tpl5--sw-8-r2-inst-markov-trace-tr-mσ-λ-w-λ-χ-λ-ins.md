@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-11T10:04:10Z
+updated_at: 2026-08-11T11:05:49Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k
@@ -23,3 +23,11 @@ markovTrace3 (weighted char sum) + trace property (markovTrace3_mul_comm) + tr_M
 ## Correction (2026-08-11): (A) DONE, (B) still open.
 (A) canonical Ocneanu weights markovWeight0/1/2(q,z) + Markov relations PROVED — integrated on PR #4978 (from SW8W agent), sorry-free, axiom-clean.
 (B) REMAINING: the full HeckeWedderburnData instance for H_3 (Part=Fin 3, dim=![1,1,2], Π-reshape of wedderburn3 with M₁≅ℝ) — SW8W was session-limited before finishing it. Bounded plumbing; next pickup.
+
+
+
+## (B) reshape building-block findings (2026-08-11)
+Probed Mathlib: AlgEquiv.piCongrRight (component-wise pi equiv, SAME index) and AlgEquiv.prodCongr EXIST. The crux for the HeckeWedderburnData instance is NOT those — it is:
+1. M₁≅ℝ: Matrix (Fin 1)(Fin 1) ℝ ≃ₐ[ℝ] ℝ (check Matrix.uniqueAlgEquiv / build via the (0,0) entry).
+2. prod↔pi over Fin 3 with a DEPENDENT dim family: (ℝ×ℝ×M₂) ≃ₐ Π l:Fin 3, Matrix (Fin (![1,1,2] l))(Fin (![1,1,2] l)) ℝ. No single Mathlib lemma; build the AlgEquiv g↦(g 0,g 1,g 2) (ring-hom + bijective, or via Equiv.piFinSucc upgraded to AlgEquiv). ~50 fiddly lines, dependent types.
+Then: iso = wedderburn3.trans (prodCongr (M₁≅ℝ).symm ...).trans (prod→pi); markov := markovTrace3 with markovWeight0/1/2; markov_eq by unfold + trace reshape (holds definitionally). Best for a dedicated agent (fresh budget); SW8W was session-limited exactly here.
