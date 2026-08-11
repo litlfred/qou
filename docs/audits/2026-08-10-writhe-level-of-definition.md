@@ -242,3 +242,95 @@ as braids — that is false and much stronger.
 
 `component_parity_of_permSign` is **conditional** on a textbook fact, carried as
 an explicit hypothesis and named `_of_` per AGENTS.md §3b-cond.
+
+---
+
+## 8. Compute-layer sweep (`qou-yz26`) — three dispatched fronts
+
+Added 2026-08-11. A deep sweep of 133 `computations/**/*.py`, 96 writhe-bearing
+witnesses, `tools/`, `qou-mass/` and `scripts/`, then three parallel fix fronts.
+Every claim below was re-verified by the parent, not taken on an agent's word.
+
+### 8a. `qou-wlt3` — the braid-index guard (zero numbers move)
+
+`rosso_jones_three_strand_delta_q.py` and `alpha_k_per_force_assembly.py` stated
+`δ_q(T_{m,p}) = h[(m−1)p]_q` unconditionally, without the `m ≤ p` condition §5a
+added to the `.md`. All six carriers have `m < p`, so nothing was wrong — this
+closed a latent trap. `check_minimal_strand()` now raises on a swapped pair,
+naming Morton–Williams and the `(m−1)p = 12 ≠ (p−1)m = 10` hazard. Independently
+re-verified: raises on `T(5,3)`, `T(3,2)`, `T(9,2)`; silent on all six carriers
+and on the `m = p` boundary. `1/α_EM = 136.8232088535825843…` byte-identical.
+
+### 8b. `qou-6lr1` / `qou-7hyj` — the level is now named, not implied
+
+Five isotope-comparison producers carry a per-row level table (`n = 3(Z+N)`,
+which `atom-knot.md` defines as the braid index). The census emits
+`(w − n) mod 2` computed from its already-stored `(w, n)`:
+
+| operator | n | w | parity |     | operator | n | w | parity |
+|---|--:|--:|--:|---|---|--:|--:|--:|
+| unknot | 1 | 0 | 1 | | T(2,9) | 2 | +9 | 1 |
+| **Hopf** | 2 | +2 | **0** | | T(3,4) | 3 | +8 | 1 |
+| trefoil | 2 | +3 | 1 | | T(3,5) | 3 | +10 | 1 |
+| T(2,5) | 2 | +5 | 1 | | Borromean | 3 | 0 | 1 |
+| T(2,7) | 2 | +7 | 1 | | figure-8 | 3 | 0 | 1 |
+
+Hopf is the sole even — the one 2-component closure, matching §4 independently.
+**Not wired**, per the refuted statistics reading. Parent verification: an AST
+comparison with docstrings stripped confirmed five files docstring-only and the
+census the sole real code change.
+
+### 8c. `qou-okxx` / `qou-kjmo` — 🛑 §4's "43% apart" framing was WRONG
+
+The sweep reported a trefoil `⟨c⟩` recorded at two levels 43 % apart (3.2983 at
+H₂ vs 1.8149 at H₃; `a_K` 3.06865 vs 2.13829) and read it as a level conflict.
+**There is no conflict: they are different links.** Verified independently:
+
+| word | w | comps | det | was labelled | actually |
+|---|--:|--:|--:|---|---|
+| `σ₁³ ∈ B₃` | +3 | 2 | 0 | `3_1` | `3_1 ⊔ 0_1` **split link** |
+| `(σ₁σ₂)³ ∈ B₃` | +6 | 3 | 4 | `3_1` / `T(2,3)` | **T(3,3) torus link** |
+| `σ₁²σ₂⁻¹σ₁²σ₂⁻¹` | **+2** | 3 | 12 | `"5_2 candidate"` | unnamed 3-comp link |
+| `σ₁³ ∈ B₂` | +3 | 1 | 3 | trefoil | trefoil ✓ (braid index 2) |
+
+`σ₁³` in `B₃` closes to a **2-component split link** (Alexander determinant 0),
+not the trefoil. So the two `⟨c⟩` values were never rival readings of one knot at
+two levels — the H₃ row was mislabelled. The H₂ value is canonical (braid index
+of `T(2,3)` is 2); the H₃ row is relabelled and flagged `at_braid_index: false`.
+**This corrects the sweep's own framing**, which reasoned from the mislabel.
+
+The genuine defect was the **hardcoded** `writhe: 4` read back instead of
+computed — the word gives `+2`, so `w·⟨c⟩` was 2× too large. Fixed; `a_K`
+`1.089679013370163777 → 1.044839497885390486`.
+
+**`qou-kjmo` upgraded from a stale note to a structural result.** Both scripts
+predicted `⟨c⟩ ≈ 0` by Type-B transpose cancellation and recorded 3.2983 and
+0.3543 without saying the prediction failed. The failure is structural: for
+`n ≤ 3` the pairing collapses the numerator exactly to
+`(c_max/[n]_q!)·(q^ℓ − (−1/q)^ℓ)`, since `dim_q((n)) = dim_q((1ⁿ)) = 1` and the
+only non-extreme partition is the self-transpose `(2,1)` with `c = 0`. Odd `ℓ`
+gives `q^ℓ + q^{−ℓ} ≥ 2 > 0`; even `ℓ` vanishes only at `q = 1`. So
+**`⟨c⟩ = 0 ⟺ writhe = 0` at `n ≤ 3`** — the cancellation *cannot* give `≈ 0` at
+nonzero writhe, and fig-8 / Borromean vanish because `ℓ = 0`, **not** because
+they are amphichiral. **Scope-(b)** for `n ≤ 3` with the invariant cited;
+**scope-(a)** for `n ≥ 4`, where `(3,1)` has `c = +2` and the collapse fails.
+Symbolic-exact over `ℚ(q)` and machine-checked per row — **not Lean-proved**;
+formalizing it is the follow-up.
+
+### 8d. Anchor hazard found en route
+
+`q_parameter` auto-selects the q₀ anchor from `q0_anchor_manifest.json` **by the
+running producer's `sys.argv[0]` stem**. `chirality_avg_content` is tagged
+`ideal_muon`; `chirality_avg_content_chiral` is in neither list and takes the
+proton default. That alone explains why one witness moved and the other did not.
+Neither producer straddles layers. An agent had already written
+`q0_anchor: "proton"` into the muon producer's payload and caught it before it
+landed — the straddling hazard is live and easy to trip.
+
+### 8e. Deferred, beaned, not absorbed
+
+| bean | what |
+|---|---|
+| `qou-4jut` | `c-knot-nonuniversal-pinned-weight.witness.json` is **stale at HEAD**: `scriptHash fcc009c4ce2802cd` ≠ `sha256(HEAD script) 32fdfcc3ed1c4342`, and a re-run moves `spread_factor` **2.8292 → 59.119**, ⁴He `C_knot` **9.31 → 290.01**. μ/p anchor ruled out. Restored to HEAD so a framing-note commit could not carry it. Both stated verdicts survive either set |
+| — | `alpha-k-per-force-assembly.witness.json` is q₀-stale (muon-pinned, `q_at()` now proton) with `scriptHash` **un**drifted ⇒ the 2026-05-28 re-pin catching up, not producer drift. Left at committed bytes: the tracked `tnjb` migration needs scoped sign-off, and adopting it here would move a **production α_EM witness** inside a zero-move commit. Cost: its `scriptHash` is now stale against the guarded producer |
+| — | `a-K-via-lp-dual-full.witness.json` raw-float64 **395 → 867**, from `75fc8996d7`, confirmed an ancestor of `origin/main`. Pre-existing; no baseline widened |

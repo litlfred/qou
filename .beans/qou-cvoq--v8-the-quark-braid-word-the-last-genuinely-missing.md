@@ -1,11 +1,11 @@
 ---
 # qou-cvoq
 title: 'V8: the quark braid word -- the last genuinely missing carrier'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T18:57:48Z
-updated_at: 2026-08-10T18:57:49Z
+updated_at: 2026-08-11T01:07:12Z
 ---
 
 The only carrier still genuinely missing. chi=-6 gives the LEPTON words
