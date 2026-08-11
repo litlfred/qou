@@ -68,7 +68,9 @@ from mpmath import mpf
 
 mp.mp.dps = 50
 
-M_E_MEV = mpf("0.510998950")
+# CAL-1 from the registry, not re-typed: the literal here was
+# "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
+from codata_constants import M_E_MEV  # noqa: E402
 M_P_CODATA_MEV = mpf(M_P_MEV_VALIDATION)
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 VOL_B3 = 8 * mp.catalan
