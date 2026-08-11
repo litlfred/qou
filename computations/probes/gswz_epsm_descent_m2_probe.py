@@ -41,17 +41,31 @@ Gamma = Gal(F/B) = <sigma>, sigma = phi_5^2, n = [F:B] = 4):
 6. THE DESCENT CERTIFICATE: sigma(a) = a exactly in the ring — a
    genuinely lands in the base B. This is the falsifiable heart: a
    wrong sigma, wrong splice, or wrong orientation fails it.
-7. THE VALUE: eps_2-class chi_B(a) = teich(a)^{12} in {+-1} —
-   teich(.)^{(25-1)/2}, the genuine quadratic character of the base
-   B = Q_25 (a is sigma-fixed, so teich(a) lies in the base
-   Teichmuller mu_24; exponent 312 = 0 mod 24 would be IDENTICALLY 1
-   on the base — a vacuity an earlier version of this probe shipped
-   with, self-caught and fixed). The theta/sqrt ambiguities multiply
-   a by base squares and mu_2; chi_B kills squares (teich^24 = 1) and
-   chi_B(-1) = (-1)^{12} = 1 (-1 IS a square in mu_24), so the class
-   is AMBIGUITY-FREE. Non-vacuity control at BASE level:
-   g24 = zeta_624^{26} is sigma-fixed of exact order 24 and
-   chi_B(g24) = -1 != 1.
+7. THE CHARACTER: chi_B = teich(.)^{12} = teich(.)^{(25-1)/2}, the
+   genuine quadratic character of the base B = Q_25 (a is sigma-fixed,
+   so teich(a) lies in the base Teichmuller mu_24; exponent 312 = 0
+   mod 24 would be IDENTICALLY 1 on the base — a vacuity an earlier
+   version shipped with, self-caught and fixed). theta ambiguities
+   move a by base squares, killed by chi_B. BUT the abstract sqrt
+   choice c -> -c is NOT killed: it moves a by v^2 with
+   sigma(v) = -v, which forces teich(v)^24 = -1, i.e.
+   chi_B(v^2) = -1 — the abstract-layer class FLIPS with the root
+   choice (asserted as a check). The abstract layer therefore pins
+   ONLY nu.
+8. THE CANONICAL VALUE (the equivariant splice proper): sigma fixes
+   z_i and alpha, and acts on the chosen roots by x_i -> zeta^{r_i}
+   x_i (observed data: r_1 = 1, r_2 = 0). The Lean-proved shift law
+   (21) (QOU.Machinery.CyclicQuantumDilog, #4964) then gives
+   sigma(P)/P as an EXPLICIT product — for m = 2:
+   D(-x)/D(x) = (1-x)^2/(1-z) — whose square root is forced (every
+   exponent even BEFORE rooting, asserted from the data by
+   canonical_root_integral):
+       c_canon = [(1-x_1)^2/(1-z_1)]^{r_1} * ...
+   No Tonelli choice anywhere. eps_2(xi) := chi_B(a_canon) for the
+   c_canon-splice. Remaining choice x_1 -> -x_1 re-runs the whole
+   canonical chain on flipped data; invariance is CHECKED, not
+   assumed. Non-vacuity control at BASE level: g24 = zeta_624^{26} is
+   sigma-fixed of exact order 24 and chi_B(g24) = -1 != 1.
 
 NO printed target exists for eps_2(xi) (honest scope): the value is
 candidate data, falsifiable against any independent computation of
@@ -412,13 +426,14 @@ nu_is_one = nu == R.one()
 
 detail = {"nu_obstruction": "+1" if nu_is_one else "-1"}
 
-# ---------- Hilbert-90 splice + descent (if unobstructed) ------------
-a_class = None
-if nu_is_one:
-    # c_k = prod_{i<k} sigma^i(c)
+# ---------- Hilbert-90 splice + descent machinery --------------------
+def descend_and_class(c, Pv):
+    """Resolvent b for the cocycle c, splice law, sigma-fixed
+    certificate, base character. Returns (splice_ok, cert_ok,
+    teich_in_mu24, class_str or None)."""
     cks = [R.one()]
     acc = R.one()
-    v = c_root
+    v = c
     for k in range(1, n_gal):
         acc = R.mul(acc, v)
         cks.append(acc)
@@ -434,41 +449,124 @@ if nu_is_one:
         if any(x % 5 != 0 for x in bb):  # unit
             b_res = bb
             break
-    checks["resolvent_unit_found"] = b_res is not None
-    # splice law: c * sigma(b) = b
-    checks["splice_law_exact"] = (
-        b_res is not None and R.mul(c_root, sigma(b_res)) == b_res
-    )
-    # a = P * (sigma-orientation): sigma(b)/b = c^{-1}, so
-    # sigma(b^2)/b^2 = c^{-2} = P/sigma(P) => a := P * b^{-2} has
-    # sigma(a) = sigma(P) * sigma(b)^{-2} = P c^2 * (b/c)^{-2}... the
-    # certificate below adjudicates the orientation choice directly.
-    for aa in (R.mul(P, R.pw(R.inv(b_res), 2)), R.mul(P, R.pw(b_res, 2))):
+    if b_res is None:
+        return (False, False, False, None)
+    # splice law: c * sigma(b) = b, so sigma(b^2)/b^2 = c^{-2} =
+    # P/sigma(P); the certificate adjudicates the orientation directly.
+    splice_ok = R.mul(c, sigma(b_res)) == b_res
+    a_val = None
+    for aa in (R.mul(Pv, R.pw(R.inv(b_res), 2)), R.mul(Pv, R.pw(b_res, 2))):
         if sigma(aa) == aa:
             a_val = aa
             break
+    if a_val is None:
+        return (splice_ok, False, False, None)
+    # a sigma-fixed => teich(a) in mu_24 (base Teichmuller). The genuine
+    # quadratic character of B = Q_25 is teich(.)^{(25-1)/2} =
+    # teich(.)^12 — NOT ^312, which is 0 mod 24 and hence IDENTICALLY 1
+    # on the base (the vacuity an earlier version shipped with).
+    ta = teich(a_val)
+    in24 = R.pw(ta, 24) == R.one()
+    chiB = R.pw(ta, 12)
+    if chiB == R.one():
+        cls = "+1"
+    elif chiB == minus1:
+        cls = "-1"
     else:
-        a_val = None
-    checks["descent_certificate_sigma_fixed"] = a_val is not None
-    if a_val is not None:
-        # a is sigma-fixed => teich(a) in mu_24 (the base Teichmuller
-        # group). The genuine quadratic character of B = Q_25 is
-        # teich(.)^{(25-1)/2} = teich(.)^12 — NOT ^312, which is
-        # 0 mod 24 and hence IDENTICALLY 1 on the base (a vacuity this
-        # probe originally shipped with and this check now excludes:
-        # base_teich_in_mu24 below can fail, and chi_B can be -1).
-        ta = teich(a_val)
-        checks["base_teich_in_mu24"] = R.pw(ta, 24) == R.one()
-        chiB = R.pw(ta, 12)
-        checks["chi_B_value_in_mu2"] = chiB in (R.one(), minus1)
-        a_class = "+1" if chiB == R.one() else "-1"
-        detail["eps2_xi_class"] = a_class
+        cls = None
+    return (splice_ok, True, in24, cls)
+
+
+if nu_is_one:
+    # --- abstract layer: the Tonelli root pins ONLY the obstruction ---
+    # The abstract descent value FLIPS with the root choice c -> -c
+    # (a = P b^{-2} changes by v^2 with sigma(v) = -v, forcing
+    # teich(v)^24 = -1, i.e. chi_B(v^2) = -1). So chi_B(a) from an
+    # arbitrary Tonelli branch is NOT an invariant; the invariant of
+    # this layer is nu alone. The flip is asserted as a check — if the
+    # ambiguity analysis were wrong, this fails.
+    sp1, ct1, in24_1, cls_plus = descend_and_class(c_root, P)
+    sp2, ct2, in24_2, cls_minus = descend_and_class(R.mul(c_root, minus1), P)
+    checks["resolvent_unit_found"] = ct1 and ct2
+    checks["splice_law_exact"] = sp1 and sp2
+    checks["descent_certificate_sigma_fixed"] = ct1 and ct2
+    checks["base_teich_in_mu24"] = in24_1 and in24_2
+    checks["abstract_class_flips_with_root"] = (
+        cls_plus is not None
+        and cls_minus is not None
+        and cls_plus != cls_minus
+    )
+    detail["abstract_layer"] = (
+        f"chi_B(a) = {cls_plus} for c, {cls_minus} for -c: root-dependent "
+        "by structure (NOT the invariant); the abstract layer pins nu only"
+    )
+
+    # --- CANONICAL layer: the equivariant cocycle from the Lean-proved
+    # shift law (21) — no Tonelli choice anywhere -----------------------
+    # sigma fixes z_i and acts on the chosen roots by x_i -> zeta^{r_i}
+    # x_i; then sigma(P)/P = prod_i [D(zeta^{r_i} x_i)/D(x_i)]^{n_i}
+    # with each factor an EXPLICIT product by (21):
+    #   D(-x)/D(x) = (1-x)^2 / (1-z)   (m = 2, r = 1).
+    # With multiplicities n = (2, 1) the square root is forced:
+    #   c_canon = prod_i [(1-x_i)^2/(1-z_i)]^{n_i * r_i / ...} — every
+    # exponent even before rooting iff n_i * r_i is even for the
+    # fractional (1-z_i) part; asserted below from the DATA, not
+    # assumed.
+    def shift_exp(x):
+        s = R.mul(sigma(x), R.inv(x))
+        if s == R.one():
+            return 0
+        if s == minus1:
+            return 1
+        return None
+
+    r1s = shift_exp(x1)
+    r2s = shift_exp(x2)
+    checks["frobenius_root_shift_in_mu2"] = r1s is not None and r2s is not None
+    # integrality of the canonical root: each (1-z_i)^{n_i r_i} must
+    # have even exponent (n_1, n_2) = (2, 1) => need n_i * r_i even.
+    checks["canonical_root_integral"] = (2 * r1s) % 2 == 0 and (1 * r2s) % 2 == 0
+    c_canon = R.one()
+    for xi, zi, ni, ri in ((x1, z1, 2, r1s), (x2, z2, 1, r2s)):
+        if ri:
+            num = R.pw(R.one_minus(xi), ni)          # (1-x_i)^{n_i}
+            den = R.pw(R.inv(R.one_minus(zi)), ni // 2)  # (1-z_i)^{-n_i/2}
+            c_canon = R.mul(c_canon, R.mul(num, den))
+    checks["canonical_cocycle_squares_to_ratio"] = R.pw(c_canon, 2) == ratio
+    sp3, ct3, in24_3, cls_canon = descend_and_class(c_canon, P)
+    checks["canonical_splice_and_certificate"] = sp3 and ct3 and in24_3
+    checks["canonical_class_defined"] = cls_canon is not None
+    detail["eps2_xi_class_canonical"] = cls_canon
+
+    # --- x_1-root-choice invariance of the CANONICAL value -------------
+    # x_1 -> -x_1 changes P by the shift law; the canonical chain is
+    # re-run from scratch on the flipped data and must agree.
+    x1b = R.mul(minus1, x1)
+    r1b = shift_exp(x1b)
+    Pb = R.mul(R.mul(R.pw(dzeta(x1b), 2), dzeta(x2)), d1inv3)
+    ratio_b = R.mul(sigma(Pb), R.inv(Pb))
+    c_canon_b = R.one()
+    for xi, zi, ni, ri in ((x1b, z1, 2, r1b), (x2, z2, 1, r2s)):
+        if ri:
+            num = R.pw(R.one_minus(xi), ni)
+            den = R.pw(R.inv(R.one_minus(zi)), ni // 2)
+            c_canon_b = R.mul(c_canon_b, R.mul(num, den))
+    checks["canonical_cocycle_b_squares_to_ratio"] = (
+        R.pw(c_canon_b, 2) == ratio_b
+    )
+    sp4, ct4, in24_4, cls_canon_b = descend_and_class(c_canon_b, Pb)
+    checks["canonical_value_x1_root_invariant"] = (
+        sp4 and ct4 and cls_canon_b == cls_canon
+    )
+    detail["eps2_xi_class_canonical_x1_flipped"] = cls_canon_b
 else:
     # obstructed branch: the splice/descent checks are NOT applicable and
     # are deliberately NOT added to `checks` (no hardcoded-True padding —
     # the check count differs by outcome, and that is honest). The
     # invariant carried forward IS nu.
-    detail["eps2_xi_class"] = "OBSTRUCTED (nu = -1): no F-level descent; the invariant IS nu"
+    detail["eps2_xi_class_canonical"] = (
+        "OBSTRUCTED (nu = -1): no F-level descent; the invariant IS nu"
+    )
 
 # non-vacuity: chi_B resolves the BASE group. g24 = zeta_624^26 is
 # sigma-fixed (sigma acts by ^25; 624 | 24*26) of exact order 24, i.e.

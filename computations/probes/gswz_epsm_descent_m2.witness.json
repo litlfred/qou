@@ -3,7 +3,7 @@
  "probe": "gswz_epsm_descent_m2_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_descent_m2_probe.py",
- "commitSha": "6dec493eb664b3bb62cf04bf6aa63bf276ed2c09",
+ "commitSha": "e958f6df53cb9e50845a9c351af6e55a3fcf2609",
  "beans": [
   "qou-y3xv",
   "qou-9p9y"
@@ -21,13 +21,22 @@
   "splice_law_exact": true,
   "descent_certificate_sigma_fixed": true,
   "base_teich_in_mu24": true,
-  "chi_B_value_in_mu2": true,
+  "abstract_class_flips_with_root": true,
+  "frobenius_root_shift_in_mu2": true,
+  "canonical_root_integral": true,
+  "canonical_cocycle_squares_to_ratio": true,
+  "canonical_splice_and_certificate": true,
+  "canonical_class_defined": true,
+  "canonical_cocycle_b_squares_to_ratio": true,
+  "canonical_value_x1_root_invariant": true,
   "g24_base_generator": true,
   "chi_B_nonvacuous_on_base": true
  },
  "result": {
   "nu_obstruction": "+1",
-  "eps2_xi_class": "+1"
+  "abstract_layer": "chi_B(a) = +1 for c, -1 for -c: root-dependent by structure (NOT the invariant); the abstract layer pins nu only",
+  "eps2_xi_class_canonical": "+1",
+  "eps2_xi_class_canonical_x1_flipped": "+1"
  },
  "scope": "scope-(a): the CGZ Galois descent implemented completely at m = 2 for the global 5_2 Bloch class xi = 2[z1] + [z2]; the sigma-fixed certificate gates the extraction; no printed target exists \u2014 falsifiable against any independent computation; m = 3 and general m | 24 queued"
 }

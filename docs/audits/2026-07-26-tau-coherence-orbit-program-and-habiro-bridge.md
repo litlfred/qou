@@ -672,60 +672,57 @@ hold vacuously at these field sizes (disclosed in probe + witness).
 via the Galois norm/transfer from F down to `Q₂₅(ζ_m)` is the
 precisely-defined next increment (bean `y3xv` stays in-progress).
 
-## Addendum 17 (2026-08-11) — the descent EXECUTED at m = 2: ν = +1, ε₂(ξ) = +1 (PR #4968)
+## Addendum 17 (2026-08-11) — the descent EXECUTED at m = 2: ν = +1, canonical ε₂(ξ) = +1 (PR #4968)
 
 The increment-2 spec (Addendum 16 / PR #4946) is now implemented and
-run: `gswz_epsm_descent_m2_probe.py`, **11/11 checks**, the first
-genuinely **descended** ε_m value of the program.
+run: `gswz_epsm_descent_m2_probe.py`, **20/20 checks**, the first
+genuinely **descended and well-defined** ε_m value of the program.
 
 **Setup.** F = Q₅(μ₁₂₄₈) (degree 8 unramified), base B = Q₂₅,
 Γ = ⟨σ⟩ = ⟨φ₅²⟩ of order 4. σ is the Hensel-lifted Frobenius
 (checked: h(σx) = 0 and σ⁴ = id). P(ξ) = D(x₁)²·D(x₂)·D(1)⁻³ from
-the Addendum-16 machinery, with the Lean-proved shift/class-difference
-backbone (`QOU.Machinery.CyclicQuantumDilog`, PR #4964) behind the
-root-difference law.
+the Addendum-16 machinery.
 
-**The descent chain, each link falsifiable:**
+**Layer 1 — the obstruction (abstract Tonelli root).**
+c = √(σ(P)/P) exists (Tonelli–Shanks on the 2-Sylow + Newton);
+**ν = N_{F/B}(c) = +1** ∈ μ₂, root-choice invariant — unobstructed.
+**Honest finding, self-caught the same day in two stages before any
+review:** (i) the first pushed version used χ_B = teich(·)³¹², which
+is *identically* +1 on the σ-fixed base (312 ≡ 0 mod 24) — fixed to
+the genuine quadratic character teich(·)¹² = teich(·)^{(25−1)/2} with
+a base-level non-vacuity control (χ_B(ζ₆₂₄²⁶) = −1); (ii) with the
+genuine character, the abstract-layer value **flips with the root
+choice** (χ_B(a) = +1 for c, −1 for −c — asserted as a check): the
+flip c → −c moves a by v² with σ(v) = −v, forcing teich(v)²⁴ = −1.
+So the abstract layer pins **only ν**; χ_B(a) from an arbitrary
+Tonelli branch is not an invariant.
 
-1. c = √(σ(P)/P) exists in F (Tonelli–Shanks on the 2-Sylow of order
-   2⁵ in F^×/(1+5R), Newton on the unit part); c² = σ(P)/P exact.
-2. **Obstruction ν = N_{F/B}(c) = +1** ∈ μ₂, root-choice invariant
-   (c → −c fixes ν: the norm over the order-4 group squares the
-   ambiguity). Unobstructed — descent proceeds.
-3. Hilbert-90 resolvent b = Σ_k c_k σ^k(θ) (c_k = ∏_{i<k} σ^i(c))
-   found as a unit at the first θ sweep; **splice law c·σ(b) = b
-   holds exactly** — not approximately, in (Z/5⁸)[x]/(h).
-4. **Descent certificate: σ(a) = a** for a = P·b⁻² (the orientation
-   is adjudicated by the certificate itself, both orientations tried,
-   exactly one fixed).
-5. **ε₂(ξ) = χ_B(a) = teich(a)¹² = +1**, with χ_B non-vacuous **on
-   the base** (χ_B(g₂₄) = −1 for the σ-fixed order-24 generator
-   g₂₄ = ζ₆₂₄²⁶).
+**Layer 2 — the canonical equivariant cocycle (the value).** σ fixes
+z₁, z₂, α, and acts on the chosen roots by x₁ → −x₁ (r₁ = 1),
+x₂ → x₂ (r₂ = 0) — measured, not assumed. The Lean-proved shift law
+(21) (`QOU.Machinery.CyclicQuantumDilog`, PR #4964) then gives σP/P
+as an **explicit product**, D(−x₁)/D(x₁) = (1−x₁)²/(1−z₁), whose
+square root is *forced* (every exponent even before rooting, gated by
+`canonical_root_integral`):
 
-**Self-caught vacuity fix (same day, pre-review).** The first pushed
-version used χ_B = teich(·)³¹² — but the descended a is σ-fixed, so
-teich(a) ∈ μ₂₄, and 312 ≡ 0 (mod 24): that character is *identically*
-+1 on the base, and its control (χ_B(ζ₆₂₄) = −1) only exercised
-F-level units. The genuine quadratic character of B = Q₂₅ is
-teich(·)^{(25−1)/2} = teich(·)¹². Re-run: **ε₂(ξ) = +1 stands**, now
-non-vacuously (13/13 including `base_teich_in_mu24` and the base-level
-control, both of which can fail). Ambiguities remain killed: θ/√
-choices move a by base squares and −1, and −1 is a square in μ₂₄.
+$$c_{\mathrm{canon}} = \frac{(1-x_1)^2}{1-z_1}, \qquad
+c_{\mathrm{canon}}^2 = \frac{\sigma P}{P} \;\text{(exact)}.$$
+
+No Tonelli choice anywhere. The c_canon-splice satisfies
+c·σ(b) = b exactly, the descended a = P·b⁻² is σ-fixed (the
+falsifiable certificate), and
+
+**ε₂(ξ) = χ_B(a_canon) = +1**, **invariant under x₁ → −x₁** (the
+whole canonical chain re-run on flipped data; both give +1).
 
 **Why this is new information.** Addendum 16's collapse finding showed
-every F-level Kummer class is structurally vacuous (624m | 5^d − 1
-forces χ to kill μ₆₂₄). ε₂(ξ) = +1 is *not* that vacuity: it is the
-base-level class of the σ-fixed descended element, gated by the
-certificate. No printed target exists; the value is falsifiable
-against any independent computation.
+every F-level Kummer class is structurally vacuous. ε₂(ξ) = +1 is the
+base-level class of the canonically-descended element — the object
+CGZ's ε actually is. No printed target exists; the value is
+falsifiable against any independent computation.
 
-**Honesty note.** The obstructed branch (ν = −1) adds *no*
-hardcoded-True padding to `checks` — the check count differs by
-outcome by design (the #4588 Copilot lesson applied at authoring
-time); in that branch the carried invariant would be ν itself.
-
-**Next.** m = 3 needs the cube-root variant (3-Sylow of 5^d − 1;
-ν ∈ μ₃ with a χ_B-ambiguity subtlety since χ_B does not kill μ₃ —
-the root-choice sweep must quotient by it), then remaining m | 24;
-the m = 24 case is where the #4533 −1 obstruction on [ζ₂₄] and the
-open (−1)^{c₁} parity live.
+**Next.** m = 3: d = 12 (ord₅ mod 1872), Γ of order 6, ν ∈ μ₃
+(root-ambiguity ζ₃⁶ = 1 auto-invariant), χ_B = teich(·)⁸; the
+canonical-cocycle integrality pattern must again be read off the
+measured r_i. Then remaining m | 24; m = 24 is where the #4533 −1
+obstruction on [ζ₂₄] and the open (−1)^{c₁} parity live.
