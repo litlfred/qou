@@ -11,6 +11,13 @@ solving the resulting `6×6` system.  Combined with `HeckeDim3.span_sixWords_eq_
 (dim ≤ 6) this gives `dim H_3(q) = 6` and, since the three reps then jointly
 biject, the Wedderburn isomorphism `H_3(q) ≅ ℝ × ℝ × M₂(ℝ)` (R2-inst at n=3).
 
+The solving is factored into a **component core** `sixCoeffs_zero`, whose
+hypotheses are the three representation images of `Σ cᵢ wᵢ` being zero.  This is
+exactly what is available both from a genuine linear relation `Σ cᵢ wᵢ = 0`
+(⇒ `sixWords_indep`) and from `ρ (Σ cᵢ wᵢ) = 0` for the product map
+`ρ = (rhoTriv, rhoSign, seminormalRep21)` (⇒ injectivity of `ρ`, used for the
+Wedderburn iso).  Factoring avoids re-deriving the `6×6` solve.
+
 Base ring `ℝ` (seminormal rep is archimedean, §7c).
 -/
 
@@ -25,20 +32,32 @@ variable (q : ℝ)
 local notation3 "t₀" => σ ℝ q q⁻¹ 2 0
 local notation3 "t₁" => σ ℝ q q⁻¹ 2 1
 
-theorem sixWords_indep (hq : q ≠ 0)
+/-- **Component core.** Given that the three representations `rhoTriv, rhoSign,
+seminormalRep21` each send `c₁·1 + c₂σ₀ + c₃σ₁ + c₄σ₀σ₁ + c₅σ₁σ₀ + c₆σ₀σ₁σ₀`
+to zero, all six coefficients vanish (`q ≠ 0`).  This is the `6×6` solve; both the
+linear-independence statement and the injectivity of the product representation
+reduce to it. -/
+theorem sixCoeffs_zero (hq : q ≠ 0)
     (c₁ c₂ c₃ c₄ c₅ c₆ : ℝ)
-    (h : c₁ • (1 : Hecke ℝ q q⁻¹ 2) + c₂ • t₀ + c₃ • t₁ + c₄ • (t₀ * t₁)
-        + c₅ • (t₁ * t₀) + c₆ • (t₀ * t₁ * t₀) = 0) :
+    (hT : rhoTriv ℝ q q⁻¹ 2
+        (c₁ • (1 : Hecke ℝ q q⁻¹ 2) + c₂ • t₀ + c₃ • t₁ + c₄ • (t₀ * t₁)
+          + c₅ • (t₁ * t₀) + c₆ • (t₀ * t₁ * t₀)) = 0)
+    (hS : rhoSign ℝ q q⁻¹ 2
+        (c₁ • (1 : Hecke ℝ q q⁻¹ 2) + c₂ • t₀ + c₃ • t₁ + c₄ • (t₀ * t₁)
+          + c₅ • (t₁ * t₀) + c₆ • (t₀ * t₁ * t₀)) = 0)
+    (hM : seminormalRep21 q hq
+        (c₁ • (1 : Hecke ℝ q q⁻¹ 2) + c₂ • t₀ + c₃ • t₁ + c₄ • (t₀ * t₁)
+          + c₅ • (t₁ * t₀) + c₆ • (t₀ * t₁ * t₀)) = 0) :
     c₁ = 0 ∧ c₂ = 0 ∧ c₃ = 0 ∧ c₄ = 0 ∧ c₅ = 0 ∧ c₆ = 0 := by
   have hqi : q * q⁻¹ = 1 := mul_inv_cancel₀ hq
-  -- Apply the trivial and sign representations (algebra homs to ℝ).
-  have et := congrArg (rhoTriv ℝ q q⁻¹ 2) h
-  have es := congrArg (rhoSign ℝ q q⁻¹ 2) h
-  simp only [map_add, map_smul, map_mul, map_one, map_zero, rhoTriv_σ, rhoSign_σ,
+  -- Trivial and sign representations (algebra homs to ℝ).
+  have et := hT
+  have es := hS
+  simp only [map_add, map_smul, map_mul, map_one, rhoTriv_σ, rhoSign_σ,
     smul_eq_mul] at et es
-  -- Apply the (2,1) seminormal representation and read off matrix entries.
-  have hm := congrArg (seminormalRep21 q hq) h
-  simp only [map_add, map_smul, map_mul, map_one, map_zero, seminormalRep21_σ0,
+  -- The (2,1) seminormal representation: read off matrix entries.
+  have hm := hM
+  simp only [map_add, map_smul, map_mul, map_one, seminormalRep21_σ0,
     seminormalRep21_σ1] at hm
   have m01 := congrFun (congrFun hm 0) 1
   have m10 := congrFun (congrFun hm 1) 0
@@ -93,22 +112,22 @@ theorem sixWords_indep (hq : q ≠ 0)
       linear_combination (norm := (field_simp; ring)) q ^ 3 * (q ^ 2 + 1) * m11 - q ^ 3 * (q ^ 2 + 1) * es
     exact (mul_eq_zero.mp h1).resolve_left hnum
   -- c₃ + c₆ = 0.
-  have hS : c₃ + c₆ = 0 := by
+  have hS' : c₃ + c₆ = 0 := by
     have hR : (1 + q ^ 2) * (c₃ + c₆) = 0 := by linear_combination hPz + hQz
     exact (mul_eq_zero.mp hR).resolve_left (by positivity)
   -- q⁻¹-free relations, then `c₆·(q²+1)² = 0`.
-  have hU : 2 * q * c₄ + c₆ * (q ^ 2 - 1) = 0 := by linear_combination hPz - hS
-  have hT : c₄ * (q ^ 2 - 1) - 2 * c₆ * q = 0 := by
-    linear_combination q * h36 - q * hS + c₄ * hqi
+  have hU : 2 * q * c₄ + c₆ * (q ^ 2 - 1) = 0 := by linear_combination hPz - hS'
+  have hTt : c₄ * (q ^ 2 - 1) - 2 * c₆ * q = 0 := by
+    linear_combination q * h36 - q * hS' + c₄ * hqi
   have hc6 : c₆ = 0 := by
     have hV : c₆ * (q ^ 2 + 1) ^ 2 = 0 := by
-      linear_combination (q ^ 2 - 1) * hU - 2 * q * hT
+      linear_combination (q ^ 2 - 1) * hU - 2 * q * hTt
     exact (mul_eq_zero.mp hV).resolve_right (by positivity)
   have hc4 : c₄ = 0 := by
     have : 2 * q * c₄ = 0 := by linear_combination hU - (q ^ 2 - 1) * hc6
     have h2q : (2 : ℝ) * q ≠ 0 := by simp [hq]
     exact (mul_eq_zero.mp this).resolve_left h2q
-  have hc3 : c₃ = 0 := by linear_combination hS - hc6
+  have hc3 : c₃ = 0 := by linear_combination hS' - hc6
   -- c₁, c₂ from et, es with c₃ = c₄ = c₆ = 0.
   have hc2 : c₂ = 0 := by
     have h2 : c₂ * (q + q⁻¹) = 0 := by
@@ -119,6 +138,16 @@ theorem sixWords_indep (hq : q ≠ 0)
   have hc1 : c₁ = 0 := by
     linear_combination et - hc2 * q - hc3 * q - hc4 * (q * q) - hc4 * (q * q) - hc6 * (q * q * q)
   exact ⟨hc1, hc2, hc3, hc4, hc4, hc6⟩
+
+/-- **The six words `{1,σ₀,σ₁,σ₀σ₁,σ₁σ₀,σ₀σ₁σ₀}` are linearly independent over `ℝ`**
+(`q ≠ 0`), so `dim_ℝ H_3(q) ≥ 6`. -/
+theorem sixWords_indep (hq : q ≠ 0)
+    (c₁ c₂ c₃ c₄ c₅ c₆ : ℝ)
+    (h : c₁ • (1 : Hecke ℝ q q⁻¹ 2) + c₂ • t₀ + c₃ • t₁ + c₄ • (t₀ * t₁)
+        + c₅ • (t₁ * t₀) + c₆ • (t₀ * t₁ * t₀) = 0) :
+    c₁ = 0 ∧ c₂ = 0 ∧ c₃ = 0 ∧ c₄ = 0 ∧ c₅ = 0 ∧ c₆ = 0 :=
+  sixCoeffs_zero q hq c₁ c₂ c₃ c₄ c₅ c₆
+    (by rw [h, map_zero]) (by rw [h, map_zero]) (by rw [h, map_zero])
 
 end Indep
 

@@ -1,11 +1,11 @@
 ---
 # qou-zp6b
 title: 'SW-7-cap: finrank H_3(q)=6 (Basis.mk) + Wedderburn iso H_3(q)≅ℝ×ℝ×M₂ (R2-inst n=3)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T19:48:12Z
-updated_at: 2026-08-10T19:52:03Z
+updated_at: 2026-08-11T00:14:26Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k
