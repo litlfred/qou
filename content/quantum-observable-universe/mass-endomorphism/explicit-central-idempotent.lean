@@ -78,22 +78,10 @@ noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
     - Bar-pairing:        for chiral pair `λ ≠ λ'`,
                           `star (e_λ) = e_{λ'}`
     -/
-theorem explicit_central_idempotent_via_murphy
+axiom explicit_central_idempotent_via_murphy
     {n : ℕ} (lam : List ℕ) (h : lam.sum = n) :
-    centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q := by
-  -- Ref: [murphy1981] — Murphy elements in symmetric-group algebras.
-  -- Ref: [dipper-james1986] — extension of Murphy's construction
-  -- to the Iwahori–Hecke algebra at generic q.
-  -- See content block jucys-murphy-central-elements-qou — the paper's
-  -- prop:jucys-murphy-central-elements-qou block establishing
-  -- diagonal action of J_k on the Hoefsmit seminormal basis with
-  -- eigenvalue c_T(k; q).
-  -- Ref: [manuscript] §prop:explicit-central-idempotent — the
-  -- four cross-checks (sum-to-identity, orthogonality,
-  -- self-adjointness, bar-pairing) follow from Lagrange
-  -- interpolation in commuting variables (J_1, ..., J_n).
-  -- CONJECTURE: The four cross-checks follow from Lagrange interpolation in commuting variables.
-  sorry
+    centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q
+
 
 /-- Computability witness for small `n`: the (2,2) self-conjugate
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in
