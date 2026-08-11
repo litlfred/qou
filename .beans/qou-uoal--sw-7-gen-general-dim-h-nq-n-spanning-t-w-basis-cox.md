@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-11T00:33:45Z
-updated_at: 2026-08-11T01:06:26Z
+updated_at: 2026-08-11T10:38:46Z
 parent: qou-59vq
 ---
 
@@ -39,3 +39,12 @@ MISSING: (a) the symmetric group Equiv.Perm (Fin n) wired as a CoxeterSystem ins
 2. **Coset-spanning lemma** span_K (⋃_r range(heckeIncl)·r) = ⊤ — the crux. Right-mult-closure of the H_{n-1}-module span of {r_k} under each σ_i, via the quadratic + braid 'bubble' argument (moving σ_{n-1} rightward). General form of HeckeDim3.gen_mul_mem.
 3. finrank recursion: finrank H_n ≤ (n+1)·finrank H_{n-1} (spanning set = {incl(b)·r_k : b∈basis H_{n-1}, k}) ⇒ finrank H_n(q) ≤ (n+1)! by induction (base n=0: H_0 = K, finrank 1).
 Note (n+1)! because Hecke ... n = classical H_{n+1} (n generators, n+1 strands). Lower bound dim≥(n+1)! needs general Hoefsmit (qou-im9l).
+
+
+
+## Attempt findings (2026-08-11, end of long session — honest handoff)
+Tried the coset-rep definition; two concrete lessons for the next (fresh) attempt:
+1. **Do NOT define reps with modular indexing** (`σ ⟨(top-j)%(n+1), _⟩`) — the % hack compiles but makes the spanning proof unmanageable. Define r_k via clean Fin arithmetic or a `List.ofFn`/`Fin.foldr` over the descending generator indices, keeping the index bounds as real hypotheses, not mod.
+2. **finrank bound is self-contained from spanning** — no separate Module.Finite lemma needed: an explicit finite spanning set S with span=⊤ gives `finrank K A ≤ S.card` via `finrank_span_le_card` + `finrank_top`. So the whole theorem reduces to the ONE spanning lemma + the arithmetic induction (n+1)·n!=(n+1)!.
+3. Companion `Module.Finite K (Hecke K q qi n)` is a clean general result IF wanted: generators are integral (monic quadratic σ²−(q−qi)σ−qqi=0), finitely many ⇒ module-finite. BLOCKED this session only by the firewalled Mathlib search (leansearch/loogle 403) needed to name the 'finite-type + integral ⇒ Module.Finite' bridge lemma; a session with LSP exact? (or network) closes it fast.
+Core spanning closure (σ-top bubble: σ_n·(H_n·r_k) ⊆ Σ H_n·r_k via quadratic+braid) remains the multi-day piece — the general form of HeckeDim3.gen_mul_mem.
