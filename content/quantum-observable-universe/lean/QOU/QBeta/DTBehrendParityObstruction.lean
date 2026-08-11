@@ -1,0 +1,141 @@
+/-
+Copyright (c) 2026 litlfred. All rights reserved.
+
+# The Behrend weighting for `A_ω(4₁) = 3` must be non-constant — a parity obstruction
+
+**Bean `qou-dt14`** (front-2 characterization). Companion to
+`StokesDTCountExceedsRecursionOrder.lean` (bean `qou-qnnq`), which established the
+honest negative:
+
+* the QOU Wedderburn/Springer **graded Euler characteristic** over the `H₃(q)`
+  blocks is `Σ_{λ ⊢ 3} Δ_λ = 1 − 2 − 1 = −2` (sorry-free, `partitionEuler3_eq`);
+* the knot Stokes/DT/BPS **count** is `S⁺(0)₀₁ = 3`;
+* `−2 ≠ 3`, and the two are *different DT objects* — the per-partition Springer
+  fibre vs the per-knot character variety. The lever map records the missing input
+  as an **irreducibly external, Behrend-weighted DT moduli count** (driver-14).
+
+This file asks the next question — not *what is* the missing count, but **what must
+any supplier of it satisfy** — and extracts a structural constraint, in the
+formalize-first spirit (prune the class before searching it).
+
+## The constraint
+
+A Donaldson–Thomas count is a *Behrend-weighted* Euler characteristic
+`DT = Σ_n n · χ(ν⁻¹(n))` over the strata of the constructible Behrend function
+`ν`. The unweighted total is the ordinary Euler characteristic. Hence:
+
+* **`no_constant_weight_yields_three`** — if `ν` is **constant** (value `c`), then
+  `DT = c · χ`. With `χ = −2` this is *even* for every integer `c`, while the
+  target count `3` is **odd**. So no constant weighting supplies it.
+* **`at_least_two_strata`** — consequently the Behrend stratification of any
+  moduli supplying `3` over `χ = −2` has **at least two strata**.
+* **`exists_odd_weighted_stratum`** — sharper: some stratum must carry an **odd**
+  weighted contribution `n · χ_stratum` (both its Behrend value and its Euler
+  characteristic odd).
+
+## What this prunes
+
+The Behrend function of a **smooth** moduli space is the constant `(−1)^dim`
+(Behrend 2009). By `no_constant_weight_yields_three`, **no smooth moduli space
+with `χ = −2` can supply the count `3`** — the supplier must be genuinely
+singular, with at least two Behrend strata, one of them odd·odd. This excludes
+the entire "smooth moduli + (signed) Euler characteristic" family of attempts,
+which is the shape every QOU-internal route has taken so far (the Wedderburn /
+Springer graded Euler characteristic is exactly such an unweighted count) — and it
+explains *structurally* why those routes produce `−2` and not `3`: they have no
+mechanism to be odd.
+
+The invariant is **parity**, and it is named — per the AGENTS.md (a)/(b) rule this
+licenses the exclusion as scope-**(b)** for the constant-weight class, not merely
+a failed numerical probe.
+
+## Honest scope (STRICT)
+
+This **characterizes** the missing input; it does **not** supply it, and it does
+**not** close `bwse`, `A_ω`, or `Δ_λ`. It is also known in advance (lever map,
+#4601, derive-then-check) that **closing the DT count would not close binding** —
+the derived `Δ_λ` fragment leaves the deuteron at `B(D) = 0.380 MeV` (−82.9 %). So
+this is deliberately bounded work: a prune, not a closure claim. The `χ = −2` and
+`count = 3` inputs are the corpus's own established values, carried here as
+explicit hypotheses rather than re-derived. No fit; nothing wired; L2 unchanged.
+
+Mathlib-free (`Init` only) — so it is machine-verified independently of the
+Mathlib olean cache.
+
+-- Ref: [manuscript] docs/audits/2026-08-02-stokes-dt-bridge-moduli-gap-unification.md
+-/
+import Init.Data.Int.Basic
+import Init.Data.List.Basic
+import Init.Omega
+
+namespace QOU.QBeta.DTBehrendParityObstruction
+
+/-- A Behrend stratification, as the list of its strata: each carries the Behrend
+function's constant value `n` on that stratum, paired with the stratum's Euler
+characteristic `χ`. -/
+abbrev Strata := List (Int × Int)
+
+/-- The unweighted Euler characteristic `χ(M) = Σ χ_i` (Behrend strata partition
+the moduli, and `χ` is motivic/additive). -/
+def eulerTotal : Strata → Int
+  | [] => 0
+  | p :: t => p.2 + eulerTotal t
+
+/-- The Behrend-weighted Donaldson–Thomas count `DT = Σ_i n_i · χ_i`. -/
+def dtCount : Strata → Int
+  | [] => 0
+  | p :: t => p.1 * p.2 + dtCount t
+
+/-- **Constant Behrend weight cannot yield the count `3` over `χ = −2`.**
+If the Behrend function is constant with value `c`, the count is `c · χ = c · (−2)`,
+which is even for every integer `c`; the target `3` is odd. This is the parity
+obstruction, stated at its source. -/
+theorem no_constant_weight_yields_three (c : Int) : c * (-2) ≠ 3 := by
+  omega
+
+/-- The weighted count of a single-stratum (i.e. constant-weight) stratification is
+`n · χ`. -/
+theorem dtCount_single (n χ : Int) : dtCount [(n, χ)] = n * χ := by
+  simp [dtCount]
+
+/-- The Euler characteristic of a single-stratum stratification is its `χ`. -/
+theorem eulerTotal_single (n χ : Int) : eulerTotal [(n, χ)] = χ := by
+  simp [eulerTotal]
+
+/-- **At least two Behrend strata.** A stratification with total Euler
+characteristic `−2` and Behrend-weighted count `3` cannot have fewer than two
+strata: the empty one has `χ = 0 ≠ −2`, and a single stratum forces the even
+`n · (−2) = 3`. Hence the supplier of the knot DT count is genuinely singular
+(a smooth moduli has the constant Behrend function `(−1)^dim`). -/
+theorem at_least_two_strata (S : Strata)
+    (hE : eulerTotal S = -2) (hD : dtCount S = 3) : 2 ≤ S.length := by
+  match S with
+  | [] => simp [eulerTotal] at hE
+  | [(n, χ)] =>
+      rw [eulerTotal_single] at hE
+      rw [dtCount_single, hE] at hD
+      exact absurd hD (no_constant_weight_yields_three n)
+  | _ :: _ :: _ => simp [List.length]
+
+/-- If every stratum contributes an even weighted term, the whole count is even. -/
+theorem dtCount_even_of_all_even (S : Strata)
+    (h : ∀ p ∈ S, (p.1 * p.2) % 2 = 0) : dtCount S % 2 = 0 := by
+  induction S with
+  | nil => simp [dtCount]
+  | cons a t ih =>
+      have ha : (a.1 * a.2) % 2 = 0 := h a (List.Mem.head _)
+      have ht : dtCount t % 2 = 0 := ih fun p hp => h p (List.Mem.tail _ hp)
+      simp only [dtCount]
+      omega
+
+/-- **Some stratum must be odd·odd.** Sharpening the parity obstruction, in
+contrapositive (constructive) form: if *every* stratum contributes an even weighted
+term `n_i · χ_i`, the count cannot be `3`. Equivalently, any construction supplying
+the knot DT count must exhibit a stratum carrying **both** an odd Behrend value and
+an odd Euler characteristic. -/
+theorem odd_count_needs_odd_stratum (S : Strata)
+    (hall : ∀ p ∈ S, (p.1 * p.2) % 2 = 0) : dtCount S ≠ 3 := by
+  have h := dtCount_even_of_all_even S hall
+  omega
+
+end QOU.QBeta.DTBehrendParityObstruction
