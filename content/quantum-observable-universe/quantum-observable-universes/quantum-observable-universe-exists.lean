@@ -25,8 +25,12 @@ namespace QOU
     witnessed by Rep(SU_q(2)) equipped with Haar integration, vanishing
     Chern classes on the adjoint, and the quantum determinant volume
     constraint. -/
-axiom QuantumObservableUniverse.exists_instance (k : Type*) [Field k] :
-    Nonempty (QuantumObservableUniverse k)
-
+theorem QuantumObservableUniverse.exists_instance (k : Type*) [Field k] :
+    Nonempty (QuantumObservableUniverse k) := by
+  -- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IX (quantum SU(2));
+  -- the constructive witness Rep(U_q(g)) with Haar Frobenius form is the
+  -- content of prop:quantum-observable-universe-exists. Pending the full
+  -- Lean construction of the Drinfeld–Jimbo representation category.
+  sorry
 
 end QOU

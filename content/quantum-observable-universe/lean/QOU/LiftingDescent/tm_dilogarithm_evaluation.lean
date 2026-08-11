@@ -83,9 +83,9 @@ theorem phi_q_integral_representation (w : ℝ) :
     the Faddeev–Kashaev evaluation (neither in Mathlib). -/
 -- Ref: [faddeev_kashaev1994] https://doi.org/10.1142/S0217732394002446
 -- Ref: [yekutieli2015] https://doi.org/10.1142/9537
-axiom tm_divisor_chart_evaluation :
-    ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t
-
+theorem tm_divisor_chart_evaluation :
+    ∀ i : ℕ, MI i = ∫ t in (0 : ℝ)..(z i), lnq (1 + t) / t :=
+  sorry
 
 /-- **Exceptional-divisor summand = quantum dilogarithm**
     ([`lem:topological-mass-dilogarithm`]).
