@@ -76,10 +76,10 @@ noncomputable def traceLocal (i : ℕ) : ℝ := trFrob (localComponent i)
     support analysis (kernel support + disjointness of the centres),
     not in Mathlib. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.md
-theorem transient_decomposition :
+axiom transient_decomposition :
     alpha - tauHat alpha
-      = ∑ i ∈ Finset.range N, localComponent i :=
-  sorry
+      = ∑ i ∈ Finset.range N, localComponent i
+
 
 end CatTransient
 

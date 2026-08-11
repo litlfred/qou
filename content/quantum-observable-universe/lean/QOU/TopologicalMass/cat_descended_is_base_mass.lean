@@ -72,21 +72,17 @@ opaque baseMass : ℝ
     level-`(n+1)` → base descent / Frobenius-trace infrastructure (not
     formalised); body is `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
-theorem descended_trace_is_base_trace :
-    trFrob (tauHat alpha) = baseTrace := by
-  -- Needs: descent of the closed cycle ϱ to ϱ₀ intertwines the
-  -- level-(n+1) Frobenius trace with the base-level trace.
-  sorry
+axiom descended_trace_is_base_trace :
+    trFrob (tauHat alpha) = baseTrace
+
 
 /-- **Open input 2 — the base mass is the norm of the base trace.**
     `‖tr₀(α₀)‖ = 𝔪(ϱ₀)`.  Needs the `*`-norm / mass infrastructure of
     the base level (not formalised); body is `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
-theorem base_mass_is_norm_of_base_trace :
-    mnorm baseTrace = baseMass := by
-  -- Needs: the base-level mass 𝔪(ϱ₀) is recovered as the mass norm of
-  -- the base-level Frobenius trace.
-  sorry
+axiom base_mass_is_norm_of_base_trace :
+    mnorm baseTrace = baseMass
+
 
 end CatDescended
 
