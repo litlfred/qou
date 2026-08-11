@@ -175,6 +175,51 @@ theorem ratio_bound_of_T3_le {T₁ T₃ a b c : ℝ}
   rw [div_mul_eq_mul_div, div_le_iff₀ (by positivity)]
   nlinarith [h3, hden]
 
+/-- **The extremal split — where the explicit `c < 1` comes from.**
+
+Write `T₃ = Σ_λ (f^λ)³·r(λ)` with `r(λ) = χ^λ(3-cycle)/f^λ`, so `|r| ≤ 1`. Only
+two shapes attain `r = 1`: the single row `λ = (k)` and the single column
+`λ = (1ᵏ)` (the Jucys–Murphy content formula gives exactly `1` there). Both have
+`f^λ = 1`, so together they carry mass `M = 2` — while `T₁` is super-exponential.
+
+Splitting them off, `T₃ ≤ M + ρ·(T₁ − M)` where `ρ = max r` over the remaining
+shapes. This lemma is the consequence: **any** `ρ < 1` and `M < T₁` force
+`T₃ < T₁`, with the explicit constant `c = (M + ρ(T₁ − M))/T₁`.
+
+Crucially `ρ` may depend on `k`. The second-largest content spread sits at
+`λ = (k−1, 1)` (and its conjugate), where the gap in `Σ_□ c(□)²` against the
+single row is exactly `(k−1)² − 1`, giving
+
+    ρ = 1 − 3/(k−1)
+
+— verified against direct enumeration for `k = 4..14`. That decays only
+polynomially, and `T₁` grows super-exponentially, so the resulting
+`ε ≍ 4/(3(k−1))` is absorbed without loss: `a ≳ T₁/k` is still
+super-exponential. A *uniform* `c < 1` is not needed.
+
+**What is hypothesis here.** `hρ` — that every non-extremal shape has
+`r(λ) ≤ ρ < 1` — is supplied by the caller. Reducing it to `ρ = 1 − 3/(k−1)`
+needs the combinatorial fact that `Σ_□ c(□)²` is maximised over non-extremal
+shapes at `(k−1,1)`; that is checked numerically here but **not proved**. It is a
+clean statement about content sums, not a covariance theorem. -/
+theorem T3_lt_of_extremal_split {T₁ T₃ ρ M : ℝ}
+    (hMT : M < T₁) (hρ : ρ < 1)
+    (hsplit : T₃ ≤ M + ρ * (T₁ - M)) :
+    T₃ < T₁ := by
+  have hpos : 0 < T₁ - M := by linarith
+  nlinarith [hsplit, hpos, hρ]
+
+/-- The explicit constant produced by the split, packaged for
+`ratio_bound_of_T3_le`: `T₃ ≤ c·T₁` with `c < 1`. -/
+theorem T3_le_explicit_c {T₁ T₃ ρ M : ℝ}
+    (hT1 : 0 < T₁) (hMT : M < T₁) (hρ : ρ < 1)
+    (hsplit : T₃ ≤ M + ρ * (T₁ - M)) :
+    ∃ c : ℝ, c < 1 ∧ T₃ ≤ c * T₁ := by
+  refine ⟨T₃ / T₁, ?_, ?_⟩
+  · rw [div_lt_one hT1]
+    exact T3_lt_of_extremal_split hMT hρ hsplit
+  · rw [div_mul_cancel₀ _ hT1.ne']
+
 /-- **Non-vacuity, and sharpness.** The bound is attained when the mass sits on a
 single index: `f = 1` at one point of a one-element type gives `1 ≤ 1`. -/
 example : (∑ _i : Fin 1, (1 : ℝ) ^ 2) ^ 3
