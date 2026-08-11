@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:03:53.517313+00:00",
-  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
+  "computedAt": "2026-08-11T11:02:39.299498+00:00",
+  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
   "assertions": [
     {
       "name": "paper_and_clean_forms_agree",
@@ -14,15 +14,15 @@
     },
     {
       "name": "sum_y_lambda_chi_lambda_diff_matches_tau_M",
-      "computed": 2.926040504049751e-09,
+      "computed": 0.015943095354596763,
       "expected": 0,
-      "passed": true,
+      "passed": false,
       "tolerance": 1e-07,
       "source": "Σ y_λ · χ_λ(β_n - β_p) = τ_M(β_n - β_p) at q_0"
     }
   ],
-  "allPassed": true,
-  "durationMs": 110,
+  "allPassed": false,
+  "durationMs": 89,
   "computation": "qbeta-per-block-paper-closed-forms",
   "scriptFile": "qbeta_per_block_paper_closed_forms.py",
   "scriptHash": "be96cda61a46",
@@ -60,11 +60,11 @@
       "(1,1,1)": "-0.17153865926605784593979774906009395759912865147583"
     },
     "y_lambda_at_q_0": {
-      "(3)": "0.41539579536061340131043751972541446062496615551884",
-      "(2,1)": "0.28092963103101970777815130637822107959502749332953",
-      "(1,1,1)": "0.022744942577347183133259867518143380184978857822104"
+      "(3)": "0.50540422650393080318755870324047227566035119774981",
+      "(2,1)": "0.2472978867480345984062206483797638621698244011251",
+      "(1,1,1)": "0.0"
     },
-    "tau_M_diff_at_q_0": "-0.1420729329260404902223051089230163863829130882707228108199666561794711",
+    "tau_M_diff_at_q_0": "-0.1580160253545967470056225422033879205358618620894635268731828134256788",
     "taylor_coefficients_per_block_ε_order": {
       "(3)": [
         "0",

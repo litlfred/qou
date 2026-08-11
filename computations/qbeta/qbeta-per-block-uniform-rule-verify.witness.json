@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:03:53.839017+00:00",
-  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
+  "computedAt": "2026-08-11T11:02:39.614914+00:00",
+  "commitSha": "3e62ef7b0d3910e2bd9e8034188d5ba7d908c0c0",
   "assertions": [
     {
       "name": "rule_normalised_y_lambda_holds",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "qbeta-per-block-uniform-rule-verify",
   "scriptFile": "qbeta_per_block_uniform_rule_verify.py",
   "scriptHash": "dbac5307d896",
@@ -40,53 +40,53 @@
   },
   "data": {
     "y_lambda_at_q0": {
-      "(3)": 0.4153957953606134,
-      "(2,1)": 0.2809296310310197,
-      "(1,1,1)": 0.022744942577347185
+      "(3)": 0.5054042265039308,
+      "(2,1)": 0.2472978867480346,
+      "(1,1,1)": 0.0
     },
-    "y_lambda_sum_at_q0": 0.7190703689689802,
-    "y_lambda_sum_deficit_vs_q1": 0.2809296310310197,
+    "y_lambda_sum_at_q0": 0.7527021132519655,
+    "y_lambda_sum_deficit_vs_q1": 0.2472978867480346,
     "per_rung_results": {
       "c_2": {
         "empirical": -1.0,
-        "sum_y_uniform": -0.7190703689689802,
-        "diff": 0.2809296310310197,
-        "rel_err": 0.2809296310310197,
+        "sum_y_uniform": -0.7527021132519655,
+        "diff": 0.2472978867480346,
+        "rel_err": 0.2472978867480346,
         "match": false
       },
       "c_3": {
         "empirical": -2.0,
-        "sum_y_uniform": -1.4381407379379605,
-        "diff": 0.5618592620620394,
-        "rel_err": 0.2809296310310197,
+        "sum_y_uniform": -1.505404226503931,
+        "diff": 0.4945957734960692,
+        "rel_err": 0.2472978867480346,
         "match": false
       },
       "c_4": {
         "empirical": -1.143537,
-        "sum_y_uniform": -0.8222835725196808,
-        "diff": 0.3212534274803192,
-        "rel_err": 0.2809296310310197,
+        "sum_y_uniform": -0.8607427164818128,
+        "diff": 0.28279428351818725,
+        "rel_err": 0.2472978867480346,
         "match": false
       },
       "c_5": {
         "empirical": -1.222913,
-        "sum_y_uniform": -0.8793605021269626,
-        "diff": 0.3435524978730374,
-        "rel_err": 0.2809296310310197,
+        "sum_y_uniform": -0.9204891994233008,
+        "diff": 0.3024238005766992,
+        "rel_err": 0.2472978867480346,
         "match": false
       },
       "c_6": {
         "empirical": 3.497562,
-        "sum_y_uniform": 2.5149931978318847,
-        "diff": -0.9825688021681154,
-        "rel_err": 0.2809296310310197,
+        "sum_y_uniform": 2.6326223086297706,
+        "diff": -0.8649396913702294,
+        "rel_err": 0.2472978867480346,
         "match": false
       },
       "c_7": {
         "empirical": 57.149243,
-        "sum_y_uniform": 41.09432725030791,
-        "diff": -16.054915749692086,
-        "rel_err": 0.2809296310310197,
+        "sum_y_uniform": 43.01635597685009,
+        "diff": -14.132887023149909,
+        "rel_err": 0.2472978867480346,
         "match": false
       }
     },
