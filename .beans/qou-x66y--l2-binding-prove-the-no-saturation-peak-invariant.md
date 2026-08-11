@@ -97,3 +97,37 @@ a gap in the middle. What closes it is an *explicit-constant* bound valid for al
 k ≥ some k₀ small enough to meet the finite check — which is why the
 `ε`-weakening above matters: it is far easier to get a crude explicit constant
 than a sharp asymptotic.
+
+## CORRECTION (2026-08-11) — the lit recommendation was wrong; the corpus already reduced (D)
+
+I recommended pulling Morales–Pak–Panova for step (D). **Not needed.**
+`docs/audits/2026-07-18-deltalambda-D-reduction-content-covariance.md` already
+reduces (D) rigorously, and more cleanly than the skew-asymptotics route:
+
+    f^{λ/(2,1)} = (f^λ − χ₃)/3 ,   f^{λ/(3)} = (f^λ + 3χ₂ + 2χ₃)/6
+    T₂ = 0 exactly (conjugation)
+    (D) ⟺ 4·T₃ ≤ T₁ ⟸ T₃ ≤ 0 ⟺ Cov_Planch(f^λ, Σ_□c(□)²) ≤ 0
+
+via `S_k` characters + the Jucys–Murphy content formula. Every step an identity.
+
+**Independent cross-validation.** Recomputing `ε = 2(1−c)/(1+2c)` from the
+*character* route reproduces the ratios I had measured by *direct skew-tableau*
+enumeration, digit for digit: 4.0000, 2.2000, 2.1702, 2.2070, 2.1115, 2.0697,
+2.0649, 2.0703, 2.0578, 2.0435 (k=3..12). Two independent routes agreeing
+confirms the audit's identities.
+
+**And the covariance inequality is more than is needed.** Combining the audit's
+reduction with `cube_moment_le_of_ratio_bound`: any `c < 1` with `T₃ ≤ c·T₁`
+gives `ε = 2(1−c)/(1+2c) > 0`, which is all the growth conclusion consumes.
+Bridge proved sorry-free as `ratio_bound_of_T3_le`.
+
+Slack: measured `T₃/T₁` runs **−0.200 → −0.007** (k=3..12) against a requirement
+of merely `< 1`. Two orders of magnitude at k=12.
+
+**What is actually left.** The trivial character bound `|χ^λ(3-cycle)| ≤ f^λ`
+already gives `T₃ ≤ T₁`; only a *quantitative* gap below 1 is missing. The
+extremal shapes cannot obstruct it: `λ=(k)` and `λ=(1ᵏ)` are the only ones
+attaining ratio 1 (checked: the JM formula gives exactly 1 at `λ=(k)`), and they
+have `f^λ = 1`, contributing `±1` against a super-exponential `T₁`. So the
+remaining step is a finite/extremal estimate, not a covariance theorem and not a
+literature import.
