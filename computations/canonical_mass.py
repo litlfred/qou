@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """Canonical nucleon / atom mass — the SINGLE entry point (facade).
 
-Owner ruling 2026-06-24: there is ONE correct absolute nucleon mass, the
+ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean qou-exam):
+    The framework no longer claims/targets an ABSOLUTE nucleon/atom mass in MeV as
+    a prediction. This facade stays the single entry point, but its MeV outputs are
+    `m_e`-scaled REALIZATIONS of the dimensionless ratio (m_p/m_e, m_n/m_e) — a
+    rendering for anyone who wants MeV, NOT a framework prediction. The predictive
+    content is the ratio; do not report `m_p ≈ 938.27 MeV` as a prediction.
+    Ruling: docs/audits/2026-08-11-excise-absolute-mass-notion.md. (No compute change.)
+
+Owner ruling 2026-06-24: there is ONE correct [now: m_e-scaled] nucleon mass, the
 **muon-anchored Hecke energy** (the production substrate-identity):
 
     m_p = dim V_{(2,1)} · (m_μ · F_Bor − |S_3| · m_e) = 2·(m_μ·F_Bor − 6·m_e)

@@ -18,3 +18,24 @@ Parent qou-exam. After the ruling audit + precision-goals anchor edit (PR #4977)
  4. content/ mass-theory blocks stating absolute m_p/m_n as predictions -> reframe to the ratio.
     Audit: grep -rl "938.27\|absolute mass" content/.
 Candidate for agent dispatch (mechanical, parallelizable). Each item its own commit.
+
+---
+2026-08-11 PROGRESS (branch claude/excise-abs-mass-sweep-2026-08-11): framing docs DONE —
+AGENTS.md mass-banner excision banner; computations/canonical_mass.py docstring (m_e-scaled ratio
+realization, no compute change); docs/canonical-mass-formula-guardrail.md banner; docs/canonical-
+derivation-cheat-sheet.md banner. REMAINING = the 15 math-bearing content .md blocks presenting
+absolute m_p/m_n in MeV as a prediction (delicate — render-QA gated per AGENTS §Render-QA gate;
+reframe "prediction 938.27 MeV" -> the ratio m_p/m_e, keep the number as an m_e-scaled rendering).
+Files:
+  observations/terminal-resolution-cz.md, observations/substrate-consistency-window-table3-data.md,
+  observations/mass-comparison-table-table2-data.md, observations/observations-intro.md,
+  appendix-mass-binding-algorithms/mba-step09a-mass-identity.md,
+  appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md,
+  mass-theory/six-term-per-derivation-weights-table2-data.md,
+  mass-theory/partition-sum-proton-residual-table4-data.md,
+  mass-theory/six-term-per-derivation-weights-table3-data.md, mass-theory/terminal-resolution.md,
+  mass-theory/h3-markov-wenzl-weights-context.md,
+  appendix-qvalues/proton-mass-substrate-identity-derivation.md,
+  mass-endomorphism/atomic-mass-gb-nf-interpretation.md, mass-endomorphism/mass-endomorphism-conjecture.md,
+  mass-endomorphism/recomputed-low-isotope-mass-table-table2-data.md.
+This content sub-sweep is agent-dispatchable (mechanical reframe + render-QA per block).
