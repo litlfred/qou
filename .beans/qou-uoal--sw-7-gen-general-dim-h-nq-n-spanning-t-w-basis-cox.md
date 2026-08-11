@@ -1,11 +1,11 @@
 ---
 # qou-uoal
 title: 'SW-7-gen: general dim H_n(q) ≤ n! (spanning, T_w basis) — Coxeter/Matsumoto infra'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-11T00:33:45Z
-updated_at: 2026-08-11T00:50:15Z
+updated_at: 2026-08-11T01:06:26Z
 parent: qou-59vq
 ---
 
@@ -27,3 +27,15 @@ The lower bound dim ≥ n! (independence) needs ALL irreps = general Hoefsmit (q
 ## Mathlib API footing (lean-direct probe, 2026-08-11)
 PRESENT in Mathlib.GroupTheory.Coxeter.{Length,Inversion}: CoxeterSystem.wordProd (List B → W), .length (W → ℕ), .IsReduced, .exists_reduced_word (∀ w, ∃ reduced ω, w = wordProd ω). So the reduced-word/length machinery EXISTS given a CoxeterSystem instance.
 MISSING: (a) the symmetric group Equiv.Perm (Fin n) wired as a CoxeterSystem instance (not found — likely must be built or use CoxeterMatrix Aₙ + the standard-gen isomorphism); (b) repo-side: a map Coxeter-word → Hecke element (product of σ's) + the span-closure induction on length (T_s·T_w = T_{sw} if l↑ else (q-q⁻¹)T_w + T_{sw}) — the general form of HeckeDim3.gen_mul_mem's 12 concrete reductions. NOTE: the SPANNING bound (dim≤n!) does NOT need Matsumoto/well-definedness — only that ≤|W| generator-products span. Matsumoto is needed only for the exact T_w BASIS (dim=n! both ways).
+
+
+
+## Landed on PR #4978 (2026-08-11, sorry-free, generic [CommRing K])
+- heckeIncl : Hecke K q qi n →ₐ[K] Hecke K q qi (n+1) (σ_i↦σ_i, Fin.castSucc) + heckeIncl_σ — the tower inclusion (HeckeInclusion.lean).
+- adjoin_range_σ_eq_top : Algebra.adjoin K (range σ) = ⊤ for all n (general form of HeckeDim3.adjoin_gens_eq_top).
+
+## Remaining CORE (multi-day, next agent picks up):
+1. Coset reps r_k = σ_{n-1}σ_{n-2}⋯σ_k (k=0..n-1) + r_n=1 ⇒ n+1 elements, as a Fin (n+1) → Hecke family.
+2. **Coset-spanning lemma** span_K (⋃_r range(heckeIncl)·r) = ⊤ — the crux. Right-mult-closure of the H_{n-1}-module span of {r_k} under each σ_i, via the quadratic + braid 'bubble' argument (moving σ_{n-1} rightward). General form of HeckeDim3.gen_mul_mem.
+3. finrank recursion: finrank H_n ≤ (n+1)·finrank H_{n-1} (spanning set = {incl(b)·r_k : b∈basis H_{n-1}, k}) ⇒ finrank H_n(q) ≤ (n+1)! by induction (base n=0: H_0 = K, finrank 1).
+Note (n+1)! because Hecke ... n = classical H_{n+1} (n generators, n+1 strands). Lower bound dim≥(n+1)! needs general Hoefsmit (qou-im9l).
