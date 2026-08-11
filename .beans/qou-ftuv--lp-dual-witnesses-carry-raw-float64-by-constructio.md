@@ -1,11 +1,11 @@
 ---
 # qou-ftuv
 title: LP-dual witnesses carry raw float64 by construction — draining needs the shared contract changed
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T09:13:32Z
-updated_at: 2026-08-11T00:15:38Z
+updated_at: 2026-08-11T00:36:22Z
 ---
 
 
@@ -163,3 +163,38 @@ companions the new rule can shadow. Blockers to weigh first:
 
 Route 3 (a named carve-out) remains available and would close the last red
 without touching the solver.
+
+
+
+## 2026-08-11 — route 3 also taken. GATE GREEN. Bean closed.
+
+Owner took route 3 after route 2's audit half landed. Together:
+`precision-gates.sh` reports **"All blocking precision gates green"**, exit 0.
+
+    a-K-via-lp-dual-full   395 -> 54     REGRESSED 1 -> 0
+    total raw float64  540,487 -> 536,570
+    carve-out excused        3,763 fields in 43 witnesses
+
+**Blast radius, stated plainly: 43 witnesses, not one.** The carve-out keys on
+field names (`x_star y_star y0_star u_lambda_star primal_obj dual_obj
+duality_gap`), so every LP/SDP witness is affected. Inherent to route 3; it is
+the number to weigh the decision by.
+
+**Narrow, and measured before writing.** In a-K those seven fields are 801 of
+867 floats. The other ~66 are the probe's own results — not solver output,
+still counted, still wanting a producer-level fix. A self-test case pins that
+discrimination so a later widening breaks the test.
+
+**Baseline regenerated**, with justification, because `--rebaseline` is
+normally forbidden: it was NOT used to go green (the gate was already green),
+but to close the 3,764-field headroom the reclassification opened, in which a
+real regression could have grown silently — a-K alone could have gone 54 → 395
+untripped. Totals moved down, the documented precondition. Now 1572 files /
+536,570 fields, zero slack.
+
+**Not taken, and no longer needed for the gate:** route 2's solver half
+(building `clarabel-operator-selection-lp` and moving a-K onto an MPFR backend
+its own docstring calls "NOT yet cross-checked against the scipy backend to
+1e-25"). Left undone deliberately. If it is ever wanted, the shadow rule from
+route 2 is already in place to recognise the `*_str` companions it would
+produce.
