@@ -9,7 +9,7 @@
   },
   "source_hashes": {
     "md": "6c6868d1e428",
-    "ts": "666d677a69f7",
+    "ts": "0c513d3fc003",
     "lean": "ceeb4c520e27"
   },
   "criteria": {
@@ -587,19 +587,20 @@
       {
         "field_hash": {
           "md": "6c6868d1e428",
-          "ts": "666d677a69f7",
-          "lean": "ceeb4c520e27"
+          "ts": "0c513d3fc003",
+          "lean": "ceeb4c520e27",
+          "graph": "ca27e64f83a9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "ebf2e2e1821c",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-11T10:14:36.840Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c"
       }
     ],
     "detangler-section-band": [
@@ -738,19 +739,20 @@
       {
         "field_hash": {
           "md": "6c6868d1e428",
-          "ts": "666d677a69f7",
-          "lean": "ceeb4c520e27"
+          "ts": "0c513d3fc003",
+          "lean": "ceeb4c520e27",
+          "graph": "ca27e64f83a9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "39dfc0abf653",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "e6e7d97bee66",
+          "script_commit_sha": "1690d08d7dc34218ca9f4a022a7b466929dafea8"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
+        "reviewed_at": "2026-08-11T10:14:36.840Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c"
       }
     ],
     "bib-cite-resolves": [
@@ -1933,7 +1935,7 @@
       {
         "field_hash": {
           "md": "6c6868d1e428",
-          "ts": "666d677a69f7",
+          "ts": "0c513d3fc003",
           "lean": "ceeb4c520e27"
         },
         "result": "pass",
@@ -1945,10 +1947,10 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:01:04.690Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-11T10:14:36.840Z",
+        "reviewed_sha": "ae21c3f964be03f77296e17dc663926a29aef37c",
         "metrics": {
-          "uses_count": 1,
+          "uses_count": 3,
           "broken_edges": 0,
           "redundant_edges": 0
         }
@@ -2002,5 +2004,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-11T10:14:36.840Z"
 }
