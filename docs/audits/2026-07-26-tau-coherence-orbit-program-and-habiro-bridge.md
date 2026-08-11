@@ -803,3 +803,44 @@ operational: a fitted c₃-shape is refuted by arithmetic alone, no
 anchor inversion anywhere. VALUE-level c₃ verdicts (near-match,
 2.98% swing — SETTLED 2026-05-31) are untouched; this is
 element-level arithmetic.
+
+## Addendum 20 (2026-08-11) — xx9f third narrowing: the Nahm-argument E-factor is also excluded on digits; the Nahm saddle IS z₁; the (1+x)^a structure exact (PR #4968)
+
+`gswz_287_nahm_efactor_probe.py`, **6/6**, exact (Z/5⁸)[α] arithmetic.
+This executes the surviving route from the second narrowing ("the
+E-factor's tail arguments are most plausibly the Nahm z-data of the
+ψ_{0,z,1}³ bracket in (281)").
+
+**New exact positives:**
+
+- **The 5₂ Nahm saddle is the shape z₁.** The cube-potential saddle
+  equation (1−z)³ = z² (disc −23, the same cubic field) has K-rational
+  root exactly **z = z₁ = 1−α²** — verified in the ring. So the (281)
+  ψ_{0,z,1} parameter is the tetrahedron shape itself, mirroring 4₁'s
+  ψ_{0,ζ₆,1} (ζ₆ = the 4₁ shape).
+- **The mismatch has the exact (1+x)^a structure at h².** With
+  a = e₁ from the reconstruction printed = (1+e₁x+e₂x²+e₃x³)·computed,
+  the identity e₂ = a(a−1)/2 holds on **all** available digits — an
+  independent re-derivation of the Addendum-16 x²-confirmation, i.e.
+  the B₃ = 0 E-factor signature.
+- **The h³ residual pinned:** μ₃ = e₃ − a(a−1)(a−2)/6 has digits
+  (4, 0, 3)·(const, α, α²) mod 5 — nonzero, so the normalization is a
+  genuine series (not a single (1+x)^a power).
+
+**The test and its outcome (scope-(a)):** 84 zero-free-parameter
+candidates C₁ = ±(n₁Li₀(ζ₆ᵗz₁) + n₂Li₀(ζ₆ᵗz₂)) (t ∈ 0..5, structural
+weights, both signs; ζ₆ = the GZ Z-shift e(−5/6) at c = 1), each
+implying a = −C₁/12 — **none matches the e₁ digits**. A planted-
+candidate sensitivity control (synthetic mismatch from weights (2,1))
+is found *exactly* by the same scanner, so the empty result is a
+genuine exclusion, not a scanner artifact. Had any candidate survived
+h¹, it would have faced −C₃ = 720μ₃ (same weights, Li₋₂) at h³.
+
+**Where xx9f stands (three argument-classes now excluded on digits):**
+(275) roots of unity under uniform Bernoulli shift; parallel 5-unit
+scalars; Nahm z-arguments under structural Li₀ weights. Remaining:
+(a) the f₅ fibre reading of the printed subscript (owner's pdf
+eyeball pending: p. 57 (287) f-subscript; p. 56 (281)→(282) factor);
+(b) Bernoulli-polynomial-weighted mixed arguments (GZ (8.7) at c > 1)
+— which needs unprinted higher-fibre data to constrain without
+fitting. Bean `qou-xx9f` reopened accordingly.
