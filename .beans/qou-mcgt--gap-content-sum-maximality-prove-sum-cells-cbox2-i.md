@@ -1,10 +1,11 @@
 ---
 # qou-mcgt
 title: 'GAP: content-sum maximality — prove Sum_cells c(box)^2 is maximised over non-extremal partitions of k at (k-1,1) (closes step D of the w_std tower growth bound)'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-11T11:11:58Z
-updated_at: 2026-08-11T11:11:58Z
+updated_at: 2026-08-11T11:26:58Z
 ---
 
 
@@ -138,3 +139,58 @@ literature home is not the same as a cited result.
 - If the literature supplies it, (D) closes by **citation** rather than by a
   multi-session Mathlib partition build — and only the weaker polynomial-margin
   version is even needed.
+
+## CLOSED BY CITATION (2026-08-11) — owner supplied the papers (commit 2a697a9b)
+
+Read `uploads/2607.29018v1.pdf` (Lv–Zhou, *The Aldous property for normal Cayley
+graphs on symmetric groups*). The conjecture is a known theorem, twice over:
+
+1. **Li–Xia–Zhou** (quoted in Lv–Zhou §1.1): for a **single conjugacy class** `S`,
+   `Cay(S_n,S)` has the Aldous property **iff** `2 ≤ |supp(σ)| ≤ n−2` for each
+   `σ ∈ S`. The 3-cycles are a single class with `|supp| = 3`, so this holds for
+   `n ≥ 5`. This is our case exactly.
+2. **Lv–Zhou Theorem 1.3(a)**: for a normal set `S` with `2 ≤ |supp(σ)| ≤ n−2`,
+   if `E(S) = ∅` **or `O(S) = ∅`** then `Cay(S_n,S)` has the Aldous property.
+   Every 3-cycle is **even**, so `O(S) = ∅`. Independent route, same conclusion.
+
+**And the exact value falls out.** Lv–Zhou Corollary 1.5: for `S ⊆ A_n` with
+`2 ≤ |supp| ≤ n−2`,
+
+    λ₂ = ( Σ_{σ∈S} |fix(σ)| − |S| ) / (n−1).
+
+For the 3-cycle class (`|S| = n(n−1)(n−2)/3`, `fix(σ) = n−3`):
+
+    λ₂/λ₁ = (n−4)/(n−1) = 1 − 3/(n−1)  =  ρ.
+
+Verified against the formula at n = 5,6,7,10,13,20,24,50 — exact match, and
+against direct enumeration for n ≤ 24.
+
+### Residual caveat (real, do not paper over)
+
+Both results are stated for **sufficiently large n**; neither statement as read
+gives `N` explicitly. Direct enumeration covers `k ≤ 24` with exact agreement, so
+any gap is confined to a window above 24 — but the constant is **not pinned**.
+Accordingly `hρ` stays an explicit hypothesis in
+`QOU/Mass/CubeMomentLowerBound.lean` rather than being discharged. Someone
+wanting it unconditional should extract `N` from the Lv–Zhou proof (§ following
+Thm 1.3) or from Li–Xia–Zhou [22].
+
+### Consequence for the parent chain (qou-x66y)
+
+| step | status |
+|---|---|
+| (A) branching identity | corpus, exact |
+| (B) Plancherel identity, `T₂ = 0` | corpus, exact |
+| (C) cube-moment bound | Lean sorry-free |
+| (D) transfer | **closed by citation** (mod explicit `N`) |
+| RSK/Burnside `Σ(f^λ)² = k!` | **the only remaining open input** |
+| `TowerGeometricLowerBound` instance | blocked on RSK/Burnside alone |
+
+The corpus's "multi-session Mathlib build" estimate is now **one** lemma, not a
+programme.
+
+Refs:
+- Lv & Zhou, arXiv:2607.29018 — `uploads/2607.29018v1.pdf`
+- Li, Xia & Zhou (2023) — cited as [22] therein; see also arXiv:2302.04022
+  (`uploads/2302.04022v1.pdf`)
+- `uploads/1711.08944v2.pdf` (second largest eigenvalues of some Cayley graphs)
