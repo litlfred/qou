@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-09T11:07:51Z
-updated_at: 2026-08-09T11:07:52Z
+updated_at: 2026-08-10T18:01:04Z
 parent: qou-5b8n
 ---
 
@@ -38,3 +38,62 @@ NEXT HONEST STEP (do NOT skip to wiring B-L):
   instance (PR #4597).
 
 Blocks: assembling Y = B - L, which is the LH half of the eightfold-way open item 2.
+
+
+UPDATE 2026-08-10 — the stated bridge is PROVED IMPOSSIBLE; next step narrowed.
+
+lepton-number-categorical-properties.md offered the state<-transition bridge as a
+Z-grading on the Skein module by smoothing count. That grading CANNOT EXIST:
+the skein relation L+ - L- = (q-q^-1)L_0 is inhomogeneous (LHS grade g, RHS grade
+g+1), and distinct homogeneous components meet only in 0, so both sides vanish.
+Imposing it annihilates every smoothing => L identically 0, the one value it
+cannot take. Proved sorry-free in
+QOU/StandardModel/LeptonNumberGradingObstruction.lean (3 theorems, axioms =
+[propext, Classical.choice, Quot.sound], negative control passes). The hypothesis
+is deliberately weak (disjointness only, NOT full direct-sum), so it cannot be
+evaded by weakening 'grading'. Scope-(b), invariant cited. The .md paragraph is
+corrected in place.
+
+NEXT STEP (narrowed, still open): an inhomogeneous relation is what a FILTRATION
+tolerates -- the skein relation lowers filtration degree by one. That is the
+Vassiliev/finite-type filtration, already in-corpus at QOU/KnotTheory/Vassiliev/
+(finiteTypeSubmodule_mono, IsFiniteType, symbol, MilnorVassilievBridge). Two
+reasons to look there, neither a result: (1) the filtration is by powers of
+(q-q^-1), exactly the coefficient a smoothing carries, so 'smoothing count' and
+'finite-type degree' are plausibly the same counter; (2) mu-bar_123, the B-half
+candidate, is degree-2 Vassiliev -- if L is also a filtration degree then B and L
+live in ONE structure.
+
+So the task is no longer 'find a state->L map' but 'test whether the Vassiliev
+filtration degree supplies one, and whether it returns 0 on a single quark'.
+Caveat 2 from the original bean (no quark carries L in the corpus) is untouched.
+
+
+UPDATE 2 (2026-08-10) — stronger obstruction; my own filtration suggestion was wrong.
+
+(a) CORRECTION to update 1: the Vassiliev filtration grades INVARIANTS
+    (IsFiniteType (m) (v : K -> R); finiteTypeSubmodule : Submodule R (K -> R)),
+    NOT states. It cannot by itself supply the state->L map. That suggestion is
+    withdrawn.
+
+(b) STRONGER RESULT: no function of the UNFRAMED KNOT TYPE can reproduce the
+    corpus L table at all. The table sends nu_e -> unknot (L=+1) and
+    nubar_e -> mirror unknot (L=-1). The unknot is AMPHICHIRAL (bounds a disk,
+    isotopic to its mirror), so those two rows assign +1 and -1 to the SAME knot.
+    Proved in QOU/StandardModel/LeptonNumberCarrierChirality.lean:
+      no_lepton_number_on_amphichiral_carrier  (NO axioms)
+      mirror_must_move_the_carrier             (NO axioms)
+      chiral_carrier_admits_lepton_number      ([propext])
+    The third is the honesty check: the obstruction is EXACTLY amphichirality
+    and nothing more, so this rules out the unknot as neutrino carrier, not the
+    idea. Charged rows unaffected (the trefoil is chiral).
+
+NEXT STEP — exactly two repairs exist:
+  1. give the neutrino a CHIRAL carrier (the unknot cannot work); or
+  2. define L on FRAMED knots -- framing +n vs -n are distinct even over an
+     amphichiral knot, so the mirror acts freely there.
+Route 2 is the interesting one: that framing datum is T(t)
+(def:strand-twist-datum), the SAME object the eightfold-way chapter carries for
+hypercharge. If L needs framing while Y needs a framing-independent second
+invariant, that tension is worth making explicit before either is wired.
+Neither route pursued yet.

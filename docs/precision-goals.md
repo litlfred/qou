@@ -18,6 +18,20 @@
 
 ## TL;DR
 
+> **🛑 Absolute mass EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The
+> framework no longer claims/targets/scores **absolute** nucleon or atomic mass
+> in MeV (m_p, m_n, m_⁴He). Absolute mass = `m_e · (dimensionless ratio)`, and
+> m_e (CAL-1) sets the MeV scale *by fiat* — so the only content is the ratio;
+> reporting m_p in MeV double-counts the calibration. The L2 scorecard below is
+> therefore reframed to the **dimensionless / differential** predictions only
+> (`m_μ/m_e`, `m_K/m_π`, `Q_β`, `Δ_pn`, `B(K)`); the absolute `m_p`/`m_n` rows —
+> perpetual ~400× misses that were only ever met by fitting — are **removed, not
+> carried**. No proved result or compute is deleted; the MeV numbers remain
+> derivable as `m_e × ratio`, they are simply no longer a claim. Full ruling:
+> [`audits/2026-08-11-excise-absolute-mass-notion.md`](audits/2026-08-11-excise-absolute-mass-notion.md).
+> The "N/7 meet" figures below are retained for historical continuity but are
+> **superseded** by the reframed (absolute-mass-free) scorecard.
+
 | Leg | Target | Status |
 |-----|--------|--------|
 | **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) on every observable at substrate q_0 | **CERTIFIED (2026-07-13) — 6/6 production atoms** (p, n, D, T, ³He, ⁴He). `cross_check_trM_1ppb.py` reports `allPassed=True` (`all_atoms_within_1ppQ`, `character_engine_matches_closed_form`); worst closed-form χ-anchor \|Δ\| = **5.6e-50** (proton 9.3e-50, neutron 3.3e-50), no float64 in the hot path. The last gap (⁴He, H₁₂) closed by building `pyhecke-native` from source. See [`audits/2026-07-13-l1-4he-certification-complete.md`](audits/2026-07-13-l1-4he-certification-complete.md). **Supersedes** the 2026-06-17 gap ([`audits/2026-06-17-l1-1ppq-certification-gap.md`](audits/2026-06-17-l1-1ppq-certification-gap.md)): the float64-limited `markov_peel` witness and the Habiro-divergence were replaced by the mpf / native-Rust path. *(The aggregate `onepb-status-dashboard.witness.json`, dated 2026-07-06, is stale and predates this certification.)* |
@@ -195,12 +209,12 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | Observable | role | σ_exp_rel | **100× target** | Current pred error | Status |
 |---|---|---:|---:|---:|---|
 | m_e | CAL-1 anchor | 0.29 ppb | 2.9 ppt | 0 (anchor) | **anchor** ✓ |
-| m_p | **CAL-2 numerical anchor** | 0.31 ppb | 3.1 ppt | 1.35 ppb (de-fitted round-trip) | **misses ~437×** (documented-pin round-trip; the 0.0004 ppb was a dropped fitted tower, 2026-07-04) |
-| m_μ | prediction | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) |
-| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) |
-| m_n | prediction (Path C) | 0.57 ppb | **5.7 ppt** | 2.41 ppb | **misses ~420×** (rides on m_p; +1.35 ppb after the tower drop) |
-| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** |
-| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) |
+| ~~m_p~~ (absolute) | ~~CAL-2 numerical anchor~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; the ratio `m_p/m_e` remains the CAL-2 pin, a calibration *input*, not a scored prediction) |
+| m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 210 ppb | **misses ~964×** (9.5σ μ-p tension) — ratio, retained |
+| Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) — decay Q-value, retained |
+| ~~m_n~~ (absolute) | ~~prediction (Path C)~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; content lives in `Δ_pn` below + the m_e scale) |
+| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** — splitting, retained |
+| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) — ratio, retained |
 
 **Honest summary: 2/7 "meet" — 1 calibration anchor (m_e)
 plus m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`

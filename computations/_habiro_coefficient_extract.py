@@ -70,9 +70,19 @@ from habiro_coefficients_atomic import (  # noqa: E402
     to_u_polynomial,
     cyclotomic_expansion,
     reconstruct,
+    str_in_u,
 )
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as _Q_CANONICAL_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Raise working precision BEFORE any mpf is built from a decimal string.
+# Idempotent, and deliberately at module scope: `mp.mpf("1.10997…")` parsed
+# at the default 15 dps keeps 15 digits and pads the rest from binary64,
+# and that is true of the *compliant-looking* string form too — the timing
+# is what decides, not the argument type (bean qou-j6gb).
+set_compute_dps()
 
 
 # ──────────────────────────────────────────────────────────────────────
@@ -274,7 +284,10 @@ def analyse_atom(label: str, Z: int, N: int, q,
         "tr_M_in_q": str(tr_M_q),
         "shift": int(shift),
         "denom_in_u": denom,
-        "p_in_u": str(p_u),
+        # `u` here IS the canonical symbol, so this is already normalised —
+        # routed through str_in_u anyway so the invariant is stated at every
+        # serialization site rather than held in someone's head (bean qou-0ndb).
+        "p_in_u": str_in_u(p_u, u),
         "deg_p_u": deg_p,
         "habiro_coefficients": coeffs,
         "n_nonzero": n_nonzero,
@@ -437,7 +450,17 @@ def main() -> int:
     print("=" * 80)
 
     q0_float = float(_Q_CANONICAL)
-    q0_mp = mp.mpf(str(_Q_CANONICAL))
+    # `mp.mpf(str(_Q_CANONICAL))` — the previous form — round-tripped q₀
+    # through whatever `mp.dps` happened to be in force. At the default 15
+    # that kept 15 digits, and analyse_atom then raised dps to 50 and did
+    # `sp.Rational(str(q0))`, minting an exact rational from a value whose
+    # last 34 digits were the binary64 expansion:
+    #     1.1099785827513799496557567181298509240150451660156   (was)
+    #     1.1099785827513808075916690956107688798744991218736   (is)
+    # 7.7e-16 relative — small, but it anchored tr_M_at_q0 in all 20
+    # per-atom witnesses. Source the digits from the canonical 50-digit
+    # string instead, so the value cannot depend on ambient dps.
+    q0_mp = mp.mpf(_Q_CANONICAL_STR)
     print(f"q_0 = {q0_float:.16f}")
     print(f"Plan: {len(ATOMS)} canonical atoms")
 

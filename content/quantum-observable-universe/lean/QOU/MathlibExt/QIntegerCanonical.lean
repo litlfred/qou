@@ -395,4 +395,64 @@ theorem qIntGeoCl_eq_closed_form {q : R} (h : q ≠ 1) (n : ℕ) :
 
 end ClassicalExtended
 
+section QFactorial
+
+variable {R : Type*} [Field R]
+
+/-- **The canonical q-factorial** `[n]_q! = ∏_{i=1}^{n} [i]_q`, balanced convention.
+
+Worth having as a named object rather than as ad-hoc bracket products: the corpus
+already carries `[3]_q!` in two load-bearing places — the Borromean observable
+`F_Bor = |tr_M(β_Bor)| · [3]_q! / q³`, and the q-Schur Markov weight of the
+trivial partition, `y_{(3)}(q) := q³ / [3]_q!`.  A bracket product written out
+long-hand hides that identification. -/
+noncomputable def qFactBal (q : R) (n : ℕ) : R :=
+  ∏ i ∈ Finset.range n, qIntBal q (i + 1)
+
+/-- `[1]_q = 1` — away from the singular locus, where it is `0/0`.
+
+The hypothesis is the same `q − q⁻¹ ≠ 0` that `qIntBalClSing` guards, and it is
+not removable: at `q = ±1` (and at `q = 0`, via Lean's `0⁻¹ = 0`) the quotient is
+`0/0 = 0`, so `[1]_q = 0` there and every q-factorial below collapses. -/
+theorem qIntBal_one_of_ne_sing {q : R} (h : q - q⁻¹ ≠ 0) : qIntBal q 1 = 1 := by
+  rw [qIntBal_def, pow_one, pow_one, div_self h]
+
+/-- **`[3]_q! = [2]_q · [3]_q`** — the identity that reframes a two-index product
+as a one-index q-factorial.
+
+This is the whole content of the observation about `conj:magic-shell-coupling-kappa`'s
+normaliser: what reads as "the LR fusion of two magic-shell channels `V_2 ⊗ V_3`"
+is `[3]_q!`, hence `q³ / y_{(3)}(q)` — the inverse Markov weight of the trivial
+partition `(3) ⊢ 3`.  A rule for *two* channel indices has many readings that
+agree at `A = 3`; a q-factorial has *one* index, so the question of how the
+normaliser continues off `A = 3` is correspondingly narrower. -/
+theorem qFactBal_three {q : R} (h : q - q⁻¹ ≠ 0) :
+    qFactBal q 3 = qIntBal q 2 * qIntBal q 3 := by
+  rw [qFactBal, Finset.prod_range_succ, Finset.prod_range_succ,
+    Finset.prod_range_succ, Finset.prod_range_zero, one_mul,
+    qIntBal_one_of_ne_sing h, one_mul]
+
+/-- **The content-shifted Markov weight of the trivial partition** `(n) ⊢ n`:
+`y_{(n)}(q) = qⁿ / [n]_q!`.
+
+The corpus states this identification at `n = 3` in `f-bor-borromean-observable`
+(`y_{(3)}(q) := q³ / [3]_q!`), where it turns the Borromean observable into
+`F_Bor = |tr_M(β_Bor)| / y_{(3)}(q)`.  Named here so the relation to `qFactBal`
+is machine-checked rather than carried in prose. -/
+noncomputable def yTrivial (q : R) (n : ℕ) : R := q ^ n / qFactBal q n
+
+/-- **`[n]_q! = qⁿ / y_{(n)}(q)`** — the q-factorial *is* the inverse trivial
+Markov weight, content-shifted.
+
+Only `q ≠ 0` is needed — the content shift must be invertible.  A first draft also
+carried `[n]_q! ≠ 0`, on the reasoning that the singular locus collapses the
+product; writing the proof showed that hypothesis is not used.  The identity
+survives `[n]_q! = 0`, because Lean's `x / 0 = 0` sends both sides to `0` there. -/
+theorem qFactBal_eq_pow_div_yTrivial {q : R} {n : ℕ} (hq : q ≠ 0) :
+    qFactBal q n = q ^ n / yTrivial q n := by
+  rw [yTrivial, div_div_eq_mul_div, mul_comm, mul_div_assoc,
+    div_self (pow_ne_zero n hq), mul_one]
+
+end QFactorial
+
 end QOU.QInteger

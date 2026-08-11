@@ -1,0 +1,186 @@
+{
+  "schema": "witness/v1",
+  "name": "meson-fluxtube-topology",
+  "description": "Borromean baryon knot is hyperbolic (Vol=2 V_oct); every 2-strand T(2,k) closure has Vol=0. The naive Y-junction -> single-tube (3->2 strand) reduction cannot yield a hyperbolic meson mass-knot. Verification, not fit.",
+  "witness": {
+    "engine": "snappy-3.3.2",
+    "scriptHash": "56515c1c31ba",
+    "scriptCommitSha": "a421bda5d09a89f8fb8304b3ec40e98f148a5b5a",
+    "producer": "computations/meson_fluxtube_topology_probe.py"
+  },
+  "results": [
+    {
+      "name": "Borromean baryon (sigma1 sigma2^-1)^3",
+      "n_strands": 3,
+      "braid_word": [
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "volume": "7.32772475341775212043682811945907288619319499425337707413198",
+      "solution_type": "all tetrahedra positively oriented",
+      "hyperbolic": true
+    },
+    {
+      "name": "(sigma1 sigma2^-1)^6",
+      "n_strands": 3,
+      "braid_word": [
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "volume": "21.6315986791926589697402486963383730138606009577835325648575",
+      "solution_type": "all tetrahedra positively oriented",
+      "hyperbolic": true
+    },
+    {
+      "name": "(sigma1 sigma2^-1)^7",
+      "n_strands": 3,
+      "braid_word": [
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2,
+        1,
+        -2
+      ],
+      "volume": "26.0544015072655349676603681235921943115993129893142224279008",
+      "solution_type": "all tetrahedra positively oriented",
+      "hyperbolic": true
+    },
+    {
+      "name": "2-strand T(2,2) = sigma1^2",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1
+      ],
+      "volume": null,
+      "solution_type": "contains degenerate tetrahedra",
+      "hyperbolic": false
+    },
+    {
+      "name": "2-strand T(2,3) = sigma1^3",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1,
+        1
+      ],
+      "volume": "0.0",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false
+    },
+    {
+      "name": "2-strand T(2,4) = sigma1^4",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "volume": "0.0",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false
+    },
+    {
+      "name": "2-strand T(2,5) = sigma1^5",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "volume": null,
+      "solution_type": "contains degenerate tetrahedra",
+      "hyperbolic": false
+    },
+    {
+      "name": "2-strand T(2,6) = sigma1^6",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "volume": "0.0",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false
+    },
+    {
+      "name": "2-strand T(2,9) = sigma1^9",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "volume": "0.0",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false
+    },
+    {
+      "name": "2-strand T(2,10) = sigma1^10",
+      "n_strands": 2,
+      "braid_word": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "volume": "0.0",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false
+    }
+  ],
+  "checks": {
+    "borromean_hyperbolic": true,
+    "borromean_vol_matches_2_voct": true,
+    "all_two_strand_non_hyperbolic": true,
+    "gluon_T29_vol_zero": true
+  },
+  "all_checks_pass": true,
+  "refs": [
+    "docs/audits/2026-08-02-meson-fluxtube-junction-reduction.md",
+    "content/quantum-observable-universe/lean/QOU/ParticleInteractions/MesonFluxTubeReduction.lean",
+    "bean qou-qpj9"
+  ]
+}

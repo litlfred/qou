@@ -54,6 +54,7 @@ if str(HERE) not in sys.path:
 
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 set_compute_dps()
 
@@ -97,21 +98,32 @@ def q0_for(anchor: str) -> str:
     raise SystemExit(f"unknown anchor {anchor!r}: expected 'proton' or 'ideal'")
 
 
-def evaluate_y_at_q0(symbolic_str: str, q0_str_50dps: str) -> str:
-    """Evaluate a symbolic y_λ expression at q_0 to 50 dps.
+def evaluate_y_at_q0(partition, q0_str_50dps: str) -> str:
+    """Evaluate y_λ at q_0 to 50 dps, from the LIVE formula.
 
     Returns the value as a 50-dp decimal string (mpf-roundtrip safe).
+
+    CONVENTION (2026-08-10, bean `qou-eea0` / `qou-toi3`).  This took the
+    `y_lambda_symbolic` string from
+    `y-lambda-wenzl-bridge-symbolic-witness.json` and `sp.sympify`'d it.
+    That witness is convention C — its entries carry `sqrt(q)` / `q**(3/2)`,
+    the half-argument variable of `z = 1/(q^{1/2}+q^{-1/2})`, which D never
+    produces because D stays inside ℚ(q).
+
+    `y_lambda_wenzl_bridge` guards that cache (`_cached_symbolic_agrees`,
+    bean `qou-wgta` item 3), but the guard is on the module's symbolic entry
+    point and this script opened the JSON itself — so the guard never ran.
+    Four scripts shared that shape; this is one of them.
+
+    Takes the number from the module's numeric entry point instead, which is
+    convention D.  Anchor-neutral: q₀ still arrives from the caller, so
+    `--anchor proton` / `--anchor ideal` keep writing their own caches.
     """
-    expr = sp.sympify(symbolic_str)
-    free = expr.free_symbols
-    if free:
-        qsym = next(iter(free))
-        sub = expr.subs(qsym, sp.sympify(q0_str_50dps))
-    else:
-        sub = expr
-    val = sub.evalf(mp.mp.dps)
-    # Roundtrip via mp.mpf to canonicalise the string format.
-    return mp.nstr(mp.mpf(str(val)), mp.mp.dps, strip_zeros=False)
+    with mp.workdps(mp.mp.dps):
+        val = y_lambda_wenzl_bridge_numeric(
+            list(partition), mp.mpf(q0_str_50dps), dps=mp.mp.dps
+        )
+    return mp.nstr(val, mp.mp.dps, strip_zeros=False)
 
 
 def run_anchor(anchor: str) -> int:
@@ -136,30 +148,33 @@ def run_anchor(anchor: str) -> int:
         src = sym_tables[n_str]
         weights = src["weights"]
         print(f"  Evaluating n={n}: {len(weights)} partitions ...", flush=True)
-        # Markov parameter, convention D: z_D = q^3 / (q^2 + 1), at 50 dps.
+        # Markov parameter at 50 dps, convention D: z = q^3 / (q^2 + 1).
         #
-        # Was `1 / (q^{1/2} + q^{-1/2})` — convention C — emitted into the same
-        # witness as the weights. Once the symbolic source moved to D that
-        # became an internal straddle: a consumer reading `z` got C while a
-        # consumer reading `y_lambda` from the same file got D, which is worse
-        # than either convention consistently.
+        # Was `1 / (sqrt(q) + 1/sqrt(q))` — convention C — emitted verbatim
+        # into the witness's `z` field. The producer audit reports this file
+        # clean because it looks for C in the *y_λ* computation; this is a
+        # separate scalar written beside it. D needs no `mp.sqrt`, which is
+        # the same portability tell the migration found from the other side:
+        # C must reach for a square root, D never leaves ℚ(q).
         #
-        # z_D is not a choice. qou-u2jg proves in Lean (sorry-free,
-        # QOU/QBeta/TemperleyLiebTower.lean, section ConventionPinning) that
-        # imposing the three Markov normalisations on H_3(q) forces
-        #     y_(1^3) * (q^2+1)(q^4+q^2+1) = q^2 (z - q) (z(q^2+1) - q^3)
-        # so the three-strand antisymmetriser vanishes at exactly two values of
-        # z; z = q collapses to the one-dimensional character, leaving
-        # z_D = q^3/(q^2+1) as the unique non-trivial Markov trace whose
-        # radical contains it. Convention C's z is neither root, which is
-        # precisely why it carried y_(1^3) = 0.0227449 instead of zero.
+        # z_D is not a choice. `qou-u2jg` proves in Lean (sorry-free,
+        # QOU/QBeta/TemperleyLiebTower.lean §ConventionPinning) that the three
+        # Markov normalisations on H_3(q) force
+        #     y_(1^3) · (q²+1)(q⁴+q²+1) = q² (z − q) (z(q²+1) − q³)
+        # so the three-strand antisymmetriser dies at exactly two values of z;
+        # z = q collapses to the one-dimensional character, leaving
+        # z_D = q³/(q²+1) as the unique non-trivial Markov trace whose radical
+        # contains it. C's z is neither root — which is precisely why it carried
+        # y_(1^3) = 0.0227449 instead of zero.
         q = mp.mpf(q0_str)
         z = q ** 3 / (q ** 2 + 1)
 
         out_weights = []
         for w in weights:
             lam = w["partition"]
-            y_str = evaluate_y_at_q0(w["y_lambda_symbolic"], q0_str)
+            # partition only — the y_lambda_symbolic beside it is
+            # convention C and is deliberately not read (see above).
+            y_str = evaluate_y_at_q0(lam, q0_str)
             out_weights.append({
                 "partition": lam,
                 "depth": max(0, len(lam) - 1),
@@ -236,27 +251,29 @@ def run_anchor(anchor: str) -> int:
 
 
 def main() -> int:
+    """Both anchors by default.
+
+    This defaulted to `proton` alone, which is a *coverage* defect rather than
+    an anchor one: the producer owns two caches, wrote one, and exited 0. The
+    convention-C regeneration harness reads that exit code as "this producer's
+    witnesses are now migrated", so `y-lambda-mpfr-witness.json` (the ideal
+    cache, and the one `tr_m_wenzl_bridge_mpfr._Y_LAMBDA_DEFAULT` reads) stayed
+    convention C through a full pass while the run reported success. Two
+    producers had this shape; the other was `chi_at_q0_via_hoefsmit_mpfr`,
+    which owns six atoms and default-ran two.
+
+    Defaulting to both keeps the 2026-08-07 owner directive intact — each layer
+    still writes only its OWN cache, so neither anchor's numbers ever land in
+    the other's file, and `--anchor proton` / `--anchor ideal` still select one.
+    """
     import argparse
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description=main.__doc__)
     ap.add_argument("--anchor", choices=("proton", "ideal", "both"),
                     default="both",
-                    help="q0 layer(s) to evaluate at. Each layer writes its OWN "
-                         "cache, so this never rewrites the other one.")
+                    help="q0 layer(s) to evaluate at. Default BOTH: each layer "
+                         "writes its own cache, so running one and exiting 0 "
+                         "left the other silently un-migrated.")
     a = ap.parse_args()
-    # Default is BOTH, deliberately.
-    #
-    # It was `proton`, which is right for "which layer should new compute use"
-    # (the 2026-08-07 owner directive) but wrong as a REGENERATION default: this
-    # producer owns two witnesses and a bare run refreshed one of them. During
-    # the convention-D migration that meant y-lambda-mpfr-proton-witness.json
-    # moved to D while y-lambda-mpfr-witness.json — the ideal/muon table, read
-    # by every ideal-layer consumer — silently stayed convention C, with the
-    # harness recording the producer as `ok`.
-    #
-    # Regenerating both is not a layer straddle: the two caches are written
-    # separately, from the same symbolic source, each at its own q0. Refusing to
-    # refresh one of them does not keep the layers apart, it just leaves one
-    # stale.
     anchors = ("proton", "ideal") if a.anchor == "both" else (a.anchor,)
     for anchor in anchors:
         rc = run_anchor(anchor)

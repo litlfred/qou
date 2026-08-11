@@ -133,7 +133,8 @@ for f in "${files[@]}"; do
       ;;
     computations/*.witness.json|*/*.witness.json)
       echo "▸ $f  [witness]"
-      echo "    → check scriptCommitSha/scriptHash drift; LP/SDP duals via lp_dual_witness_validator.py"
+      echo "    → check scriptHash drift (NOT scriptCommitSha — rebase-merge rewrites it; bean qou-wsha)"
+      echo "      LP/SDP duals via lp_dual_witness_validator.py"
       ;;
     *) : ;;  # no known sidecar axis
   esac

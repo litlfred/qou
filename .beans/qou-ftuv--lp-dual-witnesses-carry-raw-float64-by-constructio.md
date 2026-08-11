@@ -1,10 +1,11 @@
 ---
 # qou-ftuv
 title: LP-dual witnesses carry raw float64 by construction — draining needs the shared contract changed
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-10T09:13:32Z
-updated_at: 2026-08-10T09:13:32Z
+updated_at: 2026-08-11T00:36:22Z
 ---
 
 
@@ -43,3 +44,157 @@ witness in the corpus moves with it. Scope it deliberately:
 Also parked here: `kappa-shell8-excess-convention.witness.json` (25 fields)
 is flagged NEW by the ratchet but is byte-identical to main's copy — inherited,
 not introduced by #4899, and another arc's to drain.
+
+---
+
+## Scoped (from qou-3jwy, which cleared everything else). Every route is closed — structurally, not for effort.
+
+After qou-3jwy this is the **only** entry keeping `precision-gates.sh` red:
+
+    raw-float64   NEW dirty 0,  REGRESSED 1   a-K-via-lp-dual-full  395 -> 867
+    padding       13 = baseline, 0 NEW        GREEN
+    q0 drift      stale 321, 0 NEW            GREEN
+
+Blast radius, measured: **58 witnesses** carry `x_star`/`y_star`, **56
+producers** call the solver.
+
+### The obvious fix is already a rejected decision, in writing
+
+The kappa repair (qou-3jwy) worked by rendering 53-bit values with
+`str_at_true_precision`. That move is **explicitly ruled out here** by
+`to_dict`'s own docstring in `tools/pyhecke/python/pyhecke/lp_dual_solver.py`:
+
+> The numeric fields are kept verbatim: every existing consumer does
+> arithmetic on them (`sum(r["y_star"] …)`, `r["duality_gap"] < 1e-6`), so
+> turning them into strings here would break readers silently rather than
+> loudly.
+
+That is a considered prior decision, not an oversight. Do not "just stringify
+it" — 56 producers and their consumers compute on those floats directly, and
+the failure mode is silent.
+
+### The other three routes
+
+* **Audit exemption for LP-dual fields.** `witness_raw_float64_audit.py` has
+  no exemption mechanism and no knowledge of `y_star`/`x_star` (grepped).
+  Adding one is an audit-POLICY change, not a producer fix.
+* **Re-baseline.** Forbidden — AGENTS.md: *"Never make a red run green by
+  widening a baseline. Baselines drain, never grow."*
+* **MPFR backend `*_str` companions** (the qou-t0rf path). Dead here on three
+  counts: `clarabel` is **not installed** in this container; the a-K witness
+  records `engine: numpy`, i.e. the scipy/f64 path, which per the same
+  docstring *"has nothing beyond f64 to report"*; and even with it the float
+  fields REMAIN, so the audit count would not move without also changing the
+  audit.
+
+### And the growth is not a precision loss
+
+395 -> 867 is not degradation. The count grew because a row that main leaves
+empty now solves (deuteron, `A=None` -> `A=2`, 11 entries) — i.e. the witness
+contains MORE correct data. Draining "the regression" therefore means
+draining LP duals corpus-wide, not repairing a defect.
+
+### What is actually being decided
+
+Not an implementation. A choice between:
+
+1. **Change the contract** — float -> string for the dual fields, fix the
+   arithmetic consumers loudly, regenerate 58 witnesses. Honest, large, and
+   reverses a documented decision.
+2. **Teach the audit that an f64 with a full-precision `*_str` sibling is a
+   shadow, not a defect** — principled (the information IS present at full
+   precision in the same witness), but requires the MPFR backend to actually
+   be used, so it is a solver-provisioning change plus an audit change.
+3. **Accept LP duals as structurally f64** and give the audit a narrow,
+   documented carve-out for exactly those field names — smallest change,
+   but it is a carve-out and should be named as one rather than slipped in.
+4. **Leave it red**, and accept that `precision-gates.sh` reports red for a
+   reason that is understood and recorded.
+
+Owner call. Recorded so the next agent does not re-derive the four routes.
+
+
+
+---
+
+## 2026-08-11 — route 2 taken (owner decision). Rule landed; gate still red.
+
+Owner chose **route 2**: teach the audit that an f64 with a full-precision
+`*_str` sibling is a shadow, not a defect. Implemented in
+`witness_raw_float64_audit.py`; see PR.
+
+**The rule.** `<key>` as f64 beside `<key>_str` as a companion string ⇒ the
+value is present at full precision in the same witness, so the float is skipped.
+Both shapes: scalar (`y0_star`) and list (`y_star`), the latter being what the
+LP duals use.
+
+**The guard.** A companion counts only if it carries **more than 17 significant
+digits**. Without that the rule is a laundering hole — `x_str = str(x)` would
+silence the ratchet. Not hypothetical: `qou-t0rf` records `_lp_result_from_dict`
+building `*_str` from the f64 key, so every `*_str` for a period was f64 wearing
+a string. An unguarded rule would have certified that bug as a fix. Self-test
+extended 12 → 18 cases, the guard among them.
+
+**Measured effect:**
+
+    total raw float64   540,487 -> 540,333   (154 reclassified)
+    dirty witnesses       1,576 -> 1,574
+    vs baseline            -153 -> +1        now marginally BELOW baseline
+
+Real pairs, not a blanket exemption: rho-prefactor 126→86, frobenius-repose
+347→317, casimir-macdonald 303→276.
+
+**The gate is STILL RED, and this bean stays open.** a-K-via-lp-dual-full — the
+witness this bean is about — is unchanged at 395 → 867. It has **zero** `*_str`
+fields: `engine: numpy`, the scipy path, which per `to_dict()` "has nothing
+beyond f64 to report". Measured, not assumed.
+
+**What remains is the other half of route 2**, and it was NOT taken
+unilaterally: run a-K on the clarabel-MPFR backend so its floats acquire `*_str`
+companions the new rule can shadow. Blockers to weigh first:
+
+- the Rust binary `clarabel-operator-selection-lp` is **not built** (cargo IS
+  available here; the pip `clarabel` package is a different thing and does not
+  supply this path);
+- the backend is **opt-in** (`backend="clarabel"`), scipy is the default;
+- its own docstring says it is **"NOT yet cross-checked against the scipy
+  backend to 1e-25"** — so moving a production witness onto it trades a known
+  f64 for an unvalidated MPFR path, which is a real decision, not plumbing.
+
+Route 3 (a named carve-out) remains available and would close the last red
+without touching the solver.
+
+
+
+## 2026-08-11 — route 3 also taken. GATE GREEN. Bean closed.
+
+Owner took route 3 after route 2's audit half landed. Together:
+`precision-gates.sh` reports **"All blocking precision gates green"**, exit 0.
+
+    a-K-via-lp-dual-full   395 -> 54     REGRESSED 1 -> 0
+    total raw float64  540,487 -> 536,570
+    carve-out excused        3,763 fields in 43 witnesses
+
+**Blast radius, stated plainly: 43 witnesses, not one.** The carve-out keys on
+field names (`x_star y_star y0_star u_lambda_star primal_obj dual_obj
+duality_gap`), so every LP/SDP witness is affected. Inherent to route 3; it is
+the number to weigh the decision by.
+
+**Narrow, and measured before writing.** In a-K those seven fields are 801 of
+867 floats. The other ~66 are the probe's own results — not solver output,
+still counted, still wanting a producer-level fix. A self-test case pins that
+discrimination so a later widening breaks the test.
+
+**Baseline regenerated**, with justification, because `--rebaseline` is
+normally forbidden: it was NOT used to go green (the gate was already green),
+but to close the 3,764-field headroom the reclassification opened, in which a
+real regression could have grown silently — a-K alone could have gone 54 → 395
+untripped. Totals moved down, the documented precondition. Now 1572 files /
+536,570 fields, zero slack.
+
+**Not taken, and no longer needed for the gate:** route 2's solver half
+(building `clarabel-operator-selection-lp` and moving a-K onto an MPFR backend
+its own docstring calls "NOT yet cross-checked against the scipy backend to
+1e-25"). Left undone deliberately. If it is ever wanted, the shadow rule from
+route 2 is already in place to recognise the `*_str` companions it would
+produce.

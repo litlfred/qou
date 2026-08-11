@@ -32,6 +32,7 @@ import sys as _sys
 from pathlib import Path as _Path
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: F401,E402
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 del _sys, _Path, _bridge
 
 import sys
@@ -47,6 +48,12 @@ import a_operator_gauge_align as g  # noqa: E402
 import a_operator_categorical as aoa  # noqa: E402
 from lr_coefficients import partitions_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 EXACT = mp.mpf("1e-25")
 

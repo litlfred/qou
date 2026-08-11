@@ -113,6 +113,12 @@ def f_candidates(eta: mpf, h: mpf, b: mpf, u: mpf) -> dict[str, mpf]:
     }
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # Tolerances for the cross-anchor pass / near-integer gate / round-trip.
 TOL_ELL_DIFF = mpf("1e-3")      # |ℓ_p − ℓ_m| within 1e-3
 TOL_INT_DIST = mpf("0.05")      # within 0.05 of the nearest integer

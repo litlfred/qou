@@ -8,7 +8,7 @@
   },
   "source_hashes": {
     "md": "29842c80fbd3",
-    "ts": "83def23d2abb"
+    "ts": "34aa79b5bbd3"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -939,20 +939,19 @@
       {
         "field_hash": {
           "md": "29842c80fbd3",
-          "ts": "83def23d2abb"
+          "ts": "34aa79b5bbd3",
+          "graph": "260ab686cfbc"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "f6f0b2cd1afb",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "b700e5efee85",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "severity": "major",
-        "evidence": "content/quantum-observable-universe/fluid-dynamics/q-metric-contact-deformation.ts:0: forward ref: uses rem:q-ns-research-programme (manifest pos 96) which appears after this block (pos 9) in the chapter"
+        "reviewed_at": "2026-08-10T19:48:19.976Z",
+        "reviewed_sha": "d9f3b5d82b56ad267cb0854a09455717bc4bb768"
       }
     ],
     "detangler-section-band": [
@@ -1045,18 +1044,19 @@
       {
         "field_hash": {
           "md": "29842c80fbd3",
-          "ts": "83def23d2abb"
+          "ts": "34aa79b5bbd3",
+          "graph": "260ab686cfbc"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-extended.ts",
           "version": "v1",
-          "script_hash": "aacb0bf5d4b9",
-          "script_commit_sha": "de8ddf9de2fbbeb19e14aaf3d513d0c344ea3860"
+          "script_hash": "cef9fe7e54b9",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
+        "reviewed_at": "2026-08-10T19:48:19.976Z",
+        "reviewed_sha": "d9f3b5d82b56ad267cb0854a09455717bc4bb768",
         "metrics": {
           "graph_energy": 0,
           "fwd_edge_count": 0,
@@ -1176,7 +1176,7 @@
       {
         "field_hash": {
           "md": "29842c80fbd3",
-          "ts": "83def23d2abb"
+          "ts": "34aa79b5bbd3"
         },
         "result": "pass",
         "reviewer": {
@@ -1187,13 +1187,8 @@
           "script_commit_sha": "7b12c02ea38e6126e44e887d9e5f3242d0916315",
           "deps_hash": "c7f602946422"
         },
-        "reviewed_at": "2026-08-09T13:00:33.718Z",
-        "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c",
-        "metrics": {
-          "uses_count": 2,
-          "broken_edges": 0,
-          "redundant_edges": 0
-        }
+        "reviewed_at": "2026-08-10T19:48:19.976Z",
+        "reviewed_sha": "d9f3b5d82b56ad267cb0854a09455717bc4bb768"
       }
     ],
     "uses-formal-coverage": [
@@ -1234,7 +1229,26 @@
         "reviewed_at": "2026-08-09T13:00:33.718Z",
         "reviewed_sha": "e3605ed003e4660b3399abec6abca08fe9f2bb5c"
       }
+    ],
+    "foreshadows-point-forward": [
+      {
+        "field_hash": {
+          "md": "29842c80fbd3",
+          "ts": "34aa79b5bbd3",
+          "graph": "260ab686cfbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-extended.ts",
+          "version": "v1",
+          "script_hash": "296e68ad2618",
+          "script_commit_sha": "1a0072c9eb0be730cb6b90e0ae3a8867e0ec2126"
+        },
+        "reviewed_at": "2026-08-10T19:48:19.976Z",
+        "reviewed_sha": "d9f3b5d82b56ad267cb0854a09455717bc4bb768"
+      }
     ]
   },
-  "updated_at": "2026-08-09T22:20:05.350Z"
+  "updated_at": "2026-08-10T19:48:19.976Z"
 }

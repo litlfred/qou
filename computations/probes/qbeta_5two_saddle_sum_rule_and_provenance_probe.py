@@ -172,9 +172,16 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 
 from witness_base import WitnessBuilder        # noqa: E402
 from fivetwo_saddle_values import saddle_roots  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 LEGACY_IM_V1 = mp.mpf("1.3790860299")
 LEGACY_V3 = mp.mpf("-2.7580990292")

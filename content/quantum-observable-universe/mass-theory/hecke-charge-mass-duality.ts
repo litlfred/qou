@@ -12,5 +12,8 @@ export default remark({
     "frobenius-pairing",
     "vertex-operator",
   ],
-  uses: ["prop:hecke-mass-trace"],
+  uses: [
+    "prop:hecke-mass-trace",
+    "def:frobenius-pairing",
+  ],
 });

@@ -189,9 +189,24 @@ lake-oleans.tgz
 # ("Hecke: rank axiom") came to add 46,155 files / 11.4M insertions, including
 # 14,688 duplicate beans. None of these is listed in AGENTS.md §Project
 # structure. (`uploads/` IS a documented intake pipeline — deliberately absent.)
-.agents/
-amalgamated_done/
-amalgamated_input/
-_deprecated/
-scratch/
-.work/convention-c-regen.lock
+#
+# ANCHORED with a leading slash — root-level only, deliberately. A gitignore
+# pattern containing no internal slash matches at EVERY depth, so the earlier
+# unanchored `_deprecated/` silently captured two documented archives:
+# `computations/_deprecated/` (1,449 tracked files: README, witnesses, and
+# `script-qa/*.script-qa.json` QA sidecars) and `docs/audits/_deprecated/`
+# (66 files). Tracked files were unaffected — ignore rules never untrack — but
+# any NEW file under either path would have been dropped by `git add` with no
+# error, which is the same silent-loss shape this block exists to prevent.
+# Keep the leading slash on every entry here.
+/.agents/
+/amalgamated_done/
+/amalgamated_input/
+/_deprecated/
+/scratch/
+
+# convention-C regeneration harness runtime lock (SerialLock, O_EXCL). Carries
+# an internal slash, so it is already anchored to this file's directory by
+# gitignore semantics — consistent with the leading-slash rule above, which
+# only needs stating for patterns that have no slash of their own.
+.work/*.lock

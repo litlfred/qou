@@ -1,8 +1,11 @@
 ---
-id: qou-xx9f
+# qou-xx9f
+title: ""
+status: todo
 type: task
-status: scrapped
 priority: normal
+created_at: 2026-08-10T18:07:20Z
+updated_at: 2026-08-11T00:46:59Z
 ---
 
 # GAP: GSWZ (287) input-series identification — printed digits unreproduced
@@ -72,3 +75,22 @@ mismatch has α-components). Computed digits recorded in
 - computations/probes/gswz_psi_section_division_probe.py (construction)
 - computations/probes/gswz_psi_section_division.witness.json (computed digits)
 - docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md Addendum 10
+
+## Second narrowing (2026-08-02, post-#4585)
+
+GZ §8.1 read: the C_r are Taylor coefficients of log(1 − e(1/6 + w))
+— Li_{−r}-type values with a 1/6-Bernoulli offset (peak M = m + 5/6),
+i.e. the E-factor is itself a Pochhammer tail with a DIFFERENT shift
+than Def 3.9's q^{1/2}. Two zero-free-parameter hypotheses tested
+against the solved lambda digits (const mod 5, alpha/alpha2 mod 25):
+
+- uniform-shift: lambda = (B2(s)−B2(1/2))/2 · Σ c_j Li0(ζ_j) over the
+  full shift grid s ∈ {a/b : b | 24}, both signs → NONE.
+- parallel-scalar: lambda = D · Σ c_j Li0(ζ_j), any rational D with
+  |num|,den ≤ 72 (5-unit) → NONE.
+
+CONCLUSION (scope-(a)): the E-factor's tail arguments are NOT the
+(275) roots of unity — most plausibly the Nahm z-variable data of the
+psi_{0,z,1}(w,x)^3 Gaussian bracket in (281). Next: extract the 5_2
+Nahm data (GSWZ §4.5-4.6 / GZ §8.2-8.3) and re-run the shifted-tail
+hypothesis with those arguments.

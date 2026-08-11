@@ -36,6 +36,37 @@ Ref: conj:magic-shell-coupling-kappa, def:canonical-braid-interface-composition,
 Bean: qou-o16k
 """
 
+import sys
+from pathlib import Path as _P
+_SUB = _P(__file__).resolve().parent / "substrate"
+if str(_SUB) not in sys.path:
+    sys.path.insert(0, str(_SUB))
+import mpmath as mp  # noqa: E402
+from _precision import fmt, COMPUTE_DPS  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402
+
+mp.mp.dps = COMPUTE_DPS
+
+
+def _ser(o):
+    """Serialize every real to a _precision.fmt string; ints stay ints.
+
+    The NO-FLOAT64 family forbids raw float64 in a witness. Values are carried
+    as mpmath.mpf from their source above and rendered here, so no float64 ever
+    reaches the JSON.
+    """
+    if isinstance(o, bool) or isinstance(o, int):
+        return o
+    if isinstance(o, (float, mp.mpf)):
+        return fmt(mp.mpf(o))
+    if isinstance(o, dict):
+        return {k: _ser(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_ser(v) for v in o]
+    return o
+
+
 import json
 import math
 from datetime import datetime, timezone
@@ -45,12 +76,18 @@ from pathlib import Path
 # AGENTS.md "ALL AGENTS AND ALL PRODUCTION CODE DEFAULT TO THE EXPERIMENTAL
 # (PROTON) ANCHOR".  Recorded explicitly so a later reader can tell which layer
 # this witness belongs to without inferring it from a call site.
-Q0 = 1.1099785827513808
+#
+# Both come from the canonical modules rather than being re-typed here.  The
+# literals they replace were `mp.mpf("1.1099785827513808")` and
+# `mp.mpf("0.51099895000")`.  Carrying them as mpf kept float64 out of the
+# witness, but the second is CODATA's electron mass TRUNCATED to 9 significant
+# figures (0.51099895069) -- wrapping a truncated constant in mpf preserves the
+# error in the value while removing the float from the JSON.
+Q0 = Q_MP
 Q0_PIN = "proton (experimental layer), m_p/m_e"
-M_E_MEV = 0.51099895000
 
 # The empirical slope the conjecture is measured against (PR #656 v6 fit).
-KAPPA_EMPIRICAL = -1.0707907503265857
+KAPPA_EMPIRICAL = -mp.mpf("1.0707907503265857")
 
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
 
@@ -64,7 +101,7 @@ def kappa_closed(q: float, m_e: float) -> float:
     """The conjectured closed form.  Note: no dependence on Z, N or A."""
     h = q - 1 / q
     e0 = m_e / (q * (q - 1))
-    return -e0 * math.log(1 / h) / (bracket(q, 2) * bracket(q, 3))
+    return -e0 * mp.log(1 / h) / (bracket(q, 2) * bracket(q, 3))
 
 
 def excess_c1(z: int, n: int) -> int:
@@ -163,7 +200,7 @@ def main() -> None:
     for a in assertions:
         print(f"  [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
 
-    witness = {
+    witness_raw = {
         "engine": "python-stdlib",
         "engineVersion": "3",
         "computedAt": datetime.now(timezone.utc).isoformat(),
@@ -200,9 +237,11 @@ def main() -> None:
         "allPassed": all(a["passed"] for a in assertions),
     }
 
+    witness = _ser(witness_raw)
+
     out = Path(__file__).with_name("kappa-shell8-excess-convention.witness.json")
     out.write_text(json.dumps(witness, indent=2) + "\n")
-    print(f"\nwitness -> {out.name}  (allPassed={witness['allPassed']})")
+    print(f"\nwitness -> {out.name}  (allPassed={witness_raw['allPassed']})")
 
 
 if __name__ == "__main__":

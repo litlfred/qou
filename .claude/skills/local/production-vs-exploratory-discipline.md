@@ -401,13 +401,22 @@ exploratory comparison from production claim — use that pattern.
 ### Antipattern 6: "rebasing with witness drift = whatever, just push"
 
 Symptom: rebasing merges in witness JSON drift from upstream
-without re-running the validators; witness commitSha and
-scriptCommitSha don't match the rebased commit; downstream
-script-quality checkers fail.
+without re-running the validators; substantive fields (a bumped
+`files_scanned`, new audit-inventory entries, changed numeric
+payload) are left behind; downstream script-quality checkers fail.
 
 Fix: per `prepare-merge.md` §1.a, the witness-regen loop
 auto-resolves drift by re-running the 5 self-emitting
 validators. THIS IS NOT OPTIONAL — CI will fail without it.
+
+**Not a symptom: `commitSha` / `scriptCommitSha` not matching the
+rebased commit.** Those are ephemeral provenance — `prepare-merge.md`
+§1.a lists both in the filtered set precisely because a rebase
+rewrites them, and `witness.py` masks them in
+`_EPHEMERAL_META_FIELDS`. No checker consults them, so a mismatch
+there fails nothing and needs no re-run; chasing it re-runs
+producers to no effect. Only the substantive fields above justify
+the regen loop. See bean `qou-wsha`.
 
 ## Pre-promotion checklist (run before adopting any candidate in production)
 

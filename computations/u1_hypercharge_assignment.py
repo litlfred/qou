@@ -54,6 +54,7 @@ Audit doc: docs/audits/2026-06-02-u1-hypercharge-assignment.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import sys
 import time
 from pathlib import Path
@@ -281,6 +282,12 @@ w.add_data("Q3_twist_eigenvalue_ladder", {
             "(j(j+1) Casimir), NOT an additive charge ladder. No sign change, "
             "no half-integer charge structure -- it does not encode Q/Y.",
 })
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # theta_(1,1) = q^0 = 1 (singlet j=0); theta_(2) = q^2 (j=1).
 w.add_assertion("twist_singlet_eq_one", mp.nstr(twist_H2_q0["(1,1)"], 20), "1.0",
                 tolerance=mp.mpf("1e-15"), source="theta_0 = q^0 = 1")

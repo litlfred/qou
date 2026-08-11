@@ -1,0 +1,335 @@
+#!/usr/bin/env python3
+"""
+Witness staleness — the THIRD direction: imported-module drift.
+
+`witness_dependency_drift.py` checks exactly two directions:
+
+  SELF      the producer file's own `scriptHash` changed
+  UPSTREAM  a recorded `upstream_witness_hashes` entry changed
+
+Neither hashes the producer's **imported-module cone**. So when an upstream
+`.py` MODULE changes, the producer stays byte-identical (SELF green) and no
+upstream *witness* moved (UPSTREAM green, or undeclared — adoption is 7.7 %),
+while the committed numbers no longer reproduce. That is a silent stale witness.
+
+This is not hypothetical. It was hit three times in one session (PR #4939):
+
+  bsym-residual-shell-structure   <- `_bond_type_L` / `tr_m_atom_via_transfer`
+                                     changed 2026-08-08. Refresh flipped
+                                     hypothesis H2 from true to FALSE.
+  gap2-borromean-triple-count     <- `coulomb_energy` changed 2026-08-09
+                                     (bean qou-usft). Refresh moved the
+                                     bonded-triple ratios 1.132/1.197/1.240
+                                     -> 1.148/1.210/1.250.
+  coulomb-mirror-killswitch       <- same `coulomb_energy` change.
+
+Neither of the first two declares `upstream_witness_hashes` at all.
+
+## What this audit does
+
+For each `*.witness.json`: resolve its producer, walk the producer's
+first-party import cone transitively, and compare the cone's most recent
+COMMIT time against the witness's own `computedAt`. A module committed after
+the witness was computed means the witness was left behind.
+
+Deliberately uses git commit time, not mtime: a fresh clone rewrites every
+mtime, so mtime would report the whole corpus as stale in CI and nothing in a
+warm checkout. Commit time is stable across clones.
+
+## Why a heuristic here is the right call
+
+Recording cone hashes in the witness at generation time is the durable fix, but
+it detects NOTHING retroactively — every existing witness lacks the field, so
+the ~2,900 already on disk would stay invisible until each is regenerated,
+which is exactly the work this is meant to prioritise. Commit-time comparison
+needs no schema change and works on the corpus as it stands today. The two are
+complements: this drains the backlog, the recorded field prevents the next one.
+
+Known limits, stated rather than hidden:
+  * A comment-only or docstring-only commit to a cone module trips this with no
+    numerical consequence — same false-positive class as `scriptHash`, and the
+    same remedy: diff the module before re-running an expensive producer
+    (AGENTS.md §idle-backlog).
+  * Import resolution is by module basename against the producer index, which
+    matches how this repo actually imports (flat bare names via `_path_bridge`).
+    A basename collision resolves to the shallowest path.
+  * Dynamic/`__import__` and function-local imports inside third-party code are
+    not followed. Function-local first-party imports ARE followed — the corpus
+    uses them heavily (e.g. `_constants()` imports `q_parameter` in its body).
+
+Witnesses already flagged SELF-stale are EXCLUDED from the headline count, so
+what this reports is exactly the class the existing validator cannot see.
+
+## Measured, 2026-08-10 (2,773-commit window)
+
+    witnesses scanned      2,874
+    SELF-stale (excluded)    666
+    IMPORT-CONE STALE      1,431      <- invisible to the existing validator
+
+The raw count is NOT the actionable number, and the by-module rollup is why this
+audit prints one. 1,431 witness-level questions collapse to 8 module-level ones,
+and two diffs already resolve 1,098 of them (77 %):
+
+    1,090  qou_substrate/precision.py        FALSE POSITIVE - the change is
+                                             +54/-0, a new `json_safe_float`
+                                             helper that alters no existing
+                                             code path.
+      289  markov/markov_trace_recursive.py  PLAUSIBLE - +158/-30 with a
+                                             convention fix in the title.
+                                             Genuine behavioural change; the
+                                             289 need a real look.
+       26  hecke/hecke_characters.py         unchecked
+       13  derived_masses.py                 unchecked
+        8  mass_binding_dashboard.py         FALSE POSITIVE - display-only
+                                             `_disp` fix from this same PR.
+
+So triage per MODULE, never per witness: one `git show --stat` on the culprit
+usually settles a four-figure block. Expect a high false-positive rate on the
+raw count and do not quote it as a backlog size.
+
+Exit code is 0 always: this is a triage/ranking tool, not a gate. Turning it
+into a gate is a separate decision — at current corpus age it would be red on
+day one, which is a backlog to drain, not a build to break.
+
+Bean qou-a2q5.
+"""
+from __future__ import annotations
+
+import ast
+import json
+import subprocess
+import sys
+from datetime import datetime, timezone
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+
+from witness_dependency_drift import (  # noqa: E402
+    _build_producer_index,
+    _resolve_producer,
+    check_self_staleness,
+)
+
+MAX_DEPTH = 8
+REPO_ROOT = HERE.parent
+_commit_time_cache: dict[Path, datetime | None] = {}
+
+
+def _rel(p: Path) -> str:
+    """Display path relative to the repo root — the cone reaches outside
+    `computations/` (e.g. `tools/qou-substrate/.../witness.py`), so anchoring
+    on HERE raises."""
+    try:
+        return str(p.relative_to(REPO_ROOT))
+    except ValueError:
+        return str(p)
+
+
+def _graft_sha() -> str | None:
+    """The shallow-clone graft commit, if this is a shallow clone.
+
+    THIS MATTERS MORE THAN IT LOOKS. CI and agent sandboxes clone shallow, and
+    in a shallow clone the boundary commit has no parent, so `git log` attributes
+    EVERY file not touched since the graft to that one commit — here it presents
+    as "31,823 files changed, 11,425,386 insertions" dated today. Reading those
+    dates naively reports the entire corpus as freshly modified: the first draft
+    of this audit did exactly that and produced a confident, meaningless "1,481
+    import-cone stale". Files whose last commit is the graft have UNKNOWN age and
+    must be reported as such, never as recent.
+    """
+    shallow = REPO_ROOT / ".git" / "shallow"
+    if not shallow.is_file():
+        return None
+    try:
+        roots = subprocess.run(
+            ["git", "rev-list", "--max-parents=0", "HEAD"],
+            cwd=REPO_ROOT, capture_output=True, text=True, timeout=30,
+        ).stdout.split()
+        return roots[0] if roots else None
+    except subprocess.SubprocessError:
+        return None
+
+
+GRAFT = _graft_sha()
+
+
+def _git_commit_time(path: Path) -> datetime | None:
+    """Last AUTHOR time of `path`; None if untracked, or if the last commit is
+    the shallow graft (age unknown — see `_graft_sha`).
+
+    Author time, not committer time: rebase-merge is this repo's default merge
+    (AGENTS.md rule 8) and it rewrites committer dates, so `%cI` would date a
+    module by when its branch was last rebased rather than when it changed.
+    """
+    if path in _commit_time_cache:
+        return _commit_time_cache[path]
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%H %aI", "--", str(path)],
+            cwd=REPO_ROOT, capture_output=True, text=True, timeout=30,
+        ).stdout.strip()
+        if not out:
+            dt = None
+        else:
+            sha, _, iso = out.partition(" ")
+            dt = None if (GRAFT and sha == GRAFT) else datetime.fromisoformat(iso)
+    except (subprocess.SubprocessError, ValueError):
+        dt = None
+    _commit_time_cache[path] = dt
+    return dt
+
+
+def _imported_names(py: Path) -> set[str]:
+    """Module basenames imported by `py`, including function-local imports."""
+    try:
+        tree = ast.parse(py.read_text(encoding="utf-8", errors="replace"))
+    except (SyntaxError, OSError):
+        return set()
+    names: set[str] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Import):
+            for a in node.names:
+                names.add(a.name.split(".")[-1])
+        elif isinstance(node, ast.ImportFrom):
+            if node.module:
+                # `from substrate.codata_constants import X` -> codata_constants
+                names.add(node.module.split(".")[-1])
+    return names
+
+
+def import_cone(producer: Path, index: dict[str, list[Path]]) -> set[Path]:
+    """Transitive first-party import cone of `producer`, excluding itself.
+
+    First-party = the module basename resolves in the producer index, i.e. it
+    is a `.py` under `computations/` or `tools/`. Anything else (stdlib,
+    mpmath, numpy, ...) is not our dependency to track.
+    """
+    seen: set[Path] = {producer}
+    frontier = [(producer, 0)]
+    cone: set[Path] = set()
+    while frontier:
+        cur, depth = frontier.pop()
+        if depth >= MAX_DEPTH:
+            continue
+        for name in _imported_names(cur):
+            for cand in index.get(f"{name}.py", []):
+                if cand in seen:
+                    continue
+                seen.add(cand)
+                cone.add(cand)
+                frontier.append((cand, depth + 1))
+    return cone
+
+
+def main() -> int:
+    witnesses = sorted(HERE.rglob("*.witness.json"))
+    index = _build_producer_index([HERE, HERE.parent / "tools"])
+
+    stale, no_computed_at, unresolved, self_stale_skipped = [], 0, 0, 0
+
+    for wp in witnesses:
+        if "_deprecated" in wp.parts:
+            continue
+        try:
+            w = json.loads(wp.read_text())
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if not isinstance(w, dict):
+            continue
+
+        script_file, computed_at = w.get("scriptFile"), w.get("computedAt")
+        if not script_file:
+            continue
+        if not computed_at:
+            no_computed_at += 1
+            continue
+        try:
+            when = datetime.fromisoformat(computed_at)
+            if when.tzinfo is None:
+                when = when.replace(tzinfo=timezone.utc)
+        except ValueError:
+            no_computed_at += 1
+            continue
+
+        candidates = index.get(script_file, [])
+        if not candidates:
+            unresolved += 1
+            continue
+        producer = _resolve_producer(candidates, wp)
+
+        # Isolate the NEW class: if the producer itself moved, the existing
+        # SELF check already sees it and this would be double-counting.
+        if check_self_staleness(wp, index) is not None:
+            self_stale_skipped += 1
+            continue
+
+        movers = []
+        for mod in import_cone(producer, index):
+            ct = _git_commit_time(mod)
+            if ct and ct > when:
+                movers.append((mod, ct))
+        if movers:
+            movers.sort(key=lambda t: t[1], reverse=True)
+            newest = movers[0][1]
+            stale.append({
+                "witness": _rel(wp),
+                "producer": _rel(producer),
+                "computed_at": when,
+                "newest_dep": _rel(movers[0][0]),
+                "newest_dep_time": newest,
+                "lag_days": (newest - when).days,
+                "n_movers": len(movers),
+            })
+
+    stale.sort(key=lambda r: r["lag_days"], reverse=True)
+
+    print("=" * 78)
+    print(" WITNESS IMPORT-CONE STALENESS — the direction SELF and UPSTREAM miss")
+    print("=" * 78)
+    print(f"  witnesses scanned            : {len(witnesses):,}")
+    print(f"  SELF-stale (already caught)  : {self_stale_skipped:,}  (excluded below)")
+    print(f"  producer unresolved          : {unresolved:,}")
+    print(f"  no usable computedAt         : {no_computed_at:,}")
+    print(f"  IMPORT-CONE STALE            : {len(stale):,}  <- invisible to the "
+          f"existing validator")
+    if GRAFT:
+        print()
+        print(f"  ⚠ SHALLOW CLONE (graft {GRAFT[:12]}). Every module not touched since")
+        print("    the graft has UNKNOWN age and is skipped, so the count above is a")
+        print("    LOWER BOUND covering only post-graft commits — it is not the corpus")
+        print("    figure. Run in a full clone (`git fetch --unshallow`) for that.")
+
+    if stale:
+        print("\n  Worst 25 by lag (days between the witness and its newest dependency):\n")
+        print(f"  {'lag':>6}  {'deps':>4}  witness")
+        print(f"  {'-' * 6}  {'-' * 4}  {'-' * 58}")
+        for r in stale[:25]:
+            print(f"  {r['lag_days']:>6}  {r['n_movers']:>4}  {r['witness']}")
+            print(f"  {'':>6}  {'':>4}    newest: {r['newest_dep']} "
+                  f"({r['newest_dep_time'].date()})")
+
+        # Rollup by culprit module. This is the actionable view: the backlog is
+        # driven by a handful of core modules, and you drain it by deciding
+        # per-MODULE whether its change was numerical, not by opening 1,400
+        # witnesses one at a time.
+        by_mod: dict[str, int] = {}
+        for r in stale:
+            by_mod[r["newest_dep"]] = by_mod.get(r["newest_dep"], 0) + 1
+        print("\n  Top dependency movers — modules invalidating the most witnesses:\n")
+        print(f"  {'count':>6}  module (newest change in the cone)")
+        print(f"  {'-' * 6}  {'-' * 58}")
+        for mod, n in sorted(by_mod.items(), key=lambda kv: kv[1], reverse=True)[:12]:
+            print(f"  {n:>6}  {mod}")
+
+        print("\n  Read this as a ranked backlog, not a verdict. A cone module may have")
+        print("  moved by a comment-only commit, in which case the recomputed payload is")
+        print("  byte-identical — diff the module before re-running an expensive producer.")
+        print("  The durable fix is recording cone hashes at generation time (bean qou-a2q5);")
+        print("  this exists because that fix detects nothing retroactively.")
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

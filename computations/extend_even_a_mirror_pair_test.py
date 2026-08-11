@@ -40,7 +40,12 @@ from _habiro_coefficient_extract import (  # noqa: E402
     _write_witness,
 )
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as _Q_CANONICAL_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()  # idempotent; before any mpf is built from a decimal string
 from witness_base import WitnessBuilder  # noqa: E402
+from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
 
 
 EVEN_A_OPEN = [
@@ -55,7 +60,15 @@ EVEN_A_OPEN = [
 def main() -> int:
     t0 = time.perf_counter()
     q0_float = float(_Q_CANONICAL)
-    q0_mp = mp.mpf(str(_Q_CANONICAL))
+    # Sourced from the canonical 50-digit string, not `str(<mpf>)`, for the
+    # reason recorded on the same line of _habiro_coefficient_extract.main:
+    # `str()` of an mpf renders at the *live* mp.dps, so the digits kept
+    # depended on ambient precision. Importing that module now calls
+    # set_compute_dps() as a side effect, which happens to make the old form
+    # correct here — which is exactly why it is not left as it was. An
+    # invariant that holds because of another module's import order is one
+    # edit away from silently not holding (bean qou-j6gb).
+    q0_mp = mp.mpf(_Q_CANONICAL_STR)
 
     print("=" * 78)
     print(" EVEN-A OPEN MIRROR PAIRS — EXTRACT + Φ_8 SCALING TEST")
@@ -114,13 +127,10 @@ def main() -> int:
     cyc_4 = u**2 + 1
 
     def load_a_m(slug):
-        d = json.load(open(HERE / f"habiro-coefficients-{slug}.witness.json"))
-        out = {}
-        for c in d.get('habiro_coefficients', []):
-            m = c['m']
-            a_m_str = c['a_m'].replace('^', '**')
-            out[m] = sp.sympify(a_m_str, locals={'u': u, 'check_q': u})
-        return out
+        # Delegates to the shared loader, which REFUSES a witness flagging its
+        # own reconstruction_matches false (bean qou-s41x). This was one of
+        # three byte-identical copies, none of which consulted that flag.
+        return _load_a_m(slug, u, witness_dir=HERE)
 
     def q_poch(m):
         if m == 0:

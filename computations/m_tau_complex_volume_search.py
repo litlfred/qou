@@ -87,6 +87,12 @@ import snappy  # noqa: E402
 
 # ── targets & substrate ─────────────────────────────────────────────────────
 TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR)   # CODATA 206.7682830
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TARGET_TAU_OVER_E = mp.mpf("3477.23")            # PDG 2024 m_tau/m_e (4 sig figs)
 SIGMA_EXP_TAU = mp.mpf("5e-5")                   # ~ rel. exp. precision of m_tau/m_e
 

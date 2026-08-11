@@ -53,6 +53,7 @@ _HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(_HERE))
 sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
@@ -67,6 +68,12 @@ _spec.loader.exec_module(_mb)
 
 N_FORMULA = 96          # (★) side — cancellation-free, cheap
 N_DIRECT = 64           # direct-route gate depth (dps 500 cancellation)
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 D_ODD_MEDIAN = mp.mpf("-0.007579403739")   # g3 lane, median-normalized
 C_INF_A63 = mp.mpf("1.230766e-12")         # A6.3 Aitken plateau (committed)
 T0 = time.monotonic()

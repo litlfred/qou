@@ -273,12 +273,37 @@ user's last message, not the most recently mentioned file.
       `bun run content/pipeline/qa-sweep.ts <path> --only <crit>`
       (single canonical invocation; use `/integration-audit
       <axis>` to batch a whole axis). Witnesses are stale when
-      `witness.scriptCommitSha` (producer file's `git log -1
-      --format=%H -- <path>`) or `witness.scriptHash` (SHA-256
-      prefix of producer file content) drift; refresh by
-      re-running the producer with
+      `witness.scriptHash` (SHA-256 prefix of producer file
+      content) drifts from a freshly-computed hash of the current
+      producer. **Do NOT treat `witness.scriptCommitSha` drift as
+      staleness** — rebase-merge (rule 8) rewrites every branch
+      commit sha, so that field is stale-on-arrival for any
+      producer committed on a branch and no branch-side refresh
+      can fix it (the merge *is* the rewrite). It is informational
+      provenance only; the enforcement paths already ignore it
+      (`witness_dependency_drift.py` keys self-staleness on
+      `scriptHash` alone; `witness.py` masks `scriptCommitSha` in
+      `_EPHEMERAL_META_FIELDS`). Measured cost of the old wording:
+      two false positives and zero true positives on the
+      reliably-measurable sample — i.e. it spent the idle-pass
+      witness budget on producer re-runs that fix nothing. Never
+      mass-refresh the field; it would be correct only until the
+      next merge (bean `qou-wsha`). Refresh genuine `scriptHash`
+      staleness by re-running the producer with
       `2>&1 | tee /tmp/<script>.log` per the compute-audit
-      long-compute logging discipline. Cap at ≤ 10 sidecars /
+      long-compute logging discipline. **Diff the producer first**
+      (`git diff <witness.commitSha> -- <producer>`): `scriptHash`
+      is a whole-file hash, so a comment- or docstring-only edit
+      drifts it while the recomputed payload is byte-identical.
+      This is a far weaker false-positive class than
+      `scriptCommitSha` — it needs a real edit, not merely a merge —
+      but it is the same waste when the producer is expensive. Cheap
+      probes: just re-run. Long-compute producer with a comment-only
+      diff: claim it as a bean rather than spend the idle pass
+      recomputing numbers that cannot change. Worked case:
+      `canonical-ordering-dof` drifted `87418d646ff1` →
+      `894cafe018ee` on +21 lines that are **all comment**
+      (bean `qou-zv2l`). Cap at ≤ 10 sidecars /
       ≤ 3 witnesses per idle pass. Every refresh that changes a
       sidecar or witness gets a `chore(qa-sweep|witness)` commit
       naming the producer + criterion + count. Full discipline:
@@ -968,6 +993,8 @@ Read the cheat sheet for: per-step math + paper references + canonical compute s
 When working on math-affecting code or content, **trace the change to a step in the chain** and verify the canonical compute script is in the consumer set.
 
 > **🟧 Mass-and-Binding-Algorithms appendix sync (STRICT).** Any PR that touches mass / binding derivations or compute infra (Steps 9a, 9b, 10, 11 of the canonical chain, or any sidecar algorithm — Δ_λ closure, c_k truncation ladder, LP/SDP dual emission, witness-JSON pipeline) **must** update the matching `alg:`-block under [`content/quantum-observable-universe/appendix-mass-binding-algorithms/`](content/quantum-observable-universe/appendix-mass-binding-algorithms/) in the same PR. The appendix is a maintenance contract bridging propositions ↔ Python API; its `uses[]`, `computation.script`, `computation.witness`, and `.md` *Algorithm / Correctness / Python API* sections must stay in sync with the actual compute. Enforced by `local/coordinate.md §2-bis`, `local/compute-author.md §8 pre-work checklist`, `local/compute-audit.md §verification checklist`, and `local/proof-editor.md §coordination rules`. Reviewers diff the appendix against the compute / proof change.
+
+> **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The framework no longer claims, targets, or scores an **absolute** nucleon or atomic mass in MeV (m_p, m_n, m_⁴He) as a prediction. Absolute mass is `m_e · (dimensionless ratio)`, and m_e (CAL-1) sets the MeV scale *by fiat* — so the MeV number double-counts the calibration and carries no content beyond the ratio. **The mass-formula shape and the `canonical_mass` facade in the two banners below remain valid — but as `m_e`-scaled *realizations* of the dimensionless ratio / binding, NOT as absolute-mass predictions.** Report ratios (`m_p/m_e`, `m_μ/m_e`, `m_K/m_π`), binding `B(K)`, decay Q-values (`Q_β`), and splittings (`Δ_pn`); do **not** present `m_p ≈ 938.27 MeV` as a framework *prediction* (it remains derivable as `m_e × ratio`, but that is a rendering, not a claim). Broader than the 2026-08-02 q₀-derivation forever-gate — that closed one route; this closes the absolute-mass *target*. Full ruling: [`docs/audits/2026-08-11-excise-absolute-mass-notion.md`](docs/audits/2026-08-11-excise-absolute-mass-notion.md).
 
 > **⚠ Critical framing — the mass formula is `m(K) = m_e · Vol(K) · ρ(K) / ℏ_q²`; do NOT reintroduce `λ_scale` OR the `Geom_full` wrapper.** Two standing purges: (1) the factor once called `λ_scale` was **absorbed** 2026-05-23 (commit `ffdd84409`) — not a separate constant to derive; (2) the opaque `Geom_full(K)` wrapper was **PURGED 2026-06-06** (owner directive, repeated — it obscured) in favour of its explicit meaning, the **volume–density product** `Vol(K)·ρ(K)/ℏ_q²`. So the per-knot mass is `m(K) = m_e · Vol(K) · ρ(K) / ℏ_q²` (electron scale × hyperbolic volume × per-block density). Compute uses `vol_density_borromean` / `vol_density_per_block` / `vol_density` (`_li_2_q_util.py`, `mass_vol_density.py`). The Yekutieli per-cell variant was tried then PURGED 2026-05-24 (`71d674da1`). The "2.89% m_p gap" is between the current categorical `Vol(𝓑₃)·ρ` value and its exact value — **not** a "λ_scale closure" problem. **Do not write `Geom_full` in paper, audit doc, or compute — write the explicit `Vol(K)·ρ(K)/ℏ_q²`.**
 

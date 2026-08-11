@@ -643,3 +643,204 @@ core), the 3s cancel entirely (stronger than the 4₁ `Z[1/3]`
 statement), and the 23-powers are the per-order δ³ᵏ normalization
 (integrality away from Δ, disc = −23). `N(3α−2) = −23` (odd-degree
 sign) checked exactly.
+
+## Addendum 16 (2026-08-02) — global symbols: machinery to degree 96, and the Kummer-field-collapse finding; xx9f E-hypotheses refuted on digits
+
+**xx9f second narrowing (scope-(a) negatives)**: GZ §8.1 identifies
+the C_r as Taylor data of `log(1 − e(1/6 + w))` (shifted Li₋ᵣ values).
+Two zero-free-parameter hypotheses for the (287) mismatch λ were
+tested against its known digits and **both refuted**: the
+uniform-Bernoulli-shift form `Δ(s)·Σc_j Li₀(ζ_j)` (full s-grid, both
+signs) and the weaker parallel form (any 5-unit rational multiple).
+Conclusion: the E-factor's tail arguments are not the (275) roots of
+unity — most plausibly the Nahm z-data of the ψ³ bracket in (281).
+
+**y3xv increment (`gswz_epsm_global_symbols_probe.py`, 5/5)**: the
+global integer-coefficient symbols (ξ = 2[z₁]+[z₂], z₁ = 1−α²,
+1−z₁ = α² exactly) run through the cyclic-quantum-dilog machinery in
+unramified fields containing μ_{624m} up to **degree 96** (≈60 s
+total): field integrity, α Hensel-lift, and the root-difference law
+all green. **The honest structural finding (vacuity vigilance, the
+#4533 lesson applied proactively)**: a diagnostic showed
+`χ(ζ_N) = 624 ≠ 0` (the character resolves F) but `χ` kills ALL of
+μ₆₂₄ — since `624m | 5^d−1` by construction, every base-Teichmüller
+unit is an m-th power in F. The all-zero classes are **Kummer-field
+collapse, not ε-triviality**; the α²-identity and Bloch-shadow checks
+hold vacuously at these field sizes (disclosed in probe + witness).
+**The ε-invariant lives in the base field**: CGZ's descent
+`P(ξ) = a·b^m, a ∈ F_n^×` — extracting the base-field class of `a`
+via the Galois norm/transfer from F down to `Q₂₅(ζ_m)` is the
+precisely-defined next increment (bean `y3xv` stays in-progress).
+
+## Addendum 17 (2026-08-11) — the descent EXECUTED at m = 2: ν = +1, canonical ε₂(ξ) = +1 (PR #4968)
+
+The increment-2 spec (Addendum 16 / PR #4946) is now implemented and
+run: `gswz_epsm_descent_m2_probe.py`, **20/20 checks**, the first
+genuinely **descended and well-defined** ε_m value of the program.
+
+**Setup.** F = Q₅(μ₁₂₄₈) (degree 8 unramified), base B = Q₂₅,
+Γ = ⟨σ⟩ = ⟨φ₅²⟩ of order 4. σ is the Hensel-lifted Frobenius
+(checked: h(σx) = 0 and σ⁴ = id). P(ξ) = D(x₁)²·D(x₂)·D(1)⁻³ from
+the Addendum-16 machinery.
+
+**Layer 1 — the obstruction (abstract Tonelli root).**
+c = √(σ(P)/P) exists (Tonelli–Shanks on the 2-Sylow + Newton);
+**ν = N_{F/B}(c) = +1** ∈ μ₂, root-choice invariant — unobstructed.
+**Honest finding, self-caught the same day in two stages before any
+review:** (i) the first pushed version used χ_B = teich(·)³¹², which
+is *identically* +1 on the σ-fixed base (312 ≡ 0 mod 24) — fixed to
+the genuine quadratic character teich(·)¹² = teich(·)^{(25−1)/2} with
+a base-level non-vacuity control (χ_B(ζ₆₂₄²⁶) = −1); (ii) with the
+genuine character, the abstract-layer value **flips with the root
+choice** (χ_B(a) = +1 for c, −1 for −c — asserted as a check): the
+flip c → −c moves a by v² with σ(v) = −v, forcing teich(v)²⁴ = −1.
+So the abstract layer pins **only ν**; χ_B(a) from an arbitrary
+Tonelli branch is not an invariant.
+
+**Layer 2 — the canonical equivariant cocycle (the value).** σ fixes
+z₁, z₂, α, and acts on the chosen roots by x₁ → −x₁ (r₁ = 1),
+x₂ → x₂ (r₂ = 0) — measured, not assumed. The Lean-proved shift law
+(21) (`QOU.Machinery.CyclicQuantumDilog`, PR #4964) then gives σP/P
+as an **explicit product**, D(−x₁)/D(x₁) = (1−x₁)²/(1−z₁), whose
+square root is *forced* (every exponent even before rooting, gated by
+`canonical_root_integral`):
+
+$$c_{\mathrm{canon}} = \frac{(1-x_1)^2}{1-z_1}, \qquad
+c_{\mathrm{canon}}^2 = \frac{\sigma P}{P} \;\text{(exact)}.$$
+
+No Tonelli choice anywhere. The c_canon-splice satisfies
+c·σ(b) = b exactly, the descended a = P·b⁻² is σ-fixed (the
+falsifiable certificate), and
+
+**ε₂(ξ) = χ_B(a_canon) = +1**, **invariant under x₁ → −x₁** (the
+whole canonical chain re-run on flipped data; both give +1).
+
+**Why this is new information.** Addendum 16's collapse finding showed
+every F-level Kummer class is structurally vacuous. ε₂(ξ) = +1 is the
+base-level class of the canonically-descended element — the object
+CGZ's ε actually is. No printed target exists; the value is
+falsifiable against any independent computation.
+
+**Next.** m = 3: d = 12 (ord₅ mod 1872), Γ of order 6, ν ∈ μ₃
+(root-ambiguity ζ₃⁶ = 1 auto-invariant), χ_B = teich(·)⁸; the
+canonical-cocycle integrality pattern must again be read off the
+measured r_i. Then remaining m | 24; m = 24 is where the #4533 −1
+obstruction on [ζ₂₄] and the open (−1)^{c₁} parity live.
+
+## Addendum 18 (2026-08-11) — m = 3 descent: ν = 1, but the shift-law layer cannot pin ε₃; the cocycle lives on the α-line (PR #4968)
+
+`gswz_epsm_descent_m3_probe.py`, **18/18 checks**, F = Q₅(μ₁₈₇₂)
+(d = 12), Γ = ⟨φ₅²⟩ of order 6, χ_B = teich(·)⁸ into the base
+μ₃ = ⟨g₂₄⁸⟩.
+
+**Measured structure (none of it assumed):**
+
+- Shift exponents **r = (r₁, r₂) = (0, 1)**: z₁ *has* a σ-fixed (base)
+  cube root; z₂ does **not** — its Frobenius shifts every cube root by
+  ζ₃. (r_i is intrinsic to z_i: σ fixes ζ₃, so the shift is the same
+  for all three roots.)
+- **ν = N_{F/B}(c) = 1** (Tonelli cube root via the 3-Sylow, order 9 =
+  3^{v₃(5¹²−1)}; c³ = σP/P exact; ν root-choice invariant since
+  ζ₃⁶ = 1). The descent **exists**.
+- **The canonical layer is integrally obstructed**: with n = (2, 1),
+  the shift law gives σP/P = (1−x₂)³·(1−z₂)⁻¹, and the (1−z₂)-factor's
+  cube root is fractional — unlike m = 2, where every exponent was
+  even before rooting. Any residual cube-root choice sweeps the class
+  through **all of μ₃** (the m = 2 flip generalizes: a root twist
+  c → ζ₃c moves the descended a by v³ with σ(v) = ζ₃v, forcing
+  teich(v)²⁴ = ζ₃, i.e. Δχ_B = ζ₃ per twist). So the shift-law layer
+  pins **ν only** at m = 3 — reported as such, not forced.
+- **The α-line identity (exact, new):** 1−z₁ = α² *and* **1−z₂ = α**
+  (α⁴−α²+1 = −α from α³ = α²−1). The entire cocycle obstruction of
+  ξ = 2[z₁]+[z₂] is a power of α: σP/P = (1−x₂)³/α. A canonical ε₃
+  therefore reduces to one question — a canonical cube root of α —
+  which the CGZ square-argument η-elements (their Thm 7.4 arguments
+  are squares, sidestepping root choices) are the natural candidate
+  mechanism for. Queued on `qou-y3xv`.
+
+**Contrast table so far:**
+
+| m | r (measured) | canonical root | ν | ε_m(ξ) |
+|---|---|---|---|---|
+| 2 | (1, 0) | integral — no choice | +1 | **+1, well-defined** (x₁-flip invariant) |
+| 3 | (0, 1) | fractional in (1−z₂) = α | 1 | pinning-dependent; only ν invariant at this layer |
+
+## Addendum 19 (2026-08-11) — the c_k payoff run: named corpus candidates through the gate stack, twisted p = 5 leg executed (PR #4968)
+
+`ck_membership_payoff_run_probe.py`, **7/7**, exact sympy/cyclotomic
+arithmetic. This executes the "twisted test" queued on `qou-9p9y` by
+the classical gate run (`habiro_tail_membership_gate_probe.py`) and
+the U2 payoff promised on `qou-1hlh`.
+
+**Candidates (the corpus's actual named fibre-level objects):**
+J_Hopf(q) = −(q+1/q) (the c₃ fibre candidate); [2]_q (the α_EM
+element's q-factor); D(4) (binding Habiro tail control). Exact anchor:
+the corpus's two c₃ q-forms, −2 − ℏ_q²q and J_Hopf(q), are **the same
+Laurent element** (verified exactly).
+
+**Gates:** G1 integer-Laurent (global); G2 bar-even symmetrization
+3-integral (GSWZ pattern); G3 the p = 2 Frobenius edge
+F(ζ₈)² ≡ F(ζ₄) mod 2 in Z[ζ₈]; **G4 the twisted p = 5 leg
+F(ζ₅)⁵ ≡ F(1) mod 5 in Z[ζ₅]** — the Frobenius-endomorphism
+congruence at the prime where the whole 5₂/GSWZ program lives.
+
+**Result table (all signatures predicted in advance and asserted):**
+
+| candidate | G1 | G2 | G3 (p=2) | G4 (p=5) |
+|---|---|---|---|---|
+| J_Hopf (c₃) | ✓ | ✓ | ✓ | ✓ |
+| [2]_q (α_EM) | ✓ | ✓ | ✓ | ✓ |
+| D(4) (binding tail) | ✓ | ✓ | ✓ | ✓ |
+| swing-fit (×(1+149/5000)) | ✗ | ✓ | ✗ | ✗ |
+| denom-7 | ✗ | ✓ | ✓ | ✓ |
+
+The two controls fail **per-prime, exactly where their denominators
+live**: the 2.98%-swing-sized fitted shape (denominator 2³·5⁴) breaks
+the global, p = 2 and p = 5 gates while passing the 3-gate; the
+denominator-7 shape breaks only the global gate — every local gate at
+p ∉ {7} passes. This is "coefficient integrality away from Δ" made
+operational: a fitted c₃-shape is refuted by arithmetic alone, no
+anchor inversion anywhere. VALUE-level c₃ verdicts (near-match,
+2.98% swing — SETTLED 2026-05-31) are untouched; this is
+element-level arithmetic.
+
+## Addendum 20 (2026-08-11) — xx9f third narrowing: the Nahm-argument E-factor is also excluded on digits; the Nahm saddle IS z₁; the (1+x)^a structure exact (PR #4968)
+
+`gswz_287_nahm_efactor_probe.py`, **6/6**, exact (Z/5⁸)[α] arithmetic.
+This executes the surviving route from the second narrowing ("the
+E-factor's tail arguments are most plausibly the Nahm z-data of the
+ψ_{0,z,1}³ bracket in (281)").
+
+**New exact positives:**
+
+- **The 5₂ Nahm saddle is the shape z₁.** The cube-potential saddle
+  equation (1−z)³ = z² (disc −23, the same cubic field) has K-rational
+  root exactly **z = z₁ = 1−α²** — verified in the ring. So the (281)
+  ψ_{0,z,1} parameter is the tetrahedron shape itself, mirroring 4₁'s
+  ψ_{0,ζ₆,1} (ζ₆ = the 4₁ shape).
+- **The mismatch has the exact (1+x)^a structure at h².** With
+  a = e₁ from the reconstruction printed = (1+e₁x+e₂x²+e₃x³)·computed,
+  the identity e₂ = a(a−1)/2 holds on **all** available digits — an
+  independent re-derivation of the Addendum-16 x²-confirmation, i.e.
+  the B₃ = 0 E-factor signature.
+- **The h³ residual pinned:** μ₃ = e₃ − a(a−1)(a−2)/6 has digits
+  (4, 0, 3)·(const, α, α²) mod 5 — nonzero, so the normalization is a
+  genuine series (not a single (1+x)^a power).
+
+**The test and its outcome (scope-(a)):** 84 zero-free-parameter
+candidates C₁ = ±(n₁Li₀(ζ₆ᵗz₁) + n₂Li₀(ζ₆ᵗz₂)) (t ∈ 0..5, structural
+weights, both signs; ζ₆ = the GZ Z-shift e(−5/6) at c = 1), each
+implying a = −C₁/12 — **none matches the e₁ digits**. A planted-
+candidate sensitivity control (synthetic mismatch from weights (2,1))
+is found *exactly* by the same scanner, so the empty result is a
+genuine exclusion, not a scanner artifact. Had any candidate survived
+h¹, it would have faced −C₃ = 720μ₃ (same weights, Li₋₂) at h³.
+
+**Where xx9f stands (three argument-classes now excluded on digits):**
+(275) roots of unity under uniform Bernoulli shift; parallel 5-unit
+scalars; Nahm z-arguments under structural Li₀ weights. Remaining:
+(a) the f₅ fibre reading of the printed subscript (owner's pdf
+eyeball pending: p. 57 (287) f-subscript; p. 56 (281)→(282) factor);
+(b) Bernoulli-polynomial-weighted mixed arguments (GZ (8.7) at c > 1)
+— which needs unprinted higher-fibre data to constrain without
+fitting. Bean `qou-xx9f` reopened accordingly.

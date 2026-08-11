@@ -216,18 +216,25 @@ theorem log_one_add_taylor_bound_quadratic (x : ℝ) (hx : 0 ≤ x) :
 -- Ref: [manuscript] prop:q-beta-spectral-bridge
 -- Ref: [manuscript] prop:q-beta-spectral-bridge
 theorem log_one_add_taylor_bound_axiom (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
-    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 := by
-  /- To close this sorry, we need a Mathlib lemma bounding the Taylor remainder
-     of `Real.log(1+x)` to order 3 for `x ∈ [0, 1)`. Mathlib provides `Real.le_log_one_add_of_nonneg`
-     and alternating-series bounds for `exp`, but `Real.log` Taylor polynomial bounds
-     at depth 3 (e.g. `x - x²/2 + x³/3`) are missing. One path is to prove `log(1+x) ≤ x - x²/2 + x³`
-     by analyzing the derivative `x²(3x+2)/(1+x) ≥ 0`, similar to how `log_one_add_lower_taylor_bound`
-     is proved above. -/
-  sorry
+    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 / (1 - z * h) := by
+  have h_abs : |- (z * h)| < 1 := by
+    rw [abs_neg, abs_of_nonneg (by positivity)]
+    exact hzh
+  have h_sum := Real.abs_log_sub_add_sum_range_le h_abs 2
+  have h_eq : (∑ i ∈ Finset.range 2, (- (z * h)) ^ (i + 1) / (↑i + 1)) = - (z * h) + (z * h) ^ 2 / 2 := by
+    simp [Finset.sum_range_succ, pow_two]
+    ring
+  rw [h_eq, sub_neg_eq_add] at h_sum
+  have h_eq2 : - (z * h) + (z * h) ^ 2 / 2 + Real.log (1 + z * h) = Real.log (1 + z * h) - (z * h - (z * h) ^ 2 / 2) := by ring
+  rw [h_eq2] at h_sum
+  have h_eq3 : |- (z * h)| ^ (2 + 1) / (1 - |- (z * h)|) = (z * h) ^ 3 / (1 - z * h) := by
+    rw [abs_neg, abs_of_nonneg (by positivity)]
+  rw [h_eq3] at h_sum
+  exact h_sum
 
 theorem log_one_add_taylor_bound
     (h z : ℝ) (hz : 0 ≤ z) (hh : 0 ≤ h) (hzh : z * h < 1) :
-    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 :=
+    |Real.log (1 + z * h) - (z * h - (z * h)^2 / 2)| ≤ (z * h)^3 / (1 - z * h) :=
   log_one_add_taylor_bound_axiom h z hz hh hzh
 
 /-! ## Top-level identifier for `lean.ref`

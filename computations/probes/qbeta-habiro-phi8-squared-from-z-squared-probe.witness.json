@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T02:00:31.863733+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "computedAt": "2026-08-10T17:53:36.004160+00:00",
+  "commitSha": "d89f444fd94372c285efbb88a2eaddf57c3ac9a4",
   "assertions": [
     {
       "name": "phi8_squared_mechanism_identified",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 83897,
+  "durationMs": 21530,
   "computation": "qbeta-habiro-phi8-squared-from-z-squared-probe",
   "scriptFile": "qbeta_habiro_phi8_squared_from_z_squared_probe.py",
-  "scriptHash": "fc528d8000da",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "36bfe8f318e2",
+  "scriptCommitSha": "15de5f9fb4c4885be5b3b48c8e2c31bfc2078b76",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,11 +28,8 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1"
   },
   "description": "Algebraic verification: tests whether the universal Φ_8² factor observed in atomic-step Δa_m Habiro factorizations arises mechanically from z(q)^k interface factors in Phase 5q closed forms, or from a different mechanism (e.g., the (u;u)_m=8 Pochhammer boundary). Computes Habiro decompositions of z(q)^k alone for k=1,2,3; analyses Φ_8 emergence in (u;u)_m factors; cross-checks against actual Δa_m factorizations and pins the first m for which Φ_8 enters.",
   "contentBlock": "prop:neutron-qvalue-symbolic",
@@ -422,19 +419,23 @@
       },
       {
         "pair": "(³He − D)",
-        "cyclotomic_counts": {},
-        "phi8_power": 0,
-        "first_phi8_m": null,
-        "first_phi8_sq_m": null,
-        "factored_excerpt": "u**120 - u**119 - u**118 + u**115 + u**113 - u**108 + 4*u**14*u**105 + 8*u**13*u**105 + 13*u**12*u**105 + 18*u**11*u**105 + 27*u**10*u**105 + 44*u**9*u**105 + 62*u**8*u**105 + 86*u**7*u**105 + 119*u**6*u**105 + 168*u**5*u**105 + 234*u**4*u**105 + 307*u**3*u**105 + 406*u**2*u**105 + 546*u*u**105 + 726*u**105 - 4*u**14*u**104 - 8*u**13*u**104 - 13*u**12*u**104 - 18*u**11*u**104 - 27*u**10*u**104 - 4"
+        "cyclotomic_counts": {
+          "8": 2
+        },
+        "phi8_power": 2,
+        "first_phi8_m": 7,
+        "first_phi8_sq_m": 15,
+        "factored_excerpt": "u*(u**4 + 1)**2*(u**24 + u**23 + u**21 - u**3 - u + 1)*(u**16 - u**13 + u**11 - u**9 + u**7 - u**5 + u**3 + 1)*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**39 + u**38 - u**35 + u**34 - u**32 + u**30 - u**28 + u**26 + 2*u**23 + u**22 + u**20 - u**18 - u**16 + 2*u**15 - u**12 + u**10 - u*"
       },
       {
         "pair": "(⁴He − ³He)",
-        "cyclotomic_counts": {},
-        "phi8_power": 0,
-        "first_phi8_m": null,
-        "first_phi8_sq_m": null,
-        "factored_excerpt": "-u**13*u**153 - 5*u**12*u**153 - 13*u**11*u**153 - 25*u**10*u**153 - 36*u**9*u**153 - 46*u**8*u**153 - 63*u**7*u**153 - 86*u**6*u**153 - 122*u**5*u**153 - 159*u**4*u**153 - 203*u**3*u**153 - 281*u**2*u**153 - 365*u*u**153 - 470*u**153 + u**13*u**152 + 5*u**12*u**152 + 13*u**11*u**152 + 25*u**10*u**152 + 36*u**9*u**152 + 46*u**8*u**152 + 63*u**7*u**152 + 86*u**6*u**152 + 122*u**5*u**152 + 159*u**4*"
+        "cyclotomic_counts": {
+          "8": 2
+        },
+        "phi8_power": 2,
+        "first_phi8_m": 7,
+        "first_phi8_sq_m": 15,
+        "factored_excerpt": "-u*(u**4 + 1)**2*(u**24 + u**23 + u**21 - u**3 - u + 1)**2*(u**16 - u**13 + u**11 - u**9 + u**7 - u**5 + u**3 + 1)**2*(u**16 - u**13 - u**12 + u**11 + u**8 - u**5 - u**4 + u**3 + 1)*(u**16 + u**15 + u**13 - u**12 - u**11 - u**9 + u**8 + u**7 + u**5 - u**4 - u**3 - u + 1)*(u**45 + u**44 + u**43 - 3*u**41 - 2*u**39 - u**36 + 2*u**35 - u**33 + u**31 - u**29 - u**28 + u**27 - u**26 + 4*u**25 + u**24 +"
       }
     ],
     "verdict_short": "FROM_POCHHAMMER_BOUNDARY",
@@ -446,6 +447,6 @@
       "z_sq_at_q0": 0.3753866308623884,
       "phi8_at_u0": 2.232052454166764
     },
-    "elapsed_seconds": 83.89802527427673
+    "elapsed_seconds": 21.531189680099487
   }
 }

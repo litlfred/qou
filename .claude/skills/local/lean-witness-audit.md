@@ -40,7 +40,8 @@ w.save()  # → my-computation.witness.json
 The builder automatically captures:
 - **commitSha**: Git HEAD at computation time
 - **scriptHash**: SHA-256 of the script file (for staleness detection)
-- **scriptCommitSha**: Last commit that touched the script
+- **scriptCommitSha**: Last commit that touched the script — provenance
+  only, **not** a staleness signal (rebase-merge rewrites it; bean `qou-wsha`)
 - **computedAt**: ISO 8601 timestamp
 - **engine** / **engineVersion**: Computation engine info
 - **assertions**: Structured pass/fail checks with tolerances
