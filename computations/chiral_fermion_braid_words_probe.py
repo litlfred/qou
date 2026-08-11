@@ -63,8 +63,23 @@ they do not.  There is no surviving reading.  The escape that
 knot type" -- is exactly what R2 closes: at minimal level the braid word IS
 determined by the knot type.
 
-This was a CANDIDATE test, never a derivation: `sign` is a choice of function,
-and the quark braid word is NOT established by the corpus (flagged below).
+This was a CANDIDATE test, never a derivation: `sign` is a choice of function.
+
+The quark braid word IS established by the corpus (corrected 2026-08-11)
+-----------------------------------------------------------------------
+An earlier version of this probe said the quark braid word was missing and
+ASSUMED writhe 0 for it.  Both were wrong.
+`knot-particle-dictionary-table4-data.md` gives it in a column headed "Braid
+element in B_3": up = sigma_i (positive crossing), down = sigma_i^-1 (negative).
+Its "<- T(2,n)" column is LEPTON DESCENT, not identity.  So the quark writhe is
++-1, and with it the Y = B - L quark rows FAIL where the old assumption made
+them match.
+
+Sharper still, and independent of L: the anti-up is the braid mirror of the up,
+which IS the down's braid element, yet they carry -2/3 and -1/3.  So the Coulomb
+charge does not factor through the braid element at all.  Lean:
+`QuarkBraid.charge_not_factoring_through_braid_element`.
+
 Exact integer arithmetic; no floats, no fitted parameters.
 """
 
@@ -114,19 +129,36 @@ def main() -> dict:
             for g, n in enumerate([1, 3, 5, 7], start=0)]
 
     # Consequence for Y = B - L on the left-handed sector.
-    # B is the writhe-INDEPENDENT half (mu-bar_123 candidate); L = sign(w).
+    #
+    # CORRECTED 2026-08-11.  An earlier version of this probe ASSUMED the quark
+    # writhe was 0 ("motivated by the gluon unit being writhe-balanced") and
+    # reported all four rows matching.  That assumption is contradicted by the
+    # corpus: `knot-particle-dictionary-table4-data.md` gives the quark braid
+    # element outright, in a column headed "Braid element in B_3":
+    #
+    #     up      u   sigma_i      (positive crossing)   -> writhe +1
+    #     down    d   sigma_i^-1   (negative crossing)   -> writhe -1
+    #     strange s   sigma_i^-1                         -> writhe -1
+    #     charm   c   sigma_i                            -> writhe +1
+    #     bottom  b   sigma_i^-1                         -> writhe -1
+    #
+    # (The "<- T(2,n)" column of that table is LEPTON DESCENT, not identity.)
+    # So the quark writhe is +-1, and the four rows below no longer match.  The
+    # previous "all match: True" was produced entirely by the wrong assumption.
+    QUARK_UP, QUARK_DOWN = [1], [-1]      # sigma_1, sigma_1^-1
     yrows = []
-    for name, B, w_assumed, Y_sm in [
-        ("u_L", F(1, 3), 0, F(1, 3)),
-        ("d_L", F(1, 3), 0, F(1, 3)),
-        ("nu_L", F(0), 1, F(-1)),
-        ("e_L", F(0), 3, F(-1)),
+    for name, B, word, Y_sm in [
+        ("u_L", F(1, 3), QUARK_UP, F(1, 3)),
+        ("d_L", F(1, 3), QUARK_DOWN, F(1, 3)),
+        ("nu_L", F(0), sigma1_pow(1), F(-1)),
+        ("e_L", F(0), sigma1_pow(3), F(-1)),
     ]:
-        L = (w_assumed > 0) - (w_assumed < 0)
+        w = writhe(word)
+        L = (w > 0) - (w < 0)
         Y = B - L
-        yrows.append(dict(fermion=name, B=str(B), writhe_assumed=w_assumed,
-                          L=L, Y_predicted=str(Y), Y_sm=str(Y_sm),
-                          match=(Y == Y_sm)))
+        yrows.append(dict(fermion=name, B=str(B), braid_word=word,
+                          writhe_from_corpus=w, L=L, Y_predicted=str(Y),
+                          Y_sm=str(Y_sm), match=(Y == Y_sm)))
     y_ok = all(r["match"] for r in yrows)
 
     # The two independent refutations, computed rather than asserted.
@@ -166,16 +198,27 @@ def main() -> dict:
         "higher_generations": gens,
         "Y_consequence": dict(
             formula="Y = B - L, with B writhe-independent and L = sign(w)",
-            rows=yrows, all_match=bool(y_ok)),
+            quark_braid_element_source=(
+                "knot-particle-dictionary-table4-data.md, column 'Braid element"
+                " in B_3': up = sigma_i (+), down = sigma_i^-1 (-). NOT assumed."),
+            rows=yrows, all_match=bool(y_ok),
+            note=("an earlier version of this probe ASSUMED quark writhe 0 and"
+                  " reported all four rows matching; the corpus gives +-1, and"
+                  " the quark rows do not match")),
         "CAVEATS": [
             "REFUTED under Markov II (same link, writhe +1, L jumps 0 -> 1).",
             "REFUTED under the minimal-level ruling: nu_e is the UNKNOT, whose "
             "minimal-level word is empty (w = 0), and so is its mirror's -- the "
             "two are the same state and sign(0) = 0 != +1.",
             "sign() is a CHOICE of function, not derived from the framework.",
-            "The QUARK braid word is NOT established by the corpus; w=0 is "
-            "ASSUMED above (motivated by the gluon unit being writhe-balanced). "
-            "Every quark row depends on that assumption.",
+            "CORRECTED: the quark braid word IS established by the corpus "
+            "(knot-particle-dictionary-table4-data.md: up = sigma_i, "
+            "down = sigma_i^-1), giving writhe +-1, not the 0 this probe "
+            "previously assumed. The quark rows below therefore FAIL.",
+            "The anti-up and the down share the braid element sigma_i^-1 but "
+            "carry -2/3 and -1/3, so the Coulomb charge does not factor through "
+            "the braid element at all "
+            "(Lean: QuarkBraid.charge_not_factoring_through_braid_element).",
             "Chirality (L vs R) is still not represented: the corpus gives no "
             "distinct braid word for u_L vs u_R.",
             "L = sign(w) is writhe-DEPENDENT. That does not conflict with the "
@@ -209,9 +252,10 @@ if __name__ == "__main__":
     print(f"  minimal word {r2['minimal_word']} (w={r2['writhe_at_minimal_level']})"
           f" == mirror {r2['mirror_minimal_word']}")
     print(f"  {r2['consequence']}")
-    print(f"\nY = B - L consequence (quark writhe ASSUMED 0):")
+    print("\nY = B - L consequence (quark writhe FROM THE CORPUS, not assumed):")
     for r in res["Y_consequence"]["rows"]:
-        print(f"  {r['fermion']:5s} B={r['B']:4s} L={r['L']:+2d}  "
+        print(f"  {r['fermion']:5s} B={r['B']:4s} word={str(r['braid_word']):9s} "
+              f"w={r['writhe_from_corpus']:+2d} L={r['L']:+2d}  "
               f"Y={r['Y_predicted']:5s} vs SM {r['Y_sm']:5s}  "
               f"{'OK' if r['match'] else 'MISMATCH'}")
     print(f"  all match: {res['Y_consequence']['all_match']}")

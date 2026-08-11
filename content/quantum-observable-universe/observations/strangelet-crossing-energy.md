@@ -19,7 +19,9 @@ $$
 *There is no Coulomb correction. The entire crossing energy lies in the symmetric (strong) channel ([decomposition](#prop:crossing-energy-decomposition)).*
 
 *3. Enhanced binding per baryon.*
-*The strange quark $\mathfrak{s} = T_{2,5}^{\sigma}$ contributes $5$ negative crossings to the Borromean braid word, versus $3$ for the down quark $\mathfrak{d} = T_{2,3}^{\sigma}$. For each baryon unit:*
+*The strange quark $\mathfrak{s} \leftarrow T_{2,5}^{\sigma}$ contributes $5$ negative crossings to the Borromean braid word, versus $3$ for the down quark $\mathfrak{d} \leftarrow T_{2,3}^{\sigma}$. For each baryon unit:*
+
+> The arrow is the [knot-particle dictionary](#tbl:knot-particle-dictionary-table4-data)'s **lepton-descent** relation, not an identity: that table gives the quark's *braid element in* $\mathcal{B}_3$ as a single generator, $\sigma_i$ for $\mathfrak{u}$ and $\sigma_i^{-1}$ for $\mathfrak{d}$, $\mathfrak{s}$ — consistent with [the up quark](#def:up-quark) being "the unknot distinguished by its environment". The crossing counts $5$ and $3$ are read off the descent partner and are unaffected.
 $$
   n_-^{(\mathrm{uds})} = 3 + 5 = 8,
   \qquad
