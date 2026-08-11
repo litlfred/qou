@@ -70,3 +70,46 @@ attempted for each. 18 resolve to a live producer and are runnable:
 3. Fix the queue-construction defect itself: the work list should be the
    **union** of (reads a moved witness) and (fails a content test), not either
    alone. Both are already computable.
+
+## The native work list already asks the right question (2026-08-11)
+
+The harness's own `work_list()` is keyed on **being** convention C — the
+three content tests — not on reachability. The `--from blast-radius` override
+is what substituted the wrong question; the default was correct all along.
+
+Measured programmatically (importing `work_list()`, not grepping `--plan`):
+
+| | |
+|---|---|
+| native `work_list()` | **67** witnesses — 41 with a producer, 26 orphan |
+| this bean's complement | 31 |
+| complement already in native | **27 / 31** |
+| in complement, NOT native | **4** |
+
+So the resolution is not to merge two queues: it is to **drop `--from` and run
+the harness natively**. The complement was a symptom of the override, and 27
+of its 31 entries were never outside the real list.
+
+The four genuinely outside it need explaining before any sweep claims
+completeness — a structurally-C witness absent from a convention-C-keyed work
+list is either a `_deprecated/` exclusion, an unparseable doc, or a detector
+disagreement:
+
+    computations/binding-a3plus-full-theta-assembly.witness.json
+    computations/binding-a3plus-joint-ji-combiner.witness.json
+    computations/chi-helium-4-h12-numeric.witness.json
+    computations/probe-option-e-phase2-crystal-vertex-candidates.witness.json
+
+(`chi-helium-4-h12-numeric` is already documented in
+`computations/_deprecated/README.md` as a live input with no producer — the
+mis-filed-orphan case — so at least one of the four has a known cause.)
+
+### A measurement error worth recording
+
+First attempt at this comparison grepped the `--plan` stdout and reported
+"16 of 31 missing". That was wrong: `--plan` prints producers as
+`producer -> N witness(es)` and names witnesses **only** on ORPHAN lines, so
+any witness owned by a producer was invisible to the grep. The real number is
+4. Same shape as the defects this bean is about — measuring the artifact
+instead of the property — which is why it is written down rather than quietly
+fixed.
