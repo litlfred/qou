@@ -63,6 +63,24 @@ noncomputable def heckeIncl : Hecke K q qi n →ₐ[K] Hecke K q qi (n + 1) :=
     heckeIncl K q qi n (σ K q qi n i) = σ K q qi (n + 1) i.castSucc :=
   Hecke.lift_σ K q qi n (gen K q qi n) _ _ _ i
 
+/-- **The generators generate `H_n(q)` as an algebra** (general `n`):
+`Algebra.adjoin K {σ_0, …, σ_{n-1}} = ⊤`.  The general-`n` form of
+`HeckeDim3.adjoin_gens_eq_top`; the base step of the coset-decomposition
+spanning argument. -/
+theorem adjoin_range_σ_eq_top :
+    Algebra.adjoin K (Set.range (σ K q qi n)) = ⊤ := by
+  rw [eq_top_iff]
+  rintro x -
+  obtain ⟨f, rfl⟩ := RingQuot.mkAlgHom_surjective K (HeckeRel K q qi n) x
+  induction f using FreeAlgebra.induction with
+  | grade0 r =>
+      have hr : (RingQuot.mkAlgHom K (HeckeRel K q qi n)) (algebraMap K _ r)
+          = algebraMap K (Hecke K q qi n) r := (RingQuot.mkAlgHom K _).commutes r
+      rw [hr]; exact Subalgebra.algebraMap_mem _ r
+  | grade1 i => exact Algebra.subset_adjoin ⟨i, rfl⟩
+  | mul a b ha hb => rw [map_mul]; exact mul_mem ha hb
+  | add a b ha hb => rw [map_add]; exact add_mem ha hb
+
 end HeckeInclusion
 
 end QOU.SchurWeyl
