@@ -1,6 +1,6 @@
 This registry records the full derivation of [`prop:recursive-atom-knot-atlas`](#prop:recursive-atom-knot-atlas): the methodology classification, notation legend, braid-closure gallery, the per-level atlas, and the per-element AME 2020 cross-reference. It carries no logical content beyond the proposition it supports.
 
-This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. We detail the precise identification mechanics below; a layered extension then applies this machinery to every isotope.
+This atlas identifies the specific knot or link for each confined braid at the substrate value $q_0$, verifying whether its invariant reproduces the measured mass or binding energy. A single $q_0$-indexed registry enables recursive construction of composite entries from nucleon and $\alpha$-cluster constituents, ensuring uniform comparison against the AME 2020 reference. Where a free-nucleon entry lists an absolute mass in MeV, that figure is the dimensionless ratio $\mathfrak{m}/m_e$ rendered against the $m_e$ scale (CAL-1, set by fiat), not an independent absolute-mass prediction *(absolute mass excised as a framework claim — `qou-exam`)*; the framework's predictive content is the ratio, the binding energy, and the mass splitting. We detail the precise identification mechanics below; a layered extension then applies this machinery to every isotope.
 
 ## Methodology classification (STRICT)
 
@@ -117,14 +117,14 @@ This inventory lists hyperbolic-knot identifications and their methodology tags.
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w = (\sigma_1 \sigma_2^{-1})^3$ with flavor coloring $\mathrm{uud}$. $\widehat{T_w} = \mathcal{B}_3(\mathrm{uud})$. |
-| Prediction | $m_\mathfrak{p} = 938.27208816$ MeV (CODATA exact); model derives via $\mathrm{Vol}(\mathcal{B}_3) = 8 G$ at $q_0$. |
+| Prediction | Ratio $m_\mathfrak{p}/m_e$; rendered against the $m_e$ scale, $m_\mathfrak{p} = 938.27208816$ MeV (CODATA exact), model derives via $\mathrm{Vol}(\mathcal{B}_3) = 8 G$ at $q_0$. The MeV figure is a rendering of the ratio, not an absolute-mass claim (`qou-exam`). |
 
 **Neutron $\mathfrak{n}$**
 
 | Row | Content |
 |--:|---|
 | Braid (NF) | $T_w = (\sigma_1 \sigma_2^{-1})^3$ with flavor coloring $\mathrm{udd}$. $\widehat{T_w} = \mathcal{B}_3(\mathrm{udd})$. |
-| Prediction | $m_\mathfrak{n} = 939.56542052$ MeV; $m_\mathfrak{n} - m_\mathfrak{p}$ derived from flavor-flip cost (open). |
+| Prediction | Ratio $m_\mathfrak{n}/m_e$; rendered against the $m_e$ scale, $m_\mathfrak{n} = 939.56542052$ MeV. The predictive content is the mass splitting $m_\mathfrak{n} - m_\mathfrak{p}$ (derived from flavor-flip cost, open); the absolute MeV figure is a rendering of the ratio, not an absolute-mass claim (`qou-exam`). |
 
 ### $\ell = 2$ — light atoms (recursive: ref to nucleon entries above)
 
