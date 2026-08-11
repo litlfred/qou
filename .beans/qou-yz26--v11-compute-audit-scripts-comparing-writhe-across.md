@@ -1,11 +1,11 @@
 ---
 # qou-yz26
 title: 'V11: compute audit -- scripts comparing writhe ACROSS tower levels'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T19:30:51Z
-updated_at: 2026-08-10T19:30:52Z
+updated_at: 2026-08-11T01:07:11Z
 ---
 
 The dangerous pattern is comparing writhe ACROSS different strand numbers --
