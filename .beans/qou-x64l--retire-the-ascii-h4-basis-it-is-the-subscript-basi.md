@@ -625,3 +625,71 @@ those statements, so the script cannot make the theorem more true. It checks the
 layer Lean cannot see — that the committed statements are *about* the tables
 these modules claim to be about. A sorry-free file enumerating the wrong 72
 facts is the only failure mode it closes.
+
+---
+
+## 2026-08-11 — the ASCII chain is deleted; the blocker was a direction, not a missing permutation
+
+PR #4915 merged (`8e94953`), and this bean's remaining step is done in
+[#4974](https://github.com/litlfred/qou/pull/4974).
+
+### Correction: the permutation was never missing
+
+Both this bean and #4915 recorded the remaining work as *"needs the ASCII↔subscript
+relabelling permutation to carry the consumers onto `trM4_cyclic`."* **That
+permutation already existed** — `H4BasisBridge` has carried `piIdx`, `invIdx`,
+`piEquiv`, `phi`/`psi`, the 24 `phi_word_*`, `phi_mulNF` and `trM4_phi`, all
+sorry-free, since before this bean's step 4. Anyone re-reading the bean would
+have gone off to rebuild machinery that was sitting in the tree.
+
+The actual blocker was the bridge's **direction**. It ran ASCII → subscript:
+`trM4_cyclic` was *derived* by transporting the ASCII `trM_cyclic`, which rested
+on `gram_symm`. So the bridge consumed the Gram chain rather than replacing it —
+which is exactly why the chain stayed load-bearing through every previous
+attempt to retire it.
+
+With `H4.trM4_cyclic` proved independently (#4915), the arrow reverses and the
+chain is dead weight:
+
+    before   gram_symm (576 entries) → H4.trM_cyclic → transport → trM4_cyclic
+    after    3 generators + subalgebra → H4.trM4_cyclic → transport → H4.trM_cyclic
+
+### Deleted, and what the deletion actually cost
+
+`MarkovTraceH4Gram0..7` + `MarkovTraceH4Gram` — **6604 generated lines**, ~700 KB,
+~4.3 GB peak, the reason a full build was ~55 min rather than ~5. Single external
+consumer (`H4BasisBridge`); `gram_symm` had no other use in the tree.
+
+The replacement is 4 lines. `H4.trM_cyclic` keeps its fully-qualified name, so no
+downstream reference had to move.
+
+**Measured:** the whole bridge cone now rebuilds in **48 s** — `BilinearTraceCyclicity`
+2 s, `MarkovTraceH4` 12 s, `H4AsciiPresentation` 24 s, `H4BasisBridge` 10 s, all
+`lean`-direct exit 0. `#print axioms` clean on `H4.trM_cyclic`, `H4.trM4_cyclic`,
+`phi_mulNF`, `trM4_phi`.
+
+### Kept, despite their names — do not "finish the job" by deleting these
+
+* **`MarkovTraceH4`** — owns `trM`, `TRM`, `mulσ0/1/2`, `mulNF`, linearity, `e`.
+  The bridge needs all of it. Only the Gram *closure* went.
+* **`trM_cyclic_of_gram_symm`** — the sorry-free reduction "Gram symmetry ⇒
+  cyclicity", still true, still the `Fin 24` instance of
+  `BilinearTraceCyclicity.cyclic_of_gram_symm`. Its *input* went away, not it.
+* **`BilinearTraceCyclicity`** — generic, also serves H₃/H₅.
+
+### One real call-site change
+
+`H4Bridge.trM4_cyclic` is dropped rather than left as a second proof of what `H4`
+now proves. Its only consumer was `MarkovTraceOnH4A`'s `cyclic` field. **The
+argument orders differ** — `(h, z, …)` for the bridge's, `(z, h, …)` for `H4`'s —
+and that file `open`s both namespaces, so had both survived the bare name would
+have gone ambiguous.
+
+### Cost note for whoever verifies the consumer
+
+`MarkovTraceOnH4A`'s cone pulls `HeckeH4BlockMap31`/`211` — the >25 min each at
+~6 GB modules this bean warns about. The bridge cone does **not**, which is why
+the load-bearing verification above is 48 s. Budget for the consumer build
+separately, and do not run it concurrently with another `lean` build against the
+same olean tree: doing so killed the first attempt silently, 0-byte log, no OOM
+(15 GB free).
