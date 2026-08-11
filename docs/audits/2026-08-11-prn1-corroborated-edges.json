@@ -1,0 +1,336 @@
+{
+ "rem:millennium-unification": [
+  "conj:p-vs-np-qou",
+  "conj:q-birch-swinnerton-dyer",
+  "def:categorical-reeb-derivation",
+  "def:q-from-epsilon",
+  "def:reeb-epsilon",
+  "prop:surreal-rate-calculus",
+  "rem:adelic-tate-squeeze",
+  "rem:body-asymptotics-catalog",
+  "rem:conway-normal-form",
+  "thm:quantum-gap-collapse"
+ ],
+ "rem:bsd-surreal-bound": [
+  "conj:q-birch-swinnerton-dyer",
+  "def:q-from-epsilon",
+  "def:reeb-epsilon",
+  "lem:surreal-squeeze",
+  "prop:surreal-rate-calculus",
+  "rem:adelic-tate-squeeze",
+  "rem:calculus-up-to-epsilon",
+  "rem:conway-normal-form",
+  "rem:rh-surreal-bound"
+ ],
+ "rem:rh-surreal-bound": [
+  "conj:classical-riemann-hypothesis",
+  "def:q-from-epsilon",
+  "def:reeb-epsilon",
+  "lem:surreal-squeeze",
+  "prop:surreal-rate-calculus",
+  "rem:conway-normal-form",
+  "thm:macroscopic-stability-equivalence",
+  "thm:quantum-gap-collapse"
+ ],
+ "rem:yang-mills-surreal-bound": [
+  "def:q-from-epsilon",
+  "def:reeb-epsilon",
+  "lem:surreal-squeeze",
+  "prop:surreal-rate-calculus",
+  "rem:calculus-up-to-epsilon",
+  "rem:conway-normal-form",
+  "rem:ns-surreal-bound",
+  "thm:quantum-gap-collapse"
+ ],
+ "rem:p-vs-np-surreal-bound": [
+  "conj:p-vs-np-qou",
+  "def:q-from-epsilon",
+  "def:reeb-epsilon",
+  "lem:surreal-squeeze",
+  "prop:surreal-rate-calculus",
+  "rem:calculus-up-to-epsilon",
+  "rem:conway-normal-form",
+  "rem:millennium-unification"
+ ],
+ "conj:p-vs-np-qou": [
+  "def:reeb-epsilon",
+  "lem:surreal-squeeze",
+  "prop:surreal-rate-calculus",
+  "rem:calculus-up-to-epsilon",
+  "rem:p-vs-np-surreal-bound"
+ ],
+ "rem:q-metric-contact-deformation": [
+  "def:ns-obstruction",
+  "prop:core-levi-form",
+  "rem:hyperbolic-overlap-saturation",
+  "rem:townsend-biot-savart-strain",
+  "thm:q-ns-wellposedness"
+ ],
+ "rem:ns-blowup-physical-evidence": [
+  "rem:calculus-up-to-epsilon",
+  "rem:conway-normal-form",
+  "rem:millennium-unification",
+  "rem:ns-surreal-bound"
+ ],
+ "prop:delta-max-uniform-bound": [
+  "def:recursive-brane-tower",
+  "prop:descent-eigenspaces",
+  "rem:mass-endomorphism-jet-tower",
+  "thm:markov-trace-factorization"
+ ],
+ "rem:braid-fluid": [
+  "prop:braid-action-tensor",
+  "prop:r-matrix-braiding-structure",
+  "rem:skein-crossing-asymmetry",
+  "thm:jones-markov-trace"
+ ],
+ "rem:hecke-charge-mass-duality": [
+  "def:coulomb-charge",
+  "def:crossing-energy",
+  "def:frobenius-pairing",
+  "def:vertex-operator"
+ ],
+ "prf:quantum-dilogarithm-stratified": [
+  "cor:quantum-dilogarithm",
+  "prop:categorical-mass-markov",
+  "prop:curvature-rank-gb-stratification",
+  "prop:spectral-sequence-collapse"
+ ],
+ "prf:phi-q-categorical-truncation": [
+  "prop:categorical-mass-markov",
+  "prop:curvature-rank-gb-stratification",
+  "prop:spectral-sequence-collapse",
+  "prop:unified-curvature-rank-mass-formula"
+ ],
+ "rem:archimedean-stpart-strategy": [
+  "conj:archimedean-stpart",
+  "conj:classical-limit-stpart",
+  "rem:fibre-functor-rigidity"
+ ],
+ "rem:mass-tower-syt-cells": [
+  "prop:mass-endomorphism-tower",
+  "rem:mass-endomorphism-jet-tower",
+  "thm:markov-trace-factorization"
+ ],
+ "prop:alpha-em-categorical-trace-ratio": [
+  "def:delta-q-decoration",
+  "prop:em-coupling-projection",
+  "prop:force-carrier-bring-uniqueness"
+ ],
+ "rem:strutinsky-from-graded-trace": [
+  "prop:gb-residue-spectral-sum",
+  "prop:graded-trace-residue-split",
+  "prop:shell-schur-weyl-self-duality"
+ ],
+ "prop:jet-tower-convergence": [
+  "prop:mass-endomorphism-tower",
+  "rem:mass-endomorphism-jet-tower"
+ ],
+ "rem:analytic-obstructions": [
+  "def:classical-limit-functor",
+  "rem:kashaev-volume-density"
+ ],
+ "prop:hecke-mass-trace": [
+  "def:mass-identity",
+  "thm:topological-mass"
+ ],
+ "prop:q-turbulence-spectrum": [
+  "def:substrate-parameter",
+  "rem:planck-reynolds"
+ ],
+ "thm:wedderburn-mass-formula": [
+  "def:atomic-braid",
+  "prop:binding-scale-catalan"
+ ],
+ "prop:strangelet-crossing-energy": [
+  "def:coulomb-charge",
+  "def:crossing-energy"
+ ],
+ "rem:planck-reynolds": [
+  "prop:discrete-vortex-spectrum",
+  "rem:vortex-intensity-modes"
+ ],
+ "prop:q-gl-obstruction-calc": [
+  "def:q-flat-connection",
+  "def:quantum-characteristic-classes"
+ ],
+ "def:q-local-system": [
+  "def:substrate-parameter",
+  "prop:categorical-dq-squared"
+ ],
+ "def:hecke-mass-element": [
+  "def:mass-identity",
+  "thm:jones-markov-trace"
+ ],
+ "def:categorical-meson": [
+  "def:hadron",
+  "sec:knot-notation-convention"
+ ],
+ "rem:hamilton-jacobi-phase": [
+  "rem:madelung-fluid",
+  "rem:schrodinger-jet-coaction"
+ ],
+ "prose:knot-periodic-table": [
+  "def:borromean-baryon",
+  "prop:fermion-boson-knot-link"
+ ],
+ "def:q-flat-connection": [
+  "def:categorical-q-connection",
+  "prop:categorical-dq-squared"
+ ],
+ "prop:three-calibration-discipline": [
+  "def:categorical-action",
+  "thm:jones-markov-trace"
+ ],
+ "prop:rho-k-graded-expansion": [
+  "prop:binding-scale-catalan",
+  "thm:knot-mass-formula-unified"
+ ],
+ "prop:surreal-rate-calculus": [
+  "thm:quantum-gap-collapse"
+ ],
+ "rem:adelic-tate-squeeze": [
+  "rem:rh-surreal-bound"
+ ],
+ "rem:body-asymptotics-catalog": [
+  "rem:conway-normal-form"
+ ],
+ "def:unstable-atom": [
+  "def:stable-atom"
+ ],
+ "prop:pentagon-uv-commutation": [
+  "rem:mass-endomorphism-jet-tower"
+ ],
+ "prop:stable-atom-decidable": [
+  "def:stable-atom"
+ ],
+ "prop:gb-spectral-sequence": [
+  "def:hecke-normal-form"
+ ],
+ "conj:higgs-t28": [
+  "conj:borromean-quark"
+ ],
+ "rem:fermion-boson-chart-localization": [
+  "prop:spectral-chart-correspondence"
+ ],
+ "conj:classical-limit-stpart": [
+  "conj:archimedean-stpart"
+ ],
+ "prop:kelvin-dispersion-derivation": [
+  "prop:discrete-vortex-spectrum"
+ ],
+ "sim:knot-periodic-table": [
+  "prop:fermion-boson-knot-link"
+ ],
+ "rem:qvalue-derivation-chain": [
+  "prop:rj-canonical-inner-product"
+ ],
+ "prop:categorical-proton-exists": [
+  "def:categorical-proton"
+ ],
+ "thm:q-ns-wellposedness": [
+  "rem:q-laplacian-interpretation"
+ ],
+ "prop:acoustic-horizon-conditions": [
+  "rem:madelung-fluid"
+ ],
+ "rem:feynman-qou-comparison": [
+  "thm:wedderburn-mass-formula"
+ ],
+ "prop:habiro-residue-sum-equivalence": [
+  "prop:gb-residue-spectral-sum"
+ ],
+ "rem:archimedean-image-table": [
+  "def:archimedean-realization-functor"
+ ],
+ "prop:gram-determinant-plancherel-ratio": [
+  "prop:force-carrier-bring-uniqueness"
+ ],
+ "def:motivic-mass-measure": [
+  "def:arc-space"
+ ],
+ "rem:hopf-link-non-magic": [
+  "prop:knot-operator-selection"
+ ],
+ "prop:em-coupling-bring-zero-mode": [
+  "prop:force-carrier-bring-uniqueness"
+ ],
+ "cor:spectral-decomposition-qvalue": [
+  "prop:beta-decay-transfer-matrix"
+ ],
+ "def:stable-nucleus": [
+  "def:categorical-neutron"
+ ],
+ "prop:categorical-neutron-exists": [
+  "def:categorical-neutron"
+ ],
+ "prop:categorical-neutron-unique": [
+  "def:categorical-neutron"
+ ],
+ "prop:categorical-proton-unique": [
+  "def:categorical-proton"
+ ],
+ "def:transfer-matrix-operator": [
+  "rem:building-block-knots"
+ ],
+ "rem:algebraic-core-survives": [
+  "prop:hoefsmit-seminormal-form"
+ ],
+ "conj:infinitesimal-frobenius": [
+  "def:standard-part-functor"
+ ],
+ "prop:helicity-conservation": [
+  "thm:jones-markov-trace"
+ ],
+ "rem:geodesic-vortices": [
+  "rem:madelung-fluid"
+ ],
+ "def:q-navier-stokes": [
+  "rem:madelung-fluid"
+ ],
+ "prop:q-spectral-sobolev": [
+  "rem:q-laplacian-interpretation"
+ ],
+ "rem:particle-nf-table": [
+  "rem:knot-particle-dictionary"
+ ],
+ "ex:chi-minus-six-derivation": [
+  "def:motivic-substrate"
+ ],
+ "rem:mass-comparison-table": [
+  "rem:knot-formula-table"
+ ],
+ "rem:fine-structure-observation": [
+  "prop:em-coupling-projection"
+ ],
+ "prf:algebraic-gns-embedding": [
+  "thm:jones-markov-trace"
+ ],
+ "rem:commutative-crossing-energy": [
+  "def:crossing-energy"
+ ],
+ "def:motivic-galois-character": [
+  "def:motivic-substrate"
+ ],
+ "prop:confinement-nf-partial-proof": [
+  "prop:alpha-shift-torus-knot"
+ ],
+ "cor:commutative-chirality-vanishes": [
+  "prop:frobenius-s-classification"
+ ],
+ "conj:kashaev-volume-conjecture": [
+  "def:archimedean-realization-functor"
+ ],
+ "prop:alpha-shift-torus-knot": [
+  "def:delta-q-decoration"
+ ],
+ "prf:atom-knot-mass-derivation": [
+  "thm:jones-markov-trace"
+ ],
+ "prop:explicit-central-idempotent": [
+  "prop:wedderburn-weight-canonical"
+ ],
+ "rem:em-completeness-interpretation": [
+  "prop:em-coupling-projection"
+ ]
+}
