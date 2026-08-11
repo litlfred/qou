@@ -11,3 +11,7 @@ When a Lean theorem needs Mathlib infrastructure to prove:
 4. **Bean only** genuinely open conjectures or proofs requiring 500+ lines of entirely new Mathlib theory (e.g., argument principle, Hadamard factorization theorem from scratch).
 
 5. For everything else — Taylor bounds, limits, continuity of polynomials, geometric series sums, basic filter calculus — **prove it properly** using existing Mathlib lemmas.
+
+6. **NEVER convert `sorry` to `axiom`.** An `axiom` is not a proof — it disguises the gap. A `sorry` is honest; an `axiom` launders the same lack-of-proof into something that looks resolved. Leave `sorry` in place until there is an actual proof. This is an absolute prohibition.
+
+7. **NEVER convert `sorry` to `Decidable.decide` / `native_decide` / `exact?` placeholder / `admit`.** Same principle: the gap must remain visible as `sorry` until genuinely closed.
