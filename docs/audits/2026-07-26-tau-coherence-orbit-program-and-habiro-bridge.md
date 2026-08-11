@@ -1054,6 +1054,14 @@ lattice verdict stands; the Lean file `EpsMObstruction.lean` is
 unaffected (it proves the shift law and the algebra of Q, all true and
 used here); the α-order result is unaffected.
 
+> **⚠ THE EXISTENCE ANSWER BELOW IS RETRACTED by Addendum 25 (same
+> day).** The lattice computation merges symbols by **residue**, but the
+> product U is indexed by distinct **field elements** — and 58 % of
+> built symbols are distinct elements sharing a residue, so the model is
+> not a harmless approximation. The **criterion correction above stands**
+> (it is a derivation); what falls is "a canonical representative exists
+> at every m | 24", which that computation does not establish.
+
 **The corrected question, and its answer.** Per-factor demands
 μ_w | n_w with μ_w := m/gcd(m, e(w)) — a **lattice membership**
 question: is ξ ∈ L_m + R, with R the five-term relation subgroup of
@@ -1077,3 +1085,61 @@ question: is ξ ∈ L_m + R, with R the five-term relation subgroup of
 The value-extraction increment is now *well-posed*: the cocycle it will
 build is canonical, which the Addendum-23 criterion did not guarantee.
 Still open, unchanged: the ε_m **values** at m ≥ 3.
+
+## Addendum 25 (2026-08-11) — RETRACTION: the residue-level model does not establish a canonical representative; the per-element question is open
+
+`gswz_epsm_residue_model_insufficient_probe.py`, **6/6**. A negative
+about my own claim of one turn earlier, found while starting the
+value-extraction increment. Addendum 24 amended in place.
+
+**What does not follow.** Addendum 24 answered "does a per-factor
+representative exist?" with a lattice-membership computation in ℤ^{S},
+S = the 23 admissible symbols of the **residue field** 𝔽₂₅. That model
+merges every symbol sharing a residue into one coordinate. The product
+
+$$U = \prod_j (1-w_j)^{n_j r_j}$$
+
+does not merge them: its factors are indexed by the distinct **field
+elements** w_j, and two Bloch symbols can be congruent mod 5 while being
+different elements of the base — then (1−w_j) and (1−w_k) are separate
+factors, each needing its own exponent divisible by m for the root to be
+explicit. So the residue-level condition is **necessary but not
+sufficient** (the implication direction is checked), and the existence
+claim is not established by that computation.
+
+**The measurement.** Building five-term relations in the p-adic base
+from α-basis lifts — so the relations hold *exactly* — over a sample of
+seeds:
+
+| symbols built | distinct residues | distinct elements sharing a residue |
+|---|---|---|
+| 310 | 23 | **180 (58 %)** |
+
+With only 23 residues and arbitrarily many admissible field elements,
+collisions are the generic case.
+
+**A bug this probe's own control caught.** The first run reported
+150/300 collisions but **failed** its exactness control. The cause: the
+residue field was modelled in a t² = 2 basis while lifts were built as
+a + bα, whose residue is (a+2b, b) — so symbols were paired with the
+wrong residues, and some 1−XY became non-units, making `R.inv` return
+garbage. Rebuilt in the α-basis (ᾱ² = 4ᾱ + 3, from the quadratic factor
+of x³−x²+1 over 𝔽₅) the control passes and the count is 180/310. The
+control exists precisely so that a broken lift cannot produce a
+publishable number, and it did its job.
+
+**What survives, checked rather than asserted.** The **criterion
+correction** of Addendum 24 — per-factor is canonicity, m | Q is only
+existence of a root — is a derivation from the shift law and is
+unaffected. Every merged per-m verdict on ξ is unaffected: those were
+computed on ξ's own two symbols, whose residues are distinct
+((3,1) and (1,4), checked). `EpsMObstruction.lean` and the α-order
+result are unaffected.
+
+**Open, restated honestly (bean `qou-y3xv`).** Whether a representative
+of ξ exists whose **per-element** multiplicities satisfy m | n_j r_j at
+any m ≥ 3. The residue-level answer was yes; the per-element question is
+strictly harder, and a per-element solution would imply the
+residue-level one — so the residue "yes" is *consistent with*, but no
+evidence for, a per-element solution. The ε_m values at m ≥ 3 remain
+uncomputed.
