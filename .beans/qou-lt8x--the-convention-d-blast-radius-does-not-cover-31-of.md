@@ -113,3 +113,46 @@ any witness owned by a producer was invisible to the grep. The real number is
 4. Same shape as the defects this bean is about — measuring the artifact
 instead of the property — which is why it is written down rather than quietly
 fixed.
+
+## Roots vs derived — what re-running can and cannot fix (2026-08-11)
+
+The sweep's negative (11/41, not one witness moved C -> D) has a structural
+explanation. Splitting the 44 producer-owned convention-C witnesses by whether
+their producer READS another convention-C witness:
+
+| | |
+|---|---|
+| ROOTS — producer reads no C witness | **29** |
+| DERIVED — producer reads C | **15** |
+
+Re-running can only fix a ROOT. A derived witness reproduces C faithfully
+however many times its producer runs, because the C enters through its input.
+That is why 41 green `ok`s would not have been a migration.
+
+The 29 roots are the actual front:
+
+    all-nuclides-wedderburn-spectral-v2   alpha-k-jones-markov-h12/h3
+    binding-k-enumerator                  bond-extensivity-equal-weight
+    categorical-bypass-volmatch-demo      chi-helium-4-h12-at-q0-50dps-binding
+    chi-lithium-5-h15 / -6-h18            chi-tritium-h9-at-q0-50dps-matrix-m
+    derived-chi-catalogue                 deuteron-tower-fusion-frame-probe
+    e0-lambda-composite                   entanglement-orders
+    gram-matrix-dual                      h2o-bond-angle-magnitude-vsepr
+    markov-z-fibre-rank-bar-covariance    option-e-phase1-h3-cross-check
+    pentagon-to-borromean-h4-probe        per-irrep-pole-deuteron-h6 / -proton-h3
+    probe-1b-li6-orthogonality            q-hecke-seminormal-character-closure-probe
+    qbeta-c3-barodd-binding-sdp-dual      qbeta-counit-substrate-consistency
+    rho-k-h3a-refinement                  tr-m-q-hecke-seminormal
+    v-hat-z-transfer-phase5d-4            weight-factor-audit
+
+But note the sweep already re-ran several of these (alpha-k-jones-markov-h3,
+bond-extensivity-equal-weight, weight-factor-audit, all-nuclides-...) and they
+stayed C. So being a root is necessary, not sufficient: those producers carry
+convention C **in their own code**, not in an input. Fixing them is a source
+edit, like the `z_sym` one-liner in `y_lambda_wenzl_bridge_extended.py`, not a
+re-run.
+
+The correct sequencing is therefore: fix root PRODUCERS at the source, re-run
+them, then let dependency ordering carry it to the 15 derived. A sweep that
+re-runs everything in place cannot do this and should not be launched again as
+though it could.
