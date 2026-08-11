@@ -335,7 +335,7 @@ def main() -> None:
                 "https://github.com/litlfred/qou/pull/1249 (substrate-q_0 workplan)",
             ],
         },
-        "duration_sec": round(time.time() - started_at, 3),
+        "duration_sec": f"{time.time() - started_at:.3f}",
     }
 
     witness_path = Path(__file__).resolve().parent / "m-tau-knot-prediction.witness.json"
