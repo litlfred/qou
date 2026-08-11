@@ -7,7 +7,7 @@
     "blocks": 504,
     "derived": 868,
     "declared": 18,
-    "effective": 880
+    "effective": 878
   },
   "blocks": {
     "conj:algebraic-geometric-dilog-equivalence": {
@@ -4303,16 +4303,14 @@
         "thm:q-ns-wellposedness"
       ],
       "declared": [
-        " twelve pre-existing forward edges by classifying it\n    // correctly. NOTE: never write a closing square bracket inside a comment\n    // in this array — the manifest parsers match it non-greedily and stop at\n    // the first one, silently dropping every entry after this point.\n    ",
-        ",\n    ",
         "def:ns-obstruction",
         "prop:core-levi-form",
         "rem:hyperbolic-overlap-saturation",
-        "rem:townsend-biot-savart-strain"
+        "rem:q-ns-research-programme",
+        "rem:townsend-biot-savart-strain",
+        "thm:q-ns-wellposedness"
       ],
       "effective": [
-        " twelve pre-existing forward edges by classifying it\n    // correctly. NOTE: never write a closing square bracket inside a comment\n    // in this array — the manifest parsers match it non-greedily and stop at\n    // the first one, silently dropping every entry after this point.\n    ",
-        ",\n    ",
         "conj:levi-degeneracy",
         "def:ns-obstruction",
         "prop:core-levi-form",
