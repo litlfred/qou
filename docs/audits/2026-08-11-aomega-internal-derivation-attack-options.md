@@ -226,3 +226,31 @@ BPS-cohomology / CoHA of Route C). Honest pivot (owner "if not then C"):
 **Route C, entered through its Euler-characteristic shadow R1**; the companion
 `4` still needs the motivic weight R1's bare count lacks. Tracked in beans
 `qou-rt0a` / `qou-rtec` / `qou-52sn`.
+
+## 6. Route C entry — the scalar avenue is provably exhausted (2026-08-11)
+
+Route A's surviving reading R1 (`DT integer = #boundary-parabolic connections =
+A-polynomial L-degree`) hits the `dtMax` vector `(4₁,5₂) ↦ (3,4)` exactly — and
+it is a **new scalar not in the `Driver14CharacterVarietyDTMenu` menu** (which
+tested blockCountH3, partitionEulerAbs, recursionOrder, crossingNumber,
+determinant, idealTetrahedra, braidIndex, seifertGenus — none of which hits
+(3,4)). So R1 is the **best scalar candidate found to date**.
+
+But it does **not** close Route C, and now we know it *provably cannot*:
+`Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum`
+(sorry-free) proves the `5₂` DT datum is a genuine **2-element set `{3,4}`**
+(chirality-split: `4` in `S⁺`, `3` in `S⁻`), while every scalar invariant is
+single-valued per knot — so **no scalar** (R1 included) can equal the true
+set-valued DT datum. R1 matches only the `dtMax` projection, not the datum.
+
+**Consequence (the honest Route-C terminus for the scalar family).** The internal
+`A_ω` count is inherently a **chirality-refined, set-valued moduli count** — a
+Behrend-weighted DT moduli / `T[K]` BPS Hilbert space (the "driver-14" object),
+categorical by nature. No scalar Wedderburn Euler characteristic, recursion
+order, block count, or A-polynomial L-degree supplies it; that whole family is
+now proved insufficient. Route C proper (BPS cohomology / CoHA producing a
+chirality-graded, set-valued count) is therefore **required, not optional** — and
+it is a research programme (out of session scope), tracked in `qou-rtec`. The
+positive residue of this session: R1 is the sharpest scalar shadow (hits `dtMax`),
+and the impossibility of any scalar is now a proved, cited fact rather than a
+suspicion.
