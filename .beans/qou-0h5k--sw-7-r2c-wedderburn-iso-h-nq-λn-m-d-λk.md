@@ -1,10 +1,11 @@
 ---
 # qou-0h5k
 title: 'SW-7 (=R2c): Wedderburn iso H_n(q) ≅ ⊕_{λ⊢n} M_{d_λ}(K)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-02T19:33:07Z
+updated_at: 2026-08-11T00:18:45Z
 parent: qou-59vq
 blocked_by:
     - qou-j377
