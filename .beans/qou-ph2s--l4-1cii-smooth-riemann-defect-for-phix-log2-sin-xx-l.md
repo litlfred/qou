@@ -1,11 +1,11 @@
 ---
 # qou-ph2s
 title: 'L4-1c(ii): smooth Riemann defect for phi(x)=log(2 sin x/x) — Lipschitz across the removable singularity at 0'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-11T10:45:00Z
-updated_at: 2026-08-11T10:45:00Z
+updated_at: 2026-08-11T11:15:00Z
 ---
 
 Last genuinely-new estimate in L4-1 (epic qou-u1b5). After L4-1c(i)
@@ -29,3 +29,15 @@ regular (`phi'(0) = 0`, `phi` even about 0). Candidate routes:
       the remaining cells with the plain `(0, pi)` derivative bound.
 
 Route (c) is probably cheapest but still needs (a) on `(0, h]`.
+
+PROGRESS (LogSineSmoothPart.lean, all sorry-free): the predicted obstacle
+DISSOLVED. The cell defects need a SIGN, not a derivative bound, and phi is
+strictly antitone on (0,pi) — so no Lipschitz estimate across the removable
+singularity is required, and none of the three candidate routes (a)/(b)/(c)
+was needed. Landed: sin_sub_mul_cos_pos (x cos x < sin x, via psi = sin - x cos
+with psi(0)=0, psi' = x sin x > 0), hasDerivAt_phi, strictAntiOn_phi,
+phi_le_log_two (the first-cell ceiling standing in for the unused value at 0).
+REMAINING: assemble the telescoping two-sided bound
+h(phi(nh) - log 2) <= sum_j int_cell (phi(x_j) - phi(u)) du <= 0
+(needs intervalIntegral.integral_mono_ae_restrict for the first cell's single
+bad point at u=0).
