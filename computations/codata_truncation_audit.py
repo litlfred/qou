@@ -58,6 +58,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge
 import argparse
+import ast
 import json
 import re
 from collections import defaultdict
@@ -120,6 +121,50 @@ def classify(lit: str) -> tuple[str, str, str] | None:
     return None
 
 
+def _prose_lines(src: str) -> set[int]:
+    """Line numbers that are documentation or console output, not computation.
+
+    A truncated constant in a docstring or a `print()` is describing a value,
+    not computing with one. Replacing it with an import changes nothing and
+    would often make the prose worse. Excluding them is not leniency — it is
+    the difference between a finding and a typo in a sentence.
+
+    Why AST and not a regex: `mp.mpf("0.51099895")` is a string literal and IS
+    a genuine defect, while `"m_e = 0.51099895 MeV"` in a docstring is not. No
+    lexical test separates those; the parse tree does — one is an argument to a
+    numeric constructor, the other is a bare expression-statement string or a
+    `print` argument.
+
+    History: the first published run of this audit reported 86 truncations. It
+    excluded only lines starting with `#`, so docstrings, prints, and — in
+    three cases — a sibling detector's own list of patterns to match were all
+    counted. That number was inflated and is corrected here.
+    """
+    skip: set[int] = set()
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return skip
+
+    def mark(node) -> None:
+        lo = getattr(node, "lineno", None)
+        hi = getattr(node, "end_lineno", lo)
+        if lo:
+            skip.update(range(lo, (hi or lo) + 1))
+
+    for node in ast.walk(tree):
+        # Bare string expression-statements: module/class/function docstrings
+        # and the free-floating comment-strings this corpus uses liberally.
+        if isinstance(node, ast.Expr) and isinstance(node.value, ast.Constant) \
+                and isinstance(node.value.value, str):
+            mark(node)
+        # print(...) — console narration.
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) \
+                and node.func.id == "print":
+            mark(node)
+    return skip
+
+
 def scan() -> tuple[list[dict], int]:
     rows: list[dict] = []
     exact = 0
@@ -129,10 +174,14 @@ def scan() -> tuple[list[dict], int]:
         if f.name == Path(__file__).name or f.name in REGISTRY_FILES:
             continue
         try:
-            lines = f.read_text().splitlines()
+            src = f.read_text()
         except OSError:
             continue
+        lines = src.splitlines()
+        prose = _prose_lines(src)
         for i, line in enumerate(lines, 1):
+            if i in prose:
+                continue
             s = line.strip()
             # Comments and import lines are prose/plumbing, not computed values.
             if s.startswith("#") or "codata_constants" in line or (
