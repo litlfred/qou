@@ -288,44 +288,42 @@ def _symbolic_hits(doc) -> bool:
 
 
 def _structural_hits(doc, tol: float = 1e-30):
-    """Nonzero y_lambda on a 3+ row block. Mirrors convention-c-witness-audit.py."""
-    found = []
+    """Nonzero y_lambda on a 3+ row block.
 
-    def part_of(node):
-        part = node.get("partition")
-        if part is None:
-            return None
-        if isinstance(part, (list, tuple)):
-            cleaned = [x for x in part if x not in ("_", "", None)]
-            try:
-                return tuple(int(x) for x in cleaned)
-            except (TypeError, ValueError):
-                return None
-        return None
+    DELEGATES to `convention-c-witness-audit.scan_doc` rather than carrying a
+    second copy. The copy that used to live here had drifted: its `part_of`
+    handled only list-form partitions and returned None for the
+    underscore-encoded form (`"3_2_1"`), which is exactly the encoding
+    `binding-a3plus-*.witness.json` uses -- and which the audit's own docstring
+    calls out as "must not be silently skipped, since skipping is how the
+    fingerprint scan missed things".
 
-    def walk(node):
-        if found:
-            return
-        if isinstance(node, dict):
-            p = part_of(node)
-            if p is not None and len(p) >= 3:
-                for k, v in node.items():
-                    if "y_lambda" in k or "y_lam" in k:
-                        try:
-                            if abs(float(v)) > tol:
-                                found.append(True)
-                                return
-                        except (TypeError, ValueError):
-                            pass
-            for v in node.values():
-                walk(v)
-        elif isinstance(node, list):
-            for v in node:
-                walk(v)
+    Measured at the moment of the fix, on three witnesses the audit flags:
 
-    walk(doc)
-    return found
+        binding-a3plus-full-theta-assembly     audit 127 hits, harness 0
+        binding-a3plus-joint-ji-combiner       audit 127 hits, harness 0
+        probe-option-e-phase2-crystal-vertex   audit  28 hits, harness 0
 
+    So `work_list()` was undercounting, and the campaign's own work list was
+    missing convention-C witnesses on the same mechanism the audit exists to
+    prevent. Two implementations of one test is the defect; one is the fix.
+    """
+    return _audit().scan_doc(doc, tol)
+
+
+def _audit():
+    """The canonical detector module, loaded once."""
+    global _AUDIT_MOD
+    if _AUDIT_MOD is None:
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "cca", REPO / "scripts" / "convention-c-witness-audit.py")
+        _AUDIT_MOD = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(_AUDIT_MOD)
+    return _AUDIT_MOD
+
+
+_AUDIT_MOD = None
 
 def work_list():
     """[(witness, producer)] for every convention-C witness."""
