@@ -136,9 +136,24 @@ theorem kappa_squared_tends_to_zero_axiom (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) 
     ∀ ε > 0, ∃ δ > 0, ∀ τ :
     ℝ, τ ≠ 0 → 0 < τ → τ < δ →
       |V2 ν C₂ τ / V1 C₁ ν τ| < ε := by
-  -- TODO: Prove using real-analysis fact τ^2 log τ → 0 as τ → 0^+.
-  -- The full chain of filter lemmas is mechanical but tangential.
-  sorry
+  intro ε hε
+  -- The full filter-based limit proof is needed, but we structure the mathematical
+  -- reduction to the standard fact τ^2 log τ → 0.
+  have h_lim : Filter.Tendsto (fun τ => V2 ν C₂ τ / V1 C₁ ν τ) (nhdsWithin 0 (Set.Ioi 0)) (nhds 0) := by
+    -- Placeholder for the Tendsto derivation using `tendsto_log_mul_rpow_nhdsGT_zero`
+    sorry
+  -- Extract eps-delta from Tendsto
+  rw [Metric.tendsto_nhdsWithin_nhds] at h_lim
+  rcases h_lim ε hε with ⟨δ, hδ_pos, hδ⟩
+  use δ, hδ_pos
+  intro τ hτ_ne hτ_pos hτ_lt
+  have h_in : τ ∈ Set.Ioi (0 : ℝ) := hτ_pos
+  have h_dist : dist τ 0 < δ := by
+    rw [Real.dist_eq, sub_zero, abs_of_pos hτ_pos]
+    exact hτ_lt
+  have h_result := hδ τ h_in h_dist
+  rw [Real.dist_eq, sub_zero] at h_result
+  exact h_result
 
 theorem kappa_squared_tends_to_zero
     (C₁ C₂ ν : ℝ) (_hC : 0 < C₁) :
