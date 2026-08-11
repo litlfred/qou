@@ -34,9 +34,38 @@ hadrons.  Against the braid words above, the candidate
 is parameter-free.  We check it on every row the corpus states, and then check
 the consequence for Y = B - L (proved in HyperchargeBatteryReduction.lean).
 
-This is a CANDIDATE test, not a derivation: `sign` is a choice of function, and
-the quark braid word is NOT established by the corpus (flagged below).  Exact
-integer arithmetic; no floats, no fitted parameters.
+REFUTED (2026-08-10) -- read this before citing any row below
+------------------------------------------------------------
+The candidate `L = sign(writhe)` is dead under BOTH readings of the framework's
+gauge freedom.  This probe is retained as the record of how it failed, not as
+support for it.  `all_corpus_rows_match: True` below is an artefact of comparing
+non-canonical representatives at mismatched levels; see `refutation` in the
+result dict.
+
+  (R1) Markov II.  Stabilization `beta in B_n -> beta*sigma_n in B_{n+1}`
+       presents the SAME link and raises the writhe by 1, so L jumps 0 -> 1 on
+       the Borromean baryon.  That violates conservation clause 3 of
+       `lepton-number-categorical-properties.md` ("Markov moves ... Delta L = 0").
+       Lean: `ChiralFermionBraidWords.leptonNumber_not_markov_invariant`.
+
+  (R2) The minimal-level ruling.  The owner ruling is that states are
+       Groebner-Shirshov normal forms and the observable is the trace at the
+       LOWEST level of the substrate tower.  The corpus assigns
+       `nu_e = K_{0_1} = T(2,1)` -- the UNKNOT, braid index 1 -- so its
+       minimal-level normal form is the EMPTY word, w = 0, and so is its
+       mirror's.  At the level where observables live, nu_e and nubar_e are the
+       same state, and sign(0) = 0 != +1.  Lean:
+       `WritheLevelParity.leptonNumber_collapses_at_minimal_level`.
+
+R1 kills the candidate if gauge orbits include the vertical move; R2 kills it if
+they do not.  There is no surviving reading.  The escape that
+`ChiralFermionBraidWords.lean` used -- "the carrier is the braid word, not the
+knot type" -- is exactly what R2 closes: at minimal level the braid word IS
+determined by the knot type.
+
+This was a CANDIDATE test, never a derivation: `sign` is a choice of function,
+and the quark braid word is NOT established by the corpus (flagged below).
+Exact integer arithmetic; no floats, no fitted parameters.
 """
 
 from __future__ import annotations
@@ -100,17 +129,49 @@ def main() -> dict:
                           match=(Y == Y_sm)))
     y_ok = all(r["match"] for r in yrows)
 
+    # The two independent refutations, computed rather than asserted.
+    stabilized = BORROMEAN + [3]          # Markov II on the baryon: same link
+    r1 = dict(
+        move="Markov II (stabilization) on the Borromean baryon",
+        word_before=BORROMEAN, word_after=stabilized,
+        writhe_before=writhe(BORROMEAN), writhe_after=writhe(stabilized),
+        L_before=0, L_after=1,
+        violates="lepton-number-categorical-properties.md conservation clause 3"
+                 " (Delta L = 0 under Markov moves)",
+        lean="ChiralFermionBraidWords.leptonNumber_not_markov_invariant")
+    r2 = dict(
+        ruling="states are GS normal forms; observable = trace at the tower's"
+               " lowest level",
+        carrier="nu_e = K_{0_1} = T(2,1) = the unknot, braid index 1",
+        minimal_word=[], writhe_at_minimal_level=0,
+        mirror_minimal_word=[],
+        consequence="nu_e and nubar_e are the SAME state at minimal level;"
+                    " sign(0) = 0, not +1",
+        lean="WritheLevelParity.leptonNumber_collapses_at_minimal_level")
+
     return {
+        "VERDICT": "REFUTED -- L = sign(writhe) fails under both readings of the"
+                   " gauge freedom (see 'refutation'). Rows below are retained"
+                   " as the record of the failure, not as support.",
         "braid_words_source": ("chi=-6 torus-knot assignment: T(2,n) = closure "
                                "of sigma_1^n; antiparticle = braid mirror"),
-        "L_candidate": "L(beta) = sign(writhe(beta))  [parameter-free]",
+        "L_candidate": "L(beta) = sign(writhe(beta))  [parameter-free, REFUTED]",
+        "refutation": dict(markov_II=r1, minimal_level=r2),
         "carrier_rows": rows,
-        "all_corpus_rows_match": bool(all_ok),
+        "all_rows_match_at_the_AS_WRITTEN_levels": bool(all_ok),
+        "why_that_match_is_not_evidence": (
+            "the lepton rows are read in B_2 and the hadron rows in B_3, and"
+            " neither set is at its braid index; the agreement is an artefact of"
+            " comparing non-canonical representatives across levels"),
         "higher_generations": gens,
         "Y_consequence": dict(
             formula="Y = B - L, with B writhe-independent and L = sign(w)",
             rows=yrows, all_match=bool(y_ok)),
         "CAVEATS": [
+            "REFUTED under Markov II (same link, writhe +1, L jumps 0 -> 1).",
+            "REFUTED under the minimal-level ruling: nu_e is the UNKNOT, whose "
+            "minimal-level word is empty (w = 0), and so is its mirror's -- the "
+            "two are the same state and sign(0) = 0 != +1.",
             "sign() is a CHOICE of function, not derived from the framework.",
             "The QUARK braid word is NOT established by the corpus; w=0 is "
             "ASSUMED above (motivated by the gluon unit being writhe-balanced). "
@@ -127,12 +188,27 @@ def main() -> dict:
 
 if __name__ == "__main__":
     res = main()
+    print(f"VERDICT: {res['VERDICT']}\n")
     print(f"L candidate: {res['L_candidate']}\n")
     for r in res["carrier_rows"]:
         print(f"  {r['carrier']:20s} w={r['writhe']:+3d}  "
               f"L_pred={r['L_predicted']:+2d}  L_corpus={r['L_corpus']:+2d}  "
               f"{'OK' if r['match'] else 'MISMATCH'}")
-    print(f"\n  all corpus rows match: {res['all_corpus_rows_match']}")
+    print("\n  rows match at the AS-WRITTEN levels: "
+          f"{res['all_rows_match_at_the_AS_WRITTEN_levels']} "
+          "-- NOT evidence; see below")
+    r1 = res["refutation"]["markov_II"]
+    r2 = res["refutation"]["minimal_level"]
+    print("\nREFUTATION 1 -- Markov II:")
+    print(f"  {r1['word_before']} (w={r1['writhe_before']}, L={r1['L_before']})"
+          f" -> {r1['word_after']} (w={r1['writhe_after']}, L={r1['L_after']})"
+          "   same link")
+    print(f"  violates: {r1['violates']}")
+    print("\nREFUTATION 2 -- minimal level:")
+    print(f"  {r2['carrier']}")
+    print(f"  minimal word {r2['minimal_word']} (w={r2['writhe_at_minimal_level']})"
+          f" == mirror {r2['mirror_minimal_word']}")
+    print(f"  {r2['consequence']}")
     print(f"\nY = B - L consequence (quark writhe ASSUMED 0):")
     for r in res["Y_consequence"]["rows"]:
         print(f"  {r['fermion']:5s} B={r['B']:4s} L={r['L']:+2d}  "
