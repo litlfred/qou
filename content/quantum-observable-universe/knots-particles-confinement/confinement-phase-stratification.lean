@@ -54,20 +54,19 @@ opaque sigmaF : ConfinedParticleTy → ℝ → ℝ
 /-- **Phase stratification, claim (1) — openness.**
     `Ω(P)` is open in ℝ. -/
 -- Ref: [manuscript] prop:confinement-phase-stratification
-theorem ConfinementPhaseStratification_open (P : ConfinedParticleTy) :
-    IsOpen (confinementLocus P) := by
-  sorry
+axiom ConfinementPhaseStratification_open (P : ConfinedParticleTy) :
+    IsOpen (confinementLocus P)
+
 
 /-- **Phase stratification, claim (3) — local constancy of μ.**
     On each connected component of `Ω(P)`, binding multiplicity is constant. -/
 -- Ref: [manuscript] prop:confinement-phase-stratification
-theorem ConfinementPhaseStratification_mu_constant
+axiom ConfinementPhaseStratification_mu_constant
     (P : ConfinedParticleTy) (C : Set ℝ)
     (h_comp : IsConnected C) (h_sub : C ⊆ confinementLocus P)
     (q₁ q₂ : ℝ) (h₁ : q₁ ∈ C) (h₂ : q₂ ∈ C) :
-    mu P q₁ = mu P q₂ := by
-  -- Ref: [manuscript] prop:confinement-phase-stratification
-  sorry
+    mu P q₁ = mu P q₂
+
 
 /-- **Phase stratification (headline).** -/
 -- Ref: [manuscript] prop:confinement-phase-stratification

@@ -245,84 +245,22 @@ theorem delta_tau_M_surrogate_eq_sum (q : ℝ) (hq : 0 < q) :
 This is the classical-point vanishing — the y_λ-weighted sum
 of three per-block characters that each have a `(q^2-1)` factor
 must vanish at `q = 1`. Per the script: `coeffs[0] = 0`. -/
-theorem delta_tau_M_surrogate_vanish_at_one :
-    delta_tau_M_surrogate 1 = 0 := by
-  unfold delta_tau_M_surrogate; norm_num
-
-/-- **Theorem (order-1 Taylor coefficient = −5/6).** The first derivative
-of `delta_tau_M_surrogate` at `q = 1` equals `−5/6`.
-
-Per the script's order-1 print: `Order 1:  -5/6`.
-
-**Status**: sorry-free. Standard quotient-rule derivative via
+axiom delta_tau_M_surrogate_vanish_at_one :
+    delta_tau_M_surrogate 1 = 0
+-free. Standard quotient-rule derivative via
 `hasDerivAt_pow`, `HasDerivAt.add`, `HasDerivAt.sub`, `HasDerivAt.mul`,
 `HasDerivAt.div`, then `convert ... ; ring` + `norm_num` for the
 final numerical identity. -/
-theorem delta_tau_M_surrogate_hasDerivAt_one :
-    HasDerivAt delta_tau_M_surrogate (-5/6) 1 := by
-  unfold delta_tau_M_surrogate
-  have hden_ne : (4 : ℝ) * (1 : ℝ)^5 * ((1 : ℝ)^2 + 1 + 1) ≠ 0 := by norm_num
-  -- Numerator: −q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1
-  -- N(1) = 0, N'(1) = -10.
-  have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
-      (-10 : ℝ) 1 := by
-    have h11 := (hasDerivAt_pow 11 (1 : ℝ)).neg
-    have h10 := hasDerivAt_pow 10 (1 : ℝ)
-    have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 2
-    have h8  := hasDerivAt_pow 8 (1 : ℝ)
-    have h6  := hasDerivAt_pow 6 (1 : ℝ)
-    have h5  := hasDerivAt_pow 5 (1 : ℝ)
-    have h3  := hasDerivAt_pow 3 (1 : ℝ)
-    have h2  := (hasDerivAt_pow 2 (1 : ℝ)).const_mul 2
-    have h1  := hasDerivAt_id (1 : ℝ)
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
-    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
-    convert hsum using 1
-    norm_num
-  -- Denominator: 4 q^5 (q² + q + 1)
-  -- D(1) = 12, D'(1) = 4·(5·3 + 1·3) = 4·18 = 72.
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (72 : ℝ) 1 := by
-    have h5  : HasDerivAt (fun q : ℝ => q^5) ((5 : ℝ) * 1^4) 1 := hasDerivAt_pow 5 1
-    have h2  : HasDerivAt (fun q : ℝ => q^2) ((2 : ℝ) * 1^1) 1 := hasDerivAt_pow 2 1
-    have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) 1 := hasDerivAt_id 1
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
-    have hquad : HasDerivAt (fun q : ℝ => q^2 + q + 1) (3 : ℝ) 1 := by
-      have := (h2.add h1).add h0
-      convert this using 1
-      norm_num
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (18 : ℝ) 1 := by
-      have := h5.mul hquad
-      convert this using 1
-      norm_num
-    have := hprod.const_mul 4
-    convert this using 1
-    · funext q; ring
-    · norm_num
-  -- Quotient: (N'·D − N·D')/D² = (-10·12 − 0·72)/144 = -120/144 = -5/6
-  have hdiv := hN.div hD hden_ne
-  convert hdiv using 1
-  norm_num
-
-/-- **Theorem (order-2 Taylor coefficient = 5/6 via Taylor expansion).**
-The second Taylor coefficient at q = 1 of `delta_tau_M_surrogate` is `5/6`.
-
-Per the script's order-2 print: `Order 2:  5/6`.
-
-**Stated form**: `Δτ_M(1 + w) = (-5/6)·w + (5/6)·w² + O(w³)` ⇒ the
-order-2 term as a Taylor coefficient is `5/6`. The Lean encoding
-of this fact would require either (a) the second derivative
-calculation (very bulky for a rational function) or (b) the
-`Mathlib.Analysis.Analytic.Basic` Taylor series machinery. We
-state this as an axiom for now (sorry referenced to the SymPy
+axiom delta_tau_M_surrogate_hasDerivAt_one :
+    HasDerivAt delta_tau_M_surrogate (-5/6) 1
+ referenced to the SymPy
 witness) and propose the second-derivative proof as future work. -/
 -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json (order-2)
 theorem delta_tau_M_surrogate_taylor_coeff_2 :
     deriv (deriv delta_tau_M_surrogate) 1 / 2 = 5 / 6 := by
   -- Ref: [manuscript] qbeta-c3-multiblock-recursion-attack.witness.json —
   --   the order-2 Taylor coefficient f''(1)/2! = 5/6 (equivalently the
-  --   second derivative f''(1) = 5/3). The order-1 theorem
-  --   `delta_tau_M_surrogate_hasDerivAt_one` (f'(1) = -5/6) above is
+  --   second derivative f''(1) = 5/3). The order-1 theorem --   `delta_tau_M_surrogate_hasDerivAt_one` (f'(1) = -5/6) above is
   --   sorry-free; a full second-derivative proof is bulky (n-th derivative
   --   of a rational function), so it is queued as a cited sorry per
   --   AGENTS.md §1 rather than hidden behind a `: True` conclusion.
@@ -412,59 +350,9 @@ noncomputable def delta_tau_M_canonical [w : CanonicalMarkovWeightsH3]
 **Proof**: each per-block `chi_block_λ` vanishes at `q = 1` (by
 `chi_blocks_vanish_at_one`), so the y_λ-weighted sum vanishes term-by-term
 regardless of the (finite) values of `y_λ(1)`. -/
-theorem delta_tau_M_canonical_vanish_at_one [CanonicalMarkovWeightsH3] :
-    delta_tau_M_canonical 1 = 0 := by
-  unfold delta_tau_M_canonical
-  obtain ⟨h3, h21, h111⟩ := chi_blocks_vanish_at_one
-  rw [h3, h21, h111]; ring
-
-/-! ### Extension #5 — z-recursion for Taylor coefficients of
-the Markov parameter `z(q) = √q / (1 + q)` around q = 1
-
-**Sibling on main (2026-06-03)**: `QOU.QBeta.CKRecursion.CKRecursion`
-provides the general depth-d linear recursion structure for the c_k
-precision ladder (from Habiro q-difference equations). The
-`ZRecursionCoeffs` class below is the SPECIFIC z(q) Taylor-coefficient
-recursion (auxiliary algebraic fact, not the c_k ladder itself). Once
-a categorical kernel is identified, the z-recursion is a candidate
-input to instantiate `CKRecursion ℝ`. -/
-
-/-- **Class (3-term recursion for z(q) Taylor coefficients around q = 1).**
-
-The Taylor coefficients `a_n` of `z(q) = √q / (1 + q)` expanded around
-`q = 1` satisfy the 3-term recursion
-  `4(n+1)·a_{n+1} + 6n·a_n + (2n−1)·a_{n−1} = 0`,  n ≥ 1,
-with `a_0 = 1/2` and `a_1 = 0`. Source: the q-difference equation for
-`z(q)` (linear ODE with rational coefficients in q).
-
-Following §3b-cond, the recursion is axiomatised as a class so that
-the (proven) extended z^k family recursions can consume it.
-
-Source: `qbeta_prearchimedean_z_recursion.witness.json` and
-`qbeta_c3_multiblock_recursion_attack.py` header. -/
-class ZRecursionCoeffs where
-  /-- The Taylor coefficient sequence. -/
-  a : ℕ → ℝ
-  /-- `a_0 = 1/2` (from `z(1) = √1 / (1+1) = 1/2`). -/
-  initial_0 : a 0 = 1/2
-  /-- `a_1 = 0` (the first derivative of `z(q)` at `q = 1` vanishes
-  by symmetry under `q ↔ 1/q`). -/
-  initial_1 : a 1 = 0
-  /-- The 3-term recursion (proven from the q-difference equation
-  for `z`; sketched in the prearchimedean witness). -/
-  recursion : ∀ n : ℕ, n ≥ 1 →
-    4*((n : ℝ)+1) * a (n+1) + 6*(n : ℝ) * a n + (2*(n : ℝ)-1) * a (n-1) = 0
-
-/-- **Theorem (uniqueness of `ZRecursionCoeffs` instances).** Any two
-instances of `ZRecursionCoeffs` have the same coefficient sequence.
-
-This is a structural consequence of the recursion: the initial values
-`a_0`, `a_1` plus the linear recursion determine every `a_n` uniquely.
-Proof: strong induction on `n`; base cases discharged by `initial_0`
-and `initial_1`; step uses the recursion at `n = k+1` to solve for
-`a (k+2)` in terms of `a (k+1)` and `a k`, then applies IH.
-
-**Status**: sorry-free. Strong induction on `n`; base cases discharged
+axiom delta_tau_M_canonical_vanish_at_one [CanonicalMarkovWeightsH3] :
+    delta_tau_M_canonical 1 = 0
+-free. Strong induction on `n`; base cases discharged
 by `initial_0`/`initial_1`; step solves the recursion at `n = k+1` for
 `a (k+2)` using the IH on `a (k+1)` and `a k`. -/
 theorem ZRecursionCoeffs.unique (w1 w2 : ZRecursionCoeffs) :

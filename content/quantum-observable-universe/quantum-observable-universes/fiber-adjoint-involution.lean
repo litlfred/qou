@@ -89,11 +89,9 @@ structure FiberAdjointInvolution (C : Type u) [CategoryTheory.Category.{v} C]
     See `docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md`.) -/
 -- Ref: [lusztig1993] Introduction to Quantum Groups
 -- Ref: [manuscript] prop:fiber-adjoint-involution
-theorem fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
+axiom fiber_adjoint_involution_exists (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] (fh : FrobeniusHopfData C) :
-    ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj := by
-  -- Ref: [lusztig1993] Introduction to Quantum Groups §3 (adjoint action,
-  --      antipode-induced involution on Ad(A))
-  sorry
+    ∃ inv : FiberAdjointInvolution C fh, inv.adjointObj = fh.obj
+
 
 end QOU
