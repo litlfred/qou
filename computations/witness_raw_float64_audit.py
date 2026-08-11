@@ -83,15 +83,74 @@ SELF_OUTPUTS = {
 }
 
 
+# A binary64 carries at most 17 significant decimal digits. A `*_str`
+# companion is only a genuine full-precision shadow if it carries MORE than
+# that — otherwise it is just the same f64 spelled as text.
+_F64_SIG_DIGITS = 17
+
+
+def _sig_digits(s: str) -> int:
+    """Significant decimal digits in a numeric string ('1.20e-3' -> 3)."""
+    mantissa = s.strip().lstrip("+-").split("e")[0].split("E")[0]
+    return len(mantissa.replace(".", "").lstrip("0"))
+
+
+def _is_full_precision_shadow(value, companion) -> bool:
+    """Is `companion` a `*_str` carrying MORE precision than `value`?
+
+    The guard on `_sig_digits` is the whole point, and it is not optional.
+    Without it the rule is a laundering hole: any producer could silence the
+    ratchet by emitting `x_str = str(x)` beside its f64 and claiming a shadow.
+    That is not hypothetical — bean `qou-t0rf` records exactly that bug, where
+    `_lp_result_from_dict` built `*_str` from the f64 key, so every `*_str`
+    since was "f64 wearing a string". A shadow rule that accepted those would
+    have certified the bug as a fix.
+
+    So a companion counts only when it demonstrably carries digits the double
+    could not hold.
+    """
+    if isinstance(value, float) and isinstance(companion, str):
+        return _sig_digits(companion) > _F64_SIG_DIGITS
+    if isinstance(value, list) and isinstance(companion, list):
+        if not value or len(value) != len(companion):
+            return False
+        pairs = list(zip(value, companion))
+        if not all(isinstance(v, float) and isinstance(c, str) for v, c in pairs):
+            return False
+        return all(_sig_digits(c) > _F64_SIG_DIGITS for _, c in pairs)
+    return False
+
+
 def count_raw_floats(obj) -> int:
     """Number of JSON numbers parsed as float (i.e. non-integer literals).
 
     JSON integers arrive as Python `int`, so this counts exactly the
     values written with a decimal point or an exponent — the float64
     payload. `bool` is a subclass of `int` and so is never counted.
+
+    SHADOW RULE (bean `qou-ftuv`, owner decision 2026-08-11). An f64 that sits
+    beside a `<key>_str` companion carrying more than 17 significant digits is
+    a **shadow, not a defect**: the value IS present at full precision in the
+    same witness, and the float is a convenience for consumers that do
+    arithmetic on it. `lp_dual_solver.to_dict()` emits exactly this pair and
+    documents why the float cannot simply become a string — every existing
+    consumer computes on it (`sum(r["y_star"] …)`, `r["duality_gap"] < 1e-6`),
+    so stringifying would break readers silently rather than loudly.
+
+    This does NOT weaken the ratchet. A shadow must prove itself by carrying
+    digits a double cannot hold; see `_is_full_precision_shadow`.
     """
     if isinstance(obj, dict):
-        return sum(count_raw_floats(v) for v in obj.values())
+        total = 0
+        for k, v in obj.items():
+            if k.endswith("_str"):
+                total += count_raw_floats(v)
+                continue
+            companion = obj.get(f"{k}_str")
+            if companion is not None and _is_full_precision_shadow(v, companion):
+                continue  # shadowed at full precision — not raw float64
+            total += count_raw_floats(v)
+        return total
     if isinstance(obj, list):
         return sum(count_raw_floats(v) for v in obj)
     return 1 if isinstance(obj, float) else 0
@@ -133,6 +192,29 @@ def self_test() -> int:
         ({"a": [1.5, 2.5], "b": {"c": 3.5}}, 3),          # nested
         ({"a": ["1.5", {"c": "3.5"}]}, 0),                # nested, serialized
         ({}, 0),
+
+        # ── shadow rule (qou-ftuv) ────────────────────────────────────
+        # An f64 beside a *_str carrying MORE than 17 significant digits is
+        # the value at full precision, not a defect.
+        ({"y0_star": 0.012246289813934,
+          "y0_star_str": "1.224628981393451974336267854072680408e-2"}, 0),
+        # Same, for the list shape the LP duals actually use.
+        ({"y_star": [0.5, 0.25],
+          "y_star_str": ["5.000000000000000000000000000000e-1",
+                         "2.500000000000000000000000000000e-1"]}, 0),
+
+        # ── the laundering guard, which is the point ──────────────────
+        # A *_str that is merely the f64 spelled as text proves nothing and
+        # must still count. This is the qou-t0rf bug shape: *_str built from
+        # the f64 key. If this case ever returns 0, the rule has become a
+        # bypass and the ratchet is defeated.
+        ({"v": 0.1, "v_str": "0.1"}, 1),
+        ({"v": 0.012246289813934, "v_str": "0.012246289813934"}, 1),
+        # Length mismatch is not a shadow.
+        ({"v": [0.5, 0.25],
+          "v_str": ["5.00000000000000000000000000e-1"]}, 2),
+        # A *_str beside a non-float is irrelevant, and must not crash.
+        ({"v": "x", "v_str": "5.0000000000000000000000000e-1"}, 0),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]
@@ -143,7 +225,9 @@ def self_test() -> int:
         return 1
     print(f"SELF-TEST PASSED — {len(cases)} cases: raw float64 detected in "
           "plain/exponent/nested/negative form; strings, ints and bools not "
-          "flagged.")
+          "flagged; an f64 with a >17-digit *_str companion treated as a "
+          "shadow, and one with a same-precision *_str still counted (the "
+          "laundering guard).")
     return 0
 
 
