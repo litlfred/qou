@@ -1,11 +1,11 @@
 ---
 # qou-toi3
 title: 'GAP: regenerate y-lambda-wenzl-bridge-symbolic-witness under D; 3 consumers still sympify its C strings past the gate'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-10T13:42:48Z
-updated_at: 2026-08-10T13:43:19Z
+updated_at: 2026-08-11T10:12:00Z
 ---
 
 
@@ -49,3 +49,19 @@ sympy is slow at n >= 5; the only writer of this file is
 un-deprecating that script or extending `main()`. Budget it: the module
 docstring records ~6 s at n=3 and >60 s at n=6 for symbolic recompute, and
 this goes to n=12 — long-compute logging discipline applies.
+
+
+## 2026-08-11 — Closed: witness regenerated under D
+
+Regenerated y-lambda-wenzl-bridge-symbolic-witness.json under Convention D.
+270 partitions (n=2..12), 0 validation failures, 14.9s wall time.
+
+All expressions now in ℚ(q) — no √q. Sample: n=2 λ=(2) → (q⁴+q²+1)/(q⁴+2q²+1).
+
+Consumer status:
+- y_lambda_at_q0_cache.py: FIXED in #4929
+- regenerate_y_lambda_mpfr.py: FIXED in #4929  
+- delta_lambda_empirical_tabulation.py: OK (reads from computations/)
+- phase1c_proton_h3_symbolic_decomposition.py: FIXED (path resolution)
+
+Branch: claude/stale-audit-checker-2026-08-11
