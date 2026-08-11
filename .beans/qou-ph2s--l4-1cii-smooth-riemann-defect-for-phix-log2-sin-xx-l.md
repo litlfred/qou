@@ -1,11 +1,11 @@
 ---
 # qou-ph2s
 title: 'L4-1c(ii): smooth Riemann defect for phi(x)=log(2 sin x/x) — Lipschitz across the removable singularity at 0'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T10:45:00Z
-updated_at: 2026-08-11T11:15:00Z
+updated_at: 2026-08-11T11:40:00Z
 ---
 
 Last genuinely-new estimate in L4-1 (epic qou-u1b5). After L4-1c(i)
@@ -41,3 +41,13 @@ REMAINING: assemble the telescoping two-sided bound
 h(phi(nh) - log 2) <= sum_j int_cell (phi(x_j) - phi(u)) du <= 0
 (needs intervalIntegral.integral_mono_ae_restrict for the first cell's single
 bad point at u=0).
+
+DONE (assembled): smooth_defect_squeeze sorry-free —
+h(phiExt n - log 2) <= sum_{i<n} int_cell (phi(x_{i+1}) - phi u) du <= 0.
+Per-cell bounds via intervalIntegral.integral_mono_ae_restrict (the first
+cell's single bad point at u=0 is null); telescoped with
+Finset.sum_range_sub against the ceiling phiExt (log 2 at j=0, phi(jh)
+after). Integrability from intervalIntegrable_log' (unconditional) +
+intervalIntegrable_log_two_sin. NO derivative estimate anywhere.
+L4-1's ingredient list is now complete: L4-1a (defect repr) + L4-1c(i)
+(exact singular telescope) + L4-1b (Stirling) + this.
