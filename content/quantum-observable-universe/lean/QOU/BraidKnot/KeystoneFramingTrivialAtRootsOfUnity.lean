@@ -55,6 +55,32 @@ There is no third option that reaches `q₀`, because the reduction needs *all*
 roots of unity to transport a value there, and the fibre geometry cannot supply
 more than five.
 
+### The load-bearing reading, stated rather than left implicit
+
+"Closes the surviving object" depends on one interpretation, which is asserted
+here so a reader can reject it rather than have to reconstruct it:
+
+**A fibre-level identity of two objects means they agree at *every* root of
+unity, not at one chosen level.** That is what it means for two Habiro / unified-
+WRT elements to *be the same element* — the corpus's own framing, since a Habiro
+element "can be considered as a function whose domain is the set of roots of
+unity" (Beliakova–Le, quoted in `HabiroDomainVanishing.lean`). Under that
+reading the theorem below applies and forces `f = 0`.
+
+Under the *weaker* reading — the gate holds at one root of unity `ζ` of order `n`
+— the conclusion does **not** follow, and should not be claimed: `ζ^{f·c(λ)} = 1`
+merely needs `n ∣ f·c(λ)`, which is satisfiable with `f ≠ 0` (e.g. `f = n`). What
+such a match does *not* come with is any route to `q₀`: the reduction needs the
+full root-of-unity family, and the finite-data horn above shows five values do
+not pin the function either. So the weaker reading leaves the framing
+unconstrained but leaves the keystone exactly where it was — with the archimedean
+step unbridged.
+
+Nothing here excludes some *other* transport from a single level to `q₀`. It says
+only that for this concrete row, both sides are explicit rational functions, so
+whatever "continuation" means it has no freedom left: the two either agree as
+rational functions (`⟺ f·c(λ) = 0`) or they disagree at `q₀`.
+
 ## Scope — this is a (b), and here is the invariant
 
 Scope-**(b) structural exclusion**, per AGENTS.md §"Before declaring refuted",
