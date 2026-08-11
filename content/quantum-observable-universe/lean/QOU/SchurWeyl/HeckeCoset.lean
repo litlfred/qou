@@ -37,9 +37,13 @@ family indexed by `cosetIndex n` of cardinality `(n+1)!`.
 * `one_mem_span_cosetFam` — `1` is in the span of the family (sorry-free).
 * `finrank_le_card_of_span` — the generic finite-spanning ⇒ `finrank ≤ card`
   reduction (sorry-free).
-* `span_cosetFam_eq_top` — the spanning statement (the crux; the top-generator
-  "bubble" reduction is the deep Iwahori–Hecke basis theorem — see the `-- Ref:`
-  gap, bean `qou-uoal`).
+* `gen_mul_span_mem` — left-multiplication by a generator preserves the span.
+  The tower-inclusion-image case (`i = j.castSucc`) is proved sorry-free; the
+  **top** generator case (`i = Fin.last m`) is the single open gap (a `-- Ref:`
+  cited `sorry`, bean `qou-j6f9`).
+* `span_cosetFam_eq_top` — the spanning statement, reduced to `gen_mul_span_mem`
+  via the adjoin = span-of-submonoid route (`sorry`-reachable only through the
+  top-generator gap above).
 * `finrank_le_factorial` — the headline bound `finrank K (Hecke K q qi n) ≤ (n+1)!`,
   proved from `span_cosetFam_eq_top`.
 
