@@ -1,3 +1,28 @@
+#!/usr/bin/env python3
+"""RETIRED GENERATOR -- do not run to "restore" anything (bean qou-x64l).
+
+This wrote `QOU/Machinery/MarkovTraceH4Gram0..7` + `MarkovTraceH4Gram`: the 576
+`gramval_i_j` entries discharging `gram_symm`, hence the ASCII `trM_cyclic`, and
+through `H4BasisBridge` the subscript `trM4_cyclic`.
+
+**Those nine modules were deleted** -- 6604 generated lines, ~700 KB, ~4.3 GB
+peak, and the reason a full build took ~55 min rather than ~5.
+`QOU.Machinery.H4.trM4_cyclic` (`H4Cyclicity`) now proves cyclicity directly
+from the three generators and the subalgebra argument, and `H4.trM_cyclic` is a
+three-rewrite corollary of it across the basis relabelling. Nothing imports the
+Gram chain, and `gram_symm` has no remaining use anywhere in the tree.
+
+Running this script regenerates nine modules that nothing imports. It is kept,
+rather than deleted, for two narrow reasons:
+
+  * it records how the 576 entries were derived (an independent check on the
+    `TRM` trace table, still meaningful even though the Lean is gone);
+  * it is the working template if a Gram closure is ever wanted at another `n`
+    -- but note that the generator route is the cheap one at `n = 4`, so prefer
+    porting `H4Cyclicity`'s argument before generating O(n!^2) entries.
+
+Do not re-add its output to the build.
+"""
 import sys; sys.path.insert(0,'computations/markov')
 import sympy as sp
 from hecke_regular_nf_table import Hecke, markov_trace, reduced_word
