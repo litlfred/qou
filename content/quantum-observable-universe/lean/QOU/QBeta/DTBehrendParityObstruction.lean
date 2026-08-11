@@ -70,9 +70,37 @@ import Init.Omega
 
 namespace QOU.QBeta.DTBehrendParityObstruction
 
+/-! ### Notation (§7aa)
+
+We write `e` for an **Euler characteristic** (`eulerTotal` for the whole moduli,
+`eS` for a single stratum). We deliberately do **not** write `χ`: in QOU `χ` is
+reserved for **characters** — `χ_λ` in the Frobenius pairing
+`tr_M = Σ_λ y_λ χ_λ`, and `χ_ζ(c)`, with `χ_q` the Lyapunov exponent
+(`notation/notation-collisions.md`). The register carries no Euler-characteristic
+symbol, so `e` is used here, matching the corpus's orbifold Euler number
+`e = −1/30` for `Σ(2,3,5)`.
+
+### Which number is "the Euler characteristic"? (`−2`, not `−6`)
+
+Two integers circulate and must not be conflated:
+
+| object | value | source |
+|---|---|---|
+| QOU Wedderburn/Springer Euler characteristic `Σ_{λ ⊢ 3} Δ_λ` | `−2` | `StokesDTCountExceedsRecursionOrder.partitionEuler3_eq` |
+| GGM sandwich `(0,1)` entry | `−6 = (−2)·3` | `StokesQZeroDTCount.sandwich_offdiagonal_qzero` |
+| Stokes/DT/BPS **count** `S⁺(0)₀₁` | `3` | `StokesQZeroDTCount.stokes_qzero_offdiagonal` |
+
+The `−6` is the *product* of the sandwich prefactor `−2` and the count `3`, not an
+Euler characteristic — though the original G3 directive hinted "Euler = −6", which
+is exactly the ambiguity this table removes.
+
+**The obstruction does not depend on resolving it.** `eulerTotal_even_blocks_three`
+below rules out *every even* total, so both `−2` and `−6` are excluded, and the
+result is immune to which object is meant. -/
+
 /-- A Behrend stratification, as the list of its strata: each carries the Behrend
-function's constant value `n` on that stratum, paired with the stratum's Euler
-characteristic `χ`. -/
+function's constant value `n` on that stratum, paired with that stratum's Euler
+characteristic `eS`. -/
 abbrev Strata := List (Int × Int)
 
 /-- The unweighted Euler characteristic `χ(M) = Σ χ_i` (Behrend strata partition
@@ -93,13 +121,32 @@ obstruction, stated at its source. -/
 theorem no_constant_weight_yields_three (c : Int) : c * (-2) ≠ 3 := by
   omega
 
+/-- The same for `−6`, the GGM sandwich `(0,1)` entry — the other integer the G3
+directive called "Euler". Also even, also excluded. -/
+theorem no_constant_weight_yields_three_neg_six (c : Int) : c * (-6) ≠ 3 := by
+  omega
+
+/-- **The obstruction in full generality: every even total is excluded.** For *any*
+even Euler characteristic `E` and any constant Behrend value `c`, the weighted count
+`c · E` is even and so cannot equal the odd target `3`.
+
+This is why the `−2` vs `−6` ambiguity is harmless: both are even, so the
+constant-weight class is excluded either way. Only an *odd* total could be rescued
+by a constant weight — and the QOU machinery produces even ones. -/
+theorem eulerTotal_even_blocks_three (E c : Int) (hE : E % 2 = 0) : c * E ≠ 3 := by
+  obtain ⟨k, hk⟩ : ∃ k, E = 2 * k := ⟨E / 2, by omega⟩
+  intro h
+  rw [hk, ← Int.mul_assoc, Int.mul_comm c 2, Int.mul_assoc] at h
+  omega
+
 /-- The weighted count of a single-stratum (i.e. constant-weight) stratification is
 `n · χ`. -/
-theorem dtCount_single (n χ : Int) : dtCount [(n, χ)] = n * χ := by
+theorem dtCount_single (n eS : Int) : dtCount [(n, eS)] = n * eS := by
   simp [dtCount]
 
-/-- The Euler characteristic of a single-stratum stratification is its `χ`. -/
-theorem eulerTotal_single (n χ : Int) : eulerTotal [(n, χ)] = χ := by
+/-- The Euler characteristic of a single-stratum stratification is that stratum's
+`eS`. -/
+theorem eulerTotal_single (n eS : Int) : eulerTotal [(n, eS)] = eS := by
   simp [eulerTotal]
 
 /-- **At least two Behrend strata.** A stratification with total Euler
