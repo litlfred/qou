@@ -44,10 +44,12 @@ What is checked
    nose — no quadratic fold. This is what lets ``H4WordAction`` peel one
    generator at a time.
 
-5. **The committed Lean statements match the parsed tables.** The 73
-   ``mulσᵢ_e₄_j`` statements of ``H4GeneratorAction.lean`` are parsed back out
-   of the source and compared against the action computed here. This is the
-   emitter's own assertion, re-run against what actually landed.
+5. **The committed Lean statements match the parsed tables, and cover every
+   case.** The ``mulσᵢ_e₄_j`` statements of ``H4GeneratorAction.lean`` are
+   parsed back out of the source and compared against the action computed here;
+   then the set of ``(i, j)`` pairs is asserted to be exactly the 72 expected,
+   each appearing once. The coverage half is the part Lean cannot do — it
+   checks only the statements that are written, never the ones that are absent.
 
 Note on what this does and does not add. Every statement checked here is
 *already* machine-checked by Lean, so this script cannot make the theorem more
@@ -56,6 +58,37 @@ a check on the layer Lean cannot see: that the committed statements are about
 the tables the modules claim to be about, computed by an independent
 implementation. A Lean file can be sorry-free and internally consistent while
 enumerating the wrong 72 facts; that is the failure mode this closes.
+
+Mutation-tested — the checks discriminate
+-----------------------------------------
+A checker that cannot fail is worth nothing, so this one was run against four
+deliberate corruptions of the sources, each restored afterwards. It caught all
+four, and — the part that matters — each broke only the checks that actually
+depend on what was corrupted:
+
+===============================  ====================================================
+corruption                       result
+===============================  ====================================================
+``TRM4[2]``  ``z`` → ``z^3``     [3] 4 failures; [2] [4] [5] unaffected (they do
+(the trace table)                not read ``TRM4``)
+``mulσ₀_e₄_6`` RHS               [5] 1 failure, naming the exact coefficient:
+``e₄ 8`` → ``e₄ 9``              *"coefficient 8 disagrees with the table"*;
+(a committed Lean statement)     [3] unaffected — the table itself is still sound
+``mulσ₀`` row 2                  [2] presentation broken (quadratic, braid, far
+``v 3`` → ``v 4``                commutation), [3] 18, [4] 4, [5] 2 — the deepest
+(the generator action)           table, so everything downstream fails
+``theorem mulσ₀_e₄_6``           [5] 71 statements, 1 failure:
+**deleted entirely**             *"MISSING — no such statement in the file"*
+===============================  ====================================================
+
+The first three make some statement **false**, so Lean rejects them too — on
+those this script is a redundant second opinion, not a unique catch. **The
+fourth is the one Lean structurally cannot see:** delete a fact and every
+remaining statement is still true, still sorry-free, still axiom-clean. Lean
+only ever checks the statements that are written, never the ones that are
+absent. So check [5] also asserts that the 72 ``(generator, basis)`` pairs are
+present exactly once each — that coverage assertion, rather than the
+per-statement comparison, is this script's distinct contribution.
 
 Arithmetic and anchor
 ---------------------
@@ -279,8 +312,10 @@ def check_lean_generator_action(gens):
         re.S,
     )
     fails, checked = [], 0
+    seen: list[tuple[int, int]] = []
     for m in pat.finditer(text):
         i, jname, jarg, rhs = SUB[m.group(1)], int(m.group(2)), int(m.group(3)), m.group(4)
+        seen.append((i, jname))
         if jname != jarg:
             fails.append(f"mulσ{i}_e₄_{jname}: name/argument mismatch ({jarg})")
             continue
@@ -305,6 +340,17 @@ def check_lean_generator_action(gens):
             if sp.simplify(actual[k] - claimed.get(k, sp.Integer(0))) != 0:
                 fails.append(f"mulσ{i}_e₄_{jname}: coefficient {k} disagrees with the table")
                 break
+
+    # Coverage — the half Lean cannot check, since it only ever sees the
+    # statements that were written, never the ones that are absent.
+    expected = {(i, j) for i in range(3) for j in range(N)}
+    got = set(seen)
+    for dup in sorted({p for p in seen if seen.count(p) > 1}):
+        fails.append(f"mulσ{dup[0]}_e₄_{dup[1]}: stated more than once")
+    for miss in sorted(expected - got):
+        fails.append(f"mulσ{miss[0]}_e₄_{miss[1]}: MISSING — no such statement in the file")
+    for extra in sorted(got - expected):
+        fails.append(f"mulσ{extra[0]}_e₄_{extra[1]}: unexpected (i, j) outside the 3 × 24 grid")
     return checked, fails
 
 
