@@ -198,3 +198,36 @@ its own docstring calls "NOT yet cross-checked against the scipy backend to
 1e-25"). Left undone deliberately. If it is ever wanted, the shadow rule from
 route 2 is already in place to recognise the `*_str` companions it would
 produce.
+## Correction to a claim I nearly landed (2026-08-11, qou-4jut sweep)
+
+A parallel session appended two "de-risking" facts here. **One of them was
+misleading and is withdrawn**; the other survives, narrowed.
+
+**WITHDRAWN — "the validator will not break, so the fields can become
+strings."** True but irrelevant: `lp_dual_witness_validator.py` does check
+presence, not type, so it would indeed pass. But the validator is **not the
+binding constraint**. As the section above records from `to_dict`'s own
+docstring, the binding constraint is the **arithmetic consumers** —
+`sum(r["y_star"] …)`, `r["duality_gap"] < 1e-6` across 56 producers — which
+would break *silently*. Checking the validator and concluding "safe to
+stringify" checks the wrong gate, and would have made route 1 look cheaper than
+it is.
+
+**SURVIVES, narrowed to route 1 only.** `qou_substrate/precision.py:167-190`:
+`fmt` short-circuits a plain Python `float` to `str(value)` by design — *"int
+and float get their natural Python repr (no spurious mpf-promotion noise)"*. So
+IF route 1 is ever chosen, the honest-width serialization needs no new helper
+and cannot trip the padding ratchet. That is a detail of executing route 1, not
+an argument for choosing it.
+
+Worth recording alongside route 3 (audit carve-out), since the ratchet's author
+states the tension explicitly — `witness_raw_float64_audit.py:12-14`: *"A
+witness that stores float64 at float64 width is honest about being f64 and
+sails through the padding audit. **It still violates the stated rule.**"* So
+"it is honestly f64" is not a defence under the rule as written; route 3 has to
+change the rule, not appeal to it.
+
+**Process note.** An agent was dispatched to determine whether the 395 -> 867
+growth was a precision regression or content growth. This bean had already
+settled that. The corpus-grep checklist covers `.beans/`, not only `content/`,
+`docs/` and `computations/`.
