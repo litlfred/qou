@@ -30,3 +30,30 @@ NOW ACTIONABLE: every source PDF is in uploads/ (2012.00062v3, 2007.10190v2, 211
 with pymupdf and diff against the typed matrices; do the same for the A-polynomial. Note eq (17)
 S+(x;q)^T S-(x^-1;q) = 1 was CONFIRMED in the source this session.
 STILL NEEDS SnapPy (or a source) for the 5_2 boundary slopes — see qou-52sn.
+
+## 2026-08-11 — STOKES MATRICES VERIFIED (stronger than a glyph-diff). Partial close.
+
+Read GGM 2012.00062v3 eqs (96)/(97)/(98) from uploads/ (pymupdf). Result: the typed
+5_2 Stokes matrices are NOT independent transcriptions at all — they are RECONSTRUCTIBLE
+from the single eq-(98) DT-constant matrix
+
+        [[ 0, 4, 3], [-4, 0, -3], [-3, 3, 0]]
+
+via the elementary products GGM states:
+   S+(0) = S_{s3s1} S_{s3s2} S_{s1s2}   -> [[1,4,0],[0,1,0],[-3,-9,1]]   == typed EXACTLY
+   S-(0) = S_{s1s3} S_{s2s3} S_{s2s1}   -> [[1,0,3],[-4,1,-3],[0,0,1]]   == typed EXACTLY
+and the independent structural identity eq (17) S+(0)^T S-(0) = 1 holds on the
+reconstruction.
+
+WHY THIS IS STRONG: the only input is a small unambiguous integer array {0,+-3,+-4}, and
+the most typo-prone entry -9 is a PRODUCT ARTIFACT (-3*4 + 3), never a typed digit. A
+transcription slip would have had to conspire with the product structure to survive.
+
+Formalized sorry-free: QOU/QBeta/StokesMatrixProvenance.lean (splus_reconstructed,
+sminus_reconstructed, minus_nine_is_derived, inversion_relation, dt_spectrum_three_four),
+lean-direct exit 0.
+
+RESIDUAL EXPOSURE (now minimized, not eliminated): that the eq-(98) array itself is read
+correctly — one small matrix instead of the whole Stokes dataset. STILL OPEN in this bean:
+the A_{4_1} monomials (mitigated by the proved reciprocal symmetry) and the 5_2 boundary
+slopes (qou-52sn, the genuinely unverified input).
