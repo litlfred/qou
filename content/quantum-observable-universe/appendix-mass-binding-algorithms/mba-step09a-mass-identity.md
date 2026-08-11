@@ -1,6 +1,10 @@
 **Algorithm (Mass identity at $q = q_0$).**
-*Evaluate the absolute nucleon mass via the muon-anchored Hecke energy — the
-form adopted here as canonical*
+*Evaluate the nucleon mass ratio via the muon-anchored Hecke energy — the
+form adopted here as canonical. Absolute nucleon mass in MeV is not a framework
+prediction (excised, `qou-exam`): $m_e$ sets the MeV scale by fiat, so the
+predictive content is the dimensionless ratio $m_p/m_e$; the MeV outputs below
+are that ratio rendered against the $m_e$ unit, a rendering rather than an
+independent absolute-mass claim.*
 
 $$
 m_p = \dim V_{(2,1)} \cdot \bigl( m_\mu \cdot F_{\mathrm{Bor}} - |S_3| \cdot m_e \bigr), \qquad
@@ -37,7 +41,9 @@ predictions.*
 
 ### Output
 
-- *Predicted masses $m_p, m_n \in \mathbb{R}_{> 0}$ in MeV.*
+- *Mass ratios $m_p/m_e, m_n/m_e$, rendered against the $m_e$ scale as
+  $m_p, m_n \in \mathbb{R}_{> 0}$ in MeV (the MeV figure is a rendering of the
+  dimensionless ratio, not an absolute-mass prediction — `qou-exam`).*
 
 ### Algorithm
 
