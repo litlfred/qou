@@ -272,3 +272,45 @@ two-row count. The C-era violators (n=6 indices 6, 8, 10 = `[3,1,1,1]`,
 
 Remaining orphans: **4** Rust-produced `chi-*-matrix-m` files, which need the
 `hecke-engine` CLI rather than a Python producer.
+
+## Merged with main; cascade restarted on the merged tree (2026-08-11)
+
+The branch was 1575 commits behind and un-mergeable. 37 conflicts: 32 witnesses,
+`.gitignore`, `regenerate_y_lambda_mpfr.py`, the harness journal, `.work`.
+
+**Both code conflicts went to main's side, and one of them is a genuine
+independent-discovery case.** Main found the *same* bug this branch did in
+`regenerate_y_lambda_mpfr.py` — the script `sympify`'d the convention-C symbolic
+witness — and fixed it **better**: it changed the *source*, calling the module's
+numeric entry point `y_lambda_wenzl_bridge_numeric` rather than opening the JSON
+directly. That matters because the guard (`_cached_symbolic_agrees`, `qou-wgta`)
+lives on that entry point and never ran for a caller that read the file itself.
+Took main's evaluation path; kept this branch's `--anchor both` default (the
+coverage defect: producer owns two caches, wrote one, exited 0) and re-applied
+the `qou-u2jg` pointer for why `z_D` is forced.
+
+`.gitignore`: main anchors every pattern with a leading slash, because an
+unanchored `_deprecated/` matches at **every** depth and was silently capturing
+`computations/_deprecated/` (1,449 tracked files). Directly relevant — this
+branch deprecated `binding_k_enumerator` there. **Checked rather than assumed:**
+both files are tracked (`626f332b`); `git mv` preserves tracking and ignore
+rules never untrack, so nothing was lost.
+
+32 witnesses took ours then re-derive. Every one declares a producer, so none is
+a hand-resolution — they are this campaign's D outputs against main's
+independent C regeneration, which the standing directive says to ignore.
+
+**The float64 red was stale tooling, not a regression.** `a-K-via-lp-dual-full`
+measured 395 → 862 here. Main has since landed an owner-approved LP-dual
+carve-out (`0c1917b72`) naming that exact file: 801 of its 867 floats are solver
+output, f64 by construction, excused **and counted**. The ~66 the carve-out
+deliberately does NOT hide — the probe's own results — are the real residue and
+are still open.
+
+Post-merge: Lean re-verified (both files exit 0, six declarations sorry-free);
+cascade restarted, 36 producers / 30 to run / 4 orphans.
+
+**Persistent time sink:** `delta_lambda_2row_stratum_analysis.py` has consumed
+the full 2400 s timeout on every attempt and has never completed. It is first in
+topo order among the remaining, so every cascade restart pays 40 minutes before
+producer 2. Undiagnosed.
