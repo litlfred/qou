@@ -43,11 +43,16 @@ layer Lean cannot see — that the committed statements are *about* the tables
 these modules claim to be about, computed by an independent implementation. A
 sorry-free file enumerating the wrong 72 facts is the failure mode it closes.
 
-## Relation to the existing route
+## Relation to the route this replaced
 
-`MarkovTraceH4Gram.trM_cyclic` proves the same statement for the ASCII basis
-`trM` off `gram_symm`. This is the subscript-basis `trM4` counterpart, and it
-does not import any of the Gram modules.
+The ASCII basis carried the only `n = 4` cyclicity proof, `trM_cyclic`, off
+`gram_symm`'s 576 computed entries in `MarkovTraceH4Gram0..7`. `H4BasisBridge`
+then transported it to the subscript basis, so the Gram chain — 6604 generated
+lines and the tree's build pole — was load-bearing.
+
+This file proves the subscript statement directly and imports none of it, which
+**reverses that arrow**: the bridge now derives the ASCII `trM_cyclic` from
+`trM4_cyclic` here, and the Gram chain is deleted.
 -/
 import QOU.Machinery.H4WordAction
 
