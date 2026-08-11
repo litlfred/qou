@@ -322,6 +322,7 @@ import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Indep
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.QJucysMurphy
 import QOU.SchurWeyl.Irreducibility
 import QOU.SchurWeyl.YoungTableaux
 import QOU.QuantumObservableUniverses.VirtualProjection
