@@ -1561,13 +1561,16 @@ root-workspace commands are the standardized entry point used by CI
 > `lake-cache/<pkg>-<toolchain-slug>` (e.g. `lake-cache/qou-v4-24-0`):
 > **fetch-and-extract to restore (~2 min) instead of recompiling (~30 min+),
 > and SEED the branch after a successful build** so the next agent restores.
-> **Caveat — "SEED after a build" means a `lake build` session only.** A
-> `lean`-direct build (`lean f.lean -o …`, which the verification guidance
-> below tells you to prefer) writes no `.trace`, so
-> `lean-olean-cache-seed.sh`'s trace guard correctly **refuses** it, and
-> forcing it past the guard poisons the cache — Lake treats untraced oleans as
-> stale, rebuilds, and evicts them (bean `02kc`). Do not offer or attempt to
-> seed lean-direct output; see the skill's §"Rule for agents going forward".
+> **Caveat — the seed ROUTE depends on how you built.** `lake build` output
+> seeds the monolithic branch via `lean-olean-cache-seed.sh`. A `lean`-direct
+> build (`lean f.lean -o …`, which the verification guidance below tells you to
+> prefer) writes no `.trace`, so that script's guard correctly **refuses** it —
+> never force it past, since Lake treats untraced oleans as stale, rebuilds and
+> evicts them (bean `02kc`). Preserve lean-direct output as an **addon** orphan
+> branch via plain `tar` instead (e.g.
+> `lake-cache/qou-v4-24-0-h4-wedderburn-cone`); restored with `tar xzf`, not by
+> Lake, it is exactly what a `lean`-direct + `LEAN_PATH` consumer needs. See the
+> skill's §"Rule for agents going forward" for the route table.
 > Full proven recipe + restore/seed commands:
 > [`.claude/skills/local/lean-environment-setup.md` §"PROVEN sandbox build
 > recipe" + §"PRESERVE THE BUILD"](.claude/skills/local/lean-environment-setup.md).
