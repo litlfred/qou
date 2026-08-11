@@ -698,8 +698,19 @@ root-difference law.
 4. **Descent certificate: σ(a) = a** for a = P·b⁻² (the orientation
    is adjudicated by the certificate itself, both orientations tried,
    exactly one fixed).
-5. **ε₂(ξ) = χ_B(a) = teich(a)³¹² = +1**, with χ_B non-vacuous
-   (χ_B(ζ₆₂₄) = −1 checked).
+5. **ε₂(ξ) = χ_B(a) = teich(a)¹² = +1**, with χ_B non-vacuous **on
+   the base** (χ_B(g₂₄) = −1 for the σ-fixed order-24 generator
+   g₂₄ = ζ₆₂₄²⁶).
+
+**Self-caught vacuity fix (same day, pre-review).** The first pushed
+version used χ_B = teich(·)³¹² — but the descended a is σ-fixed, so
+teich(a) ∈ μ₂₄, and 312 ≡ 0 (mod 24): that character is *identically*
++1 on the base, and its control (χ_B(ζ₆₂₄) = −1) only exercised
+F-level units. The genuine quadratic character of B = Q₂₅ is
+teich(·)^{(25−1)/2} = teich(·)¹². Re-run: **ε₂(ξ) = +1 stands**, now
+non-vacuously (13/13 including `base_teich_in_mu24` and the base-level
+control, both of which can fail). Ambiguities remain killed: θ/√
+choices move a by base squares and −1, and −1 is a square in μ₂₄.
 
 **Why this is new information.** Addendum 16's collapse finding showed
 every F-level Kummer class is structurally vacuous (624m | 5^d − 1

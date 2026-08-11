@@ -41,12 +41,17 @@ Gamma = Gal(F/B) = <sigma>, sigma = phi_5^2, n = [F:B] = 4):
 6. THE DESCENT CERTIFICATE: sigma(a) = a exactly in the ring — a
    genuinely lands in the base B. This is the falsifiable heart: a
    wrong sigma, wrong splice, or wrong orientation fails it.
-7. THE VALUE: eps_2-class chi_B(a) = teich(a)^{312} in {+-1}. The
-   sqrt/theta ambiguities multiply a by (B^x)^2 * mu_2, and
-   chi_B(-1) = zeta_624^{312^2} = 1, so the class is AMBIGUITY-FREE.
-   Non-vacuity control: chi_B(zeta_624) = zeta_624^{312} = -1 != 1
-   (the base character genuinely resolves, unlike the collapsed
-   Kummer-field character).
+7. THE VALUE: eps_2-class chi_B(a) = teich(a)^{12} in {+-1} —
+   teich(.)^{(25-1)/2}, the genuine quadratic character of the base
+   B = Q_25 (a is sigma-fixed, so teich(a) lies in the base
+   Teichmuller mu_24; exponent 312 = 0 mod 24 would be IDENTICALLY 1
+   on the base — a vacuity an earlier version of this probe shipped
+   with, self-caught and fixed). The theta/sqrt ambiguities multiply
+   a by base squares and mu_2; chi_B kills squares (teich^24 = 1) and
+   chi_B(-1) = (-1)^{12} = 1 (-1 IS a square in mu_24), so the class
+   is AMBIGUITY-FREE. Non-vacuity control at BASE level:
+   g24 = zeta_624^{26} is sigma-fixed of exact order 24 and
+   chi_B(g24) = -1 != 1.
 
 NO printed target exists for eps_2(xi) (honest scope): the value is
 candidate data, falsifiable against any independent computation of
@@ -446,8 +451,15 @@ if nu_is_one:
         a_val = None
     checks["descent_certificate_sigma_fixed"] = a_val is not None
     if a_val is not None:
+        # a is sigma-fixed => teich(a) in mu_24 (the base Teichmuller
+        # group). The genuine quadratic character of B = Q_25 is
+        # teich(.)^{(25-1)/2} = teich(.)^12 — NOT ^312, which is
+        # 0 mod 24 and hence IDENTICALLY 1 on the base (a vacuity this
+        # probe originally shipped with and this check now excludes:
+        # base_teich_in_mu24 below can fail, and chi_B can be -1).
         ta = teich(a_val)
-        chiB = R.pw(ta, 312)
+        checks["base_teich_in_mu24"] = R.pw(ta, 24) == R.one()
+        chiB = R.pw(ta, 12)
         checks["chi_B_value_in_mu2"] = chiB in (R.one(), minus1)
         a_class = "+1" if chiB == R.one() else "-1"
         detail["eps2_xi_class"] = a_class
@@ -458,8 +470,18 @@ else:
     # invariant carried forward IS nu.
     detail["eps2_xi_class"] = "OBSTRUCTED (nu = -1): no F-level descent; the invariant IS nu"
 
-# non-vacuity: chi_B resolves the base group
-checks["chi_B_nonvacuous"] = R.pw(z624, 312) == minus1
+# non-vacuity: chi_B resolves the BASE group. g24 = zeta_624^26 is
+# sigma-fixed (sigma acts by ^25; 624 | 24*26) of exact order 24, i.e.
+# a generator of the base Teichmuller mu_24, and chi_B(g24) =
+# g24^12 = -1 != 1. (The old control zeta_624^312 = -1 only showed the
+# character nontrivial on F-level units — zeta_624 is not in B.)
+g24 = R.pw(z624, 26)
+checks["g24_base_generator"] = (
+    sigma(g24) == g24
+    and R.pw(g24, 24) == R.one()
+    and all(R.pw(g24, 24 // p) != R.one() for p in (2, 3))
+)
+checks["chi_B_nonvacuous_on_base"] = R.pw(g24, 12) == minus1
 
 print(json.dumps(checks, indent=1))
 print(json.dumps(detail, indent=1))

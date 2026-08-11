@@ -3,7 +3,7 @@
  "probe": "gswz_epsm_descent_m2_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_descent_m2_probe.py",
- "commitSha": "fe2fa9b097c5ba63ea26bc6c44e2dcc2ff81bb5b",
+ "commitSha": "6dec493eb664b3bb62cf04bf6aa63bf276ed2c09",
  "beans": [
   "qou-y3xv",
   "qou-9p9y"
@@ -20,8 +20,10 @@
   "resolvent_unit_found": true,
   "splice_law_exact": true,
   "descent_certificate_sigma_fixed": true,
+  "base_teich_in_mu24": true,
   "chi_B_value_in_mu2": true,
-  "chi_B_nonvacuous": true
+  "g24_base_generator": true,
+  "chi_B_nonvacuous_on_base": true
  },
  "result": {
   "nu_obstruction": "+1",
