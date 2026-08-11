@@ -889,3 +889,58 @@ are chosen to kill root ambiguities); or a norm-compatible pinning via
 α = (1−x₂)(1−ζ_m x₂)···-factorizations (α is the full σ-orbit product
 of (1−x₂) at m = 3). Until then, ε₂(ξ) = +1 plus ν ≡ 1 on the whole
 lattice is the complete extractable dataset.
+
+## Addendum 22 (2026-08-11) — the α-obstruction is MAXIMAL: α generates μ₂₄, so no root choice can ever repair the canonical cocycle (PR #4983)
+
+`gswz_epsm_alpha_teichmuller_order_probe.py`, **14/14**. This sharpens
+Addendum 21 in two directions — one that could have overturned its
+table, and one that explains it.
+
+**The published criterion was not sharp.** Addendum 21 scored each
+level with the *per-factor* condition m | n_i·r_i (n = (2,1)). But the
+α-line identities make **both** base elements powers of the *same*
+element (1−z₁ = α², 1−z₂ = α), so the cocycle's whole fractional part
+is a single α-power and the sharp condition is the **combined**
+m | (4r₁ + r₂) — strictly weaker, and intrinsic (rescaling ζ_m
+multiplies both r_i by one unit). Re-scored:
+
+| m | 2 | 3 | 4 | 6 | 8 | 12 | 24 |
+|---|---|---|---|---|---|---|---|
+| (4r₁+r₂) mod m | **0** | 1 | 2 | 4 | 2 | 10 | 22 |
+
+Only m = 2 vanishes. **The Addendum-21 verdicts stand under the more
+permissive test** — the obstruction survives being tested harder, which
+strengthens the table rather than correcting it (m = 8 improves 6 → 2,
+m = 24 improves 18/10 → 22, neither reaching 0).
+
+**Why no root choice can help — a proved invariant.** α is σ-fixed, so
+it lies in the base B = Q₂₅ with Teichmüller group μ₂₄. Measured:
+
+$$e_\alpha := \mathrm{dlog}_{g_{24}}\ \mathrm{teich}(\alpha) = 13,
+\qquad \gcd(13, 24) = 1.$$
+
+**α is a primitive generator of μ₂₄** (exact order 24, computed
+independently of the gcd). Three consequences, each checked:
+
+1. **α is an m-th power in B for no m > 1** — the m-th powers are
+   ⟨g₂₄^m⟩ and m ∤ 13 for every m > 1. There is no base m-th root of α
+   *to choose*: the canonical construction cannot be repaired by a
+   better choice.
+2. **α contributes no divisibility of its own** — e_α being a unit mod
+   24 makes m | e_α(4r₁+r₂) equivalent to m | (4r₁+r₂). The lattice is
+   governed entirely by the shift exponents.
+3. **m = 2 is canonical for a different reason than one might guess** —
+   not because α is a square (13 is odd; it is not), but because
+   4r₁+r₂ = 4 is *even*, so the exponent is an integer and no root of α
+   is needed at all. Addendum 21's "m = 2 is uniquely canonical" is now
+   explained, not merely observed.
+
+**Scope (strict).** The exclusion is **scope-(b)** with its invariant
+named — *the order of α in the cyclic group μ₂₄* forbids any m-th root
+in the base, permanently, for m > 1. But the ε_m consequence stays
+**scope-(a)**: ε_m is a function of the **Bloch class**, and a different
+representative of the same class (five-term-related, or CGZ's
+square-argument η-form, their Thm 7.4) has different 1−w_i and may avoid
+α entirely. What is excluded is **one route on one representative** — not
+ε_m at m ≥ 3. That change of representative is the next increment on
+`qou-y3xv`.
