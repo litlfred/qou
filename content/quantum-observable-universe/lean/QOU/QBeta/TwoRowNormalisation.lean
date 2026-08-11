@@ -94,11 +94,20 @@ universally-quantified hypothesis would assert
 `yw (n+1) 2 + yw (n+1) 0 = yw n 1` for every large `k`, which is a different
 (and false) claim about q-integers rather than a vacuous one. Off-shape indices
 have to be excluded by the range, not by hoping the arithmetic degenerates
-harmlessly. -/
+harmlessly.
+
+**`hg` is stated weighted, `d k * g k = d k * (f k + f (k+1))`, not as the bare
+`g k = f k + f (k+1)`.** That is not stylistic. At the intended instance the bare
+form is *false* at one index: when `2k = n+1` the branching identity degenerates
+under ℕ truncation to `yw q n 0 = yw q (n+1) 1 + yw q (n+1) 0`, i.e. `0 = [1]_q /
+[2]_q^{n+1}`, which is wrong rather than vacuous. What saves it is that the
+dimension there is `0` — the shape `(n−k, k)` with `2k > n` does not exist — and
+the lemma only ever uses the product. Weighting the hypothesis is exactly the
+generality the proof already had. -/
 theorem level_sum_step (N : ℕ) (d d' f g : ℕ → R)
     (hd0 : d' 0 = d 0)
     (hd : ∀ k ∈ range N, d' (k + 1) = d (k + 1) + d k)
-    (hg : ∀ k ∈ range (N + 1), g k = f k + f (k + 1))
+    (hg : ∀ k ∈ range (N + 1), d k * g k = d k * (f k + f (k + 1)))
     (hbdry : d N * f (N + 1) = 0) :
     ∑ k ∈ range (N + 1), d' k * f k = ∑ k ∈ range (N + 1), d k * g k := by
   -- Right-hand side: split the branching, then peel the last term of the
@@ -108,6 +117,7 @@ theorem level_sum_step (N : ℕ) (d d' f g : ℕ → R)
         + ((∑ k ∈ range N, d k * f (k + 1)) + d N * f (N + 1)) := by
     rw [← Finset.sum_range_succ (fun k => d k * f (k + 1)) N, ← Finset.sum_add_distrib]
     exact Finset.sum_congr rfl fun k hk => by rw [hg k hk]; ring
+
   -- Left-hand side: peel the FIRST term, so `hd` applies to every remaining one.
   have hlhs : ∑ k ∈ range (N + 1), d' k * f k
       = (∑ k ∈ range (N + 1), d k * f k) + ∑ k ∈ range N, d k * f (k + 1) := by
@@ -200,5 +210,110 @@ theorem ballot_pascal (n k : ℕ) :
       simp only [ballot, Nat.choose_succ_succ n (j + 1), Nat.choose_succ_succ n j]
       push_cast
       ring
+
+/-- **`[1]_q = 1`.** The hypothesis cannot be dropped: `[1]_q` is literally
+`(q − q⁻¹)/(q − q⁻¹)`. -/
+theorem qint_one (q : R) (hq : q - q⁻¹ ≠ 0) : TemperleyLiebTower.qint q 1 = 1 := by
+  simp [TemperleyLiebTower.qint, div_self hq]
+
+/-- **The ballot number vanishes one past the end of the row**: `d(n,k) = 0`
+whenever `2k = n + 1`.
+
+For `n = 2j+1` the shape `(n−k, k)` with `k = j+1` would need `n ≥ 2k = n+1`, so
+it does not exist, and the ballot number knows it: `C(n, j+1) = C(n, j)` by the
+symmetry `n − (j+1) = j`, so the difference is zero.
+
+This is the fact that rescues `hg` at the one index where the bare branching
+identity fails — see `level_sum_step`. -/
+theorem ballot_eq_zero_of_two_mul_eq_succ (n k : ℕ) (h : 2 * k = n + 1) :
+    (ballot n k : R) = 0 := by
+  obtain ⟨j, rfl⟩ : ∃ j, k = j + 1 := ⟨k - 1, by omega⟩
+  have hn : n = 2 * j + 1 := by omega
+  subst hn
+  have hsymm := Nat.choose_symm (show j + 1 ≤ 2 * j + 1 by omega)
+  rw [show 2 * j + 1 - (j + 1) = j from by omega] at hsymm
+  simp [ballot, hsymm]
+
+/-- **The level sum** `Σ_λ dim_λ · y_λ` over the two-row shapes of `n`.
+
+Summed over the whole of `range (n + 1)` rather than over `k ≤ ⌊n/2⌋`, because
+every off-shape term vanishes on its own — and this is what removes the parity
+case-split the argument otherwise needs:
+
+* at `2k = n + 1` the *dimension* is zero (`ballot_eq_zero_of_two_mul_eq_succ`);
+* at `2k ≥ n + 2` the ℕ subtraction truncates the weight's argument to `0`, and
+  the *weight* is zero (`yw_zero`).
+
+Two different reasons, one uniform range. Taking instead the tight upper limit
+`⌊(n+1)/2⌋` forces the two levels' shape counts apart whenever `n` is odd and
+makes the boundary hypothesis hold for a different reason in each parity. -/
+noncomputable def levelSum (q : R) (n : ℕ) : R :=
+  ∑ k ∈ range (n + 1), ballot n k * TemperleyLiebTower.yw q n (n + 1 - 2 * k)
+
+/-- **The level sum does not depend on the level.**
+
+This is `level_sum_step` at `N = n + 1`, with the ballot numbers for the
+dimensions and `yw` for the weights: Pascal supplies `hd`, `yw_branching`
+supplies `hg`, and `yw_zero` supplies `hbdry`.
+
+`hg` splits into exactly three cases, and only the first is mathematics:
+
+* `2k ≤ n` — the branching identity itself, at `m = n − 2k`;
+* `2k = n + 1` — the dimension is zero, so the (false) identity is never used;
+* `2k ≥ n + 2` — every argument truncates to `0`, so all three weights vanish
+  and the identity reads `0 = 0 + 0`. -/
+theorem levelSum_succ (q : R) (hq : q ≠ 0) (hs : q + q⁻¹ ≠ 0) (n : ℕ) :
+    levelSum q (n + 1) = levelSum q n := by
+  have key := level_sum_step (R := R) (n + 1) (ballot n) (ballot (n + 1))
+      (fun k => TemperleyLiebTower.yw q (n + 1) (n + 1 + 1 - 2 * k))
+      (fun k => TemperleyLiebTower.yw q n (n + 1 - 2 * k))
+      rfl
+      (fun k _ => ballot_pascal n k)
+      (fun k _ => by
+        rcases lt_trichotomy (2 * k) (n + 1) with hlt | heq | hgt
+        · -- `2k ≤ n`: the branching identity, at `m = n − 2k`.
+          have h1 : n + 1 - 2 * k = (n - 2 * k) + 1 := by omega
+          have h2 : n + 1 + 1 - 2 * k = (n - 2 * k) + 2 := by omega
+          have h3 : n + 1 + 1 - 2 * (k + 1) = n - 2 * k := by omega
+          simp only [h1, h2, h3]
+          rw [TemperleyLiebTower.yw_branching q hq hs n (n - 2 * k)]
+        · -- `2k = n + 1`: no such shape, so the dimension kills the term.
+          rw [ballot_eq_zero_of_two_mul_eq_succ (R := R) n k heq]
+          ring
+        · -- `2k ≥ n + 2`: every argument truncates to `0`.
+          have h1 : n + 1 - 2 * k = 0 := by omega
+          have h2 : n + 1 + 1 - 2 * k = 0 := by omega
+          have h3 : n + 1 + 1 - 2 * (k + 1) = 0 := by omega
+          simp only [h1, h2, h3, yw_zero]
+          ring)
+      (by
+        have h : n + 1 + 1 - 2 * (n + 1 + 1) = 0 := by omega
+        simp only [h, yw_zero, mul_zero])
+  -- The upper sum is `levelSum q (n+1)` on the nose; the lower one carries a
+  -- single extra index `k = n+1`, whose weight argument truncates to `0`.
+  rw [levelSum, levelSum, key, Finset.sum_range_succ]
+  have h : n + 1 - 2 * (n + 1) = 0 := by omega
+  simp only [h, yw_zero, mul_zero, add_zero]
+
+/-- **The bottom of the tower.** One shape, dimension `1`, weight `[1]_q/[2]_q⁰`. -/
+theorem levelSum_zero (q : R) (hq : q - q⁻¹ ≠ 0) : levelSum q 0 = 1 := by
+  simp [levelSum, ballot, TemperleyLiebTower.yw, qint_one q hq]
+
+/-- **`Σ_λ dim_λ · y_λ = 1` at every `n`** — the normalisation `tr(1) = 1` for
+the two-row weights, at general `n`.
+
+This is what the file was for. Until now the identity existed only as the two
+explicit instances `qdim_normalisation_three` and `qdim_normalisation_four`, with
+`n = 2 … 8` checked numerically in sympy; the general statement was asserted from
+those. It is now proved, for every `n`, from `yw_branching` and Pascal.
+
+The hypotheses are the standing non-degeneracy of the q-integers: `q ≠ 0`,
+`q ≠ q⁻¹` (else `[m]_q` is `0/0`), and `q ≠ −q⁻¹` (else `[2]_q = 0` and the
+tower divides by zero). At the substrate anchor `q₀ ≈ 1.11` all three hold. -/
+theorem levelSum_eq_one (q : R) (hq : q ≠ 0) (hq' : q - q⁻¹ ≠ 0)
+    (hs : q + q⁻¹ ≠ 0) (n : ℕ) : levelSum q n = 1 := by
+  induction n with
+  | zero => exact levelSum_zero q hq'
+  | succ m ih => rw [levelSum_succ q hq hs m]; exact ih
 
 end QOU.QBeta.TwoRowNormalisation
