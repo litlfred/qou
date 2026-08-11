@@ -131,3 +131,44 @@ attaining ratio 1 (checked: the JM formula gives exactly 1 at `λ=(k)`), and the
 have `f^λ = 1`, contributing `±1` against a super-exponential `T₁`. So the
 remaining step is a finite/extremal estimate, not a covariance theorem and not a
 literature import.
+
+## The explicit c < 1 (2026-08-11) — one combinatorial claim from closing (D)
+
+`ratio_bound_of_T3_le` needs `T₃ ≤ c·T₁` with `c < 1`. The **extremal split**
+supplies it, and the key realisation is that `c` may depend on `k`: `T₁` is
+super-exponential, so a polynomially-decaying margin is absorbed without loss.
+
+Only two shapes reach `r(λ) = χ^λ(3-cycle)/f^λ = 1` — the single row `(k)` and
+single column `(1ᵏ)` — and **both have `f^λ = 1`**, so they contribute mass `M = 2`
+against a super-exponential `T₁`. Off them, `r` is maximised at `(k−1,1)` with
+
+    ρ = 1 − 3/(k−1)     exactly
+
+(the `Σ_□c(□)²` gap against the single row is exactly `(k−1)² − 1`). Verified
+k=4..13 in `computations/probes/wstd_extremal_split_probe.py` (exit 0), which also
+cross-checks the character route against direct skew-tableau enumeration.
+
+Lean (sorry-free): `T3_lt_of_extremal_split`, `T3_le_explicit_c` — any `ρ < 1` and
+`M < T₁` give `T₃ < T₁` with explicit `c`. Chains into `ratio_bound_of_T3_le`
+(`ε = 2(1−c)/(1+2c) ≍ 4/(3(k−1))`) then `cube_moment_le_of_ratio_bound`.
+
+### The one remaining input
+
+That `Σ_□ c(□)²` is **maximised over non-extremal shapes at `(k−1,1)`**. Verified
+to k=13; **not proved**. This is a statement about content sums of partitions —
+far weaker and more tractable than the covariance inequality the audit reduced
+(D) to, and it needs no Plancherel measure at all.
+
+### Chain status
+
+| step | status |
+|---|---|
+| (A) branching identity | corpus, exact |
+| (B) Plancherel identity, `T₂ = 0` | corpus, exact |
+| (C) cube-moment bound | **Lean, sorry-free** (`sum_sq_pow_three_le`) |
+| (D) transfer | reduced to `C₂`-maximality; algebra **Lean, sorry-free** |
+| RSK/Burnside `Σ(f^λ)² = k!` | open (`RSKBurnsideTarget.lean`) |
+| `TowerGeometricLowerBound` instance | still none |
+
+The "multi-session Mathlib build" estimate now looks like two concrete
+combinatorial lemmas, not an infrastructure programme.
