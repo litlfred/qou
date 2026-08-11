@@ -1,4 +1,5 @@
 import QOU.SchurWeyl.HeckeInclusion
+import Mathlib.Algebra.Algebra.Bilinear
 import Mathlib.LinearAlgebra.Dimension.StrongRankCondition
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.LinearAlgebra.Dimension.Finrank
@@ -164,14 +165,54 @@ Iwahori–Hecke basis theorem (the descending coset representatives
 σ-multiplication). This is the general-`n` form of the twelve explicit
 `HeckeDim3.gen_mul_mem` reductions.
 
-GAP (bean `qou-uoal` child): the general top-generator bubble reduction is
-open here; it is the deep spanning half of `dim H_n(q) = n!`. -/
-theorem gen_mul_span_mem (m : ℕ) (i : Fin m) (b : Hecke K q qi m)
-    (hb : b ∈ Submodule.span K (Set.range (cosetFam m))) :
-    σ K q qi m i * b ∈ Submodule.span K (Set.range (cosetFam m)) := by
-  -- Ref: [mathas1999] Ch. 1 (T_w standard basis, w ∈ S_n)
-  -- Ref: [geckpfeiffer2000] §4.4 (coset representatives / reduced words)
-  sorry
+The `i` in the image of the tower inclusion case (`i = j.castSucc`) is proved
+sorry-free below; only the **top** generator `i = Fin.last m` remains open (the
+GAP, bean `qou-uoal` child) — it is the deep spanning half of `dim H_n(q) = n!`. -/
+theorem gen_mul_span_mem :
+    ∀ (m : ℕ) (i : Fin m) (b : Hecke K q qi m),
+      b ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) →
+      σ K q qi m i * b ∈ Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))
+  | 0, i, _, _ => i.elim0
+  | (m + 1), i, b, hb => by
+      rcases Fin.eq_castSucc_or_eq_last i with ⟨i', rfl⟩ | rfl
+      · -- `σ_i = ι(σ_{i'})` lies in the image of the tower inclusion: absorb into `ι(H_m)`.
+        have hσ : σ K q qi (m + 1) i'.castSucc = heckeIncl K q qi m (σ K q qi m i') :=
+          (heckeIncl_σ K q qi m i').symm
+        -- Left multiplication by `σ_{i'.castSucc}` maps each coset generator back into the span.
+        have key : (Submodule.span K
+              (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1)))).map
+              (LinearMap.mulLeft K (σ K q qi (m + 1) i'.castSucc))
+            ≤ Submodule.span K
+              (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+          rw [Submodule.map_span, Submodule.span_le]
+          rintro _ ⟨_, ⟨c, rfl⟩, rfl⟩
+          rw [LinearMap.mulLeft_apply, cosetFam_succ, hσ, ← mul_assoc, ← map_mul]
+          -- `ι(σ_{i'} · cosetFam m c.1) · r_{c.2}`, with `σ_{i'} · cosetFam m c.1 ∈ span` by IH.
+          have hw : σ K q qi m i' * cosetFam m c.1 ∈ Submodule.span K
+              (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) :=
+            gen_mul_span_mem m i' (cosetFam m c.1) (Submodule.subset_span ⟨c.1, rfl⟩)
+          have hMj : (Submodule.span K
+                (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m))).map
+                ((LinearMap.mulRight K (descProd m c.2.val)).comp
+                  (heckeIncl K q qi m).toLinearMap)
+              ≤ Submodule.span K
+                (Set.range (cosetFam (m + 1) : cosetIndex (m + 1) → Hecke K q qi (m + 1))) := by
+            rw [Submodule.map_span, Submodule.span_le]
+            rintro _ ⟨_, ⟨d, rfl⟩, rfl⟩
+            apply Submodule.subset_span
+            exact ⟨(d, c.2), by
+              simp [cosetFam, LinearMap.mulRight_apply, LinearMap.comp_apply,
+                AlgHom.toLinearMap_apply]⟩
+          have hres := hMj (Submodule.mem_map_of_mem hw)
+          simpa [LinearMap.mulRight_apply, LinearMap.comp_apply, AlgHom.toLinearMap_apply]
+            using hres
+        exact key (Submodule.mem_map_of_mem hb)
+      · -- The **top** generator `σ_m` (`i = Fin.last m`): the coset-representative bubble.
+        -- Ref: [mathas1999] Ch. 1 (T_w standard basis, w ∈ S_n)
+        -- Ref: [geckpfeiffer2000] §4.4 (coset representatives / reduced words)
+        -- GAP (bean qou-uoal child): push σ_m through the descending reps r_j via the
+        -- quadratic/braid relations back into Σ_k ι(H_m)·r_k.
+        sorry
 
 /-- **The coset family spans `H_{m+1}(q)`** (`span = ⊤`), reduced to the bubble
 closure lemma `gen_mul_span_mem` via the adjoin-equals-span-of-submonoid route
