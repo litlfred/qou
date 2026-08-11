@@ -106,6 +106,22 @@ theorem markov_normalisation_two (q : R) (hq : q ^ 2 + 1 ≠ 0) :
 
 /-! ### Why the sign weight vanishes
 
+**The canonical proof of this fact is upstream, not here.** `origin/main`
+already carries it, sorry-free and for every level:
+
+* `QOU.QBeta.TemperleyLiebTower.conventionD_kills_antisymmetriser` — the base
+  case `n = 3`, derived from the three Markov moment equations together with
+  `z·(q²+1) = q³` (which *is* convention D).
+* `QOU.Mathlib.YoungDiagramThreeRowCorner.threeRow_vanishing_all_levels` — the
+  lift to every `n > 3`.
+
+Cite those when the *fact* is needed. The lemmas below are not an independent
+establishment of it and must not be read as one: they are the **bridge-side
+mechanism**, showing how the same vanishing falls out of the Schur principal
+specialisation at `r = 2` rather than out of the trace axioms. Two routes to
+one conclusion, of which the upstream one is stronger (all levels, from the
+defining equations) and is the one to depend on.
+
 `ySign := 0` above is a *definition*, so any lemma concluding `ySign q = 0`
 by `rfl` would prove nothing about convention D — it would restate the
 definition. The content is that convention D **forces** that zero, and that
