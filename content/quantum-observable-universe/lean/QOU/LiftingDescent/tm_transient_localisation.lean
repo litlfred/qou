@@ -81,19 +81,19 @@ opaque transientMIdisc : ℕ → ℝ
     the multiplicative-integral / non-abelian-Stokes API (not in
     Mathlib). -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem transient_disjoint_disc_additivity :
+axiom transient_disjoint_disc_additivity :
     transientMItotal
-      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i :=
-  sorry
+      = ∑ i ∈ Finset.range transientBlowupCount, transientMIdisc i
+
 
 /-- **Open input 2 — per-disc evaluation at the exceptional divisor.**
     Each disc contribution equals the exceptional-divisor integral
     (the disc `Dᵢ` retracts onto `Eᵢ` and the transient integrand
     restricts to `(∇_A q, L ∧ F⁺)` there). -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.md
-theorem transient_disc_is_divisor_integral :
-    ∀ i : ℕ, transientMIdisc i = transientMIdiv i :=
-  sorry
+axiom transient_disc_is_divisor_integral :
+    ∀ i : ℕ, transientMIdisc i = transientMIdiv i
+
 
 /-- **Transient-term localisation (norm decomposition)**
     ([`lem:topological-mass-transient-localisation`]).
