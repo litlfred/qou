@@ -151,6 +151,64 @@ theorem one_mem_span_cosetFam :
       rw [h1]
       exact hmap (Submodule.mem_map_of_mem ih)
 
+/-! ## The spanning statement (crux) and the headline finrank bound -/
+
+/-- **The coset-span "bubble" closure lemma (the crux).**  Left multiplication by
+any generator `σ_i` of `H_{m+1}(q) = Hecke K q qi m` preserves the `K`-span of the
+coset family `cosetFam m`.
+
+For `i` in the image of the tower inclusion `H_m ↪ H_{m+1}` this is routine
+absorption into `ι(H_m)`; for the **top** generator it is the substance of the
+Iwahori–Hecke basis theorem (the descending coset representatives
+`r_j = σ_m ⋯ σ_{m-j+1}` are permuted / quadratic-reduced under left
+σ-multiplication). This is the general-`n` form of the twelve explicit
+`HeckeDim3.gen_mul_mem` reductions.
+
+GAP (bean `qou-uoal` child): the general top-generator bubble reduction is
+open here; it is the deep spanning half of `dim H_n(q) = n!`. -/
+theorem gen_mul_span_mem (m : ℕ) (i : Fin m) (b : Hecke K q qi m)
+    (hb : b ∈ Submodule.span K (Set.range (cosetFam m))) :
+    σ K q qi m i * b ∈ Submodule.span K (Set.range (cosetFam m)) := by
+  -- Ref: [mathas1999] Ch. 1 (T_w standard basis, w ∈ S_n)
+  -- Ref: [geckpfeiffer2000] §4.4 (coset representatives / reduced words)
+  sorry
+
+/-- **The coset family spans `H_{m+1}(q)`** (`span = ⊤`), reduced to the bubble
+closure lemma `gen_mul_span_mem` via the adjoin-equals-span-of-submonoid route
+(exactly as `HeckeDim3.span_sixWords_eq_top` at `n = 3`). -/
+theorem span_cosetFam_eq_top (m : ℕ) :
+    Submodule.span K (Set.range (cosetFam m : cosetIndex m → Hecke K q qi m)) = ⊤ := by
+  rw [eq_top_iff]
+  rintro x -
+  have hx : x ∈ Algebra.adjoin K (Set.range (σ K q qi m)) := by
+    rw [adjoin_range_σ_eq_top]; trivial
+  have hspan : x ∈ Submodule.span K
+      (↑(Submonoid.closure (Set.range (σ K q qi m))) : Set (Hecke K q qi m)) := by
+    rw [← Algebra.adjoin_eq_span]; exact hx
+  refine Submodule.span_le.mpr ?_ hspan
+  intro y hy
+  induction hy using Submonoid.closure_induction_left with
+  | one => exact one_mem_span_cosetFam m
+  | mul_left a ha b _ ih =>
+      obtain ⟨i, rfl⟩ := ha
+      exact gen_mul_span_mem m i b ih
+
+/-- **The headline coset spanning bound** `dim_K H_{m+1}(q) ≤ (m+1)!`
+(`Hecke K q qi m = H_{m+1}(q)`), proved from `span_cosetFam_eq_top` and the
+family-cardinality count `card_cosetIndex`. -/
+theorem finrank_le_factorial [Nontrivial K] (m : ℕ) :
+    Module.finrank K (Hecke K q qi m) ≤ (m + 1).factorial := by
+  classical
+  have hspans : Submodule.span K
+      ((Finset.univ.image (cosetFam m) : Finset (Hecke K q qi m)) : Set (Hecke K q qi m)) = ⊤ := by
+    rw [Finset.coe_image, Finset.coe_univ, Set.image_univ]
+    exact span_cosetFam_eq_top m
+  calc Module.finrank K (Hecke K q qi m)
+      ≤ (Finset.univ.image (cosetFam m)).card := finrank_le_card_of_span _ hspans
+    _ ≤ (Finset.univ : Finset (cosetIndex m)).card := Finset.card_image_le
+    _ = Fintype.card (cosetIndex m) := Finset.card_univ
+    _ = (m + 1).factorial := card_cosetIndex m
+
 end HeckeCoset
 
 end QOU.SchurWeyl
