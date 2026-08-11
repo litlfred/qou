@@ -706,6 +706,7 @@ export default chapter({
             // conditional theorem deriving A_ω(4₁)=3 as a BPS/DT count.
             "stokes-dt-bps-bridge",
             "aomega-fourone-dt-count",
+            "dt-spectrum-bar-eigenspace",
           ],
         }),
         section({
