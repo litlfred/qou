@@ -936,6 +936,30 @@ CI billing is up, prefer triggering it over an ad-hoc multi-GB agent push.
 **Rule for agents going forward:** RESTORE → (build only if miss) → SEED.
 Never silently rebuild Mathlib and throw the oleans away.
 
+> **⚠ …but a `lean`-direct build CANNOT seed. Do not try (2026-08-11).** This
+> rule and the `lean`-direct verification guidance below combine into a wrong
+> inference — "I built modules from source, so I should seed them" — that does
+> not work and must not be forced:
+>
+> * `lean file.lean -o out.olean` writes `.olean` + `.ilean` and **no
+>   `.trace`**. `.trace` is Lake bookkeeping that only `lake build` writes.
+> * [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh) has
+>   a 90 % trace guard and will **refuse** such a set. That refusal is correct,
+>   not a bug — its own header says so.
+> * Forcing it past the guard is actively harmful: Lake treats an olean set
+>   without `.trace` as entirely stale, rebuilds, and **evicts** the untraced
+>   oleans (bean `02kc`).
+> * Paper (`QOU`/`UGB`/`Fred2005`) oleans are excluded by default regardless,
+>   and are valid only right after a `lake build QOU` at the pinned rev
+>   (`SEED_PAPER=1`).
+>
+> So the seed step applies to a **`lake build`** session, not to the
+> `lean`-direct verification loop that the rest of this document — correctly —
+> tells you to prefer. Measured case: a session rebuilt the whole H₄ cone
+> lean-direct (`BlockMap31` 1504 s, `BlockMap211` 1987 s, `WedderburnMulC`
+> 2427 s, ~3 h 20 m total) and offered to seed it; none of it was seedable, and
+> reading the script first would have caught that before the offer.
+
 ## Delegate the install to a sub-agent (recommended for the main task)
 
 The full bootstrap (elan + GitHub-toolchain workaround + full mathlib clone
