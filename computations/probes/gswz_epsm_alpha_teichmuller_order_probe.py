@@ -81,6 +81,7 @@ a drift between the two is caught.
 import json
 import os
 import sys
+import tempfile
 import importlib.util
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -89,14 +90,24 @@ checks = {}
 detail = {}
 
 # ---- load the m = 2 field machinery (d = 8, fastest) -----------------
+# The imported probe writes its own witness on execution, so run it with
+# cwd redirected into a temp dir: importing a probe for its machinery
+# must NEVER rewrite that probe's committed witness (its provenance sha
+# would silently follow whatever HEAD this probe happened to run at).
 spec = importlib.util.spec_from_file_location(
     "m2probe", os.path.join(HERE, "gswz_epsm_descent_m2_probe.py")
 )
 m2 = importlib.util.module_from_spec(spec)
+_cwd = os.getcwd()
+_tmp = tempfile.mkdtemp(prefix="epsm_alpha_")
+os.makedirs(os.path.join(_tmp, "computations", "probes"), exist_ok=True)
+os.chdir(_tmp)
 try:
     spec.loader.exec_module(m2)
 except SystemExit:
     pass
+finally:
+    os.chdir(_cwd)
 
 R, sigma, teich = m2.R, m2.sigma, m2.teich
 alpha, z624 = m2.alpha_F, m2.z624
