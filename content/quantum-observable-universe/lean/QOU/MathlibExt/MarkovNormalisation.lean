@@ -84,6 +84,26 @@ theorem markov_normalisation_three (q : R) (hq : q ^ 2 + 1 ≠ 0) :
   field_simp
   ring
 
+/-- The convention-D weight on `(2) ⊢ 2`. -/
+noncomputable def yTwoTriv (q : R) : R := (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2
+
+/-- The convention-D weight on `(1,1) ⊢ 2`. -/
+noncomputable def yTwoSign (q : R) : R := q ^ 2 / (q ^ 2 + 1) ^ 2
+
+/-- **Markov normalisation at `n = 2`, convention D.**
+
+`∑_{λ ⊢ 2} y_λ · dim V_λ = 1`, both dimensions being `1`.
+
+Note both weights are *live* here: `n = 2` admits no partition with three
+rows, so the vanishing that characterises convention D has nothing to act on.
+`n = 3` is the smallest case where D and C differ, which is why that is the
+interesting instance. -/
+theorem markov_normalisation_two (q : R) (hq : q ^ 2 + 1 ≠ 0) :
+    yTwoTriv q * 1 + yTwoSign q * 1 = 1 := by
+  unfold yTwoTriv yTwoSign
+  field_simp
+  ring
+
 /-! ### Why the sign weight vanishes
 
 `ySign := 0` above is a *definition*, so any lemma concluding `ySign q = 0`
