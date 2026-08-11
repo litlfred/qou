@@ -1,16 +1,16 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-08-11T00:42:06.968027+00:00",
+  "computedAt": "2026-08-11T00:56:34.010236+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 55,
-  "truncated_files": 53,
+  "truncated_total": 47,
+  "truncated_files": 45,
   "by_constant": {
-    "m_e": 22,
-    "q0": 26,
+    "m_e": 21,
     "m_p": 3,
+    "q0": 19,
     "m_n": 3,
     "u_MeV": 1
   },
@@ -31,14 +31,6 @@
       "literal": "0.510998950",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/atomic_tr_m_mpfr_50dps.py",
-      "line": 96,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/audits/braid_encoding_audit.py",
@@ -71,22 +63,6 @@
       "literal": "1.10997",
       "canonical": "1.10997858275138",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/chi_dual_path_xref_audit.py",
-      "line": 159,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/codata_masses.py",
-      "line": 54,
-      "constant": "m_e",
-      "literal": "0.510998",
-      "canonical": "0.51099895069",
-      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/compute_audit_scan.py",
@@ -157,14 +133,6 @@
       "line": 155,
       "constant": "q0",
       "literal": "1.10997",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/markov/markov_peel_atomic_witness.py",
-      "line": 107,
-      "constant": "q0",
-      "literal": "1.10997858275",
       "canonical": "1.10997858275138",
       "use_instead": "q_parameter.Q_MP"
     },
@@ -287,22 +255,6 @@
       "literal": "0.510998950",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/q0_muon_reproduction_sweep.py",
-      "line": 38,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/q0_sweep_classify.py",
-      "line": 41,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/qbeta/qbessel_integer_order_log_neumann_pv.py",
@@ -439,22 +391,6 @@
       "literal": "0.510998950",
       "canonical": "0.51099895069",
       "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/tr_m_wenzl_bridge_mpfr.py",
-      "line": 65,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 156,
-      "constant": "q0",
-      "literal": "1.109978582",
-      "canonical": "1.10997858275138",
-      "use_instead": "q_parameter.Q_MP"
     }
   ]
 }

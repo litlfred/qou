@@ -162,6 +162,35 @@ def _prose_lines(src: str) -> set[int]:
         if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) \
                 and node.func.id == "print":
             mark(node)
+
+        # ── DELIBERATELY-TRUNCATED COMPARATORS ────────────────────────
+        # A prefix matcher MUST be shorter than the value it matches, and a
+        # window bound MUST NOT equal the value it brackets. "Fixing" these to
+        # the full canonical constant breaks the check they implement:
+        # `q.startswith(Q_MP)` is trivially true, and `x > M_E_MEV` as a lower
+        # bound excludes the very value it is meant to admit.
+        #
+        # This is the third false-positive class this audit has had, after
+        # regex patterns and prose. They share a root: a numeric literal that
+        # *looks like* a constant but is playing a structural role. The lesson
+        # is in the detector's history rather than only its output — a
+        # high-recall matcher on numeric text needs the parse tree to tell
+        # role from resemblance.
+
+        # `x.startswith("1.10997…")`
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute) \
+                and node.func.attr in ("startswith", "endswith"):
+            mark(node)
+        # `lo < x`, `x > bound`, `x == "1.109…"` — the literal is a threshold.
+        if isinstance(node, ast.Compare):
+            mark(node)
+        # Names that announce the role: PREFIX / SIG / SIGNATURE / _LO / _HI.
+        if isinstance(node, ast.Assign):
+            for tgt in node.targets:
+                name = getattr(tgt, "id", "") or ""
+                if any(m in name.upper()
+                       for m in ("PREFIX", "_SIG", "SIGNATURE", "_LO", "_HI")):
+                    mark(node)
     return skip
 
 
