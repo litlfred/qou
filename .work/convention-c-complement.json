@@ -1,0 +1,157 @@
+[
+ {
+  "witness": "computations/a-K-via-lp-dual-full.witness.json",
+  "scriptFile": "aK_via_lp_dual_full.py",
+  "resolved": "computations/aK_via_lp_dual_full.py"
+ },
+ {
+  "witness": "computations/a-K-via-lp-dual.witness.json",
+  "scriptFile": "aK_via_lp_dual.py",
+  "resolved": "computations/aK_via_lp_dual.py"
+ },
+ {
+  "witness": "computations/alpha/alpha-k-jones-markov-h12.witness.json",
+  "scriptFile": "alpha_k_jones_markov_h12.py",
+  "resolved": "computations/alpha/alpha_k_jones_markov_h12.py"
+ },
+ {
+  "witness": "computations/binding-a3plus-full-theta-assembly.witness.json",
+  "scriptFile": "binding_a3plus_full_theta_assembly.py",
+  "resolved": "computations/binding_a3plus_full_theta_assembly.py"
+ },
+ {
+  "witness": "computations/binding-a3plus-joint-ji-combiner.witness.json",
+  "scriptFile": "binding_a3plus_joint_ji_combiner.py",
+  "resolved": "computations/binding_a3plus_joint_ji_combiner.py"
+ },
+ {
+  "witness": "computations/categorical-bypass-volmatch-demo.witness.json",
+  "scriptFile": "categorical_bypass_volmatch_demo.py",
+  "resolved": "computations/categorical_bypass_volmatch_demo.py"
+ },
+ {
+  "witness": "computations/chi-dineutron-h6-at-q0-50dps.witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-diproton-h6-at-q0-50dps.witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-helium-3-h9-at-q0-50dps-matrix-m.witness.json",
+  "scriptFile": "matrix-m-chi-q-via-gp",
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-helium-4-h12-at-q0-50dps-binding.witness.json",
+  "scriptFile": "chi_4he_binding_lossless.py",
+  "resolved": "computations/chi_4he_binding_lossless.py"
+ },
+ {
+  "witness": "computations/chi-helium-4-h12-at-q0-50dps-matrix-m.witness.json",
+  "scriptFile": "rust-chi-q-via-gp-lossless",
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-helium-4-h12-at-q0-50dps.witness.json",
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "resolved": "computations/chi_at_q0_via_hoefsmit_mpfr.py"
+ },
+ {
+  "witness": "computations/chi-helium-4-h12-numeric.witness.json",
+  "scriptFile": "(legacy orphan \u2014 no producer in the tree; that script only READS this. Not interchangeable with chi-helium-4-h12.witness.json, which carries chi_lambda_symbolic where this carries per_partition/abs_tr_M. Three live readers; see computations/_deprecated/README.md)",
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
+  "scriptFile": "rust-chi-q-via-gp-lossless",
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-neutron-h3-at-q0-50dps.witness.json",
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "resolved": "computations/chi_at_q0_via_hoefsmit_mpfr.py"
+ },
+ {
+  "witness": "computations/chi-proton-h3-at-q0-50dps-matrix-m.witness.json",
+  "scriptFile": "rust-chi-q-via-gp-lossless",
+  "resolved": null
+ },
+ {
+  "witness": "computations/chi-proton-h3-at-q0-50dps.witness.json",
+  "scriptFile": "chi_at_q0_via_hoefsmit_mpfr.py",
+  "resolved": "computations/chi_at_q0_via_hoefsmit_mpfr.py"
+ },
+ {
+  "witness": "computations/derived-chi-catalogue.witness.json",
+  "scriptFile": "derived_chi_catalogue_build.py",
+  "resolved": "computations/derived_chi_catalogue_build.py"
+ },
+ {
+  "witness": "computations/habiro/habiro-h9-spectral-decomposition.witness.json",
+  "scriptFile": "habiro_h9_spectral_decomposition.py",
+  "resolved": "computations/habiro/habiro_h9_spectral_decomposition.py"
+ },
+ {
+  "witness": "computations/probe-1b-li6-orthogonality.witness.json",
+  "scriptFile": "probe_1b_li6_orthogonality.py",
+  "resolved": "computations/probe_1b_li6_orthogonality.py"
+ },
+ {
+  "witness": "computations/probe-option-e-phase2-crystal-vertex-candidates.witness.json",
+  "scriptFile": "probe_option_e_phase2_crystal_vertex_candidates.py",
+  "resolved": "computations/probe_option_e_phase2_crystal_vertex_candidates.py"
+ },
+ {
+  "witness": "computations/probe-pauli-young-delta-lambda-the3-signtest.witness.json",
+  "scriptFile": "probe_pauli_young_delta_lambda_the3_signtest.py",
+  "resolved": "computations/probe_pauli_young_delta_lambda_the3_signtest.py"
+ },
+ {
+  "witness": "computations/rho-k-h3a-co-casimir.witness.json",
+  "scriptFile": "rho_k_h3a_co_casimir.py",
+  "resolved": "computations/rho_k_h3a_co_casimir.py"
+ },
+ {
+  "witness": "computations/rho-k-h3a-counit-canonical-integral.witness.json",
+  "scriptFile": "rho_k_h3a_counit_canonical_integral.py",
+  "resolved": "computations/rho_k_h3a_counit_canonical_integral.py"
+ },
+ {
+  "witness": "computations/rho-k-h3a-frobenius-pairing.witness.json",
+  "scriptFile": "rho_k_h3a_frobenius_pairing.py",
+  "resolved": "computations/rho_k_h3a_frobenius_pairing.py"
+ },
+ {
+  "witness": "computations/rho-w-crystal-vertex-trace.witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/wenzl-y-lambda-h12.witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/wenzl-y-lambda-h9.witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/y-lambda-jones-markov-witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/y-lambda-symbolic-witness.json",
+  "scriptFile": null,
+  "resolved": null
+ },
+ {
+  "witness": "computations/y-lambda-wenzl-bridge-numeric-witness.json",
+  "scriptFile": null,
+  "resolved": null
+ }
+]
