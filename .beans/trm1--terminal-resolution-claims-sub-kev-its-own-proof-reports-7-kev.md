@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-10T12:40:00Z
-updated_at: 2026-08-10T12:40:00Z
+updated_at: 2026-08-11T11:30:00Z
 ---
 Surfaced by the adversarial second reader on PR #4921 (bean `fwr11`) while
 refuting a proposed `uses[]` edge, and verified independently before filing.
@@ -55,6 +55,26 @@ They also sit in different chapters — parent in `mass-theory` (Ch 12), proof i
 - Either derive the deuteron / binding rows or move them to a block that does.
 - Reconcile the two routes, or say plainly that the table's formula column is
   aspirational and the proof's route is the one that runs.
+
+## Partly done — PR #5008 (2026-08-11)
+
+The "worth checking first" line below was right: the caption was the outlier,
+not the number. `rem:dressed-quark-numerology-at-q0` already stated the
+$-0.53\%$ residual plainly, so problem 1 and the caption half of problem 2 were
+a wording fix and are landed. The caption now scopes to the splitting and says
+which rows are not derived here.
+
+Still open, both derivation work and both author's call:
+
+- **The two routes are unreconciled.** Formula column: $Q(q)$ on a Hopf-link
+  mass. Proof: Skein crossing pairs over dressed quark masses. Sharper than the
+  original filing put it — the p/n rows cannot simultaneously agree to three
+  decimals *and* carry a 6.9 keV residual on their difference, so the table and
+  the proof are not reporting the same computation, and at most one of them is
+  the block's actual content.
+- **The deuteron and binding rows are still underived here.** Not checked
+  whether `mba-step09b-per-isotope-binding` derives them; the caption therefore
+  claims only what was verified.
 
 Related: the `-0.53\%` is attributed in-text to *"the dropped
 $O((\Delta m/M_N)^2)$ correction to `prop:flavor-split-substrate`"* — so the
