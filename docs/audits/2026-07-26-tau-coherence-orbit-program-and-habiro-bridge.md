@@ -726,3 +726,41 @@ falsifiable against any independent computation.
 canonical-cocycle integrality pattern must again be read off the
 measured r_i. Then remaining m | 24; m = 24 is where the #4533 −1
 obstruction on [ζ₂₄] and the open (−1)^{c₁} parity live.
+
+## Addendum 18 (2026-08-11) — m = 3 descent: ν = 1, but the shift-law layer cannot pin ε₃; the cocycle lives on the α-line (PR #4968)
+
+`gswz_epsm_descent_m3_probe.py`, **18/18 checks**, F = Q₅(μ₁₈₇₂)
+(d = 12), Γ = ⟨φ₅²⟩ of order 6, χ_B = teich(·)⁸ into the base
+μ₃ = ⟨g₂₄⁸⟩.
+
+**Measured structure (none of it assumed):**
+
+- Shift exponents **r = (r₁, r₂) = (0, 1)**: z₁ *has* a σ-fixed (base)
+  cube root; z₂ does **not** — its Frobenius shifts every cube root by
+  ζ₃. (r_i is intrinsic to z_i: σ fixes ζ₃, so the shift is the same
+  for all three roots.)
+- **ν = N_{F/B}(c) = 1** (Tonelli cube root via the 3-Sylow, order 9 =
+  3^{v₃(5¹²−1)}; c³ = σP/P exact; ν root-choice invariant since
+  ζ₃⁶ = 1). The descent **exists**.
+- **The canonical layer is integrally obstructed**: with n = (2, 1),
+  the shift law gives σP/P = (1−x₂)³·(1−z₂)⁻¹, and the (1−z₂)-factor's
+  cube root is fractional — unlike m = 2, where every exponent was
+  even before rooting. Any residual cube-root choice sweeps the class
+  through **all of μ₃** (the m = 2 flip generalizes: a root twist
+  c → ζ₃c moves the descended a by v³ with σ(v) = ζ₃v, forcing
+  teich(v)²⁴ = ζ₃, i.e. Δχ_B = ζ₃ per twist). So the shift-law layer
+  pins **ν only** at m = 3 — reported as such, not forced.
+- **The α-line identity (exact, new):** 1−z₁ = α² *and* **1−z₂ = α**
+  (α⁴−α²+1 = −α from α³ = α²−1). The entire cocycle obstruction of
+  ξ = 2[z₁]+[z₂] is a power of α: σP/P = (1−x₂)³/α. A canonical ε₃
+  therefore reduces to one question — a canonical cube root of α —
+  which the CGZ square-argument η-elements (their Thm 7.4 arguments
+  are squares, sidestepping root choices) are the natural candidate
+  mechanism for. Queued on `qou-y3xv`.
+
+**Contrast table so far:**
+
+| m | r (measured) | canonical root | ν | ε_m(ξ) |
+|---|---|---|---|---|
+| 2 | (1, 0) | integral — no choice | +1 | **+1, well-defined** (x₁-flip invariant) |
+| 3 | (0, 1) | fractional in (1−z₂) = α | 1 | pinning-dependent; only ν invariant at this layer |
