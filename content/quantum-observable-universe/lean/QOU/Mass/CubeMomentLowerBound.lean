@@ -142,6 +142,39 @@ theorem cube_moment_le_of_ratio_bound {a b T ε : ℝ}
   rw [hT, div_mul_eq_mul_div, div_le_iff₀ (by positivity)]
   nlinarith [hab, hε.le]
 
+/-- **The character form of the weakening — `Cov ≤ 0` is far more than is needed.**
+
+`docs/audits/2026-07-18-deltalambda-D-reduction-content-covariance.md` reduces (D)
+rigorously, via `S_k` character identities and the Jucys–Murphy content formula, to
+
+    a = (T₁ − T₃)/3 ,   b = (T₁ + 2·T₃)/6      (using `T₂ = 0` exactly),
+
+with `T₁ = Σ (f^λ)³`, `T₃ = Σ (f^λ)²·χ^λ(3-cycle)`, and concludes
+
+    (D)  ⟺  4·T₃ ≤ T₁  ⟸  T₃ ≤ 0  ⟺  Cov_Planch(f^λ, Σ_□ c(□)²) ≤ 0.
+
+Combined with `cube_moment_le_of_ratio_bound`, **the covariance inequality is not
+what has to be proved.** Any `c < 1` with `T₃ ≤ c·T₁` yields a positive ratio
+bound with `ε = 2(1−c)/(1+2c)`, which is all the growth conclusion consumes.
+
+The slack is large. Measured `T₃/T₁` runs `−0.200 → −0.007` over `k = 3..12`,
+against a requirement of merely `< 1` — roughly two orders of magnitude of room at
+`k = 12`. And the trivial character bound `|χ^λ(3-cycle)| ≤ f^λ` already gives
+`T₃ ≤ T₁`; what is missing is only a *quantitative* gap below `1`, which the
+extremal shapes cannot obstruct since `λ = (k)` and `λ = (1ᵏ)` — the only shapes
+attaining the ratio `1` — have `f^λ = 1` and so contribute `±1` against a `T₁`
+that is super-exponential.
+
+The identity below is the bridge; the `c < 1` bound itself is **not** proved here. -/
+theorem ratio_bound_of_T3_le {T₁ T₃ a b c : ℝ}
+    (hc2 : -(1:ℝ)/2 < c) (h3 : T₃ ≤ c * T₁)
+    (ha : a = (T₁ - T₃) / 3) (hb : b = (T₁ + 2 * T₃) / 6) :
+    (2 * (1 - c) / (1 + 2 * c)) * b ≤ a := by
+  have hden : (0:ℝ) < 1 + 2 * c := by linarith
+  subst ha; subst hb
+  rw [div_mul_eq_mul_div, div_le_iff₀ (by positivity)]
+  nlinarith [h3, hden]
+
 /-- **Non-vacuity, and sharpness.** The bound is attained when the mass sits on a
 single index: `f = 1` at one point of a one-element type gives `1 ≤ 1`. -/
 example : (∑ _i : Fin 1, (1 : ℝ) ^ 2) ^ 3
