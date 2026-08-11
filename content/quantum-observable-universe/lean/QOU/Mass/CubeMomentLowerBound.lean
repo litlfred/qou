@@ -119,6 +119,29 @@ theorem cube_moment_lower_bound {ι : Type*} [Fintype ι] [Nonempty ι]
     M ^ 3 ≤ (∑ i, f i ^ 3) ^ 2 * P ^ 3 := by
   subst hM; subst hP; exact sum_sq_pow_three_le f hf
 
+/-- **Step (D) does not need to be sharp.** The source script uses the transfer
+inequality in its sharp form `w_std ≥ 𝔼[f^{λ/(3)}]` (i.e. `ε = 1`) to reach
+`w_std ≥ T/4`, where `T = Σ (f^λ)³/k!` is the cube moment and `T = 2·w_std + 2·b`
+is the exact Plancherel identity (B).
+
+But **any** positive ratio bound suffices. If `ε·b ≤ a` for some `ε > 0` then
+`a ≥ (ε / (2(1+ε)))·T`, and since `T` is super-exponential by
+`sum_sq_pow_three_le`, so is `a` — the constant is irrelevant to the growth
+conclusion.
+
+This matters for what has to be proved. Sharp (D) is a genuinely
+measure-theoretic statement: it is **false pointwise** (at a single-row `λ = (k)`,
+`f^{λ/(3)} = 1` while `f^{λ/(2,1)} = 0`), so it cannot be obtained by a
+tableau-by-tableau argument. Establishing it only up to *some explicit constant*
+is a strictly weaker target, and the measured ratio `a/b` runs `4.00 → 2.04` over
+`k = 3..12` — so there is better than a factor-2 margin to spend. -/
+theorem cube_moment_le_of_ratio_bound {a b T ε : ℝ}
+    (hε : 0 < ε) (hT : T = 2 * a + 2 * b) (hab : ε * b ≤ a) :
+    (ε / (2 * (1 + ε))) * T ≤ a := by
+  have h1 : (0 : ℝ) < 1 + ε := by linarith
+  rw [hT, div_mul_eq_mul_div, div_le_iff₀ (by positivity)]
+  nlinarith [hab, hε.le]
+
 /-- **Non-vacuity, and sharpness.** The bound is attained when the mass sits on a
 single index: `f = 1` at one point of a one-element type gives `1 ≤ 1`. -/
 example : (∑ _i : Fin 1, (1 : ℝ) ^ 2) ^ 3
