@@ -35,6 +35,7 @@ anywhere.
 
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import Mathlib.Analysis.Calculus.MeanValue
+import QOU.Knot.Clausen
 
 namespace QOU.Knot.FigureEightVolume
 
@@ -121,5 +122,172 @@ theorem phi_le_log_two {u : ℝ} (h0 : 0 < u) (hπ : u < π) :
     Real.log_le_log (by positivity) (by linarith)
   rw [Real.log_mul (by norm_num) h0.ne'] at h2
   linarith
+
+/-! ## Assembly — the telescoping two-sided bound -/
+
+/-- `φ` is interval-integrable everywhere: both halves are, unconditionally
+    (`intervalIntegrable_log'` covers the singularity at `0`). -/
+theorem intervalIntegrable_phi (a b : ℝ) :
+    IntervalIntegrable phi MeasureTheory.volume a b := by
+  unfold phi
+  exact (intervalIntegrable_log_two_sin a b).sub
+    intervalIntegral.intervalIntegrable_log'
+
+/-- The cell ceiling: `log 2` for the first cell (whose left endpoint is the
+    unusable `0`), the previous grid value thereafter. -/
+noncomputable def phiExt (h : ℝ) (j : ℕ) : ℝ :=
+  if j = 0 then Real.log 2 else phi ((j : ℝ) * h)
+
+@[simp] theorem phiExt_zero (h : ℝ) : phiExt h 0 = Real.log 2 := by
+  simp [phiExt]
+
+theorem phiExt_succ (h : ℝ) (j : ℕ) :
+    phiExt h (j + 1) = phi (((j : ℝ) + 1) * h) := by
+  simp [phiExt]
+
+/-- On each cell, `φ` stays under the cell ceiling — a.e., the single
+    exception being `u = 0` in the first cell (where `φ`'s junk value is
+    irrelevant). -/
+theorem ae_phi_le_phiExt {h : ℝ} (hh : 0 < h) {i n : ℕ} (hi : i < n)
+    (hnπ : (n : ℝ) * h < π) :
+    ∀ᵐ u ∂(MeasureTheory.volume.restrict
+        (Set.Icc ((i : ℝ) * h) (((i : ℝ) + 1) * h))),
+      phi u ≤ phiExt h i := by
+  have hpi := Real.pi_pos
+  have hi1 : ((i : ℝ) + 1) * h ≤ (n : ℝ) * h := by
+    have : ((i : ℝ) + 1) ≤ (n : ℝ) := by exact_mod_cast hi
+    nlinarith
+  have hnull : ∀ᵐ (u : ℝ), u ≠ 0 := by
+    rw [MeasureTheory.ae_iff]
+    simpa using (Real.volume_singleton (a := (0 : ℝ)))
+  filter_upwards [MeasureTheory.ae_restrict_of_ae hnull,
+    MeasureTheory.ae_restrict_mem measurableSet_Icc] with u hu0 humem
+  obtain ⟨hu1, hu2⟩ := humem
+  have hupos : 0 < u := by
+    rcases Nat.eq_zero_or_pos i with hi0 | hi0
+    · subst hi0
+      simp only [Nat.cast_zero, zero_mul] at hu1
+      exact lt_of_le_of_ne hu1 (Ne.symm hu0)
+    · have : (0:ℝ) < (i : ℝ) * h := by
+        have : (0:ℝ) < (i : ℝ) := by exact_mod_cast hi0
+        positivity
+      linarith
+  have huπ : u < π := by linarith [hi1, hnπ]
+  rcases Nat.eq_zero_or_pos i with hi0 | hi0
+  · subst hi0
+    rw [phiExt_zero]
+    exact phi_le_log_two hupos huπ
+  · have hine : i ≠ 0 := by omega
+    have hxpos : (0:ℝ) < (i : ℝ) * h := by
+      have : (0:ℝ) < (i : ℝ) := by exact_mod_cast hi0
+      positivity
+    have hxπ : (i : ℝ) * h < π := by nlinarith [hi1, hnπ]
+    rw [phiExt, if_neg hine]
+    rcases eq_or_lt_of_le hu1 with heq | hlt
+    · rw [heq]
+    · exact le_of_lt (strictAntiOn_phi ⟨hxpos, hxπ⟩ ⟨hupos, huπ⟩ hlt)
+
+/-- **Per-cell two-sided bound.**  Each cell defect is `≤ 0` (antitonicity)
+    and `≥ h·(φ(x_{i+1}) − ceiling_i)`. -/
+theorem cell_defect_bounds {h : ℝ} (hh : 0 < h) {i n : ℕ} (hi : i < n)
+    (hnπ : (n : ℝ) * h < π) :
+    h * (phiExt h (i + 1) - phiExt h i)
+      ≤ (∫ u in ((i : ℝ) * h)..(((i : ℝ) + 1) * h),
+          (phi (((i : ℝ) + 1) * h) - phi u))
+    ∧ (∫ u in ((i : ℝ) * h)..(((i : ℝ) + 1) * h),
+          (phi (((i : ℝ) + 1) * h) - phi u)) ≤ 0 := by
+  have hpi := Real.pi_pos
+  have hab : (i : ℝ) * h ≤ ((i : ℝ) + 1) * h := by nlinarith
+  have hae := ae_phi_le_phiExt hh hi hnπ
+  have hc0 : IntervalIntegrable (fun _ : ℝ => phi (((i : ℝ) + 1) * h))
+      MeasureTheory.volume ((i : ℝ) * h) (((i : ℝ) + 1) * h) :=
+    intervalIntegrable_const
+  have hint : IntervalIntegrable (fun u => phi (((i : ℝ) + 1) * h) - phi u)
+      MeasureTheory.volume ((i : ℝ) * h) (((i : ℝ) + 1) * h) :=
+    hc0.sub (intervalIntegrable_phi _ _)
+  constructor
+  · -- lower: replace φ(u) by the ceiling
+    have hcap : IntervalIntegrable
+        (fun _ : ℝ => phi (((i : ℝ) + 1) * h) - phiExt h i)
+        MeasureTheory.volume ((i : ℝ) * h) (((i : ℝ) + 1) * h) :=
+      intervalIntegrable_const
+    have hmono := intervalIntegral.integral_mono_ae_restrict hab hcap hint
+      (by
+        filter_upwards [hae] with u hu
+        linarith [hu])
+    have hconst : (∫ _u in ((i : ℝ) * h)..(((i : ℝ) + 1) * h),
+          (phi (((i : ℝ) + 1) * h) - phiExt h i))
+        = h * (phiExt h (i + 1) - phiExt h i) := by
+      rw [intervalIntegral.integral_const, smul_eq_mul, phiExt_succ]
+      ring
+    rw [hconst] at hmono
+    exact hmono
+  · -- upper: antitonicity makes every cell defect nonpositive
+    have hae2 : ∀ᵐ u ∂(MeasureTheory.volume.restrict
+        (Set.Icc ((i : ℝ) * h) (((i : ℝ) + 1) * h))),
+        phi (((i : ℝ) + 1) * h) - phi u ≤ 0 := by
+      have hnull : ∀ᵐ (u : ℝ), u ≠ 0 := by
+        rw [MeasureTheory.ae_iff]
+        simpa using (Real.volume_singleton (a := (0 : ℝ)))
+      have hi1 : ((i : ℝ) + 1) * h ≤ (n : ℝ) * h := by
+        have : ((i : ℝ) + 1) ≤ (n : ℝ) := by exact_mod_cast hi
+        nlinarith
+      filter_upwards [MeasureTheory.ae_restrict_of_ae hnull,
+        MeasureTheory.ae_restrict_mem measurableSet_Icc] with u hu0 humem
+      obtain ⟨hu1, hu2⟩ := humem
+      have hupos : 0 < u := by
+        rcases Nat.eq_zero_or_pos i with hi0 | hi0
+        · subst hi0
+          simp only [Nat.cast_zero, zero_mul] at hu1
+          exact lt_of_le_of_ne hu1 (Ne.symm hu0)
+        · have : (0:ℝ) < (i : ℝ) * h := by
+            have : (0:ℝ) < (i : ℝ) := by exact_mod_cast hi0
+            positivity
+          linarith
+      have huπ : u < π := by linarith [hi1, hnπ]
+      have hxpos : (0:ℝ) < ((i : ℝ) + 1) * h := by positivity
+      have hxπ : ((i : ℝ) + 1) * h < π := by linarith [hi1, hnπ]
+      rcases eq_or_lt_of_le hu2 with heq | hlt
+      · rw [heq]
+        simp
+      · have := strictAntiOn_phi ⟨hupos, huπ⟩ ⟨hxpos, hxπ⟩ hlt
+        linarith
+    have := intervalIntegral.integral_mono_ae_restrict hab hint
+      intervalIntegrable_const hae2
+    simpa using this
+
+/-- **L4-1c(ii) — the smooth half is squeezed (sorry-free).**  Telescoping
+    the per-cell bounds:
+
+        h·( φ_ext(n) − log 2 )  ≤  Σ_{i<n} ∫_{cell_i} (φ(x_{i+1}) − φ(u)) du  ≤  0,
+
+    an `O(h)` two-sided bound obtained with **no derivative estimate** — only
+    antitonicity of `φ` and the `sin u ≤ u` ceiling.  Together with the exact
+    singular telescope (L4-1c(i)) and Stirling (L4-1b) this closes the
+    ingredient list for the second-order log-sine expansion. -/
+theorem smooth_defect_squeeze {h : ℝ} (hh : 0 < h) {n : ℕ}
+    (hnπ : (n : ℝ) * h < π) :
+    h * (phiExt h n - Real.log 2)
+      ≤ ∑ i ∈ Finset.range n,
+          (∫ u in ((i : ℝ) * h)..(((i : ℝ) + 1) * h),
+            (phi (((i : ℝ) + 1) * h) - phi u))
+    ∧ ∑ i ∈ Finset.range n,
+        (∫ u in ((i : ℝ) * h)..(((i : ℝ) + 1) * h),
+          (phi (((i : ℝ) + 1) * h) - phi u)) ≤ 0 := by
+  constructor
+  · have hlow : ∀ i ∈ Finset.range n,
+        h * (phiExt h (i + 1) - phiExt h i)
+          ≤ ∫ u in ((i : ℝ) * h)..(((i : ℝ) + 1) * h),
+              (phi (((i : ℝ) + 1) * h) - phi u) := by
+      intro i hi
+      exact (cell_defect_bounds hh (Finset.mem_range.mp hi) hnπ).1
+    have hsum := Finset.sum_le_sum hlow
+    have htel : ∑ i ∈ Finset.range n, h * (phiExt h (i + 1) - phiExt h i)
+        = h * (phiExt h n - Real.log 2) := by
+      rw [← Finset.mul_sum, Finset.sum_range_sub (fun j => phiExt h j),
+        phiExt_zero]
+    linarith [hsum, htel.symm.le, htel.le]
+  · refine Finset.sum_nonpos fun i hi => ?_
+    exact (cell_defect_bounds hh (Finset.mem_range.mp hi) hnπ).2
 
 end QOU.Knot.FigureEightVolume
