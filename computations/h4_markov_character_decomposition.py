@@ -2,6 +2,31 @@
 """h4_markov_character_decomposition.py — the Frobenius decomposition of the
 level-4 Markov trace, derived from the COMMITTED Lean block maps.
 
+RELATION TO EXISTING WORK — READ THIS FIRST
+-------------------------------------------
+**These weights are not new.** `computations/h4_markov_weights_closed_form.py`
+already derives the same five closed forms, and `QOU/Machinery/H4Cyclicity.lean`
+has since proved `trM4_cyclic` outright from the generator actions — so the
+ASCII Gram chain is **already retired**, and this file does not retire it. I
+wrote this before checking `main`; the duplication is mine, and recording it is
+cheaper than leaving a second producer that reads like a second result.
+
+What survives as additive is narrow, and it is a provenance check rather than a
+new result:
+
+* **Different source.** The existing producer transcribes the generator actions
+  and 24 trace weights from `HeckeH4StabilizationRung.lean`, then builds the
+  centre as the commutator nullspace. This one reads `HeckeH4BlockMap22 / 31 /
+  211` — a disjoint set of Lean files that neither existing producer touches.
+* **Parses, does not transcribe.** `h4_cyclicity_generator_route_check.py` was
+  written precisely because `h4_markov_weights_closed_form.py` *transcribes*.
+  The same objection applies to the block maps; this closes it for them.
+* **Symbolic in (q, z)**, where the existing check is at five independent
+  rational `q` values.
+
+So: an independent confirmation, by a different method, from a different source
+— plus a drift check on the block maps. Not a closure of anything.
+
 WHAT THIS ESTABLISHES
 ---------------------
 The level-4 Markov trace vector `TRM4 z h` (with `h = q - q⁻¹`) decomposes over
@@ -11,8 +36,9 @@ the five Wedderburn blocks of `H₄(q)`:
 
 with the weights below. This is the arithmetic content that
 `QOU.Machinery.H4.trM4_gram_symm_of_markov_basis` carries as its `hbasis`
-hypothesis; supplying it is the remaining step of bean `qou-x64l` step 4, whose
-point is to prove `trM4` cyclic WITHOUT the 6.5k-line ASCII Gram chain.
+hypothesis. Step 4's goal was reached by the generator route instead
+(`H4Cyclicity.lean`), so this is the arithmetic for a SECOND, independent route
+— not the one that retired the chain.
 
 WHY THIS IS A DERIVATION AND NOT A FIT
 --------------------------------------
