@@ -60,9 +60,11 @@ They also sit in different chapters — parent in `mass-theory` (Ch 12), proof i
 
 The "worth checking first" line below was right: the caption was the outlier,
 not the number. `rem:dressed-quark-numerology-at-q0` already stated the
-$-0.53\%$ residual plainly, so problem 1 and the caption half of problem 2 were
-a wording fix and are landed. The caption now scopes to the splitting and says
-which rows are not derived here.
+$-0.53\%$ residual plainly, so the *caption* half of problems 1 and 2 was a
+wording fix and is landed: it now scopes to the splitting, quotes 6.9 keV, and
+says which rows are not derived here. The 1 keV binding-row discrepancy itself
+is untouched — the row still reads 2.224 against CODATA 2.225; what changed is
+that the caption no longer contradicts it.
 
 Still open, both derivation work and both author's call:
 
