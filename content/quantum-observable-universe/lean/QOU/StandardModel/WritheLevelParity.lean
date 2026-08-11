@@ -343,4 +343,39 @@ theorem statistics_reading_fails_on_gluon :
     components 3 gluonUnit % 2 = 1 := by
   refine ⟨?_, ?_, ?_⟩ <;> rfl
 
+/-! ### 7. The minimal-level ruling closes the lepton-number escape -/
+
+/-- **`L = sign(writhe)` does not survive the minimal-level ruling either.**
+
+`ChiralFermionBraidWords.lean` rescued `L` from
+`LeptonNumberCarrierChirality.lean`'s amphichirality obstruction by taking the
+carrier to be the *braid word* rather than the knot type: `νₑ = σ₁` and
+`ν̄ₑ = σ₁⁻¹` are distinct words, so the mirror acts freely on them even though
+both close to the amphichiral unknot.
+
+The owner ruling in `WritheMarkovInvariance.lean` — states are Gröbner–Shirshov
+normal forms, and the observable is evaluated at the **lowest level of the
+tower** — closes that escape.  The corpus assigns `νₑ = K_{0₁} = T(2,1)`, the
+unknot, whose braid index is `1`; its minimal-level normal form is the *empty*
+word, and so is its mirror's.  At the level where the framework says observables
+live, the neutrino and the antineutrino are the **same state**, and no function
+of the state can give them `+1` and `−1`.
+
+The two hypotheses are exactly the two braid-index facts, carried explicitly.
+The result is that `L` must come from something other than the writhe — the
+Markov-II failure (`leptonNumber_not_markov_invariant`) and this one leave no
+reading in which `sign(w)` is lepton number.
+
+**Scope-(a)**: `L = sign(writhe)` is refuted under both readings of the gauge
+freedom.  Lepton number itself, and the `Y = B − L` route, are untouched. -/
+theorem leptonNumber_collapses_at_minimal_level
+    (NF : BraidWord → BraidWord) (f : BraidWord → ℤ)
+    (hnu : NF [1] = []) (hanu : NF [-1] = [])
+    (hparticle : f (NF [1]) = 1) (hanti : f (NF [-1]) = -1) :
+    False := by
+  rw [hnu] at hparticle
+  rw [hanu] at hanti
+  rw [hparticle] at hanti
+  norm_num at hanti
+
 end QOU.StandardModel.LevelParity
