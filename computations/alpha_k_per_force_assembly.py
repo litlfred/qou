@@ -22,7 +22,23 @@ WHAT IS ESTABLISHED (corpus, not fitted).
 WHAT STEP 2 ADDS (now derived).
   The delta_q decoration MAGNITUDE is fixed by the WRITHE w = (m-1)k
   (rosso_jones_three_strand_delta_q.py / prop:torus-knot-delta-q-writhe):
-      delta_q(T_{m,k}) = q^{(m-1)k} - q^{-(m-1)k} = h*[(m-1)k]_q.
+      delta_q(T_{m,k}) = q^{(m-1)k} - q^{-(m-1)k} = h*[(m-1)k]_q,   m <= k.
+
+  MINIMAL-STRAND CONDITION (REQUIRED — m <= k).
+  The writhe is a property of the m-strand PRESENTATION, not of the knot: the
+  vertical Markov move shifts it by +-1 while presenting the same link (Lean:
+  writhe_stabilize, WritheMarkovInvariance.lean).  The observable is its value at
+  the LOWEST level of the brane tower, i.e. at the braid index, and for a torus
+  knot the braid index is min(m,k) (Morton-Williams; Lean-proved in
+  nuclear-interactions/box-braid-irreducibility-proof).  So w = (m-1)k is the
+  braid-index writhe only for m <= k.  Since T_{m,k} = T_{k,m} as knots while
+  (m-1)k != (k-1)m, a swapped pair would give one knot two delta_q values (the
+  trefoil: w = 3 as T_{2,3} vs 4 as T_{3,2}; 10_124: w = 10 as T_{3,5} vs 12 as
+  T_{5,3}), and hence two different couplings.  Both genus-4 carriers below have
+  m < k, so no coupling here is affected -- 1/alpha_EM = q[9]_q[10]_q is
+  unchanged; check_minimal_strand() makes the requirement enforced, not latent.
+  See docs/audits/2026-08-10-writhe-level-of-definition.md.
+
   So each force carrier carries TWO derived data:
       (i)  intertwining partition  lambda = (m, 1^{n-m})   [first index m],
       (ii) writhe decoration       delta_q = h*[(m-1)k]_q  [writhe (m-1)k].
@@ -79,6 +95,38 @@ def qbracket(q, k):
     return (q ** k - q ** (-k)) / (q - 1 / q)
 
 
+def check_minimal_strand(m: int, k: int, name: str = "") -> None:
+    """Enforce the minimal-strand condition m <= k on a torus-knot carrier.
+
+    Kept local rather than imported from rosso_jones_three_strand_delta_q.py so
+    that this producer does not take a sympy/witness dependency on another
+    producer module; the two copies state the same condition and cite the same
+    sources.  (If a shared computations/ utility module is introduced later,
+    both should be centralised there.)
+
+    The writhe w = (m-1)k is a property of the m-strand PRESENTATION, not of the
+    knot; the observable is its value at the lowest level of the brane tower,
+    the braid index min(m,k) (Morton-Williams).  So w = (m-1)k is the
+    braid-index writhe only for m <= k.  T_{m,k} and T_{k,m} are the same knot
+    but (m-1)k != (k-1)m, so a swapped pair assigns a second delta_q -- and
+    hence a second coupling -- to a carrier that already has one.
+
+    Raises:
+        ValueError: if m > k.
+    """
+    if m > k:
+        raise ValueError(
+            f"minimal-strand condition violated for carrier T_{{{m},{k}}}"
+            f"{' (' + name + ')' if name else ''}: m={m} > k={k}.  The writhe "
+            f"rule w=(m-1)k is only the braid-index writhe when m = min(m,k) "
+            f"(Morton-Williams: braid index of T_{{m,k}} is min(m,k)).  "
+            f"T_{{{m},{k}}} and T_{{{k},{m}}} are the SAME knot but "
+            f"(m-1)k={(m - 1) * k} != (k-1)m={(k - 1) * m}, so this input would "
+            f"give the carrier a second delta_q and a second coupling.  "
+            f"Present the carrier at its braid index: use T_{{{k},{m}}}."
+        )
+
+
 def main() -> None:
     w = WitnessBuilder("alpha-k-per-force-assembly", engine="python")
     q = mp.mpf(Q0) if HAVE_MP else float(Q0)
@@ -107,11 +155,16 @@ def main() -> None:
     print(f"  q0 = {mp.nstr(q, 12) if HAVE_MP else q}   reference n = {n_ref} strands")
     print("  carrier T_{m,k}: partition lambda=(m,1^{n-m}) [index m] ; "
           "delta_q=h[(m-1)k]_q [writhe]")
+    print("  (m <= k REQUIRED: m is then the braid index min(m,k), so the writhe "
+          "is read")
+    print("   at the lowest level of the tower -- see check_minimal_strand)")
     print()
     print(f"  {'knot':6s} {'m':>2s} {'k':>2s} {'writhe':>6s} "
           f"{'lambda(n=4)':>12s} {'delta_q':>12s}  role")
     data = {}
     for name, m, k, role in knots:
+        # GUARD: w=(m-1)k is the braid-index writhe only when m = min(m,k).
+        check_minimal_strand(m, k, name)
         w_writhe = (m - 1) * k
         lam = partition(m, n_ref)
         dq = h * qbracket(q, w_writhe)
