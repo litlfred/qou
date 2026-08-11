@@ -936,29 +936,38 @@ CI billing is up, prefer triggering it over an ad-hoc multi-GB agent push.
 **Rule for agents going forward:** RESTORE → (build only if miss) → SEED.
 Never silently rebuild Mathlib and throw the oleans away.
 
-> **⚠ …but a `lean`-direct build CANNOT seed. Do not try (2026-08-11).** This
-> rule and the `lean`-direct verification guidance below combine into a wrong
-> inference — "I built modules from source, so I should seed them" — that does
-> not work and must not be forced:
+> **⚠ …but WHICH seed route depends on how you built (2026-08-11).** This rule
+> and the `lean`-direct verification guidance below are both right, and together
+> they invite one wrong step — feeding lean-direct output to the monolithic
+> seed script. Pick the route by build method:
 >
-> * `lean file.lean -o out.olean` writes `.olean` + `.ilean` and **no
->   `.trace`**. `.trace` is Lake bookkeeping that only `lake build` writes.
-> * [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh) has
->   a 90 % trace guard and will **refuse** such a set. That refusal is correct,
->   not a bug — its own header says so.
-> * Forcing it past the guard is actively harmful: Lake treats an olean set
->   without `.trace` as entirely stale, rebuilds, and **evicts** the untraced
->   oleans (bean `02kc`).
-> * Paper (`QOU`/`UGB`/`Fred2005`) oleans are excluded by default regardless,
->   and are valid only right after a `lake build QOU` at the pinned rev
->   (`SEED_PAPER=1`).
+> | you built with | seed route |
+> |---|---|
+> | `lake build` | [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh) → the monolithic `lake-cache/qou-<slug>` branch |
+> | `lean`-direct (`lean f.lean -o …`) | an **addon** orphan branch via plain `tar` — e.g. the H₄ Wedderburn cone addon above |
 >
-> So the seed step applies to a **`lake build`** session, not to the
-> `lean`-direct verification loop that the rest of this document — correctly —
-> tells you to prefer. Measured case: a session rebuilt the whole H₄ cone
-> lean-direct (`BlockMap31` 1504 s, `BlockMap211` 1987 s, `WedderburnMulC`
-> 2427 s, ~3 h 20 m total) and offered to seed it; none of it was seedable, and
-> reading the script first would have caught that before the offer.
+> Why they differ: `lean -o` writes `.olean` + `.ilean` and **no `.trace`**,
+> which is Lake bookkeeping only `lake build` produces. So:
+>
+> * The monolithic script's 90 % trace guard **refuses** a lean-direct set, and
+>   that refusal is **correct** — its own header says so. Do not force it.
+>   Forcing it is worse than not seeding: Lake treats untraced oleans as stale,
+>   rebuilds, and **evicts** them (bean `02kc`).
+> * An **addon tarball is not subject to that** — it is restored by `tar xzf`,
+>   not by Lake, and untraced oleans are exactly what a `lean`-direct +
+>   `LEAN_PATH` consumer needs. Bean `02kc`'s finding was that such a cache
+>   *"only ever worked for direct `lean` + LEAN_PATH invocations"* — a
+>   limitation on the consumer, not a prohibition on seeding.
+> * Paper (`QOU`/`UGB`/`Fred2005`) oleans are excluded from the **monolithic**
+>   branch by default, valid there only right after `lake build QOU` at the
+>   pinned rev (`SEED_PAPER=1`). The addon route carries them fine.
+>
+> History: this note first read *"a lean-direct build CANNOT seed, do not try"*
+> — an over-claim, written before the H₄ addon branch above existed and without
+> checking whether a non-Lake route was possible. One session accordingly
+> rebuilt the whole H₄ cone lean-direct and then withdrew its offer to preserve
+> it as unseedable; a sibling seeded the same cone as an addon that same day.
+> The honest scope is the table: a *route* was unavailable, not the goal.
 
 ## Delegate the install to a sub-agent (recommended for the main task)
 
