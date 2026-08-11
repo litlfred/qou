@@ -6,6 +6,8 @@
 
 **Highlight to Claude** — referenced from AGENTS.md so any agent picking up final-stage QOU work has the full canonical chain visible.
 
+> **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** Every "absolute nucleon/atom mass" entry below (`m_p ≈ 938.27 MeV`, `m_n ≈ 939.56 MeV`, the Step-9a "absolute mass identity") is retained for the compute map but is **no longer a framework prediction** — it is an `m_e`-scaled *realization of the dimensionless ratio* (`m_p/m_e`), since m_e (CAL-1) sets the MeV scale by fiat. The predictive content is the ratio / binding / Q-value / splitting; the `canonical_mass.py` facade and the muon-anchored form still stand as the correct *ratio realization*. Read "absolute mass" below as "the `m_e`-scaled ratio, rendered in MeV". Full ruling: [`audits/2026-08-11-excise-absolute-mass-notion.md`](audits/2026-08-11-excise-absolute-mass-notion.md).
+
 ---
 
 ## 0. This is the PRIMARY coordination document for the canonical chain
