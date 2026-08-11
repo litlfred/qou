@@ -53,3 +53,47 @@ as an additive contribution (AGENTS.md permanence principle 1 — an inaccurate
 total does not invalidate a proved per-bond factor), nor `A`-dependent per-bond
 constants, nor say anything about the magnitude of the missing term. Nothing
 fitted; the Δ_λ "no seventh ansatz" gate untouched.
+
+## Step (D) scoped (2026-08-11) — and materially weakened
+
+Measured both Plancherel expectations directly, k=3..12:
+
+| k | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|----|----|----|
+| a/b | 4.00 | 2.20 | 2.17 | 2.21 | 2.11 | 2.07 | 2.06 | 2.07 | 2.06 | 2.04 |
+
+with `a = w_std = 𝔼[f^{λ/(2,1)}]`, `b = 𝔼[f^{λ/(3)}]`. The ratio converges to
+**2 = f^{(2,1)}/f^{(3)}**, consistent with `f^{λ/μ} ≈ f^λ·f^μ/|S₃|` for
+Plancherel-typical λ.
+
+**(D) is NOT the cheap sub-goal the script implies.** It is *false pointwise*: at
+a single-row `λ = (k)`, `f^{λ/(3)} = 1` while `f^{λ/(2,1)} = 0`. So no
+tableau-by-tableau argument can give it — it is genuinely measure-theoretic, and
+that is exactly the Mathlib gap `LevelSelectionLogarithmic.lean` names.
+
+**But sharp (D) is not needed.** `cube_moment_le_of_ratio_bound` (sorry-free):
+for **any** `ε > 0`, `ε·b ≤ a` gives `a ≥ (ε/(2(1+ε)))·T`. Since `T` is
+super-exponential by `sum_sq_pow_three_le`, so is `a` — the constant is
+irrelevant to the growth conclusion. Sharp (D) is `ε = 1` giving `T/4`; `ε = 1/100`
+would do just as well.
+
+So the target for the literature is **"a ≥ εb for some explicit ε > 0"**, not
+`a ≥ b`, with a measured margin of >2×.
+
+### Literature (answering "need lit?": yes, for (D))
+
+The regime is *fixed μ, |λ| → ∞*, which is the studied one:
+- Morales–Pak–Panova, *Asymptotics of the number of standard Young tableaux of
+  skew shape*, arXiv:1610.07561 — "no multiplicative formula for `f^{λ/μ}`;
+  asymptotics known for few special families and **for fixed μ**".
+- Morales–Pak–Panova, *Asymptotics for skew standard Young tableaux via bounds
+  for characters*, arXiv:1710.05652 — character-bound route, the one that would
+  give explicit constants.
+- Biane / Śniady (asymptotic factorization, normalized characters) — the
+  machinery behind both.
+
+**Caveat for the Lean.** An asymptotic theorem plus a finite check (k≤12) leaves
+a gap in the middle. What closes it is an *explicit-constant* bound valid for all
+k ≥ some k₀ small enough to meet the finite check — which is why the
+`ε`-weakening above matters: it is far easier to get a crude explicit constant
+than a sharp asymptotic.
