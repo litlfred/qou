@@ -133,4 +133,40 @@ theorem wenzl_factor_nonzero_of_ne (Q X : R) (hQ : Q ≠ 0) (hX : X ≠ Q ^ 2) :
   rw [mul_zero, sub_eq_zero] at h
   exact h.symm
 
+/-! ### Convention D *is* the `r = 2` solution of the Wenzl bridge
+
+Everything above takes `X = Q²` (equivalently `r = 2`) as given. This section
+derives it from the bridge equation itself, which is what makes convention D
+a solution rather than a choice.
+
+The bridge is `q·z = Q^r (1-Q)/(1-Q^r)` with `Q = q²`. The next two lemmas
+show that at `r = 2` it collapses to `q·z = Q²/(1+Q)`, and that this holds
+exactly for `z = q³/(q²+1)` — the definition of convention D.
+
+This was asserted in prose when the migration landed; it is now checked. -/
+
+/-- The bridge right-hand side at `r = 2` collapses: the `(1-Q)` factor
+cancels against `1-Q² = (1-Q)(1+Q)`. -/
+theorem bridge_rhs_at_r_two (Q : R) (h1 : 1 - Q ≠ 0) (h2 : 1 + Q ≠ 0) :
+    Q ^ 2 * (1 - Q) / (1 - Q ^ 2) = Q ^ 2 / (1 + Q) := by
+  have hQ2 : 1 - Q ^ 2 = (1 - Q) * (1 + Q) := by ring
+  rw [hQ2]
+  field_simp
+
+/-- **Convention D is the `r = 2` bridge solution.**
+
+With `Q = q²`, the `r = 2` bridge `q·z = Q²/(1+Q)` holds for
+`z = q³/(q²+1)`.
+
+So `z = q³/(q²+1)` is not a convention *chosen* over `1/(q^{1/2}+q^{-1/2})` —
+it is the value solving the bridge at an integer `r = 2`, and `r` is the
+number of variables in the Schur principal specialisation. Convention C
+solves the same equation at a non-integer `r`, which is why nothing vanishes
+there (`wenzl_factor_nonzero_of_ne`). -/
+theorem conventionD_z_solves_bridge_at_r_two (q : R) (hq : q ≠ 0)
+    (h : q ^ 2 + 1 ≠ 0) :
+    q * (q ^ 3 / (q ^ 2 + 1)) = (q ^ 2) ^ 2 / (1 + q ^ 2) := by
+  rw [add_comm (1 : R) (q ^ 2)]
+  field_simp
+
 end QOU.MathlibExt.MarkovNormalisation
