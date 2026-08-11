@@ -43,7 +43,28 @@ def content_sum(lam) -> int:
 
 def writhe(word) -> int:
     """Net writhe of the braid word: σ (d≈0) → +1, σ⁻¹ (d≈−h) → −1,
-    averaged/color-pn (d≈−h/2-ish) → 0 (sign-balanced)."""
+    averaged/color-pn (d≈−h/2-ish) → 0 (sign-balanced).
+
+    LEVEL OF DEFINITION (framing note; no number here changes). The writhe is a
+    property of the BRAID WORD, not of its closure: Markov-I (conjugation)
+    invariant, but Markov-II stabilisation β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1} shifts
+    it by ±1 while presenting the same link. The four rows of `ISO` sit at
+    n = 3(Z+N) strands (`atom-knot.md`), and not at a common one:
+
+        D  n = 6      ³H  n = 9      ³He n = 9      ⁴He n = 12
+
+    n(K) is the braid index — the lowest level of the substrate tower. Under the
+    owner ruling (states are Gröbner–Shirshov normal forms; the observable is the
+    trace at the lowest level) these canonical words ARE the states, so comparing
+    w across isotopes compares distinct states rather than two presentations of
+    one state: the table below stands as written. What w is not is a property of
+    the closure.
+
+    This note is bookkeeping only and explains nothing about the result. The four
+    ✗ rows are a genuine ribbon-vs-empirical mismatch measured at the levels the
+    framework itself assigns; the level accounting neither causes them nor
+    softens them. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
+    """
     h = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
     w = 0
     for _c, d, _g in word:

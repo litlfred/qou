@@ -263,6 +263,21 @@ def main() -> int:
     # Framing / writhe test (0-fit): does the omitted Jones/HOMFLY framing factor q₀^{c·w(K)} account
     # for C_knot? Writhe w(K) = (#σ − #σ⁻¹) of the canonical word (averaged interface crossings are
     # writhe-neutral). If framing closes it, c = ln(C_knot)/(w·ln q₀) is CONSTANT across isotopes.
+    #
+    # LEVEL OF DEFINITION (framing note; nothing below changes). The writhe is a property of the
+    # BRAID WORD, not of its closure — Markov-I (conjugation) invariant, but Markov-II stabilisation
+    # β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1} shifts it by ±1 while presenting the same link. The four rows sit
+    # at n(K) = 3(Z+N) strands, already recorded as `n_strands` above, and they are NOT all equal:
+    #     D  n=6  w=4      T  n=9  w=4      ³He n=9  w=8      ⁴He n=12 w=8
+    # n(K) is the braid index (atom-knot.md), i.e. the lowest level of the substrate tower. Under the
+    # owner ruling (states are Gröbner–Shirshov normal forms; the observable is the trace at the
+    # lowest level) these canonical words ARE the states, so the cross-isotope comparison compares
+    # states, not two presentations of one state — it stands as written.
+    # This probe's result is moreover a NEGATIVE and is level-proof either way: D and T share w=4 yet
+    # have different C_knot, so no writhe-ONLY factor q₀^{c·w} (a hypothesis with no n-dependence by
+    # construction) can close C_knot, whatever level each row sits at. The separate scope-(b) mirror
+    # exclusion is already a SAME-level comparison (T and ³He both at n=9; `same_n` asserted below).
+    # Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
     framing = {}
     try:
         from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
