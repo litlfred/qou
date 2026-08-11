@@ -73,7 +73,11 @@ from mpmath import mp, mpf, sqrt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.dps = 50
-Q0 = mpf("1.1099785955541805")
+# canonical muon-q₀, read at runtime from the pinning witness (§q₀ anchor convention;
+# drift-proof, full 50-dps) — never hardcode, never the float64 mass_endomorphism.q0.
+import json as _json  # noqa: E402
+_pin = _json.loads((Path(__file__).resolve().parents[1] / "q-pinning-50-digit.witness.json").read_text())
+Q0 = mpf(_pin.get("q0Value") or _pin.get("data", {}).get("q0Value"))
 TOL = mpf(10) ** (-40)
 
 N = 5  # the n=5 Hecke blocks λ⊢5
@@ -190,12 +194,12 @@ def run():
         value_rows.append({
             "lambda": list(lam),
             "rows": num_rows(lam),
-            "d_wrt_amplitude": float(d_wrt),
-            "d_hecke_qhook": float(d_hec),
-            "abs_err_d": float(err),
-            "S0_hecke": float(S_hecke[lam]),
-            "S0_wrt": float(d_wrt / D),
-            "abs_err_S0": float(abs(d_wrt / D - S_hecke[lam])),
+            "d_wrt_amplitude": str(d_wrt),
+            "d_hecke_qhook": str(d_hec),
+            "abs_err_d": str(err),
+            "S0_hecke": str(S_hecke[lam]),
+            "S0_wrt": str(d_wrt / D),
+            "abs_err_S0": str(abs(d_wrt / D - S_hecke[lam])),
         })
     value_identified = max_value_err < TOL
 
@@ -237,26 +241,26 @@ def run():
             "conj": list(conjugate(lam)),
             "content_sum": content_sum(lam),
             "casimir_kappa": casimir(lam),
-            "d_q_hecke": float(d_hecke[lam]),
-            "S0_row": float(S_hecke[lam]),
-            "theta_hecke": float(theta_hecke(lam)),
-            "theta_wrt": float(theta_wrt(lam)),
+            "d_q_hecke": str(d_hecke[lam]),
+            "S0_row": str(S_hecke[lam]),
+            "theta_hecke": str(theta_hecke(lam)),
+            "theta_wrt": str(theta_wrt(lam)),
         })
 
     return {
         "n": N,
         "q0": str(Q0),
-        "total_quantum_dimension_D": float(D),
+        "total_quantum_dimension_D": str(D),
         "value_rows": value_rows,
-        "max_value_err": float(max_value_err),
+        "max_value_err": str(max_value_err),
         "value_identified": value_identified,
         "max_twist_exp_err": int(max_twist_exp_err),
-        "max_twist_err": float(max_twist_err),
+        "max_twist_err": str(max_twist_err),
         "twist_agrees": twist_agrees,
         "conj_pairs": conj_pairs,
-        "max_conj_err": float(max_conj_err),
+        "max_conj_err": str(max_conj_err),
         "conj_antisymmetric": conj_antisym,
-        "verlinde_vacuum_unitarity_err": float(unit_err),
+        "verlinde_vacuum_unitarity_err": str(unit_err),
         "verlinde_unitary": verlinde_unitary,
         "st_table": st_table,
     }
@@ -264,16 +268,16 @@ def run():
 
 def report(res):
     print("# BW-localization = Hecke MTC — scope-(a) modular-data corroboration (n=5, q₀)\n")
-    print(f"q₀ = {res['q0']}   total quantum dimension D = {res['total_quantum_dimension_D']:.10f}\n")
+    print(f"q₀ = {res['q0']}   total quantum dimension D = {float(res['total_quantum_dimension_D']):.10f}\n")
 
     print("## (i) S-matrix vacuum row — WRT amplitude/McKay d vs Hecke q-hook d\n")
     print("| λ | rows | d(WRT amp) | d(Hecke qhook) | |Δd| | S_0λ(WRT) | S_0λ(Hecke) | |ΔS_0λ| |")
     print("|---|-----:|-----------:|---------------:|-----:|----------:|------------:|-------:|")
     for r in res["value_rows"]:
-        print(f"| {tuple(r['lambda'])} | {r['rows']} | {r['d_wrt_amplitude']:.8f} | "
-              f"{r['d_hecke_qhook']:.8f} | {r['abs_err_d']:.1e} | {r['S0_wrt']:.8f} | "
-              f"{r['S0_hecke']:.8f} | {r['abs_err_S0']:.1e} |")
-    print(f"\n- max |Δd| = {res['max_value_err']:.2e}. Value identified (⇒ S-rows agree): "
+        print(f"| {tuple(r['lambda'])} | {r['rows']} | {float(r['d_wrt_amplitude']):.8f} | "
+              f"{float(r['d_hecke_qhook']):.8f} | {float(r['abs_err_d']):.1e} | {float(r['S0_wrt']):.8f} | "
+              f"{float(r['S0_hecke']):.8f} | {float(r['abs_err_S0']):.1e} |")
+    print(f"\n- max |Δd| = {float(res['max_value_err']):.2e}. Value identified (⇒ S-rows agree): "
           f"**{res['value_identified']}**.\n")
 
     print("## (ii)+(iii) T-matrix / ribbon twist θ_λ (content-sum vs sl-Casimir)\n")
@@ -281,14 +285,14 @@ def report(res):
     print("|---|---------|-----:|----:|-----------:|---------:|")
     for r in res["st_table"]:
         print(f"| {tuple(r['lambda'])} | {tuple(r['conj'])} | {r['content_sum']} | "
-              f"{r['casimir_kappa']} | {r['theta_hecke']:.6f} | {r['theta_wrt']:.6f} |")
+              f"{r['casimir_kappa']} | {float(r['theta_hecke']):.6f} | {float(r['theta_wrt']):.6f} |")
     print(f"\n- twist exponent 2c(λ) vs κ_λ: max |err| = {res['max_twist_exp_err']} (exact int); "
-          f"max |θ_Hecke − θ_WRT| = {res['max_twist_err']:.2e}. Agree: **{res['twist_agrees']}**.")
+          f"max |θ_Hecke − θ_WRT| = {float(res['max_twist_err']):.2e}. Agree: **{res['twist_agrees']}**.")
     print(f"- conjugation antisymmetry θ_λ·θ_λ' = 1 over {res['conj_pairs']} pairs: "
-          f"max |err| = {res['max_conj_err']:.2e}. Holds: **{res['conj_antisymmetric']}**.\n")
+          f"max |err| = {float(res['max_conj_err']):.2e}. Holds: **{res['conj_antisymmetric']}**.\n")
 
     print("## (iv) Verlinde vacuum-row unitarity Σ_λ S_0λ² = 1\n")
-    print(f"- |Σ S_0λ² − 1| = {res['verlinde_vacuum_unitarity_err']:.2e}. "
+    print(f"- |Σ S_0λ² − 1| = {float(res['verlinde_vacuum_unitarity_err']):.2e}. "
           f"Unitary: **{res['verlinde_unitary']}**.\n")
 
     print("## Verdict (honest scope-(a))\n")
