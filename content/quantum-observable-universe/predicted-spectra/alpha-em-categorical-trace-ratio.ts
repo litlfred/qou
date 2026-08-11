@@ -32,6 +32,15 @@ export default proposition({
   title:
     "Algebraic identity: $\\alpha_{EM} = h^2 / [q \\cdot \\delta_q(T_{2,9}) \\cdot \\delta_q(T_{3,5})]$",
   lean: { ref: "qou:QOU.ArchimedeanUniverse.alpha_em_categorical_trace_ratio" },
+  // All three are named in the proposition's own setup sentence: the
+  // q-dimension decoration it applies, the result identifying T_{2,9} and
+  // T_{3,5} as the genus-4-saturating pair, and the 1/alpha_EM value the
+  // decomposition is stated against.
+  uses: [
+    "def:delta-q-decoration",
+    "prop:em-coupling-projection",
+    "prop:force-carrier-bring-uniqueness",
+  ],
   authorNotes: [
     {
       kind: "refined-framing",
