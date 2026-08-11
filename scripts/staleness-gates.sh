@@ -1,0 +1,127 @@
+#!/usr/bin/env bash
+# staleness-gates.sh — unified witness-staleness gate family.
+#
+# WHY THIS EXISTS
+# ---------------
+# Two independent stale-audit instances hit during one rebase (PR #4929):
+#   - main's L1 green: onepb-status-dashboard.witness.json predated a
+#     precision-limit finding and was not invalidated.
+#   - charm-* audit counts: chapter audit aggregates drifted during rebase
+#     without any checker flagging it.
+#
+# The general failure mode: an audit whose own witness isn't regenerated when
+# its inputs change reports yesterday's answer with today's authority.
+#
+# precision-gates.sh covers the PRECISION family (float64, mpf, q₀ values).
+# This script covers the STALENESS family:
+#   - scriptHash drift (producer code changed, witness not regenerated)
+#   - upstream dependency drift (an input witness changed, consumer not re-run)
+#   - q₀ constant drift (q₀ repinned, witness carries the old value)
+#   - dependency coverage (witnesses with no upstream_witness_hashes declared)
+#
+# USAGE
+#   scripts/staleness-gates.sh              # run every gate
+#   scripts/staleness-gates.sh --changed    # skip if no witness/script touched
+#   scripts/staleness-gates.sh --list       # print the gate list and exit
+#
+# EXIT CODE
+#   0  every blocking gate green
+#   1  at least one blocking gate red
+#   2  preflight failed (missing modules, can't evaluate)
+#
+# DO NOT SUPPRESS A RED BY EDITING THE WITNESS.
+#   Fix at the producer: re-run the script that generates the witness.
+#   A stale witness that is manually updated to look fresh is worse than
+#   a stale witness that says it's stale.
+set -uo pipefail
+
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "not a git repo"; exit 0; }
+cd "$ROOT"
+
+# name|script|args|blocking?
+# Notes:
+#   - witness_dependency_drift.py --strict gates on BOTH upstream + self staleness.
+#     Use --self-strict for self-only, --no-self for upstream-only.
+#   - witness_constant_staleness.py checks q₀ value drift (complements the
+#     precision-gates q0-anchor check, which validates the anchor FORMULA;
+#     this validates the q₀ VALUE embedded in witness outputs).
+#   - witness_dependency_coverage_audit.py flags witnesses that don't declare
+#     upstream_witness_hashes — the root cause of the "silent stale" class.
+GATES=(
+  "scriptHash + upstream drift|computations/witness_dependency_drift.py|--strict|yes"
+  "q0 constant staleness|computations/substrate/witness_constant_staleness.py|--strict|yes"
+  "dependency coverage|computations/audits/witness_dependency_coverage_audit.py|--strict|no"
+)
+
+if [ "${1:-}" = "--list" ]; then
+  printf '%-28s %-58s %s\n' "GATE" "SCRIPT" "BLOCKING"
+  for g in "${GATES[@]}"; do
+    IFS='|' read -r name script _args blocking <<<"$g"
+    printf '%-28s %-58s %s\n' "$name" "$script" "$blocking"
+  done
+  exit 0
+fi
+
+if [ "${1:-}" = "--changed" ]; then
+  relevant=$( { git diff --name-only HEAD 2>/dev/null
+                git diff --cached --name-only 2>/dev/null
+                git ls-files --others --exclude-standard 2>/dev/null; } \
+              | sort -u | grep -E '(\.witness\.json$|^computations/.*\.py$)' || true)
+  if [ -z "$relevant" ]; then
+    echo "staleness-gates: no witness or computations/ script touched — skipped."
+    exit 0
+  fi
+fi
+
+# Preflight: check Python dependencies.
+missing=$(python3 - <<'PREFLIGHT_PY'
+import importlib.util
+need = []  # no third-party deps for the staleness family
+print(" ".join(m for m in need if importlib.util.find_spec(m) is None))
+PREFLIGHT_PY
+)
+if [ -n "$missing" ]; then
+  echo "PREFLIGHT FAILED — the staleness gates could not be evaluated."
+  echo "  missing Python module(s): $missing"
+  exit 2
+fi
+
+blocking_failed=()
+advisory_failed=()
+
+for g in "${GATES[@]}"; do
+  IFS='|' read -r name script args blocking <<<"$g"
+  printf '\n\033[1m▸ %s\033[0m  (%s)\n' "$name" "$script"
+  if [ ! -f "$script" ]; then
+    echo "  MISSING: $script — the gate list is out of date with the tree."
+    if [ "$blocking" = "yes" ]; then
+      blocking_failed+=("$name (script missing)")
+    else
+      advisory_failed+=("$name (script missing)")
+    fi
+    continue
+  fi
+  out=$(python3 "$script" $args 2>&1); rc=$?
+  printf '%s\n' "$out" | sed 's/^/  /' | head -25
+  if [ $rc -ne 0 ]; then
+    if [ "$blocking" = "yes" ]; then
+      blocking_failed+=("$name")
+    else
+      advisory_failed+=("$name")
+    fi
+  fi
+done
+
+echo
+echo "======================================================================"
+if [ ${#advisory_failed[@]} -gt 0 ]; then
+  echo "ADVISORY (not gating): ${advisory_failed[*]}"
+fi
+if [ ${#blocking_failed[@]} -gt 0 ]; then
+  echo "RED: ${blocking_failed[*]}"
+  echo
+  echo "Fix AT THE PRODUCER. Re-run the script that generates the stale witness."
+  echo "Do not hand-edit a witness to make this green."
+  exit 1
+fi
+echo "All staleness gates green."
