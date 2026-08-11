@@ -1,7 +1,7 @@
 ---
 # qou-m1fx
 title: 'M1 UNBLOCKED from source: eq (18) rotated index is the FUGACITY basis sum_e I(m,e) zeta^e — my probe used the wrong index object'
-status: todo
+status: done
 type: task
 priority: high
 tags:
@@ -61,3 +61,16 @@ TWO LIVE EXPLANATIONS, NOT ADJUDICATED (do not tune either way):
 NEXT ACTION to adjudicate: compute I_{4_1}(0,e)(q) independently in the DGG flux basis and
 form sum_e I(0,e) x^e; that settles which q^1 distribution is correct without relying on the
 printed line. If (a), it is a publishable erratum and should be reported upstream.
+
+## 2026-08-11 (later) — ADJUDICATED: the q^1 discrepancy is a TYPO IN THE PAPER. M1 CONFIRMED.
+
+Independent second route settles it. Summing the DGG flux-basis table I_{4_1}(0,e) per eq (18)
+(Ind^rot(0,x;q) = sum_e I(0,e) x^e) gives q^1 coefficients (-2,-2,-1) — IDENTICAL to the
+q-Hahn-Bessel block computation, and NOT the printed (-2,-1,-2). q^0 and q^2 agree with both.
+
+  corrected eq (200) q^1:  -(x^-2 + 2x^-1 + 2 + 2x + x^2)
+  printed:                 -(2x^-2 + x^-1 + 2 + x + 2x^2)
+
+Both sum to -8 at x=1, which is why the eq-(61) tower never exposed it — only the two-variable
+check did. => M1 CONFIRMED (dictionary verified in-corpus as a 2-variable identity, modulo the
+erratum). ACTION: consider reporting the erratum upstream. Status -> done.
