@@ -89,3 +89,46 @@ skill doc's own history note). `lean`-direct is the verification path.
 
 Next agent: environment is ready; write theorem 1 and check it with the
 recipe above. Re-seed the cache branch if a build materially extends it.
+
+## prepare-merge: the witness conflicts are mechanical (2026-08-11)
+
+The rebase (37 commits onto 1529) halts on the first commit with 11 `UU`.
+Most are transient — replaying commit-by-commit conflicts files that the net
+diff does not. Only **three** witnesses were genuinely changed by *both*
+sides:
+
+| witness | main | this branch | resolution |
+|---|---|---|---|
+| `alpha/alpha-k-jones-markov-h12` | convention C | convention C | either |
+| `habiro/habiro-h9-spectral-decomposition` | convention C | convention C | either |
+| `probes/markov-stab-trace-axis-probe` | **clean (D)** | convention C | **take main** |
+
+Measured with `scan_doc` from `convention-c-witness-audit.py` against
+`git show origin/main:<f>` and `git show HEAD:<f>`.
+
+**Uniform rule: take main's side on all three.** No file here needs this
+branch's version, and the third actively needs main's — upstream migrated it
+to D while this branch still carries the stale C. Taking "mine" there would
+*regress* a witness main already fixed.
+
+Note the first two are still convention C on **both** sides: they are not
+resolved by the merge, only un-conflicted. They belong to the `qou-eea0`
+regeneration backlog, not to this PR.
+
+During a rebase, main is `--ours` and the replayed commit is `--theirs`, so
+the resolution is `git checkout --ours <file>` — easy to invert under time
+pressure, hence writing it down.
+
+## Reuse pass result (step 2a)
+
+- **Three-row vanishing: already on main, stronger.**
+  `TemperleyLiebTower.conventionD_kills_antisymmetriser` (n=3, from the Markov
+  moment equations) + `YoungDiagramThreeRowCorner.threeRow_vanishing_all_levels`
+  (all n). Mine reach it only via the Wenzl-bridge factor at r=2 — a different
+  route, weaker reach. Kept as the bridge-side mechanism with upstream named
+  canonical in the docstring; not deleted, because the routes are genuinely
+  distinct.
+- **Normalisation `∑ y_λ·dim = 1`: NOT on main.** Nearest is
+  `fr_weight_normalised` (DepthStratifiedFrobeniusReciprocity), a rearrangement
+  for a single Frobenius-pulled-back weight — not a sum over partitions. So
+  `markov_normalisation_two`/`_three` and both bridge lemmas stand as new.
