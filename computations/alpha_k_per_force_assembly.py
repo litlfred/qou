@@ -81,11 +81,43 @@ try:
 except Exception:
     HAVE_MP = False
 
+# q0 SOURCING -- the anchor must never be chosen silently (bean qou-7vm4).
+#
+# Historically this block chose the physics anchor by whether an import
+# succeeded: the happy path gives q_at() = the PROTON pin, while the
+# `except` fallback is a hardcoded MUON literal. Nothing warned, and nothing
+# was recorded in the witness, so a witness produced in a constrained
+# environment silently carried a different anchor from one produced here.
+# That is what made this producer's committed witness (70-digit muon)
+# irreproducible from a HEAD that imports the proton pin.
+#
+# The fallback is retained -- the producer must still run without
+# qou_substrate -- but the path taken is now WARNED about and RECORDED
+# (`q0_source` / `q0_anchor` in the witness payload).
+#
+# NOTE (open, owner call): q0_anchor_manifest.json lists this producer under
+# `ideal_muon`, but this code imports q_at directly instead of routing through
+# `q_parameter`, so the manifest tag cannot fire. Resolving that -- either
+# honour the tag (muon) or re-tag to physical_proton (regenerate; every
+# delta_q moves 114-148 ppb and 1/alpha_EM moves -78.96 ppb) -- is tracked in
+# bean qou-7vm4 and is deliberately NOT decided here.
+_Q0_MUON_FALLBACK = "1.1099785955573347198997632204832250266562084087802"
 try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
-except Exception:
-    Q0 = "1.1099785955573347198997632204832250266562084087802"
+    Q0_SOURCE = "qou_substrate.constants.q_at()"
+    Q0_ANCHOR = "proton"
+except Exception as _e:  # pragma: no cover - environment-dependent
+    Q0 = _Q0_MUON_FALLBACK
+    Q0_SOURCE = f"hardcoded muon fallback (qou_substrate import failed: {_e!r})"
+    Q0_ANCHOR = "muon"
+    print(
+        "WARNING: qou_substrate unavailable; falling back to the hardcoded "
+        "MUON q0 literal. This CHANGES THE PHYSICS ANCHOR relative to a run "
+        "with qou_substrate present (proton). Recorded as q0_anchor='muon' "
+        "in the witness. See bean qou-7vm4.",
+        file=sys.stderr,
+    )
 
 CODATA_INV_ALPHA = "137.035999177"   # CODATA 2022 1/alpha_EM
 
@@ -226,6 +258,19 @@ def main() -> None:
     )
     w.set_content_block("prop:force-carrier-intertwining-correspondence")
     w.add_data("q0", str(q))
+    # Which anchor this run actually used, and how it was obtained. Recorded
+    # unconditionally so a later reader never has to infer the layer from a
+    # call site (AGENTS.md: "Say which pin you used").
+    w.add_data("q0_anchor", Q0_ANCHOR)
+    w.add_data("q0_source", Q0_SOURCE)
+    w.add_data("q0_manifest_tag", "ideal_muon")
+    w.add_data(
+        "q0_anchor_caveat",
+        "q0_anchor_manifest.json tags this producer `ideal_muon`, but the code "
+        "imports q_at directly rather than routing through q_parameter, so the "
+        "tag cannot fire and a successful import yields the PROTON pin. "
+        "Unresolved by design; see bean qou-7vm4.",
+    )
     w.add_data("n_reference_strands", n_ref)
     w.add_data("force_knots", data)
     w.add_data("delta_q_T2_9_h9", str(dq_2_9))
