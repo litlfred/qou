@@ -49,7 +49,28 @@ def content_sum(lam) -> int:
 
 def _writhe(word, pn_only: bool) -> int:
     """Net writhe: σ (d≈0) → +1, σ⁻¹ (d≈−h) → −1, averaged/pn → 0. If
-    `pn_only`, count ONLY inter-nucleon crossings (generator index ≡ 2 mod 3)."""
+    `pn_only`, count ONLY inter-nucleon crossings (generator index ≡ 2 mod 3).
+
+    LEVEL OF DEFINITION (framing note; no number here changes). Both w_full and
+    w_pn are properties of the BRAID WORD, not of its closure: Markov-I
+    (conjugation) invariant, but Markov-II stabilisation β ∈ B_n ↦ βσ_n^{±1} ∈
+    B_{n+1} shifts w by ±1 while presenting the same link. The `ISO` rows sit at
+    n = 3(Z+N) strands (`atom-knot.md`), which differ row to row:
+
+        D  n = 6      ³H  n = 9      ³He n = 9      ⁴He n = 12
+
+    n(K) is the braid index — the lowest level of the substrate tower. Under the
+    owner ruling (states are Gröbner–Shirshov normal forms; the observable is the
+    trace at the lowest level) these canonical words ARE the states, so the
+    cross-isotope rows compare distinct states, not two presentations of one
+    state, and the table stands as written.
+
+    The FINDING below is untouched by this: it is a character mismatch read off a
+    single row — the canonical pn interface is the colour-averaged crossing, hence
+    writhe-neutral, so the deuteron's w_pn = 0 at n = 6 contradicts the empirical
+    a_D = 1 + h. That is a same-level statement and needs no cross-isotope
+    comparison. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
+    """
     h = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
     w = 0
     for _c, d, g in word:

@@ -10,7 +10,41 @@ Computes, RAW (no tuning to any observable):
     (z = 1/(q^{1/2}+q^{-1/2})) at the substrate q0, the canonical
     strand-count-changing map B_n -> B_{n+1};
   - the n-independence of tr_M(sigma_1^2) (the Hopf, witness sanity);
-  - which operators have nonzero writhe (live U(1)) vs zero (Borromean).
+  - which operators have nonzero writhe (live U(1)) vs zero (Borromean),
+    reported WITH the level n each writhe is taken at (see below);
+  - the level-independent companion (w - n) mod 2 of each (w, n) pair.
+
+LEVEL OF DEFINITION (framing; no number in this census changes)
+---------------------------------------------------------------
+The writhe is a property of the BRAID WORD, not of its closure. It is invariant
+under Markov I (conjugation) but Markov II -- stabilization
+beta in B_n |-> beta.sigma_n^{+-1} in B_{n+1} -- shifts it by +-1 while
+presenting the SAME link. The operators censused here do not share a level:
+the Hopf and the torus knots T(2,k) sit in B_2, the Borromean baryon and the
+figure-eight in B_3, the unknot in B_1. So "nonzero writhe vs zero writhe" is a
+statement about words at three different levels, and the raw comparison is a
+cross-level one.
+
+Two things make it well-posed rather than broken:
+
+  (a) Under the owner ruling -- states are Groebner-Shirshov normal forms, and
+      the observable is the trace at the LOWEST level of the substrate tower
+      (the braid index) -- these canonical words ARE the states. The census
+      compares states, not two presentations of one state. Every writhe below
+      is therefore reported together with its level n, and the U(1)_framing
+      verdict is stated per level rather than across levels.
+
+  (b) Markov II acts on the pair (w, n) as (w +- 1, n + 1), whose complete
+      invariant is (w - n) mod 2 -- proved in
+      QOU/StandardModel/WritheLevelParity.lean (markovPair_parity soundness,
+      markovPair_of_even completeness), and equal to the COMPONENT PARITY of
+      the closure. It is emitted per row below, computed from the stored
+      (writhe, strands_B_n) pair. It carries exactly ONE BIT: it can never
+      substitute for a magnitude, for Q = w/2, or for I_3, and the physical
+      (fermion/boson) reading of it is refuted -- see the audit. Its only
+      legitimate use is as a consistency check on level-crossing claims.
+
+Ref: docs/audits/2026-08-10-writhe-level-of-definition.md (sections 4, 5d, 6).
 
 NO FIT. Every numeric is a falsification reference reported raw.
 Audit doc: docs/audits/2026-06-01-knot-operator-census-group-actions.md
@@ -76,12 +110,19 @@ w.set_audit_only("docs/audits/2026-06-01-knot-operator-census-group-actions.md")
 w.add_parameter("q0", str(Q0))
 w.add_parameter("dps", mp.mp.dps)
 
-# --- 1. Writhe per operator (the U(1)_framing datum) ---
+# --- 1. Writhe per operator (the U(1)_framing datum), WITH its level ---
+# Each row carries the level n it is defined at (strands_B_n) plus the
+# level-independent companion (w - n) mod 2, computed from that stored pair --
+# the complete invariant of the Markov-II action (w, n) -> (w +- 1, n + 1)
+# (WritheLevelParity.lean). Nothing is hardcoded: the parity is derived from the
+# same (writhe, strands_B_n) already recorded. One bit only -- see the module
+# docstring for what it cannot be used for.
 writhes = {}
 for name, (n, word, note) in OPERATORS.items():
     wr = writhe_from_word(word)
     writhes[name] = {"strands_B_n": n, "writhe": wr, "note": note,
-                     "u1_framing_nontrivial": wr != 0}
+                     "u1_framing_nontrivial": wr != 0,
+                     "writhe_minus_level_parity": (wr - n) % 2}
 w.add_data("writhe_per_operator", writhes)
 
 # T(2,2m) writhe = +2m closed form (all positive crossings)
@@ -143,13 +184,36 @@ w.add_caveat(
     "neither is supplied by the current framework. No fit attempted."
 )
 w.add_caveat(
-    "U(1)_framing: writhe is nonzero (+2m) for the torus knots T(2,2m) and for "
-    "the Hopf (sigma_1^2, w=+2), but ZERO for the Borromean baryon and the "
-    "figure-eight. So a nonzero-writhe operator (e.g. a T(2,2m) color-tube "
-    "operator) WOULD carry a nontrivial U(1)_framing phase q^{w.c}. This is a "
-    "RAW structural observation; mapping writhe -> hypercharge Y is NOT derived "
-    "and is NOT attempted. The production nucleon uses the writhe-0 Borromean, "
-    "so the framing U(1) is trivial there -- consistent with the s5-so3 audit."
+    "U(1)_framing, STATED PER LEVEL (the writhe is a property of the braid word, "
+    "not of its closure: Markov-I invariant, but Markov-II stabilization shifts "
+    "it by +-1 while presenting the same link, so a level must be named). "
+    "AT LEVEL n=2 (B_2): writhe is nonzero (+2m) for the torus knots T(2,2m), "
+    "including the Hopf sigma_1^2 (w=+2), and for every T(2,odd) lepton carrier. "
+    "AT LEVEL n=3 (B_3): writhe is ZERO for the Borromean baryon and for the "
+    "figure-eight, and nonzero for T(3,4) (w=+8) and T(3,5) (w=+10). So a "
+    "nonzero-writhe operator (e.g. a T(2,2m) color-tube operator) WOULD carry a "
+    "nontrivial U(1)_framing phase q^{w.c} AT ITS OWN LEVEL. This is a RAW "
+    "structural observation; mapping writhe -> hypercharge Y is NOT derived and "
+    "is NOT attempted. The production nucleon uses the writhe-0 Borromean at "
+    "n=3, so the framing U(1) is trivial there -- consistent with the s5-so3 "
+    "audit. Under the owner ruling (states are Groebner-Shirshov normal forms; "
+    "the observable is the trace at the lowest level of the tower, the braid "
+    "index) these canonical words ARE the states, so the census compares states "
+    "and the per-level readings above stand as written."
+)
+w.add_caveat(
+    "LEVEL-INDEPENDENT COMPANION: writhe_minus_level_parity = (w - n) mod 2 is "
+    "emitted per row, computed from the stored (writhe, strands_B_n) pair. It is "
+    "the COMPLETE invariant of the Markov-II action (w, n) -> (w +- 1, n + 1) "
+    "(QOU/StandardModel/WritheLevelParity.lean: markovPair_parity soundness, "
+    "markovPair_of_even completeness) and equals the component parity of the "
+    "closure. In this census only the Hopf link comes out EVEN (0): it is the "
+    "one 2-component closure; every other operator here is odd (1). It carries "
+    "exactly ONE BIT and therefore cannot substitute for a magnitude, for "
+    "Q = w/2, or for I_3; its fermion/boson reading is separately REFUTED (the "
+    "gluon unit sigma_1 sigma_2^{-1} closes to a single component, hence odd, "
+    "yet is a boson). Use it ONLY as a consistency check on level-crossing "
+    "claims. NOT wired. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md."
 )
 
 path = w.save()
@@ -158,4 +222,9 @@ print(f"[knot-operator-census] wrote {path} in {elapsed:.2f}s")
 print(f"  z(q0) = {z}")
 print(f"  tr_M(sigma_1^2)(q0) = {trhopf}")
 print(f"  T(2,2m) writhe = 2m: {[t22m[f'T(2,{2*m})']['writhe'] for m in range(1,6)]}")
-print(f"  Borromean writhe = {writhes['borromean=(s1^-1 s2)^3']['writhe']}")
+print(f"  Borromean writhe = {writhes['borromean=(s1^-1 s2)^3']['writhe']} "
+      f"(at level n={writhes['borromean=(s1^-1 s2)^3']['strands_B_n']})")
+print("  (w-n) mod 2 per operator [level-independent, 1 bit, NOT wired]:")
+for _nm, _r in writhes.items():
+    print(f"    {_nm:<26} n={_r['strands_B_n']}  w={_r['writhe']:+d}  "
+          f"(w-n)%2={_r['writhe_minus_level_parity']}")
