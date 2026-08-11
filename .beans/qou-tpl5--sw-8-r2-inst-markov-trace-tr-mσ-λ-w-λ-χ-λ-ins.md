@@ -1,10 +1,11 @@
 ---
 # qou-tpl5
 title: 'SW-8 (=R2-inst): Markov trace + tr_M=Σ_λ w_λ χ_λ ⇒ instantiate HeckeWedderburnData for H_n(q)'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-02T19:33:07Z
-updated_at: 2026-08-02T19:33:07Z
+updated_at: 2026-08-11T00:27:44Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k

@@ -322,6 +322,7 @@ import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
 import QOU.SchurWeyl.HeckeDim3Indep
+import QOU.SchurWeyl.HeckeMarkov3
 import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
 import QOU.SchurWeyl.Irreducibility
