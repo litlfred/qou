@@ -1,0 +1,84 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-11T11:31:29.924937+00:00",
+  "commitSha": "4cdd268b29084356943d75d8060762440c0f2979",
+  "assertions": [
+    {
+      "name": "geometric_shapes_satisfy_cubics_of_disc_minus_23",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "qsqrt7_cannot_embed_in_the_cubic_trace_field",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "unique_quadratic_attached_to_K_is_qsqrt_minus_23",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "the_seven_is_the_alexander_layer_not_the_geometric_one",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
+      "name": "sqrt23_line_is_algebraic_over_K_while_sqrt7_line_is_not",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-5two-trace-field-disc23-not-qsqrt7",
+  "scriptFile": "qbeta_5two_trace_field_disc23_not_qsqrt7.py",
+  "scriptHash": "5d9eef1dd8b5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Certifies that the 5_2 invariant trace field is the cubic of discriminant -23 and that Q(sqrt-7) cannot embed in it (tower law, scope-(b)); identifies Q(sqrt-7) as the Alexander/abelian layer and Q(sqrt-23) as the S_3 quadratic resolvent. Retracts the premise of the 2026-07-18 bar-odd-action-home audit.",
+  "auditOnly": "docs/audits/2026-08-11-5two-trace-field-is-disc-minus-23.md",
+  "data": {
+    "min_poly[y]": "x^3 + (-2)x^2 + (3)x + (-1)",
+    "disc[y]": "-23",
+    "min_poly[x]": "x^3 + (1)x^2 + (0)x + (-1)",
+    "disc[x]": "-23",
+    "min_poly[z2 = 1/y]": "x^3 + (-3)x^2 + (2)x + (-1)",
+    "disc[z2 = 1/y]": "-23",
+    "trace_field_degree": "3",
+    "trace_field_disc": "-23",
+    "quadratic_resolvent": "Q(sqrt-23)",
+    "alexander_polynomial": "2t^2 - 3t + 2",
+    "alexander_disc": "-7",
+    "determinant": "7",
+    "im_z1_over_sqrt7": "-0.4940529645456667441761967",
+    "im_z1_over_sqrt7_identify": "None",
+    "im_z1_over_sqrt7_cubic_relation": "None",
+    "im_z1_over_sqrt23": "-0.2725577978142021839538019",
+    "im_z1_over_sqrt23_cubic_relation": "[-1, 10, 0, -184]",
+    "im_z1_over_sqrt23_cubic_disc": "-178112",
+    "im_z1_over_sqrt23_disc_squarefree_part": "23",
+    "exclusion_scope": "(b) structural -- tower law, [Q(sqrt-7):Q]=2 nmid [K:Q]=3",
+    "verdict": "CORRECTION (scope-(b), proved invariant): the 5_2 invariant trace field is the CUBIC field of discriminant -23, not Q(sqrt-7). The tower law forbids the containment outright -- 2 does not divide 3 -- so this is a structural exclusion, not a numerical near-miss. Q(sqrt-7) is genuinely attached to 5_2, but as the ALEXANDER root field (disc(2t^2-3t+2) = -7, det = 7), the abelian layer of the Z/7 branched cover; the retracted audit read the geometric field off that abelian datum. The quadratic home of the bar-odd channel, if any, is the sqrt-23 line fixed by A_3 in the S_3 Galois closure -- which is what the corpus's own A6 sigma-pair tower already records. NO action VALUE is claimed here or retracted: the 2026-07-18 audit claimed none, and neither does this. The correction is to the FIELD a search should run in."
+  }
+}
