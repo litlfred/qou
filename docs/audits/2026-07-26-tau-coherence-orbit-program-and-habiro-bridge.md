@@ -944,3 +944,66 @@ square-argument η-form, their Thm 7.4) has different 1−w_i and may avoid
 α entirely. What is excluded is **one route on one representative** — not
 ε_m at m ≥ 3. That change of representative is the next increment on
 `qou-y3xv`.
+
+## Addendum 23 (2026-08-11) — the obstruction is a quadratic form, and the α-block is CLEARABLE by a representative change (Lean-proved backbone)
+
+`gswz_epsm_representative_obstruction_probe.py` (**27/27**, exact 𝔽₂₅
+arithmetic) + `QOU/Machinery/EpsMObstruction.lean` (**sorry-free**,
+axioms `[propext, Classical.choice, Quot.sound]` only). This settles the
+question Addendum 22 deliberately left open.
+
+**The closed form.** σ = φ₅² acts on μ₂₄ₘ by ζ ↦ ζ²⁵, so an m-th root
+written ζ^e is moved by (ζ²⁴)^e — i.e. **r(w) = e(w) mod m**, the
+Teichmüller discrete logarithm. Lean: `frobenius_shift` (generic
+`CommGroup`) with `orderOf_shift_factor` proving the shift factor has
+order exactly m. **Validated, not assumed**: every measured shift pair in
+the merged p-adic sweep (all seven m | 24, fields to degree 96) is
+reproduced from two residue-field logarithms.
+
+**The obstruction form.** The canonical cocycle is integral at level m iff
+
+$$m \mid Q\Big(\textstyle\sum_j n_j[w_j]\Big) := \sum_j n_j\,e(w_j)\,e(1-w_j) \bmod 24 .$$
+
+Q is computable entirely in **𝔽₂₅** — the whole degree-96 lattice
+recomputed by hand-sized arithmetic — and is independent of the
+logarithm generator, because every unit of Z/24 squares to 1 (Lean:
+`unit_sq_eq_one`, `qSymbol_rescale`). **Q(ξ) = 10, gcd(10,24) = 2**:
+only m = 2 divides it, reproducing the merged lattice verdicts row by
+row.
+
+**The decisive sweep.** Over all 506 admissible five-term instances in
+𝔽₂₅, Q takes **every even residue mod 24 and never an odd one**. So
+**Q mod 24 is not a class invariant** — a representative change shifts it
+by an arbitrary even amount.
+
+**Consequence — the α-block is clearable.** Q(ξ) = 10 is even, so a
+representative ξ′ of the *same* Bloch class has Q(ξ′) ≡ 0, giving an
+integral canonical cocycle **simultaneously at every m | 24**. Explicit
+witness: a five-term instance with Q = 14 seeded at x = y = 1 + 2α
+(K-rational; α's residue generates 𝔽₂₅ over 𝔽₅, so every target residue
+lifts), giving a 7-symbol representative with Q = 0. Lean:
+`clearable_of_even`.
+
+**This confirms Addendum 22 was correctly scoped.** The α-order exclusion
+was deliberately called scope-(b) *for the root choice* and scope-(a)
+*for ε_m*; the α-block is now shown to be genuinely representative-
+specific and **not** a barrier to ε_m.
+
+**A parity claim of mine, refuted by its own check.** An earlier draft
+here asserted that Q mod 2 is a Bloch-class invariant. The probe's
+inversion check **failed**, and the closed form (Lean:
+`inversion_closed_form`, `inversion_even_iff`) says why:
+
+$$Q([x]+[1/x]) = e(x)^2 - 12\,e(x), \quad\text{odd exactly when } e(x)
+\text{ is odd (12 of 23 cases).}$$
+
+Inversion holds in the Bloch group only **modulo torsion**, and Z/24 sees
+exactly that torsion. The honest statement is therefore: Q mod 2 is
+invariant under the *defining* five-term relation (exhaustively swept)
+and under reflection — **not** claimed for B(K) modulo torsion. The
+clearing argument above uses only five-term shifts and does not depend on
+parity.
+
+**Next.** Extracting the ε_m **values** at m ≥ 3 needs the p-adic descent
+re-run on the 7-symbol representative — the route is now open, the values
+are not yet computed.
