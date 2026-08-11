@@ -290,6 +290,12 @@ def _load_witness_strings() -> dict[tuple, str]:
     """Load (and memoize) the partition → sympy-string map from the
     committed `y-lambda-wenzl-bridge-symbolic-witness.json`.  Lazy: only
     runs on first cache miss in `_y_lambda_wenzl_bridge_symbolic_cached`.
+
+    CONVENTION D GATE (2026-08-11, bean qou-toi3).  Rejects any witness
+    whose ``convention`` tag is not ``"D"`` or whose expressions contain
+    ``sqrt`` — the signature of convention C.  A C witness served as D
+    was the exact failure that prompted qou-toi3; this gate prevents
+    silent reversion.
     """
     global _WITNESS_STRINGS
     if _WITNESS_STRINGS is not None:
@@ -302,6 +308,20 @@ def _load_witness_strings() -> dict[tuple, str]:
         try:
             with witness_path.open() as f:
                 doc = json.load(f)
+            # Convention D gate: reject C witnesses outright.
+            convention = doc.get("convention", "")
+            if convention != "D":
+                import warnings
+                warnings.warn(
+                    f"y-lambda-wenzl-bridge-symbolic-witness.json has "
+                    f"convention={convention!r}, expected 'D'. "
+                    f"Rejecting cached witness — all partitions will "
+                    f"recompute under D (slow but correct). Regenerate "
+                    f"with: python3 computations/regenerate_symbolic_d.py",
+                    stacklevel=2,
+                )
+                _WITNESS_STRINGS = out
+                return out
             tables = doc.get("tables_by_n") or doc.get("data", {}).get(
                 "tables_by_n", {}
             )
@@ -312,7 +332,11 @@ def _load_witness_strings() -> dict[tuple, str]:
                 for w in weights:
                     try:
                         lam = tuple(w["partition"])
-                        out[lam] = w["y_lambda_symbolic"]
+                        sym_str = w["y_lambda_symbolic"]
+                        # Reject individual expressions with sqrt (C leak)
+                        if "sqrt" in sym_str.lower():
+                            continue
+                        out[lam] = sym_str
                     except (KeyError, TypeError):
                         continue
         except Exception:
