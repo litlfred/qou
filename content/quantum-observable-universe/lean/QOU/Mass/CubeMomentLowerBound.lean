@@ -1,0 +1,128 @@
+import Mathlib.Algebra.Order.BigOperators.Ring.Finset
+import Mathlib.Tactic
+
+/-!
+# The cube-moment lower bound — step (C) of the tower growth bound, unconditionally
+
+`QOU/Mass/LevelSelectionLogarithmic.lean` proves the level-selection consequences
+**conditional on** the class `TowerGeometricLowerBound`, and states the blocker:
+
+> "The combinatorial core — a super-exponential lower bound on `w_std(k)` — is
+> **not** proved here: a faithful proof needs SYT + skew-tableau +
+> Plancherel-measure Mathlib infrastructure that does not yet exist (a
+> multi-session build)."
+
+That is true of the *whole* chain, but not of every link in it. The chain in
+`computations/deltalambda/wlambda_wstd_superexp_lower_bound.py` is (A) a branching
+identity, (B) an exact Plancherel identity, (C) a cube-moment lower bound, (D) a
+transfer inequality. **Step (C) needs no tableau theory at all** — it is the
+elementary "max dominates the root-mean-square" argument:
+
+    Σ_λ (f^λ)³  ≥  (max_λ f^λ)³  ≥  (k!/p(k))^{3/2},
+
+using only that the `f^λ` are non-negative, that there are `p(k)` of them, and
+that `Σ_λ (f^λ)² = k!`. The tableau content sits entirely in that *input identity*
+(RSK/Burnside), not in the inequality.
+
+This file proves (C) abstractly, so the open premise shrinks from "a
+super-exponential lower bound on `w_std`" to "the RSK/Burnside identity
+`Σ_λ (f^λ)² = k!`, plus step (D)". It does **not** close
+`TowerGeometricLowerBound` and supplies no instance.
+
+## Statement, and why it is polynomial
+
+Radicals are avoided by squaring: with `M = Σ f²` and `P = card`,
+
+    M³  ≤  (Σ f³)² · P³        (`sum_sq_pow_three_le`)
+
+is equivalent to the corpus's `Σ f³ ≥ (M/P)^{3/2}` but stays inside `ring`/`nlinarith`
+reach — no `Real.rpow`, no `Real.sqrt`, no side conditions about branch cuts.
+Instantiated at `M = k!`, `P = p(k)` it gives `(Σ (f^λ)³)² ≥ (k!)³/p(k)³`, i.e.
+exactly `Σ (f^λ)³ / k! ≥ √(k!)/p(k)^{3/2}`, the corpus's form.
+
+## What remains open (unchanged by this file)
+
+* the input identity `Σ_λ (f^λ)² = k!` — the RSK/Burnside target
+  (`QOU/Mathlib/RSKBurnsideTarget.lean`);
+* step (D), the transfer `w_std(k) ≥ 𝔼_Planch[f^{λ/(3)}]`, which the source
+  script calls "the one remaining clean Lean sub-goal";
+* hence `TowerGeometricLowerBound` itself, which still has **no instance**.
+
+Per AGENTS.md §"Axiomatization is NOT a Proof": proving one link does not
+establish the chain, and this file claims only the link.
+
+## Base ring (§7c)
+
+`ℝ`: an inequality between real sums, archimedean by nature.
+
+-- Ref: [manuscript] computations/deltalambda/wlambda_wstd_superexp_lower_bound.py
+-- Ref: [stanley1999ec2] https://doi.org/10.1017/CBO9780511609589
+-/
+
+namespace QOU.Mass
+
+open Finset
+
+/-- **Step (C), abstractly.** For non-negative `f` on a finite nonempty index type,
+
+    (Σ f²)³ ≤ (Σ f³)² · (card)³.
+
+Equivalently `Σ f³ ≥ ((Σ f²)/card)^{3/2}` — the "max dominates the
+root-mean-square" bound, stated polynomially so no radicals appear.
+
+The proof is two elementary facts: the sum of squares is at most `card` times the
+largest square, and the sum of cubes is at least the largest cube. -/
+theorem sum_sq_pow_three_le {ι : Type*} [Fintype ι] [Nonempty ι]
+    (f : ι → ℝ) (hf : ∀ i, 0 ≤ f i) :
+    (∑ i, f i ^ 2) ^ 3 ≤ (∑ i, f i ^ 3) ^ 2 * (Fintype.card ι : ℝ) ^ 3 := by
+  obtain ⟨i₀, -, hmax⟩ := Finset.exists_max_image (univ : Finset ι) f univ_nonempty
+  set m : ℝ := f i₀ with hm
+  have hm0 : 0 ≤ m := hf i₀
+  -- every square is at most the largest square
+  have hsq : ∑ i, f i ^ 2 ≤ (Fintype.card ι : ℝ) * m ^ 2 := by
+    calc ∑ i, f i ^ 2 ≤ ∑ _i : ι, m ^ 2 :=
+          Finset.sum_le_sum (fun i _ => pow_le_pow_left₀ (hf i) (hmax i (mem_univ i)) 2)
+      _ = (Fintype.card ι : ℝ) * m ^ 2 := by
+          rw [Finset.sum_const, Finset.card_univ, nsmul_eq_mul]
+  -- the sum of cubes dominates the largest cube
+  have hcube : m ^ 3 ≤ ∑ i, f i ^ 3 :=
+    Finset.single_le_sum (f := fun i => f i ^ 3)
+      (fun i _ => pow_nonneg (hf i) 3) (mem_univ i₀)
+  have hS2 : (0 : ℝ) ≤ ∑ i, f i ^ 2 :=
+    Finset.sum_nonneg (fun i _ => pow_nonneg (hf i) 2)
+  have hc0 : (0 : ℝ) ≤ (Fintype.card ι : ℝ) := Nat.cast_nonneg _
+  -- cube the square bound
+  have h1 : (∑ i, f i ^ 2) ^ 3 ≤ ((Fintype.card ι : ℝ) * m ^ 2) ^ 3 :=
+    pow_le_pow_left₀ hS2 hsq 3
+  -- and square the cube bound
+  have h2 : (m ^ 3) ^ 2 ≤ (∑ i, f i ^ 3) ^ 2 :=
+    pow_le_pow_left₀ (pow_nonneg hm0 3) hcube 2
+  have hexp : ((Fintype.card ι : ℝ) * m ^ 2) ^ 3
+      = (Fintype.card ι : ℝ) ^ 3 * (m ^ 3) ^ 2 := by ring
+  calc (∑ i, f i ^ 2) ^ 3
+      ≤ ((Fintype.card ι : ℝ) * m ^ 2) ^ 3 := h1
+    _ = (Fintype.card ι : ℝ) ^ 3 * (m ^ 3) ^ 2 := hexp
+    _ ≤ (Fintype.card ι : ℝ) ^ 3 * (∑ i, f i ^ 3) ^ 2 :=
+        mul_le_mul_of_nonneg_left h2 (pow_nonneg hc0 3)
+    _ = (∑ i, f i ^ 3) ^ 2 * (Fintype.card ι : ℝ) ^ 3 := by ring
+
+/-- **The corpus's instantiation.** With the sum of squares pinned to `M` (for the
+tower: `M = k!`, the RSK/Burnside identity) and `P = card` the number of index
+values (`P = p(k)`, the partition count), the cube moment obeys
+`M³ ≤ (Σ f³)² · P³`.
+
+`M` and `P` enter as hypotheses; supplying them for the Plancherel tower is the
+open RSK/Burnside work, not done here. -/
+theorem cube_moment_lower_bound {ι : Type*} [Fintype ι] [Nonempty ι]
+    (f : ι → ℝ) (hf : ∀ i, 0 ≤ f i) {M P : ℝ}
+    (hM : ∑ i, f i ^ 2 = M) (hP : (Fintype.card ι : ℝ) = P) :
+    M ^ 3 ≤ (∑ i, f i ^ 3) ^ 2 * P ^ 3 := by
+  subst hM; subst hP; exact sum_sq_pow_three_le f hf
+
+/-- **Non-vacuity, and sharpness.** The bound is attained when the mass sits on a
+single index: `f = 1` at one point of a one-element type gives `1 ≤ 1`. -/
+example : (∑ _i : Fin 1, (1 : ℝ) ^ 2) ^ 3
+    ≤ (∑ _i : Fin 1, (1 : ℝ) ^ 3) ^ 2 * (Fintype.card (Fin 1) : ℝ) ^ 3 := by
+  simp
+
+end QOU.Mass
