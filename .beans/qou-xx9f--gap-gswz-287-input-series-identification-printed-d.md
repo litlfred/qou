@@ -1,8 +1,11 @@
 ---
-id: qou-xx9f
+# qou-xx9f
+title: ""
+status: todo
 type: task
-status: scrapped
 priority: normal
+created_at: 2026-08-10T18:07:20Z
+updated_at: 2026-08-11T00:46:59Z
 ---
 
 # GAP: GSWZ (287) input-series identification — printed digits unreproduced
