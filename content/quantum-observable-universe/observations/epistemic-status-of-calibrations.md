@@ -29,6 +29,24 @@ Quantitatively, $q^{*}$'s placement carries no information beyond $\mathrm{Vol}(
 
 So the substrate rests on **two** pins, and the $\mu$–$p$ tension ($\approx 11.5$ ppb) is a two-way tension. What the decay sector does supply is a genuine falsifiable lever of a different kind: $dq^{*}/d\mathfrak{Q}_\beta \approx -0.539$, so a sharper neutron $Q$-value sharpens $q^{*}$ — but sharpening a quantity defined by an assumed offset tests the offset, not the modulus.
 
+### Which pin the numbers actually use
+
+The paragraph above argues that the muon is the *structurally* preferred anchor. It is not the one the computed values use, and the distinction is worth stating plainly rather than leaving a reader to infer it from a call site.
+
+| Layer | Pins $q_0$ on | $q_0$ | Status of $m_\mu$ |
+|---|---|---|---|
+| Ideal (canonical 3-CAL) | $m_\mu/m_e$ — CAL-2, proxy for $\mathfrak{D}_\beta$ | $1.1099785955573347\ldots$ | anchor input; exact *by construction* |
+| Experimental (Physical-Observations) | $m_p/m_e$ | $1.1099785827513808\ldots$ | a **prediction**, and a $9.5\sigma$ one |
+
+The two differ by $\approx 11.5$ ppb — the $\mu$–$p$ tension itself. Production compute takes the experimental pin, for one reason: $m_p/m_e$ is known to $0.06$ ppb against the muon ratio's $22$ ppb, so pinning there puts the unavoidable theory residual where it costs least. Anchoring on the muon instead would leave the proton wrong by roughly $4000\sigma$; anchoring on the proton leaves the muon wrong by $9.5\sigma$. Neither is a free choice, and the arithmetic — not a preference — selects the second.
+
+This is a *precision substitution within one overdetermined datum*, not a fourth calibration and not a redefinition of CAL-2. The canonical triple is unchanged; only the numerical evaluation moves.
+
+Two consequences follow, and both are easy to get wrong:
+
+- **An $m_\mu$ reproduced at the muon pin is not an accuracy result.** It is the calibration restated. Quoting it as a prediction double-counts the input.
+- **The two layers must never be mixed inside a single computed quantity.** A number built from an ideal-layer input and an experimental-layer input carries the $11.5$ ppb tension as a silent error term, regardless of how small the final discrepancy looks.
+
 ## CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and CAL-2 proxy $\mathfrak{Q}_\beta$
 
 CAL-3 is the pion decay width $\mathfrak{D}_\pi$ (proxy $m_\pi$). This is independent of $(m_e, q_0)$. The parameter $\mathfrak{Q}_\beta$ proxies CAL-2.

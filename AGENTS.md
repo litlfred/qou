@@ -1218,7 +1218,14 @@ The substrate modulus q₀ has **one** value but **two** documented pins
 (authoritative corpus:
 [`observations/three-calibration-discipline.md` §3](content/quantum-observable-universe/observations/three-calibration-discipline.md),
 [`observations/epistemic-status-of-calibrations.md`](content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md),
-[`observations/substrate-anchor-alternatives.md`](content/quantum-observable-universe/observations/substrate-anchor-alternatives.md)):
+[`mass-theory/rem-qstar-decay-sector-q0.md`](content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md) — the third, decay-sector determination of the same modulus):
+
+> **Dead citation corrected 2026-08-11.** This list previously named
+> `observations/substrate-anchor-alternatives.md`, which **does not exist**
+> anywhere in `content/` or `docs/` — an authoritative pointer in this document
+> resolving to nothing. Replaced with the live block covering the alternative
+> (decay-sector) anchor. Found while adding the §"Which pin the numbers
+> actually use" subsection to `epistemic-status-of-calibrations`.
 
 | Layer | q₀ pin | m_μ status |
 |---|---|---|
