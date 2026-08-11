@@ -319,6 +319,7 @@ import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.SchurWeyl.BurnsideSpan
 import QOU.SchurWeyl.HeckeAlgebra
+import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
 import QOU.SchurWeyl.HeckeDim3Dim
 import QOU.SchurWeyl.HeckeDim3Indep
