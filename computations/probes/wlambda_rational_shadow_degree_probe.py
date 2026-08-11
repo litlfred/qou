@@ -25,6 +25,12 @@ reduced rational function `N/D`, and a rational function of that shape is pinned
 by `deg N + deg D + 1` values. That count is computed exactly below (sympy over
 ℤ — no floats anywhere, nothing to serialize).
 
+Both relevant objects are measured, because they are easy to conflate and were:
+the 9-node McKay `F_λ` above, and the keystone's **n=5 vacuum row**
+`S_0λ² = d_λ²/Σ_μ d_μ²` with `d_q = ([1]_q, [4]_q, [5]_q, [4]_q[3]_q/[2]_q)`.
+They are different objects with different degrees — 31..41 and 25..33 values
+respectively — against the same supply of 5.
+
 ## The supply side, which is fixed by the geometry
 
 The Poincaré sphere Σ(2,3,5) has exactly three exceptional fibres
@@ -95,6 +101,42 @@ def main() -> int:
         k = dn + dd + 1
         needed.append(k)
         print(f"| {m:>4} | {dn:>7} | {dd:>7} | {k:>20} |")
+
+    # ---- the OTHER object, so the two are never conflated again -------------
+    # The keystone's n=5 vacuum row is NOT the 9-node McKay F_lambda above. It is
+    # S_0lambda^2 = d_lambda^2 / sum_mu d_mu^2 with the four physical lambda |- 5
+    # quantum dimensions. Different object, different degrees. Computed here
+    # because an earlier revision of this probe's finding was quoted at the n=5
+    # object using the McKay figures — a real mix-up, now impossible to repeat.
+    def qint(n: int):
+        return (q ** n - q ** (-n)) / (q - q ** (-1))
+
+    d5 = {
+        "[1]": sp.Integer(1),
+        "[4]": qint(4),
+        "[5]": qint(5),
+        "[4][3]/[2]": qint(4) * qint(3) / qint(2),
+    }
+    S5 = sum(sp.together(v ** 2) for v in d5.values())
+
+    print("\nThe n=5 vacuum row — a DIFFERENT object, listed so the two are not conflated:")
+    print("  S_0lambda^2 = d_lambda^2 / sum_mu d_mu^2 ,  d_q = ([1],[4],[5],[4][3]/[2])\n")
+    print("| lambda      | deg num | deg den | values needed to pin |")
+    print("| ----------- | ------: | ------: | -------------------: |")
+    needed5 = []
+    for name, v in d5.items():
+        F = sp.cancel(sp.together(v ** 2 / S5))
+        num, den = sp.fraction(sp.cancel(sp.simplify(F)))
+        pn, pd = sp.Poly(sp.expand(num), q), sp.Poly(sp.expand(den), q)
+        g = sp.gcd(pn, pd)
+        pn, pd = sp.div(pn, g)[0], sp.div(pd, g)[0]
+        dn, dd = pn.degree(), pd.degree()
+        needed5.append(dn + dd + 1)
+        print(f"| {name:<11} | {dn:>7} | {dd:>7} | {dn + dd + 1:>20} |")
+    print(f"\n  n=5 vacuum row needs {min(needed5)}..{max(needed5)} values; same supply of "
+          f"{N_VALUES_AVAILABLE}"
+          f"  -> shortfall {min(needed5) - N_VALUES_AVAILABLE}.."
+          f"{max(needed5) - N_VALUES_AVAILABLE}")
 
     lo, hi = min(needed), max(needed)
     print(f"\n  values needed: {lo}..{hi}")
