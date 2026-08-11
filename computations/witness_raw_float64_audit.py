@@ -83,6 +83,32 @@ SELF_OUTPUTS = {
 }
 
 
+# ── LP-dual carve-out (bean qou-ftuv, owner decision 2026-08-11) ─────────
+#
+# THIS IS A CARVE-OUT AND IS NAMED AS ONE. It is not a precision improvement
+# and it does not drain anything; it declares a class of fields out of scope.
+#
+# These are the primal/dual variables of the operator-selection LP/SDP, i.e.
+# raw solver output. On the scipy path the solver IS float64 — there is no
+# `mpmath.mpf` upstream to carry, so the standing fix ("carry mpf from the
+# source, serialize with `_precision.fmt`") has nothing to act on. And they
+# cannot simply become strings: `lp_dual_solver.to_dict()` documents that every
+# existing consumer does arithmetic on them, so stringifying breaks readers
+# silently rather than loudly.
+#
+# Deliberately NARROW. It names seven fields and nothing else. In
+# `a-K-via-lp-dual-full` these account for 801 of 867 floats; the remaining ~66
+# are the probe's OWN results (`a_K_via_lp_dual`, `dual_vs_C_ppm`, `tolerance`,
+# …), which are not solver output and stay counted — a producer-level fix is
+# the right treatment for those, and this carve-out must not hide them.
+#
+# Every excused field is COUNTED and REPORTED as `carved_out`. A carve-out that
+# cannot be seen is indistinguishable from a hole.
+LP_DUAL_F64_FIELDS = frozenset({
+    "x_star", "y_star", "y0_star", "u_lambda_star",
+    "primal_obj", "dual_obj", "duality_gap",
+})
+
 # A binary64 carries at most 17 significant decimal digits. A `*_str`
 # companion is only a genuine full-precision shadow if it carries MORE than
 # that — otherwise it is just the same f64 spelled as text.
@@ -140,25 +166,56 @@ def count_raw_floats(obj) -> int:
     This does NOT weaken the ratchet. A shadow must prove itself by carrying
     digits a double cannot hold; see `_is_full_precision_shadow`.
     """
+    return _count(obj)[0]
+
+
+def count_carved(obj) -> int:
+    """How many f64 the LP-dual carve-out excused. Reported, never silent."""
+    return _count(obj)[1]
+
+
+def _count(obj) -> tuple[int, int]:
+    """(counted, carved_out) — one traversal, both numbers."""
     if isinstance(obj, dict):
-        total = 0
+        total = carved = 0
         for k, v in obj.items():
             if k.endswith("_str"):
-                total += count_raw_floats(v)
+                t, c = _count(v)
+                total += t
+                carved += c
                 continue
             companion = obj.get(f"{k}_str")
             if companion is not None and _is_full_precision_shadow(v, companion):
                 continue  # shadowed at full precision — not raw float64
-            total += count_raw_floats(v)
-        return total
+            if k in LP_DUAL_F64_FIELDS:
+                carved += _count(v)[0]
+                continue  # carve-out: solver output, f64 by construction
+            t, c = _count(v)
+            total += t
+            carved += c
+        return total, carved
     if isinstance(obj, list):
-        return sum(count_raw_floats(v) for v in obj)
-    return 1 if isinstance(obj, float) else 0
+        total = carved = 0
+        for v in obj:
+            t, c = _count(v)
+            total += t
+            carved += c
+        return total, carved
+    return (1 if isinstance(obj, float) else 0), 0
+
+
+CARVED: dict[str, int] = {}
 
 
 def scan() -> dict[str, int]:
-    """{repo-relative path: raw float64 count} for every live witness."""
+    """{repo-relative path: raw float64 count} for every live witness.
+
+    Also populates the module-level `CARVED` with what the LP-dual carve-out
+    excused per file, so `main` can report it. A carve-out is only defensible
+    while it is visible.
+    """
     found: dict[str, int] = {}
+    CARVED.clear()
     for p in sorted(HERE.rglob("*.witness.json")):
         if p.name in SELF_OUTPUTS or "_deprecated" in p.parts:
             continue
@@ -166,9 +223,11 @@ def scan() -> dict[str, int]:
             d = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             continue
-        n = count_raw_floats(d)
+        n, carved = _count(d)
         if n:
             found[p.relative_to(ROOT).as_posix()] = n
+        if carved:
+            CARVED[p.relative_to(ROOT).as_posix()] = carved
     return found
 
 
@@ -215,6 +274,18 @@ def self_test() -> int:
           "v_str": ["5.00000000000000000000000000e-1"]}, 2),
         # A *_str beside a non-float is irrelevant, and must not crash.
         ({"v": "x", "v_str": "5.0000000000000000000000000e-1"}, 0),
+
+        # ── LP-dual carve-out (qou-ftuv route 3) ──────────────────────
+        # Named solver-output fields are excused...
+        ({"y_star": [0.5, 0.25], "duality_gap": 1e-9}, 0),
+        ({"x_star": [1.0], "y0_star": 0.5, "primal_obj": 2.5}, 0),
+        # ...and NOTHING else in the same witness is. This is the
+        # discrimination that keeps the carve-out narrow: a-K's own results
+        # (a_K_via_lp_dual, dual_vs_C_ppm, tolerance) are not solver output
+        # and must still count.
+        ({"y_star": [0.5], "a_K_via_lp_dual": 1.5, "tolerance": 1e-9}, 2),
+        # A same-named key nested anywhere is still solver output.
+        ({"per_atom": [{"lp_dual": {"y_star": [0.5, 0.25]}}]}, 0),
     ]
     bad = [(p, e, count_raw_floats(p)) for p, e in cases
            if count_raw_floats(p) != e]
@@ -261,6 +332,10 @@ def main() -> int:
     print("=" * 74)
     print(f"  witnesses carrying raw float64 : {len(found)}")
     print(f"  total raw float64 fields       : {total:,}")
+    if CARVED:
+        print(f"  LP-dual carve-out excused      : {sum(CARVED.values()):,} "
+              f"field(s) in {len(CARVED)} witness(es)  [NOT drained — see "
+              f"LP_DUAL_F64_FIELDS]")
     if prior:
         print(f"  baseline files / fields        : {len(prior)} / {base_total:,}")
         print(f"  drained since baseline         : {len(drained)} file(s), "
@@ -313,6 +388,11 @@ def main() -> int:
         "data": {
             "dirty_witnesses": len(found),
             "total_fields": total,
+            # The carve-out, recorded in the witness so it is auditable rather
+            # than only visible in console output.
+            "lp_dual_carved_out_fields": sum(CARVED.values()),
+            "lp_dual_carved_out_by_file": dict(sorted(CARVED.items())),
+            "lp_dual_carved_out_field_names": sorted(LP_DUAL_F64_FIELDS),
             "baseline_files": len(prior),
             "baseline_fields": base_total,
             "new_not_baselined": len(new_files),
