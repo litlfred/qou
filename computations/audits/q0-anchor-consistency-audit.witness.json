@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-11T00:22:37.562761+00:00",
-  "commitSha": "6176f3fa144a01352ec08e6109fe18f55dda7dd7",
+  "computedAt": "2026-08-11T10:37:57.498781+00:00",
+  "commitSha": "5b0fe8953e220700aa87f4c6cba693cd26ea6619",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -36,9 +36,9 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020.",
   "data": {
     "counts": {
-      "Q0_OK": 614,
+      "Q0_OK": 620,
       "Q0_AMBIGUOUS": 17,
-      "Q0_ANCHOR_MISSING": 1877,
+      "Q0_ANCHOR_MISSING": 1879,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 68,
       "Q0_PARSE_ERROR": 1,
@@ -2240,6 +2240,10 @@
           "detail": ""
         },
         {
+          "witness": "h4-markov-character-decomposition.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "h4-markov-weights-closed-form.witness.json",
           "detail": ""
         },
@@ -3656,6 +3660,10 @@
           "detail": ""
         },
         {
+          "witness": "bwhk-st-matrix-corroboration.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "bwsc-level7-wrt-targets.witness.json",
           "detail": ""
         },
@@ -3701,6 +3709,10 @@
         },
         {
           "witness": "charge-symmetry-bond-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "ck_membership_payoff_run.witness.json",
           "detail": ""
         },
         {
@@ -3968,10 +3980,6 @@
           "detail": ""
         },
         {
-          "witness": "geom-leading-alt-q-locality-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "gg-production-bond-probe.witness.json",
           "detail": ""
         },
@@ -3996,6 +4004,10 @@
           "detail": ""
         },
         {
+          "witness": "gswz_287_nahm_efactor.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "gswz_52_galois_norm.witness.json",
           "detail": ""
         },
@@ -4009,6 +4021,22 @@
         },
         {
           "witness": "gswz_epsm_5adic_cyclic_qdilog.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_alpha_teichmuller_order.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_descent_m2.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_descent_m3.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "gswz_epsm_descent_m4to24.witness.json",
           "detail": ""
         },
         {
@@ -4400,10 +4428,6 @@
           "detail": ""
         },
         {
-          "witness": "per-knot-density-borromean-h4-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "perknot-additive-sk-vs-kA-extensivity.witness.json",
           "detail": ""
         },
@@ -4473,10 +4497,6 @@
         },
         {
           "witness": "q-hecke-seminormal-character-closure-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "qbessel-reeb-order-justification.witness.json",
           "detail": ""
         },
         {
@@ -5080,10 +5100,6 @@
           "detail": ""
         },
         {
-          "witness": "rt-w-sqrt-quantum-two-probe.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "saddle-offset-fourone-fivetwo.witness.json",
           "detail": ""
         },
@@ -5173,14 +5189,6 @@
         },
         {
           "witness": "vector2-double-pincer.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "vol-density-borromean-h4-probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "vol-density-borromean-q-locality-probe.witness.json",
           "detail": ""
         },
         {
@@ -9466,6 +9474,10 @@
           "detail": ""
         },
         {
+          "witness": "geom-leading-alt-q-locality-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "interface-operator-pairwise-ceiling.witness.json",
           "detail": ""
         },
@@ -9506,6 +9518,10 @@
           "detail": ""
         },
         {
+          "witness": "per-knot-density-borromean-h4-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "phi-q-regularization-probe.witness.json",
           "detail": ""
         },
@@ -9530,11 +9546,19 @@
           "detail": ""
         },
         {
+          "witness": "qbessel-reeb-order-justification.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "qbeta-root-of-unity.witness.json",
           "detail": ""
         },
         {
           "witness": "qm-channel-contribution-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "rt-w-sqrt-quantum-two-probe.witness.json",
           "detail": ""
         },
         {
@@ -9555,6 +9579,14 @@
         },
         {
           "witness": "trefoil-complex-volume-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "vol-density-borromean-h4-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "vol-density-borromean-q-locality-probe.witness.json",
           "detail": ""
         },
         {
