@@ -245,3 +245,30 @@ The four Rust-produced ones matter more than their count: that is the layer wher
 `qou-j6il` found a binary silently returning convention C while its source read
 D. They should not be regenerated until the convention gate has been applied to
 whatever binary produces them.
+
+## Orphan drain complete (2026-08-11)
+
+Orphan `y_λ` witnesses: **12 → 0**.
+
+- **`chi-dineutron-h6` / `chi-diproton-h6`** re-derived in place (`14e8da5fd`).
+  They have no producer — absent from `chi_at_q0_via_hoefsmit_mpfr`'s `ATOMS`,
+  and nothing else writes them. Safe to redo from the file itself because
+  `χ^λ_q(β)` is a **character**, independent of the Markov parameter `z`; so
+  every `chi_lambda` survives the convention change and carries enough to redo
+  `y_λ`, `contribution` and `tr_M_at_q0` consistently.
+- **`y-lambda-sdp`** migrated (`240b5e3e8`) after *proving* the positional
+  `y_ls` pairing rather than assuming it: `tr(1) = Σ dim_λ y_λ = 1` on the
+  **stored** convention-C values is order-sensitive (dims differ per partition)
+  and true of any Markov trace. Passes at every `n ∈ 2..6` to 1e-16.
+
+**Result worth keeping:** that last witness's own question changes answer. It
+exists to test whether the Frobenius system admits a *non-negative* solution.
+Under C it does not — `n = 4, 5, 6` carry negatives, to `-8.4e-4`, and the file
+records `positivity_holds: false`. Under D it does, exactly: every `ℓ(λ) ≤ 2`
+weight is strictly positive (`n − 2k + 1 ≥ 1`) and every `ℓ(λ) ≥ 3` weight is
+exactly zero — no slack, no tolerance. Support is `⌊n/2⌋+1` per table, the
+two-row count. The C-era violators (n=6 indices 6, 8, 10 = `[3,1,1,1]`,
+`[2,2,1,1]`, `[1⁶]`) are all partitions D sends to zero.
+
+Remaining orphans: **4** Rust-produced `chi-*-matrix-m` files, which need the
+`hecke-engine` CLI rather than a Python producer.
